@@ -1,6 +1,117 @@
 phpMussel change_log.txt
 
-=== Version 0.3g.1 ===
+== CURRENT GOALS AND FUTURE VERSIONING GUIDELINES (Latest: v0.4) ==
+Next major release (v1.0):
+- All planned signature implementations completed, functioning correctly during
+  a live test, without any known notable problems.
+  Complete [added/last edited+]:
+   * ELF signatures (stuff for Linux) [v0.2/v0.3g+];
+   * PE signatures (Portable executables; EXEs, DLLs, etc) [v0.2/v0.3g+];
+   * PE Sectional signatures (Sections from portable executables) [v0.4+];
+   * Filename signatures [v0.3/v0.3g+];
+   * General (basic) signatures [v0.1/v0.3g+];
+   * General (extended) signatures [v0.1/v0.3g+];
+   * Graphics signatures [v0.2/v0.3g+];
+   * Mach-O signatures (stuff for Mac and Apple) [v0.2/v0.3g+];
+   * Email signatures [v0.2/v0.3g+];
+   * MD5 signatures [v0.1/0.3g+];
+   * Archive metadata signatures [v0.1/v0.3g+];
+  Incomplete (future planned, hope to get these done at some point);
+   * OLE2 signatures (VBA and DOCX embeds, etc);
+   * ASCII (normalised) signatures (BATs, VBs, etc);
+   * HTML (normalised) signatures (HTML, JS, etc);
+  Incomplete (known of, not yet sure if I'll do them, may or may not happen);
+   * Icon signatures (hidden and imposter PEs, etc);
+   * PE metadata signatures;
+   * Container metadata signatures;
+   * Logical signatures (conditional multi-extended signatures);
+   * Android signatures;
+- All pending to-do items completed.
+   Pending Items:
+   * Currently, ZIP and GZ archive formats are supported for the archive
+     metadata signatures. At minimum, this should also extend to RAR and 7z.
+   * Currently, GZ archive scanning is recursive. Ideally, scanning for all
+     supported archive formats should be recursive.
+- All known bugs fixed (none pending at this time).
+Next and/or subsequent minor releases (v0.X):
+- Any -significant- changes to the script including completing of any of the
+  aforementioned above, whereby having done so, the release doesn't qualify as
+  a major release.
+Next and/or subsequent sub-minor releases (v0.Xy):
+- Any other changes to the core code with latest signatures included.
+Next and/or subsequent below sub-minor releases and/or re-releases (v0.Xy.Z):
+- Any releases containing no changes to the core code (such as, releases
+  containing only either documentation or signature updates), or any releases
+  containing changes to the core code without any included signature updates.
+Last Edited: 7th July 2014
+
+=== Version 0.4 (Previous: 0.3g.1) ===
+SUMMARY:
+Updated to the latest signatures set (55+19164+4).
+Minor release (medium priority).
+
+NEW CHANGES:
+- All script files and constituent content heavily modified between this
+  and the previous version (language data, updater script, code script).
+- Slightly improved detection method for graphics files and associated
+  signatures; Support for a few additional graphics formats added.
+- Slightly improved detection method for PE files and associated signatures.
+- Slightly improved chameleon attack detection; Support for a few additional
+  formats added.
+- A few additional directives added to the phpMussel configuration.
+- corrupted_exe: Option to detect and block potentially corrupted PE files.
+- Success! A lot of reading up on format specifications and a lot of messing
+  around trying different things with php later, I've managed to implement
+  support for PE Sectional MD5 signatures! As of this version (v0.4), phpMussel
+  can now check individual sections of PE files against the ClamAV PE Sectional
+  MD5 signatures. :-)
+  The code itself works like a charm, but unfortunately, due to the sheer size
+  of the PE Sectional signatures of the ClamAV database, isn't yet entirely
+  problem free. To explain the problem.. The physical size of the previous
+  latest version of phpMussel (v0.3g.1), compressed, is 4.26 MBs, and
+  uncompressed, is 13.2 MBs. The current physical size of the entirety of the
+  mainlined PE Sectional signatures, by themselves, not including anything else
+  at all, uncompressed, is.. 131.52 MBs. Daily and mains PE Sectional
+  signatures combined, and processed for use with phpMusel, uncompressed, is...
+  217.9 MBs. The sum of those two figures (13.2 MBs + 217.9 MBs) is 231.1 MBs,
+  which is about 17-fold (or 1,700%) greater than the first figure by itself.
+  A rather unpalatable increase, in my mind, and a problem that I'm not yet
+  entirely sure how to deal with in the long term. For now, as a temporary
+  (acceptable, but not absolutely perfect) solution (and because I wanted to
+  get this release out without too much delay and needed some sort of solution
+  prior to doing so), the PE Sectional signatures of ClamAV included with this
+  release cover the 300,000 PE Sectional signatures most recently released by
+  ClamAV, which is a rather significant number, but still far short of the
+  total 3,344,332 PE Sectional signatures that exist in the current mains+daily
+  release of the ClamAV database. Because of this reduction, the total filesize
+  of the pe_clamav.cvd should be significantly smaller (20.5 MBs) than it'd
+  otherwise be, and although not being comprehensive, at least, will run
+  correctly, not crash php due to excessive memory usage and will provide a
+  notable degree of protection against at least the latest known PE Sectional
+  infection vectors. For more details, or, if you have any ideas to offer...
+  Refer spambotsecurity.com/forum/viewtopic.php?f=57&t=2870
+- Added additional functionality to the CLI mode of phpMussel: Previously, it
+  was only possible to update phpMussel either manually or via browser-based
+  commands; It is now possible to update phpMussel via CLI mode; It is also now
+  possible to generate signatures via CLI mode, in a similar fashion to how it
+  is possible to generate signatures for ClamAV via their sigtool utility, and
+  it is now possible to display and modify the greylist via CLI mode. Refer to
+  the documentation for more details.
+- Loader slightly modified (updating recommended).
+- Included documentation updated to reflect the changes of this version.
+- Updated existing testfiles and added one new testfile.
+- As usual, improved signature set.
+
+PROBLEMS/BUGS FIXED:
+- Greylist clear command bugged; Didn't work (hastily coded first time; made
+  some silly mistakes that were easy to fix, but didn't spot them until the
+  latest round of testing); Fixed.
+- Incorrect suggested update date displayed upon update abort; Fixed.
+
+Maikuolan,
+8th July 2014.
+
+=== Version 0.3g.1 (Previous: 0.3g; Next: 0.4) ===
 SUMMARY:
 Updated to the latest signatures set (55+19131+3g.1).
 Files modified, but no changes to the actual script or code (medium priority).
@@ -31,7 +142,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 26th June 2014.
 
-=== Version 0.3g ===
+=== Version 0.3g (Previous: 0.3f.2; Next: 0.3g.1) ===
 SUMMARY:
 Updated to the latest signatures set (55+19079+3g).
 Sub-minor release (medium priority).
@@ -100,7 +211,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 11th June 2014.
 
-=== Version 0.3f.2 ===
+=== Version 0.3f.2 (Previous: 0.3f.1; Next: 0.3g) ===
 SUMMARY:
 Hot-fix (low priority).
 
@@ -112,7 +223,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 27th May 2014.
 
-=== Version 0.3f.1 ===
+=== Version 0.3f.1 (Previous: 0.3f; Next: 0.3f.2) ===
 SUMMARY:
 Hot-fix (low priority).
 
@@ -124,7 +235,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 24th May 2014.
 
-=== Version 0.3f ===
+=== Version 0.3f (Previous: 0.3e; Next: 0.3f.1) ===
 SUMMARY:
 Updated to the latest signatures set (55+19012+3f).
 Sub-minor release (medium priority).
@@ -167,7 +278,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 22nd May 2014.
 
-=== Version 0.3e ===
+=== Version 0.3e (Previous: 0.3d; Next: 0.3f) ===
 SUMMARY:
 Updated to the latest signatures set (55+18487+3e).
 Sub-minor release (medium priority).
@@ -193,7 +304,7 @@ NEW CHANGES:
 Maikuolan,
 19th February 2014.
 
-=== Version 0.3d ===
+=== Version 0.3d (Previous: 0.3c; Next: 0.3e) ===
 SUMMARY:
 Updated to the latest signatures set (55+18473+3d).
 Sub-minor release (medium priority).
@@ -217,7 +328,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 16th February 2014.
 
-=== Version 0.3c ===
+=== Version 0.3c (Previous: 0.3b; Next: 0.3d) ===
 SUMMARY:
 Updated to the latest signatures set (55+18240+3c).
 Sub-minor release (medium priority).
@@ -233,7 +344,7 @@ NEW CHANGES:
 Maikuolan,
 17th December 2013.
 
-=== Version 0.3b ===
+=== Version 0.3b (Previous: 0.3a; Next: 0.3c) ===
 SUMMARY:
 Updated to the latest signatures set (55+18175+3b).
 Sub-minor release (medium priority).
@@ -275,7 +386,7 @@ PROBLEMS/BUGS FOUND:
 Maikuolan,
 30th November 2013.
 
-=== Version 0.3a ===
+=== Version 0.3a (Previous: 0.3b; Next: 0.3) ===
 SUMMARY:
 Updated to the latest signatures set (55+18088+3a).
 Sub-minor release; Previous versions not compatible with the current version of
@@ -292,7 +403,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 11th November 2013.
 
-=== Version 0.3 ===
+=== Version 0.3 (Previous: 0.2b; Next: 0.3a) ===
 SUMMARY:
 Updated to the latest signatures set (55+17971+3).
 Minor release; Previous versions not compatible with the current version of
@@ -313,7 +424,7 @@ NEW CHANGES:
 Maikuolan,
 23rd October 2013.
 
-=== Version 0.2b ===
+=== Version 0.2b (Previous: 0.2a; Next: 0.3) ===
 SUMMARY:
 Updated to the latest ClamAV signatures (55+17946).
 Experimental release (not stable; stable changes rolled to next version).
@@ -321,7 +432,7 @@ Experimental release (not stable; stable changes rolled to next version).
 Maikuolan,
 8th October 2013.
 
-=== Version 0.2a ===
+=== Version 0.2a (Previous: 0.2; Next: 0.2b) ===
 SUMMARY:
 Sub-minor release; Previous versions not compatible with the current version of
 the updater (high priority).
@@ -341,7 +452,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 1st October 2013.
 
-=== Version 0.2 ===
+=== Version 0.2 (Previous: 0.1a; Next: 0.2a) ===
 SUMMARY:
 My many thanks to those that helped with testing out the initial (and
 subsequent) release of phpMussel. :-)
@@ -377,7 +488,7 @@ NEW CHANGES:
   time to get done. However, otherwise, most signatures should now be
   implemented correctly. Normalised signatures (HTML, ASCII, etc) coming soon.
   At this point, MD5, archive metadata, mail, Macho-O, graphics, PE
-  (non-sectional), ELF and general signatures are supported.
+  (non-Sectional), ELF and general signatures are supported.
 - Regex now supported.
 - Signature mapping incorporate, to reduce load-time of signatures.
 - Began implementation of proper block notifications. Intend to expand this
@@ -415,137 +526,7 @@ PROBLEMS/BUGS FOUND:
   configuration file. However, in the long term, another, better, solution
   should be found.
 
-NEW GOALS AND FUTURE VERSIONING GUIDELINES:
-To qualify for the next major version release (Version 1.0):
-- Improve time requirements for all ClamAV signatures, as to negate any risk
-  of providing a vector for potential DDoS attacks.
-- Have implemented ALL signature types, correctly, functioning correctly
-  during a live test, without any time requirement problems.
-- Be capable of scanning archive formats, at minimum, ZIP, GZ, RAR, 7z.
-- Be capable of scanning ALL supported archive formats RECURSIVELY.
-- (Optionally) produce new goals for a follow-up version (major/minor).
-- Fix known bugs.
-To qualify for a minor version release (Version 0.X):
-- Any -significant- changes to the script, at all, including completing one or
-  more of the above goals and including bringing in any new features or
-  capabilities, whereby having been done, the script does not qualify for a
-  new major version release.
-To quality for a sub-minor version release (0.Xy, 0.X.Y, 0.Xy.Z, 0.X.Yz):
-- Any other changes to the script.
-
 Maikuolan,
 26th September 2013.
-
-=== Version 0.1a ===
-SUMMARY:
-Sub-minor release.
-
-NEW CHANGES:
-- Added some additional file manipulation detections and slightly changed
-  some of the configuration defaults.
-
-PROBLEMS/BUGS FIXED:
-- Corrected a small handful of typographical errors (d'oh!) that I'd found
-  hiding in the documentation and various comments throughout the package
-  (didn't spot any in the script itself, at least).
-- Found and fixed the bug relating to chameleon attack detection (updating
-  from previous script version recommended to avoid possible false-positive
-  matches, due to the nature of the bug).
-
-Maikuolan,
-21st September 2013.
-
-=== Version 0.1 ===
-SUMMARY:
-The initial release, built from the ground-upwards, no previous version:
-Goals of the initial release are to create something that, albeit requiring
-much future work and perhaps with a benefit extremely minimal compared to its
-intended future goals, does actually work correctly to a level satisfying what
-would be expected of an initial release of the script as per the expectations
-of the script, without, from its default configuration and assuming no
-programmatic deviations, posing any inherent problems for any to implement the
-script and for and desirable end-users. The expectations of the script,
-in-line with the goals of the project overall, can be adequately surmised by
-the description of the script as included, at the time of this release, in the
-main body of the script itself: "Thank you for using phpMussel, a php-based
-script based upon ClamAV signatures designed to detect Trojans, viruses,
-malware and etcetera within files uploaded to your system wherever the script
-is hooked."
-
-NEW CHANGES (PRIMARY ACHIEVEMENTS OF THIS VERSION):
-- Can successfully detect file uploads and scan those files and the contents of
-  those files.
-- Can successfully interpret the MD5 signatures of ClamAV and check against
-  those signatures when scanning files.
-- Can successfully interpret custom MD5 signatures and check against those
-  signatures when scanning files.
-- Can successfully interpret the basic signatures of ClamAV and check against
-  those signatures when scanning files.
-- Can successfully interpret custom basic signatures and check against those
-  signatures when scanning files.
-- Can successfully detect archives (ZIP files only at this point) and
-  individually scan the files contained in those archives.
-- Can successfully interpret the ZIP MetaData signatures of ClamAV and check
-  against those signatures when scanning files.
-- Can successfully interpret custom ZIP MetaData signatures and check against
-  those signatures when scanning files.
-- Functions of the script can be controlled via a configuration file.
-- Can block file uploads and automatically delete those attempted file uploads,
-  as per script configuration.
-- Can detect certain types of chameleon attacks successfully.
-- Can log scanning operations and scan kills.
-
-PROBLEMS/BUGS FOUND (NEW KNOWN PROBLEMS WITH THIS VERSION):
-- Although the basic signatures of ClamAV can be interpreted and checked
-  against during file uploads, this TAKES A VERY LONG TIME! The time required
-  is unacceptable (up to a minute long per file at the worst point of my
-  initial testing), because it could potential create a vector for a
-  theoretical attacker to successfully implement a DDoS attack against
-  whatever phpMussel is hooked to. The feature remains fully implemented and
-  functional in this version, but with default configuration, is disabled.
-  Those implementing the script can optionally enable it if they wish, though
-  I recommend against it at this point. Thankfully, the same problem does not
-  extend to the MD5 signatures and similar, which during initial tests, proved
-  extremely fast and efficient. I have no intentions of even BEGINNING to find
-  ways to implement other signatures types until this problem is resolved. In
-  any case, aside from the time requirements, there doesn't appear to be any
-  other problems with the basic signatures.
-- High-nibble, low-nibble and general wildcard indicators are not currently
-  recognised by the script. This should be fixed (preferably without
-  exacerbating the time requirements problem).
-- Extended signatures, PE signatures, bytecode signatures and the ClamAV
-  whitelist is not yet implemented (at all).
-- Archive scanning is currently limited to ZIP files. At this point, support
-  for other types of archives (RAR, CAB, 7z, GZ, TAR and etcetera) is not
-  supported, and the filetypes are not recognised differently from non-archive
-  files.
-- Archive scanning is not recursive (meaning only first-level files of archives
-  will be scanned). This needs to be corrected.
-- Chameleon attack detection for JPG, JPEG and PNG isn't working correctly.
-  Should remain disabled until fixed.
-
-NEW GOALS AND FUTURE VERSIONING GUIDELINES:
-To qualify for the next major version release (Version 1.0):
-- Correct the time requirement problem of the basic signatures, as so that it
-  no longer provides a vector for DDoS attacks.
-- Make the script recognise wildcards.
-- Have implemented ALL signature types (MD5, Basic, Extended, Metadata, the
-  whitelist [not absolutely certain about that one, so optional], Bytecode
-  [if I or anyone else can work out exactly how to], as well as any other
-  signatures types that may exist by the time the script has been updated),
-  correctly, functioning correctly during a live test, without any time
-  requirement problems.
-- Be capable of scanning archives RECURSIVELY.
-- (Optionally) produce new goals for a follow-up version (major/minor).
-To qualify for a minor version release (Version 0.X):
-- Any -significant- changes to the script, at all, including completing one or
-  more of the above goals and including bringing in any new features or
-  capabilities, whereby having been done, the script does not qualify for a
-  new major version release.
-To quality for a sub-minor version release (0.Xy, 0.X.Y, 0.Xy.Z, 0.X.Yz):
-- Any other changes to the script.
-
-Maikuolan,
-18th September 2013.
 
 EOF

@@ -169,11 +169,8 @@
 
  6) Pada point ini, anda selesai! Bagaimanapun anda seharusnya mencobanya untuk
     memastikan berjalan dengan lancar. Untuk mencek phpMussel, jalankan
-    phpMussel, dan ketika phpMussel bertanya kepada anda data apa yang anda mau
-    pindai, spesifikasikan jalur direktori dari "_testfiles" yang termasuk di
-    dalam data kompress phpMussel, diikuti dengan diikuti dengan garis miring
-    ke depan dan tekan enter. Anda seharusnya melihat sesuatu bersamaan garis
-    dari "Detected phpMussel-Testfile" di pesan kembalinya.
+    phpMussel dan coba pindai "_testfiles" direktori yang disediakan dengan ini
+    paket.
 
                                      ~ ~ ~                                     
 
@@ -506,8 +503,11 @@
  4B. CLI (COMMAND LINE INTERFACE)
 
  phpMussel dapat dijalankan sebagai sebuah data interaktif pemindai dalam mode
- CLI dalam Windows, seperti versi terbaru dari phpMussel. Merujuk ke seksi
- "BAGAIMANA CARA MENGINSTALL (UNTUK CLI)" dari data readme untuk lebih detail.
+ CLI dalam Windows. Merujuk ke seksi "BAGAIMANA CARA MENGINSTALL (UNTUK CLI)"
+ dari data readme untuk lebih detail.
+
+ Untuk daftar yang tersedia CLI perintah, pada prompt CLI, ketik 'c', dan tekan
+ Enter.
 
                                      ~ ~ ~                                     
 
@@ -545,7 +545,7 @@
     phpMussel dengan benar diinstal pada sistem, dan anda tidak perlu
     mengupload direktori ini atau data-datanya jika melakukan testing.
     ~
- /_testfiles/exe_standard_testfile.exe (Test file, Included)
+ /_testfiles/exe_standard_testfile.exe (Data test, diikutkan)
     Data test untuk mentest tanda tangan PE phpMussel.
     ~
  /_testfiles/general_standard_testfile.txt (Data test, diikutkan)
@@ -554,16 +554,19 @@
  /_testfiles/graphics_standard_testfile.gif (Data test, diikutkan)
     Data test untuk mentest tanda tangan grafis phpMussel.
     ~
- /_testfiles/md5_standard_testfile.txt (Data test, diikutkan)
+ /_testfiles/md5_testfile.txt (Data test, diikutkan)
     Data test untuk mentest tanda tangan MD5 phpMussel.
     ~
- /_testfiles/zip_metadata_testfile.txt.gz (Data test, diikutkan)
+ /_testfiles/metadata_testfile.txt.gz (Data test, diikutkan)
     Data test untuk mentest tanda tangan metadata phpMussel dan untuk testing
     data support GZ pada sistem anda.
     ~
- /_testfiles/zip_metadata_testfile.txt.zip (Data test, Diikutkan)
+ /_testfiles/metadata_testfile.txt.zip (Data test, Diikutkan)
     Data test untuk mentest tanda tangan phpMussel dan untuk testing data
     support ZIP pada sistem anda.
+    ~
+ /_testfiles/pe_sectional_testfile.exe (Data test, diikutkan)
+    Data test untuk mentest tanda tangan PE Sectional phpMussel.
     ~
  /vault/ (Directory)
     Direktori Vault  (berisikan bermacam file).
@@ -680,6 +683,22 @@
     Dapat menghapus jika tidak digunakan (tapi data-data akan diciptakan
     kembali pada saat update).
     ~
+ /vault/metadata_clamav.cvd (Tanda tangan, Diikutkan)
+ /vault/metadata_custom.cvd (Tanda tangan, Diikutkan)
+ /vault/metadata_mussel.cvd (Tanda tangan, Diikutkan)
+    Data-data untuk tanda tangan meta data yang terkompres.
+    Diperlukan jika tanda tangan meta data dalam opsi di phpmussel.ini di
+    aktifkan. Dapat menghapus jika opsi di nonaktifkan (data akan diciptakan
+    kembali saat upgrade).
+    ~
+ /vault/pe_clamav.cvd (Tanda tangan, Diikutkan)
+ /vault/pe_custom.cvd (Tanda tangan, Diikutkan)
+ /vault/pe_mussel.cvd (Tanda tangan, Diikutkan)
+    Data-data untuk tanda tangan PE Sectional.
+    Diperlukan jika opsi tanda tangan PE Sectional di phpmussel.ini diaktifkan.
+    Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan
+    kembali pada saat mengupdate)
+    ~
  /vault/phpmussel.inc (Skrip, Diikutkan)
     Skrip murni phpMussel; Body utama dan vital dari phpMussel (utama)!
     ~
@@ -707,14 +726,6 @@
  /vault/update.inc (Skrip, Diikutkan)
     Skrip upgrade phpMussel; Diperlukan untuk upgrade otomatis dan untuk 
     mengupgrade phpMussel via browser anda, tapi tidak diperlukan juga
-    ~
- /vault/zip_metadata_clamav.cvd (Tanda tangan, Diikutkan)
- /vault/zip_metadata_custom.cvd (Tanda tangan, Diikutkan)
- /vault/zip_metadata_mussel.cvd (Tanda tangan, Diikutkan)
-    Data-data untuk tanda tangan meta data yang terkompres.
-    Diperlukan jika tanda tangan meta data dalam opsi di phpmussel.ini di
-    aktifkan. Dapat menghapus jika opsi di nonaktifkan (data akan diciptakan
-    kembali saat upgrade).
     ~
 
  * Nama file bisa berbeda berdasarkan ketentuan konfigurasi (di dalam
@@ -845,6 +856,12 @@
      "general_custom"
      "general_mussel"
    - Cek data PE (portable executable; EXE, DLL, etc) pada tanda tangan PE
+     Sectional ketika pemindaian?
+     0 = Tidak, 1 = Ya [Default].
+     "pe_clamav"
+     "pe_custom"
+     "pe_mussel"
+   - Cek data PE (portable executable; EXE, DLL, etc) pada tanda tangan PE
      ketika pemindaian?
      0 = Tidak, 1 = Ya [Default].
      "exe_clamav"
@@ -869,9 +886,9 @@
    - Cek isi file terkompress pada tanda tangan metadata terkompres ketika
      pemindaian?
      0 = Tidak, 1 = Ya [Default].
-     "zip_metadata_clamav"
-     "zip_metadata_custom"
-     "zip_metadata_mussel"
+     "metadata_clamav"
+     "metadata_custom"
+     "metadata_mussel"
    - Cek nama data pada tanda tangan berbasis nama file ketika pemindaian?
      0 = Tidak, 1 = Ya [Default].
      "filenames_clamav"
@@ -1001,6 +1018,17 @@
      apapun lebih dari data teks biasa, menghidupkan opsi ini mungkin
      mengakibatkan angka positif salah.
      0 - Jangan memblokade [Default], 1 - Memblokade.
+   "corrupted_exe"
+   - File rusak dan diurai kesalahan.
+     0 = Mengabaikan, 1 = Memblokade [Default]. Mendeteksi dan memblokir
+     berpotensi rusak PE (portable executable) file? Sering (tetapi tidak
+     selalu), ketika aspek-aspek tertentu dari file PE yang rusak atau tidak
+     bisa diurai dengan benar, itu dapat menjadi indikasi dari infeksi virus.
+     Proses yang digunakan oleh sebagian besar program anti-virus untuk
+     mendeteksi virus dalam file PE memerlukan parsing file-file dengan cara
+     tertentu, yang, jika programmer virus menyadari, secara khusus akan
+     mencoba untuk mencegah, untuk memungkinkan virus mereka untuk tetap tidak
+     terdeteksi.
  "compatibility" (Category)
  - Kompatibilitas direktif pada phpMussel.
     "ignore_upload_errors"
@@ -1092,6 +1120,9 @@
      yang ditargetkan untuk dipindai.
    - "Perintah umum" (hex_general_commands.csv). Dicek pada isi dari tiap data
      non-whitelisted yang ditargetkan untuk dipindai.
+   - "Tanda tangan Portable Executable Sectional" (pe_*). Dicek pada isi dari
+     tiap data non-whitelisted yang ditargetkan untuk dipindai dan dicocokkan
+     ke format PE.
    - "Tanda tangan Portable Executable" (exe_*). Dicek pada isi dari tiap data
      non-whitelisted yang ditargetkan untuk dipindai dan dicocokkan ke format
      PE.
@@ -1103,7 +1134,7 @@
    - "Tanda tangan Mach-O" (macho_*). Dicek pada isi dari tiap data
      non-whitelisted yang ditargetkan untuk dipindai dan dicocokan ke format
      Mach-O.
-   - "Tanda tangan Metadata ZIP" (zip_metadata_*). Dicek pada hash CRC32 dan
+   - "Tanda tangan Metadata ZIP" (metadata_*). Dicek pada hash CRC32 dan
      ukuran data dari data berisikan di dalam file terkompress non-whitelisted
      dan ditargetkan untuk dipindai.
    - "Email Signatures" (mail_*). Dicek pada variabel $body diparse ke fungsi
@@ -1137,8 +1168,8 @@
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 11 Juni 2014 dan cocok untuk semua versi dari
- phpMussel, dari inisial release v0.1 melalui release terakhir v0.3g pada
+ Informasi ini diupdate 10 Juli 2014 dan cocok untuk semua versi dari
+ phpMussel, dari inisial release v0.1 melalui release terakhir v0.4 pada
  waktu saya menuliskan ini.
 
  Ad-Aware                Tidak ada masalah yang diketahui
@@ -1164,7 +1195,7 @@
  F-Secure                Tidak ada masalah yang diketahui
  Fortinet                Tidak ada masalah yang diketahui
  GData                !  Report "Archive.Trojan.Agent.E7C7J7" (v0.3e semata)
- Ikarus               !  Report "Trojan.JS.Agent" (v0.3g semata)
+ Ikarus               !  Report "Trojan.JS.Agent" (v0.3g melalui v0.4)
  Jiangmin                Tidak ada masalah yang diketahui
  K7AntiVirus             Tidak ada masalah yang diketahui
  K7GW                    Tidak ada masalah yang diketahui
@@ -1197,5 +1228,5 @@
                                      ~ ~ ~                                     
 
 
-Terakhir Diperbarui: 26 Juni 2014
+Terakhir Diperbarui: 10 Juli 2014
 EOF

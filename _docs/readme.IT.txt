@@ -177,11 +177,8 @@
 
  6) A questo punto, il gioco è fatto! Ma, si dovrebbe probabilmente verificare
     il lavoro svolto per assicurarsi che funzioni correttamente. Per testare
-    phpMussel, eseguire phpMussel, e quando phpMussel chiede quali file si
-    desidera eseguire la scansione, specificare il percorso della "testfiles"
-    cartella incluso dall'archivio di phpMussel, seguito da una slash, e
-    premere Invio. Dovreste vedere qualcosa simile a
-    "Rilevato phpMussel-Testfile..." nella restituito messaggio.
+    phpMussel, eseguire phpMussel e prova scansionare la "_testfiles" cartella
+    fornito con il pacchetto.
 
                                      ~ ~ ~                                     
 
@@ -511,9 +508,11 @@
  4B. CLI (COMANDO LINEA INTERFACCIA)
 
  phpMussel può essere eseguito come uno interattivo file scanner in CLI
- modalità sotto Windows a partire dalla più recente versione di phpMussel. Fare
- riferimento alla "COME INSTALLARE (PER CLI)" sezione di questo readme file per
- maggiori dettagli.
+ modalità da Windows. Fare riferimento alla "COME INSTALLARE (PER CLI)" sezione
+ di questo readme file per maggiori dettagli.
+
+ Per un elenco di comandi disponibili all'interno CLI , al CLI prompt, tipo
+ 'c', e premere Enter.
 
                                      ~ ~ ~                                     
 
@@ -562,16 +561,19 @@
  /_testfiles/graphics_standard_testfile.gif (Test file, Incluso)
     Test file per test di phpMussel grafica firme.
     ~
- /_testfiles/md5_standard_testfile.txt (Test file, Incluso)
+ /_testfiles/md5_testfile.txt (Test file, Incluso)
     Test file per test di phpMussel MD5 firme.
     ~
- /_testfiles/zip_metadata_testfile.txt.gz (Test file, Incluso)
+ /_testfiles/metadata_testfile.txt.gz (Test file, Incluso)
     Test file per test di phpMussel metadata firme e per testare GZ file
     supporto sullo vostro sistema.
     ~
- /_testfiles/zip_metadata_testfile.txt.zip (Test file, Incluso)
+ /_testfiles/metadata_testfile.txt.zip (Test file, Incluso)
     Test file per test di phpMussel metadata firme e per testare ZIP file
     supporto sullo vostro sistema.
+    ~
+ /_testfiles/pe_sectional_testfile.exe (Test file, Incluso)
+    Test file per test di phpMussel PE Sezionale firme.
     ~
  /vault/ (Cartella)
     Vault cartella (contiene vari file).
@@ -686,6 +688,22 @@
     Può rimuovere se l'opzione è disabilitato (ma i file verranno ricreati al
     momento di aggiornamento).
     ~
+ /vault/metadata_clamav.cvd (Firme, Incluso)
+ /vault/metadata_custom.cvd (Firme, Incluso)
+ /vault/metadata_mussel.cvd (Firme, Incluso)
+    File per l'archivio metadati firme.
+    Richiesto se l'opzione per l'archivio metadati firme in phpmussel.ini è
+    abilitato. Può rimuovere se l'opzione è disabilitato (ma i file verranno
+    ricreati al momento di aggiornamento).
+    ~
+ /vault/pe_clamav.cvd (Firme, Incluso)
+ /vault/pe_custom.cvd (Firme, Incluso)
+ /vault/pe_mussel.cvd (Firme, Incluso)
+    File per PE Sezionale firme.
+    Richiesto se l'opzione per PE Sezionale firme in phpmussel.ini è abilitato.
+    Può rimuovere se l'opzione è disabilitato (ma i file verranno ricreati al
+    momento di aggiornamento).
+    ~
  /vault/phpmussel.inc (Script, Incluso)
     phpMussel Nucleo Script; Il principale corpo e budella di phpMussel
     (essenziale)!
@@ -715,14 +733,6 @@
     phpMussel Aggiornare Script; Richiesto per l'automatico aggiornare di
     phpMussel e per l'aggiornare di phpMussel tramite il browser, Ma non
     richiesto altrimenti.
-    ~
- /vault/zip_metadata_clamav.cvd (Firme, Incluso)
- /vault/zip_metadata_custom.cvd (Firme, Incluso)
- /vault/zip_metadata_mussel.cvd (Firme, Incluso)
-    File per l'archivio metadati firme.
-    Richiesto se l'opzione per l'archivio metadati firme in phpmussel.ini è
-    abilitato. Può rimuovere se l'opzione è disabilitato (ma i file verranno
-    ricreati al momento di aggiornamento).
     ~
 
  * Nome del file può variare dipendente di configurazione (in phpmussel.ini).
@@ -849,6 +859,12 @@
      "general_clamav"
      "general_custom"
      "general_mussel"
+   - Verificare PE (portatile eseguibile) files (EXE, DLL, ecc) contro PE
+     Sezionale firme durante la scansione?
+     0 = No, 1 = Sì [Predefinito].
+     "pe_clamav"
+     "pe_custom"
+     "pe_mussel"
    - Verificare PE (portatile eseguibile) files (EXE, DLL, ecc) contro PE firme
      durante la scansione?
      0 = No, 1 = Sì [Predefinito].
@@ -874,9 +890,9 @@
    - Verificare il contenuto dell'archivio contro archivio metadati firme
      durante la scansione?
      0 = No, 1 = Sì [Predefinito].
-     "zip_metadata_clamav"
-     "zip_metadata_custom"
-     "zip_metadata_mussel"
+     "metadata_clamav"
+     "metadata_custom"
+     "metadata_mussel"
    - Verificare nomi del file against file nome basate firme durante la
      scansione?
      0 = No, 1 = Sì [Predefinito].
@@ -1002,7 +1018,17 @@
      testo, quindi si puó attivare questa opzione a fornire additionale
      protezione al vostro sistema. Ma, se si carica qualcosa di diverso da
      normale testo, abilitando questo opzione può causare falsi positivi.
-     0 - Non bloccare [Default], 1 - Bloccare.
+     0 - Non bloccare [Predefinito], 1 - Bloccare.
+   "corrupted_exe"
+   - Corrotto file e parsare errori. 0 = Ignorare, 1 = Bloccare [Predefinito].
+     Rilevare e bloccare i potenzialmente corrotti PE (portatile eseguibili)
+     file? Spesso (ma non sempre), quando alcuni aspetti di un PE file sono
+     corrotto o non può essere parsato correttamente, tale può essere
+     indicativo di una virale infezione. I processi utilizzati dalla maggior
+     parte dei antivirus programmi per rilevare i virus all'intero PE file
+     richiedono parsare quei file in certi modi, di cui, se il programmatore di
+     un virus è consapevole di, sarà specificamente provare di prevenire, al
+     fine di abilitare loro virus di rimanere inosservato.
  "compatibility" (Categoria)
  - Compatibilità direttive per phpMussel.
     "ignore_upload_errors"
@@ -1086,25 +1112,31 @@
  = TIPI DI FIRME =
    I seguenti sono i tipi di firme utilizzate da phpMussel:
    - "MD5 Firme" (md5_*). Verificato contro l'MD5 hash dei contenuti e la
-     dimensione del ogni file mirati per la scansione che non è sulla whitelist.
+     dimensione del ogni file mirati per scansionare quello che non è sulla
+     whitelist.
    - "Generali Firme" (general_*). Verificato contro i contenuti del ogni file
-     mirati per la scansione che non è sulla whitelist.
+     mirati per scansionare quello che non è sulla whitelist.
    - "Generali Comandi" (hex_general_commands.csv). Verificato contro i
-     contenuti del ogni file mirati per la scansione che non è sulla whitelist.
+     contenuti del ogni file mirati per scansionare quello che non è sulla
+     whitelist.
+   - "Portatili Eseguibili Sezionale Firme" (pe_*). Verificato contro i
+     contenuti del ogni file mirati per scansionare quello che non è sulla
+     whitelist e verificato allo PE formato.
    - "Portatili Eseguibili Firme" (exe_*). Verificato contro i contenuti del
-     ogni file mirati per la scansione che non è sulla whitelist e verificato
-     allo PE formato.
+     ogni file mirati per scansionare quello che non è sulla whitelist e
+     verificato allo PE formato.
    - "ELF Firme" (elf_*). Verificato contro i contenuti del ogni file mirati
-     per la scansione che non è sulla whitelist e verificato allo ELF formato.
+     per scansionare quello che non è sulla whitelist e verificato allo ELF
+     formato.
    - "Grafiche Firme" (graphics_*). Verificato contro i contenuti del ogni file
-     mirati per la scansione che non è sulla whitelist e verificato come un
-     conosciuto grafico file formato.
+     mirati per scansionare quello che non è sulla whitelist e verificato come
+     un conosciuto grafico file formato.
    - "Mach-O Firme" (macho_*). Verificato contro i contenuti del ogni file
-     mirati per la scansione che non è sulla whitelist e verificato allo
+     mirati per scansionare quello che non è sulla whitelist e verificato allo
      Mach-O formato.
-   - "ZIP Metadati Firme" (zip_metadata_*). Verificato contro l'CRC32 hash e la
+   - "ZIP Metadati Firme" (metadata_*). Verificato contro l'CRC32 hash e la
      dimensione dell'iniziale file contenuto all'interno di qualsiasi file
-     mirati per la scansione che non è sulla whitelist.
+     mirati per scansionare quello che non è sulla whitelist.
    - "Email Signatures" (mail_*). Verificato contro la $body variabile parsato
      a la phpMussel_mail() funzione, che è destinato a essere il corpo de email
      messaggi o simili entità (potenzialmente forum messaggi e etcetera).
@@ -1137,9 +1169,9 @@
  dovrebbe considerare l'alternative opzioni per sia il vostro anti-virus
  software o phpMussel.
 
- Questa informazione è stato lo scorso aggiornato 11 Giugno 2014 ed è in corso
+ Questa informazione è stato lo scorso aggiornato 10 Luglio 2014 ed è in corso
  per TUTTE le versioni di phpMussel, dall'iniziale rilascio v0.1 fino
- all'ultima rilascio v0.3g al momento di scrivere questo.
+ all'ultima rilascio v0.4 al momento di scrivere questo.
 
  Ad-Aware                Senza noti problemi
  Agnitum                 Senza noti problemi
@@ -1164,7 +1196,7 @@
  F-Secure                Senza noti problemi
  Fortinet                Senza noti problemi
  GData                !  Riferisce "Archive.Trojan.Agent.E7C7J7" (v0.3e solo)
- Ikarus               !  Riferisce "Trojan.JS.Agent" (v0.3g solo)
+ Ikarus               !  Riferisce "Trojan.JS.Agent" (v0.3g a v0.4)
  Jiangmin                Senza noti problemi
  K7AntiVirus             Senza noti problemi
  K7GW                    Senza noti problemi
@@ -1197,5 +1229,5 @@
                                      ~ ~ ~                                     
 
 
-Ultimo Aggiornamento: 26 Giugno 2014
+Ultimo Aggiornamento: 10 Luglio 2014
 EOF

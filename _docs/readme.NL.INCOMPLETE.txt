@@ -166,12 +166,8 @@
     on that file to run phpMussel in the future.
 
  6) At this point, you're done! However, you should probably test it out to
-    make sure it's working properly. To test phpMussel, run phpMussel, and when
-    phpMussel asks you which file you'd like to scan, specify the directory
-    path of the "_testfiles" directory included in the phpMussel archive,
-    followed by a forward-slash, and press enter. You should see something
-    along the lines of "Detected phpMussel-Testfile..." in the returned
-    message.
+    make sure it's working properly. To test phpMussel, run phpMussel and try
+    scanning the "_testfiles" directory provided with the package.
 
                                      ~ ~ ~                                     
 
@@ -481,9 +477,12 @@
 
  4B. CLI (COMMANDLIJN INTERFACE)
 
- phpMussel can be run as an interactive file scanner in CLI mode under windows
- as of the latest version of phpMussel. Refer to the "HOE TE INSTALLEREN (VOOR
- CLI)" section of this readme file for more details.
+ phpMussel can be run as an interactive file scanner in CLI mode under
+ Windows-based systems. Refer to the "HOW TO INSTALL (FOR CLI)" section of this
+ readme file for more details.
+
+ For a list of available CLI commands, at the CLI prompt, type 'c', and press
+ Enter.
 
                                      ~ ~ ~                                     
 
@@ -529,16 +528,19 @@
  /_testfiles/graphics_standard_testfile.gif (Test file, Included)
     Test file for testing phpMussel graphics signatures.
     ~
- /_testfiles/md5_standard_testfile.txt (Test file, Included)
+ /_testfiles/md5_testfile.txt (Test file, Included)
     Test file for testing phpMussel MD5 signatures.
     ~
- /_testfiles/zip_metadata_testfile.txt.gz (Test file, Included)
-    Test file for testing phpMussel metadata signatures and for testing
-    GZ file support on your system.
+ /_testfiles/metadata_testfile.txt.gz (Test file, Included)
+    Test file for testing phpMussel metadata signatures and for testing GZ file
+    support on your system.
     ~
- /_testfiles/zip_metadata_testfile.txt.zip (Test file, Included)
-    Test file for testing phpMussel metadata signatures and for testing
-    ZIP file support on your system.
+ /_testfiles/metadata_testfile.txt.zip (Test file, Included)
+    Test file for testing phpMussel metadata signatures and for testing ZIP
+    file support on your system.
+    ~
+ /_testfiles/pe_sectional_testfile.exe (Test file, Included)
+    Test file for testing phpMussel PE Sectional signatures.
     ~
  /vault/ (Directory)
     Vault directory (contains various files).
@@ -645,6 +647,20 @@
     Required if MD5 based signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
+ /vault/metadata_clamav.cvd (Signatures, Included)
+ /vault/metadata_custom.cvd (Signatures, Included)
+ /vault/metadata_mussel.cvd (Signatures, Included)
+    Files for archive metadata signatures.
+    Required if archive metadata signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
+    ~
+ /vault/pe_clamav.cvd (Signatures, Included)
+ /vault/pe_custom.cvd (Signatures, Included)
+ /vault/pe_mussel.cvd (Signatures, Included)
+    Files for PE Sectional signatures.
+    Required if PE Sectional signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
+    ~
  /vault/phpmussel.inc (Script, Included)
     phpMussel Core Script; The main body and guts of phpMussel (essential)!
     ~
@@ -670,13 +686,6 @@
  /vault/update.inc (Script, Included)
     phpMussel Update Script; Required for automatic updates and for updating
     phpMussel via your browser, but not required otherwise.
-    ~
- /vault/zip_metadata_clamav.cvd (Signatures, Included)
- /vault/zip_metadata_custom.cvd (Signatures, Included)
- /vault/zip_metadata_mussel.cvd (Signatures, Included)
-    Files for archive metadata signatures.
-    Required if archive metadata signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
     ~
 
  * Filename may differ based on configuration stipulations (in phpmussel.ini).
@@ -797,6 +806,12 @@
      "general_clamav"
      "general_custom"
      "general_mussel"
+   - Check PE (portable executable) files (EXE, DLL, etc) against PE Sectional
+     signatures when scanning?
+     0 = No, 1 = Yes [Default].
+     "pe_clamav"
+     "pe_custom"
+     "pe_mussel"
    - Check PE (portable executable) files (EXE, DLL, etc) against PE signatures
      when scanning?
      0 = No, 1 = Yes [Default].
@@ -820,9 +835,9 @@
      "graphics_mussel"
    - Check archive contents against archive metadata signatures when scanning?
      0 = No, 1 = Yes [Default].
-     "zip_metadata_clamav"
-     "zip_metadata_custom"
-     "zip_metadata_mussel"
+     "metadata_clamav"
+     "metadata_custom"
+     "metadata_mussel"
    - Check filenames against filename based signatures when scanning?
      0 = No, 1 = Yes [Default].
      "filenames_clamav"
@@ -943,6 +958,15 @@
      your system. However, if you upload anything other than plain-text,
      turning this on may result in false positives.
      0 - Don't block [Default], 1 - Block.
+   "corrupted_exe"
+   - Corrupted files and parse errors. 0 = Ignore, 1 = Block [Default].
+     Detect and block potentially corrupted PE (portable executable) files?
+     Often (but not always), when certain aspects of a PE file are corrupted or
+     can't be parsed correctly, it can be indicative of a viral infection. The
+     processes used by most anti-virus programs to detect viruses in PE files
+     require parsing those files in certain ways, which, if the programmer of a
+     virus is aware of, will specifically try to prevent, in order to allow
+     their virus to remain undetected.
  "compatibility" (Category)
  - Compatibility directives for phpMussel.
     "ignore_upload_errors"
@@ -1031,6 +1055,9 @@
      non-whitelisted file targeted for scanning.
    - "General Commands" (hex_general_commands.csv). Checked against the
      contents of every non-whitelisted file targeted for scanning.
+   - "Portable Executable Sectional Signatures" (pe_*). Checked against the
+     contents of every non-whitelisted targeted for scanning and matched to the
+     PE format.
    - "Portable Executable Signatures" (exe_*). Checked against the contents of
      every non-whitelisted targeted for scanning and matched to the PE format.
    - "ELF Signatures" (elf_*). Checked against the contents of every
@@ -1041,7 +1068,7 @@
    - "Mach-O Signatures" (macho_*). Checked against the contents of every
      non-whitelisted file targeted for scanning and matched to the Mach-O
      format.
-   - "ZIP MetaData Signatures" (zip_metadata_*). Checked against the CRC32
+   - "ZIP MetaData Signatures" (metadata_*). Checked against the CRC32
      hash and filesize of the initial file contained inside of any
      non-whitelisted archive targeted for scanning.
    - "Email Signatures" (mail_*). Checked against the $body variable parsed
@@ -1075,9 +1102,9 @@
  with phpMussel or should consider alternative options to either your
  anti-virus software or phpMussel.
 
- This information was last updated 11th June 2014 and is current for ALL
+ This information was last updated 10th July 2014 and is current for ALL
  versions of phpMussel, from initial release v0.1 through to latest release
- v0.3g at the time of writing this.
+ v0.4 at the time of writing this.
 
  Ad-Aware                Geen bekend problemen
  Agnitum                 Geen bekend problemen
@@ -1102,7 +1129,7 @@
  F-Secure                Geen bekend problemen
  Fortinet                Geen bekend problemen
  GData                !  Berichten "Archive.Trojan.Agent.E7C7J7" (v0.3e enigst)
- Ikarus               !  Berichten "Trojan.JS.Agent" (v0.3g enigst)
+ Ikarus               !  Berichten "Trojan.JS.Agent" (v0.3g tot v0.4)
  Jiangmin                Geen bekend problemen
  K7AntiVirus             Geen bekend problemen
  K7GW                    Geen bekend problemen
@@ -1135,5 +1162,5 @@
                                      ~ ~ ~                                     
 
 
-Laatste Bijgewerkt: 26 Juni 2014
+Laatste Bijgewerkt: 10 Juli 2014
 EOF

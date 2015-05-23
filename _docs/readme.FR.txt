@@ -176,13 +176,10 @@
     suffixe quelque part que vous trouverez facile, et double-cliquez sur ce
     fichier pour exécuter phpMussel à l'avenir.
 
- 6) À ce stade, vous avez fini! Cependant, vous devriez probablement tester ce
-    pour s'assurer qu'il fonctionne correctement. Pour tester les protections,
-    et quand phpMussel vous demande quel fichier que vous souhaitez analyser,
-    spécifier le chemin du "_testfiles" répertoire inclus dans l'archive de
-    phpMussel, suivie d'une oblique barre, et appuyez entrée/retour. Vous
-    devriez voir quelque chose de semblable à "Detected phpMussel-Testfile..."
-    dans le message renvoyé.
+ 6) À ce stade, vous avez fini! Mais, vous devriez probablement tester ce
+    pour s'assurer qu'il fonctionne correctement. Pour tester phpMussel,
+    exécuter phpMussel et essayer d'analyser le "_testfiles" répertoire fourni
+    avec le paquet.
 
                                      ~ ~ ~                                     
 
@@ -514,8 +511,11 @@
  4B. CLI (COMMANDE LIGNE INTERFACE)
 
  phpMussel peut être exécuté comme un interactif fichier analyseur en CLI mode
- dans windows à partir de la dernière version de phpMussel. Référer à la
- "COMMENT INSTALLER (POUR CLI)" section de ce readme fichier pour plus détails.
+ dans windows. Référer à la "COMMENT INSTALLER (POUR CLI)" section de ce readme
+ fichier pour plus détails.
+
+ Pour une liste des disponibles CLI commandes, à l'invite CLI, tapez «c», et
+ appuyez sur Entrée.
 
                                      ~ ~ ~                                     
 
@@ -553,7 +553,7 @@
     correctement installé sur votre système, et vous n'avez pas besoin de
     télécharger ce répertoire ou l'un de ses fichiers, sauf si faire ces tests.
     ~
- /_testfiles/exe_standard_testfile.exe (Test file, Included)
+ /_testfiles/exe_standard_testfile.exe (Test fichier, Inclus)
     Test fichier à test phpMussel PE signatures.
     ~
  /_testfiles/general_standard_testfile.txt (Test fichier, Inclus)
@@ -562,16 +562,19 @@
  /_testfiles/graphics_standard_testfile.gif (Test fichier, Inclus)
     Test fichier à test phpMussel graphiques signatures.
     ~
- /_testfiles/md5_standard_testfile.txt (Test fichier, Inclus)
+ /_testfiles/md5_testfile.txt (Test fichier, Inclus)
     Test fichier à test phpMussel MD5 signatures.
     ~
- /_testfiles/zip_metadata_testfile.txt.gz (Test fichier, Inclus)
+ /_testfiles/metadata_testfile.txt.gz (Test fichier, Inclus)
     Test fichier à test phpMussel métadonnées signatures et pour tester GZ
     fichier support sur votre système.
     ~
- /_testfiles/zip_metadata_testfile.txt.zip (Test fichier, Inclus)
+ /_testfiles/metadata_testfile.txt.zip (Test fichier, Inclus)
     Test fichier à test phpMussel métadonnées signatures et pour tester ZIP
     fichier support sur votre système.
+    ~
+ /_testfiles/pe_sectional_testfile.exe (Test fichier, Inclus)
+    Test fichier à test phpMussel PE Sectional signatures.
     ~
  /vault/ (Répertoire)
     Voûte répertoire (contient divers fichiers).
@@ -688,6 +691,22 @@
     Peut enlever si l'option est désactivée (mais les fichiers seront recréés
     sur réactualiser).
     ~
+ /vault/metadata_clamav.cvd (Signatures, Inclus)
+ /vault/metadata_custom.cvd (Signatures, Inclus)
+ /vault/metadata_mussel.cvd (Signatures, Inclus)
+    Fichiers pour métadonnées d'archives signatures.
+    Nécessaire si le métadonnées d'archives option dans phpmussel.ini est
+    activée. Peut enlever si l'option est désactivée (mais les fichiers seront
+    recréés sur réactualiser).
+    ~
+ /vault/pe_clamav.cvd (Signatures, Inclus)
+ /vault/pe_custom.cvd (Signatures, Inclus)
+ /vault/pe_mussel.cvd (Signatures, Inclus)
+    Fichiers pour PE Sectional signatures.
+    Nécessaire si le PE Sectional signatures option dans phpmussel.ini est
+    activée. Peut enlever si l'option est désactivée (mais les fichiers seront
+    recréés sur réactualiser).
+    ~
  /vault/phpmussel.inc (Script, Inclus)
     phpMussel Principal Script; Le principal corps de phpMussel (essentiel)!
     ~
@@ -716,14 +735,6 @@
     phpMussel Réactualiser Script; Requis pour automatique réactualisation et
     pour réactualisation phpMussel par votre navigateur, mais n'est pas
     autrement requise.
-    ~
- /vault/zip_metadata_clamav.cvd (Signatures, Inclus)
- /vault/zip_metadata_custom.cvd (Signatures, Inclus)
- /vault/zip_metadata_mussel.cvd (Signatures, Inclus)
-    Fichiers pour métadonnées d'archives signatures.
-    Nécessaire si le métadonnées d'archives option dans phpmussel.ini est
-    activée. Peut enlever si l'option est désactivée (mais les fichiers seront
-    recréés sur réactualiser).
     ~
 
  * Noms du fichiers peut varier basé sur configuration stipulations (dans
@@ -856,6 +867,11 @@
      "general_custom"
      "general_mussel"
    - Vérifier PE (portable exécutable) fichiers (EXE, DLL, etc) contre PE
+     Sectional signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+     "pe_clamav"
+     "pe_custom"
+     "pe_mussel"
+   - Vérifier PE (portable exécutable) fichiers (EXE, DLL, etc) contre PE
      signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
      "exe_clamav"
      "exe_custom"
@@ -877,9 +893,9 @@
      "graphics_mussel"
    - Vérifier archives contenu contre archive métadonnées signatures au cours
      de analyse? 0 = Non, 1 = Oui [Défaut].
-     "zip_metadata_clamav"
-     "zip_metadata_custom"
-     "zip_metadata_mussel"
+     "metadata_clamav"
+     "metadata_custom"
+     "metadata_mussel"
    - Vérifier les noms de fichiers contre signatures basé sur les noms de
      fichiers au cours de analyse? 0 = Non, 1 = Oui [Défaut].
      "filenames_clamav"
@@ -1010,6 +1026,17 @@
      Mais, si vous télécharger quelque chose plus que brut texte, l'activation
      de cette peut créer faux positifs.
      0 - Ne pas bloquer [Défaut], 1 - Bloquer.
+   "corrupted_exe"
+   - Corrompus fichiers et des erreurs d'analyse.
+     0 = Ignorer, 1 = Bloquer [Défaut]. Détecter et bloquer les potentiellement
+     corrompus PE (Portable Executable) fichiers? Souvent (mais pas toujours),
+     lorsque certains aspects d'un PE fichier sont corrompus ou ne peut pas
+     être analysée correctement, il peut être le signe d'une virale infection.
+     Les processus utilisés par la plupart des anti-virus programmes pour
+     détecter les virus dans PE fichiers requérir l'analyse de ces fichiers par
+     certaines méthodes, de ce que, si le programmeur d'un virus est conscient
+     de, seront spécifiquement tenter d'empêcher, en vue de permettre leur
+     virus n'être pas détectée.
  "compatibility" (Catégorie)
  - Compatibilité directives pour phpMussel.
     "ignore_upload_errors"
@@ -1103,6 +1130,9 @@
      fichier non listé blanche ciblée pour l'analyse.
    - "Générales Commandes" (hex_general_commands.csv). Vérifié contre les
      contenus de chaque fichier non listé blanche ciblée pour l'analyse.
+   - "Portable Executable Sectional Signatures" (pe_*). Vérifié contre les
+     contenus de chaque fichier non listé blanche ciblée pour l'analyse et
+     identifié au PE format.
    - "Portable Executable Signatures" (exe_*). Vérifié contre les contenus de
      chaque fichier non listé blanche ciblée pour l'analyse et identifié au PE
      format.
@@ -1114,7 +1144,7 @@
    - "Mach-O Signatures" (macho_*). Vérifié contre les contenus de chaque
      fichier non listé blanche ciblée pour l'analyse et identifié au Mach-O
      format.
-   - "ZIP Métadonnées Signatures" (zip_metadata_*). Vérifié contre le CRC32
+   - "ZIP Métadonnées Signatures" (metadata_*). Vérifié contre le CRC32
      hash et taille du fichier de l'initial fichier contenu à l'intérieur de
      toute archive non listé blanche ciblée pour l'analyse.
    - "Email Signatures" (mail_*). Vérifié contre le $corps variable analysée à
@@ -1139,18 +1169,18 @@
 
  Pour la plupart, phpMussel devrait être assez compatible avec plupart du virus
  détection logiciels. Cependant, conflictualités ont été signalés par un nombre
- d'utilisateurs dans le passé. Cette information ci-dessous est
- VirusTotal.com, et il décrit un certain nombre de faux positifs signalé par
- divers anti-virus programmes contre phpMussel. Bien que cette information ne
- constitue pas une absolue garantie de si oui ou non vous rencontrerez des
- problèmes de compatibilité entre phpMussel et votre anti-virus logiciel, si
- votre logiciel anti-virus est noté comme signalant contre phpMussel, vous
- devriez envisager désactivation avant à travailler avec phpMussel ou devrait
- envisager d'autres options soit votre logiciel anti-virus ou phpMussel.
+ d'utilisateurs dans le passé. Cette information ci-dessous est VirusTotal.com,
+ et il décrit un certain nombre de faux positifs signalé par divers anti-virus
+ programmes contre phpMussel. Bien que cette information ne constitue pas une
+ absolue garantie de si oui ou non vous rencontrerez des problèmes de
+ compatibilité entre phpMussel et votre anti-virus logiciel, si votre logiciel
+ anti-virus est noté comme signalant contre phpMussel, vous devriez envisager
+ désactivation avant à travailler avec phpMussel ou devrait envisager d'autres
+ options soit votre logiciel anti-virus ou phpMussel.
 
- Cette information a été réactualisé le 11 Juin 2014 et est courant pour TOUTES
- les versions de phpMussel, partir de l'initiale version v0.1 travers à le
- dernière version v0.3g au moment de la rédaction cette.
+ Cette information a été réactualisé le 10 Juillet 2014 et est courant pour
+ TOUTES les versions de phpMussel, partir de l'initiale version v0.1 travers à
+ le dernière version v0.4 au moment de la rédaction cette.
 
  Ad-Aware                Pas problèmes connus
  Agnitum                 Pas problèmes connus
@@ -1175,7 +1205,7 @@
  F-Secure                Pas problèmes connus
  Fortinet                Pas problèmes connus
  GData                !  Rapports "Archive.Trojan.Agent.E7C7J7" (v0.3e seule)
- Ikarus               !  Rapports "Trojan.JS.Agent" (v0.3g seule)
+ Ikarus               !  Rapports "Trojan.JS.Agent" (v0.3g à v0.4)
  Jiangmin                Pas problèmes connus
  K7AntiVirus             Pas problèmes connus
  K7GW                    Pas problèmes connus
@@ -1208,5 +1238,5 @@
                                      ~ ~ ~                                     
 
 
-Dernière Réactualisé: 26 Juin 2014
+Dernière Réactualisé: 10 Juillet 2014
 EOF
