@@ -1,4 +1,3 @@
-f2d426b30314e88e5608a59bcf16b031:652:phpMussel-Testfile.MD5
 004010a43054d66bf1d6d32e710ec59e:77824:phpMussel-Trojan.Zbot-00
 01edb194f485c7ae2fb34f08e371b92b:348960:phpMussel-Adware.W32.BrowseMark-08
 02c2ee77cf5aaf8ac03739640c46e822:726013:phpMussel-CWA.Syria-02
@@ -96,6 +95,7 @@ f2d426b30314e88e5608a59bcf16b031:652:phpMussel-Testfile.MD5
 4fb97fa00f60292e6782180f09792753:224416:phpMussel-Virus.V9-09
 4fe963edce5aba79e4d765ac21fe71ef:245800:phpMussel-Adware.W32.CouponServer-03
 4ffc4e4cf1e124f0edae8db55ff1a607:93184:phpMussel-PUP.W32.PassShow-13
+5001ef50c7e869253a7c152a638eab8a:220672:phpMussel-W32.Shell.CaiDao
 50b1d141857487fffe6638f6aea92d8a:332800:phpMussel-PUP.W32.SevereWeatherAlerts-00
 52087b2719e9cee52d20c9d479164391:488816:phpMussel-Adware.W32.Object_Browser-05
 527f7c2645463f2b55aa32ff6b869b8b:1517056:phpMussel-PUP.W32.MyPoints-00
@@ -281,6 +281,7 @@ f01443167573144e3cf25b079a73226d:41472:phpMussel-Trojan.Zbot-02
 f07533086583957ad4a9b6011b0259d1:1495552:phpMussel-PUP.W32.Software.Updater-00
 f0df36c738ead573a4b329e6eb7e0b14:1286232:phpMussel-PUP.W32.SupTab-02
 f2af88404920275f6f21fec9e22cea9f:10240:phpMussel-PUP.Spycar.A-03
+f2d426b30314e88e5608a59bcf16b031:652:phpMussel-Testfile.MD5
 f31ead497b8cbe16895a3b7b201c4eae:2470688:phpMussel-PUP.W32.Conduit-03
 f4f2bd07bfaf360b2ba596d134df76e3:94251:phpMussel-Trojan.Zbot-13
 f4f3fde30f366fc5e8844b52d86d8564:383608:phpMussel-PUP.W32.PCFixSpeed

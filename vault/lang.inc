@@ -31,7 +31,7 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                      ~ ~ ~                                     
- This File: phpMussel v0.4d (10th September 2014) Language Data
+ This File: phpMussel v0.5 (25th September 2014) Language Data
 
  The latest version and future updates can be obtained from the phpMussel
  SourceForge page located at <http://sourceforge.net/projects/phpmussel/>
@@ -66,18 +66,20 @@ if($MusselConfig['general']['lang']=="en")
 	$MusselConfig['lang']['cli_update_restart']=" Restarting phpMussel may be required before updates become apparent.";
 	$MusselConfig['lang']['cli_working']="In progress";
 	$MusselConfig['lang']['corrupted']="corrupted";
-	$MusselConfig['lang']['denied_other']="Télécharger Refusé! Subir Denegado! Upload verweigert! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
+	$MusselConfig['lang']['denied_other']="Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!";
 	$MusselConfig['lang']['denied_reason']="Your upload attempt was blocked for the reasons listed below / &#24744;&#30340;&#19978;&#36733;&#23581;&#35797;&#34987;&#25298;&#32477;&#30340;&#29702;&#30001;&#19979;&#38754;&#21015;&#20986;:";
 	$MusselConfig['lang']['denied']="Upload Denied!";
 	$MusselConfig['lang']['detected_control_characters']="Detected Control Characters";
 	$MusselConfig['lang']['detected']="Detected";
 	$MusselConfig['lang']['failed_to_access']="Failed to access ";
+	$MusselConfig['lang']['file']="File";
 	$MusselConfig['lang']['filesize_limit_exceeded']="Filesize limit exceeded";
 	$MusselConfig['lang']['filetype_blacklisted']="Filetype blacklisted";
 	$MusselConfig['lang']['finished']="Finished";
 	$MusselConfig['lang']['generated_by']="Generated&nbsp;by";
 	$MusselConfig['lang']['invalid_file']="Invalid file";
 	$MusselConfig['lang']['ok']="OK";
+	$MusselConfig['lang']['only_allow_images']="Uploading files other than images isn't permitted";
 	$MusselConfig['lang']['refer_to_scan_kills']=" (refer to ".$MusselConfig['general']['scan_kills']." for details)";
 	$MusselConfig['lang']['scan_aborted']="Scanning aborted";
 	$MusselConfig['lang']['scan_chameleon']="chameleon attack detected";
@@ -107,6 +109,7 @@ if($MusselConfig['general']['lang']=="en")
 	$MusselConfig['lang']['update_no_source']="phpMussel has failed to update itself because it could not connect to a valid update source. Updating manually is recommended.";
 	$MusselConfig['lang']['update_not']="NOT";
 	$MusselConfig['lang']['update_not_available']="No script update is available at this time.";
+	$MusselConfig['lang']['update_not_due']="Not updated: Next update check not due until ";
 	$MusselConfig['lang']['update_not_possible']="A script update is available, but can't be fully updated with this version of the update script. Please update manually.";
 	$MusselConfig['lang']['update_patched']="patched";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Update script file missing! Please reinstall phpMussel.";
@@ -139,18 +142,20 @@ else if($MusselConfig['general']['lang']=="de")
 	$MusselConfig['lang']['cli_update_restart']=" phpMussel muss neu gestartet werden, damit die Aktualisierungen wirksam werden.";
 	$MusselConfig['lang']['cli_working']="Im Gange";
 	$MusselConfig['lang']['corrupted']="besch&#228;digt";
-	$MusselConfig['lang']['denied_other']="Upload Denied! Télécharger Refusé! Subir Denegado! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
+	$MusselConfig['lang']['denied_other']="Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!";
 	$MusselConfig['lang']['denied_reason']="Der Upload wurde aus den unten aufgeführten Gründen blockiert / Your upload attempt was blocked for the reasons listed below:";
 	$MusselConfig['lang']['denied']="Upload verweigert!";
 	$MusselConfig['lang']['detected_control_characters']="Steuerzeichen erkannt";
 	$MusselConfig['lang']['detected']="Entdeckt: ";
 	$MusselConfig['lang']['failed_to_access']="Zugriff fehlgeschlagen auf ";
+	$MusselConfig['lang']['file']="Datei";
 	$MusselConfig['lang']['filesize_limit_exceeded']="Dateigröße überschritten";
 	$MusselConfig['lang']['filetype_blacklisted']="Dateityp auf Blacklist";
 	$MusselConfig['lang']['finished']="Fertig";
 	$MusselConfig['lang']['generated_by']="Generiert&nbsp;von&nbsp;";
 	$MusselConfig['lang']['invalid_file']="Ungültige Datei";
 	$MusselConfig['lang']['ok']="OK";
+	$MusselConfig['lang']['only_allow_images']="Upload von Nicht-Bilddateien ist nicht erlaubt";
 	$MusselConfig['lang']['refer_to_scan_kills']=" (lesen Sie ".$MusselConfig['general']['scan_kills']." für Details)";
 	$MusselConfig['lang']['scan_aborted']="Scan abgebrochen";
 	$MusselConfig['lang']['scan_chameleon']="Chamäleon-Angriff erkannt";
@@ -180,6 +185,7 @@ else if($MusselConfig['general']['lang']=="de")
 	$MusselConfig['lang']['update_no_source']="phpMussel konnte nicht aktualisiert werden, da es sich nicht zu einer gültigen Update-Quelle verbinden konnte. Manuelles Update wird empfohlen.";
 	$MusselConfig['lang']['update_not']="NICHT";
 	$MusselConfig['lang']['update_not_available']="Es steht zur Zeit kein Scriptupdate zur Verfügung.";
+	$MusselConfig['lang']['update_not_due']="Nicht aktualisiert: Nächstes Update nicht erwartet erst ";
 	$MusselConfig['lang']['update_not_possible']="Ein Scriptupdate ist verfügbar, kann aber nicht vollständig mit dieser Version des Update-Scripts aktualisiert werden. Bitte aktualisieren Sie manuell.";
 	$MusselConfig['lang']['update_patched']="gepatcht";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Update-Script fehlt! Bitte installieren Sie phpMussel erneut.";
@@ -212,18 +218,20 @@ else if($MusselConfig['general']['lang']=="es")
 	$MusselConfig['lang']['cli_update_restart']=" Reinicio phpMussel puede ser requerido antes de las actualizaciones se hacen\n evidentes.";
 	$MusselConfig['lang']['cli_working']="En operación";
 	$MusselConfig['lang']['corrupted']="corrompido";
-	$MusselConfig['lang']['denied_other']="Upload Denied! Télécharger Refusé! Upload verweigert! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
+	$MusselConfig['lang']['denied_other']="Upload Denied! Télécharger Refusé! Upload verweigert! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!";
 	$MusselConfig['lang']['denied_reason']="Intento de subida ha sido bloqueada por las razones que se indican a continuación / Your upload attempt was blocked for the reasons listed below:";
-	$MusselConfig['lang']['denied']="Subir Denegado!";
+	$MusselConfig['lang']['denied']="Carga Negado!";
 	$MusselConfig['lang']['detected_control_characters']="Detectado Control Caracteres";
 	$MusselConfig['lang']['detected']="Detectado";
 	$MusselConfig['lang']['failed_to_access']="No se pudo acceso ";
+	$MusselConfig['lang']['file']="Archivo";
 	$MusselConfig['lang']['filesize_limit_exceeded']="Excede el límite del archivo tamaño";
 	$MusselConfig['lang']['filetype_blacklisted']="Tipo de archivo en la lista negra";
 	$MusselConfig['lang']['finished']="Terminado";
 	$MusselConfig['lang']['generated_by']="Generado&nbsp;por";
 	$MusselConfig['lang']['invalid_file']="Archivo no válido";
 	$MusselConfig['lang']['ok']="OK";
+	$MusselConfig['lang']['only_allow_images']="Subir de archivos que no son imágenes no está permitido";
 	$MusselConfig['lang']['refer_to_scan_kills']=" (referir a ".$MusselConfig['general']['scan_kills']." para más detalles)";
 	$MusselConfig['lang']['scan_aborted']="Escaneo abortado!";
 	$MusselConfig['lang']['scan_chameleon']="camaleón ataque detectado";
@@ -253,6 +261,7 @@ else if($MusselConfig['general']['lang']=="es")
 	$MusselConfig['lang']['update_no_source']="phpMussel ha fracasado de actualización porque no se pudo conectar a una válido actualización fuente. Se recomienda actualizar manualmente.";
 	$MusselConfig['lang']['update_not']="NO";
 	$MusselConfig['lang']['update_not_available']="No script actualización está disponible en este momento.";
+	$MusselConfig['lang']['update_not_due']="No se actualizado: Próxima actualización no espera hasta ";
 	$MusselConfig['lang']['update_not_possible']="Una script actualización está disponible, pero no puede ser completamente actualizada con esta versión de la script de actualización. Por favor, actualizar manualmente.";
 	$MusselConfig['lang']['update_patched']="parcheado";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Actualización script archivo faltan! Por favor, reinstalar phpMussel.";
@@ -285,18 +294,20 @@ else if($MusselConfig['general']['lang']=="fr")
 	$MusselConfig['lang']['cli_update_restart']=" Redémarrage phpMussel peut être nécessaire avant les réactualisations deviennent apparents.";
 	$MusselConfig['lang']['cli_working']="En cours";
 	$MusselConfig['lang']['corrupted']="corrompu";
-	$MusselConfig['lang']['denied_other']="Upload Denied! Subir Denegado! Upload verweigert! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
+	$MusselConfig['lang']['denied_other']="Upload Denied! Carga Negado! Carica Negato! Upload verweigert! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!";
 	$MusselConfig['lang']['denied_reason']="Votre tentative à télécharger a été bloqué pour les raisons énumérées ci-dessous / Your upload attempt was blocked for the reasons listed below:";
 	$MusselConfig['lang']['denied']="Téléchargement Refusé!";
 	$MusselConfig['lang']['detected_control_characters']="Contrôle Caractères Détectés";
 	$MusselConfig['lang']['detected']="Détecté";
 	$MusselConfig['lang']['failed_to_access']="Échec d'accès ";
+	$MusselConfig['lang']['file']="Fichier";
 	$MusselConfig['lang']['filesize_limit_exceeded']="Fichier taille limite dépassé";
 	$MusselConfig['lang']['filetype_blacklisted']="Type de fichier sur la noire liste";
 	$MusselConfig['lang']['finished']="Terminé";
 	$MusselConfig['lang']['generated_by']="Généré&nbsp;par";
 	$MusselConfig['lang']['invalid_file']="Fichier non valide";
 	$MusselConfig['lang']['ok']="Bien";
+	$MusselConfig['lang']['only_allow_images']="Télécharger des fichiers qui ne sont pas images n'est pas autorisée";
 	$MusselConfig['lang']['refer_to_scan_kills']=" (reportez-vous à ".$MusselConfig['general']['scan_kills']." pour détails)";
 	$MusselConfig['lang']['scan_aborted']="Analyse avorté";
 	$MusselConfig['lang']['scan_chameleon']="caméléon attaque détecté";
@@ -326,6 +337,7 @@ else if($MusselConfig['general']['lang']=="fr")
 	$MusselConfig['lang']['update_no_source']="phpMussel n'a pas réussi à réactualiser parce qu'il ne pouvait pas connecter à une valide réactualisation source. Réactualisation manuelle est recommandé.";
 	$MusselConfig['lang']['update_not']="PAS";
 	$MusselConfig['lang']['update_not_available']="Aucune réactualisation du script est disponible à ce moment.";
+	$MusselConfig['lang']['update_not_due']="N'a pas été réactualisé: Suivante réactualiser n'attendu pas avant ";
 	$MusselConfig['lang']['update_not_possible']="Une réactualisation du script est disponible, mais ne peut pas être entièrement réactualisé avec cette version du réactualisation script. S'il vous plaît réactualiser manuellement.";
 	$MusselConfig['lang']['update_patched']="patché";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Réactualisation script fichier manquant! S'il vous plaît, réinstaller phpMussel.";
@@ -358,18 +370,20 @@ else if($MusselConfig['general']['lang']=="id")
 	$MusselConfig['lang']['cli_update_restart']=" Restart phpMussel mungkin diperlukan sebelum perbarui menjadi jelas.";
 	$MusselConfig['lang']['cli_working']="Dalam proses";
 	$MusselConfig['lang']['corrupted']="rusak";
-	$MusselConfig['lang']['denied_other']="Upload Denied! Télécharger Refusé! Subir Denegado! Upload verweigert! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
+	$MusselConfig['lang']['denied_other']="Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!";
 	$MusselConfig['lang']['denied_reason']="Upload diblokir karena alasan yang tercantum di bawah / Your upload attempt was blocked for the reasons listed below:";
 	$MusselConfig['lang']['denied']="Upload Ditolak!";
 	$MusselConfig['lang']['detected_control_characters']="Terdeteksi Kontrol Karakter";
 	$MusselConfig['lang']['detected']="Terdeteksi";
 	$MusselConfig['lang']['failed_to_access']="Gagal untuk akses ";
+	$MusselConfig['lang']['file']="File";
 	$MusselConfig['lang']['filesize_limit_exceeded']="File ukuran batas melebihi";
 	$MusselConfig['lang']['filetype_blacklisted']="File jenis pada hitam daftar";
 	$MusselConfig['lang']['finished']="Selesai";
 	$MusselConfig['lang']['generated_by']="Dihasilkan&nbsp;oleh";
 	$MusselConfig['lang']['invalid_file']="File tidak valid";
 	$MusselConfig['lang']['ok']="Oke";
+	$MusselConfig['lang']['only_allow_images']="Upload file selain gambar tidak diizinkan";
 	$MusselConfig['lang']['refer_to_scan_kills']=" (mengacu pada ".$MusselConfig['general']['scan_kills']." untuk rincian)";
 	$MusselConfig['lang']['scan_aborted']="Memindai dibatalkan";
 	$MusselConfig['lang']['scan_chameleon']="bunglon serangan terdeteksi";
@@ -399,6 +413,7 @@ else if($MusselConfig['general']['lang']=="id")
 	$MusselConfig['lang']['update_no_source']="phpMussel gagal untuk sendiri update karena tidak bisa terhubung ke valid update sumber. Update secara manual dianjurkan.";
 	$MusselConfig['lang']['update_not']="TIDAK";
 	$MusselConfig['lang']['update_not_available']="Skrip update yang tidak tersedia saat ini.";
+	$MusselConfig['lang']['update_not_due']="Tidak diperbarui: Berikutnya diperbarui cek tidak diharapkan sampai ";
 	$MusselConfig['lang']['update_not_possible']="Skrip update yang tersedia, tetapi tidak dapat sepenuhnya diupdate dengan ini update skrip versi. Silahkan update secara manual.";
 	$MusselConfig['lang']['update_patched']="ditambal";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Perbarui file script hilang! Silakan instal ulang phpMussel.";
@@ -431,18 +446,20 @@ else if($MusselConfig['general']['lang']=="it")
 	$MusselConfig['lang']['cli_update_restart']=" Riavvio di phpMussel può essere richiesto prima che gli aggiornamenti\n diventano evidenti.";
 	$MusselConfig['lang']['cli_working']="In corso";
 	$MusselConfig['lang']['corrupted']="corrotto";
-	$MusselConfig['lang']['denied_other']="Upload Denied! Télécharger Refusé! Subir Denegado! Upload verweigert! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
+	$MusselConfig['lang']['denied_other']="Upload Denied! Télécharger Refusé! Carga Negado! Upload verweigert! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!";
 	$MusselConfig['lang']['denied_reason']="Il tentativo di caricamento è stato bloccato per i motivi elencati di seguito / Your upload attempt was blocked for the reasons listed below:";
 	$MusselConfig['lang']['denied']="Carica Negato!";
 	$MusselConfig['lang']['detected_control_characters']="Controllo Caratteri Rilevati";
 	$MusselConfig['lang']['detected']="Rilevato";
 	$MusselConfig['lang']['failed_to_access']="Fallimento all'accesso ";
+	$MusselConfig['lang']['file']="File";
 	$MusselConfig['lang']['filesize_limit_exceeded']="File dimensione limite superato";
 	$MusselConfig['lang']['filetype_blacklisted']="Tipo di file sulla nera lista";
 	$MusselConfig['lang']['finished']="Finito";
 	$MusselConfig['lang']['generated_by']="Generato&nbsp;da";
 	$MusselConfig['lang']['invalid_file']="File non valido";
 	$MusselConfig['lang']['ok']="Bene";
+	$MusselConfig['lang']['only_allow_images']="Upload di file che non sono immagini non è consentito";
 	$MusselConfig['lang']['refer_to_scan_kills']=" (riferimento alla ".$MusselConfig['general']['scan_kills']." per i dettagli)";
 	$MusselConfig['lang']['scan_aborted']="Scansione interrotta";
 	$MusselConfig['lang']['scan_chameleon']="camaleonte attacco rilevato";
@@ -472,6 +489,7 @@ else if($MusselConfig['general']['lang']=="it")
 	$MusselConfig['lang']['update_no_source']="phpMussel non è riuscito ad aggiornare perché non poteva connettersi a un valido aggiornamento origine. Aggiornamento manuale è consigliato.";
 	$MusselConfig['lang']['update_not']="NON";
 	$MusselConfig['lang']['update_not_available']="Nessun script aggiornamento è disponibile in questo momento.";
+	$MusselConfig['lang']['update_not_due']="Non aggiornato: Prossimo aggiornamenti verificare non dovuta fino ";
 	$MusselConfig['lang']['update_not_possible']="Un script aggiornamento è disponibile, ma non può essere completamente aggiornato con questa versione dello aggiornamento script. Si prega aggiornare manualmente.";
 	$MusselConfig['lang']['update_patched']="patchato";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Aggiornare script file è manca! Prego, reinstallare phpMussel.";
@@ -504,18 +522,20 @@ else if($MusselConfig['general']['lang']=="nl")
 	$MusselConfig['lang']['cli_update_restart']=" Herstarten phpMussel kan nodig zijn voordat updates zichtbaar worden.";
 	$MusselConfig['lang']['cli_working']="Aan de gang";
 	$MusselConfig['lang']['corrupted']="beschadigd";
-	$MusselConfig['lang']['denied_other']="Upload Denied! Télécharger Refusé! Subir Denegado! Upload verweigert! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
+	$MusselConfig['lang']['denied_other']="Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!";
 	$MusselConfig['lang']['denied_reason']="De upload poging werd geblokkeerd voor de hieronder vermelde redenen / Your upload attempt was blocked for the reasons listed below:";
 	$MusselConfig['lang']['denied']="Upload Geweigerd!";
 	$MusselConfig['lang']['detected_control_characters']="Gedetecteerd Controle Karakters";
 	$MusselConfig['lang']['detected']="Gedetecteerd";
 	$MusselConfig['lang']['failed_to_access']="Mislukt om toegang ";
+	$MusselConfig['lang']['file']="Bestand";
 	$MusselConfig['lang']['filesize_limit_exceeded']="Bestandsgrootte limiet overschreden";
 	$MusselConfig['lang']['filetype_blacklisted']="Bestandstype in zwarte lijst";
 	$MusselConfig['lang']['finished']="Afgewerkt";
 	$MusselConfig['lang']['generated_by']="Gegenereerde&nbsp;door";
 	$MusselConfig['lang']['invalid_file']="Ongeldig bestand";
 	$MusselConfig['lang']['ok']="OK";
+	$MusselConfig['lang']['only_allow_images']="Uploaden van niet-beeldbestanden is niet toegestaan";
 	$MusselConfig['lang']['refer_to_scan_kills']=" (verwijzen naar ".$MusselConfig['general']['scan_kills']." voor meer informatie)";
 	$MusselConfig['lang']['scan_aborted']="Scannen afgebroken";
 	$MusselConfig['lang']['scan_chameleon']="kameleon aanval gedetecteerd";
@@ -545,6 +565,7 @@ else if($MusselConfig['general']['lang']=="nl")
 	$MusselConfig['lang']['update_no_source']="phpMussel heeft mislukt te bijwerken, omdat het niet kon verbinden met een geldige bijwerkenbron. Handmatig bijwerk zijn aanbevolen.";
 	$MusselConfig['lang']['update_not']="NIET";
 	$MusselConfig['lang']['update_not_available']="Geen script bijwerk beschikbaar op dit moment.";
+	$MusselConfig['lang']['update_not_due']="Niet bijgewerkt: Volgende update check niet te wijten is tot ";
 	$MusselConfig['lang']['update_not_possible']="Een script bijwerk zijn beschikbaar, maar kan niet worden volledig bijgewerkt met deze versie van de bijwerkscript. Alstublieft bijwerken handmatig.";
 	$MusselConfig['lang']['update_patched']="versteld";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Update script bestand vermist! Opnieuw installeer phpMussel.";
@@ -577,18 +598,20 @@ else if($MusselConfig['general']['lang']=="pt")
 	$MusselConfig['lang']['cli_update_restart']=" Reiniciando phpMussel podem ser necessários antes que as atualizações se\n tornam aparentes.";
 	$MusselConfig['lang']['cli_working']="Em processo";
 	$MusselConfig['lang']['corrupted']="corrompido";
-	$MusselConfig['lang']['denied_other']="Upload Denied! Télécharger Refusé! Subir Denegado! Upload verweigert! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
+	$MusselConfig['lang']['denied_other']="Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!";
 	$MusselConfig['lang']['denied_reason']="Carregamento tentativa foi bloqueado pelos motivos a seguir indicados / Your upload attempt was blocked for the reasons listed below:";
 	$MusselConfig['lang']['denied']="Carregar Negado!";
 	$MusselConfig['lang']['detected_control_characters']="Detectados Controle Caracteres";
 	$MusselConfig['lang']['detected']="Detectado";
 	$MusselConfig['lang']['failed_to_access']="Falha ao acesso ";
+	$MusselConfig['lang']['file']="Arquivo";
 	$MusselConfig['lang']['filesize_limit_exceeded']="Arquivo tamanho limite excedido";
 	$MusselConfig['lang']['filetype_blacklisted']="Tipo de arquivo está na negra lista";
 	$MusselConfig['lang']['finished']="Terminado";
 	$MusselConfig['lang']['generated_by']="Gerado&nbsp;por";
 	$MusselConfig['lang']['invalid_file']="Inválido arquivo";
 	$MusselConfig['lang']['ok']="OK";
+	$MusselConfig['lang']['only_allow_images']="Carregar de arquivos que não são imagens não é permitida";
 	$MusselConfig['lang']['refer_to_scan_kills']=" (referem a ".$MusselConfig['general']['scan_kills']." para detalhes)";
 	$MusselConfig['lang']['scan_aborted']="Verificação abortado";
 	$MusselConfig['lang']['scan_chameleon']="camaleão ataque detectado";
@@ -618,6 +641,7 @@ else if($MusselConfig['general']['lang']=="pt")
 	$MusselConfig['lang']['update_no_source']="phpMussel falhou a atualizar-se porque não pôde conectar a uma válido atualização fonte. Atualizando manualmente é recomendado.";
 	$MusselConfig['lang']['update_not']="NÃO";
 	$MusselConfig['lang']['update_not_available']="Nenhuma script atualização está disponível no momento.";
+	$MusselConfig['lang']['update_not_due']="Não actualizado: Próximo atualização verificando não devido até ";
 	$MusselConfig['lang']['update_not_possible']="Uma script atualização está disponível, mas não pode ser totalmente atualizado com esta versão do atualização script. Por favor atualize manualmente.";
 	$MusselConfig['lang']['update_patched']="remendado";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Atualização script arquivo faltando! Por favor, reinstale phpMussel.";

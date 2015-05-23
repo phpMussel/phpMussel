@@ -549,9 +549,12 @@
     Test file for testing phpMussel metadata signatures and for testing GZ file
     support on your system.
     ~
- /_testfiles/metadata_testfile.txt.zip (Test file, Included)
+ /_testfiles/metadata_testfile.zip (Test file, Included)
     Test file for testing phpMussel metadata signatures and for testing ZIP
     file support on your system.
+    ~
+ /_testfiles/ole_testfile.ole (Test file, Included)
+    Test file for testing phpMussel OLE signatures.
     ~
  /_testfiles/pe_sectional_testfile.exe (Test file, Included)
     Test file for testing phpMussel PE Sectional signatures.
@@ -674,6 +677,7 @@
  /vault/mail_custom_standard.cvd (Signatures, Included)
  /vault/mail_mussel_regex.cvd (Signatures, Included)
  /vault/mail_mussel_standard.cvd (Signatures, Included)
+ /vault/mail_mussel_standard.map (Signatures, Included)
     Files for signatures used by the phpMussel_mail() function.
     Required if the phpMussel_mail() function is used in any way.
     Can remove if it is not used (but files will be recreated on update).
@@ -690,6 +694,18 @@
  /vault/metadata_mussel.cvd (Signatures, Included)
     Files for archive metadata signatures.
     Required if archive metadata signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
+    ~
+ /vault/ole_clamav_regex.cvd (Signatures, Included)
+ /vault/ole_clamav_regex.map (Signatures, Included)
+ /vault/ole_clamav_standard.cvd (Signatures, Included)
+ /vault/ole_clamav_standard.map (Signatures, Included)
+ /vault/ole_custom_regex.cvd (Signatures, Included)
+ /vault/ole_custom_standard.cvd (Signatures, Included)
+ /vault/ole_mussel_regex.cvd (Signatures, Included)
+ /vault/ole_mussel_standard.cvd (Signatures, Included)
+    Files for OLE signatures.
+    Required if OLE signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
  /vault/pe_clamav.cvd (Signatures, Included)
@@ -862,13 +878,13 @@
      "html_clamav"
      "html_custom"
      "html_mussel"
-   - Check PE (portable executable) files (EXE, DLL, etc) against PE Sectional
+   - Check PE (Portable Executable) files (EXE, DLL, etc) against PE Sectional
      signatures when scanning?
      0 = No, 1 = Yes [Default].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
-   - Check PE (portable executable) files (EXE, DLL, etc) against PE signatures
+   - Check PE (Portable Executable) files (EXE, DLL, etc) against PE signatures
      when scanning?
      0 = No, 1 = Yes [Default].
      "exe_clamav"
@@ -894,13 +910,17 @@
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
+   - Check OLE objects against OLE signatures when scanning?
+     0 = No, 1 = Yes [Default].
+     "ole_clamav"
+     "ole_custom"
+     "ole_mussel"
    - Check filenames against filename based signatures when scanning?
      0 = No, 1 = Yes [Default].
      "filenames_clamav"
      "filenames_custom"
      "filenames_mussel"
-   - Allow scanning with phpMussel_mail()?
-     0 = No, 1 = Yes [Default].
+   - Allow scanning with phpMussel_mail()? 0 = No, 1 = Yes [Default].
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
@@ -1015,7 +1035,7 @@
      0 - Don't block [Default], 1 - Block.
    "corrupted_exe"
    - Corrupted files and parse errors. 0 = Ignore, 1 = Block [Default].
-     Detect and block potentially corrupted PE (portable executable) files?
+     Detect and block potentially corrupted PE (Portable Executable) files?
      Often (but not always), when certain aspects of a PE file are corrupted or
      can't be parsed correctly, it can be indicative of a viral infection. The
      processes used by most anti-virus programs to detect viruses in PE files
@@ -1032,14 +1052,15 @@
    - Optional limitation or threshold to the length of raw data to which
      phpMussel is permitted to read and scan (in case there are any noticeable
      performance issues whilst scanning). Value is an integer representing
-     filesize in KB. Default = 32768 (32MB). Generally, this value shouldn't be
-     less than the average filesize of file uploads that you want and expect to
-     receive to your server or website, shouldn't be more than the
-     filesize_limit directive, and shouldn't be more than roughly one fifth of
-     the total allowable memory allocation granted to php via the php.ini
-     configuration file. This directive exists to try to prevent phpMussel from
-     using up too much memory (which would prevent it from being able to
-     successfully scan files above a certain filesize).
+     filesize in KB. Default = 32768 (32MB). Zero or null value disables the
+     threshold. Generally, this value shouldn't be less than the average
+     filesize of file uploads that you want and expect to receive to your
+     server or website, shouldn't be more than the filesize_limit directive,
+     and shouldn't be more than roughly one fifth of the total allowable memory
+     allocation granted to php via the php.ini configuration file. This
+     directive exists to try to prevent phpMussel from using up too much memory
+     (which would prevent it from being able to successfully scan files above a
+     certain filesize).
  "compatibility" (Category)
  - Compatibility directives for phpMussel.
     "ignore_upload_errors"
@@ -1057,7 +1078,15 @@
       to not attempt to initiate scans for such empty elements, ignore them
       when found and to not return any related error messages, thus allowing
       continuation of the page request. 0 - OFF, 1 - ON.
-
+    "only_allow_images"
+    - If you only expect or only intend to allow images to be uploaded to your
+      system or CMS, and if you absolutely do not require any files other than
+      images to be uploaded to your system or CMS, this directive should be
+      switched ON, but should otherwise be switched OFF. If this directive is
+      switched ON, it will instruct phpMussel to indiscriminately block any
+      uploads identified as non-image files, without scanning them. This may 
+      reduce processing time and memory usage for attempted uploads of
+      non-image files. 0 - OFF, 1 - ON.
 
                                      ~ ~ ~                                     
 
@@ -1080,8 +1109,8 @@
    All Whitelist signatures follow the format:
     HASH:FILESIZE:TYPE
    Where HASH is the MD5 hash of an entire file, FILESIZE is the total size
-   of that file and TYPE is the type of signatures the whitelisted file is to be
-   immune against.
+   of that file and TYPE is the type of signatures the whitelisted file is to
+   be immune against.
 
  = FILENAME SIGNATURES =
    All filename signatures follow the format:
@@ -1145,9 +1174,9 @@
       every non-whitelisted HTML file targeted for scanning.
    - "General Commands" (hex_general_commands.csv). Checked against the
       contents of every non-whitelisted file targeted for scanning.
-   - "Portable Executable Sectional Signatures" (pe_*). Checked against the
-      contents of every non-whitelisted targeted for scanning and matched to
-      the PE format.
+   - "Portable Executable Sectional Signatures" (pe_*). Checked against the MD5
+      hash of each PE section and the filesize of every non-whitelisted file
+      targeted for scanning and matched to the PE format.
    - "Portable Executable Signatures" (exe_*). Checked against the contents of
       every non-whitelisted targeted for scanning and matched to the PE format.
    - "ELF Signatures" (elf_*). Checked against the contents of every
@@ -1161,6 +1190,8 @@
    - "Archive Metadata Signatures" (metadata_*). Checked against the CRC32 hash
       and filesize of the initial file contained inside of any non-whitelisted
       archive targeted for scanning.
+   - "OLE Signatures" (ole_*). Checked against the contents of every
+      non-whitelisted OLE object targeted for scanning.
    - "Email Signatures" (mail_*). Checked against the $body variable parsed to
       the phpMussel_mail() function, which is intended to be the body of email
       messages or similar entities (potentially forum posts and etcetera).
@@ -1170,7 +1201,6 @@
       in their whitelist entry.
      (Note that any of these signatures may be easily disabled via
       phpmussel.ini).
-
 
                                      ~ ~ ~                                     
 
@@ -1196,8 +1226,8 @@
  with phpMussel or should consider alternative options to either your
  anti-virus software or phpMussel.
 
- This information was last updated 13th September 2014 and is current for all
- phpMussel releases of the two most recent minor versions (v0.3-v0.4d) at the
+ This information was last updated 25th September 2014 and is current for all
+ phpMussel releases of the two most recent minor versions (v0.4-v0.5) at the
  time of writing this.
 
  Ad-Aware                Geen bekend problemen
@@ -1206,18 +1236,15 @@
  AntiVir                 Geen bekend problemen
  Antiy-AVL               Geen bekend problemen
  Avast                !  Berichten "JS:ScriptSH-inf [Trj]"
-                         - Alle behalve v0.3d, v0.4d
  AVG                     Geen bekend problemen
  Baidu-International     Geen bekend problemen
  BitDefender             Geen bekend problemen
- Bkav                 !  Berichten "VEX408f.Webshell"
-                         - v0.3 tot v0.3c
+ Bkav                    Geen bekend problemen
  ByteHero                Geen bekend problemen
  CAT-QuickHeal           Geen bekend problemen
  ClamAV                  Geen bekend problemen
  CMC                     Geen bekend problemen
- Commtouch            !  Berichten "W32/GenBl.857A3D28!Olympus"
-                         - v0.3e enigst
+ Commtouch               Geen bekend problemen
  Comodo                  Geen bekend problemen
  DrWeb                   Geen bekend problemen
  Emsisoft                Geen bekend problemen
@@ -1225,10 +1252,8 @@
  F-Prot                  Geen bekend problemen
  F-Secure                Geen bekend problemen
  Fortinet                Geen bekend problemen
- GData                !  Berichten "Archive.Trojan.Agent.E7C7J7"
-                         - v0.3e enigst
+ GData                   Geen bekend problemen
  Ikarus               !  Berichten "Trojan.JS.Agent"
-                         - v0.3g tot v0.4c
  Jiangmin                Geen bekend problemen
  K7AntiVirus             Geen bekend problemen
  K7GW                    Geen bekend problemen
@@ -1241,19 +1266,17 @@
  MicroWorld-eScan        Geen bekend problemen
  NANO-Antivirus          Geen bekend problemen
  Norman               !  Berichten "Kryptik.BQS"
-                         - Alle behalve v0.3d, v0.3e, v0.4d
  nProtect                Geen bekend problemen
  Panda                   Geen bekend problemen
  Qihoo-360               Geen bekend problemen
  Rising                  Geen bekend problemen
  Sophos                  Geen bekend problemen
  SUPERAntiSpyware        Geen bekend problemen
- Symantec                Geen bekend problemen
+ Symantec             !  Berichten "WS.Reputation.1"
  TheHacker               Geen bekend problemen
  TotalDefense            Geen bekend problemen
  TrendMicro              Geen bekend problemen
  TrendMicro-HouseCall !  Berichten "Suspici.450F5936"
-                         - v0.3d tot v0.4c
  VBA32                   Geen bekend problemen
  VIPRE                   Geen bekend problemen
  ViRobot                 Geen bekend problemen
@@ -1262,5 +1285,5 @@
                                      ~ ~ ~                                     
 
 
-Laatste Bijgewerkt: 13 September 2014 (2014.09.13).
+Laatste Bijgewerkt: 25 September 2014 (2014.09.25).
 EOF

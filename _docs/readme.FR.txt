@@ -259,7 +259,7 @@
  analyse d'autres fichiers et/ou répertoires spécifiés par la fonction
  ci-dessus, inclus dans phpMussel est une fonction destinée pour l'analyse du
  corps des courriels messages. Cette fonction se comporte comme la standard
- phpMussel() fonction, mais se concentre uniquement sur ??la correspondance
+ phpMussel() fonction, mais se concentre uniquement sur la correspondance
  contre les ClamAV courriels basées signatures. Je n'ai pas attaché ces
  signatures dans la standard phpMussel() fonction, parce que il est hautement
  improbable que vous auriez trouver le corps d'un entrant message dans le
@@ -582,9 +582,12 @@
     Test fichier à test phpMussel métadonnées signatures et pour tester GZ
     fichier support sur votre système.
     ~
- /_testfiles/metadata_testfile.txt.zip (Test fichier, Inclu)
+ /_testfiles/metadata_testfile.zip (Test fichier, Inclu)
     Test fichier à test phpMussel métadonnées signatures et pour tester ZIP
     fichier support sur votre système.
+    ~
+ /_testfiles/ole_testfile.ole (Test fichier, Inclu)
+    Test fichier à test phpMussel OLE signatures.
     ~
  /_testfiles/pe_sectional_testfile.exe (Test fichier, Inclu)
     Test fichier à test phpMussel PE Sectional signatures.
@@ -717,6 +720,7 @@
  /vault/mail_custom_standard.cvd (Signatures, Inclus)
  /vault/mail_mussel_regex.cvd (Signatures, Inclus)
  /vault/mail_mussel_standard.cvd (Signatures, Inclus)
+ /vault/mail_mussel_standard.map (Signatures, Inclus)
     Fichiers pour signatures utilisées par la phpMussel_mail() fonction.
     Nécessaire si la phpMussel_mail() fonction est utilisé en aucune façon.
     Peut enlever si elle n'est pas utilisée (mais les fichiers seront recréés
@@ -737,6 +741,19 @@
     Nécessaire si le métadonnées d'archives option dans phpmussel.ini est
     activée. Peut enlever si l'option est désactivée (mais les fichiers seront
     recréés sur réactualiser).
+    ~
+ /vault/ole_clamav_regex.cvd (Signatures, Inclus)
+ /vault/ole_clamav_regex.map (Signatures, Inclus)
+ /vault/ole_clamav_standard.cvd (Signatures, Inclus)
+ /vault/ole_clamav_standard.map (Signatures, Inclus)
+ /vault/ole_custom_regex.cvd (Signatures, Inclus)
+ /vault/ole_custom_standard.cvd (Signatures, Inclus)
+ /vault/ole_mussel_regex.cvd (Signatures, Inclus)
+ /vault/ole_mussel_standard.cvd (Signatures, Inclus)
+    Fichiers pour OLE signatures.
+    Nécessaire si l'OLE signatures option dans phpmussel.ini est activée. Peut
+    enlever si l'option est désactivée (mais les fichiers seront recréés sur
+    réactualiser).
     ~
  /vault/pe_clamav.cvd (Signatures, Inclus)
  /vault/pe_custom.cvd (Signatures, Inclus)
@@ -924,12 +941,12 @@
      "html_clamav"
      "html_custom"
      "html_mussel"
-   - Vérifier PE (portable exécutable) fichiers (EXE, DLL, etc) contre PE
+   - Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE
      Sectional signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
-   - Vérifier PE (portable exécutable) fichiers (EXE, DLL, etc) contre PE
+   - Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE
      signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
      "exe_clamav"
      "exe_custom"
@@ -954,6 +971,11 @@
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
+   - Vérifier OLE objets contre OLE signatures au cours de analyse?
+     0 = Non, 1 = Oui [Défaut].
+     "ole_clamav"
+     "ole_custom"
+     "ole_mussel"
    - Vérifier les noms de fichiers contre signatures basé sur les noms de
      fichiers au cours de analyse? 0 = Non, 1 = Oui [Défaut].
      "filenames_clamav"
@@ -1106,14 +1128,15 @@
      laquelle phpMussel est autorisé à lire et à analyser (dans le cas où il ya
      remarquable performance problèmes au cours de l'analyse). La valeur est un
      entier représentant la tailles des fichiers en Ko. Défaut = 32768 (32Mo).
-     En général, cette valeur ne doit pas être moins que la moyenne tailles des
-     fichiers des téléchargements que vous voulez et s'attendent à recevoir de
-     votre serveur ou website, ne devrait pas être plus que la filesize_limit
-     directive, et ne devrait pas être plus que d'un cinquième de l'allocation
-     de totale mémoire autorisée à PHP via le php.ini configuration fichier.
-     Cette directive existe pour tenter d'empêcher phpMussel d'utiliser trop de
-     mémoire (ce qui l'empêcherait d'être capable d'analyse fichiers dessus
-     d'une certaine taille avec succès).
+     Zéro ou nulle valeur désactive le seuil. En général, cette valeur ne doit
+     pas être moins que la moyenne tailles des fichiers des téléchargements que
+     vous voulez et s'attendent à recevoir de votre serveur ou website, ne
+     devrait pas être plus que la filesize_limit directive, et ne devrait pas
+     être plus que d'un cinquième de l'allocation de totale mémoire autorisée à
+     PHP via le php.ini configuration fichier. Cette directive existe pour
+     tenter d'empêcher phpMussel d'utiliser trop de mémoire (ce qui
+     l'empêcherait d'être capable d'analyse fichiers dessus d'une certaine
+     taille avec succès).
  "compatibility" (Catégorie)
  - Compatibilité directives pour phpMussel.
     "ignore_upload_errors"
@@ -1133,7 +1156,16 @@
       reconnu et ne pas à retourner tout de connexes messages d'erreur,
       permettant ainsi la continuation de la page demande.
       0 - DÉSACTIVÉ, 1 - ACTIVÉ.
-
+    "only_allow_images"
+    - Si vous seulement attendre ou vouloir d'autoriser images à être
+      téléchargé sur votre système ou CMS, et si vous absolument n'avez pas
+      besoin tous les fichiers autres que les images à être téléchargé sur
+      votre système ou CMS, cette directive devrait être ACTIVÉ, mais devrait
+      autrement être DÉSACTIVÉ. Si cette directive est ACTIVÉ, il va instruire
+      phpMussel à bloquer indistinctement tous téléchargements identifié comme
+      non image fichiers, sans analyser. Cela peut réduire le temps de travail
+      et l'utilisation de la mémoire pour les tentativé téléchargements de non
+      image fichiers. 0 - DÉSACTIVÉ, 1 - ACTIVÉ.
 
                                      ~ ~ ~                                     
 
@@ -1240,6 +1272,8 @@
    - "Archives Métadonnées Signatures" (metadata_*). Vérifié contre le CRC32
       hash et taille de l'initial fichier contenu à l'intérieur de toute
       archive non listé blanche et ciblée pour l'analyse.
+   - "OLE Signatures" (ole_*). Vérifié contre les contenus de chaque objet non
+      listé blanche et ciblée pour l'analyse.
    - "Email Signatures" (mail_*). Vérifié contre le $corps variable analysée à
       la phpMussel_mail() fonction, qui est destiné à être le corps des e-mails
       ou similaire entités (potentiellement messages du forum et etc).
@@ -1248,7 +1282,6 @@
       identifiés fichiers sera immunitaire d'être identifié par le type de
       signature mentionné dans leur entrée de blanche liste.
    (Noter que ces signatures peut être facilement désactivé via phpmussel.ini).
-
 
                                      ~ ~ ~                                     
 
@@ -1275,9 +1308,9 @@
  désactivation avant à travailler avec phpMussel ou devrait envisager d'autres
  options soit votre logiciel anti-virus ou phpMussel.
 
- Cette information a été réactualisé le 13 Septembre 2014 et est courant pour
+ Cette information a été réactualisé le 25 Septembre 2014 et est courant pour
  toutes les phpMussel parutions des deux plus récentes mineures versions
- (v0.3-v0.4d) au moment de la rédaction cette.
+ (v0.4-v0.5) au moment de la rédaction cette.
 
  Ad-Aware                Pas problèmes connus
  Agnitum                 Pas problèmes connus
@@ -1285,18 +1318,15 @@
  AntiVir                 Pas problèmes connus
  Antiy-AVL               Pas problèmes connus
  Avast                !  Rapports "JS:ScriptSH-inf [Trj]"
-                         - Tous sauf v0.3d, v0.4d
  AVG                     Pas problèmes connus
  Baidu-International     Pas problèmes connus
  BitDefender             Pas problèmes connus
- Bkav                 !  Rapports "VEX408f.Webshell"
-                         - v0.3 à v0.3c
+ Bkav                    Pas problèmes connus
  ByteHero                Pas problèmes connus
  CAT-QuickHeal           Pas problèmes connus
  ClamAV                  Pas problèmes connus
  CMC                     Pas problèmes connus
- Commtouch            !  Rapports "W32/GenBl.857A3D28!Olympus"
-                         - v0.3e seule
+ Commtouch               Pas problèmes connus
  Comodo                  Pas problèmes connus
  DrWeb                   Pas problèmes connus
  Emsisoft                Pas problèmes connus
@@ -1304,10 +1334,8 @@
  F-Prot                  Pas problèmes connus
  F-Secure                Pas problèmes connus
  Fortinet                Pas problèmes connus
- GData                !  Rapports "Archive.Trojan.Agent.E7C7J7"
-                         - v0.3e seule
+ GData                   Pas problèmes connus
  Ikarus               !  Rapports "Trojan.JS.Agent"
-                         - v0.3g à v0.4c
  Jiangmin                Pas problèmes connus
  K7AntiVirus             Pas problèmes connus
  K7GW                    Pas problèmes connus
@@ -1320,19 +1348,17 @@
  MicroWorld-eScan        Pas problèmes connus
  NANO-Antivirus          Pas problèmes connus
  Norman               !  Rapports "Kryptik.BQS"
-                         - Tous sauf v0.3d, v0.3e, v0.4d
  nProtect                Pas problèmes connus
  Panda                   Pas problèmes connus
  Qihoo-360               Pas problèmes connus
  Rising                  Pas problèmes connus
  Sophos                  Pas problèmes connus
  SUPERAntiSpyware        Pas problèmes connus
- Symantec                Pas problèmes connus
+ Symantec             !  Rapports "WS.Reputation.1"
  TheHacker               Pas problèmes connus
  TotalDefense            Pas problèmes connus
  TrendMicro              Pas problèmes connus
  TrendMicro-HouseCall !  Rapports "Suspici.450F5936"
-                         - v0.3d à v0.4c
  VBA32                   Pas problèmes connus
  VIPRE                   Pas problèmes connus
  ViRobot                 Pas problèmes connus
@@ -1341,5 +1367,5 @@
                                      ~ ~ ~                                     
 
 
-Dernière Réactualisé: 13 Septembre 2014 (2014.09.13).
+Dernière Réactualisé: 25 Septembre 2014 (2014.09.25).
 EOF

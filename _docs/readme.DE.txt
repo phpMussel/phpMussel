@@ -517,7 +517,7 @@
     möchten.
     ~
  /_testfiles/ascii_standard_testfile.txt (Testdatei, enthalten)
-    Testdatei zur Überprüfung der Erkennung der normierten ASCII Signaturen.
+    Testdatei zur Überprüfung der normierten ASCII-Signaturerkennung.
     ~
  /_testfiles/exe_standard_testfile.exe (Testdatei, enthalten)
     Testdatei zur Überprüfung der PE-Signaturerkennung.
@@ -529,7 +529,7 @@
     Testdatei zur Überprüfung der Grafik-Signaturerkennung.
     ~
  /_testfiles/html_standard_testfile.txt (Testdatei, enthalten)
-    Testdatei zur Überprüfung der Erkennung der normierten HTML Signaturen.
+    Testdatei zur Überprüfung der normierten HTML-Signaturerkennung.
     ~
  /_testfiles/md5_testfile.txt (Testdatei, enthalten)
     Testdatei zur Überprüfung der MD5-Signaturerkennung.
@@ -538,9 +538,12 @@
     Testdatei zur Überprüfung der Metadata-Signaturerkennung und zur
     Überprüfung der GZ-Archivunterstützung Ihres Systems.
     ~
- /_testfiles/metadata_testfile.txt.zip (Testdatei, enthalten)
+ /_testfiles/metadata_testfile.zip (Testdatei, enthalten)
     Testdatei zur Überprüfung der Metadata-Signaturerkennung und zur
     Überprüfung der ZIP-Archivunterstützung Ihres Systems.
+    ~
+ /_testfiles/ole_testfile.ole (Testdatei, enthalten)
+    Testdatei zur Überprüfung der normierten OLE-Signaturerkennung.
     ~
  /_testfiles/pe_sectional_testfile.exe (Testdatei, enthalten)
     Testdatei zur Überprüfung der PE-Sectional-Signaturerkennung.
@@ -550,7 +553,7 @@
     ~
  /vault/.htaccess (Sonstiges, enthalten)
     Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien
-    des Scripts  vor einem nicht authorisierten Zugriff).
+    des Scripts vor einem nicht authorisierten Zugriff).
     ~
  /vault/ascii_clamav_regex.cvd (Signaturen, enthalten)
  /vault/ascii_clamav_regex.map (Signaturen, enthalten)
@@ -673,6 +676,7 @@
  /vault/mail_custom_standard.cvd (Signaturen, enthalten)
  /vault/mail_mussel_regex.cvd (Signaturen, enthalten)
  /vault/mail_mussel_standard.cvd (Signaturen, enthalten)
+ /vault/mail_mussel_standard.map (Signaturen, enthalten)
     Signaturdateien für die Funktion phpMussel_mail().
     Dateien werden auf jeden Fall von der Funktion phpMussel_mail() benötigt.
     Die Dateien können entfernt werden, wenn die Option deaktiviert ist
@@ -694,6 +698,19 @@
     phpmussel.ini aktiviert ist. Die Dateien können entfernt werden, wenn
     die Option deaktiviert ist (Dateien werden bei einem Update neu
     erstellt).
+    ~
+ /vault/ole_clamav_regex.cvd (Signaturen, enthalten)
+ /vault/ole_clamav_regex.map (Signaturen, enthalten)
+ /vault/ole_clamav_standard.cvd (Signaturen, enthalten)
+ /vault/ole_clamav_standard.map (Signaturen, enthalten)
+ /vault/ole_custom_regex.cvd (Signaturen, enthalten)
+ /vault/ole_custom_standard.cvd (Signaturen, enthalten)
+ /vault/ole_mussel_regex.cvd (Signaturen, enthalten)
+ /vault/ole_mussel_standard.cvd (Signaturen, enthalten)
+    Dateien der OLE-Signaturen.
+    Benötigt, wenn die Option "OLE signatures" in der phpmussel.ini aktiviert
+    ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
+    (Dateien werden bei einem Update neu erstellt).
     ~
  /vault/pe_clamav.cvd (Signaturen, enthalten)
  /vault/pe_custom.cvd (Signaturen, enthalten)
@@ -866,13 +883,13 @@
      "html_clamav"
      "html_custom"
      "html_mussel"
-   - Scan von PE-Dateien (portable executable, EXE, DLL, etc.)
+   - Scan von PE-Dateien (Portable Executable, EXE, DLL, etc.)
      mit den PE-Sectional-Signaturen?
      0 = Nein, 1 = Ja [Standardeinstellung].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
-   - Scan von PE-Dateien (portable executable, EXE, DLL, etc.)
+   - Scan von PE-Dateien (Portable Executable, EXE, DLL, etc.)
      mit den PE-Signaturen?
      0 = Nein, 1 = Ja [Standardeinstellung].
      "exe_clamav"
@@ -898,13 +915,17 @@
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
+   - Scan von OLE-Objekten mit den OLE-Signaturen?
+     0 = Nein, 1 = Ja [Standardeinstellung].
+     "ole_clamav"
+     "ole_custom"
+     "ole_mussel"
    - Scan von Dateinamen mit den Dateinamen-Signaturen?
      0 = Nein, 1 = Ja [Standardeinstellung].
      "filenames_clamav"
      "filenames_custom"
      "filenames_mussel"
-   - Scan mit phpMussel_mail()?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+   - Scan mit phpMussel_mail()? 0 = Nein, 1 = Ja [Standardeinstellung].
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
@@ -1036,7 +1057,7 @@
    "corrupted_exe"
    - Defekte Dateien und Parse-Errors.
      0 = Ignorieren, 1 = Blockieren [Standardeinstellung].
-     Soll auf potentiell defekte ausführbare Dateien (PE - portable executable)
+     Soll auf potentiell defekte ausführbare Dateien (PE - Portable Executable)
      geprüft und diese blockiert werden? Oftmals (aber nicht immer), wenn
      bestimmte Aspekte einer PE-Datei beschädigt sind oder nicht korrekt
      verarbeitet werden können, ist dies ein Hinweis auf eine infizierte Datei.
@@ -1045,42 +1066,52 @@
      dieser Tatsache bewußt ist, wird er versuchen, diese Maßnahmen zu
      verhindern, damit der Virus unentdeckt bleibt.
    "decode_threshold"
-   - Optional limitation or threshold to the length of raw data to which within
-     decode commands should be detected (in case there are any noticeable
-     performance issues whilst scanning). Value is an integer representing
-     filesize in KB. Default = 512 (512KB). Zero or null value disables the
-     threshold (removing any such limitation based on filesize).
+   - Optionale Beschränkung oder Schwelle der Menge der Rohdaten, die durch den
+     Decode-Befehl erkannt werden sollen (sofern während des Scanvorgangs
+     spürbare Performance-Probleme auftreten). Der Wert ist ein Integer
+     (Ganzzahl) und repräsentiert die Dateigröße in KB. Standardeinstellung ist
+     512 (512 KB). Null oder ein Null-Wert deaktiviert die Beschränkung
+     (Entfernen aller solcher Einschränkungen basierend auf die Dateigröße).
    "scannable_threshold"
-   - Optional limitation or threshold to the length of raw data to which
-     phpMussel is permitted to read and scan (in case there are any noticeable
-     performance issues whilst scanning). Value is an integer representing
-     filesize in KB. Default = 32768 (32MB). Generally, this value shouldn't be
-     less than the average filesize of file uploads that you want and expect to
-     receive to your server or website, shouldn't be more than the
-     filesize_limit directive, and shouldn't be more than roughly one fifth of
-     the total allowable memory allocation granted to php via the php.ini
-     configuration file. This directive exists to try to prevent phpMussel from
-     using up too much memory (which would prevent it from being able to
-     successfully scan files above a certain filesize).
+   - Optionale Beschränkung oder Schwelle der Menge der Rohdaten, die phpMussel
+     lesen und scannen darf (sofern während des Scanvorgangs spürbare
+     Performance-Probleme auftreten). Der Wert ist ein Integer (Ganzzahl) und
+     repräsentiert die Dateigröße in KB. Standardeinstellung ist 32768 (32 MB).
+     Null oder ein Null-Wert deaktiviert die Beschränkung. Generell sollte
+     dieser Wert nicht kleiner sein als die durchschnittliche Dateigröße von
+     Datei-Uploads, die Sie auf Ihrem Server oder Ihrer Website erwarten,
+     sollte nicht größer sein als die Richtlinie filesize_limit und sollte
+     nicht mehr als ein Fünftel der Gesamtspeicherzuweisung für PHP in der
+     Konfigurationsdatei php.ini. Diese Richtlinie verhindert, dass phpMussel
+     zu viel Speicher benutzt (was phpMussel daran hindern würde, einen Scan
+     ab einer bestimmten Dateigröße erfolgreich durchzuführen).
  "compatibility" (Kategorie)
  - Kompatibilitätsdirektiven für phpMussel.
     "ignore_upload_errors"
-    - Diese Direktive sollte generell AUSgeschaltet bleiben sofern es nicht für
-      die korrekte Funktion von phpMussel auf Ihrem System benötigt wird.
-      Normalerweise, sobald phpMussel bei AUSgeschalteter Direktive ein Element
-      in $_FILES array() erkennt, wird es beginnen, die Dateien, die diese
-      Elemente representieren, zu überprüfen, sollten diese Elemente leer sein,
-      gibt phpMussel eine Fehlermeldung zurück. Dies ist das normale Verhalten
-      von phpMussel. Bei einigen CMS werden allerdings als normales Verhalten
-      leere Elemente in $_FILES zurückgegeben oder Fehlermeldungen ausgelöst,
-      sobald sich dort keine leeren Elemente befinden, in diesem Fall tritt
-      ein Konflikt zwischen dem normalen Verhalten von phpMussel und dem CMS
-      auf. Sollte eine solche Konstellation bei Ihrem CMS zutreffen, so stellen
-      Sie diese Option AN, phpMussel wird somit nicht nach leeren Elementen
-      suchen, Sie bei einem Fund ignorieren und keine zugehörigen
+    - Diese Direktive sollte generell AUS geschaltet bleiben sofern es nicht
+      für die korrekte Funktion von phpMussel auf Ihrem System benötigt wird.
+      Normalerweise, sobald phpMussel bei AUS geschalteter Direktive ein
+      Element in $_FILES array() erkennt, wird es beginnen, die Dateien, die
+      diese Elemente representieren, zu überprüfen, sollten diese Elemente leer
+      sein, gibt phpMussel eine Fehlermeldung zurück. Dies ist das normale
+      Verhalten von phpMussel. Bei einigen CMS werden allerdings als normales
+      Verhalten leere Elemente in $_FILES zurückgegeben oder Fehlermeldungen
+      ausgelöst, sobald sich dort keine leeren Elemente befinden, in diesem
+      Fall tritt ein Konflikt zwischen dem normalen Verhalten von phpMussel und
+      dem CMS auf. Sollte eine solche Konstellation bei Ihrem CMS zutreffen, so
+      stellen Sie diese Option AN, phpMussel wird somit nicht nach leeren
+      Elementen suchen, Sie bei einem Fund ignorieren und keine zugehörigen
       Fehlermeldungen ausgeben, der Request zum Seitenaufruf kann somit
-      fortgesetzt werden. 0 - AUS, 1 - AN.
-
+      fortgesetzt werden. 0 - AUS/OFF, 1 - AN/ON.
+    "only_allow_images"
+    - Wenn Sie nur Bilder erwarten, die auf Ihr System oder CMS hochgeladen
+      werden oder nur Bilder und keine anderen Dateien als Upload erlauben oder
+      benötigen, so sollte diese Direktive aktiviert werden (ON), ansonsten
+      deaktiviert bleiben (OFF). Ist diese Direktive aktiviert, wird phpMussel
+      alle Uploads, die keine Bilddateien sind, blockieren, ohne sie zu
+      scannen. Dies kann die Verarbeitungszeit und Speichernutzung resuzieren,
+      sobald andere Nicht-Bilddateien hochgeladen werden.
+      0 - AUS/OFF, 1 - AN/ON.
 
                                      ~ ~ ~                                     
 
@@ -1170,9 +1201,10 @@
    - "Allgemeine Befehle" (hex_general_commands.csv). Überprüft den Inhalt
       jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft
       werden soll.
-   - "Portable Executable Sectional Signaturen" (pe_*). Überprüft den Inhalt
-      jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft
-      werden soll und dem PE-Format entspricht.
+   - "Portable Executable Sectional Signaturen" (pe_*). Überprüft mittels
+      MD5-Hash des PE-Sektionen und der Dateigröße jeder Datei, die nicht in
+      der Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format
+      entspricht.
    - "Portable Executable Signaturen" (exe_*). Überprüft den Inhalt jeder
       Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden
       soll und dem PE-Format entspricht.
@@ -1188,6 +1220,8 @@
    - "Archiv-Metadata-Signaturen" (metadata_*). Überprüft die CRC32-Prüfsumme
       und Dateigröße der ersten Datei in jedem Archiv, welches nicht in der
       Whitelist aufgeführt ist und überprüft werden soll.
+   - "OLE-Signaturen" (ole_*). Überprüft den Inhalt jeder Objekten, die nicht
+      in der Whitelist aufgeführt ist.
    - "Email-Signaturen" (mail_*). Überprüft mittels der Funktion
       phpMussel_mail() die Variable $body von E-Mail-Nachrichten oder ähnlichen
       Einträgen (Foreneinträge etc.).
@@ -1196,7 +1230,6 @@
       gegen die von der Art der Signaturen in der Whitelist-Eintrag.
    (Beachten Sie, dass jede dieser Signaturen auf einfache Weise in der
     phpmussel.ini deaktiviert werden kann).
-
 
                                      ~ ~ ~                                     
 
@@ -1223,9 +1256,9 @@
  vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen
  überlegen.
 
- Diese Informationen wurden zuletzt am 2014.09.13 aktualisiert und gelten für
+ Diese Informationen wurden zuletzt am 2014.09.25 aktualisiert und gelten für
  alle phpMussel Veröffentlichungen von der beiden letzten Nebenversionen
- (v0.3-v0.4d) zu diesem Zeitpunkt.
+ (v0.4-v0.5) zu diesem Zeitpunkt.
 
  Ad-Aware                Keine bekannten Probleme
  Agnitum                 Keine bekannten Probleme
@@ -1233,18 +1266,15 @@
  AntiVir                 Keine bekannten Probleme
  Antiy-AVL               Keine bekannten Probleme
  Avast                !  Meldet "JS:ScriptSH-inf [Trj]"
-                         - Alle außer v0.3d, v0.4d
  AVG                     Keine bekannten Probleme
  Baidu-International     Keine bekannten Probleme
  BitDefender             Keine bekannten Probleme
- Bkav                 !  Meldet "VEX408f.Webshell"
-                         - v0.3 bis v0.3c
+ Bkav                    Keine bekannten Probleme
  ByteHero                Keine bekannten Probleme
  CAT-QuickHeal           Keine bekannten Probleme
  ClamAV                  Keine bekannten Probleme
  CMC                     Keine bekannten Probleme
- Commtouch            !  Meldet "W32/GenBl.857A3D28!Olympus"
-                         - Nur v0.3e
+ Commtouch               Keine bekannten Probleme
  Comodo                  Keine bekannten Probleme
  DrWeb                   Keine bekannten Probleme
  Emsisoft                Keine bekannten Probleme
@@ -1252,10 +1282,8 @@
  F-Prot                  Keine bekannten Probleme
  F-Secure                Keine bekannten Probleme
  Fortinet                Keine bekannten Probleme
- GData                !  Meldet "Archive.Trojan.Agent.E7C7J7"
-                         - Nur v0.3e
+ GData                   Keine bekannten Probleme
  Ikarus               !  Meldet "Trojan.JS.Agent"
-                         - v0.3g bis v0.4c
  Jiangmin                Keine bekannten Probleme
  K7AntiVirus             Keine bekannten Probleme
  K7GW                    Keine bekannten Probleme
@@ -1268,19 +1296,17 @@
  MicroWorld-eScan        Keine bekannten Probleme
  NANO-Antivirus          Keine bekannten Probleme
  Norman               !  Meldet "Kryptik.BQS"
-                         - Alle außer v0.3d, v0.3e, v0.4d
  nProtect                Keine bekannten Probleme
  Panda                   Keine bekannten Probleme
  Qihoo-360               Keine bekannten Probleme
  Rising                  Keine bekannten Probleme
  Sophos                  Keine bekannten Probleme
  SUPERAntiSpyware        Keine bekannten Probleme
- Symantec                Keine bekannten Probleme
+ Symantec             !  Meldet "WS.Reputation.1"
  TheHacker               Keine bekannten Probleme
  TotalDefense            Keine bekannten Probleme
  TrendMicro              Keine bekannten Probleme
  TrendMicro-HouseCall !  Meldet "Suspici.450F5936"
-                         - v0.3d bis v0.4c
  VBA32                   Keine bekannten Probleme
  VIPRE                   Keine bekannten Probleme
  ViRobot                 Keine bekannten Probleme
@@ -1289,5 +1315,5 @@
                                      ~ ~ ~                                     
 
 
-Zuletzt aktualisiert: 2014.09.13
+Zuletzt aktualisiert: 2014.09.25
 EOF

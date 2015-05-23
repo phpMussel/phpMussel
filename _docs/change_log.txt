@@ -1,40 +1,38 @@
 phpMussel change_log.txt
 
-== CURRENT GOALS AND FUTURE VERSIONING GUIDELINES (Latest: v0.4d) ==
+== CURRENT GOALS AND FUTURE VERSIONING GUIDELINES (Latest: v0.5) ==
 Next major release (v1.0):
 - All planned signature implementations completed, functioning correctly during
   a live test, without any known notable problems.
   Implemented [added/last edited+]:
-   * ELF signatures (stuff for Linux) [v0.2/v0.4d+];
-   * PE signatures (Portable executables; EXEs, DLLs, etc) [v0.2/v0.4d+];
-   * PE Sectional signatures (Sections from portable executables) [v0.4+];
-   * Filename signatures [v0.3/v0.4d+];
-   * General (basic) signatures [v0.1/v0.4d+];
-   * General (extended) signatures [v0.1/v0.4d+];
-   * Graphics signatures [v0.2/v0.4d+];
-   * Mach-O signatures (stuff for Mac and Apple) [v0.2/v0.4d+];
-   * Email signatures [v0.2/v0.4d+];
-   * MD5 signatures [v0.1/0.3g+];
-   * Archive metadata signatures [v0.1/v0.4c+];
-  Partially implemented [added/last edited+]:
-   * ASCII (normalised) signatures (BATs, VBs, etc) [v0.4b/v0.4d+];
-   * HTML (normalised) signatures (HTML, JS, etc) [v0.4c/v0.4d+];
-  Not implemented (those that I hope to get these done at some point);
-   * OLE2 signatures (VBA and DOCX embeds, etc);
-  Not implemented (those that I'm not yet sure if I'll do or not);
-   * Icon signatures (hidden and imposter PEs, etc);
-   * PE metadata signatures;
-   * Container metadata signatures;
-   * Logical signatures (conditional multi-extended signatures);
-   * Android signatures;
+   * Archive metadata signatures [v0.1/v0.5+];
+   * ASCII (normalised) signatures (BATs, VBs, etc) [v0.4b/v0.5+];
+   * ELF signatures (Linux signatures) [v0.2/v0.5+];
+   * Email signatures [v0.2/v0.5+];
+   * Filename signatures [v0.3/v0.5+];
+   * General (basic) signatures [v0.1/v0.5+];
+   * General (extended) signatures [v0.1/v0.5+];
+   * Graphics signatures [v0.2/v0.5+];
+   * HTML (normalised) signatures (HTML, JS, etc) [v0.4c/v0.5+];
+   * Mach-O signatures (Mac, Apple signatures) [v0.2/v0.5+];
+   * MD5 signatures [v0.1/v0.5+];
+   * OLE2 signatures (OpenXML and etc) [v0.5/v0.5+];
+   * PE Sectional signatures (Sections from PE files) [v0.4/v0.5+];
+   * PE signatures (Portable Executables; EXEs, DLLs, etc) [v0.2/v0.5+];
+   * Whitelist signatures [v0.4d/v0.4d+];
+  Not implemented (not yet sure if I'll do these or not);
+   * Logical multi-extended signatures;
+   * Safe browsing signatures;
+   * Bitwise/Android signatures;
 - All pending to-do items completed.
    Currently pending items:
    * Current formats for archive metadata signatures supported are:
      ZIP, BZ, LZF, GZ. At minimum, this should also extend to RAR and 7z.
    * Currently, all formats for archive metadata signatures that are supported,
      with exception to ZIP format, can be scanned recursively. Ideally, ability
-     to scan ZIP files recursively should also be supported at some point (along
-     with all future formats that are planned to be supported).
+     to scan ZIP files recursively should also be supported at some point
+     (along with all future formats that are planned to be supported).
+   * Ability to read and process TAR files.
 - All known bugs fixed (none pending at this time).
 Next and/or subsequent minor releases (v0.X):
 - Any -significant- changes to the script including completing of any of the
@@ -46,9 +44,72 @@ Next and/or subsequent below sub-minor releases and/or re-releases (v0.Xy.Z):
 - Any releases containing no changes to the core code (such as, releases
   containing only either documentation or signature updates), or any releases
   containing changes to the core code without any included signature updates.
-Last Edited: 8th September 2014
+Last Edited: 25th September 2014
 
-=== Version 0.4d (Previous: 0.4c) ===
+=== Version 0.5 (Previous: 0.4d) ===
+SUMMARY:
+Updated to the latest signatures set (55+19429+5).
+Minor release (medium priority).
+
+NEW CHANGES:
+- Completed translation of the documentation to Portuguese, with which,
+  phpMussel now fully supports six languages (English, French, Italian,
+  Indonesian, Portuguese, German) and partially supports an additional two.
+  Refer spambotsecurity.com/forum/viewtopic.php?f=57&t=2929 (2014.09.18).
+- Added the compatibility directive, "only_allow_images" (by default,
+  deactivated). If you only expect or only intend to allow images to be
+  uploaded to your system or CMS, and if you absolutely do not require any
+  files other than images to be uploaded to your system or CMS, this
+  directive should be switched ON, but should otherwise be switched OFF. If
+  this directive is switched ON, it will instruct phpMussel to indiscriminately
+  block any uploads identified as non-image files, without scanning them. This
+  may reduce processing time and memory usage for attempted uploads of
+  non-image files (2014.09.20).
+- Added inclusion of PE Sectional Signatures reconstructions to scan_kills
+  logging for when PE file uploads are attempted and blocked (2014.09.22).
+- Added the ability for phpMussel to detect the presence of and decode unpack()
+  commands, that specify the "H*" format, from within file uploads (extending
+  upon the decoding abilities added to phpMussel within the previous version).
+  I've also added more to the number of signatures that make use of these
+  abilities, allowing phpMussel to protect against a wider-range of popular
+  server and web-based rootkits than the previous version (2014.09.24).
+- Success! As of this version, phpMussel supports OLE2 signatures. I believe
+  that implementation has been done correctly, that it should be working
+  correctly and I've not theorised any clear potential problems, although,
+  given the range of different file formats that the OLE2 signatures are
+  supposed to cover, my lack of access to adequate sample pools to test it
+  against leads me to suggest that I'm only likely to know for sure once I've
+  released it and have received feedback from users. On that note, if you do
+  encounter any problems, please let me know about it. With support for OLE2
+  signatures now implemented, the only ClamAV signatures that aren't yet
+  supported by phpMussel are the logical multi-extended signatures, the
+  safe browsing signatures and the bitwise/android signatures, which comprise
+  an exceptionally small number of signatures - The vast majority of signatures
+  are now supported. There are still a few things yet to be done, but phpMussel
+  is getting very close now to the targets set for the eventual "v1.0" release.
+- The inline mapping used for most non-ClamAV signatures was beginning to
+  become unmanageable for the non-ClamAV mail signatures ("mail_mussel_*.cvd")
+  due to both the large number of signatures it contains and the frequency of
+  changes made to it between releases, so, in order to make things easier, for
+  that particular file, I've opted to use the same signature mapping method I'd
+  been using for most ClamAV signatures for that particular file (external
+  ".map" file).
+- Slightly improved multilingual support for the Update Script ("update.inc").
+- Significant increase in the number of signatures used throughout, both for
+  ClamAV and non-ClamAV signatures and for most signature types.
+- All documentation updated to reflect the changes brought about as of this
+  version of phpMussel.
+
+PROBLEMS/BUGS FIXED:
+- There existed a bug whereby when a file upload was blocked for multiple
+  reasons, and if scan_kills logging was enabled, that the same MD5 signature
+  reconstruction would repeat as many times as how many reasons there were,
+  instead of just the once; Fixed (2014.09.22).
+
+Maikuolan,
+25th September 2014.
+
+=== Version 0.4d (Previous: 0.4c; Next: 0.5) ===
 SUMMARY:
 Updated to the latest signatures set (55+19354+4d).
 Sub-minor release (medium priority).
@@ -79,9 +140,9 @@ NEW CHANGES:
   However, as most of the entries included with the ClamAV signatures are very
   vaguely described and it appeared difficult to determine what most of those
   whitelist entries were actually for, only a very small handful of them have
-  been included with phpMussel (those which I could adequately determine what
-  they were most likely for and for which I was confident enough would not
-  provide any potentially weaknesses to the defenses provided by phpMussel).
+  been included with phpMussel (those that I could adequately determine what
+  they were most likely for and for which I was adequately confident would not
+  provide any potential weaknesses to the defences provided by phpMussel).
   Refer to the README documentation for more details on how this file
   whitelisting ability works.
 - Numerous other minor changes to the Core Script (phpmussel.inc).
@@ -150,8 +211,8 @@ NEW CHANGES:
   (English, French, Indonesian, Italian, German) and -partially- supports an
   additional three (Spanish, Portuguese, Dutch; All three, internal language
   data has been fully translated but translation of the documentation is very
-  incomplete). 5th August 2014.
-  Refer spambotsecurity.com/forum/viewtopic.php?f=57&t=2929
+  incomplete).
+  Refer spambotsecurity.com/forum/viewtopic.php?f=57&t=2929 (2014.08.05).
 - I've -began- working on support for the normalised ASCII signatures, and what
   I've coded thus far is working correctly, though I wouldn't call it anywhere
   near complete yet. Currently, the normalisation method that I've written

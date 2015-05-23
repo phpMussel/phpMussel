@@ -38,11 +38,11 @@
  Este script es gratis software; puede redistribuirlo y/o modificarlo según los
  términos de la GNU General Pública Licencia como publicada por la Free        
  Software Foundation; versión 2 de la licencia, o cualquier posterior versión. 
- Este script se distribuye con la esperanza de que será útil, pero             
- SIN NINGUNA GARANTÍA; también, sin ninguna implícita garantía de              
- COMERCIALIZACIÓN o IDONEIDAD PARA UN PARTICULAR PROPÓSITO. Vea la GNU General 
- Pública Licencia para más detalles.                                           
- <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>              
+ Este script se distribuye con la esperanza de que será útil, pero SIN NINGUNA 
+ GARANTÍA; también, sin ninguna implícita garantía de COMERCIALIZACIÓN o       
+ IDONEIDAD PARA UN PARTICULAR PROPÓSITO. Vea la GNU General Pública Licencia   
+ para más detalles. <http://www.gnu.org/licenses/>                             
+ <http://opensource.org/licenses/>                                             
 
                                      ~ ~ ~                                     
  Este documento y asociado paquete pueden descargar de gratis desde
@@ -53,17 +53,17 @@
 
  2A. CÓMO INSTALAR (PARA NAVEGADORES)
 
- Espero para agilizar este proceso, haciendo un instalador en algún momento en
- la no muy lejano futuro, pero hasta entonces, siga estas instrucciones para
- hacer phpMussel functione en *mayoría de sistemas y CMS:
+ Espero para agilizar este proceso al hacer un instalador en algún momento en
+ un futuro no muy lejano, pero hasta entonces, siga estas instrucciones para ha
+ phpMussel functione en *mayoría de sistemas y CMS:
 
- 1) Por su lectura de este, estoy asumiendo que has descargado un archivada
-    copia de la guión, descomprimido los contenidos y hacer algún lugar en el
-    local ordenador. Desde aquí, usted querrá averiguar dónde en el host o CMS
-    que desea para colocar el contenido. Un directorio como
-    /public_html/phpmussel/ o similar (aunque, no importa que usted elija, a
-    condición de que se algo que estés satisfecho con) será suficiente. Antes
-    usted enviar archivos a su host, seguir leyendo..
+ 1) Con tu leyendo esto, estoy asumiendo que usted ha descargado una archivada
+    copia de la script, descomprimido y tenerlo en algún lugar en su computer.
+    Desde aquí, usted querrá averiguar dónde en el host o CMS que desea para
+    colocar el contenido. Un directorio como /public_html/phpmussel/ o similar
+    (aunque, no importa que usted elija, a condición de que se algo que estés
+    satisfecho con) será suficiente. Antes usted enviar archivos a su host,
+    seguir leyendo..
 
  2) Abrir "phpmussel.php", busque la línea que comienza con "$vault=", y
     reemplazar la cadena entre las siguientes comillas en esa línea con la
@@ -80,9 +80,9 @@
     disponibles operativas opciones para phpMussel. Por encima de cada opción
     debe ser un breve comentario que describe lo que hace y para lo qué sirve.
     Ajuste estas opciones según sus necesidades, según lo que sea apropiado
-    para su particular configuración. Guardar el archivo, cerrar.
+    para su particular configuración. Guardar archivo, cerrar.
 
- 4) Subir el contenido (phpMussel y sus archivos) al directorio que habías
+ 4) Cargar contenido (phpMussel y sus archivos) al directorio que habías
     decidido sobre más temprano (no es necesario el readme.XX.txt archivo o el
     change_log.txt archivo, pero, en su mayoría, usted debe cargar todos).
 
@@ -92,108 +92,112 @@
     de permisos en el pasado en su sistema (por defecto, debe ser algo como
     "755").
 
- 6) Luego, you'll need to "hook" phpMussel to your system or CMS. There are
-    several different ways in which you can "hook" scripts such as phpMussel to
-    your system or CMS, but the easiest is to simply include the script at the
-    beginning of a core file of your system or CMS (one that'll generally
-    always be loaded when someone accesses any page across your website) using
-    a require or include command. Usually, this'll be something stored in a
-    directory such as "/includes", "/assets" or "/functions", and will often be
-    named something like "init.php", "common_functions.php", "functions.php" or
-    similar. You'll have to work out which file this is for your situation.
-    To do this, insert the following line of code to the very beginning of that
-    core file, replacing the string contained inside the quotation marks with
-    the exact address of the "phpmussel.php" file (local address, not the HTTP
-    address; will look similar to the vault address mentioned earlier).
+ 6) Luego, tendrás que phpMussel "gancho" para el sistema o CMS. Hay varias
+    maneras en que usted puede "gancho" scripts como phpMussel a su sistema o
+    CMS, pero lo más fácil es simplemente incluir el script al principio de un
+    núcleo archivo de su sistema o CMS (uno que va por lo general siempre se va
+    cargado cuando alguien accede cualquier página a través de su website)
+    utilizando un require o include comando. Por lo general, esto va ser algo
+    almacenado en un directorio como "/includes", "/assets" o "/functions", y
+    será menudo llamado algo así como "init.php", "common_functions.php",
+    "functions.php" o similar. Vas a tener que averiguar qué archivo se por su
+    situación. Para ello, inserte la siguiente línea de código al principio de
+    ese núcleo archivo, con sustitución de la string contenida dentro las
+    comillas con la exacta dirección del "phpmussel.php" archivo (local
+    dirección, no la HTTP dirección; que será similar a la "vault" dirección
+    mencionó anteriormente).
 
     <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
 
-    Save file, close, reupload.
+    Guardar archivo, cerrarla, cargar de nuevo.
 
- 7) At this point, you're done! However, you should probably test it out to
-    make sure it's working properly. To test out file upload protections,
-    attempt to upload the testing files included in the package under
-    "_testfiles" to your website via your usual browser-based upload methods.
-    If everything is working, a message should appear from phpMussel confirming
-    that the upload was successfully blocked. If nothing appears, something
-    isn't working correctly. If you're using any advanced features or if you're
-    using the other types of scanning possible with the tool, I'd suggest
-    trying it out with those to make sure it works as expected, too.
+ 7) Con eso, ya está! Pero, probablemente deberías preubalo para asegurarse de
+    que está funcionando correctamente. Para probar archivos carga
+    protecciones, probar cargar los prueba archivos incluidos en el paquete
+    dentro "_testfiles" a su website a través de sus habituales navegador
+    basado cargar métodos. Si todo funciona correctamente, un mensaje debe
+    aparecer de phpMussel confirmando que la carga ha sido bloqueada con éxito.
+    Si nada aparece, algo no está funcionando correctamente. Si está utilizando
+    cualquiera de las avanzadas funciones o si está utilizando los otros tipos
+    de escaneo posible, Sugiero probarlo con aquellos a asegurarse de que
+    funciona como se espera, también.
 
                                      ~ ~ ~                                     
 
 
  2B. CÓMO INSTALAR (PARA CLI)
 
- I hope to streamline this process by making an installer at some point in the
- not too distant future, but until then, follow these instructions to get
- phpMussel ready to work with CLI (be aware that at this point, CLI support
- only applies to Windows based systems; Linux and other systems will be coming
- soon to a later version of phpMussel):
+ Espero para agilizar este proceso al hacer un instalador en algún momento en
+ un futuro no muy lejano, pero hasta entonces, siga estas instrucciones para ha
+ phpMussel listo para trabajar con CLI (ser conscientes de que en este momento,
+ CLI apoyo sólo se aplica a los Windows basados sistemas; Linux y otros
+ sistemas vendrán pronto a una posterior versión de phpMussel):
 
- 1) By your reading this, I'm assuming you've already downloaded an archived
-    copy of the script, decompressed its contents and have it sitting somewhere
-    on your local machine. Once you've determined that you're happy with the
-    location chosen for phpMussel, continue.
+ 1) Con tu leyendo esto, estoy asumiendo que usted ha descargado una archivada
+    copia de la script, descomprimido y tenerlo en algún lugar en su computer.
+    Cuando se ha determinado que usted es feliz con el lugar elegido para
+    phpMussel, continúe.
 
- 2) phpMussel requires php to be installed on the host machine in order to
-    execute. If you do not have php installed on your machine, please install
-    php on your machine, following any instructions supplied by the php
-    installer.
+ 2) phpMussel requiere php para ser instalado en la host máquina para ejecutar.
+    Si usted no has php instalado en su máquina, por favor, instalar php en su
+    máquina, siguiendo las instrucciones suministradas por el php instalador.
 
- 3) Open "phpmussel.php", look for the line beginning with "$vault=", and
-    replace the string between the following quotation marks on that line with
-    the exact true location of the "vault" directory of phpMussel. You'll have
-    noticed such a directory in the archive you would've downloaded (unless you
-    feel up to re-coding the whole script, you'll need to maintain the same
-    file and directory structure as it was in the archive/when decompressed).
-    This "vault" directory should be one directory level beyond the directory
-    that the "phpmussel.php" file will exist in. Save file, close.
+ 3) Abrir "phpmussel.php", busque la línea que comienza con "$vault=", y
+    reemplazar la cadena entre las siguientes comillas en esa línea con la
+    exacta verdadera ubicación del "vault" directorio de phpMussel. Usted verá
+    tal un directorio en el archivado que ha descargado (asumiendo que no desea
+    revolver todo el guión, mantener la misma estructura de archivos y
+    directorios como lo fue el original). Este "vault" directorio normalmente
+    es un directorio nivel más allá del directorio que existirá en el
+    "phpmussel.php" archivo. Guardar el archivo, cerrar.
 
- 4) (Optional; Strongly recommended for advanced users, but not recommended for
-    beginners or for the inexperienced): Open "phpmussel.ini" (located inside
-    "vault") - This file contains all the directives available for phpMussel.
-    Above each option should be a brief comment describing what it does and
-    what it is for. Adjust these options as you see fit, as per whatever is
-    appropriate for your particular setup. Save file, close.
+ 4) (Opcional; Muy recomendable para avanzados usuarios, pero no se recomienda
+    para los principiantes o para los inexpertos): Abrir "phpmussel.ini"
+    (situado en el interior del "vault") - Este archivo contiene todas las
+    disponibles operativas opciones para phpMussel. Por encima de cada opción
+    debe ser un breve comentario que describe lo que hace y para lo qué sirve.
+    Ajuste estas opciones según sus necesidades, según lo que sea apropiado
+    para su particular configuración. Guardar archivo, cerrar.
 
- 5) (Optional) You can make using phpMussel in CLI mode easier for yourself by
-    creating a batch file to automatically load php and phpMussel. To do this,
-    open a plain text editor such as Notepad or Notepad++, type the complete
-    path to the "php.exe" file in the directory of your php installation,
-    followed by a space, followed by the complete path to the "phpmussel.php"
-    file in the directory of your phpMussel installation, save the file with
-    a ".bat" extension somewhere that you'll find it easily, and double-click
-    on that file to run phpMussel in the future.
+ 5) (Opcional) Usted puede hacer uso de phpMussel en CLI modo más fácil para ti
+    mismo mediante la creación de un batch archivo para automáticamente cargar
+    php y phpMussel. Para ello, abra un texto editor como Notepad o Notepad++,
+    escriba la completa ruta al "php.exe" archivo dentro lo directorio de la
+    php instalación, seguido de un espacio, seguido de la completa ruta al
+    "phpmussel.php" archivo dentro lo directorio de su phpMussel instalación,
+    guardar el archivo con la ".bat" extensión en alguna parte que usted lo
+    encontrará fácilmente, y haga doble clic en ese archivo para ejecutar
+    phpMussel en el futuro.
 
- 6) At this point, you're done! However, you should probably test it out to
-    make sure it's working properly. To test phpMussel, run phpMussel and try
-    scanning the "_testfiles" directory provided with the package.
+ 6) Con eso, ya está! Pero, probablemente deberías preubalo para asegurarse de
+    que está funcionando correctamente. Para probar phpMussel, ejecute
+    phpMussel e probar escanear el directorio "_testfiles" suministrada con el
+    paquete.
 
                                      ~ ~ ~                                     
 
 
  3A. CÓMO USO (PARA NAVEGADORES)
 
- phpMussel is intended to be a script which will function adequately right from
- the box with a bare minimum level of requirements on your part: Once it has
- been installed, basically, it simply should work.
+ phpMussel es un script diseñado para funcionar adecuadamente, inmediatamente,
+ con mínimo nivel de requisitos en su nombre: Cuando se ha instalado,
+ básicamente, que simplemente debería funcionar.
 
- Scanning of file uploads is automated and enabled by default, so nothing is
- required on your behalf for this particular function.
+ Escaneo de archivos cargas es automatizado y activado como estándar, así, nada
+ se requerida en su nombre por esta particular función.
 
- However, you are also able to instruct phpMussel to scan for files,
- directories or archives that you implicitly specify. To do this, firstly,
- you'll need to ensure that the appropriate configuration is set in the
- phpmussel.ini file (cleanup must be disabled), and once done, in a php file
- that is hooked to phpMussel, use the following function in your code:
+ Pero, también es capaz instruirá phpMussel para escanear archivos, directorios
+ o compactos archivos usted especifique implícitamente. Para ello,
+ primeramente, usted tendrá asegurarse de que la adecuada configuración se
+ establece el la phpmussel.ini archivo (cleanup debe estar desactivado), y
+ cuando hecho, en un PHP archivo conectado a phpMussel, utilice la siguiente
+ función en su código:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
- Where:
- - $what_to_scan is either a string or an array, pointing to either a target
-   file, a target directory or an array of target files and/or target
-   directories.
+ Dónde:
+ - $what_to_scan es una cadena o una array, apuntando a un destino archivo, un
+   destino directorio o un array de destinos archivos y/o destinos directorios.
  - $output_type is an integer, indicating the format in which the results of
    the scan are to be return as. A value of 0 instructs the function to return
    results as an integer (a returned result of -2 indicates that corrupt data
@@ -494,11 +498,11 @@
  be potentially created as a result of your using this script, along with a
  short description of what all these files are for.
 
- /phpmussel.php (Script, Included)
+ /phpmussel.php (Script, Incluido)
     phpMussel Loader file. Loads the main script, updater, etcetera.
     This is what you're supposed to be hooking into (essential)!
     ~
- /web.config (Other, Included)
+ /web.config (Otro, Incluido)
     An ASP.NET configuration file (in this instance, to protect the "/vault"
     directory from being accessed by non-authorised sources in the event that
     the script is installed on a server based upon ASP.NET technologies).
@@ -506,18 +510,18 @@
  /_docs/ (Directory)
     Documentation directory (contains various files).
     ~
- /_docs/change_log.txt (Documentation, Included)
+ /_docs/change_log.txt (Documentación, Incluido)
     A record of changes made to the script between different
     versions (not required for proper function of script).
     ~
- /_docs/readme.DE.txt (Documentation, Included); DEUTSCH
- /_docs/readme.EN.txt (Documentation, Included); ENGLISH
- /_docs/readme.ES.txt (Documentation, Included); ESPAÑOL
- /_docs/readme.FR.txt (Documentation, Included); FRANÇAIS
- /_docs/readme.ID.txt (Documentation, Included); BAHASA INDONESIA
- /_docs/readme.IT.txt (Documentation, Included); ITALIANO
- /_docs/readme.NL.txt (Documentation, Included); NEDERLANDSE
- /_docs/readme.PT.txt (Documentation, Included); PORTUGUÊS
+ /_docs/readme.DE.txt (Documentación, Incluido); DEUTSCH
+ /_docs/readme.EN.txt (Documentación, Incluido); ENGLISH
+ /_docs/readme.ES.txt (Documentación, Incluido); ESPAÑOL
+ /_docs/readme.FR.txt (Documentación, Incluido); FRANÇAIS
+ /_docs/readme.ID.txt (Documentación, Incluido); BAHASA INDONESIA
+ /_docs/readme.IT.txt (Documentación, Incluido); ITALIANO
+ /_docs/readme.NL.txt (Documentación, Incluido); NEDERLANDSE
+ /_docs/readme.PT.txt (Documentación, Incluido); PORTUGUÊS
     The README files (for example; the file you're currently reading).
     ~
  /_testfiles/ (Directory)
@@ -526,207 +530,223 @@
     installed on your system, and you do not need to upload this directory
     or any of its files except when doing such testing.
     ~
- /_testfiles/ascii_standard_testfile.txt (Test file, Included)
+ /_testfiles/ascii_standard_testfile.txt (Prueba archivo, Incluido)
     Test file for testing phpMussel normalised ASCII signatures.
     ~
- /_testfiles/exe_standard_testfile.exe (Test file, Included)
+ /_testfiles/exe_standard_testfile.exe (Prueba archivo, Incluido)
     Test file for testing phpMussel PE signatures.
     ~
- /_testfiles/general_standard_testfile.txt (Test file, Included)
+ /_testfiles/general_standard_testfile.txt (Prueba archivo, Incluido)
     Test file for testing phpMussel general signatures.
     ~
- /_testfiles/graphics_standard_testfile.gif (Test file, Included)
+ /_testfiles/graphics_standard_testfile.gif (Prueba archivo, Incluido)
     Test file for testing phpMussel graphics signatures.
     ~
- /_testfiles/html_standard_testfile.txt (Test file, Included)
+ /_testfiles/html_standard_testfile.txt (Prueba archivo, Incluido)
     Test file for testing phpMussel normalised HTML signatures.
     ~
- /_testfiles/md5_testfile.txt (Test file, Included)
+ /_testfiles/md5_testfile.txt (Prueba archivo, Incluido)
     Test file for testing phpMussel MD5 signatures.
     ~
- /_testfiles/metadata_testfile.txt.gz (Test file, Included)
+ /_testfiles/metadata_testfile.txt.gz (Prueba archivo, Incluido)
     Test file for testing phpMussel metadata signatures and for testing GZ file
     support on your system.
     ~
- /_testfiles/metadata_testfile.txt.zip (Test file, Included)
+ /_testfiles/metadata_testfile.zip (Prueba archivo, Incluido)
     Test file for testing phpMussel metadata signatures and for testing ZIP
     file support on your system.
     ~
- /_testfiles/pe_sectional_testfile.exe (Test file, Included)
+ /_testfiles/ole_testfile.ole (Test file, Included)
+    Test file for testing phpMussel OLE signatures.
+    ~
+ /_testfiles/pe_sectional_testfile.exe (Prueba archivo, Incluido)
     Test file for testing phpMussel PE Sectional signatures.
     ~
  /vault/ (Directory)
     Vault directory (contains various files).
     ~
- /vault/.htaccess (Other, Included)
+ /vault/.htaccess (Otro, Incluido)
     A hypertext access file (in this instance, to protect sensitive files
     belonging to the script from being accessed by non-authorised sources).
     ~
- /vault/ascii_clamav_regex.cvd (Signatures, Included)
- /vault/ascii_clamav_regex.map (Signatures, Included)
- /vault/ascii_clamav_standard.cvd (Signatures, Included)
- /vault/ascii_clamav_standard.map (Signatures, Included)
- /vault/ascii_custom_regex.cvd (Signatures, Included)
- /vault/ascii_custom_standard.cvd (Signatures, Included)
- /vault/ascii_mussel_regex.cvd (Signatures, Included)
- /vault/ascii_mussel_standard.cvd (Signatures, Included)
+ /vault/ascii_clamav_regex.cvd (Firmas, Incluidos)
+ /vault/ascii_clamav_regex.map (Firmas, Incluidos)
+ /vault/ascii_clamav_standard.cvd (Firmas, Incluidos)
+ /vault/ascii_clamav_standard.map (Firmas, Incluidos)
+ /vault/ascii_custom_regex.cvd (Firmas, Incluidos)
+ /vault/ascii_custom_standard.cvd (Firmas, Incluidos)
+ /vault/ascii_mussel_regex.cvd (Firmas, Incluidos)
+ /vault/ascii_mussel_standard.cvd (Firmas, Incluidos)
     Files for normalised ASCII signatures.
     Required if normalised ASCII signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
- /vault/elf_clamav_regex.cvd (Signatures, Included)
- /vault/elf_clamav_regex.map (Signatures, Included)
- /vault/elf_clamav_standard.cvd (Signatures, Included)
- /vault/elf_clamav_standard.map (Signatures, Included)
- /vault/elf_custom_regex.cvd (Signatures, Included)
- /vault/elf_custom_standard.cvd (Signatures, Included)
- /vault/elf_mussel_regex.cvd (Signatures, Included)
- /vault/elf_mussel_standard.cvd (Signatures, Included)
+ /vault/elf_clamav_regex.cvd (Firmas, Incluidos)
+ /vault/elf_clamav_regex.map (Firmas, Incluidos)
+ /vault/elf_clamav_standard.cvd (Firmas, Incluidos)
+ /vault/elf_clamav_standard.map (Firmas, Incluidos)
+ /vault/elf_custom_regex.cvd (Firmas, Incluidos)
+ /vault/elf_custom_standard.cvd (Firmas, Incluidos)
+ /vault/elf_mussel_regex.cvd (Firmas, Incluidos)
+ /vault/elf_mussel_standard.cvd (Firmas, Incluidos)
     Files for ELF signatures.
     Required if ELF signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
- /vault/exe_clamav_regex.cvd (Signatures, Included)
- /vault/exe_clamav_regex.map (Signatures, Included)
- /vault/exe_clamav_standard.cvd (Signatures, Included)
- /vault/exe_clamav_standard.map (Signatures, Included)
- /vault/exe_custom_regex.cvd (Signatures, Included)
- /vault/exe_custom_standard.cvd (Signatures, Included)
- /vault/exe_mussel_regex.cvd (Signatures, Included)
- /vault/exe_mussel_standard.cvd (Signatures, Included)
+ /vault/exe_clamav_regex.cvd (Firmas, Incluidos)
+ /vault/exe_clamav_regex.map (Firmas, Incluidos)
+ /vault/exe_clamav_standard.cvd (Firmas, Incluidos)
+ /vault/exe_clamav_standard.map (Firmas, Incluidos)
+ /vault/exe_custom_regex.cvd (Firmas, Incluidos)
+ /vault/exe_custom_standard.cvd (Firmas, Incluidos)
+ /vault/exe_mussel_regex.cvd (Firmas, Incluidos)
+ /vault/exe_mussel_standard.cvd (Firmas, Incluidos)
     Files for Portable Executable file (EXE) signatures.
     Required if EXE signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
- /vault/filenames_clamav.cvd (Signatures, Included)
- /vault/filenames_custom.cvd (Signatures, Included)
- /vault/filenames_mussel.cvd (Signatures, Included)
+ /vault/filenames_clamav.cvd (Firmas, Incluidos)
+ /vault/filenames_custom.cvd (Firmas, Incluidos)
+ /vault/filenames_mussel.cvd (Firmas, Incluidos)
     Files for filename signatures.
     Required if filename signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
- /vault/general_clamav_regex.cvd (Signatures, Included)
- /vault/general_clamav_regex.map (Signatures, Included)
- /vault/general_clamav_standard.cvd (Signatures, Included)
- /vault/general_clamav_standard.map (Signatures, Included)
- /vault/general_custom_regex.cvd (Signatures, Included)
- /vault/general_custom_standard.cvd (Signatures, Included)
- /vault/general_mussel_regex.cvd (Signatures, Included)
- /vault/general_mussel_standard.cvd (Signatures, Included)
+ /vault/general_clamav_regex.cvd (Firmas, Incluidos)
+ /vault/general_clamav_regex.map (Firmas, Incluidos)
+ /vault/general_clamav_standard.cvd (Firmas, Incluidos)
+ /vault/general_clamav_standard.map (Firmas, Incluidos)
+ /vault/general_custom_regex.cvd (Firmas, Incluidos)
+ /vault/general_custom_standard.cvd (Firmas, Incluidos)
+ /vault/general_mussel_regex.cvd (Firmas, Incluidos)
+ /vault/general_mussel_standard.cvd (Firmas, Incluidos)
     Files for general signatures.
     Required if general signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
- /vault/graphics_clamav_regex.cvd (Signatures, Included)
- /vault/graphics_clamav_regex.map (Signatures, Included)
- /vault/graphics_clamav_standard.cvd (Signatures, Included)
- /vault/graphics_clamav_standard.map (Signatures, Included)
- /vault/graphics_custom_regex.cvd (Signatures, Included)
- /vault/graphics_custom_standard.cvd (Signatures, Included)
- /vault/graphics_mussel_regex.cvd (Signatures, Included)
- /vault/graphics_mussel_standard.cvd (Signatures, Included)
+ /vault/graphics_clamav_regex.cvd (Firmas, Incluidos)
+ /vault/graphics_clamav_regex.map (Firmas, Incluidos)
+ /vault/graphics_clamav_standard.cvd (Firmas, Incluidos)
+ /vault/graphics_clamav_standard.map (Firmas, Incluidos)
+ /vault/graphics_custom_regex.cvd (Firmas, Incluidos)
+ /vault/graphics_custom_standard.cvd (Firmas, Incluidos)
+ /vault/graphics_mussel_regex.cvd (Firmas, Incluidos)
+ /vault/graphics_mussel_standard.cvd (Firmas, Incluidos)
     Files for graphics signatures.
     Required if graphics signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
- /vault/greylist.csv (Signatures, Included/Created)
+ /vault/greylist.csv (Firmas, Incluidos/Creados)
     CSV of greylisted signatures indicating to phpMussel which signatures it
     should be ignoring (file automatically recreated if deleted).
     ~
- /vault/hex_general_commands.csv (Signatures, Included)
+ /vault/hex_general_commands.csv (Firmas, Incluidos)
     Hex-encoded CSV of general command detections optionally used by phpMussel.
     Required if general command detection option in phpmussel.ini is enabled.
     Can remove if option is disabled (but file will be recreated on update).
     ~
- /vault/html_clamav_regex.cvd (Signatures, Included)
- /vault/html_clamav_regex.map (Signatures, Included)
- /vault/html_clamav_standard.cvd (Signatures, Included)
- /vault/html_clamav_standard.map (Signatures, Included)
- /vault/html_custom_regex.cvd (Signatures, Included)
- /vault/html_custom_standard.cvd (Signatures, Included)
- /vault/html_mussel_regex.cvd (Signatures, Included)
- /vault/html_mussel_standard.cvd (Signatures, Included)
+ /vault/html_clamav_regex.cvd (Firmas, Incluidos)
+ /vault/html_clamav_regex.map (Firmas, Incluidos)
+ /vault/html_clamav_standard.cvd (Firmas, Incluidos)
+ /vault/html_clamav_standard.map (Firmas, Incluidos)
+ /vault/html_custom_regex.cvd (Firmas, Incluidos)
+ /vault/html_custom_standard.cvd (Firmas, Incluidos)
+ /vault/html_mussel_regex.cvd (Firmas, Incluidos)
+ /vault/html_mussel_standard.cvd (Firmas, Incluidos)
     Files for normalised HTML signatures.
     Required if normalised HTML signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
- /vault/lang.inc (Script, Included)
+ /vault/lang.inc (Script, Incluido)
     phpMussel Language Data; Required for multilingual capabilities.
     ~
- /vault/macho_clamav_regex.cvd (Signatures, Included)
- /vault/macho_clamav_regex.map (Signatures, Included)
- /vault/macho_clamav_standard.cvd (Signatures, Included)
- /vault/macho_clamav_standard.map (Signatures, Included)
- /vault/macho_custom_regex.cvd (Signatures, Included)
- /vault/macho_custom_standard.cvd (Signatures, Included)
- /vault/macho_mussel_regex.cvd (Signatures, Included)
- /vault/macho_mussel_standard.cvd (Signatures, Included)
+ /vault/macho_clamav_regex.cvd (Firmas, Incluidos)
+ /vault/macho_clamav_regex.map (Firmas, Incluidos)
+ /vault/macho_clamav_standard.cvd (Firmas, Incluidos)
+ /vault/macho_clamav_standard.map (Firmas, Incluidos)
+ /vault/macho_custom_regex.cvd (Firmas, Incluidos)
+ /vault/macho_custom_standard.cvd (Firmas, Incluidos)
+ /vault/macho_mussel_regex.cvd (Firmas, Incluidos)
+ /vault/macho_mussel_standard.cvd (Firmas, Incluidos)
     Files for Mach-O signatures.
     Required if Mach-O signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
- /vault/mail_clamav_regex.cvd (Signatures, Included)
- /vault/mail_clamav_regex.map (Signatures, Included)
- /vault/mail_clamav_standard.cvd (Signatures, Included)
- /vault/mail_clamav_standard.map (Signatures, Included)
- /vault/mail_custom_regex.cvd (Signatures, Included)
- /vault/mail_custom_standard.cvd (Signatures, Included)
- /vault/mail_mussel_regex.cvd (Signatures, Included)
- /vault/mail_mussel_standard.cvd (Signatures, Included)
+ /vault/mail_clamav_regex.cvd (Firmas, Incluidos)
+ /vault/mail_clamav_regex.map (Firmas, Incluidos)
+ /vault/mail_clamav_standard.cvd (Firmas, Incluidos)
+ /vault/mail_clamav_standard.map (Firmas, Incluidos)
+ /vault/mail_custom_regex.cvd (Firmas, Incluidos)
+ /vault/mail_custom_standard.cvd (Firmas, Incluidos)
+ /vault/mail_mussel_regex.cvd (Firmas, Incluidos)
+ /vault/mail_mussel_standard.cvd (Firmas, Incluidos)
+ /vault/mail_mussel_standard.map (Firmas, Incluidos)
     Files for signatures used by the phpMussel_mail() function.
     Required if the phpMussel_mail() function is used in any way.
     Can remove if it is not used (but files will be recreated on update).
     ~
- /vault/md5_clamav.cvd (Signatures, Included)
- /vault/md5_custom.cvd (Signatures, Included)
- /vault/md5_mussel.cvd (Signatures, Included)
+ /vault/md5_clamav.cvd (Firmas, Incluidos)
+ /vault/md5_custom.cvd (Firmas, Incluidos)
+ /vault/md5_mussel.cvd (Firmas, Incluidos)
     Files for MD5 based signatures.
     Required if MD5 based signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
- /vault/metadata_clamav.cvd (Signatures, Included)
- /vault/metadata_custom.cvd (Signatures, Included)
- /vault/metadata_mussel.cvd (Signatures, Included)
+ /vault/metadata_clamav.cvd (Firmas, Incluidos)
+ /vault/metadata_custom.cvd (Firmas, Incluidos)
+ /vault/metadata_mussel.cvd (Firmas, Incluidos)
     Files for archive metadata signatures.
     Required if archive metadata signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
- /vault/pe_clamav.cvd (Signatures, Included)
- /vault/pe_custom.cvd (Signatures, Included)
- /vault/pe_mussel.cvd (Signatures, Included)
+ /vault/ole_clamav_regex.cvd (Firmas, Incluidos)
+ /vault/ole_clamav_regex.map (Firmas, Incluidos)
+ /vault/ole_clamav_standard.cvd (Firmas, Incluidos)
+ /vault/ole_clamav_standard.map (Firmas, Incluidos)
+ /vault/ole_custom_regex.cvd (Firmas, Incluidos)
+ /vault/ole_custom_standard.cvd (Firmas, Incluidos)
+ /vault/ole_mussel_regex.cvd (Firmas, Incluidos)
+ /vault/ole_mussel_standard.cvd (Firmas, Incluidos)
+    Files for OLE signatures.
+    Required if OLE signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
+    ~
+ /vault/pe_clamav.cvd (Firmas, Incluidos)
+ /vault/pe_custom.cvd (Firmas, Incluidos)
+ /vault/pe_mussel.cvd (Firmas, Incluidos)
     Files for PE Sectional signatures.
     Required if PE Sectional signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
- /vault/phpmussel.inc (Script, Included)
+ /vault/phpmussel.inc (Script, Incluido)
     phpMussel Core Script; The main body and guts of phpMussel (essential)!
     ~
- /vault/phpmussel.ini (Other, Included)
+ /vault/phpmussel.ini (Otro, Incluido)
     phpMussel Configuration file; Contains all the configuration options of
     phpMussel, telling it what to do and how to operate correctly (essential)!
     ~
- /vault/scan_log.txt *(Logfile, Created)
+ /vault/scan_log.txt *(Log archivo, Creado)
     A record of everything scanned by phpMussel.
     ~
- /vault/scan_kills.txt *(Logfile, Created)
+ /vault/scan_kills.txt *(Log archivo, Creado)
     A record of every file upload blocked/killed by phpMussel.
     ~
- /vault/template.html (Other, Included)
+ /vault/template.html (Otro, Incluido)
     phpMussel Template file; Template for HTML output produced by phpMussel for
     its blocked file upload message (the message seen by the uploader).
     ~
- /vault/update.dat (Other, Included)
+ /vault/update.dat (Otro, Incluido)
     File containing version information for both the phpMussel script and the
     phpMussel signatures. If you ever want to automatically update phpMussel or
     want to update phpMusel via your browser, this file is essential.
     ~
- /vault/update.inc (Script, Included)
+ /vault/update.inc (Script, Incluido)
     phpMussel Update Script; Required for automatic updates and for updating
     phpMussel via your browser, but not required otherwise.
     ~
- /vault/whitelist_clamav.cvd (Signatures, Included)
- /vault/whitelist_custom.cvd (Signatures, Included)
- /vault/whitelist_mussel.cvd (Signatures, Included)
+ /vault/whitelist_clamav.cvd (Firmas, Incluidos)
+ /vault/whitelist_custom.cvd (Firmas, Incluidos)
+ /vault/whitelist_mussel.cvd (Firmas, Incluidos)
     File specific whitelist.
     Required if whitelisting option in phpmussel.ini is enabled and if you wish
     to have specific files whitelisted. Can remove if option is disabled or if
@@ -861,13 +881,13 @@
      "html_clamav"
      "html_custom"
      "html_mussel"
-   - Check PE (portable executable) files (EXE, DLL, etc) against PE Sectional
+   - Check PE (Portable Executable) files (EXE, DLL, etc) against PE Sectional
      signatures when scanning?
      0 = No, 1 = Yes [Default].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
-   - Check PE (portable executable) files (EXE, DLL, etc) against PE signatures
+   - Check PE (Portable Executable) files (EXE, DLL, etc) against PE signatures
      when scanning?
      0 = No, 1 = Yes [Default].
      "exe_clamav"
@@ -893,13 +913,17 @@
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
+   - Check OLE objects against OLE signatures when scanning?
+     0 = No, 1 = Yes [Default].
+     "ole_clamav"
+     "ole_custom"
+     "ole_mussel"
    - Check filenames against filename based signatures when scanning?
      0 = No, 1 = Yes [Default].
      "filenames_clamav"
      "filenames_custom"
      "filenames_mussel"
-   - Allow scanning with phpMussel_mail()?
-     0 = No, 1 = Yes [Default].
+   - Allow scanning with phpMussel_mail()? 0 = No, 1 = Yes [Default].
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
@@ -1014,7 +1038,7 @@
      0 - Don't block [Default], 1 - Block.
    "corrupted_exe"
    - Corrupted files and parse errors. 0 = Ignore, 1 = Block [Default].
-     Detect and block potentially corrupted PE (portable executable) files?
+     Detect and block potentially corrupted PE (Portable Executable) files?
      Often (but not always), when certain aspects of a PE file are corrupted or
      can't be parsed correctly, it can be indicative of a viral infection. The
      processes used by most anti-virus programs to detect viruses in PE files
@@ -1031,14 +1055,15 @@
    - Optional limitation or threshold to the length of raw data to which
      phpMussel is permitted to read and scan (in case there are any noticeable
      performance issues whilst scanning). Value is an integer representing
-     filesize in KB. Default = 32768 (32MB). Generally, this value shouldn't be
-     less than the average filesize of file uploads that you want and expect to
-     receive to your server or website, shouldn't be more than the
-     filesize_limit directive, and shouldn't be more than roughly one fifth of
-     the total allowable memory allocation granted to php via the php.ini
-     configuration file. This directive exists to try to prevent phpMussel from
-     using up too much memory (which would prevent it from being able to
-     successfully scan files above a certain filesize).
+     filesize in KB. Default = 32768 (32MB). Zero or null value disables the
+     threshold. Generally, this value shouldn't be less than the average
+     filesize of file uploads that you want and expect to receive to your
+     server or website, shouldn't be more than the filesize_limit directive,
+     and shouldn't be more than roughly one fifth of the total allowable memory
+     allocation granted to php via the php.ini configuration file. This
+     directive exists to try to prevent phpMussel from using up too much memory
+     (which would prevent it from being able to successfully scan files above a
+     certain filesize).
  "compatibility" (Category)
  - Compatibility directives for phpMussel.
     "ignore_upload_errors"
@@ -1056,7 +1081,15 @@
       to not attempt to initiate scans for such empty elements, ignore them
       when found and to not return any related error messages, thus allowing
       continuation of the page request. 0 - OFF, 1 - ON.
-
+    "only_allow_images"
+    - If you only expect or only intend to allow images to be uploaded to your
+      system or CMS, and if you absolutely do not require any files other than
+      images to be uploaded to your system or CMS, this directive should be
+      switched ON, but should otherwise be switched OFF. If this directive is
+      switched ON, it will instruct phpMussel to indiscriminately block any
+      uploads identified as non-image files, without scanning them. This may 
+      reduce processing time and memory usage for attempted uploads of
+      non-image files. 0 - OFF, 1 - ON.
 
                                      ~ ~ ~                                     
 
@@ -1079,8 +1112,8 @@
    All Whitelist signatures follow the format:
     HASH:FILESIZE:TYPE
    Where HASH is the MD5 hash of an entire file, FILESIZE is the total size
-   of that file and TYPE is the type of signatures the whitelisted file is to be
-   immune against.
+   of that file and TYPE is the type of signatures the whitelisted file is to
+   be immune against.
 
  = FILENAME SIGNATURES =
    All filename signatures follow the format:
@@ -1144,9 +1177,9 @@
       every non-whitelisted HTML file targeted for scanning.
    - "General Commands" (hex_general_commands.csv). Checked against the
       contents of every non-whitelisted file targeted for scanning.
-   - "Portable Executable Sectional Signatures" (pe_*). Checked against the
-      contents of every non-whitelisted targeted for scanning and matched to
-      the PE format.
+   - "Portable Executable Sectional Signatures" (pe_*). Checked against the MD5
+      hash of each PE section and the filesize of every non-whitelisted file
+      targeted for scanning and matched to the PE format.
    - "Portable Executable Signatures" (exe_*). Checked against the contents of
       every non-whitelisted targeted for scanning and matched to the PE format.
    - "ELF Signatures" (elf_*). Checked against the contents of every
@@ -1160,6 +1193,8 @@
    - "Archive Metadata Signatures" (metadata_*). Checked against the CRC32 hash
       and filesize of the initial file contained inside of any non-whitelisted
       archive targeted for scanning.
+   - "OLE Signatures" (ole_*). Checked against the contents of every
+      non-whitelisted OLE object targeted for scanning.
    - "Email Signatures" (mail_*). Checked against the $body variable parsed to
       the phpMussel_mail() function, which is intended to be the body of email
       messages or similar entities (potentially forum posts and etcetera).
@@ -1169,7 +1204,6 @@
       in their whitelist entry.
      (Note that any of these signatures may be easily disabled via
       phpmussel.ini).
-
 
                                      ~ ~ ~                                     
 
@@ -1195,8 +1229,8 @@
  with phpMussel or should consider alternative options to either your
  anti-virus software or phpMussel.
 
- This information was last updated 13th September 2014 and is current for all
- phpMussel releases of the two most recent minor versions (v0.3-v0.4d) at the
+ This information was last updated 25th September 2014 and is current for all
+ phpMussel releases of the two most recent minor versions (v0.4-v0.5) at the
  time of writing this.
 
  Ad-Aware                No hay conocidos problemas
@@ -1205,18 +1239,15 @@
  AntiVir                 No hay conocidos problemas
  Antiy-AVL               No hay conocidos problemas
  Avast                !  Informes "JS:ScriptSH-inf [Trj]"
-                         - Todos excepto v0.3d, v0.4d
  AVG                     No hay conocidos problemas
  Baidu-International     No hay conocidos problemas
  BitDefender             No hay conocidos problemas
- Bkav                 !  Informes "VEX408f.Webshell"
-                         - v0.3 a v0.3c
+ Bkav                    No hay conocidos problemas
  ByteHero                No hay conocidos problemas
  CAT-QuickHeal           No hay conocidos problemas
  ClamAV                  No hay conocidos problemas
  CMC                     No hay conocidos problemas
- Commtouch            !  Informes "W32/GenBl.857A3D28!Olympus"
-                         - v0.3e sólo
+ Commtouch               No hay conocidos problemas
  Comodo                  No hay conocidos problemas
  DrWeb                   No hay conocidos problemas
  Emsisoft                No hay conocidos problemas
@@ -1224,10 +1255,8 @@
  F-Prot                  No hay conocidos problemas
  F-Secure                No hay conocidos problemas
  Fortinet                No hay conocidos problemas
- GData                !  Informes "Archive.Trojan.Agent.E7C7J7"
-                         - v0.3e sólo
+ GData                   No hay conocidos problemas
  Ikarus               !  Informes "Trojan.JS.Agent"
-                         - v0.3g a v0.4c
  Jiangmin                No hay conocidos problemas
  K7AntiVirus             No hay conocidos problemas
  K7GW                    No hay conocidos problemas
@@ -1240,19 +1269,17 @@
  MicroWorld-eScan        No hay conocidos problemas
  NANO-Antivirus          No hay conocidos problemas
  Norman               !  Informes "Kryptik.BQS"
-                         - Todos excepto v0.3d, v0.3e, v0.4d
  nProtect                No hay conocidos problemas
  Panda                   No hay conocidos problemas
  Qihoo-360               No hay conocidos problemas
  Rising                  No hay conocidos problemas
  Sophos                  No hay conocidos problemas
  SUPERAntiSpyware        No hay conocidos problemas
- Symantec                No hay conocidos problemas
+ Symantec             !  Informes "WS.Reputation.1"
  TheHacker               No hay conocidos problemas
  TotalDefense            No hay conocidos problemas
  TrendMicro              No hay conocidos problemas
  TrendMicro-HouseCall !  Informes "Suspici.450F5936"
-                         - v0.3d a v0.4c
  VBA32                   No hay conocidos problemas
  VIPRE                   No hay conocidos problemas
  ViRobot                 No hay conocidos problemas
@@ -1261,5 +1288,5 @@
                                      ~ ~ ~                                     
 
 
-Última Actualización: 13 Septiembre 2014 (2014.09.13).
+Última Actualización: 25 Septiembre 2014 (2014.09.25).
 EOF

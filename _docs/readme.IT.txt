@@ -581,9 +581,12 @@
     Test file per test di phpMussel metadata firme e per testare GZ file
     supporto sullo vostro sistema.
     ~
- /_testfiles/metadata_testfile.txt.zip (Test file, Incluso)
+ /_testfiles/metadata_testfile.zip (Test file, Incluso)
     Test file per test di phpMussel metadata firme e per testare ZIP file
     supporto sullo vostro sistema.
+    ~
+ /_testfiles/ole_testfile.ole (Test file, Incluso)
+    Test file per test di phpMussel OLE firme.
     ~
  /_testfiles/pe_sectional_testfile.exe (Test file, Incluso)
     Test file per test di phpMussel PE Sezionale firme.
@@ -715,6 +718,7 @@
  /vault/mail_custom_standard.cvd (Firme, Incluso)
  /vault/mail_mussel_regex.cvd (Firme, Incluso)
  /vault/mail_mussel_standard.cvd (Firme, Incluso)
+ /vault/mail_mussel_standard.map (Firme, Incluso)
     File per firme utilizzati dalla phpMussel_mail() funzione. Richiesta se la
     funzione viene utilizzato in qualsiasi modo. Può rimuovere se non viene
     utilizzato (ma i file verranno ricreati al momento di aggiornamento).
@@ -734,6 +738,19 @@
     Richiesto se l'opzione per l'archivio metadati firme in phpmussel.ini è
     abilitato. Può rimuovere se l'opzione è disabilitato (ma i file verranno
     ricreati al momento di aggiornamento).
+    ~
+ /vault/ole_clamav_regex.cvd (Firme, Incluso)
+ /vault/ole_clamav_regex.map (Firme, Incluso)
+ /vault/ole_clamav_standard.cvd (Firme, Incluso)
+ /vault/ole_clamav_standard.map (Firme, Incluso)
+ /vault/ole_custom_regex.cvd (Firme, Incluso)
+ /vault/ole_custom_standard.cvd (Firme, Incluso)
+ /vault/ole_mussel_regex.cvd (Firme, Incluso)
+ /vault/ole_mussel_standard.cvd (Firme, Incluso)
+    File per OLE firme.
+    Richiesto se l'opzione per OLE firme in phpmussel.ini è abilitato. Può
+    rimuovere se l'opzione è disabilitato (ma i file verranno ricreati al
+    momento di aggiornamento).
     ~
  /vault/pe_clamav.cvd (Firme, Incluso)
  /vault/pe_custom.cvd (Firme, Incluso)
@@ -849,10 +866,10 @@
       * Non ha alcuna influenza in CLI modalità.
     "cleanup"
     - Disimpostare le script variabili e la cache dopo l'esecuzione. Se si non
-      utilizza lo script dopo la iniziale scansione di caricamenti, dovrebbe
+      utilizza lo script dopo l'iniziale scansione di caricamenti, dovrebbe
       impostato a sì, per minimizzare la memoria uso. Se si fa utilizza lo
-      script dopo la iniziale scansione di caricamenti, dovrebbe impostato a
-      no, al fine per evitare ricaricare inutili duplicati dati all'interno
+      script dopo l'iniziale scansione di caricamenti, dovrebbe impostato a no,
+      al fine per evitare ricaricare inutili duplicati dati all'interno
       memoria. In generale pratica, dovrebbe probabilmente essere impostata a
       sì, ma, se si farlo, voi sarà non in grado per utilizzare lo script per
       scopi diversi dalla scansione di caricamenti.
@@ -917,13 +934,13 @@
      "html_clamav"
      "html_custom"
      "html_mussel"
-   - Verificare PE (portatile eseguibile) files (EXE, DLL, ecc) contro PE
+   - Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE
      Sezionale firme durante la scansione?
      0 = No, 1 = Sì [Predefinito].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
-   - Verificare PE (portatile eseguibile) files (EXE, DLL, ecc) contro PE firme
+   - Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE firme
      durante la scansione?
      0 = No, 1 = Sì [Predefinito].
      "exe_clamav"
@@ -934,7 +951,7 @@
      "elf_clamav"
      "elf_custom"
      "elf_mussel"
-   - Verificare Mach-O file (OSX, ecc) control Mach-O firme durante la
+   - Verificare Mach-O file (OSX, ecc) contro Mach-O firme durante la
      scansione?
      0 = No, 1 = Sì [Predefinito].
      "macho_clamav"
@@ -951,14 +968,18 @@
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
+   - Verificare OLE oggetti contro OLE firme durante la scansione?
+     0 = No, 1 = Sì [Predefinito].
+     "ole_clamav"
+     "ole_custom"
+     "ole_mussel"
    - Verificare nomi del file against file nome basate firme durante la
      scansione?
      0 = No, 1 = Sì [Predefinito].
      "filenames_clamav"
      "filenames_custom"
      "filenames_mussel"
-   - Permettere scansione con phpMussel_mail()?
-     0 = No, 1 = Sì [Predefinito].
+   - Permettere scansione con phpMussel_mail()? 0 = No, 1 = Sì [Predefinito].
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
@@ -1009,9 +1030,8 @@
      di file, specificando i tipi di file nel whitelist e blacklist può
      aumentare la velocità a cui la scansione viene eseguita da permettendo lo
      script da ignora alcuni tipi di file. Il formato è CSV (valori separati da
-     virgola). Se si desidera eseguire la scansione di tutti, invece del
-     whitelist o blacklist, lasciare le variabili vuoti (fare questo sarà
-     disabilitali).
+     virgola). Se si desidera eseguire la scansione tutti, invece del whitelist
+     o blacklist, lasciare le variabili vuoti (fare questo sarà disabilitali).
    "check_archives"
    - Tenta per verifica il contenuto degli archivi?
      0 - No (no verifica), 1 - Sì (fare verifica) [Predefinito].
@@ -1099,15 +1119,16 @@
      phpMussel è permesso di leggere e scansione (nel caso in cui vi siano
      notevoli problemi di prestazioni durante la scansione). Il valore è un
      integer che rappresenta la dimensione dei file in KB.
-     Predefinito = 32768 (32MB). In generale, questo valore non dovrebbe essere
-     meno quella media dimensione dei file che si desidera e si aspettano di
-     ricevere al vostro server o al vostro web sito, non dovrebbe essere più
-     di la filesize_limit direttiva, e non dovrebbe essere più di circa un
-     quinto del totale ammissibile allocazione della memoria concesso al php
-     tramite il php.ini configurazione file. Questa direttiva esiste per tenta
-     di evitare avendo phpMussel utilizzare troppa memoria (di cui sarebbe
-     impedirebbe di essere capace di completare la file scansione correttamente
-     per i file piú d'una certa dimensione).
+     Predefinito = 32768 (32MB). Un zero o un nullo valore disabilita la
+     soglia. In generale, questo valore non dovrebbe essere meno quella media
+     dimensione dei file che si desidera e si aspettano di ricevere al vostro
+     server o al vostro web sito, non dovrebbe essere più di la filesize_limit
+     direttiva, e non dovrebbe essere più di circa un quinto del totale
+     ammissibile allocazione della memoria concesso al php tramite il php.ini
+     configurazione file. Questa direttiva esiste per tenta di evitare avendo
+     phpMussel utilizzare troppa memoria (di cui sarebbe impedirebbe di essere
+     capace di completare la file scansione correttamente per i file piú d'una
+     certa dimensione).
  "compatibility" (Categoria)
  - Compatibilità direttive per phpMussel.
     "ignore_upload_errors"
@@ -1126,6 +1147,16 @@
       avviare scansioni per tali vuoti elementi, ignorarli quando si trova ea
       non ritorno qualsiasi errore correlato messaggi, così permettendo
       proseguimento della pagina richiesta. 0 - SPENTO (OFF), 1 - SU (ON).
+    "only_allow_images"
+    - Se vi aspettare o intendere solo di permettere le immagini da caricare al
+      vostro sistema o CMS, e se assolutamente non richiedono qualsiasi file
+      diversi da immagini essere caricare per il vostro sistema o CMS, questa
+      direttiva dovrebbe essere SU, ma dovrebbe altrimenti essere SPENTO. Se
+      questa direttiva è SU, che istruirà phpMussel di indiscriminatamente
+      bloccare tutti i caricati file identificati come file non-immagine,
+      senza scansionali. Questo può ridurre il tempo di processo e l'utilizzo
+      della memoria per tentati caricamenti di non-immagine file.
+      0 - SPENTO (OFF), 1 - SU (ON).
 
                                      ~ ~ ~                                     
 
@@ -1215,9 +1246,9 @@
    - "Generali Comandi" (hex_general_commands.csv). Verificato contro i
       contenuti del ogni file mirati per scansionare quello che non è sulla
       whitelist.
-   - "Portatili Eseguibili Sezionale Firme" (pe_*). Verificato contro i
-      contenuti del ogni file mirati per scansionare quello che non è sulla
-      whitelist e verificato allo PE formato.
+   - "Portatili Eseguibili Sezionale Firme" (pe_*). Verificato contro l'MD5
+      hash di ogni PE sezione e la dimensione del ogni file non sulla whitelist
+      mirati per la scansione e verificato allo PE formato.
    - "Portatili Eseguibili Firme" (exe_*). Verificato contro i contenuti del
       ogni file mirati per scansionare quello che non è sulla whitelist e
       verificato allo PE formato.
@@ -1233,6 +1264,8 @@
    - "Archive Metadati Firme" (metadata_*). Verificato contro l'CRC32 hash e la
       dimensione dell'iniziale file contenuto all'interno di qualsiasi file
       mirati per scansionare quello che non è sulla whitelist.
+   - "OLE Firme" (ole_*). Verificato contro i contenuti del ogni oggetti mirati
+      per scansionare quello che non è sulla whitelist.
    - "Email Signatures" (mail_*). Verificato contro la $body variabile parsato
       a la phpMussel_mail() funzione, che è destinato a essere il corpo de
       email messaggi o simili entità (potenzialmente forum messaggi e
@@ -1243,7 +1276,6 @@
       firme di cui al loro whitelist listato.
      (Si noti che qualsiasi di queste firme possono essere facilmente
       disattivato tramite phpmussel.ini).
-
 
                                      ~ ~ ~                                     
 
@@ -1271,9 +1303,9 @@
  dovrebbe considerare l'alternative opzioni per sia il vostro anti-virus
  software o phpMussel.
 
- Questa informazione è stato lo scorso aggiornato 13 Settembre 2014 ed è in
+ Questa informazione è stato lo scorso aggiornato 25 Settembre 2014 ed è in
  corso per tutte le phpMussel rilasci delle due più recenti minori versioni
- (v0.3-v0.4d) al momento di scrivere questo.
+ (v0.4-v0.5) al momento di scrivere questo.
 
  Ad-Aware                Senza noti problemi
  Agnitum                 Senza noti problemi
@@ -1281,18 +1313,15 @@
  AntiVir                 Senza noti problemi
  Antiy-AVL               Senza noti problemi
  Avast                !  Riferisce "JS:ScriptSH-inf [Trj]"
-                         - Tutti tranne v0.3d, v0.4d
  AVG                     Senza noti problemi
  Baidu-International     Senza noti problemi
  BitDefender             Senza noti problemi
- Bkav                 !  Riferisce "VEX408f.Webshell"
-                         - v0.3 a v0.3c
+ Bkav                    Senza noti problemi
  ByteHero                Senza noti problemi
  CAT-QuickHeal           Senza noti problemi
  ClamAV                  Senza noti problemi
  CMC                     Senza noti problemi
- Commtouch            !  Riferisce "W32/GenBl.857A3D28!Olympus"
-                         - v0.3e solo
+ Commtouch               Senza noti problemi
  Comodo                  Senza noti problemi
  DrWeb                   Senza noti problemi
  Emsisoft                Senza noti problemi
@@ -1300,10 +1329,8 @@
  F-Prot                  Senza noti problemi
  F-Secure                Senza noti problemi
  Fortinet                Senza noti problemi
- GData                !  Riferisce "Archive.Trojan.Agent.E7C7J7"
-                         - v0.3e solo
+ GData                   Senza noti problemi
  Ikarus               !  Riferisce "Trojan.JS.Agent"
-                         - v0.3g a v0.4c
  Jiangmin                Senza noti problemi
  K7AntiVirus             Senza noti problemi
  K7GW                    Senza noti problemi
@@ -1316,19 +1343,17 @@
  MicroWorld-eScan        Senza noti problemi
  NANO-Antivirus          Senza noti problemi
  Norman               !  Riferisce "Kryptik.BQS"
-                         - Tutti tranne v0.3d, v0.3e, v0.4d
  nProtect                Senza noti problemi
  Panda                   Senza noti problemi
  Qihoo-360               Senza noti problemi
  Rising                  Senza noti problemi
  Sophos                  Senza noti problemi
  SUPERAntiSpyware        Senza noti problemi
- Symantec                Senza noti problemi
+ Symantec             !  Riferisce "WS.Reputation.1"
  TheHacker               Senza noti problemi
  TotalDefense            Senza noti problemi
  TrendMicro              Senza noti problemi
  TrendMicro-HouseCall !  Riferisce "Suspici.450F5936"
-                         - v0.3d a v0.4c
  VBA32                   Senza noti problemi
  VIPRE                   Senza noti problemi
  ViRobot                 Senza noti problemi
@@ -1337,5 +1362,5 @@
                                      ~ ~ ~                                     
 
 
-Ultimo Aggiornamento: 13 Settembre 2014 (2014.09.13).
+Ultimo Aggiornamento: 25 Settembre 2014 (2014.09.25).
 EOF

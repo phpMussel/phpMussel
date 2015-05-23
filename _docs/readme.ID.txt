@@ -574,9 +574,12 @@
     Data test untuk mentest tanda tangan metadata phpMussel dan untuk testing
     data support GZ pada sistem anda.
     ~
- /_testfiles/metadata_testfile.txt.zip (Data test, Diikutkan)
+ /_testfiles/metadata_testfile.zip (Data test, Diikutkan)
     Data test untuk mentest tanda tangan phpMussel dan untuk testing data
     support ZIP pada sistem anda.
+    ~
+ /_testfiles/ole_testfile.ole (Data test, Diikutkan)
+    Data test untuk mentest tanda tangan OLE phpMussel.
     ~
  /_testfiles/pe_sectional_testfile.exe (Data test, Diikutkan)
     Data test untuk mentest tanda tangan PE Sectional phpMussel.
@@ -709,6 +712,7 @@
  /vault/mail_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/mail_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/mail_mussel_standard.cvd (Tanda tangan, Diikutkan)
+ /vault/mail_mussel_standard.map (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan yang digunakan oleh fungsi phpMussel_mail().
     Diperlukan jika fungsi phpMussel_mail() digunakan dalam jalan apapun.
     Dapat menghapus jika tidak digunakan (tapi data-data akan diciptakan
@@ -729,6 +733,19 @@
     Diperlukan jika tanda tangan meta data dalam opsi di phpmussel.ini di
     aktifkan. Dapat menghapus jika opsi di nonaktifkan (data akan diciptakan
     kembali saat upgrade).
+    ~
+ /vault/ole_clamav_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/ole_clamav_regex.map (Tanda tangan, Diikutkan)
+ /vault/ole_clamav_standard.cvd (Tanda tangan, Diikutkan)
+ /vault/ole_clamav_standard.map (Tanda tangan, Diikutkan)
+ /vault/ole_custom_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/ole_custom_standard.cvd (Tanda tangan, Diikutkan)
+ /vault/ole_mussel_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/ole_mussel_standard.cvd (Tanda tangan, Diikutkan)
+    Data-data untuk tanda tangan OLE.
+    Diperlukan jika opsi tanda tangan OLE di phpmussel.ini diaktifkan. Dapat
+    menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan kembali
+    pada saat mengupdate).
     ~
  /vault/pe_clamav.cvd (Tanda tangan, Diikutkan)
  /vault/pe_custom.cvd (Tanda tangan, Diikutkan)
@@ -818,6 +835,7 @@
     ~
 
                                      ~ ~ ~                                     
+
 
  6. OPSI KONFIGURASI
 
@@ -913,13 +931,13 @@
      "html_clamav"
      "html_custom"
      "html_mussel"
-   - Cek data PE (portable executable; EXE, DLL, etc) pada tanda tangan PE
+   - Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE
      Sectional ketika pemindaian?
      0 = Tidak, 1 = Ya [Default].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
-   - Cek data PE (portable executable; EXE, DLL, etc) pada tanda tangan PE
+   - Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE
      ketika pemindaian?
      0 = Tidak, 1 = Ya [Default].
      "exe_clamav"
@@ -930,7 +948,7 @@
      "elf_clamav"
      "elf_custom"
      "elf_mussel"
-   - Cek Data-data Mach-O  (OSX, etc) pada tanda tangan Mach-O ketika
+   - Cek data-data Mach-O (OSX, etc) pada tanda tangan Mach-O ketika
      pemindaian?
      0 = Tidak, 1 = Ya [Default].
      "macho_clamav"
@@ -947,6 +965,11 @@
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
+   - Cek objek-objek OLE pada tanda tangan OLE ketika pemindaian?
+     0 = Tidak, 1 = Ya [Default].
+     "ole_clamav"
+     "ole_custom"
+     "ole_mussel"
    - Cek nama data pada tanda tangan berbasis nama file ketika pemindaian?
      0 = Tidak, 1 = Ya [Default].
      "filenames_clamav"
@@ -1077,7 +1100,7 @@
    "corrupted_exe"
    - File rusak dan diurai kesalahan.
      0 = Mengabaikan, 1 = Memblokade [Default]. Mendeteksi dan memblokir
-     berpotensi rusak PE (portable executable) file? Sering (tetapi tidak
+     berpotensi rusak PE (Portable Executable) file? Sering (tetapi tidak
      selalu), ketika aspek-aspek tertentu dari file PE yang rusak atau tidak
      bisa diurai dengan benar, itu dapat menjadi indikasi dari infeksi virus.
      Proses yang digunakan oleh sebagian besar program anti-virus untuk
@@ -1095,20 +1118,21 @@
    - Opsional pembatasan atau ambang batas dengan panjang data mentah yang
      phpMussel diperbolehkan untuk membaca dan memindai (dalam kasus ada
      masalah kinerja sementara pemindaian). Nilai adalah bilangan yang mewakili
-     ukuran file dalam KB. Default = 32768 (32MB). Umumnya, nilai ini tidak
-     seharusnya kurang dari ukuran file rata-rata upload file yang Anda
-     inginkan dan Anda harapkan untuk menerima ke server atau website, tidak
-     seharusnya lebih dari direktif filesize_limit, dan tidak seharusnya lebih
-     dari sekitar seperlima dari total alokasi memori yang diijinkan ke php
-     melalui file phpmussel.ini konfigurasi. Direktif ini ada untuk mencegah
-     phpMussel menggunakan terlalu banyak memori (yang bisa mencegah dari yang
-     berhasil memindai file di atas tertentu ukuran file).
+     ukuran file dalam KB. Default = 32768 (32MB). Nol atau nilai null
+     menonaktifkan ambang batas. Umumnya, nilai ini tidak seharusnya kurang
+     dari ukuran file rata-rata upload file yang Anda inginkan dan Anda
+     harapkan untuk menerima ke server atau website, tidak seharusnya lebih
+     dari direktif filesize_limit, dan tidak seharusnya lebih dari sekitar
+     seperlima dari total alokasi memori yang diijinkan ke php melalui file
+     phpmussel.ini konfigurasi. Direktif ini ada untuk mencegah phpMussel
+     menggunakan terlalu banyak memori (yang bisa mencegah dari yang berhasil
+     memindai file di atas tertentu ukuran file).
  "compatibility" (Category)
  - Direktif-direktif kompatibilitas pada phpMussel.
     "ignore_upload_errors"
-    - Direktif ini umumnya harus diaktifkan OFF kecuali diperlukan untuk fungsi
+    - Direktif ini umumnya harus DINONAKTIFKAN kecuali diperlukan untuk fungsi
       yang benar dari phpMussel pada sistem tertentu. Biasanya, ketika
-      diaktifkan OFF, ketika phpMussel mendeteksi adanya elemen dalam $ _FILES
+      DINONAKTIFKAN, ketika phpMussel mendeteksi adanya elemen dalam $_FILES
       array(), itu akan mencoba untuk memulai scan file yang mewakili elemen,
       dan, jika elemen yang kosong, phpMussel akan mengembalikan pesan
       kesalahan. Ini adalah perilaku yang tepat untuk phpMussel. Namun, untuk
@@ -1116,11 +1140,21 @@
       perilaku alami itu CMS, atau kesalahan dapat dilaporkan bila tidak ada,
       dalam kasus seperti itu, perilaku normal untuk phpMussel akan mengganggu
       untuk perilaku normal itu CMS. Jika situasi seperti itu terjadi untuk
-      anda, mengubah ini opsi ON akan menginstruksikan phpMussel untuk tidak
-      mencoba untuk memulai scan untuk elemen kosong, mengabaikan saat ditemui
-      dan untuk tidak kembali terkait pesan kesalahan, sehingga memungkinkan
-      kelanjutan dari halaman permintaan. 0 - OFF, 1 - ON.
-
+      anda, MENGAKTIFKAN direktif ini akan menginstruksikan phpMussel untuk
+      tidak mencoba untuk memulai scan untuk elemen kosong, mengabaikan saat
+      ditemui dan untuk tidak kembali terkait pesan kesalahan, sehingga
+      memungkinkan kelanjutan dari halaman permintaan.
+      0 - DINONAKTIFKAN, 1 - DIAKTIFKAN.
+    "only_allow_images"
+    - Jika anda hanya mengharapkan atau hanya berniat untuk memungkinkan
+      mengupload gambar ke sistem atau CMS, dan jika Anda benar-benar tidak
+      memerlukan mengupload file selain gambar ke sistem atau CMS, direktif ini
+      harus DIAKTIFKAN, tetapi sebaliknya harus DINONAKTIFKAN. Jika direktif
+      ini DIAKTIFKAN, ini akan menginstruksikan phpMussel untuk memblokir tanpa
+      pandang bulu setiap upload diidentifikasi sebagai file tidak gambar,
+      tanpa pemindaian mereka. Ini mungkin mengurangi waktu memproses dan
+      penggunaan memori untuk mencoba upload file tidak gambar.
+      0 - DINONAKTIFKAN, 1 - DIAKTIFKAN.
 
                                      ~ ~ ~                                     
 
@@ -1212,22 +1246,24 @@
    - "Perintah umum" (hex_general_commands.csv). Dicek pada isi dari apapun
       file tidak bertanda putih dan ditargetkan untuk dipindai.
    - "Tanda tangan Portable Executable Sectional" (pe_*). Dicek pada hash MD5
-      dari seksi PE dan ukuran file dari apapun file tidak bertanda putih dan
+      dari seksi PE dan ukuran file dari apapun file tidak bertanda putih,
       ditargetkan untuk dipindai dan dicocokkan ke format PE.
    - "Tanda tangan Portable Executable" (exe_*). Dicek pada isi dari apapun
-      file tidak bertanda putih dan ditargetkan untuk dipindai dan dicocokkan
-      ke format PE.
+      file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke
+      format PE.
    - "Tanda tangan ELF" (elf_*). Dicek pada isi dari apapun file tidak bertanda
-      putih dan ditargetkan untuk dipindai dan dicocokkan ke format ELF.
+      putih, ditargetkan untuk dipindai dan dicocokkan ke format ELF.
    - "Tanda tangan Grafis" (graphics_*). Dicek pada isi dari apapun file tidak
-      bertanda putih dan ditargetkan untuk dipindai dan dicocokkan ke apapun
+      bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke apapun
       diketahui format grafis.
    - "Tanda tangan Mach-O" (macho_*). Dicek pada isi dari apapun file tidak
-      bertanda putih dan ditargetkan untuk dipindai dan dicocokkan ke format
+      bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format
       Mach-O.
    - "Tanda tangan Metadata Arsip" (metadata_*). Dicek pada hash CRC32 dan
       ukuran file dari pertama file berisikan dalam apapun arsip terkompress
       tidak bertanda putih dan ditargetkan untuk dipindai.
+   - "Tanda tangan OLE" (ole_*). Dicek pada isi dari apapun objek tidak
+      bertanda putih dan ditargetkan untuk dipindai.
    - "Email Signatures" (mail_*). Dicek pada variabel $body diparse ke fungsi
       phpMussel_mail(), yang dimaksudkan untuk menjadi body dari pesan-pesan
       email atau entries yang sama (secara potensial post forum dll).
@@ -1236,7 +1272,6 @@
       akan kebal terhadap dari dicocokkan dengan jenis tanda tangan yang
       disebutkan dalam entri daftar putih mereka.
      (Catatan jika tanda tangan ini boleh dinonaktifkan melalui phpmussel.ini).
-
 
                                      ~ ~ ~                                     
 
@@ -1263,28 +1298,24 @@
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 13 September 2014 dan cocok untuk semua rilis phpMussel
- dari dua versi minor terbaru versi (v0.3-v0.4d) pada waktu saya menuliskan
- ini.
+ Informasi ini diupdate 25 September 2014 dan cocok untuk semua rilis phpMussel
+ dari dua versi minor terbaru versi (v0.4-v0.5) pada waktu saya menuliskan ini.
 
  Ad-Aware                Tidak ada masalah yang diketahui
  Agnitum                 Tidak ada masalah yang diketahui
  AhnLab-V3               Tidak ada masalah yang diketahui
  AntiVir                 Tidak ada masalah yang diketahui
  Antiy-AVL               Tidak ada masalah yang diketahui
- Avast                !  Report "JS:ScriptSH-inf [Trj]"
-                         - semua kecuali v0.3d, v0.4d
+ Avast                !  Melaporkan "JS:ScriptSH-inf [Trj]"
  AVG                     Tidak ada masalah yang diketahui
  Baidu-International     Tidak ada masalah yang diketahui
  BitDefender             Tidak ada masalah yang diketahui
- Bkav                 !  Report "VEX408f.Webshell"
-                         - v0.3 melalui v0.3c
+ Bkav                    Tidak ada masalah yang diketahui
  ByteHero                Tidak ada masalah yang diketahui
  CAT-QuickHeal           Tidak ada masalah yang diketahui
  ClamAV                  Tidak ada masalah yang diketahui
  CMC                     Tidak ada masalah yang diketahui
- Commtouch            !  Report "W32/GenBl.857A3D28!Olympus"
-                         - v0.3e semata
+ Commtouch               Tidak ada masalah yang diketahui
  Comodo                  Tidak ada masalah yang diketahui
  DrWeb                   Tidak ada masalah yang diketahui
  Emsisoft                Tidak ada masalah yang diketahui
@@ -1292,10 +1323,8 @@
  F-Prot                  Tidak ada masalah yang diketahui
  F-Secure                Tidak ada masalah yang diketahui
  Fortinet                Tidak ada masalah yang diketahui
- GData                !  Report "Archive.Trojan.Agent.E7C7J7"
-                         - v0.3e semata
- Ikarus               !  Report "Trojan.JS.Agent"
-                         - v0.3g melalui v0.4c
+ GData                   Tidak ada masalah yang diketahui
+ Ikarus               !  Melaporkan "Trojan.JS.Agent"
  Jiangmin                Tidak ada masalah yang diketahui
  K7AntiVirus             Tidak ada masalah yang diketahui
  K7GW                    Tidak ada masalah yang diketahui
@@ -1307,20 +1336,18 @@
  Microsoft               Tidak ada masalah yang diketahui
  MicroWorld-eScan        Tidak ada masalah yang diketahui
  NANO-Antivirus          Tidak ada masalah yang diketahui
- Norman               !  Report "Kryptik.BQS"
-                         - Semua kecuali v0.3d, v0.3e, v0.4d
+ Norman               !  Melaporkan "Kryptik.BQS"
  nProtect                Tidak ada masalah yang diketahui
  Panda                   Tidak ada masalah yang diketahui
  Qihoo-360               Tidak ada masalah yang diketahui
  Rising                  Tidak ada masalah yang diketahui
  Sophos                  Tidak ada masalah yang diketahui
  SUPERAntiSpyware        Tidak ada masalah yang diketahui
- Symantec                Tidak ada masalah yang diketahui
+ Symantec             !  Melaporkan "WS.Reputation.1"
  TheHacker               Tidak ada masalah yang diketahui
  TotalDefense            Tidak ada masalah yang diketahui
  TrendMicro              Tidak ada masalah yang diketahui
- TrendMicro-HouseCall !  Report "Suspici.450F5936"
-                         - v0.3d melalui v0.4c
+ TrendMicro-HouseCall !  Melaporkan "Suspici.450F5936"
  VBA32                   Tidak ada masalah yang diketahui
  VIPRE                   Tidak ada masalah yang diketahui
  ViRobot                 Tidak ada masalah yang diketahui
@@ -1329,5 +1356,5 @@
                                      ~ ~ ~                                     
 
 
-Terakhir Diperbarui: 13 September 2014 (2014.09.13).
+Terakhir Diperbarui: 25 September 2014 (2014.09.25).
 EOF
