@@ -2,8 +2,8 @@
 phpMussel-PHP.Backdoor.BoffMax:3c3f706870200d0a2f2a0d0a3a3a(..)*2d2d0d0a3f3e
 phpMussel-PHP.Backdoor.Hookworm:(48|68)6f6f6b776f726d(..)*666765747328
 phpMussel-PHP.Backdoor.PHPShell:(50|70)(48|68)(50|70)(20)?(53|73)(48|68)(45|65)(4c|6c)
-phpMussel-PHP.Backdoor.shell_exec:((50|70)(48|68)(50|70))?(..)*(53|73)(48|68)(45|65)(4c|6c){2}5f(45|65)(58|78)(65|45)(43|63)
-phpMussel-PHP.Exploit.eval-0:((50|70)(48|68)(50|70))?(09|0a|0d|20|2f|2a|a0)+(45|65)(56|76)(41|61)(4c|6c)
+phpMussel-PHP.Backdoor.shell_exec:(53|73)(48|68)(45|65)(4c|6c){2}5f(45|65)(58|78)(65|45)(43|63)
+phpMussel-PHP.Exploit.eval-0:(09|0a|0d|20|2f|2a|a0)+(45|65)(56|76)(41|61)(4c|6c)
 >FN>([.][Cc][Vv][Dd]|[.][Ii][Nn][Cc]|[.][Tt][Xx][Tt])$>8
 >FS-MAX>-1>9
 phpMussel-PHP.Shell.Hack-0:245f5b(5d|245f)

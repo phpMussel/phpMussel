@@ -1,24 +1,27 @@
-ClamAV-Suspect.DoubleExtension-zippwd-1:[.](doc|xls|ppt|jpg|bmp|gif)[.]?[- _]{4,}[.](exe|bat|com|lnk|cmd|js|vbs)$
-ClamAV-Suspect.DoubleExtension-zippwd-6:[.]([Pp][Dd][Ff]|[Dd][Oo][Cc]|[Xx][Ll][Ss]|[Pp][Pp][Tt]|[Jj][Pp][Gg]|[Bb][Mm][Pp]|[Gg][Ii][Ff])[.]?[- _]{4,}[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
 ClamAV-Suspect.Bredozip-zippwd-1:^(U|u)(P|p)(S|s)(n|N)(r|R)_.*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
-ClamAV-Suspect.Bredozip-zippwd-2:^(D|d)(H|h)(L|l)_.*_.*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
-ClamAV-Suspect.Bredozip-zippwd-3:^(F|f)(A|a)(c|C)(E|e)(b|B)(O|o)(O|o)(k|K)_.*_.*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
-ClamAV-Suspect.Zbot-zippwd:^(M|m)(Y|y)(S|s)(p|P)(a|A)(c|C)(e|E)_.*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
-ClamAV-Suspect.Bredozip-zippwd-4:^(W|w)(u|U)_(d|D)(e|E)(t|T)(a|A)(i|I)(l|L)(s|S)_.*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
-ClamAV-Suspect.Bredozip-zippwd-5:^(U|u)(P|p)(S|s)(_|-)(i|I)(n|N)(v|V)(o|O)(i|I)(c|C)(e|E).*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
-ClamAV-Suspect.Downloader-zippwd:^(O|o)(P|p)(e|E)(n|N)[.]([Ee][Xx][Ee])$
-ClamAV-Suspect.Bredozip-zippwd-6:^(P|p)(o|O)(S|s)(t|T)(a|A)(l|L)_(l|L)(a|A)(b|B)(e|E)(l|L).*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
-ClamAV-Suspect.Bredozip-zippwd-7:^(U|u)(P|p)(S|s)(i|I)(n|N)(v|V)(o|O)(i|I)(c|C)(e|E).*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
-ClamAV-Suspect.Bredozip-zippwd-9:^(d|D)(H|h)(l|L)(i|I)(n|N)(v|V)(o|O)(i|I)(c|C)(e|E).*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
-ClamAV-Suspect.Bredozip-zippwd-8:^(i|I)(n|N)(v|V)(o|O)(i|I)(c|C)(e|E)[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
-ClamAV-Suspect.DoubleExtension-zippwd-8:[.]([h|H][t|T][m|M][l|L]|[h|H][t|T][m|M]|[t|T][x|X][t|T]|[Dd][Oo][Cc]|[Xx][Ll][Ss]|[Pp][Pp][Tt]|[Jj][Pp][Gg]|[Bb][Mm][Pp]|[Gg][Ii][Ff])[.]?[- _]{4,}[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
 ClamAV-Suspect.Bredozip-zippwd-10:^(U|u)(P|p)(S|s)(_|-)(d|D)(o|O)(c|C)(u|U)(m|M)(e|E)(n|N)(t|T).*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
 ClamAV-Suspect.Bredozip-zippwd-11:^(d|D)(h|H)(l|L)(_|-)(d|D)(o|O)(c|C)(u|U)(m|M)(e|E)(n|N)(t|T).*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
-ClamAV-Suspect.FakeAV-zippwd:settings.exe
 ClamAV-Suspect.Bredozip-zippwd-12:^(F|f)(a|A)(c|C)(e|E)(b|B)(o|O)(o|O)(K|k)(p|P)(a|A)(s|S)(s|S)(w|W)(o|O)(r|R)(d|D).*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
 ClamAV-Suspect.Bredozip-zippwd-13:^(F|f)(a|A)(c|C)(e|E)(b|B)(o|O)(o|O)(K|k)(_|-)(p|P)(a|A)(s|S)(s|S)(w|W)(o|O)(r|R)(d|D).*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
 ClamAV-Suspect.Bredozip-zippwd-14:^(i|I)(t|T)(u|U)(n|N)(e|E)(s|S)(_|-)(c|C)(E|e)(r|R)(T|t)(i|I)(f|F)(i|I)(c|C)(a|A)(t|T)(e|E).*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
 ClamAV-Suspect.Bredozip-zippwd-15:^(R|r)(e|E)(S|s)(U|u)(m|M)(e|E)(_|-)(D|d)(O|o)(c|C)(U|u)(m|M)(E|e)(n|N)(t|T).*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
 ClamAV-Suspect.Bredozip-zippwd-16:^(G|g)(i|I)(f|F)(t|T)(_|-)(c|C)(E|e)(r|R)(T|t)(i|I)(f|F)(i|I)(c|C)(a|A)(t|T)(e|E).*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
-ClamAV-Suspect.DoubleExtension-zippwd-12:[.]([dD][oO][cC]|[xX][lL][Ss]|[Pp][Pp][Tt]|[Jj][pP][Gg]|[Bb][Mm][Pp]|[Gg]|[Ii][Ff])[.]?[- _]{4,}[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
+ClamAV-Suspect.Bredozip-zippwd-2:^(D|d)(H|h)(L|l)_.*_.*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
+ClamAV-Suspect.Bredozip-zippwd-3:^(F|f)(A|a)(c|C)(E|e)(b|B)(O|o)(O|o)(k|K)_.*_.*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
+ClamAV-Suspect.Bredozip-zippwd-4:^(W|w)(u|U)_(d|D)(e|E)(t|T)(a|A)(i|I)(l|L)(s|S)_.*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
+ClamAV-Suspect.Bredozip-zippwd-5:^(U|u)(P|p)(S|s)(_|-)(i|I)(n|N)(v|V)(o|O)(i|I)(c|C)(e|E).*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
+ClamAV-Suspect.Bredozip-zippwd-6:^(P|p)(o|O)(S|s)(t|T)(a|A)(l|L)_(l|L)(a|A)(b|B)(e|E)(l|L).*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
+ClamAV-Suspect.Bredozip-zippwd-7:^(U|u)(P|p)(S|s)(i|I)(n|N)(v|V)(o|O)(i|I)(c|C)(e|E).*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
+ClamAV-Suspect.Bredozip-zippwd-8:^(i|I)(n|N)(v|V)(o|O)(i|I)(c|C)(e|E)[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
+ClamAV-Suspect.Bredozip-zippwd-9:^(d|D)(H|h)(l|L)(i|I)(n|N)(v|V)(o|O)(i|I)(c|C)(e|E).*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
+ClamAV-Suspect.DoubleExtension-zippwd-1:1:[.](doc|xls|ppt|jpg|bmp|gif)[.]?[- _]{4,}[.](exe|bat|com|lnk|cmd|js|vbs)$
+ClamAV-Suspect.DoubleExtension-zippwd-12:0:[.]([dD][oO][cC]|[xX][lL][Ss]|[Pp][Pp][Tt]|[Jj][pP][Gg]|[Bb][Mm][Pp]|[Gg]|[Ii][Ff])[.]?[- _]{4,}[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
+ClamAV-Suspect.DoubleExtension-zippwd-13:1:[.]([dD][oO][cC]|[xX][lL][Ss]|[Pp][Pp][Tt]|[Jj][pP][Gg]|[Bb][Mm][Pp]|[Gg]|[Ii][Ff])[.]?[- _]{4,}[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
 ClamAV-Suspect.DoubleExtension-zippwd-15:[.]([pP][dD][fF])[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
+ClamAV-Suspect.DoubleExtension-zippwd-2:0:[.](doc|xls|ppt|jpg|bmp|gif)[.]?[- _]{4,}[.](exe|bat|com|lnk|cmd|js|vbs)$
+ClamAV-Suspect.DoubleExtension-zippwd-6:1:[.]([Pp][Dd][Ff]|[Dd][Oo][Cc]|[Xx][Ll][Ss]|[Pp][Pp][Tt]|[Jj][Pp][Gg]|[Bb][Mm][Pp]|[Gg][Ii][Ff])[.]?[- _]{4,}[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
+ClamAV-Suspect.DoubleExtension-zippwd-7:0:[.]([Pp][Dd][Ff]|[Dd][Oo][Cc]|[Xx][Ll][Ss]|[Pp][Pp][Tt]|[Jj][Pp][Gg]|[Bb][Mm][Pp]|[Gg][Ii][Ff])[.]?[- _]{4,}[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
+ClamAV-Suspect.DoubleExtension-zippwd-8:1:[.]([h|H][t|T][m|M][l|L]|[h|H][t|T][m|M]|[t|T][x|X][t|T]|[Dd][Oo][Cc]|[Xx][Ll][Ss]|[Pp][Pp][Tt]|[Jj][Pp][Gg]|[Bb][Mm][Pp]|[Gg][Ii][Ff])[.]?[- _]{4,}[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
+ClamAV-Suspect.DoubleExtension-zippwd-9:0:[.]([h|H][t|T][m|M][l|L]|[h|H][t|T][m|M]|[t|T][x|X][t|T]|[Dd][Oo][Cc]|[Xx][Ll][Ss]|[Pp][Pp][Tt]|[Jj][Pp][Gg]|[Bb][Mm][Pp]|[Gg][Ii][Ff])[.]?[- _]{4,}[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
+ClamAV-Suspect.Downloader-zippwd:^(O|o)(P|p)(e|E)(n|N)[.]([Ee][Xx][Ee])$
+ClamAV-Suspect.Zbot-zippwd:^(M|m)(Y|y)(S|s)(p|P)(a|A)(c|C)(e|E)_.*[.]([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$

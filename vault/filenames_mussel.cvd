@@ -96,7 +96,7 @@ phpMussel-FN.Trojan.Zlob-0:^[Vv][Uu][Aa][Ll][Ff][.][Dd][Ll][Ll]
 phpMussel-FN.Virus.W32.MyWebSearch-0:^[Mm][Ww][Ss]([Bb][Aa][Rr]|[Oo][Ee][Ss][Tt][Bb]|[Ss][Rr][Cc][Aa][Ss])[.][Dd][Ll][Ll]
 phpMussel-FN.Worm.W32.Niumu-0B:^muniu[.]dll
 phpMussel-FN.Worm.W32.Zimuse.B-2:^tokset[.]dll
->FN>[.][Ee][Xx][Ee]>169
+>FN>[.][Ee][Xx][Ee]>170
 phpMussel-FN.Adware.180search-1:^sain[.]exe
 phpMussel-FN.Adware.2Search-0:^(getst|2searchinstaller|007guard)[.]exe
 phpMussel-FN.Adware.AdvSearch-1:^(cliner|mailbook|updaterproxy)[.][Ee][Xx][Ee]
@@ -148,6 +148,7 @@ phpMussel-FN.Trojan.W32.All.In.One-0:^all[-]?in[-]?one[-]?spy[.]exe
 phpMussel-FN.Trojan.W32.Generic-1:^(alx.{3}|.{3}res)[0-9]+[.]exe
 phpMussel-FN.Trojan.W32.Hachimitsu.Lemon-0:^hachimitsu[-]?lemon[.]exe
 phpMussel-FN.Trojan.W32.HotBar-1:^([Mm][Oo][Nn][Pp][Oo][Pp]|[Pp][Oo][Pp][Ss][Rr][Vv]225|[Hh][Bb][Gg][Uu][Aa][Rr][Dd]|[Hh][Bb][Mm][Aa][Ii][Ll])[.][Ee][Xx][Ee]
+phpMussel-FN.Trojan.W32.WebXVid:[Ww][Ee][Bb].?[Xx].?[Vv][Ii][Dd]
 phpMussel-FN.Virus.5whgue21-0:^5whgue21[.]exe
 phpMussel-FN.Virus.W32.Love-0:^(love|codecsetup[0-9]{4}|blaah|cuda|hose|1|t|ernsjyi|jjcmdrj|nheste|nxmwp|rwmgh|tbljxjk|vohth|vvpmyvaw|pak[-][0-9]{4}|aa|(yeah)?[0-9]{6}|[_]cw0srv|[0-9]{4}[a-z0-9]{4}|cncdown)[.]exe
 phpMussel-FN.Virus.W32.MyWebSearch-1:^[Mm][Ww][S][Oo][Ee][Mm][Oo][Nn][.][Ee][Xx][Ee]

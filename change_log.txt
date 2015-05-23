@@ -1,5 +1,36 @@
 phpMussel change_log.txt
 
+=== Version 0.3d ===
+SUMMARY:
+Updated to the latest signatures set (55+18473+3d).
+Sub-minor update.
+
+NEW CHANGES:
+- Improved documentation (README file now available in multiple languages:
+  English, Indonesian and French; Will expand this to other languages when
+  I can find the time; Core program remains entirely in English at this point,
+  but I am thinking about adding full multilingual support, eventually. It
+  takes a long time, though, and working on the actual programming itself is
+  always going to be higher priority, so I'm not putting a deadline on this
+  particular idea at all).
+- Increased stringency of phpMussel_mail() function (also,
+  mail_mussel_standard.cvd signatures will now be incorporating data from a
+  number of additional sources, such as that from PhishTank.com).
+
+PROBLEMS/BUGS FIXED:
+- Optional conditional length matching issue with some signature types found
+  and fixed.
+
+PROBLEMS/BUGS FOUND:
+- That old PCRE bug has reared its head again. Wishful thinkful that the
+  update of the previous version had this bug fixed. :-(  The signature files
+  causing the problem (I've isolated the files.. Just not the specific
+  signatures, yet, unfortunately) have been and will remain purged of content
+  for the time being.
+
+Maikuolan,
+16th February 2014.
+
 === Version 0.3c ===
 SUMMARY:
 Updated to the latest signatures set (55+18240+3c).
@@ -39,9 +70,9 @@ NEW CHANGES:
   all variables expected to be parsed from "phpmussel.ini", and if any are
   missing, sets these missing variables with their default values. This should
   ensure that if any user modifies the configuration file incorrectly or with
-  incorrect information, or if the configuration file somehow becomes corrupted,
-  the chances of php returning missing variable warnings or fatal errors are
-  reduced and proper function of the script is better safeguarded.
+  incorrect information, or if the configuration file somehow becomes
+  corrupted, the chances of php returning missing variable warnings or fatal
+  errors are reduced and proper function of the script is better safeguarded.
 - Added support for running phpMussel independantly from any hooks under CLI
   mode (command line interface) on Windows. While I'd continue to suggest that
   conventional anti-virus programs are going to be faster and more effective
@@ -245,8 +276,8 @@ NEW CHANGES:
 
 PROBLEMS/BUGS FIXED:
 - Corrected a small handful of typographical errors (d'oh!) that I'd found
-  hiding in the documentation and various comments throughout the package (didn't
-  spot any in the script itself, at least).
+  hiding in the documentation and various comments throughout the package
+  (didn't spot any in the script itself, at least).
 - Found and fixed the bug relating to chameleon attack detection (updating
   from previous script version recommended to avoid possible false-positive
   matches, due to the nature of the bug).
@@ -260,8 +291,8 @@ The initial release, built from the ground-upwards, no previous version:
 Goals of the initial release are to create something that, albeit requiring
 much future work and perhaps with a benefit extremely minimal compared to its
 intended future goals, does actually work correctly to a level satisfying what
-would be expected of an initial release of the script as per the expectations of
-the script, without, from its default configuration and assuming no
+would be expected of an initial release of the script as per the expectations
+of the script, without, from its default configuration and assuming no
 programmatic deviations, posing any inherent problems for any to implement the
 script and for and desirable end-users. The expectations of the script,
 in-line with the goals of the project overall, can be adequately surmised by
@@ -298,17 +329,17 @@ PROBLEMS/BUGS FOUND (NEW KNOWN PROBLEMS WITH THIS VERSION):
 - Although the basic signatures of ClamAV can be interpreted and checked
   against during file uploads, this TAKES A VERY LONG TIME! The time required
   is unacceptable (up to a minute long per file at the worst point of my
-  initial testing), because it could potential create a vector for a theoretical
-  attacker to successfully implement a DDoS attack against whatever phpMussel
-  is hooked to. The feature remains fully implemented and functional in this
-  version, but with default configuration, is disabled. Those implementing the
-  script can optionally enable it if they wish, though I recommend against it
-  at this point. Thankfully, the same problem does not extend to the MD5
-  signatures and similar, which during initial tests, proved extremely fast
-  and efficient. I have no intentions of even BEGINNING to find ways to
-  implement other signatures types until this problem is resolved. In any case,
-  aside from the time requirements, there doesn't appear to be any other
-  problems with the basic signatures.
+  initial testing), because it could potential create a vector for a
+  theoretical attacker to successfully implement a DDoS attack against
+  whatever phpMussel is hooked to. The feature remains fully implemented and
+  functional in this version, but with default configuration, is disabled.
+  Those implementing the script can optionally enable it if they wish, though
+  I recommend against it at this point. Thankfully, the same problem does not
+  extend to the MD5 signatures and similar, which during initial tests, proved
+  extremely fast and efficient. I have no intentions of even BEGINNING to find
+  ways to implement other signatures types until this problem is resolved. In
+  any case, aside from the time requirements, there doesn't appear to be any
+  other problems with the basic signatures.
 - High-nibble, low-nibble and general wildcard indicators are not currently
   recognised by the script. This should be fixed (preferably without
   exacerbating the time requirements problem).

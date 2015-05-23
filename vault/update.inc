@@ -29,8 +29,8 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                   ~ ~ ~                                        
- This File: phpMussel v0.3b Update Script
- This File Last Updated: 29th November 2013
+ This File: phpMussel v0.3d Update Script
+ This File Last Updated: 16th February 2014
 
                                   ~ ~ ~                                        
  Please refer to "documentation" for installation instructions and for
@@ -75,7 +75,7 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 	$phpmusselversion['script_version']=trim(substr($phpmusselversion['raw'],16,16));
 	$phpmusselversion['first_compatible']=trim(substr($phpmusselversion['script_version'],strpos($phpmusselversion['script_version']," ")));
 	$phpmusselversion['script_version']=trim(substr($phpmusselversion['script_version'],0,strpos($phpmusselversion['script_version']," ")));
-	$phpmusselversion['phpmussel_ua']="phpMussel v".$phpmusselversion['script_version']." (".crc32($_SERVER['SERVER_ADDR']).crc32($_SERVER['HTTP_HOST']).crc32($phpmusselversion['raw']).")";
+	$phpmusselversion['phpmussel_ua']="phpMussel v".$phpmusselversion['script_version']." (".crc32($_SERVER['SERVER_ADDR'])."-".crc32($_SERVER['HTTP_HOST'])."-".crc32($phpmusselversion['raw']).")";
 	header("Content-Type: text/plain");
 	echo "      _____  _     _  _____  _______ _     _ _______ _______ _______           \n <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >\n     |       |     | |       |  |  | |_____| ______| ______| |______ |_____    \n Thank you for using phpMussel, a php-based script based upon ClamAV signatures\n  designed to detect trojans, viruses, malware and other threats within files  \n             uploaded to your system wherever the script is hooked.            \n     PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan)    \n\n                                  ~ ~ ~                                        \n\n";
 	echo "phpMussel will now attempt to update itself. (".(time()-$phpmusselversion['current_time'])."s elapsed)\n\n";
@@ -85,7 +85,7 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 		echo "Attempting to fetch version data from http://".substr($phpmusselversion['update_addresses'][$i],0,(strlen($phpmusselversion['update_addresses'][$i])-strpos($phpmusselversion['update_addresses'][$i],"/"))*-1)."/ ... ";
 		$phpmusselversion['stream']=stream_context_create(array("http"=>array("method"=>"POST","header"=>"Content-type: application/x-www-form-urlencoded; charset=iso-8859-1","user_agent"=>$phpmusselversion['phpmussel_ua'],"content"=>"x=ver","timeout"=>59)));
 		$phpmusselversion['request']=file_get_contents("http://".$phpmusselversion['update_addresses'][$i],false,$phpmusselversion['stream']);
-		if(trim(substr($phpmusselversion['request'],0,16))!=="Â¡phpMussel!")
+		if(trim(substr($phpmusselversion['request'],0,16))!=="¡phpMussel!")
 			{
 			echo "Failed. (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
 			$phpmusselversion['update_addresses'][$i]="";
@@ -161,7 +161,7 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 				echo "Attempting to fetch update data from http://".substr($phpmusselversion['update_addresses'][$i],0,(strlen($phpmusselversion['update_addresses'][$i])-strpos($phpmusselversion['update_addresses'][$i],"/"))*-1)."/ ... ";
 				$phpmusselversion['stream']=stream_context_create(array("http"=>array("method"=>"POST","header"=>"Content-type: application/x-www-form-urlencoded; charset=iso-8859-1","user_agent"=>$phpmusselversion['phpmussel_ua'],"content"=>"x=".$phpmusselversion['compare'],"timeout"=>59)));
 				$phpmusselversion['request']=file_get_contents("http://".$phpmusselversion['update_addresses'][$i],false,$phpmusselversion['stream']);
-				if(trim(substr($phpmusselversion['request'],0,16))!=="Â¡phpMussel!")
+				if(trim(substr($phpmusselversion['request'],0,16))!=="¡phpMussel!")
 					{
 					echo "Failed. (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
 					continue;
