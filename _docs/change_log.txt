@@ -44,24 +44,59 @@ Next and/or subsequent below sub-minor releases and/or re-releases (v0.Xy.Z):
 - Signature updates (with no code changes) and hot-fixes only.
 Last Edited: 5th October 2014
 
-=== Version 0.5 / Release 0.5.1 (Previous Release: 0.5) ===
+=== Version/Release 0.5a (Previous Release: 0.5.1) ===
 SUMMARY:
-Non-ClamAV signatures update only (55+19429+5.1); No script changes.
+Updated to the latest signatures set (55+19521+5a).
+Minor release (high priority).
 
-For reasons that I do not know, it appears that the mirror for the ClamAV
-database from which I usually obtain the daily signature updates is currently
-hosting an outdated copy of the daily signatures from a few months back, which
-is older than the signatures already implemented to phpMussel. Hopefully this
-problem will be resolved prior to my intended date for the next phpMussel after
-this one, but for this release, at least, I'm not going to make any changes to
-phpMussel's ClamAV signature files. That said, although there hasn't been any
-changes to the core code for phpMussel nor to the ClamAV signature files since
-the previous release, I have written some new signatures based on my own
-research that may be of extreme interest to a select few of phpMussel's users,
-due to what these signatures are intended to protect against, which I think
-warrants the existence of this current release. These new signatures primarily
-concern PHP-specific shell hacks, backdoors and several website defacement
-tools and related indicators.
+NEW CHANGES:
+- Big number of new signatures included with this release! A number of
+  signatures crafted for the purposes of combating defacement attacks against
+  websites and servers making use of phpMussel.
+- Added some new defacement signatures sourced from Spambot Security and a new
+  round of signatures designed to protect against hacking and exploitation
+  attempts.
+- Added some new email scamming and email phishing signatures as well as, as
+  per the usual, a new round of PhishTank derived signatures.
+- Added a number of the open-source signatures provided by NLNetLabs.
+
+PROBLEMS/BUGS FIXED:
+- There were new two signatures that I'd written for the previous release that
+  I'd forgotten to hex-encode. Luckily, they didn't consist of anything
+  potentially executable. My apologies! They were smaller, more obscure
+  signatures to detect for some specific base64 encoded data and this oversight
+  isn't remotely dangerous, so there's nothing to worry about, at least.
+  Must've missed them because the coded and unencoded versions of the
+  signatures looked very similar to each other in this instance. Anyhow, fixed.
+- There was an incorrectly placed operand in the section of the Core Script for
+  handling HTML signatures causing that section to never trigger (meaning HTML
+  signatures would never be checked against). Fixed. Also, although the change
+  is extremely small, the effect is rather significant; I'm marking this
+  release as high priority.
+
+Maikuolan,
+22nd October 2014.
+
+=== Version 0.5 / Release 0.5.1 (Previous Release: 0.5; Next: 0.5.2) ===
+SUMMARY:
+Non-ClamAV signatures update only (55+19429+5.1).
+No script changes (high or medium priority).
+
+NEW CHANGES:
+- For reasons that I do not know, it appears that the mirror for the ClamAV
+  database from which I usually obtain the daily signature updates is currently
+  hosting an outdated copy of the daily signatures from a few months back,
+  which is older than the signatures already implemented to phpMussel.
+  Hopefully this problem will be resolved prior to my intended date for the
+  next release after this one, but for this release, at least, I'm not going to
+  make any changes to phpMussel's ClamAV signature files. That said, although
+  there hasn't been any changes to the core code for phpMussel nor to the
+  ClamAV signature files since the previous release, I have written some new
+  signatures based on my own research that may be of extreme interest to a
+  select few of phpMussel's users, due to what these signatures are intended to
+  protect against, which I think warrants the existence of this current
+  release. These new signatures primarily concern PHP-specific shell hacks,
+  backdoors and several website defacement tools and related indicators.
 
 This release should be considered HIGH PRIORITY if:
 - You are allowing the upload of script-based files such as PHP and HTML files,
@@ -81,7 +116,7 @@ files modified since the previous release).
 Maikuolan,
 5th October 2014.
 
-=== Version/Release 0.5 (Previous Release: 0.4d) ===
+=== Version/Release 0.5 (Previous Release: 0.4d; Next: 0.5.1) ===
 SUMMARY:
 Updated to the latest signatures set (55+19429+5).
 Minor release (medium priority).

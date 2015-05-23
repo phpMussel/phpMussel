@@ -31,7 +31,7 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                      ~ ~ ~                                     
- This File: phpMussel v0.5 (25th September 2014) Core Script
+ This File: phpMussel v0.5a (22nd October 2014) Core Script
 
  The latest version and future updates can be obtained from the phpMussel
  SourceForge page located at <http://sourceforge.net/projects/phpmussel/>
@@ -50,7 +50,7 @@ if(!defined('phpMussel'))
 	die("[phpMussel] This should not be accessed directly.");
 	}
 
-$phpmusselversion="phpMussel v0.5";
+$phpmusselversion="phpMussel v0.5a";
 $linebreak=chr(10);
 if(!isset($MusselConfig['general']['ipaddr']))$MusselConfig['general']['ipaddr']="REMOTE_ADDR";
 if(!isset($_SERVER[$MusselConfig['general']['ipaddr']]))$_SERVER[$MusselConfig['general']['ipaddr']]="";
@@ -828,7 +828,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 		$str_norm_len=$GLOBALS['MusselConfig']['attack_specific']['scannable_threshold']*2048;
 		$str_norm=substr($str_norm,0,$str_norm_len);
 		}
-	if(!isset($whitelist['HTML'])&&!($GLOBALS['MusselConfig']['signatures']['html_clamav']||$GLOBALS['MusselConfig']['signatures']['html_custom']||$GLOBALS['MusselConfig']['signatures']['html_mussel']))
+	if(!isset($whitelist['HTML'])&&($GLOBALS['MusselConfig']['signatures']['html_clamav']||$GLOBALS['MusselConfig']['signatures']['html_custom']||$GLOBALS['MusselConfig']['signatures']['html_mussel']))
 		{
 		$chkmagic=false;
 		if(!$chkmagic)if(substr_count($str_norm,"3c21646f6374797065"))$chkmagic=true;
