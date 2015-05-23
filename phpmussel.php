@@ -1,6 +1,6 @@
 <?php
 /*
-      _____  _     _  _____  _______ _     _ _______ _______ _______   v0.1    
+      _____  _     _  _____  _______ _     _ _______ _______ _______   v0.1a   
  <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
      |       |     | |       |  |  | |_____| ______| ______| |______ |_____    
  Thank you for using phpMussel, a php-based script based upon ClamAV signatures
@@ -11,8 +11,8 @@
    you are currently using was released) is still UNDER CONSTRUCTION, NOT YET  
     COMPLETE, and thus comes with NO WARRANTY. Keep an eye out for updates.    
                                   ~ ~ ~                                        
- phpMussel version 0.1 (main script by Maikuolan, signatures by ClamAV).
- Last Updated (phpMussel, this version): 18th September 2013.
+ phpMussel version 0.1a (main script by Maikuolan, signatures by ClamAV).
+ Last Updated (phpMussel, this version): 21st September 2013.
  
  Special thanks to ClamAV for both project inspiration and for the signature
  files that this script utilises, without which, the script would simply not
@@ -23,11 +23,12 @@
  found at:
   http://www.clamav.net/lang/en/
  
- Special thanks to Zaphod and Spambot Security for giving the project a home via
- hosting and forums.
+ Special thanks to Zaphod and Spambot Security for giving the project a home
+ via hosting and forums.
   http://www.spambotsecurity.com/forum/index.php
  
- Special thanks to all those supporting the project, and to you, for using the script.
+ Special thanks to all those supporting the project, and to you, for using
+ the script.
  
  Also.. To anyone else that I should be mentioning that I haven't. I felt that
  I should probably include something like this (special thanks notice) in the
@@ -38,25 +39,25 @@
  For help or support with the script (if you need it), you can find and contact
  me at Spambot Security or Game Jaunt.
   http://www.spambotsecurity.com/forum/memberlist.php?mode=viewprofile&u=516
-  http://www.gamejaunt.com/contact.php - http://www.gamejaunt.com/profile/Maikuolan/
+  http://www.gamejaunt.com/contact.php
+  http://www.gamejaunt.com/profile/Maikuolan/
                                   ~ ~ ~                                        
 
  The only part of this script that you should need to modify in order for it to
  work on your CMS or website is the $vault variable.
  
- Please modify the string between the quotation marks next to $vault to match the
- exact true location of the "vault" directory of phpMussel.
+ Please modify the string between the quotation marks next to $vault to match
+ the exact true location of the "vault" directory of phpMussel.
  
- For everything else, refer to "readme.txt".
- (This should get easier once I get around to writing up proper documentation
-  and a proper installer).
+ For everything else, refer to "readme.txt". (This should get easier once I
+ get around to writing up proper documentation and a proper installer).
  
  Regards,
  Maikuolan.
 */
 
 $vault="/your_user/public_html/some_dir/phpmussel/vault/";
-$phpmusselversion="phpMussel v0.1";
+$phpmusselversion="phpMussel v0.1a";
 @ini_set('display_errors',0);
 $linebreak=chr(13).chr(10);
 
@@ -143,7 +144,9 @@ if(!function_exists("substr_compare_hex"))
 		$y="";
 		for($i=0;$i<$l;$i++)
 			{
-			$y.=dechex(ord($str[$i]));
+			$z=@dechex(ord($str[$i]));
+			if(strlen($z)===1)$z="0".$z;
+			$y.=$z;
 			}
 		if(!$p)return (substr_count($y,strtolower($x))>0)?true:false;
 		return ($y===strtolower($x))?true:false;
@@ -291,7 +294,7 @@ if(!function_exists("phpMusselD"))
 			{
 			if(substr_count("exe,dll,ocx,acm,ax,cpl,drv,com,scr,rs,sys,",$xt.",")>0)
 				{
-				if(!substr_compare_hex($str,0,2,"4d5a"))
+				if(!substr_compare_hex($str,0,2,"4d5a",1))
 					{
 					$out.=$lnap."EXE chameleon attack detected!".$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
@@ -300,7 +303,7 @@ if(!function_exists("phpMusselD"))
 				}
 			else
 				{
-				if(substr_compare_hex($str,0,2,"4d5a"))
+				if(substr_compare_hex($str,0,2,"4d5a",1))
 					{
 					$out.=$lnap."EXE chameleon attack detected!".$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
@@ -309,7 +312,7 @@ if(!function_exists("phpMusselD"))
 				}
 			if($xt=="elf")
 				{
-				if(!substr_compare_hex($str,0,4,"7f454c46"))
+				if(!substr_compare_hex($str,0,4,"7f454c46",1))
 					{
 					$out.=$lnap."ELF chameleon attack detected!".$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
@@ -318,7 +321,7 @@ if(!function_exists("phpMusselD"))
 				}
 			else
 				{
-				if(substr_compare_hex($str,0,4,"7f454c46"))
+				if(substr_compare_hex($str,0,4,"7f454c46",1))
 					{
 					$out.=$lnap."ELF chameleon attack detected!".$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
@@ -330,7 +333,7 @@ if(!function_exists("phpMusselD"))
 			{
 			if($xts=="zip*")
 				{
-				if(!substr_compare_hex($str,0,2,"504b"))
+				if(!substr_compare_hex($str,0,2,"504b",1))
 					{
 					$out.=$lnap."ZIP chameleon attack detected!".$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
@@ -339,7 +342,7 @@ if(!function_exists("phpMusselD"))
 				}
 			if($xt=="rar")
 				{
-				if(!substr_compare_hex($str,0,4,"52617221"))
+				if(!substr_compare_hex($str,0,4,"52617221",1))
 					{
 					$out.=$lnap."RAR chameleon attack detected!".$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
@@ -349,9 +352,9 @@ if(!function_exists("phpMusselD"))
 			}
 		if($GLOBALS['MusselConfig']['attack_specific']['chameleon_to_doc'])
 			{
-			if($xt=="doc")
+			if(substr_count("doc,dot,pps,ppt,xla,xls,wiz,",$xt.",")>0)
 				{
-				if(!substr_compare_hex($str,0,4,"d0cf11e0"))
+				if(!substr_compare_hex($str,0,4,"d0cf11e0",1))
 					{
 					$out.=$lnap."Office chameleon attack detected!".$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
@@ -363,17 +366,16 @@ if(!function_exists("phpMusselD"))
 			{
 			if($xt=="bmp"||$xt=="dib")
 				{
-				if(!substr_compare_hex($str,0,2,"424d"))
+				if(!substr_compare_hex($str,0,2,"424d",1))
 					{
 					$out.=$lnap."Image chameleon attack detected!".$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xfm'].="Image chameleon attack detected (".$ofn.")! ";
 					}
 				}
-		/* Wrote it, tested it, didn't work. Commented out until fixed. Not sure what's up. Will fix it later. Remainder seem okay though. -Maik.
 			if($xt=="png")
 				{
-				if(!substr_compare_hex($str,1,3,"504e47"))
+				if(!substr_compare_hex($str,0,8,"89504e470d0a1a0a",1))
 					{
 					$out.=$lnap."Image chameleon attack detected!".$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
@@ -382,17 +384,16 @@ if(!function_exists("phpMusselD"))
 				}
 			if($xt=="jpg"||$xt=="jpeg")
 				{
-				if(!substr_compare_hex($str,0,6,"c3bfc398c3bf")&&!substr_compare_hex($str,0,4,"ffd8ffe0"))
+				if(!substr_compare_hex($str,0,3,"ffd8ff",1))
 					{
 					$out.=$lnap."Image chameleon attack detected!".$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xfm'].="Image chameleon attack detected (".$ofn.")! ";
 					}
 				}
-		*/
 			if($xt=="gif")
 				{
-				if(!substr_compare_hex($str,0,6,"474946383761")&&!substr_compare_hex($str,0,6,"474946383961"))
+				if(!substr_compare_hex($str,0,6,"474946383761",1)&&!substr_compare_hex($str,0,6,"474946383961",1))
 					{
 					$out.=$lnap."Image chameleon attack detected!".$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
@@ -401,7 +402,7 @@ if(!function_exists("phpMusselD"))
 				}
 			if($xt=="xcf")
 				{
-				if(!substr_compare_hex($str,0,8,"67696d7020786366"))
+				if(!substr_compare_hex($str,0,8,"67696d7020786366",1))
 					{
 					$out.=$lnap."Image chameleon attack detected!".$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
@@ -410,7 +411,7 @@ if(!function_exists("phpMusselD"))
 				}
 			if($xt=="psd"||$xt=="pdd")
 				{
-				if(!substr_compare_hex($str,0,4,"38425053"))
+				if(!substr_compare_hex($str,0,4,"38425053",1))
 					{
 					$out.=$lnap."Image chameleon attack detected!".$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
@@ -422,7 +423,7 @@ if(!function_exists("phpMusselD"))
 			{
 			if($xt=="pdf")
 				{
-				if(!substr_compare_hex($str,0,4,"25504446"))
+				if(!substr_compare_hex($str,0,4,"25504446",1))
 					{
 					$out.=$lnap."PDF chameleon attack detected!".$GLOBALS['linebreak'];
 					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
@@ -514,7 +515,7 @@ if(!function_exists("phpMusselR"))
 		$fS=@filesize($f);
 		if($GLOBALS['MusselConfig']['files']['filesize_limit']>0)
 			{
-			if($fS>$GLOBALS['MusselConfig']['files']['filesize_limit'])
+			if($fS>($GLOBALS['MusselConfig']['files']['filesize_limit']*1024))
 				{
 				if(!$GLOBALS['MusselConfig']['files']['filesize_response'])return (!$n)?1:$lnap."Checking '".$ofn."':".$GLOBALS['linebreak']."-".$lnap."OK (filesize limit exceeded).".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].="00000000000000000000000000000000:".$fS.":".$ofn.$GLOBALS['linebreak'];
@@ -523,9 +524,19 @@ if(!function_exists("phpMusselR"))
 				return (!$n)?2:$lnap."Checking '".$ofn."':".$GLOBALS['linebreak']."-".$lnap."Bad (filesize limit exceeded).".$GLOBALS['linebreak'];
 				}
 			}
-		$xt=explode(".",$ofn);
-		$xts=substr(strtolower($xt[count($xt)-1]),0,3)."*";
-		$xt=strtolower($xt[count($xt)-1]);
+		if(substr_count($ofn,".")>0&&substr($ofn,0,1)!=="."&&substr($ofn,-1)!=="."&&!(substr_count("/",$ofn)>0)&&!(substr_count("\\",$ofn)>0))
+			{
+			$xt=explode(".",$ofn);
+			$xts=substr(strtolower($xt[count($xt)-1]),0,3)."*";
+			$xt=strtolower($xt[count($xt)-1]);
+			}
+		else
+			{
+			if($fm)$GLOBALS['xsk'].="00000000000000000000000000000000:".$fS.":".$ofn.$GLOBALS['linebreak'];
+			if($fm)$GLOBALS['xfm'].="Filename manipulation detected (".$ofn.")! ";
+			if($GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
+			return (!$n)?2:$lnap."Checking '".$ofn."':".$GLOBALS['linebreak']."-".$lnap."Filename manipulation detected!".$GLOBALS['linebreak'];
+			}
 		if(substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$xt.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$xts.",")>0)return (!$n)?1:$lnap."Checking '".$ofn."':".$GLOBALS['linebreak']."-".$lnap."No problems found.".$GLOBALS['linebreak'];
 		if(substr_count($GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",$xt.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",$xts.",")>0)
 			{
@@ -581,7 +592,7 @@ if(!function_exists("phpMusselR"))
 						$eS=@zip_entry_filesize($fD);
 						if($GLOBALS['MusselConfig']['files']['filesize_archives']&&$GLOBALS['MusselConfig']['files']['filesize_limit']>0)
 							{
-							if($eS>$GLOBALS['MusselConfig']['files']['filesize_limit'])
+							if($eS>($GLOBALS['MusselConfig']['files']['filesize_limit']*1024))
 								{
 								if(!$GLOBALS['MusselConfig']['files']['filesize_response'])
 									{
@@ -595,11 +606,22 @@ if(!function_exists("phpMusselR"))
 								continue;
 								}
 							}
-						if($GLOBALS['MusselConfig']['files']['filetype_archives'])
+						if(substr_count($eN,".")>0&&substr($eN,0,1)!=="."&&substr($eN,-1)!==".")
 							{
 							$xt=explode(".",$eN);
 							$xts=substr(strtolower($xt[count($xt)-1]),0,3)."*";
 							$xt=strtolower($xt[count($xt)-1]);
+							}
+						else
+							{
+							$r=2;
+							if($fm)$GLOBALS['xsk'].="00000000000000000000000000000000:".$eS.":".$ofn.">".$eN.$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xfm'].="Filename manipulation detected (".$ofn.")! ";
+							$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap."Filename manipulation detected!".$GLOBALS['linebreak'];
+							continue;
+							}
+						if($GLOBALS['MusselConfig']['files']['filetype_archives'])
+							{
 							if(substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$xt.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$xts.",")>0)
 								{
 								$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap."No problems found.".$GLOBALS['linebreak'];

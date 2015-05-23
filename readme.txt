@@ -1,4 +1,4 @@
-      _____  _     _  _____  _______ _     _ _______ _______ _______   v0.1    
+      _____  _     _  _____  _______ _     _ _______ _______ _______   v0.1a   
  <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
      |       |     | |       |  |  | |_____| ______| ______| |______ |_____    
  Thank you for using phpMussel, a php-based script based upon ClamAV signatures
@@ -26,20 +26,24 @@
  1. PRE-RAMBLE
  
  < Excerpt from phpmussel.php >
- phpMussel version 0.1 (main script by Maikuolan, signatures by ClamAV).
-
+ phpMussel version 0.1a (main script by Maikuolan, signatures by ClamAV).
+ Last Updated (phpMussel, this version): 21st September 2013.
+ 
  Special thanks to ClamAV for both project inspiration and for the signature
  files that this script utilises, without which, the script would simply not
  exist, or at best, would have very limited value.
- Both ClamAV and the latest copy of its (not modified for phpMussel) signatures
- can be found at:
+ Default signatures included with this version of phpMussel derived from
+ mainlined signatures version 55 ("main.cvd"), released 17th September 2013.
+ Both ClamAV and the latest copy of its (unmodified) signatures can be
+ found at:
   http://www.clamav.net/lang/en/
  
- Special thanks to Zaphod and Spambot Security for giving the project a home via
- hosting and forums.
+ Special thanks to Zaphod and Spambot Security for giving the project a home
+ via hosting and forums.
   http://www.spambotsecurity.com/forum/index.php
  
- Special thanks to all those supporting the project, and to you, for using the script.
+ Special thanks to all those supporting the project, and to you, for using
+ the script.
  
  Also.. To anyone else that I should be mentioning that I haven't. I felt that
  I should probably include something like this (special thanks notice) in the
@@ -50,7 +54,8 @@
  For help or support with the script (if you need it), you can find and contact
  me at Spambot Security or Game Jaunt.
   http://www.spambotsecurity.com/forum/memberlist.php?mode=viewprofile&u=516
-  http://www.gamejaunt.com/contact.php - http://www.gamejaunt.com/profile/Maikuolan/
+  http://www.gamejaunt.com/contact.php
+  http://www.gamejaunt.com/profile/Maikuolan/
  </ Excerpt from phpmussel.php >
  
  Script released as GNU/GPL V.2, which can be found (the license) at:
@@ -121,11 +126,11 @@
 	make sure it's working properly. To test out file upload protections,
 	download one of our testing files and attempt to upload it to your
 	website via your usual browser-based upload methods. If everything is
-	working, a message should appear from phpMussel confirming that the
-	upload was successfully blocked. If nothing appears, something isn't
-	working correctly. If you're using any advanced features or if you're
-	using the other types of scanning possible with the tool, I'd suggest
-	trying it out to make sure it works as expected, too.
+	working, a message should appear from phpMussel confirming that the upload
+	was successfully blocked. If nothing appears, something isn't working
+	correctly. If you're using any advanced features or if you're using the
+	other types of scanning possible with the tool, I'd suggest trying it out
+	to make sure it works as expected, too.
  
                                   ~ ~ ~                                        
  
@@ -143,32 +148,30 @@
  phpMussel($what_to_scan,$output_type,$output_flatness);
  
  Where:
- - $what_to_scan is either a string or an array, pointing to either a
-   target file, a target directory or an array or either target files
-   and/or target directories.
-   Omitting this variable will result in a file does not exist status
-   being returned by the function.
- - $output_type is an integer, indicating the format in which results of
-   the scan are to be return as. A value of 0 instructs the function to
-   return results as an integer (a returned result of -2 indicates that
-   corrupt data was detected during the scan and thus the scan failed to
-   complete, -1 indicates that extensions or addons required by php to
-   execute the scan were missing and thus the scan failed to complete,
-   0 indicates that the scan target does not exist and thus there was
-   nothing to scan, 1 indicates that the target was successfully scanned
-   and no problems were detected, and 2 indicates that the target was
-   successfully scanned and problems were detected). A value of 1
-   instructs the function to return results as human readable text. A
-   value of 2 instructs the function both to return the results as human
-   readable text and to export the results to a global variable.
-   This variable is optional, defaulting to 0.
- - $output_flatness is an integer, indicating whether to allow results
-   to be returned as an array or not. Normally, if the scan target
-   contained multiple items (such as if a directory or array) the results
-   will be returned in an array (default value of 0). A value of 1
-   instructs the function to implode any such array prior to input,
-   resulting in a flattened string containing the results to be returned.
-   This variable is optional, defaulting to 0.
+ - $what_to_scan is either a string or an array, pointing to either a target
+   file, a target directory or an array of target files and/or target
+   directories. Omitting this variable will result in a "file does not exist"
+   status being returned by the function.
+ - $output_type is an integer, indicating the format in which the results of
+   the scan are to be return as. A value of 0 instructs the function to return
+   results as an integer (a returned result of -2 indicates that corrupt data
+   was detected during the scan and thus the scan failed to complete,
+   -1 indicates that extensions or addons required by php to execute the scan
+   were missing and thus the scan failed to complete, 0 indicates that the
+   scan target does not exist and thus there was nothing to scan,
+   1 indicates that the target was successfully scanned and no problems were
+   detected, and 2 indicates that the target was successfully scanned and
+   problems were detected). A value of 1 instructs the function to return
+   results as human readable text. A value of 2 instructs the function both
+   to return the results as human readable text and to export the results to
+   a global variable. This variable is optional, defaulting to 0.
+ - $output_flatness is an integer, indicating whether to allow results to be
+   returned as an array or not. Normally, if the scan target contained
+   multiple items (such as if a directory or array) the results will be
+   returned in an array (default value of 0). A value of 1 instructs the
+   function to implode any such array prior to input, resulting in a flattened
+   string containing the results to be returned. This variable is optional,
+   defaulting to 0.
  
  Examples:
  
@@ -187,9 +190,9 @@
  4. FILES INCLUDED IN THIS PACKAGE
  
  The following is a list of all of the files that should have been included
- in the archived copy of this script when you downloaded it, any files that may
- be potentially created as a result of your using this script, along with a
- short description of what all these files are for.
+ in the archived copy of this script when you downloaded it, any files that
+ may be potentially created as a result of your using this script, along with
+ a short description of what all these files are for.
  
  /phpmussel.php - The main working file of the script (essential)!
  
@@ -221,11 +224,11 @@
  /vault/md5.cvd - A copy of the ClamAV MD5 signatures for phpMussel to compare
   files again (modified for use by phpMussel).
  
- ** /vault/extended.custom.cvd - For customised extended signatures for phpMussel
-  to compare files against (uses ClamAV extended signatures format).
+ ** /vault/extended.custom.cvd - For customised extended signatures for
+  phpMussel to compare files against (uses ClamAV extended signatures format).
  
- ** /vault/extended.cvd - A copy of the ClamAV extended signatures for phpMussel
-  to compare files again (modified for use by phpMussel).
+ ** /vault/extended.cvd - A copy of the ClamAV extended signatures for
+  phpMussel to compare files again (modified for use by phpMussel).
  
  /vault/zip_metadata.custom.cvd - For customised ZIP MetaData signatures for
   phpMussel to compare files against (uses simplified variant of ClamAV ZIP
@@ -247,8 +250,8 @@
  /vault/template.html - Template file for the HTML output produced by phpMussel
   for its blocked file upload message.
  
- ** Not included in the current version of the script (planned to be included in
-    a future version of the script).
+ ** Not included in the current version of the script (planned to be included
+    in a future version of the script).
  * Not included in the archive, but created by phpMussel as per when required.
    Also may be named differently from as per described here, pending phpMussel
    configuration (as per stipulated in phpmussel.ini).

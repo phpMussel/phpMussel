@@ -1,94 +1,104 @@
 phpMussel change_log.txt
 
+=== Version 0.1a ===
+- [FIX] Fixed a small handful of typographical errors (d'oh!) that I'd found
+  hiding in the documentation and various comments throughout the package (didn't
+  spot any in the script itself, at least).
+- [FIX] Found and fixed the bug relating to chameleon attack detection (updating
+  from previous script version recommended to avoid possible false-positive
+  matches, due to the nature of the bug).
+- [NEW] Added some additional file manipulation detections and slightly changed
+  some of the configuration defaults (sub-minor).
+
+Maikuolan,
+21st September 2013.
+
 === Version 0.1 ===
 The initial release, built from the ground-upwards, no previous version:
-Goals of the initial release are to create something that, albeit
-requiring much future work and perhaps with a benefit extremely
-minimal compared to its intended future goals, does actually work
-correctly to a level satisfying what would be expected of an initial
-release of the script as per the expections of the script, without, from
-its default configuration and assuming no programmatic deviations,
-posing any inherant problems for any to implement the script and for
-and desirable end-users. The expectations of the script, in-line with
-the goals of the project overall, can be adequately surmised by the
-description of the script as included, at the time of this release,
-in the main body of the script itself: "Thank you for using phpMussel,
-a php-based script based upon ClamAV signatures designed to detect
-trojans, viruses, malware and etcetera within files uploaded to your
-system wherever the script is hooked."
+Goals of the initial release are to create something that, albeit requiring
+much future work and perhaps with a benefit extremely minimal compared to its
+intended future goals, does actually work correctly to a level satisfying what
+would be expected of an initial release of the script as per the expections of
+the script, without, from its default configuration and assuming no
+programmatic deviations, posing any inherant problems for any to implement the
+script and for and desirable end-users. The expectations of the script,
+in-line with the goals of the project overall, can be adequately surmised by
+the description of the script as included, at the time of this release, in the
+main body of the script itself: "Thank you for using phpMussel, a php-based
+script based upon ClamAV signatures designed to detect trojans, viruses,
+malware and etcetera within files uploaded to your system wherever the script
+is hooked."
 
 PRIMARY ACHIEVEMENTS OF THIS VERSION:
-- Can successfully detect file uploads and scan those files and the
-  contents of those files.
-- Can successfully interpret the MD5 signatures of ClamAV and check
+- Can successfully detect file uploads and scan those files and the contents of
+  those files.
+- Can successfully interpret the MD5 signatures of ClamAV and check against
+  those signatures when scanning files.
+- Can successfully interpret custom MD5 signatures and check against those
+  signatures when scanning files.
+- Can successfully interpret the basic signatures of ClamAV and check against
+  those signatures when scanning files.
+- Can successfully interpret custom basic signatures and check against those
+  signatures when scanning files.
+- Can successfully detect archives (ZIP files only at this point) and
+  individually scan the files contained in those archives.
+- Can successfully interpret the ZIP MetaData signatures of ClamAV and check
   against those signatures when scanning files.
-- Can successfully interpret custom MD5 signatures and check
-  against those signatures when scanning files.
-- Can successfully interpret the basic signatures of ClamAV and check
-  against those signatures when scanning files.
-- Can successfully interpret custom basic signatures and check
-  against those signatures when scanning files.
-- Can successfully detect archives (ZIP files only at this point)
-  and individually scan the files contained in those archives.
-- Can successfully interpret the ZIP MetaData signatures of ClamAV
-  and check against those signatures when scanning files.
-- Can successfully interpret custom ZIP MetaData signatures and check
-  against those signatures when scanning files.
+- Can successfully interpret custom ZIP MetaData signatures and check against
+  those signatures when scanning files.
 - Functions of the script can be controlled via a configuration file.
-- Can block file uploads and automatically delete those attempted
-  file uploads, as per script configuration.
+- Can block file uploads and automatically delete those attempted file uploads,
+  as per script configuration.
 - Can detect certain types of chameleon attacks successfully.
 - Can log scanning operations and scan kills.
 
 KNOWN PROBLEMS WITH THIS VERSION:
-- Although the basic signatures of ClamAV can be interpreted and
-  checked against during file uploads, this TAKES A VERY LONG TIME!
-  The time required is unacceptable (up to a minute long per file
-  at the worst point, during initial tests), because it could potential
-  create a vector for a theoretical attacker to successfully
-  implement a DDoS attack against whatever phpMussel is hooked to.
-  The feature remains fully implemented and function in this version,
-  but by default configuration, is disabled. Those implementing the
-  script can optionally enable it if they wish, though I recommend
-  against it at this point. Thankfully, the same problem does
-  not extend to the MD5 signatures and similar, which during initial
-  tests, proved extremely fast and efficient. I have no intentions of
-  even BEGINNING to find ways to implement other signatures types until
-  this problem is resolved. In any case, aside from the time
-  requirements, there doesn't appear to be any other problems with
-  the basic signatures.
-- High-nibble, low-nibble and general wildcard indicators are not
-  currently recognised by the script. This should be fixed (preferably
-  without exacerbating the time requirements problem).
-- Extended signatures, bytecode signatures and the ClamAV whitelist
-  is not yet implemented (at all).
-- Archive scanning is currently limited to ZIP files. At this point,
-  support for other types of archives (RAR, CAB, 7z, GZ, TAR and
-  etcetera) is not supported, and the filetypes are not recognised
-  differently from non-archive files.
-- Archive scanning is not recursive (meaning only first-level files
-  of archives will be scanned). This needs to be corrected.
-- Chameleon attack detection for JPG, JPEG and PNG isn't working
-  correctly. Should remain disabled until fixed.
+- Although the basic signatures of ClamAV can be interpreted and checked
+  against during file uploads, this TAKES A VERY LONG TIME! The time required
+  is unacceptable (up to a minute long per file at the worst point of my
+  initial testing), because it could potential create a vector for a theoretical
+  attacker to successfully implement a DDoS attack against whatever phpMussel
+  is hooked to. The feature remains fully implemented and functional in this
+  version, but with default configuration, is disabled. Those implementing the
+  script can optionally enable it if they wish, though I recommend against it
+  at this point. Thankfully, the same problem does not extend to the MD5
+  signatures and similar, which during initial tests, proved extremely fast
+  and efficient. I have no intentions of even BEGINNING to find ways to
+  implement other signatures types until this problem is resolved. In any case,
+  aside from the time requirements, there doesn't appear to be any other
+  problems with the basic signatures.
+- High-nibble, low-nibble and general wildcard indicators are not currently
+  recognised by the script. This should be fixed (preferably without
+  exacerbating the time requirements problem).
+- Extended signatures, PE signatures, bytecode signatures and the ClamAV
+  whitelist is not yet implemented (at all).
+- Archive scanning is currently limited to ZIP files. At this point, support
+  for other types of archives (RAR, CAB, 7z, GZ, TAR and etcetera) is not
+  supported, and the filetypes are not recognised differently from non-archive
+  files.
+- Archive scanning is not recursive (meaning only first-level files of archives
+  will be scanned). This needs to be corrected.
+- Chameleon attack detection for JPG, JPEG and PNG isn't working correctly.
+  Should remain disabled until fixed.
 
 FUTURE VERSION GOALS (AND FUTURE VERSIONING GUIDELINES):
 To qualify for the next major version release (Version 1.0):
-- Correct the time requirement problem of the basic signatures, as
-  so that it no longer provides a vector for DDoS attacks.
+- Correct the time requirement problem of the basic signatures, as so that it
+  no longer provides a vector for DDoS attacks.
 - Make the script recognise wildcards.
-- Have implemented ALL signature types (MD5, Basic, Extended, Metadata,
-  the whitelist [not absolutely certain about that one, so optional],
-  Bytecode [if I or anyone else can work out exactly how to], as
-  well as any other signatures types that may exist by the time the
-  script has been updated), correctly, functioning correctly during
-  a live test, without any time requirement problems.
+- Have implemented ALL signature types (MD5, Basic, Extended, Metadata, the
+  whitelist [not absolutely certain about that one, so optional], Bytecode
+  [if I or anyone else can work out exactly how to], as well as any other
+  signatures types that may exist by the time the script has been updated),
+  correctly, functioning correctly during a live test, without any time
+  requirement problems.
 - Be capable of scanning archives RECURSIVELY.
 - (Optionally) produce new goals for a follow-up version (major/minor).
 To qualify for a minor version release (Version 0.X):
-- Any -significant- changes to the script, at all, including completing
-  one or more of the above goals and including bringing in any new
-  features or capabilities, whereby having been done, the script does
-  not qualify for a new major version release.
+- Any -significant- changes to the script, at all, including completing one or
+  more of the above goals and including bringing in any new features or
+  capabilities, whereby having been done, the script does not qualify for a
+  new major version release.
 To quality for a sub-minor version release (0.Xy, 0.X.Y, 0.Xy.Z, 0.X.Yz):
 - Any other changes to the script.
 
