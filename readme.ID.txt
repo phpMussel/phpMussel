@@ -544,6 +544,9 @@
     phpMussel dengan benar diinstal pada sistem, dan anda tidak perlu
     mengupload direktori ini atau data-datanya jika melakukan testing.
     ~
+ /_testfiles/exe_standard_testfile.exe (Test file, Included)
+    Data test untuk mentest tanda tangan PE phpMussel.
+    ~
  /_testfiles/general_standard_testfile.txt (Data test, diikutkan)
     Data test untuk mentest tanda tangan umum phpMussel.
     ~
@@ -638,6 +641,9 @@
     phpMussel. Diperlukan jika opsi deteksi perintah umum di dalam
     phpmussel.ini diaktifkan. Dapat menghapus jika opsi dinonaktifkan (tapi
     data-data akan diciptkan kembali pada saat mengupdate).
+    ~
+ /vault/lang.inc (Script, Included)
+    phpMussel Bahasa Data; Diperlukan untuk kemampuan multibahasa.
     ~
  /vault/macho_clamav_regex.cvd (Tanda tangan, Diikutkan)
  /vault/macho_clamav_regex.map (Tanda tangan, Diikutkan)
@@ -819,6 +825,8 @@
       yang dimaksudkan.
       0 - Setelah pemindahaian, biarkan data  [Default],
       1 - Setelah pemindaian, jika tidak bersih, hapus langsung.
+    "lang"
+    - Tentukan bahasa default untuk phpMussel.
  "signatures" (Kategori)
  - Configuration for signatures.
    %%%_clamav = Tanda tangan ClamAV (kedua-duanya utama dan harian).
@@ -998,6 +1006,23 @@
      Bahasa Arab atau Bahasa Ibrani), menghidupkan opsi ini akan mengakibatkan
      angka positif salah dan secara potensial mengakibatkan masalah bagi anda.
      0 - Jangan memblokade [Default], 1 - Memblokade.
+ "compatibility" (Category)
+ - Kompatibilitas direktif pada phpMussel.
+    "ignore_upload_errors"
+    - Direktif ini umumnya harus diaktifkan OFF kecuali diperlukan untuk fungsi
+      yang benar dari phpMussel pada sistem tertentu. Biasanya, ketika
+      diaktifkan OFF, ketika phpMussel mendeteksi adanya elemen dalam $ _FILES
+      array(), itu akan mencoba untuk memulai scan file yang mewakili elemen,
+      dan, jika elemen yang kosong, phpMussel akan mengembalikan pesan
+      kesalahan. Ini adalah perilaku yang tepat untuk phpMussel. Namun, untuk
+      beberapa CMS, elemen kosong di $_FILES dapat terjadi sebagai akibat dari
+      perilaku alami itu CMS, atau kesalahan dapat dilaporkan bila tidak ada,
+      dalam kasus seperti itu, perilaku normal untuk phpMussel akan mengganggu
+      untuk perilaku normal itu CMS. Jika situasi seperti itu terjadi untuk
+      anda, mengubah ini opsi ON akan menginstruksikan phpMussel untuk tidak
+      mencoba untuk memulai scan untuk elemen kosong, mengabaikan saat ditemui
+      dan untuk tidak kembali terkait pesan kesalahan, sehingga memungkinkan
+      kelanjutan dari halaman permintaan. 0 - OFF, 1 - ON.
 
 
                                      ~ ~ ~                                     
@@ -1117,25 +1142,25 @@
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 17 Februari 2014 dan cocok untuk semua versi dari
- phpMussel, dari inisial release v0.1 melalui release terakhir v0.3d pada waktu
- saya menuliskan ini.
+ Informasi ini diupdate 22 Mei 2014 dan cocok untuk semua versi dari phpMussel,
+ dari inisial release v0.1 melalui release terakhir v0.3f pada waktu saya
+ menuliskan ini.
 
  Ad-Aware                Tidak ada masalah yang diketahui
  Agnitum                 Tidak ada masalah yang diketahui
  AhnLab-V3               Tidak ada masalah yang diketahui
  AntiVir                 Tidak ada masalah yang diketahui
  Antiy-AVL               Tidak ada masalah yang diketahui
- Avast                !  Melaporkan "JS:ScriptSH-inf [Trj]" (v0.1 - v0.3c)
+ Avast                !  Reports "JS:ScriptSH-inf [Trj]" (semua kecuali v0.3d)
  AVG                     Tidak ada masalah yang diketahui
  Baidu-International     Tidak ada masalah yang diketahui
  BitDefender             Tidak ada masalah yang diketahui
- Bkav                 !  Melaporkan "VEX408f.Webshell" (v0.3 - v0.3d)
+ Bkav                 !  Reports "VEX408f.Webshell" (v0.3 melalui v0.3c)
  ByteHero                Tidak ada masalah yang diketahui
  CAT-QuickHeal           Tidak ada masalah yang diketahui
  ClamAV                  Tidak ada masalah yang diketahui
  CMC                     Tidak ada masalah yang diketahui
- Commtouch               Tidak ada masalah yang diketahui
+ Commtouch            !  Reports "W32/GenBl.857A3D28!Olympus" (v0.3e semata)
  Comodo                  Tidak ada masalah yang diketahui
  DrWeb                   Tidak ada masalah yang diketahui
  Emsisoft                Tidak ada masalah yang diketahui
@@ -1143,7 +1168,7 @@
  F-Prot                  Tidak ada masalah yang diketahui
  F-Secure                Tidak ada masalah yang diketahui
  Fortinet                Tidak ada masalah yang diketahui
- GData                   Tidak ada masalah yang diketahui
+ GData                !  Reports "Archive.Trojan.Agent.E7C7J7" (v0.3e semata)
  Ikarus                  Tidak ada masalah yang diketahui
  Jiangmin                Tidak ada masalah yang diketahui
  K7AntiVirus             Tidak ada masalah yang diketahui
@@ -1156,18 +1181,19 @@
  Microsoft               Tidak ada masalah yang diketahui
  MicroWorld-eScan        Tidak ada masalah yang diketahui
  NANO-Antivirus          Tidak ada masalah yang diketahui
- Norman               !  Melaporkan "Kryptik.BQS" (v0.1 - v0.3d)
+ Norman               !  Reports "Kryptik.BQS" (semua kecuali v0.3d dan v0.3e)
  nProtect                Tidak ada masalah yang diketahui
  Panda                   Tidak ada masalah yang diketahui
  Qihoo-360               Tidak ada masalah yang diketahui
  Rising                  Tidak ada masalah yang diketahui
  Sophos                  Tidak ada masalah yang diketahui
  SUPERAntiSpyware        Tidak ada masalah yang diketahui
- Symantec                Tidak ada masalah yang diketahui
+ Symantec             !  Reports "WS.Reputation.1" (v0.3e melalui v0.3f)
  TheHacker               Tidak ada masalah yang diketahui
- TotalDefense         !  Melaporkan "VBS/Nuel" (tanda tangan spesifik release)
+ TotalDefense            Tidak ada masalah yang diketahui
  TrendMicro              Tidak ada masalah yang diketahui
- TrendMicro-HouseCall !  Melaporkan "TROJ_GEN.F47V1219" (v0.1 - v0.3c)
+ TrendMicro-HouseCall !  Reports "TROJ_GEN.F47V1219" (v0.3d dan terdahulu)
+                      !  Reports "TROJ_GEN.F47V0312" (v0.3e semata)
  VBA32                   Tidak ada masalah yang diketahui
  VIPRE                   Tidak ada masalah yang diketahui
  ViRobot                 Tidak ada masalah yang diketahui
@@ -1176,4 +1202,5 @@
                                      ~ ~ ~                                     
 
 
+Terakhir Diperbarui: 22nd May 2014
 EOF

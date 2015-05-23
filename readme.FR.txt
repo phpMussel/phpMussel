@@ -553,6 +553,9 @@
     correctement installé sur votre système, et vous n'avez pas besoin de
     télécharger ce répertoire ou l'un de ses fichiers, sauf si faire ces tests.
     ~
+ /_testfiles/exe_standard_testfile.exe (Test file, Included)
+    Test fichier à test phpMussel PE signatures.
+    ~
  /_testfiles/general_standard_testfile.txt (Test fichier, Inclus)
     Test fichier à test phpMussel générales signatures.
     ~
@@ -647,6 +650,9 @@
     phpMussel. Nécessaire si l'option de général commande détection dans
     phpmussel.ini est activée. Peut enlever si l'option est désactivée (mais
     les fichiers seront recréés sur réactualiser).
+    ~
+ /vault/lang.inc (Script, Included)
+    phpMussel Langue Données; Obligatoire pour les capacités multilingues.
     ~
  /vault/macho_clamav_regex.cvd (Signatures, Inclus)
  /vault/macho_clamav_regex.map (Signatures, Inclus)
@@ -831,6 +837,8 @@
       comporter de la manière attendu.
       0 - Après l'analyse, laissez le fichier tel quel [Défaut],
       1 - Après l'analyse, si pas propre, supprimer immédiatement.
+    "lang"
+    - Spécifier la défaut langue pour phpMussel.
  "signatures" (Catégorie)
  - Configuration pour les signatures.
    %%%_clamav = ClamAV signatures (mains et daily).
@@ -1008,6 +1016,25 @@
      Chinois, Japonais, Russe, Arabe ou Hébreu caractères), l'activation de
      cette va créer faux positifs et potentiellement pour vous causer des
      problèmes. 0 - Ne pas bloquer [Défaut], 1 - Bloquer.
+ "compatibility" (Category)
+ - Compatibilité directives pour phpMussel.
+    "ignore_upload_errors"
+    - Cette directive doit généralement être DÉSACTIVÉ sauf si cela est
+      nécessaire pour la correcte fonctionnalité de phpMussel sur votre
+      spécifique système. Normalement, lorsque DÉSACTIVÉ, lorsque phpMussel
+      détecte la présence d'éléments dans le $_FILES() tableau, il va tenter
+      de lancer une analyse du fichiers que ces éléments représentent, et, si
+      ces éléments sont vide, phpMussel retourne un message d'erreur. Ce
+      comportement est normal pour phpMussel. Mais, pour certains CMS, vides
+      éléments dans $_FILES peuvent survenir à la suite du naturel comportement
+      de ces CMS, ou erreurs peuvent être signalés quand il ne sont pas tout,
+      dans ce cas, le normal comportement pour phpMussel seront interférer avec
+      le normal comportement de ces CMS. Si telle une situation se produit pour
+      vous, ACTIVATION de cette option sera instruire phpMussel ne pas à tenter
+      de lancer d'analyses pour ces vides éléments, ignorer quand il est
+      reconnu et ne pas à retourner tout de connexes messages d'erreur,
+      permettant ainsi la continuation de la page demande.
+      0 - DÉSACTIVÉ, 1 - SACTIVÉ.
 
 
                                      ~ ~ ~                                     
@@ -1127,25 +1154,25 @@
  devriez envisager désactivation avant à travailler avec phpMussel ou devrait
  envisager d'autres options soit votre logiciel anti-virus ou phpMussel.
 
- Cette information a été réactualisé le 17 Février 2014 et est courant pour
- TOUTES les versions de phpMussel, partir de l'initiale version v0.1 travers
- à le dernière version v0.3d au moment de la rédaction cette.
+ Cette information a été réactualisé le 22 Mai 2014 et est courant pour TOUTES
+ les versions de phpMussel, partir de l'initiale version v0.1 travers à le
+ dernière version v0.3f au moment de la rédaction cette.
 
  Ad-Aware                Pas problèmes connus
  Agnitum                 Pas problèmes connus
  AhnLab-V3               Pas problèmes connus
  AntiVir                 Pas problèmes connus
  Antiy-AVL               Pas problèmes connus
- Avast                !  Rapports "JS:ScriptSH-inf [Trj]" (v0.1 - v0.3c)
+ Avast                !  Rapports "JS:ScriptSH-inf [Trj]" (tous sauf v0.3d)
  AVG                     Pas problèmes connus
  Baidu-International     Pas problèmes connus
  BitDefender             Pas problèmes connus
- Bkav                 !  Rapports "VEX408f.Webshell" (v0.3 - v0.3d)
+ Bkav                 !  Rapports "VEX408f.Webshell" (v0.3 à v0.3c)
  ByteHero                Pas problèmes connus
  CAT-QuickHeal           Pas problèmes connus
  ClamAV                  Pas problèmes connus
  CMC                     Pas problèmes connus
- Commtouch               Pas problèmes connus
+ Commtouch            !  Rapports "W32/GenBl.857A3D28!Olympus" (v0.3e seule)
  Comodo                  Pas problèmes connus
  DrWeb                   Pas problèmes connus
  Emsisoft                Pas problèmes connus
@@ -1153,7 +1180,7 @@
  F-Prot                  Pas problèmes connus
  F-Secure                Pas problèmes connus
  Fortinet                Pas problèmes connus
- GData                   Pas problèmes connus
+ GData                !  Rapports "Archive.Trojan.Agent.E7C7J7" (v0.3e seule)
  Ikarus                  Pas problèmes connus
  Jiangmin                Pas problèmes connus
  K7AntiVirus             Pas problèmes connus
@@ -1166,18 +1193,19 @@
  Microsoft               Pas problèmes connus
  MicroWorld-eScan        Pas problèmes connus
  NANO-Antivirus          Pas problèmes connus
- Norman               !  Rapports "Kryptik.BQS" (v0.1 - v0.3d)
+ Norman               !  Rapports "Kryptik.BQS" (tous sauf v0.3d et v0.3e)
  nProtect                Pas problèmes connus
  Panda                   Pas problèmes connus
  Qihoo-360               Pas problèmes connus
  Rising                  Pas problèmes connus
  Sophos                  Pas problèmes connus
  SUPERAntiSpyware        Pas problèmes connus
- Symantec                Pas problèmes connus
+ Symantec             !  Rapports "WS.Reputation.1" (v0.3e à v0.3f)
  TheHacker               Pas problèmes connus
- TotalDefense         !  Rapports "VBS/Nuel" (signature versions spécifiques)
+ TotalDefense            Pas problèmes connus
  TrendMicro              Pas problèmes connus
- TrendMicro-HouseCall !  Rapports "TROJ_GEN.F47V1219" (v0.1 - v0.3c)
+ TrendMicro-HouseCall !  Rapports "TROJ_GEN.F47V1219" (v0.3d et plus tôt)
+                      !  Rapports "TROJ_GEN.F47V0312" (v0.3e seule)
  VBA32                   Pas problèmes connus
  VIPRE                   Pas problèmes connus
  ViRobot                 Pas problèmes connus
@@ -1186,4 +1214,5 @@
                                      ~ ~ ~                                     
 
 
+Dernière Réactualisé: 22nd May 2014
 EOF

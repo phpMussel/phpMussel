@@ -518,6 +518,9 @@
     installed on your system, and you do not need to upload this directory
     or any of its files except when doing such testing.
     ~
+ /_testfiles/exe_standard_testfile.exe (Test file, Included)
+    Test file for testing phpMussel PE signatures.
+    ~
  /_testfiles/general_standard_testfile.txt (Test file, Included)
     Test file for testing phpMussel general signatures.
     ~
@@ -605,6 +608,9 @@
     Hex-encoded CSV of general command detections optionally used by phpMussel.
     Required if general command detection option in phpmussel.ini is enabled.
     Can remove if option is disabled (but file will be recreated on update).
+    ~
+ /vault/lang.inc (Script, Included)
+    phpMussel Language Data; Required for multilingual capabilities.
     ~
  /vault/macho_clamav_regex.cvd (Signatures, Included)
  /vault/macho_clamav_regex.map (Signatures, Included)
@@ -771,6 +777,8 @@
       the manner intended.
       0 - After scanning, leave the file alone [Default],
       1 - After scanning, if not clean, delete immediately.
+    "lang"
+    - Specify the default language for phpMussel.
  "signatures" (Category)
  - Configuration for signatures.
    %%%_clamav = ClamAV signatures (both mains and daily).
@@ -938,6 +946,23 @@
      Japanese, Russian, Arabic or Hebrew characters), turning this on will
      result in false positives and potentially cause you problems.
      0 - Don't block [Default], 1 - Block.
+ "compatibility" (Category)
+ - Compatibility directives for phpMussel.
+    "ignore_upload_errors"
+    - This directive should generally be switched OFF unless it is required for
+      correct functionality of phpMussel on your specific system. Normally,
+      when switched OFF, when phpMussel detects the presence of elements in the
+      $_FILES array(), it will attempt to initiate a scan of the files that
+      those elements represent, and, if those elements are blank or empty,
+      phpMussel will return an error message. This is proper behaviour for
+      phpMussel. However, for some CMS, empty elements in $_FILES can occur as
+      a result of the natural behaviour of those CMS, or errors may be reported
+      when there aren't any, in which case, the normal behaviour for phpMussel
+      will be interfering with the normal behaviour of those CMS. If such a
+      situation occurs for you, turning this option ON will instruct phpMussel
+      to not attempt to initiate scans for such empty elements, ignore them
+      when found and to not return any related error messages, thus allowing
+      continuation of the page request. 0 - OFF, 1 - ON.
 
 
                                      ~ ~ ~                                     
@@ -1053,25 +1078,25 @@
  working with phpMussel or should consider alternative options to either your
  anti-virus software or phpMussel.
 
- This information was last updated 17th February 2014 and is current for ALL
+ This information was last updated 22nd May 2014 and is current for ALL
  versions of phpMussel, from initial release v0.1 through to latest release
- v0.3d at the time of writing this.
+ v0.3f at the time of writing this.
 
  Ad-Aware                No known problems
  Agnitum                 No known problems
  AhnLab-V3               No known problems
  AntiVir                 No known problems
  Antiy-AVL               No known problems
- Avast                !  Reports "JS:ScriptSH-inf [Trj]" (v0.1 - v0.3c)
+ Avast                !  Reports "JS:ScriptSH-inf [Trj]" (all except v0.3d)
  AVG                     No known problems
  Baidu-International     No known problems
  BitDefender             No known problems
- Bkav                 !  Reports "VEX408f.Webshell" (v0.3 - v0.3d)
+ Bkav                 !  Reports "VEX408f.Webshell" (v0.3 to v0.3c)
  ByteHero                No known problems
  CAT-QuickHeal           No known problems
  ClamAV                  No known problems
  CMC                     No known problems
- Commtouch               No known problems
+ Commtouch            !  Reports "W32/GenBl.857A3D28!Olympus" (v0.3e only)
  Comodo                  No known problems
  DrWeb                   No known problems
  Emsisoft                No known problems
@@ -1079,7 +1104,7 @@
  F-Prot                  No known problems
  F-Secure                No known problems
  Fortinet                No known problems
- GData                   No known problems
+ GData                !  Reports "Archive.Trojan.Agent.E7C7J7" (v0.3e only)
  Ikarus                  No known problems
  Jiangmin                No known problems
  K7AntiVirus             No known problems
@@ -1092,18 +1117,19 @@
  Microsoft               No known problems
  MicroWorld-eScan        No known problems
  NANO-Antivirus          No known problems
- Norman               !  Reports "Kryptik.BQS" (v0.1 - v0.3d)
+ Norman               !  Reports "Kryptik.BQS" (all except v0.3d and v0.3e)
  nProtect                No known problems
  Panda                   No known problems
  Qihoo-360               No known problems
  Rising                  No known problems
  Sophos                  No known problems
  SUPERAntiSpyware        No known problems
- Symantec                No known problems
+ Symantec             !  Reports "WS.Reputation.1" (v0.3e to v0.3f)
  TheHacker               No known problems
- TotalDefense         !  Reports "VBS/Nuel" (specific signature releases)
+ TotalDefense            No known problems
  TrendMicro              No known problems
- TrendMicro-HouseCall !  Reports "TROJ_GEN.F47V1219" (v0.1 - v0.3c)
+ TrendMicro-HouseCall !  Reports "TROJ_GEN.F47V1219" (v0.3d and earlier)
+                      !  Reports "TROJ_GEN.F47V0312" (v0.3e only)
  VBA32                   No known problems
  VIPRE                   No known problems
  ViRobot                 No known problems
@@ -1112,4 +1138,5 @@
                                      ~ ~ ~                                     
 
 
+Last Updated: 22nd May 2014
 EOF

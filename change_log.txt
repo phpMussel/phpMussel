@@ -1,5 +1,47 @@
 phpMussel change_log.txt
 
+=== Version 0.3f ===
+SUMMARY:
+Updated to the latest signatures set (55+19012+3f).
+Sub-minor update.
+
+NEW CHANGES:
+- Added better error detection for file uploads.
+- Continued work and improvement on multilingual support; Core script/program
+  now supports eight languages (available languages listed in configuration);
+  No new language support for documentation since previous version. Take in
+  mind that, because my native language is English and I am not fluent with any
+  other languages, there'll probably be the odd error here and there. I make no
+  apologies for this, but endevour to fix them whenever they become apparent.
+- Un-did some of the *_standard.cvd to *_regex.cvd swaps from the previous
+  update for improved performance, manually removing any falsables I could
+  find.
+- Improved the default Upload Denied message template file slightly.
+- Minor code tweaks for improved performance.
+
+PROBLEMS/BUGS FIXED:
+- A compatibility issue between phpMussel and several CMS and forum systems
+  that handle $_FILES in unexpected ways having been brought to my attention,
+  I've added a new compatibility section to the phpMussel configuration. As it
+  stands at this time, that section only has one directive, which concerns the
+  specific issue brought to attention, but will probably grow as time goes by.
+  The issue brought to attention was that these CMS and forum systems would
+  behave in ways that resulted in $_FILES array elements being parsed to
+  phpMussel with the elements of these array elements, which should normally
+  correspond to the details of specific files being uploaded, containing no
+  data, causing phpMussel to attempt to scan uploaded files when no files
+  were actually being uploaded, resulting in an "Unauthorised file manipulation
+  detected!" message being returned to the client and the subsequent pageload
+  being prevented. To work around this problem, the compatibility directive
+  "ignore_upload_errors" has been implemented (by default, deactivated), which
+  when activated in configuration should hopefully prevent this issue from
+  arising.
+- Failed condition matching whereby signature file instance should be
+  terminated found to not always be triggering correctly. Fixed.
+
+Maikuolan,
+22nd May 2014.
+
 === Version 0.3e ===
 SUMMARY:
 Updated to the latest signatures set (55+18487+3e).
@@ -21,7 +63,7 @@ NEW CHANGES:
   this point in time. Will improve as time passes.
 - Improved the default Upload Denied message template file slightly.
 - Added a new test file.
-- Minor code tweaks, etc.
+- Minor code tweaks for improved performance.
 
 Maikuolan,
 19th February 2014.

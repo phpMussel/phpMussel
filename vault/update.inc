@@ -29,11 +29,11 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                   ~ ~ ~                                        
- This File: phpMussel v0.3e Update Script
- This File Last Updated: 18th February 2014
+ This File: phpMussel v0.3f Update Script
+ This File Last Updated: 21st May 2014
 
                                   ~ ~ ~                                        
- Please refer to "documentation" for installation instructions and for
+ Please refer to the README documentation for installation instructions and for
  instructions regarding how to correctly use phpMussel.
 
  You may change any part of phpMussel as you see fit, but you are not required
@@ -77,27 +77,26 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 	$phpmusselversion['script_version']=trim(substr($phpmusselversion['script_version'],0,strpos($phpmusselversion['script_version']," ")));
 	$phpmusselversion['phpmussel_ua']="phpMussel v".$phpmusselversion['script_version']." (".crc32($_SERVER['SERVER_ADDR'])."-".crc32($_SERVER['HTTP_HOST'])."-".crc32($phpmusselversion['raw']).")";
 	header("Content-Type: text/plain");
-	echo "      _____  _     _  _____  _______ _     _ _______ _______ _______           \n <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >\n     |       |     | |       |  |  | |_____| ______| ______| |______ |_____    \n Thank you for using phpMussel, a php-based script based upon ClamAV signatures\n  designed to detect trojans, viruses, malware and other threats within files  \n             uploaded to your system wherever the script is hooked.            \n     PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan)    \n\n                                  ~ ~ ~                                        \n\n";
-	echo "phpMussel will now attempt to update itself. (".(time()-$phpmusselversion['current_time'])."s elapsed)\n\n";
+	echo $MusselConfig['lang']['cli_ln1'].$MusselConfig['lang']['cli_ln2'].$MusselConfig['lang']['update_']." (".(time()-$phpmusselversion['current_time'])."s elapsed)\n\n";
 	$phpmusselversion['request_status']=false;
 	for($i=0;$i<$phpmusselversion['update_addresses_count'];$i++)
 		{
-		echo "Attempting to fetch version data from http://".substr($phpmusselversion['update_addresses'][$i],0,(strlen($phpmusselversion['update_addresses'][$i])-strpos($phpmusselversion['update_addresses'][$i],"/"))*-1)."/ ... ";
+		echo $MusselConfig['lang']['update_fetch']." http://".substr($phpmusselversion['update_addresses'][$i],0,(strlen($phpmusselversion['update_addresses'][$i])-strpos($phpmusselversion['update_addresses'][$i],"/"))*-1)."/ ... ";
 		$phpmusselversion['stream']=stream_context_create(array("http"=>array("method"=>"POST","header"=>"Content-type: application/x-www-form-urlencoded; charset=iso-8859-1","user_agent"=>$phpmusselversion['phpmussel_ua'],"content"=>"x=ver","timeout"=>59)));
 		$phpmusselversion['request']=file_get_contents("http://".$phpmusselversion['update_addresses'][$i],false,$phpmusselversion['stream']);
 		if(trim(substr($phpmusselversion['request'],0,16))!=="¡phpMussel!")
 			{
-			echo "Failed. (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+			echo $MusselConfig['lang']['update_failed']." (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
 			$phpmusselversion['update_addresses'][$i]="";
 			continue;
 			}
 		$phpmusselversion['request_status']=true;
-		echo "Success. (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+		echo $MusselConfig['lang']['update_success']." (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
 		break;
 		}
 	if(!$phpmusselversion['request_status'])
 		{
-		echo "phpMussel has failed to update itself because it could not connect to a valid update source. Updating manually is recommended. (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+		echo $MusselConfig['lang']['update_no_source']." (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
 		$phpmusselversion['raw']=str_replace(substr($phpmusselversion['raw'],48,16),str_pad((time()+3600),16),$phpmusselversion['raw']);
 		$phpmusselversion['df']=fopen($vault."update.dat","w");
 		fwrite($phpmusselversion['df'],$phpmusselversion['raw']);
@@ -110,16 +109,16 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 	$phpmusselversion['remote_script_version']=trim(substr($phpmusselversion['remote_script_version'],0,strpos($phpmusselversion['remote_script_version']," ")));
 	$phpmusselversion['compare']="";
 	echo "\n\n===\n";
-	echo "YOUR SCRIPT VERSION: phpMussel v".$phpmusselversion['script_version']."; LATEST SCRIPT VERSION: phpMussel v".$phpmusselversion['remote_script_version'].";\n";
+	echo $MusselConfig['lang']['update_version_yours'].": phpMussel v".$phpmusselversion['script_version']."; ".$MusselConfig['lang']['update_version_latest'].": phpMussel v".$phpmusselversion['remote_script_version'].";\n";
 	if($phpmusselversion['first_compatible']===$phpmusselversion['remote_first_compatible'])
 		{
 		if($phpmusselversion['script_version']===$phpmusselversion['remote_script_version'])
 			{
-			echo "No script update is available at this time.\n\n";
+			echo $MusselConfig['lang']['update_not_available']."\n\n";
 			}
 		else
 			{
-			echo "A script update is available.\n\n";
+			echo $MusselConfig['lang']['update_available']."\n\n";
 			$phpmusselversion['compare']=(!function_exists("gzinflate"))?"script":"scriptgz";
 			}
 		$phpmusselversion['signatures_version']=trim(substr($phpmusselversion['raw'],32,16));
@@ -128,14 +127,14 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 		$phpmusselversion['remote_signatures_version']=trim(substr($phpmusselversion['request'],32,16));
 		$phpmusselversion['remote_signatures_version_human']=explode(" ",$phpmusselversion['remote_signatures_version']);
 		$phpmusselversion['remote_signatures_version_human']="ClamAV main signatures #".$phpmusselversion['remote_signatures_version_human'][0].", ClamAV daily signatures #".$phpmusselversion['remote_signatures_version_human'][1].", phpMussel (not from ClamAV) signatures #".$phpmusselversion['remote_signatures_version_human'][2].".";
-		echo "YOUR SIGNATURES: ".$phpmusselversion['signatures_version_human']."\nLATEST SIGNATURES: ".$phpmusselversion['remote_signatures_version_human']."\n";
+		echo $MusselConfig['lang']['update_signatures_yours'].": ".$phpmusselversion['signatures_version_human']."\n".$MusselConfig['lang']['update_signatures_latest'].": ".$phpmusselversion['remote_signatures_version_human']."\n";
 		if($phpmusselversion['signatures_version']===$phpmusselversion['remote_signatures_version'])
 			{
-			echo "No signatures update is available at this time.\n";
+			echo $MusselConfig['lang']['update_signatures_not_available']."\n";
 			}
 		else
 			{
-			echo "A signatures update is available.\n";
+			echo $MusselConfig['lang']['update_signatures_available']."\n";
 			if(!function_exists("gzinflate"))
 				{
 				$phpmusselversion['compare']=($phpmusselversion['compare']=="script")?"all":"sigs";
@@ -148,7 +147,7 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 		}
 	else
 		{
-		echo "A script update is available, but can't be fully updated with this version of the update script. Please update manually.\n";
+		echo $MusselConfig['lang']['update_not_possible']."\n";
 		}
 	echo "===\n\n";
 	if($phpmusselversion['compare'])
@@ -158,22 +157,22 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 			{
 			if($phpmusselversion['update_addresses'][$i])
 				{
-				echo "Attempting to fetch update data from http://".substr($phpmusselversion['update_addresses'][$i],0,(strlen($phpmusselversion['update_addresses'][$i])-strpos($phpmusselversion['update_addresses'][$i],"/"))*-1)."/ ... ";
+				echo $MusselConfig['lang']['update_fetch']." http://".substr($phpmusselversion['update_addresses'][$i],0,(strlen($phpmusselversion['update_addresses'][$i])-strpos($phpmusselversion['update_addresses'][$i],"/"))*-1)."/ ... ";
 				$phpmusselversion['stream']=stream_context_create(array("http"=>array("method"=>"POST","header"=>"Content-type: application/x-www-form-urlencoded; charset=iso-8859-1","user_agent"=>$phpmusselversion['phpmussel_ua'],"content"=>"x=".$phpmusselversion['compare'],"timeout"=>59)));
 				$phpmusselversion['request']=file_get_contents("http://".$phpmusselversion['update_addresses'][$i],false,$phpmusselversion['stream']);
 				if(trim(substr($phpmusselversion['request'],0,16))!=="¡phpMussel!")
 					{
-					echo "Failed. (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+					echo $MusselConfig['lang']['update_failed']." (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
 					continue;
 					}
 				$phpmusselversion['request_status']=true;
-				echo "Success. (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+				echo $MusselConfig['lang']['update_success']." (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
 				break;
 				}
 			}
 		if(!$phpmusselversion['request_status'])
 			{
-			echo "phpMussel has failed to update itself because it could not retrieve any data from a valid update source. Updating manually is recommended. (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+			echo $MusselConfig['lang']['update_no_source']." (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
 			$phpmusselversion['raw']=str_replace(substr($phpmusselversion['raw'],48,16),str_pad((time()+3600),16),$phpmusselversion['raw']);
 			$phpmusselversion['df']=fopen($vault."update.dat","w");
 			fwrite($phpmusselversion['df'],$phpmusselversion['raw']);
@@ -271,7 +270,7 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 		fwrite($phpmusselversion['df'],$phpmusselversion['raw']);
 		fclose($phpmusselversion['df']);
 		}
-	echo "Update check completed successfully.";
+	echo $MusselConfig['lang']['update_complete'];
 	}
 else
 	{

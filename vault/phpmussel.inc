@@ -29,11 +29,11 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                   ~ ~ ~                                        
- This File: phpMussel v0.3e Core Script
- This File Last Updated: 19th February 2014
+ This File: phpMussel v0.3f Core Script
+ This File Last Updated: 22nd May 2014
 
                                   ~ ~ ~                                        
- Please refer to "documentation" for installation instructions and for
+ Please refer to the README documentation for installation instructions and for
  instructions regarding how to correctly use phpMussel.
 
  You may change any part of phpMussel as you see fit, but you are not required
@@ -46,7 +46,7 @@ if(!defined('phpMussel'))
 	die("[phpMussel] This should not be accessed directly.");
 	}
 
-$phpmusselversion="phpMussel v0.3e";
+$phpmusselversion="phpMussel v0.3f";
 $linebreak=chr(10);
 if(!isset($MusselConfig['general']['ipaddr']))$MusselConfig['general']['ipaddr']="REMOTE_ADDR";
 if(!isset($_SERVER[$MusselConfig['general']['ipaddr']]))$_SERVER[$MusselConfig['general']['ipaddr']]="";
@@ -171,7 +171,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 		if(!isset($GLOBALS['memCache']['filenames_clamav.cvd']))$GLOBALS['memCache']['filenames_clamav.cvd']=@file($GLOBALS['vault']."filenames_clamav.cvd");
 		if(!$GLOBALS['memCache']['filenames_clamav.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (filenames_clamav.cvd)!".$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (filenames_clamav.cvd)!".$GLOBALS['linebreak'];
 			$c=0;
 			}
 		else
@@ -187,11 +187,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				{
 				$xsig=explode(">",$xsig,4);
 				$xsig[3]=($xsig[3]*-1)*-1;
-				if($xsig[3]<=$i)break;
 				if($xsig[1]=="FN")
 					{
 					if(!preg_match("/".$xsig[2]."/i",$ofn))
 						{
+						if($xsig[3]<=$i)break;
 						$i=$xsig[3];
 						continue;
 						}
@@ -202,7 +202,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			if(substr_count($xsig,":")>0)
 				{
 				$vn=@explode(":",$xsig);
-				$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+				$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 				$xsig=($xsig===false?"":implode("",$xsig));
 				$xlen=strlen($xsig);
 				if($xlen<$GLOBALS['MusselConfig']['signatures']['fn_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['fn_siglen_max'])
@@ -229,7 +229,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 		if(!isset($GLOBALS['memCache']['filenames_custom.cvd']))$GLOBALS['memCache']['filenames_custom.cvd']=@file($GLOBALS['vault']."filenames_custom.cvd");
 		if(!$GLOBALS['memCache']['filenames_custom.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (filenames_custom.cvd)!".$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (filenames_custom.cvd)!".$GLOBALS['linebreak'];
 			$c=0;
 			}
 		else
@@ -245,11 +245,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				{
 				$xsig=explode(">",$xsig,4);
 				$xsig[3]=($xsig[3]*-1)*-1;
-				if($xsig[3]<=$i)break;
 				if($xsig[1]=="FN")
 					{
 					if(!preg_match("/".$xsig[2]."/i",$ofn))
 						{
+						if($xsig[3]<=$i)break;
 						$i=$xsig[3];
 						continue;
 						}
@@ -260,7 +260,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			if(substr_count($xsig,":")>0)
 				{
 				$vn=@explode(":",$xsig);
-				$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+				$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 				$xsig=($xsig===false?"":implode("",$xsig));
 				$xlen=strlen($xsig);
 				if($xlen<$GLOBALS['MusselConfig']['signatures']['fn_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['fn_siglen_max'])
@@ -287,7 +287,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 		if(!isset($GLOBALS['memCache']['filenames_mussel.cvd']))$GLOBALS['memCache']['filenames_mussel.cvd']=@file($GLOBALS['vault']."filenames_mussel.cvd");
 		if(!$GLOBALS['memCache']['filenames_mussel.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (filenames_mussel.cvd)!".$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (filenames_mussel.cvd)!".$GLOBALS['linebreak'];
 			$c=0;
 			}
 		else
@@ -303,11 +303,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				{
 				$xsig=explode(">",$xsig,4);
 				$xsig[3]=($xsig[3]*-1)*-1;
-				if($xsig[3]<=$i)break;
 				if($xsig[1]=="FN")
 					{
 					if(!preg_match("/".$xsig[2]."/i",$ofn))
 						{
+						if($xsig[3]<=$i)break;
 						$i=$xsig[3];
 						continue;
 						}
@@ -318,7 +318,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			if(substr_count($xsig,":")>0)
 				{
 				$vn=@explode(":",$xsig);
-				$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+				$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 				$xsig=($xsig===false?"":implode("",$xsig));
 				$xlen=strlen($xsig);
 				if($xlen<$GLOBALS['MusselConfig']['signatures']['fn_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['fn_siglen_max'])
@@ -346,7 +346,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 		if(!isset($GLOBALS['memCache']['md5_clamav.cvd']))$GLOBALS['memCache']['md5_clamav.cvd']=@implode_md(file($GLOBALS['vault']."md5_clamav.cvd"));
 		if(!$GLOBALS['memCache']['md5_clamav.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (md5_clamav.cvd)!".$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (md5_clamav.cvd)!".$GLOBALS['linebreak'];
 			}
 		else
 			{
@@ -370,7 +370,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 		if(!isset($GLOBALS['memCache']['md5_custom.cvd']))$GLOBALS['memCache']['md5_custom.cvd']=@implode_md(file($GLOBALS['vault']."md5_custom.cvd"));
 		if(!$GLOBALS['memCache']['md5_custom.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (md5_custom.cvd)!".$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (md5_custom.cvd)!".$GLOBALS['linebreak'];
 			}
 		else
 			{
@@ -394,7 +394,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 		if(!isset($GLOBALS['memCache']['md5_mussel.cvd']))$GLOBALS['memCache']['md5_mussel.cvd']=@implode_md(file($GLOBALS['vault']."md5_mussel.cvd"));
 		if(!$GLOBALS['memCache']['md5_mussel.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (md5_mussel.cvd)!".$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (md5_mussel.cvd)!".$GLOBALS['linebreak'];
 			}
 		else
 			{
@@ -424,19 +424,19 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			if(!isset($GLOBALS['memCache']['general_clamav_standard.cvd']))$GLOBALS['memCache']['general_clamav_standard.cvd']=@file($GLOBALS['vault']."general_clamav_standard.cvd");
 			if(!$GLOBALS['memCache']['general_clamav_standard.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (general_clamav_standard.cvd)!".$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (general_clamav_standard.cvd)!".$GLOBALS['linebreak'];
 				break;
 				}
 			if(!isset($GLOBALS['memCache']['general_clamav_standard.map']))$GLOBALS['memCache']['general_clamav_standard.map']=@file($GLOBALS['vault']."general_clamav_standard.map");
 			if(!$GLOBALS['memCache']['general_clamav_standard.map'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (general_clamav_standard.map)!".$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing']." (general_clamav_standard.map)!".$GLOBALS['linebreak'];
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['general_clamav_standard.map']);
 			if($c<1)
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (general_clamav_standard.map)!".$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted']." (general_clamav_standard.map)!".$GLOBALS['linebreak'];
 				break;
 				}
 			$vn="";
@@ -452,7 +452,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -508,19 +508,19 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			if(!isset($GLOBALS['memCache']['general_clamav_regex.cvd']))$GLOBALS['memCache']['general_clamav_regex.cvd']=@file($GLOBALS['vault']."general_clamav_regex.cvd");
 			if(!$GLOBALS['memCache']['general_clamav_regex.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (general_clamav_regex.cvd)!".$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (general_clamav_regex.cvd)!".$GLOBALS['linebreak'];
 				break;
 				}
 			if(!isset($GLOBALS['memCache']['general_clamav_regex.map']))$GLOBALS['memCache']['general_clamav_regex.map']=@file($GLOBALS['vault']."general_clamav_regex.map");
 			if(!$GLOBALS['memCache']['general_clamav_regex.map'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (general_clamav_regex.map)!".$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing']." (general_clamav_regex.map)!".$GLOBALS['linebreak'];
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['general_clamav_regex.map']);
 			if($c<1)
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (general_clamav_regex.map)!".$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted']." (general_clamav_regex.map)!".$GLOBALS['linebreak'];
 				break;
 				}
 			$vn="";
@@ -536,7 +536,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -600,7 +600,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			if(!isset($GLOBALS['memCache']['general_custom_standard.cvd']))$GLOBALS['memCache']['general_custom_standard.cvd']=@file($GLOBALS['vault']."general_custom_standard.cvd");
 			if(!$GLOBALS['memCache']['general_custom_standard.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (general_custom_standard.cvd)!".$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (general_custom_standard.cvd)!".$GLOBALS['linebreak'];
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['general_custom_standard.cvd']);
@@ -612,11 +612,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					{
 					$xsig=explode(">",$xsig,4);
 					$xsig[3]=($xsig[3]*-1)*-1;
-					if($xsig[3]<=$i)break;
 					if($xsig[1]=="FN")
 						{
 						if(!preg_match("/".$xsig[2]."/i",$ofn))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -625,6 +625,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						{
 						if($str_len<$xsig[2])
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -633,6 +634,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						{
 						if($str_len>$xsig[2])
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -641,6 +643,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						{
 						if(!substr_count($str_hex,$xsig[2]))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -649,6 +652,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						{
 						if(!preg_match("/".$xsig[2]."/i",$str_hex))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -658,7 +662,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				if(substr_count($xsig,":")>0)
 					{
 					$vn=@explode(":",$xsig);
-					$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 					$xsig=($xsig===false?"":implode("",$xsig));
 					$xlen=strlen($xsig);
 					if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -712,7 +716,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			if(!isset($GLOBALS['memCache']['general_custom_regex.cvd']))$GLOBALS['memCache']['general_custom_regex.cvd']=@file($GLOBALS['vault']."general_custom_regex.cvd");
 			if(!$GLOBALS['memCache']['general_custom_regex.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (general_custom_regex.cvd)!".$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (general_custom_regex.cvd)!".$GLOBALS['linebreak'];
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['general_custom_regex.cvd']);
@@ -724,11 +728,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					{
 					$xsig=explode(">",$xsig,4);
 					$xsig[3]=($xsig[3]*-1)*-1;
-					if($xsig[3]<=$i)break;
 					if($xsig[1]=="FN")
 						{
 						if(!preg_match("/".$xsig[2]."/i",$ofn))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -737,6 +741,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						{
 						if($str_len<$xsig[2])
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -745,6 +750,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						{
 						if($str_len>$xsig[2])
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -753,6 +759,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						{
 						if(!substr_count($str_hex,$xsig[2]))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -770,7 +777,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				if(substr_count($xsig,":")>0)
 					{
 					$vn=@explode(":",$xsig);
-					$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 					$xsig=($xsig===false?"":implode("",$xsig));
 					$xlen=strlen($xsig);
 					if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -832,7 +839,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			if(!isset($GLOBALS['memCache']['general_mussel_standard.cvd']))$GLOBALS['memCache']['general_mussel_standard.cvd']=@file($GLOBALS['vault']."general_mussel_standard.cvd");
 			if(!$GLOBALS['memCache']['general_mussel_standard.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (general_mussel_standard.cvd)!".$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (general_mussel_standard.cvd)!".$GLOBALS['linebreak'];
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['general_mussel_standard.cvd']);
@@ -844,11 +851,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					{
 					$xsig=explode(">",$xsig,4);
 					$xsig[3]=($xsig[3]*-1)*-1;
-					if($xsig[3]<=$i)break;
 					if($xsig[1]=="FN")
 						{
 						if(!preg_match("/".$xsig[2]."/i",$ofn))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -857,6 +864,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						{
 						if($str_len<$xsig[2])
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -865,6 +873,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						{
 						if($str_len>$xsig[2])
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -873,6 +882,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						{
 						if(!substr_count($str_hex,$xsig[2]))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -881,6 +891,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						{
 						if(!preg_match("/".$xsig[2]."/i",$str_hex))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -890,7 +901,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				if(substr_count($xsig,":")>0)
 					{
 					$vn=@explode(":",$xsig);
-					$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 					$xsig=($xsig===false?"":implode("",$xsig));
 					$xlen=strlen($xsig);
 					if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -944,7 +955,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			if(!isset($GLOBALS['memCache']['general_mussel_regex.cvd']))$GLOBALS['memCache']['general_mussel_regex.cvd']=@file($GLOBALS['vault']."general_mussel_regex.cvd");
 			if(!$GLOBALS['memCache']['general_mussel_regex.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (general_mussel_regex.cvd)!".$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (general_mussel_regex.cvd)!".$GLOBALS['linebreak'];
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['general_mussel_regex.cvd']);
@@ -956,11 +967,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					{
 					$xsig=explode(">",$xsig,4);
 					$xsig[3]=($xsig[3]*-1)*-1;
-					if($xsig[3]<=$i)break;
 					if($xsig[1]=="FN")
 						{
 						if(!preg_match("/".$xsig[2]."/i",$ofn))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -969,6 +980,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						{
 						if($str_len<$xsig[2])
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -977,6 +989,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						{
 						if($str_len>$xsig[2])
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -985,6 +998,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						{
 						if(!substr_count($str_hex,$xsig[2]))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -993,6 +1007,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						{
 						if(!preg_match("/".$xsig[2]."/i",$str_hex))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -1002,7 +1017,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				if(substr_count($xsig,":")>0)
 					{
 					$vn=@explode(":",$xsig);
-					$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 					$xsig=($xsig===false?"":implode("",$xsig));
 					$xlen=strlen($xsig);
 					if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -1075,9 +1090,9 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			if(!isset($str_norm))$str_norm=strtolower(str_replace("\t","",str_replace("\n","",str_replace("\r","",str_replace(" ","",$str)))));
 			if(substr_count($str_norm,"<?php")>0)
 				{
-				$out.=$lnap."PHP chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."PHP ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="PHP chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="PHP ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		}
@@ -1087,36 +1102,36 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			{
 			if(!substr($str,0,2)==="MZ")
 				{
-				$out.=$lnap."EXE chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."EXE ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="EXE chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="EXE ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		else
 			{
 			if(substr($str,0,2)==="MZ")
 				{
-				$out.=$lnap."EXE chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."EXE ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="EXE chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="EXE ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		if($xt=="elf")
 			{
 			if(!substr_compare_hex($str,0,4,"7f454c46",1))
 				{
-				$out.=$lnap."ELF chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."ELF ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="ELF chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="ELF ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		else
 			{
 			if(substr_compare_hex($str,0,4,"7f454c46",1))
 				{
-				$out.=$lnap."ELF chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."ELF ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="ELF chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="ELF ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		}
@@ -1135,19 +1150,19 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['exe_clamav_standard.cvd']))$GLOBALS['memCache']['exe_clamav_standard.cvd']=@file($GLOBALS['vault']."exe_clamav_standard.cvd");
 					if(!$GLOBALS['memCache']['exe_clamav_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (exe_clamav_standard.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (exe_clamav_standard.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['exe_clamav_standard.map']))$GLOBALS['memCache']['exe_clamav_standard.map']=@file($GLOBALS['vault']."exe_clamav_standard.map");
 					if(!$GLOBALS['memCache']['exe_clamav_standard.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (exe_clamav_standard.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing']." (exe_clamav_standard.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['exe_clamav_standard.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (exe_clamav_standard.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted']." (exe_clamav_standard.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$vn="";
@@ -1163,7 +1178,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								if(substr_count($xsig,":")>0)
 									{
 									$vn=@explode(":",$xsig);
-									$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 									$xsig=($xsig===false?"":implode("",$xsig));
 									$xlen=strlen($xsig);
 									if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -1219,19 +1234,19 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['exe_clamav_regex.cvd']))$GLOBALS['memCache']['exe_clamav_regex.cvd']=@file($GLOBALS['vault']."exe_clamav_regex.cvd");
 					if(!$GLOBALS['memCache']['exe_clamav_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (exe_clamav_regex.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (exe_clamav_regex.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['exe_clamav_regex.map']))$GLOBALS['memCache']['exe_clamav_regex.map']=@file($GLOBALS['vault']."exe_clamav_regex.map");
 					if(!$GLOBALS['memCache']['exe_clamav_regex.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (exe_clamav_regex.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing']." (exe_clamav_regex.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['exe_clamav_regex.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (exe_clamav_regex.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted']." (exe_clamav_regex.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$vn="";
@@ -1247,7 +1262,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								if(substr_count($xsig,":")>0)
 									{
 									$vn=@explode(":",$xsig);
-									$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 									$xsig=($xsig===false?"":implode("",$xsig));
 									$xlen=strlen($xsig);
 									if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -1309,7 +1324,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['exe_custom_standard.cvd']))$GLOBALS['memCache']['exe_custom_standard.cvd']=@file($GLOBALS['vault']."exe_custom_standard.cvd");
 					if(!$GLOBALS['memCache']['exe_custom_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (exe_custom_standard.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (exe_custom_standard.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['exe_custom_standard.cvd']);
@@ -1321,11 +1336,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1334,6 +1349,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1342,6 +1358,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1350,6 +1367,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1358,6 +1376,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1367,7 +1386,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -1421,7 +1440,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['exe_custom_regex.cvd']))$GLOBALS['memCache']['exe_custom_regex.cvd']=@file($GLOBALS['vault']."exe_custom_regex.cvd");
 					if(!$GLOBALS['memCache']['exe_custom_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (exe_custom_regex.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (exe_custom_regex.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['exe_custom_regex.cvd']);
@@ -1433,11 +1452,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1446,6 +1465,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1454,6 +1474,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1462,6 +1483,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1470,6 +1492,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1479,7 +1502,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -1539,7 +1562,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['exe_mussel_standard.cvd']))$GLOBALS['memCache']['exe_mussel_standard.cvd']=@file($GLOBALS['vault']."exe_mussel_standard.cvd");
 					if(!$GLOBALS['memCache']['exe_mussel_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (exe_mussel_standard.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (exe_mussel_standard.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['exe_mussel_standard.cvd']);
@@ -1551,11 +1574,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1564,6 +1587,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1572,6 +1596,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1580,6 +1605,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1588,6 +1614,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1597,7 +1624,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -1651,7 +1678,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['exe_mussel_regex.cvd']))$GLOBALS['memCache']['exe_mussel_regex.cvd']=@file($GLOBALS['vault']."exe_mussel_regex.cvd");
 					if(!$GLOBALS['memCache']['exe_mussel_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (exe_mussel_regex.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (exe_mussel_regex.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['exe_mussel_regex.cvd']);
@@ -1663,11 +1690,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1676,6 +1703,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1684,6 +1712,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1692,6 +1721,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1700,6 +1730,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1709,7 +1740,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -1777,19 +1808,19 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['elf_clamav_standard.cvd']))$GLOBALS['memCache']['elf_clamav_standard.cvd']=@file($GLOBALS['vault']."elf_clamav_standard.cvd");
 					if(!$GLOBALS['memCache']['elf_clamav_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (elf_clamav_standard.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (elf_clamav_standard.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['elf_clamav_standard.map']))$GLOBALS['memCache']['elf_clamav_standard.map']=@file($GLOBALS['vault']."elf_clamav_standard.map");
 					if(!$GLOBALS['memCache']['elf_clamav_standard.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (elf_clamav_standard.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing']." (elf_clamav_standard.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['elf_clamav_standard.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (elf_clamav_standard.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted']." (elf_clamav_standard.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$vn="";
@@ -1805,7 +1836,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								if(substr_count($xsig,":")>0)
 									{
 									$vn=@explode(":",$xsig);
-									$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 									$xsig=($xsig===false?"":implode("",$xsig));
 									$xlen=strlen($xsig);
 									if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -1861,19 +1892,19 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['elf_clamav_regex.cvd']))$GLOBALS['memCache']['elf_clamav_regex.cvd']=@file($GLOBALS['vault']."elf_clamav_regex.cvd");
 					if(!$GLOBALS['memCache']['elf_clamav_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (elf_clamav_regex.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (elf_clamav_regex.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['elf_clamav_regex.map']))$GLOBALS['memCache']['elf_clamav_regex.map']=@file($GLOBALS['vault']."elf_clamav_regex.map");
 					if(!$GLOBALS['memCache']['elf_clamav_regex.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (elf_clamav_regex.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing']." (elf_clamav_regex.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['elf_clamav_regex.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (elf_clamav_regex.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted']." (elf_clamav_regex.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$vn="";
@@ -1889,7 +1920,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								if(substr_count($xsig,":")>0)
 									{
 									$vn=@explode(":",$xsig);
-									$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 									$xsig=($xsig===false?"":implode("",$xsig));
 									$xlen=strlen($xsig);
 									if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -1951,7 +1982,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['elf_custom_standard.cvd']))$GLOBALS['memCache']['elf_custom_standard.cvd']=@file($GLOBALS['vault']."elf_custom_standard.cvd");
 					if(!$GLOBALS['memCache']['elf_custom_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (elf_custom_standard.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (elf_custom_standard.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['elf_custom_standard.cvd']);
@@ -1963,11 +1994,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1976,6 +2007,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1984,6 +2016,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -1992,6 +2025,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2000,6 +2034,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2009,7 +2044,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -2063,7 +2098,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['elf_custom_regex.cvd']))$GLOBALS['memCache']['elf_custom_regex.cvd']=@file($GLOBALS['vault']."elf_custom_regex.cvd");
 					if(!$GLOBALS['memCache']['elf_custom_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (elf_custom_regex.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (elf_custom_regex.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['elf_custom_regex.cvd']);
@@ -2075,11 +2110,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2088,6 +2123,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2096,6 +2132,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2104,6 +2141,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2112,6 +2150,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2121,7 +2160,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -2181,7 +2220,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['elf_mussel_standard.cvd']))$GLOBALS['memCache']['elf_mussel_standard.cvd']=@file($GLOBALS['vault']."elf_mussel_standard.cvd");
 					if(!$GLOBALS['memCache']['elf_mussel_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (elf_mussel_standard.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (elf_mussel_standard.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['elf_mussel_standard.cvd']);
@@ -2193,11 +2232,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2206,6 +2245,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2214,6 +2254,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2222,6 +2263,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2230,6 +2272,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2239,7 +2282,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -2293,7 +2336,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['elf_mussel_regex.cvd']))$GLOBALS['memCache']['elf_mussel_regex.cvd']=@file($GLOBALS['vault']."elf_mussel_regex.cvd");
 					if(!$GLOBALS['memCache']['elf_mussel_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (elf_mussel_regex.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (elf_mussel_regex.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['elf_mussel_regex.cvd']);
@@ -2305,11 +2348,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2318,6 +2361,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2326,6 +2370,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2334,6 +2379,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2342,6 +2388,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2351,7 +2398,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -2410,27 +2457,27 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			{
 			if(!substr($str,0,2)==="PK")
 				{
-				$out.=$lnap."ZIP chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."ZIP ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="ZIP chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="ZIP ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		if($xt=="rar")
 			{
 			if(!substr($str,0,4)==="Rar!")
 				{
-				$out.=$lnap."RAR chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."RAR ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="RAR chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="RAR ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		if($xt=="gz")
 			{
 			if(!substr_compare_hex($str,0,2,"1f8b",1))
 				{
-				$out.=$lnap."GZIP chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."GZIP ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="GZIP chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="GZIP ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		}
@@ -2440,9 +2487,9 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			{
 			if(!substr_compare_hex($str,0,4,"d0cf11e0",1))
 				{
-				$out.=$lnap."Office chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."Office ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="Office chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="Office ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		}
@@ -2452,54 +2499,54 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			{
 			if(!substr($str,0,2)==="BM")
 				{
-				$out.=$lnap."Image chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."Image ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="Image chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="Image ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		if($xt=="png")
 			{
 			if(!substr_compare_hex($str,0,8,"89504e470d0a1a0a",1))
 				{
-				$out.=$lnap."Image chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."Image ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="Image chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="Image ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		if($xt=="jpg"||$xt=="jpeg")
 			{
 			if(!substr_compare_hex($str,0,3,"ffd8ff",1))
 				{
-				$out.=$lnap."Image chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."Image ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="Image chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="Image ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		if($xt=="gif")
 			{
 			if(!substr_compare_hex($str,0,6,"474946383761",1)&&!substr_compare_hex($str,0,6,"474946383961",1))
 				{
-				$out.=$lnap."Image chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."Image ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="Image chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="Image ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		if($xt=="xcf")
 			{
 			if(!substr($str,0,8)==="gimp xcf")
 				{
-				$out.=$lnap."Image chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."Image ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="Image chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="Image ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		if($xt=="psd"||$xt=="pdd")
 			{
 			if(!substr($str,0,4)==="8BPS")
 				{
-				$out.=$lnap."Image chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."Image ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="Image chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="Image ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		}
@@ -2509,9 +2556,9 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			{
 			if(!substr_compare_hex($str,0,4,"25504446",1))
 				{
-				$out.=$lnap."PDF chameleon attack detected!".$GLOBALS['linebreak'];
+				$out.=$lnap."PDF ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']."!".$GLOBALS['linebreak'];
 				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="PDF chameleon attack detected (".$ofn.")! ";
+				if($fm)$GLOBALS['xfm'].="PDF ".$GLOBALS['MusselConfig']['lang']['scan_chameleon']." (".$ofn.")! ";
 				}
 			}
 		}
@@ -2524,13 +2571,13 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			if(!isset($GLOBALS['memCache']['hex_general_commands.csv']))$GLOBALS['memCache']['hex_general_commands.csv']=@explode(",",implode_md(file($GLOBALS['vault']."hex_general_commands.csv")));
 			if(!$GLOBALS['memCache']['hex_general_commands.csv'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (hex_general_commands.csv)!".$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (hex_general_commands.csv)!".$GLOBALS['linebreak'];
 				break;
 				}
 			$c=count($GLOBALS['memCache']['hex_general_commands.csv']);
 			if($c<1)
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file corrupted (hex_general_commands.csv)!".$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted']." (hex_general_commands.csv)!".$GLOBALS['linebreak'];
 				break;
 				}
 			if(!isset($str_norm))$str_norm=strtolower(str_replace("\t","",str_replace("\n","",str_replace("\r","",str_replace(" ","",$str)))));
@@ -2562,19 +2609,19 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['graphics_clamav_standard.cvd']))$GLOBALS['memCache']['graphics_clamav_standard.cvd']=@file($GLOBALS['vault']."graphics_clamav_standard.cvd");
 					if(!$GLOBALS['memCache']['graphics_clamav_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (graphics_clamav_standard.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (graphics_clamav_standard.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['graphics_clamav_standard.map']))$GLOBALS['memCache']['graphics_clamav_standard.map']=@file($GLOBALS['vault']."graphics_clamav_standard.map");
 					if(!$GLOBALS['memCache']['graphics_clamav_standard.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (graphics_clamav_standard.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing']." (graphics_clamav_standard.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['graphics_clamav_standard.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (graphics_clamav_standard.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted']." (graphics_clamav_standard.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$vn="";
@@ -2590,7 +2637,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								if(substr_count($xsig,":")>0)
 									{
 									$vn=@explode(":",$xsig);
-									$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 									$xsig=($xsig===false?"":implode("",$xsig));
 									$xlen=strlen($xsig);
 									if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -2646,19 +2693,19 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['graphics_clamav_regex.cvd']))$GLOBALS['memCache']['graphics_clamav_regex.cvd']=@file($GLOBALS['vault']."graphics_clamav_regex.cvd");
 					if(!$GLOBALS['memCache']['graphics_clamav_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (graphics_clamav_regex.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (graphics_clamav_regex.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['graphics_clamav_regex.map']))$GLOBALS['memCache']['graphics_clamav_regex.map']=@file($GLOBALS['vault']."graphics_clamav_regex.map");
 					if(!$GLOBALS['memCache']['graphics_clamav_regex.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (graphics_clamav_regex.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing']." (graphics_clamav_regex.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['graphics_clamav_regex.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (graphics_clamav_regex.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted']." (graphics_clamav_regex.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$vn="";
@@ -2674,7 +2721,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								if(substr_count($xsig,":")>0)
 									{
 									$vn=@explode(":",$xsig);
-									$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 									$xsig=($xsig===false?"":implode("",$xsig));
 									$xlen=strlen($xsig);
 									if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -2736,7 +2783,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['graphics_custom_standard.cvd']))$GLOBALS['memCache']['graphics_custom_standard.cvd']=@file($GLOBALS['vault']."graphics_custom_standard.cvd");
 					if(!$GLOBALS['memCache']['graphics_custom_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (graphics_custom_standard.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (graphics_custom_standard.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['graphics_custom_standard.cvd']);
@@ -2748,11 +2795,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2761,6 +2808,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2769,6 +2817,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2777,6 +2826,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2785,6 +2835,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2794,7 +2845,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -2848,7 +2899,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['graphics_custom_regex.cvd']))$GLOBALS['memCache']['graphics_custom_regex.cvd']=@file($GLOBALS['vault']."graphics_custom_regex.cvd");
 					if(!$GLOBALS['memCache']['graphics_custom_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (graphics_custom_regex.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (graphics_custom_regex.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['graphics_custom_regex.cvd']);
@@ -2860,11 +2911,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2873,6 +2924,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2881,6 +2933,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2889,6 +2942,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2897,6 +2951,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2906,7 +2961,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -2966,7 +3021,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['graphics_mussel_standard.cvd']))$GLOBALS['memCache']['graphics_mussel_standard.cvd']=@file($GLOBALS['vault']."graphics_mussel_standard.cvd");
 					if(!$GLOBALS['memCache']['graphics_mussel_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (graphics_mussel_standard.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (graphics_mussel_standard.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['graphics_mussel_standard.cvd']);
@@ -2978,11 +3033,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2991,6 +3046,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -2999,6 +3055,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3007,6 +3064,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3015,6 +3073,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3024,7 +3083,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -3078,7 +3137,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['graphics_mussel_regex.cvd']))$GLOBALS['memCache']['graphics_mussel_regex.cvd']=@file($GLOBALS['vault']."graphics_mussel_regex.cvd");
 					if(!$GLOBALS['memCache']['graphics_mussel_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (graphics_mussel_regex.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (graphics_mussel_regex.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['graphics_mussel_regex.cvd']);
@@ -3090,11 +3149,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3103,6 +3162,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3111,6 +3171,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3119,6 +3180,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3127,6 +3189,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3136,7 +3199,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -3204,19 +3267,19 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['macho_clamav_standard.cvd']))$GLOBALS['memCache']['macho_clamav_standard.cvd']=@file($GLOBALS['vault']."macho_clamav_standard.cvd");
 					if(!$GLOBALS['memCache']['macho_clamav_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (macho_clamav_standard.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (macho_clamav_standard.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['macho_clamav_standard.map']))$GLOBALS['memCache']['macho_clamav_standard.map']=@file($GLOBALS['vault']."macho_clamav_standard.map");
 					if(!$GLOBALS['memCache']['macho_clamav_standard.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (macho_clamav_standard.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing']." (macho_clamav_standard.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['macho_clamav_standard.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (macho_clamav_standard.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted']." (macho_clamav_standard.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$vn="";
@@ -3232,7 +3295,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								if(substr_count($xsig,":")>0)
 									{
 									$vn=@explode(":",$xsig);
-									$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 									$xsig=($xsig===false?"":implode("",$xsig));
 									$xlen=strlen($xsig);
 									if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -3288,19 +3351,19 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['macho_clamav_regex.cvd']))$GLOBALS['memCache']['macho_clamav_regex.cvd']=@file($GLOBALS['vault']."macho_clamav_regex.cvd");
 					if(!$GLOBALS['memCache']['macho_clamav_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (macho_clamav_regex.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (macho_clamav_regex.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['macho_clamav_regex.map']))$GLOBALS['memCache']['macho_clamav_regex.map']=@file($GLOBALS['vault']."macho_clamav_regex.map");
 					if(!$GLOBALS['memCache']['macho_clamav_regex.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (macho_clamav_regex.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing']." (macho_clamav_regex.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['macho_clamav_regex.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (macho_clamav_regex.map)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted']." (macho_clamav_regex.map)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$vn="";
@@ -3316,7 +3379,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								if(substr_count($xsig,":")>0)
 									{
 									$vn=@explode(":",$xsig);
-									$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 									$xsig=($xsig===false?"":implode("",$xsig));
 									$xlen=strlen($xsig);
 									if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -3378,7 +3441,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['macho_custom_standard.cvd']))$GLOBALS['memCache']['macho_custom_standard.cvd']=@file($GLOBALS['vault']."macho_custom_standard.cvd");
 					if(!$GLOBALS['memCache']['macho_custom_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (macho_custom_standard.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (macho_custom_standard.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['macho_custom_standard.cvd']);
@@ -3390,11 +3453,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3403,6 +3466,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3411,6 +3475,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3419,6 +3484,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3427,6 +3493,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3436,7 +3503,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -3490,7 +3557,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['macho_custom_regex.cvd']))$GLOBALS['memCache']['macho_custom_regex.cvd']=@file($GLOBALS['vault']."macho_custom_regex.cvd");
 					if(!$GLOBALS['memCache']['macho_custom_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (macho_custom_regex.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (macho_custom_regex.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['macho_custom_regex.cvd']);
@@ -3502,11 +3569,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3515,6 +3582,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3523,6 +3591,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3531,6 +3600,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3539,6 +3609,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3548,7 +3619,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -3608,7 +3679,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['macho_mussel_standard.cvd']))$GLOBALS['memCache']['macho_mussel_standard.cvd']=@file($GLOBALS['vault']."macho_mussel_standard.cvd");
 					if(!$GLOBALS['memCache']['macho_mussel_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (macho_mussel_standard.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (macho_mussel_standard.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['macho_mussel_standard.cvd']);
@@ -3620,11 +3691,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3633,6 +3704,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3641,6 +3713,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3649,6 +3722,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3657,6 +3731,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3666,7 +3741,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -3720,7 +3795,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					if(!isset($GLOBALS['memCache']['macho_mussel_regex.cvd']))$GLOBALS['memCache']['macho_mussel_regex.cvd']=@file($GLOBALS['vault']."macho_mussel_regex.cvd");
 					if(!$GLOBALS['memCache']['macho_mussel_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (macho_mussel_regex.cvd)!".$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (macho_mussel_regex.cvd)!".$GLOBALS['linebreak'];
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['macho_mussel_regex.cvd']);
@@ -3732,11 +3807,11 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 							{
 							$xsig=explode(">",$xsig,4);
 							$xsig[3]=($xsig[3]*-1)*-1;
-							if($xsig[3]<=$i)break;
 							if($xsig[1]=="FN")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$ofn))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3745,6 +3820,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len<$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3753,6 +3829,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if($str_len>$xsig[2])
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3761,6 +3838,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!substr_count($str_hex,$xsig[2]))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3769,6 +3847,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 								{
 								if(!preg_match("/".$xsig[2]."/i",$str_hex))
 									{
+									if($xsig[3]<=$i)break;
 									$i=$xsig[3]-1;
 									continue;
 									}
@@ -3778,7 +3857,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -3835,9 +3914,9 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 		{
 		if(preg_match("/[\x00-\x08\x0b\x0c\x0e\x1f\x7f]/i",$str))
 			{
-			$out.=$lnap."Detected Control Characters!".$GLOBALS['linebreak'];
+			$out.=$lnap.$GLOBALS['MusselConfig']['lang']['detected_control_characters']."!".$GLOBALS['linebreak'];
 			if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-			if($fm)$GLOBALS['xfm'].="Detected Control Characters (".$ofn.")! ";
+			if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['detected_control_characters']." (".$ofn.")! ";
 			}
 		}
 	if(!$out)return 1;
@@ -3869,7 +3948,7 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 	if($d)
 		{
 		$d=@scandir($f);
-		if(!$d)return (!$n)?0:$lnap."Failed to access '".$ofn."'!";
+		if(!$d)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['failed_to_access']."'".$ofn."'!";
 		$c=count($d);
 		for($i=0;$i<$c;$i++)
 			{
@@ -3901,25 +3980,25 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 			}
 		}
 	$d=@is_file($f);
-	if(!$d||!$f)return (!$n)?0:$lnap."Checking '".$ofn."':".$GLOBALS['linebreak']."-".$lnap."Invalid file!".$GLOBALS['linebreak'];
+	if(!$d||!$f)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['invalid_file']."!".$GLOBALS['linebreak'];
 	$fS=@filesize($f);
 	if($GLOBALS['MusselConfig']['files']['filesize_limit']>0)
 		{
 		if($fS>($GLOBALS['MusselConfig']['files']['filesize_limit']*1024))
 			{
-			if(!$GLOBALS['MusselConfig']['files']['filesize_response'])return (!$n)?1:$lnap."Checking '".$ofn."':".$GLOBALS['linebreak']."-".$lnap."OK (filesize limit exceeded).".$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['files']['filesize_response'])return (!$n)?1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['ok']." (".$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].").".$GLOBALS['linebreak'];
 			if($fm)$GLOBALS['xsk'].="00000000000000000000000000000000:".$fS.":".$ofn.$GLOBALS['linebreak'];
-			if($fm)$GLOBALS['xfm'].="Filesize limit exceeded (".$ofn.")! ";
+			if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded']." (".$ofn.")! ";
 			if($GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
-			return (!$n)?2:$lnap."Checking '".$ofn."':".$GLOBALS['linebreak']."-".$lnap."Bad (filesize limit exceeded).".$GLOBALS['linebreak'];
+			return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['bad']." (".$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].").".$GLOBALS['linebreak'];
 			}
 		}
 	if(substr($ofn,0,1)==="."||substr($ofn,-1)===".")
 		{
 		if($fm)$GLOBALS['xsk'].="00000000000000000000000000000000:".$fS.":".$ofn.$GLOBALS['linebreak'];
-		if($fm)$GLOBALS['xfm'].="Filename manipulation detected (".$ofn.")! ";
+		if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_filename_manipulation_detected']." (".$ofn.")! ";
 		if($GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
-		return (!$n)?2:$lnap."Checking '".$ofn."':".$GLOBALS['linebreak']."-".$lnap."Filename manipulation detected!".$GLOBALS['linebreak'];
+		return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_filename_manipulation_detected']."!".$GLOBALS['linebreak'];
 		}
 	$xt=$xts=$gzxt=$gzxts="-";
 	if(substr_count($ofn,".")>0)
@@ -3935,32 +4014,32 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 			}
 		if(strlen($xt)<1)$xt=$xts=$gzxt=$gzxts="-";
 		}
-	if(substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",",".$xt.",")>0||substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",",".$xts.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$gzxt.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$gzxts.",")>0)return (!$n)?1:$lnap."Checking '".$ofn."':".$GLOBALS['linebreak']."-".$lnap."No problems found.".$GLOBALS['linebreak'];
+	if(substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",",".$xt.",")>0||substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",",".$xts.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$gzxt.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$gzxts.",")>0)return (!$n)?1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
 	if(substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",",".$xt.",")>0||substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",",".$xts.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",$gzxt.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",$gzxts.",")>0)
 		{
 		if($fm)$GLOBALS['xsk'].="00000000000000000000000000000000:".$fS.":".$ofn.$GLOBALS['linebreak'];
-		if($fm)$GLOBALS['xfm'].="Blacklisted filetype detected (".$ofn.")! ";
+		if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filetype_blacklisted']." (".$ofn.")! ";
 		if($GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
-		return (!$n)?2:$lnap."Checking '".$ofn."':".$GLOBALS['linebreak']."-".$lnap."Filetype blacklisted.".$GLOBALS['linebreak'];
+		return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].$GLOBALS['linebreak'];
 		}
 	$in=@implode(file($f));
 	$z=phpMusselD($in,$n,$dpt,$ofn);
 	if($z!==1)
 		{
 		if($GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
-		return (!$n)?$z:$lnap."Checking '".$ofn."':".$GLOBALS['linebreak'].$z;
+		return (!$n)?$z:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."':".$GLOBALS['linebreak'].$z;
 		}
-	$x=$lnap."Checking '".$ofn."':".$GLOBALS['linebreak']."-".$lnap."No problems found.".$GLOBALS['linebreak'];
+	$x=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
 	$r=1;
 	if($GLOBALS['MusselConfig']['files']['check_archives'])
 		{
 		$depth=0;
 		if(substr_count(",gz,tgz,",",".$xt.",")>0||substr_compare_hex($in,0,2,"1f8b",1))
 			{
-			if(!function_exists("gzdecode"))return (!$n)?-1:$lnap."Reading '".$ofn."' (GZIP):".$GLOBALS['linebreak']."-".$lnap."Failed (missing required extensions)!".$GLOBALS['linebreak'];
+			if(!function_exists("gzdecode"))return (!$n)?-1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading']." '".$ofn."' (GZIP):".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].$GLOBALS['linebreak'];
 			$fD=@gzdecode($in);
-			if(!$fD)return (!$n)?0:$lnap."Reading '".$ofn."' (GZIP):".$GLOBALS['linebreak']."-".$lnap."Failed (empty or not an archive)!".$GLOBALS['linebreak'];
-			$x.=$lnap."Reading '".$ofn."' (GZIP):".$GLOBALS['linebreak']."-".$lnap."Success! Proceeding to check contents.".$GLOBALS['linebreak'];
+			if(!$fD)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading']." '".$ofn."' (GZIP):".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_not_archive'].$GLOBALS['linebreak'];
+			$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading']." '".$ofn."' (GZIP):".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking_contents'].$GLOBALS['linebreak'];
 			$b=false;
 			$eN=$ofn;
 			while(!$b)
@@ -3973,7 +4052,7 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 						$r=2;
 						if($fm)$GLOBALS['xsk'].=md5($fD).":".$eS.":".$ofn.">".$eN.$GLOBALS['linebreak'];
 						if($fm)$GLOBALS['xfm'].="Recursion depth limit exceeded (".$ofn.")! ";
-						$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap."Bad (recursion depth limit exceeded).".$GLOBALS['linebreak'];
+						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['bad']." (recursion depth limit exceeded).".$GLOBALS['linebreak'];
 						break;
 						}
 				if($GLOBALS['MusselConfig']['files']['filesize_archives']&&$GLOBALS['MusselConfig']['files']['filesize_limit']>0)
@@ -3982,13 +4061,13 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 						{
 						if(!$GLOBALS['MusselConfig']['files']['filesize_response'])
 							{
-							$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap."OK (filesize limit exceeded).".$GLOBALS['linebreak'];
+							$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['ok']." (".$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].").".$GLOBALS['linebreak'];
 							break;
 							}
 						$r=2;
 						if($fm)$GLOBALS['xsk'].="00000000000000000000000000000000:".$eS.":".$ofn.">".$eN.$GLOBALS['linebreak'];
-						if($fm)$GLOBALS['xfm'].="Filesize limit exceeded (".$ofn.")! ";
-						$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap."Bad (filesize limit exceeded).".$GLOBALS['linebreak'];
+						if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded']." (".$ofn.")! ";
+						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['bad']." (".$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].").".$GLOBALS['linebreak'];
 						break;
 						}
 					}
@@ -4001,13 +4080,13 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 					if(!$GLOBALS['memCache']['zip_metadata_clamav.cvd'])
 						{
 						if($r!==2)$r=-3;
-						$zmd.="-".$lnap."Signature file missing (zip_metadata_clamav.cvd)!".$GLOBALS['linebreak'];
+						$zmd.="-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (zip_metadata_clamav.cvd)!".$GLOBALS['linebreak'];
 						}
 					$zmdc=count($GLOBALS['memCache']['zip_metadata_clamav.cvd']);
 					if($zmdc<1)
 						{
 						if($r!==2)$r=-3;
-						$zmd.="-".$lnap."Signature file corrupted (zip_metadata_clamav.cvd)!".$GLOBALS['linebreak'];
+						$zmd.="-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted']." (zip_metadata_clamav.cvd)!".$GLOBALS['linebreak'];
 						}
 					$zmdv="";
 					for($zmdi=0;$zmdi<$zmdc;$zmdi++)
@@ -4031,13 +4110,13 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 					if(!$GLOBALS['memCache']['zip_metadata_custom.cvd'])
 						{
 						if($r!==2)$r=-3;
-						$zmd.="-".$lnap."Signature file missing (zip_metadata_custom.cvd)!".$GLOBALS['linebreak'];
+						$zmd.="-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (zip_metadata_custom.cvd)!".$GLOBALS['linebreak'];
 						}
 					$zmdc=count($GLOBALS['memCache']['zip_metadata_custom.cvd']);
 					if($zmdc<1)
 						{
 						if($r!==2)$r=-3;
-						$zmd.="-".$lnap."Signature file corrupted (zip_metadata_custom.cvd)!".$GLOBALS['linebreak'];
+						$zmd.="-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted']." (zip_metadata_custom.cvd)!".$GLOBALS['linebreak'];
 						}
 					$zmdv="";
 					for($zmdi=0;$zmdi<$zmdc;$zmdi++)
@@ -4061,13 +4140,13 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 					if(!$GLOBALS['memCache']['zip_metadata_mussel.cvd'])
 						{
 						if($r!==2)$r=-3;
-						$zmd.="-".$lnap."Signature file missing (zip_metadata_mussel.cvd)!".$GLOBALS['linebreak'];
+						$zmd.="-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (zip_metadata_mussel.cvd)!".$GLOBALS['linebreak'];
 						}
 					$zmdc=count($GLOBALS['memCache']['zip_metadata_mussel.cvd']);
 					if($zmdc<1)
 						{
 						if($r!==2)$r=-3;
-						$zmd.="-".$lnap."Signature file corrupted (zip_metadata_mussel.cvd)!".$GLOBALS['linebreak'];
+						$zmd.="-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted']." (zip_metadata_mussel.cvd)!".$GLOBALS['linebreak'];
 						}
 					$zmdv="";
 					for($zmdi=0;$zmdi<$zmdc;$zmdi++)
@@ -4088,12 +4167,12 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 				if($bad!==1)
 					{
 					$r=2;
-					$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak'].$bad.$zmd;
+					$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."' > '".$eN."':".$GLOBALS['linebreak'].$bad.$zmd;
 					break;
 					}
 				if($r===2&&$zmd)
 					{
-					$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak'].$zmd;
+					$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."' > '".$eN."':".$GLOBALS['linebreak'].$zmd;
 					break;
 					}
 				if(substr_count("gz,tgz,",substr($eN,(strlen($eN)-strrpos($eN,".")-1)*-1).",")>0||substr_compare_hex($fD,0,2,"1f8b",1))
@@ -4102,16 +4181,16 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 					$depth++;
 					continue;
 					}
-				$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap."No problems found.".$GLOBALS['linebreak'];
+				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
 				$b=true;
 				}
 			}
 		else if($xts=="zip*"||substr($in,0,2)==="PK")
 			{
-			if(!function_exists("zip_open"))return (!$n)?-1:$lnap."Reading '".$ofn."' (ZIP Archive):".$GLOBALS['linebreak']."-".$lnap."Failed (missing required extensions)!".$GLOBALS['linebreak'];
+			if(!function_exists("zip_open"))return (!$n)?-1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading']." '".$ofn."' (ZIP Archive):".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].$GLOBALS['linebreak'];
 			$fS=@zip_open($f);
-			if(!$fS)return (!$n)?0:$lnap."Reading '".$ofn."' (ZIP Archive):".$GLOBALS['linebreak']."-".$lnap."Failed (empty or not an archive)!".$GLOBALS['linebreak'];
-			$x.=$lnap."Reading '".$ofn."' (ZIP Archive):".$GLOBALS['linebreak']."-".$lnap."Success! Proceeding to check contents.".$GLOBALS['linebreak'];
+			if(!$fS)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading']." '".$ofn."' (ZIP Archive):".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_not_archive'].$GLOBALS['linebreak'];
+			$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading']." '".$ofn."' (ZIP Archive):".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking_contents'].$GLOBALS['linebreak'];
 			$b=false;
 			$lnap="-".$lnap;
 			$bi=-1;
@@ -4132,13 +4211,13 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 						{
 						if(!$GLOBALS['MusselConfig']['files']['filesize_response'])
 							{
-							$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap."OK (filesize limit exceeded).".$GLOBALS['linebreak'];
+							$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['ok']." (".$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].").".$GLOBALS['linebreak'];
 							continue;
 							}
 						$r=2;
 						if($fm)$GLOBALS['xsk'].="00000000000000000000000000000000:".$eS.":".$ofn.">".$eN.$GLOBALS['linebreak'];
-						if($fm)$GLOBALS['xfm'].="Filesize limit exceeded (".$ofn.")! ";
-						$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap."Bad (filesize limit exceeded).".$GLOBALS['linebreak'];
+						if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded']." (".$ofn.")! ";
+						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['bad']." (".$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].").".$GLOBALS['linebreak'];
 						continue;
 						}
 					}
@@ -4146,8 +4225,8 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 					{
 					$r=2;
 					if($fm)$GLOBALS['xsk'].="00000000000000000000000000000000:".$eS.":".$ofn.">".$eN.$GLOBALS['linebreak'];
-					if($fm)$GLOBALS['xfm'].="Filename manipulation detected (".$ofn.")! ";
-					$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap."Filename manipulation detected!".$GLOBALS['linebreak'];
+					if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_filename_manipulation_detected']." (".$ofn.")! ";
+					$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_filename_manipulation_detected']."!".$GLOBALS['linebreak'];
 					continue;
 					}
 				$xt=$xts="-";
@@ -4162,15 +4241,15 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 					{
 					if(substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",",".$xt.",")>0||substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",",".$xts.",")>0)
 						{
-						$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap."No problems found.".$GLOBALS['linebreak'];
+						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
 						continue;
 						}
 					if(substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",",".$xt.",")>0||substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",",".$xts.",")>0)
 						{
 						$r=2;
 						if($fm)$GLOBALS['xsk'].="00000000000000000000000000000000:".$eS.":".$ofn.">".$eN.$GLOBALS['linebreak'];
-						if($fm)$GLOBALS['xfm'].="Blacklisted filetype detected (".$ofn.">".$eN.")! ";
-						$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap."Filetype blacklisted.".$GLOBALS['linebreak'];
+						if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filetype_blacklisted']." (".$ofn.">".$eN.")! ";
+						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].$GLOBALS['linebreak'];
 						continue;
 						}
 					}
@@ -4188,13 +4267,13 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 						if(!$GLOBALS['memCache']['zip_metadata_clamav.cvd'])
 							{
 							if($r!==2)$r=-3;
-							$zmd.="-".$lnap."Signature file missing (zip_metadata_clamav.cvd)!".$GLOBALS['linebreak'];
+							$zmd.="-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (zip_metadata_clamav.cvd)!".$GLOBALS['linebreak'];
 							}
 						$zmdc=count($GLOBALS['memCache']['zip_metadata_clamav.cvd']);
 						if($zmdc<1)
 							{
 							if($r!==2)$r=-3;
-							$zmd.="-".$lnap."Signature file corrupted (zip_metadata_clamav.cvd)!".$GLOBALS['linebreak'];
+							$zmd.="-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted']." (zip_metadata_clamav.cvd)!".$GLOBALS['linebreak'];
 							}
 						$zmdv="";
 						for($zmdi=0;$zmdi<$zmdc;$zmdi++)
@@ -4218,13 +4297,13 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 						if(!$GLOBALS['memCache']['zip_metadata_custom.cvd'])
 							{
 							if($r!==2)$r=-3;
-							$zmd.="-".$lnap."Signature file missing (zip_metadata_custom.cvd)!".$GLOBALS['linebreak'];
+							$zmd.="-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (zip_metadata_custom.cvd)!".$GLOBALS['linebreak'];
 							}
 						$zmdc=count($GLOBALS['memCache']['zip_metadata_custom.cvd']);
 						if($zmdc<1)
 							{
 							if($r!==2)$r=-3;
-							$zmd.="-".$lnap."Signature file corrupted (zip_metadata_custom.cvd)!".$GLOBALS['linebreak'];
+							$zmd.="-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted']." (zip_metadata_custom.cvd)!".$GLOBALS['linebreak'];
 							}
 						$zmdv="";
 						for($zmdi=0;$zmdi<$zmdc;$zmdi++)
@@ -4248,13 +4327,13 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 						if(!$GLOBALS['memCache']['zip_metadata_mussel.cvd'])
 							{
 							if($r!==2)$r=-3;
-							$zmd.="-".$lnap."Signature file missing (zip_metadata_mussel.cvd)!".$GLOBALS['linebreak'];
+							$zmd.="-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing']." (zip_metadata_mussel.cvd)!".$GLOBALS['linebreak'];
 							}
 						$zmdc=count($GLOBALS['memCache']['zip_metadata_mussel.cvd']);
 						if($zmdc<1)
 							{
 							if($r!==2)$r=-3;
-							$zmd.="-".$lnap."Signature file corrupted (zip_metadata_mussel.cvd)!".$GLOBALS['linebreak'];
+							$zmd.="-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted']." (zip_metadata_mussel.cvd)!".$GLOBALS['linebreak'];
 							}
 						$zmdv="";
 						for($zmdi=0;$zmdi<$zmdc;$zmdi++)
@@ -4276,15 +4355,15 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 				if($bad!==1)
 					{
 					$r=2;
-					$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak'].$bad.$zmd;
+					$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."' > '".$eN."':".$GLOBALS['linebreak'].$bad.$zmd;
 					continue;
 					}
 					if($r===2&&$zmd)
 					{
-					$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak'].$zmd;
+					$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."' > '".$eN."':".$GLOBALS['linebreak'].$zmd;
 					continue;
 					}
-				$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap."No problems found.".$GLOBALS['linebreak'];
+				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
 				}
 			}
 		if($r===2&&$GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
@@ -4351,6 +4430,7 @@ if(!isset($MusselConfig['attack_specific']['archive_file_extensions']))$MusselCo
 if(!isset($MusselConfig['attack_specific']['archive_file_extensions_wc']))$MusselConfig['attack_specific']['archive_file_extensions_wc']="paq*,sit*,tbz*,zip*";
 if(!isset($MusselConfig['attack_specific']['general_commands']))$MusselConfig['attack_specific']['general_commands']=0;
 if(!isset($MusselConfig['attack_specific']['block_control_characters']))$MusselConfig['attack_specific']['block_control_characters']=0;
+if(!isset($MusselConfig['compatibility']['ignore_upload_errors']))$MusselConfig['compatibility']['ignore_upload_errors']=0;
 $cli_args=array(isset($argv[0])?$argv[0]:"",isset($argv[1])?$argv[1]:"",isset($argv[2])?$argv[2]:"",isset($argv[3])?$argv[3]:"");
 if(function_exists("phpMusselFork"))
 	{
@@ -4363,11 +4443,11 @@ if(function_exists("phpMusselFork"))
 function phpMussel($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 	{
 	if(!$ofn)$ofn=@urlencode($f);
-	if($GLOBALS['MusselConfig']['general']['scan_log']&&$n!=0)$s=date("r")." Started.".$GLOBALS['linebreak'];
+	if($GLOBALS['MusselConfig']['general']['scan_log']&&$n!=0)$s=date("r")." ".$GLOBALS['MusselConfig']['lang']['started'].".".$GLOBALS['linebreak'];
 	$r=phpMusselR($f,$n,$zz,$dpt,$ofn);
 	if($GLOBALS['MusselConfig']['general']['scan_log']&&$n!=0&&!is_array($r))
 		{
-		$r=$s.$r.date("r")." Finished.".$GLOBALS['linebreak'].$GLOBALS['linebreak'];
+		$r=$s.$r.date("r")." ".$GLOBALS['MusselConfig']['lang']['finished'].".".$GLOBALS['linebreak'].$GLOBALS['linebreak'];
 		if(!file_exists($GLOBALS['vault'].$GLOBALS['MusselConfig']['general']['scan_log']))$r="<?php die(); ?>".$GLOBALS['linebreak'].$GLOBALS['linebreak'].$r;
 		$xf=fopen($GLOBALS['vault'].$GLOBALS['MusselConfig']['general']['scan_log'],"a");
 		fwrite($xf,$r);
@@ -4429,7 +4509,7 @@ function phpMussel_mail($body="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -4485,7 +4565,7 @@ function phpMussel_mail($body="")
 						if(substr_count($xsig,":")>0)
 							{
 							$vn=@explode(":",$xsig);
-							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 							$xsig=($xsig===false?"":implode("",$xsig));
 							$xlen=strlen($xsig);
 							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -4529,11 +4609,11 @@ function phpMussel_mail($body="")
 					{
 					$xsig=explode(">",$xsig,4);
 					$xsig[3]=($xsig[3]*-1)*-1;
-					if($xsig[3]<=$i)break;
 					if($xsig[1]=="STR")
 						{
 						if(!substr_count($hex,$xsig[2]))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4542,6 +4622,7 @@ function phpMussel_mail($body="")
 						{
 						if(!substr_count($hexlc,$xsig[2]))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4550,6 +4631,7 @@ function phpMussel_mail($body="")
 						{
 						if(!preg_match("/".$xsig[2]."/i",$hex))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4558,6 +4640,7 @@ function phpMussel_mail($body="")
 						{
 						if(!preg_match("/".$xsig[2]."/i",$hexlc))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4567,7 +4650,7 @@ function phpMussel_mail($body="")
 				if(substr_count($xsig,":")>0)
 					{
 					$vn=@explode(":",$xsig);
-					$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 					$xsig=($xsig===false?"":implode("",$xsig));
 					$xlen=strlen($xsig);
 					if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -4610,11 +4693,11 @@ function phpMussel_mail($body="")
 					{
 					$xsig=explode(">",$xsig,4);
 					$xsig[3]=($xsig[3]*-1)*-1;
-					if($xsig[3]<=$i)break;
 					if($xsig[1]=="STR")
 						{
 						if(!substr_count($hex,$xsig[2]))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4623,6 +4706,7 @@ function phpMussel_mail($body="")
 						{
 						if(!substr_count($hexlc,$xsig[2]))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4631,6 +4715,7 @@ function phpMussel_mail($body="")
 						{
 						if(!preg_match("/".$xsig[2]."/i",$hex))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4639,6 +4724,7 @@ function phpMussel_mail($body="")
 						{
 						if(!preg_match("/".$xsig[2]."/i",$hexlc))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4648,7 +4734,7 @@ function phpMussel_mail($body="")
 				if(substr_count($xsig,":")>0)
 					{
 					$vn=@explode(":",$xsig);
-					$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 					$xsig=($xsig===false?"":implode("",$xsig));
 					$xlen=strlen($xsig);
 					if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -4690,11 +4776,11 @@ function phpMussel_mail($body="")
 					{
 					$xsig=explode(">",$xsig,4);
 					$xsig[3]=($xsig[3]*-1)*-1;
-					if($xsig[3]<=$i)break;
 					if($xsig[1]=="STR")
 						{
 						if(!substr_count($hex,$xsig[2]))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4703,6 +4789,7 @@ function phpMussel_mail($body="")
 						{
 						if(!substr_count($hexlc,$xsig[2]))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4711,6 +4798,7 @@ function phpMussel_mail($body="")
 						{
 						if(!preg_match("/".$xsig[2]."/i",$hex))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4719,6 +4807,7 @@ function phpMussel_mail($body="")
 						{
 						if(!preg_match("/".$xsig[2]."/i",$hexlc))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4728,7 +4817,7 @@ function phpMussel_mail($body="")
 				if(substr_count($xsig,":")>0)
 					{
 					$vn=@explode(":",$xsig);
-					$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=@preg_split('/[^a-fA-F0-9]+/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 					$xsig=($xsig===false?"":implode("",$xsig));
 					$xlen=strlen($xsig);
 					if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
@@ -4771,11 +4860,11 @@ function phpMussel_mail($body="")
 					{
 					$xsig=explode(">",$xsig,4);
 					$xsig[3]=($xsig[3]*-1)*-1;
-					if($xsig[3]<=$i)break;
 					if($xsig[1]=="STR")
 						{
 						if(!substr_count($hex,$xsig[2]))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4784,6 +4873,7 @@ function phpMussel_mail($body="")
 						{
 						if(!substr_count($hexlc,$xsig[2]))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4792,6 +4882,7 @@ function phpMussel_mail($body="")
 						{
 						if(!preg_match("/".$xsig[2]."/i",$hex))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4800,6 +4891,7 @@ function phpMussel_mail($body="")
 						{
 						if(!preg_match("/".$xsig[2]."/i",$hexlc))
 							{
+							if($xsig[3]<=$i)break;
 							$i=$xsig[3]-1;
 							continue;
 							}
@@ -4809,7 +4901,7 @@ function phpMussel_mail($body="")
 				if(substr_count($xsig,":")>0)
 					{
 					$vn=@explode(":",$xsig);
-					$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=@preg_split('/[\x00-\x1f]+/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 					$xsig=($xsig===false?"":implode("",$xsig));
 					$xlen=strlen($xsig);
 					if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
@@ -4838,26 +4930,83 @@ if($c>0)
 	{
 	if($c>$MusselConfig['files']['max_uploads']&&$MusselConfig['files']['max_uploads']>=1)
 		{
-		if($MusselConfig['general']['scan_log'])$s=date("r")." Started.".$GLOBALS['linebreak'];
+		if($MusselConfig['general']['scan_log'])$s=date("r")." ".$GLOBALS['MusselConfig']['lang']['started'].".".$GLOBALS['linebreak'];
 		for($i=0;$i<$c;$i++)
 			{
 			$k=key($_FILES);
-			$_FILES[$k]['name']=@urlencode($_FILES[$k]['name']);
-			if(is_uploaded_file($_FILES[$k]['tmp_name']))
+			if($MusselConfig['compatibility']['ignore_upload_errors'])
 				{
-				$xsk.="00000000000000000000000000000000:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
-				$xfm.="Upload limit exceeded (".$_FILES[$k]['name'].")! ";
+				if(!isset($_FILES[$k]['name'])||!isset($_FILES[$k]['tmp_name'])||!isset($_FILES[$k]['error'])||!isset($_FILES[$k]['size']))continue;
+				$_FILES[$k]['name']=@urlencode($_FILES[$k]['name']);
+				$xsk.="-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+				$xfm.=$GLOBALS['MusselConfig']['lang']['upload_limit_exceeded']." (".$_FILES[$k]['name'].")! ";
+				if($_FILES[$k]['error']>0)continue;
 				if($MusselConfig['general']['delete_on_sight'])@unlink($_FILES[$k]['tmp_name']);
+				}
+			else if(!isset($_FILES[$k]['name'])||!isset($_FILES[$k]['tmp_name'])||!isset($_FILES[$k]['error'])||!isset($_FILES[$k]['size']))
+				{
+				$xsk.="UNAUTHORISED-FILE-UPLOAD--CONFIG:?:?".$GLOBALS['linebreak'];
+				$xfm.=$GLOBALS['MusselConfig']['lang']['scan_unauthorised_upload_or_misconfig'];
 				}
 			else
 				{
-				$xfm.="Unauthorised file upload manipulation detected (".$_FILES[$k]['name'].")! ";
+				$_FILES[$k]['name']=@urlencode($_FILES[$k]['name']);
+				if($_FILES[$k]['error']==1)
+					{
+					$xsk.="---------UPLOAD-ERROR-1---------:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['upload_error_1'];
+					if($MusselConfig['general']['delete_on_sight'])@unlink($_FILES[$k]['tmp_name']);
+					}
+				else if($_FILES[$k]['error']==2)
+					{
+					$xsk.="---------UPLOAD-ERROR-2---------:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['upload_error_2'];
+					if($MusselConfig['general']['delete_on_sight'])@unlink($_FILES[$k]['tmp_name']);
+					}
+				else if($_FILES[$k]['error']==3)
+					{
+					$xsk.="---------UPLOAD-ERROR-3---------:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['upload_error_34'];
+					}
+				else if($_FILES[$k]['error']==4)
+					{
+					$xsk.="---------UPLOAD-ERROR-4---------:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['upload_error_34'];
+					}
+				else if($_FILES[$k]['error']==6)
+					{
+					$xsk.="---------UPLOAD-ERROR-6---------:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['upload_error_6'];
+					}
+				else if($_FILES[$k]['error']==7)
+					{
+					$xsk.="---------UPLOAD-ERROR-7---------:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['upload_error_7'];
+					}
+				else if($_FILES[$k]['error']==8)
+					{
+					$xsk.="---------UPLOAD-ERROR-8---------:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['upload_error_8'];
+					}
+				else if(!is_uploaded_file($_FILES[$k]['tmp_name']))
+					{
+					$xsk.="UNAUTHORISED-FILE-UPLOAD-NO-HASH:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['scan_unauthorised_upload']." (".$_FILES[$k]['name'].")! ";
+					}
+				else
+					{
+					$xsk.="-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['upload_limit_exceeded']." (".$_FILES[$k]['name'].")! ";
+					if($MusselConfig['general']['delete_on_sight'])@unlink($_FILES[$k]['tmp_name']);
+					}
 				}
 			}
 		if($MusselConfig['general']['scan_log'])
 			{
 			if(!file_exists($vault.$MusselConfig['general']['scan_log']))$s="<?php die(); ?>".$GLOBALS['linebreak'].$GLOBALS['linebreak'].$s;
-			$s=$s."> Upload limit exceeded! Scanning aborted (refer to scan_kills if available)!".$GLOBALS['linebreak'].date("r")." Finished.".$GLOBALS['linebreak'].$GLOBALS['linebreak'];
+			$s.="> ".$GLOBALS['MusselConfig']['lang']['upload_limit_exceeded']."! ".$GLOBALS['MusselConfig']['lang']['scan_aborted'];
+			if($MusselConfig['general']['scan_kills'])$s.=$GLOBALS['MusselConfig']['lang']['refer_to_scan_kills'];
+			$s.=$GLOBALS['linebreak'].date("r")." ".$GLOBALS['MusselConfig']['lang']['finished'].".".$GLOBALS['linebreak'].$GLOBALS['linebreak'];
 			$xf=fopen($vault.$MusselConfig['general']['scan_log'],"a");
 			fwrite($xf,$s);
 			fclose($xf);
@@ -4868,14 +5017,67 @@ if($c>0)
 		for($i=0;$i<$c;$i++)
 			{
 			$k=key($_FILES);
-			$_FILES[$k]['name']=@urlencode($_FILES[$k]['name']);
-			if(is_uploaded_file($_FILES[$k]['tmp_name']))
+			if($MusselConfig['compatibility']['ignore_upload_errors'])
 				{
+				if(!isset($_FILES[$k]['name'])||!isset($_FILES[$k]['tmp_name'])||!isset($_FILES[$k]['error'])||!isset($_FILES[$k]['size']))continue;
+				if($_FILES[$k]['error']>0)continue;
+				$_FILES[$k]['name']=@urlencode($_FILES[$k]['name']);
 				$r=phpMussel($_FILES[$k]['tmp_name'],2,1,0,$_FILES[$k]['name']);
+				}
+			else if(!isset($_FILES[$k]['name'])||!isset($_FILES[$k]['tmp_name'])||!isset($_FILES[$k]['error'])||!isset($_FILES[$k]['size']))
+				{
+				$xsk.="UNAUTHORISED-FILE-UPLOAD--CONFIG:?:?".$GLOBALS['linebreak'];
+				$xfm.=$GLOBALS['MusselConfig']['lang']['scan_unauthorised_upload_or_misconfig'];
 				}
 			else
 				{
-				$xfm.="Unauthorised file upload manipulation detected (".$_FILES[$k]['name'].")! ";
+				$_FILES[$k]['name']=@urlencode($_FILES[$k]['name']);
+				if($_FILES[$k]['error']==1)
+					{
+					$xsk.="---------UPLOAD-ERROR-1---------:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['upload_error_1'];
+					if($MusselConfig['general']['delete_on_sight'])@unlink($_FILES[$k]['tmp_name']);
+					}
+				else if($_FILES[$k]['error']==2)
+					{
+					$xsk.="---------UPLOAD-ERROR-2---------:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['upload_error_2'];
+					if($MusselConfig['general']['delete_on_sight'])@unlink($_FILES[$k]['tmp_name']);
+					}
+				else if($_FILES[$k]['error']==3)
+					{
+					$xsk.="---------UPLOAD-ERROR-3---------:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['upload_error_3'];
+					}
+				else if($_FILES[$k]['error']==4)
+					{
+					$xsk.="---------UPLOAD-ERROR-4---------:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['upload_error_3'];
+					}
+				else if($_FILES[$k]['error']==6)
+					{
+					$xsk.="---------UPLOAD-ERROR-6---------:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['upload_error_6'];
+					}
+				else if($_FILES[$k]['error']==7)
+					{
+					$xsk.="---------UPLOAD-ERROR-7---------:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['upload_error_7'];
+					}
+				else if($_FILES[$k]['error']==8)
+					{
+					$xsk.="---------UPLOAD-ERROR-8---------:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['upload_error_8'];
+					}
+				else if(!is_uploaded_file($_FILES[$k]['tmp_name']))
+					{
+					$xsk.="UNAUTHORISED-FILE-UPLOAD-NO-HASH:".$_FILES[$k]['size'].":".$_FILES[$k]['name'].$GLOBALS['linebreak'];
+					$xfm.=$GLOBALS['MusselConfig']['lang']['scan_unauthorised_upload']." (".$_FILES[$k]['name'].")! ";
+					}
+				else
+					{
+					$r=phpMussel($_FILES[$k]['tmp_name'],2,1,0,$_FILES[$k]['name']);
+					}
 				}
 			}
 		}
@@ -4935,7 +5137,7 @@ if(function_exists("phpMusselFork")&&strlen(mussel_php)>0&&mussel_os=="WIN"&&mus
 	$r="";
 	if($MusselConfig['general']['scan_log'])
 		{
-		$s=date("r")." ".$GLOBALS['MusselConfig']['lang']['cli_started'].".".$linebreak;
+		$s=date("r")." ".$GLOBALS['MusselConfig']['lang']['started'].".".$linebreak;
 		echo $s;
 		}
 	if(is_dir($stl))
@@ -4943,7 +5145,7 @@ if(function_exists("phpMusselFork")&&strlen(mussel_php)>0&&mussel_os=="WIN"&&mus
 		$d=@scandir($stl);
 		if(!$d)
 			{
-			echo "> ".$GLOBALS['MusselConfig']['lang']['cli_failed_to_access']." \"".$stl."\".".$linebreak;
+			echo "> ".$GLOBALS['MusselConfig']['lang']['failed_to_access']."\"".$stl."\".".$linebreak;
 			}
 		else
 			{
@@ -4973,7 +5175,7 @@ if(function_exists("phpMusselFork")&&strlen(mussel_php)>0&&mussel_os=="WIN"&&mus
 	if($MusselConfig['general']['scan_log'])
 		{
 		$r=$s.$r;
-		$s=date("r")." ".$GLOBALS['MusselConfig']['lang']['cli_finished'].".".$linebreak.$linebreak;
+		$s=date("r")." ".$GLOBALS['MusselConfig']['lang']['finished'].".".$linebreak.$linebreak;
 		echo $s;
 		$r=$r.$s;
 		if(!file_exists($vault.$MusselConfig['general']['scan_log']))$r="<?php die(); ?>".$linebreak.$linebreak.$r;

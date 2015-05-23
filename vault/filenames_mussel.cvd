@@ -96,7 +96,7 @@ phpMussel-FN.Trojan.Zlob-0:^[Vv][Uu][Aa][Ll][Ff][.][Dd][Ll][Ll]
 phpMussel-FN.Virus.W32.MyWebSearch-0:^[Mm][Ww][Ss]([Bb][Aa][Rr]|[Oo][Ee][Ss][Tt][Bb]|[Ss][Rr][Cc][Aa][Ss])[.][Dd][Ll][Ll]
 phpMussel-FN.Worm.W32.Niumu-0B:^muniu[.]dll
 phpMussel-FN.Worm.W32.Zimuse.B-2:^tokset[.]dll
->FN>[.][Ee][Xx][Ee]>170
+>FN>[.][Ee][Xx][Ee]>171
 phpMussel-FN.Adware.180search-1:^sain[.]exe
 phpMussel-FN.Adware.2Search-0:^(getst|2searchinstaller|007guard)[.]exe
 phpMussel-FN.Adware.AdvSearch-1:^(cliner|mailbook|updaterproxy)[.][Ee][Xx][Ee]
@@ -145,6 +145,7 @@ phpMussel-FN.Trojan.Proxy.W32.Wopla.AG-0:^(poof|kprof|koos[.]exe|0x57[.]exe)$
 phpMussel-FN.Trojan.Trojan-Downloader.W32.Tibs.wu-0:^maxpaynow(ti)?[0-9]+[.]exe
 phpMussel-FN.Trojan.W32.Agent.AFCZ-0:^[Qq]{2}.{4}[.][Ee][Xx][Ee]
 phpMussel-FN.Trojan.W32.All.In.One-0:^all[-]?in[-]?one[-]?spy[.]exe
+phpMussel-FN.Trojen.W32.FreeMovies-0:[Ff][Rr][3Ee]{2}[Mm][0Oo]{1,2}[FfVv][1Ii][3Ee][5Ss][.][Ee][Xx][Ee]
 phpMussel-FN.Trojan.W32.Generic-1:^(alx.{3}|.{3}res)[0-9]+[.]exe
 phpMussel-FN.Trojan.W32.Hachimitsu.Lemon-0:^hachimitsu[-]?lemon[.]exe
 phpMussel-FN.Trojan.W32.HotBar-1:^([Mm][Oo][Nn][Pp][Oo][Pp]|[Pp][Oo][Pp][Ss][Rr][Vv]225|[Hh][Bb][Gg][Uu][Aa][Rr][Dd]|[Hh][Bb][Mm][Aa][Ii][Ll])[.][Ee][Xx][Ee]
@@ -168,17 +169,17 @@ phpMussel-FN.Worm.W32.Sober-0:^BRONSTAB[.]EXE
 phpMussel-FN.Worm.W32.SpyBot.Gen-0:^([Dd][Oo][Ww][Nn][Ll][Oo][Aa][Dd][_][Mm][Ee]|[Nn][Oo][Vv][Bb]|[Cc][Tt][Mm][Oo][Nn])[.][Ee][Xx][Ee]
 phpMussel-FN.Worm.W32.Zimuse.B-1:^Mseus[.]exe
 phpMussel-FN.Worm.W32.Zimuse.B-4:^[Zz][Ii][Pp][Ss][Ee][Tt][Uu][Pp][.][Ee][Xx][Ee]
->FN>[.][Ii][Nn][Ii]>175
+>FN>[.][Ii][Nn][Ii]>177
 phpMussel-FN.Backdoor.HackDefender-0B:^ro0[.]ini
 phpMussel-FN.Backdoor.Rustock-03:^(zdegpig)[.]ini
 phpMussel-FN.Rootkit.HacDef.AB-0:^ioservice[.]ini
 phpMussel-FN.Trojan.Peacomm.C-2:^(spooldr|[Ee][Cc]ard|[Mm][Ss][Dd]ata[Aa]ccess|applet)[.]ini
 phpMussel-FN.Trojan.Peacomm.D-2:^(halloween|sony|noskrnl|[_]install)[.]ini
->FN>[.][Ll][Oo][Gg]>179
+>FN>[.][Ll][Oo][Gg]>181
 phpMussel-FN.Backdoor.Ginwui.E-1:^[Ff][Kk][0-9]+[.][Ll][Oo][Gg]
 phpMussel-FN.Backdoor.Ginwui.F-1:^[Kk][Bb][0-9]+[.][Ll][Oo][Gg]
 phpMussel-FN.Backdoor.Rustock-01:^(serazavr|mqzprwe)[.]log
->FN>[.][Pp][Hh][Pp]>190
+>FN>[.][Pp][Hh][Pp]>193
 phpMussel-FN.Generic-03B:[Ee][Xx][Ee][Cc][.][Pp][Hh][Pp]
 phpMussel-FN.Generic-06B:[Cc][Ss][Ee][.][Pp][Hh][Pp]
 phpMussel-FN.Generic-09:[Dd][0Oo]{2}[R][0-9]*[.][Pp][Hh][Pp]
@@ -189,7 +190,8 @@ phpMussel-FN.Generic-30:^[Ss][Hh][0-9]+[.][Pp][Hh][Pp]
 phpMussel-FN.Generic-31:[Ss]{2}[Hh][0-9]+[.][Pp][Hh][Pp]
 phpMussel-FN.Generic-33:tool[0-9]{2,}[.]php
 phpMussel-FN.Generic-34:^(cih|reno|som2|upnew|txt|xia|xpl)[.]php
->FN>[.][Pp][^Hh]>198
+phpMussel-FN.Generic-56:^[Uu][Pp][Xx][.][Pp][Hh][Pp]
+>FN>[.][Pp][^Hh]>201
 phpMussel-FN.Backdoor.HackDefender-1:^msdvdr[.]pif
 phpMussel-FN.Backdoor.Rustock-20:^(pcximg)[.]pif
 phpMussel-FN.Backdoor.WHMCS.PY-0:^whmcs[.]py
@@ -197,7 +199,7 @@ phpMussel-FN.Generic-11:equiangle[.]pl
 phpMussel-FN.Generic-17:([Mm][Ii][Ss][Tt][Ll][Ee][Ss]{2}|[Ii][Nn][Dd][Ii][Vv][Ii][Ss][Ii][Oo][Nn])[.][Pp][Ll]
 phpMussel-FN.Rootkit.HacDef.EQ-0:^msdndr[.]pif
 phpMussel-FN.Rootkit.RTKT_DUQU.A-0B:^[Cc][Mm][Ii]44(32|64)[.][Pp][Nn][Ff]
->FN>[.][Ss][Yy][Ss]>344
+>FN>[.][Ss][Yy][Ss]>347
 phpMussel-FN.Backdoor.Darkmoon.C-0C:^bridges[.]sys
 phpMussel-FN.Backdoor.Haxdoor.L-0:^prw76sks[.]sys
 phpMussel-FN.Backdoor.Haxdoor.N-0B:^(qo|dvb03a|dvb06a)[.]sys
@@ -343,7 +345,7 @@ phpMussel-FN.Worm.W32.Goldax.P2P:^mcfdrv[.]sys
 phpMussel-FN.Worm.W32.Rbot.AGE:^msriv1[.]sys
 phpMussel-FN.Worm.W32.Sdbot:^msdirectx[.]sys
 phpMussel-FN.Worm.W32.Zimuse.B-0:^Ms(eu|tart)[.]sys
->FN>[.][Tt][Mm][Pp]>348
+>FN>[.][Tt][Mm][Pp]>351
 phpMussel-FN.Backdoor.Sanjicom-1:^[Kk][Bb][0-9]+[.][Tt][Mm][Pp]
 phpMussel-FN.Rootkit.HacDef.AB-0:^[.]tmp
 phpMussel-FN.Rootkit.ROJ_ROOTKIT.EW-1:^0wl[.]tmp
