@@ -555,6 +555,9 @@
  /_testfiles/pe_sectional_testfile.exe (Testdatei, enthalten)
     Testdatei zur Überprüfung der PE-Sectional-Signaturerkennung.
     ~
+ /_testfiles/swf_standard_testfile.swf (Testdatei, enthalten)
+    Testdatei zur Überprüfung der SWF-Signaturen.
+    ~
  /_testfiles/xdp_standard_testfile.xdp (Testdatei, enthalten)
     Testdatei zur Überprüfung der XML/XDP-Stücke-Signaturen.
     ~
@@ -1251,6 +1254,23 @@
      alle Uploads, die keine Bilddateien sind, blockieren, ohne sie zu scannen.
      Dies kann die Verarbeitungszeit und Speichernutzung resuzieren, sobald
      andere Nicht-Bilddateien hochgeladen werden. 0 - AUS/OFF, 1 - AN/ON.
+ "heuristic" (Kategorie)
+ - Heuristic-Direktive für phpMussel.
+   "threshold"
+   - Es gibt bestimmte Signaturen in phpMussel, die dazu dienen, verdächtige
+     und potenziell bösartige Eigenschaften von hochgeladenen Dateien zu
+     identifizieren, ohne diese Dateien an sich zu überprüfen und als bösartig
+     zu identifizieren. Diese Direktive teilt phpMussel mit, welche Gewichtung
+     von verdächtigen und potenziell bösartigen Eigenschaften zulässig ist,
+     bevor diese Dateien als bösartig gekennzeichnet werden. Die Definition der
+     Gewicht ist in diesem Zusammenhang die Gesamtzahl der verdächtigen und
+     potenziell bösartigen Eigenschaften. Standardwert ist 3. Ein niedriger
+     Wert in der Regel führt zu einem vermehrten Auftreten von Fehlalarmen und
+     eine größere Anzahl von schädlichen Dateien werden erkannt, während ein
+     höherer Wert weniger Fehlalarme auslöst und eine geringere Anzahl von
+     schädlichen Dateien markiert werden. Dieser Wert sollte so belassen
+     werden, es sei denn, Sie erkennen Probleme, die durch diese Einstellung
+     hervorgerufen werden.
 
                                      ~ ~ ~
 
@@ -1414,7 +1434,7 @@
  vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen
  überlegen.
 
- Diese Informationen wurden zuletzt am 2015.02.04 aktualisiert und gelten für
+ Diese Informationen wurden zuletzt am 2015.05.01 aktualisiert und gelten für
  alle phpMussel Veröffentlichungen von der beiden letzten Nebenversionen
  (v0.5-v0.6) zu diesem Zeitpunkt.
 
@@ -1473,5 +1493,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 2015.04.13
+Zuletzt aktualisiert: 2015.05.20
 EOF

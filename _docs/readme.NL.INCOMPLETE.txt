@@ -575,6 +575,9 @@
  /_testfiles/pe_sectional_testfile.exe (Test file, Included)
     Test file for testing phpMussel PE Sectional signatures.
     ~
+ /_testfiles/swf_standard_testfile.swf (Test file, Included)
+    Test file for testing phpMussel SWF signatures.
+    ~
  /_testfiles/xdp_standard_testfile.xdp (Test file, Included)
     Test file for testing phpMussel XML/XDP-Chunk signatures.
     ~
@@ -866,7 +869,7 @@
  configuration file of phpMussel, along with a description of their purpose and
  function.
 
- "general" (Category)
+ "general" (Categorie)
  - General configuration for phpMussel.
     "script_password"
     - As a convenience, phpMussel will allow certain functions (including the
@@ -971,7 +974,7 @@
       is for actual file upload scanning nor is it recommended to use the
       honeypot functionality for purposes other than honeypotting. By default,
       this option is disabled. 0 = Disabled [Default], 1 = Enabled.
- "signatures" (Category)
+ "signatures" (Categorie)
  - Configuration for signatures.
    %%%_clamav = ClamAV signatures (both mains and daily).
    %%%_custom = Your custom signatures (if you've written any).
@@ -1082,7 +1085,7 @@
      problems. This should generally be left alone unless you're experiencing
      crashes or similar problems. 0 = Disabled, 1 = Enabled [Default].
      "fail_silently"
- "files" (Category)
+ "files" (Categorie)
  - General configuration for handling of files.
    "max_uploads"
    - Maximum allowable number of files to scan during files upload scan before
@@ -1134,7 +1137,7 @@
      0 - No (just greylist everything) [Default], 1 - Yes.
    "max_recursion"
    - Maximum recursion depth limit for archives. Default = 10.
- "attack_specific" (Category)
+ "attack_specific" (Categorie)
  - Configuration for specific attack detections (not based on CVDs).
    * Chameleon attack detection: 0 = Off, 1 = On.
    "chameleon_from_php"
@@ -1209,7 +1212,7 @@
      directive exists to try to prevent phpMussel from using up too much memory
      (which would prevent it from being able to successfully scan files above a
      certain filesize).
- "compatibility" (Category)
+ "compatibility" (Categorie)
  - Compatibility directives for phpMussel.
    "ignore_upload_errors"
    - This directive should generally be disabled unless it is required for
@@ -1235,6 +1238,23 @@
      identified as non-image files, without scanning them. This may reduce
      processing time and memory usage for attempted uploads of non-image files.
      0 - OFF, 1 - ON.
+ "heuristic" (Categorie)
+ - Heuristic directives for phpMussel.
+   "threshold"
+   - There are certain signatures of phpMussel that are intended to identify
+     suspicious and potentially malicious qualities of files being uploaded
+     without in themselves identifying those files being uploaded specifically
+     as being malicious. This "threshold" value tells phpMussel what the
+     maximum total weight of suspicious and potentially malicious qualities of
+     files being uploaded that's allowable is before those files are to be
+     flagged as malicious. The definition of weight in this context is the
+     total number of suspicious and potentially malicious qualities identified.
+     By default, this value will be set to 3. A lower value generally will
+     result in a higher occurrence of false positives but a higher number of
+     malicious files being flagged, whereas a higher value generally will
+     result in a lower occurrence of false positives but a lower number of
+     malicious files being flagged. It's generally best to leave this value at
+     its default unless you're experiencing problems related to it.
 
                                      ~ ~ ~
 
@@ -1393,9 +1413,9 @@
  voorafgaand aan het werken met phpMussel of moeten overwegen alternatieve
  opties om ofwel uw anti-virus software of phpMussel.
 
- Deze informatie is voor het laatst bijgewerkt 4 Februari 2015 en is op de
- hoogte voor alle phpMussel publicaties van de twee meest recente mineur
- versies (v0.5-v0.6) op het moment van schrijven dit.
+ Deze informatie is voor het laatst bijgewerkt 1 Mei 2015 en is op de hoogte
+ voor alle phpMussel publicaties van de twee meest recente mineur versies
+ (v0.5-v0.6) op het moment van schrijven dit.
 
  Ad-Aware                Geen bekend problemen
  Agnitum                 Geen bekend problemen
@@ -1452,5 +1472,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 13 April 2015 (2015.04.13).
+Laatste Bijgewerkt: 20 Mei 2015 (2015.05.20).
 EOF

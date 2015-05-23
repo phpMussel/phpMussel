@@ -598,6 +598,9 @@
  /_testfiles/pe_sectional_testfile.exe (Test file, Incluso)
     Test file per test di phpMussel PE Sezionale firme.
     ~
+ /_testfiles/swf_standard_testfile.swf (Test file, Incluso)
+    Test file per test di phpMussel SWF firme.
+    ~
  /_testfiles/xdp_standard_testfile.xdp (Test file, Incluso)
     Test file per test di phpMussel XML/XDP-Pezzo firme.
     ~
@@ -1287,6 +1290,25 @@
      scansionali. Questo può ridurre il tempo di processo e l'utilizzo della
      memoria per tentati caricamenti di non-immagine file.
      0 - SPENTO (OFF), 1 - SU (ON).
+ "heuristic" (Categoria)
+ - Euristici direttive per phpMussel.
+   "threshold"
+   - Ci sono particolare firme di phpMussel che sono destinato a identificare
+     sospetti e potenzialmente maligno qualità dei file che vengono essere
+     caricati senza in sé identificando i file che vengono essere caricati in
+     particolare ad essere maligno. Questo "threshold" (soglia) valore dice
+     phpMussel cosa che il totale massimo peso di sospetti e potenzialmente
+     maligno qualità dei file che vengono essere caricati che è ammissibile è
+     prima che quei file devono essere contrassegnati come maligno. La
+     definizione di peso in questo contesto è il totale numero di sospetti e
+     potenzialmente maligno qualità identificato. Per predefinito, questo
+     valore viene impostato su 3. Un inferiore valore generalmente sarà
+     risultare di una maggiore presenza di falsi positivi ma una maggior numero
+     di file essere contrassegnato come maligno, mentre una maggiore valore
+     generalmente sarà risultare di un inferiore presenza di falsi positivi ma
+     un inferiore numero di file essere contrassegnato come maligno. È
+     generalmente meglio di lasciare questo valore a suo predefinito a meno che
+     si incontrare problemi ad esso correlati.
 
                                      ~ ~ ~
 
@@ -1450,8 +1472,8 @@
  dovrebbe considerare l'alternative opzioni per sia il vostro anti-virus
  software o phpMussel.
 
- Questa informazione è stato lo scorso aggiornato 4 Febbraio 2015 ed è in
- corso per tutte le phpMussel rilasci delle due più recenti minori versioni
+ Questa informazione è stato lo scorso aggiornato 1 Maggio 2015 ed è in corso
+ per tutte le phpMussel rilasci delle due più recenti minori versioni
  (v0.5-v0.6) al momento di scrivere questo.
 
  Ad-Aware                Senza noti problemi
@@ -1509,5 +1531,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 13 Aprile 2014 (2015.04.13).
+Ultimo Aggiornamento: 20 Maggio 2015 (2015.05.20).
 EOF

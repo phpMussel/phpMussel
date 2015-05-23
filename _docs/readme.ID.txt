@@ -591,6 +591,9 @@
  /_testfiles/pe_sectional_testfile.exe (Data test, Diikutkan)
     Data test untuk mentest tanda tangan PE Sectional phpMussel.
     ~
+ /_testfiles/swf_standard_testfile.swf (Data test, Diikutkan)
+    Data test untuk mentest tanda tangan SWF phpMussel.
+    ~
  /_testfiles/xdp_standard_testfile.xdp (Data test, Diikutkan)
     Data test untuk mentest tanda tangan potongan XML/XDP phpMussel.
     ~
@@ -1283,6 +1286,25 @@
      pemindaian mereka. Ini mungkin mengurangi waktu memproses dan penggunaan
      memori untuk mencoba upload file tidak gambar.
      0 - DINONAKTIFKAN, 1 - DIAKTIFKAN.
+ "heuristic" (Kategori)
+ - Direktif-direktif heuristik pada phpMussel.
+   "threshold"
+   - Ada tanda tangan tertentu dari phpMussel yang dimaksudkan untuk
+     mengidentifikasi kualitas yang mencurigakan dan berpotensi berbahaya pada
+     file-file yang di-upload tanpa di diri mereka mengidentifikasi file-file
+     yang di-upload spesifik sebagai berbahaya. Ini "threshold" nilai
+     memberitahu phpMussel apa total berat maksimum untuk kualitas yang
+     mencurigakan dan berpotensi berbahaya pada file-file yang di-upload yang
+     diijinkan adalah sebelum file-file yang akan diidentifikasi sebagai
+     berbahaya. Definisi berat dalam konteks ini adalah jumlah total kualitas
+     mencurigakan dan berpotensi berbahaya diidentifikasi. Secara default,
+     nilai ini akan ditetapkan ke 3. Sebuah nilai lebih rendah umumnya akan
+     menghasilkan sebagai lebih tinggi positif palsu kejadian tetapi sebuah
+     jumlah lebih tinggi file berbahaya diidentifikasi, sedangkan sebuah nilai
+     lebih tinggi umumnya akan menghasilkan sebagai lebih rendah positif palsu
+     kejadian tetapi sebuah jumlah lebih rendah pada file berbahaya yang
+     diidentifikasi. Ini umumnya terbaik untuk meninggalkan nilai ini di
+     default kecuali jika Anda mengalami masalah berhubungan dengan itu.
 
                                      ~ ~ ~
 
@@ -1446,8 +1468,8 @@
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 4 Februari 2015 dan cocok untuk semua rilis phpMussel
- dari dua versi minor terbaru versi (v0.5-v0.6) pada waktu saya menuliskan ini.
+ Informasi ini diupdate 1 Mei 2015 dan cocok untuk semua rilis phpMussel dari
+ dua versi minor terbaru versi (v0.5-v0.6) pada waktu saya menuliskan ini.
 
  Ad-Aware                Tidak masalah
  Agnitum                 Tidak masalah
@@ -1504,5 +1526,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 13 April 2015 (2015.04.13).
+Terakhir Diperbarui: 20 Mei 2015 (2015.05.20).
 EOF

@@ -602,6 +602,9 @@
  /_testfiles/pe_sectional_testfile.exe (Test fichier, Inclu)
     Test fichier à test phpMussel PE Sectional signatures.
     ~
+ /_testfiles/swf_standard_testfile.swf (Test fichier, Inclu)
+    Test fichier à test phpMussel SWF signatures.
+    ~
  /_testfiles/xdp_standard_testfile.xdp (Test fichier, Inclu)
     Test fichier à test phpMussel XML/XDP morceaux signatures.
     ~
@@ -1310,6 +1313,26 @@
      fichiers, sans analyser. Cela peut réduire le temps de travail et
      l'utilisation de la mémoire pour les tentativé téléchargements de non
      image fichiers. 0 - DÉSACTIVÉ, 1 - ACTIVÉ.
+ "heuristic" (Catégorie)
+ - Heuristiques directives pour phpMussel.
+   "threshold"
+   - Il ya certaines signatures des phpMussel qui sont destinés à identifier
+     des suspectes et potentiellement malveillants qualités des fichiers en
+     cours de téléchargement sans en eux-mêmes identifier les fichiers en cours
+     de téléchargement spécifiquement comme étant malveillants. Cette
+     "threshold" (seuil) valeur raconte à phpMussel ce que le total maximum
+     poids des suspectes et potentiellement malveillants qualités des fichiers
+     en cours de téléchargement pour ce qui est admissible avant que ces
+     fichiers doivent être signalées comme malveillant. La définition du poids
+     dans ce contexte est le nombre total de suspectes et potentiellement
+     malveillants qualités identifié. Par défaut, cette valeur sera fixée à 3.
+     Une valeur inférieur va résulter généralement avec une fréquence supérieur
+     de faux positifs mais une nombre supérieur de fichiers signalé comme
+     malveillant, tandis que une valeur inférieur va résulter généralement avec
+     une fréquence inférieur de faux positifs mais un nombre inférieur de
+     fichiers signalé comme malveillant. Il est généralement préférable de
+     laisser cette valeur à sa valeur défaut, sauf si vous rencontrez des
+     problèmes qui sont liés à elle.
 
                                      ~ ~ ~
 
@@ -1472,9 +1495,9 @@
  désactivation avant à travailler avec phpMussel ou devrait envisager d'autres
  options soit votre logiciel anti-virus ou phpMussel.
 
- Cette information a été réactualisé le 4 Février 2015 et est courant pour
- toutes les phpMussel parutions des deux plus récentes mineures versions
- (v0.5-v0.6) au moment de la rédaction cette.
+ Cette information a été réactualisé le 1 Mai 2015 et est courant pour toutes
+ les phpMussel parutions des deux plus récentes mineures versions (v0.5-v0.6)
+ au moment de la rédaction cette.
 
  Ad-Aware                Pas problèmes connus
  Agnitum                 Pas problèmes connus
@@ -1531,5 +1554,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 13 Avril 2015 (2015.04.13).
+Dernière Réactualisé: 20 Mai 2015 (2015.05.20).
 EOF

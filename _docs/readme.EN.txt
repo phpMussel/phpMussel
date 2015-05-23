@@ -562,6 +562,9 @@
  /_testfiles/pe_sectional_testfile.exe (Test file, Included)
     Test file for testing phpMussel PE Sectional signatures.
     ~
+ /_testfiles/swf_standard_testfile.swf (Test file, Included)
+    Test file for testing phpMussel SWF signatures.
+    ~
  /_testfiles/xdp_standard_testfile.xdp (Test file, Included)
     Test file for testing phpMussel XML/XDP-Chunk signatures.
     ~
@@ -1222,6 +1225,23 @@
      identified as non-image files, without scanning them. This may reduce
      processing time and memory usage for attempted uploads of non-image files.
      0 - OFF, 1 - ON.
+ "heuristic" (Category)
+ - Heuristic directives for phpMussel.
+   "threshold"
+   - There are certain signatures of phpMussel that are intended to identify
+     suspicious and potentially malicious qualities of files being uploaded
+     without in themselves identifying those files being uploaded specifically
+     as being malicious. This "threshold" value tells phpMussel what the
+     maximum total weight of suspicious and potentially malicious qualities of
+     files being uploaded that's allowable is before those files are to be
+     flagged as malicious. The definition of weight in this context is the
+     total number of suspicious and potentially malicious qualities identified.
+     By default, this value will be set to 3. A lower value generally will
+     result in a higher occurrence of false positives but a higher number of
+     malicious files being flagged, whereas a higher value generally will
+     result in a lower occurrence of false positives but a lower number of
+     malicious files being flagged. It's generally best to leave this value at
+     its default unless you're experiencing problems related to it.
 
                                      ~ ~ ~
 
@@ -1379,7 +1399,7 @@
  with phpMussel or should consider alternative options to either your
  anti-virus software or phpMussel.
 
- This information was last updated 4th February 2014 and is current for all
+ This information was last updated 1st May 2015 and is current for all
  phpMussel releases of the two most recent minor versions (v0.5-v0.6) at the
  time of writing this.
 
@@ -1438,5 +1458,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 13th April 2015 (2015.04.13).
+Last Updated: 20th May 2015 (2015.05.20).
 EOF

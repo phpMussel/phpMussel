@@ -1,17 +1,17 @@
  DoubleExtension-rarpwd-2:*:[ _.-](7z|avi|bmp|csv|doc|docx|gif|gz|jpeg|jpg|mov|mp3|mp4|mpg|pdf|png|pps|ppt|pptx|psd|rar|tar|tar\.gz|tif|tiff|txt|wav|xls|xlsx|zip)[ _.-]*\.(application|bat|cmd|com|cpl|exe|gadget|inf|ins|inx|isu|job|jse|lnk|msc|msh|msh1|msh1xml|msh2|msh2xml|mshxml|msi|msp|mst|paf|pif|ps1|ps1xml|ps2|ps2xml|psc1|psc2|reg|rgs|scf|scr|sct|shb|shs|u3p|vb|vbe|vbs|vbscript|workflow|ws|wsf)
-'RAR.ExecutableAirfare-rarpwd-1:DeltaTicket([_-][A-Z]{2}[_-][A-Z]{2}[-_][A-Z0-9]{6,})?\.([Ee][Xx][Ee]|[Ss][Cc][Rr]|[Cc][Oo][Mm])$
-'RAR.ExecutableCopy-rarpwd:(TT|original|scan|swift)[ _-]?COPY.(exe|scr|jar|html?|com)$
-'RAR.ExecutableFax-rarpwd:(incomingfax|fax[0-9]{3,})\.(exe|scr)$
-'RAR.ExecutablePhoto-rarpwd-1:/photo\.(exe|scr)$
-'RAR.ExecutablePhoto-rarpwd-2:(^|/)(my|sample)?[_ -]?photo([ _-][0-9]+)?\.(exe|scr|com)$
-'RAR.ExecutableProduct-rarpwd:product(ion)?[_ -](sample|detail|order|image|file)s?\.(exe|com|scr)$
-'RAR.ExecutablePurchaseOrder-rarpwd-2:(^|[^A-Za-z])P\.?O\.?[ _#-]?[0-9]+\.(exe|scr|com)$
-'RAR.ExecutablePurchaseOrder-rarpwd-3:(^|[^A-Za-z])P\.?[O0]\.?[ _#-]?[0-9]+\.(exe|scr|com)$
-'RAR.ExecutableScan-rarpwd:scan_?[0-9]{2,}\.(exe|scr|com)$
-'RAR.FileName-rarpwd-4:(confidential|fiscal|inquiry|invoice|payment|plaint|purchase|receipt|shipment|urgent|vitae)[^/]{0,30}\.(bat|cmd|com|cpl|exe|pif|scr)$
-'RAR.MacroDoubleExtension-rarpwd-2:[ _.-](7z|avi|bmp|csv|docx|gif|gz|jpeg|jpg|mov|mp3|mp4|mpg|pdf|png|pps|ppt|pptx|psd|rar|tar|tar\.gz|tif|tiff|txt|wav|xls|xlsx|zip)[ _.-]*\.(docm|dotm|otm|potm|ppam|ppsm|pptm|sldm|tlb|xlam|xlm|xlsm|xltm)
-'RAR.MiscDoubleExtension-rarpwd-2:[ _.-](7z|avi|bmp|csv|docx|gif|gz|jpeg|jpg|mov|mp3|mp4|mpg|pdf|png|pps|ppt|pptx|psd|rar|tar|tar\.gz|tif|tiff|txt|wav|xls|xlsx|zip)[ _.-]*\.(action|air|apk|app|as|awk|bin|command|csh|deb|dmg|hta|htm|html|ipa|jar|js|jsx|ksh|nexe|osx|out|pkg|plx|prg|rpm|run|script|sh|swf)
-'RAR.WinDoubleExtension-rarpwd-2:[ _.-](7z|avi|bmp|csv|docx|gif|gz|jpeg|jpg|mov|mp3|mp4|mpg|pdf|png|pps|ppt|pptx|psd|rar|tar|tar\.gz|tif|tiff|txt|wav|xls|xlsx|zip)[ _.-]*\.(application|bat|cmd|com|cpl|exe|gadget|inf|ins|inx|isu|job|jse|lnk|msc|msh|msh1|msh1xml|msh2|msh2xml|mshxml|msi|msp|mst|paf|pif|ps1|ps1xml|ps2|ps2xml|psc1|psc2|reg|rgs|scf|scr|sct|shb|shs|u3p|vb|vbe|vbs|vbscript|workflow|ws|wsf)
+'ExecutableAirfare-rarpwd-1:DeltaTicket([_-][A-Z]{2}[_-][A-Z]{2}[-_][A-Z0-9]{6,})?\.([Ee][Xx][Ee]|[Ss][Cc][Rr]|[Cc][Oo][Mm])$
+'ExecutableCopy-rarpwd:(TT|original|scan|swift)[ _-]?COPY.(exe|scr|jar|html?|com)$
+'ExecutableFax-rarpwd:(incomingfax|fax[0-9]{3,})\.(exe|scr)$
+'ExecutablePhoto-rarpwd-1:/photo\.(exe|scr)$
+'ExecutablePhoto-rarpwd-2:(^|/)(my|sample)?[_ -]?photo([ _-][0-9]+)?\.(exe|scr|com)$
+'ExecutableProduct-rarpwd:product(ion)?[_ -](sample|detail|order|image|file)s?\.(exe|com|scr)$
+'ExecutablePurchaseOrder-rarpwd-2:(^|[^A-Za-z])P\.?O\.?[ _#-]?[0-9]+\.(exe|scr|com)$
+'ExecutablePurchaseOrder-rarpwd-3:(^|[^A-Za-z])P\.?[O0]\.?[ _#-]?[0-9]+\.(exe|scr|com)$
+'ExecutableScan-rarpwd:scan_?[0-9]{2,}\.(exe|scr|com)$
+'FileName-rarpwd-4:(confidential|fiscal|inquiry|invoice|payment|plaint|purchase|receipt|shipment|urgent|vitae)[^/]{0,30}\.(bat|cmd|com|cpl|exe|pif|scr)$
+'MacroDoubleExtension-rarpwd-2:[ _.-](7z|avi|bmp|csv|docx|gif|gz|jpeg|jpg|mov|mp3|mp4|mpg|pdf|png|pps|ppt|pptx|psd|rar|tar|tar\.gz|tif|tiff|txt|wav|xls|xlsx|zip)[ _.-]*\.(docm|dotm|otm|potm|ppam|ppsm|pptm|sldm|tlb|xlam|xlm|xlsm|xltm)
+'MiscDoubleExtension-rarpwd-2:[ _.-](7z|avi|bmp|csv|docx|gif|gz|jpeg|jpg|mov|mp3|mp4|mpg|pdf|png|pps|ppt|pptx|psd|rar|tar|tar\.gz|tif|tiff|txt|wav|xls|xlsx|zip)[ _.-]*\.(action|air|apk|app|as|awk|bin|command|csh|deb|dmg|hta|htm|html|ipa|jar|js|jsx|ksh|nexe|osx|out|pkg|plx|prg|rpm|run|script|sh|swf)
+'WinDoubleExtension-rarpwd-2:[ _.-](7z|avi|bmp|csv|docx|gif|gz|jpeg|jpg|mov|mp3|mp4|mpg|pdf|png|pps|ppt|pptx|psd|rar|tar|tar\.gz|tif|tiff|txt|wav|xls|xlsx|zip)[ _.-]*\.(application|bat|cmd|com|cpl|exe|gadget|inf|ins|inx|isu|job|jse|lnk|msc|msh|msh1|msh1xml|msh2|msh2xml|mshxml|msi|msp|mst|paf|pif|ps1|ps1xml|ps2|ps2xml|psc1|psc2|reg|rgs|scf|scr|sct|shb|shs|u3p|vb|vbe|vbs|vbscript|workflow|ws|wsf)
 'Bredozip-zippwd-10:^(U|u)(P|p)(S|s)(_|-)(d|D)(o|O)(c|C)(u|U)(m|M)(e|E)(n|N)(t|T).*\.([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
 'Bredozip-zippwd-11:^(d|D)(h|H)(l|L)(_|-)(d|D)(o|O)(c|C)(u|U)(m|M)(e|E)(n|N)(t|T).*\.([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
 'Bredozip-zippwd-12:^(F|f)(a|A)(c|C)(e|E)(b|B)(o|O)(o|O)(K|k)(p|P)(a|A)(s|S)(s|S)(w|W)(o|O)(r|R)(d|D).*\.([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$

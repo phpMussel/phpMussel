@@ -591,6 +591,9 @@
  /_testfiles/pe_sectional_testfile.exe (Prueba archivo, Incluido)
     Prueba archivo para probando phpMussel PE Secciónal firmas.
     ~
+ /_testfiles/swf_standard_testfile.swf (Prueba archivo, Incluido)
+    Prueba archivo para probando phpMussel SWF firmas.
+    ~
  /_testfiles/xdp_standard_testfile.xdp (Prueba archivo, Incluido)
     Prueba archivo para probando phpMussel XML/XDP-Chunk firmas.
     ~
@@ -1295,6 +1298,25 @@
      sin escaneandolos. Esto puede reducir el tiempo de procesamiento y el uso
      de memoria para intentado cargas de archivos que no son imagen.
      0 - DESHABILITADO, 1 - HABILITADO.
+ "heuristic" (Categoría)
+ - Heurísticas directivas para phpMussel.
+   "threshold"
+   - Hay ciertas firmas de phpMussel eso tienen la intención de identificar
+     sospechosas y potencialmente maliciosos cualidades de los archivos que se
+     cargan sin que en ellos la identificación de los archivos que se cargan
+     específicamente como malicioso. Este "threshold" (umbral) valor dice
+     phpMussel qué lo máximo total peso de sospechosas y potencialmente
+     maliciosos cualidades de los archivos que se cargan eso es permisible es
+     antes de que esos archivos han de ser señalado como malicioso. La
+     definición de peso en este contexto es el número total de sospechosas y
+     potencialmente maliciosos cualidades identificados. Por predefinido, este
+     valor es 3. Un valor inferior generalmente resultará en una mayor
+     incidencia de falsos positivos pero un mayor número de archivos maliciosos
+     siendo identificado, mientras un valor mayor generalmente resultará en una
+     inferior incidencia de falsos positivos pero un inferior número de
+     archivos maliciosos siendo identificado. Generalmente es mejor dejar este
+     valor en su predefinido a menos que usted está experimentando problemas
+     relacionados con ella.
 
                                      ~ ~ ~
 
@@ -1464,7 +1486,7 @@
  trabajar con phpMussel o debería considerar opciones alternativas a de su
  anti-virus software o phpMussel.
 
- Esta información ha sido actualizado 4 Febrero 2015 y es a hoy para todas las
+ Esta información ha sido actualizado 1 Mayo 2015 y es a hoy para todas las
  phpMussel versiones de la dos más recientes menores versiones (v0.5-v0.6) al
  momento de escribir esto.
 
@@ -1523,5 +1545,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 13 Abril 2015 (2015.04.13).
+Última Actualización: 20 Mayo 2015 (2015.05.20).
 EOF

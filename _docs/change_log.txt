@@ -16,16 +16,50 @@ Do-to list for potential future minor version (v0.7):
 - Any significant changes to the script including completing of any of the
   aforementioned above, whereby having done so, the release doesn't yet qualify
   as a major release.
-Do-to list for potential future sub-minor version (v0.7a):
+Do-to list for potential future sub-minor version (v0.6j):
 - Any non-significant changes or other unrelated changes to the core code.
 Anything less than sub-minor:
 - Updates to signatures released without any changes to the core code,
   non-important hot-fixes, re-builds, release candidates and anything else less
   than sub-minor (generally used as an excuse to mainline signature updates
-  where no updates to the core script have been recently made).
-Last Edited: 20th March 2015
+  where no updates to the core script have been recently made, as an excuse to
+  put out any new releases involving signatures, or in the event where updates
+  to the core script have been made, where they're still a work-in-progress or
+  not yet considered stable; updates received via the auto-updater that haven't
+  yet been mainlined will usually be versioned in this way).
 
-=== Version/Release 0.6h (Previous Release: 0.6g) ===
+=== Version/Release 0.6i (Previous Release: 0.6h) ===
+SUMMARY:
+Updated to the latest signatures set (55+20451+6i).
+Sub-minor release (medium priority).
+
+NEW CHANGES:
+- 2015.04.25 [Non-ClamAV signatures 6h.0a+]: New signatures added for dealing
+  with macro keylogger droppers, new ransomware variants and a few related
+  miscellaneous other threats.
+- 2015.05.01: Added a new testfile for testing against the SWF signatures sets.
+- 2015.05.06: Did some minor cleaning up of code (all script files affected)
+  for slightly reduced filesize, slightly reduced redundancy and slightly
+  increased efficiency.
+- 2015.05.08: Added a new matching method for CoEx signatures.
+- 2015.05.19: Added support for signature weighting (this means that phpMussel
+  can now support signatures intended to detect suspicious or potentially
+  malicious qualities of files being uploaded without necessarily flagging
+  those files as being malicious, and then make a decision as to whether or not
+  to flag those files as being malicious based on the number - or "weight" - of
+  those suspicious or potentially malicious qualities; this can be potentially
+  very useful for certain types of heuristic detections). Associated
+  configuration directive added to the phpMussel configuration file for the
+  purpose of determining at which weight a file will be flagged as malicious;
+  This value will default to 3 when not otherwise defined.
+- 2015.05.20: As per usual, all documentation updated to reflect the changes
+  brought about as of this release.
+- 2015.05.22 [signatures 55+20451+6i+]: Updated to the the latest signatures.
+
+Maikuolan,
+22nd May 2015.
+
+=== Version/Release 0.6h (Previous Release: 0.6g; Next: 0.6i) ===
 SUMMARY:
 Updated to the latest signatures set (55+20309+6h).
 Sub-minor release (high or medium priority).
