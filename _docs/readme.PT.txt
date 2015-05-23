@@ -798,6 +798,9 @@
     Necessário se o Shockwave assinaturas opção em phpmussel.ini está ativado.
     Pode remover se a opção é desativado.
     ~
+ /vault/switch.dat (Outro, Incluído)
+    Isto controla e define algumas variáveis.
+    ~
  /vault/template.html (Outro, Incluído)
     phpMussel template arquivo; Template por HTML produzido através do
     phpMussel por o bloqueado arquivo carregamento mensagem (a mensagem visto
@@ -996,7 +999,7 @@
       nem recomendado para usar essa funcionalidade por fins outros que o uso
       do honeypot. Por padrão, essa opção está desativada.
       0 = Desativado [Padrão], 1 = Ativado.
- "Assinaturas" (Categoria)
+ "signatures" (Categoria)
  - Configuração por assinaturas.
    %%%_clamav = ClamAV assinaturas (ambos main e daily).
    %%%_custom = Suas personalizadas assinaturas (se você escrever alguma).
@@ -1091,11 +1094,11 @@
      "swf_custom"
      "swf_mussel"
    - Assinatura analisando comprimento limitando opções. Apenas alterar estes
-     se você sabe que está fazendo. SD = Standard signatures (norma
-     assinaturas). RX = PCRE (Perl Compatible Regular Expressions, ou "Regex")
-     assinaturas. FN = Arquivo nome assinaturas. Se você notar php falhando
-     quando phpMussel tenta analisar, tente diminuir o "max" valores. Se
-     possível e conveniente, deixe-me saber quando isso acontece e os
+     se você sabe que está fazendo. SD = Padrão assinaturas (norma
+     assinaturas). RX = PCRE (Perl Compatíveis Regulares Expressões, ou
+     "Regex") assinaturas. FN = Arquivo nome assinaturas. Se você notar php
+     falhando quando phpMussel tenta analisar, tente diminuir o "max" valores.
+     Se possível e conveniente, deixe-me saber quando isso acontece e os
      resultados de tudo o que você tentar.
      "fn_siglen_min"
      "fn_siglen_max"
@@ -1109,7 +1112,7 @@
      perdidos e corrompidos arquivos serão ignoradas, com a análise reportado
      por estes arquivos em que não há problemas. Isso geralmente deve ser
      deixado sozinho a menos que você está experimentando php falhas ou
-     semelhantes problemas. 0 = Desativado [Padrão], 1 = Ativado.
+     semelhantes problemas. 0 = Desativado, 1 = Ativado [Padrão].
      "fail_silently"
  "files" (Categoria)
  - Geral configuração por a manipulação de arquivos.
@@ -1501,5 +1504,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 22 Março 2015 (2015.03.22).
+Última Atualização: 13 Abril 2015 (2015.04.13).
 EOF

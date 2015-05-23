@@ -776,6 +776,9 @@
     aktiviert ist. Die Dateien können entfernt werden, wenn die Option
     deaktiviert ist.
     ~
+ /vault/switch.dat (Other, Included)
+    Diese Datei definiert bestimmte Variablen.
+    ~
  /vault/template.html (Sonstiges, enthalten)
     phpMussel Template file; Template für die HTML-Ausgabe mit der Nachricht,
     dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem
@@ -1071,9 +1074,9 @@
      Ist fail_silently deaktiviert, werden fehlende oder defekte Signaturen
      während des Scanvorgangs gemeldet, ist fail_silently aktiviert, werden
      fehlende oder defekte Signaturen ignoriert, ohne dass entsprechende
-     Probleme gemeldet werden.
-     Diese Option sollte so belassen werden, es sei denn, Sie erwarten Abstürze
-     oder ähnliches. 0 = Deaktiviert [Standardeinstellung], 1 = Aktiviert.
+     Probleme gemeldet werden. Diese Option sollte so belassen werden, es sei
+     denn, Sie erwarten Abstürze oder ähnliches.
+     0 = Deaktiviert, 1 = Aktiviert [Standardeinstellung].
      "fail_silently"
  "files" (Kategorie)
  - Generelle Konfigurationen für die Handhabung von Dateien.
@@ -1286,8 +1289,8 @@
    Datei und TYPE ist der Signaturtypen die Datei ist immun gegen.
 
  = KOMPLEX-ERWEITERT-SIGNATUREN =
-   Complex Extended signatures are rather different to the other types of
-   signatures possible with phpMussel, in that what they are matching against
+   Komplex-Erweitert-Signaturen sind ziemlich verschieden von den anderen Typen
+   von Signaturen mit phpMussel möglich, in that what they are matching against
    is specified by the signatures themselves and they can match against
    multiple criteria. The match criterias are delimited by ";" and the match
    type and match data of each match criteria is delimited by ":" as so that
@@ -1470,5 +1473,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 2015.03.22
+Zuletzt aktualisiert: 2015.04.13
 EOF

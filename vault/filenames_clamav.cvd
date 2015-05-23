@@ -38,5 +38,5 @@
 'DoubleExtension-zippwd-7:\.([Pp][Dd][Ff]|[Dd][Oo][Cc]|[Xx][Ll][Ss]|[Pp][Pp][Tt]|[Jj][Pp][Gg]|[Bb][Mm][Pp]|[Gg][Ii][Ff])\.?[- _]{4,}\.([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
 'DoubleExtension-zippwd-8:\.([h|H][t|T][m|M][l|L]|[h|H][t|T][m|M]|[t|T][x|X][t|T]|[Dd][Oo][Cc]|[Xx][Ll][Ss]|[Pp][Pp][Tt]|[Jj][Pp][Gg]|[Bb][Mm][Pp]|[Gg][Ii][Ff])\.?[- _]{4,}\.([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
 'DoubleExtension-zippwd-9:\.([h|H][t|T][m|M][l|L]|[h|H][t|T][m|M]|[t|T][x|X][t|T]|[Dd][Oo][Cc]|[Xx][Ll][Ss]|[Pp][Pp][Tt]|[Jj][Pp][Gg]|[Bb][Mm][Pp]|[Gg][Ii][Ff])\.?[- _]{4,}\.([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$
-'Downloader-zippwd:^(O|o)(P|p)(e|E)(n|N)\.([Ee][Xx][Ee])$
+'&zippwd:^(O|o)(P|p)(e|E)(n|N)\.([Ee][Xx][Ee])$
 'Zbot-zippwd:^(M|m)(Y|y)(S|s)(p|P)(a|A)(c|C)(e|E)_.*\.([Ee][Xx][Ee]|[Bb][Aa][Tt]|[Cc][Oo][Mm]|[Ll][Nn][Kk]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb][Ss])$

@@ -803,6 +803,9 @@
     diharuskan jika opsi tanda tangan Shockwave di phpmussel.ini diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan.
     ~
+ /vault/switch.dat (Lainnya, Diikutkan)
+    Kontrol dan set variabel tertentu.
+    ~
  /vault/template.html (Lainnya, Diikutkan)
     Data template phpMussel; Template untuk output HTML yang diproduksi oleh
     phpMussel untuk data pesan upload yang dibloknya (pesan dilihat oleh
@@ -1112,7 +1115,7 @@
      hilang akan diabaikan, dengan pemindaian dilaporkan untuk data-data ini
      bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah
      mengalami crashes atau masalah lain.
-     0 = Dinonaktifkan [Default], 1 = Diaktifkan.
+     0 = Dinonaktifkan, 1 = Diaktifkan [Default].
      "fail_silently"
  "files" (Kategori)
  - Konfigurasi umum untuk mengambil alih data-data.
@@ -1501,5 +1504,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 22 Maret 2015 (2015.03.22).
+Terakhir Diperbarui: 13 April 2015 (2015.04.13).
 EOF

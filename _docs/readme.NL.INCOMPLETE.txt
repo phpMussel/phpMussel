@@ -785,6 +785,9 @@
     Required if the Shockwave signatures option in phpmussel.ini is enabled.
     Can remove if the option is disabled.
     ~
+ /vault/switch.dat (Other, Included)
+    Controls and sets certain variables.
+    ~
  /vault/template.html (Other, Included)
     phpMussel Template file; Template for HTML output produced by phpMussel for
     its blocked file upload message (the message seen by the uploader).
@@ -1077,7 +1080,7 @@
      on scanning, and if fail_silently is enabled, missing and corrupted files
      will be ignored, with scanning reported for those files that there are no
      problems. This should generally be left alone unless you're experiencing
-     crashes or similar problems. 0 = Disabled [Default], 1 = Enabled.
+     crashes or similar problems. 0 = Disabled, 1 = Enabled [Default].
      "fail_silently"
  "files" (Category)
  - General configuration for handling of files.
@@ -1449,5 +1452,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 22 Maart 2015 (2015.03.22).
+Laatste Bijgewerkt: 13 April 2015 (2015.04.13).
 EOF

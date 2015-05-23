@@ -805,6 +805,9 @@
     Requerido si la opción de Shockwave firmas en phpmussel.ini está
     habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
+ /vault/switch.dat (Other, Included)
+    Esto controla y establece ciertas variables.
+    ~
  /vault/template.html (Otro, Incluido)
     phpMussel Template archivo; Template para HTML salida producida por
     phpMussel por sus bloqueados cargas archivos mensaje (el mensaje visto por
@@ -1118,7 +1121,7 @@
      reportado para lo archivos que no hay cualquier problemas. Esto
      generalmente debe ser dejar sola a menos que usted está experimentando
      estrellarse o problemas similares.
-     0 = Deshabilitado [Predefinido], 1 = Habilitado.
+     0 = Deshabilitado, 1 = Habilitado [Predefinido].
      "fail_silently"
  "files" (Categoría)
  - General configuración para el manejo de archivos.
@@ -1520,5 +1523,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 22 Marzo 2015 (2015.03.22).
+Última Actualización: 13 Abril 2015 (2015.04.13).
 EOF

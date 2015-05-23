@@ -1,0 +1,28 @@
+== .:: phpMussel Switch File ::. ==
+.:: These to be ignored by the General and ASCII signatures of ClamAV
+FD-RX:377f068[23]002de218:A:8;infectable=false
+FD:252150532d41646f62652d:A:11;infectable=false
+FD:28546869732066696c65206d75737420626520636f6e76657274656420776974682042696e48657820342e3029:A:45;infectable=false
+FD:2e524d46:A:4;infectable=false
+FD:2f5247420a49440affffffffffffffffffffffffffffffffffffffffffffffff:0:128;infectable=false
+FD:494433:A:3;infectable=false
+FD:4f676753:A:4;infectable=false
+FD:5349502d48495420285349502f48:A:14;infectable=false
+FD:53514c69746520666f726d6174203300:A:16;infectable=false
+FD:53594d430100:A:6;infectable=false
+FD:d9d505f920a163d7:A:8;infectable=false
+FD:fffb90:A:3;infectable=false
+.:: Used by CoEx and some others for assisting with determining potential file content
+$fileswitch:unassigned;FN:\.([Bb][Aa][Tt]|[Cc][Mm][Dd]|[Bb][Tt][Mm])$;fileswitch=bat
+$fileswitch:unassigned;FN:\.([Vv][Bb].{0,3}|[Ww][Ss][CcFf]|[Hh][Tt][Aa]?[Mm]?[Ll]?|[Aa][Ss][Pp][Xx]?)$;fileswitch=vb
+$fileswitch:unassigned;FD:4372656174654f626a656374;fileswitch=vb
+$fileswitch:unassigned;FD-NORM:406563686f;fileswitch=bat
+$fileswitch:unassigned;FD:fffb90:A:3;fileswitch=mp3
+$fileswitch:unassigned;FD:494433:A:3;fileswitch=mp3
+$fileswitch:unassigned;FN:\.[Mm][Pp].$;fileswitch=mp3
+$fileswitch:unassigned;FN:\.([Cc][Vv][Dd]|[Ii][Nn][Cc]|[Tt][Xx][Tt])$;fileswitch=ignore
+!$is_html:1;FN:\.([Ee][Mm][Ll]|.?[Hh][Tt][AaMm][Ll]?|[Aa][Ss][Pp][FfXx]?|[Pp][Yy]|[Jj][Ss][Pp]?|[Pp][Hh][Pp].?)$;is_html=true
+!$is_html:1;FD-NORM-RX:3c(21646f6374797065|6120|626f6479|68656164|68746d6c|696672616d65|696d67|6f626a656374|736372697074|7461626c65|7469746c65);is_html=true
+!$is_html:1;FD-NORM-RX:(626f6479|68656164|68746d6c|736372697074|7461626c65|7469746c65)3e;is_html=true
+
+EOF

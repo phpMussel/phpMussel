@@ -21,10 +21,83 @@ Do-to list for potential future sub-minor version (v0.7a):
 Anything less than sub-minor:
 - Updates to signatures released without any changes to the core code,
   non-important hot-fixes, re-builds, release candidates and anything else less
-  than sub-minor.
+  than sub-minor (generally used as an excuse to mainline signature updates
+  where no updates to the core script have been recently made).
 Last Edited: 20th March 2015
 
-=== Version/Release 0.6g (Previous Release: 0.6f) ===
+=== Version/Release 0.6h (Previous Release: 0.6g) ===
+SUMMARY:
+Updated to the latest signatures set (55+20309+6h).
+Sub-minor release (high or medium priority).
+
+NEW CHANGES:
+- 2015.03.28 [Non-ClamAV signatures 6g.0b+]: Some new signatures added for
+  dealing with Office macro droppers and a few related miscellaneous others.
+- 2015.03.30 [Non-ClamAV signatures 6g.0c+]: More than 800+ new signatures
+  added for dealing with Equation Group malware!
+- 2015.04.09 [Non-ClamAV signatures 6g.0d+]: Small handful of new signatures
+  added dealing with PE trojans such as that of Torrent Locker, and some new JS
+  trojan dropper signatures added (Crypto Locker, CTB Locker, etc).
+- 2015.04.10: A shout-out and thank you to John Thaler, friend and graphics
+  designer <http://jthalerdesign.com/>, for designing a rather well-fitting
+  mascot-style graphical icon for phpMussel; Something I've always liked the
+  idea of having done, but which has always been slightly outside of my own
+  personal expertise for doing (I've always been more of a PHP coder than a
+  graphics designer). The new icon is now being displayed on the Sourceforge
+  page for phpMussel and should now be displayed alongside Sourceforge listings
+  for phpMussel and similar such listings elsewhere.
+- 2015.04.12 [signatures 55+20309+6h+]: Updated to the the latest ClamAV
+  signatures; SecuriteInfo signatures; PhishTank signatures; Others and etc.
+- 2015.04.12 [0.6h+]: Slightly improved the way in which phpMussel determines
+  the potential content within some certain particular types of files and the
+  way in which phpMussel handles those particular types of files, resulting in
+  a slight performance improvement and in a reduction of the occurrence of
+  certain types of theoretical but unconfirmed false positives. The presence of
+  a new file within the package, "switch.dat", is connected to this particular
+  update.
+- 2015.04.13: As per usual, all documentation updated to reflect the changes
+  brought about as of this release.
+
+ADDITIONAL NOTES:
+- If you allow the uploading of PE (Portable Executable; EXEs) files, then,
+  this update should be considered extremely high priority, due to the risk
+  posed by Equation Group malware and the presence of new signatures within
+  this release for protecting against that malware (the risk posted by that
+  malware is significant, but the new signatures protecting against that
+  malware only concerns PE files anyhow, and other vectors aren't affected).
+- Updating to this release from the previous release (0.6g) should otherwise be
+  considered medium priority.
+- Due to the auto-updater being available again as of the previous release,
+  updating to this release from the previous release can be done manually (by
+  downloading the latest available package of phpMussel from
+  Sourceforge) or can be done via the auto-updater (either option is equally
+  viable). If you need help setting up this functionality beyond that offered
+  by the documentation, feel free to contact me.
+- At the time of this latest release, the total size for the supplementary
+  signatures provided by SecuriteInfo are well over 50MBs and number more than
+  500,000 individual signatures. Whilst this is fantastic news for users of
+  ClamAV, this is, unfortunately, on top of those signatures already
+  implemented by phpMussel prior to the inclusion of these supplementary
+  signatures, somewhat too much for phpMussel to handle, given the limitations
+  of phpMussel mentioned and/or discussed in the past (such as the upper memory
+  limit of PHP and the maximum allowable memory available to PHP for processing
+  tasks as per allowed both by many shared hosting services and by PHP itself).
+  As such, the number of individual supplementary signatures provided by
+  SecuriteInfo that I've opted to actually implement into phpMussel are a
+  significantly limited and reduced sub-set of those actually available for
+  implementation. In an ideal world, for the purposes of maximum protection,
+  I'd be implementing the entirety of those available for implementation, but
+  on consideration of the limitations that exist, the limited and reduced
+  sub-set that has been implemented is, as has been the case in the past, my
+  attempt to balance as best is possible between effectiveness of protections
+  and efficiency of phpMussel as a whole, or in other words, offering the best
+  possible within the confines of those limitations that do, unfortunately,
+  exist.
+
+Maikuolan,
+13th April 2015.
+
+=== Version/Release 0.6g (Previous Release: 0.6f; Next: 0.6h) ===
 SUMMARY:
 Updated to the latest signatures set (55+20213+6g).
 Sub-minor release (medium or high priority).
@@ -51,7 +124,7 @@ NEW CHANGES:
   an available update, the auto-updater won't need to re-download or reinstall
   that particular file. Additionally, files associated with any type of
   signatures that are explicitly disabled by way of their associated directives
-  within the phpMussel configuration being explictly disabled won't be
+  within the phpMussel configuration being explicitly disabled won't be
   downloaded and installed (however, they will nonetheless still be downloaded
   and installed if their associated directives are missing entirely from
   the phpMussel configuration). The update scheduling aspect of the
@@ -309,7 +382,7 @@ PROBLEMS/BUGS FIXED:
   target non-specific signatures and PE signatures that were causing false
   positives (2015.01.20).
 - Found a bug within the Core Script in how the signature mapping code
-  interates through lines of signatures, as such that the final signature line
+  iterates through lines of signatures, as such that the final signature line
   of any given mapping section would be entirely ignored by the Core Script.
   This meant that although the majority of signatures were still being parsed
   correctly, there were at least a few hundred signatures within each of the
@@ -1172,3 +1245,12 @@ PROBLEMS/BUGS FIXED:
 
 Maikuolan,
 11th June 2014.
+
+« Entries prior to 0.3g (11th June 2014) redacted from this release of the
+  change_log to keep the size of the change_log to a manageable level and due
+  to those entries having only limited relevance to the most recently available
+  release of phpMussel. Older releases will still contain those older entries
+  where relevant and those entries should nonetheless be available for viewing
+  via the support forums release information thread. »
+
+EOF

@@ -811,6 +811,9 @@
     Richiesto se l'opzione per Shockwave firme in phpmussel.ini è abilitato.
     Può rimuovere se l'opzione è disattivato.
     ~
+ /vault/switch.dat (Altro, Incluso)
+    Questo controlla e imposta alcune variabili.
+    ~
  /vault/template.html (Altro, Incluso)
     phpMussel Template file; Template per l'HTML output prodotto da phpMussel
     per il suo messaggio di bloccato file caricamento (il messaggio visto dallo
@@ -1118,7 +1121,7 @@
      mancanti e danneggiati file saranno ignorato, con scansione riportato per
      quei file che non ha sono problemi. Questo dovrebbe essere generalmente
      lasciata sola a meno che sperimentando inaspettate terminazioni o simili
-     problemi. 0 = Disattivato [Predefinito], 1 = Attivato.
+     problemi. 0 = Disattivato, 1 = Attivato [Predefinito].
      "fail_silently"
  "files" (Categoria)
  - Generale configurazione per la gestione dei file.
@@ -1393,10 +1396,9 @@
    - "Mach-O Firme" (macho_*). Verificato contro i contenuti del ogni file
       mirati per scansionare quello che non è sulla whitelist e verificato allo
       Mach-O formato.
-   - "Email Signatures" (mail_*). Verificato contro la $body variabile parsato
-      a la phpMussel_mail() funzione, che è destinato a essere il corpo de
-      email messaggi o simili entità (potenzialmente forum messaggi e
-      etcetera).
+   - "Email Firme" (mail_*). Verificato contro la $body variabile parsato a la
+      phpMussel_mail() funzione, che è destinato a essere il corpo de email
+      messaggi o simili entità (potenzialmente forum messaggi e etcetera).
    - "MD5 Firme" (md5_*). Verificato contro l'MD5 hash dei contenuti e la
       dimensione del ogni file mirati per scansionare quello che non è sulla
       whitelist.
@@ -1507,5 +1509,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 22 Marzo 2014 (2015.03.22).
+Ultimo Aggiornamento: 13 Aprile 2014 (2015.04.13).
 EOF
