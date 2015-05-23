@@ -519,6 +519,9 @@
     installed on your system, and you do not need to upload this directory
     or any of its files except when doing such testing.
     ~
+ /_testfiles/ascii_standard_testfile.txt (Test file, Included)
+    Test file for testing phpMussel normalised ASCII signatures.
+    ~
  /_testfiles/exe_standard_testfile.exe (Test file, Included)
     Test file for testing phpMussel PE signatures.
     ~
@@ -548,6 +551,18 @@
  /vault/.htaccess (Other, Included)
     A hypertext access file (in this instance, to protect sensitive files
     belonging to the script from being accessed by non-authorised sources).
+    ~
+ /vault/ascii_clamav_regex.cvd (Signatures, Included)
+ /vault/ascii_clamav_regex.map (Signatures, Included)
+ /vault/ascii_clamav_standard.cvd (Signatures, Included)
+ /vault/ascii_clamav_standard.map (Signatures, Included)
+ /vault/ascii_custom_regex.cvd (Signatures, Included)
+ /vault/ascii_custom_standard.cvd (Signatures, Included)
+ /vault/ascii_mussel_regex.cvd (Signatures, Included)
+ /vault/ascii_mussel_standard.cvd (Signatures, Included)
+    Files for normalised ASCII signatures.
+    Required if normalised ASCII signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
     ~
  /vault/elf_clamav_regex.cvd (Signatures, Included)
  /vault/elf_clamav_regex.map (Signatures, Included)
@@ -806,6 +821,11 @@
      "general_clamav"
      "general_custom"
      "general_mussel"
+   - Check against normalised ASCII signatures when scanning?
+     0 = No, 1 = Yes [Default].
+     "ascii_clamav"
+     "ascii_custom"
+     "ascii_mussel"
    - Check PE (portable executable) files (EXE, DLL, etc) against PE Sectional
      signatures when scanning?
      0 = No, 1 = Yes [Default].
@@ -1049,10 +1069,12 @@
 
  = SIGNATURE BREAKDOWN =
    The following is a breakdown of the types of signatures used by phpMussel:
-   - "MD5 Signatures" (md5_*). Checked against the MD5 hash of the contents
-      and the filesize of every non-whitelisted file targeted for scanning.
+   - "MD5 Signatures" (md5_*). Checked against the MD5 hash of the contents and
+     the filesize of every non-whitelisted file targeted for scanning.
    - "General Signatures" (general_*). Checked against the contents of every
      non-whitelisted file targeted for scanning.
+   - "Normalised ASCII Signatures" (ascii_*). Checked against the contents of
+     every non-whitelisted file targeted for scanning.
    - "General Commands" (hex_general_commands.csv). Checked against the
      contents of every non-whitelisted file targeted for scanning.
    - "Portable Executable Sectional Signatures" (pe_*). Checked against the
@@ -1102,9 +1124,9 @@
  with phpMussel or should consider alternative options to either your
  anti-virus software or phpMussel.
 
- This information was last updated 4th August 2014 and is current for ALL
+ This information was last updated 14th August 2014 and is current for ALL
  versions of phpMussel, from initial release v0.1 through to latest release
- v0.4a at the time of writing this.
+ v0.4b at the time of writing this.
 
  Ad-Aware                No hay conocidos problemas
  Agnitum                 No hay conocidos problemas
@@ -1129,7 +1151,7 @@
  F-Secure                No hay conocidos problemas
  Fortinet                No hay conocidos problemas
  GData                !  Informes "Archive.Trojan.Agent.E7C7J7" (v0.3e sólo)
- Ikarus               !  Informes "Trojan.JS.Agent" (v0.3g a v0.4a)
+ Ikarus               !  Informes "Trojan.JS.Agent" (v0.3g a v0.4b)
  Jiangmin                No hay conocidos problemas
  K7AntiVirus             No hay conocidos problemas
  K7GW                    No hay conocidos problemas
@@ -1162,5 +1184,5 @@
                                      ~ ~ ~                                     
 
 
-Última Actualización: 4 Agosto 2014
+Última Actualización: 14 Agosto 2014 (2014.08.14).
 EOF

@@ -552,6 +552,9 @@
     caricare questa cartella o qualsiasi dei suoi file, tranne quando fa tali
     test.
     ~
+ /_testfiles/ascii_standard_testfile.txt (Test file, Incluso)
+    Test file per test di phpMussel normalizzati ASCII firme.
+    ~
  /_testfiles/exe_standard_testfile.exe (Test file, Incluso)
     Test file per test di phpMussel PE firme.
     ~
@@ -581,6 +584,19 @@
  /vault/.htaccess (Altro, Incluso)
     Un ipertesto accesso file (in questo caso, a proteggere di riservati file
     appartenente allo script da l'acceso di non autorizzate origini).
+    ~
+ /vault/ascii_clamav_regex.cvd (Firme, Incluso)
+ /vault/ascii_clamav_regex.map (Firme, Incluso)
+ /vault/ascii_clamav_standard.cvd (Firme, Incluso)
+ /vault/ascii_clamav_standard.map (Firme, Incluso)
+ /vault/ascii_custom_regex.cvd (Firme, Incluso)
+ /vault/ascii_custom_standard.cvd (Firme, Incluso)
+ /vault/ascii_mussel_regex.cvd (Firme, Incluso)
+ /vault/ascii_mussel_standard.cvd (Firme, Incluso)
+    File per le normalizzati ASCII firme.
+    Richiesto se l'opzione per le normalizzati ASCII firme in phpmussel.ini è
+    abilitato. Può rimuovere se l'opzione è disabilitato (ma i file verranno
+    ricreati al momento di aggiornamento).
     ~
  /vault/elf_clamav_regex.cvd (Firme, Incluso)
  /vault/elf_clamav_regex.map (Firme, Incluso)
@@ -859,6 +875,11 @@
      "general_clamav"
      "general_custom"
      "general_mussel"
+   - Verificare contro normalizzati ASCII firme durante la scansione?
+     0 = No, 1 = Sì [Predefinito].
+     "ascii_clamav"
+     "ascii_custom"
+     "ascii_mussel"
    - Verificare PE (portatile eseguibile) files (EXE, DLL, ecc) contro PE
      Sezionale firme durante la scansione?
      0 = No, 1 = Sì [Predefinito].
@@ -1112,36 +1133,40 @@
  = TIPI DI FIRME =
    I seguenti sono i tipi di firme utilizzate da phpMussel:
    - "MD5 Firme" (md5_*). Verificato contro l'MD5 hash dei contenuti e la
-     dimensione del ogni file mirati per scansionare quello che non è sulla
-     whitelist.
+      dimensione del ogni file mirati per scansionare quello che non è sulla
+      whitelist.
    - "Generali Firme" (general_*). Verificato contro i contenuti del ogni file
-     mirati per scansionare quello che non è sulla whitelist.
+      mirati per scansionare quello che non è sulla whitelist.
+   - "Normalizzati ASCII Firme" (ascii_*). Verificato contro i contenuti del
+      ogni file mirati per scansionare quello che non è sulla whitelist.
    - "Generali Comandi" (hex_general_commands.csv). Verificato contro i
-     contenuti del ogni file mirati per scansionare quello che non è sulla
-     whitelist.
+      contenuti del ogni file mirati per scansionare quello che non è sulla
+      whitelist.
    - "Portatili Eseguibili Sezionale Firme" (pe_*). Verificato contro i
-     contenuti del ogni file mirati per scansionare quello che non è sulla
-     whitelist e verificato allo PE formato.
+      contenuti del ogni file mirati per scansionare quello che non è sulla
+      whitelist e verificato allo PE formato.
    - "Portatili Eseguibili Firme" (exe_*). Verificato contro i contenuti del
-     ogni file mirati per scansionare quello che non è sulla whitelist e
-     verificato allo PE formato.
+      ogni file mirati per scansionare quello che non è sulla whitelist e
+      verificato allo PE formato.
    - "ELF Firme" (elf_*). Verificato contro i contenuti del ogni file mirati
-     per scansionare quello che non è sulla whitelist e verificato allo ELF
-     formato.
+      per scansionare quello che non è sulla whitelist e verificato allo ELF
+      formato.
    - "Grafiche Firme" (graphics_*). Verificato contro i contenuti del ogni file
-     mirati per scansionare quello che non è sulla whitelist e verificato come
-     un conosciuto grafico file formato.
+      mirati per scansionare quello che non è sulla whitelist e verificato come
+      un conosciuto grafico file formato.
    - "Mach-O Firme" (macho_*). Verificato contro i contenuti del ogni file
-     mirati per scansionare quello che non è sulla whitelist e verificato allo
-     Mach-O formato.
+      mirati per scansionare quello che non è sulla whitelist e verificato allo
+      Mach-O formato.
    - "ZIP Metadati Firme" (metadata_*). Verificato contro l'CRC32 hash e la
-     dimensione dell'iniziale file contenuto all'interno di qualsiasi file
-     mirati per scansionare quello che non è sulla whitelist.
+      dimensione dell'iniziale file contenuto all'interno di qualsiasi file
+      mirati per scansionare quello che non è sulla whitelist.
    - "Email Signatures" (mail_*). Verificato contro la $body variabile parsato
-     a la phpMussel_mail() funzione, che è destinato a essere il corpo de email
-     messaggi o simili entità (potenzialmente forum messaggi e etcetera).
-   (Si noti che qualsiasi di queste firme possono essere facilmente disattivato
-    tramite phpmussel.ini).
+      a la phpMussel_mail() funzione, che è destinato a essere il corpo de
+      email messaggi o simili entità (potenzialmente forum messaggi e
+      etcetera).
+     (Si noti che qualsiasi di queste firme possono essere facilmente
+      disattivato tramite phpmussel.ini).
+
 
                                      ~ ~ ~                                     
 
@@ -1169,9 +1194,9 @@
  dovrebbe considerare l'alternative opzioni per sia il vostro anti-virus
  software o phpMussel.
 
- Questa informazione è stato lo scorso aggiornato 4 Agosto 2014 ed è in corso
+ Questa informazione è stato lo scorso aggiornato 14 Agosto 2014 ed è in corso
  per TUTTE le versioni di phpMussel, dall'iniziale rilascio v0.1 fino
- all'ultima rilascio v0.4a al momento di scrivere questo.
+ all'ultima rilascio v0.4b al momento di scrivere questo.
 
  Ad-Aware                Senza noti problemi
  Agnitum                 Senza noti problemi
@@ -1196,7 +1221,7 @@
  F-Secure                Senza noti problemi
  Fortinet                Senza noti problemi
  GData                !  Riferisce "Archive.Trojan.Agent.E7C7J7" (v0.3e solo)
- Ikarus               !  Riferisce "Trojan.JS.Agent" (v0.3g a v0.4a)
+ Ikarus               !  Riferisce "Trojan.JS.Agent" (v0.3g a v0.4b)
  Jiangmin                Senza noti problemi
  K7AntiVirus             Senza noti problemi
  K7GW                    Senza noti problemi
@@ -1229,5 +1254,5 @@
                                      ~ ~ ~                                     
 
 
-Ultimo Aggiornamento: 4 Agosto 2014
+Ultimo Aggiornamento: 14 Agosto 2014 (2014.08.14).
 EOF

@@ -553,6 +553,9 @@
     correctement installé sur votre système, et vous n'avez pas besoin de
     télécharger ce répertoire ou l'un de ses fichiers, sauf si faire ces tests.
     ~
+ /_testfiles/ascii_standard_testfile.txt (Test fichier, Inclus)
+    Test fichier à test phpMussel normalisé ASCII signatures.
+    ~
  /_testfiles/exe_standard_testfile.exe (Test fichier, Inclus)
     Test fichier à test phpMussel PE signatures.
     ~
@@ -583,6 +586,19 @@
     Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles
     fichiers appartenant au script contre être consulté par non autorisées
     sources).
+    ~
+ /vault/ascii_clamav_regex.cvd (Signatures, Inclus)
+ /vault/ascii_clamav_regex.map (Signatures, Inclus)
+ /vault/ascii_clamav_standard.cvd (Signatures, Inclus)
+ /vault/ascii_clamav_standard.map (Signatures, Inclus)
+ /vault/ascii_custom_regex.cvd (Signatures, Inclus)
+ /vault/ascii_custom_standard.cvd (Signatures, Inclus)
+ /vault/ascii_mussel_regex.cvd (Signatures, Inclus)
+ /vault/ascii_mussel_standard.cvd (Signatures, Inclus)
+    Fichiers pour normalisé ASCII signatures.
+    Nécessaire si la normalisé ASCII option dans phpmussel.ini est activée.
+    Peut enlever si l'option est désactivée (mais les fichiers seront recréés
+    sur réactualiser).
     ~
  /vault/elf_clamav_regex.cvd (Signatures, Inclus)
  /vault/elf_clamav_regex.map (Signatures, Inclus)
@@ -866,6 +882,11 @@
      "general_clamav"
      "general_custom"
      "general_mussel"
+   - Vérifier contre normalisé ASCII signatures au cours de analyse?
+     0 = Non, 1 = Oui [Défaut].
+     "ascii_clamav"
+     "ascii_custom"
+     "ascii_mussel"
    - Vérifier PE (portable exécutable) fichiers (EXE, DLL, etc) contre PE
      Sectional signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
      "pe_clamav"
@@ -1124,32 +1145,34 @@
  = SIGNATURE DÉTAIL =
    Ce qui suit est un détail des types de signatures utilisées par phpMussel:
    - "MD5 Signatures" (md5_*). Vérifié contre le MD5 hash des contenus et la
-     taille du fichier de chaque fichier non listé blanche ciblée pour
-     l'analyse.
+      taille du fichier de chaque fichier non listé blanche ciblée pour
+      l'analyse.
    - "Générales Signatures" (general_*). Vérifié contre les contenus de chaque
-     fichier non listé blanche ciblée pour l'analyse.
+      fichier non listé blanche ciblée pour l'analyse.
+   - "Normalisé ASCII Signatures" (ascii_*). Vérifié contre les contenus de
+      chaque fichier non listé blanche ciblée pour l'analyse.
    - "Générales Commandes" (hex_general_commands.csv). Vérifié contre les
-     contenus de chaque fichier non listé blanche ciblée pour l'analyse.
+      contenus de chaque fichier non listé blanche ciblée pour l'analyse.
    - "Portable Executable Sectional Signatures" (pe_*). Vérifié contre les
-     contenus de chaque fichier non listé blanche ciblée pour l'analyse et
-     identifié au PE format.
+      contenus de chaque fichier non listé blanche ciblée pour l'analyse et
+      identifié au PE format.
    - "Portable Executable Signatures" (exe_*). Vérifié contre les contenus de
-     chaque fichier non listé blanche ciblée pour l'analyse et identifié au PE
-     format.
+      chaque fichier non listé blanche ciblée pour l'analyse et identifié au PE
+      format.
    - "ELF Signatures" (elf_*). Vérifié contre les contenus de chaque fichier
-     non listé blanche ciblée pour l'analyse et identifié au ELF format.
+      non listé blanche ciblée pour l'analyse et identifié au ELF format.
    - "Graphics Signatures" (graphics_*). Vérifié contre les contenus de chaque
-     fichier non listé blanche ciblée pour l'analyse et identifié à un connu
-     graphique fichier format.
+      fichier non listé blanche ciblée pour l'analyse et identifié à un connu
+      graphique fichier format.
    - "Mach-O Signatures" (macho_*). Vérifié contre les contenus de chaque
-     fichier non listé blanche ciblée pour l'analyse et identifié au Mach-O
-     format.
-   - "ZIP Métadonnées Signatures" (metadata_*). Vérifié contre le CRC32
-     hash et taille du fichier de l'initial fichier contenu à l'intérieur de
-     toute archive non listé blanche ciblée pour l'analyse.
+      fichier non listé blanche ciblée pour l'analyse et identifié au Mach-O
+      format.
+   - "ZIP Métadonnées Signatures" (metadata_*). Vérifié contre le CRC32 hash et
+      taille du fichier de l'initial fichier contenu à l'intérieur de toute
+      archive non listé blanche ciblée pour l'analyse.
    - "Email Signatures" (mail_*). Vérifié contre le $corps variable analysée à
-     la phpMussel_mail() fonction, qui est destiné à être le corps des e-mails
-     ou similaire entités (potentiellement messages du forum et etc).
+      la phpMussel_mail() fonction, qui est destiné à être le corps des e-mails
+      ou similaire entités (potentiellement messages du forum et etc).
    (Noter que ces signatures peut être facilement désactivé via phpmussel.ini).
 
 
@@ -1178,9 +1201,9 @@
  désactivation avant à travailler avec phpMussel ou devrait envisager d'autres
  options soit votre logiciel anti-virus ou phpMussel.
 
- Cette information a été réactualisé le 4 Août 2014 et est courant pour TOUTES
+ Cette information a été réactualisé le 14 Août 2014 et est courant pour TOUTES
  les versions de phpMussel, partir de l'initiale version v0.1 travers à le
- dernière version v0.4a au moment de la rédaction cette.
+ dernière version v0.4b au moment de la rédaction cette.
 
  Ad-Aware                Pas problèmes connus
  Agnitum                 Pas problèmes connus
@@ -1205,7 +1228,7 @@
  F-Secure                Pas problèmes connus
  Fortinet                Pas problèmes connus
  GData                !  Rapports "Archive.Trojan.Agent.E7C7J7" (v0.3e seule)
- Ikarus               !  Rapports "Trojan.JS.Agent" (v0.3g à v0.4a)
+ Ikarus               !  Rapports "Trojan.JS.Agent" (v0.3g à v0.4b)
  Jiangmin                Pas problèmes connus
  K7AntiVirus             Pas problèmes connus
  K7GW                    Pas problèmes connus
@@ -1238,5 +1261,5 @@
                                      ~ ~ ~                                     
 
 
-Dernière Réactualisé: 4 Août 2014
+Dernière Réactualisé: 14 Août 2014 (2014.08.14).
 EOF

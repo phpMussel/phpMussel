@@ -1,0 +1,13 @@
+      _____  _     _  _____  _______ _     _ _______ _______ _______           
+ <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
+     |       |     | |       |  |  | |_____| ______| ______| |______ |_____    
+
+                                     ~ ~ ~                                     
+
+
+   This file is a test file used to ensure that phpMussel has been installed   
+   correctly on your system. It is completely harmless ASCII file containing   
+       arbitrary content which by itself serves zero function whatever.        
+
+ Created for phpMussel v0.4 on 12th August 2014,
+ TESTFILE ID: ascii_standard_testfile.txt

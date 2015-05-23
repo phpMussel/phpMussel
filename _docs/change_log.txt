@@ -1,10 +1,10 @@
 phpMussel change_log.txt
 
-== CURRENT GOALS AND FUTURE VERSIONING GUIDELINES (Latest: v0.4a) ==
+== CURRENT GOALS AND FUTURE VERSIONING GUIDELINES (Latest: v0.4b) ==
 Next major release (v1.0):
 - All planned signature implementations completed, functioning correctly during
   a live test, without any known notable problems.
-  Complete [added/last edited+]:
+  Implemented [added/last edited+]:
    * ELF signatures (stuff for Linux) [v0.2/v0.3g+];
    * PE signatures (Portable executables; EXEs, DLLs, etc) [v0.2/v0.3g+];
    * PE Sectional signatures (Sections from portable executables) [v0.4+];
@@ -15,12 +15,13 @@ Next major release (v1.0):
    * Mach-O signatures (stuff for Mac and Apple) [v0.2/v0.3g+];
    * Email signatures [v0.2/v0.3g+];
    * MD5 signatures [v0.1/0.3g+];
-   * Archive metadata signatures [v0.1/v0.3g+];
-  Incomplete (future planned, hope to get these done at some point);
+   * Archive metadata signatures [v0.1/v0.4b+];
+  Partially implemented [added/last edited+]:
+   * ASCII (normalised) signatures (BATs, VBs, etc) [v0.4b+];
+  Not implemented (those that I hope to get these done at some point);
    * OLE2 signatures (VBA and DOCX embeds, etc);
-   * ASCII (normalised) signatures (BATs, VBs, etc);
    * HTML (normalised) signatures (HTML, JS, etc);
-  Incomplete (known of, not yet sure if I'll do them, may or may not happen);
+  Not implemented (those that I'm not yet sure if I'll do or not);
    * Icon signatures (hidden and imposter PEs, etc);
    * PE metadata signatures;
    * Container metadata signatures;
@@ -43,9 +44,52 @@ Next and/or subsequent below sub-minor releases and/or re-releases (v0.Xy.Z):
 - Any releases containing no changes to the core code (such as, releases
   containing only either documentation or signature updates), or any releases
   containing changes to the core code without any included signature updates.
-Last Edited: 7th July 2014
+Last Edited: 13th August 2014
 
-=== Version 0.4a (Previous: 0.4) ===
+=== Version 0.4b (Previous: 0.4a) ===
+SUMMARY:
+Updated to the latest signatures set (55+19279+4b).
+Minor release (medium priority).
+
+NEW CHANGES:
+- Many thanks to BlueEyed Zebra, who has successfully translated to German the
+  entirety of the phpMussel documentation and the phpMussel internal language
+  data, with which, phpMussel is now fully supported in the German language.
+  With the addition of German, phpMussel now -fully- supports five languages
+  (English, French, Indonesian, Italian, German) and -partially- supports an
+  additional three (Spanish, Portuguese, Dutch; All three, internal language
+  data has been fully translated but translation of the documentation is very
+  incomplete). 5th August 2014.
+  Refer spambotsecurity.com/forum/viewtopic.php?f=57&t=2929
+- I've -began- working on support for the normalised ASCII signatures, and what
+  I've coded thus far is working correctly, though I wouldn't call it anywhere
+  near complete yet. Currently, the normalisation method that I've written
+  isn't entirely identical to that which is employed by ClamAV (and thus that
+  which the normalised ASCII signatures of ClamAV are written in mind with),
+  and ideally, at the least, what I write should eventually either mimic or
+  improve on that which is employed by ClamAV. That said, I haven't been
+  working on this part of phpMussel for a particularly long time yet and it's
+  certain to improve with time, and as is, still does a reasonable job. Not
+  all of the relevant signatures match in the same way between ClamAV and
+  phpMussel yet, but those that do (and thus, which should correctly match
+  during scans by phpMussel without false-positives) have been included
+  with this release (which works out to roughly ~150 signatures of the total
+  ~3K±1K or so normalised ASCII signatures available from ClamAV).
+  Part of the reason that I'm including it with this release, as opposed to
+  waiting until I've got it 100% implemented in the way that I'm aiming for,
+  is that there are some critical common CMS vulnerabilities that can be
+  protected against by inclusion of a number of signatures that, at the least,
+  require the level of implementation that I've currently achieved, but which
+  I don't think I should hold back on for some unknown future date, thus,
+  releasing where it's currently at. In any case, it shouldn't cause problems.
+- Minor non-significant code optimisations of the Core Script (phpmussel.inc).
+  No changes to the Language Data (lang.inc) or Update Script (update.inc)
+  exist between this and the previous version.
+
+Maikuolan,
+13th August 2014.
+
+=== Version 0.4a (Previous: 0.4; Next: 0.4b) ===
 SUMMARY:
 Updated to the latest signatures set (55+19260+4a).
 Minor release (medium priority).

@@ -545,6 +545,9 @@
     phpMussel dengan benar diinstal pada sistem, dan anda tidak perlu
     mengupload direktori ini atau data-datanya jika melakukan testing.
     ~
+ /_testfiles/ascii_standard_testfile.txt (Data test, diikutkan)
+    Data test untuk mentest tanda tangan ASCII normal phpMussel.
+    ~
  /_testfiles/exe_standard_testfile.exe (Data test, diikutkan)
     Data test untuk mentest tanda tangan PE phpMussel.
     ~
@@ -575,6 +578,19 @@
     Sebuah data akses hypertext (pada instansi ini, untuk melindungi data-data
     sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
     ~
+ /vault/ascii_clamav_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/ascii_clamav_regex.map (Tanda tangan, Diikutkan)
+ /vault/ascii_clamav_standard.cvd (Tanda tangan, Diikutkan)
+ /vault/ascii_clamav_standard.map (Tanda tangan, Diikutkan)
+ /vault/ascii_custom_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/ascii_custom_standard.cvd (Tanda tangan, Diikutkan)
+ /vault/ascii_mussel_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/ascii_mussel_standard.cvd (Tanda tangan, Diikutkan)
+    Data-data untuk tanda tangan ASCII normal.
+    Diperlukan jika tanda tangan opsi ASCII normal di dalam phpmussel.ini
+    diaktifkan. Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan
+    diciptakan kembali pada saat mengupdate).
+    ~
  /vault/elf_clamav_regex.cvd (Tanda tangan, Diikutkan)
  /vault/elf_clamav_regex.map (Tanda tangan, Diikutkan)
  /vault/elf_clamav_standard.cvd (Tanda tangan, Diikutkan)
@@ -584,9 +600,9 @@
  /vault/elf_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/elf_mussel_standard.cvd (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan ELF.
-    Diperlukan jika tanda tangan opsi ELF di dalam phpmussel.ini diaktifkan
+    Diperlukan jika tanda tangan opsi ELF di dalam phpmussel.ini diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptakan
-    kembali pada saat mengupdate)
+    kembali pada saat mengupdate).
     ~
  /vault/exe_clamav_regex.cvd (Tanda tangan, Diikutkan)
  /vault/exe_clamav_regex.map (Tanda tangan, Diikutkan)
@@ -599,7 +615,7 @@
     Data-data untuk data tanda tangan portable yang dapat dieksekusi.
     Diperlukan jika opsi tanda tangan EXE di dalam phpmussel.ini diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan
-    kembali pada saat mengupdate)
+    kembali pada saat mengupdate).
     ~
  /vault/filenames_clamav.cvd (Tanda tangan, Diikutkan)
  /vault/filenames_custom.cvd (Tanda tangan, Diikutkan)
@@ -607,7 +623,7 @@
     Data-data untuk tanda tangan nama file.
     Diperlukan jika opsi tanda tangan di dalam phpmussel.ini diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan
-    kembali pada saat mengupdate)
+    kembali pada saat mengupdate).
     ~
  /vault/general_clamav_regex.cvd (Tanda tangan, Diikutkan)
  /vault/general_clamav_regex.map (Tanda tangan, Diikutkan)
@@ -620,7 +636,7 @@
     Data-data untuk tanda tangan umum.
     Diperlukan jika opsi tanda tangan di dalam phpmussel.ini diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan
-    kembali pada saat mengupdate)
+    kembali pada saat mengupdate).
     ~
  /vault/graphics_clamav_regex.cvd (Tanda tangan, Diikutkan)
  /vault/graphics_clamav_regex.map (Tanda tangan, Diikutkan)
@@ -633,7 +649,7 @@
     Data-data untuk tanda tangan grafis.
     Diperlukan jika opsi tanda tangan grafis di dalam phpmussel.ini diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan
-    kembali pada saat mengupdate)
+    kembali pada saat mengupdate).
     ~
  /vault/greylist.csv (Tanda tangan, Diikutkan/Diciptakan)
     CSV terdiri dari tanda tangan greylist mengindikasikan phpMussel tanda
@@ -660,7 +676,7 @@
     Data-data untuk tanda tangan Mach-O.
     Diperlukan jika opsi tanda tangan Mach-O di phpmussel.ini diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan
-    kembali pada saat mengupdate)
+    kembali pada saat mengupdate).
     ~
  /vault/mail_clamav_regex.cvd (Tanda tangan, Diikutkan)
  /vault/mail_clamav_regex.map (Tanda tangan, Diikutkan)
@@ -679,9 +695,9 @@
  /vault/md5_custom.cvd (Tanda tangan, Diikutkan)
  /vault/md5_mussel.cvd (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan berbasis MD5.
-    Diperlukan jika opsi tanda tangan berbasis MD5 diaktifkan.
-    Dapat menghapus jika tidak digunakan (tapi data-data akan diciptakan
-    kembali pada saat update).
+    Diperlukan jika opsi tanda tangan berbasis MD5 diaktifkan. Dapat menghapus
+    jika tidak digunakan (tapi data-data akan diciptakan kembali pada saat
+    update).
     ~
  /vault/metadata_clamav.cvd (Tanda tangan, Diikutkan)
  /vault/metadata_custom.cvd (Tanda tangan, Diikutkan)
@@ -697,7 +713,7 @@
     Data-data untuk tanda tangan PE Sectional.
     Diperlukan jika opsi tanda tangan PE Sectional di phpmussel.ini diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan
-    kembali pada saat mengupdate)
+    kembali pada saat mengupdate).
     ~
  /vault/phpmussel.inc (Skrip, Diikutkan)
     Skrip murni phpMussel; Body utama dan vital dari phpMussel (utama)!
@@ -725,7 +741,7 @@
     ~
  /vault/update.inc (Skrip, Diikutkan)
     Skrip upgrade phpMussel; Diperlukan untuk upgrade otomatis dan untuk 
-    mengupgrade phpMussel via browser anda, tapi tidak diperlukan juga
+    mengupgrade phpMussel via browser anda, tapi tidak diperlukan juga.
     ~
 
  * Nama file bisa berbeda berdasarkan ketentuan konfigurasi (di dalam
@@ -855,6 +871,11 @@
      "general_clamav"
      "general_custom"
      "general_mussel"
+   - Cek tanda tangan ASCII normal ketika pemindaian?
+     0 = Tidak, 1 = Ya [Default].
+     "ascii_clamav"
+     "ascii_custom"
+     "ascii_mussel"
    - Cek data PE (portable executable; EXE, DLL, etc) pada tanda tangan PE
      Sectional ketika pemindaian?
      0 = Tidak, 1 = Ya [Default].
@@ -1114,33 +1135,35 @@
  = SIGNATURE BREAKDOWN =
    Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan
    phpMussel:
-   - "Tanda tangan MD5 " (md5_*). Dicek pada hash MD5 dari isi dan ukuran
-     data dari tiap data non-whitelisted yang ditargetkan untuk dipindai.
+   - "Tanda tangan MD5" (md5_*). Dicek pada hash MD5 dari isi dan ukuran data
+      dari tiap data non-whitelisted yang ditargetkan untuk dipindai.
    - "Tanda tangan umum" (general_*). Dicek pada isi dari data non-whitelisted
-     yang ditargetkan untuk dipindai.
+      yang ditargetkan untuk dipindai.
+   - "Tanda tangan ASCII normal" (ascii_*). Dicek pada isi dari data
+      non-whitelisted yang ditargetkan untuk dipindai.
    - "Perintah umum" (hex_general_commands.csv). Dicek pada isi dari tiap data
-     non-whitelisted yang ditargetkan untuk dipindai.
+      non-whitelisted yang ditargetkan untuk dipindai.
    - "Tanda tangan Portable Executable Sectional" (pe_*). Dicek pada isi dari
-     tiap data non-whitelisted yang ditargetkan untuk dipindai dan dicocokkan
-     ke format PE.
+      tiap data non-whitelisted yang ditargetkan untuk dipindai dan dicocokkan
+      ke format PE.
    - "Tanda tangan Portable Executable" (exe_*). Dicek pada isi dari tiap data
-     non-whitelisted yang ditargetkan untuk dipindai dan dicocokkan ke format
-     PE.
+      non-whitelisted yang ditargetkan untuk dipindai dan dicocokkan ke format
+      PE.
    - "Tanda tangan ELF" (elf_*). Dicek pada isi dari tiap data non-whitelisted
-     yang ditargetkan untuk dipindai dan dicocokkan ke format ELF.
+      yang ditargetkan untuk dipindai dan dicocokkan ke format ELF.
    - "Tanda tangan Grafis" (graphics_*). Dicek pada isi dari tiap data
-     non-whitelisted yang ditargetkan untuk dipindai dan dicocokan ke format
-     data grafis.
+      non-whitelisted yang ditargetkan untuk dipindai dan dicocokan ke format
+      data grafis.
    - "Tanda tangan Mach-O" (macho_*). Dicek pada isi dari tiap data
-     non-whitelisted yang ditargetkan untuk dipindai dan dicocokan ke format
-     Mach-O.
-   - "Tanda tangan Metadata ZIP" (metadata_*). Dicek pada hash CRC32 dan
-     ukuran data dari data berisikan di dalam file terkompress non-whitelisted
-     dan ditargetkan untuk dipindai.
+      non-whitelisted yang ditargetkan untuk dipindai dan dicocokan ke format
+      Mach-O.
+   - "Tanda tangan Metadata ZIP" (metadata_*). Dicek pada hash CRC32 dan ukuran
+      data dari data berisikan di dalam file terkompress non-whitelisted dan
+      ditargetkan untuk dipindai.
    - "Email Signatures" (mail_*). Dicek pada variabel $body diparse ke fungsi
-     phpMussel_mail(), yang dimaksudkan untuk menjadi body dari pesan-pesan
-     email atau entries yang sama (secara potensial post forum dll).
-    (Catatan jika tanda tangan ini boleh dinonaktifkan melalui phpmussel.ini).
+      phpMussel_mail(), yang dimaksudkan untuk menjadi body dari pesan-pesan
+      email atau entries yang sama (secara potensial post forum dll).
+     (Catatan jika tanda tangan ini boleh dinonaktifkan melalui phpmussel.ini).
 
 
                                      ~ ~ ~                                     
@@ -1168,8 +1191,8 @@
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 4 Agustus 2014 dan cocok untuk semua versi dari
- phpMussel, dari inisial release v0.1 melalui release terakhir v0.4a pada
+ Informasi ini diupdate 14 Agustus 2014 dan cocok untuk semua versi dari
+ phpMussel, dari inisial release v0.1 melalui release terakhir v0.4b pada
  waktu saya menuliskan ini.
 
  Ad-Aware                Tidak ada masalah yang diketahui
@@ -1195,7 +1218,7 @@
  F-Secure                Tidak ada masalah yang diketahui
  Fortinet                Tidak ada masalah yang diketahui
  GData                !  Report "Archive.Trojan.Agent.E7C7J7" (v0.3e semata)
- Ikarus               !  Report "Trojan.JS.Agent" (v0.3g melalui v0.4a)
+ Ikarus               !  Report "Trojan.JS.Agent" (v0.3g melalui v0.4b)
  Jiangmin                Tidak ada masalah yang diketahui
  K7AntiVirus             Tidak ada masalah yang diketahui
  K7GW                    Tidak ada masalah yang diketahui
@@ -1228,5 +1251,5 @@
                                      ~ ~ ~                                     
 
 
-Terakhir Diperbarui: 4 Agustus 2014
+Terakhir Diperbarui: 14 Agustus 2014 (2014.08.14).
 EOF
