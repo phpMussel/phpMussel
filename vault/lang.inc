@@ -29,8 +29,8 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                   ~ ~ ~                                        
- This File: phpMussel v0.3f Language Data
- This File Last Updated: 22nd May 2014
+ This File: phpMussel v0.3g Language Data
+ This File Last Updated: 11th June 2014
 
                                   ~ ~ ~                                        
  Please refer to the README documentation for installation instructions and for
@@ -57,6 +57,7 @@ if($MusselConfig['general']['lang']=="en")
 	$MusselConfig['lang']['cli_failed_to_complete']="Failed to complete scanning process";
 	$MusselConfig['lang']['cli_ln2']=" Thank you for using phpMussel, a php-based script based upon ClamAV signatures\n  designed to detect trojans, viruses, malware and other threats within files  \n             uploaded to your system wherever the script is hooked.            \n     PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan)    \n\n                                  ~ ~ ~                                        \n\n";
 	$MusselConfig['lang']['cli_ln3']=" Currently running phpMussel in CLI mode (Command line interface).\n\n What file or directory do you want to scan? Type the name of the file or\n directory that you want phpMussel to scan and press Enter, or type 'q' and\n Enter to quit without scanning:\n\n>> ";
+	$MusselConfig['lang']['cli_working']="In progress";
 	$MusselConfig['lang']['denied_other']="T&#233;l&#233;charger Refus&#233;! Subir Denegado! Hochladen verweigert! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
 	$MusselConfig['lang']['denied_reason']="Your upload attempt was blocked for the reasons listed below / &#24744;&#30340;&#19978;&#36733;&#23581;&#35797;&#34987;&#25298;&#32477;&#30340;&#29702;&#30001;&#19979;&#38754;&#21015;&#20986;:";
 	$MusselConfig['lang']['denied']="Upload Denied!";
@@ -74,10 +75,12 @@ if($MusselConfig['general']['lang']=="en")
 	$MusselConfig['lang']['scan_chameleon']="chameleon attack detected";
 	$MusselConfig['lang']['scan_checking_contents']="Success! Proceeding to check contents.";
 	$MusselConfig['lang']['scan_checking']="Checking";
+	$MusselConfig['lang']['scan_command_injection']="Command injection attempt detected";
 	$MusselConfig['lang']['scan_extensions_missing']="Failed (missing required extensions)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="Filename manipulation detected";
 	$MusselConfig['lang']['scan_map_corrupted']="Signature map corrupted";
 	$MusselConfig['lang']['scan_map_missing']="Signature map missing";
+	$MusselConfig['lang']['scan_missing_filename']="Missing filename";
 	$MusselConfig['lang']['scan_no_problems_found']="No problems found.";
 	$MusselConfig['lang']['scan_not_archive']="Failed (empty or not an archive)!";
 	$MusselConfig['lang']['scan_reading']="Reading";
@@ -89,11 +92,15 @@ if($MusselConfig['general']['lang']=="en")
 	$MusselConfig['lang']['update_']="phpMussel will now attempt to update itself.";
 	$MusselConfig['lang']['update_available']="A script update is available.";
 	$MusselConfig['lang']['update_complete']="Update check completed successfully.";
+	$MusselConfig['lang']['update_created']="created";
+	$MusselConfig['lang']['update_deleted']="deleted";
 	$MusselConfig['lang']['update_failed']="Failed.";
 	$MusselConfig['lang']['update_fetch']="Attempting to fetch version data from";
 	$MusselConfig['lang']['update_no_source']="phpMussel has failed to update itself because it could not connect to a valid update source. Updating manually is recommended.";
 	$MusselConfig['lang']['update_not_available']="No script update is available at this time.";
 	$MusselConfig['lang']['update_not_possible']="A script update is available, but can't be fully updated with this version of the update script. Please update manually.";
+	$MusselConfig['lang']['update_patched']="patched";
+	$MusselConfig['lang']['update_seconds_elapsed']=" seconds elapsed";
 	$MusselConfig['lang']['update_signatures_available']="A signatures update is available.";
 	$MusselConfig['lang']['update_signatures_latest']="LATEST SIGNATURES";
 	$MusselConfig['lang']['update_signatures_not_available']="No signatures update is available at this time.";
@@ -115,6 +122,7 @@ else if($MusselConfig['general']['lang']=="de")
 	$MusselConfig['lang']['cli_failed_to_complete']="Ausfall zu vollständig der Scanprozess";
 	$MusselConfig['lang']['cli_ln2']="  Danke für Ihre Verwendung aus phpMussel, ein PHP-basierend Skript basierend  \n   auf ClamAV-Signaturen entwickelt um erkennen Trojaner, Viren, Malware und   \n andere Bedrohungen innerhalb Dateien hochgeladen um Ihre System wo das Skript \n                             ist eingehängt.                              \n    PHPMUSSEL COPYRIGHT 2013 und weiter GNU/GPL V.2 von Caleb M (Maikuolan)    \n\n                                  ~ ~ ~                                        \n\n";
 	$MusselConfig['lang']['cli_ln3']=" Derzeit läuft phpMussel im CLI-Modus (Befehlszeilenschnittstelle).\n\n Welche Datei oder Verzeichnis Sie möchte zu scannen? Geben den Namen der Datei\n\n oder Verzeichnis das Sie möchte phpMussel scannen und drücken Enter, oder\n\n drücken 'q' und Enter zu beenden ohne scannen:\n\n>> ";
+	$MusselConfig['lang']['cli_working']="Im Gange";
 	$MusselConfig['lang']['denied_other']="Upload Denied! T&#233;l&#233;charger Refus&#233;! Subir Denegado! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
 	$MusselConfig['lang']['denied_reason']="Der Hochlade Versuch wurde blockiert für die Gründen unten aufgeführten / Your upload attempt was blocked for the reasons listed below:";
 	$MusselConfig['lang']['denied']="Hochladen verweigert!";
@@ -132,10 +140,12 @@ else if($MusselConfig['general']['lang']=="de")
 	$MusselConfig['lang']['scan_chameleon']="Chamäleon Angriff erkannt";
 	$MusselConfig['lang']['scan_checking_contents']="Erfolg! Überprüfung Inhalten.";
 	$MusselConfig['lang']['scan_checking']="Überprüfung";
+	$MusselConfig['lang']['scan_command_injection']="Befehlsinjektionsversuch erkannt";
 	$MusselConfig['lang']['scan_extensions_missing']="Gescheitert (fehlenden erforderlichen Erweiterungen)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="Dateiname Manipulation erkannt";
 	$MusselConfig['lang']['scan_map_corrupted']="Signaturkarte beschädigt";
 	$MusselConfig['lang']['scan_map_missing']="Signaturkarte fehlt";
+	$MusselConfig['lang']['scan_missing_filename']="Fehlende Dateinamen";
 	$MusselConfig['lang']['scan_no_problems_found']="Keine Probleme gefunden.";
 	$MusselConfig['lang']['scan_not_archive']="Gescheitert (leer oder kein Archiv)!";
 	$MusselConfig['lang']['scan_reading']="Lesen";
@@ -147,11 +157,15 @@ else if($MusselConfig['general']['lang']=="de")
 	$MusselConfig['lang']['update_']="phpMussel wird nun versuchen zu aktualisieren.";
 	$MusselConfig['lang']['update_available']="Ein Skript Update ist verfügbar.";
 	$MusselConfig['lang']['update_complete']="Update-Prüfung erfolgreich abgeschlossen.";
+	$MusselConfig['lang']['update_created']="erstellt";
+	$MusselConfig['lang']['update_deleted']="gelöscht";
 	$MusselConfig['lang']['update_failed']="Gescheiterte.";
 	$MusselConfig['lang']['update_fetch']="Abrufen Version Daten aus";
 	$MusselConfig['lang']['update_no_source']="phpMussel hat versäumt zu aktualisieren sich da es konnte nicht verbinden zu einem gültigen Aktualisieren-Quelle. Manuell aktualisieren ist empfohlen.";
 	$MusselConfig['lang']['update_not_available']="Kein Skript-Update ist Verfügung zur dieser Zeit.";
 	$MusselConfig['lang']['update_not_possible']="Ein Skript-Update ist verfügbar, aber kann nicht vollständig sein aktualisiert mit dieser Version des Update-Skript. Bitte aktualisieren manuell.";
+	$MusselConfig['lang']['update_patched']="gepatcht";
+	$MusselConfig['lang']['update_seconds_elapsed']=" Sekunden verstrichen";
 	$MusselConfig['lang']['update_signatures_available']="Ein Signaturen-Update ist verfügbar.";
 	$MusselConfig['lang']['update_signatures_latest']="NEUESTEN SIGNATUREN";
 	$MusselConfig['lang']['update_signatures_not_available']="Keine Signaturen-Update ist Verfügung zur dieser Zeit.";
@@ -173,6 +187,7 @@ else if($MusselConfig['general']['lang']=="es")
 	$MusselConfig['lang']['cli_failed_to_complete']="No se pudo completar el proceso de escaneo";
 	$MusselConfig['lang']['cli_ln2']=" Gracias por usar phpMussel, un PHP script basado en las definiciones de ClamAV\n    diseñados para detectar troyanos, virus, malware y otras amenazas en los   \n         archivos cargados en el sistema donde el script está adjunto.         \n   PHPMUSSEL COPYRIGHT 2013 después de eso GNU/GPL V.2 by Caleb M (Maikuolan)  \n\n                                  ~ ~ ~                                        \n\n";
 	$MusselConfig['lang']['cli_ln3']=" Corrientemente phpMussel en ejecución en modo CLI (Comandos línea interfaz).\n\n ¿Qué archivo o directorio usted desea analizado? Escriba el nombre del\n archivos o directorio que usted desea phpMussel para analizer y pulse Enter,\n o escriba 'q' y Enter para dejar sin análisis:\n\n>> ";
+	$MusselConfig['lang']['cli_working']="En operación";
 	$MusselConfig['lang']['denied_other']="Upload Denied! T&#233;l&#233;charger Refus&#233;! Hochladen verweigert! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
 	$MusselConfig['lang']['denied_reason']="Intento de subida ha sido bloqueada por las razones que se indican a continuación / Your upload attempt was blocked for the reasons listed below:";
 	$MusselConfig['lang']['denied']="Subir Denegado!";
@@ -190,10 +205,12 @@ else if($MusselConfig['general']['lang']=="es")
 	$MusselConfig['lang']['scan_chameleon']="camaleón ataque detectado";
 	$MusselConfig['lang']['scan_checking_contents']="Éxito! Procediendo a verificar el contenido.";
 	$MusselConfig['lang']['scan_checking']="Verificando";
+	$MusselConfig['lang']['scan_command_injection']="Comandos inyección intento detectado";
 	$MusselConfig['lang']['scan_extensions_missing']="Fracasado (desaparecido requeridos extensiones)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="Manipulación del fichero nombre detectado";
 	$MusselConfig['lang']['scan_map_corrupted']="Firma Mapa corrompido";
 	$MusselConfig['lang']['scan_map_missing']="Firma Mapa desaparecido";
+	$MusselConfig['lang']['scan_missing_filename']="Nombre del archivo está ausente";
 	$MusselConfig['lang']['scan_no_problems_found']="No problemas encontrado.";
 	$MusselConfig['lang']['scan_not_archive']="Fracasado (vacío o no es un archivo)!";
 	$MusselConfig['lang']['scan_reading']="Leyendo";
@@ -205,11 +222,15 @@ else if($MusselConfig['general']['lang']=="es")
 	$MusselConfig['lang']['update_']="phpMussel ahora intentará actualización.";
 	$MusselConfig['lang']['update_available']="Una script actualización está disponible.";
 	$MusselConfig['lang']['update_complete']="Actualización verificación completada con éxito.";
+	$MusselConfig['lang']['update_created']="creado";
+	$MusselConfig['lang']['update_deleted']="borrado";
 	$MusselConfig['lang']['update_failed']="Fracasado.";
 	$MusselConfig['lang']['update_fetch']="Intentar para obtener la versión datos de";
 	$MusselConfig['lang']['update_no_source']="phpMussel ha fracasado de actualización porque no se pudo conectar a una válido actualización fuente. Se recomienda actualizar manualmente.";
 	$MusselConfig['lang']['update_not_available']="No script actualización está disponible en este momento.";
 	$MusselConfig['lang']['update_not_possible']="Una script actualización está disponible, pero no puede ser completamente actualizada con esta versión de la script de actualización. Por favor, actualizar manualmente.";
+	$MusselConfig['lang']['update_patched']="parcheado";
+	$MusselConfig['lang']['update_seconds_elapsed']=" segundos transcurridos";
 	$MusselConfig['lang']['update_signatures_available']="Una actualización de firmas está disponible.";
 	$MusselConfig['lang']['update_signatures_latest']="ÚLTIMAS FIRMAS";
 	$MusselConfig['lang']['update_signatures_not_available']="No actualización de firmas está disponible en este momento.";
@@ -231,6 +252,7 @@ else if($MusselConfig['general']['lang']=="fr")
 	$MusselConfig['lang']['cli_failed_to_complete']="Échec du terminer le processus d'analyse";
 	$MusselConfig['lang']['cli_ln2']="  Merci pour d'utiliser phpMussel, un script en PHP basé sur les signatures de \n  ClamAV conçus pour détecter les virus, les malveillants logiciels et autres  \n     menaces dans les fichiers téléchargés sur votre système partout où le     \n                              script est accroché.                             \n     PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPL V.2 by Caleb M (Maikuolan)    \n\n                                  ~ ~ ~                                        \n\n";
 	$MusselConfig['lang']['cli_ln3']=" Fonctionne comme CLI mode pour le moment (Commande Ligne Interface).\n\n Quel fichier ou répertoire que vous souhaitez analyser? Taper le nom du\n fichier ou du répertoire que vous souhaiter pour phpMussel à analyser et\n appuyez sur Enter, ou tapez 'q' et Enter à quitter sans analyser:\n\n>> ";
+	$MusselConfig['lang']['cli_working']="En cours";
 	$MusselConfig['lang']['denied_other']="Upload Denied! Subir Denegado! Hochladen verweigert! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
 	$MusselConfig['lang']['denied_reason']="Votre tentative à télécharger a été bloqué pour les raisons énumérées ci-dessous / Your upload attempt was blocked for the reasons listed below:";
 	$MusselConfig['lang']['denied']="Téléchargement Refusé!";
@@ -248,10 +270,12 @@ else if($MusselConfig['general']['lang']=="fr")
 	$MusselConfig['lang']['scan_chameleon']="caméléon attaque détecté";
 	$MusselConfig['lang']['scan_checking_contents']="Succès! Procédant à vérifier le contenu.";
 	$MusselConfig['lang']['scan_checking']="Vérification";
+	$MusselConfig['lang']['scan_command_injection']="Commande injection tentative détecté";
 	$MusselConfig['lang']['scan_extensions_missing']="Manqué (manquant extensions requises)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="Fichier nom manipulation détecté";
 	$MusselConfig['lang']['scan_map_corrupted']="Signature carte corrompu";
 	$MusselConfig['lang']['scan_map_missing']="Signature carte manquante";
+	$MusselConfig['lang']['scan_missing_filename']="Nom de fichier manquant";
 	$MusselConfig['lang']['scan_no_problems_found']="Pas problème trouvé.";
 	$MusselConfig['lang']['scan_not_archive']="Manqué (vide ou pas une archive)!";
 	$MusselConfig['lang']['scan_reading']="Accéder";
@@ -263,11 +287,15 @@ else if($MusselConfig['general']['lang']=="fr")
 	$MusselConfig['lang']['update_']="phpMussel va maintenant tenter à réactualiser.";
 	$MusselConfig['lang']['update_available']="Une réactualisation du script est disponible.";
 	$MusselConfig['lang']['update_complete']="Réactualisation chèque réussi.";
+	$MusselConfig['lang']['update_created']="créé";
+	$MusselConfig['lang']['update_deleted']="supprimé";
 	$MusselConfig['lang']['update_failed']="Manqué.";
 	$MusselConfig['lang']['update_fetch']="Tenter d'apporter les données de la version de";
 	$MusselConfig['lang']['update_no_source']="phpMussel n'a pas réussi à réactualiser parce qu'il ne pouvait pas connecter à une valide réactualisation source. Réactualisation manuelle est recommandé.";
 	$MusselConfig['lang']['update_not_available']="Aucune réactualisation du script est disponible à ce moment.";
 	$MusselConfig['lang']['update_not_possible']="Une réactualisation du script est disponible, mais ne peut pas être entièrement réactualisé avec cette version du réactualisation script. S'il vous plaît réactualiser manuellement.";
+	$MusselConfig['lang']['update_patched']="patché";
+	$MusselConfig['lang']['update_seconds_elapsed']=" secondes écoulées";
 	$MusselConfig['lang']['update_signatures_available']="Une signatures réactualisation est disponible.";
 	$MusselConfig['lang']['update_signatures_latest']="DERNIÈRES SIGNATURES";
 	$MusselConfig['lang']['update_signatures_not_available']="Aucune réactualisation du signatures est disponible à ce moment.";
@@ -289,6 +317,7 @@ else if($MusselConfig['general']['lang']=="id")
 	$MusselConfig['lang']['cli_failed_to_complete']="Gagal untuk menyelesaikan memindai proses";
 	$MusselConfig['lang']['cli_ln2']=" Terima kasih untuk menggunakan phpMussel, sebuah script php berdasarkan tanda \n    tangan ClamAV di design untuk mendeteksi trojan-trojan, virus-virus dan    \n serangan-serangan lainnya dalam data-data diupload ke system anda dimana saja \n                               script di kaitkan.                              \n     PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPL V.2 oleh Caleb M (Maikuolan)\n\n                                  ~ ~ ~                                        \n\n";
 	$MusselConfig['lang']['cli_ln3']=" Sekarang phpMussel operasi di CLI mode (Command line interface).\n\n Apa fail atau direktori yang anda ingin memindai? Ketik nama fail atau\n direktori yang anda inginkan phpMussel untuk memindai dan tekan Enter, atau\n ketik 'q' dan Enter untuk berhenti tanpa memindai:\n\n>> ";
+	$MusselConfig['lang']['cli_working']="Dalam proses";
 	$MusselConfig['lang']['denied_other']="Upload Denied! T&#233;l&#233;charger Refus&#233;! Subir Denegado! Hochladen verweigert! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
 	$MusselConfig['lang']['denied_reason']="Upload diblokir karena alasan yang tercantum di bawah / Your upload attempt was blocked for the reasons listed below:";
 	$MusselConfig['lang']['denied']="Upload Ditolak!";
@@ -299,17 +328,19 @@ else if($MusselConfig['general']['lang']=="id")
 	$MusselConfig['lang']['filetype_blacklisted']="File jenis pada hitam daftar";
 	$MusselConfig['lang']['finished']="Selesai";
 	$MusselConfig['lang']['generated_by']="Dihasilkan&nbsp;oleh";
-	$MusselConfig['lang']['invalid_file']="IFile tidak valid";
+	$MusselConfig['lang']['invalid_file']="File tidak valid";
 	$MusselConfig['lang']['ok']="Oke";
 	$MusselConfig['lang']['refer_to_scan_kills']=" (mengacu pada ".$MusselConfig['general']['scan_kills']." untuk rincian)";
 	$MusselConfig['lang']['scan_aborted']="Memindai dibatalkan";
 	$MusselConfig['lang']['scan_chameleon']="bunglon serangan terdeteksi";
 	$MusselConfig['lang']['scan_checking_contents']="Sukses! Melanjutkan untuk memeriksa isi.";
 	$MusselConfig['lang']['scan_checking']="Memeriksa";
+	$MusselConfig['lang']['scan_command_injection']="Perintah injeksi terdeteksi";
 	$MusselConfig['lang']['scan_extensions_missing']="Gagal (hilang ekstensi yang dibutuhkan)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="File nama manipulasi terdeteksi";
 	$MusselConfig['lang']['scan_map_corrupted']="Tanda tangan peta rusak";
 	$MusselConfig['lang']['scan_map_missing']="Tanda tangan peta hilang";
+	$MusselConfig['lang']['scan_missing_filename']="Hilang nama file";
 	$MusselConfig['lang']['scan_no_problems_found']="Tidak ada masalah yang diketahui.";
 	$MusselConfig['lang']['scan_not_archive']="Gagal (kosong atau tidak sebuah arsip)!";
 	$MusselConfig['lang']['scan_reading']="Bacaan";
@@ -321,11 +352,15 @@ else if($MusselConfig['general']['lang']=="id")
 	$MusselConfig['lang']['update_']="phpMussel sekarang akan mencoba untuk sendiri update.";
 	$MusselConfig['lang']['update_available']="Update untuk skrip tersedia.";
 	$MusselConfig['lang']['update_complete']="Update cek selesai dengan sukses.";
+	$MusselConfig['lang']['update_created']="dibuat";
+	$MusselConfig['lang']['update_deleted']="dihapus";
 	$MusselConfig['lang']['update_failed']="Gagal.";
 	$MusselConfig['lang']['update_fetch']="Mencoba untuk mengambil versi data dari";
 	$MusselConfig['lang']['update_no_source']="phpMussel gagal untuk sendiri update karena tidak bisa terhubung ke valid update sumber. Update secara manual dianjurkan.";
 	$MusselConfig['lang']['update_not_available']="Skrip update yang tidak tersedia saat ini.";
 	$MusselConfig['lang']['update_not_possible']="Skrip update yang tersedia, tetapi tidak dapat sepenuhnya diupdate dengan ini update skrip versi. Silahkan update secara manual.";
+	$MusselConfig['lang']['update_patched']="ditambal";
+	$MusselConfig['lang']['update_seconds_elapsed']=" detik berlalu";
 	$MusselConfig['lang']['update_signatures_available']="Tanda tangan yang tersedia.";
 	$MusselConfig['lang']['update_signatures_latest']="TERAKHIR TANDA TANGAN";
 	$MusselConfig['lang']['update_signatures_not_available']="Tanda tangan update yang tidak tersedia saat ini.";
@@ -347,6 +382,7 @@ else if($MusselConfig['general']['lang']=="it")
 	$MusselConfig['lang']['cli_failed_to_complete']="Fallimento a completa processo di scansione";
 	$MusselConfig['lang']['cli_ln2']=" Grazie per aver scelto phpMussel, uno PHP-basato script basato su ClamAV firme\n  progettato per individuare trojan, virus, malware e altre minacce all'interno\n          di file caricati nel sistema ovunque lo script è collegato.          \n      PHPMUSSEL COPYRIGHT 2013 e oltre GNU/GPL V.2 da Caleb M (Maikuolan)      \n\n                                  ~ ~ ~                                        \n\n";
 	$MusselConfig['lang']['cli_ln3']=" Attualmente in esecuzione di phpMussel in CLI modalità (Comando riga\n\n interfaccia). Quali file o direttorio si desidera a scansione?\n\n Digitare il nome del file o direttorio che si desidera phpMussel la scansione\n\n e premere Enter, oppure digitare 'q' e Enter per uscire senza la scansione:\n\n>> ";
+	$MusselConfig['lang']['cli_working']="In corso";
 	$MusselConfig['lang']['denied_other']="Upload Denied! T&#233;l&#233;charger Refus&#233;! Subir Denegado! Hochladen verweigert! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
 	$MusselConfig['lang']['denied_reason']="Il tentativo di caricamento è stato bloccato per i motivi elencati di seguito / Your upload attempt was blocked for the reasons listed below:";
 	$MusselConfig['lang']['denied']="Carica Negato!";
@@ -364,10 +400,12 @@ else if($MusselConfig['general']['lang']=="it")
 	$MusselConfig['lang']['scan_chameleon']="camaleonte attacco rilevato";
 	$MusselConfig['lang']['scan_checking_contents']="SSuccess! Procedendo per verificare i contenuti.";
 	$MusselConfig['lang']['scan_checking']="Verificare";
+	$MusselConfig['lang']['scan_command_injection']="Comando iniezione tentativo rilevato";
 	$MusselConfig['lang']['scan_extensions_missing']="Mancato (Manca richieste estensioni)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="File nome manipolazione rilevato";
 	$MusselConfig['lang']['scan_map_corrupted']="Firma mappa corrotto";
 	$MusselConfig['lang']['scan_map_missing']="Firma mappa manca";
+	$MusselConfig['lang']['scan_missing_filename']="Nome del file mancante";
 	$MusselConfig['lang']['scan_no_problems_found']="Nessun problema trovato.";
 	$MusselConfig['lang']['scan_not_archive']="Mancato (vuoto o non è un archivio)!";
 	$MusselConfig['lang']['scan_reading']="Leggendo";
@@ -379,11 +417,15 @@ else if($MusselConfig['general']['lang']=="it")
 	$MusselConfig['lang']['update_']="phpMussel ora tenterà di aggiornarsi.";
 	$MusselConfig['lang']['update_available']="Un script aggiornamento è disponibile.";
 	$MusselConfig['lang']['update_complete']="Aggiornamento verifica completato con successo.";
+	$MusselConfig['lang']['update_created']="creato";
+	$MusselConfig['lang']['update_deleted']="cancellato";
 	$MusselConfig['lang']['update_failed']="Mancato.";
 	$MusselConfig['lang']['update_fetch']="Il tentativo di ottenere i dati della versione da";
 	$MusselConfig['lang']['update_no_source']="phpMussel non è riuscito ad aggiornare perché non poteva connettersi a un valido aggiornamento origine. Aggiornamento manuale è consigliato.";
 	$MusselConfig['lang']['update_not_available']="Nessun script aggiornamento è disponibile in questo momento.";
 	$MusselConfig['lang']['update_not_possible']="Un script aggiornamento è disponibile, ma non può essere completamente aggiornato con questa versione dello aggiornamento script. Si prega aggiornare manualmente.";
+	$MusselConfig['lang']['update_patched']="patchato";
+	$MusselConfig['lang']['update_seconds_elapsed']=" secondi trascorsi";
 	$MusselConfig['lang']['update_signatures_available']="Un aggiornamento delle firme è disponibile.";
 	$MusselConfig['lang']['update_signatures_latest']="ULTIME FIRME";
 	$MusselConfig['lang']['update_signatures_not_available']="Nessun aggiornamento delle firme è disponibile in questo momento.";
@@ -405,6 +447,7 @@ else if($MusselConfig['general']['lang']=="nl")
 	$MusselConfig['lang']['cli_failed_to_complete']="Mislukt om het voltooien te scannen";
 	$MusselConfig['lang']['cli_ln2']=" Bedankt voor het gebruik van phpMussel, een PHP-gebaseerde script gebaseerd op\n  ClamAV handtekeningen ontworpen om detecteren trojans, virussen, malware en  \n andere bedreigingen binnen bestanden geüpload naar uw systeem waar het script \n                                is aangesloten.                                \n     PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPL V.2 van Caleb M (Maikuolan)    \n\n                                  ~ ~ ~                                        \n\n";
 	$MusselConfig['lang']['cli_ln3']=" Momenteel phpMussel is in CLI-modus (Commandlijn interface).\n\n Welk bestand of map wilt u scannen? Typ de naam van het bestand of de map die\n u wilt phpMussel te scannen en druk op Enter, of typ 'q' en Enter om te stoppen\nzonder te scannen:\n\n>> ";
+	$MusselConfig['lang']['cli_working']="Aan de gang";
 	$MusselConfig['lang']['denied_other']="Upload Denied! T&#233;l&#233;charger Refus&#233;! Subir Denegado! Hochladen verweigert! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
 	$MusselConfig['lang']['denied_reason']="De upload poging werd geblokkeerd voor de hieronder vermelde redenen / Your upload attempt was blocked for the reasons listed below:";
 	$MusselConfig['lang']['denied']="Upload Geweigerd!";
@@ -422,10 +465,12 @@ else if($MusselConfig['general']['lang']=="nl")
 	$MusselConfig['lang']['scan_chameleon']="kameleon aanval gedetecteerd";
 	$MusselConfig['lang']['scan_checking_contents']="Succes! Gaan tot verifiëren de inhoud.";
 	$MusselConfig['lang']['scan_checking']="Verifiëren";
+	$MusselConfig['lang']['scan_command_injection']="Command injectie poging gedetecteerd";
 	$MusselConfig['lang']['scan_extensions_missing']="Mislukt (ontbrekende vereiste extensies)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="Bestandsnaam manipulatie ontdekt";
 	$MusselConfig['lang']['scan_map_corrupted']="Handtekening kaart beschadigd";
 	$MusselConfig['lang']['scan_map_missing']="Handtekening kaart ontbrekende";
+	$MusselConfig['lang']['scan_missing_filename']="Ontbrekende bestandsnaam";
 	$MusselConfig['lang']['scan_no_problems_found']="Geen problemen gevonden.";
 	$MusselConfig['lang']['scan_not_archive']="Mislukt (leeg of is geen archief)!";
 	$MusselConfig['lang']['scan_reading']="Lezen van";
@@ -437,11 +482,15 @@ else if($MusselConfig['general']['lang']=="nl")
 	$MusselConfig['lang']['update_']="phpMussel zal nu proberen om zichzelf te bijwerken.";
 	$MusselConfig['lang']['update_available']="Een script bijwerk is beschikbaar.";
 	$MusselConfig['lang']['update_complete']="Bijwerk verificatie afgerond geslaagd.";
+	$MusselConfig['lang']['update_created']="gecreëerd";
+	$MusselConfig['lang']['update_deleted']="verwijderd";
 	$MusselConfig['lang']['update_failed']="Mislukt.";
 	$MusselConfig['lang']['update_fetch']="Proberen te halen versie gegevens van";
 	$MusselConfig['lang']['update_no_source']="phpMussel heeft mislukt te bijwerken, omdat het niet kon verbinden met een geldige bijwerkenbron. Handmatig bijwerk zijn aanbevolen.";
 	$MusselConfig['lang']['update_not_available']="Geen script bijwerk beschikbaar op dit moment.";
 	$MusselConfig['lang']['update_not_possible']="Een script bijwerk zijn beschikbaar, maar kan niet worden volledig bijgewerkt met deze versie van de bijwerkscript. Alstublieft bijwerken handmatig.";
+	$MusselConfig['lang']['update_patched']="versteld";
+	$MusselConfig['lang']['update_seconds_elapsed']=" seconden verstreken";
 	$MusselConfig['lang']['update_signatures_available']="Een handtekeningen bijwerken zijn beschikbaar.";
 	$MusselConfig['lang']['update_signatures_latest']="LAATSTE HANDTEKENINGEN";
 	$MusselConfig['lang']['update_signatures_not_available']="Geen handtekeningen bijwerken beschikbaar op dit moment.";
@@ -463,6 +512,7 @@ else if($MusselConfig['general']['lang']=="pt")
 	$MusselConfig['lang']['cli_failed_to_complete']="Falha ao completar processo de verificação";
 	$MusselConfig['lang']['cli_ln2']="      Obrigado por usar phpMussel, um php script baseado baseado em ClamAV     \n assinaturas projetado para detectar trojans, vírus, malwares e outras ameaças \n dentro de arquivos enviado para o seu sistema onde que o script está ligado.  \n      PHPMUSSEL COPYRIGHT 2013 e além GNU/GPL V.2 por Caleb M (Maikuolan)      \n\n                                  ~ ~ ~                                        \n\n";
 	$MusselConfig['lang']['cli_ln3']=" Correntemente execução phpMussel em CLI modo (Comando linha interface).\n\n Que arquivo você deseja verificar? Digite o nome do arquivo que você deseja\n phpMussel para analisar e pression Enter, ou digite 'q' e Enter para sair sem\n analisar:\n\n>> ";
+	$MusselConfig['lang']['cli_working']="Em processo";
 	$MusselConfig['lang']['denied_other']="Upload Denied! T&#233;l&#233;charger Refus&#233;! Subir Denegado! Hochladen verweigert! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Confiar Negado! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1606;&#1601;&#1609; &#1578;&#1581;&#1605;&#1610;&#1604;!";
 	$MusselConfig['lang']['denied_reason']="Carregamento tentativa foi bloqueado pelos motivos a seguir indicados / Your upload attempt was blocked for the reasons listed below:";
 	$MusselConfig['lang']['denied']="Carregar Negado!";
@@ -480,10 +530,12 @@ else if($MusselConfig['general']['lang']=="pt")
 	$MusselConfig['lang']['scan_chameleon']="camaleão ataque detectado";
 	$MusselConfig['lang']['scan_checking_contents']="Sucesso! Prosseguindo para verificar o conteúdo.";
 	$MusselConfig['lang']['scan_checking']="Verificação";
+	$MusselConfig['lang']['scan_command_injection']="Comando injeção tentativa detectado";
 	$MusselConfig['lang']['scan_extensions_missing']="Fracassado (faltando extensões necessárias)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="Arquivo nome manipulação detectado";
 	$MusselConfig['lang']['scan_map_corrupted']="Assinatura mapa corrompido";
 	$MusselConfig['lang']['scan_map_missing']="Assinatura mapa faltando";
+	$MusselConfig['lang']['scan_missing_filename']="Nome do arquivo está ausente";
 	$MusselConfig['lang']['scan_no_problems_found']="Não problemas encontrados.";
 	$MusselConfig['lang']['scan_not_archive']="Fracassado (vazio ou não um arquivo)!";
 	$MusselConfig['lang']['scan_reading']="Lendo";
@@ -495,11 +547,15 @@ else if($MusselConfig['general']['lang']=="pt")
 	$MusselConfig['lang']['update_']="phpMussel agora tentará se atualizar.";
 	$MusselConfig['lang']['update_available']="Uma atualização de script está disponível.";
 	$MusselConfig['lang']['update_complete']="Verificação de atualização concluída com êxito.";
+	$MusselConfig['lang']['update_created']="criado";
+	$MusselConfig['lang']['update_deleted']="deletado";
 	$MusselConfig['lang']['update_failed']="Fracassado.";
 	$MusselConfig['lang']['update_fetch']="A tentativa de buscar dados de versão de";
 	$MusselConfig['lang']['update_no_source']="phpMussel falhou a atualizar-se porque não pôde conectar a uma válido atualização fonte. Atualizando manualmente é recomendado.";
 	$MusselConfig['lang']['update_not_available']="Nenhuma script atualização está disponível no momento.";
 	$MusselConfig['lang']['update_not_possible']="Uma script atualização está disponível, mas não pode ser totalmente atualizado com esta versão do atualização script. Por favor atualize manualmente.";
+	$MusselConfig['lang']['update_patched']="remendado";
+	$MusselConfig['lang']['update_seconds_elapsed']=" segundos transcorridos";
 	$MusselConfig['lang']['update_signatures_available']="Uma atualização de assinaturas está disponível.";
 	$MusselConfig['lang']['update_signatures_latest']="ÚLTIMAS ASSINATURAS";
 	$MusselConfig['lang']['update_signatures_not_available']="Nenhuma atualização de assinaturas está disponível neste momento.";

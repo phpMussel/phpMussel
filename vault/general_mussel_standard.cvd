@@ -1,7 +1,9 @@
->FD>3c3f>6
->FN>([.][Cc][Vv][Dd]|[.][Ii][Nn][Cc]|[.][Tt][Xx][Tt])$>3
->FS-MAX>-1>6
+phpMussel-AJAX.Backdoor.OpenX:666c617368656d62656428746869732c6b2c6a297d>3f706870
+>FD>3c3f>8
+>FN>([.][Cc][Vv][Dd]|[.][Ii][Nn][Cc]|[.][Tt][Xx][Tt])$>4
+>FS-MAX>-1>8
 phpMussel-PHP.Backdoor.b374k:623337346b
+phpMussel-PHP.Backdoor.BoffMax:3c3f706870200d0a2f2a0d0a3a3a>2d2d0d0a3f3e
 phpMussel-PHP.Backdoor.FilesMan:46696c65734d616e
 phpMussel-PHP.Backdoor.HackMe:6861636b2d6d652e6f7267
 phpMussel-Testfile.General.Standard:5445535446494c452049443a2067656e6572616c5f7374616e646172645f7465737466696c652e7478740d0a202e2e2020202020202020202e2e2e492e2c3d2e2e2e2e2e

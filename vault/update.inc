@@ -29,8 +29,8 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                   ~ ~ ~                                        
- This File: phpMussel v0.3f Update Script
- This File Last Updated: 21st May 2014
+ This File: phpMussel v0.3g Update Script
+ This File Last Updated: 8th June 2014
 
                                   ~ ~ ~                                        
  Please refer to the README documentation for installation instructions and for
@@ -75,9 +75,9 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 	$phpmusselversion['script_version']=trim(substr($phpmusselversion['raw'],16,16));
 	$phpmusselversion['first_compatible']=trim(substr($phpmusselversion['script_version'],strpos($phpmusselversion['script_version']," ")));
 	$phpmusselversion['script_version']=trim(substr($phpmusselversion['script_version'],0,strpos($phpmusselversion['script_version']," ")));
-	$phpmusselversion['phpmussel_ua']="phpMussel v".$phpmusselversion['script_version']." (".crc32($_SERVER['SERVER_ADDR'])."-".crc32($_SERVER['HTTP_HOST'])."-".crc32($phpmusselversion['raw']).")";
+	$phpmusselversion['phpmussel_ua']="phpMussel v".$phpmusselversion['script_version']." (".crc32($_SERVER['SERVER_ADDR'])."-".crc32($_SERVER['HTTP_HOST']).")";
 	header("Content-Type: text/plain");
-	echo $MusselConfig['lang']['cli_ln1'].$MusselConfig['lang']['cli_ln2'].$MusselConfig['lang']['update_']." (".(time()-$phpmusselversion['current_time'])."s elapsed)\n\n";
+	echo $MusselConfig['lang']['cli_ln1'].$MusselConfig['lang']['cli_ln2'].$MusselConfig['lang']['update_']." (".(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n\n";
 	$phpmusselversion['request_status']=false;
 	for($i=0;$i<$phpmusselversion['update_addresses_count'];$i++)
 		{
@@ -86,17 +86,17 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 		$phpmusselversion['request']=file_get_contents("http://".$phpmusselversion['update_addresses'][$i],false,$phpmusselversion['stream']);
 		if(trim(substr($phpmusselversion['request'],0,16))!=="¡phpMussel!")
 			{
-			echo $MusselConfig['lang']['update_failed']." (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+			echo $MusselConfig['lang']['update_failed']." (".(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 			$phpmusselversion['update_addresses'][$i]="";
 			continue;
 			}
 		$phpmusselversion['request_status']=true;
-		echo $MusselConfig['lang']['update_success']." (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+		echo $MusselConfig['lang']['update_success']." (".(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 		break;
 		}
 	if(!$phpmusselversion['request_status'])
 		{
-		echo $MusselConfig['lang']['update_no_source']." (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+		echo $MusselConfig['lang']['update_no_source']." (".(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 		$phpmusselversion['raw']=str_replace(substr($phpmusselversion['raw'],48,16),str_pad((time()+3600),16),$phpmusselversion['raw']);
 		$phpmusselversion['df']=fopen($vault."update.dat","w");
 		fwrite($phpmusselversion['df'],$phpmusselversion['raw']);
@@ -141,7 +141,7 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 				}
 			else
 				{
-				$phpmusselversion['compare']=($phpmusselversion['compare']=="script")?"allgz":"sigsgz";
+				$phpmusselversion['compare']=($phpmusselversion['compare']=="scriptgz")?"allgz":"sigsgz";
 				}
 			}
 		}
@@ -162,17 +162,17 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 				$phpmusselversion['request']=file_get_contents("http://".$phpmusselversion['update_addresses'][$i],false,$phpmusselversion['stream']);
 				if(trim(substr($phpmusselversion['request'],0,16))!=="¡phpMussel!")
 					{
-					echo $MusselConfig['lang']['update_failed']." (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+					echo $MusselConfig['lang']['update_failed']." (".(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 					continue;
 					}
 				$phpmusselversion['request_status']=true;
-				echo $MusselConfig['lang']['update_success']." (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+				echo $MusselConfig['lang']['update_success']." (".(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 				break;
 				}
 			}
 		if(!$phpmusselversion['request_status'])
 			{
-			echo $MusselConfig['lang']['update_no_source']." (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+			echo $MusselConfig['lang']['update_no_source']." (".(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 			$phpmusselversion['raw']=str_replace(substr($phpmusselversion['raw'],48,16),str_pad((time()+3600),16),$phpmusselversion['raw']);
 			$phpmusselversion['df']=fopen($vault."update.dat","w");
 			fwrite($phpmusselversion['df'],$phpmusselversion['raw']);
@@ -200,7 +200,7 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 			}
 		if($phpmusselversion['remote_hack_detected'])
 			{
-			echo "Possible hack or forgery detected in the update instructions supplied by the update source; Source may possibly be compromised. Please notify the script author. Updating manually is recommended. (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+			echo "Possible hack or forgery detected in the update instructions supplied by the update source; Source may possibly be compromised. Please notify the script author. Updating manually is recommended. (".(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 			$phpmusselversion['raw']=str_replace(substr($phpmusselversion['raw'],48,16),str_pad((time()+99999999),16),$phpmusselversion['raw']);
 			$phpmusselversion['df']=fopen($vault."update.dat","w");
 			fwrite($phpmusselversion['df'],$phpmusselversion['raw']);
@@ -226,21 +226,21 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 				if(file_exists($vault.$phpmusselversion['remote_update_instructions'][$i][1]))
 					{
 					@unlink($vault.$phpmusselversion['remote_update_instructions'][$i][1]);
-					echo "File '".$phpmusselversion['remote_update_instructions'][$i][1]."' deleted. (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+					echo "File '".$phpmusselversion['remote_update_instructions'][$i][1]."' ".$MusselConfig['lang']['update_deleted'].". (".(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 					continue;
 					}
 				}
 			if($phpmusselversion['remote_update_instructions'][$i][0]=="patch"||$phpmusselversion['remote_update_instructions'][$i][0]=="patchgz")
 				{
-				$phpmusselversion['adj_word']=(file_exists($vault.$phpmusselversion['remote_update_instructions'][$i][1]))?"patched":"created";
+				$phpmusselversion['adj_word']=(file_exists($vault.$phpmusselversion['remote_update_instructions'][$i][1]))?$MusselConfig['lang']['update_patched']:$MusselConfig['lang']['update_created'];
 				if(!isset($phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]]))
 					{
-					echo "File '".$phpmusselversion['remote_update_instructions'][$i][1]."' NOT ".$phpmusselversion['adj_word'].": Source CRC32 missing! (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+					echo "File '".$phpmusselversion['remote_update_instructions'][$i][1]."' NOT ".$phpmusselversion['adj_word'].": Source CRC32 missing! (".(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 					continue;
 					}
 				if(!isset($phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]))
 					{
-					echo "File '".$phpmusselversion['remote_update_instructions'][$i][1]."' NOT ".$phpmusselversion['adj_word'].": Source data missing! (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+					echo "File '".$phpmusselversion['remote_update_instructions'][$i][1]."' NOT ".$phpmusselversion['adj_word'].": Source data missing! (".(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 					continue;
 					}
 				if($phpmusselversion['remote_update_instructions'][$i][0]=="patchgz")
@@ -249,13 +249,13 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 					}
 				if(crc32($phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]])!=$phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]])
 					{
-					echo "File '".$phpmusselversion['remote_update_instructions'][$i][1]."' NOT ".$phpmusselversion['adj_word'].": CRC32 did not match! (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+					echo "File '".$phpmusselversion['remote_update_instructions'][$i][1]."' NOT ".$phpmusselversion['adj_word'].": CRC32 did not match! (".(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 					continue;
 					}
 				$phpmusselversion['df']=fopen($vault.$phpmusselversion['remote_update_instructions'][$i][1],"w");
 				fwrite($phpmusselversion['df'],$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]);
 				fclose($phpmusselversion['df']);
-				echo "File '".$phpmusselversion['remote_update_instructions'][$i][1]."' ".$phpmusselversion['adj_word']." successfully. (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
+				echo "File '".$phpmusselversion['remote_update_instructions'][$i][1]."' ".$phpmusselversion['adj_word']." successfully. (".(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 				continue;
 				}
 			}
