@@ -10854,6 +10854,38 @@ if(function_exists("phpMusselFork"))
 				echo $stl.$MusselConfig['lang']['cli_is_not_a']."\n";
 				}
 			}
+		if($cmd=="coex_file")
+			{
+			$stl=substr($cli_args[2],strlen($cmd)+1);
+			if(@is_dir($stl))
+				{
+				$d=@scandir($stl);
+				if(!$d)
+					{
+					echo $GLOBALS['MusselConfig']['lang']['failed_to_access']."\"".$stl."\".\n";
+					}
+				else
+					{
+					$c=count($d);
+					$xsc=$stl[strlen($stl)-1];
+					if($xsc!=="\\"&&$xsc!=="/")$stl.="/";
+					for($i=0;$i<$c;$i++)
+						{
+						if($d[$i]=="."||$d[$i]=="..")continue;
+						echo phpMusselFork("coex_file ".$stl.$d[$i],$d[$i])."\n";
+						}
+					}
+				}
+			else if(@is_file($stl))
+				{
+				$hashme=@phpMusselFile($stl,0,1);
+				echo "\$md5:".md5($hashme).";\$sha:".sha1($hashme).";\$str_len:".strlen($hashme).";YOUR-SIGNATURE-NAME";
+				}
+			else
+				{
+				echo $stl.$MusselConfig['lang']['cli_is_not_a']."\n";
+				}
+			}
 		die;
 		}
 	}
@@ -11760,11 +11792,50 @@ if(function_exists("phpMusselFork")&&strlen(mussel_php)>0&&mussel_os=="WIN"&&mus
 				echo $stl.$MusselConfig['lang']['cli_is_not_a']."\n";
 				}
 			}
+		if($cmd=="coex_file")
+			{
+			echo "\n\n";
+			$stl=substr($stl,strlen($cmd)+1);
+			if(@is_dir($stl))
+				{
+				$d=@scandir($stl);
+				if(!$d)
+					{
+					echo $MusselConfig['lang']['failed_to_access']."\"".$stl."\".\n";
+					}
+				else
+					{
+					$c=count($d);
+					$xsc=$stl[strlen($stl)-1];
+					if($xsc!=="\\"&&$xsc!=="/")$stl.="/";
+					for($i=0;$i<$c;$i++)
+						{
+						if($d[$i]=="."||$d[$i]=="..")continue;
+						echo phpMusselFork("coex_file ".$stl.$d[$i],$d[$i])."\n";
+						}
+					}
+				}
+			else if(@is_file($stl))
+				{
+				$hashme=@phpMusselFile($stl,0,1);
+				echo "\$md5:".md5($hashme).";\$sha:".sha1($hashme).";\$str_len:".strlen($hashme).";YOUR-SIGNATURE-NAME";
+				}
+			else
+				{
+				echo $stl.$MusselConfig['lang']['cli_is_not_a']."\n";
+				}
+			}
 		if($cmd=="md5")
 			{
 			echo "\n\n";
 			$stl=substr($stl,strlen($cmd)+1);
 			echo md5($stl).":".strlen($stl).":YOUR-SIGNATURE-NAME";
+			}
+		if($cmd=="coex")
+			{
+			echo "\n\n";
+			$stl=substr($stl,strlen($cmd)+1);
+			echo "\$md5:".md5($stl).";\$sha:".sha1($stl).";\$str_len:".strlen($stl).";YOUR-SIGNATURE-NAME";
 			}
 		if($cmd=="hex_encode"||$cmd=="x")
 			{

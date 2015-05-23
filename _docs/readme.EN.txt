@@ -32,7 +32,7 @@
  Foundation; either version 2 of the License, or (at your option) any later
  version. This script is distributed in the hope that it will be useful, but
  WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+ FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  details <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Special thanks to ClamAV for both project inspiration and for the signatures
