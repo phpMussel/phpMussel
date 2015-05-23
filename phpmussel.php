@@ -1,6 +1,6 @@
 <?php
 /*
-      _____  _     _  _____  _______ _     _ _______ _______ _______   v0.2    
+      _____  _     _  _____  _______ _     _ _______ _______ _______   v0.2a   
  <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
      |       |     | |       |  |  | |_____| ______| ______| |______ |_____    
  Thank you for using phpMussel, a php-based script based upon ClamAV signatures
@@ -11,8 +11,8 @@
    you are currently using was released) is still UNDER CONSTRUCTION, NOT YET  
     COMPLETE, and thus comes with NO WARRANTY. Keep an eye out for updates.    
                                   ~ ~ ~                                        
- phpMussel version 0.2 (main script by Maikuolan, signatures by ClamAV).
- Last Updated (phpMussel, this version): 26th September 2013.
+ phpMussel version 0.2a (main script by Maikuolan, signatures by ClamAV).
+ Last Updated (phpMussel, this version): 1st October 2013.
  
  Special thanks to ClamAV for both project inspiration and for the signature
  files that this script utilises, without which, the script would simply not
@@ -58,7 +58,7 @@ $vault="/your_user/public_html/some_dir/phpmussel/vault/";
 if(!defined('phpMussel'))
 	{
 	if(!isset($_SERVER['REMOTE_ADDR']))$_SERVER['REMOTE_ADDR']="";
-	$phpmusselversion="phpMussel v0.2";
+	$phpmusselversion="phpMussel v0.2a";
 	$display_errors=error_reporting(0);
 	$linebreak=chr(13).chr(10);
 	define('phpMussel',true);
@@ -110,7 +110,6 @@ if(!defined('phpMussel'))
 		}
 	function substr_compare_hex($str=0,$st=0,$l=0,$x=0,$p=0)
 		{
-		if(is_array($str))return false;
 		if(!$l)$l=@strlen($str);
 		if(!$x||!$l)return false;
 		$str=@substr($str,$st,$l);
@@ -306,19 +305,24 @@ if(!defined('phpMussel'))
 					}
 				}
 			}
-		$xt=explode(".",strtolower($ofn));
-		$xts=substr($xt[count($xt)-1],0,3)."*";
-		$xt=$xt[count($xt)-1];
-		$gzxt=$gzxts="-";
+		$xt=$xts=$gzxt=$gzxts="-";
+		if(substr_count($ofn,".")>0)
+			{
+			$xt=explode(".",strtolower($ofn));
+			$xts=substr($xt[count($xt)-1],0,3)."*";
+			$xt=$xt[count($xt)-1];
+			if(strlen($xt)<1)$xt=$xts="-";
+			}
 		if(substr_count($ofn,".")>1)
 			{
 			$gzxt=explode(".",str_replace(".gz","",strtolower($ofn)));
 			$gzxts=substr($gzxt[count($gzxt)-1],0,3)."*";
 			$gzxt=strtolower($gzxt[count($gzxt)-1]);
+			if(strlen($gzxt)<1)$gzxt=$gzxts="-";
 			}
 		if($GLOBALS['MusselConfig']['attack_specific']['chameleon_from_php'])
 			{
-			if(!(substr_count("php*,",$xts.",")>0||substr_count("php*,",$gzxts.",")>0||substr_count($GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions_wc'].",",$xts.",")>0||substr_count($GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions_wc'].",",$gzxts.",")>0||substr_count($GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions'].",",$xt.",")>0||substr_count($GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions'].",",$gzxt.",")>0))
+			if(!(substr_count(",php*,",",".$xts.",")>0||substr_count(",php*,",",".$gzxts.",")>0||substr_count(",".$GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions_wc'].",",",".$xts.",")>0||substr_count(",".$GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions_wc'].",",",".$gzxts.",")>0||substr_count(",".$GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions'].",",",".$xt.",")>0||substr_count(",".$GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions'].",",",".$gzxt.",")>0))
 				{
 				if(!isset($str_norm))$str_norm=strtolower(str_replace("\t","",str_replace("\n","",str_replace("\r","",str_replace(" ","",$str)))));
 				if(substr_count($str_norm,"<?php")>0)
@@ -331,7 +335,7 @@ if(!defined('phpMussel'))
 			}
 		if($GLOBALS['MusselConfig']['attack_specific']['chameleon_from_exe'])
 			{
-			if(substr_count("exe,dll,ocx,acm,ax,cpl,drv,com,scr,rs,sys,",$xt.",")>0)
+			if(substr_count(",exe,dll,ocx,acm,ax,cpl,drv,com,scr,rs,sys,",",".$xt.",")>0)
 				{
 				if(!substr($str,0,2)==="MZ")
 					{
@@ -370,7 +374,7 @@ if(!defined('phpMussel'))
 			}
 		if($GLOBALS['MusselConfig']['clamav']['exe']||$GLOBALS['MusselConfig']['clamav']['exe_custom'])
 			{
-			if(substr_count("exe,dll,ocx,acm,ax,cpl,drv,com,scr,rs,sys,",$xt.",")>0||substr($str,0,2)==="MZ")
+			if(substr_count(",exe,dll,ocx,acm,ax,cpl,drv,com,scr,rs,sys,",",".$xt.",")>0||substr($str,0,2)==="MZ")
 				{
 				if(!isset($str_hex))$str_hex=@bin2hex($str);
 				if($GLOBALS['MusselConfig']['clamav']['exe'])
@@ -493,9 +497,9 @@ if(!defined('phpMussel'))
 			}
 		if($GLOBALS['MusselConfig']['clamav']['elf']||$GLOBALS['MusselConfig']['clamav']['elf_custom'])
 			{
+			if(!isset($str_hex))$str_hex=@bin2hex($str);
 			if($xt=="elf"||substr_compare_hex($str,0,4,"7f454c46",1))
 				{
-				if(!isset($str_hex))$str_hex=@bin2hex($str);
 				if($GLOBALS['MusselConfig']['clamav']['elf'])
 					{
 					if(!isset($GLOBALS['memCache']['elf_standard.cvd']))$GLOBALS['memCache']['elf_standard.cvd']=@file($GLOBALS['vault']."elf_standard.cvd");
@@ -646,7 +650,7 @@ if(!defined('phpMussel'))
 			}
 		if($GLOBALS['MusselConfig']['attack_specific']['chameleon_to_doc'])
 			{
-			if(substr_count("doc,dot,pps,ppt,xla,xls,wiz,",$xt.",")>0)
+			if(substr_count(",doc,dot,pps,ppt,xla,xls,wiz,",",".$xt.",")>0)
 				{
 				if(!substr_compare_hex($str,0,4,"d0cf11e0",1))
 					{
@@ -757,7 +761,7 @@ if(!defined('phpMussel'))
 			}
 		if($GLOBALS['MusselConfig']['clamav']['graphics']||$GLOBALS['MusselConfig']['clamav']['graphics_custom'])
 			{
-			if(substr_count("avi,bmp,cd5,cgm,dib,dwf,dwg,dxf,ecw,fits,gif,hdr,img,jpeg,jpg,jps,mov,mpo,odg,pam,pbm,pcx,pdd,pfm,pgm,png,pnm,pns,ppm,psd,psp,sid,svg,swf,tga,tif,tiff,vicar,wbmp,webp,wmf,xbm,xbmp,xcf,xvl,",$xt.",")>0)
+			if(substr_count(",avi,bmp,cd5,cgm,dib,dwf,dwg,dxf,ecw,fits,gif,hdr,img,jpeg,jpg,jps,mov,mpo,odg,pam,pbm,pcx,pdd,pfm,pgm,png,pnm,pns,ppm,psd,psp,sid,svg,swf,tga,tif,tiff,vicar,wbmp,webp,wmf,xbm,xbmp,xcf,xvl,",",".$xt.",")>0)
 				{
 				if(!isset($str_norm))$str_norm=strtolower(str_replace("\t","",str_replace("\n","",str_replace("\r","",str_replace(" ","",$str)))));
 				if(!isset($str_hex))$str_hex=@bin2hex($str);
@@ -881,7 +885,7 @@ if(!defined('phpMussel'))
 			}
 		if($GLOBALS['MusselConfig']['clamav']['macho']||$GLOBALS['MusselConfig']['clamav']['macho_custom'])
 			{
-			if(substr_compare_hex($str,0,4,"cafebabe",1)||substr_compare_hex($str,0,4,"cafed00d",1))
+			if(@preg_match("/(cafebabe)|(cafed00d)|(cefaedfe)|(cffaedfe)|(feedface)|(feedfacf)/i",dechex(substr($str,0,4))))
 				{
 				if(!isset($str_hex))$str_hex=@bin2hex($str);
 				if($GLOBALS['MusselConfig']['clamav']['macho'])
@@ -1061,28 +1065,29 @@ if(!defined('phpMussel'))
 				return (!$n)?2:$lnap."Checking '".$ofn."':".$GLOBALS['linebreak']."-".$lnap."Bad (filesize limit exceeded).".$GLOBALS['linebreak'];
 				}
 			}
-		if(substr_count($ofn,".")>0&&substr($ofn,0,1)!=="."&&substr($ofn,-1)!==".")
-			{
-			$xt=explode(".",strtolower($ofn));
-			$xts=substr($xt[count($xt)-1],0,3)."*";
-			$xt=$xt[count($xt)-1];
-			$gzxt=$gzxts="-";
-			if(substr_count($ofn,".")>1)
-				{
-				$gzxt=explode(".",str_replace(".gz","",strtolower($ofn)));
-				$gzxts=substr($gzxt[count($gzxt)-1],0,3)."*";
-				$gzxt=strtolower($gzxt[count($gzxt)-1]);
-				}
-			}
-		else
+		if(substr($ofn,0,1)==="."||substr($ofn,-1)===".")
 			{
 			if($fm)$GLOBALS['xsk'].="00000000000000000000000000000000:".$fS.":".$ofn.$GLOBALS['linebreak'];
 			if($fm)$GLOBALS['xfm'].="Filename manipulation detected (".$ofn.")! ";
 			if($GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
 			return (!$n)?2:$lnap."Checking '".$ofn."':".$GLOBALS['linebreak']."-".$lnap."Filename manipulation detected!".$GLOBALS['linebreak'];
 			}
-		if(substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$xt.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$xts.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$gzxt.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$gzxts.",")>0)return (!$n)?1:$lnap."Checking '".$ofn."':".$GLOBALS['linebreak']."-".$lnap."No problems found.".$GLOBALS['linebreak'];
-		if(substr_count($GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",$xt.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",$xts.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",$gzxt.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",$gzxts.",")>0)
+		$xt=$xts=$gzxt=$gzxts="-";
+		if(substr_count($ofn,".")>0)
+			{
+			$xt=explode(".",strtolower($ofn));
+			$xts=substr($xt[count($xt)-1],0,3)."*";
+			$xt=$xt[count($xt)-1];
+			if(substr_count($ofn,".")>1)
+				{
+				$gzxt=explode(".",str_replace(".gz","",strtolower($ofn)));
+				$gzxts=substr($gzxt[count($gzxt)-1],0,3)."*";
+				$gzxt=strtolower($gzxt[count($gzxt)-1]);
+				}
+			if(strlen($xt)<1)$xt=$xts=$gzxt=$gzxts="-";
+			}
+		if(substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",",".$xt.",")>0||substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",",".$xts.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$gzxt.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$gzxts.",")>0)return (!$n)?1:$lnap."Checking '".$ofn."':".$GLOBALS['linebreak']."-".$lnap."No problems found.".$GLOBALS['linebreak'];
+		if(substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",",".$xt.",")>0||substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",",".$xts.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",$gzxt.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",$gzxts.",")>0)
 			{
 			if($fm)$GLOBALS['xsk'].="00000000000000000000000000000000:".$fS.":".$ofn.$GLOBALS['linebreak'];
 			if($fm)$GLOBALS['xfm'].="Blacklisted filetype detected (".$ofn.")! ";
@@ -1101,7 +1106,7 @@ if(!defined('phpMussel'))
 		if($GLOBALS['MusselConfig']['files']['check_archives'])
 			{
 			$depth=0;
-			if(substr_count("gz,tgz,",$xt.",")>0||substr_compare_hex($in,0,2,"1f8b",1))
+			if(substr_count(",gz,tgz,",",".$xt.",")>0||substr_compare_hex($in,0,2,"1f8b",1))
 				{
 				if(!function_exists("gzdecode"))return (!$n)?-1:$lnap."Reading '".$ofn."' (GZIP):".$GLOBALS['linebreak']."-".$lnap."Failed (missing required extensions)!".$GLOBALS['linebreak'];
 				$fD=@gzdecode($in);
@@ -1252,13 +1257,7 @@ if(!defined('phpMussel'))
 							continue;
 							}
 						}
-					if(substr_count($eN,".")>0&&substr($eN,0,1)!=="."&&substr($eN,-1)!==".")
-						{
-						$xt=explode(".",$eN);
-						$xts=substr(strtolower($xt[count($xt)-1]),0,3)."*";
-						$xt=strtolower($xt[count($xt)-1]);
-						}
-					else
+					if(substr($eN,0,1)==="."||substr($eN,-1)===".")
 						{
 						$r=2;
 						if($fm)$GLOBALS['xsk'].="00000000000000000000000000000000:".$eS.":".$ofn.">".$eN.$GLOBALS['linebreak'];
@@ -1266,14 +1265,22 @@ if(!defined('phpMussel'))
 						$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap."Filename manipulation detected!".$GLOBALS['linebreak'];
 						continue;
 						}
+					$xt=$xts="-";
+					if(substr_count($eN,".")>0)
+						{
+						$xt=explode(".",strtolower($eN));
+						$xts=substr($xt[count($xt)-1],0,3)."*";
+						$xt=$xt[count($xt)-1];
+						if(strlen($xt)<1)$xt=$xts="-";
+						}
 					if($GLOBALS['MusselConfig']['files']['filetype_archives'])
 						{
-						if(substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$xt.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",$xts.",")>0)
+						if(substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",",".$xt.",")>0||substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_whitelist'].",",",".$xts.",")>0)
 							{
 							$x.=$lnap."Checking '".$ofn."' > '".$eN."':".$GLOBALS['linebreak']."-".$lnap."No problems found.".$GLOBALS['linebreak'];
 							continue;
 							}
-						if(substr_count($GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",$xt.",")>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",$xts.",")>0)
+						if(substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",",".$xt.",")>0||substr_count(",".$GLOBALS['MusselConfig']['files']['filetype_blacklist'].",",",".$xts.",")>0)
 							{
 							$r=2;
 							if($fm)$GLOBALS['xsk'].="00000000000000000000000000000000:".$eS.":".$ofn.">".$eN.$GLOBALS['linebreak'];

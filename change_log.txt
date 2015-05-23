@@ -1,5 +1,24 @@
 phpMussel change_log.txt
 
+=== Version 0.2a ===
+SUMMARY:
+Sub-minor update.
+
+NEW CHANGES:
+- Did a bit of research; Added a bunch of signatures to the custom signatures.
+  These are all signatures that I strongly feel should be included with
+  phpMussel, but, because they are neither related to the testfiles nor a part
+  of signature set obtained from ClamAV, I've opted to place them in customs.
+  Of course, if anyone disagrees, they are more than welcome to remove them.
+
+PROBLEMS/BUGS FIXED:
+- Fixed a small problem found concerning occasionally mismatched file
+  extensions that were causing some strange false-positives in testing (mostly
+  concerning zip files and c files).
+
+Maikuolan,
+1st October 2013.
+
 === Version 0.2 ===
 SUMMARY:
 My many thanks to those that helped with testing out the initial (and
@@ -24,9 +43,8 @@ NEW CHANGES:
   phpMussel now supports GZ and ZIP encoded archives. Though, ZIPs still
   aren't recursive and other common formats (7z, RAR) aren't yet supported.
 - Removed several custom-built functions altogether, replacing with faster
-  php-native equivalents, with new custom-built signatures implemented to
-  mimic these functions when not available for purposes of
-  backwards-compatibility.
+  php-native equivalents, with new custom-built functions implemented to mimic
+  these functions when not available for purposes of backwards-compatibility.
 - Improved compatibility with external error handlers.
 - Multi-instance checking implemented.
 - Generally improved coding to reduce risk of warning flags (New/Fixed?).

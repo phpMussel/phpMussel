@@ -1,4 +1,4 @@
-      _____  _     _  _____  _______ _     _ _______ _______ _______   v0.2    
+      _____  _     _  _____  _______ _     _ _______ _______ _______   v0.2a   
  <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
      |       |     | |       |  |  | |_____| ______| ______| |______ |_____    
  Thank you for using phpMussel, a php-based script based upon ClamAV signatures
@@ -26,8 +26,8 @@
  1. PRE-RAMBLE
  
  < Excerpt from phpmussel.php >
- phpMussel version 0.2 (main script by Maikuolan, signatures by ClamAV).
- Last Updated (phpMussel, this version): 26th September 2013.
+ phpMussel version 0.2a (main script by Maikuolan, signatures by ClamAV).
+ Last Updated (phpMussel, this version): 1st October 2013.
  
  Special thanks to ClamAV for both project inspiration and for the signature
  files that this script utilises, without which, the script would simply not
@@ -106,7 +106,7 @@
  6) Next, you'll need to "hook" phpMussel to your system or CMS. There are
     several different ways in which you can "hook" scripts such as phpMussel to
     your system or CMS, but the easiest is to simply include the script at
-    the beginning of a core file of your system of CMS (one that'll generally
+    the beginning of a core file of your system or CMS (one that'll generally
     always be loaded when someone accesses any page across your website)
     using a require or include command.
     Usually, this'll be something stored in a directory such as "/includes",
@@ -421,8 +421,8 @@
    All archive metadata signatures follow the format:
     NAME:FILESIZE:CRC32
    Where NAME is the name to cite for that signature, FILESIZE is the total
-   size of a file contained within the archive and CRC32 is the crc32 checksum
-   of that contained file.
+   size (uncompressed) of a file contained within the archive and CRC32 is
+   the crc32 checksum of that contained file.
  
  = EVERYTHING ELSE =
    All other signatures follow the format:
