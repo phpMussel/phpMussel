@@ -1,17 +1,8 @@
-      _____  _     _  _____  _______ _     _ _______ _______ _______           
+      _____  _     _  _____  _______ _     _ _______ _______ _______
  <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
-     |       |     | |       |  |  | |_____| ______| ______| |______ |_____    
+     |       |     | |       |  |  | |_____| ______| ______| |______ |_____
 
-                            { ~ ~ ~ DEUTSCH ~ ~ ~ }                            
-  Vielen Dank für die Benutzung von phpMussel, einem auf PHP basiertem Script, 
- welches die Signaturen von ClamAV nutzt,um Trojaner, Viren, Malware und andere
-   Bedrohungen in Dateien zu entdecken, die auf Ihr System hochgeladen werden  
-                                    könnten.                                   
-     PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan)    
-
-                                     ~ ~ ~                                     
-
-
+                            { ~ ~ ~ DEUTSCH ~ ~ ~ }
  INHALT
  1. VORWORT
  2A. INSTALLATION (SERVER)
@@ -25,31 +16,51 @@
  7. SIGNATURENFORMAT
  8. BEKANNTE KOMPATIBILITÄTSPROBLEME
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  1. VORWORT
 
- Besonderer Dank geht an ClamAV für die Inspiration und die Signaturen, die    
- dieses Script benutzt, ohne die dieses Script wahrscheinlich nicht existieren 
- würde oder bestenfalls einen sehr begrenzten Wert hätte                       
- <http://www.clamav.net/>.                                                     
+ Vielen Dank für die Benutzung von phpMussel, einem auf PHP basiertem Script,
+ um Trojaner, Viren, Malware und andere Bedrohungen in Dateien zu entdecken,
+ die auf Ihr System hochgeladen werden könnten, welches die Signaturen von
+ ClamAV und andere nutzt.
 
-                                     ~ ~ ~                                     
- Dieses Skript ist freie Software; Sie können Sie weitergeben und/oder         
+ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan).
+
+ Dieses Skript ist freie Software; Sie können Sie weitergeben und/oder
  modifizieren unter den Bedingungen der GNU General Public License, wie von der
- Free Software Foundation veröffentlicht; entweder unter Version 2 der Lizenz  
- oder (nach Ihrer Wahl) jeder späteren Version. Dieses Skript wird in der      
- Hoffnung verteilt, dass es nützlich sein wird, allerdings OHNE JEGLICHE       
- GARANTIE; ohne implizite Garantien für VERMARKTUNG/VERKAUF/VERTRIEB oder FÜR  
- EINEN BESTIMMTEN ZWECK. Lesen Sie die GNU General Public License für weitere  
- Details <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.     
+ Free Software Foundation veröffentlicht; entweder unter Version 2 der Lizenz
+ oder (nach Ihrer Wahl) jeder späteren Version. Dieses Skript wird in der
+ Hoffnung verteilt, dass es nützlich sein wird, allerdings OHNE JEGLICHE
+ GARANTIE; ohne implizite Garantien für VERMARKTUNG/VERKAUF/VERTRIEB oder FÜR
+ EINEN BESTIMMTEN ZWECK. Lesen Sie die GNU General Public License für weitere
+ Details <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
-                                     ~ ~ ~                                     
+ Besonderer Dank geht an ClamAV für die Inspiration und die Signaturen, die
+ dieses Script benutzt, ohne die dieses Script wahrscheinlich nicht existieren
+ würde oder bestenfalls einen sehr begrenzten Wert hätte
+ <http://www.clamav.net/>.
+
+ Besonderer Dank auf Sourceforge für die hosten der Projektdateien, gefunden
+ auf <http://sourceforge.net/projects/phpmussel/>, auf Spambot Security für
+ die phpMussel Diskussionsforen gehostet auf
+ <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, und an den
+ Lieferanten von die zusätzliche Anzahl der durch  Signaturen verwendet
+ phpMussel: SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
+ <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> und anderen,
+ und Besonderer Dank geht an alle diejenigen die Projekt unterstützen werden,
+ an andere Personen nicht erwähnt, und an Sie, für die Verwendung des Script.
+ Für Kommentare, Feedback, Anregungen, Hilfe, technische Unterstützung oder
+ ähnliche, Sie können E-Mail an mich via <phpmussel@gamejaunt.com>,
+ kontaktieren mich via meine Website Kontaktform gefunden auf
+ <http://www.gamejaunt.com/contact.php> oder teilnehmen in der Gemeinschaft
+ Diskussionsforen für phpMussel von Spambot Security. :-)
+
  Dieses Dokument und das zugehörige Paket kann kostenlos von Sourceforge
  heruntergeladen werden <http://sourceforge.net/projects/phpmussel/>.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  2A.INSTALLATION (SERVER)
@@ -121,7 +132,7 @@
     weitere mögliche Arten von Scannern dieses Programms, so sollten Sie diese
     ebenfalls testen, um die ordnungsgemäße Funktion sicherzustellen.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  2B. INSTALLATION (CLI - BEFEHLSZEILENMODUS)
@@ -172,7 +183,7 @@
     führen Sie bitte phpMussel aus und versuchen, das Verzeichnis "_testfiles"
     in diesem Installationspaket zu sannen.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  3A. BENUTZUNG (SERVER)
@@ -225,10 +236,10 @@
    echo $results;
 
    Gibt so etwas wie dies (als eine String):
-    Wed, 18 Sep 2013 02:49:46 +0000 Gestartet.
+    Wed, 16 Sep 2013 02:49:46 +0000 Gestartet.
     > Überprüfung '/user_name/public_html/my_file.html':
     -> Keine Probleme gefunden.
-    Wed, 18 Sep 2013 02:49:47 +0000 Fertig.
+    Wed, 16 Sep 2013 02:49:47 +0000 Fertig.
 
  Eine vollständige Liste der Signaturen, die phpMussel nutzt und wie diese
  verarbeitet werden, finden Sie im Abschnitt SIGNATURENFORMAT.
@@ -276,7 +287,7 @@
  Ihren Einsatzzweck. Für andere Funktionen und Steuermöglichkeiten, die hier
  nicht aufgelistet sind, lesen Sie bitte den Abschnitt BROWSER BEFEHLE.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  3B. BENUTZUNG (CLI - BEFEHLSZEILENMODUS)
@@ -294,7 +305,7 @@
  erkennt nur Viren in den Dateien, die Sie explizit zum Scannen angegeben
  haben.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  4A. BROWSER BEFEHLE
@@ -461,7 +472,7 @@
    Zweck: Gibt den Inhalt der Greylist aus.
    ~
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  4B. CLI (BEFEHLSZEILENMODUS)
@@ -473,7 +484,7 @@
  Um eine Liste der verfügbaren CLI-Befehle zu erhalten, geben Sie in der
  Befehlszeile 'c' ein und bestätigen mit Enter.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  5. IM PAKET ENTHALTENE DATEIEN
@@ -523,6 +534,9 @@
  /_testfiles/ascii_standard_testfile.txt (Testdatei, enthalten)
     Testdatei zur Überprüfung der normierten ASCII-Signaturerkennung.
     ~
+ /_testfiles/coex_testfile.rtf (Testdatei, enthalten)
+    Testdatei zur Überprüfung der Komplex-Erweitert-Signaturerkennung.
+    ~
  /_testfiles/exe_standard_testfile.exe (Testdatei, enthalten)
     Testdatei zur Überprüfung der PE-Signaturerkennung.
     ~
@@ -549,6 +563,9 @@
  /_testfiles/ole_testfile.ole (Testdatei, enthalten)
     Testdatei zur Überprüfung der OLE-Signaturerkennung.
     ~
+ /_testfiles/pdf_standard_testfile.pdf (Testdatei, enthalten)
+    Testdatei zur Überprüfung der PDF-Signaturerkennung.
+    ~
  /_testfiles/pe_sectional_testfile.exe (Testdatei, enthalten)
     Testdatei zur Überprüfung der PE-Sectional-Signaturerkennung.
     ~
@@ -557,6 +574,13 @@
     ~
  /vault/ (Verzeichnis)
     Vault-Verzeichnis (beinhaltet verschiedene Dateien).
+    ~
+ /vault/quarantine/ (Verzeichnis)
+    Quarantäne-Verzeichnis (enthält Dateien in Quarantäne).
+    ~
+ /vault/quarantine/.htaccess (Sonstiges, enthalten)
+    Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien
+    des Scripts vor einem nicht authorisierten Zugriff).
     ~
  /vault/.htaccess (Sonstiges, enthalten)
     Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien
@@ -574,6 +598,14 @@
     Benötigt, wenn die Option "ASCII Signatures" in der phpmussel.ini aktiviert
     ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
     (Dateien werden bei einem Update neu erstellt).
+    ~
+ /vault/coex_clamav.cvd (Signaturen, enthalten)
+ /vault/coex_custom.cvd (Signaturen, enthalten)
+ /vault/coex_mussel.cvd (Signaturen, enthalten)
+    Dateien der Komplex-Erweitert-Signaturen.
+    Benötigt, wenn die Option "Complex Extended" in der phpmussel.ini
+    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
+    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
     ~
  /vault/elf_clamav_regex.cvd (Signaturen, enthalten)
  /vault/elf_clamav_regex.map (Signaturen, enthalten)
@@ -719,6 +751,16 @@
     ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
     (Dateien werden bei einem Update neu erstellt).
     ~
+ /vault/pdf_clamav_standard.cvd (Signaturen, enthalten)
+ /vault/pdf_custom_regex.cvd (Signaturen, enthalten)
+ /vault/pdf_custom_standard.cvd (Signaturen, enthalten)
+ /vault/pdf_mussel_regex.cvd (Signaturen, enthalten)
+ /vault/pdf_mussel_standard.cvd (Signaturen, enthalten)
+    Dateien der PDF-Signaturen.
+    Benötigt, wenn die Option "PDF Signatures" in der phpmussel.ini aktiviert
+    ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
+    (Dateien werden bei einem Update neu erstellt).
+    ~
  /vault/pe_clamav.cvd (Signaturen, enthalten)
  /vault/pe_custom.cvd (Signaturen, enthalten)
  /vault/pe_mussel.cvd (Signaturen, enthalten)
@@ -726,7 +768,6 @@
     Benötigt, wenn die Option "PE Sectional signatures" in der phpmussel.ini
     aktiviert ist. Die Dateien können entfernt werden, wenn die Option
     deaktiviert ist (Dateien werden bei einem Update neu erstellt).
-
     ~
  /vault/phpmussel.inc (Script, enthalten)
     phpMussel Core Script (absolut notwendig)!
@@ -740,6 +781,19 @@
     ~
  /vault/scan_kills.txt *(Logfile, wird erstellt)
     Eine Aufzeichnung aller von phpMussel blockierten Dateiuploads.
+    ~
+ /vault/swf_clamav_regex.cvd (Signaturen, enthalten)
+ /vault/swf_clamav_regex.map (Signaturen, enthalten)
+ /vault/swf_clamav_standard.cvd (Signaturen, enthalten)
+ /vault/swf_clamav_standard.map (Signaturen, enthalten)
+ /vault/swf_custom_regex.cvd (Signaturen, enthalten)
+ /vault/swf_custom_standard.cvd (Signaturen, enthalten)
+ /vault/swf_mussel_regex.cvd (Signaturen, enthalten)
+ /vault/swf_mussel_standard.cvd (Signaturen, enthalten)
+    Dateien der Shockwave-Signaturen.
+    Benötigt, wenn die Option "Shockwave Signatures" in der phpmussel.ini aktiviert
+    ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
+    (Dateien werden bei einem Update neu erstellt).
     ~
  /vault/template.html (Sonstiges, enthalten)
     phpMussel Template file; Template für die HTML-Ausgabe mit der Nachricht,
@@ -812,7 +866,7 @@
     welche nicht von ClamAV stammen.
     ~
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  6. EINSTELLUNGEN
@@ -878,6 +932,52 @@
           infiziert ist.
     "lang"
     - Gibt die Standardsprache für phpMussel an.
+    "quarantine_key"
+    - phpMussel ist in der Lage, Versuche von Datei-Uploads in einem
+      Quarantäne-Verzeichnis zu isolieren, sofern Sie dies tun wollen. Nutzer,
+      die nur daran interessiert sind, ihre Webauftritte oder ihre
+      Hosting-Umgebung zu schützen ohne das Interesse, die markierten Dateien
+      weitergehend zu untersuchen, sollten diese Funktionalität deaktivieren,
+      Nutzer, die diese Dateien zur Ananlyse auf Maleware o.ä. benötigen,
+      sollten diese Funktion aktivieren. Die Isolation von markierten Dateien
+      kann manchmal auch bei der Fehlersuche von Fehlalarmen helfen, wenn dies
+      häufiger bei Ihnen auftritt. Um die Quarantänefunktion zu deaktivieren,
+      lassen Sie die Richtlinie "quarantine_key" leer oder löschen Sie den
+      Inhalt dieser Richtlinie, wenn sie nicht bereits leer ist. Um die
+      Quarantänefunktion zu aktivieren, geben Sie einen Wert ein. Der
+      "quarantine_key" ist ein wichtiges Sicherheitsmerkmal der
+      Quarantänfunktionen, um zu verhindern, dass die Quarantänefunktionen
+      einem Exploit ausgesetzt wird und gespeicherte Daten in der
+      Quarantäneumgebung ausgeführt werden können. Der Wert des
+      "quarantine_key" sollte so behandelt werden, wie Ihre Passwörter: Je
+      länger, desto besser, und halten Sie sie geheim. Optimal in Verbindung
+      mit "delete_on_sight".
+    "quarantine_max_filesize"
+    - Die maximal zulässige Dateigröße von Dateien, die in der Quarantäne
+      isoliert werden sollen. Dateien, die größer sind als der angegebene Wert,
+      werden NICHT im Quarantäneverzeichnis gespeichert. Diese Richtlinie ist
+      wichtig, um es einem potentiellen Angreifer zu erschweren, die Quarantäne
+      -und somit Ihren zugesicherten Speicher auf Ihrem Hostservice- mit
+      unerwünschten Daten zu überfluten. Wert in KB.
+      Standardeinstellung =2048 =2048KB =2MB.
+    "quarantine_max_usage"
+    - Die maximal zulässige Speichernutzung der Quarantäne. Erreicht die
+      Geamtgröße der Dateien in der Quarantäne diesen Wert, werden die ältesten
+      Dateien in der Quarantäne gelöscht, bis der Wert unterschritten wird.
+      Diese Richtlinie ist wichtig, um es einem potentiellen Angreifer zu
+      erschweren, die Quarantäne -und somit Ihren zugesicherten Speicher auf
+      Ihrem Hostservice- mit unerwünschten Daten zu überfluten. Wert in KB.
+      Standardwert =65536 =65536KB =64MB.
+    "honeypot_mode"
+    - Ist der Honeypot-Modus aktiviert, wird phpMussel jede Datei aus dem
+      Dateiupload isolieren, ohne Rücksicht darauf zu nehmen, ob diese Dateien
+      Signaturen enthalten, es findet auch keine weitere Überprüfung statt.
+      Diese Funktionalität dient ausschließlich dem Zweck der Viren
+      -und Malewareforschung, es wird ausdrücklich nicht empfohlen, phpMussel
+      mit dieser Funktion zum Zwecke der Dateiüberprüfung von Uploads oder
+      anderen Zwecken außer "Honeypotting" zu verwenden. Standardmäßig ist
+      diese Funktion deaktiviert.
+      0 = Deativiert [Standardwert], 1 = Aktiviert.
  "signatures" (Kategorie)
  - Konfiguration der Signaturen.
    %%%_clamav = ClamAV-Signaturen (generelle Signaturen und tägliche Updates).
@@ -959,6 +1059,21 @@
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
+   - Scan mit der Komplex-Erweitert-Signaturen?
+     0 = Nein, 1 = Ja [Standardeinstellung].
+     "coex_clamav"
+     "coex_custom"
+     "coex_mussel"
+   - Scan mit der PDF-Signaturen?
+     0 = Nein, 1 = Ja [Standardeinstellung].
+     "pdf_clamav"
+     "pdf_custom"
+     "pdf_mussel"
+   - Scan mit der Shockwave-Signaturen?
+     0 = Nein, 1 = Ja [Standardeinstellung].
+     "swf_clamav"
+     "swf_custom"
+     "swf_mussel"
    - Optionen für das Größenlimit der Übereinstimmungen. Ändern Sie diese Werte
      nur, wenn Sie wissen, was Sie tun. SD = Standardsignaturen. RX = PCRE
      (Perl Compatible Regular Expressions, bzw. "Regex")-Signaturen.
@@ -993,10 +1108,10 @@
      Inhalt von Archiven berücksichtigt.
    "filesize_limit"
    - Begrenzung der Dateigröße in KB. 65536 = 64MB [Standardeinstellung],
-     0 = Keine Begrenzung (wird immer zur Greylist hinzugefügt),
-     jeder (positive) numerische Wert wird akzeptiert. Dies ist nützlich, wenn
-     Ihre PHP-Konfiguration den verfügbaren Speicherverbrauch je Prozess
-     einschränkt oder die Dateigröße von Uploads begrenzt.
+     0 = Keine Begrenzung (wird immer zur Greylist hinzugefügt), jeder
+     (positive) numerische Wert wird akzeptiert. Dies ist nützlich, wenn Ihre
+     PHP-Konfiguration den verfügbaren Speicherverbrauch je Prozess einschränkt
+     oder die Dateigröße von Uploads begrenzt.
    "filesize_response"
    - Handhabung von Dateien, die die Begrenzung der Dateigröße (sofern
      angegeben) überschreiten.
@@ -1143,16 +1258,29 @@
       sobald andere Nicht-Bilddateien hochgeladen werden.
       0 - AUS/OFF, 1 - AN/ON.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  7. SIGNATURENFORMAT
+
+ = DATEINAMEN-SIGNATUREN =
+   Alle Dateinamen-Signaturen besitzen folgendes Format:
+    NAME:FNRX
+   NAME ist der Name, um die Signatur zu benennen und FNRX ist das
+   Regex-Erkennungsmuster zum Vergleich von (nicht codierten) Dateinamen.
 
  = MD5-SIGNATUREN =
    Alle MD5-Signaturen besitzen folgendes Format:
     HASH:FILESIZE:NAME
    HASH ist der MD5-Hash der ganzen Datei, FILESIZE ist die gesamte Größe der
    Datei und NAME ist der Name, um die Signatur zu benennen.
+
+ = ARCHIV-METADATA-SIGNATUREN =
+   Alle Archiv-Metadata-Signaturen besitzen folgendes Format:
+    NAME:FILESIZE:CRC32
+   NAME ist der Name, um die Signatur zu benennen, FILESIZE ist die gesamte
+   Größe (unkomprimiert) einer jeden Datei im Archiv und CRC32 ist die
+   CRC32-Prüfsumme jeder einzelnen Datei im Archiv.
 
  = PE-SECTIONAL MD5-SIGNATUREN =
    Alle PE-Sectional MD5-Signaturen besitzen folgendes Format:
@@ -1166,18 +1294,14 @@
    HASH ist der MD5-Hash der ganzen Datei, FILESIZE ist die gesamte Größe der
    Datei und TYPE ist der Signaturtypen die Datei ist immun gegen.
 
- = DATEINAMEN-SIGNATUREN =
-   Alle Dateinamen-Signaturen besitzen folgendes Format:
-    NAME:FNRX
-   NAME ist der Name, um die Signatur zu benennen und FNRX ist das
-   Regex-Erkennungsmuster zum Vergleich von (nicht codierten) Dateinamen.
-
- = ARCHIV-METADATA-SIGNATUREN =
-   Alle Archiv-Metadata-Signaturen besitzen folgendes Format:
-    NAME:FILESIZE:CRC32
-   NAME ist der Name, um die Signatur zu benennen, FILESIZE ist die gesamte
-   Größe (unkomprimiert) einer jeden Datei im Archiv und CRC32 ist die
-   CRC32-Prüfsumme jeder einzelnen Datei im Archiv.
+ = KOMPLEX-ERWEITERT-SIGNATUREN =
+   Complex Extended signatures are rather different to the other types of
+   signatures possible with phpMussel, in that what they are matching against
+   is specified by the signatures themselves and they can match against
+   multiple criteria. The match criterias are delimited by ";" and the match
+   type and match data of each match criteria is delimited by ":" as so that
+   format for these signatures tends to look a bit like:
+    $variable1:SOMEDATA;$variable2:SOMEDATA;SignatureName
 
  = ALLE SONSTIGEN SIGNATUREN =
    Alle sonstigen Signaturen besitzen folgendes Format:
@@ -1218,43 +1342,50 @@
  = AUFSCHLÜSSELUNG DER SIGNATUREN =
    Im Folgenden eine Aufschlüsselung der Signaturen, die von phpMussel genutzt
    werden:
-   - "MD5-Signaturen" (md5_*). Überprüft mittels MD5-Hash des Inhalts und der
-      Dateigröße jede Datei, die nicht in der Whitelist aufgeführt ist und
-      überprüft werden soll.
-   - "Allgemeine Signaturen" (general_*). Überprüft den Inhalt jeder Datei, die
-      nicht in der Whitelist aufgeführt ist und überprüft werden soll.
    - "Normierten ASCII-Signaturen" (ascii_*). Überprüft den Inhalt jeder Datei,
       die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
-   - "Normierten HTML-Signaturen" (html_*). Überprüft den Inhalt jeder
-      HTML-Datei, die nicht in der Whitelist aufgeführt ist und überprüft
-      werden soll.
-   - "Allgemeine Befehle" (hex_general_commands.csv). Überprüft den Inhalt
-      jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft
-      werden soll.
-   - "Portable Executable Sectional Signaturen" (pe_*). Überprüft mittels
-      MD5-Hash des PE-Sektionen und der Dateigröße jeder Datei, die nicht in
-      der Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format
+   - "ELF-Signaturen" (elf_*). Überprüft den Inhalt jeder Datei, die nicht in
+      der Whitelist aufgeführt ist und überprüft werden soll und dem ELF-Format
       entspricht.
    - "Portable Executable Signaturen" (exe_*). Überprüft den Inhalt jeder
       Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden
       soll und dem PE-Format entspricht.
-   - "ELF-Signaturen" (elf_*). Überprüft den Inhalt jeder Datei, die nicht in
-      der Whitelist aufgeführt ist und überprüft werden soll und dem ELF-Format
-      entspricht.
+   - "Dateinamen-Signaturen" (filenames_*). Überprüft die Dateinamen jeder
+      Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden
+      soll.
+   - "Allgemeine Signaturen" (general_*). Überprüft den Inhalt jeder Datei, die
+      nicht in der Whitelist aufgeführt ist und überprüft werden soll.
    - "Grafiksignaturen" (graphics_*). Überprüft den Inhalt jeder Datei, die
       nicht in der Whitelist aufgeführt ist und überprüft werden soll und einem
       bekannten Bildformat entspricht.
+   - "Allgemeine Befehle" (hex_general_commands.csv). Überprüft den Inhalt
+      jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft
+      werden soll.
+   - "Normierten HTML-Signaturen" (html_*). Überprüft den Inhalt jeder
+      HTML-Datei, die nicht in der Whitelist aufgeführt ist und überprüft
+      werden soll.
    - "Mach-O-Signaturen" (macho_*). Überprüft den Inhalt jeder Datei, die nicht
       in der Whitelist aufgeführt ist und überprüft werden soll und dem
       Mach-O-Format entspricht.
+   - "Email-Signaturen" (mail_*). Überprüft mittels der Funktion
+      phpMussel_mail() die Variable $body von E-Mail-Nachrichten oder ähnlichen
+      Einträgen (Foreneinträge etc.).
+   - "MD5-Signaturen" (md5_*). Überprüft mittels MD5-Hash des Inhalts und der
+      Dateigröße jede Datei, die nicht in der Whitelist aufgeführt ist und
+      überprüft werden soll.
    - "Archiv-Metadata-Signaturen" (metadata_*). Überprüft die CRC32-Prüfsumme
       und Dateigröße der ersten Datei in jedem Archiv, welches nicht in der
       Whitelist aufgeführt ist und überprüft werden soll.
    - "OLE-Signaturen" (ole_*). Überprüft den Inhalt jeder Objekten, die nicht
       in der Whitelist aufgeführt ist.
-   - "Email-Signaturen" (mail_*). Überprüft mittels der Funktion
-      phpMussel_mail() die Variable $body von E-Mail-Nachrichten oder ähnlichen
-      Einträgen (Foreneinträge etc.).
+   - "PDF-Signaturen" (pdf_*). Überprüft den Inhalt jeder PDF-Dateien, die
+      nicht in der Whitelist aufgeführt ist.
+   - "Portable Executable Sectional Signaturen" (pe_*). Überprüft mittels
+      MD5-Hash des PE-Sektionen und der Dateigröße jeder Datei, die nicht in
+      der Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format
+      entspricht.
+   - "SWF-Signaturen" (swf_*). Überprüft den Inhalt jeder Shockwave-Dateien,
+      die nicht in der Whitelist aufgeführt ist.
    - "Whitelist-Signaturen" (whitelist_*). Überprüft mittels MD5-Hash des
       Inhalts und der Dateigröße jede Datei. Abgestimmt Dateien werden immun
       gegen die von der Art der Signaturen in der Whitelist-Eintrag.
@@ -1264,7 +1395,7 @@
    (Beachten Sie, dass jede dieser Signaturen auf einfache Weise in der
     phpmussel.ini deaktiviert werden kann).
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  8. BEKANNTE KOMPATIBILITÄTSPROBLEME
@@ -1289,9 +1420,9 @@
  vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen
  überlegen.
 
- Diese Informationen wurden zuletzt am 2014.10.28 aktualisiert und gelten für
+ Diese Informationen wurden zuletzt am 2014.11.16 aktualisiert und gelten für
  alle phpMussel Veröffentlichungen von der beiden letzten Nebenversionen
- (v0.4-v0.5) zu diesem Zeitpunkt.
+ (v0.5-v0.6) zu diesem Zeitpunkt.
 
  Ad-Aware                Keine bekannten Probleme
  Agnitum                 Keine bekannten Probleme
@@ -1345,8 +1476,8 @@
  ViRobot                 Keine bekannten Probleme
 
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
-Zuletzt aktualisiert: 2014.10.28
+Zuletzt aktualisiert: 2014.11.21
 EOF

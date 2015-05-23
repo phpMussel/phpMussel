@@ -1,17 +1,8 @@
-      _____  _     _  _____  _______ _     _ _______ _______ _______           
+      _____  _     _  _____  _______ _     _ _______ _______ _______
  <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
-     |       |     | |       |  |  | |_____| ______| ______| |______ |_____    
+     |       |     | |       |  |  | |_____| ______| ______| |______ |_____
 
-                        { ~ ~ ~ BAHASA INDONESIA ~ ~ ~ }                       
- Terima kasih untuk menggunakan phpMussel, sebuah script php berdasarkan tanda 
-    tangan ClamAV di design untuk mendeteksi trojan-trojan, virus-virus dan    
- serangan-serangan lainnya dalam data-data diupload ke system anda dimana saja 
-                               script di kaitkan.                              
-     PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPL V.2 oleh Caleb M (Maikuolan)
-
-                                     ~ ~ ~                                     
-
-
+                        { ~ ~ ~ BAHASA INDONESIA ~ ~ ~ }
  ISI
  1. SEPATAH KATA
  2A. BAGAIMANA CARA MENGINSTALL (UNTUK SERVER WEB)
@@ -25,30 +16,50 @@
  7. FORMAT TANDA TANGAN
  8. MASALAH KOMPATIBILITAS DIKETAHUI
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  1. SEPATAH KATA
 
- Terima kasih khususnya untuk ClamAV buat inspirasi project dan tanda tangan   
- dimana script ini menggunakan ClamAV, tanpa nya script ini tidak akan ada,    
- atau akan mengalami nilai yang kurang baik <http://www.clamav.net/>.          
+ Terima kasih untuk menggunakan phpMussel, sebuah script php di-design untuk
+ mendeteksi trojan-trojan, virus-virus dan serangan-serangan lainnya dalam
+ file-file diupload ke system Anda dimana saja script di kaitkan, berdasarkan
+ tanda tangan dari ClamAV dan lain-lain.
 
-                                     ~ ~ ~                                     
- Script ini adalah perangkat lunak gratis; anda dapat mendistribusikan kembali 
- dan/atau memodifikasinya dalam batasan dari GNU General Public License,       
- seperti di publikasikan dari Free Software Foundation; baik versi 2 dari      
- License, atau (dalam opsi anda) versi selanjutnya apapun. Script ini          
- didistribusikan untuk harapan dapat digunakan tapi TANPA JAMINAN; tanpa       
- walaupun garansi dari DIPERJUALBELIKAN atau KECOCOKAN UNTUK TUJUAN TERTENTU.  
- Mohon Lihat GNU General Public Licence untuk lebih detail                     
- <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.             
+ PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPL V.2 oleh Caleb M (Maikuolan).
 
-                                     ~ ~ ~                                     
+ Script ini adalah perangkat lunak gratis; Anda dapat mendistribusikan kembali
+ dan/atau memodifikasinya dalam batasan dari GNU General Public License,
+ seperti di publikasikan dari Free Software Foundation; baik versi 2 dari
+ License, atau (dalam opsi Anda) versi selanjutnya apapun. Script ini
+ didistribusikan untuk harapan dapat digunakan tapi TANPA JAMINAN; tanpa
+ walaupun garansi dari DIPERJUALBELIKAN atau KECOCOKAN UNTUK TUJUAN TERTENTU.
+ Mohon Lihat GNU General Public Licence untuk lebih detail
+ <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
+
+ Terima kasih khususnya untuk ClamAV buat inspirasi project dan tanda tangan
+ dimana script ini menggunakan ClamAV, tanpa nya script ini tidak akan ada,
+ atau akan mengalami nilai yang kurang baik <http://www.clamav.net/>.
+
+ Khusus terima kasih kepada Sourceforge untuk menghost file proyek, terletak di
+ <http://sourceforge.net/projects/phpmussel/>, kepada Spambot Security untuk
+ menghost forum diskusi phpMussel, terletak di
+ <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, dan kepada
+ sumber-sumber tambahan tanda tangan dimanfaatkan oleh phpMussel:
+ SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
+ <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> dan lain-lain,
+ dan khusus terima kasih kepada semua orang yang mendukung proyek, kepada orang
+ lain bahwa saya mungkin telah dinyatakan lupa untuk menyebutkan, dan kepada
+ Anda, untuk menggunakan script. Untuk komentar, saran, bantuan, dukungan
+ teknis atau serupa, Anda bisa email saya via <phpmussel@gamejaunt.com>,
+ hubungi saya melalui website kontak form yang terletak di
+ <http://www.gamejaunt.com/contact.php> atau berpartisipasi dalam komunitas
+ diskusi forum untuk phpMussel diselenggarakan oleh Spambot Security. :-)
+
  Dokumen ini dan paket yang terhubung di dalamnya dapat di unduh secara gratis
  dari Sourceforge <http://sourceforge.net/projects/phpmussel/>.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  2A. BAGAIMANA CARA MENGINSTALL (UNTUK SERVER WEB)
@@ -58,18 +69,18 @@
  kemudian, ikuti instruksi-instruksi ini untuk mendapatkan phpMussel bekerja
  pada *banyak system dan CMS:
 
- 1) Dengan membaca ini, Saya asumsikan anda telah mengunduh dan menyimpan copy
-    dari script, membuka data terkompres dan isinya dan anda meletakkannya pada
-    mesin komputer lokal anda. Dari sini, anda akan latihan di mana di host
-    anda atau CMS anda untuk meletakkan isi data terkompres nya. Sebuah
+ 1) Dengan membaca ini, Saya asumsikan Anda telah mengunduh dan menyimpan copy
+    dari script, membuka data terkompres dan isinya dan Anda meletakkannya pada
+    mesin komputer lokal Anda. Dari sini, Anda akan latihan di mana di host
+    Anda atau CMS Anda untuk meletakkan isi data terkompres nya. Sebuah
     direktori seperti /public_html/phpmussel/ atau yang lain (walaupun tidak
-    masalah anda memilih direktori apa, selama dia aman dan di mana pun yang
-    anda senangi) akan mencukupi. Sebelum anda mulai upload, mohon baca dulu..
+    masalah Anda memilih direktori apa, selama dia aman dan di mana pun yang
+    Anda senangi) akan mencukupi. Sebelum Anda mulai upload, mohon baca dulu..
 
  2) Buka data "phpmussel.php", lihat baris dengan kata "$vault=" dan gantikan
     kata di antara tanda dengan lokasi asli dari direktori "vault" dari
-    phpMussel. Anda akan mendapati direktori dari data terkompres yang anda
-    telah unduh. (kecuali anda sedang mengubah script secara keseluruhan, anda
+    phpMussel. Anda akan mendapati direktori dari data terkompres yang Anda
+    telah unduh. (kecuali Anda sedang mengubah script secara keseluruhan, Anda
     perlu mempertahankan data dan struktur direktori yang sama dengan yang
     aslinya) direktori "vault" harusnya satu level direktori di bawah
     "phpmussel.php" berada. Simpan data dan tutup.
@@ -79,20 +90,20 @@
     "phpmussel.ini" (berada di dalam "vault") - Data ini berisikan semua opsi
     operasional yang tersedia untuk phpMussel. Di atas tiap opsi seharusnya ada
     komentar tegas menguraikan tentang apa yang dilakukan dan untuk apa. Atur
-    opsi-opsi ini seperti anda lihat cocok, seperti apapun yang cocok untuk
+    opsi-opsi ini seperti Anda lihat cocok, seperti apapun yang cocok untuk
     setup tertentu. Simpan data, tutup.
 
  4) Upload isi (phpMussel dan data-datanya) ke direktori yang telah kamu
     putuskan sebelumnya (anda tidak memerlukan data readme.XX.txt atau
-    change_log.txt yang termasuk tapi kebanyakan anda harus mengupload
+    change_log.txt yang termasuk tapi kebanyakan Anda harus mengupload
     semuanya).
 
  5) Gunakan perinta CHMOD ke direktori "vault" dengan "777". Direktori utama
-    menyimpan isinya (yang anda putuskan sebelumnya), umumnya dapat di biarkan
+    menyimpan isinya (yang Anda putuskan sebelumnya), umumnya dapat di biarkan
     sendirian, tapi status perintah "CHMOD" seharusnya di cek jika kamu punya
-    izin di system anda (defaultnya, seperti "755").
+    izin di system Anda (defaultnya, seperti "755").
 
- 6) Selanjutnya anda perlu menghubungkan phpMussel ke system atau CMS. Ada
+ 6) Selanjutnya Anda perlu menghubungkan phpMussel ke system atau CMS. Ada
     beberapa cara yang berbeda untuk menghubungkan script seperti phpMussel ke
     system atau CMS, tetapi yang paling mudah adalah memasukkan script pada
     permulaan dari data murni dari system atau CMS ( satu yang akan secara umum
@@ -113,15 +124,15 @@
  7) Pada point ini, kamu telah selesai! Bagaimanapun, kamu mungkin seharusnya
     mencobanya untuk melihat dia bekerja dengan dengan baik. Untuk mencoba data
     keamanan upload, coba mengupload data-data testing yang dimasukkan dalam
-    paket di "_testfiles" ke website anda melalui metode upload di browser
-    anda. Jika semua bekerja dengan baik, sebuah pesan akan muncul dari
+    paket di "_testfiles" ke website Anda melalui metode upload di browser
+    Anda. Jika semua bekerja dengan baik, sebuah pesan akan muncul dari
     phpMussel mengkonfirmasikan bahwa upload sudah sukses di blok. Jika tidak
-    ada yang terjadi, ada sesuatu yang tidak bekerja dengan baik. Jika anda
-    menggunakan fitur-fitur lanjut atau jika anda menggunakan tipe-tipe yang
+    ada yang terjadi, ada sesuatu yang tidak bekerja dengan baik. Jika Anda
+    menggunakan fitur-fitur lanjut atau jika Anda menggunakan tipe-tipe yang
     lain untuk memeriksa mungkin dengan alat-alat itu, saya sarankan mencoba
     dengan nya untuk memastikan dia bekerja seperti yang diharapkan juga.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  2B. BAGAIMANA CARA MENGINSTALL (untuk CLI)
@@ -133,19 +144,19 @@
  Windows; Linux dan system-system yang lain akan di persiapkan pada versi
  selanjutnya dari phpMussel):
 
- 1) Dengan membaca ini, Saya asumsikan anda telah mengunduh data terkompres nya
-    dan menguraikan isi nya pada mesin komputer lokal anda. Setelah anda telah
+ 1) Dengan membaca ini, Saya asumsikan Anda telah mengunduh data terkompres nya
+    dan menguraikan isi nya pada mesin komputer lokal Anda. Setelah Anda telah
     memilih lokasi dari phpMussel, lanjutkan.
 
  2) phpMussel memerlukan php untuk diinstall pada mesin host untuk
-    mengeksekusinya. Jika anda tidak memiliki php pada mesin anda, ikuti
+    mengeksekusinya. Jika Anda tidak memiliki php pada mesin Anda, ikuti
     instruksi yang di supply oleh installer php.
 
  3) Buka "phpmussel.php", cari baris dimulai dengan "$vault=" dan gantukan
     kata-kata di antara tanda kutip berikut dengan lokasi sebenarnya dari
     direktori "vault" dari phpMussel. Anda akan telah melihat sebuah direktori
-    dari file terkompres yang telah didownload. (Jika anda tidak telah mengkode
-    ulang keseluruhan script, anda perlu memelihara data yang sama dan struktur
+    dari file terkompres yang telah didownload. (Jika Anda tidak telah mengkode
+    ulang keseluruhan script, Anda perlu memelihara data yang sama dan struktur
     direktori seperti di dalam file terkompres). Direktori "vault" ini
     seharusnya satu direktori di bawah direktori berisikan "phpmussel.php".
     Simpan data dan tutup.
@@ -155,41 +166,41 @@
     "phpmussel.ini" (terletak di dalam "vault") - file ini berisikan semua opsi
     operasional dari phpMussel. Diatas tiap-tiap opsi seharusnya ada komentar
     tegas menguraikan apa yang dilakukan dan untuk apa. Atur opsi ini sampai
-    anda melihat cocok, yang cocok untuk setup tertentu. Simpan data dan tutup.
+    Anda melihat cocok, yang cocok untuk setup tertentu. Simpan data dan tutup.
 
  5) (Opsional) Anda dapat menggunakan phpMussel di dalam mode CLI untuk diri
-    anda sendiri dengan menciptakan file batch untuk secara automatis memuat
+    Anda sendiri dengan menciptakan file batch untuk secara automatis memuat
     php dan phpMussel. Untuk melakukannya, buka sebuah text editor kosong
     seperti Notepad atau Notepad++, ketikkan jalur dari data "php.exe" di dalam
-    direktori dari instalasi php anda, diikuti spasi, diikuti dengan jalur
+    direktori dari instalasi php Anda, diikuti spasi, diikuti dengan jalur
     lengkap dari data "phpmussel.php" di dalam direktori dari instalasi
-    phpMussel, simpan data dengan ekstensi ".bat" di simpan di tempat yang anda
+    phpMussel, simpan data dengan ekstensi ".bat" di simpan di tempat yang Anda
     mudah temukan dan klik dua kali pada data itu untuk menjalankan phpMussel
     di masa yang akan datang.
 
- 6) Pada point ini, anda selesai! Bagaimanapun anda seharusnya mencobanya untuk
+ 6) Pada point ini, Anda selesai! Bagaimanapun Anda seharusnya mencobanya untuk
     memastikan berjalan dengan lancar. Untuk mencek phpMussel, jalankan
     phpMussel dan coba pindai "_testfiles" direktori yang disediakan dengan ini
     paket.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  3A. BAGAIMANA CARA MENGGUNAKAN (UNTUK SERVER WEB)
 
  phpMussel dimaksudkan sebagai sebuah script yang akan berfungsi dengan baik
- dengan keperluan yang minimum dari sisi anda: Sekali dia telah terinstall,
+ dengan keperluan yang minimum dari sisi Anda: Sekali dia telah terinstall,
  pada dasarnya, dia seharusnya bekerja.
 
  Memindai upload data secara automatis dan di mungkinkan secara default, jadi
- tidak ada yang diperlukan pada anda untuk fungsi ini.
+ tidak ada yang diharuskan pada Anda untuk fungsi ini.
 
- Bagaimanapun anda juga bisa menginstruksikan phpMussel untuk memindai data,
- direktori atau arsip yang anda spesifikasikan. Untuk melakukannya,
- pertama-tama anda harus memastikan konfigurasi yang cocok di set di data
+ Bagaimanapun Anda juga bisa menginstruksikan phpMussel untuk memindai data,
+ direktori atau arsip yang Anda spesifikasikan. Untuk melakukannya,
+ pertama-tama Anda harus memastikan konfigurasi yang cocok di set di data
  phpmussel.ini (cleanup harus dinon aktifkan) dan ketika selesai, di sebuah
  data php yang di hubungkan ke phpMussel, gunakan fungsi berikut pada kode
- anda:
+ Anda:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
@@ -198,7 +209,7 @@
    target atau array data target dan/atau direktori target.
  - $output_type adalah sebuah integer, mengindikasikan format dimana hasil dari
    memindai yang dikembalikan (sebuah hasil dari -2 mengindikasikan bahwa data
-   corrupt dideteksi selama proses memindai dan proses memindai gagal selesai,
+   korup dideteksi selama proses memindai dan proses memindai gagal selesai,
    -1 mengindikasikan bawa ekstensi atau addon yang dibutuhkan oleh php untuk
    mengeksekusi pemindaian hilang dan demikian gagal selesai, 0 mengindikasikan
    bahwa pemindaian target tidak ada dan tidak ada yang dipindai 1
@@ -222,23 +233,23 @@
    echo $results;
 
    Menghasilkan seperti ini (sebagai kata-kata):
-    Wed, 18 Sep 2013 02:49:46 +0000 Dimulai.
+    Wed, 16 Sep 2013 02:49:46 +0000 Dimulai.
     > Memeriksa '/user_name/public_html/my_file.html':
-    -> Tidak ada masalah yang diketahui.
-    Wed, 18 Sep 2013 02:49:47 +0000 Selesai.
+    -> Tidak masalah.
+    Wed, 16 Sep 2013 02:49:47 +0000 Selesai.
 
  Untuk sebuah pemecahan penuh dari jenis tanda tangan phpMussel yang digunakan
  selama pemindaian dan bagaimana dia memegang tanda tangan-tanda tangan ini,
  mencocokkan ke format tanda tangan dari data README.
 
- Jika anda menjumpai bilangan positif yang salah, jika anda menemukan hal baru
+ Jika Anda menjumpai bilangan positif yang salah, jika Anda menemukan hal baru
  yang harus di blok atau untuk apapun dalam tanda tangan mohon hubungi saya
  mengenainya sehingga saya boleh membuat perubahan yang perlu, dimana, jika
- anda tidak menghubungi saya saya tidak tahu.
+ Anda tidak menghubungi saya saya tidak tahu.
 
  Untuk menonaktifkan tanda tangan-tanda tangan yang dimasukkan dalam phpMussel
- (seperti jika anda berpengalaman sebuah angka positif yang salah untuk tujuan
- anda yang seharusnya secara normal di hapus dari aliran), mencocokkan ke
+ (seperti jika Anda berpengalaman sebuah angka positif yang salah untuk tujuan
+ Anda yang seharusnya secara normal di hapus dari aliran), mencocokkan ke
  catatan berwarna abu-abu didalam perintah browser dari data README.
 
  Sebagai tambahan dari data default mengupload pemindaian dan pemindaian
@@ -248,7 +259,7 @@
  dengan standard fungsi phpMussel(), tetapi satu-satunya berfokus untuk
  mencocokkan pada tanda tangan ClamAV. Saya belum mengikat tanda tangan-tanda
  tangan ini ke dalam standard fungsi phpMussel(), karena sepertinya tidak akan
- pernah anda menemukan body dari pesan email masuk untuk pemindaian di dalam
+ pernah Anda menemukan body dari pesan email masuk untuk pemindaian di dalam
  sebuah data upload yang ditargetkan untuk sebuah halaman dimana phpMussel
  dihubungkan, dan kemudian untuk mengikat tanda tangan ini ke dalam fungsi
  phpMussel yang akan redundan. Bagaimanapun seperti dibicarakan memiliki
@@ -258,20 +269,20 @@
  email mereka melalui script php dari mana mereka dapat dengan potensial
  dikaitkan dengan phpMussel. Konfigurasi untuk fungsi ini, seperti yang lain,
  di atur melalui data phpmussel.ini. Untuk menggunakan fungsi ini (Anda akan
- memerlukan untuk melakukan implementasi anda sendiri), di dalam sebuah data
+ memerlukan untuk melakukan implementasi Anda sendiri), di dalam sebuah data
  php yang di kaitkan ke phpMussel, gunakan fungsi ini di dalam kode:
 
  phpMussel_mail($body);
 
- Dimana $body adalah body dari pesan email yang anda ingin scan (sebagai
- tambahan anda dapat mencoba memindai post forum terbaru, pesan masuk dari form
+ Dimana $body adalah body dari pesan email yang Anda ingin scan (sebagai
+ tambahan Anda dapat mencoba memindai post forum terbaru, pesan masuk dari form
  kontak online atau sejenisnya). Jika ada error terjadi mencegah fungsi ini
  selesai memindai, nilai -1 akan dihasilkan. Jika fungsi selesai memindai dan
  tidak cocok dengan apapun, nilai 0 akan dikembalikan (berarti bersih). Jika,
  bagaimanapun fungsi tidak cocok dengan apapun, sebuah string akan dihasilkan
  berisikan sebuah pesan mendeklarasikan apa yang dicocokkannya.
 
- Sebagai tambahan, jika anda melihat kode, anda boleh melihat fungsi
+ Sebagai tambahan, jika Anda melihat kode, Anda boleh melihat fungsi
  phpMusselD() dan phpMusselR(). fungsi-fungsi ini adalah sub fungsi dari
  phpMussel(), dan seharusnya tidak di namakan secara langsung di luar dari
  fungsi parent (tidak karena efek-efek adverse.. Lebih lagi, sederhananya
@@ -279,11 +290,11 @@
  dengan baik).
 
  Ada banyak kontrol-kontrol dan fungsi-fungsi tersedia di dalam phpMussel untuk
- penggunaan anda juga. Untuk kontrol-kontrol dan fungsi-fungsi yang dalam akhir
+ penggunaan Anda juga. Untuk kontrol-kontrol dan fungsi-fungsi yang dalam akhir
  seksi READMI yang belum didokumentasikan mohon teruskan membaca dan merefer
  dari perintah seksi Browser dari data README.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  3B. BAGAIMANA CARA MENGGUNAKAN (UNTUK CLI)
@@ -299,145 +310,145 @@
 
  Mohon diingat bahwa phpMussel tidak sama dengan anti virus dan tidak seperti
  anti virus, tidak memonitor memori aktif atau mendeteksi virus secara
- langsung. phpMussel Hanya mendeteksi virus dalam data-data yang anda
+ langsung. phpMussel Hanya mendeteksi virus dalam data-data yang Anda
  perintahkan untuk dipindai.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  4A. PERINTAH-PERINTAH BROWSER
 
- Sekali phpMussel telah diinstal dan dengan benar berfungsi pada sistem anda,
- jika anda telah menset variabel script_password dan logs_password di dalam
- data konfigurasi anda, anda akan dapat melakukan sejumlah fungsi administratif
- dan memasukkan beberapa perintah ke phpMussel melalui browser anda. Alasannya
+ Sekali phpMussel telah diinstal dan dengan benar berfungsi pada sistem Anda,
+ jika Anda telah menset variabel script_password dan logs_password di dalam
+ data konfigurasi Anda, Anda akan dapat melakukan sejumlah fungsi administratif
+ dan memasukkan beberapa perintah ke phpMussel melalui browser Anda. Alasannya
  sandi-sandi harus di set untuk memungkinkan kontrol-kontrol dari sisi browser
  adalah untuk meyakinkan keamanan yang teratur, perlindungan teratur dari
  kontrol dari sisi browser dan memastikan bahwa ada cara untuk kontrol-kontrol
- untuk semuanya dinonaktifkan jika tidak diinginkan oleh anda dan/atau
+ untuk semuanya dinonaktifkan jika tidak diinginkan oleh Anda dan/atau
  webmaster/administrator menggunakan melalui phpMussel. Jadi dengan kata lain,
  untuk memungkinkan kontrol-kontrol ini, menset sandi dan menonaktifkan
- kontrol-kontrol ini, set tidak ada password. Alternatif lain, jika anda
+ kontrol-kontrol ini, set tidak ada password. Alternatif lain, jika Anda
  memilih memungkinkan kontrol-kontrol ini dan kemudian memilih untuk
  menonaktifkan kontrol ini pada hari yang lain, ada perintah untuk melakukan
- ini (yang mana yang berguna jika anda melakukan beberapa aksi yang anda rasa
+ ini (yang mana yang berguna jika Anda melakukan beberapa aksi yang Anda rasa
  dapat secara potensial berkompromi dengan password terdelegasi dan perlu untuk
  dengan cepat menonaktifkan kontrol-kontrol ini tanpa memodifikasi data
- konfigurasi anda).
+ konfigurasi Anda).
 
- Beberapa alasan mengapa anda -seharusnya- mengaktifkan kontrol-kontrol ini:
+ Beberapa alasan mengapa Anda -seharusnya- mengaktifkan kontrol-kontrol ini:
  - Menyediakan jalan untuk mewarnai biru tanda tangan secara langsung di dalam
-   instansi-instansi seperti ketika anda menemukan sebuah tanda tangan yang
+   instansi-instansi seperti ketika Anda menemukan sebuah tanda tangan yang
    memproduksi sebuah angka positif yang salah selama mengupload file ke sistem
-   anda dan anda tidak punya waktu untuk secara manual mengedit dan mengupload
-   ulang data greylist anda.
- - Menyediakan sebuah jalan untuk anda mengizinkan seseorang lain dari anda
+   Anda dan Anda tidak punya waktu untuk secara manual mengedit dan mengupload
+   ulang data greylist Anda.
+ - Menyediakan sebuah jalan untuk Anda mengizinkan seseorang lain dari Anda
    untuk mengatur kopi dari phpMussel tanpa keperluan implisit untuk memberi
    hak akses ke FTP.
- - Menyediakan sebuah cara untuk menyediakan akses terkontrol ke data log anda.
+ - Menyediakan sebuah cara untuk menyediakan akses terkontrol ke data log Anda.
  - Menyediakan cara yang mudah untuk mengubah phpMussel ketika update tersedia.
- - Menyediakan cara untuk anda untuk memonitor phpMussel ketika FTP akses atau
+ - Menyediakan cara untuk Anda untuk memonitor phpMussel ketika FTP akses atau
    akses poin konvensional untuk memonitor phpMussel tidak tersedia.
 
- Beberapa alasan mengapa anda seharusnya -tidak- mengaktifkan kontrol-kontrol
+ Beberapa alasan mengapa Anda seharusnya -tidak- mengaktifkan kontrol-kontrol
  ini:
  - Menyediakan sebuah vektor untuk penyerang potensial dan tidak diharapkan
-   untuk menentukan apakah anda menggunakan phpMussel atau tidak (walaupun,
+   untuk menentukan apakah Anda menggunakan phpMussel atau tidak (walaupun,
    ini dapat menjadi alasan mengapa atau alasan perdebatan, bergantung pada
    perspektif) dengan cara buta mengirim perintah ke server dalam penyelidikan.
    Dalam cara lain, ini dapat menghalangi penyerang dari menargetkan sistem
-   anda jika mereka belajar bahwa anda menggunakan phpMussel, asumsi jika
+   Anda jika mereka belajar bahwa Anda menggunakan phpMussel, asumsi jika
    mereka menyelidiki karena serangan mereka dialirkan tidak efektif karena
    menggunakan phpMussel. Bagaimanapun, pada cara lain, jika beberapa tidak
    terlihat dan eksploitasi yang tidak diketahui di dalam phpMussel atau versi
    selanjutnya akan ada cahaya, dan jika dapat secara potensial menyediakan
    sebuah vektor serangan, sebuah hasil positif dari penyelidikan dapat
-   mendorong penyerang menargetkan sistem anda.
- - Jika sandi delegasi anda pernah dikompromikan atau diubah dapat menyediakan
+   mendorong penyerang menargetkan sistem Anda.
+ - Jika sandi delegasi Anda pernah dikompromikan atau diubah dapat menyediakan
    sebuah cara untuk penyerang membypass tanda tangan apapun mungkin jika tidak
    secara normal menghindari serangan mereka dari kesuksesan, atau juga secara
    potensial menonaktifkan phpMussel bersamaan, juga menyediakan sebuah cara
    untuk mengalirkan keefektifan dari phpMussel yang dibicarakan.
 
- Cara lain, tanpa bergantung dengan apa yang anda pilih, pilihan adalah milik
- anda. Secara default, kontrol-kontrol ini akan dinonaktifkan, tapi harus
- berpikir tentang nya, dan jika anda memutuskan untuk menginginkannya, seksi
+ Cara lain, tanpa bergantung dengan apa yang Anda pilih, pilihan adalah milik
+ Anda. Secara default, kontrol-kontrol ini akan dinonaktifkan, tapi harus
+ berpikir tentang nya, dan jika Anda memutuskan untuk menginginkannya, seksi
  ini akan menjelaskan tentang cara mengaktifkan dan menggunakannya.
 
  Daftar dari perintah-perintah dari sisi browser:
 
  scan_log
-   Sandi diperlukan: logs_password
+   Sandi diharuskan: logs_password
    Keperluan lain: scan_log harus didefinisikan.
-   Parameter-parameter yang diperlukan: (tidak ada)
+   Parameter-parameter yang diharuskan: (tidak ada)
    Parameter-parameter opsional: (tidak ada)
    Contoh: ?logspword=[logs_password]&phpmussel=scan_log
    ~
    Apa yang dilakukan: Mencetak isi dari data scan_log ke layar.
    ~
  scan_kills
-   Sandi diperlukan: logs_password
+   Sandi diharuskan: logs_password
    Keperluan lain: scan_kills harus didefinisikan.
-   Parameter-parameter yang diperlukan: (tidak ada)
+   Parameter-parameter yang diharuskan: (tidak ada)
    Parameter-parameter opsional: (tidak ada)
    Contoh: ?logspword=[logs_password]&phpmussel=scan_kills
    ~
    Apa yang dilakukan: Mencetak isi dari data scan_kills ke layar.
    ~
  controls_lockout
-   Sandi diperlukan: logs_password ATAU script_password
+   Sandi diharuskan: logs_password ATAU script_password
    Keperluan lain: (tidak ada)
-   Parameter-parameter yang diperlukan: (tidak ada)
+   Parameter-parameter yang diharuskan: (tidak ada)
    Parameter-parameter opsional: (tidak ada)
    Contoh 1: ?logspword=[logs_password]&phpmussel=controls_lockout
    Contoh 2: ?pword=[script_password]&phpmussel=controls_lockout
    ~
    Apa yang dilakukannya: Menonaktifkan ("Mengunci") semua kontrol dari sisi
-                          browser. Ini seharusnya digunakan jika anda menyangka
+                          browser. Ini seharusnya digunakan jika Anda menyangka
                           bahwa sandi-dandi telah dikompromikan (ini dapat
-                          terjadi jika anda sedang menggunakan kontrol-kontrol
+                          terjadi jika Anda sedang menggunakan kontrol-kontrol
                           ini dari sebuah komputer yang tidak aman dan/atau
                           tidak terpercaya). controls_lockout bekerja dengan
                           menciptakan sebuah file, controls.lck, di dalam
-                          vault anda, yang mana phpMussel akan mencek sebelum
+                          vault Anda, yang mana phpMussel akan mencek sebelum
                           melakukan perintah-perintah apapun. Setelah ini
                           terjadi, untuk kembali mengaktifkan kontrol-kontrol,
-                          anda akan memerlukan untuk menghapus data
+                          Anda akan memerlukan untuk menghapus data
                           controls.lck via FTP atau sejenisnya. Dapat dipanggil
                           melalui sandi.
    ~
  disable
-   Sandi diperlukan: script_password
+   Sandi diharuskan: script_password
    Keperluan lain: (tidak ada)
-   Parameter-parameter yang diperlukan: (tidak ada)
+   Parameter-parameter yang diharuskan: (tidak ada)
    Parameter-parameter opsional: (tidak ada)
    Contoh: ?pword=[script_password]&phpmussel=disable
    ~
    Apa yang dilakukannya: Menonaktifkan phpMussel. Ini harusnya digunakan jika
-                          anda melakukan update apapun atau perubahan ke sistem
-                          anda atau jika anda menginstall software baru apapun
+                          Anda melakukan update apapun atau perubahan ke sistem
+                          Anda atau jika Anda menginstall software baru apapun
                           atau modul ke sistem yang melakukan atau secara
                           potensial dapat menyebabkan angka positif salah. Ini
-                          harusnya juga digunakan jika anda memiliki
+                          harusnya juga digunakan jika Anda memiliki
                           masalah-masalah dengan phpMussel tapi tidak ingin
                           menghapus nya dari system. Sekali ini terjadi
                           aktifkan kembali phpMussel, gunakan "enable".
    ~
  enable
-   Sandi diperlukan: script_password
+   Sandi diharuskan: script_password
    Keperluan lain: (tidak ada)
-   Parameter-parameter yang diperlukan: (tidak ada)
+   Parameter-parameter yang diharuskan: (tidak ada)
    Parameter-parameter opsional: (tidak ada)
    Contoh: ?pword=[script_password]&phpmussel=enable
    ~
-   Apa yang dilakukannya: Mengaktifkan phpMussel. Ini dapat digunakan jika anda
+   Apa yang dilakukannya: Mengaktifkan phpMussel. Ini dapat digunakan jika Anda
                           sebelumnya menonaktifkan phpMussel menggunakan
                           "disable" dan ingin mengaktifkannya lagi.
    ~
  update
-   Sandi diperlukan: script_password
+   Sandi diharuskan: script_password
    Keperluan lain: update.dat dan update.inc harus ada.
-   Parameter-parameter yang diperlukan: (tidak ada)
+   Parameter-parameter yang diharuskan: (tidak ada)
    Parameter-parameter opsional: forcedupdate
    Contoh: ?pword=[script_password]&phpmussel=update&musselvar=forcedupdate
    ~
@@ -453,14 +464,14 @@
                           tetap akan berhenti jika update cek gagal.
                           Hasil-hasil dari keseluruhan proses akan di cetak ke
                           layar. Saya rekomendasikan memasukkan opsional
-                          parameter "forcedupdate" jika anda secara manual
+                          parameter "forcedupdate" jika Anda secara manual
                           menyebabkan kontrol ini, tapi mohon jangan gunakan
-                          "forcedupdate" jika anda mengautomatisasi proses
+                          "forcedupdate" jika Anda mengautomatisasi proses
                           tersebut, seperti via cron atau sejenis. Saya
                           rekomendasikan mencek setidaknya satu per bulan untuk
-                          memastikan tanda tangan anda dan kopi dari phpMussel
+                          memastikan tanda tangan Anda dan kopi dari phpMussel
                           di pastikan up to-date( Kecuali jika, tentu saja
-                          anda mencek update dan menginstall secara manual,
+                          Anda mencek update dan menginstall secara manual,
                           yang mana, saya masih merekomendasikan melakukannya
                           setidaknya satu per bulan). Mencek lebih dari 2 per
                           bulan kemungkinan tidak bertujuan, mengingat saya
@@ -470,34 +481,34 @@
                           melakukannya).
    ~
  greylist
-   Sandi diperlukan: script_password
+   Sandi diharuskan: script_password
    Keperluan lain: (tidak ada)
-   Parameter-parameter yang diperlukan: [Name of signature to be greylisted]
+   Parameter-parameter yang diharuskan: [Tanda tangan nama menjadi di-greylist]
    Parameter-parameter opsional: (tidak ada)
-   Contoh: ?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]
+   Contoh: ?pword=[script_password]&phpmussel=greylist&musselvar=[Tanda Tangan]
    ~
    Apa yang dilakukannya: Menambah tanda tangan pada greylist.
    ~
  greylist_clear
-   Sandi diperlukan: script_password
+   Sandi diharuskan: script_password
    Keperluan lain: (tidak ada)
-   Parameter-parameter yang diperlukan: (tidak ada)
+   Parameter-parameter yang diharuskan: (tidak ada)
    Parameter-parameter opsional: (tidak ada)
    Contoh: ?pword=[script_password]&phpmussel=greylist_clear
    ~
    Apa yang dilakukannya: Membersihkan keseluruhan greylist.
    ~
  greylist_show
-   Sandi diperlukan: script_password
+   Sandi diharuskan: script_password
    Keperluan lain: (tidak ada)
-   Parameter-parameter yang diperlukan: (tidak ada)
+   Parameter-parameter yang diharuskan: (tidak ada)
    Parameter-parameter opsional: (tidak ada)
    Contoh: ?pword=[script_password]&phpmussel=greylist_show
    ~
    Apa yang dilakukannya: Mencetak isi dari greylist ke layar.
    ~
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  4B. CLI (COMMAND LINE INTERFACE)
@@ -509,19 +520,19 @@
  Untuk daftar yang tersedia CLI perintah, pada prompt CLI, ketik 'c', dan tekan
  Enter.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  5. DATA YANG DIIKUTKAN DALAM PAKET INI
 
  Berikut list dari semua data yang diikutkan di dalam kopi script yang
- dikompres ketika anda mendownloadnya, setiap data-data yang secara
+ dikompres ketika Anda mendownloadnya, setiap data-data yang secara
  potensial diciptakan sebagai hasil dari menggunakan script ini, sejalan dengan
  deskripsi singkat dari untuk apa data-data ini.
 
  /phpmussel.php (Script, Diikutkan)
     data pemuat phpMussel. Memuat script utama, pengupdate, dll.
-    Ini yang apa anda ingin masukkan  (utama)!
+    Ini yang apa Anda ingin masukkan  (utama)!
     ~
  /web.config (Lainnya, Diikutkan)
     Sebuah data konfigurasi ASP.NET (dalam instansi ini, untuk melindungi
@@ -529,7 +540,7 @@
     dalam kejadian yang mana skrip ini diinstal pada server berbasis teknologi
     ASP.NET).
     ~
- /_docs/ (Directory)
+ /_docs/ (Direktori)
     Direktori dokumentasi (berisi bermacam data).
     ~
  /_docs/change_log.txt (Dokumentasi, Diikutkan)
@@ -544,20 +555,23 @@
  /_docs/readme.IT.txt (Dokumentasi, Diikutkan); ITALIANO
  /_docs/readme.NL.txt (Dokumentasi, Diikutkan); NEDERLANDSE
  /_docs/readme.PT.txt (Dokumentasi, Diikutkan); PORTUGUÊS
-    File-file baca saya (misalnya; file yang anda sedang membaca).
+    File-file baca saya (misalnya; file yang Anda sedang membaca).
     ~
  /_docs/signatures_tally.txt (Dokumentasi, Diikutkan)
     Perhitungan dari diikutkan tanda tangan (tidak dibutuhkan untuk fungsi
     teratur dari script).
     ~
- /_testfiles/ (Directory)
+ /_testfiles/ (Direktori)
     Direktori test data-data (berisi bermacam data).
     Semua data-data berisikan di dalamnya adalah data test untuk testing jika
-    phpMussel dengan benar diinstal pada sistem, dan anda tidak perlu
+    phpMussel dengan benar diinstal pada sistem, dan Anda tidak perlu
     mengupload direktori ini atau data-datanya jika melakukan testing.
     ~
  /_testfiles/ascii_standard_testfile.txt (Data test, Diikutkan)
     Data test untuk mentest tanda tangan ASCII normal phpMussel.
+    ~
+ /_testfiles/coex_testfile.rtf (Test file, Diikutkan)
+    Data test untuk mentest tanda tangan kompleks diperpanjang phpMussel.
     ~
  /_testfiles/exe_standard_testfile.exe (Data test, Diikutkan)
     Data test untuk mentest tanda tangan PE phpMussel.
@@ -576,14 +590,17 @@
     ~
  /_testfiles/metadata_testfile.txt.gz (Data test, Diikutkan)
     Data test untuk mentest tanda tangan metadata phpMussel dan untuk testing
-    data support GZ pada sistem anda.
+    data support GZ pada sistem Anda.
     ~
  /_testfiles/metadata_testfile.zip (Data test, Diikutkan)
     Data test untuk mentest tanda tangan phpMussel dan untuk testing data
-    support ZIP pada sistem anda.
+    support ZIP pada sistem Anda.
     ~
  /_testfiles/ole_testfile.ole (Data test, Diikutkan)
     Data test untuk mentest tanda tangan OLE phpMussel.
+    ~
+ /_testfiles/pdf_standard_testfile.pdf (Data test, Diikutkan)
+    Data test untuk mentest tanda tangan PDF phpMussel.
     ~
  /_testfiles/pe_sectional_testfile.exe (Data test, Diikutkan)
     Data test untuk mentest tanda tangan PE Sectional phpMussel.
@@ -591,8 +608,15 @@
  /_testfiles/xdp_standard_testfile.xdp (Data test, Diikutkan)
     Data test untuk mentest tanda tangan potongan XML/XDP phpMussel.
     ~
- /vault/ (Directory)
-    Direktori Vault  (berisikan bermacam file).
+ /vault/ (Direktori)
+    Direktori Vault (berisikan bermacam file).
+    ~
+ /vault/quarantine/ (Direktori)
+    Direktori Karantina (berisikan file yang dikarantina).
+    ~
+ /vault/quarantine/.htaccess (Lainnya, Diikutkan)
+    Sebuah data akses hypertext (pada instansi ini, untuk melindungi data-data
+    sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
     ~
  /vault/.htaccess (Lainnya, Diikutkan)
     Sebuah data akses hypertext (pada instansi ini, untuk melindungi data-data
@@ -607,9 +631,17 @@
  /vault/ascii_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/ascii_mussel_standard.cvd (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan ASCII normal.
-    Diperlukan jika tanda tangan opsi ASCII normal di dalam phpmussel.ini
+    diharuskan jika tanda tangan opsi ASCII normal di dalam phpmussel.ini
     diaktifkan. Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan
     diciptakan kembali pada saat mengupdate).
+    ~
+ /vault/coex_clamav.cvd (Tanda tangan, Diikutkan)
+ /vault/coex_custom.cvd (Tanda tangan, Diikutkan)
+ /vault/coex_mussel.cvd (Tanda tangan, Diikutkan)
+    Data-data untuk tanda tangan kompleks diperpanjang.
+    diharuskan jika tanda tangan opsi kompleks diperpanjang di dalam
+    phpmussel.ini diaktifkan. Dapat menghapus jika opsi dinonaktifkan (tapi
+    data-data akan diciptakan kembali pada saat mengupdate).
     ~
  /vault/elf_clamav_regex.cvd (Tanda tangan, Diikutkan)
  /vault/elf_clamav_regex.map (Tanda tangan, Diikutkan)
@@ -620,7 +652,7 @@
  /vault/elf_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/elf_mussel_standard.cvd (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan ELF.
-    Diperlukan jika tanda tangan opsi ELF di dalam phpmussel.ini diaktifkan.
+    diharuskan jika tanda tangan opsi ELF di dalam phpmussel.ini diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptakan
     kembali pada saat mengupdate).
     ~
@@ -633,7 +665,7 @@
  /vault/exe_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/exe_mussel_standard.cvd (Tanda tangan, Diikutkan)
     Data-data untuk data tanda tangan portable yang dapat dieksekusi.
-    Diperlukan jika opsi tanda tangan EXE di dalam phpmussel.ini diaktifkan.
+    diharuskan jika opsi tanda tangan EXE di dalam phpmussel.ini diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan
     kembali pada saat mengupdate).
     ~
@@ -641,7 +673,7 @@
  /vault/filenames_custom.cvd (Tanda tangan, Diikutkan)
  /vault/filenames_mussel.cvd (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan nama file.
-    Diperlukan jika opsi tanda tangan di dalam phpmussel.ini diaktifkan.
+    diharuskan jika opsi tanda tangan di dalam phpmussel.ini diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan
     kembali pada saat mengupdate).
     ~
@@ -654,7 +686,7 @@
  /vault/general_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/general_mussel_standard.cvd (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan umum.
-    Diperlukan jika opsi tanda tangan di dalam phpmussel.ini diaktifkan.
+    diharuskan jika opsi tanda tangan di dalam phpmussel.ini diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan
     kembali pada saat mengupdate).
     ~
@@ -667,7 +699,7 @@
  /vault/graphics_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/graphics_mussel_standard.cvd (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan grafis.
-    Diperlukan jika opsi tanda tangan grafis di dalam phpmussel.ini diaktifkan.
+    diharuskan jika opsi tanda tangan grafis di dalam phpmussel.ini diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan
     kembali pada saat mengupdate).
     ~
@@ -678,7 +710,7 @@
     ~
  /vault/hex_general_commands.csv (Tanda tangan, Diikutkan)
     CSV terencode Hex dari deteksi perintah umum secara opsional digunakan
-    phpMussel. Diperlukan jika opsi deteksi perintah umum di dalam
+    phpMussel. diharuskan jika opsi deteksi perintah umum di dalam
     phpmussel.ini diaktifkan. Dapat menghapus jika opsi dinonaktifkan (tapi
     data-data akan diciptkan kembali pada saat mengupdate).
     ~
@@ -691,12 +723,12 @@
  /vault/html_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/html_mussel_standard.cvd (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan HTML normal.
-    Diperlukan jika tanda tangan opsi HTML normal di dalam phpmussel.ini
+    diharuskan jika tanda tangan opsi HTML normal di dalam phpmussel.ini
     diaktifkan. Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan
     diciptakan kembali pada saat mengupdate).
     ~
  /vault/lang.inc (Script, Included)
-    phpMussel Bahasa Data; Diperlukan untuk kemampuan multibahasa.
+    phpMussel Bahasa Data; diharuskan untuk kemampuan multibahasa.
     ~
  /vault/macho_clamav_regex.cvd (Tanda tangan, Diikutkan)
  /vault/macho_clamav_regex.map (Tanda tangan, Diikutkan)
@@ -707,7 +739,7 @@
  /vault/macho_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/macho_mussel_standard.cvd (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan Mach-O.
-    Diperlukan jika opsi tanda tangan Mach-O di phpmussel.ini diaktifkan.
+    diharuskan jika opsi tanda tangan Mach-O di phpmussel.ini diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan
     kembali pada saat mengupdate).
     ~
@@ -721,7 +753,7 @@
  /vault/mail_mussel_standard.cvd (Tanda tangan, Diikutkan)
  /vault/mail_mussel_standard.map (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan yang digunakan oleh fungsi phpMussel_mail().
-    Diperlukan jika fungsi phpMussel_mail() digunakan dalam jalan apapun.
+    diharuskan jika fungsi phpMussel_mail() digunakan dalam jalan apapun.
     Dapat menghapus jika tidak digunakan (tapi data-data akan diciptakan
     kembali pada saat update).
     ~
@@ -729,7 +761,7 @@
  /vault/md5_custom.cvd (Tanda tangan, Diikutkan)
  /vault/md5_mussel.cvd (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan berbasis MD5.
-    Diperlukan jika opsi tanda tangan berbasis MD5 diaktifkan. Dapat menghapus
+    diharuskan jika opsi tanda tangan berbasis MD5 diaktifkan. Dapat menghapus
     jika tidak digunakan (tapi data-data akan diciptakan kembali pada saat
     update).
     ~
@@ -737,7 +769,7 @@
  /vault/metadata_custom.cvd (Tanda tangan, Diikutkan)
  /vault/metadata_mussel.cvd (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan meta data yang terkompres.
-    Diperlukan jika tanda tangan meta data dalam opsi di phpmussel.ini di
+    diharuskan jika tanda tangan meta data dalam opsi di phpmussel.ini di
     aktifkan. Dapat menghapus jika opsi di nonaktifkan (data akan diciptakan
     kembali saat upgrade).
     ~
@@ -750,7 +782,17 @@
  /vault/ole_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/ole_mussel_standard.cvd (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan OLE.
-    Diperlukan jika opsi tanda tangan OLE di phpmussel.ini diaktifkan. Dapat
+    diharuskan jika opsi tanda tangan OLE di phpmussel.ini diaktifkan. Dapat
+    menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan kembali
+    pada saat mengupdate).
+    ~
+ /vault/pdf_clamav_standard.cvd (Tanda tangan, Diikutkan)
+ /vault/pdf_custom_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/pdf_custom_standard.cvd (Tanda tangan, Diikutkan)
+ /vault/pdf_mussel_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/pdf_mussel_standard.cvd (Tanda tangan, Diikutkan)
+    Data-data untuk tanda tangan PDF.
+    diharuskan jika opsi tanda tangan PDF di phpmussel.ini diaktifkan. Dapat
     menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan kembali
     pada saat mengupdate).
     ~
@@ -758,7 +800,7 @@
  /vault/pe_custom.cvd (Tanda tangan, Diikutkan)
  /vault/pe_mussel.cvd (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan PE Sectional.
-    Diperlukan jika opsi tanda tangan PE Sectional di phpmussel.ini diaktifkan.
+    diharuskan jika opsi tanda tangan PE Sectional di phpmussel.ini diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan
     kembali pada saat mengupdate).
     ~
@@ -776,6 +818,19 @@
  /vault/scan_kills.txt *(Data catatan, Diciptakan)
     Sebuah catatan dari setiap data upload yang diblok/dibunuh oleh phpMussel.
     ~
+ /vault/swf_clamav_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/swf_clamav_regex.map (Tanda tangan, Diikutkan)
+ /vault/swf_clamav_standard.cvd (Tanda tangan, Diikutkan)
+ /vault/swf_clamav_standard.map (Tanda tangan, Diikutkan)
+ /vault/swf_custom_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/swf_custom_standard.cvd (Tanda tangan, Diikutkan)
+ /vault/swf_mussel_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/swf_mussel_standard.cvd (Tanda tangan, Diikutkan)
+    Data-data untuk tanda tangan Shockwave.
+    diharuskan jika opsi tanda tangan Shockwave di phpmussel.ini diaktifkan.
+    Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan
+    kembali pada saat mengupdate).
+    ~
  /vault/template.html (Lainnya, Diikutkan)
     Data template phpMussel; Template untuk output HTML yang diproduksi oleh
     phpMussel untuk data pesan upload yang dibloknya  (Pesan dilihat oleh
@@ -783,18 +838,18 @@
     ~
  /vault/update.dat (Lainnya, Diikutkan)
     Data berisi informasi versi untuk skrip phpMussel dan tanda tangan
-    phpMussel. Jika anda pernah ingin mengupgrade phpMussel atau ingin
+    phpMussel. Jika Anda pernah ingin mengupgrade phpMussel atau ingin
     mengupdate phpMussel via browser file ini penting.
     ~
  /vault/update.inc (Skrip, Diikutkan)
-    Skrip upgrade phpMussel; Diperlukan untuk upgrade otomatis dan untuk 
-    mengupgrade phpMussel via browser anda, tapi tidak diperlukan juga.
+    Skrip upgrade phpMussel; diharuskan untuk upgrade otomatis dan untuk
+    mengupgrade phpMussel via browser Anda, tapi tidak diharuskan juga.
     ~
  /vault/whitelist_clamav.cvd (Tanda tangan, Diikutkan)
  /vault/whitelist_custom.cvd (Tanda tangan, Diikutkan)
  /vault/whitelist_mussel.cvd (Tanda tangan, Diikutkan)
     File spesifik whitelist.
-    Diperlukan jika opsi Whitelist di phpmussel.ini diaktifkan dan jika ingin
+    diharuskan jika opsi Whitelist di phpmussel.ini diaktifkan dan jika ingin
     Anda spesifik file bertanda putih. Dapat menghapus jika opsi dinonaktifkan
     atau jika Anda tidak memerlukan spesifik file bertanda putih (tapi
     data-data akan diciptkan kembali pada saat mengupdate).
@@ -808,7 +863,7 @@
  /vault/xmlxdp_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/xmlxdp_mussel_standard.cvd (Tanda tangan, Diikutkan)
     Data-data untuk tanda tangan potongan XML/XDP.
-    Diperlukan jika opsi tanda tangan potongan XML/XDP di phpmussel.ini
+    diharuskan jika opsi tanda tangan potongan XML/XDP di phpmussel.ini
     diaktifkan. Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan
     diciptkan kembali pada saat mengupdate).
     ~
@@ -824,7 +879,7 @@
     ~
     Data berakhir dengan "MAP", secara harfiah, memetakan tanda tangan mana
     phpMussel seharusnya dan seharusnya tidak gunakan untuk pemindaian
-    individual. Tidak semua tanda tangan secocoknya diperlukan untuk pemindaian
+    individual. Tidak semua tanda tangan secocoknya diharuskan untuk pemindaian
     tunggal, jadi, phpMussel menggunakan peta-peta dari data-data tanda tangan
     untuk mempercepat proses pemindaian (sebuah proses yang akan menjadi lambat
     dan monoton).
@@ -846,15 +901,15 @@
     ~
     Data-data tanda tangan ditandai dengan  "_custom", secara default,
     tidak berisikan tanda tangan apapun; Data-data ini ada untuk memberikan
-    anda kemana saja untuk meletakkan tanda tangan anda jika anda datang
-    dengan milik diri anda sendiri.
+    Anda kemana saja untuk meletakkan tanda tangan Anda jika Anda datang
+    dengan milik diri Anda sendiri.
     ~
     Data-data tanda tangan ditandai dengan "_mussel" berisikan tanda tangan
     yang secara spesifik tidak berasal dari ClamAV, tanda tangan yang secara
     umum, Yang saya buat sendiri atau informasi dari berbagai sumber.
     ~
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  6. OPSI KONFIGURASI
@@ -869,23 +924,23 @@
       tertentu (termasuk kemampuan mengupgrade phpMussel secara langsung) untuk
       secara manual dibangkitkan via POST, GET dan QUERY. Bagaimanapun, untuk
       alasan keamanan, untuk melakukan ini phpMussel akan mengharapkan sebuah
-      sandi untuk diikutkan pada perintah, untuk memastikan bahwa itu anda dan
+      sandi untuk diikutkan pada perintah, untuk memastikan bahwa itu Anda dan
       bukan orang lain, yang berusaha secara manual membangkitkan fungsi-fungsi
-      ini. Set script_password untuk sandi apapun yang anda mau gunakan. Jika
+      ini. Set script_password untuk sandi apapun yang Anda mau gunakan. Jika
       tidak ada password diset, pembangkitan manual akan di non aktifkan secara
-      default. Gunakan hal yang mudah anda ingat tapi susah untuk orang lain
+      default. Gunakan hal yang mudah Anda ingat tapi susah untuk orang lain
       hapal.
       * Tidak memiliki pengaruh di dalam mode CLI.
     "logs_password"
     - Sama seperti script_password tapi untuk melihat semua isi dari scan_log
-      dan scan_kills. Memiliki sandi yang lain dapat bergunan jika anda ingin 
+      dan scan_kills. Memiliki sandi yang lain dapat bergunan jika Anda ingin
       memberikan akses pada orang lain untuk mengakses dan menset fungsi tapi
       tidak yang lain.
       * Tidak memiliki pengaruh di dalam mode CLI.
     "cleanup"
-    - Jangan diset variabel skrip dan cache setelah eksekusi. Jika anda tidak
+    - Jangan diset variabel skrip dan cache setelah eksekusi. Jika Anda tidak
       menggukan skrip di bawah pemindaian upload inisial, harus di set ke yes
-      untuk meminimalisasi penggunaan memori. Jika anda menggunakan skrip untuk
+      untuk meminimalisasi penggunaan memori. Jika Anda menggunakan skrip untuk
       tujuan di bawah pemindaian upload inisial, harus di set ke no, untuk
       menghindari reload duplikat data ke memori. Dalam praktek umum, haru di
       set ke yes, tapi jika kamu melakukannya, kamu tidak bisa menggunakan
@@ -901,7 +956,7 @@
     - Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk
       pelayanan-pelayanan seperti Cloudflare dan sejenisnya).
       Default = REMOTE_ADDR
-      PERINGATAN: Jangan ganti ini kecuali anda tahu apa yang anda lakukan!
+      PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!
     "forbid_on_block"
     - Seharusnya phpMussel mengirimkan 403 headers dengan pesan upload data
       yang terblok, atau cocok dengan 200 OK?
@@ -921,14 +976,64 @@
       di sini sebagai ukuran extra dari keamanan atau untuk paranoid ekstra dan
       untuk semua yang mengkopi php yang tidak boleh bersikap pada perilaku
       yang dimaksudkan.
-      0 - Setelah pemindahaian, biarkan data  [Default],
+      0 - Setelah pemindahaian, biarkan data [Default],
       1 - Setelah pemindaian, jika tidak bersih, hapus langsung.
     "lang"
     - Tentukan bahasa default untuk phpMussel.
+    "quarantine_key"
+    - phpMussel dapat mengkarantina upload file ditandai dalam isolasi dalam
+      vault phpMussel, jika ini adalah sesuatu yang Anda ingin lakukan.
+      Pengguna biasa dari phpMussel yang hanya ingin memproteksi website mereka
+      dan/atau lingkungan hosting mereka tanpa memiliki minat dalam-dalam
+      menganalisis setiap ditandai upload file harus meninggalkan fungsi ini
+      dinonaktifkan, tetapi setiap pengguna yang tertarik pada analisis lebih
+      lanjut dari ditandai upload file bagi penelitian malware atau untuk
+      hal-hal seperti serupa harus mengaktifkan fungsi ini. Mengkarantina
+      ditandai upload file dapat kadang-kadang juga membantu dalam men-debug
+      false-positif, jika ini adalah sesuatu yang sering terjadi untuk Anda.
+      Untuk menonaktifkan fungsi karantina, meninggalkan "quarantine_key"
+      direktif kosong, atau menghapus isi dari direktif ini jika tidak sudah
+      kosong. Untuk mengaktifkan fungsi karantina, masukkan beberapa nilai
+      dalam direktif ini. "quarantine_key" adalah fitur keamanan penting dari
+      fungsi karantina diharuskan sebagai sarana untuk mencegah fungsi
+      karantina dari dieksploitasi oleh penyerang potensial dan sebagai sarana
+      mencegah eksekusi potensi data yang disimpan dalam karantina.
+      "quarantine_key" harus diperlakukan dengan cara yang sama seperti
+      password Anda: Semakin lama semakin baik, dan menjaganya diproteksi erat.
+      Bagi efek terbaik, gunakan dalam hubungannya dengan "delete_on_sight".
+    "quarantine_max_filesize"
+    - Ukuran file maksimum yang diijinkan dari file yang akan dikarantina. File
+      yang lebih besar dari nilai yang ditentukan di bawah ini TIDAK akan
+      dikarantina. Direktif ini penting sebagai sarana untuk membuat lebih
+      sulit bagi setiap penyerang potensial untuk banjir karantina Anda dengan
+      data yang tidak diinginkan berpotensi menyebabkan penggunaan data
+      kelebihan pada layanan hosting Anda. Nilai dalam KB.
+      Default =2048 =2048KB =2MB.
+    "quarantine_max_usage"
+    - Penggunaan memori maksimal yang diijinkan untuk karantina. Jika total
+      penggunaan memori oleh karantina mencapai nilai ini, file yang
+      dikarantina tertua akan dihapus sampai total penggunaan memori tidak lagi
+      mencapai nilai ini. Direktif ini penting sebagai sarana untuk membuat
+      lebih sulit bagi setiap penyerang potensial untuk banjir karantina Anda
+      dengan data yang tidak diinginkan berpotensi menyebabkan penggunaan data
+      kelebihan pada layanan hosting Anda. Nilai dalam KB.
+      Default =65536 =65536KB =64MB.
+    "honeypot_mode"
+    - Bila modus honeypot diaktifkan, phpMussel akan mencoba untuk karantina
+      setiap file upload yang dia menemui, terlepas dari apakah atau tidak file
+      yang di-upload cocok dengan tanda tangan yang disertakan, dan tidak ada
+      pemindaian aktual atau analisis dari upload file akan terjadi. Fungsi ini
+      akan berguna bagi mereka yang ingin menggunakan phpMussel untuk tujuan
+      virus/malware penelitian, tetapi tidak direkomendasikan untuk
+      mengaktifkan fungsi ini jika tujuan penggunaan dari phpMussel oleh
+      pengguna adalah bagi aktual upload file pemindaian dan juga tidak
+      direkomendasikan untuk menggunakan fungsi honeypot untuk tujuan selain
+      bagi honeypot. Biasanya, opsi ini dinonaktifkan.
+      0 = Dinonaktifkan [Default], 1 = Diaktifkan.
  "signatures" (Kategori)
- - Configuration for signatures.
+ - Konfigurasi untuk tanda tangan.
    %%%_clamav = Tanda tangan ClamAV (kedua-duanya utama dan harian).
-   %%%_custom = Tanda tangan terubah  (Jika anda merubahnya).
+   %%%_custom = Tanda tangan terubah (Jika Anda merubahnya).
    %%%_mussel = Tanda tangan phpMussel dimasukkan dalam tanda tangan tersebut
                 dari yang bukan dari ClamAV.
    - Cek tanda tangan MD5 ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
@@ -1003,25 +1108,40 @@
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
-   - Opsi Tanda tangan cocok batas panjangnya. Hanya ubah ini jika anda tahu
-     apa yang anda lakukan. SD = Standard tanda tangan. RX = Tanda tangan PCRE
+   - Cek tanda tangan Kompleks Diperpanjang ketika pemindaian?
+     0 = Tidak, 1 = Ya [Default].
+     "coex_clamav"
+     "coex_custom"
+     "coex_mussel"
+   - Cek tanda tangan PDF ketika pemindaian?
+     0 = Tidak, 1 = Ya [Default].
+     "pdf_clamav"
+     "pdf_custom"
+     "pdf_mussel"
+   - Cek tanda tangan Shockwave ketika pemindaian?
+     0 = Tidak, 1 = Ya [Default].
+     "swf_clamav"
+     "swf_custom"
+     "swf_mussel"
+   - Opsi Tanda tangan cocok batas panjangnya. Hanya ubah ini jika Anda tahu
+     apa yang Anda lakukan. SD = Standard tanda tangan. RX = Tanda tangan PCRE
      (Perl Compatible Regular Expressions, "Regex"). FN = Tanda tangan Nama
-     Data. Jika anda melihat php crashing ketika phpMussel meoncoba memindai,
-     coba merendahkan nilai "max" di bawah. Jika mungkin dan cocok, biarkan
-     saya tahu kapan ini terjadi dan hasil dari apapun yang anda coba.
+     Data. Jika Anda melihat php crashing ketika phpMussel meoncoba memindai,
+     coba merendahkan nilai "max". Jika mungkin dan cocok, biarkan saya tahu
+     kapan ini terjadi dan hasil dari apapun yang Anda coba.
      "fn_siglen_min"
      "fn_siglen_max"
      "rx_siglen_min"
      "rx_siglen_max"
      "sd_siglen_min"
      "sd_siglen_max"
-   - Seharusnya laporan phpMussel ketika data tanda tangan hilang atau
-     corrupted? Jika fail_silently dinonaktifkan, data corrupted dan hilang
-     akan di laporkan ketika pemindaian, dan jika fail_silently diaktifkan,
-     data corrupted dan hilang akan diabaikan, dengan pemindaian dilaporkan
-     untuk data-data ini bahwa tidak ada masalah. Ini harus dibiarkan
-     sendirian jika anda pernah mengalami crashes atau masalah lain.
-     0 = Disabled [Default], 1 = Enabled.
+   - Seharusnya laporan phpMussel ketika data tanda tangan hilang atau dikorup?
+     Jika fail_silently dinonaktifkan, data dikorup dan hilang akan di laporkan
+     ketika pemindaian, dan jika fail_silently diaktifkan, data dikorup dan
+     hilang akan diabaikan, dengan pemindaian dilaporkan untuk data-data ini
+     bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah
+     mengalami crashes atau masalah lain.
+     0 = Dinonaktifkan [Default], 1 = Diaktifkan.
      "fail_silently"
  "files" (Kategori)
  - Konfigurasi umum untuk mengambil alih data-data.
@@ -1029,29 +1149,29 @@
    - Maksimum jumla Data-data yang diizinkan untuk dipindai selama pemindaian
      upload data sebelum menghentikan pemindaian dan menginformasikan pengguna
      bahwa pengguna mengupload terlalu banyak! Menyediakan perlindungan pada
-     serangan teoritis dimana penyerang mencoba DDoS pada sistem anda atau CMS
+     serangan teoritis dimana penyerang mencoba DDoS pada sistem Anda atau CMS
      ada dengan overloading phpMussel supaya berjalan lambat. Proses php ke
      penghentian keras.
      Recommendasi: 10. Anda dapat menaikkan atau menurunkan angka ini
-     bergantung dari kecepatan hardware anda. Catatan jika nomor ini tidak
+     bergantung dari kecepatan hardware Anda. Catatan jika nomor ini tidak
      mengakuntabilitas atau mengikutkan konten dari file terkompres.
    "filesize_limit"
    - Batasan ukuran file dalam KB. 65536 = 64MB [Default], 0 = Tidak ada batasa
      (selalu bertanda abu-abu), nilai angka positif apapun diterima. Ini dapat
-     berguna ketika batasan konfigurasi php anda membatasi jumah memori dari
-     proses yang dapat ditampungnya atau jika konfigurasi php anda membatasi
-     jumlah ukuran upload anda.
+     berguna ketika batasan konfigurasi php Anda membatasi jumah memori dari
+     proses yang dapat ditampungnya atau jika konfigurasi php Anda membatasi
+     jumlah ukuran upload Anda.
    "filesize_response"
-   - Apa yang anda lakukan dengan data-data yang melebihi batasan ukuran (jika
+   - Apa yang Anda lakukan dengan data-data yang melebihi batasan ukuran (jika
      ada).
      0 - Bertanda putih, 1 - Bertanda hitam [Default].
    "filetype_whitelist" dan "filetype_blacklist"
-   - Jika sistem anda hanya mengizinkan tipe data yang diupload atau jika
-     sistem anda secara eksplisit menolak tipe data-data tertentu,
+   - Jika sistem Anda hanya mengizinkan tipe data yang diupload atau jika
+     sistem Anda secara eksplisit menolak tipe data-data tertentu,
      menspesifikasikan tipe data dalam bertanda putih dan bertanda hitam dapat
      menaikkan kecepatan dari pemindaian dilakukan dengan mengizinkan skrip
      untuk mengabaikan tipe data tertentu. Format adalah CSV (comma separated
-     values). Jika anda ingin memindai semuanya, daripada whitelist atau
+     values). Jika Anda ingin memindai semuanya, daripada whitelist atau
      blacklist, tinggalkan variabel kosong (melakukannya akan menonaktifkan
      whitelist/blacklist).
    "check_archives"
@@ -1073,7 +1193,7 @@
    - Dalam rekursi dari data terkompres. Default = 10.
  "attack_specific" (Kategori)
  - Konfigurasi dari deteksi serangan spesifik (tidak berdasarkan CVDs).
-   * Chameleon attack detection: 0 = Off, 1 = On.
+   * Chameleon serangan deteksi: 0 = Dinonaktifkan, 1 = Diaktifkan.
    "chameleon_from_php"
    - Cari header php tidak di dalam data-data php atau data terkompress.
    "chameleon_from_exe"
@@ -1084,8 +1204,8 @@
    - Cari data terkompress yang header nya tidak benar (Mendukung: BZ, GZ, RAR,
      ZIP, RAR, GZ).
    "chameleon_to_doc"
-   - Cari dokumen office yang header nya tidak benar (Mendukung: DOC, DOT,
-     PPS, PPT, XLA, XLS, WIZ).
+   - Cari dokumen office yang header nya tidak benar (Mendukung: DOC, DOT, PPS,
+     PPT, XLA, XLS, WIZ).
    "chameleon_to_img"
    - Cari gambar yang header nya tidak benar (Mendukung: BMP, DIB, PNG, GIF,
      JPEG, JPG, XCF, PSD, PDD).
@@ -1104,27 +1224,27 @@
    "general_commands"
    - Mencari isi data-data untuk perintah umum seperti eval(), exec() and
      include()? 0 - tidak (tidak mencek) [Default], 1 - Ya (mencek).
-     Matikan opsi ini jika anda bermaksud untuk mengupload yang manapun dari
-     ini ke sistem ata CMS anda via browser anda: data-data php, JavaScript,
-     HTML, python, perl dll. Hidupkan opsi ini jika anda tidak punya tambahan
-     perlindungan pada sistem anda dan tidak bermaksud mengupload data-data
-     apapun. Jika anda menggunakan keamanan tambahan dalam kata penghubung
+     Matikan opsi ini jika Anda bermaksud untuk mengupload yang manapun dari
+     ini ke sistem ata CMS Anda via browser Anda: data-data php, JavaScript,
+     HTML, python, perl dll. Hidupkan opsi ini jika Anda tidak punya tambahan
+     perlindungan pada sistem Anda dan tidak bermaksud mengupload data-data
+     apapun. Jika Anda menggunakan keamanan tambahan dalam kata penghubung
      dengan phpMussel seperti ZB Block, tidak perlu menghidupkan opsi ini,
      karena kebanyakan apa yang akan phpMussel cari (dalam konteks opsi ini)
      adalah duplikasi dari perlindungan yang telah disediakan.
    "block_control_characters"
    - Memblokade data apapun yang berisi karakter pengendali (lain dari baris
-     baru)? ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) Jika anda hanya sedang mengupload
-     data teks biasa, maka anda dapat menghidupkan opsi ini untuk menyediakan
-     perlindungan tambahan ke sistem anda. Bagaimanapun jika anda mengupload
+     baru)? ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) Jika Anda hanya sedang mengupload
+     data teks biasa, maka Anda dapat menghidupkan opsi ini untuk menyediakan
+     perlindungan tambahan ke sistem Anda. Bagaimanapun jika Anda mengupload
      apapun lebih dari data teks biasa, menghidupkan opsi ini mungkin
      mengakibatkan angka positif salah.
      0 - Jangan memblokade [Default], 1 - Memblokade.
    "corrupted_exe"
-   - File rusak dan diurai kesalahan.
+   - File korup dan diurai kesalahan.
      0 = Mengabaikan, 1 = Memblokade [Default]. Mendeteksi dan memblokir
-     berpotensi rusak PE (Portable Executable) file? Sering (tetapi tidak
-     selalu), ketika aspek-aspek tertentu dari file PE yang rusak atau tidak
+     berpotensi korup PE (Portable Executable) file? Sering (tetapi tidak
+     selalu), ketika aspek-aspek tertentu dari file PE yang korup atau tidak
      bisa diurai dengan benar, itu dapat menjadi indikasi dari infeksi virus.
      Proses yang digunakan oleh sebagian besar program anti-virus untuk
      mendeteksi virus dalam file PE memerlukan parsing file-file dengan cara
@@ -1150,10 +1270,10 @@
      phpmussel.ini konfigurasi. Direktif ini ada untuk mencegah phpMussel
      menggunakan terlalu banyak memori (yang bisa mencegah dari yang berhasil
      memindai file di atas tertentu ukuran file).
- "compatibility" (Category)
+ "compatibility" (Kategori)
  - Direktif-direktif kompatibilitas pada phpMussel.
     "ignore_upload_errors"
-    - Direktif ini umumnya harus DINONAKTIFKAN kecuali diperlukan untuk fungsi
+    - Direktif ini umumnya harus DINONAKTIFKAN kecuali diharuskan untuk fungsi
       yang benar dari phpMussel pada sistem tertentu. Biasanya, ketika
       DINONAKTIFKAN, ketika phpMussel mendeteksi adanya elemen dalam $_FILES
       array(), itu akan mencoba untuk memulai scan file yang mewakili elemen,
@@ -1163,13 +1283,13 @@
       perilaku alami itu CMS, atau kesalahan dapat dilaporkan bila tidak ada,
       dalam kasus seperti itu, perilaku normal untuk phpMussel akan mengganggu
       untuk perilaku normal itu CMS. Jika situasi seperti itu terjadi untuk
-      anda, MENGAKTIFKAN direktif ini akan menginstruksikan phpMussel untuk
+      Anda, MENGAKTIFKAN direktif ini akan menginstruksikan phpMussel untuk
       tidak mencoba untuk memulai scan untuk elemen kosong, mengabaikan saat
       ditemui dan untuk tidak kembali terkait pesan kesalahan, sehingga
       memungkinkan kelanjutan dari halaman permintaan.
       0 - DINONAKTIFKAN, 1 - DIAKTIFKAN.
     "only_allow_images"
-    - Jika anda hanya mengharapkan atau hanya berniat untuk memungkinkan
+    - Jika Anda hanya mengharapkan atau hanya berniat untuk memungkinkan
       mengupload gambar ke sistem atau CMS, dan jika Anda benar-benar tidak
       memerlukan mengupload file selain gambar ke sistem atau CMS, direktif ini
       harus DIAKTIFKAN, tetapi sebaliknya harus DINONAKTIFKAN. Jika direktif
@@ -1179,16 +1299,29 @@
       penggunaan memori untuk mencoba upload file tidak gambar.
       0 - DINONAKTIFKAN, 1 - DIAKTIFKAN.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  7. FORMAT TANDA TANGAN
+
+ = TANDA TANGAN NAMA FILE =
+   Semua tanda tangan nama file mengikuti format ini:
+    NAME:FNRX
+   Dimana NAME adalah nama mengutip tanda tangan dan FNRX adalah pola regex
+   untuk mencocokkan nama file (tidak ter-encode).
 
  = TANDA TANGAN MD5 =
    Semua tanda tangan MD5 mengikuti format ini:
     HASH:FILESIZE:NAME
    Dimana HASH adalah MD5 dari keseluruhan file, FILESIZE adalah total ukuran
    file dan NAME adalah nama untuk mengutip tanda tangan tersebut.
+
+ = TANDA TANGAN METADATA ARSIP =
+   Semua tanda tangan meta data arsip mengikuti format ini:
+    NAME:FILESIZE:CRC32
+   Di mana NAME adalah nama mengutip tanda tangan itu, FILESIZE adalah total
+   ukuran data (tidak terkompres) dari sebuah data berisikan arsip dan CRC32
+   adalah checksum crc32 dari data yang berisikan.
 
  = TANDA TANGAN MD5 SEKSIONAL PE =
    Semua tanda tangan MD5 seksional PE mengikuti format ini:
@@ -1203,18 +1336,14 @@
    file dan TYPE adalah jenis tanda tangan yang file daftar putih tersebut
    adalah kebal terhadap.
 
- = TANDA TANGAN NAMA FILE =
-   Semua tanda tangan nama file mengikuti format ini:
-    NAME:FNRX
-   Dimana NAME adalah nama mengutip tanda tangan dan FNRX adalah pola regex
-   untuk mencocokkan nama file (tidak ter-encode).
-
- = TANDA TANGAN METADATA ARSIP =
-   Semua tanda tangan meta data arsip mengikuti format ini:
-    NAME:FILESIZE:CRC32
-   Di mana NAME adalah nama mengutip tanda tangan itu, FILESIZE adalah total
-   ukuran data (tidak terkompres) dari sebuah data berisikan arsip dan CRC32
-   adalah checksum crc32 dari data yang berisikan.
+ = TANDA TANGAN DIPERPANJANG KOMPLEKS =
+   Tanda tangan diperpanjang kompleks adalah berbeda dengan jenis lain dari
+   tanda tangan phpMussel, melalui bahwa apa yang mencocokkan mereka ditentukan
+   oleh tanda tangan sendiri dan mereka dapat mencocokkan terhadap beberapa
+   kriteria. Kriteria mencocokkan yang dipisahkan oleh ";" dan pencocokan jenis
+   dan pencocokan data masing-masing kriteria yang dipisahkan oleh ":" sebagai
+   sehingga format untuk tanda tangan ini cenderung terlihat sedikit seperti:
+    $variabel1:DATA;$variabel:DATA;NamaTandaTangan
 
  = YANG LAIN =
    Semua tanda tangan yang lain mengikuti format ini:
@@ -1229,67 +1358,75 @@
    Setiap bentuk dari regex mengerti dan dengan benar diproses oleh php
    seharusnya bisa dengan benar dimengerti dan diproses oleh phpMussel dan
    tanda tangannya. Bagaimanapun, saya menyarankan peringatan ekstrim ketika
-   menuliskan tanda tangan berbasis regex baru karena, jika anda tidak yakin
-   apa yang anda lakukan dapat menghasilkan hal yang tidak diinginkan. Coba
-   lihat source-code phpMussel dan jika anda tidak yakin tentang konteks dari
+   menuliskan tanda tangan berbasis regex baru karena, jika Anda tidak yakin
+   apa yang Anda lakukan dapat menghasilkan hal yang tidak diinginkan. Coba
+   lihat source-code phpMussel dan jika Anda tidak yakin tentang konteks dari
    statemen regex diparsing. Juga ingat bahwa semua pola (dengan pengecualian
    ke nama data, metadata terkompres dan pola MD5) harus diencode hexadecimal
    (syntax pola sebelumnya, tentu saja)!
 
  = DIMANA MELETAKKAN TANDA TANGAN YANG TERUBAH? =
-   Letakkan hanya tanda tangan yang terubah pada data-data yang dimaksudkan
-   untuk tanda tangan. Data-data itu harus berisikan "_custom" pada nama
-   datanya. Anda harus juga menghindari mengedit data tanda tangan default,
-   kecuali anda mengetahui apa yang anda lakukan, karena, disamping praktek
-   baik dalam umumnya dan disamping dari membantu anda membedakan antara tanda
-   tangan anda sendiri dan tanda tangan default dari phpMussel, baik juga untuk
-   tetap mengedit hanya data yang dimaksudkan untuk diedit. Karena merusakkan
-   data tanda tangan default dapat mengakibatkan mereka berhenti bekerja dengan
-   benar, berdasakan data "maps": Data peta/maps memberitahukan phpMussel
-   dimana dalam data tanda tangan untuk mencari tanda tangan yang diperlukan
-   phpMussel dalam periode ketika diperlukan, dan peta-peta ini dapat di luar
-   sinkronisasi dari data tanda tangannya jika data-data tanda tangannya
-   dirusakkan. Anda dapat meletakkan banyak apapun yang kamu inginkan dalam
-   tanda tangan anda, selama anda mengikuti syntax yang benar. Bagaimanapun
-   mohon hati-hati mencoba tanda tangan baru untuk angka positif yang salah
-   sebelum anda bermaksud untuk membagikannya atau menggunakan nya di dalam
-   lingkungan langsung.
+   Hanya menempatkan tanda tangan kustom dalam file yang dimaksudkan untuk
+   tanda tangan kustom. File harus berisi "_custom" dalam nama file mereka.
+   Anda juga harus menghindari mengedit file tanda tangan default, kecuali jika
+   Anda tahu persis apa yang Anda lakukan, karena, selain menjadi praktik baik
+   umumnya dan selain membantu Anda membedakan antara tanda tangan Anda sendiri
+   dan tanda tangan default diikutkan dengan phpMussel, itu baik untuk menjaga
+   mengedit hanya file ditujukan bagi mengedit, karena yang dirusak dengan file
+   tanda tangan default dapat menyebabkan mereka untuk berhenti bekerja dengan
+   benar, karena "map" file-file: File-file map menginstruksikan phpMussel
+   dimana dalam file tanda tangan untuk mencari bagi tanda tangan dibutuhkan
+   oleh phpMussel sesuai diharuskan, dan map-map ini dapat menjadi tidak
+   disinkronkan dengan file tanda tangan mereka terkait jika file tanda tangan
+   yang dirusak dengan. Anda dapat menempatkan apapun yang Anda inginkan dalam
+   file-file tanda tangan kustom Anda, asalkan Anda mengikuti sintaks yang
+   benar. Namun, berhati-hatilah untuk menguji tanda tangan baru bagi
+   false-positif sebelumnya jika Anda berniat untuk berbagi mereka atau
+   menggunakannya dalam lingkungan hidup.
 
- = SIGNATURE BREAKDOWN =
+ = TANDA TANGAN PEMECAH-MECAHAN =
    Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan
    phpMussel:
-   - "Tanda tangan MD5" (md5_*). Dicek pada hash MD5 dari isi dan ukuran file
-      dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
-   - "Tanda tangan umum" (general_*). Dicek pada isi dari apapun file tidak
-      bertanda putih dan ditargetkan untuk dipindai.
    - "Tanda tangan ASCII normal" (ascii_*). Dicek pada isi dari apapun file
       tidak bertanda putih dan ditargetkan untuk dipindai.
-   - "Tanda tangan HTML normal" (html_*). Dicek pada isi dari apapun file HTML
-      tidak bertanda putih dan ditargetkan untuk dipindai.
-   - "Perintah umum" (hex_general_commands.csv). Dicek pada isi dari apapun
-      file tidak bertanda putih dan ditargetkan untuk dipindai.
-   - "Tanda tangan Portable Executable Sectional" (pe_*). Dicek pada hash MD5
-      dari seksi PE dan ukuran file dari apapun file tidak bertanda putih,
-      ditargetkan untuk dipindai dan dicocokkan ke format PE.
+   - "Tanda tangan Diperpanjang Kompleks" (coex_*). Campuran pencocokan jenis
+      tanda tangan.
+   - "Tanda tangan ELF" (elf_*). Dicek pada isi dari apapun file tidak bertanda
+      putih, ditargetkan untuk dipindai dan dicocokkan ke format ELF.
    - "Tanda tangan Portable Executable" (exe_*). Dicek pada isi dari apapun
       file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke
       format PE.
-   - "Tanda tangan ELF" (elf_*). Dicek pada isi dari apapun file tidak bertanda
-      putih, ditargetkan untuk dipindai dan dicocokkan ke format ELF.
+   - "Tanda tangan Nama file" (filenames_*). Dicek pada nama file dari file
+      yang ditargetkan pada pemindaian.
+   - "Tanda tangan umum" (general_*). Dicek pada isi dari apapun file tidak
+      bertanda putih dan ditargetkan untuk dipindai.
    - "Tanda tangan Grafis" (graphics_*). Dicek pada isi dari apapun file tidak
       bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke apapun
       diketahui format grafis.
+   - "Perintah umum" (hex_general_commands.csv). Dicek pada isi dari apapun
+      file tidak bertanda putih dan ditargetkan untuk dipindai.
+   - "Tanda tangan HTML normal" (html_*). Dicek pada isi dari apapun file HTML
+      tidak bertanda putih dan ditargetkan untuk dipindai.
    - "Tanda tangan Mach-O" (macho_*). Dicek pada isi dari apapun file tidak
       bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format
       Mach-O.
+   - "Tanda tangan Email" (mail_*). Dicek pada variabel $body diparse ke fungsi
+      phpMussel_mail(), yang dimaksudkan untuk menjadi body dari pesan-pesan
+      email atau entries yang sama (secara potensial post forum dll).
+   - "Tanda tangan MD5" (md5_*). Dicek pada hash MD5 dari isi dan ukuran file
+      dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
    - "Tanda tangan Metadata Arsip" (metadata_*). Dicek pada hash CRC32 dan
       ukuran file dari pertama file berisikan dalam apapun arsip terkompress
       tidak bertanda putih dan ditargetkan untuk dipindai.
    - "Tanda tangan OLE" (ole_*). Dicek pada isi dari apapun objek tidak
       bertanda putih dan ditargetkan untuk dipindai.
-   - "Email Signatures" (mail_*). Dicek pada variabel $body diparse ke fungsi
-      phpMussel_mail(), yang dimaksudkan untuk menjadi body dari pesan-pesan
-      email atau entries yang sama (secara potensial post forum dll).
+   - "Tanda tangan PDF" (pdf_*). Dicek pada isi dari apapun file PDF tidak
+      bertanda putih.
+   - "Tanda tangan Portable Executable Sectional" (pe_*). Dicek pada hash MD5
+      dari seksi PE dan ukuran file dari apapun file tidak bertanda putih,
+      ditargetkan untuk dipindai dan dicocokkan ke format PE.
+   - "Tanda tangan SWF" (swf_*). Dicek pada isi dari apapun file Shockwave
+      tidak bertanda putih.
    - "Tanda tangan Putih" (whitelist_*). Dicek pada hash MD5 dari isi dan
       ukuran file dari apapun file ditargetkan untuk dipindai. File dicocokkan
       akan kebal terhadap dari dicocokkan dengan jenis tanda tangan yang
@@ -1299,7 +1436,7 @@
       untuk dipindai.
      (Catatan jika tanda tangan ini boleh dinonaktifkan melalui phpmussel.ini).
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  8. MASALAH KOMPATIBILITAS DIKETAHUI
@@ -1307,7 +1444,7 @@
  PHP dan PCRE
  - phpMussel memerlukan PHP dan PCRE untuk mengeksekusi dan berfungsi dengan
    baik. Tanpa php, atau tanpa ekstensi PCRE, phpMussel tidak akan mengeksekusi
-   atau berfungsi dengan baik. Seharusnya memastikan sistem anda terinstal PHP
+   atau berfungsi dengan baik. Seharusnya memastikan sistem Anda terinstal PHP
    dan PCRE dan tersedia secara prioritas untuk mengunduh dan menginstal
    phpMussel.
 
@@ -1319,68 +1456,68 @@
  angka positif yang salah yang dilaporkan oleh bermacam-macam program
  anti-virus pada phpMussel. Walaupun informasi ini tidak jaminan absolut dari
  apa dan atau tidak mengalami masalah kompatibilitas antara phpMussel dan
- perangkat anti-virus anda, jika perangkat lunak anti-virus anda tercatat
- berlawanan dengan phpMussel, anda seharusnya mempertimbangkan menonaktifkannya
+ perangkat anti-virus Anda, jika perangkat lunak anti-virus Anda tercatat
+ berlawanan dengan phpMussel, Anda seharusnya mempertimbangkan menonaktifkannya
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 25 September 2014 dan cocok untuk semua rilis phpMussel
- dari dua versi minor terbaru versi (v0.4-v0.5) pada waktu saya menuliskan ini.
+ Informasi ini diupdate 16 November 2014 dan cocok untuk semua rilis phpMussel
+ dari dua versi minor terbaru versi (v0.5-v0.6) pada waktu saya menuliskan ini.
 
- Ad-Aware                Tidak ada masalah yang diketahui
- Agnitum                 Tidak ada masalah yang diketahui
- AhnLab-V3               Tidak ada masalah yang diketahui
- AntiVir                 Tidak ada masalah yang diketahui
- Antiy-AVL               Tidak ada masalah yang diketahui
+ Ad-Aware                Tidak masalah
+ Agnitum                 Tidak masalah
+ AhnLab-V3               Tidak masalah
+ AntiVir                 Tidak masalah
+ Antiy-AVL               Tidak masalah
  Avast                !  Melaporkan "JS:ScriptSH-inf [Trj]"
- AVG                     Tidak ada masalah yang diketahui
- Baidu-International     Tidak ada masalah yang diketahui
- BitDefender             Tidak ada masalah yang diketahui
- Bkav                    Tidak ada masalah yang diketahui
- ByteHero                Tidak ada masalah yang diketahui
- CAT-QuickHeal           Tidak ada masalah yang diketahui
- ClamAV                  Tidak ada masalah yang diketahui
- CMC                     Tidak ada masalah yang diketahui
- Commtouch               Tidak ada masalah yang diketahui
- Comodo                  Tidak ada masalah yang diketahui
- DrWeb                   Tidak ada masalah yang diketahui
- Emsisoft                Tidak ada masalah yang diketahui
- ESET-NOD32              Tidak ada masalah yang diketahui
- F-Prot                  Tidak ada masalah yang diketahui
- F-Secure                Tidak ada masalah yang diketahui
- Fortinet                Tidak ada masalah yang diketahui
- GData                   Tidak ada masalah yang diketahui
+ AVG                     Tidak masalah
+ Baidu-International     Tidak masalah
+ BitDefender             Tidak masalah
+ Bkav                    Tidak masalah
+ ByteHero                Tidak masalah
+ CAT-QuickHeal           Tidak masalah
+ ClamAV                  Tidak masalah
+ CMC                     Tidak masalah
+ Commtouch               Tidak masalah
+ Comodo                  Tidak masalah
+ DrWeb                   Tidak masalah
+ Emsisoft                Tidak masalah
+ ESET-NOD32              Tidak masalah
+ F-Prot                  Tidak masalah
+ F-Secure                Tidak masalah
+ Fortinet                Tidak masalah
+ GData                   Tidak masalah
  Ikarus               !  Melaporkan "Trojan.JS.Agent"
- Jiangmin                Tidak ada masalah yang diketahui
- K7AntiVirus             Tidak ada masalah yang diketahui
- K7GW                    Tidak ada masalah yang diketahui
- Kaspersky               Tidak ada masalah yang diketahui
- Kingsoft                Tidak ada masalah yang diketahui
- Malwarebytes            Tidak ada masalah yang diketahui
- McAfee                  Tidak ada masalah yang diketahui
- McAfee-GW-Edition       Tidak ada masalah yang diketahui
- Microsoft               Tidak ada masalah yang diketahui
- MicroWorld-eScan        Tidak ada masalah yang diketahui
- NANO-Antivirus          Tidak ada masalah yang diketahui
+ Jiangmin                Tidak masalah
+ K7AntiVirus             Tidak masalah
+ K7GW                    Tidak masalah
+ Kaspersky               Tidak masalah
+ Kingsoft                Tidak masalah
+ Malwarebytes            Tidak masalah
+ McAfee                  Tidak masalah
+ McAfee-GW-Edition       Tidak masalah
+ Microsoft               Tidak masalah
+ MicroWorld-eScan        Tidak masalah
+ NANO-Antivirus          Tidak masalah
  Norman               !  Melaporkan "Kryptik.BQS"
- nProtect                Tidak ada masalah yang diketahui
- Panda                   Tidak ada masalah yang diketahui
- Qihoo-360               Tidak ada masalah yang diketahui
- Rising                  Tidak ada masalah yang diketahui
- Sophos                  Tidak ada masalah yang diketahui
- SUPERAntiSpyware        Tidak ada masalah yang diketahui
+ nProtect                Tidak masalah
+ Panda                   Tidak masalah
+ Qihoo-360               Tidak masalah
+ Rising                  Tidak masalah
+ Sophos                  Tidak masalah
+ SUPERAntiSpyware        Tidak masalah
  Symantec             !  Melaporkan "WS.Reputation.1"
- TheHacker               Tidak ada masalah yang diketahui
- TotalDefense            Tidak ada masalah yang diketahui
- TrendMicro              Tidak ada masalah yang diketahui
+ TheHacker               Tidak masalah
+ TotalDefense            Tidak masalah
+ TrendMicro              Tidak masalah
  TrendMicro-HouseCall !  Melaporkan "Suspici.450F5936"
- VBA32                   Tidak ada masalah yang diketahui
- VIPRE                   Tidak ada masalah yang diketahui
- ViRobot                 Tidak ada masalah yang diketahui
+ VBA32                   Tidak masalah
+ VIPRE                   Tidak masalah
+ ViRobot                 Tidak masalah
 
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
-Terakhir Diperbarui: 28 Oktober 2014 (2014.10.28).
+Terakhir Diperbarui: 21 November 2014 (2014.11.21).
 EOF

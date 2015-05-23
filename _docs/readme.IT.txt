@@ -1,16 +1,8 @@
-      _____  _     _  _____  _______ _     _ _______ _______ _______           
+      _____  _     _  _____  _______ _     _ _______ _______ _______
  <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
-     |       |     | |       |  |  | |_____| ______| ______| |______ |_____    
+     |       |     | |       |  |  | |_____| ______| ______| |______ |_____
 
-                            { ~ ~ ~ ITALIANO ~ ~ ~ }                           
- Grazie per aver scelto phpMussel, uno PHP-basato script basato su ClamAV firme
-  progettato per individuare trojan, virus, Malware e altre minacce all'interno
-          di file caricati nel sistema ovunque lo script è collegato.          
-      PHPMUSSEL COPYRIGHT 2013 e oltre GNU/GPL V.2 da Caleb M (Maikuolan)      
-
-                                     ~ ~ ~                                     
-
-
+                            { ~ ~ ~ ITALIANO ~ ~ ~ }
  CONTENUTO
  1. PREAMBOLO
  2A. COME INSTALLARE (PER WEB SERVER)
@@ -24,31 +16,50 @@
  7. FIRMA FORMATO
  8. CONOSCIUTI COMPATIBILITÀ PROBLEMI
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  1. PREAMBOLO
 
- Uno speciale grazie a ClamAV sia per l'ispirazione del progetto e per le firme
- che questo script usi, senza la quale, lo script sarebbe probabilmente non    
- esisterebbe, o nel migliore, avrebbe un molto limitato valore                 
- <http://www.clamav.net/>.       .                                             
+ Grazie per aver scelto phpMussel, uno PHP script progettato per la rilevazione
+ di trojan, virus, malware e altre minacce all'interno di file caricati nel
+ sistema ovunque lo script è collegato, basato su firme di ClamAV e altri.
 
-                                     ~ ~ ~                                     
- Questo script è libero software; è possibile ridistribuirlo e/o modificarlo   
- sotto i termini della GNU General Public License come pubblicato dalla Free   
- Software Foundation; o la versione 2 della licenza, o (a propria scelta) una  
- versione successiva. Questo script è distribuito nella speranza che possa     
+ PHPMUSSEL COPYRIGHT 2013 e oltre GNU/GPL V.2 da Caleb M (Maikuolan).
+
+ Questo script è libero software; è possibile ridistribuirlo e/o modificarlo
+ sotto i termini della GNU General Public License come pubblicato dalla Free
+ Software Foundation; o la versione 2 della licenza, o (a propria scelta) una
+ versione successiva. Questo script è distribuito nella speranza che possa
  essere utile, Ma SENZA ALCUNA GARANZIA; senza neppure la implicita garanzia di
- COMMERCIABILITà o IDONEITà PER UN PARTICOLARE SCOPO. Vedere la GNU General    
- Public License per ulteriori dettagli <http://www.gnu.org/licenses/>          
- <http://opensource.org/licenses/>                                             
+ COMMERCIABILITÀ o IDONEITÀ PER UN PARTICOLARE SCOPO. Vedere la GNU General
+ Public License per ulteriori dettagli <http://www.gnu.org/licenses/>
+ <http://opensource.org/licenses/>.
 
-                                     ~ ~ ~                                     
+ Uno speciale grazie a ClamAV per l'ispirazione del progetto e per le firme che
+ questo script usi, senza la quale, lo script sarebbe probabilmente non
+ esisterebbe, o nel migliore, avrebbe un molto limitato valore
+ <http://www.clamav.net/>.
+
+ Uno speciale grazie a Sourceforge per ospitare i progetto file, situato a
+ <http://sourceforge.net/projects/phpmussel/>, a Spambot Security per ospitare
+ le phpMussel discussione forum, situato a
+ <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, e le risorse di un
+ certo numero di firme utilizzata da phpMussel: SecuriteInfo.com
+ <http://www.securiteinfo.com/>, PhishTank <http://www.phishtank.com/>,
+ NLNetLabs <http://nlnetlabs.nl/> e altri, e un grazie a tutti coloro che
+ sostengono il progetto, a chiunque altro che io possa avere altrimenti
+ dimenticato di menzionare, e per voi, per l'utilizzo dello script. Per
+ commenti, feedback, suggerimenti, aiuto, tecnico supporto o simile, potete
+ email tramite <phpmussel@gamejaunt.com>, contatto tramite il mio web sito
+ contatto modulo all'indirizzo <http://www.gamejaunt.com/contact.php> o
+ partecipare ai comunità discussione forum dello phpMussel che ospitato da
+ Spambot Security. :-)
+
  Questo documento e il suo associato pacchetto possono essere scaricati
  gratuitamente da Sourceforge <http://sourceforge.net/projects/phpmussel/>.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  2A. COME INSTALLARE (PER WEB SERVER)
@@ -125,7 +136,7 @@
     strumento, mi piacerebbe suggerisco di provarlo quelli per assicurarsi che
     funzioni come previsto, anche.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  2B. COME INSTALLARE (PER CLI)
@@ -180,7 +191,7 @@
     phpMussel, eseguire phpMussel e prova scansionare la "_testfiles" cartella
     fornito con il pacchetto.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  3A. COME USARE (PER WEB SERVER)
@@ -194,9 +205,9 @@
  Ma, si è anche in grado di istruire phpMussel per la scansione per i file,
  cartelle o archivi che si implicitamente specificano. Per fare questo, in
  primo luogo, è necessario assicurarsi che l'appropriata configurazione è
- impostato nella phpmussel.ini file (cleanup deve essere disabilitato), e
- quando fatto, in un php file che è collegato allo phpMussel, utilizzare la
- seguente funzione nelle codice:
+ impostato nella phpmussel.ini file (cleanup deve essere disattivato), e quando
+ fatto, in un php file che è collegato allo phpMussel, utilizzare la seguente
+ funzione nelle codice:
 
  phpMussel($cosa_a_scansione,$tipi_di_output,$output_pianura);
 
@@ -231,10 +242,10 @@
    echo $results;
 
    Restituisce qualcosa come (in forma di una stringa):
-    Wed, 18 Sep 2013 02:49:46 +0000 Iniziato.
+    Wed, 16 Sep 2013 02:49:46 +0000 Iniziato.
     > Verificare '/user_name/public_html/my_file.html':
     -> Nessun problema trovato.
-    Wed, 18 Sep 2013 02:49:47 +0000 Finito.
+    Wed, 16 Sep 2013 02:49:47 +0000 Finito.
 
  Per una dettagliata spiegazione del tipo di firme di cui phpMussel usa durante
  le sue scansioni e come le sue gestisce queste firme, fare riferimento alla
@@ -294,7 +305,7 @@
  del README, non sono ancora stato documentato, si prego continuare a leggere e
  fare riferimento alla Browser Comandi sezione di questo README file.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  3B. COME USARE (PER CLI)
@@ -313,7 +324,7 @@
  protegge l'attiva memoria o simili! Essa solo rileva virus contenuti da quei
  specifici file che si esplicitamente dica per scansione.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  4A. BROWSER COMANDI
@@ -372,9 +383,9 @@
    fornendo un modo per rendere l'efficacia della phpMussel discutibile.
 
  In entrambi i casi, senza riguardo di ciò che si sceglie, la scelta in
- definitiva è la vostra. Per predefinita, questi controlli saranno
- disabilitato, Ma hanno un pensateci, e se si decidere li vuoi, questa sezione
- spiega sia come abilitare e come utilizzare queste cose.
+ definitiva è la vostra. Per predefinita, questi controlli saranno disattivato,
+ ma hanno un pensateci, e se si decidere li vuoi, questa sezione spiega sia
+ come abilitare e come utilizzare queste cose.
 
  Un elenco di disponibili browser lato comandi:
 
@@ -438,7 +449,7 @@
    Esempio: ?pword=[script_password]&phpmussel=enable
    ~
    Cosa fa: Abilita phpMussel. Questo dovrebbe essere usato se in precedenza
-            vostra ha disabilitato phpMussel con "disable" e vogliono
+            vostra ha disattivato phpMussel con "disable" e vogliono
             riabilitarla.
    ~
  update
@@ -502,7 +513,7 @@
    Cosa fa: Consente di stampare il contenuto della greylist sullo schermo.
    ~
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  4B. CLI (COMANDO LINEA INTERFACCIA)
@@ -514,7 +525,7 @@
  Per un elenco di comandi disponibili all'interno CLI , al CLI prompt, tipo
  'c', e premere Enter.
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  5. FILE INCLUSI IN QUESTO PACCHETTO
@@ -566,6 +577,9 @@
  /_testfiles/ascii_standard_testfile.txt (Test file, Incluso)
     Test file per test di phpMussel normalizzati ASCII firme.
     ~
+ /_testfiles/coex_testfile.rtf (Test file, Incluso)
+    Test file per test di phpMussel complesso esteso firme.
+    ~
  /_testfiles/exe_standard_testfile.exe (Test file, Incluso)
     Test file per test di phpMussel PE firme.
     ~
@@ -592,6 +606,9 @@
  /_testfiles/ole_testfile.ole (Test file, Incluso)
     Test file per test di phpMussel OLE firme.
     ~
+ /_testfiles/pdf_standard_testfile.pdf (Test file, Incluso)
+    Test file per test di phpMussel PDF firme.
+    ~
  /_testfiles/pe_sectional_testfile.exe (Test file, Incluso)
     Test file per test di phpMussel PE Sezionale firme.
     ~
@@ -600,6 +617,13 @@
     ~
  /vault/ (Cartella)
     Vault cartella (contiene vari file).
+    ~
+ /vault/quarantine/ (Cartella)
+    Quarantena cartella (contiene i file in quarantena).
+    ~
+ /vault/quarantine/.htaccess (Altro, Incluso)
+    Un ipertesto accesso file (in questo caso, a proteggere di riservati file
+    appartenente allo script da l'acceso di non autorizzate origini).
     ~
  /vault/.htaccess (Altro, Incluso)
     Un ipertesto accesso file (in questo caso, a proteggere di riservati file
@@ -615,7 +639,15 @@
  /vault/ascii_mussel_standard.cvd (Firme, Incluso)
     File per le normalizzati ASCII firme.
     Richiesto se l'opzione per le normalizzati ASCII firme in phpmussel.ini è
-    abilitato. Può rimuovere se l'opzione è disabilitato (ma i file verranno
+    abilitato. Può rimuovere se l'opzione è disattivato (ma i file verranno
+    ricreati al momento di aggiornamento).
+    ~
+ /vault/coex_clamav.cvd (Firme, Incluso)
+ /vault/coex_custom.cvd (Firme, Incluso)
+ /vault/coex_mussel.cvd (Firme, Incluso)
+    File per il Complesso Esteso firme.
+    Richiesto se l'opzione per il complesso esteso firme in phpmussel.ini è
+    abilitato. Può rimuovere se l'opzione è disattivato (ma i file verranno
     ricreati al momento di aggiornamento).
     ~
  /vault/elf_clamav_regex.cvd (Firme, Incluso)
@@ -628,7 +660,7 @@
  /vault/elf_mussel_standard.cvd (Firme, Incluso)
     File per l'ELF firme.
     Richiesto se l'opzione per l'ELF firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disabilitato (ma i file verranno ricreati al
+    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
     momento di aggiornamento).
     ~
  /vault/exe_clamav_regex.cvd (Firme, Incluso)
@@ -641,7 +673,7 @@
  /vault/exe_mussel_standard.cvd (Firme, Incluso)
     File per Portatile Eseguibile file (EXE) firme.
     Richiesto se l'opzione per l'EXE firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disabilitato (ma i file verranno ricreati al
+    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
     momento di aggiornamento).
     ~
  /vault/filenames_clamav.cvd (Firme, Incluso)
@@ -649,7 +681,7 @@
  /vault/filenames_mussel.cvd (Firme, Incluso)
     File per le file nomi firme.
     Richiesto se l'opzione per file nomi firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disabilitato (ma i file verranno ricreati al
+    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
     momento di aggiornamento).
     ~
  /vault/general_clamav_regex.cvd (Firme, Incluso)
@@ -662,7 +694,7 @@
  /vault/general_mussel_standard.cvd (Firme, Incluso)
     File per generali firme.
     Richiesto se l'opzione per generali firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disabilitato (ma i file verranno ricreati al
+    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
     momento di aggiornamento).
     ~
  /vault/graphics_clamav_regex.cvd (Firme, Incluso)
@@ -675,7 +707,7 @@
  /vault/graphics_mussel_standard.cvd (Firme, Incluso)
     File per grafica firme.
     Richiesto se l'opzione per grafica firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disabilitato (ma i file verranno ricreati al
+    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
     momento di aggiornamento).
     ~
  /vault/greylist.csv (Firme, Included/Created)
@@ -685,7 +717,7 @@
  /vault/hex_general_commands.csv (Firme, Incluso)
     Hex-codificata CSV di generale comando rilevazioni opzionalmente utilizzati
     da phpMussel. Richiesto se l'opzione per generale comando rilevazione in
-    phpmussel.ini è abilitato. Può rimuovere se l'opzione è disabilitato (ma i
+    phpmussel.ini è abilitato. Può rimuovere se l'opzione è disattivato (ma i
     file verranno ricreati al momento di aggiornamento).
     ~
  /vault/html_clamav_regex.cvd (Firme, Incluso)
@@ -698,7 +730,7 @@
  /vault/html_mussel_standard.cvd (Firme, Incluso)
     File per le normalizzati HTML firme.
     Richiesto se l'opzione per le normalizzati HTML firme in phpmussel.ini è
-    abilitato. Può rimuovere se l'opzione è disabilitato (ma i file verranno
+    abilitato. Può rimuovere se l'opzione è disattivato (ma i file verranno
     ricreati al momento di aggiornamento).
     ~
  /vault/lang.inc (Script, Incluso)
@@ -714,7 +746,7 @@
  /vault/macho_mussel_standard.cvd (Firme, Incluso)
     File per Mach-O firme.
     Richiesto se l'opzione per Mach-O firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disabilitato (ma i file verranno ricreati al
+    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
     momento di aggiornamento).
     ~
  /vault/mail_clamav_regex.cvd (Firme, Incluso)
@@ -735,7 +767,7 @@
  /vault/md5_mussel.cvd (Firme, Incluso)
     File per l'MD5 basate firme.
     Richiesto se l'opzione per l'MD5 basate firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disabilitato (ma i file verranno ricreati al
+    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
     momento di aggiornamento).
     ~
  /vault/metadata_clamav.cvd (Firme, Incluso)
@@ -743,7 +775,7 @@
  /vault/metadata_mussel.cvd (Firme, Incluso)
     File per l'archivio metadati firme.
     Richiesto se l'opzione per l'archivio metadati firme in phpmussel.ini è
-    abilitato. Può rimuovere se l'opzione è disabilitato (ma i file verranno
+    abilitato. Può rimuovere se l'opzione è disattivato (ma i file verranno
     ricreati al momento di aggiornamento).
     ~
  /vault/ole_clamav_regex.cvd (Firme, Incluso)
@@ -756,7 +788,17 @@
  /vault/ole_mussel_standard.cvd (Firme, Incluso)
     File per OLE firme.
     Richiesto se l'opzione per OLE firme in phpmussel.ini è abilitato. Può
-    rimuovere se l'opzione è disabilitato (ma i file verranno ricreati al
+    rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
+    momento di aggiornamento).
+    ~
+ /vault/pdf_clamav_standard.cvd (Firme, Incluso)
+ /vault/pdf_custom_regex.cvd (Firme, Incluso)
+ /vault/pdf_custom_standard.cvd (Firme, Incluso)
+ /vault/pdf_mussel_regex.cvd (Firme, Incluso)
+ /vault/pdf_mussel_standard.cvd (Firme, Incluso)
+    File per PDF firme.
+    Richiesto se l'opzione per PDF firme in phpmussel.ini è abilitato. Può
+    rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
     momento di aggiornamento).
     ~
  /vault/pe_clamav.cvd (Firme, Incluso)
@@ -764,7 +806,7 @@
  /vault/pe_mussel.cvd (Firme, Incluso)
     File per PE Sezionale firme.
     Richiesto se l'opzione per PE Sezionale firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disabilitato (ma i file verranno ricreati al
+    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
     momento di aggiornamento).
     ~
  /vault/phpmussel.inc (Script, Incluso)
@@ -781,6 +823,19 @@
     ~
  /vault/scan_kills.txt *(Logfile, Creato)
     Un record di tutti i file bloccati/uccisi da phpMussel.
+    ~
+ /vault/swf_clamav_regex.cvd (Firme, Incluso)
+ /vault/swf_clamav_regex.map (Firme, Incluso)
+ /vault/swf_clamav_standard.cvd (Firme, Incluso)
+ /vault/swf_clamav_standard.map (Firme, Incluso)
+ /vault/swf_custom_regex.cvd (Firme, Incluso)
+ /vault/swf_custom_standard.cvd (Firme, Incluso)
+ /vault/swf_mussel_regex.cvd (Firme, Incluso)
+ /vault/swf_mussel_standard.cvd (Firme, Incluso)
+    File per Shockwave firme.
+    Richiesto se l'opzione per Shockwave firme in phpmussel.ini è abilitato.
+    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
+    momento di aggiornamento).
     ~
  /vault/template.html (Altro, Incluso)
     phpMussel Template file; Template per l'HTML output prodotto da phpMussel
@@ -803,7 +858,7 @@
     File specifico whitelist.
     Richiesto se l'opzione per la whitelist in phpmussel.ini è abilitato e se
     si desidera avere specifici file sul whitelist. Può rimuovere se l'opzione
-    è disabilitato o se non si richiede whitelisting (ma i file verranno
+    è disattivato o se non si richiede whitelisting (ma i file verranno
     ricreati al momento di aggiornamento).
     ~
  /vault/xmlxdp_clamav_regex.cvd (Firme, Incluso)
@@ -816,7 +871,7 @@
  /vault/xmlxdp_mussel_standard.cvd (Firme, Incluso)
     File per XML/XDP-Pezzo firme.
     Richiesto se l'opzione per XML/XDP-Pezzo firme in phpmussel.ini è
-    abilitato. Può rimuovere se l'opzione è disabilitato (ma i file
+    abilitato. Può rimuovere se l'opzione è disattivato (ma i file
     verranno ricreati al momento di aggiornamento).
     ~
 
@@ -856,7 +911,7 @@
     con me stesso e/o sulla base di informazioni raccolte da varie fonti.
     ~
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  6. OPZIONI DI CONFIGURAZIONE
@@ -875,7 +930,7 @@
       comando, al fine per garantire che sia tu, e non qualcun altro, tentando
       per manualmente attivare queste funzioni. Impostare script_password a
       qualunque password che si desidera utilizzare. Se non alcuna password è
-      impostata, Manuale innescando sarà disabilitato per predefinita. Usa
+      impostata, Manuale innescando sarà disattivato per predefinita. Usa
       qualcosa si ricorda, Ma che è difficile per indovinare d'altrui.
       * Non ha alcuna influenza in CLI modalità.
     "logs_password"
@@ -928,6 +983,57 @@
       1 - Dopo la scansione, se non pulite, immediatamente eliminarlo.
     "lang"
     - Specificare la predefinita lingua per phpMussel.
+    "quarantine_key"
+    - phpMussel è capace di mettere in quarantena contrassegnati tentati file
+      caricamenti in isolamento all'interno della phpMussel vault, se questo è
+      qualcosa che si vuole fare. L'ordinario utenti di phpMussel che
+      semplicemente desiderano proteggere i loro website o hosting environment
+      senza avendo profondo interesse ad analizzare qualsiasi contrassegnati
+      tentati file caricamenti dovrebbe lasciare questa funzionalità
+      disattivata, ma tutti gli utenti interessati ad ulteriori analisi di
+      contrassegnati tentati file caricamenti per la ricerca di malware o per
+      simili cose dovrebbe attivare questa funzionalità. Quarantena di
+      contrassegnati tentati file caricamenti a volte può aiutare anche in
+      debug falsi positivi, se questo è qualcosa che si accade di frequente per
+      voi. Per disattivare la funzionalità di quarantena, lasciare vuota la
+      direttiva "quarantine_key", o cancellare i contenuti di tale direttiva,
+      se non già è vuoto. Per abilitare la funzionalità di quarantena,
+      immettere alcun valore nella direttiva. Il "quarantine_key" è un
+      importante aspetto di sicurezza della funzionalità di quarantena
+      richiesto come un mezzo per prevenire la funzionalità di quarantena di
+      essere sfruttati da potenziali aggressori e come mezzo per prevenire
+      potenziale esecuzione di dati memorizzati all'interno della quarantena.
+      Il "quarantine_key" dovrebbe essere trattato nello stesso modo come le
+      password: Più lunga è la migliore, e proteggila ermeticamente. Per la
+      migliore effetto, utilizzare in combinazione con "delete_on_sight".
+    "quarantine_max_filesize"
+    - La massima permesso dimensione del file dei file essere quarantena. File
+      di dimensioni superiori questo valore NON verranno quarantena. Questa
+      direttiva è importante per rendere più difficile per qualsiasi potenziali
+      aggressori di inondare la tua quarantena con indesiderati dati
+      potenzialmente causare un eccessivo utilizzo dei dati sul tuo hosting
+      servizio. Il valore è in KB. Predefinito =2048 =2048KB =2MB.
+    "quarantine_max_usage"
+    - La massima permesso utilizzo della memoria per la quarantena. Se la
+      totale memoria utilizzata dalla quarantena raggiunge questo valore, i più
+      vecchi file in quarantena vengono eliminati fino a quando la totale
+      memoria utilizzata non raggiunge questo valore. Questa direttiva è
+      importante per rendere più difficile per qualsiasi potenziali aggressori
+      di inondare la tua quarantena con indesiderati dati potenzialmente
+      causare un eccessivo utilizzo dei dati sul tuo hosting servizio. Il
+      valore è in KB. Predefinito =65536 =65536KB =64MB.
+    "honeypot_mode"
+    - Quando la honeypot modalità è abilitata, phpMussel tenterà di mettere in
+      quarantena ogni file caricamenti che esso incontra, indipendentemente di
+      se il file che essere caricato corrisponde d'alcuna incluso firma, e zero
+      reale scansionare o analisi di quei tentati file caricati sarà avvenire.
+      Questa funzionalità dovrebbe essere utile per coloro che desiderano
+      utilizzare phpMussel a fini di virus/malware ricerca, ma non si
+      raccomandato di abilitare questa funzionalità se l'uso previsto de
+      phpMussel da parte dell'utente è per l'effettivo scansione dei file
+      caricamenti né raccomandato di utilizzare la funzionalità di honeypot per
+      fini diversi da l'uso de honeypot. Da predefinita, questo opzione è
+      disattivato. 0 = Disattivato [Predefinito], 1 = Attivato.
  "signatures" (Categoria)
  - Configurazione per firme.
    %%%_clamav = ClamAV firme (sia mains e daily).
@@ -935,7 +1041,7 @@
    %%%_mussel = phpMussel firme inclusi nel corrente set di firme che non è da
    ClamAV.
    - Verificare contro MD5 firme durante la scansione?
-     0 = No, 1 = Yes [Default].
+     0 = No, 1 = Sì [Predefinito].
      "md5_clamav"
      "md5_custom"
      "md5_mussel"
@@ -1007,9 +1113,24 @@
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
+   - Verificare contro Complesso Esteso firme durante la scansione?
+     0 = No, 1 = Sì [Predefinito].
+     "coex_clamav"
+     "coex_custom"
+     "coex_mussel"
+   - Verificare contro PDF firme durante la scansione?
+     0 = No, 1 = Sì [Predefinito].
+     "pdf_clamav"
+     "pdf_custom"
+     "pdf_mussel"
+   - Verificare contro Shockwave firme durante la scansione?
+     0 = No, 1 = Sì [Predefinito].
+     "swf_clamav"
+     "swf_custom"
+     "swf_mussel"
    - Firma lunghezza corrispondenza limitando opzioni. Modificata solo se si sa
      cosa si sta facendo. SD = Standard firme. RX = PCRE (Perl Compatibile
-     Regolari Espressioni, o "Regex") firme. FN = File nome firme. Se notate
+     Regolari Espressioni, o "Regex") firme. FN = File nomi firme. Se notate
      php termina fatalmente quando phpMussel tenta per scansione, tenta per
      abbassare i "max" valori seguito. Se possibile e conveniente, fatemi
      sapere quando questo accade ei risultati di quello il voi tentò.
@@ -1020,12 +1141,12 @@
      "sd_siglen_min"
      "sd_siglen_max"
    - phpMussel dovrebbe riportarlo quando i firme file sono mancanti o
-     danneggiati? Se fail_silently è disabilitato, Mancanti e danneggiati file
+     danneggiati? Se fail_silently è disattivato, Mancanti e danneggiati file
      saranno riportato sulla scansione, e se fail_silently è abilitato,
      mancanti e danneggiati file saranno ignorato, con scansione riportato per
      quei file che non ha sono problemi. Questo dovrebbe essere generalmente
      lasciata sola a meno che sperimentando inaspettate terminazioni o simili
-     problemi. 0 = Disabilitato [Predefinito], 1 = Abilitato.
+     problemi. 0 = Disattivato [Predefinito], 1 = Attivato.
      "fail_silently"
  "files" (Categoria)
  - Generale configurazione per la gestione dei file.
@@ -1075,7 +1196,7 @@
    - Massimo ricorsione profondità limite per gli archivi. Predefinito = 10.
  "attack_specific" (Categoria)
  - Configurazione per specifiche attacco rilevazioni (non basate sulle CVD).
-   * Chameleon attacco rilevamento: 0 = Disabilitato, 1 = Abilitato.
+   * Chameleon attacco rilevamento: 0 = Disattivato, 1 = Attivato.
    "chameleon_from_php"
    - Cercare per php magici numeri che non sono riconosciuti php file né
      archivi.
@@ -1182,16 +1303,29 @@
       della memoria per tentati caricamenti di non-immagine file.
       0 - SPENTO (OFF), 1 - SU (ON).
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  7. FIRMA FORMATO
+
+ = FILE NOMI FIRME =
+   Tutte le file nomi firme seguono il formato:
+    NAME:FNRX
+   Dove NAME è il nome per citare per quella firma e FNRX è la regolare
+   espressione a verifica file nomi firme (non codificata) contra.
 
  = MD5 FIRME =
    Tutte l'MD5 firme seguono il formato:
     HASH:FILESIZE:NAME
    Dove HASH è l'MD5 hash dell'intero file, FILESIZE è la totale dimensione del
    file e NAME è il nome per citare per quella firma.
+
+ = ARCHIVIO METADATI FIRME =
+   Tutte l'archivio metadati firme seguono il formato:
+    NAME:FILESIZE:CRC32
+   Dove NAME è il nome per citare per quella firma, FILESIZE è la totale
+   dimensione (non compresso) di un file contenuto all'interno
+   dell'archivio e CRC32 è la CRC32 verifica numero di tale file.
 
  = PE SEZIONALI MD5 FIRME =
    Tutte il PE sezionali md5 firme seguono il formato:
@@ -1206,18 +1340,13 @@
    file e TYPE è il tipo di firme il file sulla whitelist è di essere immune
    contro.
 
- = FILENAME FIRME =
-   Tutte le file nomi firme seguono il formato:
-    NAME:FNRX
-   Dove NAME è il nome per citare per quella firma e FNRX è la regolare
-   espressione a verifica file nomi firme (non codificata) contra.
-
- = ARCHIVIO METADATI FIRME =
-   Tutte l'archivio metadati firme seguono il formato:
-    NAME:FILESIZE:CRC32
-   Dove NAME è il nome per citare per quella firma, FILESIZE è la totale
-   dimensione (non compresso) di un file contenuto all'interno
-   dell'archivio e CRC32 è la CRC32 verifica numero di tale file.
+ = COMPLESSO ESTESO FIRME =
+   Complesso esteso firme sono piuttosto diverso da altri tipi di firme
+   possibili con phpMussel, in quanto ciò che essi sono corrispondenti contro è
+   specificato dalle firme stesse e possono corrispondere contro più criteri.
+   Criteri sono delimitati da ";" e il tipo e dati di ogni criterio è
+   delimitato da ":" come tale che il formato per queste firme sembra come:
+    $variabile1:DATI;$variabile2:DATI;FirmeNome
 
  = TUTTO IL RESTO =
    Tutte le altre firme seguono il formato:
@@ -1258,42 +1387,49 @@
 
  = TIPI DI FIRME =
    I seguenti sono i tipi di firme utilizzate da phpMussel:
-   - "MD5 Firme" (md5_*). Verificato contro l'MD5 hash dei contenuti e la
-      dimensione del ogni file mirati per scansionare quello che non è sulla
-      whitelist.
-   - "Generali Firme" (general_*). Verificato contro i contenuti del ogni file
-      mirati per scansionare quello che non è sulla whitelist.
    - "Normalizzati ASCII Firme" (ascii_*). Verificato contro i contenuti del
       ogni file mirati per scansionare quello che non è sulla whitelist.
-   - "Normalizzati HTML Firme" (html_*). Verificato contro i contenuti del
-      ogni HTML file mirati per scansionare quello che non è sulla whitelist.
-   - "Generali Comandi" (hex_general_commands.csv). Verificato contro i
-      contenuti del ogni file mirati per scansionare quello che non è sulla
-      whitelist.
-   - "Portatili Eseguibili Sezionale Firme" (pe_*). Verificato contro l'MD5
-      hash di ogni PE sezione e la dimensione del ogni file non sulla whitelist
-      mirati per la scansione e verificato allo PE formato.
-   - "Portatili Eseguibili Firme" (exe_*). Verificato contro i contenuti del
-      ogni file mirati per scansionare quello che non è sulla whitelist e
-      verificato allo PE formato.
+   - "Complesso Esteso Firme" (coex_*). Misto tipi dei firme verifica.
    - "ELF Firme" (elf_*). Verificato contro i contenuti del ogni file mirati
       per scansionare quello che non è sulla whitelist e verificato allo ELF
       formato.
+   - "Portatili Eseguibili Firme" (exe_*). Verificato contro i contenuti del
+      ogni file mirati per scansionare quello che non è sulla whitelist e
+      verificato allo PE formato.
+   - "File Nomi Firme" (filenames_*). Verificato contro i file nomi dei file
+      mirati per la scansionare.
+   - "Generali Firme" (general_*). Verificato contro i contenuti del ogni file
+      mirati per scansionare quello che non è sulla whitelist.
    - "Grafiche Firme" (graphics_*). Verificato contro i contenuti del ogni file
       mirati per scansionare quello che non è sulla whitelist e verificato come
       un conosciuto grafico file formato.
+   - "Generali Comandi" (hex_general_commands.csv). Verificato contro i
+      contenuti del ogni file mirati per scansionare quello che non è sulla
+      whitelist.
+   - "Normalizzati HTML Firme" (html_*). Verificato contro i contenuti del
+      ogni HTML file mirati per scansionare quello che non è sulla whitelist.
    - "Mach-O Firme" (macho_*). Verificato contro i contenuti del ogni file
       mirati per scansionare quello che non è sulla whitelist e verificato allo
       Mach-O formato.
+   - "Email Signatures" (mail_*). Verificato contro la $body variabile parsato
+      a la phpMussel_mail() funzione, che è destinato a essere il corpo de
+      email messaggi o simili entità (potenzialmente forum messaggi e
+      etcetera).
+   - "MD5 Firme" (md5_*). Verificato contro l'MD5 hash dei contenuti e la
+      dimensione del ogni file mirati per scansionare quello che non è sulla
+      whitelist.
    - "Archive Metadati Firme" (metadata_*). Verificato contro l'CRC32 hash e la
       dimensione dell'iniziale file contenuto all'interno di qualsiasi file
       mirati per scansionare quello che non è sulla whitelist.
    - "OLE Firme" (ole_*). Verificato contro i contenuti del ogni oggetti mirati
       per scansionare quello che non è sulla whitelist.
-   - "Email Signatures" (mail_*). Verificato contro la $body variabile parsato
-      a la phpMussel_mail() funzione, che è destinato a essere il corpo de
-      email messaggi o simili entità (potenzialmente forum messaggi e
-      etcetera).
+   - "PDF Firme" (pdf_*). Verificato contro i contenuti del ogni PDF file
+      mirati per scansionare quello che non è sulla whitelist.
+   - "Portatili Eseguibili Sezionale Firme" (pe_*). Verificato contro l'MD5
+      hash di ogni PE sezione e la dimensione del ogni file non sulla whitelist
+      mirati per la scansione e verificato allo PE formato.
+   - "SWF Firme" (swf_*). Verificato contro i contenuti del ogni Shockwave file
+      mirati per scansionare quello che non è sulla whitelist.
    - "Whitelist Firme" (whitelist_*). Verificato contro l'MD5 hash dei
       contenuti e la dimensione del ogni file mirati per scansionare.
       Corrispondenti file saranno immuni contro l'essere bloccato dal tipo di
@@ -1304,7 +1440,7 @@
      (Si noti che qualsiasi di queste firme possono essere facilmente
       disattivato tramite phpmussel.ini).
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
  8. CONOSCIUTI COMPATIBILITÀ PROBLEMI
@@ -1330,9 +1466,9 @@
  dovrebbe considerare l'alternative opzioni per sia il vostro anti-virus
  software o phpMussel.
 
- Questa informazione è stato lo scorso aggiornato 25 Settembre 2014 ed è in
+ Questa informazione è stato lo scorso aggiornato 16 Novembre 2014 ed è in
  corso per tutte le phpMussel rilasci delle due più recenti minori versioni
- (v0.4-v0.5) al momento di scrivere questo.
+ (v0.5-v0.6) al momento di scrivere questo.
 
  Ad-Aware                Senza noti problemi
  Agnitum                 Senza noti problemi
@@ -1386,8 +1522,8 @@
  ViRobot                 Senza noti problemi
 
 
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
 
 
-Ultimo Aggiornamento: 28 Ottobre 2014 (2014.10.28).
+Ultimo Aggiornamento: 21 Novembre 2014 (2014.11.21).
 EOF
