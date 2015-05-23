@@ -1,5 +1,33 @@
 phpMussel change_log.txt
 
+=== Version 0.3 ===
+SUMMARY:
+Updated to the latest ClamAV signatures (55+17971).
+Huge number of significant changes !! Refer below.
+
+NEW CHANGES:
+- Built a (very basic) command interface and an updater !!
+  Implemented a POST, GET and QUERY based command system, whereby certain
+  functions can be performed by triggering them via either POST, GET or QUERY,
+  meaning.. you can do things to phpMussel from within your browser.
+- phpMussel can now be updated automatically via password protected command.
+- phpMussel can be enabled and disabled via password protected command.
+- Logs can be viewed from your browser via password protected command.
+- Refined the main script and heavily expanded on non ClamAV sigantures.
+- Added signature greylisting capabilities.
+- Added some basic fraudulent metadata detections.
+
+Maikuolan,
+23rd October 2013.
+
+=== Version 0.2b ===
+SUMMARY:
+Updated to the latest ClamAV signatures (55+17946).
+Release not stable; Will roll to next version (0.3).
+
+Maikuolan,
+8th October 2013.
+
 === Version 0.2a ===
 SUMMARY:
 Sub-minor update.

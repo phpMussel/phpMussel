@@ -1,65 +1,40 @@
-      _____  _     _  _____  _______ _     _ _______ _______ _______   v0.2a   
+      _____  _     _  _____  _______ _     _ _______ _______ _______           
  <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
      |       |     | |       |  |  | |_____| ______| ______| |______ |_____    
  Thank you for using phpMussel, a php-based script based upon ClamAV signatures
-     designed to detect trojans, viruses, malware and etcetera within files    
+  designed to detect trojans, viruses, malware and other threats within files  
              uploaded to your system wherever the script is hooked.            
-                PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2                
- Please be aware, however, that this script (at least, at the time the version 
-   you are currently using was released) is still UNDER CONSTRUCTION, NOT YET  
-    COMPLETE, and thus comes with NO WARRANTY. Keep an eye out for updates.    
+     PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan)    
+ 
                                   ~ ~ ~                                        
+ 
  
  CONTENTS
  1. PRE-RAMBLE
  2. HOW TO INSTALL
  3. HOW TO USE
- 4. FILES INCLUDED IN THIS PACKAGE
- 5. SIGNATURE FORMAT
-   (Yes, this is short, I know.. Will add more later.
-    Intend to write updating, contribution and compatibility information.
-    Within the next few updates, documentation should be more comprehensive).
+ 4. BROWSER COMMANDS (includes instructions for how to update)
+ 5. FILES INCLUDED IN THIS PACKAGE
+ 6. SIGNATURE FORMAT
+ 7. KNOWN COMPATIBILITY PROBLEMS
  
                                   ~ ~ ~                                        
  
  
  1. PRE-RAMBLE
  
- < Excerpt from phpmussel.php >
- phpMussel version 0.2a (main script by Maikuolan, signatures by ClamAV).
- Last Updated (phpMussel, this version): 1st October 2013.
- 
- Special thanks to ClamAV for both project inspiration and for the signature
- files that this script utilises, without which, the script would simply not
- exist, or at best, would have very limited value.
- Default signatures included with this version of phpMussel derived from
- mainlined signatures version 55 ("main.cvd"), released 17th September 2013.
- Both ClamAV and the latest copy of its (unmodified) signatures can be
- found at:
-  http://www.clamav.net/lang/en/
- 
- Special thanks to Zaphod and Spambot Security for giving the project a home
- via hosting and forums.
-  http://www.spambotsecurity.com/forum/index.php
- 
- Special thanks to all those supporting the project, and to you, for using
- the script.
- 
- Also.. To anyone else that I should be mentioning that I haven't. I felt that
- I should probably include something like this (special thanks notice) in the
- script, but I don't have much experience and kind of suck at them, I'm not
- entirely sure what I should and shouldn't write here, so, whatever. Maybe I'll
- improve it with future versions or something. :)
- 
- For help or support with the script (if you need it), you can find and contact
- me at Spambot Security or Game Jaunt.
-  http://www.spambotsecurity.com/forum/memberlist.php?mode=viewprofile&u=516
-  http://www.gamejaunt.com/contact.php
-  http://www.gamejaunt.com/profile/Maikuolan/
-</ Excerpt from phpmussel.php >
- 
- Script released as GNU/GPL V.2, which can be found (the license) at:
-  http://www.gnu.org/licenses/licenses.html
+  Special thanks to ClamAV for both project inspiration and for the signatures 
+  that this script utilises, without which, the script would likely not exist, 
+  or at best, would have very limited value. <http://www.clamav.net/lang/en/>  
+
+                                  ~ ~ ~                                        
+ This script is free software; you can redistribute it and/or modify it under  
+ the terms of the GNU General Public License as published by the Free Software 
+ Foundation; either version 2 of the License, or (at your option) any later    
+ version. This script is distributed in the hope that it will be useful, but   
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or 
+ FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+ details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
  
                                   ~ ~ ~                                        
  
@@ -137,13 +112,18 @@
  
  3. HOW TO USE
  
+ phpMussel is intended to be a script which will function adequately right from
+ the box with a bare minimum level of requirements on your part: Once it has
+ been installed, basically, it simply should work.
+ 
  Scanning of file uploads is automated and enabled by default, so nothing is
- required on your behalf for this particular function. However, you are also
- able to instruct phpMussel to scan for files, directories or archives that
- you implicitly specify. To do this, firstly, you'll need to ensure that
- appropriate configuration is set phpmussel.ini file, and once done, to do
- this, in a php file that is hooked to phpMussel, use the following
- function in your code:
+ required on your behalf for this particular function.
+ 
+ However, you are also able to instruct phpMussel to scan for files,
+ directories or archives that you implicitly specify. To do this, firstly,
+ you'll need to ensure that the appropriate configuration is set in the
+ phpmussel.ini file (cleanup must be disabled), and once done, in a php file
+ that is hooked to phpMussel, use the following function in your code:
  
  phpMussel($what_to_scan,$output_type,$output_flatness);
  
@@ -185,8 +165,18 @@
     Wed, 18 Sep 2013 02:49:47 +0000 Finished
  
  For a full break-down of what sort of signatures phpMussel uses during its
- scans and how it handles these signatures, refer to the "SIGNATURE FORMAT"
+ scans and how it handles these signatures, refer to the Signature Format
  section of this README file.
+ 
+ If you encounter any false positives, if you encounter something new that you
+ think should be blocked, or for anything else regarding signatures, please
+ contact me about it so that I may make the necessary changes, which, if you do
+ not contact me, I may not necessarily be aware of.
+ 
+ To disable signatures that are include with phpMussel (such as if you're
+ experiencing a false positive specific to your purposes which should not
+ normally be removed from streamline), refer to the Greylisting notes within
+ the Browser Commands section of this README file.
  
  In addition to the default file upload scanning and the optional scanning
  of other files and/or directories specified via the above function, included
@@ -221,201 +211,407 @@
  function phpMusselD() and phpMusselR(). These functions are sub-functions of
  phpMussel(), and should not be called directly outside of that parent
  function (not because of adverse effects.. More-so, simply because it'd serve
- no purpose).
+ no purpose, and most probably won't actually work correctly anyhow).
+ 
+ There are many other controls and functions available within phpMussel for
+ your use, too. For any such controls and functions which, by the end of this
+ section of the README, have not yet been documented, please continue reading
+ and refer to the Browser Commands section of this README file.
  
                                   ~ ~ ~                                        
  
  
- 4. FILES INCLUDED IN THIS PACKAGE
+ 4. BROWSER COMMANDS
+ 
+ Once phpMussel has been installed and is correctly functioning on your system,
+ if you've set the script_password and logs_password variables in your
+ configuration file, you will be able to perform some limited number of
+ administrative functions and input some number of commands to phpMussel via
+ your browser. The reason these passwords need to be set in order to enable
+ these browser-side controls is both to ensure proper security, proper
+ protection of these browser-side controls and to ensure that there exists
+ a way for these browser-side controls to be entirely disabled if they are not
+ desired by you and/or other webmasters/administrators using phpMussel. So,
+ in other words, to enable these controls, set a pasword, and to disable these
+ controls, set no password. Alternatively, if you choose to enable these
+ controls and then choose to disable these controls at a later date, there is
+ a command to do this (such can be useful if you perform some actions that
+ you feel could potentially compromise the delegated passwords and need to
+ quickly disable these controls without modifying your configuration file).
+ 
+ A couple of reasons why you -should- enable these controls:
+ - Provides a way to greylist signatures on-the-fly in instances such as
+   when you discover a signature that is producing a false-positive while
+   uploading files to your system and you don't have time to manually edit
+   and reupload your greylist file.
+ - Provides a way for you to allow someone other than yourself to control your
+   copy of phpMussel without the implicit need to grant them access to FTP.
+ - Provides a way to provide controlled access to your log files.
+ - Provides an easy way to update phpMussel when updates are available.
+ - Provides a way for you to monitor phpMussel when FTP access or other
+   conventional access points for monitoring phpMussel are not available.
+ 
+ A couple of reasons why you should -not- enable these controls:
+ - Provides a vector for potential attackers and undesirables to determine
+   whether you are using phpMussel or not (although, this could be both a
+   reason for and a reason against, depending on perspective) by way of
+   blindly sending commands to servers as a means to probe. On one hand, this
+   could discourage attackers from targeting your system if they learn that you
+   are using phpMussel, assuming that they are probing because their attack
+   method is rendered ineffective as a result of using phpMussel. However, on
+   the other hand, if some unforeseen and currently unknown exploit within
+   phpMussel or a future version thereof comes to light, and if it could
+   potentially provide an attack vector, a positive result from such probing
+   could actually encourage attackers to target your system.
+ - If your delegated passwords were ever compromised, unless changed, could
+   provide a way for an attacker to bypass whatever signatures may be otherwise
+   normally preventing their attacks from succeeding, or even potentially
+   disable phpMussel altogether, thus providing a way to render the
+   effectiveness of phpMussel moot.
+ 
+ Either way, regardless of what you choose, the choice is ultimately yours. By
+ default, these controls will be disabled, but have a think about it, and if
+ you decide you want them, this section explains both how to enable them and
+ how to use them.
+ 
+ A list of available browser-side commands:
+ 
+ scan_log
+   Password required: logs_password
+   Other requirements: scan_log must be set.
+   Required parameters: (none)
+   Optional parameters: (none)
+   Example: ?logspword=[logs_password]&phpmussel=scan_log
+   ~
+   What it does: Prints the contents of your scan_log file to the screen.
+   ~
+ scan_kills
+   Password required: logs_password
+   Other requirements: scan_kills must be set.
+   Required parameters: (none)
+   Optional parameters: (none)
+   Example: ?logspword=[logs_password]&phpmussel=scan_kills
+   ~
+   What it does: Prints the contents of your scan_kills file to the screen.
+   ~
+ controls_lockout
+   Password required: logs_password OR script_password
+   Other requirements: (none)
+   Required parameters: (none)
+   Optional parameters: (none)
+   Example 1: ?logspword=[logs_password]&phpmussel=controls_lockout
+   Example 2: ?pword=[script_password]&phpmussel=controls_lockout
+   ~
+   What it does: Disables ("locks out") all browser-side controls. This should
+                 be used if you suspect that either of your passwords have been
+                 compromised (this can happen if you're using these controls
+                 from a computer which is not secure or not trust).
+                 controls_lockout works by creating a file, controls.lck, in
+                 your vault, which phpMussel will check for before performing
+                 any commands of any kind. Once this happens, to reenable
+                 controls, you'll need to manually delete the controls.lck file
+                 via FTP or similar. Can be called using either password.
+   ~
+ disable
+   Password required: script_password
+   Other requirements: (none)
+   Required parameters: (none)
+   Optional parameters: (none)
+   Example: ?pword=[script_password]&phpmussel=disable
+   ~
+   What it does: Disables phpMussel. This should be used if you're performing
+                 any updates or changes to your system or if you're installing
+                 any new software or modules to your system which either do or
+                 potentially could trigger false positives. This should also be
+                 used if you're having any problems with phpMussel but do not
+                 wish to remove it from your system. Once this happens, to
+                 reenable phpMussel, use "enable".
+   ~
+ enable
+   Password required: script_password
+   Other requirements: (none)
+   Required parameters: (none)
+   Optional parameters: (none)
+   Example: ?pword=[script_password]&phpmussel=enable
+   ~
+   What it does: Enables phpMussel. This should be used if you've previously
+                 disabled phpMussel using "disable" and want to reenable it.
+   ~
+ update
+   Password required: script_password
+   Other requirements: update.dat and update.inc must exist.
+   Required parameters: (none)
+   Optional parameters: forcedupdate
+   Example: ?pword=[script_password]&phpmussel=update&musselvar=forcedupdate
+   ~
+   What it does: Checks for updates to both phpMussel and its signatures. If
+                 update checks succeed and updates are found, will attempt
+                 to download and install these updates. If updates are checked
+                 too quickly, update check will abort. If update checks fail,
+                 update will abort. If optional parameter "forcedupdate" is
+                 supplied, time of last update will be ignored and thus
+                 update check will continue even if it is being checked "too
+                 quickly", but will still abort if update check fails. Results
+                 of the entire process are printed to the screen. I recommend
+                 including the optional parameter "forcedupdate" if you're
+                 manually triggering this control, but please do not use
+                 "forcedupdate" if you're automating the process, such as via
+                 cron or similar. I recommend checking at least once per month
+                 to ensure your signatures and your copy of phpMussel are kept
+                 up to-date (unless, of course, you're checking for updates
+                 and installing them manually, which, I'd still recommend
+                 doing at least one per month). Checking more than twice per
+                 month is probably pointless, considering I'm (at the time of
+                 writing this) working on this project by myself and I'm very
+                 unlikely to be able to produce updates of any kind more
+                 frequently than that (nor do I particularly want to for the
+                 most part).
+   ~
+ greylist
+   Password required: script_password
+   Other requirements: (none)
+   Required parameters: [Name of signature to be greylisted]
+   Optional parameters: (none)
+   Example: ?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]
+   ~
+   What it does: Add a signature to the greylist.
+   ~
+ greylist_clear
+   Password required: script_password
+   Other requirements: (none)
+   Required parameters: (none)
+   Optional parameters: (none)
+   Example: ?pword=[script_password]&phpmussel=greylist_clear
+   ~
+   What it does: Clears the entire greylist.
+   ~
+ greylist_show
+   Password required: script_password
+   Other requirements: (none)
+   Required parameters: (none)
+   Optional parameters: (none)
+   Example: ?pword=[script_password]&phpmussel=greylist_show
+   ~
+   What it does: Prints the contents of the greylist to the screen.
+   ~
+ 
+                                  ~ ~ ~                                        
+ 
+ 
+ 5. FILES INCLUDED IN THIS PACKAGE
  
  The following is a list of all of the files that should have been included
  in the archived copy of this script when you downloaded it, any files that
  may be potentially created as a result of your using this script, along with
- a short description of what all these files are for.
+ a short description of what all these files are for. This version of this
+ section of the README file was valid at release of v0.3 of phpMussel, but may
+ not accurately reflect previous versions of phpMussel, and furthermore, may
+ become outdated as new versions are released.
  
- /phpmussel.php - The main working file of the script (essential)!
+ /change_log.txt (Documentation, Included)
+    A record of changes made to the script between different
+    versions (not required for proper function of script).
+    ~
+ /phpmussel.php (Script, Included)
+    phpMussel Loader file. Loads the main script, updater, etcetera.
+    This is what you're supposed to be hooking into (essential)!
+    ~
+ /readme.txt (Documentation, Included)
+    The README file (this file; you're currently reading it).
+    ~
+ /web.config (Other, Included)
+    An ASP.NET configuration file (in this instance, to protect the "/vault"
+    directory from being accessed by non-authorised sources in the event that
+    the script is installed on a server based upon ASP.NET technologies).
+    ~
+ /vault/ (Directory)
+    Vault directory (contains various files).
+    ~
+ /vault/.htaccess (Other, Included)
+    A hypertext access file (in this instance, to protect sensitive files
+    belonging to the script from being accessed by non-authorised sources).
+    ~
+ /vault/elf_clamav_regex.cvd (Signatures, Included)
+ /vault/elf_clamav_regex.map (Signatures, Included)
+ /vault/elf_clamav_standard.cvd (Signatures, Included)
+ /vault/elf_clamav_standard.map (Signatures, Included)
+ /vault/elf_custom_regex.cvd (Signatures, Included)
+ /vault/elf_custom_standard.cvd (Signatures, Included)
+ /vault/elf_mussel_regex.cvd (Signatures, Included)
+ /vault/elf_mussel_standard.cvd (Signatures, Included)
+    Files for ELF signatures.
+    Required if ELF signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
+    ~
+ /vault/exe_clamav_regex.cvd (Signatures, Included)
+ /vault/exe_clamav_regex.map (Signatures, Included)
+ /vault/exe_clamav_standard.cvd (Signatures, Included)
+ /vault/exe_clamav_standard.map (Signatures, Included)
+ /vault/exe_custom_regex.cvd (Signatures, Included)
+ /vault/exe_custom_standard.cvd (Signatures, Included)
+ /vault/exe_mussel_regex.cvd (Signatures, Included)
+ /vault/exe_mussel_standard.cvd (Signatures, Included)
+    Files for Portable Executable file (EXE) signatures.
+    Required if EXE signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
+    ~
+ /vault/filenames_clamav.cvd (Signatures, Included)
+ /vault/filenames_custom.cvd (Signatures, Included)
+ /vault/filenames_mussel.cvd (Signatures, Included)
+    Files for filename signatures.
+    Required if filename signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
+    ~
+ /vault/general_clamav_regex.cvd (Signatures, Included)
+ /vault/general_clamav_regex.map (Signatures, Included)
+ /vault/general_clamav_standard.cvd (Signatures, Included)
+ /vault/general_clamav_standard.map (Signatures, Included)
+ /vault/general_custom_regex.cvd (Signatures, Included)
+ /vault/general_custom_standard.cvd (Signatures, Included)
+ /vault/general_mussel_regex.cvd (Signatures, Included)
+ /vault/general_mussel_standard.cvd (Signatures, Included)
+    Files for general signatures.
+    Required if general signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
+    ~
+ /vault/graphics_clamav_regex.cvd (Signatures, Included)
+ /vault/graphics_clamav_regex.map (Signatures, Included)
+ /vault/graphics_clamav_standard.cvd (Signatures, Included)
+ /vault/graphics_clamav_standard.map (Signatures, Included)
+ /vault/graphics_custom_regex.cvd (Signatures, Included)
+ /vault/graphics_custom_standard.cvd (Signatures, Included)
+ /vault/graphics_mussel_regex.cvd (Signatures, Included)
+ /vault/graphics_mussel_standard.cvd (Signatures, Included)
+    Files for graphics signatures.
+    Required if graphics signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
+    ~
+ /vault/greylist.csv (Signatures, Included/Created)
+    CSV of greylisted signatures indicating to phpMussel which signatures it
+    should be ignoring (file automatically recreated if deleted).
+    ~
+ /vault/hex_general_commands.csv (Signatures, Included)
+    Hex-encoded CSV of general command detections optionally used by phpMussel.
+    Required if general command detection option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but file will be recreated on update).
+    ~
+ /vault/macho_clamav_regex.cvd (Signatures, Included)
+ /vault/macho_clamav_regex.map (Signatures, Included)
+ /vault/macho_clamav_standard.cvd (Signatures, Included)
+ /vault/macho_clamav_standard.map (Signatures, Included)
+ /vault/macho_custom_regex.cvd (Signatures, Included)
+ /vault/macho_custom_standard.cvd (Signatures, Included)
+ /vault/macho_mussel_regex.cvd (Signatures, Included)
+ /vault/macho_mussel_standard.cvd (Signatures, Included)
+    Files for Mach-O signatures.
+    Required if Mach-O signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
+    ~
+ /vault/mail_clamav_regex.cvd (Signatures, Included)
+ /vault/mail_clamav_regex.map (Signatures, Included)
+ /vault/mail_clamav_standard.cvd (Signatures, Included)
+ /vault/mail_clamav_standard.map (Signatures, Included)
+ /vault/mail_custom_regex.cvd (Signatures, Included)
+ /vault/mail_custom_standard.cvd (Signatures, Included)
+ /vault/mail_mussel_regex.cvd (Signatures, Included)
+ /vault/mail_mussel_standard.cvd (Signatures, Included)
+    Files for signatures used by the phpMussel_mail() function.
+    Required if the phpMussel_mail() function is used in any way.
+    Can remove if it is not used (but files will be recreated on update).
+    ~
+ /vault/md5_clamav.cvd (Signatures, Included)
+ /vault/md5_custom.cvd (Signatures, Included)
+ /vault/md5_mussel.cvd (Signatures, Included)
+    Files for MD5 based signatures.
+    Required if MD5 based signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
+    ~
+ /vault/phpmussel.inc (Script, Included)
+    phpMussel Core Script; The main body and guts of phpMussel (essential)!
+    ~
+ /vault/phpmussel.ini (Other, Included)
+    phpMussel Configuration file; Contains all the configuration options of
+    phpMussel, telling it what to do and how to operate correctly (essential)!
+    ~
+ /vault/scan_log.txt *(Logfile, Created)
+    A record of everything scanned by phpMussel.
+    ~
+ /vault/scan_kills.txt *(Logfile, Created)
+    A record of every file upload blocked/killed by phpMussel.
+    ~
+ /vault/template.html (Other, Included)
+    phpMussel Template file; Template for HTML output produced by phpMussel for
+    its blocked file upload message (the message seen by the uploader).
+    ~
+ /vault/update.dat (Other, Included)
+    File containing version information for both the phpMussel script and the
+    phpMussel signatures. If you ever want to automatically update phpMussel
+    or want to update phpMusel via your browser, this file is essential.
+    ~
+ /vault/update.inc (Script, Included)
+    phpMussel Update Script; Required for automatic updates and for updating
+    phpMussel via your browser, but not required otherwise.
+    ~
+ /vault/zip_metadata_clamav.cvd (Signatures, Included)
+ /vault/zip_metadata_custom.cvd (Signatures, Included)
+ /vault/zip_metadata_mussel.cvd (Signatures, Included)
+    Files for archive metadata signatures.
+    Required if archive metadata signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
+    ~
  
- /change_log.txt - A record of changes made to the script between different
-  versions (not required for proper function of script).
+ * Filename may differ based on configuration stipulations (in phpmussel.ini).
  
- /readme.txt - This readme.txt, of which you are currently reading (not
-  required for proper function of script).
- 
- /web.config - An ASP.NET configuration file (in this instance, to protect the
-  "/vault" directory from being accessed by non-authorised sources in the event
-  that the script is installed on a server based upon ASP.NET technologies).
- 
- /vault/ - Vault directory, containing various required files.
- 
- /vault/.htaccess - A hypertext access file (in this instance, to protect
-  sensitive files belonging to the script from being accessed by non-authorised
-  sources).
- 
- /vault/elf_custom_regex.cvd - Signatures file for custom ELF signatures
-  requiring regex.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/elf_custom_standard.cvd - Signatures file for custom ELF signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/elf_regex.cvd - Signatures file for regex-based ELF signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/elf_regex.map - Signatures map for regex-based ELF signatures file.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/elf_standard.cvd - Signatures file for standard ELF signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/elf_standard.map - Signatures map for standard ELF signatures file.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/exe_custom_regex.cvd - Signatures file for custom EXE signatures
-  requiring regex.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/exe_custom_standard.cvd - Signatures file for custom EXE signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/exe_regex.cvd - Signatures file for regex-based EXE signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/exe_regex.map - Signatures map for regex-based EXE signatures file.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/exe_standard.cvd - Signatures file for standard EXE signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/exe_standard.map - Signatures map for standard EXE signatures file.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/general_custom_regex.cvd - Signatures file for custom generalised
-  signatures requiring regex.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/general_custom_standard.cvd - Signatures file for custom generalised
-  signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/general_regex.cvd - Signatures file for regex-based general signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/general_regex.map - Signatures map for regex-based general signatures
-  file.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/general_standard.cvd - Signatures file for standard general signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/general_standard.map - Signatures map for standard general signatures
-  file.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/graphics_custom_regex.cvd - Signatures file for custom graphics
-  signatures requiring regex.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/graphics_custom_standard.cvd - Signatures file for custom graphics
-  signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/graphics_regex.cvd - Signatures file for regex-based graphics signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/graphics_regex.map - Signatures map for regex-based graphics signatures
-  file.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/graphics_standard.cvd - Signatures file for standard graphics
-  signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/graphics_standard.map - Signatures map for standard graphics signatures
-  file.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/hex_general_commands.csv - Hex-encoded CSV of recognised generalised
-  command detections optionally used by phpMussel.
- 
- /vault/macho_custom_regex.cvd - Signatures file for custom Mach-O signatures
-  requiring regex.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/macho_custom_standard.cvd - Signatures file for custom Mach-O
-  signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/macho_regex.cvd - Signatures file for regex-based Mach-O signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/macho_regex.map - Signatures map for regex-based Mach-O signatures
-  file.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/macho_standard.cvd - Signatures file for standard Mach-O signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/macho_standard.map - Signatures map for standard Mach-O signatures
-  file.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/mail_custom_regex.cvd - Signatures file for custom email signatures
-  requiring regex.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/mail_custom_standard.cvd - Signatures file for custom email signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/mail_regex.cvd - Signatures file for regex-based email signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/mail_regex.map - Signatures map for regex-based email signatures file.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/mail_standard.cvd - Signatures file for standard email signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/mail_standard.map - Signatures map for standard email signatures file.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/md5_custom.cvd - Signatures file for custom ClamAV MD5 signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/md5_standard.cvd - Signatures file for ClamAV MD5 signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/phpmussel.ini - Contains all the configuration options of phpMussel,
-  controlling how the script operates (essential).
- 
- * /vault/scan_log.txt - The results of file scanning operations logged here.
- 
- * /vault/scan_kills.txt - Upload kills logged here.
- 
- /vault/template.html - Template file for the HTML output produced by phpMussel
-  for its blocked file upload message.
- 
- /vault/zip_metadata_custom.cvd - Signatures file for custom archive metadata
-  signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- /vault/zip_metadata_standard.cvd - Signatures file for archive metadata
-  signatures.
-  - Required if related option in configuration is enabled, but not otherwise.
- 
- * Not included in the archive, but created by phpMussel as per when required.
-   Also may be named differently from as per described here, pending phpMussel
-   configuration (as per stipulated in phpmussel.ini).
+ = REGARDING SIGNATURE FILES =
+    CVD is an acronym for "ClamAV Virus Definitions", in reference both to
+    how ClamAV refers to its own signatures and to the use of those signatures
+    for phpMussel; Files ending with "CVD" contain signatures.
+    ~
+    Files ending with "MAP", quite literally, map which signatures phpMussel
+    should and shoudln't use for individual scans; Not all signatures are
+    necessarily required for every single scan, so, phpMussel uses maps of
+    the signature files to speed up the scanning process (a process which would
+    otherwise be extremely slow and tedious).
+    ~
+    Signature files marked with "_regex" contain signatures which utilise
+    regular expression pattern checking (regex).
+    ~
+    Signature files marked with "_standard" contain signatures which
+    specifically do not utilise any form of pattern checking.
+    ~
+    Signature files marked with neither "_regex" nor "_standard" will be as
+    one or the other, but not both (refer to the Signature Format section of
+    this README file for documentation and specific details).
+    ~
+    Signature files marked with "_clamav" contain signatures that are sourced
+    entirely from the ClamAV database (GNU/GPL).
+    ~
+    Signature files marked with "_custom", by default, do not contain any
+    signature at all; These such files exist to give you somewhere to place
+    your own custom signatures, if you come up with any of your own.
+    ~
+    Signature files marked with "_mussel" contain signatures that specifically
+    are not sourced from ClamAV, signatures which, generally, I've either come
+    up with myself and/or based on information gathered from various sources.
+    belonging to the script from being accessed by non-authorised sources).
+    ~
  
                                   ~ ~ ~                                        
  
  
- 5. SIGNATURE FORMAT
+ 6. SIGNATURE FORMAT
  
  = MD5 SIGNATURES =
    All MD5 signatures follow the format:
     HASH:FILESIZE:NAME
-   Where HASH is the MD5 hash of an entire file, FILESIZE is the total
-   size of that file and NAME is the name to cite for that signature.
+   Where HASH is the MD5 hash of an entire file, FILESIZE is the total size
+   of that file and NAME is the name to cite for that signature.
+ 
+ = FILENAME SIGNATURES =
+   All filename signatures follow the format:
+    NAME:FNRX
+   Where NAME is the name to cite for that signature and FNRX is the regex
+   pattern to match filenames (unencoded) against.
  
  = ARCHIVE METADATA SIGNATURES =
    All archive metadata signatures follow the format:
@@ -434,19 +630,13 @@
  = REGEX =
    Any form of regex understood and correctly processed by php should also be
    correctly understood and processed by phpMussel and its signatures.
-   However, I'd suggest taking extreme caution when writing new regex-based
+   However, I'd suggest taking extreme caution when writing new regex based
    signatures, because, if you're not entirely sure what you're doing, there
    can be highly irregular and/or unexpected results. Take a look at the
    phpMussel source-code if you're not entirely sure about the context in
-   which regex statements are parsed. The default signatures included with
-   phpMussel, which are all derived from the signatures of ClamAV, include
-   the following regex syntax:
-    .* (Match 0 or more of anything)
-	.? (Match 1 or more of anything)
-	(aa|bb) (Match either aa or bb)
-	a{3,5} (Match between 3 and 5 of a)
-   Also, remember that all signatures (minus the syntax) must be
-   hexidecimal-encoded!
+   which regex statements are parsed. Also, remember that all patterns (with
+   exception to filename, archive metadata and MD5 patterns) must be
+   hexidecimally encoded (foregoing pattern syntax, of course)!
  
  = WHERE TO PUT CUSTOM SIGNATURES? =
    Only put custom signatures in those files intended for custom signatures.
@@ -479,18 +669,39 @@
      non-whitelisted file targeted for scanning and matched to the ELF format.
    - "Graphics Signatures" (graphics_*). Checked against the contents of every
      non-whitelisted file targeted for scanning and matched to a known
-	 graphical file format.
+     graphical file format.
    - "Mach-O Signatures" (macho_*). Checked against the contents of every
      non-whitelisted file targeted for scanning and matched to the Mach-O
-	 format.
+     format.
    - "ZIP MetaData Signatures" (zip_metadata_*). Checked against the CRC32
       hash and filesize of the initial file contained inside of any
-	  non-whitelisted archive targeted for scanning.
+      non-whitelisted archive targeted for scanning.
    - "Email Signatures" (mail_*). Checked against the $body variable parsed
      to the phpMussel_mail() function, which is intended to be the body of
-	 email messages or similar entities (potentially forum posts and etcetera).
+     email messages or similar entities (potentially forum posts and etcetera).
    (Note that any of these signatures may be easily disabled via phpmussel.ini
     if you so desire).
+ 
+                                  ~ ~ ~                                        
+ 
+ 
+ 7. KNOWN COMPATIBILITY PROBLEMS
+ 
+ This section will describe known compatibility problems that phpMussel has.
+ This section will change from time to time as new problems emerge and old
+ problems cease.
+ 
+ Avast! Anti-Virus
+ - Not compatible with any current or previous version of phpMussel.
+ - Not expected to be compatible with any future version of phpMussel.
+ - One or more Avast signatures trigger a false positive for phpMussel,
+   flagging it as a virus. Typical result is that phpMussel is instantly
+   deleted from the system by Avast, without any available option to ignore or
+   quaranteen. Reported event occurred at the archive level, immediately upon
+   the reporter having downloaded phpMussel; No individual file testing has
+   as of yet occurred.
+ - Last checked 23rd October 2013 (latest version at time of writing: v0.3).
+ 
  
                                   ~ ~ ~                                        
  
