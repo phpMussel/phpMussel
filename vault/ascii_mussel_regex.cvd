@@ -1,4 +1,4 @@
->FD>3c3f>15
+>FD>3c3f>16
 phpMussel-PHP.Backdoor.Extract-00:65787472616374(2f|2a|a0){0,2000}28(2f|2a|a0){0,2000}245f72657175657374
 phpMussel-PHP.Backdoor.SSH-00:6578656328(..)?24(3[0-9]|6[1-9a-f]|7[0-9a]){1,32}3e2f6465762f6e756c6c
 phpMussel-PHP.Backdoor.ZeroZero-00:3c3f>24(3[0-9){5,32}
@@ -14,5 +14,12 @@ phpMussel-PHP.Shell.4FBI-00:247265786973746865(3.|6[1-9a-f]|7[0-9a]){0,6}3466626
 >FS-MAX>-1>16
 phpMussel-PHP.Defacement.CyberSword-00:637962..727377..7264
 phpMussel-PHP.Defacement.Pakistan-14:706b5f726f62..74
+phpMussel-Defacement.Generic-008:776e..64:1:4
+phpMussel-Defacement.Generic-009:68..636b..64:A:6
+phpMussel-Defacement.Generic-010:72..6b74:A:4
+phpMussel-Defacement.Generic-011:66(75)?636b(..)?[67]4:A:6
+phpMussel-Defacement.Generic-012:64..737472..79:A:7
+phpMussel-Defacement.Generic-013:64..66..63(33|65):A:6
+phpMussel-Defacement.Generic-014:6b..636b..64:A:6
 >FN>(\..?[Hh][Tt][AaMm][Ll]?|\.[Aa][Ss][Pp][FfXx]?|\.[Pp][Yy]|\.[Jj][Ss][Pp]?|\.[Pp][Hh][Pp].?|\.[Tt][Mm][Pp])$>-1
 phpMussel-HTML.Defacement.CyberSword-00:637962..727377..7264

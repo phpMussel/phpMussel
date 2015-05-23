@@ -5,24 +5,24 @@ Next major release (v1.0):
 - All planned signature implementations completed, functioning correctly during
   a live test, without any known notable problems.
   Implemented [added/last edited+]:
-   * Archive metadata signatures [v0.1/v0.5+];
-   * ASCII (normalised) signatures (BATs, VBs, etc) [v0.4b/v0.5b+];
-   * ELF signatures (Linux signatures) [v0.2/v0.5+];
-   * Email signatures [v0.2/v0.5+];
-   * Filename signatures [v0.3/v0.5+];
-   * General (basic) signatures [v0.1/v0.5b+];
-   * General (extended) signatures [v0.1/v0.5b+];
-   * Graphics signatures [v0.2/v0.5b+];
-   * HTML (normalised) signatures (HTML, JS, etc) [v0.4c/v0.5b+];
-   * Mach-O signatures (Mac, Apple signatures) [v0.2/v0.5+];
-   * MD5 signatures [v0.1/v0.5b+];
-   * OLE2 signatures (OpenXML and etc) [v0.5/v0.5b+];
-   * PE Sectional signatures (Sections from PE files) [v0.4/v0.5b+];
-   * PE signatures (Portable Executables; EXEs, DLLs, etc) [v0.2/v0.5+];
-   * Whitelist signatures [v0.4d/v0.5b+];
-   * XML/XDP-Chunk signatures [v0.5b/v0.5b+];
+   * Archive metadata signatures [v0.1/v0.5c+];
+   * ASCII (normalised) signatures (BATs, VBs, etc) [v0.4b/v0.5c+];
+   * ELF signatures (Linux signatures) [v0.2/v0.5c+];
+   * Email signatures [v0.2/v0.5c+];
+   * Filename signatures [v0.3/v0.5c+];
+   * General (basic) signatures [v0.1/v0.5c+];
+   * General (extended) signatures [v0.1/v0.5c+];
+   * Graphics signatures [v0.2/v0.5c+];
+   * HTML (normalised) signatures (HTML, JS, etc) [v0.4c/v0.5c+];
+   * Mach-O signatures (Mac, Apple signatures) [v0.2/v0.5c+];
+   * MD5 signatures [v0.1/v0.5c+];
+   * OLE2 signatures (OpenXML and etc) [v0.5/v0.5c+];
+   * PE Sectional signatures (Sections from PE files) [v0.4/v0.5c+];
+   * PE signatures (Portable Executables; EXEs, DLLs, etc) [v0.2/v0.5c+];
+   * Whitelist signatures [v0.4d/v0.5c+];
+   * XML/XDP-Chunk signatures [v0.5b/v0.5c+];
   Only partially implemented [added/last edited+]:
-   * Logical multi-extended signatures [v0.5b/v0.5b+];
+   * Logical multi-extended signatures [v0.5b/v0.5c+];
   Not implemented (not yet sure if I'll do these or not);
    * Safe browsing signatures;
    * Bitwise/Android signatures;
@@ -44,11 +44,45 @@ Next and/or subsequent sub-minor releases (v0.Xy):
 - Any other changes to the core code with latest signatures included.
 Next and/or subsequent below sub-minor releases and/or re-releases (v0.Xy.Z):
 - Signature updates (with no code changes) and hot-fixes only.
-Last Edited: 28th October 2014
+Last Edited: 2nd November 2014
 
-=== Version/Release 0.5b (Previous Release: 0.5a) ===
+=== Version/Release 0.5c (Previous Release: 0.5b) ===
 SUMMARY:
-Updated to the latest signatures set (55+19521+5b).
+Updated to the latest signatures set (55+19571+5c).
+Sub-minor release (high priority).
+
+NEW CHANGES:
+- A new round and strengthening of the HTML defacement signatures and
+  various other new signatures; A few XXE; The latest ClamAV signatures;
+  PhishTank signatures; All other signatures and etc (2014.11.02).
+- With the release of 0.4d, I'd implemented the ability for signatures to
+  trigger or not trigger based upon the value of variables available to the
+  scope of the core script core scanning function. To make better use of that
+  implementation, I've extended on the actual variables available. I've already
+  made use of this with some of the phpMussel signatures that I've written up.
+  The extending of this implementation will mostly be of benefit to those that
+  write their own custom signatures, having little to no consequence for anyone
+  else (2014.11.02).
+- General minor optimisation of the code of the Core Script (2014.11.02).
+
+PROBLEMS/BUGS FIXED:
+- Going over all code, I'd discovered that signatures that are both flagged
+  with "A" and containing the ">" marker at the same time (there aren't very
+  many that fit this criteria though), although to-date, I've received exactly
+  zero reports of false-positives, could, in theory, potentially cause
+  false-positives in certain situations, due to the way the code was structured
+  allowing for those signatures to occasionally capture slightly more or less
+  widely (depending on the signature in question) than intended; This affects
+  all signatures, both regex and non-regex (but does not affect those signature
+  types where such markers are not used, such as the MD5 Signatures or PE
+  Sectional signatures); Fixed (2014.11.02).
+
+Maikuolan,
+2nd November 2014.
+
+=== Version/Release 0.5b (Previous Release: 0.5a; Next: 0.5c) ===
+SUMMARY:
+Non-ClamAV signatures update only (55+19521+5b).
 Sub-minor release (medium priority).
 
 NEW CHANGES:
@@ -81,7 +115,7 @@ NEW CHANGES:
   whatever reason, it appears that ClamAV is once again hosting an outdated
   copy of the daily signatures, therefore, unfortunately, there will be no
   updates to ClamAV's signatures between v0.5a and v0.5b, but, that said,
-  signatures have otherwise been updates; New PhishTank signatures, updates
+  signatures have otherwise had updates; New PhishTank signatures, updates
   to those signatures from other sources and the likes (2014.10.28).
 
 PROBLEMS/BUGS FIXED:
@@ -716,22 +750,3 @@ PROBLEMS/BUGS FOUND:
 
 Maikuolan,
 30th November 2013.
-
-=== Version/Release 0.3a (Previous Release: 0.3b; Next: 0.3) ===
-SUMMARY:
-Updated to the latest signatures set (55+18088+3a).
-Sub-minor release; Previous versions not compatible with the current version of
-the updater (high priority).
-
-PROBLEMS/BUGS FIXED:
-- Found there was an incorrectly written condition operand which would cause
-  the update script to always register CRC32 hashes as being mismatched,
-  even if they were a correct match. Fixed it. Literally is one byte of
-  difference, but unfortunately, will be required to manually update to the
-  latest version before using the update script, because the old version won't
-  work. Tested the update locally and it seems to work fine now.
-
-Maikuolan,
-11th November 2013.
-
-EOF
