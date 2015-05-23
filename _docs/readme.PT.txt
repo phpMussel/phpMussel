@@ -1278,32 +1278,32 @@
      arquivos acima de um certo tamanho com sucesso).
  "compatibility" (Categoria)
  - Compatibilidade directivas por phpMussel.
-    "ignore_upload_errors"
-    - Essa directiva deve ser geralmente desativada a menos que seja necessário
-      por correta funcionalidade de phpMussel no seu específico sistema.
-      Normalmente, quando desativado, quando phpMussel detecta a presença de
-      elementos dentro a $_FILES array(), ele tentará iniciar uma análise dos
-      arquivos que esses elementos representam, e, se esses elementos estão
-      branco ou vazia, phpMussel irá retornar uma erro mensagem. Esse é um
-      apropriado comportamento por phpMussel. Mas, por alguns CMS, vazios
-      elementos podem ocorrer como resultado do natural comportamento dessas
-      CMS, ou erros podem ser reportado quando não houver alguma, nesse caso, o
-      normal comportamento por phpMussel será interferindo com o normal
-      comportamento dessas CMS. Se tal situação ocorre por você, ativando esta
-      opção irá instruir phpMussel para não tentar iniciar um análise por tais
-      vazios elementos, ignorá-los quando encontrado e para não retornar
-      qualquer relacionado erro mensagens, assim, permitindo a continuação da
-      página carga. 0 - DESATIVADO, 1 - ATIVADO.
-    "only_allow_images"
-    - Se você apenas esperar ou apenas tencionar de permitir imagens a ser
-      enviado para seu sistema ou CMS, e se você absolutamente não necessita
-      quaisquer arquivos exceto imagens a ser enviado para seu sistema ou CMS,
-      esta directiva devia ser ATIVADO, mas em outros casos devia ser
-      DESATIVADO. Se esta diretiva é ATIVADO, ele irá instruir phpMussel
-      indiscriminadamente bloquear qualquer arquivo carregamento identificado
-      como não imagem, sem os analisar. Isto pode reduzir o tempo de
-      processamento e uso de memória por tentados carregamentos de não imagem
-      arquivos. 0 - DESATIVADO, 1 - ATIVADO.
+   "ignore_upload_errors"
+   - Essa directiva deve ser geralmente desativada a menos que seja necessário
+     por correta funcionalidade de phpMussel no seu específico sistema.
+     Normalmente, quando desativado, quando phpMussel detecta a presença de
+     elementos dentro a $_FILES array(), ele tentará iniciar uma análise dos
+     arquivos que esses elementos representam, e, se esses elementos estão
+     branco ou vazia, phpMussel irá retornar uma erro mensagem. Esse é um
+     apropriado comportamento por phpMussel. Mas, por alguns CMS, vazios
+     elementos podem ocorrer como resultado do natural comportamento dessas
+     CMS, ou erros podem ser reportado quando não houver alguma, nesse caso, o
+     normal comportamento por phpMussel será interferindo com o normal
+     comportamento dessas CMS. Se tal situação ocorre por você, ativando esta
+     opção irá instruir phpMussel para não tentar iniciar um análise por tais
+     vazios elementos, ignorá-los quando encontrado e para não retornar
+     qualquer relacionado erro mensagens, assim, permitindo a continuação da
+     página carga. 0 - DESATIVADO, 1 - ATIVADO.
+   "only_allow_images"
+   - Se você apenas esperar ou apenas tencionar de permitir imagens a ser
+     enviado para seu sistema ou CMS, e se você absolutamente não necessita
+     quaisquer arquivos exceto imagens a ser enviado para seu sistema ou CMS,
+     esta directiva devia ser ATIVADO, mas em outros casos devia ser
+     DESATIVADO. Se esta diretiva é ATIVADO, ele irá instruir phpMussel
+     indiscriminadamente bloquear qualquer arquivo carregamento identificado
+     como não imagem, sem os analisar. Isto pode reduzir o tempo de
+     processamento e uso de memória por tentados carregamentos de não imagem
+     arquivos. 0 - DESATIVADO, 1 - ATIVADO.
 
                                      ~ ~ ~
 
@@ -1401,11 +1401,10 @@
    - "Estendidos Complexos Assinaturas" (coex_*). misto tipo de assinatura
       verificando.
    - "ELF Assinaturas" (elf_*). Verificado contra o conteúdo de cada arquivo
-      não no whitelist e alvo por analisando e confirmados tal do formato
-      ELF.
+      não no whitelist e alvo por analisando e confirmados tal do formato ELF.
    - "Portátil Executável Assinaturas" (exe_*). Verificado contra o conteúdo de
-      cada arquivo não no whitelist e alvo por analisando e confirmados tal
-      do formato PE.
+      cada arquivo não no whitelist e alvo por analisando e confirmados tal do
+      formato PE.
    - "Arquivo Nome Assinaturas" (filenames_*). Verificado contra os nomes de
       cada arquivo não no whitelist e alvo por analisando.
    - "Gerais Assinaturas" (general_*). Verificado contra o conteúdo de arquivo
@@ -1435,8 +1434,8 @@
    - "PDF Assinaturas" (pdf_*). Verificado contra o conteúdo de cada PDF
       arquivo não no whitelist.
    - "Portátil Executável Seccional Assinaturas" (pe_*). Verificado contra o
-      MD5 hash de cada PE seção eo arquivo tamanho de cada arquivo não em o
-      whitelist e alvo por analisando e confirmados tal do formato PE.
+      tamanho eo MD5 hash de cada PE seção de cada arquivo não em o whitelist e
+      alvo por analisando e confirmados tal do formato PE.
    - "SWF Assinaturas" (swf_*). Verificado contra o conteúdo de cada Shockwave
       arquivo não no whitelist.
    - "Whitelist Assinaturas" (whitelist_*). Verificado contra o MD5 hash do
@@ -1446,8 +1445,8 @@
    - "XML/XDP-Pedaço Assinaturas" (xmlxdp_*). Verificado contra quaisquer
       XML/XDP pedaços encontrados dentro cada arquivo não no whitelist e alvo
       por analisando.
-     (Notar que qualquer uma destas assinaturas podem ser facilmente
-      desativada através de phpmussel.ini).
+     (Notar que qualquer uma destas assinaturas podem ser facilmente desativada
+      através de phpmussel.ini).
 
                                      ~ ~ ~
 
@@ -1532,5 +1531,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 4 Fevereiro 2015 (2015.02.04).
+Última Atualização: 3 Março 2015 (2015.03.03).
 EOF

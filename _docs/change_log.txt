@@ -31,7 +31,56 @@ Anything less than sub-minor:
   than sub-minor.
 Last Edited: 15th November 2014
 
-=== Version/Release 0.6d (Previous Release: 0.6c) ===
+=== Version/Release 0.6e (Previous Release: 0.6d) ===
+SUMMARY:
+Updated to the latest signatures set (55+20139+6e).
+Sub-minor release (low or medium priority).
+
+NEW CHANGES:
+- Added a new detection method within the capabilities of the Complex Extended
+  signatures: Checking against metadata (or, checking against the "data about
+  data" of files to be scanned by phpMussel). I'll likely expand on this into
+  the future, but for the time being, the new signatures introduced with this
+  release of phpMussel that make use of this new detection method are looking
+  at the names of the sections of PE files to look for signs suggestive of
+  malware, malware packers and other such unwanted items, as well as other
+  such metadata related things to be found in PE files. Potential future
+  applications of this direction could include (but aren't limited to)
+  evidence of infections within various multimedia files and any other
+  infectable files that either contain data about themselves within themselves
+  or for which such data could be potentially derived (though I'm yet to code
+  for such things; perhaps this is something that could be done in the
+  future, if a need for such a thing arises? 2015.02.22).
+- Very minor rewording of several lines within the Language Data (2015.02.26).
+- Completed translation of the documentation to Spanish, which, assuming I've
+  done it correctly and assuming that it's intelligible, would mean that
+  phpMussel now fully supports seven languages (English, German, French,
+  Indonesian, Italian, Portuguese, and now Spanish), with partial support for
+  one more (Dutch). Taking in mind that my native language is English and that
+  I don't actually understand or speak fluently any other languages, and
+  double-checking, proof-reading and/or verification by anyone that might know
+  better than I do so far as any given language is concerned would be both
+  welcomed and appreciated, because, although I've done as best I can for those
+  that I've done myself (short of paying money for them or seeking external
+  help) to make sure that they've been done as correctly as possible, until
+  someone that knows better takes a look and says so one way or the other,
+  ultimately, I won't know for sure if I've gotten it right or not. Hopefully,
+  fingers crossed, they're intelligible, and I can't see any immediate errors
+  myself, but, if anyone is willing, feel free to take a look and let me know
+  if I've gotten anything wrong.
+  Refer spambotsecurity.com/forum/viewtopic.php?f=57&t=2929 (2015.03.03).
+
+ADDITIONAL NOTES:
+- Updating to this release from the previous release (0.6d) should be
+  considered medium priority if you allow the uploading of PE files (EXE) to
+  your website or server, but should otherwise be considered low priority.
+- Getting the updater operational again is still on the to-do list, but I
+  haven't yet touched that at all since previously mentioned about.
+
+Maikuolan,
+3rd March 2015.
+
+=== Version/Release 0.6d (Previous Release: 0.6c; Next: 0.6e) ===
 SUMMARY:
 Updated to the latest signatures set (55+20058+6d).
 Sub-minor release (low or medium priority).
@@ -61,7 +110,7 @@ ADDITIONAL NOTES:
   should otherwise be considered low priority.
 
 Maikuolan,
-17th February 2015.
+20th February 2015.
 
 === Version/Release 0.6c (Previous Release: 0.6b.2; Next: 0.6d) ===
 SUMMARY:
@@ -109,27 +158,27 @@ NEW CHANGES:
   narrowing on those signatures belonging to the ClamAV General, ASCII and HTML
   signatures sets; Those signatures, previously, were checked against any
   non-whitelisted files targeted for scanning, regardless of whether or not any
-  particular signatures within those sets were actually supposed to be targeting
-  the specific filetypes and other such details of the non-whitelisted files
-  targeted for scanning, whereas now, those signatures, where they are supposed
-  to be targeting some specific filetype or other such specific thing, and
-  where I've been able to identify what it actually is, should now only be
-  checking against non-whitelisted files targeted for scanning for which they
-  are supposed to be targeting. This, I've done, for the sake of attempting to
-  improve the performance and efficiency of phpMussel, for which I've been
-  trying to better the balance for. Unfortunately, there were a significant
-  number of those signatures where I wasn't able to identify what it was that
-  they were actually supposed to be targeting, of which I've removed from
-  phpMussel for this particular release and for consequent releases until such
-  a time that I'm able to identify what it was they were actually supposed to
-  be targeting. I don't think this should dent the defensive capabilities of
-  phpMussel too much if even at all, given that most of those removed
-  signatures were fairly old by this point and didn't seem to be targeting
-  anything that I'd foresee being likely to be uploaded via a website or
-  webform, but, if anyone does find any problems relating to their removal, do
-  please let me know. In any case, I do believe these removals and further
-  narrowing have resulted in a noticeable improvement in performance and
-  efficiency (2015.02.02).
+  particular signatures within those sets were actually supposed to be
+  targeting the specific filetypes and other such details of the
+  non-whitelisted files targeted for scanning, whereas now, those signatures,
+  where they are supposed to be targeting some specific filetype or other such
+  specific thing, and where I've been able to identify what it actually is,
+  should now only be checking against non-whitelisted files targeted for
+  scanning for which they are supposed to be targeting. This, I've done, for
+  the sake of attempting to improve the performance and efficiency of
+  phpMussel, for which I've been trying to better the balance for.
+  Unfortunately, there were a significant number of those signatures where I
+  wasn't able to identify what it was that they were actually supposed to be
+  targeting, of which I've removed from phpMussel for this particular release
+  and for consequent releases until such a time that I'm able to identify what
+  it was they were actually supposed to be targeting. I don't think this should
+  dent the defensive capabilities of phpMussel too much if even at all, given
+  that most of those removed signatures were fairly old by this point and
+  didn't seem to be targeting anything that I'd foresee being likely to be
+  uploaded via a website or webform, but, if anyone does find any problems
+  relating to their removal, do please let me know. In any case, I do believe
+  these removals and further narrowing have resulted in a noticeable
+  improvement in performance and efficiency (2015.02.02).
 - Added a handful of new signatures to deal with "RandomWeb", a form of
   ransomware specifically targeting websites (2015.02.03).
 

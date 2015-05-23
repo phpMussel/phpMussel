@@ -35,7 +35,7 @@
  Sourceforge <http://sourceforge.net/projects/phpmussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.6b (11th January 2015) Language Data.
+ This File: phpMussel v0.6e (26th February 2015) Language Data.
 
  The latest version and future updates can be obtained from the phpMussel
  SourceForge page located at <http://sourceforge.net/projects/phpmussel/>.
@@ -238,8 +238,8 @@ else if($MusselConfig['general']['lang']=="es")
 	$MusselConfig['lang']['refer_to_scan_kills']=" (referir a ".$MusselConfig['general']['scan_kills']." para más detalles)";
 	$MusselConfig['lang']['scan_aborted']="Escaneo abortado!";
 	$MusselConfig['lang']['scan_chameleon']="camaleón ataque detectado";
-	$MusselConfig['lang']['scan_checking_contents']="Éxito! Procediendo a verificar el contenido.";
-	$MusselConfig['lang']['scan_checking']="Verificando";
+	$MusselConfig['lang']['scan_checking_contents']="Éxito! Procediendo a comprobando las contenidos.";
+	$MusselConfig['lang']['scan_checking']="Comprobando";
 	$MusselConfig['lang']['scan_command_injection']="Comandos inyección intento detectado";
 	$MusselConfig['lang']['scan_complete']="Completo";
 	$MusselConfig['lang']['scan_extensions_missing']="Fracasado (desaparecido requeridos extensiones)!";

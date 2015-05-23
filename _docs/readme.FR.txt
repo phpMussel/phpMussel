@@ -1306,33 +1306,32 @@
      taille avec succès).
  "compatibility" (Catégorie)
  - Compatibilité directives pour phpMussel.
-    "ignore_upload_errors"
-    - Cette directive doit généralement être DÉSACTIVÉ sauf si cela est
-      nécessaire pour la correcte fonctionnalité de phpMussel sur votre
-      spécifique système. Normalement, lorsque DÉSACTIVÉ, lorsque phpMussel
-      détecte la présence d'éléments dans le $_FILES() tableau, il va tenter
-      de lancer une analyse du fichiers que ces éléments représentent, et, si
-      ces éléments sont vide, phpMussel retourne un message d'erreur. Ce
-      comportement est normal pour phpMussel. Mais, pour certains CMS, vides
-      éléments dans $_FILES peuvent survenir à la suite du naturel comportement
-      de ces CMS, ou erreurs peuvent être signalés quand il ne sont pas tout,
-      dans ce cas, le normal comportement pour phpMussel seront interférer avec
-      le normal comportement de ces CMS. Si telle une situation se produit pour
-      vous, ACTIVATION de cette option sera instruire phpMussel ne pas à tenter
-      de lancer d'analyses pour ces vides éléments, ignorer quand il est
-      reconnu et ne pas à retourner tout de connexes messages d'erreur,
-      permettant ainsi la continuation de la page demande.
-      0 - DÉSACTIVÉ, 1 - ACTIVÉ.
-    "only_allow_images"
-    - Si vous seulement attendre ou vouloir d'autoriser images à être
-      téléchargé sur votre système ou CMS, et si vous absolument n'avez pas
-      besoin tous les fichiers autres que les images à être téléchargé sur
-      votre système ou CMS, cette directive devrait être ACTIVÉ, mais devrait
-      autrement être DÉSACTIVÉ. Si cette directive est ACTIVÉ, il va instruire
-      phpMussel à bloquer indistinctement tous téléchargements identifié comme
-      non image fichiers, sans analyser. Cela peut réduire le temps de travail
-      et l'utilisation de la mémoire pour les tentativé téléchargements de non
-      image fichiers. 0 - DÉSACTIVÉ, 1 - ACTIVÉ.
+   "ignore_upload_errors"
+   - Cette directive doit généralement être DÉSACTIVÉ sauf si cela est
+     nécessaire pour la correcte fonctionnalité de phpMussel sur votre
+     spécifique système. Normalement, lorsque DÉSACTIVÉ, lorsque phpMussel
+     détecte la présence d'éléments dans le $_FILES() tableau, il va tenter de
+     lancer une analyse du fichiers que ces éléments représentent, et, si ces
+     éléments sont vide, phpMussel retourne un message d'erreur. Ce
+     comportement est normal pour phpMussel. Mais, pour certains CMS, vides
+     éléments dans $_FILES peuvent survenir à la suite du naturel comportement
+     de ces CMS, ou erreurs peuvent être signalés quand il ne sont pas tout,
+     dans ce cas, le normal comportement pour phpMussel seront interférer avec
+     le normal comportement de ces CMS. Si telle une situation se produit pour
+     vous, ACTIVATION de cette option sera instruire phpMussel ne pas à tenter
+     de lancer d'analyses pour ces vides éléments, ignorer quand il est reconnu
+     et ne pas à retourner tout de connexes messages d'erreur, permettant ainsi
+     la continuation de la page demande. 0 - DÉSACTIVÉ, 1 - ACTIVÉ.
+   "only_allow_images"
+   - Si vous seulement attendre ou vouloir d'autoriser images à être téléchargé
+     sur votre système ou CMS, et si vous absolument n'avez pas besoin tous les
+     fichiers autres que les images à être téléchargé sur votre système ou CMS,
+     cette directive devrait être ACTIVÉ, mais devrait autrement être
+     DÉSACTIVÉ. Si cette directive est ACTIVÉ, il va instruire phpMussel à
+     bloquer indistinctement tous téléchargements identifié comme non image
+     fichiers, sans analyser. Cela peut réduire le temps de travail et
+     l'utilisation de la mémoire pour les tentativé téléchargements de non
+     image fichiers. 0 - DÉSACTIVÉ, 1 - ACTIVÉ.
 
                                      ~ ~ ~
 
@@ -1454,13 +1453,13 @@
       archive non listé blanche et ciblée pour d'analyse.
    - "OLE Signatures" (ole_*). Vérifié contre les contenus de chaque objet non
       listé blanche et ciblée pour d'analyse.
-   - "PDF Signatures" (pdf_*). Vérifié contre les contenus de chaque
-      PDF fichier non listé blanche.
+   - "PDF Signatures" (pdf_*). Vérifié contre les contenus de chaque PDF
+      fichier non listé blanche.
    - "Portable Executable Sectional Signatures" (pe_*). Vérifié contre le
-      taille et l'MD5 hash des sections de chaque PE fichier non listé
-      blanche, ciblée pour l'analyse et identifié au PE format.
-   - "SWF Signatures" (swf_*). Vérifié contre les contenus de chaque
-      Shockwave fichier non listé blanche.
+      taille et l'MD5 hash des sections de chaque PE fichier non listé blanche,
+      ciblée pour l'analyse et identifié au PE format.
+   - "SWF Signatures" (swf_*). Vérifié contre les contenus de chaque Shockwave
+      fichier non listé blanche.
    - "Blanche Liste Signatures" (whitelist_*). Vérifié contre le MD5 hash des
       contenus et la taille de chaque fichier ciblée pour d'analyse. Les
       identifiés fichiers sera immunitaire d'être identifié par le type de
@@ -1554,5 +1553,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 4 Février 2015 (2015.02.04).
+Dernière Réactualisé: 3 Mars 2015 (2015.03.03).
 EOF

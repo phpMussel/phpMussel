@@ -1284,32 +1284,32 @@
      certa dimensione).
  "compatibility" (Categoria)
  - Compatibilità direttive per phpMussel.
-    "ignore_upload_errors"
-    - Questa direttiva dovrebbe generalmente essere SPENTO meno se necessario
-      per la corretta funzionalità del phpMussel sul vostra sistema.
-      Normalmente, quando spento, quando phpMussel rileva la presenza di
-      elementi nella $_FILES array(), è tenterà di avviare una scansione dei
-      file che tali elementi rappresentano, e, se tali elementi sono vuoti,
-      phpMussel restituirà un errore messaggio. Questo è un comportamento
-      adeguato per phpMussel. Tuttavia, per alcuni CMS, vuoti elementi nel
-      $_FILES può avvenire come conseguenza del naturale comportamento di
-      questi CMS, o errori possono essere segnalati quando non ce ne sono, nel
-      qual caso, il normale comportamento per phpMussel sarà interferire con il
-      normale comportamento di questi CMS. Se una tale situazione avvenire per
-      voi, attivazione di questa opzione SU sarà istruirà phpMussel a non tenta
-      avviare scansioni per tali vuoti elementi, ignorarli quando si trova ea
-      non ritorno qualsiasi errore correlato messaggi, così permettendo
-      proseguimento della pagina richiesta. 0 - SPENTO (OFF), 1 - SU (ON).
-    "only_allow_images"
-    - Se vi aspettare o intendere solo di permettere le immagini da caricare al
-      vostro sistema o CMS, e se assolutamente non richiedono qualsiasi file
-      diversi da immagini essere caricare per il vostro sistema o CMS, questa
-      direttiva dovrebbe essere SU, ma dovrebbe altrimenti essere SPENTO. Se
-      questa direttiva è SU, che istruirà phpMussel di indiscriminatamente
-      bloccare tutti i caricati file identificati come file non-immagine,
-      senza scansionali. Questo può ridurre il tempo di processo e l'utilizzo
-      della memoria per tentati caricamenti di non-immagine file.
-      0 - SPENTO (OFF), 1 - SU (ON).
+   "ignore_upload_errors"
+   - Questa direttiva dovrebbe generalmente essere SPENTO meno se necessario
+     per la corretta funzionalità del phpMussel sul vostra sistema.
+     Normalmente, quando spento, quando phpMussel rileva la presenza di
+     elementi nella $_FILES array(), è tenterà di avviare una scansione dei
+     file che tali elementi rappresentano, e, se tali elementi sono vuoti,
+     phpMussel restituirà un errore messaggio. Questo è un comportamento
+     adeguato per phpMussel. Tuttavia, per alcuni CMS, vuoti elementi nel
+     $_FILES può avvenire come conseguenza del naturale comportamento di questi
+     CMS, o errori possono essere segnalati quando non ce ne sono, nel qual
+     caso, il normale comportamento per phpMussel sarà interferire con il
+     normale comportamento di questi CMS. Se una tale situazione avvenire per
+     voi, attivazione di questa opzione SU sarà istruirà phpMussel a non tenta
+     avviare scansioni per tali vuoti elementi, ignorarli quando si trova ea
+     non ritorno qualsiasi errore correlato messaggi, così permettendo
+     proseguimento della pagina richiesta. 0 - SPENTO (OFF), 1 - SU (ON).
+   "only_allow_images"
+   - Se vi aspettare o intendere solo di permettere le immagini da caricare al
+     vostro sistema o CMS, e se assolutamente non richiedono qualsiasi file
+     diversi da immagini essere caricare per il vostro sistema o CMS, questa
+     direttiva dovrebbe essere SU, ma dovrebbe altrimenti essere SPENTO. Se
+     questa direttiva è SU, che istruirà phpMussel di indiscriminatamente
+     bloccare tutti i caricati file identificati come file non-immagine, senza
+     scansionali. Questo può ridurre il tempo di processo e l'utilizzo della
+     memoria per tentati caricamenti di non-immagine file.
+     0 - SPENTO (OFF), 1 - SU (ON).
 
                                      ~ ~ ~
 
@@ -1434,7 +1434,7 @@
    - "PDF Firme" (pdf_*). Verificato contro i contenuti del ogni PDF file
       mirati per scansionare quello che non è sulla whitelist.
    - "Portatili Eseguibili Sezionale Firme" (pe_*). Verificato contro l'MD5
-      hash di ogni PE sezione e la dimensione del ogni file non sulla whitelist
+      hash e la dimensione di ogni PE sezione del ogni file non sulla whitelist
       mirati per la scansione e verificato allo PE formato.
    - "SWF Firme" (swf_*). Verificato contro i contenuti del ogni Shockwave file
       mirati per scansionare quello che non è sulla whitelist.
@@ -1533,5 +1533,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 4 Febbraio 2014 (2015.02.04).
+Ultimo Aggiornamento: 3 Marzo 2014 (2015.03.03).
 EOF

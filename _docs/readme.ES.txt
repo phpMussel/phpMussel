@@ -94,9 +94,9 @@
 
  5) CMHOD al "vault" directorio a "777". La principal directorio de
     almacenamiento de los contenidos (el uno decidió desde antes), en general,
-    puede dejar solos, pero CHMOD estado debe comprobar si ha tenido problemas
-    de permisos en el pasado en su sistema (por defecto, debe ser algo como
-    "755").
+    puede dejar solos, pero CHMOD estado debe ser comprobado si ha tenido
+    problemas de permisos en el pasado en su sistema (predefinido, debería ser
+    algo como "755").
 
  6) Luego, tendrás que phpMussel "gancho" para el sistema o CMS. Hay varias
     maneras en que usted puede "gancho" scripts como phpMussel a su sistema o
@@ -202,7 +202,7 @@
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
  Dónde:
-  - $what_to_scan es una cadena o una array, apuntando a un destino archivo, un
+ - $what_to_scan es una cadena o una array, apuntando a un destino archivo, un
    destino directorio o un array de destinos archivos y/o destinos directorios.
  - $output_type es un entero, indicando el formato en el que los resultados son
    para estar de regreso como. Un valor de 0 indica a la función para devolver
@@ -233,7 +233,7 @@
 
    Devuelve algo como esto (como una cadena):
     Wed, 16 Sep 2013 02:49:46 +0000 Iniciado.
-    > Verificando '/user_name/public_html/my_file.html':
+    > Comprobando '/user_name/public_html/my_file.html':
     -> No problemas encontrado.
     Wed, 16 Sep 2013 02:49:47 +0000 Terminado.
 
@@ -1005,427 +1005,464 @@
       contraseñas: El más grande es el mejor, y guárdela bien. Para un mejor
       efecto, utilice conjuntamente con "delete_on_sight".
     "quarantine_max_filesize"
-    - The maximum allowable filesize of files to be quarantined. Files larger
-      than the value specified below will NOT be quarantined. This directive is
-      important as a means of making it more difficult for any potential
-      attackers to flood your quarantine with unwanted data potentially causing
-      run-away data usage on your hosting service. Value is in KB.
-      Default =2048 =2048KB =2MB.
+    - El máximo archivo tamaño permitido para archivos para ser cuarentenada.
+      Archivos que superen el valor especificado aquí NO serán cuarentenada.
+      Esta directiva es importante como un medio de hacer que sea más difícil
+      para cualquier potenciales atacantes a inundar su cuarentena con datos no
+      deseados que puede causar el excesivo uso de datos en su hosting
+      servicio. Valor es en KB.
+      Predefinido =2048 =2048KB =2MB.
     "quarantine_max_usage"
-    - The maximum memory usage allowed for the quarantine. If the total memory
-      used by the quarantine reaches this value, the oldest quarantined files
-      will be deleted until the total memory used no longer reaches this value.
-      This directive is important as a means of making it more difficult for
-      any potential attackers to flood your quarantine with unwanted data
-      potentially causing run-away data usage on your hosting service.
-      Value is in KB. Default =65536 =65536KB =64MB.
+    - El máxima uso de memoria permitida para la cuarentena. Si la total
+      memoria utilizada por la cuarentena alcanza este valor, los más antiguos
+      cuarentenado archivos serán eliminado hasta que la total memoria
+      utilizada ya no alcanza este valor. Esta directiva es importante como un
+      medio de hacer que sea más difícil para cualquier potenciales atacantes a
+      inundar su cuarentena con datos no deseados que puede causar el excesivo
+      uso de datos en su hosting servicio. Valor es en KB.
+      Predefinido =2048 =2048KB =2MB.
     "honeypot_mode"
-    - When honeypot mode is enabled, phpMussel will attempt to quarantine every
-      single file upload that it encounters, regardless of whether or not the
-      file being uploaded matches any included signatures, and no actual
-      scanning or analysis of those attempted file uploads will actually occur.
-      This functionality should be useful for those that wish to use phpMussel
-      for the purposes of virus/malware research, but it is neither recommended
-      to enable this functionality if the intended use of phpMussel by the user
-      is for actual file upload scanning nor is it recommended to use the
-      honeypot functionality for purposes other than honeypotting. By default,
-      this option is disabled. 0 = Disabled [Default], 1 = Enabled.
+    - Cuando la honeypot modo está habilitado, phpMussel intentará cuarentenar
+      cada archivo carga que encuentra, independientemente de si o no el
+      archivo que se está cargado coincide con las firmas incluídas, y no real
+      escanear o análisis de esos intentados archivos cargas van a ocurrir.
+      Esta funcionalidad debe ser útil para aquellos que deseen utilizar
+      phpMussel a los efectos del virus/malware investigación, pero no se
+      recomendado habilitar esta funcionalidad si el uso de phpMussel por el
+      usuario es para real archivo carga escaneando ni recomendado usar la
+      honeypot funcionalidad para fines otro que de la honeypot. Por
+      predefinido, esta opción está desactivada.
+      0 = Deshabilitado [Predefinido], 1 = Habilitado.
  "signatures" (Categoría)
- - Configuration for signatures.
-   %%%_clamav = ClamAV signatures (both mains and daily).
-   %%%_custom = Your custom signatures (if you've written any).
-   %%%_mussel = phpMussel signatures included in your current signatures set
-                which aren't from ClamAV.
-   - Check against MD5 signatures when scanning? 0 = No, 1 = Yes [Default].
+ - Configuración de firmas.
+   %%%_clamav = ClamAV firmas (ambos mains y daily).
+   %%%_custom = Sus personalizadas firmas (si usted ha escritos algunas).
+   %%%_mussel = phpMussel firmas incluidos en su corriente firmas conjunto que
+                no son de ClamAV.
+   - Cotejar contra MD5 firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
      "md5_clamav"
      "md5_custom"
      "md5_mussel"
-   - Check against general signatures when scanning? 0 = No, 1 = Yes [Default].
+   - Cotejar contra genéricas firmas cuando escaneando?
+     0 = No, 1 = Sí [Predefinido].
      "general_clamav"
      "general_custom"
      "general_mussel"
-   - Check against normalised ASCII signatures when scanning?
-     0 = No, 1 = Yes [Default].
+   - Cotejar contra normalizados ASCII firmas cuando escaneando?
+     0 = No, 1 = Sí [Predefinido].
      "ascii_clamav"
      "ascii_custom"
      "ascii_mussel"
-   - Check against normalised HTML signatures when scanning?
-     0 = No, 1 = Yes [Default].
+   - Cotejar contra normalizados HTML firmas cuando escaneando?
+     0 = No, 1 = Sí [Predefinido].
      "html_clamav"
      "html_custom"
      "html_mussel"
-   - Check PE (Portable Executable) files (EXE, DLL, etc) against PE Sectional
-     signatures when scanning? 0 = No, 1 = Yes [Default].
+   - Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE Secciónal
+     firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
-   - Check PE (Portable Executable) files (EXE, DLL, etc) against PE signatures
-     when scanning? 0 = No, 1 = Yes [Default].
+   - Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE firmas
+     cuando escaneando? 0 = No, 1 = Sí [Predefinido].
      "exe_clamav"
      "exe_custom"
      "exe_mussel"
-   - Check ELF files against ELF signatures when scanning?
-     0 = No, 1 = Yes [Default].
+   - Cotejar ELF archivos con ELF firmas cuando escaneando?
+     0 = No, 1 = Sí [Predefinido].
      "elf_clamav"
      "elf_custom"
      "elf_mussel"
-   - Check Mach-O files (OSX, etc) against Mach-O signatures when scanning?
-     0 = No, 1 = Yes [Default].
+   - Cotejar Mach-O archivos (OSX, etc) con Mach-O firmas cuando escaneando?
+     0 = No, 1 = Sí [Predefinido].
      "macho_clamav"
      "macho_custom"
      "macho_mussel"
-   - Check graphics files against graphics based signatures when scanning?
-     0 = No, 1 = Yes [Default].
+   - Cotejar gráficos archivos con firmas basado en gráficos cuando escaneando?
+     0 = No, 1 = Sí [Predefinido].
      "graphics_clamav"
      "graphics_custom"
      "graphics_mussel"
-   - Check archive contents against archive metadata signatures when scanning?
-     0 = No, 1 = Yes [Default].
+   - Cotejar contenidos de compactados archivos con compactados archivos
+     metadatos firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
-   - Check OLE objects against OLE signatures when scanning?
-     0 = No, 1 = Yes [Default].
+   - Cotejar OLE objetos con OLE firmas cuando escaneando?
+     0 = No, 1 = Sí [Predefinido].
      "ole_clamav"
      "ole_custom"
      "ole_mussel"
-   - Check filenames against filename based signatures when scanning?
-     0 = No, 1 = Yes [Default].
+   - Cotejar nombres de archivos con firmas basado en nombres cuando
+     escaneando? 0 = No, 1 = Sí [Predefinido].
      "filenames_clamav"
      "filenames_custom"
      "filenames_mussel"
-   - Allow scanning with phpMussel_mail()? 0 = No, 1 = Yes [Default].
+   - Permitir escaneando con phpMussel_mail()? 0 = No, 1 = Sí [Predefinido].
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
-   - Enable file specific whitelist? 0 = No, 1 = Yes [Default].
+   - Habilitar archivo específica whitelist? 0 = No, 1 = Sí [Predefinido].
      "whitelist_clamav"
      "whitelist_custom"
      "whitelist_mussel"
-   - Check XML/XDP chunks against XML/XDP-chunk signatures when scanning?
-     0 = No, 1 = Yes [Default].
+   - Cotejar XML/XDP trozos con XML/XDP-Chunk firmas cuando escaneando?
+     0 = No, 1 = Sí [Predefinido].
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
-   - Check against Complex Extended signatures when scanning?
-     0 = No, 1 = Yes [Default].
+   - Cotejar contra Complejo Extendido firmas cuando escaneando?
+     0 = No, 1 = Sí [Predefinido].
      "coex_clamav"
      "coex_custom"
      "coex_mussel"
-   - Check against PDF signatures when scanning?
-     0 = No, 1 = Yes [Default].
+   - Cotejar contra PDF firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
      "pdf_clamav"
      "pdf_custom"
      "pdf_mussel"
-   - Check against Shockwave signatures when scanning?
-     0 = No, 1 = Yes [Default].
+   - Cotejar contra Shockwave firmas cuando escaneando?
+     0 = No, 1 = Sí [Predefinido].
      "swf_clamav"
      "swf_custom"
      "swf_mussel"
-   - Signature matching length limiting options. Only change these if you
-     know what you're doing. SD = Standard signatures. RX = PCRE (Perl
-     Compatible Regular Expressions, or "Regex") signatures. FN = Filename
-     signatures. If you notice php crashing when phpMussel attempts to scan,
-     try lowering these "max" values. If possible and convenient, let me know
-     when this happens and the results of whatever you try.
+   - Firma cotejando longitud limitando opciones. Sólo cambiarlos si sabes lo
+     que estás haciendo. SD = Estándar firmas. RX = PCRE (Perl Compatibles
+     Regulares Expresiones, o "Regex") firmas. FN = Firmas basados en nombre de
+     archivos. Si usted notar php estrellarse cuando phpMussel intentar
+     escanear, intente reducir estos "max" valores. Si es posible y
+     conveniente, avísame cuando esto ocurre y los resultados de lo que
+     intentan.
      "fn_siglen_min"
      "fn_siglen_max"
      "rx_siglen_min"
      "rx_siglen_max"
      "sd_siglen_min"
      "sd_siglen_max"
-   - Should phpMussel report when signatures files are missing or corrupted?
-     If fail_silently is disabled, missing and corrupted files will be reported
-     on scanning, and if fail_silently is enabled, missing and corrupted files
-     will be ignored, with scanning reported for those files that there are no
-     problems. This should generally be left alone unless you're experiencing
-     crashes or similar problems. 0 = Disabled [Default], 1 = Enabled.
+   - Debe phpMussel informan cuando los firmas archivos están desaparecidos o
+     dañados? Si fail_silently está deshabilitado, desaparecidos y dañados
+     archivos será reportado cuando escaneando, y si fail_silently está
+     habilitado, desaparecidos y dañados archivos será ignorado, con escaneando
+     reportado para lo archivos que no hay cualquier problemas. Esto
+     generalmente debe ser dejar sola a menos que usted está experimentando
+     estrellarse o problemas similares.
+     0 = Deshabilitado [Predefinido], 1 = Habilitado.
      "fail_silently"
  "files" (Categoría)
- - General configuration for handling of files.
+ - General configuración para el manejo de archivos.
    "max_uploads"
-   - Maximum allowable number of files to scan during files upload scan before
-     aborting the scan and informing the user they are uploading too much at
-     once! Provides protection against a theoretical attack whereby an attacker
-     attempts to DDoS your system or CMS by overloading phpMussel to slow down
-     the php process to a grinding halt. Recommended: 10. You may wish to raise
-     or lower this number depending on the speed of your hardware. Note that
-     this number does not account for or include the contents of archives.
+   - Máximo permitido número de archivos para escanear durante archivo carga
+     escaneo antes de abortando la escaneo e informando al usuario están
+     cargando demasiado simultáneamente! Proporciona protección contra un
+     teórico ataque por lo cual un atacante intenta DDoS su sistema o CMS por
+     sobrecargando phpMussel para ralentizar el proceso de php a niveles
+     inoperables. Recomendado: 10. Es posible que desee aumentar o reducir este
+     número dependiendo de la velocidad de su hardware. Notar que este número
+     no tiene en cuenta o incluir el contenidos de compactados archivos.
    "filesize_limit"
-   - Filesize limit in KB. 65536 = 64MB [Default], 0 = No limit (always
-     greylisted), any (positive) numeric value accepted. This can be useful
-     when your php configuration limits the amount of memory a process can hold
-     or if your php configuration limits filesize of uploads.
+   - Límite del tamaño de archivos en KB. 65536 = 64MB [Predefinido], 0 = Sin
+     límite (siempre en la greylist), cualquier (positivo) numérico valor
+     aceptado. Esto puede ser útil cuando su php configuración limita la
+     cantidad de memoria un proceso puede contener o si su php configuración
+     limita el tamaño de archivo cargas.
    "filesize_response"
-   - What to do with files that exceed the filesize limit (if one exists).
-     0 - Whitelist, 1 - Blacklist [Default].
+   - Qué hacer con los archivos que superen el límite del tamaño de archivos
+     (si existe). 0 - Whitelist, 1 - Blacklist [Predefinido].
    "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
-   - If your system only allows specific types of files to be uploaded, or if
-     your system explicitly denies certain types of files, specifying those
-     filetypes in whitelists, blacklists and greylists can increase the speed
-     at which scanning is performed by allowing the script to skip over certain
-     filetypes. Format is CSV (comma separated values). If you want to scan
-     everything, rather than whitelist, blacklist or greylist, leave the
-     variable(/s) blank; Doing so will disable whitelist/blacklist/greylist.
-     Logical order of processing is:
-     - If the filetype is whitelisted, don't scan and don't block the file, and
-       don't check the file against the blacklist or the greylist.
-     - If the filetype is blacklisted, don't scan the file but block it anyway,
-       and don't check the file against the greylist.
-     - If the greylist is empty or if the greylist is not empty and the
-       filetype is greylisted, scan the file as per normal and determine
-       whether to block it based on the results of the scan, but if the
-       greylist is not empty and the filetype is not greylisted, treat the file
-       as blacklisted, therefore not scanning it but blocking it anyway.
+   - Si su sistema sólo permite ciertos tipos de archivos para ser cargado, o
+     si su sistema niega explícitamente ciertos tipos de archivos,
+     especificando los tipos de archivos en la whitelist, blacklist y/o
+     greylist puede aumentar la velocidad a que escaneando se realizado por
+     permitiendo la script para saltar sobre ciertos tipos de archivos. Formato
+     es CSV (comas separados valores). Si desea escanear todo, en lugar de
+     utilizando la whitelist, blacklist o greylist, dejar las variables en
+     blanco; haciendo tal desactivará la whitelist/blacklist/greylist.
+     Lógico orden de procesamiento es:
+     - Si el tipo de archivo está en la whitelist, no escanear y no bloquear el
+       archivo, y no cotejar el archivo con la blacklist o la greylist.
+     - Si el tipo de archivo está en la blacklist, no escanear el archivo, pero
+       bloquearlo en todo caso, y no cotejar el archivo con la greylist.
+     - Si la greylist está vacía o si la greylist está no vacía y el tipo de
+       archivo está en la greylist, escanearlo como normal y determinar si para
+       bloquearlo basado en los resultados de la escaneo, pero si la greylist
+       está no vacía y el tipo de archivo está no en la greylist, tratar el
+       archivo como si está en la blacklist, por lo tanto no escanearlo pero
+       bloquearlo en todo caso.
    "check_archives"
-   - Attempt to check the contents of archives?
-     0 - No (do not check), 1 - Yes (check) [Default].
-     * Currently, only checking of BZ, GZ, LZF and ZIP files is supported
-       (checking of RAR, CAB, 7z and etcetera not currently supported).
-     * This is not foolproof! While I highly recommend keeping this turned on,
-       I can't guarantee it'll always find everything.
-     * Also be aware that archive checking currently is not recursive for ZIPs.
+   - Intente comprobar el contenido de los compactados archivos?
+     0 - No (no comprobar), 1 - Sí (comprobar) [Predefinido].
+     * Corrientemente, sólo la comprobación de BZ, GZ, LZF y ZIP archivos está
+       soportado (comprobación de RAR, CAB, 7z y etcétera no soportado en este
+       momento).
+     * Esto no es infalible! Mientras yo altamente recomiendo mantener este
+       habilitado, no puedo garantizar que siempre encontrará todo.
+     * También ser conscientes que la comprobación de compactados archivos
+       corrientemente no es recursivo para ZIPs.
    "filesize_archives"
-   - Carry over filesize blacklisting/whitelisting to the contents of archives?
-     0 - No (just greylist everything), 1 - Yes [Default].
+   - Heredar tamaño de archivos blacklist/whitelist para los contenidos de
+     compactados archivos? 0 - No (todo en la greylist), 1 - Sí [Predefinido].
    "filetype_archives"
-   - Carry over filetype blacklisting/whitelisting to the contents of archives?
-     0 - No (just greylist everything) [Default], 1 - Yes.
+   - Heredar tipos de archivos blacklist/whitelist para los contenidos de
+     compactados archivos? 0 - No (todo en la greylist), 1 - Sí [Predefinido].
    "max_recursion"
-   - Maximum recursion depth limit for archives. Default = 10.
+   - Máximo recursividad nivel límite para compactados archivos.
+     Predefinido = 10.
  "attack_specific" (Categoría)
- - Configuration for specific attack detections (not based on CVDs).
-   * Chameleon attack detection: 0 = Off, 1 = On.
+ - Configuración para ataque específicas detecciones (no basado en CVDs).
+   * Camaleón ataque detección: 0 = Deshabilitado, 1 = Habilitado.
    "chameleon_from_php"
-   - Search for php header in files that are neither php files nor recognised
-     archives.
+   - Buscar para php código en archivos que no están php archivos ni
+     reconocidos compactados archivos.
    "chameleon_from_exe"
-   - Search for executable headers in files that are neither executables nor
-     recognised archives and for executables whose headers are incorrect.
+   - Buscar para PE mágico número en archivos que no están ejecutables ni
+     reconocidos compactados archivos y para ejecutables cuyo mágicos números
+     son incorrectas.
    "chameleon_to_archive"
-   - Search for archives whose headers are incorrect (Supported: BZ, GZ, RAR,
-     ZIP, RAR, GZ).
+   - Buscar para compactados archivos cuyo mágicos números son incorrectas
+     (Soportado: BZ, GZ, RAR, ZIP, RAR, GZ).
    "chameleon_to_doc"
-   - Search for office documents whose headers are incorrect (Supported: DOC,
-     DOT, PPS, PPT, XLA, XLS, WIZ).
+   - Buscar para office documentos cuyo mágicos números son incorrectas
+     (Soportado: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
    "chameleon_to_img"
-   - Search for images whose headers are incorrect (Supported: BMP, DIB, PNG,
-     GIF, JPEG, JPG, XCF, PSD, PDD).
+   - Buscar para imágenes cuyo mágicos números son incorrectas (Soportado: BMP,
+     DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD).
    "chameleon_to_pdf"
-   - Search for PDF files whose headers are incorrect.
-   "archive_file_extensions" and "archive_file_extensions_wc"
-   - Recognised archive file extensions (format is CSV; should only add or
-     remove when problems occur; unnecessarily removing may cause
-     false-positives to appear for archive files, whereas unnecessarily adding
-     will essentially whitelist what you are adding from attack specific
-     detection; modify with caution; also note that this has no effect on what
-     archives can and can't be analysed at content-level). The list, as is at
-     default, lists those formats used most commonly across the majority of
-     systems and CMS, but intentionally isn't necessarily comprehensive.
+   - Buscar para PDF archivos cuyo mágicos números son incorrectas.
+   "archive_file_extensions" y "archive_file_extensions_wc"
+   - Reconocido compactado archivo extensiones (formato es CSV; sólo debe
+     agregar o eliminar cuando problemas ocurrir; eliminando innecesariamente
+     puede causar falsos positivos a aparecer para compactados archivos,
+     mientras añadiendo innecesariamente hará esencialmente whitelist que
+     cuales eres añadiendo desde ataque específica detección; modificar con
+     precaución; También notar que esto no tiene efecto en aquellos compactados
+     archivos que pueden y no pueden ser analizado a contenido nivel). La
+     lista, como es a predefinición, describe los formatos más comúnmente
+     utilizados a través de la mayoría de sistemas y CMS, pero intencionalmente
+     no es necesariamente exhaustiva.
    "general_commands"
-   - Search content of files for general commands such as eval(), exec() and
-     include()? 0 - No (do not check) [Default], 1 - Yes (check). Disable this
-     option if you intend to upload any of the following to your system or CMS
-     via your browser: php, JavaScript, HTML, python, perl files and etcetera.
-     Enable this option if you do not have any additional protections on your
-     system and do not intend to upload such files. If you use additional
-     security in conjunction with phpMussel such as ZB Block, there is no need
-     to turn this option on, because most of what phpMussel will look for (in
-     the context of this option) are duplications of protections that are
-     already provided.
+   - Buscar contenidos de archivos para generales comandos como tal eval(),
+     exec() y include()? 0 - No (no buscar) [Default], 1 - Sí (buscar).
+     Deshabilitar esta opción si tiene intención de cargando cualquiera de los
+     siguientes para su sistema o CMS a través de su navegador: php,
+     JavaScript, HTML, python, perl archivos y etcétera. Habilitar esta opción
+     si usted no tiene cualquier adicional protección en su sistema y no tiene
+     intención de cargando estos tipos de archivos. Si utiliza adicional
+     seguridad junto con phpMussel como tal ZB Block, no hay necesidad de
+     habilitar esta opción, porque la mayor parte de lo que phpMussel buscará
+     (en el contexto de esta opción) son duplicaciones de protecciones que ya
+     previsto.
    "block_control_characters"
-   - Block any files containing any control characters (other than newlines)?
-     ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) If you are -only- uploading plain-text,
-     then you can turn this option on to provide some additional protection to
-     your system. However, if you upload anything other than plain-text,
-     turning this on may result in false positives.
-     0 - Don't block [Default], 1 - Block.
+   - Bloquear cualquier archivos que contenga cualquier control carácter
+     (aparte de saltos de línea)? ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) Si usted
+     sólo cargar texto sin cualquier formato, usted puede habilitar esta opción
+     para proporcionar alguna adicional protección para su sistema. Pero, si
+     usted cargar cualquier cosa otro de texto sin cualquier formato,
+     habilitando esto puede dar lugar a falsos positivos.
+     0 - No bloquear [Predefinido], 1 - Bloquear.
    "corrupted_exe"
-   - Corrupted files and parse errors. 0 = Ignore, 1 = Block [Default].
-     Detect and block potentially corrupted PE (Portable Executable) files?
-     Often (but not always), when certain aspects of a PE file are corrupted or
-     can't be parsed correctly, it can be indicative of a viral infection. The
-     processes used by most anti-virus programs to detect viruses in PE files
-     require parsing those files in certain ways, which, if the programmer of a
-     virus is aware of, will specifically try to prevent, in order to allow
-     their virus to remain undetected.
+   - Corrompido archivos y procesamiento errores.
+     0 = Ignorar, 1 = Bloquear [Predefinido].
+     Detectar y bloquear potencialmente corrompido PE (Portátil Ejecutable)
+     archivos? Frecuentemente (pero no siempre), cuando ciertos aspectos de un
+     PE archivo están corrompido, dañados o no podrá ser analizado
+     correctamente, lo puede ser indicativo de una infección viral. Los
+     procesos utilizados por la mayoría de los antivirus programas para
+     detectar un virus en PE archivos requerir analizando esos archivos en
+     ciertas maneras, que, si el programador de un virus es consciente de,
+     intentará específicamente para prevenir, con el fin de permitir su virus
+     permanezca sin ser detectado.
    "decode_threshold"
-   - Optional limitation or threshold to the length of raw data to which within
-     decode commands should be detected (in case there are any noticeable
-     performance issues whilst scanning). Value is an integer representing
-     filesize in KB. Default = 512 (512KB). Zero or null value disables the
-     threshold (removing any such limitation based on filesize).
+   - Opcional limitación a la longitud de puros datos a que dentro de
+     decodificación comandos deben ser detectados (en caso de que los hay
+     notable rendimiento problemas mientras que escaneando). Valor es un entero
+     número representando el tamaño de archivos en KB.
+     Predefinido = 512 (512KB). Cero o nulo valor deshabilita la limitación
+     (eliminando cualquier tal limitación basado sobre la tamaño de archivos).
    "scannable_threshold"
-   - Optional limitation or threshold to the length of raw data to which
-     phpMussel is permitted to read and scan (in case there are any noticeable
-     performance issues whilst scanning). Value is an integer representing
-     filesize in KB. Default = 32768 (32MB). Zero or null value disables the
-     threshold. Generally, this value shouldn't be less than the average
-     filesize of file uploads that you want and expect to receive to your
-     server or website, shouldn't be more than the filesize_limit directive,
-     and shouldn't be more than roughly one fifth of the total allowable memory
-     allocation granted to php via the php.ini configuration file. This
-     directive exists to try to prevent phpMussel from using up too much memory
-     (which would prevent it from being able to successfully scan files above a
-     certain filesize).
+   - Opcional limitación a la longitud de puros datos para que phpMussel se
+     permitido leer y escanear (en caso de que los hay notable rendimiento
+     problemas mientras que escaneando). Valor es un entero número
+     representando el tamaño de archivos en KB. Predefinido = 32768 (32MB).
+     Cero o nulo valor deshabilita la limitación. En general, Este valor no
+     debe ser inferior a la media tamaño de archivo cargas que desea y espera
+     recibir a su servidor o website, no debe ser mayor que el filesize_limit
+     directiva, y no debe ser más de aproximadamente una quinta parte de la
+     total permisible memoria asignación concedida a php a través de la php.ini
+     configuración archivo. Esta directiva existe para intratar prevenir
+     phpMussel del uso de demasiada memoria (eso sería prevenir que sea capaz
+     para escanear archivos con éxito encima de un cierto tamaño de archivos).
  "compatibility" (Categoría)
- - Compatibility directives for phpMussel.
-    "ignore_upload_errors"
-    - This directive should generally be disabled unless it is required for
-      correct functionality of phpMussel on your specific system. Normally,
-      when disabled, when phpMussel detects the presence of elements in the
-      $_FILES array(), it will attempt to initiate a scan of the files that
-      those elements represent, and, if those elements are blank or empty,
-      phpMussel will return an error message. This is proper behaviour for
-      phpMussel. However, for some CMS, empty elements in $_FILES can occur as
-      a result of the natural behaviour of those CMS, or errors may be reported
-      when there aren't any, in which case, the normal behaviour for phpMussel
-      will be interfering with the normal behaviour of those CMS. If such a
-      situation occurs for you, enabling this option will instruct phpMussel to
-      not attempt to initiate scans for such empty elements, ignore them when
-      found and to not return any related error messages, thus allowing
-      continuation of the page request. 0 - OFF, 1 - ON.
-    "only_allow_images"
-    - If you only expect or only intend to allow images to be uploaded to your
-      system or CMS, and if you absolutely do not require any files other than
-      images to be uploaded to your system or CMS, this directive should be
-      enabled, but should otherwise be disabled. If this directive is enabled,
-      it will instruct phpMussel to indiscriminately block any uploads
-      identified as non-image files, without scanning them. This may reduce
-      processing time and memory usage for attempted uploads of non-image
-      files. 0 - OFF, 1 - ON.
+ - Compatibilidad directivas para phpMussel.
+   "ignore_upload_errors"
+   - Esta directiva, en general, debe ser deshabilitado, a menos que se
+     requiere para la correcta funcionalidad de phpMussel en su específico
+     sistema. Normalmente, cuando está desactivado, cuando phpMussel detecta
+     la presencia de elementos en la $_FILES array(), intentará iniciar un
+     escaneo de los archivos que esos elementos representan, y, si esos
+     elementos están blanco o vacío, phpMussel devolverá un mensaje de error.
+     Este es el comportamiento natural para phpMussel. Pero, para algunos CMS,
+     vacíos elementos en $_FILES puede ocurrir como resultado del
+     comportamiento natural de los CMS, o errores pueden ser reportados cuando
+     no existe ninguna, en cuyo caso, el comportamiento natural para phpMussel
+     será interfiriendo con el comportamiento natural de los CMS. Si tal
+     situación ocurre para usted, habilitando esta opción instruirá phpMussel
+     no intentar iniciar un escaneo para tales vacíos elementos, ignorarlos
+     cuando encontrado y no devuelva cualquier relacionado mensaje de error,
+     así permitiendo la continuación de la página cargando.
+     0 - DESHABILITADO, 1 - HABILITADO.
+   "only_allow_images"
+   - Si sólo esperas o sólo quieren permitir imágenes para ser cargado a su
+     sistema o CMS, y si usted absolutamente no requiere cualquieres archivos
+     otro que imágenes para ser cargado a su sistema o CMS, esta directiva debe
+     ser habilitado, pero por lo demás debe ser deshabilitado. Si esta
+     directiva está habilitada, instruirá phpMussel para indiscriminadamente
+     bloquear cualquieres cargas identificado como archivos que no son imagen,
+     sin escaneandolos. Esto puede reducir el tiempo de procesamiento y el uso
+     de memoria para intentado cargas de archivos que no son imagen.
+     0 - DESHABILITADO, 1 - HABILITADO.
 
                                      ~ ~ ~
 
 
  7. FIRMA FORMATOS
 
- = FILENAME SIGNATURES =
-   All filename signatures follow the format:
-    NAME:FNRX
-   Where NAME is the name to cite for that signature and FNRX is the regex
-   pattern to match filenames (unencoded) against.
+ = FIRMAS BASADAS EN LAS NOMBRES DEL ARCHIVOS =
+   Todas firmas basadas en las nombres del archivos seguir el formato:
+    NOMBRE:FNRX
+   Donde NOMBRE es el nombre a citar para esa firma y FNRX es la regular
+   expresión para cotejar nombres de archivos (sin codificar) con.
 
- = MD5 SIGNATURES =
-   All MD5 signatures follow the format:
-    HASH:FILESIZE:NAME
-   Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of
-   that file and NAME is the name to cite for that signature.
+ = MD5 FIRMAS =
+   Todos MD5 firmas seguir el formato:
+    HASH:TAMAÑO:NOMBRE
+   Donde HASH es el MD5 hash de un entero archivo, TAMAÑO es el total tamaño
+   de eso archivo y NOMBRE es el nombre a citar para esa firma.
 
- = ARCHIVE METADATA SIGNATURES =
-   All archive metadata signatures follow the format:
-    NAME:FILESIZE:CRC32
-   Where NAME is the name to cite for that signature, FILESIZE is the total
-   size (uncompressed) of a file contained within the archive and CRC32 is the
-   crc32 checksum of that contained file.
+ = COMPACTADOS ARCHIVOS METADATOS FIRMAS =
+   Donde compactados archivos metadatos firmas seguir el formato:
+    NOMBRE:TAMAÑO:CRC32
+   Donde NOMBRE es el nombre a citar para esa firma, TAMAÑO es el total tamaño
+   (sin comprimir) de un archivo contenido dentro el compactado archivo y CRC32
+   es el crc32 suma de comprobación de eso contenido archivo.
 
- = PE SECTIONAL MD5 SIGNATURES =
-   All PE Sectional MD5 signatures follow the format:
-    FILESIZE:HASH:NAME
-   Where HASH is the MD5 hash of a section of the PE file, FILESIZE is the
-   total size of that file and NAME is the name to cite for that signature.
+ = PE SECCIÓNAL MD5 FIRMAS =
+   Todos PE Secciónal MD5 firmas seguir el formato:
+    TAMAÑO:HASH:NOMBRE
+   Donde HASH es el MD5 hash de una sección del PE archivo, TAMAÑO es el total
+   tamaño de eso archivo y NOMBRE es el nombre a citar para esa firma.
 
- = WHITELIST SIGNATURES =
-   All Whitelist signatures follow the format:
-    HASH:FILESIZE:TYPE
-   Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of
-   that file and TYPE is the type of signatures the whitelisted file is to be
-   immune against.
+ = WHITELIST FIRMAS =
+   Todos Whitelist firmas seguir el formato:
+    HASH:TAMAÑO:TIPO
+   Donde HASH es el MD5 hash de un entero archivo, TAMAÑO es el total tamaño de
+   eso archivo y TIPO es el tipo of firmas el archivo en la whitelist es estar
+   inmune contra.
 
- = COMPLEX EXTENDED SIGNATURES =
-   Complex Extended signatures are rather different to the other types of
-   signatures possible with phpMussel, in that what they are matching against
-   is specified by the signatures themselves and they can match against
-   multiple criteria. The match criterias are delimited by ";" and the match
-   type and match data of each match criteria is delimited by ":" as so that
-   format for these signatures tends to look a bit like:
-    $variable1:SOMEDATA;$variable2:SOMEDATA;SignatureName
+ = COMPLEJO EXTENDIDO FIRMAS =
+   Complejo Extendido firmas son bastante diferentes a los otros tipos de
+   firmas posibles con phpMussel, en que qué ellos son cotejando contra se
+   especificado por las firmas ellos mismos y que ellos pueden cotejar contra
+   múltiples criterios. La cotejar criterios están delimitados por ";" y la
+   cotejar tipo y cotejar datos de cada cotejar criterio es delimitado por ":"
+   como tal que formato para estas firmas tiene tendencia a aparecer como:
+    $variable1:SOMEDATA;$variable2:SOMEDATA;FirmaNombre
 
- = EVERYTHING ELSE =
-   All other signatures follow the format:
-    NAME:HEX:FROM:TO
-   Where NAME is the name to cite for that signature and HEX is a
-   hexadecimal-encoded segment of the file intended to be matched by the given
-   signature. FROM and TO are optional parameters, indicting from which and to
-   which positions in the source data to check against (not supported by the
-   mail function).
+ = TODO LO DEMÁS =
+   Todas las demás firmas seguir el formato:
+    NOMBRE:HEX:DESDE:PARA
+   Donde NOMBRE es el nombre a citar para esa firma y HEX es un hexadecimal
+   codificado segmento del archivo propuesto para ser comprobado por la firma
+   dado. DESDE y PARA son opcionales parámetros, indicando desde cual y para
+   cual posiciones en los datos de origen a cotejar contra (no soportado por
+   la mail función).
 
  = REGEX =
-   Any form of regex understood and correctly processed by php should also be
-   correctly understood and processed by phpMussel and its signatures. However,
-   I'd suggest taking extreme caution when writing new regex based signatures,
-   because, if you're not entirely sure what you're doing, there can be highly
-   irregular and/or unexpected results. Take a look at the phpMussel
-   source-code if you're not entirely sure about the context in which regex
-   statements are parsed. Also, remember that all patterns (with exception to
-   filename, archive metadata and MD5 patterns) must be hexadecimally encoded
-   (foregoing pattern syntax, of course)!
+   Cualquier forma de regex entendido y correctamente procesado por php también
+   debe entenderse y procesado correctamente por phpMussel y sus firmas. Pero,
+   yo sugeriría tomar mucho cuidado cuando escribiendo nuevas firmas basado en
+   regex, porque, si no estás del todo seguro de lo que estás haciendo, puede
+   haber altamente irregulares e/o inesperados resultados. Mirar el código
+   fuente para phpMussel si no estás del todo seguro sobre el contexto para lo
+   cual las regex declaraciones son procesado. También, recordar que todos los
+   patrones (con excepción para nombre de archivo, compactado archivo metadato
+   y MD5 patrones) debe ser hexadecimal codificado (con excepción de la patrón
+   sintaxis)!
 
- = WHERE TO PUT CUSTOM SIGNATURES? =
-   Only put custom signatures in those files intended for custom signatures.
-   Those files should contain "_custom" in their filenames. You should also
-   avoid editing the default signature files, unless you know exactly what
-   you're doing, because, aside from being good practise in general and aside
-   from helping you distinguish between your own signatures and the default
-   signatures included with phpMussel, it is good to stick to editing only the
-   files intended for editing, because tampering with the default signature
-   files can cause them to stop working correctly, due to the "maps" files: The
-   maps files tell phpMussel where in the signature files to look for
-   signatures required by phpMussel as per when required, and these maps can
-   become out-of-sync with their associated signature files if those signature
-   files are tampered with. You can put pretty much whatever you want into your
-   custom signatures, so long as you follow the correct syntax. However, be
-   careful to test new signatures for false-positives beforehand if you intend
-   to share them or use them in a live environment.
+ = DONDE PONER PERSONALIZADAS FIRMAS? =
+   Sólo poner personalizadas firmas en esos archivos destinados para
+   personalizadas firmas. Estos archivos deben contener "_custom" en sus
+   nombres. También debe evitar editando de los predefinidos firmas archivos
+   que no son nombrado como tal, a menos que sepa exactamente lo que está
+   haciendo, porque, además de ser una buena práctica en general y además de
+   desde ayudando distinguir entre sus propias firmas y la predefinido firmas
+   incluido con phpMussel, que es bueno para mantener para editando sólo los
+   archivos destinados para editando, porque la manipulación de los
+   predefinidos firmas archivos puede causarlos cesar funcionando
+   correctamente, por razón del "maps" archivos: Los "maps" archivos instruir
+   phpMussel donde en los firmas archivos para mirar por firmas requeridas por
+   phpMussel como por cuando requerido, y estos mapas pueden convertirse fuera
+   de sincronización con sus asociados firmas archivos si esos firmas archivos
+   están manipulados. Usted puede poner más o menos lo que quieras en sus
+   personalizadas firmas, siempre y cuando usted sigue la sintaxis correcta.
+   Pero, tener cuidado para probar nuevas firmas para falsos positivos de
+   antemano si tiene intención de compartirlas o utilizarlos en un real
+   entorno.
 
- = SIGNATURE BREAKDOWN =
-   The following is a breakdown of the types of signatures used by phpMussel:
-   - "Normalised ASCII Signatures" (ascii_*). Checked against the contents of
-      every non-whitelisted file targeted for scanning.
-   - "Complex Extended Signatures" (coex_*). Mixed signature type matching.
-   - "ELF Signatures" (elf_*). Checked against the contents of every
-      non-whitelisted file targeted for scanning and matched to the ELF format.
-   - "Portable Executable Signatures" (exe_*). Checked against the contents of
-      every non-whitelisted targeted for scanning and matched to the PE format.
-   - "Filename Signatures" (filenames_*). Checked against the filenames of
-      files targeted for scanning.
-   - "General Signatures" (general_*). Checked against the contents of every
-      non-whitelisted file targeted for scanning.
-   - "Graphics Signatures" (graphics_*). Checked against the contents of every
-      non-whitelisted file targeted for scanning and matched to a known
-      graphical file format.
-   - "General Commands" (hex_general_commands.csv). Checked against the
-      contents of every non-whitelisted file targeted for scanning.
-   - "Normalised HTML Signatures" (html_*). Checked against the contents of
-      every non-whitelisted HTML file targeted for scanning.
-   - "Mach-O Signatures" (macho_*). Checked against the contents of every
-      non-whitelisted file targeted for scanning and matched to the Mach-O
-      format.
-   - "Email Signatures" (mail_*). Checked against the $body variable parsed to
-      the phpMussel_mail() function, which is intended to be the body of email
+ = FIRMA DESGLOSE =
+   El siguiente es el desglose de los tipos de firmas utilizado por phpMussel:
+   - "Normalizados ASCII Firmas" (ascii_*). Cotejado contra los contenidos de
+      cada archivo que no está en la whitelist que es destinado para
+      escaneando.
+   - "Complejo Extendido Firmas" (coex_*). Mixtas tipos de firmas para
+      cotejar/comprobar.
+   - "ELF Firmas" (elf_*). Cotejado contra los contenidos de cada archivo que
+      no está en la whitelist que es destinado para escaneando y verificado
+      como del ELF formato.
+   - "Portátil Ejecutable Firmas" (exe_*). Cotejado contra los contenidos de
+      cada archivo que no está en la whitelist que es destinado para escaneando
+      y verificado como del PE formato.
+   - "Firmas Basadas En Las Nombres Del Archivos" (filenames_*). Cotejado
+      contra los nombres de archivos destinado para escaneando.
+   - "Generales Firmas" (general_*). Cotejado contra los contenidos de cada
+      archivo que no está en la whitelist que es destinado para escaneando.
+   - "Gráficas Firmas" (graphics_*). Cotejado contra los contenidos de cada
+      archivo que no está en la whitelist que es destinado para escaneando y
+      verificado como de un conocido gráficos formato.
+   - "Generales Comandos" (hex_general_commands.csv). Cotejado contra los
+      contenidos de cada archivo que no está en la whitelist que es destinado
+      para escaneando.
+   - "Normalizados HTML Firmas" (html_*). Cotejado contra los contenidos de
+      cada archivo que no está en la whitelist que es destinado para escaneando
+      y verificado como del HTML formato.
+   - "Mach-O Firmas" (macho_*). Cotejado contra los contenidos de cada archivo
+      que no está en la whitelist que es destinado para escaneando y verificado
+      como del Mach-O formato.
+   - "Email Firmas" (mail_*). Cotejado contra la $body variable procesada por
+      la phpMussel_mail() función, which is intended to be the body of email
       messages or similar entities (potentially forum posts and etcetera).
-   - "MD5 Signatures" (md5_*). Checked against the MD5 hash of the contents and
-      the filesize of every non-whitelisted file targeted for scanning.
-   - "Archive Metadata Signatures" (metadata_*). Checked against the CRC32 hash
-      and filesize of the initial file contained inside of any non-whitelisted
-      archive targeted for scanning.
-   - "OLE Signatures" (ole_*). Checked against the contents of every
-      non-whitelisted OLE object targeted for scanning.
-   - "PDF Signatures" (pdf_*). Checked against the contents of every
-      non-whitelisted PDF file targeted for scanning.
-   - "Portable Executable Sectional Signatures" (pe_*). Checked against the MD5
-      hash of each PE section and the filesize of every non-whitelisted file
-      targeted for scanning and matched to the PE format.
-   - "SWF Signatures" (swf_*). Checked against the contents of every
-      non-whitelisted Shockwave file targeted for scanning.
-   - "Whitelist Signatures" (whitelist_*). Checked against the MD5 hash of the
-      contents and the filesize of every file targeted for scanning. Matched
-      files will be immune to being matched by the type of signature mentioned
-      in their whitelist entry.
-   - "XML/XDP-Chunk Signatures" (xmlxdp_*). Checked against any XML/XDP chunks
-      found within any non-whitelisted files targeted for scanning.
-     (Note that any of these signatures may be easily disabled via
-      phpmussel.ini).
+   - "MD5 Firmas" (md5_*). Cotejado contra el MD5 hash de los contenidos y el
+      tamaño de cada archivo que no está en la whitelist que es destinado para
+      escaneando.
+   - "Compactados Archivos Metadatos Firmas" (metadata_*). Cotejado contra el
+      CRC32 hash y tamaño del inicial archivo contenido en el interior de
+      cualquier que no está en la whitelist que es destinado para escaneando.
+   - "OLE Firmas" (ole_*). Cotejado contra los contenidos de cada OLE objeto
+      que no está en la whitelist que es destinado para escaneando.
+   - "PDF Firmas" (pdf_*). Cotejado contra los contenidos de cada PDF archivo
+      que no está en la whitelist que es destinado para escaneando.
+   - "Portátil Ejecutable Secciónal Firmas" (pe_*). Cotejado contra el MD5 hash
+      y el tamaño de cada PE sección de cada archivo que no está en la
+      whitelist que es destinado para escaneando.
+   - "SWF Firmas" (swf_*). Cotejado contra los contenidos de cada Shockwave
+      archivo que no está en la whitelist que es destinado para escaneando.
+   - "Whitelist Firmas" (whitelist_*). Cotejado contra el MD5 hash de los
+      contenidos y el tamaño de cada archivo que es destinado para escaneando.
+      Cotejados archivos será inmune de ser cotejado por el tipo de firma
+      mencionado en su entrada de la whitelist.
+   - "XML/XDP-Chunk Firmas" (xmlxdp_*). Cotejado contra cualquier XML/XDP
+      trozos encontrado dentro de cualquier archivo que no está en la whitelist
+      que es destinado para escaneando.
+     (Notar que cualquier de estas firmas pueden estar fácilmente deshabilitado
+      a través de phpmussel.ini).
 
                                      ~ ~ ~
 
@@ -1510,5 +1547,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 20 Febrero 2015 (2015.02.20).
+Última Actualización: 3 Marzo 2015 (2015.03.03).
 EOF

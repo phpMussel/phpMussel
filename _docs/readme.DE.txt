@@ -789,9 +789,9 @@
  /vault/swf_mussel_regex.cvd (Signaturen, enthalten)
  /vault/swf_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der Shockwave-Signaturen.
-    Benötigt, wenn die Option "Shockwave Signatures" in der phpmussel.ini aktiviert
-    ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
-    (Dateien werden bei einem Update neu erstellt).
+    Benötigt, wenn die Option "Shockwave Signatures" in der phpmussel.ini
+    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
+    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
     ~
  /vault/template.html (Sonstiges, enthalten)
     phpMussel Template file; Template für die HTML-Ausgabe mit der Nachricht,
@@ -1242,31 +1242,30 @@
      ab einer bestimmten Dateigröße erfolgreich durchzuführen).
  "compatibility" (Kategorie)
  - Kompatibilitätsdirektiven für phpMussel.
-    "ignore_upload_errors"
-    - Diese Direktive sollte generell AUS geschaltet bleiben sofern es nicht
-      für die korrekte Funktion von phpMussel auf Ihrem System benötigt wird.
-      Normalerweise, sobald phpMussel bei AUS geschalteter Direktive ein
-      Element in $_FILES array() erkennt, wird es beginnen, die Dateien, die
-      diese Elemente representieren, zu überprüfen, sollten diese Elemente leer
-      sein, gibt phpMussel eine Fehlermeldung zurück. Dies ist das normale
-      Verhalten von phpMussel. Bei einigen CMS werden allerdings als normales
-      Verhalten leere Elemente in $_FILES zurückgegeben oder Fehlermeldungen
-      ausgelöst, sobald sich dort keine leeren Elemente befinden, in diesem
-      Fall tritt ein Konflikt zwischen dem normalen Verhalten von phpMussel und
-      dem CMS auf. Sollte eine solche Konstellation bei Ihrem CMS zutreffen, so
-      stellen Sie diese Option AN, phpMussel wird somit nicht nach leeren
-      Elementen suchen, Sie bei einem Fund ignorieren und keine zugehörigen
-      Fehlermeldungen ausgeben, der Request zum Seitenaufruf kann somit
-      fortgesetzt werden. 0 - AUS/OFF, 1 - AN/ON.
-    "only_allow_images"
-    - Wenn Sie nur Bilder erwarten, die auf Ihr System oder CMS hochgeladen
-      werden oder nur Bilder und keine anderen Dateien als Upload erlauben oder
-      benötigen, so sollte diese Direktive aktiviert werden (ON), ansonsten
-      deaktiviert bleiben (OFF). Ist diese Direktive aktiviert, wird phpMussel
-      alle Uploads, die keine Bilddateien sind, blockieren, ohne sie zu
-      scannen. Dies kann die Verarbeitungszeit und Speichernutzung resuzieren,
-      sobald andere Nicht-Bilddateien hochgeladen werden.
-      0 - AUS/OFF, 1 - AN/ON.
+   "ignore_upload_errors"
+   - Diese Direktive sollte generell AUS geschaltet bleiben sofern es nicht für
+     die korrekte Funktion von phpMussel auf Ihrem System benötigt wird.
+     Normalerweise, sobald phpMussel bei AUS geschalteter Direktive ein Element
+     in $_FILES array() erkennt, wird es beginnen, die Dateien, die diese
+     Elemente representieren, zu überprüfen, sollten diese Elemente leer sein,
+     gibt phpMussel eine Fehlermeldung zurück. Dies ist das normale Verhalten
+     von phpMussel. Bei einigen CMS werden allerdings als normales Verhalten
+     leere Elemente in $_FILES zurückgegeben oder Fehlermeldungen ausgelöst,
+     sobald sich dort keine leeren Elemente befinden, in diesem Fall tritt ein
+     Konflikt zwischen dem normalen Verhalten von phpMussel und dem CMS auf.
+     Sollte eine solche Konstellation bei Ihrem CMS zutreffen, so stellen Sie
+     diese Option AN, phpMussel wird somit nicht nach leeren Elementen suchen,
+     Sie bei einem Fund ignorieren und keine zugehörigen Fehlermeldungen
+     ausgeben, der Request zum Seitenaufruf kann somit fortgesetzt werden.
+     0 - AUS/OFF, 1 - AN/ON.
+   "only_allow_images"
+   - Wenn Sie nur Bilder erwarten, die auf Ihr System oder CMS hochgeladen
+     werden oder nur Bilder und keine anderen Dateien als Upload erlauben oder
+     benötigen, so sollte diese Direktive aktiviert werden (ON), ansonsten
+     deaktiviert bleiben (OFF). Ist diese Direktive aktiviert, wird phpMussel
+     alle Uploads, die keine Bilddateien sind, blockieren, ohne sie zu scannen.
+     Dies kann die Verarbeitungszeit und Speichernutzung resuzieren, sobald
+     andere Nicht-Bilddateien hochgeladen werden. 0 - AUS/OFF, 1 - AN/ON.
 
                                      ~ ~ ~
 
@@ -1390,9 +1389,9 @@
       in der Whitelist aufgeführt ist.
    - "PDF-Signaturen" (pdf_*). Überprüft den Inhalt jeder PDF-Dateien, die
       nicht in der Whitelist aufgeführt ist.
-   - "Portable Executable Sectional Signaturen" (pe_*). Überprüft mittels
-      MD5-Hash des PE-Sektionen und der Dateigröße jeder Datei, die nicht in
-      der Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format
+   - "Portable Executable Sectional Signaturen" (pe_*). Überprüft mittels der
+      Größe und MD5-Hash des PE-Sektionen jeder Datei, die nicht in der
+      Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format
       entspricht.
    - "SWF-Signaturen" (swf_*). Überprüft den Inhalt jeder Shockwave-Dateien,
       die nicht in der Whitelist aufgeführt ist.
@@ -1489,5 +1488,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 2015.02.04
+Zuletzt aktualisiert: 2015.03.03
 EOF

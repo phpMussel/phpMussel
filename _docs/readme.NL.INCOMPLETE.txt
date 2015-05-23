@@ -217,10 +217,10 @@
    was er niets te scannen, 1 geeft aan dat de doelwit met succes werd gescand
    geen problemen waren gedetecteerd, en 2 geeft aan dat de doelwit met succes
    werd gescand en problemen waren gedetecteerd). Een waarde van 1 instrueert
-   de functie om de resultaten als mensen leesbare tekst. Een waarde van 2 beide
-   instrueert de functie om de resultaten als mensen leesbare tekst en om de
-   resultaten te exporteren een globale variabele. Deze variabele is optioneel,
-   en is 0 door standaard.
+   de functie om de resultaten als mensen leesbare tekst. Een waarde van 2
+   beide instrueert de functie om de resultaten als mensen leesbare tekst en om
+   de resultaten te exporteren een globale variabele. Deze variabele is
+   optioneel, en is 0 door standaard.
  - $output_flatness is an integer, indicating whether to allow results to be
    returned as an array or not. Normally, if the scan target contained multiple
    items (such as if a directory or array) the results will be returned in an
@@ -239,9 +239,9 @@
     -> Geen problemen gevonden.
     Wed, 16 Sep 2013 02:49:47 +0000 Afgewerkt.
 
- For a full break-down of what sort of signatures phpMussel uses during its
- scans and how it handles these signatures, refer to the Signature Format
- section of this README file.
+ Voor een volledige beschrijving van de soorten van de handtekeningen gebruikt
+ door phpMussel tijdens de scans en hoe het omgaat met deze handtekeningen,
+ raadpleeg de Handtekeningformaat sectie van dit README bestand.
 
  If you encounter any false positives, if you encounter something new that you
  think should be blocked, or for anything else regarding signatures, please
@@ -1217,30 +1217,30 @@
      certain filesize).
  "compatibility" (Category)
  - Compatibility directives for phpMussel.
-    "ignore_upload_errors"
-    - This directive should generally be disabled unless it is required for
-      correct functionality of phpMussel on your specific system. Normally,
-      when disabled, when phpMussel detects the presence of elements in the
-      $_FILES array(), it will attempt to initiate a scan of the files that
-      those elements represent, and, if those elements are blank or empty,
-      phpMussel will return an error message. This is proper behaviour for
-      phpMussel. However, for some CMS, empty elements in $_FILES can occur as
-      a result of the natural behaviour of those CMS, or errors may be reported
-      when there aren't any, in which case, the normal behaviour for phpMussel
-      will be interfering with the normal behaviour of those CMS. If such a
-      situation occurs for you, enabling this option will instruct phpMussel to
-      not attempt to initiate scans for such empty elements, ignore them when
-      found and to not return any related error messages, thus allowing
-      continuation of the page request. 0 - OFF, 1 - ON.
-    "only_allow_images"
-    - If you only expect or only intend to allow images to be uploaded to your
-      system or CMS, and if you absolutely do not require any files other than
-      images to be uploaded to your system or CMS, this directive should be
-      enabled, but should otherwise be disabled. If this directive is enabled,
-      it will instruct phpMussel to indiscriminately block any uploads
-      identified as non-image files, without scanning them. This may reduce
-      processing time and memory usage for attempted uploads of non-image
-      files. 0 - OFF, 1 - ON.
+   "ignore_upload_errors"
+   - This directive should generally be disabled unless it is required for
+     correct functionality of phpMussel on your specific system. Normally, when
+     disabled, when phpMussel detects the presence of elements in the $_FILES
+     array(), it will attempt to initiate a scan of the files that those
+     elements represent, and, if those elements are blank or empty, phpMussel
+     will return an error message. This is proper behaviour for phpMussel.
+     However, for some CMS, empty elements in $_FILES can occur as a result of
+     the natural behaviour of those CMS, or errors may be reported when there
+     aren't any, in which case, the normal behaviour for phpMussel will be
+     interfering with the normal behaviour of those CMS. If such a situation
+     occurs for you, enabling this option will instruct phpMussel to not
+     attempt to initiate scans for such empty elements, ignore them when found
+     and to not return any related error messages, thus allowing continuation
+     of the page request. 0 - OFF, 1 - ON.
+   "only_allow_images"
+   - If you only expect or only intend to allow images to be uploaded to your
+     system or CMS, and if you absolutely do not require any files other than
+     images to be uploaded to your system or CMS, this directive should be
+     enabled, but should otherwise be disabled. If this directive is enabled,
+     it will instruct phpMussel to indiscriminately block any uploads
+     identified as non-image files, without scanning them. This may reduce
+     processing time and memory usage for attempted uploads of non-image files.
+     0 - OFF, 1 - ON.
 
                                      ~ ~ ~
 
@@ -1361,7 +1361,7 @@
    - "PDF Signatures" (pdf_*). Checked against the contents of every
       non-whitelisted PDF file targeted for scanning.
    - "Portable Executable Sectional Signatures" (pe_*). Checked against the MD5
-      hash of each PE section and the filesize of every non-whitelisted file
+      hash and the size of each PE section of every non-whitelisted file
       targeted for scanning and matched to the PE format.
    - "SWF Signatures" (swf_*). Checked against the contents of every
       non-whitelisted Shockwave file targeted for scanning.
@@ -1458,5 +1458,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 4 Februari 2015 (2015.02.04).
+Laatste Bijgewerkt: 3 Maart 2015 (2015.03.03).
 EOF
