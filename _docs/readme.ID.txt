@@ -557,6 +557,9 @@
  /_testfiles/graphics_standard_testfile.gif (Data test, diikutkan)
     Data test untuk mentest tanda tangan grafis phpMussel.
     ~
+ /_testfiles/html_standard_testfile.txt (Data test, diikutkan)
+    Data test untuk mentest tanda tangan HTML normal phpMussel.
+    ~
  /_testfiles/md5_testfile.txt (Data test, diikutkan)
     Data test untuk mentest tanda tangan MD5 phpMussel.
     ~
@@ -661,6 +664,19 @@
     phpMussel. Diperlukan jika opsi deteksi perintah umum di dalam
     phpmussel.ini diaktifkan. Dapat menghapus jika opsi dinonaktifkan (tapi
     data-data akan diciptkan kembali pada saat mengupdate).
+    ~
+ /vault/html_clamav_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/html_clamav_regex.map (Tanda tangan, Diikutkan)
+ /vault/html_clamav_standard.cvd (Tanda tangan, Diikutkan)
+ /vault/html_clamav_standard.map (Tanda tangan, Diikutkan)
+ /vault/html_custom_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/html_custom_standard.cvd (Tanda tangan, Diikutkan)
+ /vault/html_mussel_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/html_mussel_standard.cvd (Tanda tangan, Diikutkan)
+    Data-data untuk tanda tangan HTML normal.
+    Diperlukan jika tanda tangan opsi HTML normal di dalam phpmussel.ini
+    diaktifkan. Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan
+    diciptakan kembali pada saat mengupdate).
     ~
  /vault/lang.inc (Script, Included)
     phpMussel Bahasa Data; Diperlukan untuk kemampuan multibahasa.
@@ -876,6 +892,11 @@
      "ascii_clamav"
      "ascii_custom"
      "ascii_mussel"
+   - Cek tanda tangan HTML normal ketika pemindaian?
+     0 = Tidak, 1 = Ya [Default].
+     "html_clamav"
+     "html_custom"
+     "html_mussel"
    - Cek data PE (portable executable; EXE, DLL, etc) pada tanda tangan PE
      Sectional ketika pemindaian?
      0 = Tidak, 1 = Ya [Default].
@@ -974,14 +995,12 @@
    "check_archives"
    - Berusaha mencek isi file terkompress?
      0 - Tidak (Tidak mencek), 1 - Ya (Mencek) [Default].
-     * Hanya mencek ZIP dan GZ files didukung (mencek TAR, RAR, CAB, 7z, dll
-       tidak didukung).
+     * Hanya mencek BZ, GZ, LZF dan ZIP files didukung (mencek RAR, CAB, 7z,
+       dll tidak didukung).
      * Ini bukan bukti yang bodoh! Selama saya sangat rekomendasikan menjaga
        ini aktif, saya tidak dapat menjamin itu hanya menemukan segala
        sesuatunya.
-     * Juga diingatkan bahwa mencek data terkompres tidak rekursif untuk zip
-       (walaupun saya bermaksud untuk memperbaikin ini pada beberapa poin dan
-       GZ rekursif).
+     * Juga diingatkan bahwa mencek data terkompres tidak rekursif untuk ZIP.
    "filesize_archives"
    - Memperlalaikan ukuran blacklisting/whitelisting dari isi data terkompress?
      0 - Tidak (Greylist semua), 1 - Ya [Default].
@@ -1000,8 +1019,8 @@
      dieksekusi atau data terkompress yang dikenali dan untuk data dapat
      dieksekusi yang headernya tidak benar.
    "chameleon_to_archive"
-   - Cari data terkompress yang header nya tidak benar (Mendukung: ZIP, RAR,
-     GZ).
+   - Cari data terkompress yang header nya tidak benar (Mendukung: BZ, GZ, RAR,
+     ZIP, RAR, GZ).
    "chameleon_to_doc"
    - Cari dokumen office yang header nya tidak benar (Mendukung: DOC, DOT,
      PPS, PPT, XLA, XLS, WIZ).
@@ -1141,6 +1160,8 @@
       yang ditargetkan untuk dipindai.
    - "Tanda tangan ASCII normal" (ascii_*). Dicek pada isi dari data
       non-whitelisted yang ditargetkan untuk dipindai.
+   - "Tanda tangan HTML normal" (html_*). Dicek pada isi dari data HTML
+      non-whitelisted yang ditargetkan untuk dipindai.
    - "Perintah umum" (hex_general_commands.csv). Dicek pada isi dari tiap data
       non-whitelisted yang ditargetkan untuk dipindai.
    - "Tanda tangan Portable Executable Sectional" (pe_*). Dicek pada isi dari
@@ -1191,8 +1212,8 @@
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 14 Agustus 2014 dan cocok untuk semua versi dari
- phpMussel, dari inisial release v0.1 melalui release terakhir v0.4b pada
+ Informasi ini diupdate 28 Agustus 2014 dan cocok untuk semua versi dari
+ phpMussel, dari inisial release v0.1 melalui release terakhir v0.4c pada
  waktu saya menuliskan ini.
 
  Ad-Aware                Tidak ada masalah yang diketahui
@@ -1200,16 +1221,19 @@
  AhnLab-V3               Tidak ada masalah yang diketahui
  AntiVir                 Tidak ada masalah yang diketahui
  Antiy-AVL               Tidak ada masalah yang diketahui
- Avast                !  Report "JS:ScriptSH-inf [Trj]" (semua kecuali v0.3d)
+ Avast                !  Report "JS:ScriptSH-inf [Trj]"
+                         - semua kecuali v0.3d
  AVG                     Tidak ada masalah yang diketahui
  Baidu-International     Tidak ada masalah yang diketahui
  BitDefender             Tidak ada masalah yang diketahui
- Bkav                 !  Report "VEX408f.Webshell" (v0.3 melalui v0.3c)
+ Bkav                 !  Report "VEX408f.Webshell"
+                         - v0.3 melalui v0.3c
  ByteHero                Tidak ada masalah yang diketahui
  CAT-QuickHeal           Tidak ada masalah yang diketahui
  ClamAV                  Tidak ada masalah yang diketahui
  CMC                     Tidak ada masalah yang diketahui
- Commtouch            !  Report "W32/GenBl.857A3D28!Olympus" (v0.3e semata)
+ Commtouch            !  Report "W32/GenBl.857A3D28!Olympus"
+                         - v0.3e semata
  Comodo                  Tidak ada masalah yang diketahui
  DrWeb                   Tidak ada masalah yang diketahui
  Emsisoft                Tidak ada masalah yang diketahui
@@ -1217,8 +1241,10 @@
  F-Prot                  Tidak ada masalah yang diketahui
  F-Secure                Tidak ada masalah yang diketahui
  Fortinet                Tidak ada masalah yang diketahui
- GData                !  Report "Archive.Trojan.Agent.E7C7J7" (v0.3e semata)
- Ikarus               !  Report "Trojan.JS.Agent" (v0.3g melalui v0.4b)
+ GData                !  Report "Archive.Trojan.Agent.E7C7J7"
+                         - v0.3e semata
+ Ikarus               !  Report "Trojan.JS.Agent"
+                         - v0.3g melalui v0.4c
  Jiangmin                Tidak ada masalah yang diketahui
  K7AntiVirus             Tidak ada masalah yang diketahui
  K7GW                    Tidak ada masalah yang diketahui
@@ -1230,19 +1256,21 @@
  Microsoft               Tidak ada masalah yang diketahui
  MicroWorld-eScan        Tidak ada masalah yang diketahui
  NANO-Antivirus          Tidak ada masalah yang diketahui
- Norman               !  Report "Kryptik.BQS" (semua kecuali v0.3d dan v0.3e)
+ Norman               !  Report "Kryptik.BQS"
+                         - Semua kecuali v0.3d dan v0.3e
  nProtect                Tidak ada masalah yang diketahui
  Panda                   Tidak ada masalah yang diketahui
  Qihoo-360               Tidak ada masalah yang diketahui
  Rising                  Tidak ada masalah yang diketahui
  Sophos                  Tidak ada masalah yang diketahui
  SUPERAntiSpyware        Tidak ada masalah yang diketahui
- Symantec             !  Report "WS.Reputation.1" (v0.3e melalui v0.3g)
+ Symantec             !  Report "WS.Reputation.1"
+                         - v0.3e melalui v0.4c
  TheHacker               Tidak ada masalah yang diketahui
  TotalDefense            Tidak ada masalah yang diketahui
  TrendMicro              Tidak ada masalah yang diketahui
- TrendMicro-HouseCall !  Report "TROJ_GEN.F47V1219" (v0.3d dan terdahulu)
-                      !  Report "TROJ_GEN.F47V0312" (v0.3e semata)
+ TrendMicro-HouseCall !  Report "Suspici.450F5936"
+                         - v0.3d melalui v0.4c
  VBA32                   Tidak ada masalah yang diketahui
  VIPRE                   Tidak ada masalah yang diketahui
  ViRobot                 Tidak ada masalah yang diketahui
@@ -1251,5 +1279,5 @@
                                      ~ ~ ~                                     
 
 
-Terakhir Diperbarui: 14 Agustus 2014 (2014.08.14).
+Terakhir Diperbarui: 28 Agustus 2014 (2014.08.28).
 EOF

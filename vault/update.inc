@@ -31,7 +31,7 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                      ~ ~ ~                                     
- This File: phpMussel v0.4a (28th July 2014) Update Script
+ This File: phpMussel v0.4c (28th August 2014) Update Script
 
  The latest version and future updates can be obtained from the phpMussel
  SourceForge page located at <http://sourceforge.net/projects/phpmussel/>
@@ -314,5 +314,5 @@ while(true)
 	break;
 	}
 
-if(!$phpmusselversion['is_cli'])die();
+if(!$phpmusselversion['is_cli'])die;
 ?>

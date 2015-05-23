@@ -528,6 +528,9 @@
  /_testfiles/graphics_standard_testfile.gif (Test file, Included)
     Test file for testing phpMussel graphics signatures.
     ~
+ /_testfiles/html_standard_testfile.txt (Test file, Included)
+    Test file for testing phpMussel normalised HTML signatures.
+    ~
  /_testfiles/md5_testfile.txt (Test file, Included)
     Test file for testing phpMussel MD5 signatures.
     ~
@@ -624,6 +627,18 @@
     Hex-encoded CSV of general command detections optionally used by phpMussel.
     Required if general command detection option in phpmussel.ini is enabled.
     Can remove if option is disabled (but file will be recreated on update).
+    ~
+ /vault/html_clamav_regex.cvd (Signatures, Included)
+ /vault/html_clamav_regex.map (Signatures, Included)
+ /vault/html_clamav_standard.cvd (Signatures, Included)
+ /vault/html_clamav_standard.map (Signatures, Included)
+ /vault/html_custom_regex.cvd (Signatures, Included)
+ /vault/html_custom_standard.cvd (Signatures, Included)
+ /vault/html_mussel_regex.cvd (Signatures, Included)
+ /vault/html_mussel_standard.cvd (Signatures, Included)
+    Files for normalised HTML signatures.
+    Required if normalised HTML signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
     ~
  /vault/lang.inc (Script, Included)
     phpMussel Language Data; Required for multilingual capabilities.
@@ -823,6 +838,11 @@
      "ascii_clamav"
      "ascii_custom"
      "ascii_mussel"
+   - Check against normalised HTML signatures when scanning?
+     0 = No, 1 = Yes [Default].
+     "html_clamav"
+     "html_custom"
+     "html_mussel"
    - Check PE (portable executable) files (EXE, DLL, etc) against PE Sectional
      signatures when scanning?
      0 = No, 1 = Yes [Default].
@@ -914,12 +934,11 @@
    "check_archives"
    - Attempt to check the contents of archives?
      0 - No (do not check), 1 - Yes (check) [Default].
-     * Currently, only checking of ZIP and GZ files is supported (checking of
-       TAR, RAR, CAB, 7z and etcetera not currently supported).
+     * Currently, only checking of BZ, GZ, LZF and ZIP files is supported
+       (checking of RAR, CAB, 7z and etcetera not currently supported).
      * This is not foolproof! While I highly recommend keeping this turned on,
        I can't guarantee it'll always find everything.
-     * Also be aware that archive checking currently is not recursive for ZIPs
-      (although I intend to correct this at some point, and GZ is recursive).
+     * Also be aware that archive checking currently is not recursive for ZIPs.
    "filesize_archives"
    - Carry over filesize blacklisting/whitelisting to the contents of archives?
      0 - No (just greylist everything), 1 - Yes [Default].
@@ -938,8 +957,8 @@
    - Search for executable headers in files that are neither executables nor
      recognised archives and for executables whose headers are incorrect.
    "chameleon_to_archive"
-   - Search for archives whose headers are incorrect (Supported: ZIP, RAR,
-     GZ).
+   - Search for archives whose headers are incorrect (Supported: BZ, GZ, RAR,
+     ZIP, RAR, GZ).
    "chameleon_to_doc"
    - Search for office documents whose headers are incorrect (Supported: DOC,
      DOT, PPS, PPT, XLA, XLS, WIZ).
@@ -1072,6 +1091,8 @@
      non-whitelisted file targeted for scanning.
    - "Normalised ASCII Signatures" (ascii_*). Checked against the contents of
      every non-whitelisted file targeted for scanning.
+   - "Normalised HTML Signatures" (html_*). Checked against the contents of
+      every non-whitelisted HTML file targeted for scanning.
    - "General Commands" (hex_general_commands.csv). Checked against the
      contents of every non-whitelisted file targeted for scanning.
    - "Portable Executable Sectional Signatures" (pe_*). Checked against the
@@ -1121,8 +1142,8 @@
  trabalhar com phpMussel ou deve considerar alternativas opções para o seu
  anti-vírus software ou phpMussel.
 
- Esta informação foi atualizada dia 14 Agosto 2014 e é corrente para TODAS as
- versões de phpMussel, da versão inicial v0.1 até a última versão v0.4b no
+ Esta informação foi atualizada dia 28 Agosto 2014 e é corrente para TODAS as
+ versões de phpMussel, da versão inicial v0.1 até a última versão v0.4c no
  momento de escrever este.
 
  Ad-Aware                Sem conhecidos problemas
@@ -1130,16 +1151,19 @@
  AhnLab-V3               Sem conhecidos problemas
  AntiVir                 Sem conhecidos problemas
  Antiy-AVL               Sem conhecidos problemas
- Avast                !  Reportar "JS:ScriptSH-inf [Trj]" (todos, exceto v0.3d)
+ Avast                !  Reportar "JS:ScriptSH-inf [Trj]"
+                         - Todos, exceto v0.3d
  AVG                     Sem conhecidos problemas
  Baidu-International     Sem conhecidos problemas
  BitDefender             Sem conhecidos problemas
- Bkav                 !  Reportar "VEX408f.Webshell" (v0.3 a v0.3c)
+ Bkav                 !  Reportar "VEX408f.Webshell"
+                         - v0.3 a v0.3c
  ByteHero                Sem conhecidos problemas
  CAT-QuickHeal           Sem conhecidos problemas
  ClamAV                  Sem conhecidos problemas
  CMC                     Sem conhecidos problemas
- Commtouch            !  Reportar "W32/GenBl.857A3D28!Olympus" (v0.3e só)
+ Commtouch            !  Reportar "W32/GenBl.857A3D28!Olympus"
+                         - v0.3e só
  Comodo                  Sem conhecidos problemas
  DrWeb                   Sem conhecidos problemas
  Emsisoft                Sem conhecidos problemas
@@ -1147,8 +1171,10 @@
  F-Prot                  Sem conhecidos problemas
  F-Secure                Sem conhecidos problemas
  Fortinet                Sem conhecidos problemas
- GData                !  Reportar "Archive.Trojan.Agent.E7C7J7" (v0.3e só)
- Ikarus               !  Reportar "Trojan.JS.Agent" (v0.3g a v0.4b)
+ GData                !  Reportar "Archive.Trojan.Agent.E7C7J7"
+                         - v0.3e só
+ Ikarus               !  Reportar "Trojan.JS.Agent"
+                         - v0.3g a v0.4c
  Jiangmin                Sem conhecidos problemas
  K7AntiVirus             Sem conhecidos problemas
  K7GW                    Sem conhecidos problemas
@@ -1160,19 +1186,21 @@
  Microsoft               Sem conhecidos problemas
  MicroWorld-eScan        Sem conhecidos problemas
  NANO-Antivirus          Sem conhecidos problemas
- Norman               !  Reportar "Kryptik.BQS" (todos, exceto v0.3d e v0.3e)
+ Norman               !  Reportar "Kryptik.BQS"
+                         - Todos, exceto v0.3d e v0.3e
  nProtect                Sem conhecidos problemas
  Panda                   Sem conhecidos problemas
  Qihoo-360               Sem conhecidos problemas
  Rising                  Sem conhecidos problemas
  Sophos                  Sem conhecidos problemas
  SUPERAntiSpyware        Sem conhecidos problemas
- Symantec             !  Reportar "WS.Reputation.1" (v0.3e a v0.3g)
+ Symantec             !  Reportar "WS.Reputation.1"
+                         - v0.3e a v0.4c
  TheHacker               Sem conhecidos problemas
  TotalDefense            Sem conhecidos problemas
  TrendMicro              Sem conhecidos problemas
- TrendMicro-HouseCall !  Reportar "TROJ_GEN.F47V1219" (v0.3d e anteriores)
-                      !  Reportar "TROJ_GEN.F47V0312" (v0.3e só)
+ TrendMicro-HouseCall !  Reportar "Suspici.450F5936"
+                         - v0.3d a v0.4c
  VBA32                   Sem conhecidos problemas
  VIPRE                   Sem conhecidos problemas
  ViRobot                 Sem conhecidos problemas
@@ -1181,5 +1209,5 @@
                                      ~ ~ ~                                     
 
 
-Última Atualização: 14 Agosto 2014 (2014.08.14).
+Última Atualização: 28 Agosto 2014 (2014.08.28).
 EOF

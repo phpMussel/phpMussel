@@ -31,7 +31,7 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                      ~ ~ ~                                     
- This File: phpMussel Loader v1.1a (10th July 2014)
+ This File: phpMussel Loader v1.1b (27th August 2014)
 
  The latest version and future updates can be obtained from the phpMussel
  SourceForge page located at <http://sourceforge.net/projects/phpmussel/>
@@ -48,7 +48,7 @@
 
 $vault="/your_user/public_html/some_dir/phpmussel/vault/";
 
-if(!function_exists("plaintext_echo_die")){function plaintext_echo_die($out){header("Content-Type: text/plain");echo $out;die();}}
+if(!function_exists("plaintext_echo_die")){function plaintext_echo_die($out){header("Content-Type: text/plain");echo $out;die;}}
 
 if(!is_dir($vault))plaintext_echo_die("[phpMussel] Vault directory not correctly set: Can't continue. Refer to documentation if this is a first-time run, and if problems persist, seek assistance.");
 if(!defined('phpMussel'))
@@ -75,6 +75,14 @@ if(!defined('phpMussel'))
 	if(!file_exists($vault."controls.lck"))
 		{
 		parse_str($_SERVER['QUERY_STRING'],$query);
+		if(!isset($_POST['phpmussel']))$_POST['phpmussel']=false;
+		if(!isset($query['phpmussel']))$query['phpmussel']=false;
+		if(!isset($_POST['pword']))$_POST['pword']=false;
+		if(!isset($query['pword']))$query['pword']=false;
+		if(!isset($_POST['logspword']))$_POST['logspword']=false;
+		if(!isset($query['logspword']))$query['logspword']=false;
+		if(!isset($_POST['musselvar']))$_POST['musselvar']=false;
+		if(!isset($query['musselvar']))$query['musselvar']=false;
 		if(!$phpmussel=$_POST['phpmussel'])if(!$phpmussel=$query['phpmussel'])$phpmussel=false;
 		if(!$pword=$_POST['pword'])if(!$pword=$query['pword'])$pword=false;
 		if(!$logspword=$_POST['logspword'])if(!$logspword=$query['logspword'])$logspword=false;
@@ -86,7 +94,7 @@ if(!defined('phpMussel'))
 				{
 				plaintext_echo_die("[phpMussel] ".$MusselConfig['lang']['wrong_password']);
 				}
-			else if($phpmussel=="scan_log")
+			if($phpmussel=="scan_log")
 				{
 				header("Content-Type: text/plain");
 				echo $MusselConfig['lang']['cli_ln1'].$MusselConfig['lang']['cli_ln2'];
@@ -94,14 +102,12 @@ if(!defined('phpMussel'))
 					{
 					echo $MusselConfig['general']['scan_log'].":\n\n";
 					echo implode(file($vault.$MusselConfig['general']['scan_log']));
+					die;
 					}
-				else
-					{
-					echo $MusselConfig['general']['scan_log']." ".$MusselConfig['lang']['x_does_not_exist']."!";
-					}
+				echo $MusselConfig['general']['scan_log']." ".$MusselConfig['lang']['x_does_not_exist']."!";
 				die;
 				}
-			else if($phpmussel=="scan_kills")
+			if($phpmussel=="scan_kills")
 				{
 				header("Content-Type: text/plain");
 				echo $MusselConfig['lang']['cli_ln1'].$MusselConfig['lang']['cli_ln2'];
@@ -109,24 +115,19 @@ if(!defined('phpMussel'))
 					{
 					echo $MusselConfig['general']['scan_kills'].":\n\n";
 					echo implode(file($vault.$MusselConfig['general']['scan_kills']));
+					die;
 					}
-				else
-					{
-					echo $MusselConfig['general']['scan_kills']." ".$MusselConfig['lang']['x_does_not_exist']."!";
-					}
+				echo $MusselConfig['general']['scan_kills']." ".$MusselConfig['lang']['x_does_not_exist']."!";
 				die;
 				}
-			else if($phpmussel=="controls_lockout")
+			if($phpmussel=="controls_lockout")
 				{
 				$controls_lockout=fopen($vault."controls.lck","a");
 				fwrite($controls_lockout,"");
 				fclose($controls_lockout);
 				plaintext_echo_die("[phpMussel] phpMussel controls lockout enabled.");
 				}
-			else
-				{
-				plaintext_echo_die("[phpMussel] I don't understand that command, sorry.");
-				}
+			plaintext_echo_die("[phpMussel] I don't understand that command, sorry.");
 			}
 		if(!empty($MusselConfig['general']['script_password'])&&!empty($phpmussel)&&!empty($pword))
 			{
@@ -134,31 +135,30 @@ if(!defined('phpMussel'))
 				{
 				plaintext_echo_die("[phpMussel] ".$MusselConfig['lang']['wrong_password']);
 				}
-			else if($phpmussel=="disable")
+			if($phpmussel=="disable")
 				{
 				if(!$disable_lock)
 					{
 					$disable_lock=fopen($vault."disable.lck","a");
 					fwrite($disable_lock,"");
 					fclose($disable_lock);
-					$disable_lock=true;
 					plaintext_echo_die("[phpMussel] phpMussel disabled.");
 					}
 				plaintext_echo_die("[phpMussel] phpMussel already disabled.");
 				}
-			else if($phpmussel=="enable")
+			if($phpmussel=="enable")
 				{
 				if(!$disable_lock)plaintext_echo_die("[phpMussel] phpMussel already enabled.");
 				$disable_lock=@unlink($vault."disable.lck");
-				$disable_lock=false;
 				plaintext_echo_die("[phpMussel] phpMussel enabled.");
 				}
-			else if($phpmussel=="update")
+			if($phpmussel=="update")
 				{
 				if(!file_exists($vault."update.inc"))plaintext_echo_die("[phpMussel]".$MusselConfig['lang']['update_scriptfile_missing']);
 				require($vault."update.inc");
+				die;
 				}
-			else if($phpmussel=="greylist")
+			if($phpmussel=="greylist")
 				{
 				if(!empty($musselvar))
 					{
@@ -170,8 +170,9 @@ if(!defined('phpMussel'))
 					unset($greylistf,$greylist);
 					plaintext_echo_die("[phpMussel] Greylist updated.");
 					}
+				plaintext_echo_die("[phpMussel] Greylist not updated.");
 				}
-			else if($phpmussel=="greylist_clear")
+			if($phpmussel=="greylist_clear")
 				{
 				$greylistf=fopen($vault."greylist.csv","a");
 				ftruncate($greylistf,0);
@@ -180,7 +181,7 @@ if(!defined('phpMussel'))
 				unset($greylistf,$greylist);
 				plaintext_echo_die("[phpMussel] Greylist cleared.");
 				}
-			else if($phpmussel=="greylist_show")
+			if($phpmussel=="greylist_show")
 				{
 				if(!file_exists($vault."greylist.csv"))plaintext_echo_die("[phpMussel] greylist.csv ".$MusselConfig['lang']['x_does_not_exist']."!");
 				header("Content-Type: text/plain");
@@ -188,17 +189,14 @@ if(!defined('phpMussel'))
 				echo implode("\n",explode(",",implode(file($vault."greylist.csv"))));
 				die;
 				}
-			else if($phpmussel=="controls_lockout")
+			if($phpmussel=="controls_lockout")
 				{
 				$controls_lockout=fopen($vault."controls.lck","a");
 				fwrite($controls_lockout,"");
 				fclose($controls_lockout);
 				plaintext_echo_die("[phpMussel] phpMussel controls lockout enabled.");
 				}
-			else
-				{
-				plaintext_echo_die("[phpMussel] I don't understand that command, sorry.");
-				}
+			plaintext_echo_die("[phpMussel] I don't understand that command, sorry.");
 			}
 		}
 	if(!$disable_lock)

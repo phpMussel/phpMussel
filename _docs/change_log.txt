@@ -1,6 +1,6 @@
 phpMussel change_log.txt
 
-== CURRENT GOALS AND FUTURE VERSIONING GUIDELINES (Latest: v0.4b) ==
+== CURRENT GOALS AND FUTURE VERSIONING GUIDELINES (Latest: v0.4c) ==
 Next major release (v1.0):
 - All planned signature implementations completed, functioning correctly during
   a live test, without any known notable problems.
@@ -15,12 +15,12 @@ Next major release (v1.0):
    * Mach-O signatures (stuff for Mac and Apple) [v0.2/v0.3g+];
    * Email signatures [v0.2/v0.3g+];
    * MD5 signatures [v0.1/0.3g+];
-   * Archive metadata signatures [v0.1/v0.4b+];
+   * Archive metadata signatures [v0.1/v0.4c+];
   Partially implemented [added/last edited+]:
    * ASCII (normalised) signatures (BATs, VBs, etc) [v0.4b+];
+   * HTML (normalised) signatures (HTML, JS, etc) [v0.4c+];
   Not implemented (those that I hope to get these done at some point);
    * OLE2 signatures (VBA and DOCX embeds, etc);
-   * HTML (normalised) signatures (HTML, JS, etc);
   Not implemented (those that I'm not yet sure if I'll do or not);
    * Icon signatures (hidden and imposter PEs, etc);
    * PE metadata signatures;
@@ -29,10 +29,11 @@ Next major release (v1.0):
    * Android signatures;
 - All pending to-do items completed.
    Pending Items:
-   * Currently, ZIP and GZ archive formats are supported for the archive
-     metadata signatures. At minimum, this should also extend to RAR and 7z.
-   * Currently, GZ archive scanning is recursive. Ideally, scanning for all
-     supported archive formats should be recursive.
+   * Current formats for archive metadata signatures supported are:
+     ZIP, BZ, LZF, GZ. At minimum, this should also extend to RAR and 7z.
+   * Currently, all formats for archive metadata signatures that are supported,
+     with exception to ZIP format, can be scanned recursively. Ideally, ability
+     to scan ZIP files recursively should also be supported at some point.
 - All known bugs fixed (none pending at this time).
 Next and/or subsequent minor releases (v0.X):
 - Any -significant- changes to the script including completing of any of the
@@ -44,12 +45,42 @@ Next and/or subsequent below sub-minor releases and/or re-releases (v0.Xy.Z):
 - Any releases containing no changes to the core code (such as, releases
   containing only either documentation or signature updates), or any releases
   containing changes to the core code without any included signature updates.
-Last Edited: 13th August 2014
+Last Edited: 28th August 2014
 
-=== Version 0.4b (Previous: 0.4a) ===
+=== Version 0.4c (Previous: 0.4b) ===
+SUMMARY:
+Updated to the latest signatures set (55+19312+4c).
+Sub-minor release (medium priority).
+
+NEW CHANGES:
+- Partially rewrote the code for checking against archive metadata signatures,
+  with which, as opposed to the previous release of that code whereby only
+  the formats GZ and ZIP were supported, now, it additionally supports the
+  formats BZ and LZF (although, certain PECL extensions of php will be required
+  in order for that additional supported to be functional; absense of those
+  PECL extensions will prevent that additional support from being functional,
+  though, such absenses will have no adverse effect otherwise and phpMussel
+  will continue to function normally regardlessly).
+- Minor non-significant code optimisations of the Loader (phpmussel.php).
+- Although the case is much the same as is with the implementation of support
+  for the normalised ASCII signatures introduced in the previous release, for
+  this release, I've implemented partial support for the normalised HTML
+  signatures of ClamAV. No changes have been made for this release to the
+  actual normalisation method I coded for the previous release, though, owing
+  to some minor rethinking and improving of my actual method of preparing
+  signatures from the ClamAV database for inclusion with phpMussel, the actual
+  total number of signatures between the previous release and this release has
+  increased significantly, from the previous ~150 signatures to the current
+  ~1,300 for normalised ASCII signatures and to ~1,900 for the normalised HTML
+  signatures.
+
+Maikuolan,
+28th August 2014.
+
+=== Version 0.4b (Previous: 0.4a; Next: 0.4c) ===
 SUMMARY:
 Updated to the latest signatures set (55+19279+4b).
-Minor release (medium priority).
+Sub-minor release (medium priority).
 
 NEW CHANGES:
 - Many thanks to BlueEyed Zebra, who has successfully translated to German the
@@ -92,7 +123,7 @@ Maikuolan,
 === Version 0.4a (Previous: 0.4; Next: 0.4b) ===
 SUMMARY:
 Updated to the latest signatures set (55+19260+4a).
-Minor release (medium priority).
+Sub-minor release (medium priority).
 
 NEW CHANGES:
 - General commands CSV tweaked slightly (hex_general_commands.csv).

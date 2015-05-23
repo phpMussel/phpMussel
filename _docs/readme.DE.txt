@@ -521,6 +521,9 @@
  /_testfiles/graphics_standard_testfile.gif (Testdatei, enthalten)
     Testdatei zur Überprüfung der Grafik-Signaturerkennung.
     ~
+ /_testfiles/html_standard_testfile.txt (Testdatei, enthalten)
+    Testdatei zur Überprüfung der Erkennung der normierten HTML Signaturen.
+    ~
  /_testfiles/md5_testfile.txt (Testdatei, enthalten)
     Testdatei zur Überprüfung der MD5-Signaturerkennung.
     ~
@@ -551,7 +554,7 @@
  /vault/ascii_mussel_regex.cvd (Signaturen, enthalten)
  /vault/ascii_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der normierten ASCII-Signaturen.
-    Benötigt, wenn die Option "ASCII signatures" in der phpmussel.ini aktiviert
+    Benötigt, wenn die Option "ASCII Signatures" in der phpmussel.ini aktiviert
     ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
     (Dateien werden bei einem Update neu erstellt).
     ~
@@ -628,6 +631,19 @@
     aktiviert ist.
     Die Datei kann entfernt werden, wenn die Option deaktiviert ist (Datei
     wird bei einem Update neu erstellt).
+    ~
+ /vault/html_clamav_regex.cvd (Signaturen, enthalten)
+ /vault/html_clamav_regex.map (Signaturen, enthalten)
+ /vault/html_clamav_standard.cvd (Signaturen, enthalten)
+ /vault/html_clamav_standard.map (Signaturen, enthalten)
+ /vault/html_custom_regex.cvd (Signaturen, enthalten)
+ /vault/html_custom_standard.cvd (Signaturen, enthalten)
+ /vault/html_mussel_regex.cvd (Signaturen, enthalten)
+ /vault/html_mussel_standard.cvd (Signaturen, enthalten)
+    Dateien der normierten HTML-Signaturen.
+    Benötigt, wenn die Option "HTML Signatures" in der phpmussel.ini aktiviert
+    ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
+    (Dateien werden bei einem Update neu erstellt).
     ~
  /vault/lang.inc (Script, enthalten)
     Sprachpaket für phpMussel; Erforderlich für Unterstützung mehrerer Sprachen.
@@ -810,7 +826,7 @@
       üblichen Verhalten entspricht.
       0 - Nach der Überprüfung wird die Datei so belassen
           [Standardeinstellung],
-      1 - Nach der Überprüfung wird die Datei sofort gelöscht, sofern sie
+      1 - Nach der Überprüfung wird die Datei sofort gelöscht, sofern Sie
           infiziert ist.
     "lang"
     - Gibt die Standardsprache für phpMussel an.
@@ -834,6 +850,11 @@
      "ascii_clamav"
      "ascii_custom"
      "ascii_mussel"
+   - Scan mit den normierten HTML Signaturen?
+     0 = Nein, 1 = Ja [Standardeinstellung].
+     "html_clamav"
+     "html_custom"
+     "html_mussel"
    - Scan von PE-Dateien (portable executable, EXE, DLL, etc.)
      mit den PE-Sectional-Signaturen?
      0 = Nein, 1 = Ja [Standardeinstellung].
@@ -931,14 +952,13 @@
    - Soll der Inhalt von Archiven überprüft werden?
      0 - Nein (keine Überprüfung),
      1 - Ja (wird überprüft) [Standardeinstellung].
-     * Zur Zeit wird NUR die Überprüfung von ZIP- und GZ-Archiven unterstützt
-       (Überprüfung von TAR, RAR, CAB, 7z usw. wird zur Zeit NICHT
+     * Zur Zeit wird NUR die Überprüfung von BZ, GZ, LZF und ZIP Archiven
+       unterstützt (Überprüfung von RAR, CAB, 7z usw. wird zur Zeit NICHT
        unterstützt).
      * Diese Funktion ist nicht sicher! Es wird dringend empfohlen, diese
        Funktion aktiviert zu lassen, es kann jedoch nicht garantiert werden,
        dass alles entdeckt wird.
-     * Die Archivüberprüfung ist derzeit nicht rekursiv für ZIP-Archive (dies
-       wird in zukünftigen Versionen geändert, GZ ist rekursiv).
+     * Die Archivüberprüfung ist derzeit nicht rekursiv für ZIP-Archive.
    "filesize_archives"
    - Soll das Blacklisting/Whitelisting der Dateigröße auf den Inhalt des
      Archivs übertragen werden?
@@ -963,7 +983,7 @@
      korrekt sind.
    "chameleon_to_archive"
    - Suche nach Archiven,  deren Header nicht korrekt sind
-     (Unterstützt: ZIP, RAR, GZ).
+     (Unterstützt: BZ, GZ, RAR, ZIP, RAR, GZ).
    "chameleon_to_doc"
    - Suche nach Office-Dokumenten, deren Header nicht korrekt sind.
      (Unterstützt: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
@@ -1062,7 +1082,7 @@
     NAME:HEX:FROM:TO
    NAME ist der Name, um die Signatur zu benennen und HEX ist ein
    hexidezimal-codediertes Segment der Datei, welches mit der gegebenen
-   Signatur geprüft werden soll. FROM und TO sind optionale Parameter, sie
+   Signatur geprüft werden soll. FROM und TO sind optionale Parameter, Sie
    geben Start- und Endpunkt in den Quelldaten zur Überprüfung an (wird nicht
    von der Mail-Funktion unterstützt).
 
@@ -1103,6 +1123,9 @@
       nicht in der Whitelist aufgeführt ist und überprüft werden soll.
    - "Normierten ASCII Signaturen" (ascii_*). Überprüft den Inhalt jeder Datei,
       die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
+   - "Normierten HTML Signaturen" (html_*). Überprüft den Inhalt jeder
+      HTML-Datei, die nicht in der Whitelist aufgeführt ist und überprüft
+      werden soll.
    - "Allgemeine Befehle" (hex_general_commands.csv). Überprüft den Inhalt
       jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft
       werden soll.
@@ -1152,29 +1175,32 @@
  verschiedenen Antiviren-Programmen gegen phpMussel beschreibt. Diese
  Informationen garantieren nicht, ob Kompatibilitätsprobleme zwischen phpMussel
  und Ihrem eingesetzten Antiviren-Produkt bestehen. Sollte Ihre
- Antiviren-Software als problematisch aufgelistet sein, sollten Sie sie
- entweder vor der Benutzung von phpMussel deaktivieren oder sich andere
- Alternativen überlegen.
+ Antiviren-Software als problematisch aufgelistet sein, sollten Sie entweder
+ vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen
+ überlegen.
 
- Diese Informationen wurden zuletzt am 14.08.2014 aktualisiert und gelten für
+ Diese Informationen wurden zuletzt am 28.08.2014 aktualisiert und gelten für
  ALLE Versionen von phpMussel, von der ersten Version v0.1 bis zur letzten
- Version v0.4b zum Zeitpunkt des Erstellens dieser Dokumentation.
+ Version v0.4c zum Zeitpunkt des Erstellens dieser Dokumentation.
 
  Ad-Aware                Keine bekannten Probleme
  Agnitum                 Keine bekannten Probleme
  AhnLab-V3               Keine bekannten Probleme
  AntiVir                 Keine bekannten Probleme
  Antiy-AVL               Keine bekannten Probleme
- Avast                !  Berichten "JS:ScriptSH-inf [Trj]" (alle außer v0.3d)
+ Avast                !  Meldet "JS:ScriptSH-inf [Trj]"
+                         - Alle außer v0.3d
  AVG                     Keine bekannten Probleme
  Baidu-International     Keine bekannten Probleme
  BitDefender             Keine bekannten Probleme
- Bkav                 !  Berichten "VEX408f.Webshell" (v0.3 bis v0.3c)
+ Bkav                 !  Meldet "VEX408f.Webshell"
+                         - v0.3 bis v0.3c
  ByteHero                Keine bekannten Probleme
  CAT-QuickHeal           Keine bekannten Probleme
  ClamAV                  Keine bekannten Probleme
  CMC                     Keine bekannten Probleme
- Commtouch            !  Berichten "W32/GenBl.857A3D28!Olympus" (v0.3e einzig)
+ Commtouch            !  Meldet "W32/GenBl.857A3D28!Olympus"
+                         - Nur v0.3e
  Comodo                  Keine bekannten Probleme
  DrWeb                   Keine bekannten Probleme
  Emsisoft                Keine bekannten Probleme
@@ -1182,8 +1208,10 @@
  F-Prot                  Keine bekannten Probleme
  F-Secure                Keine bekannten Probleme
  Fortinet                Keine bekannten Probleme
- GData                !  Berichten "Archive.Trojan.Agent.E7C7J7" (v0.3e einzig)
- Ikarus               !  Berichten "Trojan.JS.Agent" (v0.3g bis v0.4b)
+ GData                !  Meldet "Archive.Trojan.Agent.E7C7J7"
+                         - Nur v0.3e
+ Ikarus               !  Meldet "Trojan.JS.Agent"
+                         - v0.3g bis v0.4c
  Jiangmin                Keine bekannten Probleme
  K7AntiVirus             Keine bekannten Probleme
  K7GW                    Keine bekannten Probleme
@@ -1195,19 +1223,21 @@
  Microsoft               Keine bekannten Probleme
  MicroWorld-eScan        Keine bekannten Probleme
  NANO-Antivirus          Keine bekannten Probleme
- Norman               !  Berichten "Kryptik.BQS" (alle außer v0.3d und v0.3e)
+ Norman               !  Meldet "Kryptik.BQS"
+                         - Alle außer v0.3d und v0.3e
  nProtect                Keine bekannten Probleme
  Panda                   Keine bekannten Probleme
  Qihoo-360               Keine bekannten Probleme
  Rising                  Keine bekannten Probleme
  Sophos                  Keine bekannten Probleme
  SUPERAntiSpyware        Keine bekannten Probleme
- Symantec             !  Berichten "WS.Reputation.1" (v0.3e bis v0.3g)
+ Symantec             !  Meldet "WS.Reputation.1"
+                         - v0.3e bis v0.4c
  TheHacker               Keine bekannten Probleme
  TotalDefense            Keine bekannten Probleme
  TrendMicro              Keine bekannten Probleme
- TrendMicro-HouseCall !  Berichten "TROJ_GEN.F47V1219" (v0.3d und früher)
-                      !  Berichten "TROJ_GEN.F47V0312" (v0.3e einzig)
+ TrendMicro-HouseCall !  Meldet "Suspici.450F5936"
+                         - v0.3d bis v0.4c
  VBA32                   Keine bekannten Probleme
  VIPRE                   Keine bekannten Probleme
  ViRobot                 Keine bekannten Probleme
@@ -1216,5 +1246,5 @@
                                      ~ ~ ~                                     
 
 
-Zuletzt aktualisiert: 2014.08.14
+Zuletzt aktualisiert: 2014.08.28
 EOF
