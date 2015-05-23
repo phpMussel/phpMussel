@@ -68,23 +68,22 @@
     téléchargement au serveur, continuer lecture..
 
  2) Ouvrir "phpmussel.php", cherchez pour la ligne commençant par "$vault=",
-    et remplacez la chaîne entre guillemets suivantes sur cette ligne avec le
-    véritable exact emplacement du le répertoire "vault" de phpMussel.
-    Vous aurez remarqué un tel dossier dans l'archive que vous avez téléchargé
-    (sauf si vous sentez à nouveau codage de l'ensemble du script, vous aurez
-    besoin à maintenir la même structure de fichiers et de répertoires comme il
-    était dans l'origine archive). Ce "vault" répertoire devrait être d'un
-    niveau au-dessus le répertoire que le fichier "phpmussel.php" existera po.
+    et remplacez la string entre guillemets suivantes sur cette ligne avec le
+    véritable exact emplacement du le répertoire "vault" de phpMussel. Vous
+    aurez remarqué un tel dossier dans l'archive que vous avez téléchargé (sauf
+    si vous sentez à nouveau codage de l'ensemble du script, vous aurez besoin
+    à maintenir la même structure de fichiers et de répertoires comme il était
+    dans l'origine archive). Ce "vault" répertoire devrait être d'un niveau
+    au-dessus le répertoire que le fichier "phpmussel.php" existera po.
     Enregistrer le fichier, fermer.
 
  3) (En option; Fortement recommandé pour l'avancés utilisateurs, mais pas
     recommandé pour les débutants ou pour les novices): Ouvrir "phpmussel.ini"
     (situé à l'intérieur de "vault") - Ce fichier contient toutes les
-    opérationnelles options disponible pour phpMussel. Au-dessus de chaque
-    option devrait être un bref commentaire décrivant ce qu'il fait et ce qu'il
-    est pour. Réglez ces options comme bon vous semble, selon ce qui est
-    approprié pour votre particulière configuration. Enregistrer le fichier,
-    fermer.
+    directives disponible pour phpMussel. Au-dessus de chaque option devrait
+    être un bref commentaire décrivant ce qu'il fait et ce qu'il est pour.
+    Réglez ces options comme bon vous semble, selon ce qui est approprié pour
+    votre particulière configuration. Enregistrer le fichier, fermer.
 
  4) Téléchargez le contenu (phpMussel et ses fichiers) à le répertoire vous
     aviez décidé plus tôt (vous n'avez pas besoin le readme.XX.txt ou le
@@ -108,7 +107,7 @@
     chose comme "init.php", "common_functions.php", "functions.php" ou
     similaire. Vous sera besoin à déterminer qui est le fichier c'est pour
     votre situation. Pour ce faire, insérez la ligne de code suivante au début
-    de ce le noyau fichier et remplacer la chaîne contenue à l'intérieur des
+    de ce le noyau fichier et remplacer la string contenue à l'intérieur des
     guillemets avec l'exacte adresse le fichier "phpmussel.php" (l'adresse
     locale, pas l'adresse HTTP; il ressemblera l'adresse de "vault" mentionné
     précédemment).
@@ -149,24 +148,23 @@
     installer php sur votre machine, suivant les instructions fournies par le
     programme d'installation de php.
 
- 3) Ouvrir "phpmussel.php", cherchez pour la ligne commençant par "$vault=",
-    et remplacez la chaîne entre guillemets suivantes sur cette ligne avec le
-    véritable exact emplacement du le répertoire "vault" de phpMussel.
-    Vous aurez remarqué un tel dossier dans l'archive que vous avez téléchargé
-    (sauf si vous sentez à nouveau codage de l'ensemble du script, vous aurez
-    besoin à maintenir la même structure de fichiers et de répertoires comme il
-    était dans l'origine archive). Ce "vault" répertoire devrait être d'un
-    niveau au-dessus le répertoire que le fichier "phpmussel.php" existera po.
+ 2) Ouvrir "phpmussel.php", cherchez pour la ligne commençant par "$vault=",
+    et remplacez la string entre guillemets suivantes sur cette ligne avec le
+    véritable exact emplacement du le répertoire "vault" de phpMussel. Vous
+    aurez remarqué un tel dossier dans l'archive que vous avez téléchargé (sauf
+    si vous sentez à nouveau codage de l'ensemble du script, vous aurez besoin
+    à maintenir la même structure de fichiers et de répertoires comme il était
+    dans l'origine archive). Ce "vault" répertoire devrait être d'un niveau
+    au-dessus le répertoire que le fichier "phpmussel.php" existera po.
     Enregistrer le fichier, fermer.
 
  4) (En option; Fortement recommandé pour l'avancés utilisateurs, mais pas
     recommandé pour les débutants ou pour les novices): Ouvrir "phpmussel.ini"
     (situé à l'intérieur de "vault") - Ce fichier contient toutes les
-    opérationnelles options disponible pour phpMussel. Au-dessus de chaque
-    option devrait être un bref commentaire décrivant ce qu'il fait et ce qu'il
-    est pour. Réglez ces options comme bon vous semble, selon ce qui est
-    approprié pour votre particulière configuration. Enregistrer le fichier,
-    fermer.
+    directives disponible pour phpMussel. Au-dessus de chaque option devrait
+    être un bref commentaire décrivant ce qu'il fait et ce qu'il est pour.
+    Réglez ces options comme bon vous semble, selon ce qui est approprié pour
+    votre particulière configuration. Enregistrer le fichier, fermer.
 
  5) (En option) Vous pouvez faire utilisant phpMussel en CLI mode plus facile
     pour vous-même par la création d'un fichier de commandes pour automatique
@@ -208,10 +206,9 @@
  phpMussel($quoi_a_recherche,$sortie_type,$sortie_platitude);
 
  Où:
- - $quoi_a_recherche est une chaîne ou un tableau, pointant à un cible fichier,
+ - $quoi_a_recherche est une string ou un tableau, pointant à un cible fichier,
    un cible répertoire ou un tableau de cibles fichiers et/ou cibles
-   répertoires. L'omission de cette variable se traduira par une "file does not
-   exist" statut retourné par la fonction.
+   répertoires.
  - $sortie_type est un entier, indiquant le format dans lequel les résultats de
    l'analyse doivent être retour. Une valeur de 0 instruit que la fonction
    d'affichage des résultats comme un entier (un retourné résultat de -2
@@ -232,7 +229,7 @@
    contenue plusieurs articles (par exemple, si un répertoire ou un tableau)
    les résultats seront retournés dans un tableau (défaut valeur de 0). Une
    valeur de 1 instruit la fonction pour imploser tous tableaux avant l'entrée,
-   résultant en une aplatie chaîne contenant les résultats à être retourner.
+   résultant en une aplatie string contenant les résultats à être retourner.
    Cette variable est facultative, 0 par défaut.
 
  Exemples:
@@ -240,11 +237,11 @@
    $results=phpMussel("/user_name/public_html/my_file.html",1,1);
    echo $results;
 
-   Retours quelque chose comme ça (comme une chaîne):
-    Wed, 18 Sep 2013 02:49:46 +0000 Started.
-    > Checking '/user_name/public_html/my_file.html':
-    -> No problems found.
-    Wed, 18 Sep 2013 02:49:47 +0000 Finished
+   Retours quelque chose comme ça (comme une string):
+    Wed, 18 Sep 2013 02:49:46 +0000 Commencé.
+    > Vérification '/user_name/public_html/my_file.html':
+    -> Pas problème trouvé.
+    Wed, 18 Sep 2013 02:49:47 +0000 Terminé.
 
  Pour un complet itinéraire de signatures que sera utilisé par phpMussel pour
  l'analyse et la façon dont il gère ces signatures, référer à la Signature
@@ -289,7 +286,7 @@
  d'achever son analyse, une valeur de -1 sera retourné. Si la fonction a
  terminé son analyse et ne correspond pas à rien, une valeur de 0 sera retourné
  (indiquant pas infecté). Si, cependant, la fonction correspond à quelque
- chose, une chaîne sera retournée contenant un message déclarant ce qu'il a
+ chose, une string sera retournée contenant un message déclarant ce qu'il a
  identifié.
 
  En plus de ce qui précède, si vous regardez le source code, vous peut
@@ -319,7 +316,7 @@
  sûr, essayer sur d'autres systèmes, mais je ne peux pas garantir que ça va
  fonctionner comme prévu).
 
- Aussi soyez conscient que phpMussel est pas la fonctionnelle equivelant d'une
+ Aussi soyez conscient que phpMussel est pas la fonctionnel équivalent d'une
  complet anti-virus suite, et contrairement conventionnelles anti-virus suites,
  ne surveille pas la active mémoire ou détecter les virus sur la volée! Il
  seulement détecte les virus contenus dans les fichiers que vous explicitement
@@ -530,22 +527,25 @@
  l'utilisation de ce script, avec une brève description de ce que tous ces
  fichiers sont pour.
 
- /change_log.txt (Documentation, Inclus)
-    Un enregistrement des modifications apportées au script entre les
-    différentes versions (pas nécessaire pour le bon fonctionnement du script).
-    ~
  /phpmussel.php (Script, Inclus)
     phpMussel chargement fichier. Charge le principal script et etc. C'est ce
     que vous êtes censé être accrochage dans à (essentiel)!
-    ~
- /readme.XX.txt (Documentation, Inclus)
-    Le README fichiers (par exemple; le fichier vous êtes en cours de lire).
     ~
  /web.config (Other, Inclus)
     Un ASP.NET configuration fichier (dans ce cas, pour protéger de la "/vault"
     répertoire contre d'être consulté par des non autorisée sources dans le cas
     où le script est installé sur un serveur basé sur les ASP.NET
     technologies).
+    ~
+ /_docs/ (Directory)
+    Documentation répertoire (contient divers fichiers).
+    ~
+ /_docs/change_log.txt (Documentation, Inclus)
+    Un enregistrement des modifications apportées au script entre les
+    différentes versions (pas nécessaire pour le bon fonctionnement du script).
+    ~
+ /_docs/readme.XX.txt (Documentation, Inclus)
+    Le README fichiers (par exemple; le fichier vous êtes en cours de lire).
     ~
  /_testfiles/ (Directory)
     Test fichiers répertoire (contient divers fichiers).
@@ -890,14 +890,12 @@
      "mail_custom"
      "mail_mussel"
    - Signature correspondance longueur limiter options. Seulement modifier si
-     vous savez ce que vous faites.
-     SD = Standard signatures.
-     RX = PCRE (Perl Compatibles Régulières Expressions, ou "Regex")
-          signatures.
-     FN = Nom de fichier signatures. Si vous remarquez php s'écraser quand
-          phpMussel tentatives d'analyse, tenter à réduire les valeurs "max"
-          ci-dessous. Si possible et pratique, laissez-moi savoir quand cela se
-          produit et les résultats de ce que vous essayez.
+     vous savez ce que vous faites. SD = Standard signatures. RX = PCRE (Perl
+     Compatibles Régulières Expressions, ou "Regex") signatures. FN = Nom de
+     fichier signatures. Si vous remarquez php s'écraser quand phpMussel
+     tentatives d'analyse, tenter à réduire les valeurs "max" ci-dessous. Si
+     possible et pratique, laissez-moi savoir quand cela se produit et les
+     résultats de ce que vous essayez.
      "fn_siglen_min"
      "fn_siglen_max"
      "rx_siglen_min"
@@ -1007,16 +1005,12 @@
    "block_control_characters"
    - Bloquer tous les fichiers contenant des contrôle caractères (autre que les
      sauts de ligne)? ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) Si vous êtes
-     -seulement- télécharger de pur ASCII fichiers et ne nécessitent pas de
-     fichiers contenant des UTF-8 caractères (comme si ces fichiers sont écrits
-     en une latine basé langue), puis vous pouvez activer cette option à
-     fournir une supplémentaire protection à votre système. Mais, si vous
-     télécharger quelque chose plus que ASCII fichiers, ou si vous télécharger
-     quelque chose contenant UTF-8 caractères (comme si vos fichiers contenir
-     Chinois, Japonais, Russe, Arabe ou Hébreu caractères), l'activation de
-     cette va créer faux positifs et potentiellement pour vous causer des
-     problèmes. 0 - Ne pas bloquer [Défaut], 1 - Bloquer.
- "compatibility" (Category)
+     -seulement- télécharger de brut texte fichiers, puis vous pouvez activer
+     cette option à fournir une supplémentaire protection à votre système.
+     Mais, si vous télécharger quelque chose plus que brut texte, l'activation
+     de cette peut créer faux positifs.
+     0 - Ne pas bloquer [Défaut], 1 - Bloquer.
+ "compatibility" (Catégorie)
  - Compatibilité directives pour phpMussel.
     "ignore_upload_errors"
     - Cette directive doit généralement être DÉSACTIVÉ sauf si cela est
@@ -1136,10 +1130,10 @@
 
  PHP et PCRE
  - phpMussel requérir PHP et PCRE à signer et à fonctionner correctement. Sans
-   php, ou sans le PCRE extension de PCRE, phpMussel n'exécutera pas
-   ou fonctionnent correctement. Devrait s'assurer que votre système avoir PHP
-   et PCRE installé et disponible avant de votre téléchargement et installation
-   de phpMussel.
+   php, ou sans le PCRE extension de PHP, phpMussel n'exécutera pas ou
+   fonctionnent correctement. Devrait s'assurer que votre système avoir PHP et
+   PCRE installé et disponible avant de votre téléchargement et installation de
+   phpMussel.
 
  ANTI-VIRUS LOGICIELS COMPATIBILITÉ
 
@@ -1214,5 +1208,5 @@
                                      ~ ~ ~                                     
 
 
-Dernière Réactualisé: 11 Juin 2014
+Dernière Réactualisé: 26 Juin 2014
 EOF

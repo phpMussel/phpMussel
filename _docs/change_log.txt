@@ -1,5 +1,36 @@
 phpMussel change_log.txt
 
+=== Version 0.3g.1 ===
+SUMMARY:
+Updated to the latest signatures set (55+19131+3g.1).
+Files modified, but no changes to the actual script or code (medium priority).
+
+NEW CHANGES:
+- Updated -all- documentation - phpMussel is now -fully- supported (I define
+  a language as being "fully supported" by phpMussel when translations for
+  that language have been completed in the language file, "lang.inc", and when
+  there is a complete, thorough translation of the README documentation in that
+  language available) in four languages: English, French, Indonesian, Italian;
+  Partially supported by an additional four languages (German, Spanish,
+  Portuguese, Dutch), which should come to be fully supported as time passes,
+  with additional languages to eventually come where time, energy, capacity,
+  need and interest from the userbase permits it to be so.
+
+PROBLEMS/BUGS FIXED:
+- Found some incorrect peripheral information in the documentation; Corrected.
+- Corrected some minor spelling errors in the language file (lang.inc).
+- Removed some problematic false-positives from the signature set, most
+  notably, "phpMussel-FN.Illegal.Character-3F", which was originally introduced
+  with the previously most recent release (v0.3g), potentially falsing where
+  due to a discrepancy between the actual default character encoding
+  ("charset") of the upload as per assigned by the sending browser and the
+  actual charset of the system where PHP is installed, the filename would be
+  mangled, with question marks rendered in place of unrecognised characters.
+  Refer spambotsecurity.com/forum/viewtopic.php?f=57&t=2824
+
+Maikuolan,
+26th June 2014.
+
 === Version 0.3g ===
 SUMMARY:
 Updated to the latest signatures set (55+19079+3g).
@@ -59,7 +90,7 @@ PROBLEMS/BUGS FIXED:
   zero-or-more quantifiers (*) with specific numeric quantifiers ({n,n}),
   and changes have been made to the core script in an attempt to prevent the
   situation from arising again.
-  Refer: spambotsecurity.com/forum/viewtopic.php?f=58&t=2794
+  Refer spambotsecurity.com/forum/viewtopic.php?f=58&t=2794
 - There was a minor bug in CLI mode whereby specifying directories to scan
   without including a trailing slash in the directory path would result in
   phpMussel stating that the directory didn't exist, regardless of whether it
@@ -239,7 +270,7 @@ PROBLEMS/BUGS FOUND:
   to crash php altogether under certain circumstances. I've worked on some
   basic dirty work-arounds for the problem which should occasionally prevent
   the problem from occurring, but the problem is not altogether resolved.
-  Refer: spambotsecurity.com/forum/viewtopic.php?f=58&t=2794
+  Refer spambotsecurity.com/forum/viewtopic.php?f=58&t=2794
 
 Maikuolan,
 30th November 2013.

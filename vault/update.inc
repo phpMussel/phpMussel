@@ -29,8 +29,7 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                   ~ ~ ~                                        
- This File: phpMussel v0.3g Update Script
- This File Last Updated: 8th June 2014
+ This File: phpMussel v0.3g.1 (26th June 2014) Update Script
 
                                   ~ ~ ~                                        
  Please refer to the README documentation for installation instructions and for

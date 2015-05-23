@@ -29,8 +29,7 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                   ~ ~ ~                                        
- This File: phpMussel v0.3g Language Data
- This File Last Updated: 11th June 2014
+ This File: phpMussel v0.3g.1 (26th June 2014) Language Data
 
                                   ~ ~ ~                                        
  Please refer to the README documentation for installation instructions and for
@@ -398,7 +397,7 @@ else if($MusselConfig['general']['lang']=="it")
 	$MusselConfig['lang']['refer_to_scan_kills']=" (riferimento alla ".$MusselConfig['general']['scan_kills']." per i dettagli)";
 	$MusselConfig['lang']['scan_aborted']="Scansione interrotta";
 	$MusselConfig['lang']['scan_chameleon']="camaleonte attacco rilevato";
-	$MusselConfig['lang']['scan_checking_contents']="SSuccess! Procedendo per verificare i contenuti.";
+	$MusselConfig['lang']['scan_checking_contents']="Successo! Procedendo per verificare i contenuti.";
 	$MusselConfig['lang']['scan_checking']="Verificare";
 	$MusselConfig['lang']['scan_command_injection']="Comando iniezione tentativo rilevato";
 	$MusselConfig['lang']['scan_extensions_missing']="Mancato (Manca richieste estensioni)!";

@@ -29,8 +29,7 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                   ~ ~ ~                                        
- This File: phpMussel v0.3g Core Script
- This File Last Updated: 11th June 2014
+ This File: phpMussel v0.3g.1 (26th June 2014) Core Script
 
                                   ~ ~ ~                                        
  Please refer to the README documentation for installation instructions and for
@@ -46,7 +45,7 @@ if(!defined('phpMussel'))
 	die("[phpMussel] This should not be accessed directly.");
 	}
 
-$phpmusselversion="phpMussel v0.3g";
+$phpmusselversion="phpMussel v0.3g.1";
 $linebreak=chr(10);
 if(!isset($MusselConfig['general']['ipaddr']))$MusselConfig['general']['ipaddr']="REMOTE_ADDR";
 if(!isset($_SERVER[$MusselConfig['general']['ipaddr']]))$_SERVER[$MusselConfig['general']['ipaddr']]="";
@@ -3862,7 +3861,7 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 		if($fm)$GLOBALS['xsk'].="--FILETYPE-BLACKLISTED--NO-HASH-:".$fS.":".$ofnenc.$GLOBALS['linebreak'];
 		if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filetype_blacklisted']." (".$ofnenc.")! ";
 		if($GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
-		return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofnenc."' (FN: ".$fnCRC."):".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].$GLOBALS['linebreak'];
+		return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofnenc."' (FN: ".$fnCRC."):".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].".".$GLOBALS['linebreak'];
 		}
 	$in=@implode(file($f));
 	$fdCRC=@hash("crc32b",$in);
@@ -4093,7 +4092,7 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 						$r=2;
 						if($fm)$GLOBALS['xsk'].="--FILETYPE-BLACKLISTED--NO-HASH-:".$eS.":".$ofnenc.">".$eN.$GLOBALS['linebreak'];
 						if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filetype_blacklisted']." (".$ofnenc.">".$eN.")! ";
-						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofnenc."' > '".$eN."' (FN: ".$znCRC."):".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].$GLOBALS['linebreak'];
+						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofnenc."' > '".$eN."' (FN: ".$znCRC."):".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].".".$GLOBALS['linebreak'];
 						continue;
 						}
 					}

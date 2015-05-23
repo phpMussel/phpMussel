@@ -198,9 +198,7 @@
 
  Dimana:
  - $what_to_scan adalah string atau array, mengarah ke data target, direktori
-   target atau array data target dan/atau direktori target. Menghilangkan
-   variabel ini akan menghasilkan status "data tidak ada" di kembalikan dari
-   fungsi.
+   target atau array data target dan/atau direktori target.
  - $output_type adalah sebuah integer, mengindikasikan format dimana hasil dari
    memindai yang dikembalikan (sebuah hasil dari -2 mengindikasikan bahwa data
    corrupt dideteksi selama proses memindai dan proses memindai gagal selesai,
@@ -227,10 +225,10 @@
    echo $results;
 
    Menghasilkan seperti ini (sebagai kata-kata):
-    Wed, 18 Sep 2013 02:49:46 +0000 Started.
-    > Checking '/user_name/public_html/my_file.html':
-    -> No problems found.
-    Wed, 18 Sep 2013 02:49:47 +0000 Finished
+    Wed, 18 Sep 2013 02:49:46 +0000 Dimulai.
+    > Memeriksa '/user_name/public_html/my_file.html':
+    -> Tidak ada masalah yang diketahui.
+    Wed, 18 Sep 2013 02:49:47 +0000 Selesai.
 
  Untuk sebuah pemecahan penuh dari jenis tanda tangan phpMussel yang digunakan
  selama pemindaian dan bagaimana dia memegang tanda tangan-tanda tangan ini,
@@ -521,22 +519,25 @@
  potensial diciptakan sebagai hasil dari menggunakan script ini, sejalan dengan
  deskripsi singkat dari untuk apa data-data ini.
 
- /change_log.txt (Dokumentasi, diikutkan)
-    Sebuah rekaman dari perubahan yang dibuat pada script ini di antara
-    perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari script).
-    ~
  /phpmussel.php (Script, diikutkan)
     data pemuat phpMussel. Memuat script utama, pengupdate, dll.
     Ini yang apa anda ingin masukkan  (utama)!
-    ~
- /readme.XX.txt (Dokumentasi, diikutkan)
-    Fail-fail baca saya (misalnya; fail yang anda sedang membaca).
     ~
  /web.config (Lainnya, diikutkan)
     Sebuah data konfigurasi ASP.NET (dalam instansi ini, untuk melindungi
     direktori "/vault" dari pengaksesan oleh sumber-sumber tidak terauthorisasi
     dalam kejadian yang mana skrip ini diinstal pada server berbasis teknologi
     ASP.NET).
+    ~
+ /_docs/ (Directory)
+    Direktori dokumentasi (berisi bermacam data).
+    ~
+ /_docs/change_log.txt (Dokumentasi, diikutkan)
+    Sebuah rekaman dari perubahan yang dibuat pada script ini di antara
+    perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari script).
+    ~
+ /_docs/readme.XX.txt (Dokumentasi, diikutkan)
+    Fail-fail baca saya (misalnya; fail yang anda sedang membaca).
     ~
  /_testfiles/ (Directory)
     Direktori test data-data (berisi bermacam data).
@@ -882,13 +883,11 @@
      "mail_custom"
      "mail_mussel"
    - Opsi Tanda tangan cocok batas panjangnya. Hanya ubah ini jika anda tahu
-     apa yang anda lakukan.
-     SD = Standard signatures.
-     RX = Tanda tangan PCRE (Perl Compatible Regular Expressions, "Regex").
-     FN = Tanda tangan Nama Data. Jika anda melihat php crashing ketika
-          phpMussel meoncoba memindai, coba merendahkan nilai "max" di bawah.
-          Jika mungkin dan cocok, biarkan saya tahu kapan ini terjadi dan hasil
-          dari apapun yang anda coba.
+     apa yang anda lakukan. SD = Standard tanda tangan. RX = Tanda tangan PCRE
+     (Perl Compatible Regular Expressions, "Regex"). FN = Tanda tangan Nama
+     Data. Jika anda melihat php crashing ketika phpMussel meoncoba memindai,
+     coba merendahkan nilai "max" di bawah. Jika mungkin dan cocok, biarkan
+     saya tahu kapan ini terjadi dan hasil dari apapun yang anda coba.
      "fn_siglen_min"
      "fn_siglen_max"
      "rx_siglen_min"
@@ -997,14 +996,10 @@
    "block_control_characters"
    - Memblokade data apapun yang berisi karakter pengendali (lain dari baris
      baru)? ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) Jika anda hanya sedang mengupload
-     data raw ASCII dan tidak memerlukan data-data berisikan karakter UTF-8
-     (seperti, jika data-data itu tertulis dalam English), maka anda dapat
-     menghidupkan opsi ini untuk menyediakan perlindungan tambahan ke sistem
-     anda. Bagaimanapun jika anda mengupload apapun lebih dari data ASCII, atau
-     jika anda mengupload apapun yang berisikan karakter UTF-8 (seperti jika
-     data-data anda berisikan aksara Bahasa China, Bahasa Jepang, Bahasa Rusia,
-     Bahasa Arab atau Bahasa Ibrani), menghidupkan opsi ini akan mengakibatkan
-     angka positif salah dan secara potensial mengakibatkan masalah bagi anda.
+     data teks biasa, maka anda dapat menghidupkan opsi ini untuk menyediakan
+     perlindungan tambahan ke sistem anda. Bagaimanapun jika anda mengupload
+     apapun lebih dari data teks biasa, menghidupkan opsi ini mungkin
+     mengakibatkan angka positif salah.
      0 - Jangan memblokade [Default], 1 - Memblokade.
  "compatibility" (Category)
  - Kompatibilitas direktif pada phpMussel.
@@ -1142,9 +1137,9 @@
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 11 Juni 2014 dan cocok untuk semua versi dari phpMussel,
- dari inisial release v0.1 melalui release terakhir v0.3g pada waktu saya
- menuliskan ini.
+ Informasi ini diupdate 11 Juni 2014 dan cocok untuk semua versi dari
+ phpMussel, dari inisial release v0.1 melalui release terakhir v0.3g pada
+ waktu saya menuliskan ini.
 
  Ad-Aware                Tidak ada masalah yang diketahui
  Agnitum                 Tidak ada masalah yang diketahui
@@ -1202,5 +1197,5 @@
                                      ~ ~ ~                                     
 
 
-Terakhir Diperbarui: 11 Juni 2014
+Terakhir Diperbarui: 26 Juni 2014
 EOF
