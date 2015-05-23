@@ -1098,9 +1098,9 @@
  with phpMussel or should consider alternative options to either your
  anti-virus software or phpMussel.
 
- This information was last updated 10th July 2014 and is current for ALL
+ This information was last updated 4th August 2014 and is current for ALL
  versions of phpMussel, from initial release v0.1 through to latest release
- v0.4 at the time of writing this.
+ v0.4a at the time of writing this.
 
  Ad-Aware                No known problems
  Agnitum                 No known problems
@@ -1125,7 +1125,7 @@
  F-Secure                No known problems
  Fortinet                No known problems
  GData                !  Reports "Archive.Trojan.Agent.E7C7J7" (v0.3e only)
- Ikarus               !  Reports "Trojan.JS.Agent" (v0.3g to v0.4)
+ Ikarus               !  Reports "Trojan.JS.Agent" (v0.3g to v0.4a)
  Jiangmin                No known problems
  K7AntiVirus             No known problems
  K7GW                    No known problems
@@ -1158,5 +1158,5 @@
                                      ~ ~ ~                                     
 
 
-Last Updated: 10th July 2014
+Last Updated: 4th August 2014
 EOF

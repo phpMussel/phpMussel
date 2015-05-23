@@ -1,6 +1,6 @@
 phpMussel change_log.txt
 
-== CURRENT GOALS AND FUTURE VERSIONING GUIDELINES (Latest: v0.4) ==
+== CURRENT GOALS AND FUTURE VERSIONING GUIDELINES (Latest: v0.4a) ==
 Next major release (v1.0):
 - All planned signature implementations completed, functioning correctly during
   a live test, without any known notable problems.
@@ -45,7 +45,24 @@ Next and/or subsequent below sub-minor releases and/or re-releases (v0.Xy.Z):
   containing changes to the core code without any included signature updates.
 Last Edited: 7th July 2014
 
-=== Version 0.4 (Previous: 0.3g.1) ===
+=== Version 0.4a (Previous: 0.4) ===
+SUMMARY:
+Updated to the latest signatures set (55+19260+4a).
+Minor release (medium priority).
+
+NEW CHANGES:
+- General commands CSV tweaked slightly (hex_general_commands.csv).
+- As usual, improved signature set.
+
+PROBLEMS/BUGS FIXED:
+- Missing break statement from end of looped section in update script would
+  cause forced update via CLI to infinitely loop (update.inc); Fixed.
+- Corrected some minor spelling errors in the language file (lang.inc).
+
+Maikuolan,
+4th August 2014.
+
+=== Version 0.4 (Previous: 0.3g.1; Next: 0.4a) ===
 SUMMARY:
 Updated to the latest signatures set (55+19164+4).
 Minor release (medium priority).

@@ -1080,28 +1080,28 @@
 
  8. CONHECIDOS COMPATIBILIDADE PROBLEMAS
 
- PHP and PCRE
- - phpMussel requires PHP and PCRE to execute and function correctly. Without
-   php, or without the PCRE extension of PHP, phpMussel will not execute or
-   function correctly. Should make sure your system has both PHP and PCRE
-   installed and available prior to downloading and installing phpMussel.
+ PHP e PCRE
+ - phpMussel requer PHP e PCRE para executar e funcionar corretamente. Sem php,
+   ou sem a PCRE extensão do PHP, phpMussel não vai executará ou funcionar
+   corretamente. Deve certificar-se de que seu sistema tenha PHP e PCRE
+   instalado e disponível antes de baixar e instalar phpMussel.
 
- ANTI-VIRUS SOFTWARE COMPATIBILITY
+ ANTI-VÍRUS SOFTWARE COMPATIBILIDADE
 
- For the most part, phpMussel should be fairly compatible with most other virus
- scanning software. However, conflictions have been reported by a number of
- users in the past. This information below is from VirusTotal.com, and it
- describes a number of false-positives reported by various anti-virus programs
- against phpMussel. Although this information isn't an absolute guarantee of
- whether or not you will encounter compatibility problems between phpMussel and
- your anti-virus software, if your anti-virus software is noted as flagging
- against phpMussel, you should either consider disabling it prior to working
- with phpMussel or should consider alternative options to either your
- anti-virus software or phpMussel.
+ Em geral, phpMussel deve ser bastante compatível com a maioria dos outros
+ vírus detecção softwares. Embora, conflitos foram relatadas por um número de
+ utilizadores no passado. Esta informação abaixo é de VirusTotal.com, e
+ descreve um número de falso-positivos relatados por vários anti-vírus
+ programas contra phpMussel. Embora esta informação não é uma garantia absoluta
+ de haver ou não você vai encontrar problemas de compatibilidade entre
+ phpMussel e seu anti-vírus software, se o seu anti-vírus software é conhecido
+ como sinalização contra phpMussel, você deve considerar desativá-lo antes de
+ trabalhar com phpMussel ou deve considerar alternativas opções para o seu
+ anti-vírus software ou phpMussel.
 
- This information was last updated 10th July 2014 and is current for ALL
- versions of phpMussel, from initial release v0.1 through to latest release
- v0.4 at the time of writing this.
+ Esta informação foi atualizada dia 4 Agosto 2014 e é corrente para TODAS as
+ versões de phpMussel, da versão inicial v0.1 até a última versão v0.4a no
+ momento de escrever este.
 
  Ad-Aware                Sem conhecidos problemas
  Agnitum                 Sem conhecidos problemas
@@ -1126,7 +1126,7 @@
  F-Secure                Sem conhecidos problemas
  Fortinet                Sem conhecidos problemas
  GData                !  Reportar "Archive.Trojan.Agent.E7C7J7" (v0.3e só)
- Ikarus               !  Reportar "Trojan.JS.Agent" (v0.3g a v0.4)
+ Ikarus               !  Reportar "Trojan.JS.Agent" (v0.3g a v0.4a)
  Jiangmin                Sem conhecidos problemas
  K7AntiVirus             Sem conhecidos problemas
  K7GW                    Sem conhecidos problemas
@@ -1159,5 +1159,5 @@
                                      ~ ~ ~                                     
 
 
-Última Atualização: 10 Julho 2014
+Última Atualização: 4 Agosto 2014
 EOF

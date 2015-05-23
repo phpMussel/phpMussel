@@ -1168,8 +1168,8 @@
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 10 Juli 2014 dan cocok untuk semua versi dari
- phpMussel, dari inisial release v0.1 melalui release terakhir v0.4 pada
+ Informasi ini diupdate 4 Agustus 2014 dan cocok untuk semua versi dari
+ phpMussel, dari inisial release v0.1 melalui release terakhir v0.4a pada
  waktu saya menuliskan ini.
 
  Ad-Aware                Tidak ada masalah yang diketahui
@@ -1195,7 +1195,7 @@
  F-Secure                Tidak ada masalah yang diketahui
  Fortinet                Tidak ada masalah yang diketahui
  GData                !  Report "Archive.Trojan.Agent.E7C7J7" (v0.3e semata)
- Ikarus               !  Report "Trojan.JS.Agent" (v0.3g melalui v0.4)
+ Ikarus               !  Report "Trojan.JS.Agent" (v0.3g melalui v0.4a)
  Jiangmin                Tidak ada masalah yang diketahui
  K7AntiVirus             Tidak ada masalah yang diketahui
  K7GW                    Tidak ada masalah yang diketahui
@@ -1228,5 +1228,5 @@
                                      ~ ~ ~                                     
 
 
-Terakhir Diperbarui: 10 Juli 2014
+Terakhir Diperbarui: 4 Agustus 2014
 EOF

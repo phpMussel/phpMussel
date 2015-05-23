@@ -31,7 +31,7 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                      ~ ~ ~                                     
- This File: phpMussel v0.4 (10th July 2014) Update Script
+ This File: phpMussel v0.4a (28th July 2014) Update Script
 
  The latest version and future updates can be obtained from the phpMussel
  SourceForge page located at <http://sourceforge.net/projects/phpmussel/>
@@ -311,6 +311,7 @@ while(true)
 			}
 		plaintext_echo_die("[phpMussel] Not updated: Next update check not due until ".date("r",$phpmusselversion['do_not_check_before']).".");
 		}
+	break;
 	}
 
 if(!$phpmusselversion['is_cli'])die();

@@ -58,18 +58,17 @@
  punt in de niet al te verre toekomst, maar tot die tijd, volg deze instructies
  te werken phpMussel om meeste systemen en CMS:
 
- 1) By your reading this, I'm assuming you've already downloaded an archived
-    copy of the script, decompressed its contents and have it sitting somewhere
-    on your local machine. From here, you'll want to work out where on your
-    host or CMS you want to place those contents. A directory such as
-    /public_html/phpmussel/ or similar (though, it doesn't matter which you
-    choose, so long as it's something secure and something you're happy with)
-    will suffice. Before you begin uploading, read on..
+ 1) Door je dit leest, ben ik ervan uit u al een gearchiveerde kopie van het
+    script gedownload, uitgepakt zijn inhoud en hebben het ergens op uw lokale
+    computer. Vanaf hier, je nodig hebt om bepalen waar op uw host of CMS die
+    inhoud te plaatsen. Een directory zoals /public_html/phpmussel/ of
+    soortgelijk (hoewel, het maakt niet uit welke je kiest, zolang het is iets
+    veilig en iets waar je blij mee bent) zal volstaan. Voordat u het uploaden
+    begint, lees verder..
 
- 2) Open "phpmussel.php", look for the line beginning with "$vault=", and
-    replace the string between the following quotation marks on that line with
-    the exact true location of the "vault" directory of phpMussel. You'll have
-    noticed such a directory in the archive you would've downloaded (unless you
+ 2) Open "phpmussel.php", zoek naar de lijn die begint met "$vault=", en
+    vervang de string tussen de volgende aanhalingstekens op die lijn met de
+    exacte ware locatie van de "gewelf" map van phpMussel. You'll have noticed such a directory in the archive you would've downloaded (unless you
     feel up to re-coding the whole script, you'll need to maintain the same
     file and directory structure as it was in the archive originally). This
     "vault" directory should be one directory level beyond the directory that
@@ -1102,9 +1101,9 @@
  with phpMussel or should consider alternative options to either your
  anti-virus software or phpMussel.
 
- This information was last updated 10th July 2014 and is current for ALL
+ This information was last updated 4th August 2014 and is current for ALL
  versions of phpMussel, from initial release v0.1 through to latest release
- v0.4 at the time of writing this.
+ v0.4a at the time of writing this.
 
  Ad-Aware                Geen bekend problemen
  Agnitum                 Geen bekend problemen
@@ -1129,7 +1128,7 @@
  F-Secure                Geen bekend problemen
  Fortinet                Geen bekend problemen
  GData                !  Berichten "Archive.Trojan.Agent.E7C7J7" (v0.3e enigst)
- Ikarus               !  Berichten "Trojan.JS.Agent" (v0.3g tot v0.4)
+ Ikarus               !  Berichten "Trojan.JS.Agent" (v0.3g tot v0.4a)
  Jiangmin                Geen bekend problemen
  K7AntiVirus             Geen bekend problemen
  K7GW                    Geen bekend problemen
@@ -1162,5 +1161,5 @@
                                      ~ ~ ~                                     
 
 
-Laatste Bijgewerkt: 10 Juli 2014
+Laatste Bijgewerkt: 4 Augustus 2014
 EOF

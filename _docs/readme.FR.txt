@@ -1178,9 +1178,9 @@
  désactivation avant à travailler avec phpMussel ou devrait envisager d'autres
  options soit votre logiciel anti-virus ou phpMussel.
 
- Cette information a été réactualisé le 10 Juillet 2014 et est courant pour
- TOUTES les versions de phpMussel, partir de l'initiale version v0.1 travers à
- le dernière version v0.4 au moment de la rédaction cette.
+ Cette information a été réactualisé le 4 Août 2014 et est courant pour TOUTES
+ les versions de phpMussel, partir de l'initiale version v0.1 travers à le
+ dernière version v0.4a au moment de la rédaction cette.
 
  Ad-Aware                Pas problèmes connus
  Agnitum                 Pas problèmes connus
@@ -1205,7 +1205,7 @@
  F-Secure                Pas problèmes connus
  Fortinet                Pas problèmes connus
  GData                !  Rapports "Archive.Trojan.Agent.E7C7J7" (v0.3e seule)
- Ikarus               !  Rapports "Trojan.JS.Agent" (v0.3g à v0.4)
+ Ikarus               !  Rapports "Trojan.JS.Agent" (v0.3g à v0.4a)
  Jiangmin                Pas problèmes connus
  K7AntiVirus             Pas problèmes connus
  K7GW                    Pas problèmes connus
@@ -1238,5 +1238,5 @@
                                      ~ ~ ~                                     
 
 
-Dernière Réactualisé: 10 Juillet 2014
+Dernière Réactualisé: 4 Août 2014
 EOF

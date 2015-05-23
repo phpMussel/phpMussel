@@ -1169,9 +1169,9 @@
  dovrebbe considerare l'alternative opzioni per sia il vostro anti-virus
  software o phpMussel.
 
- Questa informazione è stato lo scorso aggiornato 10 Luglio 2014 ed è in corso
+ Questa informazione è stato lo scorso aggiornato 4 Agosto 2014 ed è in corso
  per TUTTE le versioni di phpMussel, dall'iniziale rilascio v0.1 fino
- all'ultima rilascio v0.4 al momento di scrivere questo.
+ all'ultima rilascio v0.4a al momento di scrivere questo.
 
  Ad-Aware                Senza noti problemi
  Agnitum                 Senza noti problemi
@@ -1196,7 +1196,7 @@
  F-Secure                Senza noti problemi
  Fortinet                Senza noti problemi
  GData                !  Riferisce "Archive.Trojan.Agent.E7C7J7" (v0.3e solo)
- Ikarus               !  Riferisce "Trojan.JS.Agent" (v0.3g a v0.4)
+ Ikarus               !  Riferisce "Trojan.JS.Agent" (v0.3g a v0.4a)
  Jiangmin                Senza noti problemi
  K7AntiVirus             Senza noti problemi
  K7GW                    Senza noti problemi
@@ -1229,5 +1229,5 @@
                                      ~ ~ ~                                     
 
 
-Ultimo Aggiornamento: 10 Luglio 2014
+Ultimo Aggiornamento: 4 Agosto 2014
 EOF
