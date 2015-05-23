@@ -746,7 +746,10 @@
     ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
     (Dateien werden bei einem Update neu erstellt).
     ~
+ /vault/pdf_clamav_regex.cvd (Signaturen, enthalten)
+ /vault/pdf_clamav_regex.map (Signaturen, enthalten)
  /vault/pdf_clamav_standard.cvd (Signaturen, enthalten)
+ /vault/pdf_clamav_standard.map (Signaturen, enthalten)
  /vault/pdf_custom_regex.cvd (Signaturen, enthalten)
  /vault/pdf_custom_standard.cvd (Signaturen, enthalten)
  /vault/pdf_mussel_regex.cvd (Signaturen, enthalten)
@@ -1112,14 +1115,26 @@
      angegeben) überschreiten.
      0 - hinzufügen zur Whitelist,
      1 - hinzufügen zur Blacklist [Standardeinstellung].
-   "filetype_whitelist" und "filetype_blacklist"
+   "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
    - Sofern Ihr System spezielle Dareitypen im Upload erlaubt oder komplett
-     verweigert, so unterteilen Sie diese Dateitypen in Whitelists oder
-     Blacklists, um den Scanvorgang zu beschleunigen, indem diese Dateitypen
-     übersprungen werden.
-     Format ist CSV (comma separated values, Komma-getrennte Werte).
-     Möchten Sie lieber alles überprüfen lassen, so lassen Sie
-     die Variable(n) leer (dies deaktiviert die Whitelist/Blacklist).
+     verweigert, so unterteilen Sie diese Dateitypen in Whitelists, Blacklists
+     oder Greylists, um den Scanvorgang zu beschleunigen, indem diese
+     Dateitypen übersprungen werden. Format ist CSV (comma separated values,
+     Komma-getrennte Werte). Möchten Sie lieber alles überprüfen lassen, so
+     lassen Sie die Variable(n) leer; Dies deaktiviert die
+     Whitelist/Blacklist/Greylist. Logische Reihenfolge der Verarbeitung ist:
+     - Wenn der Dateityp ist in die Whitelist, tun nicht scannen und tun nicht
+       blockieren die Datei, und tun nicht überprüfen wenn die Datei ist in die
+       Whitelist oder die Greylist.
+     - Wenn der Dateityp ist in die Blacklist, tun nicht scannen die Datei aber
+       blockieren es trotzdem, und tun nicht überprüfen wenn die Datei ist in
+       die Greylist.
+     - Wenn die Greylist leer ist oder wenn die Greylist nicht leer ist und der
+       Dateityp ist in die Greylist, scannen die Datei wie für normale und
+       festzustellen, ob es zu blockieren, basierend auf den Scan, aber wenn
+       die Greylist nicht leer ist und der Dateityp nicht ist in die Greylist,
+       behandeln die Datei als ob es ist in die Blacklist, nicht scannen es
+       aber blockierung es trotzdem.
    "check_archives"
    - Soll der Inhalt von Archiven überprüft werden?
      0 - Nein (keine Überprüfung),
@@ -1415,7 +1430,7 @@
  vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen
  überlegen.
 
- Diese Informationen wurden zuletzt am 2014.11.16 aktualisiert und gelten für
+ Diese Informationen wurden zuletzt am 2014.12.25 aktualisiert und gelten für
  alle phpMussel Veröffentlichungen von der beiden letzten Nebenversionen
  (v0.5-v0.6) zu diesem Zeitpunkt.
 
@@ -1474,5 +1489,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 2014.12.05
+Zuletzt aktualisiert: 2014.12.27
 EOF

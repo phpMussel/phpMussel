@@ -775,7 +775,10 @@
     remover se a opção é desativado (mas os arquivos serão recriados na
     atualização).
     ~
+ /vault/pdf_clamav_regex.cvd (Assinaturas, Incluídos)
+ /vault/pdf_clamav_regex.map (Assinaturas, Incluídos)
  /vault/pdf_clamav_standard.cvd (Assinaturas, Incluídos)
+ /vault/pdf_clamav_standard.map (Assinaturas, Incluídos)
  /vault/pdf_custom_regex.cvd (Assinaturas, Incluídos)
  /vault/pdf_custom_standard.cvd (Assinaturas, Incluídos)
  /vault/pdf_mussel_regex.cvd (Assinaturas, Incluídos)
@@ -1155,15 +1158,27 @@
    "filesize_response"
    - Que fazer com arquivos que excedam o limite de arquivo tamanho (se
      existir). 0 - Whitelist, 1 - Blacklist [Padrão].
-   "filetype_whitelist" e "filetype_blacklist"
+   "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
    - Se o seu sistema só permite certos tipos de arquivos sejam carregado, ou
      se o seu sistema explicitamente nega certos tipos de arquivos,
-     especificando esses tipos de arquivos no whitelists e o blacklists pode
-     aumentar a velocidado em que a análise é realizada através de permitindo o
-     script para ignorar certos tipos de arquivos. O formato é CSV (Comma
-     Separated Values). Se você quer analisar tudo, ao invés de fazendo
-     whitelist ou blacklist, deixe as variáveis em branco (isso irá desativar
-     whitelist/blacklist).
+     especificando esses tipos de arquivos no whitelists, blacklists e
+     greylists pode aumentar a velocidado em que a análise é realizada através
+     de permitindo o script para ignorar certos tipos de arquivos. O formato
+     CSV (Comma Separated Values). Se você quer analisar tudo, ao invés de
+     fazendo whitelist, blacklist ou greylist, deixe as variáveis em branco;
+     Isso irá desativar whitelist/blacklist/greylist).
+     Lógico ordem de processamento é:
+     - Se o tipo de arquivo está na whitelist, não verificar e não bloqueia o
+       arquivo, e não verificar o arquivo contra o blacklist ou greylist.
+     - Se o tipo de arquivo está na blacklist, não verificar o arquivo, mas
+       bloqueá-lo de qualquer maneira, e não verificar o arquivo contra o
+       greylist.
+     - Se o greylist está vazia ou se o greylist não está vazia e o tipo de
+       arquivo é no greylist, verificar o arquivo como por normal e determinar
+       se a bloqueá-lo com base nos resultados do verificando, mas se o
+       greylist não está vazia e o tipo de arquivo não é no greylist, tratar o
+       arquivo da mesma maneira como está na blacklist, portanto não
+       verificá-lo, mas bloqueá-lo de qualquer maneira.
    "check_archives"
    - Tentativa de verificar o conteúdos dos compactados arquivos?
      0 - Não (Não verificar), 1 - Sim (Verificar) [Padrão].
@@ -1458,7 +1473,7 @@
  trabalhar com phpMussel ou deve considerar alternativas opções para o seu
  anti-vírus software ou phpMussel.
 
- Esta informação foi atualizada dia 16 Novembro 2014 e é corrente para todas
+ Esta informação foi atualizada dia 25 Dezembro 2014 e é corrente para todas
  phpMussel lançamentos das duas mais recentes menores versões (v0.5-v0.6) no
  momento de escrever este.
 
@@ -1517,5 +1532,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 5 Dezembro 2014 (2014.12.05).
+Última Atualização: 27 Dezembro 2014 (2014.12.27).
 EOF

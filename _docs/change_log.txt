@@ -30,7 +30,118 @@ Anything less than sub-minor:
   than sub-minor.
 Last Edited: 15th November 2014
 
-=== Version/Release 0.6a (Previous Release: 0.6) ===
+=== Version/Release 0.6b (Previous Release: 0.6a) ===
+SUMMARY:
+Updated to the latest signatures set (55+19837+6b).
+Sub-minor release (medium priority).
+
+NEW CHANGES:
+- Added a significant number of new signatures from multiple sources dealing
+  with rootkits, viruses and trojans, covering a range of platforms and
+  infection vectors (2014.12.20).
+- Detected and removed a significant number of unnecessary duplicate signatures
+  and unnecessary sub-set signatures (2014.12.20).
+- Removed a number of outdated signatures that no longer have relevance to any
+  current threats (2014.12.20).
+- Added a significant number of new VBS signatures via CoEx (2014.12.24).
+- Added a directive to allow filetype extension based greylisting. I'd absolutely
+  recommend for those users of phpMussel that have a definitive idea of exactly
+  what filetypes they do and don't want to allow onto their webservers to make
+  use of this new directive: Extensions cited by this directive are those
+  extensions that are allowed, but which should still nonetheless be scanned,
+  whereas any extensions not cited by this directive will be treated as
+  blacklisted and thus not permitted to be uploaded. Omission of this directive
+  will cause it to be ignored. Refer to the documentation for more details such
+  as the logical order of processing (2014.12.25).
+- Updated to the the latest ClamAV signatures; PhishTank signatures; All other
+  signatures and etc (2014.12.25).
+- I've found some new 32-bit infected PE files that weren't detected by ClamAV
+  that I've written some signatures for via CoEx (2014.12.26).
+- Previous version of phpMussel, there weren't any regex-based ClamAV PDF
+  signatures in the ClamAV database, and thus, the code for handling PDF
+  signatures was slightly more compact than the code for handling other
+  signature types. A few regex-based ClamAV PDF signatures have emerged,
+  however, during my most recent processing of the ClamAV database. As such,
+  the code for handling PDF signatures has been brought into line with the code
+  for handling other signature types (2014.12.27).
+- As per usual, all documentation updated to reflect the changes brought about
+  as of this version release (2014.12.27).
+- Although phpMussel has already proven to be effective in various live
+  environments and although I've not personally received any complaints thus
+  far in regards to its effectiveness, I'm still not entirely satisfied that
+  I've thus far struck quite as right a balance between effectiveness of
+  protections provided and efficiency of the scanning process as I potentially
+  could (basically, I think scanning still takes much longer than it should for
+  certain files in certain circumstances; in particular, PE files above a
+  certain filesize), and thus, again, I've been tinkering around with
+  signatures mapping and the signatures themselves. Although there has been
+  an increase in the number of signatures dealing with specific types of files
+  and an increase in hash-based signatures (hash-based signatures are processed
+  exceptionally quickly by phpMussel and do not concern me so far as the time
+  requirements of scanning are concerned) in this release since the previous
+  release, you may notice a somewhat significant decrease in the number of
+  General (general_*) signatures (signatures that are always processed
+  regardless of what is being uploaded or scanned) and the number of PE (exe_*)
+  signatures in this release since the previous release. The decrease comes
+  from a removal of, firstly, a significant number of PE/W32 packer signatures
+  (these signatures would be useful for Windows-based PC anti-virus solutions
+  in protecting against malicious executables, and although there is still
+  relevance for these signatures in a PHP-based anti-virus solution such as
+  phpMussel, I'd suggest the relevance is somewhat less-so, and given that the
+  risk associated with these files is primarily for the user of Windows-based
+  PCs and systems and less-so for webservers [although not entirely absent for
+  webservers; especially Windows-based webservers], it is nonetheless less-so,
+  but also given that most of these signatures are for PUPs [Potentially
+  Unwanted Programs], PUAs [Potentially Unwanted Applications] and speculative
+  threats, rather than definitive threats, given that they generate far more
+  false-positives than any other signatures I've encountered during testing
+  and given the significant performance and speed increase for phpMussel by
+  removing these signatures which sees scanning completed almost twice as
+  quickly as it otherwise would be, I feel that the removal of these signatures
+  contributes positively towards getting closer to the ideal balance between
+  effectiveness of protections provided and efficiency of the scanning
+  process; additionally, if, within a given installation of phpMussel, EXEs are
+  blacklisted, the EXE directive is disabled or EXE files are otherwise not
+  intended for uploading, these signatures won't be useful for phpMussel at all
+  anyhow), secondly, a number of signatures targeting DOS-based viruses (there
+  are still DOS viruses floating around the internet, but I can't offhandedly
+  think of any DOS-based webservers that are still online today, nor do I think
+  that there are likely many internet users that frequently browse the internet
+  from DOS machines, so the immediate threat of these particular viruses is
+  less-so than those viruses targeting more modern systems, thus, when looking
+  for ways to whittle down the overall bulk of General and PE signatures,
+  signatures such as these become a prime target for removal), and thirdly,
+  various other signatures I found that were either outdated, not triggering
+  correctly or that didn't have any or much relevance to the intended use of
+  phpMussel. Since doing this, the performance of phpMussel has improved, and
+  it's now closer to striking the right balance, but still isn't perfect, so
+  I may yet and probably will do more of this sort of thing into the future,
+  but in any case, there is an improvement (2014.12.28).
+
+PROBLEMS/BUGS FIXED:
+- Found that the shockwave signatures were using an incorrect whitelisting
+  flag; Fixed (2014.12.14).
+
+ADDITIONAL NOTES:
+- Core script modified, but no changes have been made to the Update script or
+  the Language data between this release and the previous.
+- Ignore the commented out code blocks that you may notice having been
+  introduced to the Core script as of this release. They're my attempts at
+  adding something new that doesn't quite yet work as intended, and may or
+  may not yet eventuate into anything. Don't uncomment them, because they'll
+  do more harm than good if they go live in their current state.
+- There are still plenty of things on my to-do list and yet again I've had
+  plenty of ideas for things that I still want to do with phpMussel, but
+  there'll probably always be new ideas, at least into the forseeable future,
+  and for the time being, I really wanted to get the latest signatures updates
+  and other various changes done thus far to the userbase of phpMussel without
+  unnecessary delays, so, I'm releasing this version/release now, rather than
+  later.
+
+Maikuolan,
+28th December 2014.
+
+=== Version/Release 0.6a (Previous Release: 0.6; Next: 0.6b) ===
 SUMMARY:
 Updated to the latest signatures set (55+19735+6a).
 Sub-minor release (medium priority).

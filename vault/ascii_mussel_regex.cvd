@@ -1,4 +1,4 @@
->FD>3c3f>17
+>FD>3c3f>21
 phpMussel-PHP.Backdoor.Extract-00:65787472616374(2f|2a|a0){0,2000}28(2f|2a|a0){0,2000}245f72657175657374
 phpMussel-PHP.Backdoor.SSH-00:6578656328(..)?24(3[0-9]|6[1-9a-f]|7[0-9a]){1,32}3e2f6465762f6e756c6c
 phpMussel-PHP.Backdoor.SymLink-00:666f70656e28.{0,64}2e6874616363657373
@@ -11,8 +11,12 @@ phpMussel-PHP.Obfuscation-04:6576616c2824.{16}28
 phpMussel-PHP.Packer.RX-00:24(3[0-9]|6[1-9a-f]|7[0-9a]){2,64}2824(3[0-9]|6[1-9a-f]|7[0-9a]){2,64}28
 phpMussel-PHP.Packer.RX-01:5c(783632|313432)5c(783631|313431)5c(783733|313633)5c(783635|313435)5c(783336|3636)5c(783334|3634)5c(783566|313337)5c(783634|313434)5c(783635|313435)5c(783633|313433)5c(783666|313537)5c(783634|313434)5c(783635|313435)
 phpMussel-PHP.Shell.4FBI-00:247265786973746865(3.|6[1-9a-f]|7[0-9a]){0,6}34666269
->FN>(\.[Cc][Vv][Dd]|\.[Ii][Nn][Cc]|\.[Tt][Xx][Tt])$>15
->FS-MAX>-1>17
+phpMussel-PHP.Shell.Devil-00:2466696c6e3d245f706f73745b27666e275d3b2473..3d245f706f73745b2773..275d3b2462..3d245f706f73745b2762..275d3b
+phpMussel-PHP.Shell.Devil-01:24666f3d66736f636b6f70656e282[27]7564703a2f2f247369702[27]2c24
+phpMussel-PHP.Shell.Devil-02:282[27]3f3e2[27]2e677a
+phpMussel-PHP.Shell.Devil-03:6d6f76655f75706c6f616465645f66696c6528245f66696c65735b27..275d5b27746d705f6e616d65275d2c245f73657373696f6e5b27646972275d2e222f222e245f66696c65735b27..275d5b276e616d65275d293b
+>FN>(\.[Cc][Vv][Dd]|\.[Ii][Nn][Cc]|\.[Tt][Xx][Tt])$>19
+>FS-MAX>-1>21
 phpMussel-PHP.Defacement.CyberSword-00:637962..727377..7264
 phpMussel-PHP.Defacement.Pakistan-14:706b5f726f62..74
 phpMussel-Defacement.Generic-008:776e..64:1:4
@@ -22,6 +26,9 @@ phpMussel-Defacement.Generic-011:66(75)?636b(..)?[67]4:A:6
 phpMussel-Defacement.Generic-012:64..737472..79:A:7
 phpMussel-Defacement.Generic-013:64..66..63(33|65):A:6
 phpMussel-Defacement.Generic-014:6b..636b..64:A:6
+phpMussel-HTML.Exploit.Iframe-00:3c696672616d6577696474683d(2[27])?(3.){0,4}(2[27])?6865696768743d(2[27])?(3.){0,4}(2[27])?7372633d(2[27])?2f2f
+phpMussel-HTML.Exploit.Iframe-01:3c696672616d656865696768743d(2[27])?(3.){0,4}(2[27])?77696474683d(2[27])?(3.){0,4}(2[27])?7372633d(2[27])?2f2f
+phpMussel-JS.Obfuscation.JavascriptObfuscator-00:7661725f3078.{4,16}3d5b2[27]5c78
 >FN>(\.[Vv][Bb][EeSs]?[VvXx]?|\.[Ww][Ss][CcFf]?|\..?[Hh][Tt][AaMm][Ll]?|\.[Aa][Ss][Pp][FfXx]?|\.[Ee][Mm][Ll]|\.[Pp][Yy]|\.[Jj][Ss][Pp]?|\.[Pp][Hh][Pp].?|\.[Tt][Mm][Pp])$>-1
 phpMussel-HTML.Defacement.CyberSword-00:637962..727377..7264
 phpMussel-HTML.Defacement.Generic-018:3e(30|4f)776e7a

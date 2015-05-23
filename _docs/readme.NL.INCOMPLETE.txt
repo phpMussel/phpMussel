@@ -67,139 +67,146 @@
  1) Door je dit leest, ben ik ervan uit u al een gearchiveerde kopie van het
     script gedownload, uitgepakt zijn inhoud en hebben het ergens op uw lokale
     computer. Vanaf hier, je nodig hebt om bepalen waar op uw host of CMS die
-    inhoud te plaatsen. Een directory zoals /public_html/phpmussel/ of
+    inhoud te plaatsen. Een bestandsmap zoals /public_html/phpmussel/ of
     soortgelijk (hoewel, het maakt niet uit welke je kiest, zolang het is iets
     veilig en iets waar je blij mee bent) zal volstaan. Voordat u het uploaden
     begint, lees verder..
 
  2) Open "phpmussel.php", zoek naar de lijn die begint met "$vault=", en
     vervang de string tussen de volgende aanhalingstekens op die lijn met de
-    exacte ware locatie van de "gewelf" map van phpMussel. U zult hebben
-    gemerkt zo'n map in het archief zou je hebt gedownload (tenzij je zin om
-    opnieuw coderen van de hele script jezelf, je nodig hebt om dezelfde
-    bestanden en directory structuur te behouden zoals het was in het archief
-    oorspronkelijk). Deze directory "vault" moet men directory niveau waarboven
-    de directory die de "phpmussel.php" bestand zal bestaan in zijn. Bestand
-    opslaan, sluiten.
+    exacte ware locatie van de "gewelf" bestandsmap van phpMussel. U zult
+    hebben gemerkt zo'n bestandsmap in het archief zou je hebt gedownload
+    (tenzij je zin om opnieuw coderen van de hele script jezelf, je nodig hebt
+    om dezelfde bestanden en bestandsmap structuur te behouden zoals het was in
+    het archief oorspronkelijk). Deze bestandsmap "vault" moet men bestandsmap
+    niveau waarboven de bestandsmap die de "phpmussel.php" bestand zal bestaan
+    in zijn. Bestand opslaan, sluiten.
 
  4) (Facultatief; Sterk aanbevolen voor ervaren gebruikers, maar niet aan te
     raden voor beginners of voor de onervaren): Open "phpmussel.ini" (gelegen
-    binnen "vault") - Dit bestand bevat alle beschikbare phpMussel
-    configuratie opties. Boven elke optie moet een korte opmerking te
-    beschrijven wat het doet en wat het voor. Pas deze opties als het je past,
-    volgens welke geschikt is voor uw configuratie. Sla het bestand, sluiten.
+    binnen "vault") - Dit bestand bevat alle beschikbare phpMussel configuratie
+    opties. Boven elke optie moet een korte opmerking te beschrijven wat het
+    doet en wat het voor. Pas deze opties als het je past, volgens welke
+    geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
- 4) Upload the contents (phpMussel and its files) to the directory you'd
-    decided on earlier (you don't need the readme.XX.txt or change_log.txt
-    files included, but, mostly, you should upload everything).
+ 4) Upload de inhoud (phpMussel en zijn bestanden) naar de bestandsmap die u
+    zou op eerder besloten (je nodig niet de readme.XX.txt of change_log.txt
+    bestanden opgenomen, maar, meestal, je moeten uploaden alles).
 
- 5) CMHOD the "vault" directory to "777". The main directory storing the
-    contents (the one you chose earlier), usually, can be left alone, but CHMOD
-    status should be checked if you've had permissions issues in the past on
-    your system (by default, should be something like "755").
+ 5) CMHOD de bestandsmap "vault" naar "777". De belangrijkste bestandsmap
+    opslaan van de inhoud (degene die je eerder koos), gewoonlijk, kan worden
+    genegeerd, maar CHMOD-status moet worden gecontroleerd als u machtigingen
+    problemen hebt gehad in het verleden op uw systeem (standaard, moet iets
+    zijn als "755").
 
- 6) Next, you'll need to "hook" phpMussel to your system or CMS. There are
-    several different ways in which you can "hook" scripts such as phpMussel to
-    your system or CMS, but the easiest is to simply include the script at the
-    beginning of a core file of your system or CMS (one that'll generally
-    always be loaded when someone accesses any page across your website) using
-    a require or include command. Usually, this'll be something stored in a
-    directory such as "/includes", "/assets" or "/functions", and will often be
-    named something like "init.php", "common_functions.php", "functions.php" or
-    similar. You'll have to work out which file this is for your situation.
-    To do this, insert the following line of code to the very beginning of that
-    core file, replacing the string contained inside the quotation marks with
-    the exact address of the "phpmussel.php" file (local address, not the HTTP
-    address; will look similar to the vault address mentioned earlier).
+ 6) Volgende, je nodig hebt om "haak" phpMussel om uw systeem of CMS. Er zijn
+    verschillende manieren waarop je kunt "haak" scripts zoals phpMussel om uw
+    systeem of CMS, maar het makkelijkste is om gewoon omvatten voor het script
+    aan het begin van een kern bestand van uw systeem of CMS (een die het
+    algemeen altijd zal worden geladen wanneer iemand heeft toegang tot een
+    pagina in uw website) met behulp van een require of include opdracht.
+    Meestal is dit wel iets worden opgeslagen in een bestandsmap zoals
+    "/includes", "/assets" of "/functions", en zal vaak zijn vernoemd iets als
+    "init.php", "common_functions.php", "functions.php" of soortgelijk. Je
+    nodig hebt om te bepalen welk bestand dit is voor uw situatie. Om dit te
+    doen, plaatst u de volgende regel code aan het begin op die kern bestand,
+    vervangen van de string die binnen de aanhalingstekens met het exacte adres
+    van het "phpmussel.php" bestand (lokaal adres, niet het HTTP-adres; zal
+    vergelijkbaar zijn met de eerder genoemde vault adres).
 
     <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
 
-    Save file, close, reupload.
+    Opslaan bestand, sluiten, heruploaden.
 
- 7) At this point, you're done! However, you should probably test it out to
-    make sure it's working properly. To test out file upload protections,
-    attempt to upload the testing files included in the package under
-    "_testfiles" to your website via your usual browser-based upload methods.
-    If everything is working, a message should appear from phpMussel confirming
-    that the upload was successfully blocked. If nothing appears, something
-    isn't working correctly. If you're using any advanced features or if you're
-    using the other types of scanning possible with the tool, I'd suggest
-    trying it out with those to make sure it works as expected, too.
+ 7) Op dit punt, je bent klaar! Echter, je moet waarschijnlijk test het uit om
+    ervoor te zorgen dat het werken correct. Voor het testen van het bestand
+    upload protecties, proberen om de testen bestanden te uploaden opgenomen in
+    het pakket als "_testfiles" naar uw website via uw gebruikelijke
+    browser-gebaseerde uploaden methoden. Wanneer alles werkt, verschijnt er
+    een bericht uit phpMussel bevestigen dat de upload met succes werd
+    geblokkeerd. Wanneer er niets, is er iets niet correct werkt. Als je met
+    behulp van een geavanceerde functies of als je met behulp van de andere
+    types van het scannen mogelijk met het gereedschap, ik stel het uit te
+    proberen met die ervoor zorgen dat het werkt zoals verwacht, ook.
 
                                      ~ ~ ~
 
 
  2B. HOE TE INSTALLEREN (VOOR CLI)
 
- I hope to streamline this process by making an installer at some point in the
- not too distant future, but until then, follow these instructions to get
- phpMussel ready to work with CLI (be aware that at this point, CLI support
- only applies to Windows based systems; Linux and other systems will be coming
- soon to a later version of phpMussel):
+ Ik hoop te stroomlijnen dit proces door maken een installateur op een bepaald
+ punt in de niet al te verre toekomst, maar tot die tijd, volg deze instructies
+ te werken phpMussel met CLI (beseffen dat op dit moment, CLI is alleen bekend
+ om te werken met Windows-gebaseerde systemen; Linux en andere systemen zal
+ binnenkort komen tot een latere versie van phpMussel):
 
- 1) By your reading this, I'm assuming you've already downloaded an archived
-    copy of the script, decompressed its contents and have it sitting somewhere
-    on your local machine. Once you've determined that you're happy with the
-    location chosen for phpMussel, continue.
+ 1) Door je dit leest, ben ik ervan uit u al een gearchiveerde kopie van het
+    script gedownload, uitgepakt zijn inhoud en hebben het ergens op uw lokale
+    computer. Wanneer je hebt beslist dat je bent tevreden met de gekozen
+    phpMussel locatie, voortzetten.
 
- 2) phpMussel requires php to be installed on the host machine in order to
-    execute. If you do not have php installed on your machine, please install
-    php on your machine, following any instructions supplied by the php
-    installer.
+ 2) phpMussel vereist van php moet worden geïnstalleerd op de host machine om
+    uit te werken correct. Als je niet php hebt geïnstalleerd op uw machine,
+    installeer php op uw machine, volgende instructies door de php installateur
+    geleverd.
 
- 3) Open "phpmussel.php", look for the line beginning with "$vault=", and
-    replace the string between the following quotation marks on that line with
-    the exact true location of the "vault" directory of phpMussel. You'll have
-    noticed such a directory in the archive you would've downloaded (unless you
-    feel up to re-coding the whole script, you'll need to maintain the same
-    file and directory structure as it was in the archive/when decompressed).
-    This "vault" directory should be one directory level beyond the directory
-    that the "phpmussel.php" file will exist in. Save file, close.
+ 3) Open "phpmussel.php", zoek naar de lijn die begint met "$vault=", en
+    vervang de string tussen de volgende aanhalingstekens op die lijn met de
+    exacte ware locatie van de "gewelf" bestandsmap van phpMussel. U zult
+    hebben gemerkt zo'n bestandsmap in het archief zou je hebt gedownload
+    (tenzij je zin om opnieuw coderen van de hele script jezelf, je nodig hebt
+    om dezelfde bestanden en bestandsmap structuur te behouden zoals het was in
+    het archief oorspronkelijk). Deze bestandsmap "vault" moet men bestandsmap
+    niveau waarboven de bestandsmap die de "phpmussel.php" bestand zal bestaan
+    in zijn. Bestand opslaan, sluiten.
 
- 4) (Optional; Strongly recommended for advanced users, but not recommended for
-    beginners or for the inexperienced): Open "phpmussel.ini" (located inside
-    "vault") - This file contains all the directives available for phpMussel.
-    Above each option should be a brief comment describing what it does and
-    what it is for. Adjust these options as you see fit, as per whatever is
-    appropriate for your particular setup. Save file, close.
+ 4) (Facultatief; Sterk aanbevolen voor ervaren gebruikers, maar niet aan te
+    raden voor beginners of voor de onervaren): Open "phpmussel.ini" (gelegen
+    binnen "vault") - Dit bestand bevat alle beschikbare phpMussel configuratie
+    opties. Boven elke optie moet een korte opmerking te beschrijven wat het
+    doet en wat het voor. Pas deze opties als het je past, volgens welke
+    geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
- 5) (Optional) You can make using phpMussel in CLI mode easier for yourself by
-    creating a batch file to automatically load php and phpMussel. To do this,
-    open a plain text editor such as Notepad or Notepad++, type the complete
-    path to the "php.exe" file in the directory of your php installation,
-    followed by a space, followed by the complete path to the "phpmussel.php"
-    file in the directory of your phpMussel installation, save the file with
-    a ".bat" extension somewhere that you'll find it easily, and double-click
-    on that file to run phpMussel in the future.
+ 5) (Facultatief) U kunt maken te phpMussel in CLI-modus makkelijker voor
+    jezelf door het creëren van een batch-bestand om automatisch te laden php
+    en phpMussel. Om dit te doen, open een platte tekst editor zoals Notepad of
+    Notepad++, typt u het volledige pad naar de "php.exe" bestand in de
+    bestandsmap van uw php-installatie, gevolgd door een spatie, gevolgd door
+    het volledige pad naar de "phpmussel.php" bestand in de bestandsmap van uw
+    phpMussel installatie, Sla het bestand op met een ".bat" extensie ergens
+    dat je het gemakkelijk vinden, en dubbelklik op het bestand om phpMussel
+    draaien in de toekomst.
 
- 6) At this point, you're done! However, you should probably test it out to
-    make sure it's working properly. To test phpMussel, run phpMussel and try
-    scanning the "_testfiles" directory provided with the package.
+ 6) Op dit punt, je bent klaar! Echter, je moet waarschijnlijk test het uit om
+    ervoor te zorgen dat het werken correct. Om phpMussel testen, draaien
+    phpMussel en probeer het scannen van de "_testfiles" bestandsmap die bij
+    het pakket.
 
                                      ~ ~ ~
 
 
  3A. HOE TE GEBRUIKEN (VOOR WEBSERVERS)
 
- phpMussel is intended to be a script which will function adequately right from
- the box with a bare minimum level of requirements on your part: Once it has
- been installed, basically, it simply should work.
+ phpMussel is bedoeld te zijn een script dat zal adequaat functioneren direct
+ uit de doos met een minimum niveau van de eisen van uw kant: Eenmaal
+ geïnstalleerd, in principe, het gewoon moeten werken.
 
- Scanning of file uploads is automated and enabled by default, so nothing is
- required on your behalf for this particular function.
+ Het scannen van het bestanden uploaden is geautomatiseerd en ingeschakeld door
+ standaard, zo niets is vereist op namens u voor deze specifieke functie.
 
- However, you are also able to instruct phpMussel to scan for files,
- directories or archives that you implicitly specify. To do this, firstly,
- you'll need to ensure that the appropriate configuration is set in the
- phpmussel.ini file (cleanup must be disabled), and once done, in a php file
- that is hooked to phpMussel, use the following function in your code:
+ Echter, je bent ook in staat om te instrueren phpMussel om te scannen naar
+ bestanden, bestandsmappen of archieven dat je impliciet aangeven. Om dit te
+ doen, ten eerste, moet u ervoor zorgen dat de juiste configuratie is ingesteld
+ in het phpmussel.ini configuratiebestand (cleanup moet worden uitgeschakeld),
+ en als je klaar bent, in een php-bestand dat wordt gehaakt op phpMussel,
+ gebruik de volgende functie in uw code:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
- Where:
- - $what_to_scan is either a string or an array, pointing to either a target
-   file, a target directory or an array of target files and/or target
-   directories.
+ Waar:
+ - $what_to_scan is ofwel een string of een array, wijzen ofwel naar een
+   doelgerichte bestand, een doelgerichte bestandsmap of een array op
+   doelgerichte bestanden en/of doelgerichte bestandsmappen.
  - $output_type is an integer, indicating the format in which the results of
    the scan are to be return as. A value of 0 instructs the function to return
    results as an integer (a returned result of -2 indicates that corrupt data
@@ -220,16 +227,16 @@
    any such array prior to input, resulting in a flattened string containing
    the results to be returned. This variable is optional, defaulting to 0.
 
- Examples:
+ Voorbeelden:
 
    $results=phpMussel("/user_name/public_html/my_file.html",1,1);
    echo $results;
 
-   Returns something like this (as a string):
+   Retourneren iets als dit (als een string):
     Wed, 16 Sep 2013 02:49:46 +0000 Started.
-    > Checking '/user_name/public_html/my_file.html':
-    -> No problems found.
-    Wed, 16 Sep 2013 02:49:47 +0000 Finished.
+    > Verifiëren '/user_name/public_html/my_file.html':
+    -> Geen problemen gevonden.
+    Wed, 16 Sep 2013 02:49:47 +0000 Afgewerkt.
 
  For a full break-down of what sort of signatures phpMussel uses during its
  scans and how it handles these signatures, refer to the Signature Format
@@ -742,7 +749,10 @@
     Required if OLE signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
+ /vault/pdf_clamav_regex.cvd (Signatures, Included)
+ /vault/pdf_clamav_regex.map (Signatures, Included)
  /vault/pdf_clamav_standard.cvd (Signatures, Included)
+ /vault/pdf_clamav_standard.map (Signatures, Included)
  /vault/pdf_custom_regex.cvd (Signatures, Included)
  /vault/pdf_custom_standard.cvd (Signatures, Included)
  /vault/pdf_mussel_regex.cvd (Signatures, Included)
@@ -1095,14 +1105,24 @@
    "filesize_response"
    - What to do with files that exceed the filesize limit (if one exists).
      0 - Whitelist, 1 - Blacklist [Default].
-   "filetype_whitelist" and "filetype_blacklist"
+   "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
    - If your system only allows specific types of files to be uploaded, or if
      your system explicitly denies certain types of files, specifying those
-     filetypes in whitelists and blacklists can increase the speed at which
-     scanning is performed by allowing the script to skip over certain
+     filetypes in whitelists, blacklists and greylists can increase the speed
+     at which scanning is performed by allowing the script to skip over certain
      filetypes. Format is CSV (comma separated values). If you want to scan
-     everything, rather than whitelist or blacklist, leave the variable(/s)
-     blank (doing so will disable whitelist/blacklist).
+     everything, rather than whitelist, blacklist or greylist, leave the
+     variable(/s) blank; Doing so will disable whitelist/blacklist/greylist.
+     Logical order of processing is:
+     - If the filetype is whitelisted, don't scan and don't block the file, and
+       don't check the file against the blacklist or the greylist.
+     - If the filetype is blacklisted, don't scan the file but block it anyway,
+       and don't check the file against the greylist.
+     - If the greylist is empty or if the greylist is not empty and the
+       filetype is greylisted, scan the file as per normal and determine
+       whether to block it based on the results of the scan, but if the
+       greylist is not empty and the filetype is not greylisted, treat the file
+       as blacklisted, therefore not scanning it but blocking it anyway.
    "check_archives"
    - Attempt to check the contents of archives?
      0 - No (do not check), 1 - Yes (check) [Default].
@@ -1378,7 +1398,7 @@
  voorafgaand aan het werken met phpMussel of moeten overwegen alternatieve
  opties om ofwel uw anti-virus software of phpMussel.
 
- Deze informatie is voor het laatst bijgewerkt 16 November 2014 en is op de
+ Deze informatie is voor het laatst bijgewerkt 25 December 2014 en is op de
  hoogte voor alle phpMussel publicaties van de twee meest recente mineur
  versies (v0.5-v0.6) op het moment van schrijven dit.
 
@@ -1437,5 +1457,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 5 December 2014 (2014.12.05).
+Laatste Bijgewerkt: 27 December 2014 (2014.12.27).
 EOF

@@ -337,7 +337,7 @@
    instansi-instansi seperti ketika Anda menemukan sebuah tanda tangan yang
    memproduksi sebuah angka positif yang salah selama mengupload file ke sistem
    Anda dan Anda tidak punya waktu untuk secara manual mengedit dan mengupload
-   ulang data greylist Anda.
+   ulang data daftar abu-abu Anda.
  - Menyediakan sebuah jalan untuk Anda mengizinkan seseorang lain dari Anda
    untuk mengatur kopi dari phpMussel tanpa keperluan implisit untuk memberi
    hak akses ke FTP.
@@ -479,11 +479,11 @@
  greylist
    Sandi diharuskan: script_password
    Keperluan lain: (tidak ada)
-   Parameter-parameter yang diharuskan: [Tanda tangan nama menjadi di-greylist]
+   Parameter-parameter yang diharuskan: [Tanda tangan nama menjadi bertanda abu-abu]
    Parameter-parameter opsional: (tidak ada)
    Contoh: ?pword=[script_password]&phpmussel=greylist&musselvar=[Tanda Tangan]
    ~
-   Apa yang dilakukannya: Menambah tanda tangan pada greylist.
+   Apa yang dilakukannya: Menambah tanda tangan pada daftar abu-abu.
    ~
  greylist_clear
    Sandi diharuskan: script_password
@@ -492,7 +492,7 @@
    Parameter-parameter opsional: (tidak ada)
    Contoh: ?pword=[script_password]&phpmussel=greylist_clear
    ~
-   Apa yang dilakukannya: Membersihkan keseluruhan greylist.
+   Apa yang dilakukannya: Membersihkan keseluruhan daftar abu-abu.
    ~
  greylist_show
    Sandi diharuskan: script_password
@@ -501,7 +501,7 @@
    Parameter-parameter opsional: (tidak ada)
    Contoh: ?pword=[script_password]&phpmussel=greylist_show
    ~
-   Apa yang dilakukannya: Mencetak isi dari greylist ke layar.
+   Apa yang dilakukannya: Mencetak isi dari daftar abu-abu ke layar.
    ~
 
                                      ~ ~ ~
@@ -700,9 +700,9 @@
     kembali pada saat mengupdate).
     ~
  /vault/greylist.csv (Tanda tangan, Diikutkan/Diciptakan)
-    CSV terdiri dari tanda tangan greylist mengindikasikan phpMussel tanda
-    tangan mana yang harus diabaikan (data automatis diciptakan kembali jika
-    dihapus).
+    CSV terdiri dari tanda tangan daftar abu-abu mengindikasikan phpMussel
+    tanda tangan mana yang harus diabaikan (data automatis diciptakan kembali
+    jika dihapus).
     ~
  /vault/hex_general_commands.csv (Tanda tangan, Diikutkan)
     CSV terencode Hex dari deteksi perintah umum secara opsional digunakan
@@ -782,7 +782,10 @@
     menghapus jika opsi dinonaktifkan (tapi data-data akan diciptkan kembali
     pada saat mengupdate).
     ~
+ /vault/pdf_clamav_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/pdf_clamav_regex.map (Tanda tangan, Diikutkan)
  /vault/pdf_clamav_standard.cvd (Tanda tangan, Diikutkan)
+ /vault/pdf_clamav_standard.map (Tanda tangan, Diikutkan)
  /vault/pdf_custom_regex.cvd (Tanda tangan, Diikutkan)
  /vault/pdf_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/pdf_mussel_regex.cvd (Tanda tangan, Diikutkan)
@@ -844,7 +847,7 @@
  /vault/whitelist_clamav.cvd (Tanda tangan, Diikutkan)
  /vault/whitelist_custom.cvd (Tanda tangan, Diikutkan)
  /vault/whitelist_mussel.cvd (Tanda tangan, Diikutkan)
-    File spesifik whitelist.
+    File spesifik daftar putih.
     diharuskan jika opsi Whitelist di phpmussel.ini diaktifkan dan jika ingin
     Anda spesifik file bertanda putih. Dapat menghapus jika opsi dinonaktifkan
     atau jika Anda tidak memerlukan spesifik file bertanda putih (tapi
@@ -1095,7 +1098,7 @@
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
-   - Aktifkan whitelist tertentu file? 0 = Tidak, 1 = Ya [Default].
+   - Aktifkan daftar putih tertentu file? 0 = Tidak, 1 = Ya [Default].
      "whitelist_clamav"
      "whitelist_custom"
      "whitelist_mussel"
@@ -1161,15 +1164,26 @@
    - Apa yang Anda lakukan dengan data-data yang melebihi batasan ukuran (jika
      ada).
      0 - Bertanda putih, 1 - Bertanda hitam [Default].
-   "filetype_whitelist" dan "filetype_blacklist"
-   - Jika sistem Anda hanya mengizinkan tipe data yang diupload atau jika
-     sistem Anda secara eksplisit menolak tipe data-data tertentu,
-     menspesifikasikan tipe data dalam bertanda putih dan bertanda hitam dapat
-     menaikkan kecepatan dari pemindaian dilakukan dengan mengizinkan skrip
-     untuk mengabaikan tipe data tertentu. Format adalah CSV (comma separated
-     values). Jika Anda ingin memindai semuanya, daripada whitelist atau
-     blacklist, tinggalkan variabel kosong (melakukannya akan menonaktifkan
-     whitelist/blacklist).
+   "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
+   - Jika sistem Anda hanya mengizinkan tipe data spesifik menjadi diupload,
+     atau jika sistem Anda secara eksplisit menolak tipe data-data tertentu,
+     menspesifikasikan tipe data dalam bertanda putih, bertanda hitam dan
+     bertanda abu-abu dapat menaikkan kecepatan dari pemindaian dilakukan
+     dengan mengizinkan skrip untuk mengabaikan tipe data tertentu. Format
+     adalah CSV (comma separated values). Jika Anda ingin memindai semuanya,
+     daripada daftar putih, daftar hitam atau daftar abu-abu, tinggalkan
+     variabel kosong; Melakukannya akan menonaktifkan dafter
+     putih/hitam/abu-abu. Urutan logis dari pengolahan:
+     - Jika tipe data bertanda putih, tidak memindai dan tidak memblokir data,
+       dan tidak memeriksa data terhadap daftar hitam atau daftar abu-abu.
+     - Jika tipe data bertanda hitem, tidak memindai data tapi memblokir
+       bagaimanapun, dan tidak memeriksa data terhadap daftar abu-abu.
+     - Jika daftar abu-abu yang kosong atau jika daftar abu-abu tidak kosong
+       dan tipe file bertanda abu-abu, memindai data seperti biasa dan
+       menentukan apakah untuk memblokir berdasarkan hasil memindai, tapi jika
+       daftar abu-abu tidak kosong dan tipe data tidak bertanda abu-abu,
+       memperlakukan seolah olah bertanda hitam, demikian tidak memindai tapi
+       memblokir itu bagaimanapun.
    "check_archives"
    - Berusaha mencek isi file terkompress?
      0 - Tidak (Tidak mencek), 1 - Ya (Mencek) [Default].
@@ -1180,11 +1194,11 @@
        sesuatunya.
      * Juga diingatkan bahwa mencek data terkompres tidak rekursif untuk ZIP.
    "filesize_archives"
-   - Memperlalaikan ukuran blacklisting/whitelisting dari isi data terkompress?
-     0 - Tidak (Greylist semua), 1 - Ya [Default].
+   - Memperlalaikan ukuran daftar hitam/putih dari isi data terkompress?
+     0 - Tidak (Bertanda abu-abu semua), 1 - Ya [Default].
    "filetype_archives"
-   - Memperlalaikan jenis file blacklisting/whitelisting dari isi data
-     terkompress? 0 - No (Greylist semua) [Default], 1 - Ya.
+   - Memperlalaikan jenis data daftar hitam/putih dari isi data terkompress?
+     0 - No (Bertanda abu-abu semua) [Default], 1 - Ya.
    "max_recursion"
    - Dalam rekursi dari data terkompres. Default = 10.
  "attack_specific" (Kategori)
@@ -1457,7 +1471,7 @@
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 16 November 2014 dan cocok untuk semua rilis phpMussel
+ Informasi ini diupdate 25 Desember 2014 dan cocok untuk semua rilis phpMussel
  dari dua versi minor terbaru versi (v0.5-v0.6) pada waktu saya menuliskan ini.
 
  Ad-Aware                Tidak masalah
@@ -1515,5 +1529,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 5 Desember 2014 (2014.12.05).
+Terakhir Diperbarui: 27 Desember 2014 (2014.12.27).
 EOF

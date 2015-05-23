@@ -791,7 +791,10 @@
     enlever si l'option est désactivée (mais les fichiers seront recréés sur
     réactualiser).
     ~
+ /vault/pdf_clamav_regex.cvd (Signatures, Inclus)
+ /vault/pdf_clamav_regex.map (Signatures, Inclus)
  /vault/pdf_clamav_standard.cvd (Signatures, Inclus)
+ /vault/pdf_clamav_standard.map (Signatures, Inclus)
  /vault/pdf_custom_regex.cvd (Signatures, Inclus)
  /vault/pdf_custom_standard.cvd (Signatures, Inclus)
  /vault/pdf_mussel_regex.cvd (Signatures, Inclus)
@@ -1178,15 +1181,28 @@
    "filesize_response"
    - Que faire avec des fichiers qui dépassent la taille de fichier limite (si
      existant). 0 - Énumérer Blanche, 1 - Énumérer Noire [Défaut].
-   "filetype_whitelist" et "filetype_blacklist"
+   "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
    - Si votre système seulement permettre particuliers types de fichiers à
      téléchargé, ou si votre système nie explicitement particuliers types de
-     fichiers, spécifiant les types de fichiers dans listes blanches et listes
-     noires peut augmenter la vitesse à laquelle l'analyse est effectuée en
-     permettant le script à sauter particuliers types de fichiers. Format est
-     CSV (virgule séparées valeurs). Si vous souhaitez analyse tout, plutôt que
-     de liste blanche ou liste noire, laisser les variable(/s) blanc (il va
-     désactiver liste blanche/noire).
+     fichiers, spécifiant les types de fichiers dans listes blanches, listes
+     noires et listes gris peut augmenter la vitesse à laquelle l'analyse est
+     effectuée en permettant le script à sauter particuliers types de fichiers.
+     Format est CSV (virgule séparées valeurs). Si vous souhaitez analyse tout,
+     plutôt que de liste blanche, liste noire ou liste gris, laisser les
+     variable(/s) blanc; Il va désactiver liste blanche/noire/gris. L'ordre
+     logique de l'application est:
+     - Si le type de fichier est listé blanche, n'analyser pas ni bloquer pas
+       le fichier, et ne vérifie pas le fichier contre la liste noire ou la
+       liste grise.
+     - Si le type de fichier est listé noire, n'analyser pas le fichier mais
+       bloquer de toute façon, et ne vérifie pas le fichier contre la liste
+       grise.
+     - Si la liste grise est vide ou si la liste grise n'est vide pas et le
+       type de fichier est listé grise, analyser le fichier comme d'habitude et
+       déterminer si de bloquer basés des résultats de l'analyse, mais si la
+       liste grise n'est vide pas et le type de fichier n'est listé grise pas,
+       traiter le fichier comme listé noire, donc n'analyse pas mais bloque de
+       toute façon.
    "check_archives"
    - Essayez vérifier le contenu des archives?
      0 - Non (ne pas vérifier), 1 - Oui (vérifier) [Défaut].
@@ -1352,7 +1368,7 @@
    Toutes les blanche liste signatures suivez le format:
     HASH:FILESIZE:TYPE
    Où HASH est le MD5 hash d'un ensemble du fichier, FILESIZE est la totale
-   taille du fichier et TYPE est le type de signatures le blanche listé fichier
+   taille du fichier et TYPE est le type de signatures le listé blanche fichier
    est d'être immunitaire contre.
 
  = COMPLEXES ÉTENDUES SIGNATURES =
@@ -1479,7 +1495,7 @@
  désactivation avant à travailler avec phpMussel ou devrait envisager d'autres
  options soit votre logiciel anti-virus ou phpMussel.
 
- Cette information a été réactualisé le 16 Novembre 2014 et est courant pour
+ Cette information a été réactualisé le 25 Décembre 2014 et est courant pour
  toutes les phpMussel parutions des deux plus récentes mineures versions
  (v0.5-v0.6) au moment de la rédaction cette.
 
@@ -1538,5 +1554,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 5 Décembre 2014 (2014.12.05).
+Dernière Réactualisé: 27 Décembre 2014 (2014.12.27).
 EOF

@@ -202,38 +202,40 @@
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
  Dónde:
- - $what_to_scan es una cadena o una array, apuntando a un destino archivo, un
+  - $what_to_scan es una cadena o una array, apuntando a un destino archivo, un
    destino directorio o un array de destinos archivos y/o destinos directorios.
  - $output_type es un entero, indicando el formato en el que los resultados son
-   para estar de regreso como. A value of 0 instructs the function to return
-   results as an integer (a returned result of -2 indicates that corrupt data
-   was detected during the scan and thus the scan failed to complete,
-   -1 indicates that extensions or addons required by php to execute the scan
-   were missing and thus the scan failed to complete, 0 indicates that the
-   scan target does not exist and thus there was nothing to scan,
-   1 indicates that the target was successfully scanned and no problems were
-   detected, and 2 indicates that the target was successfully scanned and
-   problems were detected). A value of 1 instructs the function to return
-   results as human readable text. A value of 2 instructs the function both
-   to return the results as human readable text and to export the results to
-   a global variable. This variable is optional, defaulting to 0.
- - $output_flatness is an integer, indicating whether to allow results to be
-   returned as an array or not. Normally, if the scan target contained multiple
-   items (such as if a directory or array) the results will be returned in an
-   array (default value of 0). A value of 1 instructs the function to implode
-   any such array prior to input, resulting in a flattened string containing
-   the results to be returned. This variable is optional, defaulting to 0.
+   para estar de regreso como. Un valor de 0 indica a la función para devolver
+   resultados como un entero (un resultado devuelto de -2 indica que se ha
+   corruptos datos detectados durante el escanear y por lo tanto el escanear no
+   pudo completar, -1 indica que las extensiones o complementos requeridos por
+   php para ejecutar el escaneo faltaban y por lo tanto el escanear no pudo
+   completar, 0 indica que la escanear objetivo no existe y por lo tanto no
+   había nada para escanear, 1 indica que el objetivo fue escaneado con éxito
+   y no se detectaron problemas, y 2 indica que el objetivo fue escaneado con
+   éxito y se detectaron problemas). Un valor de 1 instruye la función a
+   devuelva resultados como texto legible por humanos. Un valor de 2 instruye
+   la función ambos a devuelva resultados como texto legible por humanos y a
+   exportar los resultados a una global variable. Esta variable es opcional,
+   predefinido como 0.
+ - $output_flatness es un entero, indicando si se permite a los resultados que
+   se devuelven como un array o no. Normalmente, si la escanear objetivo
+   contenida varios artículos (por ejemplo, si un directorio o array) los
+   resultados se devuelven en un array (valor predefinido de 0). Un valor de 1
+   instruye la función implosionar cualquier array antes de la entrada,
+   resultando en una aplanada cadena que contiene los resultados a devolver.
+   Esta variable es opcional, predefinido como 0.
 
  Ejemplos:
 
    $results=phpMussel("/user_name/public_html/my_file.html",1,1);
    echo $results;
 
-   Returns something like this (as a string):
-    Wed, 16 Sep 2013 02:49:46 +0000 Started.
-    > Checking '/user_name/public_html/my_file.html':
-    -> No problems found.
-    Wed, 16 Sep 2013 02:49:47 +0000 Finished.
+   Devuelve algo como esto (como una cadena):
+    Wed, 16 Sep 2013 02:49:46 +0000 Iniciado.
+    > Verificando '/user_name/public_html/my_file.html':
+    -> No problemas encontrado.
+    Wed, 16 Sep 2013 02:49:47 +0000 Terminado.
 
  For a full break-down of what sort of signatures phpMussel uses during its
  scans and how it handles these signatures, refer to the Signature Format
@@ -745,7 +747,10 @@
     Required if OLE signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
+ /vault/pdf_clamav_regex.cvd (Firmas, Incluidos)
+ /vault/pdf_clamav_regex.map (Firmas, Incluidos)
  /vault/pdf_clamav_standard.cvd (Firmas, Incluidos)
+ /vault/pdf_clamav_standard.map (Firmas, Incluidos)
  /vault/pdf_custom_regex.cvd (Firmas, Incluidos)
  /vault/pdf_custom_standard.cvd (Firmas, Incluidos)
  /vault/pdf_mussel_regex.cvd (Firmas, Incluidos)
@@ -1098,14 +1103,24 @@
    "filesize_response"
    - What to do with files that exceed the filesize limit (if one exists).
      0 - Whitelist, 1 - Blacklist [Default].
-   "filetype_whitelist" and "filetype_blacklist"
+   "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
    - If your system only allows specific types of files to be uploaded, or if
      your system explicitly denies certain types of files, specifying those
-     filetypes in whitelists and blacklists can increase the speed at which
-     scanning is performed by allowing the script to skip over certain
+     filetypes in whitelists, blacklists and greylists can increase the speed
+     at which scanning is performed by allowing the script to skip over certain
      filetypes. Format is CSV (comma separated values). If you want to scan
-     everything, rather than whitelist or blacklist, leave the variable(/s)
-     blank (doing so will disable whitelist/blacklist).
+     everything, rather than whitelist, blacklist or greylist, leave the
+     variable(/s) blank; Doing so will disable whitelist/blacklist/greylist.
+     Logical order of processing is:
+     - If the filetype is whitelisted, don't scan and don't block the file, and
+       don't check the file against the blacklist or the greylist.
+     - If the filetype is blacklisted, don't scan the file but block it anyway,
+       and don't check the file against the greylist.
+     - If the greylist is empty or if the greylist is not empty and the
+       filetype is greylisted, scan the file as per normal and determine
+       whether to block it based on the results of the scan, but if the
+       greylist is not empty and the filetype is not greylisted, treat the file
+       as blacklisted, therefore not scanning it but blocking it anyway.
    "check_archives"
    - Attempt to check the contents of archives?
      0 - No (do not check), 1 - Yes (check) [Default].
@@ -1369,20 +1384,20 @@
 
  ANTI-VIRUS SOFTWARE COMPATIBILIDAD
 
- For the most part, phpMussel should be fairly compatible with most other virus
- scanning software. However, conflictions have been reported by a number of
- users in the past. This information below is from VirusTotal.com, and it
- describes a number of false-positives reported by various anti-virus programs
- against phpMussel. Although this information isn't an absolute guarantee of
- whether or not you will encounter compatibility problems between phpMussel and
- your anti-virus software, if your anti-virus software is noted as flagging
- against phpMussel, you should either consider disabling it prior to working
- with phpMussel or should consider alternative options to either your
- anti-virus software or phpMussel.
+ En su mayor parte, phpMussel debe ser bastante compatible con la mayoría de
+ anti-virus software. Aunque, conflictividades han sido reportados por un
+ número de usuarios en el pasado. Esta información de abajo es de
+ VirusTotal.com, y describe un número de falsos positivos reportados por
+ diversos anti-virus programas contra phpMussel. Aunque esta información no es
+ una garantía absoluta de si o no se encontrará con compatibilidad problemas
+ entre phpMussel y su anti-virus software, se su anti-virus software se observa
+ como marcar contra phpMussel, usted debe considerar desactivarlo antes de
+ trabajar con phpMussel o debería considerar opciones alternativas a de su
+ anti-virus software o phpMussel.
 
- Esta información ha sido actualizado 16 de Noviembre 2014 y es a hoy para
- todas las phpMussel versiones de la dos más recientes menores versiones
- (v0.5-v0.6) al momento de escribir esto.
+ Esta información ha sido actualizado 25 Diciembre 2014 y es a hoy para todas
+ las phpMussel versiones de la dos más recientes menores versiones (v0.5-v0.6)
+ al momento de escribir esto.
 
  Ad-Aware                No hay conocidos problemas
  Agnitum                 No hay conocidos problemas
@@ -1439,5 +1454,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 5 Diciembre 2014 (2014.12.05).
+Última Actualización: 27 Diciembre 2014 (2014.12.27).
 EOF

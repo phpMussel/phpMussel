@@ -737,7 +737,10 @@
     Required if OLE signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
+ /vault/pdf_clamav_regex.cvd (Signatures, Included)
+ /vault/pdf_clamav_regex.map (Signatures, Included)
  /vault/pdf_clamav_standard.cvd (Signatures, Included)
+ /vault/pdf_clamav_standard.map (Signatures, Included)
  /vault/pdf_custom_regex.cvd (Signatures, Included)
  /vault/pdf_custom_standard.cvd (Signatures, Included)
  /vault/pdf_mussel_regex.cvd (Signatures, Included)
@@ -1090,14 +1093,24 @@
    "filesize_response"
    - What to do with files that exceed the filesize limit (if one exists).
      0 - Whitelist, 1 - Blacklist [Default].
-   "filetype_whitelist" and "filetype_blacklist"
+   "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
    - If your system only allows specific types of files to be uploaded, or if
      your system explicitly denies certain types of files, specifying those
-     filetypes in whitelists and blacklists can increase the speed at which
-     scanning is performed by allowing the script to skip over certain
+     filetypes in whitelists, blacklists and greylists can increase the speed
+     at which scanning is performed by allowing the script to skip over certain
      filetypes. Format is CSV (comma separated values). If you want to scan
-     everything, rather than whitelist or blacklist, leave the variable(/s)
-     blank (doing so will disable whitelist/blacklist).
+     everything, rather than whitelist, blacklist or greylist, leave the
+     variable(/s) blank; Doing so will disable whitelist/blacklist/greylist.
+     Logical order of processing is:
+     - If the filetype is whitelisted, don't scan and don't block the file, and
+       don't check the file against the blacklist or the greylist.
+     - If the filetype is blacklisted, don't scan the file but block it anyway,
+       and don't check the file against the greylist.
+     - If the greylist is empty or if the greylist is not empty and the
+       filetype is greylisted, scan the file as per normal and determine
+       whether to block it based on the results of the scan, but if the
+       greylist is not empty and the filetype is not greylisted, treat the file
+       as blacklisted, therefore not scanning it but blocking it anyway.
    "check_archives"
    - Attempt to check the contents of archives?
      0 - No (do not check), 1 - Yes (check) [Default].
@@ -1372,7 +1385,7 @@
  with phpMussel or should consider alternative options to either your
  anti-virus software or phpMussel.
 
- This information was last updated 16th November 2014 and is current for all
+ This information was last updated 25th December 2014 and is current for all
  phpMussel releases of the two most recent minor versions (v0.5-v0.6) at the
  time of writing this.
 
@@ -1431,5 +1444,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 5th December 2014 (2014.12.05).
+Last Updated: 27th December 2014 (2014.12.27).
 EOF
