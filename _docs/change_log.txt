@@ -1,6 +1,6 @@
 phpMussel change_log.txt
 
-== CURRENT GOALS AND FUTURE VERSIONING GUIDELINES (Latest: v0.5) ==
+== CURRENT GOALS AND FUTURE VERSIONING GUIDELINES ==
 Next major release (v1.0):
 - All planned signature implementations completed, functioning correctly during
   a live test, without any known notable problems.
@@ -41,12 +41,47 @@ Next and/or subsequent minor releases (v0.X):
 Next and/or subsequent sub-minor releases (v0.Xy):
 - Any other changes to the core code with latest signatures included.
 Next and/or subsequent below sub-minor releases and/or re-releases (v0.Xy.Z):
-- Any releases containing no changes to the core code (such as, releases
-  containing only either documentation or signature updates), or any releases
-  containing changes to the core code without any included signature updates.
-Last Edited: 25th September 2014
+- Signature updates (with no code changes) and hot-fixes only.
+Last Edited: 5th October 2014
 
-=== Version 0.5 (Previous: 0.4d) ===
+=== Version 0.5 / Release 0.5.1 (Previous Release: 0.5) ===
+SUMMARY:
+Non-ClamAV signatures update only (55+19429+5.1); No script changes.
+
+For reasons that I do not know, it appears that the mirror for the ClamAV
+database from which I usually obtain the daily signature updates is currently
+hosting an outdated copy of the daily signatures from a few months back, which
+is older than the signatures already implemented to phpMussel. Hopefully this
+problem will be resolved prior to my intended date for the next phpMussel after
+this one, but for this release, at least, I'm not going to make any changes to
+phpMussel's ClamAV signature files. That said, although there hasn't been any
+changes to the core code for phpMussel nor to the ClamAV signature files since
+the previous release, I have written some new signatures based on my own
+research that may be of extreme interest to a select few of phpMussel's users,
+due to what these signatures are intended to protect against, which I think
+warrants the existence of this current release. These new signatures primarily
+concern PHP-specific shell hacks, backdoors and several website defacement
+tools and related indicators.
+
+This release should be considered HIGH PRIORITY if:
+- You are allowing the upload of script-based files such as PHP and HTML files,
+  and/or if your phpmussel.ini does not explicitly deny them (this includes if
+  you have a website that makes use of some sort of web-based self-update
+  functionality or similar).
+- You do not have any form of file upload sanitization in place or if phpMussel
+  is the only defense against dangerous file uploads that you are using.
+- Any chameleon attack detection directives are disabled at all.
+
+Otherwise, this release should be considered MEDIUM PRIORITY.
+
+This release is available both as a FULL version (containing all phpMussel
+files, as per the norm) and as a CHANGED FILES version (containing only those
+files modified since the previous release).
+
+Maikuolan,
+5th October 2014.
+
+=== Version/Release 0.5 (Previous Release: 0.4d) ===
 SUMMARY:
 Updated to the latest signatures set (55+19429+5).
 Minor release (medium priority).
@@ -109,7 +144,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 25th September 2014.
 
-=== Version 0.4d (Previous: 0.4c; Next: 0.5) ===
+=== Version/Release 0.4d (Previous Release: 0.4c; Next: 0.5) ===
 SUMMARY:
 Updated to the latest signatures set (55+19354+4d).
 Sub-minor release (medium priority).
@@ -168,7 +203,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 11th September 2014.
 
-=== Version 0.4c (Previous: 0.4b; Next: 0.4d) ===
+=== Version/Release 0.4c (Previous Release: 0.4b; Next: 0.4d) ===
 SUMMARY:
 Updated to the latest signatures set (55+19312+4c).
 Sub-minor release (medium priority).
@@ -198,7 +233,7 @@ NEW CHANGES:
 Maikuolan,
 28th August 2014.
 
-=== Version 0.4b (Previous: 0.4a; Next: 0.4c) ===
+=== Version/Release 0.4b (Previous Release: 0.4a; Next: 0.4c) ===
 SUMMARY:
 Updated to the latest signatures set (55+19279+4b).
 Sub-minor release (medium priority).
@@ -226,7 +261,7 @@ NEW CHANGES:
   phpMussel yet, but those that do (and thus, which should correctly match
   during scans by phpMussel without false-positives) have been included
   with this release (which works out to roughly ~150 signatures of the total
-  ~3K±1K or so normalised ASCII signatures available from ClamAV).
+  ~3K?K or so normalised ASCII signatures available from ClamAV).
   Part of the reason that I'm including it with this release, as opposed to
   waiting until I've got it 100% implemented in the way that I'm aiming for,
   is that there are some critical common CMS vulnerabilities that can be
@@ -241,7 +276,7 @@ NEW CHANGES:
 Maikuolan,
 13th August 2014.
 
-=== Version 0.4a (Previous: 0.4; Next: 0.4b) ===
+=== Version/Release 0.4a (Previous Release: 0.4; Next: 0.4b) ===
 SUMMARY:
 Updated to the latest signatures set (55+19260+4a).
 Sub-minor release (medium priority).
@@ -258,7 +293,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 4th August 2014.
 
-=== Version 0.4 (Previous: 0.3g.1; Next: 0.4a) ===
+=== Version/Release 0.4 (Previous Release: 0.3g.1; Next: 0.4a) ===
 SUMMARY:
 Updated to the latest signatures set (55+19164+4).
 Minor release (medium priority).
@@ -324,7 +359,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 8th July 2014.
 
-=== Version 0.3g.1 (Previous: 0.3g; Next: 0.4) ===
+=== Version/Release 0.3g.1 (Previous Release: 0.3g; Next: 0.4) ===
 SUMMARY:
 Updated to the latest signatures set (55+19131+3g.1).
 Files modified, but no changes to the actual script or code (medium priority).
@@ -355,7 +390,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 26th June 2014.
 
-=== Version 0.3g (Previous: 0.3f.2; Next: 0.3g.1) ===
+=== Version/Release 0.3g (Previous Release: 0.3f.2; Next: 0.3g.1) ===
 SUMMARY:
 Updated to the latest signatures set (55+19079+3g).
 Sub-minor release (medium priority).
@@ -424,7 +459,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 11th June 2014.
 
-=== Version 0.3f.2 (Previous: 0.3f.1; Next: 0.3g) ===
+=== Version/Release 0.3f.2 (Previous Release: 0.3f.1; Next: 0.3g) ===
 SUMMARY:
 Hot-fix (low priority).
 
@@ -436,7 +471,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 27th May 2014.
 
-=== Version 0.3f.1 (Previous: 0.3f; Next: 0.3f.2) ===
+=== Version/Release 0.3f.1 (Previous Release: 0.3f; Next: 0.3f.2) ===
 SUMMARY:
 Hot-fix (low priority).
 
@@ -448,7 +483,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 24th May 2014.
 
-=== Version 0.3f (Previous: 0.3e; Next: 0.3f.1) ===
+=== Version/Release 0.3f (Previous Release: 0.3e; Next: 0.3f.1) ===
 SUMMARY:
 Updated to the latest signatures set (55+19012+3f).
 Sub-minor release (medium priority).
@@ -491,7 +526,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 22nd May 2014.
 
-=== Version 0.3e (Previous: 0.3d; Next: 0.3f) ===
+=== Version/Release 0.3e (Previous Release: 0.3d; Next: 0.3f) ===
 SUMMARY:
 Updated to the latest signatures set (55+18487+3e).
 Sub-minor release (medium priority).
@@ -517,7 +552,7 @@ NEW CHANGES:
 Maikuolan,
 19th February 2014.
 
-=== Version 0.3d (Previous: 0.3c; Next: 0.3e) ===
+=== Version/Release 0.3d (Previous Release: 0.3c; Next: 0.3e) ===
 SUMMARY:
 Updated to the latest signatures set (55+18473+3d).
 Sub-minor release (medium priority).
@@ -541,7 +576,7 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 16th February 2014.
 
-=== Version 0.3c (Previous: 0.3b; Next: 0.3d) ===
+=== Version/Release 0.3c (Previous Release: 0.3b; Next: 0.3d) ===
 SUMMARY:
 Updated to the latest signatures set (55+18240+3c).
 Sub-minor release (medium priority).
@@ -557,7 +592,7 @@ NEW CHANGES:
 Maikuolan,
 17th December 2013.
 
-=== Version 0.3b (Previous: 0.3a; Next: 0.3c) ===
+=== Version/Release 0.3b (Previous Release: 0.3a; Next: 0.3c) ===
 SUMMARY:
 Updated to the latest signatures set (55+18175+3b).
 Sub-minor release (medium priority).
@@ -599,7 +634,7 @@ PROBLEMS/BUGS FOUND:
 Maikuolan,
 30th November 2013.
 
-=== Version 0.3a (Previous: 0.3b; Next: 0.3) ===
+=== Version/Release 0.3a (Previous Release: 0.3b; Next: 0.3) ===
 SUMMARY:
 Updated to the latest signatures set (55+18088+3a).
 Sub-minor release; Previous versions not compatible with the current version of

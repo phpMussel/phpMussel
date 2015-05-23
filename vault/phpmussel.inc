@@ -6987,7 +6987,6 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 		if(!$is_img)if(substr($hh,0,8)==="25504446")$is_img=true;
 		if(!$is_img)if(substr($str,0,2)==="BM"||substr($str,0,8)==="gimp xcf"||substr($str,0,4)==="8BPS"||substr($str,0,4)==="WEBP")$is_img=true;
 		if(!$is_img)if(substr($hh,0,16)==="0000000c6a502020")$is_img=true;
-		unset($hh);
 		if(!$is_img)
 			{
 			if($fm)$GLOBALS['xsk'].=md5($in).":".$fS.":".$ofnenc.$GLOBALS['linebreak'];
@@ -6995,6 +6994,7 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 			if($GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
 			return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofnenc."' (FN: ".$fnCRC."; FD: ".$fdCRC."):".$GLOBALS['linebreak']."-".$lnap.$GLOBALS['MusselConfig']['lang']['only_allow_images'].".".$GLOBALS['linebreak'];
 			}
+		unset($hh,$is_img);
 		}
 	$z=phpMusselD($in,$n,$dpt,$ofn);
 	if($z!==1)

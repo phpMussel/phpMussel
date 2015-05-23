@@ -14,3 +14,4 @@ phpMussel-Python.Backdoor.Azazel-00:2e6a6f696e286c69737428275c5c78272b686578286f
 phpMussel-Python.Backdoor.Hackersh-00:23212f7573722f62696e2f707974686f6e(..){0,2000}(48|68)61636b65727368
 phpMussel-Python.Backdoor.shell_exec:23212f7573722f62696e2f707974686f6e(..){0,2000}(53|73)(48|68)(45|65)(4c|6c){2}5f(45|65)(58|78)(65|45)(43|63)
 phpMussel-X.Backdoor.shell_exec:35(48|68)(45|65)(4c|6c|37){2}(09|0a|0d|20|22|27|a0|5f)|(53|73)(48|68)33(4c|6c|37){2}(09|0a|0d|20|22|27|a0|5f)|35(48|68)33(4c|6c|37){2}(09|0a|0d|20|22|27|2d|a0|5f)
+phpMussel-Defacement.Generic-00:(0d|0a|20|3e)(48|68)61636b6564(20)?(42|62)79
