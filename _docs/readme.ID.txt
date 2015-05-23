@@ -1471,7 +1471,7 @@
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 25 Desember 2014 dan cocok untuk semua rilis phpMussel
+ Informasi ini diupdate 4 Februari 2015 dan cocok untuk semua rilis phpMussel
  dari dua versi minor terbaru versi (v0.5-v0.6) pada waktu saya menuliskan ini.
 
  Ad-Aware                Tidak masalah
@@ -1497,15 +1497,15 @@
  F-Secure                Tidak masalah
  Fortinet                Tidak masalah
  GData                   Tidak masalah
- Ikarus               !  Melaporkan "Trojan.JS.Agent"
+ Ikarus                  Tidak masalah
  Jiangmin                Tidak masalah
  K7AntiVirus             Tidak masalah
  K7GW                    Tidak masalah
  Kaspersky               Tidak masalah
  Kingsoft                Tidak masalah
  Malwarebytes            Tidak masalah
- McAfee                  Tidak masalah
- McAfee-GW-Edition       Tidak masalah
+ McAfee               !  Melaporkan "New Script.c"
+ McAfee-GW-Edition    !  Melaporkan "New Script.c"
  Microsoft               Tidak masalah
  MicroWorld-eScan        Tidak masalah
  NANO-Antivirus          Tidak masalah
@@ -1520,7 +1520,7 @@
  TheHacker               Tidak masalah
  TotalDefense            Tidak masalah
  TrendMicro              Tidak masalah
- TrendMicro-HouseCall !  Melaporkan "Suspici.450F5936"
+ TrendMicro-HouseCall    Tidak masalah
  VBA32                   Tidak masalah
  VIPRE                   Tidak masalah
  ViRobot                 Tidak masalah
@@ -1529,5 +1529,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 27 Desember 2014 (2014.12.27).
+Terakhir Diperbarui: 4 Februari 2015 (2015.02.04).
 EOF

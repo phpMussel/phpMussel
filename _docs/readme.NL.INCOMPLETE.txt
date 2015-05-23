@@ -218,8 +218,9 @@
    geen problemen waren gedetecteerd, en 2 geeft aan dat de doelwit met succes
    werd gescand en problemen waren gedetecteerd). Een waarde van 1 instrueert
    de functie om de resultaten als mensen leesbare tekst. Een waarde van 2 beide
-   instrueert de functie om de resultaten als mensen leesbare tekst and to export the results to
-   a global variable. This variable is optional, defaulting to 0.
+   instrueert de functie om de resultaten als mensen leesbare tekst en om de
+   resultaten te exporteren een globale variabele. Deze variabele is optioneel,
+   en is 0 door standaard.
  - $output_flatness is an integer, indicating whether to allow results to be
    returned as an array or not. Normally, if the scan target contained multiple
    items (such as if a directory or array) the results will be returned in an
@@ -1398,7 +1399,7 @@
  voorafgaand aan het werken met phpMussel of moeten overwegen alternatieve
  opties om ofwel uw anti-virus software of phpMussel.
 
- Deze informatie is voor het laatst bijgewerkt 25 December 2014 en is op de
+ Deze informatie is voor het laatst bijgewerkt 4 Februari 2015 en is op de
  hoogte voor alle phpMussel publicaties van de twee meest recente mineur
  versies (v0.5-v0.6) op het moment van schrijven dit.
 
@@ -1425,15 +1426,15 @@
  F-Secure                Geen bekend problemen
  Fortinet                Geen bekend problemen
  GData                   Geen bekend problemen
- Ikarus               !  Berichten "Trojan.JS.Agent"
+ Ikarus                  Geen bekend problemen
  Jiangmin                Geen bekend problemen
  K7AntiVirus             Geen bekend problemen
  K7GW                    Geen bekend problemen
  Kaspersky               Geen bekend problemen
  Kingsoft                Geen bekend problemen
  Malwarebytes            Geen bekend problemen
- McAfee                  Geen bekend problemen
- McAfee-GW-Edition       Geen bekend problemen
+ McAfee               !  Berichten "New Script.c"
+ McAfee-GW-Edition    !  Berichten "New Script.c"
  Microsoft               Geen bekend problemen
  MicroWorld-eScan        Geen bekend problemen
  NANO-Antivirus          Geen bekend problemen
@@ -1448,7 +1449,7 @@
  TheHacker               Geen bekend problemen
  TotalDefense            Geen bekend problemen
  TrendMicro              Geen bekend problemen
- TrendMicro-HouseCall !  Berichten "Suspici.450F5936"
+ TrendMicro-HouseCall    Geen bekend problemen
  VBA32                   Geen bekend problemen
  VIPRE                   Geen bekend problemen
  ViRobot                 Geen bekend problemen
@@ -1457,5 +1458,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 27 December 2014 (2014.12.27).
+Laatste Bijgewerkt: 4 Februari 2015 (2015.02.04).
 EOF

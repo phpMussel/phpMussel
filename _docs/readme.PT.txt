@@ -1473,7 +1473,7 @@
  trabalhar com phpMussel ou deve considerar alternativas opções para o seu
  anti-vírus software ou phpMussel.
 
- Esta informação foi atualizada dia 25 Dezembro 2014 e é corrente para todas
+ Esta informação foi atualizada dia 4 Fevereiro 2015 e é corrente para todas
  phpMussel lançamentos das duas mais recentes menores versões (v0.5-v0.6) no
  momento de escrever este.
 
@@ -1500,15 +1500,15 @@
  F-Secure                Sem conhecidos problemas
  Fortinet                Sem conhecidos problemas
  GData                   Sem conhecidos problemas
- Ikarus               !  Reportar "Trojan.JS.Agent"
+ Ikarus                  Sem conhecidos problemas
  Jiangmin                Sem conhecidos problemas
  K7AntiVirus             Sem conhecidos problemas
  K7GW                    Sem conhecidos problemas
  Kaspersky               Sem conhecidos problemas
  Kingsoft                Sem conhecidos problemas
  Malwarebytes            Sem conhecidos problemas
- McAfee                  Sem conhecidos problemas
- McAfee-GW-Edition       Sem conhecidos problemas
+ McAfee               !  Reportar "New Script.c"
+ McAfee-GW-Edition    !  Reportar "New Script.c"
  Microsoft               Sem conhecidos problemas
  MicroWorld-eScan        Sem conhecidos problemas
  NANO-Antivirus          Sem conhecidos problemas
@@ -1523,7 +1523,7 @@
  TheHacker               Sem conhecidos problemas
  TotalDefense            Sem conhecidos problemas
  TrendMicro              Sem conhecidos problemas
- TrendMicro-HouseCall !  Reportar "Suspici.450F5936"
+ TrendMicro-HouseCall    Sem conhecidos problemas
  VBA32                   Sem conhecidos problemas
  VIPRE                   Sem conhecidos problemas
  ViRobot                 Sem conhecidos problemas
@@ -1532,5 +1532,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 27 Dezembro 2014 (2014.12.27).
+Última Atualização: 4 Fevereiro 2015 (2015.02.04).
 EOF

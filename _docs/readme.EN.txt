@@ -1385,7 +1385,7 @@
  with phpMussel or should consider alternative options to either your
  anti-virus software or phpMussel.
 
- This information was last updated 25th December 2014 and is current for all
+ This information was last updated 4th February 2014 and is current for all
  phpMussel releases of the two most recent minor versions (v0.5-v0.6) at the
  time of writing this.
 
@@ -1412,15 +1412,15 @@
  F-Secure                No known problems
  Fortinet                No known problems
  GData                   No known problems
- Ikarus               !  Reports "Trojan.JS.Agent"
+ Ikarus                  No known problems
  Jiangmin                No known problems
  K7AntiVirus             No known problems
  K7GW                    No known problems
  Kaspersky               No known problems
  Kingsoft                No known problems
  Malwarebytes            No known problems
- McAfee                  No known problems
- McAfee-GW-Edition       No known problems
+ McAfee               !  Reports "New Script.c"
+ McAfee-GW-Edition    !  Reports "New Script.c"
  Microsoft               No known problems
  MicroWorld-eScan        No known problems
  NANO-Antivirus          No known problems
@@ -1435,7 +1435,7 @@
  TheHacker               No known problems
  TotalDefense            No known problems
  TrendMicro              No known problems
- TrendMicro-HouseCall !  Reports "Suspici.450F5936"
+ TrendMicro-HouseCall    No known problems
  VBA32                   No known problems
  VIPRE                   No known problems
  ViRobot                 No known problems
@@ -1444,5 +1444,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 27th December 2014 (2014.12.27).
+Last Updated: 4th February 2015 (2015.02.04).
 EOF

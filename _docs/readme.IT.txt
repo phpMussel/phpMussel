@@ -1474,7 +1474,7 @@
  dovrebbe considerare l'alternative opzioni per sia il vostro anti-virus
  software o phpMussel.
 
- Questa informazione è stato lo scorso aggiornato 25 Dicembre 2014 ed è in
+ Questa informazione è stato lo scorso aggiornato 4 Febbraio 2015 ed è in
  corso per tutte le phpMussel rilasci delle due più recenti minori versioni
  (v0.5-v0.6) al momento di scrivere questo.
 
@@ -1501,15 +1501,15 @@
  F-Secure                Senza noti problemi
  Fortinet                Senza noti problemi
  GData                   Senza noti problemi
- Ikarus               !  Riferisce "Trojan.JS.Agent"
+ Ikarus                  Senza noti problemi
  Jiangmin                Senza noti problemi
  K7AntiVirus             Senza noti problemi
  K7GW                    Senza noti problemi
  Kaspersky               Senza noti problemi
  Kingsoft                Senza noti problemi
  Malwarebytes            Senza noti problemi
- McAfee                  Senza noti problemi
- McAfee-GW-Edition       Senza noti problemi
+ McAfee               !  Riferisce "New Script.c"
+ McAfee-GW-Edition    !  Riferisce "New Script.c"
  Microsoft               Senza noti problemi
  MicroWorld-eScan        Senza noti problemi
  NANO-Antivirus          Senza noti problemi
@@ -1524,7 +1524,7 @@
  TheHacker               Senza noti problemi
  TotalDefense            Senza noti problemi
  TrendMicro              Senza noti problemi
- TrendMicro-HouseCall !  Riferisce "Suspici.450F5936"
+ TrendMicro-HouseCall    Senza noti problemi
  VBA32                   Senza noti problemi
  VIPRE                   Senza noti problemi
  ViRobot                 Senza noti problemi
@@ -1533,5 +1533,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 27 Dicembre 2014 (2014.12.27).
+Ultimo Aggiornamento: 4 Febbraio 2014 (2015.02.04).
 EOF

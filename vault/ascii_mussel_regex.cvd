@@ -1,4 +1,5 @@
->FD>3c3f>21
+>!$is_not_php>1>22
+>FD>3c3f>22
 phpMussel-PHP.Backdoor.Extract-00:65787472616374(2f|2a|a0){0,2000}28(2f|2a|a0){0,2000}245f72657175657374
 phpMussel-PHP.Backdoor.SSH-00:6578656328(..)?24(3[0-9]|6[1-9a-f]|7[0-9a]){1,32}3e2f6465762f6e756c6c
 phpMussel-PHP.Backdoor.SymLink-00:666f70656e28.{0,64}2e6874616363657373
@@ -15,8 +16,8 @@ phpMussel-PHP.Shell.Devil-00:2466696c6e3d245f706f73745b27666e275d3b2473..3d245f7
 phpMussel-PHP.Shell.Devil-01:24666f3d66736f636b6f70656e282[27]7564703a2f2f247369702[27]2c24
 phpMussel-PHP.Shell.Devil-02:282[27]3f3e2[27]2e677a
 phpMussel-PHP.Shell.Devil-03:6d6f76655f75706c6f616465645f66696c6528245f66696c65735b27..275d5b27746d705f6e616d65275d2c245f73657373696f6e5b27646972275d2e222f222e245f66696c65735b27..275d5b276e616d65275d293b
->FN>(\.[Cc][Vv][Dd]|\.[Ii][Nn][Cc]|\.[Tt][Xx][Tt])$>19
->FS-MAX>-1>21
+>FN>\.([Cc][Vv][Dd]|[Ii][Nn][Cc]|[Tt][Xx][Tt])$>20
+>FS-MAX>-1>22
 phpMussel-PHP.Defacement.CyberSword-00:637962..727377..7264
 phpMussel-PHP.Defacement.Pakistan-14:706b5f726f62..74
 phpMussel-Defacement.Generic-008:776e..64:1:4
@@ -26,10 +27,13 @@ phpMussel-Defacement.Generic-011:66(75)?636b(..)?[67]4:A:6
 phpMussel-Defacement.Generic-012:64..737472..79:A:7
 phpMussel-Defacement.Generic-013:64..66..63(33|65):A:6
 phpMussel-Defacement.Generic-014:6b..636b..64:A:6
+>!$is_not_html>1>32
 phpMussel-HTML.Exploit.Iframe-00:3c696672616d6577696474683d(2[27])?(3.){0,4}(2[27])?6865696768743d(2[27])?(3.){0,4}(2[27])?7372633d(2[27])?2f2f
 phpMussel-HTML.Exploit.Iframe-01:3c696672616d656865696768743d(2[27])?(3.){0,4}(2[27])?77696474683d(2[27])?(3.){0,4}(2[27])?7372633d(2[27])?2f2f
 phpMussel-JS.Obfuscation.JavascriptObfuscator-00:7661725f3078.{4,16}3d5b2[27]5c78
->FN>(\.[Vv][Bb][EeSs]?[VvXx]?|\.[Ww][Ss][CcFf]?|\..?[Hh][Tt][AaMm][Ll]?|\.[Aa][Ss][Pp][FfXx]?|\.[Ee][Mm][Ll]|\.[Pp][Yy]|\.[Jj][Ss][Pp]?|\.[Pp][Hh][Pp].?|\.[Tt][Mm][Pp])$>-1
+>FN>\.([Vv][Bb].{0,3}|[Ww][Ss][CcFf]|[Hh][Tt][Aa]?[Mm]?[Ll]?|[Aa][Ss][Pp][Xx]?)$>-1
+>!$is_not_html>1>37
 phpMussel-HTML.Defacement.CyberSword-00:637962..727377..7264
 phpMussel-HTML.Defacement.Generic-018:3e(30|4f)776e7a
 phpMussel-VBS.Dropper-01:7365747773687368656c6c3d6372656174656f626a656374282[27]777363726970742e7368656c6c2[27]29.{2,256}7773687368656c6c2e72756e64726f70706174682c
+phpMussel-VBS.Dropper-02:66756e6374696f6e6e28..2c..293a..3d737472696e6728..2c..293a656e6466756e6374696f6e3a..3d..262234643561

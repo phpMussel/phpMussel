@@ -18,6 +18,7 @@ Do-to list for potential future major version (v1.0):
 - Possible idea: IP blacklist/whitelist?
 - Possible idea: Wiki-esque descriptions of block types, guides, or further
   similar such reading materials?
+- I still need to fix the auto-updater; Haven't done this yet.
 Do-to list for potential future minor version (v0.7):
 - Any significant changes to the script including completing of any of the
   aforementioned above, whereby having done so, the release doesn't yet qualify
@@ -30,7 +31,104 @@ Anything less than sub-minor:
   than sub-minor.
 Last Edited: 15th November 2014
 
-=== Version 0.6b / Release 0.6b.2 (Previous Release: 0.6b.1) ===
+=== Version/Release 0.6c (Previous Release: 0.6b.2) ===
+SUMMARY:
+Updated to the latest signatures set (55+19989+6c).
+Sub-minor release (high priority).
+
+NEW CHANGES:
+- Removed a small handful of older signatures written for viruses and malware
+  that no longer exists and/or doesn't affect any known currently operable
+  systems (2015.01.23).
+- Added a small handful of new signatures targeting HTML files containing code
+  associated with paypal phishing (2015.01.23).
+- Massive addition of new hash-based signatures targeting PE files compliments
+  of the SecuriteInfo signatures update for this release (2015.01.26).
+- I've been doing more performance experiments in the hopes of finding more
+  ways to improve on phpMussel, specifically, looking for further ways to
+  improve the balance between the effectiveness of its defences and the
+  efficiency and speed at which it applies those defences and performs scans.
+  As part of that, rather than capping ClamAV PE Sectional signatures at a flat
+  300,000 of the latest such signatures, I opted to try, as of this version,
+  capping it at 21MBs worth of the latest such signatures (so doing it by
+  filesize rather than the actual number of signatures). The pe_clamav.cvd file
+  was beginning to come close to that filesize as it was anyhow, and
+  considering that the problems with including the entirety of the PE Sectional
+  signatures set was that the large size of that number of signatures would add
+  significantly to that of to the pe_clamav.cvd file and the fact that such a
+  large size would not be possible for PHP to process correctly under normal
+  circumstances and thus cause PHP to crash whenever that set would be loaded,
+  resulting in phpMussel failing to complete scans, I think doing it by
+  filesize rather than the actual number of signatures would bring it more in
+  line with the purposes of why it was being capped in the first place. This
+  also means that the number of PE Sectional sections as of this version is
+  slightly larger than the previous version (312,024 rather than 300,000), and
+  that the exact number may change both upwards and downwards slightly between
+  releases. I think the balance is slightly better now as of this release. If
+  anyone does detect any problems, however, I'd ask that they notify me of
+  these problems as so that I may improve phpMussel further and hopefully
+  resolve any such problems for future releases and further improve on that
+  balance (so far, local testing hasn't demonstrated any problems, but such
+  problems can be dependent on environmental factors, too) (2015.01.31).
+- Added a number of new VBS signatures (2015.02.02).
+- Updated to the the latest ClamAV signatures; PhishTank signatures; All other
+  signatures and etc (2015.02.02).
+- I've modified the Core script in such a way as to allow me to do some further
+  narrowing on those signatures belonging to the ClamAV General, ASCII and HTML
+  signatures sets; Those signatures, previously, were checked against any
+  non-whitelisted files targeted for scanning, regardless of whether or not any
+  particular signatures within those sets were actually supposed to be targeting
+  the specific filetypes and other such details of the non-whitelisted files
+  targeted for scanning, whereas now, those signatures, where they are supposed
+  to be targeting some specific filetype or other such specific thing, and
+  where I've been able to identify what it actually is, should now only be
+  checking against non-whitelisted files targeted for scanning for which they
+  are supposed to be targeting. This, I've done, for the sake of attempting to
+  improve the performance and efficiency of phpMussel, for which I've been
+  trying to better the balance for. Unfortunately, there were a significant
+  number of those signatures where I wasn't able to identify what it was that
+  they were actually supposed to be targeting, of which I've removed from
+  phpMussel for this particular release and for consequent releases until such
+  a time that I'm able to identify what it was they were actually supposed to
+  be targeting. I don't think this should dent the defensive capabilities of
+  phpMussel too much if even at all, given that most of those removed
+  signatures were fairly old by this point and didn't seem to be targeting
+  anything that I'd foresee being likely to be uploaded via a website or
+  webform, but, if anyone does find any problems relating to their removal, do
+  please let me know. In any case, I do believe these removals and further
+  narrowing have resulted in a noticable improvement in performance and
+  efficiency (2015.02.02).
+- Added a handful of new signatures to deal with "RandomWeb", a form of
+  ransomware specifically targeting websites (2015.02.03).
+
+PROBLEMS/BUGS FIXED:
+- Yesterday, I ran an extensive check with phpMussel against ~100,000 known
+  clean files associated with various aspects of the Windows operating system,
+  in an attempt to gauge current performance specs for phpMussel. In the
+  process of doing so, I'd found that a number of the signatures that I'd
+  written that were specifically targeting malicious PHP scripts were
+  generating false positives for a significant number of different PE files,
+  for which they shouldn't have been triggering for at all. To deal with this,
+  I've added some extra checks and validations to the core script that should
+  hopefully reduce the chances of this sort of thing happening (2015.01.20).
+- Detected as per the same way as above, I've removed a small number of other
+  target non-specific signatures and PE signatures that were causing false
+  positives (2015.01.20).
+- Found a bug within the Core Script in how the signature mapping code
+  interates through lines of signatures, as such that the final signature line
+  of any given mapping section would be entirely ignored by the Code Script.
+  This meant that although the majority of signatures were still being parsed
+  correctly, there were at least a few hundred signatures within each of the
+  affected signatures set that weren't being parsed at all. Although the fix
+  itself was simple, due to the implications of this bug, I'm marking this
+  release as high priority. Only those specifically of the ClamAV signature
+  sets that made use of the mapping code were affected by this bug, and all
+  other signature sets were unaffected (2015.02.04).
+
+Maikuolan,
+4th February 2015.
+
+=== Version 0.6b / Release 0.6b.2 (Previous Release: 0.6b.1; Next: 0.6c) ===
 SUMMARY:
 Updated to the latest signatures set (55+19916+6b.2).
 Language Data updated; No other script files modified (low priority).
@@ -87,15 +185,16 @@ NEW CHANGES:
 - Removed a number of outdated signatures that no longer have relevance to any
   current threats (2014.12.20).
 - Added a significant number of new VBS signatures via CoEx (2014.12.24).
-- Added a directive to allow filetype extension based greylisting. I'd absolutely
-  recommend for those users of phpMussel that have a definitive idea of exactly
-  what filetypes they do and don't want to allow onto their webservers to make
-  use of this new directive: Extensions cited by this directive are those
-  extensions that are allowed, but which should still nonetheless be scanned,
-  whereas any extensions not cited by this directive will be treated as
-  blacklisted and thus not permitted to be uploaded. Omission of this directive
-  will cause it to be ignored. Refer to the documentation for more details such
-  as the logical order of processing (2014.12.25).
+- Added a directive to allow filetype extension based greylisting. I'd
+  absolutely recommend for those users of phpMussel that have a definitive idea
+  of exactly what filetypes they do and don't want to allow onto their
+  webservers to make use of this new directive: Extensions cited by this
+  directive are those extensions that are allowed, but which should still
+  nonetheless be scanned, whereas any extensions not cited by this directive
+  will be treated as blacklisted and thus not permitted to be uploaded.
+  Omission of this directive will cause it to be ignored. Refer to the
+  documentation for more details such as the logical order of processing
+  (2014.12.25).
 - Updated to the the latest ClamAV signatures; PhishTank signatures; All other
   signatures and etc (2014.12.25).
 - I've found some new 32-bit infected PE files that weren't detected by ClamAV
@@ -175,7 +274,7 @@ ADDITIONAL NOTES:
   do more harm than good if they go live in their current state.
 - There are still plenty of things on my to-do list and yet again I've had
   plenty of ideas for things that I still want to do with phpMussel, but
-  there'll probably always be new ideas, at least into the forseeable future,
+  there'll probably always be new ideas, at least into the foreseeable future,
   and for the time being, I really wanted to get the latest signatures updates
   and other various changes done thus far to the userbase of phpMussel without
   unnecessary delays, so, I'm releasing this version/release now, rather than
@@ -490,7 +589,7 @@ This release should be considered HIGH PRIORITY if:
   you have a website that makes use of some sort of web-based self-update
   functionality or similar).
 - You do not have any form of file upload sanitization in place or if phpMussel
-  is the only defense against dangerous file uploads that you are using.
+  is the only defence against dangerous file uploads that you are using.
 - Any chameleon attack detection directives are disabled at all.
 
 Otherwise, this release should be considered MEDIUM PRIORITY.

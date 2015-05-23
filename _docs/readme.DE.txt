@@ -1430,7 +1430,7 @@
  vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen
  überlegen.
 
- Diese Informationen wurden zuletzt am 2014.12.25 aktualisiert und gelten für
+ Diese Informationen wurden zuletzt am 2015.02.04 aktualisiert und gelten für
  alle phpMussel Veröffentlichungen von der beiden letzten Nebenversionen
  (v0.5-v0.6) zu diesem Zeitpunkt.
 
@@ -1457,15 +1457,15 @@
  F-Secure                Keine bekannten Probleme
  Fortinet                Keine bekannten Probleme
  GData                   Keine bekannten Probleme
- Ikarus               !  Meldet "Trojan.JS.Agent"
+ Ikarus                  Keine bekannten Probleme
  Jiangmin                Keine bekannten Probleme
  K7AntiVirus             Keine bekannten Probleme
  K7GW                    Keine bekannten Probleme
  Kaspersky               Keine bekannten Probleme
  Kingsoft                Keine bekannten Probleme
  Malwarebytes            Keine bekannten Probleme
- McAfee                  Keine bekannten Probleme
- McAfee-GW-Edition       Keine bekannten Probleme
+ McAfee               !  Meldet "New Script.c"
+ McAfee-GW-Edition    !  Meldet "New Script.c"
  Microsoft               Keine bekannten Probleme
  MicroWorld-eScan        Keine bekannten Probleme
  NANO-Antivirus          Keine bekannten Probleme
@@ -1480,7 +1480,7 @@
  TheHacker               Keine bekannten Probleme
  TotalDefense            Keine bekannten Probleme
  TrendMicro              Keine bekannten Probleme
- TrendMicro-HouseCall !  Meldet "Suspici.450F5936"
+ TrendMicro-HouseCall    Keine bekannten Probleme
  VBA32                   Keine bekannten Probleme
  VIPRE                   Keine bekannten Probleme
  ViRobot                 Keine bekannten Probleme
@@ -1489,5 +1489,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 2014.12.27
+Zuletzt aktualisiert: 2015.02.04
 EOF

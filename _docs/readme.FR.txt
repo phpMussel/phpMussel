@@ -1495,7 +1495,7 @@
  désactivation avant à travailler avec phpMussel ou devrait envisager d'autres
  options soit votre logiciel anti-virus ou phpMussel.
 
- Cette information a été réactualisé le 25 Décembre 2014 et est courant pour
+ Cette information a été réactualisé le 4 Février 2015 et est courant pour
  toutes les phpMussel parutions des deux plus récentes mineures versions
  (v0.5-v0.6) au moment de la rédaction cette.
 
@@ -1522,15 +1522,15 @@
  F-Secure                Pas problèmes connus
  Fortinet                Pas problèmes connus
  GData                   Pas problèmes connus
- Ikarus               !  Rapports "Trojan.JS.Agent"
+ Ikarus                  Pas problèmes connus
  Jiangmin                Pas problèmes connus
  K7AntiVirus             Pas problèmes connus
  K7GW                    Pas problèmes connus
  Kaspersky               Pas problèmes connus
  Kingsoft                Pas problèmes connus
  Malwarebytes            Pas problèmes connus
- McAfee                  Pas problèmes connus
- McAfee-GW-Edition       Pas problèmes connus
+ McAfee               !  Rapports "New Script.c"
+ McAfee-GW-Edition    !  Rapports "New Script.c"
  Microsoft               Pas problèmes connus
  MicroWorld-eScan        Pas problèmes connus
  NANO-Antivirus          Pas problèmes connus
@@ -1545,7 +1545,7 @@
  TheHacker               Pas problèmes connus
  TotalDefense            Pas problèmes connus
  TrendMicro              Pas problèmes connus
- TrendMicro-HouseCall !  Rapports "Suspici.450F5936"
+ TrendMicro-HouseCall    Pas problèmes connus
  VBA32                   Pas problèmes connus
  VIPRE                   Pas problèmes connus
  ViRobot                 Pas problèmes connus
@@ -1554,5 +1554,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 27 Décembre 2014 (2014.12.27).
+Dernière Réactualisé: 4 Février 2015 (2015.02.04).
 EOF
