@@ -1318,35 +1318,35 @@
 
  = FILE NOMI FIRME =
    Tutte le file nomi firme seguono il formato:
-    NAME:FNRX
-   Dove NAME è il nome per citare per quella firma e FNRX è la regolare
+    NOME:FNRX
+   Dove NOME è il nome per citare per quella firma e FNRX è la regolare
    espressione a verifica file nomi firme (non codificata) contra.
 
  = MD5 FIRME =
    Tutte l'MD5 firme seguono il formato:
-    HASH:FILESIZE:NAME
-   Dove HASH è l'MD5 hash dell'intero file, FILESIZE è la totale dimensione del
-   file e NAME è il nome per citare per quella firma.
+    HASH:DIMENSIONE:NOME
+   Dove HASH è l'MD5 hash dell'intero file, DIMENSIONE è la totale dimensione
+   del file e NOME è il nome per citare per quella firma.
 
  = ARCHIVIO METADATI FIRME =
    Tutte l'archivio metadati firme seguono il formato:
-    NAME:FILESIZE:CRC32
-   Dove NAME è il nome per citare per quella firma, FILESIZE è la totale
-   dimensione (non compresso) di un file contenuto all'interno
-   dell'archivio e CRC32 è la CRC32 verifica numero di tale file.
+    NOME:DIMENSIONE:CRC32
+   Dove NOME è il nome per citare per quella firma, DIMENSIONE è la totale
+   dimensione (non compresso) di un file contenuto all'interno dell'archivio e
+   CRC32 è la CRC32 verifica numero di tale file.
 
- = PE SEZIONALI MD5 FIRME =
-   Tutte il PE sezionali md5 firme seguono il formato:
-    FILESIZE:HASH:NAME
-   Dove HASH è l'MD5 hash di una sezione del PE file, FILESIZE è la totale
-   dimensione del file e NAME è il nome per citare per quella firma.
+ = PE SEZIONALI FIRME =
+   Tutte il PE sezionali firme seguono il formato:
+    DIMENSIONE:HASH:NOME
+   Dove HASH è l'MD5 hash di una sezione del PE file, DIMENSIONE è la totale
+   dimensioni della sezione e NOME è il nome per citare per quella firma.
 
  = WHITELIST FIRME =
    Tutte la whitelist firme seguono il formato:
-    HASH:FILESIZE:TYPE
-   Dove HASH è l'MD5 hash dell'intero file, FILESIZE è la totale dimensione del
-   file e TYPE è il tipo di firme il file sulla whitelist è di essere immune
-   contro.
+    HASH:DIMENSIONE:TYPE
+   Dove HASH è l'MD5 hash dell'intero file, DIMENSIONE è la totale dimensione
+   del file e TYPE è il tipo di firme il file sulla whitelist è di essere
+   immune contro.
 
  = COMPLESSO ESTESO FIRME =
    Complesso esteso firme sono piuttosto diverso da altri tipi di firme
@@ -1358,8 +1358,8 @@
 
  = TUTTO IL RESTO =
    Tutte le altre firme seguono il formato:
-    NAME:HEX:FROM:TO
-   Dove NAME è il nome per citare per quella firma e HEX è un esadecimale
+    NOME:HEX:FROM:TO
+   Dove NOME è il nome per citare per quella firma e HEX è un esadecimale
    codificato segmento del file destinato essere verificato dal pertinente
    firma. FROM e TO sono opzionali parametri, indicando da cui ea cui
    posizioni nei sorgenti dati per verificare contra (non supportata dal mail
@@ -1533,5 +1533,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 3 Marzo 2014 (2015.03.03).
+Ultimo Aggiornamento: 6 Marzo 2014 (2015.03.06).
 EOF

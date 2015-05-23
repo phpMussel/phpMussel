@@ -1340,33 +1340,33 @@
 
  = NOM DE FICHIER SIGNATURES =
    Toutes les nom de fichier signatures suivez le format:
-    NAME:FNRX
-   Où NAME est le nom à citer pour la signature et FNRX est l'expression
+    NOM:FNRX
+   Où NOM est le nom à citer pour la signature et FNRX est l'expression
    rationnelle pour faire correspondre les (non codé) noms de fichiers.
 
  = MD5 SIGNATURES =
    Toutes les MD5 signatures suivez le format:
-    HASH:FILESIZE:NAME
-   Où HASH est le MD5 hash d'un ensemble du fichier, FILESIZE est la totale
-   taille du fichier et NAME est le nom à citer pour la signature.
+    HASH:TAILLE:NOM
+   Où HASH est le MD5 hash d'un ensemble du fichier, TAILLE est la totale
+   taille du fichier et NOM est le nom à citer pour la signature.
 
  = ARCHIVE MÉTADONNÉES SIGNATURES =
    Toutes les archive métadonnées signatures suivez le format:
-    NAME:FILESIZE:CRC32
-   Où NAME est le nom à citer pour la signature, FILESIZE est la totale taille
+    NOM:TAILLE:CRC32
+   Où NOM est le nom à citer pour la signature, TAILLE est la totale taille
    (non compressé) d'un fichier contenues dans l'archive et CRC32 est la CRC32
    contrôle somme of de ce fichier contenu.
 
- = PE SECTIONAL MD5 SIGNATURES =
-   Toutes les PE Sectional MD5 signatures suivez le format:
-    FILESIZE:HASH:NAME
-   Où HASH est le MD5 hash d'un section du PE fichier, FILESIZE est la totale
-   taille du fichier et NAME est le nom à citer pour la signature.
+ = PE SECTIONAL SIGNATURES =
+   Toutes les PE Sectional signatures suivez le format:
+    TAILLE:HASH:NOM
+   Où HASH est le MD5 hash d'un section du PE fichier, TAILLE est la totale
+   taille de cet section et NOM est le nom à citer pour la signature.
 
  = BLANCHE LISTE SIGNATURES =
    Toutes les blanche liste signatures suivez le format:
-    HASH:FILESIZE:TYPE
-   Où HASH est le MD5 hash d'un ensemble du fichier, FILESIZE est la totale
+    HASH:TAILLE:TYPE
+   Où HASH est le MD5 hash d'un ensemble du fichier, TAILLE est la totale
    taille du fichier et TYPE est le type de signatures le listé blanche fichier
    est d'être immunitaire contre.
 
@@ -1381,8 +1381,8 @@
 
  = TOUT LE RESTE =
    Toutes les autre signatures suivez le format:
-    NAME:HEX:FROM:TO
-   Où NAME est le nom à citer pour la signature et HEX est un hexadécimal codé
+    NOM:HEX:FROM:TO
+   Où NOM est le nom à citer pour la signature et HEX est un hexadécimal codé
    segment du fichier destiné à être identifié par la signature donnée. FROM et
    TO sont optionnel paramètres, indication de laquelle et à laquelle les
    positions dans les source données pour vérifier contre (non supporté par la
@@ -1553,5 +1553,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 3 Mars 2015 (2015.03.03).
+Dernière Réactualisé: 6 Mars 2015 (2015.03.06).
 EOF

@@ -1312,37 +1312,34 @@
 
  = ARQUIVO NOME ASSINATURAS =
    Todas as arquivo nome assinaturas seguir o formato:
-    NAME:FNRX
-   Onde NAME é o nome para citar por essa assinatura e FNRX é o regex para
+    NOME:FNRX
+   Onde NOME é o nome para citar por essa assinatura e FNRX é o regex para
    verificar arquivos nomes (não codificados) contra.
 
  = MD5 ASSINATURAS =
    Todas as MD5 assinaturas seguir o formato:
-    HASH:FILESIZE:NAME
-   Onde HASH é o MD5 hash de um inteiro arquivo, FILESIZE é o total tamanho do
-   arquivo e NAME é o nome para citar por essa assinatura.
+    HASH:TAMANHO:NOME
+   Onde HASH é o MD5 hash de um inteiro arquivo, TAMANHO é o total tamanho do
+   arquivo e NOME é o nome para citar por essa assinatura.
 
  = COMPACTADOS ARQUIVOS METADADOS ASSINATURAS =
    Todas as compactados arquivos metadados assinaturas seguir o formato:
-    NAME:FILESIZE:CRC32
-   Onde NAME é o nome para citar por essa assinatura, FILESIZE é o total
+    NOME:TAMANHO:CRC32
+   Onde NOME é o nome para citar por essa assinatura, TAMANHO é o total
    tamanho (descompactado) de um arquivo contido dentro do compactado arquivo e
    CRC32 é o CRC32 checksum do contido arquivo.
 
- = PE SECCIONAL MD5 ASSINATURAS =
-   Todas as PE Seccional MD5 assinaturas seguir o formato:
-    FILESIZE:HASH:NAME
-   Onde HASH é o MD5 hash de uma secção do PE arquivo, FILESIZE é o total
-   tamanho do arquivo e NAME é o nome para citar por essa assinatura.
+ = PE SECCIONAL ASSINATURAS =
+   Todas as PE Seccional assinaturas seguir o formato:
+    TAMANHO:HASH:NOME
+   Onde HASH é o MD5 hash de uma secção do PE arquivo, TAMANHO é o total
+   tamanho da secção e NOME é o nome para citar por essa assinatura.
 
  = WHITELIST ASSINATURAS =
    Todas as Whitelist assinaturas seguir o formato:
-    HASH:FILESIZE:TYPE
-   Onde HASH é o MD5 hash de um inteiro arquivo, FILESIZE é o total tamanho do
-   arquivo e NAME é o nome para citar por essa assinatura.
-   Where HASH is the MD5 hash of an entire file, FILESIZE is the total size
-   of that file and TYPE é o tipo de assinaturas do whitelist arquivo é ser
-   imune contra.
+    HASH:TAMANHO:TYPE
+   Onde HASH é o MD5 hash de um inteiro arquivo, TAMANHO é o total tamanho do
+   arquivo e TYPE é o tipo de assinaturas o arquivo é ser imune contra.
 
  = COMPLEXOS ESTENDIDOS ASSINATURAS =
    Complexos Estendidos assinaturas são bastante diferente para os outros tipos
@@ -1356,8 +1353,8 @@
 
  = TODAS OUTRAS =
    Todas as outras assinaturas seguir o formato:
-    NAME:HEX:FROM:TO
-   Onde NAME é o nome para citar por essa assinatura e HEX é um hexadecimal
+    NOME:HEX:FROM:TO
+   Onde NOME é o nome para citar por essa assinatura e HEX é um hexadecimal
    codificado segmento do arquivo intentado a ser correspondido pela dado
    assinatura. TO e FROM são opcionais parâmetros, indicando de onde e para
    quais posições nos origem dados para verificar contra (não suportado pela
@@ -1531,5 +1528,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 3 Março 2015 (2015.03.03).
+Última Atualização: 6 Março 2015 (2015.03.06).
 EOF

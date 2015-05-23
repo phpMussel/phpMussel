@@ -1317,33 +1317,33 @@
 
  = TANDA TANGAN NAMA FILE =
    Semua tanda tangan nama file mengikuti format ini:
-    NAME:FNRX
-   Dimana NAME adalah nama mengutip tanda tangan dan FNRX adalah pola regex
+    NAMA:FNRX
+   Dimana NAMA adalah nama mengutip tanda tangan dan FNRX adalah pola regex
    untuk mencocokkan nama file (tidak ter-encode).
 
  = TANDA TANGAN MD5 =
    Semua tanda tangan MD5 mengikuti format ini:
-    HASH:FILESIZE:NAME
-   Dimana HASH adalah MD5 dari keseluruhan file, FILESIZE adalah total ukuran
-   file dan NAME adalah nama untuk mengutip tanda tangan tersebut.
+    HASH:UKURAN:NAMA
+   Dimana HASH adalah MD5 dari keseluruhan file, UKURAN adalah total ukuran
+   file dan NAMA adalah nama untuk mengutip tanda tangan tersebut.
 
  = TANDA TANGAN METADATA ARSIP =
    Semua tanda tangan meta data arsip mengikuti format ini:
-    NAME:FILESIZE:CRC32
-   Di mana NAME adalah nama mengutip tanda tangan itu, FILESIZE adalah total
+    NAMA:UKURAN:CRC32
+   Di mana NAMA adalah nama mengutip tanda tangan itu, UKURAN adalah total
    ukuran data (tidak terkompres) dari sebuah data berisikan arsip dan CRC32
    adalah checksum crc32 dari data yang berisikan.
 
- = TANDA TANGAN MD5 SEKSIONAL PE =
-   Semua tanda tangan MD5 seksional PE mengikuti format ini:
-    FILESIZE:HASH:NAME
-   Dimana HASH adalah MD5 dari seksi PE, FILESIZE adalah total ukuran file dan
-   NAME adalah nama untuk mengutip tanda tangan tersebut.
+ = TANDA TANGAN SEKSIONAL PE =
+   Semua tanda tangan seksional PE mengikuti format ini:
+    UKURAN:HASH:NAMA
+   Dimana HASH adalah MD5 dari seksi PE, UKURAN adalah total ukuran dari seksi
+   PE dan NAMA adalah nama untuk mengutip tanda tangan tersebut.
 
  = TANDA TANGAN PUTIH =
    Semua tanda tangan putih mengikuti format ini:
-    HASH:FILESIZE:TYPE
-   Dimana HASH adalah MD5 dari keseluruhan file, FILESIZE adalah total ukuran
+    HASH:UKURAN:TYPE
+   Dimana HASH adalah MD5 dari keseluruhan file, UKURAN adalah total ukuran
    file dan TYPE adalah jenis tanda tangan yang file daftar putih tersebut
    adalah kebal terhadap.
 
@@ -1358,8 +1358,8 @@
 
  = YANG LAIN =
    Semua tanda tangan yang lain mengikuti format ini:
-    NAME:HEX:FROM:TO
-   Di mana NAME adalah nama yang mengutip tanda tangan ini dan HEX adalah
+    NAMA:HEX:FROM:TO
+   Di mana NAMA adalah nama yang mengutip tanda tangan ini dan HEX adalah
    sebuah segmen hexidecimal-encoded dari data yang dimaksudkan untuk
    dicocokkan oleh tanda tangan yang diberikan. FROM dan TO adalah parameter
    opsional, mengindikasikan dari mana dan kemana posisi dari sumber data
@@ -1530,5 +1530,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 3 Maret 2015 (2015.03.03).
+Terakhir Diperbarui: 6 Maret 2015 (2015.03.06).
 EOF

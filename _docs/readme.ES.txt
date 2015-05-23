@@ -1344,11 +1344,11 @@
    (sin comprimir) de un archivo contenido dentro el compactado archivo y CRC32
    es el crc32 suma de comprobación de eso contenido archivo.
 
- = PE SECCIÓNAL MD5 FIRMAS =
-   Todos PE Secciónal MD5 firmas seguir el formato:
+ = PE SECCIÓNAL FIRMAS =
+   Todos PE Secciónal firmas seguir el formato:
     TAMAÑO:HASH:NOMBRE
    Donde HASH es el MD5 hash de una sección del PE archivo, TAMAÑO es el total
-   tamaño de eso archivo y NOMBRE es el nombre a citar para esa firma.
+   tamaño de esa sección y NOMBRE es el nombre a citar para esa firma.
 
  = WHITELIST FIRMAS =
    Todos Whitelist firmas seguir el formato:
@@ -1547,5 +1547,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 3 Marzo 2015 (2015.03.03).
+Última Actualización: 6 Marzo 2015 (2015.03.06).
 EOF

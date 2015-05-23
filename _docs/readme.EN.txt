@@ -1253,11 +1253,11 @@
    size (uncompressed) of a file contained within the archive and CRC32 is the
    crc32 checksum of that contained file.
 
- = PE SECTIONAL MD5 SIGNATURES =
-   All PE Sectional MD5 signatures follow the format:
-    FILESIZE:HASH:NAME
-   Where HASH is the MD5 hash of a section of the PE file, FILESIZE is the
-   total size of that file and NAME is the name to cite for that signature.
+ = PE SECTIONAL SIGNATURES =
+   All PE Sectional signatures follow the format:
+    SIZE:HASH:NAME
+   Where HASH is the MD5 hash of a section of a PE file, SIZE is the total size
+   of that section and NAME is the name to cite for that signature.
 
  = WHITELIST SIGNATURES =
    All Whitelist signatures follow the format:
@@ -1444,5 +1444,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 3rd March 2015 (2015.03.03).
+Last Updated: 6th March 2015 (2015.03.06).
 EOF

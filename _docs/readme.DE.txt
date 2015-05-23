@@ -1291,11 +1291,11 @@
    Größe (unkomprimiert) einer jeden Datei im Archiv und CRC32 ist die
    CRC32-Prüfsumme jeder einzelnen Datei im Archiv.
 
- = PE-SECTIONAL MD5-SIGNATUREN =
-   Alle PE-Sectional MD5-Signaturen besitzen folgendes Format:
-    FILESIZE:HASH:NAME
+ = PE-SECTIONAL-SIGNATUREN =
+   Alle PE-Sectional-Signaturen besitzen folgendes Format:
+    SIZE:HASH:NAME
    HASH ist der MD5-Hash einer PE-Sektion der Datei, FILESIZE ist die gesamte
-   Größe der Datei und NAME ist der Name, um die Signatur zu benennen.
+   Größe der PE-Sektion und NAME ist der Name, um die Signatur zu benennen.
 
  = WHITELIST-SIGNATUREN =
    Alle Whitelist-Signaturen besitzen folgendes Format:
@@ -1488,5 +1488,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 2015.03.03
+Zuletzt aktualisiert: 2015.03.06
 EOF

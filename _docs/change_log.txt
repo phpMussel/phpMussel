@@ -31,7 +31,55 @@ Anything less than sub-minor:
   than sub-minor.
 Last Edited: 15th November 2014
 
-=== Version/Release 0.6e (Previous Release: 0.6d) ===
+=== Version/Release 0.6f (Previous Release: 0.6e) ===
+SUMMARY:
+Non-ClamAV signatures update only (55+20139+6f).
+Sub-minor release (low or medium priority).
+
+NEW CHANGES:
+- I've found a way to -slightly- decrease the amount of disc-space required by
+  the signatures files by way of partially packing signatures names. As this
+  doesn't involve any changes to the actual format or syntax used by any of the
+  various types of signatures and as this partial packing of signatures names
+  is entirely optional (whether or not it's used will have no effect on the way
+  in which signatures are processed or on the way in which phpMussel operates),
+  this change is entirely backwards-compatible. This will very slightly impact
+  human-readability of the signatures files, but not to a critical degree and
+  not to a level that should prevent work from being done on signatures files.
+  This packing absolutely will not be utilised for anything other than the
+  names of signatures, as trying to do this on the signatures themselves would
+  most likely heavily affect the processing requirements of phpMussel (because
+  it would need to unpack each signature and/or signature set prior to running
+  checks against them which could potentially be a severe drain on resources
+  for the systems phpMussel would be running from), but as for the names,
+  unpacking isn't required unless there's an actual positive hit returned upon
+  doing checks and thus doing this for names shouldn't hinder system resources
+  and shouldn't impede phpMussel at all. The overall reduction in the amount of
+  disc-space required per installation is dependent upon the exact
+  configuration of each installation and of which files are in use by that
+  installation, but on a complete installation making use of all files as per
+  is available in the phpMussel package, the total reduction should be about
+  5% (not a lot, but it's something). The most significantly affected signature
+  set is that of the PE Sectional signatures, experiencing a total reduction of
+  about 20% in disc-space required, the benefit of which is that I should now
+  be able to add about ~70,000 or so additional signatures to the PE Sectional
+  signatures set than I previously could without going over the 21MB cap limit
+  that I'd set for the sake of avoiding memory problems for PHP (2015.03.08).
+- I've gone through the signatures and found a new round of obsolete signatures
+  that have thus been removed as of this release (2015.03.08).
+- New CVE signatures for an RTF vulnerability written and added (2015.03.09).
+
+ADDITIONAL NOTES:
+- Updating to this release from the previous release (0.6e) should be
+  considered medium priority if you allow the uploading of PE files (EXE) or
+  RTF files to your website or server, or if you've experienced minor
+  disc-space problems with either the previous or another recent release of
+  phpMussel, but should otherwise be considered low priority.
+
+Maikuolan,
+9th March 2015.
+
+=== Version/Release 0.6e (Previous Release: 0.6d; Next: 0.6f) ===
 SUMMARY:
 Updated to the latest signatures set (55+20139+6e).
 Sub-minor release (low or medium priority).
@@ -57,7 +105,7 @@ NEW CHANGES:
   phpMussel now fully supports seven languages (English, German, French,
   Indonesian, Italian, Portuguese, and now Spanish), with partial support for
   one more (Dutch). Taking in mind that my native language is English and that
-  I don't actually understand or speak fluently any other languages, and
+  I don't actually understand or speak fluently any other languages, any
   double-checking, proof-reading and/or verification by anyone that might know
   better than I do so far as any given language is concerned would be both
   welcomed and appreciated, because, although I've done as best I can for those
