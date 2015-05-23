@@ -10,7 +10,7 @@
                                      ~ ~ ~                                     
   Special thanks to ClamAV for both project inspiration and for the signatures 
   that this script utilises, without which, the script would likely not exist, 
-  or at best, would have very limited value. <http://www.clamav.net/lang/en/>  
+  or at best, would have very limited value <http://www.clamav.net/>.          
 
                                      ~ ~ ~                                     
  Special thanks to all those supporting the project, to anyone else that I may 
@@ -28,13 +28,13 @@
  version. This script is distributed in the hope that it will be useful, but   
  WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or 
  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
- details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
+ details <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.     
 
                                      ~ ~ ~                                     
- This File: phpMussel v0.5 (20th September 2014) Update Script
+ This File: phpMussel v0.5b (26th October 2014) Update Script.
 
  The latest version and future updates can be obtained from the phpMussel
- SourceForge page located at <http://sourceforge.net/projects/phpmussel/>
+ SourceForge page located at <http://sourceforge.net/projects/phpmussel/>.
 
                                      ~ ~ ~                                     
  Please refer to the README documentation for installation instructions and for

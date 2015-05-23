@@ -32,8 +32,8 @@
 
  Besonderer Dank geht an ClamAV für die Inspiration und die Signaturen, die    
  dieses Script benutzt, ohne die dieses Script wahrscheinlich nicht existieren 
- würde oder bestenfalls einen sehr begrenzten Wert hätte.                      
- <http://www.clamav.net/lang/en/>                                              
+ würde oder bestenfalls einen sehr begrenzten Wert hätte                       
+ <http://www.clamav.net/>.                                                     
 
                                      ~ ~ ~                                     
  Dieses Skript ist freie Software; Sie können Sie weitergeben und/oder         
@@ -43,11 +43,11 @@
  Hoffnung verteilt, dass es nützlich sein wird, allerdings OHNE JEGLICHE       
  GARANTIE; ohne implizite Garantien für VERMARKTUNG/VERKAUF/VERTRIEB oder FÜR  
  EINEN BESTIMMTEN ZWECK. Lesen Sie die GNU General Public License für weitere  
- Details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
+ Details <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.     
 
                                      ~ ~ ~                                     
  Dieses Dokument und das zugehörige Paket kann kostenlos von Sourceforge
- heruntergeladen werden. <http://sourceforge.net/projects/phpmussel/>
+ heruntergeladen werden <http://sourceforge.net/projects/phpmussel/>.
 
                                      ~ ~ ~                                     
 
@@ -509,6 +509,10 @@
  /_docs/readme.PT.txt (Dokumentation, enthalten); PORTUGUÊS
     Die README-Dateien (z.B. die Datei, die Sie gerade lesen).
     ~
+ /_docs/signatures_tally.txt (Dokumentation, enthalten)
+    Verschiebung-Tally von Signaturen enthalten (für die korrekte Funktion des
+    Scripts nicht notwendig).
+    ~
  /_testfiles/ (Verzeichnis)
     Verzeichnis für Testdateien (beinhaltet verschiedene Dateien).
     Alle enthaltenen Dateien dienen zur Überprüfung, ob phpMussel auf Ihrem
@@ -543,10 +547,13 @@
     Überprüfung der ZIP-Archivunterstützung Ihres Systems.
     ~
  /_testfiles/ole_testfile.ole (Testdatei, enthalten)
-    Testdatei zur Überprüfung der normierten OLE-Signaturerkennung.
+    Testdatei zur Überprüfung der OLE-Signaturerkennung.
     ~
  /_testfiles/pe_sectional_testfile.exe (Testdatei, enthalten)
     Testdatei zur Überprüfung der PE-Sectional-Signaturerkennung.
+    ~
+ /_testfiles/xdp_standard_testfile.xdp (Testdatei, enthalten)
+    Testdatei zur Überprüfung der XML/XDP-Stücke-Signaturen.
     ~
  /vault/ (Verzeichnis)
     Vault-Verzeichnis (beinhaltet verschiedene Dateien).
@@ -577,7 +584,7 @@
  /vault/elf_mussel_regex.cvd (Signaturen, enthalten)
  /vault/elf_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der ELF-Signaturen.
-    Benötigt, wenn die Option "ELF signatures" in der phpmussel.ini aktiviert
+    Benötigt, wenn die Option "ELF Signatures" in der phpmussel.ini aktiviert
     ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
     (Dateien werden bei einem Update neu erstellt).
     ~
@@ -590,7 +597,7 @@
  /vault/exe_mussel_regex.cvd (Signaturen, enthalten)
  /vault/exe_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der Portable Executable file (EXE)-Signaturen.
-    Benötigt, wenn die Option "EXE signatures" in der phpmussel.ini aktiviert
+    Benötigt, wenn die Option "EXE Signatures" in der phpmussel.ini aktiviert
     ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
     (Dateien werden bei einem Update neu erstellt).
     ~
@@ -598,7 +605,7 @@
  /vault/filenames_custom.cvd (Signaturen, enthalten)
  /vault/filenames_mussel.cvd (Signaturen, enthalten)
     Dateien der Dateinamen-Signaturen.
-    Benötigt, wenn die Option "filename signatures" in der phpmussel.ini
+    Benötigt, wenn die Option "Filename Signatures" in der phpmussel.ini
     aktiviert ist. Die Dateien können entfernt werden, wenn die Option
     deaktiviert ist (Dateien werden bei einem Update neu erstellt).
     ~
@@ -611,7 +618,7 @@
  /vault/general_mussel_regex.cvd (Signaturen, enthalten)
  /vault/general_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der allgemeinen Signaturen.
-    Benötigt, wenn die Option "general signatures" in der phpmussel.ini
+    Benötigt, wenn die Option "General Signatures" in der phpmussel.ini
     aktiviert ist. Die Dateien können entfernt werden, wenn die Option
     deaktiviert ist (Dateien werden bei einem Update neu erstellt).
     ~
@@ -624,7 +631,7 @@
  /vault/graphics_mussel_regex.cvd (Signaturen, enthalten)
  /vault/graphics_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der Signaturen für Bilddateien.
-    Benötigt, wenn die Option "graphics signatures" in der phpmussel.ini
+    Benötigt, wenn die Option "Graphics Signatures" in der phpmussel.ini
     aktiviert ist. Die Dateien können entfernt werden, wenn die Option
     deaktiviert ist (Dateien werden bei einem Update neu erstellt).
     ~
@@ -634,7 +641,7 @@
     ~
  /vault/hex_general_commands.csv (Signaturen, enthalten)
     Hex-codierte CSV mit allgemeinen Befehlserkennung.
-    Benötigt, wenn die Option "general command detection" in der phpmussel.ini
+    Benötigt, wenn die Option "General Command Detection" in der phpmussel.ini
     aktiviert ist. Die Datei kann entfernt werden, wenn die Option deaktiviert
     ist (Datei wird bei einem Update neu erstellt).
     ~
@@ -664,7 +671,7 @@
  /vault/macho_mussel_regex.cvd (Signaturen, enthalten)
  /vault/macho_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der Mach-O-Signaturen.
-    Benötigt, wenn die Option "Mach-O signatures" in der phpmussel.ini
+    Benötigt, wenn die Option "Mach-O Signatures" in der phpmussel.ini
     aktiviert ist. Die Dateien können entfernt werden, wenn die Option
     deaktiviert ist (Dateien werden bei einem Update neu erstellt).
     ~
@@ -694,7 +701,7 @@
  /vault/metadata_custom.cvd (Signaturen, enthalten)
  /vault/metadata_mussel.cvd (Signaturen, enthalten)
     Dateien für die Signaturen der Archiv-Metadaten.
-    Benötigt, wenn die Option "archive metadata signatures" in der
+    Benötigt, wenn die Option "Archive Metadata Signatures" in der
     phpmussel.ini aktiviert ist. Die Dateien können entfernt werden, wenn
     die Option deaktiviert ist (Dateien werden bei einem Update neu
     erstellt).
@@ -708,7 +715,7 @@
  /vault/ole_mussel_regex.cvd (Signaturen, enthalten)
  /vault/ole_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der OLE-Signaturen.
-    Benötigt, wenn die Option "OLE signatures" in der phpmussel.ini aktiviert
+    Benötigt, wenn die Option "OLE Signatures" in der phpmussel.ini aktiviert
     ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
     (Dateien werden bei einem Update neu erstellt).
     ~
@@ -756,6 +763,19 @@
     und wenn Sie auf bestimmte Dateien Whitelist haben möchten. Die Dateien
     können entfernt werden, wenn die Option deaktiviert ist (Dateien werden
     bei einem Update neu erstellt).
+    ~
+ /vault/xmlxdp_clamav_regex.cvd (Signaturen, enthalten)
+ /vault/xmlxdp_clamav_regex.map (Signaturen, enthalten)
+ /vault/xmlxdp_clamav_standard.cvd (Signaturen, enthalten)
+ /vault/xmlxdp_clamav_standard.map (Signaturen, enthalten)
+ /vault/xmlxdp_custom_regex.cvd (Signaturen, enthalten)
+ /vault/xmlxdp_custom_standard.cvd (Signaturen, enthalten)
+ /vault/xmlxdp_mussel_regex.cvd (Signaturen, enthalten)
+ /vault/xmlxdp_mussel_standard.cvd (Signaturen, enthalten)
+    Dateien der XML/XDP-Stücke-Signaturen.
+    Benötigt, wenn die Option "XML/XDP-Chunk Signatures" in der phpmussel.ini
+    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
+    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
     ~
 
  * Der Dateiname kann je nach Konfiguratuion in der phpmussel.ini variieren.
@@ -929,6 +949,16 @@
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
+   - Aktivieren Datei-spezifische Whitelist?
+     0 = Nein, 1 = Ja [Standardeinstellung].
+     "whitelist_clamav"
+     "whitelist_custom"
+     "whitelist_mussel"
+   - Scan von XML/XDP-Stücke mit den XML/XDP-Stücke-Signaturen?
+     0 = Nein, 1 = Ja [Standardeinstellung].
+     "xmlxdp_clamav"
+     "xmlxdp_custom"
+     "xmlxdp_mussel"
    - Optionen für das Größenlimit der Übereinstimmungen. Ändern Sie diese Werte
      nur, wenn Sie wissen, was Sie tun. SD = Standardsignaturen. RX = PCRE
      (Perl Compatible Regular Expressions, bzw. "Regex")-Signaturen.
@@ -1228,6 +1258,9 @@
    - "Whitelist-Signaturen" (whitelist_*). Überprüft mittels MD5-Hash des
       Inhalts und der Dateigröße jede Datei. Abgestimmt Dateien werden immun
       gegen die von der Art der Signaturen in der Whitelist-Eintrag.
+   - "XML/XDP-Chunk Signatures" (xmlxdp_*). Überprüft XML/XDP-Stücke aus jeder
+      Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden
+      soll.
    (Beachten Sie, dass jede dieser Signaturen auf einfache Weise in der
     phpmussel.ini deaktiviert werden kann).
 
@@ -1256,7 +1289,7 @@
  vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen
  überlegen.
 
- Diese Informationen wurden zuletzt am 2014.09.25 aktualisiert und gelten für
+ Diese Informationen wurden zuletzt am 2014.10.28 aktualisiert und gelten für
  alle phpMussel Veröffentlichungen von der beiden letzten Nebenversionen
  (v0.4-v0.5) zu diesem Zeitpunkt.
 
@@ -1315,5 +1348,5 @@
                                      ~ ~ ~                                     
 
 
-Zuletzt aktualisiert: 2014.09.25
+Zuletzt aktualisiert: 2014.10.28
 EOF

@@ -31,8 +31,8 @@
 
  Um agradecimento especial a ClamAV tanto para o projeto inspiração e para as  
  assinaturas que este script utiliza, sem que, o script provavelmente não      
- existiria, ou em o melhor, teria ser de muito limitado valor.                 
- <http://www.clamav.net/lang/en/>                                              
+ existiria, ou em o melhor, teria ser de muito limitado valor                  
+ <http://www.clamav.net/>.                                                     
 
                                      ~ ~ ~                                     
  Este script é livre software; você pode redistribuí-lo e/ou modificá-lo de    
@@ -41,12 +41,12 @@
  versão posterior. Este script é distribuído na esperança que possa ser útil,  
  mas SEM QUALQUER GARANTIA; sem mesmo a implícita garantia de COMERCIALIZAÇÃO  
  ou ADEQUAÇÃO A UM DETERMINADO FIM. Consulte a GNU General Public License para 
- obter mais detalhes. <http://www.gnu.org/licenses/>                           
- <http://opensource.org/licenses/>                                             
+ obter mais detalhes <http://www.gnu.org/licenses/>                            
+ <http://opensource.org/licenses/>.                                            
 
                                      ~ ~ ~                                     
  Este documento e seu associado pacote pode ser baixado gratuitamente a partir
- do Sourceforge. <http://sourceforge.net/projects/phpmussel/>
+ do Sourceforge <http://sourceforge.net/projects/phpmussel/>.
 
                                      ~ ~ ~                                     
 
@@ -539,6 +539,10 @@
  /_docs/readme.PT.txt (Documentação, Incluído); PORTUGUÊS
     O README arquivos (por exemplo; o arquivo que você está lendo atualmente).
     ~
+ /_docs/signatures_tally.txt (Documentação, Incluído)
+    Contagem registro dos assinaturas incluídos (não é necessário para o
+    correto funcionamento do script).
+    ~
  /_testfiles/ (Diretório)
     Teste arquivos diretório (contém vários arquivos).
     Todos os arquivos contidos são teste arquivos para testar se phpMussel foi
@@ -577,6 +581,9 @@
     ~
  /_testfiles/pe_sectional_testfile.exe (Test file, Incluído)
     Teste arquivo para testar phpMussel PE Seccional assinaturas.
+    ~
+ /_testfiles/xdp_standard_testfile.xdp (Test file, Incluído)
+    Teste arquivo para testar phpMussel XML/XDP-Pedaço assinaturas.
     ~
  /vault/ (Diretório)
     Vault diretório (contém vários arquivos).
@@ -785,6 +792,19 @@
     desativado ou se você não precisa whitelisting (mas os arquivos serão
     recriados na atualização).
     ~
+ /vault/xmlxdp_clamav_regex.cvd (Assinaturas, Incluídos)
+ /vault/xmlxdp_clamav_regex.map (Assinaturas, Incluídos)
+ /vault/xmlxdp_clamav_standard.cvd (Assinaturas, Incluídos)
+ /vault/xmlxdp_clamav_standard.map (Assinaturas, Incluídos)
+ /vault/xmlxdp_custom_regex.cvd (Assinaturas, Incluídos)
+ /vault/xmlxdp_custom_standard.cvd (Assinaturas, Incluídos)
+ /vault/xmlxdp_mussel_regex.cvd (Assinaturas, Incluídos)
+ /vault/xmlxdp_mussel_standard.cvd (Assinaturas, Incluídos)
+    Arquivos por XML/XDP-Pedaço assinaturas.
+    Necessário se XML/XDP-Pedaço assinaturas opção em phpmussel.ini está
+    ativado. Pode remover se a opção é desativado (mas os arquivos serão
+    recriados na atualização).
+    ~
 
  * Arquivo nome podem variar baseado em configuração estipulação
    (referem-se a phpmussel.ini).
@@ -964,6 +984,15 @@
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
+   - Habilite arquivo-específico whitelist? 0 = Não, 1 = Sim [Padrão].
+     "whitelist_clamav"
+     "whitelist_custom"
+     "whitelist_mussel"
+   - Verificar XML/XDP pedaços contra XML/XDP-pedaço assinaturas quando
+     analisando? 0 = Não, 1 = Sim [Padrão].
+     "xmlxdp_clamav"
+     "xmlxdp_custom"
+     "xmlxdp_mussel"
    - Assinatura analisando comprimento limitando opções. Apenas alterar estes
      se você sabe que está fazendo. SD = Standard signatures (norma
      assinaturas). RX = PCRE (Perl Compatible Regular Expressions, ou "Regex")
@@ -1259,6 +1288,9 @@
       conteúdo e contra o arquivo tamanho de cada arquivo alvo por analisando.
       Verificados arquivos será imune de sendo verificado pelo tipo de
       assinatura mencionado em seu whitelist entrada.
+   - "XML/XDP-Pedaço Assinaturas" (xmlxdp_*). Verificado contra quaisquer
+      XML/XDP pedaços encontrados dentro cada não whitelisted arquivo alvo por
+      analisando.
      (Notar que qualquer uma destas assinaturas podem ser facilmente
       desactivada atráves de phpmussel.ini).
 
@@ -1345,5 +1377,5 @@
                                      ~ ~ ~                                     
 
 
-Última Atualização: 25 Setembro 2014 (2014.09.25).
+Última Atualização: 28 Outubro 2014 (2014.10.28).
 EOF

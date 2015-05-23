@@ -32,7 +32,7 @@
 
  Terima kasih khususnya untuk ClamAV buat inspirasi project dan tanda tangan   
  dimana script ini menggunakan ClamAV, tanpa nya script ini tidak akan ada,    
- atau akan mengalami nilai yang kurang baik <http://www.clamav.net/lang/en/>.  
+ atau akan mengalami nilai yang kurang baik <http://www.clamav.net/>.          
 
                                      ~ ~ ~                                     
  Script ini adalah perangkat lunak gratis; anda dapat mendistribusikan kembali 
@@ -41,12 +41,12 @@
  License, atau (dalam opsi anda) versi selanjutnya apapun. Script ini          
  didistribusikan untuk harapan dapat digunakan tapi TANPA JAMINAN; tanpa       
  walaupun garansi dari DIPERJUALBELIKAN atau KECOCOKAN UNTUK TUJUAN TERTENTU.  
- Mohon Lihat GNU General Public Licence untuk lebih detail.                    
- <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>              
+ Mohon Lihat GNU General Public Licence untuk lebih detail                     
+ <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.             
 
                                      ~ ~ ~                                     
  Dokumen ini dan paket yang terhubung di dalamnya dapat di unduh secara gratis
- dari Sourceforge. <http://sourceforge.net/projects/phpmussel/>
+ dari Sourceforge <http://sourceforge.net/projects/phpmussel/>.
 
                                      ~ ~ ~                                     
 
@@ -546,6 +546,10 @@
  /_docs/readme.PT.txt (Dokumentasi, Diikutkan); PORTUGUÊS
     File-file baca saya (misalnya; file yang anda sedang membaca).
     ~
+ /_docs/signatures_tally.txt (Dokumentasi, Diikutkan)
+    Perhitungan dari diikutkan tanda tangan (tidak dibutuhkan untuk fungsi
+    teratur dari script).
+    ~
  /_testfiles/ (Directory)
     Direktori test data-data (berisi bermacam data).
     Semua data-data berisikan di dalamnya adalah data test untuk testing jika
@@ -583,6 +587,9 @@
     ~
  /_testfiles/pe_sectional_testfile.exe (Data test, Diikutkan)
     Data test untuk mentest tanda tangan PE Sectional phpMussel.
+    ~
+ /_testfiles/xdp_standard_testfile.xdp (Data test, Diikutkan)
+    Data test untuk mentest tanda tangan potongan XML/XDP phpMussel.
     ~
  /vault/ (Directory)
     Direktori Vault  (berisikan bermacam file).
@@ -792,6 +799,19 @@
     atau jika Anda tidak memerlukan spesifik file bertanda putih (tapi
     data-data akan diciptkan kembali pada saat mengupdate).
     ~
+ /vault/xmlxdp_clamav_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/xmlxdp_clamav_regex.map (Tanda tangan, Diikutkan)
+ /vault/xmlxdp_clamav_standard.cvd (Tanda tangan, Diikutkan)
+ /vault/xmlxdp_clamav_standard.map (Tanda tangan, Diikutkan)
+ /vault/xmlxdp_custom_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/xmlxdp_custom_standard.cvd (Tanda tangan, Diikutkan)
+ /vault/xmlxdp_mussel_regex.cvd (Tanda tangan, Diikutkan)
+ /vault/xmlxdp_mussel_standard.cvd (Tanda tangan, Diikutkan)
+    Data-data untuk tanda tangan potongan XML/XDP.
+    Diperlukan jika opsi tanda tangan potongan XML/XDP di phpmussel.ini
+    diaktifkan. Dapat menghapus jika opsi dinonaktifkan (tapi data-data akan
+    diciptkan kembali pada saat mengupdate).
+    ~
 
  * Nama file bisa berbeda berdasarkan ketentuan konfigurasi (di dalam
    phpmussel.ini).
@@ -911,13 +931,11 @@
    %%%_custom = Tanda tangan terubah  (Jika anda merubahnya).
    %%%_mussel = Tanda tangan phpMussel dimasukkan dalam tanda tangan tersebut
                 dari yang bukan dari ClamAV.
-   - Cek tanda tangan MD5 ketika pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+   - Cek tanda tangan MD5 ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
      "md5_clamav"
      "md5_custom"
      "md5_mussel"
-   - Cek tanda tangan umum ketika pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+   - Cek tanda tangan umum ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
      "general_clamav"
      "general_custom"
      "general_mussel"
@@ -932,14 +950,12 @@
      "html_custom"
      "html_mussel"
    - Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE
-     Sectional ketika pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+     Sectional ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
    - Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE
-     ketika pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+     ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
      "exe_clamav"
      "exe_custom"
      "exe_mussel"
@@ -949,8 +965,7 @@
      "elf_custom"
      "elf_mussel"
    - Cek data-data Mach-O (OSX, etc) pada tanda tangan Mach-O ketika
-     pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+     pemindaian? 0 = Tidak, 1 = Ya [Default].
      "macho_clamav"
      "macho_custom"
      "macho_mussel"
@@ -960,8 +975,7 @@
      "graphics_custom"
      "graphics_mussel"
    - Cek isi file terkompress pada tanda tangan metadata terkompres ketika
-     pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+     pemindaian? 0 = Tidak, 1 = Ya [Default].
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
@@ -980,6 +994,15 @@
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
+   - Aktifkan whitelist tertentu file? 0 = Tidak, 1 = Ya [Default].
+     "whitelist_clamav"
+     "whitelist_custom"
+     "whitelist_mussel"
+   - Cek XML/XDP potongan pada tanda tangan potongan XML/XDP ketika pemindaian?
+     0 = Tidak, 1 = Ya [Default].
+     "xmlxdp_clamav"
+     "xmlxdp_custom"
+     "xmlxdp_mussel"
    - Opsi Tanda tangan cocok batas panjangnya. Hanya ubah ini jika anda tahu
      apa yang anda lakukan. SD = Standard tanda tangan. RX = Tanda tangan PCRE
      (Perl Compatible Regular Expressions, "Regex"). FN = Tanda tangan Nama
@@ -1271,6 +1294,9 @@
       ukuran file dari apapun file ditargetkan untuk dipindai. File dicocokkan
       akan kebal terhadap dari dicocokkan dengan jenis tanda tangan yang
       disebutkan dalam entri daftar putih mereka.
+   - "Tanda tangan potongan XML/XDP" (xmlxdp_*). Dicek pada apapun XML/XDP
+      potongan ditemukan dari apapun file tidak bertanda putih dan ditargetkan
+      untuk dipindai.
      (Catatan jika tanda tangan ini boleh dinonaktifkan melalui phpmussel.ini).
 
                                      ~ ~ ~                                     
@@ -1356,5 +1382,5 @@
                                      ~ ~ ~                                     
 
 
-Terakhir Diperbarui: 25 September 2014 (2014.09.25).
+Terakhir Diperbarui: 28 Oktober 2014 (2014.10.28).
 EOF

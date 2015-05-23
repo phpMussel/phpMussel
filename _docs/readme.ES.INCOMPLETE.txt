@@ -31,8 +31,8 @@
 
  Un especial agradecimiento a ClamAV para la inspiración del proyecto y para   
  las firmas que este script utiliza, sin la cual, el guión probablemente no    
- existiría, o en el mejor de, tendría un muy limitado valor.                   
- <http://www.clamav.net/lang/en/>                                              
+ existiría, o en el mejor de, tendría un muy limitado valor                    
+ <http://www.clamav.net/>.                                                     
 
                                      ~ ~ ~                                     
  Este script es gratis software; puede redistribuirlo y/o modificarlo según los
@@ -46,7 +46,7 @@
 
                                      ~ ~ ~                                     
  Este documento y asociado paquete pueden descargar de gratis desde
- Sourceforge. <http://sourceforge.net/projects/phpmussel/>
+ Sourceforge <http://sourceforge.net/projects/phpmussel/>.
 
                                      ~ ~ ~                                     
 
@@ -524,6 +524,10 @@
  /_docs/readme.PT.txt (Documentación, Incluido); PORTUGUÊS
     The README files (for example; the file you're currently reading).
     ~
+ /_docs/signatures_tally.txt (Documentación, Incluido)
+    Net-shift tally of included signatures (not required for proper function of
+    script).
+    ~
  /_testfiles/ (Directory)
     Test files directory (contains various files).
     All contained files are test files for testing if phpMussel was correctly
@@ -561,6 +565,9 @@
     ~
  /_testfiles/pe_sectional_testfile.exe (Prueba archivo, Incluido)
     Test file for testing phpMussel PE Sectional signatures.
+    ~
+ /_testfiles/xdp_standard_testfile.xdp (Prueba archivo, Incluido)
+    Test file for testing phpMussel XML/XDP-Chunk signatures.
     ~
  /vault/ (Directory)
     Vault directory (contains various files).
@@ -752,6 +759,18 @@
     to have specific files whitelisted. Can remove if option is disabled or if
     you don't require whitelisting (but files will be recreated on update).
     ~
+ /vault/xmlxdp_clamav_regex.cvd (Signatures, Included)
+ /vault/xmlxdp_clamav_regex.map (Signatures, Included)
+ /vault/xmlxdp_clamav_standard.cvd (Signatures, Included)
+ /vault/xmlxdp_clamav_standard.map (Signatures, Included)
+ /vault/xmlxdp_custom_regex.cvd (Signatures, Included)
+ /vault/xmlxdp_custom_standard.cvd (Signatures, Included)
+ /vault/xmlxdp_mussel_regex.cvd (Signatures, Included)
+ /vault/xmlxdp_mussel_standard.cvd (Signatures, Included)
+    Files for XML/XDP-Chunk signatures.
+    Required if XML/XDP-Chunk signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
+    ~
 
  * Filename may differ based on configuration stipulations (in phpmussel.ini).
 
@@ -927,6 +946,16 @@
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
+   - Enable file specific whitelist?
+     0 = No, 1 = Yes [Default].
+     "whitelist_clamav"
+     "whitelist_custom"
+     "whitelist_mussel"
+   - Check XML/XDP chunks against XML/XDP-chunk signatures when scanning?
+     0 = No, 1 = Yes [Default].
+     "xmlxdp_clamav"
+     "xmlxdp_custom"
+     "xmlxdp_mussel"
    - Signature matching length limiting options. Only change these if you
      know what you're doing. SD = Standard signatures. RX = PCRE (Perl
      Compatible Regular Expressions, or "Regex") signatures. FN = Filename
@@ -1202,6 +1231,8 @@
       contents and the filesize of every file targeted for scanning. Matched
       files will be immune to being matched by the type of signature mentioned
       in their whitelist entry.
+   - "XML/XDP-Chunk Signatures" (xmlxdp_*). Checked against any XML/XDP chunks
+      found within any non-whitelisted files targeted for scanning.
      (Note that any of these signatures may be easily disabled via
       phpmussel.ini).
 
@@ -1288,5 +1319,5 @@
                                      ~ ~ ~                                     
 
 
-Última Actualización: 25 Septiembre 2014 (2014.09.25).
+Última Actualización: 28 Octubre 2014 (2014.10.28).
 EOF

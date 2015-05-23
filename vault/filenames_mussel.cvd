@@ -459,7 +459,8 @@ phpMussel-FN.W32.Virus.Ovagur-0:^(NvVid\.sys|ocmsn\.old|NvVid\.exe|ocmsn\.log|oc
 phpMussel-FN.W32.Worm.SpyBot.Gen-1:^[Pp][Cc][Gg][Ww][Ii][Nn]32\.[Ll][Ii]3
 phpMussel-FN.W32.Worm.Zimuse.B-3:^ainf\.inf
 phpMussel-FN.Worm.Generic-0:\.[Ww][Oo][Rr][Mm]
->$climode>1>463
+phpMussel-FN.Defacement-001:^0[Bb][Ii][Tt]0\.[Gg][Ii][Ff]$
+>$climode>1>464
 phpMussel-FN.Illegal.Character-3F:\x3f
 >$climode>0>-1
 phpMussel-FN.Illegal.Character-00:\x00

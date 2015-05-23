@@ -10,7 +10,7 @@
                                      ~ ~ ~                                     
   Special thanks to ClamAV for both project inspiration and for the signatures 
   that this script utilises, without which, the script would likely not exist, 
-  or at best, would have very limited value. <http://www.clamav.net/lang/en/>  
+  or at best, would have very limited value <http://www.clamav.net/>.          
 
                                      ~ ~ ~                                     
  Special thanks to all those supporting the project, to anyone else that I may 
@@ -28,13 +28,13 @@
  version. This script is distributed in the hope that it will be useful, but   
  WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or 
  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
- details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
+ details <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.     
 
                                      ~ ~ ~                                     
- This File: phpMussel v0.5 (25th September 2014) Language Data
+ This File: phpMussel v0.5b (26th October 2014) Language Data.
 
  The latest version and future updates can be obtained from the phpMussel
- SourceForge page located at <http://sourceforge.net/projects/phpmussel/>
+ SourceForge page located at <http://sourceforge.net/projects/phpmussel/>.
 
                                      ~ ~ ~                                     
  Please refer to the README documentation for installation instructions and for
@@ -86,6 +86,7 @@ if($MusselConfig['general']['lang']=="en")
 	$MusselConfig['lang']['scan_checking_contents']="Success! Proceeding to check contents.";
 	$MusselConfig['lang']['scan_checking']="Checking";
 	$MusselConfig['lang']['scan_command_injection']="Command injection attempt detected";
+	$MusselConfig['lang']['scan_complete']="Complete";
 	$MusselConfig['lang']['scan_extensions_missing']="Failed (missing required extensions)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="Filename manipulation detected";
 	$MusselConfig['lang']['scan_map_corrupted']="Signature map corrupted";
@@ -162,6 +163,7 @@ else if($MusselConfig['general']['lang']=="de")
 	$MusselConfig['lang']['scan_checking_contents']="Erfolg! Überprüfe Inhalte.";
 	$MusselConfig['lang']['scan_checking']="Überprüfung";
 	$MusselConfig['lang']['scan_command_injection']="CMD-Injektion erkannt";
+	$MusselConfig['lang']['scan_complete']="Komplett";
 	$MusselConfig['lang']['scan_extensions_missing']="Gescheitert (fehlende benötigte Erweiterungen)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="Manipulation des Dateinamens erkannt";
 	$MusselConfig['lang']['scan_map_corrupted']="Signaturkarte beschädigt";
@@ -238,6 +240,7 @@ else if($MusselConfig['general']['lang']=="es")
 	$MusselConfig['lang']['scan_checking_contents']="Éxito! Procediendo a verificar el contenido.";
 	$MusselConfig['lang']['scan_checking']="Verificando";
 	$MusselConfig['lang']['scan_command_injection']="Comandos inyección intento detectado";
+	$MusselConfig['lang']['scan_complete']="Completo";
 	$MusselConfig['lang']['scan_extensions_missing']="Fracasado (desaparecido requeridos extensiones)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="Manipulación del fichero nombre detectado";
 	$MusselConfig['lang']['scan_map_corrupted']="Firma Mapa corrompido";
@@ -314,6 +317,7 @@ else if($MusselConfig['general']['lang']=="fr")
 	$MusselConfig['lang']['scan_checking_contents']="Succès! Procédant à vérifier le contenu.";
 	$MusselConfig['lang']['scan_checking']="Vérification";
 	$MusselConfig['lang']['scan_command_injection']="Commande injection tentative détecté";
+	$MusselConfig['lang']['scan_complete']="Complète";
 	$MusselConfig['lang']['scan_extensions_missing']="Manqué (manquant extensions requises)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="Fichier nom manipulation détecté";
 	$MusselConfig['lang']['scan_map_corrupted']="Signature carte corrompu";
@@ -390,6 +394,7 @@ else if($MusselConfig['general']['lang']=="id")
 	$MusselConfig['lang']['scan_checking_contents']="Sukses! Melanjutkan untuk memeriksa isi.";
 	$MusselConfig['lang']['scan_checking']="Memeriksa";
 	$MusselConfig['lang']['scan_command_injection']="Perintah injeksi terdeteksi";
+	$MusselConfig['lang']['scan_complete']="Selesai";
 	$MusselConfig['lang']['scan_extensions_missing']="Gagal (hilang ekstensi yang dibutuhkan)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="File nama manipulasi terdeteksi";
 	$MusselConfig['lang']['scan_map_corrupted']="Tanda tangan peta rusak";
@@ -466,6 +471,7 @@ else if($MusselConfig['general']['lang']=="it")
 	$MusselConfig['lang']['scan_checking_contents']="Successo! Procedendo per verificare i contenuti.";
 	$MusselConfig['lang']['scan_checking']="Verificare";
 	$MusselConfig['lang']['scan_command_injection']="Comando iniezione tentativo rilevato";
+	$MusselConfig['lang']['scan_complete']="Completo";
 	$MusselConfig['lang']['scan_extensions_missing']="Mancato (Manca richieste estensioni)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="File nome manipolazione rilevato";
 	$MusselConfig['lang']['scan_map_corrupted']="Firma mappa corrotto";
@@ -542,6 +548,7 @@ else if($MusselConfig['general']['lang']=="nl")
 	$MusselConfig['lang']['scan_checking_contents']="Succes! Gaan tot verifiëren de inhoud.";
 	$MusselConfig['lang']['scan_checking']="Verifiëren";
 	$MusselConfig['lang']['scan_command_injection']="Command injectie poging gedetecteerd";
+	$MusselConfig['lang']['scan_complete']="Compleet";
 	$MusselConfig['lang']['scan_extensions_missing']="Mislukt (ontbrekende vereiste extensies)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="Bestandsnaam manipulatie ontdekt";
 	$MusselConfig['lang']['scan_map_corrupted']="Handtekening kaart beschadigd";
@@ -618,6 +625,7 @@ else if($MusselConfig['general']['lang']=="pt")
 	$MusselConfig['lang']['scan_checking_contents']="Sucesso! Prosseguindo para verificar o conteúdo.";
 	$MusselConfig['lang']['scan_checking']="Verificação";
 	$MusselConfig['lang']['scan_command_injection']="Comando injeção tentativa detectado";
+	$MusselConfig['lang']['scan_complete']="Completo";
 	$MusselConfig['lang']['scan_extensions_missing']="Fracassado (faltando extensões necessárias)!";
 	$MusselConfig['lang']['scan_filename_manipulation_detected']="Arquivo nome manipulação detectado";
 	$MusselConfig['lang']['scan_map_corrupted']="Assinatura mapa corrompido";

@@ -31,8 +31,8 @@
 
  Uno speciale grazie a ClamAV sia per l'ispirazione del progetto e per le firme
  che questo script usi, senza la quale, lo script sarebbe probabilmente non    
- esisterebbe, o nel migliore, avrebbe un molto limitato valore.                
- <http://www.clamav.net/lang/en/>                                              
+ esisterebbe, o nel migliore, avrebbe un molto limitato valore                 
+ <http://www.clamav.net/>.       .                                             
 
                                      ~ ~ ~                                     
  Questo script è libero software; è possibile ridistribuirlo e/o modificarlo   
@@ -41,12 +41,12 @@
  versione successiva. Questo script è distribuito nella speranza che possa     
  essere utile, Ma SENZA ALCUNA GARANZIA; senza neppure la implicita garanzia di
  COMMERCIABILITà o IDONEITà PER UN PARTICOLARE SCOPO. Vedere la GNU General    
- Public License per ulteriori dettagli.                                        
- <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>              
+ Public License per ulteriori dettagli <http://www.gnu.org/licenses/>          
+ <http://opensource.org/licenses/>                                             
 
                                      ~ ~ ~                                     
  Questo documento e il suo associato pacchetto possono essere scaricati
- gratuitamente da Sourceforge. <http://sourceforge.net/projects/phpmussel/>
+ gratuitamente da Sourceforge <http://sourceforge.net/projects/phpmussel/>.
 
                                      ~ ~ ~                                     
 
@@ -552,6 +552,10 @@
  /_docs/readme.PT.txt (Documentazione, Incluso); PORTUGUÊS
     Il README file (per esempio; il file che si sta leggendo momentaneamente).
     ~
+ /_docs/signatures_tally.txt (Documentazione, Incluso)
+    Conteggio delle firme incluso (non richiesto per il corretto funzionamento
+    dello script).
+    ~
  /_testfiles/ (Cartella)
     Test file cartella (contiene vari file).
     Tutti i file contenuti sono test file per la verifica se phpMussel è
@@ -590,6 +594,9 @@
     ~
  /_testfiles/pe_sectional_testfile.exe (Test file, Incluso)
     Test file per test di phpMussel PE Sezionale firme.
+    ~
+ /_testfiles/xdp_standard_testfile.xdp (Test file, Incluso)
+    Test file per test di phpMussel XML/XDP-Pezzo firme.
     ~
  /vault/ (Cartella)
     Vault cartella (contiene vari file).
@@ -799,6 +806,19 @@
     è disabilitato o se non si richiede whitelisting (ma i file verranno
     ricreati al momento di aggiornamento).
     ~
+ /vault/xmlxdp_clamav_regex.cvd (Firme, Incluso)
+ /vault/xmlxdp_clamav_regex.map (Firme, Incluso)
+ /vault/xmlxdp_clamav_standard.cvd (Firme, Incluso)
+ /vault/xmlxdp_clamav_standard.map (Firme, Incluso)
+ /vault/xmlxdp_custom_regex.cvd (Firme, Incluso)
+ /vault/xmlxdp_custom_standard.cvd (Firme, Incluso)
+ /vault/xmlxdp_mussel_regex.cvd (Firme, Incluso)
+ /vault/xmlxdp_mussel_standard.cvd (Firme, Incluso)
+    File per XML/XDP-Pezzo firme.
+    Richiesto se l'opzione per XML/XDP-Pezzo firme in phpmussel.ini è
+    abilitato. Può rimuovere se l'opzione è disabilitato (ma i file
+    verranno ricreati al momento di aggiornamento).
+    ~
 
  * Nome del file può variare dipendente di configurazione (in phpmussel.ini).
 
@@ -935,14 +955,12 @@
      "html_custom"
      "html_mussel"
    - Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE
-     Sezionale firme durante la scansione?
-     0 = No, 1 = Sì [Predefinito].
+     Sezionale firme durante la scansione? 0 = No, 1 = Sì [Predefinito].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
    - Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE firme
-     durante la scansione?
-     0 = No, 1 = Sì [Predefinito].
+     durante la scansione? 0 = No, 1 = Sì [Predefinito].
      "exe_clamav"
      "exe_custom"
      "exe_mussel"
@@ -952,8 +970,7 @@
      "elf_custom"
      "elf_mussel"
    - Verificare Mach-O file (OSX, ecc) contro Mach-O firme durante la
-     scansione?
-     0 = No, 1 = Sì [Predefinito].
+     scansione? 0 = No, 1 = Sì [Predefinito].
      "macho_clamav"
      "macho_custom"
      "macho_mussel"
@@ -963,8 +980,7 @@
      "graphics_custom"
      "graphics_mussel"
    - Verificare il contenuto dell'archivio contro archivio metadati firme
-     durante la scansione?
-     0 = No, 1 = Sì [Predefinito].
+     durante la scansione? 0 = No, 1 = Sì [Predefinito].
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
@@ -973,9 +989,8 @@
      "ole_clamav"
      "ole_custom"
      "ole_mussel"
-   - Verificare nomi del file against file nome basate firme durante la
-     scansione?
-     0 = No, 1 = Sì [Predefinito].
+   - Verificare nomi del file contro file nome basate firme durante la
+     scansione? 0 = No, 1 = Sì [Predefinito].
      "filenames_clamav"
      "filenames_custom"
      "filenames_mussel"
@@ -983,8 +998,17 @@
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
+   - Abilita file-specifico whitelist? 0 = No, 1 = Sì [Predefinito].
+     "whitelist_clamav"
+     "whitelist_custom"
+     "whitelist_mussel"
+   - Verificare XML/XDP pezzi contro XML/XDP-pezzo firme durante la scansione?
+     0 = No, 1 = Sì [Predefinito].
+     "xmlxdp_clamav"
+     "xmlxdp_custom"
+     "xmlxdp_mussel"
    - Firma lunghezza corrispondenza limitando opzioni. Modificata solo se si sa
-     cosa si sta facendo. SD = Standard firme. RX = PCRE (Perl Compatible
+     cosa si sta facendo. SD = Standard firme. RX = PCRE (Perl Compatibile
      Regolari Espressioni, o "Regex") firme. FN = File nome firme. Se notate
      php termina fatalmente quando phpMussel tenta per scansione, tenta per
      abbassare i "max" valori seguito. Se possibile e conveniente, fatemi
@@ -1274,6 +1298,9 @@
       contenuti e la dimensione del ogni file mirati per scansionare.
       Corrispondenti file saranno immuni contro l'essere bloccato dal tipo di
       firme di cui al loro whitelist listato.
+   - "XML/XDP Pezzo Firme" (xmlxdp_*). Verificato contro qualsiasi XML/XDP
+      pezzi trovato all'interno di qualsiasi dei file mirati per scansionare
+      quello che non è sulla whitelist.
      (Si noti che qualsiasi di queste firme possono essere facilmente
       disattivato tramite phpmussel.ini).
 
@@ -1362,5 +1389,5 @@
                                      ~ ~ ~                                     
 
 
-Ultimo Aggiornamento: 25 Settembre 2014 (2014.09.25).
+Ultimo Aggiornamento: 28 Ottobre 2014 (2014.10.28).
 EOF

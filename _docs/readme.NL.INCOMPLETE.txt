@@ -32,8 +32,8 @@
 
  Speciale dank aan ClamAV voor zowel project inspiratie en voor de             
  handtekeningen dat dit script maakt gebruik daarvan, zonder welke, het script 
- zou waarschijnlijk niet bestaan, of op zijn best, zou zeer beperkte waarde.   
- <http://www.clamav.net/lang/en/>                                              
+ zou waarschijnlijk niet bestaan, of op zijn best, zou zeer beperkte waarde    
+ <http://www.clamav.net/>.                                                     
 
                                      ~ ~ ~                                     
  Dit script is vrije software; je kan herdistribueren en/of wijzigen dit onder 
@@ -42,12 +42,12 @@
  enige latere versie. Dit script wordt gedistribueerd in de hoop dat het zal   
  zijn nuttig, maar ZONDER ENIGE GARANTIE; zonder zelfs de impliciete garantie  
  van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de GNU General 
- Public License voor meer details.                                             
- <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>              
+ Public License voor meer details <http://www.gnu.org/licenses/>               
+ <http://opensource.org/licenses/>.                                            
 
                                      ~ ~ ~                                     
  Dit document en de bijbehorende pakket kan worden gedownload voor gratis van
- Sourceforge. <http://sourceforge.net/projects/phpmussel/>
+ Sourceforge <http://sourceforge.net/projects/phpmussel/>.
 
                                      ~ ~ ~                                     
 
@@ -521,6 +521,10 @@
  /_docs/readme.PT.txt (Documentation, Included); PORTUGUÊS
     The README files (for example; the file you're currently reading).
     ~
+ /_docs/signatures_tally.txt (Documentation, Included)
+    Net-shift tally of included signatures (not required for proper function of
+    script).
+    ~
  /_testfiles/ (Directory)
     Test files directory (contains various files).
     All contained files are test files for testing if phpMussel was correctly
@@ -558,6 +562,9 @@
     ~
  /_testfiles/pe_sectional_testfile.exe (Test file, Included)
     Test file for testing phpMussel PE Sectional signatures.
+    ~
+ /_testfiles/xdp_standard_testfile.xdp (Test file, Included)
+    Test file for testing phpMussel XML/XDP-Chunk signatures.
     ~
  /vault/ (Directory)
     Vault directory (contains various files).
@@ -749,6 +756,18 @@
     to have specific files whitelisted. Can remove if option is disabled or if
     you don't require whitelisting (but files will be recreated on update).
     ~
+ /vault/xmlxdp_clamav_regex.cvd (Signatures, Included)
+ /vault/xmlxdp_clamav_regex.map (Signatures, Included)
+ /vault/xmlxdp_clamav_standard.cvd (Signatures, Included)
+ /vault/xmlxdp_clamav_standard.map (Signatures, Included)
+ /vault/xmlxdp_custom_regex.cvd (Signatures, Included)
+ /vault/xmlxdp_custom_standard.cvd (Signatures, Included)
+ /vault/xmlxdp_mussel_regex.cvd (Signatures, Included)
+ /vault/xmlxdp_mussel_standard.cvd (Signatures, Included)
+    Files for XML/XDP-Chunk signatures.
+    Required if XML/XDP-Chunk signatures option in phpmussel.ini is enabled.
+    Can remove if option is disabled (but files will be recreated on update).
+    ~
 
  * Filename may differ based on configuration stipulations (in phpmussel.ini).
 
@@ -924,6 +943,16 @@
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
+   - Enable file specific whitelist?
+     0 = No, 1 = Yes [Default].
+     "whitelist_clamav"
+     "whitelist_custom"
+     "whitelist_mussel"
+   - Check XML/XDP chunks against XML/XDP-chunk signatures when scanning?
+     0 = No, 1 = Yes [Default].
+     "xmlxdp_clamav"
+     "xmlxdp_custom"
+     "xmlxdp_mussel"
    - Signature matching length limiting options. Only change these if you
      know what you're doing. SD = Standard signatures. RX = PCRE (Perl
      Compatible Regular Expressions, or "Regex") signatures. FN = Filename
@@ -1199,6 +1228,8 @@
       contents and the filesize of every file targeted for scanning. Matched
       files will be immune to being matched by the type of signature mentioned
       in their whitelist entry.
+   - "XML/XDP-Chunk Signatures" (xmlxdp_*). Checked against any XML/XDP chunks
+      found within any non-whitelisted files targeted for scanning.
      (Note that any of these signatures may be easily disabled via
       phpmussel.ini).
 
@@ -1285,5 +1316,5 @@
                                      ~ ~ ~                                     
 
 
-Laatste Bijgewerkt: 25 September 2014 (2014.09.25).
+Laatste Bijgewerkt: 28 Oktober 2014 (2014.10.28).
 EOF
