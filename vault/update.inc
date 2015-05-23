@@ -30,16 +30,12 @@
  <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> and others, and
  special thanks to all those supporting the project, to anyone else that I may
  have otherwise forgotten to mention, and to you, for using the script.
- For comments, feedback, suggestions, help, technical support or similar, you
- can email me via <phpmussel@gamejaunt.com>, contact me via my website contact
- form located at <http://www.gamejaunt.com/contact.php> or participate in the
- community discussion forums for phpMussel hosted by Spambot Security. :-)
 
  This document and its associated package can be downloaded for free from
  Sourceforge <http://sourceforge.net/projects/phpmussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.6 (21st November 2014) Update Script.
+ This File: phpMussel v0.6a (5th December 2014) Update Script.
 
  The latest version and future updates can be obtained from the phpMussel
  SourceForge page located at <http://sourceforge.net/projects/phpmussel/>.

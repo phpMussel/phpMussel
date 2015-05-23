@@ -51,11 +51,6 @@
  <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> und anderen,
  und Besonderer Dank geht an alle diejenigen die Projekt unterstützen werden,
  an andere Personen nicht erwähnt, und an Sie, für die Verwendung des Script.
- Für Kommentare, Feedback, Anregungen, Hilfe, technische Unterstützung oder
- ähnliche, Sie können E-Mail an mich via <phpmussel@gamejaunt.com>,
- kontaktieren mich via meine Website Kontaktform gefunden auf
- <http://www.gamejaunt.com/contact.php> oder teilnehmen in der Gemeinschaft
- Diskussionsforen für phpMussel von Spambot Security. :-)
 
  Dieses Dokument und das zugehörige Paket kann kostenlos von Sourceforge
  heruntergeladen werden <http://sourceforge.net/projects/phpmussel/>.
@@ -1479,5 +1474,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 2014.11.21
+Zuletzt aktualisiert: 2014.12.05
 EOF

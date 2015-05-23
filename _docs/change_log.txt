@@ -15,7 +15,7 @@ Do-to list for potential future major version (v1.0):
 - Any and all known bugs fixed (none pending at this time).
 - Further optimization and testing of all signatures and all code.
 - Possible idea: Create an API system for data sharing and malware reporting?
-- Possible idea: IP blacklisted/whitelist?
+- Possible idea: IP blacklist/whitelist?
 - Possible idea: Wiki-esque descriptions of block types, guides, or further
   similar such reading materials?
 Do-to list for potential future minor version (v0.7):
@@ -30,7 +30,49 @@ Anything less than sub-minor:
   than sub-minor.
 Last Edited: 15th November 2014
 
-=== Version/Release 0.6 (Previous Release: 0.5c) ===
+=== Version/Release 0.6a (Previous Release: 0.6) ===
+SUMMARY:
+Updated to the latest signatures set (55+19735+6a).
+Sub-minor release (medium priority).
+
+NEW CHANGES:
+- Added ability for the use of negative clauses with triggering signatures
+  based upon the content of variables available to the scope of the core
+  scanning functionality (2014.11.25).
+- Added a few new minor PHP malware obfuscation signatures (2014.11.29).
+- Updated to the the latest ClamAV signatures; PhishTank signatures; All other
+  signatures and etc (2014.12.06).
+
+PROBLEMS/BUGS FIXED:
+- In testing of the previous version consequent to its release, I'd discovered
+  that attempted file uploads successfully blocked due to archive metadata
+  signatures and to signatures of that type alone, weren't being parsed at all
+  to the quarantine function. This is not a threat in any way, but rather, an
+  oversight that simply would've made it slightly more difficult to debug
+  any blocked uploads blocked due to that signature type in the event that
+  debugging was required, but nonetheless, those files would still be blocked
+  correctly. Anyhow, I've made a point of immediately fixing it (2014.11.25).
+
+ADDITIONAL NOTES:
+- As per mentioned within the change_log information for the previous release,
+  I'd intended to completely overhaul the updater at some point or another. I
+  haven't yet made a start on doing this, but still intend to do so at some
+  point (2014.12.05).
+- The domains for which I'd cited in documentation and in the archive comment
+  regarding a "contact form" for contacting me as well as regarding an email
+  address for seeking support, I've chosen to allow to elapse, because beyond
+  those particular things, they no longer served any purpose for me, and the
+  renewal date for those domains has come about. I may or may not register new
+  domains for phpMussel; At this point, I don't think it's necessary and
+  wouldn't really serve any useful purpose, but if a need for it emerges at
+  some point in the future, I'll do so. In consideration of this, I've removed
+  any references to these domains from the documentation and archive comments
+  as of this release (2014.12.05).
+
+Maikuolan,
+6th December 2014.
+
+=== Version/Release 0.6 (Previous Release: 0.5c; Next: 0.6a) ===
 SUMMARY:
 Updated to the latest signatures set (55+19659+6).
 Minor release (high priority).
@@ -143,7 +185,7 @@ ADDITIONAL NOTES:
   (semi-)auto-update procedure at some point hopefully between now and the next
   minor version release (no promises), for the time being, I've taken down the
   auto-update sources used by the Update script. Hope this isn't inconvenient.
-  The Update script remains include with the package, and is not capable of
+  The Update script remains included with the package, and is not capable of
   causing any harm or problems, but attempts to use it will likely just
   time-out or result in a 404 until I get around to putting those sources back
   online again.  For the time being, for updating to this current version and
@@ -163,7 +205,7 @@ NEW CHANGES:
 - A new round and strengthening of the HTML defacement signatures and
   various other new signatures; A few XXE; The latest ClamAV signatures;
   PhishTank signatures; All other signatures and etc (2014.11.02).
-- With the release of 0.4d, I'd implemented the ability for signatures to
+- With the release of v0.4d, I'd implemented the ability for signatures to
   trigger or not trigger based upon the value of variables available to the
   scope of the core script core scanning function. To make better use of that
   implementation, I've extended on the actual variables available. I've already

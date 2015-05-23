@@ -1,10 +1,10 @@
 TOTAL AND NET-SHIFT OF TOTAL SIGNATURES TALLY BREAKDOWN FOR THE MOST RECENT
 RELEASE OF PHPMUSSEL AGAINST THE PREVIOUS MOST RECENT RELEASE OF PHPMUSSEL.
- Last Updated: 21st November 2014 (2014.11.21).
+ Last Updated: 6th December 2014 (2014.12.06).
 
 
 
-=== Release 0.6 (phpMussel v0.6) ===
+=== Release 0.6a (phpMussel v0.6a) ===
 
 TALLY BY SIGNATURE TYPE.
  This describes the total number of signatures by their respective signature
@@ -13,118 +13,118 @@ TALLY BY SIGNATURE TYPE.
  comments and the likes, these numbers may not necessarily always be precise.
 
 Normalised ASCII Signatures (REGEX only)     ClamAV    Non-ClamAV         Total
-- Total quantity:                               268            27           295
-- Net-shift since previous release:              +7            +2            +9
+- Total quantity:                               261            28           289
+- Net-shift since previous release:              -7            +1            -6
 Normalised ASCII Signatures (Non-REGEX only) ClamAV    Non-ClamAV         Total
-- Total quantity:                             1,091           506         1,597
-- Net-shift since previous release:              +5            +4            +9
+- Total quantity:                             1,087           525         1,612
+- Net-shift since previous release:              -4           +19           +15
 Normalised ASCII Signatures (Everything)     ClamAV    Non-ClamAV         Total
-- Total quantity:                             1,359           533         1,892
-- Net-shift since previous release:             +12            +6           +18
+- Total quantity:                             1,348           553         1,901
+- Net-shift since previous release:             -11           +20            +9
 
 ELF Signatures (REGEX only)                  ClamAV    Non-ClamAV         Total
 - Total quantity:                                 1             0             1
 - Net-shift since previous release:              ±0            ±0            ±0
 ELF Signatures (Non-REGEX only)              ClamAV    Non-ClamAV         Total
-- Total quantity:                                29             2            31
-- Net-shift since previous release:              ±0            ±0            ±0
-ELF Signatures (Everything)                  ClamAV    Non-ClamAV         Total
 - Total quantity:                                30             2            32
-- Net-shift since previous release:              ±0            ±0            ±0
+- Net-shift since previous release:              +1            ±0            +1
+ELF Signatures (Everything)                  ClamAV    Non-ClamAV         Total
+- Total quantity:                                31             2            33
+- Net-shift since previous release:              +1            ±0            +1
 
 EXE Signatures (REGEX only)                  ClamAV    Non-ClamAV         Total
-- Total quantity:                             3,081            99         3,180
-- Net-shift since previous release:             +37           +22           +59
+- Total quantity:                             3,078            99         3,177
+- Net-shift since previous release:              -3            ±0            -3
 EXE Signatures (Non-REGEX only)              ClamAV    Non-ClamAV         Total
-- Total quantity:                            11,769            62        11,831
-- Net-shift since previous release:             +40           +10           +50
+- Total quantity:                            11,771            62        11,833
+- Net-shift since previous release:              +2            ±0            +2
 EXE Signatures (Everything)                  ClamAV    Non-ClamAV         Total
 - Total quantity:                            14,850           161        15,011
-- Net-shift since previous release:             +77           +32          +109
+- Net-shift since previous release:              -1            ±0            -1
 
 Filename Signatures                          ClamAV    Non-ClamAV         Total
 - Total quantity:                                42           503           545
 - Net-shift since previous release:              ±0            ±0            ±0
 
 General Signatures (REGEX only)              ClamAV    Non-ClamAV         Total
-- Total quantity:                             1,472            24         1,496
-- Net-shift since previous release:              +6            +1            +7
+- Total quantity:                             1,468            24         1,492
+- Net-shift since previous release:              -4            ±0            -4
 General Signatures (Non-REGEX only)          ClamAV    Non-ClamAV         Total
-- Total quantity:                            31,885           821        32,706
-- Net-shift since previous release:             +20           +22           +42
+- Total quantity:                            31,868           912        32,780
+- Net-shift since previous release:             -17          +100           +83
 General Signatures (Everything)              ClamAV    Non-ClamAV         Total
-- Total quantity:                            33,357           845        34,202
-- Net-shift since previous release:             +26           +23           +49
+- Total quantity:                            33,336           936        34,272
+- Net-shift since previous release:             -21          +100           +79
 
 Graphics Signatures (REGEX only)             ClamAV    Non-ClamAV         Total
 - Total quantity:                                 5             4             9
 - Net-shift since previous release:              ±0            ±0            ±0
 Graphics Signatures (Non-REGEX only)         ClamAV    Non-ClamAV         Total
-- Total quantity:                                10           197           207
-- Net-shift since previous release:              ±0            ±0            ±0
+- Total quantity:                                10           198           208
+- Net-shift since previous release:              ±0            +1            +1
 Graphics Signatures (Everything)             ClamAV    Non-ClamAV         Total
-- Total quantity:                                15           201           216
-- Net-shift since previous release:              ±0            ±0            ±0
+- Total quantity:                                15           202           217
+- Net-shift since previous release:              ±0            +1            +1
 
 Normalised HTML Signatures (REGEX only)      ClamAV    Non-ClamAV         Total
-- Total quantity:                             1,141             6         1,147
-- Net-shift since previous release:             +64            ±0           +64
+- Total quantity:                             1,105             6         1,111
+- Net-shift since previous release:             -36            ±0           -36
 Normalised HTML Signatures (Non-REGEX only)  ClamAV    Non-ClamAV         Total
-- Total quantity:                             2,663           126         2,789
-- Net-shift since previous release:            +196           +16          +212
+- Total quantity:                             2,558           128         2,686
+- Net-shift since previous release:            -105            +2          -103
 Normalised HTML Signatures (Everything)      ClamAV    Non-ClamAV         Total
-- Total quantity:                             3,804           132         3,936
-- Net-shift since previous release:            +260           +16          +276
+- Total quantity:                             3,663           134         3,797
+- Net-shift since previous release:            -141            +2          -139
 
 Mach-O Signatures (REGEX only)               ClamAV    Non-ClamAV         Total
-- Total quantity:                                24             0            24
-- Net-shift since previous release:              +1            ±0            +1
+- Total quantity:                                18             0            18
+- Net-shift since previous release:              -6            ±0            -6
 Mach-O Signatures (Non-REGEX only)           ClamAV    Non-ClamAV         Total
-- Total quantity:                                27             0            27
-- Net-shift since previous release:              +1            ±0            +1
+- Total quantity:                                25             0            25
+- Net-shift since previous release:              -2            ±0            -2
 Mach-O Signatures (Everything)               ClamAV    Non-ClamAV         Total
-- Total quantity:                                51             0            51
-- Net-shift since previous release:              +2            ±0            +2
+- Total quantity:                                43             0            43
+- Net-shift since previous release:              -8            ±0            -8
 
 Mail Signatures (REGEX only)                 ClamAV    Non-ClamAV         Total
-- Total quantity:                               456            14           470
-- Net-shift since previous release:              ±0            ±0            ±0
+- Total quantity:                               454            14           468
+- Net-shift since previous release:              -2            ±0            -2
 Mail Signatures (Non-REGEX only)             ClamAV    Non-ClamAV         Total
-- Total quantity:                               567        14,182        14,749
-- Net-shift since previous release:              ±0        +2,556        +2,556
+- Total quantity:                               567        13,593        14,160
+- Net-shift since previous release:              ±0          -589          -589
 Mail Signatures (Everything)                 ClamAV    Non-ClamAV         Total
-- Total quantity:                             1,023        14,196        15,219
-- Net-shift since previous release:              ±0        +2,556        +2,556
+- Total quantity:                             1,021        13,607        14,628
+- Net-shift since previous release:              -2          -589          -591
 
 OLE Signatures (REGEX only)                  ClamAV    Non-ClamAV         Total
 - Total quantity:                               103             0           103
-- Net-shift since previous release:              +1            ±0            +1
+- Net-shift since previous release:              ±0            ±0            ±0
 OLE Signatures (Non-REGEX only)              ClamAV    Non-ClamAV         Total
 - Total quantity:                               597             1           598
 - Net-shift since previous release:              ±0            ±0            ±0
 OLE Signatures (Everything)                  ClamAV    Non-ClamAV         Total
 - Total quantity:                               700             1           701
-- Net-shift since previous release:              +1            ±0            +1
+- Net-shift since previous release:              ±0            ±0            ±0
 
 PDF Signatures (REGEX only)                  ClamAV    Non-ClamAV         Total
 - Total quantity:                                NA             0             0
 - Net-shift since previous release:              NA            ±0            ±0
 PDF Signatures (Non-REGEX only)              ClamAV    Non-ClamAV         Total
 - Total quantity:                                 4             1             5
-- Net-shift since previous release:              +4            +1            +5
+- Net-shift since previous release:              ±0            ±0            ±0
 PDF Signatures (Everything)                  ClamAV    Non-ClamAV         Total
 - Total quantity:                                 4             1             5
-- Net-shift since previous release:              +4            +1            +5
+- Net-shift since previous release:              ±0            ±0            ±0
 
 Shockwave Signatures (REGEX only)            ClamAV    Non-ClamAV         Total
 - Total quantity:                                 3             2             5
-- Net-shift since previous release:              +3            +2            +5
+- Net-shift since previous release:              ±0            ±0            ±0
 Shockwave Signatures (Non-REGEX only)        ClamAV    Non-ClamAV         Total
 - Total quantity:                                17             4            21
-- Net-shift since previous release:             +17            +4           +21
+- Net-shift since previous release:              ±0            ±0            ±0
 Shockwave Signatures (Everything)            ClamAV    Non-ClamAV         Total
 - Total quantity:                                20             6            26
-- Net-shift since previous release:             +20            +6           +26
+- Net-shift since previous release:              ±0            ±0            ±0
 
 XML/XDP-Chunk Signatures (REGEX only)        ClamAV    Non-ClamAV         Total
 - Total quantity:                                 5             0             5
@@ -137,8 +137,8 @@ XML/XDP-Chunk Signatures (Everything)        ClamAV    Non-ClamAV         Total
 - Net-shift since previous release:              ±0            ±0            ±0
 
 MD5 Signatures                               ClamAV    Non-ClamAV         Total
-- Total quantity:                            48,152           299        48,451
-- Net-shift since previous release:              +3            +1            +4
+- Total quantity:                            48,580           299        48,879
+- Net-shift since previous release:            +428            ±0          +428
 
 Archive Metadata Signatures                  ClamAV    Non-ClamAV         Total
 - Total quantity:                                13             1            14
@@ -146,11 +146,11 @@ Archive Metadata Signatures                  ClamAV    Non-ClamAV         Total
 
 PE Sectional Signatures                      ClamAV    Non-ClamAV         Total
 - Total quantity:                           300,000            11       300,011
-- Net-shift since previous release:              ±0           +10           +10
+- Net-shift since previous release:              ±0            ±0            ±0
 
 Complex Extended (CoEx) Signatures           ClamAV    Non-ClamAV         Total
-- Total quantity:                                61        10,531        10,592
-- Net-shift since previous release:             +61       +10,531       +10,592
+- Total quantity:                                61        11,707        10,768
+- Net-shift since previous release:              ±0        +1,176        +1,176
 
 
 
@@ -162,24 +162,24 @@ TALLY BY SIGNATURE VENDOR/SOURCE.                           Total     Net-Shift
  don't include hardcoded signatures or checks, and may
  not necessarily always be 100% precise.
 
-ClamAV <http://www.clamav.net/>                           403,494          +489
+ClamAV <http://www.clamav.net/>                           403,739          +245
  This constitutes the main bulk of phpMussel's
  signatures and covers every signature type supported
  by phpMussel at this time.
 
-PhishTank <http://www.phishtank.com/>                      14,036        +2,556
+PhishTank <http://www.phishtank.com/>                      13,443          -593
  Although in heavily modified and reduced form,
  phpMussel uses the PhishTank CSV of known phishing
  URLs to populate the main bulk of its standard mail
  scanning signatures.
 
-SecuriteInfo <http://www.securiteinfo.com/>                10,481       +10,481
+SecuriteInfo <http://www.securiteinfo.com/>                11,659        +1,178
  SecuriteInfo.com provides a range of good optional
  supplementary MD5 signatures for the ClamAV engine.
  PhpMussel adapts a selection of those for within its
  "complex extended" signatures functionality.
 
-NLNetLabs <http://nlnetlabs.nl/>                              774           +24
+NLNetLabs <http://nlnetlabs.nl/>                              793           +19
  Primarily concerning BATs and PE files, phpMussel has
  adapted a number of the '09 signatures available from
  NLNetLabs.
@@ -188,14 +188,14 @@ ZBB <http://www.securiteinfo.com/>                             42            ±0
  Adapted from signatures originally designed for use
  with ZB Block but with equal relevance to phpMussel.
 
-phpMussel <http://sourceforge.net/projects/phpmussel/>      1,942           -92
+phpMussel <http://sourceforge.net/projects/phpmussel/>      1,952           +10
  ..And of course, there's the numerous signatures that
- come from phpMusself itself (mostly for which I've
- written myself, based upon the research and direct
- analysis of malware samples and various other threats
- that I've encountered).
+ come from phpMusself itself (mostly that I've written
+ myself, based upon the research and direct analysis of
+ malware samples and various other threats that I've
+ found and/or encountered).
 
-GRAND TOTAL                                               430,769       +13,458
+GRAND TOTAL                                               431,628          +859
 
 
 

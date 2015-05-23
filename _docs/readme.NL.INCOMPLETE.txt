@@ -50,12 +50,7 @@
  <http://www.securiteinfo.com/>, PhishTank <http://www.phishtank.com/>,
  NLNetLabs <http://nlnetlabs.nl/> en anderen, en speciale dank aan allen die
  het project steunen, aan iemand anders die ik anders misschien vergeten te
- vermelden, en voor u, voor het gebruik van het script. Voor opmerkingen,
- feedback, suggesties, hulp, technische ondersteuning of soortgelijke, kun je
- me mailen door <phpmussel@gamejaunt.com>, contact met mij op door mijn website
- contact form gevonden op <http://www.gamejaunt.com/contact.php> of deel te
- nemen in de gemeenschap discussieforums voor phpMussel gehost door
- Spambot Security. :-)
+ vermelden, en voor u, voor het gebruik van het script.
 
  Dit document en de bijbehorende pakket kan worden gedownload voor gratis van
  Sourceforge <http://sourceforge.net/projects/phpmussel/>.
@@ -1363,24 +1358,25 @@
 
  8. BEKENDE COMPATIBILITEITSPROBLEMEN
 
- PHP and PCRE
- - phpMussel requires PHP and PCRE to execute and function correctly. Without
-   php, or without the PCRE extension of PHP, phpMussel will not execute or
-   function correctly. Should make sure your system has both PHP and PCRE
-   installed and available prior to downloading and installing phpMussel.
+ PHP en PCRE
+ - PHP en PCRE is vereist voor phpMussel te kunnen functioneren juist. Zonder
+   PHP, of zonder de PCRE extensie van PHP, phpMussel zullen niet worden
+   uitgevoerd of functioneren juist. Je moet er zeker van uw systeem heeft
+   zowel PHP en PCRE geïnstalleerd en beschikbaar voordat downloaden en
+   installeren phpMussel.
 
  ANTI-VIRUS SOFTWARECOMPATIBILITEIT
 
- For the most part, phpMussel should be fairly compatible with most other virus
- scanning software. However, conflictions have been reported by a number of
- users in the past. This information below is from VirusTotal.com, and it
- describes a number of false-positives reported by various anti-virus programs
- against phpMussel. Although this information isn't an absolute guarantee of
- whether or not you will encounter compatibility problems between phpMussel and
- your anti-virus software, if your anti-virus software is noted as flagging
- against phpMussel, you should either consider disabling it prior to working
- with phpMussel or should consider alternative options to either your
- anti-virus software or phpMussel.
+ Voor het grootste deel, phpMussel is algemeen compatibel met de meeste andere
+ anti-virus software. Echter, conflictions geweest beschreven door een aantal
+ gebruikers in het verleden. Deze informatie hieronder is afkomstig van
+ VirusTotal.com, het beschrijven van een aantal fout-positieven gemeld door
+ anti-virus programma's tegen phpMussel. Hoewel deze informatie is geen
+ absolute garantie van wel of niet je zult compatibiliteitsproblemen ondervindt
+ tussen phpMussel en uw anti-virus software, als uw anti-virus software wordt
+ gemarkeerd tegen phpMussel, moet u ofwel overwegen uit te schakelen
+ voorafgaand aan het werken met phpMussel of moeten overwegen alternatieve
+ opties om ofwel uw anti-virus software of phpMussel.
 
  Deze informatie is voor het laatst bijgewerkt 16 November 2014 en is op de
  hoogte voor alle phpMussel publicaties van de twee meest recente mineur
@@ -1441,5 +1437,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 21 November 2014 (2014.11.21).
+Laatste Bijgewerkt: 5 December 2014 (2014.12.05).
 EOF

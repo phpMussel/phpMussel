@@ -49,12 +49,7 @@
  <http://www.securiteinfo.com/>, PhishTank <http://www.phishtank.com/>,
  NLNetLabs <http://nlnetlabs.nl/> y otros, y agradecimiento especial a todos
  aquellos que apoyan el proyecto, a cualquier otra persona que yo haya olvidado
- de lo contrario mencionar, y a usted, por el uso de la script. Por
- comentarios, opiniones, sugerencias, ayuda, apoyo técnico o similar, usted me
- puede enviar por email a través de <phpmussel@gamejaunt.com>, contacto conmigo
- a través de mi web contacto form ubicado en
- <http://www.gamejaunt.com/contact.php> o participar en la comunidad discusión
- foros de phpMussel alojados través de Spambot Security. :-)
+ de lo contrario mencionar, y a usted, por el uso de la script.
 
  Este documento y asociado paquete pueden descargar de gratis desde
  Sourceforge <http://sourceforge.net/projects/phpmussel/>.
@@ -209,8 +204,8 @@
  Dónde:
  - $what_to_scan es una cadena o una array, apuntando a un destino archivo, un
    destino directorio o un array de destinos archivos y/o destinos directorios.
- - $output_type is an integer, indicating the format in which the results of
-   the scan are to be return as. A value of 0 instructs the function to return
+ - $output_type es un entero, indicando el formato en el que los resultados son
+   para estar de regreso como. A value of 0 instructs the function to return
    results as an integer (a returned result of -2 indicates that corrupt data
    was detected during the scan and thus the scan failed to complete,
    -1 indicates that extensions or addons required by php to execute the scan
@@ -229,7 +224,7 @@
    any such array prior to input, resulting in a flattened string containing
    the results to be returned. This variable is optional, defaulting to 0.
 
- Examples:
+ Ejemplos:
 
    $results=phpMussel("/user_name/public_html/my_file.html",1,1);
    echo $results;
@@ -1367,10 +1362,10 @@
  8. CONOCIDOS PROBLEMAS DE COMPATIBILIDAD
 
  PHP y PCRE
- - phpMussel requires PHP and PCRE to execute and function correctly. Without
-   php, or without the PCRE extension of PHP, phpMussel will not execute or
-   function correctly. Should make sure your system has both PHP and PCRE
-   installed and available prior to downloading and installing phpMussel.
+ - phpMussel requiere PHP y PCRE para ejecutar y funcionar correctamente. Sin
+   PHP, o sin la PCRE extensión de PHP, phpMussel no ejecutará o funcionará
+   correctamente. Debe asegurarse de que su sistema tiene tanto PHP y PCRE
+   instalados y disponibles antes de descargar e instalar phpMussel.
 
  ANTI-VIRUS SOFTWARE COMPATIBILIDAD
 
@@ -1444,5 +1439,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 21 Noviembre 2014 (2014.11.21).
+Última Actualización: 5 Diciembre 2014 (2014.12.05).
 EOF

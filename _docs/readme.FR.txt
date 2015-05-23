@@ -51,11 +51,7 @@
  <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> et autres, et
  merci à tous ceux qui soutiennent le projet, à quelqu'un d'autre que j'ai
  peut-être oublié de mentionner autrement, et à vous, pour l'utiliser du
- script. Pour commentaires, suggestions, aide, technique assistance ou
- similaire, vous pouvez m'envoyer un email via <phpmussel@gamejaunt.com>,
- contacter me via mon site contact formulaire situé à
- <http://www.gamejaunt.com/contact.php> ou participer dans des communautaires
- discussion forums pour phpMussel hébergés par Spambot Security. :-)
+ script.
 
  Ce document et son associé empaqueter peuvent être téléchargés gratuitement à
  sans frais de Sourceforge <http://sourceforge.net/projects/phpmussel/>.
@@ -1465,7 +1461,7 @@
 
  PHP et PCRE
  - phpMussel requérir PHP et PCRE à signer et à fonctionner correctement. Sans
-   php, ou sans le PCRE extension de PHP, phpMussel n'exécutera pas ou
+   PHP, ou sans le PCRE extension de PHP, phpMussel n'exécutera pas ou
    fonctionnent correctement. Devrait s'assurer que votre système avoir PHP et
    PCRE installé et disponible avant de votre téléchargement et installation de
    phpMussel.
@@ -1542,5 +1538,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 21 Novembre 2014 (2014.11.21).
+Dernière Réactualisé: 5 Décembre 2014 (2014.12.05).
 EOF
