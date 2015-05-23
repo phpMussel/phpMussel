@@ -10,8 +10,6 @@ phpMussel-Virus.Eddie-01:e8.{4}5e81ee.{4}fc(..)?2e.{8}(2e.{8})?4d5a.{4}fa(..)?8b
 phpMussel-Virus.Eddie-02:e8.{4}5e81ee.{4}fc(..)?2e.{8}(2e.{8})?4d5a.{4}fa(..)?8be681.{6}fb(..)?3b.{10}5006561e8bfe33c0508ed8c5.{6}b430cd21
 phpMussel-Virus.Hymn-00:e8.{4}5e83ee4cfc2e.{8}4d5a.{4}fa8be681.{6}fb3b.{10}2e.{10}5006561e0e1fb800c5cd21
 phpMussel-Virus.Eddie-03:e8.{4}5efc83.{4}81.{6}4d5a.{4}fa8be681c4.{4}fb3b.{10}5006561eb8fe4bcd2181ffbb55.{4}07.{6}07b449cd21bbffffb448cd21
-phpMussel-Trojan.HuiGeZi-00:558bec81c4..feffff53565733c08985..feffff
-phpMussel-Virus.Cryptolock-00:60be..9040008dbe.{4}ffff5783cdffeb109090909090908a0646880747
 phpMussel-Virus.IVP-02:e8.{4}5d81.{6}061ee8.{4}e8.{8}2e.{12}b44abbffffcd2183.{4}b44acd21
 phpMussel-Virus.Caz-00:e8.{4}5e83ee031e06b8ffffcd2f3c10
 phpMussel-Virus.Kuku-00:061e508cc88ed8ba7003b82425cd21.{10}90b42fcd2153
@@ -55,3 +53,17 @@ phpMussel-Virus.Keypress-00:e8.{4}e8.{4}e8.{4}e8.{8}e8.{8}e8.{8}ea.{8}1e33db8edb
 phpMussel-W32.Worm.KLEZ-00:558bec6aff6840d240..6804ac40..64a1.{8}50648925.{8}83ec585356578965e8ff15bcd0
 phpMussel-Virus.CIH-00:558d.{6}33db648703e8.{8}5b8d
 phpMussel-W32.Worm.Hybris-00:eb16a854.{4}4741424c4b434743.{12}524953..fc684c7040..ff15
+phpMussel-Malware.Certilicious-00:4e657720596f726b204369747931253023.{4}55.{8}43657274696c6963696f757320536563757269747920536563746f7231.{10}55.{8}43657274696c6963696f7573312430.{6}2a864886f7
+phpMussel-Malware.Certilicious-01:696e666f4063657274696c6963696f75732e636f6d.{4}003009
+phpMussel-Malware.Obfuscation.Generic-19.A:7[02]7[02]7[02]8df3f3f3ffebebebffebebebffebebebffebebebffebebebffebebebffebebebffebebebffebebebffebebebffebebebffebebebffebebebffe.e.e
+phpMussel-Malware.Obfuscation.Generic-19.B:7[02]7[02]7[02]8df2f2f2ffeaeaeaffeaeaeaffeaeaeaffeaeaeaffeaeaeaffeaeaeaffeaeaeaffeaeaeaffeaeaeaffeaeaeaffeaeaeaffeaeaeaffeaeaeaffe.e.e
+phpMussel-Malware.Obfuscation.Generic-19.C:7[02]7[02]7[02]8df1f1f1ffe9e9e9ffe9e9e9ffe9e9e9ffe9e9e9ffe9e9e9ffe9e9e9ffe9e9e9ffe9e9e9ffe9e9e9ffe9e9e9ffe9e9e9ffe9e9e9ffe9e9e9ffe.e.e
+phpMussel-Malware.Obfuscation.Generic-19.D:7[02]7[02]7[02]8df0f0f0ffe8e8e8ffe8e8e8ffe8e8e8ffe8e8e8ffe8e8e8ffe8e8e8ffe8e8e8ffe8e8e8ffe8e8e8ffe8e8e8ffe8e8e8ffe8e8e8ffe8e8e8ffe.e.e
+phpMussel-Malware.Obfuscation.Generic-19.E:7[02]7[02]7[02]8defefefffe7e7e7ffe7e7e7ffe7e7e7ffe7e7e7ffe7e7e7ffe7e7e7ffe7e7e7ffe7e7e7ffe7e7e7ffe7e7e7ffe7e7e7ffe7e7e7ffe7e7e7ffe.e.e
+phpMussel-Malware.Obfuscation.Generic-19.F:7[02]7[02]7[02]8deeeeeeffe6e6e6ffe6e6e6ffe6e6e6ffe6e6e6ffe6e6e6ffe6e6e6ffe6e6e6ffe6e6e6ffe6e6e6ffe6e6e6ffe6e6e6ffe6e6e6ffe6e6e6ffe.e.e
+phpMussel-Trojan.URI-00:3.3.3.3.3.2e6e6f2d69702e62697a00
+phpMussel-Trojan.Trademark-00:5f00001601001161..5f..5f3.5f3.5f..5f..5f..5f..5f00001401000f61..5f..5f..5f..5f..5f..5f..5f00001001000b61..5f..5f..5f3.5f..5f
+phpMussel-Trojan.Trademark-02:1[13]61..5f4.5f..5f..5f..5f..5f..5f..5f(000018010013|6e5f00001201)
+phpMussel-Trojan.Trademark-03:01000d....5f..5f..5f3.5f..5f3.5f00000e01
+phpMussel-Trojan.Trademark-04:0961..5f..5f..5f..5f000016010011
+phpMussel-Trojan.Trademark-05:61005.005f004.005f006.005f00..005f00.000

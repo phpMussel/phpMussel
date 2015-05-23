@@ -35,7 +35,7 @@
  Sourceforge <http://sourceforge.net/projects/phpmussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.6c (4th February 2015) Core Script.
+ This File: phpMussel v0.6d (20th February 2015) Core Script.
 
  The latest version and future updates can be obtained from the phpMussel
  SourceForge page located at <http://sourceforge.net/projects/phpmussel/>.
@@ -51,7 +51,7 @@
 
 if(!defined('phpMussel'))die("[phpMussel] This should not be accessed directly.");
 
-$phpmusselversion="phpMussel v0.6c";
+$phpmusselversion="phpMussel v0.6d";
 $linebreak=chr(10);
 if(!isset($MusselConfig['general']['ipaddr']))$MusselConfig['general']['ipaddr']="REMOTE_ADDR";
 if(!isset($_SERVER[$MusselConfig['general']['ipaddr']]))$_SERVER[$MusselConfig['general']['ipaddr']]="";
@@ -2035,6 +2035,8 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 	if(!$infectable||!$asciiable)$asciiable=($str_norm&&$infectable=(substr_count("2321",$str_hex)>0||substr_count("3c3f",$str_hex)>0||substr_count("3f3e",$str_hex)>0||substr_count("d0cf11e0",$str_hex)>0));
 	AAA */
 	$is_pe=false;
+	$NumOfSections=0;
+	$SectionNames=",";
 	if($GLOBALS['MusselConfig']['signatures']['pe_clamav']||$GLOBALS['MusselConfig']['signatures']['pe_custom']||$GLOBALS['MusselConfig']['signatures']['pe_mussel']||$GLOBALS['MusselConfig']['attack_specific']['corrupted_exe'])
 		{
 		if(substr($str,0,2)==="MZ")
@@ -2064,7 +2066,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					break;
 					}
 				$PEArr['NumOfSections']=@unpack("S",substr($str,$PEArr['Offset']+6,2));
-				$PEArr['NumOfSections']=$PEArr['NumOfSections'][1];
+				$NumOfSections=$PEArr['NumOfSections']=$PEArr['NumOfSections'][1];
 				if($PEArr['NumOfSections']<1||$PEArr['NumOfSections']>40)$PEArr['DoScan']=false;
 				break;
 				}
@@ -2088,6 +2090,7 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 					{
 					$PEArr['SectionHead']=substr($str,$PEArr['Offset']+24+$PEArr['OptHdrSize']+($PEArr['k']*40),$PEArr['NumOfSections']*40);
 					$PEArr['SectionName']=str_ireplace("\x00","",substr($PEArr['SectionHead'],0,8));
+					$SectionNames.=$PEArr['SectionName'].",";
 					$PEArr['VirtualSize']=@unpack("S",substr($PEArr['SectionHead'],8,4));
 					$PEArr['VirtualSize']=$PEArr['VirtualSize'][1];
 					$PEArr['VirtualAddress']=@unpack("S",substr($PEArr['SectionHead'],12,4));
@@ -10317,7 +10320,8 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				if($is_macho&&$coexi===11)if(substr_count($GLOBALS['memCache']['coex_clamav.cvd'],$GLOBALS['linebreak']."\$is_macho:1;"))$xsig=explode($GLOBALS['linebreak']."\$is_macho:1;",$GLOBALS['memCache']['coex_clamav.cvd']);
 				if(!$is_macho&&$coexi===11)if(substr_count($GLOBALS['memCache']['coex_clamav.cvd'],$GLOBALS['linebreak']."\$is_macho:0;"))$xsig=explode($GLOBALS['linebreak']."\$is_macho:0;",$GLOBALS['memCache']['coex_clamav.cvd']);
 				if($coexi===12)if(substr_count($GLOBALS['memCache']['coex_clamav.cvd'],$GLOBALS['linebreak']."\$xts:".$xts.";"))$xsig=explode($GLOBALS['linebreak']."\$xts:".$xts.";",$GLOBALS['memCache']['coex_clamav.cvd']);
-				if($coexi>12)break;
+				if($coexi===13)if(substr_count($GLOBALS['memCache']['coex_clamav.cvd'],$GLOBALS['linebreak']."\$NumOfSections:".$NumOfSections.";"))$xsig=explode($GLOBALS['linebreak']."\$NumOfSections:".$NumOfSections.";",$GLOBALS['memCache']['coex_clamav.cvd']);
+				if($coexi>13)break;
 				$xc=count($xsig);
 				if(isset($xsig[0]))$xsig[0]="";
 				if($xc>0)for($xi=1;$xi<$xc;$xi++)
@@ -10445,7 +10449,8 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				if($is_macho&&$coexi===11)if(substr_count($GLOBALS['memCache']['coex_custom.cvd'],$GLOBALS['linebreak']."\$is_macho:1;"))$xsig=explode($GLOBALS['linebreak']."\$is_macho:1;",$GLOBALS['memCache']['coex_custom.cvd']);
 				if(!$is_macho&&$coexi===11)if(substr_count($GLOBALS['memCache']['coex_custom.cvd'],$GLOBALS['linebreak']."\$is_macho:0;"))$xsig=explode($GLOBALS['linebreak']."\$is_macho:0;",$GLOBALS['memCache']['coex_custom.cvd']);
 				if($coexi===12)if(substr_count($GLOBALS['memCache']['coex_custom.cvd'],$GLOBALS['linebreak']."\$xts:".$xts.";"))$xsig=explode($GLOBALS['linebreak']."\$xts:".$xts.";",$GLOBALS['memCache']['coex_custom.cvd']);
-				if($coexi>12)break;
+				if($coexi===13)if(substr_count($GLOBALS['memCache']['coex_custom.cvd'],$GLOBALS['linebreak']."\$NumOfSections:".$NumOfSections.";"))$xsig=explode($GLOBALS['linebreak']."\$NumOfSections:".$NumOfSections.";",$GLOBALS['memCache']['coex_custom.cvd']);
+				if($coexi>13)break;
 				$xc=count($xsig);
 				if(isset($xsig[0]))$xsig[0]="";
 				if($xc>0)for($xi=1;$xi<$xc;$xi++)
@@ -10573,7 +10578,8 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				if($is_macho&&$coexi===11)if(substr_count($GLOBALS['memCache']['coex_mussel.cvd'],$GLOBALS['linebreak']."\$is_macho:1;"))$xsig=explode($GLOBALS['linebreak']."\$is_macho:1;",$GLOBALS['memCache']['coex_mussel.cvd']);
 				if(!$is_macho&&$coexi===11)if(substr_count($GLOBALS['memCache']['coex_mussel.cvd'],$GLOBALS['linebreak']."\$is_macho:0;"))$xsig=explode($GLOBALS['linebreak']."\$is_macho:0;",$GLOBALS['memCache']['coex_mussel.cvd']);
 				if($coexi===12)if(substr_count($GLOBALS['memCache']['coex_mussel.cvd'],$GLOBALS['linebreak']."\$xts:".$xts.";"))$xsig=explode($GLOBALS['linebreak']."\$xts:".$xts.";",$GLOBALS['memCache']['coex_mussel.cvd']);
-				if($coexi>12)break;
+				if($coexi===13)if(substr_count($GLOBALS['memCache']['coex_mussel.cvd'],$GLOBALS['linebreak']."\$NumOfSections:".$NumOfSections.";"))$xsig=explode($GLOBALS['linebreak']."\$NumOfSections:".$NumOfSections.";",$GLOBALS['memCache']['coex_mussel.cvd']);
+				if($coexi>13)break;
 				$xc=count($xsig);
 				if(isset($xsig[0]))$xsig[0]="";
 				if($xc>0)for($xi=1;$xi<$xc;$xi++)

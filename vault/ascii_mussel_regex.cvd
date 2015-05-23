@@ -31,9 +31,12 @@ phpMussel-Defacement.Generic-014:6b..636b..64:A:6
 phpMussel-HTML.Exploit.Iframe-00:3c696672616d6577696474683d(2[27])?(3.){0,4}(2[27])?6865696768743d(2[27])?(3.){0,4}(2[27])?7372633d(2[27])?2f2f
 phpMussel-HTML.Exploit.Iframe-01:3c696672616d656865696768743d(2[27])?(3.){0,4}(2[27])?77696474683d(2[27])?(3.){0,4}(2[27])?7372633d(2[27])?2f2f
 phpMussel-JS.Obfuscation.JavascriptObfuscator-00:7661725f3078.{4,16}3d5b2[27]5c78
+>FN>\.[Jj][Ss]([Pp]|[Oo][Nn])?$>35
+phpMussel-JS.Adware.BuyNSave-00:766172.{10}3d7b27713.68273a22:A:17
 >FN>\.([Vv][Bb].{0,3}|[Ww][Ss][CcFf]|[Hh][Tt][Aa]?[Mm]?[Ll]?|[Aa][Ss][Pp][Xx]?)$>-1
->!$is_not_html>1>37
+>!$is_not_html>1>39
 phpMussel-HTML.Defacement.CyberSword-00:637962..727377..7264
 phpMussel-HTML.Defacement.Generic-018:3e(30|4f)776e7a
 phpMussel-VBS.Dropper-01:7365747773687368656c6c3d6372656174656f626a656374282[27]777363726970742e7368656c6c2[27]29.{2,256}7773687368656c6c2e72756e64726f70706174682c
 phpMussel-VBS.Dropper-02:66756e6374696f6e6e28..2c..293a..3d737472696e6728..2c..293a656e6466756e6374696f6e3a..3d..262234643561
+phpMussel-VBS.Malware.Generic-10:3d7265706c61636528.{64,128}2c63687228(3.){3,4}2d(3.){3,4}292c63687228(3.){3,4}2d(3.){3,4}292663687228(3.){3,4}2d(3.){3,4}292663687228(3.){3,4}2d(3.){3,4}2929

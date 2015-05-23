@@ -31,7 +31,39 @@ Anything less than sub-minor:
   than sub-minor.
 Last Edited: 15th November 2014
 
-=== Version/Release 0.6c (Previous Release: 0.6b.2) ===
+=== Version/Release 0.6d (Previous Release: 0.6c) ===
+SUMMARY:
+Updated to the latest signatures set (55+20058+6d).
+Sub-minor release (low or medium priority).
+
+NEW CHANGES:
+- There are a large number of new PE Sectional signatures and new hash-based
+  signatures targeting PE files, as well as a small handful of CVE signatures
+  and a small number of relatively recent zero-days included with this
+  release (2015.02.17).
+- Updated to the latest ClamAV signatures (2015.02.17); Release slightly
+  delayed due to the time requirements of testing the latest release against
+  false positives, which was slightly longer this time than was originally
+  anticipated.
+- Added the ability to check against the number of PE sections that exist
+  within a PE file within complex extended signatures; Variable generated
+  within the Core Script at the point where PE Sectional signatures checking
+  occurs, thus, PE Sectional signatures checking must be enabled for this to
+  work correctly; This will help with the detection of certain known viruses
+  that affect PE files, though, currently, a limited number of signatures make
+  use of this variable, thus, the scope is limited at this time (2015.02.20).
+
+ADDITIONAL NOTES:
+- Updating to this release from the previous release (0.6c) should be
+  considered medium priority if you allow the uploading of PE files (EXE), PDF
+  documents (PDF), Shockwave files (SWF) or macro-enabled documents (such as
+  those of Microsoft Word, DOC, DOCX, and such) to your website or server, but
+  should otherwise be considered low priority.
+
+Maikuolan,
+17th February 2015.
+
+=== Version/Release 0.6c (Previous Release: 0.6b.2; Next: 0.6d) ===
 SUMMARY:
 Updated to the latest signatures set (55+19989+6c).
 Sub-minor release (high priority).
@@ -96,7 +128,7 @@ NEW CHANGES:
   anything that I'd foresee being likely to be uploaded via a website or
   webform, but, if anyone does find any problems relating to their removal, do
   please let me know. In any case, I do believe these removals and further
-  narrowing have resulted in a noticable improvement in performance and
+  narrowing have resulted in a noticeable improvement in performance and
   efficiency (2015.02.02).
 - Added a handful of new signatures to deal with "RandomWeb", a form of
   ransomware specifically targeting websites (2015.02.03).
@@ -116,7 +148,7 @@ PROBLEMS/BUGS FIXED:
   positives (2015.01.20).
 - Found a bug within the Core Script in how the signature mapping code
   interates through lines of signatures, as such that the final signature line
-  of any given mapping section would be entirely ignored by the Code Script.
+  of any given mapping section would be entirely ignored by the Core Script.
   This meant that although the majority of signatures were still being parsed
   correctly, there were at least a few hundred signatures within each of the
   affected signatures set that weren't being parsed at all. Although the fix

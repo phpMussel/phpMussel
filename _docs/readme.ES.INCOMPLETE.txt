@@ -37,7 +37,7 @@
  <http://opensource.org/licenses/>
 
  Un especial agradecimiento a ClamAV para la inspiración del proyecto y para
- las firmas que este script utiliza, sin la cual, el guión probablemente no
+ las firmas que este script utiliza, sin la cual, la script probablemente no
  existiría, o en el mejor de, tendría un muy limitado valor
  <http://www.clamav.net/>.
 
@@ -63,20 +63,20 @@
  un futuro no muy lejano, pero hasta entonces, siga estas instrucciones para ha
  phpMussel functione en *mayoría de sistemas y CMS:
 
- 1) Con tu leyendo esto, estoy asumiendo que usted ha descargado una archivada
-    copia de la script, descomprimido y tenerlo en algún lugar en su computer.
-    Desde aquí, usted querrá averiguar dónde en el host o CMS que desea para
-    colocar el contenido. Un directorio como /public_html/phpmussel/ o similar
-    (aunque, no importa que usted elija, a condición de que se algo que estés
-    satisfecho con) será suficiente. Antes usted enviar archivos a su host,
-    seguir leyendo..
+ 1) Con tu leyendo esto, estoy asumiendo que usted ha descargado una copia de
+    la script, descomprimido y tenerlo en algún lugar en su computer. Desde
+    aquí, usted querrá averiguar dónde en el host o CMS que desea para colocar
+    el contenido. Un directorio como /public_html/phpmussel/ o similar (aunque,
+    no importa que usted elija, a condición de que se algo que estés satisfecho
+    con) será suficiente. Antes usted enviar archivos a su host, seguir
+    leyendo..
 
  2) Abrir "phpmussel.php", busque la línea que comienza con "$vault=", y
     reemplazar la cadena entre las siguientes comillas en esa línea con la
     exacta verdadera ubicación del "vault" directorio de phpMussel. Usted verá
-    tal un directorio en el archivado que ha descargado (asumiendo que no desea
-    revolver todo el guión, mantener la misma estructura de archivos y
-    directorios como lo fue el original). Este "vault" directorio normalmente
+    tal un directorio en el compactado archivo que ha descargado (asumiendo que
+    no desea revolver todo la script, mantener la misma estructura de archivos
+    y directorios como lo fue el original). Este "vault" directorio normalmente
     es un directorio nivel más allá del directorio que existirá en el
     "phpmussel.php" archivo. Guardar el archivo, cerrar.
 
@@ -139,21 +139,21 @@
  CLI apoyo sólo se aplica a los Windows basados sistemas; Linux y otros
  sistemas vendrán pronto a una posterior versión de phpMussel):
 
- 1) Con tu leyendo esto, estoy asumiendo que usted ha descargado una archivada
-    copia de la script, descomprimido y tenerlo en algún lugar en su computer.
-    Cuando se ha determinado que usted es feliz con el lugar elegido para
-    phpMussel, continúe.
+ 1) Con tu leyendo esto, estoy asumiendo que usted ha descargado una copia de
+    la script, descomprimido y tenerlo en algún lugar en su computer. Cuando se
+    ha determinado que usted es feliz con el lugar elegido para phpMussel,
+    continuar.
 
  2) phpMussel requiere php para ser instalado en la host máquina para ejecutar.
     Si usted no has php instalado en su máquina, por favor, instalar php en su
     máquina, siguiendo las instrucciones suministradas por el php instalador.
 
- 3) Abrir "phpmussel.php", busque la línea que comienza con "$vault=", y
+ 2) Abrir "phpmussel.php", busque la línea que comienza con "$vault=", y
     reemplazar la cadena entre las siguientes comillas en esa línea con la
     exacta verdadera ubicación del "vault" directorio de phpMussel. Usted verá
-    tal un directorio en el archivado que ha descargado (asumiendo que no desea
-    revolver todo el guión, mantener la misma estructura de archivos y
-    directorios como lo fue el original). Este "vault" directorio normalmente
+    tal un directorio en el compactado archivo que ha descargado (asumiendo que
+    no desea revolver todo la script, mantener la misma estructura de archivos
+    y directorios como lo fue el original). Este "vault" directorio normalmente
     es un directorio nivel más allá del directorio que existirá en el
     "phpmussel.php" archivo. Guardar el archivo, cerrar.
 
@@ -193,7 +193,7 @@
  se requerida en su nombre por esta particular función.
 
  Pero, también es capaz instruirá phpMussel para escanear archivos, directorios
- o compactos archivos usted especifique implícitamente. Para ello,
+ o compactados archivos usted especifique implícitamente. Para ello,
  primeramente, usted tendrá asegurarse de que la adecuada configuración se
  establece el la phpmussel.ini archivo (cleanup debe estar desactivado), y
  cuando hecho, en un PHP archivo conectado a phpMussel, utilice la siguiente
@@ -520,9 +520,9 @@
  5. ARCHIVOS INCLUIDOS EN ESTE PAQUETE
 
  La siguiente es una lista de todos los archivos que debería haberse incluido
- en el archivado copia de este script cuando descargado, todos los archivos
- que pueden ser potencialmente creados como resultado de su uso de este script,
- junto con una breve descripción de lo que todos estos archivos son para.
+ en la copia de este script cuando descargado, todos los archivos que pueden
+ ser potencialmente creados como resultado de su uso de este script, junto con
+ una breve descripción de lo que todos estos archivos son para.
 
  /phpmussel.php (Script, Incluido)
     phpMussel Cargador archivo. Carga la principal script, actualizador,
@@ -538,7 +538,7 @@
     ~
  /_docs/change_log.txt (Documentación, Incluido)
     Un registro de los cambios realizados en la principal script entre las
-    diferentes versiones (no se requiere para lo adecuado funcionamiento de la
+    diferentes versiones (no se requiere para lo adecuado funcionalidad de la
     script).
     ~
  /_docs/readme.DE.txt (Documentación, Incluido); DEUTSCH
@@ -553,7 +553,7 @@
     ~
  /_docs/signatures_tally.txt (Documentación, Incluido)
     Cifra neta de cambio de las incluidas firmas (no se requiere para lo
-    adecuado funcionamiento de la script).
+    adecuado funcionalidad de la script).
     ~
  /_testfiles/ (Directorio)
     Prueba archivos directorio (contiene varios archivos).
@@ -962,44 +962,48 @@
       mensaje, o quedarse con los usual 200 OK?
       0 = No (200) [Predefinido], 1 Sí (403).
     "delete_on_sight"
-    - Enabling this directive will instruct the script to attempt to
-      immediately delete any scanned attempted file upload matching any
-      detection criteria, whether via signatures or otherwise. Files determined
-      to be "clean" will not be touched. In the case of archives, the entire
-      archive will be deleted (regardless of if the offending file is only one
-      of several files contained within the archive). For the case of file
-      upload scanning, usually, it isn't necessary to turn this option on,
-      because usually, php will automatically purge the contents of its cache
-      when execution has finished, meaning that it'll usually delete any files
-      uploaded through it to the server unless they've moved, copied or deleted
-      already. The option is added here as an extra measure of security for the
-      extra paranoid and for those whose copies of php may not always behave in
-      the manner intended.
-      0 - After scanning, leave the file alone [Default],
-      1 - After scanning, if not clean, delete immediately.
+    - Habilitando esta directiva instruirá la script para intentar para
+      eliminar inmediatamente cualquier escaneado intentado archivo cargas
+      ajustando a los criterios de detección, si través de firmas o de otras
+      maneras. Archivos determinados como limpia no serán tocados. En el caso
+      de los compactados archivos, la totalidad del compactado archivo será
+      eliminado (independientemente de si el archivo infractor es sólo uno de
+      varios archivos contenida dentro del compactado archivo). Para el caso de
+      archivo carga escaneo, en general, no es necesario activar esta opción,
+      porque en general, php purgará automáticamente el contenido de su caché
+      cuando la ejecución ha terminado, lo que significa que lo en general va
+      eliminar cualquier archivos cargados a través de él con el servidor a no
+      ser que se han movido, copiado o eliminado ya. La opción se añade aquí
+      como una medida adicional de seguridad para el adicional paranoide y para
+      aquellos cuyas copias de php no siempre se comportan de la manera
+      prevista.
+      0 - Después escaneando, dejar el archivo solo [Predefinido],
+      1 - Después escaneando, si no se limpia, eliminar inmediatamente.
     "lang"
-    - Specify the default language for phpMussel.
+    - Especifique el idioma predefinido para phpMussel.
     "quarantine_key"
-    - phpMussel is able to quarantine flagged attempted file uploads in
-      isolation within the phpMussel vault, if this is something you want it to
-      do. Casual users of phpMussel of which simply wish to protect their
-      websites or hosting environment without having any interest in deeply
-      analysing any flagged attempted file uploads should leave this
-      functionality disabled, but any users interested in further analysis of
-      flagged attempted file uploads for malware research or for similar such
-      things should enable this functionality. Quarantining of flagged
-      attempted file uploads can sometimes also assist in debugging
-      false-positives, if this is something that frequently occurs for you. To
-      disable quarantine functionality, simply leave the "quarantine_key"
-      directive empty, or erase the contents of that directive if it isn't
-      already empty. To enable quarantine functionality, enter some value into
-      the directive. The "quarantine_key" is an important security feature of
-      the quarantine functionality required as a means of preventing the
-      quarantine functionality from being exploited by potential attackers and
-      as a means of preventing any potential execution of data stored within
-      the quarantine. The "quarantine_key" should be treated in the same manner
-      as your passwords: The longer the better, and guard it tightly. For best
-      effect, use in conjunction with "delete_on_sight".
+    - phpMussel es capaz de poner en cuarentena intentado archivo cargas en
+      aisladamente dentro de la phpMussel vault, si esto es algo que usted
+      quiere que haga. Usuarios casual de phpMussel de los cuales simplemente
+      desean proteger sus website o hosting ambiente sin tener ningún interés
+      con analizando profundamente cualquier marcados intentados archivos
+      cargas debería dejar esta funcionalidad deshabilitado, pero cualquier
+      usuarios interesados en más análisis de marcados intentados archivos
+      cargas para la investigación de malware o para cosas similares debe
+      habilitar esta funcionalidad. Cuarentenando de marcados intentados
+      archivos cargas a veces puede también ayudar en la depuración de falsos
+      positivos, si esto es algo que ocurre con frecuencia para usted. Para
+      deshabilitar la funcionalidad de cuarentena, simplemente dejar la
+      directiva "quarantine_key" vacío, o borrar el contenidos de que directiva
+      si no está ya vacío. Para habilitar la funcionalidad de cuarentena,
+      entrar algún valor en la directiva. La "quarantine_key" es un importante
+      característica de seguridad de la funcionalidad de cuarentena requiere
+      como un medio para la prevención de la explotación de la funcionalidad de
+      cuarentena por potenciales atacantes y como un medio de evitar cualquier
+      potencial ejecución de los datos almacenados dentro la cuarentena. La
+      "quarantine_key" debería ser tratado de la misma manera que sus
+      contraseñas: El más grande es el mejor, y guárdela bien. Para un mejor
+      efecto, utilice conjuntamente con "delete_on_sight".
     "quarantine_max_filesize"
     - The maximum allowable filesize of files to be quarantined. Files larger
       than the value specified below will NOT be quarantined. This directive is
@@ -1456,7 +1460,7 @@
  AhnLab-V3               No hay conocidos problemas
  AntiVir                 No hay conocidos problemas
  Antiy-AVL               No hay conocidos problemas
- Avast                !  Informes "JS:ScriptSH-inf [Trj]"
+ Avast                !  Informa como "JS:ScriptSH-inf [Trj]"
  AVG                     No hay conocidos problemas
  Baidu-International     No hay conocidos problemas
  BitDefender             No hay conocidos problemas
@@ -1481,19 +1485,19 @@
  Kaspersky               No hay conocidos problemas
  Kingsoft                No hay conocidos problemas
  Malwarebytes            No hay conocidos problemas
- McAfee               !  Informes "New Script.c"
- McAfee-GW-Edition    !  Informes "New Script.c"
+ McAfee               !  Informa como "New Script.c"
+ McAfee-GW-Edition    !  Informa como "New Script.c"
  Microsoft               No hay conocidos problemas
  MicroWorld-eScan        No hay conocidos problemas
  NANO-Antivirus          No hay conocidos problemas
- Norman               !  Informes "Kryptik.BQS"
+ Norman               !  Informa como "Kryptik.BQS"
  nProtect                No hay conocidos problemas
  Panda                   No hay conocidos problemas
  Qihoo-360               No hay conocidos problemas
  Rising                  No hay conocidos problemas
  Sophos                  No hay conocidos problemas
  SUPERAntiSpyware        No hay conocidos problemas
- Symantec             !  Informes "WS.Reputation.1"
+ Symantec             !  Informa como "WS.Reputation.1"
  TheHacker               No hay conocidos problemas
  TotalDefense            No hay conocidos problemas
  TrendMicro              No hay conocidos problemas
@@ -1506,5 +1510,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 4 Febrero 2015 (2015.02.04).
+Última Actualización: 20 Febrero 2015 (2015.02.20).
 EOF

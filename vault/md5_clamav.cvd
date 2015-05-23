@@ -2908,6 +2908,7 @@
 25498ee69953b716b247116402e9c47d:211952:ClamAV-Andr.Golddream-15
 254cf7f98a53d2e0c6366b00a26c9d06:60009:ClamAV-Adware.Comet-15
 25524e8ab000a1ed901b133df73fc002:1043200:ClamAV-Andr.Pjapps-19
+25562b9aaa4b43f21e5c4c0c7259eac1:11191:ClamAV-Win.Trojan.Upatre-162
 255ddc459c73560f2e1132911230f574:1290:ClamAV-HTML.Exploit-16
 255df5955eefb9df86974da8c9fcb35b:52655:ClamAV-SILVERLIGHT.Exploit.Angler
 255f7aafadcf9dec243b6d08e26772c3:86016:ClamAV-Virtool.Hanai.A
@@ -2983,7 +2984,7 @@
 2654dc89b7d67763c6391fb84fd3087a:52752:ClamAV-Trojan.Mybot-3714
 2655b6c2cccf72cdc6c12a547828429f:105472:ClamAV-Trojan.Mybot-633
 2658b5e9516ddd06b94ebb38948b9378:11980:ClamAV-Trojan.SdBot-1125
-265ae113d4ac31b51d9100fbee342a9a:289:ClamAV-Exploit.Html.CVE_2014_1797-1
+265ae113d4ac31b51d9100fbee342a9a:289:ClamAV-Html.Exploit.CVE_2014_1797
 2661dbe82b768023bde6b54475a1ab15:7680:ClamAV-Worm.Stration.FA-1
 2669bf9c1c801be24cb7e621dfff27ce:103424:ClamAV-Trojan.Mybot-2090
 2670b77466683436b0eabb5d2cf5598d:10524:ClamAV-Exploit.Linux-2
@@ -3385,6 +3386,7 @@
 2c0ad3128fdad0455536a8cadc1eda27:80896:ClamAV-Trojan.Zbot-4841
 2c0b218efe9b28f14afd674ce1d4ac12:22016:ClamAV-Trojan.Downloader.Zlob-1221
 2c0b2923e93b2f974e7adf564366f972:38912:ClamAV-Trojan.Agent-81178
+2c0b5c3766ca7ba5bf8da238d26ebe68:40449:ClamAV-Xls.Exploit.CVE_2014_6361-2
 2c0c069e2bd23d21a4400c70d0c2b16d:10460:ClamAV-Trojan.Zbot-4588
 2c0e9efc317728f7f645304a4bbc00c4:110592:ClamAV-Trojan.Zbot-7005
 2c109dd33323b3941ecbf31a53a065c6:38912:ClamAV-Trojan.Agent-81221
@@ -3415,6 +3417,7 @@
 2c5526b06047803ca1a940fcaa6579f7:59432:ClamAV-Trojan.Downloader.Zlob-1064
 2c5dc0f0987f86d4890efeff3e9ced7a:1136174:ClamAV-Joke.Hoax
 2c5f7fdad46f1134fa87bbd010f4680e:423981:ClamAV-Worm.Palevo-7554
+2c62e36ba1e9546931f0a4b51a51cd3b:252920:ClamAV-Osx.Trojan.CoinTheif-5
 2c65046697d2f04f32f8b4306e028aa2:397908:ClamAV-Trojan.Mybot-3262
 2c663ce5995c468b9e8cd481f1b2027d:59240:ClamAV-Trojan.Downloader.Zlob-972
 2c6a2ce8ab9e260c85ee9c243b2b6fa0:208704:ClamAV-Win.Trojan.Dropper.Inject-4
@@ -5259,6 +5262,7 @@
 4484cb0095d916056064697a34b07ed1:26624:ClamAV-Trojan.Downloader.Zlob-1262
 44857444e8e81ce1e530acc3789219a1:8779:ClamAV-Trojan.Downloader-682
 448733acfbb5760545c9cc0e6e102427:71816:ClamAV-Trojan.Zlob-9216
+448758a40ceae36b50641ef5e7408860:11274:ClamAV-Win.Trojan.Staser-9
 449c4ec01a0406bc2c26360742abd5c4:276480:ClamAV-Constructor.NGVCK.024
 449fd300da242d878e6cd919c6e3c995:318:ClamAV-Trojan.Killav-84
 44a1746224080d9ef2f99a6b2c1b62f8:66968:ClamAV-Win.Trojan.Cryptor-29
@@ -7629,6 +7633,7 @@
 63aa41800c1aa1ffc64f711b488f1e15:73131:ClamAV-Trojan.Zlob-9000
 63b2547ae07abe42fd44308408c6d2c3:16384:ClamAV-Worm.Stration.HA-6
 63b5e431bc1fa7d0ebdb6cb7e77e9eb2:129024:ClamAV-Trojan.Bancos-267
+63bc0d628c80445a23237ea019fd8dd1:126348:ClamAV-Osx.Trojan.CoinTheif-1
 63bc7118590af6d573ff9dbe794d3a36:102912:ClamAV-Trojan.Mybot-2857
 63bd94b52ea4067b82e5fd4f6415fa22:232216:ClamAV-Constructor.PePatch-2
 63c57086767dc108df2124cb6c711094:129024:ClamAV-Trojan.Vundo-10944
@@ -7716,6 +7721,7 @@
 64cc7abc7e92b0bb8f0e92b931e73d99:4823:ClamAV-Exploit.Intbase-1
 64ce1a3639eaf859c28267db998ea3da:7680:ClamAV-Worm.Stration.GE-5
 64ce463d55ff438779edb67919df61a2:720896:ClamAV-Trojan.VB-8157
+64cefda16c742a202344f7add7ac4da2:765952:ClamAV-Win.Trojan.Cryptowall-12
 64d007c1380e8791c77c8ae7939ff96a:53248:ClamAV-Win.Trojan.Agent-55
 64d51fca33c9a62a0b284b7d61b4a8fc:5114:ClamAV-Trojan.Zbot-4825
 64d685467ce40cefc71a94e4ffa9d800:3348:ClamAV-PHP.Trojan.Agent-10
@@ -8284,6 +8290,7 @@
 6c5c07d1fa31638525a544d95341cbb2:62464:ClamAV-Trojan.MMD
 6c5cc8da5f96d54cc3c04e3cb2c85dcf:11264:ClamAV-Trojan.Downloader.Zlob-1499
 6c5e37d8c38aa96414601352ecca7bfb:148550:ClamAV-Trojan.Bancos-344
+6c5ee4bc7631a37b533b8724160e2004:4352:ClamAV-Trojan.DOS
 6c5f53e00820e0c0196697764fc42f5c:58352:ClamAV-Trojan.Downloader.Zlob-788
 6c5fda0d59f01f84e9aae75263ea32d1:83688:ClamAV-Andr.Geinim-69
 6c66cae230e0772b75a327ae925f648a:24576:ClamAV-Win.Trojan.Bublik-335
@@ -8419,6 +8426,7 @@
 6e3a9de93936cd4b0ad2e2c1760f4879:20480:ClamAV-Worm.Stration.IT-2
 6e3b5617e773e514ddee2833ba5afcd6:272131:ClamAV-Worm.Sohanad-84
 6e4fa4a046ed9d9d934a2b1eca053d1a:72428:ClamAV-Trojan.Zlob-9092
+6e60758107c38eaf29bfe458982f1763:304128:ClamAV-Win.Trojan.Cryptowall-13
 6e63940882a8fddb7573f985bef385c9:36864:ClamAV-Dialer-417
 6e69ba3775a15b40a44d63d2f8ca4dfc:71745:ClamAV-Trojan.Zlob-9253
 6e6a27721d7b0b178053fe1bfda3c7aa:91648:ClamAV-Trojan.Mybot-698
@@ -10130,6 +10138,7 @@
 8611ec873f61ea04b08e0fe3b141f8f2:467264:ClamAV-Adware.Casino-30
 8611ffef5941ed3ca3b890a0a9926cc0:249856:ClamAV-Trojan.Zbot-13082
 861d416a324907e7f97ae6f56c49a12c:20640:ClamAV-Dialer-411
+861e9fc28d6a8ad39849011adf4308a5:430857:ClamAV-Win.Trojan.Banload-6107
 861f056a32415265ea53163437879819:87040:ClamAV-Trojan.Mybot-678
 861f46df5b24bbc2c7369c8aaa666aeb:53056:ClamAV-SILVERLIGHT.Exploit.Angler-6
 8626c0df2acf1c6291b6c4c4028f3ecc:146432:ClamAV-Trojan.Mybot-3794
@@ -11230,6 +11239,7 @@
 9528c14e9a39916a37993da3f7b38756:445440:ClamAV-Trojan.Crypt-235
 952b5a49e91afe44cc2599b0b37c1a86:57344:ClamAV-Worm.Stration.AF-3
 952bbffefae49056f2053170acb275d8:54272:ClamAV-Trojan.Ransom-4654
+9530153534ced23bfac0416ad9cd2dc8:52736:ClamAV-Word.Trojan.Dridex-1
 9537c1c197de8c6afeca8f0d9e57b3af:12800:ClamAV-Trojan.Patched-52
 953ee434246c3fb40cfbea1d5ace498f:249:ClamAV-Trojan.BAT.Dyn-1
 953f7ce4a90ed66568aaeb5391d8ba63:12075:ClamAV-Adware.Agent-4709
@@ -12971,6 +12981,7 @@ acc59c921ae0b33715d944641b5f9c23:81920:ClamAV-Trojan.Backdoor-4
 acc807542d520e748ba4f34f65552eb4:651264:ClamAV-Win.Trojan.SurveyFraud
 acca9dfdf6bb836216ecf06a4498de4b:152:ClamAV-Linux.Binsh.Agent
 accc58f4b44b21d79755d716994421d0:40960:ClamAV-Worm.Stration.HJ-2
+acd2339d84ff29ee78520e5dc664dcf1:252600:ClamAV-Osx.Trojan.CoinTheif-4
 acd8dbc3adc39cc2c76d5e4c66d770d3:40960:ClamAV-Trojan.Delf-7906
 acdc676f4af7937dbc0f8de41e80698a:188486:ClamAV-Trojan.Mybot-2272
 ace228a0c14c33d869a6a2de6a231f09:111616:ClamAV-Joke.Buttonmover-2
@@ -13727,6 +13738,7 @@ b68e3a8a4793c6b5e74f163271ea5130:95744:ClamAV-Trojan.Mybot-2489
 b690edcbb93125a81688d8898e926870:40960:ClamAV-Worm.Stration.BD-1
 b694425a640adcaad19ef9c681d58c4b:133120:ClamAV-Trojan.Mybot-530
 b694ad1417e8960bc0dcc83f70844819:35109:ClamAV-Trojan.Zbot-4279
+b698bb9fa5409f4d5d48e0d5bcc95b92:4511744:ClamAV-Win.Trojan.Ransomlock-53
 b6a0a21615ac13e55122054ab466d88f:87040:ClamAV-Trojan.Mybot-681
 b6a1e601184f5cbd4cfb67d0870bc7fe:86878:ClamAV-Trojan.Flooder.Homicide
 b6a22d33386376c72efb89eeb01d4247:81178:ClamAV-Trojan.Zbot-4738
@@ -14164,6 +14176,7 @@ bbefbb91672556294a77c7ff45b4f4ce:164575:ClamAV-Trojan.Downloader.Agent-1419
 bbf7a48bb314abef6e102fa61abcaa8f:38912:ClamAV-Trojan.Agent-81374
 bbf8708d6306fc393d2e6c55f0d379b0:339:ClamAV-Trojan.DelDisk.C
 bc0b723c5c685b0d11e721f573110f4a:66968:ClamAV-Win.Trojan.Cryptor-136
+bc0de3308dc53664cc8ec557d0c6a535:241664:ClamAV-Win.Trojan.Agent-838956
 bc0f8ca3236ee321aa3ba86746068b40:26624:ClamAV-Trojan.Medbot-27
 bc1034f1496449bb57704470186d26c2:48640:ClamAV-Trojan.Proxy.Horst-295
 bc108bff22f4d79f610fcda0cebcf475:159128:ClamAV-Win.Trojan.Cryptor-248
@@ -15628,6 +15641,7 @@ cf6f537855ae300c490cf8287cf73f60:4841:ClamAV-JAVA.Exploit.Fiesta-31
 cf7316f6f1d55ee26ce3357dd38f1066:90112:ClamAV-W32.Trojan.Downloader-275
 cf73609278a933bc91646cc51d922d2a:103626:ClamAV-Trojan.Clicker.Bomka-3
 cf78336d9fee02c7702c2286c4dfe3c5:326711:ClamAV-Trojan.Buzus-8533
+cf79d1931d39863995aaf9e874575ee6:52736:ClamAV-Word.Trojan.Dridex
 cf7a2d183b3743f82e301833c449cabf:9293:ClamAV-Trojan.Zbot-4707
 cf7cffa5657b20caf6e3b8466541cd9e:262:ClamAV-Trojan.Hacor
 cf7dc9fda3ab1e232a106c076fdd8e5b:55000:ClamAV-Trojan.Small-850
@@ -16108,6 +16122,7 @@ d5d76f5c9952a168bdf40d7ef519a393:24576:ClamAV-Worm.Stration.HQ-2
 d5dda567993dc723a68ec80273960b69:645943:ClamAV-Trojan.Generic-9
 d5e1e7ba899af1456d37bccbf4aa2c0a:97818:ClamAV-Trojan.Mybot-191
 d5e30d76c5aaf6829138bffb6aeb6f07:847:ClamAV-Trojan.JS.Redirector-7
+d5e61a297a8a45fbfbb50fb28c7bddb1:32695:ClamAV-Constructor.Dosow
 d5e9eeb6a653f33e417f4af016bb2f97:611850:ClamAV-Backdoor.Poison-7
 d5ea85eef247c31a849a441ee7369678:38912:ClamAV-Trojan.Agent-81229
 d5ed1ac99139e85331bc5d59de2323f0:122368:ClamAV-Trojan.Mybot-3933
@@ -18687,6 +18702,7 @@ f838d8ecfee034c9ff3c5e008a4ff0de:291328:ClamAV-Trojan.Spy.SpyEyes-188
 f840a0845cfe9feb22c9ce617c9349e2:49152:ClamAV-Worm.Stration.NY-1
 f843f6cdfd38e5c9a5b34d899bb2c44c:38912:ClamAV-Trojan.Agent-81307
 f84ac982f28d83aa4b38622f7b4b74ea:139264:ClamAV-Worm.Stration.VO
+f84be9bda869daac41466b9519a89b65:68096:ClamAV-Word.Trojan.Dridex-2
 f84fecf4afe077852b1e1d97c6208e35:1503459:ClamAV-Adware.Brasen-8
 f859834c2c24d1adffca3b4c0678cbf7:25600:ClamAV-Trojan.Zlob-9307
 f85bda55e81b0cd1b8df7e60c02d4096:8192:ClamAV-Trojan.Small-8
@@ -18925,6 +18941,7 @@ fbebc54216ff4df04dd55df2dc41975b:73216:ClamAV-Trojan.Zbot-5139
 fbec86f8805f98b7da043bff8ffb671e:48640:ClamAV-Trojan.SdBot-939
 fbefebb12b4fd2df1891da0da298f0be:38912:ClamAV-Trojan.Agent-81171
 fbfa0ee2bdb26c1e2b670c6b8af7ecb4:29696:ClamAV-Trojan.Zlob-8808
+fbfacfbc6678092e9abdb2733d854a1d:23706:ClamAV-Spoofer.DOS
 fbfe20f388066792bcdc45283d9cf68f:20480:ClamAV-Worm.Stration.FF-4
 fc07ff59c4c7561dd1d3d39922ca55ae:111104:ClamAV-Worm.Stration.VN
 fc08850269db1cb2d0a2c5ccd26c8b9e:9216:ClamAV-Worm.Stration.OC-4
