@@ -35,7 +35,7 @@
  Sourceforge <http://sourceforge.net/projects/phpmussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.6h.0a (2nd May 2015) Language Data.
+ This File: phpMussel v0.6i.0a (23rd May 2015) Language Data.
 
  The latest version and future updates can be obtained from the phpMussel
  SourceForge page located at <http://sourceforge.net/projects/phpmussel/>.
@@ -100,6 +100,7 @@ if($MusselConfig['general']['lang']=='en')
 	$MusselConfig['lang']['scan_signature_file_missing']='Signature file missing';
 	$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Unauthorised file upload manipulation or misconfiguration detected! ';
 	$MusselConfig['lang']['scan_unauthorised_upload']='Unauthorised file upload manipulation detected';
+	$MusselConfig['lang']['recursive']='Recursion depth limit exceeded';
 	$MusselConfig['lang']['started']='Started';
 	$MusselConfig['lang']['update_']='phpMussel will now attempt to update itself.';
 	$MusselConfig['lang']['update_available']='A script update is available.';
@@ -184,6 +185,7 @@ else if($MusselConfig['general']['lang']=='de')
 	$MusselConfig['lang']['scan_signature_file_missing']='Signaturdatei fehlt';
 	$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Unerlaubte Upload-Manipulation oder Fehlkonfiguration erkannt! ';
 	$MusselConfig['lang']['scan_unauthorised_upload']='Unerlaubte Upload-Manipulation erkannt';
+	$MusselConfig['lang']['recursive']='Rekursionstiefe-Limit überschritten';
 	$MusselConfig['lang']['started']='Gestartet';
 	$MusselConfig['lang']['update_']='phpMussel wird nun versuchen, sich zu aktualisieren.';
 	$MusselConfig['lang']['update_available']='Ein Scriptupdate ist verfügbar.';
@@ -268,6 +270,7 @@ else if($MusselConfig['general']['lang']=='es')
 	$MusselConfig['lang']['scan_signature_file_missing']='Firma archivo desaparecido';
 	$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='No autorizado archivos manipulación o malo configuración detectado! ';
 	$MusselConfig['lang']['scan_unauthorised_upload']='No autorizado archivos manipulación detectado';
+	$MusselConfig['lang']['recursive']='Recursión profundidad límite excedido';
 	$MusselConfig['lang']['started']='Iniciado';
 	$MusselConfig['lang']['update_']='phpMussel ahora intentará actualización.';
 	$MusselConfig['lang']['update_available']='Una script actualización está disponible.';
@@ -352,6 +355,7 @@ else if($MusselConfig['general']['lang']=='fr')
 	$MusselConfig['lang']['scan_signature_file_missing']='Signature fichier manquant';
 	$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Non autorisée manipulation de téléchargement de fichiers ou mauvaise configuration détecté! ';
 	$MusselConfig['lang']['scan_unauthorised_upload']='Non autorisée manipulation de téléchargement de fichiers détecté';
+	$MusselConfig['lang']['recursive']='Recursion limite de profondeur dépassé';
 	$MusselConfig['lang']['started']='Commencé';
 	$MusselConfig['lang']['update_']='phpMussel va maintenant tenter à réactualiser.';
 	$MusselConfig['lang']['update_available']='Une réactualisation du script est disponible.';
@@ -436,6 +440,7 @@ else if($MusselConfig['general']['lang']=='id')
 	$MusselConfig['lang']['scan_signature_file_missing']='Tanda tangan file hilang';
 	$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Tidak sah file nama manipulasi atau salah-konfigurasi terdeteksi! ';
 	$MusselConfig['lang']['scan_unauthorised_upload']='Tidak sah file nama manipulasi terdeteksi';
+	$MusselConfig['lang']['recursive']='Batas kedalaman rekursi melebihi';
 	$MusselConfig['lang']['started']='Dimulai';
 	$MusselConfig['lang']['update_']='phpMussel sekarang akan mencoba untuk sendiri update.';
 	$MusselConfig['lang']['update_available']='Update untuk skrip tersedia.';
@@ -520,6 +525,7 @@ else if($MusselConfig['general']['lang']=='it')
 	$MusselConfig['lang']['scan_signature_file_missing']='Firma file manca';
 	$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Non autorizzato file nome manipolazione o male configurazione rilevato! ';
 	$MusselConfig['lang']['scan_unauthorised_upload']='Non autorizzato file nome manipolazione rilevato';
+	$MusselConfig['lang']['recursive']='Ricorsione profondità limite superato';
 	$MusselConfig['lang']['started']='Iniziato';
 	$MusselConfig['lang']['update_']='phpMussel ora tenterà di aggiornarsi.';
 	$MusselConfig['lang']['update_available']='Un script aggiornamento è disponibile.';
@@ -604,6 +610,7 @@ else if($MusselConfig['general']['lang']=='nl')
 	$MusselConfig['lang']['scan_signature_file_missing']='Handtekening bestand ontbreekt';
 	$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Ongeautoriseerde bestand uploaden manipulatie of misconfiguratie gedetecteerd! ';
 	$MusselConfig['lang']['scan_unauthorised_upload']='ngeautoriseerde bestand uploaden manipulatie gedetecteerd';
+	$MusselConfig['lang']['recursive']='Recursie dieptelimiet overschreden';
 	$MusselConfig['lang']['started']='Gestart';
 	$MusselConfig['lang']['update_']='phpMussel zal nu proberen om zichzelf te bijwerken.';
 	$MusselConfig['lang']['update_available']='Een script bijwerk is beschikbaar.';
@@ -695,6 +702,7 @@ else if($MusselConfig['general']['lang']=='pt')
 	$MusselConfig['lang']['scan_signature_file_missing']='Assinatura arquivo faltando';
 	$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Não autorizada Arquivo carregar manipulação ou mau configuração detectado! ';
 	$MusselConfig['lang']['scan_unauthorised_upload']='Não autorizada Arquivo carregar manipulação detectado';
+	$MusselConfig['lang']['recursive']='Recursão profundidade limite excedido';
 	$MusselConfig['lang']['started']='Começado';
 	$MusselConfig['lang']['update_']='phpMussel agora tentará se atualizar.';
 	$MusselConfig['lang']['update_available']='Uma atualização de script está disponível.';
@@ -729,9 +737,6 @@ else if($MusselConfig['general']['lang']=='pt')
 	$MusselConfig['lang']['wrong_password']='Contrasenha errada; Ação negado.';
 	$MusselConfig['lang']['x_does_not_exist']='não existe';
 	}
-else
-	{
-	die('[phpMussel] Language undefined or incorrectly defined. Can\'t continue.');
-	}
+else die('[phpMussel] Language undefined or incorrectly defined. Can\'t continue.');
 
 ?>
