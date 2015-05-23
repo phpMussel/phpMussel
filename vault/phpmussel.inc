@@ -29,8 +29,8 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                   ~ ~ ~                                        
- This File: phpMussel v0.3 Core Script
- This File Last Updated: 23rd October 2013
+ This File: phpMussel v0.3a Core Script
+ This File Last Updated: 11th November 2013
 
                                   ~ ~ ~                                        
  Please refer to "documentation" for installation instructions and for
@@ -48,7 +48,7 @@ if(!defined('phpMussel'))
 
 if(!isset($MusselConfig['general']['ipaddr']))$MusselConfig['general']['ipaddr']="REMOTE_ADDR";
 if(!isset($_SERVER[$MusselConfig['general']['ipaddr']]))$_SERVER[$MusselConfig['general']['ipaddr']]="";
-$phpmusselversion="phpMussel v0.3";
+$phpmusselversion="phpMussel v0.3a";
 $linebreak=chr(10);
 
 if(!function_exists("implode_md"))

@@ -29,8 +29,8 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                   ~ ~ ~                                        
- This File: phpMussel v0.3 Update Script
- This File Last Updated: 23rd October 2013
+ This File: phpMussel v0.3a Update Script
+ This File Last Updated: 11th November 2013
 
                                   ~ ~ ~                                        
  Please refer to "documentation" for installation instructions and for
@@ -237,7 +237,7 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 					echo "File '".$phpmusselversion['remote_update_instructions'][$i][1]."' NOT ".$phpmusselversion['adj_word'].": Source data missing! (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
 					continue;
 					}
-				if(crc32($phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]])!==$phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]])
+				if(crc32($phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]])!=$phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]])
 					{
 					echo "File '".$phpmusselversion['remote_update_instructions'][$i][1]."' NOT ".$phpmusselversion['adj_word'].": CRC32 did not match! (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
 					continue;

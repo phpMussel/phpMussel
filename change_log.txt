@@ -1,8 +1,24 @@
 phpMussel change_log.txt
 
+=== Version 0.3a ===
+SUMMARY:
+Updated to the latest signatures set (55+18088+3A).
+Fixed one small yet significant bug in the update script.
+
+PROBLEMS/BUGS FIXED:
+- Found there was an incorrectly written condition operand which would cause
+  the update script to always register CRC32 hashes as being mismatched,
+  even if they were a correct match. Fixed it. Literally is one byte of
+  difference, but unfortunately, will be required to manually update to the
+  latest version before using the update script, because the old version won't
+  work. Tested the update locally and it seems to work fine now.
+
+Maikuolan,
+11th November 2013.
+
 === Version 0.3 ===
 SUMMARY:
-Updated to the latest ClamAV signatures (55+17971).
+Updated to the latest signatures set (55+17971+3).
 Huge number of significant changes !! Refer below.
 
 NEW CHANGES:
