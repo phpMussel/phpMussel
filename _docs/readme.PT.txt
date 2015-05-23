@@ -442,26 +442,17 @@
    Senha necessária: script_password
    Outros requisitos: update.dat and update.inc must exist.
    Parâmetros necessários: (nenhum)
-   Parâmetros opcionais: forcedupdate
-   Exemplo: ?pword=[script_password]&phpmussel=update&musselvar=forcedupdate
+   Parâmetros opcionais: (nenhum)
+   Exemplo: ?pword=[script_password]&phpmussel=update
    ~
    Que faz: Verifica se há atualizações para ambos phpMussel e suas
             assinaturas. Se as atualização verificações suceder e atualizações
             são encontrados, tentará baixar e instalar essas atualizações. Se
-            atualizações são verificados muito rapidamente, atualização
-            verificação irá abortar. Se atualização verificação falha,
-            atualização irá abortar. Se opcional parâmetro "forcedupdate" é
-            fornecido, hora da última atualização será ignorada, e assim,
-            atualizar verificação será continuará mesmo que está sendo
-            verificado "muito rapidamente", mas ainda vai abortar se a
-            atualização verificação falha. Os resultados de o inteiro processo
-            são impressos na tela. Eu recomendo incluindo opcional parâmetro
-            "forcedupdate" se você está manualmente acionando esse controle,
-            mas por favor, não uso "forcedupdate" se você estiver automatizando
-            o processo, tal como através de cron ou semelhante. Eu recomendo
-            verificando pelo menos uma vez por mês para garantir que seus
-            assinaturas e sua cópia do phpMussel são mantidos atualizados
-            (A menos, claro, você está verificando se há atualizações e
+            atualização verificação falha, atualização irá abortar. Os
+            resultados de o inteiro processo são impressos na tela. Eu
+            recomendo verificando pelo menos uma vez por mês para garantir que
+            seus assinaturas e sua cópia do phpMussel são mantidos atualizados
+            (a menos, claro, você está verificando se há atualizações e
             instalá-los manualmente, que, eu ainda recomendo fazer pelo menos
             um por mês). Verificando mais de que duas vezes por mês é
             provavelmente inútil, considerando que eu (no momento de escrever
@@ -623,16 +614,14 @@
  /vault/ascii_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por normalizada ASCII assinaturas.
     Necessário se o normalizada ASCII assinaturas opção em phpmussel.ini está
-    ativado. Pode remover se a opção é desativado (mas os arquivos serão
-    recriados na atualização).
+    ativado. Pode remover se a opção é desativado.
     ~
  /vault/coex_clamav.cvd (Assinaturas, Incluídos)
  /vault/coex_custom.cvd (Assinaturas, Incluídos)
  /vault/coex_mussel.cvd (Assinaturas, Incluídos)
     Arquivos por o complexos estendidas assinaturas.
     Necessário se o complexos estendidas assinaturas opção em phpmussel.ini
-    está ativado. Pode remover se a opção é desativado (mas os arquivos serão
-    recriados na atualização).
+    está ativado. Pode remover se a opção é desativado.
     ~
  /vault/elf_clamav_regex.cvd (Assinaturas, Incluídos)
  /vault/elf_clamav_regex.map (Assinaturas, Incluídos)
@@ -644,8 +633,7 @@
  /vault/elf_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por ELF assinaturas.
     Necessário se o ELF assinaturas opção em phpmussel.ini está ativado. Pode
-    remover se a opção é desativado (mas os arquivos serão recriados na
-    atualização).
+    remover se a opção é desativado.
     ~
  /vault/exe_clamav_regex.cvd (Assinaturas, Incluídos)
  /vault/exe_clamav_regex.map (Assinaturas, Incluídos)
@@ -657,16 +645,14 @@
  /vault/exe_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por Portátil Executável arquivo (EXE) assinaturas.
     Necessário se o EXE assinaturas opção em phpmussel.ini está ativado. Pode
-    remover se a opção é desativado (mas os arquivos serão recriados na
-    atualização).
+    remover se a opção é desativado.
     ~
  /vault/filenames_clamav.cvd (Assinaturas, Incluídos)
  /vault/filenames_custom.cvd (Assinaturas, Incluídos)
  /vault/filenames_mussel.cvd (Assinaturas, Incluídos)
     Arquivos por arquivo nome assinaturas.
     Necessário se o arquivo nome assinaturas opção em phpmussel.ini está
-    ativado. Pode remover se a opção é desativado (mas os arquivos serão
-    recriados na atualização).
+    ativado. Pode remover se a opção é desativado.
     ~
  /vault/general_clamav_regex.cvd (Assinaturas, Incluídos)
  /vault/general_clamav_regex.map (Assinaturas, Incluídos)
@@ -678,8 +664,7 @@
  /vault/general_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por gerais assinaturas.
     Necessário se o gerais assinaturas opção em phpmussel.ini está ativado.
-    Pode remover se a opção é desativado (mas os arquivos serão recriados na
-    atualização).
+    Pode remover se a opção é desativado.
     ~
  /vault/graphics_clamav_regex.cvd (Assinaturas, Incluídos)
  /vault/graphics_clamav_regex.map (Assinaturas, Incluídos)
@@ -691,8 +676,7 @@
  /vault/graphics_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por gráficas assinaturas.
     Necessário se o gráficas assinaturas opção em phpmussel.ini está ativado.
-    Pode remover se a opção é desativado (mas os arquivos serão recriados na
-    atualização).
+    Pode remover se a opção é desativado.
     ~
  /vault/greylist.csv (Assinaturas, Incluídos/Criados)
     CSV de greylisted assinaturas indicando a phpMussel quais assinaturas deve
@@ -701,8 +685,7 @@
  /vault/hex_general_commands.csv (Assinaturas, Incluídos)
     Hex-codificado CSV de geral comando detecções opcionalmente usado por
     phpMussel. Necessário se o geral comando detecções opção em phpmussel.ini
-    está ativado. Pode remover se a opção é desativado (mas os arquivos serão
-    recriados na atualização).
+    está ativado. Pode remover se a opção é desativado.
     ~
  /vault/html_clamav_regex.cvd (Assinaturas, Incluídos)
  /vault/html_clamav_regex.map (Assinaturas, Incluídos)
@@ -714,8 +697,7 @@
  /vault/html_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por normalizada HTML assinaturas.
     Necessário se o normalizada HTML assinaturas opção em phpmussel.ini está
-    ativado. Pode remover se a opção é desativado (mas os arquivos serão
-    recriados na atualização).
+    ativado. Pode remover se a opção é desativado.
     ~
  /vault/lang.inc (Script, Incluído)
     phpMussel Linguagem Dados; Necessário por multilingues capacidades.
@@ -730,8 +712,7 @@
  /vault/macho_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por Mach-O assinaturas.
     Necessário se o Mach-O assinaturas opção em phpmussel.ini está ativado.
-    Pode remover se a opção é desativado (mas os arquivos serão recriados na
-    atualização).
+    Pode remover se a opção é desativado.
     ~
  /vault/mail_clamav_regex.cvd (Assinaturas, Incluídos)
  /vault/mail_clamav_regex.map (Assinaturas, Incluídos)
@@ -744,23 +725,21 @@
  /vault/mail_mussel_standard.map (Assinaturas, Incluídos)
     Arquivos por assinaturas usado por a phpMussel_mail() função.
     Necessário se o phpMussel_mail() função é utilizado em qualquer forma.
-    Pode remover se não usado (mas os arquivos serão recriados na atualização).
+    Pode remover se não usado.
     ~
  /vault/md5_clamav.cvd (Assinaturas, Incluídos)
  /vault/md5_custom.cvd (Assinaturas, Incluídos)
  /vault/md5_mussel.cvd (Assinaturas, Incluídos)
     Arquivos por MD5 baseadas assinaturas.
     Necessário se o MD5 baseadas assinaturas opção em phpmussel.ini está
-    ativado. Pode remover se a opção é desativado (mas os arquivos serão
-    recriados na atualização).
+    ativado. Pode remover se a opção é desativado.
     ~
  /vault/metadata_clamav.cvd (Assinaturas, Incluídos)
  /vault/metadata_custom.cvd (Assinaturas, Incluídos)
  /vault/metadata_mussel.cvd (Assinaturas, Incluídos)
     Arquivos por metadados assinaturas.
     Necessário se o metadados assinaturas opção em phpmussel.ini está ativado.
-    Pode remover se a opção é desativado (mas os arquivos serão recriados na
-    atualização).
+    Pode remover se a opção é desativado.
     ~
  /vault/ole_clamav_regex.cvd (Assinaturas, Incluídos)
  /vault/ole_clamav_regex.map (Assinaturas, Incluídos)
@@ -772,8 +751,7 @@
  /vault/ole_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por OLE assinaturas.
     Necessário se OLE assinaturas opção em phpmussel.ini está ativado. Pode
-    remover se a opção é desativado (mas os arquivos serão recriados na
-    atualização).
+    remover se a opção é desativado.
     ~
  /vault/pdf_clamav_regex.cvd (Assinaturas, Incluídos)
  /vault/pdf_clamav_regex.map (Assinaturas, Incluídos)
@@ -785,16 +763,14 @@
  /vault/pdf_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por PDF assinaturas.
     Necessário se PDF assinaturas opção em phpmussel.ini está ativado. Pode
-    remover se a opção é desativado (mas os arquivos serão recriados na
-    atualização).
+    remover se a opção é desativado.
     ~
  /vault/pe_clamav.cvd (Assinaturas, Incluídos)
  /vault/pe_custom.cvd (Assinaturas, Incluídos)
  /vault/pe_mussel.cvd (Assinaturas, Incluídos)
     Arquivos por PE Seccional assinaturas.
     Necessário se o PE Seccional assinaturas opção em phpmussel.ini está
-    ativado. Pode remover se a opção é desativado (mas os arquivos serão
-    recriados na atualização).
+    ativado. Pode remover se a opção é desativado.
     ~
  /vault/phpmussel.inc (Script, Incluído)
     phpMussel Núcleo Script; O principal corpo de phpMussel (essencial)!
@@ -820,8 +796,7 @@
  /vault/swf_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por o Shockwave assinaturas.
     Necessário se o Shockwave assinaturas opção em phpmussel.ini está ativado.
-    Pode remover se a opção é desativado (mas os arquivos serão recriados na
-    atualização).
+    Pode remover se a opção é desativado.
     ~
  /vault/template.html (Outro, Incluído)
     phpMussel template arquivo; Template por HTML produzido através do
@@ -845,8 +820,7 @@
     Arquivo específico whitelist.
     Necessário se o whitelist opção em phpmussel.ini está ativado e se você
     deseja ter específicos arquivos whitelisted. Pode remover se a opção é
-    desativado ou se você não precisa whitelisting (mas os arquivos serão
-    recriados na atualização).
+    desativado ou se você não precisa whitelisting.
     ~
  /vault/xmlxdp_clamav_regex.cvd (Assinaturas, Incluídos)
  /vault/xmlxdp_clamav_regex.map (Assinaturas, Incluídos)
@@ -858,8 +832,7 @@
  /vault/xmlxdp_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por XML/XDP-Pedaço assinaturas.
     Necessário se XML/XDP-Pedaço assinaturas opção em phpmussel.ini está
-    ativado. Pode remover se a opção é desativado (mas os arquivos serão
-    recriados na atualização).
+    ativado. Pode remover se a opção é desativado.
     ~
 
  * Arquivo nome podem variar baseado em configuração estipulação
@@ -1528,5 +1501,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 6 Março 2015 (2015.03.06).
+Última Atualização: 22 Março 2015 (2015.03.22).
 EOF

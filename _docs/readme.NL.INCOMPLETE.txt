@@ -433,31 +433,23 @@
    Password required: script_password
    Other requirements: update.dat and update.inc must exist.
    Required parameters: (none)
-   Optional parameters: forcedupdate
-   Example: ?pword=[script_password]&phpmussel=update&musselvar=forcedupdate
+   Optional parameters: (none)
+   Example: ?pword=[script_password]&phpmussel=update
    ~
    What it does: Checks for updates to both phpMussel and its signatures. If
                  update checks succeed and updates are found, will attempt
-                 to download and install these updates. If updates are checked
-                 too quickly, update check will abort. If update checks fail,
-                 update will abort. If optional parameter "forcedupdate" is
-                 supplied, time of last update will be ignored and thus update
-                 check will continue even if it is being checked "too quickly",
-                 but will still abort if update check fails. Results of the
-                 entire process are printed to the screen. I recommend
-                 including the optional parameter "forcedupdate" if you're
-                 manually triggering this control, but please do not use
-                 "forcedupdate" if you're automating the process, such as via
-                 cron or similar. I recommend checking at least once per month
-                 to ensure your signatures and your copy of phpMussel are kept
-                 up to-date (unless, of course, you're checking for updates
-                 and installing them manually, which, I'd still recommend
-                 doing at least one per month). Checking more than twice per
-                 month is probably pointless, considering I'm (at the time of
-                 writing this) working on this project by myself and I'm very
-                 unlikely to be able to produce updates of any kind more
-                 frequently than that (nor do I particularly want to for the
-                 most part).
+                 to download and install these updates. If update checks fail,
+                 update will abort. Results of the entire process are printed
+                 to the screen. I recommend checking at least once per month
+                 to ensure that your signatures and your copy of phpMussel are
+                 kept up to-date (unless, of course, you're checking for
+                 updates and installing them manually, which, I'd still
+                 recommend doing at least one per month). Checking more than
+                 twice per month is probably pointless, considering I'm (at the
+                 time of writing this) working on this project by myself and
+                 I'm very unlikely to be able to produce updates of any kind
+                 more frequently than that (nor do I particularly want to for
+                 the most part).
    ~
  greylist
    Password required: script_password
@@ -610,15 +602,14 @@
  /vault/ascii_mussel_standard.cvd (Signatures, Included)
     Files for normalised ASCII signatures.
     Required if normalised ASCII signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
+    Can remove if the option is disabled.
     ~
  /vault/coex_clamav.cvd (Signatures, Included)
  /vault/coex_custom.cvd (Signatures, Included)
  /vault/coex_mussel.cvd (Signatures, Included)
     Files for Complex Extended signatures.
     Required if the Complex Extended signatures option in phpmussel.ini is
-    enabled. Can remove if the option is disabled (but files will be recreated
-    on update).
+    enabled. Can remove if the option is disabled.
     ~
  /vault/elf_clamav_regex.cvd (Signatures, Included)
  /vault/elf_clamav_regex.map (Signatures, Included)
@@ -629,8 +620,8 @@
  /vault/elf_mussel_regex.cvd (Signatures, Included)
  /vault/elf_mussel_standard.cvd (Signatures, Included)
     Files for ELF signatures.
-    Required if ELF signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
+    Required if ELF signatures option in phpmussel.ini is enabled. Can remove
+    if the option is disabled.
     ~
  /vault/exe_clamav_regex.cvd (Signatures, Included)
  /vault/exe_clamav_regex.map (Signatures, Included)
@@ -641,15 +632,15 @@
  /vault/exe_mussel_regex.cvd (Signatures, Included)
  /vault/exe_mussel_standard.cvd (Signatures, Included)
     Files for Portable Executable file (EXE) signatures.
-    Required if EXE signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
+    Required if EXE signatures option in phpmussel.ini is enabled. Can remove
+    if the option is disabled.
     ~
  /vault/filenames_clamav.cvd (Signatures, Included)
  /vault/filenames_custom.cvd (Signatures, Included)
  /vault/filenames_mussel.cvd (Signatures, Included)
     Files for filename signatures.
-    Required if filename signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
+    Required if filename signatures option in phpmussel.ini is enabled. Can
+    remove if the option is disabled.
     ~
  /vault/general_clamav_regex.cvd (Signatures, Included)
  /vault/general_clamav_regex.map (Signatures, Included)
@@ -660,8 +651,8 @@
  /vault/general_mussel_regex.cvd (Signatures, Included)
  /vault/general_mussel_standard.cvd (Signatures, Included)
     Files for general signatures.
-    Required if general signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
+    Required if general signatures option in phpmussel.ini is enabled. Can
+    remove if the option is disabled.
     ~
  /vault/graphics_clamav_regex.cvd (Signatures, Included)
  /vault/graphics_clamav_regex.map (Signatures, Included)
@@ -672,8 +663,8 @@
  /vault/graphics_mussel_regex.cvd (Signatures, Included)
  /vault/graphics_mussel_standard.cvd (Signatures, Included)
     Files for graphics signatures.
-    Required if graphics signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
+    Required if graphics signatures option in phpmussel.ini is enabled. Can
+    remove if the option is disabled.
     ~
  /vault/greylist.csv (Signatures, Included/Created)
     CSV of greylisted signatures indicating to phpMussel which signatures it
@@ -682,7 +673,7 @@
  /vault/hex_general_commands.csv (Signatures, Included)
     Hex-encoded CSV of general command detections optionally used by phpMussel.
     Required if general command detection option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but file will be recreated on update).
+    Can remove if the option is disabled.
     ~
  /vault/html_clamav_regex.cvd (Signatures, Included)
  /vault/html_clamav_regex.map (Signatures, Included)
@@ -694,7 +685,7 @@
  /vault/html_mussel_standard.cvd (Signatures, Included)
     Files for normalised HTML signatures.
     Required if normalised HTML signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
+    Can remove if the option is disabled.
     ~
  /vault/lang.inc (Script, Included)
     phpMussel Language Data; Required for multilingual capabilities.
@@ -708,8 +699,8 @@
  /vault/macho_mussel_regex.cvd (Signatures, Included)
  /vault/macho_mussel_standard.cvd (Signatures, Included)
     Files for Mach-O signatures.
-    Required if Mach-O signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
+    Required if Mach-O signatures option in phpmussel.ini is enabled. Can
+    remove if the option is disabled.
     ~
  /vault/mail_clamav_regex.cvd (Signatures, Included)
  /vault/mail_clamav_regex.map (Signatures, Included)
@@ -721,22 +712,22 @@
  /vault/mail_mussel_standard.cvd (Signatures, Included)
  /vault/mail_mussel_standard.map (Signatures, Included)
     Files for signatures used by the phpMussel_mail() function.
-    Required if the phpMussel_mail() function is used in any way.
-    Can remove if it is not used (but files will be recreated on update).
+    Required if the phpMussel_mail() function is used in any way. Can remove
+    them if they're not being used.
     ~
  /vault/md5_clamav.cvd (Signatures, Included)
  /vault/md5_custom.cvd (Signatures, Included)
  /vault/md5_mussel.cvd (Signatures, Included)
     Files for MD5 based signatures.
     Required if MD5 based signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
+    Can remove if the option is disabled.
     ~
  /vault/metadata_clamav.cvd (Signatures, Included)
  /vault/metadata_custom.cvd (Signatures, Included)
  /vault/metadata_mussel.cvd (Signatures, Included)
     Files for archive metadata signatures.
     Required if archive metadata signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
+    Can remove if the option is disabled.
     ~
  /vault/ole_clamav_regex.cvd (Signatures, Included)
  /vault/ole_clamav_regex.map (Signatures, Included)
@@ -747,8 +738,8 @@
  /vault/ole_mussel_regex.cvd (Signatures, Included)
  /vault/ole_mussel_standard.cvd (Signatures, Included)
     Files for OLE signatures.
-    Required if OLE signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
+    Required if OLE signatures option in phpmussel.ini is enabled. Can remove
+    if the option is disabled.
     ~
  /vault/pdf_clamav_regex.cvd (Signatures, Included)
  /vault/pdf_clamav_regex.map (Signatures, Included)
@@ -759,15 +750,15 @@
  /vault/pdf_mussel_regex.cvd (Signatures, Included)
  /vault/pdf_mussel_standard.cvd (Signatures, Included)
     Files for PDF signatures.
-    Required if PDF signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
+    Required if PDF signatures option in phpmussel.ini is enabled. Can remove
+    if the option is disabled.
     ~
  /vault/pe_clamav.cvd (Signatures, Included)
  /vault/pe_custom.cvd (Signatures, Included)
  /vault/pe_mussel.cvd (Signatures, Included)
     Files for PE Sectional signatures.
-    Required if PE Sectional signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
+    Required if PE Sectional signatures option in phpmussel.ini is enabled. Can
+    remove if the option is disabled.
     ~
  /vault/phpmussel.inc (Script, Included)
     phpMussel Core Script; The main body and guts of phpMussel (essential)!
@@ -792,7 +783,7 @@
  /vault/swf_mussel_standard.cvd (Signatures, Included)
     Files for the Shockwave signatures.
     Required if the Shockwave signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
+    Can remove if the option is disabled.
     ~
  /vault/template.html (Other, Included)
     phpMussel Template file; Template for HTML output produced by phpMussel for
@@ -812,8 +803,8 @@
  /vault/whitelist_mussel.cvd (Signatures, Included)
     File specific whitelist.
     Required if whitelisting option in phpmussel.ini is enabled and if you wish
-    to have specific files whitelisted. Can remove if option is disabled or if
-    you don't require whitelisting (but files will be recreated on update).
+    to have specific files whitelisted. Can remove if the option is disabled or
+    if you don't require whitelisting.
     ~
  /vault/xmlxdp_clamav_regex.cvd (Signatures, Included)
  /vault/xmlxdp_clamav_regex.map (Signatures, Included)
@@ -825,7 +816,7 @@
  /vault/xmlxdp_mussel_standard.cvd (Signatures, Included)
     Files for XML/XDP-Chunk signatures.
     Required if XML/XDP-Chunk signatures option in phpmussel.ini is enabled.
-    Can remove if option is disabled (but files will be recreated on update).
+    Can remove if the option is disabled.
     ~
 
  * Filename may differ based on configuration stipulations (in phpmussel.ini).
@@ -1458,5 +1449,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 6 Maart 2015 (2015.03.06).
+Laatste Bijgewerkt: 22 Maart 2015 (2015.03.22).
 EOF

@@ -451,27 +451,18 @@
    Password requisito: script_password
    Altri requisiti: update.dat e update.inc deve esistere.
    Parametri requisiti: (nessuno)
-   Parametri opzionali: forcedupdate
-   Esempio: ?pword=[script_password]&phpmussel=update&musselvar=forcedupdate
+   Parametri opzionali: (nessuno)
+   Esempio: ?pword=[script_password]&phpmussel=update
    ~
    Cosa fa: Verifica la presenza di aggiornamenti sia per phpMussel e le sue
             firme. Se l'aggiornamento verificare è successo e aggiornamenti
             sono trovano, sarà tenterà per scaricare e installare gli
-            aggiornamenti. Se l'aggiornamento verificare è troppo rapidamente,
-            l'aggiornamento verificare sarà abortire. Se l'aggiornamento
-            verificare fallisce, l'aggiornamento sarà abortito. Se l'opzionale
-            parametro "forcedupdate" vieno dato, momento dell'aggiornamento
-            verrà ignorato e così l'aggiornamento verificare sarà continuerà
-            indipendentemente di s'essere verificò "troppo rapidamente", Ma
-            sarà ancora abortire se l'aggiornamento verificare fallisce.
-            Risultati dell'intero processo sono stampati sullo schermo.
-            Raccomando incluse l'opzionale parametro "forcedupdate" se si sta
-            manualmente innescando questo controllo, Ma si prega di non usare
-            "forcedupdate" se si sta automatizzando il processo, come tramite
-            cron o simili. Mi consiglia di fare l'aggiornamento verificare
-            almeno una volta al mese per garantire le vostre firme e la vostra
-            copia di phpMussel sono aggiornato all'ultimo edizioni (a meno,
-            ovviamente, si fare l'aggiornamento verificare e fare
+            aggiornamenti. Se l'aggiornamento verificare fallisce,
+            l'aggiornamento sarà abortito. Risultati dell'intero processo sono
+            stampati sullo schermo. Mi raccomando di fare l'aggiornamento
+            verificare almeno una volta al mese per garantire le vostre firme e
+            la vostra copia di phpMussel sono aggiornato all'ultimo edizioni (a
+            meno, ovviamente, si fare l'aggiornamento verificare e fare
             l'installazione di manualmente, di cui, Mi piacerebbe ancora
             consiglio di fare almeno una al mese). Controllo più di due volte
             al mese, è probabilmente inutile, considerando sto (alla momento di
@@ -634,16 +625,14 @@
  /vault/ascii_mussel_standard.cvd (Firme, Incluso)
     File per le normalizzati ASCII firme.
     Richiesto se l'opzione per le normalizzati ASCII firme in phpmussel.ini è
-    abilitato. Può rimuovere se l'opzione è disattivato (ma i file verranno
-    ricreati al momento di aggiornamento).
+    abilitato. Può rimuovere se l'opzione è disattivato.
     ~
  /vault/coex_clamav.cvd (Firme, Incluso)
  /vault/coex_custom.cvd (Firme, Incluso)
  /vault/coex_mussel.cvd (Firme, Incluso)
     File per il Complesso Esteso firme.
     Richiesto se l'opzione per il complesso esteso firme in phpmussel.ini è
-    abilitato. Può rimuovere se l'opzione è disattivato (ma i file verranno
-    ricreati al momento di aggiornamento).
+    abilitato. Può rimuovere se l'opzione è disattivato.
     ~
  /vault/elf_clamav_regex.cvd (Firme, Incluso)
  /vault/elf_clamav_regex.map (Firme, Incluso)
@@ -655,8 +644,7 @@
  /vault/elf_mussel_standard.cvd (Firme, Incluso)
     File per l'ELF firme.
     Richiesto se l'opzione per l'ELF firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
-    momento di aggiornamento).
+    Può rimuovere se l'opzione è disattivato.
     ~
  /vault/exe_clamav_regex.cvd (Firme, Incluso)
  /vault/exe_clamav_regex.map (Firme, Incluso)
@@ -668,16 +656,14 @@
  /vault/exe_mussel_standard.cvd (Firme, Incluso)
     File per Portatile Eseguibile file (EXE) firme.
     Richiesto se l'opzione per l'EXE firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
-    momento di aggiornamento).
+    Può rimuovere se l'opzione è disattivato.
     ~
  /vault/filenames_clamav.cvd (Firme, Incluso)
  /vault/filenames_custom.cvd (Firme, Incluso)
  /vault/filenames_mussel.cvd (Firme, Incluso)
     File per le file nomi firme.
     Richiesto se l'opzione per file nomi firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
-    momento di aggiornamento).
+    Può rimuovere se l'opzione è disattivato.
     ~
  /vault/general_clamav_regex.cvd (Firme, Incluso)
  /vault/general_clamav_regex.map (Firme, Incluso)
@@ -689,8 +675,7 @@
  /vault/general_mussel_standard.cvd (Firme, Incluso)
     File per generali firme.
     Richiesto se l'opzione per generali firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
-    momento di aggiornamento).
+    Può rimuovere se l'opzione è disattivato.
     ~
  /vault/graphics_clamav_regex.cvd (Firme, Incluso)
  /vault/graphics_clamav_regex.map (Firme, Incluso)
@@ -702,18 +687,16 @@
  /vault/graphics_mussel_standard.cvd (Firme, Incluso)
     File per grafica firme.
     Richiesto se l'opzione per grafica firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
-    momento di aggiornamento).
+    Può rimuovere se l'opzione è disattivato.
     ~
- /vault/greylist.csv (Firme, Included/Created)
+ /vault/greylist.csv (Firme, Incluso/Creato)
     CSV di firme sulla greylist indicando a phpMussel cui firme dovrebbe essere
     ignorato (il file sarà ricreato automaticamente se è cancellato).
     ~
  /vault/hex_general_commands.csv (Firme, Incluso)
     Hex-codificata CSV di generale comando rilevazioni opzionalmente utilizzati
     da phpMussel. Richiesto se l'opzione per generale comando rilevazione in
-    phpmussel.ini è abilitato. Può rimuovere se l'opzione è disattivato (ma i
-    file verranno ricreati al momento di aggiornamento).
+    phpmussel.ini è abilitato. Può rimuovere se l'opzione è disattivato.
     ~
  /vault/html_clamav_regex.cvd (Firme, Incluso)
  /vault/html_clamav_regex.map (Firme, Incluso)
@@ -725,8 +708,7 @@
  /vault/html_mussel_standard.cvd (Firme, Incluso)
     File per le normalizzati HTML firme.
     Richiesto se l'opzione per le normalizzati HTML firme in phpmussel.ini è
-    abilitato. Può rimuovere se l'opzione è disattivato (ma i file verranno
-    ricreati al momento di aggiornamento).
+    abilitato. Può rimuovere se l'opzione è disattivato.
     ~
  /vault/lang.inc (Script, Incluso)
     phpMussel Lingua Dati; Necessario per multilingue funzionalità.
@@ -741,8 +723,7 @@
  /vault/macho_mussel_standard.cvd (Firme, Incluso)
     File per Mach-O firme.
     Richiesto se l'opzione per Mach-O firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
-    momento di aggiornamento).
+    Può rimuovere se l'opzione è disattivato.
     ~
  /vault/mail_clamav_regex.cvd (Firme, Incluso)
  /vault/mail_clamav_regex.map (Firme, Incluso)
@@ -755,7 +736,7 @@
  /vault/mail_mussel_standard.map (Firme, Incluso)
     File per firme utilizzati dalla phpMussel_mail() funzione. Richiesta se la
     funzione viene utilizzato in qualsiasi modo. Può rimuovere se non viene
-    utilizzato (ma i file verranno ricreati al momento di aggiornamento).
+    utilizzato.
     ~
  /vault/md5_clamav.cvd (Firme, Incluso)
  /vault/md5_custom.cvd (Firme, Incluso)
@@ -770,8 +751,7 @@
  /vault/metadata_mussel.cvd (Firme, Incluso)
     File per l'archivio metadati firme.
     Richiesto se l'opzione per l'archivio metadati firme in phpmussel.ini è
-    abilitato. Può rimuovere se l'opzione è disattivato (ma i file verranno
-    ricreati al momento di aggiornamento).
+    abilitato. Può rimuovere se l'opzione è disattivato.
     ~
  /vault/ole_clamav_regex.cvd (Firme, Incluso)
  /vault/ole_clamav_regex.map (Firme, Incluso)
@@ -783,8 +763,7 @@
  /vault/ole_mussel_standard.cvd (Firme, Incluso)
     File per OLE firme.
     Richiesto se l'opzione per OLE firme in phpmussel.ini è abilitato. Può
-    rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
-    momento di aggiornamento).
+    rimuovere se l'opzione è disattivato.
     ~
  /vault/pdf_clamav_regex.cvd (Firme, Incluso)
  /vault/pdf_clamav_regex.map (Firme, Incluso)
@@ -796,16 +775,14 @@
  /vault/pdf_mussel_standard.cvd (Firme, Incluso)
     File per PDF firme.
     Richiesto se l'opzione per PDF firme in phpmussel.ini è abilitato. Può
-    rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
-    momento di aggiornamento).
+    rimuovere se l'opzione è disattivato.
     ~
  /vault/pe_clamav.cvd (Firme, Incluso)
  /vault/pe_custom.cvd (Firme, Incluso)
  /vault/pe_mussel.cvd (Firme, Incluso)
     File per PE Sezionale firme.
     Richiesto se l'opzione per PE Sezionale firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
-    momento di aggiornamento).
+    Può rimuovere se l'opzione è disattivato.
     ~
  /vault/phpmussel.inc (Script, Incluso)
     phpMussel Nucleo Script; Il principale corpo e budella di phpMussel
@@ -832,8 +809,7 @@
  /vault/swf_mussel_standard.cvd (Firme, Incluso)
     File per Shockwave firme.
     Richiesto se l'opzione per Shockwave firme in phpmussel.ini è abilitato.
-    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
-    momento di aggiornamento).
+    Può rimuovere se l'opzione è disattivato.
     ~
  /vault/template.html (Altro, Incluso)
     phpMussel Template file; Template per l'HTML output prodotto da phpMussel
@@ -856,8 +832,7 @@
     File specifico whitelist.
     Richiesto se l'opzione per la whitelist in phpmussel.ini è abilitato e se
     si desidera avere specifici file sul whitelist. Può rimuovere se l'opzione
-    è disattivato o se non si richiede whitelisting (ma i file verranno
-    ricreati al momento di aggiornamento).
+    è disattivato o se non si richiede whitelisting.
     ~
  /vault/xmlxdp_clamav_regex.cvd (Firme, Incluso)
  /vault/xmlxdp_clamav_regex.map (Firme, Incluso)
@@ -869,8 +844,7 @@
  /vault/xmlxdp_mussel_standard.cvd (Firme, Incluso)
     File per XML/XDP-Pezzo firme.
     Richiesto se l'opzione per XML/XDP-Pezzo firme in phpmussel.ini è
-    abilitato. Può rimuovere se l'opzione è disattivato (ma i file
-    verranno ricreati al momento di aggiornamento).
+    abilitato. Può rimuovere se l'opzione è disattivato.
     ~
 
  * Nome del file può variare dipendente di configurazione (in phpmussel.ini).
@@ -1533,5 +1507,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 6 Marzo 2014 (2015.03.06).
+Ultimo Aggiornamento: 22 Marzo 2014 (2015.03.22).
 EOF

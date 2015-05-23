@@ -9,16 +9,9 @@ Do-to list for potential future major version (v1.0):
   scan ZIP files recursively should also be supported at some point (along with
   all future formats that are planned to be supported).
 - Ability to read and process TAR files.
-- I'd like to do a complete overhaul of the updater. Doesn't really work as
-  well as I'd like it to at the moment. Have some good ideas in mind as to how
-  I'd like to go about it but haven't as of yet had time to get it started.
 - Any and all known bugs fixed (none pending at this time).
-- Further optimization and testing of all signatures and all code.
 - Possible idea: Create an API system for data sharing and malware reporting?
 - Possible idea: IP blacklist/whitelist?
-- Possible idea: Wiki-esque descriptions of block types, guides, or further
-  similar such reading materials?
-- I still need to fix the auto-updater; Haven't done this yet.
 Do-to list for potential future minor version (v0.7):
 - Any significant changes to the script including completing of any of the
   aforementioned above, whereby having done so, the release doesn't yet qualify
@@ -29,9 +22,81 @@ Anything less than sub-minor:
 - Updates to signatures released without any changes to the core code,
   non-important hot-fixes, re-builds, release candidates and anything else less
   than sub-minor.
-Last Edited: 15th November 2014
+Last Edited: 20th March 2015
 
-=== Version/Release 0.6f (Previous Release: 0.6e) ===
+=== Version/Release 0.6g (Previous Release: 0.6f) ===
+SUMMARY:
+Updated to the latest signatures set (55+20213+6g).
+Sub-minor release (medium or high priority).
+
+NEW CHANGES:
+- Some new signatures dealing with website defacements added (2015.03.16).
+- A few signatures that were occasionally falsing were narrowed (2015.03.19).
+- New banking trojan and ransomware signatures added (2015.03.20).
+- The auto-updater is back online!! Offline since v0.6, I've rewritten most of
+  the actual code for the auto-updater, and it should now work again as
+  expected. I still haven't sorted out alternative mirrors, but, the updater
+  now sources its updates directly from Sourceforge, and I haven't yet
+  encountered any problems with the way in which I've recoded the updater nor
+  with the way in which updates are being sourced; If any such problems
+  eventually emerge, time will tell. However, it should now be possible to
+  safely use the auto-updater once again (2015.03.20).
+- Behavioural changes: Previously, if the auto-updater was used and an update
+  was found to be available for download, the auto-updater would attempt to
+  download and install the entirety of the available update, regardless of
+  whether or not specific files within that update were actually required by
+  the specific installation of phpMussel for which the auto-updater was
+  attempting to update. Now, if a particular file within an installation is
+  already up to-date and doesn't differ from that of its counter-part within
+  an available update, the auto-updater won't need to re-download or reinstall
+  that particular file. Additionally, files associated with any type of
+  signatures that are explicitly disabled by way of their associated directives
+  within the phpMussel configuration being explictly disabled won't be
+  downloaded and installed (however, they will nonetheless still be downloaded
+  and installed if their associated directives are missing entirely from
+  the phpMussel configuration). The update scheduling aspect of the
+  auto-updater, or the concept of the auto-updater checking for updates "too
+  quickly" (whichever of the two you'd prefer), has now been rendered obsolete,
+  and as such, because it is no longer required, support for the "forcedupdate"
+  optional parameter has now been removed. Prior recommendations of checking
+  for updates at least once per month but no more than twice per month still
+  stand, but they are no longer enforced at all. Release/version numbers are
+  now entirely arbitrary where the auto-updater is concerned: They are still
+  nonetheless checked for and declared upon using the auto-updater, but whether
+  or not an update is available is now determined by file hashes rather than
+  release/version numbers. No other changes or modifications have been made to
+  the auto-updater (2015.03.20).
+- As per usual, all documentation updated to reflect the changes brought about
+  as of this version release (2015.03.21).
+- All four files containing PHP code (the Loader, "phpmussel.php", the Language
+  Data, "lang.inc", the Updater, "update.inc", and the Core Script,
+  "phpmussel.inc") have been modified since the previous release. The changes
+  made to the Updater and to Core Script are as described above. Language data
+  has been updated accordingly. No changes have been made to the actual code
+  of the Loader, but some of the comment text at the beginning of the file has
+  been modified (2015.03.22).
+- Updated to the the latest ClamAV signatures; SecuriteInfo signatures;
+  PhishTank signatures; All other signatures and etc (2015.03.22).
+
+PROBLEMS/BUGS FIXED:
+- The signature name packing that I'd introduced with the previous release of
+  phpMussel had broken some of the signature bypasses that I'd hardcoded into
+  the core script, resulting in an increase of false positives for certain
+  types of files when scanning; An unfortunate oversight that I'd discovered
+  earlier today and managed to fix fairly easily immediately thereafter.
+  Theoretically, certain instances of whitelisting may have broken, too, though
+  that isn't something that I'd tested. Either way, however, the problem should
+  be resolve as of this release (2015.03.18).
+
+ADDITIONAL NOTES:
+- Updating to this release from the previous release (0.6f) should be
+  considered high priority if you use or intend to use the auto-updater, but
+  should otherwise be considered medium priority.
+
+Maikuolan,
+22nd March 2015.
+
+=== Version/Release 0.6f (Previous Release: 0.6e; Next: 0.6g) ===
 SUMMARY:
 Non-ClamAV signatures update only (55+20139+6f).
 Sub-minor release (low or medium priority).
@@ -227,7 +292,7 @@ NEW CHANGES:
   relating to their removal, do please let me know. In any case, I do believe
   these removals and further narrowing have resulted in a noticeable
   improvement in performance and efficiency (2015.02.02).
-- Added a handful of new signatures to deal with "RandomWeb", a form of
+- Added a handful of new signatures to deal with "RansomWeb", a form of
   ransomware specifically targeting websites (2015.02.03).
 
 PROBLEMS/BUGS FIXED:
@@ -365,7 +430,7 @@ NEW CHANGES:
   but also given that most of these signatures are for PUPs [Potentially
   Unwanted Programs], PUAs [Potentially Unwanted Applications] and speculative
   threats, rather than definitive threats, given that they generate far more
-  false-positives than any other signatures I've encountered during testing
+  false positives than any other signatures I've encountered during testing
   and given the significant performance and speed increase for phpMussel by
   removing these signatures which sees scanning completed almost twice as
   quickly as it otherwise would be, I feel that the removal of these signatures
@@ -464,9 +529,9 @@ NEW CHANGES:
   labelling as "complex extended" (or CoEx) signatures. The idea behind complex
   extended signatures is that there may, at times, be threats that we'll want
   to be identifying using multiple detection methods, to catch those threats
-  while reducing the risk of false-positives where there are multiple matching
+  while reducing the risk of false positives where there are multiple matching
   methods possible for particular threats but where using only one of those
-  methods at any given time would be likely to produce false-positives, or
+  methods at any given time would be likely to produce false positives, or
   perhaps to catch a threat that would be particularly difficult to catch using
   only a single method, due to difficult or tedious fingerprinting or for
   similar such reasons. Complex extended signatures, basically, consist of a
@@ -601,8 +666,8 @@ PROBLEMS/BUGS FIXED:
 - Going over all code, I'd discovered that signatures that are both flagged
   with "A" and containing the ">" marker at the same time (there aren't very
   many that fit this criteria though), although to-date, I've received exactly
-  zero reports of false-positives, could, in theory, potentially cause
-  false-positives in certain situations, due to the way the code was structured
+  zero reports of false positives, could, in theory, potentially cause
+  false positives in certain situations, due to the way the code was structured
   allowing for those signatures to occasionally capture slightly more or less
   widely (depending on the signature in question) than intended; This affects
   all signatures, both regex and non-regex (but does not affect those signature
@@ -908,7 +973,7 @@ NEW CHANGES:
   certain to improve with time, and as is, still does a reasonable job. Not
   all of the relevant signatures match in the same way between ClamAV and
   phpMussel yet, but those that do (and thus, which should correctly match
-  during scans by phpMussel without false-positives) have been included
+  during scans by phpMussel without false positives) have been included
   with this release (which works out to roughly ~150 signatures of the total
   ~3K?K or so normalised ASCII signatures available from ClamAV).
   Part of the reason that I'm including it with this release, as opposed to
@@ -1027,7 +1092,7 @@ NEW CHANGES:
 PROBLEMS/BUGS FIXED:
 - Found some incorrect peripheral information in the documentation; Corrected.
 - Corrected some minor spelling errors in the language file (lang.inc).
-- Removed some problematic false-positives from the signature set, most
+- Removed some problematic false positives from the signature set, most
   notably, "phpMussel-FN.Illegal.Character-3F", which was originally introduced
   with the previously most recent release (v0.3g), potentially falsing where
   due to a discrepancy between the actual default character encoding
@@ -1047,7 +1112,7 @@ Sub-minor release (medium priority).
 NEW CHANGES:
 - phpMussel now displayed as process title when in CLI mode (PHP 5 >= 5.5.0).
 - Big changes across the language file, the core script and the update script.
-- As usual, improved signature set (a few potential false-positives removed,
+- As usual, improved signature set (a few potential false positives removed,
   better protection against filename manipulation, new set of MD5s, new round
   of phishes, a number of others; also see changes noted under BUGS); Slightly
   improved signature mapping algorithm.

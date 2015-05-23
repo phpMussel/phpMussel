@@ -23,7 +23,7 @@
 
  Special thanks to Sourceforge for hosting the project files, located at
  <http://sourceforge.net/projects/phpmussel/>, to Spambot Security for hosting
- the phpMussel discussions forums, located at
+ the phpMussel discussion forums, located at
  <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, and to the
  additional sources of a number of the signatures utilised by phpMussel:
  SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
@@ -35,7 +35,7 @@
  Sourceforge <http://sourceforge.net/projects/phpmussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.6e (26th February 2015) Language Data.
+ This File: phpMussel v0.6g (22nd March 2015) Language Data.
 
  The latest version and future updates can be obtained from the phpMussel
  SourceForge page located at <http://sourceforge.net/projects/phpmussel/>.
@@ -59,10 +59,10 @@ $MusselConfig['lang']['cli_prompt']="\n\n>> ";
 
 if($MusselConfig['general']['lang']=="en")
 	{ // English
-	$MusselConfig['lang']['cli_commands']=" q\n - Quit CLI.\n - Aliases: quit, exit.\n md5_file\n - Generate MD5 signatures from files [Syntax: md5_file filename].\n - Alias: m.\n md5\n - Generate MD5 signature from string [Syntax: md5_file string].\n hex_encode\n - Convert binary string to hexadecimal [Syntax: hex_encode string].\n - Alias: x.\n hex_decode\n - Convert hexadecimal to binary string [Syntax: hex_decode string].\n base64_encode\n - Convert binary string to base64 string [Syntax: base64_encode string].\n - Alias: b.\n base64_decode\n - Convert base64 string to binary string [Syntax: base64_decode string].\n scan\n - Scan file or directory [Syntax: scan filename].\n - Alias: s.\n update\n - Update phpMussel.\n - Alias: u.\n forcedupdate\n - Forcibly update phpMussel.\n - Alias: f.\n c\n - Print this command list.\n";
+	$MusselConfig['lang']['cli_commands']=" q\n - Quit CLI.\n - Aliases: quit, exit.\n md5_file\n - Generate MD5 signatures from files [Syntax: md5_file filename].\n - Alias: m.\n md5\n - Generate MD5 signature from string [Syntax: md5_file string].\n hex_encode\n - Convert binary string to hexadecimal [Syntax: hex_encode string].\n - Alias: x.\n hex_decode\n - Convert hexadecimal to binary string [Syntax: hex_decode string].\n base64_encode\n - Convert binary string to base64 string [Syntax: base64_encode string].\n - Alias: b.\n base64_decode\n - Convert base64 string to binary string [Syntax: base64_decode string].\n scan\n - Scan file or directory [Syntax: scan filename].\n - Alias: s.\n update\n - Update phpMussel.\n - Alias: u.\n c\n - Print this command list.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']="Failed to complete scanning process";
 	$MusselConfig['lang']['cli_is_not_a']=" is not a file or directory.";
-	$MusselConfig['lang']['cli_ln2']=" Thank you for using phpMussel, a PHP script designed to detect trojans,\n viruses, malware and other threats within files uploaded to your system\n wherever the script is hooked, based on the signatures of ClamAV and others.\n\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~                                     \n\n";
+	$MusselConfig['lang']['cli_ln2']=" Thank you for using phpMussel, a PHP script designed to detect trojans,\n viruses, malware and other threats within files uploaded to your system\n wherever the script is hooked, based on the signatures of ClamAV and others.\n\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 	$MusselConfig['lang']['cli_ln3']=" Currently running phpMussel in CLI mode (Command line interface).\n\n To scan a file or directory, type 'scan', followed by the name of the file or\n directory that you want phpMussel to scan and press Enter; Type 'c' and press\n Enter for a list of CLI mode commands; Type 'q' and press Enter to quit:";
 	$MusselConfig['lang']['cli_update_restart']=" Restarting phpMussel may be required before updates become apparent.";
 	$MusselConfig['lang']['cli_working']="In progress";
@@ -106,12 +106,18 @@ if($MusselConfig['general']['lang']=="en")
 	$MusselConfig['lang']['update_complete']="Update check completed successfully.";
 	$MusselConfig['lang']['update_created']="created";
 	$MusselConfig['lang']['update_deleted']="deleted";
+	$MusselConfig['lang']['update_err1']="Failed to update: 'update.dat' missing. Reinstall or update manually.";
+	$MusselConfig['lang']['update_err2']="Failed to update: 'update.dat' does not contain any valid update sources. Please update manually.";
+	$MusselConfig['lang']['update_err3']="Possible hack or forgery detected in the update instructions supplied by the update source; Source may possibly be compromised. Please notify the script author. Updating manually is recommended.";
+	$MusselConfig['lang']['update_err4']="Missing checksum!";
+	$MusselConfig['lang']['update_err5']="Missing data!";
+	$MusselConfig['lang']['update_err6']="Bad data!";
+	$MusselConfig['lang']['update_err7']="Bad checksum!";
 	$MusselConfig['lang']['update_failed']="Failed.";
 	$MusselConfig['lang']['update_fetch']="Attempting to fetch version data from";
 	$MusselConfig['lang']['update_no_source']="phpMussel has failed to update itself because it could not connect to a valid update source. Updating manually is recommended.";
 	$MusselConfig['lang']['update_not']="NOT";
 	$MusselConfig['lang']['update_not_available']="No script update is available at this time.";
-	$MusselConfig['lang']['update_not_due']="Not updated: Next update check not due until ";
 	$MusselConfig['lang']['update_not_possible']="A script update is available, but can't be fully updated with this version of the update script. Please update manually.";
 	$MusselConfig['lang']['update_patched']="patched";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Update script file missing! Please reinstall phpMussel.";
@@ -124,6 +130,7 @@ if($MusselConfig['general']['lang']=="en")
 	$MusselConfig['lang']['update_successfully']="successfully";
 	$MusselConfig['lang']['update_version_latest']="LATEST SCRIPT VERSION";
 	$MusselConfig['lang']['update_version_yours']="YOUR SCRIPT VERSION";
+	$MusselConfig['lang']['update_wrd1']="signatures";
 	$MusselConfig['lang']['upload_error_1']="Filesize exceeds MAX_FILE_SIZE directive. ";
 	$MusselConfig['lang']['upload_error_2']="Filesize exceeds form-specified filesize limit. ";
 	$MusselConfig['lang']['upload_error_34']="Upload failure! Please contact the hostmaster for assistance! ";
@@ -136,10 +143,10 @@ if($MusselConfig['general']['lang']=="en")
 	}
 else if($MusselConfig['general']['lang']=="de")
 	{ // German
-	$MusselConfig['lang']['cli_commands']="q\n - Beendet den CLI-Modus.\n - Alias: quit, exit.\n md5_file\n - Generiert MD5-Signaturen einer Datei\n   [Syntax: md5_file filename].\n - Alias: m.\n md5\n - Generiert MD5-Signaturen eines String-Wertes\n   [Syntax: md5_file string].\n hex_encode\n - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert\n   [Syntax: hex_encode string].\n - Alias: x.\n hex_decode\n - Konvertiert einen Hexidezimal-Wert in einen Binär-Wert\n   [Syntax: hex_decode string].\n base64_encode\n -  Konvertiert einen Binär-Wert in einen Base64-Wert\n   [Syntax: base64_encode string].\n - Alias: b.\n base64_decode\n - Konvertiert einen Base64-Wert in einen Binär-Wert\n   [Syntax: base64_decode string].\n scan\n - Überprüft eine Datei oder ein Verzeichnis\n   [Syntax: scan filename].\n - Alias: s.\n update\n - Aktualisiert phpMussel.\n - Alias: u.\n forcedupdate\n - Erzwingt ein Update von phpMussel.\n - Alias: f.\n c\n - Gibt diese Befehlsliste aus.\n";
+	$MusselConfig['lang']['cli_commands']="q\n - Beendet den CLI-Modus.\n - Alias: quit, exit.\n md5_file\n - Generiert MD5-Signaturen einer Datei\n   [Syntax: md5_file filename].\n - Alias: m.\n md5\n - Generiert MD5-Signaturen eines String-Wertes\n   [Syntax: md5_file string].\n hex_encode\n - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert\n   [Syntax: hex_encode string].\n - Alias: x.\n hex_decode\n - Konvertiert einen Hexidezimal-Wert in einen Binär-Wert\n   [Syntax: hex_decode string].\n base64_encode\n -  Konvertiert einen Binär-Wert in einen Base64-Wert\n   [Syntax: base64_encode string].\n - Alias: b.\n base64_decode\n - Konvertiert einen Base64-Wert in einen Binär-Wert\n   [Syntax: base64_decode string].\n scan\n - Überprüft eine Datei oder ein Verzeichnis\n   [Syntax: scan filename].\n - Alias: s.\n update\n - Aktualisiert phpMussel.\n - Alias: u.\n c\n - Gibt diese Befehlsliste aus.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']="Ein vollständiger Scan konnte nicht durchgeführt werden";
 	$MusselConfig['lang']['cli_is_not_a']=" ist keine Datei oder ein Verzeichnis.";
-	$MusselConfig['lang']['cli_ln2']=" Vielen Dank für die Benutzung von phpMussel, einem auf PHP basiertem Script,\n um Trojaner, Viren, Malware und andere Bedrohungen in Dateien zu entdecken,\n die auf Ihr System hochgeladen werden könnten, welches die Signaturen von\n ClamAV und andere nutzt.\n\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~                                     \n\n";
+	$MusselConfig['lang']['cli_ln2']=" Vielen Dank für die Benutzung von phpMussel, einem auf PHP basiertem Script,\n um Trojaner, Viren, Malware und andere Bedrohungen in Dateien zu entdecken,\n die auf Ihr System hochgeladen werden könnten, welches die Signaturen von\n ClamAV und andere nutzt.\n\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 	$MusselConfig['lang']['cli_ln3']=" phpMussel befindet sich im CLI-Modus (Command line interface).\n\n Um eine Datei oder ein Verzeichnis mit phpMussel zu überprüfen, geben Sie\n 'scan', gefolgt vom Namen der Datei oder des Verzeichnisses ein und\n bestätigen mit Enter;\n\n Geben Sie 'c' und Enter für eine Liste der verfügbaren Befehle im CLI-Modus\n ein; Geben Sie 'q' und Enter zum Beenden ein: ";
 	$MusselConfig['lang']['cli_update_restart']=" phpMussel muss neu gestartet werden, damit die Aktualisierungen wirksam werden.";
 	$MusselConfig['lang']['cli_working']="Im Gange";
@@ -183,12 +190,18 @@ else if($MusselConfig['general']['lang']=="de")
 	$MusselConfig['lang']['update_complete']="Update-Prüfung erfolgreich abgeschlossen.";
 	$MusselConfig['lang']['update_created']="erstellt";
 	$MusselConfig['lang']['update_deleted']="gelöscht";
+	$MusselConfig['lang']['update_err1']="Nicht aktualisiert: 'update.dat' fehlt. Reinstallieren oder aktualisieren manuell.";
+	$MusselConfig['lang']['update_err2']="Nicht aktualisiert: 'update.dat' keine gültigen Update-Quellen enthalten. Bitte aktualisieren Sie manuell.";
+	$MusselConfig['lang']['update_err3']="Mögliche Hack oder Fälschung in den Update-Anweisungen von der Update-Quelle versorgt erkannt; Quelle möglicherweise beeinträchtigt werden. Bitte benachrichtigen Sie das Skript-Autor. Manuellen Aktualisierung wird empfohlen.";
+	$MusselConfig['lang']['update_err4']="Checksum fehlt!";
+	$MusselConfig['lang']['update_err5']="Daten fehlt!";
+	$MusselConfig['lang']['update_err6']="Daten beschädigt!";
+	$MusselConfig['lang']['update_err7']="Checksum beschädigt!";
 	$MusselConfig['lang']['update_failed']="Gescheitert.";
 	$MusselConfig['lang']['update_fetch']="Abrufen von Versionsdaten aus";
 	$MusselConfig['lang']['update_no_source']="phpMussel konnte nicht aktualisiert werden, da es sich nicht zu einer gültigen Update-Quelle verbinden konnte. Manuelles Update wird empfohlen.";
 	$MusselConfig['lang']['update_not']="NICHT";
 	$MusselConfig['lang']['update_not_available']="Es steht zur Zeit kein Scriptupdate zur Verfügung.";
-	$MusselConfig['lang']['update_not_due']="Nicht aktualisiert: Nächstes Update nicht erwartet erst ";
 	$MusselConfig['lang']['update_not_possible']="Ein Scriptupdate ist verfügbar, kann aber nicht vollständig mit dieser Version des Update-Scripts aktualisiert werden. Bitte aktualisieren Sie manuell.";
 	$MusselConfig['lang']['update_patched']="gepatcht";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Update-Script fehlt! Bitte installieren Sie phpMussel erneut.";
@@ -201,6 +214,7 @@ else if($MusselConfig['general']['lang']=="de")
 	$MusselConfig['lang']['update_successfully']="erfolgreich";
 	$MusselConfig['lang']['update_version_latest']="AKTUELLE SCRIPT VERSION";
 	$MusselConfig['lang']['update_version_yours']="IHRE SCRIPT VERSION";
+	$MusselConfig['lang']['update_wrd1']="Signaturen";
 	$MusselConfig['lang']['upload_error_1']="Dateigröße überschreitet die Richtlinie MAX_FILE_SIZE. ";
 	$MusselConfig['lang']['upload_error_2']="Dateigröße überschreitet die im Formular angegebene Dateigröße. ";
 	$MusselConfig['lang']['upload_error_34']="Upload gescheitert! Bitte kontaktieren Sie den Hostmaster für Unterstützung! ";
@@ -213,10 +227,10 @@ else if($MusselConfig['general']['lang']=="de")
 	}
 else if($MusselConfig['general']['lang']=="es")
 	{ // Spanish
-	$MusselConfig['lang']['cli_commands']=" q\n - Dejar CLI.\n - Alias: quit, exit.\n md5_file\n - Generar MD5 firmas de archivos [Sintaxis: md5_file nombre_de_archivo].\n - Alias: m.\n md5\n - Generar MD5 firma de string [Sintaxis: md5_file string].\n hex_encode\n - Convertir binaria string a hexadecimal [Sintaxis: hex_encode string].\n - Alias: x.\n hex_decode\n - Convertir hexadecimal a binaria string [Sintaxis: hex_decode string].\n base64_encode\n - Convertir binaria string a base64 string [Sintaxis: base64_encode string].\n - Alias: b.\n base64_decode\n - Convertir base64 string a binaria string [Sintaxis: base64_decode string].\n scan\n - Analizar archivo o directorio [Sintaxis: scan nombre_de_archivo].\n - Alias: s.\n update\n - Actualizar phpMussel.\n - Alias: u.\n forcedupdate\n - Fuerza actualizar phpMussel.\n - Alias: f.\n c\n - Imprimir esta lista de comandos.\n";
+	$MusselConfig['lang']['cli_commands']=" q\n - Dejar CLI.\n - Alias: quit, exit.\n md5_file\n - Generar MD5 firmas de archivos [Sintaxis: md5_file nombre_de_archivo].\n - Alias: m.\n md5\n - Generar MD5 firma de string [Sintaxis: md5_file string].\n hex_encode\n - Convertir binaria string a hexadecimal [Sintaxis: hex_encode string].\n - Alias: x.\n hex_decode\n - Convertir hexadecimal a binaria string [Sintaxis: hex_decode string].\n base64_encode\n - Convertir binaria string a base64 string [Sintaxis: base64_encode string].\n - Alias: b.\n base64_decode\n - Convertir base64 string a binaria string [Sintaxis: base64_decode string].\n scan\n - Analizar archivo o directorio [Sintaxis: scan nombre_de_archivo].\n - Alias: s.\n update\n - Actualizar phpMussel.\n - Alias: u.\n c\n - Imprimir esta lista de comandos.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']="No se pudo completar el proceso de escaneo";
 	$MusselConfig['lang']['cli_is_not_a']=" no es un archivo o directorio.";
-	$MusselConfig['lang']['cli_ln2']=" Gracias por usar phpMussel, un PHP script diseñado para detectar troyanos,\n virus, malware y otras amenazas en los archivos cargados en el sistema donde\n el script está adjunto, basado en las firmas de ClamAV y otros.\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~                                     \n\n";
+	$MusselConfig['lang']['cli_ln2']=" Gracias por usar phpMussel, un PHP script diseñado para detectar troyanos,\n virus, malware y otras amenazas en los archivos cargados en el sistema donde\n el script está adjunto, basado en las firmas de ClamAV y otros.\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 	$MusselConfig['lang']['cli_ln3']=" Corrientemente phpMussel en ejecución en modo CLI (Comandos línea interfaz).\n\n Para analizar un archivo o directorio, escribir 'scan', seguido por el nombre\n del archivo o directorio que usted desea phpMussel para escanear y pulse Enter;\n Escribir 'c' y pulse Enter para obtener una lista de CLI modo comandos;\n Escribir 'q' y pulse Enter para salir:";
 	$MusselConfig['lang']['cli_update_restart']=" Reinicio phpMussel puede ser requerido antes de las actualizaciones se hacen\n evidentes.";
 	$MusselConfig['lang']['cli_working']="En operación";
@@ -260,12 +274,18 @@ else if($MusselConfig['general']['lang']=="es")
 	$MusselConfig['lang']['update_complete']="Actualización verificación completada con éxito.";
 	$MusselConfig['lang']['update_created']="creado";
 	$MusselConfig['lang']['update_deleted']="borrado";
+	$MusselConfig['lang']['update_err1']="No actualizado: 'update.dat' ausenta. Reinstalar o actualizar manualmente.";
+	$MusselConfig['lang']['update_err2']="No actualizado: 'update.dat' no contiene cualquier válido fuente de actualización. Por favor, actualizar manualmente.";
+	$MusselConfig['lang']['update_err3']="Posible hackeo o falsificación detectada en las actualización instrucciones suministrados por la actualización fuente; Fuente ser posible comprometida. Por favor, notifique al autor de la script. Se recomienda actualizar manualmente.";
+	$MusselConfig['lang']['update_err4']="Checksum ausentas!";
+	$MusselConfig['lang']['update_err5']="Datos ausentas!";
+	$MusselConfig['lang']['update_err6']="Datos malos!";
+	$MusselConfig['lang']['update_err7']="Checksum malos!";
 	$MusselConfig['lang']['update_failed']="Fracasado.";
 	$MusselConfig['lang']['update_fetch']="Intentar para obtener la versión datos de";
 	$MusselConfig['lang']['update_no_source']="phpMussel ha fracasado de actualización porque no se pudo conectar a una válido actualización fuente. Se recomienda actualizar manualmente.";
 	$MusselConfig['lang']['update_not']="NO";
 	$MusselConfig['lang']['update_not_available']="No script actualización está disponible en este momento.";
-	$MusselConfig['lang']['update_not_due']="No se actualizado: Próxima actualización no espera hasta ";
 	$MusselConfig['lang']['update_not_possible']="Una script actualización está disponible, pero no puede ser completamente actualizada con esta versión de la script de actualización. Por favor, actualizar manualmente.";
 	$MusselConfig['lang']['update_patched']="parcheado";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Actualización script archivo faltan! Por favor, reinstalar phpMussel.";
@@ -278,6 +298,7 @@ else if($MusselConfig['general']['lang']=="es")
 	$MusselConfig['lang']['update_successfully']="con éxito";
 	$MusselConfig['lang']['update_version_latest']="ÚLTIMA SCRIPT VERSIÓN";
 	$MusselConfig['lang']['update_version_yours']="SU SCRIPT VERSIÓN";
+	$MusselConfig['lang']['update_wrd1']="firmas";
 	$MusselConfig['lang']['upload_error_1']="Fichero tamaño excede MAX_FILE_SIZE directiva. ";
 	$MusselConfig['lang']['upload_error_2']="Fichero tamaño excede forma especificada fichero tamaño límite. ";
 	$MusselConfig['lang']['upload_error_34']="Subir fracaso! Contacto el hostmaster para ayuda! ";
@@ -290,10 +311,10 @@ else if($MusselConfig['general']['lang']=="es")
 	}
 else if($MusselConfig['general']['lang']=="fr")
 	{ // French
-	$MusselConfig['lang']['cli_commands']=" q\n - Quitter CLI.\n - Alias: quit, exit.\n md5_file\n - Générer MD5 signatures des fichiers [Syntaxe: md5_file nom_de_fichier].\n - Alias: m.\n md5\n - Générer MD5 signature de string [Syntaxe: md5_file string].\n hex_encode\n - Convertir binaire string à hexadécimal [Syntaxe: hex_encode string].\n - Alias: x.\n hex_decode\n - Convertir hexadécimal à binaire string [Syntaxe: hex_decode string].\n base64_encode\n - Convertir binaire string à base64 string [Syntaxe: base64_encode string].\n - Alias: b.\n base64_decode\n - Convertir base64 string à binaire string [Syntaxe: base64_decode string].\n scan\n - Analyser fichier ou répertoire [Syntaxe: scan nom_de_fichier].\n - Alias: s.\n update\n - Réactualiser phpMussel.\n - Alias: u.\n forcedupdate\n - Forcement réactualiser phpMussel.\n - Alias: f.\n c\n - Imprimer cette liste des commandes.\n";
+	$MusselConfig['lang']['cli_commands']=" q\n - Quitter CLI.\n - Alias: quit, exit.\n md5_file\n - Générer MD5 signatures des fichiers [Syntaxe: md5_file nom_de_fichier].\n - Alias: m.\n md5\n - Générer MD5 signature de string [Syntaxe: md5_file string].\n hex_encode\n - Convertir binaire string à hexadécimal [Syntaxe: hex_encode string].\n - Alias: x.\n hex_decode\n - Convertir hexadécimal à binaire string [Syntaxe: hex_decode string].\n base64_encode\n - Convertir binaire string à base64 string [Syntaxe: base64_encode string].\n - Alias: b.\n base64_decode\n - Convertir base64 string à binaire string [Syntaxe: base64_decode string].\n scan\n - Analyser fichier ou répertoire [Syntaxe: scan nom_de_fichier].\n - Alias: s.\n update\n - Réactualiser phpMussel.\n - Alias: u.\n c\n - Imprimer cette liste des commandes.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']="Échec du terminer le processus d'analyse";
 	$MusselConfig['lang']['cli_is_not_a']="  n'est pas un fichier ou un répertoire.";
-	$MusselConfig['lang']['cli_ln2']=" Merci pour l'utiliser de phpMusel, un PHP script pour la détection de virus,\n malveillants logiciels et autres menaces dans les fichiers téléchargés sur\n votre système partout où le script est accroché, basé sur les signatures de\n ClamAV et autres.\n\n PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPL V.2 par Caleb M (Maikuolan).\n\n                                     ~ ~ ~                                     \n\n";
+	$MusselConfig['lang']['cli_ln2']=" Merci pour l'utiliser de phpMusel, un PHP script pour la détection de virus,\n malveillants logiciels et autres menaces dans les fichiers téléchargés sur\n votre système partout où le script est accroché, basé sur les signatures de\n ClamAV et autres.\n\n PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPL V.2 par Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 	$MusselConfig['lang']['cli_ln3']=" Fonctionne comme CLI mode pour le moment (Commande Ligne Interface).\n\n Pour analyser un fichier ou répertoire, taper 'scan', suivi par le nom du\n fichier ou répertoire que vous voulez phpMussel pour analyser et appuyez sur\n Entrée; Tapez 'c' et appuyez sur Entrée pour une liste de CLI mode commandes;\n Taper 'q' et appuyez sur Entrée pour quitter:";
 	$MusselConfig['lang']['cli_update_restart']=" Redémarrage phpMussel peut être nécessaire avant les réactualisations deviennent apparents.";
 	$MusselConfig['lang']['cli_working']="En cours";
@@ -337,12 +358,18 @@ else if($MusselConfig['general']['lang']=="fr")
 	$MusselConfig['lang']['update_complete']="Réactualisation chèque réussi.";
 	$MusselConfig['lang']['update_created']="créé";
 	$MusselConfig['lang']['update_deleted']="supprimé";
+	$MusselConfig['lang']['update_err1']="Update échec: 'update.dat' manquant. Réinstaller ou réactualiser manuellement.";
+	$MusselConfig['lang']['update_err2']="Update échec: 'update.dat' ne contient pas de sources valide de réactualisations. Réactualiser manuellement s'il vous plaît.";
+	$MusselConfig['lang']['update_err3']="Possible hack ou falsification de données détecté dans les réactualisation instructions fournie par la source de la réactualisation; Source peut être compromise. S'il vous plaît, aviser l'auteur de la script. Réactualisation manuellement est recommandé.";
+	$MusselConfig['lang']['update_err4']="Checksum manquant!";
+	$MusselConfig['lang']['update_err5']="Données manquant!";
+	$MusselConfig['lang']['update_err6']="Mauvais données!";
+	$MusselConfig['lang']['update_err7']="Mauvais checksum!";
 	$MusselConfig['lang']['update_failed']="Manqué.";
 	$MusselConfig['lang']['update_fetch']="Tenter d'apporter les données de la version de";
 	$MusselConfig['lang']['update_no_source']="phpMussel n'a pas réussi à réactualiser parce qu'il ne pouvait pas connecter à une valide réactualisation source. Réactualisation manuelle est recommandé.";
 	$MusselConfig['lang']['update_not']="PAS";
 	$MusselConfig['lang']['update_not_available']="Aucune réactualisation du script est disponible à ce moment.";
-	$MusselConfig['lang']['update_not_due']="N'a pas été réactualisé: Suivante réactualiser n'attendu pas avant ";
 	$MusselConfig['lang']['update_not_possible']="Une réactualisation du script est disponible, mais ne peut pas être entièrement réactualisé avec cette version du réactualisation script. S'il vous plaît réactualiser manuellement.";
 	$MusselConfig['lang']['update_patched']="patché";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Réactualisation script fichier manquant! S'il vous plaît, réinstaller phpMussel.";
@@ -355,6 +382,7 @@ else if($MusselConfig['general']['lang']=="fr")
 	$MusselConfig['lang']['update_successfully']="avec succès";
 	$MusselConfig['lang']['update_version_latest']="DERNIÈRE SCRIPT VERSION";
 	$MusselConfig['lang']['update_version_yours']="VOS SCRIPT VERSION";
+	$MusselConfig['lang']['update_wrd1']="signatures";
 	$MusselConfig['lang']['upload_error_1']="Fichier taille dépasse MAX_FILE_SIZE directive. ";
 	$MusselConfig['lang']['upload_error_2']="Fichier taille dépasse forme spécifiée fichier taille limite. ";
 	$MusselConfig['lang']['upload_error_34']="Téléchargement échec! S'il vous plaît contacter le hostmaster pour l'aide! ";
@@ -367,10 +395,10 @@ else if($MusselConfig['general']['lang']=="fr")
 	}
 else if($MusselConfig['general']['lang']=="id")
 	{ // Indonesian
-	$MusselConfig['lang']['cli_commands']=" q\n - Berhenti CLI.\n - Alias: quit, exit.\n md5_file\n - Menghasilkan tanda tangan MD5 dari file [Sintaksis: md5_file nama_file].\n - Alias: m.\n md5\n - Menghasilkan tanda tangan MD5 dari string [Sintaksis: md5_file string].\n hex_encode\n - Mengkonversi string biner ke heksadesimal [Sintaksis: hex_encode string].\n - Alias: x.\n hex_decode\n - Mengkonversi heksadesimal ke string biner [Sintaksis: hex_decode string].\n base64_encode\n - Mengkonversi string biner ke string base64 [Sintaksis: base64_encode string].\n - Alias: b.\n base64_decode\n - Mengkonversi string base64 ke string biner [Sintaksis: base64_decode string].\n scan\n - Pindai file atau direktori [Sintaksis: scan nama_file].\n - Alias: s.\n update\n - Memperbarui phpMussel.\n - Alias: u.\n forcedupdate\n - Paksa memperbarui phpMussel.\n - Alias: f.\n c\n - Cetak ini daftar perintah.\n";
+	$MusselConfig['lang']['cli_commands']=" q\n - Berhenti CLI.\n - Alias: quit, exit.\n md5_file\n - Menghasilkan tanda tangan MD5 dari file [Sintaksis: md5_file nama_file].\n - Alias: m.\n md5\n - Menghasilkan tanda tangan MD5 dari string [Sintaksis: md5_file string].\n hex_encode\n - Mengkonversi string biner ke heksadesimal [Sintaksis: hex_encode string].\n - Alias: x.\n hex_decode\n - Mengkonversi heksadesimal ke string biner [Sintaksis: hex_decode string].\n base64_encode\n - Mengkonversi string biner ke string base64 [Sintaksis: base64_encode string].\n - Alias: b.\n base64_decode\n - Mengkonversi string base64 ke string biner [Sintaksis: base64_decode string].\n scan\n - Pindai file atau direktori [Sintaksis: scan nama_file].\n - Alias: s.\n update\n - Memperbarui phpMussel.\n - Alias: u.\n c\n - Cetak ini daftar perintah.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']="Gagal untuk menyelesaikan memindai proses";
 	$MusselConfig['lang']['cli_is_not_a']=" bukan file atau direktori.";
-	$MusselConfig['lang']['cli_ln2']=" Terima kasih untuk menggunakan phpMussel, sebuah script php di-design untuk\n mendeteksi trojan-trojan, virus-virus dan serangan-serangan lainnya dalam\n file-file diupload ke system Anda dimana saja script di kaitkan, berdasarkan\n tanda tangan dari ClamAV dan lain-lain.\n\n PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPL V.2 oleh Caleb M (Maikuolan).\n\n                                     ~ ~ ~                                     \n\n";
+	$MusselConfig['lang']['cli_ln2']=" Terima kasih untuk menggunakan phpMussel, sebuah skrip php di-design untuk\n mendeteksi trojan-trojan, virus-virus dan serangan-serangan lainnya dalam\n file-file diupload ke system Anda dimana saja skrip di kaitkan, berdasarkan\n tanda tangan dari ClamAV dan lain-lain.\n\n PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPL V.2 oleh Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 	$MusselConfig['lang']['cli_ln3']=" Sekarang phpMussel operasi di CLI mode (Command line interface).\n\n Untuk memindai file atau direktori, menulis 'scan', diikuti dengan nama file\n atau direktori yang ingin Anda phpMussel untuk memindai dan tekan Enter;\n Menulis 'c' dan tekan Enter untuk daftar CLI mode perintah; Menulis 'q' dan\n tekan Enter untuk keluar:";
 	$MusselConfig['lang']['cli_update_restart']=" Restart phpMussel mungkin diperlukan sebelum perbarui menjadi jelas.";
 	$MusselConfig['lang']['cli_working']="Dalam proses";
@@ -414,12 +442,18 @@ else if($MusselConfig['general']['lang']=="id")
 	$MusselConfig['lang']['update_complete']="Update cek selesai dengan sukses.";
 	$MusselConfig['lang']['update_created']="dibuat";
 	$MusselConfig['lang']['update_deleted']="dihapus";
+	$MusselConfig['lang']['update_err1']="Gagal memperbarui: 'update.dat' yang hilang. Menginstal lagi atau memperbarui secara manual.";
+	$MusselConfig['lang']['update_err2']="Gagal memperbarui: 'update.dat' tidak mengandung sumber pembaruan yang valid. Saya sarankan untuk memperbarui secara manual.";
+	$MusselConfig['lang']['update_err3']="Kemungkinan hack atau pemalsuan terdeteksi dalam petunjuk pembaruan yang diberikan oleh sumber pembaruan; Sumber mungkin dapat dikompromikan. Harap memberitahu penulis skrip. Saya sarankan untuk memperbarui secara manual.";
+	$MusselConfig['lang']['update_err4']="Checksum yang hilang!";
+	$MusselConfig['lang']['update_err5']="Data yang hilang!";
+	$MusselConfig['lang']['update_err6']="Data yang buruk!";
+	$MusselConfig['lang']['update_err7']="Checksum yang buruk!";
 	$MusselConfig['lang']['update_failed']="Gagal.";
 	$MusselConfig['lang']['update_fetch']="Mencoba untuk mengambil versi data dari";
 	$MusselConfig['lang']['update_no_source']="phpMussel gagal untuk sendiri update karena tidak bisa terhubung ke valid update sumber. Update secara manual dianjurkan.";
 	$MusselConfig['lang']['update_not']="TIDAK";
 	$MusselConfig['lang']['update_not_available']="Skrip update yang tidak tersedia saat ini.";
-	$MusselConfig['lang']['update_not_due']="Tidak diperbarui: Berikutnya diperbarui cek tidak diharapkan sampai ";
 	$MusselConfig['lang']['update_not_possible']="Skrip update yang tersedia, tetapi tidak dapat sepenuhnya diupdate dengan ini update skrip versi. Silahkan update secara manual.";
 	$MusselConfig['lang']['update_patched']="ditambal";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Perbarui file script hilang! Silakan instal ulang phpMussel.";
@@ -432,6 +466,7 @@ else if($MusselConfig['general']['lang']=="id")
 	$MusselConfig['lang']['update_successfully']="yang sukses";
 	$MusselConfig['lang']['update_version_latest']="TERAKHIR SKRIPT VERSI";
 	$MusselConfig['lang']['update_version_yours']="SKRIPT VERSI ANDA";
+	$MusselConfig['lang']['update_wrd1']="tanda tangan";
 	$MusselConfig['lang']['upload_error_1']="File ukuran melebihi MAX_FILE_SIZE direktif. ";
 	$MusselConfig['lang']['upload_error_2']="File ukuran melebihi formulir ditentukan file ukuran batas. ";
 	$MusselConfig['lang']['upload_error_34']="Upload gagal! Silahkan hubungi hostmaster untuk bantuan! ";
@@ -444,10 +479,10 @@ else if($MusselConfig['general']['lang']=="id")
 	}
 else if($MusselConfig['general']['lang']=="it")
 	{ // Italian
-	$MusselConfig['lang']['cli_commands']=" q\n - Smettere CLI.\n - Alias: quit, exit.\n md5_file\n - Genera MD5 firme da file [Sintassi: md5_file filename].\n - Alias: m.\n md5\n - Genera MD5 firma da string [Sintassi: md5_file string].\n hex_encode\n - Convertire binaria string a esadecimale [Sintassi: hex_encode string].\n - Alias: x.\n hex_decode\n - Convertire esadecimale a binaria string [Sintassi: hex_decode string].\n base64_encode\n - Convertire binaria string a base64 string [Sintassi: base64_encode string].\n - Alias: b.\n base64_decode\n - Convertire base64 string a binaria string [Sintassi: base64_decode string].\n scan\n - Scansionare file o una cartella [Sintassi: scan filename].\n - Alias: s.\n update\n - Aggiornare phpMussel.\n - Alias: u.\n forcedupdate\n - Forzatamente aggiornare phpMussel.\n - Alias: f.\n c\n - Stampare questo lista dei comandi.\n";
+	$MusselConfig['lang']['cli_commands']=" q\n - Smettere CLI.\n - Alias: quit, exit.\n md5_file\n - Genera MD5 firme da file [Sintassi: md5_file filename].\n - Alias: m.\n md5\n - Genera MD5 firma da string [Sintassi: md5_file string].\n hex_encode\n - Convertire binaria string a esadecimale [Sintassi: hex_encode string].\n - Alias: x.\n hex_decode\n - Convertire esadecimale a binaria string [Sintassi: hex_decode string].\n base64_encode\n - Convertire binaria string a base64 string [Sintassi: base64_encode string].\n - Alias: b.\n base64_decode\n - Convertire base64 string a binaria string [Sintassi: base64_decode string].\n scan\n - Scansionare file o una cartella [Sintassi: scan filename].\n - Alias: s.\n update\n - Aggiornare phpMussel.\n - Alias: u.\n c\n - Stampare questo lista dei comandi.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']="Fallimento a completa processo di scansione";
 	$MusselConfig['lang']['cli_is_not_a']=" non è un file o una directory.";
-	$MusselConfig['lang']['cli_ln2']=" Grazie per aver scelto phpMussel, uno PHP script progettato per la rilevazione\n di trojan, virus, malware e altre minacce all'interno di file caricati nel\n sistema ovunque lo script è collegato, basato su firme di ClamAV e altri.\n\n PHPMUSSEL COPYRIGHT 2013 e oltre GNU/GPL V.2 da Caleb M (Maikuolan).\n\n                                     ~ ~ ~                                     \n\n";
+	$MusselConfig['lang']['cli_ln2']=" Grazie per aver scelto phpMussel, uno PHP script progettato per la rilevazione\n di trojan, virus, malware e altre minacce all'interno di file caricati nel\n sistema ovunque lo script è collegato, basato su firme di ClamAV e altri.\n\n PHPMUSSEL COPYRIGHT 2013 e oltre GNU/GPL V.2 da Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 	$MusselConfig['lang']['cli_ln3']=" Attualmente in esecuzione di phpMussel in CLI modalità (Comando riga\n\n interfaccia). Per scansione di un file o cartella, digitare 'scan', seguito dal nome del\n file o cartella che si desidera phpMussel per scansione e premere Enter;\n Digitare 'c' e premere Enter per un elenco dei CLI modalità comandi; Digitare\n 'q' e premere Enter per chiudere:";
 	$MusselConfig['lang']['cli_update_restart']=" Riavvio di phpMussel può essere richiesto prima che gli aggiornamenti\n diventano evidenti.";
 	$MusselConfig['lang']['cli_working']="In corso";
@@ -491,12 +526,18 @@ else if($MusselConfig['general']['lang']=="it")
 	$MusselConfig['lang']['update_complete']="Aggiornamento verifica completato con successo.";
 	$MusselConfig['lang']['update_created']="creato";
 	$MusselConfig['lang']['update_deleted']="cancellato";
+	$MusselConfig['lang']['update_err1']="Aggiornamento non riuscito: 'update.dat' mancante. Reinstallare o aggiornare manualmente.";
+	$MusselConfig['lang']['update_err2']="Aggiornamento non riuscito: 'update.dat' non contiene qualsiasi valido fonti di aggiornamento. Si prega di aggiornare manualmente.";
+	$MusselConfig['lang']['update_err3']="Possibile hack o falsificazioni rilevato nelle aggiornamento istruzioni forniti dalla aggiornamento sorgente; Fonte è forse compromessa. Si prega di avvisare l'autore di script. Aggiornamento manuale è consigliata.";
+	$MusselConfig['lang']['update_err4']="Checksum mancanti!";
+	$MusselConfig['lang']['update_err5']="Dati mancanti!";
+	$MusselConfig['lang']['update_err6']="Dati errati!";
+	$MusselConfig['lang']['update_err7']="Checksum errati!";
 	$MusselConfig['lang']['update_failed']="Mancato.";
 	$MusselConfig['lang']['update_fetch']="Il tentativo di ottenere i dati della versione da";
 	$MusselConfig['lang']['update_no_source']="phpMussel non è riuscito ad aggiornare perché non poteva connettersi a un valido aggiornamento origine. Aggiornamento manuale è consigliato.";
 	$MusselConfig['lang']['update_not']="NON";
 	$MusselConfig['lang']['update_not_available']="Nessun script aggiornamento è disponibile in questo momento.";
-	$MusselConfig['lang']['update_not_due']="Non aggiornato: Prossimo aggiornamenti verificare non dovuta fino ";
 	$MusselConfig['lang']['update_not_possible']="Un script aggiornamento è disponibile, ma non può essere completamente aggiornato con questa versione dello aggiornamento script. Si prega aggiornare manualmente.";
 	$MusselConfig['lang']['update_patched']="patchato";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Aggiornare script file è manca! Prego, reinstallare phpMussel.";
@@ -509,6 +550,7 @@ else if($MusselConfig['general']['lang']=="it")
 	$MusselConfig['lang']['update_successfully']="con successo";
 	$MusselConfig['lang']['update_version_latest']="ULTIMA SCRIPT VERSIONE";
 	$MusselConfig['lang']['update_version_yours']="VOSTRE SCRIPT VERSIONE";
+	$MusselConfig['lang']['update_wrd1']="firme";
 	$MusselConfig['lang']['upload_error_1']="File dimensione supera MAX_FILE_SIZE direttiva. ";
 	$MusselConfig['lang']['upload_error_2']="File dimensione supera modulo specificato file dimensione limite. ";
 	$MusselConfig['lang']['upload_error_34']="Carica fallimento! Si prega contattare il hostmaster per l'assistenza! ";
@@ -521,10 +563,10 @@ else if($MusselConfig['general']['lang']=="it")
 	}
 else if($MusselConfig['general']['lang']=="nl")
 	{ // Dutch
-	$MusselConfig['lang']['cli_commands']=" q\n - Verlaten CLI.\n - Aliassen: quit, exit.\n md5_file\n - Genereer MD5 handtekeningen van bestanden [Syntaxis: md5_file bestandsnaam].\n - Alias: m.\n md5\n - Genereer MD5 handtekening van string [Syntaxis: md5_file string].\n hex_encode\n - Converteren van binaire string naar hexadecimaal [Syntaxis: hex_encode string].\n - Alias: x.\n hex_decode\n - Converteren van hexadecimaal naar binaire string [Syntaxis: hex_decode string].\n base64_encode\n - Converteren van binaire string naar base64 string [Syntaxis: base64_encode string].\n - Alias: b.\n base64_decode\n - Converteren van base64 string naar binaire string [Syntaxis: base64_decode string].\n scan\n - Scannen bestand of map [Syntaxis: scan bestandsnaam].\n - Alias: s.\n update\n - Update phpMussel.\n - Alias: u.\n forcedupdate\n - Gedwongen update phpMussel.\n - Alias: f.\n c\n - Print dit commando lijst.\n";
+	$MusselConfig['lang']['cli_commands']=" q\n - Verlaten CLI.\n - Aliassen: quit, exit.\n md5_file\n - Genereer MD5 handtekeningen van bestanden [Syntaxis: md5_file bestandsnaam].\n - Alias: m.\n md5\n - Genereer MD5 handtekening van string [Syntaxis: md5_file string].\n hex_encode\n - Converteren van binaire string naar hexadecimaal [Syntaxis: hex_encode string].\n - Alias: x.\n hex_decode\n - Converteren van hexadecimaal naar binaire string [Syntaxis: hex_decode string].\n base64_encode\n - Converteren van binaire string naar base64 string [Syntaxis: base64_encode string].\n - Alias: b.\n base64_decode\n - Converteren van base64 string naar binaire string [Syntaxis: base64_decode string].\n scan\n - Scannen bestand of map [Syntaxis: scan bestandsnaam].\n - Alias: s.\n update\n - Update phpMussel.\n - Alias: u.\n c\n - Print dit commando lijst.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']="Mislukt om het voltooien te scannen";
 	$MusselConfig['lang']['cli_is_not_a']=" is niet een bestand of map.";
- 	$MusselConfig['lang']['cli_ln2']=" Bedankt voor het gebruik van phpMussel, een PHP script ontworpen om detecteren\n trojans, virussen, malware en andere bedreigingen binnen bestanden geüpload\n naar uw systeem waar het script is aangesloten, gebaseerd op ClamAV\n handtekeningen en anderen.\n PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPL V.2 van Caleb M (Maikuolan).\n\n                                     ~ ~ ~                                     \n\n";
+ 	$MusselConfig['lang']['cli_ln2']=" Bedankt voor het gebruik van phpMussel, een PHP script ontworpen om detecteren\n trojans, virussen, malware en andere bedreigingen binnen bestanden geüpload\n naar uw systeem waar het script is aangesloten, gebaseerd op ClamAV\n handtekeningen en anderen.\n PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPL V.2 van Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 	$MusselConfig['lang']['cli_ln3']=" Momenteel phpMussel is in CLI-modus (Commandlijn interface).\n\n Om scannen een bestand of map, typ 'scan', gevolgd door de naam van het\n bestand of de map die u wilt phpMussel te scannen en druk op Enter; Typ 'c' en\n druk op Enter voor een lijst op CLI-modus commandos; Typ 'q' en druk op Enter\n om te stoppen:";
 	$MusselConfig['lang']['cli_update_restart']=" Herstarten phpMussel kan nodig zijn voordat updates zichtbaar worden.";
 	$MusselConfig['lang']['cli_working']="Aan de gang";
@@ -568,12 +610,18 @@ else if($MusselConfig['general']['lang']=="nl")
 	$MusselConfig['lang']['update_complete']="Bijwerk verificatie afgerond geslaagd.";
 	$MusselConfig['lang']['update_created']="gecreëerd";
 	$MusselConfig['lang']['update_deleted']="verwijderd";
+	$MusselConfig['lang']['update_err1']="Bijwerken mislukte: 'update.dat' vermist. Opnieuw installeren of bijwerken handmatig.";
+	$MusselConfig['lang']['update_err2']="Bijwerken mislukte: 'update.dat' bevat geen geldige bijwerken bronnen. Bijwerken handmatig.";
+	$MusselConfig['lang']['update_err3']="Mogelijke hack of vervalsing ontdekt in de instructies door de bijwerken bron; Bron mogelijk gecompromitteerd. Gelieve verwittigen het scriptschrijver. Handmatig updaten wordt aanbevolen.";
+	$MusselConfig['lang']['update_err4']="Vermist checksum!";
+	$MusselConfig['lang']['update_err5']="Vermist data!";
+	$MusselConfig['lang']['update_err6']="Slecht data!";
+	$MusselConfig['lang']['update_err7']="Slecht checksum!";
 	$MusselConfig['lang']['update_failed']="Mislukt.";
 	$MusselConfig['lang']['update_fetch']="Proberen te halen versie gegevens van";
 	$MusselConfig['lang']['update_no_source']="phpMussel heeft mislukt te bijwerken, omdat het niet kon verbinden met een geldige bijwerkenbron. Handmatig bijwerk zijn aanbevolen.";
 	$MusselConfig['lang']['update_not']="NIET";
 	$MusselConfig['lang']['update_not_available']="Geen script bijwerk beschikbaar op dit moment.";
-	$MusselConfig['lang']['update_not_due']="Niet bijgewerkt: Volgende update check niet te wijten is tot ";
 	$MusselConfig['lang']['update_not_possible']="Een script bijwerk zijn beschikbaar, maar kan niet worden volledig bijgewerkt met deze versie van de bijwerkscript. Alstublieft bijwerken handmatig.";
 	$MusselConfig['lang']['update_patched']="versteld";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Update script bestand vermist! Opnieuw installeer phpMussel.";
@@ -586,6 +634,7 @@ else if($MusselConfig['general']['lang']=="nl")
 	$MusselConfig['lang']['update_successfully']="met succes";
 	$MusselConfig['lang']['update_version_latest']="NIEUWSTE SCRIPT VERSIE";
 	$MusselConfig['lang']['update_version_yours']="UW SCRIPT VERSIE";
+	$MusselConfig['lang']['update_wrd1']="handtekeningen";
 	$MusselConfig['lang']['upload_error_1']="Bestandsgrootte overschrijdt MAX_FILE_SIZE richtlijn. ";
 	$MusselConfig['lang']['upload_error_2']="Bestandsgrootte overschrijdt vorm gespecificeerde bestandsgrootte limiet. ";
 	$MusselConfig['lang']['upload_error_34']="Upload mislukking! Contact op met de hostmaster voor hulp! ";
@@ -598,10 +647,10 @@ else if($MusselConfig['general']['lang']=="nl")
 	}
 else if($MusselConfig['general']['lang']=="pt")
 	{ // Portuguese
-	$MusselConfig['lang']['cli_commands']=" q\n - Deixar CLI.\n - Alias: quit, exit.\n md5_file\n - Gerar MD5 assinaturas de arquivos [Sintaxe: md5_file nome_do_arquivo].\n - Alias: m.\n md5\n - Gerar MD5 assinatura de string [Sintaxe: md5_file string].\n hex_encode\n - Converter binária string para hexadecimal [Sintaxe: hex_encode string].\n - Alias: x.\n hex_decode\n - Converter hexadecimal para binária string [Sintaxe: hex_decode string].\n base64_encode\n - Converter binária string para base64 string [Sintaxe: base64_encode string].\n - Alias: b.\n base64_decode\n - Converter base64 string para binária string [Sintaxe: base64_decode string].\n scan\n - Verificação arquivo ou diretório [Sintaxe: scan nome_do_arquivo].\n - Alias: s.\n update\n - Atualizar phpMussel.\n - Alias: u.\n forcedupdate\n - Forçosamente atualizar phpMussel.\n - Alias: f.\n c\n - Imprimir esta lista de comandos.\n";
+	$MusselConfig['lang']['cli_commands']=" q\n - Deixar CLI.\n - Alias: quit, exit.\n md5_file\n - Gerar MD5 assinaturas de arquivos [Sintaxe: md5_file nome_do_arquivo].\n - Alias: m.\n md5\n - Gerar MD5 assinatura de string [Sintaxe: md5_file string].\n hex_encode\n - Converter binária string para hexadecimal [Sintaxe: hex_encode string].\n - Alias: x.\n hex_decode\n - Converter hexadecimal para binária string [Sintaxe: hex_decode string].\n base64_encode\n - Converter binária string para base64 string [Sintaxe: base64_encode string].\n - Alias: b.\n base64_decode\n - Converter base64 string para binária string [Sintaxe: base64_decode string].\n scan\n - Verificação arquivo ou diretório [Sintaxe: scan nome_do_arquivo].\n - Alias: s.\n update\n - Atualizar phpMussel.\n - Alias: u.\n c\n - Imprimir esta lista de comandos.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']="Falha ao completar processo de verificação";
 	$MusselConfig['lang']['cli_is_not_a']=" não é um arquivo ou diretório.";
-	$MusselConfig['lang']['cli_ln2']=" Obrigado por usando phpMussel, um PHP script projetado para detectar trojans,\n vírus, malware e outras ameaças dentro dos arquivos enviados para o seu\n sistema onde quer que o script é enganchado, baseado no assinaturas do\n ClamAV e outros.\n\n PHPMUSSEL COPYRIGHT 2013 e além GNU/GPL V.2 através do Caleb M (Maikuolan).\n\n                                     ~ ~ ~                                     \n\n";
+	$MusselConfig['lang']['cli_ln2']=" Obrigado por usando phpMussel, um PHP script projetado para detectar trojans,\n vírus, malware e outras ameaças dentro dos arquivos enviados para o seu\n sistema onde quer que o script é enganchado, baseado no assinaturas do\n ClamAV e outros.\n\n PHPMUSSEL COPYRIGHT 2013 e além GNU/GPL V.2 através do Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 	$MusselConfig['lang']['cli_ln3']=" Correntemente execução phpMussel em CLI modo (Comando linha interface).\n\n Para analisar um arquivo ou diretório, digitá 'scan', seguido pelo nome do\n arquivo ou diretório que você deseja phpMussel para analisar e pressione\n Enter; Digitá 'c' e pressione Enter por uma lista de CLI modo comandos; Digitá\n 'q' e pressione Enter para sair:";
 	$MusselConfig['lang']['cli_update_restart']=" Reiniciando phpMussel podem ser necessários antes que as atualizações se\n tornam aparentes.";
 	$MusselConfig['lang']['cli_working']="Em processo";
@@ -611,6 +660,13 @@ else if($MusselConfig['general']['lang']=="pt")
 	$MusselConfig['lang']['denied']="Carregar Negado!";
 	$MusselConfig['lang']['detected_control_characters']="Detectados Controle Caracteres";
 	$MusselConfig['lang']['detected']="Detectado";
+	$MusselConfig['lang']['update_err1']="Falha na atualização: 'update.dat' não presente. Reinstalar ou atualizar manualmente.";
+	$MusselConfig['lang']['update_err2']="Falha na atualização: 'update.dat' não contém quaisquer válidos fontes de atualização. Por favor, atualizar manualmente.";
+	$MusselConfig['lang']['update_err3']="Possível hack ou falsificação detectado nas instruções fornecidas pela fonte do atualização; A fonte pode possivelmente ser comprometida. Por favor, informe o autor. Atualizando manualmente é recomendado.";
+	$MusselConfig['lang']['update_err4']="Checksum não presente!";
+	$MusselConfig['lang']['update_err5']="Dados não presente!";
+	$MusselConfig['lang']['update_err6']="Dados inválidos!";
+	$MusselConfig['lang']['update_err7']="Checksum inválido!";
 	$MusselConfig['lang']['failed_to_access']="Falha ao acesso ";
 	$MusselConfig['lang']['file']="Arquivo";
 	$MusselConfig['lang']['filesize_limit_exceeded']="Arquivo tamanho limite excedido";
@@ -650,7 +706,6 @@ else if($MusselConfig['general']['lang']=="pt")
 	$MusselConfig['lang']['update_no_source']="phpMussel falhou a atualizar-se porque não pôde conectar a uma válido atualização fonte. Atualizando manualmente é recomendado.";
 	$MusselConfig['lang']['update_not']="NÃO";
 	$MusselConfig['lang']['update_not_available']="Nenhuma script atualização está disponível no momento.";
-	$MusselConfig['lang']['update_not_due']="Não actualizado: Próximo atualização verificando não devido até ";
 	$MusselConfig['lang']['update_not_possible']="Uma script atualização está disponível, mas não pode ser totalmente atualizado com esta versão do atualização script. Por favor atualize manualmente.";
 	$MusselConfig['lang']['update_patched']="remendado";
 	$MusselConfig['lang']['update_scriptfile_missing']=" Atualização script arquivo faltando! Por favor, reinstale phpMussel.";
@@ -663,6 +718,7 @@ else if($MusselConfig['general']['lang']=="pt")
 	$MusselConfig['lang']['update_successfully']="com sucesso";
 	$MusselConfig['lang']['update_version_latest']="ÚLTIMA SCRIPT VERSÃO";
 	$MusselConfig['lang']['update_version_yours']="SEU SCRIPT VERSÃO";
+	$MusselConfig['lang']['update_wrd1']="assinaturas";
 	$MusselConfig['lang']['upload_error_1']="Arquivo tamanho excede MAX_FILE_SIZE directiva. ";
 	$MusselConfig['lang']['upload_error_2']="Arquivo tamanho excede formulário especificados arquivo tamanho limite. ";
 	$MusselConfig['lang']['upload_error_34']="Carregar falha! Contato o hostmaster para ajuda! ";
@@ -670,7 +726,7 @@ else if($MusselConfig['general']['lang']=="pt")
 	$MusselConfig['lang']['upload_error_7']="Disco escrita erro! Contato o hostmaster para ajuda! ";
 	$MusselConfig['lang']['upload_error_8']="PHP mau configuração detectado! Contato o hostmaster para ajuda! ";
 	$MusselConfig['lang']['upload_limit_exceeded']="Carregar limite excedido";
-	$MusselConfig['lang']['wrong_password']="Wrong password; Action denied.";
+	$MusselConfig['lang']['wrong_password']="Contrasenha errada; Ação negado.";
 	$MusselConfig['lang']['x_does_not_exist']="não existe";
 	}
 else

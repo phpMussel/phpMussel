@@ -1,37 +1,41 @@
 <?php
-/*    _____  _     _  _____  _______ _     _ _______ _______ _______           
+/*    _____  _     _  _____  _______ _     _ _______ _______ _______
  <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
-     |       |     | |       |  |  | |_____| ______| ______| |______ |_____    
- Thank you for using phpMussel, a php-based script based upon ClamAV signatures
-  designed to detect trojans, viruses, malware and other threats within files  
-             uploaded to your system wherever the script is hooked.            
-     PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan)    
+     |       |     | |       |  |  | |_____| ______| ______| |______ |_____
 
-                                     ~ ~ ~                                     
-  Special thanks to ClamAV for both project inspiration and for the signatures 
-  that this script utilises, without which, the script would likely not exist, 
-  or at best, would have very limited value. <http://www.clamav.net/lang/en/>  
+ Thank you for using phpMussel, a PHP script designed to detect trojans,
+ viruses, malware and other threats within files uploaded to your system
+ wherever the script is hooked, based on the signatures of ClamAV and others.
 
-                                     ~ ~ ~                                     
- Special thanks to all those supporting the project, to anyone else that I may 
- have otherwise forgotten to mention, and to you, for using the script.        
- For comments, feedback, suggestions, help, technical support or similar, you  
- can email me via <phpmussel@gamejaunt.com>, contact me via my website contact 
- form located at <http://www.gamejaunt.com/contact.php> or participate in the  
- community discussion forums for phpMussel hosted by Spambot Security at       
- <http://www.spambotsecurity.com/forum/viewtopic.php?f=57>. :-)                
+ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan).
 
-                                     ~ ~ ~                                     
- This script is free software; you can redistribute it and/or modify it under  
- the terms of the GNU General Public License as published by the Free Software 
- Foundation; either version 2 of the License, or (at your option) any later    
- version. This script is distributed in the hope that it will be useful, but   
- WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or 
+ This script is free software; you can redistribute it and/or modify it under
+ the terms of the GNU General Public License as published by the Free Software
+ Foundation; either version 2 of the License, or (at your option) any later
+ version. This script is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
- details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
+ details <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
-                                     ~ ~ ~                                     
- This File: phpMussel Loader v1.1b (27th August 2014)
+ Special thanks to ClamAV for both project inspiration and for the signatures
+ that this script utilises, without which, the script would likely not exist,
+ or at best, would have very limited value <http://www.clamav.net/>.
+
+ Special thanks to Sourceforge for hosting the project files, located at
+ <http://sourceforge.net/projects/phpmussel/>, to Spambot Security for hosting
+ the phpMussel discussion forums, located at
+ <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, and to the
+ additional sources of a number of the signatures utilised by phpMussel:
+ SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
+ <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> and others, and
+ special thanks to all those supporting the project, to anyone else that I may
+ have otherwise forgotten to mention, and to you, for using the script.
+
+ This document and its associated package can be downloaded for free from
+ Sourceforge <http://sourceforge.net/projects/phpmussel/>.
+
+                                     ~ ~ ~
+ This File: phpMussel Loader v1.1c (20th March 2015)
 
  The latest version and future updates can be obtained from the phpMussel
  SourceForge page located at <http://sourceforge.net/projects/phpmussel/>

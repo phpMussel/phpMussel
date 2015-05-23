@@ -44,7 +44,7 @@
 
  Besonderer Dank auf Sourceforge für die hosten der Projektdateien, gefunden
  auf <http://sourceforge.net/projects/phpmussel/>, auf Spambot Security für
- die phpMussel Diskussionsforen gehostet auf
+ die phpMussel Diskussionforen gehostet auf
  <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, und an den
  Lieferanten von die zusätzliche Anzahl der durch  Signaturen verwendet
  phpMussel: SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
@@ -417,27 +417,18 @@
    Benötigtes Passwort: script_password
    Weitere Bedingungen: update.dat und update.inc müssen vorhanden sein.
    Benötigte Parameter: (keine)
-   Optionale Parameter: forcedupdate
-   Beispiele: ?pword=[script_password]&phpmussel=update&musselvar=forcedupdate
+   Optionale Parameter: (keine)
+   Beispiele: ?pword=[script_password]&phpmussel=update
    ~
    Zweck: Sucht nach Aktualisierungen für phpMussel und Signaturen.
           War die Suche erfolgreich und Aktualisierungen sind verfügbar, so
-          werden diese heruntergeladen und installiert. Wenn zu schnell oder
-          zu oft nach Aktualisierungen gesucht wird, wird die Suche
-          abgebrochen. Schlägt die Suche fehl, wird der Vorgang abgebrochen.
-          Wird der optionale Parameter "forcedupdate" verwendet, wird der
-          Timestamp des letzten Aktualisierungen ignoriert und die Suche
-          fortgesetzt, selbst wenn zu oft oder zu schnell gesucht wurde, jedoch
-          wird der Vorgang abgebrochen, wenn die Suche fehlschlägt. Die
-          Ergebnisse des gesamten Vorgangs werden ausgegeben. Es wird
-          empfohlen, den optionalen Parameter "forcedupdate" zu nutzen, wenn
-          die Aktualisierungen manuell ausgeführt wird, benutzen Sie diesen
-          Parameter jedoch nicht in einem automatisierten Prozess wie cron o.ä.
-          Es wird empfohlen, mindestens einmal monatlich nach Aktualisierungen
-          zu suchen, um sicherzustellen, dass die Signaturen und Ihre Kopie von
-          phpMussel auf dem neuesten Stand sind. Eine häufigere Suche nach
-          Aktualisierungen ist fruchtlos, da die entsprechenden Pakete meist
-          monatlich eingestellt werden.
+          werden diese heruntergeladen und installiert. Schlägt die Suche fehl,
+          wird der Vorgang abgebrochen. Die Ergebnisse des gesamten Vorgangs
+          werden ausgegeben. Es wird empfohlen, mindestens einmal monatlich
+          nach Aktualisierungen zu suchen, um sicherzustellen, dass die
+          Signaturen und Ihre Kopie von phpMussel auf dem neuesten Stand sind.
+          Eine häufigere Suche nach Aktualisierungen ist fruchtlos, da die
+          entsprechenden Pakete meist monatlich eingestellt werden.
    ~
  greylist
    Benötigtes Passwort: script_password
@@ -591,8 +582,7 @@
  /vault/ascii_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der normierten ASCII-Signaturen.
     Benötigt, wenn die Option "ASCII Signatures" in der phpmussel.ini aktiviert
-    ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
-    (Dateien werden bei einem Update neu erstellt).
+    ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/coex_clamav.cvd (Signaturen, enthalten)
  /vault/coex_custom.cvd (Signaturen, enthalten)
@@ -600,7 +590,7 @@
     Dateien der Komplex-Erweitert-Signaturen.
     Benötigt, wenn die Option "Complex Extended" in der phpmussel.ini
     aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
+    deaktiviert ist.
     ~
  /vault/elf_clamav_regex.cvd (Signaturen, enthalten)
  /vault/elf_clamav_regex.map (Signaturen, enthalten)
@@ -612,8 +602,7 @@
  /vault/elf_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der ELF-Signaturen.
     Benötigt, wenn die Option "ELF Signatures" in der phpmussel.ini aktiviert
-    ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
-    (Dateien werden bei einem Update neu erstellt).
+    ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/exe_clamav_regex.cvd (Signaturen, enthalten)
  /vault/exe_clamav_regex.map (Signaturen, enthalten)
@@ -625,8 +614,7 @@
  /vault/exe_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der Portable Executable file (EXE)-Signaturen.
     Benötigt, wenn die Option "EXE Signatures" in der phpmussel.ini aktiviert
-    ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
-    (Dateien werden bei einem Update neu erstellt).
+    ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/filenames_clamav.cvd (Signaturen, enthalten)
  /vault/filenames_custom.cvd (Signaturen, enthalten)
@@ -634,7 +622,7 @@
     Dateien der Dateinamen-Signaturen.
     Benötigt, wenn die Option "Filename Signatures" in der phpmussel.ini
     aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
+    deaktiviert ist.
     ~
  /vault/general_clamav_regex.cvd (Signaturen, enthalten)
  /vault/general_clamav_regex.map (Signaturen, enthalten)
@@ -647,7 +635,7 @@
     Dateien der allgemeinen Signaturen.
     Benötigt, wenn die Option "General Signatures" in der phpmussel.ini
     aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
+    deaktiviert ist.
     ~
  /vault/graphics_clamav_regex.cvd (Signaturen, enthalten)
  /vault/graphics_clamav_regex.map (Signaturen, enthalten)
@@ -660,7 +648,7 @@
     Dateien der Signaturen für Bilddateien.
     Benötigt, wenn die Option "Graphics Signatures" in der phpmussel.ini
     aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
+    deaktiviert ist.
     ~
  /vault/greylist.csv (Signaturen, enthalten/wird erstellt)
     CSV der Signaturen in der Greylist, die phpMussel ignorieren soll (Datei
@@ -670,7 +658,7 @@
     Hex-codierte CSV mit allgemeinen Befehlserkennung.
     Benötigt, wenn die Option "General Command Detection" in der phpmussel.ini
     aktiviert ist. Die Datei kann entfernt werden, wenn die Option deaktiviert
-    ist (Datei wird bei einem Update neu erstellt).
+    ist.
     ~
  /vault/html_clamav_regex.cvd (Signaturen, enthalten)
  /vault/html_clamav_regex.map (Signaturen, enthalten)
@@ -682,8 +670,7 @@
  /vault/html_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der normierten HTML-Signaturen.
     Benötigt, wenn die Option "HTML Signatures" in der phpmussel.ini aktiviert
-    ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
-    (Dateien werden bei einem Update neu erstellt).
+    ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/lang.inc (Script, enthalten)
     Sprachpaket für phpMussel; Erforderlich für Unterstützung mehrerer
@@ -700,7 +687,7 @@
     Dateien der Mach-O-Signaturen.
     Benötigt, wenn die Option "Mach-O Signatures" in der phpmussel.ini
     aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
+    deaktiviert ist.
     ~
  /vault/mail_clamav_regex.cvd (Signaturen, enthalten)
  /vault/mail_clamav_regex.map (Signaturen, enthalten)
@@ -713,16 +700,14 @@
  /vault/mail_mussel_standard.map (Signaturen, enthalten)
     Signaturdateien für die Funktion phpMussel_mail().
     Dateien werden auf jeden Fall von der Funktion phpMussel_mail() benötigt.
-    Die Dateien können entfernt werden, wenn die Option deaktiviert ist
-    (Dateien werden bei einem Update neu erstellt).
+    Die Dateien können entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/md5_clamav.cvd (Signaturen, enthalten)
  /vault/md5_custom.cvd (Signaturen, enthalten)
  /vault/md5_mussel.cvd (Signaturen, enthalten)
     Dateien der MD5-signaturen.
     Benötigt, wenn die Option "MD5" in der phpmussel.ini aktiviert ist.
-    Die Dateien können entfernt werden, wenn die Option deaktiviert ist
-    (Dateien werden bei einem Update neu erstellt).
+    Die Dateien können entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/metadata_clamav.cvd (Signaturen, enthalten)
  /vault/metadata_custom.cvd (Signaturen, enthalten)
@@ -730,8 +715,7 @@
     Dateien für die Signaturen der Archiv-Metadaten.
     Benötigt, wenn die Option "Archive Metadata Signatures" in der
     phpmussel.ini aktiviert ist. Die Dateien können entfernt werden, wenn
-    die Option deaktiviert ist (Dateien werden bei einem Update neu
-    erstellt).
+    die Option deaktiviert ist.
     ~
  /vault/ole_clamav_regex.cvd (Signaturen, enthalten)
  /vault/ole_clamav_regex.map (Signaturen, enthalten)
@@ -743,8 +727,7 @@
  /vault/ole_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der OLE-Signaturen.
     Benötigt, wenn die Option "OLE Signatures" in der phpmussel.ini aktiviert
-    ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist
-    (Dateien werden bei einem Update neu erstellt).
+    ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/pdf_clamav_regex.cvd (Signaturen, enthalten)
  /vault/pdf_clamav_regex.map (Signaturen, enthalten)
@@ -765,7 +748,7 @@
     Dateien der PE-Sectional-Signatures.
     Benötigt, wenn die Option "PE Sectional signatures" in der phpmussel.ini
     aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
+    deaktiviert ist.
     ~
  /vault/phpmussel.inc (Script, enthalten)
     phpMussel Core Script (absolut notwendig)!
@@ -791,7 +774,7 @@
     Dateien der Shockwave-Signaturen.
     Benötigt, wenn die Option "Shockwave Signatures" in der phpmussel.ini
     aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
+    deaktiviert ist.
     ~
  /vault/template.html (Sonstiges, enthalten)
     phpMussel Template file; Template für die HTML-Ausgabe mit der Nachricht,
@@ -813,8 +796,7 @@
     Datei-spezifische Whitelist.
     Benötigt, wenn die Option "Whitelist" in der phpmussel.ini aktiviert ist,
     und wenn Sie auf bestimmte Dateien Whitelist haben möchten. Die Dateien
-    können entfernt werden, wenn die Option deaktiviert ist (Dateien werden
-    bei einem Update neu erstellt).
+    können entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/xmlxdp_clamav_regex.cvd (Signaturen, enthalten)
  /vault/xmlxdp_clamav_regex.map (Signaturen, enthalten)
@@ -827,7 +809,7 @@
     Dateien der XML/XDP-Stücke-Signaturen.
     Benötigt, wenn die Option "XML/XDP-Chunk Signatures" in der phpmussel.ini
     aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
+    deaktiviert ist.
     ~
 
  * Der Dateiname kann je nach Konfiguratuion in der phpmussel.ini variieren.
@@ -1488,5 +1470,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 2015.03.06
+Zuletzt aktualisiert: 2015.03.22
 EOF

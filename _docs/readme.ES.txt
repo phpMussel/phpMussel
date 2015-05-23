@@ -445,34 +445,25 @@
    Contraseña necesario: script_password
    Otros requisitos: update.dat and update.inc must exist.
    Parámetros necesarios: (nada)
-   Parámetros opcionales: forcedupdate
-   Ejemplo: ?pword=[script_password]&phpmussel=update&musselvar=forcedupdate
+   Parámetros opcionales: (nada)
+   Ejemplo: ?pword=[script_password]&phpmussel=update
    ~
    Qué hace: Comprobar por actualizaciones para ambos phpMussel y sus firmas.
              Si las actualizaciones comprobar tienen éxito y actualizaciones
              está encuentran, intentará descargar e instalar estas
-             actualizaciones. Si las actualizaciones se comprueban demasiado
-             rápido, actualizaciones comprobar abortará. Si las actualizaciones
-             comprobar fallan, actualizaciones comprobar abortará. Si el
-             opcional parámetro "forcedupdate" se suministra, el tiempo de la
-             última actualización será ignorado y por lo tanto actualizaciones
-             comprobar continuará incluso si está ser comprobando "demasiado
-             rápido", pero aún así, abortará si actualizaciones comprobar
-             fallan. Los resultados de todo el proceso se imprimen en la
-             pantalla. Recomiendo incluyendo el opcional parámetro
-             "forcedupdate" si usted está desencadenando manualmente este
-             control, pero por favor, no use "forcedupdate" si está
-             automatizando el proceso, como por ejemplo a través de cron o
-             similar. Recomiendo comprobar al menos una vez por mes para
-             asegurar que sus firmas y su copia de phpMussel se mantienen
-             actualizada (a menos que, naturalmente, usted está comprobando las
-             actualizaciones e instalandolos manualmente, que, aun así sigo
-             recomendando hacer al menos uno por mes). Comprobar más de dos
-             veces por mes es probablemente inútil, en consideración que (en el
-             momento de escribir este) estoy trabajando en este proyecto solo y
-             estoy muy improbable de ser capaz de producir actualizaciones de
-             cualquier tipo con más frecuencia que la (ni tengo particular
-             quiero para hacerlo en la mayor parte).
+             actualizaciones. Si las actualizaciones comprobar fallan,
+             actualizaciones comprobar abortará. Los resultados de todo el
+             proceso se imprimen en la pantalla. Recomiendo comprobar al menos
+             una vez por mes para asegurar que sus firmas y su copia de
+             phpMussel se mantienen actualizada (a menos que, naturalmente,
+             usted está comprobando las actualizaciones e instalandolos
+             manualmente, que, aun así sigo recomendando hacer al menos uno por
+             mes). Comprobar más de dos veces por mes es probablemente inútil,
+             en consideración que (en el momento de escribir este) estoy
+             trabajando en este proyecto solo y estoy muy improbable de ser
+             capaz de producir actualizaciones de cualquier tipo con más
+             frecuencia que la (ni tengo particular quiero para hacerlo en la
+             mayor parte).
    ~
  greylist
    Contraseña necesario: script_password
@@ -629,16 +620,14 @@
  /vault/ascii_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para normalizados ASCII firmas.
     Requerido si la opción de normalizados ASCII firmas en phpmussel.ini está
-    habilitado. Se puede eliminarlo si la opción está desactivada (pero los
-    archivos será recreado durante actualizacións).
+    habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/coex_clamav.cvd (Firmas, Incluidos)
  /vault/coex_custom.cvd (Firmas, Incluidos)
  /vault/coex_mussel.cvd (Firmas, Incluidos)
     Archivos para Complejo Extendido firmas.
     Requerido si la opción de Complejo Extendido firmas en phpmussel.ini está
-    habilitado. Se puede eliminarlo si la opción está desactivada (pero los
-    archivos será recreado durante actualizacións).
+    habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/elf_clamav_regex.cvd (Firmas, Incluidos)
  /vault/elf_clamav_regex.map (Firmas, Incluidos)
@@ -650,8 +639,7 @@
  /vault/elf_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para ELF firmas.
     Requerido si la opción de ELF firmas en phpmussel.ini está habilitado. Se
-    puede eliminarlo si la opción está desactivada (pero los archivos será
-    recreado durante actualizacións).
+    puede eliminarlo si la opción está desactivada.
     ~
  /vault/exe_clamav_regex.cvd (Firmas, Incluidos)
  /vault/exe_clamav_regex.map (Firmas, Incluidos)
@@ -663,16 +651,14 @@
  /vault/exe_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para Portátil Ejecutable firmas.
     Requerido si la opción de EXE firmas en phpmussel.ini está habilitado. Se
-    puede eliminarlo si la opción está desactivada (pero los archivos será
-    recreado durante actualizacións).
+    puede eliminarlo si la opción está desactivada.
     ~
  /vault/filenames_clamav.cvd (Firmas, Incluidos)
  /vault/filenames_custom.cvd (Firmas, Incluidos)
  /vault/filenames_mussel.cvd (Firmas, Incluidos)
     Archivos para archivo nombre firmas.
     Requerido si la opción de filename firmas en phpmussel.ini está habilitado.
-    Se puede eliminarlo si la opción está desactivada (pero los archivos será
-    recreado durante actualizacións).
+    Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/general_clamav_regex.cvd (Firmas, Incluidos)
  /vault/general_clamav_regex.map (Firmas, Incluidos)
@@ -684,8 +670,7 @@
  /vault/general_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para generales firmas.
     Requerido si la opción de generales firmas en phpmussel.ini está
-    habilitado. Se puede eliminarlo si la opción está desactivada (pero los
-    archivos será recreado durante actualizacións).
+    habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/graphics_clamav_regex.cvd (Firmas, Incluidos)
  /vault/graphics_clamav_regex.map (Firmas, Incluidos)
@@ -697,19 +682,17 @@
  /vault/graphics_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para gráficas firmas.
     Requerido si la opción de gráficas firmas en phpmussel.ini está habilitado.
-    Se puede eliminarlo si la opción está desactivada (pero los archivos será
-    recreado durante actualizacións).
+    Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/greylist.csv (Firmas, Incluidos/Creados)
     CSV de las firmas en la Greylist indicando para phpMussel las firmas que
-    deben ser ignorados (file automatically recreated if deleted).
+    deben ser ignorados (archivo será recreado automáticamente si eliminado).
     ~
  /vault/hex_general_commands.csv (Firmas, Incluidos)
     Hex-codificado CSV de generales comandos detecciones opcionalmente
     utilizado por phpMussel. Requerido si la opción de generales comandos
     detecciones en phpmussel.ini está habilitado. Se puede eliminarlo si la
-    opción está desactivada (pero los archivos será recreado durante
-    actualizacións).
+    opción está desactivada.
     ~
  /vault/html_clamav_regex.cvd (Firmas, Incluidos)
  /vault/html_clamav_regex.map (Firmas, Incluidos)
@@ -721,8 +704,7 @@
  /vault/html_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para normalizados HTML firmas.
     Requerido si la opción de normalizados HTML firmas en phpmussel.ini está
-    habilitado. Se puede eliminarlo si la opción está desactivada (pero los
-    archivos será recreado durante actualizacións).
+    habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/lang.inc (Script, Incluido)
     phpMussel Lingüísticos datos; Requerido para multilingües capacidades.
@@ -737,8 +719,7 @@
  /vault/macho_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para Mach-O firmas.
     Requerido si la opción de Mach-O firmas en phpmussel.ini está habilitado.
-    Se puede eliminarlo si la opción está desactivada (pero los archivos será
-    recreado durante actualizacións).
+    Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/mail_clamav_regex.cvd (Firmas, Incluidos)
  /vault/mail_clamav_regex.map (Firmas, Incluidos)
@@ -751,24 +732,21 @@
  /vault/mail_mussel_standard.map (Firmas, Incluidos)
     Los archivos para las firmas utilizadas por la función phpMussel_mail().
     Requerido si la función phpMussel_mail() se utilizado de cualquiera manera.
-    Se puede eliminarlo si no se utilizado (pero los archivos será recreado
-    durante actualizacións).
+    Se puede eliminarlo si no se utilizado.
     ~
  /vault/md5_clamav.cvd (Firmas, Incluidos)
  /vault/md5_custom.cvd (Firmas, Incluidos)
  /vault/md5_mussel.cvd (Firmas, Incluidos)
     Archivos para MD5 basadas firmas.
     Requerido si la opción de MD5 basadas firmas en phpmussel.ini está
-    habilitado. Se puede eliminarlo si la opción está desactivada (pero los
-    archivos será recreado durante actualizacións).
+    habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/metadata_clamav.cvd (Firmas, Incluidos)
  /vault/metadata_custom.cvd (Firmas, Incluidos)
  /vault/metadata_mussel.cvd (Firmas, Incluidos)
     Archivos para archivo metadatos firmas.
     Requerido si la opción de archivo metadatos firmas en phpmussel.ini está
-    habilitado. Se puede eliminarlo si la opción está desactivada (pero los
-    archivos será recreado durante actualizacións).
+    habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/ole_clamav_regex.cvd (Firmas, Incluidos)
  /vault/ole_clamav_regex.map (Firmas, Incluidos)
@@ -780,8 +758,7 @@
  /vault/ole_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para OLE firmas.
     Requerido si la opción de OLE firmas en phpmussel.ini está habilitado. Se
-    puede eliminarlo si la opción está desactivada (pero los archivos será
-    recreado durante actualizacións).
+    puede eliminarlo si la opción está desactivada.
     ~
  /vault/pdf_clamav_regex.cvd (Firmas, Incluidos)
  /vault/pdf_clamav_regex.map (Firmas, Incluidos)
@@ -793,16 +770,14 @@
  /vault/pdf_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para PDF firmas.
     Requerido si la opción de PDF firmas en phpmussel.ini está habilitado. Se
-    puede eliminarlo si la opción está desactivada (pero los archivos será
-    recreado durante actualizacións).
+    puede eliminarlo si la opción está desactivada.
     ~
  /vault/pe_clamav.cvd (Firmas, Incluidos)
  /vault/pe_custom.cvd (Firmas, Incluidos)
  /vault/pe_mussel.cvd (Firmas, Incluidos)
     Archivos para PE Secciónal firmas.
     Requerido si la opción de PE Secciónal firmas en phpmussel.ini está
-    habilitado. Se puede eliminarlo si la opción está desactivada (pero los
-    archivos será recreado durante actualizacións).
+    habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/phpmussel.inc (Script, Incluido)
     phpMussel Núcleo Script; La principal cuerpo de phpMussel (esencial)!
@@ -828,8 +803,7 @@
  /vault/swf_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para Shockwave firmas.
     Requerido si la opción de Shockwave firmas en phpmussel.ini está
-    habilitado. Se puede eliminarlo si la opción está desactivada (pero los
-    archivos será recreado durante actualizacións).
+    habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/template.html (Otro, Incluido)
     phpMussel Template archivo; Template para HTML salida producida por
@@ -854,7 +828,7 @@
     Requerido si la opción para la whitelist en phpmussel.ini está habilitado y
     si usted desea tener específicos archivos en la whitelist. Se puede
     eliminarlo si la opción está desactivada o si usted no requiere de la
-    whitelist (pero los archivos será recreado durante actualizacións).
+    whitelist.
     ~
  /vault/xmlxdp_clamav_regex.cvd (Firmas, Incluidos)
  /vault/xmlxdp_clamav_regex.map (Firmas, Incluidos)
@@ -866,8 +840,7 @@
  /vault/xmlxdp_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para XML/XDP-Chunk firmas.
     Requerido si la opción de XML/XDP-Chunk firmas en phpmussel.ini está
-    habilitado. Se puede eliminarlo si la opción está desactivada (pero los
-    archivos será recreado durante actualizacións).
+    habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
 
  * Nombre del archivo puede variar basado de las estipulaciones de
@@ -1547,5 +1520,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 6 Marzo 2015 (2015.03.06).
+Última Actualización: 22 Marzo 2015 (2015.03.22).
 EOF
