@@ -542,7 +542,14 @@
     Un record delle modifiche apportate allo script tra diverse versioni
     (non richiesto per il corretto funzionamento dello script).
     ~
- /_docs/readme.XX.txt (Documentazione, Incluso)
+ /_docs/readme.DE.txt (Documentazione, Incluso); DEUTSCH
+ /_docs/readme.EN.txt (Documentazione, Incluso); ENGLISH
+ /_docs/readme.ES.txt (Documentazione, Incluso); ESPAÑOL
+ /_docs/readme.FR.txt (Documentazione, Incluso); FRANÇAIS
+ /_docs/readme.ID.txt (Documentazione, Incluso); BAHASA INDONESIA
+ /_docs/readme.IT.txt (Documentazione, Incluso); ITALIANO
+ /_docs/readme.NL.txt (Documentazione, Incluso); NEDERLANDSE
+ /_docs/readme.PT.txt (Documentazione, Incluso); PORTUGUÊS
     Il README file (per esempio; il file che si sta leggendo momentaneamente).
     ~
  /_testfiles/ (Cartella)
@@ -745,10 +752,10 @@
     per phpMussel, dicendogli cosa fare e come operare correttamente
     (essenziale)!
     ~
- /vault/scan_log.txt *(Logfile, Created)
+ /vault/scan_log.txt *(Logfile, Creato)
     Un record di tutto scansionato da phpMussel.
     ~
- /vault/scan_kills.txt *(Logfile, Created)
+ /vault/scan_kills.txt *(Logfile, Creato)
     Un record di tutti i file bloccati/uccisi da phpMussel.
     ~
  /vault/template.html (Altro, Incluso)
@@ -763,8 +770,17 @@
     ~
  /vault/update.inc (Script, Incluso)
     phpMussel Aggiornare Script; Richiesto per l'automatico aggiornare di
-    phpMussel e per l'aggiornare di phpMussel tramite il browser, Ma non
+    phpMussel e per l'aggiornare di phpMussel tramite il browser, ma non
     richiesto altrimenti.
+    ~
+ /vault/whitelist_clamav.cvd (Firme, Incluso)
+ /vault/whitelist_custom.cvd (Firme, Incluso)
+ /vault/whitelist_mussel.cvd (Firme, Incluso)
+    File specifico whitelist.
+    Richiesto se l'opzione per la whitelist in phpmussel.ini è abilitato e se
+    si desidera avere specifici file sul whitelist. Può rimuovere se l'opzione
+    è disabilitato o se non si richiede whitelisting (ma i file verranno
+    ricreati al momento di aggiornamento).
     ~
 
  * Nome del file può variare dipendente di configurazione (in phpmussel.ini).
@@ -983,7 +999,7 @@
      limite (sempre sul greylist), qualsiasi (positivo) numerico valore
      accettato. Questo può essere utile quando la configurazione di PHP limita
      la quantità di memoria che un processo può contenere o se i configurazione
-     ha limitato la dimensione del file caricamenti.
+     ha limitato la dimensione dei file caricamenti.
    "filesize_response"
    - Cosa fare con i file che superano il file dimensione limite (se
      esistente). 0 - Whitelist, 1 - Blacklist [Predefinito].
@@ -1071,6 +1087,27 @@
      richiedono parsare quei file in certi modi, di cui, se il programmatore di
      un virus è consapevole di, sarà specificamente provare di prevenire, al
      fine di abilitare loro virus di rimanere inosservato.
+   "decode_threshold"
+   - Opzionale limitazione o soglia per la lunghezza dei grezzi dati dove
+     decodificare comandi dovrebbe essere rilevati (nel caso in cui vi siano
+     notevoli problemi di prestazioni durante la scansione). Il valore è un
+     integer che rappresenta la dimensione dei file in KB.
+     Predefinito = 512 (512KB). Un zero o un nullo valore disabilita la soglia
+     (rimuovere tale limitazione basata sulla dimensione dei file).
+   "scannable_threshold"
+   - Opzionale limitazione o soglia per la lunghezza dei grezzi dati dove
+     phpMussel è permesso di leggere e scansione (nel caso in cui vi siano
+     notevoli problemi di prestazioni durante la scansione). Il valore è un
+     integer che rappresenta la dimensione dei file in KB.
+     Predefinito = 32768 (32MB). In generale, questo valore non dovrebbe essere
+     meno quella media dimensione dei file che si desidera e si aspettano di
+     ricevere al vostro server o al vostro web sito, non dovrebbe essere più
+     di la filesize_limit direttiva, e non dovrebbe essere più di circa un
+     quinto del totale ammissibile allocazione della memoria concesso al php
+     tramite il php.ini configurazione file. Questa direttiva esiste per tenta
+     di evitare avendo phpMussel utilizzare troppa memoria (di cui sarebbe
+     impedirebbe di essere capace di completare la file scansione correttamente
+     per i file piú d'una certa dimensione).
  "compatibility" (Categoria)
  - Compatibilità direttive per phpMussel.
     "ignore_upload_errors"
@@ -1100,6 +1137,19 @@
     HASH:FILESIZE:NAME
    Dove HASH è l'MD5 hash dell'intero file, FILESIZE è la totale dimensione del
    file e NAME è il nome per citare per quella firma.
+
+ = PE SEZIONALI MD5 FIRME =
+   Tutte il PE sezionali md5 firme seguono il formato:
+    FILESIZE:HASH:NAME
+   Dove HASH è l'MD5 hash di una sezione del PE file, FILESIZE è la totale
+   dimensione del file e NAME è il nome per citare per quella firma.
+
+ = WHITELIST FIRME =
+   Tutte la whitelist firme seguono il formato:
+    HASH:FILESIZE:TYPE
+   Dove HASH è l'MD5 hash dell'intero file, FILESIZE è la totale dimensione del
+   file e TYPE è il tipo di firme il file sulla whitelist è di essere immune
+   contro.
 
  = FILENAME FIRME =
    Tutte le file nomi firme seguono il formato:
@@ -1180,13 +1230,17 @@
    - "Mach-O Firme" (macho_*). Verificato contro i contenuti del ogni file
       mirati per scansionare quello che non è sulla whitelist e verificato allo
       Mach-O formato.
-   - "ZIP Metadati Firme" (metadata_*). Verificato contro l'CRC32 hash e la
+   - "Archive Metadati Firme" (metadata_*). Verificato contro l'CRC32 hash e la
       dimensione dell'iniziale file contenuto all'interno di qualsiasi file
       mirati per scansionare quello che non è sulla whitelist.
    - "Email Signatures" (mail_*). Verificato contro la $body variabile parsato
       a la phpMussel_mail() funzione, che è destinato a essere il corpo de
       email messaggi o simili entità (potenzialmente forum messaggi e
       etcetera).
+   - "Whitelist Firme" (whitelist_*). Verificato contro l'MD5 hash dei
+      contenuti e la dimensione del ogni file mirati per scansionare.
+      Corrispondenti file saranno immuni contro l'essere bloccato dal tipo di
+      firme di cui al loro whitelist listato.
      (Si noti che qualsiasi di queste firme possono essere facilmente
       disattivato tramite phpmussel.ini).
 
@@ -1217,9 +1271,9 @@
  dovrebbe considerare l'alternative opzioni per sia il vostro anti-virus
  software o phpMussel.
 
- Questa informazione è stato lo scorso aggiornato 28 Agosto 2014 ed è in corso
- per TUTTE le versioni di phpMussel, dall'iniziale rilascio v0.1 fino
- all'ultima rilascio v0.4c al momento di scrivere questo.
+ Questa informazione è stato lo scorso aggiornato 13 Settembre 2014 ed è in
+ corso per tutte le phpMussel rilasci delle due più recenti minori versioni
+ (v0.3-v0.4d) al momento di scrivere questo.
 
  Ad-Aware                Senza noti problemi
  Agnitum                 Senza noti problemi
@@ -1227,7 +1281,7 @@
  AntiVir                 Senza noti problemi
  Antiy-AVL               Senza noti problemi
  Avast                !  Riferisce "JS:ScriptSH-inf [Trj]"
-                         - Tutti tranne v0.3d
+                         - Tutti tranne v0.3d, v0.4d
  AVG                     Senza noti problemi
  Baidu-International     Senza noti problemi
  BitDefender             Senza noti problemi
@@ -1262,15 +1316,14 @@
  MicroWorld-eScan        Senza noti problemi
  NANO-Antivirus          Senza noti problemi
  Norman               !  Riferisce "Kryptik.BQS"
-                         - Tutti tranne v0.3d e v0.3e
+                         - Tutti tranne v0.3d, v0.3e, v0.4d
  nProtect                Senza noti problemi
  Panda                   Senza noti problemi
  Qihoo-360               Senza noti problemi
  Rising                  Senza noti problemi
  Sophos                  Senza noti problemi
  SUPERAntiSpyware        Senza noti problemi
- Symantec             !  Riferisce "WS.Reputation.1"
-                         - v0.3e a v0.4c
+ Symantec                Senza noti problemi
  TheHacker               Senza noti problemi
  TotalDefense            Senza noti problemi
  TrendMicro              Senza noti problemi
@@ -1284,5 +1337,5 @@
                                      ~ ~ ~                                     
 
 
-Ultimo Aggiornamento: 28 Agosto 2014 (2014.08.28).
+Ultimo Aggiornamento: 13 Settembre 2014 (2014.09.13).
 EOF

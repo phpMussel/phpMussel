@@ -3,10 +3,10 @@
      |       |     | |       |  |  | |_____| ______| ______| |______ |_____    
 
                            { ~ ~ ~ PORTUGUÊS ~ ~ ~ }                           
-      Obrigado por usar phpMussel, um php script baseado baseado em ClamAV     
- assinaturas projetado para detectar trojans, vírus, malwares e outras ameaças 
- dentro de arquivos enviado para o seu sistema onde que o script está ligado.  
-      PHPMUSSEL COPYRIGHT 2013 e além GNU/GPL V.2 por Caleb M (Maikuolan)      
+    Obrigado por usando phpMussel, um script baseado em php baseado em ClamAV  
+  assinaturas projetado para detectar trojans, vírus, malware e outras ameaças 
+    dentro arquivos uploaded para seu sistema sempre que script é enganchado.  
+   PHPMUSSEL COPYRIGHT 2013 e além GNU/GPL V.2 através do Caleb M (Maikuolan)  
 
                                      ~ ~ ~                                     
 
@@ -35,438 +35,460 @@
  <http://www.clamav.net/lang/en/>                                              
 
                                      ~ ~ ~                                     
- Este script é livre software; you can redistribute it and/or modify it under  
- the terms of the GNU General Public License as published by the Free Software 
- Foundation; either version 2 of the License, or (at your option) any later    
- version. This script is distributed in the hope that it will be useful, but   
- WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or 
- FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
- details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
+ Este script é livre software; você pode redistribuí-lo e/ou modificá-lo de    
+ acordo com os termos da GNU General Public License como publicada pela Free   
+ Software Foundation; tanto a versão 2 da Licença, ou (em sua opção) qualquer  
+ versão posterior. Este script é distribuído na esperança que possa ser útil,  
+ mas SEM QUALQUER GARANTIA; sem mesmo a implícita garantia de COMERCIALIZAÇÃO  
+ ou ADEQUAÇÃO A UM DETERMINADO FIM. Consulte a GNU General Public License para 
+ obter mais detalhes. <http://www.gnu.org/licenses/>                           
+ <http://opensource.org/licenses/>                                             
 
                                      ~ ~ ~                                     
- This document and its associated package can be downloaded for free from
- Sourceforge. <http://sourceforge.net/projects/phpmussel/>
+ Este documento e seu associado pacote pode ser baixado gratuitamente a partir
+ do Sourceforge. <http://sourceforge.net/projects/phpmussel/>
 
                                      ~ ~ ~                                     
 
 
  2A. COMO INSTALAR (PARA WEB SERVIDORES)
 
- I hope to streamline this process by making an installer at some point in the
- not too distant future, but until then, follow these instructions to get
- phpMussel working on *most systems and CMS:
+ Espero para agilizar este processo via fazendo um instalador em algum momento
+ no não muito distante futuro, mas até então, siga estas instruções para
+ trabalhar phpMussel na maioria dos sistemas e CMS:
 
- 1) By your reading this, I'm assuming you've already downloaded an archived
-    copy of the script, decompressed its contents and have it sitting somewhere
-    on your local machine. From here, you'll want to work out where on your
-    host or CMS you want to place those contents. A directory such as
-    /public_html/phpmussel/ or similar (though, it doesn't matter which you
-    choose, so long as it's something secure and something you're happy with)
-    will suffice. Before you begin uploading, read on..
+ 1) Por seu lendo isso, eu estou supondo que você já tenha baixado uma cópia
+    arquivada do script, descomprimido seu conteúdo e tê-lo sentado em algum
+    lugar em sua máquina local. A partir daqui, você vai querer determinar onde
+    em seu host ou CMS pretende colocar esses conteúdos. Um diretório como
+    /public_html/phpmussel/ ou semelhante (no entanto, está não importa qual
+    você escolher, assumindo que é seguro e algo você esteja feliz com) vai
+    bastará.
 
- 2) Open "phpmussel.php", look for the line beginning with "$vault=", and
-    replace the string between the following quotation marks on that line with
-    the exact true location of the "vault" directory of phpMussel. You'll have
-    noticed such a directory in the archive you would've downloaded (unless you
-    feel up to re-coding the whole script, you'll need to maintain the same
-    file and directory structure as it was in the archive originally). This
-    "vault" directory should be one directory level beyond the directory that
-    the "phpmussel.php" file will exist in. Save file, close.
+ 2) Abrir "phpmussel.php", procure a linha que começa com "$vault=", e
+    substituir a string entre as seguintes aspas em nessa linha com a
+    verdadeira exata localização do "vault" diretório de phpMussel. Você vai
+    ter notado tal diretório no arquivo que você tenha baixado (a menos que
+    você sentir-se a re-codificação de todo o script, você terá que manter a
+    mesma estrutura de arquivos e diretórios como era no arquivo
+    originalmente). Este diretório "vault" deve ser um nível além do diretório
+    que o arquivo "phpmussel.php" vai existirá em. Salve o arquivo, feche.
 
- 4) (Optional; Strongly recommended for advanced users, but not recommended for
-    beginners or for the inexperienced): Open "phpmussel.ini" (located inside
-    "vault") - This file contains all the directives available for phpMussel.
-    Above each option should be a brief comment describing what it does and
-    what it is for. Adjust these options as you see fit, as per whatever is
-    appropriate for your particular setup. Save file, close.
+ 4) (Opcional; Fortemente recomendado para avançados usuários, mas não
+    recomendado para iniciantes ou para os inexperientes): Abrir
+    "phpmussel.ini" (localizado dentro "vault") - Este arquivo contém todas as
+    directivas disponíveis para phpMussel. Acima de cada opção deve ser um
+    breve comentário descrevendo o que faz e para que serve. Ajuste essas
+    opções de como você vê o ajuste, conforme o que for apropriado para sua
+    particular configuração. Salve o arquivo, feche.
 
- 4) Upload the contents (phpMussel and its files) to the directory you'd
-    decided on earlier (you don't need the readme.XX.txt or change_log.txt
-    files included, but, mostly, you should upload everything).
+ 4) Faça o upload dos conteúdos (phpMussel e seus arquivos) para o diretório
+    que você tinha decidido anteriormente (você não precisa o readme.XX.txt ou
+    change_log.txt arquivos incluído, mas principalmente, você deve fazer o
+    upload de tudo).
 
- 5) CMHOD the "vault" directory to "777". The main directory storing the
-    contents (the one you chose earlier), usually, can be left alone, but CHMOD
-    status should be checked if you've had permissions issues in the past on
-    your system (by default, should be something like "755").
+ 5) CMHOD o "vault" diretório para "777". O principal diretório armazenar o
+    conteúdo (o que você escolheu anteriormente), geralmente, pode ser deixado
+    sozinho, mas o CHMOD status deve ser verificado se você já teve problemas
+    de permissões no passado em seu sistema (por padrão, deve ser algo como
+    "755").
 
- 6) Next, you'll need to "hook" phpMussel to your system or CMS. There are
-    several different ways in which you can "hook" scripts such as phpMussel to
-    your system or CMS, but the easiest is to simply include the script at the
-    beginning of a core file of your system or CMS (one that'll generally
-    always be loaded when someone accesses any page across your website) using
-    a require or include command. Usually, this'll be something stored in a
-    directory such as "/includes", "/assets" or "/functions", and will often be
-    named something like "init.php", "common_functions.php", "functions.php" or
-    similar. You'll have to work out which file this is for your situation.
-    To do this, insert the following line of code to the very beginning of that
-    core file, replacing the string contained inside the quotation marks with
-    the exact address of the "phpmussel.php" file (local address, not the HTTP
-    address; will look similar to the vault address mentioned earlier).
+ 6) Seguida, você vai precisar "enganchar" phpMussel ao seu sistema ou CMS.
+    Existem várias diferentes maneiras em que você pode "enganchar" scripts
+    como phpMussel ao seu sistema ou CMS, mas o mais fácil é simplesmente
+    incluir o script no início de um núcleo arquivo de seu sistema ou CMS (uma
+    que vai geralmente sempre ser carregado quando alguém acessa qualquer
+    página através de seu site) utilizando um require ou include comando.
+    Normalmente, isso vai ser algo armazenados em um diretório como
+    "/includes", "/assets" ou "/functions", e muitas vezes, ser nomeado algo
+    como "init.php", "common_functions.php", "functions.php" ou semelhante.
+    Você precisará determinar qual arquivo isso é para a sua situação. Para
+    fazer isso, insira a seguinte linha de código para o início desse núcleo
+    arquivo, substituindo a string contida dentro das aspas com o exato
+    endereço do "phpmussel.php" arquivo (endereço local, não o endereço HTTP;
+    será semelhante ao vault endereço mencionado anteriormente).
 
     <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
 
-    Save file, close, reupload.
+    Salve o arquivo, fechar, reupload.
 
- 7) At this point, you're done! However, you should probably test it out to
-    make sure it's working properly. To test out file upload protections,
-    attempt to upload the testing files included in the package under
-    "_testfiles" to your website via your usual browser-based upload methods.
-    If everything is working, a message should appear from phpMussel confirming
-    that the upload was successfully blocked. If nothing appears, something
-    isn't working correctly. If you're using any advanced features or if you're
-    using the other types of scanning possible with the tool, I'd suggest
-    trying it out with those to make sure it works as expected, too.
+ 7) Neste ponto, você está feito! No entanto, você provavelmente deve testá-lo
+    para garantir que ele está funcionando corretamente. Para testar as
+    arquivos upload proteções, tentar fazer o upload dos testes arquivos
+    incluídos no pacote em "_testfiles" para seu site através de seus habitual
+    navegador upload métodos. Se tudo estiver funcionando, a mensagem deve
+    aparecer a partir phpMussel confirmando que o upload foi bloqueado com
+    sucesso. Se nada aparecer, algo está não funcionando corretamente. Se você
+    estiver usando quaisquer avançados recursos ou se você estiver usando
+    outros tipos de análisar possível com a ferramenta, Eu sugiro tentar isso
+    com aqueles para certificar que ele funciona como esperado, também.
 
                                      ~ ~ ~                                     
 
 
  2B. COMO INSTALAR (PARA CLI)
 
- I hope to streamline this process by making an installer at some point in the
- not too distant future, but until then, follow these instructions to get
- phpMussel ready to work with CLI (be aware that at this point, CLI support
- only applies to Windows based systems; Linux and other systems will be coming
- soon to a later version of phpMussel):
+ Espero para agilizar este processo via fazendo um instalador em algum momento
+ no não muito distante futuro, mas até então, siga estas instruções para obter
+ phpMussel pronto para trabalhar com CLI (estar ciente, neste momento, CLI
+ apoio só se aplica a sistemas baseados no Windows; Linux e outros sistemas
+ será em breve para uma posterior versão do phpMussel):
 
- 1) By your reading this, I'm assuming you've already downloaded an archived
-    copy of the script, decompressed its contents and have it sitting somewhere
-    on your local machine. Once you've determined that you're happy with the
-    location chosen for phpMussel, continue.
+ 1) Por seu lendo isso, eu estou supondo que você já tenha baixado uma cópia
+    arquivada do script, descomprimido seu conteúdo e tê-lo sentado em algum
+    lugar em sua máquina local. Quando você tiver determinado que você está
+    feliz com o localização escolhido para phpMussel, continuar.
 
- 2) phpMussel requires php to be installed on the host machine in order to
-    execute. If you do not have php installed on your machine, please install
-    php on your machine, following any instructions supplied by the php
-    installer.
+ 2) phpMussel requer php para ser instalado na host máquina a fim de executar.
+    Se você não ainda tem o PHP instalado em sua máquina, por favor instalar o
+    PHP em sua máquina, seguindo as instruções fornecidas pelo php instalador.
 
- 3) Open "phpmussel.php", look for the line beginning with "$vault=", and
-    replace the string between the following quotation marks on that line with
-    the exact true location of the "vault" directory of phpMussel. You'll have
-    noticed such a directory in the archive you would've downloaded (unless you
-    feel up to re-coding the whole script, you'll need to maintain the same
-    file and directory structure as it was in the archive/when decompressed).
-    This "vault" directory should be one directory level beyond the directory
-    that the "phpmussel.php" file will exist in. Save file, close.
+ 2) Abrir "phpmussel.php", procure a linha que começa com "$vault=", e
+    substituir a string entre as seguintes aspas em nessa linha com a
+    verdadeira exata localização do "vault" diretório de phpMussel. Você vai
+    ter notado tal diretório no arquivo que você tenha baixado (a menos que
+    você sentir-se a re-codificação de todo o script, você terá que manter a
+    mesma estrutura de arquivos e diretórios como era no arquivo
+    originalmente). Este diretório "vault" deve ser um nível além do diretório
+    que o arquivo "phpmussel.php" vai existirá em. Salve o arquivo, feche.
 
- 4) (Optional; Strongly recommended for advanced users, but not recommended for
-    beginners or for the inexperienced): Open "phpmussel.ini" (located inside
-    "vault") - This file contains all the directives available for phpMussel.
-    Above each option should be a brief comment describing what it does and
-    what it is for. Adjust these options as you see fit, as per whatever is
-    appropriate for your particular setup. Save file, close.
+ 4) (Opcional; Fortemente recomendado para avançados usuários, mas não
+    recomendado para iniciantes ou para os inexperientes): Abrir
+    "phpmussel.ini" (localizado dentro "vault") - Este arquivo contém todas as
+    directivas disponíveis para phpMussel. Acima de cada opção deve ser um
+    breve comentário descrevendo o que faz e para que serve. Ajuste essas
+    opções de como você vê o ajuste, conforme o que for apropriado para sua
+    particular configuração. Salve o arquivo, feche.
 
- 5) (Optional) You can make using phpMussel in CLI mode easier for yourself by
-    creating a batch file to automatically load php and phpMussel. To do this,
-    open a plain text editor such as Notepad or Notepad++, type the complete
-    path to the "php.exe" file in the directory of your php installation,
-    followed by a space, followed by the complete path to the "phpmussel.php"
-    file in the directory of your phpMussel installation, save the file with
-    a ".bat" extension somewhere that you'll find it easily, and double-click
-    on that file to run phpMussel in the future.
+ 5) (Opcional) Você pode fazer usando phpMussel no modo CLI mais fácil para si
+    mesmo através da criação de um batch arquivo para carregar automaticamente
+    php e phpMussel. Para fazer isso, abra um editor de simples texto como
+    Notepad ou Notepad++, digite o completo caminho para o "php.exe" arquivo no
+    php instalação diretório, seguido por um espaço, seguido pelo completo
+    caminho para o "phpmussel.php" arquivo no diretório da sua phpMussel
+    instalação, salvar o arquivo com a extensão ".bat" em algum lugar que você
+    vai encontrá-lo facilmente, e clique duas vezes nesse arquivo para executar
+    phpMussel no futuro.
 
- 6) At this point, you're done! However, you should probably test it out to
-    make sure it's working properly. To test phpMussel, run phpMussel and try
-    scanning the "_testfiles" directory provided with the package.
+ 6) Neste ponto, você está feito! No entanto, você provavelmente deve testá-lo
+    para garantir que ele está funcionando corretamente. Para testar phpMussel,
+    executar phpMussel e tente análizar o diretório "_testfiles" fornecida com
+    o pacote.
 
                                      ~ ~ ~                                     
 
 
  3A. COMO USAR (PARA WEB SERVIDORES)
 
- phpMussel is intended to be a script which will function adequately right from
- the box with a bare minimum level of requirements on your part: Once it has
- been installed, basically, it simply should work.
+ phpMussel é um script destinado a funcionar de adequadamente, sem
+ complicações, com um mínimo nível de requisitos por você: Após ter sido
+ instalado, basicamente, ele simplesmente deve funcionar.
 
- Scanning of file uploads is automated and enabled by default, so nothing is
- required on your behalf for this particular function.
+ Análise de arquivos uploads é automatizado e ativado por padrão, por isso
+ nada é exigido por você por essa particular função.
 
- However, you are also able to instruct phpMussel to scan for files,
- directories or archives that you implicitly specify. To do this, firstly,
- you'll need to ensure that the appropriate configuration is set in the
- phpmussel.ini file (cleanup must be disabled), and once done, in a php file
- that is hooked to phpMussel, use the following function in your code:
+ No entanto, você também é capaz de instruir phpMussel para analisar arquivos
+ ou diretórios que você especificar implicitamente. Para fazer isso, em
+ primeiro lugar, você vai precisar para assegurar que apropriada configuração é
+ definida no phpmussel.ini arquivo (cleanup deve ser desativado), e quando
+ feito, em um php arquivo que está enganchado ao phpMussel, usar a seguinte
+ função no seu código:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
- Where:
- - $what_to_scan is either a string or an array, pointing to either a target
-   file, a target directory or an array of target files and/or target
-   directories.
- - $output_type is an integer, indicating the format in which the results of
-   the scan are to be return as. A value of 0 instructs the function to return
-   results as an integer (a returned result of -2 indicates that corrupt data
-   was detected during the scan and thus the scan failed to complete,
-   -1 indicates that extensions or addons required by php to execute the scan
-   were missing and thus the scan failed to complete, 0 indicates that the
-   scan target does not exist and thus there was nothing to scan,
-   1 indicates that the target was successfully scanned and no problems were
-   detected, and 2 indicates that the target was successfully scanned and
-   problems were detected). A value of 1 instructs the function to return
-   results as human readable text. A value of 2 instructs the function both
-   to return the results as human readable text and to export the results to
-   a global variable. This variable is optional, defaulting to 0.
- - $output_flatness is an integer, indicating whether to allow results to be
-   returned as an array or not. Normally, if the scan target contained multiple
-   items (such as if a directory or array) the results will be returned in an
-   array (default value of 0). A value of 1 instructs the function to implode
-   any such array prior to input, resulting in a flattened string containing
-   the results to be returned. This variable is optional, defaulting to 0.
+ Onde:
+ - $what_to_scan é uma string ou um array, apontando para um alvo arquivo, um
+   alvo diretório ou um array de alvo arquivos e/ou alvo diretórios.
+ - $output_type é um integer, indicando o formato no qual os resultados da
+   análise são regresso se. Um valor de 0 instrui a função para retornar
+   resultados como um integer (um resultado retornado de -2 indica que corrupto
+   dados foi detectado durante a análise, e portanto, a análise não foi
+   concluída, -1 indica que extensões ou complementos necessários pelo php para
+   executar a análise estavam faltando, e portanto, a análise não foi
+   concluída, 0 indica que o alvo de análise não existe, e portanto, havia nada
+   para analisar, 1 indica que o alvo foi analisado e não problemas foram
+   detectados, e 2 indica que o alvo foi analisado e problemas foram
+   detectados). Um valor de 1 instrui a função para retornar resultados como
+   humano legível texto. Um valor de 2 instrui a função para retornar
+   resultados como humano legível texto e para exportar os resultados para uma
+   global variável. Esta variável é opcional, padronizando a 0.
+ - $output_flatness é um integer, indicando se a permitir que os resultados
+   sejam retornados como uma array ou não. Normalmente, se o alvo de análise
+   continha vários itens (tal como se um diretório ou array) os resultados
+   serão retornados em uma array (padrão valor de 0). Um valor de 1 instrui a
+   função a implodir qualquer array antes de entrada, resultando em uma
+   achatada string contendo os resultados a serem retornados. Esta variável é
+   opcional, padronizando a 0.
 
- Examples:
+ Exemplos:
 
    $results=phpMussel("/user_name/public_html/my_file.html",1,1);
    echo $results;
 
-   Returns something like this (as a string):
-    Wed, 18 Sep 2013 02:49:46 +0000 Started.
-    > Checking '/user_name/public_html/my_file.html':
-    -> No problems found.
-    Wed, 18 Sep 2013 02:49:47 +0000 Finished.
+   Retorna algo tal como esta (como uma string):
+    Wed, 18 Sep 2013 02:49:46 +0000 Começado.
+    > Verificação '/user_name/public_html/my_file.html':
+    -> Não problemas encontrados.
+    Wed, 18 Sep 2013 02:49:47 +0000 Terminado.
 
- For a full break-down of what sort of signatures phpMussel uses during its
- scans and how it handles these signatures, refer to the Signature Format
- section of this README file.
+ Por completos detalhes sobre que tipo de assinaturas phpMussel usa durante a
+ análise e como ele usa essas assinaturas, consulte a Assinatura Formato seção
+ deste arquivo README.
 
- If you encounter any false positives, if you encounter something new that you
- think should be blocked, or for anything else regarding signatures, please
- contact me about it so that I may make the necessary changes, which, if you do
- not contact me, I may not necessarily be aware of.
+ Se você encontrar quaisquer falsos positivos, se você encontrar algo novo que
+ você acha deve ser bloqueado, ou para qualquer outra coisa com relação a
+ assinatura, entre em contato comigo sobre isso para que eu possa fazer as
+ mudanças necessárias, que, se você não entrar em contato comigo, eu posso não
+ ser necessariamente conscientes de.
 
- To disable signatures that are include with phpMussel (such as if you're
- experiencing a false positive specific to your purposes which should not
- normally be removed from streamline), refer to the Greylisting notes within
- the Browser Commands section of this README file.
+ Para desativar as assinaturas que estão incluídos com phpMussel (tal como se
+ você está experimentando falsos positivos específico para seus fins que não
+ deve normalmente ser removidos da agilize), consulte as notas sobre
+ Greylisting dentro do Navegador Comandos seção deste README arquivo.
 
- In addition to the default file upload scanning and the optional scanning
- of other files and/or directories specified via the above function, included
- in phpMussel is a function intended for scanning the body of email messages.
- This function behaves similarly to the standard phpMussel() function, but
- focuses solely on matching against the ClamAV email-based signatures. I have
- not tied these signatures into the standard phpMussel() function, because it
- is highly unlikely that you'd ever find the body of an incoming email message
- in need of scanning within a file upload targeted to a page where phpMussel is
- hooked, and thus, to tie these signatures into the phpMussel() function would
- be redundant. However, that said, having a separate function to match against
- these signatures could prove to be extremely useful for some, especially for
- those whose CMS or webfront system is somehow tied into their email system and
- for those of whom parse their emails via a php script of which they could
- potentially hook into phpMussel. Configuration for this function, like all
- others, is controlled via the phpmussel.ini file. To use this function (you'll
- need to do your own implementation), in a php file that is hooked to
- phpMussel, use the following function in your code:
+ Além da padrão arquivos upload análise e a opcional análise de outros arquivos
+ e/ou diretórios especificado através da função acima, incluído no phpMussel é
+ uma função destinada à análise do corpo das e-mail mensagens. Esta função
+ funciona da mesma forma para a phpMussel() função, mas se concentra
+ exclusivamente em fazer a comparação com as assinaturas de ClamAV baseiam
+ e-mail. Eu tenho amarrei essas assinaturas para a padrão phpMussel() função,
+ porque é muito pouco provável que você jamais encontrar o corpo de uma
+ recebidos e-mail mensagem na necessidade de análise dentro um arquivo upload
+ direcionados para uma página onde phpMussel é enganchada, e assim, para
+ amarrar essas assinaturas para a phpMussel() função seria redundante. Mas, o
+ que disse, tendo uma separada função para comparar contra essas assinaturas
+ poderia revelar-se extremamente útil para alguns, especialmente para aqueles
+ cuja CMS ou webfront sistema está de alguma modo enganchado em seu e-mail
+ sistema e para aqueles de quem analisar seus e-mails através de um php script
+ de que eles poderiam engancho para phpMussel. Configuração para esta função,
+ como todos os outros, é controlado atráves do phpmussel.ini arquivo. Para
+ utilizar esta função (você vai precisar para fazer a sua própria
+ implementação), em um php arquivo que está enganchado ao phpMussel, usar a
+ seguinte função no seu código:
 
  phpMussel_mail($body);
 
- Where $body is body of the email message you wish to scan (additionally, you
- could try scanning new forum posts, inbound messages from your online contact
- form or similar). If any error occurs preventing the function from completing
- its scan, a value of -1 will be returned. If the function completes its scan
- and does not match anything, a value of 0 will be returned (meaning clean).
- If, however, the function does match something, a string will be returned
- containing a message declaring what it has matched.
+ Onde $body é o corpo da email mensagem que você deseja analisar (Além, você
+ pode tentar analisar novos fórum posts, mensagens do seu on-line contato form
+ ou similar). Se algum erro ocorrer impedindo a função de completar a sua
+ análise, um valor de -1 será retornado. Se a função faz completa a sua análise
+ e detecta nada, um valor de 0 será retornado (ou seja, limpo). Se, no entanto,
+ a função faz detectar algo, uma string será retornado contendo uma mensagem
+ declarando o que foi detectado.
 
- In addition to the above, if you look at the source code, you may notice the
- function phpMusselD() and phpMusselR(). These functions are sub-functions of
- phpMussel(), and should not be called directly outside of that parent function
- (not because of adverse effects.. More-so, simply because it'd serve no
- purpose, and most probably won't actually work correctly anyhow).
+ Além do acima, se você olhar para o código-fonte, você pode notar a função
+ phpMusselD() e phpMusselR(). Estas funções são sub-funções de phpMussel(), e
+ não deve ser chamado diretamente fora dessa pai função (não por causa de
+ adversos efeitos.. Mais-lo, simplesmente porque ele tinha nenhuma utilidade, e
+ provavelmente não irá realmente funcionar corretamente qualquer maneira).
 
- There are many other controls and functions available within phpMussel for
- your use, too. For any such controls and functions which, by the end of this
- section of the README, have not yet been documented, please continue reading
- and refer to the Browser Commands section of this README file.
+ Existem muitos outros controlos e funções disponíveis dentro phpMussel para
+ seu uso, também. Para qualquer esses controlos e funções que, até o final
+ desta seção do README, ainda não foram documentados, por favor, continue a
+ leitura e consulte o Navegador Comandos seção deste README arquivo.
 
                                      ~ ~ ~                                     
 
 
  3B. COMO USAR (PARA CLI)
 
- Please refer to the "HOW TO INSTALL (FOR CLI)" section of this readme file.
+ Por favor, consulte ao "COMO INSTALAR (PARA CLI)" seção deste README arquivo.
 
- Be aware that, although future versions of phpMussel should support other
- systems, at this time, phpMussel CLI mode support is only optimized for use on
- Windows-based system (you can, of course, try it on other systems, but I can't
- guarantee it'll work as intended).
+ Esteja ciente de que, embora futuras versões do phpMussel deve apoiar outros
+ sistemas, at this time, phpMussel CLI modo suporte só é otimizado para uso em
+ sistemas baseados no Windows (você pode, é claro, experimentá-lo em outros
+ sistemas, mas eu não posso garantir que vai funcionar como pretendido).
 
- Also be aware that phpMussel is not the functional equivalent of a complete
- anti-virus suite, and unlike conventional anti-virus suites, does not monitor
- active memory or detect viruses on-the-fly! It will only detect viruses
- contained by those specific files that you explicitly tell it to scan.
+ Também estar ciente de que phpMussel não é o funcional equivalente de um
+ completa antivírus suíte, e contrário de convencionais antivírus suítes, não
+ monitora ativa memória ou detectar vírus proativamente! Ele só irá detectar
+ vírus contidos por esses específicos arquivos que você explicitamente diga a
+ ele analisar.
 
                                      ~ ~ ~                                     
 
 
  4A. NAVEGADOR COMANDOS
 
- Once phpMussel has been installed and is correctly functioning on your system,
- if you've set the script_password and logs_password variables in your
- configuration file, you will be able to perform some limited number of
- administrative functions and input some number of commands to phpMussel via
- your browser. The reason these passwords need to be set in order to enable
- these browser-side controls is both to ensure proper security, proper
- protection of these browser-side controls and to ensure that there exists
- a way for these browser-side controls to be entirely disabled if they are not
- desired by you and/or other webmasters/administrators using phpMussel. So, in
- other words, to enable these controls, set a pasword, and to disable these
- controls, set no password. Alternatively, if you choose to enable these
- controls and then choose to disable these controls at a later date, there is
- a command to do this (such can be useful if you perform some actions that you
- feel could potentially compromise the delegated passwords and need to quickly
- disable these controls without modifying your configuration file).
+ Quando phpMussel é instalado e funcionando corretamente no seu sistema, se
+ você tem configurá as variáveis script_password e logs_password em seu
+ configuração arquivo, você será capaz de executar um limitado número de
+ administrativas funções e entrada um algum número de comandos para phpMussel
+ através de seu navegador. A razão pela qual essas senhas precisam ser
+ definidas a fim de permitir que esses controles do navegador é tanto para
+ garantir adequada segurança, adequada proteção desses navegador controles e
+ para garantir que existe um maneira por desses navegador controles para ser
+ totalmente desativado se eles não são desejadas por você e/ou outros
+ webmasters/administradores usando phpMussel. Portanto, em outras palavras,
+ para ativar esses controles, definir uma senha, e para desativar esses
+ controles, definir nenhum senha. Alternativamente, se você optar por ativar
+ esses controles então optar por desativar esses controles em uma posterior
+ data, existe um comando para fazer isto (tal pode ser útil se você executar
+ algumas ações que você sente poderia comprometer as senhas delegados e precisa
+ para desativar rapidamente esses controles sem modificar o configuração
+ arquivo).
 
- A couple of reasons why you -should- enable these controls:
- - Provides a way to greylist signatures on-the-fly in instances such as when
-   you discover a signature that is producing a false-positive while uploading
-   files to your system and you don't have time to manually edit and reupload
-   your greylist file.
- - Provides a way for you to allow someone other than yourself to control your
-   copy of phpMussel without the implicit need to grant them access to FTP.
- - Provides a way to provide controlled access to your log files.
- - Provides an easy way to update phpMussel when updates are available.
- - Provides a way for you to monitor phpMussel when FTP access or other
-   conventional access points for monitoring phpMussel are not available.
+ Algumas razões pelas quais você -deve- ativar esses controles:
+ - Fornece uma maneira para greylist assinaturas em casos como quando você
+   descobre uma assinatura que está produzindo um falso-positivo enquanto o
+   upload de arquivos para o seu sistema e você não tem tempo para manualmente
+   editar e reupload o greylist arquivo.
+ - Fornece uma maneira por você para permitir alguém diferente de si mesmo para
+   controlar a sua cópia do phpMussel sem a implícita necessidade a dar o
+   acesso ao FTP.
+ - Fornece uma maneira de fornecer controlado acesso aos seus log arquivos.
+ - Fornece uma fácil maneira para atualizar phpMussel quando atualizações são
+   disponíveis.
+ - Fornece uma maneira por você para monitorar phpMussel quando FTP acesso ou
+   outras convencionais vias de acesso para monitoramento phpMussel não estão
+   disponíveis.
 
- A couple of reasons why you should -not- enable these controls:
- - Provides a vector for potential attackers and undesirables to determine
-   whether you are using phpMussel or not (although, this could be both a
-   reason for and a reason against, depending on perspective) by way of blindly
-   sending commands to servers as a means to probe. On one hand, this could
-   discourage attackers from targeting your system if they learn that you are
-   using phpMussel, assuming that they are probing because their attack method
-   is rendered ineffective as a result of using phpMussel. However, on the
-   other hand, if some unforeseen and currently unknown exploit within
-   phpMussel or a future version thereof comes to light, and if it could
-   potentially provide an attack vector, a positive result from such probing
-   could actually encourage attackers to target your system.
- - If your delegated passwords were ever compromised, unless changed, could
-   provide a way for an attacker to bypass whatever signatures may be otherwise
-   normally preventing their attacks from succeeding, or even potentially
-   disable phpMussel altogether, thus providing a way to render the
-   effectiveness of phpMussel moot.
+ Algumas razões pelas quais você -não- deve ativar esses controles:
+ - Fornece um vetor por potenciais atacantes e indesejáveis ??para determinar
+   se ou não você está usando phpMussel (embora, este poderia ser tanto uma
+   razão por e uma razão contra, dependendo em perspectiva) por cegamente envio
+   de comandos para os servidores como meio para sondar. Por um lado, isso pode
+   desencorajar os atacantes de testando seu sistema, se eles descobrem que
+   você está usando phpMussel, assumindo que eles estão sondando por razões que
+   o sua método de ataque é desprovido de efeito como resultado do seu uso de
+   phpMussel. Mas, por outro lado, se algum imprevisto e presentemente
+   desconhecidos vulnerabilidade dentro phpMussel ou uma futuro versão dos
+   mesmos trata de luz, e se ele poderia fornecer um vetor de ataque, um
+   positivo resultado de tal sondando poderia incentivar os atacantes de
+   testando seu sistema.
+ - Se suas senhas delegados foram comprometidos, se não alterado, pode fornecer
+   uma maneira para um atacante para ignorar o que quer assinaturas podem ser
+   de outra forma normalmente prevenção sucesso de seus ataques, ou até mesmo
+   potencialmente desativar phpMussel completamente, proporcionando uma forma
+   de tornar a eficácia da phpMussel discutível.
 
- Either way, regardless of what you choose, the choice is ultimately yours. By
- default, these controls will be disabled, but have a think about it, and if
- you decide you want them, this section explains both how to enable them and
- how to use them.
+ De qualquer maneira, independentemente do que você escolher, a escolha final é
+ sua. Por padrão, esses controles serão desativados, mas ter um pensar sobre
+ isso, e se você decidir que você quer eles, Nesta seção explica tanto como
+ habilitá-los e como usá-los.
 
- A list of available browser-side commands:
+ A lista de disponíveis browser comandos:
 
  scan_log
-   Password required: logs_password
-   Other requirements: scan_log must be set.
-   Required parameters: (none)
-   Optional parameters: (none)
-   Example: ?logspword=[logs_password]&phpmussel=scan_log
+   Senha necessária: logs_password
+   Outros requisitos: scan_log deve ser definido.
+   Parâmetros necessários: (nenhum)
+   Parâmetros opcionais: (nenhum)
+   Exemplo: ?logspword=[logs_password]&phpmussel=scan_log
    ~
-   What it does: Prints the contents of your scan_log file to the screen.
+   Que faz: Imprime o conteúdo de seu scan_log arquivo para a tela.
    ~
  scan_kills
-   Password required: logs_password
-   Other requirements: scan_kills must be set.
-   Required parameters: (none)
-   Optional parameters: (none)
-   Example: ?logspword=[logs_password]&phpmussel=scan_kills
+   Senha necessária: logs_password
+   Outros requisitos: scan_kills deve ser definido.
+   Parâmetros necessários: (nenhum)
+   Parâmetros opcionais: (nenhum)
+   Exemplo: ?logspword=[logs_password]&phpmussel=scan_kills
    ~
-   What it does: Prints the contents of your scan_kills file to the screen.
+   Que faz: Imprime o conteúdo de seu scan_kills arquivo para a tela.
    ~
  controls_lockout
-   Password required: logs_password OR script_password
-   Other requirements: (none)
-   Required parameters: (none)
-   Optional parameters: (none)
-   Example 1: ?logspword=[logs_password]&phpmussel=controls_lockout
-   Example 2: ?pword=[script_password]&phpmussel=controls_lockout
+   Senha necessária: logs_password OU script_password
+   Outros requisitos: (nenhum)
+   Parâmetros necessários: (nenhum)
+   Parâmetros opcionais: (nenhum)
+   Exemplo 1: ?logspword=[logs_password]&phpmussel=controls_lockout
+   Exemplo 2: ?pword=[script_password]&phpmussel=controls_lockout
    ~
-   What it does: Disables ("locks out") all browser-side controls. This should
-                 be used if you suspect that either of your passwords have been
-                 compromised (this can happen if you're using these controls
-                 from a computer which is not secured and/or not trusted).
-                 controls_lockout works by creating a file, controls.lck, in
-                 your vault, which phpMussel will check for before performing
-                 any commands of any kind. Once this happens, to reenable
-                 controls, you'll need to manually delete the controls.lck file
-                 via FTP or similar. Can be called using either password.
+   Que faz: Desativa todos os navegador controles. Isso deve ser usado se você
+            suspeitar que qualquer das senhas foram comprometidas (isso pode
+            acontecer se você estiver usando esses controles a partir de um
+            computador que não é seguro ou não é confiável). controls_lockout
+            funciona atráves de criando um arquivo, controls.lck, em seu vault,
+            de que phpMussel irá olhar por antes de executar qualquer comando
+            de qualquer variedade. Quando isso acontece, para reativar os
+            controlos, você precisará manualmente deletar o controls.lck
+            arquivo atráves de FTP ou semelhante. Pode ser chamado usando
+            qualquer senha.
    ~
  disable
-   Password required: script_password
-   Other requirements: (none)
-   Required parameters: (none)
-   Optional parameters: (none)
-   Example: ?pword=[script_password]&phpmussel=disable
+   Senha necessária: script_password
+   Outros requisitos: (nenhum)
+   Parâmetros necessários: (nenhum)
+   Parâmetros opcionais: (nenhum)
+   Exemplo: ?pword=[script_password]&phpmussel=disable
    ~
-   What it does: Disables phpMussel. This should be used if you're performing
-                 any updates or changes to your system or if you're installing
-                 any new software or modules to your system which either do or
-                 potentially could trigger false positives. This should also be
-                 used if you're having any problems with phpMussel but do not
-                 wish to remove it from your system. Once this happens, to
-                 reenable phpMussel, use "enable".
+   Que faz: Desativar phpMussel. Isso deve ser usado se você estiver executando
+            quaisquer atualizações ou alterações em seu sistema ou se está
+            instalando qualquer novo software ou módulos para o seu sistema que
+            fazer ou potencialmente poderiam desencadear falsos positivos. Isso
+            também deve ser usado se você está tendo problemas com phpMussel
+            mas não deseja removê-lo do sistema. Quando isso acontece, para
+            reativar phpMussel, uso "enable".
    ~
  enable
-   Password required: script_password
-   Other requirements: (none)
-   Required parameters: (none)
-   Optional parameters: (none)
-   Example: ?pword=[script_password]&phpmussel=enable
+   Senha necessária: script_password
+   Outros requisitos: (nenhum)
+   Parâmetros necessários: (nenhum)
+   Parâmetros opcionais: (nenhum)
+   Exemplo: ?pword=[script_password]&phpmussel=enable
    ~
-   What it does: Enables phpMussel. This should be used if you've previously
-                 disabled phpMussel using "disable" and want to reenable it.
+   Que faz: Ativar phpMussel. Este deve ser usado se você já desativado
+            phpMussel usando "disable" e desejar para reativá-la.
    ~
  update
-   Password required: script_password
-   Other requirements: update.dat and update.inc must exist.
-   Required parameters: (none)
-   Optional parameters: forcedupdate
-   Example: ?pword=[script_password]&phpmussel=update&musselvar=forcedupdate
+   Senha necessária: script_password
+   Outros requisitos: update.dat and update.inc must exist.
+   Parâmetros necessários: (nenhum)
+   Parâmetros opcionais: forcedupdate
+   Exemplo: ?pword=[script_password]&phpmussel=update&musselvar=forcedupdate
    ~
-   What it does: Checks for updates to both phpMussel and its signatures. If
-                 update checks succeed and updates are found, will attempt
-                 to download and install these updates. If updates are checked
-                 too quickly, update check will abort. If update checks fail,
-                 update will abort. If optional parameter "forcedupdate" is
-                 supplied, time of last update will be ignored and thus
-                 update check will continue even if it is being checked "too
-                 quickly", but will still abort if update check fails. Results
-                 of the entire process are printed to the screen. I recommend
-                 including the optional parameter "forcedupdate" if you're
-                 manually triggering this control, but please do not use
-                 "forcedupdate" if you're automating the process, such as via
-                 cron or similar. I recommend checking at least once per month
-                 to ensure your signatures and your copy of phpMussel are kept
-                 up to-date (unless, of course, you're checking for updates
-                 and installing them manually, which, I'd still recommend
-                 doing at least one per month). Checking more than twice per
-                 month is probably pointless, considering I'm (at the time of
-                 writing this) working on this project by myself and I'm very
-                 unlikely to be able to produce updates of any kind more
-                 frequently than that (nor do I particularly want to for the
-                 most part).
+   Que faz: Verifica se há atualizações para ambos phpMussel e suas
+            assinaturas. Se as atualização verificações suceder e atualizações
+            são encontrados, tentará baixar e instalar essas atualizações. Se
+            atualizações são verificados muito rapidamente, atualização
+            verificação irá abortar. Se atualização verificação falha,
+            atualização irá abortar. Se opcional parâmetro "forcedupdate" é
+            fornecido, hora da última atualização será ignorada, e assim,
+            atualizar verificação será continuará mesmo que está sendo
+            verificado "muito rapidamente", mas ainda vai abortar se a
+            atualização verificação falha. Os resultados de o inteiro processo
+            são impressos na tela. Eu recomendo incluindo opcional parâmetro
+            "forcedupdate" se você está manualmente acionando esse controle,
+            mas por favor, não uso "forcedupdate" se você estiver automatizando
+            o processo, tal como atráves de cron ou semelhante. Eu recomendo
+            verificando pelo menos uma vez por mês para garantir que seus
+            assinaturas e sua cópia do phpMussel são mantidos atualizados
+            (A menos, claro, você está verificando se há atualizações e
+            instalá-los manualmente, que, eu ainda recomendo fazer pelo menos
+            um por mês). Verificando mais de que duas vezes por mês é
+            provavelmente inútil, considerando que eu (no momento de escrever
+            este) estou trabalhando neste projeto sozinho e eu estou muito
+            improvável que seja capaz de produzir atualizações de qualquer
+            variedade com mais freqüência do que (nem eu particularmente quero
+            para a maior parte).
    ~
  greylist
-   Password required: script_password
-   Other requirements: (none)
-   Required parameters: [Name of signature to be greylisted]
-   Optional parameters: (none)
-   Example: ?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]
+   Senha necessária: script_password
+   Outros requisitos: (nenhum)
+   Parâmetros necessários: [Nome de assinatura a ser greylisted]
+   Parâmetros opcionais: (nenhum)
+   Exemplo: ?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]
    ~
-   What it does: Add a signature to the greylist.
+   Que faz: Adicionar uma assinatura para o greylist.
    ~
  greylist_clear
-   Password required: script_password
-   Other requirements: (none)
-   Required parameters: (none)
-   Optional parameters: (none)
-   Example: ?pword=[script_password]&phpmussel=greylist_clear
+   Senha necessária: script_password
+   Outros requisitos: (nenhum)
+   Parâmetros necessários: (nenhum)
+   Parâmetros opcionais: (nenhum)
+   Exemplo: ?pword=[script_password]&phpmussel=greylist_clear
    ~
-   What it does: Clears the entire greylist.
+   Que faz: Limpo inteiro greylist.
    ~
  greylist_show
-   Password required: script_password
-   Other requirements: (none)
-   Required parameters: (none)
-   Optional parameters: (none)
-   Example: ?pword=[script_password]&phpmussel=greylist_show
+   Senha necessária: script_password
+   Outros requisitos: (nenhum)
+   Parâmetros necessários: (nenhum)
+   Parâmetros opcionais: (nenhum)
+   Exemplo: ?pword=[script_password]&phpmussel=greylist_show
    ~
-   What it does: Prints the contents of the greylist to the screen.
+   Que faz: Imprime o conteúdo da greylist para a tela.
    ~
 
                                      ~ ~ ~                                     
@@ -474,12 +496,12 @@
 
  4B. CLI (COMANDO LINHA INTERFACE)
 
- phpMussel can be run as an interactive file scanner in CLI mode under
- Windows-based systems. Refer to the "HOW TO INSTALL (FOR CLI)" section of this
- readme file for more details.
+ phpMussel pode ser executado como um interativo arquivo analisador no CLI modo
+ em sistemas baseados em Windows. Por favor, consulte ao
+ "COMO INSTALAR (PARA CLI)" seção deste README arquivo por mais detalhes.
 
- For a list of available CLI commands, at the CLI prompt, type 'c', and press
- Enter.
+ Por uma lista de comandos disponíveis em CLI, no CLI prompt, digite 'c', e
+ pressione Enter.
 
                                      ~ ~ ~                                     
 
@@ -507,7 +529,14 @@
     A record of changes made to the script between different
     versions (not required for proper function of script).
     ~
- /_docs/readme.XX.txt (Documentation, Included)
+ /_docs/readme.DE.txt (Documentation, Included); DEUTSCH
+ /_docs/readme.EN.txt (Documentation, Included); ENGLISH
+ /_docs/readme.ES.txt (Documentation, Included); ESPAÑOL
+ /_docs/readme.FR.txt (Documentation, Included); FRANÇAIS
+ /_docs/readme.ID.txt (Documentation, Included); BAHASA INDONESIA
+ /_docs/readme.IT.txt (Documentation, Included); ITALIANO
+ /_docs/readme.NL.txt (Documentation, Included); NEDERLANDSE
+ /_docs/readme.PT.txt (Documentation, Included); PORTUGUÊS
     The README files (for example; the file you're currently reading).
     ~
  /_testfiles/ (Directory)
@@ -714,6 +743,14 @@
     phpMussel Update Script; Required for automatic updates and for updating
     phpMussel via your browser, but not required otherwise.
     ~
+ /vault/whitelist_clamav.cvd (Signatures, Included)
+ /vault/whitelist_custom.cvd (Signatures, Included)
+ /vault/whitelist_mussel.cvd (Signatures, Included)
+    File specific whitelist.
+    Required if whitelisting option in phpmussel.ini is enabled and if you wish
+    to have specific files whitelisted. Can remove if option is disabled or if
+    you don't require whitelisting (but files will be recreated on update).
+    ~
 
  * Filename may differ based on configuration stipulations (in phpmussel.ini).
 
@@ -762,7 +799,7 @@
  "general" (Category)
  - General configuration for phpMussel.
     "script_password"
-    - As a conveniance, phpMussel will allow certain functions (including the
+    - As a convenience, phpMussel will allow certain functions (including the
       ability to update phpMussel on-the-fly) to be manually triggered via
       POST, GET and QUERY. However, as a security precaution, to do this,
       phpMussel will expect a password to be included with the command, as to
@@ -1003,6 +1040,24 @@
      require parsing those files in certain ways, which, if the programmer of a
      virus is aware of, will specifically try to prevent, in order to allow
      their virus to remain undetected.
+   "decode_threshold"
+   - Optional limitation or threshold to the length of raw data to which within
+     decode commands should be detected (in case there are any noticeable
+     performance issues whilst scanning). Value is an integer representing
+     filesize in KB. Default = 512 (512KB). Zero or null value disables the
+     threshold (removing any such limitation based on filesize).
+   "scannable_threshold"
+   - Optional limitation or threshold to the length of raw data to which
+     phpMussel is permitted to read and scan (in case there are any noticeable
+     performance issues whilst scanning). Value is an integer representing
+     filesize in KB. Default = 32768 (32MB). Generally, this value shouldn't be
+     less than the average filesize of file uploads that you want and expect to
+     receive to your server or website, shouldn't be more than the
+     filesize_limit directive, and shouldn't be more than roughly one fifth of
+     the total allowable memory allocation granted to php via the php.ini
+     configuration file. This directive exists to try to prevent phpMussel from
+     using up too much memory (which would prevent it from being able to
+     successfully scan files above a certain filesize).
  "compatibility" (Category)
  - Compatibility directives for phpMussel.
     "ignore_upload_errors"
@@ -1033,6 +1088,19 @@
    Where HASH is the MD5 hash of an entire file, FILESIZE is the total size
    of that file and NAME is the name to cite for that signature.
 
+ = PE SECTIONAL MD5 SIGNATURES =
+   All PE Sectional MD5 signatures follow the format:
+    FILESIZE:HASH:NAME
+   Where HASH is the MD5 hash of a section of the PE file, FILESIZE is the
+   total size of that file and NAME is the name to cite for that signature.
+
+ = WHITELIST SIGNATURES =
+   All Whitelist signatures follow the format:
+    HASH:FILESIZE:TYPE
+   Where HASH is the MD5 hash of an entire file, FILESIZE is the total size
+   of that file and TYPE is the type of signatures the whitelisted file is to be
+   immune against.
+
  = FILENAME SIGNATURES =
    All filename signatures follow the format:
     NAME:FNRX
@@ -1050,7 +1118,7 @@
    All other signatures follow the format:
     NAME:HEX:FROM:TO
    Where NAME is the name to cite for that signature and HEX is a
-   hexidecimal-encoded segment of the file intended to be matched by
+   hexadecimal-encoded segment of the file intended to be matched by
    the given signature. FROM and TO are optional parameters, indicting from
    which and to which positions in the source data to check against (not
    supported by the mail function).
@@ -1064,7 +1132,7 @@
    phpMussel source-code if you're not entirely sure about the context in
    which regex statements are parsed. Also, remember that all patterns (with
    exception to filename, archive metadata and MD5 patterns) must be
-   hexidecimally encoded (foregoing pattern syntax, of course)!
+   hexadecimally encoded (foregoing pattern syntax, of course)!
 
  = WHERE TO PUT CUSTOM SIGNATURES? =
    Only put custom signatures in those files intended for custom signatures.
@@ -1086,36 +1154,40 @@
  = SIGNATURE BREAKDOWN =
    The following is a breakdown of the types of signatures used by phpMussel:
    - "MD5 Signatures" (md5_*). Checked against the MD5 hash of the contents and
-     the filesize of every non-whitelisted file targeted for scanning.
+      the filesize of every non-whitelisted file targeted for scanning.
    - "General Signatures" (general_*). Checked against the contents of every
-     non-whitelisted file targeted for scanning.
+      non-whitelisted file targeted for scanning.
    - "Normalised ASCII Signatures" (ascii_*). Checked against the contents of
-     every non-whitelisted file targeted for scanning.
+      every non-whitelisted file targeted for scanning.
    - "Normalised HTML Signatures" (html_*). Checked against the contents of
       every non-whitelisted HTML file targeted for scanning.
    - "General Commands" (hex_general_commands.csv). Checked against the
-     contents of every non-whitelisted file targeted for scanning.
+      contents of every non-whitelisted file targeted for scanning.
    - "Portable Executable Sectional Signatures" (pe_*). Checked against the
-     contents of every non-whitelisted targeted for scanning and matched to the
-     PE format.
+      contents of every non-whitelisted targeted for scanning and matched to
+      the PE format.
    - "Portable Executable Signatures" (exe_*). Checked against the contents of
-     every non-whitelisted targeted for scanning and matched to the PE format.
+      every non-whitelisted targeted for scanning and matched to the PE format.
    - "ELF Signatures" (elf_*). Checked against the contents of every
-     non-whitelisted file targeted for scanning and matched to the ELF format.
+      non-whitelisted file targeted for scanning and matched to the ELF format.
    - "Graphics Signatures" (graphics_*). Checked against the contents of every
-     non-whitelisted file targeted for scanning and matched to a known
-     graphical file format.
+      non-whitelisted file targeted for scanning and matched to a known
+      graphical file format.
    - "Mach-O Signatures" (macho_*). Checked against the contents of every
-     non-whitelisted file targeted for scanning and matched to the Mach-O
-     format.
-   - "ZIP MetaData Signatures" (metadata_*). Checked against the CRC32
-     hash and filesize of the initial file contained inside of any
-     non-whitelisted archive targeted for scanning.
-   - "Email Signatures" (mail_*). Checked against the $body variable parsed
-     to the phpMussel_mail() function, which is intended to be the body of
-     email messages or similar entities (potentially forum posts and etcetera).
-   (Note that any of these signatures may be easily disabled via
-    phpmussel.ini).
+      non-whitelisted file targeted for scanning and matched to the Mach-O
+      format.
+   - "Archive Metadata Signatures" (metadata_*). Checked against the CRC32 hash
+      and filesize of the initial file contained inside of any non-whitelisted
+      archive targeted for scanning.
+   - "Email Signatures" (mail_*). Checked against the $body variable parsed to
+      the phpMussel_mail() function, which is intended to be the body of email
+      messages or similar entities (potentially forum posts and etcetera).
+   - "Whitelist Signatures" (whitelist_*). Checked against the MD5 hash of the
+      contents and the filesize of every file targeted for scanning. Matched
+      files will be immune to being matched by the type of signature mentioned
+      in their whitelist entry.
+     (Note that any of these signatures may be easily disabled via
+      phpmussel.ini).
 
 
                                      ~ ~ ~                                     
@@ -1142,8 +1214,8 @@
  trabalhar com phpMussel ou deve considerar alternativas opções para o seu
  anti-vírus software ou phpMussel.
 
- Esta informação foi atualizada dia 28 Agosto 2014 e é corrente para TODAS as
- versões de phpMussel, da versão inicial v0.1 até a última versão v0.4c no
+ Esta informação foi atualizada dia 13 Setembro 2014 e é corrente para todas
+ phpMussel lançamentos das duas mais recentes menores versões (v0.3-v0.4d) no
  momento de escrever este.
 
  Ad-Aware                Sem conhecidos problemas
@@ -1152,7 +1224,7 @@
  AntiVir                 Sem conhecidos problemas
  Antiy-AVL               Sem conhecidos problemas
  Avast                !  Reportar "JS:ScriptSH-inf [Trj]"
-                         - Todos, exceto v0.3d
+                         - Todos, exceto v0.3d, v0.4d
  AVG                     Sem conhecidos problemas
  Baidu-International     Sem conhecidos problemas
  BitDefender             Sem conhecidos problemas
@@ -1187,15 +1259,14 @@
  MicroWorld-eScan        Sem conhecidos problemas
  NANO-Antivirus          Sem conhecidos problemas
  Norman               !  Reportar "Kryptik.BQS"
-                         - Todos, exceto v0.3d e v0.3e
+                         - Todos, exceto v0.3d, v0.3e, v0.4d
  nProtect                Sem conhecidos problemas
  Panda                   Sem conhecidos problemas
  Qihoo-360               Sem conhecidos problemas
  Rising                  Sem conhecidos problemas
  Sophos                  Sem conhecidos problemas
  SUPERAntiSpyware        Sem conhecidos problemas
- Symantec             !  Reportar "WS.Reputation.1"
-                         - v0.3e a v0.4c
+ Symantec                Sem conhecidos problemas
  TheHacker               Sem conhecidos problemas
  TotalDefense            Sem conhecidos problemas
  TrendMicro              Sem conhecidos problemas
@@ -1209,5 +1280,5 @@
                                      ~ ~ ~                                     
 
 
-Última Atualização: 28 Agosto 2014 (2014.08.28).
+Última Atualização: 13 Setembro 2014 (2014.09.13).
 EOF

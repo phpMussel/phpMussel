@@ -499,7 +499,14 @@
     Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für
     die korrekte Funktion des Scripts nicht notwendig).
     ~
- /_docs/readme.XX.txt (Dokumentation, enthalten)
+ /_docs/readme.DE.txt (Dokumentation, enthalten); DEUTSCH
+ /_docs/readme.EN.txt (Dokumentation, enthalten); ENGLISH
+ /_docs/readme.ES.txt (Dokumentation, enthalten); ESPAÑOL
+ /_docs/readme.FR.txt (Dokumentation, enthalten); FRANÇAIS
+ /_docs/readme.ID.txt (Dokumentation, enthalten); BAHASA INDONESIA
+ /_docs/readme.IT.txt (Dokumentation, enthalten); ITALIANO
+ /_docs/readme.NL.txt (Dokumentation, enthalten); NEDERLANDSE
+ /_docs/readme.PT.txt (Dokumentation, enthalten); PORTUGUÊS
     Die README-Dateien (z.B. die Datei, die Sie gerade lesen).
     ~
  /_testfiles/ (Verzeichnis)
@@ -589,9 +596,8 @@
  /vault/filenames_mussel.cvd (Signaturen, enthalten)
     Dateien der Dateinamen-Signaturen.
     Benötigt, wenn die Option "filename signatures" in der phpmussel.ini
-    aktiviert ist.
-    Die Dateien können entfernt werden, wenn die Option deaktiviert ist
-    (Dateien werden bei einem Update neu erstellt).
+    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
+    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
     ~
  /vault/general_clamav_regex.cvd (Signaturen, enthalten)
  /vault/general_clamav_regex.map (Signaturen, enthalten)
@@ -603,9 +609,8 @@
  /vault/general_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der allgemeinen Signaturen.
     Benötigt, wenn die Option "general signatures" in der phpmussel.ini
-    aktiviert ist.
-    Die Dateien können entfernt werden, wenn die Option deaktiviert ist
-    (Dateien werden bei einem Update neu erstellt).
+    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
+    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
     ~
  /vault/graphics_clamav_regex.cvd (Signaturen, enthalten)
  /vault/graphics_clamav_regex.map (Signaturen, enthalten)
@@ -617,9 +622,8 @@
  /vault/graphics_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der Signaturen für Bilddateien.
     Benötigt, wenn die Option "graphics signatures" in der phpmussel.ini
-    aktiviert ist.
-    Die Dateien können entfernt werden, wenn die Option deaktiviert ist
-    (Dateien werden bei einem Update neu erstellt).
+    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
+    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
     ~
  /vault/greylist.csv (Signaturen, enthalten/wird erstellt)
     CSV der Signaturen in der Greylist, die phpMussel ignorieren soll (Datei
@@ -628,9 +632,8 @@
  /vault/hex_general_commands.csv (Signaturen, enthalten)
     Hex-codierte CSV mit allgemeinen Befehlserkennung.
     Benötigt, wenn die Option "general command detection" in der phpmussel.ini
-    aktiviert ist.
-    Die Datei kann entfernt werden, wenn die Option deaktiviert ist (Datei
-    wird bei einem Update neu erstellt).
+    aktiviert ist. Die Datei kann entfernt werden, wenn die Option deaktiviert
+    ist (Datei wird bei einem Update neu erstellt).
     ~
  /vault/html_clamav_regex.cvd (Signaturen, enthalten)
  /vault/html_clamav_regex.map (Signaturen, enthalten)
@@ -646,7 +649,8 @@
     (Dateien werden bei einem Update neu erstellt).
     ~
  /vault/lang.inc (Script, enthalten)
-    Sprachpaket für phpMussel; Erforderlich für Unterstützung mehrerer Sprachen.
+    Sprachpaket für phpMussel; Erforderlich für Unterstützung mehrerer
+    Sprachen.
     ~
  /vault/macho_clamav_regex.cvd (Signaturen, enthalten)
  /vault/macho_clamav_regex.map (Signaturen, enthalten)
@@ -658,9 +662,8 @@
  /vault/macho_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der Mach-O-Signaturen.
     Benötigt, wenn die Option "Mach-O signatures" in der phpmussel.ini
-    aktiviert ist.
-    Die Dateien können entfernt werden, wenn die Option deaktiviert ist
-    (Dateien werden bei einem Update neu erstellt).
+    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
+    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
     ~
  /vault/mail_clamav_regex.cvd (Signaturen, enthalten)
  /vault/mail_clamav_regex.map (Signaturen, enthalten)
@@ -688,18 +691,17 @@
  /vault/metadata_mussel.cvd (Signaturen, enthalten)
     Dateien für die Signaturen der Archiv-Metadaten.
     Benötigt, wenn die Option "archive metadata signatures" in der
-    phpmussel.ini aktiviert ist.
-    Die Dateien können entfernt werden, wenn die Option deaktiviert ist
-    (Dateien werden bei einem Update neu erstellt).
+    phpmussel.ini aktiviert ist. Die Dateien können entfernt werden, wenn
+    die Option deaktiviert ist (Dateien werden bei einem Update neu
+    erstellt).
     ~
  /vault/pe_clamav.cvd (Signaturen, enthalten)
  /vault/pe_custom.cvd (Signaturen, enthalten)
  /vault/pe_mussel.cvd (Signaturen, enthalten)
     Dateien der PE-Sectional-Signatures.
     Benötigt, wenn die Option "PE Sectional signatures" in der phpmussel.ini
-    aktiviert ist.
-    Die Dateien können entfernt werden, wenn die Option deaktiviert ist
-    (Dateien werden bei einem Update neu erstellt).
+    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
+    deaktiviert ist (Dateien werden bei einem Update neu erstellt).
 
     ~
  /vault/phpmussel.inc (Script, enthalten)
@@ -728,6 +730,15 @@
  /vault/update.inc (Script, enthalten)
     phpMussel Update Script; Wird nur für die automatische manuelle
     Aktualisierung mittels Browser benötigt.
+    ~
+ /vault/whitelist_clamav.cvd (Signaturen, enthalten)
+ /vault/whitelist_custom.cvd (Signaturen, enthalten)
+ /vault/whitelist_mussel.cvd (Signaturen, enthalten)
+    Datei-spezifische Whitelist.
+    Benötigt, wenn die Option "Whitelist" in der phpmussel.ini aktiviert ist,
+    und wenn Sie auf bestimmte Dateien Whitelist haben möchten. Die Dateien
+    können entfernt werden, wenn die Option deaktiviert ist (Dateien werden
+    bei einem Update neu erstellt).
     ~
 
  * Der Dateiname kann je nach Konfiguratuion in der phpmussel.ini variieren.
@@ -1033,6 +1044,24 @@
      solchen Dateien zu erkennen, sofern sich der Programmierer eines Virus
      dieser Tatsache bewußt ist, wird er versuchen, diese Maßnahmen zu
      verhindern, damit der Virus unentdeckt bleibt.
+   "decode_threshold"
+   - Optional limitation or threshold to the length of raw data to which within
+     decode commands should be detected (in case there are any noticeable
+     performance issues whilst scanning). Value is an integer representing
+     filesize in KB. Default = 512 (512KB). Zero or null value disables the
+     threshold (removing any such limitation based on filesize).
+   "scannable_threshold"
+   - Optional limitation or threshold to the length of raw data to which
+     phpMussel is permitted to read and scan (in case there are any noticeable
+     performance issues whilst scanning). Value is an integer representing
+     filesize in KB. Default = 32768 (32MB). Generally, this value shouldn't be
+     less than the average filesize of file uploads that you want and expect to
+     receive to your server or website, shouldn't be more than the
+     filesize_limit directive, and shouldn't be more than roughly one fifth of
+     the total allowable memory allocation granted to php via the php.ini
+     configuration file. This directive exists to try to prevent phpMussel from
+     using up too much memory (which would prevent it from being able to
+     successfully scan files above a certain filesize).
  "compatibility" (Kategorie)
  - Kompatibilitätsdirektiven für phpMussel.
     "ignore_upload_errors"
@@ -1064,6 +1093,18 @@
    HASH ist der MD5-Hash der ganzen Datei, FILESIZE ist die gesamte Größe der
    Datei und NAME ist der Name, um die Signatur zu benennen.
 
+ = PE-SECTIONAL MD5-SIGNATUREN =
+   Alle PE-Sectional MD5-Signaturen besitzen folgendes Format:
+    FILESIZE:HASH:NAME
+   HASH ist der MD5-Hash einer PE-Sektion der Datei, FILESIZE ist die gesamte
+   Größe der Datei und NAME ist der Name, um die Signatur zu benennen.
+
+ = WHITELIST-SIGNATUREN =
+   Alle Whitelist-Signaturen besitzen folgendes Format:
+    HASH:FILESIZE:NAME
+   HASH ist der MD5-Hash der ganzen Datei, FILESIZE ist die gesamte Größe der
+   Datei und TYPE ist der Signaturtypen die Datei ist immun gegen.
+
  = DATEINAMEN-SIGNATUREN =
    Alle Dateinamen-Signaturen besitzen folgendes Format:
     NAME:FNRX
@@ -1075,7 +1116,7 @@
     NAME:FILESIZE:CRC32
    NAME ist der Name, um die Signatur zu benennen, FILESIZE ist die gesamte
    Größe (unkomprimiert) einer jeden Datei im Archiv und CRC32 ist die
-   crc32-Prüfsumme jeder einzelnen Datei im Archiv.
+   CRC32-Prüfsumme jeder einzelnen Datei im Archiv.
 
  = ALLE SONSTIGEN SIGNATUREN =
    Alle sonstigen Signaturen besitzen folgendes Format:
@@ -1121,9 +1162,9 @@
       überprüft werden soll.
    - "Allgemeine Signaturen" (general_*). Überprüft den Inhalt jeder Datei, die
       nicht in der Whitelist aufgeführt ist und überprüft werden soll.
-   - "Normierten ASCII Signaturen" (ascii_*). Überprüft den Inhalt jeder Datei,
+   - "Normierten ASCII-Signaturen" (ascii_*). Überprüft den Inhalt jeder Datei,
       die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
-   - "Normierten HTML Signaturen" (html_*). Überprüft den Inhalt jeder
+   - "Normierten HTML-Signaturen" (html_*). Überprüft den Inhalt jeder
       HTML-Datei, die nicht in der Whitelist aufgeführt ist und überprüft
       werden soll.
    - "Allgemeine Befehle" (hex_general_commands.csv). Überprüft den Inhalt
@@ -1132,9 +1173,9 @@
    - "Portable Executable Sectional Signaturen" (pe_*). Überprüft den Inhalt
       jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft
       werden soll und dem PE-Format entspricht.
-   - "Portable Executable Signaturen" (exe_*). Überprüft den Inhalt jeder Datei,
-      die nicht in der Whitelist aufgeführt ist und überprüft werden soll und
-      dem PE-Format entspricht.
+   - "Portable Executable Signaturen" (exe_*). Überprüft den Inhalt jeder
+      Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden
+      soll und dem PE-Format entspricht.
    - "ELF-Signaturen" (elf_*). Überprüft den Inhalt jeder Datei, die nicht in
       der Whitelist aufgeführt ist und überprüft werden soll und dem ELF-Format
       entspricht.
@@ -1144,12 +1185,15 @@
    - "Mach-O-Signaturen" (macho_*). Überprüft den Inhalt jeder Datei, die nicht
       in der Whitelist aufgeführt ist und überprüft werden soll und dem
       Mach-O-Format entspricht.
-   - "ZIP MetaData-Signaturen" (metadata_*). Überprüft die CRC32-Prüfsumme
+   - "Archiv-Metadata-Signaturen" (metadata_*). Überprüft die CRC32-Prüfsumme
       und Dateigröße der ersten Datei in jedem Archiv, welches nicht in der
       Whitelist aufgeführt ist und überprüft werden soll.
    - "Email-Signaturen" (mail_*). Überprüft mittels der Funktion
       phpMussel_mail() die Variable $body von E-Mail-Nachrichten oder ähnlichen
       Einträgen (Foreneinträge etc.).
+   - "Whitelist-Signaturen" (whitelist_*). Überprüft mittels MD5-Hash des
+      Inhalts und der Dateigröße jede Datei. Abgestimmt Dateien werden immun
+      gegen die von der Art der Signaturen in der Whitelist-Eintrag.
    (Beachten Sie, dass jede dieser Signaturen auf einfache Weise in der
     phpmussel.ini deaktiviert werden kann).
 
@@ -1179,9 +1223,9 @@
  vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen
  überlegen.
 
- Diese Informationen wurden zuletzt am 28.08.2014 aktualisiert und gelten für
- ALLE Versionen von phpMussel, von der ersten Version v0.1 bis zur letzten
- Version v0.4c zum Zeitpunkt des Erstellens dieser Dokumentation.
+ Diese Informationen wurden zuletzt am 2014.09.13 aktualisiert und gelten für
+ alle phpMussel Veröffentlichungen von der beiden letzten Nebenversionen
+ (v0.3-v0.4d) zu diesem Zeitpunkt.
 
  Ad-Aware                Keine bekannten Probleme
  Agnitum                 Keine bekannten Probleme
@@ -1189,7 +1233,7 @@
  AntiVir                 Keine bekannten Probleme
  Antiy-AVL               Keine bekannten Probleme
  Avast                !  Meldet "JS:ScriptSH-inf [Trj]"
-                         - Alle außer v0.3d
+                         - Alle außer v0.3d, v0.4d
  AVG                     Keine bekannten Probleme
  Baidu-International     Keine bekannten Probleme
  BitDefender             Keine bekannten Probleme
@@ -1224,15 +1268,14 @@
  MicroWorld-eScan        Keine bekannten Probleme
  NANO-Antivirus          Keine bekannten Probleme
  Norman               !  Meldet "Kryptik.BQS"
-                         - Alle außer v0.3d und v0.3e
+                         - Alle außer v0.3d, v0.3e, v0.4d
  nProtect                Keine bekannten Probleme
  Panda                   Keine bekannten Probleme
  Qihoo-360               Keine bekannten Probleme
  Rising                  Keine bekannten Probleme
  Sophos                  Keine bekannten Probleme
  SUPERAntiSpyware        Keine bekannten Probleme
- Symantec             !  Meldet "WS.Reputation.1"
-                         - v0.3e bis v0.4c
+ Symantec                Keine bekannten Probleme
  TheHacker               Keine bekannten Probleme
  TotalDefense            Keine bekannten Probleme
  TrendMicro              Keine bekannten Probleme
@@ -1246,5 +1289,5 @@
                                      ~ ~ ~                                     
 
 
-Zuletzt aktualisiert: 2014.08.28
+Zuletzt aktualisiert: 2014.09.13
 EOF

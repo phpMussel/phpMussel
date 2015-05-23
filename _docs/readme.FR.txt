@@ -527,11 +527,11 @@
  l'utilisation de ce script, avec une brève description de ce que tous ces
  fichiers sont pour.
 
- /phpmussel.php (Script, Inclus)
+ /phpmussel.php (Script, Inclu)
     phpMussel chargement fichier. Charge le principal script et etc. C'est ce
     que vous êtes censé être accrochage dans à (essentiel)!
     ~
- /web.config (Other, Inclus)
+ /web.config (Autre, Inclu)
     Un ASP.NET configuration fichier (dans ce cas, pour protéger de la "/vault"
     répertoire contre d'être consulté par des non autorisée sources dans le cas
     où le script est installé sur un serveur basé sur les ASP.NET
@@ -540,11 +540,18 @@
  /_docs/ (Directory)
     Documentation répertoire (contient divers fichiers).
     ~
- /_docs/change_log.txt (Documentation, Inclus)
+ /_docs/change_log.txt (Documentation, Inclu)
     Un enregistrement des modifications apportées au script entre les
     différentes versions (pas nécessaire pour le bon fonctionnement du script).
     ~
- /_docs/readme.XX.txt (Documentation, Inclus)
+ /_docs/readme.DE.txt (Documentation, Inclu); DEUTSCH
+ /_docs/readme.EN.txt (Documentation, Inclu); ENGLISH
+ /_docs/readme.ES.txt (Documentation, Inclu); ESPAÑOL
+ /_docs/readme.FR.txt (Documentation, Inclu); FRANÇAIS
+ /_docs/readme.ID.txt (Documentation, Inclu); BAHASA INDONESIA
+ /_docs/readme.IT.txt (Documentation, Inclu); ITALIANO
+ /_docs/readme.NL.txt (Documentation, Inclu); NEDERLANDSE
+ /_docs/readme.PT.txt (Documentation, Inclu); PORTUGUÊS
     Le README fichiers (par exemple; le fichier vous êtes en cours de lire).
     ~
  /_testfiles/ (Directory)
@@ -553,39 +560,39 @@
     correctement installé sur votre système, et vous n'avez pas besoin de
     télécharger ce répertoire ou l'un de ses fichiers, sauf si faire ces tests.
     ~
- /_testfiles/ascii_standard_testfile.txt (Test fichier, Inclus)
+ /_testfiles/ascii_standard_testfile.txt (Test fichier, Inclu)
     Test fichier à test phpMussel normalisé ASCII signatures.
     ~
- /_testfiles/exe_standard_testfile.exe (Test fichier, Inclus)
+ /_testfiles/exe_standard_testfile.exe (Test fichier, Inclu)
     Test fichier à test phpMussel PE signatures.
     ~
- /_testfiles/general_standard_testfile.txt (Test fichier, Inclus)
+ /_testfiles/general_standard_testfile.txt (Test fichier, Inclu)
     Test fichier à test phpMussel générales signatures.
     ~
- /_testfiles/graphics_standard_testfile.gif (Test fichier, Inclus)
+ /_testfiles/graphics_standard_testfile.gif (Test fichier, Inclu)
     Test fichier à test phpMussel graphiques signatures.
     ~
- /_testfiles/html_standard_testfile.txt (Test fichier, Inclus)
+ /_testfiles/html_standard_testfile.txt (Test fichier, Inclu)
     Test fichier à test phpMussel normalisé HTML signatures.
     ~
- /_testfiles/md5_testfile.txt (Test fichier, Inclus)
+ /_testfiles/md5_testfile.txt (Test fichier, Inclu)
     Test fichier à test phpMussel MD5 signatures.
     ~
- /_testfiles/metadata_testfile.txt.gz (Test fichier, Inclus)
+ /_testfiles/metadata_testfile.txt.gz (Test fichier, Inclu)
     Test fichier à test phpMussel métadonnées signatures et pour tester GZ
     fichier support sur votre système.
     ~
- /_testfiles/metadata_testfile.txt.zip (Test fichier, Inclus)
+ /_testfiles/metadata_testfile.txt.zip (Test fichier, Inclu)
     Test fichier à test phpMussel métadonnées signatures et pour tester ZIP
     fichier support sur votre système.
     ~
- /_testfiles/pe_sectional_testfile.exe (Test fichier, Inclus)
+ /_testfiles/pe_sectional_testfile.exe (Test fichier, Inclu)
     Test fichier à test phpMussel PE Sectional signatures.
     ~
  /vault/ (Répertoire)
     Voûte répertoire (contient divers fichiers).
     ~
- /vault/.htaccess (Autre, Inclus)
+ /vault/.htaccess (Autre, Inclu)
     Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles
     fichiers appartenant au script contre être consulté par non autorisées
     sources).
@@ -663,7 +670,7 @@
     activée. Peut enlever si l'option est désactivée (mais les fichiers seront
     recréés sur réactualiser).
     ~
- /vault/greylist.csv (Signatures, Included/Created)
+ /vault/greylist.csv (Signatures, Inclus/Créés)
     CSV de grise listé signatures indiquant pour phpMussel qui signatures il
     faut ignorer (fichier recréé automatiquement si supprimé).
     ~
@@ -686,7 +693,7 @@
     Peut enlever si l'option est désactivée (mais les fichiers seront recréés
     sur réactualiser).
     ~
- /vault/lang.inc (Script, Included)
+ /vault/lang.inc (Script, Inclu)
     phpMussel Langue Données; Obligatoire pour les capacités multilingues.
     ~
  /vault/macho_clamav_regex.cvd (Signatures, Inclus)
@@ -739,34 +746,43 @@
     activée. Peut enlever si l'option est désactivée (mais les fichiers seront
     recréés sur réactualiser).
     ~
- /vault/phpmussel.inc (Script, Inclus)
+ /vault/phpmussel.inc (Script, Inclu)
     phpMussel Principal Script; Le principal corps de phpMussel (essentiel)!
     ~
- /vault/phpmussel.ini (Other, Inclus)
+ /vault/phpmussel.ini (Autre, Inclu)
     phpMussel Configuration fichier; Contient toutes les configuration options
     de phpMussel, diriger comment faire fonctionner correctement (essentiel)!
     ~
- /vault/scan_log.txt *(Logfile, Created)
+ /vault/scan_log.txt *(Logfile, Créé)
     Un enregistrement de tout analysé par phpMussel.
     ~
- /vault/scan_kills.txt *(Logfile, Created)
+ /vault/scan_kills.txt *(Logfile, Créé)
     Les résultats de chaque fichier téléchargement bloqué/tués par phpMussel.
     ~
- /vault/template.html (Other, Inclus)
+ /vault/template.html (Autre, Inclu)
     phpMussel modèle fichier; Modèle pour l'HTML sortie produit par phpMussel
     pour son bloqués fichiers téléchargement message (le message vu par
     l'envoyeur).
     ~
- /vault/update.dat (Other, Inclus)
+ /vault/update.dat (Autre, Inclu)
     Fichier contenant les version informations pour le script et les signatures
     de phpMussel. Si jamais vous voulez à réactualiser automatiquement
     phpMussel ou réactualiser phpMusel par votre navigateur, ce fichier est
     indispensable.
     ~
- /vault/update.inc (Script, Inclus)
+ /vault/update.inc (Script, Inclu)
     phpMussel Réactualiser Script; Requis pour automatique réactualisation et
     pour réactualisation phpMussel par votre navigateur, mais n'est pas
     autrement requise.
+    ~
+ /vault/whitelist_clamav.cvd (Signatures, Inclus)
+ /vault/whitelist_custom.cvd (Signatures, Inclus)
+ /vault/whitelist_mussel.cvd (Signatures, Inclus)
+    Fichier spécifique blanche liste.
+    Nécessaire si l'option de blanche liste dans phpmussel.ini est activée et
+    si vous souhaitez avoir spécifiques fichiers en le blanche liste. Peut
+    enlever si l'option est désactivée ou si vous n'avez pas besoin de blanche
+    liste (mais les fichiers seront recréés sur réactualiser).
     ~
 
  * Noms du fichiers peut varier basé sur configuration stipulations (dans
@@ -1078,6 +1094,26 @@
      certaines méthodes, de ce que, si le programmeur d'un virus est conscient
      de, seront spécifiquement tenter d'empêcher, en vue de permettre leur
      virus n'être pas détectée.
+   "decode_threshold"
+   - Facultatif limitation ou seuil à la longueur de brutes données dans
+     laquelle commandes des décodages doivent être détectés (dans le cas où il
+     ya remarquable performance problèmes au cours de l'analyse). La valeur est
+     un entier représentant la tailles des fichiers en Ko.
+     Défaut = 512 (512Ko). Zéro ou nulle valeur désactive le seuil (supprimant
+     toute restriction basé sur la taille du fichier).
+   "scannable_threshold"
+   - Facultatif limitation ou seuil à la longueur de brutes données dans
+     laquelle phpMussel est autorisé à lire et à analyser (dans le cas où il ya
+     remarquable performance problèmes au cours de l'analyse). La valeur est un
+     entier représentant la tailles des fichiers en Ko. Défaut = 32768 (32Mo).
+     En général, cette valeur ne doit pas être moins que la moyenne tailles des
+     fichiers des téléchargements que vous voulez et s'attendent à recevoir de
+     votre serveur ou website, ne devrait pas être plus que la filesize_limit
+     directive, et ne devrait pas être plus que d'un cinquième de l'allocation
+     de totale mémoire autorisée à PHP via le php.ini configuration fichier.
+     Cette directive existe pour tenter d'empêcher phpMussel d'utiliser trop de
+     mémoire (ce qui l'empêcherait d'être capable d'analyse fichiers dessus
+     d'une certaine taille avec succès).
  "compatibility" (Catégorie)
  - Compatibilité directives pour phpMussel.
     "ignore_upload_errors"
@@ -1096,7 +1132,7 @@
       de lancer d'analyses pour ces vides éléments, ignorer quand il est
       reconnu et ne pas à retourner tout de connexes messages d'erreur,
       permettant ainsi la continuation de la page demande.
-      0 - DÉSACTIVÉ, 1 - SACTIVÉ.
+      0 - DÉSACTIVÉ, 1 - ACTIVÉ.
 
 
                                      ~ ~ ~                                     
@@ -1109,6 +1145,19 @@
     HASH:FILESIZE:NAME
    Où HASH est le MD5 hash d'un ensemble du fichier, FILESIZE est la totale
    taille du fichier et NAME est le nom à citer pour la signature.
+
+ = PE SECTIONAL MD5 SIGNATURES =
+   Toutes les PE Sectional MD5 signatures suivez le format:
+    FILESIZE:HASH:NAME
+   Où HASH est le MD5 hash d'un section du PE fichier, FILESIZE est la totale
+   taille du fichier et NAME est le nom à citer pour la signature.
+
+ = BLANCHE LISTE SIGNATURES =
+   Toutes les blanche liste signatures suivez le format:
+    HASH:FILESIZE:TYPE
+   Où HASH est le MD5 hash d'un ensemble du fichier, FILESIZE est la totale
+   taille du fichier et TYPE est le type de signatures le blanche listé fichier
+   est d'être immunitaire contre.
 
  = NOM DE FICHIER SIGNATURES =
    Toutes les nom de fichier signatures suivez le format:
@@ -1164,37 +1213,40 @@
 
  = SIGNATURE DÉTAIL =
    Ce qui suit est un détail des types de signatures utilisées par phpMussel:
-   - "MD5 Signatures" (md5_*). Vérifié contre le MD5 hash des contenus et la
-      taille du fichier de chaque fichier non listé blanche ciblée pour
-      l'analyse.
+   - "MD5 Signatures" (md5_*). Vérifié contre le MD5 hash des contenus et
+      taille de chaque fichier non listé blanche et ciblée pour l'analyse.
    - "Générales Signatures" (general_*). Vérifié contre les contenus de chaque
-      fichier non listé blanche ciblée pour l'analyse.
+      fichier non listé blanche et ciblée pour l'analyse.
    - "Normalisé ASCII Signatures" (ascii_*). Vérifié contre les contenus de
-      chaque fichier non listé blanche ciblée pour l'analyse.
+      chaque fichier non listé blanche et ciblée pour l'analyse.
    - "Normalisé HTML Signatures" (html_*). Vérifié contre les contenus de
-      chaque fichier de HTML non listé blanche ciblée pour l'analyse.
+      chaque fichier de HTML non listé blanche et ciblée pour l'analyse.
    - "Générales Commandes" (hex_general_commands.csv). Vérifié contre les
-      contenus de chaque fichier non listé blanche ciblée pour l'analyse.
-   - "Portable Executable Sectional Signatures" (pe_*). Vérifié contre les
-      contenus de chaque fichier non listé blanche ciblée pour l'analyse et
-      identifié au PE format.
+      contenus de chaque fichier non listé blanche et ciblée pour l'analyse.
+   - "Portable Executable Sectional Signatures" (pe_*). Vérifié contre le
+      taille et l'MD5 hash des sections de chaque PE fichier non listé
+      blanche, ciblée pour l'analyse et identifié au PE format.
    - "Portable Executable Signatures" (exe_*). Vérifié contre les contenus de
-      chaque fichier non listé blanche ciblée pour l'analyse et identifié au PE
-      format.
+      chaque fichier non listé blanche, ciblée pour l'analyse et identifié au
+      PE format.
    - "ELF Signatures" (elf_*). Vérifié contre les contenus de chaque fichier
-      non listé blanche ciblée pour l'analyse et identifié au ELF format.
+      non listé blanche, ciblée pour l'analyse et identifié au ELF format.
    - "Graphics Signatures" (graphics_*). Vérifié contre les contenus de chaque
-      fichier non listé blanche ciblée pour l'analyse et identifié à un connu
+      fichier non listé blanche, ciblée pour l'analyse et identifié à un connu
       graphique fichier format.
    - "Mach-O Signatures" (macho_*). Vérifié contre les contenus de chaque
-      fichier non listé blanche ciblée pour l'analyse et identifié au Mach-O
+      fichier non listé blanche, ciblée pour l'analyse et identifié au Mach-O
       format.
-   - "ZIP Métadonnées Signatures" (metadata_*). Vérifié contre le CRC32 hash et
-      taille du fichier de l'initial fichier contenu à l'intérieur de toute
-      archive non listé blanche ciblée pour l'analyse.
+   - "Archives Métadonnées Signatures" (metadata_*). Vérifié contre le CRC32
+      hash et taille de l'initial fichier contenu à l'intérieur de toute
+      archive non listé blanche et ciblée pour l'analyse.
    - "Email Signatures" (mail_*). Vérifié contre le $corps variable analysée à
       la phpMussel_mail() fonction, qui est destiné à être le corps des e-mails
       ou similaire entités (potentiellement messages du forum et etc).
+   - "Blanche Liste Signatures" (whitelist_*). Vérifié contre le MD5 hash des
+      contenus et la taille de chaque fichier ciblée pour l'analyse. Les
+      identifiés fichiers sera immunitaire d'être identifié par le type de
+      signature mentionné dans leur entrée de blanche liste.
    (Noter que ces signatures peut être facilement désactivé via phpmussel.ini).
 
 
@@ -1223,9 +1275,9 @@
  désactivation avant à travailler avec phpMussel ou devrait envisager d'autres
  options soit votre logiciel anti-virus ou phpMussel.
 
- Cette information a été réactualisé le 28 Août 2014 et est courant pour TOUTES
- les versions de phpMussel, partir de l'initiale version v0.1 travers à le
- dernière version v0.4c au moment de la rédaction cette.
+ Cette information a été réactualisé le 13 Septembre 2014 et est courant pour
+ toutes les phpMussel parutions des deux plus récentes mineures versions
+ (v0.3-v0.4d) au moment de la rédaction cette.
 
  Ad-Aware                Pas problèmes connus
  Agnitum                 Pas problèmes connus
@@ -1233,7 +1285,7 @@
  AntiVir                 Pas problèmes connus
  Antiy-AVL               Pas problèmes connus
  Avast                !  Rapports "JS:ScriptSH-inf [Trj]"
-                         - Tous sauf v0.3d
+                         - Tous sauf v0.3d, v0.4d
  AVG                     Pas problèmes connus
  Baidu-International     Pas problèmes connus
  BitDefender             Pas problèmes connus
@@ -1268,15 +1320,14 @@
  MicroWorld-eScan        Pas problèmes connus
  NANO-Antivirus          Pas problèmes connus
  Norman               !  Rapports "Kryptik.BQS"
-                         - Tous sauf v0.3d et v0.3e
+                         - Tous sauf v0.3d, v0.3e, v0.4d
  nProtect                Pas problèmes connus
  Panda                   Pas problèmes connus
  Qihoo-360               Pas problèmes connus
  Rising                  Pas problèmes connus
  Sophos                  Pas problèmes connus
  SUPERAntiSpyware        Pas problèmes connus
- Symantec             !  Rapports "WS.Reputation.1"
-                         - v0.3e à v0.4c
+ Symantec                Pas problèmes connus
  TheHacker               Pas problèmes connus
  TotalDefense            Pas problèmes connus
  TrendMicro              Pas problèmes connus
@@ -1290,5 +1341,5 @@
                                      ~ ~ ~                                     
 
 
-Dernière Réactualisé: 28 Août 2014 (2014.08.28).
+Dernière Réactualisé: 13 Septembre 2014 (2014.09.13).
 EOF

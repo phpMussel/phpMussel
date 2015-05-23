@@ -31,7 +31,7 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                      ~ ~ ~                                     
- This File: phpMussel v0.4a (28th July 2014) Language Data
+ This File: phpMussel v0.4d (10th September 2014) Language Data
 
  The latest version and future updates can be obtained from the phpMussel
  SourceForge page located at <http://sourceforge.net/projects/phpmussel/>
@@ -572,7 +572,7 @@ else if($MusselConfig['general']['lang']=="pt")
 	$MusselConfig['lang']['cli_commands']=" q\n - Deixar CLI.\n - Alias: quit, exit.\n md5_file\n - Gerar MD5 assinaturas de arquivos [Sintaxe: md5_file nome_do_arquivo].\n - Alias: m.\n md5\n - Gerar MD5 assinatura de string [Sintaxe: md5_file string].\n hex_encode\n - Converter binária string para hexadecimal [Sintaxe: hex_encode string].\n - Alias: x.\n hex_decode\n - Converter hexadecimal para binária string [Sintaxe: hex_decode string].\n base64_encode\n - Converter binária string para base64 string [Sintaxe: base64_encode string].\n - Alias: b.\n base64_decode\n - Converter base64 string para binária string [Sintaxe: base64_decode string].\n scan\n - Verificação arquivo ou diretório [Sintaxe: scan nome_do_arquivo].\n - Alias: s.\n update\n - Atualizar phpMussel.\n - Alias: u.\n forcedupdate\n - Forçosamente atualizar phpMussel.\n - Alias: f.\n c\n - Imprimir esta lista de comandos.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']="Falha ao completar processo de verificação";
 	$MusselConfig['lang']['cli_is_not_a']=" não é um arquivo ou diretório.";
-	$MusselConfig['lang']['cli_ln2']="      Obrigado por usar phpMussel, um php script baseado baseado em ClamAV     \n assinaturas projetado para detectar trojans, vírus, malwares e outras ameaças \n dentro de arquivos enviado para o seu sistema onde que o script está ligado.  \n      PHPMUSSEL COPYRIGHT 2013 e além GNU/GPL V.2 por Caleb M (Maikuolan)      \n\n                                     ~ ~ ~                                     \n\n";
+	$MusselConfig['lang']['cli_ln2']="    Obrigado por usando phpMussel, um script baseado em php baseado em ClamAV  \n  assinaturas projetado para detectar trojans, vírus, malware e outras ameaças \n    dentro arquivos uploaded para seu sistema sempre que script é enganchado.  \n   PHPMUSSEL COPYRIGHT 2013 e além GNU/GPL V.2 através do Caleb M (Maikuolan)  \n\n                                     ~ ~ ~                                     \n\n";
 	$MusselConfig['lang']['cli_ln3']=" Correntemente execução phpMussel em CLI modo (Comando linha interface).\n\n Para analisar um arquivo ou diretório, digitá 'scan', seguido pelo nome do\n arquivo ou diretório que você deseja phpMussel para analisar e pressione\n Enter; Digitá 'c' e pressione Enter por uma lista de CLI modo comandos; Digitá\n 'q' e pressione Enter para sair:";
 	$MusselConfig['lang']['cli_update_restart']=" Reiniciando phpMussel podem ser necessários antes que as atualizações se\n tornam aparentes.";
 	$MusselConfig['lang']['cli_working']="Em processo";

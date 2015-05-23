@@ -68,11 +68,13 @@
 
  2) Open "phpmussel.php", zoek naar de lijn die begint met "$vault=", en
     vervang de string tussen de volgende aanhalingstekens op die lijn met de
-    exacte ware locatie van de "gewelf" map van phpMussel. You'll have noticed such a directory in the archive you would've downloaded (unless you
-    feel up to re-coding the whole script, you'll need to maintain the same
-    file and directory structure as it was in the archive originally). This
-    "vault" directory should be one directory level beyond the directory that
-    the "phpmussel.php" file will exist in. Save file, close.
+    exacte ware locatie van de "gewelf" map van phpMussel. U zult hebben
+    gemerkt zo'n map in het archief zou je hebt gedownload (tenzij je zin om
+    opnieuw coderen van de hele script jezelf, je nodig hebt om dezelfde
+    bestanden en directory structuur te behouden zoals het was in het archief
+    oorspronkelijk). Deze directory "vault" moet men directory niveau waarboven
+    de directory die de "phpmussel.php" bestand zal bestaan in zijn. Bestand
+    opslaan, sluiten.
 
  4) (Optional; Strongly recommended for advanced users, but not recommended for
     beginners or for the inexperienced): Open "phpmussel.ini" (located inside
@@ -232,7 +234,7 @@
  contact me about it so that I may make the necessary changes, which, if you do
  not contact me, I may not necessarily be aware of.
 
- To disable signatures that are include with phpMussel (such as if you're
+ To disable signatures that are included with phpMussel (such as if you're
  experiencing a false positive specific to your purposes which should not
  normally be removed from streamline), refer to the Greylisting notes within
  the Browser Commands section of this README file.
@@ -509,7 +511,14 @@
     A record of changes made to the script between different
     versions (not required for proper function of script).
     ~
- /_docs/readme.XX.txt (Documentation, Included)
+ /_docs/readme.DE.txt (Documentation, Included); DEUTSCH
+ /_docs/readme.EN.txt (Documentation, Included); ENGLISH
+ /_docs/readme.ES.txt (Documentation, Included); ESPAÑOL
+ /_docs/readme.FR.txt (Documentation, Included); FRANÇAIS
+ /_docs/readme.ID.txt (Documentation, Included); BAHASA INDONESIA
+ /_docs/readme.IT.txt (Documentation, Included); ITALIANO
+ /_docs/readme.NL.txt (Documentation, Included); NEDERLANDSE
+ /_docs/readme.PT.txt (Documentation, Included); PORTUGUÊS
     The README files (for example; the file you're currently reading).
     ~
  /_testfiles/ (Directory)
@@ -716,6 +725,14 @@
     phpMussel Update Script; Required for automatic updates and for updating
     phpMussel via your browser, but not required otherwise.
     ~
+ /vault/whitelist_clamav.cvd (Signatures, Included)
+ /vault/whitelist_custom.cvd (Signatures, Included)
+ /vault/whitelist_mussel.cvd (Signatures, Included)
+    File specific whitelist.
+    Required if whitelisting option in phpmussel.ini is enabled and if you wish
+    to have specific files whitelisted. Can remove if option is disabled or if
+    you don't require whitelisting (but files will be recreated on update).
+    ~
 
  * Filename may differ based on configuration stipulations (in phpmussel.ini).
 
@@ -764,7 +781,7 @@
  "general" (Category)
  - General configuration for phpMussel.
     "script_password"
-    - As a conveniance, phpMussel will allow certain functions (including the
+    - As a convenience, phpMussel will allow certain functions (including the
       ability to update phpMussel on-the-fly) to be manually triggered via
       POST, GET and QUERY. However, as a security precaution, to do this,
       phpMussel will expect a password to be included with the command, as to
@@ -1005,6 +1022,24 @@
      require parsing those files in certain ways, which, if the programmer of a
      virus is aware of, will specifically try to prevent, in order to allow
      their virus to remain undetected.
+   "decode_threshold"
+   - Optional limitation or threshold to the length of raw data to which within
+     decode commands should be detected (in case there are any noticeable
+     performance issues whilst scanning). Value is an integer representing
+     filesize in KB. Default = 512 (512KB). Zero or null value disables the
+     threshold (removing any such limitation based on filesize).
+   "scannable_threshold"
+   - Optional limitation or threshold to the length of raw data to which
+     phpMussel is permitted to read and scan (in case there are any noticeable
+     performance issues whilst scanning). Value is an integer representing
+     filesize in KB. Default = 32768 (32MB). Generally, this value shouldn't be
+     less than the average filesize of file uploads that you want and expect to
+     receive to your server or website, shouldn't be more than the
+     filesize_limit directive, and shouldn't be more than roughly one fifth of
+     the total allowable memory allocation granted to php via the php.ini
+     configuration file. This directive exists to try to prevent phpMussel from
+     using up too much memory (which would prevent it from being able to
+     successfully scan files above a certain filesize).
  "compatibility" (Category)
  - Compatibility directives for phpMussel.
     "ignore_upload_errors"
@@ -1035,6 +1070,19 @@
    Where HASH is the MD5 hash of an entire file, FILESIZE is the total size
    of that file and NAME is the name to cite for that signature.
 
+ = PE SECTIONAL MD5 SIGNATURES =
+   All PE Sectional MD5 signatures follow the format:
+    FILESIZE:HASH:NAME
+   Where HASH is the MD5 hash of a section of the PE file, FILESIZE is the
+   total size of that file and NAME is the name to cite for that signature.
+
+ = WHITELIST SIGNATURES =
+   All Whitelist signatures follow the format:
+    HASH:FILESIZE:TYPE
+   Where HASH is the MD5 hash of an entire file, FILESIZE is the total size
+   of that file and TYPE is the type of signatures the whitelisted file is to be
+   immune against.
+
  = FILENAME SIGNATURES =
    All filename signatures follow the format:
     NAME:FNRX
@@ -1052,7 +1100,7 @@
    All other signatures follow the format:
     NAME:HEX:FROM:TO
    Where NAME is the name to cite for that signature and HEX is a
-   hexidecimal-encoded segment of the file intended to be matched by
+   hexadecimal-encoded segment of the file intended to be matched by
    the given signature. FROM and TO are optional parameters, indicting from
    which and to which positions in the source data to check against (not
    supported by the mail function).
@@ -1066,7 +1114,7 @@
    phpMussel source-code if you're not entirely sure about the context in
    which regex statements are parsed. Also, remember that all patterns (with
    exception to filename, archive metadata and MD5 patterns) must be
-   hexidecimally encoded (foregoing pattern syntax, of course)!
+   hexadecimally encoded (foregoing pattern syntax, of course)!
 
  = WHERE TO PUT CUSTOM SIGNATURES? =
    Only put custom signatures in those files intended for custom signatures.
@@ -1088,36 +1136,40 @@
  = SIGNATURE BREAKDOWN =
    The following is a breakdown of the types of signatures used by phpMussel:
    - "MD5 Signatures" (md5_*). Checked against the MD5 hash of the contents and
-     the filesize of every non-whitelisted file targeted for scanning.
+      the filesize of every non-whitelisted file targeted for scanning.
    - "General Signatures" (general_*). Checked against the contents of every
-     non-whitelisted file targeted for scanning.
+      non-whitelisted file targeted for scanning.
    - "Normalised ASCII Signatures" (ascii_*). Checked against the contents of
-     every non-whitelisted file targeted for scanning.
+      every non-whitelisted file targeted for scanning.
    - "Normalised HTML Signatures" (html_*). Checked against the contents of
       every non-whitelisted HTML file targeted for scanning.
    - "General Commands" (hex_general_commands.csv). Checked against the
-     contents of every non-whitelisted file targeted for scanning.
+      contents of every non-whitelisted file targeted for scanning.
    - "Portable Executable Sectional Signatures" (pe_*). Checked against the
-     contents of every non-whitelisted targeted for scanning and matched to the
-     PE format.
+      contents of every non-whitelisted targeted for scanning and matched to
+      the PE format.
    - "Portable Executable Signatures" (exe_*). Checked against the contents of
-     every non-whitelisted targeted for scanning and matched to the PE format.
+      every non-whitelisted targeted for scanning and matched to the PE format.
    - "ELF Signatures" (elf_*). Checked against the contents of every
-     non-whitelisted file targeted for scanning and matched to the ELF format.
+      non-whitelisted file targeted for scanning and matched to the ELF format.
    - "Graphics Signatures" (graphics_*). Checked against the contents of every
-     non-whitelisted file targeted for scanning and matched to a known
-     graphical file format.
+      non-whitelisted file targeted for scanning and matched to a known
+      graphical file format.
    - "Mach-O Signatures" (macho_*). Checked against the contents of every
-     non-whitelisted file targeted for scanning and matched to the Mach-O
-     format.
-   - "ZIP MetaData Signatures" (metadata_*). Checked against the CRC32
-     hash and filesize of the initial file contained inside of any
-     non-whitelisted archive targeted for scanning.
-   - "Email Signatures" (mail_*). Checked against the $body variable parsed
-     to the phpMussel_mail() function, which is intended to be the body of
-     email messages or similar entities (potentially forum posts and etcetera).
-   (Note that any of these signatures may be easily disabled via
-    phpmussel.ini).
+      non-whitelisted file targeted for scanning and matched to the Mach-O
+      format.
+   - "Archive Metadata Signatures" (metadata_*). Checked against the CRC32 hash
+      and filesize of the initial file contained inside of any non-whitelisted
+      archive targeted for scanning.
+   - "Email Signatures" (mail_*). Checked against the $body variable parsed to
+      the phpMussel_mail() function, which is intended to be the body of email
+      messages or similar entities (potentially forum posts and etcetera).
+   - "Whitelist Signatures" (whitelist_*). Checked against the MD5 hash of the
+      contents and the filesize of every file targeted for scanning. Matched
+      files will be immune to being matched by the type of signature mentioned
+      in their whitelist entry.
+     (Note that any of these signatures may be easily disabled via
+      phpmussel.ini).
 
 
                                      ~ ~ ~                                     
@@ -1144,9 +1196,9 @@
  with phpMussel or should consider alternative options to either your
  anti-virus software or phpMussel.
 
- This information was last updated 28th August 2014 and is current for ALL
- versions of phpMussel, from initial release v0.1 through to latest release
- v0.4c at the time of writing this.
+ This information was last updated 13th September 2014 and is current for all
+ phpMussel releases of the two most recent minor versions (v0.3-v0.4d) at the
+ time of writing this.
 
  Ad-Aware                Geen bekend problemen
  Agnitum                 Geen bekend problemen
@@ -1154,7 +1206,7 @@
  AntiVir                 Geen bekend problemen
  Antiy-AVL               Geen bekend problemen
  Avast                !  Berichten "JS:ScriptSH-inf [Trj]"
-                         - Alle behalve v0.3d
+                         - Alle behalve v0.3d, v0.4d
  AVG                     Geen bekend problemen
  Baidu-International     Geen bekend problemen
  BitDefender             Geen bekend problemen
@@ -1189,15 +1241,14 @@
  MicroWorld-eScan        Geen bekend problemen
  NANO-Antivirus          Geen bekend problemen
  Norman               !  Berichten "Kryptik.BQS"
-                         - Alle behalve v0.3d en v0.3e
+                         - Alle behalve v0.3d, v0.3e, v0.4d
  nProtect                Geen bekend problemen
  Panda                   Geen bekend problemen
  Qihoo-360               Geen bekend problemen
  Rising                  Geen bekend problemen
  Sophos                  Geen bekend problemen
  SUPERAntiSpyware        Geen bekend problemen
- Symantec             !  Berichten "WS.Reputation.1"
-                         - v0.3e tot v0.4c
+ Symantec                Geen bekend problemen
  TheHacker               Geen bekend problemen
  TotalDefense            Geen bekend problemen
  TrendMicro              Geen bekend problemen
@@ -1211,5 +1262,5 @@
                                      ~ ~ ~                                     
 
 
-Laatste Bijgewerkt: 28 Augustus 2014 (2014.08.28).
+Laatste Bijgewerkt: 13 September 2014 (2014.09.13).
 EOF

@@ -1,24 +1,24 @@
 phpMussel change_log.txt
 
-== CURRENT GOALS AND FUTURE VERSIONING GUIDELINES (Latest: v0.4c) ==
+== CURRENT GOALS AND FUTURE VERSIONING GUIDELINES (Latest: v0.4d) ==
 Next major release (v1.0):
 - All planned signature implementations completed, functioning correctly during
   a live test, without any known notable problems.
   Implemented [added/last edited+]:
-   * ELF signatures (stuff for Linux) [v0.2/v0.3g+];
-   * PE signatures (Portable executables; EXEs, DLLs, etc) [v0.2/v0.3g+];
+   * ELF signatures (stuff for Linux) [v0.2/v0.4d+];
+   * PE signatures (Portable executables; EXEs, DLLs, etc) [v0.2/v0.4d+];
    * PE Sectional signatures (Sections from portable executables) [v0.4+];
-   * Filename signatures [v0.3/v0.3g+];
-   * General (basic) signatures [v0.1/v0.3g+];
-   * General (extended) signatures [v0.1/v0.3g+];
-   * Graphics signatures [v0.2/v0.3g+];
-   * Mach-O signatures (stuff for Mac and Apple) [v0.2/v0.3g+];
-   * Email signatures [v0.2/v0.3g+];
+   * Filename signatures [v0.3/v0.4d+];
+   * General (basic) signatures [v0.1/v0.4d+];
+   * General (extended) signatures [v0.1/v0.4d+];
+   * Graphics signatures [v0.2/v0.4d+];
+   * Mach-O signatures (stuff for Mac and Apple) [v0.2/v0.4d+];
+   * Email signatures [v0.2/v0.4d+];
    * MD5 signatures [v0.1/0.3g+];
    * Archive metadata signatures [v0.1/v0.4c+];
   Partially implemented [added/last edited+]:
-   * ASCII (normalised) signatures (BATs, VBs, etc) [v0.4b+];
-   * HTML (normalised) signatures (HTML, JS, etc) [v0.4c+];
+   * ASCII (normalised) signatures (BATs, VBs, etc) [v0.4b/v0.4d+];
+   * HTML (normalised) signatures (HTML, JS, etc) [v0.4c/v0.4d+];
   Not implemented (those that I hope to get these done at some point);
    * OLE2 signatures (VBA and DOCX embeds, etc);
   Not implemented (those that I'm not yet sure if I'll do or not);
@@ -28,12 +28,13 @@ Next major release (v1.0):
    * Logical signatures (conditional multi-extended signatures);
    * Android signatures;
 - All pending to-do items completed.
-   Pending Items:
+   Currently pending items:
    * Current formats for archive metadata signatures supported are:
      ZIP, BZ, LZF, GZ. At minimum, this should also extend to RAR and 7z.
    * Currently, all formats for archive metadata signatures that are supported,
      with exception to ZIP format, can be scanned recursively. Ideally, ability
-     to scan ZIP files recursively should also be supported at some point.
+     to scan ZIP files recursively should also be supported at some point (along
+     with all future formats that are planned to be supported).
 - All known bugs fixed (none pending at this time).
 Next and/or subsequent minor releases (v0.X):
 - Any -significant- changes to the script including completing of any of the
@@ -45,9 +46,68 @@ Next and/or subsequent below sub-minor releases and/or re-releases (v0.Xy.Z):
 - Any releases containing no changes to the core code (such as, releases
   containing only either documentation or signature updates), or any releases
   containing changes to the core code without any included signature updates.
-Last Edited: 28th August 2014
+Last Edited: 8th September 2014
 
-=== Version 0.4c (Previous: 0.4b) ===
+=== Version 0.4d (Previous: 0.4c) ===
+SUMMARY:
+Updated to the latest signatures set (55+19354+4d).
+Sub-minor release (medium priority).
+
+NEW CHANGES:
+- Modified code for checking against graphics signatures as so that phpMussel
+  now checks signatures against both normalised and verbatim content (whereas
+  previously, it only checked against verbatim content) in order to harden
+  defences against a few particularly nasty known threats.
+- Added the ability for phpMussel to detect the presence of and decode Base64,
+  GZ, ROT13 and Hex2Bin decode commands within file uploads, thus allowing
+  phpMussel to understand and scan such encoded data (when detected and
+  decoded correctly). This has allowed me to write a few additional signatures
+  for improved defences against known threats.
+- Changed the way in which phpMussel reads the actual raw content of files in
+  the hopes of improving performance and speed (this has resulted in the
+  addition of a new function within the Core Script). Comparing the before and
+  the after of this change, I have noticed a slight improvement, but it isn't
+  significant and doesn't entirely satisfy me yet. Will likely try to develop
+  this further throughout some consequent releases.
+- Added the ability for phpMussel to optionally check against custom signatures
+  based upon the values of variables available to the scope of the core
+  scanning function of the Core Script. This ability functions similarly to how
+  other conditional signature checks function.
+- Added the ability to whitelist specific files via MD5 hash and filesize, in a
+  similar manner to how the MD5 and PE Sectional scanning functions. With this,
+  the whitelist entries included with the ClamAV signatures are now supported.
+  However, as most of the entries included with the ClamAV signatures are very
+  vaguely described and it appeared difficult to determine what most of those
+  whitelist entries were actually for, only a very small handful of them have
+  been included with phpMussel (those which I could adequately determine what
+  they were most likely for and for which I was confident enough would not
+  provide any potentially weaknesses to the defenses provided by phpMussel).
+  Refer to the README documentation for more details on how this file
+  whitelisting ability works.
+- Numerous other minor changes to the Core Script (phpmussel.inc).
+- A few additional directives added to the phpMussel configuration.
+- decode_threshold: Optional limitation to the length of raw data within which
+  decode commands should be detected (in case there are any noticeable
+  performance issues whilst scanning).
+- scannable_threshold: Optional limitation to the length of raw data to which
+  phpMussel is permitted to read and scan (in case there are any noticeable
+  performance issues whilst scanning).
+- Directives pertaining to the new whitelisting ability.
+- Shifted a small handful of phpMussel signatures from the General signatures
+  files to the ASCII signatures files for improved detection.
+- All documentation updated to reflect the changes brought about as of this
+  version of phpMussel.
+
+PROBLEMS/BUGS FIXED:
+- Corrected a bug whereby scanning for a specific file via CLI mode would
+  trigger the false-positive, "phpMussel-FN.Illegal.Character-5C", due to the
+  inherent presence of forward-slashes in the full-path.
+- A minor translation correction done to the Language Data; PT (lang.inc).
+
+Maikuolan,
+11th September 2014.
+
+=== Version 0.4c (Previous: 0.4b; Next: 0.4d) ===
 SUMMARY:
 Updated to the latest signatures set (55+19312+4c).
 Sub-minor release (medium priority).
@@ -57,9 +117,9 @@ NEW CHANGES:
   with which, as opposed to the previous release of that code whereby only
   the formats GZ and ZIP were supported, now, it additionally supports the
   formats BZ and LZF (although, certain PECL extensions of php will be required
-  in order for that additional supported to be functional; absense of those
+  in order for that additional supported to be functional; absence of those
   PECL extensions will prevent that additional support from being functional,
-  though, such absenses will have no adverse effect otherwise and phpMussel
+  though, such absences will have no adverse effect otherwise and phpMussel
   will continue to function normally regardlessly).
 - Minor non-significant code optimisations of the Loader (phpmussel.php).
 - Although the case is much the same as is with the implementation of support
@@ -339,8 +399,8 @@ NEW CHANGES:
   No new language support for documentation since previous version. Take in
   mind that, because my native language is English and I am not fluent with any
   other languages, there'll probably be the odd error here and there. I make no
-  apologies for this, but endevour to fix them whenever they become apparent.
-- Un-did some of the *_standard.cvd to *_regex.cvd swaps from the previous
+  apologies for this, but endeavour to fix them whenever they become apparent.
+- Undid some of the *_standard.cvd to *_regex.cvd swaps from the previous
   update for improved performance, manually removing any falsables I could
   find.
 - Improved the default Upload Denied message template file slightly.
@@ -455,7 +515,7 @@ NEW CHANGES:
   incorrect information, or if the configuration file somehow becomes
   corrupted, the chances of php returning missing variable warnings or fatal
   errors are reduced and proper function of the script is better safeguarded.
-- Added support for running phpMussel independantly from any hooks under CLI
+- Added support for running phpMussel independently from any hooks under CLI
   mode (command line interface) on Windows. While I'd continue to suggest that
   conventional anti-virus programs are going to be faster and more effective
   than phpMussel, if you do wish to use phpMussel as a file scanner to check
@@ -494,131 +554,5 @@ PROBLEMS/BUGS FIXED:
 
 Maikuolan,
 11th November 2013.
-
-=== Version 0.3 (Previous: 0.2b; Next: 0.3a) ===
-SUMMARY:
-Updated to the latest signatures set (55+17971+3).
-Minor release; Previous versions not compatible with the current version of
-the updater (high priority).
-
-NEW CHANGES:
-- Built a (very basic) command interface and an updater !!
-  Implemented a POST, GET and QUERY based command system, whereby certain
-  functions can be performed by triggering them via either POST, GET or QUERY,
-  meaning.. you can do things to phpMussel from within your browser.
-- phpMussel can now be updated automatically via password protected command.
-- phpMussel can be enabled and disabled via password protected command.
-- Logs can be viewed from your browser via password protected command.
-- Refined the main script and heavily expanded on non ClamAV sigantures.
-- Added signature greylisting capabilities.
-- Added some basic fraudulent metadata detections.
-
-Maikuolan,
-23rd October 2013.
-
-=== Version 0.2b (Previous: 0.2a; Next: 0.3) ===
-SUMMARY:
-Updated to the latest ClamAV signatures (55+17946).
-Experimental release (not stable; stable changes rolled to next version).
-
-Maikuolan,
-8th October 2013.
-
-=== Version 0.2a (Previous: 0.2; Next: 0.2b) ===
-SUMMARY:
-Sub-minor release; Previous versions not compatible with the current version of
-the updater (high priority).
-
-NEW CHANGES:
-- Did a bit of research; Added a bunch of signatures to the custom signatures.
-  These are all signatures that I strongly feel should be included with
-  phpMussel, but, because they are neither related to the testfiles nor a part
-  of signature set obtained from ClamAV, I've opted to place them in customs.
-  Of course, if anyone disagrees, they are more than welcome to remove them.
-
-PROBLEMS/BUGS FIXED:
-- Fixed a small problem found concerning occasionally mismatched file
-  extensions that were causing some strange false-positives in testing (mostly
-  concerning zip files and c files).
-
-Maikuolan,
-1st October 2013.
-
-=== Version 0.2 (Previous: 0.1a; Next: 0.2a) ===
-SUMMARY:
-My many thanks to those that helped with testing out the initial (and
-subsequent) release of phpMussel. :-)
-After receiving some great suggestions and ideas from Tobias (Spambotsecurity)
-regarding the previous release of phpMussel, I went to work changing a lot
-of what had been coded into the previous releases, combining most of those
-suggestions with a couple of new tricks I'd learned over the course of the
-past few days. These changes overall should drastically improve the
-performance, speed and effectiveness of phpMussel, as well as correct some
-theoretical exploits discovered. I've also began working on implementing
-more of the ClamAV signatures than the previous version could support, and
-while this version is by no means complete, it should be a drastic improvement
-over the previous version. It should be noted that modifications have been
-made to the vault files and signature files against, thus, this version of the
-script will not be compatible with previous versions of the script.
-
-NEW CHANGES:
-- Added support for GZIP'd files (can now read and interpret the contents
-  of GZIP'd files, parse GZIP metadata, and, can do so recursively; new
-  configuration option added to control maximum recursion depth)! With that,
-  phpMussel now supports GZ and ZIP encoded archives. Though, ZIPs still
-  aren't recursive and other common formats (7z, RAR) aren't yet supported.
-- Removed several custom-built functions altogether, replacing with faster
-  php-native equivalents, with new custom-built functions implemented to mimic
-  these functions when not available for purposes of backwards-compatibility.
-- Improved compatibility with external error handlers.
-- Multi-instance checking implemented.
-- Generally improved coding to reduce risk of warning flags (New/Fixed?).
-- Extended signatures have been (mostly) implemented (although, split into
-  segments for improved performance and usability). At this point, even
-  after a bit of research, I've still got absolutely no idea how to correctly
-  implement PE Sectional signatures, so, I suspect that one may take a long
-  time to get done. However, otherwise, most signatures should now be
-  implemented correctly. Normalised signatures (HTML, ASCII, etc) coming soon.
-  At this point, MD5, archive metadata, mail, Macho-O, graphics, PE
-  (non-Sectional), ELF and general signatures are supported.
-- Regex now supported.
-- Signature mapping incorporate, to reduce load-time of signatures.
-- Began implementation of proper block notifications. Intend to expand this
-  at a later date.
-- New testfile set (replacing old testfile set).
-- Added an email scanning function (will need to implement this yourself as
-  per your specific requirements).
-
-PROBLEMS/BUGS FIXED:
-- While the time requirements for checking against ClamAV signatures still
-  leaves something to be desired, the time requirements have been more than
-  halved in most testing instances. Although not ideal, I think this has
-  been improved enough to warrant making note of it here.
-- phpMussel now supports wildcards (thus increasing the number of ClamAV
-  signatures that can be correctly checked against)!
-- Several bugs found since the previous release fixed prior to this one (can
-  directly compare code between versions if necessary; mostly sub-minor bugs).
-
-PROBLEMS/BUGS FOUND:
-- As a side-effect of changes to this version, although time requirements
-  for signatures has been generally reduced, this reduction is scaled by both
-  the quantity and size of the files being scanned. Additionally, the memory
-  requirements of the script per each file being scanned, at present, is about
-  ~2.7xFilesize (example: if we assumed approximately ~2MB was required for the
-  script itself, assumed that all loaded signatures for that instance required
-  about ~6.7MB and assumed that the file targeted for scanning had a filesize
-  of about ~24.4MB, the total memory required by the process would be somewhere
-  in the range of ~74.6MBs). On php5, where the default memory limit is set
-  at 128MBs, this isn't a problem. However, for php4, where the default memory
-  limit is 64MBs, or for older versions of php where the default memory limit
-  is even less, this would cause maximum memory exceeded fatal warning to be
-  supplied by php and cause the entire script (including whatever is hooking
-  the script) to die prematurely. For the time being, a solution for older
-  systems is to simply set a lower filesize threshold in the phpMussel
-  configuration file. However, in the long term, another, better, solution
-  should be found.
-
-Maikuolan,
-26th September 2013.
 
 EOF

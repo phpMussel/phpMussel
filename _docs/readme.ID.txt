@@ -23,7 +23,7 @@
  5. DATA YANG DIIKUTKAN DALAM PAKET INI
  6. OPSI KONFIGURASI
  7. FORMAT TANDA TANGAN
- 8. MASALAH KECOCOKAN YANG DI KETAHUI
+ 8. MASALAH KOMPATIBILITAS DIKETAHUI
 
                                      ~ ~ ~                                     
 
@@ -144,21 +144,21 @@
  3) Buka "phpmussel.php", cari baris dimulai dengan "$vault=" dan gantukan
     kata-kata di antara tanda kutip berikut dengan lokasi sebenarnya dari
     direktori "vault" dari phpMussel. Anda akan telah melihat sebuah direktori
-    dari fail terkompres yang telah didownload. (Jika anda tidak telah mengkode
+    dari file terkompres yang telah didownload. (Jika anda tidak telah mengkode
     ulang keseluruhan script, anda perlu memelihara data yang sama dan struktur
-    direktori seperti di dalam fail terkompres). Direktori "vault" ini
+    direktori seperti di dalam file terkompres). Direktori "vault" ini
     seharusnya satu direktori di bawah direktori berisikan "phpmussel.php".
     Simpan data dan tutup.
 
  4) (Opsional; Sangat direkomendasikan untuk pengguna tingkat lanjut, tapi
     tidak direkomendasikan untuk pemula atau yang tidak berpengalaman): Buka
-    "phpmussel.ini" (terletak di dalam "vault") - fail ini berisikan semua opsi
+    "phpmussel.ini" (terletak di dalam "vault") - file ini berisikan semua opsi
     operasional dari phpMussel. Diatas tiap-tiap opsi seharusnya ada komentar
     tegas menguraikan apa yang dilakukan dan untuk apa. Atur opsi ini sampai
     anda melihat cocok, yang cocok untuk setup tertentu. Simpan data dan tutup.
 
  5) (Opsional) Anda dapat menggunakan phpMussel di dalam mode CLI untuk diri
-    anda sendiri dengan menciptakan fail batch untuk secara automatis memuat
+    anda sendiri dengan menciptakan file batch untuk secara automatis memuat
     php dan phpMussel. Untuk melakukannya, buka sebuah text editor kosong
     seperti Notepad atau Notepad++, ketikkan jalur dari data "php.exe" di dalam
     direktori dari instalasi php anda, diikuti spasi, diikuti dengan jalur
@@ -328,7 +328,7 @@
  Beberapa alasan mengapa anda -seharusnya- mengaktifkan kontrol-kontrol ini:
  - Menyediakan jalan untuk mewarnai biru tanda tangan secara langsung di dalam
    instansi-instansi seperti ketika anda menemukan sebuah tanda tangan yang
-   memproduksi sebuah angka positif yang salah selama mengupload fail ke sistem
+   memproduksi sebuah angka positif yang salah selama mengupload file ke sistem
    anda dan anda tidak punya waktu untuk secara manual mengedit dan mengupload
    ulang data greylist anda.
  - Menyediakan sebuah jalan untuk anda mengizinkan seseorang lain dari anda
@@ -398,7 +398,7 @@
                           terjadi jika anda sedang menggunakan kontrol-kontrol
                           ini dari sebuah komputer yang tidak aman dan/atau
                           tidak terpercaya). controls_lockout bekerja dengan
-                          menciptakan sebuah fail, controls.lck, di dalam
+                          menciptakan sebuah file, controls.lck, di dalam
                           vault anda, yang mana phpMussel akan mencek sebelum
                           melakukan perintah-perintah apapun. Setelah ini
                           terjadi, untuk kembali mengaktifkan kontrol-kontrol,
@@ -519,11 +519,11 @@
  potensial diciptakan sebagai hasil dari menggunakan script ini, sejalan dengan
  deskripsi singkat dari untuk apa data-data ini.
 
- /phpmussel.php (Script, diikutkan)
+ /phpmussel.php (Script, Diikutkan)
     data pemuat phpMussel. Memuat script utama, pengupdate, dll.
     Ini yang apa anda ingin masukkan  (utama)!
     ~
- /web.config (Lainnya, diikutkan)
+ /web.config (Lainnya, Diikutkan)
     Sebuah data konfigurasi ASP.NET (dalam instansi ini, untuk melindungi
     direktori "/vault" dari pengaksesan oleh sumber-sumber tidak terauthorisasi
     dalam kejadian yang mana skrip ini diinstal pada server berbasis teknologi
@@ -532,12 +532,19 @@
  /_docs/ (Directory)
     Direktori dokumentasi (berisi bermacam data).
     ~
- /_docs/change_log.txt (Dokumentasi, diikutkan)
+ /_docs/change_log.txt (Dokumentasi, Diikutkan)
     Sebuah rekaman dari perubahan yang dibuat pada script ini di antara
     perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari script).
     ~
- /_docs/readme.XX.txt (Dokumentasi, diikutkan)
-    Fail-fail baca saya (misalnya; fail yang anda sedang membaca).
+ /_docs/readme.DE.txt (Dokumentasi, Diikutkan); DEUTSCH
+ /_docs/readme.EN.txt (Dokumentasi, Diikutkan); ENGLISH
+ /_docs/readme.ES.txt (Dokumentasi, Diikutkan); ESPAÑOL
+ /_docs/readme.FR.txt (Dokumentasi, Diikutkan); FRANÇAIS
+ /_docs/readme.ID.txt (Dokumentasi, Diikutkan); BAHASA INDONESIA
+ /_docs/readme.IT.txt (Dokumentasi, Diikutkan); ITALIANO
+ /_docs/readme.NL.txt (Dokumentasi, Diikutkan); NEDERLANDSE
+ /_docs/readme.PT.txt (Dokumentasi, Diikutkan); PORTUGUÊS
+    File-file baca saya (misalnya; file yang anda sedang membaca).
     ~
  /_testfiles/ (Directory)
     Direktori test data-data (berisi bermacam data).
@@ -545,25 +552,25 @@
     phpMussel dengan benar diinstal pada sistem, dan anda tidak perlu
     mengupload direktori ini atau data-datanya jika melakukan testing.
     ~
- /_testfiles/ascii_standard_testfile.txt (Data test, diikutkan)
+ /_testfiles/ascii_standard_testfile.txt (Data test, Diikutkan)
     Data test untuk mentest tanda tangan ASCII normal phpMussel.
     ~
- /_testfiles/exe_standard_testfile.exe (Data test, diikutkan)
+ /_testfiles/exe_standard_testfile.exe (Data test, Diikutkan)
     Data test untuk mentest tanda tangan PE phpMussel.
     ~
- /_testfiles/general_standard_testfile.txt (Data test, diikutkan)
+ /_testfiles/general_standard_testfile.txt (Data test, Diikutkan)
     Data test untuk mentest tanda tangan umum phpMussel.
     ~
- /_testfiles/graphics_standard_testfile.gif (Data test, diikutkan)
+ /_testfiles/graphics_standard_testfile.gif (Data test, Diikutkan)
     Data test untuk mentest tanda tangan grafis phpMussel.
     ~
- /_testfiles/html_standard_testfile.txt (Data test, diikutkan)
+ /_testfiles/html_standard_testfile.txt (Data test, Diikutkan)
     Data test untuk mentest tanda tangan HTML normal phpMussel.
     ~
- /_testfiles/md5_testfile.txt (Data test, diikutkan)
+ /_testfiles/md5_testfile.txt (Data test, Diikutkan)
     Data test untuk mentest tanda tangan MD5 phpMussel.
     ~
- /_testfiles/metadata_testfile.txt.gz (Data test, diikutkan)
+ /_testfiles/metadata_testfile.txt.gz (Data test, Diikutkan)
     Data test untuk mentest tanda tangan metadata phpMussel dan untuk testing
     data support GZ pada sistem anda.
     ~
@@ -571,7 +578,7 @@
     Data test untuk mentest tanda tangan phpMussel dan untuk testing data
     support ZIP pada sistem anda.
     ~
- /_testfiles/pe_sectional_testfile.exe (Data test, diikutkan)
+ /_testfiles/pe_sectional_testfile.exe (Data test, Diikutkan)
     Data test untuk mentest tanda tangan PE Sectional phpMussel.
     ~
  /vault/ (Directory)
@@ -758,6 +765,15 @@
  /vault/update.inc (Skrip, Diikutkan)
     Skrip upgrade phpMussel; Diperlukan untuk upgrade otomatis dan untuk 
     mengupgrade phpMussel via browser anda, tapi tidak diperlukan juga.
+    ~
+ /vault/whitelist_clamav.cvd (Tanda tangan, Diikutkan)
+ /vault/whitelist_custom.cvd (Tanda tangan, Diikutkan)
+ /vault/whitelist_mussel.cvd (Tanda tangan, Diikutkan)
+    File spesifik whitelist.
+    Diperlukan jika opsi Whitelist di phpmussel.ini diaktifkan dan jika ingin
+    Anda spesifik file bertanda putih. Dapat menghapus jika opsi dinonaktifkan
+    atau jika Anda tidak memerlukan spesifik file bertanda putih (tapi
+    data-data akan diciptkan kembali pada saat mengupdate).
     ~
 
  * Nama file bisa berbeda berdasarkan ketentuan konfigurasi (di dalam
@@ -1069,8 +1085,26 @@
      tertentu, yang, jika programmer virus menyadari, secara khusus akan
      mencoba untuk mencegah, untuk memungkinkan virus mereka untuk tetap tidak
      terdeteksi.
+   "decode_threshold"
+   - Opsional pembatasan atau ambang batas dengan panjang data mentah yang
+     dalam decode perintah harus terdeteksi (dalam kasus ada masalah kinerja
+     sementara pemindaian). Nilai adalah bilangan yang mewakili ukuran file
+     dalam KB. Default = 512 (512KB). Nol atau nilai null menonaktifkan ambang
+     batas (menghapus apapun batasan berdasarkan ukuran file).
+   "scannable_threshold"
+   - Opsional pembatasan atau ambang batas dengan panjang data mentah yang
+     phpMussel diperbolehkan untuk membaca dan memindai (dalam kasus ada
+     masalah kinerja sementara pemindaian). Nilai adalah bilangan yang mewakili
+     ukuran file dalam KB. Default = 32768 (32MB). Umumnya, nilai ini tidak
+     seharusnya kurang dari ukuran file rata-rata upload file yang Anda
+     inginkan dan Anda harapkan untuk menerima ke server atau website, tidak
+     seharusnya lebih dari direktif filesize_limit, dan tidak seharusnya lebih
+     dari sekitar seperlima dari total alokasi memori yang diijinkan ke php
+     melalui file phpmussel.ini konfigurasi. Direktif ini ada untuk mencegah
+     phpMussel menggunakan terlalu banyak memori (yang bisa mencegah dari yang
+     berhasil memindai file di atas tertentu ukuran file).
  "compatibility" (Category)
- - Kompatibilitas direktif pada phpMussel.
+ - Direktif-direktif kompatibilitas pada phpMussel.
     "ignore_upload_errors"
     - Direktif ini umumnya harus diaktifkan OFF kecuali diperlukan untuk fungsi
       yang benar dari phpMussel pada sistem tertentu. Biasanya, ketika
@@ -1096,21 +1130,34 @@
  = TANDA TANGAN MD5 =
    Semua tanda tangan MD5 mengikuti format ini:
     HASH:FILESIZE:NAME
-   Dimana HASH adalah hasil acak MD5 dari keseluruhan data, FILESIZE adalah
-   total ukuran dari data dan NAME nama untuk mengutip tanda tangan tersebut.
+   Dimana HASH adalah MD5 dari keseluruhan file, FILESIZE adalah total ukuran
+   file dan NAME adalah nama untuk mengutip tanda tangan tersebut.
 
- = TANDA TANGAN NAMA DATA =
+ = TANDA TANGAN MD5 SEKSIONAL PE =
+   Semua tanda tangan MD5 seksional PE mengikuti format ini:
+    FILESIZE:HASH:NAME
+   Dimana HASH adalah MD5 dari seksi PE, FILESIZE adalah total ukuran file dan
+   NAME adalah nama untuk mengutip tanda tangan tersebut.
+
+ = TANDA TANGAN PUTIH =
+   Semua tanda tangan putih mengikuti format ini:
+    HASH:FILESIZE:TYPE
+   Dimana HASH adalah MD5 dari keseluruhan file, FILESIZE adalah total ukuran
+   file dan TYPE adalah jenis tanda tangan yang file daftar putih tersebut
+   adalah kebal terhadap.
+
+ = TANDA TANGAN NAMA FILE =
    Semua tanda tangan nama file mengikuti format ini:
     NAME:FNRX
    Dimana NAME adalah nama mengutip tanda tangan dan FNRX adalah pola regex
    untuk mencocokkan nama file (tidak ter-encode).
 
- = TANDA TANGAN METADATA DATA TERKOMPRES =
-   Semua tanda tangan meta data data terkompres mengikuti format ini:
+ = TANDA TANGAN METADATA ARSIP =
+   Semua tanda tangan meta data arsip mengikuti format ini:
     NAME:FILESIZE:CRC32
    Di mana NAME adalah nama mengutip tanda tangan itu, FILESIZE adalah total
-   ukuran data (tidak terkompres) dari sebuah data berisikan data terkompres
-   dan CRC32 adalah checksum crc32 dari data yang berisikan.
+   ukuran data (tidak terkompres) dari sebuah data berisikan arsip dan CRC32
+   adalah checksum crc32 dari data yang berisikan.
 
  = YANG LAIN =
    Semua tanda tangan yang lain mengikuti format ini:
@@ -1154,43 +1201,47 @@
  = SIGNATURE BREAKDOWN =
    Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan
    phpMussel:
-   - "Tanda tangan MD5" (md5_*). Dicek pada hash MD5 dari isi dan ukuran data
-      dari tiap data non-whitelisted yang ditargetkan untuk dipindai.
-   - "Tanda tangan umum" (general_*). Dicek pada isi dari data non-whitelisted
-      yang ditargetkan untuk dipindai.
-   - "Tanda tangan ASCII normal" (ascii_*). Dicek pada isi dari data
-      non-whitelisted yang ditargetkan untuk dipindai.
-   - "Tanda tangan HTML normal" (html_*). Dicek pada isi dari data HTML
-      non-whitelisted yang ditargetkan untuk dipindai.
-   - "Perintah umum" (hex_general_commands.csv). Dicek pada isi dari tiap data
-      non-whitelisted yang ditargetkan untuk dipindai.
-   - "Tanda tangan Portable Executable Sectional" (pe_*). Dicek pada isi dari
-      tiap data non-whitelisted yang ditargetkan untuk dipindai dan dicocokkan
+   - "Tanda tangan MD5" (md5_*). Dicek pada hash MD5 dari isi dan ukuran file
+      dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
+   - "Tanda tangan umum" (general_*). Dicek pada isi dari apapun file tidak
+      bertanda putih dan ditargetkan untuk dipindai.
+   - "Tanda tangan ASCII normal" (ascii_*). Dicek pada isi dari apapun file
+      tidak bertanda putih dan ditargetkan untuk dipindai.
+   - "Tanda tangan HTML normal" (html_*). Dicek pada isi dari apapun file HTML
+      tidak bertanda putih dan ditargetkan untuk dipindai.
+   - "Perintah umum" (hex_general_commands.csv). Dicek pada isi dari apapun
+      file tidak bertanda putih dan ditargetkan untuk dipindai.
+   - "Tanda tangan Portable Executable Sectional" (pe_*). Dicek pada hash MD5
+      dari seksi PE dan ukuran file dari apapun file tidak bertanda putih dan
+      ditargetkan untuk dipindai dan dicocokkan ke format PE.
+   - "Tanda tangan Portable Executable" (exe_*). Dicek pada isi dari apapun
+      file tidak bertanda putih dan ditargetkan untuk dipindai dan dicocokkan
       ke format PE.
-   - "Tanda tangan Portable Executable" (exe_*). Dicek pada isi dari tiap data
-      non-whitelisted yang ditargetkan untuk dipindai dan dicocokkan ke format
-      PE.
-   - "Tanda tangan ELF" (elf_*). Dicek pada isi dari tiap data non-whitelisted
-      yang ditargetkan untuk dipindai dan dicocokkan ke format ELF.
-   - "Tanda tangan Grafis" (graphics_*). Dicek pada isi dari tiap data
-      non-whitelisted yang ditargetkan untuk dipindai dan dicocokan ke format
-      data grafis.
-   - "Tanda tangan Mach-O" (macho_*). Dicek pada isi dari tiap data
-      non-whitelisted yang ditargetkan untuk dipindai dan dicocokan ke format
+   - "Tanda tangan ELF" (elf_*). Dicek pada isi dari apapun file tidak bertanda
+      putih dan ditargetkan untuk dipindai dan dicocokkan ke format ELF.
+   - "Tanda tangan Grafis" (graphics_*). Dicek pada isi dari apapun file tidak
+      bertanda putih dan ditargetkan untuk dipindai dan dicocokkan ke apapun
+      diketahui format grafis.
+   - "Tanda tangan Mach-O" (macho_*). Dicek pada isi dari apapun file tidak
+      bertanda putih dan ditargetkan untuk dipindai dan dicocokkan ke format
       Mach-O.
-   - "Tanda tangan Metadata ZIP" (metadata_*). Dicek pada hash CRC32 dan ukuran
-      data dari data berisikan di dalam file terkompress non-whitelisted dan
-      ditargetkan untuk dipindai.
+   - "Tanda tangan Metadata Arsip" (metadata_*). Dicek pada hash CRC32 dan
+      ukuran file dari pertama file berisikan dalam apapun arsip terkompress
+      tidak bertanda putih dan ditargetkan untuk dipindai.
    - "Email Signatures" (mail_*). Dicek pada variabel $body diparse ke fungsi
       phpMussel_mail(), yang dimaksudkan untuk menjadi body dari pesan-pesan
       email atau entries yang sama (secara potensial post forum dll).
+   - "Tanda tangan Putih" (whitelist_*). Dicek pada hash MD5 dari isi dan
+      ukuran file dari apapun file ditargetkan untuk dipindai. File dicocokkan
+      akan kebal terhadap dari dicocokkan dengan jenis tanda tangan yang
+      disebutkan dalam entri daftar putih mereka.
      (Catatan jika tanda tangan ini boleh dinonaktifkan melalui phpmussel.ini).
 
 
                                      ~ ~ ~                                     
 
 
- 8. MASALAH KECOCOKAN YANG DIKETAHUI
+ 8. MASALAH KOMPATIBILITAS DIKETAHUI
 
  PHP dan PCRE
  - phpMussel memerlukan PHP dan PCRE untuk mengeksekusi dan berfungsi dengan
@@ -1199,7 +1250,7 @@
    dan PCRE dan tersedia secara prioritas untuk mengunduh dan menginstal
    phpMussel.
 
- ANTI-VIRUS SOFTWARE KOMPATIBILITAS
+ KOMPATIBILITAS SOFTWARE ANTI-VIRUS
 
  Untuk banyak bagian, phpMussel seharusnya kompatibel dengan software
  pemindaian virus. Bagaimanapun konflik telah dilaporkan oleh penggunak di masa
@@ -1212,9 +1263,9 @@
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 28 Agustus 2014 dan cocok untuk semua versi dari
- phpMussel, dari inisial release v0.1 melalui release terakhir v0.4c pada
- waktu saya menuliskan ini.
+ Informasi ini diupdate 13 September 2014 dan cocok untuk semua rilis phpMussel
+ dari dua versi minor terbaru versi (v0.3-v0.4d) pada waktu saya menuliskan
+ ini.
 
  Ad-Aware                Tidak ada masalah yang diketahui
  Agnitum                 Tidak ada masalah yang diketahui
@@ -1222,7 +1273,7 @@
  AntiVir                 Tidak ada masalah yang diketahui
  Antiy-AVL               Tidak ada masalah yang diketahui
  Avast                !  Report "JS:ScriptSH-inf [Trj]"
-                         - semua kecuali v0.3d
+                         - semua kecuali v0.3d, v0.4d
  AVG                     Tidak ada masalah yang diketahui
  Baidu-International     Tidak ada masalah yang diketahui
  BitDefender             Tidak ada masalah yang diketahui
@@ -1257,15 +1308,14 @@
  MicroWorld-eScan        Tidak ada masalah yang diketahui
  NANO-Antivirus          Tidak ada masalah yang diketahui
  Norman               !  Report "Kryptik.BQS"
-                         - Semua kecuali v0.3d dan v0.3e
+                         - Semua kecuali v0.3d, v0.3e, v0.4d
  nProtect                Tidak ada masalah yang diketahui
  Panda                   Tidak ada masalah yang diketahui
  Qihoo-360               Tidak ada masalah yang diketahui
  Rising                  Tidak ada masalah yang diketahui
  Sophos                  Tidak ada masalah yang diketahui
  SUPERAntiSpyware        Tidak ada masalah yang diketahui
- Symantec             !  Report "WS.Reputation.1"
-                         - v0.3e melalui v0.4c
+ Symantec                Tidak ada masalah yang diketahui
  TheHacker               Tidak ada masalah yang diketahui
  TotalDefense            Tidak ada masalah yang diketahui
  TrendMicro              Tidak ada masalah yang diketahui
@@ -1279,5 +1329,5 @@
                                      ~ ~ ~                                     
 
 
-Terakhir Diperbarui: 28 Agustus 2014 (2014.08.28).
+Terakhir Diperbarui: 13 September 2014 (2014.09.13).
 EOF
