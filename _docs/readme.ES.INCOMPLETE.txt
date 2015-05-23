@@ -13,7 +13,7 @@
  4B. CLI (COMANDOS LÍNEA INTERFAZ)
  5. ARCHIVOS INCLUIDOS EN ESTE PAQUETE
  6. CONFIGURACIÓN OPCIONES
- 7. DEFINICIONES FORMATO
+ 7. FIRMA FORMATOS
  8. CONOCIDOS PROBLEMAS DE COMPATIBILIDAD
 
                                      ~ ~ ~
@@ -23,7 +23,7 @@
 
  Gracias por usar phpMussel, un PHP script diseñado para detectar troyanos,
  virus, malware y otras amenazas en los archivos cargados en el sistema donde
- el script está adjunto, basado en las definiciones de ClamAV y otros.
+ el script está adjunto, basado en las firmas de ClamAV y otros.
 
  PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan).
 
@@ -237,19 +237,20 @@
     -> No problemas encontrado.
     Wed, 16 Sep 2013 02:49:47 +0000 Terminado.
 
- For a full break-down of what sort of signatures phpMussel uses during its
- scans and how it handles these signatures, refer to the Signature Format
- section of this README file.
+ Para una descripción completa del tipo de firmas phpMussel utiliza durante el
+ escanear y la forma en que maneja estas firmas, consulte la sección Firma
+ Formatos de este README archivo.
 
- If you encounter any false positives, if you encounter something new that you
- think should be blocked, or for anything else regarding signatures, please
- contact me about it so that I may make the necessary changes, which, if you do
- not contact me, I may not necessarily be aware of.
+ Si se encuentra algún falsos positivos, si se encuentra con algo nuevo que
+ crees que debería ser bloqueada, o para cualquier otra cosa en relación con
+ las firmas, por favor contacto conmigo al respecto para que pueda hacer los
+ cambios necesarios, para que, si no se comunica conmigo, posiblemente no
+ necesariamente tener en cuenta.
 
- To disable signatures that are included with phpMussel (such as if you're
- experiencing a false positive specific to your purposes which should not
- normally be removed from streamline), refer to the Greylisting notes within
- the Browser Commands section of this README file.
+ Para desactivar las firmas que se incluyen con phpMussel (por ejemplo, si
+ usted está experimentando un falso positivo específico para sus propósitos
+ que normalmente no debería ser suprimido), consulte las notas de la Greylist
+ en el Navegador Comandos sección de este README archivo.
 
  In addition to the default file upload scanning and the optional scanning
  of other files and/or directories specified via the above function, included
@@ -1242,7 +1243,7 @@
                                      ~ ~ ~
 
 
- 7. DEFINICIONES FORMATO
+ 7. FIRMA FORMATOS
 
  = FILENAME SIGNATURES =
    All filename signatures follow the format:

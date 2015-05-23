@@ -30,7 +30,22 @@ Anything less than sub-minor:
   than sub-minor.
 Last Edited: 15th November 2014
 
-=== Version 0.6b / Release 0.6b.1 (Previous Release: 0.6b) ===
+=== Version 0.6b / Release 0.6b.2 (Previous Release: 0.6b.1) ===
+SUMMARY:
+Updated to the latest signatures set (55+19916+6b.2).
+Language Data updated; No other script files modified (low priority).
+
+NEW CHANGES:
+- Slightly updated language data (2015.01.11).
+- Large number of new signatures targeting malicious PE files added.
+- Narrowed a number of MD5-based signatures.
+- Updated to the the latest ClamAV signatures; PhishTank signatures; All other
+  signatures and etc.
+
+Maikuolan,
+15th January 2015.
+
+=== Version 0.6b / Release 0.6b.1 (Previous Release: 0.6b; Next: 0.6b.2) ===
 SUMMARY:
 Updated to the latest signatures set (55+19868+6b.1).
 No script changes (low priority).

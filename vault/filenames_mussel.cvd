@@ -198,11 +198,7 @@ phpMussel-FN.Backdoor.Rustock-03:^(zdegpig)\.ini
 phpMussel-FN.Rootkit.HacDef.AB-0:^ioservice\.ini
 phpMussel-FN.Trojan.Peacomm.C-2:^(spooldr|[Ee][Cc]ard|[Mm][Ss][Dd]ata[Aa]ccess|applet)\.ini
 phpMussel-FN.Trojan.Peacomm.D-2:^(halloween|sony|noskrnl|_install)\.ini
->FN>\.[Ll][Oo][Gg]>204
-phpMussel-FN.Backdoor.Ginwui.E-1:^[Ff][Kk][0-9]+\.[Ll][Oo][Gg]
-phpMussel-FN.Backdoor.Ginwui.F-1:^[Kk][Bb][0-9]+\.[Ll][Oo][Gg]
-phpMussel-FN.Backdoor.Rustock-01:^(serazavr|mqzprwe)\.log
->FN>\.[Pp][Hh][Pp]>216
+>FN>\.[Pp][Hh][Pp]>212
 phpMussel-FN.Generic-03B:[Ee][Xx][Ee][Cc]\.[Pp][Hh][Pp]
 phpMussel-FN.Generic-06B:[Cc][Ss][Ee]\.[Pp][Hh][Pp]
 phpMussel-FN.Generic-09:[Dd][0Oo]{2}[R][0-9]{0,64}\.[Pp][Hh][Pp]
@@ -214,7 +210,7 @@ phpMussel-FN.Generic-31:[Ss]{2}[Hh][0-9]+\.[Pp][Hh][Pp]
 phpMussel-FN.Generic-33:tool[0-9]{2,}\.php
 phpMussel-FN.Generic-34:^(cih|reno|som2|upnew|txt|xia|xpl)\.php
 phpMussel-FN.Generic-56:^[Uu][Pp][Xx]\.[Pp][Hh][Pp]
->FN>\.[Pp][^Hh]>224
+>FN>\.[Pp][^Hh]>220
 phpMussel-FN.Backdoor.HackDefender-1:^msdvdr\.pif
 phpMussel-FN.Backdoor.Rustock-20:^(pcximg)\.pif
 phpMussel-FN.Backdoor.WHMCS.PY-0:^whmcs\.py
@@ -222,7 +218,7 @@ phpMussel-FN.Generic-11:equiangle\.pl
 phpMussel-FN.Generic-17:([Mm][Ii][Ss][Tt][Ll][Ee][Ss]{2}|[Ii][Nn][Dd][Ii][Vv][Ii][Ss][Ii][Oo][Nn])\.[Pp][Ll]
 phpMussel-FN.Rootkit.HacDef.EQ-0:^msdndr\.pif
 phpMussel-FN.Rootkit.RTKT_DUQU.A-0B:^[Cc][Mm][Ii]44(32|64)\.[Pp][Nn][Ff]
->FN>\.[Ss][Yy][Ss]>371
+>FN>\.[Ss][Yy][Ss]>367
 phpMussel-FN.Backdoor.Darkmoon.C-0C:^bridges\.sys
 phpMussel-FN.Backdoor.Haxdoor.L-0:^prw76sks\.sys
 phpMussel-FN.Backdoor.Haxdoor.N-0B:^(qo|dvb03a|dvb06a)\.sys
@@ -369,11 +365,11 @@ phpMussel-FN.W32.Worm.Goldax.P2P:^mcfdrv\.sys
 phpMussel-FN.W32.Worm.Rbot.AGE:^msriv1\.sys
 phpMussel-FN.W32.Worm.Sdbot:^msdirectx\.sys
 phpMussel-FN.W32.Worm.Zimuse.B-0:^Ms(eu|tart)\.sys
->FN>\.[Tt][Mm][Pp]>375
+>FN>\.[Tt][Mm][Pp]>371
 phpMussel-FN.Backdoor.Sanjicom-1:^[Kk][Bb][0-9]+\.[Tt][Mm][Pp]
 phpMussel-FN.Rootkit.HacDef.AB-0:^\.tmp
 phpMussel-FN.Rootkit.ROJ_ROOTKIT.EW-1:^0wl\.tmp
->FN>\.[Tt][Xx][Tt]>379
+>FN>\.[Tt][Xx][Tt]>375
 phpMussel-FN.Generic-36:^zfxid[0-9]+\.txt
 phpMussel-FN.Backdoor.Rustock-23:^ellowtab\.txt
 phpMussel-FN.Defacement-000:0[Ww][Nn][3Ee][Dd]\.[Tt][Xx][Tt]
@@ -404,6 +400,7 @@ phpMussel-FN.Cloaker-0G:^[!].{0,128}\.[Xx][Mm][Ll]
 phpMussel-FN.Cloaker-0H:^\.[Xx][Mm][Ll]$
 phpMussel-FN.Cloaker-0I:^[!].{0,128}\.[Dd][Mm][Pp]
 phpMussel-FN.Cloaker-0J:^\.[Dd][Mm][Pp]$
+phpMussel-FN.Defacement-001:^0[Bb][Ii][Tt]0\.[Gg][Ii][Ff]$
 phpMussel-FN.Defacement-002:[0Oo9Pp][Ww][Nn][3Ee][Dd]\.([PP][Hh][Pp]|[Jj][Pp][Ee]?[Gg]|[Gg][Ii][Ff]|[Pp][Nn][Gg]|[DdSsXx]?[Hh][Tt]|[Ww][Mm]|[Tt][Ee]?[Xx])
 phpMussel-FN.Defacement-003:^[Pp][Ww][Nn].{0,128}\.([CcXxZz]|[PP][Hh][Pp]|[Pp][LlYy]|[DdSsXx]?[Hh][Tt]|[Ww][Mm]|[Tt][Ee]?[Xx]|[EeFf][LlXx])
 phpMussel-FN.Generic-00:appfileexplorer
@@ -426,7 +423,6 @@ phpMussel-FN.Generic-26:[Pp][Ss][Hh][Yy][Cc][Oo]
 phpMussel-FN.Generic-28:[Qq][Uu][Aa][Rr][Aa][Nn][Tt][Ee]{2}[Nn]
 phpMussel-FN.Generic-29:^pr0n.{0,128}\.
 phpMussel-FN.Generic-32:terminatorx[-]?exp
-phpMussel-FN.Generic-35:(web\.|www)root
 phpMussel-FN.Generic-51A:(\xe7\x97\x85\xe6\xaf\x92|\x75\xc5\x6b\xd2|\xe9\xbb\x91\xe5\xae\xa2|\x9e\xd1\x5b\xa2).{0,128}\.(386|[Aa][Cc][Mm]|[Aa][Xx]|[Cc][Oo][Mm]|[Rr][Ss][^Ss]|[Cc][Pp][Ll]|[Dd][Ll][Ll]|[Dd][Rr][Vv]|[Ee][Xx][Ee]|[Oo][Cc][Xx]|[Ss][Cc][FfRrTt]|[Ss][Yy][Ss]|[Vv][Xx][Dd]|[Bb][Aa][SsTt]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb]|[Ww][Ss]|[Pp][Ii][Ff]|[Aa][Pp]{2}|[Rr][Ee][Gg]|[Ff][Xx][Pp]|[Kk][Ss][Hh]|[Oo][Pp][SsXx]|[Pp][Rr][Gg]|[Pp][Hh][Pp][Xx][MmSs][Ll]|[WwSsDdXx]?[Hh][Tt])
 phpMussel-FN.Generic-51B:(\xd1\x85\xd0\xb0\xd0\xba\xd0\xb5\xd1\x80|\xd0\xa5\xd0\x90\xd0\x9a\xd0\x95\xd0\xa0|\x04\x45\x04\x30\x04\x3a\x04\x35\x04\x40|\x04\x25\x04\x10\x04\x1a\x04\x15\x04\x20|\xd0\xb2\xd0\xb8\xd1\x80\xd1\x83\xd1\x81|\xd0\x92\xd0\x98\xd0\xa0\xd0\xa3\xd0\xa1|\x04\x32\x04\x38\x04\x40\x04\x43\x04\x41|\x04\x12\x04\x18\x04\x20\x04\x23\x04\x21).{0,128}\.(386|[Aa][Cc][Mm]|[Aa][Xx]|[Cc][Oo][Mm]|[Rr][Ss][^Ss]|[Cc][Pp][Ll]|[Dd][Ll][Ll]|[Dd][Rr][Vv]|[Ee][Xx][Ee]|[Oo][Cc][Xx]|[Ss][Cc][FfRrTt]|[Ss][Yy][Ss]|[Vv][Xx][Dd]|[Bb][Aa][SsTt]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb]|[Ww][Ss]|[Pp][Ii][Ff]|[Aa][Pp]{2}|[Rr][Ee][Gg]|[Ff][Xx][Pp]|[Kk][Ss][Hh]|[Oo][Pp][SsXx]|[Pp][Rr][Gg]|[Pp][Hh][Pp][Xx][MmSs][Ll]|[WwSsDdXx]?[Hh][Tt])
 phpMussel-FN.Generic-52:([Xx]|\xd1\x85|\xd0\xa5)([Rr]|\xd1\x80|\xd0\xa0)([UuVv]|\xd1\x83|\xd0\xa3)([Mm]|\xd0\xbc|\xd0\x9c)([3Ee]|\xd0\xb5|\xd0\x95|\xd0\xb7|\x0d\x0a|\xd0\x95|\xd0\x97)([Rr]|\xd1\x82|\xd0\xa2|\xd1\x80|\xd0\xa0).{0,128}\.(386|[Aa][Cc][Mm]|[Aa][Xx]|[Cc][Oo][Mm]|[Rr][Ss][^Ss]|[Cc][Pp][Ll]|[Dd][Ll][Ll]|[Dd][Rr][Vv]|[Ee][Xx][Ee]|[Oo][Cc][Xx]|[Ss][Cc][FfRrTt]|[Ss][Yy][Ss]|[Vv][Xx][Dd]|[Bb][Aa][SsTt]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb]|[Ww][Ss]|[Pp][Ii][Ff]|[Aa][Pp]{2}|[Rr][Ee][Gg]|[Ff][Xx][Pp]|[Kk][Ss][Hh]|[Oo][Pp][SsXx]|[Pp][Rr][Gg]|[Pp][Hh][Pp][Xx][MmSs][Ll]|[WwSsDdXx]?[Hh][Tt])
@@ -451,6 +447,7 @@ phpMussel-FN.Suspect.Executable-5:[Kk][3Ee][Yy][Gg][3Ee][Nn].{0,128}\.(386|[Aa][
 phpMussel-FN.Suspect.Executable-6:[Xx]{3,}\.(386|[Aa][Cc][Mm]|[Aa][Xx]|[Cc][Oo][Mm]|[Rr][Ss][^Ss]|[Cc][Pp][Ll]|[Dd][Ll][Ll]|[Dd][Rr][Vv]|[Ee][Xx][Ee]|[Oo][Cc][Xx]|[Ss][Cc][FfRrTt]|[Ss][Yy][Ss]|[Vv][Xx][Dd]|[Bb][Aa][SsTt]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb]|[Ww][Ss]|[Pp][Ii][Ff]|[Aa][Pp]{2}|[Rr][Ee][Gg]|[Ff][Xx][Pp]|[Kk][Ss][Hh]|[Oo][Pp][SsXx]|[Pp][Rr][Gg])
 phpMussel-FN.Suspect.Executable-7:([Ff][Uu][Xx][0Oo][Rr]|[Mm][Yy][Dd][Ll][Ll]|[Aa][Bb][Cc][DdEe]{2}|[Cc][Ee][Ll][Ee][Bb][Rr][Ii][Tt]).{0,128}\.(386|[Aa][Cc][Mm]|[Aa][Xx]|[Cc][Oo][Mm]|[Rr][Ss][^Ss]|[Cc][Pp][Ll]|[Dd][Ll][Ll]|[Dd][Rr][Vv]|[Ee][Xx][Ee]|[Oo][Cc][Xx]|[Ss][Cc][FfRrTt]|[Ss][Yy][Ss]|[Vv][Xx][Dd]|[Bb][Aa][SsTt]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb]|[Ww][Ss]|[Pp][Ii][Ff]|[Aa][Pp]{2}|[Rr][Ee][Gg]|[Ff][Xx][Pp]|[Kk][Ss][Hh]|[Oo][Pp][SsXx]|[Pp][Rr][Gg])
 phpMussel-FN.Suspect.Executable-8:^([Hh][Aa][Cc][Kk][Ee][Rr]|[Mm][Oo][Vv][Ii][Ee][Ss])\.(386|[Aa][Cc][Mm]|[Aa][Xx]|[Cc][Oo][Mm]|[Rr][Ss][^Ss]|[Cc][Pp][Ll]|[Dd][Ll][Ll]|[Dd][Rr][Vv]|[Ee][Xx][Ee]|[Oo][Cc][Xx]|[Ss][Cc][FfRrTt]|[Ss][Yy][Ss]|[Vv][Xx][Dd]|[Bb][Aa][SsTt]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb]|[Ww][Ss]|[Pp][Ii][Ff]|[Aa][Pp]{2}|[Rr][Ee][Gg]|[Ff][Xx][Pp]|[Kk][Ss][Hh]|[Oo][Pp][SsXx]|[Pp][Rr][Gg])
+phpMussel-FN.VBS.Trojan.Kryptik-00:\xd8\xa7\xd9\x84\xd9\x85\xd8\xae\xd8\xa7\xd8\xa8\xd8\xb1\xd8\xa7\xd8\xaa\x20\xd8\xa7\xd9\x84\xd8\xad\xd8\xb1\xd8\xa8\xd9\x8a\xd8\xa9\.([Vv][Bb].{0,3}|[Ww][Ss][CcFf]|[Hh][Tt][Aa]?[Mm]?[Ll]?|[Aa][Ss][Pp][Xx]?)$
 phpMussel-FN.W32.Adware.Dealsfox:[Dd][Ee][Aa][Ll][Ss][Ff][Oo][Xx]
 phpMussel-FN.W32.CWA.Syria-01:\xd9\x88\xd8\xb1\xd9\x82\xd8\xa9\x20\xd8\xad\xd9\x88\xd9\x84\x20\xd9\x85\xd8\xac\xd9\x84\xd8\xb3\x20\xd8\xa7\xd9\x84\xd9\x82\xd9\x8a\xd8\xa7\xd8\xaf\xd8\xa9\x5f
 phpMussel-FN.W32.CWA.Syria-02:\xd8\xa7\xd8\xb3\xd9\x85\xd8\xa7\xd8\xa1\x20\xd8\xa8\xd8\xb9\xd8\xb6\x20\xd8\xa7\xd9\x84\xd9\x85\xd9\x85\xd9\x88\xd9\x84\xd9\x8a\xd9\x86\x20\xd9\x81\xd9\x8a\x20\xd8\xb3\xd9\x88\xd8\xb1\xd9\x8a\xd8\xa7\x20\xd9\x88\xd8\xa7\xd9\x84\xd8\xae\xd8\xa7\xd8\xb1\xd8\xac\x20\xd8\xa7\xd9\x84\xd9\x85\xd8\xb7\xd9\x84\xd9\x88\xd8\xa8\xd9\x8a\xd9\x86\x20\xd9\x84\xd8\xaf\xd9\x89\x20\xd8\xa7\xd9\x84\xd9\x86\xd8\xb8\xd8\xa7\xd9\x85\x20\xd8\xa7\xd9\x84\xd8\xb3\xd9\x88\xd8\xb1\xd9\x8a
@@ -460,8 +457,7 @@ phpMussel-FN.W32.Virus.Ovagur-0:^(NvVid\.sys|ocmsn\.old|NvVid\.exe|ocmsn\.log|oc
 phpMussel-FN.W32.Worm.SpyBot.Gen-1:^[Pp][Cc][Gg][Ww][Ii][Nn]32\.[Ll][Ii]3
 phpMussel-FN.W32.Worm.Zimuse.B-3:^ainf\.inf
 phpMussel-FN.Worm.Generic-0:\.[Ww][Oo][Rr][Mm]
-phpMussel-FN.Defacement-001:^0[Bb][Ii][Tt]0\.[Gg][Ii][Ff]$
->$climode>1>464
+>$climode>1>460
 phpMussel-FN.Illegal.Character-3F:\x3f
 >$climode>0>-1
 phpMussel-FN.Illegal.Character-00:\x00

@@ -207,18 +207,18 @@
  - $what_to_scan is ofwel een string of een array, wijzen ofwel naar een
    doelgerichte bestand, een doelgerichte bestandsmap of een array op
    doelgerichte bestanden en/of doelgerichte bestandsmappen.
- - $output_type is an integer, indicating the format in which the results of
-   the scan are to be return as. A value of 0 instructs the function to return
-   results as an integer (a returned result of -2 indicates that corrupt data
-   was detected during the scan and thus the scan failed to complete,
-   -1 indicates that extensions or addons required by php to execute the scan
-   were missing and thus the scan failed to complete, 0 indicates that the
-   scan target does not exist and thus there was nothing to scan,
-   1 indicates that the target was successfully scanned and no problems were
-   detected, and 2 indicates that the target was successfully scanned and
-   problems were detected). A value of 1 instructs the function to return
-   results as human readable text. A value of 2 instructs the function both
-   to return the results as human readable text and to export the results to
+ - $output_type is een integer, met vermelding van het formaat waarin de
+   resultaten van de scan zijn om terug te keren als. Een waarde van 0
+   instrueert de functie om de resultaten terug te keren als een integer (een
+   geretourneerd gevolg van -2 geeft aan dat corrupte data tijdens de scan werd
+   gedetecteerd en dus de scan niet voltooid, -1 geeft aan dat uitbreidingen of
+   toevoegingen vereist door php om de scan uit te voeren ontbraken en dus de
+   scan niet voltooid, 0 geeft aan dat de scan doelgroep bestaat niet en dus
+   was er niets te scannen, 1 geeft aan dat de doelwit met succes werd gescand
+   geen problemen waren gedetecteerd, en 2 geeft aan dat de doelwit met succes
+   werd gescand en problemen waren gedetecteerd). Een waarde van 1 instrueert
+   de functie om de resultaten als mensen leesbare tekst. Een waarde van 2 beide
+   instrueert de functie om de resultaten als mensen leesbare tekst and to export the results to
    a global variable. This variable is optional, defaulting to 0.
  - $output_flatness is an integer, indicating whether to allow results to be
    returned as an array or not. Normally, if the scan target contained multiple
