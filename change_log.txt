@@ -1,5 +1,31 @@
 phpMussel change_log.txt
 
+=== Version 0.3e ===
+SUMMARY:
+Updated to the latest signatures set (55+18487+3e).
+Sub-minor update.
+
+NEW CHANGES:
+- I'm working on building a more thorough testing kit for signatures in an
+  attempt to resolve, or at least better avoid, the PCRE crashing issue.
+  Not included in actual release.. But the effects of it will be.
+- Found a way to reduce on duplication: Less signatures overall included in
+  this release compared to previous releases, but, overall level of protection
+  should be the same, if not better.
+- A lot of former *_standard.cvd signatures rewritten as *_regex.cvd
+  signatures (such as the lot from PhishTank.com mentioned in the previous
+  update) to improve effectiveness and reduce false-positives.
+- Expanded on usable conditions slightly.
+- I've -began- working on multilingual support for phpMussel. Can set
+  appropriate language options via configuration file. Support is minimum at
+  this point in time. Will improve as time passes.
+- Improved the default Upload Denied message template file slightly.
+- Added a new test file.
+- Minor code tweaks, etc.
+
+Maikuolan,
+19th February 2014.
+
 === Version 0.3d ===
 SUMMARY:
 Updated to the latest signatures set (55+18473+3d).

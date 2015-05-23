@@ -1053,20 +1053,20 @@
  working with phpMussel or should consider alternative options to either your
  anti-virus software or phpMussel.
 
- This information was last updated 23rd December 2013 and is current for ALL
+ This information was last updated 17th February 2014 and is current for ALL
  versions of phpMussel, from initial release v0.1 through to latest release
- v0.3c at the time of writing this.
+ v0.3d at the time of writing this.
 
  Ad-Aware                No known problems
  Agnitum                 No known problems
  AhnLab-V3               No known problems
  AntiVir                 No known problems
  Antiy-AVL               No known problems
- Avast                !  Reports "JS:ScriptSH-inf [Trj]" (all versions)
+ Avast                !  Reports "JS:ScriptSH-inf [Trj]" (v0.1 - v0.3c)
  AVG                     No known problems
  Baidu-International     No known problems
  BitDefender             No known problems
- Bkav                 !  Reports "VEX408f.Webshell" (v0.3 and above)
+ Bkav                 !  Reports "VEX408f.Webshell" (v0.3 - v0.3d)
  ByteHero                No known problems
  CAT-QuickHeal           No known problems
  ClamAV                  No known problems
@@ -1092,9 +1092,10 @@
  Microsoft               No known problems
  MicroWorld-eScan        No known problems
  NANO-Antivirus          No known problems
- Norman               !  Reports "Kryptik.BQS" (all versions)
+ Norman               !  Reports "Kryptik.BQS" (v0.1 - v0.3d)
  nProtect                No known problems
  Panda                   No known problems
+ Qihoo-360               No known problems
  Rising                  No known problems
  Sophos                  No known problems
  SUPERAntiSpyware        No known problems
@@ -1102,7 +1103,7 @@
  TheHacker               No known problems
  TotalDefense         !  Reports "VBS/Nuel" (specific signature releases)
  TrendMicro              No known problems
- TrendMicro-HouseCall !  Reports "TROJ_GEN.F47V1219" (all versions)
+ TrendMicro-HouseCall !  Reports "TROJ_GEN.F47V1219" (v0.1 - v0.3c)
  VBA32                   No known problems
  VIPRE                   No known problems
  ViRobot                 No known problems

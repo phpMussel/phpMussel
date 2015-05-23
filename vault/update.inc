@@ -29,8 +29,8 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                   ~ ~ ~                                        
- This File: phpMussel v0.3d Update Script
- This File Last Updated: 16th February 2014
+ This File: phpMussel v0.3e Update Script
+ This File Last Updated: 18th February 2014
 
                                   ~ ~ ~                                        
  Please refer to "documentation" for installation instructions and for
@@ -45,7 +45,7 @@ if(!defined('phpMussel'))
 	{
 	die("[phpMussel] This should not be accessed directly.");
 	}
-	
+
 if(!file_exists($vault."update.dat"))plaintext_echo_die("[phpMussel] Failed to update: 'update.dat' missing. Reinstall or update manually.");
 $phpmusselversion=array("raw"=>implode(file($vault."update.dat")));
 $phpmusselversion['current_time']=time();

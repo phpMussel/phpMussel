@@ -1127,20 +1127,20 @@
  devriez envisager désactivation avant à travailler avec phpMussel ou devrait
  envisager d'autres options soit votre logiciel anti-virus ou phpMussel.
 
- Cette information a été réactualisé le 23 Décembre 2013 et est courant pour
+ Cette information a été réactualisé le 17 Février 2014 et est courant pour
  TOUTES les versions de phpMussel, partir de l'initiale version v0.1 travers
- à le dernière version v0.3c au moment de la rédaction cette.
+ à le dernière version v0.3d au moment de la rédaction cette.
 
  Ad-Aware                Pas problèmes connus
  Agnitum                 Pas problèmes connus
  AhnLab-V3               Pas problèmes connus
  AntiVir                 Pas problèmes connus
  Antiy-AVL               Pas problèmes connus
- Avast                !  Rapports "JS:ScriptSH-inf [Trj]" (toutes les versions)
+ Avast                !  Rapports "JS:ScriptSH-inf [Trj]" (v0.1 - v0.3c)
  AVG                     Pas problèmes connus
  Baidu-International     Pas problèmes connus
  BitDefender             Pas problèmes connus
- Bkav                 !  Rapports "VEX408f.Webshell" (v0.3 et ci-dessus)
+ Bkav                 !  Rapports "VEX408f.Webshell" (v0.3 - v0.3d)
  ByteHero                Pas problèmes connus
  CAT-QuickHeal           Pas problèmes connus
  ClamAV                  Pas problèmes connus
@@ -1166,9 +1166,10 @@
  Microsoft               Pas problèmes connus
  MicroWorld-eScan        Pas problèmes connus
  NANO-Antivirus          Pas problèmes connus
- Norman               !  Rapports "Kryptik.BQS" (toutes les versions)
+ Norman               !  Rapports "Kryptik.BQS" (v0.1 - v0.3d)
  nProtect                Pas problèmes connus
  Panda                   Pas problèmes connus
+ Qihoo-360               Pas problèmes connus
  Rising                  Pas problèmes connus
  Sophos                  Pas problèmes connus
  SUPERAntiSpyware        Pas problèmes connus
@@ -1176,7 +1177,7 @@
  TheHacker               Pas problèmes connus
  TotalDefense         !  Rapports "VBS/Nuel" (signature versions spécifiques)
  TrendMicro              Pas problèmes connus
- TrendMicro-HouseCall !  Rapports "TROJ_GEN.F47V1219" (toutes les versions)
+ TrendMicro-HouseCall !  Rapports "TROJ_GEN.F47V1219" (v0.1 - v0.3c)
  VBA32                   Pas problèmes connus
  VIPRE                   Pas problèmes connus
  ViRobot                 Pas problèmes connus

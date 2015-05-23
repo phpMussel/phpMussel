@@ -29,8 +29,8 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                   ~ ~ ~                                        
- This File: phpMussel Loader v1.0
- This File Last Updated: 18th October 2013
+ This File: phpMussel Loader v1.1
+ This File Last Updated: 18th February 2014
 
                                   ~ ~ ~                                        
  Please refer to "documentation" for installation instructions and for
@@ -51,6 +51,10 @@ if(!defined('phpMussel'))
 	{
 	define('phpMussel',true);
 	$display_errors=error_reporting(0);
+	$MusselConfig=@(!file_exists($vault."phpmussel.ini"))?false:parse_ini_file($vault."phpmussel.ini",true);
+	if(!is_array($MusselConfig))plaintext_echo_die("[phpMussel] Could not read phpmussel.ini: Can't continue. Refer to documentation if this is a first-time run, and if problems persist, seek assistance.");
+	if(!file_exists($vault."lang.inc"))plaintext_echo_die("[phpMussel] Language data file missing! Please reinstall phpMussel.");
+	require($vault."lang.inc");
 	$disable_lock=file_exists($vault."disable.lck");
 	if(!$disable_lock)
 		{
@@ -64,8 +68,6 @@ if(!defined('phpMussel'))
 			}
 		unset($update_timer,$update_lock);
 		}
-	$MusselConfig=@(!file_exists($vault."phpmussel.ini"))?false:parse_ini_file($vault."phpmussel.ini",true);
-	if(!is_array($MusselConfig))plaintext_echo_die("[phpMussel] Could not read phpmussel.ini: Can't continue. Refer to documentation if this is a first-time run, and if problems persist, seek assistance.");
 	if(!file_exists($vault."controls.lck"))
 		{
 		parse_str($_SERVER['QUERY_STRING'],$query);

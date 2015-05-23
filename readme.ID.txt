@@ -1117,8 +1117,8 @@
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 23 December 2013 dan cocok untuk semua versi dari
- phpMussel, dari inisial release v0.1 melalui release terakhir v0.3c pada waktu
+ Informasi ini diupdate 17 Februari 2014 dan cocok untuk semua versi dari
+ phpMussel, dari inisial release v0.1 melalui release terakhir v0.3d pada waktu
  saya menuliskan ini.
 
  Ad-Aware                Tidak ada masalah yang diketahui
@@ -1126,11 +1126,11 @@
  AhnLab-V3               Tidak ada masalah yang diketahui
  AntiVir                 Tidak ada masalah yang diketahui
  Antiy-AVL               Tidak ada masalah yang diketahui
- Avast                !  Melaporkan "JS:ScriptSH-inf [Trj]" (semua versi)
+ Avast                !  Melaporkan "JS:ScriptSH-inf [Trj]" (v0.1 - v0.3c)
  AVG                     Tidak ada masalah yang diketahui
  Baidu-International     Tidak ada masalah yang diketahui
  BitDefender             Tidak ada masalah yang diketahui
- Bkav                 !  Melaporkan "VEX408f.Webshell" (v0.3 dan di atasnya)
+ Bkav                 !  Melaporkan "VEX408f.Webshell" (v0.3 - v0.3d)
  ByteHero                Tidak ada masalah yang diketahui
  CAT-QuickHeal           Tidak ada masalah yang diketahui
  ClamAV                  Tidak ada masalah yang diketahui
@@ -1156,9 +1156,10 @@
  Microsoft               Tidak ada masalah yang diketahui
  MicroWorld-eScan        Tidak ada masalah yang diketahui
  NANO-Antivirus          Tidak ada masalah yang diketahui
- Norman               !  Melaporkan "Kryptik.BQS" (semua versi)
+ Norman               !  Melaporkan "Kryptik.BQS" (v0.1 - v0.3d)
  nProtect                Tidak ada masalah yang diketahui
  Panda                   Tidak ada masalah yang diketahui
+ Qihoo-360               Tidak ada masalah yang diketahui
  Rising                  Tidak ada masalah yang diketahui
  Sophos                  Tidak ada masalah yang diketahui
  SUPERAntiSpyware        Tidak ada masalah yang diketahui
@@ -1166,7 +1167,7 @@
  TheHacker               Tidak ada masalah yang diketahui
  TotalDefense         !  Melaporkan "VBS/Nuel" (tanda tangan spesifik release)
  TrendMicro              Tidak ada masalah yang diketahui
- TrendMicro-HouseCall !  Melaporkan "TROJ_GEN.F47V1219" (semua versi)
+ TrendMicro-HouseCall !  Melaporkan "TROJ_GEN.F47V1219" (v0.1 - v0.3c)
  VBA32                   Tidak ada masalah yang diketahui
  VIPRE                   Tidak ada masalah yang diketahui
  ViRobot                 Tidak ada masalah yang diketahui
