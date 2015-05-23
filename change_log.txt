@@ -1,35 +1,134 @@
 phpMussel change_log.txt
 
+=== Version 0.2 ===
+SUMMARY:
+My many thanks to those that helped with testing out the initial (and
+subsequent) release of phpMussel. :-)
+After receiving some great suggestions and ideas from Tobias (Spambotsecurity)
+regarding the previous release of phpMussel, I went to work changing a lot
+of what had been coded into the previous releases, combining most of those
+suggestions with a couple of new tricks I'd learned over the course of the
+past few days. These changes overall should drastically improve the
+performance, speed and effectiveness of phpMussel, as well as correct some
+theoretical exploits discovered. I've also began working on implementing
+more of the ClamAV signatures than the previous version could support, and
+while this version is by no means complete, it should be a drastic improvement
+over the previous version. It should be noted that modifications have been
+made to the vault files and signature files against, thus, this version of the
+script will not be compatible with previous versions of the script.
+
+NEW CHANGES:
+- Added support for GZIP'd files (can now read and interpret the contents
+  of GZIP'd files, parse GZIP metadata, and, can do so recursively; new
+  configuration option added to control maximum recursion depth)! With that,
+  phpMussel now supports GZ and ZIP encoded archives. Though, ZIPs still
+  aren't recursive and other common formats (7z, RAR) aren't yet supported.
+- Removed several custom-built functions altogether, replacing with faster
+  php-native equivalents, with new custom-built signatures implemented to
+  mimic these functions when not available for purposes of
+  backwards-compatibility.
+- Improved compatibility with external error handlers.
+- Multi-instance checking implemented.
+- Generally improved coding to reduce risk of warning flags (New/Fixed?).
+- Extended signatures have been (mostly) implemented (although, split into
+  segments for improved performance and usability). At this point, even
+  after a bit of research, I've still got absolutely no idea how to correctly
+  implement PE Sectional signatures, so, I suspect that one may take a long
+  time to get done. However, otherwise, most signatures should now be
+  implemented correctly. Normalised signatures (HTML, ASCII, etc) coming soon.
+- Began implementation of proper block notifications. Intend to expand this
+  at a later date.
+- New testfile set (replacing old testfile set).
+- Added an email scanning function (will need to implement this yourself as
+  per your specific requirements).
+
+PROBLEMS/BUGS FIXED:
+- While the time requirements for checking against ClamAV signatures still
+  leaves something to be desired, the time requirements have been more than
+  halved in most testing instances. Although not ideal, I think this has
+  been improved enough to warrant making note of it here.
+- phpMussel now supports wildcards (thus increasing the number of ClamAV
+  signatures that can be correctly checked against)!
+- Several bugs found since the previous release fixed prior to this one (can
+  directly compare code between versions if necessary; mostly sub-minor bugs).
+
+PROBLEMS/BUGS FOUND:
+- As a side-effect of changes to this version, although time requirements
+  for signatures has been generally reduced, this reduction is scaled by both
+  the quantity and size of the files being scanned. Additionally, the memory
+  requirements of the script per each file being scanned, at present, is about
+  ~2.7xFilesize (example: if we assumed approximately ~2MB was required for the
+  script itself, assumed that all loaded signatures for that instance required
+  about ~6.7MB and assumed that the file targeted for scanning had a filesize
+  of about ~24.4MB, the total memory required by the process would be somewhere
+  in the range of ~74.6MBs). On php5, where the default memory limit is set
+  at 128MBs, this isn't a problem. However, for php4, where the default memory
+  limit is 64MBs, or for older versions of php where the default memory limit
+  is even less, this would cause maximum memory exceeded fatal warning to be
+  supplied by php and cause the entire script (including whatever is hooking
+  the script) to die prematurely. For the time being, a solution for older
+  systems is to simply set a lower filesize threshold in the phpMussel
+  configuration file. However, in the long term, another, better, solution
+  should be found.
+
+NEW GOALS AND FUTURE VERSIONING GUIDELINES:
+To qualify for the next major version release (Version 1.0):
+- Improve time requirements for all ClamAV signatures, as to negate any risk
+  of providing a vector for potential DDoS attacks.
+- Have implemented ALL signature types, correctly, functioning correctly
+  during a live test, without any time requirement problems.
+- Be capable of scanning archive formats, at minimum, ZIP, GZ, RAR, 7z.
+- Be capable of scanning ALL supported archive formats RECURSIVELY.
+- (Optionally) produce new goals for a follow-up version (major/minor).
+- Fix known bugs.
+To qualify for a minor version release (Version 0.X):
+- Any -significant- changes to the script, at all, including completing one or
+  more of the above goals and including bringing in any new features or
+  capabilities, whereby having been done, the script does not qualify for a
+  new major version release.
+To quality for a sub-minor version release (0.Xy, 0.X.Y, 0.Xy.Z, 0.X.Yz):
+- Any other changes to the script.
+
+Maikuolan,
+26th September 2013.
+
 === Version 0.1a ===
-- [FIX] Fixed a small handful of typographical errors (d'oh!) that I'd found
+SUMMARY:
+Sub-minor update.
+
+NEW CHANGES:
+- Added some additional file manipulation detections and slightly changed
+  some of the configuration defaults.
+
+PROBLEMS/BUGS FIXED:
+- Corrected a small handful of typographical errors (d'oh!) that I'd found
   hiding in the documentation and various comments throughout the package (didn't
   spot any in the script itself, at least).
-- [FIX] Found and fixed the bug relating to chameleon attack detection (updating
+- Found and fixed the bug relating to chameleon attack detection (updating
   from previous script version recommended to avoid possible false-positive
   matches, due to the nature of the bug).
-- [NEW] Added some additional file manipulation detections and slightly changed
-  some of the configuration defaults (sub-minor).
 
 Maikuolan,
 21st September 2013.
 
 === Version 0.1 ===
+SUMMARY:
 The initial release, built from the ground-upwards, no previous version:
 Goals of the initial release are to create something that, albeit requiring
 much future work and perhaps with a benefit extremely minimal compared to its
 intended future goals, does actually work correctly to a level satisfying what
-would be expected of an initial release of the script as per the expections of
+would be expected of an initial release of the script as per the expectations of
 the script, without, from its default configuration and assuming no
-programmatic deviations, posing any inherant problems for any to implement the
+programmatic deviations, posing any inherent problems for any to implement the
 script and for and desirable end-users. The expectations of the script,
 in-line with the goals of the project overall, can be adequately surmised by
 the description of the script as included, at the time of this release, in the
 main body of the script itself: "Thank you for using phpMussel, a php-based
-script based upon ClamAV signatures designed to detect trojans, viruses,
+script based upon ClamAV signatures designed to detect Trojans, viruses,
 malware and etcetera within files uploaded to your system wherever the script
 is hooked."
 
-PRIMARY ACHIEVEMENTS OF THIS VERSION:
+NEW CHANGES (PRIMARY ACHIEVEMENTS OF THIS VERSION):
 - Can successfully detect file uploads and scan those files and the contents of
   those files.
 - Can successfully interpret the MD5 signatures of ClamAV and check against
@@ -52,7 +151,7 @@ PRIMARY ACHIEVEMENTS OF THIS VERSION:
 - Can detect certain types of chameleon attacks successfully.
 - Can log scanning operations and scan kills.
 
-KNOWN PROBLEMS WITH THIS VERSION:
+PROBLEMS/BUGS FOUND (NEW KNOWN PROBLEMS WITH THIS VERSION):
 - Although the basic signatures of ClamAV can be interpreted and checked
   against during file uploads, this TAKES A VERY LONG TIME! The time required
   is unacceptable (up to a minute long per file at the worst point of my
@@ -81,7 +180,7 @@ KNOWN PROBLEMS WITH THIS VERSION:
 - Chameleon attack detection for JPG, JPEG and PNG isn't working correctly.
   Should remain disabled until fixed.
 
-FUTURE VERSION GOALS (AND FUTURE VERSIONING GUIDELINES):
+NEW GOALS AND FUTURE VERSIONING GUIDELINES:
 To qualify for the next major version release (Version 1.0):
 - Correct the time requirement problem of the basic signatures, as so that it
   no longer provides a vector for DDoS attacks.
