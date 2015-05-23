@@ -11,9 +11,12 @@
  
  CONTENTS
  1. PRE-RAMBLE
- 2. HOW TO INSTALL
- 3. HOW TO USE
- 4. BROWSER COMMANDS (includes instructions for how to update)
+ 2A. HOW TO INSTALL (FOR WEB SERVERS)
+ 2B. HOW TO INSTALL (FOR CLI)
+ 3A. HOW TO USE (FOR WEB SERVERS)
+ 3B. HOW TO USE (FOR CLI)
+ 4A. BROWSER COMMANDS
+ 4B. CLI (COMMAND LINE INTERFACE)
  5. FILES INCLUDED IN THIS PACKAGE
  6. SIGNATURE FORMAT
  7. KNOWN COMPATIBILITY PROBLEMS
@@ -39,7 +42,7 @@
                                   ~ ~ ~                                        
  
  
- 2. HOW TO INSTALL
+ 2A. HOW TO INSTALL (FOR WEB SERVERS)
  
  I hope to streamline this process by making an installer at some point in the
  not too distant future, but until then, follow these instructions to get
@@ -110,7 +113,61 @@
                                   ~ ~ ~                                        
  
  
- 3. HOW TO USE
+ 2B. HOW TO INSTALL (FOR CLI)
+ 
+ I hope to streamline this process by making an installer at some point in the
+ not too distant future, but until then, follow these instructions to get
+ phpMussel ready to work with CLI (be aware that at this point, CLI support
+ only applies to Windows based systems; Linux and other systems will be coming
+ soon to a later version of phpMussel):
+ 
+ 1) By your reading this, I'm assuming you've already downloaded an archived
+    copy of the script, decompressed its contents and have it sitting somewhere
+    on your local machine. Once you've determined that you're happy with the
+	location chosen for phpMussel, continue.
+    
+ 2) phpMussel requires php to be installed on the host machine in order to
+    execute. If you do not have php installed on your machine, please install
+	php on your machine, following any instructions supplied by the php
+	installer.
+    
+ 3) Open "phpmussel.php", look for the line beginning with "$vault=", and
+    replace the string between the following quotation marks on that line
+    with the exact true location of the "vault" directory of phpMussel.
+    You'll have noticed such a directory in the archive you would've downloaded
+    (unless you feel up to re-coding the whole script, you'll need to maintain
+    the same file and directory structure as it was in the archive / when
+    decompressed). This "vault" directory should be one directory level beyond
+    the directory that the "phpmussel.php" file will exist in. Save file, close.
+    
+ 4) (Optional; Strongly recommended for advanced users, but not recommended
+    for beginners or for the inexperienced): Open "phpmussel.ini" (located
+    inside "vault") - This file contains all the operational options available
+    for phpMussel. Above each option should be a brief comment describing what
+    it does and what it is for. Adjust these options as you see fit, as per
+    whatever is appropriate for your particular setup. Save file, close.
+    
+ 5) (Optional) You can make using phpMussel in CLI mode easier for yourself
+    by creating a batch file to automatically load php and phpMussel. To do
+	this, open a plain text editor such as Notepad or Notepad++, type the
+	complete path to the "php.exe" file in the directory of your php
+	installation, followed by a space, followed by the complete path to the
+	"phpmussel.php" file in the directory of your phpMussel installation, save
+	the file with a ".bat" extension somewhere that you'll find it easily, and
+	double-click on that file to run phpMussel in the future.
+    
+ 6) At this point, you're done! However, you should probably test it out to
+    make sure it's working properly. To test phpMussel, run phpMussel, and when
+	phpMussel asks you which file you'd like to scan, specify the directory
+	path of the "_testfiles" directory included in the phpMussel archive,
+	followed by a forward-slash, and press enter. You should see something
+	along the lines of "Detected phpMussel-Testfile..." in the returned
+	message.
+ 
+                                  ~ ~ ~                                        
+ 
+ 
+ 3A. HOW TO USE (FOR WEB SERVERS)
  
  phpMussel is intended to be a script which will function adequately right from
  the box with a bare minimum level of requirements on your part: Once it has
@@ -221,7 +278,24 @@
                                   ~ ~ ~                                        
  
  
- 4. BROWSER COMMANDS
+ 3B. HOW TO USE (FOR CLI)
+ 
+ Please refer to the "HOW TO INSTALL (FOR CLI)" section of this readme file.
+ 
+ Be aware that, although future versions of phpMussel should support other
+ systems, at this time, phpMussel CLI mode support is only optimized for
+ use on Windows based system (you can, of course, try it on other systems,
+ but I can't guarantee it'll work as intended).
+ 
+ Also be aware that phpMussel is not the functional equivelant of a complete
+ anti-virus suite, and unlike conventional anti-virus suites, does not monitor
+ active memory or detect viruses on-the-fly! It will only detect viruses
+ contained by those specific files that you explicitly tell it to scan.
+ 
+                                  ~ ~ ~                                        
+ 
+ 
+ 4A. BROWSER COMMANDS
  
  Once phpMussel has been installed and is correctly functioning on your system,
  if you've set the script_password and logs_password variables in your
@@ -305,7 +379,7 @@
    What it does: Disables ("locks out") all browser-side controls. This should
                  be used if you suspect that either of your passwords have been
                  compromised (this can happen if you're using these controls
-                 from a computer which is not secure or not trust).
+                 from a computer which is not secured and/or not trusted).
                  controls_lockout works by creating a file, controls.lck, in
                  your vault, which phpMussel will check for before performing
                  any commands of any kind. Once this happens, to reenable
@@ -398,6 +472,15 @@
                                   ~ ~ ~                                        
  
  
+ 4B. CLI (COMMAND LINE INTERFACE)
+ 
+ phpMussel can be run as an interactive file scanner in CLI mode under windows
+ as of the latest version of phpMussel. Refer to the "HOW TO INSTALL (FOR CLI)"
+ section of this readme file for more details.
+ 
+                                  ~ ~ ~                                        
+ 
+ 
  5. FILES INCLUDED IN THIS PACKAGE
  
  The following is a list of all of the files that should have been included
@@ -423,6 +506,29 @@
     An ASP.NET configuration file (in this instance, to protect the "/vault"
     directory from being accessed by non-authorised sources in the event that
     the script is installed on a server based upon ASP.NET technologies).
+    ~
+ /_testfiles/ (Directory)
+    Test files directory (contains various files).
+	All contained files are test files for testing if phpMussel was correctly
+	installed on your system, and you do not need to upload this directory
+	or any of its files except when doing such testing.
+    ~
+ /_testfiles/general_standard_testfile.txt (Test file, Included)
+    Test file for testing phpMussel general signatures.
+    ~
+ /_testfiles/graphics_standard_testfile.gif (Test file, Included)
+    Test file for testing phpMussel graphics signatures.
+    ~
+ /_testfiles/md5_standard_testfile.txt (Test file, Included)
+    Test file for testing phpMussel MD5 signatures.
+    ~
+ /_testfiles/zip_metadata_testfile.txt.gz (Test file, Included)
+    Test file for testing phpMussel metadata signatures and for testing
+	GZ file support on your system.
+    ~
+ /_testfiles/zip_metadata_testfile.txt.zip (Test file, Included)
+    Test file for testing phpMussel metadata signatures and for testing
+	ZIP file support on your system.
     ~
  /vault/ (Directory)
     Vault directory (contains various files).
@@ -593,7 +699,6 @@
     Signature files marked with "_mussel" contain signatures that specifically
     are not sourced from ClamAV, signatures which, generally, I've either come
     up with myself and/or based on information gathered from various sources.
-    belonging to the script from being accessed by non-authorised sources).
     ~
  
                                   ~ ~ ~                                        
@@ -701,6 +806,12 @@
    the reporter having downloaded phpMussel; No individual file testing has
    as of yet occurred.
  - Last checked 23rd October 2013 (latest version at time of writing: v0.3).
+ 
+ PHP and PCRE
+ - phpMussel requires PHP and PCRE to execute and function correctly. Without
+   php, or without the PCRE extension of PCRE, phpMussel will not execute or
+   function correctly. Should make sure you system has both PHP and PCRE
+   installed and available prior to downloading and installing phpMussel.
  
  
                                   ~ ~ ~                                        

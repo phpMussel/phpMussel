@@ -29,8 +29,8 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                   ~ ~ ~                                        
- This File: phpMussel v0.3a Core Script
- This File Last Updated: 11th November 2013
+ This File: phpMussel v0.3b Core Script
+ This File Last Updated: 29th November 2013
 
                                   ~ ~ ~                                        
  Please refer to "documentation" for installation instructions and for
@@ -46,10 +46,10 @@ if(!defined('phpMussel'))
 	die("[phpMussel] This should not be accessed directly.");
 	}
 
+$phpmusselversion="phpMussel v0.3b";
+$linebreak=chr(10);
 if(!isset($MusselConfig['general']['ipaddr']))$MusselConfig['general']['ipaddr']="REMOTE_ADDR";
 if(!isset($_SERVER[$MusselConfig['general']['ipaddr']]))$_SERVER[$MusselConfig['general']['ipaddr']]="";
-$phpmusselversion="phpMussel v0.3a";
-$linebreak=chr(10);
 
 if(!function_exists("implode_md"))
 	{
@@ -127,6 +127,25 @@ if(!function_exists("bin2hex"))
 		return $y;
 		}
 	}
+if(!function_exists("hex2bin"))
+	{
+	function hex2bin($str)
+		{
+		$n="";
+		$l=strlen($str);
+		$x=false;
+		for($i=0;$i<$l;$i++)
+			{
+			$x=(!$x)?true:false;
+			if($x)
+				{
+				$z=$i+1;
+				$n.=@chr(hexdec($str[$i].$str[$z]));
+				}
+			}
+		return $n;
+		}
+	}
 function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 	{
 	$fm=($n==2)?1:0;
@@ -150,8 +169,15 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 	if($GLOBALS['MusselConfig']['signatures']['filenames_clamav'])
 		{
 		if(!isset($GLOBALS['memCache']['filenames_clamav.cvd']))$GLOBALS['memCache']['filenames_clamav.cvd']=@file($GLOBALS['vault']."filenames_clamav.cvd");
-		if(!$GLOBALS['memCache']['filenames_clamav.cvd'])return (!$n)?-3:$lnap."Signature file missing (filenames_clamav.cvd)!".$GLOBALS['linebreak'];
-		$c=@count($GLOBALS['memCache']['filenames_clamav.cvd']);
+		if(!$GLOBALS['memCache']['filenames_clamav.cvd'])
+			{
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (filenames_clamav.cvd)!".$GLOBALS['linebreak'];
+			$c=0;
+			}
+		else
+			{
+			$c=@count($GLOBALS['memCache']['filenames_clamav.cvd']);
+			}
 		$vn="";
 		$i=0;
 		while($i<$c)
@@ -177,6 +203,12 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				$vn=@explode(":",$xsig);
 				$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 				$xsig=($xsig===false?"":implode("",$xsig));
+				$xlen=strlen($xsig);
+				if($xlen<$GLOBALS['MusselConfig']['signatures']['fn_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['fn_siglen_max'])
+					{
+					$i++;
+					continue;
+					}
 				$vn=$vn[0];
 				if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
 					{
@@ -194,8 +226,15 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 	if($GLOBALS['MusselConfig']['signatures']['filenames_custom'])
 		{
 		if(!isset($GLOBALS['memCache']['filenames_custom.cvd']))$GLOBALS['memCache']['filenames_custom.cvd']=@file($GLOBALS['vault']."filenames_custom.cvd");
-		if(!$GLOBALS['memCache']['filenames_custom.cvd'])return (!$n)?-3:$lnap."Signature file missing (filenames_custom.cvd)!".$GLOBALS['linebreak'];
-		$c=@count($GLOBALS['memCache']['filenames_custom.cvd']);
+		if(!$GLOBALS['memCache']['filenames_custom.cvd'])
+			{
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (filenames_custom.cvd)!".$GLOBALS['linebreak'];
+			$c=0;
+			}
+		else
+			{
+			$c=@count($GLOBALS['memCache']['filenames_custom.cvd']);
+			}
 		$vn="";
 		$i=0;
 		while($i<$c)
@@ -221,6 +260,12 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				$vn=@explode(":",$xsig);
 				$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 				$xsig=($xsig===false?"":implode("",$xsig));
+				$xlen=strlen($xsig);
+				if($xlen<$GLOBALS['MusselConfig']['signatures']['fn_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['fn_siglen_max'])
+					{
+					$i++;
+					continue;
+					}
 				$vn=$vn[0];
 				if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
 					{
@@ -238,8 +283,15 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 	if($GLOBALS['MusselConfig']['signatures']['filenames_mussel'])
 		{
 		if(!isset($GLOBALS['memCache']['filenames_mussel.cvd']))$GLOBALS['memCache']['filenames_mussel.cvd']=@file($GLOBALS['vault']."filenames_mussel.cvd");
-		if(!$GLOBALS['memCache']['filenames_mussel.cvd'])return (!$n)?-3:$lnap."Signature file missing (filenames_mussel.cvd)!".$GLOBALS['linebreak'];
-		$c=@count($GLOBALS['memCache']['filenames_mussel.cvd']);
+		if(!$GLOBALS['memCache']['filenames_mussel.cvd'])
+			{
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (filenames_mussel.cvd)!".$GLOBALS['linebreak'];
+			$c=0;
+			}
+		else
+			{
+			$c=@count($GLOBALS['memCache']['filenames_mussel.cvd']);
+			}
 		$vn="";
 		$i=0;
 		while($i<$c)
@@ -265,6 +317,12 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				$vn=@explode(":",$xsig);
 				$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
 				$xsig=($xsig===false?"":implode("",$xsig));
+				$xlen=strlen($xsig);
+				if($xlen<$GLOBALS['MusselConfig']['signatures']['fn_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['fn_siglen_max'])
+					{
+					$i++;
+					continue;
+					}
 				$vn=$vn[0];
 				if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
 					{
@@ -283,124 +341,186 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 	if($GLOBALS['MusselConfig']['signatures']['md5_clamav'])
 		{
 		if(!isset($GLOBALS['memCache']['md5_clamav.cvd']))$GLOBALS['memCache']['md5_clamav.cvd']=@implode_md(file($GLOBALS['vault']."md5_clamav.cvd"));
-		if(!$GLOBALS['memCache']['md5_clamav.cvd'])return (!$n)?-3:$lnap."Signature file missing (md5_clamav.cvd)!".$GLOBALS['linebreak'];
-		if(substr_count($GLOBALS['memCache']['md5_clamav.cvd'],$md5)>0)
+		if(!$GLOBALS['memCache']['md5_clamav.cvd'])
 			{
-			$xsig=explode($md5.":",$GLOBALS['memCache']['md5_clamav.cvd'],2);
-			$xsig=explode($GLOBALS['linebreak'],$xsig[1],2);
-			$xsig=explode(":",$xsig[0],2);
-			if($xsig[0]==$str_len&&!substr_count($GLOBALS['memCache']['greylist'],",".$xsig[1].","))
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (md5_clamav.cvd)!".$GLOBALS['linebreak'];
+			}
+		else
+			{
+			if(substr_count($GLOBALS['memCache']['md5_clamav.cvd'],$md5)>0)
 				{
-				$out.=$lnap."Detected ".$xsig[1]."!".$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="Detected ".$xsig[1]." (".$ofn.")! ";
+				$xsig=explode($md5.":",$GLOBALS['memCache']['md5_clamav.cvd'],2);
+				$xsig=explode($GLOBALS['linebreak'],$xsig[1],2);
+				$xsig=explode(":",$xsig[0],2);
+				if($xsig[0]==$str_len&&!substr_count($GLOBALS['memCache']['greylist'],",".$xsig[1].","))
+					{
+					$out.=$lnap."Detected ".$xsig[1]."!".$GLOBALS['linebreak'];
+					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+					if($fm)$GLOBALS['xfm'].="Detected ".$xsig[1]." (".$ofn.")! ";
+					}
+				$xsig="";
 				}
-			$xsig="";
 			}
 		}
 	if($GLOBALS['MusselConfig']['signatures']['md5_custom'])
 		{
 		if(!isset($GLOBALS['memCache']['md5_custom.cvd']))$GLOBALS['memCache']['md5_custom.cvd']=@implode_md(file($GLOBALS['vault']."md5_custom.cvd"));
-		if(!$GLOBALS['memCache']['md5_custom.cvd'])return (!$n)?-3:$lnap."Signature file missing (md5_custom.cvd)!".$GLOBALS['linebreak'];
-		if(substr_count($GLOBALS['memCache']['md5_custom.cvd'],$md5)>0)
+		if(!$GLOBALS['memCache']['md5_custom.cvd'])
 			{
-			$xsig=explode($md5.":",$GLOBALS['memCache']['md5_custom.cvd'],2);
-			$xsig=explode($GLOBALS['linebreak'],$xsig[1],2);
-			$xsig=explode(":",$xsig[0],2);
-			if($xsig[0]==$str_len&&!substr_count($GLOBALS['memCache']['greylist'],",".$xsig[1].","))
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (md5_custom.cvd)!".$GLOBALS['linebreak'];
+			}
+		else
+			{
+			if(substr_count($GLOBALS['memCache']['md5_custom.cvd'],$md5)>0)
 				{
-				$out.=$lnap."Detected ".$xsig[1]."!".$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="Detected ".$xsig[1]." (".$ofn.")! ";
+				$xsig=explode($md5.":",$GLOBALS['memCache']['md5_custom.cvd'],2);
+				$xsig=explode($GLOBALS['linebreak'],$xsig[1],2);
+				$xsig=explode(":",$xsig[0],2);
+				if($xsig[0]==$str_len&&!substr_count($GLOBALS['memCache']['greylist'],",".$xsig[1].","))
+					{
+					$out.=$lnap."Detected ".$xsig[1]."!".$GLOBALS['linebreak'];
+					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+					if($fm)$GLOBALS['xfm'].="Detected ".$xsig[1]." (".$ofn.")! ";
+					}
+				$xsig="";
 				}
-			$xsig="";
 			}
 		}
 	if($GLOBALS['MusselConfig']['signatures']['md5_mussel'])
 		{
 		if(!isset($GLOBALS['memCache']['md5_mussel.cvd']))$GLOBALS['memCache']['md5_mussel.cvd']=@implode_md(file($GLOBALS['vault']."md5_mussel.cvd"));
-		if(!$GLOBALS['memCache']['md5_mussel.cvd'])return (!$n)?-3:$lnap."Signature file missing (md5_mussel.cvd)!".$GLOBALS['linebreak'];
-		if(substr_count($GLOBALS['memCache']['md5_mussel.cvd'],$md5)>0)
+		if(!$GLOBALS['memCache']['md5_mussel.cvd'])
 			{
-			$xsig=explode($md5.":",$GLOBALS['memCache']['md5_mussel.cvd'],2);
-			$xsig=explode($GLOBALS['linebreak'],$xsig[1],2);
-			$xsig=explode(":",$xsig[0],2);
-			if($xsig[0]==$str_len&&!substr_count($GLOBALS['memCache']['greylist'],",".$xsig[1].","))
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (md5_mussel.cvd)!".$GLOBALS['linebreak'];
+			}
+		else
+			{
+			if(substr_count($GLOBALS['memCache']['md5_mussel.cvd'],$md5)>0)
 				{
-				$out.=$lnap."Detected ".$xsig[1]."!".$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="Detected ".$xsig[1]." (".$ofn.")! ";
+				$xsig=explode($md5.":",$GLOBALS['memCache']['md5_mussel.cvd'],2);
+				$xsig=explode($GLOBALS['linebreak'],$xsig[1],2);
+				$xsig=explode(":",$xsig[0],2);
+				if($xsig[0]==$str_len&&!substr_count($GLOBALS['memCache']['greylist'],",".$xsig[1].","))
+					{
+					$out.=$lnap."Detected ".$xsig[1]."!".$GLOBALS['linebreak'];
+					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+					if($fm)$GLOBALS['xfm'].="Detected ".$xsig[1]." (".$ofn.")! ";
+					}
+				$xsig="";
 				}
-			$xsig="";
 			}
 		}
 	if($GLOBALS['MusselConfig']['signatures']['general_clamav'])
 		{
-		if(!isset($str_hex))$str_hex=@bin2hex($str);
-		if(!isset($GLOBALS['memCache']['general_clamav_standard.cvd']))$GLOBALS['memCache']['general_clamav_standard.cvd']=@file($GLOBALS['vault']."general_clamav_standard.cvd");
-		if(!$GLOBALS['memCache']['general_clamav_standard.cvd'])return (!$n)?-3:$lnap."Signature file missing (general_clamav_standard.cvd)!".$GLOBALS['linebreak'];
-		if(!isset($GLOBALS['memCache']['general_clamav_standard.map']))$GLOBALS['memCache']['general_clamav_standard.map']=@file($GLOBALS['vault']."general_clamav_standard.map");
-		if(!$GLOBALS['memCache']['general_clamav_standard.map'])return (!$n)?-3:$lnap."Signature map missing (general_clamav_standard.map)!".$GLOBALS['linebreak'];
-		$c=@count($GLOBALS['memCache']['general_clamav_standard.map']);
-		if($c<1)return (!$n)?-3:$lnap."Signature map corrupted (general_clamav_standard.map)!".$GLOBALS['linebreak'];
-		$vn="";
-		for($i=0;$i<$c;$i++)
+		$skipit=false;
+		while(!$skipit)
 			{
-			$map=explode(":",$GLOBALS['memCache']['general_clamav_standard.map'][$i]);
-			$map[2]=($map[2]*-1)*-1;
-			if(substr_count($str_hex,$map[0])>0)
+			$skipit=true;
+			if(!isset($str_hex))$str_hex=@bin2hex($str);
+			if(!isset($GLOBALS['memCache']['general_clamav_standard.cvd']))$GLOBALS['memCache']['general_clamav_standard.cvd']=@file($GLOBALS['vault']."general_clamav_standard.cvd");
+			if(!$GLOBALS['memCache']['general_clamav_standard.cvd'])
 				{
-				for($xind=$map[1];$xind<$map[2];$xind++)
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (general_clamav_standard.cvd)!".$GLOBALS['linebreak'];
+				break;
+				}
+			if(!isset($GLOBALS['memCache']['general_clamav_standard.map']))$GLOBALS['memCache']['general_clamav_standard.map']=@file($GLOBALS['vault']."general_clamav_standard.map");
+			if(!$GLOBALS['memCache']['general_clamav_standard.map'])
+				{
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (general_clamav_standard.map)!".$GLOBALS['linebreak'];
+				break;
+				}
+			$c=@count($GLOBALS['memCache']['general_clamav_standard.map']);
+			if($c<1)
+				{
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (general_clamav_standard.map)!".$GLOBALS['linebreak'];
+				break;
+				}
+			$vn="";
+			for($i=0;$i<$c;$i++)
+				{
+				$map=explode(":",$GLOBALS['memCache']['general_clamav_standard.map'][$i]);
+				$map[2]=($map[2]*-1)*-1;
+				if(substr_count($str_hex,$map[0])>0)
 					{
-					$xsig=$GLOBALS['memCache']['general_clamav_standard.cvd'][$xind];
-					if(substr_count($xsig,":")>0)
+					for($xind=$map[1];$xind<$map[2];$xind++)
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						$xsig=$GLOBALS['memCache']['general_clamav_standard.cvd'][$xind];
+						if(substr_count($xsig,":")>0)
 							{
-							if(substr_count($str_hex,$xsig)>0)
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(substr_count($str_hex,$xsig)>0)
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
 					}
 				}
 			}
-		if(!isset($GLOBALS['memCache']['general_clamav_regex.cvd']))$GLOBALS['memCache']['general_clamav_regex.cvd']=@file($GLOBALS['vault']."general_clamav_regex.cvd");
-		if(!$GLOBALS['memCache']['general_clamav_regex.cvd'])return (!$n)?-3:$lnap."Signature file missing (general_clamav_regex.cvd)!".$GLOBALS['linebreak'];
-		if(!isset($GLOBALS['memCache']['general_clamav_regex.map']))$GLOBALS['memCache']['general_clamav_regex.map']=@file($GLOBALS['vault']."general_clamav_regex.map");
-		if(!$GLOBALS['memCache']['general_clamav_regex.map'])return (!$n)?-3:$lnap."Signature map missing (general_clamav_regex.map)!".$GLOBALS['linebreak'];
-		$c=@count($GLOBALS['memCache']['general_clamav_regex.map']);
-		if($c<1)return (!$n)?-3:$lnap."Signature map corrupted (general_clamav_regex.map)!".$GLOBALS['linebreak'];
-		$vn="";
-		for($i=0;$i<$c;$i++)
+		$skipit=false;
+		while(!$skipit)
 			{
-			$map=explode(":",$GLOBALS['memCache']['general_clamav_regex.map'][$i]);
-			$map[2]=($map[2]*-1)*-1;
-			if(substr_count($str_hex,$map[0])>0)
+			$skipit=true;
+			if(!isset($GLOBALS['memCache']['general_clamav_regex.cvd']))$GLOBALS['memCache']['general_clamav_regex.cvd']=@file($GLOBALS['vault']."general_clamav_regex.cvd");
+			if(!$GLOBALS['memCache']['general_clamav_regex.cvd'])
 				{
-				for($xind=$map[1];$xind<$map[2];$xind++)
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (general_clamav_regex.cvd)!".$GLOBALS['linebreak'];
+				break;
+				}
+			if(!isset($GLOBALS['memCache']['general_clamav_regex.map']))$GLOBALS['memCache']['general_clamav_regex.map']=@file($GLOBALS['vault']."general_clamav_regex.map");
+			if(!$GLOBALS['memCache']['general_clamav_regex.map'])
+				{
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (general_clamav_regex.map)!".$GLOBALS['linebreak'];
+				break;
+				}
+			$c=@count($GLOBALS['memCache']['general_clamav_regex.map']);
+			if($c<1)
+				{
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (general_clamav_regex.map)!".$GLOBALS['linebreak'];
+				break;
+				}
+			$vn="";
+			for($i=0;$i<$c;$i++)
+				{
+				$map=explode(":",$GLOBALS['memCache']['general_clamav_regex.map'][$i]);
+				$map[2]=($map[2]*-1)*-1;
+				if(substr_count($str_hex,$map[0])>0)
 					{
-					$xsig=$GLOBALS['memCache']['general_clamav_regex.cvd'][$xind];
-					if(substr_count($xsig,":")>0)
+					for($xind=$map[1];$xind<$map[2];$xind++)
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						$xsig=$GLOBALS['memCache']['general_clamav_regex.cvd'][$xind];
+						if(substr_count($xsig,":")>0)
 							{
-							if(preg_match("/".$xsig."/i",$str_hex))
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(preg_match("/".$xsig."/i",$str_hex))
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
@@ -410,51 +530,79 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 		}
 	if($GLOBALS['MusselConfig']['signatures']['general_custom'])
 		{
-		if(!isset($str_hex))$str_hex=@bin2hex($str);
-		if(!isset($GLOBALS['memCache']['general_custom_standard.cvd']))$GLOBALS['memCache']['general_custom_standard.cvd']=@file($GLOBALS['vault']."general_custom_standard.cvd");
-		if(!$GLOBALS['memCache']['general_custom_standard.cvd'])return (!$n)?-3:$lnap."Signature file missing (general_custom_standard.cvd)!".$GLOBALS['linebreak'];
-		$c=@count($GLOBALS['memCache']['general_custom_standard.cvd']);
-		$vn="";
-		for($i=0;$i<$c;$i++)
+		$skipit=false;
+		while(!$skipit)
 			{
-			$xsig=$GLOBALS['memCache']['general_custom_standard.cvd'][$i];
-			if(substr_count($xsig,":")>0)
+			$skipit=true;
+			if(!isset($str_hex))$str_hex=@bin2hex($str);
+			if(!isset($GLOBALS['memCache']['general_custom_standard.cvd']))$GLOBALS['memCache']['general_custom_standard.cvd']=@file($GLOBALS['vault']."general_custom_standard.cvd");
+			if(!$GLOBALS['memCache']['general_custom_standard.cvd'])
 				{
-				$vn=@explode(":",$xsig);
-				$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-				$xsig=($xsig===false?"":implode("",$xsig));
-				$vn=$vn[0];
-				if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (general_custom_standard.cvd)!".$GLOBALS['linebreak'];
+				break;
+				}
+			$c=@count($GLOBALS['memCache']['general_custom_standard.cvd']);
+			$vn="";
+			for($i=0;$i<$c;$i++)
+				{
+				$xsig=$GLOBALS['memCache']['general_custom_standard.cvd'][$i];
+				if(substr_count($xsig,":")>0)
 					{
-					if(substr_count($str_hex,$xsig)>0)
+					$vn=@explode(":",$xsig);
+					$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=($xsig===false?"":implode("",$xsig));
+					$xlen=strlen($xsig);
+					if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
 						{
-						$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-						if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-						if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+						continue;
+						}
+					$vn=$vn[0];
+					if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						{
+						if(substr_count($str_hex,$xsig)>0)
+							{
+							$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+							}
 						}
 					}
 				}
 			}
-		if(!isset($GLOBALS['memCache']['general_custom_regex.cvd']))$GLOBALS['memCache']['general_custom_regex.cvd']=@file($GLOBALS['vault']."general_custom_regex.cvd");
-		if(!$GLOBALS['memCache']['general_custom_regex.cvd'])return (!$n)?-3:$lnap."Signature file missing (general_custom_regex.cvd)!".$GLOBALS['linebreak'];
-		$c=@count($GLOBALS['memCache']['general_custom_regex.cvd']);
-		$vn="";
-		for($i=0;$i<$c;$i++)
+		$skipit=false;
+		while(!$skipit)
 			{
-			$xsig=$GLOBALS['memCache']['general_custom_regex.cvd'][$i];
-			if(substr_count($xsig,":")>0)
+			$skipit=true;
+			if(!isset($GLOBALS['memCache']['general_custom_regex.cvd']))$GLOBALS['memCache']['general_custom_regex.cvd']=@file($GLOBALS['vault']."general_custom_regex.cvd");
+			if(!$GLOBALS['memCache']['general_custom_regex.cvd'])
 				{
-				$vn=@explode(":",$xsig);
-				$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-				$xsig=($xsig===false?"":implode("",$xsig));
-				$vn=$vn[0];
-				if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (general_custom_regex.cvd)!".$GLOBALS['linebreak'];
+				break;
+				}
+			$c=@count($GLOBALS['memCache']['general_custom_regex.cvd']);
+			$vn="";
+			for($i=0;$i<$c;$i++)
+				{
+				$xsig=$GLOBALS['memCache']['general_custom_regex.cvd'][$i];
+				if(substr_count($xsig,":")>0)
 					{
-					if(preg_match("/".$xsig."/i",$str_hex))
+					$vn=@explode(":",$xsig);
+					$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=($xsig===false?"":implode("",$xsig));
+					$xlen=strlen($xsig);
+					if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
 						{
-						$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-						if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-						if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+						continue;
+						}
+					$vn=$vn[0];
+					if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						{
+						if(preg_match("/".$xsig."/i",$str_hex))
+							{
+							$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+							}
 						}
 					}
 				}
@@ -462,51 +610,79 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 		}
 	if($GLOBALS['MusselConfig']['signatures']['general_mussel'])
 		{
-		if(!isset($str_hex))$str_hex=@bin2hex($str);
-		if(!isset($GLOBALS['memCache']['general_mussel_standard.cvd']))$GLOBALS['memCache']['general_mussel_standard.cvd']=@file($GLOBALS['vault']."general_mussel_standard.cvd");
-		if(!$GLOBALS['memCache']['general_mussel_standard.cvd'])return (!$n)?-3:$lnap."Signature file missing (general_mussel_standard.cvd)!".$GLOBALS['linebreak'];
-		$c=@count($GLOBALS['memCache']['general_mussel_standard.cvd']);
-		$vn="";
-		for($i=0;$i<$c;$i++)
+		$skipit=false;
+		while(!$skipit)
 			{
-			$xsig=$GLOBALS['memCache']['general_mussel_standard.cvd'][$i];
-			if(substr_count($xsig,":")>0)
+			$skipit=true;
+			if(!isset($str_hex))$str_hex=@bin2hex($str);
+			if(!isset($GLOBALS['memCache']['general_mussel_standard.cvd']))$GLOBALS['memCache']['general_mussel_standard.cvd']=@file($GLOBALS['vault']."general_mussel_standard.cvd");
+			if(!$GLOBALS['memCache']['general_mussel_standard.cvd'])
 				{
-				$vn=@explode(":",$xsig);
-				$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-				$xsig=($xsig===false?"":implode("",$xsig));
-				$vn=$vn[0];
-				if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (general_mussel_standard.cvd)!".$GLOBALS['linebreak'];
+				break;
+				}
+			$c=@count($GLOBALS['memCache']['general_mussel_standard.cvd']);
+			$vn="";
+			for($i=0;$i<$c;$i++)
+				{
+				$xsig=$GLOBALS['memCache']['general_mussel_standard.cvd'][$i];
+				if(substr_count($xsig,":")>0)
 					{
-					if(substr_count($str_hex,$xsig)>0)
+					$vn=@explode(":",$xsig);
+					$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=($xsig===false?"":implode("",$xsig));
+					$xlen=strlen($xsig);
+					if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
 						{
-						$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-						if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-						if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+						continue;
+						}
+					$vn=$vn[0];
+					if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						{
+						if(substr_count($str_hex,$xsig)>0)
+							{
+							$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+							}
 						}
 					}
 				}
 			}
-		if(!isset($GLOBALS['memCache']['general_mussel_regex.cvd']))$GLOBALS['memCache']['general_mussel_regex.cvd']=@file($GLOBALS['vault']."general_mussel_regex.cvd");
-		if(!$GLOBALS['memCache']['general_mussel_regex.cvd'])return (!$n)?-3:$lnap."Signature file missing (general_mussel_regex.cvd)!".$GLOBALS['linebreak'];
-		$c=@count($GLOBALS['memCache']['general_mussel_regex.cvd']);
-		$vn="";
-		for($i=0;$i<$c;$i++)
+		$skipit=false;
+		while(!$skipit)
 			{
-			$xsig=$GLOBALS['memCache']['general_mussel_regex.cvd'][$i];
-			if(substr_count($xsig,":")>0)
+			$skipit=true;
+			if(!isset($GLOBALS['memCache']['general_mussel_regex.cvd']))$GLOBALS['memCache']['general_mussel_regex.cvd']=@file($GLOBALS['vault']."general_mussel_regex.cvd");
+			if(!$GLOBALS['memCache']['general_mussel_regex.cvd'])
 				{
-				$vn=@explode(":",$xsig);
-				$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-				$xsig=($xsig===false?"":implode("",$xsig));
-				$vn=$vn[0];
-				if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (general_mussel_regex.cvd)!".$GLOBALS['linebreak'];
+				break;
+				}
+			$c=@count($GLOBALS['memCache']['general_mussel_regex.cvd']);
+			$vn="";
+			for($i=0;$i<$c;$i++)
+				{
+				$xsig=$GLOBALS['memCache']['general_mussel_regex.cvd'][$i];
+				if(substr_count($xsig,":")>0)
 					{
-					if(preg_match("/".$xsig."/i",$str_hex))
+					$vn=@explode(":",$xsig);
+					$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=($xsig===false?"":implode("",$xsig));
+					$xlen=strlen($xsig);
+					if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
 						{
-						$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-						if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-						if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+						continue;
+						}
+					$vn=$vn[0];
+					if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						{
+						if(preg_match("/".$xsig."/i",$str_hex))
+							{
+							$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+							}
 						}
 					}
 				}
@@ -586,70 +762,114 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			if(!isset($str_hex))$str_hex=@bin2hex($str);
 			if($GLOBALS['MusselConfig']['signatures']['exe_clamav'])
 				{
-				if(!isset($GLOBALS['memCache']['exe_clamav_standard.cvd']))$GLOBALS['memCache']['exe_clamav_standard.cvd']=@file($GLOBALS['vault']."exe_clamav_standard.cvd");
-				if(!$GLOBALS['memCache']['exe_clamav_standard.cvd'])return (!$n)?-3:$lnap."Signature file missing (exe_clamav_standard.cvd)!".$GLOBALS['linebreak'];
-				if(!isset($GLOBALS['memCache']['exe_clamav_standard.map']))$GLOBALS['memCache']['exe_clamav_standard.map']=@file($GLOBALS['vault']."exe_clamav_standard.map");
-				if(!$GLOBALS['memCache']['exe_clamav_standard.map'])return (!$n)?-3:$lnap."Signature map missing (exe_clamav_standard.map)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['exe_clamav_standard.map']);
-				if($c<1)return (!$n)?-3:$lnap."Signature map corrupted (exe_clamav_standard.map)!".$GLOBALS['linebreak'];
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$map=explode(":",$GLOBALS['memCache']['exe_clamav_standard.map'][$i]);
-					$map[2]=($map[2]*-1)*-1;
-					if(substr_count($str_hex,$map[0])>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['exe_clamav_standard.cvd']))$GLOBALS['memCache']['exe_clamav_standard.cvd']=@file($GLOBALS['vault']."exe_clamav_standard.cvd");
+					if(!$GLOBALS['memCache']['exe_clamav_standard.cvd'])
 						{
-						for($xind=$map[1];$xind<$map[2];$xind++)
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (exe_clamav_standard.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					if(!isset($GLOBALS['memCache']['exe_clamav_standard.map']))$GLOBALS['memCache']['exe_clamav_standard.map']=@file($GLOBALS['vault']."exe_clamav_standard.map");
+					if(!$GLOBALS['memCache']['exe_clamav_standard.map'])
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (exe_clamav_standard.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['exe_clamav_standard.map']);
+					if($c<1)
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (exe_clamav_standard.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$map=explode(":",$GLOBALS['memCache']['exe_clamav_standard.map'][$i]);
+						$map[2]=($map[2]*-1)*-1;
+						if(substr_count($str_hex,$map[0])>0)
 							{
-							$xsig=$GLOBALS['memCache']['exe_clamav_standard.cvd'][$xind];
-							if(substr_count($xsig,":")>0)
+							for($xind=$map[1];$xind<$map[2];$xind++)
 								{
-								$vn=@explode(":",$xsig);
-								$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-								$xsig=($xsig===false?"":implode("",$xsig));
-								$vn=$vn[0];
-								if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								$xsig=$GLOBALS['memCache']['exe_clamav_standard.cvd'][$xind];
+								if(substr_count($xsig,":")>0)
 									{
-									if(substr_count($str_hex,$xsig)>0)
+									$vn=@explode(":",$xsig);
+									$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=($xsig===false?"":implode("",$xsig));
+									$xlen=strlen($xsig);
+									if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
 										{
-										$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+										continue;
+										}
+									$vn=$vn[0];
+									if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+										{
+										if(substr_count($str_hex,$xsig)>0)
+											{
+											$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+											}
 										}
 									}
 								}
 							}
 						}
 					}
-				if(!isset($GLOBALS['memCache']['exe_clamav_regex.cvd']))$GLOBALS['memCache']['exe_clamav_regex.cvd']=@file($GLOBALS['vault']."exe_clamav_regex.cvd");
-				if(!$GLOBALS['memCache']['exe_clamav_regex.cvd'])return (!$n)?-3:$lnap."Signature file missing (exe_clamav_regex.cvd)!".$GLOBALS['linebreak'];
-				if(!isset($GLOBALS['memCache']['exe_clamav_regex.map']))$GLOBALS['memCache']['exe_clamav_regex.map']=@file($GLOBALS['vault']."exe_clamav_regex.map");
-				if(!$GLOBALS['memCache']['exe_clamav_regex.map'])return (!$n)?-3:$lnap."Signature map missing (exe_clamav_regex.map)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['exe_clamav_regex.map']);
-				if($c<1)return (!$n)?-3:$lnap."Signature map corrupted (exe_clamav_regex.map)!".$GLOBALS['linebreak'];
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$map=explode(":",$GLOBALS['memCache']['exe_clamav_regex.map'][$i]);
-					$map[2]=($map[2]*-1)*-1;
-					if(substr_count($str_hex,$map[0])>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['exe_clamav_regex.cvd']))$GLOBALS['memCache']['exe_clamav_regex.cvd']=@file($GLOBALS['vault']."exe_clamav_regex.cvd");
+					if(!$GLOBALS['memCache']['exe_clamav_regex.cvd'])
 						{
-						for($xind=$map[1];$xind<$map[2];$xind++)
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (exe_clamav_regex.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					if(!isset($GLOBALS['memCache']['exe_clamav_regex.map']))$GLOBALS['memCache']['exe_clamav_regex.map']=@file($GLOBALS['vault']."exe_clamav_regex.map");
+					if(!$GLOBALS['memCache']['exe_clamav_regex.map'])
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (exe_clamav_regex.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['exe_clamav_regex.map']);
+					if($c<1)
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (exe_clamav_regex.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$map=explode(":",$GLOBALS['memCache']['exe_clamav_regex.map'][$i]);
+						$map[2]=($map[2]*-1)*-1;
+						if(substr_count($str_hex,$map[0])>0)
 							{
-							$xsig=$GLOBALS['memCache']['exe_clamav_regex.cvd'][$xind];
-							if(substr_count($xsig,":")>0)
+							for($xind=$map[1];$xind<$map[2];$xind++)
 								{
-								$vn=@explode(":",$xsig);
-								$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-								$xsig=($xsig===false?"":implode("",$xsig));
-								$vn=$vn[0];
-								if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								$xsig=$GLOBALS['memCache']['exe_clamav_regex.cvd'][$xind];
+								if(substr_count($xsig,":")>0)
 									{
-									if(preg_match("/".$xsig."/i",$str_hex))
+									$vn=@explode(":",$xsig);
+									$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=($xsig===false?"":implode("",$xsig));
+									$xlen=strlen($xsig);
+									if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
 										{
-										$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+										continue;
+										}
+									$vn=$vn[0];
+									if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+										{
+										if(preg_match("/".$xsig."/i",$str_hex))
+											{
+											$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+											}
 										}
 									}
 								}
@@ -659,50 +879,78 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				}
 			if($GLOBALS['MusselConfig']['signatures']['exe_custom'])
 				{
-				if(!isset($GLOBALS['memCache']['exe_custom_standard.cvd']))$GLOBALS['memCache']['exe_custom_standard.cvd']=@file($GLOBALS['vault']."exe_custom_standard.cvd");
-				if(!$GLOBALS['memCache']['exe_custom_standard.cvd'])return (!$n)?-3:$lnap."Signature file missing (exe_custom_standard.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['exe_custom_standard.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['exe_custom_standard.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['exe_custom_standard.cvd']))$GLOBALS['memCache']['exe_custom_standard.cvd']=@file($GLOBALS['vault']."exe_custom_standard.cvd");
+					if(!$GLOBALS['memCache']['exe_custom_standard.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (exe_custom_standard.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['exe_custom_standard.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['exe_custom_standard.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(substr_count($str_hex,$xsig)>0)
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(substr_count($str_hex,$xsig)>0)
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
 					}
-				if(!isset($GLOBALS['memCache']['exe_custom_regex.cvd']))$GLOBALS['memCache']['exe_custom_regex.cvd']=@file($GLOBALS['vault']."exe_custom_regex.cvd");
-				if(!$GLOBALS['memCache']['exe_custom_regex.cvd'])return (!$n)?-3:$lnap."Signature file missing (exe_custom_regex.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['exe_custom_regex.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['exe_custom_regex.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['exe_custom_regex.cvd']))$GLOBALS['memCache']['exe_custom_regex.cvd']=@file($GLOBALS['vault']."exe_custom_regex.cvd");
+					if(!$GLOBALS['memCache']['exe_custom_regex.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (exe_custom_regex.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['exe_custom_regex.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['exe_custom_regex.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(preg_match("/".$xsig."/i",$str_hex))
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(preg_match("/".$xsig."/i",$str_hex))
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
@@ -710,50 +958,78 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				}
 			if($GLOBALS['MusselConfig']['signatures']['exe_mussel'])
 				{
-				if(!isset($GLOBALS['memCache']['exe_mussel_standard.cvd']))$GLOBALS['memCache']['exe_mussel_standard.cvd']=@file($GLOBALS['vault']."exe_mussel_standard.cvd");
-				if(!$GLOBALS['memCache']['exe_mussel_standard.cvd'])return (!$n)?-3:$lnap."Signature file missing (exe_mussel_standard.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['exe_mussel_standard.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['exe_mussel_standard.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['exe_mussel_standard.cvd']))$GLOBALS['memCache']['exe_mussel_standard.cvd']=@file($GLOBALS['vault']."exe_mussel_standard.cvd");
+					if(!$GLOBALS['memCache']['exe_mussel_standard.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (exe_mussel_standard.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['exe_mussel_standard.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['exe_mussel_standard.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(substr_count($str_hex,$xsig)>0)
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(substr_count($str_hex,$xsig)>0)
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
 					}
-				if(!isset($GLOBALS['memCache']['exe_mussel_regex.cvd']))$GLOBALS['memCache']['exe_mussel_regex.cvd']=@file($GLOBALS['vault']."exe_mussel_regex.cvd");
-				if(!$GLOBALS['memCache']['exe_mussel_regex.cvd'])return (!$n)?-3:$lnap."Signature file missing (exe_mussel_regex.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['exe_mussel_regex.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['exe_mussel_regex.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['exe_mussel_regex.cvd']))$GLOBALS['memCache']['exe_mussel_regex.cvd']=@file($GLOBALS['vault']."exe_mussel_regex.cvd");
+					if(!$GLOBALS['memCache']['exe_mussel_regex.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (exe_mussel_regex.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['exe_mussel_regex.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['exe_mussel_regex.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(preg_match("/".$xsig."/i",$str_hex))
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(preg_match("/".$xsig."/i",$str_hex))
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
@@ -768,70 +1044,114 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			{
 			if($GLOBALS['MusselConfig']['signatures']['elf_clamav'])
 				{
-				if(!isset($GLOBALS['memCache']['elf_clamav_standard.cvd']))$GLOBALS['memCache']['elf_clamav_standard.cvd']=@file($GLOBALS['vault']."elf_clamav_standard.cvd");
-				if(!$GLOBALS['memCache']['elf_clamav_standard.cvd'])return (!$n)?-3:$lnap."Signature file missing (elf_clamav_standard.cvd)!".$GLOBALS['linebreak'];
-				if(!isset($GLOBALS['memCache']['elf_clamav_standard.map']))$GLOBALS['memCache']['elf_clamav_standard.map']=@file($GLOBALS['vault']."elf_clamav_standard.map");
-				if(!$GLOBALS['memCache']['elf_clamav_standard.map'])return (!$n)?-3:$lnap."Signature map missing (elf_clamav_standard.map)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['elf_clamav_standard.map']);
-				if($c<1)return (!$n)?-3:$lnap."Signature map corrupted (elf_clamav_standard.map)!".$GLOBALS['linebreak'];
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$map=explode(":",$GLOBALS['memCache']['elf_clamav_standard.map'][$i]);
-					$map[2]=($map[2]*-1)*-1;
-					if(substr_count($str_hex,$map[0])>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['elf_clamav_standard.cvd']))$GLOBALS['memCache']['elf_clamav_standard.cvd']=@file($GLOBALS['vault']."elf_clamav_standard.cvd");
+					if(!$GLOBALS['memCache']['elf_clamav_standard.cvd'])
 						{
-						for($xind=$map[1];$xind<$map[2];$xind++)
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (elf_clamav_standard.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					if(!isset($GLOBALS['memCache']['elf_clamav_standard.map']))$GLOBALS['memCache']['elf_clamav_standard.map']=@file($GLOBALS['vault']."elf_clamav_standard.map");
+					if(!$GLOBALS['memCache']['elf_clamav_standard.map'])
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (elf_clamav_standard.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['elf_clamav_standard.map']);
+					if($c<1)
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (elf_clamav_standard.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$map=explode(":",$GLOBALS['memCache']['elf_clamav_standard.map'][$i]);
+						$map[2]=($map[2]*-1)*-1;
+						if(substr_count($str_hex,$map[0])>0)
 							{
-							$xsig=$GLOBALS['memCache']['elf_clamav_standard.cvd'][$xind];
-							if(substr_count($xsig,":")>0)
+							for($xind=$map[1];$xind<$map[2];$xind++)
 								{
-								$vn=@explode(":",$xsig);
-								$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-								$xsig=($xsig===false?"":implode("",$xsig));
-								$vn=$vn[0];
-								if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								$xsig=$GLOBALS['memCache']['elf_clamav_standard.cvd'][$xind];
+								if(substr_count($xsig,":")>0)
 									{
-									if(substr_count($str_hex,$xsig)>0)
+									$vn=@explode(":",$xsig);
+									$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=($xsig===false?"":implode("",$xsig));
+									$xlen=strlen($xsig);
+									if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
 										{
-										$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+										continue;
+										}
+									$vn=$vn[0];
+									if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+										{
+										if(substr_count($str_hex,$xsig)>0)
+											{
+											$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+											}
 										}
 									}
 								}
 							}
 						}
 					}
-				if(!isset($GLOBALS['memCache']['elf_clamav_regex.cvd']))$GLOBALS['memCache']['elf_clamav_regex.cvd']=@file($GLOBALS['vault']."elf_clamav_regex.cvd");
-				if(!$GLOBALS['memCache']['elf_clamav_regex.cvd'])return (!$n)?-3:$lnap."Signature file missing (elf_clamav_regex.cvd)!".$GLOBALS['linebreak'];
-				if(!isset($GLOBALS['memCache']['elf_clamav_regex.map']))$GLOBALS['memCache']['elf_clamav_regex.map']=@file($GLOBALS['vault']."elf_clamav_regex.map");
-				if(!$GLOBALS['memCache']['elf_clamav_regex.map'])return (!$n)?-3:$lnap."Signature map missing (elf_clamav_regex.map)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['elf_clamav_regex.map']);
-				if($c<1)return (!$n)?-3:$lnap."Signature map corrupted (elf_clamav_regex.map)!".$GLOBALS['linebreak'];
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$map=explode(":",$GLOBALS['memCache']['elf_clamav_regex.map'][$i]);
-					$map[2]=($map[2]*-1)*-1;
-					if(substr_count($str_hex,$map[0])>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['elf_clamav_regex.cvd']))$GLOBALS['memCache']['elf_clamav_regex.cvd']=@file($GLOBALS['vault']."elf_clamav_regex.cvd");
+					if(!$GLOBALS['memCache']['elf_clamav_regex.cvd'])
 						{
-						for($xind=$map[1];$xind<$map[2];$xind++)
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (elf_clamav_regex.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					if(!isset($GLOBALS['memCache']['elf_clamav_regex.map']))$GLOBALS['memCache']['elf_clamav_regex.map']=@file($GLOBALS['vault']."elf_clamav_regex.map");
+					if(!$GLOBALS['memCache']['elf_clamav_regex.map'])
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (elf_clamav_regex.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['elf_clamav_regex.map']);
+					if($c<1)
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (elf_clamav_regex.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$map=explode(":",$GLOBALS['memCache']['elf_clamav_regex.map'][$i]);
+						$map[2]=($map[2]*-1)*-1;
+						if(substr_count($str_hex,$map[0])>0)
 							{
-							$xsig=$GLOBALS['memCache']['elf_clamav_regex.cvd'][$xind];
-							if(substr_count($xsig,":")>0)
+							for($xind=$map[1];$xind<$map[2];$xind++)
 								{
-								$vn=@explode(":",$xsig);
-								$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-								$xsig=($xsig===false?"":implode("",$xsig));
-								$vn=$vn[0];
-								if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								$xsig=$GLOBALS['memCache']['elf_clamav_regex.cvd'][$xind];
+								if(substr_count($xsig,":")>0)
 									{
-									if(preg_match("/".$xsig."/i",$str_hex))
+									$vn=@explode(":",$xsig);
+									$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=($xsig===false?"":implode("",$xsig));
+									$xlen=strlen($xsig);
+									if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
 										{
-										$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+										continue;
+										}
+									$vn=$vn[0];
+									if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+										{
+										if(preg_match("/".$xsig."/i",$str_hex))
+											{
+											$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+											}
 										}
 									}
 								}
@@ -841,50 +1161,78 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				}
 			if($GLOBALS['MusselConfig']['signatures']['elf_custom'])
 				{
-				if(!isset($GLOBALS['memCache']['elf_custom_standard.cvd']))$GLOBALS['memCache']['elf_custom_standard.cvd']=@file($GLOBALS['vault']."elf_custom_standard.cvd");
-				if(!$GLOBALS['memCache']['elf_custom_standard.cvd'])return (!$n)?-3:$lnap."Signature file missing (elf_custom_standard.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['elf_custom_standard.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['elf_custom_standard.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['elf_custom_standard.cvd']))$GLOBALS['memCache']['elf_custom_standard.cvd']=@file($GLOBALS['vault']."elf_custom_standard.cvd");
+					if(!$GLOBALS['memCache']['elf_custom_standard.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (elf_custom_standard.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['elf_custom_standard.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['elf_custom_standard.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(substr_count($str_hex,$xsig)>0)
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(substr_count($str_hex,$xsig)>0)
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
 					}
-				if(!isset($GLOBALS['memCache']['elf_custom_regex.cvd']))$GLOBALS['memCache']['elf_custom_regex.cvd']=@file($GLOBALS['vault']."elf_custom_regex.cvd");
-				if(!$GLOBALS['memCache']['elf_custom_regex.cvd'])return (!$n)?-3:$lnap."Signature file missing (elf_custom_regex.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['elf_custom_regex.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['elf_custom_regex.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['elf_custom_regex.cvd']))$GLOBALS['memCache']['elf_custom_regex.cvd']=@file($GLOBALS['vault']."elf_custom_regex.cvd");
+					if(!$GLOBALS['memCache']['elf_custom_regex.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (elf_custom_regex.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['elf_custom_regex.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['elf_custom_regex.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(preg_match("/".$xsig."/i",$str_hex))
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(preg_match("/".$xsig."/i",$str_hex))
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
@@ -892,50 +1240,78 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				}
 			if($GLOBALS['MusselConfig']['signatures']['elf_mussel'])
 				{
-				if(!isset($GLOBALS['memCache']['elf_mussel_standard.cvd']))$GLOBALS['memCache']['elf_mussel_standard.cvd']=@file($GLOBALS['vault']."elf_mussel_standard.cvd");
-				if(!$GLOBALS['memCache']['elf_mussel_standard.cvd'])return (!$n)?-3:$lnap."Signature file missing (elf_mussel_standard.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['elf_mussel_standard.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['elf_mussel_standard.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['elf_mussel_standard.cvd']))$GLOBALS['memCache']['elf_mussel_standard.cvd']=@file($GLOBALS['vault']."elf_mussel_standard.cvd");
+					if(!$GLOBALS['memCache']['elf_mussel_standard.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (elf_mussel_standard.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['elf_mussel_standard.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['elf_mussel_standard.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(substr_count($str_hex,$xsig)>0)
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(substr_count($str_hex,$xsig)>0)
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
 					}
-				if(!isset($GLOBALS['memCache']['elf_mussel_regex.cvd']))$GLOBALS['memCache']['elf_mussel_regex.cvd']=@file($GLOBALS['vault']."elf_mussel_regex.cvd");
-				if(!$GLOBALS['memCache']['elf_mussel_regex.cvd'])return (!$n)?-3:$lnap."Signature file missing (elf_mussel_regex.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['elf_mussel_regex.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['elf_mussel_regex.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['elf_mussel_regex.cvd']))$GLOBALS['memCache']['elf_mussel_regex.cvd']=@file($GLOBALS['vault']."elf_mussel_regex.cvd");
+					if(!$GLOBALS['memCache']['elf_mussel_regex.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (elf_mussel_regex.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['elf_mussel_regex.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['elf_mussel_regex.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(preg_match("/".$xsig."/i",$str_hex))
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(preg_match("/".$xsig."/i",$str_hex))
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
@@ -1056,31 +1432,32 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 		}
 	if($GLOBALS['MusselConfig']['attack_specific']['general_commands'])
 		{
-		if(!isset($GLOBALS['memCache']['hex_general_commands.csv']))$GLOBALS['memCache']['hex_general_commands.csv']=@explode(",",implode_md(file($GLOBALS['vault']."hex_general_commands.csv")));
-		if(!$GLOBALS['memCache']['hex_general_commands.csv'])return (!$n)?-3:$lnap."Signature file missing (hex_general_commands.csv)!".$GLOBALS['linebreak'];
-		$c=count($GLOBALS['memCache']['hex_general_commands.csv']);
-		if($c<1)return (!$n)?-3:$lnap."Signature file corrupted (hex_general_commands.csv)!".$GLOBALS['linebreak'];
-		if(!isset($str_norm))$str_norm=strtolower(str_replace("\t","",str_replace("\n","",str_replace("\r","",str_replace(" ","",$str)))));
-		for($i=0;$i<$c;$i++)
+		$skipit=false;
+		while(!$skipit)
 			{
-			$xgc=$GLOBALS['memCache']['hex_general_commands.csv'][$i];
-			$xgcn="";
-			$xgcl=strlen($xgc);
-			$xng=false;
-			for($xgci=0;$xgci<$xgcl;$xgci++)
+			$skipit=true;
+			if(!isset($GLOBALS['memCache']['hex_general_commands.csv']))$GLOBALS['memCache']['hex_general_commands.csv']=@explode(",",implode_md(file($GLOBALS['vault']."hex_general_commands.csv")));
+			if(!$GLOBALS['memCache']['hex_general_commands.csv'])
 				{
-				$xng=(!$xng)?true:false;
-				if($xng)
-					{
-					$xgcz=$xgci+1;
-					$xgcn.=@chr(hexdec($xgc[$xgci].$xgc[$xgcz]));
-					}
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (hex_general_commands.csv)!".$GLOBALS['linebreak'];
+				break;
 				}
-			if(substr_count($str_norm,$xgcn)>0)
+			$c=count($GLOBALS['memCache']['hex_general_commands.csv']);
+			if($c<1)
 				{
-				$out.=$lnap."Command injection attempt detected!".$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].="Command injection attempt detected, '".urlencode($xgcn)."' (".$ofn.")! ";
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file corrupted (hex_general_commands.csv)!".$GLOBALS['linebreak'];
+				break;
+				}
+			if(!isset($str_norm))$str_norm=strtolower(str_replace("\t","",str_replace("\n","",str_replace("\r","",str_replace(" ","",$str)))));
+			for($i=0;$i<$c;$i++)
+				{
+				$xgc=@hex2bin($GLOBALS['memCache']['hex_general_commands.csv'][$i]);
+				if(substr_count($str_norm,$xgc)>0)
+					{
+					$out.=$lnap."Command injection attempt detected!".$GLOBALS['linebreak'];
+					if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+					if($fm)$GLOBALS['xfm'].="Command injection attempt detected, '".urlencode($xgc)."' (".$ofn.")! ";
+					}
 				}
 			}
 		}
@@ -1092,70 +1469,114 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			if(!isset($str_hex))$str_hex=@bin2hex($str);
 			if($GLOBALS['MusselConfig']['signatures']['graphics_clamav'])
 				{
-				if(!isset($GLOBALS['memCache']['graphics_clamav_standard.cvd']))$GLOBALS['memCache']['graphics_clamav_standard.cvd']=@file($GLOBALS['vault']."graphics_clamav_standard.cvd");
-				if(!$GLOBALS['memCache']['graphics_clamav_standard.cvd'])return (!$n)?-3:$lnap."Signature file missing (graphics_clamav_standard.cvd)!".$GLOBALS['linebreak'];
-				if(!isset($GLOBALS['memCache']['graphics_clamav_standard.map']))$GLOBALS['memCache']['graphics_clamav_standard.map']=@file($GLOBALS['vault']."graphics_clamav_standard.map");
-				if(!$GLOBALS['memCache']['graphics_clamav_standard.map'])return (!$n)?-3:$lnap."Signature map missing (graphics_clamav_standard.map)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['graphics_clamav_standard.map']);
-				if($c<1)return (!$n)?-3:$lnap."Signature map corrupted (graphics_clamav_standard.map)!".$GLOBALS['linebreak'];
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$map=explode(":",$GLOBALS['memCache']['graphics_clamav_standard.map'][$i]);
-					$map[2]=($map[2]*-1)*-1;
-					if(substr_count($str_hex,$map[0])>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['graphics_clamav_standard.cvd']))$GLOBALS['memCache']['graphics_clamav_standard.cvd']=@file($GLOBALS['vault']."graphics_clamav_standard.cvd");
+					if(!$GLOBALS['memCache']['graphics_clamav_standard.cvd'])
 						{
-						for($xind=$map[1];$xind<$map[2];$xind++)
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (graphics_clamav_standard.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					if(!isset($GLOBALS['memCache']['graphics_clamav_standard.map']))$GLOBALS['memCache']['graphics_clamav_standard.map']=@file($GLOBALS['vault']."graphics_clamav_standard.map");
+					if(!$GLOBALS['memCache']['graphics_clamav_standard.map'])
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (graphics_clamav_standard.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['graphics_clamav_standard.map']);
+					if($c<1)
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (graphics_clamav_standard.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$map=explode(":",$GLOBALS['memCache']['graphics_clamav_standard.map'][$i]);
+						$map[2]=($map[2]*-1)*-1;
+						if(substr_count($str_hex,$map[0])>0)
 							{
-							$xsig=$GLOBALS['memCache']['graphics_clamav_standard.cvd'][$xind];
-							if(substr_count($xsig,":")>0)
+							for($xind=$map[1];$xind<$map[2];$xind++)
 								{
-								$vn=@explode(":",$xsig);
-								$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-								$xsig=($xsig===false?"":implode("",$xsig));
-								$vn=$vn[0];
-								if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								$xsig=$GLOBALS['memCache']['graphics_clamav_standard.cvd'][$xind];
+								if(substr_count($xsig,":")>0)
 									{
-									if(substr_count($str_hex,$xsig)>0)
+									$vn=@explode(":",$xsig);
+									$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=($xsig===false?"":implode("",$xsig));
+									$xlen=strlen($xsig);
+									if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
 										{
-										$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+										continue;
+										}
+									$vn=$vn[0];
+									if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+										{
+										if(substr_count($str_hex,$xsig)>0)
+											{
+											$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+											}
 										}
 									}
 								}
 							}
 						}
 					}
-				if(!isset($GLOBALS['memCache']['graphics_clamav_regex.cvd']))$GLOBALS['memCache']['graphics_clamav_regex.cvd']=@file($GLOBALS['vault']."graphics_clamav_regex.cvd");
-				if(!$GLOBALS['memCache']['graphics_clamav_regex.cvd'])return (!$n)?-3:$lnap."Signature file missing (graphics_clamav_regex.cvd)!".$GLOBALS['linebreak'];
-				if(!isset($GLOBALS['memCache']['graphics_clamav_regex.map']))$GLOBALS['memCache']['graphics_clamav_regex.map']=@file($GLOBALS['vault']."graphics_clamav_regex.map");
-				if(!$GLOBALS['memCache']['graphics_clamav_regex.map'])return (!$n)?-3:$lnap."Signature map missing (graphics_clamav_regex.map)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['graphics_clamav_regex.map']);
-				if($c<1)return (!$n)?-3:$lnap."Signature map corrupted (graphics_clamav_regex.map)!".$GLOBALS['linebreak'];
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$map=explode(":",$GLOBALS['memCache']['graphics_clamav_regex.map'][$i]);
-					$map[2]=($map[2]*-1)*-1;
-					if(substr_count($str_hex,$map[0])>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['graphics_clamav_regex.cvd']))$GLOBALS['memCache']['graphics_clamav_regex.cvd']=@file($GLOBALS['vault']."graphics_clamav_regex.cvd");
+					if(!$GLOBALS['memCache']['graphics_clamav_regex.cvd'])
 						{
-						for($xind=$map[1];$xind<$map[2];$xind++)
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (graphics_clamav_regex.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					if(!isset($GLOBALS['memCache']['graphics_clamav_regex.map']))$GLOBALS['memCache']['graphics_clamav_regex.map']=@file($GLOBALS['vault']."graphics_clamav_regex.map");
+					if(!$GLOBALS['memCache']['graphics_clamav_regex.map'])
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (graphics_clamav_regex.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['graphics_clamav_regex.map']);
+					if($c<1)
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (graphics_clamav_regex.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$map=explode(":",$GLOBALS['memCache']['graphics_clamav_regex.map'][$i]);
+						$map[2]=($map[2]*-1)*-1;
+						if(substr_count($str_hex,$map[0])>0)
 							{
-							$xsig=$GLOBALS['memCache']['graphics_clamav_regex.cvd'][$xind];
-							if(substr_count($xsig,":")>0)
+							for($xind=$map[1];$xind<$map[2];$xind++)
 								{
-								$vn=@explode(":",$xsig);
-								$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-								$xsig=($xsig===false?"":implode("",$xsig));
-								$vn=$vn[0];
-								if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								$xsig=$GLOBALS['memCache']['graphics_clamav_regex.cvd'][$xind];
+								if(substr_count($xsig,":")>0)
 									{
-									if(preg_match("/".$xsig."/i",$str_hex))
+									$vn=@explode(":",$xsig);
+									$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=($xsig===false?"":implode("",$xsig));
+									$xlen=strlen($xsig);
+									if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
 										{
-										$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+										continue;
+										}
+									$vn=$vn[0];
+									if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+										{
+										if(preg_match("/".$xsig."/i",$str_hex))
+											{
+											$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+											}
 										}
 									}
 								}
@@ -1165,50 +1586,78 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				}
 			if($GLOBALS['MusselConfig']['signatures']['graphics_custom'])
 				{
-				if(!isset($GLOBALS['memCache']['graphics_custom_standard.cvd']))$GLOBALS['memCache']['graphics_custom_standard.cvd']=@file($GLOBALS['vault']."graphics_custom_standard.cvd");
-				if(!$GLOBALS['memCache']['graphics_custom_standard.cvd'])return (!$n)?-3:$lnap."Signature file missing (graphics_custom_standard.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['graphics_custom_standard.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['graphics_custom_standard.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['graphics_custom_standard.cvd']))$GLOBALS['memCache']['graphics_custom_standard.cvd']=@file($GLOBALS['vault']."graphics_custom_standard.cvd");
+					if(!$GLOBALS['memCache']['graphics_custom_standard.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (graphics_custom_standard.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['graphics_custom_standard.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['graphics_custom_standard.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(substr_count($str_hex,$xsig)>0)
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(substr_count($str_hex,$xsig)>0)
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
 					}
-				if(!isset($GLOBALS['memCache']['graphics_custom_regex.cvd']))$GLOBALS['memCache']['graphics_custom_regex.cvd']=@file($GLOBALS['vault']."graphics_custom_regex.cvd");
-				if(!$GLOBALS['memCache']['graphics_custom_regex.cvd'])return (!$n)?-3:$lnap."Signature file missing (graphics_custom_regex.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['graphics_custom_regex.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['graphics_custom_regex.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['graphics_custom_regex.cvd']))$GLOBALS['memCache']['graphics_custom_regex.cvd']=@file($GLOBALS['vault']."graphics_custom_regex.cvd");
+					if(!$GLOBALS['memCache']['graphics_custom_regex.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (graphics_custom_regex.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['graphics_custom_regex.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['graphics_custom_regex.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(preg_match("/".$xsig."/i",$str_hex))
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(preg_match("/".$xsig."/i",$str_hex))
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
@@ -1216,50 +1665,78 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				}
 			if($GLOBALS['MusselConfig']['signatures']['graphics_mussel'])
 				{
-				if(!isset($GLOBALS['memCache']['graphics_mussel_standard.cvd']))$GLOBALS['memCache']['graphics_mussel_standard.cvd']=@file($GLOBALS['vault']."graphics_mussel_standard.cvd");
-				if(!$GLOBALS['memCache']['graphics_mussel_standard.cvd'])return (!$n)?-3:$lnap."Signature file missing (graphics_mussel_standard.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['graphics_mussel_standard.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['graphics_mussel_standard.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['graphics_mussel_standard.cvd']))$GLOBALS['memCache']['graphics_mussel_standard.cvd']=@file($GLOBALS['vault']."graphics_mussel_standard.cvd");
+					if(!$GLOBALS['memCache']['graphics_mussel_standard.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (graphics_mussel_standard.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['graphics_mussel_standard.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['graphics_mussel_standard.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(substr_count($str_hex,$xsig)>0)
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(substr_count($str_hex,$xsig)>0)
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
 					}
-				if(!isset($GLOBALS['memCache']['graphics_mussel_regex.cvd']))$GLOBALS['memCache']['graphics_mussel_regex.cvd']=@file($GLOBALS['vault']."graphics_mussel_regex.cvd");
-				if(!$GLOBALS['memCache']['graphics_mussel_regex.cvd'])return (!$n)?-3:$lnap."Signature file missing (graphics_mussel_regex.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['graphics_mussel_regex.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['graphics_mussel_regex.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['graphics_mussel_regex.cvd']))$GLOBALS['memCache']['graphics_mussel_regex.cvd']=@file($GLOBALS['vault']."graphics_mussel_regex.cvd");
+					if(!$GLOBALS['memCache']['graphics_mussel_regex.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (graphics_mussel_regex.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['graphics_mussel_regex.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['graphics_mussel_regex.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(preg_match("/".$xsig."/i",$str_hex))
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(preg_match("/".$xsig."/i",$str_hex))
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
@@ -1274,70 +1751,114 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 			if(!isset($str_hex))$str_hex=@bin2hex($str);
 			if($GLOBALS['MusselConfig']['signatures']['macho_clamav'])
 				{
-				if(!isset($GLOBALS['memCache']['macho_clamav_standard.cvd']))$GLOBALS['memCache']['macho_clamav_standard.cvd']=@file($GLOBALS['vault']."macho_clamav_standard.cvd");
-				if(!$GLOBALS['memCache']['macho_clamav_standard.cvd'])return (!$n)?-3:$lnap."Signature file missing (macho_clamav_standard.cvd)!".$GLOBALS['linebreak'];
-				if(!isset($GLOBALS['memCache']['macho_clamav_standard.map']))$GLOBALS['memCache']['macho_clamav_standard.map']=@file($GLOBALS['vault']."macho_clamav_standard.map");
-				if(!$GLOBALS['memCache']['macho_clamav_standard.map'])return (!$n)?-3:$lnap."Signature map missing (macho_clamav_standard.map)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['macho_clamav_standard.map']);
-				if($c<1)return (!$n)?-3:$lnap."Signature map corrupted (macho_clamav_standard.map)!".$GLOBALS['linebreak'];
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$map=explode(":",$GLOBALS['memCache']['macho_clamav_standard.map'][$i]);
-					$map[2]=($map[2]*-1)*-1;
-					if(substr_count($str_hex,$map[0])>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['macho_clamav_standard.cvd']))$GLOBALS['memCache']['macho_clamav_standard.cvd']=@file($GLOBALS['vault']."macho_clamav_standard.cvd");
+					if(!$GLOBALS['memCache']['macho_clamav_standard.cvd'])
 						{
-						for($xind=$map[1];$xind<$map[2];$xind++)
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (macho_clamav_standard.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					if(!isset($GLOBALS['memCache']['macho_clamav_standard.map']))$GLOBALS['memCache']['macho_clamav_standard.map']=@file($GLOBALS['vault']."macho_clamav_standard.map");
+					if(!$GLOBALS['memCache']['macho_clamav_standard.map'])
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (macho_clamav_standard.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['macho_clamav_standard.map']);
+					if($c<1)
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (macho_clamav_standard.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$map=explode(":",$GLOBALS['memCache']['macho_clamav_standard.map'][$i]);
+						$map[2]=($map[2]*-1)*-1;
+						if(substr_count($str_hex,$map[0])>0)
 							{
-							$xsig=$GLOBALS['memCache']['macho_clamav_standard.cvd'][$xind];
-							if(substr_count($xsig,":")>0)
+							for($xind=$map[1];$xind<$map[2];$xind++)
 								{
-								$vn=@explode(":",$xsig);
-								$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-								$xsig=($xsig===false?"":implode("",$xsig));
-								$vn=$vn[0];
-								if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								$xsig=$GLOBALS['memCache']['macho_clamav_standard.cvd'][$xind];
+								if(substr_count($xsig,":")>0)
 									{
-									if(substr_count($str_hex,$xsig)>0)
+									$vn=@explode(":",$xsig);
+									$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=($xsig===false?"":implode("",$xsig));
+									$xlen=strlen($xsig);
+									if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
 										{
-										$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+										continue;
+										}
+									$vn=$vn[0];
+									if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+										{
+										if(substr_count($str_hex,$xsig)>0)
+											{
+											$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+											}
 										}
 									}
 								}
 							}
 						}
 					}
-				if(!isset($GLOBALS['memCache']['macho_clamav_regex.cvd']))$GLOBALS['memCache']['macho_clamav_regex.cvd']=@file($GLOBALS['vault']."macho_clamav_regex.cvd");
-				if(!$GLOBALS['memCache']['macho_clamav_regex.cvd'])return (!$n)?-3:$lnap."Signature file missing (macho_clamav_regex.cvd)!".$GLOBALS['linebreak'];
-				if(!isset($GLOBALS['memCache']['macho_clamav_regex.map']))$GLOBALS['memCache']['macho_clamav_regex.map']=@file($GLOBALS['vault']."macho_clamav_regex.map");
-				if(!$GLOBALS['memCache']['macho_clamav_regex.map'])return (!$n)?-3:$lnap."Signature map missing (macho_clamav_regex.map)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['macho_clamav_regex.map']);
-				if($c<1)return (!$n)?-3:$lnap."Signature map corrupted (macho_clamav_regex.map)!".$GLOBALS['linebreak'];
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$map=explode(":",$GLOBALS['memCache']['macho_clamav_regex.map'][$i]);
-					$map[2]=($map[2]*-1)*-1;
-					if(substr_count($str_hex,$map[0])>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['macho_clamav_regex.cvd']))$GLOBALS['memCache']['macho_clamav_regex.cvd']=@file($GLOBALS['vault']."macho_clamav_regex.cvd");
+					if(!$GLOBALS['memCache']['macho_clamav_regex.cvd'])
 						{
-						for($xind=$map[1];$xind<$map[2];$xind++)
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (macho_clamav_regex.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					if(!isset($GLOBALS['memCache']['macho_clamav_regex.map']))$GLOBALS['memCache']['macho_clamav_regex.map']=@file($GLOBALS['vault']."macho_clamav_regex.map");
+					if(!$GLOBALS['memCache']['macho_clamav_regex.map'])
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map missing (macho_clamav_regex.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['macho_clamav_regex.map']);
+					if($c<1)
+						{
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature map corrupted (macho_clamav_regex.map)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$map=explode(":",$GLOBALS['memCache']['macho_clamav_regex.map'][$i]);
+						$map[2]=($map[2]*-1)*-1;
+						if(substr_count($str_hex,$map[0])>0)
 							{
-							$xsig=$GLOBALS['memCache']['macho_clamav_regex.cvd'][$xind];
-							if(substr_count($xsig,":")>0)
+							for($xind=$map[1];$xind<$map[2];$xind++)
 								{
-								$vn=@explode(":",$xsig);
-								$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-								$xsig=($xsig===false?"":implode("",$xsig));
-								$vn=$vn[0];
-								if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								$xsig=$GLOBALS['memCache']['macho_clamav_regex.cvd'][$xind];
+								if(substr_count($xsig,":")>0)
 									{
-									if(preg_match("/".$xsig."/i",$str_hex))
+									$vn=@explode(":",$xsig);
+									$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+									$xsig=($xsig===false?"":implode("",$xsig));
+									$xlen=strlen($xsig);
+									if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
 										{
-										$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+										continue;
+										}
+									$vn=$vn[0];
+									if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+										{
+										if(preg_match("/".$xsig."/i",$str_hex))
+											{
+											$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+											if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+											}
 										}
 									}
 								}
@@ -1347,50 +1868,78 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				}
 			if($GLOBALS['MusselConfig']['signatures']['macho_custom'])
 				{
-				if(!isset($GLOBALS['memCache']['macho_custom_standard.cvd']))$GLOBALS['memCache']['macho_custom_standard.cvd']=@file($GLOBALS['vault']."macho_custom_standard.cvd");
-				if(!$GLOBALS['memCache']['macho_custom_standard.cvd'])return (!$n)?-3:$lnap."Signature file missing (macho_custom_standard.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['macho_custom_standard.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['macho_custom_standard.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['macho_custom_standard.cvd']))$GLOBALS['memCache']['macho_custom_standard.cvd']=@file($GLOBALS['vault']."macho_custom_standard.cvd");
+					if(!$GLOBALS['memCache']['macho_custom_standard.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (macho_custom_standard.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['macho_custom_standard.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['macho_custom_standard.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(substr_count($str_hex,$xsig)>0)
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(substr_count($str_hex,$xsig)>0)
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
 					}
-				if(!isset($GLOBALS['memCache']['macho_custom_regex.cvd']))$GLOBALS['memCache']['macho_custom_regex.cvd']=@file($GLOBALS['vault']."macho_custom_regex.cvd");
-				if(!$GLOBALS['memCache']['macho_custom_regex.cvd'])return (!$n)?-3:$lnap."Signature file missing (macho_custom_regex.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['macho_custom_regex.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['macho_custom_regex.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['macho_custom_regex.cvd']))$GLOBALS['memCache']['macho_custom_regex.cvd']=@file($GLOBALS['vault']."macho_custom_regex.cvd");
+					if(!$GLOBALS['memCache']['macho_custom_regex.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (macho_custom_regex.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['macho_custom_regex.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['macho_custom_regex.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(preg_match("/".$xsig."/i",$str_hex))
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(preg_match("/".$xsig."/i",$str_hex))
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
@@ -1398,55 +1947,92 @@ function phpMusselD($str="",$n=0,$dpt=0,$ofn="")
 				}
 			if($GLOBALS['MusselConfig']['signatures']['macho_mussel'])
 				{
-				if(!isset($GLOBALS['memCache']['macho_mussel_standard.cvd']))$GLOBALS['memCache']['macho_mussel_standard.cvd']=@file($GLOBALS['vault']."macho_mussel_standard.cvd");
-				if(!$GLOBALS['memCache']['macho_mussel_standard.cvd'])return (!$n)?-3:$lnap."Signature file missing (macho_mussel_standard.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['macho_mussel_standard.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['macho_mussel_standard.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['macho_mussel_standard.cvd']))$GLOBALS['memCache']['macho_mussel_standard.cvd']=@file($GLOBALS['vault']."macho_mussel_standard.cvd");
+					if(!$GLOBALS['memCache']['macho_mussel_standard.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (macho_mussel_standard.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['macho_mussel_standard.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['macho_mussel_standard.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(substr_count($str_hex,$xsig)>0)
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(substr_count($str_hex,$xsig)>0)
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
 					}
-				if(!isset($GLOBALS['memCache']['macho_mussel_regex.cvd']))$GLOBALS['memCache']['macho_mussel_regex.cvd']=@file($GLOBALS['vault']."macho_mussel_regex.cvd");
-				if(!$GLOBALS['memCache']['macho_mussel_regex.cvd'])return (!$n)?-3:$lnap."Signature file missing (macho_mussel_regex.cvd)!".$GLOBALS['linebreak'];
-				$c=@count($GLOBALS['memCache']['macho_mussel_regex.cvd']);
-				$vn="";
-				for($i=0;$i<$c;$i++)
+				$skipit=false;
+				while(!$skipit)
 					{
-					$xsig=$GLOBALS['memCache']['macho_mussel_regex.cvd'][$i];
-					if(substr_count($xsig,":")>0)
+					$skipit=true;
+					if(!isset($GLOBALS['memCache']['macho_mussel_regex.cvd']))$GLOBALS['memCache']['macho_mussel_regex.cvd']=@file($GLOBALS['vault']."macho_mussel_regex.cvd");
+					if(!$GLOBALS['memCache']['macho_mussel_regex.cvd'])
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap."Signature file missing (macho_mussel_regex.cvd)!".$GLOBALS['linebreak'];
+						break;
+						}
+					$c=@count($GLOBALS['memCache']['macho_mussel_regex.cvd']);
+					$vn="";
+					for($i=0;$i<$c;$i++)
+						{
+						$xsig=$GLOBALS['memCache']['macho_mussel_regex.cvd'][$i];
+						if(substr_count($xsig,":")>0)
 							{
-							if(preg_match("/".$xsig."/i",$str_hex))
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
 								{
-								$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(preg_match("/".$xsig."/i",$str_hex))
+									{
+									$out.=$lnap."Detected ".$vn."!".$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+									if($fm)$GLOBALS['xfm'].="Detected ".$vn." (".$ofn.")! ";
+									}
 								}
 							}
 						}
 					}
 				}
+			}
+		}
+	if($GLOBALS['MusselConfig']['attack_specific']['block_control_characters'])
+		{
+		if(preg_match("/[\x00-\x09\x0B\x0C\x0e\x1f]/i",$str))
+			{
+			$out.=$lnap."Detected Control Characters!".$GLOBALS['linebreak'];
+			if($fm)$GLOBALS['xsk'].=$md5.":".$str_len.":".$ofn.$GLOBALS['linebreak'];
+			if($fm)$GLOBALS['xfm'].="Detected Control Characters (".$ofn.")! ";
 			}
 		}
 	if(!$out)return 1;
@@ -1900,6 +2486,75 @@ function phpMusselR($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 		}
 	return (!$n)?$r:$x;
 	}
+define("mussel_php",defined("PHP_BINARY")?PHP_BINARY:"");
+define("mussel_os",strtoupper(substr(PHP_OS,0,3)));
+define("mussel_sapi",php_sapi_name());
+if(strlen(mussel_php)>0)
+	{
+	if(mussel_os=="WIN"&&mussel_sapi=="cli")
+		{
+		function phpMusselFork($f="",$ofn="")
+			{
+			$pf=popen(mussel_php." \"".$GLOBALS['vault']."../phpmussel.php\" \"cli_win_scan\" \"".$f."\" \"".$ofn."\"","r");
+			$s="";
+			while($x=fgets($pf))$s.=$x;
+			pclose($pf);
+			return $s;
+			}
+		}
+	}
+$memCache=array();
+if(!isset($MusselConfig['general']['scan_log']))$MusselConfig['general']['scan_log']="";
+if(!isset($MusselConfig['general']['scan_kills']))$MusselConfig['general']['scan_kills']="";
+if(!isset($MusselConfig['general']['forbid_on_block']))$MusselConfig['general']['forbid_on_block']=0;
+if(!isset($MusselConfig['general']['delete_on_sight']))$MusselConfig['general']['delete_on_sight']=0;
+$memCache['vChkSigs']=array();
+foreach(array("md5","general","exe","elf","macho","graphics","zip_metadata","filenames","mail") as $memCache['vChkSigs']['sigset'])
+	{
+	$memCache['vChkSigs']['clamav']=$memCache['vChkSigs']['sigset']."_clamav";
+	$memCache['vChkSigs']['custom']=$memCache['vChkSigs']['sigset']."_custom";
+	$memCache['vChkSigs']['mussel']=$memCache['vChkSigs']['sigset']."_mussel";
+	if(isset($MusselConfig['signatures'][$memCache['vChkSigs']['sigset']])&&!isset($MusselConfig['signatures'][$memCache['vChkSigs']['clamav']])&&!isset($MusselConfig['signatures'][$memCache['vChkSigs']['custom']])&&!isset($MusselConfig['signatures'][$memCache['vChkSigs']['mussel']]))$MusselConfig['signatures'][$memCache['vChkSigs']['clamav']]=$MusselConfig['signatures'][$memCache['vChkSigs']['custom']]=$MusselConfig['signatures'][$memCache['vChkSigs']['mussel']]=$MusselConfig['signatures'][$memCache['vChkSigs']['sigset']];
+	if(!isset($MusselConfig['signatures'][$memCache['vChkSigs']['clamav']]))$MusselConfig['signatures'][$memCache['vChkSigs']['clamav']]=0;
+	if(!isset($MusselConfig['signatures'][$memCache['vChkSigs']['custom']]))$MusselConfig['signatures'][$memCache['vChkSigs']['custom']]=0;
+	if(!isset($MusselConfig['signatures'][$memCache['vChkSigs']['mussel']]))$MusselConfig['signatures'][$memCache['vChkSigs']['mussel']]=0;
+	}
+unset($memCache['vChkSigs']);
+if(!isset($MusselConfig['signatures']['fn_siglen_min']))$MusselConfig['signatures']['fn_siglen_min']=4;
+if(!isset($MusselConfig['signatures']['fn_siglen_max']))$MusselConfig['signatures']['fn_siglen_max']=512;
+if(!isset($MusselConfig['signatures']['rx_siglen_min']))$MusselConfig['signatures']['rx_siglen_min']=8;
+if(!isset($MusselConfig['signatures']['rx_siglen_max']))$MusselConfig['signatures']['rx_siglen_max']=512;
+if(!isset($MusselConfig['signatures']['sd_siglen_min']))$MusselConfig['signatures']['sd_siglen_min']=4;
+if(!isset($MusselConfig['signatures']['sd_siglen_max']))$MusselConfig['signatures']['sd_siglen_max']=1024;
+if(!isset($MusselConfig['signatures']['fail_silently']))$MusselConfig['signatures']['fail_silently']=1;
+if(!isset($MusselConfig['files']['max_uploads']))$MusselConfig['files']['max_uploads']=10;
+if(!isset($MusselConfig['files']['filesize_limit']))$MusselConfig['files']['filesize_limit']=65536;
+if(!isset($MusselConfig['files']['filesize_response']))$MusselConfig['files']['filesize_response']=1;
+if(!isset($MusselConfig['files']['filetype_whitelist']))$MusselConfig['files']['filetype_whitelist']="";
+if(!isset($MusselConfig['files']['filetype_blacklist']))$MusselConfig['files']['filetype_blacklist']="386,acc*,acm,act*,apk,app,ax,bat,bin,cgi,cmd,com*,cpl,csh,dll,drv,elf,exe,fxp,gad*,hta*,htp*,ico,inf,ins,inx,ipa,isu,job,js,jse,ksh,lnk,msc,msi,msp,mst,net,ocx,ops,org,osx,out,paf,php*,pif,pl,prg,ps1,reg,rgs,rs,run,scr*,sct,shb,shs,sql*,sys,u3p,url,vb,vbe,vbs*,wor*,ws,wsf,xsl";
+if(!isset($MusselConfig['files']['check_archives']))$MusselConfig['files']['check_archives']=1;
+if(!isset($MusselConfig['files']['filesize_archives']))$MusselConfig['files']['filesize_archives']=1;
+if(!isset($MusselConfig['files']['filetype_archives']))$MusselConfig['files']['filetype_archives']=1;
+if(!isset($MusselConfig['files']['max_recursion']))$MusselConfig['files']['max_recursion']=10;
+if(!isset($MusselConfig['attack_specific']['chameleon_from_php']))$MusselConfig['attack_specific']['chameleon_from_php']=1;
+if(!isset($MusselConfig['attack_specific']['chameleon_from_exe']))$MusselConfig['attack_specific']['chameleon_from_exe']=1;
+if(!isset($MusselConfig['attack_specific']['chameleon_to_archive']))$MusselConfig['attack_specific']['chameleon_to_archive']=1;
+if(!isset($MusselConfig['attack_specific']['chameleon_to_doc']))$MusselConfig['attack_specific']['chameleon_to_doc']=1;
+if(!isset($MusselConfig['attack_specific']['chameleon_to_img']))$MusselConfig['attack_specific']['chameleon_to_img']=1;
+if(!isset($MusselConfig['attack_specific']['chameleon_to_pdf']))$MusselConfig['attack_specific']['chameleon_to_pdf']=1;
+if(!isset($MusselConfig['attack_specific']['archive_file_extensions']))$MusselConfig['attack_specific']['archive_file_extensions']="7z,a,ace,alz,apk,app,ar,arc,arj,ba,bh,bz2,dmg,gz,ice,iso,lha,lz,lzh,lzo,lzw,lzx,mar,pak,pck,pea,rar,rz,s7z,sea,sen,sfx,shar,sqx,tar,tgz,tlz,xar,xp3,xz,yz1,z,zz";
+if(!isset($MusselConfig['attack_specific']['archive_file_extensions_wc']))$MusselConfig['attack_specific']['archive_file_extensions_wc']="paq*,sit*,tbz*,zip*";
+if(!isset($MusselConfig['attack_specific']['general_commands']))$MusselConfig['attack_specific']['general_commands']=0;
+if(!isset($MusselConfig['attack_specific']['block_control_characters']))$MusselConfig['attack_specific']['block_control_characters']=0;
+$cli_args=array(isset($argv[0])?$argv[0]:"",isset($argv[1])?$argv[1]:"",isset($argv[2])?$argv[2]:"",isset($argv[3])?$argv[3]:"");
+if(function_exists("phpMusselFork"))
+	{
+	if($cli_args[1]=="cli_win_scan")
+		{
+		echo phpMusselR($cli_args[2],1,1,0,$cli_args[3]);
+		die();
+		}
+	}
 function phpMussel($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 	{
 	if(!$ofn)$ofn=@urlencode($f);
@@ -1918,7 +2573,7 @@ function phpMussel($f="",$n=0,$zz=0,$dpt=0,$ofn="")
 function phpMussel_mail($body="")
 	{
 	$f="";
-	if(!$len=strlen($body)||!isset($GLOBALS['MusselConfig']['signatures']['mail']))return -1;
+	if(!$len=strlen($body))return -1;
 	if(!isset($GLOBALS['memCache']['greylist']))
 		{
 		if(!file_exists($GLOBALS['vault']."greylist.csv"))
@@ -1937,59 +2592,95 @@ function phpMussel_mail($body="")
 	$hex=@bin2hex($body);
 	if($GLOBALS['MusselConfig']['signatures']['mail_clamav'])
 		{
-		if(!isset($GLOBALS['memCache']['mail_clamav_standard.cvd']))$GLOBALS['memCache']['mail_clamav_standard.cvd']=@file($GLOBALS['vault']."mail_clamav_standard.cvd");
-		if(!$GLOBALS['memCache']['mail_clamav_standard.cvd'])return -1;
-		if(!isset($GLOBALS['memCache']['mail_clamav_standard.map']))$GLOBALS['memCache']['mail_clamav_standard.map']=@file($GLOBALS['vault']."mail_clamav_standard.map");
-		if(!$GLOBALS['memCache']['mail_clamav_standard.map'])return -1;
-		$c=@count($GLOBALS['memCache']['mail_clamav_standard.map']);
-		$vn="";
-		for($i=0;$i<$c;$i++)
+		$skipit=false;
+		while(!$skipit)
 			{
-			$map=explode(":",$GLOBALS['memCache']['mail_clamav_standard.map'][$i]);
-			$map[2]=($map[2]*-1)*-1;
-			if(substr_count($hex,$map[0])>0)
+			$skipit=true;
+			if(!isset($GLOBALS['memCache']['mail_clamav_standard.cvd']))$GLOBALS['memCache']['mail_clamav_standard.cvd']=@file($GLOBALS['vault']."mail_clamav_standard.cvd");
+			if(!$GLOBALS['memCache']['mail_clamav_standard.cvd'])
 				{
-				for($xind=$map[1];$xind<$map[2];$xind++)
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return -1;
+				break;
+				}
+			if(!isset($GLOBALS['memCache']['mail_clamav_standard.map']))$GLOBALS['memCache']['mail_clamav_standard.map']=@file($GLOBALS['vault']."mail_clamav_standard.map");
+			if(!$GLOBALS['memCache']['mail_clamav_standard.map'])
+				{
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return -1;
+				break;
+				}
+			$c=@count($GLOBALS['memCache']['mail_clamav_standard.map']);
+			$vn="";
+			for($i=0;$i<$c;$i++)
+				{
+				$map=explode(":",$GLOBALS['memCache']['mail_clamav_standard.map'][$i]);
+				$map[2]=($map[2]*-1)*-1;
+				if(substr_count($hex,$map[0])>0)
 					{
-					$xsig=$GLOBALS['memCache']['mail_clamav_standard.cvd'][$xind];
-					if(substr_count($xsig,":")>0)
+					for($xind=$map[1];$xind<$map[2];$xind++)
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						$xsig=$GLOBALS['memCache']['mail_clamav_standard.cvd'][$xind];
+						if(substr_count($xsig,":")>0)
 							{
-							if(substr_count($hex,$xsig)>0)$f.="Detected ".$vn."! ";
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
+								{
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(substr_count($hex,$xsig)>0)$f.="Detected ".$vn."! ";
+								}
 							}
 						}
 					}
 				}
 			}
-		if(!isset($GLOBALS['memCache']['mail_clamav_regex.cvd']))$GLOBALS['memCache']['mail_clamav_regex.cvd']=@file($GLOBALS['vault']."mail_clamav_regex.cvd");
-		if(!$GLOBALS['memCache']['mail_clamav_regex.cvd'])return -1;
-		if(!isset($GLOBALS['memCache']['mail_clamav_regex.map']))$GLOBALS['memCache']['mail_clamav_regex.map']=@file($GLOBALS['vault']."mail_clamav_regex.map");
-		if(!$GLOBALS['memCache']['mail_clamav_regex.map'])return -1;
-		$c=@count($GLOBALS['memCache']['mail_clamav_regex.map']);
-		$vn="";
-		for($i=0;$i<$c;$i++)
+		$skipit=false;
+		while(!$skipit)
 			{
-			$map=explode(":",$GLOBALS['memCache']['mail_clamav_regex.map'][$i]);
-			$map[2]=($map[2]*-1)*-1;
-			if(substr_count($hex,$map[0])>0)
+			$skipit=true;
+			if(!isset($GLOBALS['memCache']['mail_clamav_regex.cvd']))$GLOBALS['memCache']['mail_clamav_regex.cvd']=@file($GLOBALS['vault']."mail_clamav_regex.cvd");
+			if(!$GLOBALS['memCache']['mail_clamav_regex.cvd'])
 				{
-				for($xind=$map[1];$xind<$map[2];$xind++)
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return -1;
+				break;
+				}
+			if(!isset($GLOBALS['memCache']['mail_clamav_regex.map']))$GLOBALS['memCache']['mail_clamav_regex.map']=@file($GLOBALS['vault']."mail_clamav_regex.map");
+			if(!$GLOBALS['memCache']['mail_clamav_regex.map'])
+				{
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return -1;
+				break;
+				}
+			$c=@count($GLOBALS['memCache']['mail_clamav_regex.map']);
+			$vn="";
+			for($i=0;$i<$c;$i++)
+				{
+				$map=explode(":",$GLOBALS['memCache']['mail_clamav_regex.map'][$i]);
+				$map[2]=($map[2]*-1)*-1;
+				if(substr_count($hex,$map[0])>0)
 					{
-					$xsig=$GLOBALS['memCache']['mail_clamav_regex.cvd'][$xind];
-					if(substr_count($xsig,":")>0)
+					for($xind=$map[1];$xind<$map[2];$xind++)
 						{
-						$vn=@explode(":",$xsig);
-						$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-						$xsig=($xsig===false?"":implode("",$xsig));
-						$vn=$vn[0];
-						if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						$xsig=$GLOBALS['memCache']['mail_clamav_regex.cvd'][$xind];
+						if(substr_count($xsig,":")>0)
 							{
-							if(preg_match("/".$xsig."/i",$hex))$f.="Detected ".$vn."! ";
+							$vn=@explode(":",$xsig);
+							$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+							$xsig=($xsig===false?"":implode("",$xsig));
+							$xlen=strlen($xsig);
+							if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
+								{
+								continue;
+								}
+							$vn=$vn[0];
+							if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+								{
+								if(preg_match("/".$xsig."/i",$hex))$f.="Detected ".$vn."! ";
+								}
 							}
 						}
 					}
@@ -1998,89 +2689,144 @@ function phpMussel_mail($body="")
 		}
 	if($GLOBALS['MusselConfig']['signatures']['mail_custom'])
 		{
-		if(!isset($GLOBALS['memCache']['mail_custom_standard.cvd']))$GLOBALS['memCache']['mail_custom_standard.cvd']=@file($GLOBALS['vault']."mail_custom_standard.cvd");
-		if(!$GLOBALS['memCache']['mail_custom_standard.cvd'])return -1;
-		$c=@count($GLOBALS['memCache']['mail_custom_standard.cvd']);
-		$vn="";
-		for($i=0;$i<$c;$i++)
+		$skipit=false;
+		while(!$skipit)
 			{
-			$xsig=$GLOBALS['memCache']['mail_custom_standard.cvd'][$i];
-			if(substr_count($xsig,":")>0)
+			$skipit=true;
+			if(!isset($GLOBALS['memCache']['mail_custom_standard.cvd']))$GLOBALS['memCache']['mail_custom_standard.cvd']=@file($GLOBALS['vault']."mail_custom_standard.cvd");
+			if(!$GLOBALS['memCache']['mail_custom_standard.cvd'])
 				{
-				$vn=@explode(":",$xsig);
-				$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-				$xsig=($xsig===false?"":implode("",$xsig));
-				$vn=$vn[0];
-				if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return -1;
+				break;
+				}
+			$c=@count($GLOBALS['memCache']['mail_custom_standard.cvd']);
+			$vn="";
+			for($i=0;$i<$c;$i++)
+				{
+				$xsig=$GLOBALS['memCache']['mail_custom_standard.cvd'][$i];
+				if(substr_count($xsig,":")>0)
 					{
-					if(substr_count($hex,$xsig)>0)$f.="Detected ".$vn."! ";
+					$vn=@explode(":",$xsig);
+					$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=($xsig===false?"":implode("",$xsig));
+					$xlen=strlen($xsig);
+					if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
+						{
+						continue;
+						}
+					$vn=$vn[0];
+					if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						{
+						if(substr_count($hex,$xsig)>0)$f.="Detected ".$vn."! ";
+						}
 					}
 				}
 			}
-		if(!isset($GLOBALS['memCache']['mail_custom_regex.cvd']))$GLOBALS['memCache']['mail_custom_regex.cvd']=@file($GLOBALS['vault']."mail_custom_regex.cvd");
-		if(!$GLOBALS['memCache']['mail_custom_regex.cvd'])return -1;
-		$c=@count($GLOBALS['memCache']['mail_custom_regex.cvd']);
-		$vn="";
-		for($i=0;$i<$c;$i++)
+		$skipit=false;
+		while(!$skipit)
 			{
-			$xsig=$GLOBALS['memCache']['mail_custom_regex.cvd'][$i];
-			if(substr_count($xsig,":")>0)
+			$skipit=true;
+			if(!isset($GLOBALS['memCache']['mail_custom_regex.cvd']))$GLOBALS['memCache']['mail_custom_regex.cvd']=@file($GLOBALS['vault']."mail_custom_regex.cvd");
+			if(!$GLOBALS['memCache']['mail_custom_regex.cvd'])
 				{
-				$vn=@explode(":",$xsig);
-				$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-				$xsig=($xsig===false?"":implode("",$xsig));
-				$vn=$vn[0];
-				if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return -1;
+				break;
+				}
+			$c=@count($GLOBALS['memCache']['mail_custom_regex.cvd']);
+			$vn="";
+			for($i=0;$i<$c;$i++)
+				{
+				$xsig=$GLOBALS['memCache']['mail_custom_regex.cvd'][$i];
+				if(substr_count($xsig,":")>0)
 					{
-					if(preg_match("/".$xsig."/i",$hex))$f.="Detected ".$vn."! ";
+					$vn=@explode(":",$xsig);
+					$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=($xsig===false?"":implode("",$xsig));
+					$xlen=strlen($xsig);
+					if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
+						{
+						continue;
+						}
+					$vn=$vn[0];
+					if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						{
+						if(preg_match("/".$xsig."/i",$hex))$f.="Detected ".$vn."! ";
+						}
 					}
 				}
 			}
 		}
 	if($GLOBALS['MusselConfig']['signatures']['mail_mussel'])
 		{
-		if(!isset($GLOBALS['memCache']['mail_mussel_standard.cvd']))$GLOBALS['memCache']['mail_mussel_standard.cvd']=@file($GLOBALS['vault']."mail_mussel_standard.cvd");
-		if(!$GLOBALS['memCache']['mail_mussel_standard.cvd'])return -1;
-		$c=@count($GLOBALS['memCache']['mail_mussel_standard.cvd']);
-		$vn="";
-		for($i=0;$i<$c;$i++)
+		$skipit=false;
+		while(!$skipit)
 			{
-			$xsig=$GLOBALS['memCache']['mail_mussel_standard.cvd'][$i];
-			if(substr_count($xsig,":")>0)
+			$skipit=true;
+			if(!isset($GLOBALS['memCache']['mail_mussel_standard.cvd']))$GLOBALS['memCache']['mail_mussel_standard.cvd']=@file($GLOBALS['vault']."mail_mussel_standard.cvd");
+			if(!$GLOBALS['memCache']['mail_mussel_standard.cvd'])
 				{
-				$vn=@explode(":",$xsig);
-				$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-				$xsig=($xsig===false?"":implode("",$xsig));
-				$vn=$vn[0];
-				if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return -1;
+				break;
+				}
+			$c=@count($GLOBALS['memCache']['mail_mussel_standard.cvd']);
+			$vn="";
+			for($i=0;$i<$c;$i++)
+				{
+				$xsig=$GLOBALS['memCache']['mail_mussel_standard.cvd'][$i];
+				if(substr_count($xsig,":")>0)
 					{
-					if(substr_count($hex,$xsig)>0)$f.="Detected ".$vn."! ";
+					$vn=@explode(":",$xsig);
+					$xsig=@preg_split('/[^a-fA-F0-9]*/i',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=($xsig===false?"":implode("",$xsig));
+					$xlen=strlen($xsig);
+					if($xlen<$GLOBALS['MusselConfig']['signatures']['sd_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['sd_siglen_max'])
+						{
+						continue;
+						}
+					$vn=$vn[0];
+					if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						{
+						if(substr_count($hex,$xsig)>0)$f.="Detected ".$vn."! ";
+						}
 					}
 				}
 			}
-		if(!isset($GLOBALS['memCache']['mail_mussel_regex.cvd']))$GLOBALS['memCache']['mail_mussel_regex.cvd']=@file($GLOBALS['vault']."mail_mussel_regex.cvd");
-		if(!$GLOBALS['memCache']['mail_mussel_regex.cvd'])return -1;
-		$c=@count($GLOBALS['memCache']['mail_mussel_regex.cvd']);
-		$vn="";
-		for($i=0;$i<$c;$i++)
+		$skipit=false;
+		while(!$skipit)
 			{
-			$xsig=$GLOBALS['memCache']['mail_mussel_regex.cvd'][$i];
-			if(substr_count($xsig,":")>0)
+			$skipit=true;
+			if(!isset($GLOBALS['memCache']['mail_mussel_regex.cvd']))$GLOBALS['memCache']['mail_mussel_regex.cvd']=@file($GLOBALS['vault']."mail_mussel_regex.cvd");
+			if(!$GLOBALS['memCache']['mail_mussel_regex.cvd'])
 				{
-				$vn=@explode(":",$xsig);
-				$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
-				$xsig=($xsig===false?"":implode("",$xsig));
-				$vn=$vn[0];
-				if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return -1;
+				break;
+				}
+			$c=@count($GLOBALS['memCache']['mail_mussel_regex.cvd']);
+			$vn="";
+			for($i=0;$i<$c;$i++)
+				{
+				$xsig=$GLOBALS['memCache']['mail_mussel_regex.cvd'][$i];
+				if(substr_count($xsig,":")>0)
 					{
-					if(preg_match("/".$xsig."/i",$hex))$f.="Detected ".$vn."! ";
+					$vn=@explode(":",$xsig);
+					$xsig=@preg_split('/[\x00-\x1f]*/',$vn[1],-1,PREG_SPLIT_NO_EMPTY);
+					$xsig=($xsig===false?"":implode("",$xsig));
+					$xlen=strlen($xsig);
+					if($xlen<$GLOBALS['MusselConfig']['signatures']['rx_siglen_min']||$xlen>$GLOBALS['MusselConfig']['signatures']['rx_siglen_max'])
+						{
+						continue;
+						}
+					$vn=$vn[0];
+					if(!substr_count($GLOBALS['memCache']['greylist'],",".$vn.","))
+						{
+						if(preg_match("/".$xsig."/i",$hex))$f.="Detected ".$vn."! ";
+						}
 					}
 				}
 			}
 		}
 	return (!$f)?0:$f;
 	}
-$memCache=array();
 $c=empty($_FILES)?0:count($_FILES);
 $xfm=$xsk="";
 if($c>0)
@@ -2169,6 +2915,66 @@ if(strlen($xfm)>0)
 		die();
 		}
 	}
-if($MusselConfig['general']['cleanup'])unset($tk,$ti,$tc,$r,$xsk,$xfm,$k,$i,$c,$memCache,$phpmusselversion);
+if(function_exists("phpMusselFork")&&strlen(mussel_php)>0&&mussel_os=="WIN"&&mussel_sapi=="cli")
+	{
+	echo "      _____  _     _  _____  _______ _     _ _______ _______ _______           \n <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >\n     |       |     | |       |  |  | |_____| ______| ______| |______ |_____    \n Thank you for using phpMussel, a php-based script based upon ClamAV signatures\n  designed to detect trojans, viruses, malware and other threats within files  \n             uploaded to your system wherever the script is hooked.            \n     PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan)    \n\n                                  ~ ~ ~                                        \n\n";
+	echo " Currently running phpMussel in CLI mode (Command line interface).\n\n What file or directory do you want to scan?  Type the name of the file or\n directory that you want phpMussel to scan and press enter, or type 'q' and\n enter to quit without scanning:\n\n>> ";
+	$sth=fopen("php://stdin","r");
+	$stl=trim(fgets($sth));
+	echo "\n\n";
+	if($stl=="q")die();
+	$r="";
+	if($MusselConfig['general']['scan_log'])
+		{
+		$s=date("r")." Started.".$linebreak;
+		echo $s;
+		}
+	if(is_dir($stl))
+		{
+		$d=@scandir($stl);
+		if(!$d)
+			{
+			echo "> Failed to access \"".$stl."\".".$linebreak;
+			}
+		else
+			{
+			$c=count($d);
+			for($i=0;$i<$c;$i++)
+				{
+				if($d[$i]=="."||$d[$i]=="..")
+					{
+					continue;
+					}
+				$out=phpMusselFork($stl.$d[$i],urlencode($stl.$d[$i]));
+				if(!$out)$out="> Failed to complete scanning process (".$d[$i].")!".$linebreak;
+				$r.=$out;
+				echo $out;
+				$out="";
+				}
+			}
+		}
+	else
+		{
+		$out=phpMusselFork($stl,urlencode($stl));
+		if(!$out)$out="> Failed to complete scanning process!".$linebreak;
+		$r.=$out;
+		echo $out;
+		$out="";
+		}
+	if($MusselConfig['general']['scan_log'])
+		{
+		$r=$s.$r;
+		$s=date("r")." Finished.".$linebreak.$linebreak;
+		echo $s;
+		$r=$r.$s;
+		if(!file_exists($vault.$MusselConfig['general']['scan_log']))$r="<?php die(); ?>".$linebreak.$linebreak.$r;
+		$xf=fopen($vault.$MusselConfig['general']['scan_log'],"a");
+		fwrite($xf,$r);
+		fclose($xf);
+		}
+	echo "\n\n";
+	die();
+	}
+if($MusselConfig['general']['cleanup'])unset($cli_args,$tk,$ti,$tc,$r,$xsk,$xfm,$k,$i,$c,$memCache,$phpmusselversion);
 
 ?>

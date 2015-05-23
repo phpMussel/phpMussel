@@ -1,8 +1,66 @@
 phpMussel change_log.txt
 
+=== Version 0.3b ===
+SUMMARY:
+Updated to the latest signatures set (55+18175+3b).
+Sub-minor update.
+
+NEW CHANGES:
+- Added controls (refer to phpmussel.ini) concerning the length of signatures.
+  It is now possible to specify a minimum and maximum length requirement for
+  the execution of signatures.
+- Rewrite the code for handling general commands (should see a very minor speed
+  and memory usage improvement).
+- Added the option to block control characters.
+- Added a new code block into the core script which checks for the existence of
+  all variables expected to be parsed from "phpmussel.ini", and if any are
+  missing, sets these missing variables with their default values. This should
+  ensure that if any user modifies the configuration file incorrectly or with
+  incorrect information, or if the configuration file somehow becomes corrupted,
+  the chances of php returning missing variable warnings or fatal errors are
+  reduced and proper function of the script is better safeguarded.
+- Added support for running phpMussel independantly from any hooks under CLI
+  mode (command line interface) on Windows. While I'd continue to suggest that
+  conventional anti-virus programs are going to be faster and more effective
+  than phpMussel, if you do wish to use phpMussel as a file scanner to check
+  specific files on a Windows based machine outside of the webserver, it is
+  now possible to do so without the need to manually edit the core script or
+  reverse-hook phpMussel (refer to "readme.txt" for more details).
+
+PROBLEMS/BUGS FIXED:
+- A minor bug in the email scanning function which could potentially prevent
+  the function from executing under certain conditions was found and fixed.
+
+PROBLEMS/BUGS FOUND:
+- A major bug that exists in the PCRE packages included with the php builds
+  used to test phpMussel prior to release has been found to cause phpMussel
+  to crash php altogether under certain circumstances. I've worked on some
+  basic dirty work-arounds for the problem which should occasionally prevent
+  the problem from occurring, but the problem is not altogether resolved.
+  I've done a lot of heavy research into ways to resolve the problem, but
+  thus far, I haven't found anything particularly promising. When this problem
+  occurs, no errors are returned or logged and the webserver will usually
+  return a Status 500 Internal Server Error. The bug is not harmful to
+  webservers and will not crash the server; The php process will crash, but
+  php will load again without problems upon the next request from the
+  webserver. The implications for the web application are that any parts of the
+  executing script that exist after the phpMussel hook do not execute and the
+  request is aborted, but otherwise no problems seem to be apparent. This
+  bug could potential reduce the overall effectiveness of phpMussel, but
+  with converse irony, by way of crashing, phpMussel will continue to cause any
+  malicious files uploaded to not be processed by the web application thus
+  ensuring the continued protection of the web server (albeit with false
+  positives). One possible temporary fix to work around the problem of false
+  positives, if the risk of a crash is unacceptable to the user, is to delete
+  any files within the vault containing "_regex" in their filename and enable
+  the "fail_silently" option in "phpmussel.ini".
+
+Maikuolan,
+30th November 2013.
+
 === Version 0.3a ===
 SUMMARY:
-Updated to the latest signatures set (55+18088+3A).
+Updated to the latest signatures set (55+18088+3a).
 Fixed one small yet significant bug in the update script.
 
 PROBLEMS/BUGS FIXED:

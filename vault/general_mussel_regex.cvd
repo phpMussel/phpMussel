@@ -14,7 +14,7 @@ phpMussel-PHP.Exploit.eval-1:(45|65)(56|76)(41|61)(4c|6c)(09|0a|0d|20|2f|2a|a0)*
 phpMussel-PHP.Exploit.eval-2:(45|65)(56|76)(41|61)(4c|6c)(09|0a|0d|20|2f|2a|a0)*28(09|0a|0d|20|2f|2a|a0)*(47|67)(5a|7a)
 phpMussel-PHP.Exploit.eval-3:2a2f(09|0a|0d|20|2f|2a|a0)*(45|65)(56|76)(41|61)(4c|6c)(09|0a|0d|20|2f|2a|a0)*28
 phpMussel-PHP.Obfuscation-0:50485020456e636f646520763[0-9]{1}(2e3[0-9]+)?206279207a657572612e636f6d
-phpMussel-PHP.Shell.Hack-0:3c3f(..)*(40)?245f5b(5d3d|245f)
+phpMussel-PHP.Shell.Hack-0:3c3f(..)*245f5b(5d3d|245f)
 phpMussel-Python.Backdoor.Hackersh:23212f7573722f62696e2f707974686f6e(..)*(48|68)61636b65727368
 phpMussel-Python.Backdoor.shell_exec:23212f7573722f62696e2f707974686f6e(..)*(53|73)(48|68)(45|65)(4c|6c){2}5f(45|65)(58|78)(65|45)(43|63)
 phpMussel-X.Backdoor.shell_exec:35(48|68)(45|65)(4c|6c|37){2}(09|0a|0d|20|22|27|a0|5f)|(53|73)(48|68)33(4c|6c|37){2}(09|0a|0d|20|22|27|a0|5f)|35(48|68)33(4c|6c|37){2}(09|0a|0d|20|22|27|2d|a0|5f)

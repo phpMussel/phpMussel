@@ -29,8 +29,8 @@
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
 
                                   ~ ~ ~                                        
- This File: phpMussel v0.3a Update Script
- This File Last Updated: 11th November 2013
+ This File: phpMussel v0.3b Update Script
+ This File Last Updated: 29th November 2013
 
                                   ~ ~ ~                                        
  Please refer to "documentation" for installation instructions and for
@@ -120,7 +120,7 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 		else
 			{
 			echo "A script update is available.\n\n";
-			$phpmusselversion['compare']="script";
+			$phpmusselversion['compare']=(!function_exists("gzinflate"))?"script":"scriptgz";
 			}
 		$phpmusselversion['signatures_version']=trim(substr($phpmusselversion['raw'],32,16));
 		$phpmusselversion['signatures_version_human']=explode(" ",$phpmusselversion['signatures_version']);
@@ -136,7 +136,14 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 		else
 			{
 			echo "A signatures update is available.\n";
-			$phpmusselversion['compare']=($phpmusselversion['compare']=="script")?"all":"sigs";
+			if(!function_exists("gzinflate"))
+				{
+				$phpmusselversion['compare']=($phpmusselversion['compare']=="script")?"all":"sigs";
+				}
+			else
+				{
+				$phpmusselversion['compare']=($phpmusselversion['compare']=="script")?"allgz":"sigsgz";
+				}
 			}
 		}
 	else
@@ -224,7 +231,7 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 					continue;
 					}
 				}
-			if($phpmusselversion['remote_update_instructions'][$i][0]=="patch")
+			if($phpmusselversion['remote_update_instructions'][$i][0]=="patch"||$phpmusselversion['remote_update_instructions'][$i][0]=="patchgz")
 				{
 				$phpmusselversion['adj_word']=(file_exists($vault.$phpmusselversion['remote_update_instructions'][$i][1]))?"patched":"created";
 				if(!isset($phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]]))
@@ -236,6 +243,10 @@ if($phpmusselversion['current_time']>$phpmusselversion['do_not_check_before']||$
 					{
 					echo "File '".$phpmusselversion['remote_update_instructions'][$i][1]."' NOT ".$phpmusselversion['adj_word'].": Source data missing! (".(time()-$phpmusselversion['current_time'])."s elapsed)\n";
 					continue;
+					}
+				if($phpmusselversion['remote_update_instructions'][$i][0]=="patchgz")
+					{
+					$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]=@gzinflate($phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]);
 					}
 				if(crc32($phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]])!=$phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]])
 					{
