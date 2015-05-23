@@ -5,10 +5,10 @@
   designed to detect trojans, viruses, malware and other threats within files  
              uploaded to your system wherever the script is hooked.            
      PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan)    
- 
-                                  ~ ~ ~                                        
- 
- 
+
+                                     ~ ~ ~                                     
+
+
  CONTENTS
  1. PRE-RAMBLE
  2A. HOW TO INSTALL (FOR WEB SERVERS)
@@ -18,19 +18,20 @@
  4A. BROWSER COMMANDS
  4B. CLI (COMMAND LINE INTERFACE)
  5. FILES INCLUDED IN THIS PACKAGE
- 6. SIGNATURE FORMAT
- 7. KNOWN COMPATIBILITY PROBLEMS
- 
-                                  ~ ~ ~                                        
- 
- 
- 1. PRE-RAMBLE
- 
-  Special thanks to ClamAV for both project inspiration and for the signatures 
-  that this script utilises, without which, the script would likely not exist, 
-  or at best, would have very limited value. <http://www.clamav.net/lang/en/>  
+ 6. CONFIGURATION OPTIONS
+ 7. SIGNATURE FORMAT
+ 8. KNOWN COMPATIBILITY PROBLEMS
 
-                                  ~ ~ ~                                        
+                                     ~ ~ ~                                     
+
+
+ 1. PRE-RAMBLE
+
+ Special thanks to ClamAV for both project inspiration and for the signatures 
+ that this script utilises, without which, the script would likely not exist, 
+ or at best, would have very limited value. <http://www.clamav.net/lang/en/>  
+
+                                     ~ ~ ~                                     
  This script is free software; you can redistribute it and/or modify it under  
  the terms of the GNU General Public License as published by the Free Software 
  Foundation; either version 2 of the License, or (at your option) any later    
@@ -38,16 +39,20 @@
  WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or 
  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
  details. <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>     
- 
-                                  ~ ~ ~                                        
- 
- 
+
+                                     ~ ~ ~                                     
+ This document and its associated package can be downloaded for free from
+ Sourceforge. <http://sourceforge.net/projects/phpmussel/>
+
+                                     ~ ~ ~                                     
+
+
  2A. HOW TO INSTALL (FOR WEB SERVERS)
- 
+
  I hope to streamline this process by making an installer at some point in the
  not too distant future, but until then, follow these instructions to get
  phpMussel working on *most systems and CMS:
- 
+
  1) By your reading this, I'm assuming you've already downloaded an archived
     copy of the script, decompressed its contents and have it sitting somewhere
     on your local machine. From here, you'll want to work out where on your
@@ -55,32 +60,32 @@
     /public_html/phpmussel/ or similar (though, it doesn't matter which you
     choose, so long as it's something secure and something you're happy with)
     will suffice. Before you begin uploading, read on..
-    
+
  2) Open "phpmussel.php", look for the line beginning with "$vault=", and
     replace the string between the following quotation marks on that line
     with the exact true location of the "vault" directory of phpMussel.
     You'll have noticed such a directory in the archive you would've downloaded
     (unless you feel up to re-coding the whole script, you'll need to maintain
-    the same file and directory structure as it was in the archive / when
-    decompressed). This "vault" directory should be one directory level beyond
-    the directory that the "phpmussel.php" file will exist in. Save file, close.
-    
+    the same file and directory structure as it was in the archive originally).
+    This "vault" directory should be one directory level beyond the directory
+    that the "phpmussel.php" file will exist in. Save file, close.
+
  3) (Optional; Strongly recommended for advanced users, but not recommended
     for beginners or for the inexperienced): Open "phpmussel.ini" (located
     inside "vault") - This file contains all the operational options available
     for phpMussel. Above each option should be a brief comment describing what
     it does and what it is for. Adjust these options as you see fit, as per
     whatever is appropriate for your particular setup. Save file, close.
-    
+
  4) Upload the contents (phpMussel and its files) to the directory you'd decided
     on earlier (you don't need the readme.txt or change_log.txt files included,
     but, mostly, you should upload everything).
-    
+
  5) CMHOD the "vault" directory to "777". The main directory storing the contents
     (the one you chose earlier), usually, can be left alone, but CHMOD status
     should be checked if you've had permissions issues in the past on your
     system (by default, should be something like "755").
-    
+
  6) Next, you'll need to "hook" phpMussel to your system or CMS. There are
     several different ways in which you can "hook" scripts such as phpMussel to
     your system or CMS, but the easiest is to simply include the script at
@@ -95,42 +100,42 @@
     core file, replacing the string contained inside the quotation marks with
     the exact address of the "phpmussel.php" file (local address, not the HTTP
     address; will look similar to the vault address mentioned earlier).
-    
+
     <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
-    
+
     Save file, close, reupload.
-    
+
  7) At this point, you're done! However, you should probably test it out to
     make sure it's working properly. To test out file upload protections,
-    download one of our testing files and attempt to upload it to your
-    website via your usual browser-based upload methods. If everything is
-    working, a message should appear from phpMussel confirming that the upload
-    was successfully blocked. If nothing appears, something isn't working
-    correctly. If you're using any advanced features or if you're using the
-    other types of scanning possible with the tool, I'd suggest trying it out
-    to make sure it works as expected, too.
- 
-                                  ~ ~ ~                                        
- 
- 
+    attempt to upload the testing files included in the package under
+    "_testfiles" to your website via your usual browser-based upload methods.
+    If everything is working, a message should appear from phpMussel confirming
+    that the upload was successfully blocked. If nothing appears, something
+    isn't working correctly. If you're using any advanced features or if you're
+    using the other types of scanning possible with the tool, I'd suggest
+    trying it out with those to make sure it works as expected, too.
+
+                                     ~ ~ ~                                     
+
+
  2B. HOW TO INSTALL (FOR CLI)
- 
+
  I hope to streamline this process by making an installer at some point in the
  not too distant future, but until then, follow these instructions to get
  phpMussel ready to work with CLI (be aware that at this point, CLI support
  only applies to Windows based systems; Linux and other systems will be coming
  soon to a later version of phpMussel):
- 
+
  1) By your reading this, I'm assuming you've already downloaded an archived
     copy of the script, decompressed its contents and have it sitting somewhere
     on your local machine. Once you've determined that you're happy with the
-	location chosen for phpMussel, continue.
-    
+    location chosen for phpMussel, continue.
+
  2) phpMussel requires php to be installed on the host machine in order to
     execute. If you do not have php installed on your machine, please install
-	php on your machine, following any instructions supplied by the php
-	installer.
-    
+    php on your machine, following any instructions supplied by the php
+    installer.
+
  3) Open "phpmussel.php", look for the line beginning with "$vault=", and
     replace the string between the following quotation marks on that line
     with the exact true location of the "vault" directory of phpMussel.
@@ -139,51 +144,51 @@
     the same file and directory structure as it was in the archive / when
     decompressed). This "vault" directory should be one directory level beyond
     the directory that the "phpmussel.php" file will exist in. Save file, close.
-    
+
  4) (Optional; Strongly recommended for advanced users, but not recommended
     for beginners or for the inexperienced): Open "phpmussel.ini" (located
     inside "vault") - This file contains all the operational options available
     for phpMussel. Above each option should be a brief comment describing what
     it does and what it is for. Adjust these options as you see fit, as per
     whatever is appropriate for your particular setup. Save file, close.
-    
+
  5) (Optional) You can make using phpMussel in CLI mode easier for yourself
     by creating a batch file to automatically load php and phpMussel. To do
-	this, open a plain text editor such as Notepad or Notepad++, type the
-	complete path to the "php.exe" file in the directory of your php
-	installation, followed by a space, followed by the complete path to the
-	"phpmussel.php" file in the directory of your phpMussel installation, save
-	the file with a ".bat" extension somewhere that you'll find it easily, and
-	double-click on that file to run phpMussel in the future.
-    
+    this, open a plain text editor such as Notepad or Notepad++, type the
+    complete path to the "php.exe" file in the directory of your php
+    installation, followed by a space, followed by the complete path to the
+    "phpmussel.php" file in the directory of your phpMussel installation, save
+    the file with a ".bat" extension somewhere that you'll find it easily, and
+    double-click on that file to run phpMussel in the future.
+
  6) At this point, you're done! However, you should probably test it out to
     make sure it's working properly. To test phpMussel, run phpMussel, and when
-	phpMussel asks you which file you'd like to scan, specify the directory
-	path of the "_testfiles" directory included in the phpMussel archive,
-	followed by a forward-slash, and press enter. You should see something
-	along the lines of "Detected phpMussel-Testfile..." in the returned
-	message.
- 
-                                  ~ ~ ~                                        
- 
- 
+    phpMussel asks you which file you'd like to scan, specify the directory
+    path of the "_testfiles" directory included in the phpMussel archive,
+    followed by a forward-slash, and press enter. You should see something
+    along the lines of "Detected phpMussel-Testfile..." in the returned
+    message.
+
+                                     ~ ~ ~                                     
+
+
  3A. HOW TO USE (FOR WEB SERVERS)
- 
+
  phpMussel is intended to be a script which will function adequately right from
  the box with a bare minimum level of requirements on your part: Once it has
  been installed, basically, it simply should work.
- 
+
  Scanning of file uploads is automated and enabled by default, so nothing is
  required on your behalf for this particular function.
- 
+
  However, you are also able to instruct phpMussel to scan for files,
  directories or archives that you implicitly specify. To do this, firstly,
  you'll need to ensure that the appropriate configuration is set in the
  phpmussel.ini file (cleanup must be disabled), and once done, in a php file
  that is hooked to phpMussel, use the following function in your code:
- 
+
  phpMussel($what_to_scan,$output_type,$output_flatness);
- 
+
  Where:
  - $what_to_scan is either a string or an array, pointing to either a target
    file, a target directory or an array of target files and/or target
@@ -209,32 +214,32 @@
    function to implode any such array prior to input, resulting in a flattened
    string containing the results to be returned. This variable is optional,
    defaulting to 0.
- 
+
  Examples:
- 
+
    $results=phpMussel("/user_name/public_html/my_file.html",1,1);
    echo $results;
- 
+
    Returns something like this (as a string):
     Wed, 18 Sep 2013 02:49:46 +0000 Started.
     > Checking '/user_name/public_html/my_file.html':
     -> No problems found.
     Wed, 18 Sep 2013 02:49:47 +0000 Finished
- 
+
  For a full break-down of what sort of signatures phpMussel uses during its
  scans and how it handles these signatures, refer to the Signature Format
  section of this README file.
- 
+
  If you encounter any false positives, if you encounter something new that you
  think should be blocked, or for anything else regarding signatures, please
  contact me about it so that I may make the necessary changes, which, if you do
  not contact me, I may not necessarily be aware of.
- 
+
  To disable signatures that are include with phpMussel (such as if you're
  experiencing a false positive specific to your purposes which should not
  normally be removed from streamline), refer to the Greylisting notes within
  the Browser Commands section of this README file.
- 
+
  In addition to the default file upload scanning and the optional scanning
  of other files and/or directories specified via the above function, included
  in phpMussel is a function intended for scanning the body of email messages.
@@ -253,9 +258,9 @@
  phpmussel.ini file. To use this function (you'll need to do your own
  implementation), in a php file that is hooked to phpMussel, use the following
  function in your code:
- 
+
  phpMussel_mail($body);
- 
+
  Where $body is body of the email message you wish to scan (additionally, you
  could try scanning new forum posts, inbound messages from your online contact
  form or similar). If any error occurs preventing the function from completing
@@ -263,40 +268,40 @@
  and does not match anything, a value of 0 will be returned (meaning clean).
  If, however, the function does match something, a string will be returned
  containing a message declaring what it has matched.
- 
+
  In addition to the above, if you look at the source code, you may notice the
  function phpMusselD() and phpMusselR(). These functions are sub-functions of
  phpMussel(), and should not be called directly outside of that parent
  function (not because of adverse effects.. More-so, simply because it'd serve
  no purpose, and most probably won't actually work correctly anyhow).
- 
+
  There are many other controls and functions available within phpMussel for
  your use, too. For any such controls and functions which, by the end of this
  section of the README, have not yet been documented, please continue reading
  and refer to the Browser Commands section of this README file.
- 
-                                  ~ ~ ~                                        
- 
- 
+
+                                     ~ ~ ~                                     
+
+
  3B. HOW TO USE (FOR CLI)
- 
+
  Please refer to the "HOW TO INSTALL (FOR CLI)" section of this readme file.
- 
+
  Be aware that, although future versions of phpMussel should support other
  systems, at this time, phpMussel CLI mode support is only optimized for
  use on Windows based system (you can, of course, try it on other systems,
  but I can't guarantee it'll work as intended).
- 
+
  Also be aware that phpMussel is not the functional equivelant of a complete
  anti-virus suite, and unlike conventional anti-virus suites, does not monitor
  active memory or detect viruses on-the-fly! It will only detect viruses
  contained by those specific files that you explicitly tell it to scan.
- 
-                                  ~ ~ ~                                        
- 
- 
+
+                                     ~ ~ ~                                     
+
+
  4A. BROWSER COMMANDS
- 
+
  Once phpMussel has been installed and is correctly functioning on your system,
  if you've set the script_password and logs_password variables in your
  configuration file, you will be able to perform some limited number of
@@ -312,7 +317,7 @@
  a command to do this (such can be useful if you perform some actions that
  you feel could potentially compromise the delegated passwords and need to
  quickly disable these controls without modifying your configuration file).
- 
+
  A couple of reasons why you -should- enable these controls:
  - Provides a way to greylist signatures on-the-fly in instances such as
    when you discover a signature that is producing a false-positive while
@@ -324,7 +329,7 @@
  - Provides an easy way to update phpMussel when updates are available.
  - Provides a way for you to monitor phpMussel when FTP access or other
    conventional access points for monitoring phpMussel are not available.
- 
+
  A couple of reasons why you should -not- enable these controls:
  - Provides a vector for potential attackers and undesirables to determine
    whether you are using phpMussel or not (although, this could be both a
@@ -342,14 +347,14 @@
    normally preventing their attacks from succeeding, or even potentially
    disable phpMussel altogether, thus providing a way to render the
    effectiveness of phpMussel moot.
- 
+
  Either way, regardless of what you choose, the choice is ultimately yours. By
  default, these controls will be disabled, but have a think about it, and if
  you decide you want them, this section explains both how to enable them and
  how to use them.
- 
+
  A list of available browser-side commands:
- 
+
  scan_log
    Password required: logs_password
    Other requirements: scan_log must be set.
@@ -468,29 +473,26 @@
    ~
    What it does: Prints the contents of the greylist to the screen.
    ~
- 
-                                  ~ ~ ~                                        
- 
- 
+
+                                     ~ ~ ~                                     
+
+
  4B. CLI (COMMAND LINE INTERFACE)
- 
+
  phpMussel can be run as an interactive file scanner in CLI mode under windows
  as of the latest version of phpMussel. Refer to the "HOW TO INSTALL (FOR CLI)"
  section of this readme file for more details.
- 
-                                  ~ ~ ~                                        
- 
- 
+
+                                     ~ ~ ~                                     
+
+
  5. FILES INCLUDED IN THIS PACKAGE
- 
+
  The following is a list of all of the files that should have been included
  in the archived copy of this script when you downloaded it, any files that
  may be potentially created as a result of your using this script, along with
- a short description of what all these files are for. This version of this
- section of the README file was valid at release of v0.3 of phpMussel, but may
- not accurately reflect previous versions of phpMussel, and furthermore, may
- become outdated as new versions are released.
- 
+ a short description of what all these files are for.
+
  /change_log.txt (Documentation, Included)
     A record of changes made to the script between different
     versions (not required for proper function of script).
@@ -509,9 +511,9 @@
     ~
  /_testfiles/ (Directory)
     Test files directory (contains various files).
-	All contained files are test files for testing if phpMussel was correctly
-	installed on your system, and you do not need to upload this directory
-	or any of its files except when doing such testing.
+    All contained files are test files for testing if phpMussel was correctly
+    installed on your system, and you do not need to upload this directory
+    or any of its files except when doing such testing.
     ~
  /_testfiles/general_standard_testfile.txt (Test file, Included)
     Test file for testing phpMussel general signatures.
@@ -524,11 +526,11 @@
     ~
  /_testfiles/zip_metadata_testfile.txt.gz (Test file, Included)
     Test file for testing phpMussel metadata signatures and for testing
-	GZ file support on your system.
+    GZ file support on your system.
     ~
  /_testfiles/zip_metadata_testfile.txt.zip (Test file, Included)
     Test file for testing phpMussel metadata signatures and for testing
-	ZIP file support on your system.
+    ZIP file support on your system.
     ~
  /vault/ (Directory)
     Vault directory (contains various files).
@@ -665,9 +667,9 @@
     Required if archive metadata signatures option in phpmussel.ini is enabled.
     Can remove if option is disabled (but files will be recreated on update).
     ~
- 
+
  * Filename may differ based on configuration stipulations (in phpmussel.ini).
- 
+
  = REGARDING SIGNATURE FILES =
     CVD is an acronym for "ClamAV Virus Definitions", in reference both to
     how ClamAV refers to its own signatures and to the use of those signatures
@@ -700,38 +702,274 @@
     are not sourced from ClamAV, signatures which, generally, I've either come
     up with myself and/or based on information gathered from various sources.
     ~
- 
-                                  ~ ~ ~                                        
- 
- 
- 6. SIGNATURE FORMAT
- 
+
+                                     ~ ~ ~                                     
+
+
+ 6. CONFIGURATION OPTIONS
+
+ The following is a list of variables found in the "phpmussel.ini"
+ configuration file of phpMussel, along with a description of their
+ purpose and function.
+
+ "general" (Category)
+ - General configuration for phpMussel.
+    "script_password"
+    - As a conveniance, phpMussel will allow certain functions (including the
+      ability to update phpMussel on-the-fly) to be manually triggered via
+      POST, GET and QUERY. However, as a security precaution, to do this,
+      phpMussel will expect a password to be included with the command, as to
+      ensure that it is you, and not someone else, attempting to manually
+      trigger these functions. Set script_password to whatever password you
+      would like to use. If no password is set, manual triggering will be
+      disabled by default. Use something you will remember but which is hard
+      for others to guess.
+      * Has no influence in CLI mode.
+    "logs_password"
+    - The same as script_password, but for viewing the contents of scan_log
+      and scan_kills. Having separate passwords can be useful if you want to
+      give someone else accessing to one set of functions but not the other.
+      * Has no influence in CLI mode.
+    "cleanup"
+    - Unset script variables and cache after execution. If you aren't using
+      the script beyond the initial scanning of uploads, should set to yes, to
+      minimize memory usage. If you are using the script for purposes beyond
+      the initial scanning of uploads, should set to no, to avoid unnecessarily
+      reloading duplicate data into memory. In general practise, it should
+      probably be set to yes, but, if you do this, you won't be able to use the
+      script for anything other than scanning file uploads.
+      * Has no influence in CLI mode.
+    "scan_log"
+    - Filename of file to log all scanning results to. Specify a filename, or
+      leave blank to disable.
+    "scan_kills"
+    - Filename of file to log all records of blocked or killed uploads to.
+      Specify a filename, or leave blank to disable.
+    "ipaddr"
+    - Where to find IP address of connecting request? (Useful for services
+      such as Cloudflare and the likes) Default = REMOTE_ADDR
+      WARNING: Don't change this unless you know what you're doing!
+    "forbid_on_block"
+    - Should phpMussel send 403 headers with the file upload blocked message,
+      or stick with the usual 200 OK? 0 = No (200) [Default], 1 Yes (403).
+    "delete_on_sight"
+    - Switching on this option will instruct the script to attempt to
+      immediately delete any file it finds during its scans that matches any
+      detection criteria, whether via signatures or otherwise. Files determined
+      to be "clean" will not be touched. In the case of archives, the entire
+      archive will be deleted (regardless of if the offending file is only one
+      of several files contained within the archive). For the case of file
+      upload scanning, usually, it isn't necessary to turn this option on,
+      because usually, php will automatically purge the contents of its cache
+      when execution has finished, meaning that it'll usually delete any files
+      uploaded through it to the server unless they've moved, copied or deleted
+      already. The option is added here as an extra measure of security for the
+      extra paranoid and for those whose copies of php may not always behave in
+      the manner intended.
+      0 - After scanning, leave the file alone [Default],
+      1 - After scanning, if not clean, delete immediately.
+ "signatures" (Category)
+ - Configuration for signatures.
+   %%%_clamav = ClamAV signatures (both mains and daily).
+   %%%_custom = Your custom signatutures (if you've written any).
+   %%%_mussel = phpMussel signatures included in your current signatures set
+                which aren't from ClamAV.
+   - Check against MD5 signatures when scanning:
+     0 = No, 1 = Yes [Default].
+     "md5_clamav"
+     "md5_custom"
+     "md5_mussel"
+   - Check against general signatures when scanning?
+     0 = No, 1 = Yes [Default].
+     "general_clamav"
+     "general_custom"
+     "general_mussel"
+   - Check PE (portable executable) files (EXE, DLL, etc) against PE signatures
+     when scanning?
+     0 = No, 1 = Yes [Default].
+     "exe_clamav"
+     "exe_custom"
+     "exe_mussel"
+   - Check ELF files against ELF signatures when scanning?
+     0 = No, 1 = Yes [Default].
+     "elf_clamav"
+     "elf_custom"
+     "elf_mussel"
+   - Check Mach-O files (OSX, etc) against Mach-O signatures when scanning?
+     0 = No, 1 = Yes [Default].
+     "macho_clamav"
+     "macho_custom"
+     "macho_mussel"
+   - Check graphics files against graphics based signatures when scanning?
+     0 = No, 1 = Yes [Default].
+     "graphics_clamav"
+     "graphics_custom"
+     "graphics_mussel"
+   - Check archive contents against archive metadata signatures when scanning?
+     0 = No, 1 = Yes [Default].
+     "zip_metadata_clamav"
+     "zip_metadata_custom"
+     "zip_metadata_mussel"
+   - Check filenames against filename based signatures when scanning?
+     0 = No, 1 = Yes [Default].
+     "filenames_clamav"
+     "filenames_custom"
+     "filenames_mussel"
+   - Allow scanning with phpMussel_mail()?
+     0 = No, 1 = Yes [Default].
+     "mail_clamav"
+     "mail_custom"
+     "mail_mussel"
+   - Signature matching length limiting options. Only change these if you
+     know what you're doing. SD = Standard signatures.
+     RX = PCRE (Perl Compatible Regular Expressions, or "Regex") signatures.
+     FN = Filename signatures. If you notice php crashing when phpMussel
+          attempts to scan, try lowering the "max" values below. If possible
+          and convenient, let me know when this happens and the results of
+          whatever you try.
+     "fn_siglen_min"
+     "fn_siglen_max"
+     "rx_siglen_min"
+     "rx_siglen_max"
+     "sd_siglen_min"
+     "sd_siglen_max"
+   - Should phpMussel report when signatures files are missing or corrupted?
+     If fail_silently is disabled, missing and corrupted files will be reported
+     on scanning, and if fail_silently is enabled, missing and corrupted files
+     will be ignored, with scanning reported for those files that there are no
+     problems. This should generally be left alone unless you're experiencing
+     crashes or similar problems.
+     0 = Disabled [Default], 1 = Enabled.
+     "fail_silently"
+ "files" (Category)
+ - General configuration for handling of files.
+   "max_uploads"
+   - Maximum allowable number of files to scan during files upload scan before
+     aborting the scan and informing the user they are uploading too much at
+     once! Provides protection against a theoretical attack whereby an attacker
+     attempts to DDoS your system or CMS by overloading phpMussel to slow down
+     the php process to a grinding halt. Recommended: 10. You may wish to raise
+     or lower this number depending on the speed of your hardware. Note that
+     this number does not account for or include the contents of archives.
+   "filesize_limit"
+   - Filesize limit in KB. 65536 = 64MB [Default], 0 = No limit (always
+     greylisted), any (positive) numeric value accepted. This can be useful
+     when your php configuration limits the amount of memory a process can hold
+     or if your php configuration limits filesize of uploads.
+   "filesize_response"
+   - What to do with files that exceed the filesize limit (if one exists).
+     0 - Whitelist, 1 - Blacklist [Default].
+   "filetype_whitelist" and "filetype_blacklist"
+   - If your system only allows specific types of files to be uploaded, or if
+     your system explicitly denies certain types of files, specifying those
+     filetypes in whitelists and blacklists can increase the speed at which
+     scanning is performed by allowing the script to skip over certain
+     filetypes. Format is CSV (comma separated values). If you want to scan
+     everything, rather than whitelist or blacklist, leave the variable(/s)
+     blank (doing so will disable whitelist/blacklist).
+   "check_archives"
+   - Attempt to check the contents of archives?
+     0 - No (do not check), 1 - Yes (check) [Default].
+     * Currently, only checking of ZIP and GZ files is supported (checking of
+       TAR, RAR, CAB, 7z and etcetera not currently supported).
+     * This is not foolproof! While I highly recommend keeping this turned on,
+       I can't guarantee it'll always find everything.
+     * Also be aware that archive checking currently is not recursive for ZIPs
+      (although I intend to correct this at some point, and GZ is recursive).
+   "filesize_archives"
+   - Carry over filesize blacklisting/whitelisting to the contents of archives?
+     0 - No (just greylist everything), 1 - Yes [Default].
+   "filetype_archives"
+   - Carry over filetype blacklisting/whitelisting to the contents of archives?
+     0 - No (just greylist everything) [Default], 1 - Yes.
+   "max_recursion"
+   - Maximum recursion depth limit for archives. Default = 10.
+ "attack_specific" (Category)
+ - Configuration for specific attack detetions (not based no CVDs).
+   * Chameleon attack detection: 0 = Off, 1 = On.
+   "chameleon_from_php"
+   - Search for php header in files that are neither php files nor recognised
+     archives.
+   "chameleon_from_exe"
+   - Search for executable headers in files that are neither executables nor
+     recognised archives and for executables whose headers are incorrect.
+   "chameleon_to_archive"
+   - Search for archives whose headers are incorrect (Supported: ZIP, RAR,
+     GZ).
+   "chameleon_to_doc"
+   - Search for office documents whose headers are incorrect (Supported: DOC,
+     DOT, PPS, PPT, XLA, XLS, WIZ).
+   "chameleon_to_img"
+   - Search for images whose headers are incorrect (Supported: BMP, DIB, PNG,
+     GIF, JPEG, JPG, XCF, PSD, PDD).
+   "chameleon_to_pdf"
+   - Search for PDF files whose headers are incorrect.
+   "archive_file_extensions" and "archive_file_extensions_wc"
+   - Recognised archive file extensions (format is CSV; should only add or
+     remove when problems occur; unnecessarily removing may cause
+     false-positives to appear for archive files, whereas unnecessarily adding
+     will essentially whitelist what you are adding from attack specific
+     detection; modify with caution; also note that this has no effect on what
+     archives can and can't be analysed at content-level). The list, as is at
+     default, lists those formats used most commonly across the majority of
+     systems and CMS, but intentionally isn't necessarily comprehensive.
+   "general_commands"
+   - Search content of files for general commands such as eval(), exec() and
+     include()? 0 - No (do not check) [Default], 1 - Yes (check).
+     Turn this option off if you intend to upload any of the following to your
+     system or CMS via your browser: php, JavaScript, HTML, python, perl files
+     and etcetera. Turn this option on if you do not have any additional
+     protections on your system and do not intend to upload such files. If you
+     use additional security in conjunction with phpMussel such as ZB Block,
+     there is no need to turn this option on, because most of what phpMussel
+     will look for (in the context of this option) are duplications of
+     protections that are already provided.
+   "block_control_characters"
+   - Block any files containing any control characters (other than newlines)?
+     ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) If you are -only- uploading raw ASCII
+     files and do not require files containing any UTF-8 characters (such as,
+     if those files are written only in English), then you can turn this option
+     on to provide some additional protection to your system. However, if you
+     upload anything more than ASCII files, or if you upload anything which
+     contains UTF-8 characters (such as if your files contain Chinese,
+     Japanese, Russian, Arabic or Hebrew characters), turning this on will
+     result in false positives and potentially cause you problems.
+     0 - Don't block [Default], 1 - Block.
+
+
+                                     ~ ~ ~                                     
+
+
+ 7. SIGNATURE FORMAT
+
  = MD5 SIGNATURES =
    All MD5 signatures follow the format:
     HASH:FILESIZE:NAME
    Where HASH is the MD5 hash of an entire file, FILESIZE is the total size
    of that file and NAME is the name to cite for that signature.
- 
+
  = FILENAME SIGNATURES =
    All filename signatures follow the format:
     NAME:FNRX
    Where NAME is the name to cite for that signature and FNRX is the regex
    pattern to match filenames (unencoded) against.
- 
+
  = ARCHIVE METADATA SIGNATURES =
    All archive metadata signatures follow the format:
     NAME:FILESIZE:CRC32
    Where NAME is the name to cite for that signature, FILESIZE is the total
    size (uncompressed) of a file contained within the archive and CRC32 is
    the crc32 checksum of that contained file.
- 
+
  = EVERYTHING ELSE =
    All other signatures follow the format:
-    NAME:HEX
+    NAME:HEX:FROM:TO
    Where NAME is the name to cite for that signature and HEX is a
    hexidecimal-encoded segment of the file intended to be matched by
-   the given signature.
- 
+   the given signature. FROM and TO are optional parameters, indicting from
+   which and to which positions in the source data to check against (not
+   supported by the mail function).
+
  = REGEX =
    Any form of regex understood and correctly processed by php should also be
    correctly understood and processed by phpMussel and its signatures.
@@ -742,7 +980,7 @@
    which regex statements are parsed. Also, remember that all patterns (with
    exception to filename, archive metadata and MD5 patterns) must be
    hexidecimally encoded (foregoing pattern syntax, of course)!
- 
+
  = WHERE TO PUT CUSTOM SIGNATURES? =
    Only put custom signatures in those files intended for custom signatures.
    Those files should contain "_custom" in their filenames.
@@ -759,7 +997,7 @@
    into your custom signatures, so long as you follow the correct syntax.
    However, be careful to test new signatures for false-positives beforehand
    if you intend to share them or use them in a live environment.
- 
+
  = SIGNATURE BREAKDOWN =
    The following is a breakdown of the types of signatures used by phpMussel:
    - "MD5 Signatures" (md5_*). Checked against the MD5 hash of the contents
@@ -785,17 +1023,17 @@
      to the phpMussel_mail() function, which is intended to be the body of
      email messages or similar entities (potentially forum posts and etcetera).
    (Note that any of these signatures may be easily disabled via phpmussel.ini
-    if you so desire).
- 
-                                  ~ ~ ~                                        
- 
- 
- 7. KNOWN COMPATIBILITY PROBLEMS
- 
+
+
+                                     ~ ~ ~                                     
+
+
+ 8. KNOWN COMPATIBILITY PROBLEMS
+
  This section will describe known compatibility problems that phpMussel has.
  This section will change from time to time as new problems emerge and old
  problems cease.
- 
+
  Avast! Anti-Virus
  - Not compatible with any current or previous version of phpMussel.
  - Not expected to be compatible with any future version of phpMussel.
@@ -806,15 +1044,14 @@
    the reporter having downloaded phpMussel; No individual file testing has
    as of yet occurred.
  - Last checked 23rd October 2013 (latest version at time of writing: v0.3).
- 
+
  PHP and PCRE
  - phpMussel requires PHP and PCRE to execute and function correctly. Without
    php, or without the PCRE extension of PCRE, phpMussel will not execute or
    function correctly. Should make sure you system has both PHP and PCRE
    installed and available prior to downloading and installing phpMussel.
- 
- 
-                                  ~ ~ ~                                        
- 
- 
+
+                                     ~ ~ ~                                     
+
+
 EOF

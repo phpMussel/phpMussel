@@ -1,5 +1,28 @@
 phpMussel change_log.txt
 
+=== Version 0.3c ===
+SUMMARY:
+Updated to the latest signatures set (55+18240+3c).
+Sub-minor update.
+
+NEW CHANGES:
+- Extended the signature formatting for custom signatures.
+- Improved interpretation by phpMussel of ClamAV signatures compared
+  to previous version of the script.
+- Improved documentation.
+- Some conditions can now be inserted into signature files to control
+  when certain signatures are and aren't utilised.
+
+PROBLEMS/BUGS FIXED:
+- Maybe?? The PCRE bug that I'd mentioned I'd found in the previous release
+  (v0.3b), I haven't been able to replicate in the latest version (v0.3c).
+  Given the nature of the bug, and that it wasn't intentionally fixed, but that
+  I haven't been able to replicate it.. I very cautiously suggest that it
+  -might- be fixed, at least, for this version.
+
+Maikuolan,
+17th December 2013.
+
 === Version 0.3b ===
 SUMMARY:
 Updated to the latest signatures set (55+18175+3b).
@@ -9,7 +32,7 @@ NEW CHANGES:
 - Added controls (refer to phpmussel.ini) concerning the length of signatures.
   It is now possible to specify a minimum and maximum length requirement for
   the execution of signatures.
-- Rewrite the code for handling general commands (should see a very minor speed
+- Rewrote the code for handling general commands (should see a very minor speed
   and memory usage improvement).
 - Added the option to block control characters.
 - Added a new code block into the core script which checks for the existence of
