@@ -1529,5 +1529,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 20 Maio 2015 (2015.05.20).
+Última Atualização: 24 Maio 2015 (2015.05.24).
 EOF
