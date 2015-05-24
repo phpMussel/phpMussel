@@ -12726,7 +12726,7 @@ else if($c>0&&$MusselConfig['general']['honeypot_mode'])
 			if($_FILES[$k]['error']===0)if(is_uploaded_file($_FILES[$k]['tmp_name']))
 				{
 				$str=phpMusselFile($_FILES[$k]['tmp_name']);
-				$str_len=str_len($str);
+				$str_len=strlen($str);
 				$crc=@hash('crc32b',$str);
 				$qfu=time().'-'.md5($MusselConfig['general']['quarantine_key'].$crc.time());
 				if($str_len>0&&$str_len<($MusselConfig['general']['quarantine_max_filesize']*1024))@phpMusselQ($str,$MusselConfig['general']['quarantine_key'],$_SERVER[$MusselConfig['general']['ipaddr']],$qfu);

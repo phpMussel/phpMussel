@@ -1531,5 +1531,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 20 Mei 2015 (2015.05.20).
+Terakhir Diperbarui: 24 Mei 2015 (2015.05.24).
 EOF
