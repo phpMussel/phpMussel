@@ -82,7 +82,7 @@
     "vault" directory should be one directory level beyond the directory that
     the "phpmussel.php" file will exist in. Save file, close.
 
- 4) (Optional; Strongly recommended for advanced users, but not recommended for
+ 3) (Optional; Strongly recommended for advanced users, but not recommended for
     beginners or for the inexperienced): Open "phpmussel.ini" (located inside
     "vault") - This file contains all the directives available for phpMussel.
     Above each option should be a brief comment describing what it does and
