@@ -35,16 +35,19 @@
  Hoffnung verteilt, dass es nützlich sein wird, allerdings OHNE JEGLICHE
  GARANTIE; ohne implizite Garantien für VERMARKTUNG/VERKAUF/VERTRIEB oder FÜR
  EINEN BESTIMMTEN ZWECK. Lesen Sie die GNU General Public License für weitere
- Details <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
+ Details, in der Datei "LICENSE" im Verzeichnis "_docs" befindet des
+ zugeordneten Pakets und Repository für diese Datei zur Verfügung und auch von:
+ <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Besonderer Dank geht an ClamAV für die Inspiration und die Signaturen, die
  dieses Script benutzt, ohne die dieses Script wahrscheinlich nicht existieren
  würde oder bestenfalls einen sehr begrenzten Wert hätte
  <http://www.clamav.net/>.
 
- Besonderer Dank auf Sourceforge für die hosten der Projektdateien, gefunden
- auf <http://sourceforge.net/projects/phpmussel/>, auf Spambot Security für
- die phpMussel Diskussionforen gehostet auf
+ Besonderer Dank auf Sourceforge und GitHub für die hosten der Projektdateien,
+ gefunden auf <http://phpmussel.sourceforge.net/> und
+ <https://github.com/Maikuolan/phpMussel/>, auf Spambot Security für die
+ phpMussel Diskussionforen gehostet auf
  <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, und an den
  Lieferanten von die zusätzliche Anzahl der durch  Signaturen verwendet
  phpMussel: SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
@@ -52,8 +55,9 @@
  und Besonderer Dank geht an alle diejenigen die Projekt unterstützen werden,
  an andere Personen nicht erwähnt, und an Sie, für die Verwendung des Script.
 
- Dieses Dokument und das zugehörige Paket kann kostenlos von Sourceforge
- heruntergeladen werden <http://sourceforge.net/projects/phpmussel/>.
+ Dieses Dokument und das zugehörige Paket kann kostenlos von:
+ - Sourceforge <http://phpmussel.sourceforge.net/>.
+ - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
 

@@ -964,6 +964,7 @@ $md5:cd6d760f090175dfc666e0573778427c;$sha:426d69db515c849f783ed0266d92829d10599
 $md5:ff2183df95e92c0049b1d0aee79e2212;$sha:f3e630990a4c60dc7d90e2fb71eb194f5ec4ae3f;$str_len:1656865;8Office-01
 $md5:56b1208fab5bbe89e2526496ea09edaa;$sha:c18384a70648d2b809bd0ec4cdb4d2a0bc2a16dc;$str_len:1599017;8Java-01
 $md5:04bc834ce80183e34737d1ca1656020d;$sha:4c35c233bc8fc78200320b3fd427a5f6f83fcd55;$str_len:1580074;01505X-46
+$md5:f4f671cb2dfddd4b62b47027b9507e3d;$sha:4a978824ffe8fcec5dcc5959afc23bdaa95ae8b9;$str_len:992164;01505X-52
 === Signatures I've written for files whose behaviour I've manually analysed in a live or virtual environment and have determined to be malicious; Not detected or only partially detected by V.T. ===
 .:: 2015/04
 $md5:17e837e4348946b2d53a6a34d2dd0fc9;$sha:316cbd0f13a20d43c57f337f3a27aaf41764d287;$str_len:584192;?PiccoloBotto-00

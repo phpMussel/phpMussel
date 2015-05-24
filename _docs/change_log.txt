@@ -1082,7 +1082,7 @@ NEW CHANGES:
   phpMussel yet, but those that do (and thus, which should correctly match
   during scans by phpMussel without false positives) have been included
   with this release (which works out to roughly ~150 signatures of the total
-  ~3K?K or so normalised ASCII signatures available from ClamAV).
+  ~3K±K or so normalised ASCII signatures available from ClamAV).
   Part of the reason that I'm including it with this release, as opposed to
   waiting until I've got it 100% implemented in the way that I'm aiming for,
   is that there are some critical common CMS vulnerabilities that can be

@@ -34,15 +34,18 @@
  License, atau (dalam opsi Anda) versi selanjutnya apapun. Skrip ini
  didistribusikan untuk harapan dapat digunakan tapi TANPA JAMINAN; tanpa
  walaupun garansi dari DIPERJUALBELIKAN atau KECOCOKAN UNTUK TUJUAN TERTENTU.
- Mohon Lihat GNU General Public Licence untuk lebih detail
+ Mohon Lihat GNU General Public Licence untuk lebih detail, terletak di
+ "LICENCE" file dalam "_docs" direktori dari paket terkait dan repositori untuk
+ file ini dan tersedia juga dari:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Terima kasih khususnya untuk ClamAV buat inspirasi project dan tanda tangan
  dimana skrip ini menggunakan ClamAV, tanpa nya skrip ini tidak akan ada,
  atau akan mengalami nilai yang kurang baik <http://www.clamav.net/>.
 
- Khusus terima kasih kepada Sourceforge untuk menghost file proyek, terletak di
- <http://sourceforge.net/projects/phpmussel/>, kepada Spambot Security untuk
+ Khusus terima kasih kepada Sourceforge dan GitHub untuk menghost file proyek,
+ terletak di <http://phpmussel.sourceforge.net/> dan
+ <https://github.com/Maikuolan/phpMussel/>, kepada Spambot Security untuk
  menghost forum diskusi phpMussel, terletak di
  <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, dan kepada
  sumber-sumber tambahan tanda tangan dimanfaatkan oleh phpMussel:
@@ -53,7 +56,9 @@
  Anda, untuk menggunakan skrip.
 
  Dokumen ini dan paket yang terhubung di dalamnya dapat di unduh secara gratis
- dari Sourceforge <http://sourceforge.net/projects/phpmussel/>.
+ dari:
+ - Sourceforge <http://phpmussel.sourceforge.net/>.
+ - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
 

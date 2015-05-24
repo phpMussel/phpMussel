@@ -33,16 +33,19 @@
  versione successiva. Questo script è distribuito nella speranza che possa
  essere utile, Ma SENZA ALCUNA GARANZIA; senza neppure la implicita garanzia di
  COMMERCIABILITÀ o IDONEITÀ PER UN PARTICOLARE SCOPO. Vedere la GNU General
- Public License per ulteriori dettagli <http://www.gnu.org/licenses/>
- <http://opensource.org/licenses/>.
+ Public License per ulteriori dettagli, situato nella "LICENSE" file
+ all'interno della "_docs" cartella del associato pacchetto e repository per
+ questo file e disponibili anche da:
+ <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Uno speciale grazie a ClamAV per l'ispirazione del progetto e per le firme che
  questo script usi, senza la quale, lo script sarebbe probabilmente non
  esisterebbe, o nel migliore, avrebbe un molto limitato valore
  <http://www.clamav.net/>.
 
- Uno speciale grazie a Sourceforge per ospitare i progetto file, situato a
- <http://sourceforge.net/projects/phpmussel/>, a Spambot Security per ospitare
+ Uno speciale grazie a Sourceforge e GitHub per ospitare i progetto file,
+ situato a <http://phpmussel.sourceforge.net/> e
+ <https://github.com/Maikuolan/phpMussel/>, a Spambot Security per ospitare
  le phpMussel discussione forum, situato a
  <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, e le risorse di un
  certo numero di firme utilizzata da phpMussel: SecuriteInfo.com
@@ -52,7 +55,9 @@
  dimenticato di menzionare, e per voi, per l'utilizzo dello script.
 
  Questo documento e il suo associato pacchetto possono essere scaricati
- gratuitamente da Sourceforge <http://sourceforge.net/projects/phpmussel/>.
+ gratuitamente da:
+ - Sourceforge <http://phpmussel.sourceforge.net/>.
+ - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
 

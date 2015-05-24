@@ -25,7 +25,7 @@
  virus, malware y otras amenazas en los archivos cargados en el sistema donde
  el script está adjunto, basado en las firmas de ClamAV y otros.
 
- PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan).
+ PHPMUSSEL COPYRIGHT 2013 y más allá GNU/GPL V.2 por Caleb M (Maikuolan).
 
  Este script es gratis software; puede redistribuirlo y/o modificarlo según los
  términos de la GNU General Pública Licencia como publicada por la Free
@@ -33,17 +33,19 @@
  Este script se distribuye con la esperanza de que será útil, pero SIN NINGUNA
  GARANTÍA; también, sin ninguna implícita garantía de COMERCIALIZACIÓN o
  IDONEIDAD PARA UN PARTICULAR PROPÓSITO. Vea la GNU General Pública Licencia
- para más detalles. <http://www.gnu.org/licenses/>
- <http://opensource.org/licenses/>
+ para más detalles, ubicado en el "LICENCE" archivo dentro del "_docs"
+ directorio del asociado paquete y repositorio para este archivo y disponible
+ también de: <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Un especial agradecimiento a ClamAV para la inspiración del proyecto y para
  las firmas que este script utiliza, sin la cual, la script probablemente no
  existiría, o en el mejor de, tendría un muy limitado valor
  <http://www.clamav.net/>.
 
- Un especial agradecimiento a Sourceforge para alojar los archivos de proyecto,
- situado en <http://sourceforge.net/projects/phpmussel/>, a Spambot Security
- para la phpMussel discusión foros, situado en
+ Un especial agradecimiento a Sourceforge y GitHub para alojar los archivos de
+ proyecto, situado en <http://phpmussel.sourceforge.net/> y
+ <https://github.com/Maikuolan/phpMussel/>, a Spambot Security para la
+ phpMussel discusión foros, situado en
  <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, y a las adicionales
  fuentes de un número de las firmas utilizadas por phpMussel: SecuriteInfo.com
  <http://www.securiteinfo.com/>, PhishTank <http://www.phishtank.com/>,
@@ -51,8 +53,9 @@
  aquellos que apoyan el proyecto, a cualquier otra persona que yo haya olvidado
  de lo contrario mencionar, y a usted, por el uso de la script.
 
- Este documento y asociado paquete pueden descargar de gratis desde
- Sourceforge <http://sourceforge.net/projects/phpmussel/>.
+ Este documento y asociado paquete pueden descargar de gratis desde:
+ - Sourceforge <http://phpmussel.sourceforge.net/>.
+ - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
 
