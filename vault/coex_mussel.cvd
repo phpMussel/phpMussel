@@ -926,6 +926,8 @@ $md5:acb18298a0f59beb8f05e15da788cd47;$sha:4454ec04f09f921c50b2cd0790b961a60c44d
 $md5:91358e2261c2937d8556cc9fe387824d;$sha:b4e5407dcf7c03995451dfb6170e842a24848819;$str_len:100394;0!Ransomlock-24
 $md5:b6ff2225656eb0a4f775aa2db7c3b793;$sha:f534e0459b6417ddb005ff65f86f77969ad4bb4c;$str_len:436224;3Strictor-14
 $md5:48c516d6b15490d8c851cca559ff2397;$sha:32e9275daade2ec4e94387118e052cf2f5aa4ff5;$str_len:2048512;3Kazy-108
+$md5:a50db9bd264a600af0fd1633604f020e;$sha:6b79a74de9a370b3791a1d54b47013e5d2cab955;$str_len:100394;3$Graftor-15
+$md5:dad41c150d67c025a340395d52f850c2;$sha:0afe056e538dc622cc677dc69bae5f4cf942e245;$str_len:282624;3Kryptik-05
 === Infected PE files caught by honeypot trap; Not detected or only partially detected by V.T. ===
 .:: 2015/02
 $md5:174bcf22f37a80c950409c9a44b2e95d;$sha:35298b05ada53008aa8d64bde3313fc3534343d1;$str_len:197632;0DOBJ-00

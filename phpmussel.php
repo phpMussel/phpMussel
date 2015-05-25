@@ -14,15 +14,18 @@
  Foundation; either version 2 of the License, or (at your option) any later
  version. This script is distributed in the hope that it will be useful, but
  WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
- details <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
+ FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ details, located in the "LICENSE" file within the "_docs" directory of the
+ associated package and repository for this file and available also from:
+ <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Special thanks to ClamAV for both project inspiration and for the signatures
  that this script utilises, without which, the script would likely not exist,
  or at best, would have very limited value <http://www.clamav.net/>.
 
- Special thanks to Sourceforge for hosting the project files, located at
- <http://sourceforge.net/projects/phpmussel/>, to Spambot Security for hosting
+ Special thanks to Sourceforge and GitHub for hosting the project files,
+ located at <http://phpmussel.sourceforge.net/> and
+ <https://github.com/Maikuolan/phpMussel/>, to Spambot Security for hosting
  the phpMussel discussion forums, located at
  <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, and to the
  additional sources of a number of the signatures utilised by phpMussel:
@@ -31,16 +34,14 @@
  special thanks to all those supporting the project, to anyone else that I may
  have otherwise forgotten to mention, and to you, for using the script.
 
- This document and its associated package can be downloaded for free from
- Sourceforge <http://sourceforge.net/projects/phpmussel/>.
+ This document and its associated package can be downloaded for free from:
+ - Sourceforge <http://phpmussel.sourceforge.net/>.
+ - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Loader v1.1c.1 (6th May 2015)
+ This File: phpMussel Loader v1.1c.1a (25th May 2015)
 
- The latest version and future updates can be obtained from the phpMussel
- SourceForge page located at <http://sourceforge.net/projects/phpmussel/>
-
-                                     ~ ~ ~                                     
+                                     ~ ~ ~
  Please refer to the README documentation for installation instructions and for
  instructions regarding how to correctly use phpMussel.
 
@@ -202,9 +203,6 @@ if(!defined('phpMussel'))
 	$display_errors=error_reporting($display_errors);
 	if($MusselConfig['general']['cleanup'])unset($musselvar,$logspword,$pword,$phpmussel,$MusselConfig,$disable_lock,$display_errors,$vault);
 	}
-else
-	{
-	plaintext_echo_die('[phpMussel] Instance already active! Please double-check your hooks.');
-	}
+else plaintext_echo_die('[phpMussel] Instance already active! Please double-check your hooks.');
 
 ?>
