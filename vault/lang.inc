@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.6i.0b (24th May 2015) Language Data.
+ This File: phpMussel v0.6i.0c (25th May 2015) Language Data.
 
                                      ~ ~ ~
  Please refer to the README documentation for installation instructions and for
@@ -68,8 +68,8 @@ if($MusselConfig['general']['lang']=='en')
 	$MusselConfig['lang']['cli_update_restart']=' Restarting phpMussel may be required before updates become apparent.';
 	$MusselConfig['lang']['cli_working']='In progress';
 	$MusselConfig['lang']['corrupted']='corrupted';
-	$MusselConfig['lang']['denied_other']='Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!';
-	$MusselConfig['lang']['denied_reason']='Your upload attempt was blocked for the reasons listed below / &#24744;&#30340;&#19978;&#36733;&#23581;&#35797;&#34987;&#25298;&#32477;&#30340;&#29702;&#30001;&#19979;&#38754;&#21015;&#20986;:';
+	$MusselConfig['lang']['denied_other']='Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+	$MusselConfig['lang']['denied_reason']='Your upload attempt was blocked for the reasons listed below / 您的上载尝试被拒绝的理由下面列出:';
 	$MusselConfig['lang']['denied']='Upload Denied!';
 	$MusselConfig['lang']['detected_control_characters']='Detected Control Characters';
 	$MusselConfig['lang']['detected']='Detected';
@@ -79,6 +79,8 @@ if($MusselConfig['general']['lang']=='en')
 	$MusselConfig['lang']['filetype_blacklisted']='Filetype blacklisted';
 	$MusselConfig['lang']['finished']='Finished';
 	$MusselConfig['lang']['generated_by']='Generated&nbsp;by';
+	$MusselConfig['lang']['greylist_cleared']=' Greylist cleared.';
+	$MusselConfig['lang']['greylist_updated']=' Greylist updated.';
 	$MusselConfig['lang']['invalid_file']='Invalid file';
 	$MusselConfig['lang']['ok']='OK';
 	$MusselConfig['lang']['only_allow_images']='Uploading files other than images isn\'t permitted';
@@ -152,8 +154,8 @@ else if($MusselConfig['general']['lang']=='de')
 	$MusselConfig['lang']['cli_ln3']=" phpMussel befindet sich im CLI-Modus (Command line interface).\n\n Um eine Datei oder ein Verzeichnis mit phpMussel zu überprüfen, geben Sie\n 'scan', gefolgt vom Namen der Datei oder des Verzeichnisses ein und\n bestätigen mit Enter;\n\n Geben Sie 'c' und Enter für eine Liste der verfügbaren Befehle im CLI-Modus\n ein; Geben Sie 'q' und Enter zum Beenden ein: ";
 	$MusselConfig['lang']['cli_update_restart']=' phpMussel muss neu gestartet werden, damit die Aktualisierungen wirksam werden.';
 	$MusselConfig['lang']['cli_working']='Im Gange';
-	$MusselConfig['lang']['corrupted']='besch&#228;digt';
-	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!';
+	$MusselConfig['lang']['corrupted']='beschädigt';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
 	$MusselConfig['lang']['denied_reason']='Der Upload wurde aus den unten aufgeführten Gründen blockiert / Your upload attempt was blocked for the reasons listed below:';
 	$MusselConfig['lang']['denied']='Upload verweigert!';
 	$MusselConfig['lang']['detected_control_characters']='Steuerzeichen erkannt';
@@ -164,6 +166,8 @@ else if($MusselConfig['general']['lang']=='de')
 	$MusselConfig['lang']['filetype_blacklisted']='Dateityp auf Blacklist';
 	$MusselConfig['lang']['finished']='Fertig';
 	$MusselConfig['lang']['generated_by']='Generiert&nbsp;von&nbsp;';
+	$MusselConfig['lang']['greylist_cleared']=' Greylist gelöscht.';
+	$MusselConfig['lang']['greylist_updated']=' Greylist aktualisiert.';
 	$MusselConfig['lang']['invalid_file']='Ungültige Datei';
 	$MusselConfig['lang']['ok']='OK';
 	$MusselConfig['lang']['only_allow_images']='Upload von Nicht-Bilddateien ist nicht erlaubt';
@@ -238,7 +242,7 @@ else if($MusselConfig['general']['lang']=='es')
 	$MusselConfig['lang']['cli_update_restart']=" Reinicio phpMussel puede ser requerido antes de las actualizaciones se hacen\n evidentes.";
 	$MusselConfig['lang']['cli_working']='En operación';
 	$MusselConfig['lang']['corrupted']='corrompido';
-	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Upload verweigert! Carica Negato! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Upload verweigert! Carica Negato! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
 	$MusselConfig['lang']['denied_reason']='Intento de subida ha sido bloqueada por las razones que se indican a continuación / Your upload attempt was blocked for the reasons listed below:';
 	$MusselConfig['lang']['denied']='Carga Negado!';
 	$MusselConfig['lang']['detected_control_characters']='Detectado Control Caracteres';
@@ -249,6 +253,8 @@ else if($MusselConfig['general']['lang']=='es')
 	$MusselConfig['lang']['filetype_blacklisted']='Tipo de archivo en la lista negra';
 	$MusselConfig['lang']['finished']='Terminado';
 	$MusselConfig['lang']['generated_by']='Generado&nbsp;por';
+	$MusselConfig['lang']['greylist_cleared']=' Greylist vaciado.';
+	$MusselConfig['lang']['greylist_updated']=' Greylist actualizado.';
 	$MusselConfig['lang']['invalid_file']='Archivo no válido';
 	$MusselConfig['lang']['ok']='OK';
 	$MusselConfig['lang']['only_allow_images']='Subir de archivos que no son imágenes no está permitido';
@@ -323,7 +329,7 @@ else if($MusselConfig['general']['lang']=='fr')
 	$MusselConfig['lang']['cli_update_restart']=' Redémarrage phpMussel peut être nécessaire avant les réactualisations deviennent apparents.';
 	$MusselConfig['lang']['cli_working']='En cours';
 	$MusselConfig['lang']['corrupted']='corrompu';
-	$MusselConfig['lang']['denied_other']='Upload Denied! Carga Negado! Carica Negato! Upload verweigert! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Carga Negado! Carica Negato! Upload verweigert! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
 	$MusselConfig['lang']['denied_reason']='Votre tentative à télécharger a été bloqué pour les raisons énumérées ci-dessous / Your upload attempt was blocked for the reasons listed below:';
 	$MusselConfig['lang']['denied']='Téléchargement Refusé!';
 	$MusselConfig['lang']['detected_control_characters']='Contrôle Caractères Détectés';
@@ -334,6 +340,8 @@ else if($MusselConfig['general']['lang']=='fr')
 	$MusselConfig['lang']['filetype_blacklisted']='Type de fichier sur la noire liste';
 	$MusselConfig['lang']['finished']='Terminé';
 	$MusselConfig['lang']['generated_by']='Généré&nbsp;par';
+	$MusselConfig['lang']['greylist_cleared']=' Greylist vidé.';
+	$MusselConfig['lang']['greylist_updated']=' Greylist réactualisé.';
 	$MusselConfig['lang']['invalid_file']='Fichier non valide';
 	$MusselConfig['lang']['ok']='Bien';
 	$MusselConfig['lang']['only_allow_images']='Télécharger des fichiers qui ne sont pas images n\'est pas autorisée';
@@ -408,7 +416,7 @@ else if($MusselConfig['general']['lang']=='id')
 	$MusselConfig['lang']['cli_update_restart']=' Restart phpMussel mungkin diperlukan sebelum perbarui menjadi jelas.';
 	$MusselConfig['lang']['cli_working']='Dalam proses';
 	$MusselConfig['lang']['corrupted']='rusak';
-	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
 	$MusselConfig['lang']['denied_reason']='Upload diblokir karena alasan yang tercantum di bawah / Your upload attempt was blocked for the reasons listed below:';
 	$MusselConfig['lang']['denied']='Upload Ditolak!';
 	$MusselConfig['lang']['detected_control_characters']='Terdeteksi Kontrol Karakter';
@@ -419,6 +427,8 @@ else if($MusselConfig['general']['lang']=='id')
 	$MusselConfig['lang']['filetype_blacklisted']='File jenis pada hitam daftar';
 	$MusselConfig['lang']['finished']='Selesai';
 	$MusselConfig['lang']['generated_by']='Dihasilkan&nbsp;oleh';
+	$MusselConfig['lang']['greylist_cleared']=' Greylist dikosongkan.';
+	$MusselConfig['lang']['greylist_updated']=' Greylist diperbarui.';
 	$MusselConfig['lang']['invalid_file']='File tidak valid';
 	$MusselConfig['lang']['ok']='Oke';
 	$MusselConfig['lang']['only_allow_images']='Upload file selain gambar tidak diizinkan';
@@ -493,7 +503,7 @@ else if($MusselConfig['general']['lang']=='it')
 	$MusselConfig['lang']['cli_update_restart']=" Riavvio di phpMussel può essere richiesto prima che gli aggiornamenti\n diventano evidenti.";
 	$MusselConfig['lang']['cli_working']='In corso';
 	$MusselConfig['lang']['corrupted']='corrotto';
-	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Upload verweigert! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Upload verweigert! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
 	$MusselConfig['lang']['denied_reason']='Il tentativo di caricamento è stato bloccato per i motivi elencati di seguito / Your upload attempt was blocked for the reasons listed below:';
 	$MusselConfig['lang']['denied']='Carica Negato!';
 	$MusselConfig['lang']['detected_control_characters']='Controllo Caratteri Rilevati';
@@ -504,6 +514,8 @@ else if($MusselConfig['general']['lang']=='it')
 	$MusselConfig['lang']['filetype_blacklisted']='Tipo di file sulla nera lista';
 	$MusselConfig['lang']['finished']='Finito';
 	$MusselConfig['lang']['generated_by']='Generato&nbsp;da';
+	$MusselConfig['lang']['greylist_cleared']=' Greylist svuotato.';
+	$MusselConfig['lang']['greylist_updated']=' Greylist aggiornato.';
 	$MusselConfig['lang']['invalid_file']='File non valido';
 	$MusselConfig['lang']['ok']='Bene';
 	$MusselConfig['lang']['only_allow_images']='Upload di file che non sono immagini non è consentito';
@@ -578,7 +590,7 @@ else if($MusselConfig['general']['lang']=='nl')
 	$MusselConfig['lang']['cli_update_restart']=' Herstarten phpMussel kan nodig zijn voordat updates zichtbaar worden.';
 	$MusselConfig['lang']['cli_working']='Aan de gang';
 	$MusselConfig['lang']['corrupted']='beschadigd';
-	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
 	$MusselConfig['lang']['denied_reason']='De upload poging werd geblokkeerd voor de hieronder vermelde redenen / Your upload attempt was blocked for the reasons listed below:';
 	$MusselConfig['lang']['denied']='Upload Geweigerd!';
 	$MusselConfig['lang']['detected_control_characters']='Gedetecteerd Controle Karakters';
@@ -589,6 +601,8 @@ else if($MusselConfig['general']['lang']=='nl')
 	$MusselConfig['lang']['filetype_blacklisted']='Bestandstype in zwarte lijst';
 	$MusselConfig['lang']['finished']='Afgewerkt';
 	$MusselConfig['lang']['generated_by']='Gegenereerde&nbsp;door';
+	$MusselConfig['lang']['greylist_cleared']=' Greylist geleegd.';
+	$MusselConfig['lang']['greylist_updated']=' Greylist bijgewerkt.';
 	$MusselConfig['lang']['invalid_file']='Ongeldig bestand';
 	$MusselConfig['lang']['ok']='OK';
 	$MusselConfig['lang']['only_allow_images']='Uploaden van niet-beeldbestanden is niet toegestaan';
@@ -663,7 +677,7 @@ else if($MusselConfig['general']['lang']=='pt')
 	$MusselConfig['lang']['cli_update_restart']=" Reiniciando phpMussel podem ser necessários antes que as atualizações se\n tornam aparentes.";
 	$MusselConfig['lang']['cli_working']='Em processo';
 	$MusselConfig['lang']['corrupted']='corrompido';
-	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! &#12450;&#12483;&#12503;&#12525;&#12540;&#12489;&#21542;&#23450;&#12373;&#12428;&#12414;&#12375;&#12383;! &#19978;&#36733;&#21542;&#35748;! &#19978;&#36617;&#21542;&#35469;! Uppladda Nekas! &#1047;&#1072;&#1075;&#1088;&#1091;&#1079;&#1080;&#1090;&#1100; &#1054;&#1090;&#1082;&#1072;&#1079;&#1072;&#1085;&#1086;! Aug&#353;upiel&#257;d&#275;t Liegta! &#50629;&#47196;&#46300; &#44144;&#48512;! &#1578;&#1581;&#1605;&#1610;&#1604; &#1606;&#1601;&#1609;!';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
 	$MusselConfig['lang']['denied_reason']='Carregamento tentativa foi bloqueado pelos motivos a seguir indicados / Your upload attempt was blocked for the reasons listed below:';
 	$MusselConfig['lang']['denied']='Carregar Negado!';
 	$MusselConfig['lang']['detected_control_characters']='Detectados Controle Caracteres';
@@ -681,6 +695,8 @@ else if($MusselConfig['general']['lang']=='pt')
 	$MusselConfig['lang']['filetype_blacklisted']='Tipo de arquivo está na negra lista';
 	$MusselConfig['lang']['finished']='Terminado';
 	$MusselConfig['lang']['generated_by']='Gerado&nbsp;por';
+	$MusselConfig['lang']['greylist_cleared']=' Greylist esvaziado.';
+	$MusselConfig['lang']['greylist_updated']=' Greylist atualizado.';
 	$MusselConfig['lang']['invalid_file']='Inválido arquivo';
 	$MusselConfig['lang']['ok']='OK';
 	$MusselConfig['lang']['only_allow_images']='Carregar de arquivos que não são imagens não é permitida';

@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.6i.0b (24th May 2015) Core Script.
+ This File: phpMussel v0.6i.0c (25th May 2015) Core Script.
 
                                      ~ ~ ~
  Please refer to the README documentation for installation instructions and for
@@ -52,7 +52,7 @@
 
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
-$phpmusselversion='phpMussel v0.6i.0b';
+$phpmusselversion='phpMussel v0.6i.0c';
 $linebreak=chr(10);
 if(!isset($MusselConfig['general']['ipaddr']))$MusselConfig['general']['ipaddr']='REMOTE_ADDR';
 if(!isset($_SERVER[$MusselConfig['general']['ipaddr']]))$_SERVER[$MusselConfig['general']['ipaddr']]='';
@@ -61,6 +61,10 @@ $inidefaults['display_errors']=@ini_get('display_errors');
 @ini_set('display_errors','1');
 $inidefaults['backtrack_limit']=@ini_get('pcre.backtrack_limit');
 @ini_set('pcre.backtrack_limit','4K');
+$inidefaults['default_charset']=@ini_get('default_charset');
+@ini_set('default_charset','utf-8');
+$inidefaults['internal_encoding']=@ini_get('mbstring.internal_encoding');
+@ini_set('mbstring.internal_encoding','UTF-8');
 $inidefaults['user_agent']=@ini_get('user_agent');
 @ini_set('user_agent',$phpmusselversion.' ('.hash('crc32b',$_SERVER['SERVER_ADDR']).'-'.hash('crc32b',$_SERVER['HTTP_HOST']).')');
 if(!function_exists('implode_md'))
@@ -12745,6 +12749,7 @@ if(strlen($xfm)>0)
 	{
 	$MusselConfig['template_data']['detected']=$xfm=trim($xfm);
 	$MusselConfig['template_data']['phpmusselversion']=$phpmusselversion;
+	$MusselConfig['template_data']['xmlLang']=$MusselConfig['general']['lang'];
 	if($MusselConfig['general']['scan_kills']&&strlen($xsk)>0)
 		{
 		$skd='';
@@ -12972,7 +12977,7 @@ if(function_exists('phpMusselFork')&&strlen(mussel_php)>0&&mussel_os=='WIN'&&mus
 				fwrite($greylistf,$greylist);
 				fclose($greylistf);
 				unset($greylistf,$greylist);
-				echo ' Greylist updated.';
+				echo $MusselConfig['lang']['greylist_updated'];
 				}
 			}
 		if($cmd=='greylist_clear'||$cmd=='gc')
@@ -12983,7 +12988,7 @@ if(function_exists('phpMusselFork')&&strlen(mussel_php)>0&&mussel_os=='WIN'&&mus
 			fwrite($greylistf,',');
 			fclose($greylistf);
 			unset($greylistf,$greylist);
-			echo ' Greylist cleared.';
+			echo $MusselConfig['lang']['greylist_cleared'];
 			}
 		if($cmd=='greylist_show'||$cmd=='gs')
 			{
@@ -12995,9 +13000,11 @@ if(function_exists('phpMusselFork')&&strlen(mussel_php)>0&&mussel_os=='WIN'&&mus
 		}
 	die;
 	}
-@ini_set('display_errors',$inidefaults);
-if(strlen($inidefaults['backtrack_limit']))@ini_set('pcre.backtrack_limit',$inidefaults['backtrack_limit']);
 @ini_set('user_agent',$inidefaults['user_agent']);
+@ini_set('mbstring.internal_encoding',$inidefaults['internal_encoding']);
+@ini_set('default_charset',$inidefaults['default_charset']);
+@ini_set('pcre.backtrack_limit',$inidefaults['backtrack_limit']);
+@ini_set('display_errors',$inidefaults['display_errors']);
 if($MusselConfig['general']['cleanup'])unset($cli_args,$tk,$ti,$tc,$r,$xpe,$xsk,$xfm,$k,$i,$c,$memCache,$inidefaults,$phpmusselversion);
 
 ?>
