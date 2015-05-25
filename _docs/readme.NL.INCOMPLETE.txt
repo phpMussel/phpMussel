@@ -22,7 +22,7 @@
  1. PREAMBULE
 
  Bedankt voor het gebruik van phpMussel, een PHP script ontworpen om detecteren
- trojans, virussen, malware en andere bedreigingen binnen bestanden geüpload
+ trojans, virussen, malware en andere bedreigingen binnen bestanden geÃ¼pload
  naar uw systeem waar het script is aangesloten, gebaseerd op ClamAV
  handtekeningen en anderen.
 
@@ -149,8 +149,8 @@
     computer. Wanneer je hebt beslist dat je bent tevreden met de gekozen
     phpMussel locatie, voortzetten.
 
- 2) phpMussel vereist van php moet worden geïnstalleerd op de host machine om
-    uit te werken correct. Als je niet php hebt geïnstalleerd op uw machine,
+ 2) phpMussel vereist van php moet worden geÃ¯nstalleerd op de host machine om
+    uit te werken correct. Als je niet php hebt geÃ¯nstalleerd op uw machine,
     installeer php op uw machine, volgende instructies door de php installateur
     geleverd.
 
@@ -172,7 +172,7 @@
     geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
  5) (Facultatief) U kunt maken te phpMussel in CLI-modus makkelijker voor
-    jezelf door het creëren van een batch-bestand om automatisch te laden php
+    jezelf door het creÃ«ren van een batch-bestand om automatisch te laden php
     en phpMussel. Om dit te doen, open een platte tekst editor zoals Notepad of
     Notepad++, typt u het volledige pad naar de "php.exe" bestand in de
     bestandsmap van uw php-installatie, gevolgd door een spatie, gevolgd door
@@ -193,7 +193,7 @@
 
  phpMussel is bedoeld te zijn een script dat zal adequaat functioneren direct
  uit de doos met een minimum niveau van de eisen van uw kant: Eenmaal
- geïnstalleerd, in principe, het gewoon moeten werken.
+ geÃ¯nstalleerd, in principe, het gewoon moeten werken.
 
  Het scannen van het bestanden uploaden is geautomatiseerd en ingeschakeld door
  standaard, zo niets is vereist op namens u voor deze specifieke functie.
@@ -239,7 +239,7 @@
 
    Retourneren iets als dit (als een string):
     Wed, 16 Sep 2013 02:49:46 +0000 Started.
-    > Verifiëren '/user_name/public_html/my_file.html':
+    > VerifiÃ«ren '/user_name/public_html/my_file.html':
     -> Geen problemen gevonden.
     Wed, 16 Sep 2013 02:49:47 +0000 Afgewerkt.
 
@@ -523,12 +523,12 @@
     ~
  /_docs/readme.DE.txt (Documentation, Included); DEUTSCH
  /_docs/readme.EN.txt (Documentation, Included); ENGLISH
- /_docs/readme.ES.txt (Documentation, Included); ESPAÑOL
- /_docs/readme.FR.txt (Documentation, Included); FRANÇAIS
+ /_docs/readme.ES.txt (Documentation, Included); ESPAÃ‘OL
+ /_docs/readme.FR.txt (Documentation, Included); FRANÃ‡AIS
  /_docs/readme.ID.txt (Documentation, Included); BAHASA INDONESIA
  /_docs/readme.IT.txt (Documentation, Included); ITALIANO
  /_docs/readme.NL.txt (Documentation, Included); NEDERLANDSE
- /_docs/readme.PT.txt (Documentation, Included); PORTUGUÊS
+ /_docs/readme.PT.txt (Documentation, Included); PORTUGUÃŠS
     The README files (for example; the file you're currently reading).
     ~
  /_docs/signatures_tally.txt (Documentation, Included)
@@ -1401,7 +1401,7 @@
  - PHP en PCRE is vereist voor phpMussel te kunnen functioneren juist. Zonder
    PHP, of zonder de PCRE extensie van PHP, phpMussel zullen niet worden
    uitgevoerd of functioneren juist. Je moet er zeker van uw systeem heeft
-   zowel PHP en PCRE geïnstalleerd en beschikbaar voordat downloaden en
+   zowel PHP en PCRE geÃ¯nstalleerd en beschikbaar voordat downloaden en
    installeren phpMussel.
 
  ANTI-VIRUS SOFTWARECOMPATIBILITEIT
