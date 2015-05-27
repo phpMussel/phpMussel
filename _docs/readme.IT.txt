@@ -110,19 +110,32 @@
     phpMussel al vostre sistema o CMS, Ma il più semplice è di inserire lo
     script all'inizio di un file del vostre sistema o CMS (quello che sarà
     generalmente sempre essere caricato quando qualcuno accede a una pagina
-    attraverso il vostro sito) utilizzando un require o include comando.
+    attraverso il vostro sito) utilizzando un require() o include() comando.
     Solitamente, questo sarà qualcosa memorizzate in una cartella, ad esempio
     "/includes", "/assets" o "/functions", e spesso essere chiamato qualcosa
     come "init.php", "common_functions.php", "functions.php" o simili. Avrete
-    bisogno determinare quale file è per la vostra situazione. Per fare questo,
-    inserire la seguente linea di codice all'inizio di quel core file,
-    sostituendo la stringa contenuta all'interno delle virgolette con l'esatto
-    indirizzo della "phpmussel" file (indirizzo locale, non l'indirizzo HTTP;
-    sarà simile all'indirizzo citato in precedenza).
+    bisogno determinare quale file è per la vostra situazione; In caso di
+    difficoltà nel determinare questo per te, visitare il phpMussel supporto
+    forum e fateci sapere; È possibile che io o un altro utente possono avere
+    esperienza con il CMS che si sta utilizzando (avrete bisogno di fateci
+    sapere quale CMS si sta utilizzando), e quindi, può essere in grado di
+    fornire assistenza in questo settore. Per fare questo [utilizzare require()
+    o include()], inserire la seguente linea di codice all'inizio di quel core
+    file, sostituendo la stringa contenuta all'interno delle virgolette con
+    l'esatto indirizzo della "phpmussel" file (indirizzo locale, non
+    l'indirizzo HTTP; sarà simile all'indirizzo citato in precedenza).
 
     <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
 
     Salvare il file, chiudere, caricare di nuovo.
+
+    -- IN ALTERNATIVA --
+
+    Se stai usando un Apache web server e se si ha accesso a "php.ini", è
+    possibile utilizzare il "auto_prepend_file" direttiva per precarico
+    phpMussel ogni volta che qualsiasi richiesta di PHP è fatto. Qualcosa come:
+
+    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) A questo punto, il gioco è fatto! Ma, si dovrebbe probabilmente verificare
     il lavoro svolto per assicurarsi che funzioni correttamente. Per testare le
@@ -205,9 +218,9 @@
  Ma, si è anche in grado di istruire phpMussel per la scansione per i file,
  cartelle o archivi che si implicitamente specificano. Per fare questo, in
  primo luogo, è necessario assicurarsi che l'appropriata configurazione è
- impostato nella phpmussel.ini file (cleanup deve essere disattivato), e quando
- fatto, in un php file che è collegato allo phpMussel, utilizzare la seguente
- funzione nelle codice:
+ impostato nella "phpmussel.ini" file (cleanup deve essere disattivato), e
+ quando fatto, in un php file che è collegato allo phpMussel, utilizzare la
+ seguente funzione nelle codice:
 
  phpMussel($cosa_a_scansione,$tipi_di_output,$output_pianura);
 
@@ -1536,5 +1549,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 25 Maggio 2015 (2015.05.25).
+Ultimo Aggiornamento: 27 Maggio 2015 (2015.05.27).
 EOF

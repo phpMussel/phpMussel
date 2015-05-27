@@ -107,20 +107,35 @@
  6) Selanjutnya Anda perlu menghubungkan phpMussel ke system atau CMS. Ada
     beberapa cara yang berbeda untuk menghubungkan skrip seperti phpMussel ke
     system atau CMS, tetapi yang paling mudah adalah memasukkan skrip pada
-    permulaan dari data murni dari system atau CMS ( satu yang akan secara umum
+    permulaan dari data murni dari system atau CMS (satu yang akan secara umum
     di muat ketika seseorang mengakses halaman apapun pada website) berdasarkan
-    perintah require atau include. Umumnya, ini akan menjadi sesuatu yang
+    perintah require() atau include(). Umumnya, ini akan menjadi sesuatu yang
     disimpan di sebuah direktori seperti "/includes", "/asset" atau
     "/functions" dan akan selalu di namai sesuatu seperti "init.php",
     "common_functions.php","functions.php" atau yang sama. Anda harus bekerja
-    pada data apa untuk situasi ini. Untuk melakukannya, sisipkan baris kode
-    dibawah pada data murni, menggantikan kata-kata berisikan didalam tanda
-    kutip dari alamat data "phpmussel.php" (alamat lokal, tidak alamat HTTP;
-    Akan terlihat seperti alamat vault yang di bicarakan sebelumnya.
+    pada data apa untuk situasi ini; Jika Anda mengalami kesulitan dalam
+    menentukan ini untuk diri sendiri, kunjungi forum dukungan phpMussel dan
+    biarkan kami tahu; Ada kemungkinan bahwa saya sendiri atau pengguna lain
+    mungkin memiliki pengalaman dengan CMS yang Anda gunakan (Anda harus
+    memberitahu kami tahu mana CMS yang Anda gunakan), dan demikian, mungkin
+    dapat memberikan beberapa bantuan kepada Anda. Untuk melakukannya
+    [menggunakan require() atau include()], sisipkan baris kode dibawah pada
+    data murni, menggantikan kata-kata berisikan didalam tanda kutip dari
+    alamat data "phpmussel.php" (alamat lokal, tidak alamat HTTP; Akan terlihat
+    seperti alamat vault yang di bicarakan sebelumnya.
 
     <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
 
-   Simpan data dan tutup. Upload kembali.
+    Simpan data dan tutup. Upload kembali.
+
+    -- ATAU ALTERNATIF --
+
+    Jika Anda menggunakan webserver Apache dan jika Anda memiliki akses ke
+    "php.ini", Anda dapat menggunakan "auto_prepend_file" direktif untuk
+    tambahkan phpMussel setiap kali ada permintaan PHP dibuat. Sesuatu
+    seperti:
+
+    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) Pada point ini, kamu telah selesai! Bagaimanapun, kamu mungkin seharusnya
     mencobanya untuk melihat dia bekerja dengan dengan baik. Untuk mencoba data
@@ -199,7 +214,7 @@
  Bagaimanapun Anda juga bisa menginstruksikan phpMussel untuk memindai data,
  direktori atau arsip yang Anda spesifikasikan. Untuk melakukannya,
  pertama-tama Anda harus memastikan konfigurasi yang cocok di set di data
- phpmussel.ini (cleanup harus dinon aktifkan) dan ketika selesai, di sebuah
+ "phpmussel.ini" (cleanup harus dinon aktifkan) dan ketika selesai, di sebuah
  data php yang di hubungkan ke phpMussel, gunakan fungsi berikut pada kode
  Anda:
 
@@ -1531,5 +1546,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 24 Mei 2015 (2015.05.24).
+Terakhir Diperbarui: 27 Mei 2015 (2015.05.27).
 EOF

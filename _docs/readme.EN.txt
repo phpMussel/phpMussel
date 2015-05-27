@@ -103,18 +103,31 @@
     your system or CMS, but the easiest is to simply include the script at the
     beginning of a core file of your system or CMS (one that'll generally
     always be loaded when someone accesses any page across your website) using
-    a require or include command. Usually, this'll be something stored in a
+    a require() or include() command. Usually, this'll be something stored in a
     directory such as "/includes", "/assets" or "/functions", and will often be
     named something like "init.php", "common_functions.php", "functions.php" or
-    similar. You'll have to work out which file this is for your situation.
-    To do this, insert the following line of code to the very beginning of that
+    similar. You'll have to work out which file this is for your situation; If
+    you encounter difficulties in working this out for yourself, visit the
+    phpMussel support forums and let us know; It's possible that either myself
+    or another user may have experience with the CMS that you're using (you'll
+    need to let us know which CMS you're using), and thus, may be able to
+    provide some assistance in this area. To do this [to use require() or
+    include()], insert the following line of code to the very beginning of that
     core file, replacing the string contained inside the quotation marks with
     the exact address of the "phpmussel.php" file (local address, not the HTTP
-    address; will look similar to the vault address mentioned earlier).
+    address; it will look similar to the vault address mentioned earlier).
 
     <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
 
     Save file, close, reupload.
+
+    -- OR ALTERNATIVELY --
+
+    If you're using an Apache webserver and if you have access to "php.ini",
+    you can use the "auto_prepend_file" directive to prepend phpMussel whenever
+    any PHP request is made. Something like:
+
+    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) At this point, you're done! However, you should probably test it out to
     make sure it's working properly. To test out file upload protections,
@@ -181,7 +194,7 @@
 
  3A. HOW TO USE (FOR WEB SERVERS)
 
- phpMussel is intended to be a script which will function adequately right from
+ phpMussel is intended to be a script that'll function adequately right from
  the box with a bare minimum level of requirements on your part: Once it has
  been installed, basically, it simply should work.
 
@@ -191,8 +204,8 @@
  However, you are also able to instruct phpMussel to scan for files,
  directories or archives that you implicitly specify. To do this, firstly,
  you'll need to ensure that the appropriate configuration is set in the
- phpmussel.ini file (cleanup must be disabled), and once done, in a php file
- that is hooked to phpMussel, use the following function in your code:
+ "phpmussel.ini" file (cleanup must be disabled), and when done, in a php file
+ that's hooked to phpMussel, use the following function in your code:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
@@ -487,14 +500,14 @@
 
  5. FILES INCLUDED IN THIS PACKAGE
 
- The following is a list of all of the files that should have been included
- in the archived copy of this script when you downloaded it, any files that may
- be potentially created as a result of your using this script, along with a
- short description of what all these files are for.
+ The following is a list of all of the files that should have been included in
+ the archived copy of this script when you downloaded it, any files that may be
+ potentially created as a result of your using this script, along with a short
+ description of what all these files are for.
 
  /phpmussel.php (Script, Included)
-    phpMussel Loader file. Loads the main script, updater, etcetera.
-    This is what you're supposed to be hooking into (essential)!
+    phpMussel Loader file. Loads the main script, updater, etcetera. This is
+    what you're supposed to be hooking into (essential)!
     ~
  /web.config (Other, Included)
     An ASP.NET configuration file (in this instance, to protect the "/vault"
@@ -505,8 +518,8 @@
     Documentation directory (contains various files).
     ~
  /_docs/change_log.txt (Documentation, Included)
-    A record of changes made to the script between different
-    versions (not required for proper function of script).
+    A record of changes made to the script between different versions (not
+    required for proper function of script).
     ~
  /_docs/readme.DE.txt (Documentation, Included); DEUTSCH
  /_docs/readme.EN.txt (Documentation, Included); ENGLISH
@@ -525,8 +538,8 @@
  /_testfiles/ (Directory)
     Test files directory (contains various files).
     All contained files are test files for testing if phpMussel was correctly
-    installed on your system, and you do not need to upload this directory
-    or any of its files except when doing such testing.
+    installed on your system, and you do not need to upload this directory or
+    any of its files except when doing such testing.
     ~
  /_testfiles/ascii_standard_testfile.txt (Test file, Included)
     Test file for testing phpMussel normalised ASCII signatures.
@@ -1462,5 +1475,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 24th May 2015 (2015.05.24).
+Last Updated: 27th May 2015 (2015.05.27).
 EOF

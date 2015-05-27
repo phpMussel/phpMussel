@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.6i.0c (25th May 2015) Language Data.
+ This File: phpMussel v0.6i.0d (27th May 2015) Language Data.
 
                                      ~ ~ ~
  Please refer to the README documentation for installation instructions and for
@@ -60,7 +60,7 @@ $MusselConfig['lang']['cli_prompt']="\n\n>> ";
 
 if($MusselConfig['general']['lang']=='en')
 	{ // English
-	$MusselConfig['lang']['cli_commands']=" q\n - Quit CLI.\n - Aliases: quit, exit.\n md5_file\n - Generate MD5 signatures from files [Syntax: md5_file filename].\n - Alias: m.\n md5\n - Generate MD5 signature from string [Syntax: md5_file string].\n hex_encode\n - Convert binary string to hexadecimal [Syntax: hex_encode string].\n - Alias: x.\n hex_decode\n - Convert hexadecimal to binary string [Syntax: hex_decode string].\n base64_encode\n - Convert binary string to base64 string [Syntax: base64_encode string].\n - Alias: b.\n base64_decode\n - Convert base64 string to binary string [Syntax: base64_decode string].\n scan\n - Scan file or directory [Syntax: scan filename].\n - Alias: s.\n update\n - Update phpMussel.\n - Alias: u.\n c\n - Print this command list.\n";
+	$MusselConfig['lang']['cli_commands']=" q\n - Quit CLI.\n - Aliases: quit, exit.\n md5_file\n - Generate MD5 signatures from files [Syntax: md5_file filename].\n - Alias: m.\n md5\n - Generate MD5 signature from string [Syntax: md5 string].\n hex_encode\n - Convert binary string to hexadecimal [Syntax: hex_encode string].\n - Alias: x.\n hex_decode\n - Convert hexadecimal to binary string [Syntax: hex_decode string].\n base64_encode\n - Convert binary string to base64 string [Syntax: base64_encode string].\n - Alias: b.\n base64_decode\n - Convert base64 string to binary string [Syntax: base64_decode string].\n scan\n - Scan file or directory [Syntax: scan filename].\n - Alias: s.\n update\n - Update phpMussel.\n - Alias: u.\n c\n - Print this command list.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']='Failed to complete scanning process';
 	$MusselConfig['lang']['cli_is_not_a']=' is not a file or directory.';
 	$MusselConfig['lang']['cli_ln2']=" Thank you for using phpMussel, a PHP script designed to detect trojans,\n viruses, malware and other threats within files uploaded to your system\n wherever the script is hooked, based on the signatures of ClamAV and others.\n\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
@@ -68,8 +68,8 @@ if($MusselConfig['general']['lang']=='en')
 	$MusselConfig['lang']['cli_update_restart']=' Restarting phpMussel may be required before updates become apparent.';
 	$MusselConfig['lang']['cli_working']='In progress';
 	$MusselConfig['lang']['corrupted']='corrupted';
-	$MusselConfig['lang']['denied_other']='Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
-	$MusselConfig['lang']['denied_reason']='Your upload attempt was blocked for the reasons listed below / 您的上载尝试被拒绝的理由下面列出:';
+	$MusselConfig['lang']['denied_other']='Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+	$MusselConfig['lang']['denied_reason']='Your upload was blocked for the reasons listed below / 你的上传被拒绝由于这些原因:';
 	$MusselConfig['lang']['denied']='Upload Denied!';
 	$MusselConfig['lang']['detected_control_characters']='Detected Control Characters';
 	$MusselConfig['lang']['detected']='Detected';
@@ -146,8 +146,8 @@ if($MusselConfig['general']['lang']=='en')
 	$MusselConfig['lang']['x_does_not_exist']='does not exist';
 	}
 else if($MusselConfig['general']['lang']=='de')
-	{ // German
-	$MusselConfig['lang']['cli_commands']="q\n - Beendet den CLI-Modus.\n - Alias: quit, exit.\n md5_file\n - Generiert MD5-Signaturen einer Datei\n   [Syntax: md5_file filename].\n - Alias: m.\n md5\n - Generiert MD5-Signaturen eines String-Wertes\n   [Syntax: md5_file string].\n hex_encode\n - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert\n   [Syntax: hex_encode string].\n - Alias: x.\n hex_decode\n - Konvertiert einen Hexidezimal-Wert in einen Binär-Wert\n   [Syntax: hex_decode string].\n base64_encode\n -  Konvertiert einen Binär-Wert in einen Base64-Wert\n   [Syntax: base64_encode string].\n - Alias: b.\n base64_decode\n - Konvertiert einen Base64-Wert in einen Binär-Wert\n   [Syntax: base64_decode string].\n scan\n - Überprüft eine Datei oder ein Verzeichnis\n   [Syntax: scan filename].\n - Alias: s.\n update\n - Aktualisiert phpMussel.\n - Alias: u.\n c\n - Gibt diese Befehlsliste aus.\n";
+	{ // German - Deutsch
+	$MusselConfig['lang']['cli_commands']="q\n - Beendet den CLI-Modus.\n - Alias: quit, exit.\n md5_file\n - Generiert MD5-Signaturen einer Datei\n   [Syntax: md5_file filename].\n - Alias: m.\n md5\n - Generiert MD5-Signaturen eines String-Wertes\n   [Syntax: md5 string].\n hex_encode\n - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert\n   [Syntax: hex_encode string].\n - Alias: x.\n hex_decode\n - Konvertiert einen Hexidezimal-Wert in einen Binär-Wert\n   [Syntax: hex_decode string].\n base64_encode\n -  Konvertiert einen Binär-Wert in einen Base64-Wert\n   [Syntax: base64_encode string].\n - Alias: b.\n base64_decode\n - Konvertiert einen Base64-Wert in einen Binär-Wert\n   [Syntax: base64_decode string].\n scan\n - Überprüft eine Datei oder ein Verzeichnis\n   [Syntax: scan filename].\n - Alias: s.\n update\n - Aktualisiert phpMussel.\n - Alias: u.\n c\n - Gibt diese Befehlsliste aus.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']='Ein vollständiger Scan konnte nicht durchgeführt werden';
 	$MusselConfig['lang']['cli_is_not_a']=' ist keine Datei oder ein Verzeichnis.';
 	$MusselConfig['lang']['cli_ln2']=" Vielen Dank für die Benutzung von phpMussel, einem auf PHP basiertem Script,\n um Trojaner, Viren, Malware und andere Bedrohungen in Dateien zu entdecken,\n die auf Ihr System hochgeladen werden könnten, welches die Signaturen von\n ClamAV und andere nutzt.\n\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
@@ -155,8 +155,8 @@ else if($MusselConfig['general']['lang']=='de')
 	$MusselConfig['lang']['cli_update_restart']=' phpMussel muss neu gestartet werden, damit die Aktualisierungen wirksam werden.';
 	$MusselConfig['lang']['cli_working']='Im Gange';
 	$MusselConfig['lang']['corrupted']='beschädigt';
-	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
-	$MusselConfig['lang']['denied_reason']='Der Upload wurde aus den unten aufgeführten Gründen blockiert / Your upload attempt was blocked for the reasons listed below:';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+	$MusselConfig['lang']['denied_reason']='Der Upload wurde aus den unten aufgeführten Gründen blockiert / Your upload was blocked for the reasons listed below:';
 	$MusselConfig['lang']['denied']='Upload verweigert!';
 	$MusselConfig['lang']['detected_control_characters']='Steuerzeichen erkannt';
 	$MusselConfig['lang']['detected']='Entdeckt: ';
@@ -233,8 +233,8 @@ else if($MusselConfig['general']['lang']=='de')
 	$MusselConfig['lang']['x_does_not_exist']='nicht vorhanden';
 	}
 else if($MusselConfig['general']['lang']=='es')
-	{ // Spanish
-	$MusselConfig['lang']['cli_commands']=" q\n - Dejar CLI.\n - Alias: quit, exit.\n md5_file\n - Generar MD5 firmas de archivos [Sintaxis: md5_file nombre_de_archivo].\n - Alias: m.\n md5\n - Generar MD5 firma de string [Sintaxis: md5_file string].\n hex_encode\n - Convertir binaria string a hexadecimal [Sintaxis: hex_encode string].\n - Alias: x.\n hex_decode\n - Convertir hexadecimal a binaria string [Sintaxis: hex_decode string].\n base64_encode\n - Convertir binaria string a base64 string [Sintaxis: base64_encode string].\n - Alias: b.\n base64_decode\n - Convertir base64 string a binaria string [Sintaxis: base64_decode string].\n scan\n - Analizar archivo o directorio [Sintaxis: scan nombre_de_archivo].\n - Alias: s.\n update\n - Actualizar phpMussel.\n - Alias: u.\n c\n - Imprimir esta lista de comandos.\n";
+	{ // Spanish - Español
+	$MusselConfig['lang']['cli_commands']=" q\n - Dejar CLI.\n - Alias: quit, exit.\n md5_file\n - Generar MD5 firmas de archivos [Sintaxis: md5_file nombre_de_archivo].\n - Alias: m.\n md5\n - Generar MD5 firma de string [Sintaxis: md5 string].\n hex_encode\n - Convertir binaria string a hexadecimal [Sintaxis: hex_encode string].\n - Alias: x.\n hex_decode\n - Convertir hexadecimal a binaria string [Sintaxis: hex_decode string].\n base64_encode\n - Convertir binaria string a base64 string [Sintaxis: base64_encode string].\n - Alias: b.\n base64_decode\n - Convertir base64 string a binaria string [Sintaxis: base64_decode string].\n scan\n - Analizar archivo o directorio [Sintaxis: scan nombre_de_archivo].\n - Alias: s.\n update\n - Actualizar phpMussel.\n - Alias: u.\n c\n - Imprimir esta lista de comandos.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']='No se pudo completar el proceso de escaneo';
 	$MusselConfig['lang']['cli_is_not_a']=' no es un archivo o directorio.';
 	$MusselConfig['lang']['cli_ln2']=" Gracias por usar phpMussel, un PHP script diseñado para detectar troyanos,\n virus, malware y otras amenazas en los archivos cargados en el sistema donde\n el script está adjunto, basado en las firmas de ClamAV y otros.\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
@@ -242,8 +242,8 @@ else if($MusselConfig['general']['lang']=='es')
 	$MusselConfig['lang']['cli_update_restart']=" Reinicio phpMussel puede ser requerido antes de las actualizaciones se hacen\n evidentes.";
 	$MusselConfig['lang']['cli_working']='En operación';
 	$MusselConfig['lang']['corrupted']='corrompido';
-	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Upload verweigert! Carica Negato! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
-	$MusselConfig['lang']['denied_reason']='Intento de subida ha sido bloqueada por las razones que se indican a continuación / Your upload attempt was blocked for the reasons listed below:';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Upload verweigert! Carica Negato! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+	$MusselConfig['lang']['denied_reason']='Intento de subida ha sido bloqueada por las razones que se indican a continuación / Your upload was blocked for the reasons listed below:';
 	$MusselConfig['lang']['denied']='Carga Negado!';
 	$MusselConfig['lang']['detected_control_characters']='Detectado Control Caracteres';
 	$MusselConfig['lang']['detected']='Detectado';
@@ -320,8 +320,8 @@ else if($MusselConfig['general']['lang']=='es')
 	$MusselConfig['lang']['x_does_not_exist']='no existe';
 	}
 else if($MusselConfig['general']['lang']=='fr')
-	{ // French
-	$MusselConfig['lang']['cli_commands']=" q\n - Quitter CLI.\n - Alias: quit, exit.\n md5_file\n - Générer MD5 signatures des fichiers [Syntaxe: md5_file nom_de_fichier].\n - Alias: m.\n md5\n - Générer MD5 signature de string [Syntaxe: md5_file string].\n hex_encode\n - Convertir binaire string à hexadécimal [Syntaxe: hex_encode string].\n - Alias: x.\n hex_decode\n - Convertir hexadécimal à binaire string [Syntaxe: hex_decode string].\n base64_encode\n - Convertir binaire string à base64 string [Syntaxe: base64_encode string].\n - Alias: b.\n base64_decode\n - Convertir base64 string à binaire string [Syntaxe: base64_decode string].\n scan\n - Analyser fichier ou répertoire [Syntaxe: scan nom_de_fichier].\n - Alias: s.\n update\n - Réactualiser phpMussel.\n - Alias: u.\n c\n - Imprimer cette liste des commandes.\n";
+	{ // French - Français
+	$MusselConfig['lang']['cli_commands']=" q\n - Quitter CLI.\n - Alias: quit, exit.\n md5_file\n - Générer MD5 signatures des fichiers [Syntaxe: md5_file nom_de_fichier].\n - Alias: m.\n md5\n - Générer MD5 signature de string [Syntaxe: md5 string].\n hex_encode\n - Convertir binaire string à hexadécimal [Syntaxe: hex_encode string].\n - Alias: x.\n hex_decode\n - Convertir hexadécimal à binaire string [Syntaxe: hex_decode string].\n base64_encode\n - Convertir binaire string à base64 string [Syntaxe: base64_encode string].\n - Alias: b.\n base64_decode\n - Convertir base64 string à binaire string [Syntaxe: base64_decode string].\n scan\n - Analyser fichier ou répertoire [Syntaxe: scan nom_de_fichier].\n - Alias: s.\n update\n - Réactualiser phpMussel.\n - Alias: u.\n c\n - Imprimer cette liste des commandes.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']='Échec du terminer le processus d\'analyse';
 	$MusselConfig['lang']['cli_is_not_a']='  n\'est pas un fichier ou un répertoire.';
 	$MusselConfig['lang']['cli_ln2']=" Merci pour l'utiliser de phpMusel, un PHP script pour la détection de virus,\n malveillants logiciels et autres menaces dans les fichiers téléchargés sur\n votre système partout où le script est accroché, basé sur les signatures de\n ClamAV et autres.\n\n PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPL V.2 par Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
@@ -329,8 +329,8 @@ else if($MusselConfig['general']['lang']=='fr')
 	$MusselConfig['lang']['cli_update_restart']=' Redémarrage phpMussel peut être nécessaire avant les réactualisations deviennent apparents.';
 	$MusselConfig['lang']['cli_working']='En cours';
 	$MusselConfig['lang']['corrupted']='corrompu';
-	$MusselConfig['lang']['denied_other']='Upload Denied! Carga Negado! Carica Negato! Upload verweigert! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
-	$MusselConfig['lang']['denied_reason']='Votre tentative à télécharger a été bloqué pour les raisons énumérées ci-dessous / Your upload attempt was blocked for the reasons listed below:';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Carga Negado! Carica Negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+	$MusselConfig['lang']['denied_reason']='Votre tentative à télécharger a été bloqué pour les raisons énumérées ci-dessous / Your upload was blocked for the reasons listed below:';
 	$MusselConfig['lang']['denied']='Téléchargement Refusé!';
 	$MusselConfig['lang']['detected_control_characters']='Contrôle Caractères Détectés';
 	$MusselConfig['lang']['detected']='Détecté';
@@ -407,8 +407,8 @@ else if($MusselConfig['general']['lang']=='fr')
 	$MusselConfig['lang']['x_does_not_exist']='n\'existe pas';
 	}
 else if($MusselConfig['general']['lang']=='id')
-	{ // Indonesian
-	$MusselConfig['lang']['cli_commands']=" q\n - Berhenti CLI.\n - Alias: quit, exit.\n md5_file\n - Menghasilkan tanda tangan MD5 dari file [Sintaksis: md5_file nama_file].\n - Alias: m.\n md5\n - Menghasilkan tanda tangan MD5 dari string [Sintaksis: md5_file string].\n hex_encode\n - Mengkonversi string biner ke heksadesimal [Sintaksis: hex_encode string].\n - Alias: x.\n hex_decode\n - Mengkonversi heksadesimal ke string biner [Sintaksis: hex_decode string].\n base64_encode\n - Mengkonversi string biner ke string base64 [Sintaksis: base64_encode string].\n - Alias: b.\n base64_decode\n - Mengkonversi string base64 ke string biner [Sintaksis: base64_decode string].\n scan\n - Pindai file atau direktori [Sintaksis: scan nama_file].\n - Alias: s.\n update\n - Memperbarui phpMussel.\n - Alias: u.\n c\n - Cetak ini daftar perintah.\n";
+	{ // Indonesian - Bahasa Indonesia
+	$MusselConfig['lang']['cli_commands']=" q\n - Berhenti CLI.\n - Alias: quit, exit.\n md5_file\n - Menghasilkan tanda tangan MD5 dari file [Sintaksis: md5_file nama_file].\n - Alias: m.\n md5\n - Menghasilkan tanda tangan MD5 dari string [Sintaksis: md5 string].\n hex_encode\n - Mengkonversi string biner ke heksadesimal [Sintaksis: hex_encode string].\n - Alias: x.\n hex_decode\n - Mengkonversi heksadesimal ke string biner [Sintaksis: hex_decode string].\n base64_encode\n - Mengkonversi string biner ke string base64 [Sintaksis: base64_encode string].\n - Alias: b.\n base64_decode\n - Mengkonversi string base64 ke string biner [Sintaksis: base64_decode string].\n scan\n - Pindai file atau direktori [Sintaksis: scan nama_file].\n - Alias: s.\n update\n - Memperbarui phpMussel.\n - Alias: u.\n c\n - Cetak ini daftar perintah.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']='Gagal untuk menyelesaikan memindai proses';
 	$MusselConfig['lang']['cli_is_not_a']=' bukan file atau direktori.';
 	$MusselConfig['lang']['cli_ln2']=" Terima kasih untuk menggunakan phpMussel, sebuah skrip php di-design untuk\n mendeteksi trojan-trojan, virus-virus dan serangan-serangan lainnya dalam\n file-file diupload ke system Anda dimana saja skrip di kaitkan, berdasarkan\n tanda tangan dari ClamAV dan lain-lain.\n\n PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPL V.2 oleh Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
@@ -416,8 +416,8 @@ else if($MusselConfig['general']['lang']=='id')
 	$MusselConfig['lang']['cli_update_restart']=' Restart phpMussel mungkin diperlukan sebelum perbarui menjadi jelas.';
 	$MusselConfig['lang']['cli_working']='Dalam proses';
 	$MusselConfig['lang']['corrupted']='rusak';
-	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
-	$MusselConfig['lang']['denied_reason']='Upload diblokir karena alasan yang tercantum di bawah / Your upload attempt was blocked for the reasons listed below:';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+	$MusselConfig['lang']['denied_reason']='Upload diblokir karena alasan yang tercantum di bawah / Your upload was blocked for the reasons listed below:';
 	$MusselConfig['lang']['denied']='Upload Ditolak!';
 	$MusselConfig['lang']['detected_control_characters']='Terdeteksi Kontrol Karakter';
 	$MusselConfig['lang']['detected']='Terdeteksi';
@@ -494,8 +494,8 @@ else if($MusselConfig['general']['lang']=='id')
 	$MusselConfig['lang']['x_does_not_exist']='tidak ada';
 	}
 else if($MusselConfig['general']['lang']=='it')
-	{ // Italian
-	$MusselConfig['lang']['cli_commands']=" q\n - Smettere CLI.\n - Alias: quit, exit.\n md5_file\n - Genera MD5 firme da file [Sintassi: md5_file filename].\n - Alias: m.\n md5\n - Genera MD5 firma da string [Sintassi: md5_file string].\n hex_encode\n - Convertire binaria string a esadecimale [Sintassi: hex_encode string].\n - Alias: x.\n hex_decode\n - Convertire esadecimale a binaria string [Sintassi: hex_decode string].\n base64_encode\n - Convertire binaria string a base64 string [Sintassi: base64_encode string].\n - Alias: b.\n base64_decode\n - Convertire base64 string a binaria string [Sintassi: base64_decode string].\n scan\n - Scansionare file o una cartella [Sintassi: scan filename].\n - Alias: s.\n update\n - Aggiornare phpMussel.\n - Alias: u.\n c\n - Stampare questo lista dei comandi.\n";
+	{ // Italian - Italiano
+	$MusselConfig['lang']['cli_commands']=" q\n - Smettere CLI.\n - Alias: quit, exit.\n md5_file\n - Genera MD5 firme da file [Sintassi: md5_file filename].\n - Alias: m.\n md5\n - Genera MD5 firma da string [Sintassi: md5 string].\n hex_encode\n - Convertire binaria string a esadecimale [Sintassi: hex_encode string].\n - Alias: x.\n hex_decode\n - Convertire esadecimale a binaria string [Sintassi: hex_decode string].\n base64_encode\n - Convertire binaria string a base64 string [Sintassi: base64_encode string].\n - Alias: b.\n base64_decode\n - Convertire base64 string a binaria string [Sintassi: base64_decode string].\n scan\n - Scansionare file o una cartella [Sintassi: scan filename].\n - Alias: s.\n update\n - Aggiornare phpMussel.\n - Alias: u.\n c\n - Stampare questo lista dei comandi.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']='Fallimento a completa processo di scansione';
 	$MusselConfig['lang']['cli_is_not_a']=' non è un file o una directory.';
 	$MusselConfig['lang']['cli_ln2']=" Grazie per aver scelto phpMussel, uno PHP script progettato per la rilevazione\n di trojan, virus, malware e altre minacce all'interno di file caricati nel\n sistema ovunque lo script è collegato, basato su firme di ClamAV e altri.\n\n PHPMUSSEL COPYRIGHT 2013 e oltre GNU/GPL V.2 da Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
@@ -503,8 +503,8 @@ else if($MusselConfig['general']['lang']=='it')
 	$MusselConfig['lang']['cli_update_restart']=" Riavvio di phpMussel può essere richiesto prima che gli aggiornamenti\n diventano evidenti.";
 	$MusselConfig['lang']['cli_working']='In corso';
 	$MusselConfig['lang']['corrupted']='corrotto';
-	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Upload verweigert! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
-	$MusselConfig['lang']['denied_reason']='Il tentativo di caricamento è stato bloccato per i motivi elencati di seguito / Your upload attempt was blocked for the reasons listed below:';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+	$MusselConfig['lang']['denied_reason']='Il tentativo di caricamento è stato bloccato per i motivi elencati di seguito / Your upload was blocked for the reasons listed below:';
 	$MusselConfig['lang']['denied']='Carica Negato!';
 	$MusselConfig['lang']['detected_control_characters']='Controllo Caratteri Rilevati';
 	$MusselConfig['lang']['detected']='Rilevato';
@@ -581,8 +581,8 @@ else if($MusselConfig['general']['lang']=='it')
 	$MusselConfig['lang']['x_does_not_exist']='non esiste';
 	}
 else if($MusselConfig['general']['lang']=='nl')
-	{ // Dutch
-	$MusselConfig['lang']['cli_commands']=" q\n - Verlaten CLI.\n - Aliassen: quit, exit.\n md5_file\n - Genereer MD5 handtekeningen van bestanden [Syntaxis: md5_file bestandsnaam].\n - Alias: m.\n md5\n - Genereer MD5 handtekening van string [Syntaxis: md5_file string].\n hex_encode\n - Converteren van binaire string naar hexadecimaal [Syntaxis: hex_encode string].\n - Alias: x.\n hex_decode\n - Converteren van hexadecimaal naar binaire string [Syntaxis: hex_decode string].\n base64_encode\n - Converteren van binaire string naar base64 string [Syntaxis: base64_encode string].\n - Alias: b.\n base64_decode\n - Converteren van base64 string naar binaire string [Syntaxis: base64_decode string].\n scan\n - Scannen bestand of map [Syntaxis: scan bestandsnaam].\n - Alias: s.\n update\n - Update phpMussel.\n - Alias: u.\n c\n - Print dit commando lijst.\n";
+	{ // Dutch - Nederlandse
+	$MusselConfig['lang']['cli_commands']=" q\n - Verlaten CLI.\n - Aliassen: quit, exit.\n md5_file\n - Genereer MD5 handtekeningen van bestanden [Syntaxis: md5_file bestandsnaam].\n - Alias: m.\n md5\n - Genereer MD5 handtekening van string [Syntaxis: md5 string].\n hex_encode\n - Converteren van binaire string naar hexadecimaal [Syntaxis: hex_encode string].\n - Alias: x.\n hex_decode\n - Converteren van hexadecimaal naar binaire string [Syntaxis: hex_decode string].\n base64_encode\n - Converteren van binaire string naar base64 string [Syntaxis: base64_encode string].\n - Alias: b.\n base64_decode\n - Converteren van base64 string naar binaire string [Syntaxis: base64_decode string].\n scan\n - Scannen bestand of map [Syntaxis: scan bestandsnaam].\n - Alias: s.\n update\n - Update phpMussel.\n - Alias: u.\n c\n - Print dit commando lijst.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']='Mislukt om het voltooien te scannen';
 	$MusselConfig['lang']['cli_is_not_a']=' is niet een bestand of map.';
  	$MusselConfig['lang']['cli_ln2']=" Bedankt voor het gebruik van phpMussel, een PHP script ontworpen om detecteren\n trojans, virussen, malware en andere bedreigingen binnen bestanden geüpload\n naar uw systeem waar het script is aangesloten, gebaseerd op ClamAV\n handtekeningen en anderen.\n PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPL V.2 van Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
@@ -590,8 +590,8 @@ else if($MusselConfig['general']['lang']=='nl')
 	$MusselConfig['lang']['cli_update_restart']=' Herstarten phpMussel kan nodig zijn voordat updates zichtbaar worden.';
 	$MusselConfig['lang']['cli_working']='Aan de gang';
 	$MusselConfig['lang']['corrupted']='beschadigd';
-	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
-	$MusselConfig['lang']['denied_reason']='De upload poging werd geblokkeerd voor de hieronder vermelde redenen / Your upload attempt was blocked for the reasons listed below:';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+	$MusselConfig['lang']['denied_reason']='De upload poging werd geblokkeerd voor de hieronder vermelde redenen / Your upload was blocked for the reasons listed below:';
 	$MusselConfig['lang']['denied']='Upload Geweigerd!';
 	$MusselConfig['lang']['detected_control_characters']='Gedetecteerd Controle Karakters';
 	$MusselConfig['lang']['detected']='Gedetecteerd';
@@ -668,8 +668,8 @@ else if($MusselConfig['general']['lang']=='nl')
 	$MusselConfig['lang']['x_does_not_exist']='niet bestaat';
 	}
 else if($MusselConfig['general']['lang']=='pt')
-	{ // Portuguese
-	$MusselConfig['lang']['cli_commands']=" q\n - Deixar CLI.\n - Alias: quit, exit.\n md5_file\n - Gerar MD5 assinaturas de arquivos [Sintaxe: md5_file nome_do_arquivo].\n - Alias: m.\n md5\n - Gerar MD5 assinatura de string [Sintaxe: md5_file string].\n hex_encode\n - Converter binária string para hexadecimal [Sintaxe: hex_encode string].\n - Alias: x.\n hex_decode\n - Converter hexadecimal para binária string [Sintaxe: hex_decode string].\n base64_encode\n - Converter binária string para base64 string [Sintaxe: base64_encode string].\n - Alias: b.\n base64_decode\n - Converter base64 string para binária string [Sintaxe: base64_decode string].\n scan\n - Verificação arquivo ou diretório [Sintaxe: scan nome_do_arquivo].\n - Alias: s.\n update\n - Atualizar phpMussel.\n - Alias: u.\n c\n - Imprimir esta lista de comandos.\n";
+	{ // Portuguese - Português
+	$MusselConfig['lang']['cli_commands']=" q\n - Deixar CLI.\n - Alias: quit, exit.\n md5_file\n - Gerar MD5 assinaturas de arquivos [Sintaxe: md5_file nome_do_arquivo].\n - Alias: m.\n md5\n - Gerar MD5 assinatura de string [Sintaxe: md5 string].\n hex_encode\n - Converter binária string para hexadecimal [Sintaxe: hex_encode string].\n - Alias: x.\n hex_decode\n - Converter hexadecimal para binária string [Sintaxe: hex_decode string].\n base64_encode\n - Converter binária string para base64 string [Sintaxe: base64_encode string].\n - Alias: b.\n base64_decode\n - Converter base64 string para binária string [Sintaxe: base64_decode string].\n scan\n - Verificação arquivo ou diretório [Sintaxe: scan nome_do_arquivo].\n - Alias: s.\n update\n - Atualizar phpMussel.\n - Alias: u.\n c\n - Imprimir esta lista de comandos.\n";
 	$MusselConfig['lang']['cli_failed_to_complete']='Falha ao completar processo de verificação';
 	$MusselConfig['lang']['cli_is_not_a']=' não é um arquivo ou diretório.';
 	$MusselConfig['lang']['cli_ln2']=" Obrigado por usando phpMussel, um PHP script projetado para detectar trojans,\n vírus, malware e outras ameaças dentro dos arquivos enviados para o seu\n sistema onde quer que o script é enganchado, baseado no assinaturas do\n ClamAV e outros.\n\n PHPMUSSEL COPYRIGHT 2013 e além GNU/GPL V.2 através do Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
@@ -677,8 +677,8 @@ else if($MusselConfig['general']['lang']=='pt')
 	$MusselConfig['lang']['cli_update_restart']=" Reiniciando phpMussel podem ser necessários antes que as atualizações se\n tornam aparentes.";
 	$MusselConfig['lang']['cli_working']='Em processo';
 	$MusselConfig['lang']['corrupted']='corrompido';
-	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード否定されました! 上载否认! 上載否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
-	$MusselConfig['lang']['denied_reason']='Carregamento tentativa foi bloqueado pelos motivos a seguir indicados / Your upload attempt was blocked for the reasons listed below:';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+	$MusselConfig['lang']['denied_reason']='Carregamento tentativa foi bloqueado pelos motivos a seguir indicados / Your upload was blocked for the reasons listed below:';
 	$MusselConfig['lang']['denied']='Carregar Negado!';
 	$MusselConfig['lang']['detected_control_characters']='Detectados Controle Caracteres';
 	$MusselConfig['lang']['detected']='Detectado';
@@ -753,6 +753,180 @@ else if($MusselConfig['general']['lang']=='pt')
 	$MusselConfig['lang']['upload_limit_exceeded']='Carregar limite excedido';
 	$MusselConfig['lang']['wrong_password']='Contrasenha errada; Ação negado.';
 	$MusselConfig['lang']['x_does_not_exist']='não existe';
+	}
+else if($MusselConfig['general']['lang']=='zh')
+	{ // Chinese (Simplified) - 中文（简体）
+	$MusselConfig['lang']['cli_commands']=" q\n - 戒烟CLI模式。\n - 别名：quit，exit。\n md5_file\n - 生成MD5签名从文件[语法：md5_file 文件名]。\n - 别名：m.\n md5\n - 生成MD5签名从数据[语法：md5 数据]。\n hex_encode\n - 兑换从二进制数据至十六进制[语法：hex_encode 数据]。\n - 别名：x.\n hex_decode\n - 兑换从十六进制二进制数据至[语法：hex_decode 数据]。\n base64_encode\n - 兑换从二进制数据至基地64数据[语法：base64_encode 数据]。\n - 别名：b.\n base64_decode\n - 兑换从基地64数据至二进制数据[语法：base64_decode 数据]。\n scan\n - 扫描文件或文件夹[语法：scan 文件名]。\n - 别名：s。\n update\n - 更新phpMussel。\n - 别名：u。\n c\n - 打印此命令列表。\n";
+	$MusselConfig['lang']['cli_failed_to_complete']='完成扫描过程失败';
+	$MusselConfig['lang']['cli_is_not_a']='不是文件或文件夹。';
+	$MusselConfig['lang']['cli_ln2']=" 谢谢对于运用phpMussel，一PHP编程旨在检测木马，病毒，恶意软件，和其他威胁内的文件上传到你的系统随地编程是连接，根据ClamAV的签名和其他签名。\n\n PHPMUSSEL版权2013和此后GNU/GPLv.2通过Caleb M （Maikuolan）。\n\n                                     ~ ~ ~\n\n";
+	$MusselConfig['lang']['cli_ln3']=" 目前经营phpMussel在CLI模式（命令行接口）。\n\n 扫描一个文件或文件夹，键入“scan”，其次是名的文件或文件夹你想phpMussel扫描然后按Enter键；\n 键入“c”然后按Enter键对于CLI模式命令名单；键入“q”然后按Enter键对于戒烟：";
+	$MusselConfig['lang']['cli_update_restart']=' 重新启动phpMussel可能是需要之前的更新变得明显。';
+	$MusselConfig['lang']['cli_working']='正在进行中';
+	$MusselConfig['lang']['corrupted']='损坏';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+	$MusselConfig['lang']['denied_reason']='你的上传被拒绝由于这些原因 / Your upload was blocked for the reasons listed below:';
+	$MusselConfig['lang']['denied']='上载是否认！';
+	$MusselConfig['lang']['detected_control_characters']='检测控制字符';
+	$MusselConfig['lang']['detected']='检测';
+	$MusselConfig['lang']['failed_to_access']='无法访问';
+	$MusselConfig['lang']['file']='文件';
+	$MusselConfig['lang']['filesize_limit_exceeded']='文件大小超过限制';
+	$MusselConfig['lang']['filetype_blacklisted']='文件类型列入黑名单';
+	$MusselConfig['lang']['finished']='完了';
+	$MusselConfig['lang']['generated_by']='所产生的';
+	$MusselConfig['lang']['greylist_cleared']=' 灰名单是清空。';
+	$MusselConfig['lang']['greylist_updated']=' 灰名单是更新。';
+	$MusselConfig['lang']['invalid_file']='无效文件';
+	$MusselConfig['lang']['ok']='好';
+	$MusselConfig['lang']['only_allow_images']='上传文件以外图片不允许';
+	$MusselConfig['lang']['refer_to_scan_kills']=' （参考'.$MusselConfig['general']['scan_kills'].'详细信息）';
+	$MusselConfig['lang']['scan_aborted']='扫描中止';
+	$MusselConfig['lang']['scan_chameleon']='变色龙攻击检测';
+	$MusselConfig['lang']['scan_checking_contents']='成功了！在进行检查的内容。';
+	$MusselConfig['lang']['scan_checking']='检查';
+	$MusselConfig['lang']['scan_command_injection']='命令注入尝试检测';
+	$MusselConfig['lang']['scan_complete']='完成';
+	$MusselConfig['lang']['scan_extensions_missing']='失败（缺少必需的扩展）！';
+	$MusselConfig['lang']['scan_filename_manipulation_detected']='文件名操控检测';
+	$MusselConfig['lang']['scan_map_corrupted']='签名地图是损坏';
+	$MusselConfig['lang']['scan_map_missing']='签名地图是缺少';
+	$MusselConfig['lang']['scan_missing_filename']='文件名是缺少';
+	$MusselConfig['lang']['scan_no_problems_found']='没有问题是发现。';
+	$MusselConfig['lang']['scan_not_archive']='失败（空或不是存档）！';
+	$MusselConfig['lang']['scan_reading']='阅读';
+	$MusselConfig['lang']['scan_signature_file_corrupted']='签名文件是损坏';
+	$MusselConfig['lang']['scan_signature_file_missing']='签名文件是缺少';
+	$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='未经授权的文件上传操控或配置错误是检测！';
+	$MusselConfig['lang']['scan_unauthorised_upload']='未经授权的文件上传操控是检测';
+	$MusselConfig['lang']['recursive']='递归深度超过是限制';
+	$MusselConfig['lang']['started']='开始';
+	$MusselConfig['lang']['update_']='phpMussel现在将尝试进行自我更新。';
+	$MusselConfig['lang']['update_available']='编程更新是可用的。';
+	$MusselConfig['lang']['update_complete']='更新检查完成成功。';
+	$MusselConfig['lang']['update_created']='是创建';
+	$MusselConfig['lang']['update_deleted']='是删除';
+	$MusselConfig['lang']['update_err1']='更新失败：“update.dat”是缺少。重新安装或手动更新。';
+	$MusselConfig['lang']['update_err2']='更新失败：“update.dat”不包含任何有效的更新源。请手动更新。';
+	$MusselConfig['lang']['update_err3']='潜力黑客或伪造品是检测在更新命令提供通过更新来源；源可能是妥协。请通知编程作者。手动更新是推荐。';
+	$MusselConfig['lang']['update_err4']='哈希码是缺少！';
+	$MusselConfig['lang']['update_err5']='数据是缺少！';
+	$MusselConfig['lang']['update_err6']='数据是损坏！';
+	$MusselConfig['lang']['update_err7']='哈希码是损坏！';
+	$MusselConfig['lang']['update_failed']='失败。';
+	$MusselConfig['lang']['update_fetch']='试图获取版本数据从';
+	$MusselConfig['lang']['update_no_source']='phpMussel失败自我更新因为无法连接至有效的更新源。手动更新是推荐。';
+	$MusselConfig['lang']['update_not']='不';
+	$MusselConfig['lang']['update_not_available']='没有编程更新是可用的此时。';
+	$MusselConfig['lang']['update_not_possible']='编程更新是可用的，但它不能完全更新运用此版本的更新编程。请手动更新。';
+	$MusselConfig['lang']['update_patched']='是修补或更新';
+	$MusselConfig['lang']['update_scriptfile_missing']='更新编程文件是缺少！请重新安装phpMussel。';
+	$MusselConfig['lang']['update_seconds_elapsed']='秒过去';
+	$MusselConfig['lang']['update_signatures_available']='签名更新是可用的。';
+	$MusselConfig['lang']['update_signatures_latest']='最新签名';
+	$MusselConfig['lang']['update_signatures_not_available']='没有签名更新是可用的此时。';
+	$MusselConfig['lang']['update_signatures_yours']='您的签名';
+	$MusselConfig['lang']['update_success']='成功了。';
+	$MusselConfig['lang']['update_successfully']='成功了';
+	$MusselConfig['lang']['update_version_latest']='最新编程版本';
+	$MusselConfig['lang']['update_version_yours']='您的编程版本';
+	$MusselConfig['lang']['update_wrd1']='签名';
+	$MusselConfig['lang']['upload_error_1']='文件大小超过MAX_FILE_SIZE指令。';
+	$MusselConfig['lang']['upload_error_2']='文件大小超过文件大小限制指定由文件上传信息。';
+	$MusselConfig['lang']['upload_error_34']='上传失败！请联系网站管理员或网站托管服务！';
+	$MusselConfig['lang']['upload_error_6']='上传文件夹是缺少！请联系网站管理员或网站托管服务！';
+	$MusselConfig['lang']['upload_error_7']='硬盘写入错误！请联系网站管理员或网站托管服务！';
+	$MusselConfig['lang']['upload_error_8']='PHP配置错误是检测！请联系网站管理员或网站托管服务！';
+	$MusselConfig['lang']['upload_limit_exceeded']='超过上传限制';
+	$MusselConfig['lang']['wrong_password']='密码错误；行动拒绝。';
+	$MusselConfig['lang']['x_does_not_exist']='不存在';
+	}
+else if($MusselConfig['general']['lang']=='zh-TW')
+	{ // Chinese (Traditional) - 中文（傳統）
+	$MusselConfig['lang']['cli_commands']=" q\n - 戒菸CLI模式。\n - 別名：quit，exit。\n md5_file\n - 生成MD5簽名從文件[語法：md5_file 文件名]。\n - 別名：m.\n md5\n - 生成MD5簽名從數據[語法：md5 數據]。\n hex_encode\n - 兌換從二進制數據至十六進制[語法：hex_encode 數據]。\n - 別名：x.\n hex_decode\n - 兌換從十六進制二進制數據至[語法：hex_decode 數據]。\n base64_encode\n - 兌換從二進制數據至基地64數據[語法：base64_encode 數據]。\n - 別名：b.\n base64_decode\n - 兌換從基地64數據至二進制數據[語法：base64_decode 數據]。\n scan\n - 掃描文件或文件夾[語法：scan 文件名]。\n - 別名：s。\n update\n - 更新phpMussel。\n - 別名：u。\n c\n - 打印此命令列表。\n";
+	$MusselConfig['lang']['cli_failed_to_complete']='完成掃描過程失敗';
+	$MusselConfig['lang']['cli_is_not_a']='不是文件或文件夾。';
+	$MusselConfig['lang']['cli_ln2']=" 谢谢对于运用phpMussel，一PHP编程旨在检测木马，病毒，恶意软件，和其他威胁内的文件上传到你的系统随地编程是连接，根据ClamAV的签名和其他签名。\n\n PHPMUSSEL版權2013和此後GNU/GPLv.2通過Caleb M （Maikuolan）。\n\n                                     ~ ~ ~\n\n";
+	$MusselConfig['lang']['cli_ln3']=" 目前經營phpMussel在CLI模式（命令行接口）。\n\n 掃描一個文件或文件夾，鍵入“scan”，其次是名的文件或文件夾你想phpMussel掃描然後按Enter鍵；\n 鍵入“c”然後按Enter鍵對於CLI模式命令名單；鍵入“q”然後按Enter鍵對於戒菸：";
+	$MusselConfig['lang']['cli_update_restart']=' 重新啟動phpMussel可能是需要之前的更新變得明顯。';
+	$MusselConfig['lang']['cli_working']='正在進行中';
+	$MusselConfig['lang']['corrupted']='損壞';
+	$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+	$MusselConfig['lang']['denied_reason']='你的上传被拒绝由于这些原因 / Your upload was blocked for the reasons listed below:';
+	$MusselConfig['lang']['denied']='上載是否認！';
+	$MusselConfig['lang']['detected_control_characters']='檢測控製字符';
+	$MusselConfig['lang']['detected']='檢測';
+	$MusselConfig['lang']['failed_to_access']='無法訪問';
+	$MusselConfig['lang']['file']='文件';
+	$MusselConfig['lang']['filesize_limit_exceeded']='文件大小超過限制';
+	$MusselConfig['lang']['filetype_blacklisted']='文件類型列入黑名單';
+	$MusselConfig['lang']['finished']='完了';
+	$MusselConfig['lang']['generated_by']='所產生的';
+	$MusselConfig['lang']['greylist_cleared']=' 灰名單是清空。';
+	$MusselConfig['lang']['greylist_updated']=' 灰名單是更新。';
+	$MusselConfig['lang']['invalid_file']='無效文件';
+	$MusselConfig['lang']['ok']='好';
+	$MusselConfig['lang']['only_allow_images']='上傳文件以外圖片不允許';
+	$MusselConfig['lang']['refer_to_scan_kills']=' （參考'.$MusselConfig['general']['scan_kills'].'詳細信息）';
+	$MusselConfig['lang']['scan_aborted']='掃描中止';
+	$MusselConfig['lang']['scan_chameleon']='变色龙攻击检测';
+	$MusselConfig['lang']['scan_checking_contents']='成功了！在進行檢查的內容。';
+	$MusselConfig['lang']['scan_checking']='檢查';
+	$MusselConfig['lang']['scan_command_injection']='命令注入嘗試檢測';
+	$MusselConfig['lang']['scan_complete']='完成';
+	$MusselConfig['lang']['scan_extensions_missing']='失败（缺少必需的扩展）！';
+	$MusselConfig['lang']['scan_filename_manipulation_detected']='文件名操控檢測';
+	$MusselConfig['lang']['scan_map_corrupted']='簽名地圖是損壞';
+	$MusselConfig['lang']['scan_map_missing']='簽名地圖是缺少';
+	$MusselConfig['lang']['scan_missing_filename']='文件名是缺少';
+	$MusselConfig['lang']['scan_no_problems_found']='沒有問題是發現。';
+	$MusselConfig['lang']['scan_not_archive']='失敗（空或不是存檔）！';
+	$MusselConfig['lang']['scan_reading']='閱讀';
+	$MusselConfig['lang']['scan_signature_file_corrupted']='簽名文件是損壞';
+	$MusselConfig['lang']['scan_signature_file_missing']='簽名文件是缺少';
+	$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='未經授權的文件上傳操控或配置錯誤是檢測！';
+	$MusselConfig['lang']['scan_unauthorised_upload']='未經授權的文件上傳操控是檢測';
+	$MusselConfig['lang']['recursive']='遞歸深度超過是限制';
+	$MusselConfig['lang']['started']='開始';
+	$MusselConfig['lang']['update_']='phpMussel現在將嘗試進行自我更新。';
+	$MusselConfig['lang']['update_available']='編程更新是可用的。';
+	$MusselConfig['lang']['update_complete']='更新檢查完成成功。';
+	$MusselConfig['lang']['update_created']='是創建';
+	$MusselConfig['lang']['update_deleted']='是刪除';
+	$MusselConfig['lang']['update_err1']='更新失敗：“update.dat”是缺少。重新安裝或手動更新。';
+	$MusselConfig['lang']['update_err2']='更新失敗：“update.dat”不包含任何有效的更新源。請手動更新。';
+	$MusselConfig['lang']['update_err3']='潛力黑客或偽造品是檢測在更新命令提供通過更新來源；源可能是妥協。請通知編程作者。手動更新是推薦。';
+	$MusselConfig['lang']['update_err4']='哈希碼是缺少！';
+	$MusselConfig['lang']['update_err5']='數據是缺少！';
+	$MusselConfig['lang']['update_err6']='數據是損壞！';
+	$MusselConfig['lang']['update_err7']='哈希碼是損壞！';
+	$MusselConfig['lang']['update_failed']='失敗。';
+	$MusselConfig['lang']['update_fetch']='試圖獲取版本數據從';
+	$MusselConfig['lang']['update_no_source']='phpMussel失敗自我更新因為無法連接至有效的更新源。手動更新是推薦。';
+	$MusselConfig['lang']['update_not']='不';
+	$MusselConfig['lang']['update_not_available']='沒有編程更新是可用的此時。';
+	$MusselConfig['lang']['update_not_possible']='編程更新是可用的，但它不能完全更新運用此版本的更新編程。請手動更新。';
+	$MusselConfig['lang']['update_patched']='是修補或更新';
+	$MusselConfig['lang']['update_scriptfile_missing']='更新編程文件是缺少！請重新安裝phpMussel。';
+	$MusselConfig['lang']['update_seconds_elapsed']='秒過去';
+	$MusselConfig['lang']['update_signatures_available']='簽名更新是可用的。';
+	$MusselConfig['lang']['update_signatures_latest']='最新簽名';
+	$MusselConfig['lang']['update_signatures_not_available']='沒有簽名更新是可用的此時。';
+	$MusselConfig['lang']['update_signatures_yours']='您的簽名';
+	$MusselConfig['lang']['update_success']='成功了。';
+	$MusselConfig['lang']['update_successfully']='成功了';
+	$MusselConfig['lang']['update_version_latest']='最新編程版本';
+	$MusselConfig['lang']['update_version_yours']='您的編程版本';
+	$MusselConfig['lang']['update_wrd1']='簽名';
+	$MusselConfig['lang']['upload_error_1']='文件大小超過MAX_FILE_SIZE指令。';
+	$MusselConfig['lang']['upload_error_2']='文件大小超过文件大小限制指定由文件上传信息。';
+	$MusselConfig['lang']['upload_error_34']='上傳失敗！請聯繫網站管理員或網站託管服務！';
+	$MusselConfig['lang']['upload_error_6']='上傳文件夾是缺少！請聯繫網站管理員或網站託管服務！';
+	$MusselConfig['lang']['upload_error_7']='硬盤寫入錯誤！請聯繫網站管理員或網站託管服務！';
+	$MusselConfig['lang']['upload_error_8']='PHP配置錯誤是檢測！請聯繫網站管理員或網站託管服務！';
+	$MusselConfig['lang']['upload_limit_exceeded']='超過上傳限制';
+	$MusselConfig['lang']['wrong_password']='密碼錯誤；行動拒絕。';
+	$MusselConfig['lang']['x_does_not_exist']='不存在';
 	}
 else die('[phpMussel] Language undefined or incorrectly defined. Can\'t continue.');
 

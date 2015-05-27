@@ -113,13 +113,19 @@
     CMS, mais le plus simple est à simplement inclure le script au début d'un
     fichier de la base de données de votre système ou CMS (un qui va
     généralement toujours être chargé lorsque quelqu'un accède à n'importe
-    quelle page sur votre website) utilisant un require ou include commande.
-    Généralement, ce sera quelque chose de stocké dans un répertoire comme
-    "/includes", "/assets" ou "/functions", et il sera souvent nommé quelque
-    chose comme "init.php", "common_functions.php", "functions.php" ou
+    quelle page sur votre website) utilisant un require() ou include()
+    commande. Généralement, ce sera quelque chose de stocké dans un répertoire
+    comme "/includes", "/assets" ou "/functions", et il sera souvent nommé
+    quelque chose comme "init.php", "common_functions.php", "functions.php" ou
     similaire. Vous sera besoin à déterminer qui est le fichier c'est pour
-    votre situation. Pour ce faire, insérez la ligne de code suivante au début
-    de ce le noyau fichier et remplacer la string contenue à l'intérieur des
+    votre situation; Si vous rencontrez des difficultés dans déterminer de ce
+    pour vous-même, visiter les phpMussel support forums et laissez-nous
+    savoir; Il est possible que ce soit moi ou un autre utilisateur peuvent
+    avoir de l'expérience avec le CMS que vous utilisez (vous aurez besoin pour
+    nous faire savoir ce qui CMS vous utilisez), et ainsi, peut être en mesure
+    de fournir une assistance pour cette question. Pour ce faire [à utiliser
+    require() ou include()], insérez la ligne de code suivante au début de ce
+    le noyau fichier et remplacer la string contenue à l'intérieur des
     guillemets avec l'exacte adresse le fichier "phpmussel.php" (l'adresse
     locale, pas l'adresse HTTP; il ressemblera l'adresse de "vault" mentionné
     précédemment).
@@ -127,6 +133,14 @@
     <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
 
     Enregistrer le fichier, fermer, rétélécharger.
+
+    -- OU ALTERNATIVEMENT --
+
+    Si vous utilisez un Apache web serveur et si vous avez accès à "php.ini",
+    vous pouvez utiliser la "auto_prepend_file" directive à préfixer phpMussel
+    chaque fois qu'une demande de PHP est faite. Quelque chose comme:
+
+    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) À ce stade, vous avez fini! Cependant, vous devriez probablement tester ce
     pour s'assurer qu'il fonctionne correctement. Pour tester les protections,
@@ -198,7 +212,7 @@
 
  3A. COMMENT UTILISER (POUR WEB SERVEURS)
 
- phpMussel est prévu à être un script qui fonctionnera correctement dès la
+ phpMussel est prévu à être un script que fonctionnera correctement dès la
  boîte avec un minimum niveau des exigences de votre part: Une fois qu'il a été
  installé, au fond, il devrait simplement travailler.
 
@@ -208,9 +222,9 @@
  Cependant, vous êtes également capable de instruire phpMussel à rechercher des
  fichiers, répertoires ou archives que vous spécifiez implicitement. Pour ce
  faire, d'abord, vous devez assurer que la appropriée configuration est réglée
- dans le phpmussel.ini fichier (cleanup doit être désactivé), et lorsque fini,
- dans un php fichier qui est lié à phpMussel, utiliser la fonction suivante
- dans votre code:
+ dans le "phpmussel.ini" fichier (cleanup doit être désactivé), et lorsque
+ fini, dans un php fichier qui est lié à phpMussel, utiliser la fonction
+ suivante dans votre code:
 
  phpMussel($quoi_a_recherche,$sortie_type,$sortie_platitude);
 
@@ -1559,5 +1573,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 25 Mai 2015 (2015.05.25).
+Dernière Réactualisé: 27 Mai 2015 (2015.05.27).
 EOF

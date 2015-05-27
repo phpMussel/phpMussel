@@ -108,19 +108,32 @@
     systeem of CMS, maar het makkelijkste is om gewoon omvatten voor het script
     aan het begin van een kern bestand van uw systeem of CMS (een die het
     algemeen altijd zal worden geladen wanneer iemand heeft toegang tot een
-    pagina in uw website) met behulp van een require of include opdracht.
+    pagina in uw website) met behulp van een require() of include() opdracht.
     Meestal is dit wel iets worden opgeslagen in een bestandsmap zoals
     "/includes", "/assets" of "/functions", en zal vaak zijn vernoemd iets als
     "init.php", "common_functions.php", "functions.php" of soortgelijk. Je
-    nodig hebt om te bepalen welk bestand dit is voor uw situatie. Om dit te
-    doen, plaatst u de volgende regel code aan het begin op die kern bestand,
-    vervangen van de string die binnen de aanhalingstekens met het exacte adres
-    van het "phpmussel.php" bestand (lokaal adres, niet het HTTP-adres; zal
-    vergelijkbaar zijn met de eerder genoemde vault adres).
+    nodig hebt om te bepalen welk bestand dit is voor uw situatie; Als je
+    problemen ondervindt in het werken dit uit voor jezelf, bezoek de phpMussel
+    support forums en laat het ons weten; Het is mogelijk dat ofwel mijzelf of
+    een andere gebruiker kan ervaring met de CMS die u gebruikt hebt (je nodig
+    hebt om ons te laten weten welke CMS u gebruikt), en dus, in staat zijn om
+    wat hulp te bieden in dit gebied. Om dit te doen [te gebruiken require() of
+    include()], plaatst u de volgende regel code aan het begin op die kern
+    bestand, vervangen van de string die binnen de aanhalingstekens met het
+    exacte adres van het "phpmussel.php" bestand (lokaal adres, niet het
+    HTTP-adres; zal vergelijkbaar zijn met de eerder genoemde vault adres).
 
     <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
 
     Opslaan bestand, sluiten, heruploaden.
+
+    -- OF ALTERNATIEF --
+
+    Als u gebruik een Apache webserver en als je toegang hebt "php.ini", u kunt
+    gebruiken de "auto_prepend_file" richtlijn naar prepend phpMussel wanneer
+    een PHP verzoek wordt gemaakt. Zoiets als:
+
+    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) Op dit punt, je bent klaar! Echter, je moet waarschijnlijk test het uit om
     ervoor te zorgen dat het werken correct. Voor het testen van het bestand
@@ -201,9 +214,9 @@
  Echter, je bent ook in staat om te instrueren phpMussel om te scannen naar
  bestanden, bestandsmappen of archieven dat je impliciet aangeven. Om dit te
  doen, ten eerste, moet u ervoor zorgen dat de juiste configuratie is ingesteld
- in het phpmussel.ini configuratiebestand (cleanup moet worden uitgeschakeld),
- en als je klaar bent, in een php-bestand dat wordt gehaakt op phpMussel,
- gebruik de volgende functie in uw code:
+ in het "phpmussel.ini" configuratiebestand (cleanup moet worden
+ uitgeschakeld), en als je klaar bent, in een php-bestand dat wordt gehaakt op
+ phpMussel, gebruik de volgende functie in uw code:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
@@ -1476,5 +1489,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 25 Mei 2015 (2015.05.25).
+Laatste Bijgewerkt: 27 Mei 2015 (2015.05.27).
 EOF

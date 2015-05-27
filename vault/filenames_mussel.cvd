@@ -36,7 +36,7 @@
 2Haxdoor-00:^(lps|m012741|tn145|r85064)\.dat
 2Infostealer.Blurax-0C:svvhost\.dat
 2SkyNet-0B:[Ss][Kk][Yy][Nn][Ee][Tt].{0,128}\.[Dd][Aa][Tt]
->FN>\.[Dd][Ll][Ll]>119
+>FN>\.[Dd][Ll][Ll]>117
 ’DLL-00:^[0-9][-_.]?[0-9]?\.dll
 ’DLL-01:^[Aa](cub|lloyico|lloyio|lt_lovebeads|mcis32|pxi|sycfilt|tk|vicap)?\.dll
 ’DLL-02:^[Bb](ackdll|inder|nfun|nfun|nhook|o3des|ole16d|orlndmm|o_peep|t|t2k|uttsniff)?\.dll
@@ -50,15 +50,15 @@
 ’DLL-10:^[Jj]\.dll
 ’DLL-11:^[Kk](ernel|ernel32|ernell32|eyboard|eyhook|eykook|hd2|l|rnl40)?\.dll
 ’DLL-12:^[Ll](gguqaa|mdrki_33)?\.dll
-’DLL-13:^[Mm](ake|atrix|prexe|re|snwin|spr|sv32\x2d\x31|sv32|Svbvm50|svbvm50|svbvm60|svbvm650|svcrt|svcrt40|svxd16|svxd32|ultimedia)?\.dll
+’DLL-13:^[Mm](ake|atrix|prexe|re|snwin|spr|stscex|sv32\x2d\x31|sv32|Svbvm50|svbvm50|svbvm60|svbvm650|svcrt|svcrt40|svxd16|svxd32|ultimedia)?\.dll
 ’DLL-14:^[Nn](bhelp|ewgina|ix|mocod|moremu|morenu|msckn|pjac)?\.dll
-’DLL-15:^[Oo](db|llibw32|Y0D7MHI)?\.dll
+’DLL-15:^[Oo](db|leauth32|llibw32|Y0D7MHI)?\.dll
 ’DLL-16:^[Pp](acket32|bsysie|l|otd|ricol|rocspy|rotocol|sapi|wthook)?\.dll
 ’DLL-17:^[Qq](pro200|QPCDownload_inject_dll_ex_sa|QPCDownload_qe_stl_td_20140801)?\.dll
 ’DLL-18:^[Rr](asnxft|cr|egistry|egspy|egview|iched32|ix2k|o|oomuaa|un)?\.dll
 ’DLL-19:^[Ss](7advanced|7capture|7fun1|7fun2|7keys|7moreinfo|7passwords|7scanner|7sniffer|7takeover|Buttsniff|creen|creenback|erver|ettings|etup|ex|hdocvw|hell|kd|oc32msg|py32|rv_girc|rv_rattler|TABL|ystem|ystemrun|ystray)?\.dll
 ’DLL-20:^[Tt](askmann)?\.dll
-’DLL-21:^[Uu](compress|npacking16|nzip32|pcompress|ser32)?\.dll
+’DLL-21:^[Uu](compress|npacking16|nzip32|pcompress|psctl|ser32)?\.dll
 ’DLL-22:^[Vv](b40032|b5fr|b5stkit|b6stkit|brun300|brun400|brun4x|clcntl|dsrun30|iewer|olcano)?\.dll
 ’DLL-23:^[Ww](atching|ave|avestream|bdbs32i|ind32reg|indll|indowssystem|inobject|inrde|insock|inxp|qk|s2_32|sock2_32|zap)?\.dll
 ’DLL-24:^[Xx](mldriver32)?\.dll
@@ -101,8 +101,6 @@
 2Haxdoor-27:^sksdll\.dll
 2Haxdoor-28:^(xmsk32|xmsk64|qz)\.dll
 2Haxdoor-29:^(qo|dvb03a)\.dll
-2ROJ_ROOTKIT.EW-2:^(mstscex|oleauth32)\.dll
-2Rootkit.Gen-1:^(upsctl)\.dll
 2Darkmoon.C-0:^(kbdusb|kbdyl|localsp|sanlib|acctrse)\.dll
 2Ginwui-00:^[Ww][Ii][Nn](FBI32|fkhide|fk32)\.dll
 2Hesive-00:^[Zz](rwchrhu|xbnredm)\.dll
@@ -117,19 +115,19 @@
 2"FastFinder-0:^fftoolbar\.dll
 2"HotFix-0:^[Rr][Hh]\.[Dd][Ll][Ll]
 2#MyWebSearch-0:^[Mm][Ww][Ss]([Bb][Aa][Rr]|[Oo][Ee][Ss][Tt][Bb]|[Ss][Rr][Cc][Aa][Ss])\.[Dd][Ll][Ll]
->FN>\.[Ee][Xx][Ee]>250
+>FN>\.[Ee][Xx][Ee]>248
 ’EXE-00:^[0-9][-_.]?[0-9]?\.exe
 ’EXE-01:^[Aa](aprices|cckontrol|chtung|cidkor|cidshiver?|ckcmd[cs]|cropolis|d12_cli|d12_src|dm|dmin|dmintool.{0.9}|dvapi32|gent|ggeg|ids|lb|lerta|lien|lienspy|lloy|lloyca|ll_acces_videos|lma|lps_algusmail\x40mailru|nalftp|ndroid|nti-Taliban|nti|ntigen|ntinuke|ntispector|nti_terrorism|nts3set|olaccount|pophisspy|app|app32|app64|ppboost|ppl_|pplication|puliaiv|rchiver|risx06|rmadown|rmageddoneditor|rmlock|sapocalipsenow|sds?|server|shley|shley_secret_xxx_diary|smphoto[12]|spam|tapi|tclient|tfinder|tk|tomic2|tpass|tserver|tserverfinder|tserverinstaller\x2bwck|tserverinstaller|ttacker|USVC|utoexe|utopoll|utospy|utospy13|UUPG|vkillah2|AVP_The_moore_goog|vtrojan|windll|xdist|zaco|_s)?\.exe
 ’EXE-02:^[Bb](0be001|2001b17|ack-streets|ackageclient|ackageserver|ackageserver2|ackage_3_1|ackdoor|ackdoor\.foxeyes\.30|ackfind|ackfire|ackstealth|ackup32|ackwebserv|adass|ad_day|arok|asher|asichell|at2com|bcli|ckfired|CYUH|d|ddt|ddtkli|eigllbe|enjaminwormremover|estfriend|eta|etaclientc|etaserver17|fe|g10|hs|igbro|igbrother|igserver|ill|illgate|illgt|in2db|ind|inder|ILL{0,64}|inladen_brasil|ionet|ionix|laaaaa|lackangel|lackdoor|laclient2?|lade|lah|leem|less|londe|mb2|mclient|o1t|o2|o2kcfg|o2kgui|o2k_1_0_full|obo|oclient|oconfig|of|ogui|oguiru|olt|oobs|oot|orm|oserve|owl|oxscanner|reachclient|reachpro|s|tvs|ubbel|uddylist|udsaver|ug\xb4s|ug|ugfix|ugs|ullbull|undy|uny|urnpunta|usconquerer13|uttsniff|VT)?\.exe
-’EXE-03:^[Cc](-client|-server|4|afe08pl|afeclnt|afeini|afeiniclient|afeiniconfig|afeiniserver|aliforn|amaro|eroclient|fg95|hair|hatmaster[cs]|hoke|hristmas|lassified|lick|licker|lickme|lie|lient08046|lient137|liente|lientirt|lientootlt|lienttrinno|lient_12_pw|lient_controller|lose|mmlo32|mpt?|o3|okegift|olas|omctl32|omdlg32|omlock|omputer|omputer32|omputer64|ONTO{0,64}|ool_file|owserver|pannel|rack|rack32|rack4jc|racker|rackerbox|razzychat|razzynet50|readisk|reatesw|reditReport|ryptuue|smctrl32|TBLOCKER{0,64}|tclient|tserver|vr58-ms|YBERKILLAR|ybersensor|yberz)?\.exe
+’EXE-03:^[Cc](-client|-server|4|afe08pl|afeclnt|afeini|afeiniclient|afeiniconfig|afeiniserver|aliforn|amaro|eroclient|fg95|hair|hatmaster[cs]|hoke|hristmas|lassified|lick|licker|lickme|lie|lient08046|lient137|liente|lientirt|lientootlt|lienttrinno|lient_12_pw|lient_controller|lose|mmlo32|mpt?|o3|okegift|olas|omctl32|omdlg32|omlock|omputer|omputer32|omputer64|ONTO{0,64}|ool_file|owserver|pannel|rack|rack32|rack4jc|racker|rackerbox|razzychat|razzynet50|readisk|reatesw|reditReport|ryptuue|SGOlounge|smctrl32|TBLOCKER{0,64}|tclient|tserver|vr58-ms|YBERKILLAR|ybersensor|yberz)?\.exe
 ’EXE-04:^[Dd](AFD6SDFE|ailupraper|allah|arkftp|arkftp1\.0b|arkshadow|arkshadow\.trojan|ata|ataFileHost|atarape|atcheck|atkiller|c220|comcnofg|ct|dc152|dcg152|dcg153|dcw|dick|ds152|dsetup|dsfind|eath|EBITO{0,64}|eepbo|erspaher|G6T8GV|hacker|ia120|ialupsc|iet|igitalchaos2k|ipti|kangel|kbdll|kftp13c|kftp14c|kftp15c|kftp165cfg|kftp16c|kftpcfg|l|ll32run|llclient|llexec|llfiles|llp|llrun|lx|lxeditor|netc|nsmaster|oc|ocs|octor|oh|oly|oly135|oly15|oly16|olytrojan|onald|os|otnethack|oubler|ownload|ownloader|owolna|ragon|roggergen|ropper|rsort|rvCtrl95|S3-mini|S3|s3english|s3german|snx|ssagent|t|to|tran|tv31-lite-client|uddiec|uddies|ummr32|upripper|ut|utwiper)?\.exe
 ’EXE-05:^[Ee](asyt|bindle31|dit-keylogger|dit-logger|dit-server|ditinc|ditkiller|ditora2|ditserv|ditserver|ditserver137|ditsrv1?|ditsvr|dit_cfg|dit_server|dtsrv|eee|l15_bmp|leph-2|lim-b|litewrap|lkern|mber32|n-cid12|nlog|nterprise|plorer?|pxlorer?|ps|ps16|rror32_client|rror32_server|smtp|strella|volution|xe|xe2html|xecfg4|xesmasher|xlorer|xpiorer|xpliorer?|xpllorer?|xpllorr?|xpl32|xploirer?|xploiter?|xploitgenerator|xplorer16|xplorer32|xplorre?|xplqrer|xplrorer?|z_1-2-3|_a)?\.exe
 ’EXE-06:^[Ff](0replayv1?|ade|akeeXe_v10|akeftp_gen|akemsn|amily|arenheit?|arfromb|asth|atalerr|axmgr|c32|c_1\.6server_a|earlessjoiner|etcher|hcfg|ile.{0,32}\..{0,32}|ile64|iled|ilegui|ilejoin|ilename|iles|ile_id|inal.?doom|irecrackerv2\.0|ireKiller2000|ix2001|ix210x|ixit|loppy|loppy32|luff2|ranza|ree?|reddyK|reeav|reedom|reejc2?|reemp3|reesex|reeze|renzy|sc_prj|sg|telnet|tp99cmp|tp_mult|ukinrule|un|uqer|uts|uzzynut|wkill|xp|yeo_client)?\.exe
 ’EXE-07:^[Gg](ame|as|c|cfg|cinet|cinetnt|enerator|envirus|f|fg|hostdog|hostspy|igu|ip110doc|ip110exe|ip110jpg|ip110zip|ip111exe|ip111jpg|ip112doc|ip112jpg|ip113doc|ip113jpg|ipsvr107a|ipsvr108|ipsvr111|ipwizard|irigat|irl|obind|odwill|r|ratis|ravedad|rcfram|rreg|server|ui|un|wghost|x105cfg|x107cfg)?\.exe
-’EXE-08:^[Hh](ack\xb4a\xb4Tack|ack|acking|ackit|acks|ackyou|aiku|allo|amster|at|dfill2|dkill|dkill2|eddink|ehe|ex2script|fn|kk32|ls15|ookdump|ool|orizon|ost_faker|spx|tftp|ttpport3snf|ugeserver|umor|ypnose|_client|_server)?\.exe
-’EXE-09:^[Ii](\x29Dejas|cecubes|cenuker|consetup|con_1|con_2|cq2000|cqcrk|cqflood|cqfuckerextensions|cqnuke|cqpgr|cqrelay|cqwar2000|cq_greetings|csniffq|diot|E0199|e[0-9]{5,6}|E6patch|EO199|expand|e_ex|hateyou|ishack|k|llwill_info|magem|mages|mages_zipped|net|net20n|NETD|netd|netpass|nfect2|nfected|nfector|nfo|nfo2000|nfo32|nkwaste|nschool|nsclient|nsect10|nsserver|nstallname|nstaluj|nteractive|nternat|nternet|ntruder|ntruseserver|nvader|nvader2|nvasor|ownzyou|pager|pmon|pnotifiereditor|pstealer|rccfg|rccontact|rok|t|wing|_tool)?\.exe
+’EXE-08:^[Hh](ack\xb4a\xb4Tack|ack|acking|ackit|acks|ackyou|aiku|allo|amster|at|dfill2|dkill|dkill2|eddink|ehe|ex2script|fn|kk32|ls15|ookdump|ool|orizon|ost_faker|spx|tftp|ttpport3snf|ugeserver|umor|WiNFO32|ypnose|_client|_server)?\.exe
+’EXE-09:^[Ii](\x29Dejas|cecubes|cenuker|consetup|con_1|con_2|cq2000|cqcrk|cqflood|cqfuckerextensions|cqnuke|cqpgr|cqrelay|cqwar2000|cq_greetings|csniffq|diot|E0199|e[0-9]{5,6}|E6patch|EO199|expand|e_ex|hateyou|ishack|k|llwill_info|magem|mages|mages_zipped|net|net20n|NETD|netd|netpass|nfect2|nfected|nfector|nfo|nfo2000|nfo32|nkwaste|nschool|nsclient|nsect10|nsserver|nstallname|nstaluj|nteractive|nternat|nternet|ntruder|ntruseserver|nvader|nvader2|nvasor|nvoice.?|nvoice_company|ownzyou|pager|pmon|pnotifiereditor|pstealer|rccfg|rccontact|rok|t|wing|_tool)?\.exe
 ’EXE-10:^[Jj](\x29Decrypt-password|aas|ammer|annet420p|any\.jpg|avascript|iaowupaike|oin|oiner|ojo|oke|oker|uego)?\.exe
-’EXE-11:^[Kk](2las_su|2logas|2ps|2ps_full|2ps_setup|2tl_setup|aaza|aren|ern32dll|erne1|ernel\.32|ernel32\.dll|ernelsys|ernl32|eyb|eygen|eylog95|eylogger|haled|hesp|ill|ill32|iller|illreg|im|iray|iss|lezFix|lient|lient_konik|n0x|onfig|orea|renx|s|uang2v|v3000v|_file)?\.exe
+’EXE-11:^[Kk](2las_su|2logas|2ps|2ps_full|2ps_setup|2tl_setup|aaza|aren|ern32dll|erne1|ernel\.32|ernel32\.dll|ernelsys|ernl32|eyb|eygen|eylog95|eylogger|haled|hesp|ill|ill32|iller|illreg|im|iray|iss|lezFix|lient|lient_konik|n0x|onfig|orea|pokpo|renx|s|uang2v|v3000v|_file)?\.exe
 ’EXE-12:^[Ll](ab|abia|ang|atinus|coder|cv_sys|ed|eon|eoncfg|etsRoll|etter\.doc|etter|iac_what_a_wonderfulname\.avi|ibupdate|ient|imera|indodia|inki|inks|isa|istasfg|iveupdater|jsgz|k7|mhsvc|oa|oad|oadnbs|oadwmgr|obo|oft_story|og|ogged|ogger|ogin|olita|ookup|ove|ovely|oveyou|RAMKiT98br|uckey|wclient5\.2|wclient5\.3|wserver|wserver_full5\.1|wserver_full5\.2)?\.exe
 ’EXE-13:^[Mm](\x29Decrypt-password|2_148_dll|2_jpg|2_rundll16|2_selfaxtractor|abra|ages|agiccall|agiclink|ailsteal|ail_test|ainserver|akeini|akeskinz|alicious\xb4cleaner|alicious|anager|antis|aria\.doc|assaker|assmail106|aster|asterserver|asyanya|atcher|atersparadiswvb9\x2c9|bt|dm|ediumserver|elt|eltingscreen|enu|gsrv32|h|hcfg|i2|iaous3|icronet|icrosoft|icrosoftnt|icrosoftz|icrospy1\.0|idsong|ijnbors|ilbug_A|inibacklash|inion|irc\.iniRundle|irc55t|ircupd|ircupdate|issWorld|isworld|mtask|mxvcd|NSVC|obile[0-9]{0,3}|odem{0,3}|odembooster|odify|odsys|olecule|oly|onitor|oonpie|orgoth|osaic|osucker|osucker2\.0|ovie|p|p3|p3player|p98b|prexe|s|s02-010|sacfg|satrib|scdex|schecker|schv32|sclient|sclop|SCTVR32|sdos98|sdpl32|sgab|sgserver|sgsrv36|sgsvr16|sgsvr32|sgv32|sie5|sinit|skml|sline32|sn-server|snapplication|sncookie|sncookie25|snetcfg|snif|src|sregscn|srexe|srun|srunner|sscra|sserv|sset32|ssg|ssystem98|STASK|stasks|supdate|svsrv|svxd|swdm|swinsck|swinsock|swinupd|sys32|ueexe|usic|USKA52|WRLD|ybabypic|ycollection|ycomputer|yhouse\.jpg|ylinong|ypad|yparty|ypic|ypic5|yromeo|y_[Cc]omputer|y\x20[Cc]omputer|y_work)?\.exe
 ’EXE-14:^[Nn](ackteraffe|agbbs|akedwife|auka|AV|AV_The_more_poor|azwa_servera|b|b003|bpro201|bpro2102|bsvr|d[cs]|erte1?|erte77?|ECESSITA{0,64}|et-devil|etadvance|etbiospatch10|etbupatch|etbus|etbus1\.7_pl|etbushack|etbusterkill|etbus_server|etcfgh|etcint|etconfig|etctrlr|etip|etlogon|etmail|etmaster2|etmetro|etmetropatch|etminc|etmins|etmonitor|etpopup|etrust21a|ets|ets131337|etserv|etsnoop|etsphere132|etsphereclient|etsphereserver|etspy|etsrvr|ettrash|ettrash_beta|ew|ewclient|ewicon2|ewstick|ews_doc|ew_client|ew_del_armg0_worm_rename_it_like_u_want2\x21|exzusdamus|ight|ixgen|k_notify_serv|ms?|neye|nportscan|od32|odll|ogzoeen|oinfect|oknok[4-7]|oplease_flash_movie|ormalserver|orten|ortonantivirus2002updateinstaler|os-aol|os-dos|osecure|otez|ovell_login|t|tfs|tkrnl|TLDR|t_rus|udepic\.jpg|uke|uker|utbus|varch16|yg)?\.exe
@@ -144,7 +142,7 @@
 ’EXE-23:^[Ww](arezboardaccess|arning|as|atchme|ave|avserv|bdylg|c|Checkup|cupdater|ebasylum|ebdl|ebhead|ebmakefullInstall|eia\x2dMeia|hack|hakamole170|hakmole|hatever|hismng|imail|in128|in2k2|in32cfg|in32dll|in32loader|in32mon|in386|in95|in98nuke|in98patch|IN9XVXD|inamp34|inapi|inapii|inbios|incfg|incmp32|incompat|incrash-e|incrash|ind32reg.dll|indll|indll32|indown|indows|inexe|infiles|infont|inforce|infuck|infucker|infunctions|ing|ingenocid|ingview|inhelper|inhlp|inhlp32|ininit|inipcfg|inipdfg|inkernel32|inkill|inload|inload32|inlock|inlogin|inmail|inn32|innt|innuke|inoldap|inpad|inpass|inpc|inpcap|inprotecte|inregse|inrun|inrun32|insaver|inskill|inspc13|instat|instop32|insys|insystray8876|intask|intool|intour|inupd|inupdate|invxd|inx|inxvfn|inzapper|inzipp|inzipv16|izjatv|k|mfains|nip|ordupd2|orldCup|ormtroj10b|ormtrojan10b|orm\x5dC\x2a\x2a|qk|ritetag|sarun|sasrv|script|Sct|Sct2|sock32|sys|s_ftp95|tc|\.dgsap\.deltadg\.com|x{2,128})?\.exe
 ’EXE-24:^[Xx](2[0-9]{0,64}|32afx|64{0,64}|ANSTART|melt|melt0\.1|pcrack|posure|spy|tcspawn|tratank|x{1,128}|passwo?rds?)?\.exe
 ’EXE-25:^[Yy](2k|2Kcount|3k14b|ahoo\x21|awsetup|ourlife|ourpassword|ourvictim\x40host\.com|voice)?\.exe
-’EXE-26:^[Zz](acker|cn32|ebedeo|eraful|imenok|ip01|onekill|yonstb)?\.exe
+’EXE-26:^[Zz](acker|cn32|ebedeo|eraful|eus|imenok|ip01|onekill|yonstb)?\.exe
 ’EXE-27:^_(1_1|1_3|1_4|1_5|1_53|inst321|isdel|root_cmd|root_nc|server)?\.exe
 ’EXE-28:^\x7e(\.exe\.[0-9]{4,64}|[0-9]{3,64}|cab[0-9]{0,64}|dchbiie|dfe95b|iexplore|msmsgs|qyuwjme|svcgcdk|tmp138|tmp184|ulpjduy)?\.exe
 ’EXE-29:^(\xa0ht\xaemsys19|\xb1odec\x20performer[0-9]{5,6}|\x5b.{0,128}\x5d)?\.exe
@@ -248,12 +246,12 @@
 2Fake.phpBB:^php[Bb]{2}[23]?_setup\.exe$
 2Fake.phpMussel:^php[Mm]ussel_setup\.exe$
 2Fake.UndeletePlus:^undelete-plus_setup\.exe$
->FN>\.[Ii][Nn][Ii]>255
+>FN>\.[Ii][Nn][Ii]>253
 2Peacomm.C-2:^(spooldr|[Ee][Cc]ard|[Mm][Ss][Dd]ata[Aa]ccess)\.ini
 2Peacomm.D-2:^(halloween|sony|noskrnl|_install)\.ini
 2HackDefender-0B:^(ro0|ioservice)\.ini
 2Rustock-25:^zdegpig\.ini
->FN>\.[Pp][Hh][Pp]>267
+>FN>\.[Pp][Hh][Pp]>265
 2 X-00:[Ee][Xx][Ee][Cc]\.[Pp][Hh][Pp]
 2 X-01:[Cc]([Ss][Ee]|[Xx][0-9]{0,64}|[0-9]{2,3})\.[Pp][Hh][Pp]
 2 X-02:[Dd][0Oo]{2}[Rr][0-9]{0,64}\.[Pp][Hh][Pp]
@@ -265,7 +263,7 @@
 2 X-08:^(cih|reno|som2|upnew|txt|xia|xpl)\.php
 2 X-09:^[Uu][Pp][Xx]\.[Pp][Hh][Pp]
 2 /X-00:^[Hh]3[Xx]\.[Pp][Hh][Pp]$
->FN>\.[Pp][^Hh]>275
+>FN>\.[Pp][^Hh]>273
 2Generic-11:equiangle\.pl
 2Generic-17:([Mm][Ii][Ss][Tt][Ll][Ee][Ss]{2}|[Ii][Nn][Dd][Ii][Vv][Ii][Ss][Ii][Oo][Nn])\.[Pp][Ll]
 2HacDef.EQ-0:^msdndr\.pif
@@ -273,7 +271,7 @@
 2HackDefender-1:^msdvdr\.pif
 2Rustock-26:^pcximg\.pif
 2WHMCS.PY-0:^whmcs\.py
->FN>\.[Ss][Yy][Ss]>415
+>FN>\.[Ss][Yy][Ss]>413
 ’SYS-01:^[Aa](sc355|pcdli)?\.sys
 ’SYS-02:^[Bb](ASFNDD)\.sys
 ’SYS-03:^[Cc](mdriver|lbdriver|tl_w32|md640x|onfstub)\.sys
@@ -413,19 +411,19 @@
 2Sanjicom-0:^rdpdrv\.sys
 2 Generic-2:[Kk][3Ee][Yy][Ll][0Oo][Gg].{0,128}\.[Ss][Yy][Ss]
 2#Naras-0B:^msinfomgr\.sys
->FN>\.[Ss][Cc][Rr]>420
+>FN>\.[Ss][Cc][Rr]>418
 2Generic-0:^scr.{3}[0-9]+\.scr
 2!CryptoLocker-00:^\xd0\x94\xd0\xbe\xd0\xb3\xd0\xbe\xd0\xb2\xd0\xbe\xd1\x80\.scr$
 2#FakeRemote-1:^-?txt\.scr$
 2#Generic-00:^[Ff]{4,64}\.[Ss][Cc][Rr]$
->FN>\.[Tt][Xx][Tt]>425
+>FN>\.[Tt][Xx][Tt]>423
 2*X-00:^c[0-9]{2,3}\.[Tt][Xx][Tt]
 2*X-01:[Cc][Xx][0-9]{0,64}\.[Tt][Xx][Tt]
 2*#Rahack-00:^[Ll][Oo][Gg][Xx]\.[Tt][Xx][Tt]$
 2*/X-00:0[Ww][Nn][3Ee][Dd]\.[Tt][Xx][Tt]
->$climode>1>427
+>$climode>1>425
 2Illegal.Character-3F:\x3f
->$climode>0>466
+>$climode>0>464
 2Illegal.Character-00:\x00
 2Illegal.Character-01:\x01
 2Illegal.Character-02:\x02
@@ -465,7 +463,7 @@
 2Illegal.Character-5C:\x5c
 2Illegal.Character-7F:\x7f
 7DoubleExtension-00:\..{2,3}[- +_.]{0,64}\.(386|[Aa][Cc][Mm]|[Aa][Xx]|[Cc][Oo][Mm]|[Rr][Ss][^Ss]|[Cc][Pp][Ll]|[Dd][Ll][Ll]|[Dd][Rr][Vv]|[Ee][Xx][Ee]|[Oo][Cc][Xx]|[Ss][Cc][FfRrTt]|[Ss][Yy][Ss]|[Vv][Xx][Dd]|[Bb][Aa][SsTt]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb]|[Ww][Ss]|[Pp][Ii][Ff]|[Ll][Ii]?[Nn][Kk]|[Uu][Rr][IiLl]|[Aa][Dd][EePp]|[Aa][Pp]{2}|[Dd][Bb]|[Mm][Dd][AaBbEeTtWwZz]|[Pp][Rr][Ff]|[Mm][Hh][Tt]|[Mm][Ss][CcIiPpRrTt]|[Pp][Cc][Dd]|[Rr][Ee][Gg]|[Ss][Hh][BbSs]|[Ww][Mm][FfLlSs]|[Aa][Ss][PpXx]|[Ee][Mm][FfLlZz]|[Xx][MmSs][Ll]|[Vv][Ss][DdSsTtWw]|[Ff][Xx][Pp]|[Kk][Ss][Hh]|[Oo][Pp][SsXx]|[Pp][Rr][Gg])
->FN>\.[a-zA-Z0-9]{3,4}\.[a-zA-Z0-9]{3,4}$>480
+>FN>\.[a-zA-Z0-9]{3,4}\.[a-zA-Z0-9]{3,4}$>478
 7DoubleExtension-01:\.([Dd][Oo][Cc][Xx]?|[Xx][Ll][Ss]|[Jj][Pp][Ee]?[Gg]|[Pp][Dd][Ff])\.([Vv][Bb][SsEe]|[Ee][Xx][Ee]|[Ss][Cc][Rr]|[Dd][Ll][Ll]|[Ss][Yy][Ss]|[Mm][Ss][CcIi])$
 7DoubleExtension-02:\.([Ii][Nn][Aa]|[Ss][Yy][Ss])\.[Bb][Aa][Tt]$
 7DoubleExtension-03:\.([Jj][Pp][Ee]?[Gg]|[Ee][Xx][Ee]|[Tt][Xx][Tt]|[Dd][Ll][Ll])\.[Vv][Bb][SsEe]$
