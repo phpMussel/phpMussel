@@ -109,12 +109,17 @@
     como phpMussel ao seu sistema ou CMS, mas o mais fácil é simplesmente
     incluir o script no início de um núcleo arquivo de seu sistema ou CMS (uma
     que vai geralmente sempre ser carregado quando alguém acessa qualquer
-    página através de seu site) utilizando um require ou include comando.
+    página através de seu site) utilizando um require() ou include() comando.
     Normalmente, isso vai ser algo armazenado em um diretório como "/includes",
     "/assets" ou "/functions", e muitas vezes, ser nomeado algo como
     "init.php", "common_functions.php", "functions.php" ou semelhante. Você
-    precisará determinar qual arquivo isso é para a sua situação. Para fazer
-    isso, insira a seguinte linha de código para o início desse núcleo arquivo,
+    precisará determinar qual arquivo isso é para a sua situação; Se você
+    encontrar dificuldades em determinar isso por si mesmo, visite os phpMussel
+    suporte fóruns e deixe-nos saber; É possível que eu ou outro usuário podem
+    ter experiência com o CMS que você está usando (você precisa deixar-nos
+    saber qual CMS você está usando), e assim, pode ser capaz de prestar alguma
+    assistência neste domínio. Para fazer isso [usar require() ou include()],
+    insira a seguinte linha de código para o início desse núcleo arquivo,
     substituindo a string contida dentro das aspas com o exato endereço do
     "phpmussel.php" arquivo (endereço local, não o endereço HTTP; será
     semelhante ao vault endereço mencionado anteriormente).
@@ -122,6 +127,14 @@
     <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
 
     Salve o arquivo, fechar, recarregar-lo.
+
+    -- OU ALTERNATIVAMENTE --
+
+    Se você é usando um Apache web servidor e se você tem acesso a "php.ini",
+    você pode usar o "auto_prepend_file" directiva para pré-carga phpMussel
+    sempre que qualquer pedido de PHP é feito. Algo como:
+
+    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) Neste ponto, você está feito! Porém, você provavelmente deve testá-lo para
     garantir que ele está funcionando corretamente. Para testar as arquivo
@@ -201,8 +214,8 @@
  Porém, você também é capaz de instruir phpMussel para analisar arquivos ou
  diretórios que você especificar implicitamente. Para fazer isso, em primeiro
  lugar, você vai precisar para assegurar que apropriada configuração é definida
- no phpmussel.ini arquivo (cleanup deve ser desativado), e quando feito, em um
- php arquivo que está enganchado ao phpMussel, usar a seguinte função no seu
+ no "phpmussel.ini" arquivo (cleanup deve ser desativado), e quando feito, em
+ um php arquivo que está enganchado ao phpMussel, usar a seguinte função no seu
  código:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
@@ -1529,5 +1542,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 25 Maio 2015 (2015.05.25).
+Última Atualização: 27 Maio 2015 (2015.05.27).
 EOF

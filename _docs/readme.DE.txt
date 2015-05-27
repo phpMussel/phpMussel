@@ -62,7 +62,7 @@
                                      ~ ~ ~
 
 
- 2A.INSTALLATION (SERVER)
+ 2A. INSTALLATION (SERVER)
 
  Zufünftig wird dieser Prozess mit einem Installationsmanager vereinfacht, bis
  dahin folgen Sie den Anweisungen, um phpMussel auf den *meisten Systemen und
@@ -111,8 +111,13 @@
     Üblicherweise wird eine solche Datei in Verzeichnissen wie "/includes",
     "/assets" or "/functions" gespeichert und wird häufig "init.php",
     "common_functions.php", "functions.php" o.ä. genannt. Sie müssen
-    herausfinden, welche Datei dies für Ihre Bedürfnisse ist. Fügen Sie in
-    dieser Datei folgenden Code diret am Anfang ein:
+    herausfinden, welche Datei dies für Ihre Bedürfnisse ist; Wenn Sie
+    Schwierigkeiten Bestimmung diese für sich selbst treffen, besuchen Sie die
+    phpMussel Support-Foren und lassen Sie uns wissen; Es ist möglich, dass
+    entweder ich oder ein anderer Benutzer kann habt Erfahrung mit dem CMS, die
+    Sie verwenden müssen (müssen Sie uns mitteilen, welche CMS Sie verwenden),
+    und somit, möglicherweise in der Lage, etwas Unterstützung bieten. Fügen
+    Sie in dieser Datei folgenden Code diret am Anfang ein:
 
     <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
 
@@ -120,6 +125,14 @@
     der Datei "phpmussel.php", nicht mit der HTTP-Adresse (ähnlich dem Pfad für
     das "vault"-Verzeichnis). Speichern und schließen Sie die Datei, laden Sie
     Sie ggf. erneut hoch.
+
+    -- ODER ALTERNATIV --
+
+    Wenn Sie einen Apache-Webserver sind und wenn Sie Zugriff haben "php.ini",
+    Sie können die "auto_prepend_file" Direktive verwenden um phpMussel
+    voranstellen wenn einer PHP Antrag gestellt wird. So etwas wie:
+
+    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) Der Installationsvorgang wurde nun fertiggestellt. Sie sollten nun das
     Programm auf ordnungsgemäße Funktion testen. Sie sollten nun die im Paket
@@ -196,9 +209,9 @@
 
  Sie sind jedoch auch in der Lage, phpMussel anzuweisen, nach Dateien,
  Ordnern oder Archiven zu scannen, die Sie implizit angeben. Um dies
- auszuführen, stellen Sie sicher, dass diese Konfiguration in der phpmussel.ini
- festgelegt ist (Cleanup muß deaktiviert sein). Erstellen Sie eine mit
- phpMussel eingebundene PHP-Datei mit folgender Funktion:
+ auszuführen, stellen Sie sicher, dass diese Konfiguration in der
+ "phpmussel.ini" festgelegt ist (Cleanup muß deaktiviert sein). Erstellen Sie
+ eine mit phpMussel eingebundene PHP-Datei mit folgender Funktion:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
@@ -1497,5 +1510,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 2015.05.25
+Zuletzt aktualisiert: 2015.05.27
 EOF

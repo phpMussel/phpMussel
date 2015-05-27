@@ -106,19 +106,32 @@
     CMS, pero lo más fácil es simplemente incluir el script al principio de un
     núcleo archivo de su sistema o CMS (uno que va por lo general siempre se va
     cargado cuando alguien accede cualquier página a través de su website)
-    utilizando un require o include comando. Por lo general, esto va ser algo
-    almacenado en un directorio como "/includes", "/assets" o "/functions", y
-    será menudo llamado algo así como "init.php", "common_functions.php",
-    "functions.php" o similar. Vas a tener que averiguar qué archivo se por su
-    situación. Para ello, inserte la siguiente línea de código al principio de
-    ese núcleo archivo, con sustitución de la string contenida dentro las
-    comillas con la exacta dirección del "phpmussel.php" archivo (local
-    dirección, no la HTTP dirección; que será similar a la "vault" dirección
-    mencionó anteriormente).
+    utilizando un require() o include() comando. Por lo general, esto va ser
+    algo almacenado en un directorio como "/includes", "/assets" o
+    "/functions", y será menudo llamado algo así como "init.php",
+    "common_functions.php", "functions.php" o similar. Vas a tener que
+    averiguar qué archivo se por su situación; Si se encuentra con dificultades
+    en la determinación de esto por ti mismo, visite los phpMussel foros de
+    soporte y háganos saber; Es posible que sea yo u otro usuario puede tener
+    experiencia con el CMS que está utilizando (que necesita para hacernos
+    saber que CMS está utilizando), y por lo tanto, puede ser capaz de
+    proporcionar alguna ayuda en esta área. Para ello [utilizar require() o
+    include()], inserte la siguiente línea de código al principio de ese núcleo
+    archivo, con sustitución de la string contenida dentro las comillas con la
+    exacta dirección del "phpmussel.php" archivo (local dirección, no la HTTP
+    dirección; que será similar a la "vault" dirección mencionó anteriormente).
 
     <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
 
     Guardar archivo, cerrarla, recargar.
+
+    -- O ALTERNATIVAMENTE --
+
+    Si está utilizando un Apache web servidor y si usted tiene acceso a
+    "php.ini", puede utilizar la "auto_prepend_file" directiva para anteponer
+    phpMussel cuando cualquier PHP solicitud se recibe. Algo como:
+
+    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) Con eso, ya está! Pero, probablemente deberías preubalo para asegurarse de
     que está funcionando correctamente. Para probar archivos carga
@@ -190,7 +203,7 @@
 
  phpMussel es un script diseñado para funcionar adecuadamente, inmediatamente,
  con mínimo nivel de requisitos en su nombre: Cuando se ha instalado,
- básicamente, que simplemente debería funcionar.
+ básicamente, lo simplemente debería funcionar.
 
  Escaneo de archivos cargas es automatizado y activado como estándar, así, nada
  se requerida en su nombre por esta particular función.
@@ -198,7 +211,7 @@
  Pero, también es capaz instruirá phpMussel para escanear archivos, directorios
  o compactados archivos usted especifique implícitamente. Para ello,
  primeramente, usted tendrá asegurarse de que la adecuada configuración se
- establece el la phpmussel.ini archivo (cleanup debe estar desactivado), y
+ establece el la "phpmussel.ini" archivo (cleanup debe estar desactivado), y
  cuando hecho, en un PHP archivo conectado a phpMussel, utilice la siguiente
  función en su código:
 
@@ -1548,5 +1561,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 25 Mayo 2015 (2015.05.25).
+Última Actualización: 27 Mayo 2015 (2015.05.27).
 EOF
