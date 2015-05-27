@@ -128,6 +128,10 @@
     any PHP request is made. Something like:
 
     auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+    
+    Or this in the .htaccess file:
+    
+    php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) At this point, you're done! However, you should probably test it out to
     make sure it's working properly. To test out file upload protections,
