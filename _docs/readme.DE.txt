@@ -133,10 +133,10 @@
     voranstellen wenn einer PHP Antrag gestellt wird. So etwas wie:
 
     auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
-    
-    Oder das in der .htaccess Datei:
-    
-    php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
+
+    Oder das in der ".htaccess" Datei:
+
+    auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) Der Installationsvorgang wurde nun fertiggestellt. Sie sollten nun das
     Programm auf ordnungsgemäße Funktion testen. Sie sollten nun die im Paket
@@ -1455,9 +1455,9 @@
  vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen
  überlegen.
 
- Diese Informationen wurden zuletzt am 2015.05.01 aktualisiert und gelten für
+ Diese Informationen wurden zuletzt am 2015.05.28 aktualisiert und gelten für
  alle phpMussel Veröffentlichungen von der beiden letzten Nebenversionen
- (v0.5-v0.6) zu diesem Zeitpunkt.
+ (v0.5-v0.6i) zu diesem Zeitpunkt.
 
  Ad-Aware                Keine bekannten Probleme
  Agnitum                 Keine bekannten Probleme
@@ -1468,7 +1468,7 @@
  AVG                     Keine bekannten Probleme
  Baidu-International     Keine bekannten Probleme
  BitDefender             Keine bekannten Probleme
- Bkav                    Keine bekannten Probleme
+ Bkav                 !  Meldet "VEXDAD2.Webshell"
  ByteHero                Keine bekannten Probleme
  CAT-QuickHeal           Keine bekannten Probleme
  ClamAV                  Keine bekannten Probleme
@@ -1494,7 +1494,7 @@
  Microsoft               Keine bekannten Probleme
  MicroWorld-eScan        Keine bekannten Probleme
  NANO-Antivirus          Keine bekannten Probleme
- Norman               !  Meldet "Kryptik.BQS"
+ Norman                  Keine bekannten Probleme
  nProtect                Keine bekannten Probleme
  Panda                   Keine bekannten Probleme
  Qihoo-360               Keine bekannten Probleme
@@ -1514,5 +1514,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 2015.05.27
+Zuletzt aktualisiert: 2015.05.28
 EOF

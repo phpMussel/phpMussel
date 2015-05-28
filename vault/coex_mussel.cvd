@@ -77,6 +77,8 @@ $md5:71c07c7004138d82f4007f9b4c222c0a;$sha:bc592128514d903d88272f54cdea3b6aa6d9c
 $md5:97be46873ea2e01a581857e4eb1b7100;$sha:fa9bd026da81700f082f5d64deaeaa49a6f797dc;$str_len:552496;0"Kasandra-00
 $md5:8c639c95c3aab18576db12f99e1b4043;$sha:cde3b2aae9c5e7c46c4482d1e568faa6c10f64f7;$str_len:286686;0Zitmo-00
 $md5:4acf6dd46dcd22918e18b31df30c3048;$sha:bdee0a42e3005915b4058477010993a625c3db93;$str_len:2953122;3Dowgin-00
+$md5:6fbb6e84a268eab54796434734446fe9;$sha:12dec0651661de4b43bffee48ec9016e32d7860c;$str_len:129873;0!SLocker-00
+$md5:6f22666bdc9d2016f6b18ae82c33e575;$sha:ae72a2f51106bd5be46c1a2db207aa8413ce83a8;$str_len:36642;0!AdLocker-00
 === Infected PE files that aren't detected by the ClamAV database as per confirmed by VirusTotal.com ===
 .:: 2014/XX
 $md5:0e9bfd5c84cce736b73123cd0f31ddfc;$sha:09c30c827235bd1993e7fbb9367885e10a6074e7;$str_len:594184;3Solimba-00
@@ -934,6 +936,8 @@ $md5:6261bf2ad7bbc3bb1cd1ee638a87e547;$sha:881c3774b2a2339ac96d4ba958b282f61c5ef
 $md5:a3d4029f725c3f9f74811af8559fc346;$sha:45d271adcf4b166dcc6571771991c6f30888165f;$str_len:648704;3Barys-45
 $md5:7024d20048178843f629e8c5a422d072;$sha:cd97babe64112e97671030248407fb698589ca63;$str_len:141312;3ZBot-17
 $md5:ddf9361047ea1df8dc503d89bd171b15;$sha:fe0911ce5fbf5ae4e7ad5ce59d7517441c55503f;$str_len:6537502;3ZBot-22
+$md5:03a27f3c2ad5493ef14eea7e4fd0e0ea;$sha:dc766228c8db26c0ff0ef2e8656f2dc636f79003;$str_len:650744;0%OutBrowse-94
+$md5:55f925ff29f11781a2811efc4b281e45;$sha:9c1962b7bf42bfef260c413e093b87720e183ba4;$str_len:311296;3CAMB-02
 === Infected PE files caught by honeypot trap; Not detected or only partially detected by V.T. ===
 .:: 2015/02
 $md5:174bcf22f37a80c950409c9a44b2e95d;$sha:35298b05ada53008aa8d64bde3313fc3534343d1;$str_len:197632;0DOBJ-00
@@ -974,6 +978,9 @@ $md5:56b1208fab5bbe89e2526496ea09edaa;$sha:c18384a70648d2b809bd0ec4cdb4d2a0bc2a1
 $md5:04bc834ce80183e34737d1ca1656020d;$sha:4c35c233bc8fc78200320b3fd427a5f6f83fcd55;$str_len:1580074;01505X-46
 $md5:f4f671cb2dfddd4b62b47027b9507e3d;$sha:4a978824ffe8fcec5dcc5959afc23bdaa95ae8b9;$str_len:992164;01505X-52
 $md5:76c53daaed681e5ac5b2ae49cc8cf3dd;$sha:d81a808461bd50b4a160e5e9673f5dc5bded3a2c;$str_len:52224;0#1505X-06
+$md5:9be8cbaf5805acc3c00b66d2fe8a2d23;$sha:fa857b601ba8441118e9b8b937ea85c53bc65be0;$str_len:1881088;01505X-06
+$md5:1f4d9e9ca467503dc107cd96b0ae4863;$sha:1fb916ca7cbc95055fa867cc0428fd0454c263ec;$str_len:110080;01505X-10
+$md5:6a7db33d40bd9e0d289bb6e7e24a9bb8;$sha:3504469108a63eb1fe2295a1f135c40319f2eddc;$str_len:50688;01505X-16
 === Signatures I've written for files whose behaviour I've manually analysed in a live or virtual environment and have determined to be malicious; Not detected or only partially detected by V.T. ===
 .:: 2015/04
 $md5:17e837e4348946b2d53a6a34d2dd0fc9;$sha:316cbd0f13a20d43c57f337f3a27aaf41764d287;$str_len:584192;?PiccoloBotto-00
@@ -1639,7 +1646,7 @@ $is_pe:1;META:\x3bSectionName\x3asdt\x3b;”Generic-05
 $is_pe:1;META:\x3bSectionName\x3atldksods;4Generic-06
 $is_pe:1;META:\x3bSectionName\x3aVProtect;”*VProtect-00
 $is_pe:1;META:\x3bSectionName\x3aWinLicen;”*Themida-01
-$is_pe:1;META:\x3bSectionName\x3a[A-Za-z]{7}[0-9];$NumOfSections:4;4SteamThief-01
+$is_pe:1;META:\x3bSectionName\x3a[a-zA-Z]{7}[0-9];$NumOfSections:4;4SteamThief-01
 $is_pe:1;META:\x3bSectionName\x3a[A-Z][0-9][a-z]{2}[0-9][a-z][0-9];$NumOfSections:4;4SteamThief-00
 $is_pe:1;META:\x3bSectionName\x3a\x21[Ee][Pp]ack;”*EPack-00
 $is_pe:1;META:\x3bSectionName\x3a\x2e....\x2dco;4Generic-07
@@ -1671,7 +1678,7 @@ $is_pe:1;META:\x3bSectionName\x3a\x2e\x3b;4Generic-16
 $is_pe:1;META:\x3bSectionName\x3a.{0,8}\x7c;4$Andromeda-01
 $is_pe:1;META:\x3bSectionName\x3adAt\x3b;4$Upatre-00
 $is_pe:1;META:\x3bSectionName\x3anyen[0-9];4Dridex-01
-$is_pe:1;META:\x3bSectionName\x3a[0-9]{2}[A-Za-z]{3,5}\x3b;4Dridex-00
+$is_pe:1;META:\x3bSectionName\x3a[0-9]{2}[a-zA-Z]{3,5}\x3b;4Dridex-00
 $is_pe:1;META:\x3bSectionName\x3a[0-9]{7};4$Andromeda-00
 $is_pe:1;META:\x3bSectionName\x3a\x26\x5d[0-9]{1,8}\x3b;4Generic-21
 $is_pe:1;META:\x3bSectionName\x3a\x2e(dddd|flat|lebk)\x3b;4$Upatre-01
@@ -1685,6 +1692,7 @@ $is_pe:1;$xt:exe;FS-MIN:300032;FS-MAX:307200;FD:36003000330033000d000a002d002000
 $is_pe:1;META:\x3bSectionName\x3ahhh;META:\x3bSectionName\x3aSAN;META:\x3bSizeOfRawData\x3a(0)\x3b;4Kazy.Packed-01
 $is_pe:1;META:\x3bSectionName\x3a\x2edata[\x20\x2d](ri|co);”*Generic-02
 $is_pe:1;META:\x3bSectionName\x3a[^a-zA-Z0-9\x2e];”*Generic-03
+$is_pe:1;META:\x3bSectionName\x3a.?[a-zA-Z]\x26\x2b\x22;”*Generic-04
 === Shell scripts ===
 .:: 2015/03
 $xt:js;FD-RX:[57]6[46]1[57]2205f245f.{2,128}3d;FD-RX:(25[57]4[46]5[46]d[57]025[57]c[57]835|[46]4[46]f[57]7[46]e[46]c[46]f[46]1[46]42d[46]1[57]4[57]4[46]1[46]3[46]8|575363726970742e5368656c6c|457870616e64456e7669726f6e6d656e74537472696e6773|[46]d[57]3[57]8[46]d[46]c322e[57]8[46]d[46]c[46]8[57]4[57]4[57]0|536372697074696e672e46696c6553797374656d4f626a656374|41444f44422e53747265616d|526573706f6e7365426f6479|[46]8[57]4[57]4[57]03a2f2f|2e636f6d2f776f72642e706466|6174746163686d656e742e646f63|2e636f6d2f3430332e766c74|736563757265642e626174);FD:3d5f245f;0&C-00

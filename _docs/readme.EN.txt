@@ -128,10 +128,10 @@
     any PHP request is made. Something like:
 
     auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
-    
-    Or this in the .htaccess file:
-    
-    php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
+
+    Or this in the ".htaccess" file:
+
+    auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) At this point, you're done! However, you should probably test it out to
     make sure it's working properly. To test out file upload protections,
@@ -1420,8 +1420,8 @@
  with phpMussel or should consider alternative options to either your
  anti-virus software or phpMussel.
 
- This information was last updated 1st May 2015 and is current for all
- phpMussel releases of the two most recent minor versions (v0.5-v0.6) at the
+ This information was last updated 28th May 2015 and is current for all
+ phpMussel releases of the two most recent minor versions (v0.5-v0.6i) at the
  time of writing this.
 
  Ad-Aware                No known problems
@@ -1433,7 +1433,7 @@
  AVG                     No known problems
  Baidu-International     No known problems
  BitDefender             No known problems
- Bkav                    No known problems
+ Bkav                 !  Reports "VEXDAD2.Webshell"
  ByteHero                No known problems
  CAT-QuickHeal           No known problems
  ClamAV                  No known problems
@@ -1459,7 +1459,7 @@
  Microsoft               No known problems
  MicroWorld-eScan        No known problems
  NANO-Antivirus          No known problems
- Norman               !  Reports "Kryptik.BQS"
+ Norman                  No known problems
  nProtect                No known problems
  Panda                   No known problems
  Qihoo-360               No known problems
@@ -1479,5 +1479,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 27th May 2015 (2015.05.27).
+Last Updated: 28th May 2015 (2015.05.28).
 EOF

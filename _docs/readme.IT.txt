@@ -137,6 +137,10 @@
 
     auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
+    O questo nel ".htaccess" file:
+
+    auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
+
  7) A questo punto, il gioco è fatto! Ma, si dovrebbe probabilmente verificare
     il lavoro svolto per assicurarsi che funzioni correttamente. Per testare le
     protezioni di file caricamente, tentare di caricare i test file inclusi
@@ -1490,9 +1494,9 @@
  dovrebbe considerare l'alternative opzioni per sia il vostro anti-virus
  software o phpMussel.
 
- Questa informazione è stato lo scorso aggiornato 1 Maggio 2015 ed è in corso
+ Questa informazione è stato lo scorso aggiornato 28 Maggio 2015 ed è in corso
  per tutte le phpMussel rilasci delle due più recenti minori versioni
- (v0.5-v0.6) al momento di scrivere questo.
+ (v0.5-v0.6i) al momento di scrivere questo.
 
  Ad-Aware                Senza noti problemi
  Agnitum                 Senza noti problemi
@@ -1503,7 +1507,7 @@
  AVG                     Senza noti problemi
  Baidu-International     Senza noti problemi
  BitDefender             Senza noti problemi
- Bkav                    Senza noti problemi
+ Bkav                 !  Riferisce "VEXDAD2.Webshell"
  ByteHero                Senza noti problemi
  CAT-QuickHeal           Senza noti problemi
  ClamAV                  Senza noti problemi
@@ -1529,7 +1533,7 @@
  Microsoft               Senza noti problemi
  MicroWorld-eScan        Senza noti problemi
  NANO-Antivirus          Senza noti problemi
- Norman               !  Riferisce "Kryptik.BQS"
+ Norman                  Senza noti problemi
  nProtect                Senza noti problemi
  Panda                   Senza noti problemi
  Qihoo-360               Senza noti problemi
@@ -1549,5 +1553,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 27 Maggio 2015 (2015.05.27).
+Ultimo Aggiornamento: 28 Maggio 2015 (2015.05.28).
 EOF
