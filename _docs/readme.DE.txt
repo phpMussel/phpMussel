@@ -132,11 +132,11 @@
     Sie können die "auto_prepend_file" Direktive verwenden um phpMussel
     voranstellen wenn einer PHP Antrag gestellt wird. So etwas wie:
 
-    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+    php_value auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
     Oder das in der ".htaccess" Datei:
 
-    auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
+    php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) Der Installationsvorgang wurde nun fertiggestellt. Sie sollten nun das
     Programm auf ordnungsgemäße Funktion testen. Sie sollten nun die im Paket

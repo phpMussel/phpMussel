@@ -140,11 +140,11 @@
     vous pouvez utiliser la "auto_prepend_file" directive à préfixer phpMussel
     chaque fois qu'une demande de PHP est faite. Quelque chose comme:
 
-    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+    php_value auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
     Ou cette dans le ".htaccess" fichier:
 
-    auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
+    php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) À ce stade, vous avez fini! Cependant, vous devriez probablement tester ce
     pour s'assurer qu'il fonctionne correctement. Pour tester les protections,
