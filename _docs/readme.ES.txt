@@ -131,7 +131,7 @@
     "php.ini", puede utilizar la "auto_prepend_file" directiva para anteponer
     phpMussel cuando cualquier PHP solicitud se recibe. Algo como:
 
-    php_value auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
     O esto en el ".htaccess" archivo:
 
