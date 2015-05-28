@@ -133,7 +133,7 @@
     gebruiken de "auto_prepend_file" richtlijn naar prepend phpMussel wanneer
     een PHP verzoek wordt gemaakt. Zoiets als:
 
-    php_value auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
     Of dit in het ".htaccess" bestand:
 

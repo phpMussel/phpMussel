@@ -135,7 +135,7 @@
     possibile utilizzare il "auto_prepend_file" direttiva per precarico
     phpMussel ogni volta che qualsiasi richiesta di PHP è fatto. Qualcosa come:
 
-    php_value auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
     O questo nel ".htaccess" file:
 

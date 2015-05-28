@@ -134,7 +134,7 @@
     você pode usar o "auto_prepend_file" directiva para pré-carga phpMussel
     sempre que qualquer pedido de PHP é feito. Algo como:
 
-    php_value auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
     Ou isso no ".htaccess" arquivo:
 

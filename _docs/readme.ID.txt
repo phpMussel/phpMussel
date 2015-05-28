@@ -135,7 +135,7 @@
     tambahkan phpMussel setiap kali ada permintaan PHP dibuat. Sesuatu
     seperti:
 
-    php_value auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
     Atau ini di file ".htaccess":
 
