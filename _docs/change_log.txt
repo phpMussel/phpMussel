@@ -28,7 +28,7 @@ Anything less than sub-minor:
   not yet considered stable; updates received via the auto-updater that haven't
   yet been mainlined will usually be versioned in this way).
 
-=== Version/Release 0.6i (Previous Release: 0.6h) ===
+=== Version/Release 0.6i (Previous Release: 0.6h; Next: 0.6i.1) ===
 SUMMARY:
 Updated to the latest signatures set (55+20451+6i).
 Sub-minor release (medium priority).

@@ -135,7 +135,11 @@
     tambahkan phpMussel setiap kali ada permintaan PHP dibuat. Sesuatu
     seperti:
 
-    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+    php_value auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+
+    Atau ini di file ".htaccess":
+
+    php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) Pada point ini, kamu telah selesai! Bagaimanapun, kamu mungkin seharusnya
     mencobanya untuk melihat dia bekerja dengan dengan baik. Untuk mencoba data
@@ -1488,8 +1492,8 @@
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 1 Mei 2015 dan cocok untuk semua rilis phpMussel dari
- dua versi minor terbaru versi (v0.5-v0.6) pada waktu saya menuliskan ini.
+ Informasi ini diupdate 28 Mei 2015 dan cocok untuk semua rilis phpMussel dari
+ dua versi minor terbaru versi (v0.5-v0.6i) pada waktu saya menuliskan ini.
 
  Ad-Aware                Tidak masalah
  Agnitum                 Tidak masalah
@@ -1500,7 +1504,7 @@
  AVG                     Tidak masalah
  Baidu-International     Tidak masalah
  BitDefender             Tidak masalah
- Bkav                    Tidak masalah
+ Bkav                 !  Melaporkan "VEXDAD2.Webshell"
  ByteHero                Tidak masalah
  CAT-QuickHeal           Tidak masalah
  ClamAV                  Tidak masalah
@@ -1526,7 +1530,7 @@
  Microsoft               Tidak masalah
  MicroWorld-eScan        Tidak masalah
  NANO-Antivirus          Tidak masalah
- Norman               !  Melaporkan "Kryptik.BQS"
+ Norman                  Tidak masalah
  nProtect                Tidak masalah
  Panda                   Tidak masalah
  Qihoo-360               Tidak masalah
@@ -1546,5 +1550,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 27 Mei 2015 (2015.05.27).
+Terakhir Diperbarui: 28 Mei 2015 (2015.05.28).
 EOF

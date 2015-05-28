@@ -133,7 +133,11 @@
     gebruiken de "auto_prepend_file" richtlijn naar prepend phpMussel wanneer
     een PHP verzoek wordt gemaakt. Zoiets als:
 
-    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+    php_value auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+
+    Of dit in het ".htaccess" bestand:
+
+    php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) Op dit punt, je bent klaar! Echter, je moet waarschijnlijk test het uit om
     ervoor te zorgen dat het werken correct. Voor het testen van het bestand
@@ -238,12 +242,13 @@
    beide instrueert de functie om de resultaten als mensen leesbare tekst en om
    de resultaten te exporteren een globale variabele. Deze variabele is
    optioneel, en is 0 door standaard.
- - $output_flatness is an integer, indicating whether to allow results to be
-   returned as an array or not. Normally, if the scan target contained multiple
-   items (such as if a directory or array) the results will be returned in an
-   array (default value of 0). A value of 1 instructs the function to implode
-   any such array prior to input, resulting in a flattened string containing
-   the results to be returned. This variable is optional, defaulting to 0.
+ - $output_flatness is een integer, aangeeft of er kunnen resultaten worden
+   geretourneerd als een matrix of niet. Doorgaans, als de scan doel bevatte
+   meerdere items (bijvoorbeeld als een directory of matrix) het resultaten zal
+   worden geretourneerd in een array (standaard waarde van 0). Een waarde van 1
+   instrueert de functie te imploderen dergelijke matrix vóór ingang,
+   resulterend in platte tekenreeks waarin de resultaten worden geretourneerd.
+   Deze variabele is optioneel, en is 0 door standaard.
 
  Voorbeelden:
 
@@ -260,10 +265,10 @@
  door phpMussel tijdens de scans en hoe het omgaat met deze handtekeningen,
  raadpleeg de Handtekeningformaat sectie van dit README bestand.
 
- If you encounter any false positives, if you encounter something new that you
- think should be blocked, or for anything else regarding signatures, please
- contact me about it so that I may make the necessary changes, which, if you do
- not contact me, I may not necessarily be aware of.
+ Als u tegenkomen enig valse positieven, als u tegenkomen iets nieuws dat je
+ denkt dat zou moeten worden geblokkeerd, of voor iets anders met betrekking
+ tot handtekeningen, contact met mij over zodat ik kunnen maken veranderingen,
+ die, als je geen contact met mij op, ik niet noodzakelijkerwijs weten over.
 
  To disable signatures that are included with phpMussel (such as if you're
  experiencing a false positive specific to your purposes which should not
@@ -1430,9 +1435,9 @@
  voorafgaand aan het werken met phpMussel of moeten overwegen alternatieve
  opties om ofwel uw anti-virus software of phpMussel.
 
- Deze informatie is voor het laatst bijgewerkt 1 Mei 2015 en is op de hoogte
+ Deze informatie is voor het laatst bijgewerkt 28 Mei 2015 en is op de hoogte
  voor alle phpMussel publicaties van de twee meest recente mineur versies
- (v0.5-v0.6) op het moment van schrijven dit.
+ (v0.5-v0.6i) op het moment van schrijven dit.
 
  Ad-Aware                Geen bekend problemen
  Agnitum                 Geen bekend problemen
@@ -1443,7 +1448,7 @@
  AVG                     Geen bekend problemen
  Baidu-International     Geen bekend problemen
  BitDefender             Geen bekend problemen
- Bkav                    Geen bekend problemen
+ Bkav                 !  Berichten "VEXDAD2.Webshell"
  ByteHero                Geen bekend problemen
  CAT-QuickHeal           Geen bekend problemen
  ClamAV                  Geen bekend problemen
@@ -1469,7 +1474,7 @@
  Microsoft               Geen bekend problemen
  MicroWorld-eScan        Geen bekend problemen
  NANO-Antivirus          Geen bekend problemen
- Norman               !  Berichten "Kryptik.BQS"
+ Norman                  Geen bekend problemen
  nProtect                Geen bekend problemen
  Panda                   Geen bekend problemen
  Qihoo-360               Geen bekend problemen
@@ -1489,5 +1494,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 27 Mei 2015 (2015.05.27).
+Laatste Bijgewerkt: 28 Mei 2015 (2015.05.28).
 EOF

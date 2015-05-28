@@ -134,7 +134,11 @@
     você pode usar o "auto_prepend_file" directiva para pré-carga phpMussel
     sempre que qualquer pedido de PHP é feito. Algo como:
 
-    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+    php_value auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+
+    Ou isso no ".htaccess" arquivo:
+
+    php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
 
  7) Neste ponto, você está feito! Porém, você provavelmente deve testá-lo para
     garantir que ele está funcionando corretamente. Para testar as arquivo
@@ -1483,8 +1487,8 @@
  trabalhar com phpMussel ou deve considerar alternativas opções para o seu
  anti-vírus software ou phpMussel.
 
- Esta informação foi atualizada dia 1 Maio 2015 e é corrente para todas
- phpMussel lançamentos das duas mais recentes menores versões (v0.5-v0.6) no
+ Esta informação foi atualizada dia 28 Maio 2015 e é corrente para todas
+ phpMussel lançamentos das duas mais recentes menores versões (v0.5-v0.6i) no
  momento de escrever este.
 
  Ad-Aware                Sem conhecidos problemas
@@ -1496,7 +1500,7 @@
  AVG                     Sem conhecidos problemas
  Baidu-International     Sem conhecidos problemas
  BitDefender             Sem conhecidos problemas
- Bkav                    Sem conhecidos problemas
+ Bkav                 !  Reportar "VEXDAD2.Webshell"
  ByteHero                Sem conhecidos problemas
  CAT-QuickHeal           Sem conhecidos problemas
  ClamAV                  Sem conhecidos problemas
@@ -1522,7 +1526,7 @@
  Microsoft               Sem conhecidos problemas
  MicroWorld-eScan        Sem conhecidos problemas
  NANO-Antivirus          Sem conhecidos problemas
- Norman               !  Reportar "Kryptik.BQS"
+ Norman                  Sem conhecidos problemas
  nProtect                Sem conhecidos problemas
  Panda                   Sem conhecidos problemas
  Qihoo-360               Sem conhecidos problemas
@@ -1542,5 +1546,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 27 Maio 2015 (2015.05.27).
+Última Atualização: 28 Maio 2015 (2015.05.28).
 EOF
