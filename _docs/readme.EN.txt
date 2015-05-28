@@ -127,7 +127,7 @@
     you can use the "auto_prepend_file" directive to prepend phpMussel whenever
     any PHP request is made. Something like:
 
-    php_value auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
     Or this in the ".htaccess" file:
 
