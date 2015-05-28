@@ -132,7 +132,7 @@
     Sie können die "auto_prepend_file" Direktive verwenden um phpMussel
     voranstellen wenn einer PHP Antrag gestellt wird. So etwas wie:
 
-    php_value auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
+    auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
     Oder das in der ".htaccess" Datei:
 
