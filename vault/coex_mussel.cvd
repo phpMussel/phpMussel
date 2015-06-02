@@ -938,6 +938,7 @@ $md5:7024d20048178843f629e8c5a422d072;$sha:cd97babe64112e97671030248407fb698589c
 $md5:ddf9361047ea1df8dc503d89bd171b15;$sha:fe0911ce5fbf5ae4e7ad5ce59d7517441c55503f;$str_len:6537502;3ZBot-22
 $md5:03a27f3c2ad5493ef14eea7e4fd0e0ea;$sha:dc766228c8db26c0ff0ef2e8656f2dc636f79003;$str_len:650744;0%OutBrowse-94
 $md5:55f925ff29f11781a2811efc4b281e45;$sha:9c1962b7bf42bfef260c413e093b87720e183ba4;$str_len:311296;3CAMB-02
+$md5:e12f93b9f2406e4c1e0dde809cfc2466;$sha:d7a0a62b58749b12b3bb886c1750ce9a63640124;$str_len:704512;3Kazy-112
 === Infected PE files caught by honeypot trap; Not detected or only partially detected by V.T. ===
 .:: 2015/02
 $md5:174bcf22f37a80c950409c9a44b2e95d;$sha:35298b05ada53008aa8d64bde3313fc3534343d1;$str_len:197632;0DOBJ-00
@@ -981,6 +982,8 @@ $md5:76c53daaed681e5ac5b2ae49cc8cf3dd;$sha:d81a808461bd50b4a160e5e9673f5dc5bded3
 $md5:9be8cbaf5805acc3c00b66d2fe8a2d23;$sha:fa857b601ba8441118e9b8b937ea85c53bc65be0;$str_len:1881088;01505X-06
 $md5:1f4d9e9ca467503dc107cd96b0ae4863;$sha:1fb916ca7cbc95055fa867cc0428fd0454c263ec;$str_len:110080;01505X-10
 $md5:6a7db33d40bd9e0d289bb6e7e24a9bb8;$sha:3504469108a63eb1fe2295a1f135c40319f2eddc;$str_len:50688;01505X-16
+$md5:6c44529a5aafceb088761259200e344c;$sha:4b7a93a650cdbaf3bb7aa55d3fc667ad76dc1797;$str_len:55296;01505X-21
+$md5:3584c5d78c88cfc8cf3c6179f0f44a72;$sha:a771440bdf21a2b3c1785b920b59d3727b5ecfc7;$str_len:141081;01505X-02
 === Signatures I've written for files whose behaviour I've manually analysed in a live or virtual environment and have determined to be malicious; Not detected or only partially detected by V.T. ===
 .:: 2015/04
 $md5:17e837e4348946b2d53a6a34d2dd0fc9;$sha:316cbd0f13a20d43c57f337f3a27aaf41764d287;$str_len:584192;?PiccoloBotto-00
