@@ -25,7 +25,7 @@
  virus, malware y otras amenazas en los archivos cargados en el sistema donde
  el script está adjunto, basado en las firmas de ClamAV y otros.
 
- PHPMUSSEL COPYRIGHT 2013 y más allá GNU/GPL V.2 por Caleb M (Maikuolan).
+ PHPMUSSEL COPYRIGHT 2013 y más allá GNU/GPLv2 por Caleb M (Maikuolan).
 
  Este script es gratis software; puede redistribuirlo y/o modificarlo según los
  términos de la GNU General Pública Licencia como publicada por la Free
@@ -91,9 +91,9 @@
     Ajuste estas opciones según sus necesidades, según lo que sea apropiado
     para su particular configuración. Guardar archivo, cerrar.
 
- 4) Cargar contenido (phpMussel y sus archivos) al directorio que habías
-    decidido sobre más temprano (no es necesario el readme.XX.txt archivo o el
-    change_log.txt archivo, pero, en su mayoría, usted debe cargar todos).
+ 4) Cargar contenidos (phpMussel y sus archivos) al directorio que habías
+    decidido sobre más temprano (los *.txt archivos no son necesarios, pero, en
+    su mayoría, usted debe cargar todos).
 
  5) CMHOD al "vault" directorio a "777". La principal directorio de
     almacenamiento de los contenidos (el uno decidió desde antes), en general,
@@ -287,7 +287,7 @@
  sistema y para aquellos de los cuales analizar sus email mensajes a través de
  una php script de los que potencialmente podrían conectar en phpMussel.
  Configuración para esta función, como todos los demás, es controlado a través
- de phpmussel.ini archivo. Para utilizar esta función (va necesita para hacer
+ de "phpmussel.ini" archivo. Para utilizar esta función (va necesita para hacer
  su propia implementación), en una php archivo que está conectado a phpMussel,
  utilizar la siguiente función en el código:
 
@@ -552,14 +552,14 @@
     diferentes versiones (no se requiere para lo adecuado funcionalidad de la
     script).
     ~
- /_docs/readme.DE.txt (Documentación, Incluido); DEUTSCH
- /_docs/readme.EN.txt (Documentación, Incluido); ENGLISH
- /_docs/readme.ES.txt (Documentación, Incluido); ESPAÑOL
- /_docs/readme.FR.txt (Documentación, Incluido); FRANÇAIS
- /_docs/readme.ID.txt (Documentación, Incluido); BAHASA INDONESIA
- /_docs/readme.IT.txt (Documentación, Incluido); ITALIANO
- /_docs/readme.NL.txt (Documentación, Incluido); NEDERLANDSE
- /_docs/readme.PT.txt (Documentación, Incluido); PORTUGUÊS
+ /_docs/readme.de.txt (Documentación, Incluido); DEUTSCH
+ /_docs/readme.en.txt (Documentación, Incluido); ENGLISH
+ /_docs/readme.es.txt (Documentación, Incluido); ESPAÑOL
+ /_docs/readme.fr.txt (Documentación, Incluido); FRANÇAIS
+ /_docs/readme.id.txt (Documentación, Incluido); BAHASA INDONESIA
+ /_docs/readme.it.txt (Documentación, Incluido); ITALIANO
+ /_docs/readme.nl.txt (Documentación, Incluido); NEDERLANDSE
+ /_docs/readme.pt.txt (Documentación, Incluido); PORTUGUÊS
     La README archivos (por ejemplo; el archivo que estás leyendo).
     ~
  /_docs/signatures_tally.txt (Documentación, Incluido)
@@ -619,6 +619,28 @@
     ~
  /vault/ (Directorio)
     Vault directorio (contiene varios archivos).
+    ~
+ /vault/lang/ (Directorio)
+    Contiene lingüísticos datos.
+    ~
+ /vault/lang/.htaccess (Otro, Incluido)
+    Un hipertexto acceso archivo (en este caso, para proteger confidenciales
+    archivos perteneciente a la script contra el acceso de fuentes no
+    autorizadas).
+    ~
+ /vault/lang/lang.de.inc (Script, Incluido); DEUTSCH
+ /vault/lang/lang.en.inc (Script, Incluido); ENGLISH
+ /vault/lang/lang.es.inc (Script, Incluido); ESPAÑOL
+ /vault/lang/lang.fr.inc (Script, Incluido); FRANÇAIS
+ /vault/lang/lang.id.inc (Script, Incluido); BAHASA INDONESIA
+ /vault/lang/lang.it.inc (Script, Incluido); ITALIANO
+ /vault/lang/lang.ja.inc (Script, Incluido); 日本語
+ /vault/lang/lang.nl.inc (Script, Incluido); NEDERLANDSE
+ /vault/lang/lang.pt.inc (Script, Incluido); PORTUGUÊS
+ /vault/lang/lang.ru.inc (Script, Incluido); РУССКИЙ
+ /vault/lang/lang.zh.inc (Script, Incluido); 中文（简体）
+ /vault/lang/lang.zh-tw.inc (Script, Incluido); 中文（傳統）
+    Lingüísticos datos archivos para phpMussel.
     ~
  /vault/quarantine/ (Directorio)
     Cuarentena directorio (contiene los cuarentenadas archivos).
@@ -730,7 +752,7 @@
     habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/lang.inc (Script, Incluido)
-    phpMussel Lingüísticos datos; Requerido para multilingües capacidades.
+    phpMussel lingüísticos datos.
     ~
  /vault/macho_clamav_regex.cvd (Firmas, Incluidos)
  /vault/macho_clamav_regex.map (Firmas, Incluidos)
@@ -1399,8 +1421,8 @@
    yo sugeriría tomar mucho cuidado cuando escribiendo nuevas firmas basado en
    regex, porque, si no estás del todo seguro de lo que estás haciendo, puede
    haber altamente irregulares e/o inesperados resultados. Mirar el código
-   fuente para phpMussel si no estás del todo seguro sobre el contexto para lo
-   cual las regex declaraciones son procesado. También, recordar que todos los
+   fuente para phpMussel si no estás del todo seguro sobre el contexto de que
+   las regex declaraciones son procesado. También, recordar que todos los
    patrones (con excepción para nombre de archivo, compactado archivo metadato
    y MD5 patrones) debe ser hexadecimal codificado (con excepción de la patrón
    sintaxis)!
@@ -1565,5 +1587,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 28 Mayo 2015 (2015.05.28).
+Última Actualización: 4 Junio 2015 (2015.06.04).
 EOF

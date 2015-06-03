@@ -26,7 +26,7 @@
  votre système partout où le script est accroché, basé sur les signatures de
  ClamAV et autres.
 
- PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPL V.2 par Caleb M (Maikuolan).
+ PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPLv2 par Caleb M (Maikuolan).
 
  Ce script est un logiciel libre; vous pouvez redistribuer et/ou le modifier
  selon les termes de la GNU General Public License telle que publiée par la
@@ -97,10 +97,9 @@
     Réglez ces options comme bon vous semble, selon ce qui est approprié pour
     votre particulière configuration. Enregistrer le fichier, fermer.
 
- 4) Téléchargez le contenu (phpMussel et ses fichiers) à le répertoire vous
-    aviez décidé plus tôt (vous n'avez pas besoin le readme.XX.txt ou le
-    change_log.txt fichiers inclus, mais, surtout, vous devriez télécharger
-    tous les fichiers sur le serveur).
+ 4) Télécharger les contenus (phpMussel et ses fichiers) à le répertoire vous
+    aviez décidé plus tôt (vous n'avez pas besoin les *.txt fichiers, mais,
+    surtout, vous devriez télécharger tous les fichiers sur le serveur).
 
  5) CMHOD la "vault" répertoire à "777". Le principal répertoire qui est
     stocker le contenu (celui que vous avez choisi plus tôt), généralement,
@@ -148,7 +147,7 @@
 
  7) À ce stade, vous avez fini! Cependant, vous devriez probablement tester ce
     pour s'assurer qu'il fonctionne correctement. Pour tester les protections,
-    essayez de télécharger les tester fichiers inclus dans le empaqueter sous
+    essayez de télécharger les tester fichiers inclus dans l'empaqueter sous
     "_testfiles" à votre website par votre habituelles navigateur basé méthodes
     de téléchargement. Si tout fonctionne correctement, un message devrait
     apparaître à partir de phpMussel confirmant que le téléchargement a été
@@ -178,8 +177,8 @@
     installer php sur votre machine, suivant les instructions fournies par le
     programme d'installation de php.
 
- 2) Ouvrir "phpmussel.php", cherchez pour la ligne commençant par "$vault=",
-    et remplacez la string entre guillemets suivantes sur cette ligne avec le
+ 2) Ouvrir "phpmussel.php", chercher pour la ligne commençant par "$vault=",
+    et remplacer la string entre guillemets suivantes sur cette ligne avec le
     véritable exact emplacement du le répertoire "vault" de phpMussel. Vous
     aurez remarqué un tel dossier dans l'archive que vous avez téléchargé (sauf
     si vous sentez à nouveau codage de l'ensemble du script, vous aurez besoin
@@ -199,11 +198,11 @@
  5) (En option) Vous pouvez faire utilisant phpMussel en CLI mode plus facile
     pour vous-même par la création d'un fichier de commandes pour automatique
     charger php et phpMussel. Pour ce faire, ouvrir un éditeur de texte comme
-    Notepad ou Notepad++, tapez le complet chemin vers le "php.exe" fichier
+    Notepad ou Notepad++, taper le complet chemin vers le "php.exe" fichier
     dans le répertoire de votre installation de PHP, suivi d'un espace, suivi
     par le complet chemin vers le "phpmussel.php" fichier dans le répertoire de
     votre installation de phpMussel, enregistrer le fichier avec un ".bat"
-    suffixe quelque part que vous trouverez facile, et double-cliquez sur ce
+    suffixe quelque part que vous trouverez facile, et double-cliquer sur ce
     fichier pour exécuter phpMussel à l'avenir.
 
  6) À ce stade, vous avez fini! Mais, vous devriez probablement tester ce
@@ -225,7 +224,7 @@
 
  Cependant, vous êtes également capable de instruire phpMussel à rechercher des
  fichiers, répertoires ou archives que vous spécifiez implicitement. Pour ce
- faire, d'abord, vous devez assurer que la appropriée configuration est réglée
+ faire, d'abord, vous devez assurer que l'appropriée configuration est réglée
  dans le "phpmussel.ini" fichier (cleanup doit être désactivé), et lorsque
  fini, dans un php fichier qui est lié à phpMussel, utiliser la fonction
  suivante dans votre code:
@@ -301,7 +300,7 @@
  est en quelque sorte lié à leur messagerie système et pour ceux dont analyser
  leurs courriels à travers un script php dont ils pourraient s'accrocher dans
  phpMussel. Configuration pour cette fonction, comme tous les autres, est
- contrôlé par le phpmussel.ini fichier. Pour utiliser cette fonction (vous
+ contrôlé par le "phpmussel.ini" fichier. Pour utiliser cette fonction (vous
  aurez besoin de faire votre propre implémentation), dans un php fichier qui
  est accroché à phpMussel, utiliser ce fonction dans votre code:
 
@@ -345,7 +344,7 @@
 
  Aussi soyez conscient que phpMussel est pas la fonctionnel équivalent d'une
  complet anti-virus suite, et contrairement conventionnelles anti-virus suites,
- ne surveille pas la active mémoire ou détecter les virus sur la volée! Il
+ ne surveille pas l'active mémoire ou détecter les virus sur la volée! Il
  seulement détecte les virus contenus dans les fichiers que vous explicitement
  spécifier pour d'analyse.
 
@@ -567,14 +566,14 @@
     Un enregistrement des modifications apportées au script entre les
     différentes versions (pas nécessaire pour le bon fonctionnement du script).
     ~
- /_docs/readme.DE.txt (Documentation, Inclu); DEUTSCH
- /_docs/readme.EN.txt (Documentation, Inclu); ENGLISH
- /_docs/readme.ES.txt (Documentation, Inclu); ESPAÑOL
- /_docs/readme.FR.txt (Documentation, Inclu); FRANÇAIS
- /_docs/readme.ID.txt (Documentation, Inclu); BAHASA INDONESIA
- /_docs/readme.IT.txt (Documentation, Inclu); ITALIANO
- /_docs/readme.NL.txt (Documentation, Inclu); NEDERLANDSE
- /_docs/readme.PT.txt (Documentation, Inclu); PORTUGUÊS
+ /_docs/readme.de.txt (Documentation, Inclu); DEUTSCH
+ /_docs/readme.en.txt (Documentation, Inclu); ENGLISH
+ /_docs/readme.es.txt (Documentation, Inclu); ESPAÑOL
+ /_docs/readme.fr.txt (Documentation, Inclu); FRANÇAIS
+ /_docs/readme.id.txt (Documentation, Inclu); BAHASA INDONESIA
+ /_docs/readme.it.txt (Documentation, Inclu); ITALIANO
+ /_docs/readme.nl.txt (Documentation, Inclu); NEDERLANDSE
+ /_docs/readme.pt.txt (Documentation, Inclu); PORTUGUÊS
     Le README fichiers (par exemple; le fichier vous êtes en cours de lire).
     ~
  /_docs/signatures_tally.txt (Documentation, Inclu)
@@ -633,6 +632,28 @@
     ~
  /vault/ (Répertoire)
     Voûte répertoire (contient divers fichiers).
+    ~
+ /vault/lang/ (Répertoire)
+    Contient linguistiques données.
+    ~
+ /vault/lang/.htaccess (Autre, Inclu)
+    Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles
+    fichiers appartenant au script contre être consulté par non autorisées
+    sources).
+    ~
+ /vault/lang/lang.de.inc (Script, Inclu); DEUTSCH
+ /vault/lang/lang.en.inc (Script, Inclu); ENGLISH
+ /vault/lang/lang.es.inc (Script, Inclu); ESPAÑOL
+ /vault/lang/lang.fr.inc (Script, Inclu); FRANÇAIS
+ /vault/lang/lang.id.inc (Script, Inclu); BAHASA INDONESIA
+ /vault/lang/lang.it.inc (Script, Inclu); ITALIANO
+ /vault/lang/lang.ja.inc (Script, Inclu); 日本語
+ /vault/lang/lang.nl.inc (Script, Inclu); NEDERLANDSE
+ /vault/lang/lang.pt.inc (Script, Inclu); PORTUGUÊS
+ /vault/lang/lang.ru.inc (Script, Inclu); РУССКИЙ
+ /vault/lang/lang.zh.inc (Script, Inclu); 中文（简体）
+ /vault/lang/lang.zh-tw.inc (Script, Inclu); 中文（傳統）
+    Fichiers de linguistiques données pour phpMussel.
     ~
  /vault/quarantine/ (Répertoire)
     Quarantaine répertoire (contient des fichiers de la quarantaine).
@@ -743,7 +764,7 @@
     Peut enlever si l'option est désactivée.
     ~
  /vault/lang.inc (Script, Inclu)
-    phpMussel Langue Données; Obligatoire pour les capacités multilingues.
+    phpMussel linguistiques données.
     ~
  /vault/macho_clamav_regex.cvd (Signatures, Inclus)
  /vault/macho_clamav_regex.map (Signatures, Inclus)
@@ -957,7 +978,7 @@
       inutilement dupliqué données dans la mémoire. Dans la générale pratique,
       il devrait probablement être ensemblé sur oui, mais, si vous faites cela,
       vous ne serez pas être capable d'utiliser le script pour tout chose autre
-      que la analyse de fichiers téléchargements.
+      que l'analyse des fichiers téléchargements.
       * N'a pas d'influence en CLI mode.
     "scan_log"
     - Nom du fichier à enregistrer tous les résultats d'analyse à. Spécifiez
@@ -1577,5 +1598,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 28 Mai 2015 (2015.05.28).
+Dernière Réactualisé: 4 Juin 2015 (2015.06.04).
 EOF
