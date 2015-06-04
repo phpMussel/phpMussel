@@ -1538,5 +1538,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 2015.06.04
+Zuletzt aktualisiert: 4. Juni 2015 (2015.06.04).
 EOF
