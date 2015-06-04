@@ -21,12 +21,12 @@
 
  1. VORWORT
 
- Vielen Dank für die Benutzung von phpMussel, einem PHP-Script,
- um Trojaner, Viren, Malware und andere Bedrohungen in Dateien zu entdecken,
- die auf Ihr System hochgeladen werden könnten, welches die Signaturen von
- ClamAV und weitere nutzt.
+ Vielen Dank für die Benutzung von phpMussel, einem PHP-Script, um Trojaner,
+ Viren, Malware und andere Bedrohungen in Dateien zu entdecken, die auf Ihr
+ System hochgeladen werden könnten, welches die Signaturen von ClamAV und
+ weitere nutzt.
 
- PHPMUSSEL COPYRIGHT 2013 und darüber hinaus GNU/GPL V.2 by Caleb M (Maikuolan).
+ PHPMUSSEL COPYRIGHT 2013 und darüber hinaus GNU/GPLv2 by Caleb M (Maikuolan).
 
  Dieses Skript ist freie Software; Sie können Sie weitergeben und/oder
  modifizieren unter den Bedingungen der GNU General Public License, wie von der
@@ -35,8 +35,8 @@
  Hoffnung verteilt, dass es nützlich sein wird, allerdings OHNE JEGLICHE
  GARANTIE; ohne implizite Garantien für VERMARKTUNG/VERKAUF/VERTRIEB oder FÜR
  EINEN BESTIMMTEN ZWECK. Lesen Sie die GNU General Public License für weitere
- Details, in der Datei "LICENSE" im Verzeichnis "_docs" im
- zugeordneten Paket und Repository für diese Datei, ebenfalls verfügbar auf:
+ Details, in der Datei "LICENSE" im Verzeichnis "_docs" im zugeordneten Paket
+ und Repository für diese Datei, ebenfalls verfügbar auf:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Besonderer Dank geht an ClamAV für die Inspiration und die Signaturen, die
@@ -44,18 +44,19 @@
  würde oder bestenfalls einen sehr begrenzten Wert hätte
  <http://www.clamav.net/>.
 
- Besonderer Dank geht auch an Sourceforge und GitHub für das Hosten der Projektdateien,
- auf <http://phpmussel.sourceforge.net/> und
+ Besonderer Dank geht auch an Sourceforge und GitHub für das Hosten der
+ Projektdateien, auf <http://phpmussel.sourceforge.net/> und
  <https://github.com/Maikuolan/phpMussel/>, an Spambot Security für die
  phpMussel Diskussionforen gehostet auf
- <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, und an die
- weiteren Quellen einiger von phpMussel verwendeten Signaturen: 
- SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
- <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> und andere,
- und Besonderer Dank geht an alle diejenigen die das Projekt unterstützen werden,
- an andere nicht erwähnte Personen, und an Sie, für die Verwendung des Scripts.
+ <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, und an die weiteren
+ Quellen einiger von phpMussel verwendeten Signaturen: SecuriteInfo.com
+ <http://www.securiteinfo.com/>, PhishTank <http://www.phishtank.com/>,
+ NLNetLabs <http://nlnetlabs.nl/> und andere, und Besonderer Dank geht an alle
+ diejenigen die das Projekt unterstützen werden, an andere nicht erwähnte
+ Personen, und an Sie, für die Verwendung des Scripts.
 
- Dieses Dokument und das zugehörige Paket kann von folgenden Links kostenlos heruntergeladen werden:
+ Dieses Dokument und das zugehörige Paket kann von folgenden Links kostenlos
+ heruntergeladen werden:
  - Sourceforge <http://phpmussel.sourceforge.net/>.
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
@@ -93,8 +94,7 @@
 
  4) Laden Sie den kompletten Inhalt (phpMussel und die Dateien) in das
     Verzeichnis hoch, für das Sie sich in Schritt 1 entschieden haben. Die
-    Dateien readme.XX.txt oder change_log.txt müssen nicht mit hochgeladen
-    werden.
+    Dateien *.txt müssen nicht mit hochgeladen werden.
 
  5) Ändern Sie die Zugriffsberechtigungen des "vault"-Verzeichnisses auf "777".
     Die Berechtigungen des übergeordneten Verzeichnises, in welchem sich der
@@ -111,13 +111,13 @@
     Üblicherweise wird eine solche Datei in Verzeichnissen wie "/includes",
     "/assets" or "/functions" gespeichert und wird häufig "init.php",
     "common_functions.php", "functions.php" o.ä. genannt. Sie müssen
-    herausfinden, welche Datei dies für Ihre Bedürfnisse ist; Wenn Sie
-    dabei Schwierigkeiten haben das herauszufinden, besuchen Sie die
-    phpMussel Support-Foren und lassen Sie es uns wissen; Es ist möglich, dass
-    entweder ich oder ein anderer Benutzer mit dem CMS, das Sie verwenden, Erfahrung
-    hat (Sie müssen Sie mitteilen, welche CMS Sie verwenden) und möglicherweise 
-    in der Lage ist, etwas Unterstützung anzubieten. Fügen Sie in dieser Datei folgenden
-    Code direkt am Anfang ein:
+    herausfinden, welche Datei dies für Ihre Bedürfnisse ist; Wenn Sie dabei
+    Schwierigkeiten haben das herauszufinden, besuchen Sie die phpMussel
+    Support-Foren und lassen Sie es uns wissen; Es ist möglich, dass entweder
+    ich oder ein anderer Benutzer mit dem CMS, das Sie verwenden, Erfahrung hat
+    (Sie müssen Sie mitteilen, welche CMS Sie verwenden) und möglicherweise in
+    der Lage ist, etwas Unterstützung anzubieten. Fügen Sie in dieser Datei
+    folgenden Code direkt am Anfang ein:
 
     <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
 
@@ -128,9 +128,10 @@
 
     -- ODER ALTERNATIV --
 
-    Wenn Sie einen Apache-Webserver haben und wenn Sie Zugriff auf die "php.ini" oder eine ähnliche Datei haben,
-    dann können Sie die "auto_prepend_file" Direktive verwenden um phpMussel
-    voranstellen wenn eine PHP-Anfrage erfolgt. Ungefähr so:
+    Wenn Sie einen Apache-Webserver haben und wenn Sie Zugriff auf die
+    "php.ini" oder eine ähnliche Datei haben, dann können Sie die
+    "auto_prepend_file" Direktive verwenden um phpMussel voranstellen wenn eine
+    PHP-Anfrage erfolgt. Ungefähr so:
 
     auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"
 
@@ -196,8 +197,8 @@
 
  6) Der Installationsvorgang wurde nun fertiggestellt. Sie sollten nun das
     Programm auf ordnungsgemäße Funktion testen. Um den Test durchzuführen,
-    führen Sie bitte phpMussel aus und versuchen Sie, das Verzeichnis "_testfiles"
-    in diesem Installationspaket zu scannen.
+    führen Sie bitte phpMussel aus und versuchen Sie, das Verzeichnis
+    "_testfiles" in diesem Installationspaket zu scannen.
 
                                      ~ ~ ~
 
@@ -273,9 +274,9 @@
  ist in phpMussel eine Funktion enthalten, Textkörper (body) von E-Mails zu
  überprüfen. Diese Funktion verhält sich ähnlich wie die normalen
  Scan-Funktionen von phpMussel, ist allerdings auf die E-Mail-Signaturen von
- ClamAV fokussiert. Diese Signaturen sind nicht in der normalen phpMussel() Funktion 
- eingebunden, da es höchst unwahrscheinlich ist, eine E-Mail auf
- einer Webseite, in der phpMussel eingebunden ist, innerhalb eines Dateiuploads
+ ClamAV fokussiert. Diese Signaturen sind nicht in der normalen phpMussel()
+ Funktion eingebunden, da es höchst unwahrscheinlich ist, eine E-Mail auf einer
+ Webseite, in der phpMussel eingebunden ist, innerhalb eines Dateiuploads
  überprüfen zu müssen. Diese Signaturen in die phpMussel() Funktion einzubinden
  wäre redundant. Diese separate Funktion ist nützlich für CMS, die mit dem
  E-Mail-System zusammenarbeiten oder Systeme, die E-Mails mittels PHP
@@ -517,19 +518,19 @@
     Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für
     die korrekte Funktion des Scripts nicht notwendig).
     ~
- /_docs/readme.DE.txt (Dokumentation, enthalten); DEUTSCH
- /_docs/readme.EN.txt (Dokumentation, enthalten); ENGLISH
- /_docs/readme.ES.txt (Dokumentation, enthalten); ESPAÑOL
- /_docs/readme.FR.txt (Dokumentation, enthalten); FRANÇAIS
- /_docs/readme.ID.txt (Dokumentation, enthalten); BAHASA INDONESIA
- /_docs/readme.IT.txt (Dokumentation, enthalten); ITALIANO
- /_docs/readme.NL.txt (Dokumentation, enthalten); NEDERLANDSE
- /_docs/readme.PT.txt (Dokumentation, enthalten); PORTUGUÊS
+ /_docs/readme.de.txt (Dokumentation, enthalten); DEUTSCH
+ /_docs/readme.en.txt (Dokumentation, enthalten); ENGLISH
+ /_docs/readme.es.txt (Dokumentation, enthalten); ESPAÑOL
+ /_docs/readme.fr.txt (Dokumentation, enthalten); FRANÇAIS
+ /_docs/readme.id.txt (Dokumentation, enthalten); BAHASA INDONESIA
+ /_docs/readme.it.txt (Dokumentation, enthalten); ITALIANO
+ /_docs/readme.nl.txt (Dokumentation, enthalten); NEDERLANDSE
+ /_docs/readme.pt.txt (Dokumentation, enthalten); PORTUGUÊS
     Die README-Dateien (z.B. die Datei, die Sie gerade lesen).
     ~
  /_docs/signatures_tally.txt (Dokumentation, enthalten)
-    Netto-Veränderungs-Anzahl von enthaltenen Signaturen (für die korrekte Funktion des
-    Scripts nicht notwendig).
+    Netto-Veränderungs-Anzahl von enthaltenen Signaturen (für die korrekte
+    Funktion des Scripts nicht notwendig).
     ~
  /_testfiles/ (Verzeichnis)
     Verzeichnis für Testdateien (beinhaltet verschiedene Dateien).
@@ -584,6 +585,27 @@
     ~
  /vault/ (Verzeichnis)
     Vault-Verzeichnis (beinhaltet verschiedene Dateien).
+    ~
+ /vault/lang/ (Verzeichnis)
+    Enthält Sprachdaten für phpMussel.
+    ~
+ /vault/lang/.htaccess (Sonstiges, enthalten)
+    Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien
+    des Scripts vor einem nicht authorisierten Zugriff).
+    ~
+ /vault/lang/lang.de.inc (Script, enthalten); DEUTSCH
+ /vault/lang/lang.en.inc (Script, enthalten); ENGLISH
+ /vault/lang/lang.es.inc (Script, enthalten); ESPAÑOL
+ /vault/lang/lang.fr.inc (Script, enthalten); FRANÇAIS
+ /vault/lang/lang.id.inc (Script, enthalten); BAHASA INDONESIA
+ /vault/lang/lang.it.inc (Script, enthalten); ITALIANO
+ /vault/lang/lang.ja.inc (Script, enthalten); 日本語
+ /vault/lang/lang.nl.inc (Script, enthalten); NEDERLANDSE
+ /vault/lang/lang.pt.inc (Script, enthalten); PORTUGUÊS
+ /vault/lang/lang.ru.inc (Script, enthalten); РУССКИЙ
+ /vault/lang/lang.zh.inc (Script, enthalten); 中文（简体）
+ /vault/lang/lang.zh-tw.inc (Script, enthalten); 中文（傳統）
+    Sprachdateien für phpMussel.
     ~
  /vault/quarantine/ (Verzeichnis)
     Quarantäne-Verzeichnis (enthält Dateien in Quarantäne).
@@ -697,8 +719,7 @@
     ist. Die Dateien können entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/lang.inc (Script, enthalten)
-    Sprachpaket für phpMussel; Erforderlich für Unterstützung mehrerer
-    Sprachen.
+    Sprachpaket für phpMussel.
     ~
  /vault/macho_clamav_regex.cvd (Signaturen, enthalten)
  /vault/macho_clamav_regex.map (Signaturen, enthalten)
@@ -1133,17 +1154,18 @@
      Komma-getrennte Werte). Möchten Sie lieber alles überprüfen lassen, so
      lassen Sie die Variable(n) leer; Dies deaktiviert die
      Whitelist/Blacklist/Greylist. Logische Reihenfolge der Verarbeitung ist:
-     - Wenn der Dateityp in der Whitelist ist, scanne und blockieren nicht die 
-       Datei, und überprüfe nicht wenn die Datei in der Whitelist oder in der Greylist ist.
+     - Wenn der Dateityp in der Whitelist ist, scanne und blockieren nicht die
+       Datei, und überprüfe nicht wenn die Datei in der Whitelist oder in der
+       Greylist ist.
      - Wenn der Dateityp in der Blacklist ist, scanne nicht die Datei aber
        blockieren sie trotzdem, und überprüfe nicht wenn die Datei in
        der Greylist ist.
      - Wenn die Greylist leer ist oder wenn die Greylist nicht leer ist und der
-       Dateityp in der Greylist ist, scanne die Datei wie standardmäßig eingestellt 
-       ist und  stelle fest, ob diese blockiert werden soll, basierend auf dem Scan, aber wenn
-       die Greylist nicht leer ist und der Dateityp nicht in der Greylist ist,
-       behandel die Datei als ob sie in der Blacklist ist, scanne sie nicht 
-       aber blockiere sie trotzdem.
+       Dateityp in der Greylist ist, scanne die Datei wie standardmäßig
+       eingestellt ist und  stelle fest, ob diese blockiert werden soll,
+       basierend auf dem Scan, aber wenn die Greylist nicht leer ist und der
+       Dateityp nicht in der Greylist ist, behandel die Datei als ob sie in der
+       Blacklist ist, scanne sie nicht aber blockiere sie trotzdem.
    "check_archives"
    - Soll der Inhalt von Archiven überprüft werden?
      0 - Nein (keine Überprüfung),
@@ -1174,8 +1196,8 @@
    - Suche nach PHP-Headern in Dateien, die weder PHP-Dateien noch erkannte
      Archive sind.
    "chameleon_from_exe"
-   - Suche nach ausführbaren Headern in Dateien, die weder ausführbar
-     noch erkannte Archive sind und nach ausführbaren Dateien, deren Header nicht
+   - Suche nach ausführbaren Headern in Dateien, die weder ausführbar noch
+     erkannte Archive sind und nach ausführbaren Dateien, deren Header nicht
      korrekt sind.
    "chameleon_to_archive"
    - Suche nach Archiven,  deren Header nicht korrekt sind
@@ -1195,9 +1217,9 @@
      vorher als möglicher Angriff definiert wurde; Ändern Sie diese Liste
      äußerst vorsichtig; Beachten Sie, dass dies keinen Einfluß darauf hat,
      wozu Archive fähig sind und nicht auf Inhaltsebene analysiert
-     werden können). Diese Liste enthält die Archivformate, die am häufigsten von der
-     Mehrzahl der Systeme und CMS verwendet werden, ist aber absichtlich nicht
-     vollständig.
+     werden können). Diese Liste enthält die Archivformate, die am häufigsten
+     von der Mehrzahl der Systeme und CMS verwendet werden, ist aber
+     absichtlich nicht vollständig.
    "general_commands"
    - Soll der Inhalt von Dateien auf allgemeine Befehle wie eval(), exec() und
      include() durchsucht werden?
@@ -1246,9 +1268,9 @@
      Datei-Uploads, die Sie auf Ihrem Server oder Ihrer Website erwarten,
      sollte nicht größer sein als die Richtlinie filesize_limit und sollte
      nicht mehr als ein Fünftel der Gesamtspeicherzuweisung für PHP in der
-     Konfigurationsdatei php.ini sein. Diese Richtlinie verhindert, dass phpMussel
-     zu viel Speicher benutzt (was phpMussel daran hindern würde, einen Scan
-     ab einer bestimmten Dateigröße erfolgreich durchzuführen).
+     Konfigurationsdatei php.ini sein. Diese Richtlinie verhindert, dass
+     phpMussel zu viel Speicher benutzt (was phpMussel daran hindern würde,
+     einen Scan ab einer bestimmten Dateigröße erfolgreich durchzuführen).
  "compatibility" (Kategorie)
  - Kompatibilitätsdirektiven für phpMussel.
    "ignore_upload_errors"
@@ -1327,15 +1349,17 @@
    Alle Whitelist-Signaturen besitzen folgendes Format:
     HASH:FILESIZE:NAME
    HASH ist der MD5-Hash der ganzen Datei, FILESIZE ist die gesamte Größe der
-   Datei und TYPE ist der Signaturtyp der whitegelisteten Datei, gegen die sie immun ist.
+   Datei und TYPE ist der Signaturtyp der whitegelisteten Datei, gegen die sie
+   immun ist.
 
  = KOMPLEX-ERWEITERT-SIGNATUREN =
-   Komplex-Erweitert-Signaturen sind ziemlich unterschiedlich zu anderen Arten von 
-   möglichen Signaturen für phpMussel. Insofern, dass sie gegen das übereinstimmen 
-   was die Signaturen spezifizieren und das können mehrere Kriterien sein. Die 
-   Übereinstimmungs-Kriterien werden durch ";" getrennt und der Übereinstimmungs-Typ
-   und die Übereinstimmungs-Daten jedes Übereinstimmungskriteriums ist durch ":" 
-   getrennt sodass das Format für diese Signaturen in etwa so aussieht:
+   Komplex-Erweitert-Signaturen sind ziemlich unterschiedlich zu anderen Arten
+   von möglichen Signaturen für phpMussel. Insofern, dass sie gegen das
+   übereinstimmen was die Signaturen spezifizieren und das können mehrere
+   Kriterien sein. Die Übereinstimmungs-Kriterien werden durch ";" getrennt und
+   der Übereinstimmungs-Typ und die Übereinstimmungs-Daten jedes
+   Übereinstimmungskriteriums ist durch ":" getrennt sodass das Format für
+   diese Signaturen in etwa so aussieht:
     $variable1:SOMEDATA;$variable2:SOMEDATA;SignatureName
 
  = ALLE SONSTIGEN SIGNATUREN =
@@ -1422,11 +1446,11 @@
    - "SWF-Signaturen" (swf_*). Überprüft den Inhalt jeder Shockwave-Datei,
       die nicht in der Whitelist aufgeführt ist.
    - "Whitelist-Signaturen" (whitelist_*). Überprüft mittels MD5-Hash des
-      Inhalts und der Dateigröße jede Datei. Übereinstimmende Dateien werden immun
-      gegen die Art der Signaturen in dem Whitelist-Eintrag.
-   - "XML/XDP-Chunk Signatures" (xmlxdp_*). Überprüft XML/XDP-Datenblöcke aus jeder
-      Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden
-      soll.
+      Inhalts und der Dateigröße jede Datei. Übereinstimmende Dateien werden
+      immun gegen die Art der Signaturen in dem Whitelist-Eintrag.
+   - "XML/XDP-Chunk Signatures" (xmlxdp_*). Überprüft XML/XDP-Datenblöcke aus
+      jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft
+      werden soll.
    (Beachten Sie, dass jede dieser Signaturen auf einfache Weise in der
     phpmussel.ini deaktiviert werden kann).
 
@@ -1451,9 +1475,9 @@
  verschiedenen Antiviren-Programmen gegen phpMussel beschreiben. Diese
  Informationen garantieren nicht, ob Kompatibilitätsprobleme zwischen phpMussel
  und Ihrem eingesetzten Antiviren-Produkt bestehen. Sollte Ihre
- Antiviren-Software als problematisch aufgelistet sein, sollten Sie diese entweder
- vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen
- überlegen.
+ Antiviren-Software als problematisch aufgelistet sein, sollten Sie diese
+ entweder vor der Benutzung von phpMussel deaktivieren oder sich andere
+ Alternativen überlegen.
 
  Diese Informationen wurden zuletzt am 2015.05.28 aktualisiert und gelten für
  alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen
@@ -1514,5 +1538,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 2015.05.28
+Zuletzt aktualisiert: 2015.06.04
 EOF

@@ -26,7 +26,7 @@
  naar uw systeem waar het script is aangesloten, gebaseerd op ClamAV
  handtekeningen en anderen.
 
- PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPL V.2 van Caleb M (Maikuolan).
+ PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPLv2 van Caleb M (Maikuolan).
 
  Dit script is vrije software; je kan herdistribueren en/of wijzigen dit onder
  de voorwaarden van de GNU General Public License zoals gepubliceerd door de
@@ -94,8 +94,8 @@
     geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
  4) Upload de inhoud (phpMussel en zijn bestanden) naar de bestandsmap die u
-    zou op eerder besloten (je nodig niet de readme.XX.txt of change_log.txt
-    bestanden opgenomen, maar, meestal, je moeten uploaden alles).
+    zou op eerder besloten (je nodig niet de *.txt bestanden opgenomen, maar
+    meestal, je moeten uploaden alles).
 
  5) CMHOD de bestandsmap "vault" naar "777". De belangrijkste bestandsmap
     opslaan van de inhoud (degene die je eerder koos), gewoonlijk, kan worden
@@ -287,11 +287,11 @@
  be redundant. However, that said, having a separate function to match against
  these signatures could prove to be extremely useful for some, especially for
  those whose CMS or webfront system is somehow tied into their email system and
- for those of whom parse their emails via a php script of which they could
- potentially hook into phpMussel. Configuration for this function, like all
- others, is controlled via the phpmussel.ini file. To use this function (you'll
- need to do your own implementation), in a php file that is hooked to
- phpMussel, use the following function in your code:
+ for those parsing their emails via a php script that they could potentially
+ hook into phpMussel. Configuration for this function, like all others, is
+ controlled via the "phpmussel.ini" file. To use this function (you'll need to
+ do your own implementation), in a php file that is hooked to phpMussel, use
+ the following function in your code:
 
  phpMussel_mail($body);
 
@@ -539,14 +539,14 @@
     A record of changes made to the script between different
     versions (not required for proper function of script).
     ~
- /_docs/readme.DE.txt (Documentation, Included); DEUTSCH
- /_docs/readme.EN.txt (Documentation, Included); ENGLISH
- /_docs/readme.ES.txt (Documentation, Included); ESPAÑOL
- /_docs/readme.FR.txt (Documentation, Included); FRANÇAIS
- /_docs/readme.ID.txt (Documentation, Included); BAHASA INDONESIA
- /_docs/readme.IT.txt (Documentation, Included); ITALIANO
- /_docs/readme.NL.txt (Documentation, Included); NEDERLANDSE
- /_docs/readme.PT.txt (Documentation, Included); PORTUGUÊS
+ /_docs/readme.de.txt (Documentation, Included); DEUTSCH
+ /_docs/readme.en.txt (Documentation, Included); ENGLISH
+ /_docs/readme.es.txt (Documentation, Included); ESPAÑOL
+ /_docs/readme.fr.txt (Documentation, Included); FRANÇAIS
+ /_docs/readme.id.txt (Documentation, Included); BAHASA INDONESIA
+ /_docs/readme.it.txt (Documentation, Included); ITALIANO
+ /_docs/readme.nl.txt (Documentation, Included); NEDERLANDSE
+ /_docs/readme.pt.txt (Documentation, Included); PORTUGUÊS
     The README files (for example; the file you're currently reading).
     ~
  /_docs/signatures_tally.txt (Documentation, Included)
@@ -605,6 +605,27 @@
     ~
  /vault/ (Directory)
     Vault directory (contains various files).
+    ~
+ /vault/lang/ (Directory)
+    Contains phpMussel language data.
+    ~
+ /vault/lang/.htaccess (Other, Included)
+    A hypertext access file (in this instance, to protect sensitive files
+    belonging to the script from being accessed by non-authorised sources).
+    ~
+ /vault/lang/lang.de.inc (Script, Included); DEUTSCH
+ /vault/lang/lang.en.inc (Script, Included); ENGLISH
+ /vault/lang/lang.es.inc (Script, Included); ESPAÑOL
+ /vault/lang/lang.fr.inc (Script, Included); FRANÇAIS
+ /vault/lang/lang.id.inc (Script, Included); BAHASA INDONESIA
+ /vault/lang/lang.it.inc (Script, Included); ITALIANO
+ /vault/lang/lang.ja.inc (Script, Included); 日本語
+ /vault/lang/lang.nl.inc (Script, Included); NEDERLANDSE
+ /vault/lang/lang.pt.inc (Script, Included); PORTUGUÊS
+ /vault/lang/lang.ru.inc (Script, Included); РУССКИЙ
+ /vault/lang/lang.zh.inc (Script, Included); 中文（简体）
+ /vault/lang/lang.zh-tw.inc (Script, Included); 中文（傳統）
+    Language data files for phpMussel.
     ~
  /vault/quarantine/ (Directory)
     Quarantine directory (contains quarantined files).
@@ -713,7 +734,7 @@
     Can remove if the option is disabled.
     ~
  /vault/lang.inc (Script, Included)
-    phpMussel Language Data; Required for multilingual capabilities.
+    phpMussel language data.
     ~
  /vault/macho_clamav_regex.cvd (Signatures, Included)
  /vault/macho_clamav_regex.map (Signatures, Included)
@@ -1494,5 +1515,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 28 Mei 2015 (2015.05.28).
+Laatste Bijgewerkt: 4 Juni 2015 (2015.06.04).
 EOF

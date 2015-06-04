@@ -26,7 +26,7 @@
  file-file diupload ke system Anda dimana saja skrip di kaitkan, berdasarkan
  tanda tangan dari ClamAV dan lain-lain.
 
- PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPL V.2 oleh Caleb M (Maikuolan).
+ PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPLv2 oleh Caleb M (Maikuolan).
 
  Skrip ini adalah perangkat lunak gratis; Anda dapat mendistribusikan kembali
  dan/atau memodifikasinya dalam batasan dari GNU General Public License,
@@ -95,9 +95,8 @@
     setup tertentu. Simpan data, tutup.
 
  4) Upload isi (phpMussel dan data-datanya) ke direktori yang telah kamu
-    putuskan sebelumnya (anda tidak memerlukan data readme.XX.txt atau
-    change_log.txt yang termasuk tapi kebanyakan Anda harus mengupload
-    semuanya).
+    putuskan sebelumnya (Anda tidak memerlukan data-data *.txt, tapi kebanyakan
+    Anda harus mengupload semuanya).
 
  5) Gunakan perinta CHMOD ke direktori "vault" dengan "777". Direktori utama
     menyimpan isinya (yang Anda putuskan sebelumnya), umumnya dapat di biarkan
@@ -229,7 +228,7 @@
    target atau array data target dan/atau direktori target.
  - $output_type adalah sebuah integer, mengindikasikan format dimana hasil dari
    memindai yang dikembalikan (sebuah hasil dari -2 mengindikasikan bahwa data
-   korup dideteksi selama proses memindai dan proses memindai gagal selesai,
+   korup terdeteksi selama proses memindai dan proses memindai gagal selesai,
    -1 mengindikasikan bawa ekstensi atau addon yang dibutuhkan oleh php untuk
    mengeksekusi pemindaian hilang dan demikian gagal selesai, 0 mengindikasikan
    bahwa pemindaian target tidak ada dan tidak ada yang dipindai 1
@@ -288,7 +287,7 @@
  webfront yang diikatkan ke system email dan untuk ke mereka yang memparsing
  email mereka melalui skrip php dari mana mereka dapat dengan potensial
  dikaitkan dengan phpMussel. Konfigurasi untuk fungsi ini, seperti yang lain,
- di atur melalui data phpmussel.ini. Untuk menggunakan fungsi ini (Anda akan
+ di atur melalui data "phpmussel.ini". Untuk menggunakan fungsi ini (Anda akan
  memerlukan untuk melakukan implementasi Anda sendiri), di dalam sebuah data
  php yang di kaitkan ke phpMussel, gunakan fungsi ini di dalam kode:
 
@@ -557,14 +556,14 @@
     Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara
     perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
     ~
- /_docs/readme.DE.txt (Dokumentasi, Diikutkan); DEUTSCH
- /_docs/readme.EN.txt (Dokumentasi, Diikutkan); ENGLISH
- /_docs/readme.ES.txt (Dokumentasi, Diikutkan); ESPAÑOL
- /_docs/readme.FR.txt (Dokumentasi, Diikutkan); FRANÇAIS
- /_docs/readme.ID.txt (Dokumentasi, Diikutkan); BAHASA INDONESIA
- /_docs/readme.IT.txt (Dokumentasi, Diikutkan); ITALIANO
- /_docs/readme.NL.txt (Dokumentasi, Diikutkan); NEDERLANDSE
- /_docs/readme.PT.txt (Dokumentasi, Diikutkan); PORTUGUÊS
+ /_docs/readme.de.txt (Dokumentasi, Diikutkan); DEUTSCH
+ /_docs/readme.en.txt (Dokumentasi, Diikutkan); ENGLISH
+ /_docs/readme.es.txt (Dokumentasi, Diikutkan); ESPAÑOL
+ /_docs/readme.fr.txt (Dokumentasi, Diikutkan); FRANÇAIS
+ /_docs/readme.id.txt (Dokumentasi, Diikutkan); BAHASA INDONESIA
+ /_docs/readme.it.txt (Dokumentasi, Diikutkan); ITALIANO
+ /_docs/readme.nl.txt (Dokumentasi, Diikutkan); NEDERLANDSE
+ /_docs/readme.pt.txt (Dokumentasi, Diikutkan); PORTUGUÊS
     File-file baca saya (misalnya; file yang Anda sedang membaca).
     ~
  /_docs/signatures_tally.txt (Dokumentasi, Diikutkan)
@@ -623,6 +622,27 @@
     ~
  /vault/ (Direktori)
     Direktori Vault (berisikan bermacam file).
+    ~
+ /vault/lang/ (Direktori)
+    Berisikan data bahasa.
+    ~
+ /vault/lang/.htaccess (Lainnya, Diikutkan)
+    Sebuah data akses hypertext (pada instansi ini, untuk melindungi data-data
+    sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+    ~
+ /vault/lang/lang.de.inc (Skrip, Diikutkan); DEUTSCH
+ /vault/lang/lang.en.inc (Skrip, Diikutkan); ENGLISH
+ /vault/lang/lang.es.inc (Skrip, Diikutkan); ESPAÑOL
+ /vault/lang/lang.fr.inc (Skrip, Diikutkan); FRANÇAIS
+ /vault/lang/lang.id.inc (Skrip, Diikutkan); BAHASA INDONESIA
+ /vault/lang/lang.it.inc (Skrip, Diikutkan); ITALIANO
+ /vault/lang/lang.ja.inc (Skrip, Diikutkan); 日本語
+ /vault/lang/lang.nl.inc (Skrip, Diikutkan); NEDERLANDSE
+ /vault/lang/lang.pt.inc (Skrip, Diikutkan); PORTUGUÊS
+ /vault/lang/lang.ru.inc (Skrip, Diikutkan); РУССКИЙ
+ /vault/lang/lang.zh.inc (Skrip, Diikutkan); 中文（简体）
+ /vault/lang/lang.zh-tw.inc (Skrip, Diikutkan); 中文（傳統）
+    Data bahasa untuk phpMussel.
     ~
  /vault/quarantine/ (Direktori)
     Direktori Karantina (berisikan file yang dikarantina).
@@ -732,7 +752,7 @@
     diaktifkan. Dapat menghapus jika opsi dinonaktifkan.
     ~
  /vault/lang.inc (Skrip, Diikutkan)
-    phpMussel Bahasa Data; Diharuskan untuk kemampuan multibahasa.
+    phpMussel data bahasa.
     ~
  /vault/macho_clamav_regex.cvd (Tanda tangan, Diikutkan)
  /vault/macho_clamav_regex.map (Tanda tangan, Diikutkan)
@@ -1550,5 +1570,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 28 Mei 2015 (2015.05.28).
+Terakhir Diperbarui: 4 Juni 2015 (2015.06.04).
 EOF

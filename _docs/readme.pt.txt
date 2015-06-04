@@ -26,7 +26,7 @@
  sistema onde quer que o script é enganchado, baseado no assinaturas do
  ClamAV e outros.
 
- PHPMUSSEL COPYRIGHT 2013 e além GNU/GPL V.2 através do Caleb M (Maikuolan).
+ PHPMUSSEL COPYRIGHT 2013 e além GNU/GPLv2 através do Caleb M (Maikuolan).
 
  Este script é livre software; você pode redistribuí-lo e/ou modificá-lo de
  acordo com os termos da GNU General Public License como publicada pela Free
@@ -94,9 +94,8 @@
     particular configuração. Salve o arquivo, feche.
 
  4) Carregar os conteúdos (phpMussel e seus arquivos) para o diretório que você
-    tinha decidido anteriormente (você não precisa o readme.XX.txt ou
-    change_log.txt arquivos incluído, mas principalmente, você deve carregar
-    tudo).
+    tinha decidido anteriormente (você não requerer os *.txt arquivos
+    incluídos, mas principalmente, você deve carregar tudo).
 
  5) CMHOD o "vault" diretório para "777". O principal diretório armazenar o
     conteúdo (o que você escolheu anteriormente), geralmente, pode ser deixado
@@ -227,19 +226,19 @@
  Onde:
  - $what_to_scan é uma string ou um array, apontando para um alvo arquivo, um
    alvo diretório ou um array de alvo arquivos e/ou alvo diretórios.
- - $output_type é um integer, indicando o formato no qual os resultados da
-   análise são regresso se. Um valor de 0 instrui a função para retornar
-   resultados como um integer (um resultado retornado de -2 indica que corrupto
-   dados foi detectado durante a análise, e portanto, a análise não foi
-   concluída, -1 indica que extensões ou complementos necessários pelo php para
-   executar a análise estavam faltando, e portanto, a análise não foi
-   concluída, 0 indica que o alvo de análise não existe, e portanto, havia nada
-   para analisar, 1 indica que o alvo foi analisado e não problemas foram
-   detectados, e 2 indica que o alvo foi analisado e problemas foram
-   detectados). Um valor de 1 instrui a função para retornar resultados como
-   humano legível texto. Um valor de 2 instrui a função para retornar
-   resultados como humano legível texto e para exportar os resultados para um
-   global variável. Esta variável é opcional, padronizando a 0.
+ - $output_type é um integer, indicando o formato que os resultados da análise
+   são regresso se. Um valor de 0 instrui a função para retornar resultados
+   como um integer (um resultado retornado de -2 indica que corrupto dados foi
+   detectado durante a análise, e portanto, a análise não foi concluída, -1
+   indica que extensões ou complementos necessários pelo php para executar a
+   análise estavam faltando, e portanto, a análise não foi concluída, 0 indica
+   que o alvo de análise não existe, e portanto, havia nada para analisar, 1
+   indica que o alvo foi analisado e não problemas foram detectados, e 2 indica
+   que o alvo foi analisado e problemas foram detectados). Um valor de 1
+   instrui a função para retornar resultados como humano legível texto. Um
+   valor de 2 instrui a função para retornar resultados como humano legível
+   texto e para exportar os resultados para um global variável. Esta variável é
+   opcional, padronizando a 0.
  - $output_flatness é um integer, indicando se a permitir que os resultados
    sejam retornados como uma array ou não. Normalmente, se o alvo de análise
    continha vários itens (tal como se um diretório ou array) os resultados
@@ -289,7 +288,7 @@
  para aqueles cuja CMS ou webfront sistema está de alguma modo enganchado em
  seu e-mail sistema e para aqueles de quem analisar seus e-mails através de um
  php script de que eles poderiam engancho para phpMussel. Configuração para
- esta função, como todos os outros, é controlado através do phpmussel.ini
+ esta função, como todos os outros, é controlado através do "phpmussel.ini"
  arquivo. Para utilizar esta função (você vai precisar para fazer a sua
  própria implementação) em um php arquivo que está enganchado ao phpMussel,
  usar a seguinte função no seu código:
@@ -548,14 +547,14 @@
     Um registro das mudanças feitas para o script entre o diferentes versões
     (não é necessário para o correto funcionamento do script).
     ~
- /_docs/readme.DE.txt (Documentação, Incluído); DEUTSCH
- /_docs/readme.EN.txt (Documentação, Incluído); ENGLISH
- /_docs/readme.ES.txt (Documentação, Incluído); ESPAÑOL
- /_docs/readme.FR.txt (Documentação, Incluído); FRANÇAIS
- /_docs/readme.ID.txt (Documentação, Incluído); BAHASA INDONESIA
- /_docs/readme.IT.txt (Documentação, Incluído); ITALIANO
- /_docs/readme.NL.txt (Documentação, Incluído); NEDERLANDSE
- /_docs/readme.PT.txt (Documentação, Incluído); PORTUGUÊS
+ /_docs/readme.de.txt (Documentação, Incluído); DEUTSCH
+ /_docs/readme.en.txt (Documentação, Incluído); ENGLISH
+ /_docs/readme.es.txt (Documentação, Incluído); ESPAÑOL
+ /_docs/readme.fr.txt (Documentação, Incluído); FRANÇAIS
+ /_docs/readme.id.txt (Documentação, Incluído); BAHASA INDONESIA
+ /_docs/readme.it.txt (Documentação, Incluído); ITALIANO
+ /_docs/readme.nl.txt (Documentação, Incluído); NEDERLANDSE
+ /_docs/readme.pt.txt (Documentação, Incluído); PORTUGUÊS
     O README arquivos (por exemplo; o arquivo que você está lendo atualmente).
     ~
  /_docs/signatures_tally.txt (Documentação, Incluído)
@@ -614,6 +613,28 @@
     ~
  /vault/ (Diretório)
     Vault diretório (contém vários arquivos).
+    ~
+ /vault/lang/ (Diretório)
+    Contém linguagem dados.
+    ~
+ /vault/lang/.htaccess (Outro, Incluído)
+    Um hipertexto acesso arquivo (neste caso, para proteger confidenciais
+    arquivos pertencentes ao script contra serem acessados por fontes não
+    autorizadas).
+    ~
+ /vault/lang/lang.de.inc (Script, Incluído); DEUTSCH
+ /vault/lang/lang.en.inc (Script, Incluído); ENGLISH
+ /vault/lang/lang.es.inc (Script, Incluído); ESPAÑOL
+ /vault/lang/lang.fr.inc (Script, Incluído); FRANÇAIS
+ /vault/lang/lang.id.inc (Script, Incluído); BAHASA INDONESIA
+ /vault/lang/lang.it.inc (Script, Incluído); ITALIANO
+ /vault/lang/lang.ja.inc (Script, Incluído); 日本語
+ /vault/lang/lang.nl.inc (Script, Incluído); NEDERLANDSE
+ /vault/lang/lang.pt.inc (Script, Incluído); PORTUGUÊS
+ /vault/lang/lang.ru.inc (Script, Incluído); РУССКИЙ
+ /vault/lang/lang.zh.inc (Script, Incluído); 中文（简体）
+ /vault/lang/lang.zh-tw.inc (Script, Incluído); 中文（傳統）
+    Linguagem arquivos para phpMussel.
     ~
  /vault/quarantine/ (Diretório)
     Quarentena diretório (contém os arquivos em quarentena).
@@ -724,7 +745,7 @@
     ativado. Pode remover se a opção é desativado.
     ~
  /vault/lang.inc (Script, Incluído)
-    phpMussel Linguagem Dados; Necessário por multilingues capacidades.
+    phpMussel linguagem dados.
     ~
  /vault/macho_clamav_regex.cvd (Assinaturas, Incluídos)
  /vault/macho_clamav_regex.map (Assinaturas, Incluídos)
@@ -1546,5 +1567,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 28 Maio 2015 (2015.05.28).
+Última Atualização: 4 Junho 2015 (2015.06.04).
 EOF
