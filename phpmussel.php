@@ -7,7 +7,7 @@
  viruses, malware and other threats within files uploaded to your system
  wherever the script is hooked, based on the signatures of ClamAV and others.
 
- PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan).
+ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
 
  This script is free software; you can redistribute it and/or modify it under
  the terms of the GNU General Public License as published by the Free Software
@@ -39,7 +39,8 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Loader v1.1c.1a (25th May 2015)
+ This File: phpMussel Loader File v1.1c.1b (1st June 2015).
+ <%phpMussel%/phpmussel.php>
 
                                      ~ ~ ~
  Please refer to the README documentation for installation instructions and for
