@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Russian/Русский Language Data (4th June 2015).
+ This File: phpMussel Russian/Русский Language Data (6th June 2015).
  <%phpMussel%/vault/lang/lang.ru.inc> **INCOMPLETE!!!**
 
 */
@@ -35,7 +35,7 @@ $MusselConfig['lang']['denied_reason']='Your upload was blocked for the reasons 
 $MusselConfig['lang']['detected']='Обнаружено {vn}';
 $MusselConfig['lang']['detected_control_characters']='Обнаружено Управления Символов';
 $MusselConfig['lang']['failed_to_access']='Failed to access ';
-$MusselConfig['lang']['file']='Файл';
+$MusselConfig['lang']['file']='файла';
 $MusselConfig['lang']['filesize_limit_exceeded']='Filesize limit exceeded';
 $MusselConfig['lang']['filetype_blacklisted']='Filetype blacklisted';
 $MusselConfig['lang']['finished']='Завершен';
@@ -62,19 +62,19 @@ $MusselConfig['lang']['scan_missing_filename']='Missing filename';
 $MusselConfig['lang']['scan_not_archive']='Failed (empty or not an archive)!';
 $MusselConfig['lang']['scan_no_problems_found']='Нет проблемы найден.';
 $MusselConfig['lang']['scan_reading']='Reading';
-$MusselConfig['lang']['scan_signature_file_corrupted']='Signature file corrupted';
-$MusselConfig['lang']['scan_signature_file_missing']='Signature file missing';
-$MusselConfig['lang']['scan_unauthorised_upload']='Unauthorised file upload manipulation detected';
-$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Unauthorised file upload manipulation or misconfiguration detected! ';
+$MusselConfig['lang']['scan_signature_file_corrupted']='Поврежден подпись файла';
+$MusselConfig['lang']['scan_signature_file_missing']='Отсутствует подпись файла';
+$MusselConfig['lang']['scan_unauthorised_upload']='Несанкционированное файла загрузить манипуляции обнаружены';
+$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Несанкционированное файла загрузить манипуляции или неправильная конфигурация обнаружены! ';
 $MusselConfig['lang']['started']='Начал';
-$MusselConfig['lang']['update_']='phpMussel will now attempt to update itself.';
+$MusselConfig['lang']['update_']='Теперь phpMussel будет пытаться обновить себя.';
 $MusselConfig['lang']['update_available']='Обновление сценария доступный.';
 $MusselConfig['lang']['update_complete']='Проверить обновления успешно завершена.';
 $MusselConfig['lang']['update_created']='создан';
 $MusselConfig['lang']['update_deleted']='удален';
-$MusselConfig['lang']['update_err1']='Failed to update: \'update.dat\' missing. Reinstall or update manually.';
-$MusselConfig['lang']['update_err2']='Failed to update: \'update.dat\' does not contain any valid update sources. Please update manually.';
-$MusselConfig['lang']['update_err3']='Possible hack or forgery detected in the update instructions supplied by the update source; Source may possibly be compromised. Please notify the script author. Updating manually is recommended.';
+$MusselConfig['lang']['update_err1']='Не удалось обновить: Отсутствует \'update.dat\'! Переустановите или обновление вручную.';
+$MusselConfig['lang']['update_err2']='Не удалось обновить: \'update.dat\' не содержит действительных обновлений источника. Пожалуйста обновление вручную.';
+$MusselConfig['lang']['update_err3']='Потенциал хака или подделка обнаружены в инструкции по обновлению поставляется с источника обновлений; Источник возможно нарушена. Пожалуйста, сообщите автору сценария. Обновление вручную рекомендуется.';
 $MusselConfig['lang']['update_err4']='Отсутствует хэш!';
 $MusselConfig['lang']['update_err5']='Отсутствует данные!';
 $MusselConfig['lang']['update_err6']='Неправильный данные!';

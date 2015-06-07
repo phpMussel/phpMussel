@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.6i.0e (4th June 2015) Core Script.
+ This File: phpMussel v0.6i.0f (6th June 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -620,6 +620,7 @@ if(!function_exists('vn_shorthand'))
 			else if($n[1]===9)$out.='O97M.';
 			else if($n[1]===10)$out.='ASCII.';
 			else if($n[1]===11)$out.='Unix.';
+			else if($n[1]===12)$out.='Python.';
 			}
 		$n=split_nibble($vn[3]);
 		if($n[0]===1)
