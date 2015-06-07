@@ -7,7 +7,7 @@
  viruses, malware and other threats within files uploaded to your system
  wherever the script is hooked, based on the signatures of ClamAV and others.
 
- PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPL V.2 by Caleb M (Maikuolan).
+ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
 
  This script is free software; you can redistribute it and/or modify it under
  the terms of the GNU General Public License as published by the Free Software
@@ -39,7 +39,8 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.6i.0b (24th May 2015) Update Script.
+ This File: phpMussel v0.6i.0f (7th June 2015) Update Script.
+ <%phpMussel%/vault/update.inc>
 
                                      ~ ~ ~
  Please refer to the README documentation for installation instructions and for
@@ -71,6 +72,22 @@ function ReadUpdateFile($f,$s=0)
 		fclose($fh);
 		}
 	return (!empty($d))?$d:'';
+	}
+if(!function_exists('phpMusselV'))
+	{
+	function phpMusselV($v,$b)
+		{
+		if(!is_array($v)||!$b)return '';
+		$c=count($v);
+		reset($v);
+		for($i=0;$i<$c;$i++)
+			{
+			$k=key($v);
+			$b=str_replace('{'.$k.'}',$v[$k],$b);
+			next($v);
+			}
+		return $b;
+		}
 	}
 $is_cli=@(isset($is_cli))?$is_cli:false;
 while(true)
@@ -134,6 +151,12 @@ while(true)
 	$phpmusselversion['request_content'].='lang.inc%3A'.md5(ReadUpdateFile($vault.'lang.inc')).'%3B';
 	$phpmusselversion['request_content'].='update.inc%3A'.md5(ReadUpdateFile($vault.'update.inc')).'%3B';
 	$phpmusselversion['request_content'].='switch.dat%3A'.md5(ReadUpdateFile($vault.'switch.dat')).'%3B';
+	$phpmusselversion['langCodes']=array('de','en','es','fr','id','it','ja','nl','pt','ru','zh-tw','zh');
+	$c=count($phpmusselversion['langCodes']);
+	for($i=0;$i<$c;$i++)
+		{
+		$phpmusselversion['request_content'].='lang/lang.'.$phpmusselversion['langCodes'][$c].'.inc%3A'.md5(ReadUpdateFile($vault.'lang/lang.'.$phpmusselversion['langCodes'][$c].'.inc')).'%3B';
+		}
 	$SigFileSet=array('ascii_clamav'=>array('ascii_clamav_regex.cvd','ascii_clamav_regex.map','ascii_clamav_standard.cvd','ascii_clamav_standard.map'),'ascii_mussel'=>array('ascii_mussel_regex.cvd','ascii_mussel_standard.cvd'),'coex_clamav'=>array('coex_clamav.cvd'),'coex_mussel'=>array('coex_mussel.cvd'),'elf_clamav'=>array('elf_clamav_regex.cvd','elf_clamav_regex.map','elf_clamav_standard.cvd','elf_clamav_standard.map'),'elf_mussel'=>array('elf_mussel_regex.cvd','elf_mussel_standard.cvd'),'exe_clamav'=>array('exe_clamav_regex.cvd','exe_clamav_regex.map','exe_clamav_standard.cvd','exe_clamav_standard.map'),'exe_mussel'=>array('exe_mussel_regex.cvd','exe_mussel_standard.cvd'),'filenames_clamav'=>array('filenames_clamav.cvd'),'filenames_mussel'=>array('filenames_mussel.cvd'),'general_clamav'=>array('general_clamav_regex.cvd','general_clamav_regex.map','general_clamav_standard.cvd','general_clamav_standard.map'),'general_mussel'=>array('general_mussel_regex.cvd','general_mussel_standard.cvd'),'graphics_clamav'=>array('graphics_clamav_regex.cvd','graphics_clamav_regex.map','graphics_clamav_standard.cvd','graphics_clamav_standard.map'),'graphics_mussel'=>array('graphics_mussel_regex.cvd','graphics_mussel_standard.cvd'),'html_clamav'=>array('html_clamav_regex.cvd','html_clamav_regex.map','html_clamav_standard.cvd','html_clamav_standard.map'),'html_mussel'=>array('html_mussel_regex.cvd','html_mussel_standard.cvd'),'macho_clamav'=>array('macho_clamav_regex.cvd','macho_clamav_regex.map','macho_clamav_standard.cvd','macho_clamav_standard.map'),'macho_mussel'=>array('macho_mussel_regex.cvd','macho_mussel_standard.cvd'),'mail_clamav'=>array('mail_clamav_regex.cvd','mail_clamav_regex.map','mail_clamav_standard.cvd','mail_clamav_standard.map'),'mail_mussel'=>array('mail_mussel_regex.cvd','mail_mussel_standard.cvd','mail_mussel_standard.map'),'md5_clamav'=>array('md5_clamav.cvd'),'md5_mussel'=>array('md5_mussel.cvd'),'metadata_clamav'=>array('metadata_clamav.cvd'),'metadata_mussel'=>array('metadata_mussel.cvd'),'ole_clamav'=>array('ole_clamav_regex.cvd','ole_clamav_regex.map','ole_clamav_standard.cvd','ole_clamav_standard.map'),'ole_mussel'=>array('ole_mussel_regex.cvd','ole_mussel_standard.cvd'),'pdf_clamav'=>array('pdf_clamav_regex.cvd','pdf_clamav_regex.map','pdf_clamav_standard.cvd','pdf_clamav_standard.map'),'pdf_mussel'=>array('pdf_mussel_regex.cvd','pdf_mussel_standard.cvd'),'pe_clamav'=>array('pe_clamav.cvd'),'pe_mussel'=>array('pe_mussel.cvd'),'swf_clamav'=>array('swf_clamav_regex.cvd','swf_clamav_regex.map','swf_clamav_standard.cvd','swf_clamav_standard.map'),'swf_mussel'=>array('swf_mussel_regex.cvd','swf_mussel_standard.cvd'),'whitelist_clamav'=>array('whitelist_clamav.cvd'),'whitelist_mussel'=>array('whitelist_mussel.cvd'),'xmlxdp_clamav'=>array('xmpxdp_clamav_regex.cvd','xmpxdp_clamav_regex.map','xmpxdp_clamav_standard.cvd','xmpxdp_clamav_standard.map'),'xmlxdp_mussel'=>array('xmpxdp_mussel_regex.cvd','xmpxdp_mussel_standard.cvd'));
 	$c=count($SigFileSet);
 	while($c>0)
@@ -229,25 +252,25 @@ while(true)
 				if(file_exists($vault.$phpmusselversion['remote_update_instructions'][$i][1]))
 					{
 					@unlink($vault.$phpmusselversion['remote_update_instructions'][$i][1]);
-					echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.$MusselConfig['lang']['update_deleted'].' '.$MusselConfig['lang']['update_successfully'].'. ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
+					echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$MusselConfig['lang']['update_deleted'].$MusselConfig['lang']['update_successfully']),$MusselConfig['lang']['update_was']).'. ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 					}
 				}
 			else if($phpmusselversion['remote_update_instructions'][$i][0]=='patch'||$phpmusselversion['remote_update_instructions'][$i][0]=='patchgz')
 				{
 				$phpmusselversion['adj_word']=(file_exists($vault.$phpmusselversion['remote_update_instructions'][$i][1]))?$MusselConfig['lang']['update_patched']:$MusselConfig['lang']['update_created'];
-				if(!isset($phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]]))echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.$MusselConfig['lang']['update_not'].' '.$phpmusselversion['adj_word'].': '.$MusselConfig['lang']['update_err4'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
-				else if(!isset($phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]))echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.$MusselConfig['lang']['update_not'].' '.$phpmusselversion['adj_word'].': '.$MusselConfig['lang']['update_err5'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
-				else if(!$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]])echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.$MusselConfig['lang']['update_not'].' '.$phpmusselversion['adj_word'].': '.$MusselConfig['lang']['update_err6'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
+				if(!isset($phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]]))echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err4'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
+				else if(!isset($phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]))echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err5'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
+				else if(!$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]])echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err6'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 				else
 					{
 					if($phpmusselversion['remote_update_instructions'][$i][0]=='patchgz')$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]=@gzinflate($phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]);
-					if(@hash('crc32b',$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]])!=$phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]])echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.$MusselConfig['lang']['update_not'].' '.$phpmusselversion['adj_word'].': '.$MusselConfig['lang']['update_err7'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
+					if(@hash('crc32b',$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]])!=$phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]])echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err7'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 					else
 						{
 						$phpmusselversion['df']=fopen($vault.$phpmusselversion['remote_update_instructions'][$i][1],'w');
 						fwrite($phpmusselversion['df'],$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]);
 						fclose($phpmusselversion['df']);
-						echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.$phpmusselversion['adj_word'].' '.$MusselConfig['lang']['update_successfully'].'. ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
+						echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$phpmusselversion['adj_word'].$MusselConfig['lang']['update_successfully']),$MusselConfig['lang']['update_was']).'. ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
 						}
 					}
 				}
