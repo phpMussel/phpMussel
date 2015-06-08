@@ -14,9 +14,9 @@ $md5:0df9eed1da986b5ffd2d9ea4c0a7dbe9;$str_len:87875;FD:ffd8ff:A:3;0/Indonesia
 $md5:90b93d26ac3670c333b8d5da7806f7ba;$str_len:3056;$fourcc:47494638;0/AliHAwleRy
 === Misc. Theoretical and Chameleon ===
 $fourcc:4c000000;FS-MIN:8192;5LNK-00
-$phase:archive;FD-RX:0{1024,}:A;0NullBomb-00
-$phase:archive;FD-RX:a{1024,}:A;0NullBomb-01
-$phase:archive;FD-RX:f{1024,}:A;0NullBomb-02
+$phase:archive;FD-RX:0{1024}:A;0NullBomb-00
+$phase:archive;FD-RX:a{1024}:A;0NullBomb-01
+$phase:archive;FD-RX:f{1024}:A;0NullBomb-02
 $xt:avi;FD-RX:(504b|526172|4d5a):A:3;5AVI-00
 $xt:divx;FD-RX:(504b|526172|4d5a):A:3;5DIVX-00
 $xt:lnk;FD-RX:(504b|526172|4d5a):A:3;5LNK-02
@@ -1705,7 +1705,7 @@ $xts:php*;FD-RX:6563686f202253514c2055504441544544213c62723e223b;FD-NORM-RX:636f
 $is_pe:1;$NumOfSections:0;4Sectionless_PE
 $is_pe:1;FD-RX:[46]600[46]900[57]200[46]500[57]700[46]100[46]c00[46]c;META:\x3bSectionName\x3a\x2etext\x3bVirtualSize\x3a[0-9]{1,9}\x3bVirtualAddress\x3a.{1,9}\x3bSizeOfRawData\x3a(22016|23552|24576|27648)\x3b;META:\x3bSectionName\x3a\x2ersrc\x3bVirtualSize\x3a[0-9]{1,9}\x3bVirtualAddress\x3a.{1,9}\x3bSizeOfRawData\x3a(1024)\x3b;4Bladabindi-00.A
 $is_pe:1;FD-RX:[46]600[46]900[57]200[46]500[57]700[46]100[46]c00[46]c;META:\x3bSectionName\x3a\x2etext\x3bVirtualSize\x3a[0-9]{1,9}\x3bVirtualAddress\x3a.{1,9}\x3bSizeOfRawData\x3a(27136)\x3b;META:\x3bSectionName\x3a\x2ersrc\x3bVirtualSize\x3a[0-9]{1,9}\x3bVirtualAddress\x3a.{1,9}\x3bSizeOfRawData\x3a(2048)\x3b;4Bladabindi-00.B
-$is_pe:1;META:\x3b(SectionName\x3a\x3bVirtualSize\x3a[0-9]{1,9}\x3bVirtualAddress\x3a.{1,9}\x3bSizeOfRawData\x3a[0-9]{1,9}\x3bMD5\x3a.{32}\x3b){4,};4Obfuscated-00
+$is_pe:1;META:\x3b(SectionName\x3a\x3bVirtualSize\x3a[0-9]{1,9}\x3bVirtualAddress\x3a.{1,9}\x3bSizeOfRawData\x3a[0-9]{1,9}\x3bMD5\x3a.{32}\x3b){4};4Obfuscated-00
 $is_pe:1;META:\x3bSectionName\x3a.?av[cp]\x3b;”*Generic-01
 $is_pe:1;META:\x3bSectionName\x3a.?nsp[0-9];”*NSPack-00
 $is_pe:1;META:\x3bSectionName\x3a.?UPX[0-9\x21]?;”*UPX-00

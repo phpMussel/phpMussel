@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel German/Deutsch Language Data (4th June 2015).
+ This File: phpMussel German/Deutsch Language Data (8th June 2015).
  <%phpMussel%/vault/lang/lang.de.inc>
 
 */
