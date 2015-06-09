@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.6i.0f (6th June 2015) Core Script.
+ This File: phpMussel v0.6i.0g (9th June 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -53,7 +53,7 @@
 
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
-$phpmusselversion='phpMussel v0.6i.0e';
+$phpmusselversion='phpMussel v0.6i.0g';
 $linebreak=chr(10);
 if(!isset($MusselConfig['general']['ipaddr']))$MusselConfig['general']['ipaddr']='REMOTE_ADDR';
 if(!isset($_SERVER[$MusselConfig['general']['ipaddr']]))$_SERVER[$MusselConfig['general']['ipaddr']]='';
@@ -621,6 +621,9 @@ if(!function_exists('vn_shorthand'))
 			else if($n[1]===10)$out.='ASCII.';
 			else if($n[1]===11)$out.='Unix.';
 			else if($n[1]===12)$out.='Python.';
+			else if($n[1]===13)$out.='Perl.';
+			else if($n[1]===14)$out.='Ruby.';
+			else if($n[1]===15)$out.='INF.';
 			}
 		$n=split_nibble($vn[3]);
 		if($n[0]===1)

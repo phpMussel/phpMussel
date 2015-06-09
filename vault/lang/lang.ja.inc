@@ -14,18 +14,18 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Japanese/日本語 Language Data (7th June 2015).
- <%phpMussel%/vault/lang/lang.ja.inc> **INCOMPLETE!!!**
+ This File: phpMussel Japanese/日本語 Language Data (9th June 2015).
+ <%phpMussel%/vault/lang/lang.ja.inc>
 
 */
 
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
-$MusselConfig['lang']['cli_commands']=" q\n - Quit CLI.\n - Aliases: quit, exit.\n md5_file\n - Generate MD5 signatures from files [Syntax: md5_file filename].\n - Alias: m.\n md5\n - Generate MD5 signature from string [Syntax: md5 string].\n hex_encode\n - Convert binary string to hexadecimal [Syntax: hex_encode string].\n - Alias: x.\n hex_decode\n - Convert hexadecimal to binary string [Syntax: hex_decode string].\n base64_encode\n - Convert binary string to base64 string [Syntax: base64_encode string].\n - Alias: b.\n base64_decode\n - Convert base64 string to binary string [Syntax: base64_decode string].\n scan\n - Scan file or directory [Syntax: scan filename].\n - Alias: s.\n update\n - Update phpMussel.\n - Alias: u.\n c\n - Print this command list.\n";
+$MusselConfig['lang']['cli_commands']=" q\n - CLIを終了します。\n - エイリアス： quit, exit.\n md5_file\n - ファイルからMD5署名を生成します 「構文: md5_file ファイル名」。\n - エイリアス： m.\n md5\n - データからのMD5署名を生成します 「構文: md5 データ」。\n hex_encode\n - バイナリデータから16進数データへを変換します 「構文: hex_encode バイナリデータ」。\n - エイリアス： x.\n hex_decode\n - バイナリデータから16進数データへを変換します 「構文: hex_decode 16進数データ」。\n base64_encode\n - バイナリデータからベース64データへを変換します 「構文: base64_encode バイナリデータ」。\n - エイリアス： b.\n base64_decode\n - ベース64データからバイナリデータへを変換します 「構文: base64_decode ベース64データ」。\n scan\n - スキャンファイルまたはディレクトリ 「構文: scan ファイル名」。\n - エイリアス： s.\n update\n - phpMusselアップデートします。\n - エイリアス： u.\n c\n - このコマンドリストを表示します。\n";
 $MusselConfig['lang']['cli_failed_to_complete']='スキャンプロセス完了できませんでした';
 $MusselConfig['lang']['cli_is_not_a']='ファイルまたはディレクトリはありません。';
 $MusselConfig['lang']['cli_ln2']=" phpMusselをご利用いただきありがとうございます！PHPスクリプトがために設計されています：検出のトロイの木馬、ウイルス、マルウェア、やその他の脅威、\n （どこファイルがシステムにアップロードされました、どこスクリプトが接続されました）。 ClamAV署名や他人に基づいています。\n\n PHPMUSSEL 著作権 2013 や以降です、GNU/GPLv2です、カレブによって作成（Maikuolan）。\n\n                                     ~ ~ ~\n\n";
-$MusselConfig['lang']['cli_ln3']=" phpMusselは、現在のCLIモード（コマンドラインインターフェース）で動作しています。\n\n ファイルまたはディレクトリをスキャンするには, 入力「scan」してください。, followed by the name of the file or\n directory that you want phpMussel to scan and press Enter; Type 'c' and press\n Enter for a list of CLI mode commands; Type 'q' and press Enter to quit:";
+$MusselConfig['lang']['cli_ln3']=" phpMusselは、現在のCLIモード（コマンドラインインターフェース）で動作しています。\n\n ファイルまたはディレクトリをスキャンするには、入力「scan」、ファイルまたはディレクトリの名前、その後、Enterキーを押しますしてください；\n CLIモードのリストコマンドについては、入力し「c」とEnterキーを押します； 終了については、入力し「q」とEnterキーを押します：";
 $MusselConfig['lang']['cli_update_restart']=' アップデートが明らかになるためには、再起動phpMusselが必要な場合があります。';
 $MusselConfig['lang']['cli_working']='進行中';
 $MusselConfig['lang']['corrupted']='検出されたPEが破損しました';
