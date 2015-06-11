@@ -24,6 +24,6 @@ I invite anyone interested in contributing to do so; You don't require special s
 - phpMussel won't serve any benefit to people unless they actually use it, and they won't ever use it unless they actually know about it. Getting word out would help (but please don't do anything spammy or unsolicited); Reviews at places where it's listed at, blog posts and word-of-mouth are helpful ways by which this could be done.
 
 **Can you Git?**
-- I'm pretty new to this whole Git thing myself, so even just sending a few pointers my way on how to do it better wouldn't go unappreciated! If I'm doing it wrong, and you tell me, I promise that I won't take offense.
+- I'm pretty new to this whole Git thing myself, so even just sending a few pointers my way on how to do it better wouldn't go unappreciated! If I'm doing it wrong, and you tell me, I promise that I won't take offence.
 
 *This file, "CONTRIBUTING.md", last edited: 11th June 2015 (2015.06.11).*
