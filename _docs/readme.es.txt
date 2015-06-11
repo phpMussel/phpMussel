@@ -1501,8 +1501,8 @@
    - "XML/XDP-Chunk Firmas" (xmlxdp_*). Cotejado contra cualquier XML/XDP
       trozos encontrado dentro de cualquier archivo que no está en la whitelist
       que es destinado para escaneando.
-     (Notar que cualquier de estas firmas pueden estar fácilmente deshabilitado
-      a través de phpmussel.ini).
+     (Notar que cualquier de estas firmas pueden estar deshabilitado fácilmente
+      a través de "phpmussel.ini").
 
                                      ~ ~ ~
 
@@ -1587,5 +1587,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 4 Junio 2015 (2015.06.04).
+Última Actualización: 11 Junio 2015 (2015.06.11).
 EOF

@@ -1415,7 +1415,7 @@
    - "XML/XDP-Chunk Signatures" (xmlxdp_*). Checked against any XML/XDP chunks
       found within any non-whitelisted files targeted for scanning.
      (Note that any of these signatures may be easily disabled via
-      phpmussel.ini).
+      "phpmussel.ini").
 
                                      ~ ~ ~
 
@@ -1500,5 +1500,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 4th June 2015 (2015.06.04).
+Last Updated: 11th June 2015 (2015.06.11).
 EOF

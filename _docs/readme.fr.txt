@@ -1512,7 +1512,8 @@
    - "XML/XDP Morceaux Signatures" (xmlxdp_*). Vérifié contre de chaque XML/XDP
       morceaux trouvés dans tout fichier non listé blanche et ciblée pour
       l'analyse.
-   (Noter que ces signatures peut être facilement désactivé via phpmussel.ini).
+   (Noter que ces signatures peut être désactivé facilement via
+    "phpmussel.ini").
 
                                      ~ ~ ~
 
@@ -1598,5 +1599,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 4 Juin 2015 (2015.06.04).
+Dernière Réactualisé: 11 Juin 2015 (2015.06.11).
 EOF

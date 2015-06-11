@@ -1481,8 +1481,8 @@
    - "XML/XDP-Pedaço Assinaturas" (xmlxdp_*). Verificado contra quaisquer
       XML/XDP pedaços encontrados dentro cada arquivo não no whitelist e alvo
       por analisando.
-     (Notar que qualquer uma destas assinaturas podem ser facilmente desativada
-      através de phpmussel.ini).
+     (Notar que qualquer uma destas assinaturas podem ser desativada facilmente
+      através de "phpmussel.ini").
 
                                      ~ ~ ~
 
@@ -1567,5 +1567,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 4 Junho 2015 (2015.06.04).
+Última Atualização: 11 Junho 2015 (2015.06.11).
 EOF

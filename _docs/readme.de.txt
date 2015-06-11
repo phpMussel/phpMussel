@@ -1452,7 +1452,7 @@
       jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft
       werden soll.
    (Beachten Sie, dass jede dieser Signaturen auf einfache Weise in der
-    phpmussel.ini deaktiviert werden kann).
+    "phpmussel.ini" deaktiviert werden kann).
 
                                      ~ ~ ~
 
@@ -1538,5 +1538,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 4. Juni 2015 (2015.06.04).
+Zuletzt aktualisiert: 11. Juni 2015 (2015.06.11).
 EOF

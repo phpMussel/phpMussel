@@ -1486,8 +1486,8 @@
    - "XML/XDP Pezzo Firme" (xmlxdp_*). Verificato contro qualsiasi XML/XDP
       pezzi trovato all'interno di qualsiasi dei file mirati per scansionare
       quello che non è sulla whitelist.
-     (Si noti che qualsiasi di queste firme possono essere facilmente
-      disattivato tramite phpmussel.ini).
+     (Si noti che qualsiasi di queste firme possono essere disattivato
+      facilmente tramite "phpmussel.ini").
 
                                      ~ ~ ~
 
@@ -1574,5 +1574,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 4 Giugno 2015 (2015.06.04).
+Ultimo Aggiornamento: 11 Giugno 2015 (2015.06.11).
 EOF

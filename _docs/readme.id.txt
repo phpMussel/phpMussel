@@ -263,7 +263,7 @@
 
  Jika Anda menjumpai bilangan positif yang salah, jika Anda menemukan hal baru
  yang harus di blok atau untuk apapun dalam tanda tangan mohon hubungi saya
- mengenainya sehingga saya boleh membuat perubahan yang perlu, dimana, jika
+ mengenainya sehingga saya dapat membuat perubahan yang perlu, dimana, jika
  Anda tidak menghubungi saya saya tidak tahu.
 
  Untuk menonaktifkan tanda tangan-tanda tangan yang dimasukkan dalam phpMussel
@@ -301,7 +301,7 @@
  bagaimanapun fungsi tidak cocok dengan apapun, sebuah string akan dihasilkan
  berisikan sebuah pesan mendeklarasikan apa yang dicocokkannya.
 
- Sebagai tambahan, jika Anda melihat kode, Anda boleh melihat fungsi
+ Sebagai tambahan, jika Anda melihat kode, Anda dapat melihat fungsi
  phpMusselD() dan phpMusselR(). fungsi-fungsi ini adalah sub fungsi dari
  phpMussel(), dan seharusnya tidak di namakan secara langsung di luar dari
  fungsi parent (tidak karena efek-efek adverse.. Lebih lagi, sederhananya
@@ -995,7 +995,7 @@
       dia akan selalu menghapus data terupload apapun melalui server jika tidak
       dipindahkan, dikopi atau dihapus sebelumnya. Opsi tersebut ditambahkan
       di sini sebagai ukuran extra dari keamanan atau untuk paranoid ekstra dan
-      untuk semua yang mengkopi php yang tidak boleh bersikap pada perilaku
+      untuk semua yang mengkopi php yang tidak dapat bersikap pada perilaku
       yang dimaksudkan.
       0 - Setelah pemindahaian, biarkan data [Default],
       1 - Setelah pemindaian, jika tidak bersih, hapus langsung.
@@ -1400,7 +1400,7 @@
    Semua tanda tangan yang lain mengikuti format ini:
     NAMA:HEX:FROM:TO
    Di mana NAMA adalah nama yang mengutip tanda tangan ini dan HEX adalah
-   sebuah segmen hexidecimal-encoded dari data yang dimaksudkan untuk
+   sebuah segmen heksadesimal-dikodekan dari data yang dimaksudkan untuk
    dicocokkan oleh tanda tangan yang diberikan. FROM dan TO adalah parameter
    opsional, mengindikasikan dari mana dan kemana posisi dari sumber data
    untuk di cek (tidak didukung oleh fungsi mail).
@@ -1413,8 +1413,8 @@
    apa yang Anda lakukan dapat menghasilkan hal yang tidak diinginkan. Coba
    lihat source-code phpMussel dan jika Anda tidak yakin tentang konteks dari
    statemen regex diparsing. Juga ingat bahwa semua pola (dengan pengecualian
-   ke nama data, metadata terkompres dan pola MD5) harus diencode hexadecimal
-   (syntax pola sebelumnya, tentu saja)!
+   ke nama data, metadata terkompres dan pola MD5) harus diencode heksadesimal
+   (sintaksis pola sebelumnya, tentu saja)!
 
  = DIMANA MELETAKKAN TANDA TANGAN YANG TERUBAH? =
    Hanya menempatkan tanda tangan kustom dalam file yang dimaksudkan untuk
@@ -1485,7 +1485,8 @@
    - "Tanda tangan potongan XML/XDP" (xmlxdp_*). Dicek pada apapun XML/XDP
       potongan ditemukan dari apapun file tidak bertanda putih dan ditargetkan
       untuk dipindai.
-     (Catatan jika tanda tangan ini boleh dinonaktifkan melalui phpmussel.ini).
+     (Catat itu bahwa semua ini tanda tangan dapat dinonaktifkan melalui
+      "phpmussel.ini").
 
                                      ~ ~ ~
 
@@ -1570,5 +1571,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 4 Juni 2015 (2015.06.04).
+Terakhir Diperbarui: 11 Juni 2015 (2015.06.11).
 EOF
