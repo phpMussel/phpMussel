@@ -98,8 +98,8 @@
     votre particulière configuration. Enregistrer le fichier, fermer.
 
  4) Télécharger les contenus (phpMussel et ses fichiers) à le répertoire vous
-    aviez décidé plus tôt (vous n'avez pas besoin les *.txt fichiers, mais,
-    surtout, vous devriez télécharger tous les fichiers sur le serveur).
+    aviez décidé plus tôt (vous n'avez pas besoin les *.txt/*.md fichiers,
+    mais surtout, vous devriez télécharger tous les fichiers sur le serveur).
 
  5) CMHOD la "vault" répertoire à "777". Le principal répertoire qui est
     stocker le contenu (celui que vous avez choisi plus tôt), généralement,
@@ -1599,5 +1599,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 11 Juin 2015 (2015.06.11).
+Dernière Réactualisé: 12 Juin 2015 (2015.06.12).
 EOF

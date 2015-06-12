@@ -94,8 +94,8 @@
     geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
  4) Upload de inhoud (phpMussel en zijn bestanden) naar de bestandsmap die u
-    zou op eerder besloten (je nodig niet de *.txt bestanden opgenomen, maar
-    meestal, je moeten uploaden alles).
+    zou op eerder besloten (je nodig niet de *.txt/*.md bestanden opgenomen,
+    maar meestal, je moeten uploaden alles).
 
  5) CMHOD de bestandsmap "vault" naar "777". De belangrijkste bestandsmap
     opslaan van de inhoud (degene die je eerder koos), gewoonlijk, kan worden
@@ -1515,5 +1515,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 11 Juni 2015 (2015.06.11).
+Laatste Bijgewerkt: 12 Juni 2015 (2015.06.12).
 EOF

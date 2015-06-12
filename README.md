@@ -3,7 +3,7 @@
 An ideal solution for shared hosting environments, where it's often not possible to utilise or install conventional anti-virus protection solutions, phpMussel is a PHP script designed to **detect trojans, viruses, malware and other threats** within files uploaded to your system wherever the script is hooked, based on the signatures of [ClamAV](http://www.clamav.net/) and others. For information regarding *HOW TO INSTALL* {2A+2B} and *HOW TO USE* {3A+3B} phpMussel, please refer either to the [Wiki](https://github.com/Maikuolan/phpMussel/wiki) or to documentation include within the "[_docs](https://github.com/Maikuolan/phpMussel/tree/master/_docs)" directory of [this repository](https://github.com/Maikuolan/phpMussel) (direct links to that documentation included under the "Documentation" header below this paragraph).
 
 ### Features:
-- Licensed as GNU General Public License version 2.0 (GPLv2).
+- Licensed as [GNU General Public License version 2.0](https://github.com/Maikuolan/phpMussel/blob/master/_docs/LICENSE) (GPLv2).
 - Easy to install, easy to customise, easy to use.
 - Works for any system with PHP+PCRE installed, regardless of OS (PHP+PCRE required).
 - Fully configurable based on your needs.
@@ -16,8 +16,10 @@ An ideal solution for shared hosting environments, where it's often not possible
 
 ### Documentation:
 
-README/Plain-text: [ **[English](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.en.txt) | [Deutsch](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.de.txt) | [Español](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.es.txt) | [Français](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.fr.txt) | [Bahasa Indonesia](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.id.txt) | [Italiano](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.it.txt) | *[Nederlandse](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.nl.INCOMPLETE.txt) | [Português](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.pt.txt)** ]
+README/Plain-text: [ **[English](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.en.txt) | [Deutsch](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.de.txt) | [Español](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.es.txt) | [Français](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.fr.txt) | [Bahasa Indonesia](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.id.txt) | [Italiano](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.it.txt) | *[Nederlandse](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.nl.INCOMPLETE.txt) | [Português](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.pt.txt)** ] *- W.I.P.
 
-README/Markdown: [ **[English](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.en.md) | [Deutsch](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.de.md) | [Español](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.es.md) | [Français](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.fr.md) | [Bahasa Indonesia](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.id.md) | [Italiano](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.it.md) | *[Nederlandse](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.nl.INCOMPLETE.md) | [Português](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.pt.md)** ]
+README/Markdown: [ **[English](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.en.md) | [Deutsch](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.de.md) | [Español](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.es.md) | [Français](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.fr.md) | [Bahasa Indonesia](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.id.md) | [Italiano](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.it.md) | *[Nederlandse](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.nl.INCOMPLETE.md) | [Português](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.pt.md)** ] *- W.I.P.
 
-*This file, "README.md", last edited: 11th June 2015 (2015.06.11).*
+[\[CONTRIBUTING.md\] **Want to help?**](https://github.com/Maikuolan/phpMussel/blob/master/CONTRIBUTING.md)
+
+*This file, "README.md", last edited: 11th June 2015 (2015.06.12).*

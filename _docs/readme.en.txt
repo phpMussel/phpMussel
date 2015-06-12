@@ -90,8 +90,8 @@
     appropriate for your particular setup. Save file, close.
 
  4) Upload the contents (phpMussel and its files) to the directory you'd
-    decided on earlier (you don't need to include the *.txt files, but mostly,
-    you should upload everything).
+    decided on earlier (you don't need to include the *.txt/*.md files, but
+    mostly, you should upload everything).
 
  5) CMHOD the "vault" directory to "777". The main directory storing the
     contents (the one you chose earlier), usually, can be left alone, but CHMOD
@@ -1500,5 +1500,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 11th June 2015 (2015.06.11).
+Last Updated: 12th June 2015 (2015.06.12).
 EOF

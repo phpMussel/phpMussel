@@ -94,7 +94,7 @@
 
  4) Laden Sie den kompletten Inhalt (phpMussel und die Dateien) in das
     Verzeichnis hoch, für das Sie sich in Schritt 1 entschieden haben. Die
-    Dateien *.txt müssen nicht mit hochgeladen werden.
+    Dateien *.txt/*.md müssen nicht mit hochgeladen werden.
 
  5) Ändern Sie die Zugriffsberechtigungen des "vault"-Verzeichnisses auf "777".
     Die Berechtigungen des übergeordneten Verzeichnises, in welchem sich der
@@ -1162,7 +1162,7 @@
        der Greylist ist.
      - Wenn die Greylist leer ist oder wenn die Greylist nicht leer ist und der
        Dateityp in der Greylist ist, scanne die Datei wie standardmäßig
-       eingestellt ist und  stelle fest, ob diese blockiert werden soll,
+       eingestellt ist und stelle fest, ob diese blockiert werden soll,
        basierend auf dem Scan, aber wenn die Greylist nicht leer ist und der
        Dateityp nicht in der Greylist ist, behandel die Datei als ob sie in der
        Blacklist ist, scanne sie nicht aber blockiere sie trotzdem.
@@ -1200,8 +1200,8 @@
      erkannte Archive sind und nach ausführbaren Dateien, deren Header nicht
      korrekt sind.
    "chameleon_to_archive"
-   - Suche nach Archiven,  deren Header nicht korrekt sind
-     (Unterstützt: BZ, GZ, RAR, ZIP, RAR, GZ).
+   - Suche nach Archiven, deren Header nicht korrekt sind (Unterstützt: BZ, GZ,
+     RAR, ZIP, RAR, GZ).
    "chameleon_to_doc"
    - Suche nach Office-Dokumenten, deren Header nicht korrekt sind.
      (Unterstützt: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
@@ -1538,5 +1538,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 11. Juni 2015 (2015.06.11).
+Zuletzt aktualisiert: 12. Juni 2015 (2015.06.12).
 EOF

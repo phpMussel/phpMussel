@@ -94,7 +94,7 @@
     particular configuração. Salve o arquivo, feche.
 
  4) Carregar os conteúdos (phpMussel e seus arquivos) para o diretório que você
-    tinha decidido anteriormente (você não requerer os *.txt arquivos
+    tinha decidido anteriormente (você não requerer os *.txt/*.md arquivos
     incluídos, mas principalmente, você deve carregar tudo).
 
  5) CMHOD o "vault" diretório para "777". O principal diretório armazenar o
@@ -1567,5 +1567,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 11 Junho 2015 (2015.06.11).
+Última Atualização: 12 Junho 2015 (2015.06.12).
 EOF

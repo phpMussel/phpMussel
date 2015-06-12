@@ -95,8 +95,8 @@
     setup tertentu. Simpan data, tutup.
 
  4) Upload isi (phpMussel dan data-datanya) ke direktori yang telah kamu
-    putuskan sebelumnya (Anda tidak memerlukan data-data *.txt, tapi kebanyakan
-    Anda harus mengupload semuanya).
+    putuskan sebelumnya (Anda tidak memerlukan data-data *.txt/*.md, tapi
+    kebanyakan Anda harus mengupload semuanya).
 
  5) Gunakan perinta CHMOD ke direktori "vault" dengan "777". Direktori utama
     menyimpan isinya (yang Anda putuskan sebelumnya), umumnya dapat di biarkan
@@ -403,7 +403,7 @@
    Parameter-parameter opsional: (tidak ada)
    Contoh: ?logspword=[logs_password]&phpmussel=scan_log
    ~
-   Apa yang dilakukan: Mencetak isi dari data scan_log ke layar.
+   Apa yang dilakukannya: Mencetak isi dari data scan_log ke layar.
    ~
  scan_kills
    Sandi diharuskan: logs_password
@@ -412,7 +412,7 @@
    Parameter-parameter opsional: (tidak ada)
    Contoh: ?logspword=[logs_password]&phpmussel=scan_kills
    ~
-   Apa yang dilakukan: Mencetak isi dari data scan_kills ke layar.
+   Apa yang dilakukannya: Mencetak isi dari data scan_kills ke layar.
    ~
  controls_lockout
    Sandi diharuskan: logs_password ATAU script_password
@@ -541,7 +541,7 @@
 
  /phpmussel.php (Skrip, Diikutkan)
     data pemuat phpMussel. Memuat skrip utama, pengupdate, dll.
-    Ini yang apa Anda ingin masukkan  (utama)!
+    Ini yang apa Anda ingin masukkan (utama)!
     ~
  /web.config (Lainnya, Diikutkan)
     Sebuah data konfigurasi ASP.NET (dalam instansi ini, untuk melindungi
@@ -894,9 +894,9 @@
 
  = BERDASARKAN DATA-DATA TANDA TANGAN =
     CVD adalah akronim dari "ClamAV Virus Definitions", dalam referensi dari
-    bagaimana ClamAV merujuk ke tanda tangan- tanda tangan nya sendiri dan
-    penggunaan dari tanda tangan-tanda tangan itu untuk phpMussel; Data
-    berakhir dengan "CVD" berisikan tanda tangan.
+    bagaimana ClamAV merujuk ke tanda tangan nya sendiri dan penggunaan dari
+    tanda tangan-tanda tangan itu untuk phpMussel; Data berakhir dengan "CVD"
+    berisikan tanda tangan.
     ~
     Data berakhir dengan "MAP", secara harfiah, memetakan tanda tangan mana
     phpMussel seharusnya dan seharusnya tidak gunakan untuk pemindaian
@@ -905,13 +905,11 @@
     untuk mempercepat proses pemindaian (sebuah proses yang akan menjadi lambat
     dan monoton).
     ~
-    Data-data tanda tangan ditandai dengan "_regex" berisikan tanda
-    tangan-tanda tangan yang mengarahkan bentuk pengecekan regular expression
-    (regex).
+    Data-data tanda tangan ditandai dengan "_regex" berisikan tanda tangan yang
+    mengarahkan bentuk pengecekan regular expression (regex).
     ~
-    Data-data tanda tangan ditandai dengan "_standard" berisikan tanda
-    tangan-tanda tangan yang secara spesifik tidak mengarahkan bentuk
-    pengecekan apapun.
+    Data-data tanda tangan ditandai dengan "_standard" berisikan tanda tangan
+    yang secara spesifik tidak mengarahkan bentuk pengecekan apapun.
     ~
     Data-data tanda tangan tidak ditandai dengan "_regex" atau "_standard" akan
     menjadi satu atau yang lain, tapi tidak keduanya (merujuk pada seksi format
@@ -920,7 +918,7 @@
     Data-data tanda tangan ditandai dengan "_clamav" berisikan tanda tangan
     yang berasal dari basis data ClamAV (GNU/GPL).
     ~
-    Data-data tanda tangan ditandai dengan  "_custom", secara default,
+    Data-data tanda tangan ditandai dengan "_custom", secara default,
     tidak berisikan tanda tangan apapun; Data-data ini ada untuk memberikan
     Anda kemana saja untuk meletakkan tanda tangan Anda jika Anda datang
     dengan milik diri Anda sendiri.
@@ -1571,5 +1569,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 11 Juni 2015 (2015.06.11).
+Terakhir Diperbarui: 12 Juni 2015 (2015.06.12).
 EOF

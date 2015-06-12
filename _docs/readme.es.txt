@@ -92,8 +92,8 @@
     para su particular configuración. Guardar archivo, cerrar.
 
  4) Cargar contenidos (phpMussel y sus archivos) al directorio que habías
-    decidido sobre más temprano (los *.txt archivos no son necesarios, pero, en
-    su mayoría, usted debe cargar todos).
+    decidido sobre más temprano (los *.txt/*.md archivos no son necesarios,
+    pero, en su mayoría, usted debe cargar todos).
 
  5) CMHOD al "vault" directorio a "777". La principal directorio de
     almacenamiento de los contenidos (el uno decidió desde antes), en general,
@@ -1587,5 +1587,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 11 Junio 2015 (2015.06.11).
+Última Actualización: 12 Junio 2015 (2015.06.12).
 EOF

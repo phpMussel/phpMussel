@@ -3,7 +3,7 @@
      |       |     | |       |  |  | |_____| ______| ______| |______ |_____
 
                             { ~ ~ ~ ITALIANO ~ ~ ~ }
- CONTENUTO
+ CONTENUTI
  1. PREAMBOLO
  2A. COME INSTALLARE (PER WEB SERVER)
  2B. COME INSTALLARE (PER CLI)
@@ -96,11 +96,11 @@
     configurazione. Salvare il file, chiudere.
 
  4) Carica i contenuti (phpMussel e le sue file) nella cartella che ci deciso
-    in precedenza (non è necessario includere i *.txt file, ma altrimenti, si
-    dovrebbe caricare tutto).
+    in precedenza (non è necessario includere i *.txt/*.md file, ma altrimenti,
+    si dovrebbe caricare tutto).
 
  5) CMHOD la cartella "vault" a "777". La principale cartella che memorizzare
-    il contenuto (quello scelto in precedenza), solitamente, può essere
+    il contenuti (quello scelto in precedenza), solitamente, può essere
     lasciato solo, Ma lo CHMOD stato dovrebbe essere controllato se hai avuto
     problemi di autorizzazioni in passato sul vostro sistema (per predefinita,
     dovrebbe essere qualcosa simile a "755").
@@ -1179,7 +1179,7 @@
      sistema o CMS da sovraccaricamento phpMussel rallentare il php processo ad
      un brusco stop. Raccomandato: 10. Si potrebbe desiderare di aumentare o
      diminuire che numero basato sulla velocità del vostra sistema e hardware.
-     Si noti che questo numero non tiene conto o includere il contenuto degli
+     Si noti che questo numero non tiene conto o includere il contenuti degli
      archivi.
    "filesize_limit"
    - File dimensione limite in KB. 65536 = 64MB [Predefinito], 0 = Nessun
@@ -1209,7 +1209,7 @@
        non è vuoto e il tipo di file non è nel greylist, trattare il file come
        se è nel blacklist, quindi non scansionarlo ma bloccarlo comunque.
    "check_archives"
-   - Tenta per verifica il contenuto degli archivi?
+   - Tenta per verifica il contenuti degli archivi?
      0 - No (no verifica), 1 - Sì (fare verifica) [Predefinito].
      * Al momento, solo verifica di BZ, GZ, LZF e ZIP file è supportato
        (verifica di RAR, CAB, 7z eccetera è supportato al momento).
@@ -1218,10 +1218,10 @@
      * Anche essere consapevoli che verifica per archivio al momento è non
        ricorsiva per ZIP.
    "filesize_archives"
-   - Eredita file dimensione limite blacklist/whitelist al contenuto degli
+   - Eredita file dimensione limite blacklist/whitelist al contenuti degli
      archivi? 0 - No (appena greylist tutto), 1 - Sì [Predefinito].
    "filetype_archives"
-   - Eredita file tipi blacklist/whitelist al contenuto degli archivi?
+   - Eredita file tipi blacklist/whitelist al contenuti degli archivi?
      0 - No (appena greylist tutto), 1 - Sì [Predefinito].
    "max_recursion"
    - Massimo ricorsione profondità limite per gli archivi. Predefinito = 10.
@@ -1574,5 +1574,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 11 Giugno 2015 (2015.06.11).
+Ultimo Aggiornamento: 12 Giugno 2015 (2015.06.12).
 EOF
