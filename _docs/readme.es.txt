@@ -430,11 +430,11 @@
              (esto puede ocurrir si usted está utilizando estos controles desde
              un computadora que no es de confianza y/o no es seguro).
              controls_lockout funciones mediante la creación de un archivo,
-             controls.lck, en su vault, que phpMussel comprobará antes de
+             "controls.lck", en su vault, que phpMussel comprobará antes de
              realizar cualquier comandos de ningún tipo. Cuando esto sucede,
              para reactivar estos controles, tendrá que suprimir manualmente la
-             controls.lck archivo a través de FTP o similar. Puede ser llamado
-             usando cualquiera de las contraseñas.
+             "controls.lck" archivo a través de FTP o similar. Puede ser
+             llamado usando cualquiera de las contraseñas.
    ~
  disable
    Contraseña necesario: script_password
@@ -664,14 +664,14 @@
  /vault/ascii_mussel_regex.cvd (Firmas, Incluidos)
  /vault/ascii_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para normalizados ASCII firmas.
-    Requerido si la opción de normalizados ASCII firmas en phpmussel.ini está
+    Requerido si la opción de normalizados ASCII firmas en "phpmussel.ini" está
     habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/coex_clamav.cvd (Firmas, Incluidos)
  /vault/coex_custom.cvd (Firmas, Incluidos)
  /vault/coex_mussel.cvd (Firmas, Incluidos)
     Archivos para Complejo Extendido firmas.
-    Requerido si la opción de Complejo Extendido firmas en phpmussel.ini está
+    Requerido si la opción de Complejo Extendido firmas en "phpmussel.ini" está
     habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/elf_clamav_regex.cvd (Firmas, Incluidos)
@@ -683,7 +683,7 @@
  /vault/elf_mussel_regex.cvd (Firmas, Incluidos)
  /vault/elf_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para ELF firmas.
-    Requerido si la opción de ELF firmas en phpmussel.ini está habilitado. Se
+    Requerido si la opción de ELF firmas en "phpmussel.ini" está habilitado. Se
     puede eliminarlo si la opción está desactivada.
     ~
  /vault/exe_clamav_regex.cvd (Firmas, Incluidos)
@@ -695,14 +695,14 @@
  /vault/exe_mussel_regex.cvd (Firmas, Incluidos)
  /vault/exe_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para Portátil Ejecutable firmas.
-    Requerido si la opción de EXE firmas en phpmussel.ini está habilitado. Se
+    Requerido si la opción de EXE firmas en "phpmussel.ini" está habilitado. Se
     puede eliminarlo si la opción está desactivada.
     ~
  /vault/filenames_clamav.cvd (Firmas, Incluidos)
  /vault/filenames_custom.cvd (Firmas, Incluidos)
  /vault/filenames_mussel.cvd (Firmas, Incluidos)
     Archivos para archivo nombre firmas.
-    Requerido si la opción de filename firmas en phpmussel.ini está habilitado.
+    Requerido si la opción de filename firmas en "phpmussel.ini" está habilitado.
     Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/general_clamav_regex.cvd (Firmas, Incluidos)
@@ -714,7 +714,7 @@
  /vault/general_mussel_regex.cvd (Firmas, Incluidos)
  /vault/general_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para generales firmas.
-    Requerido si la opción de generales firmas en phpmussel.ini está
+    Requerido si la opción de generales firmas en "phpmussel.ini" está
     habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/graphics_clamav_regex.cvd (Firmas, Incluidos)
@@ -726,7 +726,7 @@
  /vault/graphics_mussel_regex.cvd (Firmas, Incluidos)
  /vault/graphics_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para gráficas firmas.
-    Requerido si la opción de gráficas firmas en phpmussel.ini está habilitado.
+    Requerido si la opción de gráficas firmas en "phpmussel.ini" está habilitado.
     Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/greylist.csv (Firmas, Incluidos/Creados)
@@ -736,7 +736,7 @@
  /vault/hex_general_commands.csv (Firmas, Incluidos)
     Hex-codificado CSV de generales comandos detecciones opcionalmente
     utilizado por phpMussel. Requerido si la opción de generales comandos
-    detecciones en phpmussel.ini está habilitado. Se puede eliminarlo si la
+    detecciones en "phpmussel.ini" está habilitado. Se puede eliminarlo si la
     opción está desactivada.
     ~
  /vault/html_clamav_regex.cvd (Firmas, Incluidos)
@@ -748,7 +748,7 @@
  /vault/html_mussel_regex.cvd (Firmas, Incluidos)
  /vault/html_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para normalizados HTML firmas.
-    Requerido si la opción de normalizados HTML firmas en phpmussel.ini está
+    Requerido si la opción de normalizados HTML firmas en "phpmussel.ini" está
     habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/lang.inc (Script, Incluido)
@@ -763,7 +763,7 @@
  /vault/macho_mussel_regex.cvd (Firmas, Incluidos)
  /vault/macho_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para Mach-O firmas.
-    Requerido si la opción de Mach-O firmas en phpmussel.ini está habilitado.
+    Requerido si la opción de Mach-O firmas en "phpmussel.ini" está habilitado.
     Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/mail_clamav_regex.cvd (Firmas, Incluidos)
@@ -783,14 +783,14 @@
  /vault/md5_custom.cvd (Firmas, Incluidos)
  /vault/md5_mussel.cvd (Firmas, Incluidos)
     Archivos para MD5 basadas firmas.
-    Requerido si la opción de MD5 basadas firmas en phpmussel.ini está
+    Requerido si la opción de MD5 basadas firmas en "phpmussel.ini" está
     habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/metadata_clamav.cvd (Firmas, Incluidos)
  /vault/metadata_custom.cvd (Firmas, Incluidos)
  /vault/metadata_mussel.cvd (Firmas, Incluidos)
     Archivos para archivo metadatos firmas.
-    Requerido si la opción de archivo metadatos firmas en phpmussel.ini está
+    Requerido si la opción de archivo metadatos firmas en "phpmussel.ini" está
     habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/ole_clamav_regex.cvd (Firmas, Incluidos)
@@ -802,7 +802,7 @@
  /vault/ole_mussel_regex.cvd (Firmas, Incluidos)
  /vault/ole_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para OLE firmas.
-    Requerido si la opción de OLE firmas en phpmussel.ini está habilitado. Se
+    Requerido si la opción de OLE firmas en "phpmussel.ini" está habilitado. Se
     puede eliminarlo si la opción está desactivada.
     ~
  /vault/pdf_clamav_regex.cvd (Firmas, Incluidos)
@@ -814,14 +814,14 @@
  /vault/pdf_mussel_regex.cvd (Firmas, Incluidos)
  /vault/pdf_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para PDF firmas.
-    Requerido si la opción de PDF firmas en phpmussel.ini está habilitado. Se
+    Requerido si la opción de PDF firmas en "phpmussel.ini" está habilitado. Se
     puede eliminarlo si la opción está desactivada.
     ~
  /vault/pe_clamav.cvd (Firmas, Incluidos)
  /vault/pe_custom.cvd (Firmas, Incluidos)
  /vault/pe_mussel.cvd (Firmas, Incluidos)
     Archivos para PE Secciónal firmas.
-    Requerido si la opción de PE Secciónal firmas en phpmussel.ini está
+    Requerido si la opción de PE Secciónal firmas en "phpmussel.ini" está
     habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/phpmussel.inc (Script, Incluido)
@@ -847,7 +847,7 @@
  /vault/swf_mussel_regex.cvd (Firmas, Incluidos)
  /vault/swf_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para Shockwave firmas.
-    Requerido si la opción de Shockwave firmas en phpmussel.ini está
+    Requerido si la opción de Shockwave firmas en "phpmussel.ini" está
     habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
  /vault/switch.dat (Other, Included)
@@ -873,7 +873,7 @@
  /vault/whitelist_custom.cvd (Firmas, Incluidos)
  /vault/whitelist_mussel.cvd (Firmas, Incluidos)
     Archivo específico whitelist.
-    Requerido si la opción para la whitelist en phpmussel.ini está habilitado y
+    Requerido si la opción para la whitelist en "phpmussel.ini" está habilitado y
     si usted desea tener específicos archivos en la whitelist. Se puede
     eliminarlo si la opción está desactivada o si usted no requiere de la
     whitelist.
@@ -887,12 +887,12 @@
  /vault/xmlxdp_mussel_regex.cvd (Firmas, Incluidos)
  /vault/xmlxdp_mussel_standard.cvd (Firmas, Incluidos)
     Archivos para XML/XDP-Chunk firmas.
-    Requerido si la opción de XML/XDP-Chunk firmas en phpmussel.ini está
+    Requerido si la opción de XML/XDP-Chunk firmas en "phpmussel.ini" está
     habilitado. Se puede eliminarlo si la opción está desactivada.
     ~
 
  * Nombre del archivo puede variar basado de las estipulaciones de
-   configuración (en phpmussel.ini).
+   configuración (en "phpmussel.ini").
 
  = RESPECTO A FIRMAS ARCHIVOS =
     CVD es un acrónimo de "ClamAV Virus Definiciones", en referencia tanto a
@@ -1477,8 +1477,8 @@
       que no está en la whitelist que es destinado para escaneando y verificado
       como del Mach-O formato.
    - "Email Firmas" (mail_*). Cotejado contra la $body variable procesada por
-      la phpMussel_mail() función, which is intended to be the body of email
-      messages or similar entities (potentially forum posts and etcetera).
+      la phpMussel_mail() función, que está destinado a ser el cuerpo de email
+      mensajes o entidades similares (potencialmente, foro postes y etcétera).
    - "MD5 Firmas" (md5_*). Cotejado contra el MD5 hash de los contenidos y el
       tamaño de cada archivo que no está en la whitelist que es destinado para
       escaneando.
@@ -1587,5 +1587,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 12 Junio 2015 (2015.06.12).
+Última Actualización: 13 Junio 2015 (2015.06.13).
 EOF
