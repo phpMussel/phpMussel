@@ -22,15 +22,17 @@ Thank you for using phpMussel, a PHP script designed to detect trojans, viruses,
 
 PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
 
-This script is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This script is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details, located in the `LICENSE` file within the `_docs` directory of the associated package and repository for this file and available also from: <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
+This script is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This script is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details, located in the `LICENSE` file within the `_docs` directory of the associated package and repository for this file and available also from:
+- <http://www.gnu.org/licenses/>.
+- <http://opensource.org/licenses/>.
 
-Special thanks to ClamAV for both project inspiration and for the signatures that this script utilises, without which, the script would likely not exist, or at best, would have very limited value <http://www.clamav.net/>.
+Special thanks to [ClamAV](http://www.clamav.net/) for both project inspiration and for the signatures that this script utilises, without which, the script would likely not exist, or at best, would have very limited value.
 
-Special thanks to Sourceforge and GitHub for hosting the project files, located at <http://phpmussel.sourceforge.net/> and <https://github.com/Maikuolan/phpMussel/>, to Spambot Security for hosting the phpMussel discussion forums, located at <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, and to the additional sources of a number of the signatures utilised by phpMussel: SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> and others, and special thanks to all those supporting the project, to anyone else that I may have otherwise forgotten to mention, and to you, for using the script.
+Special thanks to Sourceforge and GitHub for hosting the project files, to [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) for hosting the phpMussel discussion forums, and to the additional sources of a number of the signatures utilised by phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) and others, and special thanks to all those supporting the project, to anyone else that I may have otherwise forgotten to mention, and to you, for using the script.
 
 This document and its associated package can be downloaded for free from:
-- Sourceforge: <http://phpmussel.sourceforge.net/>.
-- GitHub: <https://github.com/Maikuolan/phpMussel/>.
+- [Sourceforge](http://phpmussel.sourceforge.net/).
+- [GitHub](https://github.com/Maikuolan/phpMussel/).
 
 ---
 
@@ -853,4 +855,3 @@ This information was last updated 28th May 2015 and is current for all phpMussel
 
 
 Last Updated: 15th June 2015 (2015.06.15).
-EOF

@@ -22,15 +22,17 @@ Vielen Dank für die Benutzung von phpMussel, einem PHP-Script, um Trojaner, Vir
 
 PHPMUSSEL COPYRIGHT 2013 und darüber hinaus GNU/GPLv2 by Caleb M (Maikuolan).
 
-Dieses Skript ist freie Software; Sie können Sie weitergeben und/oder modifizieren unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht; entweder unter Version 2 der Lizenz oder (nach Ihrer Wahl) jeder späteren Version. Dieses Skript wird in der Hoffnung verteilt, dass es nützlich sein wird, allerdings OHNE JEGLICHE GARANTIE; ohne implizite Garantien für VERMARKTUNG/VERKAUF/VERTRIEB oder FÜR EINEN BESTIMMTEN ZWECK. Lesen Sie die GNU General Public License für weitere Details, in der Datei `LICENSE` im Verzeichnis `_docs` im zugeordneten Paket und Repository für diese Datei, ebenfalls verfügbar auf: <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
+Dieses Skript ist freie Software; Sie können Sie weitergeben und/oder modifizieren unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht; entweder unter Version 2 der Lizenz oder (nach Ihrer Wahl) jeder späteren Version. Dieses Skript wird in der Hoffnung verteilt, dass es nützlich sein wird, allerdings OHNE JEGLICHE GARANTIE; ohne implizite Garantien für VERMARKTUNG/VERKAUF/VERTRIEB oder FÜR EINEN BESTIMMTEN ZWECK. Lesen Sie die GNU General Public License für weitere Details, in der Datei `LICENSE` im Verzeichnis `_docs` im zugeordneten Paket und Repository für diese Datei, ebenfalls verfügbar auf:
+- <http://www.gnu.org/licenses/>.
+- <http://opensource.org/licenses/>.
 
-Besonderer Dank geht an ClamAV für die Inspiration und die Signaturen, die dieses Script benutzt, ohne die dieses Script wahrscheinlich nicht existieren würde oder bestenfalls einen sehr begrenzten Wert hätte <http://www.clamav.net/>.
+Besonderer Dank geht an [ClamAV](http://www.clamav.net/) für die Inspiration und die Signaturen, die dieses Script benutzt, ohne die dieses Script wahrscheinlich nicht existieren würde oder bestenfalls einen sehr begrenzten Wert hätte.
 
-Besonderer Dank geht auch an Sourceforge und GitHub für das Hosten der Projektdateien, auf <http://phpmussel.sourceforge.net/> und <https://github.com/Maikuolan/phpMussel/>, an Spambot Security für die phpMussel Diskussionforen gehostet auf <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, und an die weiteren Quellen einiger von phpMussel verwendeten Signaturen: SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> und andere, und Besonderer Dank geht an alle diejenigen die das Projekt unterstützen werden, an andere nicht erwähnte Personen, und an Sie, für die Verwendung des Scripts.
+Besonderer Dank geht auch an Sourceforge und GitHub für das Hosten der Projektdateien, an [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) für die phpMussel Diskussionforen, und an die weiteren Quellen einiger von phpMussel verwendeten Signaturen: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) und andere, und Besonderer Dank geht an alle diejenigen die das Projekt unterstützen werden, an andere nicht erwähnte Personen, und an Sie, für die Verwendung des Scripts.
 
 Dieses Dokument und das zugehörige Paket kann von folgenden Links kostenlos heruntergeladen werden:
-- Sourceforge: <http://phpmussel.sourceforge.net/>.
-- GitHub: <https://github.com/Maikuolan/phpMussel/>.
+- [Sourceforge](http://phpmussel.sourceforge.net/).
+- [GitHub](https://github.com/Maikuolan/phpMussel/).
 
 ---
 
@@ -849,4 +851,3 @@ Diese Informationen wurden zuletzt am 2015.05.28 aktualisiert und gelten für al
 
 
 Zuletzt aktualisiert: 15. Juni 2015 (2015.06.15).
-EOF

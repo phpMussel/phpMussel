@@ -22,15 +22,17 @@ Merci pour l'utiliser de phpMusel, un PHP script pour la détection de virus, ma
 
 PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPLv2 par Caleb M (Maikuolan).
 
-Ce script est un logiciel libre; vous pouvez redistribuer et/ou le modifier selon les termes de la GNU General Public License telle que publiée par la Free Software Foundation; soit la version 2 de la Licence, ou (à votre choix) toute version ultérieure. Ce script est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE, sans même la implicite garantie de COMMERCIALISATION ou D'ADAPTATION À UN PARTICULIER USAGE. Voir la GNU General Public License pour plus de détails, situé dans le "LICENCE" fichier dans le `_docs` répertoire de l'associé emballage et un référentiel pour ce fichier et également disponible à partir de: <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
+Ce script est un logiciel libre; vous pouvez redistribuer et/ou le modifier selon les termes de la GNU General Public License telle que publiée par la Free Software Foundation; soit la version 2 de la Licence, ou (à votre choix) toute version ultérieure. Ce script est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE, sans même la implicite garantie de COMMERCIALISATION ou D'ADAPTATION À UN PARTICULIER USAGE. Voir la GNU General Public License pour plus de détails, situé dans le "LICENCE" fichier dans le `_docs` répertoire de l'associé emballage et un référentiel pour ce fichier et également disponible à partir de:
+- <http://www.gnu.org/licenses/>.
+- <http://opensource.org/licenses/>.
 
-Un spécial merci à ClamAV pour l'inspiration du le projet et pour les signatures que ce script utilise, sans qui, le script ne seraient probablement pas exister, ou, au mieux, auraient avoir un très limité valeur <http://www.clamav.net/>.
+Un spécial merci à ClamAV pour l'inspiration du le projet et pour les signatures que ce script utilise, sans qui, le script ne seraient probablement pas exister, ou, au mieux, auraient avoir un très limité valeur.
 
-Un spécial merci à Sourceforge et GitHub pour l'hébergement du projet fichiers, situé à <http://phpmussel.sourceforge.net/> et <https://github.com/Maikuolan/phpMussel/>, à Spambot Security pour l'hébergement du phpMussel discussion forums, situé à <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, et à les sources supplémentaires d'un certain nombre de signatures utilisés par phpMussel: SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> et autres, et merci à tous ceux qui soutiennent le projet, à quelqu'un d'autre que j'ai peut-être oublié de mentionner autrement, et à vous, pour l'utiliser du script.
+Un spécial merci à Sourceforge et GitHub pour l'hébergement du projet fichiers, à [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) pour l'hébergement du phpMussel discussion forums, et à les sources supplémentaires d'un certain nombre de signatures utilisés par phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) et autres, et merci à tous ceux qui soutiennent le projet, à quelqu'un d'autre que j'ai peut-être oublié de mentionner autrement, et à vous, pour l'utiliser du script.
 
 Ce document et son associé empaqueter peuvent être téléchargé gratuitement à sans frais à partir de:
-- Sourceforge: <http://phpmussel.sourceforge.net/>.
-- GitHub: <https://github.com/Maikuolan/phpMussel/>.
+- [Sourceforge](http://phpmussel.sourceforge.net/).
+- [GitHub](https://github.com/Maikuolan/phpMussel/).
 
 ---
 
@@ -853,4 +855,3 @@ Cette information a été réactualisé le 28 Mai 2015 et est courant pour toute
 
 
 Dernière Réactualisé: 15 Juin 2015 (2015.06.15).
-EOF

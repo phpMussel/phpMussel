@@ -22,15 +22,17 @@ Bedankt voor het gebruik van phpMussel, een PHP script ontworpen om detecteren t
 
 PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPLv2 van Caleb M (Maikuolan).
 
-Dit script is vrije software; je kan herdistribueren en/of wijzigen dit onder de voorwaarden van de GNU General Public License zoals gepubliceerd door de Free Software Foundation; ofwel versie 2 van de Licentie, of (naar uw keuze) enige latere versie. Dit script wordt gedistribueerd in de hoop dat het zal zijn nuttig, maar ZONDER ENIGE GARANTIE; zonder zelfs de impliciete garantie van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de GNU General Public License voor meer details, gelegen in de "LICENCE" bestand in de `_docs` bestandsmap van de bijbehorende pakket en repository voor deze bestanden en ook beschikbaar uit: <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
+Dit script is vrije software; je kan herdistribueren en/of wijzigen dit onder de voorwaarden van de GNU General Public License zoals gepubliceerd door de Free Software Foundation; ofwel versie 2 van de Licentie, of (naar uw keuze) enige latere versie. Dit script wordt gedistribueerd in de hoop dat het zal zijn nuttig, maar ZONDER ENIGE GARANTIE; zonder zelfs de impliciete garantie van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de GNU General Public License voor meer details, gelegen in de "LICENCE" bestand in de `_docs` bestandsmap van de bijbehorende pakket en repository voor deze bestanden en ook beschikbaar uit:
+- <http://www.gnu.org/licenses/>.
+- <http://opensource.org/licenses/>.
 
-Speciale dank aan ClamAV voor zowel project inspiratie en voor de handtekeningen dat dit script maakt gebruik daarvan, zonder welke, het script zou waarschijnlijk niet bestaan, of op zijn best, zou zeer beperkte waarde <http://www.clamav.net/>.
+Speciale dank aan [ClamAV](http://www.clamav.net/) voor zowel project inspiratie en voor de handtekeningen dat dit script maakt gebruik daarvan, zonder welke, het script zou waarschijnlijk niet bestaan, of op zijn best, zou zeer beperkte waarde.
 
-Speciale dank aan Sourceforge en GitHub voor het hosten van de project-bestanden, gevonden op <http://phpmussel.sourceforge.net/> en <https://github.com/Maikuolan/phpMussel/>, ann Spambot Security voor het hosten van de phpMussel discussies forums, gevonden op <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, en de extra bronnen van een aantal handtekeningen gebruikt door phpMussel: SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> en anderen, en speciale dank aan allen die het project steunen, aan iemand anders die ik anders misschien vergeten te vermelden, en voor u, voor het gebruik van het script.
+Speciale dank aan Sourceforge en GitHub voor het hosten van de project-bestanden, ann [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) voor het hosten van de phpMussel discussies forums, en de extra bronnen van een aantal handtekeningen gebruikt door phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) en anderen, en speciale dank aan allen die het project steunen, aan iemand anders die ik anders misschien vergeten te vermelden, en voor u, voor het gebruik van het script.
 
 Dit document en de bijbehorende pakket kan worden gedownload voor gratis van:
-- Sourceforge: <http://phpmussel.sourceforge.net/>.
-- GitHub: <https://github.com/Maikuolan/phpMussel/>.
+- [Sourceforge](http://phpmussel.sourceforge.net/).
+- [GitHub](https://github.com/Maikuolan/phpMussel/).
 
 ---
 
@@ -853,4 +855,3 @@ Deze informatie is voor het laatst bijgewerkt 28 Mei 2015 en is op de hoogte voo
 
 
 Laatste Bijgewerkt: 15 Juni 2015 (2015.06.15).
-EOF
