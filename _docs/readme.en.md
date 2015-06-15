@@ -456,7 +456,6 @@ Signature files marked with "_mussel" contain signatures that specifically are n
 
 
 ###6. <a name="SECTION6"></a>CONFIGURATION OPTIONS
-
 The following is a list of variables found in the `phpmussel.ini` configuration file of phpMussel, along with a description of their purpose and function.
 
 ####"general" (Category)
@@ -465,118 +464,149 @@ General configuration for phpMussel.
 "script_password"
 - As a convenience, phpMussel will allow certain functions (including the ability to update phpMussel on-the-fly) to be manually triggered via POST, GET and QUERY. However, as a security precaution, to do this, phpMussel will expect a password to be included with the command, as to ensure that it's you, and not someone else, attempting to manually trigger these functions. Set script_password to whatever password you would like to use. If no password is set, manual triggering will be disabled by default. Use something you will remember but which is hard for others to guess.
 - Has no influence in CLI mode.
+
 "logs_password"
 - The same as script_password, but for viewing the contents of scan_log and scan_kills. Having separate passwords can be useful if you want to give someone else access to one set of functions but not the other.
 - Has no influence in CLI mode.
+
 "cleanup"
 - Unset script variables and cache after execution. If you're not using the script beyond the initial scanning of uploads, should set to yes, to minimize memory usage. If you're using the script for purposes beyond the initial scanning of uploads, should set to no, to avoid unnecessarily reloading duplicate data into memory. In general practise, it should probably be set to yes, but, if you do this, you won't be able to use the script for anything other than scanning file uploads.
 - Has no influence in CLI mode.
+
 "scan_log"
 - Filename of file to log all scanning results to. Specify a filename, or leave blank to disable.
+
 "scan_kills"
 - Filename of file to log all records of blocked or killed uploads to. Specify a filename, or leave blank to disable.
+
 "ipaddr"
 - Where to find IP address of connecting request? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
+
 "forbid_on_block"
 - Should phpMussel send 403 headers with the file upload blocked message, or stick with the usual 200 OK? 0 = No (200) [Default], 1 Yes (403).
+
 "delete_on_sight"
 - Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won't be touched. In the case of archives, the entire archive will be deleted (regardless of if the offending file is only one of several files contained within the archive). For the case of file upload scanning, usually, it isn't necessary to turn this option on, because usually, php will automatically purge the contents of its cache when execution has finished, meaning that it'll usually delete any files uploaded through it to the server unless they've moved, copied or deleted already. The option is added here as an extra measure of security for the extra paranoid and for those whose copies of php may not always behave in the manner intended. 0 - After scanning, leave the file alone [Default], 1 - After scanning, if not clean, delete immediately.
+
 "lang"
 - Specify the default language for phpMussel.
+
 "quarantine_key"
 - phpMussel is able to quarantine flagged attempted file uploads in isolation within the phpMussel vault, if this is something you want it to do. Casual users of phpMussel that simply wish to protect their websites or hosting environment without having any interest in deeply analysing any flagged attempted file uploads should leave this functionality disabled, but any users interested in further analysis of flagged attempted file uploads for malware research or for similar such things should enable this functionality. Quarantining of flagged attempted file uploads can sometimes also assist in debugging false-positives, if this is something that frequently occurs for you. To disable quarantine functionality, simply leave the `quarantine_key` directive empty, or erase the contents of that directive if it isn't already empty. To enable quarantine functionality, enter some value into the directive. The "quarantine_key" is an important security feature of the quarantine functionality required as a means of preventing the quarantine functionality from being exploited by potential attackers and as a means of preventing any potential execution of data stored within the quarantine. The `quarantine_key` should be treated in the same manner as your passwords: The longer the better, and guard it tightly. For best effect, use in conjunction with "delete_on_sight".
+
 "quarantine_max_filesize"
 - The maximum allowable filesize of files to be quarantined. Files larger than the value specified will NOT be quarantined. This directive is important as a means of making it more difficult for any potential attackers to flood your quarantine with unwanted data potentially causing run-away data usage on your hosting service. Value is in KB. Default =2048 =2048KB =2MB.
+
 "quarantine_max_usage"
 - The maximum memory usage allowed for the quarantine. If the total memory used by the quarantine reaches this value, the oldest quarantined files will be deleted until the total memory used no longer reaches this value. This directive is important as a means of making it more difficult for any potential attackers to flood your quarantine with unwanted data potentially causing run-away data usage on your hosting service. Value is in KB. Default =65536 =65536KB =64MB.
+
 "honeypot_mode"
 - When honeypot mode is enabled, phpMussel will attempt to quarantine every single file upload that it encounters, regardless of whether or not the file being uploaded matches any included signatures, and no actual scanning or analysis of those attempted file uploads will actually occur. This functionality should be useful for those that wish to use phpMussel for the purposes of virus/malware research, but it's neither recommended to enable this functionality if the intended use of phpMussel by the user is for actual file upload scanning, nor recommended to use the honeypot functionality for purposes other than honeypotting. By default, this option is disabled. 0 = Disabled [Default], 1 = Enabled.
 
 ####"signatures" (Category)
 Configuration for signatures.
-
 - %%%_clamav = ClamAV signatures (both mains and daily).
 - %%%_custom = Your custom signatures (if you've written any).
 - %%%_mussel = phpMussel signatures included in your current signatures set that aren't from ClamAV.
-- Check against MD5 signatures when scanning? 0 = No, 1 = Yes [Default].
--- "md5_clamav"
--- "md5_custom"
--- "md5_mussel"
-- Check against general signatures when scanning? 0 = No, 1 = Yes [Default].
--- "general_clamav"
--- "general_custom"
--- "general_mussel"
-- Check against normalised ASCII signatures when scanning? 0 = No, 1 = Yes [Default].
--- "ascii_clamav"
--- "ascii_custom"
--- "ascii_mussel"
-- Check against normalised HTML signatures when scanning? 0 = No, 1 = Yes [Default].
--- "html_clamav"
--- "html_custom"
--- "html_mussel"
-- Check PE (Portable Executable) files (EXE, DLL, etc) against PE Sectional signatures when scanning? 0 = No, 1 = Yes [Default].
--- "pe_clamav"
--- "pe_custom"
--- "pe_mussel"
-- Check PE (Portable Executable) files (EXE, DLL, etc) against PE signatures when scanning? 0 = No, 1 = Yes [Default].
--- "exe_clamav"
--- "exe_custom"
--- "exe_mussel"
-- Check ELF files against ELF signatures when scanning? 0 = No, 1 = Yes [Default].
--- "elf_clamav"
--- "elf_custom"
--- "elf_mussel"
-- Check Mach-O files (OSX, etc) against Mach-O signatures when scanning? 0 = No, 1 = Yes [Default].
--- "macho_clamav"
--- "macho_custom"
--- "macho_mussel"
-- Check graphics files against graphics based signatures when scanning? 0 = No, 1 = Yes [Default].
--- "graphics_clamav"
--- "graphics_custom"
--- "graphics_mussel"
-- Check archive contents against archive metadata signatures when scanning? 0 = No, 1 = Yes [Default].
--- "metadata_clamav"
--- "metadata_custom"
--- "metadata_mussel"
-- Check OLE objects against OLE signatures when scanning? 0 = No, 1 = Yes [Default].
--- "ole_clamav"
--- "ole_custom"
--- "ole_mussel"
-- Check filenames against filename based signatures when scanning? 0 = No, 1 = Yes [Default].
--- "filenames_clamav"
--- "filenames_custom"
--- "filenames_mussel"
-- Allow scanning with phpMussel_mail()? 0 = No, 1 = Yes [Default].
--- "mail_clamav"
--- "mail_custom"
--- "mail_mussel"
-- Enable file specific whitelist? 0 = No, 1 = Yes [Default].
--- "whitelist_clamav"
--- "whitelist_custom"
--- "whitelist_mussel"
-- Check XML/XDP chunks against XML/XDP-chunk signatures when scanning? 0 = No, 1 = Yes [Default].
--- "xmlxdp_clamav"
--- "xmlxdp_custom"
--- "xmlxdp_mussel"
-- Check against Complex Extended signatures when scanning? 0 = No, 1 = Yes [Default].
--- "coex_clamav"
--- "coex_custom"
--- "coex_mussel"
-- Check against PDF signatures when scanning? 0 = No, 1 = Yes [Default].
--- "pdf_clamav"
--- "pdf_custom"
--- "pdf_mussel"
-- Check against Shockwave signatures when scanning? 0 = No, 1 = Yes [Default].
--- "swf_clamav"
--- "swf_custom"
--- "swf_mussel"
-- Signature matching length limiting options. Only change these if you know what you're doing. SD = Standard signatures. RX = PCRE (Perl Compatible Regular Expressions, or "Regex") signatures. FN = Filename signatures. If you notice php crashing when phpMussel attempts to scan, try lowering these "max" values. If possible and convenient, let me know when this happens and the results of whatever you try.
--- "fn_siglen_min"
--- "fn_siglen_max"
--- "rx_siglen_min"
--- "rx_siglen_max"
--- "sd_siglen_min"
--- "sd_siglen_max"
+
+Check against MD5 signatures when scanning? 0 = No, 1 = Yes [Default].
+- "md5_clamav"
+- "md5_custom"
+- "md5_mussel"
+
+Check against general signatures when scanning? 0 = No, 1 = Yes [Default].
+- "general_clamav"
+- "general_custom"
+- "general_mussel"
+
+Check against normalised ASCII signatures when scanning? 0 = No, 1 = Yes [Default].
+- "ascii_clamav"
+- "ascii_custom"
+- "ascii_mussel"
+
+Check against normalised HTML signatures when scanning? 0 = No, 1 = Yes [Default].
+- "html_clamav"
+- "html_custom"
+- "html_mussel"
+
+Check PE (Portable Executable) files (EXE, DLL, etc) against PE Sectional signatures when scanning? 0 = No, 1 = Yes [Default].
+- "pe_clamav"
+- "pe_custom"
+- "pe_mussel"
+
+Check PE (Portable Executable) files (EXE, DLL, etc) against PE signatures when scanning? 0 = No, 1 = Yes [Default].
+- "exe_clamav"
+- "exe_custom"
+- "exe_mussel"
+
+Check ELF files against ELF signatures when scanning? 0 = No, 1 = Yes [Default].
+- "elf_clamav"
+- "elf_custom"
+- "elf_mussel"
+
+Check Mach-O files (OSX, etc) against Mach-O signatures when scanning? 0 = No, 1 = Yes [Default].
+- "macho_clamav"
+- "macho_custom"
+- "macho_mussel"
+
+Check graphics files against graphics based signatures when scanning? 0 = No, 1 = Yes [Default].
+- "graphics_clamav"
+- "graphics_custom"
+- "graphics_mussel"
+
+Check archive contents against archive metadata signatures when scanning? 0 = No, 1 = Yes [Default].
+- "metadata_clamav"
+- "metadata_custom"
+- "metadata_mussel"
+
+Check OLE objects against OLE signatures when scanning? 0 = No, 1 = Yes [Default].
+- "ole_clamav"
+- "ole_custom"
+- "ole_mussel"
+
+Check filenames against filename based signatures when scanning? 0 = No, 1 = Yes [Default].
+- "filenames_clamav"
+- "filenames_custom"
+- "filenames_mussel"
+
+Allow scanning with phpMussel_mail()? 0 = No, 1 = Yes [Default].
+- "mail_clamav"
+- "mail_custom"
+- "mail_mussel"
+
+Enable file specific whitelist? 0 = No, 1 = Yes [Default].
+- "whitelist_clamav"
+- "whitelist_custom"
+- "whitelist_mussel"
+
+Check XML/XDP chunks against XML/XDP-chunk signatures when scanning? 0 = No, 1 = Yes [Default].
+- "xmlxdp_clamav"
+- "xmlxdp_custom"
+- "xmlxdp_mussel"
+
+Check against Complex Extended signatures when scanning? 0 = No, 1 = Yes [Default].
+- "coex_clamav"
+- "coex_custom"
+- "coex_mussel"
+
+Check against PDF signatures when scanning? 0 = No, 1 = Yes [Default].
+- "pdf_clamav"
+- "pdf_custom"
+- "pdf_mussel"
+
+Check against Shockwave signatures when scanning? 0 = No, 1 = Yes [Default].
+- "swf_clamav"
+- "swf_custom"
+- "swf_mussel"
+
+Signature matching length limiting options. Only change these if you know what you're doing. SD = Standard signatures. RX = PCRE (Perl Compatible Regular Expressions, or "Regex") signatures. FN = Filename signatures. If you notice php crashing when phpMussel attempts to scan, try lowering these "max" values. If possible and convenient, let me know when this happens and the results of whatever you try.
+- "fn_siglen_min"
+- "fn_siglen_max"
+- "rx_siglen_min"
+- "rx_siglen_max"
+- "sd_siglen_min"
+- "sd_siglen_max"
+
 "fail_silently"
 - Should phpMussel report when signatures files are missing or corrupted? If fail_silently is disabled, missing and corrupted files will be reported on scanning, and if fail_silently is enabled, missing and corrupted files will be ignored, with scanning reported for those files that there are no problems. This should generally be left alone unless you're experiencing crashes or similar problems. 0 = Disabled, 1 = Enabled [Default].
 
@@ -585,25 +615,32 @@ General configuration for handling of files.
 
 "max_uploads"
 - Maximum allowable number of files to scan during files upload scan before aborting the scan and informing the user they are uploading too much at once! Provides protection against a theoretical attack whereby an attacker attempts to DDoS your system or CMS by overloading phpMussel to slow down the php process to a grinding halt. Recommended: 10. You may wish to raise or lower this number depending on the speed of your hardware. Note that this number doesn't account for or include the contents of archives.
+
 "filesize_limit"
 - Filesize limit in KB. 65536 = 64MB [Default], 0 = No limit (always greylisted), any (positive) numeric value accepted. This can be useful when your php configuration limits the amount of memory a process can hold or if your php configuration limits filesize of uploads.
+
 "filesize_response"
 - What to do with files that exceed the filesize limit (if one exists). 0 - Whitelist, 1 - Blacklist [Default].
+
 "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
 - If your system only allows specific types of files to be uploaded, or if your system explicitly denies certain types of files, specifying those filetypes in whitelists, blacklists and greylists can increase the speed at which scanning is performed by allowing the script to skip over certain filetypes. Format is CSV (comma separated values). If you want to scan everything, rather than whitelist, blacklist or greylist, leave the variable(/s) blank; Doing so will disable whitelist/blacklist/greylist.
 - Logical order of processing is:
 -- If the filetype is whitelisted, don't scan and don't block the file, and don't check the file against the blacklist or the greylist.
 -- If the filetype is blacklisted, don't scan the file but block it anyway, and don't check the file against the greylist.
 -- If the greylist is empty or if the greylist is not empty and the filetype is greylisted, scan the file as per normal and determine whether to block it based on the results of the scan, but if the greylist is not empty and the filetype is not greylisted, treat the file as blacklisted, therefore not scanning it but blocking it anyway.
+
 "check_archives"
 - Attempt to check the contents of archives? 0 - No (do not check), 1 - Yes (check) [Default].
 - Currently, only checking of BZ, GZ, LZF and ZIP files is supported (checking of RAR, CAB, 7z and etcetera not currently supported).
 - This is not foolproof! While I highly recommend keeping this turned on, I can't guarantee it'll always find everything.
 - Also be aware that archive checking currently is not recursive for ZIPs.
+
 "filesize_archives"
 - Carry over filesize blacklisting/whitelisting to the contents of archives? 0 - No (just greylist everything), 1 - Yes [Default].
+
 "filetype_archives"
 - Carry over filetype blacklisting/whitelisting to the contents of archives? 0 - No (just greylist everything) [Default], 1 - Yes.
+
 "max_recursion"
 - Maximum recursion depth limit for archives. Default = 10.
 
@@ -614,26 +651,37 @@ Chameleon attack detection: 0 = Off, 1 = On.
 
 "chameleon_from_php"
 - Search for php header in files that are neither php files nor recognised archives.
+
 "chameleon_from_exe"
 - Search for executable headers in files that are neither executables nor recognised archives and for executables whose headers are incorrect.
+
 "chameleon_to_archive"
 - Search for archives whose headers are incorrect (Supported: BZ, GZ, RAR, ZIP, RAR, GZ).
+
 "chameleon_to_doc"
 - Search for office documents whose headers are incorrect (Supported: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
+
 "chameleon_to_img"
 - Search for images whose headers are incorrect (Supported: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD).
+
 "chameleon_to_pdf"
 - Search for PDF files whose headers are incorrect.
+
 "archive_file_extensions" and "archive_file_extensions_wc"
 - Recognised archive file extensions (format is CSV; should only add or remove when problems occur; unnecessarily removing may cause false-positives to appear for archive files, whereas unnecessarily adding will essentially whitelist what you're adding from attack specific detection; modify with caution; also note that this has no effect on what archives can and can't be analysed at content-level). The list, as is at default, lists those formats used most commonly across the majority of systems and CMS, but intentionally isn't necessarily comprehensive.
+
 "general_commands"
 - Search content of files for general commands such as eval(), exec() and include()? 0 - No (do not check) [Default], 1 - Yes (check). Disable this option if you intend to upload any of the following to your system or CMS via your browser: php, JavaScript, HTML, python, perl files and etcetera. Enable this option if you don't have any additional protections on your system and do not intend to upload such files. If you use additional security in conjunction with phpMussel such as ZB Block, there is no need to turn this option on, because most of what phpMussel will look for (in the context of this option) are duplications of protections that are already provided.
+
 "block_control_characters"
 - Block any files containing any control characters (other than newlines)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) If you're -only- uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. 0 - Don't block [Default], 1 - Block.
+
 "corrupted_exe"
 - Corrupted files and parse errors. 0 = Ignore, 1 = Block [Default]. Detect and block potentially corrupted PE (Portable Executable) files? Often (but not always), when certain aspects of a PE file are corrupted or can't be parsed correctly, it can be indicative of a viral infection. The processes used by most anti-virus programs to detect viruses in PE files require parsing those files in certain ways, which, if the programmer of a virus is aware of, will specifically try to prevent, in order to allow their virus to remain undetected.
+
 "decode_threshold"
 - Optional limitation or threshold to the length of raw data within which decode commands should be detected (in case there are any noticeable performance issues whilst scanning). Value is an integer representing filesize in KB. Default = 512 (512KB). Zero or null value disables the threshold (removing any such limitation based on filesize).
+
 "scannable_threshold"
 - Optional limitation or threshold to the length of raw data that phpMussel is permitted to read and scan (in case there are any noticeable performance issues whilst scanning). Value is an integer representing filesize in KB. Default = 32768 (32MB). Zero or null value disables the threshold. Generally, this value shouldn't be less than the average filesize of file uploads that you want and expect to receive to your server or website, shouldn't be more than the filesize_limit directive, and shouldn't be more than roughly one fifth of the total allowable memory allocation granted to php via the php.ini configuration file. This directive exists to try to prevent phpMussel from using up too much memory (that'd prevent it from being able to successfully scan files above a certain filesize).
 
@@ -642,6 +690,7 @@ Compatibility directives for phpMussel.
 
 "ignore_upload_errors"
 - This directive should generally be disabled unless it's required for correct functionality of phpMussel on your specific system. Normally, when disabled, when phpMussel detects the presence of elements in the `$_FILES` array(), it'll attempt to initiate a scan of the files that those elements represent, and, if those elements are blank or empty, phpMussel will return an error message. This is proper behaviour for phpMussel. However, for some CMS, empty elements in `$_FILES` can occur as a result of the natural behaviour of those CMS, or errors may be reported when there aren't any, in which case, the normal behaviour for phpMussel will be interfering with the normal behaviour of those CMS. If such a situation occurs for you, enabling this option will instruct phpMussel to not attempt to initiate scans for such empty elements, ignore them when found and to not return any related error messages, thus allowing continuation of the page request. 0 - OFF, 1 - ON.
+
 "only_allow_images"
 - If you only expect or only intend to allow images to be uploaded to your system or CMS, and if you absolutely don't require any files other than images to be uploaded to your system or CMS, this directive should be enabled, but should otherwise be disabled. If this directive is enabled, it'll instruct phpMussel to indiscriminately block any uploads identified as non-image files, without scanning them. This may reduce processing time and memory usage for attempted uploads of non-image files. 0 - OFF, 1 - ON.
 
@@ -658,36 +707,49 @@ Heuristic directives for phpMussel.
 
 ####*FILENAME SIGNATURES*
 All filename signatures follow the format:
+
 `NAME:FNRX`
+
 Where NAME is the name to cite for that signature and FNRX is the regex pattern to match filenames (unencoded) against.
 
 ####*MD5 SIGNATURES*
 All MD5 signatures follow the format:
+
 `HASH:FILESIZE:NAME`
+
 Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of that file and NAME is the name to cite for that signature.
 
 ####*ARCHIVE METADATA SIGNATURES*
 All archive metadata signatures follow the format:
+
 `NAME:FILESIZE:CRC32`
+
 Where NAME is the name to cite for that signature, FILESIZE is the total size (uncompressed) of a file contained within the archive and CRC32 is the crc32 checksum of that contained file.
 
 ####*PE SECTIONAL SIGNATURES*
 All PE Sectional signatures follow the format:
+
 `SIZE:HASH:NAME`
+
 Where HASH is the MD5 hash of a section of a PE file, SIZE is the total size of that section and NAME is the name to cite for that signature.
 
 ####*WHITELIST SIGNATURES*
 All Whitelist signatures follow the format:
+
 `HASH:FILESIZE:TYPE`
+
 Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of that file and TYPE is the type of signatures the whitelisted file is to be immune against.
 
 ####*COMPLEX EXTENDED SIGNATURES*
 Complex Extended signatures are rather different to the other types of signatures possible with phpMussel, in that what they are matching against is specified by the signatures themselves and they can match against multiple criteria. The match criterias are delimited by ";" and the match type and match data of each match criteria is delimited by ":" as so that format for these signatures tends to look a bit like:
+
 `$variable1:SOMEDATA;$variable2:SOMEDATA;SignatureName`
 
 ####*EVERYTHING ELSE*
 All other signatures follow the format:
+
 `NAME:HEX:FROM:TO`
+
 Where NAME is the name to cite for that signature and HEX is a hexadecimal-encoded segment of the file intended to be matched by the given signature. FROM and TO are optional parameters, indicting from which and to which positions in the source data to check against (not supported by the mail function).
 
 ####*REGEX*

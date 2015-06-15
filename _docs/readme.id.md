@@ -456,7 +456,6 @@ Data-data tanda tangan ditandai dengan "_mussel" berisikan tanda tangan yang sec
 
 
 ###6. <a name="SECTION6"></a>OPSI KONFIGURASI
-
 Berikut list variabel yang ditemukan pada data konfigurasi phpMussel `phpmussel.ini`, dengan deskripsi dari tujuan dan fungsi.
 
 ####"general" (Kategori)
@@ -465,118 +464,149 @@ Konfigurasi umum dari phpMussel.
 "script_password"
 - Sebagai sebuah kenyamanan, phpMussel akan mengizinkan fungsi-fungsi tertentu (termasuk kemampuan mengupgrade phpMussel secara langsung) untuk secara manual dibangkitkan via POST, GET dan QUERY. Bagaimanapun, untuk alasan keamanan, untuk melakukan ini phpMussel akan mengharapkan sebuah sandi untuk diikutkan pada perintah, untuk memastikan bahwa itu Anda dan bukan orang lain, yang berusaha secara manual membangkitkan fungsi-fungsi ini. Set script_password untuk sandi apapun yang Anda mau gunakan. Jika tidak ada password diset, pembangkitan manual akan di non aktifkan secara default. Gunakan hal yang mudah Anda ingat tapi susah untuk orang lain hapal.
 - Tidak memiliki pengaruh di dalam mode CLI.
+
 "logs_password"
 - Sama seperti script_password tapi untuk melihat semua isi dari scan_log dan scan_kills. Memiliki sandi yang lain dapat bergunan jika Anda ingin memberikan akses pada orang lain untuk mengakses dan menset fungsi tapi tidak yang lain.
 - Tidak memiliki pengaruh di dalam mode CLI.
+
 "cleanup"
 - Jangan diset variabel skrip dan cache setelah eksekusi. Jika Anda tidak menggukan skrip di bawah pemindaian upload inisial, harus di set ke yes untuk meminimalisasi penggunaan memori. Jika Anda menggunakan skrip untuk tujuan di bawah pemindaian upload inisial, harus di set ke no, untuk menghindari reload duplikat data ke memori. Dalam praktek umum, haru di set ke yes, tapi jika kamu melakukannya, kamu tidak bisa menggunakan skrip untuk hal lain kecuali pemindaian upload data.
 - Tidak memiliki pengaruh di dalam mode CLI.
+
 "scan_log"
 - Nama data dari data untuk mencatat semua hasil pemindaian. Spesifikasikan nama data atau biarkan kosong untuk menonaktifkan.
+
 "scan_kills"
 - Nama data dari fata untuk mencatat semua rekord dari upload terblok atau terbunuh. Spesifikan nama data atau biarkan kosong untuk menonaktifkan.
+
 "ipaddr"
 - Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!
+
 "forbid_on_block"
 - Seharusnya phpMussel mengirimkan 403 headers dengan pesan upload data yang terblok, atau cocok dengan 200 OK? 0 = Tidak (200) [Default], 1 Ya (403).
+
 "delete_on_sight"
 - Mengaktifkan opsi ini akan menginstruksikan skrip untuk berusaha secepatnya menghapus data apapun yang ditemukannya selama scan yang mencocokkan pada kriteria deteksi apapun, baik melalui tanda tangan atau yang lain. Data-data ditentukan "clean" tidak akan disentuh. Pada kasus file terkompress seluruh file terkompress akan didelate (kecuali data yang menyerang adalah satu-satunya dari beberapa file yang menjadi isi file terkompress). Untuk kasus pemindaian upload data biasanya, tidak cocok untuk mengaktifkan opsi ini, karena biasanya php akan secara otomatis menyatukan isi dari cache ketika eksekusi selesai, berarti bahwa dia akan selalu menghapus data terupload apapun melalui server jika tidak dipindahkan, dikopi atau dihapus sebelumnya. Opsi tersebut ditambahkan di sini sebagai ukuran extra dari keamanan atau untuk paranoid ekstra dan untuk semua yang mengkopi php yang tidak dapat bersikap pada perilaku yang dimaksudkan. 0 - Setelah pemindahaian, biarkan data [Default], 1 - Setelah pemindaian, jika tidak bersih, hapus langsung.
+
 "lang"
 - Tentukan bahasa default untuk phpMussel.
+
 "quarantine_key"
 - phpMussel dapat mengkarantina upload file ditandai dalam isolasi dalam vault phpMussel, jika ini adalah sesuatu yang Anda ingin lakukan. Pengguna biasa dari phpMussel yang hanya ingin memproteksi website mereka dan/atau lingkungan hosting mereka tanpa memiliki minat dalam-dalam menganalisis setiap ditandai upload file harus meninggalkan fungsi ini dinonaktifkan, tetapi setiap pengguna yang tertarik pada analisis lebih lanjut dari ditandai upload file bagi penelitian malware atau untuk hal-hal seperti serupa harus mengaktifkan fungsi ini. Mengkarantina ditandai upload file dapat kadang-kadang juga membantu dalam men-debug false-positif, jika ini adalah sesuatu yang sering terjadi untuk Anda. Untuk menonaktifkan fungsi karantina, meninggalkan "quarantine_key" direktif kosong, atau menghapus isi dari direktif ini jika tidak sudah kosong. Untuk mengaktifkan fungsi karantina, masukkan beberapa nilai dalam direktif ini. `quarantine_key` adalah fitur keamanan penting dari fungsi karantina diharuskan sebagai sarana untuk mencegah fungsi karantina dari dieksploitasi oleh penyerang potensial dan sebagai sarana mencegah eksekusi potensi data yang disimpan dalam karantina. "quarantine_key" harus diperlakukan dengan cara yang sama seperti password Anda: Semakin lama semakin baik, dan menjaganya diproteksi erat. Bagi efek terbaik, gunakan dalam hubungannya dengan "delete_on_sight".
+
 "quarantine_max_filesize"
 - Ukuran file maksimum yang diijinkan dari file yang akan dikarantina. File yang lebih besar dari nilai yang ditentukan di bawah ini TIDAK akan dikarantina. Direktif ini penting sebagai sarana untuk membuat lebih sulit bagi setiap penyerang potensial untuk banjir karantina Anda dengan data yang tidak diinginkan berpotensi menyebabkan penggunaan data kelebihan pada layanan hosting Anda. Nilai dalam KB. Default =2048 =2048KB =2MB.
+
 "quarantine_max_usage"
 - Penggunaan memori maksimal yang diijinkan untuk karantina. Jika total penggunaan memori oleh karantina mencapai nilai ini, file yang dikarantina tertua akan dihapus sampai total penggunaan memori tidak lagi mencapai nilai ini. Direktif ini penting sebagai sarana untuk membuat lebih sulit bagi setiap penyerang potensial untuk banjir karantina Anda dengan data yang tidak diinginkan berpotensi menyebabkan penggunaan data kelebihan pada layanan hosting Anda. Nilai dalam KB. Default =65536 =65536KB =64MB.
+
 "honeypot_mode"
 - Bila modus honeypot diaktifkan, phpMussel akan mencoba untuk karantina setiap file upload yang dia menemui, terlepas dari apakah atau tidak file yang di-upload cocok dengan tanda tangan yang disertakan, dan tidak ada pemindaian aktual atau analisis dari upload file akan terjadi. Fungsi ini akan berguna bagi mereka yang ingin menggunakan phpMussel untuk tujuan virus/malware penelitian, tetapi tidak direkomendasikan untuk mengaktifkan fungsi ini jika tujuan penggunaan dari phpMussel oleh pengguna adalah bagi aktual upload file pemindaian dan juga tidak direkomendasikan untuk menggunakan fungsi honeypot untuk tujuan selain bagi honeypot. Biasanya, opsi ini dinonaktifkan. 0 = Dinonaktifkan [Default], 1 = Diaktifkan.
 
 ####"signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
-
 - %%%_clamav = Tanda tangan ClamAV (kedua-duanya utama dan harian).
 - %%%_custom = Tanda tangan terubah (Jika Anda merubahnya).
 - %%%_mussel = Tanda tangan phpMussel dimasukkan dalam tanda tangan tersebut dari yang bukan dari ClamAV.
-- Cek tanda tangan MD5 ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "md5_clamav"
--- "md5_custom"
--- "md5_mussel"
-- Cek tanda tangan umum ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "general_clamav"
--- "general_custom"
--- "general_mussel"
-- Cek tanda tangan ASCII normal ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "ascii_clamav"
--- "ascii_custom"
--- "ascii_mussel"
-- Cek tanda tangan HTML normal ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "html_clamav"
--- "html_custom"
--- "html_mussel"
-- Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE Sectional ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "pe_clamav"
--- "pe_custom"
--- "pe_mussel"
-- Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "exe_clamav"
--- "exe_custom"
--- "exe_mussel"
-- Cek data-data ELF pada tanda tangan ELF ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "elf_clamav"
--- "elf_custom"
--- "elf_mussel"
-- Cek data-data Mach-O (OSX, etc) pada tanda tangan Mach-O ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "macho_clamav"
--- "macho_custom"
--- "macho_mussel"
-- Cek data-data grafis pada tanda tangan grafis ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "graphics_clamav"
--- "graphics_custom"
--- "graphics_mussel"
-- Cek isi file terkompress pada tanda tangan metadata terkompres ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "metadata_clamav"
--- "metadata_custom"
--- "metadata_mussel"
-- Cek objek-objek OLE pada tanda tangan OLE ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "ole_clamav"
--- "ole_custom"
--- "ole_mussel"
-- Cek nama data pada tanda tangan berbasis nama file ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "filenames_clamav"
--- "filenames_custom"
--- "filenames_mussel"
-- Mengizinkan pemindaian dengan phpMussel_mail()? 0 = Tidak, 1 = Ya [Default].
--- "mail_clamav"
--- "mail_custom"
--- "mail_mussel"
-- Aktifkan daftar putih tertentu file? 0 = Tidak, 1 = Ya [Default].
--- "whitelist_clamav"
--- "whitelist_custom"
--- "whitelist_mussel"
-- Cek XML/XDP potongan pada tanda tangan potongan XML/XDP ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "xmlxdp_clamav"
--- "xmlxdp_custom"
--- "xmlxdp_mussel"
-- Cek tanda tangan Kompleks Diperpanjang ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "coex_clamav"
--- "coex_custom"
--- "coex_mussel"
-- Cek tanda tangan PDF ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "pdf_clamav"
--- "pdf_custom"
--- "pdf_mussel"
-- Cek tanda tangan Shockwave ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
--- "swf_clamav"
--- "swf_custom"
--- "swf_mussel"
-- Opsi Tanda tangan cocok batas panjangnya. Hanya ubah ini jika Anda tahu apa yang Anda lakukan. SD = Standard tanda tangan. RX = Tanda tangan PCRE (Perl Compatible Regular Expressions, "Regex"). FN = Tanda tangan Nama Data. Jika Anda melihat php crashing ketika phpMussel meoncoba memindai, coba merendahkan nilai "max". Jika mungkin dan cocok, biarkan saya tahu kapan ini terjadi dan hasil dari apapun yang Anda coba.
--- "fn_siglen_min"
--- "fn_siglen_max"
--- "rx_siglen_min"
--- "rx_siglen_max"
--- "sd_siglen_min"
--- "sd_siglen_max"
+
+Cek tanda tangan MD5 ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "md5_clamav"
+- "md5_custom"
+- "md5_mussel"
+
+Cek tanda tangan umum ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "general_clamav"
+- "general_custom"
+- "general_mussel"
+
+Cek tanda tangan ASCII normal ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "ascii_clamav"
+- "ascii_custom"
+- "ascii_mussel"
+
+Cek tanda tangan HTML normal ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "html_clamav"
+- "html_custom"
+- "html_mussel"
+
+Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE Sectional ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "pe_clamav"
+- "pe_custom"
+- "pe_mussel"
+
+Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "exe_clamav"
+- "exe_custom"
+- "exe_mussel"
+
+Cek data-data ELF pada tanda tangan ELF ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "elf_clamav"
+- "elf_custom"
+- "elf_mussel"
+
+Cek data-data Mach-O (OSX, etc) pada tanda tangan Mach-O ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "macho_clamav"
+- "macho_custom"
+- "macho_mussel"
+
+Cek data-data grafis pada tanda tangan grafis ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "graphics_clamav"
+- "graphics_custom"
+- "graphics_mussel"
+
+Cek isi file terkompress pada tanda tangan metadata terkompres ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "metadata_clamav"
+- "metadata_custom"
+- "metadata_mussel"
+
+Cek objek-objek OLE pada tanda tangan OLE ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "ole_clamav"
+- "ole_custom"
+- "ole_mussel"
+
+Cek nama data pada tanda tangan berbasis nama file ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "filenames_clamav"
+- "filenames_custom"
+- "filenames_mussel"
+
+Mengizinkan pemindaian dengan phpMussel_mail()? 0 = Tidak, 1 = Ya [Default].
+- "mail_clamav"
+- "mail_custom"
+- "mail_mussel"
+
+Aktifkan daftar putih tertentu file? 0 = Tidak, 1 = Ya [Default].
+- "whitelist_clamav"
+- "whitelist_custom"
+- "whitelist_mussel"
+
+Cek XML/XDP potongan pada tanda tangan potongan XML/XDP ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "xmlxdp_clamav"
+- "xmlxdp_custom"
+- "xmlxdp_mussel"
+
+Cek tanda tangan Kompleks Diperpanjang ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "coex_clamav"
+- "coex_custom"
+- "coex_mussel"
+
+Cek tanda tangan PDF ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "pdf_clamav"
+- "pdf_custom"
+- "pdf_mussel"
+
+Cek tanda tangan Shockwave ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "swf_clamav"
+- "swf_custom"
+- "swf_mussel"
+
+Opsi Tanda tangan cocok batas panjangnya. Hanya ubah ini jika Anda tahu apa yang Anda lakukan. SD = Standard tanda tangan. RX = Tanda tangan PCRE (Perl Compatible Regular Expressions, "Regex"). FN = Tanda tangan Nama Data. Jika Anda melihat php crashing ketika phpMussel meoncoba memindai, coba merendahkan nilai "max". Jika mungkin dan cocok, biarkan saya tahu kapan ini terjadi dan hasil dari apapun yang Anda coba.
+- "fn_siglen_min"
+- "fn_siglen_max"
+- "rx_siglen_min"
+- "rx_siglen_max"
+- "sd_siglen_min"
+- "sd_siglen_max"
+
 "fail_silently"
 - Seharusnya laporan phpMussel ketika data tanda tangan hilang atau dikorup? Jika fail_silently dinonaktifkan, data dikorup dan hilang akan di laporkan ketika pemindaian, dan jika fail_silently diaktifkan, data dikorup dan hilang akan diabaikan, dengan pemindaian dilaporkan untuk data-data ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crashes atau masalah lain. 0 = Dinonaktifkan, 1 = Diaktifkan [Default].
 
@@ -585,25 +615,32 @@ Konfigurasi umum untuk mengambil alih data-data.
 
 "max_uploads"
 - Maksimum jumla Data-data yang diizinkan untuk dipindai selama pemindaian upload data sebelum menghentikan pemindaian dan menginformasikan pengguna bahwa pengguna mengupload terlalu banyak! Menyediakan perlindungan pada serangan teoritis dimana penyerang mencoba DDoS pada sistem Anda atau CMS ada dengan overloading phpMussel supaya berjalan lambat. Proses php ke penghentian keras. Recommendasi: 10. Anda dapat menaikkan atau menurunkan angka ini bergantung dari kecepatan hardware Anda. Catat itu nomor ini tidak mengakuntabilitas atau mengikutkan konten dari file terkompres.
+
 "filesize_limit"
 - Batasan ukuran file dalam KB. 65536 = 64MB [Default], 0 = Tidak ada batasa (selalu bertanda abu-abu), nilai angka positif apapun diterima. Ini dapat berguna ketika batasan konfigurasi php Anda membatasi jumah memori dari proses yang dapat ditampungnya atau jika konfigurasi php Anda membatasi jumlah ukuran upload Anda.
+
 "filesize_response"
 - Apa yang Anda lakukan dengan data-data yang melebihi batasan ukuran (jika ada). 0 - Bertanda putih, 1 - Bertanda hitam [Default].
+
 "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
 - Jika sistem Anda hanya mengizinkan tipe data spesifik menjadi diupload, atau jika sistem Anda secara eksplisit menolak tipe data-data tertentu, menspesifikasikan tipe data dalam bertanda putih, bertanda hitam dan bertanda abu-abu dapat menaikkan kecepatan dari pemindaian dilakukan dengan mengizinkan skrip untuk mengabaikan tipe data tertentu. Format adalah CSV (comma separated values). Jika Anda ingin memindai semuanya, daripada daftar putih, daftar hitam atau daftar abu-abu, tinggalkan variabel kosong; Melakukannya akan menonaktifkan dafter putih/hitam/abu-abu.
 - Urutan logis dari pengolahan:
 -- Jika tipe data bertanda putih, tidak memindai dan tidak memblokir data, dan tidak memeriksa data terhadap daftar hitam atau daftar abu-abu.
 -- Jika tipe data bertanda hitem, tidak memindai data tapi memblokir bagaimanapun, dan tidak memeriksa data terhadap daftar abu-abu.
 -- Jika daftar abu-abu yang kosong atau jika daftar abu-abu tidak kosong dan tipe file bertanda abu-abu, memindai data seperti biasa dan menentukan apakah untuk memblokir berdasarkan hasil memindai, tapi jika daftar abu-abu tidak kosong dan tipe data tidak bertanda abu-abu, memperlakukan seolah olah bertanda hitam, demikian tidak memindai tapi memblokir itu bagaimanapun.
+
 "check_archives"
 - Berusaha mencek isi file terkompress? 0 - Tidak (Tidak mencek), 1 - Ya (Mencek) [Default].
 - Hanya mencek BZ, GZ, LZF dan ZIP files didukung (mencek RAR, CAB, 7z, dll tidak didukung).
 - Ini bukan bukti yang bodoh! Selama saya sangat rekomendasikan menjaga ini aktif, saya tidak dapat menjamin itu hanya menemukan segala sesuatunya.
 - Juga diingatkan bahwa mencek data terkompres tidak rekursif untuk ZIP.
+
 "filesize_archives"
 - Memperlalaikan ukuran daftar hitam/putih dari isi data terkompress? 0 - Tidak (Bertanda abu-abu semua), 1 - Ya [Default].
+
 "filetype_archives"
 - Memperlalaikan jenis data daftar hitam/putih dari isi data terkompress? 0 - Tidak (Bertanda abu-abu semua) [Default], 1 - Ya.
+
 "max_recursion"
 - Dalam rekursi dari data terkompres. Default = 10.
 
@@ -614,26 +651,37 @@ Chameleon serangan deteksi: 0 = Dinonaktifkan, 1 = Diaktifkan.
 
 "chameleon_from_php"
 - Cari header php tidak di dalam data-data php atau data terkompress.
+
 "chameleon_from_exe"
 - Cari header yang dapat dieksekusi di dalam data-data yang dapat dieksekusi atau data terkompress yang dikenali dan untuk data dapat dieksekusi yang headernya tidak benar.
+
 "chameleon_to_archive"
 - Cari data terkompress yang header nya tidak benar (Mendukung: BZ, GZ, RAR, ZIP, RAR, GZ).
+
 "chameleon_to_doc"
 - Cari dokumen office yang header nya tidak benar (Mendukung: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
+
 "chameleon_to_img"
 - Cari gambar yang header nya tidak benar (Mendukung: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD).
+
 "chameleon_to_pdf"
 - Cari data PDF yang headernya tidak benar.
+
 "archive_file_extensions" dan "archive_file_extensions_wc".
 - Ekstensi data terkompres yang dikenali (format nya CSV; seharusnya hanya menambah atau menghapus ketika masalah terjadi; Tidak cocok langsung menghapus karena dapat menyebabkan angka positif yang salah terjadi pada data terkompres, dimana juga menambahkan deteksi; memodifikasi dengan peringatan; Juga dicatat bahwa ini tidak memberi efek pada data terkompress apa yang dapat dan tidak dapat di analisa pada level isi). Daftar sebagaimana defaultnya, memberi daftar format-format yang digunakan yang paling umum melalui melalui mayoritas sistem dan CMS, tapi bermaksud tidak komprehensif.
+
 "general_commands"
 - Mencari isi data-data untuk perintah umum seperti eval(), exec() and include()? 0 - Tidak (tidak mencek) [Default], 1 - Ya (mencek). Matikan opsi ini jika Anda bermaksud untuk mengupload yang manapun dari ini ke sistem ata CMS Anda via browser Anda: data-data php, JavaScript, HTML, python, perl dll. Hidupkan opsi ini jika Anda tidak punya tambahan perlindungan pada sistem Anda dan tidak bermaksud mengupload data-data apapun. Jika Anda menggunakan keamanan tambahan dalam kata penghubung dengan phpMussel seperti ZB Block, tidak perlu menghidupkan opsi ini, karena kebanyakan apa yang akan phpMussel cari (dalam konteks opsi ini) adalah duplikasi dari perlindungan yang telah disediakan.
+
 "block_control_characters"
 - Memblokade data apapun yang berisi karakter pengendali (lain dari baris baru)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Jika Anda hanya sedang mengupload data teks biasa, maka Anda dapat menghidupkan opsi ini untuk menyediakan perlindungan tambahan ke sistem Anda. Bagaimanapun jika Anda mengupload apapun lebih dari data teks biasa, menghidupkan opsi ini mungkin mengakibatkan angka positif salah. 0 - Jangan memblokade [Default], 1 - Memblokade.
+
 "corrupted_exe"
 - File korup dan diurai kesalahan. 0 = Mengabaikan, 1 = Memblokade [Default]. Mendeteksi dan memblokir berpotensi korup PE (Portable Executable) file? Sering (tetapi tidak selalu), ketika aspek-aspek tertentu dari file PE yang korup atau tidak bisa diurai dengan benar, itu dapat menjadi indikasi dari infeksi virus. Proses yang digunakan oleh sebagian besar program anti-virus untuk mendeteksi virus dalam file PE memerlukan parsing file-file dengan cara tertentu, yang, jika programmer virus menyadari, secara khusus akan mencoba untuk mencegah, untuk memungkinkan virus mereka untuk tetap tidak terdeteksi.
+
 "decode_threshold"
 - Opsional pembatasan atau ambang batas dengan panjang data mentah yang dalam decode perintah harus terdeteksi (dalam kasus ada masalah kinerja sementara pemindaian). Nilai adalah bilangan yang mewakili ukuran file dalam KB. Default = 512 (512KB). Nol atau nilai null menonaktifkan ambang batas (menghapus apapun batasan berdasarkan ukuran file).
+
 "scannable_threshold"
 - Opsional pembatasan atau ambang batas dengan panjang data mentah yang phpMussel diperbolehkan untuk membaca dan memindai (dalam kasus ada masalah kinerja sementara pemindaian). Nilai adalah bilangan yang mewakili ukuran file dalam KB. Default = 32768 (32MB). Nol atau nilai null menonaktifkan ambang batas. Umumnya, nilai ini tidak seharusnya kurang dari ukuran file rata-rata upload file yang Anda inginkan dan Anda harapkan untuk menerima ke server atau website, tidak seharusnya lebih dari direktif filesize_limit, dan tidak seharusnya lebih dari sekitar seperlima dari total alokasi memori yang diijinkan ke php melalui file `phpmussel.ini` konfigurasi. Direktif ini ada untuk mencegah phpMussel menggunakan terlalu banyak memori (yang bisa mencegah dari yang berhasil memindai file di atas tertentu ukuran file).
 
@@ -642,6 +690,7 @@ Direktif-direktif kompatibilitas pada phpMussel.
 
 "ignore_upload_errors"
 - Direktif ini umumnya harus DINONAKTIFKAN kecuali diharuskan untuk fungsi yang benar dari phpMussel pada sistem tertentu. Biasanya, ketika DINONAKTIFKAN, ketika phpMussel mendeteksi adanya elemen dalam `$_FILES` array(), itu akan mencoba untuk memulai scan file yang mewakili elemen, dan, jika elemen yang kosong, phpMussel akan mengembalikan pesan kesalahan. Ini adalah perilaku yang tepat untuk phpMussel. Namun, untuk beberapa CMS, elemen kosong di `$_FILES` dapat terjadi sebagai akibat dari perilaku alami itu CMS, atau kesalahan dapat dilaporkan bila tidak ada, dalam kasus seperti itu, perilaku normal untuk phpMussel akan mengganggu untuk perilaku normal itu CMS. Jika situasi seperti itu terjadi untuk Anda, MENGAKTIFKAN direktif ini akan menginstruksikan phpMussel untuk tidak mencoba untuk memulai scan untuk elemen kosong, mengabaikan saat ditemui dan untuk tidak kembali terkait pesan kesalahan, sehingga memungkinkan kelanjutan dari halaman permintaan. 0 - DINONAKTIFKAN, 1 - DIAKTIFKAN.
+
 "only_allow_images"
 - Jika Anda hanya mengharapkan atau hanya berniat untuk memungkinkan mengupload gambar ke sistem atau CMS, dan jika Anda benar-benar tidak memerlukan mengupload file selain gambar ke sistem atau CMS, direktif ini harus DIAKTIFKAN, tetapi sebaliknya harus DINONAKTIFKAN. Jika direktif ini DIAKTIFKAN, ini akan menginstruksikan phpMussel untuk memblokir tanpa pandang bulu setiap upload diidentifikasi sebagai file tidak gambar, tanpa pemindaian mereka. Ini mungkin mengurangi waktu memproses dan penggunaan memori untuk mencoba upload file tidak gambar. 0 - DINONAKTIFKAN, 1 - DIAKTIFKAN.
 
@@ -658,36 +707,49 @@ Direktif-direktif heuristik pada phpMussel.
 
 ####*TANDA TANGAN NAMA FILE*
 Semua tanda tangan nama file mengikuti format ini:
+
 `NAMA:FNRX`
+
 Dimana NAMA adalah nama mengutip tanda tangan dan FNRX adalah pola regex untuk mencocokkan nama file (tidak ter-encode).
 
 ####*TANDA TANGAN MD5*
 Semua tanda tangan MD5 mengikuti format ini:
+
 `HASH:UKURAN:NAMA`
+
 Dimana HASH adalah MD5 dari keseluruhan file, UKURAN adalah total ukuran file dan NAMA adalah nama untuk mengutip tanda tangan tersebut.
 
 ####*TANDA TANGAN METADATA ARSIP*
 Semua tanda tangan meta data arsip mengikuti format ini:
+
 `NAMA:UKURAN:CRC32`
+
 Dimana NAMA adalah nama mengutip tanda tangan itu, UKURAN adalah total ukuran data (tidak terkompres) dari sebuah data berisikan arsip dan CRC32 adalah checksum crc32 dari data yang berisikan.
 
 ####*TANDA TANGAN SEKSIONAL PE*
 Semua tanda tangan seksional PE mengikuti format ini:
+
 `UKURAN:HASH:NAMA`
+
 Dimana HASH adalah MD5 dari seksi PE, UKURAN adalah total ukuran dari seksi PE dan NAMA adalah nama untuk mengutip tanda tangan tersebut.
 
 ####*TANDA TANGAN PUTIH*
 Semua tanda tangan putih mengikuti format ini:
+
 `HASH:UKURAN:TYPE`
+
 Dimana HASH adalah MD5 dari keseluruhan file, UKURAN adalah total ukuran file dan TYPE adalah jenis tanda tangan yang file daftar putih tersebut adalah kebal terhadap.
 
 ####*TANDA TANGAN DIPERPANJANG KOMPLEKS*
 Tanda tangan diperpanjang kompleks adalah berbeda dengan jenis lain dari tanda tangan phpMussel, melalui bahwa apa yang mencocokkan mereka ditentukan oleh tanda tangan sendiri dan mereka dapat mencocokkan terhadap beberapa kriteria. Kriteria mencocokkan yang dipisahkan oleh ";" dan pencocokan jenis dan pencocokan data masing-masing kriteria yang dipisahkan oleh ":" sebagai sehingga format untuk tanda tangan ini cenderung terlihat sedikit seperti:
+
 `$variabel1:DATA;$variabel:DATA;NamaTandaTangan`
 
 ####*YANG LAIN*
 Semua tanda tangan yang lain mengikuti format ini:
+
 `NAMA:HEX:FROM:TO`
+
 Dimana NAMA adalah nama yang mengutip tanda tangan ini dan HEX adalah sebuah segmen heksadesimal-dikodekan dari data yang dimaksudkan untuk dicocokkan oleh tanda tangan yang diberikan. FROM dan TO adalah parameter opsional, mengindikasikan dari mana dan kemana posisi dari sumber data untuk di cek (tidak didukung oleh fungsi mail).
 
 ####*REGEX*
