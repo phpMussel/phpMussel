@@ -2,23 +2,44 @@ phpMussel change_log.txt
 
 == CURRENT GOALS AND FUTURE VERSIONING GUIDELINES ==
 Do-to list for potential future major version (v1.0):
-- Current formats for archive metadata signatures supported are:
-  ZIP, BZ, LZF, GZ. At minimum, this should also extend to RAR and 7z.
+
+- Current formats for archive metadata signatures supported are: ZIP, BZ, LZF,
+  GZ. At minimum, this should also extend to RAR and 7z.
+  REFER: https://github.com/Maikuolan/phpMussel/issues/2
+
 - Currently, all formats for archive metadata signatures that are supported,
   with exception to ZIP format, can be scanned recursively. Ideally, ability to
   scan ZIP files recursively should also be supported at some point (along with
   all future formats that are planned to be supported).
-- Ability to read and process TAR files.
-- Any and all known bugs fixed (none pending at this time).
-- Possible idea: Create an API system for data sharing and malware reporting?
-- Possible idea: IP blacklist/whitelist?
+
+- Wish list: TAR support.
+  REFER: https://github.com/Maikuolan/phpMussel/issues/1
+
+- Wish list: Icon parsing.
+  REFER: https://github.com/Maikuolan/phpMussel/issues/5
+
+- Wish list: Certificate parsing.
+  REFER: https://github.com/Maikuolan/phpMussel/issues/4
+
+- Wish list: Establishing some sort of website.
+  REFER: http://www.spambotsecurity.com/forum/viewtopic.php?f=59&t=3441
+  REFER: https://github.com/Maikuolan/phpMussel/issues/11
+
+- Possible idea: Virus Total integration.
+  REFER: https://github.com/Maikuolan/phpMussel/issues/12
+
 Do-to list for potential future minor version (v0.7):
+
 - Any significant changes to the script including completing of any of the
   aforementioned above, whereby having done so, the release doesn't yet qualify
   as a major release.
+
 Do-to list for potential future sub-minor version (v0.6j):
+
 - Any non-significant changes or other unrelated changes to the core code.
+
 Anything less than sub-minor:
+
 - Updates to signatures released without any changes to the core code,
   non-important hot-fixes, re-builds, release candidates and anything else less
   than sub-minor (generally used as an excuse to mainline signature updates
@@ -28,7 +49,134 @@ Anything less than sub-minor:
   not yet considered stable; updates received via the auto-updater that haven't
   yet been mainlined will usually be versioned in this way).
 
-=== Version/Release 0.6i (Previous Release: 0.6h; Next: 0.6i.1) ===
+=== Version/Release 0.6j (Previous Release: 0.6i) ===
+SUMMARY:
+Updated to the latest signatures set (55+20552+6j).
+Sub-minor release (medium priority).
+
+- [2015.05.24; Sub-minor code change; Maikuolan]: Code clean up (all script
+  files affected); New language data entry (v0.6i.0a).
+
+- [2015.05.24; Signatures update; Maikuolan]: Added a handful of new PE
+  signatures and filename signatures (55+20451+6i.0a).
+
+- [2015.05.24; Documentation + Sub-minor code change; Maikuolan]: Updated the
+  preamble of all documentation and updated the comments header sections of
+  all script files to reflect the change of phpMussel now being hosted at
+  GitHub; No changes to the actual working code (v0.6i.0b).
+
+- [2015.05.24; Documentation; DanielRuf]: Fixed numbering in "readme.en.txt".
+
+- [2015.05.24; Bug-fix; Maikuolan]: Found and corrected an incorrect function
+  call (was using "str_len" instead of "strlen") within the code section for
+  running phpMussel in honeypot mode. This bug would've likely prevented
+  phpMussel from correctly saving quarantined copies of files while running in
+  honeypot mode (but this bug would've only affected phpMussel strictly while
+  running in honeypot mode).
+
+- [2015.05.25; Format change; DanielRuf/Maikuolan]: All documentation, script
+  files and etc, from this point onwards, to be formatted using UTF-8 without
+  BOM instead of ANSI+entities (as was the case formerly).
+
+- [2015.05.25; Documentation; DanielRuf]: Changed file encoding from ANSI to
+  UTF-8 without BOM (all README files affected; code unaffected).
+
+- [2015.05.25; Signatures update; Maikuolan]: Updated ClamAV PE Sectional
+  signatures [20451->20503]; A small handful of other new signatures added and
+  a small handful of duplicated/redundant/obsolete signatures removed.
+
+- [2015.05.25; Sub-minor code change; Maikuolan]: phpMussel now sets the
+  `default_charset` and `mbstring.internal_encoding` to UTF-8 for the duration
+  of its execution [phpmussel.inc]; Converted ANSI/ASCII data to UTF-8 without
+  BOM and all HTML entities converted to UTF-8 data for improved readability
+  and intelligibility [lang.inc]; New language data entries added [lang.inc;
+  phpmussel.inc]; Amended some outdated information found in the comment header
+  of the loader file [phpmussel.php] (v0.6i.0c).
+
+- [2015.05.25; Bug-fix; Maikuolan]: Discovered and fixed broken revertion of
+  defined error reporting level at the script exit [phpmussel.inc]; Discovered
+  and fixed the failure to declare an appropriate language specification in the
+  template file [phpmussel.inc; template.html]
+
+- [2015.05.27; Sub-minor code change; Maikuolan]: Added language support for
+  Chinese {中文简体/中文傳統} to the language data [lang.inc] (v0.6i.0d).
+
+- [2015.05.28; Documentation; DanielRuf]: Added example for hooking phpMussel
+  using a `.htaccess` file to the documentation {EN/DE}.
+
+- [2015.05.28; Documentation; Maikuolan]: Updated translations; Added example
+  for hooking phpMussel using a `.htaccess` file to the documentation {the
+  remainder}; Updated AV compatibility information.
+
+- [2015.05.28; Signatures update; Maikuolan]: A small handful of other new
+  signatures added and a small handful of falsing signatures removed.
+
+- [2015.06.03; Documentation; DanielRuf]: Updated German README (fixed some
+  typos, improved wording and grammar and translated some untranslated texts).
+
+- [2015.06.04; Documentation; Maikuolan]: Very minor changes to the wording of
+  some README files (added some contractions and attempted to remove some
+  unnecessary words) and added some new information concerning some new changes
+  I've made to phpMussel; Switching to lower-case filenames.
+
+- [2015.06.04; Signatures update; Maikuolan]: Added a handful of new PE
+  signatures and filename signatures (55+20451/20503+6i.0e).
+
+- [2015.06.04; Sub-minor code change; Maikuolan]: The language data of
+  "lang.inc" has been split based upon the languages contained therein to a
+  handful of different files that've since been created and placed within a
+  "%phpmussel%/vault/lang/" directory; This should allow for easier
+  modification of the language data and make updating a smoother process when
+  more than one developer or translator is working on translating that data at
+  the same time; Significant modifications done to -all- script files;
+  Improvement in the way that language data is parsed by phpMussel; Added
+  multiple new entries to the language data; All language data updated; Added
+  support for Japanese {日本語} and Russian {Русский}, although both are
+  incomplete at this time; More added support to come in the near future
+  (v0.6i.0e).
+
+- [2015.06.08; Sub-minor code change; Maikuolan]: Corrected a minor comment
+  error found in the configuration file; Did some more work on some of the
+  language files {JA/RU}, but there's still a great deal to be done;
+  Auto-updater stabilised {but changes not yet tested live}; Began pushing out
+  a new round of signature updates in preparing for the next release, but I
+  haven't yet finished doing this {didn't have enough time to finish doing this
+  today/tonight; will finish it tomorow}.
+
+- [2015.06.08; Sub-minor code change; DanielRuf]: Updated the language data in
+  "lang.de.inc".
+
+- [2015.06.08; Sub-minor code change; Maikuolan]: Corrected a small code typo
+  in the auto-updater [update.inc] (v0.6i.0f).
+
+- [2015.06.09; Signatures update; Maikuolan]: Updated to the the latest
+  signatures (55+20552+6j); Switch file updated [switch.dat].
+
+- [2015.06.09; Sub-minor code change; Maikuolan]: Completed work on
+  "lang.ja.inc"; Added some more "shorthand" entries [phpmussel.inc].
+
+- [2015.06.10; Sub-minor code change; DanielRuf]: Removed unnecessary HTML
+  entities and improved template to prevent wrapping text [template.html].
+
+- [2015.06.12; Documentation; Maikuolan]: Adding a "README.md" and a
+  "CONTRIBUTING.md" file to the repository; Some very minor tweaks done to the
+  documentation.
+
+- [2015.06.15; Documentation; Maikuolan]: Completed adding markdown versions of
+  the README documentation to the repository. README documentation is now
+  available both in plain-text and markdown formats.
+
+- [2015.06.15; Sub-minor code change; Maikuolan]: Added chameleon attack
+  detection for WEBP files [phpmussel.inc].
+
+- [2015.06.15; Bug-fix; Maikuolan]: Discovered that the chameleon attack
+  detection for photoshop (PSD and PDD) files wasn't triggering correctly;
+  Fixed [phpmussel.inc] (v0.6j).
+
+Maikuolan,
+15th June 2015.
+
+=== Version/Release 0.6i (Previous Release: 0.6h; Next: 0.6j) ===
 SUMMARY:
 Updated to the latest signatures set (55+20451+6i).
 Sub-minor release (medium priority).
@@ -1082,7 +1230,7 @@ NEW CHANGES:
   phpMussel yet, but those that do (and thus, which should correctly match
   during scans by phpMussel without false positives) have been included
   with this release (which works out to roughly ~150 signatures of the total
-  ~3K�K or so normalised ASCII signatures available from ClamAV).
+  ~3K±K or so normalised ASCII signatures available from ClamAV).
   Part of the reason that I'm including it with this release, as opposed to
   waiting until I've got it 100% implemented in the way that I'm aiming for,
   is that there are some critical common CMS vulnerabilities that can be
@@ -1180,111 +1328,12 @@ PROBLEMS/BUGS FIXED:
 Maikuolan,
 8th July 2014.
 
-=== Version/Release 0.3g.1 (Previous Release: 0.3g; Next: 0.4) ===
-SUMMARY:
-Updated to the latest signatures set (55+19131+3g.1).
-Files modified, but no changes to the actual script or code (medium priority).
-
-NEW CHANGES:
-- Updated -all- documentation - phpMussel is now -fully- supported (I define
-  a language as being "fully supported" by phpMussel when translations for
-  that language have been completed in the language file, "lang.inc", and when
-  there is a complete, thorough translation of the README documentation in that
-  language available) in four languages: English, French, Indonesian, Italian;
-  Partially supported by an additional four languages (German, Spanish,
-  Portuguese, Dutch), which should come to be fully supported as time passes,
-  with additional languages to eventually come where time, energy, capacity,
-  need and interest from the userbase permits it to be so.
-
-PROBLEMS/BUGS FIXED:
-- Found some incorrect peripheral information in the documentation; Corrected.
-- Corrected some minor spelling errors in the language file (lang.inc).
-- Removed some problematic false positives from the signature set, most
-  notably, "phpMussel-FN.Illegal.Character-3F", which was originally introduced
-  with the previously most recent release (v0.3g), potentially falsing where
-  due to a discrepancy between the actual default character encoding
-  ("charset") of the upload as per assigned by the sending browser and the
-  actual charset of the system where PHP is installed, the filename would be
-  mangled, with question marks rendered in place of unrecognised characters.
-  Refer spambotsecurity.com/forum/viewtopic.php?f=57&t=2824
-
-Maikuolan,
-26th June 2014.
-
-=== Version/Release 0.3g (Previous Release: 0.3f.2; Next: 0.3g.1) ===
-SUMMARY:
-Updated to the latest signatures set (55+19079+3g).
-Sub-minor release (medium priority).
-
-NEW CHANGES:
-- phpMussel now displayed as process title when in CLI mode (PHP 5 >= 5.5.0).
-- Big changes across the language file, the core script and the update script.
-- As usual, improved signature set (a few potential false positives removed,
-  better protection against filename manipulation, new set of MD5s, new round
-  of phishes, a number of others; also see changes noted under BUGS); Slightly
-  improved signature mapping algorithm.
-- Rewrote code for data normalisation and rewrote how encoding+decoding is
-  handled by phpMussel (should now be a bit more thorough and bit more
-  consistent throughout the different parts of the script).
-- As compensation for my no longer including signatures with zero-or-more
-  quantifiers in the default signature set (the zero-or-more quantifier -is-
-  still supported by phpMussel, so, you can still use it, if you want, although
-  I don't recommend it unless absolutely necessary in-lieu of the PCRE bug),
-  I've introduced support for an equivalent into the code for handling the
-  standard, non-regex based signatures. Now, if you include an ">" within a
-  standard, non-regex signature, phpMussel will first match against everything
-  before the immediate ">", and then, if a match is found, skip ahead in the
-  data being checked to the point where the match was found and reinterpret
-  the signature from the point after the immediate ">" (thus, repeat);
-  Functionally equivalent to a zero-or-more match (in most, but not all, cases)
-  but without the inherent problem of potentially backticking into oblivion.
-- phpMussel now includes CRC32 checksums for the names and contents of scanned
-  files (regardless of whether anything was detected or not) in the scan_log
-  file. This could be useful for tracking down files that may be difficult to
-  locate after having been uploaded (such as, for example, when trying to
-  locate files containing something undesirable that may have been missed by
-  phpMussel when scanned).
-- A few default directives in the phpMussel configuration altered slightly
-  to reflect recent changes made to the core script. Nothing significant.
-
-PROBLEMS/BUGS FIXED:
-- Not really a -bug-, per se, but, found a few areas in the core script where
-  there was some level of duplication and redundancy. Fixed.
-- Took me a while, but I finally managed to get to the bottom of the PCRE bug
-  (the one that I'd mentioned earlier in the change_log whereby certain
-  signatures would occasionally cause PHP to crash), work out exactly what was
-  triggering it and find a proper work-around for it. This release and all
-  future releases, assuming I've done it correctly, should no longer contain
-  ".risky" files, as the risk of PHP crashing in this particular manner should
-  no longer be a problem for these future releases. The trigger was phpMussel
-  trying to match signatures containing zero-or-more quantifiers (*) against
-  non-matching files above certain system dependent filesize values leading to
-  rampant runaway backticking. In short, via a lot of testing and debugging..
-  Although I already knew it was -possible- to do this, I never realised quite
-  just how easy it was before, but, I've discovered just how easy it is, in
-  fact, when dealing with PCRE functions, to cause PCRE to make PHP backtick
-  itself into oblivion by way of throwing sufficiently large non-matching data
-  at those functions. As a result of this, 12 (of the some 40,000+) of the
-  currently active signatures in use by phpMussel as per supplied by ClamAV
-  have been redacted, and 245 signatures have been modified, replacing the
-  zero-or-more quantifiers (*) with specific numeric quantifiers ({n,n}),
-  and changes have been made to the core script in an attempt to prevent the
-  situation from arising again.
-  Refer spambotsecurity.com/forum/viewtopic.php?f=58&t=2794
-- There was a minor bug in CLI mode whereby specifying directories to scan
-  without including a trailing slash in the directory path would result in
-  phpMussel stating that the directory didn't exist, regardless of whether it
-  actually existed or not. Fixed; Directories are now interpret the same,
-  regardless of whether there is an included trailing slash or not.
-
-Maikuolan,
-11th June 2014.
-
-� Entries prior to 0.3g (11th June 2014) redacted from this release of the
+« Entries prior to 0.4 (8th July 2014) redacted from this release of the
   change_log to keep the size of the change_log to a manageable level and due
   to those entries having only limited relevance to the most recently available
   release of phpMussel. Older releases will still contain those older entries
   where relevant and those entries should nonetheless be available for viewing
-  via the support forums release information thread. �
+  via the support forums release information thread and via older commits of
+  the change_log. »
 
 EOF

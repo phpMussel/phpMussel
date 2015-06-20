@@ -94,7 +94,7 @@
     particular configuração. Salve o arquivo, feche.
 
  4) Carregar os conteúdos (phpMussel e seus arquivos) para o diretório que você
-    tinha decidido anteriormente (você não requerer os *.txt arquivos
+    tinha decidido anteriormente (você não requerer os *.txt/*.md arquivos
     incluídos, mas principalmente, você deve carregar tudo).
 
  5) CMHOD o "vault" diretório para "777". O principal diretório armazenar o
@@ -426,10 +426,10 @@
             suspeitar que qualquer das senhas foram comprometidas (isso pode
             acontecer se você estiver usando esses controles a através de um
             computador que não é seguro ou não é confiável). controls_lockout
-            funciona através de criando um arquivo, controls.lck, no seu vault,
-            de que phpMussel irá olhar por antes de executar qualquer comando
-            de qualquer variedade. Quando isso acontece, para reativar os
-            controlos, você precisará manualmente deletar o controls.lck
+            funciona através de criando um arquivo, "controls.lck", no seu
+            vault, de que phpMussel irá olhar por antes de executar qualquer
+            comando de qualquer variedade. Quando isso acontece, para reativar
+            os controlos, você precisará manualmente deletar o "controls.lck"
             arquivo através de FTP ou semelhante. Pode ser chamado usando
             qualquer senha.
    ~
@@ -536,7 +536,7 @@
     Isto é o que você deveria ser enganchando em (essencial)!
     ~
  /web.config (Outro, Incluído)
-    Um ASP.NET configuração arquivo (neste caso, para proteger o "vault"
+    Um ASP.NET configuração arquivo (neste caso, para proteger o "\vault"
     diretório contra serem acessado por fontes não autorizadas em caso que o
     script está instalado em um servidor baseado em ASP.NET tecnologias).
     ~
@@ -658,14 +658,14 @@
  /vault/ascii_mussel_regex.cvd (Assinaturas, Incluídos)
  /vault/ascii_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por normalizada ASCII assinaturas.
-    Necessário se o normalizada ASCII assinaturas opção em phpmussel.ini está
+    Necessário se o normalizada ASCII assinaturas opção em "phpmussel.ini" está
     ativado. Pode remover se a opção é desativado.
     ~
  /vault/coex_clamav.cvd (Assinaturas, Incluídos)
  /vault/coex_custom.cvd (Assinaturas, Incluídos)
  /vault/coex_mussel.cvd (Assinaturas, Incluídos)
     Arquivos por o complexos estendidas assinaturas.
-    Necessário se o complexos estendidas assinaturas opção em phpmussel.ini
+    Necessário se o complexos estendidas assinaturas opção em "phpmussel.ini"
     está ativado. Pode remover se a opção é desativado.
     ~
  /vault/elf_clamav_regex.cvd (Assinaturas, Incluídos)
@@ -677,7 +677,7 @@
  /vault/elf_mussel_regex.cvd (Assinaturas, Incluídos)
  /vault/elf_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por ELF assinaturas.
-    Necessário se o ELF assinaturas opção em phpmussel.ini está ativado. Pode
+    Necessário se o ELF assinaturas opção em "phpmussel.ini" está ativado. Pode
     remover se a opção é desativado.
     ~
  /vault/exe_clamav_regex.cvd (Assinaturas, Incluídos)
@@ -689,14 +689,14 @@
  /vault/exe_mussel_regex.cvd (Assinaturas, Incluídos)
  /vault/exe_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por Portátil Executável arquivo (EXE) assinaturas.
-    Necessário se o EXE assinaturas opção em phpmussel.ini está ativado. Pode
+    Necessário se o EXE assinaturas opção em "phpmussel.ini" está ativado. Pode
     remover se a opção é desativado.
     ~
  /vault/filenames_clamav.cvd (Assinaturas, Incluídos)
  /vault/filenames_custom.cvd (Assinaturas, Incluídos)
  /vault/filenames_mussel.cvd (Assinaturas, Incluídos)
     Arquivos por arquivo nome assinaturas.
-    Necessário se o arquivo nome assinaturas opção em phpmussel.ini está
+    Necessário se o arquivo nome assinaturas opção em "phpmussel.ini" está
     ativado. Pode remover se a opção é desativado.
     ~
  /vault/general_clamav_regex.cvd (Assinaturas, Incluídos)
@@ -708,7 +708,7 @@
  /vault/general_mussel_regex.cvd (Assinaturas, Incluídos)
  /vault/general_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por gerais assinaturas.
-    Necessário se o gerais assinaturas opção em phpmussel.ini está ativado.
+    Necessário se o gerais assinaturas opção em "phpmussel.ini" está ativado.
     Pode remover se a opção é desativado.
     ~
  /vault/graphics_clamav_regex.cvd (Assinaturas, Incluídos)
@@ -720,7 +720,7 @@
  /vault/graphics_mussel_regex.cvd (Assinaturas, Incluídos)
  /vault/graphics_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por gráficas assinaturas.
-    Necessário se o gráficas assinaturas opção em phpmussel.ini está ativado.
+    Necessário se o gráficas assinaturas opção em "phpmussel.ini" está ativado.
     Pode remover se a opção é desativado.
     ~
  /vault/greylist.csv (Assinaturas, Incluídos/Criados)
@@ -729,7 +729,7 @@
     ~
  /vault/hex_general_commands.csv (Assinaturas, Incluídos)
     Hex-codificado CSV de geral comando detecções opcionalmente usado por
-    phpMussel. Necessário se o geral comando detecções opção em phpmussel.ini
+    phpMussel. Necessário se o geral comando detecções opção em "phpmussel.ini"
     está ativado. Pode remover se a opção é desativado.
     ~
  /vault/html_clamav_regex.cvd (Assinaturas, Incluídos)
@@ -741,7 +741,7 @@
  /vault/html_mussel_regex.cvd (Assinaturas, Incluídos)
  /vault/html_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por normalizada HTML assinaturas.
-    Necessário se o normalizada HTML assinaturas opção em phpmussel.ini está
+    Necessário se o normalizada HTML assinaturas opção em "phpmussel.ini" está
     ativado. Pode remover se a opção é desativado.
     ~
  /vault/lang.inc (Script, Incluído)
@@ -756,7 +756,7 @@
  /vault/macho_mussel_regex.cvd (Assinaturas, Incluídos)
  /vault/macho_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por Mach-O assinaturas.
-    Necessário se o Mach-O assinaturas opção em phpmussel.ini está ativado.
+    Necessário se o Mach-O assinaturas opção em "phpmussel.ini" está ativado.
     Pode remover se a opção é desativado.
     ~
  /vault/mail_clamav_regex.cvd (Assinaturas, Incluídos)
@@ -776,14 +776,14 @@
  /vault/md5_custom.cvd (Assinaturas, Incluídos)
  /vault/md5_mussel.cvd (Assinaturas, Incluídos)
     Arquivos por MD5 baseadas assinaturas.
-    Necessário se o MD5 baseadas assinaturas opção em phpmussel.ini está
+    Necessário se o MD5 baseadas assinaturas opção em "phpmussel.ini" está
     ativado. Pode remover se a opção é desativado.
     ~
  /vault/metadata_clamav.cvd (Assinaturas, Incluídos)
  /vault/metadata_custom.cvd (Assinaturas, Incluídos)
  /vault/metadata_mussel.cvd (Assinaturas, Incluídos)
     Arquivos por metadados assinaturas.
-    Necessário se o metadados assinaturas opção em phpmussel.ini está ativado.
+    Necessário se o metadados assinaturas opção em "phpmussel.ini" está ativado.
     Pode remover se a opção é desativado.
     ~
  /vault/ole_clamav_regex.cvd (Assinaturas, Incluídos)
@@ -795,7 +795,7 @@
  /vault/ole_mussel_regex.cvd (Assinaturas, Incluídos)
  /vault/ole_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por OLE assinaturas.
-    Necessário se OLE assinaturas opção em phpmussel.ini está ativado. Pode
+    Necessário se OLE assinaturas opção em "phpmussel.ini" está ativado. Pode
     remover se a opção é desativado.
     ~
  /vault/pdf_clamav_regex.cvd (Assinaturas, Incluídos)
@@ -807,14 +807,14 @@
  /vault/pdf_mussel_regex.cvd (Assinaturas, Incluídos)
  /vault/pdf_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por PDF assinaturas.
-    Necessário se PDF assinaturas opção em phpmussel.ini está ativado. Pode
+    Necessário se PDF assinaturas opção em "phpmussel.ini" está ativado. Pode
     remover se a opção é desativado.
     ~
  /vault/pe_clamav.cvd (Assinaturas, Incluídos)
  /vault/pe_custom.cvd (Assinaturas, Incluídos)
  /vault/pe_mussel.cvd (Assinaturas, Incluídos)
     Arquivos por PE Seccional assinaturas.
-    Necessário se o PE Seccional assinaturas opção em phpmussel.ini está
+    Necessário se o PE Seccional assinaturas opção em "phpmussel.ini" está
     ativado. Pode remover se a opção é desativado.
     ~
  /vault/phpmussel.inc (Script, Incluído)
@@ -840,7 +840,7 @@
  /vault/swf_mussel_regex.cvd (Assinaturas, Incluídos)
  /vault/swf_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por o Shockwave assinaturas.
-    Necessário se o Shockwave assinaturas opção em phpmussel.ini está ativado.
+    Necessário se o Shockwave assinaturas opção em "phpmussel.ini" está ativado.
     Pode remover se a opção é desativado.
     ~
  /vault/switch.dat (Outro, Incluído)
@@ -866,7 +866,7 @@
  /vault/whitelist_custom.cvd (Assinaturas, Incluídos)
  /vault/whitelist_mussel.cvd (Assinaturas, Incluídos)
     Arquivo específico whitelist.
-    Necessário se o whitelist opção em phpmussel.ini está ativado e se você
+    Necessário se o whitelist opção em "phpmussel.ini" está ativado e se você
     deseja ter específicos arquivos whitelisted. Pode remover se a opção é
     desativado ou se você não precisa whitelisting.
     ~
@@ -879,12 +879,12 @@
  /vault/xmlxdp_mussel_regex.cvd (Assinaturas, Incluídos)
  /vault/xmlxdp_mussel_standard.cvd (Assinaturas, Incluídos)
     Arquivos por XML/XDP-Pedaço assinaturas.
-    Necessário se XML/XDP-Pedaço assinaturas opção em phpmussel.ini está
+    Necessário se XML/XDP-Pedaço assinaturas opção em "phpmussel.ini" está
     ativado. Pode remover se a opção é desativado.
     ~
 
  * Arquivo nome podem variar baseado em configuração estipulação
-   (referem-se a phpmussel.ini).
+   (referem-se a "phpmussel.ini").
 
  = EM RELAÇÃO AOS ASSINATURAS ARQUIVOS =
     CVD é um acrônimo por "ClamAV Virus Definitions", em referência tanto à
@@ -1481,8 +1481,8 @@
    - "XML/XDP-Pedaço Assinaturas" (xmlxdp_*). Verificado contra quaisquer
       XML/XDP pedaços encontrados dentro cada arquivo não no whitelist e alvo
       por analisando.
-     (Notar que qualquer uma destas assinaturas podem ser facilmente desativada
-      através de phpmussel.ini).
+     (Notar que qualquer uma destas assinaturas podem ser desativada facilmente
+      através de "phpmussel.ini").
 
                                      ~ ~ ~
 
@@ -1567,5 +1567,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 4 Junho 2015 (2015.06.04).
+Última Atualização: 13 Junho 2015 (2015.06.13).
 EOF

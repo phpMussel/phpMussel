@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.6i.0f (7th June 2015) Update Script.
+ This File: phpMussel v0.6j (15th June 2015) Update Script.
  <%phpMussel%/vault/update.inc>
 
                                      ~ ~ ~
@@ -181,7 +181,7 @@ while(true)
 		if(!$MusselConfig['attack_specific']['general_commands'])$phpmusselversion['request_content'].='hex_general_commands.csv%3AIGNORE%3B';
 		else $phpmusselversion['request_content'].='hex_general_commands.csv%3A'.md5(ReadUpdateFile($vault.'hex_general_commands.csv')).'%3B';
 		}
-	$phpmusselversion['request_content'].="update.dat%3A".md5(ReadUpdateFile($vault.'update.dat'))."%3B";
+	$phpmusselversion['request_content'].='update.dat%3A'.md5(ReadUpdateFile($vault.'update.dat')).'%3B';
 	for($i=0;$i<$phpmusselversion['update_addresses_count'];$i++)
 		{
 		echo $MusselConfig['lang']['update_fetch'].' http://'.substr($phpmusselversion['update_addresses'][$i],0,(strlen($phpmusselversion['update_addresses'][$i])-strpos($phpmusselversion['update_addresses'][$i],'/'))*-1).'/ ... ';
