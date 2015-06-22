@@ -25,9 +25,6 @@ Do-to list for potential future major version (v1.0):
   REFER: http://www.spambotsecurity.com/forum/viewtopic.php?f=59&t=3441
   REFER: https://github.com/Maikuolan/phpMussel/issues/11
 
-- Possible idea: Virus Total integration.
-  REFER: https://github.com/Maikuolan/phpMussel/issues/12
-
 Do-to list for potential future minor version (v0.7):
 
 - Any significant changes to the script including completing of any of the
@@ -49,7 +46,40 @@ Anything less than sub-minor:
   not yet considered stable; updates received via the auto-updater that haven't
   yet been mainlined will usually be versioned in this way).
 
-=== Version/Release 0.6j (Previous Release: 0.6i) ===
+=== Version/Release 0.7 (Previous Release: 0.6j) ===
+SUMMARY:
+Minor release (medium priority); BETA! NOT YET RELEASED!
+
+- [2015.06.17; Sub-minor code change]: Completed work on "lang.ru.inc"
+  (undoubtedly has mistakes; feel free to audit if you want).
+
+- [2015.06.20; NEW FEATURE]: Created and implemented a caching system to
+  phpMussel! As of now, phpMussel is able to store information to and retrieve
+  information from an internal cache between unique requests. There'll be a
+  number of new features brought about as of this release that'll make use of
+  this new caching system [phpmussel.inc].
+
+- [2015.06.21; NEW FEATURE]: phpMussel now stores the results of scanning in
+  its internal cache, maintains these cache entries for the length of time
+  specified by the `scan_cache_expiry` directive (newly created directive added
+  to `phpmussel.ini`, defaulting to 21600 seconds, or 6 hours), after which,
+  these cache entries will be cleared from the cache. When a new scan is
+  initiated, phpMussel will check the cache for such entries, and if an entry
+  exists corresponding to the file being scanned, the cached results will be
+  returned, significantly reducing the time and processing power required by
+  phpMussel to produce a result [phpmussel.inc; phpmussel.ini].
+
+- [2015.06.22; NEW FEATURE]: Integration with the Virus Total API has now been
+  implemented! phpMussel is now able to optionally scan files using the Virus
+  Total API, providing a greatly enhanced level of protection against viruses,
+  trojans, malware and other threats. More information regarding this
+  implementation is available via the documentation [phpmussel.inc;
+  phpmussel.ini]. Refer github.com/Maikuolan/phpMussel/issues/12
+
+Maikuolan,
+22nd June 2015.
+
+=== Version/Release 0.6j (Previous Release: 0.6i; Next: 0.7) ===
 SUMMARY:
 Updated to the latest signatures set (55+20552+6j).
 Sub-minor release (medium priority).
