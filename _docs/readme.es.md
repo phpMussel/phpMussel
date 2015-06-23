@@ -502,7 +502,7 @@ General configuración para phpMussel.
 - El máxima uso de memoria permitida para la cuarentena. Si la total memoria utilizada por la cuarentena alcanza este valor, los más antiguos cuarentenado archivos serán eliminado hasta que la total memoria utilizada ya no alcanza este valor. Esta directiva es importante como un medio de hacer que sea más difícil para cualquier potenciales atacantes a inundar su cuarentena con datos no deseados que puede causar el excesivo uso de datos en su hosting servicio. Valor es en KB. Predefinido =2048 =2048KB =2MB.
 
 "honeypot_mode"
-- Cuando la honeypot modo está activado, phpMussel intentará cuarentenar cada archivo carga que encuentra, independientemente de si o no el archivo que se está cargado coincide con las firmas incluídas, y no real escanear o análisis de esos intentados archivos cargas van a ocurrir. Esta funcionalidad debe ser útil para aquellos que deseen utilizar phpMussel a los efectos del virus/malware investigación, pero no se recomendado activar esta funcionalidad si el uso de phpMussel por el usuario es para real archivo carga escaneando ni recomendado usar la honeypot funcionalidad para fines otro que de la honeypot. Por predefinido, esta opción está desactivada. 0 = Activado [Predefinido], 1 = Activado.
+- Cuando la honeypot modo está activado, phpMussel intentará cuarentenar cada archivo carga que encuentra, independientemente de si o no el archivo que se está cargado coincide con las firmas incluídas, y no real escanear o análisis de esos intentados archivos cargas van a ocurrir. Esta funcionalidad debe ser útil para aquellos que deseen utilizar phpMussel a los efectos del virus/malware investigación, pero no se recomendado activar esta funcionalidad si el uso de phpMussel por el usuario es para real archivo carga escaneando ni recomendado usar la honeypot funcionalidad para fines otro que de la honeypot. Por predefinido, esta opción está desactivada. 0 = Desactivado [Predefinido], 1 = Activado.
 
 "scan_cache_expiry"
 - Por cuánto tiempo debe phpMussel caché de los resultados del escaneo? El valor es el número de segundos para almacenar en caché los resultados del escaneo. La predeterminado valor es 21600 segundos (6 horas); Un valor de 0 desactiva el almacenamiento en caché de los resultados del escaneo.
@@ -612,7 +612,7 @@ Firma cotejando longitud limitando opciones. Sólo cambiarlos si sabes lo que es
 - "sd_siglen_max"
 
 "fail_silently"
-- Debe phpMussel informan cuando los firmas archivos están desaparecidos o dañados? Si fail_silently está desactivado, desaparecidos y dañados archivos será reportado cuando escaneando, y si fail_silently está activado, desaparecidos y dañados archivos será ignorado, con escaneando reportado para lo archivos que no hay cualquier problemas. Esto generalmente debe ser dejar sola a menos que usted está experimentando estrellarse o problemas similares. 0 = Activado, 1 = Activado [Predefinido].
+- Debe phpMussel informan cuando los firmas archivos están desaparecidos o dañados? Si fail_silently está desactivado, desaparecidos y dañados archivos será reportado cuando escaneando, y si fail_silently está activado, desaparecidos y dañados archivos será ignorado, con escaneando reportado para lo archivos que no hay cualquier problemas. Esto generalmente debe ser dejar sola a menos que usted está experimentando estrellarse o problemas similares. 0 = Desactivado, 1 = Activado [Predefinido].
 
 ####"files" (Categoría)
 General configuración para el manejo de archivos.
@@ -651,7 +651,7 @@ General configuración para el manejo de archivos.
 ####"attack_specific" (Categoría)
 Configuración para ataque específicas detecciones (no basado en CVDs).
 
-Camaleón ataque detección: 0 = Activado, 1 = Activado.
+Camaleón ataque detección: 0 = Desactivado, 1 = Activado.
 
 "chameleon_from_php"
 - Buscar para php código en archivos que no están php archivos ni reconocidos compactados archivos.

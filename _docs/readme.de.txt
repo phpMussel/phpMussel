@@ -1345,7 +1345,7 @@
      Anmerkung: Falls das Scannen von Dateien mit der Virus Total API
      deaktiviert ist, brauchst du keine der Direktiven in dieser Kategorie
      (`virustotal`) zu überprüfen, weil keine davon etwas machen wenn dies
-     deaktiviert ist. Um einen Virus Total API Schlüssel zu erhalten, 
+     deaktiviert ist. Um einen Virus Total API Schlüssel zu erhalten, klicke
      auf deren Webseite auf den "Treten Sie unserer Community bei" Link oben
      rechts auf der Seite, gebe die geforderten Daten an und klick auf
      "Anmelden" wenn du fertig bist. Folge allen Anweisungen und wenn du deinen
