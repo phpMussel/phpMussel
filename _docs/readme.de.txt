@@ -1009,14 +1009,9 @@
       diese Funktion deaktiviert.
       0 = Deativiert [Standardwert], 1 = Aktiviert.
     "scan_cache_expiry"
-    - For how long should phpMussel cache the results of scanning? Value is the
-      number of seconds to cache the results of scanning for. Default is 21600
-      seconds (6 hours); A value of 0 will disable caching the results of
-      scanning.
-      "scan_cache_expiry"
-    - Für wie lange soll phpMussel die Scan-Ergebnisse zwischenspeichern? Wert 
+    - Für wie lange soll phpMussel die Scan-Ergebnisse zwischenspeichern? Wert
       entspricht der Anzahl Sekunden, wie lange die Scan-Ergebnisse zwischen-
-      gespeichert werden. Standard ist 21600 Sekunden (6 Stunden); Ein Wert von 
+      gespeichert werden. Standard ist 21600 Sekunden (6 Stunden); Ein Wert von
       0 wird das Zwischenspeichern von Scan-Ergebnissen deaktivieren.
  "signatures" (Kategorie)
  - Konfiguration der Signaturen.
@@ -1329,108 +1324,111 @@
  "virustotal" (Kategorie)
  - Konfiguration für Virus Total Integration.
    "vt_public_api_key"
-   - Optional, phpMussel kann Dateien mit der Virus Total API scannen, um einen 
-     noch besseren Schutz gegen Viren, Trojaner, Malware und andere Bedrohungen 
-     zu bieten. Standardmäßig ist das Scannen von Dateien mit der Virus Total 
-     API deaktiviert. Um es zu aktivieren, wird ein API Schlüssel von Virus 
-     Total benötigt. Wegen dem großen Vorteil den dir das bietet, empfehle ich 
-     die Aktivierung. Bitte sei dir bewusst, um die Virus Total API zu nutzen, 
-     dass du deren Nutzungsbedingungen zustimmen und dich an alle Richtlinien 
-     halten musst, wie es in der Virus Total Dokumentation beschrieben ist! Du 
+   - Optional, phpMussel kann Dateien mit der Virus Total API scannen, um einen
+     noch besseren Schutz gegen Viren, Trojaner, Malware und andere Bedrohungen
+     zu bieten. Standardmäßig ist das Scannen von Dateien mit der Virus Total
+     API deaktiviert. Um es zu aktivieren, wird ein API Schlüssel von Virus
+     Total benötigt. Wegen dem großen Vorteil den dir das bietet, empfehle ich
+     die Aktivierung. Bitte sei dir bewusst, um die Virus Total API zu nutzen,
+     dass du deren Nutzungsbedingungen zustimmen und dich an alle Richtlinien
+     halten musst, wie es in der Virus Total Dokumentation beschrieben ist! Du
      darfst diese Integrations-Funktion nicht verwenden AUSSER:
-     A) Du hast die Nutzungsbedingungen von Virus Total und der API gelesen und 
-	  stimmst diesen zu. Die Nutzungsbedingungen von Virus Total und der API 
-	  findet man hier:
+     A) Du hast die Nutzungsbedingungen von Virus Total und der API gelesen und
+        stimmst diesen zu. Die Nutzungsbedingungen von Virus Total und der API
+        findet man hier:
         <https://www.virustotal.com/en/about/terms-of-service/>.
-     B) Du hast, zu einem Minimum, das Vorwort von der Virus Total Public API 
-        Dokumentation gelesen und und verstanden (alles nach "Virus Total Public 
-        API v2.0" aber vor "Contents"). Die Virus Total Public API Dokumentation
-	  findet man hier:
+     B) Du hast, zu einem Minimum, das Vorwort von der Virus Total Public API
+        Dokumentation gelesen und und verstanden (alles nach "Virus Total
+        Public API v2.0" aber vor "Contents"). Die Virus Total Public API
+        Dokumentation findet man hier:
         <https://www.virustotal.com/en/documentation/public-api/>.
-     Anmerkung: Falls das Scannen von Dateien mit der Virus Total API 
-     deaktiviert ist, brauchst du keine der Direktiven in dieser Kategorie 
-     (`virustotal`) zu überprüfen, weil keine davon etwas machen wenn dies 
-     deaktiviert ist. Um einen Virus Total API Schlüssel zu erhalten, klicke auf
-     deren Webseite auf den "Treten Sie unserer Community bei" Link oben 
-     rechts auf der Seite, gebe die geforderten Daten an und klick auf 
-     "Anmelden" wenn du fertig bist. Folge allen Anweisungen und wenn du deinen 
-     öffentlichen API Schlüssel hast, kopier eund füge den öffentlichen API 
-     Schlüssel bei der `vt_public_api_key` Direktive der `phpmussel.ini` 
+     Anmerkung: Falls das Scannen von Dateien mit der Virus Total API
+     deaktiviert ist, brauchst du keine der Direktiven in dieser Kategorie
+     (`virustotal`) zu überprüfen, weil keine davon etwas machen wenn dies
+     deaktiviert ist. Um einen Virus Total API Schlüssel zu erhalten, 
+     auf deren Webseite auf den "Treten Sie unserer Community bei" Link oben
+     rechts auf der Seite, gebe die geforderten Daten an und klick auf
+     "Anmelden" wenn du fertig bist. Folge allen Anweisungen und wenn du deinen
+     öffentlichen API Schlüssel hast, kopier eund füge den öffentlichen API
+     Schlüssel bei der `vt_public_api_key` Direktive der `phpmussel.ini`
      Konfigurations-Datei ein.
    "vt_suspicion_level"
-   - phpMussel wird standardmäßig die mit der Virus Total API zu scannenden 
-     Dateien auf Dateien eisnchränken, die es als "verdächtig" betrachtet. Du 
-	 kannst optional diese Einschränkung durch Änderung des Wertes der 
-	 `vt_suspicion_level` Direktive anpassen.
-     0 - Dateien werden nur als verdächtig betrachtet, falls durch den Scan mit 
-	     phpMussel mit eigenen Signaturen, diese eine heuristische Gewichtung 
-	     haben. Das würde bdeuten, dass die Verwendung der Virus Total API für 
-	     eine zweite Meinung ist, wenn phpMussel eine Datei verdächtigt, dass 
-	     diese schädlich ist aber nicht vollkommen ausschließen kann, dass diese
-	     potentiell harmlos (nicht schädlich) und somit diese andererseits 
-	     normalerweise nicht blockieren oder als schädlich markieren würde.
-     1 - Dateien werden als verdächtig betrachtet, falls diese eine ausführbare 
-	     Datei (PE Dateien, Mach-O Dateien, ELF/Linux Dateien usw.) oder ein 
-	     Format sind, das ausführbare Daten enthalten könnte (solche wie 
-	     ausführbare Makros, DOC/DOCX Dateien, Archivdateien wie RAR und ZIP, 
-	     usw). Das ist die normale und empfohlene Verdachts-Stufe, was bedeutet,
-	     dass die Virus Total API für eine zweite Meinung genutzt wird, wenn 
-	     phpMussel in einer als verdächtig betrachteten Datei nichts schädliches
-	     oder unstimmiges findet, die es als verdächtig ansieht und somit 
-	     normalerweise nicht blockieren oder als schädlich markieren würde.
-     2 - Alle Dateien werden als verdächtig angesehen und sollten mit der Virus 
-	     Total API gescannt werden. Ich empfehle nicht, diese Verdachts-Stufe 
-           anzuwenden, da dadurch eine schnellere Erreichung des API Limits 
-	     riskiert wird, als es normalerweise der Fall wäre. Aber es gibt 
-	     bestimmte Umstände (zB wenn der Webmaster oder Hostmaster sehr wenig 
-	     Vertrauen in die hochgeladenen Inhalte der Nutzer hat) wo diese 
-	     Verdachts-Stufe angemessen sein könnte. Mit dieser Verdachts-Stufe 
-	     werden alle Dateien, die normalerweise nicht blockiert oder als 
-	     schädlich markiert würden, mit der Virus Total API gescannt. Beachte, 
-	     dass phpMussel die Virus Total API nicht nutzen wird, wenn dein API 
-	     Limit erreicht ist (unabhängig von der Verdachts-Stufe) und dass dein 
-	     Limit wahrscheinlich schneller erreicht wird, wenn diese Verdachts-
-	     Stufe verwendet wird.
-     Hinweis: Unabhängig von der Verdachts-Stufe wird jede Datei auf der 
-     whitelist oder der Blacklist nicht durch phpMussel mit der Virus Total API 
-     gescannt, da diese Dateien bereits als schädlich oder harmlos deklariert 
-     wurden und ansonste gescannt würden, und somit zusätzliches Scannen nicht 
-     erforderlich ist. Die Möglichkeit von phpMussel Dateien mit der Virus Total 
-     API zu scannen ist dafür gedacht, weiteres Vertrauen aufzubauen, ob eine 
-     Datei unter den Umständen schädlich oder harmlost ist, wo phpMussel sich 
-     selber nicht sicher ist ob eine Datei schädlich oder harmlos ist.
+   - phpMussel wird standardmäßig die mit der Virus Total API zu scannenden
+     Dateien auf Dateien eisnchränken, die es als "verdächtig" betrachtet. Du
+     kannst optional diese Einschränkung durch Änderung des Wertes der
+     `vt_suspicion_level` Direktive anpassen.
+     0 - Dateien werden nur als verdächtig betrachtet, falls durch den Scan mit
+         phpMussel mit eigenen Signaturen, diese eine heuristische Gewichtung
+         haben. Das würde bdeuten, dass die Verwendung der Virus Total API für
+         eine zweite Meinung ist, wenn phpMussel eine Datei verdächtigt, dass
+         diese schädlich ist aber nicht vollkommen ausschließen kann, dass
+         diese potentiell harmlos (nicht schädlich) und somit diese
+         andererseits normalerweise nicht blockieren oder als schädlich
+         markieren würde.
+     1 - Dateien werden als verdächtig betrachtet, falls diese eine ausführbare
+         Datei (PE Dateien, Mach-O Dateien, ELF/Linux Dateien usw.) oder ein
+         Format sind, das ausführbare Daten enthalten könnte (solche wie
+         ausführbare Makros, DOC/DOCX Dateien, Archivdateien wie RAR, ZIP und
+         usw). Das ist die normale und empfohlene Verdachts-Stufe, was
+         bedeutet, dass die Virus Total API für eine zweite Meinung genutzt
+         wird, wenn phpMussel in einer als verdächtig betrachteten Datei nichts
+         schädliches oder unstimmiges findet, die es als verdächtig ansieht und
+         somit normalerweise nicht blockieren oder als schädlich markieren
+         würde.
+     2 - Alle Dateien werden als verdächtig angesehen und sollten mit der Virus
+         Total API gescannt werden. Ich empfehle nicht, diese Verdachts-Stufe
+         anzuwenden, da dadurch eine schnellere Erreichung des API Limits
+         riskiert wird, als es normalerweise der Fall wäre. Aber es gibt
+         bestimmte Umstände (zB wenn der Webmaster oder Hostmaster sehr wenig
+         Vertrauen in die hochgeladenen Inhalte der Nutzer hat) wo diese
+         Verdachts-Stufe angemessen sein könnte. Mit dieser Verdachts-Stufe
+         werden alle Dateien, die normalerweise nicht blockiert oder als
+         schädlich markiert würden, mit der Virus Total API gescannt. Beachte,
+         dass phpMussel die Virus Total API nicht nutzen wird, wenn dein API
+         Limit erreicht ist (unabhängig von der Verdachts-Stufe) und dass dein
+         Limit wahrscheinlich schneller erreicht wird, wenn diese Verdachts-
+         Stufe verwendet wird.
+     Hinweis: Unabhängig von der Verdachts-Stufe wird jede Datei auf der
+     Whitelist oder der Blacklist nicht durch phpMussel mit der Virus Total API
+     gescannt, da diese Dateien bereits als schädlich oder harmlos deklariert
+     wurden und ansonste gescannt würden, und somit zusätzliches Scannen nicht
+     erforderlich ist. Die Möglichkeit von phpMussel Dateien mit der Virus
+     Total API zu scannen ist dafür gedacht, weiteres Vertrauen aufzubauen, ob
+     eine Datei unter den Umständen schädlich oder harmlost ist, wo phpMussel
+     sich selber nicht sicher ist ob eine Datei schädlich oder harmlos ist.
    "vt_weighting"
-   - Soll phpMussel die Ergebnisse des Scans mit der Virus Total API als 
-     Erkennungen oder Erkennungs-Gewichtung anwenden? Diese Direktive existiert,
-     weil das Scannen einer Datei mit mehreren Engines (wie es Virus Total macht
-     ) in einer höheren Erkennungsrate resultieren sollte (und somit eine 
-     größere Anzahl schädlicher Dateien erwischt werden), dies kann aber zu in 
-     einer höheren Anzahl von Falschmeldungen führen. Unter manchen Umständen 
-     würden die Ergebnisse des Scans besser als Vertrauens-Wert als ein 
-     eindeutiges Ergebnis verwendet werden. Wenn der Wert 0 verwendet wird, 
-     werden die Ergebnisse des Scans als Erkennungen angewendet und somit wird 
-     phpMussel, falls irgendeine von Virus Total verwendete Engine die gescannte
-     Datei als schädlich markiert, die Datei als schädlich betrachten. Wird ein 
-     anderer Wert verwendet, werden die Ergebnisse des Scans mit der Virus Total 
-     API als Erkennungs-Gewichtung angewendet. Die Anzahl der von Virus Total 
-     verwendeten Engines, welche die Datei als schädlich markieren, wird als 
-     Vertrauens-Wert (oder Erkennungs-Gewichtung) dienen, ob die gescannte Datei
-     von phpMussel als schädlich angesehen werden soll (der verwendete Wert wird
-     den Mindest-Vertrauens-Wert oder erforderliche Gewichtung repräsentieren, 
-     um als schädlich angesehen zu werden. Standardmäßig der Wert 0 verwendet.
+   - Soll phpMussel die Ergebnisse des Scans mit der Virus Total API als
+     Erkennungen oder Erkennungs-Gewichtung anwenden? Diese Direktive
+     existiert, weil das Scannen einer Datei mit mehreren Engines (wie es
+     Virus Total macht) in einer höheren Erkennungsrate resultieren sollte (und
+     somit eine größere Anzahl schädlicher Dateien erwischt werden), dies kann
+     aber zu in einer höheren Anzahl von Falschmeldungen führen. Unter manchen
+     Umständen würden die Ergebnisse des Scans besser als Vertrauens-Wert als
+     ein eindeutiges Ergebnis verwendet werden. Wenn der Wert 0 verwendet wird,
+     werden die Ergebnisse des Scans als Erkennungen angewendet und somit wird
+     phpMussel, falls irgendeine von Virus Total verwendete Engine die
+     gescannte Datei als schädlich markiert, die Datei als schädlich
+     betrachten. Wird ein anderer Wert verwendet, werden die Ergebnisse des
+     Scans mit der Virus Total API als Erkennungs-Gewichtung angewendet. Die
+     Anzahl der von Virus Total verwendeten Engines, welche die Datei als
+     schädlich markieren, wird als Vertrauens-Wert (oder Erkennungs-Gewichtung)
+     dienen, ob die gescannte Datei von phpMussel als schädlich angesehen
+     werden soll (der verwendete Wert wird den Mindest-Vertrauens-Wert oder
+     erforderliche Gewichtung repräsentieren, um als schädlich angesehen zu
+     werden. Standardmäßig der Wert 0 verwendet.
    "vt_quota_rate" und "vt_quota_time"
-   - Laut der Virus Total API Dokumentation, "ist diese auf 4 Anfragen 
-     irgendeiner Art in einer 1 Minuten Zeitspanne limitiert. Falls du einen 
-     Honeyclient, Honeypot oder einen andere Automatisierung verwendest, was 
-     etwas zu VirusTotal beiträgt und nicht nur Berichte abruft, bist du 
-     für ein höheres Limit berechtigt". Standardmäßig wird sich phpMussel strikt
-     daran halten, da aber diese Limits erhöht werden können, stehen dir diese 
-     zwei Direktiven zur Verfügung um phpMussel anzuweisen, an welches Limit es 
-     sich halten soll. Außer du bist dazu aufgefordert, ist es nicht empfohlen 
-     diese Werte zu erhöhen. Solltest du aber Probleme bezogen auf das Erreichen
-     des Limits haben, -sollte- das Verringern dieser Werte manchmal helfen. 
-     Dein Limit wird festgelegt als `vt_quota_rate` Anfragen jeder Art in jeder 
-     `vt_quota_time` Minuten Zeitspanne.
+   - Laut der Virus Total API Dokumentation, "ist diese auf 4 Anfragen
+     irgendeiner Art in einer 1 Minuten Zeitspanne limitiert. Falls du einen
+     Honeyclient, Honeypot oder einen andere Automatisierung verwendest, was
+     etwas zu VirusTotal beiträgt und nicht nur Berichte abruft, bist du für
+     ein höheres Limit berechtigt". Standardmäßig wird sich phpMussel strikt
+     daran halten, da aber diese Limits erhöht werden können, stehen dir diese
+     zwei Direktiven zur Verfügung um phpMussel anzuweisen, an welches Limit es
+     sich halten soll. Außer du bist dazu aufgefordert, ist es nicht empfohlen
+     diese Werte zu erhöhen. Solltest du aber Probleme bezogen auf das
+     Erreichen des Limits haben, -sollte- das Verringern dieser Werte manchmal
+     helfen. Dein Limit wird festgelegt als `vt_quota_rate` Anfragen jeder Art
+     in jeder `vt_quota_time` Minuten Zeitspanne.
 
                                      ~ ~ ~
 

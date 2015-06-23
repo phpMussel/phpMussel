@@ -1334,8 +1334,8 @@
      1 - Files are considered suspicious if they're known to be executable (PE
          files, Mach-O files, ELF/Linux files, etc) or if they're known to be
          of a format that could potentially contain executable data (such as
-         executable macros, DOC/DOCX files, archive files such as RARs and
-         ZIPS, and etc). This is the default and recommended suspicion level to
+         executable macros, DOC/DOCX files, archive files such as RARs, ZIPS
+         and etc). This is the default and recommended suspicion level to
          apply, effectively meaning that use of the Virus Total API would be
          for a second opinion for when phpMussel doesn't initially find
          anything malicious or wrong with a file that it considers to be
@@ -1357,7 +1357,7 @@
      or whitelisted by phpMussel won't be scanned using the Virus Total API,
      because those such files would've already been declared as either
      malicious or benign by phpMussel by the time that they would've otherwise
-     been scanned by the Virus Total API, and therefore, additionally scanning
+     been scanned by the Virus Total API, and therefore, additional scanning
      wouldn't be required. The ability of phpMussel to scan files using the
      Virus Total API is intended to build further confidence for whether a file
      is malicious or benign in those circumstances where phpMussel itself isn't
@@ -1387,7 +1387,7 @@
      4 requests of any nature in any given 1 minute time frame. If you run a
      honeyclient, honeypot or any other automation that is going to provide
      resources to VirusTotal and not only retrieve reports you are entitled to
-     a higher request rate quota". By default, phpMussel will strictly abhere
+     a higher request rate quota". By default, phpMussel will strictly adhere
      to these limitations, but due to the possibility of these rate quotas
      being increased, these two directives are provided as a means for you to
      instruct phpMussel as to what limit it should adhere to. Unless you've
