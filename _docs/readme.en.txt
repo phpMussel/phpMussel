@@ -1394,8 +1394,8 @@
      been instructed to do so, it's not recommended for you to increase these
      values, but, if you've encountered problems relating to reaching your rate
      quota, decreasing these values -may- sometimes help you in dealing with
-     these problems. Your rate limit determined as `vt_quota_rate` requests of
-     any nature in any given `vt_quota_time` minute time frame.
+     these problems. Your rate limit is determined as `vt_quota_rate` requests
+     of any nature in any given `vt_quota_time` minute time frame.
 
                                      ~ ~ ~
 
