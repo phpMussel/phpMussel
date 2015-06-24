@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Chinese (Simplified) / 中文（简体） Language Data (4th June 2015).
+ This File: phpMussel Chinese (Simplified) / 中文（简体） Language Data (24th June 2015).
  <%phpMussel%/vault/lang/lang.zh.inc>
 
 */
@@ -30,7 +30,7 @@ $MusselConfig['lang']['cli_update_restart']=' 重新启动phpMussel可能是需�
 $MusselConfig['lang']['cli_working']='进行中';
 $MusselConfig['lang']['corrupted']='检测损坏PE';
 $MusselConfig['lang']['denied']='上载是否认！';
-$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード拒否されました! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento negato! Upload verweigert! アップロード拒否されました! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='你的上传被拒绝由于这些原因 / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='检测{vn}';
 $MusselConfig['lang']['detected_control_characters']='检测控制字符';
