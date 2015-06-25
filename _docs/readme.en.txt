@@ -592,6 +592,13 @@
  /vault/ (Directory)
     Vault directory (contains various files).
     ~
+ /vault/cache/ (Directory)
+    Cache directory (for temporary data).
+    ~
+ /vault/cache/.htaccess (Other, Included)
+    A hypertext access file (in this instance, to protect sensitive files
+    belonging to the script from being accessed by non-authorised sources).
+    ~
  /vault/lang/ (Directory)
     Contains phpMussel language data.
     ~
@@ -1612,5 +1619,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 23rd June 2015 (2015.06.23).
+Last Updated: 25th June 2015 (2015.06.25).
 EOF

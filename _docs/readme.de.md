@@ -289,6 +289,8 @@ Datei                                      | Beschreibung
 /_testfiles/swf_standard_testfile.swf      | Testdatei zur Überprüfung der SWF-Signaturen.
 /_testfiles/xdp_standard_testfile.xdp      | Testdatei zur Überprüfung der XML/XDP-Datenblock-Signaturen.
 /vault/                                    | Vault-Verzeichnis (beinhaltet verschiedene Dateien).
+/vault/cache/                              | Cache-Verzeichnis (für temporäre Daten).
+/vault/cache/.htaccess                     | Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/lang/                               | Enthält Sprachdaten für phpMussel.
 /vault/lang/.htaccess                      | Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/lang/lang.de.inc                    | Sprachdateien: DEUTSCH
@@ -877,4 +879,4 @@ Diese Informationen wurden zuletzt am 2015.05.28 aktualisiert und gelten für al
 ---
 
 
-Zuletzt aktualisiert: 23. Juni 2015 (2015.06.23).
+Zuletzt aktualisiert: 25. Juni 2015 (2015.06.25).

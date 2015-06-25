@@ -290,6 +290,8 @@ Archivo                                    | Descripción
 /_testfiles/swf_standard_testfile.swf      | Prueba archivo para probando phpMussel SWF firmas.
 /_testfiles/xdp_standard_testfile.xdp      | Prueba archivo para probando phpMussel XML/XDP-Chunk firmas.
 /vault/                                    | Vault directorio (contiene varios archivos).
+/vault/cache/                              | Cache directorio (para los datos temporal).
+/vault/cache/.htaccess                     | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/lang/                               | Contiene lingüísticos datos.
 /vault/lang/.htaccess                      | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/lang/lang.de.inc                    | Lingüísticos datos: DEUTSCH
@@ -880,4 +882,4 @@ Esta información ha sido actualizado 28 Mayo 2015 y es a hoy para todas las php
 ---
 
 
-Última Actualización: 23 Junio 2015 (2015.06.23).
+Última Actualización: 25 Junio 2015 (2015.06.25).

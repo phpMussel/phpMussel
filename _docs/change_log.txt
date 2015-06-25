@@ -92,8 +92,11 @@ Minor release (medium priority); BETA! NOT YET RELEASED!
 - [2015.06.24; Documentation; Maikuolan]: Updated French README (Virus Total
   information) [readme.fr.txt; readme.fr.md].
 
+- [2015.06.25; Documentation; Maikuolan]: Updated Indonesian README (Virus
+  Total information) [readme.id.txt; readme.id.md].
+
 Maikuolan,
-24th June 2015.
+25th June 2015.
 
 === Version/Release 0.6j (Previous Release: 0.6i; Next: 0.7) ===
 SUMMARY:

@@ -633,6 +633,14 @@
  /vault/ (Répertoire)
     Voûte répertoire (contient divers fichiers).
     ~
+ /vault/cache/ (Répertoire)
+    Cache répertoire (pour les données temporaires).
+    ~
+ /vault/cache/.htaccess (Autre, Inclu)
+    Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles
+    fichiers appartenant au script contre être consulté par non autorisées
+    sources).
+    ~
  /vault/lang/ (Répertoire)
     Contient linguistiques données.
     ~
@@ -1726,5 +1734,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 23 Juin 2015 (2015.06.23).
+Dernière Réactualisé: 25 Juin 2015 (2015.06.25).
 EOF

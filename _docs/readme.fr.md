@@ -290,6 +290,8 @@ Fichier                                    | Description
 /_testfiles/swf_standard_testfile.swf      | Test fichier à test phpMussel SWF signatures.
 /_testfiles/xdp_standard_testfile.xdp      | Test fichier à test phpMussel XML/XDP morceaux signatures.
 /vault/                                    | Voûte répertoire (contient divers fichiers).
+/vault/cache/                              | Cache répertoire (pour les données temporaires).
+/vault/cache/.htaccess                     | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/lang/                               | Contient linguistiques données.
 /vault/lang/.htaccess                      | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/lang/lang.de.inc                    | Linguistiques données: DEUTSCH
@@ -881,4 +883,4 @@ Cette information a été réactualisé le 28 Mai 2015 et est courant pour toute
 ---
 
 
-Dernière Réactualisé: 23 Juin 2015 (2015.06.23).
+Dernière Réactualisé: 25 Juin 2015 (2015.06.25).

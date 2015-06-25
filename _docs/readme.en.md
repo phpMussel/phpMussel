@@ -290,6 +290,8 @@ File                                       | Description
 /_testfiles/swf_standard_testfile.swf      | Test file for testing phpMussel SWF signatures.
 /_testfiles/xdp_standard_testfile.xdp      | Test file for testing phpMussel XML/XDP-Chunk signatures.
 /vault/                                    | Vault directory (contains various files).
+/vault/cache/                              | Cache directory (for temporary data).
+/vault/cache/.htaccess                     | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/lang/                               | Contains phpMussel language data.
 /vault/lang/.htaccess                      | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/lang/lang.de.inc                    | Language data: DEUTSCH
@@ -881,4 +883,4 @@ This information was last updated 28th May 2015 and is current for all phpMussel
 ---
 
 
-Last Updated: 23th June 2015 (2015.06.23).
+Last Updated: 25th June 2015 (2015.06.25).

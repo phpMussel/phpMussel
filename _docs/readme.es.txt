@@ -620,6 +620,14 @@
  /vault/ (Directorio)
     Vault directorio (contiene varios archivos).
     ~
+ /vault/cache/ (Directorio)
+    Cache directorio (para los datos temporal).
+    ~
+ /vault/cache/.htaccess (Otro, Incluido)
+    Un hipertexto acceso archivo (en este caso, para proteger confidenciales
+    archivos perteneciente a la script contra el acceso de fuentes no
+    autorizadas).
+    ~
  /vault/lang/ (Directorio)
     Contiene lingüísticos datos.
     ~
@@ -1708,5 +1716,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 23 Junio 2015 (2015.06.23).
+Última Actualización: 25 Junio 2015 (2015.06.25).
 EOF
