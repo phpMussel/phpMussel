@@ -275,9 +275,10 @@
  Streamline worden verwijderd), verwijzen naar de Greylisting aantekeningen
  binnen de Browser Commando sectie van dit README bestand.
 
- In addition to the default file upload scanning and the optional scanning
- of other files and/or directories specified via the above function, included
- in phpMussel is a function intended for scanning the body of email messages.
+ In aanvulling op de standaard bestand uploaden scannen en de optionele scannen
+ van andere bestanden en/of directories opgegeven via de bovenstaande functie,
+ in phpMussel een functie bestemd voor het scannen van het lichaam van
+ emailberichten.
  This function behaves similarly to the standard phpMussel() function, but
  focuses solely on matching against the ClamAV email-based signatures. I have
  not tied these signatures into the standard phpMussel() function, because it
@@ -605,6 +606,13 @@
     ~
  /vault/ (Directory)
     Vault directory (contains various files).
+    ~
+ /vault/cache/ (Directory)
+    Cache directory (for temporary data).
+    ~
+ /vault/cache/.htaccess (Other, Included)
+    A hypertext access file (in this instance, to protect sensitive files
+    belonging to the script from being accessed by non-authorised sources).
     ~
  /vault/lang/ (Directory)
     Contains phpMussel language data.
@@ -1348,8 +1356,8 @@
      1 - Files are considered suspicious if they're known to be executable (PE
          files, Mach-O files, ELF/Linux files, etc) or if they're known to be
          of a format that could potentially contain executable data (such as
-         executable macros, DOC/DOCX files, archive files such as RARs and
-         ZIPS, and etc). This is the default and recommended suspicion level to
+         executable macros, DOC/DOCX files, archive files such as RARs, ZIPS
+         and etc). This is the default and recommended suspicion level to
          apply, effectively meaning that use of the Virus Total API would be
          for a second opinion for when phpMussel doesn't initially find
          anything malicious or wrong with a file that it considers to be
@@ -1371,7 +1379,7 @@
      or whitelisted by phpMussel won't be scanned using the Virus Total API,
      because those such files would've already been declared as either
      malicious or benign by phpMussel by the time that they would've otherwise
-     been scanned by the Virus Total API, and therefore, additionally scanning
+     been scanned by the Virus Total API, and therefore, additional scanning
      wouldn't be required. The ability of phpMussel to scan files using the
      Virus Total API is intended to build further confidence for whether a file
      is malicious or benign in those circumstances where phpMussel itself isn't
@@ -1401,7 +1409,7 @@
      4 requests of any nature in any given 1 minute time frame. If you run a
      honeyclient, honeypot or any other automation that is going to provide
      resources to VirusTotal and not only retrieve reports you are entitled to
-     a higher request rate quota". By default, phpMussel will strictly abhere
+     a higher request rate quota". By default, phpMussel will strictly adhere
      to these limitations, but due to the possibility of these rate quotas
      being increased, these two directives are provided as a means for you to
      instruct phpMussel as to what limit it should adhere to. Unless you've
@@ -1627,5 +1635,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 23 Juni 2015 (2015.06.23).
+Laatste Bijgewerkt: 27 Juni 2015 (2015.06.27).
 EOF

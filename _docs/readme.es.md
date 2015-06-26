@@ -825,14 +825,14 @@ En su mayor parte, phpMussel debe ser bastante compatible con la mayoría de ant
 
 Esta información ha sido actualizado 28 Mayo 2015 y es a hoy para todas las phpMussel versiones de la dos más recientes menores versiones (v0.5-v0.6i) al momento de escribir esto.
 
-| Scanner              |  Results                             |
+| Escáner              |  Resultados                          |
 |----------------------|--------------------------------------|
 | Ad-Aware             |  No hay conocidos problemas          |
 | Agnitum              |  No hay conocidos problemas          |
 | AhnLab-V3            |  No hay conocidos problemas          |
 | AntiVir              |  No hay conocidos problemas          |
 | Antiy-AVL            |  No hay conocidos problemas          |
-| Avast                |  Informa como "JS:ScriptSH-inf [Trj]" |
+| Avast                |  Informa como "JS:ScriptSH-inf [Trj]"|
 | AVG                  |  No hay conocidos problemas          |
 | Baidu-International  |  No hay conocidos problemas          |
 | BitDefender          |  No hay conocidos problemas          |
@@ -882,4 +882,4 @@ Esta información ha sido actualizado 28 Mayo 2015 y es a hoy para todas las php
 ---
 
 
-Última Actualización: 25 Junio 2015 (2015.06.25).
+Última Actualización: 27 Junio 2015 (2015.06.27).

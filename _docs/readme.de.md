@@ -822,7 +822,7 @@ In den meisten Fällen sollte phpMussel mit den meisten anderen Antiviren-Softwa
 
 Diese Informationen wurden zuletzt am 2015.05.28 aktualisiert und gelten für alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen (v0.5-v0.6i) zu diesem Zeitpunkt.
 
-| Scanner              |  Results                             |
+| Scanner              |  Ergebnisse                          |
 |----------------------|--------------------------------------|
 | Ad-Aware             |  Keine bekannten Probleme            |
 | Agnitum              |  Keine bekannten Probleme            |
@@ -879,4 +879,4 @@ Diese Informationen wurden zuletzt am 2015.05.28 aktualisiert und gelten für al
 ---
 
 
-Zuletzt aktualisiert: 25. Juni 2015 (2015.06.25).
+Zuletzt aktualisiert: 27. Juni 2015 (2015.06.27).

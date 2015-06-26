@@ -18,9 +18,9 @@
 
 ###1. <a name="SECTION1"></a>PREAMBOLO
 
-Grazie per aver scelto phpMussel, uno PHP script progettato per la rilevazione di trojan, virus, malware e altre minacce all'interno di file caricati nel sistema ovunque lo script è collegato, basato su firme di ClamAV e altri.
+Grazie per aver scelto phpMussel, un programma in PHP progettato per rilevare trojan, virus, malware ed altre minacce nei file caricati sul tuo sistema dovunque il programma stesso è collegato, basato sulle firme di ClamAV ed altri.
 
-PHPMUSSEL COPYRIGHT 2013 e oltre GNU/GPLv2 da Caleb M (Maikuolan).
+PHPMUSSEL COPYRIGHT 2013 e oltre GNU/GPLv2 Caleb M (Maikuolan).
 
 Questo script è libero software; è possibile ridistribuirlo e/o modificarlo sotto i termini della GNU General Public License come pubblicato dalla Free Software Foundation; o la versione 2 della licenza, o (a propria scelta) una versione successiva. Questo script è distribuito nella speranza che possa essere utile, Ma SENZA ALCUNA GARANZIA; senza neppure la implicita garanzia di COMMERCIABILITÀ o IDONEITÀ PER UN PARTICOLARE SCOPO. Vedere la GNU General Public License per ulteriori dettagli, situato nella `LICENSE` file all'interno della `_docs` cartella del associato pacchetto e repository per questo file e disponibili anche da:
 - <http://www.gnu.org/licenses/>.
@@ -30,7 +30,7 @@ Uno speciale grazie a [ClamAV](http://www.clamav.net/) per l'ispirazione del pro
 
 Uno speciale grazie a Sourceforge e GitHub per ospitare i progetto file, a [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) per ospitare le phpMussel discussione forum, e le risorse di un certo numero di firme utilizzata da phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) e altri, e un grazie a tutti coloro che sostengono il progetto, a chiunque altro che io possa avere altrimenti dimenticato di menzionare, e per voi, per l'utilizzo dello script.
 
-Questo documento e il suo associato pacchetto possono essere scaricati gratuitamente da:
+Questo documento ed il pacchetto associtato ad esso possono essere scaricati liberamente da:
 - [Sourceforge](http://phpmussel.sourceforge.net/).
 - [GitHub](https://github.com/Maikuolan/phpMussel/).
 
@@ -155,14 +155,14 @@ Anche essere consapevoli che phpMussel è non l'equivalente di un completa funzi
 
 Quando phpMussel è stato installato ed è funzionante correttamente sulla vostra sistema, se hai definito le script_password e logs_password variabili nel configurazione file, si sarà in grado di eseguire qualche limitato numero di amministrative funzioni e inserire qualche numero di comandi per phpMussel tramite il browser. La ragione per cui queste password devono essere definite come mezzo per abilita le browser lato controlli è sia per garantire l'adeguata sicurezza, un'adeguata protezione di questi browser lato controlli e per assicurare che esista un modo per questi browser lato controlli essere completamente disabilitalo se non sono desiderati da voi e/o altro webmaster/amministratori che utilizzano phpMussel. Così, in altre parole, per abilita questi controlli, definire una password, e per disabilita questi controlli, definire nessune password. In alternativa, se si sceglie di abilitare questi controlli e quindi scegliere di disabilita questi controlli in un secondo momento, c'è un comando per fare questo (che può essere utile se si eseguono particulare azioni che si sente potrebbero compromettere le delegati password ed è necessità di rapidamente disabilita questi controlli senza modificare le configurazione file).
 
-Un paio di motivi per cui si -dovrebbe- abilita questi controlli:
+Un paio di motivi per cui si _**DOVREBBE**_ abilita questi controlli:
 - Fornisce un modo per facilmente aggiungere firme alla greylist in casi come quando si scopre una firma che sta producendo un falso positivo durante il caricamento dei file di vostra sistema e non avete il tempo di modificare manualmente e caricare di nuovo il greylist file.
 - Fornisce un modo per permettere a qualcuno diverso da te per controllare la vostra copia di phpMussel senza l'implicita necessità di concedere loro l'accesso a FTP.
 - Fornisce un modo per fornire controllato accesso ai log file.
 - Fornisce un semplice modo per aggiornare phpMussel quando sono aggiornamenti disponibili.
 - Fornisce un modo per monitorare phpMussel quando l'accesso a FTP o altri convenzionali punti di accesso per il monitoraggio di phpMussel non sono disponibili.
 
-Un paio di motivi per cui si dovrebbe -non- abilita questi controlli:
+Un paio di motivi per cui si dovrebbe _**NON**_ abilita questi controlli:
 - Fornisce un vettore per i potenziali aggressori e indesiderabili per determinare se si sta utilizzando phpMussel o non (sebbene, questo potrebbe essere sia un ragione per e una ragione contro, dipendente di come si vedono le cose) passando per l'invio ciecamente di comandi ai server come un mezzo per sondare. Da una parte, questo potrebbe scoraggiare gli aggressori dalla mirare di vostra sistema se vengono a sapere che si sta utilizzando phpMussel, supponendo il loro sono sondante perché il loro metodo di attacco è reso inefficace come risultato dell'utilizzo di phpMussel. Ma, d'altra parte, se qualche imprevisto e attualmente sconosciuto sfruttare all'interno phpMussel o una versione futura della stessa viene alla luce, e se potrebbe potenzialmente fornire un vettore di attacco, un positivo risultato da tale sondare potrebbe effettivamente incoraggiare attaccanti per mirante il sistema.
 - Se le delegato password erano stati compromessi, se non cambiato, potrebbe fornire un modo per un utente malintenzionato di circonvallazione qualunque firme possono essere altrimenti normalmente impediscono loro attacchi dal successo, o anche potenzialmente disabilita phpMussel del tutto, così fornendo un modo per rendere l'efficacia della phpMussel discutibile.
 
@@ -289,7 +289,9 @@ File                                       | Descrizione
 /_testfiles/pe_sectional_testfile.exe      | Test file per test di phpMussel PE Sezionale firme.
 /_testfiles/swf_standard_testfile.swf      | Test file per test di phpMussel SWF firme.
 /_testfiles/xdp_standard_testfile.xdp      | Test file per test di phpMussel XML/XDP-Pezzo firme.
-/vault/                                    | Vault cartella (contiene vari file).
+/vault/                                    | La vault cartella (contiene vari file).
+/vault/cache/                              | La cartella della cache (per i dati temporanei).
+/vault/cache/.htaccess                     | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/lang/                               | Contiene linguistici dati.
 /vault/lang/.htaccess                      | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/lang/lang.de.inc                    | Linguistici dati: DEUTSCH
@@ -380,7 +382,7 @@ File                                       | Descrizione
 /vault/mail_custom_standard.cvd            | File per mail firme.
 /vault/mail_mussel_regex.cvd               | File per mail firme.
 /vault/mail_mussel_standard.cvd            | File per mail firme.
-/vault/mail_mussel_standard.map            | File per mail firme. 
+/vault/mail_mussel_standard.map            | File per mail firme.
 /vault/md5_clamav.cvd                      | File per l'MD5 basate firme.
 /vault/md5_custom.cvd                      | File per l'MD5 basate firme.
 /vault/md5_mussel.cvd                      | File per l'MD5 basate firme.
@@ -630,9 +632,9 @@ Generale configurazione per la gestione dei file.
 "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
 - Se il vostro sistema permette solo determinati tipi di file per caricamenti, o se il vostra sistema esplicitamente negare determinati tipi di file, specificando i tipi di file nel whitelist, blacklist e/o greylist può aumentare la velocità a cui la scansione viene eseguita da permettendo lo script da ignora alcuni tipi di file. Il formato è CSV (valori separati da virgola). Se si desidera eseguire la scansione tutti, invece del whitelist, blacklist or greylist, lasciare le variabili vuoti; Fare questo sarà disabilitali.
 - Logico ordine del trattamento è:
--- Se il tipo di file è nel whitelist, non scansionare e non bloccare il file, e non verificare il file contra la blacklist o la greylist.
--- Se il tipo di file è nel blacklist, non scansionare il file ma bloccarlo comunque, e non verificare il file contra la greylist.
--- Se il greylist è vuoto o se il greylist non è vuota e il tipo di file è nel greylist, scansionare il file come per normale e determinare se bloccarlo sulla base dei risultati della scansione, ma se il greylist non è vuoto e il tipo di file non è nel greylist, trattare il file come se è nel blacklist, quindi non scansionarlo ma bloccarlo comunque.
+  - Se il tipo di file è nel whitelist, non scansionare e non bloccare il file, e non verificare il file contra la blacklist o la greylist.
+  - Se il tipo di file è nel blacklist, non scansionare il file ma bloccarlo comunque, e non verificare il file contra la greylist.
+  - Se il greylist è vuoto o se il greylist non è vuota e il tipo di file è nel greylist, scansionare il file come per normale e determinare se bloccarlo sulla base dei risultati della scansione, ma se il greylist non è vuoto e il tipo di file non è nel greylist, trattare il file come se è nel blacklist, quindi non scansionarlo ma bloccarlo comunque.
 
 "check_archives"
 - Tenta per verifica il contenuti degli archivi? 0 - No (no verifica), 1 - Sì (fare verifica) [Predefinito].
@@ -709,25 +711,25 @@ Euristici direttive per phpMussel.
 Configurazione per Virus Total integrazione.
 
 "vt_public_api_key"
-- Optionally, phpMussel is able to scan files using the Virus Total API as a way to provide a greatly enhanced level of protection against viruses, trojans, malware and other threats. By default, scanning files using the Virus Total API is disabled. To enable it, an API key from Virus Total is required. Due to the significant benefit that this could provide to you, it's something that I highly recommend enabling. Please be aware, however, that to use the Virus Total API, you -MUST- agree to their Terms of Service and you -MUST- adhere to all guidelines as per described by the Virus Total documentation! You are NOT permitted to use this integration feature UNLESS:
--- You have read and agree to the Terms of Service of Virus Total and its API. The Terms of Service of Virus Total and its API can be found [Here](https://www.virustotal.com/en/about/terms-of-service/).
--- You have read and you understand, at a minimum, the preamble of the Virus Total Public API documentation (everything after "VirusTotal Public API v2.0" but before "Contents"). The Virus Total Public API documentation can be found [Here](https://www.virustotal.com/en/documentation/public-api/).
+- Facoltativamente, phpMussel è in grado di eseguire scansioni dei file utilizzando il Virus Total API as a way to provide a greatly enhanced level of protection against viruses, trojans, malware and other threats. By default, scanning files using the Virus Total API is disabled. To enable it, an API key from Virus Total is required. Due to the significant benefit that this could provide to you, it's something that I highly recommend enabling. Please be aware, however, that to use the Virus Total API, you _**MUST**_ agree to their Terms of Service and you _**MUST**_ adhere to all guidelines as per described by the Virus Total documentation! You are NOT permitted to use this integration feature UNLESS:
+  - You have read and agree to the Terms of Service of Virus Total and its API. The Terms of Service of Virus Total and its API can be found [Here](https://www.virustotal.com/en/about/terms-of-service/).
+  - You have read and you understand, at a minimum, the preamble of the Virus Total Public API documentation (everything after "VirusTotal Public API v2.0" but before "Contents"). The Virus Total Public API documentation can be found [Here](https://www.virustotal.com/en/documentation/public-api/).
 
 Note: If scanning files using the Virus Total API is disabled, you won't need to review any of the directives in this category (`virustotal`), because none of them will do anything if this is disabled. To acquire a Virus Total API key, from anywhere on their website, click the "Join our Community" link located towards the top-right of the page, enter in the information requested, and click "Sign up" when done. Follow all instructions supplied, and when you've got your public API key, copy/paste that public API key to the `vt_public_api_key` directive of the `phpmussel.ini` configuration file.
 
 "vt_suspicion_level"
 - By default, phpMussel will restrict which files it scans using the Virus Total API to those files that it considers "suspicious". You can optionally adjust this restriction by changing the value of the `vt_suspicion_level` directive.
 - `0`: Files are only considered suspicious if, upon being scanned by phpMussel using its own signatures, they are deemed to carry a heuristic weight. This would effectively mean that use of the Virus Total API would be for a second opinion for when phpMussel suspects that a file may potentially be malicious, but can't entirely rule out that it may also potentially be benign (non-malicious) and therefore would otherwise normally not block it or flag it as being malicious.
-- `1`: Files are considered suspicious if they're known to be executable (PE files, Mach-O files, ELF/Linux files, etc) or if they're known to be of a format that could potentially contain executable data (such as executable macros, DOC/DOCX files, archive files such as RARs and ZIPS, and etc). This is the default and recommended suspicion level to apply, effectively meaning that use of the Virus Total API would be for a second opinion for when phpMussel doesn't initially find anything malicious or wrong with a file that it considers to be suspicious and therefore would otherwise normally not block it or flag it as being malicious.
+- `1`: Files are considered suspicious if they're known to be executable (PE files, Mach-O files, ELF/Linux files, etc) or if they're known to be of a format that could potentially contain executable data (such as executable macros, DOC/DOCX files, archive files such as RARs, ZIPS and etc). This is the default and recommended suspicion level to apply, effectively meaning that use of the Virus Total API would be for a second opinion for when phpMussel doesn't initially find anything malicious or wrong with a file that it considers to be suspicious and therefore would otherwise normally not block it or flag it as being malicious.
 - `2`: All files are considered suspicious and should be scanned using the Virus Total API. I don't generally recommend applying this suspicion level, due to the risk of reaching your API quota much quicker than would otherwise be the case, but there are certain circumstances (such as when the webmaster or hostmaster has very little faith or trust whatsoever in any of the uploaded content of their users) where this suspicion level could be appropriate. With this suspicion level, all files not normally blocked or flagged as being malicious would be scanned using the Virus Total API. Note, however, that phpMussel will cease using the Virus Total API when your API quota has been reached (regardless of suspicion level), and that your quota will likely be reached much faster when using this suspicion level.
 
-Note: Regardless of suspicion level, any files that are either blacklisted or whitelisted by phpMussel won't be scanned using the Virus Total API, because those such files would've already been declared as either malicious or benign by phpMussel by the time that they would've otherwise been scanned by the Virus Total API, and therefore, additionally scanning wouldn't be required. The ability of phpMussel to scan files using the Virus Total API is intended to build further confidence for whether a file is malicious or benign in those circumstances where phpMussel itself isn't entirely certain as to whether a file is malicious or benign.
+Note: Regardless of suspicion level, any files that are either blacklisted or whitelisted by phpMussel won't be scanned using the Virus Total API, because those such files would've already been declared as either malicious or benign by phpMussel by the time that they would've otherwise been scanned by the Virus Total API, and therefore, additional scanning wouldn't be required. The ability of phpMussel to scan files using the Virus Total API is intended to build further confidence for whether a file is malicious or benign in those circumstances where phpMussel itself isn't entirely certain as to whether a file is malicious or benign.
 
 "vt_weighting"
 - Should phpMussel apply the results of scanning using the Virus Total API as detections or as detection weighting? This directive exists, because, although scanning a file using multiple engines (as Virus Total does) should result in an increased detection rate (and therefore in a higher number of malicious files being caught), it can also result in a higher number of false positives, and therefore, in some circumstances, the results of scanning may be better utilised as a confidence score rather than as a definitive conclusion. If a value of 0 is used, the results of scanning using the Virus Total API will be applied as detections, and therefore, if any engine used by Virus Total flags the file being scanned as being malicious, phpMussel will consider the file to be malicious. If any other value is used, the results of scanning using the Virus Total API will be applied as detection weighting, and therefore, the number of engines used by Virus Total that flag the file being scanned as being malicious will serve as a confidence score (or detection weighting) for whether or not the file being scanned should be considered malicious by phpMussel (the value used will represent the minimum confidence score or weight required in order to be considered malicious). A value of 0 is used by default.
 
 "vt_quota_rate" e "vt_quota_time"
-- According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly abhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values -may- sometimes help you in dealing with these problems. Your rate limit determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame.
+- According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly adhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values _**may**_ sometimes help you in dealing with these problems. Your rate limit determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame.
 
 ---
 
@@ -824,7 +826,7 @@ Per la maggior parte, phpMussel dovrebbe essere compatibile abbastanza con la ma
 
 Questa informazione è stato lo scorso aggiornato 28 Maggio 2015 ed è in corso per tutte le phpMussel rilasci delle due più recenti minori versioni (v0.5-v0.6i) al momento di scrivere questo.
 
-| Scanner              |  Results                             |
+| Scanner              |  Risultati                           |
 |----------------------|--------------------------------------|
 | Ad-Aware             |  Senza noti problemi                 |
 | Agnitum              |  Senza noti problemi                 |
@@ -881,4 +883,4 @@ Questa informazione è stato lo scorso aggiornato 28 Maggio 2015 ed è in corso 
 ---
 
 
-Ultimo Aggiornamento: 23 Giugno 2015 (2015.06.23).
+Ultimo Aggiornamento: 27 Giugno 2015 (2015.06.27).

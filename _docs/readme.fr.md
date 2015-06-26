@@ -826,7 +826,7 @@ Pour la plupart, phpMussel devrait être assez compatible avec plupart du virus 
 
 Cette information a été réactualisé le 28 Mai 2015 et est courant pour toutes les phpMussel parutions des deux plus récentes mineures versions (v0.5-v0.6i) au moment de la rédaction cette.
 
-| Scanner              |  Results                             |
+| Scanner              |  Résultats                           |
 |----------------------|--------------------------------------|
 | Ad-Aware             |  Pas problèmes connus                |
 | Agnitum              |  Pas problèmes connus                |
@@ -883,4 +883,4 @@ Cette information a été réactualisé le 28 Mai 2015 et est courant pour toute
 ---
 
 
-Dernière Réactualisé: 25 Juin 2015 (2015.06.25).
+Dernière Réactualisé: 27 Juin 2015 (2015.06.27).

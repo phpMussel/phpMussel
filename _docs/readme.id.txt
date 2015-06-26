@@ -1467,7 +1467,7 @@
      dipatuhi. Kecuali Anda telah diperintahkan untuk melakukannya, itu tidak
      direkomendasi bagi Anda untuk meningkat nilai-nilai ini, tetapi, jika Anda
      mengalami masalah berkaitan dengan mencapai kuota Anda, penurunan
-     nilai-nilai ini kadang dapat membantu Anda bagi berurusan dengan
+     nilai-nilai ini kadang -DAPAT- membantu Anda bagi berurusan dengan
      masalah-masalah ini. Batas Anda ditentukan sebagai `vt_quota_rate`
      permintaan dalam bentuk apapun dalam jangka waktu `vt_quota_time` menit.
 

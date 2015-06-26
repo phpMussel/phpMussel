@@ -21,11 +21,12 @@
 
  1. PREAMBOLO
 
- Grazie per aver scelto phpMussel, uno PHP script progettato per la rilevazione
- di trojan, virus, malware e altre minacce all'interno di file caricati nel
- sistema ovunque lo script è collegato, basato su firme di ClamAV e altri.
+ Grazie per aver scelto phpMussel, un programma in PHP progettato per rilevare
+ trojan, virus, malware ed altre minacce nei file caricati sul tuo sistema
+ dovunque il programma stesso è collegato, basato sulle firme di ClamAV ed
+ altri.
 
- PHPMUSSEL COPYRIGHT 2013 e oltre GNU/GPLv2 da Caleb M (Maikuolan).
+ PHPMUSSEL COPYRIGHT 2013 e oltre GNU/GPL V.2 Caleb M (Maikuolan).
 
  Questo script è libero software; è possibile ridistribuirlo e/o modificarlo
  sotto i termini della GNU General Public License come pubblicato dalla Free
@@ -54,8 +55,8 @@
  sostengono il progetto, a chiunque altro che io possa avere altrimenti
  dimenticato di menzionare, e per voi, per l'utilizzo dello script.
 
- Questo documento e il suo associato pacchetto possono essere scaricati
- gratuitamente da:
+ Questo documento ed il pacchetto associtato ad esso possono essere scaricati
+ liberamente da:
  - Sourceforge <http://phpmussel.sourceforge.net/>.
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
@@ -627,7 +628,14 @@
     Test file per test di phpMussel XML/XDP-Pezzo firme.
     ~
  /vault/ (Cartella)
-    Vault cartella (contiene vari file).
+    La vault cartella (contiene vari file).
+    ~
+ /vault/cache/ (Cartella)
+    La cartella della cache (per i dati temporanei).
+    ~
+ /vault/cache/.htaccess (Altro, Incluso)
+    Un ipertesto accesso file (in questo caso, a proteggere di riservati file
+    appartenente allo script da l'acceso di non autorizzate origini).
     ~
  /vault/lang/ (Cartella)
     Contiene linguistici dati.
@@ -1402,8 +1410,8 @@
      1 - Files are considered suspicious if they're known to be executable (PE
          files, Mach-O files, ELF/Linux files, etc) or if they're known to be
          of a format that could potentially contain executable data (such as
-         executable macros, DOC/DOCX files, archive files such as RARs and
-         ZIPS, and etc). This is the default and recommended suspicion level to
+         executable macros, DOC/DOCX files, archive files such as RARs, ZIPS
+         and etc). This is the default and recommended suspicion level to
          apply, effectively meaning that use of the Virus Total API would be
          for a second opinion for when phpMussel doesn't initially find
          anything malicious or wrong with a file that it considers to be
@@ -1425,7 +1433,7 @@
      or whitelisted by phpMussel won't be scanned using the Virus Total API,
      because those such files would've already been declared as either
      malicious or benign by phpMussel by the time that they would've otherwise
-     been scanned by the Virus Total API, and therefore, additionally scanning
+     been scanned by the Virus Total API, and therefore, additional scanning
      wouldn't be required. The ability of phpMussel to scan files using the
      Virus Total API is intended to build further confidence for whether a file
      is malicious or benign in those circumstances where phpMussel itself isn't
@@ -1455,7 +1463,7 @@
      4 requests of any nature in any given 1 minute time frame. If you run a
      honeyclient, honeypot or any other automation that is going to provide
      resources to VirusTotal and not only retrieve reports you are entitled to
-     a higher request rate quota". By default, phpMussel will strictly abhere
+     a higher request rate quota". By default, phpMussel will strictly adhere
      to these limitations, but due to the possibility of these rate quotas
      being increased, these two directives are provided as a means for you to
      instruct phpMussel as to what limit it should adhere to. Unless you've
@@ -1686,5 +1694,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 23 Giugno 2015 (2015.06.23).
+Ultimo Aggiornamento: 25 Giugno 2015 (2015.06.25).
 EOF

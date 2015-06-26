@@ -95,8 +95,15 @@ Minor release (medium priority); BETA! NOT YET RELEASED!
 - [2015.06.25; Documentation; Maikuolan]: Updated Indonesian README (Virus
   Total information) [readme.id.txt; readme.id.md].
 
+- [2015.05.26; Bug-fix; Maikuolan]: Newline character causing CRC mismatch
+  during archive metadata checks; Fixed [phpmussel.inc].
+  Refer github.com/Maikuolan/phpMussel/issues/25
+
+- [2015.06.27; Documentation; Maikuolan]: Updated Portuguese README (Virus
+  Total information) [readme.pt.txt; readme.pt.md].
+
 Maikuolan,
-25th June 2015.
+27th June 2015.
 
 === Version/Release 0.6j (Previous Release: 0.6i; Next: 0.7) ===
 SUMMARY:
