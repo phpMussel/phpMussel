@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7-BETA (22nd June 2015) Core Script.
+ This File: phpMussel v0.7-BETA (26th June 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -11820,6 +11820,7 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 						{
 						$zmds=@explode(':',$GLOBALS['memCache']['metadata_clamav.cvd'][$zmdi]);
 						$zmds[0]=vn_shorthand($zmds[0]);
+						$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
 						if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 							{
 							if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eS&&$zmds[2]==$zCRC)
@@ -11851,6 +11852,7 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 						{
 						$zmds=@explode(':',$GLOBALS['memCache']['metadata_custom.cvd'][$zmdi]);
 						$zmds[0]=vn_shorthand($zmds[0]);
+						$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
 						if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 							{
 							if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eS&&$zmds[2]==$zCRC)
@@ -11882,6 +11884,7 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 						{
 						$zmds=@explode(':',$GLOBALS['memCache']['metadata_mussel.cvd'][$zmdi]);
 						$zmds[0]=vn_shorthand($zmds[0]);
+						$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
 						if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 							{
 							if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eS&&$zmds[2]==$zCRC)
@@ -12033,6 +12036,7 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 							{
 							$zmds=@explode(':',$GLOBALS['memCache']['metadata_clamav.cvd'][$zmdi]);
 							$zmds[0]=vn_shorthand($zmds[0]);
+							$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
 							if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 								{
 								if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eFS&&$zmds[2]==$zCRC)
@@ -12064,6 +12068,7 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 							{
 							$zmds=@explode(':',$GLOBALS['memCache']['metadata_custom.cvd'][$zmdi]);
 							$zmds[0]=vn_shorthand($zmds[0]);
+							$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
 							if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 								{
 								if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eFS&&$zmds[2]==$zCRC)
@@ -12095,6 +12100,7 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 							{
 							$zmds=@explode(':',$GLOBALS['memCache']['metadata_mussel.cvd'][$zmdi]);
 							$zmds[0]=vn_shorthand($zmds[0]);
+							$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
 							if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 								{
 								if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eFS&&$zmds[2]==$zCRC)
