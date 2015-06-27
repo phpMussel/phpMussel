@@ -519,364 +519,373 @@
 
  5. BESTANDEN IN DIT PAKKET
 
- The following is a list of all of the files that should have been included
- in the archived copy of this script when you downloaded it, any files that may
- be potentially created as a result of your using this script, along with a
- short description of what all these files are for.
+ Het volgende is een lijst van alle bestanden die had moeten worden opgenomen
+ in de gearchiveerde kopie van dit script als je het gedownload het, alle
+ bestanden die mogelijk kan worden gemaakt als gevolg van uw gebruik van dit
+ script, samen met een korte beschrijving van wat al deze bestanden voor zijn.
 
- /phpmussel.php (Script, Included)
-    phpMussel Loader file. Loads the main script, updater, etcetera.
-    This is what you're supposed to be hooking into (essential)!
+ /phpmussel.php (Script, Opgenomen)
+    phpMussel Loaderbestand. Laadt de belangrijkste script, updater, ezv. Dit
+    is wat je zou moeten worden inhaken in (essentieel)!
     ~
- /web.config (Other, Included)
-    An ASP.NET configuration file (in this instance, to protect the "/vault"
-    directory from being accessed by non-authorised sources in the event that
-    the script is installed on a server based upon ASP.NET technologies).
+ /web.config (Ander, Opgenomen)
+    Een ASP.NET-configuratiebestand (in dit geval, naar de directory "vault" te
+    beschermen tegen toegang door niet-geautoriseerde bronnen indien het script
+    is geïnstalleerd op een server op basis van ASP.NET technologieën).
     ~
  /_docs/ (Directory)
-    Documentation directory (contains various files).
+    Documentatie directory (bevat verschillende bestanden).
     ~
- /_docs/change_log.txt (Documentation, Included)
-    A record of changes made to the script between different
-    versions (not required for proper function of script).
+ /_docs/change_log.txt (Documentatie, Opgenomen)
+    Een overzicht van wijzigingen in het script tussen verschillende versies
+    (niet vereist voor een goede werking van het script).
     ~
- /_docs/readme.de.txt (Documentation, Included); DEUTSCH
- /_docs/readme.en.txt (Documentation, Included); ENGLISH
- /_docs/readme.es.txt (Documentation, Included); ESPAÑOL
- /_docs/readme.fr.txt (Documentation, Included); FRANÇAIS
- /_docs/readme.id.txt (Documentation, Included); BAHASA INDONESIA
- /_docs/readme.it.txt (Documentation, Included); ITALIANO
- /_docs/readme.nl.txt (Documentation, Included); NEDERLANDSE
- /_docs/readme.pt.txt (Documentation, Included); PORTUGUÊS
-    The README files (for example; the file you're currently reading).
+ /_docs/readme.de.txt (Documentatie, Opgenomen); DEUTSCH
+ /_docs/readme.en.txt (Documentatie, Opgenomen); ENGLISH
+ /_docs/readme.es.txt (Documentatie, Opgenomen); ESPAÑOL
+ /_docs/readme.fr.txt (Documentatie, Opgenomen); FRANÇAIS
+ /_docs/readme.id.txt (Documentatie, Opgenomen); BAHASA INDONESIA
+ /_docs/readme.it.txt (Documentatie, Opgenomen); ITALIANO
+ /_docs/readme.nl.txt (Documentatie, Opgenomen); NEDERLANDSE
+ /_docs/readme.pt.txt (Documentatie, Opgenomen); PORTUGUÊS
+    De README-bestanden (bijvoorbeeld, het bestand dat u momenteel aan het
+    lezen).
     ~
- /_docs/signatures_tally.txt (Documentation, Included)
-    Net-shift tally of included signatures (not required for proper function of
-    script).
+ /_docs/signatures_tally.txt (Documentatie, Opgenomen)
+    Net-shift tally van meegeleverde handtekeningen (niet vereist voor een
+    goede werking van het script).
     ~
  /_testfiles/ (Directory)
-    Test files directory (contains various files).
-    All contained files are test files for testing if phpMussel was correctly
-    installed on your system, and you do not need to upload this directory
-    or any of its files except when doing such testing.
+    Testbestanden directory (bevat verschillende bestanden).
+    Alle opgenomen bestanden zijn testbestanden voor het testen als phpMussel
+    correct op uw systeem is geïnstalleerd, en je hoeft niet om deze map of een
+    van de bestanden, behalve bij het doen van dergelijke testen te uploaden.
     ~
- /_testfiles/ascii_standard_testfile.txt (Test file, Included)
-    Test file for testing phpMussel normalised ASCII signatures.
+ /_testfiles/ascii_standard_testfile.txt (Testbestand, Opgenomen)
+    Testbestand voor het testen phpMussel genormaliseerde ASCII handtekeningen.
     ~
- /_testfiles/coex_testfile.rtf (Test file, Included)
-    Test file for testing phpMussel Complex Extended signatures.
+ /_testfiles/coex_testfile.rtf (Testbestand, Opgenomen)
+    Testbestand voor het testen phpMussel complexe uitgebreide handtekeningen.
     ~
- /_testfiles/exe_standard_testfile.exe (Test file, Included)
-    Test file for testing phpMussel PE signatures.
+ /_testfiles/exe_standard_testfile.exe (Testbestand, Opgenomen)
+    Testbestand voor het testen phpMussel PE handtekeningen.
     ~
- /_testfiles/general_standard_testfile.txt (Test file, Included)
-    Test file for testing phpMussel general signatures.
+ /_testfiles/general_standard_testfile.txt (Testbestand, Opgenomen)
+    Testbestand voor het testen phpMussel algemene handtekeningen.
     ~
- /_testfiles/graphics_standard_testfile.gif (Test file, Included)
-    Test file for testing phpMussel graphics signatures.
+ /_testfiles/graphics_standard_testfile.gif (Testbestand, Opgenomen)
+    Testbestand voor het testen phpMussel grafische handtekeningen.
     ~
- /_testfiles/html_standard_testfile.txt (Test file, Included)
-    Test file for testing phpMussel normalised HTML signatures.
+ /_testfiles/html_standard_testfile.txt (Testbestand, Opgenomen)
+    Testbestand voor het testen phpMussel genormaliseerde HTML handtekeningen.
     ~
- /_testfiles/md5_testfile.txt (Test file, Included)
-    Test file for testing phpMussel MD5 signatures.
+ /_testfiles/md5_testfile.txt (Testbestand, Opgenomen)
+    Testbestand voor het testen phpMussel MD5 handtekeningen.
     ~
- /_testfiles/metadata_testfile.txt.gz (Test file, Included)
-    Test file for testing phpMussel metadata signatures and for testing GZ file
-    support on your system.
+ /_testfiles/metadata_testfile.txt.gz (Testbestand, Opgenomen)
+    Testbestand voor het testen phpMussel metadata handtekeningen en voor het
+    testen van GZ bestandsondersteuning op uw systeem.
     ~
- /_testfiles/metadata_testfile.zip (Test file, Included)
-    Test file for testing phpMussel metadata signatures and for testing ZIP
-    file support on your system.
+ /_testfiles/metadata_testfile.zip (Testbestand, Opgenomen)
+    Testbestand voor het testen phpMussel metadata handtekeningen en voor het
+    testen van ZIP bestandsondersteuning op uw systeem.
     ~
- /_testfiles/ole_testfile.ole (Test file, Included)
-    Test file for testing phpMussel OLE signatures.
+ /_testfiles/ole_testfile.ole (Testbestand, Opgenomen)
+    Testbestand voor het testen phpMussel OLE handtekeningen.
     ~
- /_testfiles/pdf_standard_testfile.pdf (Test file, Included)
-    Test file for testing phpMussel PDF signatures.
+ /_testfiles/pdf_standard_testfile.pdf (Testbestand, Opgenomen)
+    Testbestand voor het testen phpMussel PDF handtekeningen.
     ~
- /_testfiles/pe_sectional_testfile.exe (Test file, Included)
-    Test file for testing phpMussel PE Sectional signatures.
+ /_testfiles/pe_sectional_testfile.exe (Testbestand, Opgenomen)
+    Testbestand voor het testen phpMussel PE Sectionele handtekeningen.
     ~
- /_testfiles/swf_standard_testfile.swf (Test file, Included)
-    Test file for testing phpMussel SWF signatures.
+ /_testfiles/swf_standard_testfile.swf (Testbestand, Opgenomen)
+    Testbestand voor het testen phpMussel SWF handtekeningen.
     ~
- /_testfiles/xdp_standard_testfile.xdp (Test file, Included)
-    Test file for testing phpMussel XML/XDP-Chunk signatures.
+ /_testfiles/xdp_standard_testfile.xdp (Testbestand, Opgenomen)
+    Testbestand voor het testen phpMussel XML/XDP-Brok handtekeningen.
     ~
  /vault/ (Directory)
-    Vault directory (contains various files).
+    Vault directory (bevat verschillende bestanden).
     ~
  /vault/cache/ (Directory)
-    Cache directory (for temporary data).
+    Cache directory (tijdelijke data).
     ~
- /vault/cache/.htaccess (Other, Included)
-    A hypertext access file (in this instance, to protect sensitive files
-    belonging to the script from being accessed by non-authorised sources).
+ /vault/cache/.htaccess (Ander, Opgenomen)
+    Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die
+    behoren tot het script te beschermen tegen toegang door niet-geautoriseerde
+    bronnen).
     ~
  /vault/lang/ (Directory)
-    Contains phpMussel language data.
+    Bevat phpMussel taaldata.
     ~
- /vault/lang/.htaccess (Other, Included)
-    A hypertext access file (in this instance, to protect sensitive files
-    belonging to the script from being accessed by non-authorised sources).
+ /vault/lang/.htaccess (Ander, Opgenomen)
+    Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die
+    behoren tot het script te beschermen tegen toegang door niet-geautoriseerde
+    bronnen).
     ~
- /vault/lang/lang.de.inc (Script, Included); DEUTSCH
- /vault/lang/lang.en.inc (Script, Included); ENGLISH
- /vault/lang/lang.es.inc (Script, Included); ESPAÑOL
- /vault/lang/lang.fr.inc (Script, Included); FRANÇAIS
- /vault/lang/lang.id.inc (Script, Included); BAHASA INDONESIA
- /vault/lang/lang.it.inc (Script, Included); ITALIANO
- /vault/lang/lang.ja.inc (Script, Included); 日本語
- /vault/lang/lang.nl.inc (Script, Included); NEDERLANDSE
- /vault/lang/lang.pt.inc (Script, Included); PORTUGUÊS
- /vault/lang/lang.ru.inc (Script, Included); РУССКИЙ
- /vault/lang/lang.zh.inc (Script, Included); 中文（简体）
- /vault/lang/lang.zh-tw.inc (Script, Included); 中文（傳統）
-    Language data files for phpMussel.
+ /vault/lang/lang.de.inc (Script, Opgenomen); DEUTSCH
+ /vault/lang/lang.en.inc (Script, Opgenomen); ENGLISH
+ /vault/lang/lang.es.inc (Script, Opgenomen); ESPAÑOL
+ /vault/lang/lang.fr.inc (Script, Opgenomen); FRANÇAIS
+ /vault/lang/lang.id.inc (Script, Opgenomen); BAHASA INDONESIA
+ /vault/lang/lang.it.inc (Script, Opgenomen); ITALIANO
+ /vault/lang/lang.ja.inc (Script, Opgenomen); 日本語
+ /vault/lang/lang.nl.inc (Script, Opgenomen); NEDERLANDSE
+ /vault/lang/lang.pt.inc (Script, Opgenomen); PORTUGUÊS
+ /vault/lang/lang.ru.inc (Script, Opgenomen); РУССКИЙ
+ /vault/lang/lang.zh.inc (Script, Opgenomen); 中文（简体）
+ /vault/lang/lang.zh-tw.inc (Script, Opgenomen); 中文（傳統）
+    Taaldatabestanden voor phpMussel.
     ~
  /vault/quarantine/ (Directory)
-    Quarantine directory (contains quarantined files).
+    Quarantaine directory (bestanden in quarantaine bevat).
     ~
- /vault/quarantine/.htaccess (Other, Included)
-    A hypertext access file (in this instance, to protect sensitive files
-    belonging to the script from being accessed by non-authorised sources).
+ /vault/quarantine/.htaccess (Ander, Opgenomen)
+    Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die
+    behoren tot het script te beschermen tegen toegang door niet-geautoriseerde
+    bronnen).
     ~
- /vault/.htaccess (Other, Included)
-    A hypertext access file (in this instance, to protect sensitive files
-    belonging to the script from being accessed by non-authorised sources).
+ /vault/.htaccess (Ander, Opgenomen)
+    Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die
+    behoren tot het script te beschermen tegen toegang door niet-geautoriseerde
+    bronnen).
     ~
- /vault/ascii_clamav_regex.cvd (Signatures, Included)
- /vault/ascii_clamav_regex.map (Signatures, Included)
- /vault/ascii_clamav_standard.cvd (Signatures, Included)
- /vault/ascii_clamav_standard.map (Signatures, Included)
- /vault/ascii_custom_regex.cvd (Signatures, Included)
- /vault/ascii_custom_standard.cvd (Signatures, Included)
- /vault/ascii_mussel_regex.cvd (Signatures, Included)
- /vault/ascii_mussel_standard.cvd (Signatures, Included)
-    Files for normalised ASCII signatures.
-    Required if normalised ASCII signatures option in "phpmussel.ini" is enabled.
-    Can remove if the option is disabled.
+ /vault/ascii_clamav_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/ascii_clamav_regex.map (Handtekeningen, Opgenomen)
+ /vault/ascii_clamav_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/ascii_clamav_standard.map (Handtekeningen, Opgenomen)
+ /vault/ascii_custom_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/ascii_custom_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/ascii_mussel_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/ascii_mussel_standard.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor genormaliseerde ASCII handtekeningen. Vereist als
+    genormaliseerde ASCII handtekeningen optie van "phpmussel.ini" is
+    ingeschakeld. Kan verwijderen indien de optie is uitgeschakeld.
     ~
- /vault/coex_clamav.cvd (Signatures, Included)
- /vault/coex_custom.cvd (Signatures, Included)
- /vault/coex_mussel.cvd (Signatures, Included)
-    Files for Complex Extended signatures.
-    Required if the Complex Extended signatures option in "phpmussel.ini" is
-    enabled. Can remove if the option is disabled.
+ /vault/coex_clamav.cvd (Handtekeningen, Opgenomen)
+ /vault/coex_custom.cvd (Handtekeningen, Opgenomen)
+ /vault/coex_mussel.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor Complexe Uitgebreide handtekeningen. Vereist als het
+    Complexe Uitgebreide handtekeningen optie van "phpmussel.ini" is
+    ingeschakeld. Kan verwijderen indien de optie is uitgeschakeld.
     ~
- /vault/elf_clamav_regex.cvd (Signatures, Included)
- /vault/elf_clamav_regex.map (Signatures, Included)
- /vault/elf_clamav_standard.cvd (Signatures, Included)
- /vault/elf_clamav_standard.map (Signatures, Included)
- /vault/elf_custom_regex.cvd (Signatures, Included)
- /vault/elf_custom_standard.cvd (Signatures, Included)
- /vault/elf_mussel_regex.cvd (Signatures, Included)
- /vault/elf_mussel_standard.cvd (Signatures, Included)
-    Files for ELF signatures.
-    Required if ELF signatures option in "phpmussel.ini" is enabled. Can remove
-    if the option is disabled.
+ /vault/elf_clamav_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/elf_clamav_regex.map (Handtekeningen, Opgenomen)
+ /vault/elf_clamav_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/elf_clamav_standard.map (Handtekeningen, Opgenomen)
+ /vault/elf_custom_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/elf_custom_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/elf_mussel_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/elf_mussel_standard.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor ELF handtekeningen. Vereist als ELF handtekeningen optie van
+    "phpmussel.ini" is ingeschakeld. Kan verwijderen indien de optie is
+    uitgeschakeld.
     ~
- /vault/exe_clamav_regex.cvd (Signatures, Included)
- /vault/exe_clamav_regex.map (Signatures, Included)
- /vault/exe_clamav_standard.cvd (Signatures, Included)
- /vault/exe_clamav_standard.map (Signatures, Included)
- /vault/exe_custom_regex.cvd (Signatures, Included)
- /vault/exe_custom_standard.cvd (Signatures, Included)
- /vault/exe_mussel_regex.cvd (Signatures, Included)
- /vault/exe_mussel_standard.cvd (Signatures, Included)
-    Files for Portable Executable file (EXE) signatures.
-    Required if EXE signatures option in "phpmussel.ini" is enabled. Can remove
-    if the option is disabled.
+ /vault/exe_clamav_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/exe_clamav_regex.map (Handtekeningen, Opgenomen)
+ /vault/exe_clamav_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/exe_clamav_standard.map (Handtekeningen, Opgenomen)
+ /vault/exe_custom_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/exe_custom_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/exe_mussel_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/exe_mussel_standard.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor Portable Executable bestand (EXE) handtekeningen. Vereist
+    als EXE handtekeningen optie van "phpmussel.ini" is ingeschakeld. Kan
+    verwijderen indien de optie is uitgeschakeld.
     ~
- /vault/filenames_clamav.cvd (Signatures, Included)
- /vault/filenames_custom.cvd (Signatures, Included)
- /vault/filenames_mussel.cvd (Signatures, Included)
-    Files for filename signatures.
-    Required if filename signatures option in "phpmussel.ini" is enabled. Can
-    remove if the option is disabled.
+ /vault/filenames_clamav.cvd (Handtekeningen, Opgenomen)
+ /vault/filenames_custom.cvd (Handtekeningen, Opgenomen)
+ /vault/filenames_mussel.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor bestandsnaam handtekeningen. Vereist als het bestandsnaam
+    handtekeningen optie van "phpmussel.ini" is ingeschakeld. Kan verwijderen
+    indien de optie is uitgeschakeld.
     ~
- /vault/general_clamav_regex.cvd (Signatures, Included)
- /vault/general_clamav_regex.map (Signatures, Included)
- /vault/general_clamav_standard.cvd (Signatures, Included)
- /vault/general_clamav_standard.map (Signatures, Included)
- /vault/general_custom_regex.cvd (Signatures, Included)
- /vault/general_custom_standard.cvd (Signatures, Included)
- /vault/general_mussel_regex.cvd (Signatures, Included)
- /vault/general_mussel_standard.cvd (Signatures, Included)
-    Files for general signatures.
-    Required if general signatures option in "phpmussel.ini" is enabled. Can
-    remove if the option is disabled.
+ /vault/general_clamav_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/general_clamav_regex.map (Handtekeningen, Opgenomen)
+ /vault/general_clamav_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/general_clamav_standard.map (Handtekeningen, Opgenomen)
+ /vault/general_custom_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/general_custom_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/general_mussel_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/general_mussel_standard.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor algemene handtekeningen. Vereist als het algemene
+    handtekeningen optie van "phpmussel.ini" is ingeschakeld. Kan verwijderen
+    indien de optie is uitgeschakeld.
     ~
- /vault/graphics_clamav_regex.cvd (Signatures, Included)
- /vault/graphics_clamav_regex.map (Signatures, Included)
- /vault/graphics_clamav_standard.cvd (Signatures, Included)
- /vault/graphics_clamav_standard.map (Signatures, Included)
- /vault/graphics_custom_regex.cvd (Signatures, Included)
- /vault/graphics_custom_standard.cvd (Signatures, Included)
- /vault/graphics_mussel_regex.cvd (Signatures, Included)
- /vault/graphics_mussel_standard.cvd (Signatures, Included)
-    Files for graphics signatures.
-    Required if graphics signatures option in "phpmussel.ini" is enabled. Can
-    remove if the option is disabled.
+ /vault/graphics_clamav_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/graphics_clamav_regex.map (Handtekeningen, Opgenomen)
+ /vault/graphics_clamav_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/graphics_clamav_standard.map (Handtekeningen, Opgenomen)
+ /vault/graphics_custom_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/graphics_custom_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/graphics_mussel_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/graphics_mussel_standard.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor grafische handtekeningen. Vereist als grafische
+    handtekeningen optie van "phpmussel.ini" is ingeschakeld. Kan verwijderen
+    indien de optie is uitgeschakeld.
     ~
- /vault/greylist.csv (Signatures, Included/Created)
-    CSV of greylisted signatures indicating to phpMussel which signatures it
-    should be ignoring (file automatically recreated if deleted).
+ /vault/greylist.csv (Handtekeningen, Included/Created)
+    CSV van greylisted handtekeningen aangeeft om phpMussel waarop
+    handtekeningen moet worden negeren (bestand automatisch aangemaakt opnieuw
+    als verwijderd).
     ~
- /vault/hex_general_commands.csv (Signatures, Included)
-    Hex-encoded CSV of general command detections optionally used by phpMussel.
-    Required if general command detection option in "phpmussel.ini" is enabled.
-    Can remove if the option is disabled.
+ /vault/hex_general_commands.csv (Handtekeningen, Opgenomen)
+    Hex-gecodeerde CSV van algemene commando detecties optioneel gebruikt door
+    phpMussel. Vereist als algemene commando detecties optie van
+    "phpmussel.ini" is ingeschakeld. Kan verwijderen indien de optie is
+    uitgeschakeld.
     ~
- /vault/html_clamav_regex.cvd (Signatures, Included)
- /vault/html_clamav_regex.map (Signatures, Included)
- /vault/html_clamav_standard.cvd (Signatures, Included)
- /vault/html_clamav_standard.map (Signatures, Included)
- /vault/html_custom_regex.cvd (Signatures, Included)
- /vault/html_custom_standard.cvd (Signatures, Included)
- /vault/html_mussel_regex.cvd (Signatures, Included)
- /vault/html_mussel_standard.cvd (Signatures, Included)
-    Files for normalised HTML signatures.
-    Required if normalised HTML signatures option in "phpmussel.ini" is enabled.
-    Can remove if the option is disabled.
+ /vault/html_clamav_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/html_clamav_regex.map (Handtekeningen, Opgenomen)
+ /vault/html_clamav_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/html_clamav_standard.map (Handtekeningen, Opgenomen)
+ /vault/html_custom_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/html_custom_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/html_mussel_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/html_mussel_standard.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor genormaliseerde HTML handtekeningen. Vereist als
+    genormaliseerde HTML handtekeningen optie van "phpmussel.ini" is
+    ingeschakeld. Kan verwijderen indien de optie is uitgeschakeld.
     ~
- /vault/lang.inc (Script, Included)
-    phpMussel language data.
+ /vault/lang.inc (Script, Opgenomen)
+    phpMussel taaldata.
     ~
- /vault/macho_clamav_regex.cvd (Signatures, Included)
- /vault/macho_clamav_regex.map (Signatures, Included)
- /vault/macho_clamav_standard.cvd (Signatures, Included)
- /vault/macho_clamav_standard.map (Signatures, Included)
- /vault/macho_custom_regex.cvd (Signatures, Included)
- /vault/macho_custom_standard.cvd (Signatures, Included)
- /vault/macho_mussel_regex.cvd (Signatures, Included)
- /vault/macho_mussel_standard.cvd (Signatures, Included)
-    Files for Mach-O signatures.
-    Required if Mach-O signatures option in "phpmussel.ini" is enabled. Can
-    remove if the option is disabled.
+ /vault/macho_clamav_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/macho_clamav_regex.map (Handtekeningen, Opgenomen)
+ /vault/macho_clamav_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/macho_clamav_standard.map (Handtekeningen, Opgenomen)
+ /vault/macho_custom_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/macho_custom_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/macho_mussel_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/macho_mussel_standard.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor Mach-O handtekeningen. Vereist als Mach-O
+    handtekeningen optie van "phpmussel.ini" is ingeschakeld. Kan verwijderen
+    indien de optie is uitgeschakeld.
     ~
- /vault/mail_clamav_regex.cvd (Signatures, Included)
- /vault/mail_clamav_regex.map (Signatures, Included)
- /vault/mail_clamav_standard.cvd (Signatures, Included)
- /vault/mail_clamav_standard.map (Signatures, Included)
- /vault/mail_custom_regex.cvd (Signatures, Included)
- /vault/mail_custom_standard.cvd (Signatures, Included)
- /vault/mail_mussel_regex.cvd (Signatures, Included)
- /vault/mail_mussel_standard.cvd (Signatures, Included)
- /vault/mail_mussel_standard.map (Signatures, Included)
-    Files for signatures used by the phpMussel_mail() function.
-    Required if the phpMussel_mail() function is used in any way. Can remove
-    them if they're not being used.
+ /vault/mail_clamav_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/mail_clamav_regex.map (Handtekeningen, Opgenomen)
+ /vault/mail_clamav_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/mail_clamav_standard.map (Handtekeningen, Opgenomen)
+ /vault/mail_custom_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/mail_custom_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/mail_mussel_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/mail_mussel_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/mail_mussel_standard.map (Handtekeningen, Opgenomen)
+    Bestanden handtekeningen die door de phpMussel_mail() functie. Vereist als
+    the phpMussel_mail() functie wordt gebruikt op enigerlei wijze. Kunnen ze
+    te verwijderen als ze niet worden gebruikt.
     ~
- /vault/md5_clamav.cvd (Signatures, Included)
- /vault/md5_custom.cvd (Signatures, Included)
- /vault/md5_mussel.cvd (Signatures, Included)
-    Files for MD5 based signatures.
-    Required if MD5 based signatures option in "phpmussel.ini" is enabled.
-    Can remove if the option is disabled.
+ /vault/md5_clamav.cvd (Handtekeningen, Opgenomen)
+ /vault/md5_custom.cvd (Handtekeningen, Opgenomen)
+ /vault/md5_mussel.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor MD5 gebaseerde handtekeningen. Vereist als MD5 gebaseerde
+    handtekeningen optie van "phpmussel.ini" is ingeschakeld. Kan verwijderen
+    indien de optie is uitgeschakeld.
     ~
- /vault/metadata_clamav.cvd (Signatures, Included)
- /vault/metadata_custom.cvd (Signatures, Included)
- /vault/metadata_mussel.cvd (Signatures, Included)
-    Files for archive metadata signatures.
-    Required if archive metadata signatures option in "phpmussel.ini" is enabled.
-    Can remove if the option is disabled.
+ /vault/metadata_clamav.cvd (Handtekeningen, Opgenomen)
+ /vault/metadata_custom.cvd (Handtekeningen, Opgenomen)
+ /vault/metadata_mussel.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor archief metadata handtekeningen. Vereist als archive
+    metadata handtekeningen optie van "phpmussel.ini" is ingeschakeld. Kan
+    verwijderen indien de optie is uitgeschakeld.
     ~
- /vault/ole_clamav_regex.cvd (Signatures, Included)
- /vault/ole_clamav_regex.map (Signatures, Included)
- /vault/ole_clamav_standard.cvd (Signatures, Included)
- /vault/ole_clamav_standard.map (Signatures, Included)
- /vault/ole_custom_regex.cvd (Signatures, Included)
- /vault/ole_custom_standard.cvd (Signatures, Included)
- /vault/ole_mussel_regex.cvd (Signatures, Included)
- /vault/ole_mussel_standard.cvd (Signatures, Included)
-    Files for OLE signatures.
-    Required if OLE signatures option in "phpmussel.ini" is enabled. Can remove
-    if the option is disabled.
+ /vault/ole_clamav_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/ole_clamav_regex.map (Handtekeningen, Opgenomen)
+ /vault/ole_clamav_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/ole_clamav_standard.map (Handtekeningen, Opgenomen)
+ /vault/ole_custom_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/ole_custom_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/ole_mussel_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/ole_mussel_standard.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor OLE handtekeningen. Vereist als OLE handtekeningen optie van
+    "phpmussel.ini" is ingeschakeld. Kan verwijderen indien de optie is
+    uitgeschakeld.
     ~
- /vault/pdf_clamav_regex.cvd (Signatures, Included)
- /vault/pdf_clamav_regex.map (Signatures, Included)
- /vault/pdf_clamav_standard.cvd (Signatures, Included)
- /vault/pdf_clamav_standard.map (Signatures, Included)
- /vault/pdf_custom_regex.cvd (Signatures, Included)
- /vault/pdf_custom_standard.cvd (Signatures, Included)
- /vault/pdf_mussel_regex.cvd (Signatures, Included)
- /vault/pdf_mussel_standard.cvd (Signatures, Included)
-    Files for PDF signatures.
-    Required if PDF signatures option in "phpmussel.ini" is enabled. Can remove
-    if the option is disabled.
+ /vault/pdf_clamav_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/pdf_clamav_regex.map (Handtekeningen, Opgenomen)
+ /vault/pdf_clamav_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/pdf_clamav_standard.map (Handtekeningen, Opgenomen)
+ /vault/pdf_custom_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/pdf_custom_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/pdf_mussel_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/pdf_mussel_standard.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor PDF handtekeningen. Vereist als PDF handtekeningen optie van
+    "phpmussel.ini" is ingeschakeld. Kan verwijderen indien de optie is
+    uitgeschakeld.
     ~
- /vault/pe_clamav.cvd (Signatures, Included)
- /vault/pe_custom.cvd (Signatures, Included)
- /vault/pe_mussel.cvd (Signatures, Included)
-    Files for PE Sectional signatures.
-    Required if PE Sectional signatures option in "phpmussel.ini" is enabled. Can
-    remove if the option is disabled.
+ /vault/pe_clamav.cvd (Handtekeningen, Opgenomen)
+ /vault/pe_custom.cvd (Handtekeningen, Opgenomen)
+ /vault/pe_mussel.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor PE Sectionele handtekeningen. Vereist als PE Sectionele
+    handtekeningen optie van "phpmussel.ini" is ingeschakeld. Kan verwijderen
+    indien de optie is uitgeschakeld.
     ~
- /vault/phpmussel.inc (Script, Included)
-    phpMussel Core Script; The main body and guts of phpMussel (essential)!
+ /vault/phpmussel.inc (Script, Opgenomen)
+    phpMussel Kern Script; De belangrijkste lichaam van phpMussel (essentiële)!
     ~
- /vault/phpmussel.ini (Other, Included)
-    phpMussel Configuration file; Contains all the configuration options of
-    phpMussel, telling it what to do and how to operate correctly (essential)!
+ /vault/phpmussel.ini (Ander, Opgenomen)
+    phpMussel Configuratiebestand; Bevat alle configuratieopties van phpMussel,
+    het vertellen wat te doen en hoe om te werken correct (essentiële)!
     ~
  /vault/scan_log.txt *(Logfile, Created)
-    A record of everything scanned by phpMussel.
+    Een record van alles gescand door phpMussel.
     ~
  /vault/scan_kills.txt *(Logfile, Created)
-    A record of every file upload blocked/killed by phpMussel.
+    Een record van elk bestand uploaden geblokkeerde/gedood door phpMussel.
     ~
- /vault/swf_clamav_regex.cvd (Signatures, Included)
- /vault/swf_clamav_regex.map (Signatures, Included)
- /vault/swf_clamav_standard.cvd (Signatures, Included)
- /vault/swf_clamav_standard.map (Signatures, Included)
- /vault/swf_custom_regex.cvd (Signatures, Included)
- /vault/swf_custom_standard.cvd (Signatures, Included)
- /vault/swf_mussel_regex.cvd (Signatures, Included)
- /vault/swf_mussel_standard.cvd (Signatures, Included)
-    Files for the Shockwave signatures.
-    Required if the Shockwave signatures option in "phpmussel.ini" is enabled.
-    Can remove if the option is disabled.
+ /vault/swf_clamav_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/swf_clamav_regex.map (Handtekeningen, Opgenomen)
+ /vault/swf_clamav_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/swf_clamav_standard.map (Handtekeningen, Opgenomen)
+ /vault/swf_custom_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/swf_custom_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/swf_mussel_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/swf_mussel_standard.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor the Shockwave handtekeningen. Vereist als the Shockwave
+    handtekeningen optie van "phpmussel.ini" is ingeschakeld. Kan verwijderen
+    indien de optie is uitgeschakeld.
     ~
- /vault/switch.dat (Other, Included)
-    Controls and sets certain variables.
+ /vault/switch.dat (Ander, Opgenomen)
+    Controles en sets bepaalde variabelen.
     ~
- /vault/template.html (Other, Included)
-    phpMussel Template file; Template for HTML output produced by phpMussel for
-    its blocked file upload message (the message seen by the uploader).
+ /vault/template.html (Ander, Opgenomen)
+    phpMussel Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door
+    phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht
+    gezien te de uploader).
     ~
- /vault/update.dat (Other, Included)
-    File containing version information for both the phpMussel script and the
-    phpMussel signatures. If you ever want to automatically update phpMussel or
-    want to update phpMusel via your browser, this file is essential.
+ /vault/update.dat (Ander, Opgenomen)
+    Bestand met versie-informatie voor zowel de phpMussel script en de
+    phpMussel handtekeningen. Als je ooit wilt te automatisch update phpMussel
+    of willen phpMusel updaten via uw browser, dit bestand is essentieel.
     ~
- /vault/update.inc (Script, Included)
-    phpMussel Update Script; Required for automatic updates and for updating
-    phpMussel via your browser, but not required otherwise.
+ /vault/update.inc (Script, Opgenomen)
+    phpMussel Update Script; Vereist voor automatische updates en voor het
+    bijwerken van phpMussel via uw browser, maar niet anders vereist.
     ~
- /vault/whitelist_clamav.cvd (Signatures, Included)
- /vault/whitelist_custom.cvd (Signatures, Included)
- /vault/whitelist_mussel.cvd (Signatures, Included)
-    File specific whitelist.
-    Required if whitelisting option in "phpmussel.ini" is enabled and if you wish
-    to have specific files whitelisted. Can remove if the option is disabled or
-    if you don't require whitelisting.
+ /vault/whitelist_clamav.cvd (Handtekeningen, Opgenomen)
+ /vault/whitelist_custom.cvd (Handtekeningen, Opgenomen)
+ /vault/whitelist_mussel.cvd (Handtekeningen, Opgenomen)
+    Bestand-specifieke whitelist.
+    Vereist als de whitelist optie van "phpmussel.ini" is ingeschakeld en als u
+    wilt specifieke bestanden te hebben whitelisted. Kan verwijderen indien de
+    optie is uitgeschakeld of als u niet whitelisting nodig.
     ~
- /vault/xmlxdp_clamav_regex.cvd (Signatures, Included)
- /vault/xmlxdp_clamav_regex.map (Signatures, Included)
- /vault/xmlxdp_clamav_standard.cvd (Signatures, Included)
- /vault/xmlxdp_clamav_standard.map (Signatures, Included)
- /vault/xmlxdp_custom_regex.cvd (Signatures, Included)
- /vault/xmlxdp_custom_standard.cvd (Signatures, Included)
- /vault/xmlxdp_mussel_regex.cvd (Signatures, Included)
- /vault/xmlxdp_mussel_standard.cvd (Signatures, Included)
-    Files for XML/XDP-Chunk signatures.
-    Required if XML/XDP-Chunk signatures option in "phpmussel.ini" is enabled.
-    Can remove if the option is disabled.
+ /vault/xmlxdp_clamav_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/xmlxdp_clamav_regex.map (Handtekeningen, Opgenomen)
+ /vault/xmlxdp_clamav_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/xmlxdp_clamav_standard.map (Handtekeningen, Opgenomen)
+ /vault/xmlxdp_custom_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/xmlxdp_custom_standard.cvd (Handtekeningen, Opgenomen)
+ /vault/xmlxdp_mussel_regex.cvd (Handtekeningen, Opgenomen)
+ /vault/xmlxdp_mussel_standard.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor XML/XDP-Brok handtekeningen. Vereist als XML/XDP-Brok
+    handtekeningen optie van "phpmussel.ini" is ingeschakeld. Kan verwijderen
+    indien de optie is uitgeschakeld.
     ~
 
- * Filename may differ based on configuration stipulations (in "phpmussel.ini").
+ * Bestandsnaam kan verschillen, afhankelijk van de configuratie bedingen (van
+   "phpmussel.ini").
 
  = REGARDING SIGNATURE FILES =
     CVD is an acronym for "ClamAV Virus Definitions", in reference both to

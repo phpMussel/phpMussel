@@ -684,16 +684,16 @@
  /vault/ascii_custom_standard.cvd (Signatures, Inclus)
  /vault/ascii_mussel_regex.cvd (Signatures, Inclus)
  /vault/ascii_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour normalisé ASCII signatures.
-    Nécessaire si la normalisé ASCII option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour normalisé ASCII signatures. Nécessaire si la normalisé ASCII
+    option dans "phpmussel.ini" est activée. Peut enlever si l'option est
+    désactivée.
     ~
  /vault/coex_clamav.cvd (Signatures, Inclus)
  /vault/coex_custom.cvd (Signatures, Inclus)
  /vault/coex_mussel.cvd (Signatures, Inclus)
-    Fichiers pour le Complexe Étendu signatures.
-    Nécessaire si le complexe étendu option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour le Complexe Étendu signatures. Nécessaire si le complexe
+    étendu option dans "phpmussel.ini" est activée. Peut enlever si l'option
+    est désactivée.
     ~
  /vault/elf_clamav_regex.cvd (Signatures, Inclus)
  /vault/elf_clamav_regex.map (Signatures, Inclus)
@@ -703,9 +703,8 @@
  /vault/elf_custom_standard.cvd (Signatures, Inclus)
  /vault/elf_mussel_regex.cvd (Signatures, Inclus)
  /vault/elf_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour ELF signatures.
-    Nécessaire si l'ELF signatures option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour ELF signatures. Nécessaire si l'ELF signatures option dans
+    "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
     ~
  /vault/exe_clamav_regex.cvd (Signatures, Inclus)
  /vault/exe_clamav_regex.map (Signatures, Inclus)
@@ -715,16 +714,16 @@
  /vault/exe_custom_standard.cvd (Signatures, Inclus)
  /vault/exe_mussel_regex.cvd (Signatures, Inclus)
  /vault/exe_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour Portable Executable fichier (EXE) signatures.
-    Nécessaire si l'EXE signatures option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour Portable Executable fichier (EXE) signatures. Nécessaire si
+    l'EXE signatures option dans "phpmussel.ini" est activée. Peut enlever si
+    l'option est désactivée.
     ~
  /vault/filenames_clamav.cvd (Signatures, Inclus)
  /vault/filenames_custom.cvd (Signatures, Inclus)
  /vault/filenames_mussel.cvd (Signatures, Inclus)
-    Fichiers pour filename signatures.
-    Nécessaire si le filename signatures option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour filename signatures. Nécessaire si le filename signatures
+    option dans "phpmussel.ini" est activée. Peut enlever si l'option est
+    désactivée.
     ~
  /vault/general_clamav_regex.cvd (Signatures, Inclus)
  /vault/general_clamav_regex.map (Signatures, Inclus)
@@ -734,9 +733,9 @@
  /vault/general_custom_standard.cvd (Signatures, Inclus)
  /vault/general_mussel_regex.cvd (Signatures, Inclus)
  /vault/general_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour général signatures.
-    Nécessaire si le général signatures option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour général signatures. Nécessaire si le général signatures
+    option dans "phpmussel.ini" est activée. Peut enlever si l'option est
+    désactivée.
     ~
  /vault/graphics_clamav_regex.cvd (Signatures, Inclus)
  /vault/graphics_clamav_regex.map (Signatures, Inclus)
@@ -746,9 +745,9 @@
  /vault/graphics_custom_standard.cvd (Signatures, Inclus)
  /vault/graphics_mussel_regex.cvd (Signatures, Inclus)
  /vault/graphics_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour graphiques signatures.
-    Nécessaire si le graphiques signatures option dans "phpmussel.ini" est
-    activée. Peut enlever si l'option est désactivée.
+    Fichiers pour graphiques signatures. Nécessaire si le graphiques signatures
+    option dans "phpmussel.ini" est activée. Peut enlever si l'option est
+    désactivée.
     ~
  /vault/greylist.csv (Signatures, Inclus/Créés)
     CSV de grise listé signatures indiquant pour phpMussel qui signatures il
@@ -767,9 +766,9 @@
  /vault/html_custom_standard.cvd (Signatures, Inclus)
  /vault/html_mussel_regex.cvd (Signatures, Inclus)
  /vault/html_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour normalisé HTML signatures.
-    Nécessaire si la normalisé HTML option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour normalisé HTML signatures. Nécessaire si la normalisé HTML
+    option dans "phpmussel.ini" est activée. Peut enlever si l'option est
+    désactivée.
     ~
  /vault/lang.inc (Script, Inclu)
     phpMussel linguistiques données.
@@ -782,9 +781,8 @@
  /vault/macho_custom_standard.cvd (Signatures, Inclus)
  /vault/macho_mussel_regex.cvd (Signatures, Inclus)
  /vault/macho_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour Mach-O signatures.
-    Nécessaire si le Mach-O signatures option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour Mach-O signatures. Nécessaire si le Mach-O signatures option
+    dans "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
     ~
  /vault/mail_clamav_regex.cvd (Signatures, Inclus)
  /vault/mail_clamav_regex.map (Signatures, Inclus)
@@ -802,16 +800,15 @@
  /vault/md5_clamav.cvd (Signatures, Inclus)
  /vault/md5_custom.cvd (Signatures, Inclus)
  /vault/md5_mussel.cvd (Signatures, Inclus)
-    Fichiers pour MD5 basé signatures.
-    Nécessaire si le MD5 signatures option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour MD5 basé signatures. Nécessaire si le MD5 signatures option
+    dans "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
     ~
  /vault/metadata_clamav.cvd (Signatures, Inclus)
  /vault/metadata_custom.cvd (Signatures, Inclus)
  /vault/metadata_mussel.cvd (Signatures, Inclus)
-    Fichiers pour métadonnées d'archives signatures.
-    Nécessaire si le métadonnées d'archives option dans "phpmussel.ini" est
-    activée. Peut enlever si l'option est désactivée.
+    Fichiers pour métadonnées d'archives signatures. Nécessaire si le
+    métadonnées d'archives option dans "phpmussel.ini" est activée. Peut
+    enlever si l'option est désactivée.
     ~
  /vault/ole_clamav_regex.cvd (Signatures, Inclus)
  /vault/ole_clamav_regex.map (Signatures, Inclus)
@@ -821,9 +818,8 @@
  /vault/ole_custom_standard.cvd (Signatures, Inclus)
  /vault/ole_mussel_regex.cvd (Signatures, Inclus)
  /vault/ole_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour OLE signatures.
-    Nécessaire si l'OLE signatures option dans "phpmussel.ini" est activée. Peut
-    enlever si l'option est désactivée.
+    Fichiers pour OLE signatures. Nécessaire si l'OLE signatures option dans
+    "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
     ~
  /vault/pdf_clamav_regex.cvd (Signatures, Inclus)
  /vault/pdf_clamav_regex.map (Signatures, Inclus)
@@ -833,16 +829,15 @@
  /vault/pdf_custom_standard.cvd (Signatures, Inclus)
  /vault/pdf_mussel_regex.cvd (Signatures, Inclus)
  /vault/pdf_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour PDF signatures.
-    Nécessaire si le PDF signatures option dans "phpmussel.ini" est activée. Peut
-    enlever si l'option est désactivée.
+    Fichiers pour PDF signatures. Nécessaire si le PDF signatures option dans
+    "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
     ~
  /vault/pe_clamav.cvd (Signatures, Inclus)
  /vault/pe_custom.cvd (Signatures, Inclus)
  /vault/pe_mussel.cvd (Signatures, Inclus)
-    Fichiers pour PE Sectional signatures.
-    Nécessaire si le PE Sectional signatures option dans "phpmussel.ini" est
-    activée. Peut enlever si l'option est désactivée.
+    Fichiers pour PE Sectional signatures. Nécessaire si le PE Sectional
+    signatures option dans "phpmussel.ini" est activée. Peut enlever si
+    l'option est désactivée.
     ~
  /vault/phpmussel.inc (Script, Inclu)
     phpMussel Principal Script; Le principal corps de phpMussel (essentiel)!
@@ -865,9 +860,9 @@
  /vault/swf_custom_standard.cvd (Signatures, Inclus)
  /vault/swf_mussel_regex.cvd (Signatures, Inclus)
  /vault/swf_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour Shockwave signatures.
-    Nécessaire si le Shockwave signatures option dans "phpmussel.ini" est
-    activée. Peut enlever si l'option est désactivée.
+    Fichiers pour Shockwave signatures. Nécessaire si le Shockwave signatures
+    option dans "phpmussel.ini" est activée. Peut enlever si l'option est
+    désactivée.
     ~
  /vault/switch.dat (Other, Included)
     Contrôle et définit certaines variables.
@@ -891,11 +886,10 @@
  /vault/whitelist_clamav.cvd (Signatures, Inclus)
  /vault/whitelist_custom.cvd (Signatures, Inclus)
  /vault/whitelist_mussel.cvd (Signatures, Inclus)
-    Fichier spécifique blanche liste.
-    Nécessaire si l'option de blanche liste dans "phpmussel.ini" est activée et
-    si vous souhaitez avoir spécifiques fichiers en le blanche liste. Peut
-    enlever si l'option est désactivée ou si vous n'avez pas besoin de blanche
-    liste.
+    Fichier spécifique blanche liste. Nécessaire si l'option de blanche liste
+    dans "phpmussel.ini" est activée et si vous souhaitez avoir spécifiques
+    fichiers en le blanche liste. Peut enlever si l'option est désactivée ou si
+    vous n'avez pas besoin de blanche liste.
     ~
  /vault/xmlxdp_clamav_regex.cvd (Signatures, Inclus)
  /vault/xmlxdp_clamav_regex.map (Signatures, Inclus)
@@ -905,9 +899,9 @@
  /vault/xmlxdp_custom_standard.cvd (Signatures, Inclus)
  /vault/xmlxdp_mussel_regex.cvd (Signatures, Inclus)
  /vault/xmlxdp_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour XML/XDP morceaux signatures.
-    Nécessaire si le XML/XDP morceaux option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour XML/XDP morceaux signatures. Nécessaire si le XML/XDP
+    morceaux option dans "phpmussel.ini" est activée. Peut enlever si l'option
+    est désactivée.
     ~
 
  * Noms du fichiers peut varier basé sur configuration stipulations (dans
@@ -1734,5 +1728,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 25 Juin 2015 (2015.06.25).
+Dernière Réactualisé: 27 Juin 2015 (2015.06.27).
 EOF

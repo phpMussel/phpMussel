@@ -1485,7 +1485,7 @@
      phpMussel en cuanto a qué limitaciones está debe adherirse a. A menos que
      usted ha estado indique que lo haga, está no es recomendable para usted
      para aumentar estos valores, pero, si ha tenido problemas relacionados con
-     alcanzar su cuota, la disminución de estos valores -puede- a veces
+     alcanzar su cuota, la disminución de estos valores -PUEDE- a veces
      ayudarle para hacer frente a estos problemas. Su cuota es determinado como
      `vt_quota_rate` solicitudes de cualquier naturaleza en cualquier
      `vt_quota_time` minuto período de tiempo.
@@ -1716,5 +1716,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 25 Junio 2015 (2015.06.25).
+Última Actualización: 27 Junio 2015 (2015.06.27).
 EOF

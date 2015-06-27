@@ -795,17 +795,16 @@
  /vault/md5_clamav.cvd (Firme, Incluso)
  /vault/md5_custom.cvd (Firme, Incluso)
  /vault/md5_mussel.cvd (Firme, Incluso)
-    File per l'MD5 basate firme.
-    Richiesto se l'opzione per l'MD5 basate firme in "phpmussel.ini" è abilitato.
-    Può rimuovere se l'opzione è disattivato (ma i file verranno ricreati al
-    momento di aggiornamento).
+    File per l'MD5 basate firme. Richiesto se l'opzione per l'MD5 basate firme
+    in "phpmussel.ini" è abilitato. Può rimuovere se l'opzione è disattivato
+    (ma i file verranno ricreati al momento di aggiornamento).
     ~
  /vault/metadata_clamav.cvd (Firme, Incluso)
  /vault/metadata_custom.cvd (Firme, Incluso)
  /vault/metadata_mussel.cvd (Firme, Incluso)
-    File per l'archivio metadati firme.
-    Richiesto se l'opzione per l'archivio metadati firme in "phpmussel.ini" è
-    abilitato. Può rimuovere se l'opzione è disattivato.
+    File per l'archivio metadati firme. Richiesto se l'opzione per l'archivio
+    metadati firme in "phpmussel.ini" è abilitato. Può rimuovere se l'opzione è
+    disattivato.
     ~
  /vault/ole_clamav_regex.cvd (Firme, Incluso)
  /vault/ole_clamav_regex.map (Firme, Incluso)
@@ -815,9 +814,8 @@
  /vault/ole_custom_standard.cvd (Firme, Incluso)
  /vault/ole_mussel_regex.cvd (Firme, Incluso)
  /vault/ole_mussel_standard.cvd (Firme, Incluso)
-    File per OLE firme.
-    Richiesto se l'opzione per OLE firme in "phpmussel.ini" è abilitato. Può
-    rimuovere se l'opzione è disattivato.
+    File per OLE firme. Richiesto se l'opzione per OLE firme in "phpmussel.ini"
+    è abilitato. Può rimuovere se l'opzione è disattivato.
     ~
  /vault/pdf_clamav_regex.cvd (Firme, Incluso)
  /vault/pdf_clamav_regex.map (Firme, Incluso)
@@ -834,9 +832,8 @@
  /vault/pe_clamav.cvd (Firme, Incluso)
  /vault/pe_custom.cvd (Firme, Incluso)
  /vault/pe_mussel.cvd (Firme, Incluso)
-    File per PE Sezionale firme.
-    Richiesto se l'opzione per PE Sezionale firme in "phpmussel.ini" è abilitato.
-    Può rimuovere se l'opzione è disattivato.
+    File per PE Sezionale firme. Richiesto se l'opzione per PE Sezionale firme
+    in "phpmussel.ini" è abilitato. Può rimuovere se l'opzione è disattivato.
     ~
  /vault/phpmussel.inc (Script, Incluso)
     phpMussel Nucleo Script; Il principale corpo e budella di phpMussel
@@ -1694,5 +1691,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 25 Giugno 2015 (2015.06.25).
+Ultimo Aggiornamento: 27 Giugno 2015 (2015.06.27).
 EOF
