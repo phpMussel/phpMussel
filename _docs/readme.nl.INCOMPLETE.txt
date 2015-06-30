@@ -320,13 +320,13 @@
 
  3B. HOE TE GEBRUIKEN (VOOR CLI)
 
- Please refer to the "HOE TE INSTALLEREN (VOOR CLI)" section of this readme
- file.
+ Raadpleeg de "HOE TE INSTALLEREN (VOOR CLI)" sectie van dit README bestand.
 
- Be aware that, although future versions of phpMussel should support other
- systems, at this time, phpMussel CLI mode support is only optimized for use on
- Windows based system (you can, of course, try it on other systems, but I can't
- guarantee it'll work as intended).
+ Gelieve bewust te zijn, hoewel toekomstige versies van phpMussel andere
+ systemen moet ondersteunen, momenteel, phpMussel CLI-modus ondersteuning is
+ alleen geoptimaliseerd voor gebruik op Windows gebaseerde systemen (U kunt,
+ natuurlijk, probeer het op andere systemen, maar ik kan niet garanderen dat
+ het zal werken zoals bedoeld).
 
  Also be aware that phpMussel is not the functional equivalent of a complete
  anti-virus suite, and unlike conventional anti-virus suites, does not monitor
@@ -987,6 +987,10 @@
       1 - After scanning, if not clean, delete immediately.
     "lang"
     - Specify the default language for phpMussel.
+    "lang_override"
+    - Specify if phpMussel should, when possible, override the language
+      specification with the language preference declared by inbound requests
+      (HTTP_ACCEPT_LANGUAGE). 0 - No [Default], 1 - Yes.
     "quarantine_key"
     - phpMussel is able to quarantine flagged attempted file uploads in
       isolation within the phpMussel vault, if this is something you want it to
@@ -1202,6 +1206,14 @@
      0 - No (just greylist everything) [Default], 1 - Yes.
    "max_recursion"
    - Maximum recursion depth limit for archives. Default = 10.
+   "block_encrypted_archives"
+   - Detect and block encrypted archives? Because phpMussel isn't able to scan
+     the contents of encrypted archives, it's possible that archive encryption
+     may be employed by an attacker as a means of attempting to bypass
+     phpMussel, anti-virus scanners and other such protections. Instructing
+     phpMussel to block any archives that it discovers to be encrypted could
+     potentially help reduce any risk associated with these such possibilities.
+     0 - No, 1 - Yes [Default].
  "attack_specific" (Categorie)
  - Configuration for specific attack detections (not based on CVDs).
    * Chameleon attack detection: 0 = Off, 1 = On.
@@ -1644,5 +1656,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 27 Juni 2015 (2015.06.27).
+Laatste Bijgewerkt: 29 Juni 2015 (2015.06.29).
 EOF

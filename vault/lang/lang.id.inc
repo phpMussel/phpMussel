@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Indonesian Language Data (24th June 2015).
+ This File: phpMussel Indonesian Language Data (29th June 2015).
  <%phpMussel%/vault/lang/lang.id.inc>
 
 */
@@ -34,6 +34,7 @@ $MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! 
 $MusselConfig['lang']['denied_reason']='Upload diblokir karena alasan yang tercantum di bawah / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Terdeteksi {vn}';
 $MusselConfig['lang']['detected_control_characters']='Terdeteksi Kontrol Karakter';
+$MusselConfig['lang']['encrypted_archive']='Terdeteksi arsip dienkripsi; Arsip dienkripsi tidak diizinkan';
 $MusselConfig['lang']['failed_to_access']='Gagal untuk akses ';
 $MusselConfig['lang']['file']='File';
 $MusselConfig['lang']['filesize_limit_exceeded']='File ukuran batas melebihi';

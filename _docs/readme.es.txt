@@ -1008,7 +1008,12 @@
       0 - Después escaneando, dejar el archivo solo [Predefinido],
       1 - Después escaneando, si no se limpia, eliminar inmediatamente.
     "lang"
-    - Especifique el idioma predefinido para phpMussel.
+    - Especifique la predefinido del lenguaje para phpMussel.
+    "lang_override"
+    - Especifique si phpMussel debería, cuando sea posible, reemplazar la
+      especificación del lenguaje con el preferencia del lenguaje declarada por
+      peticiones entrantes (HTTP_ACCEPT_LANGUAGE).
+      0 - No [Predefinido], 1 - Sí.
     "quarantine_key"
     - phpMussel es capaz de poner en cuarentena intentado archivo cargas en
       aisladamente dentro de la phpMussel vault, si esto es algo que usted
@@ -1239,6 +1244,14 @@
    "max_recursion"
    - Máximo recursividad nivel límite para compactados archivos.
      Predefinido = 10.
+   "block_encrypted_archives"
+   - Detectar y bloquear compactados archivos encriptados? Debido phpMussel no
+     es capaz de escanear el contenido de los compactados archivos encriptados,
+     es posible que este puede ser empleado por un atacante como un medio de
+     evitando phpMussel, antivirus escáneres y otras protecciones. Instruir
+     phpMussel para bloquear cualquier compactado archivo que se descubre es
+     encriptado potencialmente podría ayudar a reducir el riesgo asociado a
+     estos tales posibilidades. 0 - No, 1 - Sí [Predefinido].
  "attack_specific" (Categoría)
  - Configuración para ataque específicas detecciones (no basado en CVDs).
    * Camaleón ataque detección: 0 = Desactivado, 1 = Activado.
@@ -1716,5 +1729,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 27 Junio 2015 (2015.06.27).
+Última Actualización: 29 Junio 2015 (2015.06.29).
 EOF

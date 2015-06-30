@@ -16,7 +16,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- Questo file è la traduzione Italiana di phpMussel (24 Giugno 2015).
+ Questo file è la traduzione Italiana di phpMussel (29 Giugno 2015).
  <%phpMussel%/vault/lang/lang.it.inc>
 
 */
@@ -36,6 +36,7 @@ $MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! 
 $MusselConfig['lang']['denied_reason']='Il tentativo di caricamento è stato bloccato per i motivi elencati di seguito / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Rilevato {vn}';
 $MusselConfig['lang']['detected_control_characters']='Rilevati caratteri di controllo';
+$MusselConfig['lang']['encrypted_archive']='Rilevato archivio criptato; Archivi criptati non ammessi';
 $MusselConfig['lang']['failed_to_access']='Fallito l\'accesso a ';
 $MusselConfig['lang']['file']='File';
 $MusselConfig['lang']['filesize_limit_exceeded']='Dimensione massima del file superata';

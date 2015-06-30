@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Dutch/Nederlandse Language Data (24th June 2015).
+ This File: phpMussel Dutch/Nederlandse Language Data (29th June 2015).
  <%phpMussel%/vault/lang/lang.nl.inc>
 
 */
@@ -34,6 +34,7 @@ $MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! 
 $MusselConfig['lang']['denied_reason']='De upload poging werd geblokkeerd voor de hieronder vermelde redenen / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Gedetecteerd {vn}';
 $MusselConfig['lang']['detected_control_characters']='Gedetecteerd Controle Karakters';
+$MusselConfig['lang']['encrypted_archive']='Gedetecteerd gecodeerde archief; Gecodeerde archieven niet toegestaan';
 $MusselConfig['lang']['failed_to_access']='Mislukt om toegang ';
 $MusselConfig['lang']['file']='Bestand';
 $MusselConfig['lang']['filesize_limit_exceeded']='Bestandsgrootte limiet overschreden';

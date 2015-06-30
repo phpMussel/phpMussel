@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Japanese/日本語 Language Data (24th June 2015).
+ This File: phpMussel Japanese/日本語 Language Data (29th June 2015).
  <%phpMussel%/vault/lang/lang.ja.inc>
 
 */
@@ -34,6 +34,7 @@ $MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! 
 $MusselConfig['lang']['denied_reason']='アップロードは次の原因で拒否されました / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='検出された{vn}';
 $MusselConfig['lang']['detected_control_characters']='検出された制御文字';
+$MusselConfig['lang']['encrypted_archive']='検出された暗号化されたアーカイブ; 暗号化されたアーカイブは許可されていません';
 $MusselConfig['lang']['failed_to_access']='アクセスに失敗しました';
 $MusselConfig['lang']['file']='ファイル';
 $MusselConfig['lang']['filesize_limit_exceeded']='ファイルサイズリミットを超えました';

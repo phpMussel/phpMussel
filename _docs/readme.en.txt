@@ -952,6 +952,10 @@
       1 - After scanning, if not clean, delete immediately.
     "lang"
     - Specify the default language for phpMussel.
+    "lang_override"
+    - Specify if phpMussel should, when possible, override the language
+      specification with the language preference declared by inbound requests
+      (HTTP_ACCEPT_LANGUAGE). 0 - No [Default], 1 - Yes.
     "quarantine_key"
     - phpMussel is able to quarantine flagged attempted file uploads in
       isolation within the phpMussel vault, if this is something you want it to
@@ -1167,6 +1171,14 @@
      0 - No (just greylist everything) [Default], 1 - Yes.
    "max_recursion"
    - Maximum recursion depth limit for archives. Default = 10.
+   "block_encrypted_archives"
+   - Detect and block encrypted archives? Because phpMussel isn't able to scan
+     the contents of encrypted archives, it's possible that archive encryption
+     may be employed by an attacker as a means of attempting to bypass
+     phpMussel, anti-virus scanners and other such protections. Instructing
+     phpMussel to block any archives that it discovers to be encrypted could
+     potentially help reduce any risk associated with these such possibilities.
+     0 - No, 1 - Yes [Default].
  "attack_specific" (Category)
  - Configuration for specific attack detections (not based on CVDs).
    * Chameleon attack detection: 0 = Off, 1 = On.
@@ -1608,5 +1620,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 27th June 2015 (2015.06.27).
+Last Updated: 29th June 2015 (2015.06.29).
 EOF

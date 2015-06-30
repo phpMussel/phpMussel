@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel French/Français Language Data (24th June 2015).
+ This File: phpMussel French/Français Language Data (29th June 2015).
  <%phpMussel%/vault/lang/lang.fr.inc>
 
 */
@@ -34,6 +34,7 @@ $MusselConfig['lang']['denied_other']='Upload Denied! Carga Negado! Caricamento 
 $MusselConfig['lang']['denied_reason']='Votre tentative à télécharger a été bloqué pour les raisons énumérées ci-dessous / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Détecté {vn}';
 $MusselConfig['lang']['detected_control_characters']='Contrôle Caractères Détectés';
+$MusselConfig['lang']['encrypted_archive']='Detected archive cryptée; Archives cryptées pas autorisés';
 $MusselConfig['lang']['failed_to_access']='Échec d\'accès ';
 $MusselConfig['lang']['file']='Fichier';
 $MusselConfig['lang']['filesize_limit_exceeded']='Fichier taille limite dépassé';

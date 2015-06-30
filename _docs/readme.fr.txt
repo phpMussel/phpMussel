@@ -1017,6 +1017,10 @@
       1 - Après l'analyse, si pas propre, supprimer immédiatement.
     "lang"
     - Spécifier la défaut langue pour phpMussel.
+    "lang_override"
+    - Spécifiez si phpMussel devrait, quand c'est possible, remplacer la
+      spécification du langage avec la préférence de langue déclarée par les
+      demandes entrantes (HTTP_ACCEPT_LANGUAGE). 0 - Non [Défaut], 1 - Oui.
     "quarantine_key"
     - phpMussel est capable de mettre en quarantaine le marqué fichier
       téléchargement tentatives en isolement au sein de la voûte de phpMussel,
@@ -1252,6 +1256,14 @@
      archives? 0 - Non (énumérer grise tout), 1 - Oui [Défaut].
    "max_recursion"
    - Maximum récursivité profondeur limite pour archives. Défaut = 10.
+   "block_encrypted_archives"
+   - Détecter et bloquer les archives cryptées? Parce phpMussel est pas capable
+     d'analyse du contenu des archives cryptées, il est possible que le
+     cryptage des archives peut être utilisé par un attaquant un moyen a tenter
+     de contourner phpMussel, analyseurs anti-virus et d'autres protections.
+     Instruire phpMussel pour bloquer toutes les archives cryptées qu'il
+     découvre pourrait aider à réduire les risques associés à ces possibilités.
+     0 - Non, 1 - Oui [Défaut].
  "attack_specific" (Catégorie)
  - Configuration pour les spécifique attaque détections (pas basé sur CVDs).
    * Caméléon Attaque Détection: 0 = Désactivé, 1 = Activé.
@@ -1728,5 +1740,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 27 Juin 2015 (2015.06.27).
+Dernière Réactualisé: 29 Juin 2015 (2015.06.29).
 EOF

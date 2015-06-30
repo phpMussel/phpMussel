@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Russian/Русский Language Data (24th June 2015).
+ This File: phpMussel Russian/Русский Language Data (29th June 2015).
  <%phpMussel%/vault/lang/lang.ru.inc>
 
 */
@@ -34,6 +34,7 @@ $MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! 
 $MusselConfig['lang']['denied_reason']='Ваше загружать был заблокирован по причинам перечисленным ниже / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Обнаружено {vn}';
 $MusselConfig['lang']['detected_control_characters']='Обнаружено Управления Символов';
+$MusselConfig['lang']['encrypted_archive']='Обнаружено зашифрованный архив; Зашифрованные архивы не допускается';
 $MusselConfig['lang']['failed_to_access']='Не удалось получить доступ ';
 $MusselConfig['lang']['file']='файл';
 $MusselConfig['lang']['filesize_limit_exceeded']='Размер файла лимит превысил';

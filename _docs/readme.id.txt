@@ -1006,6 +1006,10 @@
       1 - Setelah pemindaian, jika tidak bersih, hapus langsung.
     "lang"
     - Tentukan bahasa default untuk phpMussel.
+    "lang_override"
+    - Tentukan jika phpMussel harus, bila memungkinkan, mengganti spesifikasi
+      bahasa dengan preferensi bahasa dideklarasikan oleh permintaan memasukan
+      (HTTP_ACCEPT_LANGUAGE). 0 - Tidak [Default], 1 - Ya.
     "quarantine_key"
     - phpMussel dapat mengkarantina upload file ditandai dalam isolasi dalam
       vault phpMussel, jika ini adalah sesuatu yang Anda ingin lakukan.
@@ -1231,6 +1235,14 @@
      0 - Tidak (Bertanda abu-abu semua) [Default], 1 - Ya.
    "max_recursion"
    - Dalam rekursi dari data terkompres. Default = 10.
+   "block_encrypted_archives"
+   - Mendeteksi dan memblokir dienkripsi arsip? Karena phpMussel tidak mampu
+     memindai isi arsip dienkripsi, itu mungkin bahwa enkripsi arsip dapat
+     digunakan oleh penyerang sebagai sarana mencoba untuk memotong phpMussel,
+     anti-virus pemindai dan perlindungan mirip lainnya. Menginstruksikan
+     phpMussel untuk memblokir setiap arsip dienkripsi ditemukan akan
+     berpotensi membantu mengurangi risiko terkait dengan kemungkinan tersebut.
+     0 - Tidak, 1 - Ya [Default].
  "attack_specific" (Kategori)
  - Konfigurasi dari deteksi serangan spesifik (tidak berdasarkan CVDs).
    * Chameleon serangan deteksi: 0 = Dinonaktifkan, 1 = Diaktifkan.
@@ -1692,5 +1704,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 25 Juni 2015 (2015.06.25).
+Terakhir Diperbarui: 29 Juni 2015 (2015.06.29).
 EOF

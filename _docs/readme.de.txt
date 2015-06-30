@@ -969,6 +969,10 @@
           infiziert ist.
     "lang"
     - Gibt die Standardsprache für phpMussel an.
+    "lang_override"
+    - Specify if phpMussel should, when possible, override the language
+      specification with the language preference declared by inbound requests
+      (HTTP_ACCEPT_LANGUAGE). 0 - No [Default], 1 - Yes.
     "quarantine_key"
     - phpMussel ist in der Lage, Versuche von Datei-Uploads in einem
       Quarantäne-Verzeichnis zu isolieren, sofern Sie dies tun wollen. Nutzer,
@@ -1203,6 +1207,14 @@
      1 - Ja.
    "max_recursion"
    - Maximale Grenze der Rekursionstiefe von Archiven. Standardwert = 10.
+   "block_encrypted_archives"
+   - Detect and block encrypted archives? Because phpMussel isn't able to scan
+     the contents of encrypted archives, it's possible that archive encryption
+     may be employed by an attacker as a means of attempting to bypass
+     phpMussel, anti-virus scanners and other such protections. Instructing
+     phpMussel to block any archives that it discovers to be encrypted could
+     potentially help reduce any risk associated with these such possibilities.
+     0 - No, 1 - Yes [Default].
  "attack_specific" (Kategorie)
  - Konfiguration für spezifische Angriffserkennung (nicht auf CVD basierend).
    * Chameleon-Angriffserkennung: 0 = deaktiviert, 1 = aktiviert.
@@ -1660,5 +1672,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 25. Juni 2015 (2015.06.25).
+Zuletzt aktualisiert: 29. Juni 2015 (2015.06.29).
 EOF

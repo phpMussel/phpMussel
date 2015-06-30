@@ -492,7 +492,10 @@ General configuración para phpMussel.
 - Activando esta directiva instruirá la script para intentar para eliminar inmediatamente cualquier escaneado intentado archivo cargas ajustando a los criterios de detección, si través de firmas o de otras maneras. Archivos determinados como limpia no serán tocados. En el caso de los compactados archivos, la totalidad del compactado archivo será eliminado (independientemente de si el archivo infractor es sólo uno de varios archivos contenida dentro del compactado archivo). Para el caso de archivo carga escaneo, en general, no es necesario activar esta opción, porque en general, php purgará automáticamente el contenido de su caché cuando la ejecución ha terminado, lo que significa que lo en general va eliminar cualquier archivos cargados a través de él con el servidor a no ser que se han movido, copiado o eliminado ya. La opción se añade aquí como una medida adicional de seguridad para el adicional paranoide y para aquellos cuyas copias de php no siempre se comportan de la manera prevista. 0 - Después escaneando, dejar el archivo solo [Predefinido], 1 - Después escaneando, si no se limpia, eliminar inmediatamente.
 
 "lang"
-- Especifique el idioma predefinido para phpMussel.
+- Especifique la predefinido del lenguaje para phpMussel.
+
+"lang_override"
+- Especifique si phpMussel debería, cuando sea posible, reemplazar la especificación del lenguaje con el preferencia del lenguaje declarada por peticiones entrantes (HTTP_ACCEPT_LANGUAGE). 0 - No [Predefinido], 1 - Sí.
 
 "quarantine_key"
 - phpMussel es capaz de poner en cuarentena intentado archivo cargas en aisladamente dentro de la phpMussel vault, si esto es algo que usted quiere que haga. Usuarios casual de phpMussel de los cuales simplemente desean proteger sus website o hosting ambiente sin tener ningún interés con analizando profundamente cualquier marcados intentados archivos cargas debería dejar esta funcionalidad desactivado, pero cualquier usuarios interesados en más análisis de marcados intentados archivos cargas para la investigación de malware o para cosas similares debe activar esta funcionalidad. Cuarentenando de marcados intentados archivos cargas a veces puede también ayudar en la depuración de falsos positivos, si esto es algo que ocurre con frecuencia para usted. Para desactivar la cuarentena funcionalidad, simplemente dejar la directiva `quarantine_key` vacío, o borrar el contenidos de que directiva si no está ya vacío. Para activar la cuarentena funcionalidad, entrar algún valor en la directiva. La `quarantine_key` es un importante característica de seguridad de la cuarentena funcionalidad requiere como un medio para la prevención de la explotación de la cuarentena funcionalidad por potenciales atacantes y como un medio de evitar cualquier potencial ejecución de los datos almacenados dentro la cuarentena. La "quarantine_key" debería ser tratado de la misma manera que sus contraseñas: El más grande es el mejor, y guárdela bien. Para un mejor efecto, utilice conjuntamente con "delete_on_sight".
@@ -649,6 +652,9 @@ General configuración para el manejo de archivos.
 
 "max_recursion"
 - Máximo recursividad nivel límite para compactados archivos. Predefinido = 10.
+
+"block_encrypted_archives"
+- Detectar y bloquear compactados archivos encriptados? Debido phpMussel no es capaz de escanear el contenido de los compactados archivos encriptados, es posible que este puede ser empleado por un atacante como un medio de evitando phpMussel, antivirus escáneres y otras protecciones. Instruir phpMussel para bloquear cualquier compactado archivo que se descubre es encriptado potencialmente podría ayudar a reducir el riesgo asociado a estos tales posibilidades. 0 - No, 1 - Sí [Predefinido].
 
 ####"attack_specific" (Categoría)
 Configuración para ataque específicas detecciones (no basado en CVDs).
@@ -882,4 +888,4 @@ Esta información ha sido actualizado 28 Mayo 2015 y es a hoy para todas las php
 ---
 
 
-Última Actualización: 27 Junio 2015 (2015.06.27).
+Última Actualización: 29 Junio 2015 (2015.06.29).

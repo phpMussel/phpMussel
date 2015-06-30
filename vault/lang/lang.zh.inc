@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Chinese (Simplified) / 中文（简体） Language Data (24th June 2015).
+ This File: phpMussel Chinese (Simplified) / 中文（简体） Language Data (29th June 2015).
  <%phpMussel%/vault/lang/lang.zh.inc>
 
 */
@@ -34,6 +34,7 @@ $MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! 
 $MusselConfig['lang']['denied_reason']='你的上传被拒绝由于这些原因 / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='检测{vn}';
 $MusselConfig['lang']['detected_control_characters']='检测控制字符';
+$MusselConfig['lang']['encrypted_archive']='检测加密档案文件; 加密档案文件不允许';
 $MusselConfig['lang']['failed_to_access']='无法访问';
 $MusselConfig['lang']['file']='文件';
 $MusselConfig['lang']['filesize_limit_exceeded']='文件大小超过限制';

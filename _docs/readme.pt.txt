@@ -995,7 +995,12 @@
       0 - Após a análise, deixe o arquivo sozinho [Padrão],
       1 - Após a análise, se não limpo, deletar imediatamente.
     "lang"
-    - Especifique o padrão língua por phpMussel.
+    - Especificar o padrão da linguagem por phpMussel.
+    "lang_override"
+    - Especificar se phpMussel deve, quando possível, substituir a
+      especificação da linguagem com a preferência da linguagem declarada por
+      solicitações de entrada (HTTP_ACCEPT_LANGUAGE).
+      0 - Não [Padrão], 1 - Sim.
     "quarantine_key"
     - phpMussel é capaz de colocar em quarentena marcados tentados arquivos
       carregamentos em isolamento dentro da phpMussel vault, se isso é algo que
@@ -1226,6 +1231,14 @@
      arquivos? 0 - Não (greylist tudo), 1 - Sim [Padrão].
    "max_recursion"
    - Máxima recursão profundidade limite por compactados arquivos. Padrão = 10.
+   "block_encrypted_archives"
+   - Detectar e bloquear compactados arquivos criptografados? Porque phpMussel
+     não é capaz de analisar o conteúdo de arquivos criptografados, é possível
+     que a criptografia de arquivo pode ser empregado por um atacante como meio
+     de tentar contornar phpMussel, analisadores anti-vírus e outras dessas
+     protecções. Instruindo phpMussel para bloquear quaisquer arquivos que ele
+     descobrir a ser criptografada poderia ajudar a reduzir o risco associado a
+     essas tais possibilidades. 0 - Não, 1 - Sim [Padrão].
  "attack_specific" (Categoria)
  - Configuração por específicas ataque detecções (não baseado em CVDs).
    * Chameleon ataque detecções: 0 = Ativo, 1 = Inativo.
@@ -1690,5 +1703,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 27 Junho 2015 (2015.06.27).
+Última Atualização: 29 Junho 2015 (2015.06.29).
 EOF

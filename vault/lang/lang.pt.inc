@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Portuguese/Português Language Data (27th June 2015).
+ This File: phpMussel Portuguese/Português Language Data (29th June 2015).
  <%phpMussel%/vault/lang/lang.pt.inc>
 
 */
@@ -34,6 +34,7 @@ $MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! 
 $MusselConfig['lang']['denied_reason']='Carregamento tentativa foi bloqueado pelos motivos a seguir indicados / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Detectado {vn}';
 $MusselConfig['lang']['detected_control_characters']='Detectados Controle Caracteres';
+$MusselConfig['lang']['encrypted_archive']='Detectado compactado arquivo criptografado; Compactado arquivos criptografados não permitido';
 $MusselConfig['lang']['failed_to_access']='Falha ao acesso ';
 $MusselConfig['lang']['file']='Arquivo';
 $MusselConfig['lang']['filesize_limit_exceeded']='Arquivo tamanho limite excedido';

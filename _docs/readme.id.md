@@ -495,6 +495,9 @@ Konfigurasi umum dari phpMussel.
 "lang"
 - Tentukan bahasa default untuk phpMussel.
 
+"lang_override"
+- Tentukan jika phpMussel harus, bila memungkinkan, mengganti spesifikasi bahasa dengan preferensi bahasa dideklarasikan oleh permintaan memasukan (HTTP_ACCEPT_LANGUAGE). 0 - Tidak [Default], 1 - Ya.
+
 "quarantine_key"
 - phpMussel dapat mengkarantina upload file ditandai dalam isolasi dalam vault phpMussel, jika ini adalah sesuatu yang Anda ingin lakukan. Pengguna biasa dari phpMussel yang hanya ingin memproteksi website mereka dan/atau lingkungan hosting mereka tanpa memiliki minat dalam-dalam menganalisis setiap ditandai upload file harus meninggalkan fungsi ini dinonaktifkan, tetapi setiap pengguna yang tertarik pada analisis lebih lanjut dari ditandai upload file bagi penelitian malware atau untuk hal-hal seperti serupa harus mengaktifkan fungsi ini. Mengkarantina ditandai upload file dapat kadang-kadang juga membantu dalam men-debug false-positif, jika ini adalah sesuatu yang sering terjadi untuk Anda. Untuk menonaktifkan fungsi karantina, meninggalkan "quarantine_key" direktif kosong, atau menghapus isi dari direktif ini jika tidak sudah kosong. Untuk mengaktifkan fungsi karantina, masukkan beberapa nilai dalam direktif ini. `quarantine_key` adalah fitur keamanan penting dari fungsi karantina diharuskan sebagai sarana untuk mencegah fungsi karantina dari dieksploitasi oleh penyerang potensial dan sebagai sarana mencegah eksekusi potensi data yang disimpan dalam karantina. "quarantine_key" harus diperlakukan dengan cara yang sama seperti password Anda: Semakin lama semakin baik, dan menjaganya diproteksi erat. Bagi efek terbaik, gunakan dalam hubungannya dengan "delete_on_sight".
 
@@ -650,6 +653,9 @@ Konfigurasi umum untuk mengambil alih data-data.
 
 "max_recursion"
 - Dalam rekursi dari data terkompres. Default = 10.
+
+"block_encrypted_archives"
+- Mendeteksi dan memblokir dienkripsi arsip? Karena phpMussel tidak mampu memindai isi arsip dienkripsi, itu mungkin bahwa enkripsi arsip dapat digunakan oleh penyerang sebagai sarana mencoba untuk memotong phpMussel, anti-virus pemindai dan perlindungan mirip lainnya. Menginstruksikan phpMussel untuk memblokir setiap arsip dienkripsi ditemukan akan berpotensi membantu mengurangi risiko terkait dengan kemungkinan tersebut. 0 - Tidak, 1 - Ya [Default].
 
 ####"attack_specific" (Kategori)
 Konfigurasi dari deteksi serangan spesifik (tidak berdasarkan CVDs).
@@ -883,4 +889,4 @@ Informasi ini diupdate 28 Mei 2015 dan cocok untuk semua rilis phpMussel dari du
 ---
 
 
-Terakhir Diperbarui: 27 Juni 2015 (2015.06.27).
+Terakhir Diperbarui: 29 Juni 2015 (2015.06.29).
