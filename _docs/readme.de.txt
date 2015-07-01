@@ -970,9 +970,9 @@
     "lang"
     - Gibt die Standardsprache für phpMussel an.
     "lang_override"
-    - Specify if phpMussel should, when possible, override the language
-      specification with the language preference declared by inbound requests
-      (HTTP_ACCEPT_LANGUAGE). 0 - No [Default], 1 - Yes.
+    - Festlegen ob phpMussel, falls möglich, die Sprach-Einstellung mit dem Sprach-
+      Wert von einkommenden Anfragen festlegen soll (HTTP_ACCEPT_LANGUAGE).
+      0 - Nein [Standardeinstellung], 1 - Ja.
     "quarantine_key"
     - phpMussel ist in der Lage, Versuche von Datei-Uploads in einem
       Quarantäne-Verzeichnis zu isolieren, sofern Sie dies tun wollen. Nutzer,
@@ -1208,13 +1208,14 @@
    "max_recursion"
    - Maximale Grenze der Rekursionstiefe von Archiven. Standardwert = 10.
    "block_encrypted_archives"
-   - Detect and block encrypted archives? Because phpMussel isn't able to scan
-     the contents of encrypted archives, it's possible that archive encryption
-     may be employed by an attacker as a means of attempting to bypass
-     phpMussel, anti-virus scanners and other such protections. Instructing
-     phpMussel to block any archives that it discovers to be encrypted could
-     potentially help reduce any risk associated with these such possibilities.
-     0 - No, 1 - Yes [Default].
+   - Verschlüsselte Archive erkennen und blockieren? Denn phpMussel ist nicht in 
+     der Lage, die Inhalte von verschlüsselten Archiven zu scannen. Es ist 
+     möglich, dass Archiv-Verschlüsselung von Angreifern zum Umgehen von 
+     phpMussel, Antiviren-Scanner und weiterer solcher Schutzlösungen verwendet 
+     wird. Die Anweisung, dass phpMussel verschlüsselte Archive blockiert kann 
+     möglicherweise helfen, die Risiken, die mit dieser Möglichkeit verbunden 
+     sind, zu verringern.
+     0 - Nein, 1 - Ja [Standardeinstellung].
  "attack_specific" (Kategorie)
  - Konfiguration für spezifische Angriffserkennung (nicht auf CVD basierend).
    * Chameleon-Angriffserkennung: 0 = deaktiviert, 1 = aktiviert.
