@@ -127,7 +127,7 @@ Als u tegenkomen enig valse positieven, als u tegenkomen iets nieuws dat je denk
 
 Om de handtekeningen die bij phpMussel uitschakelen (zoals als je het ervaren van een vals positief specifiek voor uw doeleinden dat mag niet normaal van Streamline worden verwijderd), verwijzen naar de Greylisting aantekeningen binnen de Browser Commando sectie van dit README bestand.
 
-In addition to the default file upload scanning and the optional scanning of other files and/or directories specified via the above function, included in phpMussel is a function intended for scanning the body of email messages. This function behaves similarly to the standard phpMussel() function, but focuses solely on matching against the ClamAV email-based signatures. I have not tied these signatures into the standard phpMussel() function, because it is highly unlikely that you'd ever find the body of an incoming email message in need of scanning within a file upload targeted to a page where phpMussel is hooked, and thus, to tie these signatures into the phpMussel() function would be redundant. However, that said, having a separate function to match against these signatures could prove to be extremely useful for some, especially for those whose CMS or webfront system is somehow tied into their email system and for those parsing their emails via a php script that they could potentially hook into phpMussel. Configuration for this function, like all others, is controlled via the `phpmussel.ini` file. To use this function (you'll need to do your own implementation), in a php file that is hooked to phpMussel, use the following function in your code:
+In aanvulling op de standaard bestand uploaden scannen en de optionele scannen van andere bestanden en/of directories opgegeven via de bovenstaande functie, in phpMussel een functie bestemd voor het scannen van het lichaam van emailberichten. This function behaves similarly to the standard phpMussel() function, but focuses solely on matching against the ClamAV email-based signatures. I have not tied these signatures into the standard phpMussel() function, because it is highly unlikely that you'd ever find the body of an incoming email message in need of scanning within a file upload targeted to a page where phpMussel is hooked, and thus, to tie these signatures into the phpMussel() function would be redundant. However, that said, having a separate function to match against these signatures could prove to be extremely useful for some, especially for those whose CMS or webfront system is somehow tied into their email system and for those parsing their emails via a php script that they could potentially hook into phpMussel. Configuration for this function, like all others, is controlled via the `phpmussel.ini` file. To use this function (you'll need to do your own implementation), in a php file that is hooked to phpMussel, use the following function in your code:
 
 `phpMussel_mail($body);`
 
@@ -142,9 +142,9 @@ There are many other controls and functions available within phpMussel for your 
 
 ###3B. <a name="SECTION3B"></a>HOE TE GEBRUIKEN (VOOR CLI)
 
-Please refer to the "HOE TE INSTALLEREN (VOOR CLI)" section of this readme file.
+Raadpleeg de "HOE TE INSTALLEREN (VOOR CLI)" sectie van dit README bestand.
 
-Be aware that, although future versions of phpMussel should support other systems, at this time, phpMussel CLI mode support is only optimized for use on Windows based system (you can, of course, try it on other systems, but I can't guarantee it'll work as intended).
+Gelieve bewust te zijn, hoewel toekomstige versies van phpMussel andere systemen moet ondersteunen, momenteel, phpMussel CLI-modus ondersteuning is alleen geoptimaliseerd voor gebruik op Windows gebaseerde systemen (U kunt, natuurlijk, probeer het op andere systemen, maar ik kan niet garanderen dat het zal werken zoals bedoeld).
 
 Also be aware that phpMussel is not the functional equivalent of a complete anti-virus suite, and unlike conventional anti-virus suites, does not monitor active memory or detect viruses on-the-fly! It will only detect viruses contained by those specific files that you explicitly tell it to scan.
 
@@ -155,14 +155,14 @@ Also be aware that phpMussel is not the functional equivalent of a complete anti
 
 Once phpMussel has been installed and is correctly functioning on your system, if you've set the script_password and logs_password variables in your configuration file, you will be able to perform some limited number of administrative functions and input some number of commands to phpMussel via your browser. The reason these passwords need to be set in order to enable these browser-side controls is both to ensure proper security, proper protection of these browser-side controls and to ensure that there exists a way for these browser-side controls to be entirely disabled if they are not desired by you and/or other webmasters/administrators using phpMussel. So, in other words, to enable these controls, set a pasword, and to disable these controls, set no password. Alternatively, if you choose to enable these controls and then choose to disable these controls at a later date, there is a command to do this (such can be useful if you perform some actions that you feel could potentially compromise the delegated passwords and need to quickly disable these controls without modifying your configuration file).
 
-A couple of reasons why you -should- enable these controls:
+A couple of reasons why you _**SHOULD**_ enable these controls:
 - Provides a way to greylist signatures on-the-fly in instances such as when you discover a signature that is producing a false-positive while uploading files to your system and you don't have time to manually edit and reupload your greylist file.
 - Provides a way for you to allow someone other than yourself to control your copy of phpMussel without the implicit need to grant them access to FTP.
 - Provides a way to provide controlled access to your log files.
 - Provides an easy way to update phpMussel when updates are available.
 - Provides a way for you to monitor phpMussel when FTP access or other conventional access points for monitoring phpMussel are not available.
 
-A couple of reasons why you should -not- enable these controls:
+A couple of reasons why you should _**NOT**_ enable these controls:
 - Provides a vector for potential attackers and undesirables to determine whether you are using phpMussel or not (although, this could be both a reason for and a reason against, depending on perspective) by way of blindly sending commands to servers as a means to probe. On one hand, this could discourage attackers from targeting your system if they learn that you are using phpMussel, assuming that they are probing because their attack method is rendered ineffective as a result of using phpMussel. However, on the other hand, if some unforeseen and currently unknown exploit within phpMussel or a future version thereof comes to light, and if it could potentially provide an attack vector, a positive result from such probing could actually encourage attackers to target your system.
 - If your delegated passwords were ever compromised, unless changed, could provide a way for an attacker to bypass whatever signatures may be otherwise normally preventing their attacks from succeeding, or even potentially disable phpMussel altogether, thus providing a way to render the effectiveness of phpMussel moot.
 
@@ -257,184 +257,186 @@ For a list of available CLI commands, at the CLI prompt, type 'c', and press Ent
 
 ###5. <a name="SECTION5"></a>BESTANDEN IN DIT PAKKET
 
-The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, any files that may be potentially created as a result of your using this script, along with a short description of what all these files are for.
+Het volgende is een lijst van alle bestanden die had moeten worden opgenomen in de gearchiveerde kopie van dit script als je het gedownload het, alle bestanden die mogelijk kan worden gemaakt als gevolg van uw gebruik van dit script, samen met een korte beschrijving van wat al deze bestanden voor zijn.
 
-File                                       | Description
+Bestand                                    | Beschrijving
 -------------------------------------------|--------------------------------------
-/phpmussel.php                             | Loader file. Loads the main script, updater, etcetera. This is what you're supposed to be hooking into (essential)!
-/web.config                                | An ASP.NET configuration file (in this instance, to protect the `/vault` directory from being accessed by non-authorised sources in the event that the script is installed on a server based upon ASP.NET technologies).
-/_docs/                                    | Documentation directory (contains various files).
-/_docs/change_log.txt                      | A record of changes made to the script between different versions (not required for proper function of script).
-/_docs/readme.de.txt                       | Documentation: DEUTSCH
-/_docs/readme.en.txt                       | Documentation: ENGLISH
-/_docs/readme.es.txt                       | Documentation: ESPAÑOL
-/_docs/readme.fr.txt                       | Documentation: FRANÇAIS
-/_docs/readme.id.txt                       | Documentation: BAHASA INDONESIA
-/_docs/readme.it.txt                       | Documentation: ITALIANO
-/_docs/readme.nl.txt                       | Documentation: NEDERLANDSE
-/_docs/readme.pt.txt                       | Documentation: PORTUGUÊS
-/_docs/signatures_tally.txt                | Net-shift tally of included signatures (not required for proper function of script).
-/_testfiles/                               | Test files directory (contains various files). All contained files are test files for testing if phpMussel was correctly installed on your system, and you don't need to upload this directory or any of its files except when doing such testing.
-/_testfiles/ascii_standard_testfile.txt    | Test file for testing phpMussel normalised ASCII signatures.
-/_testfiles/coex_testfile.rtf              | Test file for testing phpMussel Complex Extended signatures.
-/_testfiles/exe_standard_testfile.exe      | Test file for testing phpMussel PE signatures.
-/_testfiles/general_standard_testfile.txt  | Test file for testing phpMussel general signatures.
-/_testfiles/graphics_standard_testfile.gif | Test file for testing phpMussel graphics signatures.
-/_testfiles/html_standard_testfile.txt     | Test file for testing phpMussel normalised HTML signatures.
-/_testfiles/md5_testfile.txt               | Test file for testing phpMussel MD5 signatures.
-/_testfiles/metadata_testfile.txt.gz       | Test file for testing phpMussel metadata signatures and for testing GZ file support on your system.
-/_testfiles/metadata_testfile.zip          | Test file for testing phpMussel metadata signatures and for testing ZIP file support on your system.
-/_testfiles/ole_testfile.ole               | Test file for testing phpMussel OLE signatures.
-/_testfiles/pdf_standard_testfile.pdf      | Test file for testing phpMussel PDF signatures.
-/_testfiles/pe_sectional_testfile.exe      | Test file for testing phpMussel PE Sectional signatures.
-/_testfiles/swf_standard_testfile.swf      | Test file for testing phpMussel SWF signatures.
-/_testfiles/xdp_standard_testfile.xdp      | Test file for testing phpMussel XML/XDP-Chunk signatures.
-/vault/                                    | Vault directory (contains various files).
-/vault/lang/                               | Contains phpMussel language data.
-/vault/lang/.htaccess                      | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/lang/lang.de.inc                    | Language data: DEUTSCH
-/vault/lang/lang.en.inc                    | Language data: ENGLISH
-/vault/lang/lang.es.inc                    | Language data: ESPAÑOL
-/vault/lang/lang.fr.inc                    | Language data: FRANÇAIS
-/vault/lang/lang.id.inc                    | Language data: BAHASA INDONESIA
-/vault/lang/lang.it.inc                    | Language data: ITALIANO
-/vault/lang/lang.ja.inc                    | Language data: 日本語
-/vault/lang/lang.nl.inc                    | Language data: NEDERLANDSE
-/vault/lang/lang.pt.inc                    | Language data: PORTUGUÊS
-/vault/lang/lang.ru.inc                    | Language data: РУССКИЙ
-/vault/lang/lang.zh.inc                    | Language data: 中文（简体）
-/vault/lang/lang.zh-tw.inc                 | Language data: 中文（傳統）
-/vault/quarantine/                         | Quarantine directory (contains quarantined files).
-/vault/quarantine/.htaccess                | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/.htaccess                           | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/ascii_clamav_regex.cvd              | File for normalised ASCII signatures.
-/vault/ascii_clamav_regex.map              | File for normalised ASCII signatures.
-/vault/ascii_clamav_standard.cvd           | File for normalised ASCII signatures.
-/vault/ascii_clamav_standard.map           | File for normalised ASCII signatures.
-/vault/ascii_custom_regex.cvd              | File for normalised ASCII signatures.
-/vault/ascii_custom_standard.cvd           | File for normalised ASCII signatures.
-/vault/ascii_mussel_regex.cvd              | File for normalised ASCII signatures.
-/vault/ascii_mussel_standard.cvd           | File for normalised ASCII signatures.
-/vault/coex_clamav.cvd                     | File for Complex Extended signatures.
-/vault/coex_custom.cvd                     | File for Complex Extended signatures.
-/vault/coex_mussel.cvd                     | File for Complex Extended signatures.
-/vault/elf_clamav_regex.cvd                | File for ELF signatures.
-/vault/elf_clamav_regex.map                | File for ELF signatures.
-/vault/elf_clamav_standard.cvd             | File for ELF signatures.
-/vault/elf_clamav_standard.map             | File for ELF signatures.
-/vault/elf_custom_regex.cvd                | File for ELF signatures.
-/vault/elf_custom_standard.cvd             | File for ELF signatures.
-/vault/elf_mussel_regex.cvd                | File for ELF signatures.
-/vault/elf_mussel_standard.cvd             | File for ELF signatures.
-/vault/exe_clamav_regex.cvd                | File for Portable Executable file (EXE) signatures.
-/vault/exe_clamav_regex.map                | File for Portable Executable file (EXE) signatures.
-/vault/exe_clamav_standard.cvd             | File for Portable Executable file (EXE) signatures.
-/vault/exe_clamav_standard.map             | File for Portable Executable file (EXE) signatures.
-/vault/exe_custom_regex.cvd                | File for Portable Executable file (EXE) signatures.
-/vault/exe_custom_standard.cvd             | File for Portable Executable file (EXE) signatures.
-/vault/exe_mussel_regex.cvd                | File for Portable Executable file (EXE) signatures.
-/vault/exe_mussel_standard.cvd             | File for Portable Executable file (EXE) signatures.
-/vault/filenames_clamav.cvd                | File for filename signatures.
-/vault/filenames_custom.cvd                | File for filename signatures.
-/vault/filenames_mussel.cvd                | File for filename signatures.
-/vault/general_clamav_regex.cvd            | File for general signatures.
-/vault/general_clamav_regex.map            | File for general signatures.
-/vault/general_clamav_standard.cvd         | File for general signatures.
-/vault/general_clamav_standard.map         | File for general signatures.
-/vault/general_custom_regex.cvd            | File for general signatures.
-/vault/general_custom_standard.cvd         | File for general signatures.
-/vault/general_mussel_regex.cvd            | File for general signatures.
-/vault/general_mussel_standard.cvd         | File for general signatures.
-/vault/graphics_clamav_regex.cvd           | File for graphics signatures.
-/vault/graphics_clamav_regex.map           | File for graphics signatures.
-/vault/graphics_clamav_standard.cvd        | File for graphics signatures.
-/vault/graphics_clamav_standard.map        | File for graphics signatures.
-/vault/graphics_custom_regex.cvd           | File for graphics signatures.
-/vault/graphics_custom_standard.cvd        | File for graphics signatures.
-/vault/graphics_mussel_regex.cvd           | File for graphics signatures.
-/vault/graphics_mussel_standard.cvd        | File for graphics signatures.
-/vault/greylist.csv                        | CSV of greylisted signatures indicating to phpMussel which signatures it should be ignoring (file automatically recreated if deleted).
-/vault/hex_general_commands.csv            | Hex-encoded CSV of general command detections optionally used by phpMussel.
-/vault/html_clamav_regex.cvd               | File for normalised HTML signatures.
-/vault/html_clamav_regex.map               | File for normalised HTML signatures.
-/vault/html_clamav_standard.cvd            | File for normalised HTML signatures.
-/vault/html_clamav_standard.map            | File for normalised HTML signatures.
-/vault/html_custom_regex.cvd               | File for normalised HTML signatures.
-/vault/html_custom_standard.cvd            | File for normalised HTML signatures.
-/vault/html_mussel_regex.cvd               | File for normalised HTML signatures.
-/vault/html_mussel_standard.cvd            | File for normalised HTML signatures.
-/vault/lang.inc                            | Language data.
-/vault/macho_clamav_regex.cvd              | File for Mach-O signatures.
-/vault/macho_clamav_regex.map              | File for Mach-O signatures.
-/vault/macho_clamav_standard.cvd           | File for Mach-O signatures.
-/vault/macho_clamav_standard.map           | File for Mach-O signatures.
-/vault/macho_custom_regex.cvd              | File for Mach-O signatures.
-/vault/macho_custom_standard.cvd           | File for Mach-O signatures.
-/vault/macho_mussel_regex.cvd              | File for Mach-O signatures.
-/vault/macho_mussel_standard.cvd           | File for Mach-O signatures.
-/vault/mail_clamav_regex.cvd               | File for mail signatures.
-/vault/mail_clamav_regex.map               | File for mail signatures.
-/vault/mail_clamav_standard.cvd            | File for mail signatures.
-/vault/mail_clamav_standard.map            | File for mail signatures.
-/vault/mail_custom_regex.cvd               | File for mail signatures.
-/vault/mail_custom_standard.cvd            | File for mail signatures.
-/vault/mail_mussel_regex.cvd               | File for mail signatures.
-/vault/mail_mussel_standard.cvd            | File for mail signatures.
-/vault/mail_mussel_standard.map            | File for mail signatures. 
-/vault/md5_clamav.cvd                      | File for MD5 based signatures.
-/vault/md5_custom.cvd                      | File for MD5 based signatures.
-/vault/md5_mussel.cvd                      | File for MD5 based signatures.
-/vault/metadata_clamav.cvd                 | File for archive metadata signatures.
-/vault/metadata_custom.cvd                 | File for archive metadata signatures.
-/vault/metadata_mussel.cvd                 | File for archive metadata signatures.
-/vault/ole_clamav_regex.cvd                | File for OLE signatures.
-/vault/ole_clamav_regex.map                | File for OLE signatures.
-/vault/ole_clamav_standard.cvd             | File for OLE signatures.
-/vault/ole_clamav_standard.map             | File for OLE signatures.
-/vault/ole_custom_regex.cvd                | File for OLE signatures.
-/vault/ole_custom_standard.cvd             | File for OLE signatures.
-/vault/ole_mussel_regex.cvd                | File for OLE signatures.
-/vault/ole_mussel_standard.cvd             | File for OLE signatures.
-/vault/pdf_clamav_regex.cvd                | File for PDF signatures.
-/vault/pdf_clamav_regex.map                | File for PDF signatures.
-/vault/pdf_clamav_standard.cvd             | File for PDF signatures.
-/vault/pdf_clamav_standard.map             | File for PDF signatures.
-/vault/pdf_custom_regex.cvd                | File for PDF signatures.
-/vault/pdf_custom_standard.cvd             | File for PDF signatures.
-/vault/pdf_mussel_regex.cvd                | File for PDF signatures.
-/vault/pdf_mussel_standard.cvd             | File for PDF signatures.
-/vault/pe_clamav.cvd                       | File for PE Sectional signatures.
-/vault/pe_custom.cvd                       | File for PE Sectional signatures.
-/vault/pe_mussel.cvd                       | File for PE Sectional signatures.
-/vault/phpmussel.inc                       | Core Script; The main body and guts of phpMussel (essential)!
-/vault/phpmussel.ini                       | Configuration file; Contains all the configuration options of phpMussel, telling it what to do and how to operate correctly (essential)!
-※ /vault/scan_log.txt                     | A record of everything scanned by phpMussel.
-※ /vault/scan_kills.txt                   | A record of every file upload blocked/killed by phpMussel.
-/vault/swf_clamav_regex.cvd                | File for the Shockwave signatures.
-/vault/swf_clamav_regex.map                | File for the Shockwave signatures.
-/vault/swf_clamav_standard.cvd             | File for the Shockwave signatures.
-/vault/swf_clamav_standard.map             | File for the Shockwave signatures.
-/vault/swf_custom_regex.cvd                | File for the Shockwave signatures.
-/vault/swf_custom_standard.cvd             | File for the Shockwave signatures.
-/vault/swf_mussel_regex.cvd                | File for the Shockwave signatures.
-/vault/swf_mussel_standard.cvd             | File for the Shockwave signatures.
-/vault/switch.dat                          | Controls and sets certain variables.
-/vault/template.html                       | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
-/vault/update.dat                          | File containing version information for both the phpMussel script and the phpMussel signatures. If you ever want to automatically update phpMussel or want to update phpMusel via your browser, this file is essential.
-/vault/update.inc                          | Update Script; Required for automatic updates and for updating phpMussel via your browser, but not required otherwise.
-/vault/whitelist_clamav.cvd                | File specific whitelist.
-/vault/whitelist_custom.cvd                | File specific whitelist.
-/vault/whitelist_mussel.cvd                | File specific whitelist.
-/vault/xmlxdp_clamav_regex.cvd             | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_clamav_regex.map             | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_clamav_standard.cvd          | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_clamav_standard.map          | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_custom_regex.cvd             | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_custom_standard.cvd          | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_mussel_regex.cvd             | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_mussel_standard.cvd          | File for XML/XDP-Chunk signatures.
+/phpmussel.php                             | Loaderbestand. Laadt de belangrijkste script, updater, ezv. Dit is wat je zou moeten worden inhaken in (essentieel)!
+/web.config                                | Een ASP.NET-configuratiebestand (in dit geval, naar de directory "vault" te beschermen tegen toegang door niet-geautoriseerde bronnen indien het script is geïnstalleerd op een server op basis van ASP.NET technologieën).
+/_docs/                                    | Documentatie directory (bevat verschillende bestanden).
+/_docs/change_log.txt                      | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
+/_docs/readme.de.txt                       | Documentatie: DEUTSCH
+/_docs/readme.en.txt                       | Documentatie: ENGLISH
+/_docs/readme.es.txt                       | Documentatie: ESPAÑOL
+/_docs/readme.fr.txt                       | Documentatie: FRANÇAIS
+/_docs/readme.id.txt                       | Documentatie: BAHASA INDONESIA
+/_docs/readme.it.txt                       | Documentatie: ITALIANO
+/_docs/readme.nl.txt                       | Documentatie: NEDERLANDSE
+/_docs/readme.pt.txt                       | Documentatie: PORTUGUÊS
+/_docs/signatures_tally.txt                | Net-shift tally van meegeleverde handtekeningen (niet vereist voor een goede werking van het script).
+/_testfiles/                               | Testbestanden directory (bevat verschillende bestanden). Alle opgenomen bestanden zijn testbestanden voor het testen als phpMussel correct op uw systeem is geïnstalleerd, en je hoeft niet om deze map of een van de bestanden, behalve bij het doen van dergelijke testen te uploaden.
+/_testfiles/ascii_standard_testfile.txt    | Testbestand voor het testen phpMussel genormaliseerde ASCII handtekeningen.
+/_testfiles/coex_testfile.rtf              | Testbestand voor het testen phpMussel complexe uitgebreide handtekeningen.
+/_testfiles/exe_standard_testfile.exe      | Testbestand voor het testen phpMussel PE handtekeningen.
+/_testfiles/general_standard_testfile.txt  | Testbestand voor het testen phpMussel algemene handtekeningen.
+/_testfiles/graphics_standard_testfile.gif | Testbestand voor het testen phpMussel grafische handtekeningen.
+/_testfiles/html_standard_testfile.txt     | Testbestand voor het testen phpMussel genormaliseerde HTML handtekeningen.
+/_testfiles/md5_testfile.txt               | Testbestand voor het testen phpMussel MD5 handtekeningen.
+/_testfiles/metadata_testfile.txt.gz       | Testbestand voor het testen phpMussel metadata handtekeningen en voor het testen van GZ bestandsondersteuning op uw systeem.
+/_testfiles/metadata_testfile.zip          | Testbestand voor het testen phpMussel metadata handtekeningen en voor het testen van ZIP bestandsondersteuning op uw systeem.
+/_testfiles/ole_testfile.ole               | Testbestand voor het testen phpMussel OLE handtekeningen.
+/_testfiles/pdf_standard_testfile.pdf      | Testbestand voor het testen phpMussel PDF handtekeningen.
+/_testfiles/pe_sectional_testfile.exe      | Testbestand voor het testen phpMussel PE Sectionele handtekeningen.
+/_testfiles/swf_standard_testfile.swf      | Testbestand voor het testen phpMussel SWF handtekeningen.
+/_testfiles/xdp_standard_testfile.xdp      | Testbestand voor het testen phpMussel XML/XDP-Brok handtekeningen.
+/vault/                                    | Vault directory (bevat verschillende bestanden).
+/vault/cache/                              | Cache directory (tijdelijke data).
+/vault/cache/.htaccess                     | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/lang/                               | Bevat phpMussel taaldata.
+/vault/lang/.htaccess                      | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/lang/lang.de.inc                    | Taaldata: DEUTSCH
+/vault/lang/lang.en.inc                    | Taaldata: ENGLISH
+/vault/lang/lang.es.inc                    | Taaldata: ESPAÑOL
+/vault/lang/lang.fr.inc                    | Taaldata: FRANÇAIS
+/vault/lang/lang.id.inc                    | Taaldata: BAHASA INDONESIA
+/vault/lang/lang.it.inc                    | Taaldata: ITALIANO
+/vault/lang/lang.ja.inc                    | Taaldata: 日本語
+/vault/lang/lang.nl.inc                    | Taaldata: NEDERLANDSE
+/vault/lang/lang.pt.inc                    | Taaldata: PORTUGUÊS
+/vault/lang/lang.ru.inc                    | Taaldata: РУССКИЙ
+/vault/lang/lang.zh.inc                    | Taaldata: 中文（简体）
+/vault/lang/lang.zh-tw.inc                 | Taaldata: 中文（傳統）
+/vault/quarantine/                         | Quarantaine directory (bestanden in quarantaine bevat).
+/vault/quarantine/.htaccess                | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/.htaccess                           | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/ascii_clamav_regex.cvd              | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/ascii_clamav_regex.map              | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/ascii_clamav_standard.cvd           | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/ascii_clamav_standard.map           | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/ascii_custom_regex.cvd              | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/ascii_custom_standard.cvd           | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/ascii_mussel_regex.cvd              | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/ascii_mussel_standard.cvd           | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/coex_clamav.cvd                     | Bestand voor Complexe Uitgebreide handtekeningen.
+/vault/coex_custom.cvd                     | Bestand voor Complexe Uitgebreide handtekeningen.
+/vault/coex_mussel.cvd                     | Bestand voor Complexe Uitgebreide handtekeningen.
+/vault/elf_clamav_regex.cvd                | Bestand voor ELF handtekeningen.
+/vault/elf_clamav_regex.map                | Bestand voor ELF handtekeningen.
+/vault/elf_clamav_standard.cvd             | Bestand voor ELF handtekeningen.
+/vault/elf_clamav_standard.map             | Bestand voor ELF handtekeningen.
+/vault/elf_custom_regex.cvd                | Bestand voor ELF handtekeningen.
+/vault/elf_custom_standard.cvd             | Bestand voor ELF handtekeningen.
+/vault/elf_mussel_regex.cvd                | Bestand voor ELF handtekeningen.
+/vault/elf_mussel_standard.cvd             | Bestand voor ELF handtekeningen.
+/vault/exe_clamav_regex.cvd                | Bestand voor Portable Executable bestand (EXE) handtekeningen.
+/vault/exe_clamav_regex.map                | Bestand voor Portable Executable bestand (EXE) handtekeningen.
+/vault/exe_clamav_standard.cvd             | Bestand voor Portable Executable bestand (EXE) handtekeningen.
+/vault/exe_clamav_standard.map             | Bestand voor Portable Executable bestand (EXE) handtekeningen.
+/vault/exe_custom_regex.cvd                | Bestand voor Portable Executable bestand (EXE) handtekeningen.
+/vault/exe_custom_standard.cvd             | Bestand voor Portable Executable bestand (EXE) handtekeningen.
+/vault/exe_mussel_regex.cvd                | Bestand voor Portable Executable bestand (EXE) handtekeningen.
+/vault/exe_mussel_standard.cvd             | Bestand voor Portable Executable bestand (EXE) handtekeningen.
+/vault/filenames_clamav.cvd                | Bestand voor bestandsnaam handtekeningen.
+/vault/filenames_custom.cvd                | Bestand voor bestandsnaam handtekeningen.
+/vault/filenames_mussel.cvd                | Bestand voor bestandsnaam handtekeningen.
+/vault/general_clamav_regex.cvd            | Bestand voor algemene handtekeningen.
+/vault/general_clamav_regex.map            | Bestand voor algemene handtekeningen.
+/vault/general_clamav_standard.cvd         | Bestand voor algemene handtekeningen.
+/vault/general_clamav_standard.map         | Bestand voor algemene handtekeningen.
+/vault/general_custom_regex.cvd            | Bestand voor algemene handtekeningen.
+/vault/general_custom_standard.cvd         | Bestand voor algemene handtekeningen.
+/vault/general_mussel_regex.cvd            | Bestand voor algemene handtekeningen.
+/vault/general_mussel_standard.cvd         | Bestand voor algemene handtekeningen.
+/vault/graphics_clamav_regex.cvd           | Bestand voor grafische handtekeningen.
+/vault/graphics_clamav_regex.map           | Bestand voor grafische handtekeningen.
+/vault/graphics_clamav_standard.cvd        | Bestand voor grafische handtekeningen.
+/vault/graphics_clamav_standard.map        | Bestand voor grafische handtekeningen.
+/vault/graphics_custom_regex.cvd           | Bestand voor grafische handtekeningen.
+/vault/graphics_custom_standard.cvd        | Bestand voor grafische handtekeningen.
+/vault/graphics_mussel_regex.cvd           | Bestand voor grafische handtekeningen.
+/vault/graphics_mussel_standard.cvd        | Bestand voor grafische handtekeningen.
+/vault/greylist.csv                        | CSV van greylisted handtekeningen aangeeft om phpMussel waarop handtekeningen moet worden negeren (bestand automatisch aangemaakt opnieuw als verwijderd).
+/vault/hex_general_commands.csv            | Hex-gecodeerde CSV van algemene commando detecties optioneel gebruikt door phpMussel.
+/vault/html_clamav_regex.cvd               | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/html_clamav_regex.map               | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/html_clamav_standard.cvd            | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/html_clamav_standard.map            | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/html_custom_regex.cvd               | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/html_custom_standard.cvd            | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/html_mussel_regex.cvd               | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/html_mussel_standard.cvd            | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/lang.inc                            | Taaldata.
+/vault/macho_clamav_regex.cvd              | Bestand voor Mach-O handtekeningen.
+/vault/macho_clamav_regex.map              | Bestand voor Mach-O handtekeningen.
+/vault/macho_clamav_standard.cvd           | Bestand voor Mach-O handtekeningen.
+/vault/macho_clamav_standard.map           | Bestand voor Mach-O handtekeningen.
+/vault/macho_custom_regex.cvd              | Bestand voor Mach-O handtekeningen.
+/vault/macho_custom_standard.cvd           | Bestand voor Mach-O handtekeningen.
+/vault/macho_mussel_regex.cvd              | Bestand voor Mach-O handtekeningen.
+/vault/macho_mussel_standard.cvd           | Bestand voor Mach-O handtekeningen.
+/vault/mail_clamav_regex.cvd               | Bestand voor mail handtekeningen.
+/vault/mail_clamav_regex.map               | Bestand voor mail handtekeningen.
+/vault/mail_clamav_standard.cvd            | Bestand voor mail handtekeningen.
+/vault/mail_clamav_standard.map            | Bestand voor mail handtekeningen.
+/vault/mail_custom_regex.cvd               | Bestand voor mail handtekeningen.
+/vault/mail_custom_standard.cvd            | Bestand voor mail handtekeningen.
+/vault/mail_mussel_regex.cvd               | Bestand voor mail handtekeningen.
+/vault/mail_mussel_standard.cvd            | Bestand voor mail handtekeningen.
+/vault/mail_mussel_standard.map            | Bestand voor mail handtekeningen.
+/vault/md5_clamav.cvd                      | Bestand voor MD5 gebaseerde handtekeningen.
+/vault/md5_custom.cvd                      | Bestand voor MD5 gebaseerde handtekeningen.
+/vault/md5_mussel.cvd                      | Bestand voor MD5 gebaseerde handtekeningen.
+/vault/metadata_clamav.cvd                 | Bestand voor archief metadata handtekeningen.
+/vault/metadata_custom.cvd                 | Bestand voor archief metadata handtekeningen.
+/vault/metadata_mussel.cvd                 | Bestand voor archief metadata handtekeningen.
+/vault/ole_clamav_regex.cvd                | Bestand voor OLE handtekeningen.
+/vault/ole_clamav_regex.map                | Bestand voor OLE handtekeningen.
+/vault/ole_clamav_standard.cvd             | Bestand voor OLE handtekeningen.
+/vault/ole_clamav_standard.map             | Bestand voor OLE handtekeningen.
+/vault/ole_custom_regex.cvd                | Bestand voor OLE handtekeningen.
+/vault/ole_custom_standard.cvd             | Bestand voor OLE handtekeningen.
+/vault/ole_mussel_regex.cvd                | Bestand voor OLE handtekeningen.
+/vault/ole_mussel_standard.cvd             | Bestand voor OLE handtekeningen.
+/vault/pdf_clamav_regex.cvd                | Bestand voor PDF handtekeningen.
+/vault/pdf_clamav_regex.map                | Bestand voor PDF handtekeningen.
+/vault/pdf_clamav_standard.cvd             | Bestand voor PDF handtekeningen.
+/vault/pdf_clamav_standard.map             | Bestand voor PDF handtekeningen.
+/vault/pdf_custom_regex.cvd                | Bestand voor PDF handtekeningen.
+/vault/pdf_custom_standard.cvd             | Bestand voor PDF handtekeningen.
+/vault/pdf_mussel_regex.cvd                | Bestand voor PDF handtekeningen.
+/vault/pdf_mussel_standard.cvd             | Bestand voor PDF handtekeningen.
+/vault/pe_clamav.cvd                       | Bestand voor PE Sectionele handtekeningen.
+/vault/pe_custom.cvd                       | Bestand voor PE Sectionele handtekeningen.
+/vault/pe_mussel.cvd                       | Bestand voor PE Sectionele handtekeningen.
+/vault/phpmussel.inc                       | Kern Script; De belangrijkste lichaam van phpMussel (essentiële)!
+/vault/phpmussel.ini                       | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (essentiële)!
+※ /vault/scan_log.txt                     | Een record van alles gescand door phpMussel.
+※ /vault/scan_kills.txt                   | Een record van elk bestand uploaden geblokkeerde/gedood door phpMussel.
+/vault/swf_clamav_regex.cvd                | Bestand voor the Shockwave handtekeningen.
+/vault/swf_clamav_regex.map                | Bestand voor the Shockwave handtekeningen.
+/vault/swf_clamav_standard.cvd             | Bestand voor the Shockwave handtekeningen.
+/vault/swf_clamav_standard.map             | Bestand voor the Shockwave handtekeningen.
+/vault/swf_custom_regex.cvd                | Bestand voor the Shockwave handtekeningen.
+/vault/swf_custom_standard.cvd             | Bestand voor the Shockwave handtekeningen.
+/vault/swf_mussel_regex.cvd                | Bestand voor the Shockwave handtekeningen.
+/vault/swf_mussel_standard.cvd             | Bestand voor the Shockwave handtekeningen.
+/vault/switch.dat                          | Controles en sets bepaalde variabelen.
+/vault/template.html                       | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
+/vault/update.dat                          | Bestand met versie-informatie voor zowel de phpMussel script en de phpMussel handtekeningen. Als je ooit wilt te automatisch update phpMussel of willen phpMusel updaten via uw browser, dit bestand is essentieel.
+/vault/update.inc                          | Update Script; Vereist voor automatische updates en voor het bijwerken van phpMussel via uw browser, maar niet anders vereist.
+/vault/whitelist_clamav.cvd                | Bestand-specifieke whitelist.
+/vault/whitelist_custom.cvd                | Bestand-specifieke whitelist.
+/vault/whitelist_mussel.cvd                | Bestand-specifieke whitelist.
+/vault/xmlxdp_clamav_regex.cvd             | Bestand voor XML/XDP-Brok handtekeningen.
+/vault/xmlxdp_clamav_regex.map             | Bestand voor XML/XDP-Brok handtekeningen.
+/vault/xmlxdp_clamav_standard.cvd          | Bestand voor XML/XDP-Brok handtekeningen.
+/vault/xmlxdp_clamav_standard.map          | Bestand voor XML/XDP-Brok handtekeningen.
+/vault/xmlxdp_custom_regex.cvd             | Bestand voor XML/XDP-Brok handtekeningen.
+/vault/xmlxdp_custom_standard.cvd          | Bestand voor XML/XDP-Brok handtekeningen.
+/vault/xmlxdp_mussel_regex.cvd             | Bestand voor XML/XDP-Brok handtekeningen.
+/vault/xmlxdp_mussel_standard.cvd          | Bestand voor XML/XDP-Brok handtekeningen.
 
-※ Filename may differ based on configuration stipulations (in `phpmussel.ini`).
+※ Bestandsnaam kan verschillen, afhankelijk van de configuratie bedingen (van `phpmussel.ini`).
 
 ####*REGARDING SIGNATURE FILES*
 CVD is an acronym for "ClamAV Virus Definitions", in reference both to how ClamAV refers to its own signatures and to the use of those signatures for phpMussel; Files ending with "CVD" contain signatures.
@@ -492,6 +494,9 @@ General configuration for phpMussel.
 
 "lang"
 - Specify the default language for phpMussel.
+
+"lang_override"
+- Specify if phpMussel should, when possible, override the language specification with the language preference declared by inbound requests (HTTP_ACCEPT_LANGUAGE). 0 - No [Default], 1 - Yes.
 
 "quarantine_key"
 - phpMussel is able to quarantine flagged attempted file uploads in isolation within the phpMussel vault, if this is something you want it to do. Casual users of phpMussel that simply wish to protect their websites or hosting environment without having any interest in deeply analysing any flagged attempted file uploads should leave this functionality disabled, but any users interested in further analysis of flagged attempted file uploads for malware research or for similar such things should enable this functionality. Quarantining of flagged attempted file uploads can sometimes also assist in debugging false-positives, if this is something that frequently occurs for you. To disable quarantine functionality, simply leave the `quarantine_key` directive empty, or erase the contents of that directive if it isn't already empty. To enable quarantine functionality, enter some value into the directive. The "quarantine_key" is an important security feature of the quarantine functionality required as a means of preventing the quarantine functionality from being exploited by potential attackers and as a means of preventing any potential execution of data stored within the quarantine. The `quarantine_key` should be treated in the same manner as your passwords: The longer the better, and guard it tightly. For best effect, use in conjunction with "delete_on_sight".
@@ -630,9 +635,9 @@ General configuration for handling of files.
 "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
 - If your system only allows specific types of files to be uploaded, or if your system explicitly denies certain types of files, specifying those filetypes in whitelists, blacklists and greylists can increase the speed at which scanning is performed by allowing the script to skip over certain filetypes. Format is CSV (comma separated values). If you want to scan everything, rather than whitelist, blacklist or greylist, leave the variable(/s) blank; Doing so will disable whitelist/blacklist/greylist.
 - Logical order of processing is:
--- If the filetype is whitelisted, don't scan and don't block the file, and don't check the file against the blacklist or the greylist.
--- If the filetype is blacklisted, don't scan the file but block it anyway, and don't check the file against the greylist.
--- If the greylist is empty or if the greylist is not empty and the filetype is greylisted, scan the file as per normal and determine whether to block it based on the results of the scan, but if the greylist is not empty and the filetype is not greylisted, treat the file as blacklisted, therefore not scanning it but blocking it anyway.
+  - If the filetype is whitelisted, don't scan and don't block the file, and don't check the file against the blacklist or the greylist.
+  - If the filetype is blacklisted, don't scan the file but block it anyway, and don't check the file against the greylist.
+  - If the greylist is empty or if the greylist is not empty and the filetype is greylisted, scan the file as per normal and determine whether to block it based on the results of the scan, but if the greylist is not empty and the filetype is not greylisted, treat the file as blacklisted, therefore not scanning it but blocking it anyway.
 
 "check_archives"
 - Attempt to check the contents of archives? 0 - No (do not check), 1 - Yes (check) [Default].
@@ -648,6 +653,9 @@ General configuration for handling of files.
 
 "max_recursion"
 - Maximum recursion depth limit for archives. Default = 10.
+
+"block_encrypted_archives"
+- Detect and block encrypted archives? Because phpMussel isn't able to scan the contents of encrypted archives, it's possible that archive encryption may be employed by an attacker as a means of attempting to bypass phpMussel, anti-virus scanners and other such protections. Instructing phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. 0 - No, 1 - Yes [Default].
 
 ####"attack_specific" (Categorie)
 Configuration for specific attack detections (not based on CVDs).
@@ -679,7 +687,7 @@ Chameleon attack detection: 0 = Off, 1 = On.
 - Search content of files for general commands such as eval(), exec() and include()? 0 - No (do not check) [Default], 1 - Yes (check). Disable this option if you intend to upload any of the following to your system or CMS via your browser: php, JavaScript, HTML, python, perl files and etcetera. Enable this option if you don't have any additional protections on your system and do not intend to upload such files. If you use additional security in conjunction with phpMussel such as ZB Block, there is no need to turn this option on, because most of what phpMussel will look for (in the context of this option) are duplications of protections that are already provided.
 
 "block_control_characters"
-- Block any files containing any control characters (other than newlines)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) If you are -only- uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. 0 - Don't block [Default], 1 - Block.
+- Block any files containing any control characters (other than newlines)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) If you are _**ONLY**_ uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. 0 - Don't block [Default], 1 - Block.
 
 "corrupted_exe"
 - Corrupted files and parse errors. 0 = Ignore, 1 = Block [Default]. Detect and block potentially corrupted PE (Portable Executable) files? Often (but not always), when certain aspects of a PE file are corrupted or can't be parsed correctly, it can be indicative of a viral infection. The processes used by most anti-virus programs to detect viruses in PE files require parsing those files in certain ways, which, if the programmer of a virus is aware of, will specifically try to prevent, in order to allow their virus to remain undetected.
@@ -709,25 +717,25 @@ Heuristic directives for phpMussel.
 Configuration for Virus Total integration.
 
 "vt_public_api_key"
-- Optionally, phpMussel is able to scan files using the Virus Total API as a way to provide a greatly enhanced level of protection against viruses, trojans, malware and other threats. By default, scanning files using the Virus Total API is disabled. To enable it, an API key from Virus Total is required. Due to the significant benefit that this could provide to you, it's something that I highly recommend enabling. Please be aware, however, that to use the Virus Total API, you -MUST- agree to their Terms of Service and you -MUST- adhere to all guidelines as per described by the Virus Total documentation! You are NOT permitted to use this integration feature UNLESS:
--- You have read and agree to the Terms of Service of Virus Total and its API. The Terms of Service of Virus Total and its API can be found [Here](https://www.virustotal.com/en/about/terms-of-service/).
--- You have read and you understand, at a minimum, the preamble of the Virus Total Public API documentation (everything after "VirusTotal Public API v2.0" but before "Contents"). The Virus Total Public API documentation can be found [Here](https://www.virustotal.com/en/documentation/public-api/).
+- Optionally, phpMussel is able to scan files using the Virus Total API as a way to provide a greatly enhanced level of protection against viruses, trojans, malware and other threats. By default, scanning files using the Virus Total API is disabled. To enable it, an API key from Virus Total is required. Due to the significant benefit that this could provide to you, it's something that I highly recommend enabling. Please be aware, however, that to use the Virus Total API, you _**MUST**_ agree to their Terms of Service and you _**MUST**_ adhere to all guidelines as per described by the Virus Total documentation! You are NOT permitted to use this integration feature UNLESS:
+  - You have read and agree to the Terms of Service of Virus Total and its API. The Terms of Service of Virus Total and its API can be found [Here](https://www.virustotal.com/en/about/terms-of-service/).
+  - You have read and you understand, at a minimum, the preamble of the Virus Total Public API documentation (everything after "VirusTotal Public API v2.0" but before "Contents"). The Virus Total Public API documentation can be found [Here](https://www.virustotal.com/en/documentation/public-api/).
 
 Note: If scanning files using the Virus Total API is disabled, you won't need to review any of the directives in this category (`virustotal`), because none of them will do anything if this is disabled. To acquire a Virus Total API key, from anywhere on their website, click the "Join our Community" link located towards the top-right of the page, enter in the information requested, and click "Sign up" when done. Follow all instructions supplied, and when you've got your public API key, copy/paste that public API key to the `vt_public_api_key` directive of the `phpmussel.ini` configuration file.
 
 "vt_suspicion_level"
 - By default, phpMussel will restrict which files it scans using the Virus Total API to those files that it considers "suspicious". You can optionally adjust this restriction by changing the value of the `vt_suspicion_level` directive.
 - `0`: Files are only considered suspicious if, upon being scanned by phpMussel using its own signatures, they are deemed to carry a heuristic weight. This would effectively mean that use of the Virus Total API would be for a second opinion for when phpMussel suspects that a file may potentially be malicious, but can't entirely rule out that it may also potentially be benign (non-malicious) and therefore would otherwise normally not block it or flag it as being malicious.
-- `1`: Files are considered suspicious if they're known to be executable (PE files, Mach-O files, ELF/Linux files, etc) or if they're known to be of a format that could potentially contain executable data (such as executable macros, DOC/DOCX files, archive files such as RARs and ZIPS, and etc). This is the default and recommended suspicion level to apply, effectively meaning that use of the Virus Total API would be for a second opinion for when phpMussel doesn't initially find anything malicious or wrong with a file that it considers to be suspicious and therefore would otherwise normally not block it or flag it as being malicious.
+- `1`: Files are considered suspicious if they're known to be executable (PE files, Mach-O files, ELF/Linux files, etc) or if they're known to be of a format that could potentially contain executable data (such as executable macros, DOC/DOCX files, archive files such as RARs, ZIPS and etc). This is the default and recommended suspicion level to apply, effectively meaning that use of the Virus Total API would be for a second opinion for when phpMussel doesn't initially find anything malicious or wrong with a file that it considers to be suspicious and therefore would otherwise normally not block it or flag it as being malicious.
 - `2`: All files are considered suspicious and should be scanned using the Virus Total API. I don't generally recommend applying this suspicion level, due to the risk of reaching your API quota much quicker than would otherwise be the case, but there are certain circumstances (such as when the webmaster or hostmaster has very little faith or trust whatsoever in any of the uploaded content of their users) where this suspicion level could be appropriate. With this suspicion level, all files not normally blocked or flagged as being malicious would be scanned using the Virus Total API. Note, however, that phpMussel will cease using the Virus Total API when your API quota has been reached (regardless of suspicion level), and that your quota will likely be reached much faster when using this suspicion level.
 
-Note: Regardless of suspicion level, any files that are either blacklisted or whitelisted by phpMussel won't be scanned using the Virus Total API, because those such files would've already been declared as either malicious or benign by phpMussel by the time that they would've otherwise been scanned by the Virus Total API, and therefore, additionally scanning wouldn't be required. The ability of phpMussel to scan files using the Virus Total API is intended to build further confidence for whether a file is malicious or benign in those circumstances where phpMussel itself isn't entirely certain as to whether a file is malicious or benign.
+Note: Regardless of suspicion level, any files that are either blacklisted or whitelisted by phpMussel won't be scanned using the Virus Total API, because those such files would've already been declared as either malicious or benign by phpMussel by the time that they would've otherwise been scanned by the Virus Total API, and therefore, additional scanning wouldn't be required. The ability of phpMussel to scan files using the Virus Total API is intended to build further confidence for whether a file is malicious or benign in those circumstances where phpMussel itself isn't entirely certain as to whether a file is malicious or benign.
 
 "vt_weighting"
 - Should phpMussel apply the results of scanning using the Virus Total API as detections or as detection weighting? This directive exists, because, although scanning a file using multiple engines (as Virus Total does) should result in an increased detection rate (and therefore in a higher number of malicious files being caught), it can also result in a higher number of false positives, and therefore, in some circumstances, the results of scanning may be better utilised as a confidence score rather than as a definitive conclusion. If a value of 0 is used, the results of scanning using the Virus Total API will be applied as detections, and therefore, if any engine used by Virus Total flags the file being scanned as being malicious, phpMussel will consider the file to be malicious. If any other value is used, the results of scanning using the Virus Total API will be applied as detection weighting, and therefore, the number of engines used by Virus Total that flag the file being scanned as being malicious will serve as a confidence score (or detection weighting) for whether or not the file being scanned should be considered malicious by phpMussel (the value used will represent the minimum confidence score or weight required in order to be considered malicious). A value of 0 is used by default.
 
 "vt_quota_rate" and "vt_quota_time"
-- According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly abhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values -may- sometimes help you in dealing with these problems. Your rate limit determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame.
+- According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly adhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values _**MAY**_ sometimes help you in dealing with these problems. Your rate limit determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame.
 
 ---
 
@@ -824,7 +832,7 @@ Voor het grootste deel, phpMussel is algemeen compatibel met de meeste andere an
 
 Deze informatie is voor het laatst bijgewerkt 28 Mei 2015 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v0.5-v0.6i) op het moment van schrijven dit.
 
-| Scanner              |  Results                             |
+| Scanner              |  Resultaten                          |
 |----------------------|--------------------------------------|
 | Ad-Aware             |  Geen bekend problemen               |
 | Agnitum              |  Geen bekend problemen               |
@@ -881,4 +889,4 @@ Deze informatie is voor het laatst bijgewerkt 28 Mei 2015 en is op de hoogte voo
 ---
 
 
-Laatste Bijgewerkt: 23 Juni 2015 (2015.06.23).
+Laatste Bijgewerkt: 29 Juni 2015 (2015.06.29).

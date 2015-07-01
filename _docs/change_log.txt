@@ -25,13 +25,13 @@ Do-to list for potential future major version (v1.0):
   REFER: http://www.spambotsecurity.com/forum/viewtopic.php?f=59&t=3441
   REFER: https://github.com/Maikuolan/phpMussel/issues/11
 
-Do-to list for potential future minor version (v0.7):
+Do-to list for potential future minor version (v0.8):
 
 - Any significant changes to the script including completing of any of the
   aforementioned above, whereby having done so, the release doesn't yet qualify
   as a major release.
 
-Do-to list for potential future sub-minor version (v0.6j):
+Do-to list for potential future sub-minor version (v0.7a):
 
 - Any non-significant changes or other unrelated changes to the core code.
 
@@ -50,34 +50,76 @@ Anything less than sub-minor:
 SUMMARY:
 Minor release (medium priority); BETA! NOT YET RELEASED!
 
-- [2015.06.17; Sub-minor code change]: Completed work on "lang.ru.inc"
-  (undoubtedly has mistakes; feel free to audit if you want).
+- [2015.06.17; Sub-minor code change; Maikuolan]: Completed work on
+  "lang.ru.inc" (undoubtedly has mistakes; feel free to audit if you want).
 
-- [2015.06.20; NEW FEATURE]: Created and implemented a caching system to
-  phpMussel! As of now, phpMussel is able to store information to and retrieve
-  information from an internal cache between unique requests. There'll be a
-  number of new features brought about as of this release that'll make use of
-  this new caching system [phpmussel.inc].
+- [2015.06.20; NEW FEATURE; Maikuolan]: Created and implemented a caching
+  system to phpMussel! As of now, phpMussel is able to store information to and
+  retrieve information from an internal cache between unique requests. There'll
+  be a number of new features brought about as of this release that'll make use
+  of this new caching system [phpmussel.inc].
 
-- [2015.06.21; NEW FEATURE]: phpMussel now stores the results of scanning in
-  its internal cache, maintains these cache entries for the length of time
-  specified by the `scan_cache_expiry` directive (newly created directive added
-  to `phpmussel.ini`, defaulting to 21600 seconds, or 6 hours), after which,
-  these cache entries will be cleared from the cache. When a new scan is
-  initiated, phpMussel will check the cache for such entries, and if an entry
-  exists corresponding to the file being scanned, the cached results will be
-  returned, significantly reducing the time and processing power required by
+- [2015.06.21; NEW FEATURE; Maikuolan]: phpMussel now stores the results of
+  scanning in its internal cache, maintains these cache entries for the length
+  of time specified by the `scan_cache_expiry` directive (newly created
+  directive added to `phpmussel.ini`, defaulting to 21600 seconds, or 6 hours),
+  after which, these cache entries will be cleared from the cache. When a new
+  scan is initiated, phpMussel will check the cache for such entries, and if an
+  entry exists corresponding to the file being scanned, the cached results will
+  be returned, significantly reducing the time and processing power required by
   phpMussel to produce a result [phpmussel.inc; phpmussel.ini].
 
-- [2015.06.22; NEW FEATURE]: Integration with the Virus Total API has now been
-  implemented! phpMussel is now able to optionally scan files using the Virus
-  Total API, providing a greatly enhanced level of protection against viruses,
-  trojans, malware and other threats. More information regarding this
-  implementation is available via the documentation [phpmussel.inc;
-  phpmussel.ini]. Refer github.com/Maikuolan/phpMussel/issues/12
+- [2015.06.22; NEW FEATURE; Maikuolan]: Integration with the Virus Total API
+  has now been implemented! phpMussel is now able to optionally scan files
+  using the Virus Total API, providing a greatly enhanced level of protection
+  against viruses, trojans, malware and other threats. More information
+  regarding this implementation is available via the documentation. Currently,
+  phpMussel checks files against Virus Total using the MD5 hash of the file;
+  Support for the actual uploading of files to Virus Total will implemented
+  shortly [phpmussel.inc; phpmussel.ini].
+  Refer github.com/Maikuolan/phpMussel/issues/12
+
+- [2015.06.23; Documentation; Maikuolan]: Updated English README (Virus Total
+  information) [readme.en.txt; readme.en.md].
+
+- [2015.06.23; Documentation; DanielRuf]: Updated German README (Virus Total
+  information) [readme.de.txt; readme.de.md].
+
+- [2015.06.23; Documentation; Maikuolan]: Updated Spanish README (Virus Total
+  information) [readme.es.txt; readme.es.md].
+
+- [2015.06.24; Sub-minor code change; Zangune]: Audited/Updated the language
+  data in "lang.it.inc".
+
+- [2015.06.24; Documentation; Maikuolan]: Updated French README (Virus Total
+  information) [readme.fr.txt; readme.fr.md].
+
+- [2015.06.25; Documentation; Maikuolan]: Updated Indonesian README (Virus
+  Total information) [readme.id.txt; readme.id.md].
+
+- [2015.05.26; Bug-fix; Maikuolan]: Newline character causing CRC mismatch
+  during archive metadata checks; Fixed [phpmussel.inc].
+  Refer github.com/Maikuolan/phpMussel/issues/25
+
+- [2015.06.27; Documentation; Maikuolan]: Updated Portuguese README (Virus
+  Total information) [readme.pt.txt; readme.pt.md].
+
+- [2015.06.29; Sub-minor code change; Maikuolan]: Improved the way that certain
+  types of variables are enforced; Wrote new functions for bit-level analysis;
+  Minor modification done to the code for RAR chameleon detection; Added new
+  protections for archives: phpMussel is now able to detect and block encrypted
+  ZIP archives (detection and blocking of other formats/types of encrypted
+  archives should be supported shortly; refer to "block_encrypted_archives");
+  Added the new directive, "lang_override", allowing the default language for
+  phpMussel to be overridden on the basis of "HTTP_ACCEPT_LANGUAGE".
+
+- [2015.06.29; Signatures update; Maikuolan]: Added various new signatures.
+
+- [2015.06.30; Documentation; Maikuolan]: Updated Italian README (Virus
+  Total information) [readme.it.txt; readme.it.md].
 
 Maikuolan,
-22nd June 2015.
+30th June 2015.
 
 === Version/Release 0.6j (Previous Release: 0.6i; Next: 0.7) ===
 SUMMARY:

@@ -155,14 +155,14 @@ Also be aware that phpMussel is not the functional equivalent of a complete anti
 
 Once phpMussel has been installed and is correctly functioning on your system, if you've set the script_password and logs_password variables in your configuration file, you will be able to perform some limited number of administrative functions and input some number of commands to phpMussel via your browser. The reason these passwords need to be set in order to enable these browser-side controls is both to ensure proper security, proper protection of these browser-side controls and to ensure that there exists a way for these browser-side controls to be entirely disabled if they are not desired by you and/or other webmasters/administrators using phpMussel. So, in other words, to enable these controls, set a pasword, and to disable these controls, set no password. Alternatively, if you choose to enable these controls and then choose to disable these controls at a later date, there is a command to do this (such can be useful if you perform some actions that you feel could potentially compromise the delegated passwords and need to quickly disable these controls without modifying your configuration file).
 
-A couple of reasons why you -should- enable these controls:
+A couple of reasons why you _**SHOULD**_ enable these controls:
 - Provides a way to greylist signatures on-the-fly in instances such as when you discover a signature that is producing a false-positive while uploading files to your system and you don't have time to manually edit and reupload your greylist file.
 - Provides a way for you to allow someone other than yourself to control your copy of phpMussel without the implicit need to grant them access to FTP.
 - Provides a way to provide controlled access to your log files.
 - Provides an easy way to update phpMussel when updates are available.
 - Provides a way for you to monitor phpMussel when FTP access or other conventional access points for monitoring phpMussel are not available.
 
-A couple of reasons why you should -not- enable these controls:
+A couple of reasons why you should _**NOT**_ enable these controls:
 - Provides a vector for potential attackers and undesirables to determine whether you're using phpMussel or not (although, this could be both a reason for and a reason against, depending on perspective) by way of blindly sending commands to servers as a means to probe. On one hand, this could discourage attackers from targeting your system if they learn that you're using phpMussel, assuming that they are probing because their attack method is rendered ineffective as a result of using phpMussel. However, on the other hand, if some unforeseen and currently unknown exploit within phpMussel or a future version thereof comes to light, and if it could potentially provide an attack vector, a positive result from such probing could actually encourage attackers to target your system.
 - If your delegated passwords were ever compromised, unless changed, could provide a way for an attacker to bypass whatever signatures may be otherwise normally preventing their attacks from succeeding, or even potentially disable phpMussel altogether, thus providing a way to render the effectiveness of phpMussel moot.
 
@@ -290,6 +290,8 @@ File                                       | Description
 /_testfiles/swf_standard_testfile.swf      | Test file for testing phpMussel SWF signatures.
 /_testfiles/xdp_standard_testfile.xdp      | Test file for testing phpMussel XML/XDP-Chunk signatures.
 /vault/                                    | Vault directory (contains various files).
+/vault/cache/                              | Cache directory (for temporary data).
+/vault/cache/.htaccess                     | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/lang/                               | Contains phpMussel language data.
 /vault/lang/.htaccess                      | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/lang/lang.de.inc                    | Language data: DEUTSCH
@@ -380,7 +382,7 @@ File                                       | Description
 /vault/mail_custom_standard.cvd            | File for mail signatures.
 /vault/mail_mussel_regex.cvd               | File for mail signatures.
 /vault/mail_mussel_standard.cvd            | File for mail signatures.
-/vault/mail_mussel_standard.map            | File for mail signatures. 
+/vault/mail_mussel_standard.map            | File for mail signatures.
 /vault/md5_clamav.cvd                      | File for MD5 based signatures.
 /vault/md5_custom.cvd                      | File for MD5 based signatures.
 /vault/md5_mussel.cvd                      | File for MD5 based signatures.
@@ -492,6 +494,9 @@ General configuration for phpMussel.
 
 "lang"
 - Specify the default language for phpMussel.
+
+"lang_override"
+- Specify if phpMussel should, when possible, override the language specification with the language preference declared by inbound requests (HTTP_ACCEPT_LANGUAGE). 0 - No [Default], 1 - Yes.
 
 "quarantine_key"
 - phpMussel is able to quarantine flagged attempted file uploads in isolation within the phpMussel vault, if this is something you want it to do. Casual users of phpMussel that simply wish to protect their websites or hosting environment without having any interest in deeply analysing any flagged attempted file uploads should leave this functionality disabled, but any users interested in further analysis of flagged attempted file uploads for malware research or for similar such things should enable this functionality. Quarantining of flagged attempted file uploads can sometimes also assist in debugging false-positives, if this is something that frequently occurs for you. To disable quarantine functionality, simply leave the `quarantine_key` directive empty, or erase the contents of that directive if it isn't already empty. To enable quarantine functionality, enter some value into the directive. The "quarantine_key" is an important security feature of the quarantine functionality required as a means of preventing the quarantine functionality from being exploited by potential attackers and as a means of preventing any potential execution of data stored within the quarantine. The `quarantine_key` should be treated in the same manner as your passwords: The longer the better, and guard it tightly. For best effect, use in conjunction with "delete_on_sight".
@@ -630,9 +635,9 @@ General configuration for handling of files.
 "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
 - If your system only allows specific types of files to be uploaded, or if your system explicitly denies certain types of files, specifying those filetypes in whitelists, blacklists and greylists can increase the speed at which scanning is performed by allowing the script to skip over certain filetypes. Format is CSV (comma separated values). If you want to scan everything, rather than whitelist, blacklist or greylist, leave the variable(/s) blank; Doing so will disable whitelist/blacklist/greylist.
 - Logical order of processing is:
--- If the filetype is whitelisted, don't scan and don't block the file, and don't check the file against the blacklist or the greylist.
--- If the filetype is blacklisted, don't scan the file but block it anyway, and don't check the file against the greylist.
--- If the greylist is empty or if the greylist is not empty and the filetype is greylisted, scan the file as per normal and determine whether to block it based on the results of the scan, but if the greylist is not empty and the filetype is not greylisted, treat the file as blacklisted, therefore not scanning it but blocking it anyway.
+  - If the filetype is whitelisted, don't scan and don't block the file, and don't check the file against the blacklist or the greylist.
+  - If the filetype is blacklisted, don't scan the file but block it anyway, and don't check the file against the greylist.
+  - If the greylist is empty or if the greylist is not empty and the filetype is greylisted, scan the file as per normal and determine whether to block it based on the results of the scan, but if the greylist is not empty and the filetype is not greylisted, treat the file as blacklisted, therefore not scanning it but blocking it anyway.
 
 "check_archives"
 - Attempt to check the contents of archives? 0 - No (do not check), 1 - Yes (check) [Default].
@@ -648,6 +653,9 @@ General configuration for handling of files.
 
 "max_recursion"
 - Maximum recursion depth limit for archives. Default = 10.
+
+"block_encrypted_archives"
+- Detect and block encrypted archives? Because phpMussel isn't able to scan the contents of encrypted archives, it's possible that archive encryption may be employed by an attacker as a means of attempting to bypass phpMussel, anti-virus scanners and other such protections. Instructing phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. 0 - No, 1 - Yes [Default].
 
 ####"attack_specific" (Category)
 Configuration for specific attack detections (not based on CVDs).
@@ -679,7 +687,7 @@ Chameleon attack detection: 0 = Off, 1 = On.
 - Search content of files for general commands such as eval(), exec() and include()? 0 - No (do not check) [Default], 1 - Yes (check). Disable this option if you intend to upload any of the following to your system or CMS via your browser: php, JavaScript, HTML, python, perl files and etcetera. Enable this option if you don't have any additional protections on your system and do not intend to upload such files. If you use additional security in conjunction with phpMussel such as ZB Block, there is no need to turn this option on, because most of what phpMussel will look for (in the context of this option) are duplications of protections that are already provided.
 
 "block_control_characters"
-- Block any files containing any control characters (other than newlines)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) If you're -only- uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. 0 - Don't block [Default], 1 - Block.
+- Block any files containing any control characters (other than newlines)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) If you're _**ONLY**_ uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. 0 - Don't block [Default], 1 - Block.
 
 "corrupted_exe"
 - Corrupted files and parse errors. 0 = Ignore, 1 = Block [Default]. Detect and block potentially corrupted PE (Portable Executable) files? Often (but not always), when certain aspects of a PE file are corrupted or can't be parsed correctly, it can be indicative of a viral infection. The processes used by most anti-virus programs to detect viruses in PE files require parsing those files in certain ways, which, if the programmer of a virus is aware of, will specifically try to prevent, in order to allow their virus to remain undetected.
@@ -709,25 +717,25 @@ Heuristic directives for phpMussel.
 Configuration for Virus Total integration.
 
 "vt_public_api_key"
-- Optionally, phpMussel is able to scan files using the Virus Total API as a way to provide a greatly enhanced level of protection against viruses, trojans, malware and other threats. By default, scanning files using the Virus Total API is disabled. To enable it, an API key from Virus Total is required. Due to the significant benefit that this could provide to you, it's something that I highly recommend enabling. Please be aware, however, that to use the Virus Total API, you -MUST- agree to their Terms of Service and you -MUST- adhere to all guidelines as per described by the Virus Total documentation! You are NOT permitted to use this integration feature UNLESS:
--- You have read and agree to the Terms of Service of Virus Total and its API. The Terms of Service of Virus Total and its API can be found [Here](https://www.virustotal.com/en/about/terms-of-service/).
--- You have read and you understand, at a minimum, the preamble of the Virus Total Public API documentation (everything after "VirusTotal Public API v2.0" but before "Contents"). The Virus Total Public API documentation can be found [Here](https://www.virustotal.com/en/documentation/public-api/).
+- Optionally, phpMussel is able to scan files using the Virus Total API as a way to provide a greatly enhanced level of protection against viruses, trojans, malware and other threats. By default, scanning files using the Virus Total API is disabled. To enable it, an API key from Virus Total is required. Due to the significant benefit that this could provide to you, it's something that I highly recommend enabling. Please be aware, however, that to use the Virus Total API, you _**MUST**_ agree to their Terms of Service and you _**MUST**_ adhere to all guidelines as per described by the Virus Total documentation! You are NOT permitted to use this integration feature UNLESS:
+  - You have read and agree to the Terms of Service of Virus Total and its API. The Terms of Service of Virus Total and its API can be found [Here](https://www.virustotal.com/en/about/terms-of-service/).
+  - You have read and you understand, at a minimum, the preamble of the Virus Total Public API documentation (everything after "VirusTotal Public API v2.0" but before "Contents"). The Virus Total Public API documentation can be found [Here](https://www.virustotal.com/en/documentation/public-api/).
 
 Note: If scanning files using the Virus Total API is disabled, you won't need to review any of the directives in this category (`virustotal`), because none of them will do anything if this is disabled. To acquire a Virus Total API key, from anywhere on their website, click the "Join our Community" link located towards the top-right of the page, enter in the information requested, and click "Sign up" when done. Follow all instructions supplied, and when you've got your public API key, copy/paste that public API key to the `vt_public_api_key` directive of the `phpmussel.ini` configuration file.
 
 "vt_suspicion_level"
 - By default, phpMussel will restrict which files it scans using the Virus Total API to those files that it considers "suspicious". You can optionally adjust this restriction by changing the value of the `vt_suspicion_level` directive.
 - `0`: Files are only considered suspicious if, upon being scanned by phpMussel using its own signatures, they are deemed to carry a heuristic weight. This would effectively mean that use of the Virus Total API would be for a second opinion for when phpMussel suspects that a file may potentially be malicious, but can't entirely rule out that it may also potentially be benign (non-malicious) and therefore would otherwise normally not block it or flag it as being malicious.
-- `1`: Files are considered suspicious if they're known to be executable (PE files, Mach-O files, ELF/Linux files, etc) or if they're known to be of a format that could potentially contain executable data (such as executable macros, DOC/DOCX files, archive files such as RARs and ZIPS, and etc). This is the default and recommended suspicion level to apply, effectively meaning that use of the Virus Total API would be for a second opinion for when phpMussel doesn't initially find anything malicious or wrong with a file that it considers to be suspicious and therefore would otherwise normally not block it or flag it as being malicious.
+- `1`: Files are considered suspicious if they're known to be executable (PE files, Mach-O files, ELF/Linux files, etc) or if they're known to be of a format that could potentially contain executable data (such as executable macros, DOC/DOCX files, archive files such as RARs, ZIPS and etc). This is the default and recommended suspicion level to apply, effectively meaning that use of the Virus Total API would be for a second opinion for when phpMussel doesn't initially find anything malicious or wrong with a file that it considers to be suspicious and therefore would otherwise normally not block it or flag it as being malicious.
 - `2`: All files are considered suspicious and should be scanned using the Virus Total API. I don't generally recommend applying this suspicion level, due to the risk of reaching your API quota much quicker than would otherwise be the case, but there are certain circumstances (such as when the webmaster or hostmaster has very little faith or trust whatsoever in any of the uploaded content of their users) where this suspicion level could be appropriate. With this suspicion level, all files not normally blocked or flagged as being malicious would be scanned using the Virus Total API. Note, however, that phpMussel will cease using the Virus Total API when your API quota has been reached (regardless of suspicion level), and that your quota will likely be reached much faster when using this suspicion level.
 
-Note: Regardless of suspicion level, any files that are either blacklisted or whitelisted by phpMussel won't be scanned using the Virus Total API, because those such files would've already been declared as either malicious or benign by phpMussel by the time that they would've otherwise been scanned by the Virus Total API, and therefore, additionally scanning wouldn't be required. The ability of phpMussel to scan files using the Virus Total API is intended to build further confidence for whether a file is malicious or benign in those circumstances where phpMussel itself isn't entirely certain as to whether a file is malicious or benign.
+Note: Regardless of suspicion level, any files that are either blacklisted or whitelisted by phpMussel won't be scanned using the Virus Total API, because those such files would've already been declared as either malicious or benign by phpMussel by the time that they would've otherwise been scanned by the Virus Total API, and therefore, additional scanning wouldn't be required. The ability of phpMussel to scan files using the Virus Total API is intended to build further confidence for whether a file is malicious or benign in those circumstances where phpMussel itself isn't entirely certain as to whether a file is malicious or benign.
 
 "vt_weighting"
 - Should phpMussel apply the results of scanning using the Virus Total API as detections or as detection weighting? This directive exists, because, although scanning a file using multiple engines (as Virus Total does) should result in an increased detection rate (and therefore in a higher number of malicious files being caught), it can also result in a higher number of false positives, and therefore, in some circumstances, the results of scanning may be better utilised as a confidence score rather than as a definitive conclusion. If a value of 0 is used, the results of scanning using the Virus Total API will be applied as detections, and therefore, if any engine used by Virus Total flags the file being scanned as being malicious, phpMussel will consider the file to be malicious. If any other value is used, the results of scanning using the Virus Total API will be applied as detection weighting, and therefore, the number of engines used by Virus Total that flag the file being scanned as being malicious will serve as a confidence score (or detection weighting) for whether or not the file being scanned should be considered malicious by phpMussel (the value used will represent the minimum confidence score or weight required in order to be considered malicious). A value of 0 is used by default.
 
 "vt_quota_rate" and "vt_quota_time"
-- According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly abhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values -may- sometimes help you in dealing with these problems. Your rate limit determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame.
+- According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly adhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values _**MAY**_ sometimes help you in dealing with these problems. Your rate limit is determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame.
 
 ---
 
@@ -881,4 +889,4 @@ This information was last updated 28th May 2015 and is current for all phpMussel
 ---
 
 
-Last Updated: 23th June 2015 (2015.06.23).
+Last Updated: 29th June 2015 (2015.06.29).

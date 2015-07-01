@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Russian/Русский Language Data (16th June 2015).
+ This File: phpMussel Russian/Русский Language Data (29th June 2015).
  <%phpMussel%/vault/lang/lang.ru.inc>
 
 */
@@ -30,10 +30,11 @@ $MusselConfig['lang']['cli_update_restart']=' Перезапуск из phpMusse
 $MusselConfig['lang']['cli_working']='В действии';
 $MusselConfig['lang']['corrupted']='Обнаружено поврежден PE';
 $MusselConfig['lang']['denied']='Загрузить Отказано!';
-$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='Ваше загружать был заблокирован по причинам перечисленным ниже / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Обнаружено {vn}';
 $MusselConfig['lang']['detected_control_characters']='Обнаружено Управления Символов';
+$MusselConfig['lang']['encrypted_archive']='Обнаружено зашифрованный архив; Зашифрованные архивы не допускается';
 $MusselConfig['lang']['failed_to_access']='Не удалось получить доступ ';
 $MusselConfig['lang']['file']='файл';
 $MusselConfig['lang']['filesize_limit_exceeded']='Размер файла лимит превысил';

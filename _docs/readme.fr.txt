@@ -633,6 +633,14 @@
  /vault/ (Répertoire)
     Voûte répertoire (contient divers fichiers).
     ~
+ /vault/cache/ (Répertoire)
+    Cache répertoire (pour les données temporaires).
+    ~
+ /vault/cache/.htaccess (Autre, Inclu)
+    Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles
+    fichiers appartenant au script contre être consulté par non autorisées
+    sources).
+    ~
  /vault/lang/ (Répertoire)
     Contient linguistiques données.
     ~
@@ -676,16 +684,16 @@
  /vault/ascii_custom_standard.cvd (Signatures, Inclus)
  /vault/ascii_mussel_regex.cvd (Signatures, Inclus)
  /vault/ascii_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour normalisé ASCII signatures.
-    Nécessaire si la normalisé ASCII option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour normalisé ASCII signatures. Nécessaire si la normalisé ASCII
+    option dans "phpmussel.ini" est activée. Peut enlever si l'option est
+    désactivée.
     ~
  /vault/coex_clamav.cvd (Signatures, Inclus)
  /vault/coex_custom.cvd (Signatures, Inclus)
  /vault/coex_mussel.cvd (Signatures, Inclus)
-    Fichiers pour le Complexe Étendu signatures.
-    Nécessaire si le complexe étendu option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour le Complexe Étendu signatures. Nécessaire si le complexe
+    étendu option dans "phpmussel.ini" est activée. Peut enlever si l'option
+    est désactivée.
     ~
  /vault/elf_clamav_regex.cvd (Signatures, Inclus)
  /vault/elf_clamav_regex.map (Signatures, Inclus)
@@ -695,9 +703,8 @@
  /vault/elf_custom_standard.cvd (Signatures, Inclus)
  /vault/elf_mussel_regex.cvd (Signatures, Inclus)
  /vault/elf_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour ELF signatures.
-    Nécessaire si l'ELF signatures option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour ELF signatures. Nécessaire si l'ELF signatures option dans
+    "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
     ~
  /vault/exe_clamav_regex.cvd (Signatures, Inclus)
  /vault/exe_clamav_regex.map (Signatures, Inclus)
@@ -707,16 +714,16 @@
  /vault/exe_custom_standard.cvd (Signatures, Inclus)
  /vault/exe_mussel_regex.cvd (Signatures, Inclus)
  /vault/exe_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour Portable Executable fichier (EXE) signatures.
-    Nécessaire si l'EXE signatures option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour Portable Executable fichier (EXE) signatures. Nécessaire si
+    l'EXE signatures option dans "phpmussel.ini" est activée. Peut enlever si
+    l'option est désactivée.
     ~
  /vault/filenames_clamav.cvd (Signatures, Inclus)
  /vault/filenames_custom.cvd (Signatures, Inclus)
  /vault/filenames_mussel.cvd (Signatures, Inclus)
-    Fichiers pour filename signatures.
-    Nécessaire si le filename signatures option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour filename signatures. Nécessaire si le filename signatures
+    option dans "phpmussel.ini" est activée. Peut enlever si l'option est
+    désactivée.
     ~
  /vault/general_clamav_regex.cvd (Signatures, Inclus)
  /vault/general_clamav_regex.map (Signatures, Inclus)
@@ -726,9 +733,9 @@
  /vault/general_custom_standard.cvd (Signatures, Inclus)
  /vault/general_mussel_regex.cvd (Signatures, Inclus)
  /vault/general_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour général signatures.
-    Nécessaire si le général signatures option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour général signatures. Nécessaire si le général signatures
+    option dans "phpmussel.ini" est activée. Peut enlever si l'option est
+    désactivée.
     ~
  /vault/graphics_clamav_regex.cvd (Signatures, Inclus)
  /vault/graphics_clamav_regex.map (Signatures, Inclus)
@@ -738,9 +745,9 @@
  /vault/graphics_custom_standard.cvd (Signatures, Inclus)
  /vault/graphics_mussel_regex.cvd (Signatures, Inclus)
  /vault/graphics_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour graphiques signatures.
-    Nécessaire si le graphiques signatures option dans "phpmussel.ini" est
-    activée. Peut enlever si l'option est désactivée.
+    Fichiers pour graphiques signatures. Nécessaire si le graphiques signatures
+    option dans "phpmussel.ini" est activée. Peut enlever si l'option est
+    désactivée.
     ~
  /vault/greylist.csv (Signatures, Inclus/Créés)
     CSV de grise listé signatures indiquant pour phpMussel qui signatures il
@@ -759,9 +766,9 @@
  /vault/html_custom_standard.cvd (Signatures, Inclus)
  /vault/html_mussel_regex.cvd (Signatures, Inclus)
  /vault/html_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour normalisé HTML signatures.
-    Nécessaire si la normalisé HTML option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour normalisé HTML signatures. Nécessaire si la normalisé HTML
+    option dans "phpmussel.ini" est activée. Peut enlever si l'option est
+    désactivée.
     ~
  /vault/lang.inc (Script, Inclu)
     phpMussel linguistiques données.
@@ -774,9 +781,8 @@
  /vault/macho_custom_standard.cvd (Signatures, Inclus)
  /vault/macho_mussel_regex.cvd (Signatures, Inclus)
  /vault/macho_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour Mach-O signatures.
-    Nécessaire si le Mach-O signatures option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour Mach-O signatures. Nécessaire si le Mach-O signatures option
+    dans "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
     ~
  /vault/mail_clamav_regex.cvd (Signatures, Inclus)
  /vault/mail_clamav_regex.map (Signatures, Inclus)
@@ -794,16 +800,15 @@
  /vault/md5_clamav.cvd (Signatures, Inclus)
  /vault/md5_custom.cvd (Signatures, Inclus)
  /vault/md5_mussel.cvd (Signatures, Inclus)
-    Fichiers pour MD5 basé signatures.
-    Nécessaire si le MD5 signatures option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour MD5 basé signatures. Nécessaire si le MD5 signatures option
+    dans "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
     ~
  /vault/metadata_clamav.cvd (Signatures, Inclus)
  /vault/metadata_custom.cvd (Signatures, Inclus)
  /vault/metadata_mussel.cvd (Signatures, Inclus)
-    Fichiers pour métadonnées d'archives signatures.
-    Nécessaire si le métadonnées d'archives option dans "phpmussel.ini" est
-    activée. Peut enlever si l'option est désactivée.
+    Fichiers pour métadonnées d'archives signatures. Nécessaire si le
+    métadonnées d'archives option dans "phpmussel.ini" est activée. Peut
+    enlever si l'option est désactivée.
     ~
  /vault/ole_clamav_regex.cvd (Signatures, Inclus)
  /vault/ole_clamav_regex.map (Signatures, Inclus)
@@ -813,9 +818,8 @@
  /vault/ole_custom_standard.cvd (Signatures, Inclus)
  /vault/ole_mussel_regex.cvd (Signatures, Inclus)
  /vault/ole_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour OLE signatures.
-    Nécessaire si l'OLE signatures option dans "phpmussel.ini" est activée. Peut
-    enlever si l'option est désactivée.
+    Fichiers pour OLE signatures. Nécessaire si l'OLE signatures option dans
+    "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
     ~
  /vault/pdf_clamav_regex.cvd (Signatures, Inclus)
  /vault/pdf_clamav_regex.map (Signatures, Inclus)
@@ -825,16 +829,15 @@
  /vault/pdf_custom_standard.cvd (Signatures, Inclus)
  /vault/pdf_mussel_regex.cvd (Signatures, Inclus)
  /vault/pdf_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour PDF signatures.
-    Nécessaire si le PDF signatures option dans "phpmussel.ini" est activée. Peut
-    enlever si l'option est désactivée.
+    Fichiers pour PDF signatures. Nécessaire si le PDF signatures option dans
+    "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
     ~
  /vault/pe_clamav.cvd (Signatures, Inclus)
  /vault/pe_custom.cvd (Signatures, Inclus)
  /vault/pe_mussel.cvd (Signatures, Inclus)
-    Fichiers pour PE Sectional signatures.
-    Nécessaire si le PE Sectional signatures option dans "phpmussel.ini" est
-    activée. Peut enlever si l'option est désactivée.
+    Fichiers pour PE Sectional signatures. Nécessaire si le PE Sectional
+    signatures option dans "phpmussel.ini" est activée. Peut enlever si
+    l'option est désactivée.
     ~
  /vault/phpmussel.inc (Script, Inclu)
     phpMussel Principal Script; Le principal corps de phpMussel (essentiel)!
@@ -857,9 +860,9 @@
  /vault/swf_custom_standard.cvd (Signatures, Inclus)
  /vault/swf_mussel_regex.cvd (Signatures, Inclus)
  /vault/swf_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour Shockwave signatures.
-    Nécessaire si le Shockwave signatures option dans "phpmussel.ini" est
-    activée. Peut enlever si l'option est désactivée.
+    Fichiers pour Shockwave signatures. Nécessaire si le Shockwave signatures
+    option dans "phpmussel.ini" est activée. Peut enlever si l'option est
+    désactivée.
     ~
  /vault/switch.dat (Other, Included)
     Contrôle et définit certaines variables.
@@ -883,11 +886,10 @@
  /vault/whitelist_clamav.cvd (Signatures, Inclus)
  /vault/whitelist_custom.cvd (Signatures, Inclus)
  /vault/whitelist_mussel.cvd (Signatures, Inclus)
-    Fichier spécifique blanche liste.
-    Nécessaire si l'option de blanche liste dans "phpmussel.ini" est activée et
-    si vous souhaitez avoir spécifiques fichiers en le blanche liste. Peut
-    enlever si l'option est désactivée ou si vous n'avez pas besoin de blanche
-    liste.
+    Fichier spécifique blanche liste. Nécessaire si l'option de blanche liste
+    dans "phpmussel.ini" est activée et si vous souhaitez avoir spécifiques
+    fichiers en le blanche liste. Peut enlever si l'option est désactivée ou si
+    vous n'avez pas besoin de blanche liste.
     ~
  /vault/xmlxdp_clamav_regex.cvd (Signatures, Inclus)
  /vault/xmlxdp_clamav_regex.map (Signatures, Inclus)
@@ -897,9 +899,9 @@
  /vault/xmlxdp_custom_standard.cvd (Signatures, Inclus)
  /vault/xmlxdp_mussel_regex.cvd (Signatures, Inclus)
  /vault/xmlxdp_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour XML/XDP morceaux signatures.
-    Nécessaire si le XML/XDP morceaux option dans "phpmussel.ini" est activée.
-    Peut enlever si l'option est désactivée.
+    Fichiers pour XML/XDP morceaux signatures. Nécessaire si le XML/XDP
+    morceaux option dans "phpmussel.ini" est activée. Peut enlever si l'option
+    est désactivée.
     ~
 
  * Noms du fichiers peut varier basé sur configuration stipulations (dans
@@ -1015,6 +1017,10 @@
       1 - Après l'analyse, si pas propre, supprimer immédiatement.
     "lang"
     - Spécifier la défaut langue pour phpMussel.
+    "lang_override"
+    - Spécifiez si phpMussel devrait, quand c'est possible, remplacer la
+      spécification du langage avec la préférence de langue déclarée par les
+      demandes entrantes (HTTP_ACCEPT_LANGUAGE). 0 - Non [Défaut], 1 - Oui.
     "quarantine_key"
     - phpMussel est capable de mettre en quarantaine le marqué fichier
       téléchargement tentatives en isolement au sein de la voûte de phpMussel,
@@ -1250,6 +1256,14 @@
      archives? 0 - Non (énumérer grise tout), 1 - Oui [Défaut].
    "max_recursion"
    - Maximum récursivité profondeur limite pour archives. Défaut = 10.
+   "block_encrypted_archives"
+   - Détecter et bloquer les archives cryptées? Parce phpMussel est pas capable
+     d'analyse du contenu des archives cryptées, il est possible que le
+     cryptage des archives peut être utilisé par un attaquant un moyen a tenter
+     de contourner phpMussel, analyseurs anti-virus et d'autres protections.
+     Instruire phpMussel pour bloquer toutes les archives cryptées qu'il
+     découvre pourrait aider à réduire les risques associés à ces possibilités.
+     0 - Non, 1 - Oui [Défaut].
  "attack_specific" (Catégorie)
  - Configuration pour les spécifique attaque détections (pas basé sur CVDs).
    * Caméléon Attaque Détection: 0 = Désactivé, 1 = Activé.
@@ -1385,110 +1399,125 @@
  "virustotal" (Catégorie)
  - Configuration pour Virus Total intégration.
    "vt_public_api_key"
-   - Optionally, phpMussel is able to scan files using the Virus Total API as a
-     way to provide a greatly enhanced level of protection against viruses,
-     trojans, malware and other threats. By default, scanning files using the
-     Virus Total API is disabled. To enable it, an API key from Virus Total is
-     required. Due to the significant benefit that this could provide to you,
-     it's something that I highly recommend enabling. Please be aware, however,
-     that to use the Virus Total API, you -MUST- agree to their Terms of
-     Service and you -MUST- adhere to all guidelines as per described by the
-     Virus Total documentation! You are NOT permitted to use this integration
-     feature UNLESS:
-     A) You have read and agree to the Terms of Service of Virus Total and its
-        API. The Terms of Service of Virus Total and its API can be found here:
+   - Facultativement, phpMussel est capable d'analyser les fichiers en
+     utilisant le Virus Total API comme un moyen de fournir un renforcée niveau
+     de protection contre les virus, trojans, logiciels malveillants et autres
+     menaces. Par défaut, l'analyse des fichiers en utilisant le Virus Total
+     API est désactivé. Pour activer, une Total Virus API clé est nécessaire.
+     En raison de le significative avantage que cela pourrait fournir pour
+     vous, il est quelque chose que je recommande fortement pour l'activer.
+     S'il vous plaît être conscient, cependant, que pour utiliser le Virus
+     Total API, vous -DEVEZ- accepter leurs conditions d'utilisation (Terms of
+     Service) et vous -DEVEZ- respecter toutes les directives selon décrit par
+     le Virus Total documentation! Vous N'ÊTES PAS autorisé à utiliser cette
+     fonctionnalité SAUF SI:
+     A) Vous avez lu et accepté les Conditions d'Utilisation (Terms of Service)
+        de Total Virus et son API. Les Conditions d'Utilisation de Total Virus
+        et son API peut être trouvé ici:
         <https://www.virustotal.com/en/about/terms-of-service/>.
-     B) You have read and you understand, at a minimum, the preamble of the
-        Virus Total Public API documentation (everything after "VirusTotal
-        Public API v2.0" but before "Contents"). The Virus Total Public API
-        documentation can be found here:
+     B) Vous avez lu et vous comprendre, au minimum, le préambule du Virus
+        Total Publique API documentation (tout ce qui suit "VirusTotal Public
+        API v2.0" mais avant "Contents"). Le Virus Total Publique API
+        documentation peut être trouvé ici:
         <https://www.virustotal.com/en/documentation/public-api/>.
-     Note: If scanning files using the Virus Total API is disabled, you won't
-     need to review any of the directives in this category (`virustotal`),
-     because none of them will do anything if this is disabled. To acquire a
-     Virus Total API key, from anywhere on their website, click the "Join our
-     Community" link located towards the top-right of the page, enter in the
-     information requested, and click "Sign up" when done. Follow all
-     instructions supplied, and when you've got your public API key, copy/paste
-     that public API key to the `vt_public_api_key` directive of the
-     `phpmussel.ini` configuration file.
+     Noter: Si l'analyse des fichiers en utilisant le Virus Total API est
+     désactivé, vous ne serez pas besoin de revoir tout des directives dans
+     cette catégorie (`virustotal`), parce qu'aucun d'eux ne fait rien si cette
+     option est désactivée. Pour acquérir une Virus Total API clé, à partir de
+     quelque part sur leur website, cliquez sur le "Rejoindre notre communauté"
+     lien situé vers le haut à droite de la page, saisissez les informations
+     demandées, et cliquez sur "S'enregistrer" quand vous avez terminé. Suivez
+     toutes les instructions fournies, et quand vous avez votre publique API
+     clé, copier/coller cette publique API clé à la `vt_public_api_key`
+     directive du `phpmussel.ini` configuration fichier.
    "vt_suspicion_level"
-   - By default, phpMussel will restrict which files it scans using the Virus
-     Total API to those files that it considers "suspicious". You can
-     optionally adjust this restriction by changing the value of the
-     `vt_suspicion_level` directive.
-     0 - Files are only considered suspicious if, upon being scanned by
-         phpMussel using its own signatures, they are deemed to carry a
-         heuristic weight. This would effectively mean that use of the Virus
-         Total API would be for a second opinion for when phpMussel suspects
-         that a file may potentially be malicious, but can't entirely rule out
-         that it may also potentially be benign (non-malicious) and therefore
-         would otherwise normally not block it or flag it as being malicious.
-     1 - Files are considered suspicious if they're known to be executable (PE
-         files, Mach-O files, ELF/Linux files, etc) or if they're known to be
-         of a format that could potentially contain executable data (such as
-         executable macros, DOC/DOCX files, archive files such as RARs and
-         ZIPS, and etc). This is the default and recommended suspicion level to
-         apply, effectively meaning that use of the Virus Total API would be
-         for a second opinion for when phpMussel doesn't initially find
-         anything malicious or wrong with a file that it considers to be
-         suspicious and therefore would otherwise normally not block it or flag
-         it as being malicious.
-     2 - All files are considered suspicious and should be scanned using the
-         Virus Total API. I don't generally recommend applying this suspicion
-         level, due to the risk of reaching your API quota much quicker than
-         would otherwise be the case, but there are certain circumstances (such
-         as when the webmaster or hostmaster has very little faith or trust
-         whatsoever in any of the uploaded content of their users) where this
-         suspicion level could be appropriate. With this suspicion level, all
-         files not normally blocked or flagged as being malicious would be
-         scanned using the Virus Total API. Note, however, that phpMussel will
-         cease using the Virus Total API when your API quota has been reached
-         (regardless of suspicion level), and that your quota will likely be
-         reached much faster when using this suspicion level.
-     Note: Regardless of suspicion level, any files that are either blacklisted
-     or whitelisted by phpMussel won't be scanned using the Virus Total API,
-     because those such files would've already been declared as either
-     malicious or benign by phpMussel by the time that they would've otherwise
-     been scanned by the Virus Total API, and therefore, additionally scanning
-     wouldn't be required. The ability of phpMussel to scan files using the
-     Virus Total API is intended to build further confidence for whether a file
-     is malicious or benign in those circumstances where phpMussel itself isn't
-     entirely certain as to whether a file is malicious or benign.
+   - Par défaut, phpMussel va restreindre les fichiers de l'analyse utilisant
+     le Virus Total API à ces fichiers qu'il juges comme "soupçonneux".
+     Facultativement, vous pouvez régler cette restriction par changeant la
+     valeur de la `vt_suspicion_level` directive.
+     0 - Fichiers sont seulement considérées comme soupçonneux si, quand étant
+         analysé par phpMussel utilisant ses propres signatures, ils sont
+         réputés pour porter un poids heuristique. Cela signifierait
+         effectivement que l'utilisation du Virus Total API serait être pour
+         une deuxième opinion pour quand phpMussel soupçonne qu'un fichier peut
+         être potentiellement malveillants, mais ne peut pas entièrement exclu
+         que il peut aussi potentiellement être bénigne (non malveillant) et
+         donc serait autrement normalement pas bloquer ou signaler qu'il est
+         malveillant.
+     1 - Fichiers sont considérés comme soupçonneux si elles sont connues pour
+         être exécutable (PE fichiers, Mach-O fichiers, ELF/Linux fichiers,
+         etc) ou s'ils sont connus pour être d'une forme qui pourrait contenir
+         exécutable données (tels comme exécutable macros, DOC/DOCX fichiers,
+         archive fichiers tels comme RARs, ZIPS et etc). C'est la valeur par
+         défaut et le niveau de suspicion recommandé d'appliquer, qui signifie
+         effectivement que l'utilisation du Virus Total API serait être pour
+         une deuxième opinion pour quand initialement phpMussel ne peut pas
+         trouver quoi que malveillant ou problématique avec un fichier qu'il
+         considère comme soupçonneux et donc serait autrement normalement pas
+         bloquer ou signaler qu'il est malveillant.
+     2 - Tous fichiers sont considérés comme soupçonneux et doivent être
+         analysés utiliser le Virus Total API. Généralement, je ne recommande
+         pas d'appliquer ce niveau de suspicion, en raison du risque
+         d'atteindre votre API quota beaucoup plus rapide que ce serait
+         autrement être le cas, mais il ya certaines circonstances (comme
+         quand le webmaster ou hostmaster possède très peu foi ou confiance
+         concernant le téléchargé contenu de leurs utilisateurs) où ce niveau
+         de suspicion pourrait être approprié. Avec ce niveau de suspicion,
+         tous fichiers que ne sont pas normalement bloquée ou signalés comme
+         étant malveillants serait être analysé par le Virus Total API. Noter,
+         cependant, que phpMussel sera cesser l'utiliser du Virus Total API
+         quand votre API quota a été atteint (indépendamment du niveau de
+         suspicion), et que votre quota sera probablement être atteint beaucoup
+         plus rapidement quand vous utilisez ce niveau de suspicion.
+     Noter: Indépendamment du niveau de suspicion, tous les fichiers qui sont
+     sur la liste noire ou liste blanche soit pour phpMussel ne seront pas
+     analysés en utilisant le Virus API total, parce que ces fichiers seraient
+     ont déjà été déclarés comme soit malveillant ou bénigne par phpMussel
+     avant le moment où ils auraient autrement été analysés par le Virus Total
+     API, et donc, analyser supplémentaire ne serait pas être nécessaire. La
+     capacité de phpMussel pour analyser les fichiers en utilisant le Virus
+     Total API est destiné à renforcer la confiance pour savoir si un fichier
+     est malveillant ou bénigne dans les circonstances où phpMussel lui-même
+     est pas tout à fait certain quant à savoir si un fichier est malveillant
+     ou bénigne.
    "vt_weighting"
-   - Should phpMussel apply the results of scanning using the Virus Total API
-     as detections or as detection weighting? This directive exists, because,
-     although scanning a file using multiple engines (as Virus Total does)
-     should result in an increased detection rate (and therefore in a higher
-     number of malicious files being caught), it can also result in a higher
-     number of false positives, and therefore, in some circumstances, the
-     results of scanning may be better utilised as a confidence score rather
-     than as a definitive conclusion. If a value of 0 is used, the results of
-     scanning using the Virus Total API will be applied as detections, and
-     therefore, if any engine used by Virus Total flags the file being scanned
-     as being malicious, phpMussel will consider the file to be malicious. If
-     any other value is used, the results of scanning using the Virus Total API
-     will be applied as detection weighting, and therefore, the number of
-     engines used by Virus Total that flag the file being scanned as being
-     malicious will serve as a confidence score (or detection weighting) for
-     whether or not the file being scanned should be considered malicious by
-     phpMussel (the value used will represent the minimum confidence score or
-     weight required in order to be considered malicious). A value of 0 is used
-     by default.
+   - Devrais phpMussel appliquer les résultats de l'analyse en utilisant le
+     Virus Total API comme détections ou comme pondération de détection? Cette
+     directive existe, parce que, quoique analyse d'un fichier à l'aide de
+     plusieurs moteurs (comme Virus Total fait) devrait résulter en un augmenté
+     taux de détection (et donc en un plus grand nombre de fichiers
+     malveillants être détectés), il peut également résulter en un plus grand
+     nombre de faux positifs, et donc, dans certaines circonstances, les
+     résultats de l'analyse peuvent être mieux utilisées comme un score de
+     confiance plutôt que comme une conclusion définitive. Si la valeur 0 est
+     utilisée, les résultats de l'analyse en utilisant le Virus Total API
+     seront être appliquées comme détections, et donc, si quelconque moteur
+     utilisé par Virus Total marques le fichier analysé comme étant
+     malveillants, phpMussel va considérer le fichier comme malveillant. Si
+     quelconque autre valeur est utilisée, les résultats de l'analyse en
+     utilisant le Virus Total API sera appliquée comme pondération de
+     détection, et donc, le nombre de moteurs utilisés par Total Virus que
+     marque le fichier analysé comme étant malveillant sera servir un score de
+     confiance (ou une pondération de détection) pour savoir si ou non le
+     fichier êtant analysé devrait être considéré comme malveillant par
+     phpMussel (la valeur utilisée représentera le minimum score de confiance
+     ou le poids requis pour être considéré comme malveillant). Une valeur de 0
+     est utilisée par défaut.
    "vt_quota_rate" et "vt_quota_time"
-   - According to the Virus Total API documentation, "it is limited to at most
-     4 requests of any nature in any given 1 minute time frame. If you run a
-     honeyclient, honeypot or any other automation that is going to provide
-     resources to VirusTotal and not only retrieve reports you are entitled to
-     a higher request rate quota". By default, phpMussel will strictly abhere
-     to these limitations, but due to the possibility of these rate quotas
-     being increased, these two directives are provided as a means for you to
-     instruct phpMussel as to what limit it should adhere to. Unless you've
-     been instructed to do so, it's not recommended for you to increase these
-     values, but, if you've encountered problems relating to reaching your rate
-     quota, decreasing these values -may- sometimes help you in dealing with
-     these problems. Your rate limit determined as `vt_quota_rate` requests of
-     any nature in any given `vt_quota_time` minute time frame.
+   - Selon le Virus Total API documentation, elle est limitée à au plus 4
+     demandes de toute nature dans un laps de 1 minute de temps. Si vous
+     exécutez un honeyclient, honeypot ou autre automatisation qui va fournir
+     les ressources pour Virus Total et pas seulement récupérer des rapports
+     vous avez droit à un plus élevée demande quota. Par défaut, phpMussel va
+     adhérer strictement à ces limitations, mais en raison de la possibilité de
+     ces quotas étant augmenté, ces deux directives sont fournies comme un
+     moyen pour vous d'instruire phpMussel à quelle limite il faut adhérer.
+     Sauf si vous avez été invité à le faire, on ne recommande pas pour vous
+     d'augmenter ces valeurs, mais, si vous avez rencontré des problèmes
+     relatifs à atteindre votre quota, diminuant ces valeurs -PEUT- parfois
+     vous aider dans le traitement de ces problèmes. Votre quota est déterminée
+     comme `vt_quota_rate` demandes de toute nature dans un laps de
+     `vt_quota_time` minute de temps.
 
                                      ~ ~ ~
 
@@ -1711,5 +1740,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 23 Juin 2015 (2015.06.23).
+Dernière Réactualisé: 29 Juin 2015 (2015.06.29).
 EOF

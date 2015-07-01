@@ -302,7 +302,7 @@
  berisikan sebuah pesan mendeklarasikan apa yang dicocokkannya.
 
  Sebagai tambahan, jika Anda melihat kode, Anda dapat melihat fungsi
- phpMusselD() dan phpMusselR(). fungsi-fungsi ini adalah sub fungsi dari
+ phpMusselD() dan phpMusselR(). Fungsi-fungsi ini adalah sub fungsi dari
  phpMussel(), dan seharusnya tidak di namakan secara langsung di luar dari
  fungsi parent (tidak karena efek-efek adverse.. Lebih lagi, sederhananya
  karena dia melayani tanpa tujuan dan kebanyakan kemungkinan tidak bekerja
@@ -310,7 +310,7 @@
 
  Ada banyak kontrol-kontrol dan fungsi-fungsi tersedia di dalam phpMussel untuk
  penggunaan Anda juga. Untuk kontrol-kontrol dan fungsi-fungsi yang dalam akhir
- seksi READMI yang belum didokumentasikan mohon teruskan membaca dan merefer
+ seksi README yang belum didokumentasikan mohon teruskan membaca dan merefer
  dari perintah seksi Browser dari data README.
 
                                      ~ ~ ~
@@ -623,11 +623,18 @@
  /vault/ (Direktori)
     Direktori Vault (berisikan bermacam file).
     ~
+ /vault/cache/ (Direktori)
+    Direktori Cache (untuk data sementara).
+    ~
+ /vault/cache/.htaccess (Lainnya, Diikutkan)
+    Sebuah data akses hiperteks (pada instansi ini, untuk melindungi data-data
+    sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+    ~
  /vault/lang/ (Direktori)
     Berisikan data bahasa.
     ~
  /vault/lang/.htaccess (Lainnya, Diikutkan)
-    Sebuah data akses hypertext (pada instansi ini, untuk melindungi data-data
+    Sebuah data akses hiperteks (pada instansi ini, untuk melindungi data-data
     sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
     ~
  /vault/lang/lang.de.inc (Skrip, Diikutkan); DEUTSCH
@@ -648,11 +655,11 @@
     Direktori Karantina (berisikan file yang dikarantina).
     ~
  /vault/quarantine/.htaccess (Lainnya, Diikutkan)
-    Sebuah data akses hypertext (pada instansi ini, untuk melindungi data-data
+    Sebuah data akses hiperteks (pada instansi ini, untuk melindungi data-data
     sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
     ~
  /vault/.htaccess (Lainnya, Diikutkan)
-    Sebuah data akses hypertext (pada instansi ini, untuk melindungi data-data
+    Sebuah data akses hiperteks (pada instansi ini, untuk melindungi data-data
     sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
     ~
  /vault/ascii_clamav_regex.cvd (Tanda tangan, Diikutkan)
@@ -713,9 +720,9 @@
  /vault/general_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/general_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/general_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    Data-data untuk tanda tangan umum.
-    diharuskan jika opsi tanda tangan di dalam "phpmussel.ini" diaktifkan.
-    Dapat menghapus jika opsi dinonaktifkan.
+    Data-data untuk tanda tangan umum. Diharuskan jika opsi tanda tangan di
+    dalam "phpmussel.ini" diaktifkan. Dapat menghapus jika opsi
+    dinonaktifkan.
     ~
  /vault/graphics_clamav_regex.cvd (Tanda tangan, Diikutkan)
  /vault/graphics_clamav_regex.map (Tanda tangan, Diikutkan)
@@ -725,9 +732,9 @@
  /vault/graphics_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/graphics_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/graphics_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    Data-data untuk tanda tangan grafis.
-    diharuskan jika opsi tanda tangan grafis di dalam "phpmussel.ini" diaktifkan.
-    Dapat menghapus jika opsi dinonaktifkan.
+    Data-data untuk tanda tangan grafis. Diharuskan jika opsi tanda tangan
+    grafis di dalam "phpmussel.ini" diaktifkan. Dapat menghapus jika opsi
+    dinonaktifkan.
     ~
  /vault/greylist.csv (Tanda tangan, Diikutkan/Diciptakan)
     CSV terdiri dari tanda tangan daftar abu-abu mengindikasikan phpMussel
@@ -820,9 +827,9 @@
  /vault/pe_clamav.cvd (Tanda tangan, Diikutkan)
  /vault/pe_custom.cvd (Tanda tangan, Diikutkan)
  /vault/pe_mussel.cvd (Tanda tangan, Diikutkan)
-    Data-data untuk tanda tangan PE Sectional.
-    diharuskan jika opsi tanda tangan PE Sectional di "phpmussel.ini" diaktifkan.
-    Dapat menghapus jika opsi dinonaktifkan.
+    Data-data untuk tanda tangan PE Sectional. Diharuskan jika opsi tanda
+    tangan PE Sectional di "phpmussel.ini" diaktifkan. Dapat menghapus jika
+    opsi dinonaktifkan.
     ~
  /vault/phpmussel.inc (Skrip, Diikutkan)
     Skrip murni phpMussel; Body utama dan vital dari phpMussel (utama)!
@@ -999,6 +1006,10 @@
       1 - Setelah pemindaian, jika tidak bersih, hapus langsung.
     "lang"
     - Tentukan bahasa default untuk phpMussel.
+    "lang_override"
+    - Tentukan jika phpMussel harus, bila memungkinkan, mengganti spesifikasi
+      bahasa dengan preferensi bahasa dideklarasikan oleh permintaan memasukan
+      (HTTP_ACCEPT_LANGUAGE). 0 - Tidak [Default], 1 - Ya.
     "quarantine_key"
     - phpMussel dapat mengkarantina upload file ditandai dalam isolasi dalam
       vault phpMussel, jika ini adalah sesuatu yang Anda ingin lakukan.
@@ -1224,6 +1235,14 @@
      0 - Tidak (Bertanda abu-abu semua) [Default], 1 - Ya.
    "max_recursion"
    - Dalam rekursi dari data terkompres. Default = 10.
+   "block_encrypted_archives"
+   - Mendeteksi dan memblokir dienkripsi arsip? Karena phpMussel tidak mampu
+     memindai isi arsip dienkripsi, itu mungkin bahwa enkripsi arsip dapat
+     digunakan oleh penyerang sebagai sarana mencoba untuk memotong phpMussel,
+     anti-virus pemindai dan perlindungan mirip lainnya. Menginstruksikan
+     phpMussel untuk memblokir setiap arsip dienkripsi ditemukan akan
+     berpotensi membantu mengurangi risiko terkait dengan kemungkinan tersebut.
+     0 - Tidak, 1 - Ya [Default].
  "attack_specific" (Kategori)
  - Konfigurasi dari deteksi serangan spesifik (tidak berdasarkan CVDs).
    * Chameleon serangan deteksi: 0 = Dinonaktifkan, 1 = Diaktifkan.
@@ -1353,110 +1372,116 @@
  "virustotal" (Kategori)
  - Konfigurasi untuk Virus Total integrasi.
    "vt_public_api_key"
-   - Optionally, phpMussel is able to scan files using the Virus Total API as a
-     way to provide a greatly enhanced level of protection against viruses,
-     trojans, malware and other threats. By default, scanning files using the
-     Virus Total API is disabled. To enable it, an API key from Virus Total is
-     required. Due to the significant benefit that this could provide to you,
-     it's something that I highly recommend enabling. Please be aware, however,
-     that to use the Virus Total API, you -MUST- agree to their Terms of
-     Service and you -MUST- adhere to all guidelines as per described by the
-     Virus Total documentation! You are NOT permitted to use this integration
-     feature UNLESS:
-     A) You have read and agree to the Terms of Service of Virus Total and its
-        API. The Terms of Service of Virus Total and its API can be found here:
+   - Secara fakultatif, phpMussel mampu memindai file menggunakan Virus Total
+     API sebagai cara untuk memberikan tingkat sangat ditingkatkan perlindungan
+     terhadap virus, trojan, malware dan ancaman lainnya. Secara default, file
+     pemindaian menggunakan Virus Total API dinonaktifkan. Untuk
+     mengaktifkannya, kunci API dari Virus Total diperlukan. Karena manfaat
+     yang signifikan bahwa ini bisa memberikan kepada Anda, itu adalah sesuatu
+     itu adalah sesuatu yang sangat direkomendasi mengaktifkan. Perlu
+     diketahui, bagaimanapun, menggunakan Virus Total API, Anda -HARUS- setuju
+     untuk Terms of Service dan Anda -HARUS- mematuhi semua pedoman terkait
+     dijelaskan oleh Virus Total dokumentasi! Anda TIDAK diizinkan untuk
+     menggunakan fungsi ini KECUALI KALAU:
+     A) Anda membaca dan setuju untuk Terms of Service dari Virus Total dan API
+        mereka. Terms of Service dari Virus Total dan API mereka dapat
+        ditemukan di sini:
         <https://www.virustotal.com/en/about/terms-of-service/>.
-     B) You have read and you understand, at a minimum, the preamble of the
-        Virus Total Public API documentation (everything after "VirusTotal
-        Public API v2.0" but before "Contents"). The Virus Total Public API
-        documentation can be found here:
-        <https://www.virustotal.com/en/documentation/public-api/>.
-     Note: If scanning files using the Virus Total API is disabled, you won't
-     need to review any of the directives in this category (`virustotal`),
-     because none of them will do anything if this is disabled. To acquire a
-     Virus Total API key, from anywhere on their website, click the "Join our
-     Community" link located towards the top-right of the page, enter in the
-     information requested, and click "Sign up" when done. Follow all
-     instructions supplied, and when you've got your public API key, copy/paste
-     that public API key to the `vt_public_api_key` directive of the
-     `phpmussel.ini` configuration file.
+     B) Anda membaca dan memahami, setidaknya, mukadimah dari Virus Total
+        dokumentasi API (semuanya setelah "VirusTotal Public API v2.0" tapi
+        sebelum "Contents"). Virus Total dokumentasi API umum dapat ditemukan
+        di sini: <https://www.virustotal.com/en/documentation/public-api/>.
+     Mencatat: Jika memindai file menggunakan Virus Total API dinonaktifkan,
+     Anda tidak akan perlu meninjau salah di direktif-direktif dalam kategori
+     ini (`virustotal`), karena tidak satupun dari mereka akan melakukan apapun
+     jika ini dinonaktifkan. Untuk memperoleh Virus Total kunci API, dari
+     dimanapun di website mereka, mengklik atas "Join our Community" link yang
+     terletak ke arah kanan atas dari halaman, memasukkan informasi yang
+     diminta, dan mengklik "Sign up" ketika dilakukan. Ikuti semua instruksi
+     yang diberikan, dan ketika Anda punya kunci API umum Anda,
+     menyalin/menempelkan bahwa kunci API umum untuk `vt_public_api_key`
+     direktif dari `phpmussel.ini` file konfigurasi.
    "vt_suspicion_level"
-   - By default, phpMussel will restrict which files it scans using the Virus
-     Total API to those files that it considers "suspicious". You can
-     optionally adjust this restriction by changing the value of the
-     `vt_suspicion_level` directive.
-     0 - Files are only considered suspicious if, upon being scanned by
-         phpMussel using its own signatures, they are deemed to carry a
-         heuristic weight. This would effectively mean that use of the Virus
-         Total API would be for a second opinion for when phpMussel suspects
-         that a file may potentially be malicious, but can't entirely rule out
-         that it may also potentially be benign (non-malicious) and therefore
-         would otherwise normally not block it or flag it as being malicious.
-     1 - Files are considered suspicious if they're known to be executable (PE
-         files, Mach-O files, ELF/Linux files, etc) or if they're known to be
-         of a format that could potentially contain executable data (such as
-         executable macros, DOC/DOCX files, archive files such as RARs and
-         ZIPS, and etc). This is the default and recommended suspicion level to
-         apply, effectively meaning that use of the Virus Total API would be
-         for a second opinion for when phpMussel doesn't initially find
-         anything malicious or wrong with a file that it considers to be
-         suspicious and therefore would otherwise normally not block it or flag
-         it as being malicious.
-     2 - All files are considered suspicious and should be scanned using the
-         Virus Total API. I don't generally recommend applying this suspicion
-         level, due to the risk of reaching your API quota much quicker than
-         would otherwise be the case, but there are certain circumstances (such
-         as when the webmaster or hostmaster has very little faith or trust
-         whatsoever in any of the uploaded content of their users) where this
-         suspicion level could be appropriate. With this suspicion level, all
-         files not normally blocked or flagged as being malicious would be
-         scanned using the Virus Total API. Note, however, that phpMussel will
-         cease using the Virus Total API when your API quota has been reached
-         (regardless of suspicion level), and that your quota will likely be
-         reached much faster when using this suspicion level.
-     Note: Regardless of suspicion level, any files that are either blacklisted
-     or whitelisted by phpMussel won't be scanned using the Virus Total API,
-     because those such files would've already been declared as either
-     malicious or benign by phpMussel by the time that they would've otherwise
-     been scanned by the Virus Total API, and therefore, additionally scanning
-     wouldn't be required. The ability of phpMussel to scan files using the
-     Virus Total API is intended to build further confidence for whether a file
-     is malicious or benign in those circumstances where phpMussel itself isn't
-     entirely certain as to whether a file is malicious or benign.
+   - Secara default, phpMussel akan membatasi file dipindai menggunakan Virus
+     Total API untuk file-file yang dianggap "mencurigakan". Anda dapat
+     menyesuaikan pembatasan ini dengan mengubah nilai direktif
+     `vt_suspicion_level`.
+     0 - File hanya dianggap mencurigakan jika, setelah dipindai oleh phpMussel
+         menggunakan tanda tangan sendiri, mereka dianggap membawa berat
+         heuristik. Ini akan efektif berarti bahwa penggunaan Virus Total API
+         akan untuk pendapat kedua ketika phpMussel mencurigai bahwa file
+         berpotensi menjadi berbahaya, tetapi tidak dapat sepenuhnya
+         mengesampingkan bahwa hal itu juga berpotensi menjadi jinak (atau
+         tidak berbahaya) dan demikian akan dinyatakan biasanya tidak memblokir
+         atau mengindikasi itu sebagai berbahaya.
+     1 - File dianggap mencurigakan jika mereka diketahui executable (PE file,
+         Mach-O file, ELF/Linux file, dll) atau jika mereka diketahui dari
+         format yang berpotensi berisi data executable (seperti macro
+         executable, DOC/DOCX file, arsip file seperti RAR, ZIP dan dll). Ini
+         adalah default dan direkomendasikan tingkat kecurigaan untuk
+         menerapkan, efektif berarti bahwa penggunaan Virus Total API akan
+         untuk pendapat kedua ketika phpMussel tidak awalnya mendeteksi sesuatu
+         yang berbahaya atau yang salah dengan file yang dianggap mencurigakan
+         dan demikian akan dinyatakan biasanya tidak memblokir atau
+         mengindikasi itu sebagai berbahaya.
+     2 - Semua file dianggap mencurigakan dan harus dipindai menggunakan Virus
+         Total API. Saya biasanya tidak merekomendasikan menerapkan tingkat
+         kecurigaan ini, karena risiko mencapai kuota API Anda lebih cepat
+         daripada yang akan terjadi, tetapi ada kondisi tertentu (seperti
+         ketika webmaster atau hostmaster memiliki sedikit iman atau
+         kepercayaan apakah gerangan dalam apapun diupload dari pengguna
+         mereka) dimana tingkat kecurigaan ini dapat bisa sesuai. Dengan
+         tingkat kecurigaan ini, semua file biasanya tidak diblokir atau
+         ditandai sebagai berbahaya akan dipindai menggunakan Virus Total API.
+         Catat, bagaimanapun, phpMussel akan berhenti menggunakan Virus Total
+         API ketika kuota API Anda telah tercapai (terlepas dari tingkat
+         kecurigaan), dan kuota Anda kemungkinan akan dicapai jauh lebih cepat
+         bila menggunakan tingkat kecurigaan ini.
+     Mencatat: Terlepas dari tingkat kecurigaan, setiap file yang masuk daftar
+     hitam atau daftar putih oleh phpMussel tidak akan dipindai menggunakan
+     Virus Total API, karena file seperti ini akan sudah dinyatakan sebagai
+     jinak atau berbahaya oleh phpMussel pada saat itu mereka akan sudah
+     dinyatakan telah dipindai oleh Virus Total API, dan demikian, memindai
+     tambahan tidak akan diperlukan. Kemampuan phpMussel untuk memindai file
+     menggunakan Virus Total API dimaksudkan untuk membangun kepercayaan lebih
+     lanjut untuk apakah file yang berbahaya atau jinak pada mereka situasi
+     dimana phpMussel sendiri tidak sepenuhnya yakin apakah file yang berbahaya
+     atau jinak.
    "vt_weighting"
-   - Should phpMussel apply the results of scanning using the Virus Total API
-     as detections or as detection weighting? This directive exists, because,
-     although scanning a file using multiple engines (as Virus Total does)
-     should result in an increased detection rate (and therefore in a higher
-     number of malicious files being caught), it can also result in a higher
-     number of false positives, and therefore, in some circumstances, the
-     results of scanning may be better utilised as a confidence score rather
-     than as a definitive conclusion. If a value of 0 is used, the results of
-     scanning using the Virus Total API will be applied as detections, and
-     therefore, if any engine used by Virus Total flags the file being scanned
-     as being malicious, phpMussel will consider the file to be malicious. If
-     any other value is used, the results of scanning using the Virus Total API
-     will be applied as detection weighting, and therefore, the number of
-     engines used by Virus Total that flag the file being scanned as being
-     malicious will serve as a confidence score (or detection weighting) for
-     whether or not the file being scanned should be considered malicious by
-     phpMussel (the value used will represent the minimum confidence score or
-     weight required in order to be considered malicious). A value of 0 is used
-     by default.
+   - Apakah Anda ingin phpMussel menerapkan hasil pemindaian menggunakan Virus
+     Total API sebagai deteksi atau deteksi pembobotan? Direktif ini ada,
+     karena, meskipun memindai file menggunakan mesin-mesin kelipatan (sebagai
+     Virus Total melakukannya) harus menghasilkan tingkat deteksi meningkat
+     (dan demikian lebih banyak file berbahaya tertangkap), juga dapat
+     menghasilkan jumlah yang lebih banyak dari positif palsu, dan demikian,
+     dalam kondisi beberapa, hasil pemindaian dapat digunakan lebih efektif
+     sebagai nilai keyakinan daripada daripada sebagai kesimpulan definitif.
+     Jika nilai 0 digunakan, hasil pemindaian menggunakan Virus Total API akan
+     diaplikasikan sebagai pendeteksian, dan demikian, jika mesin-mesin
+     digunakan oleh Virus Total menandai file dipindai sebagai berbahaya,
+     phpMussel akan menganggap file yang berbahaya. Jika nilai lain yang
+     digunakan, hasil pemindaian menggunakan Virus Total API akan diaplikasikan
+     sebagai deteksi pembobotan, dan demikian, jumlah mesin digunakan oleh
+     Virus Total menandai file dipindai sebagai berbahaya akan berfungsi
+     sebagai nilai keyakinan (atau deteksi pembobotan) untuk jika file dipindai
+     harus dianggap berbahaya oleh phpMussel (nilai digunakan akan mewakili
+     nilai keyakinan minimum atau pembobotan minimum diperlukan untuk dianggap
+     berbahaya). Nilai 0 digunakan secara default.
    "vt_quota_rate" dan "vt_quota_time"
-   - According to the Virus Total API documentation, "it is limited to at most
-     4 requests of any nature in any given 1 minute time frame. If you run a
-     honeyclient, honeypot or any other automation that is going to provide
-     resources to VirusTotal and not only retrieve reports you are entitled to
-     a higher request rate quota". By default, phpMussel will strictly abhere
-     to these limitations, but due to the possibility of these rate quotas
-     being increased, these two directives are provided as a means for you to
-     instruct phpMussel as to what limit it should adhere to. Unless you've
-     been instructed to do so, it's not recommended for you to increase these
-     values, but, if you've encountered problems relating to reaching your rate
-     quota, decreasing these values -may- sometimes help you in dealing with
-     these problems. Your rate limit determined as `vt_quota_rate` requests of
-     any nature in any given `vt_quota_time` minute time frame.
+   - Menurut Virus Total dokumentasi API, itu terbatas untuk paling 4
+     permintaan dalam bentuk apapun dalam jangka waktu 1 menit diberikan. Jika
+     Anda menjalankan sebuah honeyclient, honeypot atau otomatisasi lainnya
+     yang akan menyediakan data untuk VirusTotal dan tidak hanya mengambil
+     laporan Anda berhak untuk kuota permintaan lebih tinggi. Secara default,
+     phpMussel ketat akan mematuhi keterbatasan ini, tetapi karena kemungkinan
+     kuota ini sedang meningkat, dua direktif ini yang disediakan sebagai
+     sarana bagi Anda untuk menginstruksikan phpMussel tentang apa batas harus
+     dipatuhi. Kecuali Anda telah diperintahkan untuk melakukannya, itu tidak
+     direkomendasi bagi Anda untuk meningkat nilai-nilai ini, tetapi, jika Anda
+     mengalami masalah berkaitan dengan mencapai kuota Anda, penurunan
+     nilai-nilai ini kadang -DAPAT- membantu Anda bagi berurusan dengan
+     masalah-masalah ini. Batas Anda ditentukan sebagai `vt_quota_rate`
+     permintaan dalam bentuk apapun dalam jangka waktu `vt_quota_time` menit.
 
                                      ~ ~ ~
 
@@ -1679,5 +1704,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 23 Juni 2015 (2015.06.23).
+Terakhir Diperbarui: 29 Juni 2015 (2015.06.29).
 EOF

@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Dutch/Nederlandse Language Data (4th June 2015).
+ This File: phpMussel Dutch/Nederlandse Language Data (29th June 2015).
  <%phpMussel%/vault/lang/lang.nl.inc>
 
 */
@@ -30,10 +30,11 @@ $MusselConfig['lang']['cli_update_restart']=' Herstarten phpMussel kan nodig zij
 $MusselConfig['lang']['cli_working']='Aan de gang';
 $MusselConfig['lang']['corrupted']='Gedetecteerd beschadigd PE';
 $MusselConfig['lang']['denied']='Upload Geweigerd!';
-$MusselConfig['lang']['denied_other']='Upload Denied! Télécharger Refusé! Carga Negado! Carica Negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='De upload poging werd geblokkeerd voor de hieronder vermelde redenen / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Gedetecteerd {vn}';
 $MusselConfig['lang']['detected_control_characters']='Gedetecteerd Controle Karakters';
+$MusselConfig['lang']['encrypted_archive']='Gedetecteerd gecodeerde archief; Gecodeerde archieven niet toegestaan';
 $MusselConfig['lang']['failed_to_access']='Mislukt om toegang ';
 $MusselConfig['lang']['file']='Bestand';
 $MusselConfig['lang']['filesize_limit_exceeded']='Bestandsgrootte limiet overschreden';
