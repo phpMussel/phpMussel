@@ -620,7 +620,7 @@ Optionen für das Größenlimit der Übereinstimmungen. Ändern Sie diese Werte 
 - Reaktion von phpMussel auf fehlende oder defekte Signaturen. Ist fail_silently deaktiviert, werden fehlende oder defekte Signaturen während des Scanvorgangs gemeldet, ist fail_silently aktiviert, werden fehlende oder defekte Signaturen ignoriert, ohne dass entsprechende Probleme gemeldet werden. Diese Option sollte so belassen werden, es sei denn, Sie erwarten Abstürze oder ähnliches. 0 = Deaktiviert, 1 = Aktiviert [Standardeinstellung].
 
 "fail_extensions_silently"
-- Should phpMussel report when extensions are missing? If fail_extensions_silently is disabled, missing extensions will be reported on scanning, and if fail_extensions_silently is enabled, missing extensions will be ignored, with scanning reporting for those files that there aren't any problems. Disabling this directive may potentially increase your security, but may also lead to an increase of false positives. 0 = Disabled, 1 = Enabled [Default].
+- Soll phpMussel melden, wenn Dateierweiterungen fehlen? Wenn fail_extensions_silently deaktiviert ist, werden fehlende Dateierweiterungen beim Scannen gemeldet und wenn fail_extensions_silently aktiviert ist, werden fehlende Dateierweiterungen ignoriert und beim Scan gemeldet, dass es mit diesen Dateien keine Probleme gibt. Das Deaktivieren dieser Anweisung kann möglicherweise deine Sicherheit erhöhen, kann aber auch zu mehr Falschmeldungen führen. 0 = Deaktiviert, 1 = Aktiviert [Standardeinstellung].
 
 ####"files" (Kategorie)
 Generelle Konfigurationen für die Handhabung von Dateien.
