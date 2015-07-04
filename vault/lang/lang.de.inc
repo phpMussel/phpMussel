@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel German/Deutsch Language Data (3rd July 2015).
+ This File: phpMussel German/Deutsch Language Data (4th July 2015).
  <%phpMussel%/vault/lang/lang.de.inc>
 
 */
@@ -34,7 +34,7 @@ $MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! 
 $MusselConfig['lang']['denied_reason']='Der Upload wurde aus den unten aufgeführten Gründen blockiert / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Entdeckt {vn}';
 $MusselConfig['lang']['detected_control_characters']='Steuerzeichen erkannt';
-$MusselConfig['lang']['encrypted_archive']='Detected encrypted archive; Encrypted archives not permitted';
+$MusselConfig['lang']['encrypted_archive']='Verschlüsseltes Archiv entdeckt; Verschlüsselte Archive sind nicht erlaubt';
 $MusselConfig['lang']['failed_to_access']='Zugriff fehlgeschlagen auf ';
 $MusselConfig['lang']['file']='Datei';
 $MusselConfig['lang']['filesize_limit_exceeded']='Dateigröße überschritten';
@@ -43,7 +43,7 @@ $MusselConfig['lang']['finished']='Fertig';
 $MusselConfig['lang']['generated_by']='Generiert von';
 $MusselConfig['lang']['greylist_cleared']=' Greylist gelöscht.';
 $MusselConfig['lang']['greylist_updated']=' Greylist aktualisiert.';
-$MusselConfig['lang']['image']='Image';
+$MusselConfig['lang']['image']='Bild';
 $MusselConfig['lang']['invalid_file']='Ungültige Datei';
 $MusselConfig['lang']['ok']='OK';
 $MusselConfig['lang']['only_allow_images']='Upload von Nicht-Bilddateien ist nicht erlaubt';
