@@ -13069,6 +13069,7 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 						}
 					$TarFile['file']=array();
 					$TarFile['file']['filename']=preg_replace('/[^\x20-\xff]/','',substr($in,$TarFile['offset'],100));
+					$TarFile['file']['filesize']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+124,12)));
 					$TarFile['file']['directory']=(substr($TarFile['file']['filename'],-1,1)==='/'&&$TarFile['file']['filesize']===0);
 					// There's also a bit-check for confirming directory status with POSIX TARs, will add that in later, as well as other bit flags (`typeflag` and etc).
 					if($TarFile['file']['filename'])
@@ -13077,10 +13078,6 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 						$TarFile['file']['filename']=(substr_count($TarFile['file']['filename'],"\x2f")>0)?substral($TarFile['file']['filename'],"\x2f"):$TarFile['file']['filename'];
 						}
 					$TarFile['file']['filenameSafe']=urlencode($TarFile['file']['filename']);
-					// $TarFile['file']['mode']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+100,8)));
-					// $TarFile['file']['uid']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+108,8)));
-					// $TarFile['file']['gid']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+116,8)));
-					$TarFile['file']['filesize']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+124,12)));
 					if($TarFile['file']['filesize']<0)
 						{
 						$r=2;
@@ -13090,6 +13087,9 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 						$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_tampering'].'!'.$GLOBALS['linebreak'];
 						break;
 						}
+					// $TarFile['file']['mode']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+100,8)));
+					// $TarFile['file']['uid']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+108,8)));
+					// $TarFile['file']['gid']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+116,8)));
 					// $TarFile['file']['mtime']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+136,12)));
 					// $TarFile['file']['chksum']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+148,8)));
 					// $TarFile['file']['typeflag']=substr($in,$TarFile['offset']+156,1);
