@@ -227,8 +227,8 @@
  - $output_type ist eine Ganzzahl (Integer), gibt das Format an, wie das
    Ergebnis zurückgegeben werden soll. Ein Wert von 0 weist die Funktion an,
    das Ergebnis als Ganzzahl zurückzugeben (Integer) (ein Rückgabewert von -3
-   zeigt an, Probleme wurden angetroffen mit dem phpMussel Signaturen Dateien
-   oder Signatur-Map-Dateien und dass sie möglich fehlt oder ist beschädigt, -2
+   zeigt an, dass es Probleme mit den phpMussel Signatur-Dateien oder Signatur-
+   Map-Dateien gibt und dass sie wahrscheinlich fehlen oder beschädigt sind, -2
    zeigt an, dass beschädigte Dateien gefunden wurden und der Scan nicht
    abgeschlossen wurde, -1 zeigt an, dass fehlende Erweiterungen oder Addons
    von PHP benötigt werden, um den Scan durchzuführen und der Scan deshalb
