@@ -103,7 +103,7 @@ Porém, você também é capaz de instruir phpMussel para verificar arquivos ou 
 
 Onde:
 - `$what_to_scan` é uma string ou um array, apontando para um alvo arquivo, um alvo diretório ou um array de alvo arquivos e/ou alvo diretórios.
-- `$output_type` é um integer, indicando o formato que os resultados da análise são regresso se. Um valor de 0 instrui a função para retornar resultados como um integer (um resultado retornado de -2 indica que corrupto dados foi detectado durante a análise, e portanto, a análise não foi concluída, -1 indica que extensões ou complementos necessários pelo php para executar a análise estavam faltando, e portanto, a análise não foi concluída, 0 indica que o alvo de análise não existe, e portanto, havia nada para verificar, 1 indica que o alvo foi analisado e não problemas foram detectados, e 2 indica que o alvo foi analisado e problemas foram detectados). Um valor de 1 instrui a função para retornar resultados como humano legível texto. Um valor de 2 instrui a função para retornar resultados como humano legível texto e para exportar os resultados para um global variável. Esta variável é opcional, padronizando a 0.
+- `$output_type` é um integer, indicando o formato que os resultados da análise são regresso se. Um valor de 0 instrui a função para retornar resultados como um integer (um resultado retornado de -3 indica problemas foram encontrados com o phpMussel assinaturas arquivos ou mapas assinaturas arquivos e que eles podem possível estar ausente ou corrompido, -2 indica que corrompido dados foi detectado durante a análise, e portanto, a análise não foi concluída, -1 indica que extensões ou complementos necessários pelo php para executar a análise estavam faltando, e portanto, a análise não foi concluída, 0 indica que o alvo de análise não existe, e portanto, havia nada para verificar, 1 indica que o alvo foi analisado e não problemas foram detectados, e 2 indica que o alvo foi analisado e problemas foram detectados). Um valor de 1 instrui a função para retornar resultados como humano legível texto. Um valor de 2 instrui a função para retornar resultados como humano legível texto e para exportar os resultados para um global variável. Esta variável é opcional, padronizando a 0.
 - `$output_flatness` é um integer, indicando se a permitir que os resultados sejam retornados como uma array ou não. Normalmente, se o alvo de análise continha vários itens (tal como se um diretório ou array) os resultados serão retornados em uma array (padrão valor de 0). Um valor de 1 instrui a função a implodir qualquer array antes de entrada, resultando em uma achatada string contendo os resultados a serem retornados. Esta variável é opcional, padronizando a 0.
 
 Exemplos:
@@ -282,6 +282,7 @@ Arquivo                                    | Descrição
 /_testfiles/graphics_standard_testfile.gif | Teste arquivo para testar phpMussel gráficas assinaturas.
 /_testfiles/html_standard_testfile.txt     | Teste arquivo para testar phpMussel normalizada HTML assinaturas.
 /_testfiles/md5_testfile.txt               | Teste arquivo para testar phpMussel MD5 assinaturas.
+/_testfiles/metadata_testfile.tar          | Teste arquivo por testando phpMussel metadados assinaturas e por testando TAR arquivo suport no seu sistema.
 /_testfiles/metadata_testfile.txt.gz       | Teste arquivo por testando phpMussel metadados assinaturas e por testando GZ arquivo suport no seu sistema.
 /_testfiles/metadata_testfile.zip          | Teste arquivo por testando phpMussel metadados assinaturas e por testando ZIP arquivo suport no seu sistema.
 /_testfiles/ole_testfile.ole               | Teste arquivo para testar phpMussel OLE assinaturas.
@@ -618,7 +619,10 @@ Assinatura analisando comprimento limitando opções. Apenas alterar estes se vo
 - "sd_siglen_max"
 
 "fail_silently"
-- Deve phpMussel reportar quando os assinaturas arquivos estão perdido ou corrompido? Se fail_silently está desativado, perdidos e corrompidos arquivos serão reportado sobre análise, e se fail_silently está ativado, perdidos e corrompidos arquivos serão ignoradas, com a análise reportado por estes arquivos em que não há problemas. Isso geralmente deve ser deixado sozinho a menos que você está experimentando php falhas ou semelhantes problemas. 0 = Desativado, 1 = Ativado [Padrão].
+- Deve phpMussel reportar quando os assinaturas arquivos estão perdido ou corrompido? Se fail_silently está desativado, perdidos e corrompidos arquivos serão reportado durante análise, e se fail_silently está ativado, perdidos e corrompidos arquivos serão ignoradas, com a análise reportando por estes arquivos em que não há problemas. Isso geralmente deve ser deixado sozinho a menos que você está experimentando php falhas ou semelhantes problemas. 0 = Desativado, 1 = Ativado [Padrão].
+
+"fail_extensions_silently"
+- Deve phpMussel reportar quando extensões não estão disponíveis? Se fail_extensions_silently está desativado, extensões indisponíveis serão reportado durante análise, e se fail_extensions_silently está ativado, extensões indisponíveis serão ignoradas, com a análise reportando por estes arquivos em que não há problemas. Desativando dessa directiva pode potencialmente aumentar a sua segurança, mas também pode levar a um aumento de falsos positivos. 0 = Desativado, 1 = Ativado [Padrão].
 
 ####"files" (Categoria)
 Geral configuração por a manipulação de arquivos.
@@ -889,4 +893,4 @@ Esta informação foi atualizada dia 28 Maio 2015 e é corrente para todas phpMu
 ---
 
 
-Última Atualização: 29 Junho 2015 (2015.06.29).
+Última Atualização: 3 Julho 2015 (2015.07.03).

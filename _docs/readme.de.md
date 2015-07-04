@@ -102,7 +102,7 @@ Sie sind jedoch auch in der Lage, phpMussel anzuweisen, nach Dateien, Ordnern od
 `phpMussel($what_to_scan,$output_type,$output_flatness);`
 
 - `$what_to_scan` ist entweder ein String oder ein Array, welches auf eine Datei, ein Verzeichnis oder ein Array von Dateien und/oder Verzeichnissen zeigt.
-- `$output_type` ist eine Ganzzahl (Integer), gibt das Format an, wie das Ergebnis zurückgegeben werden soll. Ein Wert von 0 weist die Funktion an, das Ergebnis als Ganzzahl zurückzugeben (Integer) (ein Rückgabewert von -2 zeigt an, dass beschädigte Dateien gefunden wurden und der Scan nicht abgeschlossen wurde, -1 zeigt an, dass fehlende Erweiterungen oder Addons von PHP benötigt werden, um den Scan durchzuführen und der Scan deshalb nicht abgeschlossen wurde, 0 zeigt an, dass das Ziel nicht existiert und somit nichts überprüft werden konnte, 1 zeigt an, dass das Ziel erfolgreich geprüft wurde und keine Probleme erkannt wurden, 2 zeigt an, dass das Ziel erfolgreich geprüft wurde, jedoch Probleme gefunden wurden). Ein Wert von 1 weist die Funktion an, die Ergebnisse als lesbaren Text auszugeben. Ein Wert von 2 weist die Funktion an, beides auszugeben, einen lesbaren Text und einen Export in eine globale Variable. Diese Variable ist optional, Standardeinstellung ist 0.
+- `$output_type` ist eine Ganzzahl (Integer), gibt das Format an, wie das Ergebnis zurückgegeben werden soll. Ein Wert von 0 weist die Funktion an, das Ergebnis als Ganzzahl zurückzugeben (Integer) (ein Rückgabewert von -3 zeigt an, Probleme wurden angetroffen mit dem phpMussel Signaturen Dateien oder Signatur-Map-Dateien und dass sie möglich fehlt oder ist beschädigt, -2 zeigt an, dass beschädigte Dateien gefunden wurden und der Scan nicht abgeschlossen wurde, -1 zeigt an, dass fehlende Erweiterungen oder Addons von PHP benötigt werden, um den Scan durchzuführen und der Scan deshalb nicht abgeschlossen wurde, 0 zeigt an, dass das Ziel nicht existiert und somit nichts überprüft werden konnte, 1 zeigt an, dass das Ziel erfolgreich geprüft wurde und keine Probleme erkannt wurden, 2 zeigt an, dass das Ziel erfolgreich geprüft wurde, jedoch Probleme gefunden wurden). Ein Wert von 1 weist die Funktion an, die Ergebnisse als lesbaren Text auszugeben. Ein Wert von 2 weist die Funktion an, beides auszugeben, einen lesbaren Text und einen Export in eine globale Variable. Diese Variable ist optional, Standardeinstellung ist 0.
 - `$output_flatness` ist eine Ganzzahl (Integer), weist die Funktion an, das Ergebnis als Array oder String auszugeben. Enthält das Ziel mehrere Elemente (wie z.B. Verzeichnisse oder Arrays), wird das Ergebnis als Array zurückgegeben (Standardeinstellung 0). Ein Wert von 1 weist die Funktion an, das Ergebnis als verketteten String zuruckzugeben. Diese Variable ist optional, Standardeinstellung ist 0.
 
 Beispiel:
@@ -281,6 +281,7 @@ Datei                                      | Beschreibung
 /_testfiles/graphics_standard_testfile.gif | Testdatei zur Überprüfung der Grafik-Signaturerkennung.
 /_testfiles/html_standard_testfile.txt     | Testdatei zur Überprüfung der normierten HTML-Signaturerkennung.
 /_testfiles/md5_testfile.txt               | Testdatei zur Überprüfung der MD5-Signaturerkennung.
+/_testfiles/metadata_testfile.tar          | Testdatei zur Überprüfung der Metadata-Signaturerkennung und zur Überprüfung der TAR-Archivunterstützung Ihres Systems.
 /_testfiles/metadata_testfile.txt.gz       | Testdatei zur Überprüfung der Metadata-Signaturerkennung und zur Überprüfung der GZ-Archivunterstützung Ihres Systems.
 /_testfiles/metadata_testfile.zip          | Testdatei zur Überprüfung der Metadata-Signaturerkennung und zur Überprüfung der ZIP-Archivunterstützung Ihres Systems.
 /_testfiles/ole_testfile.ole               | Testdatei zur Überprüfung der OLE-Signaturerkennung.
@@ -618,6 +619,9 @@ Optionen für das Größenlimit der Übereinstimmungen. Ändern Sie diese Werte 
 "fail_silently"
 - Reaktion von phpMussel auf fehlende oder defekte Signaturen. Ist fail_silently deaktiviert, werden fehlende oder defekte Signaturen während des Scanvorgangs gemeldet, ist fail_silently aktiviert, werden fehlende oder defekte Signaturen ignoriert, ohne dass entsprechende Probleme gemeldet werden. Diese Option sollte so belassen werden, es sei denn, Sie erwarten Abstürze oder ähnliches. 0 = Deaktiviert, 1 = Aktiviert [Standardeinstellung].
 
+"fail_extensions_silently"
+- Should phpMussel report when extensions are missing? If fail_extensions_silently is disabled, missing extensions will be reported on scanning, and if fail_extensions_silently is enabled, missing extensions will be ignored, with scanning reporting for those files that there aren't any problems. Disabling this directive may potentially increase your security, but may also lead to an increase of false positives. 0 = Disabled, 1 = Enabled [Default].
+
 ####"files" (Kategorie)
 Generelle Konfigurationen für die Handhabung von Dateien.
 
@@ -885,4 +889,4 @@ Diese Informationen wurden zuletzt am 2015.05.28 aktualisiert und gelten für al
 ---
 
 
-Zuletzt aktualisiert: 29. Juni 2015 (2015.06.29).
+Zuletzt aktualisiert: 3. Juli 2015 (2015.07.03).

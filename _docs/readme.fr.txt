@@ -237,19 +237,21 @@
    répertoires.
  - $sortie_type est un entier, indiquant le format dans lequel les résultats de
    l'analyse doivent être retour. Une valeur de 0 instruit que la fonction
-   d'affichage des résultats comme un entier (un retourné résultat de -2
-   indique que corrompues données était détecté lors de l'analyse et donc
-   l'analyse n'ont pas réussi à compléter, -1 indique que les extensions ou
-   addons requis par PHP pour exécuter l'analyse sont manquaient et donc
-   l'analyse n'ont pas réussi à compléter, 0 indique qu'il n'existe pas cible à
-   analyser et donc il n'y avait rien à analyser, 1 indique que la cible était
-   analysé avec succès et aucun problème n'été détectée, et 2 indique que la
-   cible était analysé avec succès et problèmes ont été détectés). Une valeur
-   de 1 indique à la fonction pour renvoyer les résultats sous forme de texte
-   lisible par l'homme. Une valeur de 2 indique à la fonction pour renvoyer les
-   résultats sous forme de texte lisible par l'homme et pour exporter les
-   résultats à une globale variable. Cette variable est facultative, 0 par
-   défaut.
+   d'affichage des résultats comme un entier (un retourné résultat de -3
+   indique des problèmes ont été rencontrés avec le phpMussel signatures
+   fichiers ou des signatures cartes fichiers et qu'ils peuvent être possible
+   manquants ou corrompus, -2 indique que corrompues données était détecté lors
+   de l'analyse et donc l'analyse n'ont pas réussi à compléter, -1 indique que
+   les extensions ou addons requis par PHP pour exécuter l'analyse sont
+   manquaient et donc l'analyse n'ont pas réussi à compléter, 0 indique qu'il 
+   n'existe pas cible à analyser et donc il n'y avait rien à analyser, 1
+   indique que la cible était analysé avec succès et aucun problème n'été
+   détectée, et 2 indique que la cible était analysé avec succès et problèmes
+   ont été détectés). Une valeur de 1 indique à la fonction pour renvoyer les
+   résultats sous forme de texte lisible par l'homme. Une valeur de 2 indique
+   à la fonction pour renvoyer les résultats sous forme de texte lisible par
+   l'homme et pour exporter les résultats à une globale variable. Cette
+   variable est facultative, 0 par défaut.
  - $sortie_platitude est un entier, indiquant si les résultats pourront être
    retournés comme un tableau ou pas. Normalement, si la cible de l'analyse
    contenue plusieurs articles (par exemple, si un répertoire ou un tableau)
@@ -606,6 +608,10 @@
     ~
  /_testfiles/md5_testfile.txt (Test fichier, Inclu)
     Test fichier à test phpMussel MD5 signatures.
+    ~
+ /_testfiles/metadata_testfile.tar (Test fichier, Inclu)
+    Test fichier à test phpMussel métadonnées signatures et pour tester TAR
+    fichier support sur votre système.
     ~
  /_testfiles/metadata_testfile.txt.gz (Test fichier, Inclu)
     Test fichier à test phpMussel métadonnées signatures et pour tester GZ
@@ -1190,12 +1196,20 @@
      "sd_siglen_max"
    - Devrait phpMussel signaler lorsque les signatures fichiers sont manquants
      ou endommagés? Si fail_silently est désactivé, manquants et corrompus
-     fichiers seront signalé sur analyse, et if fail_silently est activé,
+     fichiers seront signalé sur analyse, et si fail_silently est activé,
      manquants et corrompus fichiers seront ignorés, avec l'analyse signalés
      pour ceux fichiers qu'il n'y a pas de problèmes. Cela devrait généralement
      être laissé seul sauf si vous rencontrez accidents ou similaires
      problèmes. 0 = Désactivé, 1 = Activé [Défaut].
      "fail_silently"
+   - Devrait phpMussel signaler lorsque les extensions sont manquantes? Si
+     fail_extensions_silently est désactivé, extensions manquantes seront
+     signalé sur analyse, et si fail_extensions_silently est activé, extensions
+     manquantes seront ignorés, avec l'analyse signalés pour ceux fichiers
+     qu'il n'y a pas de problèmes. La désactivation de cette directive peut
+     potentiellement augmenter votre sécurité, mais peut aussi conduire à une
+     augmentation de faux positifs. 0 = Désactivé, 1 = Activé [Défaut].
+     "fail_extensions_silently"
  "files" (Catégorie)
  - Générale configuration pour gestion des fichiers.
    "max_uploads"
@@ -1740,5 +1754,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 29 Juin 2015 (2015.06.29).
+Dernière Réactualisé: 3 Juillet 2015 (2015.07.03).
 EOF

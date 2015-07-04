@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel English Language Data (29th June 2015).
+ This File: phpMussel English Language Data (3rd July 2015).
  <%phpMussel%/vault/lang/lang.en.inc>
 
 */
@@ -65,6 +65,7 @@ $MusselConfig['lang']['scan_no_problems_found']='No problems found.';
 $MusselConfig['lang']['scan_reading']='Reading';
 $MusselConfig['lang']['scan_signature_file_corrupted']='Signature file corrupted';
 $MusselConfig['lang']['scan_signature_file_missing']='Signature file missing';
+$MusselConfig['lang']['scan_tampering']='Detected potentially dangerous file tampering';
 $MusselConfig['lang']['scan_unauthorised_upload']='Unauthorised file upload manipulation detected';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Unauthorised file upload manipulation or misconfiguration detected! ';
 $MusselConfig['lang']['started']='Started';

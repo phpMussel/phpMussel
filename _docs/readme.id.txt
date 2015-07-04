@@ -227,7 +227,9 @@
  - $what_to_scan adalah string atau array, mengarah ke data target, direktori
    target atau array data target dan/atau direktori target.
  - $output_type adalah sebuah integer, mengindikasikan format dimana hasil dari
-   memindai yang dikembalikan (sebuah hasil dari -2 mengindikasikan bahwa data
+   memindai yang dikembalikan (sebuah hasil dari -3 mengindikasikan masalah
+   adalah ditemui dengan file tanda tangan phpMussel atau file memetakan tanda
+   tangan dan mereka mungkin hilang atau dikorup, -2 mengindikasikan bahwa data
    korup terdeteksi selama proses memindai dan proses memindai gagal selesai,
    -1 mengindikasikan bawa ekstensi atau addon yang dibutuhkan oleh php untuk
    mengeksekusi pemindaian hilang dan demikian gagal selesai, 0 mengindikasikan
@@ -597,13 +599,17 @@
  /_testfiles/md5_testfile.txt (Data test, Diikutkan)
     Data test untuk mentest tanda tangan MD5 phpMussel.
     ~
+ /_testfiles/metadata_testfile.tar (Data test, Diikutkan)
+    Data test untuk mentest tanda tangan metadata phpMussel dan untuk mentest
+    data support TAR pada sistem Anda.
+    ~
  /_testfiles/metadata_testfile.txt.gz (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan metadata phpMussel dan untuk testing
+    Data test untuk mentest tanda tangan metadata phpMussel dan untuk mentest
     data support GZ pada sistem Anda.
     ~
  /_testfiles/metadata_testfile.zip (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan phpMussel dan untuk testing data
-    support ZIP pada sistem Anda.
+    Data test untuk mentest tanda tangan metadata phpMussel dan untuk mentest
+    data support ZIP pada sistem Anda.
     ~
  /_testfiles/ole_testfile.ole (Data test, Diikutkan)
     Data test untuk mentest tanda tangan OLE phpMussel.
@@ -1170,13 +1176,21 @@
      "sd_siglen_min"
      "sd_siglen_max"
    - Seharusnya laporan phpMussel ketika data tanda tangan hilang atau dikorup?
-     Jika fail_silently dinonaktifkan, data dikorup dan hilang akan di laporkan
+     Jika fail_silently dinonaktifkan, data dikorup dan hilang akan dilaporkan
      ketika pemindaian, dan jika fail_silently diaktifkan, data dikorup dan
-     hilang akan diabaikan, dengan pemindaian dilaporkan untuk data-data ini
+     hilang akan diabaikan, dengan pemindaian melaporkan untuk data-data ini
      bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah
-     mengalami crashes atau masalah lain.
+     mengalami crash atau masalah lain.
      0 = Dinonaktifkan, 1 = Diaktifkan [Default].
      "fail_silently"
+   - Seharusnya laporan phpMussel ketika ekstensi hilang? Jika
+     fail_extensions_silently dinonaktifkan, ekstensi hilang akan dilaporkan
+     ketika pemindaian, dan jika fail_extensions_silently diaktifkan, ekstensi
+     hilang akan diabaikan, dengan pemindaian melaporkan untuk data-data ini
+     bahwa tidak ada masalah. Menonaktifkan direktif ini berpotensi dapat
+     meningkatkan keamanan Anda, tetapi juga dapat menyebabkan peningkatan
+     positif palsu. 0 = Dinonaktifkan, 1 = Diaktifkan [Default].
+     "fail_extensions_silently"
  "files" (Kategori)
  - Konfigurasi umum untuk mengambil alih data-data.
    "max_uploads"
@@ -1704,5 +1718,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 29 Juni 2015 (2015.06.29).
+Terakhir Diperbarui: 3 Juli 2015 (2015.07.03).
 EOF

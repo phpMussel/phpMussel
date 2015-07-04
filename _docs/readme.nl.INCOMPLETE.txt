@@ -231,17 +231,19 @@
  - $output_type is een integer, met vermelding van het formaat waarin de
    resultaten van de scan zijn om terug te keren als. Een waarde van 0
    instrueert de functie om de resultaten terug te keren als een integer (een
-   geretourneerd gevolg van -2 geeft aan dat corrupte data tijdens de scan werd
-   gedetecteerd en dus de scan niet voltooid, -1 geeft aan dat uitbreidingen of
-   toevoegingen vereist door php om de scan uit te voeren ontbraken en dus de
-   scan niet voltooid, 0 geeft aan dat de scan doelgroep bestaat niet en dus
-   was er niets te scannen, 1 geeft aan dat de doelwit met succes werd gescand
-   geen problemen waren gedetecteerd, en 2 geeft aan dat de doelwit met succes
-   werd gescand en problemen waren gedetecteerd). Een waarde van 1 instrueert
-   de functie om de resultaten als mensen leesbare tekst. Een waarde van 2
-   beide instrueert de functie om de resultaten als mensen leesbare tekst en om
-   de resultaten te exporteren een globale variabele. Deze variabele is
-   optioneel, en is 0 door standaard.
+   geretourneerd gevolg van -3 geeft problemen werden ondervonden met de
+   phpMussel handtekeningen bestanden of handtekening kaart bestanden en dat
+   zij mogelijk worden beschadigd of ontbreekt, -2 geeft aan dat corrupte data
+   tijdens de scan werd gedetecteerd en dus de scan niet voltooid, -1 geeft aan
+   dat uitbreidingen of toevoegingen vereist door php om de scan uit te voeren
+   ontbraken en dus de scan niet voltooid, 0 geeft aan dat de scan doelgroep
+   bestaat niet en dus was er niets te scannen, 1 geeft aan dat de doelwit met
+   succes werd gescand geen problemen waren gedetecteerd, en 2 geeft aan dat de
+   doelwit met succes werd gescand en problemen waren gedetecteerd). Een waarde
+   van 1 instrueert de functie om de resultaten als mensen leesbare tekst. Een
+   waarde van 2 beide instrueert de functie om de resultaten als mensen
+   leesbare tekst en om de resultaten te exporteren een globale variabele. Deze
+   variabele is optioneel, en is 0 door standaard.
  - $output_flatness is een integer, aangeeft of er kunnen resultaten worden
    geretourneerd als een matrix of niet. Doorgaans, als de scan doel bevatte
    meerdere items (bijvoorbeeld als een directory of matrix) het resultaten zal
@@ -581,6 +583,10 @@
     ~
  /_testfiles/md5_testfile.txt (Testbestand, Opgenomen)
     Testbestand voor het testen phpMussel MD5 handtekeningen.
+    ~
+ /_testfiles/metadata_testfile.tar (Testbestand, Opgenomen)
+    Testbestand voor het testen phpMussel metadata handtekeningen en voor het
+    testen van TAR bestandsondersteuning op uw systeem.
     ~
  /_testfiles/metadata_testfile.txt.gz (Testbestand, Opgenomen)
     Testbestand voor het testen phpMussel metadata handtekeningen en voor het
@@ -925,12 +931,12 @@
 
  6. CONFIGURATIEOPTIES
 
- The following is a list of variables found in the "phpmussel.ini"
- configuration file of phpMussel, along with a description of their purpose and
- function.
+ Het volgende is een lijst van variabelen die in de `phpmussel.ini`
+ configuratiebestand van phpMussel, samen met een beschrijving van hun doel en
+ functie.
 
  "general" (Categorie)
- - General configuration for phpMussel.
+ - Algemene configuratie voor phpMussel.
     "script_password"
     - As a convenience, phpMussel will allow certain functions (including the
       ability to update phpMussel on-the-fly) to be manually triggered via
@@ -941,12 +947,12 @@
       would like to use. If no password is set, manual triggering will be
       disabled by default. Use something you will remember but which is hard
       for others to guess.
-      * Has no influence in CLI mode.
+      * Heeft geen invloed in CLI-modus.
     "logs_password"
     - The same as script_password, but for viewing the contents of scan_log
       and scan_kills. Having separate passwords can be useful if you want to
       give someone else access to one set of functions but not the other.
-      * Has no influence in CLI mode.
+      * Heeft geen invloed in CLI-modus.
     "cleanup"
     - Unset script variables and cache after execution. If you aren't using
       the script beyond the initial scanning of uploads, should set to yes, to
@@ -955,7 +961,7 @@
       reloading duplicate data into memory. In general practise, it should
       probably be set to yes, but, if you do this, you won't be able to use the
       script for anything other than scanning file uploads.
-      * Has no influence in CLI mode.
+      * Heeft geen invloed in CLI-modus.
     "scan_log"
     - Filename of file to log all scanning results to. Specify a filename, or
       leave blank to disable.
@@ -1044,7 +1050,7 @@
       seconds (6 hours); A value of 0 will disable caching the results of
       scanning.
  "signatures" (Categorie)
- - Configuration for signatures.
+ - Configuratie voor handtekeningen.
    %%%_clamav = ClamAV signatures (both mains and daily).
    %%%_custom = Your custom signatures (if you've written any).
    %%%_mussel = phpMussel signatures included in your current signatures set
@@ -1150,10 +1156,19 @@
    - Should phpMussel report when signatures files are missing or corrupted?
      If fail_silently is disabled, missing and corrupted files will be reported
      on scanning, and if fail_silently is enabled, missing and corrupted files
-     will be ignored, with scanning reported for those files that there are no
-     problems. This should generally be left alone unless you're experiencing
-     crashes or similar problems. 0 = Disabled, 1 = Enabled [Default].
+     will be ignored, with scanning reporting for those files that there aren't
+     any problems. This should generally be left alone unless you're
+     experiencing crashes or similar problems.
+     0 = Disabled, 1 = Enabled [Default].
      "fail_silently"
+   - Should phpMussel report when extensions are missing? If
+     fail_extensions_silently is disabled, missing extensions will be reported
+     on scanning, and if fail_extensions_silently is enabled, missing
+     extensions will be ignored, with scanning reporting for those files that
+     there aren't any problems. Disabling this directive may potentially
+     increase your security, but may also lead to an increase of false
+     positives. 0 = Disabled, 1 = Enabled [Default].
+     "fail_extensions_silently"
  "files" (Categorie)
  - General configuration for handling of files.
    "max_uploads"
@@ -1656,5 +1671,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 29 Juni 2015 (2015.06.29).
+Laatste Bijgewerkt: 3 Juli 2015 (2015.07.03).
 EOF

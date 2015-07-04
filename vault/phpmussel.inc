@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7-BETA (29th June 2015) Core Script.
+ This File: phpMussel v0.7-BETA (3rd July 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -884,6 +884,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 		if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_missing_filename'].'! ';
 		return (!$n)?2:$out;
 		}
+	$ofnSafe=urlencode($ofn);
 	$HashCacheData=$md5.md5($ofn);
 	if(isset($GLOBALS['HashCache'][$HashCacheData]))
 		{
@@ -943,7 +944,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 		if(!isset($GLOBALS['memCache']['filenames_clamav.cvd']))$GLOBALS['memCache']['filenames_clamav.cvd']=@file($GLOBALS['vault'].'filenames_clamav.cvd');
 		if(!$GLOBALS['memCache']['filenames_clamav.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (filenames_clamav.cvd)!'.$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+				{
+				if($fm)
+					{
+					if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+					$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (filenames_clamav.cvd)! ';
+					}
+				return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (filenames_clamav.cvd)!'.$GLOBALS['linebreak'];
+				}
 			$c=0;
 			}
 		else $c=@count($GLOBALS['memCache']['filenames_clamav.cvd']);
@@ -1027,7 +1036,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							}
 						$heur['detections']++;
 						$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-						if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+						if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 						}
 					}
 				}
@@ -1039,7 +1048,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 		if(!isset($GLOBALS['memCache']['filenames_custom.cvd']))$GLOBALS['memCache']['filenames_custom.cvd']=@file($GLOBALS['vault'].'filenames_custom.cvd');
 		if(!$GLOBALS['memCache']['filenames_custom.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (filenames_custom.cvd)!'.$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+				{
+				if($fm)
+					{
+					if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+					$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (filenames_custom.cvd)! ';
+					}
+				return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (filenames_custom.cvd)!'.$GLOBALS['linebreak'];
+				}
 			$c=0;
 			}
 		else $c=@count($GLOBALS['memCache']['filenames_custom.cvd']);
@@ -1126,12 +1143,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							{
 							$heur['weight']++;
 							$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						else
 							{
 							$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					}
@@ -1144,7 +1161,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 		if(!isset($GLOBALS['memCache']['filenames_mussel.cvd']))$GLOBALS['memCache']['filenames_mussel.cvd']=@file($GLOBALS['vault'].'filenames_mussel.cvd');
 		if(!$GLOBALS['memCache']['filenames_mussel.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (filenames_mussel.cvd)!'.$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+				{
+				if($fm)
+					{
+					if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+					$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (filenames_mussel.cvd)! ';
+					}
+				return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (filenames_mussel.cvd)!'.$GLOBALS['linebreak'];
+				}
 			$c=0;
 			}
 		else $c=@count($GLOBALS['memCache']['filenames_mussel.cvd']);
@@ -1231,12 +1256,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							{
 							$heur['weight']++;
 							$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						else
 							{
 							$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					}
@@ -1248,10 +1273,18 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 	$whitelist=array();
 	if($GLOBALS['MusselConfig']['signatures']['whitelist_clamav'])
 		{
-		if(!isset($GLOBALS['memCache']['whitelist_clamav.cvd']))$GLOBALS['memCache']['whitelist_clamav.cvd']=@implode_md(file($GLOBALS['vault'].'whitelist_clamav.cvd'));
+		if(!isset($GLOBALS['memCache']['whitelist_clamav.cvd']))$GLOBALS['memCache']['whitelist_clamav.cvd']=implode_md(file($GLOBALS['vault'].'whitelist_clamav.cvd'));
 		if(!$GLOBALS['memCache']['whitelist_clamav.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (whitelist_clamav.cvd)!'.$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+				{
+				if($fm)
+					{
+					if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+					$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (whitelist_clamav.cvd)! ';
+					}
+				return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (whitelist_clamav.cvd)!'.$GLOBALS['linebreak'];
+				}
 			}
 		else
 			{
@@ -1272,10 +1305,18 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 		}
 	if($GLOBALS['MusselConfig']['signatures']['whitelist_custom'])
 		{
-		if(!isset($GLOBALS['memCache']['whitelist_custom.cvd']))$GLOBALS['memCache']['whitelist_custom.cvd']=@implode_md(file($GLOBALS['vault'].'whitelist_custom.cvd'));
+		if(!isset($GLOBALS['memCache']['whitelist_custom.cvd']))$GLOBALS['memCache']['whitelist_custom.cvd']=implode_md(file($GLOBALS['vault'].'whitelist_custom.cvd'));
 		if(!$GLOBALS['memCache']['whitelist_custom.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (whitelist_custom.cvd)!'.$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+				{
+				if($fm)
+					{
+					if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+					$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (whitelist_custom.cvd)! ';
+					}
+				return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (whitelist_custom.cvd)!'.$GLOBALS['linebreak'];
+				}
 			}
 		else
 			{
@@ -1296,10 +1337,18 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 		}
 	if($GLOBALS['MusselConfig']['signatures']['whitelist_mussel'])
 		{
-		if(!isset($GLOBALS['memCache']['whitelist_mussel.cvd']))$GLOBALS['memCache']['whitelist_mussel.cvd']=@implode_md(file($GLOBALS['vault'].'whitelist_mussel.cvd'));
+		if(!isset($GLOBALS['memCache']['whitelist_mussel.cvd']))$GLOBALS['memCache']['whitelist_mussel.cvd']=implode_md(file($GLOBALS['vault'].'whitelist_mussel.cvd'));
 		if(!$GLOBALS['memCache']['whitelist_mussel.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (whitelist_mussel.cvd)!'.$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+				{
+				if($fm)
+					{
+					if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+					$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (whitelist_mussel.cvd)! ';
+					}
+				return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (whitelist_mussel.cvd)!'.$GLOBALS['linebreak'];
+				}
 			}
 		else
 			{
@@ -1337,10 +1386,18 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 		}
 	if($GLOBALS['MusselConfig']['signatures']['md5_clamav'])
 		{
-		if(!isset($GLOBALS['memCache']['md5_clamav.cvd']))$GLOBALS['memCache']['md5_clamav.cvd']=@implode_md(file($GLOBALS['vault'].'md5_clamav.cvd'));
+		if(!isset($GLOBALS['memCache']['md5_clamav.cvd']))$GLOBALS['memCache']['md5_clamav.cvd']=implode_md(file($GLOBALS['vault'].'md5_clamav.cvd'));
 		if(!$GLOBALS['memCache']['md5_clamav.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (md5_clamav.cvd)!'.$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+				{
+				if($fm)
+					{
+					if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+					$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (md5_clamav.cvd)! ';
+					}
+				return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (md5_clamav.cvd)!'.$GLOBALS['linebreak'];
+				}
 			}
 		else
 			{
@@ -1357,7 +1414,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						}
 					$heur['detections']++;
 					$out.=$lnap.phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-					if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+					if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 					}
 				if(isset($GLOBALS['memCache']['xmlxdp'][$md5]))if(is_array($GLOBALS['memCache']['xmlxdp'][$md5]))
 					{
@@ -1375,7 +1432,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								}
 							$heur['detections']++;
 							$out.=$lnap.phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					}
@@ -1385,10 +1442,18 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 		}
 	if($GLOBALS['MusselConfig']['signatures']['md5_custom'])
 		{
-		if(!isset($GLOBALS['memCache']['md5_custom.cvd']))$GLOBALS['memCache']['md5_custom.cvd']=@implode_md(file($GLOBALS['vault'].'md5_custom.cvd'));
+		if(!isset($GLOBALS['memCache']['md5_custom.cvd']))$GLOBALS['memCache']['md5_custom.cvd']=implode_md(file($GLOBALS['vault'].'md5_custom.cvd'));
 		if(!$GLOBALS['memCache']['md5_custom.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (md5_custom.cvd)!'.$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+				{
+				if($fm)
+					{
+					if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+					$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (md5_custom.cvd)! ';
+					}
+				return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (md5_custom.cvd)!'.$GLOBALS['linebreak'];
+				}
 			}
 		else
 			{
@@ -1405,7 +1470,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						}
 					$heur['detections']++;
 					$out.=$lnap.phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-					if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+					if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 					}
 				if(isset($GLOBALS['memCache']['xmlxdp'][$md5]))if(is_array($GLOBALS['memCache']['xmlxdp'][$md5]))
 					{
@@ -1423,7 +1488,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								}
 							$heur['detections']++;
 							$out.=$lnap.phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					}
@@ -1433,10 +1498,18 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 		}
 	if($GLOBALS['MusselConfig']['signatures']['md5_mussel'])
 		{
-		if(!isset($GLOBALS['memCache']['md5_mussel.cvd']))$GLOBALS['memCache']['md5_mussel.cvd']=@implode_md(file($GLOBALS['vault'].'md5_mussel.cvd'));
+		if(!isset($GLOBALS['memCache']['md5_mussel.cvd']))$GLOBALS['memCache']['md5_mussel.cvd']=implode_md(file($GLOBALS['vault'].'md5_mussel.cvd'));
 		if(!$GLOBALS['memCache']['md5_mussel.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (md5_mussel.cvd)!'.$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+				{
+				if($fm)
+					{
+					if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+					$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (md5_mussel.cvd)! ';
+					}
+				return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (md5_mussel.cvd)!'.$GLOBALS['linebreak'];
+				}
 			}
 		else
 			{
@@ -1453,7 +1526,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						}
 					$heur['detections']++;
 					$out.=$lnap.phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-					if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+					if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 					}
 				if(isset($GLOBALS['memCache']['xmlxdp'][$md5]))if(is_array($GLOBALS['memCache']['xmlxdp'][$md5]))
 					{
@@ -1471,7 +1544,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								}
 							$heur['detections']++;
 							$out.=$lnap.phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					}
@@ -1518,19 +1591,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['html_clamav_standard.cvd']))$GLOBALS['memCache']['html_clamav_standard.cvd']=@file($GLOBALS['vault'].'html_clamav_standard.cvd');
 					if(!$GLOBALS['memCache']['html_clamav_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_clamav_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['html_clamav_standard.map']))$GLOBALS['memCache']['html_clamav_standard.map']=@file($GLOBALS['vault'].'html_clamav_standard.map');
 					if(!$GLOBALS['memCache']['html_clamav_standard.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (html_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (html_clamav_standard.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (html_clamav_standard.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['html_clamav_standard.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (html_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (html_clamav_standard.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (html_clamav_standard.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$vn='';
@@ -1670,7 +1767,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 											}
 										$heur['detections']++;
 										$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								}
@@ -1683,19 +1780,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['html_clamav_regex.cvd']))$GLOBALS['memCache']['html_clamav_regex.cvd']=@file($GLOBALS['vault'].'html_clamav_regex.cvd');
 					if(!$GLOBALS['memCache']['html_clamav_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_clamav_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['html_clamav_regex.map']))$GLOBALS['memCache']['html_clamav_regex.map']=@file($GLOBALS['vault'].'html_clamav_regex.map');
 					if(!$GLOBALS['memCache']['html_clamav_regex.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (html_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (html_clamav_regex.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (html_clamav_regex.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['html_clamav_regex.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (html_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (html_clamav_regex.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (html_clamav_regex.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$vn='';
@@ -1828,7 +1949,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 											}
 										$heur['detections']++;
 										$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								}
@@ -1844,7 +1965,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['html_custom_standard.cvd']))$GLOBALS['memCache']['html_custom_standard.cvd']=@file($GLOBALS['vault'].'html_custom_standard.cvd');
 					if(!$GLOBALS['memCache']['html_custom_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_custom_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['html_custom_standard.cvd']);
@@ -1981,12 +2110,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -1998,7 +2127,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['html_custom_regex.cvd']))$GLOBALS['memCache']['html_custom_regex.cvd']=@file($GLOBALS['vault'].'html_custom_regex.cvd');
 					if(!$GLOBALS['memCache']['html_custom_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_custom_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['html_custom_regex.cvd']);
@@ -2128,12 +2265,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -2148,7 +2285,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['html_mussel_standard.cvd']))$GLOBALS['memCache']['html_mussel_standard.cvd']=@file($GLOBALS['vault'].'html_mussel_standard.cvd');
 					if(!$GLOBALS['memCache']['html_mussel_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_mussel_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['html_mussel_standard.cvd']);
@@ -2285,12 +2430,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -2302,7 +2447,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['html_mussel_regex.cvd']))$GLOBALS['memCache']['html_mussel_regex.cvd']=@file($GLOBALS['vault'].'html_mussel_regex.cvd');
 					if(!$GLOBALS['memCache']['html_mussel_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_mussel_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (html_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['html_mussel_regex.cvd']);
@@ -2432,12 +2585,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -2461,7 +2614,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 	if(!isset($GLOBALS['memCache']['switch.dat']))$GLOBALS['memCache']['switch.dat']=@file($GLOBALS['vault'].'switch.dat');
 	if(!$GLOBALS['memCache']['switch.dat'])
 		{
-		if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (switch.dat)!'.$GLOBALS['linebreak'];
+		if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+			{
+			if($fm)
+				{
+				if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+				$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (switch.dat)! ';
+				}
+			return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (switch.dat)!'.$GLOBALS['linebreak'];
+			}
 		}
 	$c=@count($GLOBALS['memCache']['switch.dat']);
 	for($i=0;$i<$c;$i++)
@@ -2633,7 +2794,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.$GLOBALS['MusselConfig']['lang']['corrupted'].'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['corrupted'].' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['corrupted'].' ('.$ofnSafe.')! ';
 				}
 			if($PEArr['DoScan']&&($GLOBALS['MusselConfig']['signatures']['pe_clamav']||$GLOBALS['MusselConfig']['signatures']['pe_custom']||$GLOBALS['MusselConfig']['signatures']['pe_mussel']))
 				{
@@ -2660,10 +2821,18 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					$CoExMeta.='SectionName:'.$PEArr['SectionName'].';VirtualSize:'.$PEArr['VirtualSize'].';VirtualAddress:'.$PEArr['VirtualAddress'].';SizeOfRawData:'.$PEArr['SizeOfRawData'].';MD5:'.$PEArr['MD5'].';';
 					if($GLOBALS['MusselConfig']['signatures']['pe_clamav'])
 						{
-						if(!isset($GLOBALS['memCache']['pe_clamav.cvd']))$GLOBALS['memCache']['pe_clamav.cvd']=@implode_md(file($GLOBALS['vault'].'pe_clamav.cvd'));
+						if(!isset($GLOBALS['memCache']['pe_clamav.cvd']))$GLOBALS['memCache']['pe_clamav.cvd']=implode_md(file($GLOBALS['vault'].'pe_clamav.cvd'));
 						if(!$GLOBALS['memCache']['pe_clamav.cvd'])
 							{
-							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pe_clamav.cvd)!'.$GLOBALS['linebreak'];
+							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+								{
+								if($fm)
+									{
+									if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+									$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pe_clamav.cvd)! ';
+									}
+								return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pe_clamav.cvd)!'.$GLOBALS['linebreak'];
+								}
 							}
 						else
 							{
@@ -2680,7 +2849,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 										}
 									$heur['detections']++;
 									$out.=$lnap.phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								$xsig='';
 								}
@@ -2688,10 +2857,18 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						}
 					if($GLOBALS['MusselConfig']['signatures']['pe_custom'])
 						{
-						if(!isset($GLOBALS['memCache']['pe_custom.cvd']))$GLOBALS['memCache']['pe_custom.cvd']=@implode_md(file($GLOBALS['vault'].'pe_custom.cvd'));
+						if(!isset($GLOBALS['memCache']['pe_custom.cvd']))$GLOBALS['memCache']['pe_custom.cvd']=implode_md(file($GLOBALS['vault'].'pe_custom.cvd'));
 						if(!$GLOBALS['memCache']['pe_custom.cvd'])
 							{
-							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pe_custom.cvd)!'.$GLOBALS['linebreak'];
+							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+								{
+								if($fm)
+									{
+									if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+									$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pe_custom.cvd)! ';
+									}
+								return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pe_custom.cvd)!'.$GLOBALS['linebreak'];
+								}
 							}
 						else
 							{
@@ -2711,12 +2888,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 										{
 										$heur['weight']++;
 										$heur['web'].=$lnap.phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$heur['cli'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$heur['cli'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									else
 										{
 										$out.=$lnap.phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								$xsig='';
@@ -2725,10 +2902,18 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						}
 					if($GLOBALS['MusselConfig']['signatures']['pe_mussel'])
 						{
-						if(!isset($GLOBALS['memCache']['pe_mussel.cvd']))$GLOBALS['memCache']['pe_mussel.cvd']=@implode_md(file($GLOBALS['vault'].'pe_mussel.cvd'));
+						if(!isset($GLOBALS['memCache']['pe_mussel.cvd']))$GLOBALS['memCache']['pe_mussel.cvd']=implode_md(file($GLOBALS['vault'].'pe_mussel.cvd'));
 						if(!$GLOBALS['memCache']['pe_mussel.cvd'])
 							{
-							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pe_mussel.cvd)!'.$GLOBALS['linebreak'];
+							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+								{
+								if($fm)
+									{
+									if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+									$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pe_mussel.cvd)! ';
+									}
+								return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pe_mussel.cvd)!'.$GLOBALS['linebreak'];
+								}
 							}
 						else
 							{
@@ -2748,12 +2933,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 										{
 										$heur['weight']++;
 										$heur['web'].=$lnap.phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$heur['cli'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$heur['cli'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									else
 										{
 										$out.=$lnap.phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								$xsig='';
@@ -2777,19 +2962,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['exe_clamav_standard.cvd']))$GLOBALS['memCache']['exe_clamav_standard.cvd']=@file($GLOBALS['vault'].'exe_clamav_standard.cvd');
 					if(!$GLOBALS['memCache']['exe_clamav_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_clamav_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['exe_clamav_standard.map']))$GLOBALS['memCache']['exe_clamav_standard.map']=@file($GLOBALS['vault'].'exe_clamav_standard.map');
 					if(!$GLOBALS['memCache']['exe_clamav_standard.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (exe_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (exe_clamav_standard.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (exe_clamav_standard.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['exe_clamav_standard.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (exe_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (exe_clamav_standard.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (exe_clamav_standard.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$vn='';
@@ -2838,7 +3047,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 											}
 										$heur['detections']++;
 										$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								}
@@ -2851,19 +3060,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['exe_clamav_regex.cvd']))$GLOBALS['memCache']['exe_clamav_regex.cvd']=@file($GLOBALS['vault'].'exe_clamav_regex.cvd');
 					if(!$GLOBALS['memCache']['exe_clamav_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_clamav_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['exe_clamav_regex.map']))$GLOBALS['memCache']['exe_clamav_regex.map']=@file($GLOBALS['vault'].'exe_clamav_regex.map');
 					if(!$GLOBALS['memCache']['exe_clamav_regex.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (exe_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (exe_clamav_regex.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (exe_clamav_regex.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['exe_clamav_regex.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (exe_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (exe_clamav_regex.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (exe_clamav_regex.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$vn='';
@@ -2919,7 +3152,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 											}
 										$heur['detections']++;
 										$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								}
@@ -2935,7 +3168,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['exe_custom_standard.cvd']))$GLOBALS['memCache']['exe_custom_standard.cvd']=@file($GLOBALS['vault'].'exe_custom_standard.cvd');
 					if(!$GLOBALS['memCache']['exe_custom_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_custom_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['exe_custom_standard.cvd']);
@@ -3058,12 +3299,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -3075,7 +3316,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['exe_custom_regex.cvd']))$GLOBALS['memCache']['exe_custom_regex.cvd']=@file($GLOBALS['vault'].'exe_custom_regex.cvd');
 					if(!$GLOBALS['memCache']['exe_custom_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_custom_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['exe_custom_regex.cvd']);
@@ -3205,12 +3454,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -3225,7 +3474,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['exe_mussel_standard.cvd']))$GLOBALS['memCache']['exe_mussel_standard.cvd']=@file($GLOBALS['vault'].'exe_mussel_standard.cvd');
 					if(!$GLOBALS['memCache']['exe_mussel_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_mussel_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['exe_mussel_standard.cvd']);
@@ -3348,12 +3605,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -3365,7 +3622,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['exe_mussel_regex.cvd']))$GLOBALS['memCache']['exe_mussel_regex.cvd']=@file($GLOBALS['vault'].'exe_mussel_regex.cvd');
 					if(!$GLOBALS['memCache']['exe_mussel_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_mussel_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (exe_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['exe_mussel_regex.cvd']);
@@ -3495,12 +3760,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -3523,19 +3788,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['elf_clamav_standard.cvd']))$GLOBALS['memCache']['elf_clamav_standard.cvd']=@file($GLOBALS['vault'].'elf_clamav_standard.cvd');
 					if(!$GLOBALS['memCache']['elf_clamav_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_clamav_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['elf_clamav_standard.map']))$GLOBALS['memCache']['elf_clamav_standard.map']=@file($GLOBALS['vault'].'elf_clamav_standard.map');
 					if(!$GLOBALS['memCache']['elf_clamav_standard.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (elf_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (elf_clamav_standard.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (elf_clamav_standard.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['elf_clamav_standard.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (elf_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (elf_clamav_standard.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (elf_clamav_standard.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$vn='';
@@ -3584,7 +3873,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 											}
 										$heur['detections']++;
 										$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								}
@@ -3597,19 +3886,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['elf_clamav_regex.cvd']))$GLOBALS['memCache']['elf_clamav_regex.cvd']=@file($GLOBALS['vault'].'elf_clamav_regex.cvd');
 					if(!$GLOBALS['memCache']['elf_clamav_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_clamav_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['elf_clamav_regex.map']))$GLOBALS['memCache']['elf_clamav_regex.map']=@file($GLOBALS['vault'].'elf_clamav_regex.map');
 					if(!$GLOBALS['memCache']['elf_clamav_regex.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (elf_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (elf_clamav_regex.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (elf_clamav_regex.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['elf_clamav_regex.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (elf_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (elf_clamav_regex.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (elf_clamav_regex.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$vn='';
@@ -3665,7 +3978,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 											}
 										$heur['detections']++;
 										$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								}
@@ -3681,7 +3994,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['elf_custom_standard.cvd']))$GLOBALS['memCache']['elf_custom_standard.cvd']=@file($GLOBALS['vault'].'elf_custom_standard.cvd');
 					if(!$GLOBALS['memCache']['elf_custom_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_custom_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['elf_custom_standard.cvd']);
@@ -3804,12 +4125,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -3821,7 +4142,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['elf_custom_regex.cvd']))$GLOBALS['memCache']['elf_custom_regex.cvd']=@file($GLOBALS['vault'].'elf_custom_regex.cvd');
 					if(!$GLOBALS['memCache']['elf_custom_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_custom_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['elf_custom_regex.cvd']);
@@ -3951,12 +4280,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -3971,7 +4300,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['elf_mussel_standard.cvd']))$GLOBALS['memCache']['elf_mussel_standard.cvd']=@file($GLOBALS['vault'].'elf_mussel_standard.cvd');
 					if(!$GLOBALS['memCache']['elf_mussel_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_mussel_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['elf_mussel_standard.cvd']);
@@ -4094,12 +4431,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -4111,7 +4448,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['elf_mussel_regex.cvd']))$GLOBALS['memCache']['elf_mussel_regex.cvd']=@file($GLOBALS['vault'].'elf_mussel_regex.cvd');
 					if(!$GLOBALS['memCache']['elf_mussel_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_mussel_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (elf_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['elf_mussel_regex.cvd']);
@@ -4241,12 +4586,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -4269,19 +4614,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['macho_clamav_standard.cvd']))$GLOBALS['memCache']['macho_clamav_standard.cvd']=@file($GLOBALS['vault'].'macho_clamav_standard.cvd');
 					if(!$GLOBALS['memCache']['macho_clamav_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_clamav_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['macho_clamav_standard.map']))$GLOBALS['memCache']['macho_clamav_standard.map']=@file($GLOBALS['vault'].'macho_clamav_standard.map');
 					if(!$GLOBALS['memCache']['macho_clamav_standard.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (macho_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (macho_clamav_standard.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (macho_clamav_standard.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['macho_clamav_standard.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (macho_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (macho_clamav_standard.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (macho_clamav_standard.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$vn='';
@@ -4330,7 +4699,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 											}
 										$heur['detections']++;
 										$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								}
@@ -4343,19 +4712,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['macho_clamav_regex.cvd']))$GLOBALS['memCache']['macho_clamav_regex.cvd']=@file($GLOBALS['vault'].'macho_clamav_regex.cvd');
 					if(!$GLOBALS['memCache']['macho_clamav_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_clamav_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['macho_clamav_regex.map']))$GLOBALS['memCache']['macho_clamav_regex.map']=@file($GLOBALS['vault'].'macho_clamav_regex.map');
 					if(!$GLOBALS['memCache']['macho_clamav_regex.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (macho_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (macho_clamav_regex.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (macho_clamav_regex.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['macho_clamav_regex.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (macho_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (macho_clamav_regex.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (macho_clamav_regex.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$vn='';
@@ -4411,7 +4804,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 											}
 										$heur['detections']++;
 										$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								}
@@ -4427,7 +4820,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['macho_custom_standard.cvd']))$GLOBALS['memCache']['macho_custom_standard.cvd']=@file($GLOBALS['vault'].'macho_custom_standard.cvd');
 					if(!$GLOBALS['memCache']['macho_custom_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_custom_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['macho_custom_standard.cvd']);
@@ -4550,12 +4951,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -4567,7 +4968,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['macho_custom_regex.cvd']))$GLOBALS['memCache']['macho_custom_regex.cvd']=@file($GLOBALS['vault'].'macho_custom_regex.cvd');
 					if(!$GLOBALS['memCache']['macho_custom_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_custom_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['macho_custom_regex.cvd']);
@@ -4697,12 +5106,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -4717,7 +5126,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['macho_mussel_standard.cvd']))$GLOBALS['memCache']['macho_mussel_standard.cvd']=@file($GLOBALS['vault'].'macho_mussel_standard.cvd');
 					if(!$GLOBALS['memCache']['macho_mussel_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_mussel_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['macho_mussel_standard.cvd']);
@@ -4840,12 +5257,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -4857,7 +5274,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['macho_mussel_regex.cvd']))$GLOBALS['memCache']['macho_mussel_regex.cvd']=@file($GLOBALS['vault'].'macho_mussel_regex.cvd');
 					if(!$GLOBALS['memCache']['macho_mussel_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_mussel_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (macho_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['macho_mussel_regex.cvd']);
@@ -4987,12 +5412,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -5013,19 +5438,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(!isset($GLOBALS['memCache']['general_clamav_standard.cvd']))$GLOBALS['memCache']['general_clamav_standard.cvd']=@file($GLOBALS['vault'].'general_clamav_standard.cvd');
 			if(!$GLOBALS['memCache']['general_clamav_standard.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_clamav_standard.cvd)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			if(!isset($GLOBALS['memCache']['general_clamav_standard.map']))$GLOBALS['memCache']['general_clamav_standard.map']=@file($GLOBALS['vault'].'general_clamav_standard.map');
 			if(!$GLOBALS['memCache']['general_clamav_standard.map'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (general_clamav_standard.map)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (general_clamav_standard.map)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (general_clamav_standard.map)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['general_clamav_standard.map']);
 			if($c<1)
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (general_clamav_standard.map)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (general_clamav_standard.map)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (general_clamav_standard.map)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$vn='';
@@ -5168,7 +5617,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									}
 								$heur['detections']++;
 								$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							}
 						}
@@ -5181,19 +5630,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(!isset($GLOBALS['memCache']['general_clamav_regex.cvd']))$GLOBALS['memCache']['general_clamav_regex.cvd']=@file($GLOBALS['vault'].'general_clamav_regex.cvd');
 			if(!$GLOBALS['memCache']['general_clamav_regex.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_clamav_regex.cvd)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			if(!isset($GLOBALS['memCache']['general_clamav_regex.map']))$GLOBALS['memCache']['general_clamav_regex.map']=@file($GLOBALS['vault'].'general_clamav_regex.map');
 			if(!$GLOBALS['memCache']['general_clamav_regex.map'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (general_clamav_regex.map)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (general_clamav_regex.map)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (general_clamav_regex.map)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['general_clamav_regex.map']);
 			if($c<1)
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (general_clamav_regex.map)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (general_clamav_regex.map)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (general_clamav_regex.map)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$vn='';
@@ -5329,7 +5802,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									}
 								$heur['detections']++;
 								$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							}
 						}
@@ -5345,7 +5818,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(!isset($GLOBALS['memCache']['general_custom_standard.cvd']))$GLOBALS['memCache']['general_custom_standard.cvd']=@file($GLOBALS['vault'].'general_custom_standard.cvd');
 			if(!$GLOBALS['memCache']['general_custom_standard.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_custom_standard.cvd)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['general_custom_standard.cvd']);
@@ -5485,12 +5966,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							{
 							$heur['weight']++;
 							$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						else
 							{
 							$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					}
@@ -5502,7 +5983,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(!isset($GLOBALS['memCache']['general_custom_regex.cvd']))$GLOBALS['memCache']['general_custom_regex.cvd']=@file($GLOBALS['vault'].'general_custom_regex.cvd');
 			if(!$GLOBALS['memCache']['general_custom_regex.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_custom_regex.cvd)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['general_custom_regex.cvd']);
@@ -5635,12 +6124,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							{
 							$heur['weight']++;
 							$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						else
 							{
 							$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					}
@@ -5655,7 +6144,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(!isset($GLOBALS['memCache']['general_mussel_standard.cvd']))$GLOBALS['memCache']['general_mussel_standard.cvd']=@file($GLOBALS['vault'].'general_mussel_standard.cvd');
 			if(!$GLOBALS['memCache']['general_mussel_standard.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_mussel_standard.cvd)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['general_mussel_standard.cvd']);
@@ -5795,12 +6292,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							{
 							$heur['weight']++;
 							$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						else
 							{
 							$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					}
@@ -5812,7 +6309,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(!isset($GLOBALS['memCache']['general_mussel_regex.cvd']))$GLOBALS['memCache']['general_mussel_regex.cvd']=@file($GLOBALS['vault'].'general_mussel_regex.cvd');
 			if(!$GLOBALS['memCache']['general_mussel_regex.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_mussel_regex.cvd)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (general_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['general_mussel_regex.cvd']);
@@ -5945,12 +6450,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							{
 							$heur['weight']++;
 							$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						else
 							{
 							$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					}
@@ -5965,19 +6470,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(!isset($GLOBALS['memCache']['ascii_clamav_standard.cvd']))$GLOBALS['memCache']['ascii_clamav_standard.cvd']=@file($GLOBALS['vault'].'ascii_clamav_standard.cvd');
 			if(!$GLOBALS['memCache']['ascii_clamav_standard.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_clamav_standard.cvd)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			if(!isset($GLOBALS['memCache']['ascii_clamav_standard.map']))$GLOBALS['memCache']['ascii_clamav_standard.map']=@file($GLOBALS['vault'].'ascii_clamav_standard.map');
 			if(!$GLOBALS['memCache']['ascii_clamav_standard.map'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (ascii_clamav_standard.map)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (ascii_clamav_standard.map)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (ascii_clamav_standard.map)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['ascii_clamav_standard.map']);
 			if($c<1)
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (ascii_clamav_standard.map)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (ascii_clamav_standard.map)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (ascii_clamav_standard.map)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$vn='';
@@ -6120,7 +6649,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									}
 								$heur['detections']++;
 								$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							}
 						}
@@ -6133,19 +6662,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(!isset($GLOBALS['memCache']['ascii_clamav_regex.cvd']))$GLOBALS['memCache']['ascii_clamav_regex.cvd']=@file($GLOBALS['vault'].'ascii_clamav_regex.cvd');
 			if(!$GLOBALS['memCache']['ascii_clamav_regex.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_clamav_regex.cvd)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			if(!isset($GLOBALS['memCache']['ascii_clamav_regex.map']))$GLOBALS['memCache']['ascii_clamav_regex.map']=@file($GLOBALS['vault'].'ascii_clamav_regex.map');
 			if(!$GLOBALS['memCache']['ascii_clamav_regex.map'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (ascii_clamav_regex.map)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (ascii_clamav_regex.map)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (ascii_clamav_regex.map)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['ascii_clamav_regex.map']);
 			if($c<1)
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (ascii_clamav_regex.map)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (ascii_clamav_regex.map)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (ascii_clamav_regex.map)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$vn='';
@@ -6281,7 +6834,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									}
 								$heur['detections']++;
 								$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							}
 						}
@@ -6297,7 +6850,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(!isset($GLOBALS['memCache']['ascii_custom_standard.cvd']))$GLOBALS['memCache']['ascii_custom_standard.cvd']=@file($GLOBALS['vault'].'ascii_custom_standard.cvd');
 			if(!$GLOBALS['memCache']['ascii_custom_standard.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_custom_standard.cvd)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['ascii_custom_standard.cvd']);
@@ -6437,12 +6998,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							{
 							$heur['weight']++;
 							$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						else
 							{
 							$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					}
@@ -6454,7 +7015,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(!isset($GLOBALS['memCache']['ascii_custom_regex.cvd']))$GLOBALS['memCache']['ascii_custom_regex.cvd']=@file($GLOBALS['vault'].'ascii_custom_regex.cvd');
 			if(!$GLOBALS['memCache']['ascii_custom_regex.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_custom_regex.cvd)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['ascii_custom_regex.cvd']);
@@ -6587,12 +7156,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							{
 							$heur['weight']++;
 							$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						else
 							{
 							$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					}
@@ -6607,7 +7176,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(!isset($GLOBALS['memCache']['ascii_mussel_standard.cvd']))$GLOBALS['memCache']['ascii_mussel_standard.cvd']=@file($GLOBALS['vault'].'ascii_mussel_standard.cvd');
 			if(!$GLOBALS['memCache']['ascii_mussel_standard.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_mussel_standard.cvd)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['ascii_mussel_standard.cvd']);
@@ -6747,12 +7324,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							{
 							$heur['weight']++;
 							$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						else
 							{
 							$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					}
@@ -6764,7 +7341,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(!isset($GLOBALS['memCache']['ascii_mussel_regex.cvd']))$GLOBALS['memCache']['ascii_mussel_regex.cvd']=@file($GLOBALS['vault'].'ascii_mussel_regex.cvd');
 			if(!$GLOBALS['memCache']['ascii_mussel_regex.cvd'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_mussel_regex.cvd)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ascii_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$c=@count($GLOBALS['memCache']['ascii_mussel_regex.cvd']);
@@ -6897,12 +7482,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							{
 							$heur['weight']++;
 							$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						else
 							{
 							$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					}
@@ -6923,7 +7508,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>'PHP'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'PHP'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'PHP'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		}
@@ -6940,7 +7525,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>'EXE'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'EXE'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'EXE'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		else
@@ -6954,7 +7539,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>'EXE'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'EXE'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'EXE'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		if($xt=='elf')
@@ -6968,7 +7553,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>'ELF'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'ELF'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'ELF'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		else
@@ -6982,7 +7567,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>'ELF'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'ELF'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'ELF'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		if($xt=='lnk')
@@ -6996,7 +7581,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>'LNK'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'LNK'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'LNK'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		else
@@ -7010,7 +7595,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>'LNK'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'LNK'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'LNK'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		if($xt=='msi')
@@ -7024,7 +7609,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>'MSI'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'MSI'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'MSI'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		}
@@ -7038,19 +7623,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(!isset($GLOBALS['memCache']['ole_clamav_standard.cvd']))$GLOBALS['memCache']['ole_clamav_standard.cvd']=@file($GLOBALS['vault'].'ole_clamav_standard.cvd');
 				if(!$GLOBALS['memCache']['ole_clamav_standard.cvd'])
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_clamav_standard.cvd)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				if(!isset($GLOBALS['memCache']['ole_clamav_standard.map']))$GLOBALS['memCache']['ole_clamav_standard.map']=@file($GLOBALS['vault'].'ole_clamav_standard.map');
 				if(!$GLOBALS['memCache']['ole_clamav_standard.map'])
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (ole_clamav_standard.map)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (ole_clamav_standard.map)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (ole_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				$c=@count($GLOBALS['memCache']['ole_clamav_standard.map']);
 				if($c<1)
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (ole_clamav_standard.map)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (ole_clamav_standard.map)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (ole_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				$vn='';
@@ -7113,7 +7722,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 										}
 									$heur['detections']++;
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -7126,19 +7735,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(!isset($GLOBALS['memCache']['ole_clamav_regex.cvd']))$GLOBALS['memCache']['ole_clamav_regex.cvd']=@file($GLOBALS['vault'].'ole_clamav_regex.cvd');
 				if(!$GLOBALS['memCache']['ole_clamav_regex.cvd'])
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_clamav_regex.cvd)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				if(!isset($GLOBALS['memCache']['ole_clamav_regex.map']))$GLOBALS['memCache']['ole_clamav_regex.map']=@file($GLOBALS['vault'].'ole_clamav_regex.map');
 				if(!$GLOBALS['memCache']['ole_clamav_regex.map'])
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (ole_clamav_regex.map)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (ole_clamav_regex.map)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (ole_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				$c=@count($GLOBALS['memCache']['ole_clamav_regex.map']);
 				if($c<1)
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (ole_clamav_regex.map)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (ole_clamav_regex.map)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (ole_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				$vn='';
@@ -7194,7 +7827,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 										}
 									$heur['detections']++;
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -7210,7 +7843,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(!isset($GLOBALS['memCache']['ole_custom_standard.cvd']))$GLOBALS['memCache']['ole_custom_standard.cvd']=@file($GLOBALS['vault'].'ole_custom_standard.cvd');
 				if(!$GLOBALS['memCache']['ole_custom_standard.cvd'])
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_custom_standard.cvd)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				$c=@count($GLOBALS['memCache']['ole_custom_standard.cvd']);
@@ -7347,12 +7988,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								{
 								$heur['weight']++;
 								$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							else
 								{
 								$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							}
 						}
@@ -7364,7 +8005,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(!isset($GLOBALS['memCache']['ole_custom_regex.cvd']))$GLOBALS['memCache']['ole_custom_regex.cvd']=@file($GLOBALS['vault'].'ole_custom_regex.cvd');
 				if(!$GLOBALS['memCache']['ole_custom_regex.cvd'])
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_custom_regex.cvd)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				$c=@count($GLOBALS['memCache']['ole_custom_regex.cvd']);
@@ -7494,12 +8143,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								{
 								$heur['weight']++;
 								$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							else
 								{
 								$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							}
 						}
@@ -7514,7 +8163,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(!isset($GLOBALS['memCache']['ole_mussel_standard.cvd']))$GLOBALS['memCache']['ole_mussel_standard.cvd']=@file($GLOBALS['vault'].'ole_mussel_standard.cvd');
 				if(!$GLOBALS['memCache']['ole_mussel_standard.cvd'])
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_mussel_standard.cvd)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				$c=@count($GLOBALS['memCache']['ole_mussel_standard.cvd']);
@@ -7651,12 +8308,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								{
 								$heur['weight']++;
 								$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							else
 								{
 								$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							}
 						}
@@ -7668,7 +8325,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(!isset($GLOBALS['memCache']['ole_mussel_regex.cvd']))$GLOBALS['memCache']['ole_mussel_regex.cvd']=@file($GLOBALS['vault'].'ole_mussel_regex.cvd');
 				if(!$GLOBALS['memCache']['ole_mussel_regex.cvd'])
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_mussel_regex.cvd)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (ole_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				$c=@count($GLOBALS['memCache']['ole_mussel_regex.cvd']);
@@ -7798,12 +8463,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								{
 								$heur['weight']++;
 								$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							else
 								{
 								$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							}
 						}
@@ -7825,7 +8490,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>'ZIP'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'ZIP'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'ZIP'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		if($xt=='rar')
@@ -7839,7 +8504,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>'RAR'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'RAR'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'RAR'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		if($xt=='gz')
@@ -7853,7 +8518,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>'GZIP'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'GZIP'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'GZIP'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		if($xt=='bz2')
@@ -7867,7 +8532,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>'BZIP2'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'BZIP2'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'BZIP2'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		}
@@ -7884,7 +8549,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>'Office'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'Office'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'Office'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		}
@@ -7901,7 +8566,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		if($xt=='gif')
@@ -7915,7 +8580,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		if($xt=='jfi'||$xt=='jfif'||$xt=='jif'||$xt=='jpe'||$xt=='jpeg'||$xt=='jpg')
@@ -7929,7 +8594,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		if($xt=='jp2')
@@ -7943,7 +8608,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		if($xt=='pdd'||$xt=='psd')
@@ -7957,7 +8622,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		if($xt=='png')
@@ -7971,7 +8636,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		if($xt=='webp')
@@ -7985,7 +8650,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		if($xt=='xcf')
@@ -7999,7 +8664,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$heur['detections']++;
 				$out.=$lnap.phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+				if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>$GLOBALS['MusselConfig']['lang']['image']),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 				}
 			}
 		}
@@ -8014,7 +8679,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				}
 			$heur['detections']++;
 			$out.=$lnap.phpMusselV(array('x'=>'PDF'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).'!'.$GLOBALS['linebreak'];
-			if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'PDF'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofn.')! ';
+			if($fm)$GLOBALS['xfm'].=phpMusselV(array('x'=>'PDF'),$GLOBALS['MusselConfig']['lang']['scan_chameleon']).' ('.$ofnSafe.')! ';
 			}
 		}
 	if(!isset($whitelist['Commands'])&&$GLOBALS['MusselConfig']['attack_specific']['general_commands'])
@@ -8024,13 +8689,29 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(!isset($GLOBALS['memCache']['hex_general_commands.csv']))$GLOBALS['memCache']['hex_general_commands.csv']=@explode(',',implode_md(file($GLOBALS['vault'].'hex_general_commands.csv')));
 			if(!$GLOBALS['memCache']['hex_general_commands.csv'])
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (hex_general_commands.csv)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (hex_general_commands.csv)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (hex_general_commands.csv)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			$c=count($GLOBALS['memCache']['hex_general_commands.csv']);
 			if($c<1)
 				{
-				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (hex_general_commands.csv)!'.$GLOBALS['linebreak'];
+				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+					{
+					if($fm)
+						{
+						if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (hex_general_commands.csv)! ';
+						}
+					return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (hex_general_commands.csv)!'.$GLOBALS['linebreak'];
+					}
 				break;
 				}
 			for($i=0;$i<$c;$i++)
@@ -8045,7 +8726,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						}
 					$heur['detections']++;
 					$out.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_command_injection'].'!'.$GLOBALS['linebreak'];
-					if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_command_injection'].', \''.urlencode($xgc).'\' ('.$ofn.')! ';
+					if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_command_injection'].', \''.$xgc.'\' ('.$ofnSafe.')! ';
 					}
 				}
 			break;
@@ -8070,19 +8751,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['graphics_clamav_standard.cvd']))$GLOBALS['memCache']['graphics_clamav_standard.cvd']=@file($GLOBALS['vault'].'graphics_clamav_standard.cvd');
 					if(!$GLOBALS['memCache']['graphics_clamav_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_clamav_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['graphics_clamav_standard.map']))$GLOBALS['memCache']['graphics_clamav_standard.map']=@file($GLOBALS['vault'].'graphics_clamav_standard.map');
 					if(!$GLOBALS['memCache']['graphics_clamav_standard.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (graphics_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (graphics_clamav_standard.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (graphics_clamav_standard.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['graphics_clamav_standard.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (graphics_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (graphics_clamav_standard.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (graphics_clamav_standard.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$vn='';
@@ -8145,7 +8850,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 											}
 										$heur['detections']++;
 										$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								}
@@ -8158,19 +8863,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['graphics_clamav_regex.cvd']))$GLOBALS['memCache']['graphics_clamav_regex.cvd']=@file($GLOBALS['vault'].'graphics_clamav_regex.cvd');
 					if(!$GLOBALS['memCache']['graphics_clamav_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_clamav_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['graphics_clamav_regex.map']))$GLOBALS['memCache']['graphics_clamav_regex.map']=@file($GLOBALS['vault'].'graphics_clamav_regex.map');
 					if(!$GLOBALS['memCache']['graphics_clamav_regex.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (graphics_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (graphics_clamav_regex.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (graphics_clamav_regex.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['graphics_clamav_regex.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (graphics_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (graphics_clamav_regex.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (graphics_clamav_regex.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$vn='';
@@ -8226,7 +8955,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 											}
 										$heur['detections']++;
 										$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								}
@@ -8242,7 +8971,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['graphics_custom_standard.cvd']))$GLOBALS['memCache']['graphics_custom_standard.cvd']=@file($GLOBALS['vault'].'graphics_custom_standard.cvd');
 					if(!$GLOBALS['memCache']['graphics_custom_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_custom_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['graphics_custom_standard.cvd']);
@@ -8379,12 +9116,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -8396,7 +9133,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['graphics_custom_regex.cvd']))$GLOBALS['memCache']['graphics_custom_regex.cvd']=@file($GLOBALS['vault'].'graphics_custom_regex.cvd');
 					if(!$GLOBALS['memCache']['graphics_custom_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_custom_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['graphics_custom_regex.cvd']);
@@ -8526,12 +9271,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -8546,7 +9291,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['graphics_mussel_standard.cvd']))$GLOBALS['memCache']['graphics_mussel_standard.cvd']=@file($GLOBALS['vault'].'graphics_mussel_standard.cvd');
 					if(!$GLOBALS['memCache']['graphics_mussel_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_mussel_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['graphics_mussel_standard.cvd']);
@@ -8683,12 +9436,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -8700,7 +9453,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['graphics_mussel_regex.cvd']))$GLOBALS['memCache']['graphics_mussel_regex.cvd']=@file($GLOBALS['vault'].'graphics_mussel_regex.cvd');
 					if(!$GLOBALS['memCache']['graphics_mussel_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_mussel_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (graphics_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['graphics_mussel_regex.cvd']);
@@ -8830,12 +9591,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -8856,19 +9617,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['pdf_clamav_standard.cvd']))$GLOBALS['memCache']['pdf_clamav_standard.cvd']=@file($GLOBALS['vault'].'pdf_clamav_standard.cvd');
 					if(!$GLOBALS['memCache']['pdf_clamav_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_clamav_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['pdf_clamav_standard.map']))$GLOBALS['memCache']['pdf_clamav_standard.map']=@file($GLOBALS['vault'].'pdf_clamav_standard.map');
 					if(!$GLOBALS['memCache']['pdf_clamav_standard.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (pdf_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (pdf_clamav_standard.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (pdf_clamav_standard.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['pdf_clamav_standard.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (pdf_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (pdf_clamav_standard.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (pdf_clamav_standard.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$vn='';
@@ -8917,7 +9702,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 											}
 										$heur['detections']++;
 										$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								}
@@ -8930,19 +9715,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['pdf_clamav_regex.cvd']))$GLOBALS['memCache']['pdf_clamav_regex.cvd']=@file($GLOBALS['vault'].'pdf_clamav_regex.cvd');
 					if(!$GLOBALS['memCache']['pdf_clamav_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_clamav_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['pdf_clamav_regex.map']))$GLOBALS['memCache']['pdf_clamav_regex.map']=@file($GLOBALS['vault'].'pdf_clamav_regex.map');
 					if(!$GLOBALS['memCache']['pdf_clamav_regex.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (pdf_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (pdf_clamav_regex.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (pdf_clamav_regex.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['pdf_clamav_regex.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (pdf_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (pdf_clamav_regex.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (pdf_clamav_regex.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$vn='';
@@ -8998,7 +9807,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 											}
 										$heur['detections']++;
 										$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								}
@@ -9014,7 +9823,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['pdf_custom_standard.cvd']))$GLOBALS['memCache']['pdf_custom_standard.cvd']=@file($GLOBALS['vault'].'pdf_custom_standard.cvd');
 					if(!$GLOBALS['memCache']['pdf_custom_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_custom_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['pdf_custom_standard.cvd']);
@@ -9137,12 +9954,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -9154,7 +9971,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['pdf_custom_regex.cvd']))$GLOBALS['memCache']['pdf_custom_regex.cvd']=@file($GLOBALS['vault'].'pdf_custom_regex.cvd');
 					if(!$GLOBALS['memCache']['pdf_custom_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_custom_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['pdf_custom_regex.cvd']);
@@ -9284,12 +10109,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -9304,7 +10129,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['pdf_mussel_standard.cvd']))$GLOBALS['memCache']['pdf_mussel_standard.cvd']=@file($GLOBALS['vault'].'pdf_mussel_standard.cvd');
 					if(!$GLOBALS['memCache']['pdf_mussel_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_mussel_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['pdf_mussel_standard.cvd']);
@@ -9427,12 +10260,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -9444,7 +10277,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['pdf_mussel_regex.cvd']))$GLOBALS['memCache']['pdf_mussel_regex.cvd']=@file($GLOBALS['vault'].'pdf_mussel_regex.cvd');
 					if(!$GLOBALS['memCache']['pdf_mussel_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_mussel_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pdf_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['pdf_mussel_regex.cvd']);
@@ -9574,12 +10415,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -9602,19 +10443,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['swf_clamav_standard.cvd']))$GLOBALS['memCache']['swf_clamav_standard.cvd']=@file($GLOBALS['vault'].'swf_clamav_standard.cvd');
 					if(!$GLOBALS['memCache']['swf_clamav_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_clamav_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['swf_clamav_standard.map']))$GLOBALS['memCache']['swf_clamav_standard.map']=@file($GLOBALS['vault'].'swf_clamav_standard.map');
 					if(!$GLOBALS['memCache']['swf_clamav_standard.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (swf_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (swf_clamav_standard.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (swf_clamav_standard.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['swf_clamav_standard.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (swf_clamav_standard.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (swf_clamav_standard.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (swf_clamav_standard.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$vn='';
@@ -9663,7 +10528,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 											}
 										$heur['detections']++;
 										$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								}
@@ -9676,19 +10541,43 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['swf_clamav_regex.cvd']))$GLOBALS['memCache']['swf_clamav_regex.cvd']=@file($GLOBALS['vault'].'swf_clamav_regex.cvd');
 					if(!$GLOBALS['memCache']['swf_clamav_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_clamav_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					if(!isset($GLOBALS['memCache']['swf_clamav_regex.map']))$GLOBALS['memCache']['swf_clamav_regex.map']=@file($GLOBALS['vault'].'swf_clamav_regex.map');
 					if(!$GLOBALS['memCache']['swf_clamav_regex.map'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (swf_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (swf_clamav_regex.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_missing'].' (swf_clamav_regex.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['swf_clamav_regex.map']);
 					if($c<1)
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (swf_clamav_regex.map)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (swf_clamav_regex.map)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_map_corrupted'].' (swf_clamav_regex.map)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$vn='';
@@ -9744,7 +10633,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 											}
 										$heur['detections']++;
 										$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 										}
 									}
 								}
@@ -9760,7 +10649,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['swf_custom_standard.cvd']))$GLOBALS['memCache']['swf_custom_standard.cvd']=@file($GLOBALS['vault'].'swf_custom_standard.cvd');
 					if(!$GLOBALS['memCache']['swf_custom_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_custom_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['swf_custom_standard.cvd']);
@@ -9883,12 +10780,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -9900,7 +10797,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['swf_custom_regex.cvd']))$GLOBALS['memCache']['swf_custom_regex.cvd']=@file($GLOBALS['vault'].'swf_custom_regex.cvd');
 					if(!$GLOBALS['memCache']['swf_custom_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_custom_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['swf_custom_regex.cvd']);
@@ -10030,12 +10935,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -10050,7 +10955,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['swf_mussel_standard.cvd']))$GLOBALS['memCache']['swf_mussel_standard.cvd']=@file($GLOBALS['vault'].'swf_mussel_standard.cvd');
 					if(!$GLOBALS['memCache']['swf_mussel_standard.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_mussel_standard.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['swf_mussel_standard.cvd']);
@@ -10173,12 +11086,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -10190,7 +11103,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['swf_mussel_regex.cvd']))$GLOBALS['memCache']['swf_mussel_regex.cvd']=@file($GLOBALS['vault'].'swf_mussel_regex.cvd');
 					if(!$GLOBALS['memCache']['swf_mussel_regex.cvd'])
 						{
-						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+							{
+							if($fm)
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_mussel_regex.cvd)! ';
+								}
+							return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (swf_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+							}
 						break;
 						}
 					$c=@count($GLOBALS['memCache']['swf_mussel_regex.cvd']);
@@ -10320,12 +11241,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$heur['weight']++;
 									$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -10344,7 +11265,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(!isset($GLOBALS['memCache']['xmlxdp_clamav_standard.cvd']))$GLOBALS['memCache']['xmlxdp_clamav_standard.cvd']=@file($GLOBALS['vault'].'xmlxdp_clamav_standard.cvd');
 				if(!$GLOBALS['memCache']['xmlxdp_clamav_standard.cvd'])
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_clamav_standard.cvd)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_clamav_standard.cvd)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				$c=@count($GLOBALS['memCache']['xmlxdp_clamav_standard.cvd']);
@@ -10388,7 +11317,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								}
 							$heur['detections']++;
 							$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					}
@@ -10399,7 +11328,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(!isset($GLOBALS['memCache']['xmlxdp_clamav_regex.cvd']))$GLOBALS['memCache']['xmlxdp_clamav_regex.cvd']=@file($GLOBALS['vault'].'xmlxdp_clamav_regex.cvd');
 				if(!$GLOBALS['memCache']['xmlxdp_clamav_regex.cvd'])
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_clamav_regex.cvd)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_clamav_regex.cvd)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				$c=@count($GLOBALS['memCache']['xmlxdp_clamav_regex.cvd']);
@@ -10450,7 +11387,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								}
 							$heur['detections']++;
 							$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					}
@@ -10464,7 +11401,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(!isset($GLOBALS['memCache']['xmlxdp_custom_standard.cvd']))$GLOBALS['memCache']['xmlxdp_custom_standard.cvd']=@file($GLOBALS['vault'].'xmlxdp_custom_standard.cvd');
 				if(!$GLOBALS['memCache']['xmlxdp_custom_standard.cvd'])
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_custom_standard.cvd)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_custom_standard.cvd)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				$c=@count($GLOBALS['memCache']['xmlxdp_custom_standard.cvd']);
@@ -10587,12 +11532,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								{
 								$heur['weight']++;
 								$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							else
 								{
 								$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							}
 						}
@@ -10604,7 +11549,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(!isset($GLOBALS['memCache']['xmlxdp_custom_regex.cvd']))$GLOBALS['memCache']['xmlxdp_custom_regex.cvd']=@file($GLOBALS['vault'].'xmlxdp_custom_regex.cvd');
 				if(!$GLOBALS['memCache']['xmlxdp_custom_regex.cvd'])
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_custom_regex.cvd)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_custom_regex.cvd)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				$c=@count($GLOBALS['memCache']['xmlxdp_custom_regex.cvd']);
@@ -10734,12 +11687,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								{
 								$heur['weight']++;
 								$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							else
 								{
 								$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							}
 						}
@@ -10754,7 +11707,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(!isset($GLOBALS['memCache']['xmlxdp_mussel_standard.cvd']))$GLOBALS['memCache']['xmlxdp_mussel_standard.cvd']=@file($GLOBALS['vault'].'xmlxdp_mussel_standard.cvd');
 				if(!$GLOBALS['memCache']['xmlxdp_mussel_standard.cvd'])
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_mussel_standard.cvd)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_mussel_standard.cvd)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				$c=@count($GLOBALS['memCache']['xmlxdp_mussel_standard.cvd']);
@@ -10877,12 +11838,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								{
 								$heur['weight']++;
 								$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							else
 								{
 								$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							}
 						}
@@ -10894,7 +11855,15 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(!isset($GLOBALS['memCache']['xmlxdp_mussel_regex.cvd']))$GLOBALS['memCache']['xmlxdp_mussel_regex.cvd']=@file($GLOBALS['vault'].'xmlxdp_mussel_regex.cvd');
 				if(!$GLOBALS['memCache']['xmlxdp_mussel_regex.cvd'])
 					{
-					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+						{
+						if($fm)
+							{
+							if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_mussel_regex.cvd)! ';
+							}
+						return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (xmlxdp_mussel_regex.cvd)!'.$GLOBALS['linebreak'];
+						}
 					break;
 					}
 				$c=@count($GLOBALS['memCache']['xmlxdp_mussel_regex.cvd']);
@@ -11024,12 +11993,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								{
 								$heur['weight']++;
 								$heur['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$heur['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							else
 								{
 								$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 								}
 							}
 						}
@@ -11049,15 +12018,23 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$ofn.$GLOBALS['linebreak'];
 				$xskd=true;
 				}
-			if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['detected_control_characters'].' ('.$ofn.')! ';
+			if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['detected_control_characters'].' ('.$ofnSafe.')! ';
 			}
 		}
 	if($GLOBALS['MusselConfig']['signatures']['coex_clamav'])
 		{
-		if(!isset($GLOBALS['memCache']['coex_clamav.cvd']))$GLOBALS['memCache']['coex_clamav.cvd']=@implode_md(file($GLOBALS['vault'].'coex_clamav.cvd'));
+		if(!isset($GLOBALS['memCache']['coex_clamav.cvd']))$GLOBALS['memCache']['coex_clamav.cvd']=implode_md(file($GLOBALS['vault'].'coex_clamav.cvd'));
 		if(!$GLOBALS['memCache']['coex_clamav.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (coex_clamav.cvd)!'.$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+				{
+				if($fm)
+					{
+					if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+					$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (coex_clamav.cvd)! ';
+					}
+				return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (coex_clamav.cvd)!'.$GLOBALS['linebreak'];
+				}
 			}
 		else
 			{
@@ -11104,56 +12081,56 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								{
 								if($xsig[$xi][$sxi][2]=='A')
 									{
-									if(!substr_count(",FD,FD-RX,FD-NORM,FD-NORM-RX,META,",",".$xsig[$xi][$sxi][0].','))continue 2;
+									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count("\x01".substr($str_hex,0,$xsig[$xi][$sxi][3]),"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",substr($str_hex,0,$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,0,$xsig[$xi][$sxi][3])))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count("\x01".substr($str_norm,0,$xsig[$xi][$sxi][3]),"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",substr($str_norm,0,$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",substr($CoExMeta,0,$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,0,$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,0,$xsig[$xi][$sxi][3])))continue 2;
 									}
 								else
 									{
-									if(!substr_count(",FD,FD-RX,FD-NORM,FD-NORM-RX,META,",",".$xsig[$xi][$sxi][0].','))continue 2;
+									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($str_hex,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($str_norm,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($CoExMeta,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
 									}
 								}
 							else
 								{
 								if($xsig[$xi][$sxi][2]=='A')
 									{
-									if(!substr_count(",FN,FD,FD-RX,FD-NORM,FD-NORM-RX,META,",",".$xsig[$xi][$sxi][0].','))continue 2;
-									if($xsig[$xi][$sxi][0]=='FN')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",$ofn))continue 2;
+									if(!substr_count(',FN,FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
+									if($xsig[$xi][$sxi][0]=='FN')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',$ofn))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count("\x01".$str_hex,"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",$str_hex))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',$str_hex))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count("\x01".$str_norm,"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",$str_norm))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",$CoExMeta))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',$str_norm))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',$CoExMeta))continue 2;
 									}
 								else
 									{
-									if(!substr_count(",FD,FD-RX,FD-NORM,FD-NORM-RX,META,",",".$xsig[$xi][$sxi][0].','))continue 2;
+									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($str_hex,$xsig[$xi][$sxi][2])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2])))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($str_norm,$xsig[$xi][$sxi][2])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($CoExMeta,$xsig[$xi][$sxi][2])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2])))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2])))continue 2;
 									}
 								}
 							}
 						else
 							{
-							if($xsig[$xi][$sxi][0]=='FN')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",$ofn))continue 2;
+							if($xsig[$xi][$sxi][0]=='FN')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',$ofn))continue 2;
 							if($xsig[$xi][$sxi][0]=='FS-MIN')if($str_len<$xsig[$xi][$sxi][1])continue 2;
 							if($xsig[$xi][$sxi][0]=='FS-MAX')if($str_len>$xsig[$xi][$sxi][1])continue 2;
 							if($xsig[$xi][$sxi][0]=='FD')if(!substr_count($str_hex,$xsig[$xi][$sxi][1]))continue 2;
-							if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",$str_hex))continue 2;
+							if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',$str_hex))continue 2;
 							if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count($str_norm,$xsig[$xi][$sxi][1]))continue 2;
-							if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",$str_norm))continue 2;
-							if($xsig[$xi][$sxi][0]=='META')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",$CoExMeta))continue 2;
+							if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',$str_norm))continue 2;
+							if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',$CoExMeta))continue 2;
 							if(substr($xsig[$xi][$sxi][0],0,1)=="\$")
 								{
 								$vf=substr($xsig[$xi][$sxi][0],1);
@@ -11180,7 +12157,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							}
 						$heur['detections']++;
 						$out.=$lnap.phpMusselV(array('vn'=>$signame),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-						if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$signame),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+						if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$signame),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 						}
 					$xsig[$xi]='';
 					}
@@ -11190,10 +12167,18 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 		}
 	if($GLOBALS['MusselConfig']['signatures']['coex_custom'])
 		{
-		if(!isset($GLOBALS['memCache']['coex_custom.cvd']))$GLOBALS['memCache']['coex_custom.cvd']=@implode_md(file($GLOBALS['vault'].'coex_custom.cvd'));
+		if(!isset($GLOBALS['memCache']['coex_custom.cvd']))$GLOBALS['memCache']['coex_custom.cvd']=implode_md(file($GLOBALS['vault'].'coex_custom.cvd'));
 		if(!$GLOBALS['memCache']['coex_custom.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (coex_custom.cvd)!'.$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+				{
+				if($fm)
+					{
+					if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+					$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (coex_custom.cvd)! ';
+					}
+				return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (coex_custom.cvd)!'.$GLOBALS['linebreak'];
+				}
 			}
 		else
 			{
@@ -11258,19 +12243,19 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count("\x01".substr($str_hex,0,$xsig[$xi][$sxi][3]),"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",substr($str_hex,0,$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,0,$xsig[$xi][$sxi][3])))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count("\x01".substr($str_norm,0,$xsig[$xi][$sxi][3]),"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",substr($str_norm,0,$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",substr($CoExMeta,0,$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,0,$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,0,$xsig[$xi][$sxi][3])))continue 2;
 									}
 								else
 									{
 									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($str_hex,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($str_norm,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($CoExMeta,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
 									}
 								}
 							else
@@ -11278,34 +12263,34 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								if($xsig[$xi][$sxi][2]=='A')
 									{
 									if(!substr_count(',FN,FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
-									if($xsig[$xi][$sxi][0]=='FN')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",$ofn))continue 2;
+									if($xsig[$xi][$sxi][0]=='FN')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',$ofn))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count("\x01".$str_hex,"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",$str_hex))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',$str_hex))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count("\x01".$str_norm,"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",$str_norm))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",$CoExMeta))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',$str_norm))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',$CoExMeta))continue 2;
 									}
 								else
 									{
 									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($str_hex,$xsig[$xi][$sxi][2])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2])))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($str_norm,$xsig[$xi][$sxi][2])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($CoExMeta,$xsig[$xi][$sxi][2])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2])))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2])))continue 2;
 									}
 								}
 							}
 						else
 							{
-							if($xsig[$xi][$sxi][0]=='FN')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",$ofn))continue 2;
+							if($xsig[$xi][$sxi][0]=='FN')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',$ofn))continue 2;
 							if($xsig[$xi][$sxi][0]=='FS-MIN')if($str_len<$xsig[$xi][$sxi][1])continue 2;
 							if($xsig[$xi][$sxi][0]=='FS-MAX')if($str_len>$xsig[$xi][$sxi][1])continue 2;
 							if($xsig[$xi][$sxi][0]=='FD')if(!substr_count($str_hex,$xsig[$xi][$sxi][1]))continue 2;
-							if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",$str_hex))continue 2;
+							if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',$str_hex))continue 2;
 							if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count($str_norm,$xsig[$xi][$sxi][1]))continue 2;
-							if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",$str_norm))continue 2;
-							if($xsig[$xi][$sxi][0]=='META')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",$CoExMeta))continue 2;
+							if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',$str_norm))continue 2;
+							if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',$CoExMeta))continue 2;
 							if(substr($xsig[$xi][$sxi][0],0,1)=="\$")
 								{
 								$vf=substr($xsig[$xi][$sxi][0],1);
@@ -11335,12 +12320,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							{
 							$heur['weight']++;
 							$heur['web'].=$lnap.phpMusselV(array('vn'=>$signame),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$signame),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$signame),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						else
 							{
 							$out.=$lnap.phpMusselV(array('vn'=>$signame),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$signame),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$signame),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					$xsig[$xi]='';
@@ -11351,10 +12336,18 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 		}
 	if($GLOBALS['MusselConfig']['signatures']['coex_mussel'])
 		{
-		if(!isset($GLOBALS['memCache']['coex_mussel.cvd']))$GLOBALS['memCache']['coex_mussel.cvd']=@implode_md(file($GLOBALS['vault'].'coex_mussel.cvd'));
+		if(!isset($GLOBALS['memCache']['coex_mussel.cvd']))$GLOBALS['memCache']['coex_mussel.cvd']=implode_md(file($GLOBALS['vault'].'coex_mussel.cvd'));
 		if(!$GLOBALS['memCache']['coex_mussel.cvd'])
 			{
-			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (coex_mussel.cvd)!'.$GLOBALS['linebreak'];
+			if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+				{
+				if($fm)
+					{
+					if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+					$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (coex_mussel.cvd)! ';
+					}
+				return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (coex_mussel.cvd)!'.$GLOBALS['linebreak'];
+				}
 			}
 		else
 			{
@@ -11419,19 +12412,19 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count("\x01".substr($str_hex,0,$xsig[$xi][$sxi][3]),"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",substr($str_hex,0,$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,0,$xsig[$xi][$sxi][3])))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count("\x01".substr($str_norm,0,$xsig[$xi][$sxi][3]),"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",substr($str_norm,0,$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",substr($CoExMeta,0,$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,0,$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,0,$xsig[$xi][$sxi][3])))continue 2;
 									}
 								else
 									{
 									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($str_hex,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($str_norm,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($CoExMeta,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
 									}
 								}
 							else
@@ -11439,34 +12432,34 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								if($xsig[$xi][$sxi][2]=='A')
 									{
 									if(!substr_count(',FN,FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
-									if($xsig[$xi][$sxi][0]=='FN')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",$ofn))continue 2;
+									if($xsig[$xi][$sxi][0]=='FN')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',$ofn))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count("\x01".$str_hex,"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",$str_hex))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',$str_hex))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count("\x01".$str_norm,"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",$str_norm))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match("/\A".$xsig[$xi][$sxi][1]."/i",$CoExMeta))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',$str_norm))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',$CoExMeta))continue 2;
 									}
 								else
 									{
 									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($str_hex,$xsig[$xi][$sxi][2])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2])))continue 2;
 									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($str_norm,$xsig[$xi][$sxi][2])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",substr($CoExMeta,$xsig[$xi][$sxi][2])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2])))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2])))continue 2;
 									}
 								}
 							}
 						else
 							{
-							if($xsig[$xi][$sxi][0]=='FN')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",$ofn))continue 2;
+							if($xsig[$xi][$sxi][0]=='FN')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',$ofn))continue 2;
 							if($xsig[$xi][$sxi][0]=='FS-MIN')if($str_len<$xsig[$xi][$sxi][1])continue 2;
 							if($xsig[$xi][$sxi][0]=='FS-MAX')if($str_len>$xsig[$xi][$sxi][1])continue 2;
 							if($xsig[$xi][$sxi][0]=='FD')if(!substr_count($str_hex,$xsig[$xi][$sxi][1]))continue 2;
-							if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",$str_hex))continue 2;
+							if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',$str_hex))continue 2;
 							if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count($str_norm,$xsig[$xi][$sxi][1]))continue 2;
-							if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",$str_norm))continue 2;
-							if($xsig[$xi][$sxi][0]=='META')if(!preg_match("/".$xsig[$xi][$sxi][1]."/i",$CoExMeta))continue 2;
+							if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',$str_norm))continue 2;
+							if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',$CoExMeta))continue 2;
 							if(substr($xsig[$xi][$sxi][0],0,1)=="\$")
 								{
 								$vf=substr($xsig[$xi][$sxi][0],1);
@@ -11496,12 +12489,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							{
 							$heur['weight']++;
 							$heur['web'].=$lnap.phpMusselV(array('vn'=>$signame),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$signame),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$heur['cli'].=phpMusselV(array('vn'=>$signame),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						else
 							{
 							$out.=$lnap.phpMusselV(array('vn'=>$signame),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$signame),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+							if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$signame),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 							}
 						}
 					$xsig[$xi]='';
@@ -11577,12 +12570,12 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 									{
 									$vt_weight['weight']++;
 									$vt_weight['web'].=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$vt_weight['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$vt_weight['cli'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								else
 									{
 									$out.=$lnap.phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofn.')! ';
+									if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 									}
 								}
 							}
@@ -11628,7 +12621,7 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 		}
 	$lnap.='> ';
 	$ofn=@prescan_decode($ofn);
-	$ofnenc=urlencode($ofn);
+	$ofnSafe=urlencode($ofn);
 	if(is_array($f))
 		{
 		$k=key($f);
@@ -11645,7 +12638,7 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 	if($d)
 		{
 		$d=@scandir($f);
-		if(!$d)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['failed_to_access'].'\''.$ofnenc.'\'!'.$GLOBALS['linebreak'];
+		if(!$d)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['failed_to_access'].'\''.$ofn.'\'!'.$GLOBALS['linebreak'];
 		$c=count($d);
 		for($i=0;$i<$c;$i++)
 			{
@@ -11674,29 +12667,29 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 			fclose($glf);
 			unset($glf);
 			}
-		else $GLOBALS['memCache']['greylist']=@implode_md(file($GLOBALS['vault'].'greylist.csv'));
+		else $GLOBALS['memCache']['greylist']=implode_md(file($GLOBALS['vault'].'greylist.csv'));
 		}
 	$d=@is_file($f);
 	$fnCRC=@hash('crc32b',$ofn);
-	if(!$d||!$f)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' (FN: '.$fnCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['invalid_file'].'!'.$GLOBALS['linebreak'];
+	if(!$d||!$f)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' (FN: '.$fnCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['invalid_file'].'!'.$GLOBALS['linebreak'];
 	$fS=@filesize($f);
 	if($GLOBALS['MusselConfig']['files']['filesize_limit']>0)
 		{
 		if($fS>($GLOBALS['MusselConfig']['files']['filesize_limit']*1024))
 			{
-			if(!$GLOBALS['MusselConfig']['files']['filesize_response'])return (!$n)?1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' (FN: '.$fnCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['ok'].' ('.$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].').'.$GLOBALS['linebreak'];
-			if($fm)$GLOBALS['xsk'].='--FILESIZE-LIMIT--------NO-HASH-:'.$fS.':'.$ofnenc.$GLOBALS['linebreak'];
-			if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].' ('.$ofnenc.')! ';
+			if(!$GLOBALS['MusselConfig']['files']['filesize_response'])return (!$n)?1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' (FN: '.$fnCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['ok'].' ('.$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].').'.$GLOBALS['linebreak'];
+			if($fm)$GLOBALS['xsk'].='--FILESIZE-LIMIT--------NO-HASH-:'.$fS.':'.$ofn.$GLOBALS['linebreak'];
+			if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].' ('.$ofnSafe.')! ';
 			if($GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
-			return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' (FN: '.$fnCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].'.'.$GLOBALS['linebreak'];
+			return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' (FN: '.$fnCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].'.'.$GLOBALS['linebreak'];
 			}
 		}
 	if(substr($ofn,0,1)==='.'||substr($ofn,-1)==='.')
 		{
-		if($fm)$GLOBALS['xsk'].='--FILENAME-MANIPULATION-NO-HASH-:'.$fS.':'.$ofnenc.$GLOBALS['linebreak'];
-		if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_filename_manipulation_detected'].' ('.$ofnenc.')! ';
+		if($fm)$GLOBALS['xsk'].='--FILENAME-MANIPULATION-NO-HASH-:'.$fS.':'.$ofn.$GLOBALS['linebreak'];
+		if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_filename_manipulation_detected'].' ('.$ofnSafe.')! ';
 		if($GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
-		return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' (FN: '.$fnCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_filename_manipulation_detected'].'!'.$GLOBALS['linebreak'];
+		return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' (FN: '.$fnCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_filename_manipulation_detected'].'!'.$GLOBALS['linebreak'];
 		}
 	$xt=$xts=$gzxt=$gzxts='-';
 	if(substr_count($ofn,'.')>0)
@@ -11712,20 +12705,20 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 			}
 		if(strlen($xt)<1)$xt=$xts=$gzxt=$gzxts='-';
 		}
-	if(substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_whitelist'].',',','.$xt.',')>0||substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_whitelist'].',',','.$xts.',')>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].',',$gzxt.',')>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].',',$gzxts.',')>0)return (!$n)?1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' (FN: '.$fnCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
+	if(substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_whitelist'].',',','.$xt.',')>0||substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_whitelist'].',',','.$xts.',')>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].',',$gzxt.',')>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_whitelist'].',',$gzxts.',')>0)return (!$n)?1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' (FN: '.$fnCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
 	if(substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_blacklist'].',',','.$xt.',')>0||substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_blacklist'].',',','.$xts.',')>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_blacklist'].',',$gzxt.',')>0||substr_count($GLOBALS['MusselConfig']['files']['filetype_blacklist'].',',$gzxts.',')>0)
 		{
-		if($fm)$GLOBALS['xsk'].='--FILETYPE-BLACKLISTED--NO-HASH-:'.$fS.':'.$ofnenc.$GLOBALS['linebreak'];
-		if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].' ('.$ofnenc.')! ';
+		if($fm)$GLOBALS['xsk'].='--FILETYPE-BLACKLISTED--NO-HASH-:'.$fS.':'.$ofn.$GLOBALS['linebreak'];
+		if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].' ('.$ofnSafe.')! ';
 		if($GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
-		return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' (FN: '.$fnCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].'.'.$GLOBALS['linebreak'];
+		return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' (FN: '.$fnCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].'.'.$GLOBALS['linebreak'];
 		}
 	if($GLOBALS['MusselConfig']['files']['filetype_greylist'])if(!substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_greylist'].',',','.$xt.',')&&!substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_greylist'].',',','.$xts.',')&&!substr_count($GLOBALS['MusselConfig']['files']['filetype_greylist'].',',$gzxt.',')&&!substr_count($GLOBALS['MusselConfig']['files']['filetype_greylist'].',',$gzxts.','))
 		{
-		if($fm)$GLOBALS['xsk'].='----FILETYPE--NOT-GREYLISTED----:'.$fS.':'.$ofnenc.$GLOBALS['linebreak'];
-		if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].' ('.$ofnenc.')! ';
+		if($fm)$GLOBALS['xsk'].='----FILETYPE--NOT-GREYLISTED----:'.$fS.':'.$ofn.$GLOBALS['linebreak'];
+		if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].' ('.$ofnSafe.')! ';
 		if($GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
-		return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' (FN: '.$fnCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].'.'.$GLOBALS['linebreak'];
+		return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' (FN: '.$fnCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].'.'.$GLOBALS['linebreak'];
 		}
 	$in=@phpMusselFile($f,($GLOBALS['MusselConfig']['attack_specific']['scannable_threshold']>0&&$fS>($GLOBALS['MusselConfig']['attack_specific']['scannable_threshold']*1024))?$GLOBALS['MusselConfig']['attack_specific']['scannable_threshold']:$fS,1);
 	$fdCRC=@hash('crc32b',$in);
@@ -11741,10 +12734,10 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 		if(!$is_img)if(substr($str,0,2)==='BM'||substr($str,0,8)==='gimp xcf'||substr($str,0,4)==='8BPS'||substr($str,0,4)==='WEBP')$is_img=true;
 		if(!$is_img)
 			{
-			if($fm)$GLOBALS['xsk'].=md5($in).':'.$fS.':'.$ofnenc.$GLOBALS['linebreak'];
-			if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['only_allow_images'].' ('.$ofnenc.')! ';
+			if($fm)$GLOBALS['xsk'].=md5($in).':'.$fS.':'.$ofn.$GLOBALS['linebreak'];
+			if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['only_allow_images'].' ('.$ofnSafe.')! ';
 			if($GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
-			return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' (FN: '.$fnCRC.'; FD: '.$fdCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['only_allow_images'].'.'.$GLOBALS['linebreak'];
+			return (!$n)?2:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' (FN: '.$fnCRC.'; FD: '.$fdCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['only_allow_images'].'.'.$GLOBALS['linebreak'];
 			}
 		unset($hh,$is_img);
 		}
@@ -11752,78 +12745,393 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 	if($z!==1)
 		{
 		if($GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
-		return (!$n)?$z:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' (FN: '.$fnCRC.'; FD: '.$fdCRC.'):'.$GLOBALS['linebreak'].$z;
+		return (!$n)?$z:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' (FN: '.$fnCRC.'; FD: '.$fdCRC.'):'.$GLOBALS['linebreak'].$z;
 		}
-	$x=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' (FN: '.$fnCRC.'; FD: '.$fdCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
+	$x=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' (FN: '.$fnCRC.'; FD: '.$fdCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
 	$r=1;
 	if($GLOBALS['MusselConfig']['files']['check_archives']&&!empty($in)&&$GLOBALS['MusselConfig']['files']['max_recursion']>1)
 		{
 		$GLOBALS['memCache']['phase']='archive';
 		$depth=0;
 		$eN=$ofn;
+		$eNSafe=urlencode($eN);
 		$eS=strlen($in);
 		$zCRC=@hash('crc32b',$in);
+		$lnap='-'.$lnap;
 		while(true)
 			{
 			if($depth>$GLOBALS['MusselConfig']['files']['max_recursion'])
 				{
 				$r=2;
-				if($fm)$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofnenc.'>'.$eN.$GLOBALS['linebreak'];
-				if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['recursive'].' ('.$ofnenc.')! ';
-				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' > \''.$eN.'\' (FD: '.$zCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['recursive'].'.'.$GLOBALS['linebreak'];
+				if($fm)$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofn.'>'.$eN.$GLOBALS['linebreak'];
+				if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['recursive'].' ('.$ofnSafe.')! ';
+				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$eN.'\' (FD: '.$zCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['recursive'].'.'.$GLOBALS['linebreak'];
 				break;
 				}
-			$isTar=$zDo=false;
+			$zDo=false;
 			if(!$zDo&&substr_compare_hex($in,0,2,'1f8b',1))
 				{
-				if(!function_exists('gzdecode'))return (!$n)?-1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' (GZIP):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].$GLOBALS['linebreak'];
+				if(!function_exists('gzdecode'))
+					{
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_extensions_silently']&&$fm)
+						{
+						$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofn.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].' ';
+						}
+					return (!$n)?-1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' (GZIP):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].$GLOBALS['linebreak'];
+					}
 				$in=@gzdecode($in);
-				if(!$in)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' (GZIP):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_not_archive'].$GLOBALS['linebreak'];
-				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' (GZIP):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking_contents'].$GLOBALS['linebreak'];
+				if(!$in)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' (GZIP):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_not_archive'].$GLOBALS['linebreak'];
+				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' (GZIP):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking_contents'].$GLOBALS['linebreak'];
 				$zDo=true;
 				}
 			if(!$zDo&&substr_compare_hex($in,0,3,'425a68',1))
 				{
-				if(!function_exists('bzdecompress'))return (!$n)?-1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' (BZIP2):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].$GLOBALS['linebreak'];
+				if(!function_exists('bzdecompress'))
+					{
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_extensions_silently']&&$fm)
+						{
+						$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofn.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].' ';
+						}
+					return (!$n)?-1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' (BZIP2):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].$GLOBALS['linebreak'];
+					}
 				$in=@bzdecompress($in);
-				if(!$in)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' (BZIP2):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_not_archive'].$GLOBALS['linebreak'];
-				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' (BZIP2):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking_contents'].$GLOBALS['linebreak'];
+				if(!$in)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' (BZIP2):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_not_archive'].$GLOBALS['linebreak'];
+				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' (BZIP2):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking_contents'].$GLOBALS['linebreak'];
 				$zDo=true;
 				}
-			$axt=(substr_count($eN,'.')>0)?substral($eN,'.'):'';
-			if(!$zDo&&substr_count(',gz,tgz,',','.$axt.',')>0)
+			$xtt=(substr_count($eN,'.')>0)?array(substr($eN,-3),substr($eN,-4),substr($eN,-7,4),substr($eN,-8,4)):false;
+			if($xtt)if(!$zDo&&(substr_count(',.gz,',','.$xtt[0].',')>0||substr_count(',.tgz,',','.$xtt[1].',')>0))
 				{
-				if(!function_exists('gzdecode'))return (!$n)?-1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' (GZIP):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].$GLOBALS['linebreak'];
+				if(!function_exists('gzdecode'))
+					{
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_extensions_silently']&&$fm)
+						{
+						$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofn.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].' ';
+						}
+					return (!$n)?-1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' (GZIP):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].$GLOBALS['linebreak'];
+					}
 				$in=@gzdecode($in);
-				if(!$in)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' (GZIP):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_not_archive'].$GLOBALS['linebreak'];
-				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' (GZIP):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking_contents'].$GLOBALS['linebreak'];
+				if(!$in)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' (GZIP):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_not_archive'].$GLOBALS['linebreak'];
+				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' (GZIP):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking_contents'].$GLOBALS['linebreak'];
 				$zDo=true;
 				}
-			if(!$zDo&&substr_count(',bz,bz2,tbz,',','.$axt.',')>0)
+			if($xtt)if(!$zDo&&(substr_count(',.bz,',','.$xtt[0].',')>0||substr_count(',.bz2,.tbz,',','.$xtt[1].',')>0))
 				{
-				if(!function_exists('bzdecompress'))return (!$n)?-1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' (BZIP2):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].$GLOBALS['linebreak'];
+				if(!function_exists('bzdecompress'))
+					{
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_extensions_silently']&&$fm)
+						{
+						$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofn.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].' ';
+						}
+					return (!$n)?-1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' (BZIP2):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].$GLOBALS['linebreak'];
+					}
 				$in=@bzdecompress($in);
-				if(!$in)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' (BZIP2):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_not_archive'].$GLOBALS['linebreak'];
-				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' (BZIP2):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking_contents'].$GLOBALS['linebreak'];
+				if(!$in)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' (BZIP2):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_not_archive'].$GLOBALS['linebreak'];
+				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' (BZIP2):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking_contents'].$GLOBALS['linebreak'];
 				$zDo=true;
 				}
-			if(!$zDo&&substr_count(',lha,lz,lzh,lzo,lzw,lzx,tlz,',','.$axt.',')>0)
+			if($xtt)if(!$zDo&&(substr_count(',.lz,',','.$xtt[0].',')>0||substr_count(',.lha,.lzh,.lzo,.lzw,.lzx,.tlz,',','.$xtt[1].',')>0))
 				{
-				if(!function_exists('lzf_decompress'))return (!$n)?-1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' (LZF):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].$GLOBALS['linebreak'];
+				if(!function_exists('lzf_decompress'))
+					{
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_extensions_silently']&&$fm)
+						{
+						$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofn.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].' ';
+						}
+					return (!$n)?-1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' (LZF):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].$GLOBALS['linebreak'];
+					}
 				$in=@lzf_decompress($in);
-				if(!$in)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' (LZF):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_not_archive'].$GLOBALS['linebreak'];
-				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' (LZF):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking_contents'].$GLOBALS['linebreak'];
+				if(!$in)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' (LZF):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_not_archive'].$GLOBALS['linebreak'];
+				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' (LZF):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking_contents'].$GLOBALS['linebreak'];
 				$zDo=true;
 				}
-			if(substr_count(',tar,tgz,tbz,tlz,',','.$axt.',')>0)
+			if(substr($in,257,6)==="ustar\x00"||$xtt&&(substr_count(',.tar,.tgz,.tbz,.tlz,',','.$xtt[1].',')>0||substr_count(',.tar,.tgz,.tbz,.tlz,',','.$xtt[2].',')>0||substr_count(',.tar,.tgz,.tbz,.tlz,',','.$xtt[3].',')>0))
 				{
-				// Future tar stuff to go here.
-				$isTar=true;
+				// AAA BEGIN TAR CODE
+				$lnap='-'.$lnap;
+				$depth++;
+				if($zDo)
+					{
+					$eS=strlen($in);
+					$zCRC=@hash('crc32b',$in);
+					}
+				$TarFile=array();
+				// $TarFile['blocksize']=ceil($eS/512);
+				$TarFile['file']=array('filename'=>$ofn,'filesize'=>$eS,'rawdata'=>$in,'crc32'=>$zCRC,'fncrc32'=>$fnCRC,'md5'=>$md5,'directory'=>false);
+				if(strtolower(substr($TarFile['file']['filename'],-4))!=='.tar')$TarFile['file']['filename']=(substr_count($TarFile['file']['filename'],'.')>0)?substrbl($TarFile['file']['filename'],'.'):$TarFile['file']['filename'];
+				$TarFile['file']['filename']=(substr_count($TarFile['file']['filename'],"\x5c")>0)?substral($TarFile['file']['filename'],"\x5c"):$TarFile['file']['filename'];
+				$TarFile['file']['filename']=(substr_count($TarFile['file']['filename'],"\x2f")>0)?substral($TarFile['file']['filename'],"\x2f"):$TarFile['file']['filename'];
+				$TarFile['file']['filenameSafe']=urlencode($TarFile['file']['filename']);
+				$TarFile['offset']=0;
+				$TarFile['badmetadata']=false;
+				while(true)
+					{
+					if(($TarFile['offset']+1024)>$eS)break;
+					while(true)
+						{
+						if($TarFile['file']['directory'])break;
+						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$TarFile['file']['filename'].'\' (FN: '.$TarFile['file']['fncrc32'].'; FD: '.$TarFile['file']['crc32'].'):'.$GLOBALS['linebreak'];
+						if(!$TarFile['file']['filename'])
+							{
+							$r=2;
+							if($fm)$GLOBALS['xsk'].=$TarFile['file']['md5'].':'.$TarFile['file']['filesize'].':MISSING-FILENAME'.$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_missing_filename'].'! ';
+							$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_missing_filename'].'!'.$GLOBALS['linebreak'];
+							break 2;
+							}
+						if($GLOBALS['MusselConfig']['files']['filesize_archives']&&$GLOBALS['MusselConfig']['files']['filesize_limit']>0)
+							{
+							if($TarFile['file']['filesize']>($GLOBALS['MusselConfig']['files']['filesize_limit']*1024))
+								{
+								if(!$GLOBALS['MusselConfig']['files']['filesize_response'])
+									{
+									$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['ok'].' ('.$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].').'.$GLOBALS['linebreak'];
+									break;
+									}
+								$r=2;
+								if($fm)$GLOBALS['xsk'].=$TarFile['file']['md5'].':'.$TarFile['file']['filesize'].':'.$ofn.'>'.$TarFile['file']['filename'].$GLOBALS['linebreak'];
+								if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].' ('.$ofnSafe.'>'.$TarFile['file']['filenameSafe'].')! ';
+								$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].'.'.$GLOBALS['linebreak'];
+								break 2;
+								}
+							}
+						if(substr($TarFile['file']['filename'],0,1)==='.'||substr($TarFile['file']['filename'],-1)==='.')
+							{
+							$r=2;
+							if($fm)$GLOBALS['xsk'].=$TarFile['file']['md5'].':'.$TarFile['file']['filesize'].':'.$ofn.'>'.$TarFile['file']['filename'].$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_filename_manipulation_detected'].' ('.$ofnSafe.'>'.$TarFile['file']['filenameSafe'].')! ';
+							$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_filename_manipulation_detected'].'!'.$GLOBALS['linebreak'];
+							break 2;
+							}
+						if($GLOBALS['MusselConfig']['files']['filetype_archives'])
+							{
+							$xt=$xts='-';
+							if(substr_count($TarFile['file']['filename'],'.')>0)
+								{
+								$xt=explode('.',strtolower($TarFile['file']['filename']));
+								$xts=substr($xt[count($xt)-1],0,3).'*';
+								$xt=$xt[count($xt)-1];
+								if(strlen($xt)<1)$xt=$xts='-';
+								}
+							if(substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_whitelist'].',',','.$xt.',')>0||substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_whitelist'].',',','.$xts.',')>0)
+								{
+								$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
+								break;
+								}
+							if(substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_blacklist'].',',','.$xt.',')>0||substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_blacklist'].',',','.$xts.',')>0)
+								{
+								$r=2;
+								if($fm)$GLOBALS['xsk'].=$TarFile['file']['md5'].':'.$TarFile['file']['filesize'].':'.$ofn.'>'.$TarFile['file']['filename'].$GLOBALS['linebreak'];
+								if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].' ('.$ofnSafe.'>'.$TarFile['file']['filenameSafe'].')! ';
+								$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].'.'.$GLOBALS['linebreak'];
+								break 2;
+								}
+							if($GLOBALS['MusselConfig']['files']['filetype_greylist'])if(!substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_greylist'].',',','.$xt.',')&&!substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_greylist'].',',','.$xts.','))
+								{
+								$r=2;
+								if($fm)$GLOBALS['xsk'].=$TarFile['file']['md5'].':'.$TarFile['file']['filesize'].':'.$ofn.'>'.$TarFile['file']['filename'].$GLOBALS['linebreak'];
+								if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].' ('.$ofnSafe.'>'.$TarFile['file']['filenameSafe'].')! ';
+								$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].'.'.$GLOBALS['linebreak'];
+								break 2;
+								}
+							}
+						$TarFile['file']['scan']=phpMusselD($TarFile['file']['rawdata'],$n,$dpt,$TarFile['file']['filename']);
+						if($TarFile['file']['scan']!==1)
+							{
+							$r=2;
+							$x.=$TarFile['file']['scan'];
+							break 2;
+							}
+						if($GLOBALS['MusselConfig']['signatures']['metadata_clamav'])
+							{
+							if(!isset($GLOBALS['memCache']['metadata_clamav.cvd']))$GLOBALS['memCache']['metadata_clamav.cvd']=@file($GLOBALS['vault'].'metadata_clamav.cvd');
+							if(!$GLOBALS['memCache']['metadata_clamav.cvd'])
+								{
+								$xc=0;
+								if($r!==2)$r=-3;
+								$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (metadata_clamav.cvd)!'.$GLOBALS['linebreak'];
+								break;
+								}
+							else
+								{
+								$xc=count($GLOBALS['memCache']['metadata_clamav.cvd']);
+								if($GLOBALS['memCache']['metadata_clamav.cvd']&&$xc<1)
+									{
+									if($r!==2)$r=-3;
+									$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_clamav.cvd)!'.$GLOBALS['linebreak'];
+									break;
+									}
+								}
+							if($xc>0)for($xi=0;$xi<$xc;$xi++)
+								{
+								$TarFile['sig']=@explode(':',$GLOBALS['memCache']['metadata_clamav.cvd'][$xi]);
+								$TarFile['sig'][0]=vn_shorthand($TarFile['sig'][0]);
+								$TarFile['sig'][2]=preg_replace('/[^a-z0-9]/','',$TarFile['sig'][2]);
+								if(!substr_count($GLOBALS['memCache']['greylist'],','.$TarFile['sig'][0].','))
+									{
+									if($TarFile['sig'][0]&&$TarFile['sig'][1]&&$TarFile['sig'][2])if($TarFile['sig'][1]==$TarFile['file']['filesize']&&$TarFile['sig'][2]==$TarFile['file']['crc32'])
+										{
+										$r=2;
+										$TarFile['badmetadata']=true;
+										$x.='-'.$lnap.phpMusselV(array('vn'=>$TarFile['sig'][0]),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
+										if($fm)$GLOBALS['xsk'].=md5($TarFile['file']['rawdata']).':'.$TarFile['file']['filesize'].':'.$ofn.'>'.$TarFile['file']['filename'].$GLOBALS['linebreak'];
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$TarFile['sig'][0]),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.'>'.$TarFile['file']['filenameSafe'].')! ';
+										break 2;
+										}
+									}
+								}
+							}
+						if($GLOBALS['MusselConfig']['signatures']['metadata_custom'])
+							{
+							if(!isset($GLOBALS['memCache']['metadata_custom.cvd']))$GLOBALS['memCache']['metadata_custom.cvd']=@file($GLOBALS['vault'].'metadata_custom.cvd');
+							if(!$GLOBALS['memCache']['metadata_custom.cvd'])
+								{
+								$xc=0;
+								if($r!==2)$r=-3;
+								$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (metadata_custom.cvd)!'.$GLOBALS['linebreak'];
+								break;
+								}
+							else
+								{
+								$xc=count($GLOBALS['memCache']['metadata_custom.cvd']);
+								if($GLOBALS['memCache']['metadata_custom.cvd']&&$xc<1)
+									{
+									if($r!==2)$r=-3;
+									$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_custom.cvd)!'.$GLOBALS['linebreak'];
+									break;
+									}
+								}
+							if($xc>0)for($xi=0;$xi<$xc;$xi++)
+								{
+								$TarFile['sig']=@explode(':',$GLOBALS['memCache']['metadata_custom.cvd'][$xi]);
+								$TarFile['sig'][0]=vn_shorthand($TarFile['sig'][0]);
+								$TarFile['sig'][2]=preg_replace('/[^a-z0-9]/','',$TarFile['sig'][2]);
+								if(!substr_count($GLOBALS['memCache']['greylist'],','.$TarFile['sig'][0].','))
+									{
+									if($TarFile['sig'][0]&&$TarFile['sig'][1]&&$TarFile['sig'][2])if($TarFile['sig'][1]==$TarFile['file']['filesize']&&$TarFile['sig'][2]==$TarFile['file']['crc32'])
+										{
+										$r=2;
+										$TarFile['badmetadata']=true;
+										$x.='-'.$lnap.phpMusselV(array('vn'=>$TarFile['sig'][0]),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
+										if($fm)$GLOBALS['xsk'].=md5($TarFile['file']['rawdata']).':'.$TarFile['file']['filesize'].':'.$ofn.'>'.$TarFile['file']['filename'].$GLOBALS['linebreak'];
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$TarFile['sig'][0]),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.'>'.$TarFile['file']['filenameSafe'].')! ';
+										break 2;
+										}
+									}
+								}
+							}
+						if($GLOBALS['MusselConfig']['signatures']['metadata_mussel'])
+							{
+							if(!isset($GLOBALS['memCache']['metadata_mussel.cvd']))$GLOBALS['memCache']['metadata_mussel.cvd']=@file($GLOBALS['vault'].'metadata_mussel.cvd');
+							if(!$GLOBALS['memCache']['metadata_mussel.cvd'])
+								{
+								$xc=0;
+								if($r!==2)$r=-3;
+								$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (metadata_mussel.cvd)!'.$GLOBALS['linebreak'];
+								break;
+								}
+							else
+								{
+								$xc=count($GLOBALS['memCache']['metadata_mussel.cvd']);
+								if($GLOBALS['memCache']['metadata_mussel.cvd']&&$xc<1)
+									{
+									if($r!==2)$r=-3;
+									$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_mussel.cvd)!'.$GLOBALS['linebreak'];
+									break;
+									}
+								}
+							if($xc>0)for($xi=0;$xi<$xc;$xi++)
+								{
+								$TarFile['sig']=@explode(':',$GLOBALS['memCache']['metadata_mussel.cvd'][$xi]);
+								$TarFile['sig'][0]=vn_shorthand($TarFile['sig'][0]);
+								$TarFile['sig'][2]=preg_replace('/[^a-z0-9]/','',$TarFile['sig'][2]);
+								if(!substr_count($GLOBALS['memCache']['greylist'],','.$TarFile['sig'][0].','))
+									{
+									if($TarFile['sig'][0]&&$TarFile['sig'][1]&&$TarFile['sig'][2])if($TarFile['sig'][1]==$TarFile['file']['filesize']&&$TarFile['sig'][2]==$TarFile['file']['crc32'])
+										{
+										$r=2;
+										$TarFile['badmetadata']=true;
+										$x.='-'.$lnap.phpMusselV(array('vn'=>$TarFile['sig'][0]),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
+										if($fm)$GLOBALS['xsk'].=md5($TarFile['file']['rawdata']).':'.$TarFile['file']['filesize'].':'.$ofn.'>'.$TarFile['file']['filename'].$GLOBALS['linebreak'];
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$TarFile['sig'][0]),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.'>'.$TarFile['file']['filenameSafe'].')! ';
+										break 2;
+										}
+									}
+								}
+							}
+						$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
+						break;
+						}
+					$TarFile['file']=array();
+					$TarFile['file']['filename']=preg_replace('/[^\x20-\xff]/','',substr($in,$TarFile['offset'],100));
+					$TarFile['file']['filesize']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+124,12)));
+					$TarFile['file']['directory']=(substr($TarFile['file']['filename'],-1,1)==='/'&&$TarFile['file']['filesize']===0);
+					// There's also a bit-check for confirming directory status with POSIX TARs, will add that in later, as well as other bit flags (`typeflag` and etc).
+					if($TarFile['file']['filename'])
+						{
+						$TarFile['file']['filename']=(substr_count($TarFile['file']['filename'],"\x5c")>0)?substral($TarFile['file']['filename'],"\x5c"):$TarFile['file']['filename'];
+						$TarFile['file']['filename']=(substr_count($TarFile['file']['filename'],"\x2f")>0)?substral($TarFile['file']['filename'],"\x2f"):$TarFile['file']['filename'];
+						}
+					$TarFile['file']['filenameSafe']=urlencode($TarFile['file']['filename']);
+					if($TarFile['file']['filesize']<0)
+						{
+						$r=2;
+						$TarFile['badmetadata']=true;
+						if($fm)$GLOBALS['xsk'].=$TarFile['file']['md5'].':'.$TarFile['file']['filesize'].':'.$ofn.'>'.$TarFile['file']['filename'].$GLOBALS['linebreak'];
+						if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_filename_manipulation_detected'].' ('.$ofnSafe.'>'.$TarFile['file']['filenameSafe'].')! ';
+						$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_tampering'].'!'.$GLOBALS['linebreak'];
+						break;
+						}
+					// $TarFile['file']['mode']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+100,8)));
+					// $TarFile['file']['uid']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+108,8)));
+					// $TarFile['file']['gid']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+116,8)));
+					// $TarFile['file']['mtime']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+136,12)));
+					// $TarFile['file']['chksum']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+148,8)));
+					// $TarFile['file']['typeflag']=substr($in,$TarFile['offset']+156,1);
+					// $TarFile['file']['linkname']=preg_replace('/[^\x20-\xff]/','',substr($in,$TarFile['offset']+157,100));
+					$TarFile['file']['magic']=preg_replace('/[^\x20-\xff]/','',substr($in,$TarFile['offset']+257,6));
+					// $TarFile['file']['version']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+263,2)));
+					// $TarFile['file']['uname']=preg_replace('/[^\x20-\xff]/','',substr($in,$TarFile['offset']+265,32));
+					// $TarFile['file']['gname']=preg_replace('/[^\x20-\xff]/','',substr($in,$TarFile['offset']+297,32));
+					// $TarFile['file']['devmajor']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+329,8)));
+					// $TarFile['file']['devminor']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+337,8)));
+					// $TarFile['file']['prefix']=octdec(preg_replace('/[^0-9]/','',substr($in,$TarFile['offset']+345,155)));
+					$TarFile['file']['rawdata']=substr($in,$TarFile['offset']+512,$TarFile['file']['filesize']);
+					$TarFile['file']['crc32']=hash('crc32b',$TarFile['file']['rawdata']);
+					$TarFile['file']['fncrc32']=hash('crc32b',$TarFile['file']['filename']);
+					$TarFile['file']['md5']=md5($TarFile['file']['rawdata']);
+					$TarFile['file']['blocks']=ceil($TarFile['file']['filesize']/512)+1;
+					$TarFile['offset']+=$TarFile['file']['blocks']*512;
+					}
+				if($TarFile['badmetadata']&&$r===2)
+					{
+					if($GLOBALS['MusselConfig']['general']['quarantine_key']&&!$GLOBALS['MusselConfig']['general']['honeypot_mode'])
+						{
+						if($eS<($GLOBALS['MusselConfig']['general']['quarantine_max_filesize']*1024))
+							{
+							$qfu=$GLOBALS['time']."-".md5($GLOBALS['MusselConfig']['general']['quarantine_key'].$zCRC.$GLOBALS['time']);
+							@phpMusselQ($in,$GLOBALS['MusselConfig']['general']['quarantine_key'],$_SERVER[$GLOBALS['MusselConfig']['general']['ipaddr']],$qfu);
+							if($fm)$GLOBALS['xsk'].='Quarantined as "/vault/quarantine/'.$qfu.'.qfu".'.$GLOBALS['linebreak'];
+							}
+						}
+					}
+				$TarFile='';
+				break;
+				// AAA END TAR CODE
 				}
-			if($zDo)
+			else if($zDo)
 				{
 				$lnap='-'.$lnap;
-				$eN=(substr_count($eN,".")>0)?substrbl($eN,'.'):$eN;
+				$depth++;
+				$eN=(substr_count($eN,'.')>0)?substrbl($eN,'.'):$eN;
+				$eN=(substr_count($eN,"\x5c")>0)?substral($eN,"\x5c"):$eN;
+				$eN=(substr_count($eN,"\x2f")>0)?substral($eN,"\x2f"):$eN;
+				$eNSafe=urlencode($eN);
 				$eS=strlen($in);
 				$zCRC=@hash('crc32b',$in);
 				if($GLOBALS['MusselConfig']['files']['filesize_archives']&&$GLOBALS['MusselConfig']['files']['filesize_limit']>0)
@@ -11832,34 +13140,53 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 						{
 						if(!$GLOBALS['MusselConfig']['files']['filesize_response'])
 							{
-							$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' > \''.$eN.'\' (FD: '.$zCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['ok'].' ('.$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].').'.$GLOBALS['linebreak'];
+							$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$eN.'\' (FD: '.$zCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['ok'].' ('.$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].').'.$GLOBALS['linebreak'];
 							break;
 							}
 						$r=2;
-						if($fm)$GLOBALS['xsk'].='--FILESIZE-LIMIT--------NO-HASH-:'.$eS.':'.$ofnenc.'>'.$eN.$GLOBALS['linebreak'];
-						if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].' ('.$ofnenc.')! ';
-						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' > \''.$eN.'\' (FD: '.$zCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].'.'.$GLOBALS['linebreak'];
+						if($fm)$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofn.'>'.$eN.$GLOBALS['linebreak'];
+						if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].' ('.$ofnSafe.')! ';
+						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$eN.'\' (FD: '.$zCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].'.'.$GLOBALS['linebreak'];
 						break;
 						}
 					}
+				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$eN.'\' (FN: '.$fnCRC.'; FD: '.$zCRC.'):'.$GLOBALS['linebreak'];
 				$bad=phpMusselD($in,$n,$dpt,$eN);
-				$zmd='';
+				if($bad!==1)
+					{
+					$r=2;
+					$x.=$bad;
+					break;
+					}
 				if($GLOBALS['MusselConfig']['signatures']['metadata_clamav'])
 					{
 					if(!isset($GLOBALS['memCache']['metadata_clamav.cvd']))$GLOBALS['memCache']['metadata_clamav.cvd']=@file($GLOBALS['vault'].'metadata_clamav.cvd');
 					if(!$GLOBALS['memCache']['metadata_clamav.cvd'])
 						{
+						$zmdc=0;
 						if($r!==2)$r=-3;
-						$zmd.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (metadata_clamav.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently']&&$fm)
+							{
+							$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (metadata_clamav.cvd)! ';
+							}
+						$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (metadata_clamav.cvd)!'.$GLOBALS['linebreak'];
 						}
-					$zmdc=count($GLOBALS['memCache']['metadata_clamav.cvd']);
-					if($zmdc<1)
+					else
 						{
-						if($r!==2)$r=-3;
-						$zmd.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_clamav.cvd)!'.$GLOBALS['linebreak'];
+						$zmdc=count($GLOBALS['memCache']['metadata_clamav.cvd']);
+						if($zmdc<1)
+							{
+							if($r!==2)$r=-3;
+							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently']&&$fm)
+								{
+								$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_clamav.cvd)! ';
+								}
+							$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_clamav.cvd)!'.$GLOBALS['linebreak'];
+							}
 						}
-					$zmdv='';
-					for($zmdi=0;$zmdi<$zmdc;$zmdi++)
+					if($zmdc>0)for($zmdi=0;$zmdi<$zmdc;$zmdi++)
 						{
 						$zmds=@explode(':',$GLOBALS['memCache']['metadata_clamav.cvd'][$zmdi]);
 						$zmds[0]=vn_shorthand($zmds[0]);
@@ -11869,9 +13196,9 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 							if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eS&&$zmds[2]==$zCRC)
 								{
 								$r=2;
-								$zmd.='-'.$lnap.phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofnenc.'>'.$eN.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnenc.'>'.$eN.')! ';
+								$x.='-'.$lnap.phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
+								if($fm)$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofn.'>'.$eN.$GLOBALS['linebreak'];
+								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.'>'.$eNSafe.')! ';
 								}
 							}
 						}
@@ -11881,17 +13208,30 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['metadata_custom.cvd']))$GLOBALS['memCache']['metadata_custom.cvd']=@file($GLOBALS['vault'].'metadata_custom.cvd');
 					if(!$GLOBALS['memCache']['metadata_custom.cvd'])
 						{
+						$zmdc=0;
 						if($r!==2)$r=-3;
-						$zmd.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (metadata_custom.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently']&&$fm)
+							{
+							$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (metadata_custom.cvd)! ';
+							}
+						$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (metadata_custom.cvd)!'.$GLOBALS['linebreak'];
 						}
-					$zmdc=count($GLOBALS['memCache']['metadata_custom.cvd']);
-					if($zmdc<1)
+					else
 						{
-						if($r!==2)$r=-3;
-						$zmd.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_custom.cvd)!'.$GLOBALS['linebreak'];
+						$zmdc=count($GLOBALS['memCache']['metadata_custom.cvd']);
+						if($zmdc<1)
+							{
+							if($r!==2)$r=-3;
+							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently']&&$fm)
+								{
+								$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_custom.cvd)! ';
+								}
+							$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_custom.cvd)!'.$GLOBALS['linebreak'];
+							}
 						}
-					$zmdv='';
-					for($zmdi=0;$zmdi<$zmdc;$zmdi++)
+					if($zmdc>0)for($zmdi=0;$zmdi<$zmdc;$zmdi++)
 						{
 						$zmds=@explode(':',$GLOBALS['memCache']['metadata_custom.cvd'][$zmdi]);
 						$zmds[0]=vn_shorthand($zmds[0]);
@@ -11901,9 +13241,9 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 							if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eS&&$zmds[2]==$zCRC)
 								{
 								$r=2;
-								$zmd.='-'.$lnap.phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofnenc.'>'.$eN.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnenc.'>'.$eN.')! ';
+								$x.='-'.$lnap.phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
+								if($fm)$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofn.'>'.$eN.$GLOBALS['linebreak'];
+								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.'>'.$eNSafe.')! ';
 								}
 							}
 						}
@@ -11913,17 +13253,30 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 					if(!isset($GLOBALS['memCache']['metadata_mussel.cvd']))$GLOBALS['memCache']['metadata_mussel.cvd']=@file($GLOBALS['vault'].'metadata_mussel.cvd');
 					if(!$GLOBALS['memCache']['metadata_mussel.cvd'])
 						{
+						$zmdc=0;
 						if($r!==2)$r=-3;
-						$zmd.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (metadata_mussel.cvd)!'.$GLOBALS['linebreak'];
+						if(!$GLOBALS['MusselConfig']['signatures']['fail_silently']&&$fm)
+							{
+							$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$GLOBALS['linebreak'];
+							$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (metadata_mussel.cvd)! ';
+							}
+						$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (metadata_mussel.cvd)!'.$GLOBALS['linebreak'];
 						}
-					$zmdc=count($GLOBALS['memCache']['metadata_mussel.cvd']);
-					if($zmdc<1)
+					else
 						{
-						if($r!==2)$r=-3;
-						$zmd.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_mussel.cvd)!'.$GLOBALS['linebreak'];
+						$zmdc=count($GLOBALS['memCache']['metadata_mussel.cvd']);
+						if($zmdc<1)
+							{
+							if($r!==2)$r=-3;
+							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently']&&$fm)
+								{
+								$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_mussel.cvd)! ';
+								}
+							$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_mussel.cvd)!'.$GLOBALS['linebreak'];
+							}
 						}
-					$zmdv='';
-					for($zmdi=0;$zmdi<$zmdc;$zmdi++)
+					if($zmdc>0)for($zmdi=0;$zmdi<$zmdc;$zmdi++)
 						{
 						$zmds=@explode(':',$GLOBALS['memCache']['metadata_mussel.cvd'][$zmdi]);
 						$zmds[0]=vn_shorthand($zmds[0]);
@@ -11933,20 +13286,14 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 							if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eS&&$zmds[2]==$zCRC)
 								{
 								$r=2;
-								$zmd.='-'.$lnap.phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofnenc.'>'.$eN.$GLOBALS['linebreak'];
-								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnenc.'>'.$eN.')! ';
+								$x.='-'.$lnap.phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
+								if($fm)$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofn.'>'.$eN.$GLOBALS['linebreak'];
+								if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.'>'.$eNSafe.')! ';
 								}
 							}
 						}
 					}
-				if($bad!==1)
-					{
-					$r=2;
-					$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' > \''.$eN.'\' (FN: '.$fnCRC.'; FD: '.$zCRC.'):'.$GLOBALS['linebreak'].$bad.$zmd;
-					break;
-					}
-				if($r===2&&$zmd)
+				if($r===2)
 					{
 					if($GLOBALS['MusselConfig']['general']['quarantine_key']&&!$GLOBALS['MusselConfig']['general']['honeypot_mode'])
 						{
@@ -11957,10 +13304,9 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 							if($fm)$GLOBALS['xsk'].='Quarantined as "/vault/quarantine/'.$qfu.'.qfu".'.$GLOBALS['linebreak'];
 							}
 						}
-					$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' > \''.$eN.'\' (FN: '.$fnCRC.'; FD: '.$zCRC.'):'.$GLOBALS['linebreak'].$zmd;
 					break;
 					}
-				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' > \''.$eN.'\' (FN: '.$fnCRC.'; FD: '.$zCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
+				$x.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
 				continue;
 				}
 			break;
@@ -11981,27 +13327,36 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 			// WORKING NOTES: https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT
 			// $ziphead['version_needed']=explode_bits(substr($in,4,2));
 			// $ziphead['compression_method']=explode_bits(substr($in,8,2));
+			// I'm hoping to eventually re-code this whole section.
 			$ziphead=array();
 			$ziphead['passed']=true;
 			$ziphead['general_purpose']=explode_bits(substr($in,6,2));
 			if($ziphead['general_purpose'][7])
 				{
 				// Encryption Detected.
+				$ziphead['passed']=false;
 				if($GLOBALS['MusselConfig']['files']['block_encrypted_archives'])
 					{
-					$ziphead['passed']=false;
 					$r=2;
-					if($fm)$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofnenc.'>'.$eN.$GLOBALS['linebreak'];
-					if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['encrypted_archive'].' ('.$ofnenc.'>'.$eN.')! ';
-					$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofnenc."' > '".$eN."' (FN: ".$zCRC."):".$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['encrypted_archive'].'.'.$GLOBALS['linebreak'];
+					if($fm)$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofn.'>'.$eN.$GLOBALS['linebreak'];
+					if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['encrypted_archive'].' ('.$ofnSafe.'>'.$eNSafe.')! ';
+					$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$eN.'\' (FN: '.$zCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['encrypted_archive'].'.'.$GLOBALS['linebreak'];
 					}
 				}
 			if($ziphead['passed'])
 				{
-				if(!function_exists('zip_open'))return (!$n)?-1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' ('.$ziptype.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].$GLOBALS['linebreak'];
+				if(!function_exists('zip_open'))
+					{
+					if(!$GLOBALS['MusselConfig']['signatures']['fail_extensions_silently']&&$fm)
+						{
+						$GLOBALS['xsk'].=md5($in).':'.$eS.':'.$ofn.'>'.$eN.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].' ';
+						}
+					return (!$n)?-1:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' ('.$ziptype.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_extensions_missing'].$GLOBALS['linebreak'];
+					}
 				$fS=@zip_open($f);
-				if(!$fS)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' ('.$ziptype.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_not_archive'].$GLOBALS['linebreak'];
-				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofnenc.'\' ('.$ziptype.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking_contents'].$GLOBALS['linebreak'];
+				if(!$fS)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' ('.$ziptype.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_not_archive'].$GLOBALS['linebreak'];
+				$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_reading'].' \''.$ofn.'\' ('.$ziptype.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking_contents'].$GLOBALS['linebreak'];
 				$b=false;
 				$lnap='-'.$lnap;
 				$bi=-1;
@@ -12015,6 +13370,7 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 						continue;
 						}
 					$eN=@zip_entry_name($fD);
+					$eNSafe=urlencode($eN);
 					$eS=@zip_entry_filesize($fD);
 					$znCRC=@hash('crc32b',$eN);
 					if($GLOBALS['MusselConfig']['files']['filesize_archives']&&$GLOBALS['MusselConfig']['files']['filesize_limit']>0)
@@ -12023,53 +13379,53 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 							{
 							if(!$GLOBALS['MusselConfig']['files']['filesize_response'])
 								{
-								$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' > \''.$eN.'\' (FN: '.$znCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['ok'].' ('.$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].').'.$GLOBALS['linebreak'];
+								$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$eN.'\' (FN: '.$znCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['ok'].' ('.$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].').'.$GLOBALS['linebreak'];
 								continue;
 								}
 							$r=2;
-							if($fm)$GLOBALS['xsk'].='--FILESIZE-LIMIT--------NO-HASH-:'.$eS.':'.$ofnenc.'>'.$eN.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].' ('.$ofnenc.')! ';
-							$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofnenc."' > '".$eN."' (FN: ".$znCRC."):".$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].'.'.$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xsk'].='--FILESIZE-LIMIT--------NO-HASH-:'.$eS.':'.$ofn.'>'.$eN.$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].' ('.$ofnSafe.')! ';
+							$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$eN.'\' (FN: '.$znCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['filesize_limit_exceeded'].'.'.$GLOBALS['linebreak'];
 							continue;
 							}
 						}
 					if(substr($eN,0,1)==='.'||substr($eN,-1)==='.')
 						{
 						$r=2;
-						if($fm)$GLOBALS['xsk'].='--FILENAME-MANIPULATION-NO-HASH-:'.$eS.':'.$ofnenc.'>'.$eN.$GLOBALS['linebreak'];
-						if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_filename_manipulation_detected'].' ('.$ofnenc.')! ';
-						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofnenc."' > '".$eN."' (FN: ".$znCRC."):".$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_filename_manipulation_detected'].'!'.$GLOBALS['linebreak'];
+						if($fm)$GLOBALS['xsk'].='--FILENAME-MANIPULATION-NO-HASH-:'.$eS.':'.$ofn.'>'.$eN.$GLOBALS['linebreak'];
+						if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_filename_manipulation_detected'].' ('.$ofnSafe.')! ';
+						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$eN.'\' (FN: '.$znCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_filename_manipulation_detected'].'!'.$GLOBALS['linebreak'];
 						continue;
-						}
-					$xt=$xts='-';
-					if(substr_count($eN,'.')>0)
-						{
-						$xt=explode('.',strtolower($eN));
-						$xts=substr($xt[count($xt)-1],0,3).'*';
-						$xt=$xt[count($xt)-1];
-						if(strlen($xt)<1)$xt=$xts='-';
 						}
 					if($GLOBALS['MusselConfig']['files']['filetype_archives'])
 						{
+						$xt=$xts='-';
+						if(substr_count($eN,'.')>0)
+							{
+							$xt=explode('.',strtolower($eN));
+							$xts=substr($xt[count($xt)-1],0,3).'*';
+							$xt=$xt[count($xt)-1];
+							if(strlen($xt)<1)$xt=$xts='-';
+							}
 						if(substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_whitelist'].',',','.$xt.',')>0||substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_whitelist'].',',','.$xts.',')>0)
 							{
-							$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofnenc."' > '".$eN."' (FN: ".$znCRC."):".$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
+							$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$eN.'\' (FN: '.$znCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
 							continue;
 							}
 						if(substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_blacklist'].',',','.$xt.',')>0||substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_blacklist'].',',','.$xts.',')>0)
 							{
 							$r=2;
-							if($fm)$GLOBALS['xsk'].='--FILETYPE-BLACKLISTED--NO-HASH-:'.$eS.':'.$ofnenc.'>'.$eN.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].' ('.$ofnenc.'>'.$eN.')! ';
-							$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofnenc."' > '".$eN."' (FN: ".$znCRC."):".$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].'.'.$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xsk'].='--FILETYPE-BLACKLISTED--NO-HASH-:'.$eS.':'.$ofn.'>'.$eN.$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].' ('.$ofnSafe.'>'.$eNSafe.')! ';
+							$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$eN.'\' (FN: '.$znCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].'.'.$GLOBALS['linebreak'];
 							continue;
 							}
 						if($GLOBALS['MusselConfig']['files']['filetype_greylist'])if(!substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_greylist'].',',','.$xt.',')&&!substr_count(','.$GLOBALS['MusselConfig']['files']['filetype_greylist'].',',','.$xts.','))
 							{
 							$r=2;
-							if($fm)$GLOBALS['xsk'].='----FILETYPE--NOT-GREYLISTED----:'.$eS.':'.$ofnenc.'>'.$eN.$GLOBALS['linebreak'];
-							if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].' ('.$ofnenc.'>'.$eN.')! ';
-							$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking']." '".$ofnenc."' > '".$eN."' (FN: ".$znCRC."):".$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].'.'.$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xsk'].='----FILETYPE--NOT-GREYLISTED----:'.$eS.':'.$ofn.'>'.$eN.$GLOBALS['linebreak'];
+							if($fm)$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].' ('.$ofnSafe.'>'.$eNSafe.')! ';
+							$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$eN.'\' (FN: '.$znCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['filetype_blacklisted'].'.'.$GLOBALS['linebreak'];
 							continue;
 							}
 						}
@@ -12086,17 +13442,20 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 							if(!isset($GLOBALS['memCache']['metadata_clamav.cvd']))$GLOBALS['memCache']['metadata_clamav.cvd']=@file($GLOBALS['vault'].'metadata_clamav.cvd');
 							if(!$GLOBALS['memCache']['metadata_clamav.cvd'])
 								{
+								$zmdc=0;
 								if($r!==2)$r=-3;
 								$zmd.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (metadata_clamav.cvd)!'.$GLOBALS['linebreak'];
 								}
-							$zmdc=count($GLOBALS['memCache']['metadata_clamav.cvd']);
-							if($zmdc<1)
+							else
 								{
-								if($r!==2)$r=-3;
-								$zmd.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_clamav.cvd)!'.$GLOBALS['linebreak'];
+								$zmdc=count($GLOBALS['memCache']['metadata_clamav.cvd']);
+								if($zmdc<1)
+									{
+									if($r!==2)$r=-3;
+									$zmd.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_clamav.cvd)!'.$GLOBALS['linebreak'];
+									}
 								}
-							$zmdv='';
-							for($zmdi=0;$zmdi<$zmdc;$zmdi++)
+							if($zmdc>0)for($zmdi=0;$zmdi<$zmdc;$zmdi++)
 								{
 								$zmds=@explode(':',$GLOBALS['memCache']['metadata_clamav.cvd'][$zmdi]);
 								$zmds[0]=vn_shorthand($zmds[0]);
@@ -12107,8 +13466,8 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 										{
 										$r=2;
 										$zmd.='-'.$lnap.phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xsk'].=md5($eD).':'.$eFS.':'.$ofnenc.'>'.$eN.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnenc.'>'.$eN.')! ';
+										if($fm)$GLOBALS['xsk'].=md5($eD).':'.$eFS.':'.$ofn.'>'.$eN.$GLOBALS['linebreak'];
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.'>'.$eNSafe.')! ';
 										}
 									}
 								}
@@ -12118,17 +13477,20 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 							if(!isset($GLOBALS['memCache']['metadata_custom.cvd']))$GLOBALS['memCache']['metadata_custom.cvd']=@file($GLOBALS['vault'].'metadata_custom.cvd');
 							if(!$GLOBALS['memCache']['metadata_custom.cvd'])
 								{
+								$zmdc=0;
 								if($r!==2)$r=-3;
 								$zmd.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (metadata_custom.cvd)!'.$GLOBALS['linebreak'];
 								}
-							$zmdc=count($GLOBALS['memCache']['metadata_custom.cvd']);
-							if($zmdc<1)
+							else
 								{
-								if($r!==2)$r=-3;
-								$zmd.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_custom.cvd)!'.$GLOBALS['linebreak'];
+								$zmdc=count($GLOBALS['memCache']['metadata_custom.cvd']);
+								if($zmdc<1)
+									{
+									if($r!==2)$r=-3;
+									$zmd.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_custom.cvd)!'.$GLOBALS['linebreak'];
+									}
 								}
-							$zmdv='';
-							for($zmdi=0;$zmdi<$zmdc;$zmdi++)
+							if($zmdc>0)for($zmdi=0;$zmdi<$zmdc;$zmdi++)
 								{
 								$zmds=@explode(':',$GLOBALS['memCache']['metadata_custom.cvd'][$zmdi]);
 								$zmds[0]=vn_shorthand($zmds[0]);
@@ -12139,8 +13501,8 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 										{
 										$r=2;
 										$zmd.='-'.$lnap.phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xsk'].=md5($eD).':'.$eFS.':'.$ofnenc.'>'.$eN.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnenc.'>'.$eN.')! ';
+										if($fm)$GLOBALS['xsk'].=md5($eD).':'.$eFS.':'.$ofn.'>'.$eN.$GLOBALS['linebreak'];
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.'>'.$eNSafe.')! ';
 										}
 									}
 								}
@@ -12150,17 +13512,20 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 							if(!isset($GLOBALS['memCache']['metadata_mussel.cvd']))$GLOBALS['memCache']['metadata_mussel.cvd']=@file($GLOBALS['vault'].'metadata_mussel.cvd');
 							if(!$GLOBALS['memCache']['metadata_mussel.cvd'])
 								{
+								$zmdc=0;
 								if($r!==2)$r=-3;
 								$zmd.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (metadata_mussel.cvd)!'.$GLOBALS['linebreak'];
 								}
-							$zmdc=count($GLOBALS['memCache']['metadata_mussel.cvd']);
-							if($zmdc<1)
+							else
 								{
-								if($r!==2)$r=-3;
-								$zmd.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_mussel.cvd)!'.$GLOBALS['linebreak'];
+								$zmdc=count($GLOBALS['memCache']['metadata_mussel.cvd']);
+								if($zmdc<1)
+									{
+									if($r!==2)$r=-3;
+									$zmd.='-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_corrupted'].' (metadata_mussel.cvd)!'.$GLOBALS['linebreak'];
+									}
 								}
-							$zmdv='';
-							for($zmdi=0;$zmdi<$zmdc;$zmdi++)
+							if($zmdc>0)for($zmdi=0;$zmdi<$zmdc;$zmdi++)
 								{
 								$zmds=@explode(':',$GLOBALS['memCache']['metadata_mussel.cvd'][$zmdi]);
 								$zmds[0]=vn_shorthand($zmds[0]);
@@ -12171,8 +13536,8 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 										{
 										$r=2;
 										$zmd.='-'.$lnap.phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xsk'].=md5($eD).':'.$eFS.':'.$ofnenc.'>'.$eN.$GLOBALS['linebreak'];
-										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnenc.'>'.$eN.')! ';
+										if($fm)$GLOBALS['xsk'].=md5($eD).':'.$eFS.':'.$ofn.'>'.$eN.$GLOBALS['linebreak'];
+										if($fm)$GLOBALS['xfm'].=phpMusselV(array('vn'=>$zmds[0]),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.'>'.$eNSafe.')! ';
 										}
 									}
 								}
@@ -12181,7 +13546,7 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 					if($bad!==1)
 						{
 						$r=2;
-						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' > \''.$eN.'\' (FN: '.$znCRC.'; FD: '.$zCRC.'):'.$GLOBALS['linebreak'].$bad.$zmd;
+						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$eN.'\' (FN: '.$znCRC.'; FD: '.$zCRC.'):'.$GLOBALS['linebreak'].$bad.$zmd;
 						continue;
 						}
 					if($r===2&&$zmd)
@@ -12195,10 +13560,10 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 								if($fm)$GLOBALS['xsk'].='Quarantined as "/vault/quarantine/'.$qfu.'.qfu".'.$GLOBALS['linebreak'];
 								}
 							}
-						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' > \''.$eN.'\' (FN: '.$znCRC.'; FD: '.$zCRC.'):'.$GLOBALS['linebreak'].$zmd;
+						$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$eN.'\' (FN: '.$znCRC.'; FD: '.$zCRC.'):'.$GLOBALS['linebreak'].$zmd;
 						continue;
 						}
-					$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofnenc.'\' > \''.$eN.'\' (FN: '.$znCRC.'; FD: '.$zCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
+					$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$eN.'\' (FN: '.$znCRC.'; FD: '.$zCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
 					}
 				}
 			}
@@ -12259,6 +13624,7 @@ if(!isset($MusselConfig['signatures']['rx_siglen_max']))$MusselConfig['signature
 if(!isset($MusselConfig['signatures']['sd_siglen_min']))$MusselConfig['signatures']['sd_siglen_min']=4;
 if(!isset($MusselConfig['signatures']['sd_siglen_max']))$MusselConfig['signatures']['sd_siglen_max']=1024;
 if(!isset($MusselConfig['signatures']['fail_silently']))$MusselConfig['signatures']['fail_silently']=1;
+if(!isset($MusselConfig['signatures']['fail_extensions_silently']))$MusselConfig['signatures']['fail_extensions_silently']=1;
 if(!isset($MusselConfig['files']))$MusselConfig['files']=array();
 if(!isset($MusselConfig['files']['max_uploads']))$MusselConfig['files']['max_uploads']=10;
 if(!isset($MusselConfig['files']['filesize_limit']))$MusselConfig['files']['filesize_limit']=65536;
@@ -12427,7 +13793,7 @@ function phpMussel_mail($body='')
 			fclose($glf);
 			unset($glf);
 			}
-		else $GLOBALS['memCache']['greylist']=@implode_md(file($GLOBALS['vault'].'greylist.csv'));
+		else $GLOBALS['memCache']['greylist']=implode_md(file($GLOBALS['vault'].'greylist.csv'));
 		}
 	$hex=@bin2hex($body);
 	$hexlc=@bin2hex(strtolower($body));
@@ -13029,7 +14395,6 @@ if($c>0&&!$GLOBALS['MusselConfig']['general']['honeypot_mode'])
 			if($MusselConfig['compatibility']['ignore_upload_errors'])
 				{
 				if(!isset($_FILES[$k]['name'])||!isset($_FILES[$k]['tmp_name'])||!isset($_FILES[$k]['error'])||!isset($_FILES[$k]['size']))continue;
-				$_FILES[$k]['name']=@urlencode($_FILES[$k]['name']);
 				$xsk.='-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
 				$xfm.=$MusselConfig['lang']['upload_limit_exceeded'].' ('.$_FILES[$k]['name'].')! ';
 				if($_FILES[$k]['error']>0)continue;
@@ -13042,7 +14407,6 @@ if($c>0&&!$GLOBALS['MusselConfig']['general']['honeypot_mode'])
 				}
 			else
 				{
-				$_FILES[$k]['name']=@urlencode($_FILES[$k]['name']);
 				if($_FILES[$k]['error']==1)
 					{
 					$xsk.='---------UPLOAD-ERROR-1---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
@@ -13113,7 +14477,6 @@ if($c>0&&!$GLOBALS['MusselConfig']['general']['honeypot_mode'])
 				{
 				if(!isset($_FILES[$k]['name'])||!isset($_FILES[$k]['tmp_name'])||!isset($_FILES[$k]['error'])||!isset($_FILES[$k]['size']))continue;
 				if($_FILES[$k]['error']>0)continue;
-				$_FILES[$k]['name']=@urlencode($_FILES[$k]['name']);
 				$r=phpMussel($_FILES[$k]['tmp_name'],2,1,0,$_FILES[$k]['name']);
 				}
 			else if(!isset($_FILES[$k]['name'])||!isset($_FILES[$k]['tmp_name'])||!isset($_FILES[$k]['error'])||!isset($_FILES[$k]['size']))
@@ -13123,7 +14486,6 @@ if($c>0&&!$GLOBALS['MusselConfig']['general']['honeypot_mode'])
 				}
 			else
 				{
-				$_FILES[$k]['name']=@urlencode($_FILES[$k]['name']);
 				if($_FILES[$k]['error']==1)
 					{
 					$xsk.='---------UPLOAD-ERROR-1---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
@@ -13180,7 +14542,6 @@ else if($c>0&&$MusselConfig['general']['honeypot_mode'])
 		if(isset($_FILES[$k]['name'])&&isset($_FILES[$k]['tmp_name'])&&isset($_FILES[$k]['size']))
 			{
 			if(isset($_FILES[$k]['error']))$_FILES[$k]['error']=0;
-			$_FILES[$k]['name']=@urlencode($_FILES[$k]['name']);
 			if($_FILES[$k]['error']===0)if(is_uploaded_file($_FILES[$k]['tmp_name']))
 				{
 				$str=phpMusselFile($_FILES[$k]['tmp_name']);
@@ -13189,7 +14550,7 @@ else if($c>0&&$MusselConfig['general']['honeypot_mode'])
 				$qfu=$GLOBALS['time'].'-'.md5($MusselConfig['general']['quarantine_key'].$crc.$GLOBALS['time']);
 				if($str_len>0&&$str_len<($MusselConfig['general']['quarantine_max_filesize']*1024))@phpMusselQ($str,$MusselConfig['general']['quarantine_key'],$_SERVER[$MusselConfig['general']['ipaddr']],$qfu);
 				if($MusselConfig['general']['delete_on_sight'])@unlink($_FILES[$k]['tmp_name']);
-				$hpd.='TEMP FILENAME: '.$_FILES[$k]['tmp_name'].$linebreak.'FILENAME: '.$_FILES[$k]['name'].$linebreak.'FILESIZE: '.$str_len.$linebreak.'MD5: '.md5($str).$linebreak.'QUARANTINED AS: \'/vault/quarantine/'.$qfu.'.qfu\''.$linebreak.$linebreak;
+				$hpd.='TEMP FILENAME: '.$_FILES[$k]['tmp_name'].$linebreak.'FILENAME: '.urlencode($_FILES[$k]['name']).$linebreak.'FILESIZE: '.$str_len.$linebreak.'MD5: '.md5($str).$linebreak.'QUARANTINED AS: \'/vault/quarantine/'.$qfu.'.qfu\''.$linebreak.$linebreak;
 				}
 			}
 		}
@@ -13213,9 +14574,10 @@ if($c>0&&$MusselConfig['general']['scan_cache_expiry']>0)
 	$HashCache=phpMusselCacheSet('HashCache',$time+$MusselConfig['general']['scan_cache_expiry'],$HashCache);
 	unset($HashCacheK,$HashCacheI,$HashCacheC,$HashCache);
 	}
+$xfm=trim($xfm);
 if(strlen($xfm)>0)
 	{
-	$MusselConfig['template_data']['detected']=$xfm=trim($xfm);
+	$MusselConfig['template_data']['detected']=$xfm;
 	$MusselConfig['template_data']['phpmusselversion']=$phpmusselversion;
 	$MusselConfig['template_data']['xmlLang']=$MusselConfig['general']['lang'];
 	if($MusselConfig['general']['scan_kills']&&strlen($xsk)>0)

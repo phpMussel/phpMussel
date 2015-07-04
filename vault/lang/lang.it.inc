@@ -16,7 +16,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- Questo file è la traduzione Italiana di phpMussel (29 Giugno 2015).
+ Questo file è la traduzione Italiana di phpMussel (3rd July 2015).
  <%phpMussel%/vault/lang/lang.it.inc>
 
 */
@@ -67,6 +67,7 @@ $MusselConfig['lang']['scan_no_problems_found']='Nessun problema rilevato.';
 $MusselConfig['lang']['scan_reading']='Lettura in corso';
 $MusselConfig['lang']['scan_signature_file_corrupted']='File delle firme corrotto';
 $MusselConfig['lang']['scan_signature_file_missing']='File delle firme mancante';
+$MusselConfig['lang']['scan_tampering']='Rilevato potenzialmente pericolosi alterazione del file';
 $MusselConfig['lang']['scan_unauthorised_upload']='Rilevata manipolazione non autorizzata del caricamento del file';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Rilevata manipolazione non autorizzata del caricamento del file o malconfigurazione! ';
 $MusselConfig['lang']['started']='Iniziato';

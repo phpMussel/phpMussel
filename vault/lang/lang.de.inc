@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel German/Deutsch Language Data (29th June 2015).
+ This File: phpMussel German/Deutsch Language Data (4th July 2015).
  <%phpMussel%/vault/lang/lang.de.inc>
 
 */
@@ -65,6 +65,7 @@ $MusselConfig['lang']['scan_no_problems_found']='Keine Probleme gefunden.';
 $MusselConfig['lang']['scan_reading']='Lesen';
 $MusselConfig['lang']['scan_signature_file_corrupted']='Signaturdatei beschädigt';
 $MusselConfig['lang']['scan_signature_file_missing']='Signaturdatei fehlt';
+$MusselConfig['lang']['scan_tampering']='Detected potentially dangerous file tampering';
 $MusselConfig['lang']['scan_unauthorised_upload']='Unerlaubte Upload-Manipulation erkannt';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Unerlaubte Upload-Manipulation oder Fehlkonfiguration erkannt! ';
 $MusselConfig['lang']['started']='Gestartet';

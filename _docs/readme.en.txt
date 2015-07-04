@@ -219,8 +219,10 @@
    directories.
  - $output_type is an integer, indicating the format in which the results of
    the scan are to be return as. A value of 0 instructs the function to return
-   results as an integer (a returned result of -2 indicates that corrupt data
-   was detected during the scan and thus the scan failed to complete,
+   results as an integer (a returned result of -3 indicates problems were
+   encountered with the phpMussel signatures files or signature map files and
+   that they may possible be missing or corrupted, -2 indicates that corrupt
+   data was detected during the scan and thus the scan failed to complete,
    -1 indicates that extensions or addons required by php to execute the scan
    were missing and thus the scan failed to complete, 0 indicates that the
    scan target doesn't exist and thus there was nothing to scan, 1 indicates
@@ -565,6 +567,10 @@
     ~
  /_testfiles/md5_testfile.txt (Test file, Included)
     Test file for testing phpMussel MD5 signatures.
+    ~
+ /_testfiles/metadata_testfile.tar (Test file, Included)
+    Test file for testing phpMussel metadata signatures and for testing TAR
+    file support on your system.
     ~
  /_testfiles/metadata_testfile.txt.gz (Test file, Included)
     Test file for testing phpMussel metadata signatures and for testing GZ file
@@ -1115,10 +1121,19 @@
    - Should phpMussel report when signatures files are missing or corrupted?
      If fail_silently is disabled, missing and corrupted files will be reported
      on scanning, and if fail_silently is enabled, missing and corrupted files
-     will be ignored, with scanning reported for those files that there are no
-     problems. This should generally be left alone unless you're experiencing
-     crashes or similar problems. 0 = Disabled, 1 = Enabled [Default].
+     will be ignored, with scanning reporting for those files that there aren't
+     any problems. This should generally be left alone unless you're
+     experiencing crashes or similar problems.
+     0 = Disabled, 1 = Enabled [Default].
      "fail_silently"
+   - Should phpMussel report when extensions are missing? If
+     fail_extensions_silently is disabled, missing extensions will be reported
+     on scanning, and if fail_extensions_silently is enabled, missing
+     extensions will be ignored, with scanning reporting for those files that
+     there aren't any problems. Disabling this directive may potentially
+     increase your security, but may also lead to an increase of false
+     positives. 0 = Disabled, 1 = Enabled [Default].
+     "fail_extensions_silently"
  "files" (Category)
  - General configuration for handling of files.
    "max_uploads"
@@ -1620,5 +1635,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 29th June 2015 (2015.06.29).
+Last Updated: 3rd July 2015 (2015.07.03).
 EOF
