@@ -103,7 +103,7 @@ Echter, je bent ook in staat om te instrueren phpMussel om te scannen naar besta
 
 Waar:
 - `$what_to_scan` is ofwel een string of een array, wijzen ofwel naar een doelgerichte bestand, een doelgerichte bestandsmap of een array op doelgerichte bestanden en/of doelgerichte bestandsmappen.
-- `$output_type` is een integer, met vermelding van het formaat waarin de resultaten van de scan zijn om terug te keren als. Een waarde van 0 instrueert de functie om de resultaten terug te keren als een integer (een geretourneerd gevolg van -2 geeft aan dat corrupte data tijdens de scan werd gedetecteerd en dus de scan niet voltooid, -1 geeft aan dat uitbreidingen of toevoegingen vereist door php om de scan uit te voeren ontbraken en dus de scan niet voltooid, 0 geeft aan dat de scan doelgroep bestaat niet en dus was er niets te scannen, 1 geeft aan dat de doelwit met succes werd gescand geen problemen waren gedetecteerd, en 2 geeft aan dat de doelwit met succes werd gescand en problemen waren gedetecteerd). Een waarde van 1 instrueert de functie om de resultaten als mensen leesbare tekst. Een waarde van 2 beide instrueert de functie om de resultaten als mensen leesbare tekst en om de resultaten te exporteren een globale variabele. Deze variabele is optioneel, en is 0 door standaard.
+- `$output_type` is een integer, met vermelding van het formaat waarin de resultaten van de scan zijn om terug te keren als. Een waarde van 0 instrueert de functie om de resultaten terug te keren als een integer (een geretourneerd gevolg van -3 geeft problemen werden ondervonden met de phpMussel handtekeningen bestanden of handtekening kaart bestanden en dat zij mogelijk worden beschadigd of ontbreekt, -2 geeft aan dat corrupte data tijdens de scan werd gedetecteerd en dus de scan niet voltooid, -1 geeft aan dat uitbreidingen of toevoegingen vereist door php om de scan uit te voeren ontbraken en dus de scan niet voltooid, 0 geeft aan dat de scan doelgroep bestaat niet en dus was er niets te scannen, 1 geeft aan dat de doelwit met succes werd gescand geen problemen waren gedetecteerd, en 2 geeft aan dat de doelwit met succes werd gescand en problemen waren gedetecteerd). Een waarde van 1 instrueert de functie om de resultaten als mensen leesbare tekst. Een waarde van 2 beide instrueert de functie om de resultaten als mensen leesbare tekst en om de resultaten te exporteren een globale variabele. Deze variabele is optioneel, en is 0 door standaard.
 - `$output_flatness` is een integer, aangeeft of er kunnen resultaten worden geretourneerd als een matrix of niet. Doorgaans, als de scan doel bevatte meerdere items (bijvoorbeeld als een directory of matrix) het resultaten zal worden geretourneerd in een array (standaard waarde van 0). Een waarde van 1 instrueert de functie te imploderen dergelijke matrix vóór ingang, resulterend in platte tekenreeks waarin de resultaten worden geretourneerd. Deze variabele is optioneel, en is 0 door standaard.
 
 Voorbeelden:
@@ -282,6 +282,7 @@ Bestand                                    | Beschrijving
 /_testfiles/graphics_standard_testfile.gif | Testbestand voor het testen phpMussel grafische handtekeningen.
 /_testfiles/html_standard_testfile.txt     | Testbestand voor het testen phpMussel genormaliseerde HTML handtekeningen.
 /_testfiles/md5_testfile.txt               | Testbestand voor het testen phpMussel MD5 handtekeningen.
+/_testfiles/metadata_testfile.tar          | Testbestand voor het testen phpMussel metadata handtekeningen en voor het testen van TAR bestandsondersteuning op uw systeem.
 /_testfiles/metadata_testfile.txt.gz       | Testbestand voor het testen phpMussel metadata handtekeningen en voor het testen van GZ bestandsondersteuning op uw systeem.
 /_testfiles/metadata_testfile.zip          | Testbestand voor het testen phpMussel metadata handtekeningen en voor het testen van ZIP bestandsondersteuning op uw systeem.
 /_testfiles/ole_testfile.ole               | Testbestand voor het testen phpMussel OLE handtekeningen.
@@ -460,22 +461,22 @@ Signature files marked with "_mussel" contain signatures that specifically are n
 
 
 ###6. <a name="SECTION6"></a>CONFIGURATIEOPTIES
-The following is a list of variables found in the `phpmussel.ini` configuration file of phpMussel, along with a description of their purpose and function.
+Het volgende is een lijst van variabelen die in de `phpmussel.ini` configuratiebestand van phpMussel, samen met een beschrijving van hun doel en functie.
 
 ####"general" (Categorie)
-General configuration for phpMussel.
+Algemene configuratie voor phpMussel.
 
 "script_password"
 - As a convenience, phpMussel will allow certain functions (including the ability to update phpMussel on-the-fly) to be manually triggered via POST, GET and QUERY. However, as a security precaution, to do this, phpMussel will expect a password to be included with the command, as to ensure that it's you, and not someone else, attempting to manually trigger these functions. Set script_password to whatever password you would like to use. If no password is set, manual triggering will be disabled by default. Use something you will remember but which is hard for others to guess.
-- Has no influence in CLI mode.
+- Heeft geen invloed in CLI-modus.
 
 "logs_password"
 - The same as script_password, but for viewing the contents of scan_log and scan_kills. Having separate passwords can be useful if you want to give someone else access to one set of functions but not the other.
-- Has no influence in CLI mode.
+- Heeft geen invloed in CLI-modus.
 
 "cleanup"
 - Unset script variables and cache after execution. If you aren't using the script beyond the initial scanning of uploads, should set to yes, to minimize memory usage. If you are using the script for purposes beyond the initial scanning of uploads, should set to no, to avoid unnecessarily reloading duplicate data into memory. In general practise, it should probably be set to yes, but, if you do this, you won't be able to use the script for anything other than scanning file uploads.
-- Has no influence in CLI mode.
+- Heeft geen invloed in CLI-modus.
 
 "scan_log"
 - Filename of file to log all scanning results to. Specify a filename, or leave blank to disable.
@@ -514,7 +515,7 @@ General configuration for phpMussel.
 - For how long should phpMussel cache the results of scanning? Value is the number of seconds to cache the results of scanning for. Default is 21600 seconds (6 hours); A value of 0 will disable caching the results of scanning.
 
 ####"signatures" (Categorie)
-Configuration for signatures.
+Configuratie voor handtekeningen.
 - %%%_clamav = ClamAV signatures (both mains and daily).
 - %%%_custom = Your custom signatures (if you've written any).
 - %%%_mussel = phpMussel signatures included in your current signatures set that aren't from ClamAV.
@@ -618,7 +619,10 @@ Signature matching length limiting options. Only change these if you know what y
 - "sd_siglen_max"
 
 "fail_silently"
-- Should phpMussel report when signatures files are missing or corrupted? If fail_silently is disabled, missing and corrupted files will be reported on scanning, and if fail_silently is enabled, missing and corrupted files will be ignored, with scanning reported for those files that there are no problems. This should generally be left alone unless you're experiencing crashes or similar problems. 0 = Disabled, 1 = Enabled [Default].
+- Should phpMussel report when signatures files are missing or corrupted? If fail_silently is disabled, missing and corrupted files will be reported on scanning, and if fail_silently is enabled, missing and corrupted files will be ignored, with scanning reporting for those files that there aren't any problems. This should generally be left alone unless you're experiencing crashes or similar problems. 0 = Disabled, 1 = Enabled [Default].
+
+"fail_extensions_silently"
+- Should phpMussel report when extensions are missing? If fail_extensions_silently is disabled, missing extensions will be reported on scanning, and if fail_extensions_silently is enabled, missing extensions will be ignored, with scanning reporting for those files that there aren't any problems. Disabling this directive may potentially increase your security, but may also lead to an increase of false positives. 0 = Disabled, 1 = Enabled [Default].
 
 ####"files" (Categorie)
 General configuration for handling of files.
@@ -889,4 +893,4 @@ Deze informatie is voor het laatst bijgewerkt 28 Mei 2015 en is op de hoogte voo
 ---
 
 
-Laatste Bijgewerkt: 29 Juni 2015 (2015.06.29).
+Laatste Bijgewerkt: 3 Juli 2015 (2015.07.03).

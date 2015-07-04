@@ -217,7 +217,7 @@
  phpMussel è uno script destinato a funzionare adeguatamente con solo minimi
  requisiti: Quando è stato installato, fondamentalmente, è dovrebbe funzionare.
 
- Scandire di file caricamenti è automatizzato e abilitato per predefinita,
+ Scansionare di file caricamenti è automatizzato e abilitato per predefinita,
  perciò nulla è richiesto a vostro nome per questa particolare funzione.
 
  Ma, si è anche in grado di istruire phpMussel per la scansione per i file,
@@ -234,12 +234,14 @@
    un obiettivo cartella o un array di obiettivo file e/o obiettivo cartella.
  - $tipi_di_output è un integer, indicando il formato in cui i risultati della
    scansione dovrebbero restituire come. Un valore di 0 istruire la funzione a
-   restituire i risultati come integer (un risultato restituito di -2 indica
-   che i corrotto dato è stato rilevato durante la scansione e quindi la
-   scansione non abbia completato, -1 indica che estensioni o addon richiesti
-   per php a eseguire la scansione erano assente e quindi la scansione non
-   abbia completato, 0 indica che l'obiettivo di scansione non esiste e quindi
-   non c'era nulla a scansione, 1 indica che l'obiettivo è stato scansionata
+   restituire i risultati come integer (un risultato restituito di -3 indica
+   problemi sono stati incontrati con il phpMussel firme file o file di firme
+   mappe e che possono essere possibile mancanti o corrotto, -2 indica che i
+   corrotto dato è stato rilevato durante la scansione e quindi la scansione
+   non abbia completato, -1 indica che estensioni o addon richiesti per php a
+   eseguire la scansione erano assente e quindi la scansione non abbia
+   completato, 0 indica che l'obiettivo di scansione non esiste e quindi non
+   c'era nulla a scansione, 1 indica che l'obiettivo è stato scansionata
    correttamente e non problemi stati rilevati, e 2 indica che l'obiettivo è
    stato scansionata correttamente e problemi stati rilevati). Un valore di 1
    istruire la funzione a restituire i risultati come leggibile testo. Un
@@ -603,6 +605,10 @@
     ~
  /_testfiles/md5_testfile.txt (Test file, Incluso)
     Test file per test di phpMussel MD5 firme.
+    ~
+ /_testfiles/metadata_testfile.tar (Test file, Incluso)
+    Test file per test di phpMussel metadata firme e per testare TAR file
+    supporto sullo vostro sistema.
     ~
  /_testfiles/metadata_testfile.txt.gz (Test file, Incluso)
     Test file per test di phpMussel metadata firme e per testare GZ file
@@ -1175,14 +1181,22 @@
      "rx_siglen_max"
      "sd_siglen_min"
      "sd_siglen_max"
-   - phpMussel dovrebbe riportarlo quando i firme file sono mancanti o
-     danneggiati? Se fail_silently è disattivato, Mancanti e danneggiati file
+   - Dovrebbe phpMussel rapporto quando le file di firme sono mancanti o
+     danneggiati? Se fail_silently è disattivato, mancanti e danneggiati file
      saranno riportato sulla scansione, e se fail_silently è abilitato,
-     mancanti e danneggiati file saranno ignorato, con scansione riportato per
+     mancanti e danneggiati file saranno ignorato, con scansione riportando per
      quei file che non ha sono problemi. Questo dovrebbe essere generalmente
      lasciata sola a meno che sperimentando inaspettate terminazioni o simili
      problemi. 0 = Disattivato, 1 = Attivato [Predefinito].
      "fail_silently"
+   - Dovrebbe phpMussel rapporto quando le estensioni sono mancanti? Se
+     fail_extensions_silently è disattivato, mancanti estensioni saranno
+     riportato sulla scansione, e se fail_extensions_silently è abilitato,
+     mancanti estensioni saranno ignorato, con scansione riportando per quei
+     file che non ha sono problemi. La disattivazione di questa direttiva
+     potrebbe potenzialmente aumentare la sicurezza, ma può anche portare ad un
+     aumento di falsi positivi. 0 = Disattivato, 1 = Attivato [Predefinito].
+     "fail_extensions_silently"
  "files" (Categoria)
  - Generale configurazione per la gestione dei file.
    "max_uploads"
@@ -1377,10 +1391,10 @@
  "virustotal" (Categoria)
  - Configurazione per Virus Total integrazione.
    "vt_public_api_key"
-   - Facoltativamente, phpMussel è in grado di scandire dei file utilizzando il
-     Virus Total API come un modo per fornire un notevolmente migliorato
+   - Facoltativamente, phpMussel è in grado di scansionare dei file utilizzando
+     il Virus Total API come un modo per fornire un notevolmente migliorato
      livello di protezione contro virus, trojan, malware e altre minacce. Per
-     predefinita, la scandire dei file utilizzando il Virus Total API è
+     predefinita, la scansionare dei file utilizzando il Virus Total API è
      disattivato. Per abilitarlo, an API key from Virus Total is required. A
      causa del significativo vantaggio che questo potrebbe fornire a voi, è
      qualcosa che consiglio vivamente di attivare. Si prega di notare,
@@ -1397,20 +1411,20 @@
         prima "Contents"). La Virus Total Pubblica API documentazione può
         essere trovato qui:
         <https://www.virustotal.com/en/documentation/public-api/>.
-     Notare: Se scandire dei file utilizzando il Virus Total API è disattivato,
-     non avrete bisogno di rivedere qualsiasi delle direttive in questa
-     categoria (`virustotal`), perché nessuno di loro farà una cosa se questo è
-     disattivato. Per acquisire un Virus Total API chiave, dal ovunque sul loro
-     website, clicca il "Join our Community" link situato in alto destra della
-     pagina, immettere le informazioni richieste, e clicca "Sign up" quando hai
-     finito. Seguite tutte le istruzioni fornite, e quando hai la tua pubblica
-     API chiave, copia/incolla la pubblica API chiave per la
-     `vt_public_api_key` direttiva del `phpmussel.ini` configurazione file.
+     Notare: Se scansionare dei file utilizzando il Virus Total API è
+     disattivato, non avrete bisogno di rivedere qualsiasi delle direttive in
+     questa categoria (`virustotal`), perché nessuno di loro farà una cosa se
+     questo è disattivato. Per acquisire un Virus Total API chiave, dal ovunque
+     sul loro website, clicca il "Join our Community" link situato in alto
+     destra della pagina, immettere le informazioni richieste, e clicca
+     "Sign up" quando hai finito. Seguite tutte le istruzioni fornite, e quando
+     hai la tua pubblica API chiave, copia/incolla la pubblica API chiave per
+     la `vt_public_api_key` direttiva del `phpmussel.ini` configurazione file.
    "vt_suspicion_level"
-   - Per predefinita, phpMussel limiterà quali file ciò scandire utilizzando il
-     Virus Total API ai quei file che considera "sospettose". Facoltativamente,
-     è possibile modificare questa restrizione per mezzo di modificando il
-     valore del `vt_suspicion_level` direttiva.
+   - Per predefinita, phpMussel limiterà quali file ciò scansiona utilizzando
+     il Virus Total API ai quei file che considera "sospettose".
+     Facoltativamente, è possibile modificare questa restrizione per mezzo di
+     modificando il valore del `vt_suspicion_level` direttiva.
      0 - File vengono solo considerati sospetti se, dopo essere sottoposto a
          scansione da phpMussel utilizzando i propri firme, essi sono
          considerati avere un peso euristica. Questo potrebbe effettivamente
@@ -1448,9 +1462,9 @@
      nella blacklist o nella whitelist per mezzo di phpMussel non verrà
      soggetta di scansione utilizzando il Virus Total API, perché quelle tali
      file sarebbero hai già stati dichiarati come maligno o benigno per
-     phpMussel per il momento in cui avrebbero altrimenti hai stati scanditi
-     dal Virus Total API, e quindi, scandire supplementare non sarebbe
-     necessaria. La capacità di phpMussel a scandire file utilizzando il Virus
+     phpMussel per il momento in cui avrebbero altrimenti hai stati scansionati
+     dal Virus Total API, e quindi, scansionare supplementare non sarebbe
+     necessaria. La capacità di phpMussel a scansioni file utilizzando il Virus
      Total API è destinato a sviluppare fiducia ulteriormente per se un file è
      maligno o benigno in quelle circostanze in cui phpMussel sé non è
      interamente certo se un file è maligno o benigno.
@@ -1713,5 +1727,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 30 Giugno 2015 (2015.06.30).
+Ultimo Aggiornamento: 3 Luglio 2015 (2015.07.03).
 EOF

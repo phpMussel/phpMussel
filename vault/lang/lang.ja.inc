@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Japanese/日本語 Language Data (29th June 2015).
+ This File: phpMussel Japanese/日本語 Language Data (3rd July 2015).
  <%phpMussel%/vault/lang/lang.ja.inc>
 
 */
@@ -65,6 +65,7 @@ $MusselConfig['lang']['scan_no_problems_found']='問題は見つかりません�
 $MusselConfig['lang']['scan_reading']='読んでいます';
 $MusselConfig['lang']['scan_signature_file_corrupted']='署名ファイルが破損しました';
 $MusselConfig['lang']['scan_signature_file_missing']='署名ファイルはありません';
+$MusselConfig['lang']['scan_tampering']='検出された潜在的に危険なファイル改ざん';
 $MusselConfig['lang']['scan_unauthorised_upload']='不正ファイルアップロード改ざんが検出されました';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='不正ファイルアップロード改ざんまたはミスコンフィギュレーションが検出されました！';
 $MusselConfig['lang']['started']='開始しました';

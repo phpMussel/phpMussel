@@ -103,7 +103,7 @@ However, you're also able to instruct phpMussel to scan for files, directories o
 
 Where:
 - `$what_to_scan` is either a string or an array, pointing to either a target file, a target directory or an array of target files and/or target directories.
-- `$output_type` is an integer, indicating the format in which the results of the scan are to be return as. A value of 0 instructs the function to return results as an integer (a returned result of -2 indicates that corrupt data was detected during the scan and thus the scan failed to complete, -1 indicates that extensions or addons required by php to execute the scan were missing and thus the scan failed to complete, 0 indicates that the scan target doesn't exist and thus there was nothing to scan, 1 indicates that the target was successfully scanned and no problems were detected, and 2 indicates that the target was successfully scanned and problems were detected). A value of 1 instructs the function to return results as human readable text. A value of 2 instructs the function both to return the results as human readable text and to export the results to a global variable. This variable is optional, defaulting to 0.
+- `$output_type` is an integer, indicating the format in which the results of the scan are to be return as. A value of 0 instructs the function to return results as an integer (a returned result of -3 indicates problems were encountered with the phpMussel signatures files or signature map files and that they may possible be missing or corrupted, -2 indicates that corrupt data was detected during the scan and thus the scan failed to complete, -1 indicates that extensions or addons required by php to execute the scan were missing and thus the scan failed to complete, 0 indicates that the scan target doesn't exist and thus there was nothing to scan, 1 indicates that the target was successfully scanned and no problems were detected, and 2 indicates that the target was successfully scanned and problems were detected). A value of 1 instructs the function to return results as human readable text. A value of 2 instructs the function both to return the results as human readable text and to export the results to a global variable. This variable is optional, defaulting to 0.
 - `$output_flatness` is an integer, indicating whether to allow results to be returned as an array or not. Normally, if the scan target contained multiple items (such as if a directory or array) the results will be returned in an array (default value of 0). A value of 1 instructs the function to implode any such array prior to input, resulting in a flattened string containing the results to be returned. This variable is optional, defaulting to 0.
 
 Examples:
@@ -282,6 +282,7 @@ File                                       | Description
 /_testfiles/graphics_standard_testfile.gif | Test file for testing phpMussel graphics signatures.
 /_testfiles/html_standard_testfile.txt     | Test file for testing phpMussel normalised HTML signatures.
 /_testfiles/md5_testfile.txt               | Test file for testing phpMussel MD5 signatures.
+/_testfiles/metadata_testfile.tar          | Test file for testing phpMussel metadata signatures and for testing TAR file support on your system.
 /_testfiles/metadata_testfile.txt.gz       | Test file for testing phpMussel metadata signatures and for testing GZ file support on your system.
 /_testfiles/metadata_testfile.zip          | Test file for testing phpMussel metadata signatures and for testing ZIP file support on your system.
 /_testfiles/ole_testfile.ole               | Test file for testing phpMussel OLE signatures.
@@ -618,7 +619,10 @@ Signature matching length limiting options. Only change these if you know what y
 - "sd_siglen_max"
 
 "fail_silently"
-- Should phpMussel report when signatures files are missing or corrupted? If fail_silently is disabled, missing and corrupted files will be reported on scanning, and if fail_silently is enabled, missing and corrupted files will be ignored, with scanning reported for those files that there are no problems. This should generally be left alone unless you're experiencing crashes or similar problems. 0 = Disabled, 1 = Enabled [Default].
+- Should phpMussel report when signatures files are missing or corrupted? If fail_silently is disabled, missing and corrupted files will be reported on scanning, and if fail_silently is enabled, missing and corrupted files will be ignored, with scanning reporting for those files that there aren't any problems. This should generally be left alone unless you're experiencing crashes or similar problems. 0 = Disabled, 1 = Enabled [Default].
+
+"fail_extensions_silently"
+- Should phpMussel report when extensions are missing? If fail_extensions_silently is disabled, missing extensions will be reported on scanning, and if fail_extensions_silently is enabled, missing extensions will be ignored, with scanning reporting for those files that there aren't any problems. Disabling this directive may potentially increase your security, but may also lead to an increase of false positives. 0 = Disabled, 1 = Enabled [Default].
 
 ####"files" (Category)
 General configuration for handling of files.
@@ -889,4 +893,4 @@ This information was last updated 28th May 2015 and is current for all phpMussel
 ---
 
 
-Last Updated: 29th June 2015 (2015.06.29).
+Last Updated: 3rd July 2015 (2015.07.03).

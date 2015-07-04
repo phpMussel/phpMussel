@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Indonesian Language Data (29th June 2015).
+ This File: phpMussel Indonesian Language Data (3rd July 2015).
  <%phpMussel%/vault/lang/lang.id.inc>
 
 */
@@ -65,6 +65,7 @@ $MusselConfig['lang']['scan_no_problems_found']='Tidak ada masalah yang diketahu
 $MusselConfig['lang']['scan_reading']='Bacaan';
 $MusselConfig['lang']['scan_signature_file_corrupted']='Tanda tangan file rusak';
 $MusselConfig['lang']['scan_signature_file_missing']='Tanda tangan file hilang';
+$MusselConfig['lang']['scan_tampering']='Terdeteksi perubahan berpotensi berbahaya dalam file';
 $MusselConfig['lang']['scan_unauthorised_upload']='Tidak sah file nama manipulasi terdeteksi';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Tidak sah file nama manipulasi atau salah-konfigurasi terdeteksi! ';
 $MusselConfig['lang']['started']='Dimulai';

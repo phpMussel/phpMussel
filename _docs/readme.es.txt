@@ -226,18 +226,20 @@
    destino directorio o un array de destinos archivos y/o destinos directorios.
  - $output_type es un entero, indicando el formato en el que los resultados son
    para estar de regreso como. Un valor de 0 indica a la función para devolver
-   resultados como un entero (un resultado devuelto de -2 indica que se ha
-   corruptos datos detectados durante el escanear y por lo tanto el escanear no
-   pudo completar, -1 indica que las extensiones o complementos requeridos por
-   php para ejecutar el escaneo faltaban y por lo tanto el escanear no pudo
-   completar, 0 indica que la escanear objetivo no existe y por lo tanto no
-   había nada para escanear, 1 indica que el objetivo fue escaneado con éxito
-   y no se detectaron problemas, y 2 indica que el objetivo fue escaneado con
-   éxito y se detectaron problemas). Un valor de 1 instruye la función a
-   devuelva resultados como texto legible por humanos. Un valor de 2 instruye
-   la función ambos a devuelva resultados como texto legible por humanos y a
-   exportar los resultados a una global variable. Esta variable es opcional,
-   predefinido como 0.
+   resultados como un entero (un resultado devuelto de -3 indica se encontraron
+   problemas con el phpMussel firmas archivos o firmas mapas archivos y que sea
+   posible pueden faltar o dañado, -2 indica que se ha corruptos datos
+   detectados durante el escanear y por lo tanto el escanear no pudo completar,
+   -1 indica que las extensiones o complementos requeridos por php para
+   ejecutar el escaneo faltaban y por lo tanto el escanear no pudo completar, 0
+   indica que la escanear objetivo no existe y por lo tanto no había nada para
+   escanear, 1 indica que el objetivo fue escaneado con éxito y no se
+   detectaron problemas, y 2 indica que el objetivo fue escaneado con éxito y
+   se detectaron problemas). Un valor de 1 instruye la función a devuelva
+   resultados como texto legible por humanos. Un valor de 2 instruye la función
+   ambos a devuelva resultados como texto legible por humanos y a exportar los
+   resultados a una global variable. Esta variable es opcional, predefinido
+   como 0.
  - $output_flatness es un entero, indicando si se permite a los resultados que
    se devuelven como un array o no. Normalmente, si la escanear objetivo
    contenida varios artículos (por ejemplo, si un directorio o array) los
@@ -593,6 +595,10 @@
     ~
  /_testfiles/md5_testfile.txt (Prueba archivo, Incluido)
     Prueba archivo para probando phpMussel MD5 firmas.
+    ~
+ /_testfiles/metadata_testfile.tar (Prueba archivo, Incluido)
+    Prueba archivo para probando phpMussel metadatos firmas y para probando TAR
+    archivo apoyo en su sistema.
     ~
  /_testfiles/metadata_testfile.txt.gz (Prueba archivo, Incluido)
     Prueba archivo para probando phpMussel metadatos firmas y para probando GZ
@@ -1180,11 +1186,20 @@
      dañados? Si fail_silently está desactivado, desaparecidos y dañados
      archivos será reportado cuando escaneando, y si fail_silently está
      activado, desaparecidos y dañados archivos será ignorado, con escaneando
-     reportado para lo archivos que no hay cualquier problemas. Esto
+     reportando para aquellos archivos que no hay cualquier problemas. Esto
      generalmente debe ser dejar sola a menos que usted está experimentando
      estrellarse o problemas similares.
      0 = Desactivado, 1 = Activado [Predefinido].
      "fail_silently"
+   - Debe phpMussel informan cuando extensiones están desaparecidos? Si
+     fail_extensions_silently está desactivado, desaparecidos extensiones será
+     reportado cuando escaneando, y si fail_extensions_silently está activado,
+     desaparecidos extensiones será ignorado, with scanning reportando para
+     aquellos archivos que no hay cualquier problemas. Desactivando esta
+     directiva puede potencialmente aumentar su seguridad, pero también puede
+     conducir a un aumento de falsos positivos.
+     0 = Desactivado, 1 = Activado [Predefinido].
+     "fail_extensions_silently"
  "files" (Categoría)
  - General configuración para el manejo de archivos.
    "max_uploads"
@@ -1729,5 +1744,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 29 Junio 2015 (2015.06.29).
+Última Actualización: 3 Julio 2015 (2015.07.03).
 EOF

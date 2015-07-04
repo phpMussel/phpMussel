@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Russian/Русский Language Data (29th June 2015).
+ This File: phpMussel Russian/Русский Language Data (3rd July 2015).
  <%phpMussel%/vault/lang/lang.ru.inc>
 
 */
@@ -65,6 +65,7 @@ $MusselConfig['lang']['scan_no_problems_found']='Нет проблемы най�
 $MusselConfig['lang']['scan_reading']='Чтение';
 $MusselConfig['lang']['scan_signature_file_corrupted']='Поврежден подпись файла';
 $MusselConfig['lang']['scan_signature_file_missing']='Отсутствует подпись файла';
+$MusselConfig['lang']['scan_tampering']='Обнаружено потенциально опасным файл модификация';
 $MusselConfig['lang']['scan_unauthorised_upload']='Несанкционированное файла загрузить манипуляции обнаружены';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Несанкционированное файла загрузить манипуляции или неправильная конфигурация обнаружены! ';
 $MusselConfig['lang']['started']='Начал';

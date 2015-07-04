@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Dutch/Nederlandse Language Data (29th June 2015).
+ This File: phpMussel Dutch/Nederlandse Language Data (3rd July 2015).
  <%phpMussel%/vault/lang/lang.nl.inc>
 
 */
@@ -65,6 +65,7 @@ $MusselConfig['lang']['scan_no_problems_found']='Geen problemen gevonden.';
 $MusselConfig['lang']['scan_reading']='Lezen van';
 $MusselConfig['lang']['scan_signature_file_corrupted']='Handtekening bestand beschadigd';
 $MusselConfig['lang']['scan_signature_file_missing']='Handtekening bestand ontbreekt';
+$MusselConfig['lang']['scan_tampering']='Gedetecteerd potentieel gevaarlijke bestandswijziging';
 $MusselConfig['lang']['scan_unauthorised_upload']='ngeautoriseerde bestand uploaden manipulatie gedetecteerd';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Ongeautoriseerde bestand uploaden manipulatie of misconfiguratie gedetecteerd! ';
 $MusselConfig['lang']['started']='Gestart';

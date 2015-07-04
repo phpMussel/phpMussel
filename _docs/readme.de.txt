@@ -226,7 +226,9 @@
 
  - $output_type ist eine Ganzzahl (Integer), gibt das Format an, wie das
    Ergebnis zurückgegeben werden soll. Ein Wert von 0 weist die Funktion an,
-   das Ergebnis als Ganzzahl zurückzugeben (Integer) (ein Rückgabewert von -2
+   das Ergebnis als Ganzzahl zurückzugeben (Integer) (ein Rückgabewert von -3
+   zeigt an, Probleme wurden angetroffen mit dem phpMussel Signaturen Dateien
+   oder Signatur-Map-Dateien und dass sie möglich fehlt oder ist beschädigt, -2
    zeigt an, dass beschädigte Dateien gefunden wurden und der Scan nicht
    abgeschlossen wurde, -1 zeigt an, dass fehlende Erweiterungen oder Addons
    von PHP benötigt werden, um den Scan durchzuführen und der Scan deshalb
@@ -559,6 +561,10 @@
     ~
  /_testfiles/md5_testfile.txt (Testdatei, enthalten)
     Testdatei zur Überprüfung der MD5-Signaturerkennung.
+    ~
+ /_testfiles/metadata_testfile.tar (Testdatei, enthalten)
+    Testdatei zur Überprüfung der Metadata-Signaturerkennung und zur
+    Überprüfung der TAR-Archivunterstützung Ihres Systems.
     ~
  /_testfiles/metadata_testfile.txt.gz (Testdatei, enthalten)
     Testdatei zur Überprüfung der Metadata-Signaturerkennung und zur
@@ -970,9 +976,9 @@
     "lang"
     - Gibt die Standardsprache für phpMussel an.
     "lang_override"
-    - Festlegen ob phpMussel, falls möglich, die Sprach-Einstellung mit dem Sprach-
-      Wert von einkommenden Anfragen festlegen soll (HTTP_ACCEPT_LANGUAGE).
-      0 - Nein [Standardeinstellung], 1 - Ja.
+    - Festlegen ob phpMussel, falls möglich, die Sprach-Einstellung mit dem
+      Sprach-Wert von einkommenden Anfragen festlegen soll
+      (HTTP_ACCEPT_LANGUAGE). 0 - Nein [Standardeinstellung], 1 - Ja.
     "quarantine_key"
     - phpMussel ist in der Lage, Versuche von Datei-Uploads in einem
       Quarantäne-Verzeichnis zu isolieren, sofern Sie dies tun wollen. Nutzer,
@@ -1142,6 +1148,14 @@
      denn, Sie erwarten Abstürze oder ähnliches.
      0 = Deaktiviert, 1 = Aktiviert [Standardeinstellung].
      "fail_silently"
+   - Should phpMussel report when extensions are missing? If
+     fail_extensions_silently is disabled, missing extensions will be reported
+     on scanning, and if fail_extensions_silently is enabled, missing
+     extensions will be ignored, with scanning reporting for those files that
+     there aren't any problems. Disabling this directive may potentially
+     increase your security, but may also lead to an increase of false
+     positives. 0 = Disabled, 1 = Enabled [Default].
+     "fail_extensions_silently"
  "files" (Kategorie)
  - Generelle Konfigurationen für die Handhabung von Dateien.
    "max_uploads"
@@ -1208,12 +1222,12 @@
    "max_recursion"
    - Maximale Grenze der Rekursionstiefe von Archiven. Standardwert = 10.
    "block_encrypted_archives"
-   - Verschlüsselte Archive erkennen und blockieren? Denn phpMussel ist nicht in 
-     der Lage, die Inhalte von verschlüsselten Archiven zu scannen. Es ist 
-     möglich, dass Archiv-Verschlüsselung von Angreifern zum Umgehen von 
-     phpMussel, Antiviren-Scanner und weiterer solcher Schutzlösungen verwendet 
-     wird. Die Anweisung, dass phpMussel verschlüsselte Archive blockiert kann 
-     möglicherweise helfen, die Risiken, die mit dieser Möglichkeit verbunden 
+   - Verschlüsselte Archive erkennen und blockieren? Denn phpMussel ist nicht
+     in der Lage, die Inhalte von verschlüsselten Archiven zu scannen. Es ist
+     möglich, dass Archiv-Verschlüsselung von Angreifern zum Umgehen von
+     phpMussel, Antiviren-Scanner und weiterer solcher Schutzlösungen verwendet
+     wird. Die Anweisung, dass phpMussel verschlüsselte Archive blockiert kann
+     möglicherweise helfen, die Risiken, die mit dieser Möglichkeit verbunden
      sind, zu verringern.
      0 - Nein, 1 - Ja [Standardeinstellung].
  "attack_specific" (Kategorie)
@@ -1673,5 +1687,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 29. Juni 2015 (2015.06.29).
+Zuletzt aktualisiert: 3. Juli 2015 (2015.07.03).
 EOF

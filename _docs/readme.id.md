@@ -103,7 +103,7 @@ Bagaimanapun Anda juga bisa menginstruksikan phpMussel untuk memindai data, dire
 
 Dimana:
 - `$what_to_scan` adalah string atau array, mengarah ke data target, direktori target atau array data target dan/atau direktori target.
-- `$output_type` adalah sebuah integer, mengindikasikan format dimana hasil dari memindai yang dikembalikan (sebuah hasil dari -2 mengindikasikan bahwa data korup terdeteksi selama proses memindai dan proses memindai gagal selesai, -1 mengindikasikan bawa ekstensi atau addon yang dibutuhkan oleh php untuk mengeksekusi pemindaian hilang dan demikian gagal selesai, 0 mengindikasikan bahwa pemindaian target tidak ada dan tidak ada yang dipindai 1 mengindikasikan bahwa target sukses dipindai dan tidak ada masalah terdeteksi, dan 2 mengindikasikan target sukses di scan namun ada masalah terdeteksi). Nilai 1 menginstruksikan fungsi untuk menghasilkan hasil teks yang dapat dibaca manusia. Nilai 2 menginstruksikan fungsi untuk menghasilkan hasil teks yang dapat dibaca manusia dan mengekspor hasil ke variabel global. Variabel ini opsional, defaultnya 0.
+- `$output_type` adalah sebuah integer, mengindikasikan format dimana hasil dari memindai yang dikembalikan (sebuah hasil dari -3 mengindikasikan masalah adalah ditemui dengan file tanda tangan phpMussel atau file memetakan tanda tangan dan mereka mungkin hilang atau rusak, -2 mengindikasikan bahwa data korup terdeteksi selama proses memindai dan proses memindai gagal selesai, -1 mengindikasikan bawa ekstensi atau addon yang dibutuhkan oleh php untuk mengeksekusi pemindaian hilang dan demikian gagal selesai, 0 mengindikasikan bahwa pemindaian target tidak ada dan tidak ada yang dipindai 1 mengindikasikan bahwa target sukses dipindai dan tidak ada masalah terdeteksi, dan 2 mengindikasikan target sukses di scan namun ada masalah terdeteksi). Nilai 1 menginstruksikan fungsi untuk menghasilkan hasil teks yang dapat dibaca manusia. Nilai 2 menginstruksikan fungsi untuk menghasilkan hasil teks yang dapat dibaca manusia dan mengekspor hasil ke variabel global. Variabel ini opsional, defaultnya 0.
 - `$output_flatness` adalah sebuah integer, mengindikasikan apakah mengizinkan hasil untuk dihasilkan sebagai array atau tidak. Secara normal jika pemindaian target berisikan banyak item (seperti direktori atau array) hasilnya akan dihasilkan dalam sebuah array (nilai default 0). Nilai 1 menginstruksikan fungsi untuk membagi array untuk masukan, menghasilkan karakter rata berisikan hasil yang dikembalikan. Variabel ini opsional, defaultnya 0.
 
 Contoh:
@@ -282,8 +282,9 @@ Data                                       | Deskripsi
 /_testfiles/graphics_standard_testfile.gif | Data test untuk mentest tanda tangan grafis phpMussel.
 /_testfiles/html_standard_testfile.txt     | Data test untuk mentest tanda tangan HTML normal phpMussel.
 /_testfiles/md5_testfile.txt               | Data test untuk mentest tanda tangan MD5 phpMussel.
-/_testfiles/metadata_testfile.txt.gz       | Data test untuk mentest tanda tangan metadata phpMussel dan untuk testing data support GZ pada sistem Anda.
-/_testfiles/metadata_testfile.zip          | Data test untuk mentest tanda tangan phpMussel dan untuk testing data support ZIP pada sistem Anda.
+/_testfiles/metadata_testfile.tar          | Data test untuk mentest tanda tangan metadata phpMussel dan untuk mentest data support TAR pada sistem Anda.
+/_testfiles/metadata_testfile.txt.gz       | Data test untuk mentest tanda tangan metadata phpMussel dan untuk mentest data support GZ pada sistem Anda.
+/_testfiles/metadata_testfile.zip          | Data test untuk mentest tanda tangan metadata phpMussel dan untuk mentest data support ZIP pada sistem Anda.
 /_testfiles/ole_testfile.ole               | Data test untuk mentest tanda tangan OLE phpMussel.
 /_testfiles/pdf_standard_testfile.pdf      | Data test untuk mentest tanda tangan PDF phpMussel.
 /_testfiles/pe_sectional_testfile.exe      | Data test untuk mentest tanda tangan PE Sectional phpMussel.
@@ -618,7 +619,10 @@ Opsi Tanda tangan cocok batas panjangnya. Hanya ubah ini jika Anda tahu apa yang
 - "sd_siglen_max"
 
 "fail_silently"
-- Seharusnya laporan phpMussel ketika data tanda tangan hilang atau dikorup? Jika fail_silently dinonaktifkan, data dikorup dan hilang akan di laporkan ketika pemindaian, dan jika fail_silently diaktifkan, data dikorup dan hilang akan diabaikan, dengan pemindaian dilaporkan untuk data-data ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crashes atau masalah lain. 0 = Dinonaktifkan, 1 = Diaktifkan [Default].
+- Seharusnya laporan phpMussel ketika data tanda tangan hilang atau dikorup? Jika fail_silently dinonaktifkan, data dikorup dan hilang akan dilaporkan ketika pemindaian, dan jika fail_silently diaktifkan, data dikorup dan hilang akan diabaikan, dengan pemindaian melaporkan untuk data-data ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crash atau masalah lain. 0 = Dinonaktifkan, 1 = Diaktifkan [Default].
+
+"fail_extensions_silently"
+- Seharusnya laporan phpMussel ketika ekstensi hilang? Jika fail_extensions_silently dinonaktifkan, ekstensi hilang akan dilaporkan ketika pemindaian, dan jika fail_extensions_silently diaktifkan, ekstensi hilang akan diabaikan, dengan pemindaian melaporkan untuk data-data ini bahwa tidak ada masalah. Menonaktifkan direktif ini berpotensi dapat meningkatkan keamanan Anda, tetapi juga dapat menyebabkan peningkatan positif palsu. 0 = Dinonaktifkan, 1 = Diaktifkan [Default].
 
 ####"files" (Kategori)
 Konfigurasi umum untuk mengambil alih data-data.
@@ -889,4 +893,4 @@ Informasi ini diupdate 28 Mei 2015 dan cocok untuk semua rilis phpMussel dari du
 ---
 
 
-Terakhir Diperbarui: 29 Juni 2015 (2015.06.29).
+Terakhir Diperbarui: 3 Juli 2015 (2015.07.03).
