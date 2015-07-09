@@ -146,8 +146,12 @@ Minor release (medium priority); BETA! NOT YET RELEASED!
 
 - [2015.07.09; Signatures update; Maikuolan]: Added various new PE signatures.
 
+- [2015.07.10; Bug-fix; Maikuolan]: Found and fixed a bug whereby match lengths
+  for certain particular CoEx signatures would be occasionally be incorrectly
+  interpreted.
+
 Maikuolan,
-9th July 2015.
+10th July 2015.
 
 === Version/Release 0.6j (Previous Release: 0.6i; Next: 0.7) ===
 SUMMARY:

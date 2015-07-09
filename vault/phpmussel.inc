@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7-BETA (7th July 2015) Core Script.
+ This File: phpMussel v0.7-BETA (10th July 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -12084,20 +12084,20 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								if($xsig[$xi][$sxi][2]=='A')
 									{
 									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count("\x01".substr($str_hex,0,$xsig[$xi][$sxi][3]),"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,0,$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count("\x01".substr($str_norm,0,$xsig[$xi][$sxi][3]),"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,0,$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,0,$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count("\x01".substr($str_hex,0,$xsig[$xi][$sxi][3]*2),"\x01".$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,0,$xsig[$xi][$sxi][3]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count("\x01".substr($str_norm,0,$xsig[$xi][$sxi][3]*2),"\x01".$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,0,$xsig[$xi][$sxi][3]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,0,$xsig[$xi][$sxi][3]*2)))continue 2;
 									}
 								else
 									{
 									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2]*2,$xsig[$xi][$sxi][3]*2),$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2]*2,$xsig[$xi][$sxi][3]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2]*2,$xsig[$xi][$sxi][3]*2),$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2]*2,$xsig[$xi][$sxi][3]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2]*2,$xsig[$xi][$sxi][3]*2)))continue 2;
 									}
 								}
 							else
@@ -12115,11 +12115,11 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								else
 									{
 									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2])))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2]*2),$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2]*2),$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2]*2)))continue 2;
 									}
 								}
 							}
@@ -12245,20 +12245,20 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								if($xsig[$xi][$sxi][2]=='A')
 									{
 									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count("\x01".substr($str_hex,0,$xsig[$xi][$sxi][3]),"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,0,$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count("\x01".substr($str_norm,0,$xsig[$xi][$sxi][3]),"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,0,$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,0,$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count("\x01".substr($str_hex,0,$xsig[$xi][$sxi][3]*2),"\x01".$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,0,$xsig[$xi][$sxi][3]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count("\x01".substr($str_norm,0,$xsig[$xi][$sxi][3]*2),"\x01".$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,0,$xsig[$xi][$sxi][3]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,0,$xsig[$xi][$sxi][3]*2)))continue 2;
 									}
 								else
 									{
 									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2]*2,$xsig[$xi][$sxi][3]*2),$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2]*2,$xsig[$xi][$sxi][3]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2]*2,$xsig[$xi][$sxi][3]*2),$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2]*2,$xsig[$xi][$sxi][3]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2]*2,$xsig[$xi][$sxi][3]*2)))continue 2;
 									}
 								}
 							else
@@ -12276,11 +12276,11 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								else
 									{
 									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2])))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2]*2),$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2]*2),$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2]*2)))continue 2;
 									}
 								}
 							}
@@ -12415,20 +12415,20 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								if($xsig[$xi][$sxi][2]=='A')
 									{
 									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count("\x01".substr($str_hex,0,$xsig[$xi][$sxi][3]),"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,0,$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count("\x01".substr($str_norm,0,$xsig[$xi][$sxi][3]),"\x01".$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,0,$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,0,$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count("\x01".substr($str_hex,0,$xsig[$xi][$sxi][3]*2),"\x01".$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,0,$xsig[$xi][$sxi][3]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count("\x01".substr($str_norm,0,$xsig[$xi][$sxi][3]*2),"\x01".$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,0,$xsig[$xi][$sxi][3]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/\A'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,0,$xsig[$xi][$sxi][3]*2)))continue 2;
 									}
 								else
 									{
 									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2],$xsig[$xi][$sxi][3])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2]*2,$xsig[$xi][$sxi][3]*2),$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2]*2,$xsig[$xi][$sxi][3]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2]*2,$xsig[$xi][$sxi][3]*2),$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2]*2,$xsig[$xi][$sxi][3]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2]*2,$xsig[$xi][$sxi][3]*2)))continue 2;
 									}
 								}
 							else
@@ -12446,11 +12446,11 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 								else
 									{
 									if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2])))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2]),$xsig[$xi][$sxi][1]))continue 2;
-									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2])))continue 2;
-									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2])))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$xi][$sxi][2]*2),$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_hex,$xsig[$xi][$sxi][2]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$xi][$sxi][2]*2),$xsig[$xi][$sxi][1]))continue 2;
+									if($xsig[$xi][$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($str_norm,$xsig[$xi][$sxi][2]*2)))continue 2;
+									if($xsig[$xi][$sxi][0]=='META')if(!preg_match('/'.$xsig[$xi][$sxi][1].'/i',substr($CoExMeta,$xsig[$xi][$sxi][2]*2)))continue 2;
 									}
 								}
 							}
