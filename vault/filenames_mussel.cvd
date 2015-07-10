@@ -176,7 +176,7 @@
 2Backoff-01:^mswin(svc|host)\.exe$
 2Bomlabio.A-01:bomlabio.{0,128}\.exe
 2Bomlabio.A-02:pcn5h5fi\.13r\.exe
-2Downloader.Matcash-0:^nvcoi\.exe
+2Dldr.Matcash-0:^nvcoi\.exe
 2Dyreza-00:^(googleupdaterr|qxrJvqdVmCLQWTo)\.exe$
 2Feutel.BB-0:^[Ss]([Ee][Rr]){2}[Vv][Ee][Rr].{0,128}\.[Ee][Xx][Ee]
 2Generic-1:^(alx.{3}|.{3}res)[0-9]+\.exe
