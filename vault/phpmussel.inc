@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7-BETA (10th July 2015) Core Script.
+ This File: phpMussel v0.7-BETA (11th July 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -851,6 +851,11 @@ if(!function_exists('vn_shorthand'))
 	}
 function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 	{
+	if(!isset($GLOBALS['memCache']))
+		{
+		echo (!isset($GLOBALS['MusselConfig']['lang']['required_variables_not_defined']))?'[phpMussel] Required variables aren\'t defined: Can\'t continue.':'[phpMussel] '.$GLOBALS['MusselConfig']['lang']['required_variables_not_defined'];
+		die;
+		}
 	$fm=($n==2)?1:0;
 	$xskd=false;
 	$dpt++;
@@ -12616,6 +12621,11 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 	}
 function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 	{
+	if(!isset($GLOBALS['memCache']))
+		{
+		echo (!isset($GLOBALS['MusselConfig']['lang']['required_variables_not_defined']))?'[phpMussel] Required variables aren\'t defined: Can\'t continue.':'[phpMussel] '.$GLOBALS['MusselConfig']['lang']['required_variables_not_defined'];
+		die;
+		}
 	$fm=($n==2)?1:0;
 	$dpt++;
 	$lnap='';
@@ -13772,6 +13782,11 @@ if(function_exists('phpMusselFork'))
 	}
 function phpMussel($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 	{
+	if(!isset($GLOBALS['memCache']))
+		{
+		echo (!isset($GLOBALS['MusselConfig']['lang']['required_variables_not_defined']))?'[phpMussel] Required variables aren\'t defined: Can\'t continue.':'[phpMussel] '.$GLOBALS['MusselConfig']['lang']['required_variables_not_defined'];
+		die;
+		}
 	if(!isset($GLOBALS['HashCache']))return false;
 	if(!$ofn)$ofn=$f;
 	if($GLOBALS['MusselConfig']['general']['scan_log']&&$n!=0)$s=date('r').' '.$GLOBALS['MusselConfig']['lang']['started'].'.'.$GLOBALS['linebreak'];
