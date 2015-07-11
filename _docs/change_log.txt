@@ -152,8 +152,13 @@ MINOR RELEASE; Updated to the latest signatures set (55+20665+7).
 - [2015.07.10; Signatures update; Maikuolan]: Updated to the the latest
   signatures (55+20665+7).
 
+- [2015.07.12; Bug-fix; Maikuolan]: Bug found by DanielRuf whereby scan results
+  wouldn't be correctly cached if the scan was triggered from outside of
+  phpMussel (such as when the scan was initiated by the calling script); Fixed.
+  Refer github.com/Maikuolan/phpMussel/issues/39
+
 Maikuolan,
-10th July 2015.
+12th July 2015.
 
 === Version/Release 0.6j (Previous Release: 0.6i; Next: 0.7) ===
 SUB-MINOR RELEASE; Updated to the latest signatures set (55+20552+6j).

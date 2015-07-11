@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7-BETA (11th July 2015) Core Script.
+ This File: phpMussel v0.7-BETA (12th July 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -70,6 +70,7 @@ $inidefaults['internal_encoding']=@ini_get('mbstring.internal_encoding');
 $inidefaults['user_agent']=@ini_get('user_agent');
 $phpmusselua=$phpmusselversion.' ('.hash('crc32b',$_SERVER['SERVER_ADDR']).'-'.hash('crc32b',$_SERVER['HTTP_HOST']).')';
 @ini_set('user_agent',$phpmusselua);
+$memCache['eof']=false;
 if(!function_exists('implode_md'))
 	{
 	function implode_md($ar,$j='',$i=0,$e=1)
@@ -907,14 +908,11 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				$GLOBALS['xfm'].=hex2bin($GLOBALS['HashCache'][$HashCacheData][3]);
 				}
 			}
-		else
+		else if(!empty($GLOBALS['HashCache'][$HashCacheData][2]))
 			{
-			if(!empty($GLOBALS['HashCache'][$HashCacheData][2]))
-				{
-				$heur['detections']++;
-				$out.=hex2bin($GLOBALS['HashCache'][$HashCacheData][2]);
-				if($fm)$GLOBALS['xfm'].=hex2bin($GLOBALS['HashCache'][$HashCacheData][3]);
-				}
+			$heur['detections']++;
+			$out.=hex2bin($GLOBALS['HashCache'][$HashCacheData][2]);
+			if($fm)$GLOBALS['xfm'].=hex2bin($GLOBALS['HashCache'][$HashCacheData][3]);
 			}
 		if(!$out)return 1;
 		return (!$n)?2:$out;
@@ -13787,6 +13785,27 @@ function phpMussel($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 		echo (!isset($GLOBALS['MusselConfig']['lang']['required_variables_not_defined']))?'[phpMussel] Required variables aren\'t defined: Can\'t continue.':'[phpMussel] '.$GLOBALS['MusselConfig']['lang']['required_variables_not_defined'];
 		die;
 		}
+	if($GLOBALS['memCache']['eof'])
+		{
+		$GLOBALS['HashCache']=($GLOBALS['MusselConfig']['general']['scan_cache_expiry']>0)?phpMusselCacheGet('HashCache'):'';
+		if(empty($GLOBALS['HashCache']))$GLOBALS['HashCache']=array();
+		else
+			{
+			$GLOBALS['HashCache']=explode(';',$GLOBALS['HashCache']);
+			$HashCacheN=array();
+			$HashCacheC=count($GLOBALS['HashCache']);
+			for($HashCacheI=0;$HashCacheI<$HashCacheC;$HashCacheI++)
+				{
+				if(substr_count($GLOBALS['HashCache'][$HashCacheI],':'))
+					{
+					$GLOBALS['HashCache'][$HashCacheI]=explode(':',$GLOBALS['HashCache'][$HashCacheI],4);
+					if(!($GLOBALS['time']>$GLOBALS['HashCache'][$HashCacheI][1]))$HashCacheN[$GLOBALS['HashCache'][$HashCacheI][0]]=$GLOBALS['HashCache'][$HashCacheI];
+					}
+				}
+			$GLOBALS['HashCache']=$HashCacheN;
+			unset($HashCacheN);
+			}
+		}
 	if(!isset($GLOBALS['HashCache']))return false;
 	if(!$ofn)$ofn=$f;
 	if($GLOBALS['MusselConfig']['general']['scan_log']&&$n!=0)$s=date('r').' '.$GLOBALS['MusselConfig']['lang']['started'].'.'.$GLOBALS['linebreak'];
@@ -13798,6 +13817,23 @@ function phpMussel($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 		$xf=fopen($GLOBALS['vault'].$GLOBALS['MusselConfig']['general']['scan_log'],'a');
 		fwrite($xf,$r);
 		fclose($xf);
+		}
+	if($GLOBALS['memCache']['eof'])
+		{
+		if($GLOBALS['MusselConfig']['general']['scan_cache_expiry']>0)
+			{
+			reset($GLOBALS['HashCache']);
+			$HashCacheC=count($GLOBALS['HashCache']);
+			for($HashCacheI=0;$HashCacheI<$HashCacheC;$HashCacheI++)
+				{
+				$HashCacheK=key($GLOBALS['HashCache']);
+				if(is_array($GLOBALS['HashCache'][$HashCacheK]))$GLOBALS['HashCache'][$HashCacheK]=implode(':',$GLOBALS['HashCache'][$HashCacheK]).';';
+				next($GLOBALS['HashCache']);
+				}
+			$GLOBALS['HashCache']=implode('',$GLOBALS['HashCache']);
+			$GLOBALS['HashCache']=phpMusselCacheSet('HashCache',$GLOBALS['time']+$GLOBALS['MusselConfig']['general']['scan_cache_expiry'],$GLOBALS['HashCache']);
+			unset($HashCacheK,$HashCacheI,$HashCacheC,$GLOBALS['HashCache']);
+			}
 		}
 	return $r;
 	}
@@ -14841,5 +14877,6 @@ if(function_exists('phpMusselFork')&&strlen(mussel_php)>0&&mussel_os=='WIN'&&mus
 @ini_set('pcre.backtrack_limit',$inidefaults['backtrack_limit']);
 @ini_set('display_errors',$inidefaults['display_errors']);
 if($MusselConfig['general']['cleanup'])unset($cli_args,$r,$xpe,$xsk,$xfm,$k,$i,$c,$memCache,$phpmusselua,$inidefaults,$linebreak,$time,$phpmusselversion);
+else $memCache['eof']=true;
 
 ?>
