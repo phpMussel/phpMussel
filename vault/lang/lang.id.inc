@@ -14,13 +14,14 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Indonesian Language Data (3rd July 2015).
+ This File: phpMussel Indonesian Language Data (11th July 2015).
  <%phpMussel%/vault/lang/lang.id.inc>
 
 */
 
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
+$MusselConfig['lang']['bad_command']='Saya tidak mengerti perintah itu, maaf.';
 $MusselConfig['lang']['cli_commands']=" q\n - Berhenti CLI.\n - Alias: quit, exit.\n md5_file\n - Menghasilkan tanda tangan MD5 dari file [Sintaksis: md5_file nama_file].\n - Alias: m.\n md5\n - Menghasilkan tanda tangan MD5 dari string [Sintaksis: md5 string].\n hex_encode\n - Mengkonversi string biner ke heksadesimal [Sintaksis: hex_encode string].\n - Alias: x.\n hex_decode\n - Mengkonversi heksadesimal ke string biner [Sintaksis: hex_decode string].\n base64_encode\n - Mengkonversi string biner ke string base64 [Sintaksis: base64_encode string].\n - Alias: b.\n base64_decode\n - Mengkonversi string base64 ke string biner [Sintaksis: base64_decode string].\n scan\n - Pindai file atau direktori [Sintaksis: scan nama_file].\n - Alias: s.\n update\n - Memperbarui phpMussel.\n - Alias: u.\n c\n - Cetak ini daftar perintah.\n";
 $MusselConfig['lang']['cli_failed_to_complete']='Gagal untuk menyelesaikan memindai proses';
 $MusselConfig['lang']['cli_is_not_a']=' bukan file atau direktori.';
@@ -28,6 +29,8 @@ $MusselConfig['lang']['cli_ln2']=" Terima kasih untuk menggunakan phpMussel, seb
 $MusselConfig['lang']['cli_ln3']=" Sekarang phpMussel operasi di CLI mode (Command line interface).\n\n Untuk memindai file atau direktori, menulis 'scan', diikuti dengan nama file\n atau direktori yang ingin Anda phpMussel untuk memindai dan tekan Enter;\n Menulis 'c' dan tekan Enter untuk daftar CLI mode perintah; Menulis 'q' dan\n tekan Enter untuk keluar:";
 $MusselConfig['lang']['cli_update_restart']=' Restart phpMussel mungkin diperlukan sebelum perbarui menjadi jelas.';
 $MusselConfig['lang']['cli_working']='Dalam proses';
+$MusselConfig['lang']['controls_lockout']='phpMussel mengunci kontrol diaktifkan.';
+$MusselConfig['lang']['core_scriptfile_missing']='File skrip inti hilang! Silakan instal ulang phpMussel.';
 $MusselConfig['lang']['corrupted']='Terdeteksi rusak PE';
 $MusselConfig['lang']['denied']='Upload Ditolak!';
 $MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
@@ -42,13 +45,20 @@ $MusselConfig['lang']['filetype_blacklisted']='File jenis pada hitam daftar';
 $MusselConfig['lang']['finished']='Selesai';
 $MusselConfig['lang']['generated_by']='Dihasilkan oleh';
 $MusselConfig['lang']['greylist_cleared']=' Greylist dikosongkan.';
+$MusselConfig['lang']['greylist_not_updated']=' Greylist tidak diperbarui.';
 $MusselConfig['lang']['greylist_updated']=' Greylist diperbarui.';
 $MusselConfig['lang']['image']='gambar';
+$MusselConfig['lang']['instance_already_active']='Kejadian sudah aktif! Silakan periksa kait Anda.';
 $MusselConfig['lang']['invalid_file']='File tidak valid';
 $MusselConfig['lang']['ok']='Oke';
 $MusselConfig['lang']['only_allow_images']='Upload file selain gambar tidak diizinkan';
+$MusselConfig['lang']['phpmussel_disabled']='phpMussel dinonaktifkan.';
+$MusselConfig['lang']['phpmussel_disabled_already']='phpMussel sudah dinonaktifkan.';
+$MusselConfig['lang']['phpmussel_enabled']='phpMussel diaktifkan.';
+$MusselConfig['lang']['phpmussel_enabled_already']='phpMussel sudah diaktifkan.';
 $MusselConfig['lang']['recursive']='Batas kedalaman rekursi melebihi';
 $MusselConfig['lang']['refer_to_scan_kills']=' (mengacu pada '.$MusselConfig['general']['scan_kills'].' untuk rincian)';
+$MusselConfig['lang']['required_variables_not_defined']='Variabel diharuskan tidak didefinisikan: Tidak dapat dilanjutkan.';
 $MusselConfig['lang']['scan_aborted']='Memindai dibatalkan';
 $MusselConfig['lang']['scan_chameleon']='Bunglon {x} serangan terdeteksi';
 $MusselConfig['lang']['scan_checking']='Memeriksa';
@@ -83,6 +93,7 @@ $MusselConfig['lang']['update_err6']='Data yang buruk!';
 $MusselConfig['lang']['update_err7']='Checksum yang buruk!';
 $MusselConfig['lang']['update_failed']='Gagal.';
 $MusselConfig['lang']['update_fetch']='Mencoba untuk mengambil versi data dari';
+$MusselConfig['lang']['update_lock_detected']='Mengunci memperbarui terdeteksi: Tidak dapat dilanjutkan. Memeriksa pembaruan korup atau coba lagi nanti.';
 $MusselConfig['lang']['update_not']='TIDAK {x}';
 $MusselConfig['lang']['update_not_available']='Skrip update yang tidak tersedia saat ini.';
 $MusselConfig['lang']['update_not_possible']='Skrip update yang tersedia, tetapi tidak dapat sepenuhnya diupdate dengan ini update skrip versi. Silahkan update secara manual.';

@@ -3,9 +3,9 @@ phpMussel change_log.txt
 == CURRENT GOALS AND FUTURE VERSIONING GUIDELINES ==
 Do-to list for potential future major version (v1.0):
 
-- Current formats for archive metadata signatures supported are: ZIP, BZ, LZF,
-  GZ. At minimum, this should also extend to RAR and 7z.
-  REFER: https://github.com/Maikuolan/phpMussel/issues/2
+- Currently supported archive formats are BZ/BZ2, GZ, LZF, TAR and ZIP.
+  At minimum, this should also extend to RAR, SHAR and 7z.
+  Refer github.com/Maikuolan/phpMussel/issues/2
 
 - Currently, all formats for archive metadata signatures that are supported,
   with exception to ZIP format, can be scanned recursively. Ideally, ability to
@@ -13,14 +13,14 @@ Do-to list for potential future major version (v1.0):
   all future formats that are planned to be supported).
 
 - Wish list: Icon parsing.
-  REFER: https://github.com/Maikuolan/phpMussel/issues/5
+  Refer github.com/Maikuolan/phpMussel/issues/5
 
 - Wish list: Certificate parsing.
-  REFER: https://github.com/Maikuolan/phpMussel/issues/4
+  Refer github.com/Maikuolan/phpMussel/issues/4
 
 - Wish list: Establishing some sort of website.
-  REFER: http://www.spambotsecurity.com/forum/viewtopic.php?f=59&t=3441
-  REFER: https://github.com/Maikuolan/phpMussel/issues/11
+  Refer spambotsecurity.com/forum/viewtopic.php?f=59&t=3441
+  Refer github.com/Maikuolan/phpMussel/issues/11
 
 Do-to list for potential future minor version (v0.8):
 
@@ -44,8 +44,7 @@ Anything less than sub-minor:
   yet been mainlined will usually be versioned in this way).
 
 === Version/Release 0.7 (Previous Release: 0.6j) ===
-SUMMARY:
-Minor release (medium priority); BETA! NOT YET RELEASED!
+MINOR RELEASE; Updated to the latest signatures set (55+20665+7).
 
 - [2015.06.17; Sub-minor code change; Maikuolan]: Completed work on
   "lang.ru.inc" (undoubtedly has mistakes; feel free to audit if you want).
@@ -144,13 +143,20 @@ Minor release (medium priority); BETA! NOT YET RELEASED!
   dealing with PHP extensions, "fail_extensions_silently"; All documentation
   updated accordingly. Refer github.com/Maikuolan/phpMussel/issues/35
 
+- [2015.07.09; Signatures update; Maikuolan]: Added various new PE signatures.
+
+- [2015.07.10; Bug-fix; Maikuolan]: Found and fixed a bug whereby match lengths
+  for certain particular CoEx signatures would occasionally be incorrectly
+  interpreted.
+
+- [2015.07.10; Signatures update; Maikuolan]: Updated to the the latest
+  signatures (55+20665+7).
+
 Maikuolan,
-4th July 2015.
+10th July 2015.
 
 === Version/Release 0.6j (Previous Release: 0.6i; Next: 0.7) ===
-SUMMARY:
-Updated to the latest signatures set (55+20552+6j).
-Sub-minor release (medium priority).
+SUB-MINOR RELEASE; Updated to the latest signatures set (55+20552+6j).
 
 - [2015.05.24; Sub-minor code change; Maikuolan]: Code clean up (all script
   files affected); New language data entry (v0.6i.0a).

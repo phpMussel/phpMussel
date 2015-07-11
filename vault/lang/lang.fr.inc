@@ -14,13 +14,14 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel French/Français Language Data (3rd July 2015).
+ This File: phpMussel French/Français Language Data (11th July 2015).
  <%phpMussel%/vault/lang/lang.fr.inc>
 
 */
 
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
+$MusselConfig['lang']['bad_command']='Je ne comprends pas cette commande, désolé.';
 $MusselConfig['lang']['cli_commands']=" q\n - Quitter CLI.\n - Alias: quit, exit.\n md5_file\n - Générer MD5 signatures des fichiers [Syntaxe: md5_file nom_de_fichier].\n - Alias: m.\n md5\n - Générer MD5 signature de string [Syntaxe: md5 string].\n hex_encode\n - Convertir binaire string à hexadécimal [Syntaxe: hex_encode string].\n - Alias: x.\n hex_decode\n - Convertir hexadécimal à binaire string [Syntaxe: hex_decode string].\n base64_encode\n - Convertir binaire string à base64 string [Syntaxe: base64_encode string].\n - Alias: b.\n base64_decode\n - Convertir base64 string à binaire string [Syntaxe: base64_decode string].\n scan\n - Analyser fichier ou répertoire [Syntaxe: scan nom_de_fichier].\n - Alias: s.\n update\n - Réactualiser phpMussel.\n - Alias: u.\n c\n - Imprimer cette liste des commandes.\n";
 $MusselConfig['lang']['cli_failed_to_complete']='Échec du terminer le processus d\'analyse';
 $MusselConfig['lang']['cli_is_not_a']='  n\'est pas un fichier ou un répertoire.';
@@ -28,6 +29,8 @@ $MusselConfig['lang']['cli_ln2']=" Merci pour l'utiliser de phpMusel, un PHP scr
 $MusselConfig['lang']['cli_ln3']=" Fonctionne comme CLI mode pour le moment (Commande Ligne Interface).\n\n Pour analyser un fichier ou répertoire, taper 'scan', suivi par le nom du\n fichier ou répertoire que vous voulez phpMussel pour analyser et appuyez sur\n Entrée; Tapez 'c' et appuyez sur Entrée pour une liste de CLI mode commandes;\n Taper 'q' et appuyez sur Entrée pour quitter:";
 $MusselConfig['lang']['cli_update_restart']=' Redémarrage phpMussel peut être nécessaire avant les réactualisations deviennent apparents.';
 $MusselConfig['lang']['cli_working']='En cours';
+$MusselConfig['lang']['controls_lockout']='phpMussel verrouillage des commandes est activées.';
+$MusselConfig['lang']['core_scriptfile_missing']='Base script fichier manquant! S\'il vous plaît réinstaller phpMussel.';
 $MusselConfig['lang']['corrupted']='Détecté corrompu PE';
 $MusselConfig['lang']['denied']='Téléchargement Refusé!';
 $MusselConfig['lang']['denied_other']='Upload Denied! Carga Negado! Caricamento negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
@@ -42,13 +45,20 @@ $MusselConfig['lang']['filetype_blacklisted']='Type de fichier sur la noire list
 $MusselConfig['lang']['finished']='Terminé';
 $MusselConfig['lang']['generated_by']='Généré par';
 $MusselConfig['lang']['greylist_cleared']=' Greylist vidé.';
+$MusselConfig['lang']['greylist_not_updated']=' Greylist n\'a pas été réactualisé';
 $MusselConfig['lang']['greylist_updated']=' Greylist réactualisé.';
 $MusselConfig['lang']['image']='Image';
+$MusselConfig['lang']['instance_already_active']='Instance déjà actif! S\'il vous plaît vérifiez vos crochets.';
 $MusselConfig['lang']['invalid_file']='Fichier non valide';
 $MusselConfig['lang']['ok']='Bien';
 $MusselConfig['lang']['only_allow_images']='Télécharger des fichiers qui ne sont pas images n\'est pas autorisée';
+$MusselConfig['lang']['phpmussel_disabled']='phpMussel désactivé.';
+$MusselConfig['lang']['phpmussel_disabled_already']='phpMussel déjà désactivé.';
+$MusselConfig['lang']['phpmussel_enabled']='phpMussel activé.';
+$MusselConfig['lang']['phpmussel_enabled_already']='phpMussel déjà activé.';
 $MusselConfig['lang']['recursive']='Recursion limite de profondeur dépassé';
 $MusselConfig['lang']['refer_to_scan_kills']=' (reportez-vous à '.$MusselConfig['general']['scan_kills'].' pour détails)';
+$MusselConfig['lang']['required_variables_not_defined']='Variables requises ne sont pas définies: Ne pouvez pas continuer.';
 $MusselConfig['lang']['scan_aborted']='Analyse avorté';
 $MusselConfig['lang']['scan_chameleon']='{x} caméléon attaque détecté';
 $MusselConfig['lang']['scan_checking']='Vérification';
@@ -83,6 +93,7 @@ $MusselConfig['lang']['update_err6']='Mauvais données!';
 $MusselConfig['lang']['update_err7']='Mauvais checksum!';
 $MusselConfig['lang']['update_failed']='Manqué.';
 $MusselConfig['lang']['update_fetch']='Tenter d\'apporter les données de la version de';
+$MusselConfig['lang']['update_lock_detected']='Verrouillage des réactualisations a été détecté: Ne pouvez pas continuer. Examiner pour réactualisations corrompues ou réessayez plus tard.';
 $MusselConfig['lang']['update_not']='PAS {x}';
 $MusselConfig['lang']['update_not_available']='Aucune réactualisation du script est disponible à ce moment.';
 $MusselConfig['lang']['update_not_possible']='Une réactualisation du script est disponible, mais ne peut pas être entièrement réactualisé avec cette version du réactualisation script. S\'il vous plaît réactualiser manuellement.';
