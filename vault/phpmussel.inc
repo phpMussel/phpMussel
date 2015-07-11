@@ -13584,7 +13584,7 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 					}
 				}
 			}
-		if($xt=='rar'||substr($str,0,4)==='Rar!'||substr($str_hex,0,8)==='52457e5e')
+		if($xt=='rar'||substr($in,0,4)==='Rar!'||bin2hex(substr($in,0,4))==='52457e5e')
 			{
 			// $GLOBALS['memCache']['container']='rarfile';
 			// AAA FUTURE RAR FUNCTIONS TO GO HERE! AAA

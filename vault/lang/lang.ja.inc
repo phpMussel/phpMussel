@@ -14,13 +14,14 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Japanese/日本語 Language Data (3rd July 2015).
+ This File: phpMussel Japanese/日本語 Language Data (12th July 2015).
  <%phpMussel%/vault/lang/lang.ja.inc>
 
 */
 
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
+$MusselConfig['lang']['bad_command']='私はそのコマンドがわかりません、ごめんなさい。';
 $MusselConfig['lang']['cli_commands']=" q\n - CLIを終了します。\n - エイリアス： quit, exit.\n md5_file\n - ファイルからMD5署名を生成します 「構文: md5_file ファイル名」。\n - エイリアス： m.\n md5\n - データからのMD5署名を生成します 「構文: md5 データ」。\n hex_encode\n - バイナリデータから16進数データへを変換します 「構文: hex_encode バイナリデータ」。\n - エイリアス： x.\n hex_decode\n - バイナリデータから16進数データへを変換します 「構文: hex_decode 16進数データ」。\n base64_encode\n - バイナリデータからベース64データへを変換します 「構文: base64_encode バイナリデータ」。\n - エイリアス： b.\n base64_decode\n - ベース64データからバイナリデータへを変換します 「構文: base64_decode ベース64データ」。\n scan\n - スキャンファイルまたはディレクトリ 「構文: scan ファイル名」。\n - エイリアス： s.\n update\n - phpMusselアップデートします。\n - エイリアス： u.\n c\n - このコマンドリストを表示します。\n";
 $MusselConfig['lang']['cli_failed_to_complete']='スキャンプロセス完了できませんでした';
 $MusselConfig['lang']['cli_is_not_a']='ファイルまたはディレクトリはありません。';
@@ -28,6 +29,8 @@ $MusselConfig['lang']['cli_ln2']=" phpMusselをご利用いただきありがと
 $MusselConfig['lang']['cli_ln3']=" phpMusselは、現在のCLIモード（コマンドラインインターフェース）で動作しています。\n\n ファイルまたはディレクトリをスキャンするには、入力「scan」、ファイルまたはディレクトリの名前、その後、Enterキーを押しますしてください；\n CLIモードのリストコマンドについては、入力し「c」とEnterキーを押します； 終了については、入力し「q」とEnterキーを押します：";
 $MusselConfig['lang']['cli_update_restart']=' アップデートが明らかになるためには、再起動phpMusselが必要な場合があります。';
 $MusselConfig['lang']['cli_working']='進行中';
+$MusselConfig['lang']['controls_lockout']='「phpMussel」はコントロールロックアウトはアクティブです。';
+$MusselConfig['lang']['core_scriptfile_missing']='コアスクリプトファイルはありません！「phpMussel」を再インストールしてください、お願いします。';
 $MusselConfig['lang']['corrupted']='検出されたPEが破損しました';
 $MusselConfig['lang']['denied']='アップロード拒否されました！';
 $MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento negato! Upload verweigert! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
@@ -42,13 +45,20 @@ $MusselConfig['lang']['filetype_blacklisted']='ファイルタイプはブラッ
 $MusselConfig['lang']['finished']='終了しました';
 $MusselConfig['lang']['generated_by']='によって搭載しました';
 $MusselConfig['lang']['greylist_cleared']=' グレーリストがクリアされました。';
+$MusselConfig['lang']['greylist_not_updated']=' グレーリストがアップデートされません。';
 $MusselConfig['lang']['greylist_updated']=' グレーリストがアップデートされました。';
 $MusselConfig['lang']['image']='画像';
+$MusselConfig['lang']['instance_already_active']='インスタンスすでにアクティブ！あなたのフックをダブルチェックしてください。';
 $MusselConfig['lang']['invalid_file']='無効なファイル';
 $MusselConfig['lang']['ok']='大丈夫です';
 $MusselConfig['lang']['only_allow_images']='画像以外のファイルアップロードは許可されません';
+$MusselConfig['lang']['phpmussel_disabled']='「phpMussel」は非アクティブです。';
+$MusselConfig['lang']['phpmussel_disabled_already']='「phpMussel」はすでに非アクティブです。';
+$MusselConfig['lang']['phpmussel_enabled']='「phpMussel」はアクティブです。';
+$MusselConfig['lang']['phpmussel_enabled_already']='「phpMussel」はすでにアクティブです。';
 $MusselConfig['lang']['recursive']='再帰深さリミットを超えました';
 $MusselConfig['lang']['refer_to_scan_kills']=' （詳細については、「'.$MusselConfig['general']['scan_kills'].'」を参照してください）';
+$MusselConfig['lang']['required_variables_not_defined']='必要な変数が定義されていません；続行できません。';
 $MusselConfig['lang']['scan_aborted']='スキャンは中断されました';
 $MusselConfig['lang']['scan_chameleon']='検出された{x}カメレオン攻撃';
 $MusselConfig['lang']['scan_checking']='検証は進行中';
@@ -74,7 +84,7 @@ $MusselConfig['lang']['update_available']='スクリプトアップデートが�
 $MusselConfig['lang']['update_complete']='アップロードチェックは成功しました。';
 $MusselConfig['lang']['update_created']='作成';
 $MusselConfig['lang']['update_deleted']='削除';
-$MusselConfig['lang']['update_err1']='アップデートに失敗しました：「update.dat」はありません。再インストールします、または手動でのアップデート、お願いします。';
+$MusselConfig['lang']['update_err1']='アップデートに失敗しました：「update.dat」はありません。再インストールしてください、または手動でのアップデート、お願いします。';
 $MusselConfig['lang']['update_err2']='アップデートに失敗しました：「update.dat」は有効なアップデート元が含ましていません。手動でのアップデート、お願いします。';
 $MusselConfig['lang']['update_err3']='アップデート元により供給されました、アップデート手順で、疑わハックや偽造が検出されました；元が潜在的に危険にさらさ。スクリプトの作成者に通知ください、お願いします。手動でのアップデートは推奨されます。';
 $MusselConfig['lang']['update_err4']='チェックサムはありません！';
@@ -83,12 +93,13 @@ $MusselConfig['lang']['update_err6']='データ悪いです！';
 $MusselConfig['lang']['update_err7']='チェックサム悪いです！';
 $MusselConfig['lang']['update_failed']='失敗しました。';
 $MusselConfig['lang']['update_fetch']='バージョン情報が取得されますから';
+$MusselConfig['lang']['update_lock_detected']='アップデートロックが検出されました；続行できません。破損したアップデート探してまたは後でもう一度試しますください。';
 $MusselConfig['lang']['update_not']='{x}されませんでした';
 $MusselConfig['lang']['update_not_available']='現時点では、スクリプトアップデートが利用できません。';
 $MusselConfig['lang']['update_not_possible']='スクリプトアップデートが利用可能です、しかし、アップデートスクリプトのこのバージョンから、それは完全にアップデートができません。手動でのアップデート、お願いします。';
 $MusselConfig['lang']['update_no_source']='phpMusselは、有効なアップデート元に接続できなかったため、自身のアップデートに失敗しました。手動でのアップデートは推奨されます。';
 $MusselConfig['lang']['update_patched']='パッチ';
-$MusselConfig['lang']['update_scriptfile_missing']=' アップデートスクリプトファイルはありません！「phpMussel」再インストールします、お願いします。';
+$MusselConfig['lang']['update_scriptfile_missing']=' アップデートスクリプトファイルはありません！「phpMussel」を再インストールしてください、お願いします。';
 $MusselConfig['lang']['update_seconds_elapsed']='秒が経過しました';
 $MusselConfig['lang']['update_signatures_available']='署名アップデートが利用可能です。';
 $MusselConfig['lang']['update_signatures_latest']='最新の署名';
