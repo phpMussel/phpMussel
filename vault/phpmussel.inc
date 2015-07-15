@@ -893,7 +893,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 	$HashCacheData=$md5.md5($ofn);
 	if(isset($GLOBALS['HashCache'][$HashCacheData]))
 		{
-		if(!$xskd&&!$memCache['eof'])
+		if(!$xskd&&!$GLOBALS['memCache']['eof'])
 			{
 			$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$ofn.$GLOBALS['linebreak'];
 			$xskd=true;
@@ -903,7 +903,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			$heur['detections']++;
 			$out.=hex2bin($GLOBALS['HashCache'][$HashCacheData][2]);
 			}
-		if(!empty($GLOBALS['HashCache'][$HashCacheData][3])&&!$memCache['eof'])$GLOBALS['xfm'].=hex2bin($GLOBALS['HashCache'][$HashCacheData][3]);
+		if(!empty($GLOBALS['HashCache'][$HashCacheData][3])&&!$GLOBALS['memCache']['eof'])$GLOBALS['xfm'].=hex2bin($GLOBALS['HashCache'][$HashCacheData][3]);
 		if(!$out)return 1;
 		return (!$n)?2:$out;
 		}
