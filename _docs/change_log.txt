@@ -43,6 +43,26 @@ Anything less than sub-minor:
   not yet considered stable; updates received via the auto-updater that haven't
   yet been mainlined will usually be versioned in this way).
 
+=== Changes made since last versioned release ===
+
+- [2015.07.15; Sub-minor code change; Maikuolan]: Merged a number of the
+  signature sections of the core script to reduce on redundancy, resulting in
+  roughly a ~15% reduction in the filesize of "phpmussel.inc".
+  Refer github.com/Maikuolan/phpMussel/issues/7
+
+- [2015.07.15; Bug-fix; Maikuolan]: Bug found by DanielRuf whereby values
+  returned by phpMussel(); were inconsistent between consecutive scans of the
+  same file when those consecutive scans used different values for
+  $output_type; Fixed.
+  Refer github.com/Maikuolan/phpMussel/issues/44
+
+- [2015.07.15; Bug-fix; Maikuolan]: Found and fixed a bug whereby scanning
+  individual files in CLI mode under Windows would sometimes produce a false
+  positive as a result of the format of the directory tree.
+
+Maikuolan,
+15th July 2015.
+
 === Version/Release 0.7 (Previous Release: 0.6j) ===
 MINOR RELEASE; Updated to the latest signatures set (55+20665+7).
 
@@ -152,8 +172,13 @@ MINOR RELEASE; Updated to the latest signatures set (55+20665+7).
 - [2015.07.10; Signatures update; Maikuolan]: Updated to the the latest
   signatures (55+20665+7).
 
+- [2015.07.12; Bug-fix; Maikuolan]: Bug found by DanielRuf whereby scan results
+  wouldn't be correctly cached if the scan was triggered from outside of
+  phpMussel (such as when the scan was initiated by the calling script); Fixed.
+  Refer github.com/Maikuolan/phpMussel/issues/39
+
 Maikuolan,
-10th July 2015.
+12th July 2015.
 
 === Version/Release 0.6j (Previous Release: 0.6i; Next: 0.7) ===
 SUB-MINOR RELEASE; Updated to the latest signatures set (55+20552+6j).
