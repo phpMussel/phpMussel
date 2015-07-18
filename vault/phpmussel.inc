@@ -660,10 +660,10 @@ if(!function_exists('lv_match'))
 			{
 			if(is_array($needle)||is_array($haystack))return 0;
 			$nlen=strlen($needle);
-			$pos_A=(integer)$pos_A;
-			$pos_Z=(integer)$pos_Z;
-			$min=(integer)$min;
-			$max=(integer)$max;
+			$pos_A=(int)$pos_A;
+			$pos_Z=(int)$pos_Z;
+			$min=(int)$min;
+			$max=(int)$max;
 			if($pos_A!==0||$pos_Z!==0)$haystack=@($pos_Z===0)?substr($haystack,$pos_A):substr($haystack,$pos_A,$pos_Z);
 			$hlen=strlen($haystack);
 			if($nlen<1||$hlen<1)return 0;
@@ -955,7 +955,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(substr($xsig,0,1)=='>')
 				{
 				$xsig=explode('>',$xsig,4);
-				$xsig[3]=(integer)$xsig[3];
+				$xsig[3]=(int)$xsig[3];
 				if($xsig[1]=='FN')
 					{
 					if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -1056,7 +1056,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(substr($xsig,0,1)=='>')
 				{
 				$xsig=explode('>',$xsig,4);
-				$xsig[3]=(integer)$xsig[3];
+				$xsig[3]=(int)$xsig[3];
 				if($xsig[1]=='FN')
 					{
 					if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -1166,7 +1166,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			if(substr($xsig,0,1)=='>')
 				{
 				$xsig=explode('>',$xsig,4);
-				$xsig[3]=(integer)$xsig[3];
+				$xsig[3]=(int)$xsig[3];
 				if($xsig[1]=='FN')
 					{
 					if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -1594,7 +1594,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($GLOBALS['memCache']['html_clamav_standard.map'][$i],0,1)=='>')
 							{
 							$mapcon=explode('>',$GLOBALS['memCache']['html_clamav_standard.map'][$i],4);
-							$mapcon[3]=(integer)$mapcon[3];
+							$mapcon[3]=(int)$mapcon[3];
 							if($mapcon[1]=='FN')
 								{
 								if(!preg_match('/'.$mapcon[2].'/i',$ofn))
@@ -1669,7 +1669,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							}
 						$mapcon=false;
 						$map=explode(':',$GLOBALS['memCache']['html_clamav_standard.map'][$i]);
-						$map[2]=(integer)$map[2];
+						$map[2]=(int)$map[2];
 						if(substr_count($str_html,$map[0])>0)
 							{
 							for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -1774,7 +1774,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($GLOBALS['memCache']['html_clamav_regex.map'][$i],0,1)=='>')
 							{
 							$mapcon=explode('>',$GLOBALS['memCache']['html_clamav_regex.map'][$i],4);
-							$mapcon[3]=(integer)$mapcon[3];
+							$mapcon[3]=(int)$mapcon[3];
 							if($mapcon[1]=='FN')
 								{
 								if(!preg_match('/'.$mapcon[2].'/i',$ofn))
@@ -1849,7 +1849,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 							}
 						$mapcon=false;
 						$map=explode(':',$GLOBALS['memCache']['html_clamav_regex.map'][$i]);
-						$map[2]=(integer)$map[2];
+						$map[2]=(int)$map[2];
 						if(substr_count($str_html,$map[0])>0)
 							{
 							for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -1930,7 +1930,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -2089,7 +2089,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -2244,7 +2244,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -2403,7 +2403,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -2981,7 +2981,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					for($i=0;$i<$c;$i++)
 						{
 						$map=explode(':',$GLOBALS['memCache'][$SigClamAVStandardMap][$i]);
-						$map[2]=(integer)$map[2];
+						$map[2]=(int)$map[2];
 						if(substr_count($str_hex,$map[0])>0)
 							{
 							for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -3070,7 +3070,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					for($i=0;$i<$c;$i++)
 						{
 						$map=explode(':',$GLOBALS['memCache'][$SigClamAVRegexMap][$i]);
-						$map[2]=(integer)$map[2];
+						$map[2]=(int)$map[2];
 						if(substr_count($str_hex,$map[0])>0)
 							{
 							for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -3151,7 +3151,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -3296,7 +3296,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -3451,7 +3451,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -3596,7 +3596,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -3780,7 +3780,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(substr($GLOBALS['memCache']['general_clamav_standard.map'][$i],0,1)=='>')
 					{
 					$mapcon=explode('>',$GLOBALS['memCache']['general_clamav_standard.map'][$i],4);
-					$mapcon[3]=(integer)$mapcon[3];
+					$mapcon[3]=(int)$mapcon[3];
 					if($mapcon[1]=='FN')
 						{
 						if(!preg_match('/'.$mapcon[2].'/i',$ofn))
@@ -3855,7 +3855,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$mapcon=false;
 				$map=explode(':',$GLOBALS['memCache']['general_clamav_standard.map'][$i]);
-				$map[2]=(integer)$map[2];
+				$map[2]=(int)$map[2];
 				if(substr_count($str_hex,$map[0])>0)
 					{
 					for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -3963,7 +3963,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(substr($GLOBALS['memCache']['general_clamav_regex.map'][$i],0,1)=='>')
 					{
 					$mapcon=explode('>',$GLOBALS['memCache']['general_clamav_regex.map'][$i],4);
-					$mapcon[3]=(integer)$mapcon[3];
+					$mapcon[3]=(int)$mapcon[3];
 					if($mapcon[1]=='FN')
 						{
 						if(!preg_match('/'.$mapcon[2].'/i',$ofn))
@@ -4038,7 +4038,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$mapcon=false;
 				$map=explode(':',$GLOBALS['memCache']['general_clamav_regex.map'][$i]);
-				$map[2]=(integer)$map[2];
+				$map[2]=(int)$map[2];
 				if(substr_count($str_hex,$map[0])>0)
 					{
 					for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -4122,7 +4122,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(substr($xsig,0,1)=='>')
 					{
 					$xsig=explode('>',$xsig,4);
-					$xsig[3]=(integer)$xsig[3];
+					$xsig[3]=(int)$xsig[3];
 					if($xsig[1]=='FN')
 						{
 						if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -4284,7 +4284,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(substr($xsig,0,1)=='>')
 					{
 					$xsig=explode('>',$xsig,4);
-					$xsig[3]=(integer)$xsig[3];
+					$xsig[3]=(int)$xsig[3];
 					if($xsig[1]=='FN')
 						{
 						if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -4442,7 +4442,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(substr($xsig,0,1)=='>')
 					{
 					$xsig=explode('>',$xsig,4);
-					$xsig[3]=(integer)$xsig[3];
+					$xsig[3]=(int)$xsig[3];
 					if($xsig[1]=='FN')
 						{
 						if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -4604,7 +4604,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(substr($xsig,0,1)=='>')
 					{
 					$xsig=explode('>',$xsig,4);
-					$xsig[3]=(integer)$xsig[3];
+					$xsig[3]=(int)$xsig[3];
 					if($xsig[1]=='FN')
 						{
 						if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -4782,7 +4782,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(substr($GLOBALS['memCache']['ascii_clamav_standard.map'][$i],0,1)=='>')
 					{
 					$mapcon=explode('>',$GLOBALS['memCache']['ascii_clamav_standard.map'][$i],4);
-					$mapcon[3]=(integer)$mapcon[3];
+					$mapcon[3]=(int)$mapcon[3];
 					if($mapcon[1]=='FN')
 						{
 						if(!preg_match('/'.$mapcon[2].'/i',$ofn))
@@ -4857,7 +4857,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$mapcon=false;
 				$map=explode(':',$GLOBALS['memCache']['ascii_clamav_standard.map'][$i]);
-				$map[2]=(integer)$map[2];
+				$map[2]=(int)$map[2];
 				if(substr_count($str_norm,$map[0])>0)
 					{
 					for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -4965,7 +4965,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(substr($GLOBALS['memCache']['ascii_clamav_regex.map'][$i],0,1)=='>')
 					{
 					$mapcon=explode('>',$GLOBALS['memCache']['ascii_clamav_regex.map'][$i],4);
-					$mapcon[3]=(integer)$mapcon[3];
+					$mapcon[3]=(int)$mapcon[3];
 					if($mapcon[1]=='FN')
 						{
 						if(!preg_match('/'.$mapcon[2].'/i',$ofn))
@@ -5040,7 +5040,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					}
 				$mapcon=false;
 				$map=explode(':',$GLOBALS['memCache']['ascii_clamav_regex.map'][$i]);
-				$map[2]=(integer)$map[2];
+				$map[2]=(int)$map[2];
 				if(substr_count($str_norm,$map[0])>0)
 					{
 					for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -5124,7 +5124,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(substr($xsig,0,1)=='>')
 					{
 					$xsig=explode('>',$xsig,4);
-					$xsig[3]=(integer)$xsig[3];
+					$xsig[3]=(int)$xsig[3];
 					if($xsig[1]=='FN')
 						{
 						if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -5286,7 +5286,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(substr($xsig,0,1)=='>')
 					{
 					$xsig=explode('>',$xsig,4);
-					$xsig[3]=(integer)$xsig[3];
+					$xsig[3]=(int)$xsig[3];
 					if($xsig[1]=='FN')
 						{
 						if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -5444,7 +5444,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(substr($xsig,0,1)=='>')
 					{
 					$xsig=explode('>',$xsig,4);
-					$xsig[3]=(integer)$xsig[3];
+					$xsig[3]=(int)$xsig[3];
 					if($xsig[1]=='FN')
 						{
 						if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -5606,7 +5606,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				if(substr($xsig,0,1)=='>')
 					{
 					$xsig=explode('>',$xsig,4);
-					$xsig[3]=(integer)$xsig[3];
+					$xsig[3]=(int)$xsig[3];
 					if($xsig[1]=='FN')
 						{
 						if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -5903,7 +5903,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				for($i=0;$i<$c;$i++)
 					{
 					$map=explode(':',$GLOBALS['memCache']['ole_clamav_standard.map'][$i]);
-					$map[2]=(integer)$map[2];
+					$map[2]=(int)$map[2];
 					if(substr_count($str_hex,$map[0])>0)
 						{
 						for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -6006,7 +6006,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				for($i=0;$i<$c;$i++)
 					{
 					$map=explode(':',$GLOBALS['memCache']['ole_clamav_regex.map'][$i]);
-					$map[2]=(integer)$map[2];
+					$map[2]=(int)$map[2];
 					if(substr_count($str_hex,$map[0])>0)
 						{
 						for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -6087,7 +6087,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(substr($xsig,0,1)=='>')
 						{
 						$xsig=explode('>',$xsig,4);
-						$xsig[3]=(integer)$xsig[3];
+						$xsig[3]=(int)$xsig[3];
 						if($xsig[1]=='FN')
 							{
 							if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -6246,7 +6246,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(substr($xsig,0,1)=='>')
 						{
 						$xsig=explode('>',$xsig,4);
-						$xsig[3]=(integer)$xsig[3];
+						$xsig[3]=(int)$xsig[3];
 						if($xsig[1]=='FN')
 							{
 							if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -6401,7 +6401,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(substr($xsig,0,1)=='>')
 						{
 						$xsig=explode('>',$xsig,4);
-						$xsig[3]=(integer)$xsig[3];
+						$xsig[3]=(int)$xsig[3];
 						if($xsig[1]=='FN')
 							{
 							if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -6560,7 +6560,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(substr($xsig,0,1)=='>')
 						{
 						$xsig=explode('>',$xsig,4);
-						$xsig[3]=(integer)$xsig[3];
+						$xsig[3]=(int)$xsig[3];
 						if($xsig[1]=='FN')
 							{
 							if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -6995,7 +6995,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					for($i=0;$i<$c;$i++)
 						{
 						$map=explode(':',$GLOBALS['memCache']['graphics_clamav_standard.map'][$i]);
-						$map[2]=(integer)$map[2];
+						$map[2]=(int)$map[2];
 						if(substr_count($str_hex,$map[0])>0)
 							{
 							for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -7098,7 +7098,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					for($i=0;$i<$c;$i++)
 						{
 						$map=explode(':',$GLOBALS['memCache']['graphics_clamav_regex.map'][$i]);
-						$map[2]=(integer)$map[2];
+						$map[2]=(int)$map[2];
 						if(substr_count($str_hex,$map[0])>0)
 							{
 							for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -7179,7 +7179,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -7338,7 +7338,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -7493,7 +7493,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -7652,7 +7652,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -7871,7 +7871,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					for($i=0;$i<$c;$i++)
 						{
 						$map=explode(':',$GLOBALS['memCache'][$SigClamAVStandardMap][$i]);
-						$map[2]=(integer)$map[2];
+						$map[2]=(int)$map[2];
 						if(substr_count($str_hex,$map[0])>0)
 							{
 							for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -7960,7 +7960,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					for($i=0;$i<$c;$i++)
 						{
 						$map=explode(':',$GLOBALS['memCache'][$SigClamAVRegexMap][$i]);
-						$map[2]=(integer)$map[2];
+						$map[2]=(int)$map[2];
 						if(substr_count($str_hex,$map[0])>0)
 							{
 							for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -8041,7 +8041,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -8186,7 +8186,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -8341,7 +8341,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -8486,7 +8486,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 						if(substr($xsig,0,1)=='>')
 							{
 							$xsig=explode('>',$xsig,4);
-							$xsig[3]=(integer)$xsig[3];
+							$xsig[3]=(int)$xsig[3];
 							if($xsig[1]=='FN')
 								{
 								if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -8778,7 +8778,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(substr($xsig,0,1)=='>')
 						{
 						$xsig=explode('>',$xsig,4);
-						$xsig[3]=(integer)$xsig[3];
+						$xsig[3]=(int)$xsig[3];
 						if($xsig[1]=='FN')
 							{
 							if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -8923,7 +8923,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(substr($xsig,0,1)=='>')
 						{
 						$xsig=explode('>',$xsig,4);
-						$xsig[3]=(integer)$xsig[3];
+						$xsig[3]=(int)$xsig[3];
 						if($xsig[1]=='FN')
 							{
 							if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -9078,7 +9078,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(substr($xsig,0,1)=='>')
 						{
 						$xsig=explode('>',$xsig,4);
-						$xsig[3]=(integer)$xsig[3];
+						$xsig[3]=(int)$xsig[3];
 						if($xsig[1]=='FN')
 							{
 							if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -9223,7 +9223,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 					if(substr($xsig,0,1)=='>')
 						{
 						$xsig=explode('>',$xsig,4);
-						$xsig[3]=(integer)$xsig[3];
+						$xsig[3]=(int)$xsig[3];
 						if($xsig[1]=='FN')
 							{
 							if(!preg_match('/'.$xsig[2].'/i',$ofn))
@@ -9854,7 +9854,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 	if(!$out)if(!empty($GLOBALS['MusselConfig']['virustotal']['vt_public_api_key']))
 		{
 		$doscan=false;
-		$GLOBALS['MusselConfig']['virustotal']['vt_suspicion_level']=(integer)$GLOBALS['MusselConfig']['virustotal']['vt_suspicion_level'];
+		$GLOBALS['MusselConfig']['virustotal']['vt_suspicion_level']=(int)$GLOBALS['MusselConfig']['virustotal']['vt_suspicion_level'];
 		if($GLOBALS['MusselConfig']['virustotal']['vt_suspicion_level']===0)
 			{
 			if($heur['weight']>0)$doscan=true;
@@ -9892,7 +9892,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 				$GLOBALS['memCache']['vt_quota'].=$y.';';
 				$GLOBALS['memCache']['vt_quota']=str_ireplace(';;',';',$GLOBALS['memCache']['vt_quota']);
 				$y=phpMusselCacheSet('vt_quota',$y+60,$GLOBALS['memCache']['vt_quota']);
-				$vt['response_code']=(integer)$vt['response_code'];
+				$vt['response_code']=(int)$vt['response_code'];
 				if(isset($vt['response_code'])&&isset($vt['scans']))if($vt['response_code']===1&&is_array($vt['scans']))
 					{
 					$c=count($vt['scans']);
@@ -11216,7 +11216,7 @@ function phpMussel_mail($body='')
 			for($i=0;$i<$c;$i++)
 				{
 				$map=explode(':',$GLOBALS['memCache']['mail_clamav_standard.map'][$i]);
-				$map[2]=(integer)$map[2];
+				$map[2]=(int)$map[2];
 				if(substr_count($hex,$map[0])>0)
 					{
 					for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -11292,7 +11292,7 @@ function phpMussel_mail($body='')
 			for($i=0;$i<$c;$i++)
 				{
 				$map=explode(':',$GLOBALS['memCache']['mail_clamav_regex.map'][$i]);
-				$map[2]=(integer)$map[2];
+				$map[2]=(int)$map[2];
 				if(substr_count($hex,$map[0])>0)
 					{
 					for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -11362,7 +11362,7 @@ function phpMussel_mail($body='')
 				if(substr($xsig,0,1)=='>')
 					{
 					$xsig=explode('>',$xsig,4);
-					$xsig[3]=(integer)$xsig[3];
+					$xsig[3]=(int)$xsig[3];
 					if($xsig[1]=='STR')
 						{
 						if(!substr_count($hex,$xsig[2]))
@@ -11477,7 +11477,7 @@ function phpMussel_mail($body='')
 				if(substr($xsig,0,1)=='>')
 					{
 					$xsig=explode('>',$xsig,4);
-					$xsig[3]=(integer)$xsig[3];
+					$xsig[3]=(int)$xsig[3];
 					if($xsig[1]=='STR')
 						{
 						if(!substr_count($hex,$xsig[2]))
@@ -11592,7 +11592,7 @@ function phpMussel_mail($body='')
 			for($i=0;$i<$c;$i++)
 				{
 				$map=explode(':',$GLOBALS['memCache']['mail_mussel_standard.map'][$i]);
-				$map[2]=(integer)$map[2];
+				$map[2]=(int)$map[2];
 				if(substr_count($hex,$map[0])>0)
 					{
 					for($xind=$map[1];$xind<($map[2]+1);$xind++)
@@ -11665,7 +11665,7 @@ function phpMussel_mail($body='')
 				if(substr($xsig,0,1)=='>')
 					{
 					$xsig=explode('>',$xsig,4);
-					$xsig[3]=(integer)$xsig[3];
+					$xsig[3]=(int)$xsig[3];
 					if($xsig[1]=='STR')
 						{
 						if(!substr_count($hex,$xsig[2]))
@@ -12170,7 +12170,7 @@ if(function_exists('phpMusselFork')&&strlen(mussel_php)>0&&mussel_os=='WIN'&&mus
 			if(!file_exists($vault.'update.inc'))echo $MusselConfig['lang']['update_scriptfile_missing'];
 			else
 				{
-				require($vault.'update.inc');
+				require $vault.'update.inc';
 				echo $linebreak.$linebreak.$MusselConfig['lang']['cli_update_restart'];
 				}
 			$phpmusselversion=$phpmusselversion_preserved;
