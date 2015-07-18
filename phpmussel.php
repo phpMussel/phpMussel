@@ -64,7 +64,7 @@ if(!defined('phpMussel'))
 	$MusselConfig=@(!file_exists($vault.'phpmussel.ini'))?false:parse_ini_file($vault.'phpmussel.ini',true);
 	if(!is_array($MusselConfig))plaintext_echo_die('[phpMussel] Could not read phpmussel.ini: Can\'t continue. Refer to documentation if this is a first-time run, and if problems persist, seek assistance.');
 	if(!file_exists($vault.'lang.inc'))plaintext_echo_die('[phpMussel] Language data file missing! Please reinstall phpMussel.');
-	require($vault.'lang.inc');
+	require $vault.'lang.inc';
 	if(!isset($MusselConfig['general']['cleanup']))$MusselConfig['general']['cleanup']=1;
 	$disable_lock=file_exists($vault.'disable.lck');
 	if(!$disable_lock)
@@ -155,7 +155,7 @@ if(!defined('phpMussel'))
 			if($phpmussel=='update')
 				{
 				if(!file_exists($vault.'update.inc'))plaintext_echo_die('[phpMussel]'.$MusselConfig['lang']['update_scriptfile_missing']);
-				require($vault.'update.inc');
+				require $vault.'update.inc';
 				die;
 				}
 			if($phpmussel=='greylist')
@@ -201,7 +201,7 @@ if(!defined('phpMussel'))
 	if(!$disable_lock)
 		{
 		if(!file_exists($vault.'phpmussel.inc'))plaintext_echo_die('[phpMussel] '.$MusselConfig['lang']['core_scriptfile_missing']);
-		require($vault.'phpmussel.inc');
+		require $vault.'phpmussel.inc';
 		}
 	$display_errors=error_reporting($display_errors);
 	if($MusselConfig['general']['cleanup'])unset($musselvar,$logspword,$pword,$phpmussel,$MusselConfig,$disable_lock,$display_errors,$vault);
