@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7 (12th July 2015) Language Data.
+ This File: phpMussel v0.7a-BETA (19th July 2015) Language Data.
  <%phpMussel%/vault/lang.inc>
 
                                      ~ ~ ~
@@ -76,7 +76,7 @@ if($MusselConfig['general']['lang']==='en')
 else if($MusselConfig['general']['lang']==='de')
 	{ // German - Deutsch
 	if(!file_exists($vault.'lang/lang.de.inc'))plaintext_echo_die('[phpMussel] Sprach-Daten fehlen! Kann nicht fortgesetzt werden.');
-	require $vault.'lang/lang.de.inc' ;
+	require $vault.'lang/lang.de.inc';
 	}
 else if($MusselConfig['general']['lang']==='es')
 	{ // Spanish - Español
