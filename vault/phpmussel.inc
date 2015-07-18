@@ -12170,7 +12170,7 @@ if(function_exists('phpMusselFork')&&strlen(mussel_php)>0&&mussel_os=='WIN'&&mus
 			if(!file_exists($vault.'update.inc'))echo $MusselConfig['lang']['update_scriptfile_missing'];
 			else
 				{
-				require($vault.'update.inc');
+				require $vault.'update.inc';
 				echo $linebreak.$linebreak.$MusselConfig['lang']['cli_update_restart'];
 				}
 			$phpmusselversion=$phpmusselversion_preserved;
