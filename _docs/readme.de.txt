@@ -1031,11 +1031,11 @@
       gespeichert werden. Standard ist 21600 Sekunden (6 Stunden); Ein Wert von
       0 wird das Zwischenspeichern von Scan-Ergebnissen deaktivieren.
     "disable_cli"
-    - Disable CLI mode? CLI mode is enabled by default, but can sometimes
-      interfere with certain testing tools (such as PHPUnit, for example) and
-      other CLI-based applications. If you don't need to disable CLI mode, you
-      should ignore this directive.
-      0 = Enable CLI mode [Default], 1 = Disable CLI mode.
+    - CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber 
+	manchmal bestimmte Test-Tools beeinträchtigen (PHPUnit zum Beispiel) und 
+	andere CLI-basierte Anwendungen. Wenn du den CLI-Modus nicht deaktiveren 
+	musst, solltest du diese Anweisung ignorieren.
+      0 = CLI-Modus aktivieren [Standardeinstellung], 1 = CLI-Modus aktivieren.
  "signatures" (Kategorie)
  - Konfiguration der Signaturen.
    %%%_clamav = ClamAV-Signaturen (generelle Signaturen und tägliche Updates).
