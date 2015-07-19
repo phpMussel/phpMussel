@@ -8701,7 +8701,7 @@ function phpMusselD($str='',$n=0,$dpt=0,$ofn='')
 			}
 		else if($GLOBALS['MusselConfig']['virustotal']['vt_suspicion_level']===1)
 			{
-			if($fileswitch=='chrome'||$fileswitch=='java'||$fileswitch=='docfile'||$fileswitch=='vt_interest'||$is_pe)$doscan=true;
+			if($heur['weight']>0||$fileswitch=='chrome'||$fileswitch=='java'||$fileswitch=='docfile'||$fileswitch=='vt_interest'||$is_pe)$doscan=true;
 			}
 		else if($GLOBALS['MusselConfig']['virustotal']['vt_suspicion_level']===2)$doscan=true;
 		if($doscan)
@@ -9765,18 +9765,15 @@ function phpMusselR($f='',$n=0,$zz=0,$dpt=0,$ofn='')
 define('mussel_php',defined('PHP_BINARY')?PHP_BINARY:'');
 define('mussel_os',strtoupper(substr(PHP_OS,0,3)));
 define('mussel_sapi',php_sapi_name());
-if(strlen(mussel_php)>0)
+if(strlen(mussel_php)>0&&mussel_os=='WIN'&&mussel_sapi=='cli'&&!function_exists('phpMusselFork'))
 	{
-	if(mussel_os=='WIN'&&mussel_sapi=='cli')
+	function phpMusselFork($f='',$ofn='')
 		{
-		function phpMusselFork($f='',$ofn='')
-			{
-			$pf=popen(mussel_php.' "'.$GLOBALS['vault'].'../phpmussel.php" "cli_win_scan" "'.$f.'" "'.$ofn.'"','r');
-			$s='';
-			while($x=fgets($pf))$s.=$x;
-			pclose($pf);
-			return $s;
-			}
+		$pf=popen(mussel_php.' "'.$GLOBALS['vault'].'../phpmussel.php" "cli_win_scan" "'.$f.'" "'.$ofn.'"','r');
+		$s='';
+		while($x=fgets($pf))$s.=$x;
+		pclose($pf);
+		return $s;
 		}
 	}
 $memCache=array();
@@ -9790,6 +9787,7 @@ if(!isset($MusselConfig['general']['quarantine_max_filesize']))$MusselConfig['ge
 if(!isset($MusselConfig['general']['quarantine_max_usage']))$MusselConfig['general']['quarantine_max_usage']=65536;
 if(!isset($MusselConfig['general']['honeypot_mode']))$MusselConfig['general']['honeypot_mode']=0;
 if(!isset($MusselConfig['general']['scan_cache_expiry']))$MusselConfig['general']['scan_cache_expiry']=21600;
+if(!isset($MusselConfig['general']['disable_cli']))$MusselConfig['general']['disable_cli']=0;
 if(!isset($MusselConfig['signatures']))$MusselConfig['signatures']=array();
 $memCache['vChkSigs']=array();
 foreach(array('ascii','coex','elf','exe','filenames','general','graphics','html','macho','mail','md5','metadata','ole','pdf','pe','swf','whitelist','xmlxdp') as $memCache['vChkSigs']['sigset'])
@@ -9850,7 +9848,7 @@ if(!isset($MusselConfig['virustotal']['vt_quota_rate']))$MusselConfig['virustota
 if(!isset($MusselConfig['virustotal']['vt_quota_time']))$MusselConfig['virustotal']['vt_quota_time']=1;
 if(!isset($MusselConfig['template_data']))$MusselConfig['template_data']=array();
 $cli_args=array(isset($argv[0])?$argv[0]:'',isset($argv[1])?$argv[1]:'',isset($argv[2])?$argv[2]:'',isset($argv[3])?$argv[3]:'');
-if(function_exists('phpMusselFork'))
+if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
 	{
 	if($cli_args[1]=='cli_win_scan')
 		{
@@ -10823,7 +10821,7 @@ if(strlen($xfm)>0)
 	$html=str_replace("\t",'',str_replace("\n",'',str_replace("\r",'',phpMusselV($MusselConfig['lang'],phpMusselV($MusselConfig['template_data'],implode_md(file($vault.'template.html')))))));
 	die($html);
 	}
-if(function_exists('phpMusselFork')&&strlen(mussel_php)>0&&mussel_os=='WIN'&&mussel_sapi=='cli')
+if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&strlen(mussel_php)>0&&mussel_os=='WIN'&&mussel_sapi=='cli')
 	{
 	echo $MusselConfig['lang']['cli_ln1'].$MusselConfig['lang']['cli_ln2'].$MusselConfig['lang']['cli_ln3'];
 	$sth=fopen('php://stdin','r');

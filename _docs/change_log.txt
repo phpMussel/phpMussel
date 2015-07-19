@@ -60,8 +60,21 @@ Anything less than sub-minor:
   individual files in CLI mode under Windows would sometimes produce a false
   positive as a result of the format of the directory tree.
 
+- [2015.07.18; Sub-minor code change; Maikuolan]: Merged some more signature
+  sections of the core script to reduce on redundancy and removed some
+  unecessary and redundant variables.
+
+- [2015.07.18; Sub-minor code change; DanielRuf]: Changing to short form for
+  typecasting to integer to save on filesize; Corrected require statements to
+  reflect the expected syntax for statements.
+
+- [2015.07.19; Signatures update; Maikuolan]: Added various new signatures.
+
+- [2015.07.19; Sub-minor code change; Maikuolan]: Slightly adjusted the Virus
+  Total scanning logic; Added the new directive, `disable_cli`.
+
 Maikuolan,
-15th July 2015.
+19th July 2015.
 
 === Version/Release 0.7 (Previous Release: 0.6j) ===
 MINOR RELEASE; Updated to the latest signatures set (55+20665+7).

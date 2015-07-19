@@ -1075,6 +1075,12 @@
       valore è il numero di secondi per memorizzare nella cache i risultati
       della scansione per. Predefinito valore è 21600 secondi (6 ore); Un
       valore pari a 0 disabilita il caching dei risultati di scansione.
+    "disable_cli"
+    - Disabilita CLI? Modalità CLI è abilitato per predefinito, ma a volte può
+      interferire con alcuni strumenti di test (come PHPUnit, per esempio) e
+      altre applicazioni basate su CLI. Se non è necessario disattivare la
+      modalità CLI, si dovrebbe ignorare questa direttiva.
+      0 = Abilita CLI [Predefinito], 1 = Disabilita CLI.
  "signatures" (Categoria)
  - Configurazione per firme.
    %%%_clamav = ClamAV firme (sia mains e daily).
@@ -1433,8 +1439,10 @@
          maligno, ma non può escludere del possibilità che essa può essere
          benigno (non maligno) e quindi sarebbe altrimenti non normalmente
          bloccarlo o segnalarlo come maligno.
-     1 - File vengono considerati sospetti se sono noti per essere eseguibile
-         (PE file, Mach-O file, ELF/Linux file, ecc) o se sono noti per essere
+     1 - File vengono considerati sospetti se, dopo essere sottoposto a
+         scansione da phpMussel utilizzando i propri firme, essi sono
+         considerati avere un peso euristica, se sono noti per essere eseguibile
+         (PE file, Mach-O file, ELF/Linux file, ecc), o se sono noti per essere
          di un formato che potrebbe contenere dati eseguibile (come le macro
          eseguibili, DOC/DOCX file, archivio file come RAR, ZIP ed ecc). Questa
          è l'impostazione predefinita e il livello di sospetto consigliato di
@@ -1727,5 +1735,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 3 Luglio 2015 (2015.07.03).
+Ultimo Aggiornamento: 19 Luglio 2015 (2015.07.19).
 EOF
