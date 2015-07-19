@@ -236,14 +236,14 @@
    un cible répertoire ou un tableau de cibles fichiers et/ou cibles
    répertoires.
  - $sortie_type est un entier, indiquant le format dans lequel les résultats de
-   l'analyse doivent être retour. Une valeur de 0 instruit que la fonction
+   l'analyse doivent être retourné. Une valeur de 0 instruit que la fonction
    d'affichage des résultats comme un entier (un retourné résultat de -3
    indique des problèmes ont été rencontrés avec le phpMussel signatures
    fichiers ou des signatures cartes fichiers et qu'ils peuvent être possible
    manquants ou corrompus, -2 indique que corrompues données était détecté lors
    de l'analyse et donc l'analyse n'ont pas réussi à compléter, -1 indique que
    les extensions ou addons requis par PHP pour exécuter l'analyse sont
-   manquaient et donc l'analyse n'ont pas réussi à compléter, 0 indique qu'il 
+   manquaient et donc l'analyse n'ont pas réussi à compléter, 0 indique qu'il
    n'existe pas cible à analyser et donc il n'y avait rien à analyser, 1
    indique que la cible était analysé avec succès et aucun problème n'été
    détectée, et 2 indique que la cible était analysé avec succès et problèmes
@@ -1087,6 +1087,12 @@
       La valeur est le nombre de secondes pour mettre en cache les résultats de
       l'analyse pour. Par défaut est 21600 secondes (6 heures); Une valeur de 0
       désactive mettre en cache les résultats de l'analyse.
+    "disable_cli"
+    - Désactiver CLI mode? CLI mode est activé par défaut, mais peut parfois
+      interférer avec certains test outils (comme PHPUnit, par exemple) et
+      d'autres applications basées sur CLI. Si vous n'avez pas besoin
+      désactiver CLI mode, vous devrait ignorer cette directive.
+      0 = Activer CLI mode [Défaut], 1 = Désactiver CLI mode.
  "signatures" (Catégorie)
  - Configuration pour les signatures.
    %%%_clamav = ClamAV signatures (mains et daily).
@@ -1458,9 +1464,11 @@
          que il peut aussi potentiellement être bénigne (non malveillant) et
          donc serait autrement normalement pas bloquer ou signaler qu'il est
          malveillant.
-     1 - Fichiers sont considérés comme soupçonneux si elles sont connues pour
-         être exécutable (PE fichiers, Mach-O fichiers, ELF/Linux fichiers,
-         etc) ou s'ils sont connus pour être d'une forme qui pourrait contenir
+     1 - Fichiers sont considérés comme soupçonneux si, quand étant analysé par
+         phpMussel utilisant ses propres signatures, ils sont réputés pour
+         porter un poids heuristique, si elles sont connues pour être
+         exécutable (PE fichiers, Mach-O fichiers, ELF/Linux fichiers, etc), ou
+         s'ils sont connus pour être d'une forme qui pourrait contenir
          exécutable données (tels comme exécutable macros, DOC/DOCX fichiers,
          archive fichiers tels comme RARs, ZIPS et etc). C'est la valeur par
          défaut et le niveau de suspicion recommandé d'appliquer, qui signifie
@@ -1754,5 +1762,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 3 Juillet 2015 (2015.07.03).
+Dernière Réactualisé: 19 Juillet 2015 (2015.07.19).
 EOF

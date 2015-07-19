@@ -1030,6 +1030,12 @@
       entspricht der Anzahl Sekunden, wie lange die Scan-Ergebnisse zwischen-
       gespeichert werden. Standard ist 21600 Sekunden (6 Stunden); Ein Wert von
       0 wird das Zwischenspeichern von Scan-Ergebnissen deaktivieren.
+    "disable_cli"
+    - Disable CLI mode? CLI mode is enabled by default, but can sometimes
+      interfere with certain testing tools (such as PHPUnit, for example) and
+      other CLI-based applications. If you don't need to disable CLI mode, you
+      should ignore this directive.
+      0 = Enable CLI mode [Default], 1 = Disable CLI mode.
  "signatures" (Kategorie)
  - Konfiguration der Signaturen.
    %%%_clamav = ClamAV-Signaturen (generelle Signaturen und tägliche Updates).
@@ -1148,12 +1154,12 @@
      denn, Sie erwarten Abstürze oder ähnliches.
      0 = Deaktiviert, 1 = Aktiviert [Standardeinstellung].
      "fail_silently"
-   - Soll phpMussel melden, wenn Dateierweiterungen fehlen? Wenn 
-     fail_extensions_silently deaktiviert ist, werden fehlende 
-     Dateierweiterungen beim Scannen gemeldet und wenn fail_extensions_silently 
-     aktiviert ist, werden fehlende Dateierweiterungen ignoriert und beim Scan 
-     gemeldet, dass es mit diesen Dateien keine Probleme gibt. Das Deaktivieren 
-     dieser Anweisung kann möglicherweise deine Sicherheit erhöhen, kann aber 
+   - Soll phpMussel melden, wenn Dateierweiterungen fehlen? Wenn
+     fail_extensions_silently deaktiviert ist, werden fehlende
+     Dateierweiterungen beim Scannen gemeldet und wenn fail_extensions_silently
+     aktiviert ist, werden fehlende Dateierweiterungen ignoriert und beim Scan
+     gemeldet, dass es mit diesen Dateien keine Probleme gibt. Das Deaktivieren
+     dieser Anweisung kann möglicherweise deine Sicherheit erhöhen, kann aber
      auch zu mehr Falschmeldungen führen.
      0 = Deaktiviert, 1 = Aktiviert [Standardeinstellung].
      "fail_extensions_silently"
@@ -1400,16 +1406,17 @@
          diese potentiell harmlos (nicht schädlich) und somit diese
          andererseits normalerweise nicht blockieren oder als schädlich
          markieren würde.
-     1 - Dateien werden als verdächtig betrachtet, falls diese eine ausführbare
-         Datei (PE Dateien, Mach-O Dateien, ELF/Linux Dateien usw.) oder ein
-         Format sind, das ausführbare Daten enthalten könnte (solche wie
-         ausführbare Makros, DOC/DOCX Dateien, Archivdateien wie RAR, ZIP und
-         usw). Das ist die normale und empfohlene Verdachts-Stufe, was
-         bedeutet, dass die Virus Total API für eine zweite Meinung genutzt
-         wird, wenn phpMussel in einer als verdächtig betrachteten Datei nichts
-         schädliches oder unstimmiges findet, die es als verdächtig ansieht und
-         somit normalerweise nicht blockieren oder als schädlich markieren
-         würde.
+     1 - Dateien werden als verdächtig betrachtet, falls durch den Scan mit
+         phpMussel mit eigenen Signaturen, diese eine heuristische Gewichtung
+         haben, falls diese eine ausführbare Datei (PE Dateien, Mach-O Dateien,
+         ELF/Linux Dateien, usw.), oder ein Format sind, das ausführbare Daten
+         enthalten könnte (solche wie ausführbare Makros, DOC/DOCX Dateien,
+         Archivdateien wie RAR, ZIP und usw). Das ist die normale und
+         empfohlene Verdachts-Stufe, was bedeutet, dass die Virus Total API für
+         eine zweite Meinung genutzt wird, wenn phpMussel in einer als
+         verdächtig betrachteten Datei nichts schädliches oder unstimmiges
+         findet, die es als verdächtig ansieht und somit normalerweise nicht
+         blockieren oder als schädlich markieren würde.
      2 - Alle Dateien werden als verdächtig angesehen und sollten mit der Virus
          Total API gescannt werden. Ich empfehle nicht, diese Verdachts-Stufe
          anzuwenden, da dadurch eine schnellere Erreichung des API Limits
@@ -1688,5 +1695,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 3. Juli 2015 (2015.07.03).
+Zuletzt aktualisiert: 19. Juli 2015 (2015.07.19).
 EOF

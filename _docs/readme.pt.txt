@@ -1063,6 +1063,12 @@
       valor é o número de segundos para armazenar em cache os resultados da
       verificação para. O padrão é 21600 segundo (6 horas); Um valor de 0 irá
       desativar o cache os resultados da verificação.
+    "disable_cli"
+    - Desativar o CLI modo? CLI modo é ativado por padrão, mas às vezes pode
+      interferir com certas testes ferramentas (tal como PHPUnit, por exemplo)
+      e outras aplicações baseadas em CLI. Se você não precisa desativar o CLI
+      modo, você deve ignorar esta directiva.
+      0 = Ativar o CLI modo [Padrão], 1 = Desativar o CLI modo.
  "signatures" (Categoria)
  - Configuração por assinaturas.
    %%%_clamav = ClamAV assinaturas (ambos main e daily).
@@ -1422,17 +1428,19 @@
          malicioso, mas não pode afastar totalmente que podem também ser
          benigna (não malicioso) e por conseguinte normalmente em caso
          contrário não seria bloqueá-lo ou marcá-lo como malicioso.
-     1 - Arquivos são considerados suspeitos se eles são conhecidos para ser
-         executável (PE arquivos, Mach-O arquivos, ELF/Linux arquivos, etc) ou
-         se eles são conhecidos para ser de um formato que pode potencialmente
-         conter dados executável (tais como macros executáveis, DOC/DOCX
-         arquivos, arquivos compactados tais como RARs, ZIPS e etc). Este é o
-         padrão e recomendado nível de suspeita para aplicar, eficazmente
-         significando que a utilização da Virus Total API seria para um segundo
-         opinião para quando phpMussel inicialmente não encontrar qualquer
-         coisa que é malicioso ou errado com um arquivo que ele considera ser
-         suspeito e por conseguinte em caso contrário não seria bloqueá-lo ou
-         marcá-lo como malicioso.
+     1 - Arquivos são considerados suspeitos se, quando ser verificado por
+         phpMussel usando suas próprias assinaturas, eles são considerados para
+         possuir um peso heurística, se eles são conhecidos para ser executável
+         (PE arquivos, Mach-O arquivos, ELF/Linux arquivos, etc), ou se eles
+         são conhecidos para ser de um formato que pode potencialmente conter
+         dados executável (tais como macros executáveis, DOC/DOCX arquivos,
+         arquivos compactados tais como RARs, ZIPS e etc). Este é o padrão e
+         recomendado nível de suspeita para aplicar, eficazmente significando
+         que a utilização da Virus Total API seria para um segundo opinião para
+         quando phpMussel inicialmente não encontrar qualquer coisa que é
+         malicioso ou errado com um arquivo que ele considera ser suspeito e
+         por conseguinte em caso contrário não seria bloqueá-lo ou marcá-lo
+         como malicioso.
      2 - Todos arquivos são considerados suspeitos e devem ser verificados
          usando o Virus Total API. Eu geralmente não recomendamos a aplicação
          desse nível de suspeita, devido ao risco de atingir sua API cota muito
@@ -1717,5 +1725,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 3 Julho 2015 (2015.07.03).
+Última Atualização: 19 Julho 2015 (2015.07.19).
 EOF

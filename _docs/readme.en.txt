@@ -218,20 +218,20 @@
    file, a target directory or an array of target files and/or target
    directories.
  - $output_type is an integer, indicating the format in which the results of
-   the scan are to be return as. A value of 0 instructs the function to return
-   results as an integer (a returned result of -3 indicates problems were
-   encountered with the phpMussel signatures files or signature map files and
-   that they may possible be missing or corrupted, -2 indicates that corrupt
-   data was detected during the scan and thus the scan failed to complete,
-   -1 indicates that extensions or addons required by php to execute the scan
-   were missing and thus the scan failed to complete, 0 indicates that the
-   scan target doesn't exist and thus there was nothing to scan, 1 indicates
-   that the target was successfully scanned and no problems were detected, and
-   2 indicates that the target was successfully scanned and problems were
-   detected). A value of 1 instructs the function to return results as human
-   readable text. A value of 2 instructs the function both to return the
-   results as human readable text and to export the results to a global
-   variable. This variable is optional, defaulting to 0.
+   the scan are to be returned as. A value of 0 instructs the function to
+   return results as an integer (a returned result of -3 indicates problems
+   were encountered with the phpMussel signatures files or signature map files
+   and that they may possible be missing or corrupted, -2 indicates that
+   corrupt data was detected during the scan and thus the scan failed to
+   complete, -1 indicates that extensions or addons required by php to execute
+   the scan were missing and thus the scan failed to complete, 0 indicates that
+   the scan target doesn't exist and thus there was nothing to scan, 1
+   indicates that the target was successfully scanned and no problems were
+   detected, and 2 indicates that the target was successfully scanned and
+   problems were detected). A value of 1 instructs the function to return
+   results as human readable text. A value of 2 instructs the function both to
+   return the results as human readable text and to export the results to a
+   global variable. This variable is optional, defaulting to 0.
  - $output_flatness is an integer, indicating whether to allow results to be
    returned as an array or not. Normally, if the scan target contained multiple
    items (such as if a directory or array) the results will be returned in an
@@ -1014,6 +1014,12 @@
       number of seconds to cache the results of scanning for. Default is 21600
       seconds (6 hours); A value of 0 will disable caching the results of
       scanning.
+    "disable_cli"
+    - Disable CLI mode? CLI mode is enabled by default, but can sometimes
+      interfere with certain testing tools (such as PHPUnit, for example) and
+      other CLI-based applications. If you don't need to disable CLI mode, you
+      should ignore this directive.
+      0 = Enable CLI mode [Default], 1 = Disable CLI mode.
  "signatures" (Category)
  - Configuration for signatures.
    %%%_clamav = ClamAV signatures (both mains and daily).
@@ -1354,16 +1360,17 @@
          that a file may potentially be malicious, but can't entirely rule out
          that it may also potentially be benign (non-malicious) and therefore
          would otherwise normally not block it or flag it as being malicious.
-     1 - Files are considered suspicious if they're known to be executable (PE
-         files, Mach-O files, ELF/Linux files, etc) or if they're known to be
-         of a format that could potentially contain executable data (such as
-         executable macros, DOC/DOCX files, archive files such as RARs, ZIPS
-         and etc). This is the default and recommended suspicion level to
-         apply, effectively meaning that use of the Virus Total API would be
-         for a second opinion for when phpMussel doesn't initially find
-         anything malicious or wrong with a file that it considers to be
-         suspicious and therefore would otherwise normally not block it or flag
-         it as being malicious.
+     1 - Files are considered suspicious if, upon being scanned by phpMussel
+         using its own signatures, they are deemed to carry a heuristic weight,
+         if they're known to be executable (PE files, Mach-O files, ELF/Linux
+         files, etc), or if they're known to be of a format that could
+         potentially contain executable data (such as executable macros,
+         DOC/DOCX files, archive files such as RARs, ZIPS and etc). This is the
+         default and recommended suspicion level to apply, effectively meaning
+         that use of the Virus Total API would be for a second opinion for when
+         phpMussel doesn't initially find anything malicious or wrong with a
+         file that it considers to be suspicious and therefore would otherwise
+         normally not block it or flag it as being malicious.
      2 - All files are considered suspicious and should be scanned using the
          Virus Total API. I don't generally recommend applying this suspicion
          level, due to the risk of reaching your API quota much quicker than
@@ -1635,5 +1642,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 3rd July 2015 (2015.07.03).
+Last Updated: 19th July 2015 (2015.07.19).
 EOF

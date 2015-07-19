@@ -1070,6 +1070,12 @@
     - Untuk berapa lama harus phpMussel cache hasil-hasil? Nilai adalah jumlah
       detik untuk cache hasil-hasil untuk. Default adalah 21600 detik (6 jam);
       Nilai 0 akan menonaktifkan caching hasil-hasil.
+    "disable_cli"
+    - Menonaktifkan modus CLI? Modus CLI diaktifkan secara default, tapi
+      kadang-kadang dapat mengganggu alat pengujian tertentu (seperti PHPUnit,
+      sebagai contoh) dan aplikasi CLI berbasis lainnya. Jika Anda tidak perlu
+      menonaktifkan modus CLI, Anda harus mengabaikan direktif ini.
+      0 = Mengaktifkan modus CLI [Default], 1 = Menonaktifkan modus CLI.
  "signatures" (Kategori)
  - Konfigurasi untuk tanda tangan.
    %%%_clamav = Tanda tangan ClamAV (kedua-duanya utama dan harian).
@@ -1428,16 +1434,18 @@
          mengesampingkan bahwa hal itu juga berpotensi menjadi jinak (atau
          tidak berbahaya) dan demikian akan dinyatakan biasanya tidak memblokir
          atau mengindikasi itu sebagai berbahaya.
-     1 - File dianggap mencurigakan jika mereka diketahui executable (PE file,
-         Mach-O file, ELF/Linux file, dll) atau jika mereka diketahui dari
-         format yang berpotensi berisi data executable (seperti macro
-         executable, DOC/DOCX file, arsip file seperti RAR, ZIP dan dll). Ini
-         adalah default dan direkomendasikan tingkat kecurigaan untuk
-         menerapkan, efektif berarti bahwa penggunaan Virus Total API akan
-         untuk pendapat kedua ketika phpMussel tidak awalnya mendeteksi sesuatu
-         yang berbahaya atau yang salah dengan file yang dianggap mencurigakan
-         dan demikian akan dinyatakan biasanya tidak memblokir atau
-         mengindikasi itu sebagai berbahaya.
+     1 - File dianggap mencurigakan jika, setelah dipindai oleh phpMussel
+         menggunakan tanda tangan sendiri, mereka dianggap membawa berat
+         heuristik, jika mereka diketahui executable (PE file, Mach-O file,
+         ELF/Linux file, dll), atau jika mereka diketahui dari format yang
+         berpotensi berisi data executable (seperti macro executable, DOC/DOCX
+         file, arsip file seperti RAR, ZIP dan dll). Ini adalah default dan
+         direkomendasikan tingkat kecurigaan untuk menerapkan, efektif berarti
+         bahwa penggunaan Virus Total API akan untuk pendapat kedua ketika
+         phpMussel tidak awalnya mendeteksi sesuatu yang berbahaya atau yang
+         salah dengan file yang dianggap mencurigakan dan demikian akan
+         dinyatakan biasanya tidak memblokir atau mengindikasi itu sebagai
+         berbahaya.
      2 - Semua file dianggap mencurigakan dan harus dipindai menggunakan Virus
          Total API. Saya biasanya tidak merekomendasikan menerapkan tingkat
          kecurigaan ini, karena risiko mencapai kuota API Anda lebih cepat
@@ -1718,5 +1726,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 3 Juli 2015 (2015.07.03).
+Terakhir Diperbarui: 19 Juli 2015 (2015.07.19).
 EOF
