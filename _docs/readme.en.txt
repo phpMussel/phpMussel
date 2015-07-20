@@ -213,9 +213,9 @@
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
- Where:
  - $what_to_scan can be a string, an array, or an array of arrays, and
    indicates which file, files, directory and/or directories to scan.
+
  - $output_type is a boolean, indicating the format for the scan results to be
    returned as. False instructs the function to return results as an integer (a
    returned result of -3 indicates problems were encountered with the phpMussel
@@ -229,7 +229,8 @@
    successfully scanned and problems were detected). True instructs the
    function to return results as human readable text. Additionally, in either
    case, the results can be accessed via global variables after scanning has
-   completed. This variable is optional, defaulting to 0.
+   completed. This variable is optional, defaulting to false.
+
  - $output_flatness is a boolean, indicating to the function whether to return
    the results of scanning (when there are multiple scan targets) as an array
    or a string. False will return the results as an array. True will return the
@@ -1638,5 +1639,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 19th July 2015 (2015.07.19).
+Last Updated: 20th July 2015 (2015.07.20).
 EOF
