@@ -215,54 +215,53 @@
 
  3A. COMMENT UTILISER (POUR WEB SERVEURS)
 
- phpMussel est prévu à être un script que fonctionnera correctement dès la
- boîte avec un minimum niveau des exigences de votre part: Une fois qu'il a été
- installé, au fond, il devrait simplement travailler.
+ phpMussel est destiné à être un script qui va fonctionner adéquatement droit
+ de la boîte avec un niveau de strict minimum des exigences de votre part:
+ Après qu'il a été installé, fondamentalement, il devrait tout simplement
+ travailler.
 
- Numérisation de fichiers téléchargé est automatisée et activée par défaut,
- donc rien n'est requise de votre part pour cette particulière fonction.
+ L'analyses des téléchargements des fichiers est automatisée et activée par
+ défaut, donc rien est nécessaire à partir de vous pour cette fonction
+ particulière.
 
- Cependant, vous êtes également capable de instruire phpMussel à rechercher des
+ Cependant, vous êtes également capable d'instruire phpMussel à analyser pour
  fichiers, répertoires ou archives que vous spécifiez implicitement. Pour ce
- faire, d'abord, vous devez assurer que l'appropriée configuration est réglée
- dans le "phpmussel.ini" fichier (cleanup doit être désactivé), et lorsque
- fini, dans un php fichier qui est lié à phpMussel, utiliser la fonction
- suivante dans votre code:
+ faire, premièrement, vous devez assurer que la appropriée configuration est
+ imposé dans le "phpmussel.ini" fichier (cleanup doit être désactivé), et
+ lorsque vous avez terminé, dans un fichier php qui est accroché à phpMussel,
+ utilisez la fonction suivante dans votre code:
 
- phpMussel($quoi_a_recherche,$sortie_type,$sortie_platitude);
+ phpMussel($what_to_scan,$output_type,$output_flatness);
 
- Où:
- - $quoi_a_recherche est une string ou un tableau, pointant à un cible fichier,
-   un cible répertoire ou un tableau de cibles fichiers et/ou cibles
-   répertoires.
- - $sortie_type est un entier, indiquant le format dans lequel les résultats de
-   l'analyse doivent être retourné. Une valeur de 0 instruit que la fonction
-   d'affichage des résultats comme un entier (un retourné résultat de -3
-   indique des problèmes ont été rencontrés avec le phpMussel signatures
-   fichiers ou des signatures cartes fichiers et qu'ils peuvent être possible
-   manquants ou corrompus, -2 indique que corrompues données était détecté lors
-   de l'analyse et donc l'analyse n'ont pas réussi à compléter, -1 indique que
-   les extensions ou addons requis par PHP pour exécuter l'analyse sont
-   manquaient et donc l'analyse n'ont pas réussi à compléter, 0 indique qu'il
-   n'existe pas cible à analyser et donc il n'y avait rien à analyser, 1
-   indique que la cible était analysé avec succès et aucun problème n'été
-   détectée, et 2 indique que la cible était analysé avec succès et problèmes
-   ont été détectés). Une valeur de 1 indique à la fonction pour renvoyer les
-   résultats sous forme de texte lisible par l'homme. Une valeur de 2 indique
-   à la fonction pour renvoyer les résultats sous forme de texte lisible par
-   l'homme et pour exporter les résultats à une globale variable. Cette
-   variable est facultative, 0 par défaut.
- - $sortie_platitude est un entier, indiquant si les résultats pourront être
-   retournés comme un tableau ou pas. Normalement, si la cible de l'analyse
-   contenue plusieurs articles (par exemple, si un répertoire ou un tableau)
-   les résultats seront retournés dans un tableau (défaut valeur de 0). Une
-   valeur de 1 instruit la fonction pour imploser tous tableaux avant l'entrée,
-   résultant en une aplatie string contenant les résultats à être retourner.
-   Cette variable est facultative, 0 par défaut.
+ - $what_to_scan peut être une chaîne, un tableau, ou un tableau de tableaux,
+   et indique quel fichier, fichiers, répertoire et/ou répertoires à analyser.
+
+ - $output_type est un booléen, indiquant le format dont les résultats
+   d'analyse doivent être retournées sous. False/Faux instruit la fonction à
+   retourner des résultats comme un entier (un retourné résultat de -3 indique
+   des problèmes ont été rencontrés avec le phpMussel signatures fichiers ou
+   des signatures cartes fichiers et qu'ils peuvent être possible manquants ou
+   corrompus, -2 indique que corrompues données était détecté lors de l'analyse
+   et donc l'analyse n'ont pas réussi à compléter, -1 indique que les
+   extensions ou addons requis par PHP pour exécuter l'analyse sont manquaient
+   et donc l'analyse n'ont pas réussi à compléter, 0 indique qu'il n'existe pas
+   cible à analyser et donc il n'y avait rien à analyser, 1 indique que la
+   cible était analysé avec succès et aucun problème n'été détectée, et 2
+   indique que la cible était analysé avec succès et problèmes ont été
+   détectés). True/Vrai instruit la fonction à retourner des résultats sous
+   forme de texte lisible par humain. De plus, dans tout le cas, les résultats
+   peuvent être accessibles via les variables globales après l'analyse est
+   terminée. Cette variable est optionnel, imposé par défaut comme false/faux.
+
+ - $output_flatness est un booléen, indiquant à la fonction soit à retourner
+   les résultats de l'analyse (quand il ya plusieurs cibles d'analyse) comme un
+   tableau ou une chaîne. False/Faux sera retour les résultats comme un
+   tableau. True/Vrai sera retour les résultats comme une chaîne. Cette
+   variable est optionnel, imposé par défaut comme false/faux.
 
  Exemples:
 
-   $results=phpMussel("/user_name/public_html/my_file.html",1,1);
+   $results=phpMussel('/user_name/public_html/my_file.html',true,true);
    echo $results;
 
    Retours quelque chose comme ça (comme une string):
@@ -963,7 +962,7 @@
     "script_password"
     - Par commodité, phpMussel permettra certaines fonctions (inclus la
       capacité de réactualiser phpMussel sur la volée) pour être déclenché
-      manuellement via POST, GET et QUERY. Toutefois, par mesure de sécurité,
+      manuellement via POST, GET et QUERY. Cependant, par mesure de sécurité,
       pour ce faire, phpMussel s'attend à un mot de passe pour être inclus
       dans la commande, à assurer que c'est vous, et pas quelqu'un d'autre,
       attenter de déclencher manuellement ces fonctions. Fixer script_password
@@ -1762,5 +1761,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 19 Juillet 2015 (2015.07.19).
+Dernière Réactualisé: 20 Juillet 2015 (2015.07.20).
 EOF

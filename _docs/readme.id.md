@@ -86,7 +86,7 @@ Saya berharap untuk mempersingkat proses ini dengan membuat sebuah installer dar
 
 5) (Opsional) Anda dapat menggunakan phpMussel di dalam mode CLI untuk diri Anda sendiri dengan menciptakan file batch untuk secara automatis memuat php dan phpMussel. Untuk melakukannya, buka sebuah text editor kosong seperti Notepad atau Notepad++, ketikkan jalur dari data `php.exe` di dalam direktori dari instalasi php Anda, diikuti spasi, diikuti dengan jalur lengkap dari data `phpmussel.php` di dalam direktori dari instalasi phpMussel, simpan data dengan ekstensi ".bat" di simpan di tempat yang Anda mudah temukan dan klik dua kali pada data itu untuk menjalankan phpMussel di masa yang akan datang.
 
-6) Pada titik ini, Anda selesai! Bagaimanapun Anda seharusnya mencobanya untuk memastikan berjalan dengan lancar. Untuk mencek phpMussel, jalankan phpMussel dan coba pindai `_testfiles` direktori yang disediakan dengan ini paket.
+6) Pada titik ini, Anda selesai! Bagaimanapun Anda seharusnya mencobanya untuk memastikan berjalan dengan lancar. Untuk mencek phpMussel, jalankan phpMussel dan coba memindai `_testfiles` direktori yang disediakan dengan ini paket.
 
 ---
 
@@ -101,25 +101,25 @@ Bagaimanapun Anda juga bisa menginstruksikan phpMussel untuk memindai data, dire
 
 `phpMussel($what_to_scan,$output_type,$output_flatness);`
 
-Dimana:
-- `$what_to_scan` adalah string atau array, mengarah ke data target, direktori target atau array data target dan/atau direktori target.
-- `$output_type` adalah sebuah integer, mengindikasikan format dimana hasil dari memindai yang dikembalikan (sebuah hasil dari -3 mengindikasikan masalah adalah ditemui dengan file tanda tangan phpMussel atau file memetakan tanda tangan dan mereka mungkin hilang atau rusak, -2 mengindikasikan bahwa data korup terdeteksi selama proses memindai dan proses memindai gagal selesai, -1 mengindikasikan bawa ekstensi atau addon yang dibutuhkan oleh php untuk mengeksekusi pemindaian hilang dan demikian gagal selesai, 0 mengindikasikan bahwa pemindaian target tidak ada dan tidak ada yang dipindai 1 mengindikasikan bahwa target sukses dipindai dan tidak ada masalah terdeteksi, dan 2 mengindikasikan target sukses di scan namun ada masalah terdeteksi). Nilai 1 menginstruksikan fungsi untuk menghasilkan hasil teks yang dapat dibaca manusia. Nilai 2 menginstruksikan fungsi untuk menghasilkan hasil teks yang dapat dibaca manusia dan mengekspor hasil ke variabel global. Variabel ini opsional, defaultnya 0.
-- `$output_flatness` adalah sebuah integer, mengindikasikan apakah mengizinkan hasil untuk dihasilkan sebagai array atau tidak. Secara normal jika pemindaian target berisikan banyak item (seperti direktori atau array) hasilnya akan dihasilkan dalam sebuah array (nilai default 0). Nilai 1 menginstruksikan fungsi untuk membagi array untuk masukan, menghasilkan karakter rata berisikan hasil yang dikembalikan. Variabel ini opsional, defaultnya 0.
+- `$what_to_scan` dapat berupa string, array, atau array mengandung array-array, mengindikasikan apa file, file-file, direktori dan/atau direktori-direktori untuk memindai.
+- `$output_type` adalah boolean, mengindikasikan format untuk hasil pemindaian untuk dikembalikan sebagai. False/Palsu menginstruksikan fungsi untuk mengembalikan hasil sebagai integer (sebuah hasil dari -3 mengindikasikan masalah adalah ditemui dengan file tanda tangan phpMussel atau file memetakan tanda tangan dan mereka mungkin hilang atau rusak, -2 mengindikasikan bahwa data korup terdeteksi selama proses memindai dan proses memindai gagal selesai, -1 mengindikasikan bawa ekstensi atau addon yang dibutuhkan oleh php untuk mengeksekusi pemindaian hilang dan demikian gagal selesai, 0 mengindikasikan bahwa pemindaian target tidak ada dan tidak ada yang dipindai 1 mengindikasikan bahwa target sukses dipindai dan tidak ada masalah terdeteksi, dan 2 mengindikasikan target sukses di scan namun ada masalah terdeteksi). True/Benar menginstruksikan fungsi untuk mengembalikan hasil sebagai teks yang dapat dibaca manusia. Tambahan, dalam kedua kasus, hasilnya dapat diakses melalui variabel global setelah memindai selesai. Variabel ini adalah opsional, default ke false/palsu.
+- `$output_flatness` adalah boolean, mengindikasikan ke fungsi apakah akan mengembalikan hasil pemindaian (ketika ada beberapa target pemindaian) sebagai array atau string. False/Palsu akan mengembalikan hasil sebagai array. True/Benar akan mengembalikan hasil sebagai string. Variabel ini adalah opsional, default ke false/palsu.
 
 Contoh:
 
-`$results=phpMussel("/user_name/public_html/my_file.html",1,1);
-echo $results;`
+```
+ $results=phpMussel('/user_name/public_html/my_file.html',true,true);
+ echo $results;
+```
 
 Menghasilkan seperti ini (sebagai kata-kata):
 
-`Wed, 16 Sep 2013 02:49:46 +0000 Dimulai.`
-
-`> Memeriksa '/user_name/public_html/my_file.html':`
-
-`-> Tidak masalah.`
-
-`Wed, 16 Sep 2013 02:49:47 +0000 Selesai.`
+```
+ Wed, 16 Sep 2013 02:49:46 +0000 Dimulai.
+ > Memeriksa '/user_name/public_html/my_file.html':
+ -> Tidak ada masalah yang diketahui.
+ Wed, 16 Sep 2013 02:49:47 +0000 Selesai.
+```
 
 Untuk sebuah pemecahan penuh dari jenis tanda tangan phpMussel yang digunakan selama pemindaian dan bagaimana dia memegang tanda tangan-tanda tangan ini, mencocokkan ke format tanda tangan dari data README.
 
@@ -411,7 +411,7 @@ Data                                       | Deskripsi
 /vault/pe_mussel.cvd                       | Data untuk tanda tangan PE Sectional.
 /vault/phpmussel.inc                       | Skrip murni phpMussel; Body utama dan vital dari phpMussel (utama)!
 /vault/phpmussel.ini                       | Data konfigurasi phpMussel; Berisi semua opsi konfigurasi dari phpMussel, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (utama)!
-※ /vault/scan_log.txt                     | Sebuah catatan dari apapun yang di pindai oleh phpMussel.
+※ /vault/scan_log.txt                     | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
 ※ /vault/scan_kills.txt                   | Sebuah catatan dari setiap data upload yang diblok/dibunuh oleh phpMussel.
 /vault/swf_clamav_regex.cvd                | Data untuk tanda tangan Shockwave.
 /vault/swf_clamav_regex.map                | Data untuk tanda tangan Shockwave.
@@ -896,4 +896,4 @@ Informasi ini diupdate 28 Mei 2015 dan cocok untuk semua rilis phpMussel dari du
 ---
 
 
-Terakhir Diperbarui: 19 Juli 2015 (2015.07.19).
+Terakhir Diperbarui: 20 Juli 2015 (2015.07.20).
