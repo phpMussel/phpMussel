@@ -102,24 +102,25 @@ However, you're also able to instruct phpMussel to scan for files, directories o
 `phpMussel($what_to_scan,$output_type,$output_flatness);`
 
 Where:
-- `$what_to_scan` is either a string or an array, pointing to either a target file, a target directory or an array of target files and/or target directories.
-- `$output_type` is an integer, indicating the format in which the results of the scan are to be returned as. A value of 0 instructs the function to return results as an integer (a returned result of -3 indicates problems were encountered with the phpMussel signatures files or signature map files and that they may possible be missing or corrupted, -2 indicates that corrupt data was detected during the scan and thus the scan failed to complete, -1 indicates that extensions or addons required by php to execute the scan were missing and thus the scan failed to complete, 0 indicates that the scan target doesn't exist and thus there was nothing to scan, 1 indicates that the target was successfully scanned and no problems were detected, and 2 indicates that the target was successfully scanned and problems were detected). A value of 1 instructs the function to return results as human readable text. A value of 2 instructs the function both to return the results as human readable text and to export the results to a global variable. This variable is optional, defaulting to 0.
-- `$output_flatness` is an integer, indicating whether to allow results to be returned as an array or not. Normally, if the scan target contained multiple items (such as if a directory or array) the results will be returned in an array (default value of 0). A value of 1 instructs the function to implode any such array prior to input, resulting in a flattened string containing the results to be returned. This variable is optional, defaulting to 0.
+- `$what_to_scan` can be a string, an array, or an array of arrays, and indicates which file, files, directory and/or directories to scan.
+- `$output_type` is a boolean, indicating the format for the scan results to be returned as. False instructs the function to return results as an integer (a returned result of -3 indicates problems were encountered with the phpMussel signatures files or signature map files and that they may possible be missing or corrupted, -2 indicates that corrupt data was detected during the scan and thus the scan failed to complete, -1 indicates that extensions or addons required by php to execute the scan were missing and thus the scan failed to complete, 0 indicates that the scan target doesn't exist and thus there was nothing to scan, 1 indicates that the target was successfully scanned and no problems were detected, and 2 indicates that the target was successfully scanned and problems were detected). True instructs the function to return results as human readable text. Additionally, in either case, the results can be accessed via global variables after scanning has completed. This variable is optional, defaulting to 0.
+- `$output_flatness` is a boolean, indicating to the function whether to return the results of scanning (when there are multiple scan targets) as an array or a string. False will return the results as an array. True will return the results as a string. This variable is optional, defaulting to false.
 
 Examples:
 
-`$results=phpMussel("/user_name/public_html/my_file.html",1,1);
-echo $results;`
+```
+ $results=phpMussel('/user_name/public_html/my_file.html',true,true);
+ echo $results;
+```
 
 Returns something like this (as a string):
 
-`Wed, 16 Sep 2013 02:49:46 +0000 Started.`
-
-`> Checking '/user_name/public_html/my_file.html':`
-
-`-> No problems found.`
-
-`Wed, 16 Sep 2013 02:49:47 +0000 Finished.`
+```
+ Wed, 16 Sep 2013 02:49:46 +0000 Started.
+ > Checking '/user_name/public_html/my_file.html':
+ -> No problems found.
+ Wed, 16 Sep 2013 02:49:47 +0000 Finished.
+```
 
 For a full break-down of what sort of signatures phpMussel uses during its scans and how it handles these signatures, refer to the Signature Format section of this README file.
 
