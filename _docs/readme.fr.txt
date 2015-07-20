@@ -72,7 +72,7 @@
 
  1) Parce que vous lisez ceci, je suppose que vous avez déjà téléchargé une
     archivée copie du script, décompressé son contenu et l'ont assis sur votre
-    locale machine. Maintenant, vous devez déterminer l'approprié emplacement
+    locale machine. Maintenant, vous devez déterminer la approprié emplacement
     sur votre hôte ou CMS à mettre ces contenus. Un répertoire comme
     /public_html/phpmussel/ ou similaire (cependant, il n'est pas question que
     vous choisissez, à condition que c'est quelque part de sûr et quelque part
@@ -215,7 +215,7 @@
 
  3A. COMMENT UTILISER (POUR WEB SERVEURS)
 
- phpMussel est destiné à être un script qui va fonctionner adéquatement droit
+ phpMussel est destiné à être un script qui va fonctionner correctement droit
  de la boîte avec un niveau de strict minimum des exigences de votre part:
  Après qu'il a été installé, fondamentalement, il devrait tout simplement
  travailler.

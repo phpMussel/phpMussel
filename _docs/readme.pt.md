@@ -101,25 +101,25 @@ Porém, você também é capaz de instruir phpMussel para verificar arquivos ou 
 
 `phpMussel($what_to_scan,$output_type,$output_flatness);`
 
-Onde:
-- `$what_to_scan` é uma string ou um array, apontando para um alvo arquivo, um alvo diretório ou um array de alvo arquivos e/ou alvo diretórios.
-- `$output_type` é um integer, indicando o formato que os resultados da análise são regresso se. Um valor de 0 instrui a função para retornar resultados como um integer (um resultado retornado de -3 indica problemas foram encontrados com o phpMussel assinaturas arquivos ou mapas assinaturas arquivos e que eles podem possível estar ausente ou corrompido, -2 indica que corrompido dados foi detectado durante a análise, e portanto, a análise não foi concluída, -1 indica que extensões ou complementos necessários pelo php para executar a análise estavam faltando, e portanto, a análise não foi concluída, 0 indica que o alvo de análise não existe, e portanto, havia nada para verificar, 1 indica que o alvo foi analisado e não problemas foram detectados, e 2 indica que o alvo foi analisado e problemas foram detectados). Um valor de 1 instrui a função para retornar resultados como humano legível texto. Um valor de 2 instrui a função para retornar resultados como humano legível texto e para exportar os resultados para um global variável. Esta variável é opcional, padronizando a 0.
-- `$output_flatness` é um integer, indicando se a permitir que os resultados sejam retornados como uma array ou não. Normalmente, se o alvo de análise continha vários itens (tal como se um diretório ou array) os resultados serão retornados em uma array (padrão valor de 0). Um valor de 1 instrui a função a implodir qualquer array antes de entrada, resultando em uma achatada string contendo os resultados a serem retornados. Esta variável é opcional, padronizando a 0.
+- `$what_to_scan` pode ser uma string, um matriz, ou um matriz de matrizes, e indica qual arquivo, arquivos, diretório e/ou diretórios para analisar.
+- `$output_type` é um booleano, indicando o formato para os resultados da verificação a serem retornados como. False/Falso instrui a função para retornar resultados como um número inteiro (um resultado retornado de -3 indica problemas foram encontrados com o phpMussel assinaturas arquivos ou mapas assinaturas arquivos e que eles podem possível estar ausente ou corrompido, -2 indica que corrompido dados foi detectado durante a análise, e portanto, a análise não foi concluída, -1 indica que extensões ou complementos necessários pelo php para executar a análise estavam faltando, e portanto, a análise não foi concluída, 0 indica que o alvo de análise não existe, e portanto, havia nada para verificar, 1 indica que o alvo foi analisado e não problemas foram detectados, e 2 indica que o alvo foi analisado e problemas foram detectados). True/Verdadeiro instrui a função para retornar os resultados como texto legível. Adicionalmente, em ambos os casos, os resultados podem ser acessados através de variáveis globais após o análise já concluída. Esta variável é opcional, definida como false/falso por padrão.
+- `$output_flatness` é um booleano, indicando para o função seja para retornar os resultados de análise (quando há vários alvos para analisando) como uma matriz ou uma string. False/Falso irá retornar os resultados como uma matriz. True/Verdadeiro irá retornar os resultados como uma string. Esta variável é opcional, definida como false/falso por padrão.
 
 Exemplos:
 
-`$results=phpMussel("/user_name/public_html/my_file.html",1,1);
-echo $results;`
+```
+ $results=phpMussel('/user_name/public_html/my_file.html',true,true);
+ echo $results;
+```
 
 Retorna algo tal como esta (como uma string):
 
-`Wed, 16 Sep 2013 02:49:46 +0000 Começado.`
-
-`> Verificação '/user_name/public_html/my_file.html':`
-
-`-> Não problemas encontrados.`
-
-`Wed, 16 Sep 2013 02:49:47 +0000 Terminado.`
+```
+ Wed, 16 Sep 2013 02:49:46 +0000 Começado.
+ > Verificação '/user_name/public_html/my_file.html':
+ -> Não problemas encontrados.
+ Wed, 16 Sep 2013 02:49:47 +0000 Terminado.
+```
 
 Por completos detalhes sobre que tipo de assinaturas phpMussel usa durante a análise e como ele usa essas assinaturas, consulte a Assinatura Formato seção deste arquivo README.
 
@@ -896,4 +896,4 @@ Esta informação foi atualizada dia 28 Maio 2015 e é corrente para todas phpMu
 ---
 
 
-Última Atualização: 19 Julho 2015 (2015.07.19).
+Última Atualização: 20 Julho 2015 (2015.07.20).

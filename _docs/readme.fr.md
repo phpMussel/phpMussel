@@ -41,7 +41,7 @@ Ce document et son associé empaqueter peuvent être téléchargé gratuitement 
 
 J'ai l'intention de simplifier ce processus par la création d'un programme d'installation à l'avenir, mais en attendant, suivez ces instructions pour la correcte fonction de phpMussel sur la majorité de systèmes et CMS:
 
-1) Parce que vous lisez ceci, je suppose que vous avez déjà téléchargé une archivée copie du script, décompressé son contenu et l'ont assis sur votre locale machine. Maintenant, vous devez déterminer l'approprié emplacement sur votre hôte ou CMS à mettre ces contenus. Un répertoire comme `/public_html/phpmussel/` ou similaire (cependant, il n'est pas question que vous choisissez, à condition que c'est quelque part de sûr et quelque part que vous êtes heureux avec) sera suffira. *Vous avant commencer téléchargement au serveur, continuer lecture..*
+1) Parce que vous lisez ceci, je suppose que vous avez déjà téléchargé une archivée copie du script, décompressé son contenu et l'ont assis sur votre locale machine. Maintenant, vous devez déterminer la approprié emplacement sur votre hôte ou CMS à mettre ces contenus. Un répertoire comme `/public_html/phpmussel/` ou similaire (cependant, il n'est pas question que vous choisissez, à condition que c'est quelque part de sûr et quelque part que vous êtes heureux avec) sera suffira. *Vous avant commencer téléchargement au serveur, continuer lecture..*
 
 2) Ouvrir `phpmussel.php`, cherchez pour la ligne commençant par `$vault=`, et remplacez la string entre guillemets suivantes sur cette ligne avec le véritable exact emplacement du le répertoire `vault` de phpMussel. Vous aurez remarqué un tel dossier dans l'archive que vous avez téléchargé (sauf si vous sentez à nouveau codage de l'ensemble du script, vous aurez besoin à maintenir la même structure de fichiers et de répertoires comme il était dans l'origine archive). Ce `vault` répertoire devrait être d'un niveau au-dessus le répertoire que le fichier `phpmussel.php` existera po. Enregistrer le fichier, fermer.
 
@@ -93,7 +93,7 @@ J'ai l'intention de simplifier ce processus par la création d'un programme d'in
 
 ###3A. <a name="SECTION3A"></a>COMMENT UTILISER (POUR WEB SERVEURS)
 
-phpMussel est destiné à être un script qui va fonctionner adéquatement droit de la boîte avec un niveau de strict minimum des exigences de votre part: Après qu'il a été installé, fondamentalement, il devrait tout simplement travailler.
+phpMussel est destiné à être un script qui va fonctionner correctement droit de la boîte avec un niveau de strict minimum des exigences de votre part: Après qu'il a été installé, fondamentalement, il devrait tout simplement travailler.
 
 L'analyses des téléchargements des fichiers est automatisée et activée par défaut, donc rien est nécessaire à partir de vous pour cette fonction particulière.
 

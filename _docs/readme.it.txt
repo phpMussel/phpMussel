@@ -229,42 +229,41 @@
 
  phpMussel($cosa_a_scansione,$tipi_di_output,$output_pianura);
 
- Dove:
- - $cosa_a_scansione è una stringa o un array, che punta a un obiettivo file,
-   un obiettivo cartella o un array di obiettivo file e/o obiettivo cartella.
- - $tipi_di_output è un integer, indicando il formato in cui i risultati della
-   scansione dovrebbero restituire come. Un valore di 0 istruire la funzione a
-   restituire i risultati come integer (un risultato restituito di -3 indica
-   problemi sono stati incontrati con il phpMussel firme file o file di firme
-   mappe e che possono essere possibile mancanti o corrotto, -2 indica che i
-   corrotto dato è stato rilevato durante la scansione e quindi la scansione
-   non abbia completato, -1 indica che estensioni o addon richiesti per php a
-   eseguire la scansione erano assente e quindi la scansione non abbia
-   completato, 0 indica che l'obiettivo di scansione non esiste e quindi non
-   c'era nulla a scansione, 1 indica che l'obiettivo è stato scansionata
+ - $cosa_a_scansione può essere una stringa, un array o un array di array
+   multipli, e indica quale d'il file, cartella e/o cartelle a scansiona.
+
+ - $tipi_di_output è è un valore booleano, indicanti il formato per i risultati
+   della scansione a essere restituire come. False/Falso istruisce la funzione
+   a restituire i risultati come un intero (un risultato restituito di -3
+   indica problemi sono stati incontrati con il phpMussel firme file o file di
+   firme mappe e che possono essere possibile mancanti o corrotto, -2 indica
+   che i corrotto dato è stato rilevato durante la scansione e quindi la
+   scansione non abbia completato, -1 indica che estensioni o addon richiesti
+   per php a eseguire la scansione erano assente e quindi la scansione non
+   abbia completato, 0 indica che l'obiettivo di scansione non esiste e quindi
+   non c'era nulla a scansione, 1 indica che l'obiettivo è stato scansionata
    correttamente e non problemi stati rilevati, e 2 indica che l'obiettivo è
-   stato scansionata correttamente e problemi stati rilevati). Un valore di 1
-   istruire la funzione a restituire i risultati come leggibile testo. Un
-   valore di 2 istruire la funzione a restituire i risultati come leggibile
-   testo e di esportare i risultati ad un globale variabile. Questa variabile è
-   opzionale, predefinito a 0.
- - $output_pianura è un integer, indicando se a restituire i risultati come un
-   array o non. Normalmente, se la scansione obiettivo conteneva multiplo
-   elementi (come se una cartella o un array) i risultati sará restituiti come
-   array (predefinito valore di 0). Un valore di 1 istruire la funzione a
-   implodere qualsiasi tale array prima di restituire, risultante in un
-   appiattita stringa contenente i risultati essere restituire. Questa
-   variabile è opzionale, predefinito a 0.
+   stato scansionata correttamente e problemi stati rilevati). True/Vero
+   istruisce la funzione a restituire i risultati come testo leggibile. In
+   aggiunta, in ogni caso, i risultati sono accessibili tramite variabili
+   globali dopo la scansione è stata completata. Questa variabile è
+   facoltativa, inadempiente su false/falso.
+
+ - $output_pianura è un valore booleano, indicanti alla funzione se restituire
+   i risultati della scansione (quando ci sono multipli obiettivi di scansione)
+   come un array o una stringa. False/Falso restituirà i risultati come un
+   array. True/Vero restituirà i risultati come una stringa. Questa variabile è
+   facoltativa, inadempiente su false/falso.
 
  Esempi:
 
-   $results=phpMussel("/user_name/public_html/my_file.html",1,1);
+   $results=phpMussel('/user_name/public_html/my_file.html',true,true);
    echo $results;
 
    Restituisce qualcosa come (in forma di una stringa):
     Wed, 16 Sep 2013 02:49:46 +0000 Iniziato.
-    > Verificare '/user_name/public_html/my_file.html':
-    -> Nessun problema trovato.
+    > Verifica '/user_name/public_html/my_file.html':
+    -> Nessun problema rilevato.
     Wed, 16 Sep 2013 02:49:47 +0000 Finito.
 
  Per una dettagliata spiegazione del tipo di firme di cui phpMussel usa durante
@@ -1735,5 +1734,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 19 Luglio 2015 (2015.07.19).
+Ultimo Aggiornamento: 20 Luglio 2015 (2015.07.20).
 EOF
