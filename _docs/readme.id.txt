@@ -199,8 +199,8 @@
 
  6) Pada titik ini, Anda selesai! Bagaimanapun Anda seharusnya mencobanya untuk
     memastikan berjalan dengan lancar. Untuk mencek phpMussel, jalankan
-    phpMussel dan coba pindai "_testfiles" direktori yang disediakan dengan ini
-    paket.
+    phpMussel dan coba memindai "_testfiles" direktori yang disediakan dengan
+    ini paket.
 
                                      ~ ~ ~
 
@@ -223,40 +223,41 @@
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
- Dimana:
- - $what_to_scan adalah string atau array, mengarah ke data target, direktori
-   target atau array data target dan/atau direktori target.
- - $output_type adalah sebuah integer, mengindikasikan format dimana hasil dari
-   memindai yang dikembalikan (sebuah hasil dari -3 mengindikasikan masalah
-   adalah ditemui dengan file tanda tangan phpMussel atau file memetakan tanda
-   tangan dan mereka mungkin hilang atau dikorup, -2 mengindikasikan bahwa data
-   korup terdeteksi selama proses memindai dan proses memindai gagal selesai,
-   -1 mengindikasikan bawa ekstensi atau addon yang dibutuhkan oleh php untuk
-   mengeksekusi pemindaian hilang dan demikian gagal selesai, 0 mengindikasikan
-   bahwa pemindaian target tidak ada dan tidak ada yang dipindai 1
-   mengindikasikan bahwa target sukses dipindai dan tidak ada masalah
-   terdeteksi, dan 2 mengindikasikan target sukses di scan namun ada masalah
-   terdeteksi). Nilai 1 menginstruksikan fungsi untuk menghasilkan hasil teks
-   yang dapat dibaca manusia. Nilai 2 menginstruksikan fungsi untuk
-   menghasilkan hasil teks yang dapat dibaca manusia dan mengekspor hasil ke
-   variabel global. Variabel ini opsional, defaultnya 0.
- - $output_flatness adalah sebuah integer, mengindikasikan apakah mengizinkan
-   hasil untuk dihasilkan sebagai array atau tidak. Secara normal jika
-   pemindaian target berisikan banyak item (seperti direktori atau array)
-   hasilnya akan dihasilkan dalam sebuah array (nilai default 0). Nilai 1
-   menginstruksikan fungsi untuk membagi array untuk masukan, menghasilkan
-   karakter rata berisikan hasil yang dikembalikan. Variabel ini opsional,
-   defaultnya 0.
+ - $what_to_scan dapat berupa string, array, atau array mengandung array-array,
+   mengindikasikan apa file, file-file, direktori dan/atau direktori-direktori
+   untuk memindai.
+
+ - $output_type adalah boolean, mengindikasikan format untuk hasil pemindaian
+   untuk dikembalikan sebagai. False/Palsu menginstruksikan fungsi untuk
+   mengembalikan hasil sebagai integer (sebuah hasil dari -3 mengindikasikan
+   masalah adalah ditemui dengan file tanda tangan phpMussel atau file
+   memetakan tanda tangan dan mereka mungkin hilang atau rusak, -2
+   mengindikasikan bahwa data korup terdeteksi selama proses memindai dan
+   proses memindai gagal selesai, -1 mengindikasikan bawa ekstensi atau addon
+   yang dibutuhkan oleh php untuk mengeksekusi pemindaian hilang dan demikian
+   gagal selesai, 0 mengindikasikan bahwa pemindaian target tidak ada dan tidak
+   ada yang dipindai 1 mengindikasikan bahwa target sukses dipindai dan tidak
+   ada masalah terdeteksi, dan 2 mengindikasikan target sukses di scan namun
+   ada masalah terdeteksi). True/Benar menginstruksikan fungsi untuk
+   mengembalikan hasil sebagai teks yang dapat dibaca manusia. Tambahan, dalam
+   kedua kasus, hasilnya dapat diakses melalui variabel global setelah memindai
+   selesai. Variabel ini adalah opsional, default ke false/palsu.
+
+ - $output_flatness adalah boolean, mengindikasikan ke fungsi apakah akan
+   mengembalikan hasil pemindaian (ketika ada beberapa target pemindaian)
+   sebagai array atau string. False/Palsu akan mengembalikan hasil sebagai
+   array. True/Benar akan mengembalikan hasil sebagai string. Variabel ini
+   adalah opsional, default ke false/palsu.
 
  Contoh:
 
-   $results=phpMussel("/user_name/public_html/my_file.html",1,1);
+   $results=phpMussel('/user_name/public_html/my_file.html',true,true);
    echo $results;
 
    Menghasilkan seperti ini (sebagai kata-kata):
     Wed, 16 Sep 2013 02:49:46 +0000 Dimulai.
     > Memeriksa '/user_name/public_html/my_file.html':
-    -> Tidak masalah.
+    -> Tidak ada masalah yang diketahui.
     Wed, 16 Sep 2013 02:49:47 +0000 Selesai.
 
  Untuk sebuah pemecahan penuh dari jenis tanda tangan phpMussel yang digunakan
@@ -846,7 +847,7 @@
     dengan benar (utama)!
     ~
  /vault/scan_log.txt *(Data catatan, Diciptakan)
-    Sebuah catatan dari apapun yang di pindai oleh phpMussel.
+    Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
     ~
  /vault/scan_kills.txt *(Data catatan, Diciptakan)
     Sebuah catatan dari setiap data upload yang diblok/dibunuh oleh phpMussel.
@@ -1726,5 +1727,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 19 Juli 2015 (2015.07.19).
+Terakhir Diperbarui: 20 Juli 2015 (2015.07.20).
 EOF

@@ -220,38 +220,33 @@
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
- - $what_to_scan ist entweder ein String oder ein Array, welches auf eine
-   Datei, ein Verzeichnis oder ein Array von Dateien und/oder Verzeichnissen
-   zeigt.
+ - $what_to_scan can be a string, an array, or an array of arrays, and
+   indicates which file, files, directory and/or directories to scan.
 
- - $output_type ist eine Ganzzahl (Integer), gibt das Format an, wie das
-   Ergebnis zurückgegeben werden soll. Ein Wert von 0 weist die Funktion an,
-   das Ergebnis als Ganzzahl zurückzugeben (Integer) (ein Rückgabewert von -3
-   zeigt an, dass es Probleme mit den phpMussel Signatur-Dateien oder Signatur-
-   Map-Dateien gibt und dass sie wahrscheinlich fehlen oder beschädigt sind, -2
-   zeigt an, dass beschädigte Dateien gefunden wurden und der Scan nicht
-   abgeschlossen wurde, -1 zeigt an, dass fehlende Erweiterungen oder Addons
-   von PHP benötigt werden, um den Scan durchzuführen und der Scan deshalb
-   nicht abgeschlossen wurde, 0 zeigt an, dass das Ziel nicht existiert und
-   somit nichts überprüft werden konnte, 1 zeigt an, dass das Ziel erfolgreich
-   geprüft wurde und keine Probleme erkannt wurden, 2 zeigt an, dass das Ziel
-   erfolgreich geprüft wurde, jedoch Probleme gefunden wurden).
-   Ein Wert von 1 weist die Funktion an, die Ergebnisse als lesbaren Text
-   auszugeben.
-   Ein Wert von 2 weist die Funktion an, beides auszugeben, einen lesbaren Text
-   und einen Export in eine globale Variable.
-   Diese Variable ist optional, Standardeinstellung ist 0.
+ - $output_type is a boolean, indicating the format for the scan results to be
+   returned as. False instructs the function to return results as an integer
+   (ein Rückgabewert von -3 zeigt an, dass es Probleme mit den phpMussel
+   Signatur-Dateien oder Signatur-Map-Dateien gibt und dass sie wahrscheinlich
+   fehlen oder beschädigt sind, -2 zeigt an, dass beschädigte Dateien gefunden
+   wurden und der Scan nicht abgeschlossen wurde, -1 zeigt an, dass fehlende
+   Erweiterungen oder Addons von PHP benötigt werden, um den Scan durchzuführen
+   und der Scan deshalb nicht abgeschlossen wurde, 0 zeigt an, dass das Ziel
+   nicht existiert und somit nichts überprüft werden konnte, 1 zeigt an, dass
+   das Ziel erfolgreich geprüft wurde und keine Probleme erkannt wurden, 2
+   zeigt an, dass das Ziel erfolgreich geprüft wurde, jedoch Probleme gefunden
+   wurden). True instructs the function to return results as human readable
+   text. Additionally, in either case, the results can be accessed via global
+   variables after scanning has completed. This variable is optional,
+   defaulting to false.
 
- - $output_flatness ist eine Ganzzahl (Integer), weist die Funktion an, das
-   Ergebnis als Array oder String auszugeben. Enthält das Ziel mehrere Elemente
-   (wie z.B. Verzeichnisse oder Arrays), wird das Ergebnis als Array
-   zurückgegeben (Standardeinstellung 0). Ein Wert von 1 weist die Funktion an,
-   das Ergebnis als verketteten String zuruckzugeben.
-   Diese Variable ist optional, Standardeinstellung ist 0.
+ - $output_flatness is a boolean, indicating to the function whether to return
+   the results of scanning (when there are multiple scan targets) as an array
+   or a string. False will return the results as an array. True will return the
+   results as a string. This variable is optional, defaulting to false.
 
  Beispiel:
 
-   $results=phpMussel("/user_name/public_html/my_file.html",1,1);
+   $results=phpMussel('/user_name/public_html/my_file.html',true,true);
    echo $results;
 
    Gibt so etwas wie dies (als ein String):
@@ -1031,11 +1026,12 @@
       gespeichert werden. Standard ist 21600 Sekunden (6 Stunden); Ein Wert von
       0 wird das Zwischenspeichern von Scan-Ergebnissen deaktivieren.
     "disable_cli"
-    - CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber 
-	manchmal bestimmte Test-Tools beeinträchtigen (PHPUnit zum Beispiel) und 
-	andere CLI-basierte Anwendungen. Wenn du den CLI-Modus nicht deaktiveren 
-	musst, solltest du diese Anweisung ignorieren.
-      0 = CLI-Modus aktivieren [Standardeinstellung], 1 = CLI-Modus aktivieren.
+    - CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber
+      manchmal bestimmte Test-Tools beeinträchtigen (PHPUnit zum Beispiel) und
+      andere CLI-basierte Anwendungen. Wenn du den CLI-Modus nicht deaktiveren
+      musst, solltest du diese Anweisung ignorieren.
+      0 = CLI-Modus aktivieren [Standardeinstellung],
+      1 = CLI-Modus deaktivieren.
  "signatures" (Kategorie)
  - Konfiguration der Signaturen.
    %%%_clamav = ClamAV-Signaturen (generelle Signaturen und tägliche Updates).
@@ -1695,5 +1691,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 19. Juli 2015 (2015.07.19).
+Zuletzt aktualisiert: 20. Juli 2015 (2015.07.20).
 EOF

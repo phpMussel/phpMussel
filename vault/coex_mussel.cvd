@@ -62,7 +62,7 @@ $container:zipfile;FD:425a68:A:3;—+ZIP-01
 $container:zipfile;FD:504b:A:2;—+ZIP-02
 $container:zipfile;FD:52457e5e:A:4;—+ZIP-03
 $container:zipfile;FD:52617221:A:4;—+ZIP-04
-=== Android CoEx Signatures ===
+=== Android signatures ===
 .:: 2014/XX
 $md5:02805deb65c9c26c8b4808d7957b71d7;$sha:8feb1d8629bbd247ecc0ac2839f82024e6464d66;$str_len:3523731;3Banker-00
 $md5:09548543efd2aff70aed250ef1cba857;$sha:e8691316dce74c64897c5df308ef982a66ede435;$str_len:799692;8PrivacyProtect
@@ -114,6 +114,14 @@ $md5:975c788f63613c1b367a8bb119fb1583;$sha:77dc2fa5dcc5aab5e6d4083c2a65701799537
 $md5:827d2da6546793c697132b305b3f4390;$sha:9673d81b6b4af604001ffd22fd4f23087c318ee2;$str_len:36532;0!AdLocker-03
 $md5:624966bc0934dad1411a5f6dcfedb47c;$sha:c0784e974da5b7e82e9921763f957e1f3ec024e7;$str_len:1829487;0Koler-00
 $md5:c53c309afaaf65018adcf1402e6ec6bc;$sha:02826898d794199dad151a84c927a9628a634535;$str_len:68608;3AndroRAT-00
+.:: 2015/07
+$md5:3ba68499a74319a340467659cc4100a3;$sha:cb5e4ed9e04c23686a2838dc23c8968496ff8006;$str_len:327719;8SmartFlash-00
+$md5:f8e6d0747d16687bbde67d13b0c66cc8;$sha:52be27d322734c9653b833072238640af0611a8a;$str_len:95280;3Airpush-00
+$md5:3cc05ba4a9f2cac224884ee05a94d506;$sha:4b846037aba04eca94734c8c957c612476ec4447;$str_len:2501481;3KyView-00
+$md5:ade0fb1e602651a236160c5e2db98cc6;$sha:88f6ff7805d20149c5b70dc837ae4eeba06b209e;$str_len:419705;3RevMob-00
+=== iPhone signatures ===
+.:: 2015/07
+$md5:37d2e5945c11720ca5a00613610ed63f;$sha:0ca4fc4bf0a62466d91c3a9141e6fd25ef17a367;$str_len:910615;0&iPhone-00
 === Infected PE files that aren't detected by the ClamAV database as per confirmed by VirusTotal.com ===
 .:: 2014/XX
 $md5:0e9bfd5c84cce736b73123cd0f31ddfc;$sha:09c30c827235bd1993e7fbb9367885e10a6074e7;$str_len:594184;3Solimba-00
@@ -1857,6 +1865,15 @@ $md5:ebbce01ea4b129a715afd3015b943126;$sha:4221c580c584ba8f48edccdca9f5bc271707c
 $md5:f191cf52ea78f9c0c534cbb6288cdef3;$sha:5d56a2d76d2408b411c72d821b6f4b201504f0b5;$str_len:2285056;0SteamThief-283
 $md5:f50515b89862188b103ce6a3bc4a5dfc;$sha:c84dce27c8f753e9c2224b13a0edbc9c9384ea09;$str_len:2945024;0SteamThief-284
 $md5:f839cf042642c0b31d202e4e455de43a;$sha:41c9dbf8f6f46623ada6c43b63fc1c3cb49b4737;$str_len:4476858;0SteamThief-285
+$md5:3c3989271d395e3441fecf87712e6bdf;$sha:7f901833c99beaefe9f09c2f6818151dcdf0f764;$str_len:1601024;01507X-318
+$md5:e87497cc51a63f5cca7f45c05d617d28;$sha:835b03270fd2a5cb4d675837007885fb6419e9e3;$str_len:1601024;3Strictor-19
+$md5:8c5df7823a0b59d949f9162a81ec0aad;$sha:c551e68892cd9f0374d3dd87b692300a228fd00b;$str_len:1998952;3OpenCandy-12
+$md5:38e49f7bb1b2e071afe91daa73d83513;$sha:583cd45e3423423888edf3b9567a106c0f8a14fa;$str_len:890848;3RuKometa-06
+$md5:98382bb9d7ad8dd895110188273286ca;$sha:141c37b63fb00b6d6db816523044eada7e0313ad;$str_len:225120;3Multiplug-47
+$md5:d7542a1cc630610441334d20f9c2c345;$sha:6e37030053b08983fe1f1ba8ca78162d5994b72f;$str_len:229376;3Bladabindi-202
+$md5:7c544701b2ccb5b717745b196ccd4eb3;$sha:a5927e4f966785a6a90861be5f2edc3d2d6c5070;$str_len:815360;0InstallCore-07
+$md5:765f573dc08b47486f8ba958e8722351;$sha:c6dba6f69203410f4eb2f915f378fe0e74582952;$str_len:384512;3Jaiko-02
+$md5:8488e871a75f01692786d27bbef56bad;$sha:bb895e1ce9682061ce539c738983d41b438c2c8b;$str_len:306792;3Sality-19
 === Infected PE files caught by honeypot trap; Not detected or only partially detected by V.T. ===
 .:: 2015/02
 $md5:174bcf22f37a80c950409c9a44b2e95d;$sha:35298b05ada53008aa8d64bde3313fc3534343d1;$str_len:197632;0DOBJ-00
@@ -2630,6 +2647,7 @@ $is_pe:1;META:\x3bSectionName\x3a.{0,8}\x2f.{0,8}\x2f;4SteamThief-02
 $is_pe:1;META:\x3bSectionName\x3a\x2egentee;—+Gentee-00
 .:: 2015/07
 $is_pe:1;META:\x3bSectionName\x3a\x2ebindat;”Generic-23
+$is_pe:1;META:\x3bSectionName\x3a\x2eopcandy;4OpenCandy-00
 === Shell scripts ===
 .:: 2015/03
 $xt:js;FD-RX:[57]6[46]1[57]2205f245f.{2,128}3d;FD-RX:(25[57]4[46]5[46]d[57]025[57]c[57]835|[46]4[46]f[57]7[46]e[46]c[46]f[46]1[46]42d[46]1[57]4[57]4[46]1[46]3[46]8|575363726970742e5368656c6c|457870616e64456e7669726f6e6d656e74537472696e6773|[46]d[57]3[57]8[46]d[46]c322e[57]8[46]d[46]c[46]8[57]4[57]4[57]0|536372697074696e672e46696c6553797374656d4f626a656374|41444f44422e53747265616d|526573706f6e7365426f6479|[46]8[57]4[57]4[57]03a2f2f|2e636f6d2f776f72642e706466|6174746163686d656e742e646f63|2e636f6d2f3430332e766c74|736563757265642e626174);FD:3d5f245f;0&C-00
@@ -2643,6 +2661,11 @@ $xt:js;$phase:archive;FD-RX:[46]8[57]4[57]4[57]0([57]3)?3a.{6,1024}2e[46]a[57]0(
 $md5:f814ea55d4ff388c3d9bf1cba29afff6;$sha:157481b5f5c7d49e8c727f4f4045d17649513f76;$str_len:40706;3Banker-00
 .:: 2015/04
 $md5:fa37695fe8f70f15a0c4fede7fa2ec39;$sha:a98b74e9d0e5f9ead3f57136e9d976772128ba5a;$str_len:41602;0SpyBanker-00
+.:: 2015/07
+$md5:8d5d237ab9e687bff8faccf247dee988;$sha:d7535e71e97a145e8cb70abafe06ca72e4edb6a8;$str_len:408366;8"Youku/ä¼˜é…·-02
+$md5:5137a258d7848f6aa42aa3d2acdb8685;$sha:6f1bd97edead5d20772c579d262ea51dc49e9784;$str_len:531897;8"Youku/ä¼˜é…·-03
+$md5:8066d73d5cea43a5b0dd9534310cca5c;$sha:e67b70b045564e85fe96b5371cdbf2c9c1345537;$str_len:406776;8"Youku/ä¼˜é…·-04
+$md5:398a2b535ce06231d3ba18aa4b52d1b1;$sha:71ffb0d648d369e00962972d1d6f44d8f4967dcb;$str_len:406776;8"Youku/ä¼˜é…·-05
 === Misc. Others ===
 .:: 2015/02
 $md5:1c76d4077a551468e834fada41673852;$sha:634b4a9f4809ae7bf42bdec468a2fc5ae082e376;$str_len:112128;3(Downloader-00

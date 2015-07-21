@@ -221,11 +221,11 @@
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
- Dónde:
- - $what_to_scan es una cadena o una array, apuntando a un destino archivo, un
-   destino directorio o un array de destinos archivos y/o destinos directorios.
- - $output_type es un entero, indicando el formato en el que los resultados son
-   para estar de regreso como. Un valor de 0 indica a la función para devolver
+ - $what_to_scan puede ser una cadena, una matriz o una matriz de matrices, e
+   indica qué archivo, archivos, directorio y/o directorios a escanear.
+
+ - $output_type es un booleano, indicando el formato de los resultados del
+   análisis para ser devueltos como. False instruye la función para devolver
    resultados como un entero (un resultado devuelto de -3 indica se encontraron
    problemas con el phpMussel firmas archivos o firmas mapas archivos y que sea
    posible pueden faltar o dañado, -2 indica que se ha corruptos datos
@@ -235,22 +235,20 @@
    indica que la escanear objetivo no existe y por lo tanto no había nada para
    escanear, 1 indica que el objetivo fue escaneado con éxito y no se
    detectaron problemas, y 2 indica que el objetivo fue escaneado con éxito y
-   se detectaron problemas). Un valor de 1 instruye la función a devuelva
-   resultados como texto legible por humanos. Un valor de 2 instruye la función
-   ambos a devuelva resultados como texto legible por humanos y a exportar los
-   resultados a una global variable. Esta variable es opcional, predefinido
-   como 0.
- - $output_flatness es un entero, indicando si se permite a los resultados que
-   se devuelven como un array o no. Normalmente, si la escanear objetivo
-   contenida varios artículos (por ejemplo, si un directorio o array) los
-   resultados se devuelven en un array (valor predefinido de 0). Un valor de 1
-   instruye la función implosionar cualquier array antes de la entrada,
-   resultando en una aplanada cadena que contiene los resultados a devolver.
-   Esta variable es opcional, predefinido como 0.
+   se detectaron problemas). True instruye la función para devolver resultados
+   como texto legible por humanos. Además, en cualquier caso, los resultados
+   pueden ser acceder a través de globales variables después escaneo ha
+   completado. Esta variable es opcional, predefinido como false.
+
+ - $output_flatness es un booleano, indicando a la función si se deben devolver
+   los resultados de la escaneo (cuando hay varios objetivos a escanear) como
+   una matriz o una cadena. False devolverá los resultados como una matriz.
+   True devolverá los resultados como una cadena. Esta variable es opcional,
+   predefinido como false.
 
  Ejemplos:
 
-   $results=phpMussel("/user_name/public_html/my_file.html",1,1);
+   $results=phpMussel('/user_name/public_html/my_file.html',true,true);
    echo $results;
 
    Devuelve algo como esto (como una cadena):
@@ -1752,5 +1750,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 19 Julio 2015 (2015.07.19).
+Última Actualización: 20 Julio 2015 (2015.07.20).
 EOF
