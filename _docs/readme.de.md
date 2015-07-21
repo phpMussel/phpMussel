@@ -514,7 +514,7 @@ Generelle Konfiguration von phpMussel.
 - Für wie lange soll phpMussel die Scan-Ergebnisse zwischenspeichern? Wert entspricht der Anzahl Sekunden, wie lange die Scan-Ergebnisse zwischengespeichert werden. Standard ist 21600 Sekunden (6 Stunden); Ein Wert von 0 wird das Zwischenspeichern von Scan-Ergebnissen deaktivieren.
 
 "disable_cli"
-- CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber manchmal bestimmte Test-Tools beeinträchtigen (PHPUnit zum Beispiel) und andere CLI-basierte Anwendungen. Wenn du den CLI-Modus nicht deaktiveren musst, solltest du diese Anweisung ignorieren. 0 = CLI-Modus aktivieren [Standardeinstellung], 1 = CLI-Modus deaktivieren.
+- CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber manchmal bestimmte Test-Tools (PHPUnit zum Beispiel) und andere CLI-basierte Anwendungen beeinträchtigen. Wenn du den CLI-Modus nicht deaktiveren musst, solltest du diese Anweisung ignorieren. 0 = CLI-Modus aktivieren [Standardeinstellung], 1 = CLI-Modus deaktivieren.
 
 ####"signatures" (Kategorie)
 Konfiguration der Signaturen.
