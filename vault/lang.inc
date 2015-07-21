@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7a-BETA (19th July 2015) Language Data.
+ This File: phpMussel v0.7a-BETA (21st July 2015) Language Data.
  <%phpMussel%/vault/lang.inc>
 
                                      ~ ~ ~
@@ -60,74 +60,14 @@ $MusselConfig['lang']=array();
 $MusselConfig['lang']['cli_ln1']="      _____  _     _  _____  _______ _     _ _______ _______ _______           \n <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >\n     |       |     | |       |  |  | |_____| ______| ______| |______ |_____    \n";
 $MusselConfig['lang']['cli_prompt']="\n\n>> ";
 if(!isset($MusselConfig['general']['lang_override']))$MusselConfig['general']['lang_override']=0;
-if(!isset($_SERVER['HTTP_ACCEPT_LANGUAGE']))$_SERVER['HTTP_ACCEPT_LANGUAGE']='';
+if(!isset($MusselConfig['lang_acceptable']))$MusselConfig['general']['lang_override']=0;
+if(!isset($_SERVER['HTTP_ACCEPT_LANGUAGE']))$MusselConfig['lang_acceptable']=',en,de,es,fr,id,it,ja,nl,pt,ru,zh,zh-TW,';
 if($MusselConfig['general']['lang_override']&&$_SERVER['HTTP_ACCEPT_LANGUAGE'])
 	{
-	$MusselConfig['lang_acceptable']=',en,de,es,fr,id,it,ja,nl,pt,ru,zh,zh-TW,';
 	if(substr_count($MusselConfig['lang_acceptable'],substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,5)))$MusselConfig['general']['lang']=substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,5);
 	else if(substr_count($MusselConfig['lang_acceptable'],substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2)))$MusselConfig['general']['lang']=substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
 	}
-
-if($MusselConfig['general']['lang']==='en')
-	{ // English
-	if(!file_exists($vault.'lang/lang.en.inc'))plaintext_echo_die('[phpMussel] Language data missing! Can\'t continue.');
-	require $vault.'lang/lang.en.inc';
-	}
-else if($MusselConfig['general']['lang']==='de')
-	{ // German - Deutsch
-	if(!file_exists($vault.'lang/lang.de.inc'))plaintext_echo_die('[phpMussel] Sprach-Daten fehlen! Kann nicht fortgesetzt werden.');
-	require $vault.'lang/lang.de.inc';
-	}
-else if($MusselConfig['general']['lang']==='es')
-	{ // Spanish - Español
-	if(!file_exists($vault.'lang/lang.es.inc'))plaintext_echo_die('[phpMussel] Idioma datos faltan! No puede continuar.');
-	require $vault.'lang/lang.es.inc';
-	}
-else if($MusselConfig['general']['lang']==='fr')
-	{ // French - Français
-	if(!file_exists($vault.'lang/lang.fr.inc'))plaintext_echo_die('[phpMussel] Langue données manquant! Ne pouvez pas continuer.');
-	require $vault.'lang/lang.fr.inc';
-	}
-else if($MusselConfig['general']['lang']==='id')
-	{ // Indonesian - Bahasa Indonesia
-	if(!file_exists($vault.'lang/lang.id.inc'))plaintext_echo_die('[phpMussel] Data Bahasa hilang! Tidak dapat dilanjutkan.');
-	require $vault.'lang/lang.id.inc';
-	}
-else if($MusselConfig['general']['lang']==='it')
-	{ // Italian - Italiano
-	if(!file_exists($vault.'lang/lang.it.inc'))plaintext_echo_die('[phpMussel] Lingua dati mancanti! Non può continuare.');
-	require $vault.'lang/lang.it.inc';
-	}
-else if($MusselConfig['general']['lang']==='ja')
-	{ // Japanese - 日本語
-	if(!file_exists($vault.'lang/lang.ja.inc'))plaintext_echo_die('[phpMussel] 言語データが見つかりません！続行できません。');
-	require $vault.'lang/lang.ja.inc';
-	}
-else if($MusselConfig['general']['lang']==='nl')
-	{ // Dutch - Nederlandse
-	if(!file_exists($vault.'lang/lang.nl.inc'))plaintext_echo_die('[phpMussel] Taal data niet gevonden! Kan niet doorgaan.');
-	require $vault.'lang/lang.nl.inc';
-	}
-else if($MusselConfig['general']['lang']==='pt')
-	{ // Portuguese - Português
-	if(!file_exists($vault.'lang/lang.pt.inc'))plaintext_echo_die('[phpMussel] Idioma dados faltando! Não pode continuar.');
-	require $vault.'lang/lang.pt.inc';
-	}
-else if($MusselConfig['general']['lang']==='ru')
-	{ // Russian - Русский
-	if(!file_exists($vault.'lang/lang.ru.inc'))plaintext_echo_die('[phpMussel] Язык данные не найдены! Не может продолжаться.');
-	require $vault.'lang/lang.ru.inc';
-	}
-else if($MusselConfig['general']['lang']==='zh')
-	{ // Chinese (Simplified) - 中文（简体）
-	if(!file_exists($vault.'lang/lang.zh.inc'))plaintext_echo_die('[phpMussel] 语言数据不存在！无法继续。');
-	require $vault.'lang/lang.zh.inc';
-	}
-else if($MusselConfig['general']['lang']==='zh-TW')
-	{ // Chinese (Traditional) - 中文（傳統）
-	if(!file_exists($vault.'lang/lang.zh-tw.inc'))plaintext_echo_die('[phpMussel] 語言數據不存在！無法繼續。');
-	require $vault.'lang/lang.zh-tw.inc';
-	}
-else die('[phpMussel] Language undefined or incorrectly defined. Can\'t continue.');
+if(!file_exists($vault.'lang/lang.'.$MusselConfig['general']['lang'].'.inc'))plaintext_echo_die('[phpMussel] Language undefined or incorrectly defined. Can\'t continue.');
+require $vault.'lang/lang.'.$MusselConfig['general']['lang'].'.inc';
 
 ?>
