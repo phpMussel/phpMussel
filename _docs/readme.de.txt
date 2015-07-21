@@ -1027,9 +1027,9 @@
       0 wird das Zwischenspeichern von Scan-Ergebnissen deaktivieren.
     "disable_cli"
     - CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber
-      manchmal bestimmte Test-Tools beeinträchtigen (PHPUnit zum Beispiel) und
-      andere CLI-basierte Anwendungen. Wenn du den CLI-Modus nicht deaktiveren
-      musst, solltest du diese Anweisung ignorieren.
+      manchmal bestimmte Test-Tools (PHPUnit zum Beispiel) und andere CLI-
+      basierte Anwendungen beeinträchtigen. Wenn du den CLI-Modus nicht 
+      deaktiveren musst, solltest du diese Anweisung ignorieren.
       0 = CLI-Modus aktivieren [Standardeinstellung],
       1 = CLI-Modus deaktivieren.
  "signatures" (Kategorie)
