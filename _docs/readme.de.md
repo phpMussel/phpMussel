@@ -806,6 +806,7 @@ Legen Sie Ihre eigenen Signaturen nur in den Dateien ab, die dafür vorgesehen s
 ####*AUFSCHLÜSSELUNG DER SIGNATUREN*
 Im Folgenden eine Aufschlüsselung der Signaturen, die von phpMussel genutzt werden:
 - "Normierte ASCII-Signaturen" (ascii_*). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
+- "Complex Extended Signatures" (coex_*). Mixed signature type matching.
 - "ELF-Signaturen" (elf_*). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem ELF-Format entspricht.
 - "Portable Executable Signaturen" (exe_*). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format entspricht.
 - "Dateinamen-Signaturen" (filenames_*). Überprüft die Dateinamen jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
