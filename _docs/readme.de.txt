@@ -977,12 +977,12 @@
       Sprach-Wert von einkommenden Anfragen festlegen soll
       (HTTP_ACCEPT_LANGUAGE). 0 - Nein [Standardeinstellung], 1 - Ja.
     "lang_acceptable"
-    - The "lang_acceptable" directive tells phpMussel which languages may be
-      accepted by the script from "lang" or from "HTTP_ACCEPT_LANGUAGE". This
-      directive should -ONLY- be modified if you're adding your own customised
-      language files or forcibly removing language files. The directive is a
-      comma delimited string of the codes used by those languages accepted by
-      the script.
+    - Die `lang_acceptable` Anweisung sagt phpMussel, welche Sprachen von dem 
+      Script von `lang` oder von `HTTP_ACCEPT_LANGUAGE` akzeptiert werden. Diese
+      Anweisung sollte **NUR** angepasst werden, falls du eigene angepasste 
+      Sprachen hinzufügst oder zwangsweise Sprachdateien entfernst. Diese 
+      Anweisung ist ein mit Kommata getrennter String der Codes der benutzten 
+      Sprachen, die von dem Script akzeptiert werden.
     "quarantine_key"
     - phpMussel ist in der Lage, Versuche von Datei-Uploads in einem
       Quarantäne-Verzeichnis zu isolieren, sofern Sie dies tun wollen. Nutzer,
