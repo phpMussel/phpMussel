@@ -77,7 +77,7 @@ Anything less than sub-minor:
   function phpMussel() in relation to its secondary input variable has been
   modified during the course of code changes brought about as of this version
   of phpMussel; This change is breaking for those that utilise additional
-  implementations of this function beyond the default, but is none-breaking
+  implementations of this function beyond the default, but is non-breaking
   otherwise; Documentation has been updated accordingly.
 
 - [2015.07.22; Sub-minor code change; Maikuolan]: Updated lang.inc; Added the

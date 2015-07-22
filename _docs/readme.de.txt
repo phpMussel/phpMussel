@@ -19,7 +19,6 @@
                                      ~ ~ ~
 
 
-
  1. VORWORT
 
  Vielen Dank für die Benutzung von phpMussel, einem PHP-Script, um Trojaner,
@@ -62,7 +61,6 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
-
 
 
  2A. INSTALLATION (SERVER)
@@ -154,7 +152,6 @@
                                      ~ ~ ~
 
 
-
  2B. INSTALLATION (CLI - BEFEHLSZEILENMODUS)
 
  Zufünftig wird dieser Prozess mit einem Installationsmanager vereinfacht, bis
@@ -204,7 +201,6 @@
     "_testfiles" in diesem Installationspaket zu scannen.
 
                                      ~ ~ ~
-
 
 
  3A. BENUTZUNG (SERVER)
@@ -310,7 +306,6 @@
                                      ~ ~ ~
 
 
-
  3B. BENUTZUNG (CLI - BEFEHLSZEILENMODUS)
 
  Bitte lesen Sie den Abschnitt INSTALLATION (CLI - BEFEHLSZEILENMODUS).
@@ -327,7 +322,6 @@
  haben.
 
                                      ~ ~ ~
-
 
 
  4A. BROWSER BEFEHLE
@@ -486,7 +480,6 @@
    ~
 
                                      ~ ~ ~
-
 
 
  4B. CLI (BEFEHLSZEILENMODUS)
@@ -914,7 +907,6 @@
     ~
 
                                      ~ ~ ~
-
 
 
  6. EINSTELLUNGEN
@@ -1488,7 +1480,6 @@
                                      ~ ~ ~
 
 
-
  7. SIGNATURENFORMAT
 
  = DATEINAMEN-SIGNATUREN =
@@ -1704,7 +1695,6 @@
  VBA32                   Keine bekannten Probleme
  VIPRE                   Keine bekannten Probleme
  ViRobot                 Keine bekannten Probleme
-
 
                                      ~ ~ ~
 
