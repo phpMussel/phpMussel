@@ -498,6 +498,9 @@ General configuración para phpMussel.
 "lang_override"
 - Especifique si phpMussel debería, cuando sea posible, reemplazar la especificación del lenguaje con el preferencia del lenguaje declarada por peticiones entrantes (HTTP_ACCEPT_LANGUAGE). 0 - No [Predefinido], 1 - Sí.
 
+"lang_acceptable"
+- La `lang_acceptable` directiva instruye a phpMussel qué idiomas puede ser aceptada por el script de parte de `lang` o de parte de `HTTP_ACCEPT_LANGUAGE`. Esta directiva **SÓLO** debe ser modificada si va a añadir sus propios personalizados idiomas archivos o retirando por la fuerza los idiomas archivos. La directiva es una cadena separada por comas de los códigos utilizados por los idiomas aceptados por el script.
+
 "quarantine_key"
 - phpMussel es capaz de poner en cuarentena intentado archivo cargas en aisladamente dentro de la phpMussel vault, si esto es algo que usted quiere que haga. Usuarios casual de phpMussel de los cuales simplemente desean proteger sus website o hosting ambiente sin tener ningún interés con analizando profundamente cualquier marcados intentados archivos cargas debería dejar esta funcionalidad desactivado, pero cualquier usuarios interesados en más análisis de marcados intentados archivos cargas para la investigación de malware o para cosas similares debe activar esta funcionalidad. Cuarentenando de marcados intentados archivos cargas a veces puede también ayudar en la depuración de falsos positivos, si esto es algo que ocurre con frecuencia para usted. Para desactivar la cuarentena funcionalidad, simplemente dejar la directiva `quarantine_key` vacío, o borrar el contenidos de que directiva si no está ya vacío. Para activar la cuarentena funcionalidad, entrar algún valor en la directiva. La `quarantine_key` es un importante característica de seguridad de la cuarentena funcionalidad requiere como un medio para la prevención de la explotación de la cuarentena funcionalidad por potenciales atacantes y como un medio de evitar cualquier potencial ejecución de los datos almacenados dentro la cuarentena. La "quarantine_key" debería ser tratado de la misma manera que sus contraseñas: El más grande es el mejor, y guárdela bien. Para un mejor efecto, utilice conjuntamente con "delete_on_sight".
 
@@ -895,4 +898,4 @@ Esta información ha sido actualizado 28 Mayo 2015 y es a hoy para todas las php
 ---
 
 
-Última Actualización: 20 Julio 2015 (2015.07.20).
+Última Actualización: 22 Julio 2015 (2015.07.22).

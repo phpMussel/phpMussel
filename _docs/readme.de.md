@@ -498,6 +498,9 @@ Generelle Konfiguration von phpMussel.
 "lang_override"
 - Festlegen ob phpMussel, falls möglich, die Sprach-Einstellung mit dem Sprach-Wert von einkommenden Anfragen festlegen soll (HTTP_ACCEPT_LANGUAGE). 0 - Nein [Standardeinstellung], 1 - Ja.
 
+"lang_acceptable"
+- The `lang_acceptable` directive tells phpMussel which languages may be accepted by the script from `lang` or from `HTTP_ACCEPT_LANGUAGE`. This directive should **ONLY** be modified if you're adding your own customised language files or forcibly removing language files. The directive is a comma delimited string of the codes used by those languages accepted by the script.
+
 "quarantine_key"
 - phpMussel ist in der Lage, Versuche von Datei-Uploads in einem Quarantäne-Verzeichnis zu isolieren, sofern Sie dies tun wollen. Nutzer, die nur daran interessiert sind, ihre Webauftritte oder ihre Hosting-Umgebung zu schützen ohne das Interesse, die markierten Dateien weitergehend zu untersuchen, sollten diese Funktionalität deaktivieren, Nutzer, die diese Dateien zur Ananlyse auf Malware o.ä. benötigen, sollten diese Funktion aktivieren. Die Isolation von markierten Dateien kann manchmal auch bei der Fehlersuche von Fehlalarmen helfen, wenn dies häufiger bei Ihnen auftritt. Um die Quarantänefunktion zu deaktivieren, lassen Sie die Richtlinie `quarantine_key` leer oder löschen Sie den Inhalt dieser Richtlinie, wenn sie nicht bereits leer ist. Um die Quarantänefunktion zu aktivieren, geben Sie einen Wert ein. Der "quarantine_key" ist ein wichtiges Sicherheitsmerkmal der Quarantänfunktionen, um zu verhindern, dass die Quarantänefunktionen einem Exploit ausgesetzt wird und gespeicherte Daten in der Quarantäneumgebung ausgeführt werden können. Der Wert des "quarantine_key" sollte so behandelt werden, wie Ihre Passwörter: Je länger, desto besser, und halten Sie sie geheim. Optimal in Verbindung mit "delete_on_sight".
 
@@ -803,6 +806,7 @@ Legen Sie Ihre eigenen Signaturen nur in den Dateien ab, die dafür vorgesehen s
 ####*AUFSCHLÜSSELUNG DER SIGNATUREN*
 Im Folgenden eine Aufschlüsselung der Signaturen, die von phpMussel genutzt werden:
 - "Normierte ASCII-Signaturen" (ascii_*). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
+- "Complex Extended Signatures" (coex_*). Mixed signature type matching.
 - "ELF-Signaturen" (elf_*). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem ELF-Format entspricht.
 - "Portable Executable Signaturen" (exe_*). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format entspricht.
 - "Dateinamen-Signaturen" (filenames_*). Überprüft die Dateinamen jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
@@ -893,4 +897,4 @@ Diese Informationen wurden zuletzt am 2015.05.28 aktualisiert und gelten für al
 ---
 
 
-Zuletzt aktualisiert: 21. Juli 2015 (2015.07.21).
+Zuletzt aktualisiert: 22. Juli 2015 (2015.07.22).
