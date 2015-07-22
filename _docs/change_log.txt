@@ -73,8 +73,18 @@ Anything less than sub-minor:
 - [2015.07.19; Sub-minor code change; Maikuolan]: Slightly adjusted the Virus
   Total scanning logic; Added the new directive, `disable_cli`.
 
+- [2015.07.22; Documentation; Maikuolan/DanielRuf]: The behaviour of the
+  function phpMussel() in relation to its secondary input variable has been
+  modified during the course of code changes brought about as of this version
+  of phpMussel; This change is breaking for those that utilise additional
+  implementations of this function beyond the default, but is none-breaking
+  otherwise; Documentation has been updated accordingly.
+
+- [2015.07.22; Sub-minor code change; Maikuolan]: Updated lang.inc; Added the
+  new directive, `lang_acceptable`.
+
 Maikuolan,
-19th July 2015.
+22nd July 2015.
 
 === Version/Release 0.7 (Previous Release: 0.6j) ===
 MINOR RELEASE; Updated to the latest signatures set (55+20665+7).

@@ -499,6 +499,9 @@ Geral configuração por phpMussel.
 "lang_override"
 - Especificar se phpMussel deve, quando possível, substituir a especificação da linguagem com a preferência da linguagem declarada por solicitações de entrada (HTTP_ACCEPT_LANGUAGE). 0 - Não [Padrão], 1 - Sim.
 
+"lang_acceptable"
+- A `lang_acceptable` directiva instrui phpMussel qual línguas pode ser aceito pelo script a partir de `lang` ou a partir de `HTTP_ACCEPT_LANGUAGE`. Esta directiva **SÓ** deve ser modificado se você estiver adicionando seus próprios customizados idiomas arquivos ou removendo forçadamente idiomas arquivos. A directiva é uma seqüência dos códigos utilizados por essas línguas aceites pelo script, delimitadas por vírgulas.
+
 "quarantine_key"
 - phpMussel é capaz de colocar em quarentena marcados tentados arquivos carregamentos em isolamento dentro da phpMussel vault, se isso é algo que você quer que ele faça. Casuais usuários de phpMussel de que simplesmente desejam proteger seus sites ou hospedagem sem ter qualquer interesse em profundamente analisando qualquer marcados tentados arquivos carregamentos deve deixar esta funcionalidade desativada, mas qualquer usuário interessado em mais profundamente analisando marcados tentados arquivos carregamentos para pesquisa de malware ou de similares tais coisas deve ativada essa funcionalidade. Quarentena de marcados tentados arquivos carregamentos às vezes pode também ajudar em depuração de falso-positivos, se isso é algo que ocorre com freqüência para você. Por desativar a funcionalidade de quarentena, simplesmente deixar a directiva "quarantine_key" vazio, ou apagar o conteúdo do directivo, se ele não está já vazio. Por ativar a funcionalidade de quarentena, introduzir algum valor no directiva. O `quarantine_key` é um importante segurança característica do quarentena funcionalidade necessária como um meio de prevenir a funcionalidade de quarentena de ser explorada por potenciais atacantes e como meio de evitar qualquer potencial execução de dados armazenados dentro da quarentena. O `quarantine_key` devem ser tratados da mesma maneira como suas senhas: O mais longo o mais melhor, e guardá-lo com força. Por melhor efeito, usar em conjunto com "delete_on_sight".
 
@@ -896,4 +899,4 @@ Esta informação foi atualizada dia 28 Maio 2015 e é corrente para todas phpMu
 ---
 
 
-Última Atualização: 20 Julho 2015 (2015.07.20).
+Última Atualização: 22 Julho 2015 (2015.07.22).

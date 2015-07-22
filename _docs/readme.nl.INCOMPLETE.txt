@@ -224,37 +224,32 @@
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
- Waar:
- - $what_to_scan is ofwel een string of een array, wijzen ofwel naar een
-   doelgerichte bestand, een doelgerichte bestandsmap of een array op
-   doelgerichte bestanden en/of doelgerichte bestandsmappen.
- - $output_type is een integer, met vermelding van het formaat waarin de
-   resultaten van de scan zijn om terug te keren als. Een waarde van 0
-   instrueert de functie om de resultaten terug te keren als een integer (een
-   geretourneerd gevolg van -3 geeft problemen werden ondervonden met de
-   phpMussel handtekeningen bestanden of handtekening kaart bestanden en dat
-   zij mogelijk worden beschadigd of ontbreekt, -2 geeft aan dat corrupte data
-   tijdens de scan werd gedetecteerd en dus de scan niet voltooid, -1 geeft aan
-   dat uitbreidingen of toevoegingen vereist door php om de scan uit te voeren
-   ontbraken en dus de scan niet voltooid, 0 geeft aan dat de scan doelgroep
-   bestaat niet en dus was er niets te scannen, 1 geeft aan dat de doelwit met
-   succes werd gescand geen problemen waren gedetecteerd, en 2 geeft aan dat de
-   doelwit met succes werd gescand en problemen waren gedetecteerd). Een waarde
-   van 1 instrueert de functie om de resultaten als mensen leesbare tekst. Een
-   waarde van 2 beide instrueert de functie om de resultaten als mensen
-   leesbare tekst en om de resultaten te exporteren een globale variabele. Deze
-   variabele is optioneel, en is 0 door standaard.
- - $output_flatness is een integer, aangeeft of er kunnen resultaten worden
-   geretourneerd als een matrix of niet. Doorgaans, als de scan doel bevatte
-   meerdere items (bijvoorbeeld als een directory of matrix) het resultaten zal
-   worden geretourneerd in een array (standaard waarde van 0). Een waarde van 1
-   instrueert de functie te imploderen dergelijke matrix vóór ingang,
-   resulterend in platte tekenreeks waarin de resultaten worden geretourneerd.
-   Deze variabele is optioneel, en is 0 door standaard.
+ - $what_to_scan can be a string, an array, or an array of arrays, and
+   indicates which file, files, directory and/or directories to scan.
+
+ - $output_type is a boolean, indicating the format for the scan results to be
+   returned as. False instructs the function to return results as an integer (a
+   returned result of -3 indicates problems were encountered with the phpMussel
+   signatures files or signature map files and that they may possible be
+   missing or corrupted, -2 indicates that corrupt data was detected during the
+   scan and thus the scan failed to complete, -1 indicates that extensions or
+   addons required by php to execute the scan were missing and thus the scan
+   failed to complete, 0 indicates that the scan target doesn't exist and thus
+   there was nothing to scan, 1 indicates that the target was successfully
+   scanned and no problems were detected, and 2 indicates that the target was
+   successfully scanned and problems were detected). True instructs the
+   function to return results as human readable text. Additionally, in either
+   case, the results can be accessed via global variables after scanning has
+   completed. This variable is optional, defaulting to false.
+
+ - $output_flatness is a boolean, indicating to the function whether to return
+   the results of scanning (when there are multiple scan targets) as an array
+   or a string. False will return the results as an array. True will return the
+   results as a string. This variable is optional, defaulting to false.
 
  Voorbeelden:
 
-   $results=phpMussel("/user_name/public_html/my_file.html",1,1);
+   $results=phpMussel('/user_name/public_html/my_file.html',true,true);
    echo $results;
 
    Retourneren iets als dit (als een string):
@@ -997,6 +992,13 @@
     - Specify if phpMussel should, when possible, override the language
       specification with the language preference declared by inbound requests
       (HTTP_ACCEPT_LANGUAGE). 0 - No [Default], 1 - Yes.
+    "lang_acceptable"
+    - The "lang_acceptable" directive tells phpMussel which languages may be
+      accepted by the script from "lang" or from "HTTP_ACCEPT_LANGUAGE". This
+      directive should -only- be modified if you're adding your own customised
+      language files or forcibly removing language files. The directive is a
+      comma delimited string of the codes used by those languages accepted by
+      the script.
     "quarantine_key"
     - phpMussel is able to quarantine flagged attempted file uploads in
       isolation within the phpMussel vault, if this is something you want it to
@@ -1678,5 +1680,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 19 Juli 2015 (2015.07.19).
+Laatste Bijgewerkt: 22 Juli 2015 (2015.07.22).
 EOF

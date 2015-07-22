@@ -1026,6 +1026,14 @@
     - Spécifiez si phpMussel devrait, quand c'est possible, remplacer la
       spécification du langage avec la préférence de langue déclarée par les
       demandes entrantes (HTTP_ACCEPT_LANGUAGE). 0 - Non [Défaut], 1 - Oui.
+    "lang_acceptable"
+    - La "lang_acceptable" directive indique à phpMussel quelles langues
+      peuvent être acceptées par le script de la part de "lang" ou de la part
+      de "HTTP_ACCEPT_LANGUAGE". Cette directive devrait -SEULEMENT- être
+      modifié si vous ajoutez vos propres langues fichiers personnalisés ou
+      retirer par force les langues fichiers. La directive est une chaîne de
+      codes utilisés par ces langues acceptées par le script, délimité par des
+      virgules.
     "quarantine_key"
     - phpMussel est capable de mettre en quarantaine le marqué fichier
       téléchargement tentatives en isolement au sein de la voûte de phpMussel,
@@ -1761,5 +1769,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 20 Juillet 2015 (2015.07.20).
+Dernière Réactualisé: 22 Juillet 2015 (2015.07.22).
 EOF

@@ -959,6 +959,13 @@
     - Specify if phpMussel should, when possible, override the language
       specification with the language preference declared by inbound requests
       (HTTP_ACCEPT_LANGUAGE). 0 - No [Default], 1 - Yes.
+    "lang_acceptable"
+    - The "lang_acceptable" directive tells phpMussel which languages may be
+      accepted by the script from "lang" or from "HTTP_ACCEPT_LANGUAGE". This
+      directive should -ONLY- be modified if you're adding your own customised
+      language files or forcibly removing language files. The directive is a
+      comma delimited string of the codes used by those languages accepted by
+      the script.
     "quarantine_key"
     - phpMussel is able to quarantine flagged attempted file uploads in
       isolation within the phpMussel vault, if this is something you want it to
@@ -1639,5 +1646,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 20th July 2015 (2015.07.20).
+Last Updated: 22nd July 2015 (2015.07.22).
 EOF

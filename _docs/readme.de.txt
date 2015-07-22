@@ -19,6 +19,7 @@
                                      ~ ~ ~
 
 
+
  1. VORWORT
 
  Vielen Dank für die Benutzung von phpMussel, einem PHP-Script, um Trojaner,
@@ -61,6 +62,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
+
 
 
  2A. INSTALLATION (SERVER)
@@ -152,6 +154,7 @@
                                      ~ ~ ~
 
 
+
  2B. INSTALLATION (CLI - BEFEHLSZEILENMODUS)
 
  Zufünftig wird dieser Prozess mit einem Installationsmanager vereinfacht, bis
@@ -203,6 +206,7 @@
                                      ~ ~ ~
 
 
+
  3A. BENUTZUNG (SERVER)
 
  phpMussel ist dafür vorgesehen, fast vollständig autonom zu funktionieren,
@@ -220,29 +224,30 @@
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
- - $what_to_scan kann ein String, ein Array oder ein Array von Arrays sein und 
-   gibt an, welche Datei, Dateien, Ordner und/oder Ordner gescannt werden sollen.
+ - $what_to_scan kann ein String, ein Array oder ein Array von Arrays sein und
+   gibt an, welche Datei, Dateien, Ordner und/oder Ordner gescannt werden
+   sollen.
 
- - $output_type ist ein boolescher Wert und gibt an, in welchem Format die Scan-
-   Ergebnisse zurückgegeben werden sollen. False weist die Funktion an, 
-   Ergebnisse als Integer (Ganzzahl) zurückzugeben (ein Rückgabewert von -3 
+ - $output_type ist ein boolescher Wert und gibt an, in welchem Format die
+   Scan-Ergebnisse zurückgegeben werden sollen. False weist die Funktion an,
+   Ergebnisse als Integer (Ganzzahl) zurückzugeben (ein Rückgabewert von -3
    zeigt an, dass es Probleme mit den phpMussel Signatur-Dateien oder Signatur-
-   Map-Dateien gibt und dass sie wahrscheinlich fehlen oder beschädigt sind, -2 
-   zeigt an, dass beschädigte Dateien gefunden wurden und der Scan nicht 
-   abgeschlossen wurde, -1 zeigt an, dass fehlende Erweiterungen oder Addons von 
-   PHP benötigt werden, um den Scan durchzuführen und der Scan deshalb nicht 
-   abgeschlossen wurde, 0 zeigt an, dass das Ziel nicht existiert und somit 
-   nichts überprüft werden konnte, 1 zeigt an, dass das Ziel erfolgreich geprüft 
-   wurde und keine Probleme erkannt wurden, 2 zeigt an, dass das Ziel 
-   erfolgreich geprüft wurde, jedoch Probleme gefunden wurden). True weist die 
-   Funktion an, Ergebnisse als lesbaren  zurückzugeben. Zusätzlich können in 
-   beiden Fällen auf die Ergebnisse über globale Variablen nach dem Scannen 
+   Map-Dateien gibt und dass sie wahrscheinlich fehlen oder beschädigt sind, -2
+   zeigt an, dass beschädigte Dateien gefunden wurden und der Scan nicht
+   abgeschlossen wurde, -1 zeigt an, dass fehlende Erweiterungen oder Addons
+   von PHP benötigt werden, um den Scan durchzuführen und der Scan deshalb
+   nicht abgeschlossen wurde, 0 zeigt an, dass das Ziel nicht existiert und
+   somit nichts überprüft werden konnte, 1 zeigt an, dass das Ziel erfolgreich
+   geprüft wurde und keine Probleme erkannt wurden, 2 zeigt an, dass das Ziel
+   erfolgreich geprüft wurde, jedoch Probleme gefunden wurden). True weist die
+   Funktion an, Ergebnisse als lesbaren  zurückzugeben. Zusätzlich können in
+   beiden Fällen auf die Ergebnisse über globale Variablen nach dem Scannen
    zugegriffen werden. Diese Variable ist optional und standardmäßig auf false.
 
- - $output_flatness ist ein boolescher Wert und gibt der Funktion an, ob die 
-   Ergebnisse vom Scannen (falls mehrere Scan-Ziele existieren) als Array oder 
-   String zurückgegeben werden sollen. False wird die Ergebnisse als Array 
-   zurückgeben. True wird die Ergebnisse als String zurückgeben. Diese Variable 
+ - $output_flatness ist ein boolescher Wert und gibt der Funktion an, ob die
+   Ergebnisse vom Scannen (falls mehrere Scan-Ziele existieren) als Array oder
+   String zurückgegeben werden sollen. False wird die Ergebnisse als Array
+   zurückgeben. True wird die Ergebnisse als String zurückgeben. Diese Variable
    ist optional und standardmäßig auf false.
 
  Beispiel:
@@ -305,6 +310,7 @@
                                      ~ ~ ~
 
 
+
  3B. BENUTZUNG (CLI - BEFEHLSZEILENMODUS)
 
  Bitte lesen Sie den Abschnitt INSTALLATION (CLI - BEFEHLSZEILENMODUS).
@@ -321,6 +327,7 @@
  haben.
 
                                      ~ ~ ~
+
 
 
  4A. BROWSER BEFEHLE
@@ -479,6 +486,7 @@
    ~
 
                                      ~ ~ ~
+
 
 
  4B. CLI (BEFEHLSZEILENMODUS)
@@ -908,6 +916,7 @@
                                      ~ ~ ~
 
 
+
  6. EINSTELLUNGEN
 
  Nachfolgend finden Sie eine Liste der Variablen in der Konfigurationsdatei
@@ -975,6 +984,13 @@
     - Festlegen ob phpMussel, falls möglich, die Sprach-Einstellung mit dem
       Sprach-Wert von einkommenden Anfragen festlegen soll
       (HTTP_ACCEPT_LANGUAGE). 0 - Nein [Standardeinstellung], 1 - Ja.
+    "lang_acceptable"
+    - The "lang_acceptable" directive tells phpMussel which languages may be
+      accepted by the script from "lang" or from "HTTP_ACCEPT_LANGUAGE". This
+      directive should -ONLY- be modified if you're adding your own customised
+      language files or forcibly removing language files. The directive is a
+      comma delimited string of the codes used by those languages accepted by
+      the script.
     "quarantine_key"
     - phpMussel ist in der Lage, Versuche von Datei-Uploads in einem
       Quarantäne-Verzeichnis zu isolieren, sofern Sie dies tun wollen. Nutzer,
@@ -1028,8 +1044,8 @@
       0 wird das Zwischenspeichern von Scan-Ergebnissen deaktivieren.
     "disable_cli"
     - CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber
-      manchmal bestimmte Test-Tools (PHPUnit zum Beispiel) und andere CLI-
-      basierte Anwendungen beeinträchtigen. Wenn du den CLI-Modus nicht 
+      manchmal bestimmte Test-Tools (PHPUnit zum Beispiel) und andere
+      CLI-basierte Anwendungen beeinträchtigen. Wenn du den CLI-Modus nicht
       deaktiveren musst, solltest du diese Anweisung ignorieren.
       0 = CLI-Modus aktivieren [Standardeinstellung],
       1 = CLI-Modus deaktivieren.
@@ -1472,6 +1488,7 @@
                                      ~ ~ ~
 
 
+
  7. SIGNATURENFORMAT
 
  = DATEINAMEN-SIGNATUREN =
@@ -1692,5 +1709,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 21. Juli 2015 (2015.07.21).
+Zuletzt aktualisiert: 22. Juli 2015 (2015.07.22).
 EOF

@@ -1017,6 +1017,13 @@
     - Tentukan jika phpMussel harus, bila memungkinkan, mengganti spesifikasi
       bahasa dengan preferensi bahasa dideklarasikan oleh permintaan memasukan
       (HTTP_ACCEPT_LANGUAGE). 0 - Tidak [Default], 1 - Ya.
+    "lang_acceptable"
+    - Direktif "lang_acceptable" menginstruksikan phpMussel apa bahasa-bahasa
+      dapat diterima oleh skrip dari "lang" atau dari "HTTP_ACCEPT_LANGUAGE".
+      Direktif ini -HANYA- harus diubah jika Anda menambahkan file bahasa Anda
+      sendiri disesuaikan atau paksa menghapus file bahasa. Direktif adalah
+      string dipisahkan koma dari kode-kode digunakan oleh bahasa-bahasa
+      diterima oleh skrip.
     "quarantine_key"
     - phpMussel dapat mengkarantina upload file ditandai dalam isolasi dalam
       vault phpMussel, jika ini adalah sesuatu yang Anda ingin lakukan.
@@ -1727,5 +1734,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 20 Juli 2015 (2015.07.20).
+Terakhir Diperbarui: 22 Juli 2015 (2015.07.22).
 EOF

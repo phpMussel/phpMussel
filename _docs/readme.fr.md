@@ -499,6 +499,9 @@ Configuration générale pour phpMussel.
 "lang_override"
 - Spécifiez si phpMussel devrait, quand c'est possible, remplacer la spécification du langage avec la préférence de langue déclarée par les demandes entrantes (HTTP_ACCEPT_LANGUAGE). 0 - Non [Défaut], 1 - Oui.
 
+"lang_acceptable"
+- La `lang_acceptable` directive indique à phpMussel quelles langues peuvent être acceptées par le script de la part de `lang` ou de la part de `HTTP_ACCEPT_LANGUAGE`. Cette directive devrait **SEULEMENT** être modifié si vous ajoutez vos propres langues fichiers personnalisés ou retirer par force les langues fichiers. La directive est une chaîne de codes utilisés par ces langues acceptées par le script, délimité par des virgules.
+
 "quarantine_key"
 - phpMussel est capable de mettre en quarantaine le marqué fichier téléchargement tentatives en isolement au sein de la voûte de phpMussel, si cela est quelque chose que vous voulez qu'il fasse. L'utilisateurs de phpMussel qui souhaitent simplement de protéger leurs sites ou environnement d'hébergement sans avoir un profondément intérêt dans d'analyse de quelconque marqué fichier téléchargement tentatives devrait laisser cette fonctionnalité désactivée, mais tous les utilisateurs intéressés dans d'analyse plus approfondie de tenté fichier téléchargements pour la recherche des logiciels malveillants ou pour des choses semblables devraient permettre cette fonctionnalité. La quarantaine de marqué fichier téléchargement tentatives peut parfois aider également dans le débogage des faux positifs, si cela est quelque chose qui se produit fréquemment pour vous. Pour désactiver la fonctionnalité de quarantaine, il suffit de laisser la directive "quarantine_key" vide, ou effacer le contenu de cette directive si elle est pas déjà vide. Pour activer la fonctionnalité de quarantaine, entrer une valeur dans la directive. Le `quarantine_key` est une élément important de la sécurité de la fonctionnalité de quarantaine requis en tant que moyen de prévention de la fonctionnalité de quarantaine d'être exploités par des attaquants potentiels en tant que moyen de prévention toute potentielle exécution de données stockées dans la quarantaine. Le "quarantine_key" devrait être traité de la même manière que vos mots de passe: Le plus sera le mieux, et conservez-le bien. Pour un meilleur effet, utiliser en conjonction avec "delete_on_sight".
 
@@ -896,4 +899,4 @@ Cette information a été réactualisé le 28 Mai 2015 et est courant pour toute
 ---
 
 
-Dernière Réactualisé: 20 Juillet 2015 (2015.07.20).
+Dernière Réactualisé: 22 Juillet 2015 (2015.07.22).

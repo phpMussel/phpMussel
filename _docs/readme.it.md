@@ -499,6 +499,9 @@ Generale configurazione per phpMussel.
 "lang_override"
 - Specifica se phpMussel dovrebbero, ove possibile, sostituire la lingua specificazione con la lingua preferenza dichiarato da richieste in entrata (HTTP_ACCEPT_LANGUAGE). 0 - No [Predefinito], 1 - Sì.
 
+"lang_acceptable"
+- La `lang_acceptable` direttiva indica per phpMussel quali lingue può essere accettato dallo script da `lang` o da `HTTP_ACCEPT_LANGUAGE`. La direttiva dovrebbe essere modificato **SOLO** se si aggiunge i propri personalizzati lingua file o rimuovere con forza di lingua file. La direttiva è una stringa delimitata da virgole dei codici utilizzati da tali lingue accettate dallo script.
+
 "quarantine_key"
 - phpMussel è capace di mettere in quarantena contrassegnati tentati file caricamenti in isolamento all'interno della phpMussel vault, se questo è qualcosa che si vuole fare. L'ordinario utenti di phpMussel che semplicemente desiderano proteggere i loro website o hosting environment senza avendo profondo interesse ad analizzare qualsiasi contrassegnati tentati file caricamenti dovrebbe lasciare questa funzionalità disattivata, ma tutti gli utenti interessati ad ulteriori analisi di contrassegnati tentati file caricamenti per la ricerca di malware o per simili cose dovrebbe attivare questa funzionalità. Quarantena di contrassegnati tentati file caricamenti a volte può aiutare anche in debug falsi positivi, se questo è qualcosa che si accade di frequente per voi. Per disattivare la funzionalità di quarantena, lasciare vuota la direttiva "quarantine_key", o cancellare i contenuti di tale direttiva, se non già è vuoto. Per abilita la funzionalità di quarantena, immettere alcun valore nella direttiva. Il `quarantine_key` è un importante aspetto di sicurezza della funzionalità di quarantena richiesto come un mezzo per prevenire la funzionalità di quarantena di essere sfruttati da potenziali aggressori e come mezzo per prevenire potenziale esecuzione di dati memorizzati all'interno della quarantena. Il `quarantine_key` dovrebbe essere trattato nello stesso modo come le password: Più lunga è la migliore, e proteggila ermeticamente. Per la migliore effetto, utilizzare in combinazione con "delete_on_sight".
 
@@ -896,4 +899,4 @@ Questa informazione è stato lo scorso aggiornato 28 Maggio 2015 ed è in corso 
 ---
 
 
-Ultimo Aggiornamento: 20 Luglio 2015 (2015.07.20).
+Ultimo Aggiornamento: 22 Luglio 2015 (2015.07.22).
