@@ -73,32 +73,23 @@
     choose, so long as it's something secure and something you're happy with)
     will suffice. Before you begin uploading, read on..
 
- 2) Open "phpmussel.php", look for the line beginning with "$vault=", and
-    replace the string between the following quotation marks on that line with
-    the exact true location of the "vault" directory of phpMussel. You'll have
-    noticed such a directory in the archive you would've downloaded (unless you
-    feel up to re-coding the whole script, you'll need to maintain the same
-    file and directory structure as it was in the archive originally). This
-    "vault" directory should be one directory level beyond the directory that
-    the "phpmussel.php" file will exist in. Save file, close.
+ 2) Optionally (strongly recommended for advanced users, but not recommended
+    for beginners or for the inexperienced), open "phpmussel.ini" (located
+    inside "vault") - This file contains all the directives available for
+    phpMussel. Above each option should be a brief comment describing what it
+    does and what it's for. Adjust these options as you see fit, as per
+    whatever is appropriate for your particular setup. Save file, close.
 
- 3) (Optional; Strongly recommended for advanced users, but not recommended for
-    beginners or for the inexperienced): Open "phpmussel.ini" (located inside
-    "vault") - This file contains all the directives available for phpMussel.
-    Above each option should be a brief comment describing what it does and
-    what it's for. Adjust these options as you see fit, as per whatever is
-    appropriate for your particular setup. Save file, close.
-
- 4) Upload the contents (phpMussel and its files) to the directory you'd
+ 3) Upload the contents (phpMussel and its files) to the directory you'd
     decided on earlier (you don't need to include the *.txt/*.md files, but
     mostly, you should upload everything).
 
- 5) CMHOD the "vault" directory to "777". The main directory storing the
+ 4) CMHOD the "vault" directory to "777". The main directory storing the
     contents (the one you chose earlier), usually, can be left alone, but CHMOD
     status should be checked if you've had permissions issues in the past on
     your system (by default, should be something like "755").
 
- 6) Next, you'll need to "hook" phpMussel to your system or CMS. There are
+ 5) Next, you'll need to "hook" phpMussel to your system or CMS. There are
     several different ways in which you can "hook" scripts such as phpMussel to
     your system or CMS, but the easiest is to simply include the script at the
     beginning of a core file of your system or CMS (one that'll generally
@@ -117,7 +108,7 @@
     the exact address of the "phpmussel.php" file (local address, not the HTTP
     address; it'll look similar to the vault address mentioned earlier).
 
-    <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
+    <?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>
 
     Save file, close, reupload.
 
@@ -133,7 +124,7 @@
 
     php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
 
- 7) At this point, you're done! However, you should probably test it out to
+ 6) At this point, you're done! However, you should probably test it out to
     make sure it's working properly. To test out file upload protections,
     attempt to upload the testing files included in the package under
     "_testfiles" to your website via your usual browser-based upload methods.
@@ -164,23 +155,14 @@
     php on your machine, following any instructions supplied by the php
     installer.
 
- 3) Open "phpmussel.php", look for the line beginning with "$vault=", and
-    replace the string between the following quotation marks on that line with
-    the exact true location of the "vault" directory of phpMussel. You'll have
-    noticed such a directory in the archive you would've downloaded (unless you
-    feel up to re-coding the whole script, you'll need to maintain the same
-    file and directory structure as it was in the archive/when decompressed).
-    This "vault" directory should be one directory level beyond the directory
-    that the "phpmussel.php" file will exist in. Save file, close.
+ 3) Optionally (strongly recommended for advanced users, but not recommended
+    for beginners or for the inexperienced), open "phpmussel.ini" (located
+    inside "vault") - This file contains all the directives available for
+    phpMussel. Above each option should be a brief comment describing what it
+    does and what it's for. Adjust these options as you see fit, as per
+    whatever is appropriate for your particular setup. Save file, close.
 
- 4) (Optional; Strongly recommended for advanced users, but not recommended for
-    beginners or for the inexperienced): Open "phpmussel.ini" (located inside
-    "vault") - This file contains all the directives available for phpMussel.
-    Above each option should be a brief comment describing what it does and
-    what it's for. Adjust these options as you see fit, as per whatever is
-    appropriate for your particular setup. Save file, close.
-
- 5) (Optional) You can make using phpMussel in CLI mode easier for yourself by
+ 4) Optionally, you can make using phpMussel in CLI mode easier for yourself by
     creating a batch file to automatically load php and phpMussel. To do this,
     open a plain text editor such as Notepad or Notepad++, type the complete
     path to the "php.exe" file in the directory of your php installation,
@@ -189,7 +171,7 @@
     a ".bat" extension somewhere that you'll find it easily, and double-click
     on that file to run phpMussel in the future.
 
- 6) At this point, you're done! However, you should probably test it out to
+ 5) At this point, you're done! However, you should probably test it out to
     make sure it's working properly. To test phpMussel, run phpMussel and try
     scanning the "_testfiles" directory provided with the package.
 
@@ -1645,5 +1627,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 22nd July 2015 (2015.07.22).
+Last Updated: 25th July 2015 (2015.07.25).
 EOF

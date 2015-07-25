@@ -74,34 +74,26 @@
     con) será suficiente. Antes usted enviar archivos a su host, seguir
     leyendo..
 
- 2) Abrir "phpmussel.php", busque la línea que comienza con "$vault=", y
-    reemplazar la cadena entre las siguientes comillas en esa línea con la
-    exacta verdadera ubicación del "vault" directorio de phpMussel. Usted verá
-    tal un directorio en el compactado archivo que ha descargado (asumiendo que
-    no desea revolver todo la script, mantener la misma estructura de archivos
-    y directorios como lo fue el original). Este "vault" directorio normalmente
-    es un directorio nivel más allá del directorio que existirá en el
-    "phpmussel.php" archivo. Guardar el archivo, cerrar.
+ 2) Opcionalmente (muy recomendable para avanzados usuarios, pero no se
+    recomienda para los principiantes o para los inexpertos), abrir
+    "phpmussel.ini" (situado en el interior del "vault") - Este archivo
+    contiene todas las disponibles operativas opciones para phpMussel. Por
+    encima de cada opción debe ser un breve comentario que describe lo que hace
+    y para lo qué sirve. Ajuste estas opciones según sus necesidades, según lo
+    que sea apropiado para su particular configuración. Guardar archivo,
+    cerrar.
 
- 3) (Opcional; Muy recomendable para avanzados usuarios, pero no se recomienda
-    para los principiantes o para los inexpertos): Abrir "phpmussel.ini"
-    (situado en el interior del "vault") - Este archivo contiene todas las
-    disponibles operativas opciones para phpMussel. Por encima de cada opción
-    debe ser un breve comentario que describe lo que hace y para lo qué sirve.
-    Ajuste estas opciones según sus necesidades, según lo que sea apropiado
-    para su particular configuración. Guardar archivo, cerrar.
-
- 4) Cargar contenidos (phpMussel y sus archivos) al directorio que habías
+ 3) Cargar contenidos (phpMussel y sus archivos) al directorio que habías
     decidido sobre más temprano (los *.txt/*.md archivos no son necesarios,
     pero, en su mayoría, usted debe cargar todos).
 
- 5) CMHOD al "vault" directorio a "777". La principal directorio de
+ 4) CMHOD al "vault" directorio a "777". La principal directorio de
     almacenamiento de los contenidos (el uno decidió desde antes), en general,
     puede dejar solos, pero CHMOD estado debe ser comprobado si ha tenido
     problemas de permisos en el pasado en su sistema (predefinido, debería ser
     algo como "755").
 
- 6) Luego, tendrás que phpMussel "gancho" para el sistema o CMS. Hay varias
+ 5) Luego, tendrás que phpMussel "gancho" para el sistema o CMS. Hay varias
     maneras en que usted puede "gancho" scripts como phpMussel a su sistema o
     CMS, pero lo más fácil es simplemente incluir el script al principio de un
     núcleo archivo de su sistema o CMS (uno que va por lo general siempre se va
@@ -121,7 +113,7 @@
     exacta dirección del "phpmussel.php" archivo (local dirección, no la HTTP
     dirección; que será similar a la "vault" dirección mencionó anteriormente).
 
-    <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
+    <?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>
 
     Guardar archivo, cerrarla, recargar.
 
@@ -137,7 +129,7 @@
 
     php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
 
- 7) Con eso, ya está! Pero, probablemente deberías preubalo para asegurarse de
+ 6) Con eso, ya está! Pero, probablemente deberías preubalo para asegurarse de
     que está funcionando correctamente. Para probar archivos carga
     protecciones, probar cargar los prueba archivos incluidos en el paquete
     dentro "_testfiles" a su website a través de sus habituales navegador
@@ -168,34 +160,26 @@
     Si usted no has php instalado en su máquina, por favor, instalar php en su
     máquina, siguiendo las instrucciones suministradas por el php instalador.
 
- 2) Abrir "phpmussel.php", busque la línea que comienza con "$vault=", y
-    reemplazar la cadena entre las siguientes comillas en esa línea con la
-    exacta verdadera ubicación del "vault" directorio de phpMussel. Usted verá
-    tal un directorio en el compactado archivo que ha descargado (asumiendo que
-    no desea revolver todo la script, mantener la misma estructura de archivos
-    y directorios como lo fue el original). Este "vault" directorio normalmente
-    es un directorio nivel más allá del directorio que existirá en el
-    "phpmussel.php" archivo. Guardar el archivo, cerrar.
+ 3) Opcionalmente (muy recomendable para avanzados usuarios, pero no se
+    recomienda para los principiantes o para los inexpertos), abrir
+    "phpmussel.ini" (situado en el interior del "vault") - Este archivo
+    contiene todas las disponibles operativas opciones para phpMussel. Por
+    encima de cada opción debe ser un breve comentario que describe lo que hace
+    y para lo qué sirve. Ajuste estas opciones según sus necesidades, según lo
+    que sea apropiado para su particular configuración. Guardar archivo,
+    cerrar.
 
- 4) (Opcional; Muy recomendable para avanzados usuarios, pero no se recomienda
-    para los principiantes o para los inexpertos): Abrir "phpmussel.ini"
-    (situado en el interior del "vault") - Este archivo contiene todas las
-    disponibles operativas opciones para phpMussel. Por encima de cada opción
-    debe ser un breve comentario que describe lo que hace y para lo qué sirve.
-    Ajuste estas opciones según sus necesidades, según lo que sea apropiado
-    para su particular configuración. Guardar archivo, cerrar.
+ 4) Opcionalmente, usted puede hacer uso de phpMussel en CLI modo más fácil
+    para ti mismo mediante la creación de un batch archivo para automáticamente
+    cargar php y phpMussel. Para ello, abra un texto editor como Notepad o
+    Notepad++, escriba la completa ruta al "php.exe" archivo dentro lo
+    directorio de la php instalación, seguido de un espacio, seguido de la
+    completa ruta al "phpmussel.php" archivo dentro lo directorio de su
+    phpMussel instalación, guardar el archivo con la ".bat" extensión en alguna
+    parte que usted lo encontrará fácilmente, y haga doble clic en ese archivo
+    para ejecutar phpMussel en el futuro.
 
- 5) (Opcional) Usted puede hacer uso de phpMussel en CLI modo más fácil para ti
-    mismo mediante la creación de un batch archivo para automáticamente cargar
-    php y phpMussel. Para ello, abra un texto editor como Notepad o Notepad++,
-    escriba la completa ruta al "php.exe" archivo dentro lo directorio de la
-    php instalación, seguido de un espacio, seguido de la completa ruta al
-    "phpmussel.php" archivo dentro lo directorio de su phpMussel instalación,
-    guardar el archivo con la ".bat" extensión en alguna parte que usted lo
-    encontrará fácilmente, y haga doble clic en ese archivo para ejecutar
-    phpMussel en el futuro.
-
- 6) Con eso, ya está! Pero, probablemente deberías preubalo para asegurarse de
+ 5) Con eso, ya está! Pero, probablemente deberías preubalo para asegurarse de
     que está funcionando correctamente. Para probar phpMussel, ejecute
     phpMussel e probar escanear el directorio "_testfiles" suministrada con el
     paquete.
@@ -1756,5 +1740,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 22 Julio 2015 (2015.07.22).
+Última Actualización: 25 Julio 2015 (2015.07.25).
 EOF

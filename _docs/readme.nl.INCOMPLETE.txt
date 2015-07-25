@@ -76,34 +76,24 @@
     veilig en iets waar je blij mee bent) zal volstaan. Voordat u het uploaden
     begint, lees verder..
 
- 2) Open "phpmussel.php", zoek naar de lijn die begint met "$vault=", en
-    vervang de string tussen de volgende aanhalingstekens op die lijn met de
-    exacte ware locatie van de "gewelf" bestandsmap van phpMussel. U zult
-    hebben gemerkt zo'n bestandsmap in het archief zou je hebt gedownload
-    (tenzij je zin om opnieuw coderen van de hele script jezelf, je nodig hebt
-    om dezelfde bestanden en bestandsmap structuur te behouden zoals het was in
-    het archief oorspronkelijk). Deze bestandsmap "vault" moet men bestandsmap
-    niveau waarboven de bestandsmap die de "phpmussel.php" bestand zal bestaan
-    in zijn. Bestand opslaan, sluiten.
-
- 4) (Facultatief; Sterk aanbevolen voor ervaren gebruikers, maar niet aan te
-    raden voor beginners of voor de onervaren): Open "phpmussel.ini" (gelegen
+ 2) Facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te
+    raden voor beginners of voor de onervaren), open "phpmussel.ini" (gelegen
     binnen "vault") - Dit bestand bevat alle beschikbare phpMussel configuratie
     opties. Boven elke optie moet een korte opmerking te beschrijven wat het
     doet en wat het voor. Pas deze opties als het je past, volgens welke
     geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
- 4) Upload de inhoud (phpMussel en zijn bestanden) naar de bestandsmap die u
+ 3) Upload de inhoud (phpMussel en zijn bestanden) naar de bestandsmap die u
     zou op eerder besloten (je nodig niet de *.txt/*.md bestanden opgenomen,
     maar meestal, je moeten uploaden alles).
 
- 5) CMHOD de bestandsmap "vault" naar "777". De belangrijkste bestandsmap
+ 4) CMHOD de bestandsmap "vault" naar "777". De belangrijkste bestandsmap
     opslaan van de inhoud (degene die je eerder koos), gewoonlijk, kan worden
     genegeerd, maar CHMOD-status moet worden gecontroleerd als u machtigingen
     problemen hebt gehad in het verleden op uw systeem (standaard, moet iets
     zijn als "755").
 
- 6) Volgende, je nodig hebt om "haak" phpMussel om uw systeem of CMS. Er zijn
+ 5) Volgende, je nodig hebt om "haak" phpMussel om uw systeem of CMS. Er zijn
     verschillende manieren waarop je kunt "haak" scripts zoals phpMussel om uw
     systeem of CMS, maar het makkelijkste is om gewoon omvatten voor het script
     aan het begin van een kern bestand van uw systeem of CMS (een die het
@@ -123,7 +113,7 @@
     exacte adres van het "phpmussel.php" bestand (lokaal adres, niet het
     HTTP-adres; zal vergelijkbaar zijn met de eerder genoemde vault adres).
 
-    <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
+    <?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>
 
     Opslaan bestand, sluiten, heruploaden.
 
@@ -139,7 +129,7 @@
 
     php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
 
- 7) Op dit punt, je bent klaar! Echter, je moet waarschijnlijk test het uit om
+ 6) Op dit punt, je bent klaar! Echter, je moet waarschijnlijk test het uit om
     ervoor te zorgen dat het werken correct. Voor het testen van het bestand
     upload protecties, proberen om de testen bestanden te uploaden opgenomen in
     het pakket als "_testfiles" naar uw website via uw gebruikelijke
@@ -171,26 +161,16 @@
     installeer php op uw machine, volgende instructies door de php installateur
     geleverd.
 
- 3) Open "phpmussel.php", zoek naar de lijn die begint met "$vault=", en
-    vervang de string tussen de volgende aanhalingstekens op die lijn met de
-    exacte ware locatie van de "gewelf" bestandsmap van phpMussel. U zult
-    hebben gemerkt zo'n bestandsmap in het archief zou je hebt gedownload
-    (tenzij je zin om opnieuw coderen van de hele script jezelf, je nodig hebt
-    om dezelfde bestanden en bestandsmap structuur te behouden zoals het was in
-    het archief oorspronkelijk). Deze bestandsmap "vault" moet men bestandsmap
-    niveau waarboven de bestandsmap die de "phpmussel.php" bestand zal bestaan
-    in zijn. Bestand opslaan, sluiten.
-
- 4) (Facultatief; Sterk aanbevolen voor ervaren gebruikers, maar niet aan te
-    raden voor beginners of voor de onervaren): Open "phpmussel.ini" (gelegen
+ 3) Facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te
+    raden voor beginners of voor de onervaren), open "phpmussel.ini" (gelegen
     binnen "vault") - Dit bestand bevat alle beschikbare phpMussel configuratie
     opties. Boven elke optie moet een korte opmerking te beschrijven wat het
     doet en wat het voor. Pas deze opties als het je past, volgens welke
     geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
- 5) (Facultatief) U kunt maken te phpMussel in CLI-modus makkelijker voor
-    jezelf door het creëren van een batch-bestand om automatisch te laden php
-    en phpMussel. Om dit te doen, open een platte tekst editor zoals Notepad of
+ 4) Facultatief, u kunt maken te phpMussel in CLI-modus makkelijker voor jezelf
+    door het creëren van een batch-bestand om automatisch te laden php en
+	phpMussel. Om dit te doen, open een platte tekst editor zoals Notepad of
     Notepad++, typt u het volledige pad naar de "php.exe" bestand in de
     bestandsmap van uw php-installatie, gevolgd door een spatie, gevolgd door
     het volledige pad naar de "phpmussel.php" bestand in de bestandsmap van uw
@@ -198,7 +178,7 @@
     dat je het gemakkelijk vinden, en dubbelklik op het bestand om phpMussel
     draaien in de toekomst.
 
- 6) Op dit punt, je bent klaar! Echter, je moet waarschijnlijk test het uit om
+ 5) Op dit punt, je bent klaar! Echter, je moet waarschijnlijk test het uit om
     ervoor te zorgen dat het werken correct. Om phpMussel testen, draaien
     phpMussel en probeer het scannen van de "_testfiles" bestandsmap die bij
     het pakket.
@@ -1679,5 +1659,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 22 Juli 2015 (2015.07.22).
+Laatste Bijgewerkt: 25 Juli 2015 (2015.07.25).
 EOF
