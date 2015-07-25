@@ -51,7 +51,7 @@
 
 */
 
-$vault=@(__DIR__==='__DIR__')?__DIR__.'/vault/':dirname(__FILE__).'/vault/';
+$vault=@(__DIR__==='__DIR__')?dirname(__FILE__).'/vault/':__DIR__.'/vault/';
 
 if(!function_exists('plaintext_echo_die')){function plaintext_echo_die($out){header('Content-Type: text/plain');echo $out;die;}}
 

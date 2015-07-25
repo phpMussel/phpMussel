@@ -83,8 +83,14 @@ Anything less than sub-minor:
 - [2015.07.22; Sub-minor code change; Maikuolan]: Updated lang.inc; Added the
   new directive, `lang_acceptable`.
 
+- [2015.07.25; Sub-minor code change; Maikuolan]: Changed the way that $vault
+  is determined; As of now, $vault is determined automatically; Users are no
+  longer required to manually set the $vault variable when installing or
+  updating phpMussel.
+  Refer github.com/Maikuolan/phpMussel/issues/55
+
 Maikuolan,
-22nd July 2015.
+25th July 2015.
 
 === Version/Release 0.7 (Previous Release: 0.6j) ===
 MINOR RELEASE; Updated to the latest signatures set (55+20665+7).
