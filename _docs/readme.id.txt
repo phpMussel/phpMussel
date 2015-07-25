@@ -564,52 +564,52 @@
     mengupload direktori ini atau file-filenya jika melakukan testing.
     ~
  /_testfiles/ascii_standard_testfile.txt (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan ASCII normal phpMussel.
+    File test untuk mentest tanda tangan ASCII normal phpMussel.
     ~
  /_testfiles/coex_testfile.rtf (Test file, Diikutkan)
-    Data test untuk mentest tanda tangan kompleks diperpanjang phpMussel.
+    File test untuk mentest tanda tangan kompleks diperpanjang phpMussel.
     ~
  /_testfiles/exe_standard_testfile.exe (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan PE phpMussel.
+    File test untuk mentest tanda tangan PE phpMussel.
     ~
  /_testfiles/general_standard_testfile.txt (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan umum phpMussel.
+    File test untuk mentest tanda tangan umum phpMussel.
     ~
  /_testfiles/graphics_standard_testfile.gif (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan grafis phpMussel.
+    File test untuk mentest tanda tangan grafis phpMussel.
     ~
  /_testfiles/html_standard_testfile.txt (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan HTML normal phpMussel.
+    File test untuk mentest tanda tangan HTML normal phpMussel.
     ~
  /_testfiles/md5_testfile.txt (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan MD5 phpMussel.
+    File test untuk mentest tanda tangan MD5 phpMussel.
     ~
  /_testfiles/metadata_testfile.tar (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan metadata phpMussel dan untuk mentest
+    File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest
     data support TAR pada sistem Anda.
     ~
  /_testfiles/metadata_testfile.txt.gz (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan metadata phpMussel dan untuk mentest
+    File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest
     data support GZ pada sistem Anda.
     ~
  /_testfiles/metadata_testfile.zip (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan metadata phpMussel dan untuk mentest
+    File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest
     data support ZIP pada sistem Anda.
     ~
  /_testfiles/ole_testfile.ole (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan OLE phpMussel.
+    File test untuk mentest tanda tangan OLE phpMussel.
     ~
  /_testfiles/pdf_standard_testfile.pdf (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan PDF phpMussel.
+    File test untuk mentest tanda tangan PDF phpMussel.
     ~
  /_testfiles/pe_sectional_testfile.exe (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan PE Sectional phpMussel.
+    File test untuk mentest tanda tangan PE Sectional phpMussel.
     ~
  /_testfiles/swf_standard_testfile.swf (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan SWF phpMussel.
+    File test untuk mentest tanda tangan SWF phpMussel.
     ~
  /_testfiles/xdp_standard_testfile.xdp (Data test, Diikutkan)
-    Data test untuk mentest tanda tangan potongan XML/XDP phpMussel.
+    File test untuk mentest tanda tangan potongan XML/XDP phpMussel.
     ~
  /vault/ (Direktori)
     Direktori Vault (berisikan bermacam file).
@@ -661,15 +661,15 @@
  /vault/ascii_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/ascii_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/ascii_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan ASCII normal.
-    diharuskan jika tanda tangan opsi ASCII normal di dalam "phpmussel.ini"
+    File-file untuk tanda tangan ASCII normal.
+    Diharuskan jika tanda tangan opsi ASCII normal di dalam "phpmussel.ini"
     diaktifkan. Dapat menghapus jika opsi dinonaktifkan.
     ~
  /vault/coex_clamav.cvd (Tanda tangan, Diikutkan)
  /vault/coex_custom.cvd (Tanda tangan, Diikutkan)
  /vault/coex_mussel.cvd (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan kompleks diperpanjang.
-    diharuskan jika tanda tangan opsi kompleks diperpanjang di dalam
+    File-file untuk tanda tangan kompleks diperpanjang.
+    Diharuskan jika tanda tangan opsi kompleks diperpanjang di dalam
     "phpmussel.ini" diaktifkan. Dapat menghapus jika opsi dinonaktifkan.
     ~
  /vault/elf_clamav_regex.cvd (Tanda tangan, Diikutkan)
@@ -680,8 +680,8 @@
  /vault/elf_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/elf_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/elf_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan ELF.
-    diharuskan jika tanda tangan opsi ELF di dalam "phpmussel.ini" diaktifkan.
+    File-file untuk tanda tangan ELF.
+    Diharuskan jika tanda tangan opsi ELF di dalam "phpmussel.ini" diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan.
     ~
  /vault/exe_clamav_regex.cvd (Tanda tangan, Diikutkan)
@@ -692,15 +692,15 @@
  /vault/exe_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/exe_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/exe_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    file-file untuk data tanda tangan portable yang dapat dieksekusi.
-    diharuskan jika opsi tanda tangan EXE di dalam "phpmussel.ini" diaktifkan.
+    File-file untuk tanda tangan file eksekusi portable.
+    Diharuskan jika opsi tanda tangan EXE di dalam "phpmussel.ini" diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan.
     ~
  /vault/filenames_clamav.cvd (Tanda tangan, Diikutkan)
  /vault/filenames_custom.cvd (Tanda tangan, Diikutkan)
  /vault/filenames_mussel.cvd (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan nama file.
-    diharuskan jika opsi tanda tangan di dalam "phpmussel.ini" diaktifkan.
+    File-file untuk tanda tangan nama file.
+    Diharuskan jika opsi tanda tangan di dalam "phpmussel.ini" diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan.
     ~
  /vault/general_clamav_regex.cvd (Tanda tangan, Diikutkan)
@@ -711,7 +711,7 @@
  /vault/general_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/general_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/general_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan umum. Diharuskan jika opsi tanda tangan di
+    File-file untuk tanda tangan umum. Diharuskan jika opsi tanda tangan di
     dalam "phpmussel.ini" diaktifkan. Dapat menghapus jika opsi
     dinonaktifkan.
     ~
@@ -723,7 +723,7 @@
  /vault/graphics_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/graphics_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/graphics_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan grafis. Diharuskan jika opsi tanda tangan
+    File-file untuk tanda tangan grafis. Diharuskan jika opsi tanda tangan
     grafis di dalam "phpmussel.ini" diaktifkan. Dapat menghapus jika opsi
     dinonaktifkan.
     ~
@@ -745,8 +745,8 @@
  /vault/html_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/html_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/html_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan HTML normal.
-    diharuskan jika tanda tangan opsi HTML normal di dalam "phpmussel.ini"
+    File-file untuk tanda tangan HTML normal.
+    Diharuskan jika tanda tangan opsi HTML normal di dalam "phpmussel.ini"
     diaktifkan. Dapat menghapus jika opsi dinonaktifkan.
     ~
  /vault/lang.inc (Skrip, Diikutkan)
@@ -760,8 +760,8 @@
  /vault/macho_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/macho_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/macho_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan Mach-O.
-    diharuskan jika opsi tanda tangan Mach-O di "phpmussel.ini" diaktifkan.
+    File-file untuk tanda tangan Mach-O.
+    Diharuskan jika opsi tanda tangan Mach-O di "phpmussel.ini" diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan.
     ~
  /vault/mail_clamav_regex.cvd (Tanda tangan, Diikutkan)
@@ -773,22 +773,22 @@
  /vault/mail_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/mail_mussel_standard.cvd (Tanda tangan, Diikutkan)
  /vault/mail_mussel_standard.map (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan yang digunakan oleh fungsi phpMussel_mail().
-    diharuskan jika fungsi phpMussel_mail() digunakan dalam jalan apapun.
+    File-file untuk tanda tangan yang digunakan oleh fungsi phpMussel_mail().
+    Diharuskan jika fungsi phpMussel_mail() digunakan dalam jalan apapun.
     Dapat menghapus jika tidak digunakan.
     ~
  /vault/md5_clamav.cvd (Tanda tangan, Diikutkan)
  /vault/md5_custom.cvd (Tanda tangan, Diikutkan)
  /vault/md5_mussel.cvd (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan berbasis MD5.
-    diharuskan jika opsi tanda tangan berbasis MD5 diaktifkan. Dapat menghapus
+    File-file untuk tanda tangan berbasis MD5.
+    Diharuskan jika opsi tanda tangan berbasis MD5 diaktifkan. Dapat menghapus
     jika tidak digunakan.
     ~
  /vault/metadata_clamav.cvd (Tanda tangan, Diikutkan)
  /vault/metadata_custom.cvd (Tanda tangan, Diikutkan)
  /vault/metadata_mussel.cvd (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan meta data yang terkompres.
-    diharuskan jika tanda tangan meta data dalam opsi di "phpmussel.ini" di
+    File-file untuk tanda tangan meta data yang terkompres.
+    Diharuskan jika tanda tangan meta data dalam opsi di "phpmussel.ini" di
     aktifkan. Dapat menghapus jika opsi di nonaktifkan.
     ~
  /vault/ole_clamav_regex.cvd (Tanda tangan, Diikutkan)
@@ -799,8 +799,8 @@
  /vault/ole_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/ole_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/ole_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan OLE.
-    diharuskan jika opsi tanda tangan OLE di "phpmussel.ini" diaktifkan. Dapat
+    File-file untuk tanda tangan OLE.
+    Diharuskan jika opsi tanda tangan OLE di "phpmussel.ini" diaktifkan. Dapat
     menghapus jika opsi dinonaktifkan.
     ~
  /vault/pdf_clamav_regex.cvd (Tanda tangan, Diikutkan)
@@ -811,14 +811,14 @@
  /vault/pdf_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/pdf_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/pdf_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan PDF.
-    diharuskan jika opsi tanda tangan PDF di "phpmussel.ini" diaktifkan. Dapat
+    File-file untuk tanda tangan PDF.
+    Diharuskan jika opsi tanda tangan PDF di "phpmussel.ini" diaktifkan. Dapat
     menghapus jika opsi dinonaktifkan.
     ~
  /vault/pe_clamav.cvd (Tanda tangan, Diikutkan)
  /vault/pe_custom.cvd (Tanda tangan, Diikutkan)
  /vault/pe_mussel.cvd (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan PE Sectional. Diharuskan jika opsi tanda
+    File-file untuk tanda tangan PE Sectional. Diharuskan jika opsi tanda
     tangan PE Sectional di "phpmussel.ini" diaktifkan. Dapat menghapus jika
     opsi dinonaktifkan.
     ~
@@ -844,8 +844,8 @@
  /vault/swf_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/swf_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/swf_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan Shockwave.
-    diharuskan jika opsi tanda tangan Shockwave di "phpmussel.ini" diaktifkan.
+    File-file untuk tanda tangan Shockwave.
+    Diharuskan jika opsi tanda tangan Shockwave di "phpmussel.ini" diaktifkan.
     Dapat menghapus jika opsi dinonaktifkan.
     ~
  /vault/switch.dat (Lainnya, Diikutkan)
@@ -870,7 +870,7 @@
  /vault/whitelist_custom.cvd (Tanda tangan, Diikutkan)
  /vault/whitelist_mussel.cvd (Tanda tangan, Diikutkan)
     File spesifik daftar putih.
-    diharuskan jika opsi Whitelist di "phpmussel.ini" diaktifkan dan jika ingin
+    Diharuskan jika opsi Whitelist di "phpmussel.ini" diaktifkan dan jika ingin
     Anda spesifik file bertanda putih. Dapat menghapus jika opsi dinonaktifkan
     atau jika Anda tidak memerlukan spesifik file bertanda putih.
     ~
@@ -882,46 +882,46 @@
  /vault/xmlxdp_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/xmlxdp_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/xmlxdp_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    file-file untuk tanda tangan potongan XML/XDP.
-    diharuskan jika opsi tanda tangan potongan XML/XDP di "phpmussel.ini"
+    File-file untuk tanda tangan potongan XML/XDP.
+    Diharuskan jika opsi tanda tangan potongan XML/XDP di "phpmussel.ini"
     diaktifkan. Dapat menghapus jika opsi dinonaktifkan.
     ~
 
  * Nama file bisa berbeda berdasarkan ketentuan konfigurasi (di dalam
    "phpmussel.ini").
 
- = BERDASARKAN file-file TANDA TANGAN =
+ = BERDASARKAN FILE-FILE TANDA TANGAN =
     CVD adalah akronim dari "ClamAV Virus Definitions", dalam referensi dari
     bagaimana ClamAV merujuk ke tanda tangan nya sendiri dan penggunaan dari
     tanda tangan-tanda tangan itu untuk phpMussel; Data berakhir dengan "CVD"
     berisikan tanda tangan.
     ~
-    Data berakhir dengan "MAP", secara harfiah, memetakan tanda tangan mana
+    File berakhir dengan "MAP", secara harfiah, memetakan tanda tangan mana
     phpMussel seharusnya dan seharusnya tidak gunakan untuk pemindaian
     individual. Tidak semua tanda tangan secocoknya diharuskan untuk pemindaian
     tunggal, jadi, phpMussel menggunakan peta-peta dari file-file tanda tangan
     untuk mempercepat proses pemindaian (sebuah proses yang akan menjadi lambat
     dan monoton).
     ~
-    file-file tanda tangan ditandai dengan "_regex" berisikan tanda tangan yang
+    File-file tanda tangan ditandai dengan "_regex" berisikan tanda tangan yang
     mengarahkan bentuk pengecekan regular expression (regex).
     ~
-    file-file tanda tangan ditandai dengan "_standard" berisikan tanda tangan
+    File-file tanda tangan ditandai dengan "_standard" berisikan tanda tangan
     yang secara spesifik tidak mengarahkan bentuk pengecekan apapun.
     ~
-    file-file tanda tangan tidak ditandai dengan "_regex" atau "_standard" akan
+    File-file tanda tangan tidak ditandai dengan "_regex" atau "_standard" akan
     menjadi satu atau yang lain, tapi tidak keduanya (merujuk pada seksi format
     tanda tangan dari data README untuk dokumentasi dan detail spesifik).
     ~
-    file-file tanda tangan ditandai dengan "_clamav" berisikan tanda tangan
+    File-file tanda tangan ditandai dengan "_clamav" berisikan tanda tangan
     yang berasal dari basis data ClamAV (GNU/GPL).
     ~
-    file-file tanda tangan ditandai dengan "_custom", secara default,
+    File-file tanda tangan ditandai dengan "_custom", secara default,
     tidak berisikan tanda tangan apapun; file-file ini ada untuk memberikan
     Anda kemana saja untuk meletakkan tanda tangan Anda jika Anda datang
     dengan milik diri Anda sendiri.
     ~
-    file-file tanda tangan ditandai dengan "_mussel" berisikan tanda tangan
+    File-file tanda tangan ditandai dengan "_mussel" berisikan tanda tangan
     yang secara spesifik tidak berasal dari ClamAV, tanda tangan yang secara
     umum, Yang saya buat sendiri atau informasi dari berbagai sumber.
     ~
