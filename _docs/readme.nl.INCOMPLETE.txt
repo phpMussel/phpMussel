@@ -21,28 +21,28 @@
 
  1. PREAMBULE
 
- Bedankt voor het gebruik van phpMussel, een PHP script ontworpen om detecteren
- trojans, virussen, malware en andere bedreigingen binnen bestanden geüpload
- naar uw systeem waar het script is aangesloten, gebaseerd op ClamAV
- handtekeningen en anderen.
+ Dank u voor het gebruiken van phpMussel, een PHP-script ontwikkeld om trojans,
+ virussen, malware en andere bedreigingen te ontworpen, binnen bestanden
+ geüpload naar uw systeem waar het script is haakte, gebaseerd op de
+ handtekeningen van ClamAV en anderen.
 
  PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPLv2 van Caleb M (Maikuolan).
 
- Dit script is vrije software; je kan herdistribueren en/of wijzigen dit onder
- de voorwaarden van de GNU General Public License zoals gepubliceerd door de
- Free Software Foundation; ofwel versie 2 van de Licentie, of (naar uw keuze)
- enige latere versie. Dit script wordt gedistribueerd in de hoop dat het zal
- zijn nuttig, maar ZONDER ENIGE GARANTIE; zonder zelfs de impliciete garantie
- van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de GNU General
- Public License voor meer details, gelegen in de "LICENCE" bestand in de
- "_docs" bestandsmap van de bijbehorende pakket en repository voor deze
- bestanden en ook beschikbaar uit:
+ Dit script is gratis software; je kunt, onder de voorwaarden van de GNU
+ General Public License zoals gepubliceerd door de Free Software Foundation,
+ herdistribueren en/of wijzigen dit; ofwel versie 2 van de Licentie, of (naar
+ uw keuze) enige latere versie. Dit script wordt gedistribueerd in de hoop dat
+ het nuttig zal zijn, maar ZONDER ENIGE GARANTIE; zelfs zonder de impliciete
+ garantie van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de GNU
+ General Public License voor meer informatie, gelegen in het "LICENCE" bestand
+ binnen de "_docs" bestandsmap van de bijbehorende pakket en het repository
+ voor dit bestand en ook beschikbaar uit:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Speciale dank aan ClamAV voor zowel project inspiratie en voor de
  handtekeningen dat dit script maakt gebruik daarvan, zonder welke, het script
  zou waarschijnlijk niet bestaan, of op zijn best, zou zeer beperkte waarde
- <http://www.clamav.net/>.
+ hebben <http://www.clamav.net/>.
 
  Speciale dank aan Sourceforge en GitHub voor het hosten van de
  project-bestanden, gevonden op <http://phpmussel.sourceforge.net/> en
@@ -55,7 +55,7 @@
  het project steunen, aan iemand anders die ik anders misschien vergeten te
  vermelden, en voor u, voor het gebruik van het script.
 
- Dit document en de bijbehorende pakket kan worden gedownload voor gratis van:
+ Dit document en de bijbehorende pakket kunt gedownload gratis zijn van:
  - Sourceforge <http://phpmussel.sourceforge.net/>.
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
@@ -76,34 +76,24 @@
     veilig en iets waar je blij mee bent) zal volstaan. Voordat u het uploaden
     begint, lees verder..
 
- 2) Open "phpmussel.php", zoek naar de lijn die begint met "$vault=", en
-    vervang de string tussen de volgende aanhalingstekens op die lijn met de
-    exacte ware locatie van de "gewelf" bestandsmap van phpMussel. U zult
-    hebben gemerkt zo'n bestandsmap in het archief zou je hebt gedownload
-    (tenzij je zin om opnieuw coderen van de hele script jezelf, je nodig hebt
-    om dezelfde bestanden en bestandsmap structuur te behouden zoals het was in
-    het archief oorspronkelijk). Deze bestandsmap "vault" moet men bestandsmap
-    niveau waarboven de bestandsmap die de "phpmussel.php" bestand zal bestaan
-    in zijn. Bestand opslaan, sluiten.
-
- 4) (Facultatief; Sterk aanbevolen voor ervaren gebruikers, maar niet aan te
-    raden voor beginners of voor de onervaren): Open "phpmussel.ini" (gelegen
+ 2) Facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te
+    raden voor beginners of voor de onervaren), open "phpmussel.ini" (gelegen
     binnen "vault") - Dit bestand bevat alle beschikbare phpMussel configuratie
     opties. Boven elke optie moet een korte opmerking te beschrijven wat het
     doet en wat het voor. Pas deze opties als het je past, volgens welke
     geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
- 4) Upload de inhoud (phpMussel en zijn bestanden) naar de bestandsmap die u
+ 3) Upload de inhoud (phpMussel en zijn bestanden) naar de bestandsmap die u
     zou op eerder besloten (je nodig niet de *.txt/*.md bestanden opgenomen,
     maar meestal, je moeten uploaden alles).
 
- 5) CMHOD de bestandsmap "vault" naar "777". De belangrijkste bestandsmap
+ 4) CMHOD de bestandsmap "vault" naar "777". De belangrijkste bestandsmap
     opslaan van de inhoud (degene die je eerder koos), gewoonlijk, kan worden
     genegeerd, maar CHMOD-status moet worden gecontroleerd als u machtigingen
     problemen hebt gehad in het verleden op uw systeem (standaard, moet iets
     zijn als "755").
 
- 6) Volgende, je nodig hebt om "haak" phpMussel om uw systeem of CMS. Er zijn
+ 5) Volgende, je nodig hebt om "haak" phpMussel om uw systeem of CMS. Er zijn
     verschillende manieren waarop je kunt "haak" scripts zoals phpMussel om uw
     systeem of CMS, maar het makkelijkste is om gewoon omvatten voor het script
     aan het begin van een kern bestand van uw systeem of CMS (een die het
@@ -123,7 +113,7 @@
     exacte adres van het "phpmussel.php" bestand (lokaal adres, niet het
     HTTP-adres; zal vergelijkbaar zijn met de eerder genoemde vault adres).
 
-    <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
+    <?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>
 
     Opslaan bestand, sluiten, heruploaden.
 
@@ -139,7 +129,7 @@
 
     php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
 
- 7) Op dit punt, je bent klaar! Echter, je moet waarschijnlijk test het uit om
+ 6) Op dit punt, je bent klaar! Echter, je moet waarschijnlijk test het uit om
     ervoor te zorgen dat het werken correct. Voor het testen van het bestand
     upload protecties, proberen om de testen bestanden te uploaden opgenomen in
     het pakket als "_testfiles" naar uw website via uw gebruikelijke
@@ -171,26 +161,16 @@
     installeer php op uw machine, volgende instructies door de php installateur
     geleverd.
 
- 3) Open "phpmussel.php", zoek naar de lijn die begint met "$vault=", en
-    vervang de string tussen de volgende aanhalingstekens op die lijn met de
-    exacte ware locatie van de "gewelf" bestandsmap van phpMussel. U zult
-    hebben gemerkt zo'n bestandsmap in het archief zou je hebt gedownload
-    (tenzij je zin om opnieuw coderen van de hele script jezelf, je nodig hebt
-    om dezelfde bestanden en bestandsmap structuur te behouden zoals het was in
-    het archief oorspronkelijk). Deze bestandsmap "vault" moet men bestandsmap
-    niveau waarboven de bestandsmap die de "phpmussel.php" bestand zal bestaan
-    in zijn. Bestand opslaan, sluiten.
-
- 4) (Facultatief; Sterk aanbevolen voor ervaren gebruikers, maar niet aan te
-    raden voor beginners of voor de onervaren): Open "phpmussel.ini" (gelegen
+ 3) Facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te
+    raden voor beginners of voor de onervaren), open "phpmussel.ini" (gelegen
     binnen "vault") - Dit bestand bevat alle beschikbare phpMussel configuratie
     opties. Boven elke optie moet een korte opmerking te beschrijven wat het
     doet en wat het voor. Pas deze opties als het je past, volgens welke
     geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
- 5) (Facultatief) U kunt maken te phpMussel in CLI-modus makkelijker voor
-    jezelf door het creëren van een batch-bestand om automatisch te laden php
-    en phpMussel. Om dit te doen, open een platte tekst editor zoals Notepad of
+ 4) Facultatief, u kunt maken te phpMussel in CLI-modus makkelijker voor jezelf
+    door het creëren van een batch-bestand om automatisch te laden php en
+    phpMussel. Om dit te doen, open een platte tekst editor zoals Notepad of
     Notepad++, typt u het volledige pad naar de "php.exe" bestand in de
     bestandsmap van uw php-installatie, gevolgd door een spatie, gevolgd door
     het volledige pad naar de "phpmussel.php" bestand in de bestandsmap van uw
@@ -198,7 +178,7 @@
     dat je het gemakkelijk vinden, en dubbelklik op het bestand om phpMussel
     draaien in de toekomst.
 
- 6) Op dit punt, je bent klaar! Echter, je moet waarschijnlijk test het uit om
+ 5) Op dit punt, je bent klaar! Echter, je moet waarschijnlijk test het uit om
     ervoor te zorgen dat het werken correct. Om phpMussel testen, draaien
     phpMussel en probeer het scannen van de "_testfiles" bestandsmap die bij
     het pakket.
@@ -224,36 +204,39 @@
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
- - $what_to_scan can be a string, an array, or an array of arrays, and
-   indicates which file, files, directory and/or directories to scan.
+ - $what_to_scan kunt een tekenreeks, een array, of een array van arrays zijn,
+   en vermelding welk bestand, bestanden, directory en/of directories om
+   scannen.
 
- - $output_type is a boolean, indicating the format for the scan results to be
-   returned as. False instructs the function to return results as an integer (a
-   returned result of -3 indicates problems were encountered with the phpMussel
-   signatures files or signature map files and that they may possible be
-   missing or corrupted, -2 indicates that corrupt data was detected during the
-   scan and thus the scan failed to complete, -1 indicates that extensions or
-   addons required by php to execute the scan were missing and thus the scan
-   failed to complete, 0 indicates that the scan target doesn't exist and thus
-   there was nothing to scan, 1 indicates that the target was successfully
-   scanned and no problems were detected, and 2 indicates that the target was
-   successfully scanned and problems were detected). True instructs the
-   function to return results as human readable text. Additionally, in either
-   case, the results can be accessed via global variables after scanning has
-   completed. This variable is optional, defaulting to false.
+ - $output_type is een boolean, met vermelding van het formaat voor de
+   scanresultaten te worden geretourneerd als. False instrueert de functie om
+   de resultaten als een integer retourneer (een geretourneerd resultaat van -3
+   betekent problemen werden aangetroffen met de phpMussel handtekeningen
+   bestanden of handtekening kaart bestanden en dat zij mogelijk worden
+   beschadigd of ontbreekt, -2 betekent dat beschadigd gegevens tijdens de scan
+   werd ontdekt en dus de scan niet voltooid, -1 betekent dat uitbreidingen of
+   addons vereist door php om de scan te voeren werd ontbraken zijn en dus de
+   scan niet voltooid, 0 betekent dat het scandoel bestaat niet en dus was er
+   niets te scannen, 1 betekent dat het doel met succes werden gescand en geen
+   problemen gedetecteerd, en 2 betekent dat het doel met succes werd gescand
+   en problemen werden gedetecteerd). True instrueert de functie om de
+   resultaten als leesbare tekst retourneer. Bovendien, in elk geval, de
+   resultaten kunnen worden geraadpleegd via globale variabelen na het scannen
+   is voltooid. Deze variabele is optioneel, voorgedefinieerd als false.
 
- - $output_flatness is a boolean, indicating to the function whether to return
-   the results of scanning (when there are multiple scan targets) as an array
-   or a string. False will return the results as an array. True will return the
-   results as a string. This variable is optional, defaulting to false.
+ - $output_flatness is een boolean, vermelding van de functie of de resultaten
+   van de scan retourneren (wanneer er meerdere scandoelen) als een array of
+   een tekenreeks. False zullen de resultaten als een array retourneer. True
+   zullen de resultaten als een tekenreeks retourneer. Deze variabele is
+   optioneel, voorgedefinieerd als false.
 
- Voorbeelden:
+ Voorbeeld:
 
    $results=phpMussel('/user_name/public_html/my_file.html',true,true);
    echo $results;
 
-   Retourneren iets als dit (als een string):
-    Wed, 16 Sep 2013 02:49:46 +0000 Started.
+   Retourneren iets als dit (als een tekenreeks):
+    Wed, 16 Sep 2013 02:49:46 +0000 Gestart.
     > Verifiëren '/user_name/public_html/my_file.html':
     -> Geen problemen gevonden.
     Wed, 16 Sep 2013 02:49:47 +0000 Afgewerkt.
@@ -262,10 +245,11 @@
  door phpMussel tijdens de scans en hoe het omgaat met deze handtekeningen,
  raadpleeg de Handtekeningformaat sectie van dit README bestand.
 
- Als u tegenkomen enig valse positieven, als u tegenkomen iets nieuws dat je
- denkt dat zou moeten worden geblokkeerd, of voor iets anders met betrekking
- tot handtekeningen, contact met mij over zodat ik kunnen maken veranderingen,
- die, als je geen contact met mij op, ik niet noodzakelijkerwijs weten over.
+ Als u tegenkomen valse positieven, als je iets nieuws tegenkomen waarvan u
+ denkt dat zou moeten geblokkeerd worden, of voor iets anders met betrekking
+ tot handtekeningen, neem dan contact met mij over het zo dat ik de
+ noodzakelijke veranderingen kunnen maken, die, als je geen contact met mij op,
+ ik zou niet per se bewust van.
 
  Om de handtekeningen die bij phpMussel uitschakelen (zoals als je het ervaren
  van een vals positief specifiek voor uw doeleinden dat mag niet normaal van
@@ -275,21 +259,22 @@
  In aanvulling op de standaard bestand uploaden scannen en de optionele scannen
  van andere bestanden en/of directories opgegeven via de bovenstaande functie,
  in phpMussel een functie bestemd voor het scannen van het lichaam van
- emailberichten.
- This function behaves similarly to the standard phpMussel() function, but
- focuses solely on matching against the ClamAV email-based signatures. I have
- not tied these signatures into the standard phpMussel() function, because it
- is highly unlikely that you'd ever find the body of an incoming email message
- in need of scanning within a file upload targeted to a page where phpMussel is
- hooked, and thus, to tie these signatures into the phpMussel() function would
- be redundant. However, that said, having a separate function to match against
- these signatures could prove to be extremely useful for some, especially for
- those whose CMS or webfront system is somehow tied into their email system and
- for those parsing their emails via a php script that they could potentially
- hook into phpMussel. Configuration for this function, like all others, is
- controlled via the "phpmussel.ini" file. To use this function (you'll need to
- do your own implementation), in a php file that is hooked to phpMussel, use
- the following function in your code:
+ emailberichten. Deze functie gedraagt zich zoals de phpMussel()
+ standaardfunctie, maar richt zich uitsluitend op bijpassende tegen de ClamAV
+ email-gebaseerde handtekeningen. Ik heb niet gebonden deze handtekeningen naar
+ de phpMussel() standaardfunctie, want het is zeer onwaarschijnlijk dat je zou
+ ooit het lichaam van een inkomende emailbericht vinden in het behoefte van
+ scannen binnen een bestand-upload gericht op een pagina waar phpMussel is
+ haakte, en dus, om deze handtekeningen te binden in de phpMussel() functie zou
+ overbodig zijn. Echter, dat gezegd hebbende, een aparte functie te meten met
+ deze handtekeningen kunnen blijken uiterst nuttig voor sommigen, vooral voor
+ degenen wier CMS of webfront systeem is een of andere manier gebonden in hun
+ email systeem en voor degenen die het ontleden van hun emails via een
+ php-script dat ze zou kunnen haak in phpMussel. Configuratie voor deze
+ functie, net als alle anderen, wordt via het "phpmussel.ini" bestand
+ gecontroleerde. Om deze functie te gebruiken (je nodig hebt om je eigen
+ implementatie), in een php-bestand dat wordt aangesloten op phpMussel, gebruik
+ de volgende functie in uw code:
 
  phpMussel_mail($body);
 
@@ -1679,5 +1664,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 22 Juli 2015 (2015.07.22).
+Laatste Bijgewerkt: 25 Juli 2015 (2015.07.25).
 EOF

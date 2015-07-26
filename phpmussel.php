@@ -39,20 +39,19 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7a-BETA (19th July 2015) Loader file.
+ This File: phpMussel v0.7a-BETA (25th July 2015) Loader file.
  <%phpMussel%/phpmussel.php>
 
                                      ~ ~ ~
  Please refer to the README documentation for installation instructions and for
  instructions regarding how to correctly use phpMussel.
 
- In order phpMussel to work effectively on your CMS or website, you must modify
- the $vault variable immediately following this comment section. It should
- match the exact path to the vault directory of phpMussel.
+ You may change any part of phpMussel as you see fit, but you are not required
+ to change anything in this file in order for phpMussel to work effectively.
 
 */
 
-$vault='/your_user/public_html/some_dir/phpmussel/vault/';
+$vault=@(__DIR__==='__DIR__')?dirname(__FILE__).'/vault/':__DIR__.'/vault/';
 
 if(!function_exists('plaintext_echo_die')){function plaintext_echo_die($out){header('Content-Type: text/plain');echo $out;die;}}
 

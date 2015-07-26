@@ -75,35 +75,25 @@
     /public_html/phpmussel/ o.ä. genügt, solange es Ihren
     Sicherheitsbedürfnissen oder persönlichen Präferenzen entspricht.
 
- 2) Öffnen Sie die Datei "phpmussel.php", suchen Sie die Zeile beginnend mit
-    "$vault=" und ersetzen Sie den String zwischen den Anführungszeichen mit
-    dem exakten Pfad des "vault"-Verzeichnisses von phpMussel. Ein solches
-    Verzeichnis werden Sie sicherlich im heruntergeladenen Archiv bemerkt haben
-    (sollten Sie das Script recodieren wollen, so müssen Sie die Datei- und
-    Verzeichnisstruktur aus dem originalen Archiv beibehalten). Das
-    "vault"-Verzeichnis sollte eine Ebene unterhalb des Verzeichnisses liegen,
-    in dem sich die Datei "phpmussel.php" befindet. Speichern und schließen Sie
-    die Datei.
-
- 3) (Optional; Empfohlen für erfahrene Anwender, nicht empfohlen für Anwender
-    ohne entsprechende Kenntnisse): Öffnen Sie die Datei "phpmussel.ini" im
+ 2) Optional (empfohlen für erfahrene Anwender, nicht empfohlen für Anwender
+    ohne entsprechende Kenntnisse), öffnen Sie die Datei "phpmussel.ini" im
     "vault"-Verzeichnis) - Diese Datei beinhaltet alle funktionalen Optionen
     für phpMussel. Über jeder Option beschreibt ein kurzer Kommentar die
     Aufgabe dieser Option. Verändern Sie die Werte nach Ihren Bedürfnissen.
     Speichern und schließen Sie die Datei.
 
- 4) Laden Sie den kompletten Inhalt (phpMussel und die Dateien) in das
+ 3) Laden Sie den kompletten Inhalt (phpMussel und die Dateien) in das
     Verzeichnis hoch, für das Sie sich in Schritt 1 entschieden haben. Die
     Dateien *.txt/*.md müssen nicht mit hochgeladen werden.
 
- 5) Ändern Sie die Zugriffsberechtigungen des "vault"-Verzeichnisses auf "777".
+ 4) Ändern Sie die Zugriffsberechtigungen des "vault"-Verzeichnisses auf "777".
     Die Berechtigungen des übergeordneten Verzeichnises, in welchem sich der
     Inhalt befindet (das Verzeichnis, wofür Sie sich entschieden haben), können
     so belassen werden, überprüfen Sie jedoch die Berechtigungen, wenn in der
     Vergangenheit Zugriffsprobleme aufgetreten sind (Voreinstellung "755"
     o.ä.).
 
- 6) Binden Sie phpMussel in Ihr System oder CMS ein. Es gibt viele verschiedene
+ 5) Binden Sie phpMussel in Ihr System oder CMS ein. Es gibt viele verschiedene
     Möglichkeiten, ein Script wie phpMussel einzubinden, am einfachsten ist es,
     das Script am Anfang einer Haupt-Datei (eine Datei, die immer geladen wird,
     wenn irgend eine beliebige Seite Ihres Webauftritts aufgerufen wird) Ihres
@@ -119,7 +109,7 @@
     der Lage ist, etwas Unterstützung anzubieten. Fügen Sie in dieser Datei
     folgenden Code direkt am Anfang ein:
 
-    <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
+    <?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>
 
     Ersetzen Sie den String zwischen den Anführungszeichen mit dem lokalen Pfad
     der Datei "phpmussel.php", nicht mit der HTTP-Adresse (ähnlich dem Pfad für
@@ -139,7 +129,7 @@
 
     php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
 
- 7) Der Installationsvorgang wurde nun fertiggestellt. Sie sollten nun das
+ 6) Der Installationsvorgang wurde nun fertiggestellt. Sie sollten nun das
     Programm auf ordnungsgemäße Funktion testen. Sie sollten nun die im Paket
     enthaltenen Testdateien "_testfiles" auf Ihre Webseite über die
     gewöhnlichen browserbasierten Methoden hochladen. Funktioniert das Programm
@@ -168,24 +158,14 @@
     können. Sofern PHP bei Ihnen nicht installiert ist, installieren Sie es
     bitte nach den Anweisungen des PHP-Installers.
 
- 3) Öffnen Sie die Datei "phpmussel.php", suchen Sie die Zeile beginnend mit
-    "$vault=" und ersetzen Sie den String zwischen den Anführungszeichen mit
-    dem exakten Pfad des "vault"-Verzeichnisses von phpMussel. Ein solches
-    Verzeichnis werden Sie sicherlich im heruntergeladenen Archiv bemerkt haben
-    (sollten Sie das Script recodieren wollen, so müssen Sie die Datei- und
-    Verzeichnisstruktur aus dem originalen Archiv beibehalten). Das
-    "vault"-Verzeichnis sollte eine Ebene unterhalb des Verzeichnisses liegen,
-    in dem sich die Datei "phpmussel.php" befindet. Speichern und schließen Sie
-    die Datei.
-
- 4) (Optional; Empfohlen für erfahrene Anwender, nicht empfohlen für Anwender
-    ohne entsprechende Kenntnisse): Öffnen Sie die Datei "phpmussel.ini" im
+ 3) Optional (empfohlen für erfahrene Anwender, nicht empfohlen für Anwender
+    ohne entsprechende Kenntnisse), öffnen Sie die Datei "phpmussel.ini" im
     "vault"-Verzeichnis) - Diese Datei beinhaltet alle funktionalen Optionen
     für phpMussel. Über jeder Option beschreibt ein kurzer Kommentar die
     Aufgabe dieser Option. Verändern Sie die Werte nach Ihren Bedürfnissen.
     Speichern und schließen Sie die Datei.
 
- 5) (Optional) Sie können den Start von phpMussel vereinfachen, indem Sie
+ 4) Optional, Sie können den Start von phpMussel vereinfachen, indem Sie
     mittels einer Stapelverarbeitungsdatei PHP und phpMussel automatisch laden.
     Öffnen Sie einen einfachen Texteditor wie Editor oder Notepad++, tragen
     Sie den vollständigen Pfad zu Ihrer "php.exe" im Verzeichnis Ihrer
@@ -195,7 +175,7 @@
     Sie sie leicht finden können und führen Sie sie zukünfig nur noch mit einem
     Doppelklick aus.
 
- 6) Der Installationsvorgang wurde nun fertiggestellt. Sie sollten nun das
+ 5) Der Installationsvorgang wurde nun fertiggestellt. Sie sollten nun das
     Programm auf ordnungsgemäße Funktion testen. Um den Test durchzuführen,
     führen Sie bitte phpMussel aus und versuchen Sie, das Verzeichnis
     "_testfiles" in diesem Installationspaket zu scannen.
@@ -977,12 +957,12 @@
       Sprach-Wert von einkommenden Anfragen festlegen soll
       (HTTP_ACCEPT_LANGUAGE). 0 - Nein [Standardeinstellung], 1 - Ja.
     "lang_acceptable"
-    - Die `lang_acceptable` Anweisung sagt phpMussel, welche Sprachen von dem 
-      Script von `lang` oder von `HTTP_ACCEPT_LANGUAGE` akzeptiert werden. Diese
-      Anweisung sollte **NUR** angepasst werden, falls du eigene angepasste 
-      Sprachen hinzufügst oder zwangsweise Sprachdateien entfernst. Diese 
-      Anweisung ist ein mit Kommata getrennter String der Codes der benutzten 
-      Sprachen, die von dem Script akzeptiert werden.
+    - Die "lang_acceptable" Anweisung sagt phpMussel, welche Sprachen von dem
+      Script von "lang" oder von "HTTP_ACCEPT_LANGUAGE" akzeptiert werden.
+      Diese Anweisung sollte **NUR** angepasst werden, falls du eigene
+      angepasste Sprachen hinzufügst oder zwangsweise Sprachdateien entfernst.
+      Diese Anweisung ist ein mit Kommata getrennter String der Codes der
+      benutzten Sprachen, die von dem Script akzeptiert werden.
     "quarantine_key"
     - phpMussel ist in der Lage, Versuche von Datei-Uploads in einem
       Quarantäne-Verzeichnis zu isolieren, sofern Sie dies tun wollen. Nutzer,
@@ -1700,5 +1680,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 22. Juli 2015 (2015.07.22).
+Zuletzt aktualisiert: 25. Juli 2015 (2015.07.25).
 EOF

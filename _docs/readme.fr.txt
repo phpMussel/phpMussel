@@ -79,35 +79,25 @@
     que vous êtes heureux avec) sera suffira. Vous avant commencer
     téléchargement au serveur, continuer lecture..
 
- 2) Ouvrir "phpmussel.php", cherchez pour la ligne commençant par "$vault=",
-    et remplacez la string entre guillemets suivantes sur cette ligne avec le
-    véritable exact emplacement du le répertoire "vault" de phpMussel. Vous
-    aurez remarqué un tel dossier dans l'archive que vous avez téléchargé (sauf
-    si vous sentez à nouveau codage de l'ensemble du script, vous aurez besoin
-    à maintenir la même structure de fichiers et de répertoires comme il était
-    dans l'origine archive). Ce "vault" répertoire devrait être d'un niveau
-    au-dessus le répertoire que le fichier "phpmussel.php" existera po.
-    Enregistrer le fichier, fermer.
-
- 3) (En option; Fortement recommandé pour l'avancés utilisateurs, mais pas
-    recommandé pour les débutants ou pour les novices): Ouvrir "phpmussel.ini"
+ 2) Facultativement (fortement recommandé pour l'avancés utilisateurs, mais pas
+    recommandé pour les débutants ou pour les novices), ouvrir "phpmussel.ini"
     (situé à l'intérieur de "vault") - Ce fichier contient toutes les
     directives disponible pour phpMussel. Au-dessus de chaque option devrait
     être un bref commentaire décrivant ce qu'il fait et ce qu'il est pour.
     Réglez ces options comme bon vous semble, selon ce qui est approprié pour
     votre particulière configuration. Enregistrer le fichier, fermer.
 
- 4) Télécharger les contenus (phpMussel et ses fichiers) à le répertoire vous
+ 3) Télécharger les contenus (phpMussel et ses fichiers) à le répertoire vous
     aviez décidé plus tôt (vous n'avez pas besoin les *.txt/*.md fichiers,
     mais surtout, vous devriez télécharger tous les fichiers sur le serveur).
 
- 5) CMHOD la "vault" répertoire à "777". Le principal répertoire qui est
+ 4) CMHOD la "vault" répertoire à "777". Le principal répertoire qui est
     stocker le contenu (celui que vous avez choisi plus tôt), généralement,
     peut être laissé seul, mais CHMOD état devrait être vérifié si vous avez eu
     problèmes d'autorisations dans le passé sur votre système (par défaut,
     devrait être quelque chose comme "755").
 
- 6) Suivant, vous aurez besoin de "crochet" phpMussel à votre système ou CMS.
+ 5) Suivant, vous aurez besoin de "crochet" phpMussel à votre système ou CMS.
     Il est plusieurs façons vous pouvez "crochet" phpMussel à votre système ou
     CMS, mais le plus simple est à simplement inclure le script au début d'un
     fichier de la base de données de votre système ou CMS (un qui va
@@ -129,7 +119,7 @@
     locale, pas l'adresse HTTP; il ressemblera l'adresse de "vault" mentionné
     précédemment).
 
-    <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
+    <?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>
 
     Enregistrer le fichier, fermer, rétélécharger.
 
@@ -145,7 +135,7 @@
 
     php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
 
- 7) À ce stade, vous avez fini! Cependant, vous devriez probablement tester ce
+ 6) À ce stade, vous avez fini! Cependant, vous devriez probablement tester ce
     pour s'assurer qu'il fonctionne correctement. Pour tester les protections,
     essayez de télécharger les tester fichiers inclus dans l'empaqueter sous
     "_testfiles" à votre website par votre habituelles navigateur basé méthodes
@@ -177,35 +167,25 @@
     installer php sur votre machine, suivant les instructions fournies par le
     programme d'installation de php.
 
- 2) Ouvrir "phpmussel.php", chercher pour la ligne commençant par "$vault=",
-    et remplacer la string entre guillemets suivantes sur cette ligne avec le
-    véritable exact emplacement du le répertoire "vault" de phpMussel. Vous
-    aurez remarqué un tel dossier dans l'archive que vous avez téléchargé (sauf
-    si vous sentez à nouveau codage de l'ensemble du script, vous aurez besoin
-    à maintenir la même structure de fichiers et de répertoires comme il était
-    dans l'origine archive). Ce "vault" répertoire devrait être d'un niveau
-    au-dessus le répertoire que le fichier "phpmussel.php" existera po.
-    Enregistrer le fichier, fermer.
-
- 4) (En option; Fortement recommandé pour l'avancés utilisateurs, mais pas
-    recommandé pour les débutants ou pour les novices): Ouvrir "phpmussel.ini"
+ 3) Facultativement (fortement recommandé pour l'avancés utilisateurs, mais pas
+    recommandé pour les débutants ou pour les novices), ouvrir "phpmussel.ini"
     (situé à l'intérieur de "vault") - Ce fichier contient toutes les
     directives disponible pour phpMussel. Au-dessus de chaque option devrait
     être un bref commentaire décrivant ce qu'il fait et ce qu'il est pour.
     Réglez ces options comme bon vous semble, selon ce qui est approprié pour
     votre particulière configuration. Enregistrer le fichier, fermer.
 
- 5) (En option) Vous pouvez faire utilisant phpMussel en CLI mode plus facile
-    pour vous-même par la création d'un fichier de commandes pour automatique
-    charger php et phpMussel. Pour ce faire, ouvrir un éditeur de texte comme
-    Notepad ou Notepad++, taper le complet chemin vers le "php.exe" fichier
-    dans le répertoire de votre installation de PHP, suivi d'un espace, suivi
-    par le complet chemin vers le "phpmussel.php" fichier dans le répertoire de
-    votre installation de phpMussel, enregistrer le fichier avec un ".bat"
-    suffixe quelque part que vous trouverez facile, et double-cliquer sur ce
-    fichier pour exécuter phpMussel à l'avenir.
+ 4) Facultativement, vous pouvez faire utilisant phpMussel en CLI mode plus
+    facile pour vous-même par la création d'un fichier de commandes pour
+    automatique charger php et phpMussel. Pour ce faire, ouvrir un éditeur de
+    texte comme Notepad ou Notepad++, taper le complet chemin vers le "php.exe"
+    fichier dans le répertoire de votre installation de PHP, suivi d'un espace,
+    suivi par le complet chemin vers le "phpmussel.php" fichier dans le
+    répertoire de votre installation de phpMussel, enregistrer le fichier avec
+    un ".bat" suffixe quelque part que vous trouverez facile, et double-cliquer
+    sur ce fichier pour exécuter phpMussel à l'avenir.
 
- 6) À ce stade, vous avez fini! Mais, vous devriez probablement tester ce
+ 5) À ce stade, vous avez fini! Mais, vous devriez probablement tester ce
     pour s'assurer qu'il fonctionne correctement. Pour tester phpMussel,
     exécuter phpMussel et essayer d'analyser le "_testfiles" répertoire fourni
     avec le paquet.
@@ -1768,5 +1748,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 22 Juillet 2015 (2015.07.22).
+Dernière Réactualisé: 25 Juillet 2015 (2015.07.25).
 EOF

@@ -78,35 +78,25 @@
     quale si sceglie, purché sia qualcosa sicuro e qualcosa si è soddisfatti)
     sarà sufficiente. Prima di iniziare il caricamento, continua a leggere..
 
- 2) Apri "phpmussel.php", cercare la linea che inizia con "$vault=", e
-    sostituire la stringa tra le seguenti virgolette su quella linea con la
-    vera esatta posizione della "vault" cartella di phpMussel. Avrete notato un
-    tale cartella nell'archivio avresti scaricato (a meno che si sente fino a
-    ri-codifica l'intero script, avrete bisogno di mantenere la stessa
-    struttura di file e cartelle come era nell'archivio originariamente).
-    Questa cartella "vault" dovrebbe essere di un ulteriore cartella livello
-    della cartella che il file "phpmussel.php" esiste dentro. Salvare il file,
-    chiudere.
-
- 3) (Opzionale; Fortemente consigliata per gli avanzati utenti, Ma non è
-    consigliata per i principianti o per gli inesperti): Apri "phpmussel.ini"
+ 2) Facoltativamente (fortemente consigliata per gli avanzati utenti, Ma non è
+    consigliata per i principianti o per gli inesperti), apri "phpmussel.ini"
     (situato della "vault") - Questo file contiene tutte le direttive
     disponibili per phpMussel. Sopra ogni opzione dovrebbe essere un breve
     commento che descrive ciò che fa e ciò che è per. Regolare queste opzioni
     come meglio credi, come per ciò che è appropriato per la vostre particolare
     configurazione. Salvare il file, chiudere.
 
- 4) Carica i contenuti (phpMussel e le sue file) nella cartella che ci deciso
+ 3) Carica i contenuti (phpMussel e le sue file) nella cartella che ci deciso
     in precedenza (non è necessario includere i *.txt/*.md file, ma altrimenti,
     si dovrebbe caricare tutto).
 
- 5) CMHOD la cartella "vault" a "777". La principale cartella che memorizzare
+ 4) CMHOD la cartella "vault" a "777". La principale cartella che memorizzare
     il contenuti (quello scelto in precedenza), solitamente, può essere
     lasciato solo, Ma lo CHMOD stato dovrebbe essere controllato se hai avuto
     problemi di autorizzazioni in passato sul vostro sistema (per predefinita,
     dovrebbe essere qualcosa simile a "755").
 
- 6) Successivamente, sarà necessario collegare phpMussel al vostro sistema o
+ 5) Successivamente, sarà necessario collegare phpMussel al vostro sistema o
     CMS. Ci sono diversi modi in cui è possibile collegare script come
     phpMussel al vostre sistema o CMS, Ma il più semplice è di inserire lo
     script all'inizio di un file del vostre sistema o CMS (quello che sarà
@@ -126,7 +116,7 @@
     l'esatto indirizzo della "phpmussel" file (indirizzo locale, non
     l'indirizzo HTTP; sarà simile all'indirizzo citato in precedenza).
 
-    <?php require("/user_name/public_html/phpmussel/phpmussel.php"); ?>
+    <?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>
 
     Salvare il file, chiudere, caricare di nuovo.
 
@@ -142,7 +132,7 @@
 
     php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"
 
- 7) A questo punto, il gioco è fatto! Ma, si dovrebbe probabilmente verificare
+ 6) A questo punto, il gioco è fatto! Ma, si dovrebbe probabilmente verificare
     il lavoro svolto per assicurarsi che funzioni correttamente. Per testare le
     protezioni di file caricamente, tentare di caricare i test file inclusi
     nella pacchetto all'interno "_testfiles" al vostro web sito via i vostri
@@ -176,25 +166,15 @@
     vostra macchina seguendo le istruzioni fornite dal php installazione
     programma.
 
- 3) Apri "phpmussel.php", cercare la linea che inizia con "$vault=", e
-    sostituire la stringa tra le seguenti virgolette su quella linea con la
-    vera esatta posizione della "vault" cartella di phpMussel. Avrete notato un
-    tale cartella nell'archivio avresti scaricato (a meno che si sente fino a
-    ri-codifica l'intero script, avrete bisogno di mantenere la stessa
-    struttura di file e cartelle come era nell'archivio originariamente).
-    Questa cartella "vault" dovrebbe essere di un ulteriore cartella livello
-    della cartella che il file "phpmussel.php" esiste dentro. Salvare il file,
-    chiudere.
-
- 4) (Opzionale; Fortemente consigliata per gli avanzati utenti, Ma non è
-    consigliata per i principianti o per gli inesperti): Apri "phpmussel.ini"
+ 3) Facoltativamente (fortemente consigliata per gli avanzati utenti, ma non è
+    consigliata per i principianti o per gli inesperti), apri "phpmussel.ini"
     (situato della "vault") - Questo file contiene tutte le direttive
     disponibili per phpMussel. Sopra ogni opzione dovrebbe essere un breve
     commento che descrive ciò che fa e ciò che è per. Regolare queste opzioni
     come meglio credi, come per ciò che è appropriato per la vostre particolare
     configurazione. Salvare il file, chiudere.
 
- 5) (Opzionale) Si può rendere utilizzando di phpMussel in CLI modalità
+ 4) Facoltativamente, si può rendere utilizzando di phpMussel in CLI modalità
     facile per voi stessi per creando un batch file ai fini della
     automaticamente caricare php e phpMussel. Per fare questo, aprire un testo
     editor come Notepad o Notepad++, digitare il completo percorso della
@@ -204,7 +184,7 @@
     ".bat" estensione qualche parte che lo troverete facilmente, e fare doppio
     clic su tale file per eseguire phpMussel in futuro.
 
- 6) A questo punto, il gioco è fatto! Ma, si dovrebbe probabilmente verificare
+ 5) A questo punto, il gioco è fatto! Ma, si dovrebbe probabilmente verificare
     il lavoro svolto per assicurarsi che funzioni correttamente. Per testare
     phpMussel, eseguire phpMussel e prova scansionare la "_testfiles" cartella
     fornito con il pacchetto.
@@ -1266,11 +1246,11 @@
    "max_recursion"
    - Massimo ricorsione profondità limite per gli archivi. Predefinito = 10.
    "block_encrypted_archives"
-   - Trova e blocco criptato archivi? Perché phpMussel non è in grado di
+   - Rilevi e blocchi archivi criptati? Perché phpMussel non è in grado di
      verifica del contenuto degli archivi criptati, è possibile che la archivi
      criptati può essere usato da un attaccante verifieracome mezzo di tenta di
      bypassare phpMussel, verificatore anti-virus e altri tali protezioni.
-     Istruire phpMussel di bloccare qualsiasi archivi che si trovato criptato
+     Istruire phpMussel di bloccare qualsiasi archivi criptati che si trovato
      potrebbe potenzialmente contribuire a ridurre il rischio associato a
      questi tali possibilità. 0 - No, 1 - Sì [Predefinito].
  "attack_specific" (Categoria)
@@ -1447,16 +1427,16 @@
          bloccarlo o segnalarlo come maligno.
      1 - File vengono considerati sospetti se, dopo essere sottoposto a
          scansione da phpMussel utilizzando i propri firme, essi sono
-         considerati avere un peso euristica, se sono noti per essere eseguibile
-         (PE file, Mach-O file, ELF/Linux file, ecc), o se sono noti per essere
-         di un formato che potrebbe contenere dati eseguibile (come le macro
-         eseguibili, DOC/DOCX file, archivio file come RAR, ZIP ed ecc). Questa
-         è l'impostazione predefinita e il livello di sospetto consigliato di
-         applicare, indicando effettivamente che l'uso del Virus Total API
-         sarebbe per un secondo parere per quando phpMussel inizialmente non
-         trova nulla maligno o sbagliato in un file che ritiene di essere
-         sospettosi e quindi sarebbe altrimenti non normalmente bloccarlo o
-         segnalarlo come maligno.
+         considerati avere un peso euristica, se sono noti per essere
+         eseguibile (PE file, Mach-O file, ELF/Linux file, ecc), o se sono noti
+         per essere di un formato che potrebbe contenere dati eseguibile (come
+         le macro eseguibili, DOC/DOCX file, archivio file come RAR, ZIP ed
+         ecc). Questa è l'impostazione predefinita e il livello di sospetto
+         consigliato di applicare, indicando effettivamente che l'uso del Virus
+         Total API sarebbe per un secondo parere per quando phpMussel
+         inizialmente non trova nulla maligno o sbagliato in un file che
+         ritiene di essere sospettosi e quindi sarebbe altrimenti non
+         normalmente bloccarlo o segnalarlo come maligno.
      2 - Tutti i file vengono considerati sospetti e devono essere sottoposti a
          scansione utilizzando il Virus Total API. Generalmente, io non
          raccomando di applicarla questo livello di sospetti, a causa del
@@ -1740,5 +1720,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 22 Luglio 2015 (2015.07.22).
+Ultimo Aggiornamento: 25 Luglio 2015 (2015.07.25).
 EOF

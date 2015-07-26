@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Dutch/Nederlandse Language Data (11th July 2015).
+ This File: phpMussel Dutch/Nederlandse Language Data (26th July 2015).
  <%phpMussel%/vault/lang/lang.nl.inc>
 
 */
@@ -25,7 +25,7 @@ $MusselConfig['lang']['bad_command']='Ik begrijp niet dat bevel, sorry.';
 $MusselConfig['lang']['cli_commands']=" q\n - Verlaten CLI.\n - Aliassen: quit, exit.\n md5_file\n - Genereer MD5 handtekeningen van bestanden [Syntaxis: md5_file bestandsnaam].\n - Alias: m.\n md5\n - Genereer MD5 handtekening van string [Syntaxis: md5 string].\n hex_encode\n - Converteren van binaire string naar hexadecimaal [Syntaxis: hex_encode string].\n - Alias: x.\n hex_decode\n - Converteren van hexadecimaal naar binaire string [Syntaxis: hex_decode string].\n base64_encode\n - Converteren van binaire string naar base64 string [Syntaxis: base64_encode string].\n - Alias: b.\n base64_decode\n - Converteren van base64 string naar binaire string [Syntaxis: base64_decode string].\n scan\n - Scannen bestand of map [Syntaxis: scan bestandsnaam].\n - Alias: s.\n update\n - Update phpMussel.\n - Alias: u.\n c\n - Print dit commando lijst.\n";
 $MusselConfig['lang']['cli_failed_to_complete']='Mislukt om het voltooien te scannen';
 $MusselConfig['lang']['cli_is_not_a']=' is niet een bestand of map.';
-$MusselConfig['lang']['cli_ln2']=" Bedankt voor het gebruik van phpMussel, een PHP script ontworpen om detecteren\n trojans, virussen, malware en andere bedreigingen binnen bestanden geüpload\n naar uw systeem waar het script is aangesloten, gebaseerd op ClamAV\n handtekeningen en anderen.\n PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPL V.2 van Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
+$MusselConfig['lang']['cli_ln2']=" Dank u voor het gebruiken van phpMussel, een PHP-script ontwikkeld om trojans,\n virussen, malware en andere bedreigingen te ontworpen, binnen bestanden\n geüpload naar uw systeem waar het script is haakte, gebaseerd op de\n handtekeningen van ClamAV en anderen.\n PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPL V.2 van Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $MusselConfig['lang']['cli_ln3']=" Momenteel phpMussel is in CLI-modus (Commandlijn interface).\n\n Om scannen een bestand of map, typ 'scan', gevolgd door de naam van het\n bestand of de map die u wilt phpMussel te scannen en druk op Enter; Typ 'c' en\n druk op Enter voor een lijst op CLI-modus commandos; Typ 'q' en druk op Enter\n om te stoppen:";
 $MusselConfig['lang']['cli_update_restart']=' Herstarten phpMussel kan nodig zijn voordat updates zichtbaar worden.';
 $MusselConfig['lang']['cli_working']='Aan de gang';
@@ -36,7 +36,7 @@ $MusselConfig['lang']['denied']='Upload Geweigerd!';
 $MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='De upload poging werd geblokkeerd voor de hieronder vermelde redenen / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Gedetecteerd {vn}';
-$MusselConfig['lang']['detected_control_characters']='Gedetecteerd Controle Karakters';
+$MusselConfig['lang']['detected_control_characters']='Gedetecteerd controle karakters';
 $MusselConfig['lang']['encrypted_archive']='Gedetecteerd gecodeerde archief; Gecodeerde archieven niet toegestaan';
 $MusselConfig['lang']['failed_to_access']='Mislukt om toegang ';
 $MusselConfig['lang']['file']='Bestand';
@@ -64,7 +64,7 @@ $MusselConfig['lang']['scan_chameleon']='{x} kameleon aanval gedetecteerd';
 $MusselConfig['lang']['scan_checking']='Verifiëren';
 $MusselConfig['lang']['scan_checking_contents']='Succes! Gaan tot verifiëren de inhoud.';
 $MusselConfig['lang']['scan_command_injection']='Command injectie poging gedetecteerd';
-$MusselConfig['lang']['scan_complete']='Compleet';
+$MusselConfig['lang']['scan_complete']='Voltooid';
 $MusselConfig['lang']['scan_extensions_missing']='Mislukt (ontbrekende vereiste extensies)!';
 $MusselConfig['lang']['scan_filename_manipulation_detected']='Bestandsnaam manipulatie ontdekt';
 $MusselConfig['lang']['scan_map_corrupted']='Handtekening kaart beschadigd';
@@ -93,7 +93,7 @@ $MusselConfig['lang']['update_err6']='Slecht data!';
 $MusselConfig['lang']['update_err7']='Slecht checksum!';
 $MusselConfig['lang']['update_failed']='Mislukt.';
 $MusselConfig['lang']['update_fetch']='Proberen te halen versie gegevens van';
-$MusselConfig['lang']['update_lock_detected']='Update lock detected: Kan niet doorgaan. Controleren op updates corrupte of probeer het later opnieuw.';
+$MusselConfig['lang']['update_lock_detected']='Update slot gedetecteerd: Kan niet doorgaan. Controleren op updates corrupte of probeer later opnieuw.';
 $MusselConfig['lang']['update_not']='NIET {x}';
 $MusselConfig['lang']['update_not_available']='Geen script bijwerk beschikbaar op dit moment.';
 $MusselConfig['lang']['update_not_possible']='Een script bijwerk zijn beschikbaar, maar kan niet worden volledig bijgewerkt met deze versie van de bijwerkscript. Alstublieft bijwerken handmatig.';
