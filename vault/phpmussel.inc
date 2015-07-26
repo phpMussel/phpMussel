@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7a-BETA (20th July 2015) Core Script.
+ This File: phpMussel v0.7a-BETA (27th July 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -6901,7 +6901,7 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 					}
 				$TarFile=array();
 				// $TarFile['blocksize']=ceil($eS/512);
-				$TarFile['file']=array('filename'=>$ofn,'filesize'=>$eS,'rawdata'=>$in,'crc32'=>$zCRC,'fncrc32'=>$fnCRC,'md5'=>$md5,'directory'=>false);
+				$TarFile['file']=array('filename'=>$ofn,'filesize'=>$eS,'rawdata'=>$in,'crc32'=>$zCRC,'fncrc32'=>$fnCRC,'md5'=>md5($in),'directory'=>false);
 				if(strtolower(substr($TarFile['file']['filename'],-4))!=='.tar')$TarFile['file']['filename']=(substr_count($TarFile['file']['filename'],'.')>0)?substrbl($TarFile['file']['filename'],'.'):$TarFile['file']['filename'];
 				$TarFile['file']['filename']=(substr_count($TarFile['file']['filename'],"\x5c")>0)?substral($TarFile['file']['filename'],"\x5c"):$TarFile['file']['filename'];
 				$TarFile['file']['filename']=(substr_count($TarFile['file']['filename'],"\x2f")>0)?substral($TarFile['file']['filename'],"\x2f"):$TarFile['file']['filename'];
@@ -7229,7 +7229,7 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 						{
 						$zmds=@explode(':',$GLOBALS['memCache']['metadata_clamav.cvd'][$zmdi]);
 						$zmds[0]=vn_shorthand($zmds[0]);
-						$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
+						$zmds[2]=(!isset($zmds[2]))?'':preg_replace('/[^a-z0-9]/','',$zmds[2]);
 						if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 							{
 							if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eS&&$zmds[2]==$zCRC)
@@ -7274,7 +7274,7 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 						{
 						$zmds=@explode(':',$GLOBALS['memCache']['metadata_custom.cvd'][$zmdi]);
 						$zmds[0]=vn_shorthand($zmds[0]);
-						$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
+						$zmds[2]=(!isset($zmds[2]))?'':preg_replace('/[^a-z0-9]/','',$zmds[2]);
 						if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 							{
 							if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eS&&$zmds[2]==$zCRC)
@@ -7319,7 +7319,7 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 						{
 						$zmds=@explode(':',$GLOBALS['memCache']['metadata_mussel.cvd'][$zmdi]);
 						$zmds[0]=vn_shorthand($zmds[0]);
-						$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
+						$zmds[2]=(!isset($zmds[2]))?'':preg_replace('/[^a-z0-9]/','',$zmds[2]);
 						if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 							{
 							if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eS&&$zmds[2]==$zCRC)
@@ -7497,7 +7497,7 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 								{
 								$zmds=@explode(':',$GLOBALS['memCache']['metadata_clamav.cvd'][$zmdi]);
 								$zmds[0]=vn_shorthand($zmds[0]);
-								$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
+								$zmds[2]=(!isset($zmds[2]))?'':preg_replace('/[^a-z0-9]/','',$zmds[2]);
 								if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 									{
 									if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eFS&&$zmds[2]==$zCRC)
@@ -7532,7 +7532,7 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 								{
 								$zmds=@explode(':',$GLOBALS['memCache']['metadata_custom.cvd'][$zmdi]);
 								$zmds[0]=vn_shorthand($zmds[0]);
-								$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
+								$zmds[2]=(!isset($zmds[2]))?'':preg_replace('/[^a-z0-9]/','',$zmds[2]);
 								if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 									{
 									if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eFS&&$zmds[2]==$zCRC)
@@ -7567,7 +7567,7 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 								{
 								$zmds=@explode(':',$GLOBALS['memCache']['metadata_mussel.cvd'][$zmdi]);
 								$zmds[0]=vn_shorthand($zmds[0]);
-								$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
+								$zmds[2]=(!isset($zmds[2]))?'':preg_replace('/[^a-z0-9]/','',$zmds[2]);
 								if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 									{
 									if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eFS&&$zmds[2]==$zCRC)
