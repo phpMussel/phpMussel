@@ -89,8 +89,15 @@ Anything less than sub-minor:
   updating phpMussel.
   Refer github.com/Maikuolan/phpMussel/issues/55
 
+- [2015.07.27; Bug-fix; Maikuolan/DanielRuf]: Fixed a handful of small bugs
+  found using PHPUnit.
+  Refer github.com/Maikuolan/phpMussel-extras/issues/3
+
+- [2015.07.30; Bug-fix; Maikuolan]: Bug found in the code for assigning
+  variables through switch.dat; Fixed.
+
 Maikuolan,
-25th July 2015.
+30th July 2015.
 
 === Version/Release 0.7 (Previous Release: 0.6j) ===
 MINOR RELEASE; Updated to the latest signatures set (55+20665+7).

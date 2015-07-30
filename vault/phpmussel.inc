@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7a-BETA (27th July 2015) Core Script.
+ This File: phpMussel v0.7a-BETA (30th July 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -1943,7 +1943,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 		$xsig=$GLOBALS['memCache']['switch.dat'][$i];
 		if(strlen($xsig)<8)continue;
 		if(!substr_count($xsig,$GLOBALS['linebreak'])||!substr_count($xsig,';')||!substr_count($xsig,':'))continue;
-		$switch=@explode('=',substral($xsig,';'));
+		$switch=@explode('=',preg_replace('/[^\x20-\xff]/','',substral($xsig,';')));
 		if(!strlen($switch[0]))continue;
 		$theswitch=$switch[0];
 		$xsig=@explode(';',substrbl($xsig,';'));
