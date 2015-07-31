@@ -24,6 +24,7 @@ $fileswitch:unassigned;FN:\.[Aa][Ss][Pp].?$;fileswitch=asp
 $fileswitch:unassigned;FN:\.[Jj][Ss]([Pp]|[Oo][Nn])?$;fileswitch=js
 $fileswitch:unassigned;FN:\.[Pp][Yy].?$;fileswitch=py
 $fileswitch:unassigned;FN:\.[Jj][Aa]([Vv][Aa]|[Rr])$;fileswitch=java
+$fileswitch:unassigned;FD-NORM:23212f7573722f62696e2f7065726c:A:15;fileswitch=perl
 $fileswitch:unassigned;FN:\.[Pp]([Ee][Rr])?[Ll]$;fileswitch=perl
 $fileswitch:unassigned;FD:43723234:A:4;fileswitch=chrome
 $fileswitch:unassigned;FD:4372656174654f626a656374;fileswitch=vb
