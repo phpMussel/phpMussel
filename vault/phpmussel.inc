@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7a-BETA (30th July 2015) Core Script.
+ This File: phpMussel v0.7a-BETA (1st August 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -776,6 +776,10 @@ if(!function_exists('vn_shorthand'))
 			else if($n[1]===13)$out.='Perl.';
 			else if($n[1]===14)$out.='Ruby.';
 			else if($n[1]===15)$out.='INF.';
+			}
+		if($n[0]===3)
+			{
+			if($n[1]===0)$out.='CGI.';
 			}
 		$n=split_nibble($vn[3]);
 		if($n[0]===1)
