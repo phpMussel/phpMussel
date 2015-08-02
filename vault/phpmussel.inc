@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7a-BETA (1st August 2015) Core Script.
+ This File: phpMussel v0.7a-BETA (2nd August 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -1979,18 +1979,18 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 					if($xsig[$sxi][2]=='A')
 						{
 						if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,',','.$xsig[$sxi][0].','))continue 2;
-						if($xsig[$sxi][0]=='FD')if(!substr_count("\x01".substr($str_hex,0,$xsig[$sxi][3]),"\x01".$xsig[$sxi][1]))continue 2;
-						if($xsig[$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$sxi][1].'/i',substr($str_hex,0,$xsig[$sxi][3])))continue 2;
-						if($xsig[$sxi][0]=='FD-NORM')if(!substr_count("\x01".substr($str_norm,0,$xsig[$sxi][3]),"\x01".$xsig[$sxi][1]))continue 2;
-						if($xsig[$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$sxi][1].'/i',substr($str_norm,0,$xsig[$sxi][3])))continue 2;
+						if($xsig[$sxi][0]=='FD')if(!substr_count("\x01".substr($str_hex,0,$xsig[$sxi][3]*2),"\x01".$xsig[$sxi][1]))continue 2;
+						if($xsig[$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$sxi][1].'/i',substr($str_hex,0,$xsig[$sxi][3]*2)))continue 2;
+						if($xsig[$sxi][0]=='FD-NORM')if(!substr_count("\x01".substr($str_norm,0,$xsig[$sxi][3]*2),"\x01".$xsig[$sxi][1]))continue 2;
+						if($xsig[$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$sxi][1].'/i',substr($str_norm,0,$xsig[$sxi][3]*2)))continue 2;
 						}
 					else
 						{
 						if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,',','.$xsig[$sxi][0].','))continue 2;
-						if($xsig[$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$sxi][2],$xsig[$sxi][3]),$xsig[$sxi][1]))continue 2;
-						if($xsig[$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_hex,$xsig[$sxi][2],$xsig[$sxi][3])))continue 2;
-						if($xsig[$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$sxi][2],$xsig[$sxi][3]),$xsig[$sxi][1]))continue 2;
-						if($xsig[$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_norm,$xsig[$sxi][2],$xsig[$sxi][3])))continue 2;
+						if($xsig[$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$sxi][2]*2,$xsig[$sxi][3]*2),$xsig[$sxi][1]))continue 2;
+						if($xsig[$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_hex,$xsig[$sxi][2]*2,$xsig[$sxi][3]*2)))continue 2;
+						if($xsig[$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$sxi][2]*2,$xsig[$sxi][3]*2),$xsig[$sxi][1]))continue 2;
+						if($xsig[$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_norm,$xsig[$sxi][2]*2,$xsig[$sxi][3]*2)))continue 2;
 						}
 					}
 				else
@@ -2007,10 +2007,10 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 					else
 						{
 						if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,',','.$xsig[$sxi][0].','))continue 2;
-						if($xsig[$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$sxi][2]),$xsig[$sxi][1]))continue 2;
-						if($xsig[$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_hex,$xsig[$sxi][2])))continue 2;
-						if($xsig[$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$sxi][2]),$xsig[$sxi][1]))continue 2;
-						if($xsig[$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_norm,$xsig[$sxi][2])))continue 2;
+						if($xsig[$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$sxi][2]*2),$xsig[$sxi][1]))continue 2;
+						if($xsig[$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_hex,$xsig[$sxi][2]*2)))continue 2;
+						if($xsig[$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$sxi][2]*2),$xsig[$sxi][1]))continue 2;
+						if($xsig[$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_norm,$xsig[$sxi][2]*2)))continue 2;
 						}
 					}
 				}

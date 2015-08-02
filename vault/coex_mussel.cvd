@@ -13,23 +13,47 @@ $md5:eba1e255e46ed6d037717ac5c7f7e888;$str_len:3469;$fourcc:47494638;0/Securit
 $md5:0df9eed1da986b5ffd2d9ea4c0a7dbe9;$str_len:87875;FD:ffd8ff:A:3;0/Indonesia-00
 $md5:90b93d26ac3670c333b8d5da7806f7ba;$str_len:3056;$fourcc:47494638;0/AliHAwleRy
 === Some additional chameleon attack signatures ===
+$fourcc:47494638;FD:(0[ad]|2[345]|3c):6;1;5GIF-00
 $fourcc:4c000000;FS-MIN:8192;5LNK-00
+$xt:asp;!$fileswitch:asp;5ASP-00
 $xt:avi;FD-RX:(504b|526172|4d5a):A:3;5AVI-00
+$xt:bat;!$fileswitch:bat;5BAT-00
+$xt:btm;!$fileswitch:bat;5BAT-01
+$xt:cgi;!$fileswitch:cgi;5CGI-00
+$xt:cmd;!$fileswitch:bat;5BAT-02
 $xt:divx;FD-RX:(504b|526172|4d5a):A:3;5DIVX-00
+$xt:jar;!$fileswitch:java;5Java-01
+$xt:java;!$fileswitch:java;5Java-00
+$xt:js;!$fileswitch:js;5JS-00
+$xt:json;!$fileswitch:js;5JSON-00
+$xt:jsp;!$fileswitch:js;5JS-01
+$xt:lnk;!$fileswitch:lnk;5LNK-03
 $xt:lnk;FD-RX:(504b|526172|4d5a):A:3;5LNK-02
 $xt:lnk;FS-MIN:8192;5LNK-01
+$xt:mp3;!$fileswitch:mp3;5MP3-01
 $xt:mp3;FD-RX:(504b|526172|4d5a):A:3;5MP3-00
 $xt:mp4;FD-RX:(504b|526172|4d5a):A:3;5MP4-00
 $xt:mpeg;FD-RX:(504b|526172|4d5a):A:3;5MPEG-00
 $xt:mpg;FD-RX:(504b|526172|4d5a):A:3;5MPG-00
 $xt:ogg;FD-RX:(504b|526172|4d5a):A:3;5OGG-00
+$xt:perl;!$fileswitch:perl;5Perl-01
 $xt:pif;FD-RX:(504b|526172|4d5a):A:3;5PIF-00
+$xt:pl;!$fileswitch:perl;5Perl-00
+$xt:py;!$fileswitch:py;5Python-00
 $xt:swf;FD-RX:(504b|526172|4d5a):A:3;5SWF-00
+$xt:vb;!$fileswitch:vb;5VB-00
+$xt:vbe;!$fileswitch:vb;5VB-01
+$xt:vbs;!$fileswitch:vb;5VB-02
+$xt:vbx;!$fileswitch:vb;5VB-03
 $xt:wma;FD-RX:(504b|526172|4d5a):A:3;5WMA-00
 $xt:wmf;FD-RX:(504b|526172|4d5a):A:3;5WMF-00
 $xt:wmv;FD-RX:(504b|526172|4d5a):A:3;5WMV-00
 $xt:xls;FD-RX:(504b|526172|4d5a):A:3;5XLS-00
 $xt:xml;FD-RX:(504b|526172|4d5a):A:3;5XML-00
+$xts:php*;$fileswitch:asp;5PHP-01
+$xts:php*;$fileswitch:perl;5PHP-02
+$xts:php*;$fileswitch:py;5PHP-03
+$xts:php*;$fileswitch:vb;5PHP-00
 $xts:php*;FD:3c3f:A:2;FD-RX:2c2225[57]8;FD-RX:25(3.3.3.25[57]83|[57]83.3.253.3).3;FD-RX:(2923|233e);FD:293b;0 'X-05
 === Archival and compression related signatures ===
 .:: Theoretical
@@ -2748,6 +2772,19 @@ $is_pe:1;META:\x3bSectionName\x3a\x2eopcandy;4OpenCandy-00
 $xt:js;FD-RX:[57]6[46]1[57]2205f245f.{2,128}3d;FD-RX:(25[57]4[46]5[46]d[57]025[57]c[57]835|[46]4[46]f[57]7[46]e[46]c[46]f[46]1[46]42d[46]1[57]4[57]4[46]1[46]3[46]8|575363726970742e5368656c6c|457870616e64456e7669726f6e6d656e74537472696e6773|[46]d[57]3[57]8[46]d[46]c322e[57]8[46]d[46]c[46]8[57]4[57]4[57]0|536372697074696e672e46696c6553797374656d4f626a656374|41444f44422e53747265616d|526573706f6e7365426f6479|[46]8[57]4[57]4[57]03a2f2f|2e636f6d2f776f72642e706466|6174746163686d656e742e646f63|2e636f6d2f3430332e766c74|736563757265642e626174);FD:3d5f245f;0&C-00
 .:: 2015/07
 $md5:46451357ce76c92eeca41fef643c2b7f;$sha:ea77b6ccd6852f12e10ee7deb14df44786435bd7;$str_len:1988;0&CCW-00
+.:: 2015/08
+$xt:asp;FD-NORM:6576616c207265717565737428;0"-X-00
+$xt:cfm;FD-NORM:782e70757428746f62696e61727928746f62617365363428222d3e2226227c2229292c6a61766163617374;0CFM.CaiDao(菜刀)-00
+$xts:php*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-00
+$xt:js;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-01
+$xt:jsp;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-02
+$xt:vb;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-03
+$xt:vbe;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-04
+$xt:vbs;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-05
+$xt:vbx;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-06
+$xts:ash*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-07
+$xts:asm*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-08
+$xts:asp*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-09
 === Misc. Ransomware ===
 .:: 2015/03
 $xt:js;$phase:archive;FD-RX:[46]8[57]4[57]4[57]0([57]3)?3a.{6,1024}2e[46]a[57]0([46]5)?[46]7;0!CryptoLocker-00
@@ -2761,6 +2798,9 @@ $md5:8d5d237ab9e687bff8faccf247dee988;$sha:d7535e71e97a145e8cb70abafe06ca72e4edb
 $md5:5137a258d7848f6aa42aa3d2acdb8685;$sha:6f1bd97edead5d20772c579d262ea51dc49e9784;$str_len:531897;8"Youku/优酷-03
 $md5:8066d73d5cea43a5b0dd9534310cca5c;$sha:e67b70b045564e85fe96b5371cdbf2c9c1345537;$str_len:406776;8"Youku/优酷-04
 $md5:398a2b535ce06231d3ba18aa4b52d1b1;$sha:71ffb0d648d369e00962972d1d6f44d8f4967dcb;$str_len:406776;8"Youku/优酷-05
+=== Potentially dangerous garbage data ===
+.:: 2015/08
+$xt:asp;FD-RX:(0.01|010):A:2;0"Corrupt-00
 === Misc. Others ===
 .:: 2015/02
 $md5:1c76d4077a551468e834fada41673852;$sha:634b4a9f4809ae7bf42bdec468a2fc5ae082e376;$str_len:112128;3(Downloader-00
