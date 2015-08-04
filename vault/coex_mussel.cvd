@@ -1990,6 +1990,10 @@ $md5:622954df09d859d1deb702f725f4ed6b;$sha:63c70a2c29a0e7ca43de090f88c3b4203a639
 $md5:a04881c864b0624a8655ac3c8d00a2fc;$sha:54fe34222acc449abb4342714ed43e52125194c1;$str_len:994987;01507X-496
 $md5:853f1f35ae487be3cf347890e5088d4a;$sha:50e1cc2de2df10b905889d9c8a65f6e372e3de0d;$str_len:683600;3Multiplug-88
 $md5:91dc1db710231010431cd0115369b007;$sha:bc8fb44a53b3553c204cf28c5801191f7dea6b70;$str_len:1418904;3Yontoo-04
+.:: 2015/08
+$md5:a51670d4be49ccaa993a7d7cdae2db49;$sha:1f3a8a5853363f9d37f905d121f331bac665e422;$str_len:997568;0SteamThief-289
+$md5:5adb50f9753fcb2a24ee5ceeabf38480;$sha:7338a11303b7c97ce6548e9b5aa12eb63881df9a;$str_len:753152;0SteamThief-296
+$md5:d1f131af55dea049f5caba2991314575;$sha:bce47368b05fa3a18e76131fb70dc4bf56fc7ebc;$str_len:1517056;0SteamThief-297
 === Infected PE files caught by honeypot trap; Not detected or only partially detected by V.T. ===
 .:: 2015/02
 $md5:174bcf22f37a80c950409c9a44b2e95d;$sha:35298b05ada53008aa8d64bde3313fc3534343d1;$str_len:197632;0DOBJ-00
