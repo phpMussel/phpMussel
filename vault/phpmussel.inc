@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7a-BETA (20th July 2015) Core Script.
+ This File: phpMussel v0.7a-BETA (2nd August 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -776,6 +776,10 @@ if(!function_exists('vn_shorthand'))
 			else if($n[1]===13)$out.='Perl.';
 			else if($n[1]===14)$out.='Ruby.';
 			else if($n[1]===15)$out.='INF.';
+			}
+		if($n[0]===3)
+			{
+			if($n[1]===0)$out.='CGI.';
 			}
 		$n=split_nibble($vn[3]);
 		if($n[0]===1)
@@ -1943,7 +1947,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 		$xsig=$GLOBALS['memCache']['switch.dat'][$i];
 		if(strlen($xsig)<8)continue;
 		if(!substr_count($xsig,$GLOBALS['linebreak'])||!substr_count($xsig,';')||!substr_count($xsig,':'))continue;
-		$switch=@explode('=',substral($xsig,';'));
+		$switch=@explode('=',preg_replace('/[^\x20-\xff]/','',substral($xsig,';')));
 		if(!strlen($switch[0]))continue;
 		$theswitch=$switch[0];
 		$xsig=@explode(';',substrbl($xsig,';'));
@@ -1975,18 +1979,18 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 					if($xsig[$sxi][2]=='A')
 						{
 						if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,',','.$xsig[$sxi][0].','))continue 2;
-						if($xsig[$sxi][0]=='FD')if(!substr_count("\x01".substr($str_hex,0,$xsig[$sxi][3]),"\x01".$xsig[$sxi][1]))continue 2;
-						if($xsig[$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$sxi][1].'/i',substr($str_hex,0,$xsig[$sxi][3])))continue 2;
-						if($xsig[$sxi][0]=='FD-NORM')if(!substr_count("\x01".substr($str_norm,0,$xsig[$sxi][3]),"\x01".$xsig[$sxi][1]))continue 2;
-						if($xsig[$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$sxi][1].'/i',substr($str_norm,0,$xsig[$sxi][3])))continue 2;
+						if($xsig[$sxi][0]=='FD')if(!substr_count("\x01".substr($str_hex,0,$xsig[$sxi][3]*2),"\x01".$xsig[$sxi][1]))continue 2;
+						if($xsig[$sxi][0]=='FD-RX')if(!preg_match('/\A'.$xsig[$sxi][1].'/i',substr($str_hex,0,$xsig[$sxi][3]*2)))continue 2;
+						if($xsig[$sxi][0]=='FD-NORM')if(!substr_count("\x01".substr($str_norm,0,$xsig[$sxi][3]*2),"\x01".$xsig[$sxi][1]))continue 2;
+						if($xsig[$sxi][0]=='FD-NORM-RX')if(!preg_match('/\A'.$xsig[$sxi][1].'/i',substr($str_norm,0,$xsig[$sxi][3]*2)))continue 2;
 						}
 					else
 						{
 						if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,',','.$xsig[$sxi][0].','))continue 2;
-						if($xsig[$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$sxi][2],$xsig[$sxi][3]),$xsig[$sxi][1]))continue 2;
-						if($xsig[$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_hex,$xsig[$sxi][2],$xsig[$sxi][3])))continue 2;
-						if($xsig[$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$sxi][2],$xsig[$sxi][3]),$xsig[$sxi][1]))continue 2;
-						if($xsig[$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_norm,$xsig[$sxi][2],$xsig[$sxi][3])))continue 2;
+						if($xsig[$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$sxi][2]*2,$xsig[$sxi][3]*2),$xsig[$sxi][1]))continue 2;
+						if($xsig[$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_hex,$xsig[$sxi][2]*2,$xsig[$sxi][3]*2)))continue 2;
+						if($xsig[$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$sxi][2]*2,$xsig[$sxi][3]*2),$xsig[$sxi][1]))continue 2;
+						if($xsig[$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_norm,$xsig[$sxi][2]*2,$xsig[$sxi][3]*2)))continue 2;
 						}
 					}
 				else
@@ -2003,10 +2007,10 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 					else
 						{
 						if(!substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,',','.$xsig[$sxi][0].','))continue 2;
-						if($xsig[$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$sxi][2]),$xsig[$sxi][1]))continue 2;
-						if($xsig[$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_hex,$xsig[$sxi][2])))continue 2;
-						if($xsig[$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$sxi][2]),$xsig[$sxi][1]))continue 2;
-						if($xsig[$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_norm,$xsig[$sxi][2])))continue 2;
+						if($xsig[$sxi][0]=='FD')if(!substr_count(substr($str_hex,$xsig[$sxi][2]*2),$xsig[$sxi][1]))continue 2;
+						if($xsig[$sxi][0]=='FD-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_hex,$xsig[$sxi][2]*2)))continue 2;
+						if($xsig[$sxi][0]=='FD-NORM')if(!substr_count(substr($str_norm,$xsig[$sxi][2]*2),$xsig[$sxi][1]))continue 2;
+						if($xsig[$sxi][0]=='FD-NORM-RX')if(!preg_match('/'.$xsig[$sxi][1].'/i',substr($str_norm,$xsig[$sxi][2]*2)))continue 2;
 						}
 					}
 				}
@@ -6901,7 +6905,7 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 					}
 				$TarFile=array();
 				// $TarFile['blocksize']=ceil($eS/512);
-				$TarFile['file']=array('filename'=>$ofn,'filesize'=>$eS,'rawdata'=>$in,'crc32'=>$zCRC,'fncrc32'=>$fnCRC,'md5'=>$md5,'directory'=>false);
+				$TarFile['file']=array('filename'=>$ofn,'filesize'=>$eS,'rawdata'=>$in,'crc32'=>$zCRC,'fncrc32'=>$fnCRC,'md5'=>md5($in),'directory'=>false);
 				if(strtolower(substr($TarFile['file']['filename'],-4))!=='.tar')$TarFile['file']['filename']=(substr_count($TarFile['file']['filename'],'.')>0)?substrbl($TarFile['file']['filename'],'.'):$TarFile['file']['filename'];
 				$TarFile['file']['filename']=(substr_count($TarFile['file']['filename'],"\x5c")>0)?substral($TarFile['file']['filename'],"\x5c"):$TarFile['file']['filename'];
 				$TarFile['file']['filename']=(substr_count($TarFile['file']['filename'],"\x2f")>0)?substral($TarFile['file']['filename'],"\x2f"):$TarFile['file']['filename'];
@@ -7010,7 +7014,8 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 								{
 								$TarFile['sig']=@explode(':',$GLOBALS['memCache']['metadata_clamav.cvd'][$xi]);
 								$TarFile['sig'][0]=vn_shorthand($TarFile['sig'][0]);
-								$TarFile['sig'][2]=preg_replace('/[^a-z0-9]/','',$TarFile['sig'][2]);
+								if(!isset($TarFile['sig'][1]))$TarFile['sig'][1]=0;
+								$TarFile['sig'][2]=(!isset($TarFile['sig'][2]))?'':preg_replace('/[^a-z0-9]/','',$TarFile['sig'][2]);
 								if(!substr_count($GLOBALS['memCache']['greylist'],','.$TarFile['sig'][0].','))
 									{
 									if($TarFile['sig'][0]&&$TarFile['sig'][1]&&$TarFile['sig'][2])if($TarFile['sig'][1]==$TarFile['file']['filesize']&&$TarFile['sig'][2]==$TarFile['file']['crc32'])
@@ -7049,7 +7054,8 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 								{
 								$TarFile['sig']=@explode(':',$GLOBALS['memCache']['metadata_custom.cvd'][$xi]);
 								$TarFile['sig'][0]=vn_shorthand($TarFile['sig'][0]);
-								$TarFile['sig'][2]=preg_replace('/[^a-z0-9]/','',$TarFile['sig'][2]);
+								if(!isset($TarFile['sig'][1]))$TarFile['sig'][1]=0;
+								$TarFile['sig'][2]=(!isset($TarFile['sig'][2]))?'':preg_replace('/[^a-z0-9]/','',$TarFile['sig'][2]);
 								if(!substr_count($GLOBALS['memCache']['greylist'],','.$TarFile['sig'][0].','))
 									{
 									if($TarFile['sig'][0]&&$TarFile['sig'][1]&&$TarFile['sig'][2])if($TarFile['sig'][1]==$TarFile['file']['filesize']&&$TarFile['sig'][2]==$TarFile['file']['crc32'])
@@ -7088,7 +7094,8 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 								{
 								$TarFile['sig']=@explode(':',$GLOBALS['memCache']['metadata_mussel.cvd'][$xi]);
 								$TarFile['sig'][0]=vn_shorthand($TarFile['sig'][0]);
-								$TarFile['sig'][2]=preg_replace('/[^a-z0-9]/','',$TarFile['sig'][2]);
+								if(!isset($TarFile['sig'][1]))$TarFile['sig'][1]=0;
+								$TarFile['sig'][2]=(!isset($TarFile['sig'][2]))?'':preg_replace('/[^a-z0-9]/','',$TarFile['sig'][2]);
 								if(!substr_count($GLOBALS['memCache']['greylist'],','.$TarFile['sig'][0].','))
 									{
 									if($TarFile['sig'][0]&&$TarFile['sig'][1]&&$TarFile['sig'][2])if($TarFile['sig'][1]==$TarFile['file']['filesize']&&$TarFile['sig'][2]==$TarFile['file']['crc32'])
@@ -7229,7 +7236,8 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 						{
 						$zmds=@explode(':',$GLOBALS['memCache']['metadata_clamav.cvd'][$zmdi]);
 						$zmds[0]=vn_shorthand($zmds[0]);
-						$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
+						if(!isset($zmds[1]))$zmds[1]=0;
+						$zmds[2]=(!isset($zmds[2]))?'':preg_replace('/[^a-z0-9]/','',$zmds[2]);
 						if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 							{
 							if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eS&&$zmds[2]==$zCRC)
@@ -7274,7 +7282,8 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 						{
 						$zmds=@explode(':',$GLOBALS['memCache']['metadata_custom.cvd'][$zmdi]);
 						$zmds[0]=vn_shorthand($zmds[0]);
-						$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
+						if(!isset($zmds[1]))$zmds[1]=0;
+						$zmds[2]=(!isset($zmds[2]))?'':preg_replace('/[^a-z0-9]/','',$zmds[2]);
 						if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 							{
 							if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eS&&$zmds[2]==$zCRC)
@@ -7319,7 +7328,8 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 						{
 						$zmds=@explode(':',$GLOBALS['memCache']['metadata_mussel.cvd'][$zmdi]);
 						$zmds[0]=vn_shorthand($zmds[0]);
-						$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
+						if(!isset($zmds[1]))$zmds[1]=0;
+						$zmds[2]=(!isset($zmds[2]))?'':preg_replace('/[^a-z0-9]/','',$zmds[2]);
 						if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 							{
 							if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eS&&$zmds[2]==$zCRC)
@@ -7497,7 +7507,8 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 								{
 								$zmds=@explode(':',$GLOBALS['memCache']['metadata_clamav.cvd'][$zmdi]);
 								$zmds[0]=vn_shorthand($zmds[0]);
-								$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
+								if(!isset($zmds[1]))$zmds[1]=0;
+								$zmds[2]=(!isset($zmds[2]))?'':preg_replace('/[^a-z0-9]/','',$zmds[2]);
 								if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 									{
 									if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eFS&&$zmds[2]==$zCRC)
@@ -7532,7 +7543,8 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 								{
 								$zmds=@explode(':',$GLOBALS['memCache']['metadata_custom.cvd'][$zmdi]);
 								$zmds[0]=vn_shorthand($zmds[0]);
-								$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
+								if(!isset($zmds[1]))$zmds[1]=0;
+								$zmds[2]=(!isset($zmds[2]))?'':preg_replace('/[^a-z0-9]/','',$zmds[2]);
 								if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 									{
 									if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eFS&&$zmds[2]==$zCRC)
@@ -7567,7 +7579,8 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 								{
 								$zmds=@explode(':',$GLOBALS['memCache']['metadata_mussel.cvd'][$zmdi]);
 								$zmds[0]=vn_shorthand($zmds[0]);
-								$zmds[2]=preg_replace('/[^a-z0-9]/','',$zmds[2]);
+								if(!isset($zmds[1]))$zmds[1]=0;
+								$zmds[2]=(!isset($zmds[2]))?'':preg_replace('/[^a-z0-9]/','',$zmds[2]);
 								if(!substr_count($GLOBALS['memCache']['greylist'],','.$zmds[0].','))
 									{
 									if($zmds[0]&&$zmds[1]&&$zmds[2])if($zmds[1]==$eFS&&$zmds[2]==$zCRC)

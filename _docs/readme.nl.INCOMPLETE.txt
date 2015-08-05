@@ -243,7 +243,7 @@
 
  Voor een volledige beschrijving van de soorten van de handtekeningen gebruikt
  door phpMussel tijdens de scans en hoe het omgaat met deze handtekeningen,
- raadpleeg de Handtekeningformaat sectie van dit README bestand.
+ verwijzen naar de Handtekeningformaat sectie van dit README bestand.
 
  Als u tegenkomen valse positieven, als je iets nieuws tegenkomen waarvan u
  denkt dat zou moeten geblokkeerd worden, of voor iets anders met betrekking
@@ -254,7 +254,7 @@
  Om de handtekeningen die bij phpMussel uitschakelen (zoals als je het ervaren
  van een vals positief specifiek voor uw doeleinden dat mag niet normaal van
  Streamline worden verwijderd), verwijzen naar de Greylisting aantekeningen
- binnen de Browser Commando sectie van dit README bestand.
+ binnen de Browser Richtlijnen sectie van dit README bestand.
 
  In aanvulling op de standaard bestand uploaden scannen en de optionele scannen
  van andere bestanden en/of directories opgegeven via de bovenstaande functie,
@@ -278,51 +278,56 @@
 
  phpMussel_mail($body);
 
- Where $body is body of the email message you wish to scan (additionally, you
- could try scanning new forum posts, inbound messages from your online contact
- form or similar). If any error occurs preventing the function from completing
- its scan, a value of -1 will be returned. If the function completes its scan
- and does not match anything, a value of 0 will be returned (meaning clean).
- If, however, the function does match something, a string will be returned
- containing a message declaring what it has matched.
+ Waar $body is het lichaam van het emailbericht dat u wilt scannen (bovendien,
+ je zou kunnen proberen te scannen nieuwe forum posts, inkomende berichten van
+ uw online contactformulier of soortgelijk). Bij een fout voorkomen dat de
+ functie voltooien de scan, een waarde van -1 zal worden geretourneerd. Als de
+ functie voltooit haar scan en niets is vinden, een waarde van 0 zal worden
+ geretourneerd (wat betekent niet-kwaadaardige). Als, echter, iets is vinden
+ door de functie, een string zal worden geretourneerd, met daarin een bericht
+ te verklaren wat het heeft gevonden.
 
- In addition to the above, if you look at the source code, you may notice the
- function phpMusselD() and phpMusselR(). These functions are sub-functions of
- phpMussel(), and should not be called directly outside of that parent function
- (not because of adverse effects.. More-so, simply because it'd serve no
- purpose, and most probably won't actually work correctly anyhow).
+ In aanvulling op het bovenstaande, als je kijkt naar de broncode, je zou
+ kunnen opmerken deze functies: phpMusselD() en phpMusselR(). Deze functies
+ zijn sub-functies van phpMussel(), en moeten niet worden opgeroepen direct
+ buiten die ouder functie (niet vanwege bijwerkingen; meer-zo, simpelweg het
+ zou geen enkel doel dienen, en waarschijnlijk zal niet echt goed werken hoe
+ dan ook).
 
- There are many other controls and functions available within phpMussel for
- your use, too. For any such controls and functions that, by the end of this
- section of the README, have not yet been documented, please continue reading
- and refer to the Browser Commands section of this README file.
+ Er zijn vele andere controles en functies beschikbaar zijn binnen phpMussel
+ voor uw gebruik, ook. Voor dergelijke controles en functies dat, met het einde
+ van dit deel van de README, zijn nog niet gedocumenteerd, gelieve verder te
+ lezen en verwijzen naar de Browser Richtlijnen sectie van dit README bestand.
 
                                      ~ ~ ~
 
 
  3B. HOE TE GEBRUIKEN (VOOR CLI)
 
- Raadpleeg de "HOE TE INSTALLEREN (VOOR CLI)" sectie van dit README bestand.
+ Verwijzen naar de "HOE TE INSTALLEREN (VOOR CLI)" sectie van dit README
+ bestand.
 
  Gelieve bewust te zijn, hoewel toekomstige versies van phpMussel andere
  systemen moet ondersteunen, momenteel, phpMussel CLI-modus ondersteuning is
- alleen geoptimaliseerd voor gebruik op Windows gebaseerde systemen (U kunt,
+ alleen geoptimaliseerd voor gebruik op Windows gebaseerde systemen (u kunt,
  natuurlijk, probeer het op andere systemen, maar ik kan niet garanderen dat
  het zal werken zoals bedoeld).
 
- Also be aware that phpMussel is not the functional equivalent of a complete
- anti-virus suite, and unlike conventional anti-virus suites, does not monitor
- active memory or detect viruses on-the-fly! It will only detect viruses
- contained by those specific files that you explicitly tell it to scan.
+ Eveneens, neem notitie dat phpMussel is niet de functionele equivalent van een
+ compleet anti-virus suite, en in tegenstelling tot conventionele anti-virus
+ suites, het maakt niet actief geheugen controleren of virussen detecteren
+ buiten het toepassingsgebied! It will only detect viruses Het zal alleen
+ virussen vervat in specifieke bestanden detecteren dat u expliciet zeggen dat
+ het te scannen.
 
                                      ~ ~ ~
 
 
  4A. BROWSER RICHTLIJNEN
 
- Once phpMussel has been installed and is correctly functioning on your system,
- if you've set the script_password and logs_password variables in your
- configuration file, you will be able to perform some limited number of
+ Wanneer phpMussel is geïnstalleerd en correct functionerende op uw systeem,
+ als je de script_password en logs_password variabelen hebt ingesteld in het
+ configuratiebestand, you will be able to perform some limited number of
  administrative functions and input some number of commands to phpMussel via
  your browser. The reason these passwords need to be set in order to enable
  these browser-side controls is both to ensure proper security, proper
