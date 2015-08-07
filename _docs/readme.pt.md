@@ -626,6 +626,24 @@ Assinatura analisando comprimento limitando opções. Apenas alterar estes se vo
 "fail_extensions_silently"
 - Deve phpMussel reportar quando extensões não estão disponíveis? Se fail_extensions_silently está desativado, extensões indisponíveis serão reportado durante análise, e se fail_extensions_silently está ativado, extensões indisponíveis serão ignoradas, com a análise reportando por estes arquivos em que não há problemas. Desativando dessa directiva pode potencialmente aumentar a sua segurança, mas também pode levar a um aumento de falsos positivos. 0 = Desativado, 1 = Ativado [Padrão].
 
+"detect_adware"
+- Deve phpMussel usam assinaturas para detectar adware? 0 = Não, 1 = Sim [Padrão].
+
+"detect_joke_hoax"
+- Deve phpMussel usam assinaturas para detectar piada/engano malwares/vírus? 0 = Não, 1 = Sim [Padrão].
+
+"detect_pua_pup"
+- Deve phpMussel usam assinaturas para detectar PUAs/PUPs? 0 = Não, 1 = Sim [Padrão].
+
+"detect_packer_packed"
+- Deve phpMussel usam assinaturas para detectar embaladores e dados embaladas? 0 = Não, 1 = Sim [Padrão].
+
+"detect_shell"
+- Deve phpMussel usam assinaturas para detectar shell scripts? 0 = Não, 1 = Sim [Padrão].
+
+"detect_deface"
+- Deve phpMussel usam assinaturas para detectar vandalismo e vândalos? 0 = Não, 1 = Sim [Padrão].
+
 ####"files" (Categoria)
 Geral configuração por a manipulação de arquivos.
 
@@ -895,4 +913,4 @@ Esta informação foi atualizada dia 28 Maio 2015 e é corrente para todas phpMu
 ---
 
 
-Última Atualização: 25 Julho 2015 (2015.07.25).
+Última Atualização: 7 Agosto 2015 (2015.08.07).

@@ -1177,6 +1177,7 @@
      "rx_siglen_max"
      "sd_siglen_min"
      "sd_siglen_max"
+   "fail_silently"
    - Debe phpMussel informan cuando los firmas archivos están desaparecidos o
      dañados? Si fail_silently está desactivado, desaparecidos y dañados
      archivos será reportado cuando escaneando, y si fail_silently está
@@ -1185,7 +1186,7 @@
      generalmente debe ser dejar sola a menos que usted está experimentando
      estrellarse o problemas similares.
      0 = Desactivado, 1 = Activado [Predefinido].
-     "fail_silently"
+   "fail_extensions_silently"
    - Debe phpMussel informan cuando extensiones están desaparecidos? Si
      fail_extensions_silently está desactivado, desaparecidos extensiones será
      reportado cuando escaneando, y si fail_extensions_silently está activado,
@@ -1194,7 +1195,24 @@
      directiva puede potencialmente aumentar su seguridad, pero también puede
      conducir a un aumento de falsos positivos.
      0 = Desactivado, 1 = Activado [Predefinido].
-     "fail_extensions_silently"
+   "detect_adware"
+   - Debe phpMussel utilizar firmas para detectar adware?
+     0 = No, 1 = Sí [Predefinido].
+   "detect_joke_hoax"
+   - Debe phpMussel utilizar firmas para detectar broma/engaño malware/virus?
+     0 = No, 1 = Sí [Predefinido].
+   "detect_pua_pup"
+   - Debe phpMussel utilizar firmas para detectar PUAs/PUPs?
+     0 = No, 1 = Sí [Predefinido].
+   "detect_packer_packed"
+   - Debe phpMussel utilizar firmas para detectar empacadores y datos
+     empaquetados? 0 = No, 1 = Sí [Predefinido].
+   "detect_shell"
+   - Debe phpMussel utilizar firmas para detectar shell scripts?
+     0 = No, 1 = Sí [Predefinido].
+   "detect_deface"
+   - Debe phpMussel utilizar firmas para detectar defacements y defacers?
+     0 = No, 1 = Sí [Predefinido].
  "files" (Categoría)
  - General configuración para el manejo de archivos.
    "max_uploads"
@@ -1740,5 +1758,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 25 Julio 2015 (2015.07.25).
+Última Actualización: 7 Agosto 2015 (2015.08.07).
 EOF

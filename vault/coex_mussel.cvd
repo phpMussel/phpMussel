@@ -26,7 +26,7 @@ $xt:jar;!$fileswitch:java;5Java-01
 $xt:java;!$fileswitch:java;5Java-00
 $xt:js;!$fileswitch:js;5JS-00
 $xt:json;!$fileswitch:js;5JSON-00
-$xt:jsp;!$fileswitch:js;5JS-01
+$xt:jsp;!$fileswitch:js;!$fileswitch:asp;5JS-01
 $xt:lnk;!$fileswitch:lnk;5LNK-03
 $xt:lnk;FD-RX:(504b|526172|4d5a):A:3;5LNK-02
 $xt:lnk;FS-MIN:8192;5LNK-01
@@ -743,7 +743,7 @@ $md5:ac753d963cf38a0acfc0cde89243385e;$sha:f1efedfb33f3ef090f9b94373b1e94ccd269f
 $md5:6ca16b0831731a751c65c629737b6a7b;$sha:c90de005e325ea974d652f6fbc584a646eeba209;$str_len:6871040;3iBryte-05
 $md5:d4ae436969a4e9ee766cf7e0dcffdd44;$sha:8589d9efd8698609b66d02f2a9b15e4f7e1b4e6e;$str_len:29696;3Bladabindi-192
 $md5:6f82e08e3d5ba86e6157b3a8a360ebdc;$sha:e6496c75f0d036300b6658b2c25150aa30036127;$str_len:529920;3MSIL-152
-$md5:2e971f9fce523c63a13106136515b44d;$sha:5c9efe14ac784837b181038090416d80e93e592d;$str_len:3986432;3 OUH-05
+$md5:2e971f9fce523c63a13106136515b44d;$sha:5c9efe14ac784837b181038090416d80e93e592d;$str_len:3986432;0 OUH-05
 $md5:8bbb3b4c01554e0ff1a618554c067dc3;$sha:294d26f917ed996c1f8aae3a57f723666cc49843;$str_len:332923;3AutoIT-26
 $md5:a8fcf2f6e7da055bfffda452a9e8d3f6;$sha:d128b3c51a1854d19f5e45547aee9badd52bbdc6;$str_len:176640;3DNP.kq0@am4K4tn-03
 $md5:cc52dbb33df9d877bd8dd093d1dd67f4;$sha:400c7c7089de470f854df9f691688ed35a116204;$str_len:2688038;3Pavica-04
@@ -752,7 +752,7 @@ $md5:be19d4eb0c6216b30676b179aa575283;$sha:7f1b466b57f51a602f59ca55a9c83749a142f
 $md5:8c3b43f5c06064f59f2694890658d8e8;$sha:117b708aa171989b1c23ff89fd01ee49ca792876;$str_len:301608;3"Superfish-06
 $md5:8d493ee0b7d0e583917627629c944558;$sha:293b4a60311ae615c4145879e810ea7646602b53;$str_len:257024;3Barys-35
 $md5:74cc06410b6810ed89b68f63467fd57a;$sha:9ae93841d5de1e850b57f0810b77e352e216ff0a;$str_len:34304;3Pavica-10
-$md5:4be2663c65f574eb56aa09c8143e1f43;$sha:10ee3fac47b739e7c443114dce53271ccb50b702;$str_len:3780096;3 OUH-07
+$md5:4be2663c65f574eb56aa09c8143e1f43;$sha:10ee3fac47b739e7c443114dce53271ccb50b702;$str_len:3780096;0 OUH-06
 $md5:28abe6896747d639206201dbf805af8e;$sha:161c190a717718eaac594b5830c800f20abd518f;$str_len:486400;3NanoCore-02
 $md5:147d5b96227477cfaa59e51accddffa1;$sha:6f35d6f37ef89a27787eacb721c75b214581114e;$str_len:1559960;3LLAC-44
 $md5:5be3fc8d51cca57ef7243afcc28d954b;$sha:defbb8aacdd32eb6aad095c463214abc301d8d6b;$str_len:24064;3Bladabindi-194
@@ -1994,6 +1994,9 @@ $md5:91dc1db710231010431cd0115369b007;$sha:bc8fb44a53b3553c204cf28c5801191f7dea6
 $md5:a51670d4be49ccaa993a7d7cdae2db49;$sha:1f3a8a5853363f9d37f905d121f331bac665e422;$str_len:997568;0SteamThief-289
 $md5:5adb50f9753fcb2a24ee5ceeabf38480;$sha:7338a11303b7c97ce6548e9b5aa12eb63881df9a;$str_len:753152;0SteamThief-296
 $md5:d1f131af55dea049f5caba2991314575;$sha:bce47368b05fa3a18e76131fb70dc4bf56fc7ebc;$str_len:1517056;0SteamThief-297
+$md5:8699bb9e413dba9ad90ba97d41479c83;$sha:ca55220a59e140befcb973cf1e93c5b095a10989;$str_len:139264;3PWS-09
+$md5:d3109c83e07dd5d7fe032dc80c581d08;$sha:42e6da9a08802b5ce5d1f754d4567665637b47bc;$str_len:50688;0Hammertoss-03
+$md5:b605754db973ea1ddc275baa3ee6216a;$sha:9da51a9fad495736277c4258c4663113349b0070;$str_len:1111552;0 OUH-08
 === Infected PE files caught by honeypot trap; Not detected or only partially detected by V.T. ===
 .:: 2015/02
 $md5:174bcf22f37a80c950409c9a44b2e95d;$sha:35298b05ada53008aa8d64bde3313fc3534343d1;$str_len:197632;0DOBJ-00
@@ -2778,17 +2781,26 @@ $xt:js;FD-RX:[57]6[46]1[57]2205f245f.{2,128}3d;FD-RX:(25[57]4[46]5[46]d[57]025[5
 $md5:46451357ce76c92eeca41fef643c2b7f;$sha:ea77b6ccd6852f12e10ee7deb14df44786435bd7;$str_len:1988;0&CCW-00
 .:: 2015/08
 $xt:asp;FD-NORM:6576616c207265717565737428;0"-X-00
-$xt:cfm;FD-NORM:782e70757428746f62696e61727928746f62617365363428222d3e2226227c2229292c6a61766163617374;0CFM.CaiDao/菜刀-00
-$xts:php*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-00
-$xt:js;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-01
-$xt:jsp;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-02
-$xt:vb;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-03
-$xt:vbe;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-04
-$xt:vbs;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-05
-$xt:vbx;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-06
-$xts:ash*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-07
-$xts:asm*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-08
-$xts:asp*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0X.Eval-09
+$xt:ccc;FD-NORM:3c696672616d65;0-CaiDao/菜刀-01
+$xt:ccc;FD-NORM:633a5c77696e646f7773;0-CaiDao/菜刀-05
+$xt:ccc;FD-NORM:66736f636b6f70656e;0-CaiDao/菜刀-02
+$xt:ccc;FD-NORM:73797374656d2e696f;0-CaiDao/菜刀-04
+$xt:ccc;FD-NORM:73797374656d2e7365637572697479;0-CaiDao/菜刀-03
+$xt:cfm;FD-NORM:782e70757428746f62696e61727928746f62617365363428222d3e2226227c2229292c6a61766163617374;0-CaiDao/菜刀-00
+$xt:js;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0-Eval-01
+$xt:jsp;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0-Eval-02
+$xt:vb;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0-Eval-03
+$xt:vbe;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0-Eval-04
+$xt:vbs;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0-Eval-05
+$xt:vbx;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0-Eval-06
+$xts:ash*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0-Eval-07
+$xts:asm*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0-Eval-08
+$xts:asp*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0-Eval-09
+$xts:php*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0-Eval-00
+=== NoMagic/HighRisk ===
+$xt:ccc;0-NoMagic/HighRisk.CCC
+$xt:ashx;�-NoMagic/HighRisk.ASHX
+$xt:asmx;�-NoMagic/HighRisk.ASMX
 === Misc. Ransomware ===
 .:: 2015/03
 $xt:js;$phase:archive;FD-RX:[46]8[57]4[57]4[57]0([57]3)?3a.{6,1024}2e[46]a[57]0([46]5)?[46]7;0!CryptoLocker-00

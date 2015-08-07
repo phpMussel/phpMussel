@@ -625,6 +625,24 @@ Firma cotejando longitud limitando opciones. Sólo cambiarlos si sabes lo que es
 "fail_extensions_silently"
 - Debe phpMussel informan cuando extensiones están desaparecidos? Si fail_extensions_silently está desactivado, desaparecidos extensiones será reportado cuando escaneando, y si fail_extensions_silently está activado, desaparecidos extensiones será ignorado, with scanning reportando para aquellos archivos que no hay cualquier problemas. Desactivando esta directiva puede potencialmente aumentar su seguridad, pero también puede conducir a un aumento de falsos positivos. 0 = Desactivado, 1 = Activado [Predefinido].
 
+"detect_adware"
+- Debe phpMussel utilizar firmas para detectar adware? 0 = No, 1 = Sí [Predefinido].
+
+"detect_joke_hoax"
+- Debe phpMussel utilizar firmas para detectar broma/engaño malware/virus? 0 = No, 1 = Sí [Predefinido].
+
+"detect_pua_pup"
+- Debe phpMussel utilizar firmas para detectar PUAs/PUPs? 0 = No, 1 = Sí [Predefinido].
+
+"detect_packer_packed"
+- Debe phpMussel utilizar firmas para detectar empacadores y datos empaquetados? 0 = No, 1 = Sí [Predefinido].
+
+"detect_shell"
+- Debe phpMussel utilizar firmas para detectar shell scripts? 0 = No, 1 = Sí [Predefinido].
+
+"detect_deface"
+- Debe phpMussel utilizar firmas para detectar defacements y defacers? 0 = No, 1 = Sí [Predefinido].
+
 ####"files" (Categoría)
 General configuración para el manejo de archivos.
 
@@ -894,4 +912,4 @@ Esta información ha sido actualizado 28 Mayo 2015 y es a hoy para todas las php
 ---
 
 
-Última Actualización: 25 Julio 2015 (2015.07.25).
+Última Actualización: 7 Agosto 2015 (2015.08.07).

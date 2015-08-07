@@ -1166,6 +1166,7 @@
      "rx_siglen_max"
      "sd_siglen_min"
      "sd_siglen_max"
+   "fail_silently"
    - Deve phpMussel reportar quando os assinaturas arquivos estão perdido ou
      corrompido? Se fail_silently está desativado, perdidos e corrompidos
      arquivos serão reportado durante análise, e se fail_silently está ativado,
@@ -1173,7 +1174,7 @@
      por estes arquivos em que não há problemas. Isso geralmente deve ser
      deixado sozinho a menos que você está experimentando php falhas ou
      semelhantes problemas. 0 = Desativado, 1 = Ativado [Padrão].
-     "fail_silently"
+   "fail_extensions_silently"
    - Deve phpMussel reportar quando extensões não estão disponíveis? Se
      fail_extensions_silently está desativado, extensões indisponíveis serão
      reportado durante análise, e se fail_extensions_silently está ativado,
@@ -1181,7 +1182,24 @@
      estes arquivos em que não há problemas. Desativando dessa directiva pode
      potencialmente aumentar a sua segurança, mas também pode levar a um
      aumento de falsos positivos. 0 = Desativado, 1 = Ativado [Padrão].
-     "fail_extensions_silently"
+   "detect_adware"
+   - Deve phpMussel usam assinaturas para detectar adware?
+     0 = Não, 1 = Sim [Padrão].
+   "detect_joke_hoax"
+   - Deve phpMussel usam assinaturas para detectar piada/engano malwares/vírus?
+     0 = Não, 1 = Sim [Padrão].
+   "detect_pua_pup"
+   - Deve phpMussel usam assinaturas para detectar PUAs/PUPs?
+     0 = Não, 1 = Sim [Padrão].
+   "detect_packer_packed"
+   - Deve phpMussel usam assinaturas para detectar embaladores e dados
+     embaladas? 0 = Não, 1 = Sim [Padrão].
+   "detect_shell"
+   - Deve phpMussel usam assinaturas para detectar shell scripts?
+     0 = Não, 1 = Sim [Padrão].
+   "detect_deface"
+   - Deve phpMussel usam assinaturas para detectar vandalismo e vândalos?
+     0 = Não, 1 = Sim [Padrão].
  "files" (Categoria)
  - Geral configuração por a manipulação de arquivos.
    "max_uploads"
@@ -1714,5 +1732,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 25 Julho 2015 (2015.07.25).
+Última Atualização: 7 Agosto 2015 (2015.08.07).
 EOF

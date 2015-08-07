@@ -327,14 +327,14 @@
 
  Wanneer phpMussel is geïnstalleerd en correct functionerende op uw systeem,
  als je de script_password en logs_password variabelen hebt ingesteld in het
- configuratiebestand, you will be able to perform some limited number of
- administrative functions and input some number of commands to phpMussel via
- your browser. The reason these passwords need to be set in order to enable
- these browser-side controls is both to ensure proper security, proper
- protection of these browser-side controls and to ensure that there exists
- a way for these browser-side controls to be entirely disabled if they are not
- desired by you and/or other webmasters/administrators using phpMussel. So, in
- other words, to enable these controls, set a pasword, and to disable these
+ configuratiebestand, zult u in staat om te presteren sommige beperkt aantal
+ administratieve functies en input sommige aantal commando's naar phpMussel via
+ uw browser. De reden dat deze wachtwoorden moeten worden ingesteld om deze
+ browser controles mogelijk te maken is om een goede veiligheid te verzekeren,
+ een goede bescherming van deze browser controles en zodat er een manier voor
+ deze browser controles geheel uitgeschakeld te worden als ze niet gewenst door
+ jou en/of ander webmasters/beheerders gebruikmakend van phpMussel. Dus, in
+ andere woorden, to enable these controls, set a pasword, and to disable these
  controls, set no password. Alternatively, if you choose to enable these
  controls and then choose to disable these controls at a later date, there is
  a command to do this (such can be useful if you perform some actions that you
@@ -1151,6 +1151,7 @@
      "rx_siglen_max"
      "sd_siglen_min"
      "sd_siglen_max"
+   "fail_silently"
    - Should phpMussel report when signatures files are missing or corrupted?
      If fail_silently is disabled, missing and corrupted files will be reported
      on scanning, and if fail_silently is enabled, missing and corrupted files
@@ -1158,7 +1159,7 @@
      any problems. This should generally be left alone unless you're
      experiencing crashes or similar problems.
      0 = Disabled, 1 = Enabled [Default].
-     "fail_silently"
+   "fail_extensions_silently"
    - Should phpMussel report when extensions are missing? If
      fail_extensions_silently is disabled, missing extensions will be reported
      on scanning, and if fail_extensions_silently is enabled, missing
@@ -1166,7 +1167,24 @@
      there aren't any problems. Disabling this directive may potentially
      increase your security, but may also lead to an increase of false
      positives. 0 = Disabled, 1 = Enabled [Default].
-     "fail_extensions_silently"
+   "detect_adware"
+   - Should phpMussel parse signatures for detecting adware?
+     0 = No, 1 = Yes [Default].
+   "detect_joke_hoax"
+   - Should phpMussel parse signatures for detecting joke/hoax malware/viruses?
+     0 = No, 1 = Yes [Default].
+   "detect_pua_pup"
+   - Should phpMussel parse signatures for detecting PUAs/PUPs?
+     0 = No, 1 = Yes [Default].
+   "detect_packer_packed"
+   - Should phpMussel parse signatures for detecting packers and packed data?
+     0 = No, 1 = Yes [Default].
+   "detect_shell"
+   - Should phpMussel parse signatures for detecting shell scripts?
+     0 = No, 1 = Yes [Default].
+   "detect_deface"
+   - Should phpMussel parse signatures for detecting defacements and defacers?
+     0 = No, 1 = Yes [Default].
  "files" (Categorie)
  - General configuration for handling of files.
    "max_uploads"
@@ -1669,5 +1687,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 25 Juli 2015 (2015.07.25).
+Laatste Bijgewerkt: 7 Augustus 2015 (2015.08.07).
 EOF

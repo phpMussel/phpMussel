@@ -1131,6 +1131,7 @@
      "rx_siglen_max"
      "sd_siglen_min"
      "sd_siglen_max"
+   "fail_silently"
    - Reaktion von phpMussel auf fehlende oder defekte Signaturen.
      Ist fail_silently deaktiviert, werden fehlende oder defekte Signaturen
      während des Scanvorgangs gemeldet, ist fail_silently aktiviert, werden
@@ -1138,7 +1139,7 @@
      Probleme gemeldet werden. Diese Option sollte so belassen werden, es sei
      denn, Sie erwarten Abstürze oder ähnliches.
      0 = Deaktiviert, 1 = Aktiviert [Standardeinstellung].
-     "fail_silently"
+   "fail_extensions_silently"
    - Soll phpMussel melden, wenn Dateierweiterungen fehlen? Wenn
      fail_extensions_silently deaktiviert ist, werden fehlende
      Dateierweiterungen beim Scannen gemeldet und wenn fail_extensions_silently
@@ -1147,7 +1148,24 @@
      dieser Anweisung kann möglicherweise deine Sicherheit erhöhen, kann aber
      auch zu mehr Falschmeldungen führen.
      0 = Deaktiviert, 1 = Aktiviert [Standardeinstellung].
-     "fail_extensions_silently"
+   "detect_adware"
+   - Should phpMussel parse signatures for detecting adware?
+     0 = No, 1 = Yes [Default].
+   "detect_joke_hoax"
+   - Should phpMussel parse signatures for detecting joke/hoax malware/viruses?
+     0 = No, 1 = Yes [Default].
+   "detect_pua_pup"
+   - Should phpMussel parse signatures for detecting PUAs/PUPs?
+     0 = No, 1 = Yes [Default].
+   "detect_packer_packed"
+   - Should phpMussel parse signatures for detecting packers and packed data?
+     0 = No, 1 = Yes [Default].
+   "detect_shell"
+   - Should phpMussel parse signatures for detecting shell scripts?
+     0 = No, 1 = Yes [Default].
+   "detect_deface"
+   - Should phpMussel parse signatures for detecting defacements and defacers?
+     0 = No, 1 = Yes [Default].
  "files" (Kategorie)
  - Generelle Konfigurationen für die Handhabung von Dateien.
    "max_uploads"
@@ -1680,5 +1698,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 25. Juli 2015 (2015.07.25).
+Zuletzt aktualisiert: 7. August 2015 (2015.08.07).
 EOF

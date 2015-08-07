@@ -626,6 +626,24 @@ Opsi Tanda tangan cocok batas panjangnya. Hanya ubah ini jika Anda tahu apa yang
 "fail_extensions_silently"
 - Seharusnya laporan phpMussel ketika ekstensi hilang? Jika fail_extensions_silently dinonaktifkan, ekstensi hilang akan dilaporkan ketika pemindaian, dan jika fail_extensions_silently diaktifkan, ekstensi hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Menonaktifkan direktif ini berpotensi dapat meningkatkan keamanan Anda, tetapi juga dapat menyebabkan peningkatan positif palsu. 0 = Dinonaktifkan, 1 = Diaktifkan [Default].
 
+"detect_adware"
+- Harus phpMussel menggunakan tanda tangan untuk mendeteksi adware? 0 = Tidak, 1 = Ya [Default].
+
+"detect_joke_hoax"
+- Harus phpMussel menggunakan tanda tangan untuk mendeteksi lelucon/kebohongan malware/virus? 0 = Tidak, 1 = Ya [Default].
+
+"detect_pua_pup"
+- Harus phpMussel menggunakan tanda tangan untuk mendeteksi PUAs/PUPs? 0 = Tidak, 1 = Ya [Default].
+
+"detect_packer_packed"
+- Harus phpMussel menggunakan tanda tangan untuk mendeteksi pengepakan dan data dikemas? 0 = Tidak, 1 = Ya [Default].
+
+"detect_shell"
+- Harus phpMussel menggunakan tanda tangan untuk mendeteksi skrip shell? 0 = Tidak, 1 = Ya [Default].
+
+"detect_deface"
+- Harus phpMussel menggunakan tanda tangan untuk mendeteksi perusakan dan perusak? 0 = Tidak, 1 = Ya [Default].
+
 ####"files" (Kategori)
 Konfigurasi umum untuk mengambil alih file-file.
 
@@ -895,4 +913,4 @@ Informasi ini diupdate 28 Mei 2015 dan cocok untuk semua rilis phpMussel dari du
 ---
 
 
-Terakhir Diperbarui: 25 Juli 2015 (2015.07.25).
+Terakhir Diperbarui: 7 Agustus 2015 (2015.08.07).
