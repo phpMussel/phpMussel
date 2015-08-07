@@ -1149,23 +1149,25 @@
      auch zu mehr Falschmeldungen führen.
      0 = Deaktiviert, 1 = Aktiviert [Standardeinstellung].
    "detect_adware"
-   - Should phpMussel parse signatures for detecting adware?
-     0 = No, 1 = Yes [Default].
+   - Soll phpMussel Signaturen für die Erkennung von Adware parsen?
+     0 = Nein, 1 = Ja [Standardeinstellung].
    "detect_joke_hoax"
-   - Should phpMussel parse signatures for detecting joke/hoax malware/viruses?
-     0 = No, 1 = Yes [Default].
+   - Soll phpMussel Signaturen für die Erkennung von Scherz/Fake-Malware/Viren 
+     parsen?
+     0 = Nein, 1 = Ja [Standardeinstellung].
    "detect_pua_pup"
-   - Should phpMussel parse signatures for detecting PUAs/PUPs?
-     0 = No, 1 = Yes [Default].
+   - Soll phpMussel Signaturen für die Erkennung von PUAs/PUPs parsen?
+     0 = Nein, 1 = Ja [Standardeinstellung].
    "detect_packer_packed"
-   - Should phpMussel parse signatures for detecting packers and packed data?
-     0 = No, 1 = Yes [Default].
+   - Soll phpMussel Signaturen für die Erkennung von Packern und komprimierten 
+     Daten parsen?
+     0 = Nein, 1 = Ja [Standardeinstellung].
    "detect_shell"
-   - Should phpMussel parse signatures for detecting shell scripts?
-     0 = No, 1 = Yes [Default].
+   - Soll phpMussel Signaturen für die Erkennung von Shell-Scripten parsen?
+     0 = Nein, 1 = Ja [Standardeinstellung].
    "detect_deface"
-   - Should phpMussel parse signatures for detecting defacements and defacers?
-     0 = No, 1 = Yes [Default].
+   - Soll phpMussel Signaturen für die Erkennung von Defacements und Defacer parsen?
+     0 = Nein, 1 = Ja [Standardeinstellung].
  "files" (Kategorie)
  - Generelle Konfigurationen für die Handhabung von Dateien.
    "max_uploads"
