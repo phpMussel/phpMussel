@@ -625,6 +625,24 @@ Optionen für das Größenlimit der Übereinstimmungen. Ändern Sie diese Werte 
 "fail_extensions_silently"
 - Soll phpMussel melden, wenn Dateierweiterungen fehlen? Wenn fail_extensions_silently deaktiviert ist, werden fehlende Dateierweiterungen beim Scannen gemeldet und wenn fail_extensions_silently aktiviert ist, werden fehlende Dateierweiterungen ignoriert und beim Scan gemeldet, dass es mit diesen Dateien keine Probleme gibt. Das Deaktivieren dieser Anweisung kann möglicherweise deine Sicherheit erhöhen, kann aber auch zu mehr Falschmeldungen führen. 0 = Deaktiviert, 1 = Aktiviert [Standardeinstellung].
 
+"detect_adware"
+- Should phpMussel parse signatures for detecting adware? 0 = No, 1 = Yes [Default].
+
+"detect_joke_hoax"
+- Should phpMussel parse signatures for detecting joke/hoax malware/viruses? 0 = No, 1 = Yes [Default].
+
+"detect_pua_pup"
+- Should phpMussel parse signatures for detecting PUAs/PUPs? 0 = No, 1 = Yes [Default].
+
+"detect_packer_packed"
+- Should phpMussel parse signatures for detecting packers and packed data? 0 = No, 1 = Yes [Default].
+
+"detect_shell"
+- Should phpMussel parse signatures for detecting shell scripts? 0 = No, 1 = Yes [Default].
+
+"detect_deface"
+- Should phpMussel parse signatures for detecting defacements and defacers? 0 = No, 1 = Yes [Default].
+
 ####"files" (Kategorie)
 Generelle Konfigurationen für die Handhabung von Dateien.
 
@@ -893,4 +911,4 @@ Diese Informationen wurden zuletzt am 2015.05.28 aktualisiert und gelten für al
 ---
 
 
-Zuletzt aktualisiert: 25. Juli 2015 (2015.07.25).
+Zuletzt aktualisiert: 7. August 2015 (2015.08.07).

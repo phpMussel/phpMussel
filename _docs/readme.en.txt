@@ -1110,6 +1110,7 @@
      "rx_siglen_max"
      "sd_siglen_min"
      "sd_siglen_max"
+   "fail_silently"
    - Should phpMussel report when signatures files are missing or corrupted?
      If fail_silently is disabled, missing and corrupted files will be reported
      on scanning, and if fail_silently is enabled, missing and corrupted files
@@ -1117,7 +1118,7 @@
      any problems. This should generally be left alone unless you're
      experiencing crashes or similar problems.
      0 = Disabled, 1 = Enabled [Default].
-     "fail_silently"
+   "fail_extensions_silently"
    - Should phpMussel report when extensions are missing? If
      fail_extensions_silently is disabled, missing extensions will be reported
      on scanning, and if fail_extensions_silently is enabled, missing
@@ -1125,7 +1126,24 @@
      there aren't any problems. Disabling this directive may potentially
      increase your security, but may also lead to an increase of false
      positives. 0 = Disabled, 1 = Enabled [Default].
-     "fail_extensions_silently"
+   "detect_adware"
+   - Should phpMussel parse signatures for detecting adware?
+     0 = No, 1 = Yes [Default].
+   "detect_joke_hoax"
+   - Should phpMussel parse signatures for detecting joke/hoax malware/viruses?
+     0 = No, 1 = Yes [Default].
+   "detect_pua_pup"
+   - Should phpMussel parse signatures for detecting PUAs/PUPs?
+     0 = No, 1 = Yes [Default].
+   "detect_packer_packed"
+   - Should phpMussel parse signatures for detecting packers and packed data?
+     0 = No, 1 = Yes [Default].
+   "detect_shell"
+   - Should phpMussel parse signatures for detecting shell scripts?
+     0 = No, 1 = Yes [Default].
+   "detect_deface"
+   - Should phpMussel parse signatures for detecting defacements and defacers?
+     0 = No, 1 = Yes [Default].
  "files" (Category)
  - General configuration for handling of files.
    "max_uploads"
@@ -1627,5 +1645,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 25th July 2015 (2015.07.25).
+Last Updated: 7th August 2015 (2015.08.07).
 EOF

@@ -626,6 +626,24 @@ Firma lunghezza corrispondenza limitando opzioni. Modificata solo se si sa cosa 
 "fail_extensions_silently"
 - Dovrebbe phpMussel rapporto quando le estensioni sono mancanti? Se fail_extensions_silently è disattivato, mancanti estensioni saranno riportato sulla scansione, e se fail_extensions_silently è abilitato, mancanti estensioni saranno ignorato, con scansione riportando per quei file che non ha sono problemi. La disattivazione di questa direttiva potrebbe potenzialmente aumentare la sicurezza, ma può anche portare ad un aumento di falsi positivi. 0 = Disattivato, 1 = Attivato [Predefinito].
 
+"detect_adware"
+- Dovrebbe phpMussel utilizzare le firme per il rilevamento di adware? 0 = No, 1 = Sì [Predefinito].
+
+"detect_joke_hoax"
+- Dovrebbe phpMussel utilizzare le firme per il rilevamento di scherzo/inganno malware/virus? 0 = No, 1 = Sì [Predefinito].
+
+"detect_pua_pup"
+- Dovrebbe phpMussel utilizzare le firme per il rilevamento di PUAs/PUPs? 0 = No, 1 = Sì [Predefinito].
+
+"detect_packer_packed"
+- Dovrebbe phpMussel utilizzare le firme per il rilevamento di confezionatori e dati confezionati? 0 = No, 1 = Sì [Predefinito].
+
+"detect_shell"
+- Dovrebbe phpMussel utilizzare le firme per il rilevamento di shell script? 0 = No, 1 = Sì [Predefinito].
+
+"detect_deface"
+- Dovrebbe phpMussel utilizzare le firme per il rilevamento di sfiguramenti e sfiguratori? 0 = No, 1 = Sì [Predefinito].
+
 ####"files" (Categoria)
 Generale configurazione per la gestione dei file.
 
@@ -895,4 +913,4 @@ Questa informazione è stato lo scorso aggiornato 28 Maggio 2015 ed è in corso 
 ---
 
 
-Ultimo Aggiornamento: 25 Luglio 2015 (2015.07.25).
+Ultimo Aggiornamento: 7 Agosto 2015 (2015.08.07).

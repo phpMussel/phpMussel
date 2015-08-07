@@ -1173,6 +1173,7 @@
      "rx_siglen_max"
      "sd_siglen_min"
      "sd_siglen_max"
+   "fail_silently"
    - Seharusnya laporan phpMussel ketika data tanda tangan hilang atau dikorup?
      Jika fail_silently dinonaktifkan, data dikorup dan hilang akan dilaporkan
      ketika pemindaian, dan jika fail_silently diaktifkan, data dikorup dan
@@ -1180,7 +1181,7 @@
      bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah
      mengalami crash atau masalah lain.
      0 = Dinonaktifkan, 1 = Diaktifkan [Default].
-     "fail_silently"
+   "fail_extensions_silently"
    - Seharusnya laporan phpMussel ketika ekstensi hilang? Jika
      fail_extensions_silently dinonaktifkan, ekstensi hilang akan dilaporkan
      ketika pemindaian, dan jika fail_extensions_silently diaktifkan, ekstensi
@@ -1188,7 +1189,24 @@
      bahwa tidak ada masalah. Menonaktifkan direktif ini berpotensi dapat
      meningkatkan keamanan Anda, tetapi juga dapat menyebabkan peningkatan
      positif palsu. 0 = Dinonaktifkan, 1 = Diaktifkan [Default].
-     "fail_extensions_silently"
+   "detect_adware"
+   - Harus phpMussel menggunakan tanda tangan untuk mendeteksi adware?
+     0 = Tidak, 1 = Ya [Default].
+   "detect_joke_hoax"
+   - Harus phpMussel menggunakan tanda tangan untuk mendeteksi
+     lelucon/kebohongan malware/virus? 0 = Tidak, 1 = Ya [Default].
+   "detect_pua_pup"
+   - Harus phpMussel menggunakan tanda tangan untuk mendeteksi PUAs/PUPs?
+     0 = Tidak, 1 = Ya [Default].
+   "detect_packer_packed"
+   - Harus phpMussel menggunakan tanda tangan untuk mendeteksi pengepakan dan
+     data dikemas? 0 = Tidak, 1 = Ya [Default].
+   "detect_shell"
+   - Harus phpMussel menggunakan tanda tangan untuk mendeteksi skrip shell?
+     0 = Tidak, 1 = Ya [Default].
+   "detect_deface"
+   - Harus phpMussel menggunakan tanda tangan untuk mendeteksi perusakan dan
+     perusak? 0 = Tidak, 1 = Ya [Default].
  "files" (Kategori)
  - Konfigurasi umum untuk mengambil alih file-file.
    "max_uploads"
@@ -1717,5 +1735,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 25 Juli 2015 (2015.07.25).
+Terakhir Diperbarui: 7 Agustus 2015 (2015.08.07).
 EOF

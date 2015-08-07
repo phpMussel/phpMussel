@@ -1187,6 +1187,7 @@
      "rx_siglen_max"
      "sd_siglen_min"
      "sd_siglen_max"
+   "fail_silently"
    - Devrait phpMussel signaler lorsque les signatures fichiers sont manquants
      ou endommagés? Si fail_silently est désactivé, manquants et corrompus
      fichiers seront signalé sur analyse, et si fail_silently est activé,
@@ -1194,7 +1195,7 @@
      pour ceux fichiers qu'il n'y a pas de problèmes. Cela devrait généralement
      être laissé seul sauf si vous rencontrez accidents ou similaires
      problèmes. 0 = Désactivé, 1 = Activé [Défaut].
-     "fail_silently"
+   "fail_extensions_silently"
    - Devrait phpMussel signaler lorsque les extensions sont manquantes? Si
      fail_extensions_silently est désactivé, extensions manquantes seront
      signalé sur analyse, et si fail_extensions_silently est activé, extensions
@@ -1202,7 +1203,24 @@
      qu'il n'y a pas de problèmes. La désactivation de cette directive peut
      potentiellement augmenter votre sécurité, mais peut aussi conduire à une
      augmentation de faux positifs. 0 = Désactivé, 1 = Activé [Défaut].
-     "fail_extensions_silently"
+   "detect_adware"
+   - Devrait phpMussel utiliser signatures pour détecter les adwares?
+     0 = Non, 1 = Oui [Défaut].
+   "detect_joke_hoax"
+   - Devrait phpMussel utiliser signatures pour détecter les blagues/canulars
+     malware/virus? 0 = Non, 1 = Oui [Défaut].
+   "detect_pua_pup"
+   - Devrait phpMussel utiliser signatures pour détecter les PUAs/PUPs?
+     0 = Non, 1 = Oui [Défaut].
+   "detect_packer_packed"
+   - Devrait phpMussel utiliser signatures pour détecter les emballeurs et des
+     données emballés? 0 = Non, 1 = Oui [Défaut].
+   "detect_shell"
+   - Devrait phpMussel utiliser signatures pour détecter les shell scripts?
+     0 = Non, 1 = Oui [Défaut].
+   "detect_deface"
+   - Devrait phpMussel utiliser signatures pour détecter les defacements and
+     defacers? 0 = Non, 1 = Oui [Défaut].
  "files" (Catégorie)
  - Générale configuration pour gestion des fichiers.
    "max_uploads"
@@ -1748,5 +1766,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 25 Juillet 2015 (2015.07.25).
+Dernière Réactualisé: 7 Août 2015 (2015.08.07).
 EOF
