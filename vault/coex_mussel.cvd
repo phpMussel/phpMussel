@@ -61,9 +61,9 @@ $phase:archive;FD-RX:0{1024}:A;0NullBomb-00
 $phase:archive;FD-RX:a{1024}:A;0NullBomb-01
 $phase:archive;FD-RX:f{1024}:A;0NullBomb-02
 .:: 2014/XX
-$md5:1df9a18b18332f153918030b7b516615;$sha:6c42c62696616b72bbfc88a4be4ead57aa7bc503;$str_len:42838;0ZIPBomb.42.zip
+$md5:1df9a18b18332f153918030b7b516615;$sha:6c42c62696616b72bbfc88a4be4ead57aa7bc503;$str_len:42838;0542.zip
 .:: 2015/01
-$md5:2db0536589b7d34331e3fa84bea2a827;$sha:64c1f581a23a92e005cb0a9fbf4591e3049d14b1;$str_len:9570;0ZIPBomb.4YoB.7z
+$md5:2db0536589b7d34331e3fa84bea2a827;$sha:64c1f581a23a92e005cb0a9fbf4591e3049d14b1;$str_len:9570;054YoB.7z
 .:: Suspect embedding/multi-level (not necessarily always malicious; some of these are temporary until current capabilities/support within phpMussel improves); 2015/07
 $container:compressor;FD:504b:A:2;ó+X-00
 $container:compressor;FD:52457e5e:A:4;ó+X-01
@@ -86,6 +86,20 @@ $container:zipfile;FD:425a68:A:3;ó+ZIP-01
 $container:zipfile;FD:504b:A:2;ó+ZIP-02
 $container:zipfile;FD:52457e5e:A:4;ó+ZIP-03
 $container:zipfile;FD:52617221:A:4;ó+ZIP-04
+=== Forkbombs ===
+.:: 2015/08
+$xt:sh;FD-NORM:3a28297b3a7c3a267d3b3a;0+6X-00
+$xt:java;FD-NORM-RX:72756e74696d652e67657472756e74696d6528292e65786563286e6577737472696e675b5d7b2[27]6a617661772[27]2c2[27]2d63702[27]2c73797374656d2e67657470726f7065727479282[27]6a6176612e636c6173732e706174682[27]29;06X-00
+$xt:java;FD-NORM:7768696c652874727565297b6e6577746872656164286e657772756e6e61626c6528297b7075626c6963766f696472756e28297b7768696c652874727565297b7d7d7d292e737461727428293b;06X-01
+$xts:php*;FD-NORM:7768696c652870636e746c5f666f726b28297c31293b;0 6X-00
+$is_html:1;FD-NORM:7768696c652874727565297b77696e646f772e6f70656e2877696e646f772e6c6f636174696f6e2e68726566293b7d;06X-00
+$xt:hs;FD-NORM:696d706f7274636f6e74726f6c2e6d6f6e6164;FD-NORM:696d706f727473797374656d2e706f7369782e70726f63657373;FD-NORM:3d666f726576657224666f726b70726f63657373;06X-00
+$xt:lua;FD-NORM:726571756972652822706f73697822297768696c6574727565646f706f7369782e666f726b2829656e64;06X-01
+$xt:scm;FD-NORM:286c6574726563282878286c616d626461282928626567696e28666f726b2d74687265616478292878292929292928782929;06X-02
+$xt:zsh;FD-NORM:7768696c6528736c656570313030262129646f3b646f6e65;06X-03
+$xt:c;FD-NORM:696e746d61696e28766f6964297b666f72283b3b297b666f726b28293b7d72657475726e303b7d;06X-04
+$xt:rs;FD-NORM:7b7768696c65747275657b7461736b3a3a737061776e28;06X-05
+$xt:erl;FD-NORM:2d6578706f7274285b6c6f6f702f305d292e;FD-NORM:2d696d706f7274286c697374732c5b6d61702f325d292e;FD-NORM:2d696d706f7274287067322c5b7069642f302c6a6f696e2f322c6765745f6d656d626572732f315d292e;FD-NORM:6c6f6f7028292d3e6a6f696e28666f726b732c7069642829292c;FD-NORM:296f665b7069647c706964735d2d3e6d61702866756e2870292d3e702131656e642c5b7069647c706964735d293b5f2d3e6572726f72656e642c;06X-06
 === Android signatures ===
 .:: 2014/XX
 $md5:02805deb65c9c26c8b4808d7957b71d7;$sha:8feb1d8629bbd247ecc0ac2839f82024e6464d66;$str_len:3523731;3Banker-00
@@ -109,7 +123,7 @@ $md5:ac989379acab0a440c81774615af53db;$sha:01a30c017296bf23790d6263383d3d125200e
 $md5:b10b5439afc3d2c96ac1ec75e7dfe54b;$sha:7c6c10c69cafc7e91950773b0fbcbeeb960f27f1;$str_len:6006050;8SantaEscape
 $md5:b226a66a2796e922302b96ae81540d5c;$sha:670503ed863397d64bfe24ca0940be9c23682ae4;$str_len:164210;8FlashPlayer
 $md5:c424f9ad311f3b55f8db5dabf6985856;$sha:0243ded93bf111b1d36bcab4da4fc7a2086c879d;$str_len:34391;8accutracking
-$md5:cc5b4e973cb19deb00087ed9b7464d68;$sha:7809eff7fdbe5dc7b3ab634d4019d68dd9283e49;$str_len:1864638;3Generic-000
+$md5:cc5b4e973cb19deb00087ed9b7464d68;$sha:7809eff7fdbe5dc7b3ab634d4019d68dd9283e49;$str_len:1864638;3X-000
 $md5:d402bd61547907e1245f8929a6af5607;$sha:caf37723a57907525170683f7e31f1120f35f399;$str_len:1584369;3FakeAngry-00
 $md5:dac461530c76978da3e175cae22122e8;$sha:45b95f578aa7f3a61ab6b5248742da22af00ed84;$xt:apk;8Army
 $md5:e673e54c4025f972ecb35be4153396d7;$sha:ba2b8c34d506d8dd908f0714f125b1ac2589eee0;$str_len:7265783;8NQMobile.Antivirus
@@ -1997,6 +2011,79 @@ $md5:d1f131af55dea049f5caba2991314575;$sha:bce47368b05fa3a18e76131fb70dc4bf56fc7
 $md5:8699bb9e413dba9ad90ba97d41479c83;$sha:ca55220a59e140befcb973cf1e93c5b095a10989;$str_len:139264;3PWS-09
 $md5:d3109c83e07dd5d7fe032dc80c581d08;$sha:42e6da9a08802b5ce5d1f754d4567665637b47bc;$str_len:50688;0Hammertoss-03
 $md5:b605754db973ea1ddc275baa3ee6216a;$sha:9da51a9fad495736277c4258c4663113349b0070;$str_len:1111552;0 OUH-08
+$md5:94f0bb1da2aa295fb3b391cdbd1fec01;$sha:e48638289cdaa42fce3a238a60f427b924000d8f;$str_len:617472;01508X-000
+$md5:22e3eb226e53e5cf197bb38540e8099b;$sha:ecec615597fd7967d5b88c5eb520917119632963;$str_len:663552;01508X-001
+$md5:9ad9891b39a876653f49832ab8b6493b;$sha:779782372845050d88de8d3e81d972757c546e1b;$str_len:58880;01508X-002
+$md5:57bd1542065b782bf128ae7cbdea3c96;$sha:108237bc56ca07d3e43a2a89796ee14d6e03b349;$str_len:837512;01508X-003
+$md5:09bf9a75bd6944f5215f30aba3d66f11;$sha:53222011aa346ae98e6c6dfe52478c562f4d8173;$str_len:626688;01508X-004
+$md5:845eb988a4171bb7c8a568e9dc5bf0a3;$sha:59bd5b4c38ded1830948a6d292740faeb6e957fe;$str_len:2097152;01508X-005
+$md5:646dda37637841ad4d4ba1e31e5f7592;$sha:9e577cf12d6278af969a09f822b2e13ef34238e2;$str_len:970752;01508X-006
+$md5:09dad0b6b49fd88000d9ea0fd197fce1;$sha:648ad00c286ac974f0010a27d0286ebd38c0d0a5;$str_len:820224;01508X-007
+$md5:09e5b8986e1d173d4b759acecd9bd5cf;$sha:a418606ed320624af8fca6dd0fe68a88f8e33da9;$str_len:35840;01508X-008
+$md5:6a3bbc1a1004feddda601b0518a25e2b;$sha:0f8f028a0cf1bffaeb099006bfb13e418600ff7b;$str_len:603136;01508X-009
+$md5:a6aede6f0af0afa0593bfbc5d64e277a;$sha:14a96afefde7e5bc8e67a6d01275aee9aabdf95b;$str_len:1595269;01508X-010
+$md5:c046acaffd85ddde782d34af6b6651b2;$sha:b0510bb1f2bc8ddd3dae1481dde07356ef83598e;$str_len:118784;01508X-011
+$md5:1ace6c2fb9705dfd57e5cbb8433d9d75;$sha:609464f28042a7aef612506cb579117c5628e833;$str_len:755480;01508X-012
+$md5:cdacb6ee37d11d87a04aeb9f55c58ea1;$sha:973700a08bf5c29dae583ad7534a5c6bf8b10190;$str_len:332026;01508X-013
+$md5:a9179e65c9964d1d5236bf357b2efe57;$sha:ac5727454ba188715214f96a8c6f2b799f77c60e;$str_len:1428352;01508X-014
+$md5:5dc3153e45ec1f94296688995c335037;$sha:c9b0d99b42914bf48fd3756cf823543a21f528c1;$str_len:338372;01508X-015
+$md5:f0dd62ee19ee9f81b99cd77b5d5e8e2e;$sha:0cc32b610bd5c47c036f4057076515abc761edd5;$str_len:555318;01508X-016
+$md5:cca3742e7603fcaa38161977f8d71361;$sha:fed8e4b18851b0d43a9b6d501c84e7c7e0c75c98;$str_len:369243;01508X-017
+$md5:2ad12c7ee0a7eabccbe84a3ff2b31f55;$sha:310808c118ecca1c9d74a28b0fe085b5e9fa8fb8;$str_len:510864;01508X-018
+$md5:72a7777d429f3068f1e3d21d1e78a8a1;$sha:94fc348bd318332515931e79a12e1f8c8a53be01;$str_len:278833;01508X-019
+$md5:546863b8533d37249f03c2eb11b5fff3;$sha:68cb24b276a663e722ddabb017dfcb1acb98da91;$str_len:736256;01508X-020
+$md5:f19514420a13831253be7983af390bf9;$sha:95ac8511567425275596733aa5b6468436eff940;$str_len:151040;01508X-021
+$md5:4d3019ebc9174f47f26a0bf923dfd0e9;$sha:3622cd817e022c5dd742586fc666d377caebe066;$str_len:619008;01508X-022
+$md5:11213a8f8cc6252292a6dc26d3f23527;$sha:31fc7b14278e32b62165a80d3c50f8b97b8aa67b;$str_len:49152;01508X-023
+$md5:8f6fc9ac7f4aa409d59d7d79307b07ef;$sha:7ce22ad09a9e736548ceac6c8a6954a7b978167c;$str_len:275968;01508X-024
+$md5:9555cb94648445f4d0e4d5990de40141;$sha:f8a4d2743a5d005a6287ce9570ec0c3227ec2e2c;$str_len:414208;01508X-025
+$md5:cb0673fce205815c623c03f259279ead;$sha:cf4bbfa5a620ce3ad2e75e0fac4a8f721da9b9d3;$str_len:159744;01508X-026
+$md5:9d3d27f9391b4db173f58d1ad79630c5;$sha:6269db5b4cf76892078dd0b979e98674d2f853b5;$str_len:143360;01508X-027
+$md5:a4f5f9a776cc9000754e91e93a72b6a5;$sha:fbe30d2adaa84ce1cbfdcfe20c33d8d90a7f73f4;$str_len:344064;01508X-028
+$md5:e7d864f688a0338d30cc4668543ba544;$sha:e08195ac22e7358d88d72e672b75076fef3aa103;$str_len:251392;01508X-029
+$md5:3cf2b9fbfeb3c4f2d2ba74b367898c1a;$sha:727a4eaedcd1af6b835a9a806f52c00c6c5f8abc;$str_len:410112;01508X-030
+$md5:a10b7819b242545a9e935b4172e9c1ef;$sha:3a541e4d920216b10c83613a08ae8247c7e6ce66;$str_len:6184960;01508X-031
+$md5:69d724c1b3486a09945316469f44fdd4;$sha:fce5c6f3e8197380248fe1db53f170cfcc532809;$str_len:180224;01508X-032
+$md5:61a45882a456e0505607adeb816d44d6;$sha:80080a0d471a0a5ad9309447991bfa2a04d545d5;$str_len:17408;01508X-033
+$md5:f8637f550d1d7b2093663af48169336b;$sha:88f37ec657e202c26a05f43b472b6055ebf56b84;$str_len:369246;01508X-034
+$md5:2f9dfa6e940958f7c967a83fdca2d274;$sha:c23a3c5e05411cf414fdbe05f6dce08bed88857a;$str_len:322061;01508X-035
+$md5:7a663ab59a4d921b971e656de4fbbeb9;$sha:8861d9efae51e891a4885f17b76ac159cc339067;$str_len:516346;01508X-036
+$md5:8afe0b30c416028fac490374f124deac;$sha:f5560bb622b52f17113f68ba22d864d07e8c45cd;$str_len:216576;01508X-037
+$md5:dda40dbadeb0e7c91c5f27e428cb8493;$sha:6b3571bb7a281f0f1e3c551c059eef7affbbdde2;$str_len:107008;01508X-038
+$md5:a0a9bfc7353c50fa7391ce7854a06f69;$sha:b9b440e0a61232ff04d0755cabff267e6057c116;$str_len:812936;01508X-039
+$md5:65dddfa7c86943316f197633bc15da78;$sha:4662ad11c8824e12e8d4384743270faf2e78351e;$str_len:612352;01508X-040
+$md5:7bf21fbb054adbd697318a095350a7c7;$sha:75a80d8088f56036c7f8df693710e1efd7a2efd0;$str_len:491065;01508X-041
+$md5:9d14667aa7b166e1800812ad534d3d18;$sha:98340b90b0b4e7d3c5c39d974fc256724b64c189;$str_len:740575;01508X-042
+$md5:e1cf583368e370b968bdfd61cec46636;$sha:fbadab326f81716fae301a2a14afcffdba78a272;$str_len:67072;01508X-043
+$md5:81ccaf46ff90d7f3b62759a5fd5d34d9;$sha:3715ee2c8fb2dc2c75a641ef0a51aab18b734375;$str_len:1428365;01508X-044
+$md5:a8a32e532d2fd59aaff365e249e49c17;$sha:c75fe54196a934bac990fb643e0a7c5b62e5b66e;$str_len:173568;01508X-045
+$md5:316cb5990f1c4b8c7c235fdeee15df99;$sha:9eabeb442fcedc691ef6cbc3ccee1282c7f12312;$str_len:190976;01508X-046
+$md5:f3f83cd47328a8bc137e312ab52656da;$sha:c3f7b1983991e9acfc029e713750666ccb3b28fd;$str_len:504832;01508X-047
+$md5:c5b65452d286c0d0ec1c706dd862f624;$sha:db35932afe6fec5faf3bb9c2d813ed9d335005fe;$str_len:619008;01508X-048
+$md5:7c5d4197b1c9c02e1f44413950dc4768;$sha:bf3a22a76f9377d3fa86d32d42fe44b5dfa6dd06;$str_len:79872;01508X-049
+$md5:271986f89615cae7afc95be3e239a582;$sha:4be3442dc9b54af4c1d56f5e5d57be88d452be49;$str_len:1428352;01508X-050
+$md5:26511fefccb06f1db9f9e8d6cbe36b0c;$sha:0c9c98d56486e91578e4c1840bc12541e39e9acc;$str_len:118784;01508X-051
+$md5:19d8f9a6a7b7dc27dd26b35c64317276;$sha:cf16866027bcf35757dfa57f0505bbe9619a5c6c;$str_len:197120;01508X-052
+$md5:3b1f9ff41a68e9e8eb7469de617f0093;$sha:bd1f83602514b024e1a4b9d83930644f655a59fb;$str_len:713495;01508X-053
+$md5:11814f174042991a21d4fe652b63e8fa;$sha:6192b1aba1d5891f8b54baac13d2deb66350471e;$str_len:275968;01508X-054
+$md5:2cf59fd0f1498545563dd0d1b7dd30f0;$sha:de61b86bb0eec4fbd5b105626e048798acdb5bc2;$str_len:57344;01508X-055
+$md5:c09ae5eef71ab967c7b9f8de0a8ff6c6;$sha:bd742e9877a5a421baf66d6dcd1461fa68e6de55;$str_len:169984;01508X-056
+$md5:4238dd3a2232b98b2b39b32839b7ff4b;$sha:16e58ec5b6887f7f511b594cf8d55c0c71a20f6a;$str_len:322760;01508X-057
+$md5:26e442aa18fcea38e4c652d346627238;$sha:6c6cd84dcdc1fa2c753779de64b5d0fed40e82f7;$str_len:184320;01508X-058
+$md5:184231953093fbf485c389f226c14159;$sha:5f9bc37321739f5506cb97a8bd9efd25c91a00ea;$str_len:3342468;01508X-059
+$md5:204819b844f6d9162453d96757753833;$sha:28a72d40cbcfbb55f2b56bb83f4ef229154629dc;$str_len:385536;01508X-060
+$md5:eeced691a89edd7fee36fd70f1c5767c;$sha:29c5972735863e0ad939be5cfb0af2cc51f8113f;$str_len:424310;01508X-061
+$md5:89a8588877ebbd7541e6b1045a56d456;$sha:7cb24cebaa33608206aba101868e89644ac3abc9;$str_len:224264;01508X-062
+$md5:63d14be3e73bc422c73e3e1627f63779;$sha:6ff248bf10da560ea5b9f4ddaf872ac29b73129a;$str_len:1693299;01508X-063
+$md5:4d3400475fb7a4a40cd29878423e46de;$sha:b6a7ca298d429db23b00be7b58b8954b45f051bd;$str_len:16384;01508X-064
+$md5:65f84e37035cfc0ad35a54d0991a6eb2;$sha:a3dec951d985f9e9b55fbb255f7d8f6f541797ee;$str_len:120832;01508X-065
+$md5:959f1b00a782f288979d874624ee15b6;$sha:2ce4b408e8bfaaf6485c4519fc1d716bd57cbf3f;$str_len:220160;01508X-066
+$md5:b1a48d657994d1914887cc05212af439;$sha:edba698e9c03b95e5928d56240f52771a357e01a;$str_len:180736;01508X-300
+$md5:1eaaedaf950a7018a3c245fe5ca39066;$sha:505db338b7635c7f23360922a018ddf11ba504a7;$str_len:630784;0SteamThief-324
+$md5:245179d73b15e6288d2507a91e9b59db;$sha:15084b87ed59dc65f9e3955cf12593c2f43b97b1;$str_len:1233264;0SteamThief-325
+$md5:03a0164812ed6170b6021e0219d4a6b1;$sha:64b9517e91f8216111fa4be9c3fcf0d6f422ee2a;$str_len:585728;0SteamThief-326
+$md5:d19c0796b29e57fefc8713b33f474399;$sha:4fab6db9c02e3935c6b6747f4142d43191db1a22;$str_len:586240;0SteamThief-327
+$md5:387a787b32816c047a49e793ee4cdc59;$sha:b9919eb8d48b7e0eee41f10f5733d7002d8a055f;$str_len:1069056;0SteamThief-328
 === Infected PE files caught by honeypot trap; Not detected or only partially detected by V.T. ===
 .:: 2015/02
 $md5:174bcf22f37a80c950409c9a44b2e95d;$sha:35298b05ada53008aa8d64bde3313fc3534343d1;$str_len:197632;0DOBJ-00
@@ -2690,7 +2777,7 @@ $is_pe:1;$NumOfSections:0;4Sectionless_PE
 $is_pe:1;FD-RX:[46]600[46]900[57]200[46]500[57]700[46]100[46]c00[46]c;META:\x3bSectionName\x3a\x2etext\x3bVirtualSize\x3a[0-9]{1,9}\x3bVirtualAddress\x3a.{1,9}\x3bSizeOfRawData\x3a(22016|23552|24576|27648)\x3b;META:\x3bSectionName\x3a\x2ersrc\x3bVirtualSize\x3a[0-9]{1,9}\x3bVirtualAddress\x3a.{1,9}\x3bSizeOfRawData\x3a(1024)\x3b;4Bladabindi-00.A
 $is_pe:1;FD-RX:[46]600[46]900[57]200[46]500[57]700[46]100[46]c00[46]c;META:\x3bSectionName\x3a\x2etext\x3bVirtualSize\x3a[0-9]{1,9}\x3bVirtualAddress\x3a.{1,9}\x3bSizeOfRawData\x3a(27136)\x3b;META:\x3bSectionName\x3a\x2ersrc\x3bVirtualSize\x3a[0-9]{1,9}\x3bVirtualAddress\x3a.{1,9}\x3bSizeOfRawData\x3a(2048)\x3b;4Bladabindi-00.B
 $is_pe:1;META:\x3b(SectionName\x3a\x3bVirtualSize\x3a[0-9]{1,9}\x3bVirtualAddress\x3a.{1,9}\x3bSizeOfRawData\x3a[0-9]{1,9}\x3bMD5\x3a.{32}\x3b){4};4Obfuscated-00
-$is_pe:1;META:\x3bSectionName\x3a.?av[cp]\x3b;î*Generic-01
+$is_pe:1;META:\x3bSectionName\x3a.?av[cp]\x3b;î*X-01
 $is_pe:1;META:\x3bSectionName\x3a.?nsp[0-9];î*NSPack-00
 $is_pe:1;META:\x3bSectionName\x3a.?UPX[0-9\x21]?;î*UPX-00
 $is_pe:1;META:\x3bSectionName\x3a.?vmp[0-9]?;î*VMProtect-00
@@ -2700,80 +2787,82 @@ $is_pe:1;META:\x3bSectionName\x3a.?[Aa]([Dd]ata|[Ss][Pp]ack)\x3b;î*ASPack-00
 $is_pe:1;META:\x3bSectionName\x3a.?[Pp][Ee][Bb]undle;î*PEBundle-00
 $is_pe:1;META:\x3bSectionName\x3a.?[Pp][Ee][Cc]([0-9]|[0-9][MT]O|ompact[0-9]);î*PECompact-00
 $is_pe:1;META:\x3bSectionName\x3a.?[Tt]hemida;î*Themida-00
-$is_pe:1;META:\x3bSectionName\x3a.?\x40.{0,3}\x40.{0,2}\x3b;4Generic-00
-$is_pe:1;META:\x3bSectionName\x3a.\x3b;4Generic-01
-$is_pe:1;META:\x3bSectionName\x3a.{0,2}[Pp][Aa]?[Cc][Kk];î*Generic-00
-$is_pe:1;META:\x3bSectionName\x3a.{0,2}[ut0]a?\x3b;4Generic-02
+$is_pe:1;META:\x3bSectionName\x3a.?\x40.{0,3}\x40.{0,2}\x3b;4X-00
+$is_pe:1;META:\x3bSectionName\x3a.\x3b;4X-01
+$is_pe:1;META:\x3bSectionName\x3a.{0,2}[Pp][Aa]?[Cc][Kk];î*X-00
+$is_pe:1;META:\x3bSectionName\x3a.{0,2}[ut0]a?\x3b;4X-02
 $is_pe:1;META:\x3bSectionName\x3a.{0,4}[Cc]rypt;40X-00
-$is_pe:1;META:\x3bSectionName\x3a.{0,7}(\x5b|\x5d).{0,7}\x3b;4Generic-03
+$is_pe:1;META:\x3bSectionName\x3a.{0,7}(\x5b|\x5d).{0,7}\x3b;4X-03
 $is_pe:1;META:\x3bSectionName\x3aBitArts;î*Crunch.2-00
-$is_pe:1;META:\x3bSectionName\x3adAPy;4Generic-19
+$is_pe:1;META:\x3bSectionName\x3adAPy;4X-19
 $is_pe:1;META:\x3bSectionName\x3aDAStub;î*DragonArmor-00
-$is_pe:1;META:\x3bSectionName\x3ahtomaota;4Generic-04
+$is_pe:1;META:\x3bSectionName\x3ahtomaota;4X-04
 $is_pe:1;META:\x3bSectionName\x3akkrunchy;î*kkrunchy-00
 $is_pe:1;META:\x3bSectionName\x3aMEW\x3b;î*MEW-00
-$is_pe:1;META:\x3bSectionName\x3aPAGE(DRV|SYS|WMI);îGeneric-12
+$is_pe:1;META:\x3bSectionName\x3aPAGE(DRV|SYS|WMI);îX-12
 $is_pe:1;META:\x3bSectionName\x3aPELOCK(nt)?;î*PELock-00
 $is_pe:1;META:\x3bSectionName\x3aPESHiELD;î*PESHiELD-00
-$is_pe:1;META:\x3bSectionName\x3asdt\x3b;îGeneric-05
-$is_pe:1;META:\x3bSectionName\x3atldksods;4Generic-06
+$is_pe:1;META:\x3bSectionName\x3asdt\x3b;îX-05
+$is_pe:1;META:\x3bSectionName\x3atldksods;4X-06
 $is_pe:1;META:\x3bSectionName\x3aVProtect;î*VProtect-00
 $is_pe:1;META:\x3bSectionName\x3aWinLicen;î*Themida-01
 $is_pe:1;META:\x3bSectionName\x3a[a-zA-Z]{7}[0-9];$NumOfSections:4;4SteamThief-01
 $is_pe:1;META:\x3bSectionName\x3a[A-Z][0-9][a-z]{2}[0-9][a-z][0-9];$NumOfSections:4;4SteamThief-00
 $is_pe:1;META:\x3bSectionName\x3a\x21[Ee][Pp]ack;î*EPack-00
-$is_pe:1;META:\x3bSectionName\x3a\x2e....\x2dco;4Generic-07
-$is_pe:1;META:\x3bSectionName\x3a\x2e?ex(c|_cod);4Generic-10
-$is_pe:1;META:\x3bSectionName\x3a\x2eaxlgt;4Generic-08
-$is_pe:1;META:\x3bSectionName\x3a\x2ebrdata;4Generic-18
+$is_pe:1;META:\x3bSectionName\x3a\x2e....\x2dco;4X-07
+$is_pe:1;META:\x3bSectionName\x3a\x2e?ex(c|_cod);4X-10
+$is_pe:1;META:\x3bSectionName\x3a\x2eaxlgt;4X-08
+$is_pe:1;META:\x3bSectionName\x3a\x2ebrdata;4X-18
 $is_pe:1;META:\x3bSectionName\x3a\x2eByDwing;î*UPack-00
 $is_pe:1;META:\x3bSectionName\x3a\x2eccg;î*CCG-00
-$is_pe:1;META:\x3bSectionName\x3a\x2edelete;îGeneric-09
-$is_pe:1;META:\x3bSectionName\x3a\x2ekewyo;4Generic-11
+$is_pe:1;META:\x3bSectionName\x3a\x2edelete;îX-09
+$is_pe:1;META:\x3bSectionName\x3a\x2ekewyo;4X-11
 $is_pe:1;META:\x3bSectionName\x3a\x2emackt;î*ImpRec-00
 $is_pe:1;META:\x3bSectionName\x3a\x2eMaskPE;î*MaskPE-00
 $is_pe:1;META:\x3bSectionName\x3a\x2eMPRESS;î*MPRESS-00
 $is_pe:1;META:\x3bSectionName\x3a\x2endata\x3bVirtualSize\x3a[0-9]{1,9}\x3bVirtualAddress\x3a.{1,9}\x3bSizeOfRawData\x3a(0)\x3bMD5\x3ad41d8cd98f00b204e9800998ecf8427e\x3b;4*NullSoft-00
 $is_pe:1;META:\x3bSectionName\x3a\x2eneolite?;î*Neolite-00
 $is_pe:1;META:\x3bSectionName\x3a\x2eperplex;î*Perplex-00
-$is_pe:1;META:\x3bSectionName\x3a\x2epklstb;4Generic-12
-$is_pe:1;META:\x3bSectionName\x3a\x2erdata.?p;îGeneric-17
-$is_pe:1;META:\x3bSectionName\x3a\x2erelo2;îGeneric-13
+$is_pe:1;META:\x3bSectionName\x3a\x2epklstb;4X-12
+$is_pe:1;META:\x3bSectionName\x3a\x2erdata.?p;îX-17
+$is_pe:1;META:\x3bSectionName\x3a\x2erelo2;îX-13
 $is_pe:1;META:\x3bSectionName\x3a\x2esforce;î*StarForce-00
-$is_pe:1;META:\x3bSectionName\x3a\x2etexc;îGeneric-14
+$is_pe:1;META:\x3bSectionName\x3a\x2etexc;îX-14
 $is_pe:1;META:\x3bSectionName\x3a\x2eU[Pp]ack;î*UPack-01
-$is_pe:1;META:\x3bSectionName\x3a\x2ewqvwbj;4Generic-15
+$is_pe:1;META:\x3bSectionName\x3a\x2ewqvwbj;4X-15
 $is_pe:1;META:\x3bSectionName\x3a\x2eWWPACK;î*WWPACK-00
 $is_pe:1;META:\x3bSectionName\x3a\x2e[Pp]etite;î*Petite-00
 $is_pe:1;META:\x3bSectionName\x3a\x2e[Ss][Vv][Kk][Pp];î*SVKP-00
-$is_pe:1;META:\x3bSectionName\x3a\x2e\x3b;4Generic-16
+$is_pe:1;META:\x3bSectionName\x3a\x2e\x3b;4X-16
 .:: 2015/03
 $is_pe:1;META:\x3bSectionName\x3a.{0,8}\x7c;4$Andromeda-01
 $is_pe:1;META:\x3bSectionName\x3adAt\x3b;4$Upatre-00
 $is_pe:1;META:\x3bSectionName\x3anyen[0-9];4Dridex-01
 $is_pe:1;META:\x3bSectionName\x3a[0-9]{2}[a-zA-Z]{3,5}\x3b;4Dridex-00
 $is_pe:1;META:\x3bSectionName\x3a[0-9]{7};4$Andromeda-00
-$is_pe:1;META:\x3bSectionName\x3a\x26\x5d[0-9]{1,8}\x3b;4Generic-21
+$is_pe:1;META:\x3bSectionName\x3a\x26\x5d[0-9]{1,8}\x3b;4X-21
 $is_pe:1;META:\x3bSectionName\x3a\x2e(dddd|flat|lebk)\x3b;4$Upatre-01
 $is_pe:1;META:\x3bSectionName\x3a\x2e(RDABS[0-9]|relic)\x3b;4Dyreza-00
 $is_pe:1;META:\x3bSectionName\x3a\x2eeh_fram\x3b;4!TorrentLocker-00
-$is_pe:1;META:\x3bSectionName\x3a\x2f[0-9]{1,8}\x3b;4Generic-20
+$is_pe:1;META:\x3bSectionName\x3a\x2f[0-9]{1,8}\x3b;4X-20
 .:: 2015/04
 $is_pe:1;META:\x3bSectionName\x3a\x2erwu;4Simda-00
 .:: 2015/05
 $is_pe:1;$xt:exe;FS-MIN:300032;FS-MAX:307200;FD:36003000330033000d000a002d00200041007400740065006d0070007400200074006f00200075007300650020004d00530049004c00200063006f00640065002000660072006f006d0020007400680069007300200061007300730065006d0062006c007900200064007500720069006e00670020006e0061007400690076006500200063006f0064006500200069006e0069007400690061006c0069007a006100740069006f006e000a005400680069007300200069006e006400690063006100740065007300200061002000620075006700200069006e00200079006f007500720020006100700070006c00690063006100740069006f006e002e0020004900740020006900730020006d006f007300740020006c0069006b0065006c0079002000740068006500200072006500730075006c00740020006f0066002000630061006c006c0069006e006700200061006e0020004d00530049004c002d0063006f006d00700069006c0065006400200028002f0063006c00720029002000660075006e006300740069006f006e002000660072;4Kazy.Packed-00
 $is_pe:1;META:\x3bSectionName\x3ahhh;META:\x3bSectionName\x3aSAN;META:\x3bSizeOfRawData\x3a(0)\x3b;4Kazy.Packed-01
-$is_pe:1;META:\x3bSectionName\x3a\x2edata[\x20\x2d](ri|co);î*Generic-02
-$is_pe:1;META:\x3bSectionName\x3a[^0-9A-Za-z\x2e];î*Generic-03
-$is_pe:1;META:\x3bSectionName\x3a.?[a-zA-Z]\x26\x2b\x22;î*Generic-04
+$is_pe:1;META:\x3bSectionName\x3a\x2edata[\x20\x2d](ri|co);î*X-02
+$is_pe:1;META:\x3bSectionName\x3a[^0-9A-Za-z\x2e];î*X-03
+$is_pe:1;META:\x3bSectionName\x3a.?[a-zA-Z]\x26\x2b\x22;î*X-04
 .:: 2015/06
-$is_pe:1;META:\x3bSectionName\x3a(\x28h0|0H\x40\x2a|9ups|\x2bdqH\x3ap|KDWZ);4Generic-22.A
-$is_pe:1;META:\x3bSectionName\x3a(CONST|\x2e?qdata);îGeneric-22.B
+$is_pe:1;META:\x3bSectionName\x3a(\x28h0|0H\x40\x2a|9ups|\x2bdqH\x3ap|KDWZ);4X-22.A
+$is_pe:1;META:\x3bSectionName\x3a(CONST|\x2e?qdata);îX-22.B
 $is_pe:1;META:\x3bSectionName\x3a.{0,8}\x2f.{0,8}\x2f;4SteamThief-02
 $is_pe:1;META:\x3bSectionName\x3a\x2egentee;ó+Gentee-00
 .:: 2015/07
-$is_pe:1;META:\x3bSectionName\x3a\x2ebindat;îGeneric-23
+$is_pe:1;META:\x3bSectionName\x3a\x2ebindat;îX-23
 $is_pe:1;META:\x3bSectionName\x3a\x2eopcandy;4OpenCandy-00
+.:: 2015/08
+$is_pe:1;META:\x3bSectionName\x3aMicroSof\x3b;8MS/–ú–∞–π–∫—Ä–æ—Å–æ—Ñ—Ç-03
 === Shell scripts ===
 .:: 2015/03
 $xt:js;FD-RX:[57]6[46]1[57]2205f245f.{2,128}3d;FD-RX:(25[57]4[46]5[46]d[57]025[57]c[57]835|[46]4[46]f[57]7[46]e[46]c[46]f[46]1[46]42d[46]1[57]4[57]4[46]1[46]3[46]8|575363726970742e5368656c6c|457870616e64456e7669726f6e6d656e74537472696e6773|[46]d[57]3[57]8[46]d[46]c322e[57]8[46]d[46]c[46]8[57]4[57]4[57]0|536372697074696e672e46696c6553797374656d4f626a656374|41444f44422e53747265616d|526573706f6e7365426f6479|[46]8[57]4[57]4[57]03a2f2f|2e636f6d2f776f72642e706466|6174746163686d656e742e646f63|2e636f6d2f3430332e766c74|736563757265642e626174);FD:3d5f245f;0&C-00
@@ -2797,10 +2886,13 @@ $xts:ash*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0-Eval-07
 $xts:asm*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0-Eval-08
 $xts:asp*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0-Eval-09
 $xts:php*;FD-RX:(0[9ad]|2[027])6576616c(2[024578]|60|7b);0-Eval-00
+$fourcc:23696e63;FD-NORM:696e736f636b3d61636365707428732c28737472756374736f636b616464722a2926636c69616464722c266c656e293b;0-Blind-00
 === NoMagic/HighRisk ===
+.:: 2015/08
 $xt:ccc;0-NoMagic/HighRisk.CCC
 $xt:ashx;ê-NoMagic/HighRisk.ASHX
 $xt:asmx;ê-NoMagic/HighRisk.ASMX
+$xt:cpp;0-NoMagic/HighRisk.CPP
 === Misc. Ransomware ===
 .:: 2015/03
 $xt:js;$phase:archive;FD-RX:[46]8[57]4[57]4[57]0([57]3)?3a.{6,1024}2e[46]a[57]0([46]5)?[46]7;0!CryptoLocker-00
@@ -2819,7 +2911,7 @@ $md5:398a2b535ce06231d3ba18aa4b52d1b1;$sha:71ffb0d648d369e00962972d1d6f44d8f4967
 $xt:asp;FD-RX:(0.01|010):A:2;0"Corrupt-00
 === Misc. Others ===
 .:: 2015/02
-$md5:1c76d4077a551468e834fada41673852;$sha:634b4a9f4809ae7bf42bdec468a2fc5ae082e376;$str_len:112128;3(Downloader-00
+$md5:1c76d4077a551468e834fada41673852;$sha:634b4a9f4809ae7bf42bdec468a2fc5ae082e376;$str_len:112128;3(Dldr-00
 $md5:97f6d88dcfe5fdcbf6cde2a588ad48bc;$sha:e17474fe19a3a6b5364d8502b9b436ac703e16c4;$str_len:62976;0$Tinba-01
 $md5:ceba976d42e030bceb1745aa59f76b68;$sha:073b71bc0b1db2f27765b1f952e80ed957c698fc;$str_len:6660534;3Bancos-00
 .:: 2015/03

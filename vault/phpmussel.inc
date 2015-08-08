@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7a-BETA (7th August 2015) Core Script.
+ This File: phpMussel v0.7a-BETA (8th August 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -776,7 +776,7 @@ if(!function_exists('vn_shorthand'))
 			else if($n[1]===12)$out.='Python.';
 			else if($n[1]===13)$out.='Perl.';
 			else if($n[1]===14)$out.='Ruby.';
-			else if($n[1]===15)$out.='INF.';
+			else if($n[1]===15)$out.='INF/INI.';
 			}
 		if($n[0]===3)
 			{
@@ -793,19 +793,14 @@ if(!function_exists('vn_shorthand'))
 				if(!$GLOBALS['MusselConfig']['signatures']['detect_adware'])$GLOBALS['memCache']['ignoreme']=true;
 				}
 			else if($n[1]===4)$out.='Flooder.';
-			else if($n[1]===5)$out.='IRC.';
+			else if($n[1]===5)$out.='IRCBot.';
 			else if($n[1]===6)$out.='Exploit.';
 			else if($n[1]===7)$out.='VirTool.';
 			else if($n[1]===8)$out.='Dialer.';
 			else if($n[1]===9)
 				{
-				$out.='Joke.';
+				$out.='Joke/Hoax.';
 				if(!$GLOBALS['MusselConfig']['signatures']['detect_joke_hoax'])$GLOBALS['memCache']['ignoreme']=true;
-				}
-			else if($n[1]===10)
-				{
-				$out.='PUA.';
-				if(!$GLOBALS['MusselConfig']['signatures']['detect_pua_pup'])$GLOBALS['memCache']['ignoreme']=true;
 				}
 			else if($n[1]===11)$out.='Malware.';
 			else if($n[1]===12)$out.='Riskware.';
@@ -837,7 +832,7 @@ if(!function_exists('vn_shorthand'))
 				}
 			else if($n[1]===12)
 				{
-				$out.='PUP.';
+				$out.='PUA/PUP.';
 				if(!$GLOBALS['MusselConfig']['signatures']['detect_pua_pup'])$GLOBALS['memCache']['ignoreme']=true;
 				}
 			else if($n[1]===13)
@@ -859,6 +854,14 @@ if(!function_exists('vn_shorthand'))
 		if($n[0]===3)
 			{
 			if($n[1]===0)$out.='Cryptor.';
+			if($n[1]===1)$out.='Phish.';
+			if($n[1]===2)$out.='Spam.';
+			if($n[1]===3)$out.='Spammer.';
+			if($n[1]===4)$out.='Scam.';
+			if($n[1]===5)$out.='ZipBomb.';
+			if($n[1]===6)$out.='ForkBomb.';
+			if($n[1]===7)$out.='LogicBomb.';
+			if($n[1]===8)$out.='CyberBomb.';
 			}
 		return $out.substr($vn,4);
 		}
@@ -2111,7 +2114,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 	$is_pe=false;
 	$NumOfSections=0;
 	$PEFileDescription=$PEFileVersion=$PEProductName=$PEProductVersion=$PECopyright=$PEOriginalFilename=$PECompanyName='';
-	if($GLOBALS['MusselConfig']['signatures']['pe_clamav']||$GLOBALS['MusselConfig']['signatures']['pe_custom']||$GLOBALS['MusselConfig']['signatures']['pe_mussel']||$GLOBALS['MusselConfig']['attack_specific']['corrupted_exe'])
+	if($GLOBALS['MusselConfig']['signatures']['pe_clamav']||$GLOBALS['MusselConfig']['signatures']['pe_custom']||$GLOBALS['MusselConfig']['signatures']['pe_mussel']||$GLOBALS['MusselConfig']['signatures']['pex_custom']||$GLOBALS['MusselConfig']['signatures']['pex_mussel']||$GLOBALS['MusselConfig']['attack_specific']['corrupted_exe'])
 		{
 		if(substr($str,0,2)==='MZ')
 			{
@@ -2156,9 +2159,9 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 				$out.=$lnap.$GLOBALS['MusselConfig']['lang']['corrupted'].'!'.$GLOBALS['linebreak'];
 				$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['corrupted'].' ('.$ofnSafe.')! ';
 				}
-			if($PEArr['DoScan']&&($GLOBALS['MusselConfig']['signatures']['pe_clamav']||$GLOBALS['MusselConfig']['signatures']['pe_custom']||$GLOBALS['MusselConfig']['signatures']['pe_mussel']))
+			if($PEArr['DoScan'])$is_pe=true;
+			if($PEArr['DoScan']&&($GLOBALS['MusselConfig']['signatures']['pe_clamav']||$GLOBALS['MusselConfig']['signatures']['pe_custom']||$GLOBALS['MusselConfig']['signatures']['pe_mussel']||$GLOBALS['MusselConfig']['signatures']['pex_custom']||$GLOBALS['MusselConfig']['signatures']['pex_mussel']))
 				{
-				$is_pe=true;
 				$asciiable=false;
 				$PEArr['OptHdrSize']=@unpack('S',substr($str,$PEArr['Offset']+20,2));
 				$PEArr['OptHdrSize']=$PEArr['OptHdrSize'][1];
@@ -2300,14 +2303,140 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 				if(substr_count($str,"V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24"))
 					{
 					$PEArr['FINFO']=substral($str,"V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24");
-					if(substr_count($PEArr['FINFO'],"F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00"))$PEFileDescription=str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00"),"\x00\x00\x00"));
-					if(substr_count($PEArr['FINFO'],"F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"))$PEFileVersion=str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"),"\x00\x00\x00"));
-					if(substr_count($PEArr['FINFO'],"P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00"))$PEProductName=str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00"),"\x00\x00\x00"));
-					if(substr_count($PEArr['FINFO'],"P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"))$PEProductVersion=str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"),"\x00\x00\x00"));
-					if(substr_count($PEArr['FINFO'],"L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00"))$PECopyright=str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00"),"\x00\x00\x00"));
-					if(substr_count($PEArr['FINFO'],"L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00"))$PECopyright=str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00"),"\x00\x00\x00"));
-					if(substr_count($PEArr['FINFO'],"O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00"))$PEOriginalFilename=str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00"),"\x00\x00\x00"));
-					if(substr_count($PEArr['FINFO'],"C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00"))$PECompanyName=str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00"),"\x00\x00\x00"));
+					if(substr_count($PEArr['FINFO'],"F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00"))$PEFileDescription=trim(str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00"),"\x00\x00\x00")));
+					if(substr_count($PEArr['FINFO'],"F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"))$PEFileVersion=trim(str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"),"\x00\x00\x00")));
+					if(substr_count($PEArr['FINFO'],"P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00"))$PEProductName=trim(str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00"),"\x00\x00\x00")));
+					if(substr_count($PEArr['FINFO'],"P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"))$PEProductVersion=trim(str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"),"\x00\x00\x00")));
+					if(substr_count($PEArr['FINFO'],"L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00"))$PECopyright=trim(str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00"),"\x00\x00\x00")));
+					if(substr_count($PEArr['FINFO'],"O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00"))$PEOriginalFilename=trim(str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00"),"\x00\x00\x00")));
+					if(substr_count($PEArr['FINFO'],"C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00"))$PECompanyName=trim(str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00"),"\x00\x00\x00")));
+					$PEArr['FINFO']=array();
+					$PEArr['FINDX']=0;
+					if($PEFileDescription)
+						{
+						$PEArr['FINFO'][$PEArr['FINDX']]='$PEFileDescription:'.md5($PEFileDescription).':'.strlen($PEFileDescription).':';
+						$PEArr['FINDX']++;
+						}
+					if($PEFileVersion)
+						{
+						$PEArr['FINFO'][$PEArr['FINDX']]='$PEFileVersion:'.md5($PEFileVersion).':'.strlen($PEFileVersion).':';
+						$PEArr['FINDX']++;
+						}
+					if($PEProductName)
+						{
+						$PEArr['FINFO'][$PEArr['FINDX']]='$PEProductName:'.md5($PEProductName).':'.strlen($PEProductName).':';
+						$PEArr['FINDX']++;
+						}
+					if($PEProductVersion)
+						{
+						$PEArr['FINFO'][$PEArr['FINDX']]='$PEProductVersion:'.md5($PEProductVersion).':'.strlen($PEProductVersion).':';
+						$PEArr['FINDX']++;
+						}
+					if($PECopyright)
+						{
+						$PEArr['FINFO'][$PEArr['FINDX']]='$PECopyright:'.md5($PECopyright).':'.strlen($PECopyright).':';
+						$PEArr['FINDX']++;
+						}
+					if($PEOriginalFilename)
+						{
+						$PEArr['FINFO'][$PEArr['FINDX']]='$PEOriginalFilename:'.md5($PEOriginalFilename).':'.strlen($PEOriginalFilename).':';
+						$PEArr['FINDX']++;
+						}
+					if($PECompanyName)
+						{
+						$PEArr['FINFO'][$PEArr['FINDX']]='$PECompanyName:'.md5($PECompanyName).':'.strlen($PECompanyName).':';
+						$PEArr['FINDX']++;
+						}
+					if($GLOBALS['MusselConfig']['signatures']['pex_custom'])
+						{
+						if(!isset($GLOBALS['memCache']['pex_custom.cvd']))$GLOBALS['memCache']['pex_custom.cvd']=implode_md(file($GLOBALS['vault'].'pex_custom.cvd'));
+						if(!$GLOBALS['memCache']['pex_custom.cvd'])
+							{
+							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pex_custom.cvd)! ';
+								return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pex_custom.cvd)!'.$GLOBALS['linebreak'];
+								}
+							}
+						else
+							{
+							for($PEArr['PEMDI']=0;$PEArr['PEMDI']<$PEArr['FINDX'];$PEArr['PEMDI']++)
+								{
+								if(substr_count($GLOBALS['memCache']['pex_custom.cvd'],$PEArr['FINFO'][$PEArr['PEMDI']]))
+									{
+									$xsig=substraf($GLOBALS['memCache']['pex_custom.cvd'],$PEArr['FINFO'][$PEArr['PEMDI']]);
+									if(substr_count($xsig,$GLOBALS['linebreak']))$xsig=vn_shorthand(substrbf($xsig,$GLOBALS['linebreak']));
+									if(!substr_count($GLOBALS['memCache']['greylist'],','.$xsig.',')&&!$GLOBALS['memCache']['ignoreme'])
+										{
+										if(!$xskd)
+											{
+											$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$ofn.$GLOBALS['linebreak'];
+											$xskd=true;
+											}
+										$heur['detections']++;
+										if($GLOBALS['memCache']['weighted'])
+											{
+											$heur['weight']++;
+											$heur['web'].=$lnap.phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
+											$heur['cli'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
+											}
+										else
+											{
+											$out.=$lnap.phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
+											$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
+											}
+										}
+									$xsig='';
+									}
+								}
+							}
+						}
+					if($GLOBALS['MusselConfig']['signatures']['pex_mussel'])
+						{
+						if(!isset($GLOBALS['memCache']['pex_mussel.cvd']))$GLOBALS['memCache']['pex_mussel.cvd']=implode_md(file($GLOBALS['vault'].'pex_mussel.cvd'));
+						if(!$GLOBALS['memCache']['pex_mussel.cvd'])
+							{
+							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
+								{
+								if(!$xskd)$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$GLOBALS['linebreak'];
+								$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pex_mussel.cvd)! ';
+								return (!$n)?-3:$lnap.$GLOBALS['MusselConfig']['lang']['scan_signature_file_missing'].' (pex_mussel.cvd)!'.$GLOBALS['linebreak'];
+								}
+							}
+						else
+							{
+							for($PEArr['PEMDI']=0;$PEArr['PEMDI']<$PEArr['FINDX'];$PEArr['PEMDI']++)
+								{
+								if(substr_count($GLOBALS['memCache']['pex_mussel.cvd'],$PEArr['FINFO'][$PEArr['PEMDI']]))
+									{
+									$xsig=substraf($GLOBALS['memCache']['pex_mussel.cvd'],$PEArr['FINFO'][$PEArr['PEMDI']]);
+									if(substr_count($xsig,$GLOBALS['linebreak']))$xsig=vn_shorthand(substrbf($xsig,$GLOBALS['linebreak']));
+									if(!substr_count($GLOBALS['memCache']['greylist'],','.$xsig.',')&&!$GLOBALS['memCache']['ignoreme'])
+										{
+										if(!$xskd)
+											{
+											$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$ofn.$GLOBALS['linebreak'];
+											$xskd=true;
+											}
+										$heur['detections']++;
+										if($GLOBALS['memCache']['weighted'])
+											{
+											$heur['weight']++;
+											$heur['web'].=$lnap.phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
+											$heur['cli'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
+											}
+										else
+											{
+											$out.=$lnap.phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
+											$GLOBALS['xfm'].=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
+											}
+										}
+									$xsig='';
+									}
+								}
+							}
+						}
 					}
 				}
 			$PEArr=false;
@@ -7719,7 +7848,7 @@ if(!isset($MusselConfig['general']['scan_cache_expiry']))$MusselConfig['general'
 if(!isset($MusselConfig['general']['disable_cli']))$MusselConfig['general']['disable_cli']=0;
 if(!isset($MusselConfig['signatures']))$MusselConfig['signatures']=array();
 $memCache['vChkSigs']=array();
-foreach(array('ascii','coex','elf','exe','filenames','general','graphics','html','macho','mail','md5','metadata','ole','pdf','pe','swf','whitelist','xmlxdp') as $memCache['vChkSigs']['sigset'])
+foreach(array('ascii','coex','elf','exe','filenames','general','graphics','html','macho','mail','md5','metadata','ole','pdf','pe','pex','swf','whitelist','xmlxdp') as $memCache['vChkSigs']['sigset'])
 	{
 	$memCache['vChkSigs']['clamav']=$memCache['vChkSigs']['sigset'].'_clamav';
 	$memCache['vChkSigs']['custom']=$memCache['vChkSigs']['sigset'].'_custom';
@@ -7848,7 +7977,7 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
 			else if(@is_file($stl))
 				{
 				$hashme=@phpMusselFile($stl,0,true);
-				echo md5($hashme).':'.strlen($hashme).':YOUR-SIGNATURE-NAME';
+				echo md5($hashme).':'.strlen($hashme).':YOUR-SIGNATURE-NAME'.$linebreak;
 				}
 			else echo $stl.$MusselConfig['lang']['cli_is_not_a'].$linebreak;
 			}
@@ -7873,7 +8002,138 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
 			else if(@is_file($stl))
 				{
 				$hashme=@phpMusselFile($stl,0,true);
-				echo '$md5:'.md5($hashme).';$sha:'.sha1($hashme).';$str_len:'.strlen($hashme).';YOUR-SIGNATURE-NAME';
+				echo '$md5:'.md5($hashme).';$sha:'.sha1($hashme).';$str_len:'.strlen($hashme).';YOUR-SIGNATURE-NAME'.$linebreak;
+				}
+			else echo $stl.$MusselConfig['lang']['cli_is_not_a'].$linebreak;
+			}
+		if($cmd=='pe_meta')
+			{
+			$stl=substr($cli_args[2],strlen($cmd)+1);
+			if(@is_dir($stl))
+				{
+				if(!$d=@scandir($stl))echo $MusselConfig['lang']['failed_to_access'].'"'.$stl.'".'.$linebreak;
+				else
+					{
+					$c=count($d);
+					$xsc=$stl[strlen($stl)-1];
+					if($xsc!=="\\"&&$xsc!=="/")$stl.="/";
+					for($i=0;$i<$c;$i++)
+						{
+						if($d[$i]=='.'||$d[$i]=='..')continue;
+						echo phpMusselFork('pe_meta '.$stl.$d[$i],$d[$i]).$linebreak;
+						}
+					}
+				}
+			else if(@is_file($stl))
+				{
+				$hashme=@phpMusselFile($stl,0,true);
+				if(substr($hashme,0,2)==='MZ')
+					{
+					$PEArr=array();
+					$PEArr['Len']=strlen($hashme);
+					$PEArr['Offset']=@unpack('S',substr($hashme,60,4));
+					$PEArr['Offset']=$PEArr['Offset'][1];
+					while(true)
+						{
+						$PEArr['DoScan']=true;
+						if($PEArr['Offset']<1||$PEArr['Offset']>16384||$PEArr['Offset']>$PEArr['Len'])
+							{
+							$PEArr['DoScan']=false;
+							break;
+							}
+						$PEArr['Magic']=@substr($hashme,$PEArr['Offset'],2);
+						if($PEArr['Magic']!=='PE')
+							{
+							$PEArr['DoScan']=false;
+							break;
+							}
+						$PEArr['Proc']=@unpack('S',substr($hashme,$PEArr['Offset']+4,2));
+						$PEArr['Proc']=$PEArr['Proc'][1];
+						if($PEArr['Proc']!=0x14c&&$PEArr['Proc']!=0x8664)
+							{
+							$PEArr['DoScan']=false;
+							break;
+							}
+						$PEArr['NumOfSections']=@unpack('S',substr($hashme,$PEArr['Offset']+6,2));
+						$PEArr['NumOfSections']=$PEArr['NumOfSections'][1];
+						if($PEArr['NumOfSections']<1||$PEArr['NumOfSections']>40)$PEArr['DoScan']=false;
+						break;
+						}
+					if(!$PEArr['DoScan'])
+						{
+						// AAA Echo Not a valid PE file! AAA BBB
+						echo 'Not a valid PE file!'.$linebreak;
+						}
+					else
+						{
+						$PEArr['OptHdrSize']=@unpack('S',substr($hashme,$PEArr['Offset']+20,2));
+						$PEArr['OptHdrSize']=$PEArr['OptHdrSize'][1];
+						// AAA Echo PE Sections: AAA BBB
+						echo 'PE Sections:'.$linebreak;
+						for($PEArr['k']=0;$PEArr['k']<$PEArr['NumOfSections'];$PEArr['k']++)
+							{
+							$PEArr['SectionHead']=substr($hashme,$PEArr['Offset']+24+$PEArr['OptHdrSize']+($PEArr['k']*40),$PEArr['NumOfSections']*40);
+							$PEArr['SectionName']=str_ireplace("\x00",'',substr($PEArr['SectionHead'],0,8));
+							$PEArr['VirtualSize']=@unpack('S',substr($PEArr['SectionHead'],8,4));
+							$PEArr['VirtualSize']=$PEArr['VirtualSize'][1];
+							$PEArr['VirtualAddress']=@unpack('S',substr($PEArr['SectionHead'],12,4));
+							$PEArr['VirtualAddress']=$PEArr['VirtualAddress'][1];
+							$PEArr['SizeOfRawData']=@unpack('S',substr($PEArr['SectionHead'],16,4));
+							$PEArr['SizeOfRawData']=$PEArr['SizeOfRawData'][1];
+							$PEArr['PointerToRawData']=@unpack('S',substr($PEArr['SectionHead'],20,4));
+							$PEArr['PointerToRawData']=$PEArr['PointerToRawData'][1];
+							$PEArr['SectionData']=@substr($hashme,$PEArr['PointerToRawData'],$PEArr['SizeOfRawData']);
+							$PEArr['MD5']=md5($PEArr['SectionData']);
+							echo $PEArr['SizeOfRawData'].':'.$PEArr['MD5'].':'.$PEArr['SectionName'].$linebreak;
+							}
+						echo $linebreak;
+						if(substr_count($hashme,"V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24"))
+							{
+							$PEArr['FINFO']=substral($hashme,"V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24");
+							if(substr_count($PEArr['FINFO'],"F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00"))
+								{
+								$PEArr['ThisData']=trim(str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00"),"\x00\x00\x00")));
+								echo '$PEFileDescription:'.md5($PEArr['ThisData']).':'.strlen($PEArr['ThisData']).':YOUR-SIGNATURE-NAME'.$linebreak;
+								}
+							if(substr_count($PEArr['FINFO'],"F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"))
+								{
+								$PEArr['ThisData']=trim(str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"),"\x00\x00\x00")));
+								echo '$PEFileVersion:'.md5($PEArr['ThisData']).':'.strlen($PEArr['ThisData']).':YOUR-SIGNATURE-NAME'.$linebreak;
+								}
+							if(substr_count($PEArr['FINFO'],"P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00"))
+								{
+								$PEArr['ThisData']=trim(str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00"),"\x00\x00\x00")));
+								echo '$PEProductName:'.md5($PEArr['ThisData']).':'.strlen($PEArr['ThisData']).':YOUR-SIGNATURE-NAME'.$linebreak;
+								}
+							if(substr_count($PEArr['FINFO'],"P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"))
+								{
+								$PEArr['ThisData']=trim(str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"),"\x00\x00\x00")));
+								echo '$PEProductVersion:'.md5($PEArr['ThisData']).':'.strlen($PEArr['ThisData']).':YOUR-SIGNATURE-NAME'.$linebreak;
+								}
+							if(substr_count($PEArr['FINFO'],"L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00"))
+								{
+								$PEArr['ThisData']=trim(str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00"),"\x00\x00\x00")));
+								echo '$PECopyright:'.md5($PEArr['ThisData']).':'.strlen($PEArr['ThisData']).':YOUR-SIGNATURE-NAME'.$linebreak;
+								}
+							if(substr_count($PEArr['FINFO'],"O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00"))
+								{
+								$PEArr['ThisData']=trim(str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00"),"\x00\x00\x00")));
+								echo '$PEOriginalFilename:'.md5($PEArr['ThisData']).':'.strlen($PEArr['ThisData']).':YOUR-SIGNATURE-NAME'.$linebreak;
+								}
+							if(substr_count($PEArr['FINFO'],"C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00"))
+								{
+								$PEArr['ThisData']=trim(str_ireplace("\x00",'',substrbf(substral($PEArr['FINFO'],"C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00"),"\x00\x00\x00")));
+								echo '$PECompanyName:'.md5($PEArr['ThisData']).':'.strlen($PEArr['ThisData']).':YOUR-SIGNATURE-NAME'.$linebreak;
+								}
+							}
+						}
+					$PEArr=false;
+					}
+				else
+					{
+					// AAA Echo Not a valid PE file! AAA BBB
+					echo 'Not a valid PE file!'.$linebreak;
+					}
 				}
 			else echo $stl.$MusselConfig['lang']['cli_is_not_a'].$linebreak;
 			}
@@ -8790,7 +9050,7 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&s
 			else if(@is_file($stl))
 				{
 				$hashme=@phpMusselFile($stl,0,true);
-				echo md5($hashme).':'.strlen($hashme).':YOUR-SIGNATURE-NAME';
+				echo md5($hashme).':'.strlen($hashme).':YOUR-SIGNATURE-NAME'.$linebreak;
 				}
 			else echo $stl.$MusselConfig['lang']['cli_is_not_a'].$linebreak;
 			}
@@ -8816,7 +9076,32 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&s
 			else if(@is_file($stl))
 				{
 				$hashme=@phpMusselFile($stl,0,true);
-				echo '$md5:'.md5($hashme).';$sha:'.sha1($hashme).';$str_len:'.strlen($hashme).';YOUR-SIGNATURE-NAME';
+				echo '$md5:'.md5($hashme).';$sha:'.sha1($hashme).';$str_len:'.strlen($hashme).';YOUR-SIGNATURE-NAME'.$linebreak;
+				}
+			else echo $stl.$MusselConfig['lang']['cli_is_not_a'].$linebreak;
+			}
+		if($cmd=='pe_meta')
+			{
+			echo $linebreak.$linebreak;
+			$stl=substr($stl,strlen($cmd)+1);
+			if(@is_dir($stl))
+				{
+				if(!$d=@scandir($stl))echo $MusselConfig['lang']['failed_to_access'].'"'.$stl.'".'.$linebreak;
+				else
+					{
+					$c=count($d);
+					$xsc=$stl[strlen($stl)-1];
+					if($xsc!=="\\"&&$xsc!=="/")$stl.="/";
+					for($i=0;$i<$c;$i++)
+						{
+						if($d[$i]=='.'||$d[$i]=='..')continue;
+						echo phpMusselFork('pe_meta '.$stl.$d[$i],$d[$i]).$linebreak;
+						}
+					}
+				}
+			else if(@is_file($stl))
+				{
+				echo phpMusselFork('pe_meta '.$stl,$stl).$linebreak;
 				}
 			else echo $stl.$MusselConfig['lang']['cli_is_not_a'].$linebreak;
 			}
@@ -8824,13 +9109,13 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&s
 			{
 			echo $linebreak.$linebreak;
 			$stl=substr($stl,strlen($cmd)+1);
-			echo md5($stl).':'.strlen($stl).':YOUR-SIGNATURE-NAME';
+			echo md5($stl).':'.strlen($stl).':YOUR-SIGNATURE-NAME'.$linebreak;
 			}
 		if($cmd=='coex')
 			{
 			echo $linebreak.$linebreak;
 			$stl=substr($stl,strlen($cmd)+1);
-			echo '$md5:'.md5($stl).';$sha:'.sha1($stl).';$str_len:'.strlen($stl).';YOUR-SIGNATURE-NAME';
+			echo '$md5:'.md5($stl).';$sha:'.sha1($stl).';$str_len:'.strlen($stl).';YOUR-SIGNATURE-NAME'.$linebreak;
 			}
 		if($cmd=='hex_encode'||$cmd=='x')
 			{

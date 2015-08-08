@@ -787,6 +787,13 @@
     aktiviert ist. Die Dateien können entfernt werden, wenn die Option
     deaktiviert ist.
     ~
+ /vault/pex_custom.cvd (Signaturen, enthalten)
+ /vault/pex_mussel.cvd (Signaturen, enthalten)
+    Dateien der PE-Erweitert-Signaturen.
+    Benötigt, wenn die Option "PE extended signatures" in der "phpmussel.ini"
+    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
+    deaktiviert ist.
+    ~
  /vault/phpmussel.inc (Script, enthalten)
     phpMussel Core Script (absolut notwendig)!
     ~
@@ -1053,6 +1060,11 @@
      "pe_custom"
      "pe_mussel"
    - Scan von PE-Dateien (Portable Executable, EXE, DLL, etc.)
+     mit den PE-Erweitert-Signaturen?
+     0 = Nein, 1 = Ja [Standardeinstellung].
+     "pex_custom"
+     "pex_mussel"
+   - Scan von PE-Dateien (Portable Executable, EXE, DLL, etc.)
      mit den PE-Signaturen?
      0 = Nein, 1 = Ja [Standardeinstellung].
      "exe_clamav"
@@ -1152,22 +1164,20 @@
    - Soll phpMussel Signaturen für die Erkennung von Adware parsen?
      0 = Nein, 1 = Ja [Standardeinstellung].
    "detect_joke_hoax"
-   - Soll phpMussel Signaturen für die Erkennung von Scherz/Fake-Malware/Viren 
-     parsen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+   - Soll phpMussel Signaturen für die Erkennung von Scherz/Fake-Malware/Viren
+     parsen? 0 = Nein, 1 = Ja [Standardeinstellung].
    "detect_pua_pup"
    - Soll phpMussel Signaturen für die Erkennung von PUAs/PUPs parsen?
      0 = Nein, 1 = Ja [Standardeinstellung].
    "detect_packer_packed"
-   - Soll phpMussel Signaturen für die Erkennung von Packern und komprimierten 
-     Daten parsen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+   - Soll phpMussel Signaturen für die Erkennung von Packern und komprimierten
+     Daten parsen? 0 = Nein, 1 = Ja [Standardeinstellung].
    "detect_shell"
    - Soll phpMussel Signaturen für die Erkennung von Shell-Scripten parsen?
      0 = Nein, 1 = Ja [Standardeinstellung].
    "detect_deface"
-   - Soll phpMussel Signaturen für die Erkennung von Defacements und Defacer parsen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+   - Soll phpMussel Signaturen für die Erkennung von Defacements und Defacer
+     parsen? 0 = Nein, 1 = Ja [Standardeinstellung].
  "files" (Kategorie)
  - Generelle Konfigurationen für die Handhabung von Dateien.
    "max_uploads"
@@ -1700,5 +1710,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 7. August 2015 (2015.08.07).
+Zuletzt aktualisiert: 8. August 2015 (2015.08.08).
 EOF

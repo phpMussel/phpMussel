@@ -272,7 +272,7 @@ Fichier                                    | Description
 /_docs/signatures_tally.txt                | Décompte de signatures inclus (pas nécessaire pour le bon fonctionnement du script).
 /_testfiles/                               | Test fichiers répertoire (contient divers fichiers). Tous les fichiers contenus sont des fichiers à test si phpMussel a été correctement installé sur votre système, et vous n'avez pas besoin de télécharger ce répertoire ou l'un de ses fichiers, sauf si faire ces tests.
 /_testfiles/ascii_standard_testfile.txt    | Test fichier à test phpMussel normalisé ASCII signatures.
-/_testfiles/coex_testfile.rtf              | Test fichier à test phpMussel complexe étendu signatures.
+/_testfiles/coex_testfile.rtf              | Test fichier à test phpMussel complexes étendues signatures.
 /_testfiles/exe_standard_testfile.exe      | Test fichier à test phpMussel PE signatures.
 /_testfiles/general_standard_testfile.txt  | Test fichier à test phpMussel générales signatures.
 /_testfiles/graphics_standard_testfile.gif | Test fichier à test phpMussel graphiques signatures.
@@ -314,25 +314,25 @@ Fichier                                    | Description
 /vault/ascii_custom_standard.cvd           | Fichier pour normalisé ASCII signatures.
 /vault/ascii_mussel_regex.cvd              | Fichier pour normalisé ASCII signatures.
 /vault/ascii_mussel_standard.cvd           | Fichier pour normalisé ASCII signatures.
-/vault/coex_clamav.cvd                     | Fichier pour le Complexe Étendu signatures.
-/vault/coex_custom.cvd                     | Fichier pour le Complexe Étendu signatures.
-/vault/coex_mussel.cvd                     | Fichier pour le Complexe Étendu signatures.
-/vault/elf_clamav_regex.cvd                | Fichier pour ELF signatures.
-/vault/elf_clamav_regex.map                | Fichier pour ELF signatures.
-/vault/elf_clamav_standard.cvd             | Fichier pour ELF signatures.
-/vault/elf_clamav_standard.map             | Fichier pour ELF signatures.
-/vault/elf_custom_regex.cvd                | Fichier pour ELF signatures.
-/vault/elf_custom_standard.cvd             | Fichier pour ELF signatures.
-/vault/elf_mussel_regex.cvd                | Fichier pour ELF signatures.
-/vault/elf_mussel_standard.cvd             | Fichier pour ELF signatures.
-/vault/exe_clamav_regex.cvd                | Fichier pour Portable Executable fichier (EXE) signatures.
-/vault/exe_clamav_regex.map                | Fichier pour Portable Executable fichier (EXE) signatures.
-/vault/exe_clamav_standard.cvd             | Fichier pour Portable Executable fichier (EXE) signatures.
-/vault/exe_clamav_standard.map             | Fichier pour Portable Executable fichier (EXE) signatures.
-/vault/exe_custom_regex.cvd                | Fichier pour Portable Executable fichier (EXE) signatures.
-/vault/exe_custom_standard.cvd             | Fichier pour Portable Executable fichier (EXE) signatures.
-/vault/exe_mussel_regex.cvd                | Fichier pour Portable Executable fichier (EXE) signatures.
-/vault/exe_mussel_standard.cvd             | Fichier pour Portable Executable fichier (EXE) signatures.
+/vault/coex_clamav.cvd                     | Fichier pour les complexes étendues signatures.
+/vault/coex_custom.cvd                     | Fichier pour les complexes étendues signatures.
+/vault/coex_mussel.cvd                     | Fichier pour les complexes étendues signatures.
+/vault/elf_clamav_regex.cvd                | Fichier pour l'ELF signatures.
+/vault/elf_clamav_regex.map                | Fichier pour l'ELF signatures.
+/vault/elf_clamav_standard.cvd             | Fichier pour l'ELF signatures.
+/vault/elf_clamav_standard.map             | Fichier pour l'ELF signatures.
+/vault/elf_custom_regex.cvd                | Fichier pour l'ELF signatures.
+/vault/elf_custom_standard.cvd             | Fichier pour l'ELF signatures.
+/vault/elf_mussel_regex.cvd                | Fichier pour l'ELF signatures.
+/vault/elf_mussel_standard.cvd             | Fichier pour l'ELF signatures.
+/vault/exe_clamav_regex.cvd                | Fichier pour les PE (Portable Executable) signatures.
+/vault/exe_clamav_regex.map                | Fichier pour les PE (Portable Executable) signatures.
+/vault/exe_clamav_standard.cvd             | Fichier pour les PE (Portable Executable) signatures.
+/vault/exe_clamav_standard.map             | Fichier pour les PE (Portable Executable) signatures.
+/vault/exe_custom_regex.cvd                | Fichier pour les PE (Portable Executable) signatures.
+/vault/exe_custom_standard.cvd             | Fichier pour les PE (Portable Executable) signatures.
+/vault/exe_mussel_regex.cvd                | Fichier pour les PE (Portable Executable) signatures.
+/vault/exe_mussel_standard.cvd             | Fichier pour les PE (Portable Executable) signatures.
 /vault/filenames_clamav.cvd                | Fichier pour filename signatures.
 /vault/filenames_custom.cvd                | Fichier pour filename signatures.
 /vault/filenames_mussel.cvd                | Fichier pour filename signatures.
@@ -386,37 +386,39 @@ Fichier                                    | Description
 /vault/metadata_clamav.cvd                 | Fichier pour métadonnées d'archives signatures.
 /vault/metadata_custom.cvd                 | Fichier pour métadonnées d'archives signatures.
 /vault/metadata_mussel.cvd                 | Fichier pour métadonnées d'archives signatures.
-/vault/ole_clamav_regex.cvd                | Fichier pour OLE signatures.
-/vault/ole_clamav_regex.map                | Fichier pour OLE signatures.
-/vault/ole_clamav_standard.cvd             | Fichier pour OLE signatures.
-/vault/ole_clamav_standard.map             | Fichier pour OLE signatures.
-/vault/ole_custom_regex.cvd                | Fichier pour OLE signatures.
-/vault/ole_custom_standard.cvd             | Fichier pour OLE signatures.
-/vault/ole_mussel_regex.cvd                | Fichier pour OLE signatures.
-/vault/ole_mussel_standard.cvd             | Fichier pour OLE signatures.
-/vault/pdf_clamav_regex.cvd                | Fichier pour PDF signatures.
-/vault/pdf_clamav_regex.map                | Fichier pour PDF signatures.
-/vault/pdf_clamav_standard.cvd             | Fichier pour PDF signatures.
-/vault/pdf_clamav_standard.map             | Fichier pour PDF signatures.
-/vault/pdf_custom_regex.cvd                | Fichier pour PDF signatures.
-/vault/pdf_custom_standard.cvd             | Fichier pour PDF signatures.
-/vault/pdf_mussel_regex.cvd                | Fichier pour PDF signatures.
-/vault/pdf_mussel_standard.cvd             | Fichier pour PDF signatures.
-/vault/pe_clamav.cvd                       | Fichier pour PE Sectional signatures.
-/vault/pe_custom.cvd                       | Fichier pour PE Sectional signatures.
-/vault/pe_mussel.cvd                       | Fichier pour PE Sectional signatures.
+/vault/ole_clamav_regex.cvd                | Fichier pour les OLE signatures.
+/vault/ole_clamav_regex.map                | Fichier pour les OLE signatures.
+/vault/ole_clamav_standard.cvd             | Fichier pour les OLE signatures.
+/vault/ole_clamav_standard.map             | Fichier pour les OLE signatures.
+/vault/ole_custom_regex.cvd                | Fichier pour les OLE signatures.
+/vault/ole_custom_standard.cvd             | Fichier pour les OLE signatures.
+/vault/ole_mussel_regex.cvd                | Fichier pour les OLE signatures.
+/vault/ole_mussel_standard.cvd             | Fichier pour les OLE signatures.
+/vault/pdf_clamav_regex.cvd                | Fichier pour les PDF signatures.
+/vault/pdf_clamav_regex.map                | Fichier pour les PDF signatures.
+/vault/pdf_clamav_standard.cvd             | Fichier pour les PDF signatures.
+/vault/pdf_clamav_standard.map             | Fichier pour les PDF signatures.
+/vault/pdf_custom_regex.cvd                | Fichier pour les PDF signatures.
+/vault/pdf_custom_standard.cvd             | Fichier pour les PDF signatures.
+/vault/pdf_mussel_regex.cvd                | Fichier pour les PDF signatures.
+/vault/pdf_mussel_standard.cvd             | Fichier pour les PDF signatures.
+/vault/pe_clamav.cvd                       | Fichier pour les PE Sectional signatures.
+/vault/pe_custom.cvd                       | Fichier pour les PE Sectional signatures.
+/vault/pe_mussel.cvd                       | Fichier pour les PE Sectional signatures.
+/vault/pex_custom.cvd                      | Fichier pour les PE étendues signatures.
+/vault/pex_mussel.cvd                      | Fichier pour les PE étendues signatures.
 /vault/phpmussel.inc                       | Principal Script; Le principal corps de phpMussel (essentiel)!
 /vault/phpmussel.ini                       | Configuration fichier; Contient toutes les configuration options de phpMussel, diriger comment faire fonctionner correctement (essentiel)!
 ※ /vault/scan_log.txt                     | Un enregistrement de tout analysé par phpMussel.
 ※ /vault/scan_kills.txt                   | Les résultats de chaque fichier téléchargement bloqué/tués par phpMussel.
-/vault/swf_clamav_regex.cvd                | Fichier pour Shockwave signatures.
-/vault/swf_clamav_regex.map                | Fichier pour Shockwave signatures.
-/vault/swf_clamav_standard.cvd             | Fichier pour Shockwave signatures.
-/vault/swf_clamav_standard.map             | Fichier pour Shockwave signatures.
-/vault/swf_custom_regex.cvd                | Fichier pour Shockwave signatures.
-/vault/swf_custom_standard.cvd             | Fichier pour Shockwave signatures.
-/vault/swf_mussel_regex.cvd                | Fichier pour Shockwave signatures.
-/vault/swf_mussel_standard.cvd             | Fichier pour Shockwave signatures.
+/vault/swf_clamav_regex.cvd                | Fichier pour les Shockwave signatures.
+/vault/swf_clamav_regex.map                | Fichier pour les Shockwave signatures.
+/vault/swf_clamav_standard.cvd             | Fichier pour les Shockwave signatures.
+/vault/swf_clamav_standard.map             | Fichier pour les Shockwave signatures.
+/vault/swf_custom_regex.cvd                | Fichier pour les Shockwave signatures.
+/vault/swf_custom_standard.cvd             | Fichier pour les Shockwave signatures.
+/vault/swf_mussel_regex.cvd                | Fichier pour les Shockwave signatures.
+/vault/swf_mussel_standard.cvd             | Fichier pour les Shockwave signatures.
 /vault/switch.dat                          | Contrôle et définit certaines variables.
 /vault/template.html                       | Modèle fichier; Modèle pour l'HTML sortie produit par phpMussel pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /vault/update.dat                          | Fichier contenant les version informations pour le script et les signatures de phpMussel. Si jamais vous voulez à réactualiser automatiquement phpMussel ou réactualiser phpMusel par votre navigateur, ce fichier est indispensable.
@@ -547,6 +549,10 @@ Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE Sectional
 - "pe_custom"
 - "pe_mussel"
 
+Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE étendues signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+- "pex_custom"
+- "pex_mussel"
+
 Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
 - "exe_clamav"
 - "exe_custom"
@@ -597,7 +603,7 @@ Vérifier XML/XDP morceaux contre XML/XDP morceaux signatures au cours de analys
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
 
-Vérifier contre Complexe Étendu signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier contre complexes étendues signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
 - "coex_clamav"
 - "coex_custom"
 - "coex_mussel"
@@ -802,7 +808,7 @@ Toutes les blanche liste signatures suivez le format:
 Où HASH est le MD5 hash d'un ensemble du fichier, TAILLE est la totale taille du fichier et TYPE est le type de signatures le listé blanche fichier est d'être immunitaire contre.
 
 ####*COMPLEXES ÉTENDUES SIGNATURES*
-Complexes Étendues signatures sont assez différentes pour les autres types de signatures possible avec phpMussel, dans que ce qu'ils vérifient contre est spécifié par les signatures elles-mêmes et ils peuvent vérifier contre plusieurs critères. Les critères sont délimitées par ";" et le type et les données de chacun critères est délimitée par ":" comme ainsi le format de ces signatures tendances à semble un peu comme:
+Complexes étendues signatures sont assez différentes pour les autres types de signatures possible avec phpMussel, dans que ce qu'ils vérifient contre est spécifié par les signatures elles-mêmes et ils peuvent vérifier contre plusieurs critères. Les critères sont délimitées par ";" et le type et les données de chacun critères est délimitée par ":" comme ainsi le format de ces signatures tendances à semble un peu comme:
 
 `$variable1:CERTAINSDONNÉES;$variable2:CERTAINSDONNÉES;SignatureNom`
 
@@ -913,4 +919,4 @@ Cette information a été réactualisé le 28 Mai 2015 et est courant pour toute
 ---
 
 
-Dernière Réactualisé: 7 Août 2015 (2015.08.07).
+Dernière Réactualisé: 8 Août 2015 (2015.08.08).

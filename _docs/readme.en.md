@@ -314,9 +314,9 @@ File                                       | Description
 /vault/ascii_custom_standard.cvd           | File for normalised ASCII signatures.
 /vault/ascii_mussel_regex.cvd              | File for normalised ASCII signatures.
 /vault/ascii_mussel_standard.cvd           | File for normalised ASCII signatures.
-/vault/coex_clamav.cvd                     | File for Complex Extended signatures.
-/vault/coex_custom.cvd                     | File for Complex Extended signatures.
-/vault/coex_mussel.cvd                     | File for Complex Extended signatures.
+/vault/coex_clamav.cvd                     | File for complex extended signatures.
+/vault/coex_custom.cvd                     | File for complex extended signatures.
+/vault/coex_mussel.cvd                     | File for complex extended signatures.
 /vault/elf_clamav_regex.cvd                | File for ELF signatures.
 /vault/elf_clamav_regex.map                | File for ELF signatures.
 /vault/elf_clamav_standard.cvd             | File for ELF signatures.
@@ -325,14 +325,14 @@ File                                       | Description
 /vault/elf_custom_standard.cvd             | File for ELF signatures.
 /vault/elf_mussel_regex.cvd                | File for ELF signatures.
 /vault/elf_mussel_standard.cvd             | File for ELF signatures.
-/vault/exe_clamav_regex.cvd                | File for Portable Executable file (EXE) signatures.
-/vault/exe_clamav_regex.map                | File for Portable Executable file (EXE) signatures.
-/vault/exe_clamav_standard.cvd             | File for Portable Executable file (EXE) signatures.
-/vault/exe_clamav_standard.map             | File for Portable Executable file (EXE) signatures.
-/vault/exe_custom_regex.cvd                | File for Portable Executable file (EXE) signatures.
-/vault/exe_custom_standard.cvd             | File for Portable Executable file (EXE) signatures.
-/vault/exe_mussel_regex.cvd                | File for Portable Executable file (EXE) signatures.
-/vault/exe_mussel_standard.cvd             | File for Portable Executable file (EXE) signatures.
+/vault/exe_clamav_regex.cvd                | File for PE (Portable Executable) signatures.
+/vault/exe_clamav_regex.map                | File for PE (Portable Executable) signatures.
+/vault/exe_clamav_standard.cvd             | File for PE (Portable Executable) signatures.
+/vault/exe_clamav_standard.map             | File for PE (Portable Executable) signatures.
+/vault/exe_custom_regex.cvd                | File for PE (Portable Executable) signatures.
+/vault/exe_custom_standard.cvd             | File for PE (Portable Executable) signatures.
+/vault/exe_mussel_regex.cvd                | File for PE (Portable Executable) signatures.
+/vault/exe_mussel_standard.cvd             | File for PE (Portable Executable) signatures.
 /vault/filenames_clamav.cvd                | File for filename signatures.
 /vault/filenames_custom.cvd                | File for filename signatures.
 /vault/filenames_mussel.cvd                | File for filename signatures.
@@ -405,6 +405,8 @@ File                                       | Description
 /vault/pe_clamav.cvd                       | File for PE Sectional signatures.
 /vault/pe_custom.cvd                       | File for PE Sectional signatures.
 /vault/pe_mussel.cvd                       | File for PE Sectional signatures.
+/vault/pex_custom.cvd                      | File for PE extended signatures.
+/vault/pex_mussel.cvd                      | File for PE extended signatures.
 /vault/phpmussel.inc                       | Core Script; The main body and guts of phpMussel (essential)!
 /vault/phpmussel.ini                       | Configuration file; Contains all the configuration options of phpMussel, telling it what to do and how to operate correctly (essential)!
 ※ /vault/scan_log.txt                     | A record of everything scanned by phpMussel.
@@ -547,6 +549,10 @@ Check PE (Portable Executable) files (EXE, DLL, etc) against PE Sectional signat
 - "pe_custom"
 - "pe_mussel"
 
+Check PE (Portable Executable) files (EXE, DLL, etc) against PE extended signatures when scanning? 0 = No, 1 = Yes [Default].
+- "pex_custom"
+- "pex_mussel"
+
 Check PE (Portable Executable) files (EXE, DLL, etc) against PE signatures when scanning? 0 = No, 1 = Yes [Default].
 - "exe_clamav"
 - "exe_custom"
@@ -597,7 +603,7 @@ Check XML/XDP chunks against XML/XDP-chunk signatures when scanning? 0 = No, 1 =
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
 
-Check against Complex Extended signatures when scanning? 0 = No, 1 = Yes [Default].
+Check against complex extended signatures when scanning? 0 = No, 1 = Yes [Default].
 - "coex_clamav"
 - "coex_custom"
 - "coex_mussel"
@@ -913,4 +919,4 @@ This information was last updated 28th May 2015 and is current for all phpMussel
 ---
 
 
-Last Updated: 7th August 2015 (2015.08.07).
+Last Updated: 8th August 2015 (2015.08.08).

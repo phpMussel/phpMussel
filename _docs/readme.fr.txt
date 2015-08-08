@@ -571,7 +571,7 @@
     Test fichier à test phpMussel normalisé ASCII signatures.
     ~
  /_testfiles/coex_testfile.rtf (Test fichier, Inclu)
-    Test fichier à test phpMussel complexe étendu signatures.
+    Test fichier à test phpMussel complexes étendues signatures.
     ~
  /_testfiles/exe_standard_testfile.exe (Test fichier, Inclu)
     Test fichier à test phpMussel PE signatures.
@@ -676,9 +676,9 @@
  /vault/coex_clamav.cvd (Signatures, Inclus)
  /vault/coex_custom.cvd (Signatures, Inclus)
  /vault/coex_mussel.cvd (Signatures, Inclus)
-    Fichiers pour le Complexe Étendu signatures. Nécessaire si le complexe
-    étendu option dans "phpmussel.ini" est activée. Peut enlever si l'option
-    est désactivée.
+    Fichiers pour les complexes étendues signatures. Nécessaire si les
+    complexes étendues option dans "phpmussel.ini" est activée. Peut enlever si
+    l'option est désactivée.
     ~
  /vault/elf_clamav_regex.cvd (Signatures, Inclus)
  /vault/elf_clamav_regex.map (Signatures, Inclus)
@@ -688,7 +688,7 @@
  /vault/elf_custom_standard.cvd (Signatures, Inclus)
  /vault/elf_mussel_regex.cvd (Signatures, Inclus)
  /vault/elf_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour ELF signatures. Nécessaire si l'ELF signatures option dans
+    Fichiers pour l'ELF signatures. Nécessaire si l'ELF signatures option dans
     "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
     ~
  /vault/exe_clamav_regex.cvd (Signatures, Inclus)
@@ -699,7 +699,7 @@
  /vault/exe_custom_standard.cvd (Signatures, Inclus)
  /vault/exe_mussel_regex.cvd (Signatures, Inclus)
  /vault/exe_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour Portable Executable fichier (EXE) signatures. Nécessaire si
+    Fichiers pour les PE (Portable Executable) signatures. Nécessaire si
     l'EXE signatures option dans "phpmussel.ini" est activée. Peut enlever si
     l'option est désactivée.
     ~
@@ -803,8 +803,8 @@
  /vault/ole_custom_standard.cvd (Signatures, Inclus)
  /vault/ole_mussel_regex.cvd (Signatures, Inclus)
  /vault/ole_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour OLE signatures. Nécessaire si l'OLE signatures option dans
-    "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
+    Fichiers pour les OLE signatures. Nécessaire si l'OLE signatures option
+    dans "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
     ~
  /vault/pdf_clamav_regex.cvd (Signatures, Inclus)
  /vault/pdf_clamav_regex.map (Signatures, Inclus)
@@ -814,13 +814,19 @@
  /vault/pdf_custom_standard.cvd (Signatures, Inclus)
  /vault/pdf_mussel_regex.cvd (Signatures, Inclus)
  /vault/pdf_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour PDF signatures. Nécessaire si le PDF signatures option dans
-    "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
+    Fichiers pour les PDF signatures. Nécessaire si le PDF signatures option
+    dans "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
     ~
  /vault/pe_clamav.cvd (Signatures, Inclus)
  /vault/pe_custom.cvd (Signatures, Inclus)
  /vault/pe_mussel.cvd (Signatures, Inclus)
-    Fichiers pour PE Sectional signatures. Nécessaire si le PE Sectional
+    Fichiers pour les PE Sectional signatures. Nécessaire si le PE Sectional
+    signatures option dans "phpmussel.ini" est activée. Peut enlever si
+    l'option est désactivée.
+    ~
+ /vault/pex_custom.cvd (Signatures, Inclus)
+ /vault/pex_mussel.cvd (Signatures, Inclus)
+    Fichiers pour les PE étendues signatures. Nécessaire si le PE étendues
     signatures option dans "phpmussel.ini" est activée. Peut enlever si
     l'option est désactivée.
     ~
@@ -845,9 +851,9 @@
  /vault/swf_custom_standard.cvd (Signatures, Inclus)
  /vault/swf_mussel_regex.cvd (Signatures, Inclus)
  /vault/swf_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour Shockwave signatures. Nécessaire si le Shockwave signatures
-    option dans "phpmussel.ini" est activée. Peut enlever si l'option est
-    désactivée.
+    Fichiers pour les Shockwave signatures. Nécessaire si le Shockwave
+    signatures option dans "phpmussel.ini" est activée. Peut enlever si
+    l'option est désactivée.
     ~
  /vault/switch.dat (Other, Included)
     Contrôle et définit certaines variables.
@@ -1112,6 +1118,10 @@
      "pe_custom"
      "pe_mussel"
    - Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE
+     étendues signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+     "pex_custom"
+     "pex_mussel"
+   - Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE
      signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
      "exe_clamav"
      "exe_custom"
@@ -1159,7 +1169,7 @@
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
-   - Vérifier contre Complexe Étendu signatures au cours de analyse?
+   - Vérifier contre complexes étendues signatures au cours de analyse?
      0 = Non, 1 = Oui [Défaut].
      "coex_clamav"
      "coex_custom"
@@ -1584,7 +1594,7 @@
    est d'être immunitaire contre.
 
  = COMPLEXES ÉTENDUES SIGNATURES =
-   Complexes Étendues signatures sont assez différentes pour les autres types
+   Complexes étendues signatures sont assez différentes pour les autres types
    de signatures possible avec phpMussel, dans que ce qu'ils vérifient contre
    est spécifié par les signatures elles-mêmes et ils peuvent vérifier contre
    plusieurs critères. Les critères sont délimitées par ";" et le type et les
@@ -1766,5 +1776,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 7 Août 2015 (2015.08.07).
+Dernière Réactualisé: 8 Août 2015 (2015.08.08).
 EOF

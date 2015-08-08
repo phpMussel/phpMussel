@@ -405,6 +405,8 @@ Datei                                      | Beschreibung
 /vault/pe_clamav.cvd                       | Datei der PE-Sectional-Signaturen.
 /vault/pe_custom.cvd                       | Datei der PE-Sectional-Signaturen.
 /vault/pe_mussel.cvd                       | Datei der PE-Sectional-Signaturen.
+/vault/pex_custom.cvd                      | Datei der PE-Erweitert-Signaturen.
+/vault/pex_mussel.cvd                      | Datei der PE-Erweitert-Signaturen.
 /vault/phpmussel.inc                       | Core Script (absolut notwendig)!
 /vault/phpmussel.ini                       | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von phpMussel (absolut notwendig)!
 ※ /vault/scan_log.txt                     | Eine Aufzeichnung aller von phpMussel gescannten Objekte.
@@ -545,6 +547,10 @@ Scan von PE-Dateien (Portable Executable, EXE, DLL, etc.) mit den PE-Sectional-S
 - "pe_clamav"
 - "pe_custom"
 - "pe_mussel"
+
+Scan von PE-Dateien (Portable Executable, EXE, DLL, etc.) mit den PE-Erweitert-Signaturen? 0 = Nein, 1 = Ja [Standardeinstellung].
+- "pex_custom"
+- "pex_mussel"
 
 Scan von PE-Dateien (Portable Executable, EXE, DLL, etc.) mit den PE-Signaturen? 0 = Nein, 1 = Ja [Standardeinstellung].
 - "exe_clamav"
@@ -911,4 +917,4 @@ Diese Informationen wurden zuletzt am 2015.05.28 aktualisiert und gelten für al
 ---
 
 
-Zuletzt aktualisiert: 7. August 2015 (2015.08.07).
+Zuletzt aktualisiert: 8. August 2015 (2015.08.08).

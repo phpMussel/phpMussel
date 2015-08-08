@@ -272,7 +272,7 @@ Data                                       | Deskripsi
 /_docs/signatures_tally.txt                | Perhitungan dari diikutkan tanda tangan (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /_testfiles/                               | Direktori test file-file (berisi bermacam data). Semua file-file berisikan di dalamnya adalah data test untuk testing jika phpMussel dengan benar diinstal pada sistem, dan Anda tidak perlu mengupload direktori ini atau file-filenya jika melakukan testing.
 /_testfiles/ascii_standard_testfile.txt    | File test untuk mentest tanda tangan ASCII normal phpMussel.
-/_testfiles/coex_testfile.rtf              | File test untuk mentest tanda tangan kompleks diperpanjang phpMussel.
+/_testfiles/coex_testfile.rtf              | File test untuk mentest tanda tangan diperpanjang kompleks phpMussel.
 /_testfiles/exe_standard_testfile.exe      | File test untuk mentest tanda tangan PE phpMussel.
 /_testfiles/general_standard_testfile.txt  | File test untuk mentest tanda tangan umum phpMussel.
 /_testfiles/graphics_standard_testfile.gif | File test untuk mentest tanda tangan grafis phpMussel.
@@ -314,9 +314,9 @@ Data                                       | Deskripsi
 /vault/ascii_custom_standard.cvd           | File untuk tanda tangan ASCII normal.
 /vault/ascii_mussel_regex.cvd              | File untuk tanda tangan ASCII normal.
 /vault/ascii_mussel_standard.cvd           | File untuk tanda tangan ASCII normal.
-/vault/coex_clamav.cvd                     | File untuk tanda tangan kompleks diperpanjang.
-/vault/coex_custom.cvd                     | File untuk tanda tangan kompleks diperpanjang.
-/vault/coex_mussel.cvd                     | File untuk tanda tangan kompleks diperpanjang.
+/vault/coex_clamav.cvd                     | File untuk tanda tangan diperpanjang kompleks.
+/vault/coex_custom.cvd                     | File untuk tanda tangan diperpanjang kompleks.
+/vault/coex_mussel.cvd                     | File untuk tanda tangan diperpanjang kompleks.
 /vault/elf_clamav_regex.cvd                | File untuk tanda tangan ELF.
 /vault/elf_clamav_regex.map                | File untuk tanda tangan ELF.
 /vault/elf_clamav_standard.cvd             | File untuk tanda tangan ELF.
@@ -405,6 +405,8 @@ Data                                       | Deskripsi
 /vault/pe_clamav.cvd                       | File untuk tanda tangan PE Sectional.
 /vault/pe_custom.cvd                       | File untuk tanda tangan PE Sectional.
 /vault/pe_mussel.cvd                       | File untuk tanda tangan PE Sectional.
+/vault/pex_custom.cvd                      | File untuk tanda tangan PE diperpanjang.
+/vault/pex_mussel.cvd                      | File untuk tanda tangan PE diperpanjang.
 /vault/phpmussel.inc                       | Skrip murni phpMussel; Body utama dan vital dari phpMussel (utama)!
 /vault/phpmussel.ini                       | Data konfigurasi phpMussel; Berisi semua opsi konfigurasi dari phpMussel, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (utama)!
 ※ /vault/scan_log.txt                     | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
@@ -547,6 +549,10 @@ Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE Sectional 
 - "pe_custom"
 - "pe_mussel"
 
+Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE diperpanjang ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+- "pex_custom"
+- "pex_mussel"
+
 Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
 - "exe_clamav"
 - "exe_custom"
@@ -597,7 +603,7 @@ Cek XML/XDP potongan pada tanda tangan potongan XML/XDP ketika pemindaian? 0 = T
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
 
-Cek tanda tangan Kompleks Diperpanjang ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+Cek tanda tangan diperpanjang kompleks ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
 - "coex_clamav"
 - "coex_custom"
 - "coex_mussel"
@@ -822,7 +828,7 @@ Hanya menempatkan tanda tangan kustom dalam file yang dimaksudkan untuk tanda ta
 ####*TANDA TANGAN PEMECAH-MECAHAN*
 Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
 - "Tanda tangan ASCII normal" (ascii_*). Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan Diperpanjang Kompleks" (coex_*). Campuran pencocokan jenis tanda tangan.
+- "Tanda tangan diperpanjang kompleks" (coex_*). Campuran pencocokan jenis tanda tangan.
 - "Tanda tangan ELF" (elf_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format ELF.
 - "Tanda tangan Portable Executable" (exe_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
 - "Tanda tangan Nama file" (filenames_*). Dicek pada nama file dari file yang ditargetkan pada pemindaian.
@@ -913,4 +919,4 @@ Informasi ini diupdate 28 Mei 2015 dan cocok untuk semua rilis phpMussel dari du
 ---
 
 
-Terakhir Diperbarui: 7 Agustus 2015 (2015.08.07).
+Terakhir Diperbarui: 8 Agustus 2015 (2015.08.08).

@@ -558,10 +558,10 @@
     cuando haciendo tales pruebas.
     ~
  /_testfiles/ascii_standard_testfile.txt (Prueba archivo, Incluido)
-    Prueba archivo para probando phpMussel normalizado ASCII firmas.
+    Prueba archivo para probando phpMussel normalizados ASCII firmas.
     ~
  /_testfiles/coex_testfile.rtf (Prueba archivo, Incluido)
-    Prueba archivo para probando phpMussel Complejo Extendido firmas.
+    Prueba archivo para probando phpMussel complejos extendidas firmas.
     ~
  /_testfiles/exe_standard_testfile.exe (Prueba archivo, Incluido)
     Prueba archivo para probando phpMussel PE firmas.
@@ -573,7 +573,7 @@
     Prueba archivo para probando phpMussel gráficas firmas.
     ~
  /_testfiles/html_standard_testfile.txt (Prueba archivo, Incluido)
-    Prueba archivo para probando phpMussel normalizado HTML firmas.
+    Prueba archivo para probando phpMussel normalizados HTML firmas.
     ~
  /_testfiles/md5_testfile.txt (Prueba archivo, Incluido)
     Prueba archivo para probando phpMussel MD5 firmas.
@@ -666,9 +666,9 @@
  /vault/coex_clamav.cvd (Firmas, Incluidos)
  /vault/coex_custom.cvd (Firmas, Incluidos)
  /vault/coex_mussel.cvd (Firmas, Incluidos)
-    Archivos para Complejo Extendido firmas. Requerido si la opción de Complejo
-    Extendido firmas en "phpmussel.ini" está activado. Se puede eliminarlo si
-    la opción está desactivado.
+    Archivos para complejos extendidas firmas. Requerido si la opción de
+    complejos extendidas firmas en "phpmussel.ini" está activado. Se puede
+    eliminarlo si la opción está desactivado.
     ~
  /vault/elf_clamav_regex.cvd (Firmas, Incluidos)
  /vault/elf_clamav_regex.map (Firmas, Incluidos)
@@ -817,6 +817,12 @@
  /vault/pe_custom.cvd (Firmas, Incluidos)
  /vault/pe_mussel.cvd (Firmas, Incluidos)
     Archivos para PE Secciónal firmas. Requerido si la opción de PE Secciónal
+    firmas en "phpmussel.ini" está activado. Se puede eliminarlo si la opción
+    está desactivado.
+    ~
+ /vault/pex_custom.cvd (Firmas, Incluidos)
+ /vault/pex_mussel.cvd (Firmas, Incluidos)
+    Archivos para PE extendidas firmas. Requerido si la opción de PE extendidas
     firmas en "phpmussel.ini" está activado. Se puede eliminarlo si la opción
     está desactivado.
     ~
@@ -1102,6 +1108,10 @@
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
+   - Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE
+     extendidas firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+     "pex_custom"
+     "pex_mussel"
    - Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE firmas
      cuando escaneando? 0 = No, 1 = Sí [Predefinido].
      "exe_clamav"
@@ -1150,7 +1160,7 @@
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
-   - Cotejar contra Complejo Extendido firmas cuando escaneando?
+   - Cotejar contra complejos extendidas firmas cuando escaneando?
      0 = No, 1 = Sí [Predefinido].
      "coex_clamav"
      "coex_custom"
@@ -1570,8 +1580,8 @@
    eso archivo y TIPO es el tipo of firmas el archivo en la whitelist es estar
    inmune contra.
 
- = COMPLEJO EXTENDIDO FIRMAS =
-   Complejo Extendido firmas son bastante diferentes a los otros tipos de
+ = COMPLEJOS EXTENDIDAS FIRMAS =
+   Complejos extendidas firmas son bastante diferentes a los otros tipos de
    firmas posibles con phpMussel, en que qué ellos son cotejando contra se
    especificado por las firmas ellos mismos y que ellos pueden cotejar contra
    múltiples criterios. La cotejar criterios están delimitados por ";" y la
@@ -1624,7 +1634,7 @@
    El siguiente es el desglose de los tipos de firmas utilizado por phpMussel:
    - "Normalizados ASCII Firmas" (ascii_*). Cotejado contra los contenidos de
       cada archivo que no está en la whitelist que es destinado para escanear.
-   - "Complejo Extendido Firmas" (coex_*). Mixtas tipos de firmas para
+   - "Complejos Extendidas Firmas" (coex_*). Mixtas tipos de firmas para
       cotejar/comprobar.
    - "ELF Firmas" (elf_*). Cotejado contra los contenidos de cada archivo que
       no está en la whitelist que es destinado para escaneando y verificado
@@ -1758,5 +1768,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 7 Agosto 2015 (2015.08.07).
+Última Actualización: 8 Agosto 2015 (2015.08.08).
 EOF

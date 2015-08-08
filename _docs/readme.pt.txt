@@ -808,6 +808,12 @@
     assinaturas opção em "phpmussel.ini" está ativado. Pode remover se a opção
     é desativado.
     ~
+ /vault/pex_custom.cvd (Assinaturas, Incluídos)
+ /vault/pex_mussel.cvd (Assinaturas, Incluídos)
+    Arquivos por PE estendidas assinaturas. Necessário se o PE estendidas
+    assinaturas opção em "phpmussel.ini" está ativado. Pode remover se a opção
+    é desativado.
+    ~
  /vault/phpmussel.inc (Script, Incluído)
     phpMussel Núcleo Script; O principal corpo de phpMussel (essencial)!
     ~
@@ -1091,6 +1097,10 @@
      "pe_custom"
      "pe_mussel"
    - Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE
+     estendidas assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+     "pex_custom"
+     "pex_mussel"
+   - Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE
      assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
      "exe_clamav"
      "exe_custom"
@@ -1138,7 +1148,7 @@
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
-   - Verificar contra Complexos Estendidos assinaturas quando analisando?
+   - Verificar contra Complexos estendidas assinaturas quando analisando?
      0 = Não, 1 = Sim [Padrão].
      "coex_clamav"
      "coex_custom"
@@ -1546,8 +1556,8 @@
    Onde HASH é o MD5 hash de um inteiro arquivo, TAMANHO é o total tamanho do
    arquivo e TYPE é o tipo de assinaturas o arquivo é ser imune contra.
 
- = COMPLEXOS ESTENDIDOS ASSINATURAS =
-   Complexos Estendidos assinaturas são bastante diferente para os outros tipos
+ = COMPLEXOS ESTENDIDAS ASSINATURAS =
+   Complexos estendidas assinaturas são bastante diferente para os outros tipos
    de assinaturas possíveis com phpMussel em que o que eles estão verificando
    contra é especificado pelas assinaturas e eles podem verificar contra vários
    critérios. Os critérios de verificação são delimitados por ";" e o
@@ -1600,7 +1610,7 @@
    A seguir estão os diferentes tipos de assinaturas utilizadas por phpMussel:
    - "Normalizadas ASCII Assinaturas" (ascii_*). Verificado contra o conteúdo
       de cada arquivo não no whitelist e alvo por analisando.
-   - "Estendidos Complexos Assinaturas" (coex_*). Misto tipo de assinatura
+   - "Complexos Estendidas Assinaturas" (coex_*). Misto tipo de assinatura
       verificando.
    - "ELF Assinaturas" (elf_*). Verificado contra o conteúdo de cada arquivo
       não no whitelist e alvo por analisando e confirmados tal do formato ELF.
@@ -1732,5 +1742,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 7 Agosto 2015 (2015.08.07).
+Última Atualização: 8 Agosto 2015 (2015.08.08).
 EOF

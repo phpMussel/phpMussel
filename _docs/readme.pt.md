@@ -405,6 +405,8 @@ Arquivo                                    | Descrição
 /vault/pe_clamav.cvd                       | Arquivo por PE Seccional assinaturas.
 /vault/pe_custom.cvd                       | Arquivo por PE Seccional assinaturas.
 /vault/pe_mussel.cvd                       | Arquivo por PE Seccional assinaturas.
+/vault/pex_custom.cvd                      | Arquivo por PE estendidas assinaturas.
+/vault/pex_mussel.cvd                      | Arquivo por PE estendidas assinaturas.
 /vault/phpmussel.inc                       | Núcleo Script; O principal corpo de phpMussel (essencial)!
 /vault/phpmussel.ini                       | Configuração arquivo; Contém todas ao configuração opções de phpMussel, dizendo-lhe o que fazer e como operar corretamente (essencial)!
 ※ /vault/scan_log.txt                     | Um registro de tudo analisado por phpMussel.
@@ -547,6 +549,10 @@ Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE Secciona
 - "pe_custom"
 - "pe_mussel"
 
+Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE estendidas assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+- "pex_custom"
+- "pex_mussel"
+
 Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
 - "exe_clamav"
 - "exe_custom"
@@ -597,7 +603,7 @@ Verificar XML/XDP pedaços contra XML/XDP-pedaço assinaturas quando analisando?
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
 
-Verificar contra Complexos Estendidos assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar contra complexos estendidas assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
 - "coex_clamav"
 - "coex_custom"
 - "coex_mussel"
@@ -801,8 +807,8 @@ Todas as Whitelist assinaturas seguir o formato:
 
 Onde HASH é o MD5 hash de um inteiro arquivo, TAMANHO é o total tamanho do arquivo e TYPE é o tipo de assinaturas o arquivo é ser imune contra.
 
-####*COMPLEXOS ESTENDIDOS ASSINATURAS*
-Complexos Estendidos assinaturas são bastante diferente para os outros tipos de assinaturas possíveis com phpMussel em que o que eles estão verificando contra é especificado pelas assinaturas e eles podem verificar contra vários critérios. Os critérios de verificação são delimitados por ";" e o verificação tipo e os verificação dados de cada verificação critérios é delimitados por ":" como assim que o formato por estas assinaturas tende a olhar um pouco assim:
+####*COMPLEXOS ESTENDIDAS ASSINATURAS*
+Complexos estendidas assinaturas são bastante diferente para os outros tipos de assinaturas possíveis com phpMussel em que o que eles estão verificando contra é especificado pelas assinaturas e eles podem verificar contra vários critérios. Os critérios de verificação são delimitados por ";" e o verificação tipo e os verificação dados de cada verificação critérios é delimitados por ":" como assim que o formato por estas assinaturas tende a olhar um pouco assim:
 
 `$variável1:ALGUNSDADOS;$variável2:ALGUNSDADOS;AssinaturaNome`
 
@@ -822,7 +828,7 @@ Colocar personalizadas assinaturas nos arquivos destinado por personalizadas ass
 ####*ASSINATURA COMPOSIÇÃO*
 A seguir estão os diferentes tipos de assinaturas utilizadas por phpMussel:
 - "Normalizadas ASCII Assinaturas" (ascii_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando.
-- "Estendidos Complexos Assinaturas" (coex_*). Misto tipo de assinatura verificando.
+- "Complexos Estendidas Assinaturas" (coex_*). Misto tipo de assinatura verificando.
 - "ELF Assinaturas" (elf_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmados tal do formato ELF.
 - "Portátil Executável Assinaturas" (exe_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmados tal do formato PE.
 - "Arquivo Nome Assinaturas" (filenames_*). Verificado contra os nomes de cada arquivo não no whitelist e alvo por analisando.
@@ -913,4 +919,4 @@ Esta informação foi atualizada dia 28 Maio 2015 e é corrente para todas phpMu
 ---
 
 
-Última Atualização: 7 Agosto 2015 (2015.08.07).
+Última Atualização: 8 Agosto 2015 (2015.08.08).

@@ -314,9 +314,9 @@ File                                       | Descrizione
 /vault/ascii_custom_standard.cvd           | File per le normalizzati ASCII firme.
 /vault/ascii_mussel_regex.cvd              | File per le normalizzati ASCII firme.
 /vault/ascii_mussel_standard.cvd           | File per le normalizzati ASCII firme.
-/vault/coex_clamav.cvd                     | File per il Complesso Esteso firme.
-/vault/coex_custom.cvd                     | File per il Complesso Esteso firme.
-/vault/coex_mussel.cvd                     | File per il Complesso Esteso firme.
+/vault/coex_clamav.cvd                     | File per il complesso esteso firme.
+/vault/coex_custom.cvd                     | File per il complesso esteso firme.
+/vault/coex_mussel.cvd                     | File per il complesso esteso firme.
 /vault/elf_clamav_regex.cvd                | File per l'ELF firme.
 /vault/elf_clamav_regex.map                | File per l'ELF firme.
 /vault/elf_clamav_standard.cvd             | File per l'ELF firme.
@@ -325,14 +325,14 @@ File                                       | Descrizione
 /vault/elf_custom_standard.cvd             | File per l'ELF firme.
 /vault/elf_mussel_regex.cvd                | File per l'ELF firme.
 /vault/elf_mussel_standard.cvd             | File per l'ELF firme.
-/vault/exe_clamav_regex.cvd                | File per Portatile Eseguibile file (EXE) firme.
-/vault/exe_clamav_regex.map                | File per Portatile Eseguibile file (EXE) firme.
-/vault/exe_clamav_standard.cvd             | File per Portatile Eseguibile file (EXE) firme.
-/vault/exe_clamav_standard.map             | File per Portatile Eseguibile file (EXE) firme.
-/vault/exe_custom_regex.cvd                | File per Portatile Eseguibile file (EXE) firme.
-/vault/exe_custom_standard.cvd             | File per Portatile Eseguibile file (EXE) firme.
-/vault/exe_mussel_regex.cvd                | File per Portatile Eseguibile file (EXE) firme.
-/vault/exe_mussel_standard.cvd             | File per Portatile Eseguibile file (EXE) firme.
+/vault/exe_clamav_regex.cvd                | File per PE (Portatile Eseguibile) firme.
+/vault/exe_clamav_regex.map                | File per PE (Portatile Eseguibile) firme.
+/vault/exe_clamav_standard.cvd             | File per PE (Portatile Eseguibile) firme.
+/vault/exe_clamav_standard.map             | File per PE (Portatile Eseguibile) firme.
+/vault/exe_custom_regex.cvd                | File per PE (Portatile Eseguibile) firme.
+/vault/exe_custom_standard.cvd             | File per PE (Portatile Eseguibile) firme.
+/vault/exe_mussel_regex.cvd                | File per PE (Portatile Eseguibile) firme.
+/vault/exe_mussel_standard.cvd             | File per PE (Portatile Eseguibile) firme.
 /vault/filenames_clamav.cvd                | File per le file nomi firme.
 /vault/filenames_custom.cvd                | File per le file nomi firme.
 /vault/filenames_mussel.cvd                | File per le file nomi firme.
@@ -405,6 +405,8 @@ File                                       | Descrizione
 /vault/pe_clamav.cvd                       | File per PE Sezionale firme.
 /vault/pe_custom.cvd                       | File per PE Sezionale firme.
 /vault/pe_mussel.cvd                       | File per PE Sezionale firme.
+/vault/pex_custom.cvd                      | File per PE esteso firme.
+/vault/pex_mussel.cvd                      | File per PE esteso firme.
 /vault/phpmussel.inc                       | Nucleo Script; Il principale corpo e budella di phpMussel (essenziale)!
 /vault/phpmussel.ini                       | Configurazione file; Contiene tutte l'opzioni di configurazione per phpMussel, dicendogli cosa fare e come operare correttamente (essenziale)!
 ※ /vault/scan_log.txt                     | Un record di tutto scansionato da phpMussel.
@@ -547,6 +549,10 @@ Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE Sezionale f
 - "pe_custom"
 - "pe_mussel"
 
+Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE esteso firme durante la scansione? 0 = No, 1 = Sì [Predefinito].
+- "pex_custom"
+- "pex_mussel"
+
 Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE firme durante la scansione? 0 = No, 1 = Sì [Predefinito].
 - "exe_clamav"
 - "exe_custom"
@@ -597,7 +603,7 @@ Verificare XML/XDP pezzi contro XML/XDP-pezzo firme durante la scansione? 0 = No
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
 
-Verificare contro Complesso Esteso firme durante la scansione? 0 = No, 1 = Sì [Predefinito].
+Verificare contro complesso esteso firme durante la scansione? 0 = No, 1 = Sì [Predefinito].
 - "coex_clamav"
 - "coex_custom"
 - "coex_mussel"
@@ -913,4 +919,4 @@ Questa informazione è stato lo scorso aggiornato 28 Maggio 2015 ed è in corso 
 ---
 
 
-Ultimo Aggiornamento: 7 Agosto 2015 (2015.08.07).
+Ultimo Aggiornamento: 8 Agosto 2015 (2015.08.08).

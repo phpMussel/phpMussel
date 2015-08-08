@@ -314,9 +314,9 @@ Bestand                                    | Beschrijving
 /vault/ascii_custom_standard.cvd           | Bestand voor genormaliseerde ASCII handtekeningen.
 /vault/ascii_mussel_regex.cvd              | Bestand voor genormaliseerde ASCII handtekeningen.
 /vault/ascii_mussel_standard.cvd           | Bestand voor genormaliseerde ASCII handtekeningen.
-/vault/coex_clamav.cvd                     | Bestand voor Complexe Uitgebreide handtekeningen.
-/vault/coex_custom.cvd                     | Bestand voor Complexe Uitgebreide handtekeningen.
-/vault/coex_mussel.cvd                     | Bestand voor Complexe Uitgebreide handtekeningen.
+/vault/coex_clamav.cvd                     | Bestand voor complexe uitgebreide handtekeningen.
+/vault/coex_custom.cvd                     | Bestand voor complexe uitgebreide handtekeningen.
+/vault/coex_mussel.cvd                     | Bestand voor complexe uitgebreide handtekeningen.
 /vault/elf_clamav_regex.cvd                | Bestand voor ELF handtekeningen.
 /vault/elf_clamav_regex.map                | Bestand voor ELF handtekeningen.
 /vault/elf_clamav_standard.cvd             | Bestand voor ELF handtekeningen.
@@ -325,14 +325,14 @@ Bestand                                    | Beschrijving
 /vault/elf_custom_standard.cvd             | Bestand voor ELF handtekeningen.
 /vault/elf_mussel_regex.cvd                | Bestand voor ELF handtekeningen.
 /vault/elf_mussel_standard.cvd             | Bestand voor ELF handtekeningen.
-/vault/exe_clamav_regex.cvd                | Bestand voor Portable Executable bestand (EXE) handtekeningen.
-/vault/exe_clamav_regex.map                | Bestand voor Portable Executable bestand (EXE) handtekeningen.
-/vault/exe_clamav_standard.cvd             | Bestand voor Portable Executable bestand (EXE) handtekeningen.
-/vault/exe_clamav_standard.map             | Bestand voor Portable Executable bestand (EXE) handtekeningen.
-/vault/exe_custom_regex.cvd                | Bestand voor Portable Executable bestand (EXE) handtekeningen.
-/vault/exe_custom_standard.cvd             | Bestand voor Portable Executable bestand (EXE) handtekeningen.
-/vault/exe_mussel_regex.cvd                | Bestand voor Portable Executable bestand (EXE) handtekeningen.
-/vault/exe_mussel_standard.cvd             | Bestand voor Portable Executable bestand (EXE) handtekeningen.
+/vault/exe_clamav_regex.cvd                | Bestand voor PE (Portable Executable) handtekeningen.
+/vault/exe_clamav_regex.map                | Bestand voor PE (Portable Executable) handtekeningen.
+/vault/exe_clamav_standard.cvd             | Bestand voor PE (Portable Executable) handtekeningen.
+/vault/exe_clamav_standard.map             | Bestand voor PE (Portable Executable) handtekeningen.
+/vault/exe_custom_regex.cvd                | Bestand voor PE (Portable Executable) handtekeningen.
+/vault/exe_custom_standard.cvd             | Bestand voor PE (Portable Executable) handtekeningen.
+/vault/exe_mussel_regex.cvd                | Bestand voor PE (Portable Executable) handtekeningen.
+/vault/exe_mussel_standard.cvd             | Bestand voor PE (Portable Executable) handtekeningen.
 /vault/filenames_clamav.cvd                | Bestand voor bestandsnaam handtekeningen.
 /vault/filenames_custom.cvd                | Bestand voor bestandsnaam handtekeningen.
 /vault/filenames_mussel.cvd                | Bestand voor bestandsnaam handtekeningen.
@@ -405,6 +405,8 @@ Bestand                                    | Beschrijving
 /vault/pe_clamav.cvd                       | Bestand voor PE Sectionele handtekeningen.
 /vault/pe_custom.cvd                       | Bestand voor PE Sectionele handtekeningen.
 /vault/pe_mussel.cvd                       | Bestand voor PE Sectionele handtekeningen.
+/vault/pex_custom.cvd                      | Bestand voor PE uitgebreide handtekeningen.
+/vault/pex_mussel.cvd                      | Bestand voor PE uitgebreide handtekeningen.
 /vault/phpmussel.inc                       | Kern Script; De belangrijkste lichaam van phpMussel (essentiële)!
 /vault/phpmussel.ini                       | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (essentiële)!
 ※ /vault/scan_log.txt                     | Een record van alles gescand door phpMussel.
@@ -547,6 +549,10 @@ Check PE (Portable Executable) files (EXE, DLL, etc) against PE Sectional signat
 - "pe_custom"
 - "pe_mussel"
 
+Check PE (Portable Executable) files (EXE, DLL, etc) against PE extended signatures when scanning? 0 = No, 1 = Yes [Default].
+- "pex_custom"
+- "pex_mussel"
+
 Check PE (Portable Executable) files (EXE, DLL, etc) against PE signatures when scanning? 0 = No, 1 = Yes [Default].
 - "exe_clamav"
 - "exe_custom"
@@ -597,7 +603,7 @@ Check XML/XDP chunks against XML/XDP-chunk signatures when scanning? 0 = No, 1 =
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
 
-Check against Complex Extended signatures when scanning? 0 = No, 1 = Yes [Default].
+Check against complex extended signatures when scanning? 0 = No, 1 = Yes [Default].
 - "coex_clamav"
 - "coex_custom"
 - "coex_mussel"
@@ -802,7 +808,7 @@ All Whitelist signatures follow the format:
 Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of that file and TYPE is the type of signatures the whitelisted file is to be immune against.
 
 ####*COMPLEX EXTENDED SIGNATURES*
-Complex Extended signatures are rather different to the other types of signatures possible with phpMussel, in that what they are matching against is specified by the signatures themselves and they can match against multiple criteria. The match criterias are delimited by ";" and the match type and match data of each match criteria is delimited by ":" as so that format for these signatures tends to look a bit like:
+Complex extended signatures are rather different to the other types of signatures possible with phpMussel, in that what they are matching against is specified by the signatures themselves and they can match against multiple criteria. The match criterias are delimited by ";" and the match type and match data of each match criteria is delimited by ":" as so that format for these signatures tends to look a bit like:
 
 `$variable1:SOMEDATA;$variable2:SOMEDATA;SignatureName`
 
@@ -913,4 +919,4 @@ Deze informatie is voor het laatst bijgewerkt 28 Mei 2015 en is op de hoogte voo
 ---
 
 
-Laatste Bijgewerkt: 7 Augustus 2015 (2015.08.07).
+Laatste Bijgewerkt: 8 Augustus 2015 (2015.08.08).
