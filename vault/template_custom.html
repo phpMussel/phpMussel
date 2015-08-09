@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{xmlLang}">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{css_url}theme.min.css" />
+    <link rel="stylesheet" href="{css_url}theme.colors.css" />
+    <title>phpMussel</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="wrapper_inner">
+            <hr class="hline" />
+            <div id="results">
+                <div id="denied">{denied}</div>
+                <div id="denied_other">{denied_other}</div>
+                <div id="denied_reason">{denied_reason}</div>
+            </div>
+            <div id="detected">{detected}</div>
+            <hr class="hline" />
+            <div id="footer">
+                <div id="footer_inner" title="phpMussel, a PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your system wherever the script is hooked, based on the signatures of ClamAV and others.">
+                <div id="generated_by">&nbsp;{generated_by}&nbsp;</div>
+                <div id="phpmusselversion">{phpmusselversion}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

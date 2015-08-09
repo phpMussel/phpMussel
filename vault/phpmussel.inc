@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7a-BETA (9th August 2015) Core Script.
+ This File: phpMussel v0.7a-BETA (10th August 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -1118,7 +1118,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 			}
 		if($SigDo)
 			{
-			if(!isset($GLOBALS['memCache'][$SigFile]))$GLOBALS['memCache'][$SigFile]=implode_md(file($GLOBALS['vault'].$SigFile));
+			if(!isset($GLOBALS['memCache'][$SigFile]))$GLOBALS['memCache'][$SigFile]=phpMusselFile($GLOBALS['vault'].$SigFile);
 			if(!$GLOBALS['memCache'][$SigFile])
 				{
 				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
@@ -1192,7 +1192,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 			}
 		if($SigDo)
 			{
-			if(!isset($GLOBALS['memCache'][$SigFile]))$GLOBALS['memCache'][$SigFile]=implode_md(file($GLOBALS['vault'].$SigFile));
+			if(!isset($GLOBALS['memCache'][$SigFile]))$GLOBALS['memCache'][$SigFile]=phpMusselFile($GLOBALS['vault'].$SigFile);
 			if(!$GLOBALS['memCache'][$SigFile])
 				{
 				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
@@ -2183,7 +2183,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 					$CoExMeta.='SectionName:'.$PEArr['SectionName'].';VirtualSize:'.$PEArr['VirtualSize'].';VirtualAddress:'.$PEArr['VirtualAddress'].';SizeOfRawData:'.$PEArr['SizeOfRawData'].';MD5:'.$PEArr['MD5'].';';
 					if($GLOBALS['MusselConfig']['signatures']['pe_clamav'])
 						{
-						if(!isset($GLOBALS['memCache']['pe_clamav.cvd']))$GLOBALS['memCache']['pe_clamav.cvd']=implode_md(file($GLOBALS['vault'].'pe_clamav.cvd'));
+						if(!isset($GLOBALS['memCache']['pe_clamav.cvd']))$GLOBALS['memCache']['pe_clamav.cvd']=phpMusselFile($GLOBALS['vault'].'pe_clamav.cvd');
 						if(!$GLOBALS['memCache']['pe_clamav.cvd'])
 							{
 							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
@@ -2216,7 +2216,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 						}
 					if($GLOBALS['MusselConfig']['signatures']['pe_custom'])
 						{
-						if(!isset($GLOBALS['memCache']['pe_custom.cvd']))$GLOBALS['memCache']['pe_custom.cvd']=implode_md(file($GLOBALS['vault'].'pe_custom.cvd'));
+						if(!isset($GLOBALS['memCache']['pe_custom.cvd']))$GLOBALS['memCache']['pe_custom.cvd']=phpMusselFile($GLOBALS['vault'].'pe_custom.cvd');
 						if(!$GLOBALS['memCache']['pe_custom.cvd'])
 							{
 							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
@@ -2258,7 +2258,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 						}
 					if($GLOBALS['MusselConfig']['signatures']['pe_mussel'])
 						{
-						if(!isset($GLOBALS['memCache']['pe_mussel.cvd']))$GLOBALS['memCache']['pe_mussel.cvd']=implode_md(file($GLOBALS['vault'].'pe_mussel.cvd'));
+						if(!isset($GLOBALS['memCache']['pe_mussel.cvd']))$GLOBALS['memCache']['pe_mussel.cvd']=phpMusselFile($GLOBALS['vault'].'pe_mussel.cvd');
 						if(!$GLOBALS['memCache']['pe_mussel.cvd'])
 							{
 							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
@@ -2349,7 +2349,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 						}
 					if($GLOBALS['MusselConfig']['signatures']['pex_custom'])
 						{
-						if(!isset($GLOBALS['memCache']['pex_custom.cvd']))$GLOBALS['memCache']['pex_custom.cvd']=implode_md(file($GLOBALS['vault'].'pex_custom.cvd'));
+						if(!isset($GLOBALS['memCache']['pex_custom.cvd']))$GLOBALS['memCache']['pex_custom.cvd']=phpMusselFile($GLOBALS['vault'].'pex_custom.cvd');
 						if(!$GLOBALS['memCache']['pex_custom.cvd'])
 							{
 							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
@@ -2394,7 +2394,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 						}
 					if($GLOBALS['MusselConfig']['signatures']['pex_mussel'])
 						{
-						if(!isset($GLOBALS['memCache']['pex_mussel.cvd']))$GLOBALS['memCache']['pex_mussel.cvd']=implode_md(file($GLOBALS['vault'].'pex_mussel.cvd'));
+						if(!isset($GLOBALS['memCache']['pex_mussel.cvd']))$GLOBALS['memCache']['pex_mussel.cvd']=phpMusselFile($GLOBALS['vault'].'pex_mussel.cvd');
 						if(!$GLOBALS['memCache']['pex_mussel.cvd'])
 							{
 							if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
@@ -5598,7 +5598,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 		{
 		while(true)
 			{
-			if(!isset($GLOBALS['memCache']['hex_general_commands.csv']))$GLOBALS['memCache']['hex_general_commands.csv']=@explode(',',implode_md(file($GLOBALS['vault'].'hex_general_commands.csv')));
+			if(!isset($GLOBALS['memCache']['hex_general_commands.csv']))$GLOBALS['memCache']['hex_general_commands.csv']=@explode(',',phpMusselFile($GLOBALS['vault'].'hex_general_commands.csv'));
 			if(!$GLOBALS['memCache']['hex_general_commands.csv'])
 				{
 				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
@@ -6559,7 +6559,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 			}
 		if($SigDo)
 			{
-			if(!isset($GLOBALS['memCache'][$SigFile]))$GLOBALS['memCache'][$SigFile]=implode_md(file($GLOBALS['vault'].$SigFile));
+			if(!isset($GLOBALS['memCache'][$SigFile]))$GLOBALS['memCache'][$SigFile]=phpMusselFile($GLOBALS['vault'].$SigFile);
 			if(!$GLOBALS['memCache'][$SigFile])
 				{
 				if(!$GLOBALS['MusselConfig']['signatures']['fail_silently'])
@@ -6903,7 +6903,7 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 			fclose($glf);
 			unset($glf);
 			}
-		else $GLOBALS['memCache']['greylist']=implode_md(file($GLOBALS['vault'].'greylist.csv'));
+		else $GLOBALS['memCache']['greylist']=phpMusselFile($GLOBALS['vault'].'greylist.csv');
 		}
 	$d=@is_file($f);
 	$fnCRC=@hash('crc32b',$ofn);
@@ -7911,6 +7911,7 @@ if(!isset($MusselConfig['virustotal']['vt_weighting']))$MusselConfig['virustotal
 if(!isset($MusselConfig['virustotal']['vt_quota_rate']))$MusselConfig['virustotal']['vt_quota_rate']=4;
 if(!isset($MusselConfig['virustotal']['vt_quota_time']))$MusselConfig['virustotal']['vt_quota_time']=1;
 if(!isset($MusselConfig['template_data']))$MusselConfig['template_data']=array();
+if(!isset($MusselConfig['template_data']['css_url']))$MusselConfig['template_data']['css_url']='';
 $cli_args=array(isset($argv[0])?$argv[0]:'',isset($argv[1])?$argv[1]:'',isset($argv[2])?$argv[2]:'',isset($argv[3])?$argv[3]:'');
 if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
 	{
@@ -8207,7 +8208,7 @@ function phpMussel_mail($body='')
 			fclose($glf);
 			unset($glf);
 			}
-		else $GLOBALS['memCache']['greylist']=implode_md(file($GLOBALS['vault'].'greylist.csv'));
+		else $GLOBALS['memCache']['greylist']=phpMusselFile($GLOBALS['vault'].'greylist.csv');
 		}
 	$hex=@bin2hex($body);
 	$hexlc=@bin2hex(strtolower($body));
@@ -8985,6 +8986,7 @@ if($c>0&&$MusselConfig['general']['scan_cache_expiry']>0)
 $xfm=trim($xfm);
 if(strlen($xfm)>0)
 	{
+	$memCache['template_file']=(!$MusselConfig['template_data']['css_url'])?'template.html':'template_custom.html';
 	$MusselConfig['template_data']['detected']=$xfm;
 	$MusselConfig['template_data']['phpmusselversion']=$phpmusselversion;
 	$MusselConfig['template_data']['xmlLang']=$MusselConfig['general']['lang'];
@@ -9000,14 +9002,14 @@ if(strlen($xfm)>0)
 		fclose($skf);
 		unset($skf,$skd);
 		}
-	if(!file_exists($vault.'template.html'))plaintext_echo_die('[phpMussel] '.$MusselConfig['lang']['denied'].' '.$MusselConfig['template_data']['detected']);
+	if(!file_exists($vault.$memCache['template_file']))plaintext_echo_die('[phpMussel] '.$MusselConfig['lang']['denied'].' '.$MusselConfig['template_data']['detected']);
 	if($MusselConfig['general']['forbid_on_block'])
 		{
 		header('HTTP/1.0 403 Forbidden');
 		header('HTTP/1.1 403 Forbidden');
 		header('Status: 403 Forbidden');
 		}
-	$html=str_replace("\t",'',str_replace("\n",'',str_replace("\r",'',phpMusselV($MusselConfig['lang'],phpMusselV($MusselConfig['template_data'],implode_md(file($vault.'template.html')))))));
+	$html=phpMusselV($MusselConfig['lang'],phpMusselV($MusselConfig['template_data'],phpMusselFile($vault.$memCache['template_file'],0,true)));
 	die($html);
 	}
 if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&strlen(mussel_php)>0&&mussel_os=='WIN'&&mussel_sapi=='cli')
