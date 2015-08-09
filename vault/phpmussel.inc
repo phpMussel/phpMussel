@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7a-BETA (8th August 2015) Core Script.
+ This File: phpMussel v0.7a-BETA (9th August 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -8061,15 +8061,13 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
 						}
 					if(!$PEArr['DoScan'])
 						{
-						// AAA Echo Not a valid PE file! AAA BBB
-						echo 'Not a valid PE file!'.$linebreak;
+						echo $GLOBALS['MusselConfig']['lang']['cli_pe1'].$linebreak;
 						}
 					else
 						{
 						$PEArr['OptHdrSize']=@unpack('S',substr($hashme,$PEArr['Offset']+20,2));
 						$PEArr['OptHdrSize']=$PEArr['OptHdrSize'][1];
-						// AAA Echo PE Sections: AAA BBB
-						echo 'PE Sections:'.$linebreak;
+						echo $GLOBALS['MusselConfig']['lang']['cli_pe2'].$linebreak;
 						for($PEArr['k']=0;$PEArr['k']<$PEArr['NumOfSections'];$PEArr['k']++)
 							{
 							$PEArr['SectionHead']=substr($hashme,$PEArr['Offset']+24+$PEArr['OptHdrSize']+($PEArr['k']*40),$PEArr['NumOfSections']*40);
@@ -8129,11 +8127,7 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
 						}
 					$PEArr=false;
 					}
-				else
-					{
-					// AAA Echo Not a valid PE file! AAA BBB
-					echo 'Not a valid PE file!'.$linebreak;
-					}
+				else echo $GLOBALS['MusselConfig']['lang']['cli_pe1'].$linebreak;
 				}
 			else echo $stl.$MusselConfig['lang']['cli_is_not_a'].$linebreak;
 			}

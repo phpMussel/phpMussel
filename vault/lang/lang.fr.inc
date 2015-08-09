@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel French/Français Language Data (11th July 2015).
+ This File: phpMussel French/Français Language Data (9th August 2015).
  <%phpMussel%/vault/lang/lang.fr.inc>
 
 */
@@ -27,6 +27,8 @@ $MusselConfig['lang']['cli_failed_to_complete']='Échec du terminer le processus
 $MusselConfig['lang']['cli_is_not_a']='  n\'est pas un fichier ou un répertoire.';
 $MusselConfig['lang']['cli_ln2']=" Merci pour l'utiliser de phpMusel, un PHP script pour la détection de virus,\n malveillants logiciels et autres menaces dans les fichiers téléchargés sur\n votre système partout où le script est accroché, basé sur les signatures de\n ClamAV et autres.\n\n PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPL V.2 par Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $MusselConfig['lang']['cli_ln3']=" Fonctionne comme CLI mode pour le moment (Commande Ligne Interface).\n\n Pour analyser un fichier ou répertoire, taper 'scan', suivi par le nom du\n fichier ou répertoire que vous voulez phpMussel pour analyser et appuyez sur\n Entrée; Tapez 'c' et appuyez sur Entrée pour une liste de CLI mode commandes;\n Taper 'q' et appuyez sur Entrée pour quitter:";
+$MusselConfig['lang']['cli_pe1']='Pas un valide PE fichier!';
+$MusselConfig['lang']['cli_pe2']='PE Sections:';
 $MusselConfig['lang']['cli_update_restart']=' Redémarrage phpMussel peut être nécessaire avant les réactualisations deviennent apparents.';
 $MusselConfig['lang']['cli_working']='En cours';
 $MusselConfig['lang']['controls_lockout']='phpMussel verrouillage des commandes est activées.';

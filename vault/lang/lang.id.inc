@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Indonesian Language Data (11th July 2015).
+ This File: phpMussel Indonesian Language Data (9th August 2015).
  <%phpMussel%/vault/lang/lang.id.inc>
 
 */
@@ -27,6 +27,8 @@ $MusselConfig['lang']['cli_failed_to_complete']='Gagal untuk menyelesaikan memin
 $MusselConfig['lang']['cli_is_not_a']=' bukan file atau direktori.';
 $MusselConfig['lang']['cli_ln2']=" Terima kasih untuk menggunakan phpMussel, sebuah skrip php di-design untuk\n mendeteksi trojan-trojan, virus-virus dan serangan-serangan lainnya dalam\n file-file diupload ke system Anda dimana saja skrip di kaitkan, berdasarkan\n tanda tangan dari ClamAV dan lain-lain.\n\n PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPL V.2 oleh Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $MusselConfig['lang']['cli_ln3']=" Sekarang phpMussel operasi di CLI mode (Command line interface).\n\n Untuk memindai file atau direktori, menulis 'scan', diikuti dengan nama file\n atau direktori yang ingin Anda phpMussel untuk memindai dan tekan Enter;\n Menulis 'c' dan tekan Enter untuk daftar CLI mode perintah; Menulis 'q' dan\n tekan Enter untuk keluar:";
+$MusselConfig['lang']['cli_pe1']='Tidak valid file PE!';
+$MusselConfig['lang']['cli_pe2']='Seksi PE:';
 $MusselConfig['lang']['cli_update_restart']=' Restart phpMussel mungkin diperlukan sebelum perbarui menjadi jelas.';
 $MusselConfig['lang']['cli_working']='Dalam proses';
 $MusselConfig['lang']['controls_lockout']='phpMussel mengunci kontrol diaktifkan.';

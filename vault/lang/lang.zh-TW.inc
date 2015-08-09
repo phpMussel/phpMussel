@@ -14,8 +14,8 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Chinese (Traditional) / 中文（傳統） Language Data (11th July 2015).
- <%phpMussel%/vault/lang/lang.zh-tw.inc>
+ This File: phpMussel Chinese (Traditional) / 中文（傳統） Language Data (9th August 2015).
+ <%phpMussel%/vault/lang/lang.zh-TW.inc>
 
 */
 
@@ -27,6 +27,8 @@ $MusselConfig['lang']['cli_failed_to_complete']='完成掃描過程失敗';
 $MusselConfig['lang']['cli_is_not_a']='不是文件或文件夾。';
 $MusselConfig['lang']['cli_ln2']=" 谢谢对于运用phpMussel，一PHP编程旨在检测木马，病毒，恶意软件，和其他威胁内的文件上传到你的系统随地编程是连接，根据ClamAV的签名和其他签名。\n\n PHPMUSSEL版權2013和此後GNU/GPLv.2通過Caleb M （Maikuolan）。\n\n                                     ~ ~ ~\n\n";
 $MusselConfig['lang']['cli_ln3']=" 目前經營phpMussel在CLI模式（命令行接口）。\n\n 掃描一個文件或文件夾，鍵入“scan”，其次是名的文件或文件夾你想phpMussel掃描然後按Enter鍵；\n 鍵入“c”然後按Enter鍵對於CLI模式命令名單；鍵入“q”然後按Enter鍵對於戒菸：";
+$MusselConfig['lang']['cli_pe1']='不是PE文件！';
+$MusselConfig['lang']['cli_pe2']='PE部分:';
 $MusselConfig['lang']['cli_update_restart']=' 重新啟動phpMussel可能是需要之前的更新變得明顯。';
 $MusselConfig['lang']['cli_working']='進行中';
 $MusselConfig['lang']['controls_lockout']='phpMussel控制閉鎖是啟用。';
