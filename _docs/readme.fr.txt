@@ -1001,9 +1001,8 @@
       lorsque l'exécution est terminée, ce qui signifie que il va généralement
       supprimer tous les fichiers téléchargés à travers elle au serveur sauf
       qu'ils ont déménagé, copié ou supprimé déjà. L'option est ajoutée ici
-      comme une supplémentaire mesure de sécurité pour le supplémentaire
-      paranoïaque et pour ceux dont copies de php peut pas toujours se
-      comporter de la manière attendu.
+      comme une supplémentaire mesure de sécurité pour ceux dont copies de php
+      peut pas toujours se comporter de la manière attendu.
       0 - Après l'analyse, laissez le fichier tel quel [Défaut],
       1 - Après l'analyse, si pas propre, supprimer immédiatement.
     "lang"
@@ -1555,6 +1554,25 @@
      vous aider dans le traitement de ces problèmes. Votre quota est déterminée
      comme `vt_quota_rate` demandes de toute nature dans un laps de
      `vt_quota_time` minute de temps.
+ "template_data" (Category)
+ - Directives/Variables pour les modèles et thèmes: Modèles données est liée à
+   la sortie HTML utilisé pour générer le "Téléchargement Refusé" message
+   affiché aux utilisateurs sur un fichier téléchargement est bloqué. Si vous
+   utilisez des thèmes personnalisés pour phpMussel, sortie HTML provient du
+   "template_custom.html" fichier, et sinon, sortie HTML provient du
+   "template.html" fichier. Variables écrites à cette section du configuration
+   fichier sont préparé pour la sortie HTML par voie de remplacer tous les noms
+   de variables circonfixé par bouclé parenthèse trouvés dans la sortie HTML
+   avec les variables données correspondant. Par exemple, où foo="bar", toute
+   instance de <p>{foo}</p> trouvés dans la sortie HTML deviendra <p>bar</p>.
+   "css_url"
+   - Le modèle fichier pour des thèmes personnalisés utilise les propriétés CSS
+     externes, tandis que le modèle fichier pour le défaut thème utilise les
+     propriétés CSS internes. Pour instruire phpMussel d'utiliser le modèle
+     fichier pour des thèmes personnalisés, spécifier l'adresse HTTP public de
+     votre thèmes personnalisés CSS fichiers utilisant le "css_url" variable.
+     Si vous laissez cette variable vide, phpMussel va utiliser le modèle
+     fichier pour le défaut thème.
 
                                      ~ ~ ~
 
@@ -1585,6 +1603,13 @@
     TAILLE:HASH:NOM
    Où HASH est le MD5 hash d'un section du PE fichier, TAILLE est la totale
    taille de cet section et NOM est le nom à citer pour la signature.
+
+ = PE EXTENDED SIGNATURES =
+   Toutes les PE étendues signatures suivez le format:
+    $VAR:HASH:TAILLE:NOM
+   Où $VAR est le nom de la PE variable à comparer contre, HASH est le MD5
+   hachage de cette variable, TAILLE est la taille totale de cette variable et
+   NOM est le nom de à pour cette signature.
 
  = BLANCHE LISTE SIGNATURES =
    Toutes les blanche liste signatures suivez le format:
@@ -1679,7 +1704,10 @@
    - "PDF Signatures" (pdf_*). Vérifié contre les contenus de chaque PDF
       fichier non listé blanche.
    - "Portable Executable Sectional Signatures" (pe_*). Vérifié contre le
-      taille et l'MD5 hash des sections de chaque PE fichier non listé blanche,
+      taille et l'MD5 hash des sections de chaque fichier non listé blanche,
+      ciblée pour l'analyse et identifié au PE format.
+   - "Portable Executable Étendues Signatures" (pex_*). Vérifié contre le
+      taille et l'MD5 hash des variables de chaque fichier non listé blanche,
       ciblée pour l'analyse et identifié au PE format.
    - "SWF Signatures" (swf_*). Vérifié contre les contenus de chaque Shockwave
       fichier non listé blanche.
@@ -1776,5 +1804,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 8 Août 2015 (2015.08.08).
+Dernière Réactualisé: 10 Août 2015 (2015.08.10).
 EOF

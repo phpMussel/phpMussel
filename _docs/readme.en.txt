@@ -884,7 +884,7 @@
  function.
 
  "general" (Category)
- - General configuration for phpMussel.
+ - General phpMussel configuration.
     "script_password"
     - As a convenience, phpMussel will allow certain functions (including the
       ability to update phpMussel on-the-fly) to be manually triggered via
@@ -928,15 +928,15 @@
       immediately delete any scanned attempted file upload matching any
       detection criteria, whether via signatures or otherwise. Files determined
       to be "clean" won't be touched. In the case of archives, the entire
-      archive will be deleted (regardless of if the offending file is only one
-      of several files contained within the archive). For the case of file
-      upload scanning, usually, it isn't necessary to turn this option on,
-      because usually, php will automatically purge the contents of its cache
-      when execution has finished, meaning that it'll usually delete any files
-      uploaded through it to the server unless they've moved, copied or deleted
-      already. The option is added here as an extra measure of security for the
-      extra paranoid and for those whose copies of php may not always behave in
-      the manner intended.
+      archive will be deleted, regardless of whether or not the offending file
+      is only one of several files contained within the archive. For the case
+      of file upload scanning, usually, it isn't necessary to enable this
+      directive, because usually, php will automatically purge the contents of
+      its cache when execution has finished, meaning it'll usually delete any
+      files uploaded through it to the server unless they've been moved, copied
+      or deleted already. This directive is added here as an extra measure of
+      security for those whose copies of php mightn't always behave in the
+      manner expected.
       0 - After scanning, leave the file alone [Default],
       1 - After scanning, if not clean, delete immediately.
     "lang"
@@ -1011,7 +1011,7 @@
       should ignore this directive.
       0 = Enable CLI mode [Default], 1 = Disable CLI mode.
  "signatures" (Category)
- - Configuration for signatures.
+ - Signatures configuration.
    %%%_clamav = ClamAV signatures (both mains and daily).
    %%%_custom = Your custom signatures (if you've written any).
    %%%_mussel = phpMussel signatures included in your current signatures set
@@ -1153,7 +1153,7 @@
    - Should phpMussel parse signatures for detecting defacements and defacers?
      0 = No, 1 = Yes [Default].
  "files" (Category)
- - General configuration for handling of files.
+ - File handling configuration.
    "max_uploads"
    - Maximum allowable number of files to scan during files upload scan before
      aborting the scan and informing the user they are uploading too much at
@@ -1213,7 +1213,7 @@
      potentially help reduce any risk associated with these such possibilities.
      0 - No, 1 - Yes [Default].
  "attack_specific" (Category)
- - Configuration for specific attack detections (not based on CVDs).
+ - Attack-specific directives.
    * Chameleon attack detection: 0 = Off, 1 = On.
    "chameleon_from_php"
    - Search for php header in files that are neither php files nor recognised
@@ -1314,7 +1314,7 @@
      and memory usage for attempted uploads of non-image files.
      0 - OFF, 1 - ON.
  "heuristic" (Category)
- - Heuristic directives for phpMussel.
+ - Heuristic directives.
    "threshold"
    - There are certain signatures of phpMussel that are intended to identify
      suspicious and potentially malicious qualities of files being uploaded
@@ -1331,7 +1331,7 @@
      malicious files being flagged. It's generally best to leave this value at
      its default unless you're experiencing problems related to it.
  "virustotal" (Category)
- - Configuration for Virus Total integration.
+ - VirusTotal.com directives.
    "vt_public_api_key"
    - Optionally, phpMussel is able to scan files using the Virus Total API as a
      way to provide a greatly enhanced level of protection against viruses,
@@ -1438,6 +1438,24 @@
      quota, decreasing these values -may- sometimes help you in dealing with
      these problems. Your rate limit is determined as `vt_quota_rate` requests
      of any nature in any given `vt_quota_time` minute time frame.
+ "template_data" (Category)
+ - Directives/Variables for templates and themes: Template data relates to the
+   HTML output used to generate the "Upload Denied" message displayed to users
+   upon a file upload being blocked. If you're using custom themes for
+   phpMussel, HTML output is sourced from the "template_custom.html" file, and
+   otherwise, HTML output is sourced from the "template.html" file. Variables
+   written to this section of the configuration file are parsed to the HTML
+   output by way of replacing any variable names circumfixed by curly brackets
+   found within the HTML output with the corresponding variable data. For
+   example, where foo="bar", any instance of <p>{foo}</p> found within the
+   HTML output will become <p>bar</p>.
+   "css_url"
+   - The template file for custom themes utilises external CSS properties,
+     whereas the template file for the default theme utilises internal CSS
+     properties. To instruct phpMussel to use the template file for custom
+     themes, specify the public HTTP address of your custom theme's CSS files
+     using the "css_url" variable. If you leave this variable blank, phpMussel
+     will use the template file for the default theme.
 
                                      ~ ~ ~
 
@@ -1468,6 +1486,13 @@
     SIZE:HASH:NAME
    Where HASH is the MD5 hash of a section of a PE file, SIZE is the total size
    of that section and NAME is the name to cite for that signature.
+
+ = PE EXTENDED SIGNATURES =
+   All PE extended signatures follow the format:
+    $VAR:HASH:SIZE:NAME
+   Where $VAR is the name of the PE variable to match against, HASH is the MD5
+   hash of that variable, SIZE is the total size of that variable and NAME is
+   the name to cite for that signature.
 
  = WHITELIST SIGNATURES =
    All Whitelist signatures follow the format:
@@ -1560,6 +1585,9 @@
    - "Portable Executable Sectional Signatures" (pe_*). Checked against the MD5
       hash and the size of each PE section of every non-whitelisted file
       targeted for scanning and matched to the PE format.
+   - "Portable Executable Extended Signatures" (pex_*). Checked against the MD5
+      hash and the size of variables within every non-whitelisted file targeted
+      for scanning and matched to the PE format.
    - "SWF Signatures" (swf_*). Checked against the contents of every
       non-whitelisted Shockwave file targeted for scanning.
    - "Whitelist Signatures" (whitelist_*). Checked against the MD5 hash of the
@@ -1653,5 +1681,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 8th August 2015 (2015.08.08).
+Last Updated: 10th August 2015 (2015.08.10).
 EOF

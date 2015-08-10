@@ -561,10 +561,11 @@
     Testdatei zur Überprüfung der PE-Sectional-Signaturerkennung.
     ~
  /_testfiles/swf_standard_testfile.swf (Testdatei, enthalten)
-    Testdatei zur Überprüfung der SWF-Signaturen.
+    Testdatei zur Überprüfung der Shockwave-Signaturerkennung.
     ~
  /_testfiles/xdp_standard_testfile.xdp (Testdatei, enthalten)
-    Testdatei zur Überprüfung der XML/XDP-Datenblock-Signaturen.
+    Testdatei zur Überprüfung der XML/XDP-Datenblock-
+    -Signaturerkennung.
     ~
  /vault/ (Verzeichnis)
     Vault-Verzeichnis (beinhaltet verschiedene Dateien).
@@ -1486,6 +1487,24 @@
      Erreichen des Limits haben, -sollte- das Verringern dieser Werte manchmal
      helfen. Dein Limit wird festgelegt als `vt_quota_rate` Anfragen jeder Art
      in jeder `vt_quota_time` Minuten Zeitspanne.
+ "template_data" (Category)
+ - Directives/Variables for templates and themes: Template data relates to the
+   HTML output used to generate the "Upload Denied" message displayed to users
+   upon a file upload being blocked. If you're using custom themes for
+   phpMussel, HTML output is sourced from the "template_custom.html" file, and
+   otherwise, HTML output is sourced from the "template.html" file. Variables
+   written to this section of the configuration file are parsed to the HTML
+   output by way of replacing any variable names circumfixed by curly brackets
+   found within the HTML output with the corresponding variable data. For
+   example, where foo="bar", any instance of <p>{foo}</p> found within the
+   HTML output will become <p>bar</p>.
+   "css_url"
+   - The template file for custom themes utilises external CSS properties,
+     whereas the template file for the default theme utilises internal CSS
+     properties. To instruct phpMussel to use the template file for custom
+     themes, specify the public HTTP address of your custom theme's CSS files
+     using the "css_url" variable. If you leave this variable blank, phpMussel
+     will use the template file for the default theme.
 
                                      ~ ~ ~
 
@@ -1516,6 +1535,13 @@
     SIZE:HASH:NAME
    HASH ist der MD5-Hash einer PE-Sektion der Datei, FILESIZE ist die gesamte
    Größe der PE-Sektion und NAME ist der Name, um die Signatur zu benennen.
+
+ = PE-ERWEITERT-SIGNATUREN =
+   Alle PE-Erweitert-Signaturen besitzen folgendes Format:
+    $VAR:HASH:SIZE:NAME
+   Where $VAR is the name of the PE variable to match against, HASH is the MD5
+   hash of that variable, SIZE is the total size of that variable and NAME is
+   the name to cite for that signature.
 
  = WHITELIST-SIGNATUREN =
    Alle Whitelist-Signaturen besitzen folgendes Format:
@@ -1575,11 +1601,12 @@
    werden:
    - "Normierte ASCII-Signaturen" (ascii_*). Überprüft den Inhalt jeder Datei,
       die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
-   - "Complex Extended Signatures" (coex_*). Mixed signature type matching.
+   - "Komplex-Erweitert-Signaturen" (coex_*). Mischsignaturtyp
+      Datei-Überprüfungen.
    - "ELF-Signaturen" (elf_*). Überprüft den Inhalt jeder Datei, die nicht in
       der Whitelist aufgeführt ist und überprüft werden soll und dem ELF-Format
       entspricht.
-   - "Portable Executable Signaturen" (exe_*). Überprüft den Inhalt jeder
+   - "Portable-Executable-Signaturen" (exe_*). Überprüft den Inhalt jeder
       Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden
       soll und dem PE-Format entspricht.
    - "Dateinamen-Signaturen" (filenames_*). Überprüft die Dateinamen jeder
@@ -1612,17 +1639,20 @@
       in der Whitelist aufgeführt ist.
    - "PDF-Signaturen" (pdf_*). Überprüft den Inhalt jeder PDF-Dateien, die
       nicht in der Whitelist aufgeführt ist.
-   - "Portable Executable Sectional Signaturen" (pe_*). Überprüft mittels der
+   - "Portable-Executable-Sectional-Signaturen" (pe_*). Überprüft mittels der
       Größe und MD5-Hash der PE-Sektionen jeder Datei, die nicht in der
       Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format
       entspricht.
-   - "SWF-Signaturen" (swf_*). Überprüft den Inhalt jeder Shockwave-Datei,
-      die nicht in der Whitelist aufgeführt ist.
+   - "Portable-Executable-Erweitert-Signaturen" (pex_*). Überprüft mittels der
+      Größe und MD5-Hash der Variablen jeder Datei, die nicht in der Whitelist
+      aufgeführt ist und überprüft werden soll und dem PE-Format entspricht.
+   - "Shockwave-Signaturen" (swf_*). Überprüft den Inhalt jeder
+      Shockwave-Datei, die nicht in der Whitelist aufgeführt ist.
    - "Whitelist-Signaturen" (whitelist_*). Überprüft mittels MD5-Hash des
       Inhalts und der Dateigröße jede Datei. Übereinstimmende Dateien werden
       immun gegen die Art der Signaturen in dem Whitelist-Eintrag.
-   - "XML/XDP-Chunk Signatures" (xmlxdp_*). Überprüft XML/XDP-Datenblöcke aus
-      jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft
+   - "XML/XDP-Datenblock-Signaturen" (xmlxdp_*). Überprüft XML/XDP-Datenblöcke
+      aus jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft
       werden soll.
    (Beachten Sie, dass jede dieser Signaturen auf einfache Weise in der
     "phpmussel.ini" deaktiviert werden kann).
@@ -1710,5 +1740,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 8. August 2015 (2015.08.08).
+Zuletzt aktualisiert: 10. August 2015 (2015.08.10).
 EOF

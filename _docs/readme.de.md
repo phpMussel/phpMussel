@@ -284,8 +284,8 @@ Datei                                      | Beschreibung
 /_testfiles/ole_testfile.ole               | Testdatei zur Überprüfung der OLE-Signaturerkennung.
 /_testfiles/pdf_standard_testfile.pdf      | Testdatei zur Überprüfung der PDF-Signaturerkennung.
 /_testfiles/pe_sectional_testfile.exe      | Testdatei zur Überprüfung der PE-Sectional-Signaturerkennung.
-/_testfiles/swf_standard_testfile.swf      | Testdatei zur Überprüfung der SWF-Signaturen.
-/_testfiles/xdp_standard_testfile.xdp      | Testdatei zur Überprüfung der XML/XDP-Datenblock-Signaturen.
+/_testfiles/swf_standard_testfile.swf      | Testdatei zur Überprüfung der Shockwave-Signaturerkennung.
+/_testfiles/xdp_standard_testfile.xdp      | Testdatei zur Überprüfung der XML/XDP-Datenblock-Signaturerkennung.
 /vault/                                    | Vault-Verzeichnis (beinhaltet verschiedene Dateien).
 /vault/cache/                              | Cache-Verzeichnis (für temporäre Daten).
 /vault/cache/.htaccess                     | Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
@@ -325,14 +325,14 @@ Datei                                      | Beschreibung
 /vault/elf_custom_standard.cvd             | Datei der ELF-Signaturen.
 /vault/elf_mussel_regex.cvd                | Datei der ELF-Signaturen.
 /vault/elf_mussel_standard.cvd             | Datei der ELF-Signaturen.
-/vault/exe_clamav_regex.cvd                | Datei der Portable Executable Datei (EXE)-Signaturen.
-/vault/exe_clamav_regex.map                | Datei der Portable Executable Datei (EXE)-Signaturen.
-/vault/exe_clamav_standard.cvd             | Datei der Portable Executable Datei (EXE)-Signaturen.
-/vault/exe_clamav_standard.map             | Datei der Portable Executable Datei (EXE)-Signaturen.
-/vault/exe_custom_regex.cvd                | Datei der Portable Executable Datei (EXE)-Signaturen.
-/vault/exe_custom_standard.cvd             | Datei der Portable Executable Datei (EXE)-Signaturen.
-/vault/exe_mussel_regex.cvd                | Datei der Portable Executable Datei (EXE)-Signaturen.
-/vault/exe_mussel_standard.cvd             | Datei der Portable Executable Datei (EXE)-Signaturen.
+/vault/exe_clamav_regex.cvd                | Datei der Portable-Executable-Signaturen.
+/vault/exe_clamav_regex.map                | Datei der Portable-Executable-Signaturen.
+/vault/exe_clamav_standard.cvd             | Datei der Portable-Executable-Signaturen.
+/vault/exe_clamav_standard.map             | Datei der Portable-Executable-Signaturen.
+/vault/exe_custom_regex.cvd                | Datei der Portable-Executable-Signaturen.
+/vault/exe_custom_standard.cvd             | Datei der Portable-Executable-Signaturen.
+/vault/exe_mussel_regex.cvd                | Datei der Portable-Executable-Signaturen.
+/vault/exe_mussel_standard.cvd             | Datei der Portable-Executable-Signaturen.
 /vault/filenames_clamav.cvd                | Datei der Dateinamen-Signaturen.
 /vault/filenames_custom.cvd                | Datei der Dateinamen-Signaturen.
 /vault/filenames_mussel.cvd                | Datei der Dateinamen-Signaturen.
@@ -713,7 +713,7 @@ Chameleon-Angriffserkennung: 0 = deaktiviert, 1 = aktiviert.
 - Erkannte Archiv-Dateierweiterungen (Format ist CSV; nur bei Problemen hinzufügen oder entfernen; unnötiges Entfernen könnte Fehlalarme für Archive auslösen, unnötiges Hinzufügen fügt das zur Whitelist hinzu, was vorher als möglicher Angriff definiert wurde; Ändern Sie diese Liste äußerst vorsichtig; Beachten Sie, dass dies keinen Einfluß darauf hat, wozu Archive fähig sind und nicht auf Inhaltsebene analysiert werden können). Diese Liste enthält die Archivformate, die am häufigsten von der Mehrzahl der Systeme und CMS verwendet werden, ist aber absichtlich nicht vollständig.
 
 "general_commands"
-- Soll der Inhalt von Dateien auf allgemeine Befehle wie eval(), exec() und include() durchsucht werden? 0 - Nein (nicht überprüfen) [Standardeinstellung], 1 - Ja (überprüfen). Stellen Sie diese Option aus, wenn Sie vorhaben, folgende Dateien mittels Browser auf Ihr System oder CMS hochzuladen: PHP, JavaScript, HTML, Python, Perl usw. Aktivieren Sie diese Option, falls Sie keine zusätzlichen Schutzmechanismen auf Ihrem System haben und nicht planen, solche Dateien hochzuladen. Verwenden Sie zusätzliche Sicherheitssoftware in Verbindung mit phpMussel wie ZB Block, ist es nicht notwendig, diese Option zu aktivieren, phpMussel würde nur unnötigerweise (im Kontext dieser Option) danach suchen, wogegen das System bereits geschützt ist.
+- Soll der Inhalt von Dateien auf allgemeine Befehle wie `eval()`, `exec()` und `include()` durchsucht werden? 0 - Nein (nicht überprüfen) [Standardeinstellung], 1 - Ja (überprüfen). Stellen Sie diese Option aus, wenn Sie vorhaben, folgende Dateien mittels Browser auf Ihr System oder CMS hochzuladen: PHP, JavaScript, HTML, Python, Perl usw. Aktivieren Sie diese Option, falls Sie keine zusätzlichen Schutzmechanismen auf Ihrem System haben und nicht planen, solche Dateien hochzuladen. Verwenden Sie zusätzliche Sicherheitssoftware in Verbindung mit phpMussel wie ZB Block, ist es nicht notwendig, diese Option zu aktivieren, phpMussel würde nur unnötigerweise (im Kontext dieser Option) danach suchen, wogegen das System bereits geschützt ist.
 
 "block_control_characters"
 - Sollen Dateien, welche Steuerzeichen (andere als Newline/Zeilenumbruch) enthalten, blockiert werden? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Sofern Sie _**NUR**_ reinen Text hochladen, können Sie diese Option aktivieren, um Ihrem System zusätzlichen Schutz zu bieten. Sollten Sie anderes als reinen Text hochladen, werden bei aktivierter Option Fehlalarme ausgelöst. 0 - Nicht blockieren [Standardeinstellung], 1 - Blockieren.
@@ -766,6 +766,14 @@ Hinweis: Unabhängig von der Verdachts-Stufe wird jede Datei auf der Whitelist o
 "vt_quota_rate" und "vt_quota_time"
 - Laut der Virus Total API Dokumentation, "ist diese auf 4 Anfragen irgendeiner Art in einer 1 Minuten Zeitspanne limitiert. Falls du einen Honeyclient, Honeypot oder einen andere Automatisierung verwendest, was etwas zu VirusTotal beiträgt und nicht nur Berichte abruft, bist du für ein höheres Limit berechtigt". Standardmäßig wird sich phpMussel strikt daran halten, da aber diese Limits erhöht werden können, stehen dir diese zwei Direktiven zur Verfügung um phpMussel anzuweisen, an welches Limit es sich halten soll. Außer du bist dazu aufgefordert, ist es nicht empfohlen diese Werte zu erhöhen. Solltest du aber Probleme bezogen auf das Erreichen des Limits haben, _**SOLLTE**_ das Verringern dieser Werte manchmal helfen. Dein Limit wird festgelegt als `vt_quota_rate` Anfragen jeder Art in jeder `vt_quota_time` Minuten Zeitspanne.
 
+####"template_data" (Category)
+Directives/Variables for templates and themes.
+
+Template data relates to the HTML output used to generate the "Upload Denied" message displayed to users upon a file upload being blocked. If you're using custom themes for phpMussel, HTML output is sourced from the `template_custom.html` file, and otherwise, HTML output is sourced from the `template.html` file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where `foo="bar"`, any instance of `<p>{foo}</p>` found within the HTML output will become `<p>bar</p>`.
+
+"css_url"
+- The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct phpMussel to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the `css_url` variable. If you leave this variable blank, phpMussel will use the template file for the default theme.
+
 ---
 
 
@@ -799,6 +807,13 @@ Alle PE-Sectional-Signaturen besitzen folgendes Format:
 
 HASH ist der MD5-Hash einer PE-Sektion der Datei, FILESIZE ist die gesamte Größe der PE-Sektion und NAME ist der Name, um die Signatur zu benennen.
 
+####*PE-ERWEITERT-SIGNATUREN*
+Alle PE-Erweitert-Signaturen besitzen folgendes Format:
+
+`$VAR:HASH:SIZE:NAME`
+
+Where $VAR is the name of the PE variable to match against, HASH is the MD5 hash of that variable, SIZE is the total size of that variable and NAME is the name to cite for that signature.
+
 ####*WHITELIST-SIGNATUREN*
 Alle Whitelist-Signaturen besitzen folgendes Format:
 `HASH:FILESIZE:NAME`
@@ -826,9 +841,9 @@ Legen Sie Ihre eigenen Signaturen nur in den Dateien ab, die dafür vorgesehen s
 ####*AUFSCHLÜSSELUNG DER SIGNATUREN*
 Im Folgenden eine Aufschlüsselung der Signaturen, die von phpMussel genutzt werden:
 - "Normierte ASCII-Signaturen" (ascii_*). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
-- "Complex Extended Signatures" (coex_*). Mixed signature type matching.
+- "Komplex-Erweitert-Signaturen" (coex_*). Mischsignaturtyp Datei-Überprüfungen.
 - "ELF-Signaturen" (elf_*). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem ELF-Format entspricht.
-- "Portable Executable Signaturen" (exe_*). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format entspricht.
+- "Portable-Executable-Signaturen" (exe_*). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format entspricht.
 - "Dateinamen-Signaturen" (filenames_*). Überprüft die Dateinamen jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
 - "Allgemeine Signaturen" (general_*). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
 - "Grafiksignaturen" (graphics_*). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und einem bekannten Bildformat entspricht.
@@ -840,10 +855,11 @@ Im Folgenden eine Aufschlüsselung der Signaturen, die von phpMussel genutzt wer
 - "Archiv-Metadata-Signaturen" (metadata_*). Überprüft die CRC32-Prüfsumme und Dateigröße der ersten Datei in jedem Archiv, welche nicht in der Whitelist aufgeführt ist und überprüft werden soll.
 - "OLE-Signaturen" (ole_*). Überprüft den Inhalt jeder Objekten, die nicht in der Whitelist aufgeführt ist.
 - "PDF-Signaturen" (pdf_*). Überprüft den Inhalt jeder PDF-Dateien, die nicht in der Whitelist aufgeführt ist.
-- "Portable Executable Sectional Signaturen" (pe_*). Überprüft mittels der Größe und MD5-Hash der PE-Sektionen jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format entspricht.
-- "SWF-Signaturen" (swf_*). Überprüft den Inhalt jeder Shockwave-Datei, die nicht in der Whitelist aufgeführt ist.
+- "Portable-Executable-Sectional-Signaturen" (pe_*). Überprüft mittels der Größe und MD5-Hash der PE-Sektionen jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format entspricht.
+- "Portable-Executable-Erweitert-Signaturen" (pex_*). Überprüft mittels der Größe und MD5-Hash der Variablen jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format entspricht.
+- "Shockwave-Signaturen" (swf_*). Überprüft den Inhalt jeder Shockwave-Datei, die nicht in der Whitelist aufgeführt ist.
 - "Whitelist-Signaturen" (whitelist_*). Überprüft mittels MD5-Hash des Inhalts und der Dateigröße jede Datei. Übereinstimmende Dateien werden immun gegen die Art der Signaturen in dem Whitelist-Eintrag.
-- "XML/XDP-Chunk Signatures" (xmlxdp_*). Überprüft XML/XDP-Datenblöcke aus jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
+- "XML/XDP-Datenblock-Signaturen" (xmlxdp_*). Überprüft XML/XDP-Datenblöcke aus jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
 (Beachten Sie, dass jede dieser Signaturen auf einfache Weise in der `phpmussel.ini` deaktiviert werden kann).
 
 ---
@@ -917,4 +933,4 @@ Diese Informationen wurden zuletzt am 2015.05.28 aktualisiert und gelten für al
 ---
 
 
-Zuletzt aktualisiert: 8. August 2015 (2015.08.08).
+Zuletzt aktualisiert: 10. August 2015 (2015.08.10).

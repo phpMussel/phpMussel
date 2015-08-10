@@ -49,7 +49,7 @@ I hope to streamline this process by making an installer at some point in the no
 
 4) CMHOD the `vault` directory to "777". The main directory storing the contents (the one you chose earlier), usually, can be left alone, but CHMOD status should be checked if you've had permissions issues in the past on your system (by default, should be something like "755").
 
-5) Next, you'll need to "hook" phpMussel to your system or CMS. There are several different ways in which you can "hook" scripts such as phpMussel to your system or CMS, but the easiest is to simply include the script at the beginning of a core file of your system or CMS (one that'll generally always be loaded when someone accesses any page across your website) using a require() or include() command. Usually, this'll be something stored in a directory such as `/includes`, `/assets` or `/functions`, and will often be named something like `init.php`, `common_functions.php`, `functions.php` or similar. You'll have to work out which file this is for your situation; If you encounter difficulties in working this out for yourself, visit the phpMussel support forums and let us know; It's possible that either myself or another user may have experience with the CMS that you're using (you'll need to let us know which CMS you're using), and thus, may be able to provide some assistance in this area. To do this [to use require() or include()], insert the following line of code to the very beginning of that core file, replacing the string contained inside the quotation marks with the exact address of the `phpmussel.php` file (local address, not the HTTP address; it'll look similar to the vault address mentioned earlier).
+5) Next, you'll need to "hook" phpMussel to your system or CMS. There are several different ways in which you can "hook" scripts such as phpMussel to your system or CMS, but the easiest is to simply include the script at the beginning of a core file of your system or CMS (one that'll generally always be loaded when someone accesses any page across your website) using a `require()` or `include()` command. Usually, this'll be something stored in a directory such as `/includes`, `/assets` or `/functions`, and will often be named something like `init.php`, `common_functions.php`, `functions.php` or similar. You'll have to work out which file this is for your situation; If you encounter difficulties in working this out for yourself, visit the phpMussel support forums and let us know; It's possible that either myself or another user may have experience with the CMS that you're using (you'll need to let us know which CMS you're using), and thus, may be able to provide some assistance in this area. To do this [to use `require()` or `include()`], insert the following line of code to the very beginning of that core file, replacing the string contained inside the quotation marks with the exact address of the `phpmussel.php` file (local address, not the HTTP address; it'll look similar to the vault address mentioned earlier).
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
@@ -462,7 +462,7 @@ Signature files marked with "_mussel" contain signatures that specifically are n
 The following is a list of variables found in the `phpmussel.ini` configuration file of phpMussel, along with a description of their purpose and function.
 
 ####"general" (Category)
-General configuration for phpMussel.
+General phpMussel configuration.
 
 "script_password"
 - As a convenience, phpMussel will allow certain functions (including the ability to update phpMussel on-the-fly) to be manually triggered via POST, GET and QUERY. However, as a security precaution, to do this, phpMussel will expect a password to be included with the command, as to ensure that it's you, and not someone else, attempting to manually trigger these functions. Set script_password to whatever password you would like to use. If no password is set, manual triggering will be disabled by default. Use something you will remember but which is hard for others to guess.
@@ -489,7 +489,7 @@ General configuration for phpMussel.
 - Should phpMussel send 403 headers with the file upload blocked message, or stick with the usual 200 OK? 0 = No (200) [Default], 1 Yes (403).
 
 "delete_on_sight"
-- Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won't be touched. In the case of archives, the entire archive will be deleted (regardless of if the offending file is only one of several files contained within the archive). For the case of file upload scanning, usually, it isn't necessary to turn this option on, because usually, php will automatically purge the contents of its cache when execution has finished, meaning that it'll usually delete any files uploaded through it to the server unless they've moved, copied or deleted already. The option is added here as an extra measure of security for the extra paranoid and for those whose copies of php may not always behave in the manner intended. 0 - After scanning, leave the file alone [Default], 1 - After scanning, if not clean, delete immediately.
+- Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won't be touched. In the case of archives, the entire archive will be deleted, regardless of whether or not the offending file is only one of several files contained within the archive. For the case of file upload scanning, usually, it isn't necessary to enable this directive, because usually, php will automatically purge the contents of its cache when execution has finished, meaning it'll usually delete any files uploaded through it to the server unless they've been moved, copied or deleted already. This directive is added here as an extra measure of security for those whose copies of php mightn't always behave in the manner expected. 0 - After scanning, leave the file alone [Default], 1 - After scanning, if not clean, delete immediately.
 
 "lang"
 - Specify the default language for phpMussel.
@@ -519,7 +519,7 @@ General configuration for phpMussel.
 - Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere with certain testing tools (such as PHPUnit, for example) and other CLI-based applications. If you don't need to disable CLI mode, you should ignore this directive. 0 = Enable CLI mode [Default], 1 = Disable CLI mode.
 
 ####"signatures" (Category)
-Configuration for signatures.
+Signatures configuration.
 - %%%_clamav = ClamAV signatures (both mains and daily).
 - %%%_custom = Your custom signatures (if you've written any).
 - %%%_mussel = phpMussel signatures included in your current signatures set that aren't from ClamAV.
@@ -651,7 +651,7 @@ Signature matching length limiting options. Only change these if you know what y
 - Should phpMussel parse signatures for detecting defacements and defacers? 0 = No, 1 = Yes [Default].
 
 ####"files" (Category)
-General configuration for handling of files.
+File handling configuration.
 
 "max_uploads"
 - Maximum allowable number of files to scan during files upload scan before aborting the scan and informing the user they are uploading too much at once! Provides protection against a theoretical attack whereby an attacker attempts to DDoS your system or CMS by overloading phpMussel to slow down the php process to a grinding halt. Recommended: 10. You may wish to raise or lower this number depending on the speed of your hardware. Note that this number doesn't account for or include the contents of archives.
@@ -688,7 +688,7 @@ General configuration for handling of files.
 - Detect and block encrypted archives? Because phpMussel isn't able to scan the contents of encrypted archives, it's possible that archive encryption may be employed by an attacker as a means of attempting to bypass phpMussel, anti-virus scanners and other such protections. Instructing phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. 0 - No, 1 - Yes [Default].
 
 ####"attack_specific" (Category)
-Configuration for specific attack detections (not based on CVDs).
+Attack-specific directives.
 
 Chameleon attack detection: 0 = Off, 1 = On.
 
@@ -714,7 +714,7 @@ Chameleon attack detection: 0 = Off, 1 = On.
 - Recognised archive file extensions (format is CSV; should only add or remove when problems occur; unnecessarily removing may cause false-positives to appear for archive files, whereas unnecessarily adding will essentially whitelist what you're adding from attack specific detection; modify with caution; also note that this has no effect on what archives can and can't be analysed at content-level). The list, as is at default, lists those formats used most commonly across the majority of systems and CMS, but intentionally isn't necessarily comprehensive.
 
 "general_commands"
-- Search content of files for general commands such as eval(), exec() and include()? 0 - No (do not check) [Default], 1 - Yes (check). Disable this option if you intend to upload any of the following to your system or CMS via your browser: php, JavaScript, HTML, python, perl files and etcetera. Enable this option if you don't have any additional protections on your system and do not intend to upload such files. If you use additional security in conjunction with phpMussel such as ZB Block, there is no need to turn this option on, because most of what phpMussel will look for (in the context of this option) are duplications of protections that are already provided.
+- Search content of files for general commands such as `eval()`, `exec()` and `include()`? 0 - No (do not check) [Default], 1 - Yes (check). Disable this option if you intend to upload any of the following to your system or CMS via your browser: php, JavaScript, HTML, python, perl files and etcetera. Enable this option if you don't have any additional protections on your system and do not intend to upload such files. If you use additional security in conjunction with phpMussel such as ZB Block, there is no need to turn this option on, because most of what phpMussel will look for (in the context of this option) are duplications of protections that are already provided.
 
 "block_control_characters"
 - Block any files containing any control characters (other than newlines)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) If you're _**ONLY**_ uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. 0 - Don't block [Default], 1 - Block.
@@ -738,13 +738,13 @@ Compatibility directives for phpMussel.
 - If you only expect or only intend to allow images to be uploaded to your system or CMS, and if you absolutely don't require any files other than images to be uploaded to your system or CMS, this directive should be enabled, but should otherwise be disabled. If this directive is enabled, it'll instruct phpMussel to indiscriminately block any uploads identified as non-image files, without scanning them. This may reduce processing time and memory usage for attempted uploads of non-image files. 0 - OFF, 1 - ON.
 
 ####"heuristic" (Category)
-Heuristic directives for phpMussel.
+Heuristic directives.
 
 "threshold"
 - There are certain signatures of phpMussel that are intended to identify suspicious and potentially malicious qualities of files being uploaded without in themselves identifying those files being uploaded specifically as being malicious. This "threshold" value tells phpMussel what the maximum total weight of suspicious and potentially malicious qualities of files being uploaded that's allowable is before those files are to be flagged as malicious. The definition of weight in this context is the total number of suspicious and potentially malicious qualities identified. By default, this value will be set to 3. A lower value generally will result in a higher occurrence of false positives but a higher number of malicious files being flagged, whereas a higher value generally will result in a lower occurrence of false positives but a lower number of malicious files being flagged. It's generally best to leave this value at its default unless you're experiencing problems related to it.
 
 ####"virustotal" (Category)
-Configuration for Virus Total integration.
+VirusTotal.com directives.
 
 "vt_public_api_key"
 - Optionally, phpMussel is able to scan files using the Virus Total API as a way to provide a greatly enhanced level of protection against viruses, trojans, malware and other threats. By default, scanning files using the Virus Total API is disabled. To enable it, an API key from Virus Total is required. Due to the significant benefit that this could provide to you, it's something that I highly recommend enabling. Please be aware, however, that to use the Virus Total API, you _**MUST**_ agree to their Terms of Service and you _**MUST**_ adhere to all guidelines as per described by the Virus Total documentation! You are NOT permitted to use this integration feature UNLESS:
@@ -766,6 +766,14 @@ Note: Regardless of suspicion level, any files that are either blacklisted or wh
 
 "vt_quota_rate" and "vt_quota_time"
 - According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly adhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values _**MAY**_ sometimes help you in dealing with these problems. Your rate limit is determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame.
+
+####"template_data" (Category)
+Directives/Variables for templates and themes.
+
+Template data relates to the HTML output used to generate the "Upload Denied" message displayed to users upon a file upload being blocked. If you're using custom themes for phpMussel, HTML output is sourced from the `template_custom.html` file, and otherwise, HTML output is sourced from the `template.html` file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where `foo="bar"`, any instance of `<p>{foo}</p>` found within the HTML output will become `<p>bar</p>`.
+
+"css_url"
+- The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct phpMussel to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the `css_url` variable. If you leave this variable blank, phpMussel will use the template file for the default theme.
 
 ---
 
@@ -799,6 +807,13 @@ All PE Sectional signatures follow the format:
 `SIZE:HASH:NAME`
 
 Where HASH is the MD5 hash of a section of a PE file, SIZE is the total size of that section and NAME is the name to cite for that signature.
+
+####*PE EXTENDED SIGNATURES*
+All PE extended signatures follow the format:
+
+`$VAR:HASH:SIZE:NAME`
+
+Where $VAR is the name of the PE variable to match against, HASH is the MD5 hash of that variable, SIZE is the total size of that variable and NAME is the name to cite for that signature.
 
 ####*WHITELIST SIGNATURES*
 All Whitelist signatures follow the format:
@@ -843,6 +858,7 @@ The following is a breakdown of the types of signatures used by phpMussel:
 - "OLE Signatures" (ole_*). Checked against the contents of every non-whitelisted OLE object targeted for scanning.
 - "PDF Signatures" (pdf_*). Checked against the contents of every non-whitelisted PDF file targeted for scanning.
 - "Portable Executable Sectional Signatures" (pe_*). Checked against the MD5 hash and the size of each PE section of every non-whitelisted file targeted for scanning and matched to the PE format.
+- "Portable Executable Extended Signatures" (pex_*). Checked against the MD5 hash and the size of variables within every non-whitelisted file targeted for scanning and matched to the PE format.
 - "SWF Signatures" (swf_*). Checked against the contents of every non-whitelisted Shockwave file targeted for scanning.
 - "Whitelist Signatures" (whitelist_*). Checked against the MD5 hash of the contents and the filesize of every file targeted for scanning. Matched files will be immune to being matched by the type of signature mentioned in their whitelist entry.
 - "XML/XDP-Chunk Signatures" (xmlxdp_*). Checked against any XML/XDP chunks found within any non-whitelisted files targeted for scanning.
@@ -919,4 +935,4 @@ This information was last updated 28th May 2015 and is current for all phpMussel
 ---
 
 
-Last Updated: 8th August 2015 (2015.08.08).
+Last Updated: 10th August 2015 (2015.08.10).
