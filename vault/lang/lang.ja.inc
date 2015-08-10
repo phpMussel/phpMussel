@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Japanese/日本語 Language Data (12th July 2015).
+ This File: phpMussel Japanese/日本語 Language Data (9th August 2015).
  <%phpMussel%/vault/lang/lang.ja.inc>
 
 */
@@ -27,6 +27,8 @@ $MusselConfig['lang']['cli_failed_to_complete']='スキャンプロセス完了�
 $MusselConfig['lang']['cli_is_not_a']='ファイルまたはディレクトリはありません。';
 $MusselConfig['lang']['cli_ln2']=" phpMusselをご利用いただきありがとうございます！PHPスクリプトがために設計されています：検出のトロイの木馬、ウイルス、マルウェア、やその他の脅威、\n （どこファイルがシステムにアップロードされました、どこスクリプトが接続されました）。 ClamAV署名や他人に基づいています。\n\n PHPMUSSEL 著作権 2013 や以降です、GNU/GPLv2です、カレブによって作成（Maikuolan）。\n\n                                     ~ ~ ~\n\n";
 $MusselConfig['lang']['cli_ln3']=" phpMusselは、現在のCLIモード（コマンドラインインターフェース）で動作しています。\n\n ファイルまたはディレクトリをスキャンするには、入力「scan」、ファイルまたはディレクトリの名前、その後、Enterキーを押しますしてください；\n CLIモードのリストコマンドについては、入力し「c」とEnterキーを押します； 終了については、入力し「q」とEnterキーを押します：";
+$MusselConfig['lang']['cli_pe1']='有効なPEファイルではありません！';
+$MusselConfig['lang']['cli_pe2']='PE セクション：';
 $MusselConfig['lang']['cli_update_restart']=' アップデートが明らかになるためには、再起動phpMusselが必要な場合があります。';
 $MusselConfig['lang']['cli_working']='進行中';
 $MusselConfig['lang']['controls_lockout']='「phpMussel」はコントロールロックアウトはアクティブです。';

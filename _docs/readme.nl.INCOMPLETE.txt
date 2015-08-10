@@ -657,8 +657,8 @@
  /vault/coex_clamav.cvd (Handtekeningen, Opgenomen)
  /vault/coex_custom.cvd (Handtekeningen, Opgenomen)
  /vault/coex_mussel.cvd (Handtekeningen, Opgenomen)
-    Bestanden voor Complexe Uitgebreide handtekeningen. Vereist als het
-    Complexe Uitgebreide handtekeningen optie van "phpmussel.ini" is
+    Bestanden voor complexe uitgebreide handtekeningen. Vereist als het
+    complexe uitgebreide handtekeningen optie van "phpmussel.ini" is
     ingeschakeld. Kan verwijderen indien de optie is uitgeschakeld.
     ~
  /vault/elf_clamav_regex.cvd (Handtekeningen, Opgenomen)
@@ -681,9 +681,9 @@
  /vault/exe_custom_standard.cvd (Handtekeningen, Opgenomen)
  /vault/exe_mussel_regex.cvd (Handtekeningen, Opgenomen)
  /vault/exe_mussel_standard.cvd (Handtekeningen, Opgenomen)
-    Bestanden voor Portable Executable bestand (EXE) handtekeningen. Vereist
-    als EXE handtekeningen optie van "phpmussel.ini" is ingeschakeld. Kan
-    verwijderen indien de optie is uitgeschakeld.
+    Bestanden voor PE (Portable Executable) handtekeningen. Vereist als EXE
+    handtekeningen optie van "phpmussel.ini" is ingeschakeld. Kan verwijderen
+    indien de optie is uitgeschakeld.
     ~
  /vault/filenames_clamav.cvd (Handtekeningen, Opgenomen)
  /vault/filenames_custom.cvd (Handtekeningen, Opgenomen)
@@ -809,6 +809,12 @@
  /vault/pe_custom.cvd (Handtekeningen, Opgenomen)
  /vault/pe_mussel.cvd (Handtekeningen, Opgenomen)
     Bestanden voor PE Sectionele handtekeningen. Vereist als PE Sectionele
+    handtekeningen optie van "phpmussel.ini" is ingeschakeld. Kan verwijderen
+    indien de optie is uitgeschakeld.
+    ~
+ /vault/pex_custom.cvd (Handtekeningen, Opgenomen)
+ /vault/pex_mussel.cvd (Handtekeningen, Opgenomen)
+    Bestanden voor PE uitgebreide handtekeningen. Vereist als PE uitgebreide
     handtekeningen optie van "phpmussel.ini" is ingeschakeld. Kan verwijderen
     indien de optie is uitgeschakeld.
     ~
@@ -1076,6 +1082,10 @@
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
+   - Check PE (Portable Executable) files (EXE, DLL, etc) against PE extended
+     signatures when scanning? 0 = No, 1 = Yes [Default].
+     "pex_custom"
+     "pex_mussel"
    - Check PE (Portable Executable) files (EXE, DLL, etc) against PE signatures
      when scanning? 0 = No, 1 = Yes [Default].
      "exe_clamav"
@@ -1124,7 +1134,7 @@
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
-   - Check against Complex Extended signatures when scanning?
+   - Check against complex extended signatures when scanning?
      0 = No, 1 = Yes [Default].
      "coex_clamav"
      "coex_custom"
@@ -1510,7 +1520,7 @@
    immune against.
 
  = COMPLEX EXTENDED SIGNATURES =
-   Complex Extended signatures are rather different to the other types of
+   Complex extended signatures are rather different to the other types of
    signatures possible with phpMussel, in that what they are matching against
    is specified by the signatures themselves and they can match against
    multiple criteria. The match criterias are delimited by ";" and the match
@@ -1687,5 +1697,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 7 Augustus 2015 (2015.08.07).
+Laatste Bijgewerkt: 8 Augustus 2015 (2015.08.08).
 EOF

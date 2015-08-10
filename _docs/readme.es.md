@@ -271,12 +271,12 @@ Archivo                                    | Descripción
 /_docs/readme.pt.txt                       | Documentación: PORTUGUÊS
 /_docs/signatures_tally.txt                | Cifra neta de cambio de las incluidas firmas (no se requiere para lo adecuado funcionalidad de la script).
 /_testfiles/                               | Prueba archivos directorio (contiene varios archivos). Todos los archivos contenidos son prueba archivos para probando si phpMussel ha sido instalado correctamente en su sistema, y que no es necesario cargar este directorio o cualquiera de sus archivos excepto cuando haciendo tales pruebas.
-/_testfiles/ascii_standard_testfile.txt    | Prueba archivo para probando phpMussel normalizado ASCII firmas.
-/_testfiles/coex_testfile.rtf              | Prueba archivo para probando phpMussel Complejo Extendido firmas.
+/_testfiles/ascii_standard_testfile.txt    | Prueba archivo para probando phpMussel normalizados ASCII firmas.
+/_testfiles/coex_testfile.rtf              | Prueba archivo para probando phpMussel complejos extendidas firmas.
 /_testfiles/exe_standard_testfile.exe      | Prueba archivo para probando phpMussel PE firmas.
 /_testfiles/general_standard_testfile.txt  | Prueba archivo para probando phpMussel generales firmas.
 /_testfiles/graphics_standard_testfile.gif | Prueba archivo para probando phpMussel gráficas firmas.
-/_testfiles/html_standard_testfile.txt     | Prueba archivo para probando phpMussel normalizado HTML firmas.
+/_testfiles/html_standard_testfile.txt     | Prueba archivo para probando phpMussel normalizados HTML firmas.
 /_testfiles/md5_testfile.txt               | Prueba archivo para probando phpMussel MD5 firmas.
 /_testfiles/metadata_testfile.tar          | Prueba archivo para probando phpMussel metadatos firmas y para probando TAR archivo apoyo en su sistema.
 /_testfiles/metadata_testfile.txt.gz       | Prueba archivo para probando phpMussel metadatos firmas y para probando GZ archivo apoyo en su sistema.
@@ -314,9 +314,9 @@ Archivo                                    | Descripción
 /vault/ascii_custom_standard.cvd           | Archivo para normalizados ASCII firmas.
 /vault/ascii_mussel_regex.cvd              | Archivo para normalizados ASCII firmas.
 /vault/ascii_mussel_standard.cvd           | Archivo para normalizados ASCII firmas.
-/vault/coex_clamav.cvd                     | Archivo para Complejo Extendido firmas.
-/vault/coex_custom.cvd                     | Archivo para Complejo Extendido firmas.
-/vault/coex_mussel.cvd                     | Archivo para Complejo Extendido firmas.
+/vault/coex_clamav.cvd                     | Archivo para complejos extendidas firmas.
+/vault/coex_custom.cvd                     | Archivo para complejos extendidas firmas.
+/vault/coex_mussel.cvd                     | Archivo para complejos extendidas firmas.
 /vault/elf_clamav_regex.cvd                | Archivo para ELF firmas.
 /vault/elf_clamav_regex.map                | Archivo para ELF firmas.
 /vault/elf_clamav_standard.cvd             | Archivo para ELF firmas.
@@ -405,6 +405,8 @@ Archivo                                    | Descripción
 /vault/pe_clamav.cvd                       | Archivo para PE Secciónal firmas.
 /vault/pe_custom.cvd                       | Archivo para PE Secciónal firmas.
 /vault/pe_mussel.cvd                       | Archivo para PE Secciónal firmas.
+/vault/pex_custom.cvd                      | Archivo para PE extendidas firmas.
+/vault/pex_mussel.cvd                      | Archivo para PE extendidas firmas.
 /vault/phpmussel.inc                       | Núcleo Script; La principal cuerpo de phpMussel (esencial)!
 /vault/phpmussel.ini                       | Configuración archivo; Contiene todas las configuración opciones para phpMussel, instruyendo para qué hacer y cómo operar correctamente (esencial)!
 ※ /vault/scan_log.txt                     | Un registro de todo escaneada por phpMussel.
@@ -546,6 +548,10 @@ Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE Secciónal fir
 - "pe_custom"
 - "pe_mussel"
 
+Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE extendidas firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+- "pex_custom"
+- "pex_mussel"
+
 Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
 - "exe_clamav"
 - "exe_custom"
@@ -596,7 +602,7 @@ Cotejar XML/XDP trozos con XML/XDP-Chunk firmas cuando escaneando? 0 = No, 1 = S
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
 
-Cotejar contra Complejo Extendido firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar contra complejos extendidas firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
 - "coex_clamav"
 - "coex_custom"
 - "coex_mussel"
@@ -800,8 +806,8 @@ Todos Whitelist firmas seguir el formato:
 
 Donde HASH es el MD5 hash de un entero archivo, TAMAÑO es el total tamaño de eso archivo y TIPO es el tipo of firmas el archivo en la whitelist es estar inmune contra.
 
-####*COMPLEJO EXTENDIDO FIRMAS*
-Complejo Extendido firmas son bastante diferentes a los otros tipos de firmas posibles con phpMussel, en que qué ellos son cotejando contra se especificado por las firmas ellos mismos y que ellos pueden cotejar contra múltiples criterios. La cotejar criterios están delimitados por ";" y la cotejar tipo y cotejar datos de cada cotejar criterio es delimitado por ":" como tal que formato para estas firmas tiene tendencia a aparecer como:
+####*COMPLEJOS EXTENDIDAS FIRMAS*
+Complejos extendidas firmas son bastante diferentes a los otros tipos de firmas posibles con phpMussel, en que qué ellos son cotejando contra se especificado por las firmas ellos mismos y que ellos pueden cotejar contra múltiples criterios. La cotejar criterios están delimitados por ";" y la cotejar tipo y cotejar datos de cada cotejar criterio es delimitado por ":" como tal que formato para estas firmas tiene tendencia a aparecer como:
 
 `$variable1:SOMEDATA;$variable2:SOMEDATA;FirmaNombre`
 
@@ -821,7 +827,7 @@ Sólo poner personalizadas firmas en esos archivos destinados para personalizada
 ####*FIRMA DESGLOSE*
 El siguiente es el desglose de los tipos de firmas utilizado por phpMussel:
 - "Normalizados ASCII Firmas" (ascii_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Complejo Extendido Firmas" (coex_*). Mixtas tipos de firmas para cotejar/comprobar.
+- "Complejos Extendidas Firmas" (coex_*). Mixtas tipos de firmas para cotejar/comprobar.
 - "ELF Firmas" (elf_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del ELF formato.
 - "Portátil Ejecutable Firmas" (exe_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del PE formato.
 - "Firmas Basadas En Las Nombres Del Archivos" (filenames_*). Cotejado contra los nombres de archivos destinado para escaneando.
@@ -912,4 +918,4 @@ Esta información ha sido actualizado 28 Mayo 2015 y es a hoy para todas las php
 ---
 
 
-Última Actualización: 7 Agosto 2015 (2015.08.07).
+Última Actualización: 8 Agosto 2015 (2015.08.08).

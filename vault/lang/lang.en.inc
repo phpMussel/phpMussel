@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel English Language Data (11th July 2015).
+ This File: phpMussel English Language Data (9th August 2015).
  <%phpMussel%/vault/lang/lang.en.inc>
 
 */
@@ -27,6 +27,8 @@ $MusselConfig['lang']['cli_failed_to_complete']='Failed to complete scanning pro
 $MusselConfig['lang']['cli_is_not_a']=' is not a file or directory.';
 $MusselConfig['lang']['cli_ln2']=" Thank you for using phpMussel, a PHP script designed to detect trojans,\n viruses, malware and other threats within files uploaded to your system\n wherever the script is hooked, based on the signatures of ClamAV and others.\n\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $MusselConfig['lang']['cli_ln3']=" Currently running phpMussel in CLI mode (Command line interface).\n\n To scan a file or directory, type 'scan', followed by the name of the file or\n directory that you want phpMussel to scan and press Enter; Type 'c' and press\n Enter for a list of CLI mode commands; Type 'q' and press Enter to quit:";
+$MusselConfig['lang']['cli_pe1']='Not a valid PE file!';
+$MusselConfig['lang']['cli_pe2']='PE Sections:';
 $MusselConfig['lang']['cli_update_restart']=' Restarting phpMussel may be required before updates become apparent.';
 $MusselConfig['lang']['cli_working']='In progress';
 $MusselConfig['lang']['controls_lockout']='phpMussel controls lockout enabled.';

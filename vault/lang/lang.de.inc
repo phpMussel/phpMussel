@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel German/Deutsch Language Data (11th July 2015).
+ This File: phpMussel German/Deutsch Language Data (9th August 2015).
  <%phpMussel%/vault/lang/lang.de.inc>
 
 */
@@ -27,6 +27,8 @@ $MusselConfig['lang']['cli_failed_to_complete']='Ein vollständiger Scan konnte 
 $MusselConfig['lang']['cli_is_not_a']=' ist keine Datei oder ein Verzeichnis.';
 $MusselConfig['lang']['cli_ln2']=" Vielen Dank für die Benutzung von phpMussel, einem auf PHP basiertem Script,\n um Trojaner, Viren, Malware und andere Bedrohungen in Dateien zu entdecken,\n die auf Ihr System hochgeladen werden könnten, welches die Signaturen von\n ClamAV und andere nutzt.\n\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $MusselConfig['lang']['cli_ln3']=" phpMussel befindet sich im CLI-Modus (Command line interface).\n\n Um eine Datei oder ein Verzeichnis mit phpMussel zu überprüfen, geben Sie\n 'scan', gefolgt vom Namen der Datei oder des Verzeichnisses ein und\n bestätigen mit Enter;\n\n Geben Sie 'c' und Enter für eine Liste der verfügbaren Befehle im CLI-Modus\n ein; Geben Sie 'q' und Enter zum Beenden ein: ";
+$MusselConfig['lang']['cli_pe1']='Not a valid PE file!';
+$MusselConfig['lang']['cli_pe2']='PE Sections:';
 $MusselConfig['lang']['cli_update_restart']=' phpMussel muss neu gestartet werden, damit die Aktualisierungen wirksam werden.';
 $MusselConfig['lang']['cli_working']='Im Gange';
 $MusselConfig['lang']['controls_lockout']='phpMussel Kontrollen-Sperrung aktiviert.';

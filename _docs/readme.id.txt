@@ -567,7 +567,7 @@
     File test untuk mentest tanda tangan ASCII normal phpMussel.
     ~
  /_testfiles/coex_testfile.rtf (Test file, Diikutkan)
-    File test untuk mentest tanda tangan kompleks diperpanjang phpMussel.
+    File test untuk mentest tanda tangan diperpanjang kompleks phpMussel.
     ~
  /_testfiles/exe_standard_testfile.exe (Data test, Diikutkan)
     File test untuk mentest tanda tangan PE phpMussel.
@@ -668,8 +668,8 @@
  /vault/coex_clamav.cvd (Tanda tangan, Diikutkan)
  /vault/coex_custom.cvd (Tanda tangan, Diikutkan)
  /vault/coex_mussel.cvd (Tanda tangan, Diikutkan)
-    File-file untuk tanda tangan kompleks diperpanjang.
-    Diharuskan jika tanda tangan opsi kompleks diperpanjang di dalam
+    File-file untuk tanda tangan diperpanjang kompleks.
+    Diharuskan jika tanda tangan opsi diperpanjang kompleks di dalam
     "phpmussel.ini" diaktifkan. Dapat menghapus jika opsi dinonaktifkan.
     ~
  /vault/elf_clamav_regex.cvd (Tanda tangan, Diikutkan)
@@ -820,6 +820,12 @@
  /vault/pe_mussel.cvd (Tanda tangan, Diikutkan)
     File-file untuk tanda tangan PE Sectional. Diharuskan jika opsi tanda
     tangan PE Sectional di "phpmussel.ini" diaktifkan. Dapat menghapus jika
+    opsi dinonaktifkan.
+    ~
+ /vault/pex_custom.cvd (Tanda tangan, Diikutkan)
+ /vault/pex_mussel.cvd (Tanda tangan, Diikutkan)
+    File-file untuk tanda tangan PE diperpanjang. Diharuskan jika opsi tanda
+    tangan PE diperpanjang di "phpmussel.ini" diaktifkan. Dapat menghapus jika
     opsi dinonaktifkan.
     ~
  /vault/phpmussel.inc (Skrip, Diikutkan)
@@ -1098,6 +1104,10 @@
      "pe_custom"
      "pe_mussel"
    - Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE
+     diperpanjang ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+     "pex_custom"
+     "pex_mussel"
+   - Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE
      ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
      "exe_clamav"
      "exe_custom"
@@ -1146,7 +1156,7 @@
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
-   - Cek tanda tangan Kompleks Diperpanjang ketika pemindaian?
+   - Cek tanda tangan diperpanjang kompleks ketika pemindaian?
      0 = Tidak, 1 = Ya [Default].
      "coex_clamav"
      "coex_custom"
@@ -1605,7 +1615,7 @@
    phpMussel:
    - "Tanda tangan ASCII normal" (ascii_*). Dicek pada isi dari apapun file
       tidak bertanda putih dan ditargetkan untuk dipindai.
-   - "Tanda tangan Diperpanjang Kompleks" (coex_*). Campuran pencocokan jenis
+   - "Tanda tangan diperpanjang kompleks" (coex_*). Campuran pencocokan jenis
       tanda tangan.
    - "Tanda tangan ELF" (elf_*). Dicek pada isi dari apapun file tidak bertanda
       putih, ditargetkan untuk dipindai dan dicocokkan ke format ELF.
@@ -1735,5 +1745,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 7 Agustus 2015 (2015.08.07).
+Terakhir Diperbarui: 8 Agustus 2015 (2015.08.08).
 EOF

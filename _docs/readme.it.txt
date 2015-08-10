@@ -669,7 +669,7 @@
  /vault/coex_clamav.cvd (Firme, Incluso)
  /vault/coex_custom.cvd (Firme, Incluso)
  /vault/coex_mussel.cvd (Firme, Incluso)
-    File per il Complesso Esteso firme.
+    File per il complesso esteso firme.
     Richiesto se l'opzione per il complesso esteso firme in "phpmussel.ini" è
     abilitato. Può rimuovere se l'opzione è disattivato.
     ~
@@ -693,7 +693,7 @@
  /vault/exe_custom_standard.cvd (Firme, Incluso)
  /vault/exe_mussel_regex.cvd (Firme, Incluso)
  /vault/exe_mussel_standard.cvd (Firme, Incluso)
-    File per Portatile Eseguibile file (EXE) firme.
+    File per PE (Portatile Eseguibile) firme.
     Richiesto se l'opzione per l'EXE firme in "phpmussel.ini" è abilitato.
     Può rimuovere se l'opzione è disattivato.
     ~
@@ -819,6 +819,11 @@
  /vault/pe_mussel.cvd (Firme, Incluso)
     File per PE Sezionale firme. Richiesto se l'opzione per PE Sezionale firme
     in "phpmussel.ini" è abilitato. Può rimuovere se l'opzione è disattivato.
+    ~
+ /vault/pex_custom.cvd (Firme, Incluso)
+ /vault/pex_mussel.cvd (Firme, Incluso)
+    File per PE esteso firme. Richiesto se l'opzione per PE esteso firme in
+    "phpmussel.ini" è abilitato. Può rimuovere se l'opzione è disattivato.
     ~
  /vault/phpmussel.inc (Script, Incluso)
     phpMussel Nucleo Script; Il principale corpo e budella di phpMussel
@@ -1098,6 +1103,10 @@
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
+   - Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE
+     esteso firme durante la scansione? 0 = No, 1 = Sì [Predefinito].
+     "pex_custom"
+     "pex_mussel"
    - Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE firme
      durante la scansione? 0 = No, 1 = Sì [Predefinito].
      "exe_clamav"
@@ -1146,7 +1155,7 @@
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
-   - Verificare contro Complesso Esteso firme durante la scansione?
+   - Verificare contro complesso esteso firme durante la scansione?
      0 = No, 1 = Sì [Predefinito].
      "coex_clamav"
      "coex_custom"
@@ -1738,5 +1747,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 7 Agosto 2015 (2015.08.07).
+Ultimo Aggiornamento: 8 Agosto 2015 (2015.08.08).
 EOF
