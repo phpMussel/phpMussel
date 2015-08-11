@@ -49,7 +49,7 @@ Espero para agilizar este processo via fazendo um instalado em algum momento no 
 
 4) CMHOD o `vault` diretório para "777". O principal diretório armazenar o conteúdo (o que você escolheu anteriormente), geralmente, pode ser deixado sozinho, mas o CHMOD status deve ser verificado se você já teve problemas de permissões no passado no seu sistema (por padrão, deve ser algo como "755").
 
-5) Seguida, você vai precisar "enganchar" phpMussel ao seu sistema ou CMS. Existem várias diferentes maneiras em que você pode "enganchar" scripts como phpMussel ao seu sistema ou CMS, mas o mais fácil é simplesmente incluir o script no início de um núcleo arquivo de seu sistema ou CMS (uma que vai geralmente sempre ser carregado quando alguém acessa qualquer página através de seu site) utilizando um require() ou include() comando. Normalmente, isso vai ser algo armazenado em um diretório como `/includes`, `/assets` ou `/functions`, e muitas vezes, ser nomeado algo como `init.php`, `common_functions.php`, `functions.php` ou semelhante. Você precisará determinar qual arquivo isso é para a sua situação; Se você encontrar dificuldades em determinar isso por si mesmo, visite os phpMussel suporte fóruns e deixe-nos saber; É possível que eu ou outro usuário podem ter experiência com o CMS que você está usando (você precisa deixar-nos saber qual CMS você está usando), e assim, pode ser capaz de prestar alguma assistência neste domínio. Para fazer isso [usar require() ou include()], insira a seguinte linha de código para o início desse núcleo arquivo, substituindo a string contida dentro das aspas com o exato endereço do `phpmussel.php` arquivo (endereço local, não o endereço HTTP; será semelhante ao vault endereço mencionado anteriormente).
+5) Seguida, você vai precisar "enganchar" phpMussel ao seu sistema ou CMS. Existem várias diferentes maneiras em que você pode "enganchar" scripts como phpMussel ao seu sistema ou CMS, mas o mais fácil é simplesmente incluir o script no início de um núcleo arquivo de seu sistema ou CMS (uma que vai geralmente sempre ser carregado quando alguém acessa qualquer página através de seu site) utilizando um `require()` ou `include()` comando. Normalmente, isso vai ser algo armazenado em um diretório como `/includes`, `/assets` ou `/functions`, e muitas vezes, ser nomeado algo como `init.php`, `common_functions.php`, `functions.php` ou semelhante. Você precisará determinar qual arquivo isso é para a sua situação; Se você encontrar dificuldades em determinar isso por si mesmo, visite os phpMussel suporte fóruns e deixe-nos saber; É possível que eu ou outro usuário podem ter experiência com o CMS que você está usando (você precisa deixar-nos saber qual CMS você está usando), e assim, pode ser capaz de prestar alguma assistência neste domínio. Para fazer isso [usar `require()` ou `include()`], insira a seguinte linha de código para o início desse núcleo arquivo, substituindo a string contida dentro das aspas com o exato endereço do `phpmussel.php` arquivo (endereço local, não o endereço HTTP; será semelhante ao vault endereço mencionado anteriormente).
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
@@ -421,6 +421,7 @@ Arquivo                                    | Descrição
 /vault/swf_mussel_standard.cvd             | Arquivo por o Shockwave assinaturas.
 /vault/switch.dat                          | Isto controla e define algumas variáveis.
 /vault/template.html                       | Template arquivo; Template por HTML produzido através do phpMussel por o bloqueado arquivo carregamento mensagem (a mensagem visto por o carregador).
+/vault/template_custom.html                | Template arquivo; Template por HTML produzido através do phpMussel por o bloqueado arquivo carregamento mensagem (a mensagem visto por o carregador).
 /vault/update.dat                          | Arquivo contendo informações sobre a versão por tanto script e assinaturas de phpMussel. Se você está tencionando automaticamente atualizar phpMussel ou deseja atualizar phpMusel através de seu navegador, este arquivo é essencial.
 /vault/update.inc                          | Atualização Script; Necessário por automáticas atualizações e para atualizar phpMussel através de seu navegador, mas não é necessário contrário.
 /vault/whitelist_clamav.cvd                | Arquivo específico whitelist.
@@ -489,7 +490,7 @@ Geral configuração por phpMussel.
 - Deve phpMussel enviar 403 header com a bloqueado arquivo carregamento mensagem, ou ficar com os habituais 200 OK? 0 = Não (200) [Padrão], 1 Sim (403).
 
 "delete_on_sight"
-- Ativando esta opção irá instruir o script para tentar imediatamente deletando qualquer arquivo que ele encontra durante a análise que corresponde a qualquer critério de detecção, quer seja através de assinaturas ou de outra forma. Arquivos determinados para ser "limpo" não serão tocados. Em caso de compactados arquivos, o inteiro arquivo será deletado (independentemente de se o problemático arquivo é apenas um dos vários arquivos contidos dentro do compactado arquivo). Para o caso de arquivo carregamento análise, em geral, não é necessário ativar essa opção, porque normalmente, php irá automaticamente expurgar os conteúdos de o seu cache quando a execução foi concluída, significando que ele vai normalmente deletar todos os arquivos enviados através dele para o servidor a menos que tenha movido, copiado ou deletado já. A opção é adicionado aqui como uma medida de segurança para o extra paranóico e por aqueles cujas cópias de php nem sempre se comportam da forma esperado. 0 - Após a análise, deixe o arquivo sozinho [Padrão], 1 - Após a análise, se não limpo, deletar imediatamente.
+- Ativando esta opção irá instruir o script para tentar imediatamente deletando qualquer arquivo que ele encontra durante a análise que corresponde a qualquer critério de detecção, quer seja através de assinaturas ou de outra forma. Arquivos determinados para ser "limpo" não serão tocados. Em caso de compactados arquivos, o inteiro arquivo será deletado (independentemente de se o problemático arquivo é apenas um dos vários arquivos contidos dentro do compactado arquivo). Para o caso de arquivo carregamento análise, em geral, não é necessário ativar essa opção, porque normalmente, php irá automaticamente expurgar os conteúdos de o seu cache quando a execução foi concluída, significando que ele vai normalmente deletar todos os arquivos enviados através dele para o servidor a menos que tenha movido, copiado ou deletado já. A opção é adicionado aqui como uma medida de segurança para aqueles cujas cópias de php nem sempre se comportam da forma esperada. 0 - Após a análise, deixe o arquivo sozinho [Padrão], 1 - Após a análise, se não limpo, deletar imediatamente.
 
 "lang"
 - Especificar o padrão da linguagem por phpMussel.
@@ -714,7 +715,7 @@ Chameleon ataque detecções: 0 = Ativo, 1 = Inativo.
 - Reconhecidos arquivos extensões (formato é CSV; só deve adicionar ou remover quando problemas ocorrem; desnecessariamente removendo pode causar falso-positivos para aparecer por compactados arquivos, enquanto desnecessariamente adicionando será essencialmente whitelist o que você está adicionando contra ataque específica detecção; modificar com cautela; Também notar que este não tem efeito em qual compactados arquivos podem e não podem ser analisados no escopo de conteúdo). A lista, como é padrão, é do formatos utilizados mais comumente através da maioria dos sistemas e CMS, mas intencionalmente não é necessariamente abrangente.
 
 "general_commands"
-- Olha por gerais comandos como tais eval(), exec() e include() em conteúdos de arquivos? 0 - Não (não olha por) [Padrão], 1 - Sim (olha por). Desativar essa opção se você são tencionando de carregando qualquer um do seguinte para o seu sistema ou CMS através do seu navegador: php, JavaScript, HTML, python, perl files e etcetera. Ativar essa opção se você não tem quaisquer adicionais proteções no seu sistema e não são tencionando de carregando desses tais arquivos. Se você usar adicional segurança em conjunto com phpMussel como ZB Block, não há necessidade de ativar esta opção, porque a maioria dos que phpMussel irá olha por (no contexto desta opção) são duplicações de proteções que já estão fornecida.
+- Olha por gerais comandos como tais `eval()`, `exec()` e `include()` em conteúdos de arquivos? 0 - Não (não olha por) [Padrão], 1 - Sim (olha por). Desativar essa opção se você são tencionando de carregando qualquer um do seguinte para o seu sistema ou CMS através do seu navegador: php, JavaScript, HTML, python, perl files e etcetera. Ativar essa opção se você não tem quaisquer adicionais proteções no seu sistema e não são tencionando de carregando desses tais arquivos. Se você usar adicional segurança em conjunto com phpMussel como ZB Block, não há necessidade de ativar esta opção, porque a maioria dos que phpMussel irá olha por (no contexto desta opção) são duplicações de proteções que já estão fornecida.
 
 "block_control_characters"
 - Bloquear todos os arquivos que contenham quaisquer controle caracteres (exceto linha quebras) - `[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`? Se você está _**APENAS**_ carregando simple texto, então você pode ativar essa opção para fornecer alguma adicional proteção para o seu sistema. Mas, se você carregar qualquer coisa que não seja de texto simples, ativando isso pode resultas em falso positivos. 0 - Não bloquear [Padrão], 1 - Bloquear.
@@ -767,6 +768,14 @@ Notar: Independentemente do nível de suspeita, todos os arquivos que estão na 
 "vt_quota_rate" e "vt_quota_time"
 - De acordo com o Virus Total API documentação, é limitada a, no máximo, 4 solicitações de qualquer natureza dentro qualquer 1 minuto período de tempo. Se você executar um honeyclient, honeypot ou qualquer outro automação que vai fornecer recursos para Virus Total e não só recuperar relatórios você tem direito a uma melhor solicitações cota. Por padrão, phpMussel vai aderir estritamente a estas limitações, mas, devido à possibilidade de essas cotas a ser aumentada, estas duas directivas são fornecidos como um meio para que você possa instruir phpMussel sobre o limite que deve aderir para. Excepto se tenha sido instruído a fazê-lo, não é recomendado para você aumentar esses valores, mas, se você encontrou problemas relacionados com a atingir sua cota, diminuir esses valores podem _**POR VEZES**_ ajudá-lo em lidar com estes problemas. Seu taxa limite é determinada como `vt_quota_rate` solicitações de qualquer natureza dentro qualquer `vt_quota_time` minuto período de tempo.
 
+####"template_data" (Category)
+Directivas/Variáveis para modelos e temas.
+
+Template dados está associada com o HTML usado para gerar a "Carregar Negado" mensagem exibido aos usuários quandos arquivo carregamentos são bloqueados. Se você estiver usando temas personalizados para phpMussel, HTML é originado a partir do `template_custom.html` arquivo, e caso contrário, HTML é originado a partir do `template.html` arquivo. Variáveis escritas para esta seção do configuração arquivo são processado ao HTML via substituição de quaisquer nomes de variáveis cercado por colchetes encontrado dentro do HTML com os variáveis dados correspondentes. Por exemplo, onde `foo="bar"`, qualquer instância de `<p>{foo}</p>` encontrado dentro do HTML tornará `<p>bar</p>`.
+
+"css_url"
+- O template arquivo para temas personalizados utiliza CSS propriedades externos, enquanto que o template arquivo para o padrão tema utiliza CSS propriedades internos. Para instruir phpMussel para usar o template arquivo para temas personalizados, especificar o endereço HTTP pública do seu temas personalizados CSS arquivos usando a `css_url` variável. Se você deixar essa variável em branco, phpMussel usará o template arquivo para o padrão tema.
+
 ---
 
 
@@ -799,6 +808,13 @@ Todas as PE Seccional assinaturas seguir o formato:
 `TAMANHO:HASH:NOME`
 
 Onde HASH é o MD5 hash de uma secção do PE arquivo, TAMANHO é o total tamanho da secção e NOME é o nome para citar por essa assinatura.
+
+####*PE ESTENDIDAS ASSINATURAS*
+Todas as PE estendidas assinaturas seguir o formato:
+
+`$VAR:HASH:TAMANHO:NOME`
+
+Onde $VAR é o nome da PE variável para verificar contra, HASH é o MD5 dessa variável, TAMANHO é o tamanho total dessa variável e NOME é o nome para citar por essa assinatura.
 
 ####*WHITELIST ASSINATURAS*
 Todas as Whitelist assinaturas seguir o formato:
@@ -843,6 +859,7 @@ A seguir estão os diferentes tipos de assinaturas utilizadas por phpMussel:
 - "OLE Assinaturas" (ole_*). Verificado contra o conteúdo de cada objeto não no whitelist e alvo por analisando.
 - "PDF Assinaturas" (pdf_*). Verificado contra o conteúdo de cada PDF arquivo não no whitelist.
 - "Portátil Executável Seccional Assinaturas" (pe_*). Verificado contra o tamanho eo MD5 hash de cada PE seção de cada arquivo não em o whitelist e alvo por analisando e confirmados tal do formato PE.
+- "Portátil Executável Estendidas Assinaturas" (pex_*). Verificado contra o tamanho eo MD5 hash de todas as variáveis de cada arquivo não em o whitelist e alvo por analisando e confirmados tal do formato PE.
 - "SWF Assinaturas" (swf_*). Verificado contra o conteúdo de cada Shockwave arquivo não no whitelist.
 - "Whitelist Assinaturas" (whitelist_*). Verificado contra o MD5 hash do conteúdo e contra o arquivo tamanho de cada arquivo alvo por analisando. Verificados arquivos será imune de sendo verificado pelo tipo de assinatura mencionada no seu whitelist entrada.
 - "XML/XDP-Pedaço Assinaturas" (xmlxdp_*). Verificado contra quaisquer XML/XDP pedaços encontrados dentro cada arquivo não no whitelist e alvo por analisando.
@@ -919,4 +936,4 @@ Esta informação foi atualizada dia 28 Maio 2015 e é corrente para todas phpMu
 ---
 
 
-Última Atualização: 8 Agosto 2015 (2015.08.08).
+Última Atualização: 12 Agosto 2015 (2015.08.12).

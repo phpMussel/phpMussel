@@ -844,6 +844,7 @@
     Isto controla e define algumas variáveis.
     ~
  /vault/template.html (Outro, Incluído)
+ /vault/template_custom.html (Outro, Incluído)
     phpMussel template arquivo; Template por HTML produzido através do
     phpMussel por o bloqueado arquivo carregamento mensagem (a mensagem visto
     por o carregador).
@@ -984,8 +985,8 @@
       de o seu cache quando a execução foi concluída, significando que ele vai
       normalmente deletar todos os arquivos enviados através dele para o
       servidor a menos que tenha movido, copiado ou deletado já. A opção é
-      adicionado aqui como uma medida de segurança para o extra paranóico e por
-      aqueles cujas cópias de php nem sempre se comportam da forma esperado.
+      adicionado aqui como uma medida de segurança para aqueles cujas cópias de
+      php nem sempre se comportam da forma esperada.
       0 - Após a análise, deixe o arquivo sozinho [Padrão],
       1 - Após a análise, se não limpo, deletar imediatamente.
     "lang"
@@ -1519,6 +1520,25 @@
      podem _**POR VEZES**_ ajudá-lo em lidar com estes problemas. Seu taxa
      limite é determinada como `vt_quota_rate` solicitações de qualquer
      natureza dentro qualquer `vt_quota_time` minuto período de tempo.
+ "template_data" (Category)
+ - Directivas/Variáveis para modelos e temas: Template dados está associada com
+   o HTML usado para gerar a "Carregar Negado" mensagem exibido aos usuários
+   quandos arquivo carregamentos são bloqueados. Se você estiver usando temas
+   personalizados para phpMussel, HTML é originado a partir do
+   "template_custom.html" arquivo, e caso contrário, HTML é originado a partir
+   do "template.html" arquivo. Variáveis escritas para esta seção do
+   configuração arquivo são processado ao HTML via substituição de quaisquer
+   nomes de variáveis cercado por colchetes encontrado dentro do HTML com os
+   variáveis dados correspondentes. Por exemplo, onde foo="bar", qualquer
+   instância de <p>{foo}</p> encontrado dentro do HTML tornará <p>bar</p>.
+   "css_url"
+   - O template arquivo para temas personalizados utiliza CSS propriedades
+     externos, enquanto que o template arquivo para o padrão tema utiliza CSS
+     propriedades internos. Para instruir phpMussel para usar o template
+     arquivo para temas personalizados, especificar o endereço HTTP pública do
+     seu temas personalizados CSS arquivos usando a "css_url" variável. Se você
+     deixar essa variável em branco, phpMussel usará o template arquivo para o
+     padrão tema.
 
                                      ~ ~ ~
 
@@ -1549,6 +1569,13 @@
     TAMANHO:HASH:NOME
    Onde HASH é o MD5 hash de uma secção do PE arquivo, TAMANHO é o total
    tamanho da secção e NOME é o nome para citar por essa assinatura.
+
+ = PE ESTENDIDAS ASSINATURAS =
+   Todas as PE estendidas assinaturas seguir o formato:
+    $VAR:HASH:TAMANHO:NOME
+   Onde $VAR é o nome da PE variável para verificar contra, HASH é o MD5 dessa
+   variável, TAMANHO é o tamanho total dessa variável e NOME é o nome para
+   citar por essa assinatura.
 
  = WHITELIST ASSINATURAS =
    Todas as Whitelist assinaturas seguir o formato:
@@ -1648,6 +1675,9 @@
    - "Portátil Executável Seccional Assinaturas" (pe_*). Verificado contra o
       tamanho eo MD5 hash de cada PE seção de cada arquivo não em o whitelist e
       alvo por analisando e confirmados tal do formato PE.
+   - "Portátil Executável Estendidas Assinaturas" (pex_*). Verificado contra o
+      tamanho eo MD5 hash de todas as variáveis de cada arquivo não em o
+      whitelist e alvo por analisando e confirmados tal do formato PE.
    - "SWF Assinaturas" (swf_*). Verificado contra o conteúdo de cada Shockwave
       arquivo não no whitelist.
    - "Whitelist Assinaturas" (whitelist_*). Verificado contra o MD5 hash do
@@ -1742,5 +1772,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 8 Agosto 2015 (2015.08.08).
+Última Atualização: 12 Agosto 2015 (2015.08.12).
 EOF

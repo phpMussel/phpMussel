@@ -856,6 +856,7 @@
     Esto controla y establece ciertas variables.
     ~
  /vault/template.html (Otro, Incluido)
+ /vault/template_custom.html (Otro, Incluido)
     phpMussel plantilla archivo; Plantilla para HTML producida por phpMussel
     para sus bloqueados archivos subidos mensaje (el mensaje visto por el
     subidor).
@@ -1547,10 +1548,10 @@
    "template_custom.html" archivo, y para de otra manera, HTML se obtiene a
    partir del "template.html" archivo. Variables escritas a esta sección de la
    configuración archivo se procesado para el HTML a través de la sustitución
-   de los nombres de variables circunfijo por rizado paréntesis que se
-   encuentran dentro del HTML con el variable datos correspondiente. Por
-   ejemplo, dónde foo="bar", cualquier instancias de <p>{foo}</p> que se
-   encuentran dentro del HTML se convertirá <p>bar</p>.
+   de los nombres de variables circunfijo por llaves que se encuentran dentro
+   del HTML con el variable datos correspondiente. Por ejemplo, dónde
+   foo="bar", cualquier instancias de <p>{foo}</p> que se encuentran dentro del
+   HTML se convertirá <p>bar</p>.
    "css_url"
    - El plantilla archivo para los temas personalizados utiliza externas CSS
      propiedades, mientras que el plantilla archivo para el predefinida tema
@@ -1795,5 +1796,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 10 Agosto 2015 (2015.08.10).
+Última Actualización: 12 Agosto 2015 (2015.08.12).
 EOF

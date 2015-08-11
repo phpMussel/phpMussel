@@ -421,6 +421,7 @@ File                                       | Description
 /vault/swf_mussel_standard.cvd             | File for the Shockwave signatures.
 /vault/switch.dat                          | Controls and sets certain variables.
 /vault/template.html                       | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
+/vault/template_custom.html                | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
 /vault/update.dat                          | File containing version information for both the phpMussel script and the phpMussel signatures. If you ever want to automatically update phpMussel or want to update phpMusel via your browser, this file is essential.
 /vault/update.inc                          | Update Script; Required for automatic updates and for updating phpMussel via your browser, but not required otherwise.
 /vault/whitelist_clamav.cvd                | File specific whitelist.
@@ -935,4 +936,4 @@ This information was last updated 28th May 2015 and is current for all phpMussel
 ---
 
 
-Last Updated: 10th August 2015 (2015.08.10).
+Last Updated: 12th August 2015 (2015.08.12).

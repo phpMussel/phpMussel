@@ -858,6 +858,7 @@
     Kontrol dan set variabel tertentu.
     ~
  /vault/template.html (Lainnya, Diikutkan)
+ /vault/template_custom.html (Lainnya, Diikutkan)
     Data template phpMussel; Template untuk output HTML yang diproduksi oleh
     phpMussel untuk data pesan upload yang dibloknya (pesan dilihat oleh
     pengupload).
@@ -996,9 +997,8 @@
       otomatis menyatukan isi dari cache ketika eksekusi selesai, berarti bahwa
       dia akan selalu menghapus data terupload apapun melalui server jika tidak
       dipindahkan, dikopi atau dihapus sebelumnya. Opsi tersebut ditambahkan
-      di sini sebagai ukuran extra dari keamanan atau untuk paranoid ekstra dan
-      untuk semua yang mengkopi php yang tidak dapat bersikap pada perilaku
-      yang dimaksudkan.
+      di sini sebagai ukuran keamanan ekstra untuk semua salinan php yang tidak
+      selalu bersikap pada perilaku yang diharapkan.
       0 - Setelah pemindahaian, biarkan data [Default],
       1 - Setelah pemindaian, jika tidak bersih, hapus langsung.
     "lang"
@@ -1524,6 +1524,25 @@
      nilai-nilai ini kadang -DAPAT- membantu Anda bagi berurusan dengan
      masalah-masalah ini. Batas Anda ditentukan sebagai `vt_quota_rate`
      permintaan dalam bentuk apapun dalam jangka waktu `vt_quota_time` menit.
+ "template_data" (Category)
+ - Direktif-direktif dan variabel-variabel untuk template-template dan
+   tema-tema: Data template berkaitan untuk HTML diproduksi yang digunakan
+   untuk menghasilkan pesan "Upload Ditolak" yang ditampilkan kepada
+   pengguna-pengguna ketika file upload yang diblokir. Jika Anda menggunakan
+   tema kustom untuk phpMussel, HTML diproduksi yang bersumber dari file
+   "template_custom.html", dan sebaliknya, HTML diproduksi yang bersumber dari
+   file "template.html". Variabel ditulis untuk file konfigurasi bagian ini
+   yang diurai untuk HTML diproduksi dengan cara mengganti nama-nama variabel
+   dikelilingi dengan kurung keriting ditemukan dalam HTML diproduksi dengan
+   data variabel sesuai. Sebagai contoh, dimana foo="bar", setiap terjadinya
+   <p>{foo}</p> ditemukan dalam HTML diproduksi akan menjadi <p>bar</p>.
+   "css_url"
+   - File template untuk tema kustom menggunakan properti CSS eksternal,
+     sedangkan file template untuk tema default menggunakan properti CSS
+     internal. Untuk menginstruksikan phpMussel menggunakan file template untuk
+     tema kustom, menentukan alamat HTTP publik file CSS tema kustom Anda
+     menggunakan variable "css_url" variable. Jika Anda biarkan kosong variabel
+     ini, phpMussel akan menggunakan file template untuk tema default.
 
                                      ~ ~ ~
 
@@ -1554,6 +1573,13 @@
     UKURAN:HASH:NAMA
    Dimana HASH adalah MD5 dari seksi PE, UKURAN adalah total ukuran dari seksi
    PE dan NAMA adalah nama untuk mengutip tanda tangan tersebut.
+
+ = TANDA TANGAN DIPERPANJANG PE =
+   Semua tanda tangan diperpanjang PE mengikuti format ini:
+    $VAR:HASH:UKURAN:NAMA
+   Dimana $VAR adalah nama dari PE variabel untuk mencocokkan terhadap, HASH
+   adalah MD5 dari variabel, UKURAN adalah ukuran total dari variabel dan NAMA
+   adalah nama untuk mengutip tanda tangan tersebut.
 
  = TANDA TANGAN PUTIH =
    Semua tanda tangan putih mengikuti format ini:
@@ -1651,6 +1677,9 @@
    - "Tanda tangan Portable Executable Sectional" (pe_*). Dicek pada hash MD5
       dan ukuran dari seksi PE dari apapun file tidak bertanda putih,
       ditargetkan untuk dipindai dan dicocokkan ke format PE.
+   - "Tanda tangan diperpanjang portable executable" (pex_*). Dicek pada hash
+      MD5 dan ukuran dari variabel dari apapun file tidak bertanda putih,
+      ditargetkan untuk dipindai dan dicocokkan ke format PE.
    - "Tanda tangan SWF" (swf_*). Dicek pada isi dari apapun file Shockwave
       tidak bertanda putih.
    - "Tanda tangan Putih" (whitelist_*). Dicek pada hash MD5 dari isi dan
@@ -1745,5 +1774,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 8 Agustus 2015 (2015.08.08).
+Terakhir Diperbarui: 12 Agustus 2015 (2015.08.12).
 EOF

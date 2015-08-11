@@ -859,6 +859,7 @@
     Contrôle et définit certaines variables.
     ~
  /vault/template.html (Autre, Inclu)
+ /vault/template_custom.html (Autre, Inclu)
     phpMussel modèle fichier; Modèle pour l'HTML sortie produit par phpMussel
     pour son bloqués fichiers téléchargement message (le message vu par
     l'envoyeur).
@@ -1562,9 +1563,9 @@
    "template_custom.html" fichier, et sinon, sortie HTML provient du
    "template.html" fichier. Variables écrites à cette section du configuration
    fichier sont préparé pour la sortie HTML par voie de remplacer tous les noms
-   de variables circonfixé par bouclé parenthèse trouvés dans la sortie HTML
-   avec les variables données correspondant. Par exemple, où foo="bar", toute
-   instance de <p>{foo}</p> trouvés dans la sortie HTML deviendra <p>bar</p>.
+   de variables circonfixé par accolades trouvés dans la sortie HTML avec les
+   variables données correspondant. Par exemple, où foo="bar", toute instance
+   de <p>{foo}</p> trouvés dans la sortie HTML deviendra <p>bar</p>.
    "css_url"
    - Le modèle fichier pour des thèmes personnalisés utilise les propriétés CSS
      externes, tandis que le modèle fichier pour le défaut thème utilise les
@@ -1804,5 +1805,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 10 Août 2015 (2015.08.10).
+Dernière Réactualisé: 12 Août 2015 (2015.08.12).
 EOF

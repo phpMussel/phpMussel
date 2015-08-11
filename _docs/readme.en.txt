@@ -807,6 +807,7 @@
     Controls and sets certain variables.
     ~
  /vault/template.html (Other, Included)
+ /vault/template_custom.html (Other, Included)
     phpMussel Template file; Template for HTML output produced by phpMussel for
     its blocked file upload message (the message seen by the uploader).
     ~
@@ -1681,5 +1682,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 10th August 2015 (2015.08.10).
+Last Updated: 12th August 2015 (2015.08.12).
 EOF
