@@ -1487,24 +1487,26 @@
      Erreichen des Limits haben, -sollte- das Verringern dieser Werte manchmal
      helfen. Dein Limit wird festgelegt als `vt_quota_rate` Anfragen jeder Art
      in jeder `vt_quota_time` Minuten Zeitspanne.
- "template_data" (Category)
- - Directives/Variables for templates and themes: Template data relates to the
-   HTML output used to generate the "Upload Denied" message displayed to users
-   upon a file upload being blocked. If you're using custom themes for
-   phpMussel, HTML output is sourced from the "template_custom.html" file, and
-   otherwise, HTML output is sourced from the "template.html" file. Variables
-   written to this section of the configuration file are parsed to the HTML
-   output by way of replacing any variable names circumfixed by curly brackets
-   found within the HTML output with the corresponding variable data. For
-   example, where foo="bar", any instance of <p>{foo}</p> found within the
-   HTML output will become <p>bar</p>.
+ "template_data" (Kategorie)
+ - Anweisungen/Variablen für Templates und Themes: Template-Daten bezieht sich 
+   auf die HTML-Ausgabe die verwendet wird, um die  "Upload blockiert"-Nachricht 
+   Benutzern anzuzeigen, wenn eine hochgeladene Datei blockiert wird. Falls Sie 
+   benutzerdefinierte Themes für phpMussel verwenden, wird die HTML-Ausgabe von 
+   der "template_custom.html"-Datei verwendet, ansonsten wird die HTML-Ausgabe 
+   von der "template.html"-Datei verwendet. Variablen, die in diesem Bereich der 
+   Konfigurations-Datei festgelegt werden, werden als HTML-Ausgabe geparst, indem 
+   jede Variable mit geschweiften Klammern innerhalb der HTML-Ausgabe mit den 
+   entsprechenden Variablen-Daten ersetzt wird. Zum Beispiel, wenn foo="bar", 
+   dann wird jedes Exemplar mit <p>{foo}</p> innerhalb der HTML-Ausgabe zu 
+   <p>bar</p>.
    "css_url"
-   - The template file for custom themes utilises external CSS properties,
-     whereas the template file for the default theme utilises internal CSS
-     properties. To instruct phpMussel to use the template file for custom
-     themes, specify the public HTTP address of your custom theme's CSS files
-     using the "css_url" variable. If you leave this variable blank, phpMussel
-     will use the template file for the default theme.
+   - Die Template-Datei für benutzerdefinierte Themes verwendet externe CSS-
+     Regeln, wobei die Template-Datei für das normale Theme interne CSS-Regeln 
+     verwendet. Um phpMussel anzuweisen, die Template-Datei für benutzerdefinierte 
+     Themes zu verwenden, geben Sie die öffentliche HTTP-Adresse von den 
+     CSS-Dateien des benutzerdefinierten Themes mit der "css_url"-Variable an. Wenn
+     Sie diese Variable leer lassen, wird phpMussel die Template-Datei für das 
+     normale Theme verwenden.
 
                                      ~ ~ ~
 
@@ -1539,9 +1541,9 @@
  = PE-ERWEITERT-SIGNATUREN =
    Alle PE-Erweitert-Signaturen besitzen folgendes Format:
     $VAR:HASH:SIZE:NAME
-   Where $VAR is the name of the PE variable to match against, HASH is the MD5
-   hash of that variable, SIZE is the total size of that variable and NAME is
-   the name to cite for that signature.
+   Wo $VAR der Name der zu prüfenden PE-Variable  ist, HASH ist der MD5-Hash 
+   von dieser Variable, SIZE ist die gesamte Größe von dieser Variable und NAME 
+   ist der Name für diese Signatur.
 
  = WHITELIST-SIGNATUREN =
    Alle Whitelist-Signaturen besitzen folgendes Format:
