@@ -44,9 +44,7 @@
  atau akan mengalami nilai yang kurang baik <http://www.clamav.net/>.
 
  Khusus terima kasih kepada Sourceforge dan GitHub untuk menghost file proyek,
- terletak di <http://phpmussel.sourceforge.net/> dan
- <https://github.com/Maikuolan/phpMussel/>, kepada Spambot Security untuk
- menghost forum diskusi phpMussel, terletak di
+ kepada Spambot Security untuk menghost forum diskusi phpMussel, terletak di
  <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, dan kepada
  sumber-sumber tambahan tanda tangan dimanfaatkan oleh phpMussel:
  SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
@@ -55,8 +53,7 @@
  lain bahwa saya mungkin telah dinyatakan lupa untuk menyebutkan, dan kepada
  Anda, untuk menggunakan skrip.
 
- Dokumen ini dan paket yang terhubung di dalamnya dapat di unduh secara gratis
- dari:
+ Dokumen ini dan paket terhubung di dalamnya dapat di unduh secara gratis dari:
  - Sourceforge <http://phpmussel.sourceforge.net/>.
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
@@ -453,7 +450,7 @@
    ~
  update
    Sandi diharuskan: script_password
-   Keperluan lain: update.dat dan update.inc harus ada.
+   Keperluan lain: "update.dat" dan "update.inc" harus ada.
    Parameter-parameter yang diharuskan: (tidak ada)
    Parameter-parameter opsional: (tidak ada)
    Contoh: ?pword=[script_password]&phpmussel=update
@@ -481,7 +478,7 @@
    Parameter-parameter yang diharuskan: [Tanda tangan nama menjadi bertanda
                                         abu-abu]
    Parameter-parameter opsional: (tidak ada)
-   Contoh: ?pword=[script_password]&phpmussel=greylist&musselvar=[Tanda Tangan]
+   Contoh: ?pword=[script_password]&phpmussel=greylist&musselvar=[TandaTangan]
    ~
    Apa yang dilakukannya: Menambah tanda tangan pada daftar abu-abu.
    ~
@@ -551,6 +548,7 @@
  /_docs/readme.it.txt (Dokumentasi, Diikutkan); ITALIANO
  /_docs/readme.nl.txt (Dokumentasi, Diikutkan); NEDERLANDSE
  /_docs/readme.pt.txt (Dokumentasi, Diikutkan); PORTUGUÊS
+ /_docs/readme.ru.txt (Dokumentasi, Diikutkan); РУССКИЙ
     File-file baca saya (misalnya; file yang Anda sedang membaca).
     ~
  /_docs/signatures_tally.txt (Dokumentasi, Diikutkan)
@@ -1300,7 +1298,7 @@
      PPT, XLA, XLS, WIZ).
    "chameleon_to_img"
    - Cari gambar yang header nya tidak benar (Mendukung: BMP, DIB, PNG, GIF,
-     JPEG, JPG, XCF, PSD, PDD).
+     JPEG, JPG, XCF, PSD, PDD, WEBP).
    "chameleon_to_pdf"
    - Cari data PDF yang headernya tidak benar.
    "archive_file_extensions" dan "archive_file_extensions_wc".
@@ -1440,7 +1438,7 @@
      diminta, dan mengklik "Sign up" ketika dilakukan. Ikuti semua instruksi
      yang diberikan, dan ketika Anda punya kunci API umum Anda,
      menyalin/menempelkan bahwa kunci API umum untuk `vt_public_api_key`
-     direktif dari `phpmussel.ini` file konfigurasi.
+     direktif dari "phpmussel.ini" file konfigurasi.
    "vt_suspicion_level"
    - Secara default, phpMussel akan membatasi file dipindai menggunakan Virus
      Total API untuk file-file yang dianggap "mencurigakan". Anda dapat
@@ -1774,5 +1772,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 12 Agustus 2015 (2015.08.12).
+Terakhir Diperbarui: 14 Agustus 2015 (2015.08.14).
 EOF

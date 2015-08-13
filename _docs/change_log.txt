@@ -1,6 +1,34 @@
 phpMussel change_log.txt
 
 == CURRENT GOALS AND FUTURE VERSIONING GUIDELINES ==
+SemVer will be used for phpMussel versioning from Version 1.0.0 and onwards.
+Versioning guidelines for SemVer can be found at: http://www.semver.org/
+
+Versions of phpMussel prior to 1.0.0, won't be using SemVer, but can be
+interpreted via the following information.
+
+The reason for this is, although I like the idea of using SemVer, I hadn't
+discovered SemVer until after phpMussel was already at production stage and was
+already used in live environments, and by that point, I'd already had a system
+of my own making in use for phpMussel. This system of my own is adequately
+similar to SemVer that I believe it should be a simple and easy task to convert
+from one to the other, but I'm holding off switching until Version 1.0.0,
+because it is recommended by SemVer that anything prior to Version 1.0.0 should
+be considered pre-production stage (alpha, beta, etc) versions whereas anything
+released after reaching production stage should be versioned as 1.0.0 and
+onward, and although phpMussel is already in production stage live use, it
+hasn't yet been iterated to Version 1.0.0 (v1.0), and so, I believe v1.0 of my
+system would be the most appropriate time to switch to SemVer, versioning that
+release as "Version 1.0.0" as per SemVer standard.
+
+My system was a goal-oriented system, whereby the incremental increase was
+based upon which pre-planned goals had been achieved and upon the perceived
+importance of those goals. Not accounting for versions beyond v1.0, seeing as
+I'll be switching to SemVer at that point anyhow, nor those goals already
+completed, listed below are my current goals leading up to the switch (after
+reaching Version 1.0.0, I'll remove these paragraphs and this explanation, as
+they won't be relevant anymore after that point):
+
 Do-to list for potential future major version (v1.0):
 
 - Currently supported archive formats are BZ/BZ2, GZ, LZF, TAR and ZIP.
@@ -26,24 +54,29 @@ Do-to list for potential future minor version (v0.8):
 
 - Any significant changes to the script including completing of any of the
   aforementioned above, whereby having done so, the release doesn't yet qualify
-  as a major release.
+  as a major release. Definition of "significant" extends to the addition of
+  any new major features and to the fixing of any bugs that could break normal
+  functionality, but not to minor bug-fixes or to any signature updates.
 
 Do-to list for potential future sub-minor version (v0.7a):
 
-- Any non-significant changes or other unrelated changes to the core code.
+- Any non-significant changes or other unrelated changes to the core code, such
+  as, for example, bug-fixes, as well as any other changes deemed to be of
+  importance.
 
 Anything less than sub-minor:
 
 - Updates to signatures released without any changes to the core code,
-  non-important hot-fixes, re-builds, release candidates and anything else less
+  any changes deemed non-important, release candidates and anything else less
   than sub-minor (generally used as an excuse to mainline signature updates
-  where no updates to the core script have been recently made, as an excuse to
-  put out any new releases involving signatures, or in the event where updates
-  to the core script have been made, where they're still a work-in-progress or
-  not yet considered stable; updates received via the auto-updater that haven't
-  yet been mainlined will usually be versioned in this way).
+  where no updates to the core script have been recently made).
 
 === Changes made since last versioned release ===
+
+(none)
+
+=== Version/Release 0.7a (Previous Release: 0.7) ===
+SUB-MINOR RELEASE; Updated to the latest signatures set (55+20751+7a).
 
 - [2015.07.15; Sub-minor code change; Maikuolan]: Merged a number of the
   signature sections of the core script to reduce on redundancy, resulting in
@@ -96,10 +129,53 @@ Anything less than sub-minor:
 - [2015.07.30; Bug-fix; Maikuolan]: Bug found in the code for assigning
   variables through switch.dat; Fixed.
 
-Maikuolan,
-30th July 2015.
+- [2015.08.01; Signatures update; Maikuolan]: Updated to the the latest
+  signatures (55+20751+7a).
 
-=== Version/Release 0.7 (Previous Release: 0.6j) ===
+- [2015.08.05; Signatures update; Maikuolan]: Added various new signatures for
+  protecting against webshells.
+
+- [2015.08.05; Configuration; Maikuolan]: Added some new file extensions to the
+  default for `filetype_blacklist`.
+
+- [2015.08.05; Bug-fix; Maikuolan]: Bug found in the code for complex extended
+  signatures whereby clusters of sequential signatures with similar initial
+  conditions weren't differentiated as unique, individual signatures by the
+  core code, being interpreted, rather, as singular singatures; Fixed.
+
+- [2015.08.07; Sub-minor code change; Maikuolan]: Added PHAR to the extensions
+  recognised as potential PHP files by the code for PHP chameleon attack
+  detections; Added the new directives `detect_adware`, `detect_joke_hoax`,
+  `detect_pua_pup`, `detect_packer_packed`, `detect_shell` and `detect_deface`,
+  to provide users of phpMussel with a way to instruct phpMussel to ignore
+  those included signatures that may, in some circumstances, occasioanally be
+  problematic for some users.
+
+- [2015.08.08; Sub-minor code change and signatures update; Maikuolan]: Added
+  numerous new shell signatures; Added numerous new forkbomb signatures;
+  Modified the `vn_shorthand()` function and its entries; Added a new type of
+  signature set and two accompanying signature files: PE extended signatures
+  (`pex_custom.cvd`; `pex_mussel.cvd`); Added new CLI-mode functionality. PE
+  extended signatures are matched against the size and MD5 hash of the content
+  of variables within PE files. New CLI-mode functionality allows users to
+  extract PE variable and PE section information from a PE file. For more
+  details, refer to the documentation.
+
+- [2015.08.10; Sub-minor code change; Maikuolan/DanielRuf]: Added the
+  `template_custom.html` file and added a few lines to code to allow phpMussel
+  to switch between HTML template files based upon the presence of a `css_url`
+  variable in the phpMussel configuration file; With this update, phpMussel now
+  supports custom themes.
+  Refer github.com/Maikuolan/phpMussel/issues/22
+  Refer github.com/DanielRuf/phpMussel-themes/issues/2
+
+- [2015.08.14; Documentation]: Completed translation of the documentation to
+  Russian.
+
+Maikuolan,
+14th August 2015.
+
+=== Version/Release 0.7 (Previous Release: 0.6j; Next: 0.7a) ===
 MINOR RELEASE; Updated to the latest signatures set (55+20665+7).
 
 - [2015.06.17; Sub-minor code change; Maikuolan]: Completed work on

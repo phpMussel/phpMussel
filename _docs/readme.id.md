@@ -30,7 +30,7 @@ Terima kasih khususnya untuk ClamAV buat inspirasi project dan tanda tangan dima
 
 Khusus terima kasih kepada Sourceforge dan GitHub untuk menghost file proyek, kepada [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) untuk menghost forum diskusi phpMussel, dan kepada sumber-sumber tambahan tanda tangan dimanfaatkan oleh phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) dan lain-lain, dan khusus terima kasih kepada semua orang yang mendukung proyek, kepada orang lain bahwa saya mungkin telah dinyatakan lupa untuk menyebutkan, dan kepada Anda, untuk menggunakan skrip.
 
-Dokumen ini dan paket yang terhubung di dalamnya dapat di unduh secara gratis dari:
+Dokumen ini dan paket terhubung di dalamnya dapat di unduh secara gratis dari:
 - [Sourceforge](http://phpmussel.sourceforge.net/).
 - [GitHub](https://github.com/Maikuolan/phpMussel/).
 
@@ -209,7 +209,7 @@ enable
 
 update
 - Sandi diharuskan: script_password
-- Keperluan lain: update.dat dan update.inc harus ada.
+- Keperluan lain: `update.dat` dan `update.inc` harus ada.
 - Parameter-parameter yang diharuskan: (tidak ada)
 - Parameter-parameter opsional: (tidak ada)
 - Contoh: `?pword=[script_password]&phpmussel=update`
@@ -220,7 +220,7 @@ greylist
 - Keperluan lain: (tidak ada)
 - Parameter-parameter yang diharuskan: [Tanda tangan nama menjadi bertanda abu-abu]
 - Parameter-parameter opsional: (tidak ada)
-- Contoh: ?pword=[script_password]&phpmussel=greylist&musselvar=[Tanda Tangan]
+- Contoh: ?pword=[script_password]&phpmussel=greylist&musselvar=[TandaTangan]
 - Apa yang dilakukannya: Menambah tanda tangan pada daftar abu-abu.
 
 greylist_clear
@@ -269,6 +269,7 @@ Data                                       | Deskripsi
 /_docs/readme.it.txt                       | Dokumentasi: ITALIANO
 /_docs/readme.nl.txt                       | Dokumentasi: NEDERLANDSE
 /_docs/readme.pt.txt                       | Dokumentasi: PORTUGUÊS
+/_docs/readme.ru.txt                       | Dokumentasi: РУССКИЙ
 /_docs/signatures_tally.txt                | Perhitungan dari diikutkan tanda tangan (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /_testfiles/                               | Direktori test file-file (berisi bermacam data). Semua file-file berisikan di dalamnya adalah data test untuk testing jika phpMussel dengan benar diinstal pada sistem, dan Anda tidak perlu mengupload direktori ini atau file-filenya jika melakukan testing.
 /_testfiles/ascii_standard_testfile.txt    | File test untuk mentest tanda tangan ASCII normal phpMussel.
@@ -502,7 +503,7 @@ Konfigurasi umum dari phpMussel.
 - Direktif `lang_acceptable` menginstruksikan phpMussel apa bahasa-bahasa dapat diterima oleh skrip dari `lang` atau dari `HTTP_ACCEPT_LANGUAGE`. Direktif ini **HANYA** harus diubah jika Anda menambahkan file bahasa Anda sendiri disesuaikan atau paksa menghapus file bahasa. Direktif adalah string dipisahkan koma dari kode-kode digunakan oleh bahasa-bahasa diterima oleh skrip.
 
 "quarantine_key"
-- phpMussel dapat mengkarantina upload file ditandai dalam isolasi dalam vault phpMussel, jika ini adalah sesuatu yang Anda ingin lakukan. Pengguna biasa dari phpMussel yang hanya ingin memproteksi website mereka dan/atau lingkungan hosting mereka tanpa memiliki minat dalam-dalam menganalisis setiap ditandai upload file harus meninggalkan fungsi ini dinonaktifkan, tetapi setiap pengguna yang tertarik pada analisis lebih lanjut dari ditandai upload file bagi penelitian malware atau untuk hal-hal seperti serupa harus mengaktifkan fungsi ini. Mengkarantina ditandai upload file dapat kadang-kadang juga membantu dalam men-debug false-positif, jika ini adalah sesuatu yang sering terjadi untuk Anda. Untuk menonaktifkan fungsi karantina, meninggalkan "quarantine_key" direktif kosong, atau menghapus isi dari direktif ini jika tidak sudah kosong. Untuk mengaktifkan fungsi karantina, masukkan beberapa nilai dalam direktif ini. `quarantine_key` adalah fitur keamanan penting dari fungsi karantina diharuskan sebagai sarana untuk mencegah fungsi karantina dari dieksploitasi oleh penyerang potensial dan sebagai sarana mencegah eksekusi potensi data yang disimpan dalam karantina. "quarantine_key" harus diperlakukan dengan cara yang sama seperti password Anda: Semakin lama semakin baik, dan menjaganya diproteksi erat. Bagi efek terbaik, gunakan dalam hubungannya dengan "delete_on_sight".
+- phpMussel dapat mengkarantina upload file ditandai dalam isolasi dalam vault phpMussel, jika ini adalah sesuatu yang Anda ingin lakukan. Pengguna biasa dari phpMussel yang hanya ingin memproteksi website mereka dan/atau lingkungan hosting mereka tanpa memiliki minat dalam-dalam menganalisis setiap ditandai upload file harus meninggalkan fungsi ini dinonaktifkan, tetapi setiap pengguna yang tertarik pada analisis lebih lanjut dari ditandai upload file bagi penelitian malware atau untuk hal-hal seperti serupa harus mengaktifkan fungsi ini. Mengkarantina ditandai upload file dapat kadang-kadang juga membantu dalam men-debug false-positif, jika ini adalah sesuatu yang sering terjadi untuk Anda. Untuk menonaktifkan fungsi karantina, meninggalkan `quarantine_key` direktif kosong, atau menghapus isi dari direktif ini jika tidak sudah kosong. Untuk mengaktifkan fungsi karantina, masukkan beberapa nilai dalam direktif ini. `quarantine_key` adalah fitur keamanan penting dari fungsi karantina diharuskan sebagai sarana untuk mencegah fungsi karantina dari dieksploitasi oleh penyerang potensial dan sebagai sarana mencegah eksekusi potensi data yang disimpan dalam karantina. `quarantine_key` harus diperlakukan dengan cara yang sama seperti password Anda: Semakin lama semakin baik, dan menjaganya diproteksi erat. Bagi efek terbaik, gunakan dalam hubungannya dengan `delete_on_sight`.
 
 "quarantine_max_filesize"
 - Ukuran file maksimum yang diijinkan dari file yang akan dikarantina. File yang lebih besar dari nilai yang ditentukan di bawah ini TIDAK akan dikarantina. Direktif ini penting sebagai sarana untuk membuat lebih sulit bagi setiap penyerang potensial untuk banjir karantina Anda dengan data yang tidak diinginkan berpotensi menyebabkan penggunaan data kelebihan pada layanan hosting Anda. Nilai dalam KB. Default =2048 =2048KB =2MB.
@@ -706,7 +707,7 @@ Chameleon serangan deteksi: 0 = Dinonaktifkan, 1 = Diaktifkan.
 - Cari dokumen office yang header nya tidak benar (Mendukung: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
 
 "chameleon_to_img"
-- Cari gambar yang header nya tidak benar (Mendukung: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD).
+- Cari gambar yang header nya tidak benar (Mendukung: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
 
 "chameleon_to_pdf"
 - Cari data PDF yang headernya tidak benar.
@@ -936,4 +937,4 @@ Informasi ini diupdate 28 Mei 2015 dan cocok untuk semua rilis phpMussel dari du
 ---
 
 
-Terakhir Diperbarui: 12 Agustus 2015 (2015.08.12).
+Terakhir Diperbarui: 14 Agustus 2015 (2015.08.14).

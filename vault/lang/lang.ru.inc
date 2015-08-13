@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Russian/Русский Language Data (9th August 2015).
+ This File: phpMussel Russian/Русский Language Data (13th August 2015).
  <%phpMussel%/vault/lang/lang.ru.inc>
 
 */
@@ -44,7 +44,7 @@ $MusselConfig['lang']['failed_to_access']='Не удалось получить 
 $MusselConfig['lang']['file']='файл';
 $MusselConfig['lang']['filesize_limit_exceeded']='Размер файла лимит превысил';
 $MusselConfig['lang']['filetype_blacklisted']='Тип файла на черный список';
-$MusselConfig['lang']['finished']='Завершено';
+$MusselConfig['lang']['finished']='Готово';
 $MusselConfig['lang']['generated_by']='Генерируется';
 $MusselConfig['lang']['greylist_cleared']=' Серого списка очищается.';
 $MusselConfig['lang']['greylist_not_updated']=' Серого списка не обновляется.';
@@ -73,14 +73,14 @@ $MusselConfig['lang']['scan_map_corrupted']='Поврежден подпись �
 $MusselConfig['lang']['scan_map_missing']='Отсутствует подпись карте';
 $MusselConfig['lang']['scan_missing_filename']='Отсутствует имя файла';
 $MusselConfig['lang']['scan_not_archive']='Не удалось (пуст или не архив)!';
-$MusselConfig['lang']['scan_no_problems_found']='Нет проблемы найден.';
+$MusselConfig['lang']['scan_no_problems_found']='Проблем не найдено.';
 $MusselConfig['lang']['scan_reading']='Чтение';
 $MusselConfig['lang']['scan_signature_file_corrupted']='Поврежден подпись файла';
 $MusselConfig['lang']['scan_signature_file_missing']='Отсутствует подпись файла';
 $MusselConfig['lang']['scan_tampering']='Обнаружено потенциально опасным файл модификация';
 $MusselConfig['lang']['scan_unauthorised_upload']='Несанкционированное файла загрузить манипуляции обнаружены';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Несанкционированное файла загрузить манипуляции или неправильная конфигурация обнаружены! ';
-$MusselConfig['lang']['started']='Начал';
+$MusselConfig['lang']['started']='Начало работы';
 $MusselConfig['lang']['update_']='Теперь phpMussel будет пытаться обновить себя.';
 $MusselConfig['lang']['update_available']='Обновление сценария доступный.';
 $MusselConfig['lang']['update_complete']='Проверить обновления успешно завершено.';

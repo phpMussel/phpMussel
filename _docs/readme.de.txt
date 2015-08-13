@@ -45,15 +45,13 @@
  <http://www.clamav.net/>.
 
  Besonderer Dank geht auch an Sourceforge und GitHub für das Hosten der
- Projektdateien, auf <http://phpmussel.sourceforge.net/> und
- <https://github.com/Maikuolan/phpMussel/>, an Spambot Security für die
- phpMussel Diskussionforen gehostet auf
- <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, und an die weiteren
- Quellen einiger von phpMussel verwendeten Signaturen: SecuriteInfo.com
- <http://www.securiteinfo.com/>, PhishTank <http://www.phishtank.com/>,
- NLNetLabs <http://nlnetlabs.nl/> und andere, und Besonderer Dank geht an alle
- diejenigen die das Projekt unterstützen werden, an andere nicht erwähnte
- Personen, und an Sie, für die Verwendung des Scripts.
+ Projektdateien, an Spambot Security für die phpMussel Diskussionforen gehostet
+ auf <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, und an die
+ weiteren Quellen einiger von phpMussel verwendeten Signaturen:
+ SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
+ <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> und andere, und
+ Besonderer Dank geht an alle diejenigen die das Projekt unterstützen werden,
+ an andere nicht erwähnte Personen, und an Sie, für die Verwendung des Scripts.
 
  Dieses Dokument und das zugehörige Paket kann von folgenden Links kostenlos
  heruntergeladen werden:
@@ -216,7 +214,7 @@
    somit nichts überprüft werden konnte, 1 zeigt an, dass das Ziel erfolgreich
    geprüft wurde und keine Probleme erkannt wurden, 2 zeigt an, dass das Ziel
    erfolgreich geprüft wurde, jedoch Probleme gefunden wurden). True weist die
-   Funktion an, Ergebnisse als lesbaren  zurückzugeben. Zusätzlich können in
+   Funktion an, Ergebnisse als lesbaren zurückzugeben. Zusätzlich können in
    beiden Fällen auf die Ergebnisse über globale Variablen nach dem Scannen
    zugegriffen werden. Diese Variable ist optional und standardmäßig auf false.
 
@@ -416,7 +414,7 @@
    ~
  update
    Benötigtes Passwort: script_password
-   Weitere Bedingungen: update.dat und update.inc müssen vorhanden sein.
+   Weitere Bedingungen: "update.dat" und "update.inc" müssen vorhanden sein.
    Benötigte Parameter: (keine)
    Optionale Parameter: (keine)
    Beispiele: ?pword=[script_password]&phpmussel=update
@@ -436,7 +434,7 @@
    Weitere Bedingungen: (keine)
    Benötigte Parameter: [Name der Signatur für die Greylist]
    Optionale Parameter: (keine)
-   Beispiel: ?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]
+   Beispiel: ?pword=[script_password]&phpmussel=greylist&musselvar=[Signatur]
    ~
    Zweck: Fügt eine Signatur zur Greylist hinzu.
    ~
@@ -505,6 +503,7 @@
  /_docs/readme.it.txt (Dokumentation, enthalten); ITALIANO
  /_docs/readme.nl.txt (Dokumentation, enthalten); NEDERLANDSE
  /_docs/readme.pt.txt (Dokumentation, enthalten); PORTUGUÊS
+ /_docs/readme.ru.txt (Dokumentation, enthalten); РУССКИЙ
     Die README-Dateien (z.B. die Datei, die Sie gerade lesen).
     ~
  /_docs/signatures_tally.txt (Dokumentation, enthalten)
@@ -825,6 +824,7 @@
     Diese Datei definiert bestimmte Variablen.
     ~
  /vault/template.html (Sonstiges, enthalten)
+ /vault/template_custom.html (Sonstiges, enthalten)
     phpMussel Template Datei; Template für die HTML-Ausgabe mit der Nachricht,
     dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem
     Nutzer angezeigt wird).
@@ -1271,7 +1271,7 @@
      (Unterstützt: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
    "chameleon_to_img"
    - Suche nach Bildern, deren Header nicht korrekt sind.
-     (Unterstützt: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD).
+     (Unterstützt: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
    "chameleon_to_pdf"
    - Suche nach PDF-Dateien, deren Header nicht korrekt sind.
    "archive_file_extensions" und "archive_file_extensions_wc"
@@ -1407,7 +1407,7 @@
      rechts auf der Seite, gebe die geforderten Daten an und klick auf
      "Anmelden" wenn du fertig bist. Folge allen Anweisungen und wenn du deinen
      öffentlichen API Schlüssel hast, kopier eund füge den öffentlichen API
-     Schlüssel bei der `vt_public_api_key` Direktive der `phpmussel.ini`
+     Schlüssel bei der `vt_public_api_key` Direktive der "phpmussel.ini"
      Konfigurations-Datei ein.
    "vt_suspicion_level"
    - phpMussel wird standardmäßig die mit der Virus Total API zu scannenden
@@ -1740,5 +1740,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 10. August 2015 (2015.08.10).
+Zuletzt aktualisiert: 14. August 2015 (2015.08.14).
 EOF

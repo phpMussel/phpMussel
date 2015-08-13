@@ -45,11 +45,9 @@
  <http://www.clamav.net/>.
 
  Um especial obrigado para Sourceforge e GitHub por hospedar os projeto
- arquivos, localizado na <http://phpmussel.sourceforge.net/> e
- <https://github.com/Maikuolan/phpMussel/>, para Spambot Security por hospedar
- os phpMussel discussão fóruns, localizado na
- <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, e para
- adicionais recursos de um número de o assinaturas utilizados através do
+ arquivos, para Spambot Security por hospedar os phpMussel discussão fóruns,
+ localizado na <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, e
+ para adicionais recursos de um número de o assinaturas utilizados através do
  phpMussel: SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
  <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> e outros, e
  um especial obrigado a todos aqueles que apoiam o projeto, a qualquer outra
@@ -444,7 +442,7 @@
    ~
  update
    Senha necessária: script_password
-   Outros requisitos: update.dat and update.inc must exist.
+   Outros requisitos: "update.dat" e "update.inc" devem existir.
    Parâmetros necessários: (nenhum)
    Parâmetros opcionais: (nenhum)
    Exemplo: ?pword=[script_password]&phpmussel=update
@@ -470,7 +468,7 @@
    Outros requisitos: (nenhum)
    Parâmetros necessários: [Nome de assinatura a ser greylisted]
    Parâmetros opcionais: (nenhum)
-   Exemplo: ?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]
+   Exemplo: ?pword=[script_password]&phpmussel=greylist&musselvar=[Assinatura]
    ~
    Que faz: Adicionar uma assinatura para o greylist.
    ~
@@ -539,6 +537,7 @@
  /_docs/readme.it.txt (Documentação, Incluído); ITALIANO
  /_docs/readme.nl.txt (Documentação, Incluído); NEDERLANDSE
  /_docs/readme.pt.txt (Documentação, Incluído); PORTUGUÊS
+ /_docs/readme.ru.txt (Documentação, Incluído); РУССКИЙ
     O README arquivos (por exemplo; o arquivo que você está lendo atualmente).
     ~
  /_docs/signatures_tally.txt (Documentação, Incluído)
@@ -852,7 +851,7 @@
  /vault/update.dat (Outro, Incluído)
     Arquivo contendo informações sobre a versão por tanto script e assinaturas
     de phpMussel. Se você está tencionando automaticamente atualizar phpMussel
-    ou deseja atualizar phpMusel através de seu navegador, este arquivo é
+    ou deseja atualizar phpMussel através de seu navegador, este arquivo é
     essencial.
     ~
  /vault/update.inc (Script, Incluído)
@@ -1296,7 +1295,7 @@
      (Suportados: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
    "chameleon_to_img"
    - Olha por imagens cujos headers estão incorretas (Suportados: BMP, DIB,
-     PNG, GIF, JPEG, JPG, XCF, PSD, PDD).
+     PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
    "chameleon_to_pdf"
    - Olha por PDF arquivos cujos headers estão incorretas.
    "archive_file_extensions" and "archive_file_extensions_wc"
@@ -1432,7 +1431,7 @@
      superior direita da página, digitar as informações solicitadas, e clique
      em "Cadastrar" quando acabado. Siga todas as instruções fornecidas, e
      quando você tem a sua pública API chave, copiar/colar essa pública API
-     chave ao `vt_public_api_key` directiva do `phpmussel.ini` configuração
+     chave ao `vt_public_api_key` directiva do "phpmussel.ini" configuração
      arquivo.
    "vt_suspicion_level"
    - Por padrão, phpMussel restringirá os arquivos que são verificado usando o
@@ -1772,5 +1771,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 12 Agosto 2015 (2015.08.12).
+Última Atualização: 14 Agosto 2015 (2015.08.14).
 EOF

@@ -44,10 +44,8 @@
  esisterebbe, o nel migliore, avrebbe un molto limitato valore
  <http://www.clamav.net/>.
 
- Uno speciale grazie a Sourceforge e GitHub per ospitare i progetto file,
- situato a <http://phpmussel.sourceforge.net/> e
- <https://github.com/Maikuolan/phpMussel/>, a Spambot Security per ospitare
- le phpMussel discussione forum, situato a
+ Uno speciale grazie a Sourceforge e GitHub per ospitare i progetto file, a
+ Spambot Security per ospitare le phpMussel discussione forum, situato a
  <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, e le risorse di un
  certo numero di firme utilizzata da phpMussel: SecuriteInfo.com
  <http://www.securiteinfo.com/>, PhishTank <http://www.phishtank.com/>,
@@ -453,7 +451,7 @@
    ~
  update
    Password requisito: script_password
-   Altri requisiti: update.dat e update.inc deve esistere.
+   Altri requisiti: "update.dat" e "update.inc" deve esistere.
    Parametri requisiti: (nessuno)
    Parametri opzionali: (nessuno)
    Esempio: ?pword=[script_password]&phpmussel=update
@@ -480,7 +478,7 @@
    Altri requisiti: (nessuno)
    Parametri requisiti: [Nome della firma essere sulla greylist]
    Parametri opzionali: (nessuno)
-   Esempio: ?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]
+   Esempio: ?pword=[script_password]&phpmussel=greylist&musselvar=[Firma]
    ~
    Cosa fa: Aggiungere una firma alla greylist.
    ~
@@ -551,6 +549,7 @@
  /_docs/readme.it.txt (Documentazione, Incluso); ITALIANO
  /_docs/readme.nl.txt (Documentazione, Incluso); NEDERLANDSE
  /_docs/readme.pt.txt (Documentazione, Incluso); PORTUGUÊS
+ /_docs/readme.ru.txt (Documentazione, Incluso); РУССКИЙ
     Il README file (per esempio; il file che si sta leggendo momentaneamente).
     ~
  /_docs/signatures_tally.txt (Documentazione, Incluso)
@@ -864,7 +863,7 @@
  /vault/update.dat (Altro, Incluso)
     File contenente informazioni sulla versione sia di phpMussel e le phpMussel
     firme. Se si desidero automaticamente aggiornare di phpMussel o si desidero
-    l'aggiornare di phpMusel tramite il browser, questo file è essenziale.
+    l'aggiornare di phpMussel tramite il browser, questo file è essenziale.
     ~
  /vault/update.inc (Script, Incluso)
     phpMussel Aggiornare Script; Richiesto per l'automatico aggiornare di
@@ -1298,7 +1297,7 @@
      DOT, PPS, PPT, XLA, XLS, WIZ).
    "chameleon_to_img"
    - Cercare per immagini file di cui non sono corrette (Supportato: BMP, DIB,
-     PNG, GIF, JPEG, JPG, XCF, PSD, PDD).
+     PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
    "chameleon_to_pdf"
    - Cercare per PDF file di cui non sono corrette.
    "archive_file_extensions" e "archive_file_extensions_wc"
@@ -1439,7 +1438,7 @@
      destra della pagina, immettere le informazioni richieste, e clicca
      "Sign up" quando hai finito. Seguite tutte le istruzioni fornite, e quando
      hai la tua pubblica API chiave, copia/incolla la pubblica API chiave per
-     la `vt_public_api_key` direttiva del `phpmussel.ini` configurazione file.
+     la `vt_public_api_key` direttiva del "phpmussel.ini" configurazione file.
    "vt_suspicion_level"
    - Per predefinita, phpMussel limiterà quali file ciò scansiona utilizzando
      il Virus Total API ai quei file che considera "sospettose".
@@ -1778,5 +1777,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 12 Agosto 2015 (2015.08.12).
+Ultimo Aggiornamento: 14 Agosto 2015 (2015.08.14).
 EOF

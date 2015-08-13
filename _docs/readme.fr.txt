@@ -21,7 +21,7 @@
 
  1. PRÉAMBULE
 
- Merci pour l'utiliser de phpMusel, un PHP script pour la détection de virus,
+ Merci pour l'utiliser de phpMussel, un PHP script pour la détection de virus,
  malveillants logiciels et autres menaces dans les fichiers téléchargés sur
  votre système partout où le script est accroché, basé sur les signatures de
  ClamAV et autres.
@@ -45,12 +45,10 @@
  valeur <http://www.clamav.net/>.
 
  Un spécial merci à Sourceforge et GitHub pour l'hébergement du projet
- fichiers, situé à <http://phpmussel.sourceforge.net/> et
- <https://github.com/Maikuolan/phpMussel/>, à Spambot Security pour
- l'hébergement du phpMussel discussion forums, situé à
- <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, et à les sources
- supplémentaires d'un certain nombre de signatures utilisés par phpMussel:
- SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
+ fichiers, à Spambot Security pour l'hébergement du phpMussel discussion
+ forums, situé à <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, et
+ à les sources supplémentaires d'un certain nombre de signatures utilisés par
+ phpMussel: SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
  <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> et autres, et
  merci à tous ceux qui soutiennent le projet, à quelqu'un d'autre que j'ai
  peut-être oublié de mentionner autrement, et à vous, pour l'utiliser du
@@ -459,7 +457,7 @@
    ~
  update
    Mot de passe requis: script_password
-   Autre exigences: update.dat and update.inc must exist.
+   Autre exigences: "update.dat" et "update.inc" doivent exister.
    Paramètres requis: (aucun)
    Optional parameters: (aucun)
    Exemple: ?pword=[script_password]&phpmussel=update
@@ -555,6 +553,7 @@
  /_docs/readme.it.txt (Documentation, Inclu); ITALIANO
  /_docs/readme.nl.txt (Documentation, Inclu); NEDERLANDSE
  /_docs/readme.pt.txt (Documentation, Inclu); PORTUGUÊS
+ /_docs/readme.ru.txt (Documentation, Inclu); РУССКИЙ
     Le README fichiers (par exemple; le fichier vous êtes en cours de lire).
     ~
  /_docs/signatures_tally.txt (Documentation, Inclu)
@@ -867,7 +866,7 @@
  /vault/update.dat (Autre, Inclu)
     Fichier contenant les version informations pour le script et les signatures
     de phpMussel. Si jamais vous voulez à réactualiser automatiquement
-    phpMussel ou réactualiser phpMusel par votre navigateur, ce fichier est
+    phpMussel ou réactualiser phpMussel par votre navigateur, ce fichier est
     indispensable.
     ~
  /vault/update.inc (Script, Inclu)
@@ -1317,7 +1316,7 @@
      DOT, PPS, PPT, XLA, XLS, WIZ).
    "chameleon_to_img"
    - Vérifier pour images dont têtes sont incorrects (Supporté: BMP, DIB, PNG,
-     GIF, JPEG, JPG, XCF, PSD, PDD).
+     GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
    "chameleon_to_pdf"
    - Vérifier pour PDF fichiers dont têtes sont incorrects.
    "archive_file_extensions" et "archive_file_extensions_wc"
@@ -1464,7 +1463,7 @@
      demandées, et cliquez sur "S'enregistrer" quand vous avez terminé. Suivez
      toutes les instructions fournies, et quand vous avez votre publique API
      clé, copier/coller cette publique API clé à la `vt_public_api_key`
-     directive du `phpmussel.ini` configuration fichier.
+     directive du "phpmussel.ini" configuration fichier.
    "vt_suspicion_level"
    - Par défaut, phpMussel va restreindre les fichiers de l'analyse utilisant
      le Virus Total API à ces fichiers qu'il juges comme "soupçonneux".
@@ -1805,5 +1804,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 12 Août 2015 (2015.08.12).
+Dernière Réactualisé: 14 Août 2015 (2015.08.14).
 EOF

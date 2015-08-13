@@ -41,10 +41,8 @@
  that this script utilises, without which, the script would likely not exist,
  or at best, would have very limited value <http://www.clamav.net/>.
 
- Special thanks to Sourceforge and GitHub for hosting the project files,
- located at <http://phpmussel.sourceforge.net/> and
- <https://github.com/Maikuolan/phpMussel/>, to Spambot Security for hosting
- the phpMussel discussion forums, located at
+ Special thanks to Sourceforge and GitHub for hosting the project files, to
+ Spambot Security for hosting the phpMussel discussion forums, located at
  <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, and to the
  additional sources of a number of the signatures utilised by phpMussel:
  SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
@@ -420,7 +418,7 @@
    ~
  update
    Password required: script_password
-   Other requirements: update.dat and update.inc must exist.
+   Other requirements: "update.dat" and "update.inc" must exist.
    Required parameters: (none)
    Optional parameters: (none)
    Example: ?pword=[script_password]&phpmussel=update
@@ -514,6 +512,7 @@
  /_docs/readme.it.txt (Documentation, Included); ITALIANO
  /_docs/readme.nl.txt (Documentation, Included); NEDERLANDSE
  /_docs/readme.pt.txt (Documentation, Included); PORTUGUÊS
+ /_docs/readme.ru.txt (Documentation, Included); РУССКИЙ
     The README files (for example; the file you're currently reading).
     ~
  /_docs/signatures_tally.txt (Documentation, Included)
@@ -631,7 +630,7 @@
  /vault/coex_clamav.cvd (Signatures, Included)
  /vault/coex_custom.cvd (Signatures, Included)
  /vault/coex_mussel.cvd (Signatures, Included)
-    Files for Complex Extended signatures. Required if the Complex Extended
+    Files for complex extended signatures. Required if the Complex Extended
     signatures option in "phpmussel.ini" is enabled. Can remove if the option
     is disabled.
     ~
@@ -814,7 +813,7 @@
  /vault/update.dat (Other, Included)
     File containing version information for both the phpMussel script and the
     phpMussel signatures. If you ever want to automatically update phpMussel or
-    want to update phpMusel via your browser, this file is essential.
+    want to update phpMussel via your browser, this file is essential.
     ~
  /vault/update.inc (Script, Included)
     phpMussel Update Script; Required for automatic updates and for updating
@@ -1230,7 +1229,7 @@
      DOT, PPS, PPT, XLA, XLS, WIZ).
    "chameleon_to_img"
    - Search for images whose headers are incorrect (Supported: BMP, DIB, PNG,
-     GIF, JPEG, JPG, XCF, PSD, PDD).
+     GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
    "chameleon_to_pdf"
    - Search for PDF files whose headers are incorrect.
    "archive_file_extensions" and "archive_file_extensions_wc"
@@ -1360,7 +1359,7 @@
      information requested, and click "Sign up" when done. Follow all
      instructions supplied, and when you've got your public API key, copy/paste
      that public API key to the `vt_public_api_key` directive of the
-     `phpmussel.ini` configuration file.
+     "phpmussel.ini" configuration file.
    "vt_suspicion_level"
    - By default, phpMussel will restrict which files it scans using the Virus
      Total API to those files that it considers "suspicious". You can
@@ -1682,5 +1681,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 12th August 2015 (2015.08.12).
+Last Updated: 14th August 2015 (2015.08.14).
 EOF
