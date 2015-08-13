@@ -214,7 +214,7 @@
    somit nichts überprüft werden konnte, 1 zeigt an, dass das Ziel erfolgreich
    geprüft wurde und keine Probleme erkannt wurden, 2 zeigt an, dass das Ziel
    erfolgreich geprüft wurde, jedoch Probleme gefunden wurden). True weist die
-   Funktion an, Ergebnisse als lesbaren zurückzugeben. Zusätzlich können in
+   Funktion an, Ergebnisse als lesbaren Text zurückzugeben. Zusätzlich können in
    beiden Fällen auf die Ergebnisse über globale Variablen nach dem Scannen
    zugegriffen werden. Diese Variable ist optional und standardmäßig auf false.
 
