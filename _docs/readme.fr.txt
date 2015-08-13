@@ -21,7 +21,7 @@
 
  1. PRÉAMBULE
 
- Merci pour l'utiliser de phpMusel, un PHP script pour la détection de virus,
+ Merci pour l'utiliser de phpMussel, un PHP script pour la détection de virus,
  malveillants logiciels et autres menaces dans les fichiers téléchargés sur
  votre système partout où le script est accroché, basé sur les signatures de
  ClamAV et autres.
@@ -45,12 +45,10 @@
  valeur <http://www.clamav.net/>.
 
  Un spécial merci à Sourceforge et GitHub pour l'hébergement du projet
- fichiers, situé à <http://phpmussel.sourceforge.net/> et
- <https://github.com/Maikuolan/phpMussel/>, à Spambot Security pour
- l'hébergement du phpMussel discussion forums, situé à
- <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, et à les sources
- supplémentaires d'un certain nombre de signatures utilisés par phpMussel:
- SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
+ fichiers, à Spambot Security pour l'hébergement du phpMussel discussion
+ forums, situé à <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, et
+ à les sources supplémentaires d'un certain nombre de signatures utilisés par
+ phpMussel: SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
  <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> et autres, et
  merci à tous ceux qui soutiennent le projet, à quelqu'un d'autre que j'ai
  peut-être oublié de mentionner autrement, et à vous, pour l'utiliser du
@@ -459,7 +457,7 @@
    ~
  update
    Mot de passe requis: script_password
-   Autre exigences: update.dat and update.inc must exist.
+   Autre exigences: "update.dat" et "update.inc" doivent exister.
    Paramètres requis: (aucun)
    Optional parameters: (aucun)
    Exemple: ?pword=[script_password]&phpmussel=update
@@ -555,6 +553,7 @@
  /_docs/readme.it.txt (Documentation, Inclu); ITALIANO
  /_docs/readme.nl.txt (Documentation, Inclu); NEDERLANDSE
  /_docs/readme.pt.txt (Documentation, Inclu); PORTUGUÊS
+ /_docs/readme.ru.txt (Documentation, Inclu); РУССКИЙ
     Le README fichiers (par exemple; le fichier vous êtes en cours de lire).
     ~
  /_docs/signatures_tally.txt (Documentation, Inclu)
@@ -859,6 +858,7 @@
     Contrôle et définit certaines variables.
     ~
  /vault/template.html (Autre, Inclu)
+ /vault/template_custom.html (Autre, Inclu)
     phpMussel modèle fichier; Modèle pour l'HTML sortie produit par phpMussel
     pour son bloqués fichiers téléchargement message (le message vu par
     l'envoyeur).
@@ -866,7 +866,7 @@
  /vault/update.dat (Autre, Inclu)
     Fichier contenant les version informations pour le script et les signatures
     de phpMussel. Si jamais vous voulez à réactualiser automatiquement
-    phpMussel ou réactualiser phpMusel par votre navigateur, ce fichier est
+    phpMussel ou réactualiser phpMussel par votre navigateur, ce fichier est
     indispensable.
     ~
  /vault/update.inc (Script, Inclu)
@@ -1001,9 +1001,8 @@
       lorsque l'exécution est terminée, ce qui signifie que il va généralement
       supprimer tous les fichiers téléchargés à travers elle au serveur sauf
       qu'ils ont déménagé, copié ou supprimé déjà. L'option est ajoutée ici
-      comme une supplémentaire mesure de sécurité pour le supplémentaire
-      paranoïaque et pour ceux dont copies de php peut pas toujours se
-      comporter de la manière attendu.
+      comme une supplémentaire mesure de sécurité pour ceux dont copies de php
+      peut pas toujours se comporter de la manière attendu.
       0 - Après l'analyse, laissez le fichier tel quel [Défaut],
       1 - Après l'analyse, si pas propre, supprimer immédiatement.
     "lang"
@@ -1317,7 +1316,7 @@
      DOT, PPS, PPT, XLA, XLS, WIZ).
    "chameleon_to_img"
    - Vérifier pour images dont têtes sont incorrects (Supporté: BMP, DIB, PNG,
-     GIF, JPEG, JPG, XCF, PSD, PDD).
+     GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
    "chameleon_to_pdf"
    - Vérifier pour PDF fichiers dont têtes sont incorrects.
    "archive_file_extensions" et "archive_file_extensions_wc"
@@ -1464,7 +1463,7 @@
      demandées, et cliquez sur "S'enregistrer" quand vous avez terminé. Suivez
      toutes les instructions fournies, et quand vous avez votre publique API
      clé, copier/coller cette publique API clé à la `vt_public_api_key`
-     directive du `phpmussel.ini` configuration fichier.
+     directive du "phpmussel.ini" configuration fichier.
    "vt_suspicion_level"
    - Par défaut, phpMussel va restreindre les fichiers de l'analyse utilisant
      le Virus Total API à ces fichiers qu'il juges comme "soupçonneux".
@@ -1555,6 +1554,25 @@
      vous aider dans le traitement de ces problèmes. Votre quota est déterminée
      comme `vt_quota_rate` demandes de toute nature dans un laps de
      `vt_quota_time` minute de temps.
+ "template_data" (Category)
+ - Directives/Variables pour les modèles et thèmes: Modèles données est liée à
+   la sortie HTML utilisé pour générer le "Téléchargement Refusé" message
+   affiché aux utilisateurs sur un fichier téléchargement est bloqué. Si vous
+   utilisez des thèmes personnalisés pour phpMussel, sortie HTML provient du
+   "template_custom.html" fichier, et sinon, sortie HTML provient du
+   "template.html" fichier. Variables écrites à cette section du configuration
+   fichier sont préparé pour la sortie HTML par voie de remplacer tous les noms
+   de variables circonfixé par accolades trouvés dans la sortie HTML avec les
+   variables données correspondant. Par exemple, où foo="bar", toute instance
+   de <p>{foo}</p> trouvés dans la sortie HTML deviendra <p>bar</p>.
+   "css_url"
+   - Le modèle fichier pour des thèmes personnalisés utilise les propriétés CSS
+     externes, tandis que le modèle fichier pour le défaut thème utilise les
+     propriétés CSS internes. Pour instruire phpMussel d'utiliser le modèle
+     fichier pour des thèmes personnalisés, spécifier l'adresse HTTP public de
+     votre thèmes personnalisés CSS fichiers utilisant le "css_url" variable.
+     Si vous laissez cette variable vide, phpMussel va utiliser le modèle
+     fichier pour le défaut thème.
 
                                      ~ ~ ~
 
@@ -1585,6 +1603,13 @@
     TAILLE:HASH:NOM
    Où HASH est le MD5 hash d'un section du PE fichier, TAILLE est la totale
    taille de cet section et NOM est le nom à citer pour la signature.
+
+ = PE EXTENDED SIGNATURES =
+   Toutes les PE étendues signatures suivez le format:
+    $VAR:HASH:TAILLE:NOM
+   Où $VAR est le nom de la PE variable à comparer contre, HASH est le MD5
+   hachage de cette variable, TAILLE est la taille totale de cette variable et
+   NOM est le nom de à pour cette signature.
 
  = BLANCHE LISTE SIGNATURES =
    Toutes les blanche liste signatures suivez le format:
@@ -1679,7 +1704,10 @@
    - "PDF Signatures" (pdf_*). Vérifié contre les contenus de chaque PDF
       fichier non listé blanche.
    - "Portable Executable Sectional Signatures" (pe_*). Vérifié contre le
-      taille et l'MD5 hash des sections de chaque PE fichier non listé blanche,
+      taille et l'MD5 hash des sections de chaque fichier non listé blanche,
+      ciblée pour l'analyse et identifié au PE format.
+   - "Portable Executable Étendues Signatures" (pex_*). Vérifié contre le
+      taille et l'MD5 hash des variables de chaque fichier non listé blanche,
       ciblée pour l'analyse et identifié au PE format.
    - "SWF Signatures" (swf_*). Vérifié contre les contenus de chaque Shockwave
       fichier non listé blanche.
@@ -1776,5 +1804,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 8 Août 2015 (2015.08.08).
+Dernière Réactualisé: 14 Août 2015 (2015.08.14).
 EOF

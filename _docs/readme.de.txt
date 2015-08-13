@@ -45,15 +45,13 @@
  <http://www.clamav.net/>.
 
  Besonderer Dank geht auch an Sourceforge und GitHub für das Hosten der
- Projektdateien, auf <http://phpmussel.sourceforge.net/> und
- <https://github.com/Maikuolan/phpMussel/>, an Spambot Security für die
- phpMussel Diskussionforen gehostet auf
- <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, und an die weiteren
- Quellen einiger von phpMussel verwendeten Signaturen: SecuriteInfo.com
- <http://www.securiteinfo.com/>, PhishTank <http://www.phishtank.com/>,
- NLNetLabs <http://nlnetlabs.nl/> und andere, und Besonderer Dank geht an alle
- diejenigen die das Projekt unterstützen werden, an andere nicht erwähnte
- Personen, und an Sie, für die Verwendung des Scripts.
+ Projektdateien, an Spambot Security für die phpMussel Diskussionforen gehostet
+ auf <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, und an die
+ weiteren Quellen einiger von phpMussel verwendeten Signaturen:
+ SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
+ <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> und andere, und
+ Besonderer Dank geht an alle diejenigen die das Projekt unterstützen werden,
+ an andere nicht erwähnte Personen, und an Sie, für die Verwendung des Scripts.
 
  Dieses Dokument und das zugehörige Paket kann von folgenden Links kostenlos
  heruntergeladen werden:
@@ -216,7 +214,7 @@
    somit nichts überprüft werden konnte, 1 zeigt an, dass das Ziel erfolgreich
    geprüft wurde und keine Probleme erkannt wurden, 2 zeigt an, dass das Ziel
    erfolgreich geprüft wurde, jedoch Probleme gefunden wurden). True weist die
-   Funktion an, Ergebnisse als lesbaren  zurückzugeben. Zusätzlich können in
+   Funktion an, Ergebnisse als lesbaren zurückzugeben. Zusätzlich können in
    beiden Fällen auf die Ergebnisse über globale Variablen nach dem Scannen
    zugegriffen werden. Diese Variable ist optional und standardmäßig auf false.
 
@@ -416,7 +414,7 @@
    ~
  update
    Benötigtes Passwort: script_password
-   Weitere Bedingungen: update.dat und update.inc müssen vorhanden sein.
+   Weitere Bedingungen: "update.dat" und "update.inc" müssen vorhanden sein.
    Benötigte Parameter: (keine)
    Optionale Parameter: (keine)
    Beispiele: ?pword=[script_password]&phpmussel=update
@@ -436,7 +434,7 @@
    Weitere Bedingungen: (keine)
    Benötigte Parameter: [Name der Signatur für die Greylist]
    Optionale Parameter: (keine)
-   Beispiel: ?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]
+   Beispiel: ?pword=[script_password]&phpmussel=greylist&musselvar=[Signatur]
    ~
    Zweck: Fügt eine Signatur zur Greylist hinzu.
    ~
@@ -505,6 +503,7 @@
  /_docs/readme.it.txt (Dokumentation, enthalten); ITALIANO
  /_docs/readme.nl.txt (Dokumentation, enthalten); NEDERLANDSE
  /_docs/readme.pt.txt (Dokumentation, enthalten); PORTUGUÊS
+ /_docs/readme.ru.txt (Dokumentation, enthalten); РУССКИЙ
     Die README-Dateien (z.B. die Datei, die Sie gerade lesen).
     ~
  /_docs/signatures_tally.txt (Dokumentation, enthalten)
@@ -561,10 +560,11 @@
     Testdatei zur Überprüfung der PE-Sectional-Signaturerkennung.
     ~
  /_testfiles/swf_standard_testfile.swf (Testdatei, enthalten)
-    Testdatei zur Überprüfung der SWF-Signaturen.
+    Testdatei zur Überprüfung der Shockwave-Signaturerkennung.
     ~
  /_testfiles/xdp_standard_testfile.xdp (Testdatei, enthalten)
-    Testdatei zur Überprüfung der XML/XDP-Datenblock-Signaturen.
+    Testdatei zur Überprüfung der XML/XDP-Datenblock-
+    -Signaturerkennung.
     ~
  /vault/ (Verzeichnis)
     Vault-Verzeichnis (beinhaltet verschiedene Dateien).
@@ -824,6 +824,7 @@
     Diese Datei definiert bestimmte Variablen.
     ~
  /vault/template.html (Sonstiges, enthalten)
+ /vault/template_custom.html (Sonstiges, enthalten)
     phpMussel Template Datei; Template für die HTML-Ausgabe mit der Nachricht,
     dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem
     Nutzer angezeigt wird).
@@ -1270,7 +1271,7 @@
      (Unterstützt: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
    "chameleon_to_img"
    - Suche nach Bildern, deren Header nicht korrekt sind.
-     (Unterstützt: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD).
+     (Unterstützt: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
    "chameleon_to_pdf"
    - Suche nach PDF-Dateien, deren Header nicht korrekt sind.
    "archive_file_extensions" und "archive_file_extensions_wc"
@@ -1406,7 +1407,7 @@
      rechts auf der Seite, gebe die geforderten Daten an und klick auf
      "Anmelden" wenn du fertig bist. Folge allen Anweisungen und wenn du deinen
      öffentlichen API Schlüssel hast, kopier eund füge den öffentlichen API
-     Schlüssel bei der `vt_public_api_key` Direktive der `phpmussel.ini`
+     Schlüssel bei der `vt_public_api_key` Direktive der "phpmussel.ini"
      Konfigurations-Datei ein.
    "vt_suspicion_level"
    - phpMussel wird standardmäßig die mit der Virus Total API zu scannenden
@@ -1486,6 +1487,24 @@
      Erreichen des Limits haben, -sollte- das Verringern dieser Werte manchmal
      helfen. Dein Limit wird festgelegt als `vt_quota_rate` Anfragen jeder Art
      in jeder `vt_quota_time` Minuten Zeitspanne.
+ "template_data" (Category)
+ - Directives/Variables for templates and themes: Template data relates to the
+   HTML output used to generate the "Upload Denied" message displayed to users
+   upon a file upload being blocked. If you're using custom themes for
+   phpMussel, HTML output is sourced from the "template_custom.html" file, and
+   otherwise, HTML output is sourced from the "template.html" file. Variables
+   written to this section of the configuration file are parsed to the HTML
+   output by way of replacing any variable names circumfixed by curly brackets
+   found within the HTML output with the corresponding variable data. For
+   example, where foo="bar", any instance of <p>{foo}</p> found within the
+   HTML output will become <p>bar</p>.
+   "css_url"
+   - The template file for custom themes utilises external CSS properties,
+     whereas the template file for the default theme utilises internal CSS
+     properties. To instruct phpMussel to use the template file for custom
+     themes, specify the public HTTP address of your custom theme's CSS files
+     using the "css_url" variable. If you leave this variable blank, phpMussel
+     will use the template file for the default theme.
 
                                      ~ ~ ~
 
@@ -1516,6 +1535,13 @@
     SIZE:HASH:NAME
    HASH ist der MD5-Hash einer PE-Sektion der Datei, FILESIZE ist die gesamte
    Größe der PE-Sektion und NAME ist der Name, um die Signatur zu benennen.
+
+ = PE-ERWEITERT-SIGNATUREN =
+   Alle PE-Erweitert-Signaturen besitzen folgendes Format:
+    $VAR:HASH:SIZE:NAME
+   Where $VAR is the name of the PE variable to match against, HASH is the MD5
+   hash of that variable, SIZE is the total size of that variable and NAME is
+   the name to cite for that signature.
 
  = WHITELIST-SIGNATUREN =
    Alle Whitelist-Signaturen besitzen folgendes Format:
@@ -1575,11 +1601,12 @@
    werden:
    - "Normierte ASCII-Signaturen" (ascii_*). Überprüft den Inhalt jeder Datei,
       die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
-   - "Complex Extended Signatures" (coex_*). Mixed signature type matching.
+   - "Komplex-Erweitert-Signaturen" (coex_*). Mischsignaturtyp
+      Datei-Überprüfungen.
    - "ELF-Signaturen" (elf_*). Überprüft den Inhalt jeder Datei, die nicht in
       der Whitelist aufgeführt ist und überprüft werden soll und dem ELF-Format
       entspricht.
-   - "Portable Executable Signaturen" (exe_*). Überprüft den Inhalt jeder
+   - "Portable-Executable-Signaturen" (exe_*). Überprüft den Inhalt jeder
       Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden
       soll und dem PE-Format entspricht.
    - "Dateinamen-Signaturen" (filenames_*). Überprüft die Dateinamen jeder
@@ -1612,17 +1639,20 @@
       in der Whitelist aufgeführt ist.
    - "PDF-Signaturen" (pdf_*). Überprüft den Inhalt jeder PDF-Dateien, die
       nicht in der Whitelist aufgeführt ist.
-   - "Portable Executable Sectional Signaturen" (pe_*). Überprüft mittels der
+   - "Portable-Executable-Sectional-Signaturen" (pe_*). Überprüft mittels der
       Größe und MD5-Hash der PE-Sektionen jeder Datei, die nicht in der
       Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format
       entspricht.
-   - "SWF-Signaturen" (swf_*). Überprüft den Inhalt jeder Shockwave-Datei,
-      die nicht in der Whitelist aufgeführt ist.
+   - "Portable-Executable-Erweitert-Signaturen" (pex_*). Überprüft mittels der
+      Größe und MD5-Hash der Variablen jeder Datei, die nicht in der Whitelist
+      aufgeführt ist und überprüft werden soll und dem PE-Format entspricht.
+   - "Shockwave-Signaturen" (swf_*). Überprüft den Inhalt jeder
+      Shockwave-Datei, die nicht in der Whitelist aufgeführt ist.
    - "Whitelist-Signaturen" (whitelist_*). Überprüft mittels MD5-Hash des
       Inhalts und der Dateigröße jede Datei. Übereinstimmende Dateien werden
       immun gegen die Art der Signaturen in dem Whitelist-Eintrag.
-   - "XML/XDP-Chunk Signatures" (xmlxdp_*). Überprüft XML/XDP-Datenblöcke aus
-      jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft
+   - "XML/XDP-Datenblock-Signaturen" (xmlxdp_*). Überprüft XML/XDP-Datenblöcke
+      aus jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft
       werden soll.
    (Beachten Sie, dass jede dieser Signaturen auf einfache Weise in der
     "phpmussel.ini" deaktiviert werden kann).
@@ -1710,5 +1740,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 8. August 2015 (2015.08.08).
+Zuletzt aktualisiert: 14. August 2015 (2015.08.14).
 EOF

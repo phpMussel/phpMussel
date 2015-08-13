@@ -18,7 +18,7 @@
 
 ###1. <a name="SECTION1"></a>PREÁMBULO
 
-Gracias por usar phpMussel, un PHP script diseñado para detectar troyanos, virus, malware y otras amenazas en los archivos cargados en el sistema donde el script está adjunto, basado en las firmas de ClamAV y otros.
+Gracias por usar phpMussel, un PHP script diseñado para detectar troyanos, virus, malware y otras amenazas en los archivos subidos en el sistema donde el script está adjunto, basado en las firmas de ClamAV y otros.
 
 PHPMUSSEL COPYRIGHT 2013 y más allá GNU/GPLv2 por Caleb M (Maikuolan).
 
@@ -30,7 +30,7 @@ Un especial agradecimiento a [ClamAV](http://www.clamav.net/) para la inspiraci�
 
 Un especial agradecimiento a Sourceforge y GitHub para alojar los archivos de proyecto, a [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) para la phpMussel discusión foros, y a las adicionales fuentes de un número de las firmas utilizadas por phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) y otros, y agradecimiento especial a todos aquellos que apoyan el proyecto, a cualquier otra persona que yo haya olvidado de lo contrario mencionar, y a usted, por el uso de la script.
 
-Este documento y asociado paquete pueden descargar de gratis desde:
+Este documento y asociado paquete pueden descargado de gratis desde:
 - [Sourceforge](http://phpmussel.sourceforge.net/).
 - [GitHub](https://github.com/Maikuolan/phpMussel/).
 
@@ -49,11 +49,11 @@ Espero para agilizar este proceso al hacer un instalador en algún momento en un
 
 4) CMHOD al `vault` directorio a "777". La principal directorio de almacenamiento de los contenidos (el uno decidió desde antes), en general, puede dejar solos, pero CHMOD estado debe ser comprobado si ha tenido problemas de permisos en el pasado en su sistema (predefinido, debería ser algo como "755").
 
-5) Luego, tendrás que phpMussel "gancho" para el sistema o CMS. Hay varias maneras en que usted puede "gancho" scripts como phpMussel a su sistema o CMS, pero lo más fácil es simplemente incluir el script al principio de un núcleo archivo de su sistema o CMS (uno que va por lo general siempre se va cargado cuando alguien accede cualquier página a través de su website) utilizando un require() o include() comando. Por lo general, esto va ser algo almacenado en un directorio como `/includes`, `/assets` o `/functions`, y será menudo llamado algo así como `init.php`, `common_functions.php`, `functions.php` o similar. Vas a tener que averiguar qué archivo se por su situación; Si se encuentra con dificultades en la determinación de esto por ti mismo, visite los phpMussel foros de soporte y háganos saber; Es posible que sea yo u otro usuario puede tener experiencia con el CMS que está utilizando (que necesita para hacernos saber que CMS está utilizando), y por lo tanto, puede ser capaz de proporcionar alguna ayuda en esta área. Para ello [utilizar require() o include()], inserte la siguiente línea de código al principio de ese núcleo archivo, con sustitución de la string contenida dentro las comillas con la exacta dirección del `phpmussel.php` archivo (local dirección, no la HTTP dirección; que será similar a la `vault` dirección mencionó anteriormente).
+5) Luego, tendrás que phpMussel "gancho" para el sistema o CMS. Hay varias maneras en que usted puede "gancho" scripts como phpMussel a su sistema o CMS, pero lo más fácil es simplemente incluir el script al principio de un núcleo archivo de su sistema o CMS (uno que va en general siempre se va cargado cuando alguien accede cualquier página a través de su website) utilizando un `require()` o `include()` comando. Por lo general, esto va ser algo almacenado en un directorio como `/includes`, `/assets` o `/functions`, y será menudo llamado algo así como `init.php`, `common_functions.php`, `functions.php` o similar. Vas a tener que averiguar qué archivo se por su situación; Si se encuentra con dificultades en la determinación de esto por ti mismo, visite los phpMussel foros de soporte y háganos saber; Es posible que sea yo u otro usuario puede tener experiencia con el CMS que está utilizando (que necesita para hacernos saber que CMS está utilizando), y por lo tanto, puede ser capaz de proporcionar alguna ayuda en esta área. Para ello [utilizar `require()` o `include()`], inserte la siguiente línea de código al principio de ese núcleo archivo, con sustitución de la string contenida dentro las comillas con la exacta dirección del `phpmussel.php` archivo (local dirección, no la HTTP dirección; que será similar a la `vault` dirección mencionó anteriormente).
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
-Guardar archivo, cerrarla, recargar.
+Guardar archivo, cerrarla, resubir.
 
 -- O ALTERNATIVAMENTE --
 
@@ -65,7 +65,7 @@ O esto en el `.htaccess` archivo:
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"`
 
-6) Con eso, ya está! Pero, probablemente deberías preubalo para asegurarse de que está funcionando correctamente. Para probar archivos carga protecciones, probar cargar los prueba archivos incluidos en el paquete dentro `_testfiles` a su website a través de sus habituales navegador basado cargar métodos. Si todo funciona correctamente, un mensaje debe aparecer de phpMussel confirmando que la carga ha sido bloqueada con éxito. Si nada aparece, algo no está funcionando correctamente. Si está utilizando cualquiera de las avanzadas funciones o si está utilizandolos otros tipos de escaneo posible, Sugiero probarlo con aquellos a asegurarse de que funciona como se espera, también.
+6) Con eso, ya está! Pero, probablemente deberías preubalo para asegurarse de que está funcionando correctamente. Para probar archivos subidos protecciones, probar subir los prueba archivos incluidos en el paquete dentro `_testfiles` a su website a través de sus habituales navegador basado subir métodos. Si todo funciona correctamente, un mensaje debe aparecer de phpMussel confirmando que la subido ha sido bloqueada con éxito. Si nada aparece, algo no está funcionando correctamente. Si está utilizando cualquiera de las avanzadas funciones o si está utilizandolos otros tipos de escaneo posible, Sugiero probarlo con aquellos a asegurarse de que funciona como se espera, también.
 
 ---
 
@@ -91,7 +91,7 @@ Espero para agilizar este proceso al hacer un instalador en algún momento en un
 
 phpMussel es un script diseñado para funcionar adecuadamente, inmediatamente, con mínimo nivel de requisitos en su nombre: Cuando se ha instalado, básicamente, lo simplemente debería funcionar.
 
-Escaneo de archivos cargas es automatizado y activado como estándar, así, nada se requerida en su nombre por esta particular función.
+Escaneo de archivos subidos es automatizado y activado como estándar, así, nada se requerida en su nombre por esta particular función.
 
 Pero, también es capaz instruirá phpMussel para escanear archivos, directorios o compactados archivos usted especifique implícitamente. Para ello, primeramente, usted tendrá asegurarse de que la adecuada configuración se establece el la `phpmussel.ini` archivo (cleanup debe estar desactivado), y cuando hecho, en un PHP archivo conectado a phpMussel, utilice la siguiente función en su código:
 
@@ -123,7 +123,7 @@ Si se encuentra algún falsos positivos, si se encuentra con algo nuevo que cree
 
 Para desactivar las firmas que se incluyen con phpMussel (por ejemplo, si usted está experimentando un falso positivo específico para sus propósitos que normalmente no debería ser suprimido), consulte las notas de la Greylist en el Navegador Comandos sección de este README archivo.
 
-Además del escaneo de archivos cargas y la opcional escaneo de otros archivos y/o directorios especificados a través de la función anterior, incluido en phpMussel es una función con el propósito para escanear el cuerpo de los email mensajes. Esta función se comporta de manera similar del estándar phpMussel() función, excepto centra únicamente contra las email basadas ClamAV firmas. No he conectada estas firmas en el estándar phpMussel() función, debido a que es improbable que usted encontrar el cuerpo de un entrante email mensaje en la necesidad el escaneo dentro un archivo carga dirigido a una página donde phpMussel está conectado, y por lo tanto, para conectar estas firmas en la phpMussel() función sería redundante. Pero, dicho esto, si tener una separada función contra estas firmas podría ser muy útil por algunos, especialmente por aquellos cuyos CMS o web sistema está conectado de alguna manera en su email sistema y para aquellos de los cuales analizar sus email mensajes a través de una php script de los que potencialmente podrían conectar en phpMussel. Configuración para esta función, como todos los demás, es controlado a través de `phpmussel.ini` archivo. Para utilizar esta función (va necesita para hacer su propia implementación), en una php archivo que está conectado a phpMussel, utilizar la siguiente función en el código:
+Además del escaneo de archivos subidos y la opcional escaneo de otros archivos y/o directorios especificados a través de la función anterior, incluido en phpMussel es una función con el propósito para escanear el cuerpo de los email mensajes. Esta función se comporta de manera similar del estándar phpMussel() función, excepto centra únicamente contra las email basadas ClamAV firmas. No he conectada estas firmas en el estándar phpMussel() función, debido a que es improbable que usted encontrar el cuerpo de un entrante email mensaje en la necesidad el escaneo dentro un archivo subido dirigido a una página donde phpMussel está conectado, y por lo tanto, para conectar estas firmas en la phpMussel() función sería redundante. Pero, dicho esto, si tener una separada función contra estas firmas podría ser muy útil por algunos, especialmente por aquellos cuyos CMS o web sistema está conectado de alguna manera en su email sistema y para aquellos de los cuales analizar sus email mensajes a través de una php script de los que potencialmente podrían conectar en phpMussel. Configuración para esta función, como todos los demás, es controlado a través de `phpmussel.ini` archivo. Para utilizar esta función (va necesita para hacer su propia implementación), en una php archivo que está conectado a phpMussel, utilizar la siguiente función en el código:
 
 `phpMussel_mail($cuerpo);`
 
@@ -152,7 +152,7 @@ También tenga en cuenta que phpMussel no es el funcional equivalente de una com
 Cuando phpMussel está instalado y funciona correctamente en su sistema, si ha configurado las variables script_password y logs_password en la configuración archivo, usted será capaz de realizar un limitado número de administrativas funciones y entrar de un número de comandos a phpMussel través de su navegador. La razón que estas contraseñas deben definida a fin de que estos navegador controles es para garantizar adecuada seguridad, adecuada protección para estos navegador controles y para asegurar que existe una manera en que estos navegador controles puede estar desactivado en su totalidad si no se desean por usted y/o otros webmasters/administradores usando phpMussel. Por lo tanto, en otras palabras, para permitir estos controles, definir un contraseña, y para desactivar estos controles, no definir ninguna contraseña. Alternativamente, si usted decide para activar estos controles y luego optar para desactivar estos controles en una fecha posterior, hay un comando para hacerlo (tal puede ser útil si realiza algunas acciones que usted se sienta potencialmente podrían comprometer las contraseñas delegadas y necesitas de desactivar rápidamente estos controles sin modificar la configuración archivo).
 
 Algunas de las razones por las que _**DEBE**_ permitir estos controles:
-- Proporciona una fácil manera de greylist firmas en casos tales como cuando se descubre una firma que se produce un falso positivo mientras que cargar archivos a su sistema y usted no tiene tiempo para editar manualmente y recargar su archivo de greylist firmas.
+- Proporciona una fácil manera de greylist firmas en casos tales como cuando se descubre una firma que se produce un falso positivo mientras que subir archivos a su sistema y usted no tiene tiempo para editar manualmente y resubir su archivo de greylist firmas.
 - Proporciona una fácil manera de usted permite que alguien no sea usted para controlar su copia de phpMussel sin el implícita necesidad de concederles acceso a FTP.
 - Proporciona una fácil manera para proporcionar acceso controlado a los registros archivos.
 - Proporciona una fácil manera para actualizar phpMussel cuando haya actualizaciones disponibles.
@@ -209,7 +209,7 @@ enable
 
 update
 - Contraseña necesario: script_password
-- Otros requisitos: update.dat and update.inc must exist.
+- Otros requisitos: `update.dat` y `update.inc` deben existir.
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
 - Ejemplo: `?pword=[script_password]&phpmussel=update`
@@ -220,7 +220,7 @@ greylist
 - Otros requisitos: (nada)
 - Parámetros necesarios: [Nombre de la firma para la greylist]
 - Parámetros opcionales: (nada)
-- Ejemplo: `?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]`
+- Ejemplo: `?pword=[script_password]&phpmussel=greylist&musselvar=[Firma]`
 - Qué hace: Agregar una firma a la greylist.
 
 greylist_clear
@@ -257,7 +257,7 @@ La siguiente es una lista de todos los archivos que debería haberse incluido en
 
 Archivo                                    | Descripción
 -------------------------------------------|--------------------------------------
-/phpmussel.php                             | Cargador archivo. Carga la principal script, actualizador, etcétera. Esto es lo que se supone debe enganchando (esencial)!
+/phpmussel.php                             | Cargador archivo. Lo cargar el principal script, el actualizador, etcétera. Esto es lo que se supone debe enganchando (esencial)!
 /web.config                                | Un ASP.NET configuración archivo (en este caso, para proteger la `/vault` directorio contra el acceso de fuentes no autorizadas en el caso de que la script está instalado en un servidor basado en ASP.NET tecnologías).
 /_docs/                                    | Documentación directorio (contiene varios archivos).
 /_docs/change_log.txt                      | Un registro de los cambios realizados en la principal script entre las diferentes versiones (no se requiere para lo adecuado funcionalidad de la script).
@@ -269,8 +269,9 @@ Archivo                                    | Descripción
 /_docs/readme.it.txt                       | Documentación: ITALIANO
 /_docs/readme.nl.txt                       | Documentación: NEDERLANDSE
 /_docs/readme.pt.txt                       | Documentación: PORTUGUÊS
+/_docs/readme.ru.txt                       | Documentación: РУССКИЙ
 /_docs/signatures_tally.txt                | Cifra neta de cambio de las incluidas firmas (no se requiere para lo adecuado funcionalidad de la script).
-/_testfiles/                               | Prueba archivos directorio (contiene varios archivos). Todos los archivos contenidos son prueba archivos para probando si phpMussel ha sido instalado correctamente en su sistema, y que no es necesario cargar este directorio o cualquiera de sus archivos excepto cuando haciendo tales pruebas.
+/_testfiles/                               | Prueba archivos directorio (contiene varios archivos). Todos los archivos contenidos son prueba archivos para probando si phpMussel ha sido instalado correctamente en su sistema, y que no es necesario subir este directorio o cualquiera de sus archivos excepto cuando haciendo tales pruebas.
 /_testfiles/ascii_standard_testfile.txt    | Prueba archivo para probando phpMussel normalizados ASCII firmas.
 /_testfiles/coex_testfile.rtf              | Prueba archivo para probando phpMussel complejos extendidas firmas.
 /_testfiles/exe_standard_testfile.exe      | Prueba archivo para probando phpMussel PE firmas.
@@ -410,7 +411,7 @@ Archivo                                    | Descripción
 /vault/phpmussel.inc                       | Núcleo Script; La principal cuerpo de phpMussel (esencial)!
 /vault/phpmussel.ini                       | Configuración archivo; Contiene todas las configuración opciones para phpMussel, instruyendo para qué hacer y cómo operar correctamente (esencial)!
 ※ /vault/scan_log.txt                     | Un registro de todo escaneada por phpMussel.
-※ /vault/scan_kills.txt                   | Un registro de todos archivos cargas bloqueado/asesinado por phpMussel.
+※ /vault/scan_kills.txt                   | Un registro de todos archivos subidos bloqueado/asesinado por phpMussel.
 /vault/swf_clamav_regex.cvd                | Archivo para Shockwave firmas.
 /vault/swf_clamav_regex.map                | Archivo para Shockwave firmas.
 /vault/swf_clamav_standard.cvd             | Archivo para Shockwave firmas.
@@ -420,8 +421,9 @@ Archivo                                    | Descripción
 /vault/swf_mussel_regex.cvd                | Archivo para Shockwave firmas.
 /vault/swf_mussel_standard.cvd             | Archivo para Shockwave firmas.
 /vault/switch.dat                          | Esto controla y establece ciertas variables.
-/vault/template.html                       | Template archivo; Template para HTML salida producida por phpMussel por sus bloqueados cargas archivos mensaje (el mensaje visto por el cargador).
-/vault/update.dat                          | Archivo que contiene la versión información tanto para la phpMussel script y para la phpMussel firmas. Si alguna vez desea actualizar automáticamente phpMussel o desea actualizar phpMusel través de su navegador, este archivo es esencial.
+/vault/template.html                       | Plantilla archivo; Plantilla para HTML producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
+/vault/template_custom.html                | Plantilla archivo; Plantilla para HTML producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
+/vault/update.dat                          | Archivo que contiene la versión información tanto para la phpMussel script y para la phpMussel firmas. Si alguna vez desea actualizar automáticamente phpMussel o desea actualizar phpMussel través de su navegador, este archivo es esencial.
 /vault/update.inc                          | Actualización Script; Requerido para automáticas actualizaciones y para actualizando phpMussel través de su navegador, pero no es requerido por lo demás.
 /vault/whitelist_clamav.cvd                | Archivo específico whitelist.
 /vault/whitelist_custom.cvd                | Archivo específico whitelist.
@@ -472,23 +474,23 @@ General configuración para phpMussel.
 - El mismo como script_password, pero para ver el contenido de scan_log y scan_kills. Tener contraseñas separado puede ser útil si usted desea dar alguna otra persona acceso a un conjunto de funciones, pero no el otro. - No tiene influencia en CLI modo.
 
 "cleanup"
-- Despejar la script variables y la caché después de la ejecución. Si usted no está utilizando la script más allá de inicial escaneando de archivos cargas, debe definir como sí, para minimizar el uso de memoria. Si usted está utilizando la script para propósitos más allá de inicial escaneando de archivos cargas, debe definir como no, para evitar recargar innecesariamente duplicados datos en la memoria. En general práctica, probablemente debería definirse como sí, pero, si usted hace esto, usted no será capaz de utilizar la script para cualquier cosa otro que de escaneando archivos cargas.
+- Despejar la script variables y la caché después de la ejecución. Si usted no está utilizando la script más allá de inicial escaneando de archivos subidos, debe definir como sí, para minimizar el uso de memoria. Si usted está utilizando la script para propósitos más allá de inicial escaneando de archivos subidos, debe definir como no, para evitar recargar innecesariamente duplicados datos en la memoria. En general práctica, probablemente debería definirse como sí, pero, si usted hace esto, usted no será capaz de utilizar la script para cualquier cosa otro que de escaneando archivos subidos.
 - No tiene influencia en CLI modo.
 
 "scan_log"
 - Nombre del archivo para registrar todos los resultados de la escaneo en. Especifique un archivo nombre, o dejar en blanco para desactivar.
 
 "scan_kills"
-- Nombre del archivo para registrar todos bloqueados o matados cargas en. Especifique un archivo nombre, o dejar en blanco para desactivar.
+- Nombre del archivo para registrar todos bloqueados o matados subidos para. Especifique un archivo nombre, o dejar en blanco para desactivar.
 
 "ipaddr"
 - Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales) Predefinido = REMOTE_ADDR. AVISO: No cambie esto a menos que sepas lo que estás haciendo!
 
 "forbid_on_block"
-- Debería phpMussel enviar 403 header con la bloqueados archivos cargas mensaje, o quedarse con los usual 200 OK? 0 = No (200) [Predefinido], 1 Sí (403).
+- Debería phpMussel enviar 403 header con la bloqueados archivos subidos mensaje, o quedarse con los usual 200 OK? 0 = No (200) [Predefinido], 1 Sí (403).
 
 "delete_on_sight"
-- Activando esta directiva instruirá la script para intentar para eliminar inmediatamente cualquier escaneado intentado archivo cargas ajustando a los criterios de detección, si través de firmas o de otras maneras. Archivos determinados como limpia no serán tocados. En el caso de los compactados archivos, la totalidad del compactado archivo será eliminado (independientemente de si el archivo infractor es sólo uno de varios archivos contenida dentro del compactado archivo). Para el caso de archivo carga escaneo, en general, no es necesario activar esta opción, porque en general, php purgará automáticamente el contenido de su caché cuando la ejecución ha terminado, lo que significa que lo en general va eliminar cualquier archivos cargados a través de él con el servidor a no ser que se han movido, copiado o eliminado ya. La opción se añade aquí como una medida adicional de seguridad para el adicional paranoide y para aquellos cuyas copias de php no siempre se comportan de la manera prevista. 0 - Después escaneando, dejar el archivo solo [Predefinido], 1 - Después escaneando, si no se limpia, eliminar inmediatamente.
+- Activando esta directiva instruirá la script para intentar para eliminar inmediatamente cualquier escaneados intentados archivos subidos emparejando a los criterios de detección, si través de firmas o de otras maneras. Archivos determinados como limpia no serán tocados. En el caso de los compactados archivos, la totalidad del compactado archivo será eliminado (independientemente de si el emparejando archivo es sólo uno de muchos varios archivos contenida dentro del compactado archivo). Para el caso de archivo subir escaneo, en general, no es necesario activar esta directiva, porque en general, php purgará automáticamente el contenido de su caché cuando la ejecución ha terminado, significando que lo en general eliminará cualquier archivos subidos a través de él con el servidor a no ser que se han movido, copiado o eliminado ya. La directiva se añade aquí como una medida adicional de seguridad para aquellos cuyas copias de php no siempre se comportan de la manera esperada. 0 - Después escaneando, dejar el archivo solo [Predefinido], 1 - Después escaneando, si no se limpia, eliminar inmediatamente.
 
 "lang"
 - Especifique la predefinido del lenguaje para phpMussel.
@@ -500,7 +502,7 @@ General configuración para phpMussel.
 - La `lang_acceptable` directiva instruye a phpMussel qué idiomas puede ser aceptada por el script de parte de `lang` o de parte de `HTTP_ACCEPT_LANGUAGE`. Esta directiva **SÓLO** debe ser modificada si va a añadir sus propios personalizados idiomas archivos o retirando por la fuerza los idiomas archivos. La directiva es una cadena separada por comas de los códigos utilizados por los idiomas aceptados por el script.
 
 "quarantine_key"
-- phpMussel es capaz de poner en cuarentena intentado archivo cargas en aisladamente dentro de la phpMussel vault, si esto es algo que usted quiere que haga. Usuarios casual de phpMussel de los cuales simplemente desean proteger sus website o hosting ambiente sin tener ningún interés con analizando profundamente cualquier marcados intentados archivos cargas debería dejar esta funcionalidad desactivado, pero cualquier usuarios interesados en más análisis de marcados intentados archivos cargas para la investigación de malware o para cosas similares debe activar esta funcionalidad. Cuarentenando de marcados intentados archivos cargas a veces puede también ayudar en la depuración de falsos positivos, si esto es algo que ocurre con frecuencia para usted. Para desactivar la cuarentena funcionalidad, simplemente dejar la directiva `quarantine_key` vacío, o borrar el contenidos de que directiva si no está ya vacío. Para activar la cuarentena funcionalidad, entrar algún valor en la directiva. La `quarantine_key` es un importante característica de seguridad de la cuarentena funcionalidad requiere como un medio para la prevención de la explotación de la cuarentena funcionalidad por potenciales atacantes y como un medio de evitar cualquier potencial ejecución de los datos almacenados dentro la cuarentena. La "quarantine_key" debería ser tratado de la misma manera que sus contraseñas: El más grande es el mejor, y guárdela bien. Para un mejor efecto, utilice conjuntamente con "delete_on_sight".
+- phpMussel es capaz de poner en cuarentena intentados archivos subidos en aisladamente dentro de la phpMussel vault, si esto es algo que usted quiere que haga. Usuarios casual de phpMussel de los cuales simplemente desean proteger sus website o hosting ambiente sin tener ningún interés con analizando profundamente cualquier marcados intentados archivos subidos debería dejar esta funcionalidad desactivado, pero cualquier usuarios interesados en más análisis de marcados intentados archivos subidos para la investigación de malware o para cosas similares debe activar esta funcionalidad. Cuarentenando de marcados intentados archivos subidos a veces puede también ayudar en la depuración de falsos positivos, si esto es algo que ocurre con frecuencia para usted. Para desactivar la cuarentena funcionalidad, simplemente dejar la directiva `quarantine_key` vacío, o borrar el contenidos de que directiva si no está ya vacío. Para activar la cuarentena funcionalidad, entrar algún valor en la directiva. La `quarantine_key` es un importante característica de seguridad de la cuarentena funcionalidad requiere como un medio para la prevención de la explotación de la cuarentena funcionalidad por potenciales atacantes y como un medio de evitar cualquier potencial ejecución de los datos almacenados dentro la cuarentena. La `quarantine_key` debería ser tratado de la misma manera que sus contraseñas: El más grande es el mejor, y guárdela bien. Para un mejor efecto, utilice conjuntamente con `delete_on_sight`.
 
 "quarantine_max_filesize"
 - El máximo archivo tamaño permitido para archivos para ser cuarentenada. Archivos que superen el valor especificado aquí NO serán cuarentenada. Esta directiva es importante como un medio de hacer que sea más difícil para cualquier potenciales atacantes a inundar su cuarentena con datos no deseados que puede causar el excesivo uso de datos en su hosting servicio. Valor es en KB. Predefinido =2048 =2048KB =2MB.
@@ -509,7 +511,7 @@ General configuración para phpMussel.
 - El máxima uso de memoria permitida para la cuarentena. Si la total memoria utilizada por la cuarentena alcanza este valor, los más antiguos cuarentenado archivos serán eliminado hasta que la total memoria utilizada ya no alcanza este valor. Esta directiva es importante como un medio de hacer que sea más difícil para cualquier potenciales atacantes a inundar su cuarentena con datos no deseados que puede causar el excesivo uso de datos en su hosting servicio. Valor es en KB. Predefinido =2048 =2048KB =2MB.
 
 "honeypot_mode"
-- Cuando la honeypot modo está activado, phpMussel intentará cuarentenar cada archivo carga que encuentra, independientemente de si o no el archivo que se está cargado coincide con las firmas incluídas, y no real escanear o análisis de esos intentados archivos cargas van a ocurrir. Esta funcionalidad debe ser útil para aquellos que deseen utilizar phpMussel a los efectos del virus/malware investigación, pero no se recomendado activar esta funcionalidad si el uso de phpMussel por el usuario es para real archivo carga escaneando ni recomendado usar la honeypot funcionalidad para fines otro que de la honeypot. Por predefinido, esta opción está desactivada. 0 = Desactivado [Predefinido], 1 = Activado.
+- Cuando la honeypot modo está activado, phpMussel intentará cuarentenar cada archivos subidos que encuentra, independientemente de si o no el archivo que se está subido coincide con las firmas incluídas, y no real escanear o análisis de esos intentados archivos subidos van a ocurrir. Esta funcionalidad debe ser útil para aquellos que deseen utilizar phpMussel a los efectos del virus/malware investigación, pero no se recomendado activar esta funcionalidad si el uso de phpMussel por el usuario es para real archivo subido escaneando ni recomendado usar la honeypot funcionalidad para fines otro que de la honeypot. Por predefinido, esta opción está desactivada. 0 = Desactivado [Predefinido], 1 = Activado.
 
 "scan_cache_expiry"
 - Por cuánto tiempo debe phpMussel caché de los resultados del escaneo? El valor es el número de segundos para almacenar en caché los resultados del escaneo. La predeterminado valor es 21600 segundos (6 horas); Un valor de 0 desactiva el almacenamiento en caché de los resultados del escaneo.
@@ -653,16 +655,16 @@ Firma cotejando longitud limitando opciones. Sólo cambiarlos si sabes lo que es
 General configuración para el manejo de archivos.
 
 "max_uploads"
-- Máximo permitido número de archivos para escanear durante archivo carga escaneo antes de abortando la escaneo e informando al usuario están cargando demasiado simultáneamente! Proporciona protección contra un teórico ataque por lo cual un atacante intenta DDoS su sistema o CMS por sobrecargando phpMussel para ralentizar el proceso de php a niveles inoperables. Recomendado: 10. Es posible que desee aumentar o reducir este número dependiendo de la velocidad de su hardware. Notar que este número no tiene en cuenta o incluir el contenidos de compactados archivos.
+- Máximo permitido número de archivos para escanear durante archivo subido escaneo antes de abortando la escaneo e informando al usuario están subir demasiado simultáneamente! Proporciona protección contra un teórico ataque por lo cual un atacante intenta DDoS su sistema o CMS por sobrecargando phpMussel para ralentizar el proceso de php a niveles inoperables. Recomendado: 10. Es posible que desee aumentar o reducir este número dependiendo de la velocidad de su hardware. Notar que este número no tiene en cuenta o incluir el contenidos de compactados archivos.
 
 "filesize_limit"
-- Límite del tamaño de archivos en KB. 65536 = 64MB [Predefinido], 0 = Sin límite (siempre en la greylist), cualquier (positivo) numérico valor aceptado. Esto puede ser útil cuando su php configuración limita la cantidad de memoria un proceso puede contener o si su php configuración limita el tamaño de archivo cargas.
+- Límite del tamaño de archivos en KB. 65536 = 64MB [Predefinido], 0 = Sin límite (siempre en la greylist), cualquier (positivo) numérico valor aceptado. Esto puede ser útil cuando su php configuración limita la cantidad de memoria un proceso puede contener o si su php configuración limita el tamaño de archivo subidos.
 
 "filesize_response"
 - Qué hacer con los archivos que superen el límite del tamaño de archivos (si existe). 0 - Whitelist, 1 - Blacklist [Predefinido].
 
 "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
-- Si su sistema sólo permite ciertos tipos de archivos para ser cargado, o si su sistema niega explícitamente ciertos tipos de archivos, especificando los tipos de archivos en la whitelist, blacklist y/o greylist puede aumentar la velocidad a que escaneando se realizado por permitiendo la script para saltar sobre ciertos tipos de archivos. Formato es CSV (comas separados valores). Si desea escanear todo, en lugar de utilizando la whitelist, blacklist o greylist, dejar las variables en blanco; haciendo tal desactivará la whitelist/blacklist/greylist.
+- Si su sistema sólo permite ciertos tipos de archivos para ser subido, o si su sistema niega explícitamente ciertos tipos de archivos, especificando los tipos de archivos en la whitelist, blacklist y/o greylist puede aumentar la velocidad a que escaneando se realizado por permitiendo la script para saltar sobre ciertos tipos de archivos. Formato es CSV (comas separados valores). Si desea escanear todo, en lugar de utilizando la whitelist, blacklist o greylist, dejar las variables en blanco; haciendo tal desactivará la whitelist/blacklist/greylist.
 - Lógico orden de procesamiento es:
   - Si el tipo de archivo está en la whitelist, no escanear y no bloquear el archivo, y no cotejar el archivo con la blacklist o la greylist.
   - Si el tipo de archivo está en la blacklist, no escanear el archivo, pero bloquearlo en todo caso, y no cotejar el archivo con la greylist.
@@ -704,7 +706,7 @@ Camaleón ataque detección: 0 = Desactivado, 1 = Activado.
 - Buscar para office documentos cuyo mágicos números son incorrectas (Soportado: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
 
 "chameleon_to_img"
-- Buscar para imágenes cuyo mágicos números son incorrectas (Soportado: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD).
+- Buscar para imágenes cuyo mágicos números son incorrectas (Soportado: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
 
 "chameleon_to_pdf"
 - Buscar para PDF archivos cuyo mágicos números son incorrectas.
@@ -713,10 +715,10 @@ Camaleón ataque detección: 0 = Desactivado, 1 = Activado.
 - Reconocido compactado archivo extensiones (formato es CSV; sólo debe agregar o eliminar cuando problemas ocurrir; eliminando innecesariamente puede causar falsos positivos a aparecer para compactados archivos, mientras añadiendo innecesariamente hará esencialmente whitelist que cuales eres añadiendo desde ataque específica detección; modificar con precaución; También notar que esto no tiene efecto en aquellos compactados archivos que pueden y no pueden ser analizado a contenido nivel). La lista, como es a predefinición, describe los formatos más comúnmente utilizados a través de la mayoría de sistemas y CMS, pero intencionalmente no es necesariamente exhaustiva.
 
 "general_commands"
-- Buscar contenidos de archivos para generales comandos como tal eval(), exec() y include()? 0 - No (no buscar) [Predefinido], 1 - Sí (buscar). Desactivar esta opción si tiene intención de cargando cualquiera de los siguientes para su sistema o CMS a través de su navegador: php, JavaScript, HTML, python, perl archivos y etcétera. Activar esta opción si usted no tiene cualquier adicional protección en su sistema y no tiene intención de cargando estos tipos de archivos. Si utiliza adicional seguridad junto con phpMussel como tal ZB Block, no hay necesidad de activar esta opción, porque la mayor parte de lo que phpMussel buscará (en el contexto de esta opción) son duplicaciones de protecciones que ya previsto.
+- Buscar contenidos de archivos para generales comandos como tal `eval()`, `exec()` y `include()`? 0 - No (no buscar) [Predefinido], 1 - Sí (buscar). Desactivar esta opción si tiene intención de subir cualquiera de los siguientes para su sistema o CMS a través de su navegador: php, JavaScript, HTML, python, perl archivos y etcétera. Activar esta opción si usted no tiene cualquier adicional protección en su sistema y no tiene intención de subir estos tipos de archivos. Si utiliza adicional seguridad junto con phpMussel como tal ZB Block, no hay necesidad de activar esta opción, porque la mayor parte de lo que phpMussel buscará (en el contexto de esta opción) son duplicaciones de protecciones que ya previsto.
 
 "block_control_characters"
-- Bloquear cualquier archivos que contenga cualquier control carácter (aparte de saltos de línea)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Si usted sólo cargar texto sin cualquier formato, usted puede activar esta opción para proporcionar alguna adicional protección para su sistema. Pero, si usted cargar cualquier cosa otro de texto sin cualquier formato, activando esto puede dar lugar a falsos positivos. 0 - No bloquear [Predefinido], 1 - Bloquear.
+- Bloquear cualquier archivos que contenga cualquier control carácter (aparte de saltos de línea)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Si usted sólo subir texto sin cualquier formato, usted puede activar esta opción para proporcionar alguna adicional protección para su sistema. Pero, si usted subir cualquier cosa otro de texto sin cualquier formato, activando esto puede dar lugar a falsos positivos. 0 - No bloquear [Predefinido], 1 - Bloquear.
 
 "corrupted_exe"
 - Corrompido archivos y procesamiento errores. 0 = Ignorar, 1 = Bloquear [Predefinido]. Detectar y bloquear potencialmente corrompido PE (Portátil Ejecutable) archivos? Frecuentemente (pero no siempre), cuando ciertos aspectos de un PE archivo están corrompido, dañados o no podrá ser analizado correctamente, lo puede ser indicativo de una infección viral. Los procesos utilizados por la mayoría de los antivirus programas para detectar un virus en PE archivos requerir analizando esos archivos en ciertas maneras, que, si el programador de un virus es consciente de, intentará específicamente para prevenir, con el fin de permitir su virus permanezca sin ser detectado.
@@ -725,7 +727,7 @@ Camaleón ataque detección: 0 = Desactivado, 1 = Activado.
 - Opcional limitación a la longitud de puros datos a que dentro de decodificación comandos deben ser detectados (en caso de que los hay notable rendimiento problemas mientras que escaneando). Valor es un entero número representando el tamaño de archivos en KB. Predefinido = 512 (512KB). Cero o nulo valor desactiva la limitación (eliminando cualquier tal limitación basado sobre la tamaño de archivos).
 
 "scannable_threshold"
-- Opcional limitación a la longitud de puros datos para que phpMussel se permitido leer y escanear (en caso de que los hay notable rendimiento problemas mientras que escaneando). Valor es un entero número representando el tamaño de archivos en KB. Predefinido = 32768 (32MB). Cero o nulo valor desactiva la limitación. En general, Este valor no debe ser inferior a la media tamaño de archivo cargas que desea y espera recibir a su servidor o website, no debe ser mayor que el filesize_limit directiva, y no debe ser más de aproximadamente una quinta parte de la total permisible memoria asignación concedida a php a través de la php.ini configuración archivo. Esta directiva existe para intratar prevenir phpMussel del uso de demasiada memoria (eso sería prevenir que sea capaz para escanear archivos con éxito encima de un cierto tamaño de archivos).
+- Opcional limitación a la longitud de puros datos para que phpMussel se permitido leer y escanear (en caso de que los hay notable rendimiento problemas mientras que escaneando). Valor es un entero número representando el tamaño de archivos en KB. Predefinido = 32768 (32MB). Cero o nulo valor desactiva la limitación. En general, Este valor no debe ser inferior a la media tamaño de archivos subidos que desea y espera recibir a su servidor o website, no debe ser mayor que el filesize_limit directiva, y no debe ser más de aproximadamente una quinta parte de la total permisible memoria asignación concedida a php a través de la php.ini configuración archivo. Esta directiva existe para intratar prevenir phpMussel del uso de demasiada memoria (eso sería prevenir que sea capaz para escanear archivos con éxito encima de un cierto tamaño de archivos).
 
 ####"compatibility" (Categoría)
 Compatibilidad directivas para phpMussel.
@@ -734,13 +736,13 @@ Compatibilidad directivas para phpMussel.
 - Esta directiva, en general, debe ser desactivado, a menos que se requiere para la correcta funcionalidad de phpMussel en su específico sistema. Normalmente, cuando está desactivado, cuando phpMussel detecta la presencia de elementos en la `$_FILES` array(), intentará iniciar un escaneo de los archivos que esos elementos representan, y, si esos elementos están blanco o vacío, phpMussel devolverá un mensaje de error. Este es el comportamiento natural para phpMussel. Pero, para algunos CMS, vacíos elementos en `$_FILES` puede ocurrir como resultado del comportamiento natural de los CMS, o errores pueden ser reportados cuando no existe ninguna, en cuyo caso, el comportamiento natural para phpMussel será interfiriendo con el comportamiento natural de los CMS. Si tal situación ocurre para usted, activando esta opción instruirá phpMussel no intentar iniciar un escaneo para tales vacíos elementos, ignorarlos cuando encontrado y no devuelva cualquier relacionado mensaje de error, así permitiendo la continuación de la página cargando. 0 - DESACTIVADO, 1 - ACTIVADO.
 
 "only_allow_images"
-- Si usted sólo esperas o sólo quieren permitir imágenes para ser cargado a su sistema o CMS, y si usted absolutamente no requiere cualquieres archivos otro que imágenes para ser cargado a su sistema o CMS, esta directiva debe ser activado, pero por lo demás debe ser desactivado. Si esta directiva está activada, se instruirá phpMussel para indiscriminadamente bloquear cualquieres cargas identificado como archivos que no son imagen, sin escaneandolos. Esto puede reducir el tiempo de procesamiento y el uso de memoria para intentado cargas de archivos que no son imagen. 0 - DESACTIVADO, 1 - ACTIVADO.
+- Si usted sólo esperas o sólo quieren permitir imágenes para ser subido a su sistema o CMS, y si usted absolutamente no requiere cualquieres archivos otro que imágenes para subir a su sistema o CMS, esta directiva debe ser activado, pero por lo demás debe ser desactivado. Si esta directiva está activada, se instruirá phpMussel para indiscriminadamente bloquear cualquieres subidos identificado como archivos que no son imagen, sin escaneandolos. Esto puede reducir el tiempo de procesamiento y el uso de memoria para intentados subidos de archivos que no son imagen. 0 - DESACTIVADO, 1 - ACTIVADO.
 
 ####"heuristic" (Categoría)
 Heurísticas directivas para phpMussel.
 
 "threshold"
-- Hay ciertas firmas de phpMussel eso tienen la intención de identificar sospechosas y potencialmente maliciosos cualidades de los archivos que se cargan sin que en ellos la identificación de los archivos que se cargan específicamente como malicioso. Este "threshold" (umbral) valor dice phpMussel qué lo máximo total peso de sospechosas y potencialmente maliciosos cualidades de los archivos que se cargan eso es permisible es antes de que esos archivos han de ser señalado como malicioso. La definición de peso en este contexto es el número total de sospechosas y potencialmente maliciosos cualidades identificados. Por predefinido, este valor es 3. Un valor inferior generalmente resultará en una mayor incidencia de falsos positivos pero un mayor número de archivos maliciosos siendo identificado, mientras un valor mayor generalmente resultará en una inferior incidencia de falsos positivos pero un inferior número de archivos maliciosos siendo identificado. Generalmente es mejor dejar este valor en su predefinido a menos que usted está experimentando problemas relacionados con ella.
+- Hay ciertas firmas de phpMussel eso tienen la intención de identificar sospechosas y potencialmente maliciosos cualidades de los archivos que se subido sin que en ellos la identificación de los archivos que se subido específicamente como malicioso. Este "threshold" (umbral) valor dice phpMussel qué lo máximo total peso de sospechosas y potencialmente maliciosos cualidades de los archivos que se subido eso es permisible es antes de que esos archivos han de ser señalado como malicioso. La definición de peso en este contexto es el número total de sospechosas y potencialmente maliciosos cualidades identificados. Por predefinido, este valor es 3. Un valor inferior generalmente resultará en una mayor incidencia de falsos positivos pero un mayor número de archivos maliciosos siendo identificado, mientras un valor mayor generalmente resultará en una inferior incidencia de falsos positivos pero un inferior número de archivos maliciosos siendo identificado. Generalmente es mejor dejar este valor en su predefinido a menos que usted está experimentando problemas relacionados con ella.
 
 ####"virustotal" (Categoría)
 Configuración para Virus Total integración.
@@ -765,6 +767,14 @@ Notar: Independientemente de sospecha nivel, cualquieres archivos que están en 
 
 "vt_quota_rate" y "vt_quota_time"
 - En acuerdo con la documentación de la Virus Total API, está limitado para un máximo de 4 solicitudes de cualquier naturaleza en cualquier 1 minuto período de tiempo. Si usted ejecuta un honeyclient, honeypot o cualquier otra automatización que va proporcionar recursos para Virus Total y no sólo recuperar los reportes usted tiene derecho a un más alta cuota. Por predefinido, phpMussel va adhiere estrictamente a estas limitaciones, pero debido a la posibilidad de estos limitaciones siendo aumentado, estas dos directivas son proporcionan como un manera para usted para indique para phpMussel en cuanto a qué limitaciones está debe adherirse a. A menos que usted ha estado indique que lo haga, está no es recomendable para usted para aumentar estos valores, pero, si ha tenido problemas relacionados con alcanzar su cuota, la disminución de estos valores _**PUEDE**_ a veces ayudarle para hacer frente a estos problemas. Su cuota es determinado como `vt_quota_rate` solicitudes de cualquier naturaleza en cualquier `vt_quota_time` minuto período de tiempo.
+
+####"template_data" (Category)
+Directivas/Variables para las plantillas y temas.
+
+Plantilla datos es relacionados a la HTML utilizado para generar el "Carga Negado" mensaje que muestra a los usuarios cuando una archivo subido está bloqueado. Si utiliza temas personalizados para phpMussel, HTML se obtiene a partir del `template_custom.html` archivo, y para de otra manera, HTML se obtiene a partir del `template.html` archivo. Variables escritas a esta sección de la configuración archivo se procesado para el HTML a través de la sustitución de los nombres de variables circunfijo por llaves que se encuentran dentro del HTML con el variable datos correspondiente. Por ejemplo, dónde `foo="bar"`, cualquier instancias de `<p>{foo}</p>` que se encuentran dentro del HTML se convertirá `<p>bar</p>`.
+
+"css_url"
+- El plantilla archivo para los temas personalizados utiliza externas CSS propiedades, mientras que el plantilla archivo para el predefinida tema utiliza internas CSS propiedades. Para instruir phpMussel de utilizar el plantilla archivo para temas personalizados, especificar el público HTTP dirección de sus temas personalizados CSS archivos utilizando la `css_url` variable. Si lo deja en blanco la variable, phpMussel utilizará el plantilla archivo para el predefinida tema.
 
 ---
 
@@ -798,6 +808,13 @@ Todos PE Secciónal firmas seguir el formato:
 `TAMAÑO:HASH:NOMBRE`
 
 Donde HASH es el MD5 hash de una sección del PE archivo, TAMAÑO es el total tamaño de esa sección y NOMBRE es el nombre a citar para esa firma.
+
+####*PE EXTENDIDAS FIRMAS*
+Todos PE extendidas firmas seguir el formato:
+
+`$VAR:HASH:TAMAÑO:NOMBRE`
+
+Donde $VAR es el nombre de la PE variable para comprobar contra, HASH es el MD5 hash de esa variable, TAMAÑO es el total tamaño de esa variable y NOMBRE es el nombre de citar para esa firma.
 
 ####*WHITELIST FIRMAS*
 Todos Whitelist firmas seguir el formato:
@@ -842,6 +859,7 @@ El siguiente es el desglose de los tipos de firmas utilizado por phpMussel:
 - "OLE Firmas" (ole_*). Cotejado contra los contenidos de cada OLE objeto que no está en la whitelist que es destinado para escaneando.
 - "PDF Firmas" (pdf_*). Cotejado contra los contenidos de cada PDF archivo que no está en la whitelist que es destinado para escaneando.
 - "Portátil Ejecutable Secciónal Firmas" (pe_*). Cotejado contra el MD5 hash y el tamaño de cada PE sección de cada archivo que no está en la whitelist que es destinado para escaneando.
+- "Portátil Ejecutable Extendidas Firmas" (pex_*). Cotejado contra el MD5 hash y el tamaño de las variables de cada archivo que no está en la whitelist que es destinado para escaneando.
 - "SWF Firmas" (swf_*). Cotejado contra los contenidos de cada Shockwave archivo que no está en la whitelist que es destinado para escaneando.
 - "Whitelist Firmas" (whitelist_*). Cotejado contra el MD5 hash de los contenidos y el tamaño de cada archivo que es destinado para escaneando. Cotejados archivos será inmune de ser cotejado por el tipo de firma mencionado en su entrada de la whitelist.
 - "XML/XDP-Chunk Firmas" (xmlxdp_*). Cotejado contra cualquier XML/XDP trozos encontrado dentro de cualquier archivo que no está en la whitelist que es destinado para escaneando.
@@ -918,4 +936,4 @@ Esta información ha sido actualizado 28 Mayo 2015 y es a hoy para todas las php
 ---
 
 
-Última Actualización: 8 Agosto 2015 (2015.08.08).
+Última Actualización: 14 Agosto 2015 (2015.08.14).

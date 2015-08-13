@@ -44,9 +44,7 @@
  atau akan mengalami nilai yang kurang baik <http://www.clamav.net/>.
 
  Khusus terima kasih kepada Sourceforge dan GitHub untuk menghost file proyek,
- terletak di <http://phpmussel.sourceforge.net/> dan
- <https://github.com/Maikuolan/phpMussel/>, kepada Spambot Security untuk
- menghost forum diskusi phpMussel, terletak di
+ kepada Spambot Security untuk menghost forum diskusi phpMussel, terletak di
  <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, dan kepada
  sumber-sumber tambahan tanda tangan dimanfaatkan oleh phpMussel:
  SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
@@ -55,8 +53,7 @@
  lain bahwa saya mungkin telah dinyatakan lupa untuk menyebutkan, dan kepada
  Anda, untuk menggunakan skrip.
 
- Dokumen ini dan paket yang terhubung di dalamnya dapat di unduh secara gratis
- dari:
+ Dokumen ini dan paket terhubung di dalamnya dapat di unduh secara gratis dari:
  - Sourceforge <http://phpmussel.sourceforge.net/>.
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
@@ -453,7 +450,7 @@
    ~
  update
    Sandi diharuskan: script_password
-   Keperluan lain: update.dat dan update.inc harus ada.
+   Keperluan lain: "update.dat" dan "update.inc" harus ada.
    Parameter-parameter yang diharuskan: (tidak ada)
    Parameter-parameter opsional: (tidak ada)
    Contoh: ?pword=[script_password]&phpmussel=update
@@ -481,7 +478,7 @@
    Parameter-parameter yang diharuskan: [Tanda tangan nama menjadi bertanda
                                         abu-abu]
    Parameter-parameter opsional: (tidak ada)
-   Contoh: ?pword=[script_password]&phpmussel=greylist&musselvar=[Tanda Tangan]
+   Contoh: ?pword=[script_password]&phpmussel=greylist&musselvar=[TandaTangan]
    ~
    Apa yang dilakukannya: Menambah tanda tangan pada daftar abu-abu.
    ~
@@ -551,6 +548,7 @@
  /_docs/readme.it.txt (Dokumentasi, Diikutkan); ITALIANO
  /_docs/readme.nl.txt (Dokumentasi, Diikutkan); NEDERLANDSE
  /_docs/readme.pt.txt (Dokumentasi, Diikutkan); PORTUGUÊS
+ /_docs/readme.ru.txt (Dokumentasi, Diikutkan); РУССКИЙ
     File-file baca saya (misalnya; file yang Anda sedang membaca).
     ~
  /_docs/signatures_tally.txt (Dokumentasi, Diikutkan)
@@ -858,6 +856,7 @@
     Kontrol dan set variabel tertentu.
     ~
  /vault/template.html (Lainnya, Diikutkan)
+ /vault/template_custom.html (Lainnya, Diikutkan)
     Data template phpMussel; Template untuk output HTML yang diproduksi oleh
     phpMussel untuk data pesan upload yang dibloknya (pesan dilihat oleh
     pengupload).
@@ -996,9 +995,8 @@
       otomatis menyatukan isi dari cache ketika eksekusi selesai, berarti bahwa
       dia akan selalu menghapus data terupload apapun melalui server jika tidak
       dipindahkan, dikopi atau dihapus sebelumnya. Opsi tersebut ditambahkan
-      di sini sebagai ukuran extra dari keamanan atau untuk paranoid ekstra dan
-      untuk semua yang mengkopi php yang tidak dapat bersikap pada perilaku
-      yang dimaksudkan.
+      di sini sebagai ukuran keamanan ekstra untuk semua salinan php yang tidak
+      selalu bersikap pada perilaku yang diharapkan.
       0 - Setelah pemindahaian, biarkan data [Default],
       1 - Setelah pemindaian, jika tidak bersih, hapus langsung.
     "lang"
@@ -1300,7 +1298,7 @@
      PPT, XLA, XLS, WIZ).
    "chameleon_to_img"
    - Cari gambar yang header nya tidak benar (Mendukung: BMP, DIB, PNG, GIF,
-     JPEG, JPG, XCF, PSD, PDD).
+     JPEG, JPG, XCF, PSD, PDD, WEBP).
    "chameleon_to_pdf"
    - Cari data PDF yang headernya tidak benar.
    "archive_file_extensions" dan "archive_file_extensions_wc".
@@ -1440,7 +1438,7 @@
      diminta, dan mengklik "Sign up" ketika dilakukan. Ikuti semua instruksi
      yang diberikan, dan ketika Anda punya kunci API umum Anda,
      menyalin/menempelkan bahwa kunci API umum untuk `vt_public_api_key`
-     direktif dari `phpmussel.ini` file konfigurasi.
+     direktif dari "phpmussel.ini" file konfigurasi.
    "vt_suspicion_level"
    - Secara default, phpMussel akan membatasi file dipindai menggunakan Virus
      Total API untuk file-file yang dianggap "mencurigakan". Anda dapat
@@ -1524,6 +1522,25 @@
      nilai-nilai ini kadang -DAPAT- membantu Anda bagi berurusan dengan
      masalah-masalah ini. Batas Anda ditentukan sebagai `vt_quota_rate`
      permintaan dalam bentuk apapun dalam jangka waktu `vt_quota_time` menit.
+ "template_data" (Category)
+ - Direktif-direktif dan variabel-variabel untuk template-template dan
+   tema-tema: Data template berkaitan untuk HTML diproduksi yang digunakan
+   untuk menghasilkan pesan "Upload Ditolak" yang ditampilkan kepada
+   pengguna-pengguna ketika file upload yang diblokir. Jika Anda menggunakan
+   tema kustom untuk phpMussel, HTML diproduksi yang bersumber dari file
+   "template_custom.html", dan sebaliknya, HTML diproduksi yang bersumber dari
+   file "template.html". Variabel ditulis untuk file konfigurasi bagian ini
+   yang diurai untuk HTML diproduksi dengan cara mengganti nama-nama variabel
+   dikelilingi dengan kurung keriting ditemukan dalam HTML diproduksi dengan
+   data variabel sesuai. Sebagai contoh, dimana foo="bar", setiap terjadinya
+   <p>{foo}</p> ditemukan dalam HTML diproduksi akan menjadi <p>bar</p>.
+   "css_url"
+   - File template untuk tema kustom menggunakan properti CSS eksternal,
+     sedangkan file template untuk tema default menggunakan properti CSS
+     internal. Untuk menginstruksikan phpMussel menggunakan file template untuk
+     tema kustom, menentukan alamat HTTP publik file CSS tema kustom Anda
+     menggunakan variable "css_url" variable. Jika Anda biarkan kosong variabel
+     ini, phpMussel akan menggunakan file template untuk tema default.
 
                                      ~ ~ ~
 
@@ -1554,6 +1571,13 @@
     UKURAN:HASH:NAMA
    Dimana HASH adalah MD5 dari seksi PE, UKURAN adalah total ukuran dari seksi
    PE dan NAMA adalah nama untuk mengutip tanda tangan tersebut.
+
+ = TANDA TANGAN DIPERPANJANG PE =
+   Semua tanda tangan diperpanjang PE mengikuti format ini:
+    $VAR:HASH:UKURAN:NAMA
+   Dimana $VAR adalah nama dari PE variabel untuk mencocokkan terhadap, HASH
+   adalah MD5 dari variabel, UKURAN adalah ukuran total dari variabel dan NAMA
+   adalah nama untuk mengutip tanda tangan tersebut.
 
  = TANDA TANGAN PUTIH =
    Semua tanda tangan putih mengikuti format ini:
@@ -1651,6 +1675,9 @@
    - "Tanda tangan Portable Executable Sectional" (pe_*). Dicek pada hash MD5
       dan ukuran dari seksi PE dari apapun file tidak bertanda putih,
       ditargetkan untuk dipindai dan dicocokkan ke format PE.
+   - "Tanda tangan diperpanjang portable executable" (pex_*). Dicek pada hash
+      MD5 dan ukuran dari variabel dari apapun file tidak bertanda putih,
+      ditargetkan untuk dipindai dan dicocokkan ke format PE.
    - "Tanda tangan SWF" (swf_*). Dicek pada isi dari apapun file Shockwave
       tidak bertanda putih.
    - "Tanda tangan Putih" (whitelist_*). Dicek pada hash MD5 dari isi dan
@@ -1745,5 +1772,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 8 Agustus 2015 (2015.08.08).
+Terakhir Diperbarui: 14 Agustus 2015 (2015.08.14).
 EOF

@@ -18,7 +18,7 @@
 
 ###1. <a name="SECTION1"></a>PRÉAMBULE
 
-Merci pour l'utiliser de phpMusel, un PHP script pour la détection de virus, malveillants logiciels et autres menaces dans les fichiers téléchargés sur votre système partout où le script est accroché, basé sur les signatures de ClamAV et autres.
+Merci pour l'utiliser de phpMussel, un PHP script pour la détection de virus, malveillants logiciels et autres menaces dans les fichiers téléchargés sur votre système partout où le script est accroché, basé sur les signatures de ClamAV et autres.
 
 PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPLv2 par Caleb M (Maikuolan).
 
@@ -49,7 +49,7 @@ J'ai l'intention de simplifier ce processus par la création d'un programme d'in
 
 4) CMHOD la `vault` répertoire à "777". Le principal répertoire qui est stocker le contenu (celui que vous avez choisi plus tôt), généralement, peut être laissé seul, mais CHMOD état devrait être vérifié si vous avez eu problèmes d'autorisations dans le passé sur votre système (par défaut, devrait être quelque chose comme "755").
 
-5) Suivant, vous aurez besoin de "crochet" phpMussel à votre système ou CMS. Il est plusieurs façons vous pouvez "crochet" phpMussel à votre système ou CMS, mais le plus simple est à simplement inclure le script au début d'un fichier de la base de données de votre système ou CMS (un qui va généralement toujours être chargé lorsque quelqu'un accède à n'importe quelle page sur votre website) utilisant un require() ou include() commande. Généralement, ce sera quelque chose de stocké dans un répertoire comme `/includes`, `/assets` ou `/functions`, et il sera souvent nommé quelque chose comme `init.php`, `common_functions.php`, `functions.php` ou similaire. Vous sera besoin à déterminer qui est le fichier c'est pour votre situation; Si vous rencontrez des difficultés dans déterminer de ce pour vous-même, visiter les phpMussel support forums et laissez-nous savoir; Il est possible que ce soit moi ou un autre utilisateur peuvent avoir de l'expérience avec le CMS que vous utilisez (vous aurez besoin pour nous faire savoir ce qui CMS vous utilisez), et ainsi, peut être en mesure de fournir une assistance pour cette question. Pour ce faire [à utiliser require() ou include()], insérez la ligne de code suivante au début de ce le noyau fichier et remplacer la string contenue à l'intérieur des guillemets avec l'exacte adresse le fichier `phpmussel.php` (l'adresse locale, pas l'adresse HTTP; il ressemblera l'adresse de `vault` mentionné précédemment).
+5) Suivant, vous aurez besoin de "crochet" phpMussel à votre système ou CMS. Il est plusieurs façons vous pouvez "crochet" phpMussel à votre système ou CMS, mais le plus simple est à simplement inclure le script au début d'un fichier de la base de données de votre système ou CMS (un qui va généralement toujours être chargé lorsque quelqu'un accède à n'importe quelle page sur votre website) utilisant un `require()` ou `include()` commande. Généralement, ce sera quelque chose de stocké dans un répertoire comme `/includes`, `/assets` ou `/functions`, et il sera souvent nommé quelque chose comme `init.php`, `common_functions.php`, `functions.php` ou similaire. Vous sera besoin à déterminer qui est le fichier c'est pour votre situation; Si vous rencontrez des difficultés dans déterminer de ce pour vous-même, visiter les phpMussel support forums et laissez-nous savoir; Il est possible que ce soit moi ou un autre utilisateur peuvent avoir de l'expérience avec le CMS que vous utilisez (vous aurez besoin pour nous faire savoir ce qui CMS vous utilisez), et ainsi, peut être en mesure de fournir une assistance pour cette question. Pour ce faire [à utiliser `require()` ou `include()`], insérez la ligne de code suivante au début de ce le noyau fichier et remplacer la string contenue à l'intérieur des guillemets avec l'exacte adresse le fichier `phpmussel.php` (l'adresse locale, pas l'adresse HTTP; il ressemblera l'adresse de `vault` mentionné précédemment).
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
@@ -209,7 +209,7 @@ enable
 
 update
 - Mot de passe requis: script_password
-- Autre exigences: update.dat and update.inc must exist.
+- Autre exigences: `update.dat` et `update.inc` doivent exister.
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
 - Exemple: `?pword=[script_password]&phpmussel=update`
@@ -269,6 +269,7 @@ Fichier                                    | Description
 /_docs/readme.it.txt                       | Documentation: ITALIANO
 /_docs/readme.nl.txt                       | Documentation: NEDERLANDSE
 /_docs/readme.pt.txt                       | Documentation: PORTUGUÊS
+/_docs/readme.ru.txt                       | Documentation: РУССКИЙ
 /_docs/signatures_tally.txt                | Décompte de signatures inclus (pas nécessaire pour le bon fonctionnement du script).
 /_testfiles/                               | Test fichiers répertoire (contient divers fichiers). Tous les fichiers contenus sont des fichiers à test si phpMussel a été correctement installé sur votre système, et vous n'avez pas besoin de télécharger ce répertoire ou l'un de ses fichiers, sauf si faire ces tests.
 /_testfiles/ascii_standard_testfile.txt    | Test fichier à test phpMussel normalisé ASCII signatures.
@@ -421,7 +422,8 @@ Fichier                                    | Description
 /vault/swf_mussel_standard.cvd             | Fichier pour les Shockwave signatures.
 /vault/switch.dat                          | Contrôle et définit certaines variables.
 /vault/template.html                       | Modèle fichier; Modèle pour l'HTML sortie produit par phpMussel pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
-/vault/update.dat                          | Fichier contenant les version informations pour le script et les signatures de phpMussel. Si jamais vous voulez à réactualiser automatiquement phpMussel ou réactualiser phpMusel par votre navigateur, ce fichier est indispensable.
+/vault/template_custom.html                | Modèle fichier; Modèle pour l'HTML sortie produit par phpMussel pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
+/vault/update.dat                          | Fichier contenant les version informations pour le script et les signatures de phpMussel. Si jamais vous voulez à réactualiser automatiquement phpMussel ou réactualiser phpMussel par votre navigateur, ce fichier est indispensable.
 /vault/update.inc                          | Réactualiser Script; Requis pour automatique réactualisation et pour réactualisation phpMussel par votre navigateur, mais n'est pas autrement requise.
 /vault/whitelist_clamav.cvd                | Fichier spécifique blanche liste.
 /vault/whitelist_custom.cvd                | Fichier spécifique blanche liste.
@@ -489,7 +491,7 @@ Configuration générale pour phpMussel.
 - Devrait phpMussel envoyer 403 têtes avec le fichier téléchargement bloqué message, ou rester avec l'habitude 200 bien (200 OK)? 0 = Non (200) [Défaut], 1 = Oui (403).
 
 "delete_on_sight"
-- Mise en cette option sera instruire le script à tenter immédiatement supprimer tout fichiers elle constate au cours de son analyse correspondant à des critères de détection, que ce soit via des signatures ou autrement. Fichiers jugées "propre" ne seront pas touchés. Dans le cas des archives, l'ensemble d'archive sera supprimé (indépendamment de si le incriminé fichier est que l'un de plusieurs fichiers contenus dans l'archive). Pour le cas d'analyse de fichiers téléchargement, généralement, il n'est pas nécessaire d'activer cette option sur, parce généralement, php faire purger automatiquement les contenus de son cache lorsque l'exécution est terminée, ce qui signifie que il va généralement supprimer tous les fichiers téléchargés à travers elle au serveur sauf qu'ils ont déménagé, copié ou supprimé déjà. L'option est ajoutée ici comme une supplémentaire mesure de sécurité pour le supplémentaire paranoïaque et pour ceux dont copies de php peut pas toujours se comporter de la manière attendu. 0 - Après l'analyse, laissez le fichier tel quel [Défaut], 1 - Après l'analyse, si pas propre, supprimer immédiatement.
+- Mise en cette option sera instruire le script à tenter immédiatement supprimer tout fichiers elle constate au cours de son analyse correspondant à des critères de détection, que ce soit via des signatures ou autrement. Fichiers jugées "propre" ne seront pas touchés. Dans le cas des archives, l'ensemble d'archive sera supprimé (indépendamment de si le incriminé fichier est que l'un de plusieurs fichiers contenus dans l'archive). Pour le cas d'analyse de fichiers téléchargement, généralement, il n'est pas nécessaire d'activer cette option sur, parce généralement, php faire purger automatiquement les contenus de son cache lorsque l'exécution est terminée, ce qui signifie que il va généralement supprimer tous les fichiers téléchargés à travers elle au serveur sauf qu'ils ont déménagé, copié ou supprimé déjà. L'option est ajoutée ici comme une supplémentaire mesure de sécurité pour ceux dont copies de php peut pas toujours se comporter de la manière attendu. 0 - Après l'analyse, laissez le fichier tel quel [Défaut], 1 - Après l'analyse, si pas propre, supprimer immédiatement.
 
 "lang"
 - Spécifier la défaut langue pour phpMussel.
@@ -501,7 +503,7 @@ Configuration générale pour phpMussel.
 - La `lang_acceptable` directive indique à phpMussel quelles langues peuvent être acceptées par le script de la part de `lang` ou de la part de `HTTP_ACCEPT_LANGUAGE`. Cette directive devrait **SEULEMENT** être modifié si vous ajoutez vos propres langues fichiers personnalisés ou retirer par force les langues fichiers. La directive est une chaîne de codes utilisés par ces langues acceptées par le script, délimité par des virgules.
 
 "quarantine_key"
-- phpMussel est capable de mettre en quarantaine le marqué fichier téléchargement tentatives en isolement au sein de la voûte de phpMussel, si cela est quelque chose que vous voulez qu'il fasse. L'utilisateurs de phpMussel qui souhaitent simplement de protéger leurs sites ou environnement d'hébergement sans avoir un profondément intérêt dans d'analyse de quelconque marqué fichier téléchargement tentatives devrait laisser cette fonctionnalité désactivée, mais tous les utilisateurs intéressés dans d'analyse plus approfondie de tenté fichier téléchargements pour la recherche des logiciels malveillants ou pour des choses semblables devraient permettre cette fonctionnalité. La quarantaine de marqué fichier téléchargement tentatives peut parfois aider également dans le débogage des faux positifs, si cela est quelque chose qui se produit fréquemment pour vous. Pour désactiver la fonctionnalité de quarantaine, il suffit de laisser la directive "quarantine_key" vide, ou effacer le contenu de cette directive si elle est pas déjà vide. Pour activer la fonctionnalité de quarantaine, entrer une valeur dans la directive. Le `quarantine_key` est une élément important de la sécurité de la fonctionnalité de quarantaine requis en tant que moyen de prévention de la fonctionnalité de quarantaine d'être exploités par des attaquants potentiels en tant que moyen de prévention toute potentielle exécution de données stockées dans la quarantaine. Le "quarantine_key" devrait être traité de la même manière que vos mots de passe: Le plus sera le mieux, et conservez-le bien. Pour un meilleur effet, utiliser en conjonction avec "delete_on_sight".
+- phpMussel est capable de mettre en quarantaine le marqué fichier téléchargement tentatives en isolement au sein de la voûte de phpMussel, si cela est quelque chose que vous voulez qu'il fasse. L'utilisateurs de phpMussel qui souhaitent simplement de protéger leurs sites ou environnement d'hébergement sans avoir un profondément intérêt dans d'analyse de quelconque marqué fichier téléchargement tentatives devrait laisser cette fonctionnalité désactivée, mais tous les utilisateurs intéressés dans d'analyse plus approfondie de tenté fichier téléchargements pour la recherche des logiciels malveillants ou pour des choses semblables devraient permettre cette fonctionnalité. La quarantaine de marqué fichier téléchargement tentatives peut parfois aider également dans le débogage des faux positifs, si cela est quelque chose qui se produit fréquemment pour vous. Pour désactiver la fonctionnalité de quarantaine, il suffit de laisser la directive `quarantine_key` vide, ou effacer le contenu de cette directive si elle est pas déjà vide. Pour activer la fonctionnalité de quarantaine, entrer une valeur dans la directive. Le `quarantine_key` est une élément important de la sécurité de la fonctionnalité de quarantaine requis en tant que moyen de prévention de la fonctionnalité de quarantaine d'être exploités par des attaquants potentiels en tant que moyen de prévention toute potentielle exécution de données stockées dans la quarantaine. Le `quarantine_key` devrait être traité de la même manière que vos mots de passe: Le plus sera le mieux, et conservez-le bien. Pour un meilleur effet, utiliser en conjonction avec `delete_on_sight`.
 
 "quarantine_max_filesize"
 - La maximum autorisée taille de fichiers mis en quarantaine. Fichiers au-dessus de cette valeur ne sera pas placé en quarantaine. Cette directive est un important moyen de rendre plus difficile pour des agresseurs potentiels d'inonder votre quarantaine avec des non désirées données ce qui pourrait causer l'emballement d'utilisation des données sur votre service d'hébergement. La valeur est en Ko. Défaut =2048 =2048Ko =2Mo.
@@ -705,7 +707,7 @@ Caméléon Attaque Détection: 0 = Désactivé, 1 = Activé.
 - Vérifier pour office documents dont têtes sont incorrects (Supporté: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
 
 "chameleon_to_img"
-- Vérifier pour images dont têtes sont incorrects (Supporté: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD).
+- Vérifier pour images dont têtes sont incorrects (Supporté: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
 
 "chameleon_to_pdf"
 - Vérifier pour PDF fichiers dont têtes sont incorrects.
@@ -714,7 +716,7 @@ Caméléon Attaque Détection: 0 = Désactivé, 1 = Activé.
 - Les extensions de reconnus archive fichiers (format est CSV; devraient ajouter ou supprimer seulement quand problèmes surviennent; supprimer inutilement peut entraîner des faux positifs à paraître pour archive fichiers, tandis que ajoutant inutilement sera essentiellement liste blanche ce que vous ajoutez à partir de l'attaque spécifique détection; modifier avec prudence; aussi noter que cela n'a aucun effet sur ce archives peut et ne peut pas être analysé au niveau du contenu). La liste, comme en cas de défaut, énumère les formats plus couramment utilisé dans la majorité des systèmes et CMS, mais volontairement pas nécessairement complète.
 
 "general_commands"
-- Vérifier de fichiers pour générales commandes comme eval(), exec() et include()? 0 - Non (pas vérifier) [Défaut], 1 - Oui (vérifier). Définir comme 0 (Non) si vous avez l'intention à télécharger de la suivant à votre système ou CMS via votre navigateur: php, JavaScript, HTML, python, perl fichiers etc. Définir comme 1 (Oui) si vous n'avez pas de supplémentaire protections sur votre système et n'ont pas l'intention de télécharger ces fichiers. Si vous utilisez une supplémentaire sécurité en conjonction avec phpMussel comme ZB Block, il n'est pas nécessaire d'activer cette option, parce la plupart de que phpMussel va chercher pour (dans le contexte de cette option) sont des duplications de protections qui sont déjà fournis.
+- Vérifier de fichiers pour générales commandes comme `eval()`, `exec()` et `include()`? 0 - Non (pas vérifier) [Défaut], 1 - Oui (vérifier). Définir comme 0 (Non) si vous avez l'intention à télécharger de la suivant à votre système ou CMS via votre navigateur: php, JavaScript, HTML, python, perl fichiers etc. Définir comme 1 (Oui) si vous n'avez pas de supplémentaire protections sur votre système et n'ont pas l'intention de télécharger ces fichiers. Si vous utilisez une supplémentaire sécurité en conjonction avec phpMussel comme ZB Block, il n'est pas nécessaire d'activer cette option, parce la plupart de que phpMussel va chercher pour (dans le contexte de cette option) sont des duplications de protections qui sont déjà fournis.
 
 "block_control_characters"
 - Bloquer tous les fichiers contenant des contrôle caractères (autre que les sauts de ligne)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Si vous êtes _**SEULEMENT**_ télécharger de brut texte fichiers, puis vous pouvez activer cette option à fournir une supplémentaire protection à votre système. Mais, si vous télécharger quelque chose plus que brut texte, l'activation de cette peut créer faux positifs. 0 - Ne pas bloquer [Défaut], 1 - Bloquer.
@@ -767,6 +769,14 @@ Noter: Indépendamment du niveau de suspicion, tous les fichiers qui sont sur la
 "vt_quota_rate" et "vt_quota_time"
 - Selon le Virus Total API documentation, elle est limitée à au plus 4 demandes de toute nature dans un laps de 1 minute de temps. Si vous exécutez un honeyclient, honeypot ou autre automatisation qui va fournir les ressources pour Virus Total et pas seulement récupérer des rapports vous avez droit à un plus élevée demande quota. Par défaut, phpMussel va adhérer strictement à ces limitations, mais en raison de la possibilité de ces quotas étant augmenté, ces deux directives sont fournies comme un moyen pour vous d'instruire phpMussel à quelle limite il faut adhérer. Sauf si vous avez été invité à le faire, on ne recommande pas pour vous d'augmenter ces valeurs, mais, si vous avez rencontré des problèmes relatifs à atteindre votre quota, diminuant ces valeurs _**PEUT**_ parfois vous aider dans le traitement de ces problèmes. Votre quota est déterminée comme `vt_quota_rate` demandes de toute nature dans un laps de `vt_quota_time` minute de temps.
 
+####"template_data" (Category)
+Directives/Variables pour les modèles et thèmes.
+
+Modèles données est liée à la sortie HTML utilisé pour générer le "Téléchargement Refusé" message affiché aux utilisateurs sur un fichier téléchargement est bloqué. Si vous utilisez des thèmes personnalisés pour phpMussel, sortie HTML provient du `template_custom.html` fichier, et sinon, sortie HTML provient du `template.html` fichier. Variables écrites à cette section du configuration fichier sont préparé pour la sortie HTML par voie de remplacer tous les noms de variables circonfixé par accolades trouvés dans la sortie HTML avec les variables données correspondant. Par exemple, où `foo="bar"`, toute instance de `<p>{foo}</p>` trouvés dans la sortie HTML deviendra `<p>bar</p>`.
+
+"css_url"
+- Le modèle fichier pour des thèmes personnalisés utilise les propriétés CSS externes, tandis que le modèle fichier pour le défaut thème utilise les propriétés CSS internes. Pour instruire phpMussel d'utiliser le modèle fichier pour des thèmes personnalisés, spécifier l'adresse HTTP public de votre thèmes personnalisés CSS fichiers utilisant le `css_url` variable. Si vous laissez cette variable vide, phpMussel va utiliser le modèle fichier pour le défaut thème.
+
 ---
 
 
@@ -799,6 +809,13 @@ Toutes les PE Sectional signatures suivez le format:
 `TAILLE:HASH:NOM`
 
 Où HASH est le MD5 hash d'un section du PE fichier, TAILLE est la totale taille de cet section et NOM est le nom à citer pour la signature.
+
+####*PE ÉTENDUES SIGNATURES*
+Toutes les PE étendues signatures suivez le format:
+
+`$VAR:HASH:TAILLE:NOM`
+
+Où $VAR est le nom de la PE variable à comparer contre, HASH est le MD5 hachage de cette variable, TAILLE est la taille totale de cette variable et NOM est le nom de à pour cette signature.
 
 ####*BLANCHE LISTE SIGNATURES*
 Toutes les blanche liste signatures suivez le format:
@@ -842,7 +859,8 @@ Ce qui suit est un détail des types de signatures utilisées par phpMussel:
 - "Archives Métadonnées Signatures" (metadata_*). Vérifié contre le CRC32 hash et taille de l'initial fichier contenu à l'intérieur de toute archive non listé blanche et ciblée pour d'analyse.
 - "OLE Signatures" (ole_*). Vérifié contre les contenus de chaque objet non listé blanche et ciblée pour d'analyse.
 - "PDF Signatures" (pdf_*). Vérifié contre les contenus de chaque PDF fichier non listé blanche.
-- "Portable Executable Sectional Signatures" (pe_*). Vérifié contre le taille et l'MD5 hash des sections de chaque PE fichier non listé blanche, ciblée pour l'analyse et identifié au PE format.
+- "Portable Executable Sectional Signatures" (pe_*). Vérifié contre le taille et l'MD5 hash des sections de chaque fichier non listé blanche, ciblée pour l'analyse et identifié au PE format.
+- "Portable Executable Étendues Signatures" (pex_*). Vérifié contre le taille et l'MD5 hash des variables de chaque fichier non listé blanche, ciblée pour l'analyse et identifié au PE format.
 - "SWF Signatures" (swf_*). Vérifié contre les contenus de chaque Shockwave fichier non listé blanche.
 - "Blanche Liste Signatures" (whitelist_*). Vérifié contre le MD5 hash des contenus et la taille de chaque fichier ciblée pour d'analyse. Les identifiés fichiers sera immunitaire d'être identifié par le type de signature mentionné dans leur entrée de blanche liste.
 - "XML/XDP Morceaux Signatures" (xmlxdp_*). Vérifié contre de chaque XML/XDP morceaux trouvés dans tout fichier non listé blanche et ciblée pour l'analyse.
@@ -919,4 +937,4 @@ Cette information a été réactualisé le 28 Mai 2015 et est courant pour toute
 ---
 
 
-Dernière Réactualisé: 8 Août 2015 (2015.08.08).
+Dernière Réactualisé: 14 Août 2015 (2015.08.14).

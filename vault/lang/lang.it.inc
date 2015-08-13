@@ -3,20 +3,18 @@
  <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
      |       |     | |       |  |  | |_____| ______| ______| |______ |_____
 
- Grazie per aver scelto phpMussel, un programma in PHP progettato per rilevare
- trojan, virus, malware ed altre minacce nei file caricati sul tuo sistema
- dovunque il programma stesso è collegato, basato sulle firme di ClamAV ed
- altri.
+ Thank you for using phpMussel, a PHP script designed to detect trojans,
+ viruses, malware and other threats within files uploaded to your system
+ wherever the script is hooked, based on the signatures of ClamAV and others.
 
- PHPMUSSEL COPYRIGHT 2013 e oltre GNU/GPL V.2 Caleb M (Maikuolan).
+ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
 
- Questo documento ed il pacchetto associtato ad esso possono essere scaricati
- liberamente da:
+ This document and its associated package can be downloaded for free from:
  - Sourceforge <http://phpmussel.sourceforge.net/>.
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- Questo file è la traduzione Italiana di phpMussel (9th August 2015).
+ Questo file è la traduzione Italiana di phpMussel (13th August 2015).
  <%phpMussel%/vault/lang/lang.it.inc>
 
 */

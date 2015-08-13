@@ -44,10 +44,8 @@
  esisterebbe, o nel migliore, avrebbe un molto limitato valore
  <http://www.clamav.net/>.
 
- Uno speciale grazie a Sourceforge e GitHub per ospitare i progetto file,
- situato a <http://phpmussel.sourceforge.net/> e
- <https://github.com/Maikuolan/phpMussel/>, a Spambot Security per ospitare
- le phpMussel discussione forum, situato a
+ Uno speciale grazie a Sourceforge e GitHub per ospitare i progetto file, a
+ Spambot Security per ospitare le phpMussel discussione forum, situato a
  <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, e le risorse di un
  certo numero di firme utilizzata da phpMussel: SecuriteInfo.com
  <http://www.securiteinfo.com/>, PhishTank <http://www.phishtank.com/>,
@@ -453,7 +451,7 @@
    ~
  update
    Password requisito: script_password
-   Altri requisiti: update.dat e update.inc deve esistere.
+   Altri requisiti: "update.dat" e "update.inc" deve esistere.
    Parametri requisiti: (nessuno)
    Parametri opzionali: (nessuno)
    Esempio: ?pword=[script_password]&phpmussel=update
@@ -480,7 +478,7 @@
    Altri requisiti: (nessuno)
    Parametri requisiti: [Nome della firma essere sulla greylist]
    Parametri opzionali: (nessuno)
-   Esempio: ?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]
+   Esempio: ?pword=[script_password]&phpmussel=greylist&musselvar=[Firma]
    ~
    Cosa fa: Aggiungere una firma alla greylist.
    ~
@@ -551,6 +549,7 @@
  /_docs/readme.it.txt (Documentazione, Incluso); ITALIANO
  /_docs/readme.nl.txt (Documentazione, Incluso); NEDERLANDSE
  /_docs/readme.pt.txt (Documentazione, Incluso); PORTUGUÊS
+ /_docs/readme.ru.txt (Documentazione, Incluso); РУССКИЙ
     Il README file (per esempio; il file che si sta leggendo momentaneamente).
     ~
  /_docs/signatures_tally.txt (Documentazione, Incluso)
@@ -856,6 +855,7 @@
     Questo controlla e imposta alcune variabili.
     ~
  /vault/template.html (Altro, Incluso)
+ /vault/template_custom.html (Altro, Incluso)
     phpMussel Template file; Template per l'HTML output prodotto da phpMussel
     per il suo messaggio di bloccato file caricamento (il messaggio visto dallo
     caricatore).
@@ -863,7 +863,7 @@
  /vault/update.dat (Altro, Incluso)
     File contenente informazioni sulla versione sia di phpMussel e le phpMussel
     firme. Se si desidero automaticamente aggiornare di phpMussel o si desidero
-    l'aggiornare di phpMusel tramite il browser, questo file è essenziale.
+    l'aggiornare di phpMussel tramite il browser, questo file è essenziale.
     ~
  /vault/update.inc (Script, Incluso)
     phpMussel Aggiornare Script; Richiesto per l'automatico aggiornare di
@@ -993,8 +993,8 @@
       quando l'esecuzione è terminata, il che significa che lo farà solitamente
       eliminare tutti i file caricati tramite al server tranne ciò che già è
       spostato, copiato o cancellato. L'opzione viene aggiunto qui come
-      ulteriore misura di sicurezza per la molto paranoico e per coloro le cui
-      copie di php non sempre comportarsi nel previsto modo.
+      ulteriore misura di sicurezza per coloro le cui copie di php non sempre
+      comportarsi nel previsto modo.
       0 - Dopo la scansione, lasciare il file solo [Predefinito],
       1 - Dopo la scansione, se non pulite, immediatamente eliminarlo.
     "lang"
@@ -1297,7 +1297,7 @@
      DOT, PPS, PPT, XLA, XLS, WIZ).
    "chameleon_to_img"
    - Cercare per immagini file di cui non sono corrette (Supportato: BMP, DIB,
-     PNG, GIF, JPEG, JPG, XCF, PSD, PDD).
+     PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
    "chameleon_to_pdf"
    - Cercare per PDF file di cui non sono corrette.
    "archive_file_extensions" e "archive_file_extensions_wc"
@@ -1438,7 +1438,7 @@
      destra della pagina, immettere le informazioni richieste, e clicca
      "Sign up" quando hai finito. Seguite tutte le istruzioni fornite, e quando
      hai la tua pubblica API chiave, copia/incolla la pubblica API chiave per
-     la `vt_public_api_key` direttiva del `phpmussel.ini` configurazione file.
+     la `vt_public_api_key` direttiva del "phpmussel.ini" configurazione file.
    "vt_suspicion_level"
    - Per predefinita, phpMussel limiterà quali file ciò scansiona utilizzando
      il Virus Total API ai quei file che considera "sospettose".
@@ -1526,6 +1526,26 @@
      volte aiutare nel lavoro attraverso questi problemi. Il vostro tasso
      limite è determinato come `vt_quota_rate` richieste di qualsiasi natura in
      un dato `vt_quota_time` minuto tempo periodo.
+ "template_data" (Category)
+ - Directives/Variables for templates and themes: Modelli dati riferisce alla
+   prodotti HTML utilizzato per generare il "Caricamento Negato" messaggio
+   visualizzati agli utenti quando file caricamenti sono bloccati. Se stai
+   usando temi personalizzati per phpMussel, prodotti HTML è provenienti da
+   file "template_custom.html", e altrimenti, prodotti HTML è provenienti da
+   file "template.html". Variabili scritte a questa sezione della
+   configurazione file sono parsato per il prodotti HTML per mezzo di
+   sostituendo tutti i nomi di variabili circondati da parentesi graffe trovato
+   all'interno il prodotti HTML con la corrispondente dati di quelli variabili.
+   Per esempio, dove foo="bar", qualsiasi istanza di <p>{foo}</p> trovato
+   all'interno il prodotti HTML diventerà <p>bar</p>.
+   "css_url"
+   - Il modello file per i temi personalizzati utilizzi esterni CSS proprietà,
+     mentre il modello file per i temi personalizzati utilizzi interni CSS
+     proprietà. Per istruire phpMussel di utilizzare il modello file per i temi
+     personalizzati, specificare l'indirizzo pubblico HTTP dei CSS file dei
+     suoi tema personalizzato utilizzando la variabile "css_url". Se si lascia
+     questo variabile come vuoto, phpMussel utilizzerà il modello file per il
+     predefinito tema.
 
                                      ~ ~ ~
 
@@ -1556,6 +1576,13 @@
     DIMENSIONE:HASH:NOME
    Dove HASH è l'MD5 hash di una sezione del PE file, DIMENSIONE è la totale
    dimensioni della sezione e NOME è il nome per citare per quella firma.
+
+ = PE ESTESO FIRME =
+   Tutte il PE esteso firme seguono il formato:
+    $VAR:HASH:DIMENSIONE:NOME
+   Dove $VAR è il nome della PE variabile per corrispondere contro, HASH è
+   l'MD5 hash di quella variabile, DIMENSIONE è la dimensione totale di quella
+   variabile e NOME è il nome per citare per quella firma.
 
  = WHITELIST FIRME =
    Tutte la whitelist firme seguono il formato:
@@ -1650,6 +1677,9 @@
       mirati per scansionare quello che non è sulla whitelist.
    - "Portatili Eseguibili Sezionale Firme" (pe_*). Verificato contro l'MD5
       hash e la dimensione di ogni PE sezione del ogni file non sulla whitelist
+      mirati per la scansione e verificato allo PE formato.
+   - "Portatili Eseguibili Esteso Firme" (pex_*). Verificato contro l'MD5 hash
+      e la dimensione di ogni variabili del ogni file non sulla whitelist
       mirati per la scansione e verificato allo PE formato.
    - "SWF Firme" (swf_*). Verificato contro i contenuti del ogni Shockwave file
       mirati per scansionare quello che non è sulla whitelist.
@@ -1747,5 +1777,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 8 Agosto 2015 (2015.08.08).
+Ultimo Aggiornamento: 14 Agosto 2015 (2015.08.14).
 EOF

@@ -41,10 +41,8 @@
  that this script utilises, without which, the script would likely not exist,
  or at best, would have very limited value <http://www.clamav.net/>.
 
- Special thanks to Sourceforge and GitHub for hosting the project files,
- located at <http://phpmussel.sourceforge.net/> and
- <https://github.com/Maikuolan/phpMussel/>, to Spambot Security for hosting
- the phpMussel discussion forums, located at
+ Special thanks to Sourceforge and GitHub for hosting the project files, to
+ Spambot Security for hosting the phpMussel discussion forums, located at
  <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, and to the
  additional sources of a number of the signatures utilised by phpMussel:
  SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
@@ -420,7 +418,7 @@
    ~
  update
    Password required: script_password
-   Other requirements: update.dat and update.inc must exist.
+   Other requirements: "update.dat" and "update.inc" must exist.
    Required parameters: (none)
    Optional parameters: (none)
    Example: ?pword=[script_password]&phpmussel=update
@@ -514,6 +512,7 @@
  /_docs/readme.it.txt (Documentation, Included); ITALIANO
  /_docs/readme.nl.txt (Documentation, Included); NEDERLANDSE
  /_docs/readme.pt.txt (Documentation, Included); PORTUGUÊS
+ /_docs/readme.ru.txt (Documentation, Included); РУССКИЙ
     The README files (for example; the file you're currently reading).
     ~
  /_docs/signatures_tally.txt (Documentation, Included)
@@ -631,7 +630,7 @@
  /vault/coex_clamav.cvd (Signatures, Included)
  /vault/coex_custom.cvd (Signatures, Included)
  /vault/coex_mussel.cvd (Signatures, Included)
-    Files for Complex Extended signatures. Required if the Complex Extended
+    Files for complex extended signatures. Required if the Complex Extended
     signatures option in "phpmussel.ini" is enabled. Can remove if the option
     is disabled.
     ~
@@ -807,13 +806,14 @@
     Controls and sets certain variables.
     ~
  /vault/template.html (Other, Included)
+ /vault/template_custom.html (Other, Included)
     phpMussel Template file; Template for HTML output produced by phpMussel for
     its blocked file upload message (the message seen by the uploader).
     ~
  /vault/update.dat (Other, Included)
     File containing version information for both the phpMussel script and the
     phpMussel signatures. If you ever want to automatically update phpMussel or
-    want to update phpMusel via your browser, this file is essential.
+    want to update phpMussel via your browser, this file is essential.
     ~
  /vault/update.inc (Script, Included)
     phpMussel Update Script; Required for automatic updates and for updating
@@ -884,7 +884,7 @@
  function.
 
  "general" (Category)
- - General configuration for phpMussel.
+ - General phpMussel configuration.
     "script_password"
     - As a convenience, phpMussel will allow certain functions (including the
       ability to update phpMussel on-the-fly) to be manually triggered via
@@ -928,15 +928,15 @@
       immediately delete any scanned attempted file upload matching any
       detection criteria, whether via signatures or otherwise. Files determined
       to be "clean" won't be touched. In the case of archives, the entire
-      archive will be deleted (regardless of if the offending file is only one
-      of several files contained within the archive). For the case of file
-      upload scanning, usually, it isn't necessary to turn this option on,
-      because usually, php will automatically purge the contents of its cache
-      when execution has finished, meaning that it'll usually delete any files
-      uploaded through it to the server unless they've moved, copied or deleted
-      already. The option is added here as an extra measure of security for the
-      extra paranoid and for those whose copies of php may not always behave in
-      the manner intended.
+      archive will be deleted, regardless of whether or not the offending file
+      is only one of several files contained within the archive. For the case
+      of file upload scanning, usually, it isn't necessary to enable this
+      directive, because usually, php will automatically purge the contents of
+      its cache when execution has finished, meaning it'll usually delete any
+      files uploaded through it to the server unless they've been moved, copied
+      or deleted already. This directive is added here as an extra measure of
+      security for those whose copies of php mightn't always behave in the
+      manner expected.
       0 - After scanning, leave the file alone [Default],
       1 - After scanning, if not clean, delete immediately.
     "lang"
@@ -1011,7 +1011,7 @@
       should ignore this directive.
       0 = Enable CLI mode [Default], 1 = Disable CLI mode.
  "signatures" (Category)
- - Configuration for signatures.
+ - Signatures configuration.
    %%%_clamav = ClamAV signatures (both mains and daily).
    %%%_custom = Your custom signatures (if you've written any).
    %%%_mussel = phpMussel signatures included in your current signatures set
@@ -1153,7 +1153,7 @@
    - Should phpMussel parse signatures for detecting defacements and defacers?
      0 = No, 1 = Yes [Default].
  "files" (Category)
- - General configuration for handling of files.
+ - File handling configuration.
    "max_uploads"
    - Maximum allowable number of files to scan during files upload scan before
      aborting the scan and informing the user they are uploading too much at
@@ -1213,7 +1213,7 @@
      potentially help reduce any risk associated with these such possibilities.
      0 - No, 1 - Yes [Default].
  "attack_specific" (Category)
- - Configuration for specific attack detections (not based on CVDs).
+ - Attack-specific directives.
    * Chameleon attack detection: 0 = Off, 1 = On.
    "chameleon_from_php"
    - Search for php header in files that are neither php files nor recognised
@@ -1229,7 +1229,7 @@
      DOT, PPS, PPT, XLA, XLS, WIZ).
    "chameleon_to_img"
    - Search for images whose headers are incorrect (Supported: BMP, DIB, PNG,
-     GIF, JPEG, JPG, XCF, PSD, PDD).
+     GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
    "chameleon_to_pdf"
    - Search for PDF files whose headers are incorrect.
    "archive_file_extensions" and "archive_file_extensions_wc"
@@ -1314,7 +1314,7 @@
      and memory usage for attempted uploads of non-image files.
      0 - OFF, 1 - ON.
  "heuristic" (Category)
- - Heuristic directives for phpMussel.
+ - Heuristic directives.
    "threshold"
    - There are certain signatures of phpMussel that are intended to identify
      suspicious and potentially malicious qualities of files being uploaded
@@ -1331,7 +1331,7 @@
      malicious files being flagged. It's generally best to leave this value at
      its default unless you're experiencing problems related to it.
  "virustotal" (Category)
- - Configuration for Virus Total integration.
+ - VirusTotal.com directives.
    "vt_public_api_key"
    - Optionally, phpMussel is able to scan files using the Virus Total API as a
      way to provide a greatly enhanced level of protection against viruses,
@@ -1359,7 +1359,7 @@
      information requested, and click "Sign up" when done. Follow all
      instructions supplied, and when you've got your public API key, copy/paste
      that public API key to the `vt_public_api_key` directive of the
-     `phpmussel.ini` configuration file.
+     "phpmussel.ini" configuration file.
    "vt_suspicion_level"
    - By default, phpMussel will restrict which files it scans using the Virus
      Total API to those files that it considers "suspicious". You can
@@ -1438,6 +1438,24 @@
      quota, decreasing these values -may- sometimes help you in dealing with
      these problems. Your rate limit is determined as `vt_quota_rate` requests
      of any nature in any given `vt_quota_time` minute time frame.
+ "template_data" (Category)
+ - Directives/Variables for templates and themes: Template data relates to the
+   HTML output used to generate the "Upload Denied" message displayed to users
+   upon a file upload being blocked. If you're using custom themes for
+   phpMussel, HTML output is sourced from the "template_custom.html" file, and
+   otherwise, HTML output is sourced from the "template.html" file. Variables
+   written to this section of the configuration file are parsed to the HTML
+   output by way of replacing any variable names circumfixed by curly brackets
+   found within the HTML output with the corresponding variable data. For
+   example, where foo="bar", any instance of <p>{foo}</p> found within the
+   HTML output will become <p>bar</p>.
+   "css_url"
+   - The template file for custom themes utilises external CSS properties,
+     whereas the template file for the default theme utilises internal CSS
+     properties. To instruct phpMussel to use the template file for custom
+     themes, specify the public HTTP address of your custom theme's CSS files
+     using the "css_url" variable. If you leave this variable blank, phpMussel
+     will use the template file for the default theme.
 
                                      ~ ~ ~
 
@@ -1468,6 +1486,13 @@
     SIZE:HASH:NAME
    Where HASH is the MD5 hash of a section of a PE file, SIZE is the total size
    of that section and NAME is the name to cite for that signature.
+
+ = PE EXTENDED SIGNATURES =
+   All PE extended signatures follow the format:
+    $VAR:HASH:SIZE:NAME
+   Where $VAR is the name of the PE variable to match against, HASH is the MD5
+   hash of that variable, SIZE is the total size of that variable and NAME is
+   the name to cite for that signature.
 
  = WHITELIST SIGNATURES =
    All Whitelist signatures follow the format:
@@ -1560,6 +1585,9 @@
    - "Portable Executable Sectional Signatures" (pe_*). Checked against the MD5
       hash and the size of each PE section of every non-whitelisted file
       targeted for scanning and matched to the PE format.
+   - "Portable Executable Extended Signatures" (pex_*). Checked against the MD5
+      hash and the size of variables within every non-whitelisted file targeted
+      for scanning and matched to the PE format.
    - "SWF Signatures" (swf_*). Checked against the contents of every
       non-whitelisted Shockwave file targeted for scanning.
    - "Whitelist Signatures" (whitelist_*). Checked against the MD5 hash of the
@@ -1653,5 +1681,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 8th August 2015 (2015.08.08).
+Last Updated: 14th August 2015 (2015.08.14).
 EOF
