@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7a-BETA (21st July 2015) Language Data.
+ This File: phpMussel v0.7a (5th August 2015) Language Data.
  <%phpMussel%/vault/lang.inc>
 
                                      ~ ~ ~

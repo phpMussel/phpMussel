@@ -39,7 +39,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7 (12th July 2015) Update Script.
+ This File: phpMussel v0.7a (5th August 2015) Update Script.
  <%phpMussel%/vault/update.inc>
 
                                      ~ ~ ~
@@ -167,10 +167,7 @@ while(true)
 				{
 				foreach($SigFileSet[$k] as $SigFile)$phpmusselversion['request_content'].=$SigFile.'%3AIGNORE%3B';
 				}
-			else
-				{
-				foreach($SigFileSet[$k] as $SigFile)$phpmusselversion['request_content'].=$SigFile.'%3A'.md5(ReadUpdateFile($vault.$SigFile)).'%3B';
-				}
+			else foreach($SigFileSet[$k] as $SigFile)$phpmusselversion['request_content'].=$SigFile.'%3A'.md5(ReadUpdateFile($vault.$SigFile)).'%3B';
 			}
 		next($SigFileSet);
 		$c--;
