@@ -286,7 +286,7 @@ Bestand                                    | Beschrijving
 /_testfiles/pdf_standard_testfile.pdf      | Testbestand voor het testen phpMussel PDF handtekeningen.
 /_testfiles/pe_sectional_testfile.exe      | Testbestand voor het testen phpMussel PE Sectionele handtekeningen.
 /_testfiles/swf_standard_testfile.swf      | Testbestand voor het testen phpMussel SWF handtekeningen.
-/_testfiles/xdp_standard_testfile.xdp      | Testbestand voor het testen phpMussel XML/XDP-Brok handtekeningen.
+/_testfiles/xdp_standard_testfile.xdp      | Testbestand voor het testen phpMussel XML/XDP handtekeningen.
 /vault/                                    | Vault directory (bevat verschillende bestanden).
 /vault/cache/                              | Cache directory (tijdelijke data).
 /vault/cache/.htaccess                     | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
@@ -428,14 +428,14 @@ Bestand                                    | Beschrijving
 /vault/whitelist_clamav.cvd                | Bestand-specifieke whitelist.
 /vault/whitelist_custom.cvd                | Bestand-specifieke whitelist.
 /vault/whitelist_mussel.cvd                | Bestand-specifieke whitelist.
-/vault/xmlxdp_clamav_regex.cvd             | Bestand voor XML/XDP-Brok handtekeningen.
-/vault/xmlxdp_clamav_regex.map             | Bestand voor XML/XDP-Brok handtekeningen.
-/vault/xmlxdp_clamav_standard.cvd          | Bestand voor XML/XDP-Brok handtekeningen.
-/vault/xmlxdp_clamav_standard.map          | Bestand voor XML/XDP-Brok handtekeningen.
-/vault/xmlxdp_custom_regex.cvd             | Bestand voor XML/XDP-Brok handtekeningen.
-/vault/xmlxdp_custom_standard.cvd          | Bestand voor XML/XDP-Brok handtekeningen.
-/vault/xmlxdp_mussel_regex.cvd             | Bestand voor XML/XDP-Brok handtekeningen.
-/vault/xmlxdp_mussel_standard.cvd          | Bestand voor XML/XDP-Brok handtekeningen.
+/vault/xmlxdp_clamav_regex.cvd             | Bestand voor XML/XDP handtekeningen.
+/vault/xmlxdp_clamav_regex.map             | Bestand voor XML/XDP handtekeningen.
+/vault/xmlxdp_clamav_standard.cvd          | Bestand voor XML/XDP handtekeningen.
+/vault/xmlxdp_clamav_standard.map          | Bestand voor XML/XDP handtekeningen.
+/vault/xmlxdp_custom_regex.cvd             | Bestand voor XML/XDP handtekeningen.
+/vault/xmlxdp_custom_standard.cvd          | Bestand voor XML/XDP handtekeningen.
+/vault/xmlxdp_mussel_regex.cvd             | Bestand voor XML/XDP handtekeningen.
+/vault/xmlxdp_mussel_standard.cvd          | Bestand voor XML/XDP handtekeningen.
 
 ※ Bestandsnaam kan verschillen, afhankelijk van de configuratie bedingen (van `phpmussel.ini`).
 
@@ -756,115 +756,115 @@ VirusTotal.com directives.
 Note: If scanning files using the Virus Total API is disabled, you won't need to review any of the directives in this category (`virustotal`), because none of them will do anything if this is disabled. To acquire a Virus Total API key, from anywhere on their website, click the "Join our Community" link located towards the top-right of the page, enter in the information requested, and click "Sign up" when done. Follow all instructions supplied, and when you've got your public API key, copy/paste that public API key to the `vt_public_api_key` directive of the `phpmussel.ini` configuration file.
 
 "vt_suspicion_level"
-- By default, phpMussel will restrict which files it scans using the Virus Total API to those files that it considers "suspicious". You can optionally adjust this restriction by changing the value of the `vt_suspicion_level` directive.
-- `0`: Files are only considered suspicious if, upon being scanned by phpMussel using its own signatures, they are deemed to carry a heuristic weight. This would effectively mean that use of the Virus Total API would be for a second opinion for when phpMussel suspects that a file may potentially be malicious, but can't entirely rule out that it may also potentially be benign (non-malicious) and therefore would otherwise normally not block it or flag it as being malicious.
-- `1`: Files are considered suspicious if, upon being scanned by phpMussel using its own signatures, they are deemed to carry a heuristic weight, if they're known to be executable (PE files, Mach-O files, ELF/Linux files, etc), or if they're known to be of a format that could potentially contain executable data (such as executable macros, DOC/DOCX files, archive files such as RARs, ZIPS and etc). This is the default and recommended suspicion level to apply, effectively meaning that use of the Virus Total API would be for a second opinion for when phpMussel doesn't initially find anything malicious or wrong with a file that it considers to be suspicious and therefore would otherwise normally not block it or flag it as being malicious.
-- `2`: All files are considered suspicious and should be scanned using the Virus Total API. I don't generally recommend applying this suspicion level, due to the risk of reaching your API quota much quicker than would otherwise be the case, but there are certain circumstances (such as when the webmaster or hostmaster has very little faith or trust whatsoever in any of the uploaded content of their users) where this suspicion level could be appropriate. With this suspicion level, all files not normally blocked or flagged as being malicious would be scanned using the Virus Total API. Note, however, that phpMussel will cease using the Virus Total API when your API quota has been reached (regardless of suspicion level), and that your quota will likely be reached much faster when using this suspicion level.
+- Normaal, phpMussel zal beperken welke bestanden scant met behulp van de Virus Total API om de bestanden die zijn beschouwd "achterdochtig". Optioneel, U kunt deze beperking aan te passen door de waarde van het `vt_suspicion_level` richtlijn.
+- `0`: Bestanden worden beschouwd achterdochtig alleen als, na te zijn gescand door phpMussel met eigen handtekeningen, zij geacht worden een heuristische gewicht te dragen. Dit zou effectief betekenen dat het gebruik van de Virus Total API zou zijn voor een tweede mening wanneer phpMussel vermoedt dat een bestand potentieel kwaadaardig kan zijn, maar kan niet helemaal uitsluiten dat het kan ook potentieel goedaardig zijn (niet-kwaadaardig) en daarom anders zou normaal niet blokkeren of vlag als kwaadaardig.
+- `1`: Bestanden worden beschouwd achterdochtig alleen als, na te zijn gescand door phpMussel met eigen handtekeningen, zij geacht worden een heuristische gewicht te dragen, als ze bekend is executable te zijn (PE bestanden, Mach-O bestanden, ELF/Linux bestanden, etc), of als ze bekend zijn van een formaat dat potentieel executable gegevens kan bevatten (zoals executable macros, DOC/DOCX bestanden, archiefbestanden zoals RARs, ZIPS en etc). Dit is de standaard en aanbevolen achterdocht niveau toe te passen, effectief betekent dat het gebruik van de Virus Total API zou zijn voor een tweede mening wanneer in eerste instantie niets kwaadaardige of slecht wordt gevonden door phpMussel met een bestand beschouwd achterdochtig te zijn en daarom anders zou normaal niet blokkeren of vlag als kwaadaardig.
+- `2`: Alle bestanden beschouwd achterdochtig worden en moeten worden gescand met behulp van de Virus Total API. Ik meestal niet raden het toepassen van dit achterdocht niveau, vanwege het risico bereiken API-quotum veel sneller dan anders het geval zou zijn, maar er zijn bepaalde omstandigheden (zoals wanneer de webmaster of hostmaster heeft weinig geloof of vertrouwen in de geringste in een van de geüploade inhoud van hun gebruikers) waarin dit achterdocht niveau kon passend zijn. Met dit achterdocht niveau, Alle bestanden normaal niet geblokkeerd of gemarkeerd als kwaadaardig zou worden gescand met behulp van de Virus Total API. Noteren, echter, dat phpMussel zal ophouden met behulp van de Virus Total API wanneer uw API-quotum is bereikt (ongeacht van achterdocht niveau), en dat uw API-quotum zal waarschijnlijk veel sneller bereikt met het gebruik van dit achterdocht niveau.
 
-Note: Regardless of suspicion level, any files that are either blacklisted or whitelisted by phpMussel won't be scanned using the Virus Total API, because those such files would've already been declared as either malicious or benign by phpMussel by the time that they would've otherwise been scanned by the Virus Total API, and therefore, additional scanning wouldn't be required. The ability of phpMussel to scan files using the Virus Total API is intended to build further confidence for whether a file is malicious or benign in those circumstances where phpMussel itself isn't entirely certain as to whether a file is malicious or benign.
+Noteren: Ongeacht van achterdocht niveau, elke bestanden die ofwel worden de zwarte lijst of witte lijst door phpMussel zal niet worden gescand met behulp van de Virus Total API, omdat die dergelijke bestanden reeds zou hebben verklaard als ofwel kwaadaardig of goedaardig door phpMussel tegen de tijd dat ze anders zouden hebben gescand door de Virus Total API, en daarom, extra scannen zou niet nodig. Het vermogen van phpMussel om bestanden te scannen met de Virus Total API is bedoeld om het vertrouwen bouwen verder voor of een bestand is kwaadaardig of goedaardig in die omstandigheden waarin phpMussel zelf is niet helemaal zeker de vraag van of een bestand is kwaadaardig of goedaardig.
 
 "vt_weighting"
-- Should phpMussel apply the results of scanning using the Virus Total API as detections or as detection weighting? This directive exists, because, although scanning a file using multiple engines (as Virus Total does) should result in an increased detection rate (and therefore in a higher number of malicious files being caught), it can also result in a higher number of false positives, and therefore, in some circumstances, the results of scanning may be better utilised as a confidence score rather than as a definitive conclusion. If a value of 0 is used, the results of scanning using the Virus Total API will be applied as detections, and therefore, if any engine used by Virus Total flags the file being scanned as being malicious, phpMussel will consider the file to be malicious. If any other value is used, the results of scanning using the Virus Total API will be applied as detection weighting, and therefore, the number of engines used by Virus Total that flag the file being scanned as being malicious will serve as a confidence score (or detection weighting) for whether or not the file being scanned should be considered malicious by phpMussel (the value used will represent the minimum confidence score or weight required in order to be considered malicious). A value of 0 is used by default.
+- Mocht phpMussel de resultaten van het scannen met behulp van de Virus Total API toe te passen als detecties of detectie weging? Deze richtlijn bestaat, omdat, hoewel het scannen van een bestand met behulp van meerdere motoren (als Virus Total doet) moet leiden tot een verhoogde aantal van detecties (en dus in een hoger aantal van kwaadaardige bestanden worden gedetecteerd), het kan ook resulteren in een hoger aantal van valse positieven, en daarom, in sommige gevallen, de resultaten van de scan kan beter worden benut als betrouwbaarheidsscore eerder dan als een definitieve conclusie. Als een waarde van 0 wordt gebruikt, de resultaten van het scannen met behulp van de Virus Total API zal worden toegepast als detecties, en zo, als een motor gebruikt door Virus Total vlaggen het bestand wordt gescand als kwaadaardige, phpMussel zal het bestand overwegen kwaadaardig te zijn. Als een andere waarde wordt gebruikt, de resultaten van het scannen met behulp van de Virus Total API zal worden toegepast als detectie weging, en zo, het aantal van motoren gebruikt door Virus Total dat vlag het bestand wordt gescand als kwaadaardige zal dienen als een betrouwbaarheidsscore (of detectie weging) voor of het bestand dat wordt gescand moet worden beschouwd als kwaadaardige door phpMussel (de waarde die wordt gebruikt zal vertegenwoordigen de minimale betrouwbaarheidsscore of weging vereist om kwaadaardige te worden beschouwd). Een waarde van 0 wordt standaard gebruikt.
 
-"vt_quota_rate" and "vt_quota_time"
-- According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly adhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values _**MAY**_ sometimes help you in dealing with these problems. Your rate limit determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame.
+"vt_quota_rate" en "vt_quota_time"
+- Volgens de Virus Total API-documentatie, het is beperkt tot maximaal 4 verzoeken van welke aard in elk 1 minuut tijdsbestek. Als u een honeyclient, honeypot of andere automatisering te voorzien, dat gaat om middelen te verschaffen om VirusTotal en niet alleen rapporten opvragen heeft u recht op een hogere API-quotum. Normaal, phpMussel zal strikt houden aan deze beperkingen, maar vanwege de mogelijkheid van deze API-quotum verhoogd te worden, deze twee richtlijnen worden verstrekt als middel voor u om instrueren phpMussel wat limiet moeten houden worden. Tenzij je hebt geïnstrueerd om dit te doen, het is niet aan te raden voor u om deze waarden te verhogen, maar, als je hebt ondervonden problemen met betrekking tot uw tarief quota bereiken, afnemende deze waarden kunnen je soms helpen in het omgaan met deze problemen. Uw maximaal tarief bepaald als `vt_quota_rate` verzoeken van welke aard in elk `vt_quota_time` minuut tijdsbestek.
 
-####"template_data" (Category)
-Directives/Variables for templates and themes.
+####"template_data" (Categorie)
+Richtlijnen/Variabelen voor sjablonen en thema's.
 
-Template data relates to the HTML output used to generate the "Upload Denied" message displayed to users upon a file upload being blocked. If you're using custom themes for phpMussel, HTML output is sourced from the `template_custom.html` file, and otherwise, HTML output is sourced from the `template.html` file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where `foo="bar"`, any instance of `<p>{foo}</p>` found within the HTML output will become `<p>bar</p>`.
+Sjabloongegevens betreft op de HTML-uitvoer die wordt gegenereerd en gebruikt voor de "Upload Geweigerd" bericht getoond om de gebruikers wanneer een bestand upload is geblokkeerd. Als je gebruik aangepaste thema's voor phpMussel, HTML-uitvoer is afkomstig van de `template_custom.html` bestand, en alternatief, HTML-uitvoer is afkomstig van de `template.html` bestand. Variabelen geschreven om dit sectie van het configuratiebestand worden geïnterpreteerd aan de HTML-uitvoer door middel van het vervangen van variabelennamen omringd door accolades gevonden binnen de HTML-uitvoer met de bijbehorende variabele gegevens. Bijvoorbeeld, waar `foo="bar"`, elk geval van `<p>{foo}</p>` gevonden binnen de HTML-uitvoer `<p>bar</p>` zal worden.
 
 "css_url"
-- The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct phpMussel to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the `css_url` variable. If you leave this variable blank, phpMussel will use the template file for the default theme.
+- De sjabloonbestand voor aangepaste thema's maakt gebruik van externe CSS-eigenschappen, terwijl de sjabloonbestand voor het standaardthema maakt gebruikt van interne CSS-eigenschappen. Om phpMussel instrueren om de sjabloonbestand voor aangepaste thema's te gebruiken, geef het openbare HTTP-adres van uw aangepaste thema's CSS-bestanden via de `css_url` variabele. Als u deze variabele leeg laat, phpMussel zal de sjabloonbestand voor de standaardthema te gebruiken.
 
 ---
 
 
 ###7. <a name="SECTION7"></a>HANDTEKENINGFORMAAT
 
-####*FILENAME SIGNATURES*
-All filename signatures follow the format:
+####*BESTANDSNAAM HANDTEKENINGEN*
+Alle bestandsnaam handtekeningen volgt het formaat:
 
 `NAME:FNRX`
 
-Where NAME is the name to cite for that signature and FNRX is the regex pattern to match filenames (unencoded) against.
+Waar NAME is de naam te noemen voor die handtekening en FNRX is de reguliere expressie patroon om bestandsnamen (ongecodeerde) te controleer tegen.
 
-####*MD5 SIGNATURES*
-All MD5 signatures follow the format:
+####*MD5 HANDTEKENINGEN*
+Alle MD5 handtekeningen volgt het formaat:
 
 `HASH:FILESIZE:NAME`
 
-Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of that file and NAME is the name to cite for that signature.
+Waar HASH is de MD5 hash van een hele bestand, FILESIZE is de totale grootte van het bestand en NAME is de naam te noemen voor die handtekening.
 
-####*ARCHIVE METADATA SIGNATURES*
-All archive metadata signatures follow the format:
+####*ARCHIEF METADATA HANDTEKENINGEN*
+Alle archief metadata handtekeningen volgt het formaat:
 
 `NAME:FILESIZE:CRC32`
 
-Where NAME is the name to cite for that signature, FILESIZE is the total size (uncompressed) of a file contained within the archive and CRC32 is the crc32 checksum of that contained file.
+Waar NAME is de naam te noemen voor die handtekening, FILESIZE is de totale grootte (ongecomprimeerde) van een bestand vervat in het archief en CRC32 is de CRC32 checksum van die vervat bestand.
 
-####*PE SECTIONAL SIGNATURES*
-All PE Sectional signatures follow the format:
+####*PE SECTIONELE HANDTEKENINGEN*
+Alle PE sectionele handtekeningen volgt het formaat:
 
 `SIZE:HASH:NAME`
 
-Where HASH is the MD5 hash of a section of a PE file, SIZE is the total size of that section and NAME is the name to cite for that signature.
+Waar HASH is de MD5 hash van een sectie van een PE bestand, SIZE is de totale grootte van die sectie en NAME is de naam te noemen voor die handtekening.
 
-####*PE EXTENDED SIGNATURES*
-All PE extended signatures follow the format:
+####*PE UITGEBREIDE HANDTEKENINGEN*
+Alle PE uitgebreide handtekeningen volgt het formaat:
 
 `$VAR:HASH:SIZE:NAME`
 
-Where $VAR is the name of the PE variable to match against, HASH is the MD5 hash of that variable, SIZE is the total size of that variable and NAME is the name to cite for that signature.
+Waar $VAR is de naam van de PE-variabele te controleer tegen, HASH is de MD5 hash van die variabele, SIZE is de totale grootte van die variabele en NAME is de naam te noemen voor die handtekening.
 
-####*WHITELIST SIGNATURES*
-All Whitelist signatures follow the format:
+####*WHITELIST HANDTEKENINGEN*
+Alle whitelist handtekeningen volgt het formaat:
 
 `HASH:FILESIZE:TYPE`
 
-Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of that file and TYPE is the type of signatures the whitelisted file is to be immune against.
+Waar HASH is de MD5 hash van een hele bestand, FILESIZE is de totale grootte van het bestand en TYPE is het handtekeningen type de bestand van de whitelist is immuun tegen te zijn.
 
-####*COMPLEX EXTENDED SIGNATURES*
-Complex extended signatures are rather different to the other types of signatures possible with phpMussel, in that what they are matching against is specified by the signatures themselves and they can match against multiple criteria. The match criterias are delimited by ";" and the match type and match data of each match criteria is delimited by ":" as so that format for these signatures tends to look a bit like:
+####*COMPLEXE UITGEBREIDE HANDTEKENINGEN*
+Complexe uitgebreid handtekeningen zijn nogal verschillend van de andere handtekening typen mogelijk met phpMussel, doordat wat ze gecontroleerd tegen wordt bepaald door de handtekeningen zelf en ze kunnen controleer tegen meervoudig criteria. De controle criteria zijn begrensd door ";" en de controle type en de controle gegevens van elke controle criteria wordt begrensd door ":" zoals zo dat formaat voor deze handtekeningen heeft de neiging om een beetje uitzien als:
 
-`$variable1:SOMEDATA;$variable2:SOMEDATA;SignatureName`
+`$variable1:GEGEVENS;$variable2:GEGEVENS;Handtekeningnaam`
 
-####*EVERYTHING ELSE*
-All other signatures follow the format:
+####*AL HET ANDERE*
+Alle andere handtekeningen volgt het formaat:
 
 `NAME:HEX:FROM:TO`
 
-Where NAME is the name to cite for that signature and HEX is a hexadecimal-encoded segment of the file intended to be matched by the given signature. FROM and TO are optional parameters, indicting from which and to which positions in the source data to check against (not supported by the mail function).
+Waar NAME is de naam te noemen voor die handtekening en HEX is een hexadecimale gecodeerd segment van het bestand bestemd om te worden gecontroleerd door de gegeven handtekening. FROM en TO optioneel parameters zijn, aanklagen van waaruit en waaraan in de brongegevens om te controleren tegen (niet ondersteund door de mail functie).
 
 ####*REGEX*
-Any form of regex understood and correctly processed by php should also be correctly understood and processed by phpMussel and its signatures. However, I'd suggest taking extreme caution when writing new regex based signatures, because, if you're not entirely sure what you're doing, there can be highly irregular and/or unexpected results. Take a look at the phpMussel source-code if you're not entirely sure about the context in which regex statements are parsed. Also, remember that all patterns (with exception to filename, archive metadata and MD5 patterns) must be hexadecimally encoded (foregoing pattern syntax, of course)!
+Elke vorm van reguliere expressie begrepen en correct verwerkt door moet ook correct worden begrepen en verwerkt door phpMussel en handtekeningen. Echter, Ik stel voor het nemen van extreem voorzichtigheid bij het schrijven van nieuwe handtekeningen op basis van reguliere expressie, omdat, als je niet helemaal zeker wat je doet, kan er zeer onregelmatig en/of onverwachte resultaten worden. Neem een kijkje op de phpMussel broncode als je niet helemaal zeker over de context waarin regex verklaringen geïnterpreteerd worden. Ook, vergeet niet dat alle patronen (met uitzondering van bestandsnaam, archief metadata en MD5 patronen) moet hexadecimaal gecodeerd worden (voorgaande patroon syntaxis, natuurlijk)!
 
-####*WHERE TO PUT CUSTOM SIGNATURES?*
-Only put custom signatures in those files intended for custom signatures. Those files should contain "_custom" in their filenames. You should also avoid editing the default signature files, unless you know exactly what you're doing, because, aside from being good practise in general and aside from helping you distinguish between your own signatures and the default signatures included with phpMussel, it's good to stick to editing only the files intended for editing, because tampering with the default signature files can cause them to stop working correctly, due to the "maps" files: The maps files tell phpMussel where in the signature files to look for signatures required by phpMussel as per when required, and these maps can become out-of-sync with their associated signature files if those signature files are tampered with. You can put pretty much whatever you want into your custom signatures, so long as you follow the correct syntax. However, be careful to test new signatures for false-positives beforehand if you intend to share them or use them in a live environment.
+####*WAAR OM AANGEPASTE HANDTEKENINGEN TE ZETTEN?*
+Alleen zet aangepaste handtekeningen in die bestanden bedoeld voor aangepaste handtekeningen. Die bestanden moeten "_custom" bevatten in hun bestandsnamen. Je moet ook vermijden het bewerken van de standaard handtekeningen bestanden, tenzij u precies weet wat je doet, omdat, afgezien van goede praktijken in het algemeen en afgezien van het helpen u te onderscheiden tussen uw eigen handtekeningen en de standaard handtekeningen dat meegeleverd met phpMussel, het is goed om het bewerken te houden alleen de bestanden bestemd voor bewerking, omdat knoeien met de standaard handtekeningen bestanden kunt veroorzaken hen te stoppen met werken, vanwege de "map" bestanden: De maps/kaarten bestanden vertellen phpMussel waar in de handtekeningen bestanden te zoek voor handtekeningen vereist door phpMussel vanaf wanneer vereist, en deze kaarten ongesynchroniseerd kunt worden met hun bijbehorende handtekeningen bestanden indien deze handtekeningen bestanden hebben geknoeid. U kunt zetten ongeveer wat je ook wilt in uw aangepaste handtekeningen, zolang je de juiste syntaxis volgen. Echter, wees voorzichtig om nieuwe handtekeningen te testen voor vals-positieven vooraf als u van plan om ze te delen of gebruiken in een live-omgeving.
 
-####*SIGNATURE BREAKDOWN*
-The following is a breakdown of the types of signatures used by phpMussel:
-- "Normalised ASCII Signatures" (ascii_*). Checked against the contents of every non-whitelisted file targeted for scanning.
-- "Complex Extended Signatures" (coex_*). Mixed signature type matching.
-- "ELF Signatures" (elf_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to the ELF format.
-- "Portable Executable Signatures" (exe_*). Checked against the contents of every non-whitelisted targeted for scanning and matched to the PE format.
-- "Filename Signatures" (filenames_*). Checked against the filenames of files targeted for scanning.
-- "General Signatures" (general_*). Checked against the contents of every non-whitelisted file targeted for scanning.
-- "Graphics Signatures" (graphics_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to a known graphical file format.
-- "General Commands" (hex_general_commands.csv). Checked against the contents of every non-whitelisted file targeted for scanning.
-- "Normalised HTML Signatures" (html_*). Checked against the contents of every non-whitelisted HTML file targeted for scanning.
-- "Mach-O Signatures" (macho_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to the Mach-O format.
-- "Email Signatures" (mail_*). Checked against the $body variable parsed to the phpMussel_mail() function, which is intended to be the body of email messages or similar entities (potentially forum posts and etcetera).
-- "MD5 Signatures" (md5_*). Checked against the MD5 hash of the contents and the filesize of every non-whitelisted file targeted for scanning.
-- "Archive Metadata Signatures" (metadata_*). Checked against the CRC32 hash and filesize of the initial file contained inside of any non-whitelisted archive targeted for scanning.
-- "OLE Signatures" (ole_*). Checked against the contents of every non-whitelisted OLE object targeted for scanning.
-- "PDF Signatures" (pdf_*). Checked against the contents of every non-whitelisted PDF file targeted for scanning.
-- "Portable Executable Sectional Signatures" (pe_*). Checked against the MD5 hash and the size of each PE section of every non-whitelisted file targeted for scanning and matched to the PE format.
-- "Portable Executable Extended Signatures" (pex_*). Checked against the MD5 hash and the size of variables within every non-whitelisted file targeted for scanning and matched to the PE format.
-- "SWF Signatures" (swf_*). Checked against the contents of every non-whitelisted Shockwave file targeted for scanning.
-- "Whitelist Signatures" (whitelist_*). Checked against the MD5 hash of the contents and the filesize of every file targeted for scanning. Matched files will be immune to being matched by the type of signature mentioned in their whitelist entry.
-- "XML/XDP-Chunk Signatures" (xmlxdp_*). Checked against any XML/XDP chunks found within any non-whitelisted files targeted for scanning.
-(Note that any of these signatures may be easily disabled via `phpmussel.ini`).
+####*HANDTEKENINGEN OVERZICHT*
+Het volgende is een overzicht van de soorten handtekeningen gebruikt door phpMussel:
+- "Genormaliseerde ASCII Handtekeningen" (ascii_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen.
+- "Complexe Uitgebreide Handtekeningen" (coex_*). Gemengde soort van handtekeningen controleren.
+- "ELF Handtekeningen" (elf_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de ELF-formaat.
+- "Portable Executable Handtekeningen" (exe_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de PE-formaat.
+- "Bestandsnaam Handtekeningen" (filenames_*). Gecontroleerd tegen de bestandsnamen van de bestanden gerichte voor het scannen.
+- "Algemene Handtekeningen" (general_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen.
+- "Grafische Handtekeningen" (graphics_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd naar een bekende grafisch formaat.
+- "Algemene Commando's" (hex_general_commands.csv). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen.
+- "Genormaliseerde HTML Handtekeningen" (html_*). Gecontroleerd tegen de inhoud van elke niet-whitelist HTML-bestand gericht voor het scannen.
+- "Mach-O Handtekeningen" (macho_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de Mach-O-formaat.
+- "Email Handtekeningen" (mail_*). Gecontroleerd tegen de $body variabele parsed aan de phpMussel_mail() functie, die bedoeld is om het lichaam van e-mailberichten of soortgelijke entiteiten (potentieel forum posten en etcetera).
+- "MD5 Handtekeningen" (md5_*). Gecontroleerd tegen de MD5 hash van de inhoud en de bestandsgrootte van elke niet-whitelist bestand gericht voor het scannen.
+- "Archief Metadata Handtekeningen" (metadata_*). Gecontroleerd tegen de CRC32 hash van de inhoud en de bestandsgrootte van de eerste bestand bevatte binnenkant van ieder niet-whitelist archief gericht voor het scannen.
+- "OLE Handtekeningen" (ole_*). Gecontroleerd tegen de inhoud van elke niet-whitelist OLE-object gericht voor het scannen.
+- "PDF Handtekeningen" (pdf_*). Gecontroleerd tegen de inhoud van elke niet-whitelist PDF-bestand gericht voor het scannen.
+- "Portable Executable Sectionele Handtekeningen" (pe_*). Gecontroleerd tegen de MD5 hash en de grootte van elke PE-sectie van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de PE-formaat.
+- "Portable Executable Uitgebreide Handtekeningen" (pex_*). Gecontroleerd tegen de MD5 hash en de grootte van variabelen in elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de PE-formaat.
+- "Shockwave Handtekeningen" (swf_*). Gecontroleerd tegen de inhoud van elke niet-whitelist Shockwave-bestand gericht voor het scannen.
+- "Whitelist Handtekeningen" (whitelist_*). Gecontroleerd tegen de MD5 hash van de inhoud en de bestandsgrootte van elke bestand gericht voor het scannen. Gecontroleerd bestanden zal zijn immuun van gecontroleerd te worden door de soort van handtekening in hun whitelist binnenkomst.
+- "XML/XDP Handtekeningen" (xmlxdp_*). Gecontroleerd tegen elke XML/XDP data binnen elke niet-whitelist bestanden gericht voor het scannen.
+(Bewust zijn van dat elk van deze handtekeningen gemakkelijk kunnen worden uitgeschakeld via `phpmussel.ini`).
 
 ---
 
@@ -937,4 +937,4 @@ Deze informatie is voor het laatst bijgewerkt 28 Mei 2015 en is op de hoogte voo
 ---
 
 
-Laatste Bijgewerkt: 14 Augustus 2015 (2015.08.14).
+Laatste Bijgewerkt: 17 Augustus 2015 (2015.08.17).

@@ -100,7 +100,7 @@
     CMS, mais le plus simple est à simplement inclure le script au début d'un
     fichier de la base de données de votre système ou CMS (un qui va
     généralement toujours être chargé lorsque quelqu'un accède à n'importe
-    quelle page sur votre website) utilisant un require() ou include()
+    quelle page sur votre website) utilisant un "require()" ou include()
     commande. Généralement, ce sera quelque chose de stocké dans un répertoire
     comme "/includes", "/assets" ou "/functions", et il sera souvent nommé
     quelque chose comme "init.php", "common_functions.php", "functions.php" ou
@@ -111,8 +111,8 @@
     avoir de l'expérience avec le CMS que vous utilisez (vous aurez besoin pour
     nous faire savoir ce qui CMS vous utilisez), et ainsi, peut être en mesure
     de fournir une assistance pour cette question. Pour ce faire [à utiliser
-    require() ou include()], insérez la ligne de code suivante au début de ce
-    le noyau fichier et remplacer la string contenue à l'intérieur des
+    "require()" ou "include()"], insérez la ligne de code suivante au début de
+    ce le noyau fichier et remplacer la string contenue à l'intérieur des
     guillemets avec l'exacte adresse le fichier "phpmussel.php" (l'adresse
     locale, pas l'adresse HTTP; il ressemblera l'adresse de "vault" mentionné
     précédemment).
@@ -468,15 +468,15 @@
                 vérifier, il sera annulerait. Les résultats du processus sont
                 imprimés à l'écran. Je recommande vérifier au moins une fois
                 par mois afin d'assurer que vos signatures et votre copie de
-                phpMussel sont la dernière disponible. (sauf, bien sûr, vous
-                télécharger et installer les derniers fichiers manuellement,
-                dont, j'aussi recommande vérifier au moins une fois par mois).
-                Vérification de plus de deux fois par mois est probablement
-                inutile, en tenant compte que je (au moment d'écrire ces)
-                travaille sur ce projet par moi-même et je suis très peu
-                probable d'être produire nouveaux fichiers plus fréquemment que
-                cela (ni je ne particulièrement pas vouloir à, pour la
-                plupart).
+                phpMussel sont la dernière disponible (à moins que, bien sûr,
+                si vous téléchargez et installez les derniers fichiers
+                manuellement, dont, j'aussi recommande vérifier au moins une
+                fois par mois). Vérification de plus de deux fois par mois est
+                probablement inutile, en tenant compte que je (au moment
+                d'écrire ces) travaille sur ce projet par moi-même et je suis
+                très peu probable d'être produire nouveaux fichiers plus
+                fréquemment que cela (ni je ne particulièrement pas vouloir à,
+                pour la plupart).
    ~
  greylist
    Mot de passe requis: script_password
@@ -1331,8 +1331,8 @@
      la majorité des systèmes et CMS, mais volontairement pas nécessairement
      complète.
    "general_commands"
-   - Vérifier de fichiers pour générales commandes comme eval(), exec() et
-     include()? 0 - Non (pas vérifier) [Défaut], 1 - Oui (vérifier).
+   - Vérifier de fichiers pour générales commandes comme "eval()", "exec()" et
+     "include()"? 0 - Non (pas vérifier) [Défaut], 1 - Oui (vérifier).
      Définir comme 0 (Non) si vous avez l'intention à télécharger de la suivant
      à votre système ou CMS via votre navigateur: php, JavaScript, HTML,
      python, perl fichiers etc. Définir comme 1 (Oui) si vous n'avez pas de
@@ -1456,19 +1456,19 @@
         <https://www.virustotal.com/en/documentation/public-api/>.
      Noter: Si l'analyse des fichiers en utilisant le Virus Total API est
      désactivé, vous ne serez pas besoin de revoir tout des directives dans
-     cette catégorie (`virustotal`), parce qu'aucun d'eux ne fait rien si cette
+     cette catégorie ("virustotal"), parce qu'aucun d'eux ne fait rien si cette
      option est désactivée. Pour acquérir une Virus Total API clé, à partir de
      quelque part sur leur website, cliquez sur le "Rejoindre notre communauté"
      lien situé vers le haut à droite de la page, saisissez les informations
      demandées, et cliquez sur "S'enregistrer" quand vous avez terminé. Suivez
      toutes les instructions fournies, et quand vous avez votre publique API
-     clé, copier/coller cette publique API clé à la `vt_public_api_key`
+     clé, copier/coller cette publique API clé à la "vt_public_api_key"
      directive du "phpmussel.ini" configuration fichier.
    "vt_suspicion_level"
    - Par défaut, phpMussel va restreindre les fichiers de l'analyse utilisant
      le Virus Total API à ces fichiers qu'il juges comme "soupçonneux".
      Facultativement, vous pouvez régler cette restriction par changeant la
-     valeur de la `vt_suspicion_level` directive.
+     valeur de la "vt_suspicion_level" directive.
      0 - Fichiers sont seulement considérées comme soupçonneux si, quand étant
          analysé par phpMussel utilisant ses propres signatures, ils sont
          réputés pour porter un poids heuristique. Cela signifierait
@@ -1552,8 +1552,8 @@
      d'augmenter ces valeurs, mais, si vous avez rencontré des problèmes
      relatifs à atteindre votre quota, diminuant ces valeurs -PEUT- parfois
      vous aider dans le traitement de ces problèmes. Votre quota est déterminée
-     comme `vt_quota_rate` demandes de toute nature dans un laps de
-     `vt_quota_time` minute de temps.
+     comme "vt_quota_rate" demandes de toute nature dans un laps de
+     "vt_quota_time" minute de temps.
  "template_data" (Category)
  - Directives/Variables pour les modèles et thèmes: Modèles données est liée à
    la sortie HTML utilisé pour générer le "Téléchargement Refusé" message
@@ -1804,5 +1804,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 14 Août 2015 (2015.08.14).
+Dernière Réactualisé: 17 Août 2015 (2015.08.17).
 EOF

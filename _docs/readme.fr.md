@@ -213,7 +213,7 @@ update
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
 - Exemple: `?pword=[script_password]&phpmussel=update`
-- Quel est-il: Vérifie pour nouvelles versions de phpMussel et ses signatures. Si quelque chose est trouvé, il va tenter à télécharger et installer les nouveaux fichiers. S'il est ne parvient pas à vérifier, il sera annulerait. Les résultats du processus sont imprimés à l'écran. Je recommande vérifier au moins une fois par mois afin d'assurer que vos signatures et votre copie de phpMussel sont la dernière disponible. (sauf, bien sûr, vous télécharger et installer les derniers fichiers manuellement, dont, j'aussi recommande vérifier au moins une fois par mois). Vérification de plus de deux fois par mois est probablement inutile, en tenant compte que je (au moment d'écrire ces) travaille sur ce projet par moi-même et je suis très peu probable d'être produire nouveaux fichiers plus fréquemment que cela (ni je ne particulièrement pas vouloir à, pour la plupart).
+- Quel est-il: Vérifie pour nouvelles versions de phpMussel et ses signatures. Si quelque chose est trouvé, il va tenter à télécharger et installer les nouveaux fichiers. S'il est ne parvient pas à vérifier, il sera annulerait. Les résultats du processus sont imprimés à l'écran. Je recommande vérifier au moins une fois par mois afin d'assurer que vos signatures et votre copie de phpMussel sont la dernière disponible (à moins que, bien sûr, si vous téléchargez et installez les derniers fichiers manuellement, dont, j'aussi recommande vérifier au moins une fois par mois). Vérification de plus de deux fois par mois est probablement inutile, en tenant compte que je (au moment d'écrire ces) travaille sur ce projet par moi-même et je suis très peu probable d'être produire nouveaux fichiers plus fréquemment que cela (ni je ne particulièrement pas vouloir à, pour la plupart).
 
 greylist
 - Mot de passe requis: script_password
@@ -937,4 +937,4 @@ Cette information a été réactualisé le 28 Mai 2015 et est courant pour toute
 ---
 
 
-Dernière Réactualisé: 14 Août 2015 (2015.08.14).
+Dernière Réactualisé: 17 Août 2015 (2015.08.17).

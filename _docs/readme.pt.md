@@ -937,4 +937,4 @@ Esta informação foi atualizada dia 28 Maio 2015 e é corrente para todas phpMu
 ---
 
 
-Última Atualização: 14 Agosto 2015 (2015.08.14).
+Última Atualização: 17 Agosto 2015 (2015.08.17).

@@ -99,20 +99,20 @@
     phpMussel al vostre sistema o CMS, Ma il più semplice è di inserire lo
     script all'inizio di un file del vostre sistema o CMS (quello che sarà
     generalmente sempre essere caricato quando qualcuno accede a una pagina
-    attraverso il vostro sito) utilizzando un require() o include() comando.
-    Solitamente, questo sarà qualcosa memorizzate in una cartella, ad esempio
-    "/includes", "/assets" o "/functions", e spesso essere chiamato qualcosa
-    come "init.php", "common_functions.php", "functions.php" o simili. Avrete
-    bisogno determinare quale file è per la vostra situazione; In caso di
-    difficoltà nel determinare questo per te, visitare il phpMussel supporto
+    attraverso il vostro sito) utilizzando un "require()" o "include()"
+    comando. Solitamente, questo sarà qualcosa memorizzate in una cartella, ad
+    esempio "/includes", "/assets" o "/functions", e spesso essere chiamato
+    qualcosa come "init.php", "common_functions.php", "functions.php" o simili.
+    Avrete bisogno determinare quale file è per la vostra situazione; In caso
+    di difficoltà nel determinare questo per te, visitare il phpMussel supporto
     forum e fateci sapere; È possibile che io o un altro utente possono avere
     esperienza con il CMS che si sta utilizzando (avrete bisogno di fateci
     sapere quale CMS si sta utilizzando), e quindi, può essere in grado di
-    fornire assistenza in questo settore. Per fare questo [utilizzare require()
-    o include()], inserire la seguente linea di codice all'inizio di quel core
-    file, sostituendo la stringa contenuta all'interno delle virgolette con
-    l'esatto indirizzo della "phpmussel" file (indirizzo locale, non
-    l'indirizzo HTTP; sarà simile all'indirizzo citato in precedenza).
+    fornire assistenza in questo settore. Per fare questo [utilizzare
+    "require()" o "include()"], inserire la seguente linea di codice all'inizio
+    di quel core file, sostituendo la stringa contenuta all'interno delle
+    virgolette con l'esatto indirizzo della "phpmussel" file (indirizzo locale,
+    non l'indirizzo HTTP; sarà simile all'indirizzo citato in precedenza).
 
     <?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>
 
@@ -1311,8 +1311,8 @@
      formati utilizzati più comunemente attraverso la maggior parte dei sistemi
      e CMS, Ma apposta non è necessariamente completo.
    "general_commands"
-   - Cercare contenuti dei file per generali comandi quali eval(), exec() e
-     include()? 0 - No (no verifica) [Predefinito], 1 - Sì (fare verifica).
+   - Cercare contenuti dei file per generali comandi quali "eval()", "exec()" e
+     "include()"? 0 - No (no verifica) [Predefinito], 1 - Sì (fare verifica).
      Disattivare questa opzione se si intende caricare qualsiasi delle seguenti
      al vostra sistema o CMS tramite il browser: php, JavaScript, HTML, python,
      perl file e eccetera. Attivare questa opzione se non avete qualsiasi
@@ -1432,18 +1432,18 @@
         <https://www.virustotal.com/en/documentation/public-api/>.
      Notare: Se scansionare dei file utilizzando il Virus Total API è
      disattivato, non avrete bisogno di rivedere qualsiasi delle direttive in
-     questa categoria (`virustotal`), perché nessuno di loro farà una cosa se
+     questa categoria ("virustotal"), perché nessuno di loro farà una cosa se
      questo è disattivato. Per acquisire un Virus Total API chiave, dal ovunque
      sul loro website, clicca il "Join our Community" link situato in alto
      destra della pagina, immettere le informazioni richieste, e clicca
      "Sign up" quando hai finito. Seguite tutte le istruzioni fornite, e quando
      hai la tua pubblica API chiave, copia/incolla la pubblica API chiave per
-     la `vt_public_api_key` direttiva del "phpmussel.ini" configurazione file.
+     la "vt_public_api_key" direttiva del "phpmussel.ini" configurazione file.
    "vt_suspicion_level"
    - Per predefinita, phpMussel limiterà quali file ciò scansiona utilizzando
      il Virus Total API ai quei file che considera "sospettose".
      Facoltativamente, è possibile modificare questa restrizione per mezzo di
-     modificando il valore del `vt_suspicion_level` direttiva.
+     modificando il valore del "vt_suspicion_level" direttiva.
      0 - File vengono solo considerati sospetti se, dopo essere sottoposto a
          scansione da phpMussel utilizzando i propri firme, essi sono
          considerati avere un peso euristica. Questo potrebbe effettivamente
@@ -1524,8 +1524,8 @@
      aumentare questi valori, ma, se hai incontrati problemi relativi a
      raggiungere il vostro tasso quota, diminuendo questi valori -POTREBBE- a
      volte aiutare nel lavoro attraverso questi problemi. Il vostro tasso
-     limite è determinato come `vt_quota_rate` richieste di qualsiasi natura in
-     un dato `vt_quota_time` minuto tempo periodo.
+     limite è determinato come "vt_quota_rate" richieste di qualsiasi natura in
+     un dato "vt_quota_time" minuto tempo periodo.
  "template_data" (Category)
  - Directives/Variables for templates and themes: Modelli dati riferisce alla
    prodotti HTML utilizzato per generare il "Caricamento Negato" messaggio
@@ -1777,5 +1777,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 14 Agosto 2015 (2015.08.14).
+Ultimo Aggiornamento: 17 Agosto 2015 (2015.08.17).
 EOF

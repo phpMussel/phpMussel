@@ -801,7 +801,7 @@ Semua tanda tangan meta data arsip mengikuti format ini:
 
 `NAMA:UKURAN:CRC32`
 
-Dimana NAMA adalah nama mengutip tanda tangan itu, UKURAN adalah total ukuran data (tidak terkompres) dari sebuah data berisikan arsip dan CRC32 adalah checksum crc32 dari data yang berisikan.
+Dimana NAMA adalah nama mengutip tanda tangan itu, UKURAN adalah total ukuran data (tidak terkompres) dari sebuah data berisikan arsip dan CRC32 adalah checksum CRC32 dari data yang berisikan.
 
 ####*TANDA TANGAN SEKSIONAL PE*
 Semua tanda tangan seksional PE mengikuti format ini:
@@ -937,4 +937,4 @@ Informasi ini diupdate 28 Mei 2015 dan cocok untuk semua rilis phpMussel dari du
 ---
 
 
-Terakhir Diperbarui: 14 Agustus 2015 (2015.08.14).
+Terakhir Diperbarui: 17 Agustus 2015 (2015.08.17).

@@ -935,4 +935,4 @@ Diese Informationen wurden zuletzt am 2015.05.28 aktualisiert und gelten für al
 ---
 
 
-Zuletzt aktualisiert: 14. August 2015 (2015.08.14).
+Zuletzt aktualisiert: 17. August 2015 (2015.08.17).

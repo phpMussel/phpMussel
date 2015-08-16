@@ -801,7 +801,7 @@ All archive metadata signatures follow the format:
 
 `NAME:FILESIZE:CRC32`
 
-Where NAME is the name to cite for that signature, FILESIZE is the total size (uncompressed) of a file contained within the archive and CRC32 is the crc32 checksum of that contained file.
+Where NAME is the name to cite for that signature, FILESIZE is the total size (uncompressed) of a file contained within the archive and CRC32 is the CRC32 checksum of that contained file.
 
 ####*PE SECTIONAL SIGNATURES*
 All PE Sectional signatures follow the format:
@@ -937,4 +937,4 @@ This information was last updated 28th May 2015 and is current for all phpMussel
 ---
 
 
-Last Updated: 14th August 2015 (2015.08.14).
+Last Updated: 17th August 2015 (2015.08.17).

@@ -97,7 +97,7 @@
     sistem atau CMS, tetapi yang paling mudah adalah memasukkan skrip pada
     permulaan dari data murni dari sistem atau CMS (satu yang akan secara umum
     di muat ketika seseorang mengakses halaman apapun pada website) berdasarkan
-    perintah require() atau include(). Umumnya, ini akan menjadi sesuatu yang
+    perintah "require()" atau include(). Umumnya, ini akan menjadi sesuatu yang
     disimpan di sebuah direktori seperti "/includes", "/asset" atau
     "/functions" dan akan selalu di namai sesuatu seperti "init.php",
     "common_functions.php","functions.php" atau yang sama. Anda harus bekerja
@@ -107,8 +107,8 @@
     mungkin memiliki pengalaman dengan CMS yang Anda gunakan (Anda harus
     memberitahu kami tahu mana CMS yang Anda gunakan), dan demikian, mungkin
     dapat memberikan beberapa bantuan kepada Anda. Untuk melakukannya
-    [menggunakan require() atau include()], sisipkan baris kode dibawah pada
-    data murni, menggantikan kata-kata berisikan didalam tanda kutip dari
+    [menggunakan "require()" atau "include()"], sisipkan baris kode dibawah
+    pada data murni, menggantikan kata-kata berisikan didalam tanda kutip dari
     alamat data "phpmussel.php" (alamat lokal, tidak alamat HTTP; Akan terlihat
     seperti alamat vault yang di bicarakan sebelumnya.
 
@@ -1312,8 +1312,8 @@
      yang paling umum melalui melalui mayoritas sistem dan CMS, tapi bermaksud
      tidak komprehensif.
    "general_commands"
-   - Mencari isi file-file untuk perintah umum seperti eval(), exec() and
-     include()? 0 - Tidak (tidak mencek) [Default], 1 - Ya (mencek).
+   - Mencari isi file-file untuk perintah umum seperti "eval()", "exec()" and
+     "include()"? 0 - Tidak (tidak mencek) [Default], 1 - Ya (mencek).
      Matikan opsi ini jika Anda bermaksud untuk mengupload yang manapun dari
      ini ke sistem ata CMS Anda via browser Anda: file-file php, JavaScript,
      HTML, python, perl dll. Hidupkan opsi ini jika Anda tidak punya tambahan
@@ -1431,19 +1431,19 @@
         di sini: <https://www.virustotal.com/en/documentation/public-api/>.
      Mencatat: Jika memindai file menggunakan Virus Total API dinonaktifkan,
      Anda tidak akan perlu meninjau salah di direktif-direktif dalam kategori
-     ini (`virustotal`), karena tidak satupun dari mereka akan melakukan apapun
+     ini ("virustotal"), karena tidak satupun dari mereka akan melakukan apapun
      jika ini dinonaktifkan. Untuk memperoleh Virus Total kunci API, dari
      dimanapun di website mereka, mengklik atas "Join our Community" link yang
      terletak ke arah kanan atas dari halaman, memasukkan informasi yang
      diminta, dan mengklik "Sign up" ketika dilakukan. Ikuti semua instruksi
      yang diberikan, dan ketika Anda punya kunci API umum Anda,
-     menyalin/menempelkan bahwa kunci API umum untuk `vt_public_api_key`
+     menyalin/menempelkan bahwa kunci API umum untuk "vt_public_api_key"
      direktif dari "phpmussel.ini" file konfigurasi.
    "vt_suspicion_level"
    - Secara default, phpMussel akan membatasi file dipindai menggunakan Virus
      Total API untuk file-file yang dianggap "mencurigakan". Anda dapat
      menyesuaikan pembatasan ini dengan mengubah nilai direktif
-     `vt_suspicion_level`.
+     "vt_suspicion_level".
      0 - File hanya dianggap mencurigakan jika, setelah dipindai oleh phpMussel
          menggunakan tanda tangan sendiri, mereka dianggap membawa berat
          heuristik. Ini akan efektif berarti bahwa penggunaan Virus Total API
@@ -1520,8 +1520,8 @@
      direkomendasi bagi Anda untuk meningkat nilai-nilai ini, tetapi, jika Anda
      mengalami masalah berkaitan dengan mencapai kuota Anda, penurunan
      nilai-nilai ini kadang -DAPAT- membantu Anda bagi berurusan dengan
-     masalah-masalah ini. Batas Anda ditentukan sebagai `vt_quota_rate`
-     permintaan dalam bentuk apapun dalam jangka waktu `vt_quota_time` menit.
+     masalah-masalah ini. Batas Anda ditentukan sebagai "vt_quota_rate"
+     permintaan dalam bentuk apapun dalam jangka waktu "vt_quota_time" menit.
  "template_data" (Category)
  - Direktif-direktif dan variabel-variabel untuk template-template dan
    tema-tema: Data template berkaitan untuk HTML diproduksi yang digunakan
@@ -1564,7 +1564,7 @@
     NAMA:UKURAN:CRC32
    Dimana NAMA adalah nama mengutip tanda tangan itu, UKURAN adalah total
    ukuran data (tidak terkompres) dari sebuah data berisikan arsip dan CRC32
-   adalah checksum crc32 dari data yang berisikan.
+   adalah checksum CRC32 dari data yang berisikan.
 
  = TANDA TANGAN SEKSIONAL PE =
    Semua tanda tangan seksional PE mengikuti format ini:
@@ -1772,5 +1772,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 14 Agustus 2015 (2015.08.14).
+Terakhir Diperbarui: 17 Agustus 2015 (2015.08.17).
 EOF
