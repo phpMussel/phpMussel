@@ -923,7 +923,7 @@
       WARNING: Don't change this unless you know what you're doing!
     "forbid_on_block"
     - Should phpMussel send 403 headers with the file upload blocked message,
-      or stick with the usual 200 OK? 0 = No (200) [Default], 1 Yes (403).
+      or stick with the usual 200 OK? 0 = No (200) [Default], 1 = Yes (403).
     "delete_on_sight"
     - Enabling this directive will instruct the script to attempt to
       immediately delete any scanned attempted file upload matching any

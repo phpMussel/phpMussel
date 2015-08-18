@@ -113,7 +113,7 @@ phpMussel функционирует полностью в автономном 
 ```
  Wed, 16 Sep 2013 02:49:46 +0000 Начало работы.
  > Проверить '/user_name/public_html/my_file.html':
- -> Проблем не найдено.
+ -> Проблемы не найдены.
  Wed, 16 Sep 2013 02:49:47 +0000 Готово.
 ```
 
@@ -772,10 +772,10 @@ VirusTotal.com директивы.
 ####"template_data" (Категория)
 Директивы/Переменные для шаблоны и темы.
 
-Шаблон данных относится к HTML-вывода, используемый для генерации "Загрузить Отказано" сообщения отображается для пользователей когда/на загрузки/уплоад файлов блокируются. If you're using custom themes for phpMussel, HTML output is sourced from the `template_custom.html` file, and otherwise, HTML output is sourced from the `template.html` file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where `foo="bar"`, any instance of `<p>{foo}</p>` found within the HTML output will become `<p>bar</p>`.
+Шаблонный данных относится к HTML-вывода, используемый для генерации "Загрузить Отказано" сообщения отображается для пользователей когда/на загрузки/уплоад файлов блокируются. Если вы используете персонализированные темы для phpMussel, HTML-выход получены из `template_custom.html` файл, а в противном случае, HTML-выход получены из `template.html` файл. Переменные, записанные в этом разделе файл конфигурации обрабатываются на HTML-выход в виде заменой любой имена переменных в окружении фигурных скобках найденный в HTML-вывода с соответствующей переменных данных. Например, где `foo="bar"`, любое вхождение `<p>{foo}</p>` найденный в HTML-вывода станет `<p>bar</p>`.
 
 "css_url"
-- The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct phpMussel to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the `css_url` variable. If you leave this variable blank, phpMussel will use the template file for the default theme.
+- Шаблонный файл для персонализированные темы использует внешние CSS свойства и шаблонный файл для стандарт тема использует внутренние CSS свойства. Поручить phpMussel использовать персонализированные темы шаблонный файл, указать адрес публичного HTTP в CSS файлов вашей темы используя `css_url` переменная. Если оставить это переменная пустым, phpMussel будет использовать шаблонный файл для стандарт тема.
 
 ---
 

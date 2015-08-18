@@ -488,7 +488,7 @@ Generale configurazione per phpMussel.
 - Dove trovare l'IP indirizzo di collegamento richiesta? (Utile per servizi come Cloudflare e simili) Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!
 
 "forbid_on_block"
-- phpMussel dovrebbe inviare 403 intestazioni con il file caricamente bloccato messaggio, o tenere con il solito 200 OK? 0 = No (200) [Predefinito], 1 Sì (403).
+- phpMussel dovrebbe inviare 403 intestazioni con il file caricamente bloccato messaggio, o tenere con il solito 200 OK? 0 = No (200) [Predefinito], 1 = Sì (403).
 
 "delete_on_sight"
 - Abilitando questa opzione sarà istruirà lo script per tentare immediatamente eliminare qualsiasi file trovato durante scansioni che corrisponde a qualsiasi i criteri di rilevazione, attraverso le firme o altrimenti. I file determinati ad essere "pulito" non verranno toccati. Nel caso degli archivi, l'intero archivio verrà eliminato (indipendentemente se il file all'origine è soltanto uno dei vari file contenuti all'interno dell'archivio o non). Nel caso di file caricamente scansione, solitamente, non è necessario attivare questa opzione, perché solitamente, php sarà automaticamente eliminerà il contenuto della cache quando l'esecuzione è terminata, il che significa che lo farà solitamente eliminare tutti i file caricati tramite al server tranne ciò che già è spostato, copiato o cancellato. L'opzione viene aggiunto qui come ulteriore misura di sicurezza per coloro le cui copie di php non sempre comportarsi nel previsto modo. 0 - Dopo la scansione, lasciare il file solo [Predefinito], 1 - Dopo la scansione, se non pulite, immediatamente eliminarlo.

@@ -983,7 +983,7 @@
     "forbid_on_block"
     - Debería phpMussel enviar 403 header con la bloqueados archivos subidos
       mensaje, o quedarse con los usual 200 OK?
-      0 = No (200) [Predefinido], 1 Sí (403).
+      0 = No (200) [Predefinido], 1 = Sí (403).
     "delete_on_sight"
     - Activando esta directiva instruirá la script para intentar para eliminar
       inmediatamente cualquier escaneados intentados archivos subidos

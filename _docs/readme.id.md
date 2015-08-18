@@ -488,7 +488,7 @@ Konfigurasi umum dari phpMussel.
 - Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!
 
 "forbid_on_block"
-- Seharusnya phpMussel mengirimkan 403 headers dengan pesan upload data yang terblok, atau cocok dengan 200 OK? 0 = Tidak (200) [Default], 1 Ya (403).
+- Seharusnya phpMussel mengirimkan 403 headers dengan pesan upload data yang terblok, atau cocok dengan 200 OK? 0 = Tidak (200) [Default], 1 = Ya (403).
 
 "delete_on_sight"
 - Mengaktifkan opsi ini akan menginstruksikan skrip untuk berusaha secepatnya menghapus data apapun yang ditemukannya selama scan yang mencocokkan pada kriteria deteksi apapun, baik melalui tanda tangan atau yang lain. file-file ditentukan "clean" tidak akan disentuh. Pada kasus file terkompress seluruh file terkompress akan didelate (kecuali data yang menyerang adalah satu-satunya dari beberapa file yang menjadi isi file terkompress). Untuk kasus pemindaian upload data biasanya, tidak cocok untuk mengaktifkan opsi ini, karena biasanya php akan secara otomatis menyatukan isi dari cache ketika eksekusi selesai, berarti bahwa dia akan selalu menghapus data terupload apapun melalui server jika tidak dipindahkan, dikopi atau dihapus sebelumnya. Opsi tersebut ditambahkan di sini sebagai ukuran keamanan ekstra untuk semua salinan php yang tidak selalu bersikap pada perilaku yang diharapkan. 0 - Setelah pemindahaian, biarkan data [Default], 1 - Setelah pemindaian, jika tidak bersih, hapus langsung.

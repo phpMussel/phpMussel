@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Chinese (Traditional) / 中文（傳統） Language Data (9th August 2015).
+ This File: phpMussel Chinese (Traditional) / 中文（傳統） Language Data (17th August 2015).
  <%phpMussel%/vault/lang/lang.zh-TW.inc>
 
 */
@@ -25,8 +25,8 @@ $MusselConfig['lang']['bad_command']='我不明白的命令，對不起。';
 $MusselConfig['lang']['cli_commands']=" q\n - 戒菸CLI模式。\n - 別名：quit，exit。\n md5_file\n - 生成MD5簽名從文件[語法：md5_file 文件名]。\n - 別名：m.\n md5\n - 生成MD5簽名從數據[語法：md5 數據]。\n hex_encode\n - 兌換從二進制數據至十六進制[語法：hex_encode 數據]。\n - 別名：x.\n hex_decode\n - 兌換從十六進制二進制數據至[語法：hex_decode 數據]。\n base64_encode\n - 兌換從二進制數據至基地64數據[語法：base64_encode 數據]。\n - 別名：b.\n base64_decode\n - 兌換從基地64數據至二進制數據[語法：base64_decode 數據]。\n scan\n - 掃描文件或文件夾[語法：scan 文件名]。\n - 別名：s。\n update\n - 更新phpMussel。\n - 別名：u。\n c\n - 打印此命令列表。\n";
 $MusselConfig['lang']['cli_failed_to_complete']='完成掃描過程失敗';
 $MusselConfig['lang']['cli_is_not_a']='不是文件或文件夾。';
-$MusselConfig['lang']['cli_ln2']=" 谢谢对于运用phpMussel，一PHP编程旨在检测木马，病毒，恶意软件，和其他威胁内的文件上传到你的系统随地编程是连接，根据ClamAV的签名和其他签名。\n\n PHPMUSSEL版權2013和此後GNU/GPLv.2通過Caleb M （Maikuolan）。\n\n                                     ~ ~ ~\n\n";
-$MusselConfig['lang']['cli_ln3']=" 目前經營phpMussel在CLI模式（命令行接口）。\n\n 掃描一個文件或文件夾，鍵入“scan”，其次是名的文件或文件夾你想phpMussel掃描然後按Enter鍵；\n 鍵入“c”然後按Enter鍵對於CLI模式命令名單；鍵入“q”然後按Enter鍵對於戒菸：";
+$MusselConfig['lang']['cli_ln2']="謝謝對於使用phpMussel，PHP編程旨在檢測木馬，病毒，惡意軟件，和其他威脅內的文件上傳到你的系統隨地編程是連接，根據ClamAV的簽名和其他簽名。\n\n PHPMUSSEL版權2013和此後GNU/GPLv.2通過Caleb M （Maikuolan）。\n\n                                     ~ ~ ~\n\n";
+$MusselConfig['lang']['cli_ln3']=" 目前經營phpMussel在CLI模式（命令行界面）。\n\n 掃描一個文件或文件夾，鍵入“scan”，其次是名的文件或文件夾你想phpMussel掃描然後按Enter鍵；\n 鍵入“c”然後按Enter鍵對於CLI模式命令名單；鍵入“q”然後按Enter鍵對於戒菸：";
 $MusselConfig['lang']['cli_pe1']='不是PE文件！';
 $MusselConfig['lang']['cli_pe2']='PE部分:';
 $MusselConfig['lang']['cli_update_restart']=' 重新啟動phpMussel可能是需要之前的更新變得明顯。';
@@ -98,7 +98,7 @@ $MusselConfig['lang']['update_fetch']='試圖獲取版本數據從';
 $MusselConfig['lang']['update_lock_detected']='更新鎖檢測：無法繼續。檢查是否有損壞的更新或稍後再試。';
 $MusselConfig['lang']['update_not']='不{x}';
 $MusselConfig['lang']['update_not_available']='沒有編程更新是可用的此時。';
-$MusselConfig['lang']['update_not_possible']='編程更新是可用的，但它不能完全更新運用此版本的更新編程。請手動更新。';
+$MusselConfig['lang']['update_not_possible']='編程更新是可用的，但它不能完全更新使用此版本的更新編程。請手動更新。';
 $MusselConfig['lang']['update_no_source']='phpMussel失敗自我更新因為無法連接至有效的更新源。手動更新是推薦。';
 $MusselConfig['lang']['update_patched']='是修補或更新';
 $MusselConfig['lang']['update_scriptfile_missing']='更新編程文件是失踪！請重新安裝phpMussel。';

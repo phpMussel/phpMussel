@@ -940,7 +940,7 @@
       Achtung: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
     "forbid_on_block"
     - Zurückgegebener 403-HTTP-Header bei einem blockierten Dateiupload.
-      0 = Nein (200) [Standardeinstellung], 1 Ja (403).
+      0 = Nein (200) [Standardeinstellung], 1 = Ja (403).
     "delete_on_sight"
     - Diese Option weist das Script an, Dateien während eines Scans sofort
       zu löschen, wenn ein Erkennungsmerkmal, ob durch Signaturen oder

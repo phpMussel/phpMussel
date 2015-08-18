@@ -982,7 +982,7 @@
     "forbid_on_block"
     - Seharusnya phpMussel mengirimkan 403 headers dengan pesan upload data
       yang terblok, atau cocok dengan 200 OK?
-      0 = Tidak (200) [Default], 1 Ya (403).
+      0 = Tidak (200) [Default], 1 = Ya (403).
     "delete_on_sight"
     - Mengaktifkan opsi ini akan menginstruksikan skrip untuk berusaha
       secepatnya menghapus data apapun yang ditemukannya selama scan yang

@@ -970,7 +970,7 @@
     "forbid_on_block"
     - Deve phpMussel enviar 403 header com a bloqueado arquivo carregamento
       mensagem, ou ficar com os habituais 200 OK?
-      0 = Não (200) [Padrão], 1 Sim (403).
+      0 = Não (200) [Padrão], 1 = Sim (403).
     "delete_on_sight"
     - Ativando esta opção irá instruir o script para tentar imediatamente
       deletando qualquer arquivo que ele encontra durante a análise que

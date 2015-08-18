@@ -979,7 +979,7 @@
     "forbid_on_block"
     - phpMussel dovrebbe inviare 403 intestazioni con il file caricamente
       bloccato messaggio, o tenere con il solito 200 OK?
-      0 = No (200) [Predefinito], 1 Sì (403).
+      0 = No (200) [Predefinito], 1 = Sì (403).
     "delete_on_sight"
     - Abilitando questa opzione sarà istruirà lo script per tentare
       immediatamente eliminare qualsiasi file trovato durante scansioni che

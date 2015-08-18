@@ -487,7 +487,7 @@ Generelle Konfiguration von phpMussel.
 - Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services) Standardeinstellung = REMOTE_ADDR. Achtung: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
 
 "forbid_on_block"
-- Zurückgegebener 403-HTTP-Header bei einem blockierten Dateiupload. 0 = Nein (200) [Standardeinstellung], 1 Ja (403).
+- Zurückgegebener 403-HTTP-Header bei einem blockierten Dateiupload. 0 = Nein (200) [Standardeinstellung], 1 = Ja (403).
 
 "delete_on_sight"
 - Diese Option weist das Script an, Dateien während eines Scans sofort zu löschen, wenn ein Erkennungsmerkmal, ob durch Signaturen oder andere Methoden, zutrifft. Dateien, die als nicht infiziert eingestuft werden, werden nicht berührt. Im Falle von Archiven wird das gesamte Archiv gelöscht, auch wenn nur eine einzige Datei im Archiv infiziert sein sollte. Normalerweise ist es bei einem Dateiupload nicht notwendig, diese Option zu aktivieren, da PHP nach der Ausführung von Scripten den Inhalt vom Cache löscht, d.h. PHP löscht jede Datei, die über den Server hochgeladen wird, sofern Sie nicht verschoben, kopiert oder bereits gelöscht wurde. Diese Option wurde als zusätzliches Maß an Sicherheit hinzugefügt, außerdem für Systeme, deren PHP-Installation nicht dem üblichen Verhalten entspricht. 0 - Nach der Überprüfung wird die Datei so belassen [Standardeinstellung], 1 - Nach der Überprüfung wird die Datei sofort gelöscht, sofern Sie infiziert ist.
