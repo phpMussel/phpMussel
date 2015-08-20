@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Russian/Русский Language Data (18th August 2015).
+ This File: phpMussel Russian/Русский Language Data (20th August 2015).
  <%phpMussel%/vault/lang/lang.ru.inc>
 
 */
@@ -34,8 +34,8 @@ $MusselConfig['lang']['cli_working']='В действии';
 $MusselConfig['lang']['controls_lockout']='phpMussel контроль блокировки активен.';
 $MusselConfig['lang']['core_scriptfile_missing']='Файл основного сценария отсутствует! Пожалуйста инсталлируете phpMussel заново.';
 $MusselConfig['lang']['corrupted']='Обнаружена поврежденная ПЭ';
-$MusselConfig['lang']['denied']='Загрузка отказана!';
-$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+$MusselConfig['lang']['denied']='Загрузка Отказана!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='Ваша загрузка была заблокирована по причинам перечисленным ниже / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Обнаружено {vn}';
 $MusselConfig['lang']['detected_control_characters']='Обнаружены символы управления';
@@ -59,7 +59,7 @@ $MusselConfig['lang']['phpmussel_disabled_already']='phpMussel уже неакт
 $MusselConfig['lang']['phpmussel_enabled']='phpMussel активен.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel уже активен.';
 $MusselConfig['lang']['recursive']='Лимит глубины рекурсии превышена';
-$MusselConfig['lang']['refer_to_scan_kills']=' (сослаться на'.$MusselConfig['general']['scan_kills'].' для деталей)';
+$MusselConfig['lang']['refer_to_scan_kills']=' (сослаться на '.$MusselConfig['general']['scan_kills'].' для деталей)';
 $MusselConfig['lang']['required_variables_not_defined']='Обязательные переменные не установлены: Продолжение невозможно.';
 $MusselConfig['lang']['scan_aborted']='Сканирование прерывается';
 $MusselConfig['lang']['scan_chameleon']='Обнаружена {x} хамелеон-атака';
@@ -115,7 +115,7 @@ $MusselConfig['lang']['update_was']='{x}';
 $MusselConfig['lang']['update_wrd1']='подписи';
 $MusselConfig['lang']['upload_error_1']='Файл превышает размер директивы MAX_FILE_SIZE. ';
 $MusselConfig['lang']['upload_error_2']='Файл превышает размер заданных в директиве ФОРМЫ. ';
-$MusselConfig['lang']['upload_error_34']='Загрузка отказана! Пожалуйста свяжитесь с хостмастером о помощи! ';
+$MusselConfig['lang']['upload_error_34']='Загрузка Отказана! Пожалуйста свяжитесь с хостмастером о помощи! ';
 $MusselConfig['lang']['upload_error_6']='Загрузка директорий отсутствует! Пожалуйста свяжитесь с хостмастером о помощи! ';
 $MusselConfig['lang']['upload_error_7']='Ошибка диск-записи! Пожалуйста свяжитесь с хостмастером о помощи! ';
 $MusselConfig['lang']['upload_error_8']='PHP реконфигурация обнаружена! Пожалуйста свяжитесь с хостмастером о помощи! ';

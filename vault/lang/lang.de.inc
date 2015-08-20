@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel German/Deutsch Language Data (9th August 2015).
+ This File: phpMussel German/Deutsch Language Data (20th August 2015).
  <%phpMussel%/vault/lang/lang.de.inc>
 
 */
@@ -35,7 +35,7 @@ $MusselConfig['lang']['controls_lockout']='phpMussel Kontrollen-Sperrung aktivie
 $MusselConfig['lang']['core_scriptfile_missing']='Coree-Script Datei fehlt! Bitte phpMussel erneut installieren.';
 $MusselConfig['lang']['corrupted']='Beschädigte PE entdeckt';
 $MusselConfig['lang']['denied']='Upload verweigert!';
-$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento negato! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='Der Upload wurde aus den unten aufgeführten Gründen blockiert / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Entdeckt {vn}';
 $MusselConfig['lang']['detected_control_characters']='Steuerzeichen erkannt';
