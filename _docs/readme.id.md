@@ -213,7 +213,7 @@ update
 - Parameter-parameter yang diharuskan: (tidak ada)
 - Parameter-parameter opsional: (tidak ada)
 - Contoh: `?pword=[script_password]&phpmussel=update`
-- Apa yang dilakukannya: Cek untuk mengupdate ke phpMussel dan tanda tangannya. Jika update cek sukses dan update ditemukan, akan berusaha mendownload dan menginstall update-update ini. Jika update cek gagal, update akan berhenti. Hasil-hasil dari keseluruhan proses akan di cetak ke layar. Saya rekomendasikan mencek setidaknya satu per bulan untuk memastikan tanda tangan Anda dan kopi dari phpMussel di pastikan up to-date (kecuali jika, tentu saja Anda mencek update dan menginstall secara manual, yang mana, saya masih merekomendasikan melakukannya setidaknya satu per bulan). Mencek lebih dari 2 per bulan kemungkinan tidak bertujuan, mengingat saya (saat menulis ini) bekerja pada proyek ini sendiri dan saya sangat tidak bisa memproduksi update lebih sering dari itu (Walaupun saya khususnya ingin melakukannya).
+- Apa yang dilakukannya: Cek untuk mengupdate ke phpMussel dan tanda tangannya. Jika update cek sukses dan update ditemukan, akan berusaha mendownload dan menginstall update-update ini. Jika update cek gagal, update akan berhenti. Hasil-hasil dari keseluruhan proses akan di cetak ke layar. Saya rekomendasikan mencek setidaknya satu per bulan untuk memastikan tanda tangan Anda dan kopi dari phpMussel Anda yang terkini (kecuali jika, tentu saja Anda mencek update dan menginstall secara manual, yang, saya masih merekomendasikan melakukannya setidaknya satu per bulan). Mencek lebih dari 2 per bulan kemungkinan tidak bertujuan, mengingat saya (saat menulis ini) bekerja pada proyek ini sendiri dan saya sangat tidak bisa memproduksi update lebih sering dari itu (Walaupun saya khususnya ingin melakukannya).
 
 greylist
 - Sandi diharuskan: script_password
@@ -716,7 +716,7 @@ Chameleon serangan deteksi: 0 = Dinonaktifkan, 1 = Diaktifkan.
 - Ekstensi data terkompres yang dikenali (format nya CSV; seharusnya hanya menambah atau menghapus ketika masalah terjadi; Tidak cocok langsung menghapus karena dapat menyebabkan angka positif yang salah terjadi pada data terkompres, dimana juga menambahkan deteksi; memodifikasi dengan peringatan; Juga dicatat bahwa ini tidak memberi efek pada data terkompress apa yang dapat dan tidak dapat di analisa pada level isi). Daftar sebagaimana defaultnya, memberi daftar format-format yang digunakan yang paling umum melalui melalui mayoritas sistem dan CMS, tapi bermaksud tidak komprehensif.
 
 "general_commands"
-- Mencari isi file-file untuk perintah umum seperti `eval()`, `exec()` and `include()`? 0 - Tidak (tidak mencek) [Default], 1 - Ya (mencek). Matikan opsi ini jika Anda bermaksud untuk mengupload yang manapun dari ini ke sistem ata CMS Anda via browser Anda: file-file php, JavaScript, HTML, python, perl dll. Hidupkan opsi ini jika Anda tidak punya tambahan perlindungan pada sistem Anda dan tidak bermaksud mengupload file-file apapun. Jika Anda menggunakan keamanan tambahan dalam kata penghubung dengan phpMussel seperti ZB Block, tidak perlu menghidupkan opsi ini, karena kebanyakan apa yang akan phpMussel cari (dalam konteks opsi ini) adalah duplikasi dari perlindungan yang telah disediakan.
+- Mencari isi file-file untuk perintah umum seperti `eval()`, `exec()` and `include()`? 0 - Tidak (tidak mencek) [Default], 1 - Ya (mencek). Matikan opsi ini jika Anda bermaksud untuk mengupload yang manapun dari ini ke sistem ata CMS Anda via browser Anda: file-file PHP, JavaScript, HTML, python, perl dll. Hidupkan opsi ini jika Anda tidak punya tambahan perlindungan pada sistem Anda dan tidak bermaksud mengupload file-file apapun. Jika Anda menggunakan keamanan tambahan dalam kata penghubung dengan phpMussel seperti ZB Block, tidak perlu menghidupkan opsi ini, karena kebanyakan apa yang akan phpMussel cari (dalam konteks opsi ini) adalah duplikasi dari perlindungan yang telah disediakan.
 
 "block_control_characters"
 - Memblokade data apapun yang berisi karakter pengendali (lain dari baris baru)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Jika Anda hanya sedang mengupload data teks biasa, maka Anda dapat menghidupkan opsi ini untuk menyediakan perlindungan tambahan ke sistem Anda. Bagaimanapun jika Anda mengupload apapun lebih dari data teks biasa, menghidupkan opsi ini mungkin mengakibatkan angka positif salah. 0 - Jangan memblokade [Default], 1 - Memblokade.
@@ -937,4 +937,4 @@ Informasi ini diupdate 28 Mei 2015 dan cocok untuk semua rilis phpMussel dari du
 ---
 
 
-Terakhir Diperbarui: 17 Agustus 2015 (2015.08.17).
+Terakhir Diperbarui: 22 Agustus 2015 (2015.08.22).

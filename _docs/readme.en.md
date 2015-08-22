@@ -213,7 +213,7 @@ update
 - Required parameters: (none)
 - Optional parameters: (none)
 - Example: `?pword=[script_password]&phpmussel=update`
-- What it does: Checks for updates to both phpMussel and its signatures. If update checks succeed and updates are found, will attempt to download and install these updates. If update checks fail, update will abort. Results of the entire process are printed to the screen. I recommend checking at least once per month to ensure that your signatures and your copy of phpMussel are kept up to-date (unless, of course, you're checking for updates and installing them manually, which, I'd still recommend doing at least one per month). Checking more than twice per month is probably pointless, considering I'm (at the time of writing this) working on this project by myself and I'm very unlikely to be able to produce updates of any kind more frequently than that (nor do I particularly want to for the most part).
+- What it does: Checks for updates to both phpMussel and its signatures. If update checks succeed and updates are found, will attempt to download and install these updates. If update checks fail, update will abort. Results of the entire process are printed to the screen. I recommend checking at least once per month to ensure that your signatures and your copy of phpMussel are kept up to-date (unless, of course, you're checking for updates and installing them manually, which, I'd still recommend doing at least once per month). Checking more than twice per month is probably pointless, considering I'm (at the time of writing this) working on this project by myself and I'm very unlikely to be able to produce updates of any kind more frequently than that (nor do I particularly want to for the most part).
 
 greylist
 - Password required: script_password
@@ -716,7 +716,7 @@ Chameleon attack detection: 0 = Off, 1 = On.
 - Recognised archive file extensions (format is CSV; should only add or remove when problems occur; unnecessarily removing may cause false-positives to appear for archive files, whereas unnecessarily adding will essentially whitelist what you're adding from attack specific detection; modify with caution; also note that this has no effect on what archives can and can't be analysed at content-level). The list, as is at default, lists those formats used most commonly across the majority of systems and CMS, but intentionally isn't necessarily comprehensive.
 
 "general_commands"
-- Search content of files for general commands such as `eval()`, `exec()` and `include()`? 0 - No (do not check) [Default], 1 - Yes (check). Disable this option if you intend to upload any of the following to your system or CMS via your browser: php, JavaScript, HTML, python, perl files and etcetera. Enable this option if you don't have any additional protections on your system and do not intend to upload such files. If you use additional security in conjunction with phpMussel such as ZB Block, there is no need to turn this option on, because most of what phpMussel will look for (in the context of this option) are duplications of protections that are already provided.
+- Search content of files for general commands such as `eval()`, `exec()` and `include()`? 0 - No (do not check) [Default], 1 - Yes (check). Disable this option if you intend to upload any of the following to your system or CMS via your browser: PHP, JavaScript, HTML, python, perl files and etcetera. Enable this option if you don't have any additional protections on your system and do not intend to upload such files. If you use additional security in conjunction with phpMussel such as ZB Block, there is no need to turn this option on, because most of what phpMussel will look for (in the context of this option) are duplications of protections that are already provided.
 
 "block_control_characters"
 - Block any files containing any control characters (other than newlines)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) If you're _**ONLY**_ uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. 0 - Don't block [Default], 1 - Block.
@@ -937,4 +937,4 @@ This information was last updated 28th May 2015 and is current for all phpMussel
 ---
 
 
-Last Updated: 17th August 2015 (2015.08.17).
+Last Updated: 22nd August 2015 (2015.08.22).

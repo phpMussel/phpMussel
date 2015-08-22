@@ -462,9 +462,9 @@
                           berhenti. Hasil-hasil dari keseluruhan proses akan di
                           cetak ke layar. Saya rekomendasikan mencek setidaknya
                           satu per bulan untuk memastikan tanda tangan Anda dan
-                          kopi dari phpMussel di pastikan up to-date (kecuali
-                          jika, tentu saja Anda mencek update dan menginstall
-                          secara manual, yang mana, saya masih merekomendasikan
+                          kopi dari phpMussel Anda yang terkini (kecuali jika,
+                          tentu saja Anda mencek update dan menginstall secara
+                          manual, yang, saya masih merekomendasikan
                           melakukannya setidaknya satu per bulan). Mencek lebih
                           dari 2 per bulan kemungkinan tidak bertujuan,
                           mengingat saya (saat menulis ini) bekerja pada proyek
@@ -1315,7 +1315,7 @@
    - Mencari isi file-file untuk perintah umum seperti "eval()", "exec()" and
      "include()"? 0 - Tidak (tidak mencek) [Default], 1 - Ya (mencek).
      Matikan opsi ini jika Anda bermaksud untuk mengupload yang manapun dari
-     ini ke sistem ata CMS Anda via browser Anda: file-file php, JavaScript,
+     ini ke sistem ata CMS Anda via browser Anda: file-file PHP, JavaScript,
      HTML, python, perl dll. Hidupkan opsi ini jika Anda tidak punya tambahan
      perlindungan pada sistem Anda dan tidak bermaksud mengupload file-file
      apapun. Jika Anda menggunakan keamanan tambahan dalam kata penghubung
@@ -1772,5 +1772,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 17 Agustus 2015 (2015.08.17).
+Terakhir Diperbarui: 22 Agustus 2015 (2015.08.22).
 EOF

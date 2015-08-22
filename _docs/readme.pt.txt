@@ -456,7 +456,7 @@
             seus assinaturas e sua cópia do phpMussel são mantidos atualizados
             (a menos, claro, você está verificando se há atualizações e
             instalá-los manualmente, que, eu ainda recomendo fazer pelo menos
-            um por mês). Verificando mais de que duas vezes por mês é
+            uma vez por mês). Verificando mais de que duas vezes por mês é
             provavelmente inútil, considerando que eu (no momento de escrever
             este) estou trabalhando neste projeto sozinho e eu estou muito
             improvável que seja capaz de produzir atualizações de qualquer
@@ -1772,5 +1772,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 17 Agosto 2015 (2015.08.17).
+Última Atualização: 22 Agosto 2015 (2015.08.22).
 EOF

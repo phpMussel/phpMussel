@@ -73,7 +73,12 @@ Anything less than sub-minor:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2015.08.20; Sub-minor code change; Maikuolan]: Added one new "shorthand"
+  entry (Malvertisement) [phpmussel.inc]; Slightly tweaked all the language
+  files (a few small, non-significant corrections made).
+
+- [2015.08.22; Documentation; Maikuolan]: Completed translation of the
+  documentation to Dutch (probably erroneous; feel free to audit if you want).
 
 === Version/Release 0.7a (Previous Release: 0.7) ===
 SUB-MINOR RELEASE; Updated to the latest signatures set (55+20751+7a).

@@ -432,7 +432,7 @@
                  to ensure that your signatures and your copy of phpMussel are
                  kept up to-date (unless, of course, you're checking for
                  updates and installing them manually, which, I'd still
-                 recommend doing at least one per month). Checking more than
+                 recommend doing at least once per month). Checking more than
                  twice per month is probably pointless, considering I'm (at the
                  time of writing this) working on this project by myself and
                  I'm very unlikely to be able to produce updates of any kind
@@ -1246,7 +1246,7 @@
    - Search content of files for general commands such as "eval()", "exec()"
      and "include()"? 0 - No (do not check) [Default], 1 - Yes (check).
      Disable this option if you intend to upload any of the following to your
-     system or CMS via your browser: php, JavaScript, HTML, python, perl files
+     system or CMS via your browser: PHP, JavaScript, HTML, python, perl files
      and etcetera. Enable this option if you don't have any additional
      protections on your system and do not intend to upload such files. If you
      use additional security in conjunction with phpMussel such as ZB Block,
@@ -1682,5 +1682,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 17th August 2015 (2015.08.17).
+Last Updated: 22nd August 2015 (2015.08.22).
 EOF

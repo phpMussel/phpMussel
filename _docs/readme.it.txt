@@ -465,13 +465,13 @@
             verificare almeno una volta al mese per garantire le vostre firme e
             la vostra copia di phpMussel sono aggiornato all'ultimo edizioni (a
             meno, ovviamente, si fare l'aggiornamento verificare e fare
-            l'installazione di manualmente, di cui, Mi piacerebbe ancora
-            consiglio di fare almeno una al mese). Controllo più di due volte
-            al mese, è probabilmente inutile, considerando sto (alla momento di
-            stesura questo) lavorando su questo progetto da solo e sto molto
-            improbabile essere in grado per produzione qualsiasi aggiornamenti
-            di qualsiasi tipo più spesso di quello (né faccio in modo
-            particolare voglio per la maggior parte).
+            l'installazione di manualmente, di cui, mi piacerebbe ancora
+            consiglio di fare almeno una volta al mese). Controllo più di due
+            volte al mese, è probabilmente inutile, considerando sto (alla
+            momento di stesura questo) lavorando su questo progetto da solo e
+            sto molto improbabile essere in grado per produzione qualsiasi
+            aggiornamenti di qualsiasi tipo più spesso di quello (né faccio in
+            modo particolare voglio per la maggior parte).
    ~
  greylist
    Password requisito: script_password
@@ -1314,7 +1314,7 @@
    - Cercare contenuti dei file per generali comandi quali "eval()", "exec()" e
      "include()"? 0 - No (no verifica) [Predefinito], 1 - Sì (fare verifica).
      Disattivare questa opzione se si intende caricare qualsiasi delle seguenti
-     al vostra sistema o CMS tramite il browser: php, JavaScript, HTML, python,
+     al vostra sistema o CMS tramite il browser: PHP, JavaScript, HTML, python,
      perl file e eccetera. Attivare questa opzione se non avete qualsiasi
      aggiuntivi protezioni sul vostro sistema e non intendono caricare tali
      file. Se si utilizza qualsiasi aggiuntivi protezione in collaborazione con
@@ -1777,5 +1777,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 17 Agosto 2015 (2015.08.17).
+Ultimo Aggiornamento: 22 Agosto 2015 (2015.08.22).
 EOF

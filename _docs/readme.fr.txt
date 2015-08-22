@@ -1334,7 +1334,7 @@
    - Vérifier de fichiers pour générales commandes comme "eval()", "exec()" et
      "include()"? 0 - Non (pas vérifier) [Défaut], 1 - Oui (vérifier).
      Définir comme 0 (Non) si vous avez l'intention à télécharger de la suivant
-     à votre système ou CMS via votre navigateur: php, JavaScript, HTML,
+     à votre système ou CMS via votre navigateur: PHP, JavaScript, HTML,
      python, perl fichiers etc. Définir comme 1 (Oui) si vous n'avez pas de
      supplémentaire protections sur votre système et n'ont pas l'intention de
      télécharger ces fichiers. Si vous utilisez une supplémentaire sécurité en
@@ -1804,5 +1804,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 17 Août 2015 (2015.08.17).
+Dernière Réactualisé: 22 Août 2015 (2015.08.22).
 EOF

@@ -460,11 +460,11 @@
              una vez por mes para asegurar que sus firmas y su copia de
              phpMussel se mantienen actualizada (a menos que, naturalmente,
              usted está comprobando las actualizaciones e instalandolos
-             manualmente, que, aun así sigo recomendando hacer al menos uno por
-             mes). Comprobar más de dos veces por mes es probablemente inútil,
-             en consideración que (en el momento de escribir este) estoy
-             trabajando en este proyecto solo y estoy muy improbable de ser
-             capaz de producir actualizaciones de cualquier tipo con más
+             manualmente, que, aun así sigo recomendando hacer al menos una vez
+             por mes). Comprobar más de dos veces por mes es probablemente
+             inútil, en consideración que (en el momento de escribir este)
+             estoy trabajando en este proyecto solo y estoy muy improbable de
+             ser capaz de producir actualizaciones de cualquier tipo con más
              frecuencia que la (ni tengo particular quiero para hacerlo en la
              mayor parte).
    ~
@@ -1326,7 +1326,7 @@
    - Buscar contenidos de archivos para generales comandos como tal "eval()",
      "exec()" y "include()"? 0 - No (no buscar) [Predefinido], 1 - Sí (buscar).
      Desactivar esta opción si tiene intención de subir cualquiera de los
-     siguientes para su sistema o CMS a través de su navegador: php,
+     siguientes para su sistema o CMS a través de su navegador: PHP,
      JavaScript, HTML, python, perl archivos y etcétera. Activar esta opción
      si usted no tiene cualquier adicional protección en su sistema y no tiene
      intención de subir estos tipos de archivos. Si utiliza adicional seguridad
@@ -1796,5 +1796,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 17 Agosto 2015 (2015.08.17).
+Última Actualización: 22 Agosto 2015 (2015.08.22).
 EOF

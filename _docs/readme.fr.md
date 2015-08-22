@@ -716,7 +716,7 @@ Caméléon Attaque Détection: 0 = Désactivé, 1 = Activé.
 - Les extensions de reconnus archive fichiers (format est CSV; devraient ajouter ou supprimer seulement quand problèmes surviennent; supprimer inutilement peut entraîner des faux positifs à paraître pour archive fichiers, tandis que ajoutant inutilement sera essentiellement liste blanche ce que vous ajoutez à partir de l'attaque spécifique détection; modifier avec prudence; aussi noter que cela n'a aucun effet sur ce archives peut et ne peut pas être analysé au niveau du contenu). La liste, comme en cas de défaut, énumère les formats plus couramment utilisé dans la majorité des systèmes et CMS, mais volontairement pas nécessairement complète.
 
 "general_commands"
-- Vérifier de fichiers pour générales commandes comme `eval()`, `exec()` et `include()`? 0 - Non (pas vérifier) [Défaut], 1 - Oui (vérifier). Définir comme 0 (Non) si vous avez l'intention à télécharger de la suivant à votre système ou CMS via votre navigateur: php, JavaScript, HTML, python, perl fichiers etc. Définir comme 1 (Oui) si vous n'avez pas de supplémentaire protections sur votre système et n'ont pas l'intention de télécharger ces fichiers. Si vous utilisez une supplémentaire sécurité en conjonction avec phpMussel comme ZB Block, il n'est pas nécessaire d'activer cette option, parce la plupart de que phpMussel va chercher pour (dans le contexte de cette option) sont des duplications de protections qui sont déjà fournis.
+- Vérifier de fichiers pour générales commandes comme `eval()`, `exec()` et `include()`? 0 - Non (pas vérifier) [Défaut], 1 - Oui (vérifier). Définir comme 0 (Non) si vous avez l'intention à télécharger de la suivant à votre système ou CMS via votre navigateur: PHP, JavaScript, HTML, python, perl fichiers etc. Définir comme 1 (Oui) si vous n'avez pas de supplémentaire protections sur votre système et n'ont pas l'intention de télécharger ces fichiers. Si vous utilisez une supplémentaire sécurité en conjonction avec phpMussel comme ZB Block, il n'est pas nécessaire d'activer cette option, parce la plupart de que phpMussel va chercher pour (dans le contexte de cette option) sont des duplications de protections qui sont déjà fournis.
 
 "block_control_characters"
 - Bloquer tous les fichiers contenant des contrôle caractères (autre que les sauts de ligne)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Si vous êtes _**SEULEMENT**_ télécharger de brut texte fichiers, puis vous pouvez activer cette option à fournir une supplémentaire protection à votre système. Mais, si vous télécharger quelque chose plus que brut texte, l'activation de cette peut créer faux positifs. 0 - Ne pas bloquer [Défaut], 1 - Bloquer.
@@ -937,4 +937,4 @@ Cette information a été réactualisé le 28 Mai 2015 et est courant pour toute
 ---
 
 
-Dernière Réactualisé: 17 Août 2015 (2015.08.17).
+Dernière Réactualisé: 22 Août 2015 (2015.08.22).
