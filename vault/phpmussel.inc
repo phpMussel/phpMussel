@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7a (13th August 2015) Core Script.
+ This File: phpMussel v0.7b-BETA (20th August 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -51,7 +51,7 @@
 
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
-$phpmusselversion='phpMussel v0.7a';
+$phpmusselversion='phpMussel v0.7b-BETA';
 $linebreak=chr(10);
 $time=time();
 if(!isset($MusselConfig['general']['ipaddr']))$MusselConfig['general']['ipaddr']='REMOTE_ADDR';
@@ -860,6 +860,7 @@ if(!function_exists('vn_shorthand'))
 			if($n[1]===6)$out.='ForkBomb.';
 			if($n[1]===7)$out.='LogicBomb.';
 			if($n[1]===8)$out.='CyberBomb.';
+			if($n[1]===9)$out.='Malvertisement.';
 			}
 		return $out.substr($vn,4);
 		}
