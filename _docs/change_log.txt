@@ -80,7 +80,7 @@ Anything less than sub-minor:
 - [2015.08.22; Documentation; Maikuolan]: Completed translation of the
   documentation to Dutch (probably erroneous; feel free to audit if you want).
 
-- [2015.05.27; Sub-minor code change; Maikuolan/Vy]: Added language support for
+- [2015.08.24; Sub-minor code change; Maikuolan/Vy]: Added language support for
   Vietnamese {Tiếng Việt} to the language data [lang.vi.inc].
 
 === Version/Release 0.7a (Previous Release: 0.7) ===

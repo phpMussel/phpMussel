@@ -947,4 +947,4 @@ This information was last updated 28th May 2015 and is current for all phpMussel
 ---
 
 
-Last Updated: 24nd August 2015 (2015.08.24).
+Last Updated: 24th August 2015 (2015.08.24).
