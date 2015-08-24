@@ -470,14 +470,23 @@
     Перечень внесённых в руководство изменений и его различные версии (на
     эффективность данного руководства не влияет).
     ~
+ /_docs/readme.de.md (Документация, Включены); DEUTSCH
  /_docs/readme.de.txt (Документация, Включены); DEUTSCH
+ /_docs/readme.en.md (Документация, Включены); ENGLISH
  /_docs/readme.en.txt (Документация, Включены); ENGLISH
+ /_docs/readme.es.md (Документация, Включены); ESPAÑOL
  /_docs/readme.es.txt (Документация, Включены); ESPAÑOL
+ /_docs/readme.fr.md (Документация, Включены); FRANÇAIS
  /_docs/readme.fr.txt (Документация, Включены); FRANÇAIS
+ /_docs/readme.id.md (Документация, Включены); BAHASA INDONESIA
  /_docs/readme.id.txt (Документация, Включены); BAHASA INDONESIA
+ /_docs/readme.it.md (Документация, Включены); ITALIANO
  /_docs/readme.it.txt (Документация, Включены); ITALIANO
+ /_docs/readme.nl.md (Документация, Включены); NEDERLANDSE
  /_docs/readme.nl.txt (Документация, Включены); NEDERLANDSE
+ /_docs/readme.pt.md (Документация, Включены); PORTUGUÊS
  /_docs/readme.pt.txt (Документация, Включены); PORTUGUÊS
+ /_docs/readme.ru.md (Документация, Включены); РУССКИЙ
  /_docs/readme.ru.txt (Документация, Включены); РУССКИЙ
     Файлы README (например; файл, который вы сейчас читаете).
     ~
@@ -565,8 +574,9 @@
  /vault/lang/lang.nl.inc (Script, Включены); NEDERLANDSE
  /vault/lang/lang.pt.inc (Script, Включены); PORTUGUÊS
  /vault/lang/lang.ru.inc (Script, Включены); РУССКИЙ
+ /vault/lang/lang.vi.inc (Script, Включены); TIẾNG VIỆT
  /vault/lang/lang.zh.inc (Script, Включены); 中文（简体）
- /vault/lang/lang.zh-tw.inc (Script, Включены); 中文（傳統）
+ /vault/lang/lang.zh-TW.inc (Script, Включены); 中文（傳統）
     Языковые файлы на phpMussel.
     ~
  /vault/quarantine/ (Регистр)
@@ -1627,5 +1637,5 @@
                                      ~ ~ ~
 
 
-Последнее обновление: 22. Август 2015 (2015.08.22).
+Последнее обновление: 24. Август 2015 (2015.08.24).
 EOF

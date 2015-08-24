@@ -540,14 +540,23 @@
     Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara
     perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
     ~
+ /_docs/readme.de.md (Dokumentasi, Diikutkan); DEUTSCH
  /_docs/readme.de.txt (Dokumentasi, Diikutkan); DEUTSCH
+ /_docs/readme.en.md (Dokumentasi, Diikutkan); ENGLISH
  /_docs/readme.en.txt (Dokumentasi, Diikutkan); ENGLISH
+ /_docs/readme.es.md (Dokumentasi, Diikutkan); ESPAÑOL
  /_docs/readme.es.txt (Dokumentasi, Diikutkan); ESPAÑOL
+ /_docs/readme.fr.md (Dokumentasi, Diikutkan); FRANÇAIS
  /_docs/readme.fr.txt (Dokumentasi, Diikutkan); FRANÇAIS
+ /_docs/readme.id.md (Dokumentasi, Diikutkan); BAHASA INDONESIA
  /_docs/readme.id.txt (Dokumentasi, Diikutkan); BAHASA INDONESIA
+ /_docs/readme.it.md (Dokumentasi, Diikutkan); ITALIANO
  /_docs/readme.it.txt (Dokumentasi, Diikutkan); ITALIANO
+ /_docs/readme.nl.md (Dokumentasi, Diikutkan); NEDERLANDSE
  /_docs/readme.nl.txt (Dokumentasi, Diikutkan); NEDERLANDSE
+ /_docs/readme.pt.md (Dokumentasi, Diikutkan); PORTUGUÊS
  /_docs/readme.pt.txt (Dokumentasi, Diikutkan); PORTUGUÊS
+ /_docs/readme.ru.md (Dokumentasi, Diikutkan); РУССКИЙ
  /_docs/readme.ru.txt (Dokumentasi, Diikutkan); РУССКИЙ
     File-file baca saya (misalnya; file yang Anda sedang membaca).
     ~
@@ -636,8 +645,9 @@
  /vault/lang/lang.nl.inc (Skrip, Diikutkan); NEDERLANDSE
  /vault/lang/lang.pt.inc (Skrip, Diikutkan); PORTUGUÊS
  /vault/lang/lang.ru.inc (Skrip, Diikutkan); РУССКИЙ
+ /vault/lang/lang.vi.inc (Skrip, Diikutkan); TIẾNG VIỆT
  /vault/lang/lang.zh.inc (Skrip, Diikutkan); 中文（简体）
- /vault/lang/lang.zh-tw.inc (Skrip, Diikutkan); 中文（傳統）
+ /vault/lang/lang.zh-TW.inc (Skrip, Diikutkan); 中文（傳統）
     Data bahasa untuk phpMussel.
     ~
  /vault/quarantine/ (Direktori)
@@ -1772,5 +1782,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 22 Agustus 2015 (2015.08.22).
+Terakhir Diperbarui: 24 Agustus 2015 (2015.08.24).
 EOF

@@ -536,14 +536,23 @@
     Een overzicht van wijzigingen in het script tussen verschillende versies
     (niet vereist voor een goede werking van het script).
     ~
+ /_docs/readme.de.md (Documentatie, Opgenomen); DEUTSCH
  /_docs/readme.de.txt (Documentatie, Opgenomen); DEUTSCH
+ /_docs/readme.en.md (Documentatie, Opgenomen); ENGLISH
  /_docs/readme.en.txt (Documentatie, Opgenomen); ENGLISH
+ /_docs/readme.es.md (Documentatie, Opgenomen); ESPAÑOL
  /_docs/readme.es.txt (Documentatie, Opgenomen); ESPAÑOL
+ /_docs/readme.fr.md (Documentatie, Opgenomen); FRANÇAIS
  /_docs/readme.fr.txt (Documentatie, Opgenomen); FRANÇAIS
+ /_docs/readme.id.md (Documentatie, Opgenomen); BAHASA INDONESIA
  /_docs/readme.id.txt (Documentatie, Opgenomen); BAHASA INDONESIA
+ /_docs/readme.it.md (Documentatie, Opgenomen); ITALIANO
  /_docs/readme.it.txt (Documentatie, Opgenomen); ITALIANO
+ /_docs/readme.nl.md (Documentatie, Opgenomen); NEDERLANDSE
  /_docs/readme.nl.txt (Documentatie, Opgenomen); NEDERLANDSE
+ /_docs/readme.pt.md (Documentatie, Opgenomen); PORTUGUÊS
  /_docs/readme.pt.txt (Documentatie, Opgenomen); PORTUGUÊS
+ /_docs/readme.ru.md (Documentatie, Opgenomen); РУССКИЙ
  /_docs/readme.ru.txt (Documentatie, Opgenomen); РУССКИЙ
     De README-bestanden (bijvoorbeeld, het bestand dat u momenteel aan het
     lezen).
@@ -635,8 +644,9 @@
  /vault/lang/lang.nl.inc (Script, Opgenomen); NEDERLANDSE
  /vault/lang/lang.pt.inc (Script, Opgenomen); PORTUGUÊS
  /vault/lang/lang.ru.inc (Script, Opgenomen); РУССКИЙ
+ /vault/lang/lang.vi.inc (Script, Opgenomen); TIẾNG VIỆT
  /vault/lang/lang.zh.inc (Script, Opgenomen); 中文（简体）
- /vault/lang/lang.zh-tw.inc (Script, Opgenomen); 中文（傳統）
+ /vault/lang/lang.zh-TW.inc (Script, Opgenomen); 中文（傳統）
     Taaldatabestanden voor phpMussel.
     ~
  /vault/quarantine/ (Bestandsmap)
@@ -1806,5 +1816,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 22 Augustus 2015 (2015.08.22).
+Laatste Bijgewerkt: 24 Augustus 2015 (2015.08.24).
 EOF

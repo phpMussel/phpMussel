@@ -261,14 +261,23 @@ Data                                       | Deskripsi
 /web.config                                | Sebuah data konfigurasi ASP.NET (dalam instansi ini, untuk melindungi direktori `/vault` dari pengaksesan oleh sumber-sumber tidak terauthorisasi dalam kejadian yang mana skrip ini diinstal pada server berbasis teknologi ASP.NET).
 /_docs/                                    | Direktori dokumentasi (berisi bermacam data).
 /_docs/change_log.txt                      | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/_docs/readme.de.md                        | Dokumentasi: DEUTSCH
 /_docs/readme.de.txt                       | Dokumentasi: DEUTSCH
+/_docs/readme.en.md                        | Dokumentasi: ENGLISH
 /_docs/readme.en.txt                       | Dokumentasi: ENGLISH
+/_docs/readme.es.md                        | Dokumentasi: ESPAÑOL
 /_docs/readme.es.txt                       | Dokumentasi: ESPAÑOL
+/_docs/readme.fr.md                        | Dokumentasi: FRANÇAIS
 /_docs/readme.fr.txt                       | Dokumentasi: FRANÇAIS
+/_docs/readme.id.md                        | Dokumentasi: BAHASA INDONESIA
 /_docs/readme.id.txt                       | Dokumentasi: BAHASA INDONESIA
+/_docs/readme.it.md                        | Dokumentasi: ITALIANO
 /_docs/readme.it.txt                       | Dokumentasi: ITALIANO
+/_docs/readme.nl.md                        | Dokumentasi: NEDERLANDSE
 /_docs/readme.nl.txt                       | Dokumentasi: NEDERLANDSE
+/_docs/readme.pt.md                        | Dokumentasi: PORTUGUÊS
 /_docs/readme.pt.txt                       | Dokumentasi: PORTUGUÊS
+/_docs/readme.ru.md                        | Dokumentasi: РУССКИЙ
 /_docs/readme.ru.txt                       | Dokumentasi: РУССКИЙ
 /_docs/signatures_tally.txt                | Perhitungan dari diikutkan tanda tangan (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /_testfiles/                               | Direktori test file-file (berisi bermacam data). Semua file-file berisikan di dalamnya adalah data test untuk testing jika phpMussel dengan benar diinstal pada sistem, dan Anda tidak perlu mengupload direktori ini atau file-filenya jika melakukan testing.
@@ -302,8 +311,9 @@ Data                                       | Deskripsi
 /vault/lang/lang.nl.inc                    | File bahasa: NEDERLANDSE
 /vault/lang/lang.pt.inc                    | File bahasa: PORTUGUÊS
 /vault/lang/lang.ru.inc                    | File bahasa: РУССКИЙ
+/vault/lang/lang.vi.inc                    | File bahasa: TIẾNG VIỆT
 /vault/lang/lang.zh.inc                    | File bahasa: 中文（简体）
-/vault/lang/lang.zh-tw.inc                 | File bahasa: 中文（傳統）
+/vault/lang/lang.zh-TW.inc                 | File bahasa: 中文（傳統）
 /vault/quarantine/                         | Direktori Karantina (berisikan file yang dikarantina).
 /vault/quarantine/.htaccess                | Sebuah data akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/.htaccess                           | Sebuah data akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
@@ -937,4 +947,4 @@ Informasi ini diupdate 28 Mei 2015 dan cocok untuk semua rilis phpMussel dari du
 ---
 
 
-Terakhir Diperbarui: 22 Agustus 2015 (2015.08.22).
+Terakhir Diperbarui: 24 Agustus 2015 (2015.08.24).

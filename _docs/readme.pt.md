@@ -261,14 +261,23 @@ Arquivo                                    | Descrição
 /web.config                                | Um ASP.NET configuração arquivo (neste caso, para proteger o `/vault` diretório contra serem acessado por fontes não autorizadas em caso que o script está instalado em um servidor baseado em ASP.NET tecnologias).
 /_docs/                                    | Documentação diretório (contém vários arquivos).
 /_docs/change_log.txt                      | Um registro das mudanças feitas para o script entre o diferentes versões (não é necessário para o correto funcionamento do script).
+/_docs/readme.de.md                        | Documentação: DEUTSCH
 /_docs/readme.de.txt                       | Documentação: DEUTSCH
+/_docs/readme.en.md                        | Documentação: ENGLISH
 /_docs/readme.en.txt                       | Documentação: ENGLISH
+/_docs/readme.es.md                        | Documentação: ESPAÑOL
 /_docs/readme.es.txt                       | Documentação: ESPAÑOL
+/_docs/readme.fr.md                        | Documentação: FRANÇAIS
 /_docs/readme.fr.txt                       | Documentação: FRANÇAIS
+/_docs/readme.id.md                        | Documentação: BAHASA INDONESIA
 /_docs/readme.id.txt                       | Documentação: BAHASA INDONESIA
+/_docs/readme.it.md                        | Documentação: ITALIANO
 /_docs/readme.it.txt                       | Documentação: ITALIANO
+/_docs/readme.nl.md                        | Documentação: NEDERLANDSE
 /_docs/readme.nl.txt                       | Documentação: NEDERLANDSE
+/_docs/readme.pt.md                        | Documentação: PORTUGUÊS
 /_docs/readme.pt.txt                       | Documentação: PORTUGUÊS
+/_docs/readme.ru.md                        | Documentação: РУССКИЙ
 /_docs/readme.ru.txt                       | Documentação: РУССКИЙ
 /_docs/signatures_tally.txt                | Contagem registro dos assinaturas incluídos (não é necessário para o correto funcionamento do script).
 /_testfiles/                               | Teste arquivo diretório (contém vários arquivos). Todos os arquivos contidos são teste arquivos para testar se phpMussel foi instalado corretamente no seu sistema, e você não precisa carregar desse diretório ou qualquer de seus arquivos, exceto ao fazer tais testando.
@@ -302,8 +311,9 @@ Arquivo                                    | Descrição
 /vault/lang/lang.nl.inc                    | Linguagem dados: NEDERLANDSE
 /vault/lang/lang.pt.inc                    | Linguagem dados: PORTUGUÊS
 /vault/lang/lang.ru.inc                    | Linguagem dados: РУССКИЙ
+/vault/lang/lang.vi.inc                    | Linguagem dados: TIẾNG VIỆT
 /vault/lang/lang.zh.inc                    | Linguagem dados: 中文（简体）
-/vault/lang/lang.zh-tw.inc                 | Linguagem dados: 中文（傳統）
+/vault/lang/lang.zh-TW.inc                 | Linguagem dados: 中文（傳統）
 /vault/quarantine/                         | Quarentena diretório (contém os arquivos em quarentena).
 /vault/quarantine/.htaccess                | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 /vault/.htaccess                           | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
@@ -937,4 +947,4 @@ Esta informação foi atualizada dia 28 Maio 2015 e é corrente para todas phpMu
 ---
 
 
-Última Atualização: 22 Agosto 2015 (2015.08.22).
+Última Atualização: 24 Agosto 2015 (2015.08.24).

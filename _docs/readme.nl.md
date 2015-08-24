@@ -261,14 +261,23 @@ Bestand                                    | Beschrijving
 /web.config                                | Een ASP.NET-configuratiebestand (in dit geval, naar de bestandsmap "vault" te beschermen tegen toegang door niet-geautoriseerde bronnen indien het script is geïnstalleerd op een server op basis van ASP.NET technologieën).
 /_docs/                                    | Documentatie bestandsmap (bevat verschillende bestanden).
 /_docs/change_log.txt                      | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
+/_docs/readme.de.md                        | Documentatie: DEUTSCH
 /_docs/readme.de.txt                       | Documentatie: DEUTSCH
+/_docs/readme.en.md                        | Documentatie: ENGLISH
 /_docs/readme.en.txt                       | Documentatie: ENGLISH
+/_docs/readme.es.md                        | Documentatie: ESPAÑOL
 /_docs/readme.es.txt                       | Documentatie: ESPAÑOL
+/_docs/readme.fr.md                        | Documentatie: FRANÇAIS
 /_docs/readme.fr.txt                       | Documentatie: FRANÇAIS
+/_docs/readme.id.md                        | Documentatie: BAHASA INDONESIA
 /_docs/readme.id.txt                       | Documentatie: BAHASA INDONESIA
+/_docs/readme.it.md                        | Documentatie: ITALIANO
 /_docs/readme.it.txt                       | Documentatie: ITALIANO
+/_docs/readme.nl.md                        | Documentatie: NEDERLANDSE
 /_docs/readme.nl.txt                       | Documentatie: NEDERLANDSE
+/_docs/readme.pt.md                        | Documentatie: PORTUGUÊS
 /_docs/readme.pt.txt                       | Documentatie: PORTUGUÊS
+/_docs/readme.ru.md                        | Documentatie: РУССКИЙ
 /_docs/readme.ru.txt                       | Documentatie: РУССКИЙ
 /_docs/signatures_tally.txt                | Net-shift tally van meegeleverde handtekeningen (niet vereist voor een goede werking van het script).
 /_testfiles/                               | Testbestanden bestandsmap (bevat verschillende bestanden). Alle opgenomen bestanden zijn testbestanden voor het testen als phpMussel correct op uw systeem is geïnstalleerd, en u hoeft niet om deze map of een van de bestanden, behalve bij het doen van dergelijke testen te uploaden.
@@ -302,8 +311,9 @@ Bestand                                    | Beschrijving
 /vault/lang/lang.nl.inc                    | Taaldata: NEDERLANDSE
 /vault/lang/lang.pt.inc                    | Taaldata: PORTUGUÊS
 /vault/lang/lang.ru.inc                    | Taaldata: РУССКИЙ
+/vault/lang/lang.vi.inc                    | Taaldata: TIẾNG VIỆT
 /vault/lang/lang.zh.inc                    | Taaldata: 中文（简体）
-/vault/lang/lang.zh-tw.inc                 | Taaldata: 中文（傳統）
+/vault/lang/lang.zh-TW.inc                 | Taaldata: 中文（傳統）
 /vault/quarantine/                         | Quarantaine bestandsmap (bestanden in quarantaine bevat).
 /vault/quarantine/.htaccess                | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/.htaccess                           | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
@@ -937,4 +947,4 @@ Deze informatie is voor het laatst bijgewerkt 28 Mei 2015 en is op de hoogte voo
 ---
 
 
-Laatste Bijgewerkt: 22 Augustus 2015 (2015.08.22).
+Laatste Bijgewerkt: 24 Augustus 2015 (2015.08.24).

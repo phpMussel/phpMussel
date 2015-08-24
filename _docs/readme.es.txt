@@ -535,14 +535,23 @@
     diferentes versiones (no se requiere para lo adecuado funcionalidad de la
     script).
     ~
+ /_docs/readme.de.md (Documentación, Incluido); DEUTSCH
  /_docs/readme.de.txt (Documentación, Incluido); DEUTSCH
+ /_docs/readme.en.md (Documentación, Incluido); ENGLISH
  /_docs/readme.en.txt (Documentación, Incluido); ENGLISH
+ /_docs/readme.es.md (Documentación, Incluido); ESPAÑOL
  /_docs/readme.es.txt (Documentación, Incluido); ESPAÑOL
+ /_docs/readme.fr.md (Documentación, Incluido); FRANÇAIS
  /_docs/readme.fr.txt (Documentación, Incluido); FRANÇAIS
+ /_docs/readme.id.md (Documentación, Incluido); BAHASA INDONESIA
  /_docs/readme.id.txt (Documentación, Incluido); BAHASA INDONESIA
+ /_docs/readme.it.md (Documentación, Incluido); ITALIANO
  /_docs/readme.it.txt (Documentación, Incluido); ITALIANO
+ /_docs/readme.nl.md (Documentación, Incluido); NEDERLANDSE
  /_docs/readme.nl.txt (Documentación, Incluido); NEDERLANDSE
+ /_docs/readme.pt.md (Documentación, Incluido); PORTUGUÊS
  /_docs/readme.pt.txt (Documentación, Incluido); PORTUGUÊS
+ /_docs/readme.ru.md (Documentación, Incluido); РУССКИЙ
  /_docs/readme.ru.txt (Documentación, Incluido); РУССКИЙ
     La README archivos (por ejemplo; el archivo que estás leyendo).
     ~
@@ -634,8 +643,9 @@
  /vault/lang/lang.nl.inc (Script, Incluido); NEDERLANDSE
  /vault/lang/lang.pt.inc (Script, Incluido); PORTUGUÊS
  /vault/lang/lang.ru.inc (Script, Incluido); РУССКИЙ
+ /vault/lang/lang.vi.inc (Script, Incluido); TIẾNG VIỆT
  /vault/lang/lang.zh.inc (Script, Incluido); 中文（简体）
- /vault/lang/lang.zh-tw.inc (Script, Incluido); 中文（傳統）
+ /vault/lang/lang.zh-TW.inc (Script, Incluido); 中文（傳統）
     Lingüísticos datos archivos para phpMussel.
     ~
  /vault/quarantine/ (Directorio)
@@ -1796,5 +1806,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 22 Agosto 2015 (2015.08.22).
+Última Actualización: 24 Agosto 2015 (2015.08.24).
 EOF
