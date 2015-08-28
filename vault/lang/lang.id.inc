@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Indonesian Language Data (20th August 2015).
+ This File: phpMussel Indonesian Language Data (28th August 2015).
  <%phpMussel%/vault/lang/lang.id.inc>
 
 */
@@ -35,7 +35,7 @@ $MusselConfig['lang']['controls_lockout']='phpMussel mengunci kontrol diaktifkan
 $MusselConfig['lang']['core_scriptfile_missing']='File skrip inti hilang! Silakan instal ulang phpMussel.';
 $MusselConfig['lang']['corrupted']='Terdeteksi rusak PE';
 $MusselConfig['lang']['denied']='Upload Ditolak!';
-$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='Upload diblokir karena alasan yang tercantum di bawah / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Terdeteksi {vn}';
 $MusselConfig['lang']['detected_control_characters']='Terdeteksi Kontrol Karakter';

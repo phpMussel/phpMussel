@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Chinese (Traditional) / 中文（傳統） Language Data (20th August 2015).
+ This File: phpMussel Chinese (Traditional) / 中文（傳統） Language Data (28th August 2015).
  <%phpMussel%/vault/lang/lang.zh-TW.inc>
 
 */
@@ -34,9 +34,9 @@ $MusselConfig['lang']['cli_working']='進行中';
 $MusselConfig['lang']['controls_lockout']='phpMussel控制閉鎖是啟用。';
 $MusselConfig['lang']['core_scriptfile_missing']='核心文件是丟失！請重新安裝phpMussel。';
 $MusselConfig['lang']['corrupted']='檢測損壞PE';
-$MusselConfig['lang']['denied']='上載是否認！';
-$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上载是否认! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
-$MusselConfig['lang']['denied_reason']='你的上传被拒绝由于这些原因 / Your upload was blocked for the reasons listed below:';
+$MusselConfig['lang']['denied']='上傳是否認！';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
+$MusselConfig['lang']['denied_reason']='你的上傳被拒绝由于这些原因 / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='檢測{vn}';
 $MusselConfig['lang']['detected_control_characters']='檢測控製字符';
 $MusselConfig['lang']['encrypted_archive']='檢測加密檔案文件; 加密檔案文件不允許';
@@ -114,7 +114,7 @@ $MusselConfig['lang']['update_version_yours']='您的編程版本';
 $MusselConfig['lang']['update_was']='{x}';
 $MusselConfig['lang']['update_wrd1']='簽名';
 $MusselConfig['lang']['upload_error_1']='文件大小超過MAX_FILE_SIZE指令。';
-$MusselConfig['lang']['upload_error_2']='文件大小超过文件大小限制指定由文件上传信息。';
+$MusselConfig['lang']['upload_error_2']='文件大小超过文件大小限制指定由文件上傳信息。';
 $MusselConfig['lang']['upload_error_34']='上傳失敗！請聯繫網站管理員或網站託管服務！';
 $MusselConfig['lang']['upload_error_6']='上傳文件夾是失踪！請聯繫網站管理員或網站託管服務！';
 $MusselConfig['lang']['upload_error_7']='硬盤寫入錯誤！請聯繫網站管理員或網站託管服務！';

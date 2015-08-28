@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Vietnamese/Việt Language Data (24th August 2015).
+ This File: phpMussel Vietnamese/Việt Language Data (28th August 2015).
  <%phpMussel%/vault/lang/lang.vi.inc>
 
 */
@@ -35,7 +35,7 @@ $MusselConfig['lang']['controls_lockout']='Cho phép các điều khiển khóa
 $MusselConfig['lang']['core_scriptfile_missing']='Bản tài liệu chính đang thiểu! Xin hảy cài đặt lại phpMussel.';
 $MusselConfig['lang']['corrupted']='Lối của PE đã được phát hiện ra';
 $MusselConfig['lang']['denied']='Sự tải lên đã bị từ chối!';
-$MusselConfig['lang']['denied_other']='Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='Sự tải lên của bạn đã bị từ chối bởi lý do dưới đây / 你的上传被拒绝由于这些原因:';
 $MusselConfig['lang']['detected']='Đã được phát hiện {vn}';
 $MusselConfig['lang']['detected_control_characters']='Ký tự điều khiển đã được phát hiện';

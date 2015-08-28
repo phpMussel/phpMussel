@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Japanese/日本語 Language Data (20th August 2015).
+ This File: phpMussel Japanese/日本語 Language Data (28th August 2015).
  <%phpMussel%/vault/lang/lang.ja.inc>
 
 */
@@ -35,7 +35,7 @@ $MusselConfig['lang']['controls_lockout']='「phpMussel」はコントロール�
 $MusselConfig['lang']['core_scriptfile_missing']='コアスクリプトファイルはありません！「phpMussel」を再インストールしてください、お願いします。';
 $MusselConfig['lang']['corrupted']='検出されたPEが破損しました';
 $MusselConfig['lang']['denied']='アップロード拒否されました！';
-$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! 上载是否认! 上載是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='アップロードは次の原因で拒否されました / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='検出された{vn}';
 $MusselConfig['lang']['detected_control_characters']='検出された制御文字';
