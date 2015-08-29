@@ -213,7 +213,7 @@ update
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
 - Exemplo: `?pword=[script_password]&phpmussel=update`
-- Que faz: Verifica se há atualizações para ambos phpMussel e suas assinaturas. Se as atualização verificações suceder e atualizações são encontrados, tentará baixar e instalar essas atualizações. Se atualização verificação falha, atualização irá abortar. Os resultados de o inteiro processo são impressos na tela. Eu recomendo verificando pelo menos uma vez por mês para garantir que seus assinaturas e sua cópia do phpMussel são mantidos atualizados (a menos, claro, você está verificando se há atualizações e instalá-los manualmente, que, eu ainda recomendo fazer pelo menos um por mês). Verificando mais de que duas vezes por mês é provavelmente inútil, considerando que eu (no momento de escrever este) estou trabalhando neste projeto sozinho e eu estou muito improvável que seja capaz de produzir atualizações de qualquer variedade com mais freqüência do que (nem eu particularmente quero para a maior parte).
+- Que faz: Verifica se há atualizações para ambos phpMussel e suas assinaturas. Se as atualização verificações suceder e atualizações são encontrados, tentará baixar e instalar essas atualizações. Se atualização verificação falha, atualização irá abortar. Os resultados de o inteiro processo são impressos na tela. Eu recomendo verificando pelo menos uma vez por mês para garantir que seus assinaturas e sua cópia do phpMussel são mantidos atualizados (a menos, claro, você está verificando se há atualizações e instalá-los manualmente, que, eu ainda recomendo fazer pelo menos uma vez por mês). Verificando mais de que duas vezes por mês é provavelmente inútil, considerando que eu (no momento de escrever este) estou trabalhando neste projeto sozinho e eu estou muito improvável que seja capaz de produzir atualizações de qualquer variedade com mais freqüência do que (nem eu particularmente quero para a maior parte).
 
 greylist
 - Senha necessária: script_password
@@ -261,14 +261,23 @@ Arquivo                                    | Descrição
 /web.config                                | Um ASP.NET configuração arquivo (neste caso, para proteger o `/vault` diretório contra serem acessado por fontes não autorizadas em caso que o script está instalado em um servidor baseado em ASP.NET tecnologias).
 /_docs/                                    | Documentação diretório (contém vários arquivos).
 /_docs/change_log.txt                      | Um registro das mudanças feitas para o script entre o diferentes versões (não é necessário para o correto funcionamento do script).
+/_docs/readme.de.md                        | Documentação: DEUTSCH
 /_docs/readme.de.txt                       | Documentação: DEUTSCH
+/_docs/readme.en.md                        | Documentação: ENGLISH
 /_docs/readme.en.txt                       | Documentação: ENGLISH
+/_docs/readme.es.md                        | Documentação: ESPAÑOL
 /_docs/readme.es.txt                       | Documentação: ESPAÑOL
+/_docs/readme.fr.md                        | Documentação: FRANÇAIS
 /_docs/readme.fr.txt                       | Documentação: FRANÇAIS
+/_docs/readme.id.md                        | Documentação: BAHASA INDONESIA
 /_docs/readme.id.txt                       | Documentação: BAHASA INDONESIA
+/_docs/readme.it.md                        | Documentação: ITALIANO
 /_docs/readme.it.txt                       | Documentação: ITALIANO
+/_docs/readme.nl.md                        | Documentação: NEDERLANDSE
 /_docs/readme.nl.txt                       | Documentação: NEDERLANDSE
+/_docs/readme.pt.md                        | Documentação: PORTUGUÊS
 /_docs/readme.pt.txt                       | Documentação: PORTUGUÊS
+/_docs/readme.ru.md                        | Documentação: РУССКИЙ
 /_docs/readme.ru.txt                       | Documentação: РУССКИЙ
 /_docs/signatures_tally.txt                | Contagem registro dos assinaturas incluídos (não é necessário para o correto funcionamento do script).
 /_testfiles/                               | Teste arquivo diretório (contém vários arquivos). Todos os arquivos contidos são teste arquivos para testar se phpMussel foi instalado corretamente no seu sistema, e você não precisa carregar desse diretório ou qualquer de seus arquivos, exceto ao fazer tais testando.
@@ -302,8 +311,9 @@ Arquivo                                    | Descrição
 /vault/lang/lang.nl.inc                    | Linguagem dados: NEDERLANDSE
 /vault/lang/lang.pt.inc                    | Linguagem dados: PORTUGUÊS
 /vault/lang/lang.ru.inc                    | Linguagem dados: РУССКИЙ
+/vault/lang/lang.vi.inc                    | Linguagem dados: TIẾNG VIỆT
 /vault/lang/lang.zh.inc                    | Linguagem dados: 中文（简体）
-/vault/lang/lang.zh-tw.inc                 | Linguagem dados: 中文（傳統）
+/vault/lang/lang.zh-TW.inc                 | Linguagem dados: 中文（傳統）
 /vault/quarantine/                         | Quarentena diretório (contém os arquivos em quarentena).
 /vault/quarantine/.htaccess                | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 /vault/.htaccess                           | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
@@ -488,7 +498,7 @@ Geral configuração por phpMussel.
 - Onde encontrar o IP endereço dos pedidos? (Útil por serviços como o Cloudflare e tal) Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!
 
 "forbid_on_block"
-- Deve phpMussel enviar 403 header com a bloqueado arquivo carregamento mensagem, ou ficar com os habituais 200 OK? 0 = Não (200) [Padrão], 1 Sim (403).
+- Deve phpMussel enviar 403 header com a bloqueado arquivo carregamento mensagem, ou ficar com os habituais 200 OK? 0 = Não (200) [Padrão], 1 = Sim (403).
 
 "delete_on_sight"
 - Ativando esta opção irá instruir o script para tentar imediatamente deletando qualquer arquivo que ele encontra durante a análise que corresponde a qualquer critério de detecção, quer seja através de assinaturas ou de outra forma. Arquivos determinados para ser "limpo" não serão tocados. Em caso de compactados arquivos, o inteiro arquivo será deletado (independentemente de se o problemático arquivo é apenas um dos vários arquivos contidos dentro do compactado arquivo). Para o caso de arquivo carregamento análise, em geral, não é necessário ativar essa opção, porque normalmente, php irá automaticamente expurgar os conteúdos de o seu cache quando a execução foi concluída, significando que ele vai normalmente deletar todos os arquivos enviados através dele para o servidor a menos que tenha movido, copiado ou deletado já. A opção é adicionado aqui como uma medida de segurança para aqueles cujas cópias de php nem sempre se comportam da forma esperada. 0 - Após a análise, deixe o arquivo sozinho [Padrão], 1 - Após a análise, se não limpo, deletar imediatamente.
@@ -716,7 +726,7 @@ Chameleon ataque detecções: 0 = Ativo, 1 = Inativo.
 - Reconhecidos arquivos extensões (formato é CSV; só deve adicionar ou remover quando problemas ocorrem; desnecessariamente removendo pode causar falso-positivos para aparecer por compactados arquivos, enquanto desnecessariamente adicionando será essencialmente whitelist o que você está adicionando contra ataque específica detecção; modificar com cautela; Também notar que este não tem efeito em qual compactados arquivos podem e não podem ser analisados no escopo de conteúdo). A lista, como é padrão, é do formatos utilizados mais comumente através da maioria dos sistemas e CMS, mas intencionalmente não é necessariamente abrangente.
 
 "general_commands"
-- Olha por gerais comandos como tais `eval()`, `exec()` e `include()` em conteúdos de arquivos? 0 - Não (não olha por) [Padrão], 1 - Sim (olha por). Desativar essa opção se você são tencionando de carregando qualquer um do seguinte para o seu sistema ou CMS através do seu navegador: php, JavaScript, HTML, python, perl files e etcetera. Ativar essa opção se você não tem quaisquer adicionais proteções no seu sistema e não são tencionando de carregando desses tais arquivos. Se você usar adicional segurança em conjunto com phpMussel como ZB Block, não há necessidade de ativar esta opção, porque a maioria dos que phpMussel irá olha por (no contexto desta opção) são duplicações de proteções que já estão fornecida.
+- Olha por gerais comandos como tais `eval()`, `exec()` e `include()` em conteúdos de arquivos? 0 - Não (não olha por) [Padrão], 1 - Sim (olha por). Desativar essa opção se você são tencionando de carregando qualquer um do seguinte para o seu sistema ou CMS através do seu navegador: PHP, JavaScript, HTML, python, perl files e etcetera. Ativar essa opção se você não tem quaisquer adicionais proteções no seu sistema e não são tencionando de carregando desses tais arquivos. Se você usar adicional segurança em conjunto com phpMussel como ZB Block, não há necessidade de ativar esta opção, porque a maioria dos que phpMussel irá olha por (no contexto desta opção) são duplicações de proteções que já estão fornecida.
 
 "block_control_characters"
 - Bloquear todos os arquivos que contenham quaisquer controle caracteres (exceto linha quebras) - `[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`? Se você está _**APENAS**_ carregando simple texto, então você pode ativar essa opção para fornecer alguma adicional proteção para o seu sistema. Mas, se você carregar qualquer coisa que não seja de texto simples, ativando isso pode resultas em falso positivos. 0 - Não bloquear [Padrão], 1 - Bloquear.
@@ -937,4 +947,4 @@ Esta informação foi atualizada dia 28 Maio 2015 e é corrente para todas phpMu
 ---
 
 
-Última Atualização: 14 Agosto 2015 (2015.08.14).
+Última Atualização: 24 Agosto 2015 (2015.08.24).

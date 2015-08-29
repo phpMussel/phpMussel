@@ -213,7 +213,7 @@ update
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
 - Exemple: `?pword=[script_password]&phpmussel=update`
-- Quel est-il: Vérifie pour nouvelles versions de phpMussel et ses signatures. Si quelque chose est trouvé, il va tenter à télécharger et installer les nouveaux fichiers. S'il est ne parvient pas à vérifier, il sera annulerait. Les résultats du processus sont imprimés à l'écran. Je recommande vérifier au moins une fois par mois afin d'assurer que vos signatures et votre copie de phpMussel sont la dernière disponible. (sauf, bien sûr, vous télécharger et installer les derniers fichiers manuellement, dont, j'aussi recommande vérifier au moins une fois par mois). Vérification de plus de deux fois par mois est probablement inutile, en tenant compte que je (au moment d'écrire ces) travaille sur ce projet par moi-même et je suis très peu probable d'être produire nouveaux fichiers plus fréquemment que cela (ni je ne particulièrement pas vouloir à, pour la plupart).
+- Quel est-il: Vérifie pour nouvelles versions de phpMussel et ses signatures. Si quelque chose est trouvé, il va tenter à télécharger et installer les nouveaux fichiers. S'il est ne parvient pas à vérifier, il sera annulerait. Les résultats du processus sont imprimés à l'écran. Je recommande vérifier au moins une fois par mois afin d'assurer que vos signatures et votre copie de phpMussel sont la dernière disponible (à moins que, bien sûr, si vous téléchargez et installez les derniers fichiers manuellement, dont, j'aussi recommande vérifier au moins une fois par mois). Vérification de plus de deux fois par mois est probablement inutile, en tenant compte que je (au moment d'écrire ces) travaille sur ce projet par moi-même et je suis très peu probable d'être produire nouveaux fichiers plus fréquemment que cela (ni je ne particulièrement pas vouloir à, pour la plupart).
 
 greylist
 - Mot de passe requis: script_password
@@ -261,14 +261,23 @@ Fichier                                    | Description
 /web.config                                | Un ASP.NET configuration fichier (dans ce cas, pour protéger de la `/vault` répertoire contre d'être consulté par des non autorisée sources dans le cas où le script est installé sur un serveur basé sur les ASP.NET technologies).
 /_docs/                                    | Documentation répertoire (contient divers fichiers).
 /_docs/change_log.txt                      | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
+/_docs/readme.de.md                        | Documentation: DEUTSCH
 /_docs/readme.de.txt                       | Documentation: DEUTSCH
+/_docs/readme.en.md                        | Documentation: ENGLISH
 /_docs/readme.en.txt                       | Documentation: ENGLISH
+/_docs/readme.es.md                        | Documentation: ESPAÑOL
 /_docs/readme.es.txt                       | Documentation: ESPAÑOL
+/_docs/readme.fr.md                        | Documentation: FRANÇAIS
 /_docs/readme.fr.txt                       | Documentation: FRANÇAIS
+/_docs/readme.id.md                        | Documentation: BAHASA INDONESIA
 /_docs/readme.id.txt                       | Documentation: BAHASA INDONESIA
+/_docs/readme.it.md                        | Documentation: ITALIANO
 /_docs/readme.it.txt                       | Documentation: ITALIANO
+/_docs/readme.nl.md                        | Documentation: NEDERLANDSE
 /_docs/readme.nl.txt                       | Documentation: NEDERLANDSE
+/_docs/readme.pt.md                        | Documentation: PORTUGUÊS
 /_docs/readme.pt.txt                       | Documentation: PORTUGUÊS
+/_docs/readme.ru.md                        | Documentation: РУССКИЙ
 /_docs/readme.ru.txt                       | Documentation: РУССКИЙ
 /_docs/signatures_tally.txt                | Décompte de signatures inclus (pas nécessaire pour le bon fonctionnement du script).
 /_testfiles/                               | Test fichiers répertoire (contient divers fichiers). Tous les fichiers contenus sont des fichiers à test si phpMussel a été correctement installé sur votre système, et vous n'avez pas besoin de télécharger ce répertoire ou l'un de ses fichiers, sauf si faire ces tests.
@@ -302,8 +311,9 @@ Fichier                                    | Description
 /vault/lang/lang.nl.inc                    | Linguistiques données: NEDERLANDSE
 /vault/lang/lang.pt.inc                    | Linguistiques données: PORTUGUÊS
 /vault/lang/lang.ru.inc                    | Linguistiques données: РУССКИЙ
+/vault/lang/lang.vi.inc                    | Linguistiques données: TIẾNG VIỆT
 /vault/lang/lang.zh.inc                    | Linguistiques données: 中文（简体）
-/vault/lang/lang.zh-tw.inc                 | Linguistiques données: 中文（傳統）
+/vault/lang/lang.zh-TW.inc                 | Linguistiques données: 中文（傳統）
 /vault/quarantine/                         | Quarantaine répertoire (contient des fichiers de la quarantaine).
 /vault/quarantine/.htaccess                | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/.htaccess                           | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
@@ -716,7 +726,7 @@ Caméléon Attaque Détection: 0 = Désactivé, 1 = Activé.
 - Les extensions de reconnus archive fichiers (format est CSV; devraient ajouter ou supprimer seulement quand problèmes surviennent; supprimer inutilement peut entraîner des faux positifs à paraître pour archive fichiers, tandis que ajoutant inutilement sera essentiellement liste blanche ce que vous ajoutez à partir de l'attaque spécifique détection; modifier avec prudence; aussi noter que cela n'a aucun effet sur ce archives peut et ne peut pas être analysé au niveau du contenu). La liste, comme en cas de défaut, énumère les formats plus couramment utilisé dans la majorité des systèmes et CMS, mais volontairement pas nécessairement complète.
 
 "general_commands"
-- Vérifier de fichiers pour générales commandes comme `eval()`, `exec()` et `include()`? 0 - Non (pas vérifier) [Défaut], 1 - Oui (vérifier). Définir comme 0 (Non) si vous avez l'intention à télécharger de la suivant à votre système ou CMS via votre navigateur: php, JavaScript, HTML, python, perl fichiers etc. Définir comme 1 (Oui) si vous n'avez pas de supplémentaire protections sur votre système et n'ont pas l'intention de télécharger ces fichiers. Si vous utilisez une supplémentaire sécurité en conjonction avec phpMussel comme ZB Block, il n'est pas nécessaire d'activer cette option, parce la plupart de que phpMussel va chercher pour (dans le contexte de cette option) sont des duplications de protections qui sont déjà fournis.
+- Vérifier de fichiers pour générales commandes comme `eval()`, `exec()` et `include()`? 0 - Non (pas vérifier) [Défaut], 1 - Oui (vérifier). Définir comme 0 (Non) si vous avez l'intention à télécharger de la suivant à votre système ou CMS via votre navigateur: PHP, JavaScript, HTML, python, perl fichiers etc. Définir comme 1 (Oui) si vous n'avez pas de supplémentaire protections sur votre système et n'ont pas l'intention de télécharger ces fichiers. Si vous utilisez une supplémentaire sécurité en conjonction avec phpMussel comme ZB Block, il n'est pas nécessaire d'activer cette option, parce la plupart de que phpMussel va chercher pour (dans le contexte de cette option) sont des duplications de protections qui sont déjà fournis.
 
 "block_control_characters"
 - Bloquer tous les fichiers contenant des contrôle caractères (autre que les sauts de ligne)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Si vous êtes _**SEULEMENT**_ télécharger de brut texte fichiers, puis vous pouvez activer cette option à fournir une supplémentaire protection à votre système. Mais, si vous télécharger quelque chose plus que brut texte, l'activation de cette peut créer faux positifs. 0 - Ne pas bloquer [Défaut], 1 - Bloquer.
@@ -937,4 +947,4 @@ Cette information a été réactualisé le 28 Mai 2015 et est courant pour toute
 ---
 
 
-Dernière Réactualisé: 14 Août 2015 (2015.08.14).
+Dernière Réactualisé: 24 Août 2015 (2015.08.24).

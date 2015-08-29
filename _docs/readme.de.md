@@ -261,14 +261,23 @@ Datei                                      | Beschreibung
 /web.config                                | Eine ASP.NET-Konfigurationsdatei (in diesem Fall zum Schutz des Verzeichnisses `/vault` vor einem nicht authorisierten Zugriff, sofern das Script auf einem auf der ASP.NET-Technologie basierenden Server installiert wurde).
 /_docs/                                    | Verzeichnis für die Dokumentationen (beinhaltet verschiedene Dateien).
 /_docs/change_log.txt                      | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
+/_docs/readme.de.md                        | Dokumentation: DEUTSCH
 /_docs/readme.de.txt                       | Dokumentation: DEUTSCH
+/_docs/readme.en.md                        | Dokumentation: ENGLISH
 /_docs/readme.en.txt                       | Dokumentation: ENGLISH
+/_docs/readme.es.md                        | Dokumentation: ESPAÑOL
 /_docs/readme.es.txt                       | Dokumentation: ESPAÑOL
+/_docs/readme.fr.md                        | Dokumentation: FRANÇAIS
 /_docs/readme.fr.txt                       | Dokumentation: FRANÇAIS
+/_docs/readme.id.md                        | Dokumentation: BAHASA INDONESIA
 /_docs/readme.id.txt                       | Dokumentation: BAHASA INDONESIA
+/_docs/readme.it.md                        | Dokumentation: ITALIANO
 /_docs/readme.it.txt                       | Dokumentation: ITALIANO
+/_docs/readme.nl.md                        | Dokumentation: NEDERLANDSE
 /_docs/readme.nl.txt                       | Dokumentation: NEDERLANDSE
+/_docs/readme.pt.md                        | Dokumentation: PORTUGUÊS
 /_docs/readme.pt.txt                       | Dokumentation: PORTUGUÊS
+/_docs/readme.ru.md                        | Dokumentation: РУССКИЙ
 /_docs/readme.ru.txt                       | Dokumentation: РУССКИЙ
 /_docs/signatures_tally.txt                | Netto-Veränderungs-Anzahl von enthaltenen Signaturen (für die korrekte Funktion des Scripts nicht notwendig).
 /_testfiles/                               | Verzeichnis für Testdateien (beinhaltet verschiedene Dateien). Alle enthaltenen Dateien dienen zur Überprüfung, ob phpMussel auf Ihrem System ordnungsgemäß installiert wurde. Sie müssen dieses Verzeichnis oder die Dateien nicht hochladen, sofern Sie keinen solchen Test durchführen möchten.
@@ -302,8 +311,9 @@ Datei                                      | Beschreibung
 /vault/lang/lang.nl.inc                    | Sprachdateien: NEDERLANDSE
 /vault/lang/lang.pt.inc                    | Sprachdateien: PORTUGUÊS
 /vault/lang/lang.ru.inc                    | Sprachdateien: РУССКИЙ
+/vault/lang/lang.vi.inc                    | Sprachdateien: TIẾNG VIỆT
 /vault/lang/lang.zh.inc                    | Sprachdateien: 中文（简体）
-/vault/lang/lang.zh-tw.inc                 | Sprachdateien: 中文（傳統）
+/vault/lang/lang.zh-TW.inc                 | Sprachdateien: 中文（傳統）
 /vault/quarantine/                         | Quarantäne-Verzeichnis (enthält Dateien in Quarantäne).
 /vault/quarantine/.htaccess                | Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/.htaccess                           | Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
@@ -487,7 +497,7 @@ Generelle Konfiguration von phpMussel.
 - Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services) Standardeinstellung = REMOTE_ADDR. Achtung: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
 
 "forbid_on_block"
-- Zurückgegebener 403-HTTP-Header bei einem blockierten Dateiupload. 0 = Nein (200) [Standardeinstellung], 1 Ja (403).
+- Zurückgegebener 403-HTTP-Header bei einem blockierten Dateiupload. 0 = Nein (200) [Standardeinstellung], 1 = Ja (403).
 
 "delete_on_sight"
 - Diese Option weist das Script an, Dateien während eines Scans sofort zu löschen, wenn ein Erkennungsmerkmal, ob durch Signaturen oder andere Methoden, zutrifft. Dateien, die als nicht infiziert eingestuft werden, werden nicht berührt. Im Falle von Archiven wird das gesamte Archiv gelöscht, auch wenn nur eine einzige Datei im Archiv infiziert sein sollte. Normalerweise ist es bei einem Dateiupload nicht notwendig, diese Option zu aktivieren, da PHP nach der Ausführung von Scripten den Inhalt vom Cache löscht, d.h. PHP löscht jede Datei, die über den Server hochgeladen wird, sofern Sie nicht verschoben, kopiert oder bereits gelöscht wurde. Diese Option wurde als zusätzliches Maß an Sicherheit hinzugefügt, außerdem für Systeme, deren PHP-Installation nicht dem üblichen Verhalten entspricht. 0 - Nach der Überprüfung wird die Datei so belassen [Standardeinstellung], 1 - Nach der Überprüfung wird die Datei sofort gelöscht, sofern Sie infiziert ist.
@@ -935,4 +945,4 @@ Diese Informationen wurden zuletzt am 2015.05.28 aktualisiert und gelten für al
 ---
 
 
-Zuletzt aktualisiert: 14. August 2015 (2015.08.14).
+Zuletzt aktualisiert: 24. August 2015 (2015.08.24).

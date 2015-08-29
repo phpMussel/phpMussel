@@ -97,7 +97,7 @@
     sistem atau CMS, tetapi yang paling mudah adalah memasukkan skrip pada
     permulaan dari data murni dari sistem atau CMS (satu yang akan secara umum
     di muat ketika seseorang mengakses halaman apapun pada website) berdasarkan
-    perintah require() atau include(). Umumnya, ini akan menjadi sesuatu yang
+    perintah "require()" atau include(). Umumnya, ini akan menjadi sesuatu yang
     disimpan di sebuah direktori seperti "/includes", "/asset" atau
     "/functions" dan akan selalu di namai sesuatu seperti "init.php",
     "common_functions.php","functions.php" atau yang sama. Anda harus bekerja
@@ -107,8 +107,8 @@
     mungkin memiliki pengalaman dengan CMS yang Anda gunakan (Anda harus
     memberitahu kami tahu mana CMS yang Anda gunakan), dan demikian, mungkin
     dapat memberikan beberapa bantuan kepada Anda. Untuk melakukannya
-    [menggunakan require() atau include()], sisipkan baris kode dibawah pada
-    data murni, menggantikan kata-kata berisikan didalam tanda kutip dari
+    [menggunakan "require()" atau "include()"], sisipkan baris kode dibawah
+    pada data murni, menggantikan kata-kata berisikan didalam tanda kutip dari
     alamat data "phpmussel.php" (alamat lokal, tidak alamat HTTP; Akan terlihat
     seperti alamat vault yang di bicarakan sebelumnya.
 
@@ -462,9 +462,9 @@
                           berhenti. Hasil-hasil dari keseluruhan proses akan di
                           cetak ke layar. Saya rekomendasikan mencek setidaknya
                           satu per bulan untuk memastikan tanda tangan Anda dan
-                          kopi dari phpMussel di pastikan up to-date (kecuali
-                          jika, tentu saja Anda mencek update dan menginstall
-                          secara manual, yang mana, saya masih merekomendasikan
+                          kopi dari phpMussel Anda yang terkini (kecuali jika,
+                          tentu saja Anda mencek update dan menginstall secara
+                          manual, yang, saya masih merekomendasikan
                           melakukannya setidaknya satu per bulan). Mencek lebih
                           dari 2 per bulan kemungkinan tidak bertujuan,
                           mengingat saya (saat menulis ini) bekerja pada proyek
@@ -540,14 +540,23 @@
     Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara
     perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
     ~
+ /_docs/readme.de.md (Dokumentasi, Diikutkan); DEUTSCH
  /_docs/readme.de.txt (Dokumentasi, Diikutkan); DEUTSCH
+ /_docs/readme.en.md (Dokumentasi, Diikutkan); ENGLISH
  /_docs/readme.en.txt (Dokumentasi, Diikutkan); ENGLISH
+ /_docs/readme.es.md (Dokumentasi, Diikutkan); ESPAÑOL
  /_docs/readme.es.txt (Dokumentasi, Diikutkan); ESPAÑOL
+ /_docs/readme.fr.md (Dokumentasi, Diikutkan); FRANÇAIS
  /_docs/readme.fr.txt (Dokumentasi, Diikutkan); FRANÇAIS
+ /_docs/readme.id.md (Dokumentasi, Diikutkan); BAHASA INDONESIA
  /_docs/readme.id.txt (Dokumentasi, Diikutkan); BAHASA INDONESIA
+ /_docs/readme.it.md (Dokumentasi, Diikutkan); ITALIANO
  /_docs/readme.it.txt (Dokumentasi, Diikutkan); ITALIANO
+ /_docs/readme.nl.md (Dokumentasi, Diikutkan); NEDERLANDSE
  /_docs/readme.nl.txt (Dokumentasi, Diikutkan); NEDERLANDSE
+ /_docs/readme.pt.md (Dokumentasi, Diikutkan); PORTUGUÊS
  /_docs/readme.pt.txt (Dokumentasi, Diikutkan); PORTUGUÊS
+ /_docs/readme.ru.md (Dokumentasi, Diikutkan); РУССКИЙ
  /_docs/readme.ru.txt (Dokumentasi, Diikutkan); РУССКИЙ
     File-file baca saya (misalnya; file yang Anda sedang membaca).
     ~
@@ -636,8 +645,9 @@
  /vault/lang/lang.nl.inc (Skrip, Diikutkan); NEDERLANDSE
  /vault/lang/lang.pt.inc (Skrip, Diikutkan); PORTUGUÊS
  /vault/lang/lang.ru.inc (Skrip, Diikutkan); РУССКИЙ
+ /vault/lang/lang.vi.inc (Skrip, Diikutkan); TIẾNG VIỆT
  /vault/lang/lang.zh.inc (Skrip, Diikutkan); 中文（简体）
- /vault/lang/lang.zh-tw.inc (Skrip, Diikutkan); 中文（傳統）
+ /vault/lang/lang.zh-TW.inc (Skrip, Diikutkan); 中文（傳統）
     Data bahasa untuk phpMussel.
     ~
  /vault/quarantine/ (Direktori)
@@ -982,7 +992,7 @@
     "forbid_on_block"
     - Seharusnya phpMussel mengirimkan 403 headers dengan pesan upload data
       yang terblok, atau cocok dengan 200 OK?
-      0 = Tidak (200) [Default], 1 Ya (403).
+      0 = Tidak (200) [Default], 1 = Ya (403).
     "delete_on_sight"
     - Mengaktifkan opsi ini akan menginstruksikan skrip untuk berusaha
       secepatnya menghapus data apapun yang ditemukannya selama scan yang
@@ -1312,10 +1322,10 @@
      yang paling umum melalui melalui mayoritas sistem dan CMS, tapi bermaksud
      tidak komprehensif.
    "general_commands"
-   - Mencari isi file-file untuk perintah umum seperti eval(), exec() and
-     include()? 0 - Tidak (tidak mencek) [Default], 1 - Ya (mencek).
+   - Mencari isi file-file untuk perintah umum seperti "eval()", "exec()" and
+     "include()"? 0 - Tidak (tidak mencek) [Default], 1 - Ya (mencek).
      Matikan opsi ini jika Anda bermaksud untuk mengupload yang manapun dari
-     ini ke sistem ata CMS Anda via browser Anda: file-file php, JavaScript,
+     ini ke sistem ata CMS Anda via browser Anda: file-file PHP, JavaScript,
      HTML, python, perl dll. Hidupkan opsi ini jika Anda tidak punya tambahan
      perlindungan pada sistem Anda dan tidak bermaksud mengupload file-file
      apapun. Jika Anda menggunakan keamanan tambahan dalam kata penghubung
@@ -1431,19 +1441,19 @@
         di sini: <https://www.virustotal.com/en/documentation/public-api/>.
      Mencatat: Jika memindai file menggunakan Virus Total API dinonaktifkan,
      Anda tidak akan perlu meninjau salah di direktif-direktif dalam kategori
-     ini (`virustotal`), karena tidak satupun dari mereka akan melakukan apapun
+     ini ("virustotal"), karena tidak satupun dari mereka akan melakukan apapun
      jika ini dinonaktifkan. Untuk memperoleh Virus Total kunci API, dari
      dimanapun di website mereka, mengklik atas "Join our Community" link yang
      terletak ke arah kanan atas dari halaman, memasukkan informasi yang
      diminta, dan mengklik "Sign up" ketika dilakukan. Ikuti semua instruksi
      yang diberikan, dan ketika Anda punya kunci API umum Anda,
-     menyalin/menempelkan bahwa kunci API umum untuk `vt_public_api_key`
+     menyalin/menempelkan bahwa kunci API umum untuk "vt_public_api_key"
      direktif dari "phpmussel.ini" file konfigurasi.
    "vt_suspicion_level"
    - Secara default, phpMussel akan membatasi file dipindai menggunakan Virus
      Total API untuk file-file yang dianggap "mencurigakan". Anda dapat
      menyesuaikan pembatasan ini dengan mengubah nilai direktif
-     `vt_suspicion_level`.
+     "vt_suspicion_level".
      0 - File hanya dianggap mencurigakan jika, setelah dipindai oleh phpMussel
          menggunakan tanda tangan sendiri, mereka dianggap membawa berat
          heuristik. Ini akan efektif berarti bahwa penggunaan Virus Total API
@@ -1520,8 +1530,8 @@
      direkomendasi bagi Anda untuk meningkat nilai-nilai ini, tetapi, jika Anda
      mengalami masalah berkaitan dengan mencapai kuota Anda, penurunan
      nilai-nilai ini kadang -DAPAT- membantu Anda bagi berurusan dengan
-     masalah-masalah ini. Batas Anda ditentukan sebagai `vt_quota_rate`
-     permintaan dalam bentuk apapun dalam jangka waktu `vt_quota_time` menit.
+     masalah-masalah ini. Batas Anda ditentukan sebagai "vt_quota_rate"
+     permintaan dalam bentuk apapun dalam jangka waktu "vt_quota_time" menit.
  "template_data" (Category)
  - Direktif-direktif dan variabel-variabel untuk template-template dan
    tema-tema: Data template berkaitan untuk HTML diproduksi yang digunakan
@@ -1564,7 +1574,7 @@
     NAMA:UKURAN:CRC32
    Dimana NAMA adalah nama mengutip tanda tangan itu, UKURAN adalah total
    ukuran data (tidak terkompres) dari sebuah data berisikan arsip dan CRC32
-   adalah checksum crc32 dari data yang berisikan.
+   adalah checksum CRC32 dari data yang berisikan.
 
  = TANDA TANGAN SEKSIONAL PE =
    Semua tanda tangan seksional PE mengikuti format ini:
@@ -1772,5 +1782,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 14 Agustus 2015 (2015.08.14).
+Terakhir Diperbarui: 24 Agustus 2015 (2015.08.24).
 EOF

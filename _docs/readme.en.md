@@ -213,7 +213,7 @@ update
 - Required parameters: (none)
 - Optional parameters: (none)
 - Example: `?pword=[script_password]&phpmussel=update`
-- What it does: Checks for updates to both phpMussel and its signatures. If update checks succeed and updates are found, will attempt to download and install these updates. If update checks fail, update will abort. Results of the entire process are printed to the screen. I recommend checking at least once per month to ensure that your signatures and your copy of phpMussel are kept up to-date (unless, of course, you're checking for updates and installing them manually, which, I'd still recommend doing at least one per month). Checking more than twice per month is probably pointless, considering I'm (at the time of writing this) working on this project by myself and I'm very unlikely to be able to produce updates of any kind more frequently than that (nor do I particularly want to for the most part).
+- What it does: Checks for updates to both phpMussel and its signatures. If update checks succeed and updates are found, will attempt to download and install these updates. If update checks fail, update will abort. Results of the entire process are printed to the screen. I recommend checking at least once per month to ensure that your signatures and your copy of phpMussel are kept up to-date (unless, of course, you're checking for updates and installing them manually, which, I'd still recommend doing at least once per month). Checking more than twice per month is probably pointless, considering I'm (at the time of writing this) working on this project by myself and I'm very unlikely to be able to produce updates of any kind more frequently than that (nor do I particularly want to for the most part).
 
 greylist
 - Password required: script_password
@@ -261,14 +261,23 @@ File                                       | Description
 /web.config                                | An ASP.NET configuration file (in this instance, to protect the `/vault` directory from being accessed by non-authorised sources in the event that the script is installed on a server based upon ASP.NET technologies).
 /_docs/                                    | Documentation directory (contains various files).
 /_docs/change_log.txt                      | A record of changes made to the script between different versions (not required for proper function of script).
+/_docs/readme.de.md                        | Documentation: DEUTSCH
 /_docs/readme.de.txt                       | Documentation: DEUTSCH
+/_docs/readme.en.md                        | Documentation: ENGLISH
 /_docs/readme.en.txt                       | Documentation: ENGLISH
+/_docs/readme.es.md                        | Documentation: ESPAÑOL
 /_docs/readme.es.txt                       | Documentation: ESPAÑOL
+/_docs/readme.fr.md                        | Documentation: FRANÇAIS
 /_docs/readme.fr.txt                       | Documentation: FRANÇAIS
+/_docs/readme.id.md                        | Documentation: BAHASA INDONESIA
 /_docs/readme.id.txt                       | Documentation: BAHASA INDONESIA
+/_docs/readme.it.md                        | Documentation: ITALIANO
 /_docs/readme.it.txt                       | Documentation: ITALIANO
+/_docs/readme.nl.md                        | Documentation: NEDERLANDSE
 /_docs/readme.nl.txt                       | Documentation: NEDERLANDSE
+/_docs/readme.pt.md                        | Documentation: PORTUGUÊS
 /_docs/readme.pt.txt                       | Documentation: PORTUGUÊS
+/_docs/readme.ru.md                        | Documentation: РУССКИЙ
 /_docs/readme.ru.txt                       | Documentation: РУССКИЙ
 /_docs/signatures_tally.txt                | Net-shift tally of included signatures (not required for proper function of script).
 /_testfiles/                               | Test files directory (contains various files). All contained files are test files for testing if phpMussel was correctly installed on your system, and you don't need to upload this directory or any of its files except when doing such testing.
@@ -302,8 +311,9 @@ File                                       | Description
 /vault/lang/lang.nl.inc                    | Language data: NEDERLANDSE
 /vault/lang/lang.pt.inc                    | Language data: PORTUGUÊS
 /vault/lang/lang.ru.inc                    | Language data: РУССКИЙ
+/vault/lang/lang.vi.inc                    | Language data: TIẾNG VIỆT
 /vault/lang/lang.zh.inc                    | Language data: 中文（简体）
-/vault/lang/lang.zh-tw.inc                 | Language data: 中文（傳統）
+/vault/lang/lang.zh-TW.inc                 | Language data: 中文（傳統）
 /vault/quarantine/                         | Quarantine directory (contains quarantined files).
 /vault/quarantine/.htaccess                | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/.htaccess                           | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
@@ -488,7 +498,7 @@ General phpMussel configuration.
 - Where to find IP address of connecting request? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
 
 "forbid_on_block"
-- Should phpMussel send 403 headers with the file upload blocked message, or stick with the usual 200 OK? 0 = No (200) [Default], 1 Yes (403).
+- Should phpMussel send 403 headers with the file upload blocked message, or stick with the usual 200 OK? 0 = No (200) [Default], 1 = Yes (403).
 
 "delete_on_sight"
 - Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won't be touched. In the case of archives, the entire archive will be deleted, regardless of whether or not the offending file is only one of several files contained within the archive. For the case of file upload scanning, usually, it isn't necessary to enable this directive, because usually, php will automatically purge the contents of its cache when execution has finished, meaning it'll usually delete any files uploaded through it to the server unless they've been moved, copied or deleted already. This directive is added here as an extra measure of security for those whose copies of php mightn't always behave in the manner expected. 0 - After scanning, leave the file alone [Default], 1 - After scanning, if not clean, delete immediately.
@@ -716,7 +726,7 @@ Chameleon attack detection: 0 = Off, 1 = On.
 - Recognised archive file extensions (format is CSV; should only add or remove when problems occur; unnecessarily removing may cause false-positives to appear for archive files, whereas unnecessarily adding will essentially whitelist what you're adding from attack specific detection; modify with caution; also note that this has no effect on what archives can and can't be analysed at content-level). The list, as is at default, lists those formats used most commonly across the majority of systems and CMS, but intentionally isn't necessarily comprehensive.
 
 "general_commands"
-- Search content of files for general commands such as `eval()`, `exec()` and `include()`? 0 - No (do not check) [Default], 1 - Yes (check). Disable this option if you intend to upload any of the following to your system or CMS via your browser: php, JavaScript, HTML, python, perl files and etcetera. Enable this option if you don't have any additional protections on your system and do not intend to upload such files. If you use additional security in conjunction with phpMussel such as ZB Block, there is no need to turn this option on, because most of what phpMussel will look for (in the context of this option) are duplications of protections that are already provided.
+- Search content of files for general commands such as `eval()`, `exec()` and `include()`? 0 - No (do not check) [Default], 1 - Yes (check). Disable this option if you intend to upload any of the following to your system or CMS via your browser: PHP, JavaScript, HTML, python, perl files and etcetera. Enable this option if you don't have any additional protections on your system and do not intend to upload such files. If you use additional security in conjunction with phpMussel such as ZB Block, there is no need to turn this option on, because most of what phpMussel will look for (in the context of this option) are duplications of protections that are already provided.
 
 "block_control_characters"
 - Block any files containing any control characters (other than newlines)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) If you're _**ONLY**_ uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. 0 - Don't block [Default], 1 - Block.
@@ -801,7 +811,7 @@ All archive metadata signatures follow the format:
 
 `NAME:FILESIZE:CRC32`
 
-Where NAME is the name to cite for that signature, FILESIZE is the total size (uncompressed) of a file contained within the archive and CRC32 is the crc32 checksum of that contained file.
+Where NAME is the name to cite for that signature, FILESIZE is the total size (uncompressed) of a file contained within the archive and CRC32 is the CRC32 checksum of that contained file.
 
 ####*PE SECTIONAL SIGNATURES*
 All PE Sectional signatures follow the format:
@@ -937,4 +947,4 @@ This information was last updated 28th May 2015 and is current for all phpMussel
 ---
 
 
-Last Updated: 14th August 2015 (2015.08.14).
+Last Updated: 24th August 2015 (2015.08.24).

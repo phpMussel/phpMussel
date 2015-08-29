@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Dutch/Nederlandse Language Data (9th August 2015).
+ This File: phpMussel Dutch/Nederlandse Language Data (28th August 2015).
  <%phpMussel%/vault/lang/lang.nl.inc>
 
 */
@@ -26,7 +26,7 @@ $MusselConfig['lang']['cli_commands']=" q\n - Verlaten CLI.\n - Aliassen: quit, 
 $MusselConfig['lang']['cli_failed_to_complete']='Mislukt om het voltooien te scannen';
 $MusselConfig['lang']['cli_is_not_a']=' is geen bestand of map.';
 $MusselConfig['lang']['cli_ln2']=" Dank u voor het gebruiken van phpMussel, een PHP-script ontwikkeld om trojans,\n virussen, malware en andere bedreigingen te ontworpen, binnen bestanden\n geüpload naar uw systeem waar het script is haakte, gebaseerd op de\n handtekeningen van ClamAV en anderen.\n PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPL V.2 van Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
-$MusselConfig['lang']['cli_ln3']=" Momenteel phpMussel is in CLI-modus (Commandlijn interface).\n\n Om scannen een bestand of map, typ 'scan', gevolgd door de naam van het\n bestand of de map die u wilt phpMussel te scannen en druk op Enter; Typ 'c' en\n druk op Enter voor een lijst op CLI-modus commandos; Typ 'q' en druk op Enter\n om te stoppen:";
+$MusselConfig['lang']['cli_ln3']=" Momenteel phpMussel is in CLI-modus (Commandlijn interface).\n\n Om scannen een bestand of map, typ 'scan', gevolgd door de naam van het\n bestand of de map die u wilt phpMussel te scannen en druk op Enter; Typ 'c' en\n druk op Enter voor een lijst op CLI-modus commando's; Typ 'q' en druk op Enter\n om te stoppen:";
 $MusselConfig['lang']['cli_pe1']='Geen geldig PE-bestand!';
 $MusselConfig['lang']['cli_pe2']='PE Secties:';
 $MusselConfig['lang']['cli_update_restart']=' Herstarten phpMussel kan nodig zijn voordat updates zichtbaar worden.';
@@ -35,7 +35,7 @@ $MusselConfig['lang']['controls_lockout']='phpMussel controles-slot ingeschakeld
 $MusselConfig['lang']['core_scriptfile_missing']='Kern script ontbreekt! Opnieuw installeer phpMussel.';
 $MusselConfig['lang']['corrupted']='Gedetecteerd beschadigd PE';
 $MusselConfig['lang']['denied']='Upload Geweigerd!';
-$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento negato! Upload verweigert! アップロード拒否されました! 上载是否认! 上載是否認! Uppladda Nekas! Загрузить Отказано! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='De upload poging werd geblokkeerd voor de hieronder vermelde redenen / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Gedetecteerd {vn}';
 $MusselConfig['lang']['detected_control_characters']='Gedetecteerd controle karakters';

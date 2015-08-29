@@ -92,19 +92,20 @@
     your system or CMS, but the easiest is to simply include the script at the
     beginning of a core file of your system or CMS (one that'll generally
     always be loaded when someone accesses any page across your website) using
-    a require() or include() command. Usually, this'll be something stored in a
-    directory such as "/includes", "/assets" or "/functions", and will often be
-    named something like "init.php", "common_functions.php", "functions.php" or
-    similar. You'll have to work out which file this is for your situation; If
-    you encounter difficulties in working this out for yourself, visit the
-    phpMussel support forums and let us know; It's possible that either myself
-    or another user may have experience with the CMS that you're using (you'll
-    need to let us know which CMS you're using), and thus, may be able to
-    provide some assistance in this area. To do this [to use require() or
-    include()], insert the following line of code to the very beginning of that
-    core file, replacing the string contained inside the quotation marks with
-    the exact address of the "phpmussel.php" file (local address, not the HTTP
-    address; it'll look similar to the vault address mentioned earlier).
+    a "require()" or "include()" command. Usually, this'll be something stored
+    in a directory such as "/includes", "/assets" or "/functions", and will
+    often be named something like "init.php", "common_functions.php",
+    "functions.php" or similar. You'll have to work out which file this is for
+    your situation; If you encounter difficulties in working this out for
+    yourself, visit the phpMussel support forums and let us know; It's possible
+    that either myself or another user may have experience with the CMS that
+    you're using (you'll need to let us know which CMS you're using), and thus,
+    may be able to provide some assistance in this area. To do this [to use
+    "require()" or "include()"], insert the following line of code to the very
+    beginning of that core file, replacing the string contained inside the
+    quotation marks with the exact address of the "phpmussel.php" file (local
+    address, not the HTTP address; it'll look similar to the vault address
+    mentioned earlier).
 
     <?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>
 
@@ -431,7 +432,7 @@
                  to ensure that your signatures and your copy of phpMussel are
                  kept up to-date (unless, of course, you're checking for
                  updates and installing them manually, which, I'd still
-                 recommend doing at least one per month). Checking more than
+                 recommend doing at least once per month). Checking more than
                  twice per month is probably pointless, considering I'm (at the
                  time of writing this) working on this project by myself and
                  I'm very unlikely to be able to produce updates of any kind
@@ -504,14 +505,23 @@
     A record of changes made to the script between different versions (not
     required for proper function of script).
     ~
+ /_docs/readme.de.md (Documentation, Included); DEUTSCH
  /_docs/readme.de.txt (Documentation, Included); DEUTSCH
+ /_docs/readme.en.md (Documentation, Included); ENGLISH
  /_docs/readme.en.txt (Documentation, Included); ENGLISH
+ /_docs/readme.es.md (Documentation, Included); ESPAÑOL
  /_docs/readme.es.txt (Documentation, Included); ESPAÑOL
+ /_docs/readme.fr.md (Documentation, Included); FRANÇAIS
  /_docs/readme.fr.txt (Documentation, Included); FRANÇAIS
+ /_docs/readme.id.md (Documentation, Included); BAHASA INDONESIA
  /_docs/readme.id.txt (Documentation, Included); BAHASA INDONESIA
+ /_docs/readme.it.md (Documentation, Included); ITALIANO
  /_docs/readme.it.txt (Documentation, Included); ITALIANO
+ /_docs/readme.nl.md (Documentation, Included); NEDERLANDSE
  /_docs/readme.nl.txt (Documentation, Included); NEDERLANDSE
+ /_docs/readme.pt.md (Documentation, Included); PORTUGUÊS
  /_docs/readme.pt.txt (Documentation, Included); PORTUGUÊS
+ /_docs/readme.ru.md (Documentation, Included); РУССКИЙ
  /_docs/readme.ru.txt (Documentation, Included); РУССКИЙ
     The README files (for example; the file you're currently reading).
     ~
@@ -600,8 +610,9 @@
  /vault/lang/lang.nl.inc (Script, Included); NEDERLANDSE
  /vault/lang/lang.pt.inc (Script, Included); PORTUGUÊS
  /vault/lang/lang.ru.inc (Script, Included); РУССКИЙ
+ /vault/lang/lang.vi.inc (Script, Included); TIẾNG VIỆT
  /vault/lang/lang.zh.inc (Script, Included); 中文（简体）
- /vault/lang/lang.zh-tw.inc (Script, Included); 中文（傳統）
+ /vault/lang/lang.zh-TW.inc (Script, Included); 中文（傳統）
     Language data files for phpMussel.
     ~
  /vault/quarantine/ (Directory)
@@ -922,7 +933,7 @@
       WARNING: Don't change this unless you know what you're doing!
     "forbid_on_block"
     - Should phpMussel send 403 headers with the file upload blocked message,
-      or stick with the usual 200 OK? 0 = No (200) [Default], 1 Yes (403).
+      or stick with the usual 200 OK? 0 = No (200) [Default], 1 = Yes (403).
     "delete_on_sight"
     - Enabling this directive will instruct the script to attempt to
       immediately delete any scanned attempted file upload matching any
@@ -1242,16 +1253,16 @@
      default, lists those formats used most commonly across the majority of
      systems and CMS, but intentionally isn't necessarily comprehensive.
    "general_commands"
-   - Search content of files for general commands such as eval(), exec() and
-     include()? 0 - No (do not check) [Default], 1 - Yes (check). Disable this
-     option if you intend to upload any of the following to your system or CMS
-     via your browser: php, JavaScript, HTML, python, perl files and etcetera.
-     Enable this option if you don't have any additional protections on your
-     system and do not intend to upload such files. If you use additional
-     security in conjunction with phpMussel such as ZB Block, there is no need
-     to turn this option on, because most of what phpMussel will look for (in
-     the context of this option) are duplications of protections that are
-     already provided.
+   - Search content of files for general commands such as "eval()", "exec()"
+     and "include()"? 0 - No (do not check) [Default], 1 - Yes (check).
+     Disable this option if you intend to upload any of the following to your
+     system or CMS via your browser: PHP, JavaScript, HTML, python, perl files
+     and etcetera. Enable this option if you don't have any additional
+     protections on your system and do not intend to upload such files. If you
+     use additional security in conjunction with phpMussel such as ZB Block,
+     there is no need to turn this option on, because most of what phpMussel
+     will look for (in the context of this option) are duplications of
+     protections that are already provided.
    "block_control_characters"
    - Block any files containing any control characters (other than newlines)?
      ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) If you're -only- uploading plain-text,
@@ -1352,19 +1363,19 @@
         documentation can be found here:
         <https://www.virustotal.com/en/documentation/public-api/>.
      Note: If scanning files using the Virus Total API is disabled, you won't
-     need to review any of the directives in this category (`virustotal`),
+     need to review any of the directives in this category ("virustotal"),
      because none of them will do anything if this is disabled. To acquire a
      Virus Total API key, from anywhere on their website, click the "Join our
      Community" link located towards the top-right of the page, enter in the
      information requested, and click "Sign up" when done. Follow all
      instructions supplied, and when you've got your public API key, copy/paste
-     that public API key to the `vt_public_api_key` directive of the
+     that public API key to the "vt_public_api_key" directive of the
      "phpmussel.ini" configuration file.
    "vt_suspicion_level"
    - By default, phpMussel will restrict which files it scans using the Virus
      Total API to those files that it considers "suspicious". You can
      optionally adjust this restriction by changing the value of the
-     `vt_suspicion_level` directive.
+     "vt_suspicion_level" directive.
      0 - Files are only considered suspicious if, upon being scanned by
          phpMussel using its own signatures, they are deemed to carry a
          heuristic weight. This would effectively mean that use of the Virus
@@ -1436,8 +1447,8 @@
      been instructed to do so, it's not recommended for you to increase these
      values, but, if you've encountered problems relating to reaching your rate
      quota, decreasing these values -may- sometimes help you in dealing with
-     these problems. Your rate limit is determined as `vt_quota_rate` requests
-     of any nature in any given `vt_quota_time` minute time frame.
+     these problems. Your rate limit is determined as "vt_quota_rate" requests
+     of any nature in any given "vt_quota_time" minute time frame.
  "template_data" (Category)
  - Directives/Variables for templates and themes: Template data relates to the
    HTML output used to generate the "Upload Denied" message displayed to users
@@ -1479,7 +1490,7 @@
     NAME:FILESIZE:CRC32
    Where NAME is the name to cite for that signature, FILESIZE is the total
    size (uncompressed) of a file contained within the archive and CRC32 is the
-   crc32 checksum of that contained file.
+   CRC32 checksum of that contained file.
 
  = PE SECTIONAL SIGNATURES =
    All PE Sectional signatures follow the format:
@@ -1681,5 +1692,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 14th August 2015 (2015.08.14).
+Last Updated: 24th August 2015 (2015.08.24).
 EOF

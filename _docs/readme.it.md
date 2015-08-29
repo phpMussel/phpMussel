@@ -213,7 +213,7 @@ update
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
 - Esempio: `?pword=[script_password]&phpmussel=update`
-- Cosa fa: Verifica la presenza di aggiornamenti sia per phpMussel e le sue firme. Se l'aggiornamento verificare è successo e aggiornamenti sono trovano, sarà tenterà per scaricare e installare gli aggiornamenti. Se l'aggiornamento verificare fallisce, l'aggiornamento sarà abortito. Risultati dell'intero processo sono stampati sullo schermo. Mi raccomando di fare l'aggiornamento verificare almeno una volta al mese per garantire le vostre firme e la vostra copia di phpMussel sono aggiornato all'ultimo edizioni (a meno, ovviamente, si fare l'aggiornamento verificare e fare l'installazione di manualmente, di cui, Mi piacerebbe ancora consiglio di fare almeno una al mese). Controllo più di due volte al mese, è probabilmente inutile, considerando sto (alla momento di stesura questo) lavorando su questo progetto da solo e sto molto improbabile essere in grado per produzione qualsiasi aggiornamenti di qualsiasi tipo più spesso di quello (né faccio in modo particolare voglio per la maggior parte).
+- Cosa fa: Verifica la presenza di aggiornamenti sia per phpMussel e le sue firme. Se l'aggiornamento verificare è successo e aggiornamenti sono trovano, sarà tenterà per scaricare e installare gli aggiornamenti. Se l'aggiornamento verificare fallisce, l'aggiornamento sarà abortito. Risultati dell'intero processo sono stampati sullo schermo. Mi raccomando di fare l'aggiornamento verificare almeno una volta al mese per garantire le vostre firme e la vostra copia di phpMussel sono aggiornato all'ultimo edizioni (a meno, ovviamente, si fare l'aggiornamento verificare e fare l'installazione di manualmente, di cui, mi piacerebbe ancora consiglio di fare almeno una volta al mese). Controllo più di due volte al mese, è probabilmente inutile, considerando sto (alla momento di stesura questo) lavorando su questo progetto da solo e sto molto improbabile essere in grado per produzione qualsiasi aggiornamenti di qualsiasi tipo più spesso di quello (né faccio in modo particolare voglio per la maggior parte).
 
 greylist
 - Password requisito: script_password
@@ -261,14 +261,23 @@ File                                       | Descrizione
 /web.config                                | Un ASP.NET configurazione file (in questo caso, a proteggere la `/vault` cartella da l'acceso di non autorizzate origini nel caso che lo script è installato su un server basata su ASP.NET tecnologie).
 /_docs/                                    | Documentazione cartella (contiene vari file).
 /_docs/change_log.txt                      | Un record delle modifiche apportate allo script tra diverse versioni (non richiesto per il corretto funzionamento dello script).
+/_docs/readme.de.md                        | Documentazione: DEUTSCH
 /_docs/readme.de.txt                       | Documentazione: DEUTSCH
+/_docs/readme.en.md                        | Documentazione: ENGLISH
 /_docs/readme.en.txt                       | Documentazione: ENGLISH
+/_docs/readme.es.md                        | Documentazione: ESPAÑOL
 /_docs/readme.es.txt                       | Documentazione: ESPAÑOL
+/_docs/readme.fr.md                        | Documentazione: FRANÇAIS
 /_docs/readme.fr.txt                       | Documentazione: FRANÇAIS
+/_docs/readme.id.md                        | Documentazione: BAHASA INDONESIA
 /_docs/readme.id.txt                       | Documentazione: BAHASA INDONESIA
+/_docs/readme.it.md                        | Documentazione: ITALIANO
 /_docs/readme.it.txt                       | Documentazione: ITALIANO
+/_docs/readme.nl.md                        | Documentazione: NEDERLANDSE
 /_docs/readme.nl.txt                       | Documentazione: NEDERLANDSE
+/_docs/readme.pt.md                        | Documentazione: PORTUGUÊS
 /_docs/readme.pt.txt                       | Documentazione: PORTUGUÊS
+/_docs/readme.ru.md                        | Documentazione: РУССКИЙ
 /_docs/readme.ru.txt                       | Documentazione: РУССКИЙ
 /_docs/signatures_tally.txt                | Conteggio delle firme incluso (non richiesto per il corretto funzionamento dello script).
 /_testfiles/                               | Test file cartella (contiene vari file). Tutti i file contenuti sono test file per la verifica se phpMussel è installato correttamente sulla vostra sistema, e non è necessario a caricare questa cartella o qualsiasi dei suoi file, tranne quando fa tali test.
@@ -302,8 +311,9 @@ File                                       | Descrizione
 /vault/lang/lang.nl.inc                    | Linguistici dati: NEDERLANDSE
 /vault/lang/lang.pt.inc                    | Linguistici dati: PORTUGUÊS
 /vault/lang/lang.ru.inc                    | Linguistici dati: РУССКИЙ
+/vault/lang/lang.vi.inc                    | Linguistici dati: TIẾNG VIỆT
 /vault/lang/lang.zh.inc                    | Linguistici dati: 中文（简体）
-/vault/lang/lang.zh-tw.inc                 | Linguistici dati: 中文（傳統）
+/vault/lang/lang.zh-TW.inc                 | Linguistici dati: 中文（傳統）
 /vault/quarantine/                         | Quarantena cartella (contiene i file in quarantena).
 /vault/quarantine/.htaccess                | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/.htaccess                           | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
@@ -488,7 +498,7 @@ Generale configurazione per phpMussel.
 - Dove trovare l'IP indirizzo di collegamento richiesta? (Utile per servizi come Cloudflare e simili) Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!
 
 "forbid_on_block"
-- phpMussel dovrebbe inviare 403 intestazioni con il file caricamente bloccato messaggio, o tenere con il solito 200 OK? 0 = No (200) [Predefinito], 1 Sì (403).
+- phpMussel dovrebbe inviare 403 intestazioni con il file caricamente bloccato messaggio, o tenere con il solito 200 OK? 0 = No (200) [Predefinito], 1 = Sì (403).
 
 "delete_on_sight"
 - Abilitando questa opzione sarà istruirà lo script per tentare immediatamente eliminare qualsiasi file trovato durante scansioni che corrisponde a qualsiasi i criteri di rilevazione, attraverso le firme o altrimenti. I file determinati ad essere "pulito" non verranno toccati. Nel caso degli archivi, l'intero archivio verrà eliminato (indipendentemente se il file all'origine è soltanto uno dei vari file contenuti all'interno dell'archivio o non). Nel caso di file caricamente scansione, solitamente, non è necessario attivare questa opzione, perché solitamente, php sarà automaticamente eliminerà il contenuto della cache quando l'esecuzione è terminata, il che significa che lo farà solitamente eliminare tutti i file caricati tramite al server tranne ciò che già è spostato, copiato o cancellato. L'opzione viene aggiunto qui come ulteriore misura di sicurezza per coloro le cui copie di php non sempre comportarsi nel previsto modo. 0 - Dopo la scansione, lasciare il file solo [Predefinito], 1 - Dopo la scansione, se non pulite, immediatamente eliminarlo.
@@ -716,7 +726,7 @@ Chameleon attacco rilevamento: 0 = Disattivato, 1 = Attivato.
 - Riconosciute archivio file estensioni (formato è CSV; deve solo aggiungere o rimuovere quando problemi apparire; rimozione inutilmente può causare falsi positivi per archivio file, mentre aggiungendo inutilmente saranno essenzialmente whitelist quello che si sta aggiungendo dall'attacco specifico rilevamento; modificare con cautela; anche notare che questo non ha qualsiasi effetto su cui gli archivi possono e non possono essere analizzati dal contenuti livello). La lista, come da predefinito, è i formati utilizzati più comunemente attraverso la maggior parte dei sistemi e CMS, Ma apposta non è necessariamente completo.
 
 "general_commands"
-- Cercare contenuti dei file per generali comandi quali `eval()`, `exec()` e `include()`? 0 - No (no verifica) [Predefinito], 1 - Sì (fare verifica). Disattivare questa opzione se si intende caricare qualsiasi delle seguenti al vostra sistema o CMS tramite il browser: php, JavaScript, HTML, python, perl file e eccetera. Attivare questa opzione se non avete qualsiasi aggiuntivi protezioni sul vostro sistema e non intendono caricare tali file. Se si utilizza qualsiasi aggiuntivi protezione in collaborazione con phpMussel come ZB Block, vi è non necessità di attivare questa opzione, perché la maggior parte di ciò che phpMussel sarà cercare (nel contesto di questa opzione) sono duplicazioni di protezioni che sono già forniti.
+- Cercare contenuti dei file per generali comandi quali `eval()`, `exec()` e `include()`? 0 - No (no verifica) [Predefinito], 1 - Sì (fare verifica). Disattivare questa opzione se si intende caricare qualsiasi delle seguenti al vostra sistema o CMS tramite il browser: PHP, JavaScript, HTML, python, perl file e eccetera. Attivare questa opzione se non avete qualsiasi aggiuntivi protezioni sul vostro sistema e non intendono caricare tali file. Se si utilizza qualsiasi aggiuntivi protezione in collaborazione con phpMussel come ZB Block, vi è non necessità di attivare questa opzione, perché la maggior parte di ciò che phpMussel sarà cercare (nel contesto di questa opzione) sono duplicazioni di protezioni che sono già forniti.
 
 "block_control_characters"
 - Bloccare tutti i file contenenti i controlli caratteri (eccetto per nuove linee)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Se si sta caricando solo normale testo, quindi si puó attivare questa opzione a fornire additionale protezione al vostro sistema. Ma, se si carica qualcosa di diverso da normale testo, abilitando questo opzione può causare falsi positivi. 0 - Non bloccare [Predefinito], 1 - Bloccare.
@@ -937,4 +947,4 @@ Questa informazione è stato lo scorso aggiornato 28 Maggio 2015 ed è in corso 
 ---
 
 
-Ultimo Aggiornamento: 14 Agosto 2015 (2015.08.14).
+Ultimo Aggiornamento: 24 Agosto 2015 (2015.08.24).

@@ -97,20 +97,20 @@
     como phpMussel ao seu sistema ou CMS, mas o mais fácil é simplesmente
     incluir o script no início de um núcleo arquivo de seu sistema ou CMS (uma
     que vai geralmente sempre ser carregado quando alguém acessa qualquer
-    página através de seu site) utilizando um require() ou include() comando.
-    Normalmente, isso vai ser algo armazenado em um diretório como "/includes",
-    "/assets" ou "/functions", e muitas vezes, ser nomeado algo como
-    "init.php", "common_functions.php", "functions.php" ou semelhante. Você
-    precisará determinar qual arquivo isso é para a sua situação; Se você
+    página através de seu site) utilizando um "require()" ou "include()"
+    comando. Normalmente, isso vai ser algo armazenado em um diretório como
+    "/includes", "/assets" ou "/functions", e muitas vezes, ser nomeado algo
+    como "init.php", "common_functions.php", "functions.php" ou semelhante.
+    Você precisará determinar qual arquivo isso é para a sua situação; Se você
     encontrar dificuldades em determinar isso por si mesmo, visite os phpMussel
     suporte fóruns e deixe-nos saber; É possível que eu ou outro usuário podem
     ter experiência com o CMS que você está usando (você precisa deixar-nos
     saber qual CMS você está usando), e assim, pode ser capaz de prestar alguma
-    assistência neste domínio. Para fazer isso [usar require() ou include()],
-    insira a seguinte linha de código para o início desse núcleo arquivo,
-    substituindo a string contida dentro das aspas com o exato endereço do
-    "phpmussel.php" arquivo (endereço local, não o endereço HTTP; será
-    semelhante ao vault endereço mencionado anteriormente).
+    assistência neste domínio. Para fazer isso [usar "require()" ou
+    "include()"], insira a seguinte linha de código para o início desse núcleo
+    arquivo, substituindo a string contida dentro das aspas com o exato
+    endereço do "phpmussel.php" arquivo (endereço local, não o endereço HTTP;
+    será semelhante ao vault endereço mencionado anteriormente).
 
     <?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>
 
@@ -456,7 +456,7 @@
             seus assinaturas e sua cópia do phpMussel são mantidos atualizados
             (a menos, claro, você está verificando se há atualizações e
             instalá-los manualmente, que, eu ainda recomendo fazer pelo menos
-            um por mês). Verificando mais de que duas vezes por mês é
+            uma vez por mês). Verificando mais de que duas vezes por mês é
             provavelmente inútil, considerando que eu (no momento de escrever
             este) estou trabalhando neste projeto sozinho e eu estou muito
             improvável que seja capaz de produzir atualizações de qualquer
@@ -529,14 +529,23 @@
     Um registro das mudanças feitas para o script entre o diferentes versões
     (não é necessário para o correto funcionamento do script).
     ~
+ /_docs/readme.de.md (Documentação, Incluído); DEUTSCH
  /_docs/readme.de.txt (Documentação, Incluído); DEUTSCH
+ /_docs/readme.en.md (Documentação, Incluído); ENGLISH
  /_docs/readme.en.txt (Documentação, Incluído); ENGLISH
+ /_docs/readme.es.md (Documentação, Incluído); ESPAÑOL
  /_docs/readme.es.txt (Documentação, Incluído); ESPAÑOL
+ /_docs/readme.fr.md (Documentação, Incluído); FRANÇAIS
  /_docs/readme.fr.txt (Documentação, Incluído); FRANÇAIS
+ /_docs/readme.id.md (Documentação, Incluído); BAHASA INDONESIA
  /_docs/readme.id.txt (Documentação, Incluído); BAHASA INDONESIA
+ /_docs/readme.it.md (Documentação, Incluído); ITALIANO
  /_docs/readme.it.txt (Documentação, Incluído); ITALIANO
+ /_docs/readme.nl.md (Documentação, Incluído); NEDERLANDSE
  /_docs/readme.nl.txt (Documentação, Incluído); NEDERLANDSE
+ /_docs/readme.pt.md (Documentação, Incluído); PORTUGUÊS
  /_docs/readme.pt.txt (Documentação, Incluído); PORTUGUÊS
+ /_docs/readme.ru.md (Documentação, Incluído); РУССКИЙ
  /_docs/readme.ru.txt (Documentação, Incluído); РУССКИЙ
     O README arquivos (por exemplo; o arquivo que você está lendo atualmente).
     ~
@@ -627,8 +636,9 @@
  /vault/lang/lang.nl.inc (Script, Incluído); NEDERLANDSE
  /vault/lang/lang.pt.inc (Script, Incluído); PORTUGUÊS
  /vault/lang/lang.ru.inc (Script, Incluído); РУССКИЙ
+ /vault/lang/lang.vi.inc (Script, Incluído); TIẾNG VIỆT
  /vault/lang/lang.zh.inc (Script, Incluído); 中文（简体）
- /vault/lang/lang.zh-tw.inc (Script, Incluído); 中文（傳統）
+ /vault/lang/lang.zh-TW.inc (Script, Incluído); 中文（傳統）
     Linguagem arquivos para phpMussel.
     ~
  /vault/quarantine/ (Diretório)
@@ -970,7 +980,7 @@
     "forbid_on_block"
     - Deve phpMussel enviar 403 header com a bloqueado arquivo carregamento
       mensagem, ou ficar com os habituais 200 OK?
-      0 = Não (200) [Padrão], 1 Sim (403).
+      0 = Não (200) [Padrão], 1 = Sim (403).
     "delete_on_sight"
     - Ativando esta opção irá instruir o script para tentar imediatamente
       deletando qualquer arquivo que ele encontra durante a análise que
@@ -1309,8 +1319,9 @@
      é do formatos utilizados mais comumente através da maioria dos sistemas e
      CMS, mas intencionalmente não é necessariamente abrangente.
    "general_commands"
-   - Olha por gerais comandos como tais eval(), exec() e include() em conteúdos
-     de arquivos? 0 - Não (não olha por) [Padrão], 1 - Sim (olha por).
+   - Olha por gerais comandos como tais "eval()", "exec()" e "include()" em
+     conteúdos de arquivos?
+     0 - Não (não olha por) [Padrão], 1 - Sim (olha por).
      Desativar essa opção se você são tencionando de carregando qualquer um do
      seguinte para o seu sistema ou CMS através do seu navegador: php,
      JavaScript, HTML, python, perl files e etcetera. Ativar essa opção se você
@@ -1411,10 +1422,10 @@
      de arquivos usando o Virus Total API está desativado. Para ativá-lo, um
      Virus Total API chave é necessária. Devido ao benefício significativo que
      isso poderia fornecer a você, é algo que eu recomendo ativar. Esteja
-     ciente, porém, que para usar o Virus Total API, você _**DEVE**_ concordar
-     com seus Termos de Uso e você _**DEVE**_ aderir a todas as orientações
-     conforme descrito pelo da Virus Total documentação! Você NÃO tem permissão
-     para usar este recurso de integração EXCETO SE:
+     ciente, porém, que para usar o Virus Total API, você -DEVE- concordar com
+     seus Termos de Uso e você -DEVE- aderir a todas as orientações conforme
+     descrito pelo da Virus Total documentação! Você NÃO tem permissão para
+     usar este recurso de integração EXCETO SE:
      A) Você leu e concorda com os Termos de Uso da Virus Total e sua API.
         Os Termos de Uso da Virus Total e sua API pode ser encontrada aqui:
         <https://www.virustotal.com/en/about/terms-of-service/>.
@@ -1425,19 +1436,19 @@
         <https://www.virustotal.com/en/documentation/public-api/>.
      Notar: Se a verificação de arquivos usando o Virus Total de API está
      desativado, você não será necessitar de rever alguma das directivas nesta
-     categoria (`virustotal`), porque eles não vão fazer nada se este é
+     categoria ("virustotal"), porque eles não vão fazer nada se este é
      desativado. Para adquirir um Virus Total API chave, desde qualquer lugar
      em seu site, clique no "Junte-se à comunidade" link situado próximo ao
      superior direita da página, digitar as informações solicitadas, e clique
      em "Cadastrar" quando acabado. Siga todas as instruções fornecidas, e
      quando você tem a sua pública API chave, copiar/colar essa pública API
-     chave ao `vt_public_api_key` directiva do "phpmussel.ini" configuração
+     chave ao "vt_public_api_key" directiva do "phpmussel.ini" configuração
      arquivo.
    "vt_suspicion_level"
    - Por padrão, phpMussel restringirá os arquivos que são verificado usando o
      Virus Total API a esses arquivos que considera "suspeito". Opcionalmente,
      você pode ajustar essa restrição via alterando o valor ao
-     `vt_suspicion_level` directiva.
+     "vt_suspicion_level" directiva.
      0 - Arquivos somente são considerados suspeitos se, quando ser verificado
          por phpMussel usando suas próprias assinaturas, eles são considerados
          para possuir um peso heurística. Isto efectivamente significa que a
@@ -1516,9 +1527,9 @@
      limite que deve aderir para. Excepto se tenha sido instruído a fazê-lo,
      não é recomendado para você aumentar esses valores, mas, se você encontrou
      problemas relacionados com a atingir sua cota, diminuir esses valores
-     podem _**POR VEZES**_ ajudá-lo em lidar com estes problemas. Seu taxa
-     limite é determinada como `vt_quota_rate` solicitações de qualquer
-     natureza dentro qualquer `vt_quota_time` minuto período de tempo.
+     podem -POR VEZES- ajudá-lo em lidar com estes problemas. Seu taxa limite é
+     determinada como "vt_quota_rate" solicitações de qualquer natureza dentro
+     qualquer "vt_quota_time" minuto período de tempo.
  "template_data" (Category)
  - Directivas/Variáveis para modelos e temas: Template dados está associada com
    o HTML usado para gerar a "Carregar Negado" mensagem exibido aos usuários
@@ -1771,5 +1782,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 14 Agosto 2015 (2015.08.14).
+Última Atualização: 24 Agosto 2015 (2015.08.24).
 EOF

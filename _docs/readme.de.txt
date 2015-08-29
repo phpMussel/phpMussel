@@ -214,8 +214,8 @@
    somit nichts überprüft werden konnte, 1 zeigt an, dass das Ziel erfolgreich
    geprüft wurde und keine Probleme erkannt wurden, 2 zeigt an, dass das Ziel
    erfolgreich geprüft wurde, jedoch Probleme gefunden wurden). True weist die
-   Funktion an, Ergebnisse als lesbaren Text zurückzugeben. Zusätzlich können in
-   beiden Fällen auf die Ergebnisse über globale Variablen nach dem Scannen
+   Funktion an, Ergebnisse als lesbaren Text zurückzugeben. Zusätzlich können
+   in beiden Fällen auf die Ergebnisse über globale Variablen nach dem Scannen
    zugegriffen werden. Diese Variable ist optional und standardmäßig auf false.
 
  - $output_flatness ist ein boolescher Wert und gibt der Funktion an, ob die
@@ -495,14 +495,23 @@
     Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für
     die korrekte Funktion des Scripts nicht notwendig).
     ~
+ /_docs/readme.de.md (Dokumentation, enthalten); DEUTSCH
  /_docs/readme.de.txt (Dokumentation, enthalten); DEUTSCH
+ /_docs/readme.en.md (Dokumentation, enthalten); ENGLISH
  /_docs/readme.en.txt (Dokumentation, enthalten); ENGLISH
+ /_docs/readme.es.md (Dokumentation, enthalten); ESPAÑOL
  /_docs/readme.es.txt (Dokumentation, enthalten); ESPAÑOL
+ /_docs/readme.fr.md (Dokumentation, enthalten); FRANÇAIS
  /_docs/readme.fr.txt (Dokumentation, enthalten); FRANÇAIS
+ /_docs/readme.id.md (Dokumentation, enthalten); BAHASA INDONESIA
  /_docs/readme.id.txt (Dokumentation, enthalten); BAHASA INDONESIA
+ /_docs/readme.it.md (Dokumentation, enthalten); ITALIANO
  /_docs/readme.it.txt (Dokumentation, enthalten); ITALIANO
+ /_docs/readme.nl.md (Dokumentation, enthalten); NEDERLANDSE
  /_docs/readme.nl.txt (Dokumentation, enthalten); NEDERLANDSE
+ /_docs/readme.pt.md (Dokumentation, enthalten); PORTUGUÊS
  /_docs/readme.pt.txt (Dokumentation, enthalten); PORTUGUÊS
+ /_docs/readme.ru.md (Dokumentation, enthalten); РУССКИЙ
  /_docs/readme.ru.txt (Dokumentation, enthalten); РУССКИЙ
     Die README-Dateien (z.B. die Datei, die Sie gerade lesen).
     ~
@@ -593,8 +602,9 @@
  /vault/lang/lang.nl.inc (Script, enthalten); NEDERLANDSE
  /vault/lang/lang.pt.inc (Script, enthalten); PORTUGUÊS
  /vault/lang/lang.ru.inc (Script, enthalten); РУССКИЙ
+ /vault/lang/lang.vi.inc (Script, enthalten); TIẾNG VIỆT
  /vault/lang/lang.zh.inc (Script, enthalten); 中文（简体）
- /vault/lang/lang.zh-tw.inc (Script, enthalten); 中文（傳統）
+ /vault/lang/lang.zh-TW.inc (Script, enthalten); 中文（傳統）
     Sprachdateien für phpMussel.
     ~
  /vault/quarantine/ (Verzeichnis)
@@ -940,7 +950,7 @@
       Achtung: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
     "forbid_on_block"
     - Zurückgegebener 403-HTTP-Header bei einem blockierten Dateiupload.
-      0 = Nein (200) [Standardeinstellung], 1 Ja (403).
+      0 = Nein (200) [Standardeinstellung], 1 = Ja (403).
     "delete_on_sight"
     - Diese Option weist das Script an, Dateien während eines Scans sofort
       zu löschen, wenn ein Erkennungsmerkmal, ob durch Signaturen oder
@@ -967,7 +977,7 @@
     "lang_acceptable"
     - Die "lang_acceptable" Anweisung sagt phpMussel, welche Sprachen von dem
       Script von "lang" oder von "HTTP_ACCEPT_LANGUAGE" akzeptiert werden.
-      Diese Anweisung sollte **NUR** angepasst werden, falls du eigene
+      Diese Anweisung sollte -NUR- angepasst werden, falls du eigene
       angepasste Sprachen hinzufügst oder zwangsweise Sprachdateien entfernst.
       Diese Anweisung ist ein mit Kommata getrennter String der Codes der
       benutzten Sprachen, die von dem Script akzeptiert werden.
@@ -1285,8 +1295,8 @@
      von der Mehrzahl der Systeme und CMS verwendet werden, ist aber
      absichtlich nicht vollständig.
    "general_commands"
-   - Soll der Inhalt von Dateien auf allgemeine Befehle wie eval(), exec() und
-     include() durchsucht werden?
+   - Soll der Inhalt von Dateien auf allgemeine Befehle wie "eval()", "exec()"
+     und "include()" durchsucht werden?
      0 - Nein (nicht überprüfen) [Standardeinstellung], 1 - Ja (überprüfen).
      Stellen Sie diese Option aus, wenn Sie vorhaben, folgende Dateien mittels
      Browser auf Ihr System oder CMS hochzuladen: PHP, JavaScript, HTML,
@@ -1401,19 +1411,19 @@
         <https://www.virustotal.com/en/documentation/public-api/>.
      Anmerkung: Falls das Scannen von Dateien mit der Virus Total API
      deaktiviert ist, brauchst du keine der Direktiven in dieser Kategorie
-     (`virustotal`) zu überprüfen, weil keine davon etwas machen wenn dies
+     ("virustotal") zu überprüfen, weil keine davon etwas machen wenn dies
      deaktiviert ist. Um einen Virus Total API Schlüssel zu erhalten, klicke
      auf deren Webseite auf den "Treten Sie unserer Community bei" Link oben
      rechts auf der Seite, gebe die geforderten Daten an und klick auf
      "Anmelden" wenn du fertig bist. Folge allen Anweisungen und wenn du deinen
      öffentlichen API Schlüssel hast, kopier eund füge den öffentlichen API
-     Schlüssel bei der `vt_public_api_key` Direktive der "phpmussel.ini"
+     Schlüssel bei der "vt_public_api_key" Direktive der "phpmussel.ini"
      Konfigurations-Datei ein.
    "vt_suspicion_level"
    - phpMussel wird standardmäßig die mit der Virus Total API zu scannenden
      Dateien auf Dateien eisnchränken, die es als "verdächtig" betrachtet. Du
      kannst optional diese Einschränkung durch Änderung des Wertes der
-     `vt_suspicion_level` Direktive anpassen.
+     "vt_suspicion_level" Direktive anpassen.
      0 - Dateien werden nur als verdächtig betrachtet, falls durch den Scan mit
          phpMussel mit eigenen Signaturen, diese eine heuristische Gewichtung
          haben. Das würde bdeuten, dass die Verwendung der Virus Total API für
@@ -1485,28 +1495,28 @@
      sich halten soll. Außer du bist dazu aufgefordert, ist es nicht empfohlen
      diese Werte zu erhöhen. Solltest du aber Probleme bezogen auf das
      Erreichen des Limits haben, -sollte- das Verringern dieser Werte manchmal
-     helfen. Dein Limit wird festgelegt als `vt_quota_rate` Anfragen jeder Art
-     in jeder `vt_quota_time` Minuten Zeitspanne.
+     helfen. Dein Limit wird festgelegt als "vt_quota_rate" Anfragen jeder Art
+     in jeder "vt_quota_time" Minuten Zeitspanne.
  "template_data" (Kategorie)
- - Anweisungen/Variablen für Templates und Themes: Template-Daten bezieht sich 
-   auf die HTML-Ausgabe die verwendet wird, um die  "Upload blockiert"-Nachricht 
-   Benutzern anzuzeigen, wenn eine hochgeladene Datei blockiert wird. Falls Sie 
-   benutzerdefinierte Themes für phpMussel verwenden, wird die HTML-Ausgabe von 
-   der "template_custom.html"-Datei verwendet, ansonsten wird die HTML-Ausgabe 
-   von der "template.html"-Datei verwendet. Variablen, die in diesem Bereich der 
-   Konfigurations-Datei festgelegt werden, werden als HTML-Ausgabe geparst, indem 
-   jede Variable mit geschweiften Klammern innerhalb der HTML-Ausgabe mit den 
-   entsprechenden Variablen-Daten ersetzt wird. Zum Beispiel, wenn foo="bar", 
-   dann wird jedes Exemplar mit <p>{foo}</p> innerhalb der HTML-Ausgabe zu 
-   <p>bar</p>.
+ - Anweisungen/Variablen für Templates und Themes: Template-Daten bezieht sich
+   auf die HTML-Ausgabe die verwendet wird, um die "Upload blockiert"-Nachricht
+   Benutzern anzuzeigen, wenn eine hochgeladene Datei blockiert wird. Falls Sie
+   benutzerdefinierte Themes für phpMussel verwenden, wird die HTML-Ausgabe von
+   der "template_custom.html"-Datei verwendet, ansonsten wird die HTML-Ausgabe
+   von der "template.html"-Datei verwendet. Variablen, die in diesem Bereich
+   der Konfigurations-Datei festgelegt werden, werden als HTML-Ausgabe geparst,
+   indem jede Variable mit geschweiften Klammern innerhalb der HTML-Ausgabe mit
+   den entsprechenden Variablen-Daten ersetzt wird. Zum Beispiel, wenn
+   foo="bar", dann wird jedes Exemplar mit <p>{foo}</p> innerhalb der
+   HTML-Ausgabe zu <p>bar</p>.
    "css_url"
    - Die Template-Datei für benutzerdefinierte Themes verwendet externe CSS-
-     Regeln, wobei die Template-Datei für das normale Theme interne CSS-Regeln 
-     verwendet. Um phpMussel anzuweisen, die Template-Datei für benutzerdefinierte 
-     Themes zu verwenden, geben Sie die öffentliche HTTP-Adresse von den 
-     CSS-Dateien des benutzerdefinierten Themes mit der "css_url"-Variable an. Wenn
-     Sie diese Variable leer lassen, wird phpMussel die Template-Datei für das 
-     normale Theme verwenden.
+     Regeln, wobei die Template-Datei für das normale Theme interne CSS-Regeln
+     verwendet. Um phpMussel anzuweisen, die Template-Datei für
+     benutzerdefinierte Themes zu verwenden, geben Sie die öffentliche
+     HTTP-Adresse von den CSS-Dateien des benutzerdefinierten Themes mit der
+     "css_url"-Variable an. Wenn Sie diese Variable leer lassen, wird phpMussel
+     die Template-Datei für das normale Theme verwenden.
 
                                      ~ ~ ~
 
@@ -1541,8 +1551,8 @@
  = PE-ERWEITERT-SIGNATUREN =
    Alle PE-Erweitert-Signaturen besitzen folgendes Format:
     $VAR:HASH:SIZE:NAME
-   Wo $VAR der Name der zu prüfenden PE-Variable  ist, HASH ist der MD5-Hash 
-   von dieser Variable, SIZE ist die gesamte Größe von dieser Variable und NAME 
+   Wo $VAR der Name der zu prüfenden PE-Variable  ist, HASH ist der MD5-Hash
+   von dieser Variable, SIZE ist die gesamte Größe von dieser Variable und NAME
    ist der Name für diese Signatur.
 
  = WHITELIST-SIGNATUREN =
@@ -1742,5 +1752,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 14. August 2015 (2015.08.14).
+Zuletzt aktualisiert: 24. August 2015 (2015.08.24).
 EOF

@@ -58,7 +58,7 @@ Do-to list for potential future minor version (v0.8):
   any new major features and to the fixing of any bugs that could break normal
   functionality, but not to minor bug-fixes or to any signature updates.
 
-Do-to list for potential future sub-minor version (v0.7a):
+Do-to list for potential future sub-minor version (v0.7b):
 
 - Any non-significant changes or other unrelated changes to the core code, such
   as, for example, bug-fixes, as well as any other changes deemed to be of
@@ -73,7 +73,19 @@ Anything less than sub-minor:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2015.08.20; Sub-minor code change; Maikuolan]: Added one new "shorthand"
+  entry (Malvertisement) [phpmussel.inc]; Slightly tweaked all the language
+  files (a few small, non-significant corrections made).
+
+- [2015.08.22; Documentation; Maikuolan]: Completed translation of the
+  documentation to Dutch (probably erroneous; feel free to audit if you want).
+
+- [2015.08.24; Sub-minor code change; Maikuolan/Vy]: Added language support for
+  Vietnamese {Tiếng Việt} to the language data [lang.vi.inc].
+
+- [2015.08.27; Signatures update; Maikuolan]: Removed a number of outdated
+  signatures and added a significant number of new signatures covering a range
+  of different malware types (about ~35K removed and ~40K added, roughly).
 
 === Version/Release 0.7a (Previous Release: 0.7) ===
 SUB-MINOR RELEASE; Updated to the latest signatures set (55+20751+7a).

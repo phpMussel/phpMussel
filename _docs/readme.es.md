@@ -49,7 +49,7 @@ Espero para agilizar este proceso al hacer un instalador en algún momento en un
 
 4) CMHOD al `vault` directorio a "777". La principal directorio de almacenamiento de los contenidos (el uno decidió desde antes), en general, puede dejar solos, pero CHMOD estado debe ser comprobado si ha tenido problemas de permisos en el pasado en su sistema (predefinido, debería ser algo como "755").
 
-5) Luego, tendrás que phpMussel "gancho" para el sistema o CMS. Hay varias maneras en que usted puede "gancho" scripts como phpMussel a su sistema o CMS, pero lo más fácil es simplemente incluir el script al principio de un núcleo archivo de su sistema o CMS (uno que va en general siempre se va cargado cuando alguien accede cualquier página a través de su website) utilizando un `require()` o `include()` comando. Por lo general, esto va ser algo almacenado en un directorio como `/includes`, `/assets` o `/functions`, y será menudo llamado algo así como `init.php`, `common_functions.php`, `functions.php` o similar. Vas a tener que averiguar qué archivo se por su situación; Si se encuentra con dificultades en la determinación de esto por ti mismo, visite los phpMussel foros de soporte y háganos saber; Es posible que sea yo u otro usuario puede tener experiencia con el CMS que está utilizando (que necesita para hacernos saber que CMS está utilizando), y por lo tanto, puede ser capaz de proporcionar alguna ayuda en esta área. Para ello [utilizar `require()` o `include()`], inserte la siguiente línea de código al principio de ese núcleo archivo, con sustitución de la string contenida dentro las comillas con la exacta dirección del `phpmussel.php` archivo (local dirección, no la HTTP dirección; que será similar a la `vault` dirección mencionó anteriormente).
+5) Luego, tendrás que phpMussel "gancho" para el sistema o CMS. Hay varias maneras en que usted puede "gancho" scripts como phpMussel a su sistema o CMS, pero lo más fácil es simplemente incluir el script al principio de un núcleo archivo de su sistema o CMS (uno que va en general siempre sera cargado cuando alguien accede cualquier página a través de su website) utilizando un `require()` o `include()` comando. Por lo general, esto sera algo almacenado en un directorio como `/includes`, `/assets` o `/functions`, y será menudo llamado algo así como `init.php`, `common_functions.php`, `functions.php` o similar. Vas a tener que averiguar qué archivo se por su situación; Si se encuentra con dificultades en la determinación de esto por ti mismo, visite los phpMussel foros de soporte y háganos saber; Es posible que sea yo u otro usuario puede tener experiencia con el CMS que está utilizando (que necesita para hacernos saber que CMS está utilizando), y por lo tanto, puede ser capaz de proporcionar alguna ayuda en esta área. Para ello [utilizar `require()` o `include()`], inserte la siguiente línea de código al principio de ese núcleo archivo, con sustitución de la string contenida dentro las comillas con la exacta dirección del `phpmussel.php` archivo (local dirección, no la HTTP dirección; que será similar a la `vault` dirección mencionó anteriormente).
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
@@ -213,7 +213,7 @@ update
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
 - Ejemplo: `?pword=[script_password]&phpmussel=update`
-- Qué hace: Comprobar por actualizaciones para ambos phpMussel y sus firmas. Si las actualizaciones comprobar tienen éxito y actualizaciones está encuentran, intentará descargar e instalar estas actualizaciones. Si las actualizaciones comprobar fallan, actualizaciones comprobar abortará. Los resultados de todo el proceso se imprimen en la pantalla. Recomiendo comprobar al menos una vez por mes para asegurar que sus firmas y su copia de phpMussel se mantienen actualizada (a menos que, naturalmente, usted está comprobando las actualizaciones e instalandolos manualmente, que, aun así sigo recomendando hacer al menos uno por mes). Comprobar más de dos veces por mes es probablemente inútil, en consideración que (en el momento de escribir este) estoy trabajando en este proyecto solo y estoy muy improbable de ser capaz de producir actualizaciones de cualquier tipo con más frecuencia que la (ni tengo particular quiero para hacerlo en la mayor parte).
+- Qué hace: Comprobar por actualizaciones para ambos phpMussel y sus firmas. Si las actualizaciones comprobar tienen éxito y actualizaciones está encuentran, intentará descargar e instalar estas actualizaciones. Si las actualizaciones comprobar fallan, actualizaciones comprobar abortará. Los resultados de todo el proceso se imprimen en la pantalla. Recomiendo comprobar al menos una vez por mes para asegurar que sus firmas y su copia de phpMussel se mantienen actualizada (a menos que, naturalmente, usted está comprobando las actualizaciones e instalandolos manualmente, que, aun así sigo recomendando hacer al menos una vez por mes). Comprobar más de dos veces por mes es probablemente inútil, en consideración que (en el momento de escribir este) estoy trabajando en este proyecto solo y estoy muy improbable de ser capaz de producir actualizaciones de cualquier tipo con más frecuencia que la (ni tengo particular quiero para hacerlo en la mayor parte).
 
 greylist
 - Contraseña necesario: script_password
@@ -261,14 +261,23 @@ Archivo                                    | Descripción
 /web.config                                | Un ASP.NET configuración archivo (en este caso, para proteger la `/vault` directorio contra el acceso de fuentes no autorizadas en el caso de que la script está instalado en un servidor basado en ASP.NET tecnologías).
 /_docs/                                    | Documentación directorio (contiene varios archivos).
 /_docs/change_log.txt                      | Un registro de los cambios realizados en la principal script entre las diferentes versiones (no se requiere para lo adecuado funcionalidad de la script).
+/_docs/readme.de.md                        | Documentación: DEUTSCH
 /_docs/readme.de.txt                       | Documentación: DEUTSCH
+/_docs/readme.en.md                        | Documentación: ENGLISH
 /_docs/readme.en.txt                       | Documentación: ENGLISH
+/_docs/readme.es.md                        | Documentación: ESPAÑOL
 /_docs/readme.es.txt                       | Documentación: ESPAÑOL
+/_docs/readme.fr.md                        | Documentación: FRANÇAIS
 /_docs/readme.fr.txt                       | Documentación: FRANÇAIS
+/_docs/readme.id.md                        | Documentación: BAHASA INDONESIA
 /_docs/readme.id.txt                       | Documentación: BAHASA INDONESIA
+/_docs/readme.it.md                        | Documentación: ITALIANO
 /_docs/readme.it.txt                       | Documentación: ITALIANO
+/_docs/readme.nl.md                        | Documentación: NEDERLANDSE
 /_docs/readme.nl.txt                       | Documentación: NEDERLANDSE
+/_docs/readme.pt.md                        | Documentación: PORTUGUÊS
 /_docs/readme.pt.txt                       | Documentación: PORTUGUÊS
+/_docs/readme.ru.md                        | Documentación: РУССКИЙ
 /_docs/readme.ru.txt                       | Documentación: РУССКИЙ
 /_docs/signatures_tally.txt                | Cifra neta de cambio de las incluidas firmas (no se requiere para lo adecuado funcionalidad de la script).
 /_testfiles/                               | Prueba archivos directorio (contiene varios archivos). Todos los archivos contenidos son prueba archivos para probando si phpMussel ha sido instalado correctamente en su sistema, y que no es necesario subir este directorio o cualquiera de sus archivos excepto cuando haciendo tales pruebas.
@@ -302,8 +311,9 @@ Archivo                                    | Descripción
 /vault/lang/lang.nl.inc                    | Lingüísticos datos: NEDERLANDSE
 /vault/lang/lang.pt.inc                    | Lingüísticos datos: PORTUGUÊS
 /vault/lang/lang.ru.inc                    | Lingüísticos datos: РУССКИЙ
+/vault/lang/lang.vi.inc                    | Lingüísticos datos: TIẾNG VIỆT
 /vault/lang/lang.zh.inc                    | Lingüísticos datos: 中文（简体）
-/vault/lang/lang.zh-tw.inc                 | Lingüísticos datos: 中文（傳統）
+/vault/lang/lang.zh-TW.inc                 | Lingüísticos datos: 中文（傳統）
 /vault/quarantine/                         | Cuarentena directorio (contiene los cuarentenadas archivos).
 /vault/quarantine/.htaccess                | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/.htaccess                           | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
@@ -487,7 +497,7 @@ General configuración para phpMussel.
 - Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales) Predefinido = REMOTE_ADDR. AVISO: No cambie esto a menos que sepas lo que estás haciendo!
 
 "forbid_on_block"
-- Debería phpMussel enviar 403 header con la bloqueados archivos subidos mensaje, o quedarse con los usual 200 OK? 0 = No (200) [Predefinido], 1 Sí (403).
+- Debería phpMussel enviar 403 header con la bloqueados archivos subidos mensaje, o quedarse con los usual 200 OK? 0 = No (200) [Predefinido], 1 = Sí (403).
 
 "delete_on_sight"
 - Activando esta directiva instruirá la script para intentar para eliminar inmediatamente cualquier escaneados intentados archivos subidos emparejando a los criterios de detección, si través de firmas o de otras maneras. Archivos determinados como limpia no serán tocados. En el caso de los compactados archivos, la totalidad del compactado archivo será eliminado (independientemente de si el emparejando archivo es sólo uno de muchos varios archivos contenida dentro del compactado archivo). Para el caso de archivo subir escaneo, en general, no es necesario activar esta directiva, porque en general, php purgará automáticamente el contenido de su caché cuando la ejecución ha terminado, significando que lo en general eliminará cualquier archivos subidos a través de él con el servidor a no ser que se han movido, copiado o eliminado ya. La directiva se añade aquí como una medida adicional de seguridad para aquellos cuyas copias de php no siempre se comportan de la manera esperada. 0 - Después escaneando, dejar el archivo solo [Predefinido], 1 - Después escaneando, si no se limpia, eliminar inmediatamente.
@@ -715,7 +725,7 @@ Camaleón ataque detección: 0 = Desactivado, 1 = Activado.
 - Reconocido compactado archivo extensiones (formato es CSV; sólo debe agregar o eliminar cuando problemas ocurrir; eliminando innecesariamente puede causar falsos positivos a aparecer para compactados archivos, mientras añadiendo innecesariamente hará esencialmente whitelist que cuales eres añadiendo desde ataque específica detección; modificar con precaución; También notar que esto no tiene efecto en aquellos compactados archivos que pueden y no pueden ser analizado a contenido nivel). La lista, como es a predefinición, describe los formatos más comúnmente utilizados a través de la mayoría de sistemas y CMS, pero intencionalmente no es necesariamente exhaustiva.
 
 "general_commands"
-- Buscar contenidos de archivos para generales comandos como tal `eval()`, `exec()` y `include()`? 0 - No (no buscar) [Predefinido], 1 - Sí (buscar). Desactivar esta opción si tiene intención de subir cualquiera de los siguientes para su sistema o CMS a través de su navegador: php, JavaScript, HTML, python, perl archivos y etcétera. Activar esta opción si usted no tiene cualquier adicional protección en su sistema y no tiene intención de subir estos tipos de archivos. Si utiliza adicional seguridad junto con phpMussel como tal ZB Block, no hay necesidad de activar esta opción, porque la mayor parte de lo que phpMussel buscará (en el contexto de esta opción) son duplicaciones de protecciones que ya previsto.
+- Buscar contenidos de archivos para generales comandos como tal `eval()`, `exec()` y `include()`? 0 - No (no buscar) [Predefinido], 1 - Sí (buscar). Desactivar esta opción si tiene intención de subir cualquiera de los siguientes para su sistema o CMS a través de su navegador: PHP, JavaScript, HTML, python, perl archivos y etcétera. Activar esta opción si usted no tiene cualquier adicional protección en su sistema y no tiene intención de subir estos tipos de archivos. Si utiliza adicional seguridad junto con phpMussel como tal ZB Block, no hay necesidad de activar esta opción, porque la mayor parte de lo que phpMussel buscará (en el contexto de esta opción) son duplicaciones de protecciones que ya previsto.
 
 "block_control_characters"
 - Bloquear cualquier archivos que contenga cualquier control carácter (aparte de saltos de línea)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Si usted sólo subir texto sin cualquier formato, usted puede activar esta opción para proporcionar alguna adicional protección para su sistema. Pero, si usted subir cualquier cosa otro de texto sin cualquier formato, activando esto puede dar lugar a falsos positivos. 0 - No bloquear [Predefinido], 1 - Bloquear.
@@ -800,7 +810,7 @@ Donde compactados archivos metadatos firmas seguir el formato:
 
 `NOMBRE:TAMAÑO:CRC32`
 
-Donde NOMBRE es el nombre a citar para esa firma, TAMAÑO es el total tamaño (sin comprimir) de un archivo contenido dentro el compactado archivo y CRC32 es el crc32 suma de comprobación de eso contenido archivo.
+Donde NOMBRE es el nombre a citar para esa firma, TAMAÑO es el total tamaño (sin comprimir) de un archivo contenido dentro el compactado archivo y CRC32 es el CRC32 suma de comprobación de eso contenido archivo.
 
 ####*PE SECCIÓNAL FIRMAS*
 Todos PE Secciónal firmas seguir el formato:
@@ -936,4 +946,4 @@ Esta información ha sido actualizado 28 Mayo 2015 y es a hoy para todas las php
 ---
 
 
-Última Actualización: 14 Agosto 2015 (2015.08.14).
+Última Actualización: 24 Agosto 2015 (2015.08.24).
