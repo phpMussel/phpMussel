@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Russian/Русский Language Data (28th August 2015).
+ This File: phpMussel Russian/Русский Language Data (30th August 2015).
  <%phpMussel%/vault/lang/lang.ru.inc>
 
 */
@@ -35,7 +35,7 @@ $MusselConfig['lang']['controls_lockout']='phpMussel контроль блоки
 $MusselConfig['lang']['core_scriptfile_missing']='Файл основного сценария отсутствует! Пожалуйста инсталлируете phpMussel заново.';
 $MusselConfig['lang']['corrupted']='Обнаружена поврежденная ПЭ';
 $MusselConfig['lang']['denied']='Загрузка Отказана!';
-$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='Ваша загрузка была заблокирована по причинам перечисленным ниже / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Обнаружено {vn}';
 $MusselConfig['lang']['detected_control_characters']='Обнаружены символы управления';
