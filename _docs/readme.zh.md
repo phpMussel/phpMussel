@@ -39,15 +39,15 @@ PHPMUSSEL版权2013和此后GNU/GPLv.2通过Caleb M （Maikuolan）。
 
 ###2A. <a name="SECTION2A"></a>如何安装（对于WEB服务器）
 
-我希望精简这个在未来过程通过创建安装程序，但直到那个时候，遵循这些说明为工作的phpMussel在多数系统和CMS：
+我希望能够简化这过程通过创建的安装程序在某一点在近未来，但直到那个时候，遵循这些说明为执行的phpMussel在多数系统和CMS：
 
-1） 通过您的阅读这，我假设您已经下载一个存档的副本的脚本，已解压缩其内容和有它的地方您的机器上。从这里，您要决定在哪里在您的服务器您想放这些内容。一个文件夹例如`/public_html/phpmussel/`或类似（无论您选择，不要紧，只要它的安全和您是满意）会是足够了。*之前您开始上传，继续阅读。。*
+1） 通过您的阅读这，我假设您已经下载一个存档的副本的脚本，已解压缩其内容和有它地方的某处上您的机器。从这里，您要决定在哪里在您的服务器您想放这些内容。一个文件夹例如`/public_html/phpmussel/`或类似（无论您选择，不要紧，只要它的安全和您是满意）会是足够了。*之前您开始上传，继续阅读。。*
 
 2） 自选（强烈推荐为高级用户，但不推荐为业余用户或为没有经验用户），打开`phpmussel.ini`（位于内`vault`） - 这个文件包含所有指令可用的为phpMussel。以上的每指令应该有一个简评至说明它做什么和它的功能。调整这些指令您认为合适的，按照随您是适合为您的特定的设置。保存文件，关闭。
 
 3） 上传内容（phpMussel和它的文件）至文件夹您决定在早期（不需要包括`*.txt`/`*.md`文件，但大多，您应该上传的一切）。
 
-4） CMHOD的`vault`文件夹为"777"。主文件夹存储的内容（一个您先前选择），平时，可以单独留，但CHMOD状态应检查如果您有权限问题以往上您的系统（默认，应该是这样的"755"）。
+4） CMHOD的`vault`文件夹为"777"。主文件夹存储的内容（一个您先前选择），平时，可以单独留，但CHMOD状态应检查如果您有权限问题以往上您的系统（按标准，应该是这样的"755"）。
 
 5） 接下来，您需要｢钩子｣phpMussel为您的系统或CMS。有几种不同的方式在其中您可以｢钩子｣脚本例如phpMussel为您的系统或CMS，但最简单的是简单地包括的脚本在开头的核心文件为您的系统或CMS（这是一个是通常一直加载的当有人访问的任何页面在您的网站）使用`require()`或`include()`命令。平时，这将是存储的在文件夹例如`/includes`，`/assets`或`/functions`，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`或类似。您需要确定哪些文件这是为您的情况；如果您遇到困难关于确定这为您自己，访问phpMussel支持论坛和让我们知道；这是可能的我自己或其他用户可有经验的该CMS您正在使用（您需要让我们知道其中CMS您正在使用），和从而，可能能够提供援助关于这。为了使用`require()`或`include()`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`phpmussel.php`文件（本地地址，不HTTP地址；它会类似于vault地址前面提到的）。
 
@@ -65,35 +65,35 @@ PHPMUSSEL版权2013和此后GNU/GPLv.2通过Caleb M （Maikuolan）。
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"`
 
-6） 从这里，你完成了！然，您应该测试它以确保它的正常运行。为了测试文件上传保护，尝试上传测试文件包括在包内`_testfiles`至您的网站通过您常用的基于浏览器的上传方法。如果一切正常，信息应该出现从phpMussel至确认上载已成功阻止了。如果出现什么，什么是不正常工作。如果您使用的任何先进的功能或如果您使用的其它类型的扫描可能的，我建议尝试它跟他们以确保其工作正常，也。
+6） 从这里，您完成了！然，您应该测试它以确保它的正常运行。为了测试文件上传保护，尝试上传测试文件包括在包内`_testfiles`至您的网站通过您常用的基于浏览器的上传方法。如果一切正常，信息应该出现从phpMussel至确认上载已成功阻止了。如果出现什么，什么是不正常工作。如果您使用的任何先进的功能或如果您使用的其它类型的扫描可能的，我建议尝试它跟他们以确保其工作正常，也。
 
 ---
 
 
 ###2B. <a name="SECTION2B"></a>如何安装（对于CLI）
 
-I hope to streamline this process by making an installer at some point in the not too distant future，but until then，follow these instructions to get phpMussel ready to work with CLI (be aware that at this point，CLI support only applies to Windows based systems；Linux和other systems will be coming soon to a later version of phpMussel):
+我希望能够简化这过程通过创建的安装程序在某一点在近未来，但直到那个时候，遵循这些说明为预备phpMussel于操作使用CLI模式（请注意，在这个时候，CLI支持仅适用于基于Windows系统；Linux和其他系统即将推出到更高版本的phpMussel）:
 
-1） By your reading this，I'm assuming you've already downloaded an archived copy of the script，decompressed its contents和have it sitting somewhere on your local machine. Once you've determined that you're happy with the location chosen为phpMussel，continue。
+1） 通过您的阅读这，我假设您已经下载一个存档的副本的脚本，已解压缩其内容和有它地方的某处上您的机器。当您决定您满意与选择的位置为phpMussel，继续。
 
-2） phpMussel requires php to be installed on the host machine in order to execute. If you don't have php installed on your machine，please install php on your machine，following any instructions supplied by the php installer。
+2） phpMussel需要PHP安装在主机上为了执行。如果您没有PHP安装上您的机器，请安装PHP上您的机器，和跟随任何指令提供由PHP的安装程序。
 
 3） 自选（强烈推荐为高级用户，但不推荐为业余用户或为没有经验用户），打开`phpmussel.ini`（位于内`vault`） - 这个文件包含所有指令可用的为phpMussel。以上的每指令应该有一个简评至说明它做什么和它的功能。调整这些指令您认为合适的，按照随您是适合为您的特定的设置。保存文件，关闭。
 
-4） 自选，you can make using phpMussel in CLI mode easier为yourself by creating a batch file to automatically load php和phpMussel。To do this，open a plain text editor例如Notepad or Notepad++，type the complete path to the `php.exe` file in the文件夹of your php installation，followed by a space，followed by the complete path to the `phpmussel.php` file in the文件夹of your phpMussel installation，save the file with a ".bat" extension somewhere that you'll find it easily，和double-click on that file to run phpMussel in the future。
+4） 自选，使用的phpMussel在CLI模式可能是更容易为您如果您创建一个批处理文件为自动加载的PHP和phpMussel。要做到这一点，打开一个纯文本编辑器例如Notepad或Notepad++，键入完整路径为`php.exe`文件在文件夹的您的PHP安装，其次是一个空格，然后完整路径为`phpmussel.php`文件在文件夹的您的phpMussel安装，最后，保存此文件使用一个".bat"扩展名在一个地方您会容易发现它；从这里，双击的文件为执行的phpMussel在未来。
 
-5） 从这里，你完成了！ However，you should probably test it out to make sure it's working properly. To test phpMussel，run phpMussel和try scanning the `_testfiles`文件夹provided with the package。
+5） 从这里，您完成了！然，您应该测试它以确保它的正常运行。为了测试phpMussel，执行phpMussel和尝试扫描`_testfiles`文件夹提供的有包。
 
 ---
 
 
 ###3A. <a name="SECTION3A"></a>如何使用（对于WEB服务器）
 
-phpMussel是intended to be a脚本that'll function adequately right from the box with a bare minimum level of requirements on your part: Once it has been installed，basically，it simply should work。
+phpMussel的目的是作为一个脚本这将将满意地和正确地执行｢从开箱｣有最小的要求为您完成：如果正确地安装的，简而言之，它应该正确地功能。
 
-Scanning of file uploads是automated和enabled by default，so nothing是required on your behalf为this particular function。
+扫描的文件上传是自动和活性按标准，所以，有没有任何需要为您关于这特殊的功能。
 
-However，you're also able to instruct phpMussel to scan为files，directories or archives that you implicitly specify. To do this，firstly，you'll need to ensure that the appropriate configuration是set in the `phpmussel.ini` file (cleanup must be disabled)，和when done，in a php file that's hooked to phpMussel，use the following function在您的code:
+However，you're also able to instruct phpMussel to scan为files，directories or archives that you implicitly specify. 要做到这一点，firstly，you'll need to ensure that the appropriate configuration是set in the `phpmussel.ini` file (cleanup must be disabled)，和when done，in a php file that's hooked to phpMussel，use the following function在您的code:
 
 `phpMussel($what_to_scan，$output_type，$output_flatness);`
 
@@ -477,7 +477,7 @@ The following是a list of variables found in the `phpmussel.ini` configuration f
 General phpMussel configuration。
 
 "script_password"
-- As a convenience，phpMussel will allow certain functions (including the ability to update phpMussel on-the-fly) to be manually triggered via POST，GET和QUERY. However，as a security precaution，to do this，phpMussel will expect a password to be included with the command，as to ensure that it's you，和not someone else，attempting to manually trigger these functions. Set script_password to whatever password you would like to use. If no password是set，manual triggering will be disabled by default. Use something you will remember but which是hard为others to guess。
+- As a convenience，phpMussel will allow certain functions (including the ability to update phpMussel on-the-fly) to be manually triggered via POST，GET和QUERY. However，as a security precaution，要做到这一点，phpMussel will expect a password to be included with the command，as to ensure that it's you，和not someone else，attempting to manually trigger these functions. Set script_password to whatever password you would like to use. If no password是set，manual triggering will be disabled by default. Use something you will remember but which是hard为others to guess。
 - Has no influence in CLI mode。
 
 "logs_password"
