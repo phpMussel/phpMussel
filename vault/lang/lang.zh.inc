@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Chinese (Simplified) / 中文（简体） Language Data (30th August 2015).
+ This File: phpMussel Chinese (Simplified) / 中文（简体） Language Data (3rd September 2015).
  <%phpMussel%/vault/lang/lang.zh.inc>
 
 */
@@ -73,7 +73,7 @@ $MusselConfig['lang']['scan_map_corrupted']='签名地图是损坏';
 $MusselConfig['lang']['scan_map_missing']='签名地图是失踪';
 $MusselConfig['lang']['scan_missing_filename']='文件名是失踪';
 $MusselConfig['lang']['scan_not_archive']='失败（空或不是存档）！';
-$MusselConfig['lang']['scan_no_problems_found']='没有问题是发现。';
+$MusselConfig['lang']['scan_no_problems_found']='没有问题发现。';
 $MusselConfig['lang']['scan_reading']='阅读';
 $MusselConfig['lang']['scan_signature_file_corrupted']='签名文件是损坏';
 $MusselConfig['lang']['scan_signature_file_missing']='签名文件是失踪';
