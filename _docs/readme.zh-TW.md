@@ -117,30 +117,30 @@ phpMussel的目的是作為一個腳本這將將滿意地和正確地執行｢�
  Wed, 16 Sep 2013 02:49:47 +0000 完了.
 ```
 
-For a full break-down of what sort of签名phpMussel uses during its scans和how it handles these signatures，refer to the Signature Format section of this README file。
+為一個全說明的什麼類型的簽名phpMussel使用中它的掃描和怎麼它手柄這些簽名，參考｢簽名格式｣部分的這個自述文件。
 
-If you encounter any false positives，if you encounter something new that you think should be blocked，or为anything else regarding signatures，please contact me about it so that I may make the necessary changes，which，if you do not contact me，I may not necessarily be aware of。
+如果您遇到任何假陽性，如果您遇到某物新您想應該受阻，或為任何其他題關於簽名，請聯繫我關於它為使我可以使需要變化，該，如果您不聯繫我，我可能不一定知道關於。
 
-To disable签名included with phpMussel (such as if you're experiencing a false positive specific to your purposes that shouldn't normally be removed from streamline)，refer to the Greylisting notes within the Browser Commands section of this README file。
+以關閉簽名包括在phpMussel（例如如果您遇到假陽性具體至您的目的該不應該按說去掉），參考灰名單筆記在｢瀏覽器命令｣部分的這個自述文件。
 
-In addition to the default文件upload scanning和the optional scanning of other文件和／或 directories specified via the above function，included in phpMussel是a function intended为scanning the body of email messages. This function behaves similarly to the standard phpMussel() function，but focuses solely on matching against the ClamAV email-based signatures. I have not tied these签名into the standard phpMussel() function，because it是highly unlikely that you'd ever find the body of an incoming email message in need of scanning within a文件upload targeted to a page where phpMussel是hooked，和thus，to tie these签名into the phpMussel() function would be redundant. However，that said，having a separate function to match against these签名could prove to be extremely useful为some，especially为those whose CMS or webfront system是somehow tied into their email system和for those parsing their emails via a php脚本that they could potentially hook into phpMussel。Configuration为this function，like all others，是controlled via the `phpmussel.ini` file. To use this function (you'll need to do your own implementation)，in a php文件that是hooked to phpMussel，use 下列 function在您的code：
+除了前述的文件上傳掃描和自選掃描的其他文件和／或文件夾指定通過上述功能，包括在phpMussel是一個功能意為掃描入站電子郵件正文。這個功能行為類似至標準`phpMussel()`功能，但只考慮在對照的ClamAV基於電子郵件簽名。我不鏈接這些簽名在標準phpMussel()功能，因為它是不太可能您將會發現任何入站電子郵件正文在需要的掃描在一個文件上傳目標的向一個網頁其中phpMussel是鉤子到，和從而，以鏈接這些簽名在phpMussel()功能將會無意義。然而，這說，擁有一個單獨功能以對照的這些簽名可以證明是極有用為一些，特別為那些誰的CMS或系統是在任何方式鏈接在他們的電子郵件系統和為那些處理他們的電子郵件通過一個PHP腳本他們可以可能鉤子在phpMussel。配置為這個功能，像所有其他，是控制通過`phpmussel.ini`文件。以使用這個功能（您需要做您的自己實施），在一個PHP文件是鉤子在phpMussel，使用下列功能在您的代碼：
 
 `phpMussel_mail($body);`
 
-Where $body是body of the email message you wish to scan (additionally，you could try scanning new forum posts，inbound messages from your online contact form or similar). If any error occurs preventing the function from completing its scan，a value of -1 will be returned. If the function completes its scan和doesn't match anything，a value of 0 will be returned (meaning clean). If，however，the function does match something，a string will be returned containing a message declaring what it has matched。
+`$body`是電子郵件正文您想掃描（還，您可以嘗試掃描新論壇帖子，入站信息從您的在線聯繫方式頁面或等等）。如果任何錯誤發生阻礙這個功能從完成它的掃描，一個數值的-1將會回報。如果這個功能完成它的掃描和它不發現任何問題，一個數值的0將會回報（表明它是良性）。如果，然而，這個功能發現某物，一個字符串將會回報包含一個信息聲明什麼它發現。
 
-In addition to the above，if you look at the source code，you may notice the function phpMusselD()和phpMusselR(). These functions are sub-functions of phpMussel()，和shouldn't be called directly outside of that parent function (not because of adverse effects，but rather，simply because it'd serve no purpose，和most probably won't actually work correctly anyhow）。
+除了上述，如果您看源代碼，您可能注意到這些功能`phpMusselD()`和`phpMusselR()`。這些功能是子功能的`phpMussel()`，和不應該叫直外的該父功能（不因為不利影響，但更使，因為它將會提供沒有目的，和可能將不會正確執行無論如何）。
 
-There are many other controls和functions available within phpMussel为your use，too.为any such controls和functions which，by the end of this section of the README，have not yet been documented，please continue reading和refer to the Browser Commands section of this README file。
+有許多其他控制和功能可用在phpMussel為您的，還。為了任何這樣的控制和功能其中，由端的這個部分的自述，是還不說明，請繼續閱讀和參考｢瀏覽器命令｣部分的這個自述文件。
 
 ---
 
 
-###3B. <a name="SECTION3B"></a>如何使用（对于CLI）
+###3B. <a name="SECTION3B"></a>如何使用（對於CLI）
 
-Please refer to the "如何安装（对于CLI）" section of this readme file。
+請參考｢如何安裝（對於CLI）｣部分的這個自述文件。
 
-Be aware that，虽说 future versions of phpMussel should support other systems，at this time，phpMussel CLI mode support是only optimized为use on Windows-based system (you can，of course，try it on other systems，but I can't guarantee it'll work as intended）。
+請注意，雖說未來版本的phpMussel應該支持其他系統，在這個時候，phpMussel CLI模式支持是只優化為使用在基於Windows系統（您可以，當然，嘗試它在其他系統，但我不能保證它會執行如預期）。
 
 Also be aware that phpMussel是not the functional equivalent of a complete 杀毒 suite，和unlike conventional 杀毒 suites，doesn't monitor active memory or detect viruses on-the-fly! It'll only detect viruses contained by those specific文件that you explicitly tell it to scan。
 
@@ -244,7 +244,7 @@ greylist_show
 
 ###4B. <a name="SECTION4B"></a>CLI（命令行界面）
 
-phpMussel can be run as an interactive文件scanner in CLI mode under Windows-based systems. Refer to the "如何安装（对于CLI）" section of this readme file为more details。
+phpMussel can be run as an interactive文件scanner in CLI mode under Windows-based systems. Refer to the "如何安装（对于CLI）" 部分的這個自述文件为more details。
 
 For a list of available CLI commands，at the CLI prompt，type 'c'，和press Enter。
 
@@ -458,7 +458,7 @@ Signature文件marked with "_regex" contain签名that utilise regular expression
 
 Signature文件marked with "_standard" contain签名that specifically don't utilise any form of pattern checking。
 
-Signature文件marked with neither "_regex" nor "_standard" will be as one or the other，but not both (refer to the Signature Format section of this README file为documentation和specific details）。
+Signature文件marked with neither "_regex" nor "_standard" will be as one or the other，but not both (refer to the Signature Format 部分的這個自述文件为documentation和specific details）。
 
 Signature文件marked with "_clamav" contain签名that are sourced entirely from the ClamAV database (GNU/GPL）。
 
@@ -947,4 +947,4 @@ This information was last updated 28th May 2015和is current为all phpMussel rel
 ---
 
 
-最近更新時間： 2015.09.03。
+最近更新時間： 2015.09.05。
