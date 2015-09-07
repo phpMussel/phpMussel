@@ -191,7 +191,7 @@
  eingeschaltet, Sie müssen nichts weiter unternehmen.
 
  Sie sind jedoch auch in der Lage, phpMussel anzuweisen, spezifische Dateien,
- Ordnern und/oder Archiven zu scannen. Um dies auszuführen, stellen Sie sicher,
+ Ordner und/oder Archive zu scannen. Um dies auszuführen, stellen Sie sicher,
  dass diese Konfiguration in der "phpmussel.ini" festgelegt ist (cleanup muß
  deaktiviert sein). Erstellen Sie eine mit phpMussel eingebundene PHP-Datei mit
  folgender Funktion:
