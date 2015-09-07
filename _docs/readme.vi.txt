@@ -149,8 +149,8 @@
     máy tính của bạn. Một khi bạn đã hài lòng với vị trí của phpMussel, hày
     tiếp tục.
 
- 2) phpMussel cần php được cài đặt trên máy chủ để thực hiện. Nếu bạn không có
-    php cài trên máy, xin hảy cài php, theo hướng dẫn được cung cấp bởi người
+ 2) phpMussel cần PHP được cài đặt trên máy chủ để thực hiện. Nếu bạn không có
+    PHP cài trên máy, xin hảy cài php, theo hướng dẫn được cung cấp bởi người
     cài đặt php.
 
  3) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới
@@ -161,9 +161,9 @@
     hợp cho nhữn cài đặt của bạn. Lưu tập tin, đóng lại.
 
  4) Tùy ý, bạn có thể sử dụng phpMussel trong chế độ CLI dể hơn với cách tạo ra
-    hồ sơ lô để tự động tải php và phpMussel. Để làm điều này, mở một chương
+    hồ sơ lô để tự động tải PHP và phpMussel. Để làm điều này, mở một chương
     trình văn bản đơn giản như Notepad hoạc Notepad++, đánh vào đường dẫn đầy
-    đủ cho hồ sơ "php.exe" trong thư mục cài đặt php của bạn, tiếp theo là một
+    đủ cho hồ sơ "php.exe" trong thư mục cài đặt PHP của bạn, tiếp theo là một
     khoảng trống, theo sau là đường dẫn đầy đủ đến hồ sơ "phpmussel.php" trong
     thư mục cài đặt phpMussel của bạn, lưu tài liệu với tư bổ sung ".bat" một
     nơi nào bạn sẽ tìm thấy dễ dàng, và nhấn đúp vào vào hồ sơ đó để chạy
@@ -185,11 +185,11 @@
  Scanning of file uploads is automated and enabled by default, so nothing is
  required on your behalf for this particular function.
 
- However, you're also able to instruct phpMussel to scan for files, directories
- or archives that you implicitly specify. To do this, firstly, you'll need to
- ensure that the appropriate configuration is set in the "phpmussel.ini" file
- (cleanup must be disabled), and when done, in a php file that's hooked to
- phpMussel, use the following function in your code:
+ However, you're also able to instruct phpMussel to scan specific files,
+ directories and/or archives. To do this, firstly, you'll need to ensure that
+ the appropriate configuration is set in the "phpmussel.ini" file (cleanup must
+ be disabled), and when done, in a PHP file that's hooked to phpMussel, use the
+ following function in your code:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
@@ -202,7 +202,7 @@
    signatures files or signature map files and that they may possible be
    missing or corrupted, -2 indicates that corrupt data was detected during the
    scan and thus the scan failed to complete, -1 indicates that extensions or
-   addons required by php to execute the scan were missing and thus the scan
+   addons required by PHP to execute the scan were missing and thus the scan
    failed to complete, 0 indicates that the scan target doesn't exist and thus
    there was nothing to scan, 1 indicates that the target was successfully
    scanned and no problems were detected, and 2 indicates that the target was
@@ -253,10 +253,10 @@
  be redundant. However, that said, having a separate function to match against
  these signatures could prove to be extremely useful for some, especially for
  those whose CMS or webfront system is somehow tied into their email system and
- for those parsing their emails via a php script that they could potentially
+ for those parsing their emails via a PHP script that they could potentially
  hook into phpMussel. Configuration for this function, like all others, is
  controlled via the "phpmussel.ini" file. To use this function (you'll need to
- do your own implementation), in a php file that is hooked to phpMussel, use
+ do your own implementation), in a PHP file that is hooked to phpMussel, use
  the following function in your code:
 
  phpMussel_mail($body);
@@ -311,7 +311,7 @@
  protection of these browser-side controls and to ensure that there exists
  a way for these browser-side controls to be entirely disabled if they are not
  desired by you and/or other webmasters/administrators using phpMussel. So, in
- other words, to enable these controls, set a pasword, and to disable these
+ other words, to enable these controls, set a password, and to disable these
  controls, set no password. Alternatively, if you choose to enable these
  controls and then choose to disable these controls at a later date, there is
  a command to do this (such can be useful if you perform some actions that you
@@ -432,11 +432,10 @@
                  kept up to-date (unless, of course, you're checking for
                  updates and installing them manually, which, I'd still
                  recommend doing at least once per month). Checking more than
-                 twice per month is probably pointless, considering I'm (at the
-                 time of writing this) working on this project by myself and
-                 I'm very unlikely to be able to produce updates of any kind
-                 more frequently than that (nor do I particularly want to for
-                 the most part).
+                 twice per month is probably pointless, considering that I'm
+                 very unlikely to be able to produce updates of any kind more
+                 frequently than that (nor do I particularly want to for the
+                 most part).
    ~
  greylist
    Password required: script_password
@@ -941,11 +940,11 @@
       archive will be deleted, regardless of whether or not the offending file
       is only one of several files contained within the archive. For the case
       of file upload scanning, usually, it isn't necessary to enable this
-      directive, because usually, php will automatically purge the contents of
+      directive, because usually, PHP will automatically purge the contents of
       its cache when execution has finished, meaning it'll usually delete any
       files uploaded through it to the server unless they've been moved, copied
       or deleted already. This directive is added here as an extra measure of
-      security for those whose copies of php mightn't always behave in the
+      security for those whose copies of PHP mightn't always behave in the
       manner expected.
       0 - After scanning, leave the file alone [Default],
       1 - After scanning, if not clean, delete immediately.
@@ -1119,7 +1118,7 @@
    - Signature matching length limiting options. Only change these if you
      know what you're doing. SD = Standard signatures. RX = PCRE (Perl
      Compatible Regular Expressions, or "Regex") signatures. FN = Filename
-     signatures. If you notice php crashing when phpMussel attempts to scan,
+     signatures. If you notice PHP crashing when phpMussel attempts to scan,
      try lowering these "max" values. If possible and convenient, let me know
      when this happens and the results of whatever you try.
      "fn_siglen_min"
@@ -1169,14 +1168,14 @@
      aborting the scan and informing the user they are uploading too much at
      once! Provides protection against a theoretical attack whereby an attacker
      attempts to DDoS your system or CMS by overloading phpMussel to slow down
-     the php process to a grinding halt. Recommended: 10. You may wish to raise
+     the PHP process to a grinding halt. Recommended: 10. You may wish to raise
      or lower this number depending on the speed of your hardware. Note that
      this number doesn't account for or include the contents of archives.
    "filesize_limit"
    - Filesize limit in KB. 65536 = 64MB [Default], 0 = No limit (always
      greylisted), any (positive) numeric value accepted. This can be useful
-     when your php configuration limits the amount of memory a process can hold
-     or if your php configuration limits filesize of uploads.
+     when your PHP configuration limits the amount of memory a process can hold
+     or if your PHP configuration limits filesize of uploads.
    "filesize_response"
    - What to do with files that exceed the filesize limit (if one exists).
      0 - Whitelist, 1 - Blacklist [Default].
@@ -1226,7 +1225,7 @@
  - Attack-specific directives.
    * Chameleon attack detection: 0 = Off, 1 = On.
    "chameleon_from_php"
-   - Search for php header in files that are neither php files nor recognised
+   - Search for PHP header in files that are neither PHP files nor recognised
      archives.
    "chameleon_from_exe"
    - Search for executable headers in files that are neither executables nor
@@ -1293,7 +1292,7 @@
      filesize of file uploads that you want and expect to receive to your
      server or website, shouldn't be more than the filesize_limit directive,
      and shouldn't be more than roughly one fifth of the total allowable memory
-     allocation granted to php via the php.ini configuration file. This
+     allocation granted to PHP via the php.ini configuration file. This
      directive exists to try to prevent phpMussel from using up too much memory
      (that'd prevent it from being able to successfully scan files above a
      certain filesize).
@@ -1530,7 +1529,7 @@
    mail function).
 
  = REGEX =
-   Any form of regex understood and correctly processed by php should also be
+   Any form of regex understood and correctly processed by PHP should also be
    correctly understood and processed by phpMussel and its signatures. However,
    I'd suggest taking extreme caution when writing new regex based signatures,
    because, if you're not entirely sure what you're doing, there can be highly
@@ -1632,8 +1631,8 @@
  phpMussel hoặc nên xét các lựa chọn khác cho một trong hai phần mềm chống
  virus của bạn hoặc phpMussel.
 
- Thông tin này được cập nhật lần cứơi vào ngày 28 tháng năm 2015 và có thể áp
- dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.5-v0.6i) vào
+ Thông tin này được cập nhật lần cứơi vào ngày 7 Tháng Chín 2015 và có thể áp
+ dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.6-v0.7a) vào
  thời gian cái này được viết.
 
  Ad-Aware                Không có vấn đề
@@ -1678,7 +1677,7 @@
  Rising                  Không có vấn đề
  Sophos                  Không có vấn đề
  SUPERAntiSpyware        Không có vấn đề
- Symantec             !  Báo cáo "WS.Reputation.1"
+ Symantec                Không có vấn đề
  TheHacker               Không có vấn đề
  TotalDefense            Không có vấn đề
  TrendMicro              Không có vấn đề
@@ -1690,5 +1689,5 @@
                                      ~ ~ ~
 
 
-Lần cuối cập nhật: 30 Tháng Tám 2015 (2015.08.30).
+Lần cuối cập nhật: 7 Tháng Chín 2015 (2015.09.07).
 EOF

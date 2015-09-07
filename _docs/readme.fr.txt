@@ -160,9 +160,9 @@
     locale machine. Lorsque vous avez déterminé que vous êtes satisfait sur
     l'emplacement choisi pour phpMussel, continuer.
 
- 2) phpMussel exige php d'être installé sur l'hôte ordinateur afin d'exécuter.
-    Si vous n'avez pas de php installé sur votre machine, s'il vous plaît
-    installer php sur votre machine, suivant les instructions fournies par le
+ 2) phpMussel exige PHP d'être installé sur l'hôte ordinateur afin d'exécuter.
+    Si vous n'avez pas de PHP installé sur votre machine, s'il vous plaît
+    installer PHP sur votre machine, suivant les instructions fournies par le
     programme d'installation de php.
 
  3) Facultativement (fortement recommandé pour l'avancés utilisateurs, mais pas
@@ -175,7 +175,7 @@
 
  4) Facultativement, vous pouvez faire utilisant phpMussel en CLI mode plus
     facile pour vous-même par la création d'un fichier de commandes pour
-    automatique charger php et phpMussel. Pour ce faire, ouvrir un éditeur de
+    automatique charger PHP et phpMussel. Pour ce faire, ouvrir un éditeur de
     texte comme Notepad ou Notepad++, taper le complet chemin vers le "php.exe"
     fichier dans le répertoire de votre installation de PHP, suivi d'un espace,
     suivi par le complet chemin vers le "phpmussel.php" fichier dans le
@@ -202,12 +202,12 @@
  défaut, donc rien est nécessaire à partir de vous pour cette fonction
  particulière.
 
- Cependant, vous êtes également capable d'instruire phpMussel à analyser pour
- fichiers, répertoires ou archives que vous spécifiez implicitement. Pour ce
- faire, premièrement, vous devez assurer que la appropriée configuration est
- imposé dans le "phpmussel.ini" fichier (cleanup doit être désactivé), et
- lorsque vous avez terminé, dans un fichier php qui est accroché à phpMussel,
- utilisez la fonction suivante dans votre code:
+ Cependant, vous êtes également capable d'instruire phpMussel à analyser
+ spécifiques fichiers, répertoires et/ou archives. Pour ce faire, premièrement,
+ vous devez assurer que la appropriée configuration est imposé dans le
+ "phpmussel.ini" fichier (cleanup doit être désactivé), et lorsque vous avez
+ terminé, dans un fichier PHP qui est accroché à phpMussel, utilisez la
+ fonction suivante dans votre code:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
@@ -277,10 +277,10 @@
  fonction pour correspondre encontre ces signatures pourrait s'avérer
  extrêmement utile pour quelque, surtout pour ceux dont CMS ou système webfront
  est en quelque sorte lié à leur messagerie système et pour ceux dont analyser
- leurs courriels à travers un script php dont ils pourraient s'accrocher dans
+ leurs courriels à travers un script PHP dont ils pourraient s'accrocher dans
  phpMussel. Configuration pour cette fonction, comme tous les autres, est
  contrôlé par le "phpmussel.ini" fichier. Pour utiliser cette fonction (vous
- aurez besoin de faire votre propre implémentation), dans un php fichier qui
+ aurez besoin de faire votre propre implémentation), dans un PHP fichier qui
  est accroché à phpMussel, utiliser ce fonction dans votre code:
 
  phpMussel_mail($corps);
@@ -471,12 +471,10 @@
                 phpMussel sont la dernière disponible (à moins que, bien sûr,
                 si vous téléchargez et installez les derniers fichiers
                 manuellement, dont, j'aussi recommande vérifier au moins une
-                fois par mois). Vérification de plus de deux fois par mois est
-                probablement inutile, en tenant compte que je (au moment
-                d'écrire ces) travaille sur ce projet par moi-même et je suis
-                très peu probable d'être produire nouveaux fichiers plus
-                fréquemment que cela (ni je ne particulièrement pas vouloir à,
-                pour la plupart).
+                fois par mois). Vérification plus de deux fois par mois est
+                probablement inutile, étant donné que je suis très improbable
+                d'être produire nouveaux fichiers plus fréquemment que cela (ni
+                je ne particulièrement pas vouloir à, pour la plupart).
    ~
  greylist
    Mot de passe requis: script_password
@@ -1007,7 +1005,7 @@
       incriminé fichier est que l'un de plusieurs fichiers contenus dans
       l'archive). Pour le cas d'analyse de fichiers téléchargement,
       généralement, il n'est pas nécessaire d'activer cette option sur, parce
-      généralement, php faire purger automatiquement les contenus de son cache
+      généralement, PHP faire purger automatiquement les contenus de son cache
       lorsque l'exécution est terminée, ce qui signifie que il va généralement
       supprimer tous les fichiers téléchargés à travers elle au serveur sauf
       qu'ils ont déménagé, copié ou supprimé déjà. L'option est ajoutée ici
@@ -1196,7 +1194,7 @@
    - Signature correspondance longueur limiter options. Seulement modifier si
      vous savez ce que vous faites. SD = Standard signatures. RX = PCRE (Perl
      Compatibles Régulières Expressions, ou "Regex") signatures. FN = Nom de
-     fichier signatures. Si vous remarquez php s'écraser quand phpMussel
+     fichier signatures. Si vous remarquez PHP s'écraser quand phpMussel
      tentatives d'analyse, tenter à réduire ces "max" valeurs. Si possible et
      pratique, laissez-moi savoir quand cela se produit et les résultats de ce
      que vous essayez.
@@ -1248,7 +1246,7 @@
      l'utilisateur qu'ils sont téléchargement trop à la fois! Fournit
      protection contre une théorique attaque par lequel un attaquant tente à
      DDoS votre système ou CMS par surchargeant phpMussel à ralentir le
-     processus de php à une halte. Recommandé: 10. Vous pouvez désirer
+     processus de PHP à une halte. Recommandé: 10. Vous pouvez désirer
      d'augmenter ou diminuer ce nombre dépendamment de la vitesse de votre
      hardware. Notez que ce nombre ne tient pas compte pour ou inclure le
      contenus des archives.
@@ -1312,7 +1310,7 @@
  - Configuration pour les spécifique attaque détections (pas basé sur CVDs).
    * Caméléon Attaque Détection: 0 = Désactivé, 1 = Activé.
    "chameleon_from_php"
-   - Vérifier pour php tête dans les fichiers qui sont ni php fichiers ni
+   - Vérifier pour PHP tête dans les fichiers qui sont ni PHP fichiers ni
      reconnue comme archives.
    "chameleon_from_exe"
    - Vérifier pour exécutable têtes dans les fichiers qui sont ni exécutable
@@ -1647,7 +1645,7 @@
    mail fonction).
 
  = REGEX =
-   Toute forme de regex comprise et préparé correctement par php devrait aussi
+   Toute forme de regex comprise et préparé correctement par PHP devrait aussi
    être correctement compris et préparé par phpMussel et ses signatures. Mais,
    je vous suggère de prendre une extrême prudence lors de l'écriture de
    nouvelles regex basé signatures, parce, si vous n'êtes pas entièrement sûr
@@ -1756,9 +1754,9 @@
  désactivation avant à travailler avec phpMussel ou devrait envisager d'autres
  options soit votre logiciel anti-virus ou phpMussel.
 
- Cette information a été réactualisé le 28 Mai 2015 et est courant pour toutes
- les phpMussel parutions des deux plus récentes mineures versions (v0.5-v0.6i)
- au moment de la rédaction cette.
+ Cette information a été réactualisé le 7 Septembre 2015 et est courant pour
+ toutes les phpMussel parutions des deux plus récentes mineures versions
+ (v0.6-v0.7a) au moment de la rédaction de cette.
 
  Ad-Aware                Pas problèmes connus
  Agnitum                 Pas problèmes connus
@@ -1802,7 +1800,7 @@
  Rising                  Pas problèmes connus
  Sophos                  Pas problèmes connus
  SUPERAntiSpyware        Pas problèmes connus
- Symantec             !  Rapports "WS.Reputation.1"
+ Symantec                Pas problèmes connus
  TheHacker               Pas problèmes connus
  TotalDefense            Pas problèmes connus
  TrendMicro              Pas problèmes connus
@@ -1814,5 +1812,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 24 Août 2015 (2015.08.24).
+Dernière Réactualisé: 7 Septembre 2015 (2015.09.07).
 EOF

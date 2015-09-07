@@ -159,9 +159,9 @@
     da qualche parte sul tuo locale macchina. Quando hai stabilito che sei
     felice con il luogo scelto per phpMussel, continuare.
 
- 2) phpMussel richiede php essere installato sulla macchina per eseguire. Se
-    non lo avete php installato sul vostra macchina, prego installare php sul
-    vostra macchina seguendo le istruzioni fornite dal php installazione
+ 2) phpMussel richiede PHP essere installato sulla macchina per eseguire. Se
+    non lo avete PHP installato sul vostra macchina, prego installare PHP sul
+    vostra macchina seguendo le istruzioni fornite dal PHP installazione
     programma.
 
  3) Facoltativamente (fortemente consigliata per gli avanzati utenti, ma non è
@@ -174,7 +174,7 @@
 
  4) Facoltativamente, si può rendere utilizzando di phpMussel in CLI modalità
     facile per voi stessi per creando un batch file ai fini della
-    automaticamente caricare php e phpMussel. Per fare questo, aprire un testo
+    automaticamente caricare PHP e phpMussel. Per fare questo, aprire un testo
     editor come Notepad o Notepad++, digitare il completo percorso della
     "php.exe" file nella cartella della vostra installazione di PHP, seguito da
     uno spazio, seguito dal completo percorso della "phpmussel.php" file nella
@@ -198,12 +198,11 @@
  Scansionare di file caricamenti è automatizzato e abilitato per predefinita,
  perciò nulla è richiesto a vostro nome per questa particolare funzione.
 
- Ma, si è anche in grado di istruire phpMussel per la scansione per i file,
- cartelle o archivi che si implicitamente specificano. Per fare questo, in
- primo luogo, è necessario assicurarsi che l'appropriata configurazione è
- impostato nella "phpmussel.ini" file (cleanup deve essere disattivato), e
- quando fatto, in un php file che è collegato allo phpMussel, utilizzare la
- seguente funzione nelle codice:
+ Ma, si è anche in grado di istruire phpMussel per la scansione per i specifici
+ file, cartelle o archivi. Per fare questo, in primo luogo, è necessario
+ assicurarsi che l'appropriata configurazione è impostato nella "phpmussel.ini"
+ file (cleanup deve essere disattivato), e quando fatto, in un PHP file che è
+ collegato allo phpMussel, utilizzare la seguente funzione nelle codice:
 
  phpMussel($cosa_a_scansione,$tipi_di_output,$output_pianura);
 
@@ -217,7 +216,7 @@
    firme mappe e che possono essere possibile mancanti o corrotto, -2 indica
    che i corrotto dato è stato rilevato durante la scansione e quindi la
    scansione non abbia completato, -1 indica che estensioni o addon richiesti
-   per php a eseguire la scansione erano assente e quindi la scansione non
+   per PHP a eseguire la scansione erano assente e quindi la scansione non
    abbia completato, 0 indica che l'obiettivo di scansione non esiste e quindi
    non c'era nulla a scansione, 1 indica che l'obiettivo è stato scansionata
    correttamente e non problemi stati rilevati, e 2 indica che l'obiettivo è
@@ -272,11 +271,11 @@
  detto, avente una separata funzione per verificare contro queste firme
  potrebbe rivelarsi estremamente utile per alcuni, soprattutto per coloro il
  cui CMS o webfront sistema è in qualche modo legato nel loro email sistema
- e per quelli di cui parsare i loro email tramite una php script di cui essi
+ e per quelli di cui parsare i loro email tramite una PHP script di cui essi
  potenzialmente potrebbero collegare a phpMussel. Configurazione per questa
  funzione, come tutti gli altri, è controllato tramite delle "phpmussel.ini"
  file. Per utilizzare di questa funzione (avrete bisogno a fare la propria
- implementazione), in un php file che è collegato al phpMussel, utilizzare la
+ implementazione), in un PHP file che è collegato al phpMussel, utilizzare la
  seguente funzione nel vostre codice:
 
  phpMussel_mail($corpo);
@@ -466,12 +465,11 @@
             la vostra copia di phpMussel sono aggiornato all'ultimo edizioni (a
             meno, ovviamente, si fare l'aggiornamento verificare e fare
             l'installazione di manualmente, di cui, mi piacerebbe ancora
-            consiglio di fare almeno una volta al mese). Controllo più di due
-            volte al mese, è probabilmente inutile, considerando sto (alla
-            momento di stesura questo) lavorando su questo progetto da solo e
-            sto molto improbabile essere in grado per produzione qualsiasi
-            aggiornamenti di qualsiasi tipo più spesso di quello (né faccio in
-            modo particolare voglio per la maggior parte).
+            consiglio di fare almeno una volta al mese). Verifica più di due
+            volte al mese è probabilmente inutile, considerando sto molto
+            improbabile essere grado per produzione qualsiasi aggiornamenti di
+            qualsiasi tipo più spesso di quello (né faccio in modo particolare
+            voglio per la maggior parte).
    ~
  greylist
    Password requisito: script_password
@@ -999,11 +997,11 @@
       (indipendentemente se il file all'origine è soltanto uno dei vari file
       contenuti all'interno dell'archivio o non). Nel caso di file caricamente
       scansione, solitamente, non è necessario attivare questa opzione, perché
-      solitamente, php sarà automaticamente eliminerà il contenuto della cache
+      solitamente, PHP sarà automaticamente eliminerà il contenuto della cache
       quando l'esecuzione è terminata, il che significa che lo farà solitamente
       eliminare tutti i file caricati tramite al server tranne ciò che già è
       spostato, copiato o cancellato. L'opzione viene aggiunto qui come
-      ulteriore misura di sicurezza per coloro le cui copie di php non sempre
+      ulteriore misura di sicurezza per coloro le cui copie di PHP non sempre
       comportarsi nel previsto modo.
       0 - Dopo la scansione, lasciare il file solo [Predefinito],
       1 - Dopo la scansione, se non pulite, immediatamente eliminarlo.
@@ -1183,7 +1181,7 @@
    - Firma lunghezza corrispondenza limitando opzioni. Modificata solo se si sa
      cosa si sta facendo. SD = Standard firme. RX = PCRE (Perl Compatibile
      Regolari Espressioni, o "Regex") firme. FN = File nomi firme. Se notate
-     php termina fatalmente quando phpMussel tenta per scansione, tenta per
+     PHP termina fatalmente quando phpMussel tenta per scansione, tenta per
      abbassare i "max" valori seguito. Se possibile e conveniente, fatemi
      sapere quando questo accade ei risultati di quello il voi tentò.
      "fn_siglen_min"
@@ -1233,7 +1231,7 @@
      scansione prima le terminazione del scansione e d'informare dell'utente
      che essi stai caricando troppo in una volta! Fornisce protezione contro un
      teorico attacco per cui un malintenzionato utente tenta per DDoS vostra
-     sistema o CMS da sovraccaricamento phpMussel rallentare il php processo ad
+     sistema o CMS da sovraccaricamento phpMussel rallentare il PHP processo ad
      un brusco stop. Raccomandato: 10. Si potrebbe desiderare di aumentare o
      diminuire che numero basato sulla velocità del vostra sistema e hardware.
      Si noti che questo numero non tiene conto o includere il contenuti degli
@@ -1294,7 +1292,7 @@
  - Configurazione per specifiche attacco rilevazioni (non basate sulle CVD).
    * Chameleon attacco rilevamento: 0 = Disattivato, 1 = Attivato.
    "chameleon_from_php"
-   - Cercare per php magici numeri che non sono riconosciuti php file né
+   - Cercare per PHP magici numeri che non sono riconosciuti PHP file né
      archivi.
    "chameleon_from_exe"
    - Cercare per eseguibili magici numeri che non sono riconosciuti eseguibili
@@ -1365,7 +1363,7 @@
      dimensione dei file che si desidera e si aspettano di ricevere al vostro
      server o al vostro web sito, non dovrebbe essere più di la filesize_limit
      direttiva, e non dovrebbe essere più di circa un quinto del totale
-     ammissibile allocazione della memoria concesso al php tramite il php.ini
+     ammissibile allocazione della memoria concesso al PHP tramite il php.ini
      configurazione file. Questa direttiva esiste per tenta di evitare avendo
      phpMussel utilizzare troppa memoria (di cui sarebbe impedirebbe di essere
      capace di completare la file scansione correttamente per i file piú d'una
@@ -1619,7 +1617,7 @@
    funzione).
 
  = REGEX =
-   Ogni forma di regex correttamente capito da php anche dovrebbe essere
+   Ogni forma di regex correttamente capito da PHP anche dovrebbe essere
    correttamente capito da phpMussel el sue firme. Ma, io suggerirei di
    prendere estrema cautela quando scrittura nuove regex basato firme, perché,
    se non sei certo quello stai facendo, ci possono essere molto irregolari e/o
@@ -1729,9 +1727,9 @@
  dovrebbe considerare l'alternative opzioni per sia il vostro anti-virus
  software o phpMussel.
 
- Questa informazione è stato lo scorso aggiornato 28 Maggio 2015 ed è in corso
- per tutte le phpMussel rilasci delle due più recenti minori versioni
- (v0.5-v0.6i) al momento di scrivere questo.
+ Questa informazione è stato lo scorso aggiornato 7 Settembre 2015 ed è in
+ corso per tutte le phpMussel rilasci delle due più recenti minori versioni
+ (v0.6-v0.7a) al momento di scrivere questo.
 
  Ad-Aware                Senza noti problemi
  Agnitum                 Senza noti problemi
@@ -1775,7 +1773,7 @@
  Rising                  Senza noti problemi
  Sophos                  Senza noti problemi
  SUPERAntiSpyware        Senza noti problemi
- Symantec             !  Riferisce "WS.Reputation.1"
+ Symantec                Senza noti problemi
  TheHacker               Senza noti problemi
  TotalDefense            Senza noti problemi
  TrendMicro              Senza noti problemi
@@ -1787,5 +1785,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 24 Agosto 2015 (2015.08.24).
+Ultimo Aggiornamento: 7 Settembre 2015 (2015.09.07).
 EOF
