@@ -76,11 +76,11 @@ Espero para agilizar este proceso al hacer un instalador en algún momento en un
 
 1) Con tu leyendo esto, estoy asumiendo que usted ha descargado una copia de la script, descomprimido y tenerlo en algún lugar en su computer. Cuando se ha determinado que usted es feliz con el lugar elegido para phpMussel, continuar.
 
-2) phpMussel requiere php para ser instalado en la host máquina para ejecutar. Si usted no has php instalado en su máquina, por favor, instalar php en su máquina, siguiendo las instrucciones suministradas por el php instalador.
+2) phpMussel requiere PHP para ser instalado en la host máquina para ejecutar. Si usted no has PHP instalado en su máquina, por favor, instalar PHP en su máquina, siguiendo las instrucciones suministradas por el PHP instalador.
 
 3) Opcionalmente (muy recomendable para avanzados usuarios, pero no se recomienda para los principiantes o para los inexpertos), abrir `phpmussel.ini` (situado en el interior del `vault`) - Este archivo contiene todas las disponibles operativas opciones para phpMussel. Por encima de cada opción debe ser un breve comentario que describe lo que hace y para lo qué sirve. Ajuste estas opciones según sus necesidades, según lo que sea apropiado para su particular configuración. Guardar archivo, cerrar.
 
-4) Opcionalmente, usted puede hacer uso de phpMussel en CLI modo más fácil para ti mismo mediante la creación de un batch archivo para automáticamente cargar php y phpMussel. Para ello, abra un texto editor como Notepad o Notepad++, escriba la completa ruta al `php.exe` archivo dentro lo directorio de la php instalación, seguido de un espacio, seguido de la completa ruta al `phpmussel.php` archivo dentro lo directorio de su phpMussel instalación, guardar el archivo con la ".bat" extensión en alguna parte que usted lo encontrará fácilmente, y haga doble clic en ese archivo para ejecutar phpMussel en el futuro.
+4) Opcionalmente, usted puede hacer uso de phpMussel en CLI modo más fácil para ti mismo mediante la creación de un batch archivo para automáticamente cargar PHP y phpMussel. Para ello, abra un texto editor como Notepad o Notepad++, escriba la completa ruta al `php.exe` archivo dentro lo directorio de la PHP instalación, seguido de un espacio, seguido de la completa ruta al `phpmussel.php` archivo dentro lo directorio de su phpMussel instalación, guardar el archivo con la ".bat" extensión en alguna parte que usted lo encontrará fácilmente, y haga doble clic en ese archivo para ejecutar phpMussel en el futuro.
 
 5) Con eso, ya está! Pero, probablemente deberías preubalo para asegurarse de que está funcionando correctamente. Para probar phpMussel, ejecute phpMussel e probar escanear el directorio `_testfiles` suministrada con el paquete.
 
@@ -93,12 +93,12 @@ phpMussel es un script diseñado para funcionar adecuadamente, inmediatamente, c
 
 Escaneo de archivos subidos es automatizado y activado como estándar, así, nada se requerida en su nombre por esta particular función.
 
-Pero, también es capaz instruirá phpMussel para escanear archivos, directorios o compactados archivos usted especifique implícitamente. Para ello, primeramente, usted tendrá asegurarse de que la adecuada configuración se establece el la `phpmussel.ini` archivo (cleanup debe estar desactivado), y cuando hecho, en un PHP archivo conectado a phpMussel, utilice la siguiente función en su código:
+Pero, también es capaz instruirá phpMussel para escanear específicos archivos, directorios y/o compactados archivos. Para ello, primeramente, usted tendrá asegurarse de que la adecuada configuración se establece el la `phpmussel.ini` archivo (`cleanup` debe estar desactivado), y cuando hecho, en un PHP archivo conectado a phpMussel, utilice la siguiente función en su código:
 
 `phpMussel($what_to_scan,$output_type,$output_flatness);`
 
 - `$what_to_scan` puede ser una cadena, una matriz o una matriz de matrices, e indica qué archivo, archivos, directorio y/o directorios a escanear.
-- `$output_type` es un booleano, indicando el formato de los resultados del análisis para ser devueltos como. False instruye la función para devolver resultados como un entero (un resultado devuelto de -3 indica se encontraron problemas con el phpMussel firmas archivos o firmas mapas archivos y que sea posible pueden faltar o dañado, -2 indica que se ha corruptos datos detectados durante el escanear y por lo tanto el escanear no pudo completar, -1 indica que las extensiones o complementos requeridos por php para ejecutar el escaneo faltaban y por lo tanto el escanear no pudo completar, 0 indica que la escanear objetivo no existe y por lo tanto no había nada para escanear, 1 indica que el objetivo fue escaneado con éxito y no se detectaron problemas, y 2 indica que el objetivo fue escaneado con éxito y se detectaron problemas). True instruye la función para devolver resultados como texto legible por humanos. Además, en cualquier caso, los resultados pueden ser acceder a través de globales variables después escaneo ha completado. Esta variable es opcional, predefinido como false.
+- `$output_type` es un booleano, indicando el formato de los resultados del análisis para ser devueltos como. False instruye la función para devolver resultados como un entero (un resultado devuelto de -3 indica se encontraron problemas con el phpMussel firmas archivos o firmas mapas archivos y que sea posible pueden faltar o dañado, -2 indica que se ha corruptos datos detectados durante el escanear y por lo tanto el escanear no pudo completar, -1 indica que las extensiones o complementos requeridos por PHP para ejecutar el escaneo faltaban y por lo tanto el escanear no pudo completar, 0 indica que la escanear objetivo no existe y por lo tanto no había nada para escanear, 1 indica que el objetivo fue escaneado con éxito y no se detectaron problemas, y 2 indica que el objetivo fue escaneado con éxito y se detectaron problemas). True instruye la función para devolver resultados como texto legible por humanos. Además, en cualquier caso, los resultados pueden ser acceder a través de globales variables después escaneo ha completado. Esta variable es opcional, predefinido como false.
 - `$output_flatness` es un booleano, indicando a la función si se deben devolver los resultados de la escaneo (cuando hay varios objetivos a escanear) como una matriz o una cadena. False devolverá los resultados como una matriz. True devolverá los resultados como una cadena. Esta variable es opcional, predefinido como false.
 
 Ejemplos:
@@ -123,7 +123,7 @@ Si se encuentra algún falsos positivos, si se encuentra con algo nuevo que cree
 
 Para desactivar las firmas que se incluyen con phpMussel (por ejemplo, si usted está experimentando un falso positivo específico para sus propósitos que normalmente no debería ser suprimido), consulte las notas de la Greylist en el Navegador Comandos sección de este README archivo.
 
-Además del escaneo de archivos subidos y la opcional escaneo de otros archivos y/o directorios especificados a través de la función anterior, incluido en phpMussel es una función con el propósito para escanear el cuerpo de los email mensajes. Esta función se comporta de manera similar del estándar phpMussel() función, excepto centra únicamente contra las email basadas ClamAV firmas. No he conectada estas firmas en el estándar phpMussel() función, debido a que es improbable que usted encontrar el cuerpo de un entrante email mensaje en la necesidad el escaneo dentro un archivo subido dirigido a una página donde phpMussel está conectado, y por lo tanto, para conectar estas firmas en la phpMussel() función sería redundante. Pero, dicho esto, si tener una separada función contra estas firmas podría ser muy útil por algunos, especialmente por aquellos cuyos CMS o web sistema está conectado de alguna manera en su email sistema y para aquellos de los cuales analizar sus email mensajes a través de una php script de los que potencialmente podrían conectar en phpMussel. Configuración para esta función, como todos los demás, es controlado a través de `phpmussel.ini` archivo. Para utilizar esta función (va necesita para hacer su propia implementación), en una php archivo que está conectado a phpMussel, utilizar la siguiente función en el código:
+Además del escaneo de archivos subidos y la opcional escaneo de otros archivos y/o directorios especificados a través de la función anterior, incluido en phpMussel es una función con el propósito para escanear el cuerpo de los email mensajes. Esta función se comporta de manera similar del estándar phpMussel() función, excepto centra únicamente contra las email basadas ClamAV firmas. No he conectada estas firmas en el estándar phpMussel() función, debido a que es improbable que usted encontrar el cuerpo de un entrante email mensaje en la necesidad el escaneo dentro un archivo subido dirigido a una página donde phpMussel está conectado, y por lo tanto, para conectar estas firmas en la phpMussel() función sería redundante. Pero, dicho esto, si tener una separada función contra estas firmas podría ser muy útil por algunos, especialmente por aquellos cuyos CMS o web sistema está conectado de alguna manera en su email sistema y para aquellos de los cuales analizar sus email mensajes a través de una PHP script de los que potencialmente podrían conectar en phpMussel. Configuración para esta función, como todos los demás, es controlado a través de `phpmussel.ini` archivo. Para utilizar esta función (va necesita para hacer su propia implementación), en una PHP archivo que está conectado a phpMussel, utilizar la siguiente función en el código:
 
 `phpMussel_mail($cuerpo);`
 
@@ -213,7 +213,7 @@ update
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
 - Ejemplo: `?pword=[script_password]&phpmussel=update`
-- Qué hace: Comprobar por actualizaciones para ambos phpMussel y sus firmas. Si las actualizaciones comprobar tienen éxito y actualizaciones está encuentran, intentará descargar e instalar estas actualizaciones. Si las actualizaciones comprobar fallan, actualizaciones comprobar abortará. Los resultados de todo el proceso se imprimen en la pantalla. Recomiendo comprobar al menos una vez por mes para asegurar que sus firmas y su copia de phpMussel se mantienen actualizada (a menos que, naturalmente, usted está comprobando las actualizaciones e instalandolos manualmente, que, aun así sigo recomendando hacer al menos una vez por mes). Comprobar más de dos veces por mes es probablemente inútil, en consideración que (en el momento de escribir este) estoy trabajando en este proyecto solo y estoy muy improbable de ser capaz de producir actualizaciones de cualquier tipo con más frecuencia que la (ni tengo particular quiero para hacerlo en la mayor parte).
+- Qué hace: Comprobar por actualizaciones para ambos phpMussel y sus firmas. Si las actualizaciones comprobar tienen éxito y actualizaciones está encuentran, intentará descargar e instalar estas actualizaciones. Si las actualizaciones comprobar fallan, actualizaciones comprobar abortará. Los resultados de todo el proceso se imprimen en la pantalla. Recomiendo comprobar al menos una vez por mes para asegurar que sus firmas y su copia de phpMussel se mantienen actualizada (a menos que, naturalmente, usted está comprobando las actualizaciones e instalandolos manualmente, que, aun así sigo recomendando hacer al menos una vez por mes). Comprobar más de dos veces por mes es probablemente inútil, en consideración que estoy muy improbable de ser capaz de producir actualizaciones de cualquier tipo con más frecuencia que la (ni tengo particular quiero para hacerlo en la mayor parte).
 
 greylist
 - Contraseña necesario: script_password
@@ -500,7 +500,7 @@ General configuración para phpMussel.
 - Debería phpMussel enviar 403 header con la bloqueados archivos subidos mensaje, o quedarse con los usual 200 OK? 0 = No (200) [Predefinido], 1 = Sí (403).
 
 "delete_on_sight"
-- Activando esta directiva instruirá la script para intentar para eliminar inmediatamente cualquier escaneados intentados archivos subidos emparejando a los criterios de detección, si través de firmas o de otras maneras. Archivos determinados como limpia no serán tocados. En el caso de los compactados archivos, la totalidad del compactado archivo será eliminado (independientemente de si el emparejando archivo es sólo uno de muchos varios archivos contenida dentro del compactado archivo). Para el caso de archivo subir escaneo, en general, no es necesario activar esta directiva, porque en general, php purgará automáticamente el contenido de su caché cuando la ejecución ha terminado, significando que lo en general eliminará cualquier archivos subidos a través de él con el servidor a no ser que se han movido, copiado o eliminado ya. La directiva se añade aquí como una medida adicional de seguridad para aquellos cuyas copias de php no siempre se comportan de la manera esperada. 0 - Después escaneando, dejar el archivo solo [Predefinido], 1 - Después escaneando, si no se limpia, eliminar inmediatamente.
+- Activando esta directiva instruirá la script para intentar para eliminar inmediatamente cualquier escaneados intentados archivos subidos emparejando a los criterios de detección, si través de firmas o de otras maneras. Archivos determinados como limpia no serán tocados. En el caso de los compactados archivos, la totalidad del compactado archivo será eliminado (independientemente de si el emparejando archivo es sólo uno de muchos varios archivos contenida dentro del compactado archivo). Para el caso de archivo subir escaneo, en general, no es necesario activar esta directiva, porque en general, PHP purgará automáticamente el contenido de su caché cuando la ejecución ha terminado, significando que lo en general eliminará cualquier archivos subidos a través de él con el servidor a no ser que se han movido, copiado o eliminado ya. La directiva se añade aquí como una medida adicional de seguridad para aquellos cuyas copias de PHP no siempre se comportan de la manera esperada. 0 - Después escaneando, dejar el archivo solo [Predefinido], 1 - Después escaneando, si no se limpia, eliminar inmediatamente.
 
 "lang"
 - Especifique la predefinido del lenguaje para phpMussel.
@@ -629,7 +629,7 @@ Cotejar contra Shockwave firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido]
 - "swf_custom"
 - "swf_mussel"
 
-Firma cotejando longitud limitando opciones. Sólo cambiarlos si sabes lo que estás haciendo. SD = Estándar firmas. RX = PCRE (Perl Compatibles Regulares Expresiones, o "Regex") firmas. FN = Firmas basados en nombre de archivos. Si usted notar php estrellarse cuando phpMussel intentar escanear, intente reducir estos "max" valores. Si es posible y conveniente, avísame cuando esto ocurre y los resultados de lo que intentan.
+Firma cotejando longitud limitando opciones. Sólo cambiarlos si sabes lo que estás haciendo. SD = Estándar firmas. RX = PCRE (Perl Compatibles Regulares Expresiones, o "Regex") firmas. FN = Firmas basados en nombre de archivos. Si usted notar PHP estrellarse cuando phpMussel intentar escanear, intente reducir estos "max" valores. Si es posible y conveniente, avísame cuando esto ocurre y los resultados de lo que intentan.
 - "fn_siglen_min"
 - "fn_siglen_max"
 - "rx_siglen_min"
@@ -665,10 +665,10 @@ Firma cotejando longitud limitando opciones. Sólo cambiarlos si sabes lo que es
 General configuración para el manejo de archivos.
 
 "max_uploads"
-- Máximo permitido número de archivos para escanear durante archivo subido escaneo antes de abortando la escaneo e informando al usuario están subir demasiado simultáneamente! Proporciona protección contra un teórico ataque por lo cual un atacante intenta DDoS su sistema o CMS por sobrecargando phpMussel para ralentizar el proceso de php a niveles inoperables. Recomendado: 10. Es posible que desee aumentar o reducir este número dependiendo de la velocidad de su hardware. Notar que este número no tiene en cuenta o incluir el contenidos de compactados archivos.
+- Máximo permitido número de archivos para escanear durante archivo subido escaneo antes de abortando la escaneo e informando al usuario están subir demasiado simultáneamente! Proporciona protección contra un teórico ataque por lo cual un atacante intenta DDoS su sistema o CMS por sobrecargando phpMussel para ralentizar el proceso de PHP a niveles inoperables. Recomendado: 10. Es posible que desee aumentar o reducir este número dependiendo de la velocidad de su hardware. Notar que este número no tiene en cuenta o incluir el contenidos de compactados archivos.
 
 "filesize_limit"
-- Límite del tamaño de archivos en KB. 65536 = 64MB [Predefinido], 0 = Sin límite (siempre en la greylist), cualquier (positivo) numérico valor aceptado. Esto puede ser útil cuando su php configuración limita la cantidad de memoria un proceso puede contener o si su php configuración limita el tamaño de archivo subidos.
+- Límite del tamaño de archivos en KB. 65536 = 64MB [Predefinido], 0 = Sin límite (siempre en la greylist), cualquier (positivo) numérico valor aceptado. Esto puede ser útil cuando su PHP configuración limita la cantidad de memoria un proceso puede contener o si su PHP configuración limita el tamaño de archivo subidos.
 
 "filesize_response"
 - Qué hacer con los archivos que superen el límite del tamaño de archivos (si existe). 0 - Whitelist, 1 - Blacklist [Predefinido].
@@ -704,7 +704,7 @@ Configuración para ataque específicas detecciones (no basado en CVDs).
 Camaleón ataque detección: 0 = Desactivado, 1 = Activado.
 
 "chameleon_from_php"
-- Buscar para php código en archivos que no están php archivos ni reconocidos compactados archivos.
+- Buscar para PHP código en archivos que no están PHP archivos ni reconocidos compactados archivos.
 
 "chameleon_from_exe"
 - Buscar para PE mágico número en archivos que no están ejecutables ni reconocidos compactados archivos y para ejecutables cuyo mágicos números son incorrectas.
@@ -737,7 +737,7 @@ Camaleón ataque detección: 0 = Desactivado, 1 = Activado.
 - Opcional limitación a la longitud de puros datos a que dentro de decodificación comandos deben ser detectados (en caso de que los hay notable rendimiento problemas mientras que escaneando). Valor es un entero número representando el tamaño de archivos en KB. Predefinido = 512 (512KB). Cero o nulo valor desactiva la limitación (eliminando cualquier tal limitación basado sobre la tamaño de archivos).
 
 "scannable_threshold"
-- Opcional limitación a la longitud de puros datos para que phpMussel se permitido leer y escanear (en caso de que los hay notable rendimiento problemas mientras que escaneando). Valor es un entero número representando el tamaño de archivos en KB. Predefinido = 32768 (32MB). Cero o nulo valor desactiva la limitación. En general, Este valor no debe ser inferior a la media tamaño de archivos subidos que desea y espera recibir a su servidor o website, no debe ser mayor que el filesize_limit directiva, y no debe ser más de aproximadamente una quinta parte de la total permisible memoria asignación concedida a php a través de la php.ini configuración archivo. Esta directiva existe para intratar prevenir phpMussel del uso de demasiada memoria (eso sería prevenir que sea capaz para escanear archivos con éxito encima de un cierto tamaño de archivos).
+- Opcional limitación a la longitud de puros datos para que phpMussel se permitido leer y escanear (en caso de que los hay notable rendimiento problemas mientras que escaneando). Valor es un entero número representando el tamaño de archivos en KB. Predefinido = 32768 (32MB). Cero o nulo valor desactiva la limitación. En general, Este valor no debe ser inferior a la media tamaño de archivos subidos que desea y espera recibir a su servidor o website, no debe ser mayor que el filesize_limit directiva, y no debe ser más de aproximadamente una quinta parte de la total permisible memoria asignación concedida a PHP a través de la php.ini configuración archivo. Esta directiva existe para intratar prevenir phpMussel del uso de demasiada memoria (eso sería prevenir que sea capaz para escanear archivos con éxito encima de un cierto tamaño de archivos).
 
 ####"compatibility" (Categoría)
 Compatibilidad directivas para phpMussel.
@@ -846,7 +846,7 @@ Todas las demás firmas seguir el formato:
 Donde NOMBRE es el nombre a citar para esa firma y HEX es un hexadecimal codificado segmento del archivo propuesto para ser comprobado por la firma dado. DESDE y PARA son opcionales parámetros, indicando desde cual y para cual posiciones en los datos de origen a cotejar contra (no soportado por la mail función).
 
 ####*REGEX*
-Cualquier forma de regex entendido y correctamente procesado por php también debe entenderse y procesado correctamente por phpMussel y sus firmas. Pero, yo sugeriría tomar mucho cuidado cuando escribiendo nuevas firmas basado en regex, porque, si no estás del todo seguro de lo que estás haciendo, puede haber altamente irregulares e/o inesperados resultados. Mirar el código fuente para phpMussel si no estás del todo seguro sobre el contexto de que las regex declaraciones son procesado. También, recordar que todos los patrones (con excepción para nombre de archivo, compactado archivo metadato y MD5 patrones) debe ser hexadecimal codificado (con excepción de la patrón sintaxis)!
+Cualquier forma de regex entendido y correctamente procesado por PHP también debe entenderse y procesado correctamente por phpMussel y sus firmas. Pero, yo sugeriría tomar mucho cuidado cuando escribiendo nuevas firmas basado en regex, porque, si no estás del todo seguro de lo que estás haciendo, puede haber altamente irregulares e/o inesperados resultados. Mirar el código fuente para phpMussel si no estás del todo seguro sobre el contexto de que las regex declaraciones son procesado. También, recordar que todos los patrones (con excepción para nombre de archivo, compactado archivo metadato y MD5 patrones) debe ser hexadecimal codificado (con excepción de la patrón sintaxis)!
 
 ####*DONDE PONER PERSONALIZADAS FIRMAS?*
 Sólo poner personalizadas firmas en esos archivos destinados para personalizadas firmas. Estos archivos deben contener "_custom" en sus nombres. También debe evitar editando de los predefinidos firmas archivos que no son nombrado como tal, a menos que sepa exactamente lo que está haciendo, porque, además de ser una buena práctica en general y además de desde ayudando distinguir entre sus propias firmas y la predefinido firmas incluido con phpMussel, que es bueno para mantener para editando sólo los archivos destinados para editando, porque la manipulación de los predefinidos firmas archivos puede causarlos cesar funcionando correctamente, por razón del "maps" archivos: Los "maps" archivos instruir phpMussel donde en los firmas archivos para mirar por firmas requeridas por phpMussel como por cuando requerido, y estos mapas pueden convertirse fuera de sincronización con sus asociados firmas archivos si esos firmas archivos están manipulados. Usted puede poner más o menos lo que quieras en sus personalizadas firmas, siempre y cuando usted sigue la sintaxis correcta. Pero, tener cuidado para probar nuevas firmas para falsos positivos de antemano si tiene intención de compartirlas o utilizarlos en un real entorno.
@@ -887,7 +887,7 @@ El siguiente es el desglose de los tipos de firmas utilizado por phpMussel:
 
 En su mayor parte, phpMussel debe ser bastante compatible con la mayoría de anti-virus software. Aunque, conflictividades han sido reportados por un número de usuarios en el pasado. Esta información de abajo es de VirusTotal.com, y describe un número de falsos positivos reportados por diversos anti-virus programas contra phpMussel. Aunque esta información no es una garantía absoluta de si o no se encontrará con compatibilidad problemas entre phpMussel y su anti-virus software, se su anti-virus software se observa como marcar contra phpMussel, usted debe considerar desactivarlo antes de trabajar con phpMussel o debería considerar opciones alternativas a de su anti-virus software o phpMussel.
 
-Esta información ha sido actualizado 28 Mayo 2015 y es a hoy para todas las phpMussel versiones de la dos más recientes menores versiones (v0.5-v0.6i) al momento de escribir esto.
+Esta información ha sido actualizado 7 Setiembre 2015 y es a hoy para todas las phpMussel versiones de la dos más recientes menores versiones (v0.6-v0.7a) al momento de escribir esto.
 
 | Escáner              |  Resultados                          |
 |----------------------|--------------------------------------|
@@ -933,7 +933,7 @@ Esta información ha sido actualizado 28 Mayo 2015 y es a hoy para todas las php
 | Rising               |  No hay conocidos problemas          |
 | Sophos               |  No hay conocidos problemas          |
 | SUPERAntiSpyware     |  No hay conocidos problemas          |
-| Symantec             |  Informa como "WS.Reputation.1"      |
+| Symantec             |  No hay conocidos problemas          |
 | TheHacker            |  No hay conocidos problemas          |
 | TotalDefense         |  No hay conocidos problemas          |
 | TrendMicro           |  No hay conocidos problemas          |
@@ -946,4 +946,4 @@ Esta información ha sido actualizado 28 Mayo 2015 y es a hoy para todas las php
 ---
 
 
-Última Actualización: 24 Agosto 2015 (2015.08.24).
+Última Actualización: 7 Setiembre 2015 (2015.09.07).

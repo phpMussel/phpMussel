@@ -1,93 +1,93 @@
-## Documentation for phpMussel (English).
+## Tài Liệu của phpMussel (Tiếng Việt).
 
-### Contents
-- 1. [PRE-RAMBLE](#SECTION1)
-- 2A. [HOW TO INSTALL (FOR WEB SERVERS)](#SECTION2A)
-- 2B. [HOW TO INSTALL (FOR CLI)](#SECTION2B)
-- 3A. [HOW TO USE (FOR WEB SERVERS)](#SECTION3A)
-- 3B. [HOW TO USE (FOR CLI)](#SECTION3B)
-- 4A. [BROWSER COMMANDS](#SECTION4A)
-- 4B. [CLI (COMMAND LINE INTERFACE)](#SECTION4B)
-- 5. [FILES INCLUDED IN THIS PACKAGE](#SECTION5)
-- 6. [CONFIGURATION OPTIONS](#SECTION6)
-- 7. [SIGNATURE FORMAT](#SECTION7)
-- 8. [KNOWN COMPATIBILITY PROBLEMS](#SECTION8)
+### Nội dung
+- 1. [LỜI GIỚI THIỆU](#SECTION1)
+- 2A. [CẢCH ĐỂCÀI ĐẶT (CHO CÁC TRANG WEB CHỦ)](#SECTION2A)
+- 2B. [CẢCH CÀI ĐẶT (CHO CLI)](#SECTION2B)
+- 3A. [CÁCH SỬ DỤNG (CHO CÁC TRANG WEB CHỦ)](#SECTION3A)
+- 3B. [CÁCH SỬ DỤNG (CHO CLI)](#SECTION3B)
+- 4A. [LỆNH CHO BROWSER](#SECTION4A)
+- 4B. [CLI (LỆNH CHO DÒNG GIAO DIỆN)](#SECTION4B)
+- 5. [TÀI LIỆU BAO GỒM TRONG GÓI NÀY](#SECTION5)
+- 6. [SỰ LỰA CHỌN CỦA CẤU HÌNH](#SECTION6)
+- 7. [ĐỊNH DẠNG CỦA CHỬ KÝ](#SECTION7)
+- 8. [NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH](#SECTION8)
 
 ---
 
 
-###1. <a name="SECTION1"></a>PRE-RAMBLE
+###1. <a name="SECTION1"></a>LỜI GIỚI THIỆU
 
-Thank you for using phpMussel, a PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your system wherever the script is hooked, based on the signatures of ClamAV and others.
+Cảm ơn bạn đã chọn phpMussel, một loại bản PHP được thiết kế để phát hiện trojan, vi rút, phần mềm đọc hại và những gì có thể gây nguy hiểm trong những các tài liệu tài lên trên máy của bạn. Bất cứ nơi nào mà bản đã được nối, dưa trên chử ký của ClamAV và những người khác.
 
-PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
+BẢN QUYỀN PHPMUSSEL 2013 và hơn GNU/GPLv2 by Caleb M (Maikuolan).
 
-This script is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This script is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details, located in the `LICENSE` file within the `_docs` directory of the associated package and repository for this file and available also from:
+Bản này là chương trình miễn phí; bạn có thể phân phối lại hoạc sửa đổi dưới điều kiện của GNU Giấy Phép Công Cộng xuất bản bởi Free Software Foundation; một trong giấy phép phần hai, hoạc (tùy theo sự lựa chọn của bạn) bất kỳ phiên bản nào sau này. Bản này được phân phối với hy vọng rằng nó sẽ có hữu ích, nhưng mà KHÔNG CÓ BẢO HÀNH; ngay cả những bảo đảm ngụ ý KHẢ NĂNG BÁN HÀNG hoạc PHÙ HỢP VỚI MỤC ĐÍT VÀO. Hảy xem GNU Giấy Phép Công Cộng để biết them chi tiết, nằm trong hồ sơ `LICENSE` trong thư mục `_docs` của các gói liên quan và kho chứa của hồ sơ này có thể tiềm đước tại:
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-Special thanks to [ClamAV](http://www.clamav.net/) for both project inspiration and for the signatures that this script utilises, without which, the script would likely not exist, or at best, would have very limited value.
+Chân thành cám ơn [ClamAV](http://www.clamav.net/) cho cả hai nguồn cảm hứng cho chương trình này và những chữ ký kịch bản này sử dụng, mà nếu không, bản này sẽ không có cơ hội tồn tại, hoặc ít nhất, sẽ có giá trị rất nhỏ.
 
-Special thanks to Sourceforge and GitHub for hosting the project files, to [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) for hosting the phpMussel discussion forums, and to the additional sources of a number of the signatures utilised by phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) and others, and special thanks to all those supporting the project, to anyone else that I may have otherwise forgotten to mention, and to you, for using the script.
+Chân thành cám ơn Sourceforge và GitHub đã lưu trữ các tài liệu của chương trình này, và [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) đã lưu trữ diễn đàn thảo luận của phpMussel, và các chữ ký sử dụng bởi phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) vân vân, và chân thành cảm ơn những người đã ủng hộ chương trình này, và bất cứ ai khác mà tôi quên cảm ơn, và bạn, đã sử dụng bản này.
 
-This document and its associated package can be downloaded for free from:
+Tài liệu này và các gói liên quan của nó có thể được tải về miễn phí từ:
 - [Sourceforge](http://phpmussel.sourceforge.net/).
 - [GitHub](https://github.com/Maikuolan/phpMussel/).
 
 ---
 
 
-###2A. <a name="SECTION2A"></a>HOW TO INSTALL (FOR WEB SERVERS)
+###2A. <a name="SECTION2A"></a>CẢCH ĐỂCÀI ĐẶT (CHO CÁC TRANG WEB CHỦ)
 
-I hope to streamline this process by making an installer at some point in the not too distant future, but until then, follow these instructions to get phpMussel working on *most systems and CMS:
+Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện một cài đặt tại một thời điểm nào trong tương lai không quá xa, nhưng cho đến lúc đó, bạn hảy làm theo hướng dẫn để có thể cho phpMussel làm việc trên hầu hết các hệ thống và CMS:
 
-1) By your reading this, I'm assuming you've already downloaded an archived copy of the script, decompressed its contents and have it sitting somewhere on your local machine. From here, you'll want to work out where on your host or CMS you want to place those contents. A directory such as `/public_html/phpmussel/` or similar (though, it doesn't matter which you choose, so long as it's something secure and something you're happy with) will suffice. *Before you begin uploading, read on..*
+1) Nếu bạn đang đọc cái này thì tôi hy vọng là bạn đã tải về một bản sao lưu trữ của bản, giải nén nội dung của nó và nó đang nằm ở một nơi nào đó trên máy tính của bạn. Từ đây, bạn sẽ muốn đặt nội dung ở một nơi trên máy chủ hoặc CMS của bạn. Một thư mục chẳng hạn như `/public_html/phpmussel/` hay tương tự (mặc dù sự lựa chọn của bạn không quan trọng, miễn là nó an toàn và bạn hài lòng với sự lựa chọn) sẽ đủ.. *Trước khi bạn bắt đầu tải lên, hảy tiếp tục đọc..*
 
-2) Optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), open `phpmussel.ini` (located inside `vault`) - This file contains all the directives available for phpMussel. Above each option should be a brief comment describing what it does and what it's for. Adjust these options as you see fit, as per whatever is appropriate for your particular setup. Save file, close.
+2) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới bắt đầu hoặc chưa có kinh nghiệm không nên chọn), hảy mở `phpmussel.ini` (nằm ớ trong `vault`) - Tài liệu này có chứa tất cả các chỉ thị sẵn cho phpMussel. Trên mỗi tùy chọn sẽ có chi tiết ngắn mô tả những gì nó làm. Hảy điều chỉnh các tùy chọn như bạn thấy phù hợp, theo bất cứ điều gì là thích hợp cho nhữn cài đặt của bạn. Lưu tập tin, đóng lại.
 
-3) Upload the contents (phpMussel and its files) to the directory you'd decided on earlier (you don't need to include the `*.txt`/`*.md` files, but mostly, you should upload everything).
+3) Tải nội dung lên (phpMussel và tài liệu của nó) vào thư mục bạn đã chọn trước (bạn không cần phải dùng hồ sơ `*.txt`/`*.md`, nhưng chủ yếu, bạn nên tải lên tất cả mọi thứ).
 
-4) CMHOD the `vault` directory to "777". The main directory storing the contents (the one you chose earlier), usually, can be left alone, but CHMOD status should be checked if you've had permissions issues in the past on your system (by default, should be something like "755").
+4) CMHOD cái `vault` thư mục thành "777". Các thư mục chính lưu trữ các nội dung (một trong những cái bạn đã chọn trước), bình thường, có thể riêng, nhưng tình hình CHMOD nên kiểm tra, nếu bạn đã có vấn đề cho phép trong quá khứ về hệ thống của bạn (theo mặc định, nên giống như "755").
 
-5) Next, you'll need to "hook" phpMussel to your system or CMS. There are several different ways in which you can "hook" scripts such as phpMussel to your system or CMS, but the easiest is to simply include the script at the beginning of a core file of your system or CMS (one that'll generally always be loaded when someone accesses any page across your website) using a `require()` or `include()` command. Usually, this'll be something stored in a directory such as `/includes`, `/assets` or `/functions`, and will often be named something like `init.php`, `common_functions.php`, `functions.php` or similar. You'll have to work out which file this is for your situation; If you encounter difficulties in working this out for yourself, visit the phpMussel support forums and let us know; It's possible that either myself or another user may have experience with the CMS that you're using (you'll need to let us know which CMS you're using), and thus, may be able to provide some assistance in this area. To do this [to use `require()` or `include()`], insert the following line of code to the very beginning of that core file, replacing the string contained inside the quotation marks with the exact address of the `phpmussel.php` file (local address, not the HTTP address; it'll look similar to the vault address mentioned earlier).
+5) Tiếp theo, bạn sẽ cần "nối" phpMussel vào hệ thống của bạn hoặc CMS. Có một số cách mà bạn có thể "nối" bản chẳng hạn như phpMussel vào hệ thống hoạc CMS, nhưng cách đơn giản nhất là cần có bản vào cốt lõi ở đầu của tài liệu hoạc hệ thống hoặc CMS của bạn (một mà thường sẽ luôn luôn được nạp khi ai đó truy cập bất kỳ trang nào trên trang web của bạn) bằng cách sử dụng một lời chỉ thị `require()` hoạc `include()`. Thường, cái nàu sẽ được lưu trong một thư mục như `/includes`, `/assets` hoạc `/functions`, và sẽ thường được gọi là `init.php`, `common_functions.php`, `functions.php` hoạc tương tự. Bạn sẽ cần tiềm ra hồ sơ nào cho trường hợp của bạn; Nếu bạn gặp khó khăn trong việc này, hãy truy cập diễn đàn hỗ trợ của phpMussel và cho chúng tôi biêt; Có thể là tôi họac các người dùng khác có có kinh nghiệm với các CMS mà bạn đang sử dụng (bạn phải biết mình đang sử dụng CMS nào), và như vậy, có thể cung cấp hỗ trợ trong trường hợp này. Để làm chuyện này [sử dụng `require()` họac `include()`], đánh các dòng mã sao đây vào đầu của cốt lõi của hồ sơ, thay thế các dây chứa bên trong các dấu ngoặc kép với địa chỉ chính xác của tài liệu `phpmussel.php` (địa chỉ địa phương, chứ không phải địa chỉ HTTP; nó sẽ nhình gióng địa chỉ kho nói ở trên).
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
-Save file, close, reupload.
+Lưu hồ sơ, đóng lại, tải lên lại.
 
--- OR ALTERNATIVELY --
+-- CÁCH KHÁC --
 
-If you're using an Apache webserver and if you have access to `php.ini`, you can use the `auto_prepend_file` directive to prepend phpMussel whenever any PHP request is made. Something like:
+Nếu bạn đang sử dụng trang chủ Apache và nếu bạn có thể truy cập `php.ini`, bạn có thể sử dụng `auto_prepend_file` chỉ thị để thêm vào trước phpMussel bất cứ khi nào bất kỳ yêu cầu PHP được xin. Gióng như:
 
 `auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"`
 
-Or this in the `.htaccess` file:
+Hoạc cái này trong hồ sơ `.htaccess`:
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"`
 
-6) At this point, you're done! However, you should probably test it out to make sure it's working properly. To test out file upload protections, attempt to upload the testing files included in the package under `_testfiles` to your website via your usual browser-based upload methods. If everything is working, a message should appear from phpMussel confirming that the upload was successfully blocked. If nothing appears, something isn't working correctly. If you're using any advanced features or if you're using the other types of scanning possible with the tool, I'd suggest trying it out with those to make sure it works as expected, too.
+6) Tại điểm này, bạn đã xong! Nhưng mà, bạn nên kiểm tra nó ra để đảm bảo nó hoạt động đúng. Để kiểm tra các hồ sơ tải lên bảo vệ, thử tải lên các hồ sơ thử nghiệm bao gồm trong gói dưới `_testfiles` vào trang web của bạn thông qua các phương pháp tải lên dựa trên trình duyệt thông thường của bạn. Nếu tất cả mọi thứ đang hoạt động, một tin nhắn sẽ xuất hiện từ phpMussel xác nhận là việc tải lên đã bị chặn thành công. Nếu không có gì xuất hiện, đây là điều biểu hiện cho một vấn đề với sự hoạt động. Nếu bạn đang sử dụng chức năng cao cấp, hoặc sử dụng các loại chức năng quét khác có thể với công cụ này, bạn nên thử nó ra với những điều đó để đảm bảo nó hoạt động như yêu cầu.
 
 ---
 
 
-###2B. <a name="SECTION2B"></a>HOW TO INSTALL (FOR CLI)
+###2B. <a name="SECTION2B"></a>CẢCH CÀI ĐẶT (CHO CLI)
 
-I hope to streamline this process by making an installer at some point in the not too distant future, but until then, follow these instructions to get phpMussel ready to work with CLI (be aware that at this point, CLI support only applies to Windows based systems; Linux and other systems will be coming soon to a later version of phpMussel):
+Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện một cài đặt tại một thời điểm nào trong tương lai không quá xa, nhưng cho đến lúc đó, bạn hảy làm theo hướng dẫn để có thể cho phpMussel hoạt động với CLI (hảy cẩn thận, vào lúc này hỗ trợ cho CLI chỉ áp dụng với hệ thống dựa trên Windows; Linux và các hệ thống khác sẽ sau trong phiên bản sau này của phpMussel):
 
-1) By your reading this, I'm assuming you've already downloaded an archived copy of the script, decompressed its contents and have it sitting somewhere on your local machine. Once you've determined that you're happy with the location chosen for phpMussel, continue.
+1) Nếu bạn đang đọc cái này thì tôi hy vọng là bạn đã tải về một bản sao lưu trữ của bản, giải nén nội dung của nó và nó đang nằm ở một nơi nào đó trên máy tính của bạn. Một khi bạn đã hài lòng với vị trí của phpMussel, hày tiếp tục.
 
-2) phpMussel requires PHP to be installed on the host machine in order to execute. If you don't have PHP installed on your machine, please install PHP on your machine, following any instructions supplied by the PHP installer.
+2) phpMussel cần PHP được cài đặt trên máy chủ để thực hiện. Nếu bạn không có PHP cài trên máy, xin hảy cài php, theo hướng dẫn được cung cấp bởi người cài đặt php.
 
-3) Optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), open `phpmussel.ini` (located inside `vault`) - This file contains all the directives available for phpMussel. Above each option should be a brief comment describing what it does and what it's for. Adjust these options as you see fit, as per whatever is appropriate for your particular setup. Save file, close.
+3) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới bắt đầu hoặc chưa có kinh nghiệm không nên chọn), hảy mở `phpmussel.ini` (nằm ớ trong `vault`) - Tài liệu này có chứa tất cả các chỉ thị sẵn cho phpMussel. Trên mỗi tùy chọn sẽ có chi tiết ngắn mô tả những gì nó làm. Hảy điều chỉnh các tùy chọn như bạn thấy phù hợp, theo bất cứ điều gì là thích hợp cho nhữn cài đặt của bạn. Lưu tập tin, đóng lại.
 
-4) Optionally, you can make using phpMussel in CLI mode easier for yourself by creating a batch file to automatically load PHP and phpMussel. To do this, open a plain text editor such as Notepad or Notepad++, type the complete path to the `php.exe` file in the directory of your PHP installation, followed by a space, followed by the complete path to the `phpmussel.php` file in the directory of your phpMussel installation, save the file with a ".bat" extension somewhere that you'll find it easily, and double-click on that file to run phpMussel in the future.
+4) Tùy ý, bạn có thể sử dụng phpMussel trong chế độ CLI dể hơn với cách tạo ra hồ sơ lô để tự động tải PHP và phpMussel. Để làm điều này, mở một chương trình văn bản đơn giản như Notepad hoạc Notepad++, đánh vào đường dẫn đầy đủ cho hồ sơ `php.exe` trong thư mục cài đặt PHP của bạn, tiếp theo là một khoảng trống, theo sau là đường dẫn đầy đủ đến hồ sơ `phpmussel.php` trong thư mục cài đặt phpMussel của bạn, lưu tài liệu với tư bổ sung ".bat" một nơi nào bạn sẽ tìm thấy dễ dàng, và nhấn đúp vào vào hồ sơ đó để chạy phpMussel trong tương lai.
 
-5) At this point, you're done! However, you should probably test it out to make sure it's working properly. To test phpMussel, run phpMussel and try scanning the `_testfiles` directory provided with the package.
+5) Tại thời điểm này, bạ đã xong! Nhưng mà, bạn nên kiểm tra nó để đảm bảo sự hoạt động. Để kiểm tra phpMussel,chạy phpMussel và thử quét `_testfiles` thư mục cung cấp trong gói.
 
 ---
 
 
-###3A. <a name="SECTION3A"></a>HOW TO USE (FOR WEB SERVERS)
+###3A. <a name="SECTION3A"></a>CÁCH SỬ DỤNG (CHO CÁC TRANG WEB CHỦ)
 
 phpMussel is intended to be a script that'll function adequately right from the box with a bare minimum level of requirements on your part: Once it has been installed, basically, it simply should work.
 
@@ -136,9 +136,9 @@ There are many other controls and functions available within phpMussel for your 
 ---
 
 
-###3B. <a name="SECTION3B"></a>HOW TO USE (FOR CLI)
+###3B. <a name="SECTION3B"></a>CÁCH SỬ DỤNG (CHO CLI)
 
-Please refer to the "HOW TO INSTALL (FOR CLI)" section of this readme file.
+Please refer to the "CẢCH CÀI ĐẶT (CHO CLI)" section of this readme file.
 
 Be aware that, although future versions of phpMussel should support other systems, at this time, phpMussel CLI mode support is only optimized for use on Windows-based system (you can, of course, try it on other systems, but I can't guarantee it'll work as intended).
 
@@ -147,7 +147,7 @@ Also be aware that phpMussel is not the functional equivalent of a complete anti
 ---
 
 
-###4A. <a name="SECTION4A"></a>BROWSER COMMANDS
+###4A. <a name="SECTION4A"></a>LỆNH CHO BROWSER
 
 Once phpMussel has been installed and is correctly functioning on your system, if you've set the script_password and logs_password variables in your configuration file, you will be able to perform some limited number of administrative functions and input some number of commands to phpMussel via your browser. The reason these passwords need to be set in order to enable these browser-side controls is both to ensure proper security, proper protection of these browser-side controls and to ensure that there exists a way for these browser-side controls to be entirely disabled if they are not desired by you and/or other webmasters/administrators using phpMussel. So, in other words, to enable these controls, set a password, and to disable these controls, set no password. Alternatively, if you choose to enable these controls and then choose to disable these controls at a later date, there is a command to do this (such can be useful if you perform some actions that you feel could potentially compromise the delegated passwords and need to quickly disable these controls without modifying your configuration file).
 
@@ -242,47 +242,47 @@ greylist_show
 ---
 
 
-###4B. <a name="SECTION4B"></a>CLI (COMMAND LINE INTERFACE)
+###4B. <a name="SECTION4B"></a>CLI (LỆNH CHO DÒNG GIAO DIỆN)
 
-phpMussel can be run as an interactive file scanner in CLI mode under Windows-based systems. Refer to the "HOW TO INSTALL (FOR CLI)" section of this readme file for more details.
+phpMussel can be run as an interactive file scanner in CLI mode under Windows-based systems. Refer to the "CẢCH CÀI ĐẶT (CHO CLI)" section of this readme file for more details.
 
 For a list of available CLI commands, at the CLI prompt, type 'c', and press Enter.
 
 ---
 
 
-###5. <a name="SECTION5"></a>FILES INCLUDED IN THIS PACKAGE
+###5. <a name="SECTION5"></a>TÀI LIỆU BAO GỒM TRONG GÓI NÀY
 
 The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, any files that may be potentially created as a result of your using this script, along with a short description of what all these files are for.
 
-File                                       | Description
+Hồ sơ                                      | Chi tiết
 -------------------------------------------|--------------------------------------
-/phpmussel.php                             | Loader file. Loads the main script, updater, etcetera. This is what you're supposed to be hooking into (essential)!
-/web.config                                | An ASP.NET configuration file (in this instance, to protect the `/vault` directory from being accessed by non-authorised sources in the event that the script is installed on a server based upon ASP.NET technologies).
-/_docs/                                    | Documentation directory (contains various files).
-/_docs/change_log.txt                      | A record of changes made to the script between different versions (not required for proper function of script).
-/_docs/readme.de.md                        | Documentation: DEUTSCH
-/_docs/readme.de.txt                       | Documentation: DEUTSCH
-/_docs/readme.en.md                        | Documentation: ENGLISH
-/_docs/readme.en.txt                       | Documentation: ENGLISH
-/_docs/readme.es.md                        | Documentation: ESPAÑOL
-/_docs/readme.es.txt                       | Documentation: ESPAÑOL
-/_docs/readme.fr.md                        | Documentation: FRANÇAIS
-/_docs/readme.fr.txt                       | Documentation: FRANÇAIS
-/_docs/readme.id.md                        | Documentation: BAHASA INDONESIA
-/_docs/readme.id.txt                       | Documentation: BAHASA INDONESIA
-/_docs/readme.it.md                        | Documentation: ITALIANO
-/_docs/readme.it.txt                       | Documentation: ITALIANO
-/_docs/readme.nl.md                        | Documentation: NEDERLANDSE
-/_docs/readme.nl.txt                       | Documentation: NEDERLANDSE
-/_docs/readme.pt.md                        | Documentation: PORTUGUÊS
-/_docs/readme.pt.txt                       | Documentation: PORTUGUÊS
-/_docs/readme.ru.md                        | Documentation: РУССКИЙ
-/_docs/readme.ru.txt                       | Documentation: РУССКИЙ
-/_docs/signatures_tally.txt                | Net-shift tally of included signatures (not required for proper function of script).
-/_testfiles/                               | Test files directory (contains various files). All contained files are test files for testing if phpMussel was correctly installed on your system, and you don't need to upload this directory or any of its files except when doing such testing.
-/_testfiles/ascii_standard_testfile.txt    | Test file for testing phpMussel normalised ASCII signatures.
-/_testfiles/coex_testfile.rtf              | Test file for testing phpMussel Complex Extended signatures.
+/phpmussel.php                             | Hồ sơ tải. Tải bản chính, tải lên, vân vân. Đây là điều bạn cần nối vào (cần thiết)!
+/web.config                                | Một hồ sơ cấu hình của ASP.NET (trong trường hợp này, để bảo vệ `/vault` thư mực khỏi bị truy cập bởi những nguồn không có quền trong trường hợp bản được cài trên serever chạy trên công nghệ ASP.NET).
+/_docs/                                    | Thư mực tài liệu (Chứa nhiều loại hồ sơ).
+/_docs/change_log.txt                      | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
+/_docs/readme.de.md                        | Tài liệu: DEUTSCH
+/_docs/readme.de.txt                       | Tài liệu: DEUTSCH
+/_docs/readme.en.md                        | Tài liệu: ENGLISH
+/_docs/readme.en.txt                       | Tài liệu: ENGLISH
+/_docs/readme.es.md                        | Tài liệu: ESPAÑOL
+/_docs/readme.es.txt                       | Tài liệu: ESPAÑOL
+/_docs/readme.fr.md                        | Tài liệu: FRANÇAIS
+/_docs/readme.fr.txt                       | Tài liệu: FRANÇAIS
+/_docs/readme.id.md                        | Tài liệu: BAHASA INDONESIA
+/_docs/readme.id.txt                       | Tài liệu: BAHASA INDONESIA
+/_docs/readme.it.md                        | Tài liệu: ITALIANO
+/_docs/readme.it.txt                       | Tài liệu: ITALIANO
+/_docs/readme.nl.md                        | Tài liệu: NEDERLANDSE
+/_docs/readme.nl.txt                       | Tài liệu: NEDERLANDSE
+/_docs/readme.pt.md                        | Tài liệu: PORTUGUÊS
+/_docs/readme.pt.txt                       | Tài liệu: PORTUGUÊS
+/_docs/readme.ru.md                        | Tài liệu: РУССКИЙ
+/_docs/readme.ru.txt                       | Tài liệu: РУССКИЙ
+/_docs/signatures_tally.txt                | Lý lịch của net-shift có bao gồm chữ ký (không cần thiết cho chức năng phù hợp của kịch bản).
+/_testfiles/                               | Kiểm tra tập tin thư mục (chứa các tập tin khác nhau). Tất cả các hồ sơ chứa những hồ sơ thử nghiệm để thử nghiệm nếu phpMussel đã được cài đặt đúng trên hệ thống của bạn, và bạn không cần phải tải lên thư mục này hoặc bất kỳ các hồ sơ của mình trừ khi làm xét nghiệm như vậy.
+/_testfiles/ascii_standard_testfile.txt    | Kiểm tra hồ sơ cho xét nghiệm phpMussel chữ ký ASCII bình thường.
+/_testfiles/coex_testfile.rtf              | Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký kéo dài phức tạp.
 /_testfiles/exe_standard_testfile.exe      | Test file for testing phpMussel PE signatures.
 /_testfiles/general_standard_testfile.txt  | Test file for testing phpMussel general signatures.
 /_testfiles/graphics_standard_testfile.gif | Test file for testing phpMussel graphics signatures.
@@ -435,19 +435,19 @@ File                                       | Description
 /vault/template_custom.html                | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
 /vault/update.dat                          | File containing version information for both the phpMussel script and the phpMussel signatures. If you ever want to automatically update phpMussel or want to update phpMussel via your browser, this file is essential.
 /vault/update.inc                          | Update Script; Required for automatic updates and for updating phpMussel via your browser, but not required otherwise.
-/vault/whitelist_clamav.cvd                | File specific whitelist.
-/vault/whitelist_custom.cvd                | File specific whitelist.
-/vault/whitelist_mussel.cvd                | File specific whitelist.
-/vault/xmlxdp_clamav_regex.cvd             | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_clamav_regex.map             | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_clamav_standard.cvd          | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_clamav_standard.map          | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_custom_regex.cvd             | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_custom_standard.cvd          | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_mussel_regex.cvd             | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_mussel_standard.cvd          | File for XML/XDP-Chunk signatures.
+/vault/whitelist_clamav.cvd                | Hồ sơ riêng cho danh sách trắng.
+/vault/whitelist_custom.cvd                | Hồ sơ riêng cho danh sách trắng.
+/vault/whitelist_mussel.cvd                | Hồ sơ riêng cho danh sách trắng.
+/vault/xmlxdp_clamav_regex.cvd             | Hồ sơ cho chữ ký XML/XDP-Chunk.
+/vault/xmlxdp_clamav_regex.map             | Hồ sơ cho chữ ký XML/XDP-Chunk.
+/vault/xmlxdp_clamav_standard.cvd          | Hồ sơ cho chữ ký XML/XDP-Chunk.
+/vault/xmlxdp_clamav_standard.map          | Hồ sơ cho chữ ký XML/XDP-Chunk.
+/vault/xmlxdp_custom_regex.cvd             | Hồ sơ cho chữ ký XML/XDP-Chunk.
+/vault/xmlxdp_custom_standard.cvd          | Hồ sơ cho chữ ký XML/XDP-Chunk.
+/vault/xmlxdp_mussel_regex.cvd             | Hồ sơ cho chữ ký XML/XDP-Chunk.
+/vault/xmlxdp_mussel_standard.cvd          | Hồ sơ cho chữ ký XML/XDP-Chunk.
 
-※ Filename may differ based on configuration stipulations (in `phpmussel.ini`).
+※ Tên tài liệu có thể thay đổi tuy theo các quy định của cấu hình (in `phpmussel.ini`).
 
 ####*REGARDING SIGNATURE FILES*
 CVD is an acronym for "ClamAV Virus Definitions", in reference both to how ClamAV refers to its own signatures and to the use of those signatures for phpMussel; Files ending with "CVD" contain signatures.
@@ -470,7 +470,7 @@ Signature files marked with "_mussel" contain signatures that specifically are n
 ---
 
 
-###6. <a name="SECTION6"></a>CONFIGURATION OPTIONS
+###6. <a name="SECTION6"></a>SỰ LỰA CHỌN CỦA CẤU HÌNH
 The following is a list of variables found in the `phpmussel.ini` configuration file of phpMussel, along with a description of their purpose and function.
 
 ####"general" (Category)
@@ -790,7 +790,7 @@ Template data relates to the HTML output used to generate the "Upload Denied" me
 ---
 
 
-###7. <a name="SECTION7"></a>SIGNATURE FORMAT
+###7. <a name="SECTION7"></a>ĐỊNH DẠNG CỦA CHỬ KÝ
 
 ####*FILENAME SIGNATURES*
 All filename signatures follow the format:
@@ -879,72 +879,72 @@ The following is a breakdown of the types of signatures used by phpMussel:
 ---
 
 
-###8. <a name="SECTION8"></a>KNOWN COMPATIBILITY PROBLEMS
+###8. <a name="SECTION8"></a>NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH
 
-####PHP and PCRE
-- phpMussel requires PHP and PCRE to execute and function correctly. Without PHP, or without the PCRE extension of PHP, phpMussel won't execute or function correctly. Should make sure your system has both PHP and PCRE installed and available prior to downloading and installing phpMussel.
+####PHP và PCRE
+- phpMussel cần PHP và PCRE để thực hiện và hoạt động. Nếu không có PHP, hoạc không có PCRE thêm của PHP, phpMussel sẽ không thực hiện và hoạt động bình thường. Bạn nên chắc chắc rằng hệ thống của bạn có PHP và PCRE cài vào và có sẵn trước khi tải và cài đặt phpMussel.
 
-####ANTI-VIRUS SOFTWARE COMPATIBILITY
+####KHẢ NĂNG TƯƠNG THÍCH PHẦN MỀM CHỐNG VIRUS
 
-For the most part, phpMussel should be fairly compatible with most other virus scanning software. However, conflictions have been reported by a number of users in the past. This information below is from VirusTotal.com, and it describes a number of false-positives reported by various anti-virus programs against phpMussel. Although this information isn't an absolute guarantee of whether or not you will encounter compatibility problems between phpMussel and your anti-virus software, if your anti-virus software is noted as flagging against phpMussel, you should either consider disabling it prior to working with phpMussel or should consider alternative options to either your anti-virus software or phpMussel.
+Cho hầu hết các phần, phpMussel sẽ tương hợp với hầu hết các phần mềm quét virus khác. Nhưng mà, có một số người sử dụng trong quá khứ đã báo cáo một số vấn đề. Thông tin dưới đây là từ VirusTotal.com, và nó miêu tả một số giả tích cực báo cáo bởi các chương trình chống virus khác nhau chống phpMussel. Mặc dù thông tin này không đảm bảo nếu bạn gặp phải vấn đề tương hợp giữa phpMussel và phần mềm chống virus của bạn, nếu phần mềm chống virus của bạn được ghi nhận là cách gắn cờ chống lại phpMussel, bạn nên tắt nó trước khi sử dụng phpMussel hoặc nên xét các lựa chọn khác cho một trong hai phần mềm chống virus của bạn hoặc phpMussel.
 
-This information was last updated 7th September 2015 and is current for all phpMussel releases of the two most recent minor versions (v0.6-v0.7a) at the time of writing this.
+Thông tin này được cập nhật lần cứơi vào ngày 7 Tháng Chín 2015 và có thể áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.6-v0.7a) vào thời gian cái này được viết.
 
-| Scanner              |  Results                             |
+| Chương trình quét    |  Kết quả                             |
 |----------------------|--------------------------------------|
-| Ad-Aware             |  No known problems                   |
-| Agnitum              |  No known problems                   |
-| AhnLab-V3            |  No known problems                   |
-| AntiVir              |  No known problems                   |
-| Antiy-AVL            |  No known problems                   |
-| Avast                |  Reports "JS:ScriptSH-inf [Trj]"     |
-| AVG                  |  No known problems                   |
-| Baidu-International  |  No known problems                   |
-| BitDefender          |  No known problems                   |
-| Bkav                 |  Reports "VEXDAD2.Webshell"          |
-| ByteHero             |  No known problems                   |
-| CAT-QuickHeal        |  No known problems                   |
-| ClamAV               |  No known problems                   |
-| CMC                  |  No known problems                   |
-| Commtouch            |  No known problems                   |
-| Comodo               |  No known problems                   |
-| DrWeb                |  No known problems                   |
-| Emsisoft             |  No known problems                   |
-| ESET-NOD32           |  No known problems                   |
-| F-Prot               |  No known problems                   |
-| F-Secure             |  No known problems                   |
-| Fortinet             |  No known problems                   |
-| GData                |  No known problems                   |
-| Ikarus               |  No known problems                   |
-| Jiangmin             |  No known problems                   |
-| K7AntiVirus          |  No known problems                   |
-| K7GW                 |  No known problems                   |
-| Kaspersky            |  No known problems                   |
-| Kingsoft             |  No known problems                   |
-| Malwarebytes         |  No known problems                   |
-| McAfee               |  Reports "New Script.c"              |
-| McAfee-GW-Edition    |  Reports "New Script.c"              |
-| Microsoft            |  No known problems                   |
-| MicroWorld-eScan     |  No known problems                   |
-| NANO-Antivirus       |  No known problems                   |
-| Norman               |  No known problems                   |
-| nProtect             |  No known problems                   |
-| Panda                |  No known problems                   |
-| Qihoo-360            |  No known problems                   |
-| Rising               |  No known problems                   |
-| Sophos               |  No known problems                   |
-| SUPERAntiSpyware     |  No known problems                   |
-| Symantec             |  No known problems                   |
-| TheHacker            |  No known problems                   |
-| TotalDefense         |  No known problems                   |
-| TrendMicro           |  No known problems                   |
-| TrendMicro-HouseCall |  No known problems                   |
-| VBA32                |  No known problems                   |
-| VIPRE                |  No known problems                   |
-| ViRobot              |  No known problems                   |
+| Ad-Aware             |  Không có vấn đề                     |
+| Agnitum              |  Không có vấn đề                     |
+| AhnLab-V3            |  Không có vấn đề                     |
+| AntiVir              |  Không có vấn đề                     |
+| Antiy-AVL            |  Không có vấn đề                     |
+| Avast                |  Báo cáo "JS:ScriptSH-inf [Trj]"     |
+| AVG                  |  Không có vấn đề                     |
+| Baidu-International  |  Không có vấn đề                     |
+| BitDefender          |  Không có vấn đề                     |
+| Bkav                 |  Báo cáo "VEXDAD2.Webshell"          |
+| ByteHero             |  Không có vấn đề                     |
+| CAT-QuickHeal        |  Không có vấn đề                     |
+| ClamAV               |  Không có vấn đề                     |
+| CMC                  |  Không có vấn đề                     |
+| Commtouch            |  Không có vấn đề                     |
+| Comodo               |  Không có vấn đề                     |
+| DrWeb                |  Không có vấn đề                     |
+| Emsisoft             |  Không có vấn đề                     |
+| ESET-NOD32           |  Không có vấn đề                     |
+| F-Prot               |  Không có vấn đề                     |
+| F-Secure             |  Không có vấn đề                     |
+| Fortinet             |  Không có vấn đề                     |
+| GData                |  Không có vấn đề                     |
+| Ikarus               |  Không có vấn đề                     |
+| Jiangmin             |  Không có vấn đề                     |
+| K7AntiVirus          |  Không có vấn đề                     |
+| K7GW                 |  Không có vấn đề                     |
+| Kaspersky            |  Không có vấn đề                     |
+| Kingsoft             |  Không có vấn đề                     |
+| Malwarebytes         |  Không có vấn đề                     |
+| McAfee               |  Báo cáo "New Script.c"              |
+| McAfee-GW-Edition    |  Báo cáo "New Script.c"              |
+| Microsoft            |  Không có vấn đề                     |
+| MicroWorld-eScan     |  Không có vấn đề                     |
+| NANO-Antivirus       |  Không có vấn đề                     |
+| Norman               |  Không có vấn đề                     |
+| nProtect             |  Không có vấn đề                     |
+| Panda                |  Không có vấn đề                     |
+| Qihoo-360            |  Không có vấn đề                     |
+| Rising               |  Không có vấn đề                     |
+| Sophos               |  Không có vấn đề                     |
+| SUPERAntiSpyware     |  Không có vấn đề                     |
+| Symantec             |  Không có vấn đề                     |
+| TheHacker            |  Không có vấn đề                     |
+| TotalDefense         |  Không có vấn đề                     |
+| TrendMicro           |  Không có vấn đề                     |
+| TrendMicro-HouseCall |  Không có vấn đề                     |
+| VBA32                |  Không có vấn đề                     |
+| VIPRE                |  Không có vấn đề                     |
+| ViRobot              |  Không có vấn đề                     |
 
 
 ---
 
 
-Last Updated: 7th September 2015 (2015.09.07).
+Lần cuối cập nhật: 7 Tháng Chín 2015 (2015.09.07).

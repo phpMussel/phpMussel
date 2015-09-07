@@ -155,9 +155,9 @@
     lugar em sua máquina local. Quando você tiver determinado que você está
     feliz com o localização escolhido para phpMussel, continuar.
 
- 2) phpMussel requer php para ser instalado na host máquina a fim de executar.
+ 2) phpMussel requer PHP para ser instalado na host máquina a fim de executar.
     Se você não ainda tno PHP instalado em sua máquina, por favor instalar o
-    PHP em sua máquina, seguindo as instruções fornecidas pelo php instalador.
+    PHP em sua máquina, seguindo as instruções fornecidas pelo PHP instalador.
 
  3) Opcionalmente (fortemente recomendado para avançados usuários, mas não
     recomendado para iniciantes ou para os inexperientes), abrir
@@ -169,9 +169,9 @@
 
  4) Opcionalmente, você pode fazer usando phpMussel no modo CLI mais fácil para
     si mesmo através da criação de um batch arquivo para carregar
-    automaticamente php e phpMussel. Para fazer isso, abra um editor de simples
+    automaticamente PHP e phpMussel. Para fazer isso, abra um editor de simples
     texto como Notepad ou Notepad++, digite o completo caminho para o "php.exe"
-    arquivo no php instalação diretório, seguido por um espaço, seguido pelo
+    arquivo no PHP instalação diretório, seguido por um espaço, seguido pelo
     completo caminho para o "phpmussel.php" arquivo no diretório da sua
     phpMussel instalação, salvar o arquivo com a extensão ".bat" Em algum lugar
     que você vai encontrá-lo facilmente, e clique duas vezes nesse arquivo para
@@ -194,11 +194,11 @@
  Análise dos arquivos carregamentos é automatizado e ativado por padrão, por
  isso nada é exigido por você por essa particular função.
 
- Porém, você também é capaz de instruir phpMussel para verificar arquivos ou
- diretórios que você especificar implicitamente. Para fazer isso, em primeiro
- lugar, você vai precisar para assegurar que apropriada configuração é definida
- no "phpmussel.ini" arquivo (cleanup deve ser desativado), e quando feito, em
- um php arquivo que está enganchado ao phpMussel, usar a seguinte função no seu
+ Porém, você também é capaz de instruir phpMussel para verificar específicos
+ arquivos e/ou diretórios. Para fazer isso, em primeiro lugar, você vai
+ precisar para assegurar que apropriada configuração é definida no
+ "phpmussel.ini" arquivo (cleanup deve ser desativado), e quando feito, em um
+ PHP arquivo que está enganchado ao phpMussel, usar a seguinte função no seu
  código:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
@@ -213,7 +213,7 @@
    mapas assinaturas arquivos e que eles podem possível estar ausente ou
    corrompido, -2 indica que corrompido dados foi detectado durante a análise,
    e portanto, a análise não foi concluída, -1 indica que extensões ou
-   complementos necessários pelo php para executar a análise estavam faltando,
+   complementos necessários pelo PHP para executar a análise estavam faltando,
    e portanto, a análise não foi concluída, 0 indica que o alvo de análise não
    existe, e portanto, havia nada para verificar, 1 indica que o alvo foi
    analisado e não problemas foram detectados, e 2 indica que o alvo foi
@@ -269,10 +269,10 @@
  assinaturas poderia revelar-se extremamente útil para alguns, especialmente
  para aqueles cuja CMS ou webfront sistema está de alguma modo enganchado em
  seu e-mail sistema e para aqueles de quem verificar seus e-mails através de um
- php script de que eles poderiam engancho para phpMussel. Configuração para
+ PHP script de que eles poderiam engancho para phpMussel. Configuração para
  esta função, como todos os outros, é controlado através do "phpmussel.ini"
  arquivo. Para utilizar esta função (você vai precisar para fazer a sua
- própria implementação) em um php arquivo que está enganchado ao phpMussel,
+ própria implementação) em um PHP arquivo que está enganchado ao phpMussel,
  usar a seguinte função no seu código:
 
  phpMussel_mail($body);
@@ -456,12 +456,11 @@
             seus assinaturas e sua cópia do phpMussel são mantidos atualizados
             (a menos, claro, você está verificando se há atualizações e
             instalá-los manualmente, que, eu ainda recomendo fazer pelo menos
-            uma vez por mês). Verificando mais de que duas vezes por mês é
-            provavelmente inútil, considerando que eu (no momento de escrever
-            este) estou trabalhando neste projeto sozinho e eu estou muito
-            improvável que seja capaz de produzir atualizações de qualquer
-            variedade com mais freqüência do que (nem eu particularmente quero
-            para a maior parte).
+            uma vez por mês). Verificando mais que duas vezes por mês é
+            provavelmente inútil, considerando que eu estou muito improvável
+            que seja capaz de produzir atualizações de qualquer variedade com
+            mais freqüência do que (nem eu particularmente quero para a maior
+            parte).
    ~
  greylist
    Senha necessária: script_password
@@ -990,12 +989,12 @@
       deletado (independentemente de se o problemático arquivo é apenas um dos
       vários arquivos contidos dentro do compactado arquivo). Para o caso de
       arquivo carregamento análise, em geral, não é necessário ativar essa
-      opção, porque normalmente, php irá automaticamente expurgar os conteúdos
+      opção, porque normalmente, PHP irá automaticamente expurgar os conteúdos
       de o seu cache quando a execução foi concluída, significando que ele vai
       normalmente deletar todos os arquivos enviados através dele para o
       servidor a menos que tenha movido, copiado ou deletado já. A opção é
       adicionado aqui como uma medida de segurança para aqueles cujas cópias de
-      php nem sempre se comportam da forma esperada.
+      PHP nem sempre se comportam da forma esperada.
       0 - Após a análise, deixe o arquivo sozinho [Padrão],
       1 - Após a análise, se não limpo, deletar imediatamente.
     "lang"
@@ -1192,7 +1191,7 @@
      arquivos serão reportado durante análise, e se fail_silently está ativado,
      perdidos e corrompidos arquivos serão ignoradas, com a análise reportando
      por estes arquivos em que não há problemas. Isso geralmente deve ser
-     deixado sozinho a menos que você está experimentando php falhas ou
+     deixado sozinho a menos que você está experimentando PHP falhas ou
      semelhantes problemas. 0 = Desativado, 1 = Ativado [Padrão].
    "fail_extensions_silently"
    - Deve phpMussel reportar quando extensões não estão disponíveis? Se
@@ -1227,7 +1226,7 @@
      carregamentos análise antes de abortar a análise e informando ao usuário
      eles estão carregando demais muito de uma vez! Oferece proteção contra um
      teórico ataque pelo qual um atacante tenta DDoS o seu sistema ou CMS por
-     meio de sobrecarregando phpMussel a fim de retardar o php processo para
+     meio de sobrecarregando phpMussel a fim de retardar o PHP processo para
      uma parada. Recomendado: 10. Você pode querer aumentar ou diminuir esse
      número, dependendo das atributos do seu hardware. Note-se que este número
      não lev. Em conta ou incluir o conteúdos dos compactados arquivos.
@@ -1291,7 +1290,7 @@
  - Configuração por específicas ataque detecções (não baseado em CVDs).
    * Chameleon ataque detecções: 0 = Ativo, 1 = Inativo.
    "chameleon_from_php"
-   - Olha por php heade. Em arquivos que são não php arquivos nem
+   - Olha por PHP heade. Em arquivos que são não PHP arquivos nem
      reconhecidos compactados arquivos.
    "chameleon_from_exe"
    - Olha por executável headers em arquivos que são não executáveis nem
@@ -1363,7 +1362,7 @@
      médio arquivo tamanho de carregamentos que você quer e espera para receber
      no seu servidor ou website, não deve ser mais que o filesize_limit
      directivo, e não deve ser menor que aproximadamente um quinto do total
-     permissível memória alocação concedido para php através do php.ini
+     permissível memória alocação concedido para PHP através do php.ini
      configuração arquivo. Esta directiva existe para tentar impedir phpMussel
      de usando demais memória (que seria impedir-lo de ser capaz de analisando
      arquivos acima de um certo tamanho com sucesso).
@@ -1724,8 +1723,8 @@
  trabalhar com phpMussel ou deve considerar alternativas opções para o seu
  anti-vírus software ou phpMussel.
 
- Esta informação foi atualizada dia 28 Maio 2015 e é corrente para todas
- phpMussel lançamentos das duas mais recentes menores versões (v0.5-v0.6i) no
+ Esta informação foi atualizada dia 7 Setembro 2015 e é corrente para todas
+ phpMussel lançamentos das duas mais recentes menores versões (v0.6-v0.7a) no
  momento de escrever este.
 
  Ad-Aware                Não apresentou problemas
@@ -1770,7 +1769,7 @@
  Rising                  Não apresentou problemas
  Sophos                  Não apresentou problemas
  SUPERAntiSpyware        Não apresentou problemas
- Symantec             !  Reportar "WS.Reputation.1"
+ Symantec                Não apresentou problemas
  TheHacker               Não apresentou problemas
  TotalDefense            Não apresentou problemas
  TrendMicro              Não apresentou problemas
@@ -1782,5 +1781,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 24 Agosto 2015 (2015.08.24).
+Última Atualização: 7 Setembro 2015 (2015.09.07).
 EOF

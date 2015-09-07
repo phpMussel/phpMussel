@@ -76,11 +76,11 @@ Ik hoop te stroomlijnen dit proces door maken een installateur op een bepaald pu
 
 1) Omdat u zijn lezen dit, ik ben ervan uit u al gedownload een gearchiveerde kopie van het script, uitgepakt zijn inhoud en heeft het ergens op uw lokale computer. Wanneer u heeft beslist dat u bent tevreden met de gekozen phpMussel locatie, voortzetten.
 
-2) phpMussel vereist van php moet worden geïnstalleerd op de host machine om uit te werken correct. Als u niet heeft php geïnstalleerd op uw machine, installeer php op uw machine, volgende instructies door de php installateur geleverd.
+2) phpMussel vereist van PHP moet worden geïnstalleerd op de host machine om uit te werken correct. Als u niet heeft PHP geïnstalleerd op uw machine, installeer PHP op uw machine, volgende instructies door de PHP installateur geleverd.
 
 3) Facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te raden voor beginners of voor de onervaren), open `phpmussel.ini` (gelegen binnen `vault`) - Dit bestand bevat alle beschikbare phpMussel configuratie opties. Boven elke optie moet een korte opmerking te beschrijven wat het doet en wat het voor. Wijzigen deze opties volgens welke geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
-4) Facultatief, u kunt om phpMussel in CLI-modus te maken makkelijker voor uzelf door het creëren van een batch-bestand te automatisch laden php en phpMussel. Om dit te doen, open een platte tekst editor zoals Notepad of Notepad++, typt u het volledige pad naar de `php.exe` bestand in de bestandsmap van uw php-installatie, gevolgd door een spatie, gevolgd door het volledige pad naar de `phpmussel.php` bestand in de bestandsmap van uw phpMussel installatie, Sla het bestand op met een ".bat" extensie ergens dat u het gemakkelijk vinden, en dubbelklik op het bestand om phpMussel te opereren in de toekomst.
+4) Facultatief, u kunt om phpMussel in CLI-modus te maken makkelijker voor uzelf door het creëren van een batch-bestand te automatisch laden PHP en phpMussel. Om dit te doen, open een platte tekst editor zoals Notepad of Notepad++, typt u het volledige pad naar de `php.exe` bestand in de bestandsmap van uw php-installatie, gevolgd door een spatie, gevolgd door het volledige pad naar de `phpmussel.php` bestand in de bestandsmap van uw phpMussel installatie, Sla het bestand op met een ".bat" extensie ergens dat u het gemakkelijk vinden, en dubbelklik op het bestand om phpMussel te opereren in de toekomst.
 
 5) Op dit punt, u bent klaar! Echter, u moet waarschijnlijk test het uit om ervoor te zorgen dat het werken correct. Om phpMussel testen, draaien phpMussel en probeer het scannen van de `_testfiles` bestandsmap die bij het pakket.
 
@@ -93,12 +93,12 @@ phpMussel is bedoeld te zijn een script dat zal adequaat functioneren direct uit
 
 Het scannen van het bestanden uploaden is geautomatiseerd en ingeschakeld door standaard, zo niets is vereist op namens u voor deze specifieke functie.
 
-Echter, u bent ook in staat om te instrueren phpMussel om te scannen naar bestanden, bestandsmappen of archieven dat u impliciet aangeven. Om dit te doen, ten eerste, moet u ervoor zorgen dat de juiste configuratie is ingesteld in het `phpmussel.ini` configuratiebestand (cleanup moet worden uitgeschakeld), en als u klaar bent, in een php-bestand dat wordt gehaakt op phpMussel, gebruik de volgende functie in uw code:
+Echter, u bent ook in staat om te instrueren phpMussel om te scannen specifiek bestanden, bestandsmappen en/of archieven. Om dit te doen, ten eerste, moet u ervoor zorgen dat de juiste configuratie is ingesteld in het `phpmussel.ini` configuratiebestand (`cleanup` moet worden uitgeschakeld), en als u klaar bent, in een php-bestand dat wordt gehaakt op phpMussel, gebruik de volgende functie in uw code:
 
 `phpMussel($what_to_scan,$output_type,$output_flatness);`
 
 - `$what_to_scan` kunt worden een tekenreeks, een array, of een array van arrays, en vermelding welk bestand, bestanden, bestandsmap en/of bestandsmappen om scannen.
-- `$output_type` is een boolean, met vermelding van het formaat voor de scanresultaten te worden geretourneerd als. False instrueert de functie om de resultaten als een integer retourneer (een geretourneerd resultaat van -3 betekent problemen werden aangetroffen met de phpMussel handtekeningen bestanden of handtekening kaart bestanden en dat zij mogelijk worden beschadigd of ontbreekt, -2 betekent dat beschadigd gegevens tijdens de scan werd ontdekt en dus de scan niet voltooid, -1 betekent dat uitbreidingen of addons vereist door php om de scan te voeren werd ontbraken zijn en dus de scan niet voltooid, 0 betekent dat het scandoel bestaat niet en dus was er niets te scannen, 1 betekent dat het doel met succes werden gescand en geen problemen gedetecteerd, en 2 betekent dat het doel met succes werd gescand en problemen werden gedetecteerd). True instrueert de functie om de resultaten als leesbare tekst retourneer. Bovendien, in elk geval, de resultaten kunnen worden geraadpleegd via globale variabelen na het scannen is voltooid. Deze variabele is optioneel, voorgedefinieerd als false.
+- `$output_type` is een boolean, met vermelding van het formaat voor de scanresultaten te worden geretourneerd als. False instrueert de functie om de resultaten als een integer retourneer (een geretourneerd resultaat van -3 betekent problemen werden aangetroffen met de phpMussel handtekeningen bestanden of handtekening kaart bestanden en dat zij mogelijk worden beschadigd of ontbreekt, -2 betekent dat beschadigd gegevens tijdens de scan werd ontdekt en dus de scan niet voltooid, -1 betekent dat uitbreidingen of addons vereist door PHP om de scan te voeren werd ontbraken zijn en dus de scan niet voltooid, 0 betekent dat het scandoel bestaat niet en dus was er niets te scannen, 1 betekent dat het doel met succes werden gescand en geen problemen gedetecteerd, en 2 betekent dat het doel met succes werd gescand en problemen werden gedetecteerd). True instrueert de functie om de resultaten als leesbare tekst retourneer. Bovendien, in elk geval, de resultaten kunnen worden geraadpleegd via globale variabelen na het scannen is voltooid. Deze variabele is optioneel, voorgedefinieerd als false.
 - `$output_flatness` is een boolean, vermelding van de functie of de resultaten van de scan retourneren (wanneer er meerdere scandoelen) als een array of een tekenreeks. False zullen de resultaten als een array retourneer. True zullen de resultaten als een tekenreeks retourneer. Deze variabele is optioneel, voorgedefinieerd als false.
 
 Voorbeeld:
@@ -213,7 +213,7 @@ update
 - Andere vereisten: (geen)
 - Optionele parameters: (geen)
 - Voorbeeld: `?pword=[script_password]&phpmussel=update`
-- Wat het doet: Controleert of er updates voor phpMussel en handtekeningen. Als update-controleert slagen en updates worden gevonden, zal proberen om deze updates te downloaden en te installeren. Als update-controleert mislukt, update zal aborteren. De resultaten van het hele proces worden afgedrukt naar het scherm. Ik raad ten minste eenmaal per maand te controleren om ervoor te zorgen dat uw handtekeningen en uw kopie van phpMussel zijn huidige (tenzij, natuurlijk, u controleren op updates en installeren handmatig, dat, ik zou nog steeds aanbevelen dat te doen ten minste eenmaal per maand). Controleren meer dan tweemaal per maand is waarschijnlijk zinloos, aangezien dat ik ben (op het moment van schrijven dit) werken aan dit project door mijzelf en Ik ben zeer onwaarschijnlijk te produceren updates van welke aard meer vaker dan dat (noch heb ik in het bijzonder wil voor het grootste gedeelte).
+- Wat het doet: Controleert of er updates voor phpMussel en handtekeningen. Als update-controleert slagen en updates worden gevonden, zal proberen om deze updates te downloaden en te installeren. Als update-controleert mislukt, update zal aborteren. De resultaten van het hele proces worden afgedrukt naar het scherm. Ik raad ten minste eenmaal per maand te controleren om ervoor te zorgen dat uw handtekeningen en uw kopie van phpMussel zijn huidige (tenzij, natuurlijk, u controleren op updates en installeren handmatig, dat, ik zou nog steeds aanbevelen dat te doen ten minste eenmaal per maand). Controleren meer dan tweemaal per maand is waarschijnlijk zinloos, aangezien dat ik ben zeer onwaarschijnlijk te produceren updates van welke aard meer vaker dan dat (noch heb ik in het bijzonder wil voor het grootste gedeelte).
 
 greylist
 - Wachtwoord vereist: script_password
@@ -501,7 +501,7 @@ Algemene configuratie voor phpMussel.
 - Mocht phpMussel sturen 403 headers met het bestanden upload geblokkeerd bericht, of houd de gebruikelijke 200 OK? 0 = Nee (200) [Standaard], 1 = Ja (403).
 
 "delete_on_sight"
-- Het inschakelen van dit richtlijn zal instrueren het script om elke gescande geprobeerd bestand upload dat gecontroleerd tegen elke detectie criteria te proberen onmiddellijk verwijderen, via handtekeningen of anderszins. Bestanden vastbesloten te zijn schoon zal niet worden aangeraakt. In het geval van archieven, het hele archief wordt verwijderd, ongeacht of niet het overtredende bestand is slechts één van meerdere bestanden vervat in het archief. Voor het geval van bestand upload scannen, doorgaans, het is niet nodig om dit richtlijn te inschakelen, omdat doorgaans, php zal automatisch zuiveren de inhoud van zijn cache wanneer de uitvoering is voltooid, wat betekent dat het doorgans zal verwijdert ieder bestanden geüpload doorheen aan de server tenzij ze zijn verhuisd, gekopieerd of verwijderd alreeds. Dit richtlijn is toegevoegd hier als een extra maatregel van veiligheid voor degenen wier kopies van php misschien niet altijd gedragen op de manier verwacht. 0 - Na het scannen, met rust laten het bestand [Standaard], 1 - Na het scannen, als niet schoon, onmiddellijk verwijderen.
+- Het inschakelen van dit richtlijn zal instrueren het script om elke gescande geprobeerd bestand upload dat gecontroleerd tegen elke detectie criteria te proberen onmiddellijk verwijderen, via handtekeningen of anderszins. Bestanden vastbesloten te zijn schoon zal niet worden aangeraakt. In het geval van archieven, het hele archief wordt verwijderd, ongeacht of niet het overtredende bestand is slechts één van meerdere bestanden vervat in het archief. Voor het geval van bestand upload scannen, doorgaans, het is niet nodig om dit richtlijn te inschakelen, omdat doorgaans, PHP zal automatisch zuiveren de inhoud van zijn cache wanneer de uitvoering is voltooid, wat betekent dat het doorgans zal verwijdert ieder bestanden geüpload doorheen aan de server tenzij ze zijn verhuisd, gekopieerd of verwijderd alreeds. Dit richtlijn is toegevoegd hier als een extra maatregel van veiligheid voor degenen wier kopies van PHP misschien niet altijd gedragen op de manier verwacht. 0 - Na het scannen, met rust laten het bestand [Standaard], 1 - Na het scannen, als niet schoon, onmiddellijk verwijderen.
 
 "lang"
 - Geef de standaardtaal voor phpMussel.
@@ -630,7 +630,7 @@ Controleer tegen Shockwave handtekeningen wanneer scannen? 0 = Nee, 1 = Ja [Stan
 - "swf_custom"
 - "swf_mussel"
 
-Handtekening controleren lengte beperken opties. Alleen veranderen deze als u weet wat je doet. SD = Standaard handtekeningen. RX = PCRE (Perl Compatibele Reguliere Expressies, of "Regex") handtekeningen. FN = Bestandsnaam handtekeningen. Als u noteren dat php mislukt wanneer phpMussel probeert te scannen, probeer verlagen deze "max" waarden. Als mogelijk en gemakkelijk, laat me weten wanneer dit gebeurt en de resultaten van wat u probeert.
+Handtekening controleren lengte beperken opties. Alleen veranderen deze als u weet wat je doet. SD = Standaard handtekeningen. RX = PCRE (Perl Compatibele Reguliere Expressies, of "Regex") handtekeningen. FN = Bestandsnaam handtekeningen. Als u noteren dat PHP mislukt wanneer phpMussel probeert te scannen, probeer verlagen deze "max" waarden. Als mogelijk en gemakkelijk, laat me weten wanneer dit gebeurt en de resultaten van wat u probeert.
 - "fn_siglen_min"
 - "fn_siglen_max"
 - "rx_siglen_min"
@@ -666,10 +666,10 @@ Handtekening controleren lengte beperken opties. Alleen veranderen deze als u we
 Bestand hanteren configuratie.
 
 "max_uploads"
-- Maximaal toegestane aantal bestanden te scannen tijdens bestandsupload scan voordat aborteren de scan en informeren de gebruiker ze zijn uploaden van te veel in een keer! Biedt bescherming tegen een theoretische aanval waardoor een aanvaller probeert te DDoS uw systeem of CMS door overbelasting phpMussel te vertragen het php proces tot stilstand. Aanbevolen: 10. U zou kunnen wil te verhogen of verlagen dit nummer afhankelijk van de snelheid van uw hardware. Noteren dat dit aantal niet verklaren voor of opnemen de inhoud van de archieven.
+- Maximaal toegestane aantal bestanden te scannen tijdens bestandsupload scan voordat aborteren de scan en informeren de gebruiker ze zijn uploaden van te veel in een keer! Biedt bescherming tegen een theoretische aanval waardoor een aanvaller probeert te DDoS uw systeem of CMS door overbelasting phpMussel te vertragen het PHP proces tot stilstand. Aanbevolen: 10. U zou kunnen wil te verhogen of verlagen dit nummer afhankelijk van de snelheid van uw hardware. Noteren dat dit aantal niet verklaren voor of opnemen de inhoud van de archieven.
 
 "filesize_limit"
-- Bestandsgrootte limiet in KB. 65536 = 64MB [Standaard], 0 = Geen limiet (altijd op de greylist), ieder (positief) numerieke waarde aanvaard. Dit kunt handig zijn als uw php configuratie beperkt de hoeveelheid van geheugen een proces kunt houden of als u php configuratie beperkt de bestandsgrootte van uploads.
+- Bestandsgrootte limiet in KB. 65536 = 64MB [Standaard], 0 = Geen limiet (altijd op de greylist), ieder (positief) numerieke waarde aanvaard. Dit kunt handig zijn als uw PHP configuratie beperkt de hoeveelheid van geheugen een proces kunt houden of als u PHP configuratie beperkt de bestandsgrootte van uploads.
 
 "filesize_response"
 - Wat te doen met bestanden dat overschrijden de bestandsgrootte limiet (als aanwezig). 0 - Whitelist, 1 - Blacklist [Standaard].
@@ -705,10 +705,10 @@ Aanval-specifieke richtlijnen.
 Chameleon aanval detectie: 0 = Uitgeschakeld, 1 = Ingeschakeld.
 
 "chameleon_from_php"
-- Zoeken naar php header in bestanden die niet zijn PHP-bestanden noch herkende archieven.
+- Zoeken naar PHP header in bestanden die niet zijn PHP-bestanden noch herkende archieven.
 
 "chameleon_from_exe"
-- Zoeken naar php header in bestanden die niet zijn executables noch herkende archieven en naar executables waarvan de headers zijn onjuist.
+- Zoeken naar PHP header in bestanden die niet zijn executables noch herkende archieven en naar executables waarvan de headers zijn onjuist.
 
 "chameleon_to_archive"
 - Zoeken naar archieven waarvan headers zijn onjuist (Ondersteunde: BZ, GZ, RAR, ZIP, RAR, GZ).
@@ -738,7 +738,7 @@ Chameleon aanval detectie: 0 = Uitgeschakeld, 1 = Ingeschakeld.
 - Optionele limiet of drempelwaarde de lengte van onverwerkte gegevens waarbinnen decoderen commando's moeten worden gedetecteerd (in het geval er enige merkbare prestatieproblemen terwijl scannen). Waarde is een integer vertegenwoordigen bestandsgrootte in KB. Standaard = 512 (512KB). Zero of nulwaarde zal uitschakelen het drempelwaarde (het verwijderen van een dergelijke limiet gebaseerd op bestandsgrootte).
 
 "scannable_threshold"
-- Optionele limiet of drempelwaarde de lengte van onverwerkte gegevens dat phpMussel is toegestaan te lezen en scan (in het geval er enige merkbare prestatieproblemen terwijl scannen). Waarde is een integer vertegenwoordigen bestandsgrootte in KB. Standaard = 32768 (32MB). Zero of nulwaarde zal uitschakelen het drempelwaarde. Algemeen, dit waarde moeten niet zijn lagere dan de gemiddelde bestandsgrootte van het bestandsuploads dat u wilt en verwacht te ontvangen aan uw server of website, moeten niet zijn meer dan de filesize_limit richtlijn, en moeten niet zijn meet dan ongeveer een vijfde van de totale toegestane geheugentoewijzing toegekend aan php via de php.ini configuratiebestand. Dit richtlijn bestaat te proberen om phpMussel te verhinderen van het gebruik van teveel geheugen (dat zou verhinderen het van de mogelijkheid te scannen bestanden met succes boven een bepaalde bestandsgrootte).
+- Optionele limiet of drempelwaarde de lengte van onverwerkte gegevens dat phpMussel is toegestaan te lezen en scan (in het geval er enige merkbare prestatieproblemen terwijl scannen). Waarde is een integer vertegenwoordigen bestandsgrootte in KB. Standaard = 32768 (32MB). Zero of nulwaarde zal uitschakelen het drempelwaarde. Algemeen, dit waarde moeten niet zijn lagere dan de gemiddelde bestandsgrootte van het bestandsuploads dat u wilt en verwacht te ontvangen aan uw server of website, moeten niet zijn meer dan de filesize_limit richtlijn, en moeten niet zijn meet dan ongeveer een vijfde van de totale toegestane geheugentoewijzing toegekend aan PHP via de php.ini configuratiebestand. Dit richtlijn bestaat te proberen om phpMussel te verhinderen van het gebruik van teveel geheugen (dat zou verhinderen het van de mogelijkheid te scannen bestanden met succes boven een bepaalde bestandsgrootte).
 
 ####"compatibility" (Categorie)
 Compatibiliteit richtlijnen voor phpMussel.
@@ -888,7 +888,7 @@ Het volgende is een overzicht van de soorten handtekeningen gebruikt door phpMus
 
 Voor het grootste deel, phpMussel is algemeen compatibel met de meeste andere anti-virus software. Echter, conflictions geweest beschreven door een aantal gebruikers in het verleden. Deze informatie hieronder is afkomstig van VirusTotal.com, het beschrijven van een aantal fout-positieven gemeld door anti-virus programma's tegen phpMussel. Hoewel deze informatie is geen absolute garantie van wel of niet u zult compatibiliteitsproblemen ondervindt tussen phpMussel en uw anti-virus software, als uw anti-virus software wordt gemarkeerd tegen phpMussel, moet u ofwel overwegen uit te schakelen voorafgaand aan het werken met phpMussel of moeten overwegen alternatieve opties om ofwel uw anti-virus software of phpMussel.
 
-Deze informatie is voor het laatst bijgewerkt 28 Mei 2015 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v0.5-v0.6i) op het moment van schrijven dit.
+Dit informatie werd laatst bijgewerkt 7 September 2015 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v0.6-v0.7a) op het moment van schrijven dit.
 
 | Scanner              |  Resultaten                          |
 |----------------------|--------------------------------------|
@@ -934,7 +934,7 @@ Deze informatie is voor het laatst bijgewerkt 28 Mei 2015 en is op de hoogte voo
 | Rising               |  Geen bekend problemen               |
 | Sophos               |  Geen bekend problemen               |
 | SUPERAntiSpyware     |  Geen bekend problemen               |
-| Symantec             |  Berichten "WS.Reputation.1"         |
+| Symantec             |  Geen bekend problemen               |
 | TheHacker            |  Geen bekend problemen               |
 | TotalDefense         |  Geen bekend problemen               |
 | TrendMicro           |  Geen bekend problemen               |
@@ -947,4 +947,4 @@ Deze informatie is voor het laatst bijgewerkt 28 Mei 2015 en is op de hoogte voo
 ---
 
 
-Laatste Bijgewerkt: 24 Augustus 2015 (2015.08.24).
+Laatste Bijgewerkt: 7 September 2015 (2015.09.07).

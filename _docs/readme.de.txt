@@ -190,11 +190,11 @@
  Das Scannen von Dateiuploads ist automatisiert und standardmäßig
  eingeschaltet, Sie müssen nichts weiter unternehmen.
 
- Sie sind jedoch auch in der Lage, phpMussel anzuweisen, nach Dateien,
- Ordnern oder Archiven zu scannen, die Sie implizit angeben. Um dies
- auszuführen, stellen Sie sicher, dass diese Konfiguration in der
- "phpmussel.ini" festgelegt ist (Cleanup muß deaktiviert sein). Erstellen Sie
- eine mit phpMussel eingebundene PHP-Datei mit folgender Funktion:
+ Sie sind jedoch auch in der Lage, phpMussel anzuweisen, spezifische Dateien,
+ Ordnern und/oder Archiven zu scannen. Um dies auszuführen, stellen Sie sicher,
+ dass diese Konfiguration in der "phpmussel.ini" festgelegt ist (cleanup muß
+ deaktiviert sein). Erstellen Sie eine mit phpMussel eingebundene PHP-Datei mit
+ folgender Funktion:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
@@ -1694,9 +1694,9 @@
  entweder vor der Benutzung von phpMussel deaktivieren oder sich andere
  Alternativen überlegen.
 
- Diese Informationen wurden zuletzt am 2015.05.28 aktualisiert und gelten für
+ Diese Informationen wurden zuletzt am 2015.07.09 aktualisiert und gelten für
  alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen
- (v0.5-v0.6i) zu diesem Zeitpunkt.
+ (v0.6-v0.7a) zu diesem Zeitpunkt.
 
  Ad-Aware                Keine bekannten Probleme
  Agnitum                 Keine bekannten Probleme
@@ -1740,7 +1740,7 @@
  Rising                  Keine bekannten Probleme
  Sophos                  Keine bekannten Probleme
  SUPERAntiSpyware        Keine bekannten Probleme
- Symantec             !  Meldet "WS.Reputation.1"
+ Symantec                Keine bekannten Probleme
  TheHacker               Keine bekannten Probleme
  TotalDefense            Keine bekannten Probleme
  TrendMicro              Keine bekannten Probleme
@@ -1752,5 +1752,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 24. August 2015 (2015.08.24).
+Zuletzt aktualisiert: 7. September 2015 (2015.09.07).
 EOF

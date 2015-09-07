@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Chinese (Simplified) / 中文（简体） Language Data (28th August 2015).
+ This File: phpMussel Chinese (Simplified) / 中文（简体） Language Data (3rd September 2015).
  <%phpMussel%/vault/lang/lang.zh.inc>
 
 */
@@ -25,8 +25,8 @@ $MusselConfig['lang']['bad_command']='我不明白的命令，对不起。';
 $MusselConfig['lang']['cli_commands']=" q\n - 戒烟CLI模式。\n - 别名：quit，exit。\n md5_file\n - 生成MD5签名从文件[语法：md5_file 文件名]。\n - 别名：m.\n md5\n - 生成MD5签名从数据[语法：md5 数据]。\n hex_encode\n - 兑换从二进制数据至十六进制[语法：hex_encode 数据]。\n - 别名：x.\n hex_decode\n - 兑换从十六进制二进制数据至[语法：hex_decode 数据]。\n base64_encode\n - 兑换从二进制数据至基地64数据[语法：base64_encode 数据]。\n - 别名：b.\n base64_decode\n - 兑换从基地64数据至二进制数据[语法：base64_decode 数据]。\n scan\n - 扫描文件或文件夹[语法：scan 文件名]。\n - 别名：s。\n update\n - 更新phpMussel。\n - 别名：u。\n c\n - 打印此命令列表。\n";
 $MusselConfig['lang']['cli_failed_to_complete']='完成扫描过程失败';
 $MusselConfig['lang']['cli_is_not_a']='不是文件或文件夹。';
-$MusselConfig['lang']['cli_ln2']="谢谢对于使用phpMussel，PHP编程旨在检测木马，病毒，恶意软件，和其他威胁内的文件上传到你的系统随地编程是连接，根据ClamAV的签名和其他签名。\n\n PHPMUSSEL版权2013和此后GNU/GPLv.2通过Caleb M （Maikuolan）。\n\n                                     ~ ~ ~\n\n";
-$MusselConfig['lang']['cli_ln3']=" 目前经营phpMussel在CLI模式（命令行界面）。\n\n 扫描一个文件或文件夹，键入“scan”，其次是名的文件或文件夹你想phpMussel扫描然后按Enter键；\n 键入“c”然后按Enter键对于CLI模式命令名单；键入“q”然后按Enter键对于戒烟：";
+$MusselConfig['lang']['cli_ln2']="谢谢对于使用phpMussel，PHP编程旨在检测木马，病毒，恶意软件，和其他威胁内的文件上传到您的系统随地编程是连接，根据ClamAV的签名和其他签名。\n\n PHPMUSSEL版权2013和此后GNU/GPLv.2通过Caleb M （Maikuolan）。\n\n                                     ~ ~ ~\n\n";
+$MusselConfig['lang']['cli_ln3']=" 目前经营phpMussel在CLI模式（命令行界面）。\n\n 扫描一个文件或文件夹，键入“scan”，其次是名的文件或文件夹您想phpMussel扫描然后按Enter键；\n 键入“c”然后按Enter键对于CLI模式命令名单；键入“q”然后按Enter键对于戒烟：";
 $MusselConfig['lang']['cli_pe1']='不是PE文件！';
 $MusselConfig['lang']['cli_pe2']='PE部分:';
 $MusselConfig['lang']['cli_update_restart']=' 重新启动phpMussel可能是需要之前的更新变得明显。';
@@ -35,8 +35,8 @@ $MusselConfig['lang']['controls_lockout']='phpMussel控制闭锁是启用。';
 $MusselConfig['lang']['core_scriptfile_missing']='核心文件是丢失！请重新安装phpMussel。';
 $MusselConfig['lang']['corrupted']='检测损坏PE';
 $MusselConfig['lang']['denied']='上传是否认！';
-$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
-$MusselConfig['lang']['denied_reason']='你的上传被拒绝由于这些原因 / Your upload was blocked for the reasons listed below:';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
+$MusselConfig['lang']['denied_reason']='您的上传被拒绝由于这些原因 / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='检测{vn}';
 $MusselConfig['lang']['detected_control_characters']='检测控制字符';
 $MusselConfig['lang']['encrypted_archive']='检测加密档案文件; 加密档案文件不允许';
@@ -50,7 +50,7 @@ $MusselConfig['lang']['greylist_cleared']=' 灰名单是清空。';
 $MusselConfig['lang']['greylist_not_updated']=' 灰名单是不更新。';
 $MusselConfig['lang']['greylist_updated']=' 灰名单是更新。';
 $MusselConfig['lang']['image']='图像';
-$MusselConfig['lang']['instance_already_active']='程序已经激活！请仔细检查你的钩。';
+$MusselConfig['lang']['instance_already_active']='程序已经激活！请仔细检查您的钩。';
 $MusselConfig['lang']['invalid_file']='无效文件';
 $MusselConfig['lang']['ok']='好';
 $MusselConfig['lang']['only_allow_images']='上传文件以外图片不允许';
@@ -73,7 +73,7 @@ $MusselConfig['lang']['scan_map_corrupted']='签名地图是损坏';
 $MusselConfig['lang']['scan_map_missing']='签名地图是失踪';
 $MusselConfig['lang']['scan_missing_filename']='文件名是失踪';
 $MusselConfig['lang']['scan_not_archive']='失败（空或不是存档）！';
-$MusselConfig['lang']['scan_no_problems_found']='没有问题是发现。';
+$MusselConfig['lang']['scan_no_problems_found']='没有问题发现。';
 $MusselConfig['lang']['scan_reading']='阅读';
 $MusselConfig['lang']['scan_signature_file_corrupted']='签名文件是损坏';
 $MusselConfig['lang']['scan_signature_file_missing']='签名文件是失踪';

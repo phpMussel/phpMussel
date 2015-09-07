@@ -21,7 +21,7 @@
 
  1. SEPATAH KATA
 
- Terima kasih untuk menggunakan phpMussel, sebuah skrip php di-design untuk
+ Terima kasih untuk menggunakan phpMussel, sebuah skrip PHP di-design untuk
  mendeteksi trojan-trojan, virus-virus dan serangan-serangan lainnya dalam
  file-file diupload ke sistem Anda dimana saja skrip di kaitkan, berdasarkan
  tanda tangan dari ClamAV dan lain-lain.
@@ -156,8 +156,8 @@
     dan menguraikan isi nya pada mesin komputer lokal Anda. Setelah Anda telah
     memilih lokasi dari phpMussel, lanjutkan.
 
- 2) phpMussel memerlukan php untuk diinstall pada mesin host untuk
-    mengeksekusinya. Jika Anda tidak memiliki php pada mesin Anda, ikuti
+ 2) phpMussel memerlukan PHP untuk diinstall pada mesin host untuk
+    mengeksekusinya. Jika Anda tidak memiliki PHP pada mesin Anda, ikuti
     instruksi yang di supply oleh installer php.
 
  3) Secara fakultatif (sangat direkomendasikan untuk user dengan pengalaman
@@ -170,9 +170,9 @@
 
  4) Secara fakultatif, Anda dapat menggunakan phpMussel di dalam mode CLI untuk
     diri Anda sendiri dengan menciptakan file batch untuk secara automatis
-    memuat php dan phpMussel. Untuk melakukannya, buka sebuah text editor
+    memuat PHP dan phpMussel. Untuk melakukannya, buka sebuah text editor
     kosong seperti Notepad atau Notepad++, ketikkan jalur dari data "php.exe"
-    di dalam direktori dari instalasi php Anda, diikuti spasi, diikuti dengan
+    di dalam direktori dari instalasi PHP Anda, diikuti spasi, diikuti dengan
     jalur lengkap dari data "phpmussel.php" di dalam direktori dari instalasi
     phpMussel, simpan data dengan ekstensi ".bat" di simpan di tempat yang Anda
     mudah temukan dan klik dua kali pada data itu untuk menjalankan phpMussel
@@ -195,12 +195,11 @@
  Memindai upload data secara automatis dan di mungkinkan secara default, jadi
  tidak ada yang diharuskan pada Anda untuk fungsi ini.
 
- Bagaimanapun Anda juga bisa menginstruksikan phpMussel untuk memindai data,
- direktori atau arsip yang Anda spesifikasikan. Untuk melakukannya,
- pertama-tama Anda harus memastikan konfigurasi yang cocok di set di data
- "phpmussel.ini" (cleanup harus dinon aktifkan) dan ketika selesai, di sebuah
- data php yang di hubungkan ke phpMussel, gunakan fungsi berikut pada kode
- Anda:
+ Bagaimanapun, Anda juga bisa menginstruksikan phpMussel untuk memindai file,
+ direktori dan/atau arsip spesifik. Untuk melakukannya, pertama-tama Anda harus
+ memastikan konfigurasi yang cocok di set di data `phpmussel.ini` (cleanup
+ harus dinon aktifkan) dan ketika selesai, di sebuah data PHP yang di hubungkan
+ ke phpMussel, gunakan fungsi berikut pada kode Anda:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
@@ -215,7 +214,7 @@
    memetakan tanda tangan dan mereka mungkin hilang atau rusak, -2
    mengindikasikan bahwa data korup terdeteksi selama proses memindai dan
    proses memindai gagal selesai, -1 mengindikasikan bawa ekstensi atau addon
-   yang dibutuhkan oleh php untuk mengeksekusi pemindaian hilang dan demikian
+   yang dibutuhkan oleh PHP untuk mengeksekusi pemindaian hilang dan demikian
    gagal selesai, 0 mengindikasikan bahwa pemindaian target tidak ada dan tidak
    ada yang dipindai 1 mengindikasikan bahwa target sukses dipindai dan tidak
    ada masalah terdeteksi, dan 2 mengindikasikan target sukses di scan namun
@@ -269,11 +268,11 @@
  sebuah fungsi terpisa untuk mencocokkan dengan tanda tangan ini dapat
  membuktikan sangat berguna untuk beberapa, khususnya untuk CMS atau sistem
  webfront yang diikatkan ke sistem email dan untuk ke mereka yang memparsing
- email mereka melalui skrip php dari mana mereka dapat dengan potensial
+ email mereka melalui skrip PHP dari mana mereka dapat dengan potensial
  dikaitkan dengan phpMussel. Konfigurasi untuk fungsi ini, seperti yang lain,
  di atur melalui data "phpmussel.ini". Untuk menggunakan fungsi ini (Anda akan
  memerlukan untuk melakukan implementasi Anda sendiri), di dalam sebuah data
- php yang di kaitkan ke phpMussel, gunakan fungsi ini di dalam kode:
+ PHP yang di kaitkan ke phpMussel, gunakan fungsi ini di dalam kode:
 
  phpMussel_mail($body);
 
@@ -467,10 +466,9 @@
                           manual, yang, saya masih merekomendasikan
                           melakukannya setidaknya satu per bulan). Mencek lebih
                           dari 2 per bulan kemungkinan tidak bertujuan,
-                          mengingat saya (saat menulis ini) bekerja pada proyek
-                          ini sendiri dan saya sangat tidak bisa memproduksi
-                          update lebih sering dari itu (Walaupun saya khususnya
-                          ingin melakukannya).
+                          mengingat bahwa saya mungkin tidak sangat bisa
+                          memproduksi update lebih sering dari itu (walaupun
+                          saya khususnya ingin melakukannya).
    ~
  greylist
    Sandi diharuskan: script_password
@@ -1001,11 +999,11 @@
       file terkompress seluruh file terkompress akan didelate (kecuali data
       yang menyerang adalah satu-satunya dari beberapa file yang menjadi isi
       file terkompress). Untuk kasus pemindaian upload data biasanya, tidak
-      cocok untuk mengaktifkan opsi ini, karena biasanya php akan secara
+      cocok untuk mengaktifkan opsi ini, karena biasanya PHP akan secara
       otomatis menyatukan isi dari cache ketika eksekusi selesai, berarti bahwa
       dia akan selalu menghapus data terupload apapun melalui server jika tidak
       dipindahkan, dikopi atau dihapus sebelumnya. Opsi tersebut ditambahkan
-      di sini sebagai ukuran keamanan ekstra untuk semua salinan php yang tidak
+      di sini sebagai ukuran keamanan ekstra untuk semua salinan PHP yang tidak
       selalu bersikap pada perilaku yang diharapkan.
       0 - Setelah pemindahaian, biarkan data [Default],
       1 - Setelah pemindaian, jika tidak bersih, hapus langsung.
@@ -1182,7 +1180,7 @@
    - Opsi Tanda tangan cocok batas panjangnya. Hanya ubah ini jika Anda tahu
      apa yang Anda lakukan. SD = Standard tanda tangan. RX = Tanda tangan PCRE
      (Perl Compatible Regular Expressions, "Regex"). FN = Tanda tangan Nama
-     Data. Jika Anda melihat php crashing ketika phpMussel meoncoba memindai,
+     Data. Jika Anda melihat PHP crashing ketika phpMussel meoncoba memindai,
      coba merendahkan nilai "max". Jika mungkin dan cocok, biarkan saya tahu
      kapan ini terjadi dan hasil dari apapun yang Anda coba.
      "fn_siglen_min"
@@ -1232,15 +1230,15 @@
      upload data sebelum menghentikan pemindaian dan menginformasikan pengguna
      bahwa pengguna mengupload terlalu banyak! Menyediakan perlindungan pada
      serangan teoritis dimana penyerang mencoba DDoS pada sistem Anda atau CMS
-     ada dengan overloading phpMussel supaya berjalan lambat. Proses php ke
+     ada dengan overloading phpMussel supaya berjalan lambat. Proses PHP ke
      penghentian keras. Recommendasi: 10. Anda dapat menaikkan atau menurunkan
      angka ini bergantung dari kecepatan hardware Anda. Catat itu nomor ini
      tidak mengakuntabilitas atau mengikutkan konten dari file terkompres.
    "filesize_limit"
    - Batasan ukuran file dalam KB. 65536 = 64MB [Default], 0 = Tidak ada batasa
      (selalu bertanda abu-abu), nilai angka positif apapun diterima. Ini dapat
-     berguna ketika batasan konfigurasi php Anda membatasi jumah memori dari
-     proses yang dapat ditampungnya atau jika konfigurasi php Anda membatasi
+     berguna ketika batasan konfigurasi PHP Anda membatasi jumah memori dari
+     proses yang dapat ditampungnya atau jika konfigurasi PHP Anda membatasi
      jumlah ukuran upload Anda.
    "filesize_response"
    - Apa yang Anda lakukan dengan file-file yang melebihi batasan ukuran (jika
@@ -1295,7 +1293,7 @@
  - Konfigurasi dari deteksi serangan spesifik (tidak berdasarkan CVDs).
    * Chameleon serangan deteksi: 0 = Dinonaktifkan, 1 = Diaktifkan.
    "chameleon_from_php"
-   - Cari header php tidak di dalam file-file php atau data terkompress.
+   - Cari header PHP tidak di dalam file-file PHP atau data terkompress.
    "chameleon_from_exe"
    - Cari header yang dapat dieksekusi di dalam file-file yang dapat
      dieksekusi atau data terkompress yang dikenali dan untuk data dapat
@@ -1366,7 +1364,7 @@
      dari ukuran file rata-rata upload file yang Anda inginkan dan Anda
      harapkan untuk menerima ke server atau website, tidak seharusnya lebih
      dari direktif filesize_limit, dan tidak seharusnya lebih dari sekitar
-     seperlima dari total alokasi memori yang diijinkan ke php melalui file
+     seperlima dari total alokasi memori yang diijinkan ke PHP melalui file
      "phpmussel.ini" konfigurasi. Direktif ini ada untuk mencegah phpMussel
      menggunakan terlalu banyak memori (yang bisa mencegah dari yang berhasil
      memindai file di atas tertentu ukuran file).
@@ -1725,8 +1723,9 @@
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 28 Mei 2015 dan cocok untuk semua rilis phpMussel dari
- dua versi minor terbaru versi (v0.5-v0.6i) pada waktu saya menuliskan ini.
+ Informasi ini diupdate 7 September 2015 dan cocok untuk semua rilis phpMussel
+ dari dua versi minor terbaru versi (v0.6-v0.7a) pada waktu saya menuliskan
+ ini.
 
  Ad-Aware                Tidak masalah
  Agnitum                 Tidak masalah
@@ -1770,7 +1769,7 @@
  Rising                  Tidak masalah
  Sophos                  Tidak masalah
  SUPERAntiSpyware        Tidak masalah
- Symantec             !  Melaporkan "WS.Reputation.1"
+ Symantec                Tidak masalah
  TheHacker               Tidak masalah
  TotalDefense            Tidak masalah
  TrendMicro              Tidak masalah
@@ -1782,5 +1781,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 24 Agustus 2015 (2015.08.24).
+Terakhir Diperbarui: 7 September 2015 (2015.09.07).
 EOF
