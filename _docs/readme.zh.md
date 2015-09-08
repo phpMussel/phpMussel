@@ -452,41 +452,41 @@ phpMussel可以执行作为一个互动文件扫描在CLI模式在基于Windows�
 ####*关于签名文件*
 CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参考它自己的签名和在参的用法的那些签名在phpMussel;文件名结尾有｢CVD｣包含签名。
 
-Files ending with "MAP"，quite literally，map which签名phpMussel should和shouldn't use为individual scans；Not all签名are 一定 required为every single scan，so，phpMussel uses maps of the signature文件to speed up the scanning process (a process that would otherwise be extremely slow和tedious）。
+文件名结尾有｢MAP｣绘制该签名phpMussel应该和不应该使用为独特扫描；不所有签名是一定需要为所有独特扫描，所以，phpMussel使用签名地图文件以加快扫描过程（一个过程该否则将会极其缓慢和乏味）。
 
-Signature文件marked with "_regex" contain签名that utilise regular expression pattern checking (regex）。
+签名文件标有“_regex”包含签名使用正则表达式｢REGEX｣扫描。
 
-Signature文件marked with "_standard" contain签名that specifically don't utilise any form of pattern checking。
+签名文件标有“_standard”包含签名特别是不使用任何类型的特殊式或正则表达式扫描。
 
-Signature文件marked with neither "_regex" nor "_standard" will be as one or the other，but not both (refer to the Signature Format 部分的这个自述文件为documentation和specific details）。
+签名文件标有不"_regex"也不"_standard"将会作为一个或其他，但不二者（参考｢签名格式｣部分的这个自述文件为详细信息）。
 
-Signature文件marked with "_clamav" contain签名that are sourced entirely from the ClamAV database (GNU/GPL）。
+签名文件标有“_clamav”包含签名完全从ClamAV的数据库（GNU/GPL）。
 
-Signature文件marked with "_custom"，by default，don't contain any签名at all；These such文件exist to give you somewhere to place your own custom signatures，if you come up with any of your own。
+签名文件标有“_custom”按说不包含任何签名；这些文件存在以给您某处为放置您自己的个性化签名，如果您创建任何您自己的。
 
-Signature文件marked with "_mussel" contain签名that specifically are not sourced from ClamAV，签名which，generally，I've either come up with myself 和／或 based on information gathered from various 来源。
+签名文件标有“_mussel”包含签名特别是不从ClamAV，签名该大体，我亲自创建和／或基于信息云集从杂项来源。
 
 
 ---
 
 
 ###6. <a name="SECTION6"></a>配置选项
-下列是a list of variables found在`phpmussel.ini` 配置文件 of phpMussel，along with a description of their purpose和function。
+下列是一个列表的变量发现在`phpmussel.ini`配置文件的phpMussel，以及一个说明的他们的目的和功能。
 
-####"general" (Category)
-General phpMussel configuration。
+####"general" （类别）
+基本phpMussel配置。
 
 "script_password"
-- As a convenience，phpMussel will allow certain functions (including the ability to update phpMussel 自发地) to be manually triggered via POST，GET和QUERY. However，as a security precaution，要做到这一点，phpMussel will expect a password to be included with the command，as to ensure that it's you，和not someone else，attempting to manually trigger these functions. Set script_password to whatever password you would like to use. If no password是set，manual triggering will be disabled by default. Use something you will remember but which是hard为others to guess。
-- Has no influence in CLI mode。
+- 为方便，phpMussel将允许某些功能（包括phpMussel的更新能力）成为手动引发通过POST，GET和QUERY。然而，作为一种安全措施，要做到这一点，phpMussel将期待一个密码是包括随着命令，以确保它是您，和不其他人，尝试手动引发这些功能。设置`script_password`到什么密码您将想用。如果没有密码是设置，手动引发将会关闭作为标准。使用某物您将记得但某物难为其他人猜测。
+- 无影响在CLI模式。
 
 "logs_password"
-- The same as script_password，but为viewing the contents of scan_log和scan_kills. Having separate passwords can be useful if you want to give someone else access to one set of functions but not the other。
-- Has no influence in CLI mode。
+- 相同作为`script_password`，但为查看`scan_log`内容和`scan_kills`。分离的密码可以有用如果您想给其他人访问在一套的功能但不其他套。
+- 无影响在CLI模式。
 
 "cleanup"
-- Unset脚本variables和cache after execution. If you're not using the脚本beyond the initial scanning of uploads，should set to yes，to minimize memory usage. If you're using the脚本for purposes beyond the initial scanning of uploads，should set to no，to avoid un一定 reloading duplicate data into memory. In general practise，it should probably be set to yes，but，if you do this，you won't be able to use the脚本for anything other than scanning文件uploads。
-- Has no influence in CLI mode。
+- ｢反设置／删除／清洁｣脚本变量和缓存｢Cache｣之后执行。如果您不使用脚本外初始上传扫描，应该设置true｢真／正｣，为了最小化内存使用。如果您使用脚本为目的外初始上传扫描，应该设置false｢假／负｣，为了避免不必要重新加载复制数据在内存。在一般的做法，它应该设置true｢真／正｣，但，如果您做这样，您将不能够使用脚本为任何目的以外文件上传扫描。
+- 无影响在CLI模式。
 
 "scan_log"
 - Filename of文件to log all scanning results to. Specify a filename，or leave blank to disable。
@@ -530,7 +530,7 @@ General phpMussel configuration。
 "disable_cli"
 - Disable CLI mode? CLI mode是enabled by default，but can sometimes interfere with certain testing tools (such as PHPUnit，为example)和other CLI-based applications. If you don't need to disable CLI mode，you should ignore this directive. 0 = Enable CLI mode [Default]，1 = Disable CLI mode。
 
-####"signatures" (Category)
+####"signatures" （类别）
 Signatures configuration。
 - %%%_clamav = ClamAV签名(both mains和daily）。
 - %%%_custom = Your custom签名(if you've written any）。
@@ -662,7 +662,7 @@ Signature matching length limiting options. Only change these if you know what y
 "detect_deface"
 - Should phpMussel parse签名for detecting defacements和defacers? 0 = No，1 = Yes [Default]。
 
-####"files" (Category)
+####"files" （类别）
 File handling configuration。
 
 "max_uploads"
@@ -699,7 +699,7 @@ File handling configuration。
 "block_encrypted_archives"
 - Detect和block encrypted archives? Because phpMussel isn't able to scan the contents of encrypted archives，it's possible that archive encryption may be employed by an 攻击者 as a means of attempting to bypass phpMussel，杀毒 scanners和other such protections. Instructing phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. 0 - No，1 - Yes [Default]。
 
-####"attack_specific" (Category)
+####"attack_specific" （类别）
 Attack-specific directives。
 
 Chameleon attack detection: 0 = Off，1 = On。
@@ -740,7 +740,7 @@ Chameleon attack detection: 0 = Off，1 = On。
 "scannable_threshold"
 - Optional limitation or threshold to the length of raw data that phpMussel是permitted to read和scan (in case there are any noticeable performance issues whilst scanning). Value是an integer representing filesize in KB. Default = 32768 (32MB). Zero or null value disables the threshold. Generally，this value shouldn't be less than the average filesize of文件uploads that you want和expect to receive to your server or website，shouldn't be more than the filesize_limit directive，和shouldn't be more than roughly one fifth of the total allowable memory allocation granted to PHP via the php.ini 配置文件. This directive exists to try to prevent phpMussel from using up too much memory (that'd prevent it from being able to successfully scan文件above a certain filesize）。
 
-####"compatibility" (Category)
+####"compatibility" （类别）
 Compatibility directives为phpMussel。
 
 "ignore_upload_errors"
@@ -749,13 +749,13 @@ Compatibility directives为phpMussel。
 "only_allow_images"
 - If you only expect or only intend to allow images to be uploaded在您的系统 or CMS，和if you absolutely don't require any文件other than images to be uploaded在您的系统 or CMS，this directive should be enabled，but should otherwise be disabled. If this directive是enabled，it'll instruct phpMussel to indiscriminately block any uploads identified as non-image files，without scanning them. This may reduce processing time和memory usage为attempted uploads of non-image files. 0 - OFF，1 - ON。
 
-####"heuristic" (Category)
+####"heuristic" （类别）
 Heuristic directives。
 
 "threshold"
 - There are certain签名of phpMussel that are intended to identify suspicious和potentially malicious qualities of文件being uploaded without in themselves identifying those文件being uploaded specifically as being malicious. This "threshold" value tells phpMussel what the maximum total weight of suspicious和potentially malicious qualities of文件being uploaded that's allowable是before those文件are to be flagged as malicious. The definition of weight in this context是the total number of suspicious和potentially malicious qualities identified. By default，this value will be set to 3. A lower value generally will result in a higher occurrence of false positives but a higher number of malicious文件being flagged，whereas a higher value generally will result in a lower occurrence of false positives but a lower number of malicious文件being flagged. It's generally best to leave this value at its default unless you're experiencing problems related to it。
 
-####"virustotal" (Category)
+####"virustotal" （类别）
 VirusTotal.com directives。
 
 "vt_public_api_key"
@@ -779,7 +779,7 @@ Note: Regardless of suspicion level，any文件that are either blacklisted or wh
 "vt_quota_rate"和"vt_quota_time"
 - According to the Virus Total API documentation，"it是limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient，honeypot or any other automation that是going to provide re来源 to VirusTotal和not only retrieve reports you are entitled to a higher request rate quota". By default，phpMussel will strictly adhere to these limitations，but due to the possibility of these rate quotas being increased，these two directives are provided as a means为you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so，it's不推荐为you to increase these values，but，if you've encountered problems relating to reaching your rate quota，decreasing these values _**MAY**_ sometimes help you in dealing with these problems. Your rate limit是determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame。
 
-####"template_data" (Category)
+####"template_data" （类别）
 Directives/Variables为templates和themes。
 
 Template data relates to the HTML output used to generate the "Upload Denied" message displayed to users upon a文件upload being blocked. If you're using custom themes为phpMussel，HTML output是sourced from the `template_custom.html` file，和otherwise，HTML output是sourced from the `template.html` file. Variables written to this section of the 配置文件 are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data.为example，where `foo="bar"`，any instance of `<p>{foo}</p>` found within the HTML output will become `<p>bar</p>`。
@@ -850,7 +850,7 @@ Where NAME是the name to cite为that signature和HEX是a hexadecimal-encoded seg
 Any form of regex understood和correctly processed by PHP should also be correctly understood和processed by phpMussel和its signatures. However，I'd suggest taking extreme caution when writing new regex based signatures，because，if you're not entirely sure what you're doing，there can be 很 irregular 和／或 unexpected results. Take a look at the phpMussel source-code if you're not entirely sure about the context in which regex statements are parsed. Also，remember that all patterns (with exception to filename，archive metadata和MD5 patterns) must be hexadecimally encoded (foregoing pattern syntax，of course)!
 
 ####*WHERE TO PUT CUSTOM SIGNATURES?*
-Only put custom签名in those文件意为custom signatures. Those文件should contain "_custom" in their filenames. You should also avoid editing the default signature files，unless you know exactly what you're doing，because，aside from being good practise in general和aside from helping you distinguish between your own signatures和the default签名included with phpMussel，it's good to stick to editing only the文件意为editing，because tampering with the default signature文件can cause them to stop working correctly，due to the "maps" files: The maps文件tell phpMussel where在signature文件to look for签名required by phpMussel as per when required，和these maps can become out-of-sync with their associated signature文件if those signature文件are tampered with. You can put pretty much whatever you want into your custom signatures，so long as you follow the correct syntax. However，be careful to test new签名for false-positives beforehand if you intend to share them or use them in a live environment。
+Only put custom签名in those文件意为custom signatures. Those文件should contain "_custom" in their filenames. You should also avoid editing the default signature files，unless you know exactly what you're doing，because，aside from being good practise in general和aside from helping you distinguish between your own signatures和the default签名included with phpMussel，it's good to stick to editing only the文件意为editing，because tampering with the default 签名文件can cause them to stop working correctly，due to the "maps" files: The maps文件tell phpMussel where在签名文件to look for签名required by phpMussel as per when required，和these maps can become out-of-sync with their associated 签名文件if those 签名文件are tampered with. You can put pretty much whatever you want into your custom signatures，so long as you follow the correct syntax. However，be careful to test new签名for false-positives beforehand if you intend to share them or use them in a live environment。
 
 ####*SIGNATURE BREAKDOWN*
 下列是a breakdown of the types of签名used by phpMussel：

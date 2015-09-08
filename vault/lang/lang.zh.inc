@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Chinese (Simplified) / 中文（简体） Language Data (3rd September 2015).
+ This File: phpMussel Chinese (Simplified) / 中文（简体） Language Data (6th September 2015).
  <%phpMussel%/vault/lang/lang.zh.inc>
 
 */
@@ -25,7 +25,7 @@ $MusselConfig['lang']['bad_command']='我不明白的命令，对不起。';
 $MusselConfig['lang']['cli_commands']=" q\n - 戒烟CLI模式。\n - 别名：quit，exit。\n md5_file\n - 生成MD5签名从文件[语法：md5_file 文件名]。\n - 别名：m.\n md5\n - 生成MD5签名从数据[语法：md5 数据]。\n hex_encode\n - 兑换从二进制数据至十六进制[语法：hex_encode 数据]。\n - 别名：x.\n hex_decode\n - 兑换从十六进制二进制数据至[语法：hex_decode 数据]。\n base64_encode\n - 兑换从二进制数据至基地64数据[语法：base64_encode 数据]。\n - 别名：b.\n base64_decode\n - 兑换从基地64数据至二进制数据[语法：base64_decode 数据]。\n scan\n - 扫描文件或文件夹[语法：scan 文件名]。\n - 别名：s。\n update\n - 更新phpMussel。\n - 别名：u。\n c\n - 打印此命令列表。\n";
 $MusselConfig['lang']['cli_failed_to_complete']='完成扫描过程失败';
 $MusselConfig['lang']['cli_is_not_a']='不是文件或文件夹。';
-$MusselConfig['lang']['cli_ln2']="谢谢对于使用phpMussel，PHP编程旨在检测木马，病毒，恶意软件，和其他威胁内的文件上传到您的系统随地编程是连接，根据ClamAV的签名和其他签名。\n\n PHPMUSSEL版权2013和此后GNU/GPLv.2通过Caleb M （Maikuolan）。\n\n                                     ~ ~ ~\n\n";
+$MusselConfig['lang']['cli_ln2']="谢谢对于使用phpMussel，一个PHP脚本旨在检测木马，病毒，恶意软件，和其他威胁在文件上传到您的系统随地这个脚本是叫，根据ClamAV的签名和其他签名。\n\n PHPMUSSEL版权2013和此后GNU/GPLv.2通过Caleb M （Maikuolan）。\n\n                                     ~ ~ ~\n\n";
 $MusselConfig['lang']['cli_ln3']=" 目前经营phpMussel在CLI模式（命令行界面）。\n\n 扫描一个文件或文件夹，键入“scan”，其次是名的文件或文件夹您想phpMussel扫描然后按Enter键；\n 键入“c”然后按Enter键对于CLI模式命令名单；键入“q”然后按Enter键对于戒烟：";
 $MusselConfig['lang']['cli_pe1']='不是PE文件！';
 $MusselConfig['lang']['cli_pe2']='PE部分:';
