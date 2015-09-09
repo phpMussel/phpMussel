@@ -26,7 +26,7 @@ PHPMUSSEL版權2013和此後GNU/GPLv.2通過Caleb M （Maikuolan）。
 - <http://www.gnu.org/licenses/>。
 - <http://opensource.org/licenses/>。
 
-謝謝[ClamAV](http://www.clamav.net/)為計劃靈感和為簽名這個腳本利用，沒有它，這個腳本很可能不會存在，或充其量，將有非常有限的價值。
+謝謝[ClamAV](http://www.clamav.net/)為計劃靈感和為簽名這個腳本利用。沒有它，這個腳本很可能不會存在，或充其量，將有非常有限的價值。
 
 谢谢Sourceforge和GitHub为主办的计划文件，[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)为主办的phpMussel讨论论坛，和其他来源的签名利用由phpMussel：[SecuriteInfo.com](http://www.securiteinfo.com/)，[PhishTank](http://www.phishtank.com/)，[NLNetLabs](http://nlnetlabs.nl/)和他人，和特别谢谢大家为支持的计划，和任何人我忘了提，和您，为您的运用的脚本。
 
@@ -43,7 +43,7 @@ PHPMUSSEL版權2013和此後GNU/GPLv.2通過Caleb M （Maikuolan）。
 
 1） 通過您的閱讀這，我假設您已經下載一個存檔的副本的腳本，已解壓縮其內容和有它地方的某處上您的機器。從這裡，您要決定在哪裡在您的服務器您想放這些內容。一個文件夾例如`/public_html/phpmussel/`或類似（無論您選擇，不要緊，只要它的安全和您是滿意）會是足夠了。*之前您開始上傳，繼續閱讀。。*
 
-2） 自選（強烈推薦為高級用戶，但不推薦為業餘用戶或為沒有經驗用戶），打開`phpmussel.ini`（位於內`vault`） - 這個文件包含所有指令可用的為phpMussel。以上的每指令應該有一個簡評以說明它做什麼和它的功能。調整這些指令您認為合適的，按照隨您是適合為您的特定的設置。保存文件，關閉。
+2） 自選（強烈推薦為高級用戶，但不推薦為業餘用戶或為用戶沒有經驗），打開`phpmussel.ini`（位於內`vault`） - 這個文件包含所有指令可用的為phpMussel。以上的每指令應該有一個簡評以說明它做什麼和它的功能。調整這些指令您認為合適的，按照隨您是適合為您的特定的設置。保存文件，關閉。
 
 3） 上傳內容（phpMussel和它的文件）至文件夾您決定在早期（不需要包括`*.txt`/`*.md`文件，但大多，您應該上傳的一切）。
 
@@ -76,9 +76,9 @@ PHPMUSSEL版權2013和此後GNU/GPLv.2通過Caleb M （Maikuolan）。
 
 1） 通過您的閱讀這，我假設您已經下載一個存檔的副本的腳本，已解壓縮其內容和有它地方的某處上您的機器。當您決定您滿意與選擇的位置為phpMussel，繼續。
 
-2） phpMussel需要PHP安裝在主機以經營。如果您沒有PHP安裝上您的機器，請安裝PHP上您的機器，和跟隨任何指令提供由PHP的安裝程序。
+2） phpMussel需要PHP安裝在主機以經營。如果您沒有PHP已安裝上您的機器，請安裝PHP上您的機器，和跟隨任何指令提供由PHP的安裝程序。
 
-3） 自選（強烈推薦為高級用戶，但不推薦為業餘用戶或為沒有經驗用戶），打開`phpmussel.ini`（位於內`vault`） - 這個文件包含所有指令可用的為phpMussel。以上的每指令應該有一個簡評以說明它做什麼和它的功能。調整這些指令您認為合適的，按照隨您是適合為您的特定的設置。保存文件，關閉。
+3） 自選（強烈推薦為高級用戶，但不推薦為業餘用戶或為用戶沒有經驗），打開`phpmussel.ini`（位於內`vault`） - 這個文件包含所有指令可用的為phpMussel。以上的每指令應該有一個簡評以說明它做什麼和它的功能。調整這些指令您認為合適的，按照隨您是適合為您的特定的設置。保存文件，關閉。
 
 4） 自選，使用的phpMussel在CLI模式可能是更容易為您如果您創建一個批處理文件為自動加載的PHP和phpMussel。要做到這一點，打開一個純文本編輯器例如Notepad或Notepad++，鍵入完整路徑為`php.exe`文件在文件夾的您的PHP安裝，其次是一個空格，然後完整路徑為`phpmussel.php`文件在文件夾的您的phpMussel安裝，最後，保存此文件使用一個".bat"擴展名在一個地方您會容易發現它；從這裡，雙擊的文件以經營phpMussel在未來。
 
@@ -91,14 +91,14 @@ PHPMUSSEL版權2013和此後GNU/GPLv.2通過Caleb M （Maikuolan）。
 
 phpMussel的目的是作為一個腳本這將將滿意地和正確地執行｢從開箱｣有最小的要求為您完成：如果正確地安裝的，簡而言之，它應該正確地功能。
 
-文件上傳掃描是自動和按說已激活，所以，有沒有任何需要為您做任何為功能。
+文件上傳掃描是自動和按說已激活，所以，您不需要做任何事為這個功能。
 
 然而，另外，您能指示phpMussel至掃描文件，文件夾或存檔該您指示以做。要做到這一點，首先，您需要確保適當配置是確定在`phpmussel.ini`文件（`cleanup`｢清理｣必須關閉），和在做完，在任何一個PHP文件是鉤子至phpMussel，使用下列功能在您的代碼：
 
 `phpMussel($what_to_scan，$output_type，$output_flatness);`
 
 - `$what_to_scan`可以是字符串，數組，或多維數組，和表明什麼文件，收集的文件，文件夾和／或文件夾至掃描。
-- `$output_type`是布爾，和表明什麼格式以回報掃描結果作為。False｢假／負｣指示關於功能以回報掃描結果作為整數（結果回報的-3表明問題是遇到關於phpMussel簽名文件或簽名MAP｢地圖｣文件和表明他們可能是失踪或損壞，-2表明損壞數據是檢測中掃描和因此掃描失敗完成，-1表明擴展或插件需要通過PHP以經營掃描是失踪和因此掃描失敗完成，0表明掃描目標不存在和因此沒有什麼至掃描，1表明掃描目標是成功掃描和沒有問題是檢測，和2表明掃描目標是成功掃描和問至少一些題是檢測）。True｢真／正｣指示關於功能以回報掃描結果作為人類可讀文本。此外，在任一情況下，結果可以訪問通過全局變量後掃描是完成。變量是自選，確定作為False｢假／負｣由標準。
+- `$output_type`是布爾，和表明什麼格式以回報掃描結果作為。False｢假／負｣指示關於功能以回報掃描結果作為整數（結果回報的-3表明問題是遇到關於phpMussel簽名文件或簽名MAP｢地圖｣文件和表明他們可能是失踪或損壞，-2表明損壞數據是檢測中掃描和因此掃描失敗完成，-1表明擴展或插件需要通過PHP以經營掃描是失踪和因此掃描失敗完成，0表明掃描目標不存在和因此沒有任何事為掃描，1表明掃描目標是成功掃描和沒有任何問題檢測，和2表明掃描目標是成功掃描和至少一些問題是檢測）。True｢真／正｣指示關於功能以回報掃描結果作為人類可讀文本。此外，在任一情況下，結果可以訪問通過全局變量後掃描是完成。變量是自選，確定作為False｢假／負｣由標準。
 - `$output_flatness`是布爾，表明如果回報掃描結果（如果有多掃描目標）作為數組或字符串。False｢假／負｣指示回報結果作為數組。True｢真／正｣負｣指示回報結果作為字符串。變量是自選，確定作為False｢假／負｣由標準。
 
 例子：
@@ -489,31 +489,31 @@ CVD是一個acronym為｢ClamAV Virus Definitions｣，在參照如何ClamAV參�
 - 無影響在CLI模式。
 
 "scan_log"
-- Filename of文件to log all scanning results to. Specify a filename，or leave blank to disable。
+- 文件為記錄在所有掃描結果。指定一個文件名，或留空以關閉。
 
 "scan_kills"
-- Filename of文件to log all records of blocked or killed uploads to. Specify a filename，or leave blank to disable。
+- 文件為記錄在所有受阻或已殺上傳。指定一個文件名，或留空以關閉。
 
 "ipaddr"
-- Where to find IP address of connecting request? (Useful为services例如Cloudflare和the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
+- 在哪裡可以找到連接請求IP地址？（可以使用為服務例如Cloudflare和類似）標準是`REMOTE_ADDR`。警告！不要修改此除非您知道什麼您做著！
 
 "forbid_on_block"
-- Should phpMussel send 403 headers with the文件upload blocked message，or stick with the usual 200 OK? 0 = No (200) [Default]，1 = Yes (403）。
+- 應該phpMussel發送`403`頭隨著文件上傳受阻信息，或堅持標準`200 OK`？ 0 = 發送`200`【標準】，1 = 發送`403`。
 
 "delete_on_sight"
-- Enabling this directive will instruct the脚本to attempt to immediately delete any scanned attempted文件upload matching any detection criteria，whether via签名or otherwise.文件determined to be "clean" won't be touched. In the case of archives，the entire archive will be deleted，regardless of 不论是否 the offending file是only one of several文件contained within the archive.为the case of文件upload scanning，usually，it isn't necessary to enable this directive，because usually，php will automatically purge the contents of its cache when execution has finished，meaning it'll usually delete any文件uploaded through it to the server unless they've been moved，copied or deleted already. This directive是added here as an extra measure of security为those whose copies of PHP mightn't always behave in the manner expected. 0 - After scanning，leave the文件alone [Default]，1 - After scanning，if not clean，delete immediately。
+- 激活的這個指令將指示腳本馬上刪除任何掃描文件上傳匹配任何檢測標準，是否通過簽名或任何事其他。文件已確定是清潔將會忽略。如果是存檔，全存檔將會刪除，不管如果違規文件是只有一個的幾個文件包含在存檔。為文件上傳掃描，按說，它不必要為您激活這個指令，因為按說，PHP將自動清洗內容的它的緩存當執行是完，意思它將按說刪除任何文件上傳從它向服務器如果不已移動，複製或刪除。這個指令是添加這里為額外安全為任何人誰的PHP副本可能不一直表現在預期方式。 0：之後掃描，忽略文件【標準】，1：之後掃描，如果不清潔，馬上刪除。
 
 "lang"
-- Specify the default language为phpMussel。
+- 指定標準phpMussel語言。
 
 "lang_override"
-- Specify if phpMussel should，when possible，override the language specification with the language preference declared by inbound requests (HTTP_ACCEPT_LANGUAGE). 0 - No [Default]，1 - Yes。
+- 指定如果phpMussel應該，當可能，更換語言規範通過語言偏愛聲明從入站請求（HTTP_ACCEPT_LANGUAGE）。 0：不更換【標準】，1：更換。
 
 "lang_acceptable"
-- The `lang_acceptable` directive tells phpMussel which languages may be accepted by the脚本from `lang` or from `HTTP_ACCEPT_LANGUAGE`. This directive should **ONLY** be modified if you're adding your own customised language文件or forcibly removing language files. The directive是a comma delimited string of the codes used by those languages accepted by the script。
+- `lang_acceptable`指令指示phpMussel什么语言可以公认在脚本从`lang`或从`HTTP_ACCEPT_LANGUAGE`。这个指令应该只会修改如果您添加您自己的个性化语言文件或强制去掉语言文件。指令是一个逗号分隔字符串的代码使用通过那些语言公认在脚本。
 
 "quarantine_key"
-- phpMussel是able to quarantine flagged attempted文件uploads in isolation within the phpMussel vault，if this是something you want it to do. Casual users of phpMussel that simply wish to protect their websites or hosting environment without having any interest in deeply analysing any flagged attempted文件uploads should leave this functionality disabled，but any users interested in further analysis of flagged attempted文件uploads为malware research or为similar such things should enable this functionality. Quarantining of flagged attempted文件uploads can sometimes also assist in debugging false-positives，if this是something that frequently occurs为you. To disable quarantine functionality，simply leave the `quarantine_key` directive empty，or erase the contents of that directive if it isn't already empty. To enable quarantine functionality，enter some value into the directive. The `quarantine_key`是an important security feature of the quarantine functionality required as a means of preventing the quarantine functionality from being exploited by potential attackers和as a means of preventing any potential execution of data stored within the quarantine. The `quarantine_key` should be treated in the same manner as your passwords: The longer the better，和guard it tightly.为best effect，use in conjunction with `delete_on_sight`。
+- phpMussel可以檢疫壞文件上傳在隔離在phpMussel的安全／保險庫｢Vault｣，如果這個是某物您想。 Casual users of phpMussel that simply wish to protect their websites or hosting environment without having any interest in deeply analysing any flagged attempted文件uploads should leave this functionality disabled，but any users interested in further analysis of flagged attempted文件uploads为malware research or为similar such things should enable this functionality. Quarantining of flagged attempted文件uploads can sometimes also assist in debugging false-positives，if this是something that frequently occurs为you. To disable quarantine functionality，simply leave the `quarantine_key` directive empty，or erase the contents of that directive if it isn't already empty. To enable quarantine functionality，enter some value into the directive. The `quarantine_key`是an important security feature of the quarantine functionality required as a means of preventing the quarantine functionality from being exploited by potential attackers和as a means of preventing any potential execution of data stored within the quarantine. The `quarantine_key` should be treated in the same manner as your passwords: The longer the better，和guard it tightly.为best effect，use in conjunction with `delete_on_sight`。
 
 "quarantine_max_filesize"
 - The maximum allowable filesize of文件to be quarantined.文件larger than the value specified will NOT be quarantined. This directive是important as a means of making it more difficult为any potential attackers to flood your quarantine with unwanted data potentially causing run-away data usage on your hosting service. Value是in KB. Default =2048 =2048KB =2MB。
@@ -522,7 +522,7 @@ CVD是一個acronym為｢ClamAV Virus Definitions｣，在參照如何ClamAV參�
 - The maximum memory usage allowed为the quarantine. If the total memory used by the quarantine reaches this value，the oldest quarantined文件will be deleted until the total memory used no longer reaches this value. This directive是important as a means of making it more difficult为any potential attackers to flood your quarantine with unwanted data potentially causing run-away data usage on your hosting service. Value是in KB. Default =65536 =65536KB =64MB。
 
 "honeypot_mode"
-- When honeypot mode是enabled，phpMussel will attempt to quarantine every single文件upload that it encounters，regardless of 不论是否 the文件being uploaded matches any included signatures，和no actual scanning or analysis of those attempted文件uploads will actually occur. This functionality should be useful为those that wish to use phpMussel为the purposes of virus/malware research，but it's neither recommended to enable this functionality if the intended use of phpMussel by the user is为actual文件upload scanning，nor recommended to use the honeypot functionality为purposes other than honeypotting. By default，this option是disabled. 0 = Disabled [Default]，1 = Enabled。
+- When honeypot mode是enabled，phpMussel will attempt to quarantine every single文件upload that it encounters，regardless of 如果 the文件being uploaded matches any included signatures，和no actual scanning or analysis of those attempted文件uploads will actually occur. This functionality should be useful为those that wish to use phpMussel为the purposes of virus/malware research，but it's neither recommended to enable this functionality if the intended use of phpMussel by the user is为actual文件upload scanning，nor recommended to use the honeypot functionality为purposes other than honeypotting. By default，this option是disabled. 0 = Disabled [Default]，1 = Enabled。
 
 "scan_cache_expiry"
 -为how long should phpMussel cache the results of scanning? Value是the number of seconds to cache the results of scanning for. Default是21600 seconds (6 hours)；A value of 0 will disable caching the results of scanning。
@@ -774,7 +774,7 @@ Note: If scanning文件using the Virus Total API是disabled，you won't need to 
 Note: Regardless of suspicion level，any文件that are either blacklisted or whitelisted by phpMussel won't be scanned using the Virus Total API，because those such文件would've already been declared as either malicious or benign by phpMussel by the time that they would've otherwise been scanned by the Virus Total API，和therefore，additional scanning wouldn't be required. The ability of phpMussel to scan文件using the Virus Total API是intended to build further confidence为whether a file是malicious or benign in those circumstances where phpMussel itself isn't entirely certain as to whether a file是malicious or benign。
 
 "vt_weighting"
-- Should phpMussel apply the results of scanning using the Virus Total API as detections or as detection weighting? This directive exists，because，虽说 scanning a文件using multiple engines (as Virus Total does) should result in an increased detection rate (and therefore in a higher number of malicious文件being caught)，it can also result in a higher number of false positives，和therefore，in some circumstances，the results of scanning may be better utilised as a confidence score rather than as a definitive conclusion. If a value of 0是used，the results of scanning using the Virus Total API will be applied as detections，和therefore，if any engine used by Virus Total flags the文件being scanned as being malicious，phpMussel will consider the文件to be malicious. If any other value是used，the results of scanning using the Virus Total API will be applied as detection weighting，和therefore，the number of engines used by Virus Total that flag the文件being scanned as being malicious will serve as a confidence score (or detection weighting)为不论是否 the文件being scanned should be considered malicious by phpMussel (the value used will represent the minimum confidence score or weight required in order to be considered malicious). A value of 0是used by default。
+- Should phpMussel apply the results of scanning using the Virus Total API as detections or as detection weighting? This directive exists，because，虽说 scanning a文件using multiple engines (as Virus Total does) should result in an increased detection rate (and therefore in a higher number of malicious文件being caught)，it can also result in a higher number of false positives，和therefore，in some circumstances，the results of scanning may be better utilised as a confidence score rather than as a definitive conclusion. If a value of 0是used，the results of scanning using the Virus Total API will be applied as detections，和therefore，if any engine used by Virus Total flags the文件being scanned as being malicious，phpMussel will consider the文件to be malicious. If any other value是used，the results of scanning using the Virus Total API will be applied as detection weighting，和therefore，the number of engines used by Virus Total that flag the文件being scanned as being malicious will serve as a confidence score (or detection weighting)为如果 the文件being scanned should be considered malicious by phpMussel (the value used will represent the minimum confidence score or weight required in order to be considered malicious). A value of 0是used by default。
 
 "vt_quota_rate"和"vt_quota_time"
 - According to the Virus Total API documentation，"it是limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient，honeypot or any other automation that是going to provide resources to VirusTotal和not only retrieve reports you are entitled to a higher request rate quota". By default，phpMussel will strictly adhere to these limitations，but due to the possibility of these rate quotas being increased，these two directives are provided as a means为you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so，it's不推荐为you to increase these values，but，if you've encountered problems relating to reaching your rate quota，decreasing these values _**MAY**_ sometimes help you in dealing with these problems. Your rate limit是determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame。
@@ -790,45 +790,45 @@ Template data relates to the HTML output used to generate the "Upload Denied" me
 ---
 
 
-###7. <a name="SECTION7"></a>签名格式
+###7. <a name="SECTION7"></a>簽名格式
 
-####*FILENAME SIGNATURES*
-All filename签名follow the format：
+####*文件名簽名*
+所有文件名簽名跟隨格式：
 
 `NAME:FNRX`
 
-Where NAME是the name to cite为that signature和FNRX是the regex pattern to match filenames (unencoded) against。
+`NAME`是名援引為簽名和`FNRX`是正則表達式匹配文件名（未編碼）為。
 
-####*MD5 SIGNATURES*
-All MD5签名follow the format：
+####*MD5簽名*
+所有MD5簽名跟隨格式：
 
 `HASH:FILESIZE:NAME`
 
-Where HASH是the MD5 hash of an entire file，FILESIZE是the total size of that file和NAME是the name to cite为that signature。
+`HASH`是一個MD5哈希的一個全文件，`FILESIZE`是總文件大小和`NAME`是名援引為簽名。
 
-####*ARCHIVE 元数据签名*
-All archive metadata签名follow the format：
+####*存檔元數據簽名*
+所有存檔元數據簽名跟隨格式：
 
 `NAME:FILESIZE:CRC32`
 
-Where NAME是the name to cite为that signature，FILESIZE是the total size (uncompressed) of a文件contained within the archive和CRC32是the CRC32 checksum of that contained file。
+`NAME`是名援引為簽名，`FILESIZE`是總大小（非壓縮）的一個文件包含在存檔和`CRC32`是一個CRC32哈希的這個文件。
 
-####*PE SECTIONAL SIGNATURES*
-All移植可执行｢PE｣Sectional签名follow the format：
+####*移植可執行｢PE｣部分簽名*
+所有移植可執行｢PE｣部分簽名跟隨格式：
 
 `SIZE:HASH:NAME`
 
-Where HASH是the MD5 hash of a section of a移植可执行｢PE｣file，SIZE是the total size of that section和NAME是the name to cite为that signature。
+`HASH`是一個MD5哈希的一個部分的一個移植可執行｢PE｣文件，`SIZE`是總大小的該部分和`NAME`是名援引為簽名。
 
-####*PE EXTENDED SIGNATURES*
-All移植可执行｢PE｣extended签名follow the format：
+####*移植可執行｢PE｣擴展簽名*
+所有移植可執行｢PE｣擴展簽名跟隨格式：
 
 `$VAR:HASH:SIZE:NAME`
 
-Where $VAR是the name of the移植可执行｢PE｣variable to match against，HASH是the MD5 hash of that variable，SIZE是the total size of that variable和NAME是the name to cite为that signature。
+`$VAR`是移植可執行｢PE｣變量名匹配為，`HASH`是一個MD5哈希的該變量，`SIZE`是總大小的該變量和`NAME`是名援引為簽名。
 
-####*WHITELIST SIGNATURES*
-All Whitelist签名follow the format：
+####*白名單簽名*
+所有白名單簽名跟隨格式：
 
 `HASH:FILESIZE:TYPE`
 
@@ -886,7 +886,7 @@ Only put custom签名in those文件intended为custom signatures. Those文件shou
 
 ####杀毒软件兼容性
 
-在大多数情况下，phpMussel应该相当兼容性与大多数杀毒软件。然，冲突已经报道由多个用户以往。下面这些信息是从VirusTotal.com，和它描述了一个数的假阳性報告的各种杀毒软件针对phpMussel。虽说信息是不绝对的保证的不论是否您会遇到兼容性问题间phpMussel和您的杀毒软件，如果您的杀毒软件是 noted as flagging against phpMussel，you should either consider disabling it prior to working with phpMussel or should consider alternative options to either 您的杀毒软件 or phpMussel。
+在大多數情況下，phpMussel應該相當兼容性與大多數殺毒軟件。然，衝突已經報導由多個用戶以往。下面這些信息是從VirusTotal.com，和它描述了一個數的假陽性報告的各種殺毒軟件針對phpMussel。雖說這個信息是不絕對保證的如果您會遇到兼容性問題間phpMussel和您的殺毒軟件，如果您的殺毒軟件是 noted as flagging against phpMussel，you should either consider disabling it prior to working with phpMussel or should consider alternative options to either 您的杀毒软件 or phpMussel。
 
 This information was last updated 7th September 2015 and is current for all phpMussel releases of the two most recent minor versions (v0.6-v0.7a) at the time of writing this.
 
@@ -947,4 +947,4 @@ This information was last updated 7th September 2015 and is current for all phpM
 ---
 
 
-最近更新時間：2015.09.07。
+最近更新時間：2015.09.09。
