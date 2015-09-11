@@ -484,7 +484,7 @@ General configuración para phpMussel.
 - El mismo como script_password, pero para ver el contenido de scan_log y scan_kills. Tener contraseñas separado puede ser útil si usted desea dar alguna otra persona acceso a un conjunto de funciones, pero no el otro. - No tiene influencia en CLI modo.
 
 "cleanup"
-- Despejar la script variables y la caché después de la ejecución. Si usted no está utilizando la script más allá de inicial escaneando de archivos subidos, debe definir como sí, para minimizar el uso de memoria. Si usted está utilizando la script para propósitos más allá de inicial escaneando de archivos subidos, debe definir como no, para evitar recargar innecesariamente duplicados datos en la memoria. En general práctica, probablemente debería definirse como sí, pero, si usted hace esto, usted no será capaz de utilizar la script para cualquier cosa otro que de escaneando archivos subidos.
+- Despejar la variables y la caché de la script después la script ejecución? False = No, True = Sí [Predefinido]. Si usted no está utilizando la script más allá de inicial escaneando de archivos subidos, debe definir como `true` (sí), para minimizar el uso de memoria. Si usted está utilizando la script para propósitos más allá de inicial escaneando de archivos subidos, debe definir como `false` (no), para evitar recargar innecesariamente duplicados datos en la memoria. En general práctica, probablemente debería definirse como `true`, pero, si usted hace esto, usted no será capaz de utilizar la script para cualquier cosa otro que de escaneando archivos subidos.
 - No tiene influencia en CLI modo.
 
 "scan_log"
@@ -500,7 +500,7 @@ General configuración para phpMussel.
 - Debería phpMussel enviar 403 header con la bloqueados archivos subidos mensaje, o quedarse con los usual 200 OK? 0 = No (200) [Predefinido], 1 = Sí (403).
 
 "delete_on_sight"
-- Activando esta directiva instruirá la script para intentar para eliminar inmediatamente cualquier escaneados intentados archivos subidos emparejando a los criterios de detección, si través de firmas o de otras maneras. Archivos determinados como limpia no serán tocados. En el caso de los compactados archivos, la totalidad del compactado archivo será eliminado (independientemente de si el emparejando archivo es sólo uno de muchos varios archivos contenida dentro del compactado archivo). Para el caso de archivo subir escaneo, en general, no es necesario activar esta directiva, porque en general, PHP purgará automáticamente el contenido de su caché cuando la ejecución ha terminado, significando que lo en general eliminará cualquier archivos subidos a través de él con el servidor a no ser que se han movido, copiado o eliminado ya. La directiva se añade aquí como una medida adicional de seguridad para aquellos cuyas copias de PHP no siempre se comportan de la manera esperada. 0 - Después escaneando, dejar el archivo solo [Predefinido], 1 - Después escaneando, si no se limpia, eliminar inmediatamente.
+- Activando esta directiva instruirá la script para intentar para eliminar inmediatamente cualquier escaneados intentados archivos subidos emparejando a los criterios de detección, si través de firmas o de otras maneras. Archivos determinados como limpia no serán tocados. En el caso de los compactados archivos, la totalidad del compactado archivo será eliminado (independientemente de si el emparejando archivo es sólo uno de muchos varios archivos contenida dentro del compactado archivo). Para el caso de archivo subir escaneo, en general, no es necesario activar esta directiva, porque en general, PHP purgará automáticamente el contenido de su caché cuando la ejecución ha terminado, significando que lo en general eliminará cualquier archivos subidos a través de él con el servidor a no ser que se han movido, copiado o eliminado ya. La directiva se añade aquí como una medida adicional de seguridad para aquellos cuyas copias de PHP no siempre se comportan de la manera esperada. False = Después escaneando, dejar el archivo solo [Predefinido], True = Después escaneando, si no se limpia, eliminar inmediatamente.
 
 "lang"
 - Especifique la predefinido del lenguaje para phpMussel.
@@ -535,96 +535,96 @@ Configuración de firmas.
 - %%%_custom = Sus personalizadas firmas (si usted ha escritos algunas).
 - %%%_mussel = phpMussel firmas incluidos en su corriente firmas conjunto que no son de ClamAV.
 
-Cotejar contra MD5 firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar contra MD5 firmas cuando escaneando? False = No, True = Sí [Predefinido].
 - "md5_clamav"
 - "md5_custom"
 - "md5_mussel"
 
-Cotejar contra genéricas firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar contra genéricas firmas cuando escaneando? False = No, True = Sí [Predefinido].
 - "general_clamav"
 - "general_custom"
 - "general_mussel"
 
-Cotejar contra normalizados ASCII firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar contra normalizados ASCII firmas cuando escaneando? False = No, True = Sí [Predefinido].
 - "ascii_clamav"
 - "ascii_custom"
 - "ascii_mussel"
 
-Cotejar contra normalizados HTML firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar contra normalizados HTML firmas cuando escaneando? False = No, True = Sí [Predefinido].
 - "html_clamav"
 - "html_custom"
 - "html_mussel"
 
-Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE Secciónal firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE Secciónal firmas cuando escaneando? False = No, True = Sí [Predefinido].
 - "pe_clamav"
 - "pe_custom"
 - "pe_mussel"
 
-Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE extendidas firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE extendidas firmas cuando escaneando? False = No, True = Sí [Predefinido].
 - "pex_custom"
 - "pex_mussel"
 
-Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE firmas cuando escaneando? False = No, True = Sí [Predefinido].
 - "exe_clamav"
 - "exe_custom"
 - "exe_mussel"
 
-Cotejar ELF archivos con ELF firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar ELF archivos con ELF firmas cuando escaneando? False = No, True = Sí [Predefinido].
 - "elf_clamav"
 - "elf_custom"
 - "elf_mussel"
 
-Cotejar Mach-O archivos (OSX, etc) con Mach-O firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar Mach-O archivos (OSX, etc) con Mach-O firmas cuando escaneando? False = No, True = Sí [Predefinido].
 - "macho_clamav"
 - "macho_custom"
 - "macho_mussel"
 
-Cotejar gráficos archivos con firmas basado en gráficos cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar gráficos archivos con firmas basado en gráficos cuando escaneando? False = No, True = Sí [Predefinido].
 - "graphics_clamav"
 - "graphics_custom"
 - "graphics_mussel"
 
-Cotejar contenidos de compactados archivos con compactados archivos metadatos firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar contenidos de compactados archivos con compactados archivos metadatos firmas cuando escaneando? False = No, True = Sí [Predefinido].
 - "metadata_clamav"
 - "metadata_custom"
 - "metadata_mussel"
 
-Cotejar OLE objetos con OLE firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar OLE objetos con OLE firmas cuando escaneando? False = No, True = Sí [Predefinido].
 - "ole_clamav"
 - "ole_custom"
 - "ole_mussel"
 
-Cotejar nombres de archivos con firmas basado en nombres cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar nombres de archivos con firmas basado en nombres cuando escaneando? False = No, True = Sí [Predefinido].
 - "filenames_clamav"
 - "filenames_custom"
 - "filenames_mussel"
 
-Permitir escaneando con phpMussel_mail()? 0 = No, 1 = Sí [Predefinido].
+Permitir escaneando con phpMussel_mail()? False = No, True = Sí [Predefinido].
 - "mail_clamav"
 - "mail_custom"
 - "mail_mussel"
 
-Activar archivo específica whitelist? 0 = No, 1 = Sí [Predefinido].
+Activar archivo específica whitelist? False = No, True = Sí [Predefinido].
 - "whitelist_clamav"
 - "whitelist_custom"
 - "whitelist_mussel"
 
-Cotejar XML/XDP trozos con XML/XDP-Chunk firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar XML/XDP trozos con XML/XDP-Chunk firmas cuando escaneando? False = No, True = Sí [Predefinido].
 - "xmlxdp_clamav"
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
 
-Cotejar contra complejos extendidas firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar contra complejos extendidas firmas cuando escaneando? False = No, True = Sí [Predefinido].
 - "coex_clamav"
 - "coex_custom"
 - "coex_mussel"
 
-Cotejar contra PDF firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar contra PDF firmas cuando escaneando? False = No, True = Sí [Predefinido].
 - "pdf_clamav"
 - "pdf_custom"
 - "pdf_mussel"
 
-Cotejar contra Shockwave firmas cuando escaneando? 0 = No, 1 = Sí [Predefinido].
+Cotejar contra Shockwave firmas cuando escaneando? False = No, True = Sí [Predefinido].
 - "swf_clamav"
 - "swf_custom"
 - "swf_mussel"
@@ -644,22 +644,22 @@ Firma cotejando longitud limitando opciones. Sólo cambiarlos si sabes lo que es
 - Debe phpMussel informan cuando extensiones están desaparecidos? Si fail_extensions_silently está desactivado, desaparecidos extensiones será reportado cuando escaneando, y si fail_extensions_silently está activado, desaparecidos extensiones será ignorado, with scanning reportando para aquellos archivos que no hay cualquier problemas. Desactivando esta directiva puede potencialmente aumentar su seguridad, pero también puede conducir a un aumento de falsos positivos. 0 = Desactivado, 1 = Activado [Predefinido].
 
 "detect_adware"
-- Debe phpMussel utilizar firmas para detectar adware? 0 = No, 1 = Sí [Predefinido].
+- Debe phpMussel utilizar firmas para detectar adware? False = No, True = Sí [Predefinido].
 
 "detect_joke_hoax"
-- Debe phpMussel utilizar firmas para detectar broma/engaño malware/virus? 0 = No, 1 = Sí [Predefinido].
+- Debe phpMussel utilizar firmas para detectar broma/engaño malware/virus? False = No, True = Sí [Predefinido].
 
 "detect_pua_pup"
-- Debe phpMussel utilizar firmas para detectar PUAs/PUPs? 0 = No, 1 = Sí [Predefinido].
+- Debe phpMussel utilizar firmas para detectar PUAs/PUPs? False = No, True = Sí [Predefinido].
 
 "detect_packer_packed"
-- Debe phpMussel utilizar firmas para detectar empacadores y datos empaquetados? 0 = No, 1 = Sí [Predefinido].
+- Debe phpMussel utilizar firmas para detectar empacadores y datos empaquetados? False = No, True = Sí [Predefinido].
 
 "detect_shell"
-- Debe phpMussel utilizar firmas para detectar shell scripts? 0 = No, 1 = Sí [Predefinido].
+- Debe phpMussel utilizar firmas para detectar shell scripts? False = No, True = Sí [Predefinido].
 
 "detect_deface"
-- Debe phpMussel utilizar firmas para detectar defacements y defacers? 0 = No, 1 = Sí [Predefinido].
+- Debe phpMussel utilizar firmas para detectar defacements y defacers? False = No, True = Sí [Predefinido].
 
 ####"files" (Categoría)
 General configuración para el manejo de archivos.
@@ -946,4 +946,4 @@ Esta información ha sido actualizado 7 Setiembre 2015 y es a hoy para todas las
 ---
 
 
-Última Actualización: 7 Setiembre 2015 (2015.09.07).
+Última Actualización: 11 Setiembre 2015 (2015.09.11).

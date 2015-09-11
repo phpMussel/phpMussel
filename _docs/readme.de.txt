@@ -930,13 +930,15 @@
       Zugang zur einen Funktionalität gewähren wollen, aber nicht zur anderen.
       * Kein Einfluss im CLI-Modus.
     "cleanup"
-    - Löscht die Scriptvariablen und den Cache nach der Ausführung. Sollten Sie
-      das Script nach der Überprüfung des Uploads nicht mehr nutzen, stellen
-      Sie diese Option auf "yes", um die Speichernutzung zu minimieren.
-      Verwenden Sie das Script noch für weitere Zwecke, stellen Sie die Option
-      auf "no", um unnötiges mehrfaches Einlesen der Daten in den Speicher zu
-      vermeiden. Normalerweise sollte diese Option auf "yes" gesetzt werden,
-      allerdings können Sie das Script dann nur zur Dateiüberprüfung verwenden.
+    - Löscht die Scriptvariablen und den Cache nach der Ausführung.
+      False = Nicht löschen, True = Löschen [Standardeinstellung].
+      Sollten Sie das Script nach der Überprüfung des Uploads nicht mehr
+      nutzen, stellen Sie diese Option auf "true", um die Speichernutzung zu
+      minimieren. Verwenden Sie das Script noch für weitere Zwecke, stellen Sie
+      die Option auf "false", um unnötiges mehrfaches Einlesen der Daten in den
+      Speicher zu vermeiden. Normalerweise sollte diese Option auf "true"
+      gesetzt werden, allerdings können Sie das Script dann nur zur
+      Dateiüberprüfung verwenden.
       * Kein Einfluss im CLI-Modus.
     "scan_log"
     - Name einer Datei zum Aufzeichnen aller Resultate von Überprüfungen. Geben
@@ -964,10 +966,10 @@
       gelöscht wurde. Diese Option wurde als zusätzliches Maß an Sicherheit
       hinzugefügt, außerdem für Systeme, deren PHP-Installation nicht dem
       üblichen Verhalten entspricht.
-      0 - Nach der Überprüfung wird die Datei so belassen
-          [Standardeinstellung],
-      1 - Nach der Überprüfung wird die Datei sofort gelöscht, sofern Sie
-          infiziert ist.
+      False = Nach der Überprüfung wird die Datei so belassen
+              [Standardeinstellung],
+      True = Nach der Überprüfung wird die Datei sofort gelöscht, sofern Sie
+             infiziert ist.
     "lang"
     - Gibt die Standardsprache für phpMussel an.
     "lang_override"
@@ -1045,99 +1047,99 @@
    %%%_custom = Ihre eigenen Signaturen (sofern Sie welche erstellt haben).
    %%%_mussel = phpMussel-Signaturen, nicht aus der ClamAV-Datenbank.
    - Scan mit den MD5-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "md5_clamav"
      "md5_custom"
      "md5_mussel"
    - Scan mit den generellen Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "general_clamav"
      "general_custom"
      "general_mussel"
    - Scan mit den normierten ASCII Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "ascii_clamav"
      "ascii_custom"
      "ascii_mussel"
    - Scan mit den normierten HTML Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "html_clamav"
      "html_custom"
      "html_mussel"
    - Scan von PE-Dateien (Portable Executable, EXE, DLL, etc.)
      mit den PE-Sectional-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
    - Scan von PE-Dateien (Portable Executable, EXE, DLL, etc.)
      mit den PE-Erweitert-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "pex_custom"
      "pex_mussel"
    - Scan von PE-Dateien (Portable Executable, EXE, DLL, etc.)
      mit den PE-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "exe_clamav"
      "exe_custom"
      "exe_mussel"
    - Scan von ELF-Dateien mit den ELF-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "elf_clamav"
      "elf_custom"
      "elf_mussel"
    - Scan von Mach-O-Dateien (OSX, etc.) mit den Mach-O-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "macho_clamav"
      "macho_custom"
      "macho_mussel"
    - Scan von Bilddateien mit den Grafik-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "graphics_clamav"
      "graphics_custom"
      "graphics_mussel"
    - Scan von Archivinhalten mit den Archiv-Metadata-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
    - Scan von OLE-Objekten mit den OLE-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "ole_clamav"
      "ole_custom"
      "ole_mussel"
    - Scan von Dateinamen mit den Dateinamen-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "filenames_clamav"
      "filenames_custom"
      "filenames_mussel"
    - Scan mit phpMussel_mail() erlauben?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
    - Aktivieren Datei-spezifischer Whitelist?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "whitelist_clamav"
      "whitelist_custom"
      "whitelist_mussel"
    - Scan von XML/XDP-Datenblöcken mit den XML/XDP-Datenblock-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
    - Scan mit den Komplex-Erweitert-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "coex_clamav"
      "coex_custom"
      "coex_mussel"
    - Scan mit den PDF-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "pdf_clamav"
      "pdf_custom"
      "pdf_mussel"
    - Scan mit den Shockwave-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
      "swf_clamav"
      "swf_custom"
      "swf_mussel"
@@ -1173,22 +1175,22 @@
      0 = Deaktiviert, 1 = Aktiviert [Standardeinstellung].
    "detect_adware"
    - Soll phpMussel Signaturen für die Erkennung von Adware parsen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
    "detect_joke_hoax"
    - Soll phpMussel Signaturen für die Erkennung von Scherz/Fake-Malware/Viren
-     parsen? 0 = Nein, 1 = Ja [Standardeinstellung].
+     parsen? False = Nein, True = Ja [Standardeinstellung].
    "detect_pua_pup"
    - Soll phpMussel Signaturen für die Erkennung von PUAs/PUPs parsen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
    "detect_packer_packed"
    - Soll phpMussel Signaturen für die Erkennung von Packern und komprimierten
-     Daten parsen? 0 = Nein, 1 = Ja [Standardeinstellung].
+     Daten parsen? False = Nein, True = Ja [Standardeinstellung].
    "detect_shell"
    - Soll phpMussel Signaturen für die Erkennung von Shell-Scripten parsen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein, True = Ja [Standardeinstellung].
    "detect_deface"
    - Soll phpMussel Signaturen für die Erkennung von Defacements und Defacer
-     parsen? 0 = Nein, 1 = Ja [Standardeinstellung].
+     parsen? False = Nein, True = Ja [Standardeinstellung].
  "files" (Kategorie)
  - Generelle Konfigurationen für die Handhabung von Dateien.
    "max_uploads"
@@ -1752,5 +1754,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 7. September 2015 (2015.09.07).
+Zuletzt aktualisiert: 11. September 2015 (2015.09.11).
 EOF

@@ -485,7 +485,7 @@ Geral configuração por phpMussel.
 - Não tem influência em CLI modo.
 
 "cleanup"
-- Deletar script variáveis e cache após a execução. Se você não estiver usar o script além da inicial verificação de carregamentos, deve definir a sim/yes, para minimizar o uso de memória. Se você estiver usar o script por fins além da inicial verificação de carregamentos, deve definir a não/no, para evitar desnecessariamente duplicados dados recarregando em memória. Em prática geral, deve provavelmente ser definido como sim/yes, mas, se você fizer isso, você não será capaz de usando o script por qualquer outra fim além analisando arquivos carregamentos.
+- Deletar script variáveis e cache após a execução? False = Não, True = Sim [Padrão]. Se você não estiver usar o script além da inicial verificação de carregamentos, deve definir a `true` (sim), para minimizar o uso de memória. Se você estiver usar o script por fins além da inicial verificação de carregamentos, deve definir a `false` (não), para evitar desnecessariamente duplicados dados recarregando em memória. Em prática geral, deve provavelmente ser definido como `true` (sim), mas, se você fizer isso, você não será capaz de usando o script por qualquer outra fim além analisando arquivos carregamentos.
 - Não tem influência em CLI modo.
 
 "scan_log"
@@ -501,7 +501,7 @@ Geral configuração por phpMussel.
 - Deve phpMussel enviar 403 header com a bloqueado arquivo carregamento mensagem, ou ficar com os habituais 200 OK? 0 = Não (200) [Padrão], 1 = Sim (403).
 
 "delete_on_sight"
-- Ativando esta opção irá instruir o script para tentar imediatamente deletando qualquer arquivo que ele encontra durante a análise que corresponde a qualquer critério de detecção, quer seja através de assinaturas ou de outra forma. Arquivos determinados para ser "limpo" não serão tocados. Em caso de compactados arquivos, o inteiro arquivo será deletado (independentemente de se o problemático arquivo é apenas um dos vários arquivos contidos dentro do compactado arquivo). Para o caso de arquivo carregamento análise, em geral, não é necessário ativar essa opção, porque normalmente, PHP irá automaticamente expurgar os conteúdos de o seu cache quando a execução foi concluída, significando que ele vai normalmente deletar todos os arquivos enviados através dele para o servidor a menos que tenha movido, copiado ou deletado já. A opção é adicionado aqui como uma medida de segurança para aqueles cujas cópias de PHP nem sempre se comportam da forma esperada. 0 - Após a análise, deixe o arquivo sozinho [Padrão], 1 - Após a análise, se não limpo, deletar imediatamente.
+- Ativando esta opção irá instruir o script para tentar imediatamente deletando qualquer arquivo que ele encontra durante a análise que corresponde a qualquer critério de detecção, quer seja através de assinaturas ou de outra forma. Arquivos determinados para ser "limpo" não serão tocados. Em caso de compactados arquivos, o inteiro arquivo será deletado (independentemente de se o problemático arquivo é apenas um dos vários arquivos contidos dentro do compactado arquivo). Para o caso de arquivo carregamento análise, em geral, não é necessário ativar essa opção, porque normalmente, PHP irá automaticamente expurgar os conteúdos de o seu cache quando a execução foi concluída, significando que ele vai normalmente deletar todos os arquivos enviados através dele para o servidor a menos que tenha movido, copiado ou deletado já. A opção é adicionado aqui como uma medida de segurança para aqueles cujas cópias de PHP nem sempre se comportam da forma esperada. False = Após a análise, deixe o arquivo sozinho [Padrão], True = Após a análise, se não limpo, deletar imediatamente.
 
 "lang"
 - Especificar o padrão da linguagem por phpMussel.
@@ -536,96 +536,96 @@ Configuração por assinaturas.
 - %%%_custom = Suas personalizadas assinaturas (se você escrever alguma).
 - %%%_mussel = phpMussel assinaturas incluído no seus atuais assinaturas conjunto que não são do ClamAV.
 
-Verificar contra MD5 assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar contra MD5 assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "md5_clamav"
 - "md5_custom"
 - "md5_mussel"
 
-Verificar contra geral assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar contra geral assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "general_clamav"
 - "general_custom"
 - "general_mussel"
 
-Verificar contra normalizada ASCII assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar contra normalizada ASCII assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "ascii_clamav"
 - "ascii_custom"
 - "ascii_mussel"
 
-Verificar contra normalizada HTML assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar contra normalizada HTML assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "html_clamav"
 - "html_custom"
 - "html_mussel"
 
-Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE Seccional assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE Seccional assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "pe_clamav"
 - "pe_custom"
 - "pe_mussel"
 
-Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE estendidas assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE estendidas assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "pex_custom"
 - "pex_mussel"
 
-Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "exe_clamav"
 - "exe_custom"
 - "exe_mussel"
 
-Verificar ELF arquivos contra ELF assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar ELF arquivos contra ELF assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "elf_clamav"
 - "elf_custom"
 - "elf_mussel"
 
-Verificar Mach-O arquivos (OSX, etc) contra Mach-O assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar Mach-O arquivos (OSX, etc) contra Mach-O assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "macho_clamav"
 - "macho_custom"
 - "macho_mussel"
 
-Verificar gráficos arquivos contra gráficas assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar gráficos arquivos contra gráficas assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "graphics_clamav"
 - "graphics_custom"
 - "graphics_mussel"
 
-Verificar compactados arquivos conteúdo contra compactados arquivos metadados assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar compactados arquivos conteúdo contra compactados arquivos metadados assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "metadata_clamav"
 - "metadata_custom"
 - "metadata_mussel"
 
-Verificar OLE objetos contra OLE assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar OLE objetos contra OLE assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "ole_clamav"
 - "ole_custom"
 - "ole_mussel"
 
-Verificar arquivos nomes contra assinaturas arquivos nomes baseadas assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar arquivos nomes contra assinaturas arquivos nomes baseadas assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "filenames_clamav"
 - "filenames_custom"
 - "filenames_mussel"
 
-Permitir análise com phpMussel_mail()? 0 = Não, 1 = Sim [Padrão].
+Permitir análise com phpMussel_mail()? False = Não, True = Sim [Padrão].
 - "mail_clamav"
 - "mail_custom"
 - "mail_mussel"
 
-Ativar arquivo-específico whitelist? 0 = Não, 1 = Sim [Padrão].
+Ativar arquivo-específico whitelist? False = Não, True = Sim [Padrão].
 - "whitelist_clamav"
 - "whitelist_custom"
 - "whitelist_mussel"
 
-Verificar XML/XDP pedaços contra XML/XDP-pedaço assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar XML/XDP pedaços contra XML/XDP-pedaço assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "xmlxdp_clamav"
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
 
-Verificar contra complexos estendidas assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar contra complexos estendidas assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "coex_clamav"
 - "coex_custom"
 - "coex_mussel"
 
-Verificar contra PDF assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar contra PDF assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "pdf_clamav"
 - "pdf_custom"
 - "pdf_mussel"
 
-Verificar contra Shockwave assinaturas quando analisando? 0 = Não, 1 = Sim [Padrão].
+Verificar contra Shockwave assinaturas quando analisando? False = Não, True = Sim [Padrão].
 - "swf_clamav"
 - "swf_custom"
 - "swf_mussel"
@@ -645,22 +645,22 @@ Assinatura analisando comprimento limitando opções. Apenas alterar estes se vo
 - Deve phpMussel reportar quando extensões não estão disponíveis? Se fail_extensions_silently está desativado, extensões indisponíveis serão reportado durante análise, e se fail_extensions_silently está ativado, extensões indisponíveis serão ignoradas, com a análise reportando por estes arquivos em que não há problemas. Desativando dessa directiva pode potencialmente aumentar a sua segurança, mas também pode levar a um aumento de falsos positivos. 0 = Desativado, 1 = Ativado [Padrão].
 
 "detect_adware"
-- Deve phpMussel usam assinaturas para detectar adware? 0 = Não, 1 = Sim [Padrão].
+- Deve phpMussel usam assinaturas para detectar adware? False = Não, True = Sim [Padrão].
 
 "detect_joke_hoax"
-- Deve phpMussel usam assinaturas para detectar piada/engano malwares/vírus? 0 = Não, 1 = Sim [Padrão].
+- Deve phpMussel usam assinaturas para detectar piada/engano malwares/vírus? False = Não, True = Sim [Padrão].
 
 "detect_pua_pup"
-- Deve phpMussel usam assinaturas para detectar PUAs/PUPs? 0 = Não, 1 = Sim [Padrão].
+- Deve phpMussel usam assinaturas para detectar PUAs/PUPs? False = Não, True = Sim [Padrão].
 
 "detect_packer_packed"
-- Deve phpMussel usam assinaturas para detectar embaladores e dados embaladas? 0 = Não, 1 = Sim [Padrão].
+- Deve phpMussel usam assinaturas para detectar embaladores e dados embaladas? False = Não, True = Sim [Padrão].
 
 "detect_shell"
-- Deve phpMussel usam assinaturas para detectar shell scripts? 0 = Não, 1 = Sim [Padrão].
+- Deve phpMussel usam assinaturas para detectar shell scripts? False = Não, True = Sim [Padrão].
 
 "detect_deface"
-- Deve phpMussel usam assinaturas para detectar vandalismo e vândalos? 0 = Não, 1 = Sim [Padrão].
+- Deve phpMussel usam assinaturas para detectar vandalismo e vândalos? False = Não, True = Sim [Padrão].
 
 ####"files" (Categoria)
 Geral configuração por a manipulação de arquivos.
@@ -947,4 +947,4 @@ Esta informação foi atualizada dia 7 Setembro 2015 e é corrente para todas ph
 ---
 
 
-Última Atualização: 7 Setembro 2015 (2015.09.07).
+Última Atualização: 11 Setembro 2015 (2015.09.11).

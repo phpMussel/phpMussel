@@ -971,15 +971,16 @@
       fonctions mais pas l'autre.
       * N'a pas d'influence en CLI mode.
     "cleanup"
-    - Déensemble variables du script et cache après l'exécution. Si vous
-      n'utilisez pas le script au-delà l'initiale analyse du téléchargements,
-      devrait ensemble à oui à minimiser l'utilisation de la mémoire. Si vous
-      utilisez le script à des fins au-delà l'initiale analyse du
-      téléchargements, devrait ensemble à non, pour éviter recharger
-      inutilement dupliqué données dans la mémoire. Dans la générale pratique,
-      il devrait probablement être ensemblé sur oui, mais, si vous faites cela,
-      vous ne serez pas être capable d'utiliser le script pour tout chose autre
-      que l'analyse des fichiers téléchargements.
+    - Déensemble variables du script et cache après l'exécution?
+      False = Non, True = Oui [Défaut]. Si vous ne utilisez pas le script
+      au-delà l'initiale analyse du téléchargements, devrait ensemble à
+      "true" (oui) à minimiser l'utilisation de la mémoire. Si vous utilisez le
+      script à des fins au-delà l'initiale analyse du téléchargements, devrait
+      ensemble à "false" (non), pour éviter recharger inutilement dupliqué
+      données dans la mémoire. Dans la pratique générale, il devrait
+      probablement être ensemblé à "true", mais, si vous faites cela, vous ne
+      serez pas être capable d'utiliser le script pour tout chose autre que
+      l'analyse des fichiers téléchargements.
       * N'a pas d'influence en CLI mode.
     "scan_log"
     - Nom du fichier à enregistrer tous les résultats d'analyse à. Spécifiez
@@ -1011,8 +1012,8 @@
       qu'ils ont déménagé, copié ou supprimé déjà. L'option est ajoutée ici
       comme une supplémentaire mesure de sécurité pour ceux dont copies de php
       peut pas toujours se comporter de la manière attendu.
-      0 - Après l'analyse, laissez le fichier tel quel [Défaut],
-      1 - Après l'analyse, si pas propre, supprimer immédiatement.
+      False = Après l'analyse, laissez le fichier tel quel [Défaut],
+      True = Après l'analyse, si pas propre, supprimer immédiatement.
     "lang"
     - Spécifier la défaut langue pour phpMussel.
     "lang_override"
@@ -1100,94 +1101,96 @@
    %%%_mussel = phpMussel signatures incluses dans votre courant ensemble des
                 signatures qui ne sont pas de ClamAV.
    - Vérifier contre MD5 signatures au cours de analyse?
-     0 = Non, 1 = Oui [Défaut].
+     False = Non, True = Oui [Défaut].
      "md5_clamav"
      "md5_custom"
      "md5_mussel"
    - Vérifier contre général signatures au cours de analyse?
-     0 = Non, 1 = Oui [Défaut].
+     False = Non, True = Oui [Défaut].
      "general_clamav"
      "general_custom"
      "general_mussel"
    - Vérifier contre normalisé ASCII signatures au cours de analyse?
-     0 = Non, 1 = Oui [Défaut].
+     False = Non, True = Oui [Défaut].
      "ascii_clamav"
      "ascii_custom"
      "ascii_mussel"
    - Vérifier contre normalisé HTML signatures au cours de analyse?
-     0 = Non, 1 = Oui [Défaut].
+     False = Non, True = Oui [Défaut].
      "html_clamav"
      "html_custom"
      "html_mussel"
    - Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE
-     Sectional signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+     Sectional signatures au cours de analyse?
+     False = Non, True = Oui [Défaut].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
    - Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE
-     étendues signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+     étendues signatures au cours de analyse? False = Non, True = Oui [Défaut].
      "pex_custom"
      "pex_mussel"
    - Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE
-     signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+     signatures au cours de analyse? False = Non, True = Oui [Défaut].
      "exe_clamav"
      "exe_custom"
      "exe_mussel"
    - Vérifier ELF fichiers contre ELF signatures au cours de analyse?
-     0 = Non, 1 = Oui [Défaut].
+     False = Non, True = Oui [Défaut].
      "elf_clamav"
      "elf_custom"
      "elf_mussel"
    - Vérifier Mach-O fichiers (OSX, etc) contre Mach-O signatures au cours de
-     analyse? 0 = Non, 1 = Oui [Défaut].
+     analyse? False = Non, True = Oui [Défaut].
      "macho_clamav"
      "macho_custom"
      "macho_mussel"
    - Vérifier graphiques fichiers contre graphiques basé signatures au cours de
-     analyse? 0 = Non, 1 = Oui [Défaut].
+     analyse? False = Non, True = Oui [Défaut].
      "graphics_clamav"
      "graphics_custom"
      "graphics_mussel"
    - Vérifier archives contenu contre archive métadonnées signatures au cours
-     de analyse? 0 = Non, 1 = Oui [Défaut].
+     de analyse? False = Non, True = Oui [Défaut].
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
    - Vérifier OLE objets contre OLE signatures au cours de analyse?
-     0 = Non, 1 = Oui [Défaut].
+     False = Non, True = Oui [Défaut].
      "ole_clamav"
      "ole_custom"
      "ole_mussel"
    - Vérifier les noms de fichiers contre signatures basé sur les noms de
-     fichiers au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+     fichiers au cours de analyse? False = Non, True = Oui [Défaut].
      "filenames_clamav"
      "filenames_custom"
      "filenames_mussel"
-   - Autoriser analyse avec phpMussel_mail()? 0 = Non, 1 = Oui [Défaut].
+   - Autoriser analyse avec phpMussel_mail()? False = Non, True = Oui [Défaut].
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
-   - Activer fichier spécifique blanche liste? 0 = Non, 1 = Oui [Défaut].
+   - Activer fichier spécifique blanche liste?
+     False = Non, True = Oui [Défaut].
      "whitelist_clamav"
      "whitelist_custom"
      "whitelist_mussel"
    - Vérifier XML/XDP morceaux contre XML/XDP morceaux signatures au cours de
-     analyse? 0 = Non, 1 = Oui [Défaut].
+     analyse? False = Non, True = Oui [Défaut].
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
    - Vérifier contre complexes étendues signatures au cours de analyse?
-     0 = Non, 1 = Oui [Défaut].
+     False = Non, True = Oui [Défaut].
      "coex_clamav"
      "coex_custom"
      "coex_mussel"
    - Vérifier contre PDF signatures au cours de analyse?
-     0 = Non, 1 = Oui [Défaut].
+     False = Non, True = Oui [Défaut].
      "pdf_clamav"
      "pdf_custom"
      "pdf_mussel"
    - Vérifier contre Shockwave signatures au cours de analyse?
-     0 = Non, 1 = Oui [Défaut].
+     False = Non, True = Oui [Défaut].
      "swf_clamav"
      "swf_custom"
      "swf_mussel"
@@ -1222,22 +1225,22 @@
      augmentation de faux positifs. 0 = Désactivé, 1 = Activé [Défaut].
    "detect_adware"
    - Devrait phpMussel utiliser signatures pour détecter les adwares?
-     0 = Non, 1 = Oui [Défaut].
+     False = Non, True = Oui [Défaut].
    "detect_joke_hoax"
    - Devrait phpMussel utiliser signatures pour détecter les blagues/canulars
-     malware/virus? 0 = Non, 1 = Oui [Défaut].
+     malware/virus? False = Non, True = Oui [Défaut].
    "detect_pua_pup"
    - Devrait phpMussel utiliser signatures pour détecter les PUAs/PUPs?
-     0 = Non, 1 = Oui [Défaut].
+     False = Non, True = Oui [Défaut].
    "detect_packer_packed"
    - Devrait phpMussel utiliser signatures pour détecter les emballeurs et des
-     données emballés? 0 = Non, 1 = Oui [Défaut].
+     données emballés? False = Non, True = Oui [Défaut].
    "detect_shell"
    - Devrait phpMussel utiliser signatures pour détecter les shell scripts?
-     0 = Non, 1 = Oui [Défaut].
+     False = Non, True = Oui [Défaut].
    "detect_deface"
    - Devrait phpMussel utiliser signatures pour détecter les defacements and
-     defacers? 0 = Non, 1 = Oui [Défaut].
+     defacers? False = Non, True = Oui [Défaut].
  "files" (Catégorie)
  - Générale configuration pour gestion des fichiers.
    "max_uploads"
@@ -1812,5 +1815,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 7 Septembre 2015 (2015.09.07).
+Dernière Réactualisé: 11 Septembre 2015 (2015.09.11).
 EOF

@@ -159,8 +159,8 @@ phpMussel的目的是作為一個腳本這將將滿意地和正確地執行｢�
 - 提供一個辦法為您監控phpMussel當FTP訪問或其他常規訪問點為監控phpMussel是不可用的。
 
 有些原因為什麼您不應該激活這些控制：
-- 提供一個向量為潛力攻擊者和不受歡迎的人查明如果您使用phpMussel（雖說，這個可以二者一個目的讚成和一個目的反對，根據透視)通過盲目地發送命令向服務器作為一種手段來探測。這個可以阻礙攻擊者從目標您的系統如果他們學習您使用phpMussel，在假設他們是探測因為他們的攻擊方法是使不有力因之的使用phpMussel。然，如果一些意外和目前未知漏洞在phpMussel或一個未來版本其被曝光，和如果它可以可能提供一個攻擊向量，一個正面結果從這探測可以可能鼓勵攻擊者目標您的系統。
-- 如果您的分配密碼成為妥協，如果不變，可以提供一個方法為一個攻擊者為旁路任何簽名按說防止他們的攻擊成功，或可能共關閉phpMussel，從而提供一個方法為使phpMussel的效用無實際意義。
+- 提供一個向量為潛力攻擊者和不受歡迎的人查明如果您使用phpMussel（雖說，這個可以二者一個目的讚成和一個目的反對，根據透視)通過盲目地發送命令向服務器作為一種手段來探測。這個可以阻礙攻擊者從目標您的系統如果他們學習您使用phpMussel，在假設他們是探測因為他們的攻擊方法是使不有力因之的使用phpMussel。然，如果一些意外和目前未知漏洞在phpMussel或一個未來版本其被曝光，和如果它可以的可能提供一個攻擊向量，一個正面結果從這探測可以可能鼓勵攻擊者目標您的系統。
+- 如果您的分配密碼成為妥協，如果不變，可以提供一個方法為一個攻擊者為旁路任何簽名按說防止他們的攻擊成功，或潛在共關閉phpMussel，從而提供一個方法為使phpMussel的效用無實際意義。
 
 無論哪種方式，無論您選擇什麼樣，選擇最終是您的。標準，這些控制將會已關閉，但思考關於它，和如果您決定您想他們，這個部分說明如何激活他們和如何使用他們。
 
@@ -422,14 +422,14 @@ phpMussel可以執行作為一個互動文件掃描在CLI模式在基於Windows�
 /vault/phpmussel.ini                       | 配置文件;包含所有配置指令為phpMussel，告訴它什麼做和怎麼正確地經營（必不可少）!
 ※ /vault/scan_log.txt                     | 記錄的一切phpMussel掃描。
 ※ /vault/scan_kills.txt                   | 記錄的所有上傳文件phpMussel受阻／殺。
-/vault/swf_clamav_regex.cvd                | Shockwave簽名文件。
-/vault/swf_clamav_regex.map                | Shockwave簽名文件。
-/vault/swf_clamav_standard.cvd             | Shockwave簽名文件。
-/vault/swf_clamav_standard.map             | Shockwave簽名文件。
-/vault/swf_custom_regex.cvd                | Shockwave簽名文件。
-/vault/swf_custom_standard.cvd             | Shockwave簽名文件。
-/vault/swf_mussel_regex.cvd                | Shockwave簽名文件。
-/vault/swf_mussel_standard.cvd             | Shockwave簽名文件。
+/vault/swf_clamav_regex.cvd                | SWF簽名文件。
+/vault/swf_clamav_regex.map                | SWF簽名文件。
+/vault/swf_clamav_standard.cvd             | SWF簽名文件。
+/vault/swf_clamav_standard.map             | SWF簽名文件。
+/vault/swf_custom_regex.cvd                | SWF簽名文件。
+/vault/swf_custom_standard.cvd             | SWF簽名文件。
+/vault/swf_mussel_regex.cvd                | SWF簽名文件。
+/vault/swf_mussel_standard.cvd             | SWF簽名文件。
 /vault/switch.dat                          | 控制和確定某些變量。
 /vault/template.html                       | 模板文件；模板為HTML產量產生通過phpMussel為它的受阻文件上傳信息（信息可見向上傳者）。
 /vault/template_custom.html                | 模板文件；模板為HTML產量產生通過phpMussel為它的受阻文件上傳信息（信息可見向上傳者）。
@@ -485,7 +485,7 @@ CVD是一個acronym為｢ClamAV Virus Definitions｣，在參照如何ClamAV參�
 - 無影響在CLI模式。
 
 “cleanup”
-- ｢反設置／刪除／清潔｣腳本變量和緩存｢Cache｣之後執行。如果您不使用腳本外初始上傳掃描，應該設置true｢真／正｣，為了最小化內存使用。如果您使用腳本為目的外初始上傳掃描，應該設置false｢假／負｣，為了避免不必要重新加載複製數據在內存。在一般的做法，它應該設置true｢真／正｣，但，如果您做這樣，您將不能夠使用腳本為任何目的以外文件上傳掃描。
+- ｢反設置／刪除／清潔｣腳本變量和緩存｢Cache｣之後執行嗎？如果您不使用腳本外初始上傳掃描，應該設置true｢真／正｣，為了最小化內存使用。如果您使用腳本為目的外初始上傳掃描，應該設置false｢假／負｣，為了避免不必要重新加載複製數據在內存。在一般的做法，它應該設置true｢真／正｣，但，如果您做這樣，您將不能夠使用腳本為任何目的以外文件上傳掃描。
 - 無影響在CLI模式。
 
 “scan_log”
@@ -498,10 +498,10 @@ CVD是一個acronym為｢ClamAV Virus Definitions｣，在參照如何ClamAV參�
 - 在哪裡可以找到連接請求IP地址？（可以使用為服務例如Cloudflare和類似）標準是`REMOTE_ADDR`。警告！不要修改此除非您知道什麼您做著！
 
 “forbid_on_block”
-- 應該phpMussel發送`403`頭隨著文件上傳受阻信息，或堅持標準`200 OK`？ 0 = 發送`200`【標準】，1 = 發送`403`。
+- phpMussel應該發送`403`頭隨著文件上傳受阻信息，或堅持標準`200 OK`？ 0 = 發送`200`【標準】，1 = 發送`403`。
 
 “delete_on_sight”
-- 激活的這個指令將指示腳本馬上刪除任何掃描文件上傳匹配任何檢測標準，是否通過簽名或任何事其他。文件已確定是清潔將會忽略。如果是存檔，全存檔將會刪除，不管如果違規文件是只有一個的幾個文件包含在存檔。為文件上傳掃描，按說，它不必要為您激活這個指令，因為按說，PHP將自動清洗內容的它的緩存當執行是完，意思它將按說刪除任何文件上傳從它向服務器如果不已移動，複製或刪除。這個指令是添加這里為額外安全為任何人誰的PHP副本可能不一直表現在預期方式。 0：之後掃描，忽略文件【標準】，1：之後掃描，如果不清潔，馬上刪除。
+- 激活的這個指令將指示腳本馬上刪除任何掃描文件上傳匹配任何檢測標準，是否通過簽名或任何事其他。文件已確定是清潔將會忽略。如果是存檔，全存檔將會刪除，不管如果違規文件是只有一個的幾個文件包含在存檔。為文件上傳掃描，按說，它不必要為您激活這個指令，因為按說，PHP將自動清洗內容的它的緩存當執行是完，意思它將按說刪除任何文件上傳從它向服務器如果不已移動，複製或刪除。這個指令是添加這里為額外安全為任何人誰的PHP副本可能不一直表現在預期方式。False｢假／負｣：之後掃描，忽略文件【標準】，True｢真／正｣：之後掃描，如果不清潔，馬上刪除。
 
 “lang”
 - 指定標準phpMussel語言。
@@ -513,7 +513,7 @@ CVD是一個acronym為｢ClamAV Virus Definitions｣，在參照如何ClamAV參�
 - `lang_acceptable`指令指示phpMussel什么语言可以公认在脚本从`lang`或从`HTTP_ACCEPT_LANGUAGE`。这个指令应该只会修改如果您添加您自己的个性化语言文件或强制去掉语言文件。指令是一个逗号分隔字符串的代码使用通过那些语言公认在脚本。
 
 “quarantine_key”
-- phpMussel可以檢疫壞文件上傳在隔離在phpMussel的安全／保險庫｢Vault｣，如果這個是某物您想。 Casual users of phpMussel that simply wish to protect their websites or hosting environment without having any interest in deeply analysing any flagged attempted文件uploads should leave this functionality disabled，but any users interested in further analysis of flagged attempted文件uploads为malware research or为similar such things should enable this functionality. Quarantining of flagged attempted文件uploads can sometimes also assist in debugging false-positives，if this是something that frequently occurs为you. To disable quarantine functionality，simply leave the `quarantine_key` directive empty，or erase the contents of that directive if it isn't already empty. To enable quarantine functionality，enter some value into the directive. The `quarantine_key`是an important security feature of the quarantine functionality required as a means of preventing the quarantine functionality from being exploited by potential attackers和as a means of preventing any potential execution of data stored within the quarantine. The `quarantine_key` should be treated in the same manner as your passwords: The longer the better，和guard it tightly.为best effect，use in conjunction with `delete_on_sight`。
+- phpMussel可以檢疫壞文件上傳在隔離在phpMussel的安全／保險庫｢Vault｣，如果這個是某物您想。普通用戶的phpMussel簡單地想保護他們的網站或宿主環境無任何興趣在深深分析任何嘗試文件上傳應該離開這個功能關閉，但任何用戶有興趣在更深分析的嘗試文件上傳為目的惡意軟件研究或為類似這樣事情應該激活這個功能。檢疫的嘗試文件上傳可以有時還助攻在調試假陽性，如果這個是某物經常發生為您。以關閉檢疫功能，簡單地離開`quarantine_key`指令空白，或抹去內容的這個指令如果它不已空白。以激活隔離功能，輸入一些值在這個指令。`quarantine_key`是一個重要安全功能的隔離功能需要以預防檢疫功能從成為利用通過潛在攻擊者和以預防任何潛在執行的數據存儲在檢疫。`quarantine_key`應該被處理在同樣方法作為您的密碼：更長是更好，和緊緊保護它。為獲得最佳效果，在結合使用`delete_on_sight`。
 
 “quarantine_max_filesize”
 - The maximum allowable filesize of文件to be quarantined.文件larger than the value specified will NOT be quarantined. This directive是important as a means of making it more difficult为any potential attackers to flood your quarantine with unwanted data potentially causing run-away data usage on your hosting service. Value是in KB. Default =2048 =2048KB =2MB。
@@ -531,101 +531,101 @@ CVD是一個acronym為｢ClamAV Virus Definitions｣，在參照如何ClamAV參�
 - Disable CLI mode? CLI mode是enabled by default，but can sometimes interfere with certain testing tools (such as PHPUnit，为example)和other CLI-based applications. If you don't need to disable CLI mode，you should ignore this directive. 0 = Enable CLI mode [Default]，1 = Disable CLI mode。
 
 ####"signatures" （類別）
-Signatures configuration。
-- %%%_clamav = ClamAV签名(both mains和daily）。
-- %%%_custom = Your custom签名(if you've written any）。
-- %%%_mussel = phpMussel签名included在您的current签名set that aren't from ClamAV。
+簽名配置。
+- %%%_clamav = ClamAV簽名（二者mains和daily）。
+- %%%_custom = 您的個性化簽名（如果您寫任何）。
+- %%%_mussel = phpMussel簽名已包括在您的當前簽名文件不從ClamAV。
 
-Check against MD5签名when scanning? 0 = No，1 = Yes [Default]。
+檢查針對MD5簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “md5_clamav”
 - “md5_custom”
 - “md5_mussel”
 
-Check against 通用签名when scanning? 0 = No，1 = Yes [Default]。
+檢查針對通用簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “general_clamav”
 - “general_custom”
 - “general_mussel”
 
-Check against 标准化ASCII签名when scanning? 0 = No，1 = Yes [Default]。
+檢查針對標準化ASCII簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “ascii_clamav”
 - “ascii_custom”
 - “ascii_mussel”
 
-Check against 标准化HTML签名when scanning? 0 = No，1 = Yes [Default]。
+檢查針對標準化HTML簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “html_clamav”
 - “html_custom”
 - “html_mussel”
 
-Check移植可执行｢PE｣文件(EXE，DLL，etc) against移植可执行｢PE｣Sectional签名when scanning? 0 = No，1 = Yes [Default]。
+檢查移植可執行｢PE｣文件（EXE文件，DLL文件，等等）針對移植可執行｢PE｣部分簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “pe_clamav”
 - “pe_custom”
 - “pe_mussel”
 
-Check移植可执行｢PE｣文件(EXE，DLL，etc) against移植可执行｢PE｣extended签名when scanning? 0 = No，1 = Yes [Default]。
+檢查移植可執行｢PE｣文件（EXE文件，DLL文件，等等）針對移植可執行｢PE｣擴展簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “pex_custom”
 - “pex_mussel”
 
-Check移植可执行｢PE｣文件(EXE，DLL，etc) against 移植可执行｢PE｣签名when scanning? 0 = No，1 = Yes [Default]。
+檢查移植可執行｢PE｣文件（EXE文件，DLL文件，等等）針對移植可執行｢PE｣簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “exe_clamav”
 - “exe_custom”
 - “exe_mussel”
 
-Check ELF文件against ELF签名when scanning? 0 = No，1 = Yes [Default]。
+檢查ELF文件針對ELF簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “elf_clamav”
 - “elf_custom”
 - “elf_mussel”
 
-Check Mach-O文件(OSX，etc) against Mach-O签名when scanning? 0 = No，1 = Yes [Default]。
+檢查Mach-O文件（OSX文件，等等）針對Ma​​ch-O簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “macho_clamav”
 - “macho_custom”
 - “macho_mussel”
 
-Check graphics文件against graphics based签名when scanning? 0 = No，1 = Yes [Default]。
+檢查圖像文件針對基於圖像簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “graphics_clamav”
 - “graphics_custom”
 - “graphics_mussel”
 
-Check archive contents against archive metadata签名when scanning? 0 = No，1 = Yes [Default]。
+檢查存檔內容針對存檔元數據簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “metadata_clamav”
 - “metadata_custom”
 - “metadata_mussel”
 
-Check OLE objects against OLE签名when scanning? 0 = No，1 = Yes [Default]。
+檢查OLE對象針對OLE簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “ole_clamav”
 - “ole_custom”
 - “ole_mussel”
 
-Check filenames against filename based签名when scanning? 0 = No，1 = Yes [Default]。
+檢查文件名針對基於文件名簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “filenames_clamav”
 - “filenames_custom”
 - “filenames_mussel”
 
-Allow scanning with phpMussel_mail()? 0 = No，1 = Yes [Default]。
+允許掃描通過`phpMussel_mail()`嗎？ False = 不檢查， True = 檢查【標準】。
 - “mail_clamav”
 - “mail_custom”
 - “mail_mussel”
 
-Enable文件specific whitelist? 0 = No，1 = Yes [Default]。
+激活具體文件白名單嗎？ False = 不檢查， True = 檢查【標準】。
 - “whitelist_clamav”
 - “whitelist_custom”
 - “whitelist_mussel”
 
-Check XML／XDP chunks against XML／XDP块签名when scanning? 0 = No，1 = Yes [Default]。
+檢查XML／XDP塊針對XML／XDP塊簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “xmlxdp_clamav”
 - “xmlxdp_custom”
 - “xmlxdp_mussel”
 
-Check against 复杂扩展签名when scanning? 0 = No，1 = Yes [Default]。
+檢查針對複雜擴展簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “coex_clamav”
 - “coex_custom”
 - “coex_mussel”
 
-Check against PDF签名when scanning? 0 = No，1 = Yes [Default]。
+檢查針對PDF簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “pdf_clamav”
 - “pdf_custom”
 - “pdf_mussel”
 
-Check against Shockwave签名when scanning? 0 = No，1 = Yes [Default]。
+檢查針對SWF簽名當掃描嗎？ False = 不檢查， True = 檢查【標準】。
 - “swf_clamav”
 - “swf_custom”
 - “swf_mussel”
@@ -645,25 +645,25 @@ Signature matching length limiting options. Only change these if you know what y
 - Should phpMussel report when extensions are missing? If fail_extensions_silently是disabled，missing extensions will be reported on scanning，和if fail_extensions_silently是enabled，missing extensions will be ignored，with scanning reporting为those文件that there aren't any problems. Disabling this directive may potentially increase your security，but may also lead to an increase of false positives. 0 = Disabled，1 = Enabled [Default]。
 
 “detect_adware”
-- Should phpMussel parse签名for detecting adware? 0 = No，1 = Yes [Default]。
+- phpMussel應該使用簽名為廣告軟件檢測嗎？ False = 不檢查， True = 檢查【標準】。
 
 “detect_joke_hoax”
-- Should phpMussel parse签名for detecting joke/hoax malware/viruses? 0 = No，1 = Yes [Default]。
+- phpMussel應該使用簽名為病毒／惡意軟件笑話／惡作​​劇檢測嗎？ False = 不檢查， True = 檢查【標準】。
 
 “detect_pua_pup”
-- Should phpMussel parse签名for detecting PUAs/PUPs? 0 = No，1 = Yes [Default]。
+- phpMussel應該使用簽名為PUP/PUA（可能無用／非通緝程序／軟件）檢測嗎？ False = 不檢查， True = 檢查【標準】。
 
 “detect_packer_packed”
-- Should phpMussel parse签名for detecting packers和packed data? 0 = No，1 = Yes [Default]。
+- phpMussel應該使用簽名為打包機和打包數據檢測嗎？ False = 不檢查， True = 檢查【標準】。
 
 “detect_shell”
-- Should phpMussel parse签名for detecting shell scripts? 0 = No，1 = Yes [Default]。
+- phpMussel應該使用簽名為webshel​​l腳本檢測嗎？ False = 不檢查， True = 檢查【標準】。
 
 “detect_deface”
-- Should phpMussel parse签名for detecting defacements和defacers? 0 = No，1 = Yes [Default]。
+- phpMussel應該使用簽名為污損和污損軟件檢測嗎？ False = 不檢查， True = 檢查【標準】。
 
 ####"files" （類別）
-File handling configuration。
+文件處理配置。
 
 “max_uploads”
 - Maximum allowable number of文件to scan during文件upload scan before aborting the scan和informing the user they are uploading too much at once! Provides protection against a theoretical attack whereby an attacker attempts to DDoS your system or CMS by overloading phpMussel to slow down the PHP process to a grinding halt. Recommended: 10. You may wish to raise or lower this number depending on the speed of your hardware. Note that this number doesn't account为or include the contents of archives。
@@ -947,4 +947,4 @@ Only put custom签名in those文件intended为custom signatures. Those文件shou
 ---
 
 
-最後更新：2015年9月10日。
+最後更新：2015年9月11日。

@@ -197,9 +197,9 @@
 
  Bagaimanapun, Anda juga bisa menginstruksikan phpMussel untuk memindai file,
  direktori dan/atau arsip spesifik. Untuk melakukannya, pertama-tama Anda harus
- memastikan konfigurasi yang cocok di set di data `phpmussel.ini` (cleanup
- harus dinon aktifkan) dan ketika selesai, di sebuah data PHP yang di hubungkan
- ke phpMussel, gunakan fungsi berikut pada kode Anda:
+ memastikan konfigurasi yang cocok diset di data `phpmussel.ini` (cleanup harus
+ dinon aktifkan) dan ketika selesai, di sebuah data PHP yang di hubungkan ke
+ phpMussel, gunakan fungsi berikut pada kode Anda:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
@@ -324,7 +324,7 @@
  jika Anda telah menset variabel script_password dan logs_password di dalam
  data konfigurasi Anda, Anda akan dapat melakukan sejumlah fungsi administratif
  dan memasukkan beberapa perintah ke phpMussel melalui browser Anda. Alasannya
- sandi-sandi harus di set untuk memungkinkan kontrol-kontrol dari sisi browser
+ sandi-sandi harus diset untuk memungkinkan kontrol-kontrol dari sisi browser
  adalah untuk meyakinkan keamanan yang teratur, perlindungan teratur dari
  kontrol dari sisi browser dan memastikan bahwa ada cara untuk kontrol-kontrol
  untuk semuanya dinonaktifkan jika tidak diinginkan oleh Anda dan/atau
@@ -968,13 +968,15 @@
       tidak yang lain.
       * Tidak memiliki pengaruh di dalam mode CLI.
     "cleanup"
-    - Jangan diset variabel skrip dan cache setelah eksekusi. Jika Anda tidak
-      menggukan skrip di bawah pemindaian upload inisial, harus di set ke yes
-      untuk meminimalisasi penggunaan memori. Jika Anda menggunakan skrip untuk
-      tujuan di bawah pemindaian upload inisial, harus di set ke no, untuk
-      menghindari reload duplikat data ke memori. Dalam praktek umum, haru di
-      set ke yes, tapi jika kamu melakukannya, kamu tidak bisa menggunakan
-      skrip untuk hal lain kecuali pemindaian upload data.
+    - Membersihkan variabel skrip dan cache setelah eksekusi?
+      False = Tidak, True = Ya [Default]. Jika Anda tidak menggukan skrip di
+      bawah pemindaian upload inisial, harus diset ke "true" (ya) untuk
+      meminimalisasi penggunaan memori. Jika Anda menggunakan skrip untuk
+      tujuan di bawah pemindaian upload inisial, harus diset ke
+      "false" (tidak), untuk menghindari reload duplikat data ke memori. Dalam
+      praktek umum, haru diset ke "true", tapi jika kamu melakukannya, kamu
+      tidak bisa menggunakan skrip untuk hal lain kecuali pemindaian upload
+      data.
       * Tidak memiliki pengaruh di dalam mode CLI.
     "scan_log"
     - Nama data dari data untuk mencatat semua hasil pemindaian. Spesifikasikan
@@ -1005,8 +1007,8 @@
       dipindahkan, dikopi atau dihapus sebelumnya. Opsi tersebut ditambahkan
       di sini sebagai ukuran keamanan ekstra untuk semua salinan PHP yang tidak
       selalu bersikap pada perilaku yang diharapkan.
-      0 - Setelah pemindahaian, biarkan data [Default],
-      1 - Setelah pemindaian, jika tidak bersih, hapus langsung.
+      False = Setelah pemindahaian, biarkan data [Default],
+      True = Setelah pemindaian, jika tidak bersih, hapus langsung.
     "lang"
     - Tentukan bahasa default untuk phpMussel.
     "lang_override"
@@ -1086,94 +1088,96 @@
    %%%_custom = Tanda tangan terubah (Jika Anda merubahnya).
    %%%_mussel = Tanda tangan phpMussel dimasukkan dalam tanda tangan tersebut
                 dari yang bukan dari ClamAV.
-   - Cek tanda tangan MD5 ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+   - Cek tanda tangan MD5 ketika pemindaian?
+     False = Tidak, True = Ya [Default].
      "md5_clamav"
      "md5_custom"
      "md5_mussel"
-   - Cek tanda tangan umum ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+   - Cek tanda tangan umum ketika pemindaian?
+     False = Tidak, True = Ya [Default].
      "general_clamav"
      "general_custom"
      "general_mussel"
    - Cek tanda tangan ASCII normal ketika pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+     False = Tidak, True = Ya [Default].
      "ascii_clamav"
      "ascii_custom"
      "ascii_mussel"
    - Cek tanda tangan HTML normal ketika pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+     False = Tidak, True = Ya [Default].
      "html_clamav"
      "html_custom"
      "html_mussel"
    - Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE
-     Sectional ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+     Sectional ketika pemindaian? False = Tidak, True = Ya [Default].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
    - Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE
-     diperpanjang ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+     diperpanjang ketika pemindaian? False = Tidak, True = Ya [Default].
      "pex_custom"
      "pex_mussel"
    - Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE
-     ketika pemindaian? 0 = Tidak, 1 = Ya [Default].
+     ketika pemindaian? False = Tidak, True = Ya [Default].
      "exe_clamav"
      "exe_custom"
      "exe_mussel"
    - Cek file-file ELF pada tanda tangan ELF ketika pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+     False = Tidak, True = Ya [Default].
      "elf_clamav"
      "elf_custom"
      "elf_mussel"
    - Cek file-file Mach-O (OSX, etc) pada tanda tangan Mach-O ketika
-     pemindaian? 0 = Tidak, 1 = Ya [Default].
+     pemindaian? False = Tidak, True = Ya [Default].
      "macho_clamav"
      "macho_custom"
      "macho_mussel"
    - Cek file-file grafis pada tanda tangan grafis ketika pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+     False = Tidak, True = Ya [Default].
      "graphics_clamav"
      "graphics_custom"
      "graphics_mussel"
    - Cek isi file terkompress pada tanda tangan metadata terkompres ketika
-     pemindaian? 0 = Tidak, 1 = Ya [Default].
+     pemindaian? False = Tidak, True = Ya [Default].
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
    - Cek objek-objek OLE pada tanda tangan OLE ketika pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+     False = Tidak, True = Ya [Default].
      "ole_clamav"
      "ole_custom"
      "ole_mussel"
    - Cek nama data pada tanda tangan berbasis nama file ketika pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+     False = Tidak, True = Ya [Default].
      "filenames_clamav"
      "filenames_custom"
      "filenames_mussel"
    - Mengizinkan pemindaian dengan phpMussel_mail()?
-     0 = Tidak, 1 = Ya [Default].
+     False = Tidak, True = Ya [Default].
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
-   - Aktifkan daftar putih tertentu file? 0 = Tidak, 1 = Ya [Default].
+   - Aktifkan daftar putih tertentu file? False = Tidak, True = Ya [Default].
      "whitelist_clamav"
      "whitelist_custom"
      "whitelist_mussel"
    - Cek XML/XDP potongan pada tanda tangan potongan XML/XDP ketika pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+     False = Tidak, True = Ya [Default].
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
    - Cek tanda tangan diperpanjang kompleks ketika pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+     False = Tidak, True = Ya [Default].
      "coex_clamav"
      "coex_custom"
      "coex_mussel"
    - Cek tanda tangan PDF ketika pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+     False = Tidak, True = Ya [Default].
      "pdf_clamav"
      "pdf_custom"
      "pdf_mussel"
    - Cek tanda tangan Shockwave ketika pemindaian?
-     0 = Tidak, 1 = Ya [Default].
+     False = Tidak, True = Ya [Default].
      "swf_clamav"
      "swf_custom"
      "swf_mussel"
@@ -1207,22 +1211,22 @@
      positif palsu. 0 = Dinonaktifkan, 1 = Diaktifkan [Default].
    "detect_adware"
    - Harus phpMussel menggunakan tanda tangan untuk mendeteksi adware?
-     0 = Tidak, 1 = Ya [Default].
+     False = Tidak, True = Ya [Default].
    "detect_joke_hoax"
    - Harus phpMussel menggunakan tanda tangan untuk mendeteksi
-     lelucon/kebohongan malware/virus? 0 = Tidak, 1 = Ya [Default].
+     lelucon/kebohongan malware/virus? False = Tidak, True = Ya [Default].
    "detect_pua_pup"
    - Harus phpMussel menggunakan tanda tangan untuk mendeteksi PUAs/PUPs?
-     0 = Tidak, 1 = Ya [Default].
+     False = Tidak, True = Ya [Default].
    "detect_packer_packed"
    - Harus phpMussel menggunakan tanda tangan untuk mendeteksi pengepakan dan
-     data dikemas? 0 = Tidak, 1 = Ya [Default].
+     data dikemas? False = Tidak, True = Ya [Default].
    "detect_shell"
    - Harus phpMussel menggunakan tanda tangan untuk mendeteksi skrip shell?
-     0 = Tidak, 1 = Ya [Default].
+     False = Tidak, True = Ya [Default].
    "detect_deface"
    - Harus phpMussel menggunakan tanda tangan untuk mendeteksi perusakan dan
-     perusak? 0 = Tidak, 1 = Ya [Default].
+     perusak? False = Tidak, True = Ya [Default].
  "files" (Kategori)
  - Konfigurasi umum untuk mengambil alih file-file.
    "max_uploads"
@@ -1781,5 +1785,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 7 September 2015 (2015.09.07).
+Terakhir Diperbarui: 11 September 2015 (2015.09.11).
 EOF

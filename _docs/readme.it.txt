@@ -964,14 +964,15 @@
       l'altro.
       * Non ha alcuna influenza in CLI modalità.
     "cleanup"
-    - Disimpostare le script variabili e la cache dopo l'esecuzione. Se si non
-      utilizza lo script dopo l'iniziale scansione di caricamenti, dovrebbe
-      impostato a sì, per minimizzare la memoria uso. Se si fa utilizza lo
-      script dopo l'iniziale scansione di caricamenti, dovrebbe impostato a no,
+    - Disimpostare le script variabili e la cache dopo l'esecuzione?
+      False = No, True = Sì [Predefinito]. Se si non utilizza lo script dopo
+      l'iniziale scansione di caricamenti, dovrebbe impostato a "true" (sì),
+      per minimizzare la memoria uso. Se si fa utilizza lo script dopo
+      l'iniziale scansione di caricamenti, dovrebbe impostato a "false" (no),
       al fine per evitare ricaricare inutili duplicati dati all'interno
       memoria. In generale pratica, dovrebbe probabilmente essere impostata a
-      sì, ma, se si farlo, voi sarà non in grado per utilizzare lo script per
-      scopi diversi dalla scansione di caricamenti.
+      "true" (sì), ma, se si farlo, voi sarà non in grado per utilizzare lo
+      script per scopi diversi dalla scansione di caricamenti.
       * Non ha alcuna influenza in CLI modalità.
     "scan_log"
     - Il nome del file per registrare tutti i risultati di la scansione.
@@ -1003,8 +1004,8 @@
       spostato, copiato o cancellato. L'opzione viene aggiunto qui come
       ulteriore misura di sicurezza per coloro le cui copie di PHP non sempre
       comportarsi nel previsto modo.
-      0 - Dopo la scansione, lasciare il file solo [Predefinito],
-      1 - Dopo la scansione, se non pulite, immediatamente eliminarlo.
+      False = Dopo la scansione, lasciare il file solo [Predefinito],
+      True = Dopo la scansione, se non pulite, immediatamente eliminarlo.
     "lang"
     - Specifica la lingua predefinita per phpMussel.
     "lang_override"
@@ -1087,94 +1088,95 @@
    %%%_mussel = phpMussel firme inclusi nel corrente set di firme che non è da
    ClamAV.
    - Verificare contro MD5 firme durante la scansione?
-     0 = No, 1 = Sì [Predefinito].
+     False = No, True = Sì [Predefinito].
      "md5_clamav"
      "md5_custom"
      "md5_mussel"
    - Verificare contro generali firme durante la scansione?
-     0 = No, 1 = Sì [Predefinito].
+     False = No, True = Sì [Predefinito].
      "general_clamav"
      "general_custom"
      "general_mussel"
    - Verificare contro normalizzati ASCII firme durante la scansione?
-     0 = No, 1 = Sì [Predefinito].
+     False = No, True = Sì [Predefinito].
      "ascii_clamav"
      "ascii_custom"
      "ascii_mussel"
    - Verificare contro normalizzati HTML firme durante la scansione?
-     0 = No, 1 = Sì [Predefinito].
+     False = No, True = Sì [Predefinito].
      "html_clamav"
      "html_custom"
      "html_mussel"
    - Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE
-     Sezionale firme durante la scansione? 0 = No, 1 = Sì [Predefinito].
+     Sezionale firme durante la scansione? False = No, True = Sì [Predefinito].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
    - Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE
-     esteso firme durante la scansione? 0 = No, 1 = Sì [Predefinito].
+     esteso firme durante la scansione? False = No, True = Sì [Predefinito].
      "pex_custom"
      "pex_mussel"
    - Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE firme
-     durante la scansione? 0 = No, 1 = Sì [Predefinito].
+     durante la scansione? False = No, True = Sì [Predefinito].
      "exe_clamav"
      "exe_custom"
      "exe_mussel"
    - Verificare ELF file contro ELF firme durante la scansione?
-     0 = No, 1 = Sì [Predefinito].
+     False = No, True = Sì [Predefinito].
      "elf_clamav"
      "elf_custom"
      "elf_mussel"
    - Verificare Mach-O file (OSX, ecc) contro Mach-O firme durante la
-     scansione? 0 = No, 1 = Sì [Predefinito].
+     scansione? False = No, True = Sì [Predefinito].
      "macho_clamav"
      "macho_custom"
      "macho_mussel"
    - Verificare grafica file contro grafica basato firme durante la scansione?
-     0 = No, 1 = Sì [Predefinito].
+     False = No, True = Sì [Predefinito].
      "graphics_clamav"
      "graphics_custom"
      "graphics_mussel"
    - Verificare il contenuto dell'archivio contro archivio metadati firme
-     durante la scansione? 0 = No, 1 = Sì [Predefinito].
+     durante la scansione? False = No, True = Sì [Predefinito].
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
    - Verificare OLE oggetti contro OLE firme durante la scansione?
-     0 = No, 1 = Sì [Predefinito].
+     False = No, True = Sì [Predefinito].
      "ole_clamav"
      "ole_custom"
      "ole_mussel"
    - Verificare nomi del file contro file nome basate firme durante la
-     scansione? 0 = No, 1 = Sì [Predefinito].
+     scansione? False = No, True = Sì [Predefinito].
      "filenames_clamav"
      "filenames_custom"
      "filenames_mussel"
-   - Permettere scansione con phpMussel_mail()? 0 = No, 1 = Sì [Predefinito].
+   - Permettere scansione con phpMussel_mail()?
+     False = No, True = Sì [Predefinito].
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
-   - Abilita file-specifico whitelist? 0 = No, 1 = Sì [Predefinito].
+   - Abilita file-specifico whitelist? False = No, True = Sì [Predefinito].
      "whitelist_clamav"
      "whitelist_custom"
      "whitelist_mussel"
    - Verificare XML/XDP pezzi contro XML/XDP-pezzo firme durante la scansione?
-     0 = No, 1 = Sì [Predefinito].
+     False = No, True = Sì [Predefinito].
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
    - Verificare contro complesso esteso firme durante la scansione?
-     0 = No, 1 = Sì [Predefinito].
+     False = No, True = Sì [Predefinito].
      "coex_clamav"
      "coex_custom"
      "coex_mussel"
    - Verificare contro PDF firme durante la scansione?
-     0 = No, 1 = Sì [Predefinito].
+     False = No, True = Sì [Predefinito].
      "pdf_clamav"
      "pdf_custom"
      "pdf_mussel"
    - Verificare contro Shockwave firme durante la scansione?
-     0 = No, 1 = Sì [Predefinito].
+     False = No, True = Sì [Predefinito].
      "swf_clamav"
      "swf_custom"
      "swf_mussel"
@@ -1208,22 +1210,22 @@
      aumento di falsi positivi. 0 = Disattivato, 1 = Attivato [Predefinito].
    "detect_adware"
    - Dovrebbe phpMussel utilizzare le firme per il rilevamento di adware?
-     0 = No, 1 = Sì [Predefinito].
+     False = No, True = Sì [Predefinito].
    "detect_joke_hoax"
    - Dovrebbe phpMussel utilizzare le firme per il rilevamento di
-     scherzo/inganno malware/virus? 0 = No, 1 = Sì [Predefinito].
+     scherzo/inganno malware/virus? False = No, True = Sì [Predefinito].
    "detect_pua_pup"
    - Dovrebbe phpMussel utilizzare le firme per il rilevamento di PUAs/PUPs?
-     0 = No, 1 = Sì [Predefinito].
+     False = No, True = Sì [Predefinito].
    "detect_packer_packed"
    - Dovrebbe phpMussel utilizzare le firme per il rilevamento di
-     confezionatori e dati confezionati? 0 = No, 1 = Sì [Predefinito].
+     confezionatori e dati confezionati? False = No, True = Sì [Predefinito].
    "detect_shell"
    - Dovrebbe phpMussel utilizzare le firme per il rilevamento di shell script?
-     0 = No, 1 = Sì [Predefinito].
+     False = No, True = Sì [Predefinito].
    "detect_deface"
    - Dovrebbe phpMussel utilizzare le firme per il rilevamento di sfiguramenti
-     e sfiguratori? 0 = No, 1 = Sì [Predefinito].
+     e sfiguratori? False = No, True = Sì [Predefinito].
  "files" (Categoria)
  - Generale configurazione per la gestione dei file.
    "max_uploads"
@@ -1785,5 +1787,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 7 Settembre 2015 (2015.09.07).
+Ultimo Aggiornamento: 11 Settembre 2015 (2015.09.11).
 EOF

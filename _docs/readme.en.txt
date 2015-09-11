@@ -912,13 +912,15 @@
       give someone else access to one set of functions but not the other.
       * Has no influence in CLI mode.
     "cleanup"
-    - Unset script variables and cache after execution. If you're not using the
-      script beyond the initial scanning of uploads, should set to yes, to
-      minimize memory usage. If you're using the script for purposes beyond the
-      initial scanning of uploads, should set to no, to avoid unnecessarily
-      reloading duplicate data into memory. In general practise, it should
-      probably be set to yes, but, if you do this, you won't be able to use the
-      script for anything other than scanning file uploads.
+    - Unset variables and cache used by the script after the initial upload
+      scanning? False = No, True = Yes [Default]. If you -aren't- using the
+      script beyond the initial scanning of uploads, you should set this to
+      "true" (yes), to minimize memory usage. If you -are- using the script
+      beyond the initial scanning of uploads, should set to "false" (no), to
+      avoid unnecessarily reloading duplicate data into memory. In general
+      practice, it should usually be set to "true", but, if you do this, you
+      won't be able to use the script for anything other than the initial file
+      upload scanning.
       * Has no influence in CLI mode.
     "scan_log"
     - Filename of file to log all scanning results to. Specify a filename, or
@@ -947,8 +949,8 @@
       or deleted already. This directive is added here as an extra measure of
       security for those whose copies of PHP mightn't always behave in the
       manner expected.
-      0 - After scanning, leave the file alone [Default],
-      1 - After scanning, if not clean, delete immediately.
+      False = After scanning, leave the file alone [Default],
+      True = After scanning, if not clean, delete immediately.
     "lang"
     - Specify the default language for phpMussel.
     "lang_override"
@@ -1026,93 +1028,95 @@
    %%%_custom = Your custom signatures (if you've written any).
    %%%_mussel = phpMussel signatures included in your current signatures set
                 that aren't from ClamAV.
-   - Check against MD5 signatures when scanning? 0 = No, 1 = Yes [Default].
+   - Check against MD5 signatures when scanning?
+     False = No, True = Yes [Default].
      "md5_clamav"
      "md5_custom"
      "md5_mussel"
-   - Check against general signatures when scanning? 0 = No, 1 = Yes [Default].
+   - Check against general signatures when scanning?
+     False = No, True = Yes [Default].
      "general_clamav"
      "general_custom"
      "general_mussel"
    - Check against normalised ASCII signatures when scanning?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
      "ascii_clamav"
      "ascii_custom"
      "ascii_mussel"
    - Check against normalised HTML signatures when scanning?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
      "html_clamav"
      "html_custom"
      "html_mussel"
    - Check PE (Portable Executable) files (EXE, DLL, etc) against PE Sectional
-     signatures when scanning? 0 = No, 1 = Yes [Default].
+     signatures when scanning? False = No, True = Yes [Default].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
    - Check PE (Portable Executable) files (EXE, DLL, etc) against PE extended
-     signatures when scanning? 0 = No, 1 = Yes [Default].
+     signatures when scanning? False = No, True = Yes [Default].
      "pex_custom"
      "pex_mussel"
    - Check PE (Portable Executable) files (EXE, DLL, etc) against PE signatures
-     when scanning? 0 = No, 1 = Yes [Default].
+     when scanning? False = No, True = Yes [Default].
      "exe_clamav"
      "exe_custom"
      "exe_mussel"
    - Check ELF files against ELF signatures when scanning?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
      "elf_clamav"
      "elf_custom"
      "elf_mussel"
    - Check Mach-O files (OSX, etc) against Mach-O signatures when scanning?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
      "macho_clamav"
      "macho_custom"
      "macho_mussel"
    - Check graphics files against graphics based signatures when scanning?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
      "graphics_clamav"
      "graphics_custom"
      "graphics_mussel"
    - Check archive contents against archive metadata signatures when scanning?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
    - Check OLE objects against OLE signatures when scanning?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
      "ole_clamav"
      "ole_custom"
      "ole_mussel"
    - Check filenames against filename based signatures when scanning?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
      "filenames_clamav"
      "filenames_custom"
      "filenames_mussel"
-   - Allow scanning with phpMussel_mail()? 0 = No, 1 = Yes [Default].
+   - Allow scanning with phpMussel_mail()? False = No, True = Yes [Default].
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
-   - Enable file specific whitelist? 0 = No, 1 = Yes [Default].
+   - Enable file specific whitelist? False = No, True = Yes [Default].
      "whitelist_clamav"
      "whitelist_custom"
      "whitelist_mussel"
    - Check XML/XDP chunks against XML/XDP-chunk signatures when scanning?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
    - Check against complex extended signatures when scanning?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
      "coex_clamav"
      "coex_custom"
      "coex_mussel"
    - Check against PDF signatures when scanning?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
      "pdf_clamav"
      "pdf_custom"
      "pdf_mussel"
    - Check against Shockwave signatures when scanning?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
      "swf_clamav"
      "swf_custom"
      "swf_mussel"
@@ -1146,22 +1150,22 @@
      positives. 0 = Disabled, 1 = Enabled [Default].
    "detect_adware"
    - Should phpMussel parse signatures for detecting adware?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
    "detect_joke_hoax"
    - Should phpMussel parse signatures for detecting joke/hoax malware/viruses?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
    "detect_pua_pup"
    - Should phpMussel parse signatures for detecting PUAs/PUPs?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
    "detect_packer_packed"
    - Should phpMussel parse signatures for detecting packers and packed data?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
    "detect_shell"
    - Should phpMussel parse signatures for detecting shell scripts?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
    "detect_deface"
    - Should phpMussel parse signatures for detecting defacements and defacers?
-     0 = No, 1 = Yes [Default].
+     False = No, True = Yes [Default].
  "files" (Category)
  - File handling configuration.
    "max_uploads"
@@ -1691,5 +1695,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 7th September 2015 (2015.09.07).
+Last Updated: 11th September 2015 (2015.09.11).
 EOF
