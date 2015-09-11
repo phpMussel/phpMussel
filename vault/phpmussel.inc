@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7b-BETA (20th August 2015) Core Script.
+ This File: phpMussel v0.7b-BETA (30th August 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -7837,14 +7837,14 @@ $memCache=array();
 if(!isset($MusselConfig['general']))$MusselConfig['general']=array();
 if(!isset($MusselConfig['general']['scan_log']))$MusselConfig['general']['scan_log']='';
 if(!isset($MusselConfig['general']['scan_kills']))$MusselConfig['general']['scan_kills']='';
-if(!isset($MusselConfig['general']['forbid_on_block']))$MusselConfig['general']['forbid_on_block']=0;
-if(!isset($MusselConfig['general']['delete_on_sight']))$MusselConfig['general']['delete_on_sight']=0;
+if(!isset($MusselConfig['general']['forbid_on_block']))$MusselConfig['general']['forbid_on_block']=false;
+if(!isset($MusselConfig['general']['delete_on_sight']))$MusselConfig['general']['delete_on_sight']=false;
 if(!isset($MusselConfig['general']['quarantine_key']))$MusselConfig['general']['quarantine_key']='';
 if(!isset($MusselConfig['general']['quarantine_max_filesize']))$MusselConfig['general']['quarantine_max_filesize']=2048;
 if(!isset($MusselConfig['general']['quarantine_max_usage']))$MusselConfig['general']['quarantine_max_usage']=65536;
-if(!isset($MusselConfig['general']['honeypot_mode']))$MusselConfig['general']['honeypot_mode']=0;
+if(!isset($MusselConfig['general']['honeypot_mode']))$MusselConfig['general']['honeypot_mode']=false;
 if(!isset($MusselConfig['general']['scan_cache_expiry']))$MusselConfig['general']['scan_cache_expiry']=21600;
-if(!isset($MusselConfig['general']['disable_cli']))$MusselConfig['general']['disable_cli']=0;
+if(!isset($MusselConfig['general']['disable_cli']))$MusselConfig['general']['disable_cli']=false;
 if(!isset($MusselConfig['signatures']))$MusselConfig['signatures']=array();
 $memCache['vChkSigs']=array();
 foreach(array('ascii','coex','elf','exe','filenames','general','graphics','html','macho','mail','md5','metadata','ole','pdf','pe','pex','swf','whitelist','xmlxdp') as $memCache['vChkSigs']['sigset'])
@@ -7853,9 +7853,9 @@ foreach(array('ascii','coex','elf','exe','filenames','general','graphics','html'
 	$memCache['vChkSigs']['custom']=$memCache['vChkSigs']['sigset'].'_custom';
 	$memCache['vChkSigs']['mussel']=$memCache['vChkSigs']['sigset'].'_mussel';
 	if(isset($MusselConfig['signatures'][$memCache['vChkSigs']['sigset']])&&!isset($MusselConfig['signatures'][$memCache['vChkSigs']['clamav']])&&!isset($MusselConfig['signatures'][$memCache['vChkSigs']['custom']])&&!isset($MusselConfig['signatures'][$memCache['vChkSigs']['mussel']]))$MusselConfig['signatures'][$memCache['vChkSigs']['clamav']]=$MusselConfig['signatures'][$memCache['vChkSigs']['custom']]=$MusselConfig['signatures'][$memCache['vChkSigs']['mussel']]=$MusselConfig['signatures'][$memCache['vChkSigs']['sigset']];
-	if(!isset($MusselConfig['signatures'][$memCache['vChkSigs']['clamav']]))$MusselConfig['signatures'][$memCache['vChkSigs']['clamav']]=1;
-	if(!isset($MusselConfig['signatures'][$memCache['vChkSigs']['custom']]))$MusselConfig['signatures'][$memCache['vChkSigs']['custom']]=1;
-	if(!isset($MusselConfig['signatures'][$memCache['vChkSigs']['mussel']]))$MusselConfig['signatures'][$memCache['vChkSigs']['mussel']]=1;
+	if(!isset($MusselConfig['signatures'][$memCache['vChkSigs']['clamav']]))$MusselConfig['signatures'][$memCache['vChkSigs']['clamav']]=true;
+	if(!isset($MusselConfig['signatures'][$memCache['vChkSigs']['custom']]))$MusselConfig['signatures'][$memCache['vChkSigs']['custom']]=true;
+	if(!isset($MusselConfig['signatures'][$memCache['vChkSigs']['mussel']]))$MusselConfig['signatures'][$memCache['vChkSigs']['mussel']]=true;
 	}
 unset($memCache['vChkSigs']);
 if(!isset($MusselConfig['signatures']['fn_siglen_min']))$MusselConfig['signatures']['fn_siglen_min']=2;
@@ -7864,43 +7864,43 @@ if(!isset($MusselConfig['signatures']['rx_siglen_min']))$MusselConfig['signature
 if(!isset($MusselConfig['signatures']['rx_siglen_max']))$MusselConfig['signatures']['rx_siglen_max']=1024;
 if(!isset($MusselConfig['signatures']['sd_siglen_min']))$MusselConfig['signatures']['sd_siglen_min']=4;
 if(!isset($MusselConfig['signatures']['sd_siglen_max']))$MusselConfig['signatures']['sd_siglen_max']=1024;
-if(!isset($MusselConfig['signatures']['fail_silently']))$MusselConfig['signatures']['fail_silently']=1;
-if(!isset($MusselConfig['signatures']['fail_extensions_silently']))$MusselConfig['signatures']['fail_extensions_silently']=1;
-if(!isset($MusselConfig['signatures']['detect_adware']))$MusselConfig['signatures']['detect_adware']=1;
-if(!isset($MusselConfig['signatures']['detect_joke_hoax']))$MusselConfig['signatures']['detect_joke_hoax']=1;
-if(!isset($MusselConfig['signatures']['detect_pua_pup']))$MusselConfig['signatures']['detect_pua_pup']=1;
-if(!isset($MusselConfig['signatures']['detect_packer_packed']))$MusselConfig['signatures']['detect_packer_packed']=1;
-if(!isset($MusselConfig['signatures']['detect_shell']))$MusselConfig['signatures']['detect_shell']=1;
-if(!isset($MusselConfig['signatures']['detect_deface']))$MusselConfig['signatures']['detect_deface']=1;
+if(!isset($MusselConfig['signatures']['fail_silently']))$MusselConfig['signatures']['fail_silently']=true;
+if(!isset($MusselConfig['signatures']['fail_extensions_silently']))$MusselConfig['signatures']['fail_extensions_silently']=true;
+if(!isset($MusselConfig['signatures']['detect_adware']))$MusselConfig['signatures']['detect_adware']=true;
+if(!isset($MusselConfig['signatures']['detect_joke_hoax']))$MusselConfig['signatures']['detect_joke_hoax']=true;
+if(!isset($MusselConfig['signatures']['detect_pua_pup']))$MusselConfig['signatures']['detect_pua_pup']=true;
+if(!isset($MusselConfig['signatures']['detect_packer_packed']))$MusselConfig['signatures']['detect_packer_packed']=true;
+if(!isset($MusselConfig['signatures']['detect_shell']))$MusselConfig['signatures']['detect_shell']=true;
+if(!isset($MusselConfig['signatures']['detect_deface']))$MusselConfig['signatures']['detect_deface']=true;
 if(!isset($MusselConfig['files']))$MusselConfig['files']=array();
 if(!isset($MusselConfig['files']['max_uploads']))$MusselConfig['files']['max_uploads']=10;
 if(!isset($MusselConfig['files']['filesize_limit']))$MusselConfig['files']['filesize_limit']=65536;
-if(!isset($MusselConfig['files']['filesize_response']))$MusselConfig['files']['filesize_response']=1;
+if(!isset($MusselConfig['files']['filesize_response']))$MusselConfig['files']['filesize_response']=true;
 if(!isset($MusselConfig['files']['filetype_whitelist']))$MusselConfig['files']['filetype_whitelist']='';
 if(!isset($MusselConfig['files']['filetype_blacklist']))$MusselConfig['files']['filetype_blacklist']='386,acc*,acm,act*,apk,app,ax,bat,bin,cgi,cmd,com*,cpl,csh,dll,drv,elf,exe,fxp,gad*,hta*,htp*,ico,inf,ins,inx,ipa,isu,job,js,jse,ksh,lnk,msc,msi,msp,mst,net,ocx,ops,org,osx,out,paf,php*,pif,pl,prg,ps1,reg,rgs,rs,run,scr*,sct,shb,shs,sql*,sys,u3p,url,vb,vbe,vbs*,wor*,ws,wsf,xsl';
 if(!isset($MusselConfig['files']['filetype_greylist']))$MusselConfig['files']['filetype_greylist']='';
-if(!isset($MusselConfig['files']['check_archives']))$MusselConfig['files']['check_archives']=1;
-if(!isset($MusselConfig['files']['filesize_archives']))$MusselConfig['files']['filesize_archives']=1;
-if(!isset($MusselConfig['files']['filetype_archives']))$MusselConfig['files']['filetype_archives']=0;
+if(!isset($MusselConfig['files']['check_archives']))$MusselConfig['files']['check_archives']=true;
+if(!isset($MusselConfig['files']['filesize_archives']))$MusselConfig['files']['filesize_archives']=true;
+if(!isset($MusselConfig['files']['filetype_archives']))$MusselConfig['files']['filetype_archives']=false;
 if(!isset($MusselConfig['files']['max_recursion']))$MusselConfig['files']['max_recursion']=10;
-if(!isset($MusselConfig['files']['block_encrypted_archives']))$MusselConfig['files']['block_encrypted_archives']=1;
+if(!isset($MusselConfig['files']['block_encrypted_archives']))$MusselConfig['files']['block_encrypted_archives']=true;
 if(!isset($MusselConfig['attack_specific']))$MusselConfig['attack_specific']=array();
-if(!isset($MusselConfig['attack_specific']['chameleon_from_php']))$MusselConfig['attack_specific']['chameleon_from_php']=1;
-if(!isset($MusselConfig['attack_specific']['chameleon_from_exe']))$MusselConfig['attack_specific']['chameleon_from_exe']=1;
-if(!isset($MusselConfig['attack_specific']['chameleon_to_archive']))$MusselConfig['attack_specific']['chameleon_to_archive']=1;
-if(!isset($MusselConfig['attack_specific']['chameleon_to_doc']))$MusselConfig['attack_specific']['chameleon_to_doc']=1;
-if(!isset($MusselConfig['attack_specific']['chameleon_to_img']))$MusselConfig['attack_specific']['chameleon_to_img']=1;
-if(!isset($MusselConfig['attack_specific']['chameleon_to_pdf']))$MusselConfig['attack_specific']['chameleon_to_pdf']=1;
+if(!isset($MusselConfig['attack_specific']['chameleon_from_php']))$MusselConfig['attack_specific']['chameleon_from_php']=true;
+if(!isset($MusselConfig['attack_specific']['chameleon_from_exe']))$MusselConfig['attack_specific']['chameleon_from_exe']=true;
+if(!isset($MusselConfig['attack_specific']['chameleon_to_archive']))$MusselConfig['attack_specific']['chameleon_to_archive']=true;
+if(!isset($MusselConfig['attack_specific']['chameleon_to_doc']))$MusselConfig['attack_specific']['chameleon_to_doc']=true;
+if(!isset($MusselConfig['attack_specific']['chameleon_to_img']))$MusselConfig['attack_specific']['chameleon_to_img']=true;
+if(!isset($MusselConfig['attack_specific']['chameleon_to_pdf']))$MusselConfig['attack_specific']['chameleon_to_pdf']=true;
 if(!isset($MusselConfig['attack_specific']['archive_file_extensions']))$MusselConfig['attack_specific']['archive_file_extensions']='7z,a,ace,alz,apk,app,ar,arc,arj,ba,bh,bz2,dmg,gz,ice,iso,lha,lz,lzh,lzo,lzw,lzx,mar,pak,pck,pea,rar,rz,s7z,sea,sen,sfx,shar,sqx,tar,tgz,tlz,xar,xp3,xz,yz1,z,zz';
 if(!isset($MusselConfig['attack_specific']['archive_file_extensions_wc']))$MusselConfig['attack_specific']['archive_file_extensions_wc']='paq*,sit*,tbz*,zip*';
-if(!isset($MusselConfig['attack_specific']['general_commands']))$MusselConfig['attack_specific']['general_commands']=0;
-if(!isset($MusselConfig['attack_specific']['block_control_characters']))$MusselConfig['attack_specific']['block_control_characters']=0;
-if(!isset($MusselConfig['attack_specific']['corrupted_exe']))$MusselConfig['attack_specific']['corrupted_exe']=1;
+if(!isset($MusselConfig['attack_specific']['general_commands']))$MusselConfig['attack_specific']['general_commands']=false;
+if(!isset($MusselConfig['attack_specific']['block_control_characters']))$MusselConfig['attack_specific']['block_control_characters']=false;
+if(!isset($MusselConfig['attack_specific']['corrupted_exe']))$MusselConfig['attack_specific']['corrupted_exe']=true;
 if(!isset($MusselConfig['attack_specific']['decode_threshold']))$MusselConfig['attack_specific']['decode_threshold']=512;
 if(!isset($MusselConfig['attack_specific']['scannable_threshold']))$MusselConfig['attack_specific']['scannable_threshold']=32768;
 if(!isset($MusselConfig['compatibility']))$MusselConfig['compatibility']=array();
-if(!isset($MusselConfig['compatibility']['ignore_upload_errors']))$MusselConfig['compatibility']['ignore_upload_errors']=0;
-if(!isset($MusselConfig['compatibility']['only_allow_images']))$MusselConfig['compatibility']['only_allow_images']=0;
+if(!isset($MusselConfig['compatibility']['ignore_upload_errors']))$MusselConfig['compatibility']['ignore_upload_errors']=false;
+if(!isset($MusselConfig['compatibility']['only_allow_images']))$MusselConfig['compatibility']['only_allow_images']=false;
 if(!isset($MusselConfig['heuristic']))$MusselConfig['heuristic']=array();
 if(!isset($MusselConfig['heuristic']['threshold']))$MusselConfig['heuristic']['threshold']=3;
 if(!isset($MusselConfig['virustotal']))$MusselConfig['virustotal']=array();
