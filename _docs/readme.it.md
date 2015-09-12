@@ -485,7 +485,7 @@ Generale configurazione per phpMussel.
 - Non ha alcuna influenza in CLI modalità.
 
 "cleanup"
-- Disimpostare le script variabili e la cache dopo l'esecuzione? False = No, True = Sì [Predefinito]. Se si non utilizza lo script dopo l'iniziale scansione di caricamenti, dovrebbe impostato a `true` (sì), per minimizzare la memoria uso. Se si fa utilizza lo script dopo l'iniziale scansione di caricamenti, dovrebbe impostato a `false` (no), al fine per evitare ricaricare inutili duplicati dati all'interno memoria. In generale pratica, dovrebbe probabilmente essere impostata a `true` (sì), ma, se si farlo, voi sarà non in grado per utilizzare lo script per scopi diversi dalla scansione di caricamenti.
+- Disimpostare le script variabili e la cache dopo l'esecuzione? False = No; True = Sì [Predefinito]. Se si non utilizza lo script dopo l'iniziale scansione di caricamenti, dovrebbe impostato a `true` (sì), per minimizzare la memoria uso. Se si fa utilizza lo script dopo l'iniziale scansione di caricamenti, dovrebbe impostato a `false` (no), al fine per evitare ricaricare inutili duplicati dati all'interno memoria. In generale pratica, dovrebbe probabilmente essere impostata a `true` (sì), ma, se si farlo, voi sarà non in grado per utilizzare lo script per scopi diversi dalla scansione di caricamenti.
 - Non ha alcuna influenza in CLI modalità.
 
 "scan_log"
@@ -498,16 +498,16 @@ Generale configurazione per phpMussel.
 - Dove trovare l'IP indirizzo di collegamento richiesta? (Utile per servizi come Cloudflare e simili) Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!
 
 "forbid_on_block"
-- phpMussel dovrebbe inviare 403 intestazioni con il file caricamente bloccato messaggio, o tenere con il solito 200 OK? 0 = No (200) [Predefinito], 1 = Sì (403).
+- phpMussel dovrebbe inviare 403 intestazioni con il file caricamente bloccato messaggio, o tenere con il solito 200 OK? False = No (200) [Predefinito]; True = Sì (403).
 
 "delete_on_sight"
-- Abilitando questa opzione sarà istruirà lo script per tentare immediatamente eliminare qualsiasi file trovato durante scansioni che corrisponde a qualsiasi i criteri di rilevazione, attraverso le firme o altrimenti. I file determinati ad essere "pulito" non verranno toccati. Nel caso degli archivi, l'intero archivio verrà eliminato (indipendentemente se il file all'origine è soltanto uno dei vari file contenuti all'interno dell'archivio o non). Nel caso di file caricamente scansione, solitamente, non è necessario attivare questa opzione, perché solitamente, PHP sarà automaticamente eliminerà il contenuto della cache quando l'esecuzione è terminata, il che significa che lo farà solitamente eliminare tutti i file caricati tramite al server tranne ciò che già è spostato, copiato o cancellato. L'opzione viene aggiunto qui come ulteriore misura di sicurezza per coloro le cui copie di PHP non sempre comportarsi nel previsto modo. False = Dopo la scansione, lasciare il file solo [Predefinito], True = Dopo la scansione, se non pulite, immediatamente eliminarlo.
+- Abilitando questa opzione sarà istruirà lo script per tentare immediatamente eliminare qualsiasi file trovato durante scansioni che corrisponde a qualsiasi i criteri di rilevazione, attraverso le firme o altrimenti. I file determinati ad essere "pulito" non verranno toccati. Nel caso degli archivi, l'intero archivio verrà eliminato (indipendentemente se il file all'origine è soltanto uno dei vari file contenuti all'interno dell'archivio o non). Nel caso di file caricamente scansione, solitamente, non è necessario attivare questa opzione, perché solitamente, PHP sarà automaticamente eliminerà il contenuto della cache quando l'esecuzione è terminata, il che significa che lo farà solitamente eliminare tutti i file caricati tramite al server tranne ciò che già è spostato, copiato o cancellato. L'opzione viene aggiunto qui come ulteriore misura di sicurezza per coloro le cui copie di PHP non sempre comportarsi nel previsto modo. False = Dopo la scansione, lasciare il file solo [Predefinito]; True = Dopo la scansione, se non pulite, immediatamente eliminarlo.
 
 "lang"
 - Specifica la lingua predefinita per phpMussel.
 
 "lang_override"
-- Specifica se phpMussel dovrebbero, ove possibile, sostituire la lingua specificazione con la lingua preferenza dichiarato da richieste in entrata (HTTP_ACCEPT_LANGUAGE). 0 - No [Predefinito], 1 - Sì.
+- Specifica se phpMussel dovrebbero, ove possibile, sostituire la lingua specificazione con la lingua preferenza dichiarato da richieste in entrata (HTTP_ACCEPT_LANGUAGE). False = No [Predefinito]; True = Sì.
 
 "lang_acceptable"
 - La `lang_acceptable` direttiva indica per phpMussel quali lingue può essere accettato dallo script da `lang` o da `HTTP_ACCEPT_LANGUAGE`. La direttiva dovrebbe essere modificato **SOLO** se si aggiunge i propri personalizzati lingua file o rimuovere con forza di lingua file. La direttiva è una stringa delimitata da virgole dei codici utilizzati da tali lingue accettate dallo script.
@@ -522,13 +522,13 @@ Generale configurazione per phpMussel.
 - La massima permesso utilizzo della memoria per la quarantena. Se la totale memoria utilizzata dalla quarantena raggiunge questo valore, i più vecchi file in quarantena vengono eliminati fino a quando la totale memoria utilizzata non raggiunge questo valore. Questa direttiva è importante per rendere più difficile per qualsiasi potenziali aggressori di inondare la tua quarantena con indesiderati dati potenzialmente causare un eccessivo utilizzo dei dati sul tuo hosting servizio. Il valore è in KB. Predefinito =65536 =65536KB =64MB.
 
 "honeypot_mode"
-- Quando la honeypot modalità è abilitata, phpMussel tenterà di mettere in quarantena ogni file caricamenti che esso incontra, indipendentemente di se il file che essere caricato corrisponde d'alcuna incluso firma, e zero reale scansionare o analisi di quei tentati file caricati sarà avvenire. Questa funzionalità dovrebbe essere utile per coloro che desiderano utilizzare phpMussel a fini di virus/malware ricerca, ma non si raccomandato di abilitare questa funzionalità se l'uso previsto de phpMussel da parte dell'utente è per l'effettivo scansione dei file caricamenti né raccomandato di utilizzare la funzionalità di honeypot per fini diversi da l'uso de honeypot. Da predefinita, questo opzione è disattivato. 0 = Disattivato [Predefinito], 1 = Attivato.
+- Quando la honeypot modalità è abilitata, phpMussel tenterà di mettere in quarantena ogni file caricamenti che esso incontra, indipendentemente di se il file che essere caricato corrisponde d'alcuna incluso firma, e zero reale scansionare o analisi di quei tentati file caricati sarà avvenire. Questa funzionalità dovrebbe essere utile per coloro che desiderano utilizzare phpMussel a fini di virus/malware ricerca, ma non si raccomandato di abilitare questa funzionalità se l'uso previsto de phpMussel da parte dell'utente è per l'effettivo scansione dei file caricamenti né raccomandato di utilizzare la funzionalità di honeypot per fini diversi da l'uso de honeypot. Da predefinita, questo opzione è disattivato. False = Disattivato [Predefinito]; True = Attivato.
 
 "scan_cache_expiry"
 - Per quanto tempo deve phpMussel cache i risultati della scansione? Il valore è il numero di secondi per memorizzare nella cache i risultati della scansione per. Predefinito valore è 21600 secondi (6 ore); Un valore pari a 0 disabilita il caching dei risultati di scansione.
 
 "disable_cli"
-- Disabilita CLI? Modalità CLI è abilitato per predefinito, ma a volte può interferire con alcuni strumenti di test (come PHPUnit, per esempio) e altre applicazioni basate su CLI. Se non è necessario disattivare la modalità CLI, si dovrebbe ignorare questa direttiva. 0 = Abilita CLI [Predefinito], 1 = Disabilita CLI.
+- Disabilita CLI? Modalità CLI è abilitato per predefinito, ma a volte può interferire con alcuni strumenti di test (come PHPUnit, per esempio) e altre applicazioni basate su CLI. Se non è necessario disattivare la modalità CLI, si dovrebbe ignorare questa direttiva. False = Abilita CLI [Predefinito]; True = Disabilita CLI.
 
 ####"signatures" (Categoria)
 Configurazione per firme.
@@ -536,96 +536,96 @@ Configurazione per firme.
 - %%%_custom = Le vostre personalizzate firme (se hai scritto qualsiasi).
 - %%%_mussel = phpMussel firme inclusi nel corrente set di firme che non è da ClamAV.
 
-Verificare contro MD5 firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare contro MD5 firme durante la scansione? False = No; True = Sì [Predefinito].
 - "md5_clamav"
 - "md5_custom"
 - "md5_mussel"
 
-Verificare contro generali firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare contro generali firme durante la scansione? False = No; True = Sì [Predefinito].
 - "general_clamav"
 - "general_custom"
 - "general_mussel"
 
-Verificare contro normalizzati ASCII firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare contro normalizzati ASCII firme durante la scansione? False = No; True = Sì [Predefinito].
 - "ascii_clamav"
 - "ascii_custom"
 - "ascii_mussel"
 
-Verificare contro normalizzati HTML firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare contro normalizzati HTML firme durante la scansione? False = No; True = Sì [Predefinito].
 - "html_clamav"
 - "html_custom"
 - "html_mussel"
 
-Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE Sezionale firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE Sezionale firme durante la scansione? False = No; True = Sì [Predefinito].
 - "pe_clamav"
 - "pe_custom"
 - "pe_mussel"
 
-Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE esteso firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE esteso firme durante la scansione? False = No; True = Sì [Predefinito].
 - "pex_custom"
 - "pex_mussel"
 
-Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE firme durante la scansione? False = No; True = Sì [Predefinito].
 - "exe_clamav"
 - "exe_custom"
 - "exe_mussel"
 
-Verificare ELF file contro ELF firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare ELF file contro ELF firme durante la scansione? False = No; True = Sì [Predefinito].
 - "elf_clamav"
 - "elf_custom"
 - "elf_mussel"
 
-Verificare Mach-O file (OSX, ecc) contro Mach-O firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare Mach-O file (OSX, ecc) contro Mach-O firme durante la scansione? False = No; True = Sì [Predefinito].
 - "macho_clamav"
 - "macho_custom"
 - "macho_mussel"
 
-Verificare grafica file contro grafica basato firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare grafica file contro grafica basato firme durante la scansione? False = No; True = Sì [Predefinito].
 - "graphics_clamav"
 - "graphics_custom"
 - "graphics_mussel"
 
-Verificare il contenuto dell'archivio contro archivio metadati firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare il contenuto dell'archivio contro archivio metadati firme durante la scansione? False = No; True = Sì [Predefinito].
 - "metadata_clamav"
 - "metadata_custom"
 - "metadata_mussel"
 
-Verificare OLE oggetti contro OLE firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare OLE oggetti contro OLE firme durante la scansione? False = No; True = Sì [Predefinito].
 - "ole_clamav"
 - "ole_custom"
 - "ole_mussel"
 
-Verificare nomi del file contro file nome basate firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare nomi del file contro file nome basate firme durante la scansione? False = No; True = Sì [Predefinito].
 - "filenames_clamav"
 - "filenames_custom"
 - "filenames_mussel"
 
-Permettere scansione con phpMussel_mail()? False = No, True = Sì [Predefinito].
+Permettere scansione con phpMussel_mail()? False = No; True = Sì [Predefinito].
 - "mail_clamav"
 - "mail_custom"
 - "mail_mussel"
 
-Abilita file-specifico whitelist? False = No, True = Sì [Predefinito].
+Abilita file-specifico whitelist? False = No; True = Sì [Predefinito].
 - "whitelist_clamav"
 - "whitelist_custom"
 - "whitelist_mussel"
 
-Verificare XML/XDP pezzi contro XML/XDP-pezzo firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare XML/XDP pezzi contro XML/XDP-pezzo firme durante la scansione? False = No; True = Sì [Predefinito].
 - "xmlxdp_clamav"
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
 
-Verificare contro complesso esteso firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare contro complesso esteso firme durante la scansione? False = No; True = Sì [Predefinito].
 - "coex_clamav"
 - "coex_custom"
 - "coex_mussel"
 
-Verificare contro PDF firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare contro PDF firme durante la scansione? False = No; True = Sì [Predefinito].
 - "pdf_clamav"
 - "pdf_custom"
 - "pdf_mussel"
 
-Verificare contro Shockwave firme durante la scansione? False = No, True = Sì [Predefinito].
+Verificare contro Shockwave firme durante la scansione? False = No; True = Sì [Predefinito].
 - "swf_clamav"
 - "swf_custom"
 - "swf_mussel"
@@ -639,28 +639,28 @@ Firma lunghezza corrispondenza limitando opzioni. Modificata solo se si sa cosa 
 - "sd_siglen_max"
 
 "fail_silently"
-- Dovrebbe phpMussel rapporto quando le file di firme sono mancanti o danneggiati? Se fail_silently è disattivato, mancanti e danneggiati file saranno riportato sulla scansione, e se fail_silently è abilitato, mancanti e danneggiati file saranno ignorato, con scansione riportando per quei file che non ha sono problemi. Questo dovrebbe essere generalmente lasciata sola a meno che sperimentando inaspettate terminazioni o simili problemi. 0 = Disattivato, 1 = Attivato [Predefinito].
+- Dovrebbe phpMussel rapporto quando le file di firme sono mancanti o danneggiati? Se fail_silently è disattivato, mancanti e danneggiati file saranno riportato sulla scansione, e se fail_silently è abilitato, mancanti e danneggiati file saranno ignorato, con scansione riportando per quei file che non ha sono problemi. Questo dovrebbe essere generalmente lasciata sola a meno che sperimentando inaspettate terminazioni o simili problemi. False = Disattivato; True = Attivato [Predefinito].
 
 "fail_extensions_silently"
-- Dovrebbe phpMussel rapporto quando le estensioni sono mancanti? Se fail_extensions_silently è disattivato, mancanti estensioni saranno riportato sulla scansione, e se fail_extensions_silently è abilitato, mancanti estensioni saranno ignorato, con scansione riportando per quei file che non ha sono problemi. La disattivazione di questa direttiva potrebbe potenzialmente aumentare la sicurezza, ma può anche portare ad un aumento di falsi positivi. 0 = Disattivato, 1 = Attivato [Predefinito].
+- Dovrebbe phpMussel rapporto quando le estensioni sono mancanti? Se fail_extensions_silently è disattivato, mancanti estensioni saranno riportato sulla scansione, e se fail_extensions_silently è abilitato, mancanti estensioni saranno ignorato, con scansione riportando per quei file che non ha sono problemi. La disattivazione di questa direttiva potrebbe potenzialmente aumentare la sicurezza, ma può anche portare ad un aumento di falsi positivi. False = Disattivato; True = Attivato [Predefinito].
 
 "detect_adware"
-- Dovrebbe phpMussel utilizzare le firme per il rilevamento di adware? False = No, True = Sì [Predefinito].
+- Dovrebbe phpMussel utilizzare le firme per il rilevamento di adware? False = No; True = Sì [Predefinito].
 
 "detect_joke_hoax"
-- Dovrebbe phpMussel utilizzare le firme per il rilevamento di scherzo/inganno malware/virus? False = No, True = Sì [Predefinito].
+- Dovrebbe phpMussel utilizzare le firme per il rilevamento di scherzo/inganno malware/virus? False = No; True = Sì [Predefinito].
 
 "detect_pua_pup"
-- Dovrebbe phpMussel utilizzare le firme per il rilevamento di PUAs/PUPs? False = No, True = Sì [Predefinito].
+- Dovrebbe phpMussel utilizzare le firme per il rilevamento di PUAs/PUPs? False = No; True = Sì [Predefinito].
 
 "detect_packer_packed"
-- Dovrebbe phpMussel utilizzare le firme per il rilevamento di confezionatori e dati confezionati? False = No, True = Sì [Predefinito].
+- Dovrebbe phpMussel utilizzare le firme per il rilevamento di confezionatori e dati confezionati? False = No; True = Sì [Predefinito].
 
 "detect_shell"
-- Dovrebbe phpMussel utilizzare le firme per il rilevamento di shell script? False = No, True = Sì [Predefinito].
+- Dovrebbe phpMussel utilizzare le firme per il rilevamento di shell script? False = No; True = Sì [Predefinito].
 
 "detect_deface"
-- Dovrebbe phpMussel utilizzare le firme per il rilevamento di sfiguramenti e sfiguratori? False = No, True = Sì [Predefinito].
+- Dovrebbe phpMussel utilizzare le firme per il rilevamento di sfiguramenti e sfiguratori? False = No; True = Sì [Predefinito].
 
 ####"files" (Categoria)
 Generale configurazione per la gestione dei file.
@@ -669,10 +669,10 @@ Generale configurazione per la gestione dei file.
 - Massimo numero di file per analizzare durante il file caricamenti scansione prima le terminazione del scansione e d'informare dell'utente che essi stai caricando troppo in una volta! Fornisce protezione contro un teorico attacco per cui un malintenzionato utente tenta per DDoS vostra sistema o CMS da sovraccaricamento phpMussel rallentare il PHP processo ad un brusco stop. Raccomandato: 10. Si potrebbe desiderare di aumentare o diminuire che numero basato sulla velocità del vostra sistema e hardware. Si noti che questo numero non tiene conto o includere il contenuti degli archivi.
 
 "filesize_limit"
-- File dimensione limite in KB. 65536 = 64MB [Predefinito], 0 = Nessun limite (sempre sul greylist), qualsiasi (positivo) numerico valore accettato. Questo può essere utile quando la configurazione di PHP limita la quantità di memoria che un processo può contenere o se i configurazione ha limitato la dimensione dei file caricamenti.
+- File dimensione limite in KB. 65536 = 64MB [Predefinito]; 0 = Nessun limite (sempre sul greylist), qualsiasi (positivo) numerico valore accettato. Questo può essere utile quando la configurazione di PHP limita la quantità di memoria che un processo può contenere o se i configurazione ha limitato la dimensione dei file caricamenti.
 
 "filesize_response"
-- Cosa fare con i file che superano il file dimensione limite (se esistente). 0 - Whitelist, 1 - Blacklist [Predefinito].
+- Cosa fare con i file che superano il file dimensione limite (se esistente). False = Whitelist; True = Blacklist [Predefinito].
 
 "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
 - Se il vostro sistema permette solo determinati tipi di file per caricamenti, o se il vostra sistema esplicitamente negare determinati tipi di file, specificando i tipi di file nel whitelist, blacklist e/o greylist può aumentare la velocità a cui la scansione viene eseguita da permettendo lo script da ignora alcuni tipi di file. Il formato è CSV (valori separati da virgola). Se si desidera eseguire la scansione tutti, invece del whitelist, blacklist or greylist, lasciare le variabili vuoti; Fare questo sarà disabilitali.
@@ -682,27 +682,27 @@ Generale configurazione per la gestione dei file.
   - Se il greylist è vuoto o se il greylist non è vuota e il tipo di file è nel greylist, scansiona il file come per normale e determinare se bloccarlo sulla base dei risultati della scansione, ma se il greylist non è vuoto e il tipo di file non è nel greylist, trattare il file come se è nel blacklist, quindi non scansionarlo ma bloccarlo comunque.
 
 "check_archives"
-- Tenta per verifica il contenuti degli archivi? 0 - No (no verifica), 1 - Sì (fare verifica) [Predefinito].
+- Tenta per verifica il contenuti degli archivi? False = No (no verifica); True = Sì (fare verifica) [Predefinito].
 - Al momento, solo verifica di BZ, GZ, LZF e ZIP file è supportato (verifica di RAR, CAB, 7z eccetera è supportato al momento).
 - Questo non è infallibile! Mentre mi assai raccomando che è attivato, non posso garantire che sarà sempre trovare tutto.
 - Anche essere consapevoli che verifica per archivio al momento è non ricorsiva per ZIP.
 
 "filesize_archives"
-- Eredita file dimensione limite blacklist/whitelist al contenuti degli archivi? 0 - No (appena greylist tutto), 1 - Sì [Predefinito].
+- Eredita file dimensione limite blacklist/whitelist al contenuti degli archivi? False = No (appena greylist tutto); True = Sì [Predefinito].
 
 "filetype_archives"
-- Eredita file tipi blacklist/whitelist al contenuti degli archivi? 0 - No (appena greylist tutto), 1 - Sì [Predefinito].
+- Eredita file tipi blacklist/whitelist al contenuti degli archivi? False = No (appena greylist tutto); True = Sì [Predefinito].
 
 "max_recursion"
 - Massimo ricorsione profondità limite per gli archivi. Predefinito = 10.
 
 "block_encrypted_archives"
-- Rilevi e blocchi archivi criptati? Perché phpMussel non è in grado di verifica del contenuto degli archivi criptati, è possibile che la archivi criptati può essere usato da un attaccante verifieracome mezzo di tenta di bypassare phpMussel, verificatore anti-virus e altri tali protezioni. Istruire phpMussel di bloccare qualsiasi archivi criptati che si trovato potrebbe potenzialmente contribuire a ridurre il rischio associato a questi tali possibilità. 0 - No, 1 - Sì [Predefinito].
+- Rilevi e blocchi archivi criptati? Perché phpMussel non è in grado di verifica del contenuto degli archivi criptati, è possibile che la archivi criptati può essere usato da un attaccante verifieracome mezzo di tenta di bypassare phpMussel, verificatore anti-virus e altri tali protezioni. Istruire phpMussel di bloccare qualsiasi archivi criptati che si trovato potrebbe potenzialmente contribuire a ridurre il rischio associato a questi tali possibilità. False = No; True = Sì [Predefinito].
 
 ####"attack_specific" (Categoria)
 Configurazione per specifiche attacco rilevazioni (non basate sulle CVD).
 
-Chameleon attacco rilevamento: 0 = Disattivato, 1 = Attivato.
+Chameleon attacco rilevamento: False = Disattivato; True = Attivato.
 
 "chameleon_from_php"
 - Cercare per PHP magici numeri che non sono riconosciuti PHP file né archivi.
@@ -726,13 +726,13 @@ Chameleon attacco rilevamento: 0 = Disattivato, 1 = Attivato.
 - Riconosciute archivio file estensioni (formato è CSV; deve solo aggiungere o rimuovere quando problemi apparire; rimozione inutilmente può causare falsi positivi per archivio file, mentre aggiungendo inutilmente saranno essenzialmente whitelist quello che si sta aggiungendo dall'attacco specifico rilevamento; modificare con cautela; anche notare che questo non ha qualsiasi effetto su cui gli archivi possono e non possono essere analizzati dal contenuti livello). La lista, come da predefinito, è i formati utilizzati più comunemente attraverso la maggior parte dei sistemi e CMS, Ma apposta non è necessariamente completo.
 
 "general_commands"
-- Cercare contenuti dei file per generali comandi quali `eval()`, `exec()` e `include()`? 0 - No (no verifica) [Predefinito], 1 - Sì (fare verifica). Disattivare questa opzione se si intende caricare qualsiasi delle seguenti al vostra sistema o CMS tramite il browser: PHP, JavaScript, HTML, python, perl file e eccetera. Attivare questa opzione se non avete qualsiasi aggiuntivi protezioni sul vostro sistema e non intendono caricare tali file. Se si utilizza qualsiasi aggiuntivi protezione in collaborazione con phpMussel come ZB Block, vi è non necessità di attivare questa opzione, perché la maggior parte di ciò che phpMussel sarà cercare (nel contesto di questa opzione) sono duplicazioni di protezioni che sono già forniti.
+- Cercare contenuti dei file per generali comandi quali `eval()`, `exec()` e `include()`? False = No (no verifica) [Predefinito]; True = Sì (fare verifica). Disattivare questa opzione se si intende caricare qualsiasi delle seguenti al vostra sistema o CMS tramite il browser: PHP, JavaScript, HTML, python, perl file e eccetera. Attivare questa opzione se non avete qualsiasi aggiuntivi protezioni sul vostro sistema e non intendono caricare tali file. Se si utilizza qualsiasi aggiuntivi protezione in collaborazione con phpMussel come ZB Block, vi è non necessità di attivare questa opzione, perché la maggior parte di ciò che phpMussel sarà cercare (nel contesto di questa opzione) sono duplicazioni di protezioni che sono già forniti.
 
 "block_control_characters"
-- Bloccare tutti i file contenenti i controlli caratteri (eccetto per nuove linee)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Se si sta caricando solo normale testo, quindi si puó attivare questa opzione a fornire additionale protezione al vostro sistema. Ma, se si carica qualcosa di diverso da normale testo, abilitando questo opzione può causare falsi positivi. 0 - Non bloccare [Predefinito], 1 - Bloccare.
+- Bloccare tutti i file contenenti i controlli caratteri (eccetto per nuove linee)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Se si sta caricando solo normale testo, quindi si puó attivare questa opzione a fornire additionale protezione al vostro sistema. Ma, se si carica qualcosa di diverso da normale testo, abilitando questo opzione può causare falsi positivi. False = Non bloccare [Predefinito]; True = Bloccare.
 
 "corrupted_exe"
-- Corrotto file e parsare errori. 0 = Ignorare, 1 = Bloccare [Predefinito]. Rilevare e bloccare i potenzialmente corrotti PE (portatile eseguibili) file? Spesso (ma non sempre), quando alcuni aspetti di un PE file sono corrotto o non può essere parsato correttamente, tale può essere indicativo di una virale infezione. I processi utilizzati dalla maggior parte dei antivirus programmi per rilevare i virus all'intero PE file richiedono parsare quei file in certi modi, di cui, se il programmatore di un virus è consapevole di, sarà specificamente provare di prevenire, al fine di abilita loro virus di rimanere inosservato.
+- Corrotto file e parsare errori. False = Ignorarli; True = Bloccarli [Predefinito]. Rilevare e bloccare i potenzialmente corrotti PE (portatile eseguibili) file? Spesso (ma non sempre), quando alcuni aspetti di un PE file sono corrotto o non può essere parsato correttamente, tale può essere indicativo di una virale infezione. I processi utilizzati dalla maggior parte dei antivirus programmi per rilevare i virus all'intero PE file richiedono parsare quei file in certi modi, di cui, se il programmatore di un virus è consapevole di, sarà specificamente provare di prevenire, al fine di abilita loro virus di rimanere inosservato.
 
 "decode_threshold"
 - Opzionale limitazione o soglia per la lunghezza dei grezzi dati dove decodificare comandi dovrebbe essere rilevati (nel caso in cui vi siano notevoli problemi di prestazioni durante la scansione). Il valore è un integer che rappresenta la dimensione dei file in KB. Predefinito = 512 (512KB). Un zero o un nullo valore disabilita la soglia (rimuovere tale limitazione basata sulla dimensione dei file).
@@ -744,10 +744,10 @@ Chameleon attacco rilevamento: 0 = Disattivato, 1 = Attivato.
 Compatibilità direttive per phpMussel.
 
 "ignore_upload_errors"
-- Questa direttiva dovrebbe generalmente essere SPENTO meno se necessario per la corretta funzionalità del phpMussel sul vostra sistema. Normalmente, quando spento, quando phpMussel rileva la presenza di elementi nella `$_FILES` array(), è tenterà di avviare una scansione dei file che tali elementi rappresentano, e, se tali elementi sono vuoti, phpMussel restituirà un errore messaggio. Questo è un comportamento adeguato per phpMussel. Tuttavia, per alcuni CMS, vuoti elementi nel `$_FILES` può avvenire come conseguenza del naturale comportamento di questi CMS, o errori possono essere segnalati quando non ce ne sono, nel qual caso, il normale comportamento per phpMussel sarà interferire con il normale comportamento di questi CMS. Se una tale situazione avvenire per voi, attivazione di questa opzione SU sarà istruirà phpMussel a non tenta avviare scansioni per tali vuoti elementi, ignorarli quando si trova ea non ritorno qualsiasi errore correlato messaggi, così permettendo proseguimento della pagina richiesta. 0 - SPENTO (OFF), 1 - SU (ON).
+- Questa direttiva dovrebbe generalmente essere SPENTO meno se necessario per la corretta funzionalità del phpMussel sul vostra sistema. Normalmente, quando spento, quando phpMussel rileva la presenza di elementi nella `$_FILES` array(), è tenterà di avviare una scansione dei file che tali elementi rappresentano, e, se tali elementi sono vuoti, phpMussel restituirà un errore messaggio. Questo è un comportamento adeguato per phpMussel. Tuttavia, per alcuni CMS, vuoti elementi nel `$_FILES` può avvenire come conseguenza del naturale comportamento di questi CMS, o errori possono essere segnalati quando non ce ne sono, nel qual caso, il normale comportamento per phpMussel sarà interferire con il normale comportamento di questi CMS. Se una tale situazione avvenire per voi, attivazione di questa opzione SU sarà istruirà phpMussel a non tenta avviare scansioni per tali vuoti elementi, ignorarli quando si trova ea non ritorno qualsiasi errore correlato messaggi, così permettendo proseguimento della pagina richiesta. False = SPENTO/OFF; True = SU/ON.
 
 "only_allow_images"
-- Se vi aspettare o intendere solo di permettere le immagini da caricare al vostro sistema o CMS, e se assolutamente non richiedono qualsiasi file diversi da immagini essere caricare per il vostro sistema o CMS, questa direttiva dovrebbe essere SU, ma dovrebbe altrimenti essere SPENTO. Se questa direttiva è SU, che istruirà phpMussel di indiscriminatamente bloccare tutti i caricati file identificati come file non-immagine, senza scansionali. Questo può ridurre il tempo di processo e l'utilizzo della memoria per tentati caricamenti di non-immagine file. 0 - SPENTO (OFF), 1 - SU (ON).
+- Se vi aspettare o intendere solo di permettere le immagini da caricare al vostro sistema o CMS, e se assolutamente non richiedono qualsiasi file diversi da immagini essere caricare per il vostro sistema o CMS, questa direttiva dovrebbe essere SU, ma dovrebbe altrimenti essere SPENTO. Se questa direttiva è SU, che istruirà phpMussel di indiscriminatamente bloccare tutti i caricati file identificati come file non-immagine, senza scansionali. Questo può ridurre il tempo di processo e l'utilizzo della memoria per tentati caricamenti di non-immagine file. False = SPENTO/OFF; True = SU/ON.
 
 ####"heuristic" (Categoria)
 Euristici direttive per phpMussel.
@@ -947,4 +947,4 @@ Questa informazione è stato lo scorso aggiornato 7 Settembre 2015 ed è in cors
 ---
 
 
-Ultimo Aggiornamento: 11 Settembre 2015 (2015.09.11).
+Ultimo Aggiornamento: 12 Settembre 2015 (2015.09.12).
