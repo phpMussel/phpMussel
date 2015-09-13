@@ -1698,7 +1698,7 @@
  entweder vor der Benutzung von phpMussel deaktivieren oder sich andere
  Alternativen überlegen.
 
- Diese Informationen wurden zuletzt am 2015.09.07 aktualisiert und gelten für
+ Diese Informationen wurden zuletzt am 7. September 2015 aktualisiert und gelten für
  alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen
  (v0.6-v0.7a) zu diesem Zeitpunkt.
 
