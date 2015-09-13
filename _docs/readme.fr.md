@@ -485,7 +485,7 @@ Configuration générale pour phpMussel.
 - N'a pas d'influence en CLI mode.
 
 "cleanup"
-- Déensemble variables du script et cache après l'exécution. Si vous n'utilisez pas le script au-delà l'initiale analyse du téléchargements, devrait ensemble à oui à minimiser l'utilisation de la mémoire. Si vous utilisez le script à des fins au-delà l'initiale analyse du téléchargements, devrait ensemble à non, pour éviter recharger inutilement dupliqué données dans la mémoire. Dans la générale pratique, il devrait probablement être ensemblé sur oui, mais, si vous faites cela, vous ne serez pas être capable d'utiliser le script pour tout chose autre que l'analyse des fichiers téléchargements.
+- Déensemble variables du script et cache après l'exécution? False = Non; True = Oui [Défaut]. Si vous ne utilisez pas le script au-delà l'initiale analyse du téléchargements, devrait ensemble à `true` (oui) à minimiser l'utilisation de la mémoire. Si vous utilisez le script à des fins au-delà l'initiale analyse du téléchargements, devrait ensemble à `false` (non), pour éviter recharger inutilement dupliqué données dans la mémoire. Dans la pratique générale, il devrait probablement être ensemblé à `true`, mais, si vous faites cela, vous ne serez pas être capable d'utiliser le script pour tout chose autre que l'analyse des fichiers téléchargements.
 - N'a pas d'influence en CLI mode.
 
 "scan_log"
@@ -498,16 +498,16 @@ Configuration générale pour phpMussel.
 - Où trouver l'IP adresse du connexion demande? (Utile pour services tels que Cloudflare et les goûts) Par Défaut = REMOTE_ADDR. AVERTISSEMENT: Ne pas changer si vous ne sais pas ce que vous faites!
 
 "forbid_on_block"
-- Devrait phpMussel envoyer 403 têtes avec le fichier téléchargement bloqué message, ou rester avec l'habitude 200 bien (200 OK)? 0 = Non (200) [Défaut], 1 = Oui (403).
+- Devrait phpMussel envoyer 403 têtes avec le fichier téléchargement bloqué message, ou rester avec l'habitude 200 bien (200 OK)? False = Non (200) [Défaut]; True = Oui (403).
 
 "delete_on_sight"
-- Mise en cette option sera instruire le script à tenter immédiatement supprimer tout fichiers elle constate au cours de son analyse correspondant à des critères de détection, que ce soit via des signatures ou autrement. Fichiers jugées "propre" ne seront pas touchés. Dans le cas des archives, l'ensemble d'archive sera supprimé (indépendamment de si le incriminé fichier est que l'un de plusieurs fichiers contenus dans l'archive). Pour le cas d'analyse de fichiers téléchargement, généralement, il n'est pas nécessaire d'activer cette option sur, parce généralement, PHP faire purger automatiquement les contenus de son cache lorsque l'exécution est terminée, ce qui signifie que il va généralement supprimer tous les fichiers téléchargés à travers elle au serveur sauf qu'ils ont déménagé, copié ou supprimé déjà. L'option est ajoutée ici comme une supplémentaire mesure de sécurité pour ceux dont copies de PHP peut pas toujours se comporter de la manière attendu. 0 - Après l'analyse, laissez le fichier tel quel [Défaut], 1 - Après l'analyse, si pas propre, supprimer immédiatement.
+- Mise en cette option sera instruire le script à tenter immédiatement supprimer tout fichiers elle constate au cours de son analyse correspondant à des critères de détection, que ce soit via des signatures ou autrement. Fichiers jugées "propre" ne seront pas touchés. Dans le cas des archives, l'ensemble d'archive sera supprimé (indépendamment de si le incriminé fichier est que l'un de plusieurs fichiers contenus dans l'archive). Pour le cas d'analyse de fichiers téléchargement, généralement, il n'est pas nécessaire d'activer cette option sur, parce généralement, PHP faire purger automatiquement les contenus de son cache lorsque l'exécution est terminée, ce qui signifie que il va généralement supprimer tous les fichiers téléchargés à travers elle au serveur sauf qu'ils ont déménagé, copié ou supprimé déjà. L'option est ajoutée ici comme une supplémentaire mesure de sécurité pour ceux dont copies de PHP peut pas toujours se comporter de la manière attendu. False = Après l'analyse, laissez le fichier tel quel [Défaut]; True = Après l'analyse, si pas propre, supprimer immédiatement.
 
 "lang"
 - Spécifier la défaut langue pour phpMussel.
 
 "lang_override"
-- Spécifiez si phpMussel devrait, quand c'est possible, remplacer la spécification du langage avec la préférence de langue déclarée par les demandes entrantes (HTTP_ACCEPT_LANGUAGE). 0 - Non [Défaut], 1 - Oui.
+- Spécifiez si phpMussel devrait, quand c'est possible, remplacer la spécification du langage avec la préférence de langue déclarée par les demandes entrantes (HTTP_ACCEPT_LANGUAGE). False = Non [Défaut]; True = Oui.
 
 "lang_acceptable"
 - La `lang_acceptable` directive indique à phpMussel quelles langues peuvent être acceptées par le script de la part de `lang` ou de la part de `HTTP_ACCEPT_LANGUAGE`. Cette directive devrait **SEULEMENT** être modifié si vous ajoutez vos propres langues fichiers personnalisés ou retirer par force les langues fichiers. La directive est une chaîne de codes utilisés par ces langues acceptées par le script, délimité par des virgules.
@@ -522,13 +522,13 @@ Configuration générale pour phpMussel.
 - La maximale autorisée utilisation de la mémoire pour la quarantaine. Si la totale utilisée mémoire par la quarantaine atteint cette valeur, les anciens fichiers en quarantaine seront supprimés jusqu'à ce que la totale mémoire utilisée n'atteint pas cette valeur. Cette directive est un important moyen de rendre plus difficile pour des agresseurs potentiels d'inonder votre quarantaine avec des non désirées données ce qui pourrait causer l'emballement d'utilisation des données sur votre service d'hébergement. La valeur est en Ko. Défaut =65536 =65536Ko =64Mo.
 
 "honeypot_mode"
-- Lorsque le honeypot mode est activé, phpMussel va tenter de mettre en quarantaine tous les fichier téléchargements ce qu'il rencontre, indépendamment de si oui ou non le fichier en cours de téléchargement correspond à signature inclus, et aucune réelle analyse de ces fichier téléchargements tentatives va arriver. Cette fonctionnalité devrait être utile pour ceux qui souhaitent utiliser phpMussel pour des fins de logiciels malveillants ou virus recherche, mais il pas n'est recommandé d'activer cette fonctionnalité si l'utilisation prévue de phpMussel par l'utilisateur est l'analyse de fichier téléchargements comme la norme, ni est-il recommandé d'utiliser la honeypot fonctionnalité pour fins autres que de honeypotting. Par défaut, cette option est désactivée. 0 = Désactivé [Défaut], 1 = Activé.
+- Lorsque le honeypot mode est activé, phpMussel va tenter de mettre en quarantaine tous les fichier téléchargements ce qu'il rencontre, indépendamment de si oui ou non le fichier en cours de téléchargement correspond à signature inclus, et aucune réelle analyse de ces fichier téléchargements tentatives va arriver. Cette fonctionnalité devrait être utile pour ceux qui souhaitent utiliser phpMussel pour des fins de logiciels malveillants ou virus recherche, mais il pas n'est recommandé d'activer cette fonctionnalité si l'utilisation prévue de phpMussel par l'utilisateur est l'analyse de fichier téléchargements comme la norme, ni est-il recommandé d'utiliser la honeypot fonctionnalité pour fins autres que de honeypotting. Par défaut, cette option est désactivée. False = Désactivé [Défaut]; True = Activé.
 
 "scan_cache_expiry"
 - Pour combien de temps devrait phpMussel cache les résultats de l'analyse? La valeur est le nombre de secondes pour mettre en cache les résultats de l'analyse pour. Par défaut est 21600 secondes (6 heures); Une valeur de 0 désactive mettre en cache les résultats de l'analyse.
 
 "disable_cli"
-- Désactiver CLI mode? CLI mode est activé par défaut, mais peut parfois interférer avec certains test outils (comme PHPUnit, par exemple) et d'autres applications basées sur CLI. Si vous n'avez pas besoin désactiver CLI mode, vous devrait ignorer cette directive. 0 = Activer CLI mode [Défaut], 1 = Désactiver CLI mode.
+- Désactiver CLI mode? CLI mode est activé par défaut, mais peut parfois interférer avec certains test outils (comme PHPUnit, par exemple) et d'autres applications basées sur CLI. Si vous n'avez pas besoin désactiver CLI mode, vous devrait ignorer cette directive. False = Activer CLI mode [Défaut]; True = Désactiver CLI mode.
 
 ####"signatures" (Catégorie)
 Configuration pour les signatures.
@@ -536,96 +536,96 @@ Configuration pour les signatures.
 - %%%_custom = Vos personnalisés signatures (si vous avez écrit tout).
 - %%%_mussel = phpMussel signatures incluses dans votre courant ensemble des signatures qui ne sont pas de ClamAV.
 
-Vérifier contre MD5 signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier contre MD5 signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "md5_clamav"
 - "md5_custom"
 - "md5_mussel"
 
-Vérifier contre général signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier contre général signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "general_clamav"
 - "general_custom"
 - "general_mussel"
 
-Vérifier contre normalisé ASCII signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier contre normalisé ASCII signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "ascii_clamav"
 - "ascii_custom"
 - "ascii_mussel"
 
-Vérifier contre normalisé HTML signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier contre normalisé HTML signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "html_clamav"
 - "html_custom"
 - "html_mussel"
 
-Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE Sectional signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE Sectional signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "pe_clamav"
 - "pe_custom"
 - "pe_mussel"
 
-Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE étendues signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE étendues signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "pex_custom"
 - "pex_mussel"
 
-Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier PE (Portable Exécutable) fichiers (EXE, DLL, etc) contre PE signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "exe_clamav"
 - "exe_custom"
 - "exe_mussel"
 
-Vérifier ELF fichiers contre ELF signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier ELF fichiers contre ELF signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "elf_clamav"
 - "elf_custom"
 - "elf_mussel"
 
-Vérifier Mach-O fichiers (OSX, etc) contre Mach-O signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier Mach-O fichiers (OSX, etc) contre Mach-O signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "macho_clamav"
 - "macho_custom"
 - "macho_mussel"
 
-Vérifier graphiques fichiers contre graphiques basé signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier graphiques fichiers contre graphiques basé signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "graphics_clamav"
 - "graphics_custom"
 - "graphics_mussel"
 
-Vérifier archives contenu contre archive métadonnées signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier archives contenu contre archive métadonnées signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "metadata_clamav"
 - "metadata_custom"
 - "metadata_mussel"
 
-Vérifier OLE objets contre OLE signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier OLE objets contre OLE signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "ole_clamav"
 - "ole_custom"
 - "ole_mussel"
 
-Vérifier les noms de fichiers contre signatures basé sur les noms de fichiers au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier les noms de fichiers contre signatures basé sur les noms de fichiers au cours de analyse? False = Non; True = Oui [Défaut].
 - "filenames_clamav"
 - "filenames_custom"
 - "filenames_mussel"
 
-Autoriser analyse avec phpMussel_mail()? 0 = Non, 1 = Oui [Défaut].
+Autoriser analyse avec phpMussel_mail()? False = Non; True = Oui [Défaut].
 - "mail_clamav"
 - "mail_custom"
 - "mail_mussel"
 
-Activer fichier spécifique blanche liste? 0 = Non, 1 = Oui [Défaut].
+Activer fichier spécifique blanche liste? False = Non; True = Oui [Défaut].
 - "whitelist_clamav"
 - "whitelist_custom"
 - "whitelist_mussel"
 
-Vérifier XML/XDP morceaux contre XML/XDP morceaux signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier XML/XDP morceaux contre XML/XDP morceaux signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "xmlxdp_clamav"
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
 
-Vérifier contre complexes étendues signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier contre complexes étendues signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "coex_clamav"
 - "coex_custom"
 - "coex_mussel"
 
-Vérifier contre PDF signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier contre PDF signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "pdf_clamav"
 - "pdf_custom"
 - "pdf_mussel"
 
-Vérifier contre Shockwave signatures au cours de analyse? 0 = Non, 1 = Oui [Défaut].
+Vérifier contre Shockwave signatures au cours de analyse? False = Non; True = Oui [Défaut].
 - "swf_clamav"
 - "swf_custom"
 - "swf_mussel"
@@ -639,28 +639,28 @@ Signature correspondance longueur limiter options. Seulement modifier si vous sa
 - "sd_siglen_max"
 
 "fail_silently"
-- Devrait phpMussel signaler lorsque les signatures fichiers sont manquants ou endommagés? Si fail_silently est désactivé, manquants et corrompus fichiers seront signalé sur analyse, et si fail_silently est activé, manquants et corrompus fichiers seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. Cela devrait généralement être laissé seul sauf si vous rencontrez accidents ou similaires problèmes. 0 = Désactivé, 1 = Activé [Défaut].
+- Devrait phpMussel signaler lorsque les signatures fichiers sont manquants ou endommagés? Si fail_silently est désactivé, manquants et corrompus fichiers seront signalé sur analyse, et si fail_silently est activé, manquants et corrompus fichiers seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. Cela devrait généralement être laissé seul sauf si vous rencontrez accidents ou similaires problèmes. False = Désactivé; True = Activé [Défaut].
 
 "fail_extensions_silently"
-- Devrait phpMussel signaler lorsque les extensions sont manquantes? Si fail_extensions_silently est désactivé, extensions manquantes seront signalé sur analyse, et si fail_extensions_silently est activé, extensions manquantes seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. La désactivation de cette directive peut potentiellement augmenter votre sécurité, mais peut aussi conduire à une augmentation de faux positifs. 0 = Désactivé, 1 = Activé [Défaut].
+- Devrait phpMussel signaler lorsque les extensions sont manquantes? Si fail_extensions_silently est désactivé, extensions manquantes seront signalé sur analyse, et si fail_extensions_silently est activé, extensions manquantes seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. La désactivation de cette directive peut potentiellement augmenter votre sécurité, mais peut aussi conduire à une augmentation de faux positifs. False = Désactivé; True = Activé [Défaut].
 
 "detect_adware"
-- Devrait phpMussel utiliser signatures pour détecter les adwares? 0 = Non, 1 = Oui [Défaut].
+- Devrait phpMussel utiliser signatures pour détecter les adwares? False = Non; True = Oui [Défaut].
 
 "detect_joke_hoax"
-- Devrait phpMussel utiliser signatures pour détecter les blagues/canulars malware/virus? 0 = Non, 1 = Oui [Défaut].
+- Devrait phpMussel utiliser signatures pour détecter les blagues/canulars malware/virus? False = Non; True = Oui [Défaut].
 
 "detect_pua_pup"
-- Devrait phpMussel utiliser signatures pour détecter les PUAs/PUPs? 0 = Non, 1 = Oui [Défaut].
+- Devrait phpMussel utiliser signatures pour détecter les PUAs/PUPs? False = Non; True = Oui [Défaut].
 
 "detect_packer_packed"
-- Devrait phpMussel utiliser signatures pour détecter les emballeurs et des données emballés? 0 = Non, 1 = Oui [Défaut].
+- Devrait phpMussel utiliser signatures pour détecter les emballeurs et des données emballés? False = Non; True = Oui [Défaut].
 
 "detect_shell"
-- Devrait phpMussel utiliser signatures pour détecter les shell scripts? 0 = Non, 1 = Oui [Défaut].
+- Devrait phpMussel utiliser signatures pour détecter les shell scripts? False = Non; True = Oui [Défaut].
 
 "detect_deface"
-- Devrait phpMussel utiliser signatures pour détecter les defacements and defacers? 0 = Non, 1 = Oui [Défaut].
+- Devrait phpMussel utiliser signatures pour détecter les defacements and defacers? False = Non; True = Oui [Défaut].
 
 ####"files" (Catégorie)
 Générale configuration pour gestion des fichiers.
@@ -669,10 +669,10 @@ Générale configuration pour gestion des fichiers.
 - Maximum admissible nombre de fichiers pour analyse lorsque l'analyse de fichier téléchargements avant d'abandonner l'analyse et informer l'utilisateur qu'ils sont téléchargement trop à la fois! Fournit protection contre une théorique attaque par lequel un attaquant tente à DDoS votre système ou CMS par surchargeant phpMussel à ralentir le processus de PHP à une halte. Recommandé: 10. Vous pouvez désirer d'augmenter ou diminuer ce nombre dépendamment de la vitesse de votre hardware. Notez que ce nombre ne tient pas compte pour ou inclure le contenus des archives.
 
 "filesize_limit"
-- Limite de taille de fichier en Ko. 65536 = 64Mo [Défaut], 0 = Pas limite (toujours en liste grise), tout (positif) valeur numérique acceptée. Cela peut être utile lorsque votre configuration de PHP limite la quantité de mémoire qu'un processus peut contenir ou si votre configuration de PHP limite la taille du fichier téléchargements.
+- Limite de taille de fichier en Ko. 65536 = 64Mo [Défaut]; 0 = Pas limite (toujours en liste grise), tout (positif) valeur numérique acceptée. Cela peut être utile lorsque votre configuration de PHP limite la quantité de mémoire qu'un processus peut contenir ou si votre configuration de PHP limite la taille du fichier téléchargements.
 
 "filesize_response"
-- Que faire avec des fichiers qui dépassent la taille de fichier limite (si existant). 0 - Énumérer Blanche, 1 - Énumérer Noire [Défaut].
+- Que faire avec des fichiers qui dépassent la taille de fichier limite (si existant). False = Énumérer Blanche; True = Énumérer Noire [Défaut].
 
 "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
 - Si votre système seulement permettre particuliers types de fichiers à téléchargé, ou si votre système nie explicitement particuliers types de fichiers, spécifiant les types de fichiers dans listes blanches, listes noires et listes gris peut augmenter la vitesse à laquelle l'analyse est effectuée en permettant le script à sauter particuliers types de fichiers. Format est CSV (virgule séparées valeurs). Si vous souhaitez analyse tout, plutôt que de liste blanche, liste noire ou liste gris, laisser les variable(/s) blanc; Il va désactiver liste blanche/noire/gris.
@@ -682,27 +682,27 @@ Générale configuration pour gestion des fichiers.
   - Si la liste grise est vide ou si la liste grise n'est vide pas et le type de fichier est listé grise, analyser le fichier comme d'habitude et déterminer si de bloquer basés des résultats de l'analyse, mais si la liste grise n'est vide pas et le type de fichier n'est listé grise pas, traiter le fichier comme listé noire, donc n'analyse pas mais bloque de toute façon.
 
 "check_archives"
-- Essayez vérifier le contenu des archives? 0 - Non (ne pas vérifier), 1 - Oui (vérifier) [Défaut].
+- Essayer vérifier les contenus des archives? False = Non (ne pas vérifier); True = Oui (vérifier) [Défaut].
 - Actuellement, seulement l'examen de BZ, GZ, LZF et ZIP fichiers est supporté (l'examen RAR, CAB, 7z etc actuellement pas supporté).
 - Ce n'est pas à toute épreuve! Bien que je recommande fortement d'avoir ce reste activée, je ne peux pas garantir il va toujours trouver tout.
 - Aussi être conscient que l'examen d'archives actuellement n'est pas récursif pour ZIPs.
 
 "filesize_archives"
-- Étendre taille du fichier liste noire/blanche paramètres à le contenu des archives? 0 - Non (énumérer grise tout), 1 - Oui [Défaut].
+- Étendre taille du fichier liste noire/blanche paramètres à le contenu des archives? False = Non (énumérer grise tout); True = Oui [Défaut].
 
 "filetype_archives"
-- Étendre type de fichier liste noire/blanche paramètres à le contenu des archives? 0 - Non (énumérer grise tout), 1 - Oui [Défaut].
+- Étendre type de fichier liste noire/blanche paramètres à le contenu des archives? False = Non (énumérer grise tout); True = Oui [Défaut].
 
 "max_recursion"
 - Maximum récursivité profondeur limite pour archives. Défaut = 10.
 
 "block_encrypted_archives"
-- Détecter et bloquer les archives cryptées? Parce phpMussel est pas capable d'analyse du contenu des archives cryptées, il est possible que le cryptage des archives peut être utilisé par un attaquant un moyen a tenter de contourner phpMussel, analyseurs anti-virus et d'autres protections. Instruire phpMussel pour bloquer toutes les archives cryptées qu'il découvre pourrait aider à réduire les risques associés à ces possibilités. 0 - Non, 1 - Oui [Défaut].
+- Détecter et bloquer les archives cryptées? Parce phpMussel est pas capable d'analyse du contenu des archives cryptées, il est possible que le cryptage des archives peut être utilisé par un attaquant un moyen a tenter de contourner phpMussel, analyseurs anti-virus et d'autres protections. Instruire phpMussel pour bloquer toutes les archives cryptées qu'il découvre pourrait aider à réduire les risques associés à ces possibilités. False = Non; True = Oui [Défaut].
 
 ####"attack_specific" (Catégorie)
 Configuration pour les spécifique attaque détections (pas basé sur CVDs).
 
-Caméléon Attaque Détection: 0 = Désactivé, 1 = Activé.
+Caméléon Attaque Détection: False = Désactivé; True = Activé.
 
 "chameleon_from_php"
 - Vérifier pour PHP tête dans les fichiers qui sont ni PHP fichiers ni reconnue comme archives.
@@ -726,13 +726,13 @@ Caméléon Attaque Détection: 0 = Désactivé, 1 = Activé.
 - Les extensions de reconnus archive fichiers (format est CSV; devraient ajouter ou supprimer seulement quand problèmes surviennent; supprimer inutilement peut entraîner des faux positifs à paraître pour archive fichiers, tandis que ajoutant inutilement sera essentiellement liste blanche ce que vous ajoutez à partir de l'attaque spécifique détection; modifier avec prudence; aussi noter que cela n'a aucun effet sur ce archives peut et ne peut pas être analysé au niveau du contenu). La liste, comme en cas de défaut, énumère les formats plus couramment utilisé dans la majorité des systèmes et CMS, mais volontairement pas nécessairement complète.
 
 "general_commands"
-- Vérifier de fichiers pour générales commandes comme `eval()`, `exec()` et `include()`? 0 - Non (pas vérifier) [Défaut], 1 - Oui (vérifier). Définir comme 0 (Non) si vous avez l'intention à télécharger de la suivant à votre système ou CMS via votre navigateur: PHP, JavaScript, HTML, python, perl fichiers etc. Définir comme 1 (Oui) si vous n'avez pas de supplémentaire protections sur votre système et n'ont pas l'intention de télécharger ces fichiers. Si vous utilisez une supplémentaire sécurité en conjonction avec phpMussel comme ZB Block, il n'est pas nécessaire d'activer cette option, parce la plupart de que phpMussel va chercher pour (dans le contexte de cette option) sont des duplications de protections qui sont déjà fournis.
+- Vérifier de fichiers pour générales commandes comme `eval()`, `exec()` et `include()`? False = Non (pas vérifier) [Défaut]; True = Oui (vérifier). Définir à `false` si vous avez l'intention à téléchargez de la suivant à votre système ou CMS via votre navigateur: PHP, JavaScript, HTML, python, perl fichiers, etc. Définir à `true` si vous n'avez pas supplémentaire protections pour votre système et n'ont pas l'intention de téléchargement de ces fichiers. Si vous utilisez supplémentaire sécurité en conjonction avec phpMussel comme ZB Block, il n'est pas nécessaire d'activer cette option, parce la plupart de que phpMussel va chercher pour (dans le contexte de cette option) sont duplications de protections qui sont déjà fournis.
 
 "block_control_characters"
-- Bloquer tous les fichiers contenant des contrôle caractères (autre que les sauts de ligne)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Si vous êtes _**SEULEMENT**_ télécharger de brut texte fichiers, puis vous pouvez activer cette option à fournir une supplémentaire protection à votre système. Mais, si vous télécharger quelque chose plus que brut texte, l'activation de cette peut créer faux positifs. 0 - Ne pas bloquer [Défaut], 1 - Bloquer.
+- Bloquer tous les fichiers contenant des contrôle caractères (autre que les sauts de ligne)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Si vous êtes _**SEULEMENT**_ télécharger de brut texte fichiers, puis vous pouvez activer cette option à fournir une supplémentaire protection à votre système. Mais, si vous télécharger quelque chose plus que brut texte, l'activation de cette peut créer faux positifs. False = Ne pas bloquer [Défaut]; True = Bloquer.
 
 "corrupted_exe"
-- Corrompus fichiers et des erreurs d'analyse. 0 = Ignorer, 1 = Bloquer [Défaut]. Détecter et bloquer les potentiellement corrompus PE (Portable Executable) fichiers? Souvent (mais pas toujours), lorsque certains aspects d'un PE fichier sont corrompus ou ne peut pas être analysée correctement, il peut être le signe d'une virale infection. Les processus utilisés par la plupart des anti-virus programmes pour détecter les virus dans PE fichiers requérir l'analyse de ces fichiers par certaines méthodes, de ce que, si le programmeur d'un virus est conscient de, seront spécifiquement tenter d'empêcher, en vue de permettre leur virus n'être pas détectée.
+- Corrompus fichiers et des erreurs d'analyse. False = Ignorer; True = Bloquer [Défaut]. Détecter et bloquer les potentiellement corrompus PE (Portable Executable) fichiers? Souvent (mais pas toujours), lorsque certains aspects d'un PE fichier sont corrompus ou ne peut pas être analysée correctement, il peut être le signe d'une virale infection. Les processus utilisés par la plupart des anti-virus programmes pour détecter les virus dans PE fichiers requérir l'analyse de ces fichiers par certaines méthodes, de ce que, si le programmeur d'un virus est conscient de, seront spécifiquement tenter d'empêcher, en vue de permettre leur virus n'être pas détectée.
 
 "decode_threshold"
 - Facultatif limitation ou seuil à la longueur de brutes données dans laquelle commandes des décodages doivent être détectés (dans le cas où il ya remarquable performance problèmes au cours de l'analyse). La valeur est un entier représentant la tailles des fichiers en Ko. Défaut = 512 (512Ko). Zéro ou nulle valeur désactive le seuil (supprimant toute restriction basé sur la taille du fichier).
@@ -744,10 +744,10 @@ Caméléon Attaque Détection: 0 = Désactivé, 1 = Activé.
 Compatibilité directives pour phpMussel.
 
 "ignore_upload_errors"
-- Cette directive doit généralement être DÉSACTIVÉ sauf si cela est nécessaire pour la correcte fonctionnalité de phpMussel sur votre spécifique système. Normalement, lorsque DÉSACTIVÉ, lorsque phpMussel détecte la présence d'éléments dans le `$_FILES`() tableau, il va tenter de lancer une analyse du fichiers que ces éléments représentent, et, si ces éléments sont vide, phpMussel retourne un message d'erreur. Ce comportement est normal pour phpMussel. Mais, pour certains CMS, vides éléments dans `$_FILES` peuvent survenir à la suite du naturel comportement de ces CMS, ou erreurs peuvent être signalés quand il ne sont pas tout, dans ce cas, le normal comportement pour phpMussel seront interférer avec le normal comportement de ces CMS. Si telle une situation se produit pour vous, ACTIVATION de cette option sera instruire phpMussel ne pas à tenter de lancer d'analyses pour ces vides éléments, ignorer quand il est reconnu et ne pas à retourner tout de connexes messages d'erreur, permettant ainsi la continuation de la page demande. 0 - DÉSACTIVÉ, 1 - ACTIVÉ.
+- Cette directive doit généralement être DÉSACTIVÉ sauf si cela est nécessaire pour la correcte fonctionnalité de phpMussel sur votre spécifique système. Normalement, lorsque DÉSACTIVÉ, lorsque phpMussel détecte la présence d'éléments dans le `$_FILES`() tableau, il va tenter de lancer une analyse du fichiers que ces éléments représentent, et, si ces éléments sont vide, phpMussel retourne un message d'erreur. Ce comportement est normal pour phpMussel. Mais, pour certains CMS, vides éléments dans `$_FILES` peuvent survenir à la suite du naturel comportement de ces CMS, ou erreurs peuvent être signalés quand il ne sont pas tout, dans ce cas, le normal comportement pour phpMussel seront interférer avec le normal comportement de ces CMS. Si telle une situation se produit pour vous, ACTIVATION de cette option sera instruire phpMussel ne pas à tenter de lancer d'analyses pour ces vides éléments, ignorer quand il est reconnu et ne pas à retourner tout de connexes messages d'erreur, permettant ainsi la continuation de la page demande. False = DÉSACTIVÉ; True = ACTIVÉ.
 
 "only_allow_images"
-- Si vous seulement attendre ou vouloir d'autoriser images à être téléchargé sur votre système ou CMS, et si vous absolument n'avez pas besoin tous les fichiers autres que les images à être téléchargé sur votre système ou CMS, cette directive devrait être ACTIVÉ, mais devrait autrement être DÉSACTIVÉ. Si cette directive est ACTIVÉ, il va instruire phpMussel à bloquer indistinctement tous téléchargements identifié comme non image fichiers, sans analyser. Cela peut réduire le temps de travail et l'utilisation de la mémoire pour les tentativé téléchargements de non image fichiers. 0 - DÉSACTIVÉ, 1 - ACTIVÉ.
+- Si vous seulement attendre ou vouloir d'autoriser images à être téléchargé sur votre système ou CMS, et si vous absolument n'avez pas besoin tous les fichiers autres que les images à être téléchargé sur votre système ou CMS, cette directive devrait être ACTIVÉ, mais devrait autrement être DÉSACTIVÉ. Si cette directive est ACTIVÉ, il va instruire phpMussel à bloquer indistinctement tous téléchargements identifié comme non image fichiers, sans analyser. Cela peut réduire le temps de travail et l'utilisation de la mémoire pour les tentativé téléchargements de non image fichiers. False = DÉSACTIVÉ; True = ACTIVÉ.
 
 ####"heuristic" (Catégorie)
 Heuristiques directives pour phpMussel.
@@ -947,4 +947,4 @@ Cette information a été réactualisé le 7 Septembre 2015 et est courant pour 
 ---
 
 
-Dernière Réactualisé: 7 Septembre 2015 (2015.09.07).
+Dernière Réactualisé: 12 Septembre 2015 (2015.09.12).

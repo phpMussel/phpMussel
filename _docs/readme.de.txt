@@ -930,13 +930,15 @@
       Zugang zur einen Funktionalität gewähren wollen, aber nicht zur anderen.
       * Kein Einfluss im CLI-Modus.
     "cleanup"
-    - Löscht die Scriptvariablen und den Cache nach der Ausführung. Sollten Sie
-      das Script nach der Überprüfung des Uploads nicht mehr nutzen, stellen
-      Sie diese Option auf "yes", um die Speichernutzung zu minimieren.
-      Verwenden Sie das Script noch für weitere Zwecke, stellen Sie die Option
-      auf "no", um unnötiges mehrfaches Einlesen der Daten in den Speicher zu
-      vermeiden. Normalerweise sollte diese Option auf "yes" gesetzt werden,
-      allerdings können Sie das Script dann nur zur Dateiüberprüfung verwenden.
+    - Löscht die Scriptvariablen und den Cache nach der Ausführung.
+      False = Nicht löschen; True = Löschen [Standardeinstellung].
+      Sollten Sie das Script nach der Überprüfung des Uploads nicht mehr
+      nutzen, stellen Sie diese Option auf "true", um die Speichernutzung zu
+      minimieren. Verwenden Sie das Script noch für weitere Zwecke, stellen Sie
+      die Option auf "false", um unnötiges mehrfaches Einlesen der Daten in den
+      Speicher zu vermeiden. Normalerweise sollte diese Option auf "true"
+      gesetzt werden, allerdings können Sie das Script dann nur zur
+      Dateiüberprüfung verwenden.
       * Kein Einfluss im CLI-Modus.
     "scan_log"
     - Name einer Datei zum Aufzeichnen aller Resultate von Überprüfungen. Geben
@@ -950,7 +952,7 @@
       Achtung: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
     "forbid_on_block"
     - Zurückgegebener 403-HTTP-Header bei einem blockierten Dateiupload.
-      0 = Nein (200) [Standardeinstellung], 1 = Ja (403).
+      False = Nein (200) [Standardeinstellung]; True = Ja (403).
     "delete_on_sight"
     - Diese Option weist das Script an, Dateien während eines Scans sofort
       zu löschen, wenn ein Erkennungsmerkmal, ob durch Signaturen oder
@@ -964,16 +966,16 @@
       gelöscht wurde. Diese Option wurde als zusätzliches Maß an Sicherheit
       hinzugefügt, außerdem für Systeme, deren PHP-Installation nicht dem
       üblichen Verhalten entspricht.
-      0 - Nach der Überprüfung wird die Datei so belassen
-          [Standardeinstellung],
-      1 - Nach der Überprüfung wird die Datei sofort gelöscht, sofern Sie
-          infiziert ist.
+      False = Nach der Überprüfung wird die Datei so belassen
+              [Standardeinstellung],
+      True = Nach der Überprüfung wird die Datei sofort gelöscht, sofern Sie
+             infiziert ist.
     "lang"
     - Gibt die Standardsprache für phpMussel an.
     "lang_override"
     - Festlegen ob phpMussel, falls möglich, die Sprach-Einstellung mit dem
       Sprach-Wert von einkommenden Anfragen festlegen soll
-      (HTTP_ACCEPT_LANGUAGE). 0 - Nein [Standardeinstellung], 1 - Ja.
+      (HTTP_ACCEPT_LANGUAGE). False = Nein [Standardeinstellung]; True = Ja.
     "lang_acceptable"
     - Die "lang_acceptable" Anweisung sagt phpMussel, welche Sprachen von dem
       Script von "lang" oder von "HTTP_ACCEPT_LANGUAGE" akzeptiert werden.
@@ -1026,7 +1028,7 @@
       mit dieser Funktion zum Zwecke der Dateiüberprüfung von Uploads oder
       anderen Zwecken außer "Honeypotting" zu verwenden. Standardmäßig ist
       diese Funktion deaktiviert.
-      0 = Deativiert [Standardwert], 1 = Aktiviert.
+      False = Deativiert [Standardwert]; True = Aktiviert.
     "scan_cache_expiry"
     - Für wie lange soll phpMussel die Scan-Ergebnisse zwischenspeichern? Wert
       entspricht der Anzahl Sekunden, wie lange die Scan-Ergebnisse zwischen-
@@ -1037,107 +1039,107 @@
       manchmal bestimmte Test-Tools (PHPUnit zum Beispiel) und andere
       CLI-basierte Anwendungen beeinträchtigen. Wenn du den CLI-Modus nicht
       deaktiveren musst, solltest du diese Anweisung ignorieren.
-      0 = CLI-Modus aktivieren [Standardeinstellung],
-      1 = CLI-Modus deaktivieren.
+      False = CLI-Modus aktivieren [Standardeinstellung];
+      True = CLI-Modus deaktivieren.
  "signatures" (Kategorie)
  - Konfiguration der Signaturen.
    %%%_clamav = ClamAV-Signaturen (generelle Signaturen und tägliche Updates).
    %%%_custom = Ihre eigenen Signaturen (sofern Sie welche erstellt haben).
    %%%_mussel = phpMussel-Signaturen, nicht aus der ClamAV-Datenbank.
    - Scan mit den MD5-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "md5_clamav"
      "md5_custom"
      "md5_mussel"
    - Scan mit den generellen Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "general_clamav"
      "general_custom"
      "general_mussel"
    - Scan mit den normierten ASCII Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "ascii_clamav"
      "ascii_custom"
      "ascii_mussel"
    - Scan mit den normierten HTML Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "html_clamav"
      "html_custom"
      "html_mussel"
    - Scan von PE-Dateien (Portable Executable, EXE, DLL, etc.)
      mit den PE-Sectional-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
    - Scan von PE-Dateien (Portable Executable, EXE, DLL, etc.)
      mit den PE-Erweitert-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "pex_custom"
      "pex_mussel"
    - Scan von PE-Dateien (Portable Executable, EXE, DLL, etc.)
      mit den PE-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "exe_clamav"
      "exe_custom"
      "exe_mussel"
    - Scan von ELF-Dateien mit den ELF-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "elf_clamav"
      "elf_custom"
      "elf_mussel"
    - Scan von Mach-O-Dateien (OSX, etc.) mit den Mach-O-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "macho_clamav"
      "macho_custom"
      "macho_mussel"
    - Scan von Bilddateien mit den Grafik-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "graphics_clamav"
      "graphics_custom"
      "graphics_mussel"
    - Scan von Archivinhalten mit den Archiv-Metadata-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
    - Scan von OLE-Objekten mit den OLE-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "ole_clamav"
      "ole_custom"
      "ole_mussel"
    - Scan von Dateinamen mit den Dateinamen-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "filenames_clamav"
      "filenames_custom"
      "filenames_mussel"
    - Scan mit phpMussel_mail() erlauben?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
    - Aktivieren Datei-spezifischer Whitelist?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "whitelist_clamav"
      "whitelist_custom"
      "whitelist_mussel"
    - Scan von XML/XDP-Datenblöcken mit den XML/XDP-Datenblock-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
    - Scan mit den Komplex-Erweitert-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "coex_clamav"
      "coex_custom"
      "coex_mussel"
    - Scan mit den PDF-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "pdf_clamav"
      "pdf_custom"
      "pdf_mussel"
    - Scan mit den Shockwave-Signaturen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
      "swf_clamav"
      "swf_custom"
      "swf_mussel"
@@ -1161,7 +1163,7 @@
      fehlende oder defekte Signaturen ignoriert, ohne dass entsprechende
      Probleme gemeldet werden. Diese Option sollte so belassen werden, es sei
      denn, Sie erwarten Abstürze oder ähnliches.
-     0 = Deaktiviert, 1 = Aktiviert [Standardeinstellung].
+     False = Deaktiviert; True = Aktiviert [Standardeinstellung].
    "fail_extensions_silently"
    - Soll phpMussel melden, wenn Dateierweiterungen fehlen? Wenn
      fail_extensions_silently deaktiviert ist, werden fehlende
@@ -1170,25 +1172,25 @@
      gemeldet, dass es mit diesen Dateien keine Probleme gibt. Das Deaktivieren
      dieser Anweisung kann möglicherweise deine Sicherheit erhöhen, kann aber
      auch zu mehr Falschmeldungen führen.
-     0 = Deaktiviert, 1 = Aktiviert [Standardeinstellung].
+     False = Deaktiviert; True = Aktiviert [Standardeinstellung].
    "detect_adware"
    - Soll phpMussel Signaturen für die Erkennung von Adware parsen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
    "detect_joke_hoax"
    - Soll phpMussel Signaturen für die Erkennung von Scherz/Fake-Malware/Viren
-     parsen? 0 = Nein, 1 = Ja [Standardeinstellung].
+     parsen? False = Nein; True = Ja [Standardeinstellung].
    "detect_pua_pup"
    - Soll phpMussel Signaturen für die Erkennung von PUAs/PUPs parsen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
    "detect_packer_packed"
    - Soll phpMussel Signaturen für die Erkennung von Packern und komprimierten
-     Daten parsen? 0 = Nein, 1 = Ja [Standardeinstellung].
+     Daten parsen? False = Nein; True = Ja [Standardeinstellung].
    "detect_shell"
    - Soll phpMussel Signaturen für die Erkennung von Shell-Scripten parsen?
-     0 = Nein, 1 = Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
    "detect_deface"
    - Soll phpMussel Signaturen für die Erkennung von Defacements und Defacer
-     parsen? 0 = Nein, 1 = Ja [Standardeinstellung].
+     parsen? False = Nein; True = Ja [Standardeinstellung].
  "files" (Kategorie)
  - Generelle Konfigurationen für die Handhabung von Dateien.
    "max_uploads"
@@ -1209,8 +1211,8 @@
    "filesize_response"
    - Handhabung von Dateien, die die Begrenzung der Dateigröße (sofern
      angegeben) überschreiten.
-     0 - Hinzufügen zur Whitelist,
-     1 - Hinzufügen zur Blacklist [Standardeinstellung].
+     False = Hinzufügen zur Whitelist;
+     True = Hinzufügen zur Blacklist [Standardeinstellung].
    "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
    - Sofern Ihr System spezielle Dateitypen im Upload erlaubt oder komplett
      verweigert, so unterteilen Sie diese Dateitypen in Whitelists, Blacklists
@@ -1233,8 +1235,8 @@
        Blacklist ist, scanne sie nicht aber blockiere sie trotzdem.
    "check_archives"
    - Soll der Inhalt von Archiven überprüft werden?
-     0 - Nein (keine Überprüfung),
-     1 - Ja (wird überprüft) [Standardeinstellung].
+     False = Nein (keine Überprüfung);
+     True = Ja (wird überprüft) [Standardeinstellung].
      * Zur Zeit wird NUR die Überprüfung von BZ, GZ, LZF und ZIP Archiven
        unterstützt (Überprüfung von RAR, CAB, 7z usw. wird zur Zeit NICHT
        unterstützt).
@@ -1245,13 +1247,13 @@
    "filesize_archives"
    - Soll das Blacklisting/Whitelisting der Dateigröße auf den Inhalt des
      Archivs übertragen werden?
-     0 - Nein (alles nur in die Greylist aufnehmen),
-     1 - Ja [Standardeinstellung].
+     False = Nein (alles nur in die Greylist aufnehmen);
+     True = Ja [Standardeinstellung].
    "filetype_archives"
    - Soll das Blacklisting/Whitelisting des Dateityps auf den Inhalt des
      Archivs übertragen werden?
-     0 - Nein (alles nur in die Greylist aufnehmen) [Standardeinstellung],
-     1 - Ja.
+     False = Nein (alles nur in die Greylist aufnehmen) [Standardeinstellung];
+     True = Ja.
    "max_recursion"
    - Maximale Grenze der Rekursionstiefe von Archiven. Standardwert = 10.
    "block_encrypted_archives"
@@ -1262,10 +1264,10 @@
      wird. Die Anweisung, dass phpMussel verschlüsselte Archive blockiert kann
      möglicherweise helfen, die Risiken, die mit dieser Möglichkeit verbunden
      sind, zu verringern.
-     0 - Nein, 1 - Ja [Standardeinstellung].
+     False = Nein; True = Ja [Standardeinstellung].
  "attack_specific" (Kategorie)
  - Konfiguration für spezifische Angriffserkennung (nicht auf CVD basierend).
-   * Chameleon-Angriffserkennung: 0 = deaktiviert, 1 = aktiviert.
+   * Chameleon-Angriffserkennung: False = Deaktiviert; True = Aktiviert.
    "chameleon_from_php"
    - Suche nach PHP-Headern in Dateien, die weder PHP-Dateien noch erkannte
      Archive sind.
@@ -1297,15 +1299,16 @@
    "general_commands"
    - Soll der Inhalt von Dateien auf allgemeine Befehle wie "eval()", "exec()"
      und "include()" durchsucht werden?
-     0 - Nein (nicht überprüfen) [Standardeinstellung], 1 - Ja (überprüfen).
-     Stellen Sie diese Option aus, wenn Sie vorhaben, folgende Dateien mittels
-     Browser auf Ihr System oder CMS hochzuladen: PHP, JavaScript, HTML,
-     Python, Perl usw. Aktivieren Sie diese Option, falls Sie keine
-     zusätzlichen Schutzmechanismen auf Ihrem System haben und nicht planen,
-     solche Dateien hochzuladen. Verwenden Sie zusätzliche Sicherheitssoftware
-     in Verbindung mit phpMussel wie ZB Block, ist es nicht notwendig, diese
-     Option zu aktivieren, phpMussel würde nur unnötigerweise (im Kontext
-     dieser Option) danach suchen, wogegen das System bereits geschützt ist.
+     False = Nein (nicht überprüfen) [Standardeinstellung];
+     True = Ja (überprüfen). Stellen Sie diese Option aus, wenn Sie vorhaben,
+     folgende Dateien mittels Browser auf Ihr System oder CMS hochzuladen: PHP,
+     JavaScript, HTML, Python, Perl usw. Aktivieren Sie diese Option, falls Sie
+     keine zusätzlichen Schutzmechanismen auf Ihrem System haben und nicht
+     planen, solche Dateien hochzuladen. Verwenden Sie zusätzliche
+     Sicherheitssoftware in Verbindung mit phpMussel wie ZB Block, ist es nicht
+     notwendig, diese Option zu aktivieren, phpMussel würde nur unnötigerweise
+     (im Kontext dieser Option) danach suchen, wogegen das System bereits
+     geschützt ist.
    "block_control_characters"
    - Sollen Dateien, welche Steuerzeichen (andere als Newline/Zeilenumbruch)
      enthalten, blockiert werden?
@@ -1313,18 +1316,18 @@
      können Sie diese Option aktivieren, um Ihrem System zusätzlichen Schutz zu
      bieten. Sollten Sie anderes als reinen Text hochladen, werden bei
      aktivierter Option Fehlalarme ausgelöst.
-     0 - Nicht blockieren [Standardeinstellung], 1 - Blockieren.
+     False = Nicht blockieren [Standardeinstellung]; True = Blockieren.
    "corrupted_exe"
    - Defekte Dateien und Parse-Errors.
-     0 = Ignorieren, 1 = Blockieren [Standardeinstellung].
-     Soll auf potentiell defekte ausführbare Dateien (PE - Portable Executable)
-     geprüft und diese blockiert werden? Oftmals (aber nicht immer), wenn
-     bestimmte Aspekte einer PE-Datei beschädigt sind oder nicht korrekt
-     verarbeitet werden können, ist dies ein Hinweis auf eine infizierte Datei.
-     Viele Antiviren-Programme nutzen verschiedene Methoden, um Viren in
-     solchen Dateien zu erkennen, sofern sich der Programmierer eines Virus
-     dieser Tatsache bewußt ist, wird er versuchen, diese Maßnahmen zu
-     verhindern, damit der Virus unentdeckt bleibt.
+     False = Ignorieren; True = Blockieren [Standardeinstellung]. Soll auf
+     potentiell defekte ausführbare Dateien geprüft und diese blockiert werden?
+     Oftmals (aber nicht immer), wenn bestimmte Aspekte einer PE-Datei
+     beschädigt sind oder nicht korrekt verarbeitet werden können, ist dies ein
+     Hinweis auf eine infizierte Datei. Viele Antiviren-Programme nutzen
+     verschiedene Methoden, um Viren in solchen Dateien zu erkennen, sofern
+     sich der Programmierer eines Virus dieser Tatsache bewußt ist, wird er
+     versuchen, diese Maßnahmen zu verhindern, damit der Virus unentdeckt
+     bleibt.
    "decode_threshold"
    - Optionale Beschränkung oder Schwelle der Menge der Rohdaten, die durch den
      Decode-Befehl erkannt werden sollen (sofern während des Scanvorgangs
@@ -1362,7 +1365,7 @@
      diese Option AN, phpMussel wird somit nicht nach leeren Elementen suchen,
      Sie bei einem Fund ignorieren und keine zugehörigen Fehlermeldungen
      ausgeben, der Request zum Seitenaufruf kann somit fortgesetzt werden.
-     0 - AUS/OFF, 1 - AN/ON.
+     False = AUS/OFF; True = AN/ON.
    "only_allow_images"
    - Wenn Sie nur Bilder erwarten, die auf Ihr System oder CMS hochgeladen
      werden oder nur Bilder und keine anderen Dateien als Upload erlauben oder
@@ -1370,7 +1373,8 @@
      deaktiviert bleiben (OFF). Ist diese Direktive aktiviert, wird phpMussel
      alle Uploads, die keine Bilddateien sind, blockieren, ohne sie zu scannen.
      Dies kann die Verarbeitungszeit und Speichernutzung reduzieren, sobald
-     andere Nicht-Bilddateien hochgeladen werden. 0 - AUS/OFF, 1 - AN/ON.
+     andere Nicht-Bilddateien hochgeladen werden.
+     False = AUS/OFF; True = AN/ON.
  "heuristic" (Kategorie)
  - Heuristic-Direktive für phpMussel.
    "threshold"
@@ -1694,7 +1698,7 @@
  entweder vor der Benutzung von phpMussel deaktivieren oder sich andere
  Alternativen überlegen.
 
- Diese Informationen wurden zuletzt am 2015.07.09 aktualisiert und gelten für
+ Diese Informationen wurden zuletzt am 2015.09.07 aktualisiert und gelten für
  alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen
  (v0.6-v0.7a) zu diesem Zeitpunkt.
 
@@ -1752,5 +1756,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 7. September 2015 (2015.09.07).
+Zuletzt aktualisiert: 12. September 2015 (2015.09.12).
 EOF

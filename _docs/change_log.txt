@@ -87,6 +87,10 @@ Anything less than sub-minor:
   signatures and added a significant number of new signatures covering a range
   of different malware types (about ~35K removed and ~40K added, roughly).
 
+- [2015.09.11; Sub-minor code change; Maikuolan]: Corrected typecasting for a
+  number of incorrectly typecasted configuration directives [phpmussel.inc;
+  phpmussel.ini].
+
 === Version/Release 0.7a (Previous Release: 0.7) ===
 SUB-MINOR RELEASE; Updated to the latest signatures set (55+20751+7a).
 
@@ -153,7 +157,7 @@ SUB-MINOR RELEASE; Updated to the latest signatures set (55+20751+7a).
 - [2015.08.05; Bug-fix; Maikuolan]: Bug found in the code for complex extended
   signatures whereby clusters of sequential signatures with similar initial
   conditions weren't differentiated as unique, individual signatures by the
-  core code, being interpreted, rather, as singular singatures; Fixed.
+  core code, being interpreted, rather, as singular signatures; Fixed.
 
 - [2015.08.07; Sub-minor code change; Maikuolan]: Added PHAR to the extensions
   recognised as potential PHP files by the code for PHP chameleon attack

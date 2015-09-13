@@ -109,7 +109,7 @@
     zijn om wat hulp te bieden in dit gebied. Om dit te doen [te gebruiken
     "require()" of "include()"], plaatst u de volgende regel code aan het begin
     op die kern bestand, vervangen van de string die binnen de aanhalingstekens
-    met het exacte adres van het `phpmussel.php` bestand (lokaal adres, niet
+    met het exacte adres van het "phpmussel.php" bestand (lokaal adres, niet
     het HTTP-adres; zal vergelijkbaar zijn met de eerder genoemde vault adres).
 
     <?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>
@@ -171,8 +171,8 @@
     uzelf door het creëren van een batch-bestand te automatisch laden PHP en
     phpMussel. Om dit te doen, open een platte tekst editor zoals Notepad of
     Notepad++, typt u het volledige pad naar de "php.exe" bestand in de
-    bestandsmap van uw php-installatie, gevolgd door een spatie, gevolgd door
-    het volledige pad naar de `phpmussel.php` bestand in de bestandsmap van
+    bestandsmap van uw PHP-installatie, gevolgd door een spatie, gevolgd door
+    het volledige pad naar de "phpmussel.php" bestand in de bestandsmap van
     uw phpMussel installatie, Sla het bestand op met een ".bat" extensie ergens
     dat u het gemakkelijk vinden, en dubbelklik op het bestand om phpMussel
     te opereren in de toekomst.
@@ -198,7 +198,7 @@
  bestanden, bestandsmappen en/of archieven. Om dit te doen, ten eerste, moet u
  ervoor zorgen dat de juiste configuratie is ingesteld in het "phpmussel.ini"
  configuratiebestand (cleanup moet worden uitgeschakeld), en als u klaar bent,
- in een php-bestand dat wordt gehaakt op phpMussel, gebruik de volgende functie
+ in een PHP-bestand dat wordt gehaakt op phpMussel, gebruik de volgende functie
  in uw code:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
@@ -269,10 +269,10 @@
  deze handtekeningen kunnen blijken uiterst nuttig voor sommigen, vooral voor
  degenen wier CMS of webfront systeem is een of andere manier gebonden in hun
  email systeem en voor degenen die het ontleden van hun emails via een
- php-script dat ze zou kunnen haak in phpMussel. Configuratie voor deze
+ PHP-script dat ze zou kunnen haak in phpMussel. Configuratie voor deze
  functie, net als alle anderen, wordt via het "phpmussel.ini" bestand
  gecontroleerde. Om deze functie te gebruiken (u nodig om uw eigen
- implementatie), in een php-bestand dat wordt aangesloten op phpMussel, gebruik
+ implementatie), in een PHP-bestand dat wordt aangesloten op phpMussel, gebruik
  de volgende functie in uw code:
 
  phpMussel_mail($body);
@@ -969,14 +969,15 @@
       functies, maar niet de andere.
       * Heeft geen invloed in CLI-modus.
     "cleanup"
-    - Vrijmaken script variabelen en de cache na de uitvoering. Als u niet
-      gebruik het script na de eerste scan van upload, moet zetten op *Yes*, om
-      minimaliseren de geheugengebruik. Als u gebruik het script voor de
-      doeleinden na de eerste scan van upload, moet zetten op *No*, om te
-      voorkomen dat onnodig herladen dubbele gegevens in het geheugen. In de
-      huisartspraktijk, moet waarschijnlijk worden zetten op *Yes*, maar, als
-      u dit doet, het zal niet mogelijk zijn om het script te gebruiken voor
-      iets anders dan het scannen van bestand uploaden.
+    - Vrijmaken script variabelen en de cache na de uitvoering?
+      False = Nee; True = Ja [Standaard]. Als u niet gebruik het script na de
+      eerste scan van upload, moet zetten op "true" (ja), om minimaliseren de
+      geheugengebruik. Als u gebruik het script voor de doeleinden na de eerste
+      scan van upload, moet zetten op "false" (nee), om te voorkomen dat
+      onnodig herladen dubbele gegevens in het geheugen. In de
+      huisartspraktijk, moet waarschijnlijk worden zetten op "true" (ja), maar,
+      als u dit doet, het zal niet mogelijk zijn om het script te gebruiken
+      voor iets anders dan het scannen van bestand uploaden.
       * Heeft geen invloed in CLI-modus.
     "scan_log"
     - Bestandsnaam van het bestand te opnemen alle scanresultaten. Geef een
@@ -991,7 +992,7 @@
     "forbid_on_block"
     - Mocht phpMussel sturen 403 headers met het bestanden upload geblokkeerd
       bericht, of houd de gebruikelijke 200 OK?
-      0 = Nee (200) [Standaard], 1 = Ja (403).
+      False = Nee (200) [Standaard]; True = Ja (403).
     "delete_on_sight"
     - Het inschakelen van dit richtlijn zal instrueren het script om elke
       gescande geprobeerd bestand upload dat gecontroleerd tegen elke detectie
@@ -1007,14 +1008,14 @@
       tenzij ze zijn verhuisd, gekopieerd of verwijderd alreeds. Dit richtlijn
       is toegevoegd hier als een extra maatregel van veiligheid voor degenen
       wier kopies van PHP misschien niet altijd gedragen op de manier verwacht.
-      0 - Na het scannen, met rust laten het bestand [Standaard],
-      1 - Na het scannen, als niet schoon, onmiddellijk verwijderen.
+      False = Na het scannen, met rust laten het bestand [Standaard],
+      True = Na het scannen, als niet schoon, onmiddellijk verwijderen.
     "lang"
     - Geef de standaardtaal voor phpMussel.
     "lang_override"
     - Geef als phpMussel moet, wanneer mogelijk, overschrijven de taal
       specificatie met de taalvoorkeur verklaard door inkomende verzoeken
-      (HTTP_ACCEPT_LANGUAGE). 0 - Nee [Standaard], 1 - Ja.
+      (HTTP_ACCEPT_LANGUAGE). False = Nee [Standaard]; True = Ja.
     "lang_acceptable"
     - Het "lang_acceptable" richtlijn vertelt phpMussel welke talen door het
       script kunt worden aanvaard van "lang" of van "HTTP_ACCEPT_LANGUAGE".
@@ -1079,7 +1080,7 @@
       gebruik van phpMussel door de gebruiker is voor werkelijke bestandsupload
       scannen, noch aanbevolen te gebruik de honeypot functionaliteit voor
       andere doeleinden andere dan honeypotting. Als standaard, dit optie is
-      uitgeschakeld. 0 = Uitgeschakeld [Standaard], 1 = Ingeschakeld.
+      uitgeschakeld. False = Uitgeschakeld [Standaard]; True = Ingeschakeld.
     "scan_cache_expiry"
     - Hoe lang moet phpMussel cache de resultaten van de scan? Waarde is het
       aantal seconden dat de resultaten van het scannen moet wordt gecached
@@ -1090,7 +1091,7 @@
       somtijds interfereren met bepaalde testtools (zoals PHPUnit bijvoorbeeld)
       en andere CLI-gebaseerde applicaties. Als u niet hoeft te uitschakelen
       CLI-modus, u moeten om dit richtlijn te negeren.
-      0 = Inschakelen CLI-modus [Standaard], 1 = Uitschakelen CLI-modus.
+      False = Inschakelen CLI-modus [Standaard]; True = Uitschakelen CLI-modus.
  "signatures" (Categorie)
  - Configuratie voor handtekeningen.
    %%%_clamav = ClamAV handtekeningen (beide hoofdnet en dagelijks).
@@ -1098,94 +1099,97 @@
    %%%_mussel = phpMussel handtekeningen opgenomen in uw huidige handtekeningen
                 reeks die niet afkomstig van ClamAV.
    - Controleer tegen MD5 handtekeningen wanneer scannen?
-     0 = Nee, 1 = Ja [Standaard].
+     False = Nee; True = Ja [Standaard].
      "md5_clamav"
      "md5_custom"
      "md5_mussel"
    - Controleer tegen algemeen handtekeningen wanneer scannen?
-     0 = Nee, 1 = Ja [Standaard].
+     False = Nee; True = Ja [Standaard].
      "general_clamav"
      "general_custom"
      "general_mussel"
    - Controleer tegen genormaliseerde ASCII handtekeningen wanneer scannen?
-     0 = Nee, 1 = Ja [Standaard].
+     False = Nee; True = Ja [Standaard].
      "ascii_clamav"
      "ascii_custom"
      "ascii_mussel"
    - Controleer tegen genormaliseerde HTML handtekeningen wanneer scannen?
-     0 = Nee, 1 = Ja [Standaard].
+     False = Nee; True = Ja [Standaard].
      "html_clamav"
      "html_custom"
      "html_mussel"
    - Controleer PE (Portable Executable) bestanden (EXE, DLL, ezv) tegen PE
-     Sectionele handtekeningen wanneer scannen? 0 = Nee, 1 = Ja [Standaard].
+     Sectionele handtekeningen wanneer scannen?
+     False = Nee; True = Ja [Standaard].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
    - Controleer PE (Portable Executable) bestanden (EXE, DLL, ezv) tegen PE
-     uitgebreide handtekeningen wanneer scannen? 0 = Nee, 1 = Ja [Standaard].
+     uitgebreide handtekeningen wanneer scannen?
+     False = Nee; True = Ja [Standaard].
      "pex_custom"
      "pex_mussel"
    - Controleer PE (Portable Executable) bestanden (EXE, DLL, ezv) tegen PE
-     handtekeningen wanneer scannen? 0 = Nee, 1 = Ja [Standaard].
+     handtekeningen wanneer scannen? False = Nee; True = Ja [Standaard].
      "exe_clamav"
      "exe_custom"
      "exe_mussel"
    - Controleer ELF bestanden tegen ELF handtekeningen wanneer scannen?
-     0 = Nee, 1 = Ja [Standaard].
+     False = Nee; True = Ja [Standaard].
      "elf_clamav"
      "elf_custom"
      "elf_mussel"
    - Controleer Mach-O bestanden (OSX, ezv) tegen Mach-O handtekeningen wanneer
-     scannen? 0 = Nee, 1 = Ja [Standaard].
+     scannen? False = Nee; True = Ja [Standaard].
      "macho_clamav"
      "macho_custom"
      "macho_mussel"
    - Controleer grafische bestanden tegen grafische-gebaseerde handtekeningen
-     wanneer scannen? 0 = Nee, 1 = Ja [Standaard].
+     wanneer scannen? False = Nee; True = Ja [Standaard].
      "graphics_clamav"
      "graphics_custom"
      "graphics_mussel"
    - Controleer archief inhoud tegen archief metadata handtekeningen wanneer
-     scannen? 0 = Nee, 1 = Ja [Standaard].
+     scannen? False = Nee; True = Ja [Standaard].
      "metadata_clamav"
      "metadata_custom"
      "metadata_mussel"
    - Controleer OLE-objecten tegen OLE handtekeningen wanneer scannen?
-     0 = Nee, 1 = Ja [Standaard].
+     False = Nee; True = Ja [Standaard].
      "ole_clamav"
      "ole_custom"
      "ole_mussel"
    - Controleer bestandsnamen tegen bestandsnaam gebaseerd handtekeningen
-     wanneer scannen? 0 = Nee, 1 = Ja [Standaard].
+     wanneer scannen? False = Nee; True = Ja [Standaard].
      "filenames_clamav"
      "filenames_custom"
      "filenames_mussel"
-   - Toestaan scannen met phpMussel_mail()? 0 = Nee, 1 = Ja [Standaard].
+   - Toestaan scannen met phpMussel_mail()? False = Nee; True = Ja [Standaard].
      "mail_clamav"
      "mail_custom"
      "mail_mussel"
-   - Inschakelen bestand-specifieke whitelist? 0 = Nee, 1 = Ja [Standaard].
+   - Inschakelen bestand-specifieke whitelist?
+     False = Nee; True = Ja [Standaard].
      "whitelist_clamav"
      "whitelist_custom"
      "whitelist_mussel"
    - Controleer XML/XDP gegevens tegen XML/XDP handtekeningen wanneer scannen?
-     0 = Nee, 1 = Ja [Standaard].
+     False = Nee; True = Ja [Standaard].
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
    - Controleer tegen complexe uitgebreide handtekeningen wanneer scannen?
-     0 = Nee, 1 = Ja [Standaard].
+     False = Nee; True = Ja [Standaard].
      "coex_clamav"
      "coex_custom"
      "coex_mussel"
    - Controleer tegen PDF handtekeningen wanneer scannen?
-     0 = Nee, 1 = Ja [Standaard].
+     False = Nee; True = Ja [Standaard].
      "pdf_clamav"
      "pdf_custom"
      "pdf_mussel"
    - Controleer tegen Shockwave handtekeningen wanneer scannen?
-     0 = Nee, 1 = Ja [Standaard].
+     False = Nee; True = Ja [Standaard].
      "swf_clamav"
      "swf_custom"
      "swf_mussel"
@@ -1210,7 +1214,7 @@
      zijn genegeerd, met het scannen rapporten voor de bestanden die er geen
      problemen. Dit moet in het algemeen met rust gelaten worden tenzij u
      ervaart mislukt of soortgelijke problemen.
-     0 = Uitgeschakeld, 1 = Ingeschakeld [Standaard].
+     False = Uitgeschakeld; True = Ingeschakeld [Standaard].
    "fail_extensions_silently"
    - Mocht phpMussel rapport wanneer extensies zijn ontbreken? Als
      fail_extensions_silently is uitgeschakeld, ontbrekende extensies zal
@@ -1219,26 +1223,26 @@
      rapporten voor de bestanden die er geen problemen. Het uitschakelen van
      dit richtlijn kunt mogelijk verhogen van uw veiligheid, maar kunt ook
      leiden tot een toename van valse positieven.
-     0 = Uitgeschakeld, 1 = Ingeschakeld [Standaard].
+     False = Uitgeschakeld; True = Ingeschakeld [Standaard].
    "detect_adware"
    - Mocht phpMussel verwerken handtekeningen voor het detecteren van adware?
-     0 = Nee, 1 = Ja [Standaard].
+     False = Nee; True = Ja [Standaard].
    "detect_joke_hoax"
    - Mocht phpMussel verwerken handtekeningen voor het detecteren van
-     grap/beetnemerij malware/virussen? 0 = Nee, 1 = Ja [Standaard].
+     grap/beetnemerij malware/virussen? False = Nee; True = Ja [Standaard].
    "detect_pua_pup"
    - Mocht phpMussel verwerken handtekeningen voor het detecteren van
-     PUAs/PUPs? 0 = Nee, 1 = Ja [Standaard].
+     PUAs/PUPs? False = Nee; True = Ja [Standaard].
    "detect_packer_packed"
    - Mocht phpMussel verwerken handtekeningen voor het detecteren van
-     verpakkers en verpakt gegevens? 0 = Nee, 1 = Ja [Standaard].
+     verpakkers en verpakt gegevens? False = Nee; True = Ja [Standaard].
    "detect_shell"
    - Mocht phpMussel verwerken handtekeningen voor het detecteren van shell
-     scripts? 0 = Nee, 1 = Ja [Standaard].
+     scripts? False = Nee; True = Ja [Standaard].
    "detect_deface"
    - Mocht phpMussel verwerken handtekeningen voor het detecteren van
      schendingen/defacements en schenders/defacers?
-     0 = Nee, 1 = Ja [Standaard].
+     False = Nee; True = Ja [Standaard].
  "files" (Categorie)
  - Bestand hanteren configuratie.
    "max_uploads"
@@ -1251,14 +1255,14 @@
      afhankelijk van de snelheid van uw hardware. Noteren dat dit aantal niet
      verklaren voor of opnemen de inhoud van de archieven.
    "filesize_limit"
-   - Bestandsgrootte limiet in KB. 65536 = 64MB [Standaard], 0 = Geen limiet
+   - Bestandsgrootte limiet in KB. 65536 = 64MB [Standaard]; 0 = Geen limiet
      (altijd op de greylist), ieder (positief) numerieke waarde aanvaard. Dit
      kunt handig zijn als uw PHP configuratie beperkt de hoeveelheid van
      geheugen een proces kunt houden of als u PHP configuratie beperkt de
      bestandsgrootte van uploads.
    "filesize_response"
    - Wat te doen met bestanden dat overschrijden de bestandsgrootte limiet (als
-     aanwezig). 0 - Whitelist, 1 - Blacklist [Standaard].
+     aanwezig). False = Whitelist; True = Blacklist [Standaard].
    "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
    - Als uw systeem vergunningen alleen specifieke bestandstypen te uploaden,
      of als uw systeem expliciet ontkent bepaalde bestandstypen, specificeren
@@ -1283,7 +1287,8 @@
        scannen, maar toch blokkeren het niettemin.
    "check_archives"
    - Om de inhoud van archieven proberen te controleer?
-     0 - Nee (niet doen controleer), 1 - Ja (doen controleer) [Standaard].
+     False = Nee (niet doen controleer);
+     True = Ja (doen controleer) [Standaard].
      * Momenteel, alleen het controleren van BZ, GZ, LZF en ZIP bestanden is
        ondersteund (controleer van RAR, CAB, 7z en en zo voort momenteel niet
        ondersteund).
@@ -1293,10 +1298,10 @@
        ZIP-bestanden.
    "filesize_archives"
    - Erven de bestandsgrootte blacklist/whitelist staat aan de inhoud van
-     archieven? 0 - Nee (gewoon greylist alles), 1 - Ja [Standaard].
+     archieven? False = Nee (gewoon greylist alles); True = Ja [Standaard].
    "filetype_archives"
    - Erven de bestandstype blacklist/whitelist staat om de inhoud van
-     archieven? 0 - Nee (gewoon greylist alles), 1 - Ja [Standaard].
+     archieven? False = Nee (gewoon greylist alles); True = Ja [Standaard].
    "max_recursion"
    - Maximale recursiediepte limiet voor archieven. Standaard = 10.
    "block_encrypted_archives"
@@ -1306,10 +1311,11 @@
      probeert te omzeilen phpMussel, anti-virus scanners en andere dergelijke
      beveiligingen. Instrueren phpMussel te blokkeren elke archieven dat het
      ontdekt worden gecodeerde zou kunnen helpen het risico in verband met deze
-     dergelijke mogelijkheden te verminderen. 0 - Nee, 1 - Ja [Standaard].
+     dergelijke mogelijkheden te verminderen.
+     False = Nee; True = Ja [Standaard].
  "attack_specific" (Categorie)
  - Aanval-specifieke richtlijnen.
-   * Chameleon aanval detectie: 0 = Uitgeschakeld, 1 = Ingeschakeld.
+   * Chameleon aanval detectie: False = Uitgeschakeld; True = Ingeschakeld.
    "chameleon_from_php"
    - Zoeken naar PHP header in bestanden die niet zijn PHP-bestanden noch
      herkende archieven.
@@ -1340,35 +1346,35 @@
    "general_commands"
    - Zoeken de inhoud van bestanden voor algemene commando's zoals "eval()",
      "exec()" en "include()"?
-     0 - Nee (niet doen controleer) [Standaard], 1 - Ja (doen controleer).
-     Uitschakelen dit optie als u plannen te uploaden om één van de volgende om
-     uw systeem of CMS via uw browser: PHP, JavaScript, HTML, python, perl
-     bestanden en zo voort. Uitschakelen dit optie als u plannen te uploaden om
-     één van de volgende om uw systeem of CMS via uw browser: PHP, JavaScript,
-     HTML, python, perl bestanden en zo voort. Inschakelen dit optie als u
-     heeft geen extra bescherming op uw systeem en niet plannen te uploaden
-     dergelijke bestanden. Als u gebruik extra beveiliging in combinatie met
-     phpMussel zoals ZB Block, er is geen noodzaak om dit optie te inschakelen,
-     omdat de meeste van wat phpMussel zal zoek naar (in het kader van dit
-     optie) zijn duplicaties van beveiligingen die zijn voorzien alreeds.
+     False = Nee (niet doen controleer) [Standaard];
+     True = Ja (doen controleer). Uitschakelen dit optie als u plannen te
+     uploaden om één van de volgende om uw systeem of CMS via uw browser: PHP,
+     JavaScript, HTML, python, perl bestanden en zo voort. Uitschakelen dit
+     optie als u plannen te uploaden om één van de volgende om uw systeem of
+     CMS via uw browser: PHP, JavaScript, HTML, python, perl bestanden en zo
+     voort. Inschakelen dit optie als u heeft geen extra bescherming op uw
+     systeem en niet plannen te uploaden dergelijke bestanden. Als u gebruik
+     extra beveiliging in combinatie met phpMussel zoals ZB Block, er is geen
+     noodzaak om dit optie te inschakelen, omdat de meeste van wat phpMussel
+     zal zoek naar (in het kader van dit optie) zijn duplicaties van
+     beveiligingen die zijn voorzien alreeds.
    "block_control_characters"
    - Blokkeren alle bestanden bevatten controle karakters (andere dan nieuwe
      regels)? ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) Als u -alleen- uploaden platte
      tekst, dan u kan inschakelen dit optie te bieden extra bescherming aan uw
      systeem. Hoewel, als u uploaden iets anders dan platte tekst, inschakelen
      dit kan leiden tot valse positieven.
-     0 - Niet doen blokkeren [Standaard], 1 - Doen blokkeren.
+     False = Niet blokkeren [Standaard]; True = Doen blokkeren.
    "corrupted_exe"
    - Corrupte bestanden en verwerking fouten.
-     0 = Negeren, 1 = Blokkeren [Standaard].
-     Detecteren en blokkeren mogelijk beschadigd PE (Portable Executable)
-     bestanden? Vaak (maar niet altijd), wanneer bepaalde aspecten van een
-     PE-bestand zijn beschadigd of kan niet correct worden verwerkt, het kan
-     wijzen op een virale infectie. De processen gebruikt door de meeste
-     anti-virus programma's om virussen in PE-bestanden te detecteren vereisen
-     de verwerking van die bestanden op bepaalde manieren, dat, als de
-     programmeur van een virus kent, specifiek zal proberen te verhinderen,
-     zodat haar virus onopgemerkt blijven.
+     False = Negeren; True = Blokkeren [Standaard]. Detecteren en blokkeren
+     mogelijk beschadigd PE (Portable Executable) bestanden? Vaak (maar niet
+     altijd), wanneer bepaalde aspecten van een PE-bestand zijn beschadigd of
+     kan niet correct worden verwerkt, het kan wijzen op een virale infectie.
+     De processen gebruikt door de meeste anti-virus programma's om virussen in
+     PE-bestanden te detecteren vereisen de verwerking van die bestanden op
+     bepaalde manieren, dat, als de programmeur van een virus kent, specifiek
+     zal proberen te verhinderen, zodat haar virus onopgemerkt blijven.
    "decode_threshold"
    - Optionele limiet of drempelwaarde de lengte van onverwerkte gegevens
      waarbinnen decoderen commando's moeten worden gedetecteerd (in het geval
@@ -1407,7 +1413,8 @@
      inschakelen dit optie zal instrueren phpMussel niet te proberen te
      initiëren scannen voor dergelijke lege elementen, negeer hem wanneer
      gevonden en niet terugkeren gerelateerde foutmeldingen, dus toelaten de
-     voortzetting van de pagina-aanvraag. 0 - UITGESCHAKELD, 1 - INGESCHAKELD.
+     voortzetting van de pagina-aanvraag.
+     False = UITGESCHAKELD; True = INGESCHAKELD.
    "only_allow_images"
    - Als u alleen verwachten of alleen bedoelen toestaan beelden worden
      geüpload om uw systeem of CMS, en als u absoluut nodig geen bestanden
@@ -1417,7 +1424,7 @@
      onderscheid te blokkeren elke upload geïdentificeerd als
      niet-beeldbestanden, zonder te scannen. Dit kan verminderen
      verwerkingstijd en geheugengebruik voor het geprobeerd uploaden van
-     niet-beeldbestanden. 0 - UITGESCHAKELD, 1 - INGESCHAKELD.
+     niet-beeldbestanden. False = UITGESCHAKELD; True = INGESCHAKELD.
  "heuristic" (Categorie)
  - Heuristische richtlijnen.
    "threshold"
@@ -1814,5 +1821,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 7 September 2015 (2015.09.07).
+Laatste Bijgewerkt: 12 September 2015 (2015.09.12).
 EOF
