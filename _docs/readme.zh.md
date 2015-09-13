@@ -49,7 +49,7 @@ PHPMUSSEL版权2013和此后GNU/GPLv.2通过Caleb M （Maikuolan）。
 
 4） CMHOD的`vault`文件夹为“755”。主文件夹存储的内容（一个您先前选择），平时，可以单独留，但CHMOD状态应检查如果您有权限问题以往上您的系统（按说，应该是这样的“755”）。
 
-5） 接下来，您需要｢钩子｣phpMussel为您的系统或CMS。有几种不同的方式在哪里您可以｢钩子｣脚本例如phpMussel为您的系统或CMS，但最简单的是简单地包括的脚本在开头的核心文件为您的系统或CMS（这是一个是通常一直加载的当有人访问的任何页面在您的网站）使用`require()`或`include()`命令。平时，这将是存储的在文件夹例如`/includes`，`/assets`或`/functions`，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`或类似。您需要确定哪些文件这是为您的情况；如果您遇到困难关于确定这为您自己，访问phpMussel支持论坛和让我​​​​们知；这是可能的我自己或其他用户可有经验的该CMS您正在使用（您需要让我们知哪些CMS您使用的），和从而，可能能够提供援助关于这。为了使用`require()`或`include()`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`phpmussel.php`文件（本地地址，不HTTP地址；它会类似于vault地址前面提到的）。
+5） 接下来，您需要｢钩子｣phpMussel为您的系统或CMS。有几种不同的方式在哪里您可以｢钩子｣脚本例如phpMussel为您的系统或CMS，但最简单的是简单地包括的脚本在开头的核心文件为您的系统或CMS（这是一个是通常始终加载的当有人访问的任何页面在您的网站）使用`require()`或`include()`命令。平时，这将是存储的在文件夹例如`/includes`，`/assets`或`/functions`，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`或类似。您需要确定哪些文件这是为您的情况；如果您遇到困难关于确定这为您自己，访问phpMussel支持论坛和让我​​​​们知；这是可能的我自己或其他用户可有经验的该CMS您正在使用（您需要让我们知哪些CMS您使用的），和从而，可能能够提供援助关于这。为了使用`require()`或`include()`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`phpmussel.php`文件（本地地址，不HTTP地址；它会类似于vault地址前面提到的）。
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'；?>`
 
@@ -501,7 +501,7 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - phpMussel应该发送`403`头随着文件上传受阻信息，或坚持标准`200 OK`？ False = 发送`200`【标准】； True = 发送`403`。
 
 “delete_on_sight”
-- 激活的这个指令将指示脚本马上删除任何扫描文件上传匹配任何检测标准，是否通过签名或任何事其他。文件已确定是清洁将会忽略。如果是存档，全存档将会删除，不管如果违规文件是只有一个的几个文件包含在存档。为文件上传扫描，按说，它不必要为您激活这个指令，因为按说，PHP将自动清洗内容的它的缓存当执行是完，意思它将按说删除任何文件上传从它向服务器如果不已移动，复制或删除。这个指令是添加这里为额外安全为任何人谁的PHP副本可能不一直表现在预期方式。False｢假／负｣：之后扫描，忽略文件【标准】，True｢真／正｣：之后扫描，如果不清洁，马上删除。
+- 激活的这个指令将指示脚本马上删除任何扫描文件上传匹配任何检测标准，是否通过签名或任何事其他。文件已确定是清洁将会忽略。如果是存档，全存档将会删除，不管如果违规文件是只有一个的几个文件包含在存档。为文件上传扫描，按说，它不必要为您激活这个指令，因为按说，PHP将自动清洗内容的它的缓存当执行是完，意思它将按说删除任何文件上传从它向服务器如果不已移动，复制或删除。这个指令是添加这里为额外安全为任何人谁的PHP副本可能不始终表现在预期方式。False｢假／负｣：之后扫描，忽略文件【标准】，True｢真／正｣：之后扫描，如果不清洁，马上删除。
 
 “lang”
 - 指定标准phpMussel语言。
@@ -510,7 +510,7 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - 指定如果phpMussel应该，当可能，更换语言规范通过语言偏爱声明从入站请求（HTTP_ACCEPT_LANGUAGE）。 False：不更换【标准】； True：更换。
 
 “lang_acceptable”
-- `lang_acceptable`指令指示phpMussel什么语言可以公认在脚本从`lang`或从`HTTP_ACCEPT_LANGUAGE`。这个指令应该只会修改如果您添加您自己的个性化语言文件或强制去掉语言文件。指令是一个逗号分隔字符串的代码使用通过那些语言公认在脚本。
+- `lang_acceptable`指令指示phpMussel什么语言可以接受在脚本从`lang`或从`HTTP_ACCEPT_LANGUAGE`。这个指令应该只会修改如果您添加您自己的个性化语言文件或强制去掉语言文件。指令是一个逗号分隔字符串的代码使用通过那些语言接受在脚本。
 
 “quarantine_key”
 - phpMussel可以检疫坏文件上传在隔离在phpMussel的安全／保险库｢Vault｣，如果这个是某物您想。普通用户的phpMussel简单地想保护他们的网站或宿主环境无任何兴趣在深深分析任何尝试文件上传应该离开这个功能关闭，但任何用户有兴趣在更深分析的尝试文件上传为目的恶意软件研究或为类似这样事情应该激活这个功能。检疫的尝试文件上传可以有时还助攻在调试假阳性，如果这个是某物经常发生为您。以关闭检疫功能，简单地离开`quarantine_key`指令空白，或抹去内容的这个指令如果它不已空白。以激活隔离功能，输入一些值在这个指令。`quarantine_key`是一个重要安全功能的隔离功能需要以预防检疫功能从成为利用通过潜在攻击者和以预防任何潜在执行的数据存储在检疫。`quarantine_key`应该被处理在同样方法作为您的密码：更长是更好，和紧紧保护它。为获得最佳效果，在结合使用`delete_on_sight`。
@@ -669,67 +669,67 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - 最大允许数值的文件为扫描当文件上传扫描之前中止扫描和告诉用户他们是上传太多在同一时间！提供保护针对一个理论攻击哪里一个攻击者尝试DDoS您的系统或CMS通过超载phpMussel以减速PHP进程到一个停止。推荐：10。您可能想增加或减少这个数值，根据速度的您的硬件。注意这个数值不交待为或包括存档内容。
 
 “filesize_limit”
-- Filesize limit in KB. 65536 = 64MB 【标准】，0 = No limit (always greylisted)，any (positive) numeric value accepted. This can be useful when your PHP configuration limits the amount of memory a process can hold or if your PHP configuration limits filesize of uploads。
+- 文件大小限在KB。 65536 = 64MB 【标准】，0 = 没有限（始终灰名单），任何正数值接受。这个可以有用当您的PHP配置限内存量一个进程可以占据或如果您的PHP配置限文件大小的上传。
 
 “filesize_response”
-- What to do with文件that exceed the filesize limit (if one exists). False = Whitelist； True = Blacklist 【标准】。
+- 如何处理文件超过文件大小限（如果存在）。 False = 白名单； True = 黑名单【标准】。
 
-“filetype_whitelist"，"filetype_blacklist"，"filetype_greylist”
-- If your system only allows specific types of文件to be uploaded，or if your system explicitly denies certain types of files，specifying those filetypes in whitelists，blacklists和greylists can increase the speed at which scanning是performed by allowing the脚本to skip over certain filetypes. Format是CSV (comma separated values). If you want to scan everything，rather than whitelist，blacklist or greylist，leave the variable(/s) blank；Doing so will disable whitelist/blacklist/greylist。
-- Logical order of processing is：
-  - If the filetype是whitelisted，don't scan和don't block the file，和don't check the文件against the blacklist or the greylist。
-  - If the filetype是blacklisted，don't scan the文件but block it anyway，和don't check the文件against the greylist。
-  - If the greylist是empty or if the greylist是not empty和the filetype是greylisted，scan the文件as per normal和determine whether to block it based on the results of the scan，but if the greylist是not empty和the filetype是not greylisted，treat the文件as blacklisted，therefore not scanning it but blocking it anyway。
+“filetype_whitelist”, “filetype_blacklist”, “filetype_greylist”
+- 如果您的系统只允许具体文件类型被上传，或如果您的系统明确地否认某些文件类型，指定那些文件类型在白名单，黑名单和灰名单可以增加扫描执行速度通过允许脚本跳过某些文件类型。格式是CSV（逗号分隔变量）。如果您想扫描一切，而不是白名单，黑名单或灰名单，留变量空；这样做将关闭白名单／黑名单／灰名单。
+- 进程逻辑顺序是：
+  - 如果文件类型已白名单，不扫描和不受阻文件，和不匹配文件对照黑名单或灰名单。
+  - 如果文件类型已黑名单，不扫描文件但阻止它无论如何，和不匹配文件对照灰名单。
+  - 如果灰名单是空，或如果灰名单不空和文件类型已灰名单，扫描文件像正常和确定如果阻止它基于扫描结果，但如果灰名单不空和文件类型不灰名单，过程文件仿佛已黑名单，因此不扫描它但阻止它无论如何。
 
 “check_archives”
-- Attempt to check the contents of archives? False = Don't check； True = Check 【标准】。
-- Currently，only checking of BZ，GZ，LZF和ZIP文件is supported (checking of RAR，CAB，7z和etcetera not currently supported）。
-- This是not foolproof! While I 很 recommend keeping this turned on，I can't guarantee it'll always find everything。
-- Also be aware that archive checking currently是not recursive为ZIPs。
+- 尝试匹配存档内容吗？ False = 不匹配； True = 匹配【标准】。
+- 目前，只BZ，GZ，LZF和ZIP文件匹配是支持（匹配的RAR，CAB，7z和等等不还支持）。
+- 这个是不完美！虽说我很推荐保持这个激活，我不能保证它将始终发现一切。
+- 还，请注意存档匹配目前是不递归为ZIP格式。
 
 “filesize_archives”
-- Carry over filesize blacklisting/whitelisting to the contents of archives? False = No (just greylist everything)； True = Yes 【标准】。
+- 继承文件大小黑名单／白名单在存档内容吗？ False = 不继承（刚灰名单一切）； True = 继承【标准】。
 
 “filetype_archives”
-- Carry over filetype blacklisting/whitelisting to the contents of archives? False = No (just greylist everything) 【标准】； True = Yes。
+- 继承文件类型黑名单／白名单在存档内容吗？ False = 不继承（刚灰名单一切）； True = 继承【标准】。
 
 “max_recursion”
-- Maximum recursion depth limit为archives. Default = 10。
+- 最大存档递归深度限。 标准 = 10。
 
 “block_encrypted_archives”
-- Detect和block encrypted archives? Because phpMussel isn't able to scan the contents of encrypted archives，it's possible that archive encryption may be employed by an 攻击者 as a means of attempting to bypass phpMussel，杀毒 scanners和other such protections. Instructing phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. False = No； True = Yes 【标准】。
+- 检测和受阻加密的存档吗？因为phpMussel是不能够扫描加密的存档内容，它是可能存档加密可能的可以使用通过一个攻击者作为一种手段尝试绕过phpMussel，杀毒扫描仪和其他这样的保护。指示phpMussel受阻任何存档它发现被加密可能的可以帮助减少任何风险有关联这些可能性。 False = 不受阻； True = 受阻【标准】。
 
 ####"attack_specific" （类别）
-Attack-specific directives。
+专用攻击指令。
 
-Chameleon attack detection: False = Off； True = On。
+蜴攻击检测： False = 是关闭； True = 是激活。
 
 “chameleon_from_php”
-- Search为php header in文件that are neither php文件nor recognised archives。
+- 寻找PHP头在文件是不PHP文件也不认可存档文件。
 
 “chameleon_from_exe”
-- Search为executable headers in文件that are neither executables nor recognised archives和for executables 谁的 headers are incorrect。
+- 寻找可执行头在文件是不可执行文件也不认可存档文件和寻找可执行文件谁的头是不正确。
 
 “chameleon_to_archive”
-- Search为archives 谁的 headers are incorrect (Supported: BZ，GZ，RAR，ZIP，RAR，GZ）。
+- 寻找存档文件谁的头是不正确（已支持：BZ，GZ，RAR，ZIP，RAR，GZ）。
 
 “chameleon_to_doc”
-- Search为office documents 谁的 headers are incorrect (Supported: DOC，DOT，PPS，PPT，XLA，XLS，WIZ）。
+- 寻找办公文档谁的头是不正确（已支持：DOC，DOT，PPS，PPT，XLA，XLS，WIZ）。
 
 “chameleon_to_img”
-- Search为images 谁的 headers are incorrect (Supported: BMP，DIB，PNG，GIF，JPEG，JPG，XCF，PSD，PDD，WEBP）。
+- 寻找图像谁的头是不正确（已支持：BMP，DIB，PNG，GIF，JPEG，JPG，XCF，PSD，PDD，WEBP）。
 
 “chameleon_to_pdf”
-- Search为PDF文件谁的 headers are incorrect。
+- 寻找PDF文件谁的头是不正确。
 
-“archive_file_extensions"和"archive_file_extensions_wc”
-- Recognised archive文件extensions (format是CSV；should only add or remove when problems occur；un一定 removing may cause false-positives to appear为archive files，whereas un一定 adding will essentially whitelist what you're adding from attack specific detection；modify with caution；also note that this has no effect on what archives can和can't be analysed at content-level). The list，as是at default，lists those formats used most commonly across the majority of systems和CMS，but intentionally isn't 一定 comprehensive。
+“archive_file_extensions”和“archive_file_extensions_wc”
+- 认可存档文件扩展（格式是CSV；应该只添加或去掉当问题发生；不必要的去掉可能的可以导致假阳性出现为存档文件，而不必要的增加将实质上白名单任何事您增加从专用攻击检测；修改有慎重；还请注这个无影响在什么存档可以和不能被分析在内容级）。这个名单，作为是作为标准，名单那些格式使用最常见的横过多数的系统和CMS，但有意是不全面。
 
 “general_commands”
-- Search content of files为general commands例如`eval()`，`exec()`和`include()`? False = Don't check 【标准】； True = Check. Disable this option if you intend to upload any of 下列在您的系统 or CMS via your browser: PHP，JavaScript，HTML，python，perl files和etcetera. Enable this option if you don't have any additional protections on your system和do not intend to upload such files. If you use additional security in conjunction with phpMussel例如ZB Block，there是no need to turn this option on，because most of what phpMussel will look为(in the context of this option) are duplications of protections that are already provided。
+- 搜索文件内容为通用命令例如`eval()`，`exec()`和`include()`？ False = 不搜索【标准】； True = 搜索。 关闭这个指令如果您打算上传任何的下列在您的系统或CMS通过您的浏览器：PHP，JavaScript，HTML，python，perl文件和等等。激活这个指令如果您不有任何另外保护在您的系统和不打算上传这些文件。如果您使用另外安全在连词的phpMussel例如ZB Block，没有任何需要激活这个指令，因为最的什么phpMussel将寻找（在上下文这个指令）是重复的保护已提供。
 
 “block_control_characters”
-- Block any文件containing any control characters (other than newlines)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) If you're _**ONLY**_ uploading plain-text，then you can turn this option on to provide some additional protection在您的系统. However，if you upload anything other than plain-text，turning this on may result in false positives. False = Don't block 【标准】； True = Block。
+- 受阻任何文件包含任何控制字符吗（以外换行符）？ (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) 如果您只上传纯文本，您可以激活这个指令以提供某些另外保护在您的系统。然而，如果您上传任何事以外纯文本，激活这个可能结果在假阳性。 False = 不受阻【标准】； True = 受阻。
 
 “corrupted_exe”
 - Corrupted files和parse errors. False = Ignore； True = Block 【标准】. Detect和block potentially corrupted移植可执行｢PE｣ files? Often (but not always)，when certain aspects of a移植可执行｢PE｣file are corrupted or can't be parsed correctly，it can be indicative of a viral infection. The processes used by most 杀毒 programs to detect viruses in PE文件require 处理 those文件in certain ways，which，if the programmer of a virus是aware of，will specifically try to prevent，in order to allow their virus to remain undetected。
@@ -741,7 +741,7 @@ Chameleon attack detection: False = Off； True = On。
 - Optional limitation or threshold to the length of raw data that phpMussel是permitted to read和scan (in case there are any noticeable performance issues whilst scanning). Value是an integer representing filesize in KB. Default = 32768 (32MB). Zero or null value disables the threshold. Generally，this value shouldn't be less than the average filesize of文件uploads that you want和expect to receive to your server or website，shouldn't be more than the filesize_limit directive，和shouldn't be more than roughly one fifth of the total allowable memory allocation granted to PHP via the php.ini 配置文件. This directive exists to try to prevent phpMussel from using up too much memory (that'd prevent it from being able to successfully scan文件above a certain filesize）。
 
 ####"compatibility" （类别）
-Compatibility directives为phpMussel。
+phpMussel兼容性指令。
 
 “ignore_upload_errors”
 - This directive should generally be disabled unless it's required为correct functionality of phpMussel on your specific system. Normally，when disabled，when phpMussel detects the presence of elements在`$_FILES` array()，it'll attempt to initiate a scan of the文件that those elements represent，and，if those elements are blank or empty，phpMussel will return an error message. This是proper behaviour为phpMussel。However，为some CMS，empty elements in `$_FILES` can occur as a result of the natural behaviour of those CMS，or errors may be reported when there aren't any，in which case，the normal behaviour为phpMussel will be interfering with the normal behaviour of those CMS. If such a situation occurs为you，enabling this option will instruct phpMussel to not attempt to initiate scans为such empty elements，ignore them when found和to not return any related error messages，thus allowing continuation of the page request. False = OFF； True = ON。
