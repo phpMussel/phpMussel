@@ -43,11 +43,11 @@ PHPMUSSEL版权2013和此后GNU/GPLv.2通过Caleb M （Maikuolan）。
 
 1） 通过您的阅读这，我假设您已经下载一个存档的副本的脚本，已解压缩其内容和有它地方的某处上您的机器。从这里，您要决定在哪里在您的服务器您想放这些内容。一个文件夹例如`/public_html/phpmussel/`或类似（无论您选择，不要紧，只要它的安全和您是满意）会是足够了。*之前您开始上传，继续阅读。。*
 
-2） 自选（强烈推荐为高级用户，但不推荐为业余用户或为用户没有经验），打开`phpmussel.ini`（位于内`vault`） - 这个文件包含所有指令可用的为phpMussel。以上的每指令应该有一个简评以说明它做什么和它的功能。调整这些指令您认为合适的，按照随您是适合为您的特定的设置。保存文件，关闭。
+2） 自选（强烈推荐为高级用户，但不推荐为业余用户或为用户没有经验），打开`phpmussel.ini`（位于内`vault`） - 这个文件包含所有指令可用的为phpMussel。以上的每指令应有一个简评以说明它做什么和它的功能。调整这些指令您认为合适的，按照随您是适合为您的特定的设置。保存文件，关闭。
 
-3） 上传内容（phpMussel和它的文件）至文件夹您决定在早期（不需要包括`*.txt`/`*.md`文件，但大多，您应该上传的一切）。
+3） 上传内容（phpMussel和它的文件）至文件夹您决定在早期（不需要包括`*.txt`/`*.md`文件，但大多，您应上传一切）。
 
-4） CMHOD的`vault`文件夹为“755”。主文件夹存储的内容（一个您先前选择），平时，可以单独留，但CHMOD状态应检查如果您有权限问题以往上您的系统（按说，应该是这样的“755”）。
+4） CMHOD的`vault`文件夹为“755”。主文件夹存储的内容（一个您先前选择），平时，可以单独留，但CHMOD状态应检查如果您有权限问题以往上您的系统（按说，应被某物似“755”）。
 
 5） 接下来，您需要｢钩子｣phpMussel为您的系统或CMS。有几种不同的方式在哪里您可以｢钩子｣脚本例如phpMussel为您的系统或CMS，但最简单的是简单地包括的脚本在开头的核心文件为您的系统或CMS（这是一个是通常始终加载的当有人访问的任何页面在您的网站）使用`require()`或`include()`命令。平时，这将是存储的在文件夹例如`/includes`，`/assets`或`/functions`，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`或类似。您需要确定哪些文件这是为您的情况；如果您遇到困难关于确定这为您自己，访问phpMussel支持论坛和让我​​​​们知；这是可能的我自己或其他用户可有经验的该CMS您正在使用（您需要让我们知哪些CMS您使用的），和从而，可能能够提供援助关于这。为了使用`require()`或`include()`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`phpmussel.php`文件（本地地址，不HTTP地址；它会类似于vault地址前面提到的）。
 
@@ -65,7 +65,7 @@ PHPMUSSEL版权2013和此后GNU/GPLv.2通过Caleb M （Maikuolan）。
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"`
 
-6） 从这里，您完成了！然，您应该测试它以确保它的正常运行。为了测试文件上传保护，尝试上传测试文件包括在包内`_testfiles`至您的网站通过您常用的基于浏览器的上传方法。如果一切正常，信息应该出现从phpMussel以确认上载已成功阻止了。如果出现什么，什么是不正常工作。如果您使用的任何先进的功能或如果您使用的其它类型的扫描可能的，我建议尝试它跟他们以确保其工作正常，也。
+6） 从这里，您完成了！然，您应测试它以确保它的正常运行。为了测试文件上传保护，尝试上传测试文件包括在包内`_testfiles`至您的网站通过您常用的基于浏览器的上传方法。如果一切正常，信息应出现从phpMussel以确认上载已成功阻止了。如果出现什么，什么是不正常工作。如果您使用的任何先进的功能或如果您使用的其它类型的扫描可能的，我建议尝试它跟他们以确保其工作正常，也。
 
 ---
 
@@ -78,18 +78,18 @@ PHPMUSSEL版权2013和此后GNU/GPLv.2通过Caleb M （Maikuolan）。
 
 2） phpMussel需要PHP安装在主机以经营。如果您没有PHP已安装上您的机器，请安装PHP上您的机器，和跟随任何指令提供由PHP的安装程序。
 
-3） 自选（强烈推荐为高级用户，但不推荐为业余用户或为用户没有经验），打开`phpmussel.ini`（位于内`vault`） - 这个文件包含所有指令可用的为phpMussel。以上的每指令应该有一个简评以说明它做什么和它的功能。调整这些指令您认为合适的，按照随您是适合为您的特定的设置。保存文件，关闭。
+3） 自选（强烈推荐为高级用户，但不推荐为业余用户或为用户没有经验），打开`phpmussel.ini`（位于内`vault`） - 这个文件包含所有指令可用的为phpMussel。以上的每指令应有一个简评以说明它做什么和它的功能。调整这些指令您认为合适的，按照随您是适合为您的特定的设置。保存文件，关闭。
 
 4） 自选，使用的phpMussel在CLI模式可能是更容易为您如果您创建一个批处理文件为自动加载的PHP和phpMussel。要做到这一点，打开一个纯文本编辑器例如Notepad或Notepad++，键入完整路径为`php.exe`文件在文件夹的您的PHP安装，其次是一个空格，然后完整路径为`phpmussel.php`文件在文件夹的您的phpMussel安装，最后，保存此文件使用一个".bat"扩展名在一个地方您会容易发现它；从这里，双击的文件以经营phpMussel在未来。
 
-5） 从这里，您完成了！然，您应该测试它以确保它的正常运行。以测试phpMussel，经营phpMussel和尝试扫描`_testfiles`文件夹提供有包。
+5） 从这里，您完成了！然，您应测试它以确保它的正常运行。以测试phpMussel，经营phpMussel和尝试扫描`_testfiles`文件夹提供有包。
 
 ---
 
 
 ###3A. <a name="SECTION3A"></a>如何使用（对于WEB服务器）
 
-phpMussel的目的是作为一个脚本这将将满意地和正确地执行｢从开箱｣有最小的要求为您完成：如果正确地安装的，简而言之，它应该正确地功能。
+phpMussel的目的是作为一个脚本这将将满意地和正确地执行｢从开箱｣有最小的要求为您完成：如果正确地安装的，简而言之，它应正确地功能。
 
 文件上传扫描是自动和按说已激活，所以，您不需要做任何事为这个功能。
 
@@ -522,7 +522,7 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - 最大内存使用允许为检疫。如果总内存已用通过隔离到达这个数值，最老检疫文件将会删除直到总内存已用不再到达这个数值。这个指令是重要为使它更难为任何潜在攻击者洪水您的检疫用非通缉数据潜在的造成过度数据用法在您的虚拟主机服务。数值是在KB。 标准 =65536 =65536KB =64MB。
 
 “honeypot_mode”
-- 当这个指令（蜜罐模式）是激活，phpMussel将尝试检疫所有文件上传它遇到，而不管如果文件上传是匹配任何包括签名，和没有扫描或分析的那些文件上传将发生。这个功能应该有用为那些想使用的phpMussel为目的病毒或恶意软件研究，但它是不推荐激活这个功能如果预期的用的phpMussel通过用户是为标准文件上传扫描，也不推荐使用蜜罐功能为目的以外蜜罐。作为标准，这个指令是关闭。 False = 是关闭【标准】； True = 是激活。
+- 当这个指令（蜜罐模式）是激活，phpMussel将尝试检疫所有文件上传它遇到，而不管如果文件上传是匹配任何包括签名，和没有扫描或分析的那些文件上传将发生。这个功能应有用为那些想使用的phpMussel为目的病毒或恶意软件研究，但它是不推荐激活这个功能如果预期的用的phpMussel通过用户是为标准文件上传扫描，也不推荐使用蜜罐功能为目的以外蜜罐。作为标准，这个指令是关闭。 False = 是关闭【标准】； True = 是激活。
 
 “scan_cache_expiry”
 - 多长时间应该phpMussel维持扫描结果？数值是秒数为维持扫描结果。标准是21600秒（6小时）；一个`0`数值将停止维持扫描结果。
@@ -732,19 +732,19 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - 受阻任何文件包含任何控制字符吗（以外换行符）？ (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) 如果您只上传纯文本，您可以激活这个指令以提供某些另外保护在您的系统。然而，如果您上传任何事以外纯文本，激活这个可能结果在假阳性。 False = 不受阻【标准】； True = 受阻。
 
 “corrupted_exe”
-- Corrupted files和parse errors. False = Ignore； True = Block 【标准】. Detect和block potentially corrupted移植可执行｢PE｣ files? Often (but not always)，when certain aspects of a移植可执行｢PE｣file are corrupted or can't be parsed correctly，it can be indicative of a viral infection. The processes used by most 杀毒 programs to detect viruses in PE文件require 处理 those文件in certain ways，which，if the programmer of a virus是aware of，will specifically try to prevent，in order to allow their virus to remain undetected。
+- 损坏文件和处理错误。 False = 忽略； True = 受阻【标准】。 检测和受阻潜在的损坏移植可执行｢PE｣文件吗？时常（但不始终），当某些零件的一个移植可执行｢PE｣文件是损坏或不能被正确处理，它可以建议建议的一个病毒感染。过程使用通过最杀毒程序以检测病毒在PE文件需要处理那些文件在某些​​方式，哪里，如果程序员的一个病毒是意识的，将特别尝试防止，以允许他们的病毒留不检测。
 
 “decode_threshold”
-- Optional limitation or threshold to the length of raw data within which decode commands should be detected (in case there are any noticeable performance issues whilst scanning). Value是an integer representing filesize in KB. Default = 512 (512KB). Zero or null value disables the threshold (removing 任何这样的limitation based on filesize）。
+- 可选限或门槛​​的长度的原始数据在其中解码命令应该被检测（如果有任何引人注目性能问题当扫描）。值是一个整数代表文件大小在KB。 标准 = 512 （512KB）。 零或空值将关闭门槛（去除任何这样的限基于文件大小）。
 
 “scannable_threshold”
-- Optional limitation or threshold to the length of raw data that phpMussel是permitted to read和scan (in case there are any noticeable performance issues whilst scanning). Value是an integer representing filesize in KB. Default = 32768 (32MB). Zero or null value disables the threshold. Generally，this value shouldn't be less than the average filesize of文件uploads that you want和expect to receive to your server or website，shouldn't be more than the filesize_limit directive，和shouldn't be more than roughly one fifth of the total allowable memory allocation granted to PHP via the php.ini 配置文件. This directive exists to try to prevent phpMussel from using up too much memory (that'd prevent it from being able to successfully scan文件above a certain filesize）。
+- 可选限或门槛​​为原始数据长度phpMussel是允许为阅读和扫描（如果有任何引人注目性能问题当扫描）。值是一个整数代表文件大小在KB。 标准 = 32768 （32MB）。 零或空值将关闭门槛。按说，这个数值应不会少于平均文件大小的文件上传您想和期待收到您的服务器或网站，应不会多于`filesize_limit`指令，和应不会多于大致五分之一的总允许内存分配获授PHP通过`php.ini`配置文件。这个指令存在为尝试防止phpMussel从用的太多内存（这个将防止它从能够顺利扫描文件以上的一个特别文件大小）。
 
 ####"compatibility" （类别）
 phpMussel兼容性指令。
 
 “ignore_upload_errors”
-- This directive should generally be disabled unless it's required为correct functionality of phpMussel on your specific system. Normally，when disabled，when phpMussel detects the presence of elements在`$_FILES` array()，it'll attempt to initiate a scan of the文件that those elements represent，and，if those elements are blank or empty，phpMussel will return an error message. This是proper behaviour为phpMussel。However，为some CMS，empty elements in `$_FILES` can occur as a result of the natural behaviour of those CMS，or errors may be reported when there aren't any，in which case，the normal behaviour为phpMussel will be interfering with the normal behaviour of those CMS. If such a situation occurs为you，enabling this option will instruct phpMussel to not attempt to initiate scans为such empty elements，ignore them when found和to not return any related error messages，thus allowing continuation of the page request. False = OFF； True = ON。
+- 这个指令按说应会关闭除非它是需要为对功能的phpMussel在您的具体系统。按说，当是关闭，当phpMussel检测存在元素在`$_FILES`数组，它将尝试引发一个扫描的文件代表通过那些元素，和，如果他们是空或空白，phpMussel将回报一个错误信息。这个是正确行为为phpMussel。然而，为某些CMS，空元素在`$_FILES`可以发生因之的自然的行为的那些CMS，或错误可能会报告当没有任何，在这种情况，正常行为为phpMussel将会使干扰为正常行为的那些CMS。If such a situation occurs为you，enabling this option will instruct phpMussel to not attempt to initiate scans为such empty elements，ignore them when found和to not return any related error messages，thus allowing continuation of the page request. False = OFF； True = ON。
 
 “only_allow_images”
 - If you only expect or only intend to allow images to be uploaded在您的系统 or CMS，和if you absolutely don't require any文件other than images to be uploaded在您的系统 or CMS，this directive should be enabled，but should otherwise be disabled. If this directive是enabled，it'll instruct phpMussel to indiscriminately block any uploads identified as non-image files，without scanning them. This may reduce processing time和memory usage为attempted uploads of non-image files. False = OFF； True = ON。
@@ -844,13 +844,13 @@ Template data relates to the HTML output used to generate the "Upload Denied" me
 
 `NAME:HEX:FROM:TO`
 
-Where NAME是the name to cite为that signature和HEX是a hexadecimal-encoded segment of the文件intended to be matched by the given signature. FROM和TO are optional parameters，indicting from which和to which positions在source data to check against (not supported by the mail function）。
+`NAME`是名援引为签名和`HEX`是一个十六进制编码分割的文件意味被匹配通过有关签名。`FROM`和`TO`是可选参数，说明从哪里和向哪里在源数据匹配针对（不支持通过电子邮件功能）。
 
-####*REGEX*
-Any form of regex understood和correctly processed by PHP should also be correctly understood和processed by phpMussel和its signatures. However，I'd suggest taking extreme caution when writing new regex based signatures，because，if you're not entirely sure what you're doing，there can be 很 irregular 和／或 unexpected results. Take a look at the phpMussel source-code if you're not entirely sure about the context in which regex statements are parsed. Also，remember that all patterns (with exception to filename，archive metadata和MD5 patterns) must be hexadecimally encoded (foregoing pattern syntax，of course)!
+####*正则表达式／REGEX*
+任何形式的正则表达式了解和正确地处理通过PHP应还会正确地了解和处理通过phpMussel和它的签名。然而，我将建议采取极端谨慎当写作新正则表达式为基础的签名，因为，如果您不完全肯定什么您被做，可以有很不规则和／或意外结果。看一眼的phpMussel源代码如果您不完全肯定的上下文其中正则表达式语句被处理。还，记得，所有语句（除外为文件名，存档元数据和MD5语句）必须是十六进制编码（和除外为语句句法，还，当然）！
 
-####*WHERE TO PUT CUSTOM SIGNATURES?*
-Only put custom签名in those文件意为custom signatures. Those文件should contain "_custom" in their filenames. You should also avoid editing the default signature files，unless you know exactly what you're doing，because，aside from being good practise in general和aside from helping you distinguish between your own signatures和the default签名included with phpMussel，it's good to stick to editing only the文件意为editing，because tampering with the default 签名文件can cause them to stop working correctly，due to the "maps" files: The maps文件tell phpMussel where在签名文件to look for签名required by phpMussel as per when required，和these maps can become out-of-sync with their associated 签名文件if those 签名文件are tampered with. You can put pretty much whatever you want into your custom signatures，so long as you follow the correct syntax. However，be careful to test new签名for false-positives beforehand if you intend to share them or use them in a live environment。
+####*哪里放个性化签名*
+放个性化签名只在那些文件意味为个性化签名。那些文件应包含`_custom`在他们的文件名。您应还避免修改的标准签名文件，除非您确切地知什么您被做，因为，除了大体被好习惯和除了帮助您区分间您自己的签名和标准签名包括在phpMussel，它是好依照只修改文件意味为修改，因为篡改标准签名文件可以导致他们停止正确地运作，因为MAP｢地图｣（`.map`）文件：这些文件告诉phpMussel哪里在签名文件到定位签名需要通过phpMussel按照当需要，和这些MAP｢地图｣文件可以成为不同步从他们的关联签名文件如果那些签名文件是篡改。您可以放几乎任何您想在您的个性化签名，只要您跟随对句法。然而，当心和测试新签名为假阳性预如果您意味共享他们或使用他们在一个活环境。
 
 ####*签名说明*
 下列是说明的签名类型使用phpMussel：
@@ -886,7 +886,7 @@ Only put custom签名in those文件意为custom signatures. Those文件should co
 
 ####杀毒软件兼容性
 
-在大多数情况下，phpMussel应该相当兼容性与大多数杀毒软件。然，冲突已经报道由多个用户以往。下面这些信息是从VirusTotal.com，和它描述了一个数的假阳性报告的各种杀毒软件针对phpMussel。虽说这个信息是不绝对保证的如果您会遇到兼容性问题间phpMussel和您的杀毒软件，如果您的杀毒软件注意为冲突针对phpMussel，您应该考虑关闭它之前使用phpMussel或您应该考虑替代选项从您的杀毒软件或从phpMussel。
+在大多数情况下，phpMussel应该相当兼容性与大多数杀毒软件。然，冲突已经报道由多个用户以往。下面这些信息是从VirusTotal.com，和它描述了一个数的假阳性报告的各种杀毒软件针对phpMussel。虽说这个信息是不绝对保证的如果您会遇到兼容性问题间phpMussel和您的杀毒软件，如果您的杀毒软件注意冲突针对phpMussel，您应该考虑关闭它之前使用phpMussel或您应该考虑替代选项从您的杀毒软件或从phpMussel。
 
 这个信息最后更新2015年9月7日和是准确为至少phpMussel的两个最近次要版本（v0.6-v0.7a）在这个现在时候的写作。
 
@@ -947,4 +947,4 @@ Only put custom签名in those文件意为custom signatures. Those文件should co
 ---
 
 
-最后更新：2015年9月13日。
+最后更新：2015年9月17日。

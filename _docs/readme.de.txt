@@ -1698,9 +1698,9 @@
  entweder vor der Benutzung von phpMussel deaktivieren oder sich andere
  Alternativen überlegen.
 
- Diese Informationen wurden zuletzt am 7. September 2015 aktualisiert und gelten für
- alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen
- (v0.6-v0.7a) zu diesem Zeitpunkt.
+ Diese Informationen wurden zuletzt am 7. September 2015 aktualisiert und
+ gelten für alle phpMussel Veröffentlichungen von den beiden letzten
+ Nebenversionen (v0.6-v0.7a) zu diesem Zeitpunkt.
 
  Ad-Aware                Keine bekannten Probleme
  Agnitum                 Keine bekannten Probleme
@@ -1756,5 +1756,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 12. September 2015 (2015.09.12).
+Zuletzt aktualisiert: 17. September 2015 (2015.09.17).
 EOF

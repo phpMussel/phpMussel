@@ -1644,7 +1644,7 @@
    Waar NAME is de naam te noemen voor die handtekening en HEX is een
    hexadecimale gecodeerd segment van het bestand bestemd om te worden
    gecontroleerd door de gegeven handtekening. FROM en TO optioneel parameters
-   zijn, aanklagen van waaruit en waaraan in de brongegevens om te controleren
+   zijn, aangeeft van waaruit en waaraan in de brongegevens om te controleren
    tegen (niet ondersteund door de mail functie).
 
  = REGEX =
@@ -1821,5 +1821,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 12 September 2015 (2015.09.12).
+Laatste Bijgewerkt: 17 September 2015 (2015.09.17).
 EOF

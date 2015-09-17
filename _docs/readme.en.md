@@ -844,7 +844,7 @@ All other signatures follow the format:
 
 `NAME:HEX:FROM:TO`
 
-Where NAME is the name to cite for that signature and HEX is a hexadecimal-encoded segment of the file intended to be matched by the given signature. FROM and TO are optional parameters, indicting from which and to which positions in the source data to check against (not supported by the mail function).
+Where NAME is the name to cite for that signature and HEX is a hexadecimal-encoded segment of the file intended to be matched by the given signature. FROM and TO are optional parameters, indicating from which and to which positions in the source data to check against (not supported by the mail function).
 
 ####*REGEX*
 Any form of regex understood and correctly processed by PHP should also be correctly understood and processed by phpMussel and its signatures. However, I'd suggest taking extreme caution when writing new regex based signatures, because, if you're not entirely sure what you're doing, there can be highly irregular and/or unexpected results. Take a look at the phpMussel source-code if you're not entirely sure about the context in which regex statements are parsed. Also, remember that all patterns (with exception to filename, archive metadata and MD5 patterns) must be hexadecimally encoded (foregoing pattern syntax, of course)!
@@ -947,4 +947,4 @@ This information was last updated 7th September 2015 and is current for all phpM
 ---
 
 
-Last Updated: 12th September 2015 (2015.09.12).
+Last Updated: 17th September 2015 (2015.09.17).

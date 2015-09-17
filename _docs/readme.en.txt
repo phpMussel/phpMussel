@@ -1530,7 +1530,7 @@
     NAME:HEX:FROM:TO
    Where NAME is the name to cite for that signature and HEX is a
    hexadecimal-encoded segment of the file intended to be matched by the given
-   signature. FROM and TO are optional parameters, indicting from which and to
+   signature. FROM and TO are optional parameters, indicating from which and to
    which positions in the source data to check against (not supported by the
    mail function).
 
@@ -1696,5 +1696,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 12th September 2015 (2015.09.12).
+Last Updated: 17th September 2015 (2015.09.17).
 EOF
