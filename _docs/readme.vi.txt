@@ -521,6 +521,10 @@
  /_docs/readme.pt.txt (Tài liệu, Included); PORTUGUÊS
  /_docs/readme.ru.md (Tài liệu, Included); РУССКИЙ
  /_docs/readme.ru.txt (Tài liệu, Included); РУССКИЙ
+ /_docs/readme.vi.md (Tài liệu, Included); TIẾNG VIỆT
+ /_docs/readme.vi.txt (Tài liệu, Included); TIẾNG VIỆT
+ /_docs/readme.zh.md (Tài liệu, Included); 中文（简体）
+ /_docs/readme.zh-TW.md (Tài liệu, Included); 中文（傳統）
     The README files (for example; the file you're currently reading).
     ~
  /_docs/signatures_tally.txt (Tài liệu, Included)
@@ -1694,5 +1698,5 @@
                                      ~ ~ ~
 
 
-Lần cuối cập nhật: 17 Tháng Chín 2015 (2015.09.17).
+Lần cuối cập nhật: 18 Tháng Chín 2015 (2015.09.18).
 EOF

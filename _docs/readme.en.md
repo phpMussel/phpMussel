@@ -279,6 +279,10 @@ File                                       | Description
 /_docs/readme.pt.txt                       | Documentation: PORTUGUÊS
 /_docs/readme.ru.md                        | Documentation: РУССКИЙ
 /_docs/readme.ru.txt                       | Documentation: РУССКИЙ
+/_docs/readme.vi.md                        | Documentation: TIẾNG VIỆT
+/_docs/readme.vi.txt                       | Documentation: TIẾNG VIỆT
+/_docs/readme.zh.md                        | Documentation: 中文（简体）
+/_docs/readme.zh-TW.md                     | Documentation: 中文（傳統）
 /_docs/signatures_tally.txt                | Net-shift tally of included signatures (not required for proper function of script).
 /_testfiles/                               | Test files directory (contains various files). All contained files are test files for testing if phpMussel was correctly installed on your system, and you don't need to upload this directory or any of its files except when doing such testing.
 /_testfiles/ascii_standard_testfile.txt    | Test file for testing phpMussel normalised ASCII signatures.
@@ -947,4 +951,4 @@ This information was last updated 7th September 2015 and is current for all phpM
 ---
 
 
-Last Updated: 17th September 2015 (2015.09.17).
+Last Updated: 18th September 2015 (2015.09.18).

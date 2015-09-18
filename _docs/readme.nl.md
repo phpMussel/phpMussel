@@ -279,6 +279,10 @@ Bestand                                    | Beschrijving
 /_docs/readme.pt.txt                       | Documentatie: PORTUGUÊS
 /_docs/readme.ru.md                        | Documentatie: РУССКИЙ
 /_docs/readme.ru.txt                       | Documentatie: РУССКИЙ
+/_docs/readme.vi.md                        | Documentatie: TIẾNG VIỆT
+/_docs/readme.vi.txt                       | Documentatie: TIẾNG VIỆT
+/_docs/readme.zh.md                        | Documentatie: 中文（简体）
+/_docs/readme.zh-TW.md                     | Documentatie: 中文（傳統）
 /_docs/signatures_tally.txt                | Net-shift tally van meegeleverde handtekeningen (niet vereist voor een goede werking van het script).
 /_testfiles/                               | Testbestanden bestandsmap (bevat verschillende bestanden). Alle opgenomen bestanden zijn testbestanden voor het testen als phpMussel correct op uw systeem is geïnstalleerd, en u hoeft niet om deze map of een van de bestanden, behalve bij het doen van dergelijke testen te uploaden.
 /_testfiles/ascii_standard_testfile.txt    | Testbestand voor het testen phpMussel genormaliseerde ASCII handtekeningen.
@@ -947,4 +951,4 @@ Dit informatie werd laatst bijgewerkt 7 September 2015 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 17 September 2015 (2015.09.17).
+Laatste Bijgewerkt: 18 September 2015 (2015.09.18).

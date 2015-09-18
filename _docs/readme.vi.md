@@ -279,6 +279,10 @@ Hồ sơ                                      | Chi tiết
 /_docs/readme.pt.txt                       | Tài liệu: PORTUGUÊS
 /_docs/readme.ru.md                        | Tài liệu: РУССКИЙ
 /_docs/readme.ru.txt                       | Tài liệu: РУССКИЙ
+/_docs/readme.vi.md                        | Tài liệu: TIẾNG VIỆT
+/_docs/readme.vi.txt                       | Tài liệu: TIẾNG VIỆT
+/_docs/readme.zh.md                        | Tài liệu: 中文（简体）
+/_docs/readme.zh-TW.md                     | Tài liệu: 中文（傳統）
 /_docs/signatures_tally.txt                | Lý lịch của net-shift có bao gồm chữ ký (không cần thiết cho chức năng phù hợp của kịch bản).
 /_testfiles/                               | Kiểm tra tập tin thư mục (chứa các tập tin khác nhau). Tất cả các hồ sơ chứa những hồ sơ thử nghiệm để thử nghiệm nếu phpMussel đã được cài đặt đúng trên hệ thống của bạn, và bạn không cần phải tải lên thư mục này hoặc bất kỳ các hồ sơ của mình trừ khi làm xét nghiệm như vậy.
 /_testfiles/ascii_standard_testfile.txt    | Kiểm tra hồ sơ cho xét nghiệm phpMussel chữ ký ASCII bình thường.
@@ -947,4 +951,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 7 Tháng Chín 20
 ---
 
 
-Lần cuối cập nhật: 17 Tháng Chín 2015 (2015.09.17).
+Lần cuối cập nhật: 18 Tháng Chín 2015 (2015.09.18).

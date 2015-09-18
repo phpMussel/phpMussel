@@ -561,6 +561,10 @@
  /_docs/readme.pt.txt (Documentation, Inclu); PORTUGUÊS
  /_docs/readme.ru.md (Documentation, Inclu); РУССКИЙ
  /_docs/readme.ru.txt (Documentation, Inclu); РУССКИЙ
+ /_docs/readme.vi.md (Documentation, Inclu); TIẾNG VIỆT
+ /_docs/readme.vi.txt (Documentation, Inclu); TIẾNG VIỆT
+ /_docs/readme.zh.md (Documentation, Inclu); 中文（简体）
+ /_docs/readme.zh-TW.md (Documentation, Inclu); 中文（傳統）
     Le README fichiers (par exemple; le fichier vous êtes en cours de lire).
     ~
  /_docs/signatures_tally.txt (Documentation, Inclu)
@@ -1816,5 +1820,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 12 Septembre 2015 (2015.09.12).
+Dernière Réactualisé: 18 Septembre 2015 (2015.09.18).
 EOF

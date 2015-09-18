@@ -91,6 +91,10 @@ Anything less than sub-minor:
   number of incorrectly typecasted configuration directives [phpmussel.inc;
   phpmussel.ini].
 
+- [2015.09.18; Documentation; Maikuolan]: Completed translation of the
+  documentation to Chinese (probably erroneous; feel free to audit if you
+  want).
+
 === Version/Release 0.7a (Previous Release: 0.7) ===
 SUB-MINOR RELEASE; Updated to the latest signatures set (55+20751+7a).
 

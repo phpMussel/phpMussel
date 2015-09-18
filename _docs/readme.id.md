@@ -279,6 +279,10 @@ Data                                       | Deskripsi
 /_docs/readme.pt.txt                       | Dokumentasi: PORTUGUÊS
 /_docs/readme.ru.md                        | Dokumentasi: РУССКИЙ
 /_docs/readme.ru.txt                       | Dokumentasi: РУССКИЙ
+/_docs/readme.vi.md                        | Dokumentasi: TIẾNG VIỆT
+/_docs/readme.vi.txt                       | Dokumentasi: TIẾNG VIỆT
+/_docs/readme.zh.md                        | Dokumentasi: 中文（简体）
+/_docs/readme.zh-TW.md                     | Dokumentasi: 中文（傳統）
 /_docs/signatures_tally.txt                | Perhitungan dari diikutkan tanda tangan (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /_testfiles/                               | Direktori test file-file (berisi bermacam data). Semua file-file berisikan di dalamnya adalah data test untuk testing jika phpMussel dengan benar diinstal pada sistem, dan Anda tidak perlu mengupload direktori ini atau file-filenya jika melakukan testing.
 /_testfiles/ascii_standard_testfile.txt    | File test untuk mentest tanda tangan ASCII normal phpMussel.
@@ -947,4 +951,4 @@ Informasi ini diupdate 7 September 2015 dan cocok untuk semua rilis phpMussel da
 ---
 
 
-Terakhir Diperbarui: 12 September 2015 (2015.09.12).
+Terakhir Diperbarui: 18 September 2015 (2015.09.18).

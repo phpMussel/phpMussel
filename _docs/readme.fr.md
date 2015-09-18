@@ -279,6 +279,10 @@ Fichier                                    | Description
 /_docs/readme.pt.txt                       | Documentation: PORTUGUÊS
 /_docs/readme.ru.md                        | Documentation: РУССКИЙ
 /_docs/readme.ru.txt                       | Documentation: РУССКИЙ
+/_docs/readme.vi.md                        | Documentation: TIẾNG VIỆT
+/_docs/readme.vi.txt                       | Documentation: TIẾNG VIỆT
+/_docs/readme.zh.md                        | Documentation: 中文（简体）
+/_docs/readme.zh-TW.md                     | Documentation: 中文（傳統）
 /_docs/signatures_tally.txt                | Décompte de signatures inclus (pas nécessaire pour le bon fonctionnement du script).
 /_testfiles/                               | Test fichiers répertoire (contient divers fichiers). Tous les fichiers contenus sont des fichiers à test si phpMussel a été correctement installé sur votre système, et vous n'avez pas besoin de télécharger ce répertoire ou l'un de ses fichiers, sauf si faire ces tests.
 /_testfiles/ascii_standard_testfile.txt    | Test fichier à test phpMussel normalisé ASCII signatures.
@@ -947,4 +951,4 @@ Cette information a été réactualisé le 7 Septembre 2015 et est courant pour 
 ---
 
 
-Dernière Réactualisé: 12 Septembre 2015 (2015.09.12).
+Dernière Réactualisé: 18 Septembre 2015 (2015.09.18).

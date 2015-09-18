@@ -552,6 +552,10 @@
  /_docs/readme.pt.txt (Documentatie, Opgenomen); PORTUGUÊS
  /_docs/readme.ru.md (Documentatie, Opgenomen); РУССКИЙ
  /_docs/readme.ru.txt (Documentatie, Opgenomen); РУССКИЙ
+ /_docs/readme.vi.md (Documentatie, Opgenomen); TIẾNG VIỆT
+ /_docs/readme.vi.txt (Documentatie, Opgenomen); TIẾNG VIỆT
+ /_docs/readme.zh.md (Documentatie, Opgenomen); 中文（简体）
+ /_docs/readme.zh-TW.md (Documentatie, Opgenomen); 中文（傳統）
     De README-bestanden (bijvoorbeeld, het bestand dat u momenteel aan het
     lezen).
     ~
@@ -1821,5 +1825,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 17 September 2015 (2015.09.17).
+Laatste Bijgewerkt: 18 September 2015 (2015.09.18).
 EOF

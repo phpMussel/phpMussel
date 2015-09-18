@@ -279,6 +279,10 @@ Archivo                                    | Descripción
 /_docs/readme.pt.txt                       | Documentación: PORTUGUÊS
 /_docs/readme.ru.md                        | Documentación: РУССКИЙ
 /_docs/readme.ru.txt                       | Documentación: РУССКИЙ
+/_docs/readme.vi.md                        | Documentación: TIẾNG VIỆT
+/_docs/readme.vi.txt                       | Documentación: TIẾNG VIỆT
+/_docs/readme.zh.md                        | Documentación: 中文（简体）
+/_docs/readme.zh-TW.md                     | Documentación: 中文（傳統）
 /_docs/signatures_tally.txt                | Cifra neta de cambio de las incluidas firmas (no se requiere para lo adecuado funcionalidad de la script).
 /_testfiles/                               | Prueba archivos directorio (contiene varios archivos). Todos los archivos contenidos son prueba archivos para probando si phpMussel ha sido instalado correctamente en su sistema, y que no es necesario subir este directorio o cualquiera de sus archivos excepto cuando haciendo tales pruebas.
 /_testfiles/ascii_standard_testfile.txt    | Prueba archivo para probando phpMussel normalizados ASCII firmas.
@@ -946,4 +950,4 @@ Esta información ha sido actualizado 7 Setiembre 2015 y es a hoy para todas las
 ---
 
 
-Última Actualización: 12 Setiembre 2015 (2015.09.12).
+Última Actualización: 18 Setiembre 2015 (2015.09.18).
