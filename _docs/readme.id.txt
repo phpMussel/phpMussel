@@ -556,10 +556,10 @@
  /_docs/readme.pt.txt (Dokumentasi, Diikutkan); PORTUGUÊS
  /_docs/readme.ru.md (Dokumentasi, Diikutkan); РУССКИЙ
  /_docs/readme.ru.txt (Dokumentasi, Diikutkan); РУССКИЙ
- /_docs/readme.vi.md (Dokumentasi, Dokumentasi); TIẾNG VIỆT
- /_docs/readme.vi.txt (Dokumentasi, Dokumentasi); TIẾNG VIỆT
- /_docs/readme.zh.md (Dokumentasi, Dokumentasi); 中文（简体）
- /_docs/readme.zh-TW.md (Dokumentasi, Dokumentasi); 中文（傳統）
+ /_docs/readme.vi.md (Dokumentasi, Diikutkan); TIẾNG VIỆT
+ /_docs/readme.vi.txt (Dokumentasi, Diikutkan); TIẾNG VIỆT
+ /_docs/readme.zh.md (Dokumentasi, Diikutkan); 中文（简体）
+ /_docs/readme.zh-TW.md (Dokumentasi, Diikutkan); 中文（傳統）
     File-file baca saya (misalnya; file yang Anda sedang membaca).
     ~
  /_docs/signatures_tally.txt (Dokumentasi, Diikutkan)
