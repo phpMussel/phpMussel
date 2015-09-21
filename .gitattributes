@@ -18,9 +18,10 @@
 # readings these files, I'd recommend using Notepad++ for opening and reading
 # these files, because, unlike traditional Notepad or other similar native
 # text readers/editors, Notepad++ has no difficulties in readning textfiles of
-# of various linebreak types.
+# of various linebreak types (TXT and INI files will remain as CRLF, however).
 * text eol=lf
 *.ini text eol=crlf
+*.txt text eol=crlf
 *.cvd binary
 *.dat binary
 *.exe binary
