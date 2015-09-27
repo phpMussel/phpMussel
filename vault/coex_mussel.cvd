@@ -6221,6 +6221,19 @@ $md5:d33bc66d62ab81f50244e62a9cd1a1da;$sha:6ec44015803dd85a6c0a83d2c8cfaec7f3efd
 $md5:e340d7fe826678591d42a106bc5c2961;$sha:9a4d38179decdbdd6fefe1acfd04518483984e0c;$str_len:475136;01509X-10351
 $md5:edabff7c4d33ec90f761ca7b609bff7e;$sha:bd3ec95d61309df671daaa8d6f8358ef66e35708;$str_len:1466368;01509X-10352
 $md5:f8898b4f931f084f6e6b3495a9f98a3d;$sha:7755ca361baeb87db74259aa4860e957b9f9f9f1;$str_len:3839680;01509X-10353
+$md5:4f34710fbe42883c0efc90ba2d0e749e;$sha:031e10d2c613e16d401971e00282fbd76dea6512;$str_len:913920;0SteamThief-1317
+$md5:ecc00d4e4b2cbf7caefdce122f017c3d;$sha:153bfc626aee483a53765e1ec5e722a7fa4f7ce0;$str_len:187392;0SteamThief-1318
+$md5:d0fdcff954021640e21413b2134057d8;$sha:1f6a0ed9bb9acd36e90486e1744abbb7f7dee639;$str_len:1238528;0SteamThief-1319
+$md5:208c446e48ed4f04aaa2dd6a8ee75a41;$sha:20c7916e1c7dbfd1c814bd0eee3f929db2d731af;$str_len:2509312;0SteamThief-1320
+$md5:ec39a574bcec221ee0154deabc25b9e3;$sha:20d36cdb02ee4105ccb4de6f8c013e5d63a000ad;$str_len:2204672;0SteamThief-1321
+$md5:284ed7b48f5c40770ca132a5fd4330f6;$sha:641fcd4804225e19e2df08738c2fbdbdf025b62d;$str_len:4282368;0SteamThief-1322
+$md5:fbe9be5ebec90d0f65625ff9226b0ad1;$sha:857ac51bd0018602856c3615593adcb6517ca45a;$str_len:573440;0SteamThief-1323
+$md5:cdd5a6affd1cf4d3909fa82536400206;$sha:939c761c2d339d7acb8e7c834bfe2d3568edd52f;$str_len:2665984;0SteamThief-1324
+$md5:be4e005e83d70e921d054a0cd2c9ca20;$sha:afdd25acc138cdbe66a57deb26c0b9e4fc42a524;$str_len:8704;0SteamThief-1325
+$md5:b6f3793f53765edc4b948514d059aeb7;$sha:b1762f545a8483ee611c7e6d7b458ba2d5661fb4;$str_len:2304000;0SteamThief-1326
+$md5:a7c71f7f7c06c26d99281089cb63e8d7;$sha:ce55a6a560a9b6b5b2171d7298cb6879d9eabaad;$str_len:1048576;0SteamThief-1327
+$md5:facf94b6f2c417b19ec943fef99b874c;$sha:df6e073e35f69f2e749efd2b6e9e3e0b454debd1;$str_len:1038848;0SteamThief-1328
+$md5:4dcfecd04ea526a693f0af03b00ad685;$sha:fb4255dffabd1756551d12de317dff0103ceea5b;$str_len:2257408;0SteamThief-1329
 === Infected PE files caught by honeypot trap; Not detected or only partially detected by V.T. ===
 .:: 2015/02
 $md5:174bcf22f37a80c950409c9a44b2e95d;$sha:35298b05ada53008aa8d64bde3313fc3534343d1;$str_len:197632;0DOBJ-00
