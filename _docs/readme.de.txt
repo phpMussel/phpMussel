@@ -513,6 +513,10 @@
  /_docs/readme.pt.txt (Dokumentation, enthalten); PORTUGUÊS
  /_docs/readme.ru.md (Dokumentation, enthalten); РУССКИЙ
  /_docs/readme.ru.txt (Dokumentation, enthalten); РУССКИЙ
+ /_docs/readme.vi.md (Dokumentation, enthalten); TIẾNG VIỆT
+ /_docs/readme.vi.txt (Dokumentation, enthalten); TIẾNG VIỆT
+ /_docs/readme.zh.md (Dokumentation, enthalten); 中文（简体）
+ /_docs/readme.zh-TW.md (Dokumentation, enthalten); 中文（傳統）
     Die README-Dateien (z.B. die Datei, die Sie gerade lesen).
     ~
  /_docs/signatures_tally.txt (Dokumentation, enthalten)
@@ -1698,9 +1702,9 @@
  entweder vor der Benutzung von phpMussel deaktivieren oder sich andere
  Alternativen überlegen.
 
- Diese Informationen wurden zuletzt am 7. September 2015 aktualisiert und gelten für
- alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen
- (v0.6-v0.7a) zu diesem Zeitpunkt.
+ Diese Informationen wurden zuletzt am 7. September 2015 aktualisiert und
+ gelten für alle phpMussel Veröffentlichungen von den beiden letzten
+ Nebenversionen (v0.6-v0.7a) zu diesem Zeitpunkt.
 
  Ad-Aware                Keine bekannten Probleme
  Agnitum                 Keine bekannten Probleme
@@ -1756,5 +1760,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 12. September 2015 (2015.09.12).
+Zuletzt aktualisiert: 18. September 2015 (2015.09.18).
 EOF

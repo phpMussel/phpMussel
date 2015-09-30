@@ -279,6 +279,10 @@ Bestand                                    | Beschrijving
 /_docs/readme.pt.txt                       | Documentatie: PORTUGUÊS
 /_docs/readme.ru.md                        | Documentatie: РУССКИЙ
 /_docs/readme.ru.txt                       | Documentatie: РУССКИЙ
+/_docs/readme.vi.md                        | Documentatie: TIẾNG VIỆT
+/_docs/readme.vi.txt                       | Documentatie: TIẾNG VIỆT
+/_docs/readme.zh.md                        | Documentatie: 中文（简体）
+/_docs/readme.zh-TW.md                     | Documentatie: 中文（傳統）
 /_docs/signatures_tally.txt                | Net-shift tally van meegeleverde handtekeningen (niet vereist voor een goede werking van het script).
 /_testfiles/                               | Testbestanden bestandsmap (bevat verschillende bestanden). Alle opgenomen bestanden zijn testbestanden voor het testen als phpMussel correct op uw systeem is geïnstalleerd, en u hoeft niet om deze map of een van de bestanden, behalve bij het doen van dergelijke testen te uploaden.
 /_testfiles/ascii_standard_testfile.txt    | Testbestand voor het testen phpMussel genormaliseerde ASCII handtekeningen.
@@ -844,7 +848,7 @@ Alle andere handtekeningen volgt het formaat:
 
 `NAME:HEX:FROM:TO`
 
-Waar NAME is de naam te noemen voor die handtekening en HEX is een hexadecimale gecodeerd segment van het bestand bestemd om te worden gecontroleerd door de gegeven handtekening. FROM en TO optioneel parameters zijn, aanklagen van waaruit en waaraan in de brongegevens om te controleren tegen (niet ondersteund door de mail functie).
+Waar NAME is de naam te noemen voor die handtekening en HEX is een hexadecimale gecodeerd segment van het bestand bestemd om te worden gecontroleerd door de gegeven handtekening. FROM en TO optioneel parameters zijn, aangeeft van waaruit en waaraan in de brongegevens om te controleren tegen (niet ondersteund door de mail functie).
 
 ####*REGEX*
 Elke vorm van reguliere expressie begrepen en correct verwerkt door moet ook correct worden begrepen en verwerkt door phpMussel en handtekeningen. Echter, Ik stel voor het nemen van extreem voorzichtigheid bij het schrijven van nieuwe handtekeningen op basis van reguliere expressie, omdat, als u niet helemaal zeker wat u doet, kan er zeer onregelmatig en/of onverwachte resultaten worden. Neem een kijkje op de phpMussel broncode als u niet helemaal zeker over de context waarin regex verklaringen geïnterpreteerd worden. Ook, vergeet niet dat alle patronen (met uitzondering van bestandsnaam, archief metadata en MD5 patronen) moet hexadecimaal gecodeerd worden (voorgaande patroon syntaxis, natuurlijk)!
@@ -947,4 +951,4 @@ Dit informatie werd laatst bijgewerkt 7 September 2015 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 12 September 2015 (2015.09.12).
+Laatste Bijgewerkt: 18 September 2015 (2015.09.18).

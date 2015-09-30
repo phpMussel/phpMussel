@@ -39,7 +39,7 @@
 >FN>\.[Dd][Ll][Ll]>117
 ’DLL-00:^[0-9][-_.]?[0-9]?\.dll
 ’DLL-01:^[Aa](cub|lloyico|lloyio|lt_lovebeads|mcis32|pxi|sycfilt|tk|vicap)?\.dll
-’DLL-02:^[Bb](ackdll|inder|nfun|nfun|nhook|o3des|ole16d|orlndmm|o_peep|t|t2k|uttsniff)?\.dll
+’DLL-02:^[Bb](ackdll|inder|JJHBSDBT|nfun|nfun|nhook|o3des|ole16d|orlndmm|o_peep|t|t2k|uttsniff)?\.dll
 ’DLL-03:^[Cc](ap|apture|dll|onfstub|onfstub2|tl3d32|ygwin1)?\.dll
 ’DLL-04:^[Dd](AFD6SDFE|eskcp16|FEFEDX|fw|iskf|oc)?\.dll
 ’DLL-05:^[Ee](_a)?\.dll

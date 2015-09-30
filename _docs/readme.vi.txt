@@ -521,6 +521,10 @@
  /_docs/readme.pt.txt (Tài liệu, Included); PORTUGUÊS
  /_docs/readme.ru.md (Tài liệu, Included); РУССКИЙ
  /_docs/readme.ru.txt (Tài liệu, Included); РУССКИЙ
+ /_docs/readme.vi.md (Tài liệu, Included); TIẾNG VIỆT
+ /_docs/readme.vi.txt (Tài liệu, Included); TIẾNG VIỆT
+ /_docs/readme.zh.md (Tài liệu, Included); 中文（简体）
+ /_docs/readme.zh-TW.md (Tài liệu, Included); 中文（傳統）
     The README files (for example; the file you're currently reading).
     ~
  /_docs/signatures_tally.txt (Tài liệu, Included)
@@ -1529,7 +1533,7 @@
     NAME:HEX:FROM:TO
    Where NAME is the name to cite for that signature and HEX is a
    hexadecimal-encoded segment of the file intended to be matched by the given
-   signature. FROM and TO are optional parameters, indicting from which and to
+   signature. FROM and TO are optional parameters, indicating from which and to
    which positions in the source data to check against (not supported by the
    mail function).
 
@@ -1694,5 +1698,5 @@
                                      ~ ~ ~
 
 
-Lần cuối cập nhật: 12 Tháng Chín 2015 (2015.09.12).
+Lần cuối cập nhật: 18 Tháng Chín 2015 (2015.09.18).
 EOF

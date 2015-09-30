@@ -522,6 +522,10 @@
  /_docs/readme.pt.txt (Documentation, Included); PORTUGUÊS
  /_docs/readme.ru.md (Documentation, Included); РУССКИЙ
  /_docs/readme.ru.txt (Documentation, Included); РУССКИЙ
+ /_docs/readme.vi.md (Documentation, Included); TIẾNG VIỆT
+ /_docs/readme.vi.txt (Documentation, Included); TIẾNG VIỆT
+ /_docs/readme.zh.md (Documentation, Included); 中文（简体）
+ /_docs/readme.zh-TW.md (Documentation, Included); 中文（傳統）
     The README files (for example; the file you're currently reading).
     ~
  /_docs/signatures_tally.txt (Documentation, Included)
@@ -1530,7 +1534,7 @@
     NAME:HEX:FROM:TO
    Where NAME is the name to cite for that signature and HEX is a
    hexadecimal-encoded segment of the file intended to be matched by the given
-   signature. FROM and TO are optional parameters, indicting from which and to
+   signature. FROM and TO are optional parameters, indicating from which and to
    which positions in the source data to check against (not supported by the
    mail function).
 
@@ -1696,5 +1700,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 12th September 2015 (2015.09.12).
+Last Updated: 18th September 2015 (2015.09.18).
 EOF

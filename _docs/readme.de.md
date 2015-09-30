@@ -279,6 +279,10 @@ Datei                                      | Beschreibung
 /_docs/readme.pt.txt                       | Dokumentation: PORTUGUÊS
 /_docs/readme.ru.md                        | Dokumentation: РУССКИЙ
 /_docs/readme.ru.txt                       | Dokumentation: РУССКИЙ
+/_docs/readme.vi.md                        | Dokumentation: TIẾNG VIỆT
+/_docs/readme.vi.txt                       | Dokumentation: TIẾNG VIỆT
+/_docs/readme.zh.md                        | Dokumentation: 中文（简体）
+/_docs/readme.zh-TW.md                     | Dokumentation: 中文（傳統）
 /_docs/signatures_tally.txt                | Netto-Veränderungs-Anzahl von enthaltenen Signaturen (für die korrekte Funktion des Scripts nicht notwendig).
 /_testfiles/                               | Verzeichnis für Testdateien (beinhaltet verschiedene Dateien). Alle enthaltenen Dateien dienen zur Überprüfung, ob phpMussel auf Ihrem System ordnungsgemäß installiert wurde. Sie müssen dieses Verzeichnis oder die Dateien nicht hochladen, sofern Sie keinen solchen Test durchführen möchten.
 /_testfiles/ascii_standard_testfile.txt    | Testdatei zur Überprüfung der normierten ASCII-Signaturerkennung.
@@ -945,4 +949,4 @@ Diese Informationen wurden zuletzt am 7. September 2015 aktualisiert und gelten 
 ---
 
 
-Zuletzt aktualisiert: 12. September 2015 (2015.09.12).
+Zuletzt aktualisiert: 18. September 2015 (2015.09.18).
