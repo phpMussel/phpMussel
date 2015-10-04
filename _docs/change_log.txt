@@ -95,6 +95,11 @@ Anything less than sub-minor:
   documentation to Chinese (probably erroneous; feel free to audit if you
   want).
 
+- [2015.10.04; Sub-minor code change; Maikuolan]: Added an exit countdown to
+  the executable testfiles for the purpose of making them more user-friendly by
+  not terminating immediately upon execution [exe_standard_testfile.exe;
+  pe_sectional_testfile.exe]; Testfile signatures updated accordingly.
+
 === Version/Release 0.7a (Previous Release: 0.7) ===
 SUB-MINOR RELEASE; Updated to the latest signatures set (55+20751+7a).
 
