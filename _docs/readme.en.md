@@ -138,7 +138,7 @@ There are many other controls and functions available within phpMussel for your 
 
 ###3B. <a name="SECTION3B"></a>HOW TO USE (FOR CLI)
 
-Please refer to the "HOW TO INSTALL (FOR CLI)" section of this readme file.
+Please refer to the "HOW TO INSTALL (FOR CLI)" section of this README file.
 
 Be aware that, although future versions of phpMussel should support other systems, at this time, phpMussel CLI mode support is only optimized for use on Windows-based system (you can, of course, try it on other systems, but I can't guarantee it'll work as intended).
 
@@ -244,7 +244,7 @@ greylist_show
 
 ###4B. <a name="SECTION4B"></a>CLI (COMMAND LINE INTERFACE)
 
-phpMussel can be run as an interactive file scanner in CLI mode under Windows-based systems. Refer to the "HOW TO INSTALL (FOR CLI)" section of this readme file for more details.
+phpMussel can be run as an interactive file scanner in CLI mode under Windows-based systems. Refer to the "HOW TO INSTALL (FOR CLI)" section of this README file for more details.
 
 For a list of available CLI commands, at the CLI prompt, type 'c', and press Enter.
 
@@ -951,4 +951,4 @@ This information was last updated 7th September 2015 and is current for all phpM
 ---
 
 
-Last Updated: 18th September 2015 (2015.09.18).
+Last Updated: 10th October 2015 (2015.10.04).

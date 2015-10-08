@@ -76,7 +76,7 @@ Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện mộ
 
 1) Nếu bạn đang đọc cái này thì tôi hy vọng là bạn đã tải về một bản sao lưu trữ của bản, giải nén nội dung của nó và nó đang nằm ở một nơi nào đó trên máy tính của bạn. Một khi bạn đã hài lòng với vị trí của phpMussel, hày tiếp tục.
 
-2) phpMussel cần PHP được cài đặt trên máy chủ để thực hiện. Nếu bạn không có PHP cài trên máy, xin hảy cài php, theo hướng dẫn được cung cấp bởi người cài đặt php.
+2) phpMussel cần PHP được cài đặt trên máy chủ để thực hiện. Nếu bạn không có PHP cài trên máy, xin hảy cài PHP, theo hướng dẫn được cung cấp bởi người cài đặt PHP.
 
 3) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới bắt đầu hoặc chưa có kinh nghiệm không nên chọn), hảy mở `phpmussel.ini` (nằm ớ trong `vault`) - Tài liệu này có chứa tất cả các chỉ thị sẵn cho phpMussel. Trên mỗi tùy chọn sẽ có chi tiết ngắn mô tả những gì nó làm. Hảy điều chỉnh các tùy chọn như bạn thấy phù hợp, theo bất cứ điều gì là thích hợp cho nhữn cài đặt của bạn. Lưu tập tin, đóng lại.
 
@@ -138,7 +138,7 @@ There are many other controls and functions available within phpMussel for your 
 
 ###3B. <a name="SECTION3B"></a>CÁCH SỬ DỤNG (CHO CLI)
 
-Please refer to the "CẢCH CÀI ĐẶT (CHO CLI)" section of this readme file.
+Please refer to the "CẢCH CÀI ĐẶT (CHO CLI)" section of this README file.
 
 Be aware that, although future versions of phpMussel should support other systems, at this time, phpMussel CLI mode support is only optimized for use on Windows-based system (you can, of course, try it on other systems, but I can't guarantee it'll work as intended).
 
@@ -244,7 +244,7 @@ greylist_show
 
 ###4B. <a name="SECTION4B"></a>CLI (LỆNH CHO DÒNG GIAO DIỆN)
 
-phpMussel can be run as an interactive file scanner in CLI mode under Windows-based systems. Refer to the "CẢCH CÀI ĐẶT (CHO CLI)" section of this readme file for more details.
+phpMussel can be run as an interactive file scanner in CLI mode under Windows-based systems. Refer to the "CẢCH CÀI ĐẶT (CHO CLI)" section of this README file for more details.
 
 For a list of available CLI commands, at the CLI prompt, type 'c', and press Enter.
 
@@ -951,4 +951,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 7 Tháng Chín 20
 ---
 
 
-Lần cuối cập nhật: 18 Tháng Chín 2015 (2015.09.18).
+Lần cuối cập nhật: 10 Tháng Mười 2015 (2015.10.04).

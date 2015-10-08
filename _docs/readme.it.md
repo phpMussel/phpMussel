@@ -138,7 +138,7 @@ Ci sono molti altri controlli e funzioni disponibili all'interno phpMussel per i
 
 ###3B. <a name="SECTION3B"></a>COME USARE (PER CLI)
 
-Si prega di fare riferimento alla "COME INSTALLARE (PER CLI)" sezione di questo readme file.
+Si prega di fare riferimento alla "COME INSTALLARE (PER CLI)" sezione di questo README file.
 
 Essere consapevoli che, sebbene futuri versioni di phpMussel dovrebbero sostenere altri sistemi, in questo momento, phpMussel CLI modalità supporto è ottimizzata solo per l'utilizzo su Windows basati sistemi (si può, ovviamente, provare su altri sistemi, Ma non posso garantire che funzionerà come previsto).
 
@@ -244,7 +244,7 @@ greylist_show
 
 ###4B. <a name="SECTION4B"></a>CLI (COMANDO LINEA INTERFACCIA)
 
-phpMussel può essere eseguito come uno interattivo file scanner in CLI modalità da Windows. Fare riferimento alla "COME INSTALLARE (PER CLI)" sezione di questo readme file per maggiori dettagli.
+phpMussel può essere eseguito come uno interattivo file scanner in CLI modalità da Windows. Fare riferimento alla "COME INSTALLARE (PER CLI)" sezione di questo README file per maggiori dettagli.
 
 Per un elenco di comandi disponibili all'interno CLI , al CLI prompt, tipo 'c', e premere Enter.
 
@@ -453,7 +453,7 @@ File                                       | Descrizione
 
 ※ Nome del file può variare dipendente di configurazione (in `phpmussel.ini`).
 
-####*IN RIGUARDA PER FIRMA FILES*
+####*IN RIGUARDA PER FIRME FILE*
 CVD è l'acronimo di "ClamAV Virus Definitions", in riferimento sia come ClamAV riferisce alle proprie firme e all'uso di tali firme da phpMussel; I file che terminano con "CVD" contengono firme.
 
 I file che terminano con "MAP", letteralmente, Mappa cui delle firme phpMussel dovrebbe e non dovrebbe usare per individuale scansioni; Non tutte le firme sono necessariamente richiesti per ogni singola scansione, così, phpMussel utilizza mappe delle firme file a accelerare il processo di scansione (un processo che sarebbe altrimenti essere estremamente lento e noioso).
@@ -560,16 +560,16 @@ Verificare contro normalizzati HTML firme durante la scansione? False = No; True
 - "html_custom"
 - "html_mussel"
 
-Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE Sezionale firme durante la scansione? False = No; True = Sì [Predefinito].
+Verificare PE (Portatile Eseguibile) file (EXE, DLL, ecc) contro PE Sezionale firme durante la scansione? False = No; True = Sì [Predefinito].
 - "pe_clamav"
 - "pe_custom"
 - "pe_mussel"
 
-Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE esteso firme durante la scansione? False = No; True = Sì [Predefinito].
+Verificare PE (Portatile Eseguibile) file (EXE, DLL, ecc) contro PE esteso firme durante la scansione? False = No; True = Sì [Predefinito].
 - "pex_custom"
 - "pex_mussel"
 
-Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE firme durante la scansione? False = No; True = Sì [Predefinito].
+Verificare PE (Portatile Eseguibile) file (EXE, DLL, ecc) contro PE firme durante la scansione? False = No; True = Sì [Predefinito].
 - "exe_clamav"
 - "exe_custom"
 - "exe_mussel"
@@ -951,4 +951,4 @@ Questa informazione è stato lo scorso aggiornato 7 Settembre 2015 ed è in cors
 ---
 
 
-Ultimo Aggiornamento: 18 Settembre 2015 (2015.09.18).
+Ultimo Aggiornamento: 10 Ottobre 2015 (2015.10.04).

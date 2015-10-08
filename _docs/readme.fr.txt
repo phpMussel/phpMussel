@@ -5,13 +5,13 @@
                             { ~ ~ ~ FRANÇAIS ~ ~ ~ }
  CONTENU
  1. PRÉAMBULE
- 2A. COMMENT INSTALLER (POUR WEB SERVEURS)
+ 2A. COMMENT INSTALLER (POUR SERVEURS WEB)
  2B. COMMENT INSTALLER (POUR CLI)
- 3A. COMMENT UTILISER (POUR WEB SERVEURS)
+ 3A. COMMENT UTILISER (POUR SERVEURS WEB)
  3B. COMMENT UTILISER (POUR CLI)
- 4A. NAVIGATEUR COMMANDES
+ 4A. COMMANDES DU NAVIGATEUR
  4B. CLI (COMMANDE LIGNE INTERFACE)
- 5. FICHIERS INCLUS DANS CES EMPAQUETER
+ 5. FICHIERS INCLUS DANS CETTE PAQUET
  6. CONFIGURATION OPTIONS
  7. SIGNATURE FORMAT
  8. CONNUS PROBLÈMES DE COMPATIBILITÉ
@@ -22,7 +22,7 @@
  1. PRÉAMBULE
 
  Merci pour l'utiliser de phpMussel, un PHP script pour la détection de virus,
- malveillants logiciels et autres menaces dans les fichiers téléchargés sur
+ logiciels malveillants et autres menaces dans les fichiers téléchargés sur
  votre système partout où le script est accroché, basé sur les signatures de
  ClamAV et autres.
 
@@ -35,7 +35,7 @@
  utile, mais SANS AUCUNE GARANTIE, sans même la implicite garantie de
  COMMERCIALISATION ou D'ADAPTATION À UN PARTICULIER USAGE. Voir la GNU General
  Public License pour plus de détails, situé dans le "LICENCE" fichier dans le
- "_docs" répertoire de l'associé emballage et un référentiel pour ce fichier et
+ "_docs" répertoire de l'emballage associé et référentiel pour ce fichier et
  également disponible à partir de:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
@@ -54,7 +54,7 @@
  peut-être oublié de mentionner autrement, et à vous, pour l'utiliser du
  script.
 
- Ce document et son associé empaqueter peuvent être téléchargé gratuitement à
+ Ce document et son associé paquet peuvent être téléchargé gratuitement à
  sans frais à partir de:
  - Sourceforge <http://phpmussel.sourceforge.net/>.
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
@@ -62,7 +62,7 @@
                                      ~ ~ ~
 
 
- 2A. COMMENT INSTALLER (POUR WEB SERVEURS)
+ 2A. COMMENT INSTALLER (POUR SERVEURS WEB)
 
  J'ai l'intention de simplifier ce processus par la création d'un programme
  d'installation à l'avenir, mais en attendant, suivez ces instructions pour
@@ -77,13 +77,13 @@
     que vous êtes heureux avec) sera suffira. Vous avant commencer
     téléchargement au serveur, continuer lecture..
 
- 2) Facultativement (fortement recommandé pour l'avancés utilisateurs, mais pas
-    recommandé pour les débutants ou pour les novices), ouvrir "phpmussel.ini"
-    (situé à l'intérieur de "vault") - Ce fichier contient toutes les
-    directives disponible pour phpMussel. Au-dessus de chaque option devrait
-    être un bref commentaire décrivant ce qu'il fait et ce qu'il est pour.
-    Réglez ces options comme bon vous semble, selon ce qui est approprié pour
-    votre particulière configuration. Enregistrer le fichier, fermer.
+ 2) Facultativement (fortement recommandé pour les utilisateurs avancés, mais
+    pas recommandé pour les débutants ou pour les novices), ouvrir
+    "phpmussel.ini" (situé à l'intérieur de "vault") - Ce fichier contient
+    toutes les directives disponible pour phpMussel. Au-dessus de chaque option
+    devrait être un bref commentaire décrivant ce qu'il fait et ce qu'il est
+    pour. Réglez ces options comme bon vous semble, selon ce qui est approprié
+    pour votre particulière configuration. Enregistrer le fichier, fermer.
 
  3) Télécharger les contenus (phpMussel et ses fichiers) à le répertoire vous
     aviez décidé plus tôt (vous n'avez pas besoin les *.txt/*.md fichiers,
@@ -123,7 +123,7 @@
 
     -- OU ALTERNATIVEMENT --
 
-    Si vous utilisez un Apache web serveur et si vous avez accès à "php.ini",
+    Si vous utilisez un Apache serveur web et si vous avez accès à "php.ini",
     vous pouvez utiliser la "auto_prepend_file" directive à préfixer phpMussel
     chaque fois qu'une demande de PHP est faite. Quelque chose comme:
 
@@ -135,7 +135,7 @@
 
  6) À ce stade, vous avez fini! Cependant, vous devriez probablement tester ce
     pour s'assurer qu'il fonctionne correctement. Pour tester les protections,
-    essayez de télécharger les tester fichiers inclus dans l'empaqueter sous
+    essayez de télécharger les tester fichiers inclus dans le paquet sous
     "_testfiles" à votre website par votre habituelles navigateur basé méthodes
     de téléchargement. Si tout fonctionne correctement, un message devrait
     apparaître à partir de phpMussel confirmant que le téléchargement a été
@@ -160,18 +160,18 @@
     locale machine. Lorsque vous avez déterminé que vous êtes satisfait sur
     l'emplacement choisi pour phpMussel, continuer.
 
- 2) phpMussel exige PHP d'être installé sur l'hôte ordinateur afin d'exécuter.
-    Si vous n'avez pas de PHP installé sur votre machine, s'il vous plaît
+ 2) phpMussel exige PHP d'être installé sur l'ordinateur hôte afin d'exécuter.
+    Si vous n'avez pas de PHP installé sur votre machine, s'il vous plaît,
     installer PHP sur votre machine, suivant les instructions fournies par le
-    programme d'installation de php.
+    programme d'installation de PHP.
 
- 3) Facultativement (fortement recommandé pour l'avancés utilisateurs, mais pas
-    recommandé pour les débutants ou pour les novices), ouvrir "phpmussel.ini"
-    (situé à l'intérieur de "vault") - Ce fichier contient toutes les
-    directives disponible pour phpMussel. Au-dessus de chaque option devrait
-    être un bref commentaire décrivant ce qu'il fait et ce qu'il est pour.
-    Réglez ces options comme bon vous semble, selon ce qui est approprié pour
-    votre particulière configuration. Enregistrer le fichier, fermer.
+ 3) Facultativement (fortement recommandé pour les utilisateurs avancés, mais
+    pas recommandé pour les débutants ou pour les novices), ouvrir
+    "phpmussel.ini" (situé à l'intérieur de "vault") - Ce fichier contient
+    toutes les directives disponible pour phpMussel. Au-dessus de chaque option
+    devrait être un bref commentaire décrivant ce qu'il fait et ce qu'il est
+    pour. Réglez ces options comme bon vous semble, selon ce qui est approprié
+    pour votre particulière configuration. Enregistrer le fichier, fermer.
 
  4) Facultativement, vous pouvez faire utilisant phpMussel en CLI mode plus
     facile pour vous-même par la création d'un fichier de commandes pour
@@ -191,7 +191,7 @@
                                      ~ ~ ~
 
 
- 3A. COMMENT UTILISER (POUR WEB SERVEURS)
+ 3A. COMMENT UTILISER (POUR SERVEURS WEB)
 
  phpMussel est destiné à être un script qui va fonctionner correctement droit
  de la boîte avec un niveau de strict minimum des exigences de votre part:
@@ -219,7 +219,7 @@
    retourner des résultats comme un entier (un retourné résultat de -3 indique
    des problèmes ont été rencontrés avec le phpMussel signatures fichiers ou
    des signatures cartes fichiers et qu'ils peuvent être possible manquants ou
-   corrompus, -2 indique que corrompues données était détecté lors de l'analyse
+   corrompus, -2 indique que données corrompues était détecté lors de l'analyse
    et donc l'analyse n'ont pas réussi à compléter, -1 indique que les
    extensions ou addons requis par PHP pour exécuter l'analyse sont manquaient
    et donc l'analyse n'ont pas réussi à compléter, 0 indique qu'il n'existe pas
@@ -261,7 +261,8 @@
  Pour désactiver les signatures qui sont incluent avec phpMussel (comme si vous
  rencontrez un faux positif spécifique à vos besoins dont ne devrait
  normalement pas être retiré à partir de rationaliser), référer aux les notes
- de la liste grise dans le Navigateur Commandes section de ce README fichier.
+ de la liste grise dans les Commandes du Navigateur section de ce README
+ fichier.
 
  En plus de la défaut analyse de fichier téléchargement et la facultative
  analyse d'autres fichiers et/ou répertoires spécifiés par la fonction
@@ -297,14 +298,14 @@
  En plus de ce qui précède, si vous regardez le source code, vous peut
  remarquerez la fonction phpMusselD() et phpMusselR(). Ces fonctions sont
  sous-fonctions de phpMussel(), et ne devrait pas être appelé directement à
- l'extérieur de cette principale fonction (pas en raison d'indésirables
- effets.. Plus-si, simplement parce que ce serait sans utilité, et très
+ l'extérieur de cette principale fonction (pas en raison des effets
+ indésirables.. Plus-si, simplement parce que ce serait sans utilité, et très
  probablement ne sera pas réellement fonctionner correctement de toute façon).
 
  Il ya beaucoup autres contrôles et fonctions disponibles dans phpMussel pour
  votre usage, aussi. Pour toutes ces contrôles et fonctions dont, sur la fin de
  cette section de la README, n'ont pas encore été documenté, s'il vous plaît,
- continuer à lire et référer à la Navigateur Commandes section de ce README
+ continuer à lire et référer à les Commandes du Navigateur section de ce README
  fichier.
 
                                      ~ ~ ~
@@ -322,15 +323,15 @@
  fonctionner comme prévu).
 
  Aussi soyez conscient que phpMussel est pas la fonctionnel équivalent d'une
- complet anti-virus suite, et contrairement conventionnelles anti-virus suites,
- ne surveille pas l'active mémoire ou détecter les virus sur la volée! Il
+ complet anti-virus suite, et contrairement anti-virus suites conventionnelles,
+ ne surveille pas la mémoire active ou détecter les virus sur la volée! Il
  seulement détecte les virus contenus dans les fichiers que vous explicitement
  spécifier pour d'analyse.
 
                                      ~ ~ ~
 
 
- 4A. NAVIGATEUR COMMANDES
+ 4A. COMMANDES DU NAVIGATEUR
 
  Après phpMussel a été installé et est fonctionner correctement sur votre
  système, si vous avez défini les variables script_password et logs_password
@@ -347,8 +348,8 @@
  vous choisir d'activer ces contrôles et puis choisir de désactiver ces
  contrôles à une ultérieure date, il existe une commande à faire ce (tel peut
  être utile si vous effectuer certaines actions vous sentez pourrait
- compromettre les mots de pass que vous avez délégué et besoin de rapidement
- désactiver ces contrôles sans modifier votre configuration fichier).
+ compromettre les mots de pass que vous avez délégué et besoin de désactiver
+ rapidement ces contrôles sans modifier votre configuration fichier).
 
  Quelques raisons pour lesquelles vous -devriez- permettre à ces contrôles:
  - Fournit une méthode à liste grise les signatures sur la volée dans des cas
@@ -390,7 +391,7 @@
  ce sujet, et si vous décidez que vous voulez ces, cette section explique
  comment activer et comment utiliser ces.
 
- Une liste de disponible navigateur commandes:
+ Une liste de commandes du navigateur disponibles:
 
  scan_log
    Mot de passe requis: logs_password
@@ -418,15 +419,15 @@
    Exemple 1: ?logspword=[logs_password]&phpmussel=controls_lockout
    Exemple 2: ?pword=[script_password]&phpmussel=controls_lockout
    ~
-   Quel est-il: Désactiver/verrouille tous les navigateur contrôles. Cela
+   Quel est-il: Désactiver/verrouille tous les contrôles de navigateur. Cela
                 devrait être utilisé si vous pensez que vos mots de passe ont
                 été compromis (cela peut arriver si vous utilisez ces commandes
                 à partir d'un ordinateur qui n'est pas sécurisé et/ou n'est pas
                 digne de confiance). controls_lockout fonctionne par créant un
                 fichier, "controls.lck", dans votre voûte, dont phpMussel sera
                 vérifié avant d'effectuer commandes de toute nature. Après,
-                pour réactiver les contrôles, vous devez manuellement supprimer
-                le "controls.lck" fichier par FTP ou similaire.
+                pour réactiver les contrôles, vous devez supprimer manuellement
+                le fichier "controls.lck" par FTP ou similaire.
    ~
  disable
    Mot de passe requis: script_password
@@ -437,9 +438,9 @@
    ~
    Quel est-il: Désactiver phpMussel. Cela devrait être utilisé si vous
                 réactualiser ou faire changements à votre système ou si vous
-                installez un nouveau logiciel ou modules à votre système dont
+                installez logiciel ou modules nouveaux à votre système dont
                 sera ou pourrait potentiellement déclencher faux positifs.
-                Aussi, Cela devrait être utilisé si vous rencontrez problèmes
+                Aussi, cela devrait être utilisé si vous rencontrez problèmes
                 avec phpMussel mais ne veulent pas à supprimer de votre
                 système. Si c'est le cas, pour réactiver phpMussel, utiliser
                 "enable".
@@ -509,9 +510,9 @@
 
  4B. CLI (COMMANDE LIGNE INTERFACE)
 
- phpMussel peut être exécuté comme un interactif fichier analyseur en CLI mode
- dans windows. Référer à la "COMMENT INSTALLER (POUR CLI)" section de ce readme
- fichier pour plus détails.
+ phpMussel peut être exécuté comme un analyseur de fichiers interactif en CLI
+ mode dans windows. Référer à la "COMMENT INSTALLER (POUR CLI)" section de ce
+ README fichier pour plus détails.
 
  Pour une liste des disponibles CLI commandes, à l'invite CLI, tapez «c», et
  appuyez sur Entrée.
@@ -519,7 +520,7 @@
                                      ~ ~ ~
 
 
- 5. FICHIERS INCLUS DANS CES EMPAQUETER
+ 5. FICHIERS INCLUS DANS CETTE PAQUET
 
  Voici une liste de tous les fichiers inclus dans phpMussel dans son natif
  état, tous les fichiers qui peuvent être potentiellement créées à la suite de
@@ -1059,20 +1060,20 @@
       passe: Le plus sera le mieux, et conservez-le bien. Pour un meilleur
       effet, utiliser en conjonction avec "delete_on_sight".
     "quarantine_max_filesize"
-    - La maximum autorisée taille de fichiers mis en quarantaine. Fichiers
+    - La maximum taille autorisée de fichiers mis en quarantaine. Fichiers
       au-dessus de cette valeur ne sera pas placé en quarantaine. Cette
       directive est un important moyen de rendre plus difficile pour des
-      agresseurs potentiels d'inonder votre quarantaine avec des non désirées
-      données ce qui pourrait causer l'emballement d'utilisation des données
+      agresseurs potentiels d'inonder votre quarantaine avec des données non
+      désirées ce qui pourrait causer l'emballement d'utilisation des données
       sur votre service d'hébergement. La valeur est en Ko.
       Défaut =2048 =2048Ko =2Mo.
     "quarantine_max_usage"
-    - La maximale autorisée utilisation de la mémoire pour la quarantaine. Si
-      la totale utilisée mémoire par la quarantaine atteint cette valeur, les
+    - La maximale utilisation autorisée de la mémoire pour la quarantaine. Si
+      la totale d'utilisée mémoire par la quarantaine atteint cette valeur, les
       anciens fichiers en quarantaine seront supprimés jusqu'à ce que la totale
       mémoire utilisée n'atteint pas cette valeur. Cette directive est un
       important moyen de rendre plus difficile pour des agresseurs potentiels
-      d'inonder votre quarantaine avec des non désirées données ce qui pourrait
+      d'inonder votre quarantaine avec des données non désirées ce qui pourrait
       causer l'emballement d'utilisation des données sur votre service
       d'hébergement. La valeur est en Ko. Défaut =65536 =65536Ko =64Mo.
     "honeypot_mode"
@@ -1102,7 +1103,7 @@
  "signatures" (Catégorie)
  - Configuration pour les signatures.
    %%%_clamav = ClamAV signatures (mains et daily).
-   %%%_custom = Vos personnalisés signatures (si vous avez écrit tout).
+   %%%_custom = Vos signatures personnalisés (si vous avez écrit tout).
    %%%_mussel = phpMussel signatures incluses dans votre courant ensemble des
                 signatures qui ne sont pas de ClamAV.
    - Vérifier contre MD5 signatures au cours de analyse?
@@ -1214,9 +1215,9 @@
      "sd_siglen_max"
    "fail_silently"
    - Devrait phpMussel signaler lorsque les signatures fichiers sont manquants
-     ou endommagés? Si fail_silently est désactivé, manquants et corrompus
-     fichiers seront signalé sur analyse, et si fail_silently est activé,
-     manquants et corrompus fichiers seront ignorés, avec l'analyse signalés
+     ou endommagés? Si fail_silently est désactivé, fichiers manquants et
+     corrompus seront signalé sur analyse, et si fail_silently est activé,
+     fichiers manquants et corrompus seront ignorés, avec l'analyse signalés
      pour ceux fichiers qu'il n'y a pas de problèmes. Cela devrait généralement
      être laissé seul sauf si vous rencontrez accidents ou similaires
      problèmes. False = Désactivé; True = Activé [Défaut].
@@ -1259,24 +1260,24 @@
      hardware. Notez que ce nombre ne tient pas compte pour ou inclure le
      contenus des archives.
    "filesize_limit"
-   - Limite de taille de fichier en Ko. 65536 = 64Mo [Défaut]; 0 = Pas limite
+   - Limite de taille des fichiers en Ko. 65536 = 64Mo [Défaut]; 0 = Pas limite
      (toujours en liste grise), tout (positif) valeur numérique acceptée. Cela
      peut être utile lorsque votre configuration de PHP limite la quantité de
      mémoire qu'un processus peut contenir ou si votre configuration de PHP
      limite la taille du fichier téléchargements.
    "filesize_response"
-   - Que faire avec des fichiers qui dépassent la taille de fichier limite (si
-     existant). False = Énumérer Blanche; True = Énumérer Noire [Défaut].
+   - Que faire avec des fichiers qui dépassent la limite de taille des fichiers
+     (si existant). False = Énumérer Blanche; True = Énumérer Noire [Défaut].
    "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
-   - Si votre système seulement permettre particuliers types de fichiers à
-     téléchargé, ou si votre système nie explicitement particuliers types de
-     fichiers, spécifiant les types de fichiers dans listes blanches, listes
-     noires et listes gris peut augmenter la vitesse à laquelle l'analyse est
-     effectuée en permettant le script à sauter particuliers types de fichiers.
-     Format est CSV (virgule séparées valeurs). Si vous souhaitez analyse tout,
-     plutôt que de liste blanche, liste noire ou liste gris, laisser les
-     variable(/s) blanc; Il va désactiver liste blanche/noire/gris. L'ordre
-     logique de l'application est:
+   - Si votre système permettre seulement particuliers types des fichiers à
+     être téléchargé, ou si votre système nie explicitement particuliers types
+     des fichiers, spécifiant les types des fichiers dans listes blanches,
+     listes noires et listes gris peut augmenter la vitesse à laquelle
+     l'analyse est effectuée en permettant le script à sauter particuliers
+     types des fichiers. Format est CSV (virgule séparées valeurs). Si vous
+     souhaitez analyse tout, plutôt que de liste blanche, liste noire ou liste
+     gris, laisser les variable(/s) blanc; Il va désactiver liste
+     blanche/noire/gris. L'ordre logique de l'application est:
      - Si le type de fichier est listé blanche, n'analyser pas ni bloquer pas
        le fichier, et ne vérifie pas le fichier contre la liste noire ou la
        liste grise.
@@ -1749,7 +1750,7 @@
    PCRE installé et disponible avant de votre téléchargement et installation de
    phpMussel.
 
- ANTI-VIRUS LOGICIELS COMPATIBILITÉ
+ LOGICIELS ANTI-VIRUS COMPATIBILITÉ
 
  Pour la plupart, phpMussel devrait être assez compatible avec plupart du virus
  détection logiciels. Cependant, conflictualités ont été signalés par un nombre
@@ -1820,5 +1821,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 18 Septembre 2015 (2015.09.18).
+Dernière Réactualisé: 10 Octobre 2015 (2015.10.04).
 EOF

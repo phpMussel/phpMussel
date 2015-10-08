@@ -500,7 +500,7 @@
 
  phpMussel se puede ejecutar como un interactivo archivos escáner en CLI modo
  dentro sistemas basados en Windows. Consulte el "CÓMO INSTALAR (PARA CLI)"
- sección de este readme archivo para más detalles.
+ sección de este README archivo para más detalles.
 
  Para obtener una lista de los disponibles CLI comandos, para el CLI aviso,
  escribir 'c', y pulse Enter.
@@ -1814,5 +1814,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 18 Setiembre 2015 (2015.09.18).
+Última Actualización: 10 Octubre 2015 (2015.10.04).
 EOF

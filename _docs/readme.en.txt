@@ -286,7 +286,7 @@
 
  3B. HOW TO USE (FOR CLI)
 
- Please refer to the "HOW TO INSTALL (FOR CLI)" section of this readme file.
+ Please refer to the "HOW TO INSTALL (FOR CLI)" section of this README file.
 
  Be aware that, although future versions of phpMussel should support other
  systems, at this time, phpMussel CLI mode support is only optimized for use on
@@ -473,7 +473,7 @@
 
  phpMussel can be run as an interactive file scanner in CLI mode under
  Windows-based systems. Refer to the "HOW TO INSTALL (FOR CLI)" section of this
- readme file for more details.
+ README file for more details.
 
  For a list of available CLI commands, at the CLI prompt, type 'c', and press
  Enter.
@@ -1700,5 +1700,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 18th September 2015 (2015.09.18).
+Last Updated: 10th October 2015 (2015.10.04).
 EOF

@@ -307,7 +307,7 @@
  3B. COME USARE (PER CLI)
 
  Si prega di fare riferimento alla "COME INSTALLARE (PER CLI)" sezione di
- questo readme file.
+ questo README file.
 
  Essere consapevoli che, sebbene futuri versioni di phpMussel dovrebbero
  sostenere altri sistemi, in questo momento, phpMussel CLI modalità supporto è
@@ -506,7 +506,7 @@
 
  phpMussel può essere eseguito come uno interattivo file scanner in CLI
  modalità da Windows. Fare riferimento alla "COME INSTALLARE (PER CLI)" sezione
- di questo readme file per maggiori dettagli.
+ di questo README file per maggiori dettagli.
 
  Per un elenco di comandi disponibili all'interno CLI , al CLI prompt, tipo
  'c', e premere Enter.
@@ -905,7 +905,7 @@
 
  * Nome del file può variare dipendente di configurazione (in "phpmussel.ini").
 
- = IN RIGUARDA PER FIRMA FILES =
+ = IN RIGUARDA PER FIRME FILE =
     CVD è l'acronimo di "ClamAV Virus Definitions", in riferimento sia come
     ClamAV riferisce alle proprie firme e all'uso di tali firme da phpMussel;
     I file che terminano con "CVD" contengono firme.
@@ -1111,16 +1111,16 @@
      "html_clamav"
      "html_custom"
      "html_mussel"
-   - Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE
+   - Verificare PE (Portatile Eseguibile) file (EXE, DLL, ecc) contro PE
      Sezionale firme durante la scansione? False = No; True = Sì [Predefinito].
      "pe_clamav"
      "pe_custom"
      "pe_mussel"
-   - Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE
+   - Verificare PE (Portatile Eseguibile) file (EXE, DLL, ecc) contro PE
      esteso firme durante la scansione? False = No; True = Sì [Predefinito].
      "pex_custom"
      "pex_mussel"
-   - Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE firme
+   - Verificare PE (Portatile Eseguibile) file (EXE, DLL, ecc) contro PE firme
      durante la scansione? False = No; True = Sì [Predefinito].
      "exe_clamav"
      "exe_custom"
@@ -1794,5 +1794,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 18 Settembre 2015 (2015.09.18).
+Ultimo Aggiornamento: 10 Ottobre 2015 (2015.10.04).
 EOF

@@ -150,8 +150,8 @@
     tiếp tục.
 
  2) phpMussel cần PHP được cài đặt trên máy chủ để thực hiện. Nếu bạn không có
-    PHP cài trên máy, xin hảy cài php, theo hướng dẫn được cung cấp bởi người
-    cài đặt php.
+    PHP cài trên máy, xin hảy cài PHP, theo hướng dẫn được cung cấp bởi người
+    cài đặt PHP.
 
  3) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới
     bắt đầu hoặc chưa có kinh nghiệm không nên chọn), hảy mở "phpmussel.ini"
@@ -285,7 +285,7 @@
 
  3B. CÁCH SỬ DỤNG (CHO CLI)
 
- Please refer to the "CẢCH CÀI ĐẶT (CHO CLI)" section of this readme file.
+ Please refer to the "CẢCH CÀI ĐẶT (CHO CLI)" section of this README file.
 
  Be aware that, although future versions of phpMussel should support other
  systems, at this time, phpMussel CLI mode support is only optimized for use on
@@ -472,7 +472,7 @@
 
  phpMussel can be run as an interactive file scanner in CLI mode under
  Windows-based systems. Refer to the "CẢCH CÀI ĐẶT (CHO CLI)" section of this
- readme file for more details.
+ README file for more details.
 
  For a list of available CLI commands, at the CLI prompt, type 'c', and press
  Enter.
@@ -1698,5 +1698,5 @@
                                      ~ ~ ~
 
 
-Lần cuối cập nhật: 18 Tháng Chín 2015 (2015.09.18).
+Lần cuối cập nhật: 10 Tháng Mười 2015 (2015.10.04).
 EOF
