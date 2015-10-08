@@ -1331,13 +1331,13 @@
      conteúdos de arquivos?
      False = Não (não olha por) [Padrão]; True = Sim (olha por).
      Desativar essa opção se você são tencionando de carregando qualquer um do
-	 seguinte para o seu sistema ou CMS através do seu navegador: PHP,
-	 JavaScript, HTML, python, perl arquivos e etcetera. Ativar essa opção se
-	 você não tem quaisquer adicionais proteções no seu sistema e não são
-	 tencionando de carregando desses tais arquivos. Se você usar adicional
-	 segurança em conjunto com phpMussel como ZB Block, não há necessidade de
-	 ativar esta opção, porque a maioria dos que phpMussel irá olha por (no
-	 contexto desta opção) são duplicações de proteções que já estão fornecida.
+     seguinte para o seu sistema ou CMS através do seu navegador: PHP,
+     JavaScript, HTML, python, perl arquivos e etcetera. Ativar essa opção se
+     você não tem quaisquer adicionais proteções no seu sistema e não são
+     tencionando de carregando desses tais arquivos. Se você usar adicional
+     segurança em conjunto com phpMussel como ZB Block, não há necessidade de
+     ativar esta opção, porque a maioria dos que phpMussel irá olha por (no
+     contexto desta opção) são duplicações de proteções que já estão fornecida.
    "block_control_characters"
    - Bloquear todos os arquivos que contenham quaisquer controle caracteres
      (exceto linha quebras) - [\x00-\x08\x0b\x0c\x0e\x1f\x7f]? Se você está
@@ -1792,5 +1792,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 10 Outubro 2015 (2015.10.04).
+Última Atualização: 4 Outubro 2015 (2015.10.04).
 EOF

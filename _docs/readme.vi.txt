@@ -1698,5 +1698,5 @@
                                      ~ ~ ~
 
 
-Lần cuối cập nhật: 10 Tháng Mười 2015 (2015.10.04).
+Lần cuối cập nhật: 4 Tháng Mười 2015 (2015.10.04).
 EOF

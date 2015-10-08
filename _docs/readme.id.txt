@@ -1788,5 +1788,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 10 Oktober 2015 (2015.10.04).
+Terakhir Diperbarui: 4 Oktober 2015 (2015.10.04).
 EOF

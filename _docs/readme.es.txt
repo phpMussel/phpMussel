@@ -1814,5 +1814,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 10 Octubre 2015 (2015.10.04).
+Última Actualización: 4 Octubre 2015 (2015.10.04).
 EOF

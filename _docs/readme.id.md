@@ -951,4 +951,4 @@ Informasi ini diupdate 7 September 2015 dan cocok untuk semua rilis phpMussel da
 ---
 
 
-Terakhir Diperbarui: 10 Oktober 2015 (2015.10.04).
+Terakhir Diperbarui: 4 Oktober 2015 (2015.10.04).
