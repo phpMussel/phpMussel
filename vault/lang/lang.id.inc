@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Indonesian Language Data (30th August 2015).
+ This File: phpMussel Indonesian Language Data (11th October 2015).
  <%phpMussel%/vault/lang/lang.id.inc>
 
 */
@@ -52,6 +52,7 @@ $MusselConfig['lang']['greylist_updated']=' Greylist diperbarui.';
 $MusselConfig['lang']['image']='gambar';
 $MusselConfig['lang']['instance_already_active']='Kejadian sudah aktif! Silakan periksa kait Anda.';
 $MusselConfig['lang']['invalid_file']='File tidak valid';
+$MusselConfig['lang']['invalid_url']='URL tidak valid!';
 $MusselConfig['lang']['ok']='Oke';
 $MusselConfig['lang']['only_allow_images']='Upload file selain gambar tidak diizinkan';
 $MusselConfig['lang']['phpmussel_disabled']='phpMussel dinonaktifkan.';

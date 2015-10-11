@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Russian/Русский Language Data (30th August 2015).
+ This File: phpMussel Russian/Русский Language Data (11th October 2015).
  <%phpMussel%/vault/lang/lang.ru.inc>
 
 */
@@ -52,6 +52,7 @@ $MusselConfig['lang']['greylist_updated']=' Серый список обновл
 $MusselConfig['lang']['image']='изображение';
 $MusselConfig['lang']['instance_already_active']='Пример уже активен! Пожалуйста перепроверьте свои крючки.';
 $MusselConfig['lang']['invalid_file']='Неверный файл';
+$MusselConfig['lang']['invalid_url']='Неверный URL!';
 $MusselConfig['lang']['ok']='Хорошо';
 $MusselConfig['lang']['only_allow_images']='Загрузка файлов, которые не являются изображением, не допускается';
 $MusselConfig['lang']['phpmussel_disabled']='phpMussel неактивен.';

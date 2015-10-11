@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- Questo file è la traduzione Italiana di phpMussel (30th August 2015).
+ Questo file è la traduzione Italiana di phpMussel (11th October 2015).
  <%phpMussel%/vault/lang/lang.it.inc>
 
 */
@@ -52,6 +52,7 @@ $MusselConfig['lang']['greylist_updated']=' Lista grigia aggiornata.';
 $MusselConfig['lang']['image']='Immagine';
 $MusselConfig['lang']['instance_already_active']='Istanza già attivo! Si prega di ricontrolla i vostri ganci.';
 $MusselConfig['lang']['invalid_file']='File non valido';
+$MusselConfig['lang']['invalid_url']='URL non valido!';
 $MusselConfig['lang']['ok']='Fatto';
 $MusselConfig['lang']['only_allow_images']='Il caricamento di file che non sono immagini non è consentito';
 $MusselConfig['lang']['phpmussel_disabled']='phpMussel disattivato.';

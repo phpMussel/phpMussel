@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel English Language Data (30th August 2015).
+ This File: phpMussel English Language Data (11th October 2015).
  <%phpMussel%/vault/lang/lang.en.inc>
 
 */
@@ -52,6 +52,7 @@ $MusselConfig['lang']['greylist_updated']=' Greylist updated.';
 $MusselConfig['lang']['image']='Image';
 $MusselConfig['lang']['instance_already_active']='Instance already active! Please double-check your hooks.';
 $MusselConfig['lang']['invalid_file']='Invalid file';
+$MusselConfig['lang']['invalid_url']='Invalid URL!';
 $MusselConfig['lang']['ok']='OK';
 $MusselConfig['lang']['only_allow_images']='Uploading files other than images isn\'t permitted';
 $MusselConfig['lang']['phpmussel_disabled']='phpMussel disabled.';

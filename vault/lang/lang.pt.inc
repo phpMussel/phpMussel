@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Portuguese/Português Language Data (30th August 2015).
+ This File: phpMussel Portuguese/Português Language Data (11th October 2015).
  <%phpMussel%/vault/lang/lang.pt.inc>
 
 */
@@ -52,6 +52,7 @@ $MusselConfig['lang']['greylist_updated']=' Greylist atualizado.';
 $MusselConfig['lang']['image']='Imagem';
 $MusselConfig['lang']['instance_already_active']='Instância já está ativo! Por favor, verifique seus ganchos.';
 $MusselConfig['lang']['invalid_file']='Inválido arquivo';
+$MusselConfig['lang']['invalid_url']='Inválido URL!';
 $MusselConfig['lang']['ok']='OK';
 $MusselConfig['lang']['only_allow_images']='Carregar de arquivos que não são imagens não é permitida';
 $MusselConfig['lang']['phpmussel_disabled']='phpMussel desativado.';

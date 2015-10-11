@@ -401,19 +401,20 @@
 2Sanjicom-0:^rdpdrv\.sys
 2 X-2:[Kk][3Ee][Yy][Ll][0Oo][Gg].{0,128}\.[Ss][Yy][Ss]
 2#Naras-0B:^msinfomgr\.sys
->FN>\.[Ss][Cc][Rr]>408
+>FN>\.[Ss][Cc][Rr]>409
+2SteamThief-00:([Tt][Ff]2|[Tt][Rr][Aa][Dd][Ee]|[Ss][Tt][3Ee][4Aa][Mm]|[Rr][Ee][Qq][Uu][Ee][Ss][Tt])\.[Ss][Cc][Rr]$
 2X-0:^scr.{3}[0-9]+\.scr
 2!CryptoLocker-00:^\xd0\x94\xd0\xbe\xd0\xb3\xd0\xbe\xd0\xb2\xd0\xbe\xd1\x80\.scr$
 2#FakeRemote-1:^-?txt\.scr$
 2#X-00:^[Ff]{4,64}\.[Ss][Cc][Rr]$
->FN>\.[Tt][Xx][Tt]>413
+>FN>\.[Tt][Xx][Tt]>414
 2*X-00:^c[0-9]{2,3}\.[Tt][Xx][Tt]
 2*X-01:[Cc][Xx][0-9]{0,64}\.[Tt][Xx][Tt]
 2*#Rahack-00:^[Ll][Oo][Gg][Xx]\.[Tt][Xx][Tt]$
 2*/X-00:0[Ww][Nn][3Ee][Dd]\.[Tt][Xx][Tt]
->$climode>1>415
+>$climode>1>416
 2Illegal.Character-3F:\x3f
->!$climode>1>454
+>!$climode>1>455
 2Illegal.Character-00:\x00
 2Illegal.Character-01:\x01
 2Illegal.Character-02:\x02
@@ -453,7 +454,7 @@
 2Illegal.Character-5C:\x5c
 2Illegal.Character-7F:\x7f
 7DoubleExtension-00:\..{2,3}[- +_.]{0,64}\.(386|[Aa][Cc][Mm]|[Aa][Xx]|[Cc][Oo][Mm]|[Rr][Ss][^Ss]|[Cc][Pp][Ll]|[Dd][Ll][Ll]|[Dd][Rr][Vv]|[Ee][Xx][Ee]|[Oo][Cc][Xx]|[Ss][Cc][FfRrTt]|[Ss][Yy][Ss]|[Vv][Xx][Dd]|[Bb][Aa][SsTt]|[Cc][Mm][Dd]|[Jj][Ss]|[Vv][Bb]|[Ww][Ss]|[Pp][Ii][Ff]|[Ll][Ii]?[Nn][Kk]|[Uu][Rr][IiLl]|[Aa][Dd][EePp]|[Aa][Pp]{2}|[Dd][Bb]|[Mm][Dd][AaBbEeTtWwZz]|[Pp][Rr][Ff]|[Mm][Hh][Tt]|[Mm][Ss][CcIiPpRrTt]|[Pp][Cc][Dd]|[Rr][Ee][Gg]|[Ss][Hh][BbSs]|[Ww][Mm][FfLlSs]|[Aa][Ss][PpXx]|[Ee][Mm][FfLlZz]|[Xx][MmSs][Ll]|[Vv][Ss][DdSsTtWw]|[Ff][Xx][Pp]|[Kk][Ss][Hh]|[Oo][Pp][SsXx]|[Pp][Rr][Gg])
->FN>\.[0-9A-Za-z]{3,4}\.[0-9A-Za-z]{3,4}$>468
+>FN>\.[0-9A-Za-z]{3,4}\.[0-9A-Za-z]{3,4}$>469
 7DoubleExtension-01:\.([Dd][Oo][Cc][Xx]?|[Xx][Ll][Ss]|[Jj][Pp][Ee]?[Gg]|[Pp][Dd][Ff])\.([Vv][Bb][SsEe]|[Ee][Xx][Ee]|[Ss][Cc][Rr]|[Dd][Ll][Ll]|[Ss][Yy][Ss]|[Mm][Ss][CcIi])$
 7DoubleExtension-02:\.([Ii][Nn][Aa]|[Ss][Yy][Ss])\.[Bb][Aa][Tt]$
 7DoubleExtension-03:\.([Jj][Pp][Ee]?[Gg]|[Ee][Xx][Ee]|[Tt][Xx][Tt]|[Dd][Ll][Ll])\.[Vv][Bb][SsEe]$

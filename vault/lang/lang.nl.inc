@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Dutch/Nederlandse Language Data (30th August 2015).
+ This File: phpMussel Dutch/Nederlandse Language Data (11th October 2015).
  <%phpMussel%/vault/lang/lang.nl.inc>
 
 */
@@ -51,7 +51,8 @@ $MusselConfig['lang']['greylist_not_updated']=' Greylist niet bijgewerkt.';
 $MusselConfig['lang']['greylist_updated']=' Greylist bijgewerkt.';
 $MusselConfig['lang']['image']='Image';
 $MusselConfig['lang']['instance_already_active']='Instantie al actief! Controleer uw haken.';
-$MusselConfig['lang']['invalid_file']='Ongeldig bestand';
+$MusselConfig['lang']['invalid_file']='Ongeldige bestand';
+$MusselConfig['lang']['invalid_url']='Ongeldige URL!';
 $MusselConfig['lang']['ok']='OK';
 $MusselConfig['lang']['only_allow_images']='Uploaden van niet-beeldbestanden is niet toegestaan';
 $MusselConfig['lang']['phpmussel_disabled']='phpMussel uitgeschakeld.';

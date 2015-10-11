@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Vietnamese/Việt Language Data (30th August 2015).
+ This File: phpMussel Vietnamese/Việt Language Data (11th October 2015).
  <%phpMussel%/vault/lang/lang.vi.inc>
 
 */
@@ -52,6 +52,7 @@ $MusselConfig['lang']['greylist_updated']=' Danh sách xám được cập nhậ
 $MusselConfig['lang']['image']='Hình ảnh';
 $MusselConfig['lang']['instance_already_active']='Trường hợp đã hoạt động! Xin hảy kiểm tra giây nói.';
 $MusselConfig['lang']['invalid_file']='Tài liệu không hợp lệ';
+$MusselConfig['lang']['invalid_url']='URL không hợp lệ!';
 $MusselConfig['lang']['ok']='OK';
 $MusselConfig['lang']['only_allow_images']='Ngoài ra hình ảnh, những tài liệu khác không được phép tải lên';
 $MusselConfig['lang']['phpmussel_disabled']='phpMussel bị vô hiệu.';

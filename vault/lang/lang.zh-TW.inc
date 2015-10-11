@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Chinese (Traditional) / 中文（傳統） Language Data (9th September 2015).
+ This File: phpMussel Chinese (Traditional) / 中文（傳統） Language Data (11th October 2015).
  <%phpMussel%/vault/lang/lang.zh-TW.inc>
 
 */
@@ -51,7 +51,8 @@ $MusselConfig['lang']['greylist_not_updated']=' 灰名單不更新。';
 $MusselConfig['lang']['greylist_updated']=' 灰名單更新。';
 $MusselConfig['lang']['image']='圖像';
 $MusselConfig['lang']['instance_already_active']='腳本已激活！請仔細檢查您的鉤子。';
-$MusselConfig['lang']['invalid_file']='無效文件';
+$MusselConfig['lang']['invalid_file']='無效的文件';
+$MusselConfig['lang']['invalid_url']='無效的網址！';
 $MusselConfig['lang']['ok']='好';
 $MusselConfig['lang']['only_allow_images']='上傳文件以外圖片不允許';
 $MusselConfig['lang']['phpmussel_disabled']='phpMussel關閉。';
