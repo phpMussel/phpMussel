@@ -8832,7 +8832,7 @@ function phpMussel_mail($body='')
 			sort($urlscanner['domains_p']);
 			sort($urlscanner['domains']);
 			$urlscanner['domains_c']=count($urlscanner['domains']);
-			for($urlscanner['i']=0;$urlscanner['c']>$urlscanner['i'];$urlscanner['i']++)
+			for($urlscanner['i']=0;$urlscanner['i']<$urlscanner['domains_c'];$urlscanner['i']++)
 				{
 				if(substr_count($GLOBALS['memCache']['urlscanner.cvd'],$urlscanner['domains'][$urlscanner['i']]))
 					{
@@ -8863,7 +8863,7 @@ function phpMussel_mail($body='')
 			sort($urlscanner['urls_p']);
 			sort($urlscanner['urls']);
 			$urlscanner['urls_c']=count($urlscanner['urls']);
-			for($urlscanner['i']=0;$urlscanner['c']>$urlscanner['i'];$urlscanner['i']++)
+			for($urlscanner['i']=0;$urlscanner['i']<$urlscanner['urls_c'];$urlscanner['i']++)
 				{
 				if(substr_count($GLOBALS['memCache']['urlscanner.cvd'],$urlscanner['urls'][$urlscanner['i']]))
 					{
