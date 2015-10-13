@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7b-BETA (11th October 2015) Core Script.
+ This File: phpMussel v0.7b-BETA (13th October 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -52,6 +52,7 @@
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
 $phpmusselversion='phpMussel v0.7b-BETA';
+$phpmusselversion_int='0.7b-BETA';
 $linebreak=chr(10);
 $time=time();
 if(!isset($MusselConfig['general']['ipaddr']))$MusselConfig['general']['ipaddr']='REMOTE_ADDR';
@@ -6554,6 +6555,8 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 	// "experimental" will be sync'd to "master" when it becomes deployment-ready.
 	if($GLOBALS['MusselConfig']['urlscanner']['urlscanner']&&$str_norm_len)
 		{
+		$urlscanner=array();
+		$urlscanner['req_c']=$urlscanner['domains_c']=$urlscanner['urls_c']=0;
 		if(!isset($GLOBALS['memCache']['urlscanner.cvd']))$GLOBALS['memCache']['urlscanner.cvd']=phpMusselFile($GLOBALS['vault'].'urlscanner.cvd');
 		if(!$GLOBALS['memCache']['urlscanner.cvd'])
 			{
@@ -6566,19 +6569,23 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 			}
 		else
 			{
-			$urlscanner=array();
+			$urlscanner['domains_p']=array();
 			$urlscanner['domains']=array();
 			$urlscanner['z']=0;
 			$urlscanner['c']=preg_match_all('/["\'\(\)\[\]\{\}](data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([0-9A-Za-z.-]{1,512})[^0-9A-Za-z.-]/i',$str_norm_bin,$urlscanner['m']);
 			for($urlscanner['i']=0;$urlscanner['c']>$urlscanner['i'];$urlscanner['i']++)
 				{
+				$urlscanner['domains_p'][$urlscanner['z']]=$urlscanner['m'][3][$urlscanner['i']];
 				$urlscanner['domains'][$urlscanner['z']]='DOMAIN:'.md5($urlscanner['m'][3][$urlscanner['i']]).':'.strlen($urlscanner['m'][3][$urlscanner['i']]).':';
 				$urlscanner['z']++;
 				}
+			$urlscanner['m']='';
+			$urlscanner['domains_p']=array_unique($urlscanner['domains_p']);
 			$urlscanner['domains']=array_unique($urlscanner['domains']);
+			sort($urlscanner['domains_p']);
 			sort($urlscanner['domains']);
-			$urlscanner['c']=count($urlscanner['domains']);
-			for($urlscanner['i']=0;$urlscanner['c']>$urlscanner['i'];$urlscanner['i']++)
+			$urlscanner['domains_c']=count($urlscanner['domains']);
+			for($urlscanner['i']=0;$urlscanner['i']<$urlscanner['domains_c'];$urlscanner['i']++)
 				{
 				if(substr_count($GLOBALS['memCache']['urlscanner.cvd'],$urlscanner['domains'][$urlscanner['i']]))
 					{
@@ -6609,18 +6616,23 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 					}
 				}
 			$xsig='';
+			$urlscanner['urls_p']=array();
 			$urlscanner['urls']=array();
 			$urlscanner['z']=0;
 			$urlscanner['c']=preg_match_all('/["\'\(\)\[\]\{\}](data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})["\'\(\)\[\]\{\}]/i',$str_norm_bin,$urlscanner['m']);
 			for($urlscanner['i']=0;$urlscanner['c']>$urlscanner['i'];$urlscanner['i']++)
 				{
+				$urlscanner['urls_p'][$urlscanner['z']]=$urlscanner['m'][3][$urlscanner['i']];
 				$urlscanner['urls'][$urlscanner['z']]='URL:'.md5($urlscanner['m'][3][$urlscanner['i']]).':'.strlen($urlscanner['m'][3][$urlscanner['i']]).':';
 				$urlscanner['z']++;
 				}
+			$urlscanner['m']='';
+			$urlscanner['urls_p']=array_unique($urlscanner['urls_p']);
 			$urlscanner['urls']=array_unique($urlscanner['urls']);
+			sort($urlscanner['urls_p']);
 			sort($urlscanner['urls']);
-			$urlscanner['c']=count($urlscanner['urls']);
-			for($urlscanner['i']=0;$urlscanner['c']>$urlscanner['i'];$urlscanner['i']++)
+			$urlscanner['urls_c']=count($urlscanner['urls']);
+			for($urlscanner['i']=0;$urlscanner['i']<$urlscanner['urls_c'];$urlscanner['i']++)
 				{
 				if(substr_count($GLOBALS['memCache']['urlscanner.cvd'],$urlscanner['urls'][$urlscanner['i']]))
 					{
@@ -6650,8 +6662,42 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 						}
 					}
 				}
-			unset($urlscanner);
 			}
+		if(!$out&&$GLOBALS['MusselConfig']['urlscanner']['lookup_hphosts']&&$urlscanner['domains_c'])
+			{
+			$urlscanner['req_v']=urlencode($GLOBALS['phpmusselversion']);
+			$urlscanner['classes']=array('EMD'=>"\x1a\x82\x10\x1bXXX",'EXP'=>"\x1a\x82\x10\x16XXX",'GRM'=>"\x1a\x82\x10\x32XXX",'HFS'=>"\x1a\x82\x10\x32XXX",'PHA'=>"\x1a\x82\x10\x32XXX",'PSH'=>"\x1a\x82\x10\x31XXX");
+			for($i=0;$i<$urlscanner['domains_c'];$i++)
+				{
+				$urlscanner['req']='v='.$urlscanner['req_v'].'&s='.$urlscanner['domains_p'][$i].'&class=true';
+				$urlscanner['req_context']=array('http'=>array('method'=>'POST','header'=>'Content-type: application/x-www-form-urlencoded; charset=iso-8859-1','user_agent'=>$GLOBALS['phpmusselua'],'content'=>$urlscanner['req'],'timeout'=>12));
+				$urlscanner['req_stream']=stream_context_create($urlscanner['req_context']);
+				$urlscanner['req_result']=@file_get_contents('http://verify.hosts-file.net/?'.$urlscanner['req'],false,$urlscanner['req_stream']);
+				$urlscanner['req_c']++;
+				if(substr($urlscanner['req_result'],0,6)=="Listed")
+					{
+					$urlscanner['class']=substr($urlscanner['req_result'],7,3);
+					$urlscanner['class']=(isset($urlscanner['classes'][$urlscanner['class']]))?$urlscanner['classes'][$urlscanner['class']]:"\x1a\x82\x10\x3fXXX";
+					$urlscanner['class']=vn_shorthand($urlscanner['class']);
+					$out.=$lnap.phpMusselV(array('vn'=>$urlscanner['class']),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
+					$GLOBALS['xfm'].=phpMusselV(array('vn'=>$urlscanner['class']),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
+					break;
+					}
+				}
+			}
+		if(!$out&&$GLOBALS['MusselConfig']['urlscanner']['google_api_key']&&$urlscanner['urls_c'])
+			{
+			/* Incomplete code, doesn't work yet.
+			$urlscanner['req']=$urlscanner['urls_c'].$GLOBALS['linebreak'].'http://'.implode($GLOBALS['linebreak'].'http://',$urlscanner['urls_p']);
+			$urlscanner['req_context']=array('http'=>array('method'=>'POST','header'=>'Content-type: application/x-www-form-urlencoded; charset=iso-8859-1','user_agent'=>$GLOBALS['phpmusselua'],'content'=>$urlscanner['req'],'timeout'=>12));
+			$urlscanner['req_stream']=stream_context_create($urlscanner['req_context']);
+			$urlscanner['req_result']=file_get_contents('https://sb-ssl.google.com/safebrowsing/api/lookup?client=phpMussel&key='.$GLOBALS['MusselConfig']['urlscanner']['google_api_key'].'&appver='.$GLOBALS['phpmusselversion_int'].'&pver=3.1',false,$urlscanner['req_stream']);
+			$urlscanner['req_c']+=$urlscanner['urls_c'];
+			$out.=$lnap.phpMusselV(array('vn'=>$urlscanner['req_result']),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
+			$GLOBALS['xfm'].=phpMusselV(array('vn'=>$urlscanner['req_result']),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
+			*/
+			}
+		unset($urlscanner);
 		}
 	// AAA urlscanner END
 	for($coexi=0,$sxi=0,$sxc=0,$SigSet=0;$SigSet<3;$SigSet++)
@@ -8034,9 +8080,10 @@ if(!isset($MusselConfig['virustotal']['vt_suspicion_level']))$MusselConfig['viru
 if(!isset($MusselConfig['virustotal']['vt_weighting']))$MusselConfig['virustotal']['vt_weighting']=0;
 if(!isset($MusselConfig['virustotal']['vt_quota_rate']))$MusselConfig['virustotal']['vt_quota_rate']=4;
 if(!isset($MusselConfig['virustotal']['vt_quota_time']))$MusselConfig['virustotal']['vt_quota_time']=1;
-// urlscanner configuration variables; more to be added shortly.
 if(!isset($MusselConfig['urlscanner']))$MusselConfig['urlscanner']=array();
 if(!isset($MusselConfig['urlscanner']['urlscanner']))$MusselConfig['urlscanner']['urlscanner']=true;
+if(!isset($MusselConfig['urlscanner']['lookup_hphosts']))$MusselConfig['urlscanner']['lookup_hphosts']=true;
+if(!isset($MusselConfig['urlscanner']['google_api_key']))$MusselConfig['urlscanner']['google_api_key']='';
 if(!isset($MusselConfig['template_data']))$MusselConfig['template_data']=array();
 if(!isset($MusselConfig['template_data']['css_url']))$MusselConfig['template_data']['css_url']='';
 $cli_args=array(isset($argv[0])?$argv[0]:'',isset($argv[1])?$argv[1]:'',isset($argv[2])?$argv[2]:'',isset($argv[3])?$argv[3]:'');
@@ -9300,7 +9347,7 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&s
 @ini_set('default_charset',$inidefaults['default_charset']);
 @ini_set('pcre.backtrack_limit',$inidefaults['backtrack_limit']);
 @ini_set('display_errors',$inidefaults['display_errors']);
-if($MusselConfig['general']['cleanup'])unset($cli_args,$r,$xpe,$xsk,$xfm,$k,$i,$c,$memCache,$phpmusselua,$inidefaults,$linebreak,$time,$phpmusselversion);
+if($MusselConfig['general']['cleanup'])unset($cli_args,$r,$xpe,$xsk,$xfm,$k,$i,$c,$memCache,$phpmusselua,$inidefaults,$linebreak,$time,$phpmusselversion,$phpmusselversion_int);
 else $memCache['eof']=true;
 
 ?>
