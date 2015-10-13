@@ -175,121 +175,108 @@ if(!function_exists('prescan_normalise'))
 				{
 				if(function_exists('gzinflate'))
 					{
-					if(preg_match_all("/(gzinflate\s*\(\s*str_rot13\s*\(\s*base64_decode\s*\(\s*[\"\'])([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}==)([\"\']\s*\)\s*\))/i",$str,$matches))
+					if($c=preg_match_all("/(gzinflate\s*\(\s*str_rot13\s*\(\s*base64_decode\s*\(\s*[\"\'])([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}==)([\"\']\s*\)\s*\))/i",$str,$matches))
 						{
-						$cm=count($matches[0]);
-						for($im=0;$cm>$im;$im++)
+						for($i=0;$c>$i;$i++)
 							{
-							$str=str_ireplace($matches[0][$im],'"'.gzinflate(str_rot13(base64_decode(substrbl(substraf($matches[0][$im],$matches[1][$im]),$matches[4][$im])))).'"',$str);
+							$str=str_ireplace($matches[0][$i],'"'.gzinflate(str_rot13(base64_decode(substrbl(substraf($matches[0][$i],$matches[1][$i]),$matches[4][$i])))).'"',$str);
 							}
 						continue;
 						}
-					if(preg_match_all("/(gzinflate\s*\(\s*base64_decode\s*\(\s*str_rot13\s*\(\s*[\"\'])([^\'\"\(\)]+)([\"\']\s*\)\s*\))/i",$str,$matches))
+					if($c=preg_match_all("/(gzinflate\s*\(\s*base64_decode\s*\(\s*str_rot13\s*\(\s*[\"\'])([^\'\"\(\)]+)([\"\']\s*\)\s*\))/i",$str,$matches))
 						{
-						$cm=count($matches[0]);
-						for($im=0;$cm>$im;$im++)
+						for($i=0;$c>$i;$i++)
 							{
-							$str=str_ireplace($matches[0][$im],'"'.gzinflate(base64_decode(str_rot13(substrbl(substraf($matches[0][$im],$matches[1][$im]),$matches[3][$im])))).'"',$str);
+							$str=str_ireplace($matches[0][$i],'"'.gzinflate(base64_decode(str_rot13(substrbl(substraf($matches[0][$i],$matches[1][$i]),$matches[3][$i])))).'"',$str);
 							}
 						continue;
 						}
-					if(preg_match_all("/(str_rot13\s*\(\s*gzinflate\s*\(\s*base64_decode\s*\(\s*[\"\'])([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}==)([\"\']\s*\)\s*\))/i",$str,$matches))
+					if($c=preg_match_all("/(str_rot13\s*\(\s*gzinflate\s*\(\s*base64_decode\s*\(\s*[\"\'])([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}==)([\"\']\s*\)\s*\))/i",$str,$matches))
 						{
-						$cm=count($matches[0]);
-						for($im=0;$cm>$im;$im++)
+						for($i=0;$c>$i;$i++)
 							{
-							$str=str_ireplace($matches[0][$im],'"'.str_rot13(gzinflate(base64_decode(substrbl(substraf($matches[0][$im],$matches[1][$im]),$matches[4][$im])))).'"',$str);
+							$str=str_ireplace($matches[0][$i],'"'.str_rot13(gzinflate(base64_decode(substrbl(substraf($matches[0][$i],$matches[1][$i]),$matches[4][$i])))).'"',$str);
 							}
 						continue;
 						}
-					if(preg_match_all("/(base64_decode\s*\(\s*gzinflate\s*\(\s*str_rot13\s*\(\s*[\"\'])([^\'\"\(\)]+)([\"\']\s*\)\s*\))/i",$str,$matches))
+					if($c=preg_match_all("/(base64_decode\s*\(\s*gzinflate\s*\(\s*str_rot13\s*\(\s*[\"\'])([^\'\"\(\)]+)([\"\']\s*\)\s*\))/i",$str,$matches))
 						{
-						$cm=count($matches[0]);
-						for($im=0;$cm>$im;$im++)
+						for($i=0;$c>$i;$i++)
 							{
-							$str=str_ireplace($matches[0][$im],'"'.base64_decode(gzinflate(str_rot13(substrbl(substraf($matches[0][$im],$matches[1][$im]),$matches[3][$im])))).'"',$str);
+							$str=str_ireplace($matches[0][$i],'"'.base64_decode(gzinflate(str_rot13(substrbl(substraf($matches[0][$i],$matches[1][$i]),$matches[3][$i])))).'"',$str);
 							}
 						continue;
 						}
-					if(preg_match_all("/(gzinflate\s*\(\s*base64_decode\s*\(\s*[\"\'])([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}==)([\"\']\s*\)\s*\))/i",$str,$matches))
+					if($c=preg_match_all("/(gzinflate\s*\(\s*base64_decode\s*\(\s*[\"\'])([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}==)([\"\']\s*\)\s*\))/i",$str,$matches))
 						{
-						$cm=count($matches[0]);
-						for($im=0;$cm>$im;$im++)
+						for($i=0;$c>$i;$i++)
 							{
-							$str=str_ireplace($matches[0][$im],'"'.gzinflate(base64_decode(substrbl(substraf($matches[0][$im],$matches[1][$im]),$matches[4][$im]))).'"',$str);
+							$str=str_ireplace($matches[0][$i],'"'.gzinflate(base64_decode(substrbl(substraf($matches[0][$i],$matches[1][$i]),$matches[4][$i]))).'"',$str);
 							}
 						continue;
 						}
-					if(preg_match_all("/(gzinflate\s*\(\s*str_rot13\s*\(\s*[\"\'])([^\'\"\(\)]+)([\"\']\s*\)\s*\))/i",$str,$matches))
+					if($c=preg_match_all("/(gzinflate\s*\(\s*str_rot13\s*\(\s*[\"\'])([^\'\"\(\)]+)([\"\']\s*\)\s*\))/i",$str,$matches))
 						{
-						$cm=count($matches[0]);
-						for($im=0;$cm>$im;$im++)
+						for($i=0;$c>$i;$i++)
 							{
-							$str=str_ireplace($matches[0][$im],'"'.gzinflate(str_rot13(substrbl(substraf($matches[0][$im],$matches[1][$im]),$matches[3][$im]))).'"',$str);
+							$str=str_ireplace($matches[0][$i],'"'.gzinflate(str_rot13(substrbl(substraf($matches[0][$i],$matches[1][$i]),$matches[3][$i]))).'"',$str);
 							}
 						continue;
 						}
-					if(preg_match_all("/(gzinflate\s*\(\s*[\"\'])(.+)(,[0-9])?([\"\']\s*\))/i",$str,$matches))
+					if($c=preg_match_all("/(gzinflate\s*\(\s*[\"\'])(.+)(,[0-9])?([\"\']\s*\))/i",$str,$matches))
 						{
-						$cm=count($matches[0]);
-						for($im=0;$cm>$im;$im++)
+						for($i=0;$c>$i;$i++)
 							{
-							$str=str_ireplace($matches[0][$im],'"'.gzinflate(substrbl(substraf($matches[0][$im],$matches[1][$im]),$matches[4][$im])).'"',$str);
+							$str=str_ireplace($matches[0][$i],'"'.gzinflate(substrbl(substraf($matches[0][$i],$matches[1][$i]),$matches[4][$i])).'"',$str);
 							}
 						continue;
 						}
 					}
-				if(preg_match_all("/(str_rot13\s*\(\s*base64_decode\s*\(\s*[\"\'])([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}==)([\"\']\s*\)\s*\))/i",$str,$matches))
+				if($c=preg_match_all("/(str_rot13\s*\(\s*base64_decode\s*\(\s*[\"\'])([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}==)([\"\']\s*\)\s*\))/i",$str,$matches))
 					{
-					$cm=count($matches[0]);
-					for($im=0;$cm>$im;$im++)
+					for($i=0;$c>$i;$i++)
 						{
-						$str=str_ireplace($matches[0][$im],'"'.str_rot13(base64_decode(substrbl(substraf($matches[0][$im],$matches[1][$im]),$matches[4][$im]))).'"',$str);
+						$str=str_ireplace($matches[0][$i],'"'.str_rot13(base64_decode(substrbl(substraf($matches[0][$i],$matches[1][$i]),$matches[4][$i]))).'"',$str);
 						}
 					continue;
 					}
-				if(preg_match_all("/(base64_decode\s*\(\s*str_rot13\s*\(\s*[\"\'])([^\'\"\(\)]+)([\"\']\s*\)\s*\))/i",$str,$matches))
+				if($c=preg_match_all("/(base64_decode\s*\(\s*str_rot13\s*\(\s*[\"\'])([^\'\"\(\)]+)([\"\']\s*\)\s*\))/i",$str,$matches))
 					{
-					$cm=count($matches[0]);
-					for($im=0;$cm>$im;$im++)
+					for($i=0;$c>$i;$i++)
 						{
-						$str=str_ireplace($matches[0][$im],'"'.base64_decode(str_rot13(substrbl(substraf($matches[0][$im],$matches[1][$im]),$matches[3][$im]))).'"',$str);
+						$str=str_ireplace($matches[0][$i],'"'.base64_decode(str_rot13(substrbl(substraf($matches[0][$i],$matches[1][$i]),$matches[3][$i]))).'"',$str);
 						}
 					continue;
 					}
-				if(preg_match_all("/(base64_decode|decode_base64|base64\.b64decode|atob|Base64\.decode64)(\s*\(\s*[\"\'\`])([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}==)([\"\'\`]\s*\))/i",$str,$matches))
+				if($c=preg_match_all("/(base64_decode|decode_base64|base64\.b64decode|atob|Base64\.decode64)(\s*\(\s*[\"\'\`])([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}==)([\"\'\`]\s*\))/i",$str,$matches))
 					{
-					$cm=count($matches[0]);
-					for($im=0;$cm>$im;$im++)
+					for($i=0;$c>$i;$i++)
 						{
-						$str=str_ireplace($matches[0][$im],'"'.base64_decode(substrbl(substraf($matches[0][$im],$matches[1][$im].$matches[2][$im]),$matches[5][$im])).'"',$str);
+						$str=str_ireplace($matches[0][$i],'"'.base64_decode(substrbl(substraf($matches[0][$i],$matches[1][$i].$matches[2][$i]),$matches[5][$i])).'"',$str);
 						}
 					continue;
 					}
-				if(preg_match_all("/(str_rot13\s*\(\s*[\"\'])([^\'\"\(\)]+)([\"\']\s*\))/i",$str,$matches))
+				if($c=preg_match_all("/(str_rot13\s*\(\s*[\"\'])([^\'\"\(\)]+)([\"\']\s*\))/i",$str,$matches))
 					{
-					$cm=count($matches[0]);
-					for($im=0;$cm>$im;$im++)
+					for($i=0;$c>$i;$i++)
 						{
-						$str=str_ireplace($matches[0][$im],'"'.str_rot13(substrbl(substraf($matches[0][$im],$matches[1][$im]),$matches[3][$im])).'"',$str);
+						$str=str_ireplace($matches[0][$i],'"'.str_rot13(substrbl(substraf($matches[0][$i],$matches[1][$i]),$matches[3][$i])).'"',$str);
 						}
 					continue;
 					}
-				if(preg_match_all("/(hex2bin\s*\(\s*[\"\'])([a-fA-F0-9]+)([\"\']\s*\))/i",$str,$matches))
+				if($c=preg_match_all("/(hex2bin\s*\(\s*[\"\'])([a-fA-F0-9]+)([\"\']\s*\))/i",$str,$matches))
 					{
-					$cm=count($matches[0]);
-					for($im=0;$cm>$im;$im++)
+					for($i=0;$c>$i;$i++)
 						{
-						$str=str_ireplace($matches[0][$im],'"'.hex2bin(substrbl(substraf($matches[0][$im],$matches[1][$im]),$matches[3][$im])).'"',$str);
+						$str=str_ireplace($matches[0][$i],'"'.hex2bin(substrbl(substraf($matches[0][$i],$matches[1][$i]),$matches[3][$i])).'"',$str);
 						}
 					continue;
 					}
-				if(preg_match_all("/([Uu][Nn][Pp][Aa][Cc][Kk]\s*\(\s*[\"\']\s*H\*\s*[\"\']\s*,\s*[\"\'])([a-fA-F0-9]+)([\"\']\s*\))/",$str,$matches))
+				if($c=preg_match_all("/([Uu][Nn][Pp][Aa][Cc][Kk]\s*\(\s*[\"\']\s*H\*\s*[\"\']\s*,\s*[\"\'])([a-fA-F0-9]+)([\"\']\s*\))/",$str,$matches))
 					{
-					$cm=count($matches[0]);
-					for($im=0;$cm>$im;$im++)
+					for($i=0;$c>$i;$i++)
 						{
-						$str=str_replace($matches[0][$im],'"'.hex2bin(substrbl(substraf($matches[0][$im],$matches[1][$im]),$matches[3][$im])).'"',$str);
+						$str=str_replace($matches[0][$i],'"'.hex2bin(substrbl(substraf($matches[0][$i],$matches[1][$i]),$matches[3][$i])).'"',$str);
 						}
 					continue;
 					}
@@ -316,8 +303,8 @@ if(!function_exists('prescan_xmlxdp'))
 		$i=0;
 		while(preg_match_all('/<chunk>(.+)<\/chunk>/i',$nstr,$matches))
 			{
-			$cm=count($matches[0]);
-			for($im=0;$cm>$im;$im++)
+			$c=count($matches[0]);
+			for($im=0;$c>$im;$im++)
 				{
 				if($chunki=@base64_decode($matches[1][$im]))
 					{
@@ -6669,6 +6656,20 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 			$urlscanner['classes']=array('EMD'=>"\x1a\x82\x10\x1bXXX",'EXP'=>"\x1a\x82\x10\x16XXX",'GRM'=>"\x1a\x82\x10\x32XXX",'HFS'=>"\x1a\x82\x10\x32XXX",'PHA'=>"\x1a\x82\x10\x32XXX",'PSH'=>"\x1a\x82\x10\x31XXX");
 			for($i=0;$i<$urlscanner['domains_c'];$i++)
 				{
+				if($GLOBALS['MusselConfig']['urlscanner']['maximum_api_lookups']>0&&$urlscanner['req_c']>$GLOBALS['MusselConfig']['urlscanner']['maximum_api_lookups'])
+					{
+					if($GLOBALS['MusselConfig']['urlscanner']['maximum_api_lookups_response'])
+						{
+						if(!$xskd)
+							{
+							$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$ofn.$GLOBALS['linebreak'];
+							$xskd=true;
+							}
+						$out.=$lnap.$GLOBALS['MusselConfig']['lang']['too_many_urls'].'!'.$GLOBALS['linebreak'];
+						$GLOBALS['xfm'].=$GLOBALS['MusselConfig']['lang']['too_many_urls'].' ('.$ofnSafe.')! ';
+						}
+					break;
+					}
 				$urlscanner['req']='v='.$urlscanner['req_v'].'&s='.$urlscanner['domains_p'][$i].'&class=true';
 				$urlscanner['req_context']=array('http'=>array('method'=>'POST','header'=>'Content-type: application/x-www-form-urlencoded; charset=iso-8859-1','user_agent'=>$GLOBALS['phpmusselua'],'content'=>$urlscanner['req'],'timeout'=>12));
 				$urlscanner['req_stream']=stream_context_create($urlscanner['req_context']);
@@ -6679,6 +6680,11 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 					$urlscanner['class']=substr($urlscanner['req_result'],7,3);
 					$urlscanner['class']=(isset($urlscanner['classes'][$urlscanner['class']]))?$urlscanner['classes'][$urlscanner['class']]:"\x1a\x82\x10\x3fXXX";
 					$urlscanner['class']=vn_shorthand($urlscanner['class']);
+					if(!$xskd)
+						{
+						$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$ofn.$GLOBALS['linebreak'];
+						$xskd=true;
+						}
 					$out.=$lnap.phpMusselV(array('vn'=>$urlscanner['class']),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
 					$GLOBALS['xfm'].=phpMusselV(array('vn'=>$urlscanner['class']),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 					break;
@@ -6692,7 +6698,12 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 			$urlscanner['req_context']=array('http'=>array('method'=>'POST','header'=>'Content-type: application/x-www-form-urlencoded; charset=iso-8859-1','user_agent'=>$GLOBALS['phpmusselua'],'content'=>$urlscanner['req'],'timeout'=>12));
 			$urlscanner['req_stream']=stream_context_create($urlscanner['req_context']);
 			$urlscanner['req_result']=file_get_contents('https://sb-ssl.google.com/safebrowsing/api/lookup?client=phpMussel&key='.$GLOBALS['MusselConfig']['urlscanner']['google_api_key'].'&appver='.$GLOBALS['phpmusselversion_int'].'&pver=3.1',false,$urlscanner['req_stream']);
-			$urlscanner['req_c']+=$urlscanner['urls_c'];
+			$urlscanner['req_c']++;
+			if(!$xskd)
+				{
+				$GLOBALS['xsk'].=$md5.':'.$str_len.':'.$ofn.$GLOBALS['linebreak'];
+				$xskd=true;
+				}
 			$out.=$lnap.phpMusselV(array('vn'=>$urlscanner['req_result']),$GLOBALS['MusselConfig']['lang']['detected']).'!'.$GLOBALS['linebreak'];
 			$GLOBALS['xfm'].=phpMusselV(array('vn'=>$urlscanner['req_result']),$GLOBALS['MusselConfig']['lang']['detected']).' ('.$ofnSafe.')! ';
 			*/
@@ -8084,6 +8095,8 @@ if(!isset($MusselConfig['urlscanner']))$MusselConfig['urlscanner']=array();
 if(!isset($MusselConfig['urlscanner']['urlscanner']))$MusselConfig['urlscanner']['urlscanner']=true;
 if(!isset($MusselConfig['urlscanner']['lookup_hphosts']))$MusselConfig['urlscanner']['lookup_hphosts']=true;
 if(!isset($MusselConfig['urlscanner']['google_api_key']))$MusselConfig['urlscanner']['google_api_key']='';
+if(!isset($MusselConfig['urlscanner']['maximum_api_lookups']))$MusselConfig['urlscanner']['maximum_api_lookups']=10;
+if(!isset($MusselConfig['urlscanner']['maximum_api_lookups_response']))$MusselConfig['urlscanner']['maximum_api_lookups_response']=false;
 if(!isset($MusselConfig['template_data']))$MusselConfig['template_data']=array();
 if(!isset($MusselConfig['template_data']['css_url']))$MusselConfig['template_data']['css_url']='';
 $cli_args=array(isset($argv[0])?$argv[0]:'',isset($argv[1])?$argv[1]:'',isset($argv[2])?$argv[2]:'',isset($argv[3])?$argv[3]:'');
@@ -8794,6 +8807,8 @@ function phpMussel_mail($body='')
 	else $normlen=0;
 	if($normlen)
 		{
+		$urlscanner=array();
+		$urlscanner['req_c']=$urlscanner['domains_c']=$urlscanner['urls_c']=0;
 		if(!isset($GLOBALS['memCache']['urlscanner.cvd']))$GLOBALS['memCache']['urlscanner.cvd']=phpMusselFile($GLOBALS['vault'].'urlscanner.cvd');
 		if(!$GLOBALS['memCache']['urlscanner.cvd'])
 			{
@@ -8801,18 +8816,22 @@ function phpMussel_mail($body='')
 			}
 		else
 			{
-			$urlscanner=array();
+			$urlscanner['domains_p']=array();
 			$urlscanner['domains']=array();
 			$urlscanner['z']=0;
 			$urlscanner['c']=preg_match_all('/["\'\(\)\[\]\{\}](data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([0-9A-Za-z.-]{1,512})[^0-9A-Za-z.-]/i',$norm,$urlscanner['m']);
 			for($urlscanner['i']=0;$urlscanner['c']>$urlscanner['i'];$urlscanner['i']++)
 				{
+				$urlscanner['domains_p'][$urlscanner['z']]=$urlscanner['m'][3][$urlscanner['i']];
 				$urlscanner['domains'][$urlscanner['z']]='DOMAIN:'.md5($urlscanner['m'][3][$urlscanner['i']]).':'.strlen($urlscanner['m'][3][$urlscanner['i']]).':';
 				$urlscanner['z']++;
 				}
+			$urlscanner['m']='';
+			$urlscanner['domains_p']=array_unique($urlscanner['domains_p']);
 			$urlscanner['domains']=array_unique($urlscanner['domains']);
+			sort($urlscanner['domains_p']);
 			sort($urlscanner['domains']);
-			$urlscanner['c']=count($urlscanner['domains']);
+			$urlscanner['domains_c']=count($urlscanner['domains']);
 			for($urlscanner['i']=0;$urlscanner['c']>$urlscanner['i'];$urlscanner['i']++)
 				{
 				if(substr_count($GLOBALS['memCache']['urlscanner.cvd'],$urlscanner['domains'][$urlscanner['i']]))
@@ -8820,21 +8839,30 @@ function phpMussel_mail($body='')
 					$xsig=substraf($GLOBALS['memCache']['urlscanner.cvd'],$urlscanner['domains'][$urlscanner['i']]);
 					if(substr_count($xsig,$GLOBALS['linebreak']))$xsig=substrbf($xsig,$GLOBALS['linebreak']);
 					$xsig=vn_shorthand($xsig);
-					if($xsig&&!substr_count($GLOBALS['memCache']['greylist'],','.$xsig.',')&&!$GLOBALS['memCache']['ignoreme'])$f.=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'! ';
+					if($xsig&&!substr_count($GLOBALS['memCache']['greylist'],','.$xsig.',')&&!$GLOBALS['memCache']['ignoreme'])
+						{
+						$f.=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'! ';
+						break;
+						}
 					}
 				}
 			$xsig='';
+			$urlscanner['urls_p']=array();
 			$urlscanner['urls']=array();
 			$urlscanner['z']=0;
 			$urlscanner['c']=preg_match_all('/["\'\(\)\[\]\{\}](data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})["\'\(\)\[\]\{\}]/i',$norm,$urlscanner['m']);
 			for($urlscanner['i']=0;$urlscanner['c']>$urlscanner['i'];$urlscanner['i']++)
 				{
+				$urlscanner['urls_p'][$urlscanner['z']]=$urlscanner['m'][3][$urlscanner['i']];
 				$urlscanner['urls'][$urlscanner['z']]='URL:'.md5($urlscanner['m'][3][$urlscanner['i']]).':'.strlen($urlscanner['m'][3][$urlscanner['i']]).':';
 				$urlscanner['z']++;
 				}
+			$urlscanner['m']='';
+			$urlscanner['urls_p']=array_unique($urlscanner['urls_p']);
 			$urlscanner['urls']=array_unique($urlscanner['urls']);
+			sort($urlscanner['urls_p']);
 			sort($urlscanner['urls']);
-			$urlscanner['c']=count($urlscanner['urls']);
+			$urlscanner['urls_c']=count($urlscanner['urls']);
 			for($urlscanner['i']=0;$urlscanner['c']>$urlscanner['i'];$urlscanner['i']++)
 				{
 				if(substr_count($GLOBALS['memCache']['urlscanner.cvd'],$urlscanner['urls'][$urlscanner['i']]))
@@ -8842,11 +8870,53 @@ function phpMussel_mail($body='')
 					$xsig=substraf($GLOBALS['memCache']['urlscanner.cvd'],$urlscanner['urls'][$urlscanner['i']]);
 					if(substr_count($xsig,$GLOBALS['linebreak']))$xsig=substrbf($xsig,$GLOBALS['linebreak']);
 					$xsig=vn_shorthand($xsig);
-					if($xsig&&!substr_count($GLOBALS['memCache']['greylist'],','.$xsig.',')&&!$GLOBALS['memCache']['ignoreme'])$f.=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'! ';
+					if($xsig&&!substr_count($GLOBALS['memCache']['greylist'],','.$xsig.',')&&!$GLOBALS['memCache']['ignoreme'])
+						{
+						$f.=phpMusselV(array('vn'=>$xsig),$GLOBALS['MusselConfig']['lang']['detected']).'! ';
+						break;
+						}
 					}
 				}
-			unset($urlscanner);
 			}
+		if(!$f&&$GLOBALS['MusselConfig']['urlscanner']['lookup_hphosts']&&$urlscanner['domains_c'])
+			{
+			$urlscanner['req_v']=urlencode($GLOBALS['phpmusselversion']);
+			$urlscanner['classes']=array('EMD'=>"\x1a\x82\x10\x1bXXX",'EXP'=>"\x1a\x82\x10\x16XXX",'GRM'=>"\x1a\x82\x10\x32XXX",'HFS'=>"\x1a\x82\x10\x32XXX",'PHA'=>"\x1a\x82\x10\x32XXX",'PSH'=>"\x1a\x82\x10\x31XXX");
+			for($i=0;$i<$urlscanner['domains_c'];$i++)
+				{
+				if($GLOBALS['MusselConfig']['urlscanner']['maximum_api_lookups']>0&&$urlscanner['req_c']>$GLOBALS['MusselConfig']['urlscanner']['maximum_api_lookups'])
+					{
+					if($GLOBALS['MusselConfig']['urlscanner']['maximum_api_lookups_response'])$f.=$GLOBALS['MusselConfig']['lang']['too_many_urls'].'! ';
+					break;
+					}
+				$urlscanner['req']='v='.$urlscanner['req_v'].'&s='.$urlscanner['domains_p'][$i].'&class=true';
+				$urlscanner['req_context']=array('http'=>array('method'=>'POST','header'=>'Content-type: application/x-www-form-urlencoded; charset=iso-8859-1','user_agent'=>$GLOBALS['phpmusselua'],'content'=>$urlscanner['req'],'timeout'=>12));
+				$urlscanner['req_stream']=stream_context_create($urlscanner['req_context']);
+				$urlscanner['req_result']=@file_get_contents('http://verify.hosts-file.net/?'.$urlscanner['req'],false,$urlscanner['req_stream']);
+				$urlscanner['req_c']++;
+				if(substr($urlscanner['req_result'],0,6)=="Listed")
+					{
+					$urlscanner['class']=substr($urlscanner['req_result'],7,3);
+					$urlscanner['class']=(isset($urlscanner['classes'][$urlscanner['class']]))?$urlscanner['classes'][$urlscanner['class']]:"\x1a\x82\x10\x3fXXX";
+					$urlscanner['class']=vn_shorthand($urlscanner['class']);
+					$f.=phpMusselV(array('vn'=>$urlscanner['class']),$GLOBALS['MusselConfig']['lang']['detected']).'! ';
+					break;
+					}
+				}
+			}
+		if(!$out&&$GLOBALS['MusselConfig']['urlscanner']['google_api_key']&&$urlscanner['urls_c'])
+			{
+			/* Incomplete code, doesn't work yet.
+			$urlscanner['req']=$urlscanner['urls_c'].$GLOBALS['linebreak'].'http://'.implode($GLOBALS['linebreak'].'http://',$urlscanner['urls_p']);
+			$urlscanner['req_context']=array('http'=>array('method'=>'POST','header'=>'Content-type: application/x-www-form-urlencoded; charset=iso-8859-1','user_agent'=>$GLOBALS['phpmusselua'],'content'=>$urlscanner['req'],'timeout'=>12));
+			$urlscanner['req_stream']=stream_context_create($urlscanner['req_context']);
+			$urlscanner['req_result']=file_get_contents('https://sb-ssl.google.com/safebrowsing/api/lookup?client=phpMussel&key='.$GLOBALS['MusselConfig']['urlscanner']['google_api_key'].'&appver='.$GLOBALS['phpmusselversion_int'].'&pver=3.1',false,$urlscanner['req_stream']);
+			$urlscanner['req_c']++;
+			$f.=phpMusselV(array('vn'=>$urlscanner['req_result']),$GLOBALS['MusselConfig']['lang']['detected']).'! ';
+			break;
+			*/
+			}
+		unset($urlscanner);
 		}
 	// AAA urlscanner functionality for phpMussel_mail() END
 	return (!$f)?0:$f;

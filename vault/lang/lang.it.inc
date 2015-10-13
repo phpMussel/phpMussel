@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- Questo file è la traduzione Italiana di phpMussel (11th October 2015).
+ Questo file è la traduzione Italiana di phpMussel (13th October 2015).
  <%phpMussel%/vault/lang/lang.it.inc>
 
 */
@@ -82,6 +82,7 @@ $MusselConfig['lang']['scan_tampering']='Rilevato potenzialmente pericolosi alte
 $MusselConfig['lang']['scan_unauthorised_upload']='Rilevata manipolazione non autorizzata del caricamento del file';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Rilevata manipolazione non autorizzata del caricamento del file o malconfigurazione! ';
 $MusselConfig['lang']['started']='Iniziato';
+$MusselConfig['lang']['too_many_urls']='Troppi URL';
 $MusselConfig['lang']['update_']='phpMussel tenterà di aggiornarsi adesso.';
 $MusselConfig['lang']['update_available']='Un aggiornamento del programma è disponibile.';
 $MusselConfig['lang']['update_complete']='Verifica dell\'aggiornamento completata con successo.';

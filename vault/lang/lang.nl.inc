@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Dutch/Nederlandse Language Data (11th October 2015).
+ This File: phpMussel Dutch/Nederlandse Language Data (13th October 2015).
  <%phpMussel%/vault/lang/lang.nl.inc>
 
 */
@@ -82,6 +82,7 @@ $MusselConfig['lang']['scan_tampering']='Gedetecteerd potentieel gevaarlijke bes
 $MusselConfig['lang']['scan_unauthorised_upload']='ngeautoriseerde bestand uploaden manipulatie gedetecteerd';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Ongeautoriseerde bestand uploaden manipulatie of misconfiguratie gedetecteerd! ';
 $MusselConfig['lang']['started']='Gestart';
+$MusselConfig['lang']['too_many_urls']='Te veel URL\'s';
 $MusselConfig['lang']['update_']='phpMussel zal nu proberen om zichzelf te bijwerken.';
 $MusselConfig['lang']['update_available']='Een script bijwerk is beschikbaar.';
 $MusselConfig['lang']['update_complete']='Bijwerk verificatie afgerond geslaagd.';

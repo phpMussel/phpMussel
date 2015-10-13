@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Portuguese/Português Language Data (11th October 2015).
+ This File: phpMussel Portuguese/Português Language Data (13th October 2015).
  <%phpMussel%/vault/lang/lang.pt.inc>
 
 */
@@ -82,6 +82,7 @@ $MusselConfig['lang']['scan_tampering']='Detectado potencialmente perigoso arqui
 $MusselConfig['lang']['scan_unauthorised_upload']='Não autorizada Arquivo carregar manipulação detectado';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Não autorizada Arquivo carregar manipulação ou mau configuração detectado! ';
 $MusselConfig['lang']['started']='Começado';
+$MusselConfig['lang']['too_many_urls']='Demasiados URLs';
 $MusselConfig['lang']['update_']='phpMussel agora tentará se atualizar.';
 $MusselConfig['lang']['update_available']='Uma atualização de script está disponível.';
 $MusselConfig['lang']['update_complete']='Verificação de atualização concluída com êxito.';

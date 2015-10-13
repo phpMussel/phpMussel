@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Chinese (Traditional) / 中文（傳統） Language Data (11th October 2015).
+ This File: phpMussel Chinese (Traditional) / 中文（傳統） Language Data (13th October 2015).
  <%phpMussel%/vault/lang/lang.zh-TW.inc>
 
 */
@@ -82,6 +82,7 @@ $MusselConfig['lang']['scan_tampering']='檢測潛在的危險文件篡改';
 $MusselConfig['lang']['scan_unauthorised_upload']='未經授權的文件上傳操控是檢測';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='未經授權的文件上傳操控或配置錯誤是檢測！';
 $MusselConfig['lang']['started']='開始';
+$MusselConfig['lang']['too_many_urls']='太多的URL';
 $MusselConfig['lang']['update_']='phpMussel現在將嘗試進行自我更新。';
 $MusselConfig['lang']['update_available']='編程更新可用。';
 $MusselConfig['lang']['update_complete']='更新檢查成功完成。';

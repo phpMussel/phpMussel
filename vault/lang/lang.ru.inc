@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Russian/Русский Language Data (11th October 2015).
+ This File: phpMussel Russian/Русский Language Data (13th October 2015).
  <%phpMussel%/vault/lang/lang.ru.inc>
 
 */
@@ -82,6 +82,7 @@ $MusselConfig['lang']['scan_tampering']='Обнаружена потенциал
 $MusselConfig['lang']['scan_unauthorised_upload']='Обнаружены несанкционированные загрузки манипуляции файла';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Обнаружены несанкционированное загрузки манипуляции файла или неправильная конфигурация! '; 
 $MusselConfig['lang']['started']='Начало работы';
+$MusselConfig['lang']['too_many_urls']='Слишком много URL';
 $MusselConfig['lang']['update_']='phpMussel теперь попытается себя обновить.';
 $MusselConfig['lang']['update_available']='Обновление сценария доступно.';
 $MusselConfig['lang']['update_complete']='Проверка обновления успешно завершена.';
