@@ -1571,7 +1571,40 @@
      vous aider dans le traitement de ces problèmes. Votre quota est déterminée
      comme "vt_quota_rate" demandes de toute nature dans un laps de
      "vt_quota_time" minute de temps.
- "template_data" (Category)
+ "urlscanner" (Catégorie)
+ - URL scanner configuration.
+   "urlscanner"
+   - Construit dans phpMussel est un URL scanner, capable de détecter les URL
+     malveillantes à partir de toutes les données ou fichiers analysés. Pour
+     activer le URL scanner, définir la directive "urlscanner" à true; Pour
+     désactiver le URL scanner, définir cette directive à false.
+   Noter: Si le URL scanner est désactivé, vous ne serez pas besoin de revoir
+   quelconque du directives dans cette catégorie ("urlscanner"), parce qu'aucun
+   d'eux avoir une fonction si cette directive est désactivée.
+ - URL scanner API chercher configuration.
+   "lookup_hphosts"
+   - Permet cherches de l'hpHosts API <http://hosts-file.net/> quand définit
+     comme true. hpHosts ne nécessite pas une API clé pour effectuer des
+     cherches de l'API.
+   "google_api_key"
+   - Permet cherches du Google Safe Browsing API quand la API clé nécessaire
+     est définie. Google Safe Browsing API cherches nécessite une API clé, qui
+     peut être obtenu à partir <https://console.developers.google.com/>.
+   "maximum_api_lookups"
+   - Nombre de cherches maximal de l'API pour effectuer par itération d'analyse
+     individuelle. Parce que chaque API cherche supplémentaire va ajouter à la
+     durée totale requise pour compléter chaque itération d'analyse, vous
+     pouvez prévoir une limitation afin d'accélérer le processus d'analyse.
+     Quand défini comme 0, pas de telles nombre maximum admissible sera
+     appliquée. Défini comme 10 par défaut.
+   "maximum_api_lookups_response"
+   - Que faire si le nombre de cherches de l'API maximal est dépassée?
+     False = Ne fais rien (poursuivre le traitement) [Défaut];
+     True = Marque/bloquer le fichier.
+   "cache_time"
+   - Combien de temps (en secondes) devrait les résultats du cherches de l'API
+     être conservé dans le cache? Défaut est 3600 secondes (1 heure).
+ "template_data" (Catégorie)
  - Directives/Variables pour les modèles et thèmes: Modèles données est liée à
    la sortie HTML utilisé pour générer le "Téléchargement Refusé" message
    affiché aux utilisateurs sur un fichier téléchargement est bloqué. Si vous
@@ -1821,5 +1854,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 4 Octobre 2015 (2015.10.04).
+Dernière Réactualisé: 16 Octobre 2015 (2015.10.16).
 EOF

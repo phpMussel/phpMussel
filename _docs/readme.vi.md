@@ -783,6 +783,31 @@ Note: Regardless of suspicion level, any files that are either blacklisted or wh
 "vt_quota_rate" and "vt_quota_time"
 - According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly adhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values _**MAY**_ sometimes help you in dealing with these problems. Your rate limit is determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame.
 
+####"urlscanner" (Category)
+URL scanner configuration.
+
+"urlscanner"
+- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the `urlscanner` directive to true; To disable it, set this directive to false.
+
+Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
+
+URL scanner API lookup configuration.
+
+"lookup_hphosts"
+- Enables API lookups to the [hpHosts](http://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
+
+"google_api_key"
+- Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
+
+"maximum_api_lookups"
+- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expediate the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
+
+"maximum_api_lookups_response"
+- What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Default]; True = Flag/block the file.
+
+"cache_time"
+- How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour).
+
 ####"template_data" (Category)
 Directives/Variables for templates and themes.
 
@@ -951,4 +976,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 7 Tháng Chín 20
 ---
 
 
-Lần cuối cập nhật: 4 Tháng Mười 2015 (2015.10.04).
+Lần cuối cập nhật: 16 Tháng Mười 2015 (2015.10.16).

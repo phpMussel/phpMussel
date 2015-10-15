@@ -149,7 +149,7 @@ Também estar ciente de que phpMussel não é o funcional equivalente de um comp
 
 ###4A. <a name="SECTION4A"></a>NAVEGADOR COMANDOS
 
-Quando phpMussel é instalado e funcionando corretamente no seu sistema, se você tem configurá as variáveis script_password e logs_password no seu configuração arquivo, você será capaz de executar um limitado número de administrativas funções e entrada um algum número de comandos para phpMussel através de seu navegador. A razão pela qual essas senhas precisam ser definidas a fim de permitir que esses controles do navegador é tanto para garantir adequada segurança, adequada proteção desses navegador controles e para garantir que existe uma maneira por desses navegador controles para ser totalmente desativado se eles não são desejadas por você e/ou outros webmestres/administradores usando phpMussel. Portanto, em outras palavras, para ativar esses controles, definir uma senha, e para desativar esses controles, definir nenhum senha. Alternativamente, se você optar por ativar esses controles então optar por desativar esses controles em um posterior data, existe um comando para fazer isto (tal pode ser útil se você executar algumas ações que você sente poderia comprometer as senhas delegados e precisa para desativar rapidamente esses controles sem modificar o configuração arquivo).
+Quando phpMussel é instalado e funcionando corretamente no seu sistema, se você tem configurá as variáveis `script_password` e `logs_password` no seu configuração arquivo, você será capaz de executar um limitado número de administrativas funções e entrada um algum número de comandos para phpMussel através de seu navegador. A razão pela qual essas senhas precisam ser definidas a fim de permitir que esses controles do navegador é tanto para garantir adequada segurança, adequada proteção desses navegador controles e para garantir que existe uma maneira por desses navegador controles para ser totalmente desativado se eles não são desejadas por você e/ou outros webmestres/administradores usando phpMussel. Portanto, em outras palavras, para ativar esses controles, definir uma senha, e para desativar esses controles, definir nenhum senha. Alternativamente, se você optar por ativar esses controles então optar por desativar esses controles em um posterior data, existe um comando para fazer isto (tal pode ser útil se você executar algumas ações que você sente poderia comprometer as senhas delegados e precisa para desativar rapidamente esses controles sem modificar o configuração arquivo).
 
 Algumas razões pelas quais você _**DEVE**_ ativar esses controles:
 - Fornece uma maneira para greylist assinaturas em casos como quando você descobre uma assinatura que está produzindo um falso-positivo durante o carregar de arquivos para o seu sistema e você não tem tempo para manualmente editar e recarregar o greylist arquivo.
@@ -183,7 +183,7 @@ scan_kills
 - Que faz: Imprime o conteúdo de seu scan_kills arquivo para a tela.
 
 controls_lockout
-- Senha necessária: logs_password OU script_password
+- Senha necessária: `logs_password` OU script_password
 - Outros requisitos: (nenhum)
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -481,7 +481,7 @@ O seguinte é uma lista de variáveis encontradas no `phpmussel.ini` configuraç
 Geral configuração por phpMussel.
 
 "script_password"
-- Como uma conveniência, phpMussel permitirás certas funções (incluindo a capacidade de atualizando phpMussel remotamente) ao ser acionado manualmente através de POST, GET e QUERY. Mas, como medida de segurança, para fazer isso, phpMussel esperam uma senha para ser incluída com o comando, forma a garantir que é você, e não outra pessoa, tentando de acionar manualmente essas funções. Definir script_password para qualquer senha que você desejá usar. Se nenhuma senha for definida, o manual acionamento será desativado por padrão. Uso algo que você vai se lembrar, mas que é difícil por outros adivinharem.
+- Como uma conveniência, phpMussel permitirás certas funções (incluindo a capacidade de atualizando phpMussel remotamente) ao ser acionado manualmente através de POST, GET e QUERY. Mas, como medida de segurança, para fazer isso, phpMussel esperam uma senha para ser incluída com o comando, forma a garantir que é você, e não outra pessoa, tentando de acionar manualmente essas funções. Definir `script_password` para qualquer senha que você desejá usar. Se nenhuma senha for definida, o manual acionamento será desativado por padrão. Uso algo que você vai se lembrar, mas que é difícil por outros adivinharem.
 - Não tem influência em CLI modo.
 
 "logs_password"
@@ -783,7 +783,32 @@ Notar: Independentemente do nível de suspeita, todos os arquivos que estão na 
 "vt_quota_rate" e "vt_quota_time"
 - De acordo com o Virus Total API documentação, é limitada a, no máximo, 4 solicitações de qualquer natureza dentro qualquer 1 minuto período de tempo. Se você executar um honeyclient, honeypot ou qualquer outro automação que vai fornecer recursos para Virus Total e não só recuperar relatórios você tem direito a uma melhor solicitações cota. Por padrão, phpMussel vai aderir estritamente a estas limitações, mas, devido à possibilidade de essas cotas a ser aumentada, estas duas directivas são fornecidos como um meio para que você possa instruir phpMussel sobre o limite que deve aderir para. Excepto se tenha sido instruído a fazê-lo, não é recomendado para você aumentar esses valores, mas, se você encontrou problemas relacionados com a atingir sua cota, diminuir esses valores podem _**POR VEZES**_ ajudá-lo em lidar com estes problemas. Seu taxa limite é determinada como `vt_quota_rate` solicitações de qualquer natureza dentro qualquer `vt_quota_time` minuto período de tempo.
 
-####"template_data" (Category)
+####"urlscanner" (Categoria)
+URL scanner configuration.
+
+"urlscanner"
+- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the `urlscanner` directive to true; To disable it, set this directive to false.
+
+Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
+
+URL scanner API lookup configuration.
+
+"lookup_hphosts"
+- Enables API lookups to the [hpHosts](http://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
+
+"google_api_key"
+- Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
+
+"maximum_api_lookups"
+- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expediate the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
+
+"maximum_api_lookups_response"
+- What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Default]; True = Flag/block the file.
+
+"cache_time"
+- How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour).
+
+####"template_data" (Categoria)
 Directivas/Variáveis para modelos e temas.
 
 Template dados está associada com o HTML usado para gerar a "Carregar Negado" mensagem exibido aos usuários quandos arquivo carregamentos são bloqueados. Se você estiver usando temas personalizados para phpMussel, HTML é originado a partir do `template_custom.html` arquivo, e caso contrário, HTML é originado a partir do `template.html` arquivo. Variáveis escritas para esta seção do configuração arquivo são processado ao HTML via substituição de quaisquer nomes de variáveis cercado por colchetes encontrado dentro do HTML com os variáveis dados correspondentes. Por exemplo, onde `foo="bar"`, qualquer instância de `<p>{foo}</p>` encontrado dentro do HTML tornará `<p>bar</p>`.
@@ -951,4 +976,4 @@ Esta informação foi atualizada dia 7 Setembro 2015 e é corrente para todas ph
 ---
 
 
-Última Atualização: 4 Outubro 2015 (2015.10.04).
+Última Atualização: 16 Outubro 2015 (2015.10.16).

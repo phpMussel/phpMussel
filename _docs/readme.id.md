@@ -149,7 +149,7 @@ Mohon diingat bahwa phpMussel tidak sama dengan anti virus dan tidak seperti ant
 
 ###4A. <a name="SECTION4A"></a>PERINTAH-PERINTAH BROWSER
 
-Sekali phpMussel telah diinstal dan dengan benar berfungsi pada sistem Anda, jika Anda telah menset variabel script_password dan logs_password di dalam file konfigurasi Anda, Anda akan dapat melakukan sejumlah fungsi administratif dan memasukkan beberapa perintah ke phpMussel melalui browser Anda. Alasannya sandi-sandi harus diset untuk memungkinkan kontrol-kontrol dari sisi browser adalah untuk meyakinkan keamanan yang teratur, perlindungan teratur dari kontrol dari sisi browser dan memastikan bahwa ada cara untuk kontrol-kontrol untuk semuanya dinonaktifkan jika tidak diinginkan oleh Anda dan/atau webmaster/administrator menggunakan melalui phpMussel. Jadi dengan kata lain, untuk memungkinkan kontrol-kontrol ini, menset sandi dan menonaktifkan kontrol-kontrol ini, set tidak ada password. Alternatif lain, jika Anda memilih memungkinkan kontrol-kontrol ini dan kemudian memilih untuk menonaktifkan kontrol ini pada hari yang lain, ada perintah untuk melakukan ini (yang mana yang berguna jika Anda melakukan beberapa aksi yang Anda rasa dapat secara potensial berkompromi dengan password terdelegasi dan perlu untuk dengan cepat menonaktifkan kontrol-kontrol ini tanpa memodifikasi file konfigurasi Anda).
+Sekali phpMussel telah diinstal dan dengan benar berfungsi pada sistem Anda, jika Anda telah menset variabel `script_password` dan `logs_password` di dalam file konfigurasi Anda, Anda akan dapat melakukan sejumlah fungsi administratif dan memasukkan beberapa perintah ke phpMussel melalui browser Anda. Alasannya sandi-sandi harus diset untuk memungkinkan kontrol-kontrol dari sisi browser adalah untuk meyakinkan keamanan yang teratur, perlindungan teratur dari kontrol dari sisi browser dan memastikan bahwa ada cara untuk kontrol-kontrol untuk semuanya dinonaktifkan jika tidak diinginkan oleh Anda dan/atau webmaster/administrator menggunakan melalui phpMussel. Jadi dengan kata lain, untuk memungkinkan kontrol-kontrol ini, menset sandi dan menonaktifkan kontrol-kontrol ini, set tidak ada password. Alternatif lain, jika Anda memilih memungkinkan kontrol-kontrol ini dan kemudian memilih untuk menonaktifkan kontrol ini pada hari yang lain, ada perintah untuk melakukan ini (yang mana yang berguna jika Anda melakukan beberapa aksi yang Anda rasa dapat secara potensial berkompromi dengan password terdelegasi dan perlu untuk dengan cepat menonaktifkan kontrol-kontrol ini tanpa memodifikasi file konfigurasi Anda).
 
 Beberapa alasan mengapa Anda _**SEHARUSNYA**_ mengaktifkan kontrol-kontrol ini:
 - Menyediakan jalan untuk mewarnai biru tanda tangan secara langsung di dalam instansi-instansi seperti ketika Anda menemukan sebuah tanda tangan yang memproduksi sebuah angka positif yang salah selama mengupload file ke sistem Anda dan Anda tidak punya waktu untuk secara manual mengedit dan mengupload ulang file daftar abu-abu Anda.
@@ -183,7 +183,7 @@ scan_kills
 - Apa yang dilakukannya: Mencetak isi dari file scan_kills ke layar.
 
 controls_lockout
-- Sandi diharuskan: logs_password ATAU script_password
+- Sandi diharuskan: `logs_password` ATAU script_password
 - Keperluan lain: (tidak ada)
 - Parameter-parameter yang diharuskan: (tidak ada)
 - Parameter-parameter opsional: (tidak ada)
@@ -481,11 +481,11 @@ Berikut list variabel yang ditemukan pada file konfigurasi phpMussel `phpmussel.
 Konfigurasi umum dari phpMussel.
 
 "script_password"
-- Sebagai sebuah kenyamanan, phpMussel akan mengizinkan fungsi-fungsi tertentu (termasuk kemampuan mengupgrade phpMussel secara langsung) untuk secara manual dibangkitkan via POST, GET dan QUERY. Bagaimanapun, untuk alasan keamanan, untuk melakukan ini phpMussel akan mengharapkan sebuah sandi untuk diikutkan pada perintah, untuk memastikan bahwa itu Anda dan bukan orang lain, yang berusaha secara manual membangkitkan fungsi-fungsi ini. Set script_password untuk sandi apapun yang Anda mau gunakan. Jika tidak ada password diset, pembangkitan manual akan di non aktifkan secara default. Gunakan hal yang mudah Anda ingat tapi susah untuk orang lain hapal.
+- Sebagai sebuah kenyamanan, phpMussel akan mengizinkan fungsi-fungsi tertentu (termasuk kemampuan mengupgrade phpMussel secara langsung) untuk secara manual dibangkitkan via POST, GET dan QUERY. Bagaimanapun, untuk alasan keamanan, untuk melakukan ini phpMussel akan mengharapkan sebuah sandi untuk diikutkan pada perintah, untuk memastikan bahwa itu Anda dan bukan orang lain, yang berusaha secara manual membangkitkan fungsi-fungsi ini. Set `script_password` untuk sandi apapun yang Anda mau gunakan. Jika tidak ada password diset, pembangkitan manual akan di non aktifkan secara default. Gunakan hal yang mudah Anda ingat tapi susah untuk orang lain hapal.
 - Tidak memiliki pengaruh di dalam mode CLI.
 
 "logs_password"
-- Sama seperti script_password tapi untuk melihat semua isi dari scan_log dan scan_kills. Memiliki sandi yang lain dapat bergunan jika Anda ingin memberikan akses pada orang lain untuk mengakses dan menset fungsi tapi tidak yang lain.
+- Sama seperti `script_password` tapi untuk melihat semua isi dari scan_log dan scan_kills. Memiliki sandi yang lain dapat bergunan jika Anda ingin memberikan akses pada orang lain untuk mengakses dan menset fungsi tapi tidak yang lain.
 - Tidak memiliki pengaruh di dalam mode CLI.
 
 "cleanup"
@@ -783,7 +783,32 @@ Mencatat: Terlepas dari tingkat kecurigaan, setiap file yang masuk daftar hitam 
 "vt_quota_rate" dan "vt_quota_time"
 - Menurut Virus Total dokumentasi API, itu terbatas untuk paling 4 permintaan dalam bentuk apapun dalam jangka waktu 1 menit diberikan. Jika Anda menjalankan sebuah honeyclient, honeypot atau otomatisasi lainnya yang akan menyediakan file untuk VirusTotal dan tidak hanya mengambil laporan Anda berhak untuk kuota permintaan lebih tinggi. Secara default, phpMussel ketat akan mematuhi keterbatasan ini, tetapi karena kemungkinan kuota ini sedang meningkat, dua direktif ini yang disediakan sebagai sarana bagi Anda untuk menginstruksikan phpMussel tentang apa batas harus dipatuhi. Kecuali Anda telah diperintahkan untuk melakukannya, itu tidak direkomendasi bagi Anda untuk meningkat nilai-nilai ini, tetapi, jika Anda mengalami masalah berkaitan dengan mencapai kuota Anda, penurunan nilai-nilai ini kadang _**DAPAT**_ membantu Anda bagi berurusan dengan masalah-masalah ini. Batas Anda ditentukan sebagai `vt_quota_rate` permintaan dalam bentuk apapun dalam jangka waktu `vt_quota_time` menit.
 
-####"template_data" (Category)
+####"urlscanner" (Kategori)
+Konfigurasi scanner URL.
+
+"urlscanner"
+- Dibangun dalam phpMussel adalah scanner URL, mampu mendeteksi URL berbahaya dari dalam data atau file dipindai. Untuk mengaktifkan scanner URL, menset direktif `urlscanner` untuk true; Untuk menonaktifkan, menset direktif ini untuk false.
+
+Mencatat: Jika scanner URL dinonaktifkan, Anda tidak perlu meninjaunya direktif-direktif dalam kategori ini (`urlscanner`), karena tidak satupun dari mereka akan melakukan apa-apa jika ini dinonaktifkan.
+
+Konfigurasi scanner URL memeriksa API.
+
+"lookup_hphosts"
+- Memungkinkan pemeriksaan API ke [hpHosts](http://hosts-file.net/) API ketika diset untuk true. hpHosts tidak memerlukan kunci API untuk melakukan pemeriksaan API.
+
+"google_api_key"
+- Memungkinkan pemeriksaan API ke Google Safe Browsing API ketika kunci API diperlukan didefinisikan. Pemeriksaan Google Safe Browsing API memerlukan kunci API, diperoleh dari di [Sini](https://console.developers.google.com/).
+
+"maximum_api_lookups"
+- Jumlah maksimum pemeriksaan API melakukan per iterasi memindai individual. Karena setiap API pemeriksaan akan menambah tambahan waktu total dibutuhkan untuk menyelesaikan setiap iterasi pemindaian, Anda mungkin ingin menetapkan batasan untuk mempercepat proses pemindaian secara keseluruhan. Bila diset untuk 0, sejumlah maksimum tidak akan diterapkan. Diset untuk 10 secara default.
+
+"maximum_api_lookups_response"
+- Apa yang harus dilakukan jika jumlah maksimal pemeriksaan API dilampaui? False = Tidak melakukan apa-apa (melanjutkan pemrosesan) [Default]; True = Memblokir file.
+
+"cache_time"
+- Berapa lama (dalam detik) harus hasil API untuk disimpan dalam cache? Default adalah 3600 detik (1 jam).
+
+####"template_data" (Kategori)
 Direktif-direktif dan variabel-variabel untuk template-template dan tema-tema.
 
 File template berkaitan untuk HTML diproduksi yang digunakan untuk menghasilkan pesan "Upload Ditolak" yang ditampilkan kepada pengguna-pengguna ketika file upload yang diblokir. Jika Anda menggunakan tema kustom untuk phpMussel, HTML diproduksi yang bersumber dari file `template_custom.html`, dan sebaliknya, HTML diproduksi yang bersumber dari file `template.html`. Variabel ditulis untuk file konfigurasi bagian ini yang diurai untuk HTML diproduksi dengan cara mengganti nama-nama variabel dikelilingi dengan kurung keriting ditemukan dalam HTML diproduksi dengan file variabel sesuai. Sebagai contoh, dimana `foo="bar"`, setiap terjadinya `<p>{foo}</p>` ditemukan dalam HTML diproduksi akan menjadi `<p>bar</p>`.
@@ -951,4 +976,4 @@ Informasi ini diupdate 7 September 2015 dan cocok untuk semua rilis phpMussel da
 ---
 
 
-Terakhir Diperbarui: 4 Oktober 2015 (2015.10.04).
+Terakhir Diperbarui: 16 Oktober 2015 (2015.10.16).

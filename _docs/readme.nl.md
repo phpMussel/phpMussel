@@ -149,7 +149,7 @@ Eveneens, noteren dat phpMussel is niet de functionele equivalent van een comple
 
 ###4A. <a name="SECTION4A"></a>BROWSER RICHTLIJNEN
 
-Wanneer phpMussel is geïnstalleerd en correct functionerende op uw systeem, als u de script_password en logs_password variabelen heeft ingesteld in het configuratiebestand, u zult in staat om te presteren sommige beperkt aantal administratieve functies en input sommige aantal commando's naar phpMussel via uw browser. De reden dat deze wachtwoorden moeten worden ingesteld om te deze browser controles te worden ingeschakeld is om een goede veiligheid te verzekeren, een goede bescherming van deze browser controles en zodat er een manier voor deze browser controles te geheel uitgeschakeld worden als ze niet gewenst door jou en/of ander webmasters/beheerders gebruikmakend van phpMussel. Dus, in andere woorden, om deze controles te inschakelen, stel een wachtwoord, en om deze controles te uitschakelen, stel geen wachtwoord. Alternatief, als u kiezen om deze controles te inschakelen en dan kiezen om deze controles te uitschakelen op een toekomst tijdstip, er is een commando om dit te doen (zodanig kan nuttig zijn als u heeft actie te ondernemen met potentieel van om de gedelegeerde wachtwoorden te compromitteer en daarom moeten om deze controles te snel uitschakelen zonder uw configuratiebestand te modificeren).
+Wanneer phpMussel is geïnstalleerd en correct functionerende op uw systeem, als u de `script_password` en `logs_password` variabelen heeft ingesteld in het configuratiebestand, u zult in staat om te presteren sommige beperkt aantal administratieve functies en input sommige aantal commando's naar phpMussel via uw browser. De reden dat deze wachtwoorden moeten worden ingesteld om te deze browser controles te worden ingeschakeld is om een goede veiligheid te verzekeren, een goede bescherming van deze browser controles en zodat er een manier voor deze browser controles te geheel uitgeschakeld worden als ze niet gewenst door jou en/of ander webmasters/beheerders gebruikmakend van phpMussel. Dus, in andere woorden, om deze controles te inschakelen, stel een wachtwoord, en om deze controles te uitschakelen, stel geen wachtwoord. Alternatief, als u kiezen om deze controles te inschakelen en dan kiezen om deze controles te uitschakelen op een toekomst tijdstip, er is een commando om dit te doen (zodanig kan nuttig zijn als u heeft actie te ondernemen met potentieel van om de gedelegeerde wachtwoorden te compromitteer en daarom moeten om deze controles te snel uitschakelen zonder uw configuratiebestand te modificeren).
 
 Redenen voor deze controles te wordt ingeschakeld:
 - Biedt een manier om handtekeningen te greylist in gevallen zoals wanneer u ontdekken een handtekening dat is produceren van een vals-positieve tijdens het uploaden van bestanden naar uw systeem en u heeft geen tijd te handmatig bewerken en heruploaden uw greylist bestand.
@@ -183,7 +183,7 @@ scan_kills
 - Wat het doet: Drukt de inhoud van uw scan_kills bestand naar het scherm.
 
 controls_lockout
-- Wachtwoord vereist: logs_password OF script_password
+- Wachtwoord vereist: `logs_password` OF script_password
 - Andere vereisten: (geen)
 - Andere vereisten: (geen)
 - Optionele parameters: (geen)
@@ -481,7 +481,7 @@ Het volgende is een lijst van variabelen die in de `phpmussel.ini` configuratieb
 Algemene configuratie voor phpMussel.
 
 "script_password"
-- Voor het gemak, phpMussel zullen bepaalde functies toestaan (inclusief de mogelijkheid om actief update phpMussel) te handmatig worden geactiveerd via POST, GET en QUERY. Echter, als een veiligheidsmaatregel, om dit te doen, phpMussel zal verwachten een wachtwoord te worden opgenomen met het commando, te waarborgen dat het u, en niet iemand anders, dat is proberen te handmatig activeren deze functies. Zetten script_password aan de wachtwoord zou u willen te gebruiken. Als er geen wachtwoord ingesteld, handmatige gebruik door standaard wordt uitgeschakeld. Gebruik iets wat u zult herinneren, maar dat is moeilijk voor anderen te gissen.
+- Voor het gemak, phpMussel zullen bepaalde functies toestaan (inclusief de mogelijkheid om actief update phpMussel) te handmatig worden geactiveerd via POST, GET en QUERY. Echter, als een veiligheidsmaatregel, om dit te doen, phpMussel zal verwachten een wachtwoord te worden opgenomen met het commando, te waarborgen dat het u, en niet iemand anders, dat is proberen te handmatig activeren deze functies. Zetten `script_password` aan de wachtwoord zou u willen te gebruiken. Als er geen wachtwoord ingesteld, handmatige gebruik door standaard wordt uitgeschakeld. Gebruik iets wat u zult herinneren, maar dat is moeilijk voor anderen te gissen.
 - Heeft geen invloed in CLI-modus.
 
 "logs_password"
@@ -783,6 +783,31 @@ Noteren: Ongeacht van achterdocht niveau, elke bestanden die ofwel worden de zwa
 "vt_quota_rate" en "vt_quota_time"
 - Volgens de Virus Total API-documentatie, het is beperkt tot maximaal 4 verzoeken van welke aard in elk 1 minuut tijdsbestek. Als u een honeyclient, honeypot of andere automatisering te voorzien, dat gaat om middelen te verschaffen om VirusTotal en niet alleen rapporten opvragen heeft u recht op een hogere API-quotum. Normaal, phpMussel zal strikt houden aan deze beperkingen, maar vanwege de mogelijkheid van deze API-quotum verhoogd te worden, deze twee richtlijnen worden verstrekt als middel voor u om instrueren phpMussel wat limiet moeten houden worden. Tenzij u heeft geïnstrueerd om dit te doen, het is niet aan te raden voor u om deze waarden te verhogen, maar, als u heeft ondervonden problemen met betrekking tot uw tarief quota bereiken, afnemende deze waarden kunnen u soms helpen in het omgaan met deze problemen. Uw maximaal tarief bepaald als `vt_quota_rate` verzoeken van welke aard in elk `vt_quota_time` minuut tijdsbestek.
 
+####"urlscanner" (Categorie)
+URL scanner configuration.
+
+"urlscanner"
+- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the `urlscanner` directive to true; To disable it, set this directive to false.
+
+Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
+
+URL scanner API lookup configuration.
+
+"lookup_hphosts"
+- Enables API lookups to the [hpHosts](http://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
+
+"google_api_key"
+- Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
+
+"maximum_api_lookups"
+- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expediate the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
+
+"maximum_api_lookups_response"
+- What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Default]; True = Flag/block the file.
+
+"cache_time"
+- How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour).
+
 ####"template_data" (Categorie)
 Richtlijnen/Variabelen voor sjablonen en thema's.
 
@@ -951,4 +976,4 @@ Dit informatie werd laatst bijgewerkt 7 September 2015 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 18 September 2015 (2015.09.18).
+Laatste Bijgewerkt: 16 Oktober 2015 (2015.10.16).

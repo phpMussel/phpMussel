@@ -17,11 +17,12 @@
 
 
 ###1. <a name="SECTION1"></a>前言
-谢谢使用phpMussel，这是一个根据ClamAV的签名和其他签名在上传完成后来自动检测木马/病毒/恶意软件和其他可能威胁到您系统安全的文件的php脚本
 
-PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).。
+谢谢使用phpMussel，这是一个根据ClamAV的签名和其他签名在上传完成后来自动检测木马/病毒/恶意软件和其他可能威胁到您系统安全的文件的PHP脚本。
 
-本脚本是基于GNU通用许可V2.0版许可协议发布的，您可以在许可协议的允许范围内自行修改和发布，但请遵守GNU通用许可协议。使用脚本的过程中，作者不提供任何担保和任何隐含担保。更多的细节请参见GNU通用公共许可证，位于——doc文件夹下的LICENSE`文件也可从访问：
+PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
+
+本脚本是基于GNU通用许可V2.0版许可协议发布的，您可以在许可协议的允许范围内自行修改和发布，但请遵守GNU通用许可协议。使用脚本的过程中，作者不提供任何担保和任何隐含担保。更多的细节请参见GNU通用公共许可证，位于`_docs`文件夹下的`LICENSE`文件也可从访问：
 - <http://www.gnu.org/licenses/>。
 - <http://opensource.org/licenses/>。
 
@@ -29,7 +30,7 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).。
 
 谢谢Sourceforge和GitHub开通了，[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)phpMussel的讨论论坛，谢谢为phpMussel提供签名文件的：[SecuriteInfo.com](http://www.securiteinfo.com/)，[PhishTank](http://www.phishtank.com/)，[NLNetLabs](http://nlnetlabs.nl/)，还有更多的我忘了提及的人（抱歉，语文水平有限，这句话实在不知道怎么翻译才通顺）。
 
-现在PHPmussel的代码文件和关联包可以从以下地址免费下载下载免费：
+现在phpMussel的代码文件和关联包可以从以下地址免费下载下载免费：
 - [Sourceforge](http://phpmussel.sourceforge.net/)。
 - [GitHub](https://github.com/Maikuolan/phpMussel/)。
 
@@ -782,6 +783,31 @@ VirusTotal.com指令。
 “vt_quota_rate”和“vt_quota_time”
 - 根据｢Virus Total API｣阅读材料，它是限于最大的`4`请求的任何类型在任​​何`1`分钟大体时间。如果您经营一个“honeyclient”，蜜罐或任何其他自动化将会提供资源为VirusTotal和不只取回报告您是有权一个更高请求率配额。作为标准，phpMussel将严格的坚持这些限制，但因为可能性的这些率配额被增加，这些二指令是提供为您指示phpMussel为什么限它应坚持。除非您是指示这样做，它是不推荐为您增加这些数值，但，如果您遇到问题相关的到达您的率配额，减少这些数值可能有时帮助您解析这些问题。您的率限是决定作为`vt_quota_rate`请求的任何类型在任​​何`vt_quota_time`分钟大体时间。
 
+####"urlscanner" （类别）
+URL scanner configuration.
+
+"urlscanner"
+- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the `urlscanner` directive to true; To disable it, set this directive to false.
+
+Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
+
+URL scanner API lookup configuration.
+
+"lookup_hphosts"
+- Enables API lookups to the [hpHosts](http://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
+
+"google_api_key"
+- Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
+
+"maximum_api_lookups"
+- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expediate the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
+
+"maximum_api_lookups_response"
+- What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Default]; True = Flag/block the file.
+
+"cache_time"
+- How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour).
+
 ####"template_data" （类别）
 指令和变量为模板和主题。
 
@@ -895,61 +921,61 @@ VirusTotal.com指令。
 
 | 扫描器               |  结果                                 |
 |----------------------|--------------------------------------|
-| Ad-Aware             |  无冲突                       |
-| Agnitum              |  无冲突                       |
-| AhnLab-V3            |  无冲突                       |
-| AntiVir              |  无冲突                       |
-| Antiy-AVL            |  无冲突                       |
-| Avast                |  报告 "JS:ScriptSH-inf [Trj]"        |
-| AVG                  |  无冲突                       |
-| Baidu-International  |  无冲突                       |
-| BitDefender          |  无冲突                       |
-| Bkav                 |  报告 "VEXDAD2.Webshell"             |
-| ByteHero             |  无冲突                       |
-| CAT-QuickHeal        |  无冲突                       |
-| ClamAV               |  无冲突                       |
-| CMC                  |  无冲突                       |
-| Commtouch            |  无冲突                       |
-| Comodo               |  无冲突                       |
-| DrWeb                |  无冲突                       |
-| Emsisoft             |  无冲突                       |
-| ESET-NOD32           |  无冲突                       |
-| F-Prot               |  无冲突                       |
-| F-Secure             |  无冲突                       |
-| Fortinet             |  无冲突                       |
-| GData                |  无冲突                       |
-| Ikarus               |  无冲突                       |
-| Jiangmin             |  无冲突                       |
-| K7AntiVirus          |  无冲突                       |
-| K7GW                 |  无冲突                       |
-| Kaspersky            |  无冲突                       |
-| Kingsoft             |  无冲突                       |
-| Malwarebytes         |  无冲突                       |
-| McAfee               |  报告 "New Script.c"                 |
-| McAfee-GW-Edition    |  报告 "New Script.c"                 |
-| Microsoft            |  无冲突                       |
-| MicroWorld-eScan     |  无冲突                       |
-| NANO-Antivirus       |  无冲突                       |
-| Norman               |  无冲突                       |
-| nProtect             |  无冲突                       |
-| Panda                |  无冲突                       |
-| Qihoo-360            |  无冲突                       |
-| Rising               |  无冲突                       |
-| Sophos               |  无冲突                       |
-| SUPERAntiSpyware     |  无冲突                       |
-| Symantec             |  无冲突                       |
-| TheHacker            |  无冲突                       |
-| TotalDefense         |  无冲突                       |
-| TrendMicro           |  无冲突                       |
-| TrendMicro-HouseCall |  无冲突                       |
-| VBA32                |  无冲突                       |
-| VIPRE                |  无冲突                       |
-| ViRobot              |  无冲突                       |
+| Ad-Aware             |  无冲突 |
+| Agnitum              |  无冲突 |
+| AhnLab-V3            |  无冲突 |
+| AntiVir              |  无冲突 |
+| Antiy-AVL            |  无冲突 |
+| Avast                |  报告 "JS:ScriptSH-inf [Trj]" |
+| AVG                  |  无冲突 |
+| Baidu-International  |  无冲突 |
+| BitDefender          |  无冲突 |
+| Bkav                 |  报告 "VEXDAD2.Webshell" |
+| ByteHero             |  无冲突 |
+| CAT-QuickHeal        |  无冲突 |
+| ClamAV               |  无冲突 |
+| CMC                  |  无冲突 |
+| Commtouch            |  无冲突 |
+| Comodo               |  无冲突 |
+| DrWeb                |  无冲突 |
+| Emsisoft             |  无冲突 |
+| ESET-NOD32           |  无冲突 |
+| F-Prot               |  无冲突 |
+| F-Secure             |  无冲突 |
+| Fortinet             |  无冲突 |
+| GData                |  无冲突 |
+| Ikarus               |  无冲突 |
+| Jiangmin             |  无冲突 |
+| K7AntiVirus          |  无冲突 |
+| K7GW                 |  无冲突 |
+| Kaspersky            |  无冲突 |
+| Kingsoft             |  无冲突 |
+| Malwarebytes         |  无冲突 |
+| McAfee               |  报告 "New Script.c" |
+| McAfee-GW-Edition    |  报告 "New Script.c" |
+| Microsoft            |  无冲突 |
+| MicroWorld-eScan     |  无冲突 |
+| NANO-Antivirus       |  无冲突 |
+| Norman               |  无冲突 |
+| nProtect             |  无冲突 |
+| Panda                |  无冲突 |
+| Qihoo-360            |  无冲突 |
+| Rising               |  无冲突 |
+| Sophos               |  无冲突 |
+| SUPERAntiSpyware     |  无冲突 |
+| Symantec             |  无冲突 |
+| TheHacker            |  无冲突 |
+| TotalDefense         |  无冲突 |
+| TrendMicro           |  无冲突 |
+| TrendMicro-HouseCall |  无冲突 |
+| VBA32                |  无冲突 |
+| VIPRE                |  无冲突 |
+| ViRobot              |  无冲突 |
 
 
 ---
 
 
-最后更新：2015年9月18日。
+最后更新：2015年10月16日。
 
 翻译声明：本文档翻译基于英文原始文档，但由于本人水平有限，且非php程序员，对其中某些字词的翻译可能不是很准确，故如果出现错误，请指出并联系原作者予以更正，另外，本翻译仅简体中文，与繁体中文无关亦未参考繁体中文的译文！！

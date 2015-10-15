@@ -1456,6 +1456,37 @@
      quota, decreasing these values -may- sometimes help you in dealing with
      these problems. Your rate limit is determined as "vt_quota_rate" requests
      of any nature in any given "vt_quota_time" minute time frame.
+ "urlscanner" (Category)
+ - URL scanner configuration.
+   "urlscanner"
+   - Built into phpMussel is a URL scanner, capable of detecting malicious URLs
+     from within any data or files scanned. To enable the URL scanner, set the
+     "urlscanner" directive to true; To disable it, set this directive to
+     false.
+   Note: If the URL scanner is disabled, you won't need to review any of the
+   directives in this category ("urlscanner"), because none of them will do
+   anything if this is disabled.
+ - URL scanner API lookup configuration.
+   "lookup_hphosts"
+   - Enables API lookups to the hpHosts API <http://hosts-file.net/> when set
+     to true. hpHosts doesn't require an API key for performing API lookups.
+   "google_api_key"
+   - Enables API lookups to the Google Safe Browsing API when the necessary API
+     key is defined. Google Safe Browsing API lookups requires an API key,
+     which can be obtained from <https://console.developers.google.com/>.
+   "maximum_api_lookups"
+   - Maximum allowable number of API lookups to perform per individual scan
+     iteration. Because each additional API lookup will add to the total time
+     required to complete each scan iteration, you may wish to stipulate a
+     limitation in order to expediate the overall scan process. When set to 0,
+     no such maximum allowable number will be applied. Set to 10 by default.
+   "maximum_api_lookups_response"
+   - What to do if the maximum allowable number of API lookups is exceeded?
+     False = Do nothing (continue processing) [Default];
+     True = Flag/block the file.
+   "cache_time"
+   - How long (in seconds) should the results of API lookups be cached for?
+     Default is 3600 seconds (1 hour).
  "template_data" (Category)
  - Directives/Variables for templates and themes: Template data relates to the
    HTML output used to generate the "Upload Denied" message displayed to users
@@ -1698,5 +1729,5 @@
                                      ~ ~ ~
 
 
-Lần cuối cập nhật: 4 Tháng Mười 2015 (2015.10.04).
+Lần cuối cập nhật: 16 Tháng Mười 2015 (2015.10.16).
 EOF

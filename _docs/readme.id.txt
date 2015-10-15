@@ -1537,7 +1537,40 @@
      nilai-nilai ini kadang -DAPAT- membantu Anda bagi berurusan dengan
      masalah-masalah ini. Batas Anda ditentukan sebagai "vt_quota_rate"
      permintaan dalam bentuk apapun dalam jangka waktu "vt_quota_time" menit.
- "template_data" (Category)
+ "urlscanner" (Kategori)
+ - Konfigurasi scanner URL.
+   "urlscanner"
+   - Dibangun dalam phpMussel adalah scanner URL, mampu mendeteksi URL
+     berbahaya dari dalam data atau file dipindai. Untuk mengaktifkan scanner
+     URL, menset direktif "urlscanner" untuk true; Untuk menonaktifkan, menset
+     direktif ini untuk false.
+   Mencatat: Jika scanner URL dinonaktifkan, Anda tidak perlu meninjaunya
+   direktif-direktif dalam kategori ini ("urlscanner"), karena tidak satupun
+   dari mereka akan melakukan apa-apa jika ini dinonaktifkan.
+ - Konfigurasi scanner URL memeriksa API.
+   "lookup_hphosts"
+   - Memungkinkan pemeriksaan API ke hpHosts API <http://hosts-file.net/>
+     ketika diset untuk true. hpHosts tidak memerlukan kunci API untuk
+     melakukan pemeriksaan API.
+   "google_api_key"
+   - Memungkinkan pemeriksaan API ke Google Safe Browsing API ketika kunci API
+     diperlukan didefinisikan. Pemeriksaan Google Safe Browsing API memerlukan
+     kunci API, diperoleh dari <https://console.developers.google.com/>.
+   "maximum_api_lookups"
+   - Jumlah maksimum pemeriksaan API melakukan per iterasi memindai individual.
+     Karena setiap API pemeriksaan akan menambah tambahan waktu total
+     dibutuhkan untuk menyelesaikan setiap iterasi pemindaian, Anda mungkin
+     ingin menetapkan batasan untuk mempercepat proses pemindaian secara
+     keseluruhan. Bila diset untuk 0, sejumlah maksimum tidak akan diterapkan.
+     Diset untuk 10 secara default.
+   "maximum_api_lookups_response"
+   - Apa yang harus dilakukan jika jumlah maksimal pemeriksaan API dilampaui?
+     False = Tidak melakukan apa-apa (melanjutkan pemrosesan) [Default];
+     True = Memblokir file.
+   "cache_time"
+   - Berapa lama (dalam detik) harus hasil API untuk disimpan dalam cache?
+     Default adalah 3600 detik (1 jam).
+ "template_data" (Kategori)
  - Direktif-direktif dan variabel-variabel untuk template-template dan
    tema-tema: File template berkaitan untuk HTML diproduksi yang digunakan
    untuk menghasilkan pesan "Upload Ditolak" yang ditampilkan kepada
@@ -1788,5 +1821,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 4 Oktober 2015 (2015.10.04).
+Terakhir Diperbarui: 16 Oktober 2015 (2015.10.16).
 EOF
