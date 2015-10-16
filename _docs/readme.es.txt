@@ -1654,7 +1654,7 @@
    Todos Whitelist firmas seguir el formato:
     HASH:TAMAÑO:TIPO
    Donde HASH es el MD5 hash de un entero archivo, TAMAÑO es el total tamaño de
-   eso archivo y TIPO es el tipo of firmas el archivo en la whitelist es estar
+   eso archivo y TIPO es el tipo de firmas el archivo en la whitelist es estar
    inmune contra.
 
  = COMPLEJOS EXTENDIDAS FIRMAS =

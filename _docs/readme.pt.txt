@@ -194,12 +194,11 @@
  Análise dos arquivos carregamentos é automatizado e ativado por padrão, por
  isso nada é exigido por você por essa particular função.
 
- Porém, você também é capaz de instruir phpMussel para verificar específicos
- arquivos e/ou diretórios. Para fazer isso, em primeiro lugar, você vai
- precisar para assegurar que apropriada configuração é definida no
- "phpmussel.ini" arquivo (cleanup deve ser desativado), e quando feito, em um
- PHP arquivo que está enganchado ao phpMussel, usar a seguinte função no seu
- código:
+ Porém, você também é capaz de instruir phpMussel para verificar arquivos e/ou
+ diretórios específicos. Para fazer isso, em primeiro lugar, você vai precisar
+ para assegurar que configuração apropriada é definida no "phpmussel.ini"
+ arquivo (cleanup deve ser desativado), e quando feito, em um PHP arquivo que
+ está enganchado ao phpMussel, usar a seguinte função no seu código:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
 
@@ -303,15 +302,15 @@
 
  Por favor, consulte ao "COMO INSTALAR (PARA CLI)" seção deste README arquivo.
 
- Esteja ciente de que, embora futuras versões do phpMussel deve apoiar outros
- sistemas, at this time, phpMussel CLI modo suporte só é otimizado para uso em
+ Esteja ciente de que, embora versões futuras do phpMussel deve apoiar sistemas
+ outros, neste momento, phpMussel CLI modo suporte só é otimizado para uso em
  sistemas baseados no Windows (você pode, é claro, experimentá-lo em outros
  sistemas, mas eu não posso garantir que vai funcionar como pretendido).
 
  Também estar ciente de que phpMussel não é o funcional equivalente de um
- completa antivírus suíte, e contrário de convencionais antivírus suítes, não
+ completa antivírus suíte, e contrário de antivírus suítes convencionais, não
  monitora ativa memória ou detectar vírus proativamente! Ele só irá detectar
- vírus contidos por esses específicos arquivos que você explicitamente diga a
+ vírus contidos por esses arquivos específicos que você explicitamente diga a
  ele analisar.
 
                                      ~ ~ ~
@@ -1408,21 +1407,22 @@
  "heuristic" (Categoria)
  - Heurísticos directivas para phpMussel.
    "threshold"
-   - Há específicas assinaturas de phpMussel para identificando suspeitas e
-     potencialmente maliciosos qualidades dos arquivos que estão sendo
+   - Existem assinaturas específicas de phpMussel para identificando suspeitas
+     e qualidades potencialmente maliciosos dos arquivos que estão sendo
      carregados sem por si só identificando aqueles arquivos que estão sendo
      carregados especificamente como sendo maliciosos. Este "threshold"
      (limiar) valor instrui phpMussel o que o total máximo peso de suspeitas e
-     potencialmente maliciosos qualidades dos arquivos que estão sendo
+     qualidades potencialmente maliciosos dos arquivos que estão sendo
      carregados que é permitida é antes que esses arquivos devem ser sinalizada
-     como maliciosos. A definição de peso neste contexto é o total número de
-     suspeitas e potencialmente maliciosos qualidades identificado. Por padrão,
+     como maliciosos. A definição de peso neste contexto é o número total de
+     suspeitas e qualidades potencialmente maliciosos identificado. Por padrão,
      este valor será definido como 3. Um menor valor geralmente resultará em
-     uma maior ocorrência de falsos positivos mas um maior número de maliciosos
-     arquivos sendo sinalizado, enquanto um maior valor geralmente resultará em
-     uma menor ocorrência de falsos positivos mas um menor número de maliciosos
-     arquivos sendo sinalizado. é geralmente melhor a deixar esse valor em seu
-     padrão a menos que você está enfrentando problemas relacionados a ela.
+     uma maior ocorrência de falsos positivos mas um maior número de arquivos
+     maliciosos sendo sinalizado, enquanto um maior valor geralmente resultará
+     em uma menor ocorrência de falsos positivos mas um menor número de
+     arquivos maliciosos sendo sinalizado. É geralmente melhor a deixar esse
+     valor em seu padrão a menos que você está enfrentando problemas
+     relacionados a ela.
  "virustotal" (Categoria)
  - Configuração para Virus Total integração.
    "vt_public_api_key"
@@ -1508,7 +1508,7 @@
      API como detecções ou como detecção ponderação? Esta directiva existe,
      porque, embora verificando um arquivo usando múltiplos mecanismos (como
      Virus Total faz) deve resultar em um aumento da taxa de detecção (e por
-     conseguinte em um maior número de maliciosos arquivos detectados), isto
+     conseguinte em um maior número de arquivos maliciosos detectados), isto
      também pode resultar em um aumento número de falsos positivos, e por
      conseguinte, em algumas circunstâncias, os resultados de análise pode ser
      melhor utilizado como uma pontuação de confiança e não como uma conclusão
@@ -1541,36 +1541,38 @@
      determinada como "vt_quota_rate" solicitações de qualquer natureza dentro
      qualquer "vt_quota_time" minuto período de tempo.
  "urlscanner" (Categoria)
- - URL scanner configuration.
+ - URL analisador configuração.
    "urlscanner"
-   - Built into phpMussel is a URL scanner, capable of detecting malicious URLs
-     from within any data or files scanned. To enable the URL scanner, set the
-     "urlscanner" directive to true; To disable it, set this directive to
-     false.
-   Note: If the URL scanner is disabled, you won't need to review any of the
-   directives in this category ("urlscanner"), because none of them will do
-   anything if this is disabled.
- - URL scanner API lookup configuration.
+   - Construído em phpMussel é um URL analisador, capaz de detectar URLs
+     maliciosos dentro de todos os dados ou arquivos analisados. Para habilitar
+     o URL analisador, definir a diretiva "urlscanner" para true; Para
+     desativá-lo, definir esta diretiva para false.
+   Notar: Se o URL analisador é desativado, você não terá que rever alguma das
+   directivas nesta categoria ("urlscanner"), porque nenhum deles fará de tudo
+   se este é desativado.
+ - URL analisador API uso configuração.
    "lookup_hphosts"
-   - Enables API lookups to the hpHosts API <http://hosts-file.net/> when set
-     to true. hpHosts doesn't require an API key for performing API lookups.
+   - Permite o uso do hpHosts API <http://hosts-file.net/> quando definido para
+     true. hpHosts não requer uma API chave para o uso de sua API.
    "google_api_key"
-   - Enables API lookups to the Google Safe Browsing API when the necessary API
-     key is defined. Google Safe Browsing API lookups requires an API key,
-     which can be obtained from <https://console.developers.google.com/>.
+   - Permite o uso do Google Safe Browsing API quando a API chave necessária
+     está definida. Para o uso de sua API, Google Safe Browsing API requerer
+     uma API chave, que pode ser obtido a partir de
+     <https://console.developers.google.com/>.
    "maximum_api_lookups"
-   - Maximum allowable number of API lookups to perform per individual scan
-     iteration. Because each additional API lookup will add to the total time
-     required to complete each scan iteration, you may wish to stipulate a
-     limitation in order to expediate the overall scan process. When set to 0,
-     no such maximum allowable number will be applied. Set to 10 by default.
+   - Número máximo admissível de API solicitações para executar por cada
+     iteração de análise. Porque cada API solicitação adicional irá acrescentar
+     ao tempo total necessário para completar cada iteração de análise, você
+     pode querer estipular uma limitação a fim de acelerar o processo de
+     análise. Quando definido para 0, nenhuma número máximo admissível será
+     aplicada. Definido para 10 por padrão.
    "maximum_api_lookups_response"
-   - What to do if the maximum allowable number of API lookups is exceeded?
-     False = Do nothing (continue processing) [Default];
-     True = Flag/block the file.
+   - Que fazer se o número máximo admissível de API solicitações está
+     ultrapassado? False = Fazer nada (continuar o processamento) [Padrão];
+     True = Marcar/bloquear o arquivo.
    "cache_time"
-   - How long (in seconds) should the results of API lookups be cached for?
-     Default is 3600 seconds (1 hour).
+   - Quanto tempo (em segundos) devem os resultados da API ser armazenados em
+     cache? Padrão é 3600 segundos (1 hora).
  "template_data" (Categoria)
  - Directivas/Variáveis para modelos e temas: Template dados está associada com
    o HTML usado para gerar a "Carregar Negado" mensagem exibido aos usuários

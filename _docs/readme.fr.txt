@@ -480,7 +480,7 @@
  greylist
    Mot de passe requis: script_password
    Autre exigences: (aucun)
-   Paramètres requis: [Name of signature to be greylisted]
+   Paramètres requis: [Nom de la signature à greylist]
    Optional parameters: (aucun)
    Exemple: ?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]
    ~
@@ -1646,7 +1646,7 @@
     NOM:TAILLE:CRC32
    Où NOM est le nom à citer pour la signature, TAILLE est la totale taille
    (non compressé) d'un fichier contenues dans l'archive et CRC32 est la CRC32
-   contrôle somme of de ce fichier contenu.
+   contrôle somme de ce fichier contenu.
 
  = PE SECTIONAL SIGNATURES =
    Toutes les PE Sectional signatures suivez le format:
