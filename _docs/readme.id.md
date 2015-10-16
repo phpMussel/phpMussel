@@ -93,7 +93,7 @@ phpMussel dimaksudkan sebagai sebuah skrip yang akan berfungsi dengan baik denga
 
 Memindai upload file secara automatis dan di mungkinkan secara default, jadi tidak ada yang diharuskan pada Anda untuk fungsi ini.
 
-Bagaimanapun, Anda juga bisa menginstruksikan phpMussel untuk memindai file, direktori dan/atau arsip spesifik. Untuk melakukannya, pertama-tama Anda harus memastikan konfigurasi yang cocok diset di file `phpmussel.ini` (`cleanup` harus dinon aktifkan) dan ketika selesai, di sebuah file PHP yang di hubungkan ke phpMussel, gunakan fungsi berikut pada kode Anda:
+Bagaimanapun, Anda juga bisa menginstruksikan phpMussel untuk memindai file, direktori dan/atau arsip spesifik. Untuk melakukannya, pertama-tama Anda harus memastikan konfigurasi yang cocok diset di file `phpmussel.ini` (`cleanup` harus dinonaktifkan) dan ketika selesai, di sebuah file PHP yang di hubungkan ke phpMussel, gunakan fungsi berikut pada kode Anda:
 
 `phpMussel($what_to_scan,$output_type,$output_flatness);`
 
@@ -167,7 +167,7 @@ Cara lain, tanpa bergantung dengan apa yang Anda pilih, pilihan adalah milik And
 Daftar dari perintah-perintah dari sisi browser:
 
 scan_log
-- Sandi diharuskan: logs_password
+- Sandi diharuskan: `logs_password`
 - Keperluan lain: scan_log harus didefinisikan.
 - Parameter-parameter yang diharuskan: (tidak ada)
 - Parameter-parameter opsional: (tidak ada)
@@ -175,7 +175,7 @@ scan_log
 - Apa yang dilakukannya: Mencetak isi dari file scan_log ke layar.
 
 scan_kills
-- Sandi diharuskan: logs_password
+- Sandi diharuskan: `logs_password`
 - Keperluan lain: scan_kills harus didefinisikan.
 - Parameter-parameter yang diharuskan: (tidak ada)
 - Parameter-parameter opsional: (tidak ada)
@@ -183,7 +183,7 @@ scan_kills
 - Apa yang dilakukannya: Mencetak isi dari file scan_kills ke layar.
 
 controls_lockout
-- Sandi diharuskan: `logs_password` ATAU script_password
+- Sandi diharuskan: `logs_password` ATAU `script_password`
 - Keperluan lain: (tidak ada)
 - Parameter-parameter yang diharuskan: (tidak ada)
 - Parameter-parameter opsional: (tidak ada)
@@ -192,7 +192,7 @@ controls_lockout
 - Apa yang dilakukannya: Menonaktifkan ("Mengunci") semua kontrol dari sisi browser. Ini seharusnya digunakan jika Anda menyangka bahwa sandi-dandi telah dikompromikan (ini dapat terjadi jika Anda sedang menggunakan kontrol-kontrol ini dari sebuah komputer yang tidak aman dan/atau tidak terpercaya). controls_lockout bekerja dengan menciptakan sebuah file, `controls.lck`, di dalam vault Anda, yang mana phpMussel akan mencek sebelum melakukan perintah-perintah apapun. Setelah ini terjadi, untuk kembali mengaktifkan kontrol-kontrol, Anda akan memerlukan untuk menghapus file `controls.lck` via FTP atau sejenisnya. Dapat dipanggil melalui sandi.
 
 disable
-- Sandi diharuskan: script_password
+- Sandi diharuskan: `script_password`
 - Keperluan lain: (tidak ada)
 - Parameter-parameter yang diharuskan: (tidak ada)
 - Parameter-parameter opsional: (tidak ada)
@@ -200,7 +200,7 @@ disable
 - Apa yang dilakukannya: Menonaktifkan phpMussel. Ini harusnya digunakan jika Anda melakukan update apapun atau perubahan ke sistem Anda atau jika Anda menginstall software baru apapun atau modul ke sistem yang melakukan atau secara potensial dapat menyebabkan angka positif salah. Ini harusnya juga digunakan jika Anda memiliki masalah-masalah dengan phpMussel tapi tidak ingin menghapus nya dari sistem. Sekali ini terjadi aktifkan kembali phpMussel, gunakan "enable".
 
 enable
-- Sandi diharuskan: script_password
+- Sandi diharuskan: `script_password`
 - Keperluan lain: (tidak ada)
 - Parameter-parameter yang diharuskan: (tidak ada)
 - Parameter-parameter opsional: (tidak ada)
@@ -208,7 +208,7 @@ enable
 - Apa yang dilakukannya: Mengaktifkan phpMussel. Ini dapat digunakan jika Anda sebelumnya menonaktifkan phpMussel menggunakan "disable" dan ingin mengaktifkannya lagi.
 
 update
-- Sandi diharuskan: script_password
+- Sandi diharuskan: `script_password`
 - Keperluan lain: `update.dat` dan `update.inc` harus ada.
 - Parameter-parameter yang diharuskan: (tidak ada)
 - Parameter-parameter opsional: (tidak ada)
@@ -216,7 +216,7 @@ update
 - Apa yang dilakukannya: Cek untuk mengupdate ke phpMussel dan tanda tangannya. Jika update cek sukses dan update ditemukan, akan berusaha mendownload dan menginstall update-update ini. Jika update cek gagal, update akan berhenti. Hasil-hasil dari keseluruhan proses akan di cetak ke layar. Saya rekomendasikan mencek setidaknya satu per bulan untuk memastikan tanda tangan Anda dan kopi dari phpMussel Anda yang terkini (kecuali jika, tentu saja Anda mencek update dan menginstall secara manual, yang, saya masih merekomendasikan melakukannya setidaknya satu per bulan). Mencek lebih dari 2 per bulan kemungkinan tidak bertujuan, mengingat bahwa saya mungkin tidak sangat bisa memproduksi update lebih sering dari itu (walaupun saya khususnya ingin melakukannya).
 
 greylist
-- Sandi diharuskan: script_password
+- Sandi diharuskan: `script_password`
 - Keperluan lain: (tidak ada)
 - Parameter-parameter yang diharuskan: [Tanda tangan nama menjadi bertanda abu-abu]
 - Parameter-parameter opsional: (tidak ada)
@@ -224,7 +224,7 @@ greylist
 - Apa yang dilakukannya: Menambah tanda tangan pada daftar abu-abu.
 
 greylist_clear
-- Sandi diharuskan: script_password
+- Sandi diharuskan: `script_password`
 - Keperluan lain: (tidak ada)
 - Parameter-parameter yang diharuskan: (tidak ada)
 - Parameter-parameter opsional: (tidak ada)
@@ -232,7 +232,7 @@ greylist_clear
 - Apa yang dilakukannya: Membersihkan keseluruhan daftar abu-abu.
 
 greylist_show
-- Sandi diharuskan: script_password
+- Sandi diharuskan: `script_password`
 - Keperluan lain: (tidak ada)
 - Parameter-parameter yang diharuskan: (tidak ada)
 - Parameter-parameter opsional: (tidak ada)
@@ -285,12 +285,12 @@ Data                                       | Deskripsi
 /_docs/readme.zh-TW.md                     | Dokumentasi: 中文（傳統）
 /_docs/signatures_tally.txt                | Perhitungan dari diikutkan tanda tangan (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /_testfiles/                               | Direktori test file-file (berisi bermacam file). Semua file-file berisikan di dalamnya adalah file test untuk testing jika phpMussel dengan benar diinstal pada sistem, dan Anda tidak perlu mengupload direktori ini atau file-filenya jika melakukan testing.
-/_testfiles/ascii_standard_testfile.txt    | File test untuk mentest tanda tangan ASCII normal phpMussel.
+/_testfiles/ascii_standard_testfile.txt    | File test untuk mentest tanda tangan ASCII dinormalisasi phpMussel.
 /_testfiles/coex_testfile.rtf              | File test untuk mentest tanda tangan diperpanjang kompleks phpMussel.
 /_testfiles/exe_standard_testfile.exe      | File test untuk mentest tanda tangan PE phpMussel.
 /_testfiles/general_standard_testfile.txt  | File test untuk mentest tanda tangan umum phpMussel.
 /_testfiles/graphics_standard_testfile.gif | File test untuk mentest tanda tangan grafis phpMussel.
-/_testfiles/html_standard_testfile.txt     | File test untuk mentest tanda tangan HTML normal phpMussel.
+/_testfiles/html_standard_testfile.txt     | File test untuk mentest tanda tangan HTML dinormalisasi phpMussel.
 /_testfiles/md5_testfile.txt               | File test untuk mentest tanda tangan MD5 phpMussel.
 /_testfiles/metadata_testfile.tar          | File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest file support TAR pada sistem Anda.
 /_testfiles/metadata_testfile.txt.gz       | File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest file support GZ pada sistem Anda.
@@ -321,14 +321,14 @@ Data                                       | Deskripsi
 /vault/quarantine/                         | Direktori Karantina (berisikan file yang dikarantina).
 /vault/quarantine/.htaccess                | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/.htaccess                           | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/ascii_clamav_regex.cvd              | File untuk tanda tangan ASCII normal.
-/vault/ascii_clamav_regex.map              | File untuk tanda tangan ASCII normal.
-/vault/ascii_clamav_standard.cvd           | File untuk tanda tangan ASCII normal.
-/vault/ascii_clamav_standard.map           | File untuk tanda tangan ASCII normal.
-/vault/ascii_custom_regex.cvd              | File untuk tanda tangan ASCII normal.
-/vault/ascii_custom_standard.cvd           | File untuk tanda tangan ASCII normal.
-/vault/ascii_mussel_regex.cvd              | File untuk tanda tangan ASCII normal.
-/vault/ascii_mussel_standard.cvd           | File untuk tanda tangan ASCII normal.
+/vault/ascii_clamav_regex.cvd              | File untuk tanda tangan ASCII dinormalisasi.
+/vault/ascii_clamav_regex.map              | File untuk tanda tangan ASCII dinormalisasi.
+/vault/ascii_clamav_standard.cvd           | File untuk tanda tangan ASCII dinormalisasi.
+/vault/ascii_clamav_standard.map           | File untuk tanda tangan ASCII dinormalisasi.
+/vault/ascii_custom_regex.cvd              | File untuk tanda tangan ASCII dinormalisasi.
+/vault/ascii_custom_standard.cvd           | File untuk tanda tangan ASCII dinormalisasi.
+/vault/ascii_mussel_regex.cvd              | File untuk tanda tangan ASCII dinormalisasi.
+/vault/ascii_mussel_standard.cvd           | File untuk tanda tangan ASCII dinormalisasi.
 /vault/coex_clamav.cvd                     | File untuk tanda tangan diperpanjang kompleks.
 /vault/coex_custom.cvd                     | File untuk tanda tangan diperpanjang kompleks.
 /vault/coex_mussel.cvd                     | File untuk tanda tangan diperpanjang kompleks.
@@ -369,14 +369,14 @@ Data                                       | Deskripsi
 /vault/graphics_mussel_standard.cvd        | File untuk tanda tangan grafis.
 /vault/greylist.csv                        | CSV terdiri dari tanda tangan daftar abu-abu mengindikasikan phpMussel tanda tangan mana yang harus diabaikan (file automatis diciptakan kembali jika dihapus).
 /vault/hex_general_commands.csv            | CSV terencode Hex dari deteksi perintah umum secara opsional digunakan phpMussel.
-/vault/html_clamav_regex.cvd               | File untuk tanda tangan HTML normal.
-/vault/html_clamav_regex.map               | File untuk tanda tangan HTML normal.
-/vault/html_clamav_standard.cvd            | File untuk tanda tangan HTML normal.
-/vault/html_clamav_standard.map            | File untuk tanda tangan HTML normal.
-/vault/html_custom_regex.cvd               | File untuk tanda tangan HTML normal.
-/vault/html_custom_standard.cvd            | File untuk tanda tangan HTML normal.
-/vault/html_mussel_regex.cvd               | File untuk tanda tangan HTML normal.
-/vault/html_mussel_standard.cvd            | File untuk tanda tangan HTML normal.
+/vault/html_clamav_regex.cvd               | File untuk tanda tangan HTML dinormalisasi.
+/vault/html_clamav_regex.map               | File untuk tanda tangan HTML dinormalisasi.
+/vault/html_clamav_standard.cvd            | File untuk tanda tangan HTML dinormalisasi.
+/vault/html_clamav_standard.map            | File untuk tanda tangan HTML dinormalisasi.
+/vault/html_custom_regex.cvd               | File untuk tanda tangan HTML dinormalisasi.
+/vault/html_custom_standard.cvd            | File untuk tanda tangan HTML dinormalisasi.
+/vault/html_mussel_regex.cvd               | File untuk tanda tangan HTML dinormalisasi.
+/vault/html_mussel_standard.cvd            | File untuk tanda tangan HTML dinormalisasi.
 /vault/lang.inc                            | File bahasa.
 /vault/macho_clamav_regex.cvd              | File untuk tanda tangan Mach-O.
 /vault/macho_clamav_regex.map              | File untuk tanda tangan Mach-O.
@@ -550,12 +550,12 @@ Cek tanda tangan umum ketika pemindaian? False = Tidak; True = Ya [Default].
 - "general_custom"
 - "general_mussel"
 
-Cek tanda tangan ASCII normal ketika pemindaian? False = Tidak; True = Ya [Default].
+Cek tanda tangan ASCII dinormalisasi ketika pemindaian? False = Tidak; True = Ya [Default].
 - "ascii_clamav"
 - "ascii_custom"
 - "ascii_mussel"
 
-Cek tanda tangan HTML normal ketika pemindaian? False = Tidak; True = Ya [Default].
+Cek tanda tangan HTML dinormalisasi ketika pemindaian? False = Tidak; True = Ya [Default].
 - "html_clamav"
 - "html_custom"
 - "html_mussel"
@@ -883,7 +883,7 @@ Hanya menempatkan tanda tangan kustom dalam file yang dimaksudkan untuk tanda ta
 
 ####*TANDA TANGAN PEMECAH-MECAHAN*
 Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
-- "Tanda tangan ASCII normal" (ascii_*). Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
+- "Tanda tangan ASCII dinormalisasi" (ascii_*). Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
 - "Tanda tangan diperpanjang kompleks" (coex_*). Campuran pencocokan jenis tanda tangan.
 - "Tanda tangan ELF" (elf_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format ELF.
 - "Tanda tangan Portable Executable" (exe_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
@@ -891,7 +891,7 @@ Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
 - "Tanda tangan umum" (general_*). Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
 - "Tanda tangan Grafis" (graphics_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke apapun diketahui format grafis.
 - "Perintah umum" (hex_general_commands.csv). Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan HTML normal" (html_*). Dicek pada isi dari apapun file HTML tidak bertanda putih dan ditargetkan untuk dipindai.
+- "Tanda tangan HTML dinormalisasi" (html_*). Dicek pada isi dari apapun file HTML tidak bertanda putih dan ditargetkan untuk dipindai.
 - "Tanda tangan Mach-O" (macho_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format Mach-O.
 - "Tanda tangan Email" (mail_*). Dicek pada variabel $body diparse ke fungsi phpMussel_mail(), yang dimaksudkan untuk menjadi body dari pesan-pesan email atau entries yang sama (secara potensial post forum dll).
 - "Tanda tangan MD5" (md5_*). Dicek pada hash MD5 dari isi dan ukuran file dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.

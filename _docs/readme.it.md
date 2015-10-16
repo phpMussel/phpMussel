@@ -167,7 +167,7 @@ In entrambi i casi, senza riguardo di ciò che si sceglie, la scelta in definiti
 Un elenco di disponibili browser lato comandi:
 
 scan_log
-- Password requisito: logs_password
+- Password requisito: `logs_password`
 - Altri requisiti: scan_log deve essere definito.
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -175,7 +175,7 @@ scan_log
 - Cosa fa: Stampi il contenuti del scan_log file sullo vostro schermo.
 
 scan_kills
-- Password requisito: logs_password
+- Password requisito: `logs_password`
 - Altri requisiti: scan_kills deve essere definito.
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -183,7 +183,7 @@ scan_kills
 - Cosa fa: Stampi il contenuti del scan_kills file sullo vostro schermo.
 
 controls_lockout
-- Password requisito: `logs_password` O script_password
+- Password requisito: `logs_password` O `script_password`
 - Altri requisiti: (nessuno)
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -192,7 +192,7 @@ controls_lockout
 - Cosa fa: Disabilita/blocca tutti le browser lato controlli. Questo dovrebbe essere usato se si sospetta che una o più delle vostre password sono stato compromesso (questo può accadere se si sta utilizzando questi controlli da un computer che non è protetto o fidato). controls_lockout opere tramite creando un file, `controls.lck`, nelle vostre vault, che phpMussel sarà verifica per prima di eseguire qualsiasi comando di qualsiasi tipo. Quando questo accade, per riabilitarla i controlli, è necessario per vostre di manualmente eliminare il `controls.lck` file via FTP o simile. Può essere chiamato utilizzando qualsiasi delle password.
 
 disable
-- Password requisito: script_password
+- Password requisito: `script_password`
 - Altri requisiti: (nessuno)
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -200,7 +200,7 @@ disable
 - Cosa fa: Disabilita phpMussel. Questo dovrebbe essere utilizzato se si sta eseguendo qualsiasi aggiornamenti o modifiche al vostra sistema o se si sta installando nuovo software o dei moduli al vostra sistema che fare o potenzialmente potrebbe innescare falsi positivi. Questo anche dovrebbe essere utilizzato se si hanno qualsiasi problemi con phpMussel ma non vogliono rimuoverlo dal vostra sistema. Quando questo accade, per riabilitare phpMussel, utilizzare "enable".
 
 enable
-- Password requisito: script_password
+- Password requisito: `script_password`
 - Altri requisiti: (nessuno)
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -208,7 +208,7 @@ enable
 - Cosa fa: Abilita phpMussel. Questo dovrebbe essere usato se in precedenza vostra ha disattivato phpMussel con "disable" e vogliono riabilitarla.
 
 update
-- Password requisito: script_password
+- Password requisito: `script_password`
 - Altri requisiti: `update.dat` e `update.inc` deve esistere.
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -216,7 +216,7 @@ update
 - Cosa fa: Verifica la presenza di aggiornamenti sia per phpMussel e le sue firme. Se l'aggiornamento verificare è successo e aggiornamenti sono trovano, sarà tenterà per scaricare e installare gli aggiornamenti. Se l'aggiornamento verificare fallisce, l'aggiornamento sarà abortito. Risultati dell'intero processo sono stampati sullo schermo. Mi raccomando di fare l'aggiornamento verificare almeno una volta al mese per garantire le vostre firme e la vostra copia di phpMussel sono aggiornato all'ultimo edizioni (a meno, ovviamente, si fare l'aggiornamento verificare e fare l'installazione di manualmente, di cui, mi piacerebbe ancora consiglio di fare almeno una volta al mese). Verifica più di due volte al mese è probabilmente inutile, considerando sto molto improbabile essere grado per produzione qualsiasi aggiornamenti di qualsiasi tipo più spesso di quello (né faccio in modo particolare voglio per la maggior parte).
 
 greylist
-- Password requisito: script_password
+- Password requisito: `script_password`
 - Altri requisiti: (nessuno)
 - Parametri requisiti: [Nome della firma essere sulla greylist]
 - Parametri opzionali: (nessuno)
@@ -224,7 +224,7 @@ greylist
 - Cosa fa: Aggiungere una firma alla greylist.
 
 greylist_clear
-- Password requisito: script_password
+- Password requisito: `script_password`
 - Altri requisiti: (nessuno)
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -232,7 +232,7 @@ greylist_clear
 - Cosa fa: Cancella l'intera greylist.
 
 greylist_show
-- Password requisito: script_password
+- Password requisito: `script_password`
 - Altri requisiti: (nessuno)
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -485,7 +485,7 @@ Generale configurazione per phpMussel.
 - Non ha alcuna influenza in CLI modalità.
 
 "logs_password"
-- Stesso come script_password, ma per la visualizzazione dei contenuti di scan_log e scan_kills. Avendo separate password può essere utile se si vuole dare l'accesso a qualcun altro a una serie di funzioni ma non l'altro.
+- Stesso come `script_password`, ma per la visualizzazione dei contenuti di scan_log e scan_kills. Avendo separate password può essere utile se si vuole dare l'accesso a qualcun altro a una serie di funzioni ma non l'altro.
 - Non ha alcuna influenza in CLI modalità.
 
 "cleanup"
@@ -784,29 +784,29 @@ Notare: Indipendentemente dal livello di sospetto, qualsiasi file che sono nella
 - Secondo a la Virus Total API documentazione, è limitato a un massimo di 4 richieste di qualsiasi natura in un dato 1 minuto tempo periodo. Se tu esegue una honeyclient, honeypot o qualsiasi altro automazione che sta fornire risorse a VirusTotal e non solo recuperare rapporti si ha diritto a un più alto tasso di richiesta quota. Per predefinita, phpMussel rigorosamente rispetti questi limiti, ma a causa della possibilità di tali tassi quote essere aumentati, questi due direttivi sono forniti come un mezzo per voi per istruire phpMussel da quale limite si deve rispettare. A meno che sei stato richiesto di farlo, non è raccomandato per voi per aumentare questi valori, ma, se hai incontrati problemi relativi a raggiungere il vostro tasso quota, diminuendo questi valori _**POTREBBE**_ a volte aiutare nel lavoro attraverso questi problemi. Il vostro tasso limite è determinato come `vt_quota_rate` richieste di qualsiasi natura in un dato `vt_quota_time` minuto tempo periodo.
 
 ####"urlscanner" (Categoria)
-URL scanner configuration.
+Configurazione per l'URL scanner.
 
 "urlscanner"
-- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the `urlscanner` directive to true; To disable it, set this directive to false.
+- Costruito in phpMussel è un URL scanner, in grado di rilevare URL malevoli all'interno di dati ei file scansionati. Per abilitare l'URL scanner, imposta la `urlscanner` direttiva su true; Per disabilitarlo, imposta questa direttiva su false.
 
-Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
+Notare: Se l'URL scanner è disabilitato, non sarà necessario rivedere nessuna delle direttive in questa categoria (`urlscanner`), perché nessuno di loro farà nulla se questo è disabilitato.
 
-URL scanner API lookup configuration.
+API configurazione per l'URL scanner.
 
 "lookup_hphosts"
-- Enables API lookups to the [hpHosts](http://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
+- Abilita API richieste per l'API di [hpHosts](http://hosts-file.net/) quando impostato su true. hpHosts non richiede un API chiave per l'esecuzione di API richieste.
 
 "google_api_key"
-- Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
+- Abilita API richieste per l'API di Google Safe Browsing quando le API chiave necessarie è definito. L'API di Google Safe Browsing richiede un API chiave, che può essere ottenuto da [Qui](https://console.developers.google.com/).
 
 "maximum_api_lookups"
-- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expediate the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
+- Numero massimo di richieste per l'API di eseguire per iterazione di scansione individuo. Perché ogni richiesta supplementare per l'API farà aggiungere al tempo totale necessario per completare ogni iterazione di scansione, si potrebbe desiderare di stipulare una limitazione al fine di accelerare il processo di scansione. Quando è impostato su 0, no tale ammissibile numero massimo sarà applicata. Impostato su 10 per impostazione predefinite.
 
 "maximum_api_lookups_response"
-- What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Default]; True = Flag/block the file.
+- Cosa fare se il ammissibile numero massimo di richieste per l'API è superato? False = Fare nulla (continuare il processo) [Predefinito]; True = Segnare/bloccare il file.
 
 "cache_time"
-- How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour).
+- Per quanto tempo (in secondi) dovrebbe i risultati delle API richieste essere memorizzati nella cache per? Predefinito è 3600 secondi (1 ora).
 
 ####"template_data" (Categoria)
 Direttive/Variabili per modelli e temi.

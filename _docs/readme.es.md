@@ -167,7 +167,7 @@ En cualquier manera, independientemente de lo que usted elija, la decisión es s
 Una lista de los comandos disponibles del navegador:
 
 scan_log
-- Contraseña necesario: logs_password
+- Contraseña necesario: `logs_password`
 - Otros requisitos: scan_log necesario ser definido.
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -175,7 +175,7 @@ scan_log
 - Qué hace: Imprime el contenido de su scan_log archivo a la pantalla.
 
 scan_kills
-- Contraseña necesario: logs_password
+- Contraseña necesario: `logs_password`
 - Otros requisitos: scan_kills necesario ser definido.
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -183,7 +183,7 @@ scan_kills
 - Qué hace: Imprime el contenido de su scan_kills archivo a la pantalla.
 
 controls_lockout
-- Contraseña necesario: `logs_password` O script_password
+- Contraseña necesario: `logs_password` O `script_password`
 - Otros requisitos: (nada)
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -192,7 +192,7 @@ controls_lockout
 - Qué hace: Desactiva todos los controles del navegador. Esto se debe utilizar si sospecha que alguna de las contraseñas se han comprometido (esto puede ocurrir si usted está utilizando estos controles desde un computadora que no es de confianza y/o no es seguro). controls_lockout funciones mediante la creación de un archivo, `controls.lck`, en su vault, que phpMussel comprobará antes de realizar cualquier comandos de ningún tipo. Cuando esto sucede, para reactivar estos controles, tendrá que suprimir manualmente la `controls.lck` archivo a través de FTP o similar. Puede ser llamado usando cualquiera de las contraseñas.
 
 disable
-- Contraseña necesario: script_password
+- Contraseña necesario: `script_password`
 - Otros requisitos: (nada)
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -200,7 +200,7 @@ disable
 - Qué hace: Desactivar phpMussel. Esto debe ser utilizar si usted está realizando cualquier actualizaciones o cambios en su sistema o si usted está instalar cualquier nuevo software o módulos para su sistema que potencialmente podrían o hacer desencadenar falsos positivos. Esto también debe usar si usted está teniendo problemas con phpMussel pero no desean eliminarlo de su sistema. Si esto sucede, para reactivar phpMussel, usar "enable".
 
 enable
-- Contraseña necesario: script_password
+- Contraseña necesario: `script_password`
 - Otros requisitos: (nada)
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -208,7 +208,7 @@ enable
 - Qué hace: Activar phpMussel. Esto debe ser utilizar si usted ha desactivado anteriormente phpMussel usando "disable" y quiere reactivarla.
 
 update
-- Contraseña necesario: script_password
+- Contraseña necesario: `script_password`
 - Otros requisitos: `update.dat` y `update.inc` deben existir.
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -216,7 +216,7 @@ update
 - Qué hace: Comprobar por actualizaciones para ambos phpMussel y sus firmas. Si las actualizaciones comprobar tienen éxito y actualizaciones está encuentran, intentará descargar e instalar estas actualizaciones. Si las actualizaciones comprobar fallan, actualizaciones comprobar abortará. Los resultados de todo el proceso se imprimen en la pantalla. Recomiendo comprobar al menos una vez por mes para asegurar que sus firmas y su copia de phpMussel se mantienen actualizada (a menos que, naturalmente, usted está comprobando las actualizaciones e instalandolos manualmente, que, aun así sigo recomendando hacer al menos una vez por mes). Comprobar más de dos veces por mes es probablemente inútil, en consideración que estoy muy improbable de ser capaz de producir actualizaciones de cualquier tipo con más frecuencia que la (ni tengo particular quiero para hacerlo en la mayor parte).
 
 greylist
-- Contraseña necesario: script_password
+- Contraseña necesario: `script_password`
 - Otros requisitos: (nada)
 - Parámetros necesarios: [Nombre de la firma para la greylist]
 - Parámetros opcionales: (nada)
@@ -224,7 +224,7 @@ greylist
 - Qué hace: Agregar una firma a la greylist.
 
 greylist_clear
-- Contraseña necesario: script_password
+- Contraseña necesario: `script_password`
 - Otros requisitos: (nada)
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -232,7 +232,7 @@ greylist_clear
 - Qué hace: Borrar toda de la greylist.
 
 greylist_show
-- Contraseña necesario: script_password
+- Contraseña necesario: `script_password`
 - Otros requisitos: (nada)
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -485,7 +485,7 @@ General configuración para phpMussel.
 - No tiene influencia en CLI modo.
 
 "logs_password"
-- El mismo como script_password, pero para ver el contenido de scan_log y scan_kills. Tener contraseñas separado puede ser útil si usted desea dar alguna otra persona acceso a un conjunto de funciones, pero no el otro. - No tiene influencia en CLI modo.
+- El mismo como `script_password`, pero para ver el contenido de scan_log y scan_kills. Tener contraseñas separado puede ser útil si usted desea dar alguna otra persona acceso a un conjunto de funciones, pero no el otro. - No tiene influencia en CLI modo.
 
 "cleanup"
 - Despejar la variables y la caché de la script después la script ejecución? False = No; True = Sí [Predefinido]. Si usted no está utilizando la script más allá de inicial escaneando de archivos subidos, debe definir como `true` (sí), para minimizar el uso de memoria. Si usted está utilizando la script para propósitos más allá de inicial escaneando de archivos subidos, debe definir como `false` (no), para evitar recargar innecesariamente duplicados datos en la memoria. En general práctica, probablemente debería definirse como `true`, pero, si usted hace esto, usted no será capaz de utilizar la script para cualquier cosa otro que de escaneando archivos subidos.

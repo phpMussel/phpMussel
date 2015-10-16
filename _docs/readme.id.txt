@@ -197,8 +197,8 @@
 
  Bagaimanapun, Anda juga bisa menginstruksikan phpMussel untuk memindai file,
  direktori dan/atau arsip spesifik. Untuk melakukannya, pertama-tama Anda harus
- memastikan konfigurasi yang cocok diset di file `phpmussel.ini` (cleanup harus
- dinon aktifkan) dan ketika selesai, di sebuah file PHP yang di hubungkan ke
+ memastikan konfigurasi yang cocok diset di file "phpmussel.ini" (cleanup harus
+ dinonaktifkan) dan ketika selesai, di sebuah file PHP yang di hubungkan ke
  phpMussel, gunakan fungsi berikut pada kode Anda:
 
  phpMussel($what_to_scan,$output_type,$output_flatness);
@@ -573,7 +573,7 @@
     mengupload direktori ini atau file-filenya jika melakukan testing.
     ~
  /_testfiles/ascii_standard_testfile.txt (Data test, Diikutkan)
-    File test untuk mentest tanda tangan ASCII normal phpMussel.
+    File test untuk mentest tanda tangan ASCII dinormalisasi phpMussel.
     ~
  /_testfiles/coex_testfile.rtf (Test file, Diikutkan)
     File test untuk mentest tanda tangan diperpanjang kompleks phpMussel.
@@ -588,7 +588,7 @@
     File test untuk mentest tanda tangan grafis phpMussel.
     ~
  /_testfiles/html_standard_testfile.txt (Data test, Diikutkan)
-    File test untuk mentest tanda tangan HTML normal phpMussel.
+    File test untuk mentest tanda tangan HTML dinormalisasi phpMussel.
     ~
  /_testfiles/md5_testfile.txt (Data test, Diikutkan)
     File test untuk mentest tanda tangan MD5 phpMussel.
@@ -671,9 +671,9 @@
  /vault/ascii_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/ascii_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/ascii_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    File-file untuk tanda tangan ASCII normal.
-    Diharuskan jika tanda tangan opsi ASCII normal di dalam "phpmussel.ini"
-    diaktifkan. Dapat menghapus jika opsi dinonaktifkan.
+    File-file untuk tanda tangan ASCII dinormalisasi.
+    Diharuskan jika tanda tangan opsi ASCII dinormalisasi di dalam
+    "phpmussel.ini" diaktifkan. Dapat menghapus jika opsi dinonaktifkan.
     ~
  /vault/coex_clamav.cvd (Tanda tangan, Diikutkan)
  /vault/coex_custom.cvd (Tanda tangan, Diikutkan)
@@ -755,9 +755,9 @@
  /vault/html_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/html_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/html_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    File-file untuk tanda tangan HTML normal.
-    Diharuskan jika tanda tangan opsi HTML normal di dalam "phpmussel.ini"
-    diaktifkan. Dapat menghapus jika opsi dinonaktifkan.
+    File-file untuk tanda tangan HTML dinormalisasi. Diharuskan jika tanda
+    tangan opsi HTML dinormalisasi di dalam "phpmussel.ini" diaktifkan.
+    Dapat menghapus jika opsi dinonaktifkan.
     ~
  /vault/lang.inc (Skrip, Diikutkan)
     phpMussel file bahasa.
@@ -1102,12 +1102,12 @@
      "general_clamav"
      "general_custom"
      "general_mussel"
-   - Cek tanda tangan ASCII normal ketika pemindaian?
+   - Cek tanda tangan ASCII dinormalisasi ketika pemindaian?
      False = Tidak; True = Ya [Default].
      "ascii_clamav"
      "ascii_custom"
      "ascii_mussel"
-   - Cek tanda tangan HTML normal ketika pemindaian?
+   - Cek tanda tangan HTML dinormalisasi ketika pemindaian?
      False = Tidak; True = Ya [Default].
      "html_clamav"
      "html_custom"
@@ -1685,8 +1685,8 @@
  = TANDA TANGAN PEMECAH-MECAHAN =
    Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan
    phpMussel:
-   - "Tanda tangan ASCII normal" (ascii_*). Dicek pada isi dari apapun file
-      tidak bertanda putih dan ditargetkan untuk dipindai.
+   - "Tanda tangan ASCII dinormalisasi" (ascii_*). Dicek pada isi dari apapun
+      file tidak bertanda putih dan ditargetkan untuk dipindai.
    - "Tanda tangan diperpanjang kompleks" (coex_*). Campuran pencocokan jenis
       tanda tangan.
    - "Tanda tangan ELF" (elf_*). Dicek pada isi dari apapun file tidak bertanda
@@ -1703,8 +1703,8 @@
       diketahui format grafis.
    - "Perintah umum" (hex_general_commands.csv). Dicek pada isi dari apapun
       file tidak bertanda putih dan ditargetkan untuk dipindai.
-   - "Tanda tangan HTML normal" (html_*). Dicek pada isi dari apapun file HTML
-      tidak bertanda putih dan ditargetkan untuk dipindai.
+   - "Tanda tangan HTML dinormalisasi" (html_*). Dicek pada isi dari apapun
+      file HTML tidak bertanda putih dan ditargetkan untuk dipindai.
    - "Tanda tangan Mach-O" (macho_*). Dicek pada isi dari apapun file tidak
       bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format
       Mach-O.

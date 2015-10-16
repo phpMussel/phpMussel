@@ -149,7 +149,7 @@ Beachten Sie außerdem, dass phpMussel keine vollständige Antiviren-Software er
 
 ###4A. <a name="SECTION4A"></a>BROWSER BEFEHLE
 
-Ist phpMussel auf Ihrem System installiert und funktioniert ordnungsgemäß, sind Sie in der Lage, einige Verwaltungsfunktionen und Befehle an phpMussel über Ihren Browser zu übergeben, sofern Sie die Variablen script_password und logs_password in Ihrer Konfigurationsdatei gesetzt haben. Diese Passwörter müssen zum Aktivieren dieser Kontrollen gesetzt werden, um eine größt mögliche Sicherheit zu erlangen, die browserbasierten Kontrollen zu schützen und um dafür zu sorgen, dass diese browserbasierten Kontrollen vollständig deaktiviert werden können, wenn Sie nicht von Ihnen, dem Webmaster oder den Administratoren benötigt werden. Zum Aktivieren dieser Kontrollmöglichkeiten wird ein Passwort vergeben, zum Deaktivieren wird kein Passwort vergeben. Alternativ können Sie diese Kontrollen aktivieren und zu einem späteren Zeitpunkt mit einem Befehl deaktivieren (z.B. wenn Sie Aktionen durchführen müssen und befürchten, dass Ihr Passwort ausgelesen werden kann, so können Sie die Kontrollen schnell deaktivieren ohne die Konfigurationsdatei zu bearbeiten).
+Ist phpMussel auf Ihrem System installiert und funktioniert ordnungsgemäß, sind Sie in der Lage, einige Verwaltungsfunktionen und Befehle an phpMussel über Ihren Browser zu übergeben, sofern Sie die Variablen `script_password` und `logs_password` in Ihrer Konfigurationsdatei gesetzt haben. Diese Passwörter müssen zum Aktivieren dieser Kontrollen gesetzt werden, um eine größt mögliche Sicherheit zu erlangen, die browserbasierten Kontrollen zu schützen und um dafür zu sorgen, dass diese browserbasierten Kontrollen vollständig deaktiviert werden können, wenn Sie nicht von Ihnen, dem Webmaster oder den Administratoren benötigt werden. Zum Aktivieren dieser Kontrollmöglichkeiten wird ein Passwort vergeben, zum Deaktivieren wird kein Passwort vergeben. Alternativ können Sie diese Kontrollen aktivieren und zu einem späteren Zeitpunkt mit einem Befehl deaktivieren (z.B. wenn Sie Aktionen durchführen müssen und befürchten, dass Ihr Passwort ausgelesen werden kann, so können Sie die Kontrollen schnell deaktivieren ohne die Konfigurationsdatei zu bearbeiten).
 
 Gründe, warum Sie diese Kontrollen aktivieren sollten:
 - Bietet die Möglichkeit, Signaturen schnell in eine Greylist aufzunehmen, wenn Sie Dateien auf Ihr System hochladen und Fehlalarme erzeugt werden und Sie nicht die Zeit haben, die Greylist manuell zu bearbeiten.
@@ -167,7 +167,7 @@ Die Entscheidung müssen Sie selbst treffen. Standardmäßig sind diese Kontroll
 Liste der verfügbaren Browser Befehle:
 
 scan_log
-- Benötigtes Passwort: logs_password
+- Benötigtes Passwort: `logs_password`
 - Weitere Bedingungen: scan_log muss gesetzt sein.
 - Benötigte Parameter: (keine)
 - Optionale Parameter: (keine)
@@ -175,7 +175,7 @@ scan_log
 - Zweck: Gibt den Inhalt der Datei scan_log aus.
 
 scan_kills
-- Benötigtes Passwort: logs_password
+- Benötigtes Passwort: `logs_password`
 - Weitere Bedingungen: scan_kills muss gesetzt sein.
 - Benötigte Parameter: (keine)
 - Optionale Parameter: (keine)
@@ -183,7 +183,7 @@ scan_kills
 - Zweck: Gibt den Inhalt der Datei scan_kills aus.
 
 controls_lockout
-- Benötigtes Passwort: logs_password ODER script_password
+- Benötigtes Passwort: `logs_password` ODER `script_password`
 - Weitere Bedingungen: (keine)
 - Benötigte Parameter: (keine)
 - Optionale Parameter: (keine)
@@ -192,7 +192,7 @@ controls_lockout
 - Zweck: Deaktiviert alle browser-basierten Kontrollen. Diese Funktion sollte benutzt werden, wenn Sie befürchten, dass Ihr Passwort kompromittiert wurde (dies ist möglich, wenn Sie die Kontrollen von einem Computer aus benutzen, der nicht abgesichert oder dem nicht vertraut werden kann). controls_lockout erstellt die Datei `controls.lck` im Verzeichnis `vault`, wonach phpMussel zuerst sucht, befor es Aktionen ausführt. Wurden die Kontrollen deaktiviert, müssen Sie die Datei `controls.lck` manuell mittels FTP o.ä. löschen. Kann mit jedem Passwort aufgerufen werden.
 
 disable
-- Benötigtes Passwort: script_password
+- Benötigtes Passwort: `script_password`
 - Weitere Bedingungen: (keine)
 - Benötigte Parameter: (keine)
 - Optionale Parameter: (keine)
@@ -200,7 +200,7 @@ disable
 - Zweck: Deaktiviert phpMussel. Wird benutzt, wenn Sie Aktualisierungen dürchführen, Änderungen an Ihrem System vornehmen oder Software oder Module installieren und möglicherweise Fehlalarme ausgelöst werden könnten. Sie können diese Funktion nutzen, wenn Sie Probleme mit phpMussel entdecken und es nicht von Ihrem System entfernen möchten. Um phpMussel wieder zu aktivieren, nutzen Sie "enable".
 
 enable
-- Benötigtes Passwort: script_password
+- Benötigtes Passwort: `script_password`
 - Weitere Bedingungen: (keine)
 - Benötigte Parameter: (keine)
 - Optionale Parameter: (keine)
@@ -208,7 +208,7 @@ enable
 - Zweck: Aktiviert phpMussel. Wird benutzt, wenn Sie phpMussel mittels "disable" deaktiviert haben und es wieder aktivieren möchten.
 
 update
-- Benötigtes Passwort: script_password
+- Benötigtes Passwort: `script_password`
 - Weitere Bedingungen: `update.dat` und `update.inc` müssen vorhanden sein.
 - Benötigte Parameter: (keine)
 - Optionale Parameter: (keine)
@@ -216,7 +216,7 @@ update
 - Zweck: Sucht nach Aktualisierungen für phpMussel und Signaturen. War die Suche erfolgreich und Aktualisierungen sind verfügbar, so werden diese heruntergeladen und installiert. Schlägt die Suche fehl, wird der Vorgang abgebrochen. Die Ergebnisse des gesamten Vorgangs werden ausgegeben. Es wird empfohlen, mindestens einmal monatlich nach Aktualisierungen zu suchen, um sicherzustellen, dass die Signaturen und Ihre Kopie von phpMussel auf dem neuesten Stand sind. Eine häufigere Suche nach Aktualisierungen ist fruchtlos, da die entsprechenden Pakete meist monatlich eingestellt werden.
 
 greylist
-- Benötigtes Passwort: script_password
+- Benötigtes Passwort: `script_password`
 - Weitere Bedingungen: (keine)
 - Benötigte Parameter: [Name der Signatur für die Greylist]
 - Optionale Parameter: (keine)
@@ -224,7 +224,7 @@ greylist
 - Zweck: Fügt eine Signatur zur Greylist hinzu.
 
 greylist_clear
-- Benötigtes Passwort: script_password
+- Benötigtes Passwort: `script_password`
 - Weitere Bedingungen: (keine)
 - Benötigte Parameter: (keine)
 - Optionale Parameter: (keine)
@@ -232,7 +232,7 @@ greylist_clear
 - Zweck: Löscht die gesamte Greylist.
 
 greylist_show
-- Benötigtes Passwort: script_password
+- Benötigtes Passwort: `script_password`
 - Weitere Bedingungen: (keine)
 - Benötigte Parameter: (keine)
 - Optionale Parameter: (keine)
@@ -481,11 +481,11 @@ Nachfolgend finden Sie eine Liste der Variablen in der Konfigurationsdatei `phpm
 Generelle Konfiguration von phpMussel.
 
 "script_password"
-- Als Komfort-Funktion ermöglicht es phpMussel, einige Funktionen (inkl. des schnellen Updates) manuell via POST, GET und QUERY auszulösen. Um sicherzustellen, dass diese Anfrage auch nur von Ihnen und keinem anderen abgeschickt wurde, erwartet phpMussel das Passwort innerhalb der Anfrage. Setzen Sie das script_password nach Belieben, wählen Sie ein Passwort, das Sie sich leicht merken können, aber für andere schwer zu erraten ist. Ist kein Passwort vergeben, sind die manuellen Anfragen deaktiviert.
+- Als Komfort-Funktion ermöglicht es phpMussel, einige Funktionen (inkl. des schnellen Updates) manuell via POST, GET und QUERY auszulösen. Um sicherzustellen, dass diese Anfrage auch nur von Ihnen und keinem anderen abgeschickt wurde, erwartet phpMussel das Passwort innerhalb der Anfrage. Setzen Sie das `script_password` nach Belieben, wählen Sie ein Passwort, das Sie sich leicht merken können, aber für andere schwer zu erraten ist. Ist kein Passwort vergeben, sind die manuellen Anfragen deaktiviert.
 - Kein Einfluss im CLI-Modus.
 
 "logs_password"
-- Wie script_password, allerdings nur zur Ausgabe des Inhalts von scan_log und scan_kills. Separate Passworte sind nützlich, wenn Sie jemandem Zugang zur einen Funktionalität gewähren wollen, aber nicht zur anderen. - Kein Einfluss im CLI-Modus.
+- Wie `script_password`, allerdings nur zur Ausgabe des Inhalts von scan_log und scan_kills. Separate Passworte sind nützlich, wenn Sie jemandem Zugang zur einen Funktionalität gewähren wollen, aber nicht zur anderen. - Kein Einfluss im CLI-Modus.
 
 "cleanup"
 - Löscht die Scriptvariablen und den Cache nach der Ausführung. False = Nicht löschen; True = Löschen [Standardeinstellung]. Sollten Sie das Script nach der Überprüfung des Uploads nicht mehr nutzen, stellen Sie diese Option auf `true`, um die Speichernutzung zu minimieren. Verwenden Sie das Script noch für weitere Zwecke, stellen Sie die Option auf `false`, um unnötiges mehrfaches Einlesen der Daten in den Speicher zu vermeiden. Normalerweise sollte diese Option auf `true` gesetzt werden, allerdings können Sie das Script dann nur zur Dateiüberprüfung verwenden.

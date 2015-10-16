@@ -167,7 +167,7 @@ In elk geval, ongeacht wat u kiest, de keuze is uiteindelijk jou. Standaard, dez
 Een lijst van beschikbare browser commando's.
 
 scan_log
-- Wachtwoord vereist: logs_password
+- Wachtwoord vereist: `logs_password`
 - Andere vereisten: scan_log moet worden ingesteld.
 - Andere vereisten: (geen)
 - Optionele parameters: (geen)
@@ -175,7 +175,7 @@ scan_log
 - Wat het doet: Drukt de inhoud van uw scan_log bestand naar het scherm.
 
 scan_kills
-- Wachtwoord vereist: logs_password
+- Wachtwoord vereist: `logs_password`
 - Andere vereisten: scan_kills moet worden ingesteld.
 - Andere vereisten: (geen)
 - Optionele parameters: (geen)
@@ -183,7 +183,7 @@ scan_kills
 - Wat het doet: Drukt de inhoud van uw scan_kills bestand naar het scherm.
 
 controls_lockout
-- Wachtwoord vereist: `logs_password` OF script_password
+- Wachtwoord vereist: `logs_password` OF `script_password`
 - Andere vereisten: (geen)
 - Andere vereisten: (geen)
 - Optionele parameters: (geen)
@@ -192,7 +192,7 @@ controls_lockout
 - Wat het doet: Uitschakelen alle browser controles. Deze moet worden gebruikt als u vermoedt dat een van uw wachtwoorden zijn gecompromitteerd (dit kan gebeuren als u gebruik deze controles vanaf een computer die niet is beveiligd en/of niet vertrouwd). controls_lockout werkt door creëren van een bestand, `controls.lck`, in uw vault, dat phpMussel zal controleren voordat om uitvoeren van commando's van welke aard. Zodra dit gebeurt, om herinschakelen van controles, u nodig om het bestand `controls.lck` te handmatig verwijderen via FTP of soortgelijke. Kunt worden opgeroepen met behulp van ieder van het wachtwoorden.
 
 disable
-- Wachtwoord vereist: script_password
+- Wachtwoord vereist: `script_password`
 - Andere vereisten: (geen)
 - Andere vereisten: (geen)
 - Optionele parameters: (geen)
@@ -200,7 +200,7 @@ disable
 - Wat het doet: Uitschakelen phpMussel. Dit moet gebruikt als u bent uitvoeren ieder updaten of wijzigingen aan uw systeem of als u bent installeren ieder nieuwe software of modules aan uw systeem dat doet of zou kunnen potentieel leiden valse positieven. Ook, dit moet worden gebruikt als heeft u een problemen met phpMussel maar niet willen het te verwijderen van uw systeem. Zodra dit gebeurt, om herinschakelen van phpMussel, gebruik "enable".
 
 enable
-- Wachtwoord vereist: script_password
+- Wachtwoord vereist: `script_password`
 - Andere vereisten: (geen)
 - Andere vereisten: (geen)
 - Optionele parameters: (geen)
@@ -208,7 +208,7 @@ enable
 - Wat het doet: Inschakelen phpMussel. Dit moet worden gebruikt als u eerder heeft uitgeschakeld phpMussel gebruiken "disable" en wil het herinschakeld.
 
 update
-- Wachtwoord vereist: script_password
+- Wachtwoord vereist: `script_password`
 - Andere vereisten: `update.dat` en `update.inc` moet bestaan
 - Andere vereisten: (geen)
 - Optionele parameters: (geen)
@@ -216,7 +216,7 @@ update
 - Wat het doet: Controleert of er updates voor phpMussel en handtekeningen. Als update-controleert slagen en updates worden gevonden, zal proberen om deze updates te downloaden en te installeren. Als update-controleert mislukt, update zal aborteren. De resultaten van het hele proces worden afgedrukt naar het scherm. Ik raad ten minste eenmaal per maand te controleren om ervoor te zorgen dat uw handtekeningen en uw kopie van phpMussel zijn huidige (tenzij, natuurlijk, u controleren op updates en installeren handmatig, dat, ik zou nog steeds aanbevelen dat te doen ten minste eenmaal per maand). Controleren meer dan tweemaal per maand is waarschijnlijk zinloos, aangezien dat ik ben zeer onwaarschijnlijk te produceren updates van welke aard meer vaker dan dat (noch heb ik in het bijzonder wil voor het grootste gedeelte).
 
 greylist
-- Wachtwoord vereist: script_password
+- Wachtwoord vereist: `script_password`
 - Andere vereisten: (geen)
 - Andere vereisten: [Naam van de handtekening van de greylist]
 - Optionele parameters: (geen)
@@ -224,7 +224,7 @@ greylist
 - Wat het doet: Toevoegen een handtekening aan de greylist.
 
 greylist_clear
-- Wachtwoord vereist: script_password
+- Wachtwoord vereist: `script_password`
 - Andere vereisten: (geen)
 - Andere vereisten: (geen)
 - Optionele parameters: (geen)
@@ -232,7 +232,7 @@ greylist_clear
 - Wat het doet: Verwijderen de hele greylist.
 
 greylist_show
-- Wachtwoord vereist: script_password
+- Wachtwoord vereist: `script_password`
 - Andere vereisten: (geen)
 - Andere vereisten: (geen)
 - Optionele parameters: (geen)
@@ -485,7 +485,7 @@ Algemene configuratie voor phpMussel.
 - Heeft geen invloed in CLI-modus.
 
 "logs_password"
-- Hetzelfde als script_password, maar voor het bekijken van de inhoud van scan_log en scan_kills. Hebben verschillende wachtwoorden kan nuttig zijn als u wilt te geven toegang tot iemand anders voor een set van functies, maar niet de andere.
+- Hetzelfde als `script_password`, maar voor het bekijken van de inhoud van scan_log en scan_kills. Hebben verschillende wachtwoorden kan nuttig zijn als u wilt te geven toegang tot iemand anders voor een set van functies, maar niet de andere.
 - Heeft geen invloed in CLI-modus.
 
 "cleanup"

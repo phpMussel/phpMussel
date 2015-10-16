@@ -167,7 +167,7 @@ De toute façon, indépendamment de que vous choisissez, le choix est finalement
 Une liste de commandes du navigateur disponibles:
 
 scan_log
-- Mot de passe requis: logs_password
+- Mot de passe requis: `logs_password`
 - Autre exigences: scan_log doit être défini.
 - Paramètres requis: (aucun)
 - Paramètres optionnels: (aucun)
@@ -175,7 +175,7 @@ scan_log
 - Quel est-il: Imprime le contenu de votre scan_log fichier à l'écran.
 
 scan_kills
-- Mot de passe requis: logs_password
+- Mot de passe requis: `logs_password`
 - Autre exigences: scan_kills doit être défini.
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
@@ -183,7 +183,7 @@ scan_kills
 - Quel est-il: Imprime le contenu de votre scan_kills fichier à l'écran.
 
 controls_lockout
-- Mot de passe requis: `logs_password` OU script_password
+- Mot de passe requis: `logs_password` OU `script_password`
 - Autre exigences: (aucun)
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
@@ -192,7 +192,7 @@ controls_lockout
 - Quel est-il: Désactiver/verrouille tous les contrôles de navigateur. Cela devrait être utilisé si vous pensez que vos mots de passe ont été compromis (cela peut arriver si vous utilisez ces commandes à partir d'un ordinateur qui n'est pas sécurisé et/ou n'est pas digne de confiance). controls_lockout fonctionne par créant un fichier, `controls.lck`, dans votre voûte, dont phpMussel sera vérifié avant d'effectuer commandes de toute nature. Après, pour réactiver les contrôles, vous devez supprimer manuellement le fichier `controls.lck` par FTP ou similaire.
 
 disable
-- Mot de passe requis: script_password
+- Mot de passe requis: `script_password`
 - Autre exigences: (aucun)
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
@@ -200,7 +200,7 @@ disable
 - Quel est-il: Désactiver phpMussel. Cela devrait être utilisé si vous réactualiser ou faire changements à votre système ou si vous installez logiciel ou modules nouveaux à votre système dont sera ou pourrait potentiellement déclencher faux positifs. Aussi, cela devrait être utilisé si vous rencontrez problèmes avec phpMussel mais ne veulent pas à supprimer de votre système. Si c'est le cas, pour réactiver phpMussel, utiliser "enable".
 
 enable
-- Mot de passe requis: script_password
+- Mot de passe requis: `script_password`
 - Autre exigences: (aucun)
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
@@ -208,7 +208,7 @@ enable
 - Quel est-il: Réactiver phpMussel. Cela devrait être utilisé si vous avez précédemment désactivé phpMussel utilisant "disable" et vous voulez à réactiver ce.
 
 update
-- Mot de passe requis: script_password
+- Mot de passe requis: `script_password`
 - Autre exigences: `update.dat` et `update.inc` doivent exister.
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
@@ -216,7 +216,7 @@ update
 - Quel est-il: Vérifie pour nouvelles versions de phpMussel et ses signatures. Si quelque chose est trouvé, il va tenter à télécharger et installer les nouveaux fichiers. S'il est ne parvient pas à vérifier, il sera annulerait. Les résultats du processus sont imprimés à l'écran. Je recommande vérifier au moins une fois par mois afin d'assurer que vos signatures et votre copie de phpMussel sont la dernière disponible (à moins que, bien sûr, si vous téléchargez et installez les derniers fichiers manuellement, dont, j'aussi recommande vérifier au moins une fois par mois). Vérification plus de deux fois par mois est probablement inutile, étant donné que je suis très improbable d'être produire nouveaux fichiers plus fréquemment que cela (ni je ne particulièrement pas vouloir à, pour la plupart).
 
 greylist
-- Mot de passe requis: script_password
+- Mot de passe requis: `script_password`
 - Autre exigences: (aucun)
 - Paramètres requis: [Name of signature to be greylisted]
 - Optional parameters: (aucun)
@@ -224,7 +224,7 @@ greylist
 - Quel est-il: Ajouter une signature à la liste grise.
 
 greylist_clear
-- Mot de passe requis: script_password
+- Mot de passe requis: `script_password`
 - Autre exigences: (aucun)
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
@@ -232,7 +232,7 @@ greylist_clear
 - Quel est-il: Efface la totalité de la liste grise.
 
 greylist_show
-- Mot de passe requis: script_password
+- Mot de passe requis: `script_password`
 - Autre exigences: (aucun)
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
@@ -485,7 +485,7 @@ Configuration générale pour phpMussel.
 - N'a pas d'influence en mode CLI.
 
 "logs_password"
-- La même comme script_password, mais par l'affichage du contenu de scan_log et scan_kills. Pour avoir distincts mots de passe peut être utile si vous voulez donner à quelqu'un autre accès à un ensemble de fonctions mais pas l'autre.
+- La même comme `script_password`, mais par l'affichage du contenu de scan_log et scan_kills. Pour avoir distincts mots de passe peut être utile si vous voulez donner à quelqu'un autre accès à un ensemble de fonctions mais pas l'autre.
 - N'a pas d'influence en CLI mode.
 
 "cleanup"

@@ -285,12 +285,12 @@ phpMussel可以執行作為一個互動文件掃描在CLI模式在基於Windows�
 /_docs/readme.zh-TW.md                     | 自述文件：中文（傳統）
 /_docs/signatures_tally.txt                | 文件為數量追踪的為包含的簽名（不需要為正確經營腳本）。
 /_testfiles/                               | 測試文件文件夾（包含若干文件）。所有包含文件是測試文件為測試如果phpMussel是正確地安裝上您的系統，和您不需要上傳這個文件夾或任何其文件除為上傳測試。
-/_testfiles/ascii_standard_testfile.txt    | 測試文件以測試phpMussel默認化ASCII簽名。
+/_testfiles/ascii_standard_testfile.txt    | 測試文件以測試phpMussel標準化ASCII簽名。
 /_testfiles/coex_testfile.rtf              | 測試文件以測試phpMussel複雜擴展簽名。
 /_testfiles/exe_standard_testfile.exe      | 測試文件以測試phpMussel移植可執行｢PE｣簽名。
 /_testfiles/general_standard_testfile.txt  | 測試文件以測試phpMussel通用簽名。
 /_testfiles/graphics_standard_testfile.gif | 測試文件以測試phpMussel圖像簽名。
-/_testfiles/html_standard_testfile.txt     | 測試文件以測試phpMussel默認化HTML簽名。
+/_testfiles/html_standard_testfile.txt     | 測試文件以測試phpMussel標準化HTML簽名。
 /_testfiles/md5_testfile.txt               | 測試文件以測試phpMussel MD5簽名。
 /_testfiles/metadata_testfile.tar          | 測試文件以測試phpMussel元數據簽名和以測試TAR文件支持在您的系統。
 /_testfiles/metadata_testfile.txt.gz       | 測試文件以測試phpMussel元數據簽名和以測試GZ文件支持在您的系統。
@@ -321,14 +321,14 @@ phpMussel可以執行作為一個互動文件掃描在CLI模式在基於Windows�
 /vault/quarantine/                         | 隔離文件夾（包含隔離文件）。
 /vault/quarantine/.htaccess                | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/.htaccess                           | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
-/vault/ascii_clamav_regex.cvd              | 默認化ASCII簽名文件。
-/vault/ascii_clamav_regex.map              | 默認化ASCII簽名文件。
-/vault/ascii_clamav_standard.cvd           | 默認化ASCII簽名文件。
-/vault/ascii_clamav_standard.map           | 默認化ASCII簽名文件。
-/vault/ascii_custom_regex.cvd              | 默認化ASCII簽名文件。
-/vault/ascii_custom_standard.cvd           | 默認化ASCII簽名文件。
-/vault/ascii_mussel_regex.cvd              | 默認化ASCII簽名文件。
-/vault/ascii_mussel_standard.cvd           | 默認化ASCII簽名文件。
+/vault/ascii_clamav_regex.cvd              | 標準化ASCII簽名文件。
+/vault/ascii_clamav_regex.map              | 標準化ASCII簽名文件。
+/vault/ascii_clamav_standard.cvd           | 標準化ASCII簽名文件。
+/vault/ascii_clamav_standard.map           | 標準化ASCII簽名文件。
+/vault/ascii_custom_regex.cvd              | 標準化ASCII簽名文件。
+/vault/ascii_custom_standard.cvd           | 標準化ASCII簽名文件。
+/vault/ascii_mussel_regex.cvd              | 標準化ASCII簽名文件。
+/vault/ascii_mussel_standard.cvd           | 標準化ASCII簽名文件。
 /vault/coex_clamav.cvd                     | 複雜擴展簽名文件。
 /vault/coex_custom.cvd                     | 複雜擴展簽名文件。
 /vault/coex_mussel.cvd                     | 複雜擴展簽名文件。
@@ -369,14 +369,14 @@ phpMussel可以執行作為一個互動文件掃描在CLI模式在基於Windows�
 /vault/graphics_mussel_standard.cvd        | 圖像簽名文件。
 /vault/greylist.csv                        | 灰名單簽名CSV（逗號分隔變量）文件說明為phpMussel什麼簽名它應該忽略（文件自動重新創建如果刪除）。
 /vault/hex_general_commands.csv            | 十六進制編碼的CSV（逗號分隔變量）為通用命令檢測，使用可選通過phpMussel。
-/vault/html_clamav_regex.cvd               | 默認化HTML簽名文件。
-/vault/html_clamav_regex.map               | 默認化HTML簽名文件。
-/vault/html_clamav_standard.cvd            | 默認化HTML簽名文件。
-/vault/html_clamav_standard.map            | 默認化HTML簽名文件。
-/vault/html_custom_regex.cvd               | 默認化HTML簽名文件。
-/vault/html_custom_standard.cvd            | 默認化HTML簽名文件。
-/vault/html_mussel_regex.cvd               | 默認化HTML簽名文件。
-/vault/html_mussel_standard.cvd            | 默認化HTML簽名文件。
+/vault/html_clamav_regex.cvd               | 標準化HTML簽名文件。
+/vault/html_clamav_regex.map               | 標準化HTML簽名文件。
+/vault/html_clamav_standard.cvd            | 標準化HTML簽名文件。
+/vault/html_clamav_standard.map            | 標準化HTML簽名文件。
+/vault/html_custom_regex.cvd               | 標準化HTML簽名文件。
+/vault/html_custom_standard.cvd            | 標準化HTML簽名文件。
+/vault/html_mussel_regex.cvd               | 標準化HTML簽名文件。
+/vault/html_mussel_standard.cvd            | 標準化HTML簽名文件。
 /vault/lang.inc                            | 語言數據。
 /vault/macho_clamav_regex.cvd              | Mach-O簽名文件。
 /vault/macho_clamav_regex.map              | Mach-O簽名文件。
@@ -550,12 +550,12 @@ CVD是一個acronym為｢ClamAV Virus Definitions｣，在參照如何ClamAV參�
 - “general_custom”
 - “general_mussel”
 
-檢查針對默認化ASCII簽名當掃描嗎？ False = 不檢查， True = 檢查【默認】。
+檢查針對標準化ASCII簽名當掃描嗎？ False = 不檢查， True = 檢查【默認】。
 - “ascii_clamav”
 - “ascii_custom”
 - “ascii_mussel”
 
-檢查針對默認化HTML簽名當掃描嗎？ False = 不檢查， True = 檢查【默認】。
+檢查針對標準化HTML簽名當掃描嗎？ False = 不檢查， True = 檢查【默認】。
 - “html_clamav”
 - “html_custom”
 - “html_mussel”
@@ -883,7 +883,7 @@ URL scanner API lookup configuration.
 
 ####*簽名說明*
 下列是說明的簽名類型使用phpMussel：
-- “默認化ASCII簽名” （ascii_*）。匹配針對內容的所有非白名單文件目標為掃描。
+- “標準化ASCII簽名” （ascii_*）。匹配針對內容的所有非白名單文件目標為掃描。
 - “複雜擴展簽名” （coex_*）。雜簽名類型匹配。
 - “ELF簽名” （elf_*）。匹配針對內容的所有非白名單文件目標為掃描識別的ELF文件。
 - “移植可執行｢PE｣簽名” （exe_*）。匹配針對內容的所有非白名單掃描目標識別的移植可執行｢PE｣文件。
@@ -891,7 +891,7 @@ URL scanner API lookup configuration.
 - “通用簽名” （general_*）。匹配針對內容的所有非白名單文件目標為掃描。
 - “圖像簽名” （graphics_*）。匹配針對內容的所有非白名單文件目標為掃描識別的一個已知圖像文件格式。
 - “通用命令” （hex_general_commands.csv）。匹配針對內容的所有非白名單文件目標為掃描。
-- “默認化HTML簽名” （html_*）。匹配針對內容的所有非白名單HTML文件目標為掃描。
+- “標準化HTML簽名” （html_*）。匹配針對內容的所有非白名單HTML文件目標為掃描。
 - “Mach-O簽名” （macho_*）。匹配針對內容的所有非白名單文件目標為掃描識別的Mach-O文件。
 - “電子郵件簽名” （mail_*）。匹配針對`$body`變量在`phpMussel_mail()`功能（`$body`變量是為電子郵件正文或類似實體，可能論壇帖子和等等）。
 - “MD5簽名” （md5_*）。匹配針對MD5哈希的內容和文件大小的所有非白名單文件目標為掃描。

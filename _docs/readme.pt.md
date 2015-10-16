@@ -167,7 +167,7 @@ De qualquer maneira, independentemente do que você escolher, a escolha final é
 A lista de disponíveis browser comandos:
 
 scan_log
-- Senha necessária: logs_password
+- Senha necessária: `logs_password`
 - Outros requisitos: scan_log deve ser definido.
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -175,7 +175,7 @@ scan_log
 - Que faz: Imprime o conteúdo de seu scan_log arquivo para a tela.
 
 scan_kills
-- Senha necessária: logs_password
+- Senha necessária: `logs_password`
 - Outros requisitos: scan_kills deve ser definido.
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -183,7 +183,7 @@ scan_kills
 - Que faz: Imprime o conteúdo de seu scan_kills arquivo para a tela.
 
 controls_lockout
-- Senha necessária: `logs_password` OU script_password
+- Senha necessária: `logs_password` OU `script_password`
 - Outros requisitos: (nenhum)
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -192,7 +192,7 @@ controls_lockout
 - Que faz: Desativa todos os navegador controles. Isso deve ser usado se você suspeitar que qualquer das senhas foram comprometidas (isso pode acontecer se você estiver usando esses controles a através de um computador que não é seguro ou não é confiável). controls_lockout funciona através de criando um arquivo, `controls.lck`, no seu vault, de que phpMussel irá olhar por antes de executar qualquer comando de qualquer variedade. Quando isso acontece, para reativar os controlos, você precisará manualmente deletar o `controls.lck` arquivo através de FTP ou semelhante. Pode ser chamado usando qualquer senha.
 
 disable
-- Senha necessária: script_password
+- Senha necessária: `script_password`
 - Outros requisitos: (nenhum)
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -200,7 +200,7 @@ disable
 - Que faz: Desativar phpMussel. Isso deve ser usado se você estiver executando quaisquer atualizações ou alterações no seu sistema ou se está instalando qualquer novo software ou módulos para seu sistema que fazer ou potencialmente poderiam desencadear falsos positivos. Isso também deve ser usado se você está tendo problemas com phpMussel mas não deseja removê-lo do sistema. Quando isso acontece, para reativar phpMussel, uso "enable".
 
 enable
-- Senha necessária: script_password
+- Senha necessária: `script_password`
 - Outros requisitos: (nenhum)
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -208,7 +208,7 @@ enable
 - Que faz: Ativar phpMussel. Este deve ser usado se você já desativado phpMussel usando "disable" e desejar para reativá-la.
 
 update
-- Senha necessária: script_password
+- Senha necessária: `script_password`
 - Outros requisitos: `update.dat` e `update.inc` devem existir.
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -216,7 +216,7 @@ update
 - Que faz: Verifica se há atualizações para ambos phpMussel e suas assinaturas. Se as atualização verificações suceder e atualizações são encontrados, tentará baixar e instalar essas atualizações. Se atualização verificação falha, atualização irá abortar. Os resultados de o inteiro processo são impressos na tela. Eu recomendo verificando pelo menos uma vez por mês para garantir que seus assinaturas e sua cópia do phpMussel são mantidos atualizados (a menos, claro, você está verificando se há atualizações e instalá-los manualmente, que, eu ainda recomendo fazer pelo menos uma vez por mês). Verificando mais que duas vezes por mês é provavelmente inútil, considerando que eu estou muito improvável que seja capaz de produzir atualizações de qualquer variedade com mais freqüência do que (nem eu particularmente quero para a maior parte).
 
 greylist
-- Senha necessária: script_password
+- Senha necessária: `script_password`
 - Outros requisitos: (nenhum)
 - Parâmetros necessários: [Nome de assinatura a ser greylisted]
 - Parâmetros opcionais: (nenhum)
@@ -224,7 +224,7 @@ greylist
 - Que faz: Adicionar uma assinatura para o greylist.
 
 greylist_clear
-- Senha necessária: script_password
+- Senha necessária: `script_password`
 - Outros requisitos: (nenhum)
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -232,7 +232,7 @@ greylist_clear
 - Que faz: Limpo inteiro greylist.
 
 greylist_show
-- Senha necessária: script_password
+- Senha necessária: `script_password`
 - Outros requisitos: (nenhum)
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -485,7 +485,7 @@ Geral configuração por phpMussel.
 - Não tem influência em CLI modo.
 
 "logs_password"
-- O mesmo como script_password, mas por visualizando conteúdo de scan_log e scan_kills. Tendo separadas senhas pode ser útil se você quiser dar alguém o acesso a um conjunto de funções mas não o outro.
+- O mesmo como `script_password`, mas por visualizando conteúdo de scan_log e scan_kills. Tendo separadas senhas pode ser útil se você quiser dar alguém o acesso a um conjunto de funções mas não o outro.
 - Não tem influência em CLI modo.
 
 "cleanup"

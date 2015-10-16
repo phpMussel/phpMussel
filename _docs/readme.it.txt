@@ -1544,36 +1544,40 @@
      limite è determinato come "vt_quota_rate" richieste di qualsiasi natura in
      un dato "vt_quota_time" minuto tempo periodo.
  "urlscanner" (Categoria)
- - URL scanner configuration.
+ - Configurazione per l'URL scanner.
    "urlscanner"
-   - Built into phpMussel is a URL scanner, capable of detecting malicious URLs
-     from within any data or files scanned. To enable the URL scanner, set the
-     "urlscanner" directive to true; To disable it, set this directive to
-     false.
-   Note: If the URL scanner is disabled, you won't need to review any of the
-   directives in this category ("urlscanner"), because none of them will do
-   anything if this is disabled.
- - URL scanner API lookup configuration.
+   - Costruito in phpMussel è un URL scanner, in grado di rilevare URL malevoli
+     all'interno di dati ei file scansionati. Per abilitare l'URL scanner,
+     imposta la "urlscanner" direttiva su true; Per disabilitarlo, imposta
+     questa direttiva su false.
+   Notare: Se l'URL scanner è disabilitato, non sarà necessario rivedere
+   nessuna delle direttive in questa categoria ("urlscanner"), perché nessuno
+   di loro farà nulla se questo è disabilitato.
+ - API configurazione per l'URL scanner.
    "lookup_hphosts"
-   - Enables API lookups to the hpHosts API <http://hosts-file.net/> when set
-     to true. hpHosts doesn't require an API key for performing API lookups.
+   - Abilita API richieste per l'API di hpHosts <http://hosts-file.net/> quando
+     impostato su true. hpHosts non richiede un API chiave per l'esecuzione di
+     API richieste.
    "google_api_key"
-   - Enables API lookups to the Google Safe Browsing API when the necessary API
-     key is defined. Google Safe Browsing API lookups requires an API key,
-     which can be obtained from <https://console.developers.google.com/>.
+   - Abilita API richieste per l'API di Google Safe Browsing quando le API
+     chiave necessarie è definito. L'API di Google Safe Browsing richiede un
+     API chiave, che può essere ottenuto da
+     <https://console.developers.google.com/>.
    "maximum_api_lookups"
-   - Maximum allowable number of API lookups to perform per individual scan
-     iteration. Because each additional API lookup will add to the total time
-     required to complete each scan iteration, you may wish to stipulate a
-     limitation in order to expediate the overall scan process. When set to 0,
-     no such maximum allowable number will be applied. Set to 10 by default.
+   - Numero massimo di richieste per l'API di eseguire per iterazione di
+     scansione individuo. Perché ogni richiesta supplementare per l'API farà
+     aggiungere al tempo totale necessario per completare ogni iterazione di
+     scansione, si potrebbe desiderare di stipulare una limitazione al fine di
+     accelerare il processo di scansione. Quando è impostato su 0, no tale
+     ammissibile numero massimo sarà applicata. Impostato su 10 per
+     impostazione predefinite.
    "maximum_api_lookups_response"
-   - What to do if the maximum allowable number of API lookups is exceeded?
-     False = Do nothing (continue processing) [Default];
-     True = Flag/block the file.
+   - Cosa fare se il ammissibile numero massimo di richieste per l'API è
+     superato? False = Fare nulla (continuare il processo) [Predefinito];
+     True = Segnare/bloccare il file.
    "cache_time"
-   - How long (in seconds) should the results of API lookups be cached for?
-     Default is 3600 seconds (1 hour).
+   - Per quanto tempo (in secondi) dovrebbe i risultati delle API richieste
+     essere memorizzati nella cache per? Predefinito è 3600 secondi (1 ora).
  "template_data" (Categoria)
  - Directives/Variables for templates and themes: Modelli dati riferisce alla
    prodotti HTML utilizzato per generare il "Caricamento Negato" messaggio
