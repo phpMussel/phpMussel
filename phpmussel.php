@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.7a (13th August 2015) Loader file.
+ This File: phpMussel v0.8 (18th October 2015) Loader file.
  <%phpMussel%/phpmussel.php>
 
                                      ~ ~ ~
