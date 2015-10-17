@@ -93,7 +93,7 @@ phpMussel é um script destinado a funcionar de adequadamente, sem complicaçõe
 
 Análise dos arquivos carregamentos é automatizado e ativado por padrão, por isso nada é exigido por você por essa particular função.
 
-Porém, você também é capaz de instruir phpMussel para verificar específicos arquivos e/ou diretórios. Para fazer isso, em primeiro lugar, você vai precisar para assegurar que apropriada configuração é definida no `phpmussel.ini` arquivo (`cleanup` deve ser desativado), e quando feito, em um PHP arquivo que está enganchado ao phpMussel, usar a seguinte função no seu código:
+Porém, você também é capaz de instruir phpMussel para verificar arquivos e/ou diretórios específicos. Para fazer isso, em primeiro lugar, você vai precisar para assegurar que configuração apropriada é definida no `phpmussel.ini` arquivo (`cleanup` deve ser desativado), e quando feito, em um PHP arquivo que está enganchado ao phpMussel, usar a seguinte função no seu código:
 
 `phpMussel($what_to_scan,$output_type,$output_flatness);`
 
@@ -140,16 +140,16 @@ Existem muitos outros controlos e funções disponíveis dentro phpMussel para s
 
 Por favor, consulte ao "COMO INSTALAR (PARA CLI)" seção deste README arquivo.
 
-Esteja ciente de que, embora futuras versões do phpMussel deve apoiar outros sistemas, at this time, phpMussel CLI modo suporte só é otimizado para uso em sistemas baseados no Windows (você pode, é claro, experimentá-lo em outros sistemas, mas eu não posso garantir que vai funcionar como pretendido).
+Esteja ciente de que, embora versões futuras do phpMussel deve apoiar sistemas outros, neste momento, phpMussel CLI modo suporte só é otimizado para uso em sistemas baseados no Windows (você pode, é claro, experimentá-lo em outros sistemas, mas eu não posso garantir que vai funcionar como pretendido).
 
-Também estar ciente de que phpMussel não é o funcional equivalente de um completa antivírus suíte, e contrário de convencionais antivírus suítes, não monitora ativa memória ou detectar vírus proativamente! Ele só irá detectar vírus contidos por esses específicos arquivos que você explicitamente diga a ele analisar.
+Também estar ciente de que phpMussel não é o funcional equivalente de um completa antivírus suíte, e contrário de antivírus suítes convencionais, não monitora ativa memória ou detectar vírus proativamente! Ele só irá detectar vírus contidos por esses arquivos específicos que você explicitamente diga a ele analisar.
 
 ---
 
 
 ###4A. <a name="SECTION4A"></a>NAVEGADOR COMANDOS
 
-Quando phpMussel é instalado e funcionando corretamente no seu sistema, se você tem configurá as variáveis script_password e logs_password no seu configuração arquivo, você será capaz de executar um limitado número de administrativas funções e entrada um algum número de comandos para phpMussel através de seu navegador. A razão pela qual essas senhas precisam ser definidas a fim de permitir que esses controles do navegador é tanto para garantir adequada segurança, adequada proteção desses navegador controles e para garantir que existe uma maneira por desses navegador controles para ser totalmente desativado se eles não são desejadas por você e/ou outros webmestres/administradores usando phpMussel. Portanto, em outras palavras, para ativar esses controles, definir uma senha, e para desativar esses controles, definir nenhum senha. Alternativamente, se você optar por ativar esses controles então optar por desativar esses controles em um posterior data, existe um comando para fazer isto (tal pode ser útil se você executar algumas ações que você sente poderia comprometer as senhas delegados e precisa para desativar rapidamente esses controles sem modificar o configuração arquivo).
+Quando phpMussel é instalado e funcionando corretamente no seu sistema, se você tem configurá as variáveis `script_password` e `logs_password` no seu configuração arquivo, você será capaz de executar um limitado número de administrativas funções e entrada um algum número de comandos para phpMussel através de seu navegador. A razão pela qual essas senhas precisam ser definidas a fim de permitir que esses controles do navegador é tanto para garantir adequada segurança, adequada proteção desses navegador controles e para garantir que existe uma maneira por desses navegador controles para ser totalmente desativado se eles não são desejadas por você e/ou outros webmestres/administradores usando phpMussel. Portanto, em outras palavras, para ativar esses controles, definir uma senha, e para desativar esses controles, definir nenhum senha. Alternativamente, se você optar por ativar esses controles então optar por desativar esses controles em um posterior data, existe um comando para fazer isto (tal pode ser útil se você executar algumas ações que você sente poderia comprometer as senhas delegados e precisa para desativar rapidamente esses controles sem modificar o configuração arquivo).
 
 Algumas razões pelas quais você _**DEVE**_ ativar esses controles:
 - Fornece uma maneira para greylist assinaturas em casos como quando você descobre uma assinatura que está produzindo um falso-positivo durante o carregar de arquivos para o seu sistema e você não tem tempo para manualmente editar e recarregar o greylist arquivo.
@@ -167,7 +167,7 @@ De qualquer maneira, independentemente do que você escolher, a escolha final é
 A lista de disponíveis browser comandos:
 
 scan_log
-- Senha necessária: logs_password
+- Senha necessária: `logs_password`
 - Outros requisitos: scan_log deve ser definido.
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -175,7 +175,7 @@ scan_log
 - Que faz: Imprime o conteúdo de seu scan_log arquivo para a tela.
 
 scan_kills
-- Senha necessária: logs_password
+- Senha necessária: `logs_password`
 - Outros requisitos: scan_kills deve ser definido.
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -183,7 +183,7 @@ scan_kills
 - Que faz: Imprime o conteúdo de seu scan_kills arquivo para a tela.
 
 controls_lockout
-- Senha necessária: logs_password OU script_password
+- Senha necessária: `logs_password` OU `script_password`
 - Outros requisitos: (nenhum)
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -192,7 +192,7 @@ controls_lockout
 - Que faz: Desativa todos os navegador controles. Isso deve ser usado se você suspeitar que qualquer das senhas foram comprometidas (isso pode acontecer se você estiver usando esses controles a através de um computador que não é seguro ou não é confiável). controls_lockout funciona através de criando um arquivo, `controls.lck`, no seu vault, de que phpMussel irá olhar por antes de executar qualquer comando de qualquer variedade. Quando isso acontece, para reativar os controlos, você precisará manualmente deletar o `controls.lck` arquivo através de FTP ou semelhante. Pode ser chamado usando qualquer senha.
 
 disable
-- Senha necessária: script_password
+- Senha necessária: `script_password`
 - Outros requisitos: (nenhum)
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -200,7 +200,7 @@ disable
 - Que faz: Desativar phpMussel. Isso deve ser usado se você estiver executando quaisquer atualizações ou alterações no seu sistema ou se está instalando qualquer novo software ou módulos para seu sistema que fazer ou potencialmente poderiam desencadear falsos positivos. Isso também deve ser usado se você está tendo problemas com phpMussel mas não deseja removê-lo do sistema. Quando isso acontece, para reativar phpMussel, uso "enable".
 
 enable
-- Senha necessária: script_password
+- Senha necessária: `script_password`
 - Outros requisitos: (nenhum)
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -208,7 +208,7 @@ enable
 - Que faz: Ativar phpMussel. Este deve ser usado se você já desativado phpMussel usando "disable" e desejar para reativá-la.
 
 update
-- Senha necessária: script_password
+- Senha necessária: `script_password`
 - Outros requisitos: `update.dat` e `update.inc` devem existir.
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -216,7 +216,7 @@ update
 - Que faz: Verifica se há atualizações para ambos phpMussel e suas assinaturas. Se as atualização verificações suceder e atualizações são encontrados, tentará baixar e instalar essas atualizações. Se atualização verificação falha, atualização irá abortar. Os resultados de o inteiro processo são impressos na tela. Eu recomendo verificando pelo menos uma vez por mês para garantir que seus assinaturas e sua cópia do phpMussel são mantidos atualizados (a menos, claro, você está verificando se há atualizações e instalá-los manualmente, que, eu ainda recomendo fazer pelo menos uma vez por mês). Verificando mais que duas vezes por mês é provavelmente inútil, considerando que eu estou muito improvável que seja capaz de produzir atualizações de qualquer variedade com mais freqüência do que (nem eu particularmente quero para a maior parte).
 
 greylist
-- Senha necessária: script_password
+- Senha necessária: `script_password`
 - Outros requisitos: (nenhum)
 - Parâmetros necessários: [Nome de assinatura a ser greylisted]
 - Parâmetros opcionais: (nenhum)
@@ -224,7 +224,7 @@ greylist
 - Que faz: Adicionar uma assinatura para o greylist.
 
 greylist_clear
-- Senha necessária: script_password
+- Senha necessária: `script_password`
 - Outros requisitos: (nenhum)
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -232,7 +232,7 @@ greylist_clear
 - Que faz: Limpo inteiro greylist.
 
 greylist_show
-- Senha necessária: script_password
+- Senha necessária: `script_password`
 - Outros requisitos: (nenhum)
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
@@ -481,11 +481,11 @@ O seguinte é uma lista de variáveis encontradas no `phpmussel.ini` configuraç
 Geral configuração por phpMussel.
 
 "script_password"
-- Como uma conveniência, phpMussel permitirás certas funções (incluindo a capacidade de atualizando phpMussel remotamente) ao ser acionado manualmente através de POST, GET e QUERY. Mas, como medida de segurança, para fazer isso, phpMussel esperam uma senha para ser incluída com o comando, forma a garantir que é você, e não outra pessoa, tentando de acionar manualmente essas funções. Definir script_password para qualquer senha que você desejá usar. Se nenhuma senha for definida, o manual acionamento será desativado por padrão. Uso algo que você vai se lembrar, mas que é difícil por outros adivinharem.
+- Como uma conveniência, phpMussel permitirás certas funções (incluindo a capacidade de atualizando phpMussel remotamente) ao ser acionado manualmente através de POST, GET e QUERY. Mas, como medida de segurança, para fazer isso, phpMussel esperam uma senha para ser incluída com o comando, forma a garantir que é você, e não outra pessoa, tentando de acionar manualmente essas funções. Definir `script_password` para qualquer senha que você desejá usar. Se nenhuma senha for definida, o manual acionamento será desativado por padrão. Uso algo que você vai se lembrar, mas que é difícil por outros adivinharem.
 - Não tem influência em CLI modo.
 
 "logs_password"
-- O mesmo como script_password, mas por visualizando conteúdo de scan_log e scan_kills. Tendo separadas senhas pode ser útil se você quiser dar alguém o acesso a um conjunto de funções mas não o outro.
+- O mesmo como `script_password`, mas por visualizando conteúdo de scan_log e scan_kills. Tendo separadas senhas pode ser útil se você quiser dar alguém o acesso a um conjunto de funções mas não o outro.
 - Não tem influência em CLI modo.
 
 "cleanup"
@@ -757,7 +757,7 @@ Compatibilidade directivas por phpMussel.
 Heurísticos directivas para phpMussel.
 
 "threshold"
-- Há específicas assinaturas de phpMussel para identificando suspeitas e potencialmente maliciosos qualidades dos arquivos que estão sendo carregados sem por si só identificando aqueles arquivos que estão sendo carregados especificamente como sendo maliciosos. Este "threshold" (limiar) valor instrui phpMussel o que o total máximo peso de suspeitas e potencialmente maliciosos qualidades dos arquivos que estão sendo carregados que é permitida é antes que esses arquivos devem ser sinalizada como maliciosos. A definição de peso neste contexto é o total número de suspeitas e potencialmente maliciosos qualidades identificado. Por padrão, este valor será definido como 3. Um menor valor geralmente resultará em uma maior ocorrência de falsos positivos mas um maior número de maliciosos arquivos sendo sinalizado, enquanto um maior valor geralmente resultará em uma menor ocorrência de falsos positivos mas um menor número de maliciosos arquivos sendo sinalizado. é geralmente melhor a deixar esse valor em seu padrão a menos que você está enfrentando problemas relacionados a ela.
+- Existem assinaturas específicas de phpMussel para identificando suspeitas e qualidades potencialmente maliciosos dos arquivos que estão sendo carregados sem por si só identificando aqueles arquivos que estão sendo carregados especificamente como sendo maliciosos. Este "threshold" (limiar) valor instrui phpMussel o que o total máximo peso de suspeitas e qualidades potencialmente maliciosos dos arquivos que estão sendo carregados que é permitida é antes que esses arquivos devem ser sinalizada como maliciosos. A definição de peso neste contexto é o número total de suspeitas e qualidades potencialmente maliciosos identificado. Por padrão, este valor será definido como 3. Um menor valor geralmente resultará em uma maior ocorrência de falsos positivos mas um maior número de arquivos maliciosos sendo sinalizado, enquanto um maior valor geralmente resultará em uma menor ocorrência de falsos positivos mas um menor número de arquivos maliciosos sendo sinalizado. É geralmente melhor a deixar esse valor em seu padrão a menos que você está enfrentando problemas relacionados a ela.
 
 ####"virustotal" (Categoria)
 Configuração para Virus Total integração.
@@ -778,12 +778,38 @@ Notar: Se a verificação de arquivos usando o Virus Total de API está desativa
 Notar: Independentemente do nível de suspeita, todos os arquivos que estão na blacklist ou whitelisted por phpMussel não serão analisados usando o Virus Total API, porque esses tais arquivos que já foram declaradas como quer malicioso ou benigno por phpMussel no momento em que eles teriam sido de caso contrário analisada pelo Virus Total API, e por conseguinte, análise adicional não seria necessário. A capacidade de phpMussel para verificar arquivos usando o Virus Total API é destinado para construir confiança em relação a se um arquivo é malicioso ou benigno nas circunstâncias em que phpMussel não é totalmente certo se um arquivo é malicioso ou benigno.
 
 "vt_weighting"
-- Deve phpMussel aplicar os resultados de analisando usando o Virus Total API como detecções ou como detecção ponderação? Esta directiva existe, porque, embora verificando um arquivo usando múltiplos mecanismos (como Virus Total faz) deve resultar em um aumento da taxa de detecção (e por conseguinte em um maior número de maliciosos arquivos detectados), isto também pode resultar em um aumento número de falsos positivos, e por conseguinte, em algumas circunstâncias, os resultados de análise pode ser melhor utilizado como uma pontuação de confiança e não como uma conclusão definitiva. Se um valor de 0 é usado, os resultados de análise usando o Virus Total API será aplicado como detecções, e por conseguinte, Se qualquer mecanismo usado pelo Virus Total marca o arquivo que está sendo analisado como sendo malicioso, phpMussel considerará o arquivo a ser malicioso. Se qualquer outro valor é usado, os resultados de análise usando o Virus Total API será aplicado como detecção ponderação, e por conseguinte, o número de mecanismos utilizados pela Virus Total que marcar o arquivo que está sendo analisado como sendo malicioso servirá como uma pontuação de confiança (ou ponderação de detecção) para se ou não o arquivo que está sendo analisado deve ser considerado malicioso por phpMussel (o valor utilizado representará o mínima pontuação de confiança ou peso requerido a fim de ser considerado malicioso). Um valor de 0 é usado por padrão.
+- Deve phpMussel aplicar os resultados de analisando usando o Virus Total API como detecções ou como detecção ponderação? Esta directiva existe, porque, embora verificando um arquivo usando múltiplos mecanismos (como Virus Total faz) deve resultar em um aumento da taxa de detecção (e por conseguinte em um maior número de arquivos maliciosos detectados), isto também pode resultar em um aumento número de falsos positivos, e por conseguinte, em algumas circunstâncias, os resultados de análise pode ser melhor utilizado como uma pontuação de confiança e não como uma conclusão definitiva. Se um valor de 0 é usado, os resultados de análise usando o Virus Total API será aplicado como detecções, e por conseguinte, Se qualquer mecanismo usado pelo Virus Total marca o arquivo que está sendo analisado como sendo malicioso, phpMussel considerará o arquivo a ser malicioso. Se qualquer outro valor é usado, os resultados de análise usando o Virus Total API será aplicado como detecção ponderação, e por conseguinte, o número de mecanismos utilizados pela Virus Total que marcar o arquivo que está sendo analisado como sendo malicioso servirá como uma pontuação de confiança (ou ponderação de detecção) para se ou não o arquivo que está sendo analisado deve ser considerado malicioso por phpMussel (o valor utilizado representará o mínima pontuação de confiança ou peso requerido a fim de ser considerado malicioso). Um valor de 0 é usado por padrão.
 
 "vt_quota_rate" e "vt_quota_time"
 - De acordo com o Virus Total API documentação, é limitada a, no máximo, 4 solicitações de qualquer natureza dentro qualquer 1 minuto período de tempo. Se você executar um honeyclient, honeypot ou qualquer outro automação que vai fornecer recursos para Virus Total e não só recuperar relatórios você tem direito a uma melhor solicitações cota. Por padrão, phpMussel vai aderir estritamente a estas limitações, mas, devido à possibilidade de essas cotas a ser aumentada, estas duas directivas são fornecidos como um meio para que você possa instruir phpMussel sobre o limite que deve aderir para. Excepto se tenha sido instruído a fazê-lo, não é recomendado para você aumentar esses valores, mas, se você encontrou problemas relacionados com a atingir sua cota, diminuir esses valores podem _**POR VEZES**_ ajudá-lo em lidar com estes problemas. Seu taxa limite é determinada como `vt_quota_rate` solicitações de qualquer natureza dentro qualquer `vt_quota_time` minuto período de tempo.
 
-####"template_data" (Category)
+####"urlscanner" (Categoria)
+URL analisador configuração.
+
+"urlscanner"
+- Construído em phpMussel é um URL analisador, capaz de detectar URLs maliciosos dentro de todos os dados ou arquivos analisados. Para habilitar o URL analisador, definir a diretiva `urlscanner` para true; Para desativá-lo, definir esta diretiva para false.
+
+Notar: Se o URL analisador é desativado, você não terá que rever alguma das directivas nesta categoria (`urlscanner`), porque nenhum deles fará de tudo se este é desativado.
+
+URL analisador API uso configuração.
+
+"lookup_hphosts"
+- Permite o uso do [hpHosts](http://hosts-file.net/) API quando definido para true. hpHosts não requer uma API chave para o uso de sua API.
+
+"google_api_key"
+- Permite o uso do Google Safe Browsing API quando a API chave necessária está definida. Para o uso de sua API, Google Safe Browsing API requerer uma API chave, que pode ser obtido a partir de [Aqui](https://console.developers.google.com/).
+- Notar: Esta é uma função futuro! Google Safe Browsing API funcionalidade não está escrita neste momento!
+
+"maximum_api_lookups"
+- Número máximo admissível de API solicitações para executar por cada iteração de análise. Porque cada API solicitação adicional irá acrescentar ao tempo total necessário para completar cada iteração de análise, você pode querer estipular uma limitação a fim de acelerar o processo de análise. Quando definido para 0, nenhuma número máximo admissível será aplicada. Definido para 10 por padrão.
+
+"maximum_api_lookups_response"
+- Que fazer se o número máximo admissível de API solicitações está ultrapassado? False = Fazer nada (continuar o processamento) [Padrão]; True = Marcar/bloquear o arquivo.
+
+"cache_time"
+- Quanto tempo (em segundos) devem os resultados da API ser armazenados em cache? Padrão é 3600 segundos (1 hora).
+
+####"template_data" (Categoria)
 Directivas/Variáveis para modelos e temas.
 
 Template dados está associada com o HTML usado para gerar a "Carregar Negado" mensagem exibido aos usuários quandos arquivo carregamentos são bloqueados. Se você estiver usando temas personalizados para phpMussel, HTML é originado a partir do `template_custom.html` arquivo, e caso contrário, HTML é originado a partir do `template.html` arquivo. Variáveis escritas para esta seção do configuração arquivo são processado ao HTML via substituição de quaisquer nomes de variáveis cercado por colchetes encontrado dentro do HTML com os variáveis dados correspondentes. Por exemplo, onde `foo="bar"`, qualquer instância de `<p>{foo}</p>` encontrado dentro do HTML tornará `<p>bar</p>`.
@@ -951,4 +977,4 @@ Esta informação foi atualizada dia 7 Setembro 2015 e é corrente para todas ph
 ---
 
 
-Última Atualização: 4 Outubro 2015 (2015.10.04).
+Última Atualização: 17 Outubro 2015 (2015.10.17).

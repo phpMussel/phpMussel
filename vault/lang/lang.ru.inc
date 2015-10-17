@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Russian/Русский Language Data (30th August 2015).
+ This File: phpMussel Russian/Русский Language Data (13th October 2015).
  <%phpMussel%/vault/lang/lang.ru.inc>
 
 */
@@ -52,6 +52,7 @@ $MusselConfig['lang']['greylist_updated']=' Серый список обновл
 $MusselConfig['lang']['image']='изображение';
 $MusselConfig['lang']['instance_already_active']='Пример уже активен! Пожалуйста перепроверьте свои крючки.';
 $MusselConfig['lang']['invalid_file']='Неверный файл';
+$MusselConfig['lang']['invalid_url']='Неверный URL!';
 $MusselConfig['lang']['ok']='Хорошо';
 $MusselConfig['lang']['only_allow_images']='Загрузка файлов, которые не являются изображением, не допускается';
 $MusselConfig['lang']['phpmussel_disabled']='phpMussel неактивен.';
@@ -81,6 +82,7 @@ $MusselConfig['lang']['scan_tampering']='Обнаружена потенциал
 $MusselConfig['lang']['scan_unauthorised_upload']='Обнаружены несанкционированные загрузки манипуляции файла';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Обнаружены несанкционированное загрузки манипуляции файла или неправильная конфигурация! '; 
 $MusselConfig['lang']['started']='Начало работы';
+$MusselConfig['lang']['too_many_urls']='Слишком много URL';
 $MusselConfig['lang']['update_']='phpMussel теперь попытается себя обновить.';
 $MusselConfig['lang']['update_available']='Обновление сценария доступно.';
 $MusselConfig['lang']['update_complete']='Проверка обновления успешно завершена.';

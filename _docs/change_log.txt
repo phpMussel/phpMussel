@@ -100,6 +100,31 @@ Anything less than sub-minor:
   not terminating immediately upon execution [exe_standard_testfile.exe;
   pe_sectional_testfile.exe]; Testfile signatures updated accordingly.
 
+- [2015.10.11; NEW FEATURE; Maikuolan]: As of now, phpMussel has an in-built
+  URL scanner for detecting malicious URLs contained within files and data
+  being scanned [phpmussel.inc; urlscanner.cvd]!
+  Refer github.com/Maikuolan/phpMussel/issues/65
+
+- [2015.10.11; Sub-minor code change; Maikuolan]: The map file
+  "mail_mussel_standard.map" has been deleted, as it's no longer required due
+  to changes currently being implemented; The signatures file for the URL
+  scanner has been populated (signatures derived from PhishTank and Malc0de
+  data); New configuration options for URL scanner added.
+  Refer github.com/Maikuolan/phpMussel/issues/65
+
+- [2015.10.12; Sub-minor code change; Maikuolan]: Added a CLI command for
+  generating URL scanner signatures from URLs supplied via command argument.
+  Refer github.com/Maikuolan/phpMussel/issues/65
+
+- [2015.10.13; Sub-minor code change; Maikuolan]: Added support to the URL
+  scanner for performing API lookups to hpHosts; Various other minor code
+  adjustments done in preparation for further API lookup code to be added in
+  the near future.
+  Refer github.com/Maikuolan/phpMussel/issues/65
+
+- [2015.10.27; Signatures update; Maikuolan]: Domains from the Spam404.com
+  database will from now be integrated into the URL scanner signatures set.
+
 === Version/Release 0.7a (Previous Release: 0.7) ===
 SUB-MINOR RELEASE; Updated to the latest signatures set (55+20751+7a).
 

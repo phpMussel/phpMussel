@@ -1543,7 +1543,44 @@
      volte aiutare nel lavoro attraverso questi problemi. Il vostro tasso
      limite è determinato come "vt_quota_rate" richieste di qualsiasi natura in
      un dato "vt_quota_time" minuto tempo periodo.
- "template_data" (Category)
+ "urlscanner" (Categoria)
+ - Configurazione per l'URL scanner.
+   "urlscanner"
+   - Costruito in phpMussel è un URL scanner, in grado di rilevare URL malevoli
+     all'interno di dati ei file scansionati. Per abilitare l'URL scanner,
+     imposta la "urlscanner" direttiva su true; Per disabilitarlo, imposta
+     questa direttiva su false.
+   Notare: Se l'URL scanner è disabilitato, non sarà necessario rivedere
+   nessuna delle direttive in questa categoria ("urlscanner"), perché nessuno
+   di loro farà nulla se questo è disabilitato.
+ - API configurazione per l'URL scanner.
+   "lookup_hphosts"
+   - Abilita API richieste per l'API di hpHosts <http://hosts-file.net/> quando
+     impostato su true. hpHosts non richiede un API chiave per l'esecuzione di
+     API richieste.
+   "google_api_key"
+   - Abilita API richieste per l'API di Google Safe Browsing quando le API
+     chiave necessarie è definito. L'API di Google Safe Browsing richiede un
+     API chiave, che può essere ottenuto da
+     <https://console.developers.google.com/>.
+   - Notare: Questa è una caratteristica futuro! Google Safe Browsing API
+     funzionalità non completato a quest'ora!
+   "maximum_api_lookups"
+   - Numero massimo di richieste per l'API di eseguire per iterazione di
+     scansione individuo. Perché ogni richiesta supplementare per l'API farà
+     aggiungere al tempo totale necessario per completare ogni iterazione di
+     scansione, si potrebbe desiderare di stipulare una limitazione al fine di
+     accelerare il processo di scansione. Quando è impostato su 0, no tale
+     ammissibile numero massimo sarà applicata. Impostato su 10 per
+     impostazione predefinite.
+   "maximum_api_lookups_response"
+   - Cosa fare se il ammissibile numero massimo di richieste per l'API è
+     superato? False = Fare nulla (continuare il processo) [Predefinito];
+     True = Segnare/bloccare il file.
+   "cache_time"
+   - Per quanto tempo (in secondi) dovrebbe i risultati delle API richieste
+     essere memorizzati nella cache per? Predefinito è 3600 secondi (1 ora).
+ "template_data" (Categoria)
  - Directives/Variables for templates and themes: Modelli dati riferisce alla
    prodotti HTML utilizzato per generare il "Caricamento Negato" messaggio
    visualizzati agli utenti quando file caricamenti sono bloccati. Se stai
@@ -1794,5 +1831,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 4 Ottobre 2015 (2015.10.04).
+Ultimo Aggiornamento: 17 Ottobre 2015 (2015.10.17).
 EOF

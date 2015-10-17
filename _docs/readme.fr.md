@@ -149,7 +149,7 @@ Aussi soyez conscient que phpMussel est pas la fonctionnel équivalent d'une com
 
 ###4A. <a name="SECTION4A"></a>COMMANDES DU NAVIGATEUR
 
-Après phpMussel a été installé et est fonctionner correctement sur votre système, si vous avez défini les variables script_password et logs_password dans votre configuration fichier, vous sera pouvoir d'effectuer un certain nombre de administratives fonctions et entrée un nombre de commandes à phpMussel par votre navigateur. La raison de ces mots de passe doivent être defini afin de permettre à ces navigateur contrôles est pour assurer adéquate sécurité, l'adéquate protection de ces navigateur contrôles et faire en sorte une méthode existe pour ceux navigateur contrôle à être entièrement désactivé si elles ne sont pas souhaitées par vous et/ou autres webmasters/administrateurs dont sont l'utiliser phpMussel. Ainsi, en d'autres termes, pour activer ces contrôles, définir un mot de passe, et pour désactiver ces contrôles, définir aucun mot de passe. Comme alternatif, si vous choisir d'activer ces contrôles et puis choisir de désactiver ces contrôles à une ultérieure date, il existe une commande à faire ce (tel peut être utile si vous effectuer certaines actions vous sentez pourrait compromettre les mots de pass que vous avez délégué et besoin de désactiver rapidement ces contrôles sans modifier votre configuration fichier).
+Après phpMussel a été installé et est fonctionner correctement sur votre système, si vous avez défini les variables `script_password` et `logs_password` dans votre configuration fichier, vous sera pouvoir d'effectuer un certain nombre de administratives fonctions et entrée un nombre de commandes à phpMussel par votre navigateur. La raison de ces mots de passe doivent être defini afin de permettre à ces navigateur contrôles est pour assurer adéquate sécurité, l'adéquate protection de ces navigateur contrôles et faire en sorte une méthode existe pour ceux navigateur contrôle à être entièrement désactivé si elles ne sont pas souhaitées par vous et/ou autres webmasters/administrateurs dont sont l'utiliser phpMussel. Ainsi, en d'autres termes, pour activer ces contrôles, définir un mot de passe, et pour désactiver ces contrôles, définir aucun mot de passe. Comme alternatif, si vous choisir d'activer ces contrôles et puis choisir de désactiver ces contrôles à une ultérieure date, il existe une commande à faire ce (tel peut être utile si vous effectuer certaines actions vous sentez pourrait compromettre les mots de pass que vous avez délégué et besoin de désactiver rapidement ces contrôles sans modifier votre configuration fichier).
 
 Quelques raisons pour lesquelles vous _**DEVRIEZ**_ permettre à ces contrôles:
 - Fournit une méthode à liste grise les signatures sur la volée dans des cas comme lorsque vous découvrez une signature qui produit un faux positif tandis le téléchargement de fichiers à votre système et vous n'avez pas le temps à manuellement modifier et rétélécharger votre liste grise fichier.
@@ -167,7 +167,7 @@ De toute façon, indépendamment de que vous choisissez, le choix est finalement
 Une liste de commandes du navigateur disponibles:
 
 scan_log
-- Mot de passe requis: logs_password
+- Mot de passe requis: `logs_password`
 - Autre exigences: scan_log doit être défini.
 - Paramètres requis: (aucun)
 - Paramètres optionnels: (aucun)
@@ -175,7 +175,7 @@ scan_log
 - Quel est-il: Imprime le contenu de votre scan_log fichier à l'écran.
 
 scan_kills
-- Mot de passe requis: logs_password
+- Mot de passe requis: `logs_password`
 - Autre exigences: scan_kills doit être défini.
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
@@ -183,7 +183,7 @@ scan_kills
 - Quel est-il: Imprime le contenu de votre scan_kills fichier à l'écran.
 
 controls_lockout
-- Mot de passe requis: logs_password OU script_password
+- Mot de passe requis: `logs_password` OU `script_password`
 - Autre exigences: (aucun)
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
@@ -192,7 +192,7 @@ controls_lockout
 - Quel est-il: Désactiver/verrouille tous les contrôles de navigateur. Cela devrait être utilisé si vous pensez que vos mots de passe ont été compromis (cela peut arriver si vous utilisez ces commandes à partir d'un ordinateur qui n'est pas sécurisé et/ou n'est pas digne de confiance). controls_lockout fonctionne par créant un fichier, `controls.lck`, dans votre voûte, dont phpMussel sera vérifié avant d'effectuer commandes de toute nature. Après, pour réactiver les contrôles, vous devez supprimer manuellement le fichier `controls.lck` par FTP ou similaire.
 
 disable
-- Mot de passe requis: script_password
+- Mot de passe requis: `script_password`
 - Autre exigences: (aucun)
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
@@ -200,7 +200,7 @@ disable
 - Quel est-il: Désactiver phpMussel. Cela devrait être utilisé si vous réactualiser ou faire changements à votre système ou si vous installez logiciel ou modules nouveaux à votre système dont sera ou pourrait potentiellement déclencher faux positifs. Aussi, cela devrait être utilisé si vous rencontrez problèmes avec phpMussel mais ne veulent pas à supprimer de votre système. Si c'est le cas, pour réactiver phpMussel, utiliser "enable".
 
 enable
-- Mot de passe requis: script_password
+- Mot de passe requis: `script_password`
 - Autre exigences: (aucun)
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
@@ -208,7 +208,7 @@ enable
 - Quel est-il: Réactiver phpMussel. Cela devrait être utilisé si vous avez précédemment désactivé phpMussel utilisant "disable" et vous voulez à réactiver ce.
 
 update
-- Mot de passe requis: script_password
+- Mot de passe requis: `script_password`
 - Autre exigences: `update.dat` et `update.inc` doivent exister.
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
@@ -216,15 +216,15 @@ update
 - Quel est-il: Vérifie pour nouvelles versions de phpMussel et ses signatures. Si quelque chose est trouvé, il va tenter à télécharger et installer les nouveaux fichiers. S'il est ne parvient pas à vérifier, il sera annulerait. Les résultats du processus sont imprimés à l'écran. Je recommande vérifier au moins une fois par mois afin d'assurer que vos signatures et votre copie de phpMussel sont la dernière disponible (à moins que, bien sûr, si vous téléchargez et installez les derniers fichiers manuellement, dont, j'aussi recommande vérifier au moins une fois par mois). Vérification plus de deux fois par mois est probablement inutile, étant donné que je suis très improbable d'être produire nouveaux fichiers plus fréquemment que cela (ni je ne particulièrement pas vouloir à, pour la plupart).
 
 greylist
-- Mot de passe requis: script_password
+- Mot de passe requis: `script_password`
 - Autre exigences: (aucun)
-- Paramètres requis: [Name of signature to be greylisted]
+- Paramètres requis: [Nom de la signature à greylist]
 - Optional parameters: (aucun)
 - Exemple: `?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]`
 - Quel est-il: Ajouter une signature à la liste grise.
 
 greylist_clear
-- Mot de passe requis: script_password
+- Mot de passe requis: `script_password`
 - Autre exigences: (aucun)
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
@@ -232,7 +232,7 @@ greylist_clear
 - Quel est-il: Efface la totalité de la liste grise.
 
 greylist_show
-- Mot de passe requis: script_password
+- Mot de passe requis: `script_password`
 - Autre exigences: (aucun)
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
@@ -481,11 +481,11 @@ Ce qui suit est une liste de variables trouvé dans le `phpmussel.ini` configura
 Configuration générale pour phpMussel.
 
 "script_password"
-- Par commodité, phpMussel permettra certaines fonctions (inclus la capacité de réactualiser phpMussel sur la volée) pour être déclenché manuellement via POST, GET et QUERY. Cependant, par mesure de sécurité, pour ce faire, phpMussel s'attend à un mot de passe pour être inclus dans la commande, à assurer que c'est vous, et pas quelqu'un d'autre, attenter de déclencher manuellement ces fonctions. Fixer script_password à le mot de passe que vous souhaitez d'utiliser. Si aucun mot de passe est fixé, déclenchement manuel sera désactivé par défaut. Utiliser quelque chose que vous souvenez, mais qui est difficile à deviner.
+- Par commodité, phpMussel permettra certaines fonctions (inclus la capacité de réactualiser phpMussel sur la volée) pour être déclenché manuellement via POST, GET et QUERY. Cependant, par mesure de sécurité, pour ce faire, phpMussel s'attend à un mot de passe pour être inclus dans la commande, à assurer que c'est vous, et pas quelqu'un d'autre, attenter de déclencher manuellement ces fonctions. Fixer `script_password` à le mot de passe que vous souhaitez d'utiliser. Si aucun mot de passe est fixé, déclenchement manuel sera désactivé par défaut. Utiliser quelque chose que vous souvenez, mais qui est difficile à deviner.
 - N'a pas d'influence en mode CLI.
 
 "logs_password"
-- La même comme script_password, mais par l'affichage du contenu de scan_log et scan_kills. Pour avoir distincts mots de passe peut être utile si vous voulez donner à quelqu'un autre accès à un ensemble de fonctions mais pas l'autre.
+- La même comme `script_password`, mais par l'affichage du contenu de scan_log et scan_kills. Pour avoir distincts mots de passe peut être utile si vous voulez donner à quelqu'un autre accès à un ensemble de fonctions mais pas l'autre.
 - N'a pas d'influence en CLI mode.
 
 "cleanup"
@@ -783,7 +783,33 @@ Noter: Indépendamment du niveau de suspicion, tous les fichiers qui sont sur la
 "vt_quota_rate" et "vt_quota_time"
 - Selon le Virus Total API documentation, elle est limitée à au plus 4 demandes de toute nature dans un laps de 1 minute de temps. Si vous exécutez un honeyclient, honeypot ou autre automatisation qui va fournir les ressources pour Virus Total et pas seulement récupérer des rapports vous avez droit à un plus élevée demande quota. Par défaut, phpMussel va adhérer strictement à ces limitations, mais en raison de la possibilité de ces quotas étant augmenté, ces deux directives sont fournies comme un moyen pour vous d'instruire phpMussel à quelle limite il faut adhérer. Sauf si vous avez été invité à le faire, on ne recommande pas pour vous d'augmenter ces valeurs, mais, si vous avez rencontré des problèmes relatifs à atteindre votre quota, diminuant ces valeurs _**PEUT**_ parfois vous aider dans le traitement de ces problèmes. Votre quota est déterminée comme `vt_quota_rate` demandes de toute nature dans un laps de `vt_quota_time` minute de temps.
 
-####"template_data" (Category)
+####"urlscanner" (Catégorie)
+URL scanner configuration.
+
+"urlscanner"
+- Construit dans phpMussel est un URL scanner, capable de détecter les URL malveillantes à partir de toutes les données ou fichiers analysés. Pour activer le URL scanner, définir la directive `urlscanner` à true; Pour désactiver le URL scanner, définir cette directive à false.
+
+Noter: Si le URL scanner est désactivé, vous ne serez pas besoin de revoir quelconque du directives dans cette catégorie (`urlscanner`), parce qu'aucun d'eux avoir une fonction si cette directive est désactivée.
+
+URL scanner API chercher configuration.
+
+"lookup_hphosts"
+- Permet cherches de l'[hpHosts](http://hosts-file.net/) API quand définit comme true. hpHosts ne nécessite pas une API clé pour effectuer des cherches de l'API.
+
+"google_api_key"
+- Permet cherches du Google Safe Browsing API quand la API clé nécessaire est définie. Google Safe Browsing API cherches nécessite une API clé, qui peut être obtenu à partir [d'ici](https://console.developers.google.com/).
+- Noter: Cette fonctionnalité est prévu pour l'avenir! Google Safe Browsing API fonctionnalité pas encore écrit!
+
+"maximum_api_lookups"
+- Nombre de cherches maximal de l'API pour effectuer par itération d'analyse individuelle. Parce que chaque API cherche supplémentaire va ajouter à la durée totale requise pour compléter chaque itération d'analyse, vous pouvez prévoir une limitation afin d'accélérer le processus d'analyse. Quand défini comme 0, pas de telles nombre maximum admissible sera appliquée. Défini comme 10 par défaut.
+
+"maximum_api_lookups_response"
+- Que faire si le nombre de cherches de l'API maximal est dépassée? False = Ne fais rien (poursuivre le traitement) [Défaut]; True = Marque/bloquer le fichier.
+
+"cache_time"
+- Combien de temps (en secondes) devrait les résultats du cherches de l'API être conservé dans le cache? Défaut est 3600 secondes (1 heure).
+
+####"template_data" (Catégorie)
 Directives/Variables pour les modèles et thèmes.
 
 Modèles données est liée à la sortie HTML utilisé pour générer le "Téléchargement Refusé" message affiché aux utilisateurs sur un fichier téléchargement est bloqué. Si vous utilisez des thèmes personnalisés pour phpMussel, sortie HTML provient du `template_custom.html` fichier, et sinon, sortie HTML provient du `template.html` fichier. Variables écrites à cette section du configuration fichier sont préparé pour la sortie HTML par voie de remplacer tous les noms de variables circonfixé par accolades trouvés dans la sortie HTML avec les variables données correspondant. Par exemple, où `foo="bar"`, toute instance de `<p>{foo}</p>` trouvés dans la sortie HTML deviendra `<p>bar</p>`.
@@ -815,7 +841,7 @@ Toutes les archive métadonnées signatures suivez le format:
 
 `NOM:TAILLE:CRC32`
 
-Où NOM est le nom à citer pour la signature, TAILLE est la totale taille (non compressé) d'un fichier contenues dans l'archive et CRC32 est la CRC32 contrôle somme of de ce fichier contenu.
+Où NOM est le nom à citer pour la signature, TAILLE est la totale taille (non compressé) d'un fichier contenues dans l'archive et CRC32 est la CRC32 contrôle somme de ce fichier contenu.
 
 ####*PE SECTIONAL SIGNATURES*
 Toutes les PE Sectional signatures suivez le format:
@@ -951,4 +977,4 @@ Cette information a été réactualisé le 7 Septembre 2015 et est courant pour 
 ---
 
 
-Dernière Réactualisé: 4 Octobre 2015 (2015.10.04).
+Dernière Réactualisé: 17 Octobre 2015 (2015.10.17).

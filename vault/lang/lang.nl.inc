@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Dutch/Nederlandse Language Data (30th August 2015).
+ This File: phpMussel Dutch/Nederlandse Language Data (13th October 2015).
  <%phpMussel%/vault/lang/lang.nl.inc>
 
 */
@@ -51,7 +51,8 @@ $MusselConfig['lang']['greylist_not_updated']=' Greylist niet bijgewerkt.';
 $MusselConfig['lang']['greylist_updated']=' Greylist bijgewerkt.';
 $MusselConfig['lang']['image']='Image';
 $MusselConfig['lang']['instance_already_active']='Instantie al actief! Controleer uw haken.';
-$MusselConfig['lang']['invalid_file']='Ongeldig bestand';
+$MusselConfig['lang']['invalid_file']='Ongeldige bestand';
+$MusselConfig['lang']['invalid_url']='Ongeldige URL!';
 $MusselConfig['lang']['ok']='OK';
 $MusselConfig['lang']['only_allow_images']='Uploaden van niet-beeldbestanden is niet toegestaan';
 $MusselConfig['lang']['phpmussel_disabled']='phpMussel uitgeschakeld.';
@@ -81,6 +82,7 @@ $MusselConfig['lang']['scan_tampering']='Gedetecteerd potentieel gevaarlijke bes
 $MusselConfig['lang']['scan_unauthorised_upload']='ngeautoriseerde bestand uploaden manipulatie gedetecteerd';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Ongeautoriseerde bestand uploaden manipulatie of misconfiguratie gedetecteerd! ';
 $MusselConfig['lang']['started']='Gestart';
+$MusselConfig['lang']['too_many_urls']='Te veel URL\'s';
 $MusselConfig['lang']['update_']='phpMussel zal nu proberen om zichzelf te bijwerken.';
 $MusselConfig['lang']['update_available']='Een script bijwerk is beschikbaar.';
 $MusselConfig['lang']['update_complete']='Bijwerk verificatie afgerond geslaagd.';

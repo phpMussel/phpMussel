@@ -1,11 +1,11 @@
-## phpMussel 自述文件写在中文（简体）。
+## phpMussel 中文（简体）文档。
 
 ### 内容
 - 1. [前言](#SECTION1)
-- 2A. [如何安装（对于WEB服务器）](#SECTION2A)
-- 2B. [如何安装（对于CLI）](#SECTION2B)
-- 3A. [如何使用（对于WEB服务器）](#SECTION3A)
-- 3B. [如何使用（对于CLI）](#SECTION3B)
+- 2A. [如何安装（WEB服务器）](#SECTION2A)
+- 2B. [如何安装（CLI）](#SECTION2B)
+- 3A. [如何使用（WEB服务器）](#SECTION3A)
+- 3B. [如何使用（CLI）](#SECTION3B)
 - 4A. [浏览器命令](#SECTION4A)
 - 4B. [CLI（命令行界面）](#SECTION4B)
 - 5. [文件在包](#SECTION5)
@@ -18,19 +18,19 @@
 
 ###1. <a name="SECTION1"></a>前言
 
-谢谢对于使用phpMussel，一个PHP脚本旨在检测木马，病毒，恶意软件，和其他威胁在文件上传到您的系统随地这个脚本是叫，根据ClamAV的签名和其他签名。
+谢谢使用phpMussel，这是一个根据ClamAV的签名和其他签名在上传完成后来自动检测木马/病毒/恶意软件和其他可能威胁到您系统安全的文件的PHP脚本。
 
-PHPMUSSEL版权2013和此后GNU/GPLv.2通过Caleb M （Maikuolan）。
+PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
-这个脚本是免费软件;您可以重新分配它和/或修改它按照条款GNU通用公共许可证发表由自由软件基金会;或第2版本的许可证，或（根据您的选择）任何新版本。这个脚本是提供在希望将是有用，但不提供任何担保和不提供任何隐含担保的适销或适用于某一特定用途。见GNU通用公共许可证的更多细节，坐落于`LICENSE`文件于`_docs`文件夹的相关包和知识库的此文件和也可从：
+本脚本是基于GNU通用许可V2.0版许可协议发布的，您可以在许可协议的允许范围内自行修改和发布，但请遵守GNU通用许可协议。使用脚本的过程中，作者不提供任何担保和任何隐含担保。更多的细节请参见GNU通用公共许可证，位于`_docs`文件夹下的`LICENSE`文件也可从访问：
 - <http://www.gnu.org/licenses/>。
 - <http://opensource.org/licenses/>。
 
-谢谢[ClamAV](http://www.clamav.net/)为计划灵感和为签名这个脚本利用。没有它，这个脚本很可能不会存在，或充其量，将有非常有限的价值。
+谢谢[ClamAV](http://www.clamav.net/)为本脚本提供文件签名库访问许可。没有它，这个脚本很可能不会存在，或者其价值有限。
 
-谢谢Sourceforge和GitHub为主办的计划文件，[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)为主办的phpMussel讨论论坛，和其他来源的签名利用由phpMussel：[SecuriteInfo.com](http://www.securiteinfo.com/)，[PhishTank](http://www.phishtank.com/)，[NLNetLabs](http://nlnetlabs.nl/)和他人，和特别谢谢大家为支持的计划，和任何人我忘了提，和您，为您的运用的脚本。
+谢谢Sourceforge和GitHub开通了，[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)phpMussel的讨论论坛，谢谢为phpMussel提供签名文件的：[SecuriteInfo.com](http://www.securiteinfo.com/)，[PhishTank](http://www.phishtank.com/)，[NLNetLabs](http://nlnetlabs.nl/)，还有更多的我忘了提及的人（抱歉，语文水平有限，这句话实在不知道怎么翻译才通顺）。
 
-这个文件和其关联包可以下载免费从：
+现在phpMussel的代码文件和关联包可以从以下地址免费下载下载免费：
 - [Sourceforge](http://phpmussel.sourceforge.net/)。
 - [GitHub](https://github.com/Maikuolan/phpMussel/)。
 
@@ -589,47 +589,47 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - “graphics_custom”
 - “graphics_mussel”
 
-检查存档内容针对存档元数据签名当扫描吗？ False = 不检查， True = 检查【标准】。
+检查存档内容针对存档元数据签名当扫描吗？ False = 不检查， True = 检查【默认】。
 - “metadata_clamav”
 - “metadata_custom”
 - “metadata_mussel”
 
-检查OLE对象针对OLE签名当扫描吗？ False = 不检查， True = 检查【标准】。
+检查OLE对象针对OLE签名当扫描吗？ False = 不检查， True = 检查【默认】。
 - “ole_clamav”
 - “ole_custom”
 - “ole_mussel”
 
-检查文件名针对基于文件名签名当扫描吗？ False = 不检查， True = 检查【标准】。
+检查文件名针对基于文件名签名当扫描吗？ False = 不检查， True = 检查【默认】。
 - “filenames_clamav”
 - “filenames_custom”
 - “filenames_mussel”
 
-允许扫描通过`phpMussel_mail()`吗？ False = 不检查， True = 检查【标准】。
+允许扫描通过`phpMussel_mail()`吗？ False = 不检查， True = 检查【默认】。
 - “mail_clamav”
 - “mail_custom”
 - “mail_mussel”
 
-激活具体文件白名单吗？ False = 不检查， True = 检查【标准】。
+激活具体文件白名单吗？ False = 不检查， True = 检查【默认】。
 - “whitelist_clamav”
 - “whitelist_custom”
 - “whitelist_mussel”
 
-检查XML／XDP块针对XML／XDP块签名当扫描吗？ False = 不检查， True = 检查【标准】。
+检查XML／XDP块针对XML／XDP块签名当扫描吗？ False = 不检查， True = 检查【默认】。
 - “xmlxdp_clamav”
 - “xmlxdp_custom”
 - “xmlxdp_mussel”
 
-检查针对复杂扩展签名当扫描吗？ False = 不检查， True = 检查【标准】。
+检查针对复杂扩展签名当扫描吗？ False = 不检查， True = 检查【默认】。
 - “coex_clamav”
 - “coex_custom”
 - “coex_mussel”
 
-检查针对PDF签名当扫描吗？ False = 不检查， True = 检查【标准】。
+检查针对PDF签名当扫描吗？ False = 不检查， True = 检查【默认】。
 - “pdf_clamav”
 - “pdf_custom”
 - “pdf_mussel”
 
-检查针对SWF签名当扫描吗？ False = 不检查， True = 检查【标准】。
+检查针对SWF签名当扫描吗？ False = 不检查， True = 检查【默认】。
 - “swf_clamav”
 - “swf_custom”
 - “swf_mussel”
@@ -643,28 +643,28 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - “sd_siglen_max”
 
 “fail_silently”
-- phpMussel应该报告当签名文件是失踪或损坏吗？如果`fail_silently`是关闭，失踪和损坏文件将会报告当扫描，和如果`fail_silently`是激活，失踪和损坏文件将会忽略，有扫描报告为那些文件哪里没有问题。这个应该按说被留下除非您遇到失败或有其他类似问题。 False = 是关闭； True = 是激活【标准】。
+- phpMussel应该报告当签名文件是失踪或损坏吗？如果`fail_silently`是关闭，失踪和损坏文件将会报告当扫描，和如果`fail_silently`是激活，失踪和损坏文件将会忽略，有扫描报告为那些文件哪里没有问题。这个应该按说被留下除非您遇到失败或有其他类似问题。 False = 是关闭； True = 是激活【默认】。
 
 “fail_extensions_silently”
-- phpMussel应该报告当扩展是失踪吗？如果`fail_extensions_silently`是关闭，失踪扩展将会报告当扫描，和如果`fail_extensions_silently`是激活，失踪扩展将会忽略，有扫描报告为那些文件哪里没有任何问题。关闭的这个指令可能的可以增加您的安全，但可能还导致一个增加的假阳性。 False = 是关闭； True = 是激活【标准】。
+- phpMussel应该报告当扩展是失踪吗？如果`fail_extensions_silently`是关闭，失踪扩展将会报告当扫描，和如果`fail_extensions_silently`是激活，失踪扩展将会忽略，有扫描报告为那些文件哪里没有任何问题。关闭的这个指令可能的可以增加您的安全，但可能还导致一个增加的假阳性。 False = 是关闭； True = 是激活【默认】。
 
 “detect_adware”
-- phpMussel应该使用签名为广告软件检测吗？ False = 不检查， True = 检查【标准】。
+- phpMussel应该使用签名为广告软件检测吗？ False = 不检查， True = 检查【默认】。
 
 “detect_joke_hoax”
-- phpMussel应该使用签名为病毒／恶意软件笑话／恶作剧检测吗？ False = 不检查， True = 检查【标准】。
+- phpMussel应该使用签名为病毒／恶意软件笑话／恶作剧检测吗？ False = 不检查， True = 检查【默认】。
 
 “detect_pua_pup”
-- phpMussel应该使用签名为PUP/PUA（可能无用／非通缉程序／软件）检测吗？ False = 不检查， True = 检查【标准】。
+- phpMussel应该使用签名为PUP/PUA（可能无用／非通缉程序／软件）检测吗？ False = 不检查， True = 检查【默认】。
 
 “detect_packer_packed”
-- phpMussel应该使用签名为打包机和打包数据检测吗？ False = 不检查， True = 检查【标准】。
+- phpMussel应该使用签名为打包机和打包数据检测吗？ False = 不检查， True = 检查【默认】。
 
 “detect_shell”
-- phpMussel应该使用签名为webshel​​l脚本检测吗？ False = 不检查， True = 检查【标准】。
+- phpMussel应该使用签名为webshel​​l脚本检测吗？ False = 不检查， True = 检查【默认】。
 
 “detect_deface”
-- phpMussel应该使用签名为污损和污损软件检测吗？ False = 不检查， True = 检查【标准】。
+- phpMussel应该使用签名为污损和污损软件检测吗？ False = 不检查， True = 检查【默认】。
 
 ####"files" （类别）
 文件处理配置。
@@ -673,10 +673,10 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - 最大允许数值的文件为扫描当文件上传扫描之前中止扫描和告诉用户他们是上传太多在同一时间！提供保护针对一个理论攻击哪里一个攻击者尝试DDoS您的系统或CMS通过超载phpMussel以减速PHP进程到一个停止。推荐：10。您可能想增加或减少这个数值，根据速度的您的硬件。注意这个数值不交待为或包括存档内容。
 
 “filesize_limit”
-- 文件大小限在KB。 65536 = 64MB 【标准】，0 = 没有限（始终灰名单），任何正数值接受。这个可以有用当您的PHP配置限内存量一个进程可以占据或如果您的PHP配置限文件大小的上传。
+- 文件大小限在KB。 65536 = 64MB 【默认】，0 = 没有限（始终灰名单），任何正数值接受。这个可以有用当您的PHP配置限内存量一个进程可以占据或如果您的PHP配置限文件大小的上传。
 
 “filesize_response”
-- 如何处理文件超过文件大小限（如果存在）。 False = 白名单； True = 黑名单【标准】。
+- 如何处理文件超过文件大小限（如果存在）。 False = 白名单； True = 黑名单【默认】。
 
 “filetype_whitelist”, “filetype_blacklist”, “filetype_greylist”
 - 如果您的系统只允许具体文件类型被上传，或如果您的系统明确地否认某些文件类型，指定那些文件类型在白名单，黑名单和灰名单可以增加扫描执行速度通过允许脚本跳过某些文件类型。格式是CSV（逗号分隔变量）。如果您想扫描一切，而不是白名单，黑名单或灰名单，留变量空；这样做将关闭白名单／黑名单／灰名单。
@@ -686,22 +686,22 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
   - 如果灰名单是空，或如果灰名单不空和文件类型已灰名单，扫描文件像正常和确定如果阻止它基于扫描结果，但如果灰名单不空和文件类型不灰名单，过程文件仿佛已黑名单，因此不扫描它但阻止它无论如何。
 
 “check_archives”
-- 尝试匹配存档内容吗？ False = 不匹配； True = 匹配【标准】。
+- 尝试匹配存档内容吗？ False = 不匹配； True = 匹配【默认】。
 - 目前，只BZ，GZ，LZF和ZIP文件匹配是支持（匹配的RAR，CAB，7z和等等不还支持）。
 - 这个是不完美！虽说我很推荐保持这个激活，我不能保证它将始终发现一切。
 - 还，请注意存档匹配目前是不递归为ZIP格式。
 
 “filesize_archives”
-- 继承文件大小黑名单／白名单在存档内容吗？ False = 不继承（刚灰名单一切）； True = 继承【标准】。
+- 继承文件大小黑名单／白名单在存档内容吗？ False = 不继承（刚灰名单一切）； True = 继承【默认】。
 
 “filetype_archives”
-- 继承文件类型黑名单／白名单在存档内容吗？ False = 不继承（刚灰名单一切）； True = 继承【标准】。
+- 继承文件类型黑名单／白名单在存档内容吗？ False = 不继承（刚灰名单一切）； True = 继承【默认】。
 
 “max_recursion”
-- 最大存档递归深度限。 标准 = 10。
+- 最大存档递归深度限。 默认 = 10。
 
 “block_encrypted_archives”
-- 检测和受阻加密的存档吗？因为phpMussel是不能够扫描加密的存档内容，它是可能存档加密可能的可以使用通过一个攻击者作为一种手段尝试绕过phpMussel，杀毒扫描仪和其他这样的保护。指示phpMussel受阻任何存档它发现被加密可能的可以帮助减少任何风险有关联这些可能性。 False = 不受阻； True = 受阻【标准】。
+- 检测和受阻加密的存档吗？因为phpMussel是不能够扫描加密的存档内容，它是可能存档加密可能的可以使用通过一个攻击者作为一种手段尝试绕过phpMussel，杀毒扫描仪和其他这样的保护。指示phpMussel受阻任何存档它发现被加密可能的可以帮助减少任何风险有关联这些可能性。 False = 不受阻； True = 受阻【默认】。
 
 ####"attack_specific" （类别）
 专用攻击指令。
@@ -730,19 +730,19 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - 认可存档文件扩展（格式是CSV；应该只添加或去掉当问题发生；不必要的去掉可能的可以导致假阳性出现为存档文件，而不必要的增加将实质上白名单任何事您增加从专用攻击检测；修改有慎重；还请注这个无影响在什么存档可以和不能被分析在内容级）。这个名单，作为是作为标准，名单那些格式使用最常见的横过多数的系统和CMS，但有意是不全面。
 
 “general_commands”
-- 搜索文件内容为通用命令例如`eval()`，`exec()`和`include()`？ False = 不搜索【标准】； True = 搜索。 关闭这个指令如果您打算上传任何的下列在您的系统或CMS通过您的浏览器：PHP，JavaScript，HTML，python，perl文件和等等。激活这个指令如果您不有任何另外保护在您的系统和不打算上传这些文件。如果您使用另外安全在连词的phpMussel例如ZB Block，没有任何需要激活这个指令，因为最的什么phpMussel将寻找（在上下文这个指令）是重复的保护已提供。
+- 搜索文件内容为通用命令例如`eval()`，`exec()`和`include()`？ False = 不搜索【默认】； True = 搜索。 关闭这个指令如果您打算上传任何的下列在您的系统或CMS通过您的浏览器：PHP，JavaScript，HTML，python，perl文件和等等。激活这个指令如果您不有任何另外保护在您的系统和不打算上传这些文件。如果您使用另外安全在连词的phpMussel例如ZB Block，没有任何需要激活这个指令，因为最的什么phpMussel将寻找（在上下文这个指令）是重复的保护已提供。
 
 “block_control_characters”
-- 受阻任何文件包含任何控制字符吗（以外换行符）？ (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) 如果您只上传纯文本，您可以激活这个指令以提供某些另外保护在您的系统。然而，如果您上传任何事以外纯文本，激活这个可能结果在假阳性。 False = 不受阻【标准】； True = 受阻。
+- 受阻任何文件包含任何控制字符吗（以外换行符）？ (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) 如果您只上传纯文本，您可以激活这个指令以提供某些另外保护在您的系统。然而，如果您上传任何事以外纯文本，激活这个可能结果在假阳性。 False = 不受阻【默认】； True = 受阻。
 
 “corrupted_exe”
-- 损坏文件和处理错误。 False = 忽略； True = 受阻【标准】。 检测和受阻潜在的损坏移植可执行｢PE｣文件吗？时常（但不始终），当某些零件的一个移植可执行｢PE｣文件是损坏或不能被正确处理，它可以建议建议的一个病毒感染。过程使用通过最杀毒程序以检测病毒在PE文件需要处理那些文件在某些​​方式，哪里，如果程序员的一个病毒是意识的，将特别尝试防止，以允许他们的病毒留不检测。
+- 损坏文件和处理错误。 False = 忽略； True = 受阻【默认】。 检测和受阻潜在的损坏移植可执行｢PE｣文件吗？时常（但不始终），当某些零件的一个移植可执行｢PE｣文件是损坏或不能被正确处理，它可以建议建议的一个病毒感染。过程使用通过最杀毒程序以检测病毒在PE文件需要处理那些文件在某些​​方式，哪里，如果程序员的一个病毒是意识的，将特别尝试防止，以允许他们的病毒留不检测。
 
 “decode_threshold”
-- 可选限或门槛​​的长度的原始数据在其中解码命令应该被检测（如果有任何引人注目性能问题当扫描）。值是一个整数代表文件大小在KB。 标准 = 512 （512KB）。 零或空值将关闭门槛（去除任何这样的限基于文件大小）。
+- 可选限或门槛​​的长度的原始数据在其中解码命令应该被检测（如果有任何引人注目性能问题当扫描）。值是一个整数代表文件大小在KB。 默认 = 512 （512KB）。 零或空值将关闭门槛（去除任何这样的限基于文件大小）。
 
 “scannable_threshold”
-- 可选限或门槛​​为原始数据长度phpMussel是允许为阅读和扫描（如果有任何引人注目性能问题当扫描）。值是一个整数代表文件大小在KB。 标准 = 32768 （32MB）。 零或空值将关闭门槛。按说，这个数值应不会少于平均文件大小的文件上传您想和期待收到您的服务器或网站，应不会多于`filesize_limit`指令，和应不会多于大致五分之一的总允许内存分配获授PHP通过`php.ini`配置文件。这个指令存在为尝试防止phpMussel从用的太多内存（这个将防止它从能够顺利扫描文件以上的一个特别文件大小）。
+- 可选限或门槛​​为原始数据长度phpMussel是允许为阅读和扫描（如果有任何引人注目性能问题当扫描）。值是一个整数代表文件大小在KB。 默认 = 32768 （32MB）。 零或空值将关闭门槛。按说，这个数值应不会少于平均文件大小的文件上传您想和期待收到您的服务器或网站，应不会多于`filesize_limit`指令，和应不会多于大致五分之一的总允许内存分配获授PHP通过`php.ini`配置文件。这个指令存在为尝试防止phpMussel从用的太多内存（这个将防止它从能够顺利扫描文件以上的一个特别文件大小）。
 
 ####"compatibility" （类别）
 phpMussel兼容性指令。
@@ -757,13 +757,13 @@ phpMussel兼容性指令。
 启发式指令。
 
 “threshold”
-- 有某些签名的phpMussel意味为确定可疑和可能恶意文件零件被上传有不在他们自己确定那些文件被上传特别是作为恶意。这个“threshold”数值告诉phpMussel什么是最大总重量的可疑和潜在恶意文件零件被上传允许之前那些文件是被识别作为恶意。定义的重量在这个上下文是总数值的可疑和可能恶意文件零件确定。作为标准，这个数值将会设置作为3。一个较低的值通常将结果在一个更高的发生的假阳性但一个更高的发生的恶意文件被确定，而一个更高的数值将通常结果在一个较低的发生的假阳性但一个较低的数值的恶意文件被确定。它是通常最好忽略这个数值除非您遇到关联问题。
+- 有某些签名的phpMussel意味为确定可疑和可能恶意文件零件被上传有不在他们自己确定那些文件被上传特别是作为恶意。这个“threshold”数值告诉phpMussel什么是最大总重量的可疑和潜在恶意文件零件被上传允许之前那些文件是被识别作为恶意。定义的重量在这个上下文是总数值的可疑和可能恶意文件零件确定。作为默认，这个数值将会设置作为3。一个较低的值通常将结果在一个更高的发生的假阳性但一个更高的发生的恶意文件被确定，而一个更高的数值将通常结果在一个较低的发生的假阳性但一个较低的数值的恶意文件被确定。它是通常最好忽略这个数值除非您遇到关联问题。
 
 ####"virustotal" （类别）
 VirusTotal.com指令。
 
 “vt_public_api_key”
-- 可选的，phpMussel可以扫描文件使用｢Virus Total API｣作为一个方法提供一个显着的改善保护级别针对病毒，木马，恶意软件和其他威胁。作为标准，扫描文件使用｢Virus Total API｣是关闭。以激活它，一个API密钥从VirusTotal是需要。因为的显着好处这个可以提供为您，它是某物我很推荐激活。请注意，然而，以使用的｢Virus Total API｣，您必须同意他们的服务条款和您必须坚持所有方针按照说明通过VirusTotal阅读材料！您是不允许使用这个积分功能除非：
+- 可选的，phpMussel可以扫描文件使用｢Virus Total API｣作为一个方法提供一个显着的改善保护级别针对病毒，木马，恶意软件和其他威胁。作为默认，扫描文件使用｢Virus Total API｣是关闭。以激活它，一个API密钥从VirusTotal是需要。因为的显着好处这个可以提供为您，它是某物我很推荐激活。请注意，然而，以使用的｢Virus Total API｣，您必须同意他们的服务条款和您必须坚持所有方针按照说明通过VirusTotal阅读材料！您是不允许使用这个积分功能除非：
   - 您已阅读和您同意服务条款的VirusTotal和它的API。服务条款的VirusTotal和它的API可以发现[这里](https://www.virustotal.com/en/about/terms-of-service/)。
   - 您已阅读和您了解至少序言的VirusTotal公共API阅读材料(一切之后“VirusTotal Public API v2.0”但之前“Contents”）。VirusTotal公共API阅读材料可以发现[这里](https://www.virustotal.com/en/documentation/public-api/)。
 
@@ -783,13 +783,39 @@ VirusTotal.com指令。
 “vt_quota_rate”和“vt_quota_time”
 - 根据｢Virus Total API｣阅读材料，它是限于最大的`4`请求的任何类型在任​​何`1`分钟大体时间。如果您经营一个“honeyclient”，蜜罐或任何其他自动化将会提供资源为VirusTotal和不只取回报告您是有权一个更高请求率配额。作为标准，phpMussel将严格的坚持这些限制，但因为可能性的这些率配额被增加，这些二指令是提供为您指示phpMussel为什么限它应坚持。除非您是指示这样做，它是不推荐为您增加这些数值，但，如果您遇到问题相关的到达您的率配额，减少这些数值可能有时帮助您解析这些问题。您的率限是决定作为`vt_quota_rate`请求的任何类型在任​​何`vt_quota_time`分钟大体时间。
 
+####"urlscanner" （类别）
+URL扫描器配置。
+
+"urlscanner"
+- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the `urlscanner` directive to true; To disable it, set this directive to false.
+
+Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
+
+URL扫描器API配置。
+
+"lookup_hphosts"
+- Enables API lookups to the [hpHosts](http://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
+
+"google_api_key"
+- Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
+- Note: This is a future feature! Google Safe Browsing API lookup functionality not yet completed!
+
+"maximum_api_lookups"
+- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expediate the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
+
+"maximum_api_lookups_response"
+- What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Default]; True = Flag/block the file.
+
+"cache_time"
+- How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour).
+
 ####"template_data" （类别）
 指令和变量为模板和主题。
 
 模板数据涉及到HTML产量使用以生成“上传是否认”信息显示为用户当一个文件上传是受阻。如果您使用个性化主题为phpMussel，HTML产量资源是从`template_cu​​stom.html`文件，和否则，HTML产量资源是从`template.html`文件。变量书面在这个配置文件部分是喂在HTML产量通过更换任何变量名包围在大括号发现在HTML产量使用相应变量数据。为例子，哪里`foo="bar"`，任何发生的`<p>{foo}</p>`发现在HTML产量将成为`<p>bar</p>`。
 
 “css_url”
-- 模板文件为个性化主题使用外部CSS属性，而模板文件为t标准主题使用内部CSS属性。以指示phpMussel使用模板文件为个性化主题，指定公共HTTP地址的您的个性化主题的CSS文件使用`css_url`变量。如果您离开这个变量空白，phpMussel将使用模板文件为标准主题。
+- 模板文件为个性化主题使用外部CSS属性，而模板文件为t标准主题使用内部CSS属性。以指示phpMussel使用模板文件为个性化主题，指定公共HTTP地址的您的个性化主题的CSS文件使用`css_url`变量。如果您离开这个变量空白，phpMussel将使用模板文件为默认主题。
 
 ---
 
@@ -896,59 +922,61 @@ VirusTotal.com指令。
 
 | 扫描器               |  结果                                 |
 |----------------------|--------------------------------------|
-| Ad-Aware             |  没有已知的问题                       |
-| Agnitum              |  没有已知的问题                       |
-| AhnLab-V3            |  没有已知的问题                       |
-| AntiVir              |  没有已知的问题                       |
-| Antiy-AVL            |  没有已知的问题                       |
-| Avast                |  报告 "JS:ScriptSH-inf [Trj]"        |
-| AVG                  |  没有已知的问题                       |
-| Baidu-International  |  没有已知的问题                       |
-| BitDefender          |  没有已知的问题                       |
-| Bkav                 |  报告 "VEXDAD2.Webshell"             |
-| ByteHero             |  没有已知的问题                       |
-| CAT-QuickHeal        |  没有已知的问题                       |
-| ClamAV               |  没有已知的问题                       |
-| CMC                  |  没有已知的问题                       |
-| Commtouch            |  没有已知的问题                       |
-| Comodo               |  没有已知的问题                       |
-| DrWeb                |  没有已知的问题                       |
-| Emsisoft             |  没有已知的问题                       |
-| ESET-NOD32           |  没有已知的问题                       |
-| F-Prot               |  没有已知的问题                       |
-| F-Secure             |  没有已知的问题                       |
-| Fortinet             |  没有已知的问题                       |
-| GData                |  没有已知的问题                       |
-| Ikarus               |  没有已知的问题                       |
-| Jiangmin             |  没有已知的问题                       |
-| K7AntiVirus          |  没有已知的问题                       |
-| K7GW                 |  没有已知的问题                       |
-| Kaspersky            |  没有已知的问题                       |
-| Kingsoft             |  没有已知的问题                       |
-| Malwarebytes         |  没有已知的问题                       |
-| McAfee               |  报告 "New Script.c"                 |
-| McAfee-GW-Edition    |  报告 "New Script.c"                 |
-| Microsoft            |  没有已知的问题                       |
-| MicroWorld-eScan     |  没有已知的问题                       |
-| NANO-Antivirus       |  没有已知的问题                       |
-| Norman               |  没有已知的问题                       |
-| nProtect             |  没有已知的问题                       |
-| Panda                |  没有已知的问题                       |
-| Qihoo-360            |  没有已知的问题                       |
-| Rising               |  没有已知的问题                       |
-| Sophos               |  没有已知的问题                       |
-| SUPERAntiSpyware     |  没有已知的问题                       |
-| Symantec             |  没有已知的问题                       |
-| TheHacker            |  没有已知的问题                       |
-| TotalDefense         |  没有已知的问题                       |
-| TrendMicro           |  没有已知的问题                       |
-| TrendMicro-HouseCall |  没有已知的问题                       |
-| VBA32                |  没有已知的问题                       |
-| VIPRE                |  没有已知的问题                       |
-| ViRobot              |  没有已知的问题                       |
+| Ad-Aware             |  无冲突 |
+| Agnitum              |  无冲突 |
+| AhnLab-V3            |  无冲突 |
+| AntiVir              |  无冲突 |
+| Antiy-AVL            |  无冲突 |
+| Avast                |  报告 "JS:ScriptSH-inf [Trj]" |
+| AVG                  |  无冲突 |
+| Baidu-International  |  无冲突 |
+| BitDefender          |  无冲突 |
+| Bkav                 |  报告 "VEXDAD2.Webshell" |
+| ByteHero             |  无冲突 |
+| CAT-QuickHeal        |  无冲突 |
+| ClamAV               |  无冲突 |
+| CMC                  |  无冲突 |
+| Commtouch            |  无冲突 |
+| Comodo               |  无冲突 |
+| DrWeb                |  无冲突 |
+| Emsisoft             |  无冲突 |
+| ESET-NOD32           |  无冲突 |
+| F-Prot               |  无冲突 |
+| F-Secure             |  无冲突 |
+| Fortinet             |  无冲突 |
+| GData                |  无冲突 |
+| Ikarus               |  无冲突 |
+| Jiangmin             |  无冲突 |
+| K7AntiVirus          |  无冲突 |
+| K7GW                 |  无冲突 |
+| Kaspersky            |  无冲突 |
+| Kingsoft             |  无冲突 |
+| Malwarebytes         |  无冲突 |
+| McAfee               |  报告 "New Script.c" |
+| McAfee-GW-Edition    |  报告 "New Script.c" |
+| Microsoft            |  无冲突 |
+| MicroWorld-eScan     |  无冲突 |
+| NANO-Antivirus       |  无冲突 |
+| Norman               |  无冲突 |
+| nProtect             |  无冲突 |
+| Panda                |  无冲突 |
+| Qihoo-360            |  无冲突 |
+| Rising               |  无冲突 |
+| Sophos               |  无冲突 |
+| SUPERAntiSpyware     |  无冲突 |
+| Symantec             |  无冲突 |
+| TheHacker            |  无冲突 |
+| TotalDefense         |  无冲突 |
+| TrendMicro           |  无冲突 |
+| TrendMicro-HouseCall |  无冲突 |
+| VBA32                |  无冲突 |
+| VIPRE                |  无冲突 |
+| ViRobot              |  无冲突 |
 
 
 ---
 
 
-最后更新：2015年9月18日。
+最后更新：2015年10月17日。
+
+翻译声明：本文档翻译基于英文原始文档，但由于本人水平有限，且非php程序员，对其中某些字词的翻译可能不是很准确，故如果出现错误，请指出并联系原作者予以更正，另外，本翻译仅简体中文，与繁体中文无关亦未参考繁体中文的译文！！

@@ -149,7 +149,7 @@ También tenga en cuenta que phpMussel no es el funcional equivalente de una com
 
 ###4A. <a name="SECTION4A"></a>NAVEGADOR COMANDOS
 
-Cuando phpMussel está instalado y funciona correctamente en su sistema, si ha configurado las variables script_password y logs_password en la configuración archivo, usted será capaz de realizar un limitado número de administrativas funciones y entrar de un número de comandos a phpMussel través de su navegador. La razón que estas contraseñas deben definida a fin de que estos navegador controles es para garantizar adecuada seguridad, adecuada protección para estos navegador controles y para asegurar que existe una manera en que estos navegador controles puede estar desactivado en su totalidad si no se desean por usted y/o otros webmasters/administradores usando phpMussel. Por lo tanto, en otras palabras, para permitir estos controles, definir un contraseña, y para desactivar estos controles, no definir ninguna contraseña. Alternativamente, si usted decide para activar estos controles y luego optar para desactivar estos controles en una fecha posterior, hay un comando para hacerlo (tal puede ser útil si realiza algunas acciones que usted se sienta potencialmente podrían comprometer las contraseñas delegadas y necesitas de desactivar rápidamente estos controles sin modificar la configuración archivo).
+Cuando phpMussel está instalado y funciona correctamente en su sistema, si ha configurado las variables `script_password` y `logs_password` en la configuración archivo, usted será capaz de realizar un limitado número de administrativas funciones y entrar de un número de comandos a phpMussel través de su navegador. La razón que estas contraseñas deben definida a fin de que estos navegador controles es para garantizar adecuada seguridad, adecuada protección para estos navegador controles y para asegurar que existe una manera en que estos navegador controles puede estar desactivado en su totalidad si no se desean por usted y/o otros webmasters/administradores usando phpMussel. Por lo tanto, en otras palabras, para permitir estos controles, definir un contraseña, y para desactivar estos controles, no definir ninguna contraseña. Alternativamente, si usted decide para activar estos controles y luego optar para desactivar estos controles en una fecha posterior, hay un comando para hacerlo (tal puede ser útil si realiza algunas acciones que usted se sienta potencialmente podrían comprometer las contraseñas delegadas y necesitas de desactivar rápidamente estos controles sin modificar la configuración archivo).
 
 Algunas de las razones por las que _**DEBE**_ permitir estos controles:
 - Proporciona una fácil manera de greylist firmas en casos tales como cuando se descubre una firma que se produce un falso positivo mientras que subir archivos a su sistema y usted no tiene tiempo para editar manualmente y resubir su archivo de greylist firmas.
@@ -167,7 +167,7 @@ En cualquier manera, independientemente de lo que usted elija, la decisión es s
 Una lista de los comandos disponibles del navegador:
 
 scan_log
-- Contraseña necesario: logs_password
+- Contraseña necesario: `logs_password`
 - Otros requisitos: scan_log necesario ser definido.
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -175,7 +175,7 @@ scan_log
 - Qué hace: Imprime el contenido de su scan_log archivo a la pantalla.
 
 scan_kills
-- Contraseña necesario: logs_password
+- Contraseña necesario: `logs_password`
 - Otros requisitos: scan_kills necesario ser definido.
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -183,7 +183,7 @@ scan_kills
 - Qué hace: Imprime el contenido de su scan_kills archivo a la pantalla.
 
 controls_lockout
-- Contraseña necesario: logs_password O script_password
+- Contraseña necesario: `logs_password` O `script_password`
 - Otros requisitos: (nada)
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -192,7 +192,7 @@ controls_lockout
 - Qué hace: Desactiva todos los controles del navegador. Esto se debe utilizar si sospecha que alguna de las contraseñas se han comprometido (esto puede ocurrir si usted está utilizando estos controles desde un computadora que no es de confianza y/o no es seguro). controls_lockout funciones mediante la creación de un archivo, `controls.lck`, en su vault, que phpMussel comprobará antes de realizar cualquier comandos de ningún tipo. Cuando esto sucede, para reactivar estos controles, tendrá que suprimir manualmente la `controls.lck` archivo a través de FTP o similar. Puede ser llamado usando cualquiera de las contraseñas.
 
 disable
-- Contraseña necesario: script_password
+- Contraseña necesario: `script_password`
 - Otros requisitos: (nada)
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -200,7 +200,7 @@ disable
 - Qué hace: Desactivar phpMussel. Esto debe ser utilizar si usted está realizando cualquier actualizaciones o cambios en su sistema o si usted está instalar cualquier nuevo software o módulos para su sistema que potencialmente podrían o hacer desencadenar falsos positivos. Esto también debe usar si usted está teniendo problemas con phpMussel pero no desean eliminarlo de su sistema. Si esto sucede, para reactivar phpMussel, usar "enable".
 
 enable
-- Contraseña necesario: script_password
+- Contraseña necesario: `script_password`
 - Otros requisitos: (nada)
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -208,7 +208,7 @@ enable
 - Qué hace: Activar phpMussel. Esto debe ser utilizar si usted ha desactivado anteriormente phpMussel usando "disable" y quiere reactivarla.
 
 update
-- Contraseña necesario: script_password
+- Contraseña necesario: `script_password`
 - Otros requisitos: `update.dat` y `update.inc` deben existir.
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -216,7 +216,7 @@ update
 - Qué hace: Comprobar por actualizaciones para ambos phpMussel y sus firmas. Si las actualizaciones comprobar tienen éxito y actualizaciones está encuentran, intentará descargar e instalar estas actualizaciones. Si las actualizaciones comprobar fallan, actualizaciones comprobar abortará. Los resultados de todo el proceso se imprimen en la pantalla. Recomiendo comprobar al menos una vez por mes para asegurar que sus firmas y su copia de phpMussel se mantienen actualizada (a menos que, naturalmente, usted está comprobando las actualizaciones e instalandolos manualmente, que, aun así sigo recomendando hacer al menos una vez por mes). Comprobar más de dos veces por mes es probablemente inútil, en consideración que estoy muy improbable de ser capaz de producir actualizaciones de cualquier tipo con más frecuencia que la (ni tengo particular quiero para hacerlo en la mayor parte).
 
 greylist
-- Contraseña necesario: script_password
+- Contraseña necesario: `script_password`
 - Otros requisitos: (nada)
 - Parámetros necesarios: [Nombre de la firma para la greylist]
 - Parámetros opcionales: (nada)
@@ -224,7 +224,7 @@ greylist
 - Qué hace: Agregar una firma a la greylist.
 
 greylist_clear
-- Contraseña necesario: script_password
+- Contraseña necesario: `script_password`
 - Otros requisitos: (nada)
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -232,7 +232,7 @@ greylist_clear
 - Qué hace: Borrar toda de la greylist.
 
 greylist_show
-- Contraseña necesario: script_password
+- Contraseña necesario: `script_password`
 - Otros requisitos: (nada)
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
@@ -481,11 +481,11 @@ La siguiente es una lista de variables encuentran en la `phpmussel.ini` configur
 General configuración para phpMussel.
 
 "script_password"
-- Por la conveniencia, phpMussel permitirá ciertas funciones (incluyendo la capacidad de actualizar phpMussel) para ser desencadenado manualmente a través de POST, GET y QUERY. Pero dicho esto, como medida de seguridad, para hacer esto, phpMussel esperará una contraseña serán incluido con el comando, como para asegurarse de que usted es, y no otra persona, intentando desencadenar manualmente estas funciones. Definir script_password a cualquier contraseña que desea utilizar. Si no contraseña se define, desencadenando manualmente desactivará por predefinido. Utilice algo que recordará pero que se difícil de adivinar para otros.
+- Por la conveniencia, phpMussel permitirá ciertas funciones (incluyendo la capacidad de actualizar phpMussel) para ser desencadenado manualmente a través de POST, GET y QUERY. Pero dicho esto, como medida de seguridad, para hacer esto, phpMussel esperará una contraseña serán incluido con el comando, como para asegurarse de que usted es, y no otra persona, intentando desencadenar manualmente estas funciones. Definir `script_password` a cualquier contraseña que desea utilizar. Si no contraseña se define, desencadenando manualmente desactivará por predefinido. Utilice algo que recordará pero que se difícil de adivinar para otros.
 - No tiene influencia en CLI modo.
 
 "logs_password"
-- El mismo como script_password, pero para ver el contenido de scan_log y scan_kills. Tener contraseñas separado puede ser útil si usted desea dar alguna otra persona acceso a un conjunto de funciones, pero no el otro. - No tiene influencia en CLI modo.
+- El mismo como `script_password`, pero para ver el contenido de scan_log y scan_kills. Tener contraseñas separado puede ser útil si usted desea dar alguna otra persona acceso a un conjunto de funciones, pero no el otro. - No tiene influencia en CLI modo.
 
 "cleanup"
 - Despejar la variables y la caché de la script después la script ejecución? False = No; True = Sí [Predefinido]. Si usted no está utilizando la script más allá de inicial escaneando de archivos subidos, debe definir como `true` (sí), para minimizar el uso de memoria. Si usted está utilizando la script para propósitos más allá de inicial escaneando de archivos subidos, debe definir como `false` (no), para evitar recargar innecesariamente duplicados datos en la memoria. En general práctica, probablemente debería definirse como `true`, pero, si usted hace esto, usted no será capaz de utilizar la script para cualquier cosa otro que de escaneando archivos subidos.
@@ -782,7 +782,33 @@ Notar: Independientemente de sospecha nivel, cualquieres archivos que están en 
 "vt_quota_rate" y "vt_quota_time"
 - En acuerdo con la documentación de la Virus Total API, está limitado para un máximo de 4 solicitudes de cualquier naturaleza en cualquier 1 minuto período de tiempo. Si usted ejecuta un honeyclient, honeypot o cualquier otra automatización que va proporcionar recursos para Virus Total y no sólo recuperar los reportes usted tiene derecho a un más alta cuota. Por predefinido, phpMussel va adhiere estrictamente a estas limitaciones, pero debido a la posibilidad de estos limitaciones siendo aumentado, estas dos directivas son proporcionan como un manera para usted para indique para phpMussel en cuanto a qué limitaciones está debe adherirse a. A menos que usted ha estado indique que lo haga, está no es recomendable para usted para aumentar estos valores, pero, si ha tenido problemas relacionados con alcanzar su cuota, la disminución de estos valores _**PUEDE**_ a veces ayudarle para hacer frente a estos problemas. Su cuota es determinado como `vt_quota_rate` solicitudes de cualquier naturaleza en cualquier `vt_quota_time` minuto período de tiempo.
 
-####"template_data" (Category)
+####"urlscanner" (Categoría)
+URL escáner configuración.
+
+"urlscanner"
+- Construido dentro phpMussel es un URL escáner, capaz de detectar las maliciosas URL desde el interior de los datos o archivos escaneados. Para activar la URL escáner, definir `urlscanner` como true; Para desactivarlo, definir esta directiva como false.
+
+Notar: Si la URL escáner está desactivado, usted no tendrá que revisar cualquiera de las directivas en esta categoría (`urlscanner`), porque ninguno de ellos hará cualquier cosa si desactiva.
+
+URL escáner API configuración.
+
+"lookup_hphosts"
+- Permite API búsquedas al [hpHosts](http://hosts-file.net/) API cuando se define como true. hpHosts no requiere un API clave para llevar a cabo API búsquedas.
+
+"google_api_key"
+- Permite API búsquedas al Google Safe Browsing API cuando la necesario API clave es define. El uso de Google Safe Browsing API requiere un API clave, que puede ser obtenido a partir de [Aquí](https://console.developers.google.com/).
+- Notar: Esta es una característica futuro! Google Safe Browsing API funcionalidad de búsqueda no aún ha completado!
+
+"maximum_api_lookups"
+- Máximo número permitido de API búsquedas para llevar a cabo por individuo escaneando iteración. Debido a que cada adicional API búsqueda se sumará al total tiempo requerido para completar cada escaneando iteración, es posible que usted desee estipular una limitación a fin de acelerar el proceso de escaneando. Cuando se define en 0, no tal máximo número permitido se aplicará. Se define como 10 por predefinido.
+
+"maximum_api_lookups_response"
+- Qué hacer si el máximo número de API búsquedas permitido es superadas? False = Hacer nada (continuar procesando) [Predefinido]; True = Marcar/bloquear el archivo.
+
+"cache_time"
+- Por cuánto tiempo (en segundos) debe los resultados de las API búsquedas ser almacenan en caché? Predefinido es 3600 segundos (1 horas).
+
+####"template_data" (Categoría)
 Directivas/Variables para las plantillas y temas.
 
 Plantilla datos es relacionados a la HTML utilizado para generar el "Carga Negado" mensaje que muestra a los usuarios cuando una archivo subido está bloqueado. Si utiliza temas personalizados para phpMussel, HTML se obtiene a partir del `template_custom.html` archivo, y para de otra manera, HTML se obtiene a partir del `template.html` archivo. Variables escritas a esta sección de la configuración archivo se procesado para el HTML a través de la sustitución de los nombres de variables circunfijo por llaves que se encuentran dentro del HTML con el variable datos correspondiente. Por ejemplo, dónde `foo="bar"`, cualquier instancias de `<p>{foo}</p>` que se encuentran dentro del HTML se convertirá `<p>bar</p>`.
@@ -835,7 +861,7 @@ Todos Whitelist firmas seguir el formato:
 
 `HASH:TAMAÑO:TIPO`
 
-Donde HASH es el MD5 hash de un entero archivo, TAMAÑO es el total tamaño de eso archivo y TIPO es el tipo of firmas el archivo en la whitelist es estar inmune contra.
+Donde HASH es el MD5 hash de un entero archivo, TAMAÑO es el total tamaño de eso archivo y TIPO es el tipo de firmas el archivo en la whitelist es estar inmune contra.
 
 ####*COMPLEJOS EXTENDIDAS FIRMAS*
 Complejos extendidas firmas son bastante diferentes a los otros tipos de firmas posibles con phpMussel, en que qué ellos son cotejando contra se especificado por las firmas ellos mismos y que ellos pueden cotejar contra múltiples criterios. La cotejar criterios están delimitados por ";" y la cotejar tipo y cotejar datos de cada cotejar criterio es delimitado por ":" como tal que formato para estas firmas tiene tendencia a aparecer como:
@@ -950,4 +976,4 @@ Esta información ha sido actualizado 7 Setiembre 2015 y es a hoy para todas las
 ---
 
 
-Última Actualización: 4 Octubre 2015 (2015.10.04).
+Última Actualización: 17 Octubre 2015 (2015.10.17).

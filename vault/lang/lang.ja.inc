@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Japanese/日本語 Language Data (30th August 2015).
+ This File: phpMussel Japanese/日本語 Language Data (13th October 2015).
  <%phpMussel%/vault/lang/lang.ja.inc>
 
 */
@@ -52,6 +52,7 @@ $MusselConfig['lang']['greylist_updated']=' グレーリストがアップデー
 $MusselConfig['lang']['image']='画像';
 $MusselConfig['lang']['instance_already_active']='インスタンスすでにアクティブ！あなたのフックをダブルチェックしてください。';
 $MusselConfig['lang']['invalid_file']='無効なファイル';
+$MusselConfig['lang']['invalid_url']='無効なURL！';
 $MusselConfig['lang']['ok']='大丈夫です';
 $MusselConfig['lang']['only_allow_images']='画像以外のファイルアップロードは許可されません';
 $MusselConfig['lang']['phpmussel_disabled']='「phpMussel」は非アクティブです。';
@@ -81,6 +82,7 @@ $MusselConfig['lang']['scan_tampering']='検出された潜在的に危険なフ
 $MusselConfig['lang']['scan_unauthorised_upload']='不正ファイルアップロード改ざんが検出されました';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='不正ファイルアップロード改ざんまたはミスコンフィギュレーションが検出されました！';
 $MusselConfig['lang']['started']='開始しました';
+$MusselConfig['lang']['too_many_urls']='あまりにも多くのURL';
 $MusselConfig['lang']['update_']='phpMusselは現在、自身をアップデートしようとします。';
 $MusselConfig['lang']['update_available']='スクリプトアップデートが利用可能です。';
 $MusselConfig['lang']['update_complete']='アップロードチェックは成功しました。';
