@@ -797,6 +797,7 @@ URL escáner API configuración.
 
 "google_api_key"
 - Permite API búsquedas al Google Safe Browsing API cuando la necesario API clave es define. El uso de Google Safe Browsing API requiere un API clave, que puede ser obtenido a partir de [Aquí](https://console.developers.google.com/).
+- Notar: Esta es una característica futuro! Google Safe Browsing API funcionalidad de búsqueda no aún ha completado!
 
 "maximum_api_lookups"
 - Máximo número permitido de API búsquedas para llevar a cabo por individuo escaneando iteración. Debido a que cada adicional API búsqueda se sumará al total tiempo requerido para completar cada escaneando iteración, es posible que usted desee estipular una limitación a fin de acelerar el proceso de escaneando. Cuando se define en 0, no tal máximo número permitido se aplicará. Se define como 10 por predefinido.
@@ -975,4 +976,4 @@ Esta información ha sido actualizado 7 Setiembre 2015 y es a hoy para todas las
 ---
 
 
-Última Actualización: 16 Octubre 2015 (2015.10.16).
+Última Actualización: 17 Octubre 2015 (2015.10.17).

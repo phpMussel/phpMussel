@@ -1578,6 +1578,8 @@
      clave es define. El uso de Google Safe Browsing API requiere un API clave,
      que puede ser obtenido a partir de
      <https://console.developers.google.com/>.
+   - Notar: Esta es una característica futuro! Google Safe Browsing API
+     funcionalidad de búsqueda no aún ha completado!
    "maximum_api_lookups"
    - Máximo número permitido de API búsquedas para llevar a cabo por individuo
      escaneando iteración. Debido a que cada adicional API búsqueda se sumará
@@ -1848,5 +1850,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 16 Octubre 2015 (2015.10.16).
+Última Actualización: 17 Octubre 2015 (2015.10.17).
 EOF

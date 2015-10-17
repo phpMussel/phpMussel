@@ -784,20 +784,21 @@ VirusTotal.com指令。
 - 根據｢Virus Total API｣閱讀材料，它是限於最大的`4`請求的任何類型在任​​何`1`分鐘大體時間。如果您經營一個“honeyclient”，蜜罐或任何其他自動化將會提供資源為VirusTotal和不只取回報告您是有權一個更高請求率配額。作為默認，phpMussel將嚴格的堅持這些限制，但因為可能性的這些率配額被增加，這些二指令是提供為您指示phpMussel為什麼限它應堅持。除非您是指示這樣做，它是不推薦為您增加這些數值，但，如果您遇到問題相關的到達您的率配額，減少這些數值可能有時幫助您解析這些問題。您的率限是決定作為`vt_quota_rate`請求的任何類型在任​​何`vt_quota_time`分鐘大體時間。
 
 ####"urlscanner" （類別）
-URL scanner configuration.
+URL掃描器配置。
 
 "urlscanner"
 - Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the `urlscanner` directive to true; To disable it, set this directive to false.
 
 Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
 
-URL scanner API lookup configuration.
+URL掃描器API配置。
 
 "lookup_hphosts"
 - Enables API lookups to the [hpHosts](http://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
 
 "google_api_key"
 - Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
+- Note: This is a future feature! Google Safe Browsing API lookup functionality not yet completed!
 
 "maximum_api_lookups"
 - Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expediate the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
@@ -976,4 +977,4 @@ URL scanner API lookup configuration.
 ---
 
 
-最後更新：2015年10月16日。
+最後更新：2015年10月17日。

@@ -1407,7 +1407,7 @@
      лимит будет установлен как "vt_quota_rate" запросы любого типа в каждом
      "vt_quota_time" минутном промежутке времени.
  "urlscanner" (Категория)
- - URL scanner configuration.
+ - URL сканер конфигурация.
    "urlscanner"
    - Built into phpMussel is a URL scanner, capable of detecting malicious URLs
      from within any data or files scanned. To enable the URL scanner, set the
@@ -1416,7 +1416,7 @@
    Note: If the URL scanner is disabled, you won't need to review any of the
    directives in this category ("urlscanner"), because none of them will do
    anything if this is disabled.
- - URL scanner API lookup configuration.
+ - URL сканер API конфигурация.
    "lookup_hphosts"
    - Enables API lookups to the hpHosts API <http://hosts-file.net/> when set
      to true. hpHosts doesn't require an API key for performing API lookups.
@@ -1424,6 +1424,8 @@
    - Enables API lookups to the Google Safe Browsing API when the necessary API
      key is defined. Google Safe Browsing API lookups requires an API key,
      which can be obtained from <https://console.developers.google.com/>.
+   - Примечание: Это будущее особенность! Google Safe Browsing API
+     Функциональность еще не завершена!
    "maximum_api_lookups"
    - Maximum allowable number of API lookups to perform per individual scan
      iteration. Because each additional API lookup will add to the total time
@@ -1674,5 +1676,5 @@
                                      ~ ~ ~
 
 
-Последнее обновление: 16 Октябрь 2015 (2015.10.16).
+Последнее обновление: 17 Октябрь 2015 (2015.10.17).
 EOF

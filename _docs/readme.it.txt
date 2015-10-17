@@ -1563,6 +1563,8 @@
      chiave necessarie è definito. L'API di Google Safe Browsing richiede un
      API chiave, che può essere ottenuto da
      <https://console.developers.google.com/>.
+   - Notare: Questa è una caratteristica futuro! Google Safe Browsing API
+     funzionalità non completato a quest'ora!
    "maximum_api_lookups"
    - Numero massimo di richieste per l'API di eseguire per iterazione di
      scansione individuo. Perché ogni richiesta supplementare per l'API farà
@@ -1829,5 +1831,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 16 Ottobre 2015 (2015.10.16).
+Ultimo Aggiornamento: 17 Ottobre 2015 (2015.10.17).
 EOF

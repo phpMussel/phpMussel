@@ -798,6 +798,7 @@ URL scanner API configuratie.
 
 "google_api_key"
 - Inschakelt gebruik van de Google Safe Browsing API wanneer de noodzakelijke API sleutel wordt gedefinieerd. Google Safe Browsing API nodig hebben een API sleutel, dat kan worden verkregen van [Hier](https://console.developers.google.com/).
+- Noteren: Dit is een toekomstige functie! Google Safe Browsing API functionaliteit nog niet geschreven!
 
 "maximum_api_lookups"
 - Maximaal toelaatbaar aantal van de API verzoeken te voeren per individuele scan iteratie. Omdat elke extra API verzoek zullen toevoegen aan de totale tijd die nodig te voltooien elke scan iteratie, u kunt wensen om een beperking te specificeren teneinde versnellen het algehele scanproces. Wanneer ingesteld op 0, geen dergelijk maximaal toelaatbaar aantal wordt toegepast. Ingesteld op 10 standaard.
@@ -976,4 +977,4 @@ Dit informatie werd laatst bijgewerkt 7 September 2015 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 16 Oktober 2015 (2015.10.16).
+Laatste Bijgewerkt: 17 Oktober 2015 (2015.10.17).

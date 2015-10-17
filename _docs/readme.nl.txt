@@ -1585,6 +1585,8 @@
      noodzakelijke API sleutel wordt gedefinieerd. Google Safe Browsing API
      nodig hebben een API sleutel, dat kan worden verkregen van
      <https://console.developers.google.com/>.
+   - Noteren: Dit is een toekomstige functie! Google Safe Browsing API
+     functionaliteit nog niet geschreven!
    "maximum_api_lookups"
    - Maximaal toelaatbaar aantal van de API verzoeken te voeren per individuele
      scan iteratie. Omdat elke extra API verzoek zullen toevoegen aan de totale
@@ -1858,5 +1860,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 16 Oktober 2015 (2015.10.16).
+Laatste Bijgewerkt: 17 Oktober 2015 (2015.10.17).
 EOF

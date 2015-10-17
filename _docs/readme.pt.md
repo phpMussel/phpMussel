@@ -798,6 +798,7 @@ URL analisador API uso configuração.
 
 "google_api_key"
 - Permite o uso do Google Safe Browsing API quando a API chave necessária está definida. Para o uso de sua API, Google Safe Browsing API requerer uma API chave, que pode ser obtido a partir de [Aqui](https://console.developers.google.com/).
+- Notar: Esta é uma função futuro! Google Safe Browsing API funcionalidade não está escrita neste momento!
 
 "maximum_api_lookups"
 - Número máximo admissível de API solicitações para executar por cada iteração de análise. Porque cada API solicitação adicional irá acrescentar ao tempo total necessário para completar cada iteração de análise, você pode querer estipular uma limitação a fim de acelerar o processo de análise. Quando definido para 0, nenhuma número máximo admissível será aplicada. Definido para 10 por padrão.
@@ -976,4 +977,4 @@ Esta informação foi atualizada dia 7 Setembro 2015 e é corrente para todas ph
 ---
 
 
-Última Atualização: 16 Outubro 2015 (2015.10.16).
+Última Atualização: 17 Outubro 2015 (2015.10.17).

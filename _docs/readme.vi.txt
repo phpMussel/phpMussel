@@ -1474,6 +1474,8 @@
    - Enables API lookups to the Google Safe Browsing API when the necessary API
      key is defined. Google Safe Browsing API lookups requires an API key,
      which can be obtained from <https://console.developers.google.com/>.
+   - Note: This is a future feature! Google Safe Browsing API lookup
+     functionality not yet completed!
    "maximum_api_lookups"
    - Maximum allowable number of API lookups to perform per individual scan
      iteration. Because each additional API lookup will add to the total time
@@ -1729,5 +1731,5 @@
                                      ~ ~ ~
 
 
-Lần cuối cập nhật: 16 Tháng Mười 2015 (2015.10.16).
+Lần cuối cập nhật: 17 Tháng Mười 2015 (2015.10.17).
 EOF

@@ -1559,6 +1559,8 @@
      está definida. Para o uso de sua API, Google Safe Browsing API requerer
      uma API chave, que pode ser obtido a partir de
      <https://console.developers.google.com/>.
+   - Notar: Esta é uma função futuro! Google Safe Browsing API funcionalidade
+     não está escrita neste momento!
    "maximum_api_lookups"
    - Número máximo admissível de API solicitações para executar por cada
      iteração de análise. Porque cada API solicitação adicional irá acrescentar
@@ -1825,5 +1827,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 16 Outubro 2015 (2015.10.16).
+Última Atualização: 17 Outubro 2015 (2015.10.17).
 EOF

@@ -122,6 +122,9 @@ Anything less than sub-minor:
   the near future.
   Refer github.com/Maikuolan/phpMussel/issues/65
 
+- [2015.10.27; Signatures update; Maikuolan]: Domains from the Spam404.com
+  database will from now be integrated into the URL scanner signatures set.
+
 === Version/Release 0.7a (Previous Release: 0.7) ===
 SUB-MINOR RELEASE; Updated to the latest signatures set (55+20751+7a).
 

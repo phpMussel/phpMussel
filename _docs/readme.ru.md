@@ -784,20 +784,21 @@ VirusTotal.com директивы.
 - Согласно Virus Total API-документации «Лимит времени, за которое должны обрабатываться 4 любых запроса, составляет 1 минуту. Используя Honeyclient, Honeypot или какую-либо другую активную систему, которая содействует VirusTotal, и не только вызывает сообщения, то вы имеете право на более высокий лимит времени». phpMussel будет строго придерживаться этого лимита. Для его повышения даны эти две директивы, указывающие phpMussel на какой лимит она должна ориентироваться. Рекомендуется без необходимости это значение не повышать. С возникновением проблем по достижению лимита, уменьшение этого значения должно немного помочь. Твой лимит будет установлен как `vt_quota_rate` запросы любого типа в каждом `vt_quota_time` минутном промежутке времени.
 
 ####"urlscanner" (Категория)
-URL scanner configuration.
+URL сканер конфигурация.
 
 "urlscanner"
 - Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the `urlscanner` directive to true; To disable it, set this directive to false.
 
 Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
 
-URL scanner API lookup configuration.
+URL сканер API конфигурация.
 
 "lookup_hphosts"
 - Enables API lookups to the [hpHosts](http://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
 
 "google_api_key"
 - Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
+- Примечание: Это будущее особенность! Google Safe Browsing API Функциональность еще не завершена!
 
 "maximum_api_lookups"
 - Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expediate the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
@@ -976,4 +977,4 @@ NAME = Название подписи; HEX = Сегмент файла, зак�
 ---
 
 
-Последнее обновление: 16 Октябрь 2015 (2015.10.16).
+Последнее обновление: 17 Октябрь 2015 (2015.10.17).

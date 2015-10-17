@@ -1556,6 +1556,8 @@
    - Memungkinkan pemeriksaan API ke Google Safe Browsing API ketika kunci API
      diperlukan didefinisikan. Pemeriksaan Google Safe Browsing API memerlukan
      kunci API, diperoleh dari <https://console.developers.google.com/>.
+   - Mencatat: Ini adalah fitur untuk masa depan! Google Safe Browsing API
+     fitur belum selesai!
    "maximum_api_lookups"
    - Jumlah maksimum pemeriksaan API melakukan per iterasi memindai individual.
      Karena setiap API pemeriksaan akan menambah tambahan waktu total
@@ -1821,5 +1823,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 16 Oktober 2015 (2015.10.16).
+Terakhir Diperbarui: 17 Oktober 2015 (2015.10.17).
 EOF
