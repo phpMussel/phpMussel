@@ -76,7 +76,7 @@ Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện mộ
 
 1) Nếu bạn đang đọc cái này thì tôi hy vọng là bạn đã tải về một bản sao lưu trữ của bản, giải nén nội dung của nó và nó đang nằm ở một nơi nào đó trên máy tính của bạn. Một khi bạn đã hài lòng với vị trí của phpMussel, hày tiếp tục.
 
-2) phpMussel cần PHP được cài đặt trên máy chủ để thực hiện. Nếu bạn không có PHP cài trên máy, xin hảy cài php, theo hướng dẫn được cung cấp bởi người cài đặt php.
+2) phpMussel cần PHP được cài đặt trên máy chủ để thực hiện. Nếu bạn không có PHP cài trên máy, xin hảy cài PHP, theo hướng dẫn được cung cấp bởi người cài đặt PHP.
 
 3) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới bắt đầu hoặc chưa có kinh nghiệm không nên chọn), hảy mở `phpmussel.ini` (nằm ớ trong `vault`) - Tài liệu này có chứa tất cả các chỉ thị sẵn cho phpMussel. Trên mỗi tùy chọn sẽ có chi tiết ngắn mô tả những gì nó làm. Hảy điều chỉnh các tùy chọn như bạn thấy phù hợp, theo bất cứ điều gì là thích hợp cho nhữn cài đặt của bạn. Lưu tập tin, đóng lại.
 
@@ -138,7 +138,7 @@ There are many other controls and functions available within phpMussel for your 
 
 ###3B. <a name="SECTION3B"></a>CÁCH SỬ DỤNG (CHO CLI)
 
-Please refer to the "CẢCH CÀI ĐẶT (CHO CLI)" section of this readme file.
+Please refer to the "CẢCH CÀI ĐẶT (CHO CLI)" section of this README file.
 
 Be aware that, although future versions of phpMussel should support other systems, at this time, phpMussel CLI mode support is only optimized for use on Windows-based system (you can, of course, try it on other systems, but I can't guarantee it'll work as intended).
 
@@ -149,7 +149,7 @@ Also be aware that phpMussel is not the functional equivalent of a complete anti
 
 ###4A. <a name="SECTION4A"></a>LỆNH CHO BROWSER
 
-Once phpMussel has been installed and is correctly functioning on your system, if you've set the script_password and logs_password variables in your configuration file, you will be able to perform some limited number of administrative functions and input some number of commands to phpMussel via your browser. The reason these passwords need to be set in order to enable these browser-side controls is both to ensure proper security, proper protection of these browser-side controls and to ensure that there exists a way for these browser-side controls to be entirely disabled if they are not desired by you and/or other webmasters/administrators using phpMussel. So, in other words, to enable these controls, set a password, and to disable these controls, set no password. Alternatively, if you choose to enable these controls and then choose to disable these controls at a later date, there is a command to do this (such can be useful if you perform some actions that you feel could potentially compromise the delegated passwords and need to quickly disable these controls without modifying your configuration file).
+Once phpMussel has been installed and is correctly functioning on your system, if you've set the `script_password` and `logs_password` variables in your configuration file, you will be able to perform some limited number of administrative functions and input some number of commands to phpMussel via your browser. The reason these passwords need to be set in order to enable these browser-side controls is both to ensure proper security, proper protection of these browser-side controls and to ensure that there exists a way for these browser-side controls to be entirely disabled if they are not desired by you and/or other webmasters/administrators using phpMussel. So, in other words, to enable these controls, set a password, and to disable these controls, set no password. Alternatively, if you choose to enable these controls and then choose to disable these controls at a later date, there is a command to do this (such can be useful if you perform some actions that you feel could potentially compromise the delegated passwords and need to quickly disable these controls without modifying your configuration file).
 
 A couple of reasons why you _**SHOULD**_ enable these controls:
 - Provides a way to greylist signatures on-the-fly in instances such as when you discover a signature that is producing a false-positive while uploading files to your system and you don't have time to manually edit and reupload your greylist file.
@@ -167,7 +167,7 @@ Either way, regardless of what you choose, the choice is ultimately yours. By de
 A list of available browser-side commands:
 
 scan_log
-- Password required: logs_password
+- Password required: `logs_password`
 - Other requirements: scan_log must be set.
 - Required parameters: (none)
 - Optional parameters: (none)
@@ -175,7 +175,7 @@ scan_log
 - What it does: Prints the contents of your scan_log file to the screen.
 
 scan_kills
-- Password required: logs_password
+- Password required: `logs_password`
 - Other requirements: scan_kills must be set.
 - Required parameters: (none)
 - Optional parameters: (none)
@@ -183,7 +183,7 @@ scan_kills
 - What it does: Prints the contents of your scan_kills file to the screen.
 
 controls_lockout
-- Password required: logs_password OR script_password
+- Password required: `logs_password` OR `script_password`
 - Other requirements: (none)
 - Required parameters: (none)
 - Optional parameters: (none)
@@ -192,7 +192,7 @@ controls_lockout
 - What it does: Disables ("locks out") all browser-side controls. This should be used if you suspect that either of your passwords have been compromised (this can happen if you're using these controls from a computer that's not secured and/or not trusted). controls_lockout works by creating a file, `controls.lck`, in your vault, that phpMussel will check for before performing any commands of any kind. Once this happens, to reenable controls, you'll need to manually delete the `controls.lck` file via FTP or similar. Can be called using either password.
 
 disable
-- Password required: script_password
+- Password required: `script_password`
 - Other requirements: (none)
 - Required parameters: (none)
 - Optional parameters: (none)
@@ -200,7 +200,7 @@ disable
 - What it does: Disables phpMussel. This should be used if you're performing any updates or changes to your system or if you're installing any new software or modules to your system that either does or potentially could trigger false positives. This should also be used if you're having any problems with phpMussel but don't wish to remove it from your system. Once this happens, to reenable phpMussel, use "enable".
 
 enable
-- Password required: script_password
+- Password required: `script_password`
 - Other requirements: (none)
 - Required parameters: (none)
 - Optional parameters: (none)
@@ -208,7 +208,7 @@ enable
 - What it does: Enables phpMussel. This should be used if you've previously disabled phpMussel using "disable" and want to reenable it.
 
 update
-- Password required: script_password
+- Password required: `script_password`
 - Other requirements: `update.dat` and `update.inc` must exist.
 - Required parameters: (none)
 - Optional parameters: (none)
@@ -216,7 +216,7 @@ update
 - What it does: Checks for updates to both phpMussel and its signatures. If update checks succeed and updates are found, will attempt to download and install these updates. If update checks fail, update will abort. Results of the entire process are printed to the screen. I recommend checking at least once per month to ensure that your signatures and your copy of phpMussel are kept up to-date (unless, of course, you're checking for updates and installing them manually, which, I'd still recommend doing at least once per month). Checking more than twice per month is probably pointless, considering that I'm very unlikely to be able to produce updates of any kind more frequently than that (nor do I particularly want to for the most part).
 
 greylist
-- Password required: script_password
+- Password required: `script_password`
 - Other requirements: (none)
 - Required parameters: [Name of signature to be greylisted]
 - Optional parameters: (none)
@@ -224,7 +224,7 @@ greylist
 - What it does: Add a signature to the greylist.
 
 greylist_clear
-- Password required: script_password
+- Password required: `script_password`
 - Other requirements: (none)
 - Required parameters: (none)
 - Optional parameters: (none)
@@ -232,7 +232,7 @@ greylist_clear
 - What it does: Clears the entire greylist.
 
 greylist_show
-- Password required: script_password
+- Password required: `script_password`
 - Other requirements: (none)
 - Required parameters: (none)
 - Optional parameters: (none)
@@ -244,7 +244,7 @@ greylist_show
 
 ###4B. <a name="SECTION4B"></a>CLI (LỆNH CHO DÒNG GIAO DIỆN)
 
-phpMussel can be run as an interactive file scanner in CLI mode under Windows-based systems. Refer to the "CẢCH CÀI ĐẶT (CHO CLI)" section of this readme file for more details.
+phpMussel can be run as an interactive file scanner in CLI mode under Windows-based systems. Refer to the "CẢCH CÀI ĐẶT (CHO CLI)" section of this README file for more details.
 
 For a list of available CLI commands, at the CLI prompt, type 'c', and press Enter.
 
@@ -481,11 +481,11 @@ The following is a list of variables found in the `phpmussel.ini` configuration 
 General phpMussel configuration.
 
 "script_password"
-- As a convenience, phpMussel will allow certain functions (including the ability to update phpMussel on-the-fly) to be manually triggered via POST, GET and QUERY. However, as a security precaution, to do this, phpMussel will expect a password to be included with the command, as to ensure that it's you, and not someone else, attempting to manually trigger these functions. Set script_password to whatever password you would like to use. If no password is set, manual triggering will be disabled by default. Use something you will remember but which is hard for others to guess.
+- As a convenience, phpMussel will allow certain functions (including the ability to update phpMussel on-the-fly) to be manually triggered via POST, GET and QUERY. However, as a security precaution, to do this, phpMussel will expect a password to be included with the command, as to ensure that it's you, and not someone else, attempting to manually trigger these functions. Set `script_password` to whatever password you would like to use. If no password is set, manual triggering will be disabled by default. Use something you will remember but which is hard for others to guess.
 - Has no influence in CLI mode.
 
 "logs_password"
-- The same as script_password, but for viewing the contents of scan_log and scan_kills. Having separate passwords can be useful if you want to give someone else access to one set of functions but not the other.
+- The same as `script_password`, but for viewing the contents of scan_log and scan_kills. Having separate passwords can be useful if you want to give someone else access to one set of functions but not the other.
 - Has no influence in CLI mode.
 
 "cleanup"
@@ -783,6 +783,32 @@ Note: Regardless of suspicion level, any files that are either blacklisted or wh
 "vt_quota_rate" and "vt_quota_time"
 - According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly adhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values _**MAY**_ sometimes help you in dealing with these problems. Your rate limit is determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame.
 
+####"urlscanner" (Category)
+URL scanner configuration.
+
+"urlscanner"
+- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the `urlscanner` directive to true; To disable it, set this directive to false.
+
+Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
+
+URL scanner API lookup configuration.
+
+"lookup_hphosts"
+- Enables API lookups to the [hpHosts](http://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
+
+"google_api_key"
+- Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
+- Note: This is a future feature! Google Safe Browsing API lookup functionality not yet completed!
+
+"maximum_api_lookups"
+- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expediate the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
+
+"maximum_api_lookups_response"
+- What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Default]; True = Flag/block the file.
+
+"cache_time"
+- How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour).
+
 ####"template_data" (Category)
 Directives/Variables for templates and themes.
 
@@ -951,4 +977,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 7 Tháng Chín 20
 ---
 
 
-Lần cuối cập nhật: 18 Tháng Chín 2015 (2015.09.18).
+Lần cuối cập nhật: 17 Tháng Mười 2015 (2015.10.17).

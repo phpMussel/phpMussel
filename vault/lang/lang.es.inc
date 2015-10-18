@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Spanish/Español Language Data (30th August 2015).
+ This File: phpMussel Spanish/Español Language Data (13th October 2015).
  <%phpMussel%/vault/lang/lang.es.inc>
 
 */
@@ -52,6 +52,7 @@ $MusselConfig['lang']['greylist_updated']=' Greylist actualizado.';
 $MusselConfig['lang']['image']='Imagen';
 $MusselConfig['lang']['instance_already_active']='Instancia ya está activo! Por favor, compruebe sus ganchos.';
 $MusselConfig['lang']['invalid_file']='Archivo no válido';
+$MusselConfig['lang']['invalid_url']='URL no válido!';
 $MusselConfig['lang']['ok']='OK';
 $MusselConfig['lang']['only_allow_images']='Subir de archivos que no son imágenes no está permitido';
 $MusselConfig['lang']['phpmussel_disabled']='phpMussel desactivado.';
@@ -81,6 +82,7 @@ $MusselConfig['lang']['scan_tampering']='Detectado potencialmente peligrosa arch
 $MusselConfig['lang']['scan_unauthorised_upload']='No autorizado archivos manipulación detectado';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='No autorizado archivos manipulación o malo configuración detectado! ';
 $MusselConfig['lang']['started']='Iniciado';
+$MusselConfig['lang']['too_many_urls']='Demasiados URLs';
 $MusselConfig['lang']['update_']='phpMussel ahora intentará actualización.';
 $MusselConfig['lang']['update_available']='Una script actualización está disponible.';
 $MusselConfig['lang']['update_complete']='Actualización verificación completada con éxito.';

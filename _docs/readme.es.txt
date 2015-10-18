@@ -500,7 +500,7 @@
 
  phpMussel se puede ejecutar como un interactivo archivos escáner en CLI modo
  dentro sistemas basados en Windows. Consulte el "CÓMO INSTALAR (PARA CLI)"
- sección de este readme archivo para más detalles.
+ sección de este README archivo para más detalles.
 
  Para obtener una lista de los disponibles CLI comandos, para el CLI aviso,
  escribir 'c', y pulse Enter.
@@ -1558,7 +1558,43 @@
      ayudarle para hacer frente a estos problemas. Su cuota es determinado como
      "vt_quota_rate" solicitudes de cualquier naturaleza en cualquier
      "vt_quota_time" minuto período de tiempo.
- "template_data" (Category)
+ "urlscanner" (Categoría)
+ - URL escáner configuración.
+   "urlscanner"
+   - Construido dentro phpMussel es un URL escáner, capaz de detectar las
+     maliciosas URL desde el interior de los datos o archivos escaneados. Para
+     activar la URL escáner, definir "urlscanner" como true; Para desactivarlo,
+     definir esta directiva como false.
+   Notar: Si la URL escáner está desactivado, usted no tendrá que revisar
+   cualquiera de las directivas en esta categoría ("urlscanner"), porque
+   ninguno de ellos hará cualquier cosa si esta es desactiva.
+ - URL escáner API lookup configuration.
+   "lookup_hphosts"
+   - Permite API búsquedas al hpHosts API <http://hosts-file.net/> cuando se
+     define como true. hpHosts no requiere un API clave para llevar a cabo API
+     búsquedas.
+   "google_api_key"
+   - Permite API búsquedas al Google Safe Browsing API cuando la necesario API
+     clave es define. El uso de Google Safe Browsing API requiere un API clave,
+     que puede ser obtenido a partir de
+     <https://console.developers.google.com/>.
+   - Notar: Esta es una característica futuro! Google Safe Browsing API
+     funcionalidad de búsqueda no aún ha completado!
+   "maximum_api_lookups"
+   - Máximo número permitido de API búsquedas para llevar a cabo por individuo
+     escaneando iteración. Debido a que cada adicional API búsqueda se sumará
+     al total tiempo requerido para completar cada escaneando iteración, es
+     posible que usted desee estipular una limitación a fin de acelerar el
+     proceso de escaneando. Cuando se define en 0, no tal máximo número
+     permitido se aplicará. Se define como 10 por predefinido.
+   "maximum_api_lookups_response"
+   - Qué hacer si el máximo número de API búsquedas permitido es superadas?
+     False = Hacer nada (continuar procesando) [Predefinido];
+     True = Marcar/bloquear el archivo.
+   "cache_time"
+   - Por cuánto tiempo (en segundos) debe los resultados de las API búsquedas
+     ser almacenan en caché? Predefinido es 3600 segundos (1 horas).
+ "template_data" (Categoría)
  - Directivas/Variables para las plantillas y temas: Plantilla datos es
    relacionados a la HTML utilizado para generar el "Carga Negado" mensaje que
    muestra a los usuarios cuando una archivo subido está bloqueado. Si utiliza
@@ -1620,7 +1656,7 @@
    Todos Whitelist firmas seguir el formato:
     HASH:TAMAÑO:TIPO
    Donde HASH es el MD5 hash de un entero archivo, TAMAÑO es el total tamaño de
-   eso archivo y TIPO es el tipo of firmas el archivo en la whitelist es estar
+   eso archivo y TIPO es el tipo de firmas el archivo en la whitelist es estar
    inmune contra.
 
  = COMPLEJOS EXTENDIDAS FIRMAS =
@@ -1814,5 +1850,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 18 Setiembre 2015 (2015.09.18).
+Última Actualización: 17 Octubre 2015 (2015.10.17).
 EOF

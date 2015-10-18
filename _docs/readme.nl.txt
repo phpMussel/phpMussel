@@ -82,11 +82,11 @@
     doet en wat het voor. Pas deze opties als het u past, volgens welke
     geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
- 3) Upload de inhoud (phpMussel en zijn bestanden) naar de bestandsmap die u
+ 3) Upload de inhoud (phpMussel en zijn bestanden) naar het bestandsmap die u
     zou op eerder besloten (u nodig niet de *.txt/*.md bestanden opgenomen,
     maar meestal, u moeten uploaden alles).
 
- 4) CMHOD de bestandsmap "vault" naar "777". De belangrijkste bestandsmap
+ 4) CMHOD het bestandsmap "vault" naar "777". De belangrijkste bestandsmap
     opslaan van de inhoud (degene die u eerder koos), gewoonlijk, kunt worden
     genegeerd, maar CHMOD-status moet worden gecontroleerd als u machtigingen
     problemen heeft in het verleden met uw systeem (standaard, moet iets zijn
@@ -172,7 +172,7 @@
     phpMussel. Om dit te doen, open een platte tekst editor zoals Notepad of
     Notepad++, typt u het volledige pad naar de "php.exe" bestand in de
     bestandsmap van uw PHP-installatie, gevolgd door een spatie, gevolgd door
-    het volledige pad naar de "phpmussel.php" bestand in de bestandsmap van
+    het volledige pad naar de "phpmussel.php" bestand in het bestandsmap van
     uw phpMussel installatie, Sla het bestand op met een ".bat" extensie ergens
     dat u het gemakkelijk vinden, en dubbelklik op het bestand om phpMussel
     te opereren in de toekomst.
@@ -523,7 +523,7 @@
     wat u zou moeten worden inhaken in (essentieel)!
     ~
  /web.config (Ander, Opgenomen)
-    Een ASP.NET-configuratiebestand (in dit geval, naar de bestandsmap "vault"
+    Een ASP.NET-configuratiebestand (in dit geval, naar het bestandsmap "vault"
     te beschermen tegen toegang door niet-geautoriseerde bronnen indien het
     script is geïnstalleerd op een server op basis van ASP.NET technologieën).
     ~
@@ -567,7 +567,7 @@
     Testbestanden bestandsmap (bevat verschillende bestanden).
     Alle opgenomen bestanden zijn testbestanden voor het testen als phpMussel
     correct op uw systeem is geïnstalleerd, en u hoeft niet om deze map of een
-    van de bestanden, behalve bij het doen van dergelijke testen te uploaden.
+    van het bestanden, behalve bij het doen van dergelijke testen te uploaden.
     ~
  /_testfiles/ascii_standard_testfile.txt (Testbestand, Opgenomen)
     Testbestand voor het testen phpMussel genormaliseerde ASCII handtekeningen.
@@ -1215,7 +1215,7 @@
      of beschadigd? Als fail_silently is uitgeschakeld, ontbrekende en
      beschadigde bestanden zal worden gerapporteerd op het scannen, en als
      fail_silently is ingeschakeld, ontbrekende en beschadigde bestanden zal
-     zijn genegeerd, met het scannen rapporten voor de bestanden die er geen
+     zijn genegeerd, met het scannen rapporten voor het bestanden die er geen
      problemen. Dit moet in het algemeen met rust gelaten worden tenzij u
      ervaart mislukt of soortgelijke problemen.
      False = Uitgeschakeld; True = Ingeschakeld [Standaard].
@@ -1224,7 +1224,7 @@
      fail_extensions_silently is uitgeschakeld, ontbrekende extensies zal
      worden gerapporteerd op het scannen, en als fail_extensions_silently is
      ingeschakeld, ontbrekende extensies zal zijn genegeerd, met het scannen
-     rapporten voor de bestanden die er geen problemen. Het uitschakelen van
+     rapporten voor het bestanden die er geen problemen. Het uitschakelen van
      dit richtlijn kunt mogelijk verhogen van uw veiligheid, maar kunt ook
      leiden tot een toename van valse positieven.
      False = Uitgeschakeld; True = Ingeschakeld [Standaard].
@@ -1265,8 +1265,8 @@
      geheugen een proces kunt houden of als u PHP configuratie beperkt de
      bestandsgrootte van uploads.
    "filesize_response"
-   - Wat te doen met bestanden dat overschrijden de bestandsgrootte limiet (als
-     aanwezig). False = Whitelist; True = Blacklist [Standaard].
+   - Wat te doen met bestanden dat overschrijden het bestandsgrootte limiet
+     (als aanwezig). False = Whitelist; True = Blacklist [Standaard].
    "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
    - Als uw systeem vergunningen alleen specifieke bestandstypen te uploaden,
      of als uw systeem expliciet ontkent bepaalde bestandstypen, specificeren
@@ -1301,10 +1301,10 @@
      * Ook noteren dat archief controleren momenteel is niet recursief voor
        ZIP-bestanden.
    "filesize_archives"
-   - Erven de bestandsgrootte blacklist/whitelist staat aan de inhoud van
+   - Erven het bestandsgrootte blacklist/whitelist staat aan de inhoud van
      archieven? False = Nee (gewoon greylist alles); True = Ja [Standaard].
    "filetype_archives"
-   - Erven de bestandstype blacklist/whitelist staat om de inhoud van
+   - Erven het bestandstype blacklist/whitelist staat om de inhoud van
      archieven? False = Nee (gewoon greylist alles); True = Ja [Standaard].
    "max_recursion"
    - Maximale recursiediepte limiet voor archieven. Standaard = 10.
@@ -1407,7 +1407,7 @@
      vereist voor de juiste functionaliteit van phpMussel op uw specifieke
      systeem. Normaal, wanneer uitgeschakeld, wanneer phpMussel detecteert de
      aanwezigheid van elementen van de $_FILES array(), het zal proberen
-     initiëren een scan van de bestanden deze elementen vertegenwoordigen, en,
+     initiëren een scan van het bestanden deze elementen vertegenwoordigen, en,
      als deze elementen zijn leeg, phpMussel zal terugkeren een foutmelding.
      Dit is het juiste gedrag voor phpMussel. Dat gezegd hebbende, voor sommige
      CMS, lege elementen in $_FILES kan optreden als gevolg van het natuurlijke
@@ -1482,7 +1482,7 @@
      configuratiebestand.
    "vt_suspicion_level"
    - Normaal, phpMussel zal beperken welke bestanden scant met behulp van de
-     Virus Total API om de bestanden die zijn beschouwd "achterdochtig".
+     Virus Total API om het bestanden die zijn beschouwd "achterdochtig".
      Optioneel, u kan dit beperking aan te passen door de waarde van het
      "vt_suspicion_level" richtlijn.
      0 - Bestanden worden beschouwd achterdochtig alleen als, na te zijn
@@ -1566,6 +1566,41 @@
      soms helpen in het omgaan met deze problemen. Uw maximaal tarief bepaald
      als "vt_quota_rate" verzoeken van welke aard in elk "vt_quota_time" minuut
      tijdsbestek.
+ "urlscanner" (Categorie)
+ - URL scanner configuratie.
+   "urlscanner"
+   - Ingebouwd in phpMussel is een URL scanner, het opsporen van kwaadaardige
+     URL's vanuit alle gegevens of bestanden gescand. Om de URL scanner te
+     inschakelen, zetten de richtlijn "urlscanner" op true; Om het te
+     uitschakelen, zetten dit richtlijn op false.
+   Noteren: Als de URL scanner wordt uitgeschakeld, zult u geen behoefte aan
+   een van de richtlijnen in dit categorie te herzien ("urlscanner"), omdat
+   geen van hen zal alles doen als dit is uitgeschakeld.
+ - URL scanner API configuratie.
+   "lookup_hphosts"
+   - Inschakelt gebruik van de hpHosts API <http://hosts-file.net/> wanneer zet
+     op true. hpHosts nodig geen API sleutel voor het uitvoeren API verzoeken.
+   "google_api_key"
+   - Inschakelt gebruik van de Google Safe Browsing API wanneer de
+     noodzakelijke API sleutel wordt gedefinieerd. Google Safe Browsing API
+     nodig hebben een API sleutel, dat kan worden verkregen van
+     <https://console.developers.google.com/>.
+   - Noteren: Dit is een toekomstige functie! Google Safe Browsing API
+     functionaliteit nog niet geschreven!
+   "maximum_api_lookups"
+   - Maximaal toelaatbaar aantal van de API verzoeken te voeren per individuele
+     scan iteratie. Omdat elke extra API verzoek zullen toevoegen aan de totale
+     tijd die nodig te voltooien elke scan iteratie, u kunt wensen om een
+     beperking te specificeren teneinde versnellen het algehele scanproces.
+     Wanneer ingesteld op 0, geen dergelijk maximaal toelaatbaar aantal wordt
+     toegepast. Ingesteld op 10 standaard.
+   "maximum_api_lookups_response"
+   - Wat te doen als het maximaal toelaatbaar aantal van API verzoeken wordt
+     overschreden? False = Niets doen (voortzetten de verwerking) [Standaard];
+     True = Merken/blokkeren het bestand.
+   "cache_time"
+   - Hoe lang (in seconden) moeten de resultaten van de API verzoeken worden
+     gecached voor? Standaard is 3600 seconden (1 uur).
  "template_data" (Categorie)
  - Richtlijnen/Variabelen voor sjablonen en thema's: Sjabloongegevens betreft
    op de HTML-uitvoer die wordt gegenereerd en gebruikt voor de "Upload
@@ -1581,8 +1616,8 @@
    "css_url"
    - De sjabloonbestand voor aangepaste thema's maakt gebruik van externe
      CSS-eigenschappen, terwijl de sjabloonbestand voor het standaardthema
-     maakt gebruikt van interne CSS-eigenschappen. Om phpMussel instrueren om
-     de sjabloonbestand voor aangepaste thema's te gebruiken, geef het openbare
+     maakt gebruik van interne CSS-eigenschappen. Om phpMussel instrueren om de
+     sjabloonbestand voor aangepaste thema's te gebruiken, geef het openbare
      HTTP-adres van uw aangepaste thema's CSS-bestanden via de "css_url"
      variabele. Als u dit variabele leeg laat, phpMussel zal de sjabloonbestand
      voor de standaardthema te gebruiken.
@@ -1629,7 +1664,7 @@
    Alle whitelist handtekeningen volgt het formaat:
     HASH:FILESIZE:TYPE
    Waar HASH is de MD5 hash van een hele bestand, FILESIZE is de totale grootte
-   van het bestand en TYPE is het handtekeningen type de bestand van de
+   van het bestand en TYPE is het handtekeningen type het bestand van de
    whitelist is immuun tegen te zijn.
 
  = COMPLEXE UITGEBREIDE HANDTEKENINGEN =
@@ -1671,7 +1706,7 @@
    van goede praktijken in het algemeen en afgezien van het helpen u te
    onderscheiden tussen uw eigen handtekeningen en de standaard handtekeningen
    dat meegeleverd met phpMussel, het is goed om het bewerken te houden alleen
-   de bestanden bestemd voor bewerking, omdat knoeien met de standaard
+   het bestanden bestemd voor bewerking, omdat knoeien met de standaard
    handtekeningen bestanden kunt veroorzaken hen te stoppen met werken, vanwege
    de "map" bestanden: De maps/kaarten bestanden vertellen phpMussel waar in de
    handtekeningen bestanden te zoek voor handtekeningen vereist door phpMussel
@@ -1696,7 +1731,7 @@
       inhoud van elke niet-whitelist bestand gericht voor het scannen en
       geïdentificeerd aan de PE-formaat.
    - "Bestandsnaam Handtekeningen" (filenames_*). Gecontroleerd tegen de
-      bestandsnamen van de bestanden gerichte voor het scannen.
+      bestandsnamen van het bestanden gerichte voor het scannen.
    - "Algemene Handtekeningen" (general_*). Gecontroleerd tegen de inhoud van
       elke niet-whitelist bestand gericht voor het scannen.
    - "Grafische Handtekeningen" (graphics_*). Gecontroleerd tegen de inhoud van
@@ -1714,10 +1749,10 @@
       e-mailberichten of soortgelijke entiteiten (potentieel forum posten en
       etcetera).
    - "MD5 Handtekeningen" (md5_*). Gecontroleerd tegen de MD5 hash van de
-      inhoud en de bestandsgrootte van elke niet-whitelist bestand gericht voor
-      het scannen.
+      inhoud en het bestandsgrootte van elke niet-whitelist bestand gericht
+      voor het scannen.
    - "Archief Metadata Handtekeningen" (metadata_*). Gecontroleerd tegen de
-      CRC32 hash van de inhoud en de bestandsgrootte van de eerste bestand
+      CRC32 hash van de inhoud en het bestandsgrootte van de eerste bestand
       bevatte binnenkant van ieder niet-whitelist archief gericht voor het
       scannen.
    - "OLE Handtekeningen" (ole_*). Gecontroleerd tegen de inhoud van elke
@@ -1734,7 +1769,7 @@
    - "Shockwave Handtekeningen" (swf_*). Gecontroleerd tegen de inhoud van elke
       niet-whitelist Shockwave-bestand gericht voor het scannen.
    - "Whitelist Handtekeningen" (whitelist_*). Gecontroleerd tegen de MD5 hash
-      van de inhoud en de bestandsgrootte van elke bestand gericht voor het
+      van de inhoud en het bestandsgrootte van elke bestand gericht voor het
       scannen. Gecontroleerd bestanden zal zijn immuun van gecontroleerd te
       worden door de soort van handtekening in hun whitelist binnenkomst.
    - "XML/XDP Handtekeningen" (xmlxdp_*). Gecontroleerd tegen elke XML/XDP data
@@ -1825,5 +1860,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 18 September 2015 (2015.09.18).
+Laatste Bijgewerkt: 17 Oktober 2015 (2015.10.17).
 EOF

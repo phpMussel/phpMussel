@@ -68,7 +68,7 @@
  1) Скачайте архив на свой компьютер и откройте его. На хост-компьютере или в
     системе управления содержимым (CMS) создайте регистр, куда вы хотите
     загрузить содержимое этого пакета. Такой регистр, как
-    `/public_html/phpmussel/`, будет вполне достаточным, пока он отвечает вашим
+    "/public_html/phpmussel/", будет вполне достаточным, пока он отвечает вашим
     требованиям к защите или личным предпочтениям.
 
  2) Дополнительные опции (рекомендуются для опытных пользователей, имеющих
@@ -886,11 +886,11 @@
     "cleanup"
     - После исполнения стирает переменные величины данного руководства и
       очищает кэш-память. Если вы не хотите пользоваться руководством после
-      того, как проверили загрузку программы, то установите опцию `true`, чтобы
+      того, как проверили загрузку программы, то установите опцию "true", чтобы
       минимизировать загрузку памяти. Если вы будете использовать руководство и
-      для других целей, то установите опцию `false`, дабы избежать ненужного
+      для других целей, то установите опцию "false", дабы избежать ненужного
       многократного считывания данных в памяти. Как правило, устанавливается
-      опция `true`, но потом вы сможете пользоваться руководством только для
+      опция "true", но потом вы сможете пользоваться руководством только для
       контроля файлов.
       * Не воздействует на CLI-модус.
     "scan_log"
@@ -927,7 +927,7 @@
       поступающих запросов (HTTP_ACCEPT_LANGUAGE).
       False = Нет [Стандарт]; True = Да.
     "lang_acceptable"
-    - `lang_acceptable` указывает phpMussel, какой язык данного руководства
+    - "lang_acceptable" указывает phpMussel, какой язык данного руководства
       будет использоваться из "lang" или из "HTTP_ACCEPT_LANGUAGE". Эта команда
       должна быть настроена лишь для случая, если вы захотите добавить
       собственные языки, адаптированные к программе, или захочешь в
@@ -1406,6 +1406,39 @@
      достижению лимита, уменьшение этого значения должно немного помочь. Твой
      лимит будет установлен как "vt_quota_rate" запросы любого типа в каждом
      "vt_quota_time" минутном промежутке времени.
+ "urlscanner" (Категория)
+ - URL сканер конфигурация.
+   "urlscanner"
+   - Built into phpMussel is a URL scanner, capable of detecting malicious URLs
+     from within any data or files scanned. To enable the URL scanner, set the
+     "urlscanner" directive to true; To disable it, set this directive to
+     false.
+   Note: If the URL scanner is disabled, you won't need to review any of the
+   directives in this category ("urlscanner"), because none of them will do
+   anything if this is disabled.
+ - URL сканер API конфигурация.
+   "lookup_hphosts"
+   - Enables API lookups to the hpHosts API <http://hosts-file.net/> when set
+     to true. hpHosts doesn't require an API key for performing API lookups.
+   "google_api_key"
+   - Enables API lookups to the Google Safe Browsing API when the necessary API
+     key is defined. Google Safe Browsing API lookups requires an API key,
+     which can be obtained from <https://console.developers.google.com/>.
+   - Примечание: Это будущее особенность! Google Safe Browsing API
+     Функциональность еще не завершена!
+   "maximum_api_lookups"
+   - Maximum allowable number of API lookups to perform per individual scan
+     iteration. Because each additional API lookup will add to the total time
+     required to complete each scan iteration, you may wish to stipulate a
+     limitation in order to expediate the overall scan process. When set to 0,
+     no such maximum allowable number will be applied. Set to 10 by default.
+   "maximum_api_lookups_response"
+   - What to do if the maximum allowable number of API lookups is exceeded?
+     False = Do nothing (continue processing) [Default];
+     True = Flag/block the file.
+   "cache_time"
+   - How long (in seconds) should the results of API lookups be cached for?
+     Default is 3600 seconds (1 hour).
  "template_data" (Категория)
  - Шаблон данных относится к HTML-вывода, используемый для генерации "Загрузить
    Отказано" сообщения отображается для пользователей когда/на загрузки/уплоад
@@ -1555,9 +1588,8 @@
    - «SWF подписи» (swf_*). Проверяется содержание каждого Shockwave-файла, не
       внесённого в белый список.
    - «Подписи белого списка» (whitelist_*). Посредством MD5-Hash проверяется
-      содержание и объём каждого файла которые следует проверить. Matched files
-      will be immune to being matched by the type of signature mentioned in
-      their whitelist entry.
+      содержание и объём каждого файла которые следует проверить.
+      Соответствующие файлы иммунитет к типу подписей в белый список записи.
    - «XML/XDP-группы подписей» (xmlxdp_*). Поверяются группы XML/XDP файлов из
       каждого файла, не внесённого в белый список и которые следует проверить.
      (Внимание! Каждую такую подпись нужно просто деактивировать в
@@ -1644,5 +1676,5 @@
                                      ~ ~ ~
 
 
-Последнее обновление: 18. Сентябрь 2015 (2015.09.18).
+Последнее обновление: 17 Октябрь 2015 (2015.10.17).
 EOF

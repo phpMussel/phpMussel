@@ -138,7 +138,7 @@ Ci sono molti altri controlli e funzioni disponibili all'interno phpMussel per i
 
 ###3B. <a name="SECTION3B"></a>COME USARE (PER CLI)
 
-Si prega di fare riferimento alla "COME INSTALLARE (PER CLI)" sezione di questo readme file.
+Si prega di fare riferimento alla "COME INSTALLARE (PER CLI)" sezione di questo README file.
 
 Essere consapevoli che, sebbene futuri versioni di phpMussel dovrebbero sostenere altri sistemi, in questo momento, phpMussel CLI modalità supporto è ottimizzata solo per l'utilizzo su Windows basati sistemi (si può, ovviamente, provare su altri sistemi, Ma non posso garantire che funzionerà come previsto).
 
@@ -149,7 +149,7 @@ Anche essere consapevoli che phpMussel è non l'equivalente di un completa funzi
 
 ###4A. <a name="SECTION4A"></a>BROWSER COMANDI
 
-Quando phpMussel è stato installato ed è funzionante correttamente sulla vostra sistema, se hai definito le script_password e logs_password variabili nel configurazione file, si sarà in grado di eseguire qualche limitato numero di amministrative funzioni e inserire qualche numero di comandi per phpMussel tramite il browser. La ragione per cui queste password devono essere definite come mezzo per abilita le browser lato controlli è sia per garantire l'adeguata sicurezza, un'adeguata protezione di questi browser lato controlli e per assicurare che esista un modo per questi browser lato controlli essere completamente disabilitalo se non sono desiderati da voi e/o altro webmaster/amministratori che utilizzano phpMussel. Così, in altre parole, per abilita questi controlli, definire una password, e per disabilita questi controlli, definire nessune password. In alternativa, se si sceglie di abilitare questi controlli e quindi scegliere di disabilita questi controlli in un secondo momento, c'è un comando per fare questo (che può essere utile se si eseguono particulare azioni che si sente potrebbero compromettere le delegati password ed è necessità di rapidamente disabilita questi controlli senza modificare le configurazione file).
+Quando phpMussel è stato installato ed è funzionante correttamente sulla vostra sistema, se hai definito le `script_password` e `logs_password` variabili nel configurazione file, si sarà in grado di eseguire qualche limitato numero di amministrative funzioni e inserire qualche numero di comandi per phpMussel tramite il browser. La ragione per cui queste password devono essere definite come mezzo per abilita le browser lato controlli è sia per garantire l'adeguata sicurezza, un'adeguata protezione di questi browser lato controlli e per assicurare che esista un modo per questi browser lato controlli essere completamente disabilitalo se non sono desiderati da voi e/o altro webmaster/amministratori che utilizzano phpMussel. Così, in altre parole, per abilita questi controlli, definire una password, e per disabilita questi controlli, definire nessune password. In alternativa, se si sceglie di abilitare questi controlli e quindi scegliere di disabilita questi controlli in un secondo momento, c'è un comando per fare questo (che può essere utile se si eseguono particulare azioni che si sente potrebbero compromettere le delegati password ed è necessità di rapidamente disabilita questi controlli senza modificare le configurazione file).
 
 Un paio di motivi per cui si _**DOVREBBE**_ abilita questi controlli:
 - Fornisce un modo per facilmente aggiungere firme alla greylist in casi come quando si scopre una firma che sta producendo un falso positivo durante il caricamento dei file di vostra sistema e non avete il tempo di modificare manualmente e caricare di nuovo il greylist file.
@@ -167,7 +167,7 @@ In entrambi i casi, senza riguardo di ciò che si sceglie, la scelta in definiti
 Un elenco di disponibili browser lato comandi:
 
 scan_log
-- Password requisito: logs_password
+- Password requisito: `logs_password`
 - Altri requisiti: scan_log deve essere definito.
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -175,7 +175,7 @@ scan_log
 - Cosa fa: Stampi il contenuti del scan_log file sullo vostro schermo.
 
 scan_kills
-- Password requisito: logs_password
+- Password requisito: `logs_password`
 - Altri requisiti: scan_kills deve essere definito.
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -183,7 +183,7 @@ scan_kills
 - Cosa fa: Stampi il contenuti del scan_kills file sullo vostro schermo.
 
 controls_lockout
-- Password requisito: logs_password O script_password
+- Password requisito: `logs_password` O `script_password`
 - Altri requisiti: (nessuno)
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -192,7 +192,7 @@ controls_lockout
 - Cosa fa: Disabilita/blocca tutti le browser lato controlli. Questo dovrebbe essere usato se si sospetta che una o più delle vostre password sono stato compromesso (questo può accadere se si sta utilizzando questi controlli da un computer che non è protetto o fidato). controls_lockout opere tramite creando un file, `controls.lck`, nelle vostre vault, che phpMussel sarà verifica per prima di eseguire qualsiasi comando di qualsiasi tipo. Quando questo accade, per riabilitarla i controlli, è necessario per vostre di manualmente eliminare il `controls.lck` file via FTP o simile. Può essere chiamato utilizzando qualsiasi delle password.
 
 disable
-- Password requisito: script_password
+- Password requisito: `script_password`
 - Altri requisiti: (nessuno)
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -200,7 +200,7 @@ disable
 - Cosa fa: Disabilita phpMussel. Questo dovrebbe essere utilizzato se si sta eseguendo qualsiasi aggiornamenti o modifiche al vostra sistema o se si sta installando nuovo software o dei moduli al vostra sistema che fare o potenzialmente potrebbe innescare falsi positivi. Questo anche dovrebbe essere utilizzato se si hanno qualsiasi problemi con phpMussel ma non vogliono rimuoverlo dal vostra sistema. Quando questo accade, per riabilitare phpMussel, utilizzare "enable".
 
 enable
-- Password requisito: script_password
+- Password requisito: `script_password`
 - Altri requisiti: (nessuno)
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -208,7 +208,7 @@ enable
 - Cosa fa: Abilita phpMussel. Questo dovrebbe essere usato se in precedenza vostra ha disattivato phpMussel con "disable" e vogliono riabilitarla.
 
 update
-- Password requisito: script_password
+- Password requisito: `script_password`
 - Altri requisiti: `update.dat` e `update.inc` deve esistere.
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -216,7 +216,7 @@ update
 - Cosa fa: Verifica la presenza di aggiornamenti sia per phpMussel e le sue firme. Se l'aggiornamento verificare è successo e aggiornamenti sono trovano, sarà tenterà per scaricare e installare gli aggiornamenti. Se l'aggiornamento verificare fallisce, l'aggiornamento sarà abortito. Risultati dell'intero processo sono stampati sullo schermo. Mi raccomando di fare l'aggiornamento verificare almeno una volta al mese per garantire le vostre firme e la vostra copia di phpMussel sono aggiornato all'ultimo edizioni (a meno, ovviamente, si fare l'aggiornamento verificare e fare l'installazione di manualmente, di cui, mi piacerebbe ancora consiglio di fare almeno una volta al mese). Verifica più di due volte al mese è probabilmente inutile, considerando sto molto improbabile essere grado per produzione qualsiasi aggiornamenti di qualsiasi tipo più spesso di quello (né faccio in modo particolare voglio per la maggior parte).
 
 greylist
-- Password requisito: script_password
+- Password requisito: `script_password`
 - Altri requisiti: (nessuno)
 - Parametri requisiti: [Nome della firma essere sulla greylist]
 - Parametri opzionali: (nessuno)
@@ -224,7 +224,7 @@ greylist
 - Cosa fa: Aggiungere una firma alla greylist.
 
 greylist_clear
-- Password requisito: script_password
+- Password requisito: `script_password`
 - Altri requisiti: (nessuno)
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -232,7 +232,7 @@ greylist_clear
 - Cosa fa: Cancella l'intera greylist.
 
 greylist_show
-- Password requisito: script_password
+- Password requisito: `script_password`
 - Altri requisiti: (nessuno)
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
@@ -244,7 +244,7 @@ greylist_show
 
 ###4B. <a name="SECTION4B"></a>CLI (COMANDO LINEA INTERFACCIA)
 
-phpMussel può essere eseguito come uno interattivo file scanner in CLI modalità da Windows. Fare riferimento alla "COME INSTALLARE (PER CLI)" sezione di questo readme file per maggiori dettagli.
+phpMussel può essere eseguito come uno interattivo file scanner in CLI modalità da Windows. Fare riferimento alla "COME INSTALLARE (PER CLI)" sezione di questo README file per maggiori dettagli.
 
 Per un elenco di comandi disponibili all'interno CLI , al CLI prompt, tipo 'c', e premere Enter.
 
@@ -453,7 +453,7 @@ File                                       | Descrizione
 
 ※ Nome del file può variare dipendente di configurazione (in `phpmussel.ini`).
 
-####*IN RIGUARDA PER FIRMA FILES*
+####*IN RIGUARDA PER FIRME FILE*
 CVD è l'acronimo di "ClamAV Virus Definitions", in riferimento sia come ClamAV riferisce alle proprie firme e all'uso di tali firme da phpMussel; I file che terminano con "CVD" contengono firme.
 
 I file che terminano con "MAP", letteralmente, Mappa cui delle firme phpMussel dovrebbe e non dovrebbe usare per individuale scansioni; Non tutte le firme sono necessariamente richiesti per ogni singola scansione, così, phpMussel utilizza mappe delle firme file a accelerare il processo di scansione (un processo che sarebbe altrimenti essere estremamente lento e noioso).
@@ -481,11 +481,11 @@ Il seguente è un elenco di variabili trovate nelle `phpmussel.ini` configurazio
 Generale configurazione per phpMussel.
 
 "script_password"
-- Per conveniance, phpMussel permette alcune funzioni (per esempio, l'aggiornare di phpMussel tramite il browser) essere innescato manualmente tramite POST, GET e QUERY. Ma, come precauzione di sicurezza, per fare questo, phpMussel aspetta una password essere incluso con il comando, al fine per garantire che sia tu, e non qualcun altro, tentando per manualmente attivare queste funzioni. Impostare script_password a qualunque password che si desidera utilizzare. Se non alcuna password è impostata, Manuale innescando sarà disattivato per predefinita. Usa qualcosa si ricorda, Ma che è difficile per indovinare d'altrui.
+- Per conveniance, phpMussel permette alcune funzioni (per esempio, l'aggiornare di phpMussel tramite il browser) essere innescato manualmente tramite POST, GET e QUERY. Ma, come precauzione di sicurezza, per fare questo, phpMussel aspetta una password essere incluso con il comando, al fine per garantire che sia tu, e non qualcun altro, tentando per manualmente attivare queste funzioni. Impostare `script_password` a qualunque password che si desidera utilizzare. Se non alcuna password è impostata, Manuale innescando sarà disattivato per predefinita. Usa qualcosa si ricorda, Ma che è difficile per indovinare d'altrui.
 - Non ha alcuna influenza in CLI modalità.
 
 "logs_password"
-- Stesso come script_password, ma per la visualizzazione dei contenuti di scan_log e scan_kills. Avendo separate password può essere utile se si vuole dare l'accesso a qualcun altro a una serie di funzioni ma non l'altro.
+- Stesso come `script_password`, ma per la visualizzazione dei contenuti di scan_log e scan_kills. Avendo separate password può essere utile se si vuole dare l'accesso a qualcun altro a una serie di funzioni ma non l'altro.
 - Non ha alcuna influenza in CLI modalità.
 
 "cleanup"
@@ -560,16 +560,16 @@ Verificare contro normalizzati HTML firme durante la scansione? False = No; True
 - "html_custom"
 - "html_mussel"
 
-Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE Sezionale firme durante la scansione? False = No; True = Sì [Predefinito].
+Verificare PE (Portatile Eseguibile) file (EXE, DLL, ecc) contro PE Sezionale firme durante la scansione? False = No; True = Sì [Predefinito].
 - "pe_clamav"
 - "pe_custom"
 - "pe_mussel"
 
-Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE esteso firme durante la scansione? False = No; True = Sì [Predefinito].
+Verificare PE (Portatile Eseguibile) file (EXE, DLL, ecc) contro PE esteso firme durante la scansione? False = No; True = Sì [Predefinito].
 - "pex_custom"
 - "pex_mussel"
 
-Verificare PE (Portatile Eseguibile) files (EXE, DLL, ecc) contro PE firme durante la scansione? False = No; True = Sì [Predefinito].
+Verificare PE (Portatile Eseguibile) file (EXE, DLL, ecc) contro PE firme durante la scansione? False = No; True = Sì [Predefinito].
 - "exe_clamav"
 - "exe_custom"
 - "exe_mussel"
@@ -783,7 +783,33 @@ Notare: Indipendentemente dal livello di sospetto, qualsiasi file che sono nella
 "vt_quota_rate" e "vt_quota_time"
 - Secondo a la Virus Total API documentazione, è limitato a un massimo di 4 richieste di qualsiasi natura in un dato 1 minuto tempo periodo. Se tu esegue una honeyclient, honeypot o qualsiasi altro automazione che sta fornire risorse a VirusTotal e non solo recuperare rapporti si ha diritto a un più alto tasso di richiesta quota. Per predefinita, phpMussel rigorosamente rispetti questi limiti, ma a causa della possibilità di tali tassi quote essere aumentati, questi due direttivi sono forniti come un mezzo per voi per istruire phpMussel da quale limite si deve rispettare. A meno che sei stato richiesto di farlo, non è raccomandato per voi per aumentare questi valori, ma, se hai incontrati problemi relativi a raggiungere il vostro tasso quota, diminuendo questi valori _**POTREBBE**_ a volte aiutare nel lavoro attraverso questi problemi. Il vostro tasso limite è determinato come `vt_quota_rate` richieste di qualsiasi natura in un dato `vt_quota_time` minuto tempo periodo.
 
-####"template_data" (Category)
+####"urlscanner" (Categoria)
+Configurazione per l'URL scanner.
+
+"urlscanner"
+- Costruito in phpMussel è un URL scanner, in grado di rilevare URL malevoli all'interno di dati ei file scansionati. Per abilitare l'URL scanner, imposta la `urlscanner` direttiva su true; Per disabilitarlo, imposta questa direttiva su false.
+
+Notare: Se l'URL scanner è disabilitato, non sarà necessario rivedere nessuna delle direttive in questa categoria (`urlscanner`), perché nessuno di loro farà nulla se questo è disabilitato.
+
+API configurazione per l'URL scanner.
+
+"lookup_hphosts"
+- Abilita API richieste per l'API di [hpHosts](http://hosts-file.net/) quando impostato su true. hpHosts non richiede un API chiave per l'esecuzione di API richieste.
+
+"google_api_key"
+- Abilita API richieste per l'API di Google Safe Browsing quando le API chiave necessarie è definito. L'API di Google Safe Browsing richiede un API chiave, che può essere ottenuto da [Qui](https://console.developers.google.com/).
+- Notare: Questa è una caratteristica futuro! Google Safe Browsing API funzionalità non completato a quest'ora!
+
+"maximum_api_lookups"
+- Numero massimo di richieste per l'API di eseguire per iterazione di scansione individuo. Perché ogni richiesta supplementare per l'API farà aggiungere al tempo totale necessario per completare ogni iterazione di scansione, si potrebbe desiderare di stipulare una limitazione al fine di accelerare il processo di scansione. Quando è impostato su 0, no tale ammissibile numero massimo sarà applicata. Impostato su 10 per impostazione predefinite.
+
+"maximum_api_lookups_response"
+- Cosa fare se il ammissibile numero massimo di richieste per l'API è superato? False = Fare nulla (continuare il processo) [Predefinito]; True = Segnare/bloccare il file.
+
+"cache_time"
+- Per quanto tempo (in secondi) dovrebbe i risultati delle API richieste essere memorizzati nella cache per? Predefinito è 3600 secondi (1 ora).
+
+####"template_data" (Categoria)
 Direttive/Variabili per modelli e temi.
 
 Modelli dati riferisce alla prodotti HTML utilizzato per generare il "Caricamento Negato" messaggio visualizzati agli utenti quando file caricamenti sono bloccati. Se stai usando temi personalizzati per phpMussel, prodotti HTML è provenienti da file `template_custom.html`, e altrimenti, prodotti HTML è provenienti da file `template.html`. Variabili scritte a questa sezione della configurazione file sono parsato per il prodotti HTML per mezzo di sostituendo tutti i nomi di variabili circondati da parentesi graffe trovato all'interno il prodotti HTML con la corrispondente dati di quelli variabili. Per esempio, dove `foo="bar"`, qualsiasi istanza di `<p>{foo}</p>` trovato all'interno il prodotti HTML diventerà `<p>bar</p>`.
@@ -951,4 +977,4 @@ Questa informazione è stato lo scorso aggiornato 7 Settembre 2015 ed è in cors
 ---
 
 
-Ultimo Aggiornamento: 18 Settembre 2015 (2015.09.18).
+Ultimo Aggiornamento: 17 Ottobre 2015 (2015.10.17).

@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Chinese (Traditional) / 中文（傳統） Language Data (9th September 2015).
+ This File: phpMussel Chinese (Traditional) / 中文（傳統） Language Data (13th October 2015).
  <%phpMussel%/vault/lang/lang.zh-TW.inc>
 
 */
@@ -51,7 +51,8 @@ $MusselConfig['lang']['greylist_not_updated']=' 灰名單不更新。';
 $MusselConfig['lang']['greylist_updated']=' 灰名單更新。';
 $MusselConfig['lang']['image']='圖像';
 $MusselConfig['lang']['instance_already_active']='腳本已激活！請仔細檢查您的鉤子。';
-$MusselConfig['lang']['invalid_file']='無效文件';
+$MusselConfig['lang']['invalid_file']='無效的文件';
+$MusselConfig['lang']['invalid_url']='無效的網址！';
 $MusselConfig['lang']['ok']='好';
 $MusselConfig['lang']['only_allow_images']='上傳文件以外圖片不允許';
 $MusselConfig['lang']['phpmussel_disabled']='phpMussel關閉。';
@@ -81,6 +82,7 @@ $MusselConfig['lang']['scan_tampering']='檢測潛在的危險文件篡改';
 $MusselConfig['lang']['scan_unauthorised_upload']='未經授權的文件上傳操控是檢測';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='未經授權的文件上傳操控或配置錯誤是檢測！';
 $MusselConfig['lang']['started']='開始';
+$MusselConfig['lang']['too_many_urls']='太多的URL';
 $MusselConfig['lang']['update_']='phpMussel現在將嘗試進行自我更新。';
 $MusselConfig['lang']['update_available']='編程更新可用。';
 $MusselConfig['lang']['update_complete']='更新檢查成功完成。';
