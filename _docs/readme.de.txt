@@ -1499,29 +1499,28 @@
      helfen. Dein Limit wird festgelegt als "vt_quota_rate" Anfragen jeder Art
      in jeder "vt_quota_time" Minuten Zeitspanne.
  "urlscanner" (Kategorie)
- - URL scanner configuration.
+ - URL-Scanner-Konfiguration.
    "urlscanner"
-   - Built into phpMussel is a URL scanner, capable of detecting malicious URLs
-     from within any data or files scanned. To enable the URL scanner, set the
-     "urlscanner" directive to true; To disable it, set this directive to
-     false.
-   Note: If the URL scanner is disabled, you won't need to review any of the
-   directives in this category ("urlscanner"), because none of them will do
-   anything if this is disabled.
- - URL scanner API lookup configuration.
+   - In phpMussel Erbaut ein URL-Scanner, für bösartige URLs von innen
+     irgendwelche Daten oder Dateien gescannt zu entdecken. Um die URL-Scanner
+     zu aktivieren, stellen Sie die Option "urlscanner" auf "true"; Zu
+     deaktivieren, stellen auf "false".
+   Hinweis: Wenn die URL-Scanner ist deaktiviert, Sie nicht brauchen um diese
+   Kategorie zu überprüfen ("urlscanner").
+ - URL-Scanner-API-Konfiguration.
    "lookup_hphosts"
-   - Enables API lookups to the hpHosts API <http://hosts-file.net/> when set
-     to true. hpHosts doesn't require an API key for performing API lookups.
+   - Aktivieren hpHosts API <http://hosts-file.net/> wenn auf `true` gesetzt
+     (API-Schlüssel nicht erforderlich).
    "google_api_key"
-   - Enables API lookups to the Google Safe Browsing API when the necessary API
-     key is defined. Google Safe Browsing API lookups requires an API key,
-     which can be obtained from <https://console.developers.google.com/>.
-   - Note: This is a future feature! Google Safe Browsing API lookup
-     functionality not yet completed!
+   - Aktivieren Google Safe Browsing API wenn die erforderlichen API-Schlüssel
+     definiert ist. Sie können einen API-Schlüssel von hier zu erhalten:
+     <https://console.developers.google.com/>.
+   - Hinweis: Dies ist eine künftige Funktion! Google Safe Browsing API
+     Funktionalität noch nicht geschrieben!
    "maximum_api_lookups"
-   - Maximum allowable number of API lookups to perform per individual scan
-     iteration. Because each additional API lookup will add to the total time
-     required to complete each scan iteration, you may wish to stipulate a
+   - Die maximal zulässige Anzahl der API-Anfragen pro einzelnen Scandurchlauf
+     zu durchführen. Because each additional API lookup will add to the total
+     time required to complete each scan iteration, you may wish to stipulate a
      limitation in order to expedite the overall scan process. When set to 0,
      no such maximum allowable number will be applied. Set to 10 by default.
    "maximum_api_lookups_response"

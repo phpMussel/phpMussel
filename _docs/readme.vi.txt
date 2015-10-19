@@ -487,313 +487,313 @@
  potentially created as a result of your using this script, along with a short
  description of what all these files are for.
 
- /phpmussel.php (Script, Included)
+ /phpmussel.php (Script, Bao gồm)
     Hồ sơ tải. Tải bản chính, tải lên, vân vân. Đây là điều bạn cần nối vào
     (cần thiết)!
     ~
- /web.config (Other, Included)
+ /web.config (Khác, Bao gồm)
     Một hồ sơ cấu hình của ASP.NET (trong trường hợp này, để bảo vệ "/vault"
     thư mực khỏi bị truy cập bởi những nguồn không có quền trong trường hợp bản
     được cài trên serever chạy trên công nghệ ASP.NET).
     ~
- /_docs/ (Directory)
+ /_docs/ (Thư mực)
     Thư mực tài liệu (Chứa nhiều loại hồ sơ).
     ~
- /_docs/change_log.txt (Tài liệu, Included)
+ /_docs/change_log.txt (Tài liệu, Bao gồm)
     Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa
     các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
     ~
- /_docs/readme.de.md (Tài liệu, Included); DEUTSCH
- /_docs/readme.de.txt (Tài liệu, Included); DEUTSCH
- /_docs/readme.en.md (Tài liệu, Included); ENGLISH
- /_docs/readme.en.txt (Tài liệu, Included); ENGLISH
- /_docs/readme.es.md (Tài liệu, Included); ESPAÑOL
- /_docs/readme.es.txt (Tài liệu, Included); ESPAÑOL
- /_docs/readme.fr.md (Tài liệu, Included); FRANÇAIS
- /_docs/readme.fr.txt (Tài liệu, Included); FRANÇAIS
- /_docs/readme.id.md (Tài liệu, Included); BAHASA INDONESIA
- /_docs/readme.id.txt (Tài liệu, Included); BAHASA INDONESIA
- /_docs/readme.it.md (Tài liệu, Included); ITALIANO
- /_docs/readme.it.txt (Tài liệu, Included); ITALIANO
- /_docs/readme.nl.md (Tài liệu, Included); NEDERLANDSE
- /_docs/readme.nl.txt (Tài liệu, Included); NEDERLANDSE
- /_docs/readme.pt.md (Tài liệu, Included); PORTUGUÊS
- /_docs/readme.pt.txt (Tài liệu, Included); PORTUGUÊS
- /_docs/readme.ru.md (Tài liệu, Included); РУССКИЙ
- /_docs/readme.ru.txt (Tài liệu, Included); РУССКИЙ
- /_docs/readme.vi.md (Tài liệu, Included); TIẾNG VIỆT
- /_docs/readme.vi.txt (Tài liệu, Included); TIẾNG VIỆT
- /_docs/readme.zh.md (Tài liệu, Included); 中文（简体）
- /_docs/readme.zh-TW.md (Tài liệu, Included); 中文（傳統）
+ /_docs/readme.de.md (Tài liệu, Bao gồm); DEUTSCH
+ /_docs/readme.de.txt (Tài liệu, Bao gồm); DEUTSCH
+ /_docs/readme.en.md (Tài liệu, Bao gồm); ENGLISH
+ /_docs/readme.en.txt (Tài liệu, Bao gồm); ENGLISH
+ /_docs/readme.es.md (Tài liệu, Bao gồm); ESPAÑOL
+ /_docs/readme.es.txt (Tài liệu, Bao gồm); ESPAÑOL
+ /_docs/readme.fr.md (Tài liệu, Bao gồm); FRANÇAIS
+ /_docs/readme.fr.txt (Tài liệu, Bao gồm); FRANÇAIS
+ /_docs/readme.id.md (Tài liệu, Bao gồm); BAHASA INDONESIA
+ /_docs/readme.id.txt (Tài liệu, Bao gồm); BAHASA INDONESIA
+ /_docs/readme.it.md (Tài liệu, Bao gồm); ITALIANO
+ /_docs/readme.it.txt (Tài liệu, Bao gồm); ITALIANO
+ /_docs/readme.nl.md (Tài liệu, Bao gồm); NEDERLANDSE
+ /_docs/readme.nl.txt (Tài liệu, Bao gồm); NEDERLANDSE
+ /_docs/readme.pt.md (Tài liệu, Bao gồm); PORTUGUÊS
+ /_docs/readme.pt.txt (Tài liệu, Bao gồm); PORTUGUÊS
+ /_docs/readme.ru.md (Tài liệu, Bao gồm); РУССКИЙ
+ /_docs/readme.ru.txt (Tài liệu, Bao gồm); РУССКИЙ
+ /_docs/readme.vi.md (Tài liệu, Bao gồm); TIẾNG VIỆT
+ /_docs/readme.vi.txt (Tài liệu, Bao gồm); TIẾNG VIỆT
+ /_docs/readme.zh.md (Tài liệu, Bao gồm); 中文（简体）
+ /_docs/readme.zh-TW.md (Tài liệu, Bao gồm); 中文（傳統）
     The README files (for example; the file you're currently reading).
     ~
- /_docs/signatures_tally.txt (Tài liệu, Included)
+ /_docs/signatures_tally.txt (Tài liệu, Bao gồm)
     Lý lịch của net-shift có bao gồm chữ ký (không cần thiết cho chức năng phù
     hợp của kịch bản).
     ~
- /_testfiles/ (Directory)
+ /_testfiles/ (Thư mực)
     Kiểm tra tập tin thư mục (chứa các tập tin khác nhau). Tất cả các hồ sơ
     chứa những hồ sơ thử nghiệm để thử nghiệm nếu phpMussel đã được cài đặt
     đúng trên hệ thống của bạn, và bạn không cần phải tải lên thư mục này hoặc
     bất kỳ các hồ sơ của mình trừ khi làm xét nghiệm như vậy.
     ~
- /_testfiles/ascii_standard_testfile.txt (Test file, Included)
+ /_testfiles/ascii_standard_testfile.txt (Hồ sơ xét nghiệm, Bao gồm)
     Kiểm tra hồ sơ cho xét nghiệm phpMussel chữ ký ASCII bình thường.
     ~
- /_testfiles/coex_testfile.rtf (Test file, Included)
+ /_testfiles/coex_testfile.rtf (Hồ sơ xét nghiệm, Bao gồm)
     Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký kéo dài phức tạp.
     ~
- /_testfiles/exe_standard_testfile.exe (Test file, Included)
-    Test file for testing phpMussel PE signatures.
+ /_testfiles/exe_standard_testfile.exe (Hồ sơ xét nghiệm, Bao gồm)
+    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký PE.
     ~
- /_testfiles/general_standard_testfile.txt (Test file, Included)
-    Test file for testing phpMussel general signatures.
+ /_testfiles/general_standard_testfile.txt (Hồ sơ xét nghiệm, Bao gồm)
+    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký chung.
     ~
- /_testfiles/graphics_standard_testfile.gif (Test file, Included)
-    Test file for testing phpMussel graphics signatures.
+ /_testfiles/graphics_standard_testfile.gif (Hồ sơ xét nghiệm, Bao gồm)
+    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký đồ họa.
     ~
- /_testfiles/html_standard_testfile.txt (Test file, Included)
-    Test file for testing phpMussel normalised HTML signatures.
+ /_testfiles/html_standard_testfile.txt (Hồ sơ xét nghiệm, Bao gồm)
+    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký HTML bình thường.
     ~
- /_testfiles/md5_testfile.txt (Test file, Included)
-    Test file for testing phpMussel MD5 signatures.
+ /_testfiles/md5_testfile.txt (Hồ sơ xét nghiệm, Bao gồm)
+    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký dựa MD5.
     ~
- /_testfiles/metadata_testfile.tar (Test file, Included)
+ /_testfiles/metadata_testfile.tar (Hồ sơ xét nghiệm, Bao gồm)
     Test file for testing phpMussel metadata signatures and for testing TAR
     file support on your system.
     ~
- /_testfiles/metadata_testfile.txt.gz (Test file, Included)
+ /_testfiles/metadata_testfile.txt.gz (Hồ sơ xét nghiệm, Bao gồm)
     Test file for testing phpMussel metadata signatures and for testing GZ file
     support on your system.
     ~
- /_testfiles/metadata_testfile.zip (Test file, Included)
+ /_testfiles/metadata_testfile.zip (Hồ sơ xét nghiệm, Bao gồm)
     Test file for testing phpMussel metadata signatures and for testing ZIP
     file support on your system.
     ~
- /_testfiles/ole_testfile.ole (Test file, Included)
-    Test file for testing phpMussel OLE signatures.
+ /_testfiles/ole_testfile.ole (Hồ sơ xét nghiệm, Bao gồm)
+    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký OLE.
     ~
- /_testfiles/pdf_standard_testfile.pdf (Test file, Included)
-    Test file for testing phpMussel PDF signatures.
+ /_testfiles/pdf_standard_testfile.pdf (Hồ sơ xét nghiệm, Bao gồm)
+    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký PDF.
     ~
- /_testfiles/pe_sectional_testfile.exe (Test file, Included)
-    Test file for testing phpMussel PE Sectional signatures.
+ /_testfiles/pe_sectional_testfile.exe (Hồ sơ xét nghiệm, Bao gồm)
+    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký phần PE.
     ~
- /_testfiles/swf_standard_testfile.swf (Test file, Included)
-    Test file for testing phpMussel SWF signatures.
+ /_testfiles/swf_standard_testfile.swf (Hồ sơ xét nghiệm, Bao gồm)
+    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký Shockwave.
     ~
- /_testfiles/xdp_standard_testfile.xdp (Test file, Included)
-    Test file for testing phpMussel XML/XDP-Chunk signatures.
+ /_testfiles/xdp_standard_testfile.xdp (Hồ sơ xét nghiệm, Bao gồm)
+    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký XML/XDP.
     ~
- /vault/ (Directory)
+ /vault/ (Thư mực)
     Vault directory (contains various files).
     ~
- /vault/cache/ (Directory)
+ /vault/cache/ (Thư mực)
     Cache directory (for temporary data).
     ~
- /vault/cache/.htaccess (Other, Included)
+ /vault/cache/.htaccess (Khác, Bao gồm)
     A hypertext access file (in this instance, to protect sensitive files
     belonging to the script from being accessed by non-authorised sources).
     ~
- /vault/lang/ (Directory)
+ /vault/lang/ (Thư mực)
     Contains phpMussel language data.
     ~
- /vault/lang/.htaccess (Other, Included)
+ /vault/lang/.htaccess (Khác, Bao gồm)
     A hypertext access file (in this instance, to protect sensitive files
     belonging to the script from being accessed by non-authorised sources).
     ~
- /vault/lang/lang.de.inc (Script, Included); DEUTSCH
- /vault/lang/lang.en.inc (Script, Included); ENGLISH
- /vault/lang/lang.es.inc (Script, Included); ESPAÑOL
- /vault/lang/lang.fr.inc (Script, Included); FRANÇAIS
- /vault/lang/lang.id.inc (Script, Included); BAHASA INDONESIA
- /vault/lang/lang.it.inc (Script, Included); ITALIANO
- /vault/lang/lang.ja.inc (Script, Included); 日本語
- /vault/lang/lang.nl.inc (Script, Included); NEDERLANDSE
- /vault/lang/lang.pt.inc (Script, Included); PORTUGUÊS
- /vault/lang/lang.ru.inc (Script, Included); РУССКИЙ
- /vault/lang/lang.vi.inc (Script, Included); TIẾNG VIỆT
- /vault/lang/lang.zh.inc (Script, Included); 中文（简体）
- /vault/lang/lang.zh-TW.inc (Script, Included); 中文（傳統）
+ /vault/lang/lang.de.inc (Script, Bao gồm); DEUTSCH
+ /vault/lang/lang.en.inc (Script, Bao gồm); ENGLISH
+ /vault/lang/lang.es.inc (Script, Bao gồm); ESPAÑOL
+ /vault/lang/lang.fr.inc (Script, Bao gồm); FRANÇAIS
+ /vault/lang/lang.id.inc (Script, Bao gồm); BAHASA INDONESIA
+ /vault/lang/lang.it.inc (Script, Bao gồm); ITALIANO
+ /vault/lang/lang.ja.inc (Script, Bao gồm); 日本語
+ /vault/lang/lang.nl.inc (Script, Bao gồm); NEDERLANDSE
+ /vault/lang/lang.pt.inc (Script, Bao gồm); PORTUGUÊS
+ /vault/lang/lang.ru.inc (Script, Bao gồm); РУССКИЙ
+ /vault/lang/lang.vi.inc (Script, Bao gồm); TIẾNG VIỆT
+ /vault/lang/lang.zh.inc (Script, Bao gồm); 中文（简体）
+ /vault/lang/lang.zh-TW.inc (Script, Bao gồm); 中文（傳統）
     Language data files for phpMussel.
     ~
- /vault/quarantine/ (Directory)
+ /vault/quarantine/ (Thư mực)
     Quarantine directory (contains quarantined files).
     ~
- /vault/quarantine/.htaccess (Other, Included)
+ /vault/quarantine/.htaccess (Khác, Bao gồm)
     A hypertext access file (in this instance, to protect sensitive files
     belonging to the script from being accessed by non-authorised sources).
     ~
- /vault/.htaccess (Other, Included)
+ /vault/.htaccess (Khác, Bao gồm)
     A hypertext access file (in this instance, to protect sensitive files
     belonging to the script from being accessed by non-authorised sources).
     ~
- /vault/ascii_clamav_regex.cvd (Signatures, Included)
- /vault/ascii_clamav_regex.map (Signatures, Included)
- /vault/ascii_clamav_standard.cvd (Signatures, Included)
- /vault/ascii_clamav_standard.map (Signatures, Included)
- /vault/ascii_custom_regex.cvd (Signatures, Included)
- /vault/ascii_custom_standard.cvd (Signatures, Included)
- /vault/ascii_mussel_regex.cvd (Signatures, Included)
- /vault/ascii_mussel_standard.cvd (Signatures, Included)
-    Files for normalised ASCII signatures. Required if normalised ASCII
+ /vault/ascii_clamav_regex.cvd (Chữ ký, Bao gồm)
+ /vault/ascii_clamav_regex.map (Chữ ký, Bao gồm)
+ /vault/ascii_clamav_standard.cvd (Chữ ký, Bao gồm)
+ /vault/ascii_clamav_standard.map (Chữ ký, Bao gồm)
+ /vault/ascii_custom_regex.cvd (Chữ ký, Bao gồm)
+ /vault/ascii_custom_standard.cvd (Chữ ký, Bao gồm)
+ /vault/ascii_mussel_regex.cvd (Chữ ký, Bao gồm)
+ /vault/ascii_mussel_standard.cvd (Chữ ký, Bao gồm)
+    Những hồ sơ cho chữ ký ASCII bình thường. Required if normalised ASCII
     signatures option in "phpmussel.ini" is enabled. Can remove if the option
     is disabled.
     ~
- /vault/coex_clamav.cvd (Signatures, Included)
- /vault/coex_custom.cvd (Signatures, Included)
- /vault/coex_mussel.cvd (Signatures, Included)
+ /vault/coex_clamav.cvd (Chữ ký, Bao gồm)
+ /vault/coex_custom.cvd (Chữ ký, Bao gồm)
+ /vault/coex_mussel.cvd (Chữ ký, Bao gồm)
     Files for complex extended signatures. Required if the Complex Extended
     signatures option in "phpmussel.ini" is enabled. Can remove if the option
     is disabled.
     ~
- /vault/elf_clamav_regex.cvd (Signatures, Included)
- /vault/elf_clamav_regex.map (Signatures, Included)
- /vault/elf_clamav_standard.cvd (Signatures, Included)
- /vault/elf_clamav_standard.map (Signatures, Included)
- /vault/elf_custom_regex.cvd (Signatures, Included)
- /vault/elf_custom_standard.cvd (Signatures, Included)
- /vault/elf_mussel_regex.cvd (Signatures, Included)
- /vault/elf_mussel_standard.cvd (Signatures, Included)
+ /vault/elf_clamav_regex.cvd (Chữ ký, Bao gồm)
+ /vault/elf_clamav_regex.map (Chữ ký, Bao gồm)
+ /vault/elf_clamav_standard.cvd (Chữ ký, Bao gồm)
+ /vault/elf_clamav_standard.map (Chữ ký, Bao gồm)
+ /vault/elf_custom_regex.cvd (Chữ ký, Bao gồm)
+ /vault/elf_custom_standard.cvd (Chữ ký, Bao gồm)
+ /vault/elf_mussel_regex.cvd (Chữ ký, Bao gồm)
+ /vault/elf_mussel_standard.cvd (Chữ ký, Bao gồm)
     Files for ELF signatures. Required if ELF signatures option in
     "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
- /vault/exe_clamav_regex.cvd (Signatures, Included)
- /vault/exe_clamav_regex.map (Signatures, Included)
- /vault/exe_clamav_standard.cvd (Signatures, Included)
- /vault/exe_clamav_standard.map (Signatures, Included)
- /vault/exe_custom_regex.cvd (Signatures, Included)
- /vault/exe_custom_standard.cvd (Signatures, Included)
- /vault/exe_mussel_regex.cvd (Signatures, Included)
- /vault/exe_mussel_standard.cvd (Signatures, Included)
+ /vault/exe_clamav_regex.cvd (Chữ ký, Bao gồm)
+ /vault/exe_clamav_regex.map (Chữ ký, Bao gồm)
+ /vault/exe_clamav_standard.cvd (Chữ ký, Bao gồm)
+ /vault/exe_clamav_standard.map (Chữ ký, Bao gồm)
+ /vault/exe_custom_regex.cvd (Chữ ký, Bao gồm)
+ /vault/exe_custom_standard.cvd (Chữ ký, Bao gồm)
+ /vault/exe_mussel_regex.cvd (Chữ ký, Bao gồm)
+ /vault/exe_mussel_standard.cvd (Chữ ký, Bao gồm)
     Files for PE (Portable Executable) signatures. Required if EXE signatures
     option in "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
- /vault/filenames_clamav.cvd (Signatures, Included)
- /vault/filenames_custom.cvd (Signatures, Included)
- /vault/filenames_mussel.cvd (Signatures, Included)
+ /vault/filenames_clamav.cvd (Chữ ký, Bao gồm)
+ /vault/filenames_custom.cvd (Chữ ký, Bao gồm)
+ /vault/filenames_mussel.cvd (Chữ ký, Bao gồm)
     Files for filename signatures. Required if filename signatures option in
     "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
- /vault/general_clamav_regex.cvd (Signatures, Included)
- /vault/general_clamav_regex.map (Signatures, Included)
- /vault/general_clamav_standard.cvd (Signatures, Included)
- /vault/general_clamav_standard.map (Signatures, Included)
- /vault/general_custom_regex.cvd (Signatures, Included)
- /vault/general_custom_standard.cvd (Signatures, Included)
- /vault/general_mussel_regex.cvd (Signatures, Included)
- /vault/general_mussel_standard.cvd (Signatures, Included)
+ /vault/general_clamav_regex.cvd (Chữ ký, Bao gồm)
+ /vault/general_clamav_regex.map (Chữ ký, Bao gồm)
+ /vault/general_clamav_standard.cvd (Chữ ký, Bao gồm)
+ /vault/general_clamav_standard.map (Chữ ký, Bao gồm)
+ /vault/general_custom_regex.cvd (Chữ ký, Bao gồm)
+ /vault/general_custom_standard.cvd (Chữ ký, Bao gồm)
+ /vault/general_mussel_regex.cvd (Chữ ký, Bao gồm)
+ /vault/general_mussel_standard.cvd (Chữ ký, Bao gồm)
     Files for general signatures. Required if general signatures option in
     "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
- /vault/graphics_clamav_regex.cvd (Signatures, Included)
- /vault/graphics_clamav_regex.map (Signatures, Included)
- /vault/graphics_clamav_standard.cvd (Signatures, Included)
- /vault/graphics_clamav_standard.map (Signatures, Included)
- /vault/graphics_custom_regex.cvd (Signatures, Included)
- /vault/graphics_custom_standard.cvd (Signatures, Included)
- /vault/graphics_mussel_regex.cvd (Signatures, Included)
- /vault/graphics_mussel_standard.cvd (Signatures, Included)
+ /vault/graphics_clamav_regex.cvd (Chữ ký, Bao gồm)
+ /vault/graphics_clamav_regex.map (Chữ ký, Bao gồm)
+ /vault/graphics_clamav_standard.cvd (Chữ ký, Bao gồm)
+ /vault/graphics_clamav_standard.map (Chữ ký, Bao gồm)
+ /vault/graphics_custom_regex.cvd (Chữ ký, Bao gồm)
+ /vault/graphics_custom_standard.cvd (Chữ ký, Bao gồm)
+ /vault/graphics_mussel_regex.cvd (Chữ ký, Bao gồm)
+ /vault/graphics_mussel_standard.cvd (Chữ ký, Bao gồm)
     Files for graphics signatures. Required if graphics signatures option in
     "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
- /vault/greylist.csv (Signatures, Included/Created)
+ /vault/greylist.csv (Chữ ký, Included/Created)
     CSV of greylisted signatures indicating to phpMussel which signatures it
     should be ignoring (file automatically recreated if deleted).
     ~
- /vault/hex_general_commands.csv (Signatures, Included)
+ /vault/hex_general_commands.csv (Chữ ký, Bao gồm)
     Hex-encoded CSV of general command detections optionally used by phpMussel.
     Required if general command detection option in "phpmussel.ini" is enabled.
     Can remove if the option is disabled.
     ~
- /vault/html_clamav_regex.cvd (Signatures, Included)
- /vault/html_clamav_regex.map (Signatures, Included)
- /vault/html_clamav_standard.cvd (Signatures, Included)
- /vault/html_clamav_standard.map (Signatures, Included)
- /vault/html_custom_regex.cvd (Signatures, Included)
- /vault/html_custom_standard.cvd (Signatures, Included)
- /vault/html_mussel_regex.cvd (Signatures, Included)
- /vault/html_mussel_standard.cvd (Signatures, Included)
+ /vault/html_clamav_regex.cvd (Chữ ký, Bao gồm)
+ /vault/html_clamav_regex.map (Chữ ký, Bao gồm)
+ /vault/html_clamav_standard.cvd (Chữ ký, Bao gồm)
+ /vault/html_clamav_standard.map (Chữ ký, Bao gồm)
+ /vault/html_custom_regex.cvd (Chữ ký, Bao gồm)
+ /vault/html_custom_standard.cvd (Chữ ký, Bao gồm)
+ /vault/html_mussel_regex.cvd (Chữ ký, Bao gồm)
+ /vault/html_mussel_standard.cvd (Chữ ký, Bao gồm)
     Files for normalised HTML signatures. Required if normalised HTML
     signatures option in "phpmussel.ini" is enabled. Can remove if the option
     is disabled.
     ~
- /vault/lang.inc (Script, Included)
+ /vault/lang.inc (Script, Bao gồm)
     phpMussel language data.
     ~
- /vault/macho_clamav_regex.cvd (Signatures, Included)
- /vault/macho_clamav_regex.map (Signatures, Included)
- /vault/macho_clamav_standard.cvd (Signatures, Included)
- /vault/macho_clamav_standard.map (Signatures, Included)
- /vault/macho_custom_regex.cvd (Signatures, Included)
- /vault/macho_custom_standard.cvd (Signatures, Included)
- /vault/macho_mussel_regex.cvd (Signatures, Included)
- /vault/macho_mussel_standard.cvd (Signatures, Included)
+ /vault/macho_clamav_regex.cvd (Chữ ký, Bao gồm)
+ /vault/macho_clamav_regex.map (Chữ ký, Bao gồm)
+ /vault/macho_clamav_standard.cvd (Chữ ký, Bao gồm)
+ /vault/macho_clamav_standard.map (Chữ ký, Bao gồm)
+ /vault/macho_custom_regex.cvd (Chữ ký, Bao gồm)
+ /vault/macho_custom_standard.cvd (Chữ ký, Bao gồm)
+ /vault/macho_mussel_regex.cvd (Chữ ký, Bao gồm)
+ /vault/macho_mussel_standard.cvd (Chữ ký, Bao gồm)
     Files for Mach-O signatures. Required if Mach-O signatures option in
     "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
- /vault/mail_clamav_regex.cvd (Signatures, Included)
- /vault/mail_clamav_regex.map (Signatures, Included)
- /vault/mail_clamav_standard.cvd (Signatures, Included)
- /vault/mail_clamav_standard.map (Signatures, Included)
- /vault/mail_custom_regex.cvd (Signatures, Included)
- /vault/mail_custom_standard.cvd (Signatures, Included)
- /vault/mail_mussel_regex.cvd (Signatures, Included)
- /vault/mail_mussel_standard.cvd (Signatures, Included)
+ /vault/mail_clamav_regex.cvd (Chữ ký, Bao gồm)
+ /vault/mail_clamav_regex.map (Chữ ký, Bao gồm)
+ /vault/mail_clamav_standard.cvd (Chữ ký, Bao gồm)
+ /vault/mail_clamav_standard.map (Chữ ký, Bao gồm)
+ /vault/mail_custom_regex.cvd (Chữ ký, Bao gồm)
+ /vault/mail_custom_standard.cvd (Chữ ký, Bao gồm)
+ /vault/mail_mussel_regex.cvd (Chữ ký, Bao gồm)
+ /vault/mail_mussel_standard.cvd (Chữ ký, Bao gồm)
     Files for signatures used by the phpMussel_mail() function. Required if the
     phpMussel_mail() function is used in any way. Can remove them if they're
     not being used.
     ~
- /vault/md5_clamav.cvd (Signatures, Included)
- /vault/md5_custom.cvd (Signatures, Included)
- /vault/md5_mussel.cvd (Signatures, Included)
+ /vault/md5_clamav.cvd (Chữ ký, Bao gồm)
+ /vault/md5_custom.cvd (Chữ ký, Bao gồm)
+ /vault/md5_mussel.cvd (Chữ ký, Bao gồm)
     Files for MD5 based signatures. Required if MD5 based signatures option in
     "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
- /vault/metadata_clamav.cvd (Signatures, Included)
- /vault/metadata_custom.cvd (Signatures, Included)
- /vault/metadata_mussel.cvd (Signatures, Included)
+ /vault/metadata_clamav.cvd (Chữ ký, Bao gồm)
+ /vault/metadata_custom.cvd (Chữ ký, Bao gồm)
+ /vault/metadata_mussel.cvd (Chữ ký, Bao gồm)
     Files for archive metadata signatures. Required if archive metadata
     signatures option in "phpmussel.ini" is enabled. Can remove if the option
     is disabled.
     ~
- /vault/ole_clamav_regex.cvd (Signatures, Included)
- /vault/ole_clamav_regex.map (Signatures, Included)
- /vault/ole_clamav_standard.cvd (Signatures, Included)
- /vault/ole_clamav_standard.map (Signatures, Included)
- /vault/ole_custom_regex.cvd (Signatures, Included)
- /vault/ole_custom_standard.cvd (Signatures, Included)
- /vault/ole_mussel_regex.cvd (Signatures, Included)
- /vault/ole_mussel_standard.cvd (Signatures, Included)
+ /vault/ole_clamav_regex.cvd (Chữ ký, Bao gồm)
+ /vault/ole_clamav_regex.map (Chữ ký, Bao gồm)
+ /vault/ole_clamav_standard.cvd (Chữ ký, Bao gồm)
+ /vault/ole_clamav_standard.map (Chữ ký, Bao gồm)
+ /vault/ole_custom_regex.cvd (Chữ ký, Bao gồm)
+ /vault/ole_custom_standard.cvd (Chữ ký, Bao gồm)
+ /vault/ole_mussel_regex.cvd (Chữ ký, Bao gồm)
+ /vault/ole_mussel_standard.cvd (Chữ ký, Bao gồm)
     Files for OLE signatures. Required if OLE signatures option in
     "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
- /vault/pdf_clamav_regex.cvd (Signatures, Included)
- /vault/pdf_clamav_regex.map (Signatures, Included)
- /vault/pdf_clamav_standard.cvd (Signatures, Included)
- /vault/pdf_clamav_standard.map (Signatures, Included)
- /vault/pdf_custom_regex.cvd (Signatures, Included)
- /vault/pdf_custom_standard.cvd (Signatures, Included)
- /vault/pdf_mussel_regex.cvd (Signatures, Included)
- /vault/pdf_mussel_standard.cvd (Signatures, Included)
+ /vault/pdf_clamav_regex.cvd (Chữ ký, Bao gồm)
+ /vault/pdf_clamav_regex.map (Chữ ký, Bao gồm)
+ /vault/pdf_clamav_standard.cvd (Chữ ký, Bao gồm)
+ /vault/pdf_clamav_standard.map (Chữ ký, Bao gồm)
+ /vault/pdf_custom_regex.cvd (Chữ ký, Bao gồm)
+ /vault/pdf_custom_standard.cvd (Chữ ký, Bao gồm)
+ /vault/pdf_mussel_regex.cvd (Chữ ký, Bao gồm)
+ /vault/pdf_mussel_standard.cvd (Chữ ký, Bao gồm)
     Files for PDF signatures. Required if PDF signatures option in
     "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
- /vault/pe_clamav.cvd (Signatures, Included)
- /vault/pe_custom.cvd (Signatures, Included)
- /vault/pe_mussel.cvd (Signatures, Included)
+ /vault/pe_clamav.cvd (Chữ ký, Bao gồm)
+ /vault/pe_custom.cvd (Chữ ký, Bao gồm)
+ /vault/pe_mussel.cvd (Chữ ký, Bao gồm)
     Files for PE Sectional signatures. Required if PE Sectional signatures
     option in "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
- /vault/pex_custom.cvd (Signatures, Included)
- /vault/pex_mussel.cvd (Signatures, Included)
+ /vault/pex_custom.cvd (Chữ ký, Bao gồm)
+ /vault/pex_mussel.cvd (Chữ ký, Bao gồm)
     Files for PE extended signatures. Required if PE extended signatures option
     in "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
- /vault/phpmussel.inc (Script, Included)
+ /vault/phpmussel.inc (Script, Bao gồm)
     phpMussel Core Script; The main body and guts of phpMussel (essential)!
     ~
- /vault/phpmussel.ini (Other, Included)
+ /vault/phpmussel.ini (Khác, Bao gồm)
     phpMussel Configuration file; Contains all the configuration options of
     phpMussel, telling it what to do and how to operate correctly (essential)!
     ~
@@ -803,53 +803,53 @@
  /vault/scan_kills.txt *(Logfile, Created)
     A record of every file upload blocked/killed by phpMussel.
     ~
- /vault/swf_clamav_regex.cvd (Signatures, Included)
- /vault/swf_clamav_regex.map (Signatures, Included)
- /vault/swf_clamav_standard.cvd (Signatures, Included)
- /vault/swf_clamav_standard.map (Signatures, Included)
- /vault/swf_custom_regex.cvd (Signatures, Included)
- /vault/swf_custom_standard.cvd (Signatures, Included)
- /vault/swf_mussel_regex.cvd (Signatures, Included)
- /vault/swf_mussel_standard.cvd (Signatures, Included)
+ /vault/swf_clamav_regex.cvd (Chữ ký, Bao gồm)
+ /vault/swf_clamav_regex.map (Chữ ký, Bao gồm)
+ /vault/swf_clamav_standard.cvd (Chữ ký, Bao gồm)
+ /vault/swf_clamav_standard.map (Chữ ký, Bao gồm)
+ /vault/swf_custom_regex.cvd (Chữ ký, Bao gồm)
+ /vault/swf_custom_standard.cvd (Chữ ký, Bao gồm)
+ /vault/swf_mussel_regex.cvd (Chữ ký, Bao gồm)
+ /vault/swf_mussel_standard.cvd (Chữ ký, Bao gồm)
     Files for the Shockwave signatures. Required if the Shockwave signatures
     option in "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
- /vault/switch.dat (Other, Included)
+ /vault/switch.dat (Khác, Bao gồm)
     Controls and sets certain variables.
     ~
- /vault/template.html (Other, Included)
- /vault/template_custom.html (Other, Included)
+ /vault/template.html (Khác, Bao gồm)
+ /vault/template_custom.html (Khác, Bao gồm)
     phpMussel Template file; Template for HTML output produced by phpMussel for
     its blocked file upload message (the message seen by the uploader).
     ~
- /vault/update.dat (Other, Included)
+ /vault/update.dat (Khác, Bao gồm)
     File containing version information for both the phpMussel script and the
     phpMussel signatures. If you ever want to automatically update phpMussel or
     want to update phpMussel via your browser, this file is essential.
     ~
- /vault/update.inc (Script, Included)
+ /vault/update.inc (Script, Bao gồm)
     phpMussel Update Script; Required for automatic updates and for updating
     phpMussel via your browser, but not required otherwise.
     ~
- /vault/urlscanner.cvd (Signatures, Included)
+ /vault/urlscanner.cvd (Chữ ký, Bao gồm)
     File for URL scanner signatures. Required if "urlscanner" directive in
     "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
- /vault/whitelist_clamav.cvd (Signatures, Included)
- /vault/whitelist_custom.cvd (Signatures, Included)
- /vault/whitelist_mussel.cvd (Signatures, Included)
+ /vault/whitelist_clamav.cvd (Chữ ký, Bao gồm)
+ /vault/whitelist_custom.cvd (Chữ ký, Bao gồm)
+ /vault/whitelist_mussel.cvd (Chữ ký, Bao gồm)
     File specific whitelist. Required if whitelisting option in "phpmussel.ini"
     is enabled and if you wish to have specific files whitelisted. Can remove
     if the option is disabled or if you don't require whitelisting.
     ~
- /vault/xmlxdp_clamav_regex.cvd (Signatures, Included)
- /vault/xmlxdp_clamav_regex.map (Signatures, Included)
- /vault/xmlxdp_clamav_standard.cvd (Signatures, Included)
- /vault/xmlxdp_clamav_standard.map (Signatures, Included)
- /vault/xmlxdp_custom_regex.cvd (Signatures, Included)
- /vault/xmlxdp_custom_standard.cvd (Signatures, Included)
- /vault/xmlxdp_mussel_regex.cvd (Signatures, Included)
- /vault/xmlxdp_mussel_standard.cvd (Signatures, Included)
+ /vault/xmlxdp_clamav_regex.cvd (Chữ ký, Bao gồm)
+ /vault/xmlxdp_clamav_regex.map (Chữ ký, Bao gồm)
+ /vault/xmlxdp_clamav_standard.cvd (Chữ ký, Bao gồm)
+ /vault/xmlxdp_clamav_standard.map (Chữ ký, Bao gồm)
+ /vault/xmlxdp_custom_regex.cvd (Chữ ký, Bao gồm)
+ /vault/xmlxdp_custom_standard.cvd (Chữ ký, Bao gồm)
+ /vault/xmlxdp_mussel_regex.cvd (Chữ ký, Bao gồm)
+ /vault/xmlxdp_mussel_standard.cvd (Chữ ký, Bao gồm)
     Files for XML/XDP-Chunk signatures. Required if XML/XDP-Chunk signatures
     option in "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
