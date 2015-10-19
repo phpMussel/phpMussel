@@ -394,7 +394,6 @@ Datei                                      | Beschreibung
 /vault/mail_custom_standard.cvd            | Signaturdateien für phpMussel_mail()-Signaturen.
 /vault/mail_mussel_regex.cvd               | Signaturdateien für phpMussel_mail()-Signaturen.
 /vault/mail_mussel_standard.cvd            | Signaturdateien für phpMussel_mail()-Signaturen.
-/vault/mail_mussel_standard.map            | Signaturdateien für phpMussel_mail()-Signaturen.
 /vault/md5_clamav.cvd                      | Datei der MD5-Signaturen.
 /vault/md5_custom.cvd                      | Datei der MD5-Signaturen.
 /vault/md5_mussel.cvd                      | Datei der MD5-Signaturen.
@@ -439,17 +438,18 @@ Datei                                      | Beschreibung
 /vault/template_custom.html                | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
 /vault/update.dat                          | Datei beinhaltet Versionsinformationen des Scripts und der Signaturen. Diese Datei ist notwendig, wenn Sie phpMussel automatisch oder mittels Browser aktualisieren wollen.
 /vault/update.inc                          | Update Script; Wird nur für die automatische und manuelle Aktualisierung mittels Browser benötigt.
+/vault/urlscanner.cvd                      | Datei der URL-Scanner-Signaturen.
 /vault/whitelist_clamav.cvd                | Datei-spezifische Whitelist.
 /vault/whitelist_custom.cvd                | Datei-spezifische Whitelist.
 /vault/whitelist_mussel.cvd                | Datei-spezifische Whitelist.
-/vault/xmlxdp_clamav_regex.cvd             | Dateien der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_clamav_regex.map             | Dateien der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_clamav_standard.cvd          | Dateien der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_clamav_standard.map          | Dateien der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_custom_regex.cvd             | Dateien der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_custom_standard.cvd          | Dateien der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_mussel_regex.cvd             | Dateien der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_mussel_standard.cvd          | Dateien der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_clamav_regex.cvd             | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_clamav_regex.map             | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_clamav_standard.cvd          | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_clamav_standard.map          | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_custom_regex.cvd             | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_custom_standard.cvd          | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_mussel_regex.cvd             | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_mussel_standard.cvd          | Datei der XML/XDP-Datenblock-Signaturen.
 
 ※ Der Dateiname kann je nach Konfiguratuion in der `phpmussel.ini` variieren.
 
@@ -800,7 +800,7 @@ URL scanner API lookup configuration.
 - Note: This is a future feature! Google Safe Browsing API lookup functionality not yet completed!
 
 "maximum_api_lookups"
-- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expediate the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
+- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expedite the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
 
 "maximum_api_lookups_response"
 - What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Default]; True = Flag/block the file.
@@ -975,4 +975,4 @@ Diese Informationen wurden zuletzt am 7. September 2015 aktualisiert und gelten 
 ---
 
 
-Zuletzt aktualisiert: 17 Oktober 2015 (2015.10.17).
+Zuletzt aktualisiert: 19 Oktober 2015 (2015.10.19).

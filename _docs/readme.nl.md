@@ -394,7 +394,6 @@ Bestand                                    | Beschrijving
 /vault/mail_custom_standard.cvd            | Bestand voor mail handtekeningen.
 /vault/mail_mussel_regex.cvd               | Bestand voor mail handtekeningen.
 /vault/mail_mussel_standard.cvd            | Bestand voor mail handtekeningen.
-/vault/mail_mussel_standard.map            | Bestand voor mail handtekeningen.
 /vault/md5_clamav.cvd                      | Bestand voor MD5 gebaseerde handtekeningen.
 /vault/md5_custom.cvd                      | Bestand voor MD5 gebaseerde handtekeningen.
 /vault/md5_mussel.cvd                      | Bestand voor MD5 gebaseerde handtekeningen.
@@ -439,6 +438,7 @@ Bestand                                    | Beschrijving
 /vault/template_custom.html                | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
 /vault/update.dat                          | Bestand met versie-informatie voor zowel de phpMussel script en de phpMussel handtekeningen. Als u ooit wilt te automatisch update phpMussel of willen phpMussel updaten via uw browser, dit bestand is essentieel.
 /vault/update.inc                          | Update Script; Vereist voor automatische updates en voor het bijwerken van phpMussel via uw browser, maar niet anders vereist.
+/vault/urlscanner.cvd                      | Bestand voor URL scanner handtekeningen.
 /vault/whitelist_clamav.cvd                | Bestand-specifieke whitelist.
 /vault/whitelist_custom.cvd                | Bestand-specifieke whitelist.
 /vault/whitelist_mussel.cvd                | Bestand-specifieke whitelist.
@@ -977,4 +977,4 @@ Dit informatie werd laatst bijgewerkt 7 September 2015 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 17 Oktober 2015 (2015.10.17).
+Laatste Bijgewerkt: 19 Oktober 2015 (2015.10.19).

@@ -740,7 +740,6 @@
  /vault/mail_custom_standard.cvd (Signatures, Included)
  /vault/mail_mussel_regex.cvd (Signatures, Included)
  /vault/mail_mussel_standard.cvd (Signatures, Included)
- /vault/mail_mussel_standard.map (Signatures, Included)
     Files for signatures used by the phpMussel_mail() function. Required if the
     phpMussel_mail() function is used in any way. Can remove them if they're
     not being used.
@@ -831,6 +830,10 @@
  /vault/update.inc (Script, Included)
     phpMussel Update Script; Required for automatic updates and for updating
     phpMussel via your browser, but not required otherwise.
+    ~
+ /vault/urlscanner.cvd (Signatures, Included)
+    File for URL scanner signatures. Required if "urlscanner" directive in
+    "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
  /vault/whitelist_clamav.cvd (Signatures, Included)
  /vault/whitelist_custom.cvd (Signatures, Included)
@@ -1480,7 +1483,7 @@
    - Maximum allowable number of API lookups to perform per individual scan
      iteration. Because each additional API lookup will add to the total time
      required to complete each scan iteration, you may wish to stipulate a
-     limitation in order to expediate the overall scan process. When set to 0,
+     limitation in order to expedite the overall scan process. When set to 0,
      no such maximum allowable number will be applied. Set to 10 by default.
    "maximum_api_lookups_response"
    - What to do if the maximum allowable number of API lookups is exceeded?
@@ -1731,5 +1734,5 @@
                                      ~ ~ ~
 
 
-Lần cuối cập nhật: 17 Tháng Mười 2015 (2015.10.17).
+Lần cuối cập nhật: 19 Tháng Mười 2015 (2015.10.19).
 EOF

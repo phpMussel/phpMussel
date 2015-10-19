@@ -394,7 +394,6 @@ Fichier                                    | Description
 /vault/mail_custom_standard.cvd            | Fichier pour mail signatures.
 /vault/mail_mussel_regex.cvd               | Fichier pour mail signatures.
 /vault/mail_mussel_standard.cvd            | Fichier pour mail signatures.
-/vault/mail_mussel_standard.map            | Fichier pour mail signatures.
 /vault/md5_clamav.cvd                      | Fichier pour MD5 basé signatures.
 /vault/md5_custom.cvd                      | Fichier pour MD5 basé signatures.
 /vault/md5_mussel.cvd                      | Fichier pour MD5 basé signatures.
@@ -439,6 +438,7 @@ Fichier                                    | Description
 /vault/template_custom.html                | Modèle fichier; Modèle pour l'HTML sortie produit par phpMussel pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /vault/update.dat                          | Fichier contenant les version informations pour le script et les signatures de phpMussel. Si jamais vous voulez à réactualiser automatiquement phpMussel ou réactualiser phpMussel par votre navigateur, ce fichier est indispensable.
 /vault/update.inc                          | Réactualiser Script; Requis pour automatique réactualisation et pour réactualisation phpMussel par votre navigateur, mais n'est pas autrement requise.
+/vault/urlscanner.cvd                      | Fichier pour l'URL scanner signatures.
 /vault/whitelist_clamav.cvd                | Fichier spécifique blanche liste.
 /vault/whitelist_custom.cvd                | Fichier spécifique blanche liste.
 /vault/whitelist_mussel.cvd                | Fichier spécifique blanche liste.
@@ -977,4 +977,4 @@ Cette information a été réactualisé le 7 Septembre 2015 et est courant pour 
 ---
 
 
-Dernière Réactualisé: 17 Octobre 2015 (2015.10.17).
+Dernière Réactualisé: 19 Octobre 2015 (2015.10.19).

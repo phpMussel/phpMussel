@@ -781,7 +781,6 @@
  /vault/mail_custom_standard.cvd (Firmas, Incluidos)
  /vault/mail_mussel_regex.cvd (Firmas, Incluidos)
  /vault/mail_mussel_standard.cvd (Firmas, Incluidos)
- /vault/mail_mussel_standard.map (Firmas, Incluidos)
     Los archivos para las firmas utilizadas por la función phpMussel_mail().
     Requerido si la función phpMussel_mail() se utilizado de cualquiera manera.
     Se puede eliminarlo si no se utilizado.
@@ -882,6 +881,11 @@
     phpMussel Actualización Script; Requerido para automáticas actualizaciones
     y para actualizando phpMussel través de su navegador, pero no es requerido
     por lo demás.
+    ~
+ /vault/urlscanner.cvd (Firmas, Incluidos)
+    Archivo para URL escáner firmas. Requerido si la "urlscanner" directiva en
+    "phpmussel.ini" está activado. Se puede eliminarlo si la directiva está
+    desactivado.
     ~
  /vault/whitelist_clamav.cvd (Firmas, Incluidos)
  /vault/whitelist_custom.cvd (Firmas, Incluidos)
@@ -1850,5 +1854,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 17 Octubre 2015 (2015.10.17).
+Última Actualización: 19 Octubre 2015 (2015.10.19).
 EOF

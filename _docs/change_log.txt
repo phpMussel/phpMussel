@@ -50,7 +50,7 @@ Do-to list for potential future major version (v1.0):
   Refer spambotsecurity.com/forum/viewtopic.php?f=59&t=3441
   Refer github.com/Maikuolan/phpMussel/issues/11
 
-Do-to list for potential future minor version (v0.8):
+Do-to list for potential future minor version (v0.9):
 
 - Any significant changes to the script including completing of any of the
   aforementioned above, whereby having done so, the release doesn't yet qualify
@@ -58,7 +58,7 @@ Do-to list for potential future minor version (v0.8):
   any new major features and to the fixing of any bugs that could break normal
   functionality, but not to minor bug-fixes or to any signature updates.
 
-Do-to list for potential future sub-minor version (v0.7b):
+Do-to list for potential future sub-minor version (v0.8a):
 
 - Any non-significant changes or other unrelated changes to the core code, such
   as, for example, bug-fixes, as well as any other changes deemed to be of
@@ -72,6 +72,11 @@ Anything less than sub-minor:
   where no updates to the core script have been recently made).
 
 === Changes made since last versioned release ===
+
+(none)
+
+=== Version/Release 0.8 (Previous Release: 0.7a) ===
+MINOR RELEASE; Updated to the latest signatures set (55+20975+8).
 
 - [2015.08.20; Sub-minor code change; Maikuolan]: Added one new "shorthand"
   entry (Malvertisement) [phpmussel.inc]; Slightly tweaked all the language
@@ -122,10 +127,13 @@ Anything less than sub-minor:
   the near future.
   Refer github.com/Maikuolan/phpMussel/issues/65
 
-- [2015.10.27; Signatures update; Maikuolan]: Domains from the Spam404.com
+- [2015.10.17; Signatures update; Maikuolan]: Domains from the Spam404.com
   database will from now be integrated into the URL scanner signatures set.
 
-=== Version/Release 0.7a (Previous Release: 0.7) ===
+Maikuolan,
+18th October 2015.
+
+=== Version/Release 0.7a (Previous Release: 0.7; Next: 0.8) ===
 SUB-MINOR RELEASE; Updated to the latest signatures set (55+20751+7a).
 
 - [2015.07.15; Sub-minor code change; Maikuolan]: Merged a number of the

@@ -394,7 +394,6 @@ Arquivo                                    | Descrição
 /vault/mail_custom_standard.cvd            | Arquivo por mail assinaturas.
 /vault/mail_mussel_regex.cvd               | Arquivo por mail assinaturas.
 /vault/mail_mussel_standard.cvd            | Arquivo por mail assinaturas.
-/vault/mail_mussel_standard.map            | Arquivo por mail assinaturas.
 /vault/md5_clamav.cvd                      | Arquivo por MD5 baseadas assinaturas.
 /vault/md5_custom.cvd                      | Arquivo por MD5 baseadas assinaturas.
 /vault/md5_mussel.cvd                      | Arquivo por MD5 baseadas assinaturas.
@@ -439,6 +438,7 @@ Arquivo                                    | Descrição
 /vault/template_custom.html                | Template arquivo; Template por HTML produzido através do phpMussel por o bloqueado arquivo carregamento mensagem (a mensagem visto por o carregador).
 /vault/update.dat                          | Arquivo contendo informações sobre a versão por tanto script e assinaturas de phpMussel. Se você está tencionando automaticamente atualizar phpMussel ou deseja atualizar phpMussel através de seu navegador, este arquivo é essencial.
 /vault/update.inc                          | Atualização Script; Necessário por automáticas atualizações e para atualizar phpMussel através de seu navegador, mas não é necessário contrário.
+/vault/urlscanner.cvd                      | Arquivo por URL analisador assinaturas.
 /vault/whitelist_clamav.cvd                | Arquivo específico whitelist.
 /vault/whitelist_custom.cvd                | Arquivo específico whitelist.
 /vault/whitelist_mussel.cvd                | Arquivo específico whitelist.
@@ -977,4 +977,4 @@ Esta informação foi atualizada dia 7 Setembro 2015 e é corrente para todas ph
 ---
 
 
-Última Atualização: 17 Outubro 2015 (2015.10.17).
+Última Atualização: 19 Outubro 2015 (2015.10.19).

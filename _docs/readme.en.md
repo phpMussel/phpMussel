@@ -394,7 +394,6 @@ File                                       | Description
 /vault/mail_custom_standard.cvd            | File for mail signatures.
 /vault/mail_mussel_regex.cvd               | File for mail signatures.
 /vault/mail_mussel_standard.cvd            | File for mail signatures.
-/vault/mail_mussel_standard.map            | File for mail signatures.
 /vault/md5_clamav.cvd                      | File for MD5 based signatures.
 /vault/md5_custom.cvd                      | File for MD5 based signatures.
 /vault/md5_mussel.cvd                      | File for MD5 based signatures.
@@ -439,6 +438,7 @@ File                                       | Description
 /vault/template_custom.html                | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
 /vault/update.dat                          | File containing version information for both the phpMussel script and the phpMussel signatures. If you ever want to automatically update phpMussel or want to update phpMussel via your browser, this file is essential.
 /vault/update.inc                          | Update Script; Required for automatic updates and for updating phpMussel via your browser, but not required otherwise.
+/vault/urlscanner.cvd                      | File for URL scanner signatures.
 /vault/whitelist_clamav.cvd                | File specific whitelist.
 /vault/whitelist_custom.cvd                | File specific whitelist.
 /vault/whitelist_mussel.cvd                | File specific whitelist.
@@ -801,7 +801,7 @@ URL scanner API lookup configuration.
 - Note: This is a future feature! Google Safe Browsing API lookup functionality not yet completed!
 
 "maximum_api_lookups"
-- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expediate the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
+- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expedite the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
 
 "maximum_api_lookups_response"
 - What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Default]; True = Flag/block the file.
@@ -977,4 +977,4 @@ This information was last updated 7th September 2015 and is current for all phpM
 ---
 
 
-Last Updated: 17th October 2015 (2015.10.17).
+Last Updated: 19th October 2015 (2015.10.19).

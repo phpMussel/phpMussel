@@ -299,7 +299,7 @@ phpMussel可以执行作为一个互动文件扫描在CLI模式在基于Windows�
 /_testfiles/pdf_standard_testfile.pdf      | 测试文件以测试phpMussel PDF签名。
 /_testfiles/pe_sectional_testfile.exe      | 测试文件以测试phpMussel移植可执行｢PE｣部分签名。
 /_testfiles/swf_standard_testfile.swf      | 测试文件以测试phpMussel SWF签名。
-/_testfiles/xdp_standard_testfile.xdp      | 测试文件以测试phpMussel XML／XDP块签名。
+/_testfiles/xdp_standard_testfile.xdp      | 测试文件以测试phpMussel XML/XDP块签名。
 /vault/                                    | 安全／保险库｢Vault｣文件夹（包含若干文件）。
 /vault/cache/                              | 缓存｢Cache｣文件夹（为临时数据）。
 /vault/cache/.htaccess                     | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
@@ -394,7 +394,6 @@ phpMussel可以执行作为一个互动文件扫描在CLI模式在基于Windows�
 /vault/mail_custom_standard.cvd            | 电子邮件签名文件。
 /vault/mail_mussel_regex.cvd               | 电子邮件签名文件。
 /vault/mail_mussel_standard.cvd            | 电子邮件签名文件。
-/vault/mail_mussel_standard.map            | 电子邮件签名文件。
 /vault/md5_clamav.cvd                      | 基于MD5签名文件。
 /vault/md5_custom.cvd                      | 基于MD5签名文件。
 /vault/md5_mussel.cvd                      | 基于MD5签名文件。
@@ -439,17 +438,18 @@ phpMussel可以执行作为一个互动文件扫描在CLI模式在基于Windows�
 /vault/template_custom.html                | 模板文件；模板为HTML产量产生通过phpMussel为它的受阻文件上传信息（信息可见向上传者）。
 /vault/update.dat                          | 文件包含版本信息为phpMussel的脚本和phpMussel的签名。如果您随时需要自动更新phpMussel或需要更新phpMussel通过您的浏览器，这个文件是必不可少。
 /vault/update.inc                          | 更新脚本；需要为自动更新和为更新phpMussel通过您的浏览器，但不否则需要。
+/vault/urlscanner.cvd                      | URL扫描仪签名文件。
 /vault/whitelist_clamav.cvd                | 文件具体白名单。
 /vault/whitelist_custom.cvd                | 文件具体白名单。
 /vault/whitelist_mussel.cvd                | 文件具体白名单。
-/vault/xmlxdp_clamav_regex.cvd             | XML／XDP块签名文件。
-/vault/xmlxdp_clamav_regex.map             | XML／XDP块签名文件。
-/vault/xmlxdp_clamav_standard.cvd          | XML／XDP块签名文件。
-/vault/xmlxdp_clamav_standard.map          | XML／XDP块签名文件。
-/vault/xmlxdp_custom_regex.cvd             | XML／XDP块签名文件。
-/vault/xmlxdp_custom_standard.cvd          | XML／XDP块签名文件。
-/vault/xmlxdp_mussel_regex.cvd             | XML／XDP块签名文件。
-/vault/xmlxdp_mussel_standard.cvd          | XML／XDP块签名文件。
+/vault/xmlxdp_clamav_regex.cvd             | XML/XDP块签名文件。
+/vault/xmlxdp_clamav_regex.map             | XML/XDP块签名文件。
+/vault/xmlxdp_clamav_standard.cvd          | XML/XDP块签名文件。
+/vault/xmlxdp_clamav_standard.map          | XML/XDP块签名文件。
+/vault/xmlxdp_custom_regex.cvd             | XML/XDP块签名文件。
+/vault/xmlxdp_custom_standard.cvd          | XML/XDP块签名文件。
+/vault/xmlxdp_mussel_regex.cvd             | XML/XDP块签名文件。
+/vault/xmlxdp_mussel_standard.cvd          | XML/XDP块签名文件。
 
 ※ 文件名可能不同基于配置规定（在`phpmussel.ini`）。
 
@@ -614,7 +614,7 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - “whitelist_custom”
 - “whitelist_mussel”
 
-检查XML／XDP块针对XML／XDP块签名当扫描吗？ False = 不检查， True = 检查【默认】。
+检查XML/XDP块针对XML/XDP块签名当扫描吗？ False = 不检查， True = 检查【默认】。
 - “xmlxdp_clamav”
 - “xmlxdp_custom”
 - “xmlxdp_mussel”
@@ -784,30 +784,30 @@ VirusTotal.com指令。
 - 根据｢Virus Total API｣阅读材料，它是限于最大的`4`请求的任何类型在任​​何`1`分钟大体时间。如果您经营一个“honeyclient”，蜜罐或任何其他自动化将会提供资源为VirusTotal和不只取回报告您是有权一个更高请求率配额。作为标准，phpMussel将严格的坚持这些限制，但因为可能性的这些率配额被增加，这些二指令是提供为您指示phpMussel为什么限它应坚持。除非您是指示这样做，它是不推荐为您增加这些数值，但，如果您遇到问题相关的到达您的率配额，减少这些数值可能有时帮助您解析这些问题。您的率限是决定作为`vt_quota_rate`请求的任何类型在任​​何`vt_quota_time`分钟大体时间。
 
 ####"urlscanner" （类别）
-URL扫描器配置。
+URL扫描仪配置。
 
 "urlscanner"
-- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the `urlscanner` directive to true; To disable it, set this directive to false.
+- 内phpMussel是一个URL扫描仪，能够检测恶意URL在任何数据或文件它扫描。以激活URL扫描仪，设置`urlscanner`指令`true`;以关闭它，设置这个指令`false`。
 
-Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
+请注意：如果URL扫描仪已关闭,您将不需要复习任何指令在这个类别（`urlscanner`）,因为没有指令会做任何事如果这个已关闭。
 
-URL扫描器API配置。
+URL扫描仪API配置。
 
 "lookup_hphosts"
-- Enables API lookups to the [hpHosts](http://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
+- 激活[hpHosts](http://hosts-file.net/) API当设置`true`。hpHosts不需要API密钥为了执行API请求。
 
 "google_api_key"
-- Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
-- Note: This is a future feature! Google Safe Browsing API lookup functionality not yet completed!
+- 激活Google Safe Browsing API当API密钥是设置。Google Safe Browsing API需要API密钥，可以得到从[这里](https://console.developers.google.com/)。
+- 请注意：这是一个将来的功能！Google Safe Browsing API功能尚未完成！
 
 "maximum_api_lookups"
-- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expediate the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
+- 最大数值API请求来执行每个扫描迭代。额外API请求将增加的总要求完成时间每扫描迭代，所以，您可能想来规定一个限以加快全扫描过程。当设置`0`，没有最大数值将会应用的。设置`10`作为默认。
 
 "maximum_api_lookups_response"
-- What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Default]; True = Flag/block the file.
+- 该什么办如果最大数值API请求已超过？ False = 没做任何事（继续处理） 【默认】； True = 标志/受阻文件。
 
 "cache_time"
-- How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour).
+- 多长时间（以秒为单位）应API结果被缓存？默认是3600秒（1小时）。
 
 ####"template_data" （类别）
 指令和变量为模板和主题。
@@ -903,7 +903,7 @@ URL扫描器API配置。
 - “移植可执行｢PE｣扩展签名” （pex_*）。匹配针对MD5哈希和大小的变量在所有非白名单文件目标为扫描识别的移植可执行｢PE｣文件。
 - “SWF签名” （swf_*）。匹配针对内容的所有非白名单SWF文件目标为扫描。
 - “白名单签名” （whitelist_*）。匹配针对MD5哈希的内容和文件大小的所有文件目标为扫描。识别文件将会免疫的成为匹配通过签名类型提到从他们的白名单项。
-- “XML／XDP块签名” （xmlxdp_*）。匹配针对任何XML／XDP块发现从任何非白名单文件目标为扫描。
+- “XML/XDP块签名” （xmlxdp_*）。匹配针对任何XML/XDP块发现从任何非白名单文件目标为扫描。
 (请注意任何的这些签名可以很容易地关闭通过`phpmussel.ini`）。
 
 ---
@@ -920,7 +920,7 @@ URL扫描器API配置。
 
 这个信息最后更新2015年9月7日和是准确为至少phpMussel的两个最近次要版本（v0.6-v0.7a）在这个现在时候的写作。
 
-| 扫描器               |  结果                                 |
+| 扫描仪               |  结果                                 |
 |----------------------|--------------------------------------|
 | Ad-Aware             |  无冲突 |
 | Agnitum              |  无冲突 |
@@ -977,6 +977,6 @@ URL扫描器API配置。
 ---
 
 
-最后更新：2015年10月17日。
+最后更新：2015年10月19日。
 
 翻译声明：本文档翻译基于英文原始文档，但由于本人水平有限，且非php程序员，对其中某些字词的翻译可能不是很准确，故如果出现错误，请指出并联系原作者予以更正，另外，本翻译仅简体中文，与繁体中文无关亦未参考繁体中文的译文！！
