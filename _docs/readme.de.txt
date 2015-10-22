@@ -1520,7 +1520,7 @@
    - Hinweis: Das ist eine zukünftige Funktion! Google Safe Browsing API-Abfragen
      Funktionalität ist noch nicht implementiert!
    "maximum_api_lookups"
-   - Maximal erlaubte Anzahl von API-Abfragen die bei jedem Scan-Durchgang
+   - Die maximal erlaubte Anzahl von API-Abfragen die bei jedem Scan-Durchgang
      durchgeführt werden. Weil jede zusätzliche API-Abfrage die Zeit für einen
      Scan-Durchgang erhöht, wollen Sie unter Umständen ein Limit festlegen, um den
      gedamten Scan-Prozess zu beschleunigen. Wenn 0 eingestellt wird, wird kein
