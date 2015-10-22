@@ -1506,7 +1506,7 @@
      "urlscanner" Anweisung auf true; Um ihn zu deaktivieren, setzen Sie diese
      Anweisung auf false.
    Hinweis: Wenn der URL-Scanner deaktiviert ist, müssen Sie keine der Anweisungen
-   in dieser Kategroei ("urlscanner") überprüfen, da dann keine davon funktioniert.
+   in dieser Kategorie ("urlscanner") überprüfen, da dann keine davon funktioniert.
  - URL-Scanner API-Abfrage Konfiguration.
    "lookup_hphosts"
    - Aktiviert API-Abfragen zur hpHosts API <http://hosts-file.net/> wenn der Wert
