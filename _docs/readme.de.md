@@ -975,4 +975,4 @@ Diese Informationen wurden zuletzt am 7. September 2015 aktualisiert und gelten 
 ---
 
 
-Zuletzt aktualisiert: 19 Oktober 2015 (2015.10.19).
+Zuletzt aktualisiert: 19. Oktober 2015 (2015.10.19).
