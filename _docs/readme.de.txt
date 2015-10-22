@@ -1526,7 +1526,7 @@
      gedamten Scan-Prozess zu beschleunigen. Wenn 0 eingestellt wird, wird kein
      Limit angewendet. Standardmäßig ist der Wert auf 10 gesetzt.
    "maximum_api_lookups_response"
-   - Was soll passieren,wenn die maximale Anzahl der erlaubten API-Abfragen
+   - Was soll passieren, wenn die maximale Anzahl der erlaubten API-Abfragen
      erreicht wird?
      False = Nichts (Verarbeitung fortführen) [Standardeinstellung];
      True = Markiere/blockiere die Datei.
