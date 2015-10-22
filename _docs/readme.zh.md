@@ -18,7 +18,7 @@
 
 ###1. <a name="SECTION1"></a>前言
 
-谢谢使用phpMussel，这是一个根据ClamAV的签名和其他签名在上传完成后来自动检测木马/病毒/恶意软件和其他可能威胁到您系统安全的文件的PHP脚本。
+感谢使用phpMussel，这是一个根据ClamAV的签名和其他签名在上传完成后来自动检测木马/病毒/恶意软件和其他可能威胁到您系统安全的文件的PHP脚本。
 
 PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
@@ -28,36 +28,36 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 谢谢[ClamAV](http://www.clamav.net/)为本脚本提供文件签名库访问许可。没有它，这个脚本很可能不会存在，或者其价值有限。
 
-谢谢Sourceforge和GitHub开通了，[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)phpMussel的讨论论坛，谢谢为phpMussel提供签名文件的：[SecuriteInfo.com](http://www.securiteinfo.com/)，[PhishTank](http://www.phishtank.com/)，[NLNetLabs](http://nlnetlabs.nl/)，还有更多的我忘了提及的人（抱歉，语文水平有限，这句话实在不知道怎么翻译才通顺）。
+谢谢Sourceforge和GitHub开通了，[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)的phpMussel的讨论论坛，谢谢为phpMussel提供签名文件的：[SecuriteInfo.com](http://www.securiteinfo.com/)，[PhishTank](http://www.phishtank.com/)，[NLNetLabs](http://nlnetlabs.nl/)，还有更多的我忘了提及的人（抱歉，语文水平有限，这句话实在不知道怎么翻译才通顺）。
 
-现在phpMussel的代码文件和关联包可以从以下地址免费下载下载免费：
+现在phpMussel的代码文件和关联包可以从以下地址免费下载：
 - [Sourceforge](http://phpmussel.sourceforge.net/)。
 - [GitHub](https://github.com/Maikuolan/phpMussel/)。
 
 ---
 
 
-###2A. <a name="SECTION2A"></a>如何安装（对于WEB服务器）
+###2A. <a name="SECTION2A"></a>如何安装（WEB服务器）
 
-我希望能够简化这过程通过创建的安装程序在某一点在近未来，但直到那个时候，遵循这些说明以经营phpMussel在多数系统和CMS：
+我可能在将来会创建一个安装程序来简化安装过程，但在之前，按照下面的这些安装说明能在大多数的系统和CMS上成功安装：
 
-1） 通过您的阅读这，我假设您已经下载一个存档的副本的脚本，已解压缩其内容和有它地方的某处上您的机器。从这里，您要决定在哪里在您的服务器您想放这些内容。一个文件夹例如`/public_html/phpmussel/`或类似（无论您选择，不要紧，只要它的安全和您是满意）会是足够了。*之前您开始上传，继续阅读。。*
+1） 在阅读到这里之前，我假设您已经下载脚本的一个副本，已解压缩其内容并保存在您的机器的某个地方。现在，您要决定将脚本放在您服务器上的哪些文件夹中，例如`/public_html/phpmussel/`或其他任何你觉得满意和安全的地方。*上传完成后，继续阅读。。*
 
-2） 自选（强烈推荐为高级用户，但不推荐为业余用户或为用户没有经验），打开`phpmussel.ini`（位于内`vault`） - 这个文件包含所有指令可用的为phpMussel。以上的每指令应有一个简评以说明它做什么和它的功能。调整这些指令您认为合适的，按照随您是适合为您的特定的设置。保存文件，关闭。
+2） 自定义（强烈推荐高级用户，但不推荐业余用户或者新手使用这个方法），打开`phpmussel.ini`（位于内`vault`） - 这个文件包含所有phpMussel的可用配置选项。以上的每一个配置选项应有一个简介来说明它是做什么的和它的具有的功能。按照你认为合适的参数来调整这些选项，然后保存文件，关闭。
 
-3） 上传内容（phpMussel和它的文件）至文件夹您决定在早期（不需要包括`*.txt`/`*.md`文件，但大多，您应上传一切）。
+3） 上传（phpMussel和它的文件）到你选定的文件夹（不需要包括`*.txt`/`*.md`文件，但大多数情况下，您应上传所有的文件）。
 
-4） CMHOD的`vault`文件夹为“755”。主文件夹存储的内容（一个您先前选择），平时，可以单独留，但CHMOD状态应检查如果您有权限问题以往上您的系统（按说，应被某物似“755”）。
+4） 修改的`vault`文件夹权限为“755”。注意，主文件夹也应该是该权限，如果遇上其他权限问题，请修改对应文件夹和文件的权限。
 
-5） 接下来，您需要｢钩子｣phpMussel为您的系统或CMS。有几种不同的方式在哪里您可以｢钩子｣脚本例如phpMussel为您的系统或CMS，但最简单的是简单地包括的脚本在开头的核心文件为您的系统或CMS（这是一个是通常始终加载的当有人访问的任何页面在您的网站）使用`require()`或`include()`命令。平时，这将是存储的在文件夹例如`/includes`，`/assets`或`/functions`，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`或类似。您需要确定哪些文件这是为您的情况；如果您遇到困难关于确定这为您自己，访问phpMussel支持论坛和让我​​​​们知；这是可能的我自己或其他用户可有经验的该CMS您正在使用（您需要让我们知哪些CMS您使用的），和从而，可能能够提供援助关于这。为了使用`require()`或`include()`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`phpmussel.php`文件（本地地址，不HTTP地址；它会类似于vault地址前面提到的）。
+5） 接下来，您需要为您的系统或CMS设定启动phpMussel的钩子。有几种不同的方式为您的系统或CMS设定钩子，最简单的是在您的系统或CMS的核心文件的开头中使用`require()`或`include()`命令直接包含脚本（这个方法通常会导致在有人访问时每次都加载）。平时，这些都是存储的在文件夹中，例如`/includes`，`/assets`或`/functions`等文件夹，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。这是根据您自己的情况决定的，并不需要完全遵守；如果您遇到困难，访问phpMussel支持论坛和发送issus；可能其他用户或者我自己也有这个问题并且解决了（您需要让我们您在使用哪些CMS）。为了使用`require()`或`include()`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`phpmussel.php`文件（本地地址，不是HTTP地址；它会类似于前面提到的vault地址）。（注意，本人不是PHP程序员，关于这一段仅仅是直译，如有错误，请在对应项目上提交issus更正）
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'；?>`
 
 保存文件，关闭，重新上传。
 
--- 或交替 --
+-- 或替换 --
 
-如果您使用Apache网络服务器和如果您可以访问`php.ini`，您可以使用该`auto_prepend_file`指令为附上的phpMussel每当任何PHP请求是创建。就像是：
+如果您使用Apache网络服务器并且您可以访问`php.ini`，您可以使用该`auto_prepend_file`指令为任何PHP请求创建附上的phpMussel。就像是：
 
 `auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"`
 
@@ -65,24 +65,24 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"`
 
-6） 从这里，您完成了！然，您应测试它以确保它的正常运行。为了测试文件上传保护，尝试上传测试文件包括在包内`_testfiles`至您的网站通过您常用的基于浏览器的上传方法。如果一切正常，信息应出现从phpMussel以确认上载已成功阻止了。如果出现什么，什么是不正常工作。如果您使用的任何先进的功能或如果您使用的其它类型的扫描可能的，我建议尝试它跟他们以确保其工作正常，也。
+6） 从这里，您已经完成安装当然，您应测试它以确保它的正常运行。为了测试文件上传保护，尝试上传测试文件包括在`_testfiles`文件夹内的内容至您的网站通过您常用的基于浏览器的上传方法。如果一切正常，信息应出现从phpMussel以确认上传已成功阻止，如果出现什么不正常情况例如您使用的其他任何先进的功能或使用的其它类型的扫描，我建议尝试它跟他们一起使用以确保其工作正常。
 
 ---
 
 
-###2B. <a name="SECTION2B"></a>如何安装（对于CLI）
+###2B. <a name="SECTION2B"></a>如何安装（CLI）
 
-我希望能够简化这过程通过创建的安装程序在某一点在近未来，但直到那个时候，遵循这些说明为预备phpMussel于操作使用CLI模式（请注意，在这个时候，CLI支持仅适用于基于Windows系统；Linux和其他系统即将推出到更高版本的phpMussel）：
+我可能在将来会创建一个安装程序来简化安装过程，但在之前，按照这些说明将使phpMussel能使用CLI模式（请注意，在这个时候，CLI支持仅适用于Windows系统；Linux和其他系统支持请关注推更高版本的phpMussel）：
 
-1） 通过您的阅读这，我假设您已经下载一个存档的副本的脚本，已解压缩其内容和有它地方的某处上您的机器。当您决定您满意与选择的位置为phpMussel，继续。
+1） 在阅读到这里之前，我假设您已经下载脚本的一个副本，已解压缩其内容并保存在您的机器的某个地方。当您满意选择的位置时，继续。
 
-2） phpMussel需要PHP被安装在主机以经营。如果您没有PHP已安装上您的机器，请安装PHP上您的机器，和跟随任何指令提供由PHP的安装程序。
+2） phpMussel需要PHP运行环境支持。如果您没有安装PHP，请安装。
 
-3） 自选（强烈推荐为高级用户，但不推荐为业余用户或为用户没有经验），打开`phpmussel.ini`（位于内`vault`） - 这个文件包含所有指令可用的为phpMussel。以上的每指令应有一个简评以说明它做什么和它的功能。调整这些指令您认为合适的，按照随您是适合为您的特定的设置。保存文件，关闭。
+3） 自定义（强烈推荐高级用户使用，但不推荐业余用户或没有经验的用户使用）：打开`phpmussel.ini`（位于内`vault`） - 这个文件包含所有指令可用的为phpMussel。以上的每指令应有一个简评以说明它做什么和它的功能。调整这些指令您认为合适的，按照随您是适合为您的特定的设置。保存文件，关闭。
 
 4） 自选，使用的phpMussel在CLI模式可能是更容易为您如果您创建一个批处理文件为自动加载的PHP和phpMussel。要做到这一点，打开一个纯文本编辑器例如Notepad或Notepad++，键入完整路径为`php.exe`文件在文件夹的您的PHP安装，其次是一个空格，然后完整路径为`phpmussel.php`文件在文件夹的您的phpMussel安装，最后，保存此文件使用一个".bat"扩展名在一个地方您会容易发现它；从这里，双击的文件以经营phpMussel在未来。
 
-5） 从这里，您完成了！然，您应测试它以确保它的正常运行。以测试phpMussel，经营phpMussel和尝试扫描`_testfiles`文件夹提供有包。
+5） 从这里，您完成了！当然您应测试以确保正常运行。测试phpMussel，请通过phpMussel尝试扫描`_testfiles`文件夹内提供的文件。
 
 ---
 
@@ -95,7 +95,7 @@ phpMussel的目的是作为一个脚本这将将满意地和正确地执行｢�
 
 然而，另外，您能指示phpMussel至扫描文件，文件夹或存档该您指示以做。要做到这一点，首先，您需要确保适当配置是确定在`phpmussel.ini`文件（`cleanup`｢清理｣必须关闭），和在做完，在任何一个PHP文件是钩子至phpMussel，使用下列功能在您的代码：
 
-`phpMussel($what_to_scan，$output_type，$output_flatness);`
+`phpmussel($what_to_scan，$output_type，$output_flatness);`
 
 - `$what_to_scan`可以是字符串，数组，或多维数组，和表明什么文件，收集的文件，文件夹和／或文件夹至扫描。
 - `$output_type`是布尔，和表明什么格式到回报扫描结果作为。False｢假／负｣指示关于功能以回报扫描结果作为整数（结果回报的-3表明问题是遇到关于phpMussel签名文件或签名MAP｢地图｣文件和表明他们可能是失踪或损坏，-2表明损坏数据是检测中扫描和因此扫描失败完成，-1表明扩展或插件需要通过PHP以经营扫描是失踪和因此扫描失败完成，0表明扫描目标不存在和因此没有任何事为扫描，1表明扫描目标是成功扫描和没有任何问题检测，和2表明扫描目标是成功扫描和至少一些问题是检测）。True｢真／正｣指示关于功能以回报扫描结果作为人类可读文本。此外，在任一情况下，结果可以访问通过全局变量后扫描是完成。变量是自选，确定作为False｢假／负｣作为标准。
@@ -104,7 +104,7 @@ phpMussel的目的是作为一个脚本这将将满意地和正确地执行｢�
 例子：
 
 ```
- $results=phpMussel('/user_name/public_html/my_file.html'，true，true);
+ $results=phpMussel('/user_name/public_html/my_file.html',true,true);
  echo $results;
 ```
 
@@ -123,13 +123,13 @@ phpMussel的目的是作为一个脚本这将将满意地和正确地执行｢�
 
 以关闭签名包括在phpMussel（例如如果您遇到假阳性具体至您的目的该不应该按说去掉），参考灰名单笔记在｢浏览器命令｣部分的这个自述文件。
 
-除了前述的文件上传扫描和自选扫描的其他文件和／或文件夹指定通过上述功能，包括在phpMussel是一个功能意为扫描入站电子邮件正文。这个功能行为类似至标准`phpMussel()`功能，但只考虑在对照的ClamAV基于电子邮件签名。我不链接这些签名在标准phpMussel()功能，因为它是不太可能您将会发现任何入站电子邮件正文在需要的扫描在一个文件上传目标的向一个网页哪里phpMussel是钩子到，和从而，以链接这些签名在phpMussel()功能将会无意义。然而，这说，拥有一个单独功能以对照的这些签名可以证明是极有用为一些，特别为那些谁的CMS或系统是在任何方式链接在他们的电子邮件系统和为那些处理他们的电子邮件通过一个PHP脚本他们可以可能钩子在phpMussel。配置为这个功能，像所有其他，是控制通过`phpmussel.ini`文件。以使用这个功能（您需要做您的自己实施），在一个PHP文件是钩子在phpMussel，使用下列功能在您的代码：
+除了前述的文件上传扫描和自选扫描的其他文件和／或文件夹指定通过上述功能，包括在phpMussel是一个功能意为扫描入站电子邮件正文。这个功能行为类似至标准`phpmussel()`功能，但只考虑在对照的ClamAV基于电子邮件签名。我不链接这些签名在标准phpMussel()功能，因为它是不太可能您将会发现任何入站电子邮件正文在需要的扫描在一个文件上传目标的向一个网页哪里phpMussel是钩子到，和从而，以链接这些签名在phpMussel()功能将会无意义。然而，这说，拥有一个单独功能以对照的这些签名可以证明是极有用为一些，特别为那些谁的CMS或系统是在任何方式链接在他们的电子邮件系统和为那些处理他们的电子邮件通过一个PHP脚本他们可以可能钩子在phpMussel。配置为这个功能，像所有其他，是控制通过`phpmussel.ini`文件。以使用这个功能（您需要做您的自己实施），在一个PHP文件是钩子在phpMussel，使用下列功能在您的代码：
 
-`phpMussel_mail($body);`
+`phpmussel_mail($body);`
 
 `$body`是电子邮件正文您想扫描（还，您可以尝试扫描新论坛帖子，入站信息从您的在线联系方式页面或等等）。如果任何错误发生阻碍这个功能从完成它的扫描，一个数值的-1将会回报。如果这个功能完成它的扫描和它不发现任何问题，一个数值的0将会回报（表明它是良性）。如果，然而，这个功能发现某物，一个字符串将会回报包含一个信息声明什么它发现。
 
-除了上述，如果您看源代码，您可能注意到这些功能`phpMusselD()`和`phpMusselR()`。这些功能是子功能的`phpMussel()`，和不应该叫直外的该父功能（不因为不利影响，但更使，因为它将会提供没有目的，和可能将不会正确执行无论如何）。
+除了上述，如果您看源代码，您可能注意到这些功能`phpmusselD()`和`phpmusselR()`。这些功能是子功能的`phpmussel()`，和不应该叫直外的该父功能（不因为不利影响，但更使，因为它将会提供没有目的，和可能将不会正确执行无论如何）。
 
 有许多其他控制和功能可用在phpMussel为您的，还。为了任何这样的控制和功能哪里，由端的这个部分的自述，是还不说明，请继续阅读和参考｢浏览器命令｣部分的这个自述文件。
 
@@ -604,7 +604,7 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - “filenames_custom”
 - “filenames_mussel”
 
-允许扫描通过`phpMussel_mail()`吗？ False = 不检查， True = 检查【默认】。
+允许扫描通过`phpmussel_mail()`吗？ False = 不检查， True = 检查【默认】。
 - “mail_clamav”
 - “mail_custom”
 - “mail_mussel”
@@ -789,7 +789,7 @@ URL扫描仪配置。
 "urlscanner"
 - 内phpMussel是一个URL扫描仪，能够检测恶意URL在任何数据或文件它扫描。以激活URL扫描仪，设置`urlscanner`指令`true`;以关闭它，设置这个指令`false`。
 
-请注意：如果URL扫描仪已关闭,您将不需要复习任何指令在这个类别（`urlscanner`）,因为没有指令会做任何事如果这个已关闭。
+请注意：如果URL扫描仪已关闭，您将不需要复习任何指令在这个类别（`urlscanner`），因为没有指令会做任何事如果这个已关闭。
 
 URL扫描仪API配置。
 
@@ -894,7 +894,7 @@ URL扫描仪API配置。
 - “通用命令” （hex_general_commands.csv）。匹配针对内容的所有非白名单文件目标为扫描。
 - “标准化HTML签名” （html_*）。匹配针对内容的所有非白名单HTML文件目标为扫描。
 - “Mach-O签名” （macho_*）。匹配针对内容的所有非白名单文件目标为扫描识别的Mach-O文件。
-- “电子邮件签名” （mail_*）。匹配针对`$body`变量在`phpMussel_mail()`功能（`$body`变量是为电子邮件正文或类似实体，可能论坛帖子和等等）。
+- “电子邮件签名” （mail_*）。匹配针对`$body`变量在`phpmussel_mail()`功能（`$body`变量是为电子邮件正文或类似实体，可能论坛帖子和等等）。
 - “MD5签名” （md5_*）。匹配针对MD5哈希的内容和文件大小的所有非白名单文件目标为扫描。
 - “存档元数据签名” （metadata_*）。匹配针对CRC32哈希和文件大小的第一文件包含在任何非白名单存档目标为扫描。
 - “OLE签名” （ole_*）。匹配针对内容的所有非白名单OLE对象目标为扫描。
@@ -977,6 +977,6 @@ URL扫描仪API配置。
 ---
 
 
-最后更新：2015年10月19日。
+最后更新：2015年10月23日。
 
-翻译声明：本文档翻译基于英文原始文档，但由于本人水平有限，且非php程序员，对其中某些字词的翻译可能不是很准确，故如果出现错误，请指出并联系原作者予以更正，另外，本翻译仅简体中文，与繁体中文无关亦未参考繁体中文的译文！！
+翻译声明：本文档翻译基于英文原始文档，但由于本人水平有限，且非PHP程序员，对其中某些字词的翻译可能不是很准确，故如果出现错误，请指出并联系原作者予以更正，另外，本翻译仅简体中文，与繁体中文无关亦未参考繁体中文的译文！！
