@@ -1429,18 +1429,20 @@
    - Примечание: Это будущее особенность! Google Safe Browsing API
      Функциональность еще не завершена!
    "maximum_api_lookups"
-   - Maximum allowable number of API lookups to perform per individual scan
-     iteration. Because each additional API lookup will add to the total time
-     required to complete each scan iteration, you may wish to stipulate a
-     limitation in order to expedite the overall scan process. When set to 0,
-     no such maximum allowable number will be applied. Set to 10 by default.
+   - Максимально допустимая количество API звонков, которые проводятся в каждом
+     сессии сканирования. Потому каждый дополнительный API запрос, увеличивает
+     время для сессии сканирования, вы мог бы хотите, чтобы указать предел при
+     определенных обстоятельствах чтобы ускорить процесс сканирования по всему.
+     Если 0 установлен, нет предела применяется. По умолчанию, значение
+     установленов 10.
    "maximum_api_lookups_response"
-   - What to do if the maximum allowable number of API lookups is exceeded?
-     False = Do nothing (continue processing) [Default];
-     True = Flag/block the file.
+   - Что должно произойти, если максимальное число допустимых API запросов
+     будет достигнута?
+     False = Не делайте ничего (Продолжить обработку) [Стандарт];
+     True = Отметить/блокировки файла.
    "cache_time"
-   - How long (in seconds) should the results of API lookups be cached for?
-     Default is 3600 seconds (1 hour).
+   - Как долго (в секундах) результаты API вызовов, которые должны быть в кэше?
+     Стандарт 3600 секунд (1 час).
  "template_data" (Категория)
  - Шаблон данных относится к HTML-вывода, используемый для генерации "Загрузить
    Отказано" сообщения отображается для пользователей когда/на загрузки/уплоад
@@ -1678,5 +1680,5 @@
                                      ~ ~ ~
 
 
-Последнее обновление: 19 Октябрь 2015 (2015.10.19).
+Последнее обновление: 23 Октябрь 2015 (2015.10.23).
 EOF

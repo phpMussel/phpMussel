@@ -1516,13 +1516,13 @@
 
  7. ĐỊNH DẠNG CỦA CHỬ KÝ
 
- = FILENAME SIGNATURES =
+ = CHỮ KÝ TÊN TÀI LIỆU =
    All filename signatures follow the format:
     NAME:FNRX
    Where NAME is the name to cite for that signature and FNRX is the regex
    pattern to match filenames (unencoded) against.
 
- = MD5 SIGNATURES =
+ = CHỮ KÝ DỰA MD5 =
    All MD5 signatures follow the format:
     HASH:FILESIZE:NAME
    Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of
@@ -1535,27 +1535,27 @@
    size (uncompressed) of a file contained within the archive and CRC32 is the
    CRC32 checksum of that contained file.
 
- = PE SECTIONAL SIGNATURES =
+ = CHỮ KÝ PHẦN PE =
    All PE Sectional signatures follow the format:
     SIZE:HASH:NAME
    Where HASH is the MD5 hash of a section of a PE file, SIZE is the total size
    of that section and NAME is the name to cite for that signature.
 
- = PE EXTENDED SIGNATURES =
+ = CHỮ KÝ KÉO DÀI PE =
    All PE extended signatures follow the format:
     $VAR:HASH:SIZE:NAME
    Where $VAR is the name of the PE variable to match against, HASH is the MD5
    hash of that variable, SIZE is the total size of that variable and NAME is
    the name to cite for that signature.
 
- = WHITELIST SIGNATURES =
+ = CHỮ KÝ DANH SÁCH TRẮNG =
    All Whitelist signatures follow the format:
     HASH:FILESIZE:TYPE
    Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of
    that file and TYPE is the type of signatures the whitelisted file is to be
    immune against.
 
- = COMPLEX EXTENDED SIGNATURES =
+ = CHỮ KÝ KÉO DÀI PHỨC TẠP =
    Complex Extended signatures are rather different to the other types of
    signatures possible with phpMussel, in that what they are matching against
    is specified by the signatures themselves and they can match against
@@ -1734,5 +1734,5 @@
                                      ~ ~ ~
 
 
-Lần cuối cập nhật: 19 Tháng Mười 2015 (2015.10.19).
+Lần cuối cập nhật: 23 Tháng Mười 2015 (2015.10.23).
 EOF

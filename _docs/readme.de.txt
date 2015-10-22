@@ -1501,30 +1501,31 @@
  "urlscanner" (Kategorie)
  - URL-Scanner Konfiguration.
    "urlscanner"
-   - In phpMussel ist ein URL-Scanner eingebaut, der bösartige URLS in Daten und 
-     gescannten Dateien erkennt. Um den URL-Scanner zu aktivieren, setzen Sie die
-     "urlscanner" Anweisung auf true; Um ihn zu deaktivieren, setzen Sie diese
-     Anweisung auf false.
-   Hinweis: Wenn der URL-Scanner deaktiviert ist, müssen Sie keine der Anweisungen
-   in dieser Kategorie ("urlscanner") überprüfen, da dann keine davon funktioniert.
+   - In phpMussel ist ein URL-Scanner eingebaut, der bösartige URLs in Daten
+     und gescannten Dateien erkennt. Um den URL-Scanner zu aktivieren, setzen
+     Sie die "urlscanner" Anweisung auf true; Um ihn zu deaktivieren, setzen
+     Sie diese Anweisung auf false.
+   Hinweis: Wenn der URL-Scanner deaktiviert ist, müssen Sie keine der
+   Anweisungen in dieser Kategorie ("urlscanner") überprüfen, da dann keine
+   davon funktioniert.
  - URL-Scanner API-Abfrage Konfiguration.
    "lookup_hphosts"
-   - Aktiviert API-Abfragen zur hpHosts API <http://hosts-file.net/> wenn der Wert
-   auf true gesetzt ist. hpHosts erfordert keinen API-Schlüssel um API-Abfragen
-   durchzuführen.
+   - Aktiviert API-Abfragen zur hpHosts API <http://hosts-file.net/> wenn der
+     Wert auf true gesetzt ist. hpHosts erfordert keinen API-Schlüssel um
+     API-Abfragen durchzuführen.
    "google_api_key"
    - Aktiviert API-Abfragen zur Google Safe Browsing API wenn der benötigte
      API-Schlüssel festgelegt ist. Google Safe Browsing API-Abfragen erfordern
-     einen API-Schlüssel, den Sie hier erhalten können 
+     einen API-Schlüssel, den Sie hier erhalten können
      <https://console.developers.google.com/>.
-   - Hinweis: Das ist eine zukünftige Funktion! Google Safe Browsing API-Abfragen
-     Funktionalität ist noch nicht implementiert!
+   - Hinweis: Das ist eine zukünftige Funktion! Google Safe Browsing
+     API-Abfragen Funktionalität ist noch nicht implementiert!
    "maximum_api_lookups"
    - Die maximal erlaubte Anzahl von API-Abfragen die bei jedem Scan-Durchgang
      durchgeführt werden. Weil jede zusätzliche API-Abfrage die Zeit für einen
-     Scan-Durchgang erhöht, wollen Sie unter Umständen ein Limit festlegen, um den
-     gedamten Scan-Prozess zu beschleunigen. Wenn 0 eingestellt wird, wird kein
-     Limit angewendet. Standardmäßig ist der Wert auf 10 gesetzt.
+     Scan-Durchgang erhöht, wollen Sie unter Umständen ein Limit festlegen, um
+     den gedamten Scan-Prozess zu beschleunigen. Wenn 0 eingestellt wird, wird
+     kein Limit angewendet. Standardmäßig ist der Wert auf 10 gesetzt.
    "maximum_api_lookups_response"
    - Was soll passieren, wenn die maximale Anzahl der erlaubten API-Abfragen
      erreicht wird?

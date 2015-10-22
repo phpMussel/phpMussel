@@ -786,7 +786,7 @@ Hinweis: Unabhängig von der Verdachts-Stufe wird jede Datei auf der Whitelist o
 URL-Scanner Konfiguration.
 
 "urlscanner"
-- In phpMussel ist ein URL-Scanner eingebaut, der bösartige URLS in Daten und gescannten Dateien erkennt. Um den URL-Scanner zu aktivieren, setzen Sie die `urlscanner` Anweisung auf `true`; Um ihn zu deaktivieren, setzen Sie diese Anweisung auf `false`.
+- In phpMussel ist ein URL-Scanner eingebaut, der bösartige URLs in Daten und gescannten Dateien erkennt. Um den URL-Scanner zu aktivieren, setzen Sie die `urlscanner` Anweisung auf `true`; Um ihn zu deaktivieren, setzen Sie diese Anweisung auf `false`.
 
 Hinweis: Wenn der URL-Scanner deaktiviert ist, müssen Sie keine der Anweisungen in dieser Kategorie (`urlscanner`) überprüfen, da dann keine davon funktioniert.
 
