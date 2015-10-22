@@ -24,4 +24,6 @@ README/Markdown: [ **[English](https://github.com/Maikuolan/phpMussel/blob/maste
 
 [\[CONTRIBUTING.md\] **Want to help?**](https://github.com/Maikuolan/phpMussel/blob/master/CONTRIBUTING.md)
 
-*This file, "README.md", last edited: 18th September 2015 (2015.09.18).*
+[\[maikuolan.github.io/phpMussel\] **Want to donate?**](http://maikuolan.github.io/phpMussel/)
+
+*This file, "README.md", last edited: 23rd October 2015 (2015.10.23).*
