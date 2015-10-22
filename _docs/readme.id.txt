@@ -782,7 +782,6 @@
  /vault/mail_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/mail_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/mail_mussel_standard.cvd (Tanda tangan, Diikutkan)
- /vault/mail_mussel_standard.map (Tanda tangan, Diikutkan)
     File-file untuk tanda tangan yang digunakan oleh fungsi phpMussel_mail().
     Diharuskan jika fungsi phpMussel_mail() digunakan dalam jalan apapun.
     Dapat menghapus jika tidak digunakan.
@@ -882,6 +881,10 @@
     Skrip upgrade phpMussel; Diharuskan untuk upgrade otomatis dan untuk
     mengupgrade phpMussel dengan menggunakan browser Anda, tapi tidak
     diharuskan juga.
+    ~
+ /vault/urlscanner.cvd (Tanda tangan, Diikutkan)
+    File untuk tanda tangan scanner URL. Diharuskan jika direktif "urlscanner"
+    di "phpmussel.ini" diaktifkan. Dapat menghapus jika direktif dinonaktifkan.
     ~
  /vault/whitelist_clamav.cvd (Tanda tangan, Diikutkan)
  /vault/whitelist_custom.cvd (Tanda tangan, Diikutkan)
@@ -1823,5 +1826,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 17 Oktober 2015 (2015.10.17).
+Terakhir Diperbarui: 19 Oktober 2015 (2015.10.19).
 EOF

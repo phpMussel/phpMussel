@@ -394,7 +394,6 @@ Data                                       | Deskripsi
 /vault/mail_custom_standard.cvd            | File untuk tanda tangan mail.
 /vault/mail_mussel_regex.cvd               | File untuk tanda tangan mail.
 /vault/mail_mussel_standard.cvd            | File untuk tanda tangan mail.
-/vault/mail_mussel_standard.map            | File untuk tanda tangan mail.
 /vault/md5_clamav.cvd                      | File untuk tanda tangan berbasis MD5.
 /vault/md5_custom.cvd                      | File untuk tanda tangan berbasis MD5.
 /vault/md5_mussel.cvd                      | File untuk tanda tangan berbasis MD5.
@@ -439,6 +438,7 @@ Data                                       | Deskripsi
 /vault/template_custom.html                | File template phpMussel; Template untuk output HTML yang diproduksi oleh phpMussel untuk file pesan upload yang dibloknya (pesan dilihat oleh pengupload).
 /vault/update.dat                          | File berisi informasi versi untuk skrip phpMussel dan tanda tangan phpMussel. Jika Anda pernah ingin mengupgrade phpMussel atau ingin mengupdate phpMussel via browser file ini penting.
 /vault/update.inc                          | Skrip upgrade phpMussel; Diharuskan untuk upgrade otomatis dan untuk mengupgrade phpMussel dengan menggunakan browser Anda, tapi tidak diharuskan juga.
+/vault/urlscanner.cvd                      | File untuk tanda tangan scanner URL.
 /vault/whitelist_clamav.cvd                | File spesifik daftar putih.
 /vault/whitelist_custom.cvd                | File spesifik daftar putih.
 /vault/whitelist_mussel.cvd                | File spesifik daftar putih.
@@ -977,4 +977,4 @@ Informasi ini diupdate 7 September 2015 dan cocok untuk semua rilis phpMussel da
 ---
 
 
-Terakhir Diperbarui: 17 Oktober 2015 (2015.10.17).
+Terakhir Diperbarui: 19 Oktober 2015 (2015.10.19).

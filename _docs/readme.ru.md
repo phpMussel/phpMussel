@@ -394,7 +394,6 @@ greylist_show
 /vault/mail_custom_standard.cvd            | Файл с подписями для phpMussel_mail() подписями.
 /vault/mail_mussel_regex.cvd               | Файл с подписями для phpMussel_mail() подписями.
 /vault/mail_mussel_standard.cvd            | Файл с подписями для phpMussel_mail() подписями.
-/vault/mail_mussel_standard.map            | Файл с подписями для phpMussel_mail() подписями.
 /vault/md5_clamav.cvd                      | Файл с MD5 подписями.
 /vault/md5_custom.cvd                      | Файл с MD5 подписями.
 /vault/md5_mussel.cvd                      | Файл с MD5 подписями.
@@ -439,6 +438,7 @@ greylist_show
 /vault/template_custom.html                | Шаблонный файл. Шаблон для HTML-формата сообщений, сообщающий о том, что загрузка файла была заблокирована phpMussel (сообщение, которое будет показано пользователю).
 /vault/update.dat                          | Файл с содержит информацию о версиях данного руководства и подписи. Если вы хотите автоматически или посредством браузера актуализировать phpMussel, то этот файл вам необходим.
 /vault/update.inc                          | Обновление данного руководства; будет использоваться только для автоматической актуализации и вручную при посредничестве браузера.
+/vault/urlscanner.cvd                      | Файл с URL сканер подписями.
 /vault/whitelist_clamav.cvd                | Специальный файл белого списка.
 /vault/whitelist_custom.cvd                | Специальный файл белого списка.
 /vault/whitelist_mussel.cvd                | Специальный файл белого списка.
@@ -787,21 +787,21 @@ VirusTotal.com директивы.
 URL сканер конфигурация.
 
 "urlscanner"
-- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the `urlscanner` directive to true; To disable it, set this directive to false.
+- В phpMussel есть URL сканер, способен обнаружить вредоносные URL-адреса изнутри данных или файлов отсканированных. Для активирования URL сканер задайте директива `urlscanner` значение в `true`; Для деактивизация задайте в `false`.
 
-Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
+Примечание: Если URL сканер деактивирован, то нет нужды проверять директивы этой категории (`urlscanner`).
 
 URL сканер API конфигурация.
 
 "lookup_hphosts"
-- Enables API lookups to the [hpHosts](http://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
+- Активировать [hpHosts](http://hosts-file.net/) API интеграция если `true`. hpHosts не нужен API ключ для API интеграция.
 
 "google_api_key"
-- Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
+- Активировать Google Safe Browsing API интеграция если необходимое API ключ вводится. Google Safe Browsing API нужен API ключ для API интеграция, вы можете получить [Здесь](https://console.developers.google.com/).
 - Примечание: Это будущее особенность! Google Safe Browsing API Функциональность еще не завершена!
 
 "maximum_api_lookups"
-- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expediate the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
+- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expedite the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
 
 "maximum_api_lookups_response"
 - What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Default]; True = Flag/block the file.
@@ -977,4 +977,4 @@ NAME = Название подписи; HEX = Сегмент файла, зак�
 ---
 
 
-Последнее обновление: 17 Октябрь 2015 (2015.10.17).
+Последнее обновление: 19 Октябрь 2015 (2015.10.19).

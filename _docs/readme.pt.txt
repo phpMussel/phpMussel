@@ -771,7 +771,6 @@
  /vault/mail_custom_standard.cvd (Assinaturas, Incluídos)
  /vault/mail_mussel_regex.cvd (Assinaturas, Incluídos)
  /vault/mail_mussel_standard.cvd (Assinaturas, Incluídos)
- /vault/mail_mussel_standard.map (Assinaturas, Incluídos)
     Arquivos por assinaturas usado por a phpMussel_mail() função. Necessário se
     o phpMussel_mail() função é utilizado em qualquer forma. Pode remover se
     não usado.
@@ -870,6 +869,11 @@
     phpMussel Atualização Script; Necessário por automáticas atualizações e
     para atualizar phpMussel através de seu navegador, mas não é necessário
     contrário.
+    ~
+ /vault/urlscanner.cvd (Assinaturas, Incluídos)
+    Arquivo por URL analisador assinaturas. Necessário se o "urlscanner"
+    directiva em "phpmussel.ini" está ativado. Pode remover se a directiva é
+    desativado.
     ~
  /vault/whitelist_clamav.cvd (Assinaturas, Incluídos)
  /vault/whitelist_custom.cvd (Assinaturas, Incluídos)
@@ -1827,5 +1831,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 17 Outubro 2015 (2015.10.17).
+Última Atualização: 19 Outubro 2015 (2015.10.19).
 EOF

@@ -394,7 +394,6 @@ Datei                                      | Beschreibung
 /vault/mail_custom_standard.cvd            | Signaturdateien für phpMussel_mail()-Signaturen.
 /vault/mail_mussel_regex.cvd               | Signaturdateien für phpMussel_mail()-Signaturen.
 /vault/mail_mussel_standard.cvd            | Signaturdateien für phpMussel_mail()-Signaturen.
-/vault/mail_mussel_standard.map            | Signaturdateien für phpMussel_mail()-Signaturen.
 /vault/md5_clamav.cvd                      | Datei der MD5-Signaturen.
 /vault/md5_custom.cvd                      | Datei der MD5-Signaturen.
 /vault/md5_mussel.cvd                      | Datei der MD5-Signaturen.
@@ -439,17 +438,18 @@ Datei                                      | Beschreibung
 /vault/template_custom.html                | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
 /vault/update.dat                          | Datei beinhaltet Versionsinformationen des Scripts und der Signaturen. Diese Datei ist notwendig, wenn Sie phpMussel automatisch oder mittels Browser aktualisieren wollen.
 /vault/update.inc                          | Update Script; Wird nur für die automatische und manuelle Aktualisierung mittels Browser benötigt.
+/vault/urlscanner.cvd                      | Datei der URL-Scanner-Signaturen.
 /vault/whitelist_clamav.cvd                | Datei-spezifische Whitelist.
 /vault/whitelist_custom.cvd                | Datei-spezifische Whitelist.
 /vault/whitelist_mussel.cvd                | Datei-spezifische Whitelist.
-/vault/xmlxdp_clamav_regex.cvd             | Dateien der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_clamav_regex.map             | Dateien der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_clamav_standard.cvd          | Dateien der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_clamav_standard.map          | Dateien der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_custom_regex.cvd             | Dateien der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_custom_standard.cvd          | Dateien der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_mussel_regex.cvd             | Dateien der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_mussel_standard.cvd          | Dateien der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_clamav_regex.cvd             | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_clamav_regex.map             | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_clamav_standard.cvd          | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_clamav_standard.map          | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_custom_regex.cvd             | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_custom_standard.cvd          | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_mussel_regex.cvd             | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/xmlxdp_mussel_standard.cvd          | Datei der XML/XDP-Datenblock-Signaturen.
 
 ※ Der Dateiname kann je nach Konfiguratuion in der `phpmussel.ini` variieren.
 
@@ -783,24 +783,24 @@ Hinweis: Unabhängig von der Verdachts-Stufe wird jede Datei auf der Whitelist o
 - Laut der Virus Total API Dokumentation, "ist diese auf 4 Anfragen irgendeiner Art in einer 1 Minuten Zeitspanne limitiert. Falls du einen Honeyclient, Honeypot oder einen andere Automatisierung verwendest, was etwas zu VirusTotal beiträgt und nicht nur Berichte abruft, bist du für ein höheres Limit berechtigt". Standardmäßig wird sich phpMussel strikt daran halten, da aber diese Limits erhöht werden können, stehen dir diese zwei Direktiven zur Verfügung um phpMussel anzuweisen, an welches Limit es sich halten soll. Außer du bist dazu aufgefordert, ist es nicht empfohlen diese Werte zu erhöhen. Solltest du aber Probleme bezogen auf das Erreichen des Limits haben, _**SOLLTE**_ das Verringern dieser Werte manchmal helfen. Dein Limit wird festgelegt als `vt_quota_rate` Anfragen jeder Art in jeder `vt_quota_time` Minuten Zeitspanne.
 
 ####"urlscanner" (Kategorie)
-URL scanner configuration.
+URL-Scanner-Konfiguration.
 
 "urlscanner"
-- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the `urlscanner` directive to true; To disable it, set this directive to false.
+- In phpMussel Erbaut ein URL-Scanner, für bösartige URLs von innen irgendwelche Daten oder Dateien gescannt zu entdecken. Um die URL-Scanner zu aktivieren, stellen Sie die Option `urlscanner` auf `true`; Zu deaktivieren, stellen auf `false`.
 
-Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
+Hinweis: Wenn die URL-Scanner ist deaktiviert, Sie nicht brauchen um diese Kategorie zu überprüfen (`urlscanner`).
 
-URL scanner API lookup configuration.
+URL-Scanner-API-Konfiguration.
 
 "lookup_hphosts"
-- Enables API lookups to the [hpHosts](http://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
+- Aktivieren [hpHosts](http://hosts-file.net/) API wenn auf `true` gesetzt (API-Schlüssel nicht erforderlich).
 
 "google_api_key"
-- Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
-- Note: This is a future feature! Google Safe Browsing API lookup functionality not yet completed!
+- Aktivieren Google Safe Browsing API wenn die erforderlichen API-Schlüssel definiert ist. Sie können einen API-Schlüssel von [Hier](https://console.developers.google.com/) zu erhalten.
+- Hinweis: Dies ist eine künftige Funktion! Google Safe Browsing API Funktionalität noch nicht geschrieben!
 
 "maximum_api_lookups"
-- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expediate the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
+- Die maximal zulässige Anzahl der API-Anfragen pro einzelnen Scandurchlauf zu durchführen. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expedite the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
 
 "maximum_api_lookups_response"
 - What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Default]; True = Flag/block the file.
@@ -975,4 +975,4 @@ Diese Informationen wurden zuletzt am 7. September 2015 aktualisiert und gelten 
 ---
 
 
-Zuletzt aktualisiert: 17 Oktober 2015 (2015.10.17).
+Zuletzt aktualisiert: 19 Oktober 2015 (2015.10.19).

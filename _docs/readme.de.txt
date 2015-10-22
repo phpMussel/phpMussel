@@ -630,18 +630,16 @@
  /vault/ascii_custom_standard.cvd (Signaturen, enthalten)
  /vault/ascii_mussel_regex.cvd (Signaturen, enthalten)
  /vault/ascii_mussel_standard.cvd (Signaturen, enthalten)
-    Dateien der normierten ASCII-Signaturen.
-    Benötigt, wenn die Option "ASCII Signatures" in der "phpmussel.ini"
-    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist.
+    Dateien der normierten ASCII-Signaturen. Benötigt, wenn die Option "ASCII
+    Signatures" in der "phpmussel.ini" aktiviert ist. Die Dateien können
+    entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/coex_clamav.cvd (Signaturen, enthalten)
  /vault/coex_custom.cvd (Signaturen, enthalten)
  /vault/coex_mussel.cvd (Signaturen, enthalten)
-    Dateien der Komplex-Erweitert-Signaturen.
-    Benötigt, wenn die Option "Complex Extended" in der "phpmussel.ini"
-    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist.
+    Dateien der Komplex-Erweitert-Signaturen. Benötigt, wenn die Option
+    "Complex Extended" in der "phpmussel.ini" aktiviert ist. Die Dateien können
+    entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/elf_clamav_regex.cvd (Signaturen, enthalten)
  /vault/elf_clamav_regex.map (Signaturen, enthalten)
@@ -670,10 +668,9 @@
  /vault/filenames_clamav.cvd (Signaturen, enthalten)
  /vault/filenames_custom.cvd (Signaturen, enthalten)
  /vault/filenames_mussel.cvd (Signaturen, enthalten)
-    Dateien der Dateinamen-Signaturen.
-    Benötigt, wenn die Option "Filename Signatures" in der "phpmussel.ini"
-    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist.
+    Dateien der Dateinamen-Signaturen. Benötigt, wenn die Option "Filename
+    Signatures" in der "phpmussel.ini" aktiviert ist. Die Dateien können
+    entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/general_clamav_regex.cvd (Signaturen, enthalten)
  /vault/general_clamav_regex.map (Signaturen, enthalten)
@@ -683,10 +680,9 @@
  /vault/general_custom_standard.cvd (Signaturen, enthalten)
  /vault/general_mussel_regex.cvd (Signaturen, enthalten)
  /vault/general_mussel_standard.cvd (Signaturen, enthalten)
-    Dateien der allgemeinen Signaturen.
-    Benötigt, wenn die Option "General Signatures" in der "phpmussel.ini"
-    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist.
+    Dateien der allgemeinen Signaturen. Benötigt, wenn die Option "General
+    Signatures" in der "phpmussel.ini" aktiviert ist. Die Dateien können
+    entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/graphics_clamav_regex.cvd (Signaturen, enthalten)
  /vault/graphics_clamav_regex.map (Signaturen, enthalten)
@@ -696,10 +692,9 @@
  /vault/graphics_custom_standard.cvd (Signaturen, enthalten)
  /vault/graphics_mussel_regex.cvd (Signaturen, enthalten)
  /vault/graphics_mussel_standard.cvd (Signaturen, enthalten)
-    Dateien der Signaturen für Bilddateien.
-    Benötigt, wenn die Option "Graphics Signatures" in der "phpmussel.ini"
-    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist.
+    Dateien der Signaturen für Bilddateien. Benötigt, wenn die Option "Graphics
+    Signatures" in der "phpmussel.ini" aktiviert ist. Die Dateien können
+    entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/greylist.csv (Signaturen, enthalten/wird erstellt)
     CSV der Signaturen in der Greylist, die phpMussel ignorieren soll (Datei
@@ -719,10 +714,9 @@
  /vault/html_custom_standard.cvd (Signaturen, enthalten)
  /vault/html_mussel_regex.cvd (Signaturen, enthalten)
  /vault/html_mussel_standard.cvd (Signaturen, enthalten)
-    Dateien der normierten HTML-Signaturen.
-    Benötigt, wenn die Option "HTML Signatures" in der "phpmussel.ini"
-    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist.
+    Dateien der normierten HTML-Signaturen. Benötigt, wenn die Option "HTML
+    Signatures" in der "phpmussel.ini" aktiviert ist. Die Dateien können
+    entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/lang.inc (Script, enthalten)
     Sprachpaket für phpMussel.
@@ -735,10 +729,9 @@
  /vault/macho_custom_standard.cvd (Signaturen, enthalten)
  /vault/macho_mussel_regex.cvd (Signaturen, enthalten)
  /vault/macho_mussel_standard.cvd (Signaturen, enthalten)
-    Dateien der Mach-O-Signaturen.
-    Benötigt, wenn die Option "Mach-O Signatures" in der "phpmussel.ini"
-    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist.
+    Dateien der Mach-O-Signaturen. Benötigt, wenn die Option "Mach-O
+    Signatures" in der "phpmussel.ini" aktiviert ist. Die Dateien können
+    entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/mail_clamav_regex.cvd (Signaturen, enthalten)
  /vault/mail_clamav_regex.map (Signaturen, enthalten)
@@ -748,7 +741,6 @@
  /vault/mail_custom_standard.cvd (Signaturen, enthalten)
  /vault/mail_mussel_regex.cvd (Signaturen, enthalten)
  /vault/mail_mussel_standard.cvd (Signaturen, enthalten)
- /vault/mail_mussel_standard.map (Signaturen, enthalten)
     Signaturdateien für die Funktion phpMussel_mail().
     Dateien werden auf jeden Fall von der Funktion phpMussel_mail() benötigt.
     Die Dateien können entfernt werden, wenn die Option deaktiviert ist.
@@ -796,17 +788,15 @@
  /vault/pe_clamav.cvd (Signaturen, enthalten)
  /vault/pe_custom.cvd (Signaturen, enthalten)
  /vault/pe_mussel.cvd (Signaturen, enthalten)
-    Dateien der PE-Sectional-Signaturen.
-    Benötigt, wenn die Option "PE Sectional signatures" in der "phpmussel.ini"
-    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist.
+    Dateien der PE-Sectional-Signaturen. Benötigt, wenn die Option "PE
+    Sectional signatures" in der "phpmussel.ini" aktiviert ist. Die Dateien
+    können entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/pex_custom.cvd (Signaturen, enthalten)
  /vault/pex_mussel.cvd (Signaturen, enthalten)
-    Dateien der PE-Erweitert-Signaturen.
-    Benötigt, wenn die Option "PE extended signatures" in der "phpmussel.ini"
-    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist.
+    Dateien der PE-Erweitert-Signaturen. Benötigt, wenn die Option "PE extended
+    signatures" in der "phpmussel.ini" aktiviert ist. Die Dateien können
+    entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/phpmussel.inc (Script, enthalten)
     phpMussel Core Script (absolut notwendig)!
@@ -829,10 +819,9 @@
  /vault/swf_custom_standard.cvd (Signaturen, enthalten)
  /vault/swf_mussel_regex.cvd (Signaturen, enthalten)
  /vault/swf_mussel_standard.cvd (Signaturen, enthalten)
-    Dateien der Shockwave-Signaturen.
-    Benötigt, wenn die Option "Shockwave Signatures" in der "phpmussel.ini"
-    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist.
+    Dateien der Shockwave-Signaturen. Benötigt, wenn die Option "Shockwave
+    Signatures" in der "phpmussel.ini" aktiviert ist. Die Dateien können
+    entfernt werden, wenn die Option deaktiviert ist.
     ~
  /vault/switch.dat (Sonstiges, enthalten)
     Diese Datei definiert bestimmte Variablen.
@@ -852,6 +841,11 @@
     phpMussel Update Script; Wird nur für die automatische und manuelle
     Aktualisierung mittels Browser benötigt.
     ~
+ /vault/urlscanner.cvd (Signatures, Included)
+    Datei der URL-Scanner-Signaturen. Benötigt, wenn die Option "urlscanner" in
+    der "phpmussel.ini" aktiviert ist. Die Datei können entfernt werden, wenn
+    die Option deaktiviert ist.
+    ~
  /vault/whitelist_clamav.cvd (Signaturen, enthalten)
  /vault/whitelist_custom.cvd (Signaturen, enthalten)
  /vault/whitelist_mussel.cvd (Signaturen, enthalten)
@@ -868,10 +862,9 @@
  /vault/xmlxdp_custom_standard.cvd (Signaturen, enthalten)
  /vault/xmlxdp_mussel_regex.cvd (Signaturen, enthalten)
  /vault/xmlxdp_mussel_standard.cvd (Signaturen, enthalten)
-    Dateien der XML/XDP-Datenblock-Signaturen.
-    Benötigt, wenn die Option "XML/XDP-Chunk Signatures" in der "phpmussel.ini"
-    aktiviert ist. Die Dateien können entfernt werden, wenn die Option
-    deaktiviert ist.
+    Dateien der XML/XDP-Datenblock-Signaturen. Benötigt, wenn die Option
+    "XML/XDP-Chunk Signatures" in der "phpmussel.ini" aktiviert ist. Die
+    Dateien können entfernt werden, wenn die Option deaktiviert ist.
     ~
 
  * Der Dateiname kann je nach Konfiguratuion in der "phpmussel.ini" variieren.
@@ -1506,30 +1499,29 @@
      helfen. Dein Limit wird festgelegt als "vt_quota_rate" Anfragen jeder Art
      in jeder "vt_quota_time" Minuten Zeitspanne.
  "urlscanner" (Kategorie)
- - URL scanner configuration.
+ - URL-Scanner-Konfiguration.
    "urlscanner"
-   - Built into phpMussel is a URL scanner, capable of detecting malicious URLs
-     from within any data or files scanned. To enable the URL scanner, set the
-     "urlscanner" directive to true; To disable it, set this directive to
-     false.
-   Note: If the URL scanner is disabled, you won't need to review any of the
-   directives in this category ("urlscanner"), because none of them will do
-   anything if this is disabled.
- - URL scanner API lookup configuration.
+   - In phpMussel Erbaut ein URL-Scanner, für bösartige URLs von innen
+     irgendwelche Daten oder Dateien gescannt zu entdecken. Um die URL-Scanner
+     zu aktivieren, stellen Sie die Option "urlscanner" auf "true"; Zu
+     deaktivieren, stellen auf "false".
+   Hinweis: Wenn die URL-Scanner ist deaktiviert, Sie nicht brauchen um diese
+   Kategorie zu überprüfen ("urlscanner").
+ - URL-Scanner-API-Konfiguration.
    "lookup_hphosts"
-   - Enables API lookups to the hpHosts API <http://hosts-file.net/> when set
-     to true. hpHosts doesn't require an API key for performing API lookups.
+   - Aktivieren hpHosts API <http://hosts-file.net/> wenn auf `true` gesetzt
+     (API-Schlüssel nicht erforderlich).
    "google_api_key"
-   - Enables API lookups to the Google Safe Browsing API when the necessary API
-     key is defined. Google Safe Browsing API lookups requires an API key,
-     which can be obtained from <https://console.developers.google.com/>.
-   - Note: This is a future feature! Google Safe Browsing API lookup
-     functionality not yet completed!
+   - Aktivieren Google Safe Browsing API wenn die erforderlichen API-Schlüssel
+     definiert ist. Sie können einen API-Schlüssel von hier zu erhalten:
+     <https://console.developers.google.com/>.
+   - Hinweis: Dies ist eine künftige Funktion! Google Safe Browsing API
+     Funktionalität noch nicht geschrieben!
    "maximum_api_lookups"
-   - Maximum allowable number of API lookups to perform per individual scan
-     iteration. Because each additional API lookup will add to the total time
-     required to complete each scan iteration, you may wish to stipulate a
-     limitation in order to expediate the overall scan process. When set to 0,
+   - Die maximal zulässige Anzahl der API-Anfragen pro einzelnen Scandurchlauf
+     zu durchführen. Because each additional API lookup will add to the total
+     time required to complete each scan iteration, you may wish to stipulate a
+     limitation in order to expedite the overall scan process. When set to 0,
      no such maximum allowable number will be applied. Set to 10 by default.
    "maximum_api_lookups_response"
    - What to do if the maximum allowable number of API lookups is exceeded?
@@ -1793,5 +1785,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 17 Oktober 2015 (2015.10.17).
+Zuletzt aktualisiert: 19 Oktober 2015 (2015.10.19).
 EOF

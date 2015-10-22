@@ -784,7 +784,6 @@
  /vault/mail_custom_standard.cvd (Handtekeningen, Opgenomen)
  /vault/mail_mussel_regex.cvd (Handtekeningen, Opgenomen)
  /vault/mail_mussel_standard.cvd (Handtekeningen, Opgenomen)
- /vault/mail_mussel_standard.map (Handtekeningen, Opgenomen)
     Bestanden handtekeningen die door de phpMussel_mail() functie. Vereist als
     the phpMussel_mail() functie wordt gebruikt op enigerlei wijze. Kunnen ze
     te verwijderen als ze niet worden gebruikt.
@@ -882,6 +881,11 @@
  /vault/update.inc (Script, Opgenomen)
     phpMussel Update Script; Vereist voor automatische updates en voor het
     bijwerken van phpMussel via uw browser, maar niet anders vereist.
+    ~
+ /vault/urlscanner.cvd (Handtekeningen, Opgenomen)
+    Bestand voor URL scanner handtekeningen. Vereist als het "urlscanner"
+    richtlijn van "phpmussel.ini" is ingeschakeld. Kan verwijderen indien het
+    richtlijn is uitgeschakeld.
     ~
  /vault/whitelist_clamav.cvd (Handtekeningen, Opgenomen)
  /vault/whitelist_custom.cvd (Handtekeningen, Opgenomen)
@@ -1860,5 +1864,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 17 Oktober 2015 (2015.10.17).
+Laatste Bijgewerkt: 19 Oktober 2015 (2015.10.19).
 EOF
