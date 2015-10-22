@@ -29,7 +29,7 @@ completed, listed below are my current goals leading up to the switch (after
 reaching Version 1.0.0, I'll remove these paragraphs and this explanation, as
 they won't be relevant anymore after that point):
 
-Do-to list for potential future major version (v1.0):
+To-do list for potential future major version (v1.0):
 
 - Currently supported archive formats are BZ/BZ2, GZ, LZF, TAR and ZIP.
   At minimum, this should also extend to RAR, SHAR and 7z.
@@ -50,7 +50,7 @@ Do-to list for potential future major version (v1.0):
   Refer spambotsecurity.com/forum/viewtopic.php?f=59&t=3441
   Refer github.com/Maikuolan/phpMussel/issues/11
 
-Do-to list for potential future minor version (v0.9):
+To-do list for potential future minor version (v0.9):
 
 - Any significant changes to the script including completing of any of the
   aforementioned above, whereby having done so, the release doesn't yet qualify
@@ -58,7 +58,7 @@ Do-to list for potential future minor version (v0.9):
   any new major features and to the fixing of any bugs that could break normal
   functionality, but not to minor bug-fixes or to any signature updates.
 
-Do-to list for potential future sub-minor version (v0.8a):
+To-do list for potential future sub-minor version (v0.8a):
 
 - Any non-significant changes or other unrelated changes to the core code, such
   as, for example, bug-fixes, as well as any other changes deemed to be of
