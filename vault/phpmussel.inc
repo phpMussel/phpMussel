@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.8 (18th October 2015) Core Script.
+ This File: phpMussel v0.8a-BETA (25th October 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -51,8 +51,8 @@
 
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
-$phpmusselversion='phpMussel v0.8';
-$phpmusselversion_int='0.8';
+$phpmusselversion='phpMussel v0.8a-BETA';
+$phpmusselversion_int='0.8a-BETA';
 $linebreak=chr(10);
 $time=time();
 if(!isset($MusselConfig['general']['ipaddr']))$MusselConfig['general']['ipaddr']='REMOTE_ADDR';
@@ -6548,7 +6548,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 			$urlscanner['domains']=array();
 			$urlscanner['tlds']=array();
 			$urlscanner['z']=0;
-			$urlscanner['c']=preg_match_all('/["\'\(\)\[\]\{\}](data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([0-9a-z.-]{1,512})[^0-9a-z.-]/i',$str_norm_bin,$urlscanner['m']);
+			$urlscanner['c']=preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([0-9a-z.-]{1,512})[^0-9a-z.-]/i',$str_norm_bin,$urlscanner['m']);
 			for($urlscanner['i']=0;$urlscanner['c']>$urlscanner['i'];$urlscanner['i']++)
 				{
 				$urlscanner['domains_p'][$urlscanner['z']]=$urlscanner['m'][3][$urlscanner['i']];
@@ -6630,7 +6630,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 			$urlscanner['urls']=array();
 			$urlscanner['queries']=array();
 			$urlscanner['z']=0;
-			$urlscanner['c']=preg_match_all('/["\'\(\)\[\]\{\}](data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})["\'\(\)\[\]\{\}]/i',$str_norm_bin,$urlscanner['m']);
+			$urlscanner['c']=preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})(\&quot;|[;"\'\(\)\[\]\{\}])/i',$str_norm_bin,$urlscanner['m']);
 			for($urlscanner['i']=0;$urlscanner['c']>$urlscanner['i'];$urlscanner['i']++)
 				{
 				$urlscanner['urls_p'][$urlscanner['z']]=$urlscanner['m'][3][$urlscanner['i']];
@@ -8913,7 +8913,7 @@ function phpMussel_mail($body='')
 			$urlscanner['domains']=array();
 			$urlscanner['tlds']=array();
 			$urlscanner['z']=0;
-			$urlscanner['c']=preg_match_all('/["\'\(\)\[\]\{\}](data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([0-9a-z.-]{1,512})[^0-9a-z.-]/i',$norm,$urlscanner['m']);
+			$urlscanner['c']=preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([0-9a-z.-]{1,512})[^0-9a-z.-]/i',$norm,$urlscanner['m']);
 			for($urlscanner['i']=0;$urlscanner['c']>$urlscanner['i'];$urlscanner['i']++)
 				{
 				$urlscanner['domains_p'][$urlscanner['z']]=$urlscanner['m'][3][$urlscanner['i']];
@@ -8963,7 +8963,7 @@ function phpMussel_mail($body='')
 			$urlscanner['urls']=array();
 			$urlscanner['queries']=array();
 			$urlscanner['z']=0;
-			$urlscanner['c']=preg_match_all('/["\'\(\)\[\]\{\}](data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})["\'\(\)\[\]\{\}]/i',$norm,$urlscanner['m']);
+			$urlscanner['c']=preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})(\&quot;|[;"\'\(\)\[\]\{\}])/i',$norm,$urlscanner['m']);
 			for($urlscanner['i']=0;$urlscanner['c']>$urlscanner['i'];$urlscanner['i']++)
 				{
 				$urlscanner['urls_p'][$urlscanner['z']]=$urlscanner['m'][3][$urlscanner['i']];
