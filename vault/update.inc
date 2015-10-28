@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.8 (18th October 2015) Update Script.
+ This File: phpMussel v0.9-ALPHA (26th October 2015) Update Script.
  <%phpMussel%/vault/update.inc>
 
                                      ~ ~ ~
