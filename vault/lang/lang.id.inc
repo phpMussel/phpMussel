@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Indonesian Language Data (13th October 2015).
+ This File: phpMussel Indonesian Language Data (29th October 2015).
  <%phpMussel%/vault/lang/lang.id.inc>
 
 */
@@ -59,6 +59,7 @@ $MusselConfig['lang']['phpmussel_disabled']='phpMussel dinonaktifkan.';
 $MusselConfig['lang']['phpmussel_disabled_already']='phpMussel sudah dinonaktifkan.';
 $MusselConfig['lang']['phpmussel_enabled']='phpMussel diaktifkan.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel sudah diaktifkan.';
+$MusselConfig['lang']['plugins_directory_nonexistent']='Direktori plugin tidak ada!';
 $MusselConfig['lang']['recursive']='Batas kedalaman rekursi melebihi';
 $MusselConfig['lang']['refer_to_scan_kills']=' (mengacu pada '.$MusselConfig['general']['scan_kills'].' untuk rincian)';
 $MusselConfig['lang']['required_variables_not_defined']='Variabel diharuskan tidak didefinisikan: Tidak dapat dilanjutkan.';

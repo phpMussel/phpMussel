@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Japanese/日本語 Language Data (13th October 2015).
+ This File: phpMussel Japanese/日本語 Language Data (29th October 2015).
  <%phpMussel%/vault/lang/lang.ja.inc>
 
 */
@@ -59,6 +59,7 @@ $MusselConfig['lang']['phpmussel_disabled']='「phpMussel」は非アクティ�
 $MusselConfig['lang']['phpmussel_disabled_already']='「phpMussel」はすでに非アクティブです。';
 $MusselConfig['lang']['phpmussel_enabled']='「phpMussel」はアクティブです。';
 $MusselConfig['lang']['phpmussel_enabled_already']='「phpMussel」はすでにアクティブです。';
+$MusselConfig['lang']['plugins_directory_nonexistent']='プラグインディレクトリが存在しません！';
 $MusselConfig['lang']['recursive']='再帰深さリミットを超えました';
 $MusselConfig['lang']['refer_to_scan_kills']=' （詳細については、「'.$MusselConfig['general']['scan_kills'].'」を参照してください）';
 $MusselConfig['lang']['required_variables_not_defined']='必要な変数が定義されていません；続行できません。';

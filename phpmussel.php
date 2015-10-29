@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.9-ALPHA (28th October 2015) Loader file.
+ This File: phpMussel v0.9-ALPHA (29th October 2015) Loader file.
  <%phpMussel%/phpmussel.php>
 
                                      ~ ~ ~
@@ -103,10 +103,7 @@ if(!defined('phpMussel'))
 	$MusselPlugins['hookcounts']=array();
 	if($MusselConfig['general']['enable_plugins'])
 		{
-		if(!is_dir($vault.'plugins'))
-			{
-			// AAA plaintext_echo_die plugins directory doesn't exist!
-			}
+		if(!is_dir($vault.'plugins'))plaintext_echo_die('[phpMussel] '.$MusselConfig['lang']['plugins_directory_nonexistent']);
 		$MusselPlugins['tempdata']=array();
 		if($MusselPlugins['tempdata']['d']=@opendir($vault.'plugins'))while(false!==($MusselPlugins['tempdata']['f']=readdir($MusselPlugins['tempdata']['d'])))
 			{

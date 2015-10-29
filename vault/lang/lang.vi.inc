@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Vietnamese/Việt Language Data (13th October 2015).
+ This File: phpMussel Vietnamese/Việt Language Data (29th October 2015).
  <%phpMussel%/vault/lang/lang.vi.inc>
 
 */
@@ -59,6 +59,7 @@ $MusselConfig['lang']['phpmussel_disabled']='phpMussel bị vô hiệu.';
 $MusselConfig['lang']['phpmussel_disabled_already']='phpMussel đã bị tất.';
 $MusselConfig['lang']['phpmussel_enabled']='phpMussel cho phép.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel đã được cho phép.';
+$MusselConfig['lang']['plugins_directory_nonexistent']='Thư mực plugin không tồn tại!';
 $MusselConfig['lang']['recursive']='Độ sâu đệ quy bị quá giới hạn';
 $MusselConfig['lang']['refer_to_scan_kills']=' (xem '.$MusselConfig['general']['scan_kills'].' để biết thêm chi tiết)';
 $MusselConfig['lang']['required_variables_not_defined']='Các biến số cần thiết chưa có định nghĩa: Có thể không có thể tiếp tục.';

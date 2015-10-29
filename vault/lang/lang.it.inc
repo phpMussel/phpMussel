@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- Questo file è la traduzione Italiana di phpMussel (13th October 2015).
+ Questo file è la traduzione Italiana di phpMussel (29th October 2015).
  <%phpMussel%/vault/lang/lang.it.inc>
 
 */
@@ -59,6 +59,7 @@ $MusselConfig['lang']['phpmussel_disabled']='phpMussel disattivato.';
 $MusselConfig['lang']['phpmussel_disabled_already']='phpMussel già disattivato.';
 $MusselConfig['lang']['phpmussel_enabled']='phpMussel attivato.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel già attivato.';
+$MusselConfig['lang']['plugins_directory_nonexistent']='Direttorio dei plugin non esiste!';
 $MusselConfig['lang']['recursive']='Limite di profondità di controllo superato';
 $MusselConfig['lang']['refer_to_scan_kills']=' (vedi '.$MusselConfig['general']['scan_kills'].' per i dettagli)';
 $MusselConfig['lang']['required_variables_not_defined']='Variabili obbligatori non sono definite: Impossibile di continuare.';

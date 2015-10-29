@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.9-ALPHA (28th October 2015) Core Script.
+ This File: phpMussel v0.9-ALPHA (29th October 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -7240,6 +7240,35 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 			}
 		else $GLOBALS['memCache']['greylist']=phpMusselFile($GLOBALS['vault'].'greylist.csv');
 		}
+	if(isset($GLOBALS['MusselPlugins']['hookcounts']['before_scan']))if($GLOBALS['MusselPlugins']['hookcounts']['before_scan']>0)
+		{
+		$MusselPluginTempData=array();
+		reset($GLOBALS['MusselPlugins']['hooks']['before_scan']);
+		for($MusselPluginTempData['i']=0;$MusselPluginTempData['i']<$GLOBALS['MusselPlugins']['hookcounts']['before_scan'];$MusselPluginTempData['i']++)
+			{
+			$MusselPluginTempData['k']=key($GLOBALS['MusselPlugins']['hooks']['before_scan']);
+			if(!is_array($GLOBALS['MusselPlugins']['hooks']['before_scan'][$MusselPluginTempData['k']]))$GLOBALS['MusselPlugins']['hooks']['before_scan'][$MusselPluginTempData['k']]=array(0=>$GLOBALS['MusselPlugins']['hooks']['before_scan'][$MusselPluginTempData['k']]);
+			$MusselPluginTempData['kc']=count($GLOBALS['MusselPlugins']['hooks']['before_scan'][$MusselPluginTempData['k']]);
+			$MusselPluginTempData['varsfeed']=array();
+			for($MusselPluginTempData['ki']=0;$MusselPluginTempData['ki']<$MusselPluginTempData['kc'];$MusselPluginTempData['ki']++)
+				{
+				$x=$GLOBALS['MusselPlugins']['hooks']['before_scan'][$MusselPluginTempData['k']][$MusselPluginTempData['ki']];
+				if($x)$MusselPluginTempData['varsfeed'][$MusselPluginTempData['ki']]=(isset($$x))?$$x:$x;
+				}
+			$MusselPluginTempData['out']=call_user_func($MusselPluginTempData['k'],$MusselPluginTempData['varsfeed']);
+			if(is_array($MusselPluginTempData['out']))
+				{
+				$MusselPluginTempData['outs']=count($MusselPluginTempData['out']);
+				for($MusselPluginTempData['ki']=0;$MusselPluginTempData['ki']<$MusselPluginTempData['outs'];$MusselPluginTempData['ki']++)
+					{
+					$x=key($MusselPluginTempData['out']);
+					$$x=$MusselPluginTempData['out'][$x];
+					next($x);
+					}
+				}
+			next($GLOBALS['MusselPlugins']['hooks']['before_scan']);
+			}
+		}
 	$d=@is_file($f);
 	$fnCRC=@hash('crc32b',$ofn);
 	if(!$d||!$f)return (!$n)?0:$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' (FN: '.$fnCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['invalid_file'].'!'.$GLOBALS['linebreak'];
@@ -8508,6 +8537,35 @@ function phpMussel($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 	if(!$ofn)$ofn=$f;
 	if($GLOBALS['MusselConfig']['general']['scan_log']&&$n)$s=date('r').' '.$GLOBALS['MusselConfig']['lang']['started'].'.'.$GLOBALS['linebreak'];
 	$r=phpMusselR($f,$n,$zz,$dpt,$ofn);
+	if(isset($GLOBALS['MusselPlugins']['hookcounts']['after_scan']))if($GLOBALS['MusselPlugins']['hookcounts']['after_scan']>0)
+		{
+		$MusselPluginTempData=array();
+		reset($GLOBALS['MusselPlugins']['hooks']['after_scan']);
+		for($MusselPluginTempData['i']=0;$MusselPluginTempData['i']<$GLOBALS['MusselPlugins']['hookcounts']['after_scan'];$MusselPluginTempData['i']++)
+			{
+			$MusselPluginTempData['k']=key($GLOBALS['MusselPlugins']['hooks']['after_scan']);
+			if(!is_array($GLOBALS['MusselPlugins']['hooks']['after_scan'][$MusselPluginTempData['k']]))$GLOBALS['MusselPlugins']['hooks']['after_scan'][$MusselPluginTempData['k']]=array(0=>$GLOBALS['MusselPlugins']['hooks']['after_scan'][$MusselPluginTempData['k']]);
+			$MusselPluginTempData['kc']=count($GLOBALS['MusselPlugins']['hooks']['after_scan'][$MusselPluginTempData['k']]);
+			$MusselPluginTempData['varsfeed']=array();
+			for($MusselPluginTempData['ki']=0;$MusselPluginTempData['ki']<$MusselPluginTempData['kc'];$MusselPluginTempData['ki']++)
+				{
+				$x=$GLOBALS['MusselPlugins']['hooks']['after_scan'][$MusselPluginTempData['k']][$MusselPluginTempData['ki']];
+				if($x)$MusselPluginTempData['varsfeed'][$MusselPluginTempData['ki']]=(isset($$x))?$$x:$x;
+				}
+			$MusselPluginTempData['out']=call_user_func($MusselPluginTempData['k'],$MusselPluginTempData['varsfeed']);
+			if(is_array($MusselPluginTempData['out']))
+				{
+				$MusselPluginTempData['outs']=count($MusselPluginTempData['out']);
+				for($MusselPluginTempData['ki']=0;$MusselPluginTempData['ki']<$MusselPluginTempData['outs'];$MusselPluginTempData['ki']++)
+					{
+					$x=key($MusselPluginTempData['out']);
+					$$x=$MusselPluginTempData['out'][$x];
+					next($x);
+					}
+				}
+			next($GLOBALS['MusselPlugins']['hooks']['after_scan']);
+			}
+		}
 	if($GLOBALS['MusselConfig']['general']['scan_log']&&$n&&!is_array($r))
 		{
 		$r=$s.$r.date('r').' '.$GLOBALS['MusselConfig']['lang']['finished'].'.'.$GLOBALS['linebreak'].$GLOBALS['linebreak'];
@@ -8554,6 +8612,35 @@ function phpMussel_mail($body='')
 	$hex=@bin2hex($body);
 	$hexlc=@bin2hex(strtolower($body));
 	$hexlen=strlen($hexlc);
+	if(isset($GLOBALS['MusselPlugins']['hookcounts']['before_scan_mail']))if($GLOBALS['MusselPlugins']['hookcounts']['before_scan_mail']>0)
+		{
+		$MusselPluginTempData=array();
+		reset($GLOBALS['MusselPlugins']['hooks']['before_scan_mail']);
+		for($MusselPluginTempData['i']=0;$MusselPluginTempData['i']<$GLOBALS['MusselPlugins']['hookcounts']['before_scan_mail'];$MusselPluginTempData['i']++)
+			{
+			$MusselPluginTempData['k']=key($GLOBALS['MusselPlugins']['hooks']['before_scan_mail']);
+			if(!is_array($GLOBALS['MusselPlugins']['hooks']['before_scan_mail'][$MusselPluginTempData['k']]))$GLOBALS['MusselPlugins']['hooks']['before_scan_mail'][$MusselPluginTempData['k']]=array(0=>$GLOBALS['MusselPlugins']['hooks']['before_scan_mail'][$MusselPluginTempData['k']]);
+			$MusselPluginTempData['kc']=count($GLOBALS['MusselPlugins']['hooks']['before_scan_mail'][$MusselPluginTempData['k']]);
+			$MusselPluginTempData['varsfeed']=array();
+			for($MusselPluginTempData['ki']=0;$MusselPluginTempData['ki']<$MusselPluginTempData['kc'];$MusselPluginTempData['ki']++)
+				{
+				$x=$GLOBALS['MusselPlugins']['hooks']['before_scan_mail'][$MusselPluginTempData['k']][$MusselPluginTempData['ki']];
+				if($x)$MusselPluginTempData['varsfeed'][$MusselPluginTempData['ki']]=(isset($$x))?$$x:$x;
+				}
+			$MusselPluginTempData['out']=call_user_func($MusselPluginTempData['k'],$MusselPluginTempData['varsfeed']);
+			if(is_array($MusselPluginTempData['out']))
+				{
+				$MusselPluginTempData['outs']=count($MusselPluginTempData['out']);
+				for($MusselPluginTempData['ki']=0;$MusselPluginTempData['ki']<$MusselPluginTempData['outs'];$MusselPluginTempData['ki']++)
+					{
+					$x=key($MusselPluginTempData['out']);
+					$$x=$MusselPluginTempData['out'][$x];
+					next($x);
+					}
+				}
+			next($GLOBALS['MusselPlugins']['hooks']['before_scan_mail']);
+			}
+		}
 	if($GLOBALS['MusselConfig']['signatures']['mail_clamav'])
 		{
 		while(true)
@@ -9138,6 +9225,35 @@ function phpMussel_mail($body='')
 		unset($urlscanner);
 		}
 	// AAA urlscanner functionality for phpMussel_mail() END
+	if(isset($GLOBALS['MusselPlugins']['hookcounts']['after_scan_mail']))if($GLOBALS['MusselPlugins']['hookcounts']['after_scan_mail']>0)
+		{
+		$MusselPluginTempData=array();
+		reset($GLOBALS['MusselPlugins']['hooks']['after_scan_mail']);
+		for($MusselPluginTempData['i']=0;$MusselPluginTempData['i']<$GLOBALS['MusselPlugins']['hookcounts']['after_scan_mail'];$MusselPluginTempData['i']++)
+			{
+			$MusselPluginTempData['k']=key($GLOBALS['MusselPlugins']['hooks']['after_scan_mail']);
+			if(!is_array($GLOBALS['MusselPlugins']['hooks']['after_scan_mail'][$MusselPluginTempData['k']]))$GLOBALS['MusselPlugins']['hooks']['after_scan_mail'][$MusselPluginTempData['k']]=array(0=>$GLOBALS['MusselPlugins']['hooks']['after_scan_mail'][$MusselPluginTempData['k']]);
+			$MusselPluginTempData['kc']=count($GLOBALS['MusselPlugins']['hooks']['after_scan_mail'][$MusselPluginTempData['k']]);
+			$MusselPluginTempData['varsfeed']=array();
+			for($MusselPluginTempData['ki']=0;$MusselPluginTempData['ki']<$MusselPluginTempData['kc'];$MusselPluginTempData['ki']++)
+				{
+				$x=$GLOBALS['MusselPlugins']['hooks']['after_scan_mail'][$MusselPluginTempData['k']][$MusselPluginTempData['ki']];
+				if($x)$MusselPluginTempData['varsfeed'][$MusselPluginTempData['ki']]=(isset($$x))?$$x:$x;
+				}
+			$MusselPluginTempData['out']=call_user_func($MusselPluginTempData['k'],$MusselPluginTempData['varsfeed']);
+			if(is_array($MusselPluginTempData['out']))
+				{
+				$MusselPluginTempData['outs']=count($MusselPluginTempData['out']);
+				for($MusselPluginTempData['ki']=0;$MusselPluginTempData['ki']<$MusselPluginTempData['outs'];$MusselPluginTempData['ki']++)
+					{
+					$x=key($MusselPluginTempData['out']);
+					$$x=$MusselPluginTempData['out'][$x];
+					next($x);
+					}
+				}
+			next($GLOBALS['MusselPlugins']['hooks']['after_scan_mail']);
+			}
+		}
 	return (!$f)?0:$f;
 	}
 $c=empty($_FILES)?0:count($_FILES);

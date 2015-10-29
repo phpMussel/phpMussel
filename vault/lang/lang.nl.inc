@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Dutch/Nederlandse Language Data (13th October 2015).
+ This File: phpMussel Dutch/Nederlandse Language Data (29th October 2015).
  <%phpMussel%/vault/lang/lang.nl.inc>
 
 */
@@ -59,6 +59,7 @@ $MusselConfig['lang']['phpmussel_disabled']='phpMussel uitgeschakeld.';
 $MusselConfig['lang']['phpmussel_disabled_already']='phpMussel al uitgeschakeld.';
 $MusselConfig['lang']['phpmussel_enabled']='phpMussel ingeschakeld.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel al ingeschakeld.';
+$MusselConfig['lang']['plugins_directory_nonexistent']='Plugins bestandsmap bestaat niet!';
 $MusselConfig['lang']['recursive']='Recursie dieptelimiet overschreden';
 $MusselConfig['lang']['refer_to_scan_kills']=' (verwijzen naar '.$MusselConfig['general']['scan_kills'].' voor meer informatie)';
 $MusselConfig['lang']['required_variables_not_defined']='Vereiste variabelen zijn niet gedefinieerd: Kan niet doorgaan.';

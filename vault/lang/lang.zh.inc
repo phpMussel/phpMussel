@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Chinese (Simplified) / 中文（简体） Language Data (13th October 2015).
+ This File: phpMussel Chinese (Simplified) / 中文（简体） Language Data (29th October 2015).
  <%phpMussel%/vault/lang/lang.zh.inc>
 
 */
@@ -59,6 +59,7 @@ $MusselConfig['lang']['phpmussel_disabled']='phpMussel关闭。';
 $MusselConfig['lang']['phpmussel_disabled_already']='phpMussel已关闭。';
 $MusselConfig['lang']['phpmussel_enabled']='phpMussel激活。';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel已激活。';
+$MusselConfig['lang']['plugins_directory_nonexistent']='插件文件夹不存在！';
 $MusselConfig['lang']['recursive']='递归深度超过是限制';
 $MusselConfig['lang']['refer_to_scan_kills']=' （参考'.$MusselConfig['general']['scan_kills'].'详细信息）';
 $MusselConfig['lang']['required_variables_not_defined']='需要的变量是未定义：无法继续。';

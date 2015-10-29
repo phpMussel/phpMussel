@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Russian/Русский Language Data (13th October 2015).
+ This File: phpMussel Russian/Русский Language Data (29th October 2015).
  <%phpMussel%/vault/lang/lang.ru.inc>
 
 */
@@ -59,6 +59,7 @@ $MusselConfig['lang']['phpmussel_disabled']='phpMussel неактивен.';
 $MusselConfig['lang']['phpmussel_disabled_already']='phpMussel уже неактивен.';
 $MusselConfig['lang']['phpmussel_enabled']='phpMussel активен.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel уже активен.';
+$MusselConfig['lang']['plugins_directory_nonexistent']='Каталог Плагины не существует!';
 $MusselConfig['lang']['recursive']='Лимит глубины рекурсии превышена';
 $MusselConfig['lang']['refer_to_scan_kills']=' (сослаться на '.$MusselConfig['general']['scan_kills'].' для деталей)';
 $MusselConfig['lang']['required_variables_not_defined']='Обязательные переменные не установлены: Продолжение невозможно.';

@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel English Language Data (13th October 2015).
+ This File: phpMussel English Language Data (29th October 2015).
  <%phpMussel%/vault/lang/lang.en.inc>
 
 */
@@ -59,6 +59,7 @@ $MusselConfig['lang']['phpmussel_disabled']='phpMussel disabled.';
 $MusselConfig['lang']['phpmussel_disabled_already']='phpMussel already disabled.';
 $MusselConfig['lang']['phpmussel_enabled']='phpMussel enabled.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel already enabled.';
+$MusselConfig['lang']['plugins_directory_nonexistent']='Plugins directory doesn\'t exist!';
 $MusselConfig['lang']['recursive']='Recursion depth limit exceeded';
 $MusselConfig['lang']['refer_to_scan_kills']=' (refer to '.$MusselConfig['general']['scan_kills'].' for details)';
 $MusselConfig['lang']['required_variables_not_defined']='Required variables aren\'t defined: Can\'t continue.';
