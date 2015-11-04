@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.9-ALPHA (29th October 2015) Core Script.
+ This File: phpMussel v0.9-BETA (4th November 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -51,8 +51,8 @@
 
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
-$phpmusselversion='phpMussel v0.9-ALPHA';
-$phpmusselversion_int='0.9-ALPHA';
+$phpmusselversion='phpMussel v0.9-BETA';
+$phpmusselversion_int='0.9-BETA';
 $linebreak=chr(10);
 $time=time();
 if(!isset($MusselConfig['general']['ipaddr']))$MusselConfig['general']['ipaddr']='REMOTE_ADDR';
@@ -70,6 +70,7 @@ $inidefaults['user_agent']=@ini_get('user_agent');
 $phpmusselua=$phpmusselversion.' ('.hash('crc32b',$_SERVER['SERVER_ADDR']).'-'.hash('crc32b',$_SERVER['HTTP_HOST']).')';
 @ini_set('user_agent',$phpmusselua);
 $memCache['eof']=false;
+$phpmusselsafety="\x3c\x3f".'php die; '."\x3f\x3e";
 if(!function_exists('implode_md'))
 	{
 	function implode_md($ar,$j='',$i=0,$e=1)
@@ -8200,6 +8201,7 @@ if(strlen(mussel_php)>0&&mussel_os=='WIN'&&mussel_sapi=='cli'&&!function_exists(
 	}
 $memCache=array();
 if(!isset($MusselConfig['general']['scan_log']))$MusselConfig['general']['scan_log']='';
+if(!isset($MusselConfig['general']['scan_log_serialized']))$MusselConfig['general']['scan_log_serialized']='';
 if(!isset($MusselConfig['general']['scan_kills']))$MusselConfig['general']['scan_kills']='';
 if(!isset($MusselConfig['general']['forbid_on_block']))$MusselConfig['general']['forbid_on_block']=false;
 if(!isset($MusselConfig['general']['delete_on_sight']))$MusselConfig['general']['delete_on_sight']=false;
@@ -8312,6 +8314,35 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
 					}
 				}
 			echo phpMusselR(substr($cli_args[2],5),1,1,0,$cli_args[3]);
+			if(isset($MusselPlugins['hookcounts']['after_scan']))if($MusselPlugins['hookcounts']['after_scan']>0)
+				{
+				$MusselPlugins['tempdata']=array();
+				reset($MusselPlugins['hooks']['after_scan']);
+				for($MusselPlugins['tempdata']['i']=0;$MusselPlugins['tempdata']['i']<$MusselPlugins['hookcounts']['after_scan'];$MusselPlugins['tempdata']['i']++)
+					{
+					$MusselPlugins['tempdata']['k']=key($MusselPlugins['hooks']['after_scan']);
+					if(!is_array($MusselPlugins['hooks']['after_scan'][$MusselPlugins['tempdata']['k']]))$MusselPlugins['hooks']['after_scan'][$MusselPlugins['tempdata']['k']]=array(0=>$MusselPlugins['hooks']['after_scan'][$MusselPlugins['tempdata']['k']]);
+					$MusselPlugins['tempdata']['kc']=count($MusselPlugins['hooks']['after_scan'][$MusselPlugins['tempdata']['k']]);
+					$MusselPlugins['tempdata']['varsfeed']=array();
+					for($MusselPlugins['tempdata']['ki']=0;$MusselPlugins['tempdata']['ki']<$MusselPlugins['tempdata']['kc'];$MusselPlugins['tempdata']['ki']++)
+						{
+						$x=$MusselPlugins['hooks']['after_scan'][$MusselPlugins['tempdata']['k']][$MusselPlugins['tempdata']['ki']];
+						if($x)$MusselPlugins['tempdata']['varsfeed'][$MusselPlugins['tempdata']['ki']]=(isset($$x))?$$x:$x;
+						}
+					$MusselPlugins['tempdata']['out']=call_user_func($MusselPlugins['tempdata']['k'],$MusselPlugins['tempdata']['varsfeed']);
+					if(is_array($MusselPlugins['tempdata']['out']))
+						{
+						$MusselPlugins['tempdata']['outs']=count($MusselPlugins['tempdata']['out']);
+						for($MusselPlugins['tempdata']['ki']=0;$MusselPlugins['tempdata']['ki']<$MusselPlugins['tempdata']['outs'];$MusselPlugins['tempdata']['ki']++)
+							{
+							$x=key($MusselPlugins['tempdata']['out']);
+							$$x=$MusselPlugins['tempdata']['out'][$x];
+							next($x);
+							}
+						}
+					next($MusselPlugins['hooks']['after_scan']);
+					}
+				}
 			if($MusselConfig['general']['scan_cache_expiry'])
 				{
 				reset($HashCache);
@@ -8535,8 +8566,11 @@ function phpMussel($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 		}
 	if(!isset($GLOBALS['HashCache']))return false;
 	if(!$ofn)$ofn=$f;
-	if($GLOBALS['MusselConfig']['general']['scan_log']&&$n)$s=date('r').' '.$GLOBALS['MusselConfig']['lang']['started'].'.'.$GLOBALS['linebreak'];
+	$GLOBALS['memCache']['start_time']=time();
+	$GLOBALS['memCache']['start_time_2822']=date('r',$GLOBALS['memCache']['start_time']);
 	$r=phpMusselR($f,$n,$zz,$dpt,$ofn);
+	$GLOBALS['memCache']['end_time']=time();
+	$GLOBALS['memCache']['end_time_2822']=date('r',$GLOBALS['memCache']['end_time']);
 	if(isset($GLOBALS['MusselPlugins']['hookcounts']['after_scan']))if($GLOBALS['MusselPlugins']['hookcounts']['after_scan']>0)
 		{
 		$MusselPluginTempData=array();
@@ -8566,13 +8600,22 @@ function phpMussel($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 			next($GLOBALS['MusselPlugins']['hooks']['after_scan']);
 			}
 		}
-	if($GLOBALS['MusselConfig']['general']['scan_log']&&$n&&!is_array($r))
+	if($GLOBALS['MusselConfig']['general']['scan_log']&&$GLOBALS['xfm']&&$n&&!is_array($r))
 		{
-		$r=$s.$r.date('r').' '.$GLOBALS['MusselConfig']['lang']['finished'].'.'.$GLOBALS['linebreak'].$GLOBALS['linebreak'];
-		if(!file_exists($GLOBALS['vault'].$GLOBALS['MusselConfig']['general']['scan_log']))$r='<?php die; ?>'.$GLOBALS['linebreak'].$GLOBALS['linebreak'].$r;
+		$r=$GLOBALS['memCache']['start_time_2822'].' '.$GLOBALS['MusselConfig']['lang']['started'].'.'.$GLOBALS['linebreak'].$r.$GLOBALS['memCache']['end_time_2822'].' '.$GLOBALS['MusselConfig']['lang']['finished'].'.'.$GLOBALS['linebreak'].$GLOBALS['linebreak'];
+		if(!file_exists($GLOBALS['vault'].$GLOBALS['MusselConfig']['general']['scan_log']))$r=$GLOBALS['phpmusselsafety'].$GLOBALS['linebreak'].$GLOBALS['linebreak'].$r;
 		$xf=fopen($GLOBALS['vault'].$GLOBALS['MusselConfig']['general']['scan_log'],'a');
 		fwrite($xf,$r);
 		fclose($xf);
+		}
+	if($GLOBALS['MusselConfig']['general']['scan_log_serialized']&&$GLOBALS['xfm'])
+		{
+		$d=(!empty($GLOBALS['xfm']))?$GLOBALS['xfm']:$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'];
+		$s=array('start_time'=>$GLOBALS['memCache']['start_time'],'end_time'=>$GLOBALS['memCache']['end_time'],'origin'=>$_SERVER[$GLOBALS['MusselConfig']['general']['ipaddr']],'detections'=>$d);
+		$s=serialize($s).$GLOBALS['linebreak'];
+		$sf=fopen($GLOBALS['vault'].$GLOBALS['MusselConfig']['general']['scan_log_serialized'],'a');
+		fwrite($sf,$s);
+		fclose($sf);
 		}
 	if($GLOBALS['memCache']['eof'])
 		{
@@ -9351,7 +9394,7 @@ if($c>0&&!$GLOBALS['MusselConfig']['general']['honeypot_mode'])
 			}
 		if($MusselConfig['general']['scan_log'])
 			{
-			if(!file_exists($vault.$MusselConfig['general']['scan_log']))$s='<?php die; ?>'.$linebreak.$linebreak.$s;
+			if(!file_exists($vault.$MusselConfig['general']['scan_log']))$s=$phpmusselsafety.$linebreak.$linebreak.$s;
 			$s.='> '.$MusselConfig['lang']['upload_limit_exceeded'].'! '.$MusselConfig['lang']['scan_aborted'];
 			if($MusselConfig['general']['scan_kills'])$s.=$MusselConfig['lang']['refer_to_scan_kills'];
 			$s.=$linebreak.date('r').' '.$MusselConfig['lang']['finished'].'.'.$linebreak.$linebreak;
@@ -9446,7 +9489,7 @@ else if($c>0&&$MusselConfig['general']['honeypot_mode'])
 				}
 			}
 		}
-	if(!file_exists($vault.$MusselConfig['general']['scan_kills']))$hpd='<?php die; ?>'.$linebreak.$linebreak.$hpd;
+	if(!file_exists($vault.$MusselConfig['general']['scan_kills']))$hpd=$phpmusselsafety.$linebreak.$linebreak.$hpd;
 	$hpf=fopen($vault.$MusselConfig['general']['scan_kills'],'a');
 	fwrite($hpf,$hpd);
 	fclose($hpf);
@@ -9476,7 +9519,7 @@ if(strlen($xfm)>0)
 	if($MusselConfig['general']['scan_kills']&&strlen($xsk)>0)
 		{
 		$skd='';
-		if(!file_exists($vault.$MusselConfig['general']['scan_kills']))$skd='<?php die; ?>'.$linebreak.$linebreak;
+		if(!file_exists($vault.$MusselConfig['general']['scan_kills']))$skd=$phpmusselsafety.$linebreak.$linebreak;
 		$skd.='DATE: '.date('r').$linebreak.'IP ADDRESS: '.$_SERVER[$MusselConfig['general']['ipaddr']].$linebreak.'== SCAN RESULTS / REASONS BLOCKED =='.$linebreak.$xfm.$linebreak.'== MD5 SIGNATURE RECONSTRUCTION (FILE-HASH:FILE-SIZE:FILE-NAME) =='.$linebreak.$xsk;
 		if($xpe)$skd.='== PE SECTIONAL SIGNATURES RECONSTRUCTION (SECTION-SIZE:SECTION-HASH:FILE-NAME--SECTION-NAME) =='.$linebreak.$xpe;
 		$skd.=$linebreak.$linebreak;
@@ -9698,17 +9741,16 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&s
 			echo $linebreak.$linebreak;
 			$stl=substr($stl,strlen($cmd)+1);
 			$r='';
+			$memCache['start_time']=time();
+			$memCache['start_time_2822']=date('r',$GLOBALS['memCache']['start_time']);
 			if($MusselConfig['general']['scan_log'])
 				{
-				$s=date('r').' '.$MusselConfig['lang']['started'].'.'.$linebreak;
+				$s=$memCache['start_time_2822'].' '.$MusselConfig['lang']['started'].'.'.$linebreak;
 				echo $s;
 				}
 			if(@is_dir($stl))
 				{
-				if(!$d=@scandir($stl))
-					{
-					if(!$out)$out='> '.$MusselConfig['lang']['failed_to_access'].'"'.$stl.'".'.$linebreak;
-					}
+				if(!$d=@scandir($stl))$out='> '.$MusselConfig['lang']['failed_to_access'].'"'.$stl.'".'.$linebreak;
 				else
 					{
 					$c=count($d);
@@ -9739,17 +9781,29 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&s
 				echo prescan_decode($out);
 				$out='';
 				}
+			$memCache['end_time']=time();
+			$memCache['end_time_2822']=date('r',$GLOBALS['memCache']['end_time']);
 			if($MusselConfig['general']['scan_log'])
 				{
 				$r=$s.$r;
-				$s=date('r').' '.$MusselConfig['lang']['finished'].'.'.$linebreak.$linebreak;
+				$s=$memCache['end_time_2822'].' '.$MusselConfig['lang']['finished'].'.'.$linebreak.$linebreak;
 				echo $s;
-				$r=$r.$s;
-				if(!file_exists($vault.$MusselConfig['general']['scan_log']))$r='<?php die; ?>'.$linebreak.$linebreak.$r;
+				$r.=$s;
+				if(!file_exists($vault.$MusselConfig['general']['scan_log']))$r=$phpmusselsafety.$linebreak.$linebreak.$r;
 				$xf=fopen($vault.$MusselConfig['general']['scan_log'],'a');
 				fwrite($xf,$r);
 				fclose($xf);
 				}
+			if($MusselConfig['general']['scan_log_serialized'])
+				{
+				$d=(!empty($xfm))?$xfm:$MusselConfig['lang']['scan_no_problems_found'];
+				$s=array('start_time'=>$memCache['start_time'],'end_time'=>$memCache['end_time'],'origin'=>$_SERVER[$MusselConfig['general']['ipaddr']],'detections'=>$d);
+				$s=serialize($s).$linebreak;
+				$sf=fopen($vault.$MusselConfig['general']['scan_log_serialized'],'a');
+				fwrite($sf,$s);
+				fclose($sf);
+				}
+			$r='';
 			}
 		if($cmd=='update'||$cmd=='u')
 			{
@@ -9806,7 +9860,7 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&s
 @ini_set('default_charset',$inidefaults['default_charset']);
 @ini_set('pcre.backtrack_limit',$inidefaults['backtrack_limit']);
 @ini_set('display_errors',$inidefaults['display_errors']);
-if($MusselConfig['general']['cleanup'])unset($cli_args,$r,$xpe,$xsk,$xfm,$k,$i,$c,$memCache,$phpmusselua,$inidefaults,$linebreak,$time,$phpmusselversion,$phpmusselversion_int);
+if($MusselConfig['general']['cleanup'])unset($cli_args,$r,$xpe,$xsk,$xfm,$k,$i,$c,$memCache,$phpmusselsafety,$phpmusselua,$inidefaults,$linebreak,$time,$phpmusselversion,$phpmusselversion_int);
 else $memCache['eof']=true;
 
 ?>
