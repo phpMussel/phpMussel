@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.9-BETA (4th November 2015) Core Script.
+ This File: phpMussel v0.9-BETA (5th November 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -4762,7 +4762,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
 		}
 	if($GLOBALS['MusselConfig']['attack_specific']['chameleon_from_php'])
 		{
-		if(!(substr_count(',cvd,inc,phar,pzp,tpl,txt,tzt,',','.$xt.',')>0||substr_count(',php*,',','.$xts.',')>0||substr_count(',php*,',','.$gzxts.',')>0||substr_count(','.$GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions_wc'].',',','.$xts.',')>0||substr_count(','.$GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions_wc'].',',','.$gzxts.',')>0||substr_count(','.$GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions'].',',','.$xt.',')>0||substr_count(','.$GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions'].',',','.$gzxt.',')>0))
+		if(!(substr_count(',cvd,inc,md,phar,pzp,tpl,txt,tzt,',','.$xt.',')>0||substr_count(',php*,',','.$xts.',')>0||substr_count(',php*,',','.$gzxts.',')>0||substr_count(','.$GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions_wc'].',',','.$xts.',')>0||substr_count(','.$GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions_wc'].',',','.$gzxts.',')>0||substr_count(','.$GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions'].',',','.$xt.',')>0||substr_count(','.$GLOBALS['MusselConfig']['attack_specific']['archive_file_extensions'].',',','.$gzxt.',')>0))
 			{
 			if(substr_count($str_norm,'3c3f706870')>0)
 				{
@@ -8289,7 +8289,7 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
 	{
 	if($cli_args[1]=='cli_win_scan')
 		{
-		$cmd=@strtolower((substr_count($cli_args[2],' '))?substrbf($cli_args[2],' '):$cli_args[2]);
+		$cmd=strtolower((substr_count($cli_args[2],' '))?substrbf($cli_args[2],' '):$cli_args[2]);
 		if($cmd=='scan')
 			{
 			if($MusselConfig['general']['scan_cache_expiry'])
@@ -8313,7 +8313,7 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
 					unset($HashCacheN);
 					}
 				}
-			echo phpMusselR(substr($cli_args[2],5),1,1,0,$cli_args[3]);
+			echo phpMusselR(substr($cli_args[2],5),true,true,0,$cli_args[3]);
 			if(isset($MusselPlugins['hookcounts']['after_scan']))if($MusselPlugins['hookcounts']['after_scan']>0)
 				{
 				$MusselPlugins['tempdata']=array();
@@ -9740,14 +9740,11 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&s
 			{
 			echo $linebreak.$linebreak;
 			$stl=substr($stl,strlen($cmd)+1);
-			$r='';
+			$out=$r='';
 			$memCache['start_time']=time();
-			$memCache['start_time_2822']=date('r',$GLOBALS['memCache']['start_time']);
-			if($MusselConfig['general']['scan_log'])
-				{
-				$s=$memCache['start_time_2822'].' '.$MusselConfig['lang']['started'].'.'.$linebreak;
-				echo $s;
-				}
+			$memCache['start_time_2822']=date('r',$memCache['start_time']);
+			$s=$memCache['start_time_2822'].' '.$MusselConfig['lang']['started'].'.'.$linebreak;
+			echo $s;
 			if(@is_dir($stl))
 				{
 				if(!$d=@scandir($stl))$out='> '.$MusselConfig['lang']['failed_to_access'].'"'.$stl.'".'.$linebreak;
@@ -9782,26 +9779,24 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&s
 				$out='';
 				}
 			$memCache['end_time']=time();
-			$memCache['end_time_2822']=date('r',$GLOBALS['memCache']['end_time']);
+			$memCache['end_time_2822']=date('r',$memCache['end_time']);
+			if($MusselConfig['general']['scan_log_serialized'])
+				{
+				$s=serialize(array('start_time'=>$memCache['start_time'],'end_time'=>$memCache['end_time'],'origin'=>'CLI','detections'=>$r)).$linebreak;
+				$sf=fopen($vault.$MusselConfig['general']['scan_log_serialized'],'a');
+				fwrite($sf,$s);
+				fclose($sf);
+				}
+			$r=$s.$r;
+			$s=$memCache['end_time_2822'].' '.$MusselConfig['lang']['finished'].'.'.$linebreak.$linebreak;
+			echo $s;
+			$r.=$s;
 			if($MusselConfig['general']['scan_log'])
 				{
-				$r=$s.$r;
-				$s=$memCache['end_time_2822'].' '.$MusselConfig['lang']['finished'].'.'.$linebreak.$linebreak;
-				echo $s;
-				$r.=$s;
 				if(!file_exists($vault.$MusselConfig['general']['scan_log']))$r=$phpmusselsafety.$linebreak.$linebreak.$r;
 				$xf=fopen($vault.$MusselConfig['general']['scan_log'],'a');
 				fwrite($xf,$r);
 				fclose($xf);
-				}
-			if($MusselConfig['general']['scan_log_serialized'])
-				{
-				$d=(!empty($xfm))?$xfm:$MusselConfig['lang']['scan_no_problems_found'];
-				$s=array('start_time'=>$memCache['start_time'],'end_time'=>$memCache['end_time'],'origin'=>$_SERVER[$MusselConfig['general']['ipaddr']],'detections'=>$d);
-				$s=serialize($s).$linebreak;
-				$sf=fopen($vault.$MusselConfig['general']['scan_log_serialized'],'a');
-				fwrite($sf,$s);
-				fclose($sf);
 				}
 			$r='';
 			}

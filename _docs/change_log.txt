@@ -73,9 +73,40 @@ Anything less than sub-minor:
 
 === Changes made since last versioned release ===
 
-(none)
+- [2015.10.28; NEW FEATURE; Maikuolan]: A plugin system has been built and
+  integrated into phpMussel, so, as of now, phpMussel supports plugins! This
+  means that it's now possible to add certain types of functionality to
+  phpMussel without the need to edit the core script or any default files.
+  Refer github.com/Maikuolan/phpMussel/issues/23
+  Refer spambotsecurity.com/forum/viewtopic.php?f=57&t=3648
+  Also, if you're interested in developing plugins for phpMussel, a plugin
+  boilerplate including descriptions of the hooks that currently exist with
+  instructions included for how to use them has been created and can be found
+  and downloaded from github.com/Maikuolan/phpMussel-plugin-boilerplate
 
-=== Version/Release 0.8 (Previous Release: 0.7a) ===
+- [2015.11.04; Sub-minor code change; Maikuolan]: Added some additional hooks
+  to the core script for the plugin system.
+
+- [2015.11.04; NEW FEATURE; Maikuolan]: Added support for a new type of logfile
+  for phpMussel scan results: Serialised scan results! So, as of now, phpMussel
+  can record and store scan results in a serialised format (this may
+  potentially become a requirement for some certain future plugins). Note,
+  however, that although serialised logging seems to work correctly for normal
+  file uploads, there are some problems with serialised logging in CLI mode at
+  this time. I intend to resolve these problems very soon, but, serialised
+  logging may seem a little weird at the moment if you use it in CLI mode.
+  Refer github.com/Maikuolan/phpMussel/issues/54
+
+- [2015.11.05; Bug-fix; Maikuolan]: Found and fixed a bug whereby the starting
+  and finishing time of scans performed in CLI mode under Windows required
+  "scan_log" to be enabled in order to display correctly.
+
+- [2015.11.05; Sub-minor code change; Maikuolan]: Added "MD" to the list of
+  file extensions ignored by the in-built PHP chameleon attack detection code
+  in order to avoid false positives occurring as a result of scanning
+  documentation and other similar such files.
+
+=== Version/Release 0.8 (Previous Release: 0.7a; Next: 0.9) ===
 MINOR RELEASE; Updated to the latest signatures set (55+20975+8).
 
 - [2015.08.20; Sub-minor code change; Maikuolan]: Added one new "shorthand"
