@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel French/Français Language Data (13th October 2015).
+ This File: phpMussel French/Français Language Data (6th November 2015).
  <%phpMussel%/vault/lang/lang.fr.inc>
 
 */
@@ -59,10 +59,10 @@ $MusselConfig['lang']['phpmussel_disabled']='phpMussel désactivé.';
 $MusselConfig['lang']['phpmussel_disabled_already']='phpMussel déjà désactivé.';
 $MusselConfig['lang']['phpmussel_enabled']='phpMussel activé.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel déjà activé.';
+$MusselConfig['lang']['plugins_directory_nonexistent']='Répertoire plugins n\'existe pas!';
 $MusselConfig['lang']['recursive']='Recursion limite de profondeur dépassé';
-$MusselConfig['lang']['refer_to_scan_kills']=' (reportez-vous à '.$MusselConfig['general']['scan_kills'].' pour détails)';
 $MusselConfig['lang']['required_variables_not_defined']='Variables requises ne sont pas définies: Ne pouvez pas continuer.';
-$MusselConfig['lang']['scan_aborted']='Analyse avorté';
+$MusselConfig['lang']['scan_aborted']='Analyse avorté!';
 $MusselConfig['lang']['scan_chameleon']='{x} caméléon attaque détecté';
 $MusselConfig['lang']['scan_checking']='Vérification';
 $MusselConfig['lang']['scan_checking_contents']='Succès! Procédant à vérifier le contenu.';
@@ -124,5 +124,9 @@ $MusselConfig['lang']['upload_error_8']='PHP mauvaise configuration détecté! S
 $MusselConfig['lang']['upload_limit_exceeded']='Téléchargement limite dépassé';
 $MusselConfig['lang']['wrong_password']='Mauvais mot de passe; Action rejetée.';
 $MusselConfig['lang']['x_does_not_exist']='n\'existe pas';
+$MusselConfig['lang']['_exclamation']='! ';
+$MusselConfig['lang']['_exclamation_final']='!';
+$MusselConfig['lang']['_fullstop']='. ';
+$MusselConfig['lang']['_fullstop_final']='.';
 
 ?>

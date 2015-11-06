@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Chinese (Simplified) / 中文（简体） Language Data (13th October 2015).
+ This File: phpMussel Chinese (Simplified) / 中文（简体） Language Data (6th November 2015).
  <%phpMussel%/vault/lang/lang.zh.inc>
 
 */
@@ -59,10 +59,10 @@ $MusselConfig['lang']['phpmussel_disabled']='phpMussel关闭。';
 $MusselConfig['lang']['phpmussel_disabled_already']='phpMussel已关闭。';
 $MusselConfig['lang']['phpmussel_enabled']='phpMussel激活。';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel已激活。';
+$MusselConfig['lang']['plugins_directory_nonexistent']='插件文件夹不存在！';
 $MusselConfig['lang']['recursive']='递归深度超过是限制';
-$MusselConfig['lang']['refer_to_scan_kills']=' （参考'.$MusselConfig['general']['scan_kills'].'详细信息）';
 $MusselConfig['lang']['required_variables_not_defined']='需要的变量是未定义：无法继续。';
-$MusselConfig['lang']['scan_aborted']='扫描中止';
+$MusselConfig['lang']['scan_aborted']='扫描中止！';
 $MusselConfig['lang']['scan_chameleon']='{x}变色龙攻击检测';
 $MusselConfig['lang']['scan_checking']='检查';
 $MusselConfig['lang']['scan_checking_contents']='成功了！在进行检查的内容。';
@@ -124,5 +124,9 @@ $MusselConfig['lang']['upload_error_8']='PHP配置错误是检测！请联系网
 $MusselConfig['lang']['upload_limit_exceeded']='超过上传限制';
 $MusselConfig['lang']['wrong_password']='密码错误；行动拒绝。';
 $MusselConfig['lang']['x_does_not_exist']='不存在';
+$MusselConfig['lang']['_exclamation']='！';
+$MusselConfig['lang']['_exclamation_final']='！';
+$MusselConfig['lang']['_fullstop']='。';
+$MusselConfig['lang']['_fullstop_final']='。';
 
 ?>

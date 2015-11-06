@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Japanese/日本語 Language Data (13th October 2015).
+ This File: phpMussel Japanese/日本語 Language Data (6th November 2015).
  <%phpMussel%/vault/lang/lang.ja.inc>
 
 */
@@ -59,10 +59,10 @@ $MusselConfig['lang']['phpmussel_disabled']='「phpMussel」は非アクティ�
 $MusselConfig['lang']['phpmussel_disabled_already']='「phpMussel」はすでに非アクティブです。';
 $MusselConfig['lang']['phpmussel_enabled']='「phpMussel」はアクティブです。';
 $MusselConfig['lang']['phpmussel_enabled_already']='「phpMussel」はすでにアクティブです。';
+$MusselConfig['lang']['plugins_directory_nonexistent']='プラグインディレクトリが存在しません！';
 $MusselConfig['lang']['recursive']='再帰深さリミットを超えました';
-$MusselConfig['lang']['refer_to_scan_kills']=' （詳細については、「'.$MusselConfig['general']['scan_kills'].'」を参照してください）';
 $MusselConfig['lang']['required_variables_not_defined']='必要な変数が定義されていません；続行できません。';
-$MusselConfig['lang']['scan_aborted']='スキャンは中断されました';
+$MusselConfig['lang']['scan_aborted']='スキャンは中断されました！';
 $MusselConfig['lang']['scan_chameleon']='検出された{x}カメレオン攻撃';
 $MusselConfig['lang']['scan_checking']='検証は進行中';
 $MusselConfig['lang']['scan_checking_contents']='成功！内容を確認します。';
@@ -124,5 +124,9 @@ $MusselConfig['lang']['upload_error_8']='PHPミスコンフィギュレーショ
 $MusselConfig['lang']['upload_limit_exceeded']='アップロードリミットを超えました';
 $MusselConfig['lang']['wrong_password']='間違ったパスワード; アクション拒否されました。';
 $MusselConfig['lang']['x_does_not_exist']='が存在しません';
+$MusselConfig['lang']['_exclamation']='！';
+$MusselConfig['lang']['_exclamation_final']='！';
+$MusselConfig['lang']['_fullstop']='。';
+$MusselConfig['lang']['_fullstop_final']='。';
 
 ?>

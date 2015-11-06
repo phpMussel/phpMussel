@@ -216,7 +216,7 @@
 2X-00:[ _.][HhPpRrXx][AaDdMmTt][FfLlMmRr]\.[Ee][Xx][Ee]
 2Darkmoon.C-1:^lodcst\.exe
 2Darkmoon.D:^([0-9]{4}|[Cc][Bb][Ee][Dd][Ee])\.[Ee][Xx][Ee]
-2HackDefender-0A:^ro0\.exe
+2HackDefender-01:^ro0\.exe
 2Rustock-24:^uiops\.exe
 2 ActivityLogger-1:^(actik|akeylogger|alogcfg|alogger|alsys)\.exe
 2 ActualSpy-0:^[Aa]ctual[Ss]py\.exe
@@ -256,10 +256,10 @@
 2 X-09:^[Uu][Pp][Xx]\.[Pp][Hh][Pp]
 2 /X-00:^[Hh]3[Xx]\.[Pp][Hh][Pp]$
 >FN>\.[Pp][^Hh]>265
-2HacDef.EQ-0:^msdndr\.pif
 2RTKT_DUQU.A-0B:^[Cc][Mm][Ii]44(32|64)\.[Pp][Nn][Ff]
-2HackDefender-1:^msdvdr\.pif
+2HackDefender-00:^msd[nv]dr\.pif
 2Rustock-26:^pcximg\.pif
+2Sality-00:^vumdhc\.pif
 2-X-00:equiangle\.pl
 2-X-01:([Mm][Ii][Ss][Tt][Ll][Ee][Ss]{2}|[Ii][Nn][Dd][Ii][Vv][Ii][Ss][Ii][Oo][Nn])\.[Pp][Ll]
 2-WHMCS:^whmcs\.py

@@ -9,9 +9,9 @@ RELEASE OF PHPMUSSEL AGAINST THE PREVIOUS MOST RECENT RELEASE OF PHPMUSSEL.
 
 TALLY BY SIGNATURE TYPE.
  This describes the total number of signatures by their respective signature
- type. Numbers are calculated simply by counting the number of lines that exist
+ types. Numbers are calculated simply by counting the number of lines that exist
  in each respective signature CVD file, and in consideration of things like
- comments and the likes, these numbers may not necessarily always be precise.
+ comments and such, these numbers mightn't necessarily always be precise.
 
 Normalised ASCII Signatures (REGEX only)     ClamAV    Non-ClamAV         Total
 - Total quantity:                                 6            87            93
@@ -169,12 +169,12 @@ TALLY BY SIGNATURE VENDOR/SOURCE.                           Total     Net-Shift
  calculated via line counts of the signature files (CVDs), aren't inclusive of
  hardcoded protections or checks, and mightn't necessarily always be 100%
  precise. Additionally, in consideration of API lookup capabilities, hardcoded
- protections, the varying effiencies of different types of signatures as well
- as the varying effiencies between individual signatures, varying specific
+ protections, the varying efficiencies of different types of signatures as well
+ as the varying efficiencies between individual signatures, varying specific
  phpMussel configurations, setups and the varying needs of different users,
  these numbers aren't necessarily reflective or indicative of the overall value
- of any specific contributor. These numbers of specifically for the benefit of
- those interested in numbers such as these.
+ of any specific contributor. These numbers are specifically and only for the
+ benefit of those interested in the actual specific numbers.
 
 ClamAV <http://www.clamav.net/>                           441,489       -28,680
 phpMussel <https://github.com/Maikuolan/phpMussel>         37,473       +25,360

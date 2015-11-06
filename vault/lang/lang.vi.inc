@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Vietnamese/Việt Language Data (13th October 2015).
+ This File: phpMussel Vietnamese/Việt Language Data (6th November 2015).
  <%phpMussel%/vault/lang/lang.vi.inc>
 
 */
@@ -59,10 +59,10 @@ $MusselConfig['lang']['phpmussel_disabled']='phpMussel bị vô hiệu.';
 $MusselConfig['lang']['phpmussel_disabled_already']='phpMussel đã bị tất.';
 $MusselConfig['lang']['phpmussel_enabled']='phpMussel cho phép.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel đã được cho phép.';
+$MusselConfig['lang']['plugins_directory_nonexistent']='Thư mực plugin không tồn tại!';
 $MusselConfig['lang']['recursive']='Độ sâu đệ quy bị quá giới hạn';
-$MusselConfig['lang']['refer_to_scan_kills']=' (xem '.$MusselConfig['general']['scan_kills'].' để biết thêm chi tiết)';
 $MusselConfig['lang']['required_variables_not_defined']='Các biến số cần thiết chưa có định nghĩa: Có thể không có thể tiếp tục.';
-$MusselConfig['lang']['scan_aborted']='Hủy bỏ quét';
+$MusselConfig['lang']['scan_aborted']='Hủy bỏ quét!';
 $MusselConfig['lang']['scan_chameleon']='{x} tấn công tắc kè hoa được phát hiện';
 $MusselConfig['lang']['scan_checking']='Đang kiểm tra';
 $MusselConfig['lang']['scan_checking_contents']='Thành công! Tiến hành sự kiểm tra nội dung.';
@@ -124,5 +124,9 @@ $MusselConfig['lang']['upload_error_8']='Phát hiện PHP sai! Xin vui lòng li�
 $MusselConfig['lang']['upload_limit_exceeded']='Đã quá giới hạn tải lên';
 $MusselConfig['lang']['wrong_password']='Mật khẩu sai; Hành động bị từ chối.';
 $MusselConfig['lang']['x_does_not_exist']='không tồn tại';
+$MusselConfig['lang']['_exclamation']='! ';
+$MusselConfig['lang']['_exclamation_final']='!';
+$MusselConfig['lang']['_fullstop']='. ';
+$MusselConfig['lang']['_fullstop_final']='.';
 
 ?>
