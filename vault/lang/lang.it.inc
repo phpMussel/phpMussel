@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- Questo file è la traduzione Italiana di phpMussel (29th October 2015).
+ Questo file è la traduzione Italiana di phpMussel (6th November 2015).
  <%phpMussel%/vault/lang/lang.it.inc>
 
 */
@@ -61,9 +61,8 @@ $MusselConfig['lang']['phpmussel_enabled']='phpMussel attivato.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel già attivato.';
 $MusselConfig['lang']['plugins_directory_nonexistent']='Direttorio dei plugin non esiste!';
 $MusselConfig['lang']['recursive']='Limite di profondità di controllo superato';
-$MusselConfig['lang']['refer_to_scan_kills']=' (vedi '.$MusselConfig['general']['scan_kills'].' per i dettagli)';
 $MusselConfig['lang']['required_variables_not_defined']='Variabili obbligatori non sono definite: Impossibile di continuare.';
-$MusselConfig['lang']['scan_aborted']='Controllo interrotto';
+$MusselConfig['lang']['scan_aborted']='Controllo interrotto!';
 $MusselConfig['lang']['scan_chameleon']='Rilevato attacco camaleonte {x}';
 $MusselConfig['lang']['scan_checking']='Verifica';
 $MusselConfig['lang']['scan_checking_contents']='Successo! Procedo a verificare i contenuti.';
@@ -125,5 +124,9 @@ $MusselConfig['lang']['upload_error_8']='Rilevata una malconfigurazione di PHP! 
 $MusselConfig['lang']['upload_limit_exceeded']='Limite di caricamento superato';
 $MusselConfig['lang']['wrong_password']='Password sbagliata; azione negata.';
 $MusselConfig['lang']['x_does_not_exist']='non esiste';
+$MusselConfig['lang']['_exclamation']='! ';
+$MusselConfig['lang']['_exclamation_final']='!';
+$MusselConfig['lang']['_fullstop']='. ';
+$MusselConfig['lang']['_fullstop_final']='.';
 
 ?>

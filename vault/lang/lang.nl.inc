@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Dutch/Nederlandse Language Data (29th October 2015).
+ This File: phpMussel Dutch/Nederlandse Language Data (6th November 2015).
  <%phpMussel%/vault/lang/lang.nl.inc>
 
 */
@@ -61,9 +61,8 @@ $MusselConfig['lang']['phpmussel_enabled']='phpMussel ingeschakeld.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel al ingeschakeld.';
 $MusselConfig['lang']['plugins_directory_nonexistent']='Plugins bestandsmap bestaat niet!';
 $MusselConfig['lang']['recursive']='Recursie dieptelimiet overschreden';
-$MusselConfig['lang']['refer_to_scan_kills']=' (verwijzen naar '.$MusselConfig['general']['scan_kills'].' voor meer informatie)';
 $MusselConfig['lang']['required_variables_not_defined']='Vereiste variabelen zijn niet gedefinieerd: Kan niet doorgaan.';
-$MusselConfig['lang']['scan_aborted']='Scannen afgebroken';
+$MusselConfig['lang']['scan_aborted']='Scannen afgebroken!';
 $MusselConfig['lang']['scan_chameleon']='{x} kameleon aanval gedetecteerd';
 $MusselConfig['lang']['scan_checking']='Verifiëren';
 $MusselConfig['lang']['scan_checking_contents']='Succes! Gaan tot verifiëren de inhoud.';
@@ -125,5 +124,9 @@ $MusselConfig['lang']['upload_error_8']='PHP misconfiguratie gedetecteerd! Conta
 $MusselConfig['lang']['upload_limit_exceeded']='Uploadlimiet overschreden';
 $MusselConfig['lang']['wrong_password']='Verkeerd wachtwoord; Actie geweigerd.';
 $MusselConfig['lang']['x_does_not_exist']='niet bestaat';
+$MusselConfig['lang']['_exclamation']='! ';
+$MusselConfig['lang']['_exclamation_final']='!';
+$MusselConfig['lang']['_fullstop']='. ';
+$MusselConfig['lang']['_fullstop_final']='.';
 
 ?>

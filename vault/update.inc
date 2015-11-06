@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.9-ALPHA (26th October 2015) Update Script.
+ This File: phpMussel v0.9-BETA (6th November 2015) Update Script.
  <%phpMussel%/vault/update.inc>
 
                                      ~ ~ ~
@@ -206,10 +206,10 @@ while(true)
 		echo ($phpmusselversion['script_version']===$phpmusselversion['remote_script_version'])?$MusselConfig['lang']['update_not_available']."\n\n":$MusselConfig['lang']['update_available']."\n\n";
 		$phpmusselversion['signatures_version']=trim(substr($phpmusselversion['raw'],32,16));
 		$phpmusselversion['signatures_version_human']=explode(' ',$phpmusselversion['signatures_version']);
-		$phpmusselversion['signatures_version_human']='   ClamAV main '.$MusselConfig['lang']['update_wrd1'].' #'.$phpmusselversion['signatures_version_human'][0].",\n   ClamAV daily ".$MusselConfig['lang']['update_wrd1'].' #'.$phpmusselversion['signatures_version_human'][1].",\n   Non-ClamAV/phpMussel ".$MusselConfig['lang']['update_wrd1'].' #'.$phpmusselversion['signatures_version_human'][2].'.';
+		$phpmusselversion['signatures_version_human']='   ClamAV main '.$MusselConfig['lang']['update_wrd1'].' #'.$phpmusselversion['signatures_version_human'][0].",\n   ClamAV daily ".$MusselConfig['lang']['update_wrd1'].' #'.$phpmusselversion['signatures_version_human'][1].",\n   Non-ClamAV/phpMussel ".$MusselConfig['lang']['update_wrd1'].' #'.$phpmusselversion['signatures_version_human'][2].$MusselConfig['lang']['_fullstop_final'];
 		$phpmusselversion['remote_signatures_version']=trim(substr($phpmusselversion['request'],32,16));
 		$phpmusselversion['remote_signatures_version_human']=explode(' ',$phpmusselversion['remote_signatures_version']);
-		$phpmusselversion['remote_signatures_version_human']='   ClamAV main '.$MusselConfig['lang']['update_wrd1'].' #'.$phpmusselversion['remote_signatures_version_human'][0].",\n   ClamAV daily ".$MusselConfig['lang']['update_wrd1'].' #'.$phpmusselversion['remote_signatures_version_human'][1].",\n   Non-ClamAV/phpMussel ".$MusselConfig['lang']['update_wrd1'].' #'.$phpmusselversion['remote_signatures_version_human'][2].'.';
+		$phpmusselversion['remote_signatures_version_human']='   ClamAV main '.$MusselConfig['lang']['update_wrd1'].' #'.$phpmusselversion['remote_signatures_version_human'][0].",\n   ClamAV daily ".$MusselConfig['lang']['update_wrd1'].' #'.$phpmusselversion['remote_signatures_version_human'][1].",\n   Non-ClamAV/phpMussel ".$MusselConfig['lang']['update_wrd1'].' #'.$phpmusselversion['remote_signatures_version_human'][2].$MusselConfig['lang']['_fullstop_final'];
 		echo $MusselConfig['lang']['update_signatures_yours'].":\n".$phpmusselversion['signatures_version_human']."\n".$MusselConfig['lang']['update_signatures_latest'].":\n".$phpmusselversion['remote_signatures_version_human']."\n";
 		echo ($phpmusselversion['signatures_version']===$phpmusselversion['remote_signatures_version'])?$MusselConfig['lang']['update_signatures_not_available']."\n":$MusselConfig['lang']['update_signatures_available']."\n";
 		}

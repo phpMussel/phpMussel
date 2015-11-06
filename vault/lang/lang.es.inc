@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Spanish/Español Language Data (29th October 2015).
+ This File: phpMussel Spanish/Español Language Data (6th November 2015).
  <%phpMussel%/vault/lang/lang.es.inc>
 
 */
@@ -61,7 +61,6 @@ $MusselConfig['lang']['phpmussel_enabled']='phpMussel activado.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel ya está activado.';
 $MusselConfig['lang']['plugins_directory_nonexistent']='Directorio de plugins no existe!';
 $MusselConfig['lang']['recursive']='Recursión profundidad límite excedido';
-$MusselConfig['lang']['refer_to_scan_kills']=' (referir a '.$MusselConfig['general']['scan_kills'].' para más detalles)';
 $MusselConfig['lang']['required_variables_not_defined']='Variables requeridas no están definidos: No puede continuar.';
 $MusselConfig['lang']['scan_aborted']='Escaneo abortado!';
 $MusselConfig['lang']['scan_chameleon']='{x} camaleón ataque detectado';
@@ -125,5 +124,9 @@ $MusselConfig['lang']['upload_error_8']='PHP mala configuración detectado! Cont
 $MusselConfig['lang']['upload_limit_exceeded']='Subir límite excedido';
 $MusselConfig['lang']['wrong_password']='Contraseña incorrecta; Acción negada.';
 $MusselConfig['lang']['x_does_not_exist']='no existe';
+$MusselConfig['lang']['_exclamation']='! ';
+$MusselConfig['lang']['_exclamation_final']='!';
+$MusselConfig['lang']['_fullstop']='. ';
+$MusselConfig['lang']['_fullstop_final']='.';
 
 ?>

@@ -106,6 +106,17 @@ Anything less than sub-minor:
   in order to avoid false positives occurring as a result of scanning
   documentation and other similar such files.
 
+- [2015.11.06; Sub-minor code change; Maikuolan]: Cleaned up some of the code
+  of the core script [phpmussel.inc]; The order in which some certain variables
+  were defined wasn't ideal, and has been rearranged accordingly; A number of
+  internal variable names have changed (shouldn't affect compatibility in any
+  way or affect any signatures and etc) in order to improve context (where, in
+  some cases, it was lacking) and to make more sense than was previously the
+  case; Some minor optimisation done where found to be possible; Dropped one of
+  the language data entries due to no longer being required and added some new
+  entries to allow non-ascii fullstops and exclamation marks (fullwidth,
+  halfwidth, etc).
+
 === Version/Release 0.8 (Previous Release: 0.7a; Next: 0.9) ===
 MINOR RELEASE; Updated to the latest signatures set (55+20975+8).
 

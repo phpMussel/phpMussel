@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Portuguese/Português Language Data (29th October 2015).
+ This File: phpMussel Portuguese/Português Language Data (6th November 2015).
  <%phpMussel%/vault/lang/lang.pt.inc>
 
 */
@@ -61,9 +61,8 @@ $MusselConfig['lang']['phpmussel_enabled']='phpMussel ativado.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel já ativado.';
 $MusselConfig['lang']['plugins_directory_nonexistent']='Diretório de plugins não existe!';
 $MusselConfig['lang']['recursive']='Recursão profundidade limite excedido';
-$MusselConfig['lang']['refer_to_scan_kills']=' (referem a '.$MusselConfig['general']['scan_kills'].' para detalhes)';
 $MusselConfig['lang']['required_variables_not_defined']='Variáveis necessárias não estão definidas: Não pode continuar.';
-$MusselConfig['lang']['scan_aborted']='Verificação abortado';
+$MusselConfig['lang']['scan_aborted']='Verificação abortado!';
 $MusselConfig['lang']['scan_chameleon']='{x} camaleão ataque detectado';
 $MusselConfig['lang']['scan_checking']='Verificação';
 $MusselConfig['lang']['scan_checking_contents']='Sucesso! Prosseguindo para verificar o conteúdo.';
@@ -125,5 +124,9 @@ $MusselConfig['lang']['upload_error_8']='PHP mau configuração detectado! Conta
 $MusselConfig['lang']['upload_limit_exceeded']='Carregar limite excedido';
 $MusselConfig['lang']['wrong_password']='Contrasenha errada; Ação negado.';
 $MusselConfig['lang']['x_does_not_exist']='não existe';
+$MusselConfig['lang']['_exclamation']='! ';
+$MusselConfig['lang']['_exclamation_final']='!';
+$MusselConfig['lang']['_fullstop']='. ';
+$MusselConfig['lang']['_fullstop_final']='.';
 
 ?>

@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.9-ALPHA (29th October 2015) Loader file.
+ This File: phpMussel v0.9-BETA (6th November 2015) Loader file.
  <%phpMussel%/phpmussel.php>
 
                                      ~ ~ ~
@@ -143,7 +143,7 @@ if(!defined('phpMussel'))
 					echo $MusselConfig['general']['scan_log'].":\n\n".implode(file($vault.$MusselConfig['general']['scan_log']));
 					die;
 					}
-				echo $MusselConfig['general']['scan_log'].' '.$MusselConfig['lang']['x_does_not_exist'].'!';
+				echo $MusselConfig['general']['scan_log'].' '.$MusselConfig['lang']['x_does_not_exist'].$MusselConfig['lang']['_exclamation_final'];
 				die;
 				}
 			if($phpmussel=='scan_kills')
@@ -155,7 +155,7 @@ if(!defined('phpMussel'))
 					echo $MusselConfig['general']['scan_kills'].":\n\n".implode(file($vault.$MusselConfig['general']['scan_kills']));
 					die;
 					}
-				echo $MusselConfig['general']['scan_kills'].' '.$MusselConfig['lang']['x_does_not_exist'].'!';
+				echo $MusselConfig['general']['scan_kills'].' '.$MusselConfig['lang']['x_does_not_exist'].$MusselConfig['lang']['_exclamation_final'];
 				die;
 				}
 			if($phpmussel=='controls_lockout')
@@ -236,18 +236,18 @@ if(!defined('phpMussel'))
 		}
 	if(!$disable_lock)
 		{
-		if(isset($GLOBALS['MusselPlugins']['hookcounts']['before_phpmussel']))if($GLOBALS['MusselPlugins']['hookcounts']['before_phpmussel']>0)
+		if(isset($MusselPlugins['hookcounts']['before_phpmussel']))if($MusselPlugins['hookcounts']['before_phpmussel']>0)
 			{
-			reset($GLOBALS['MusselPlugins']['hooks']['before_phpmussel']);
-			for($MusselPlugins['tempdata']['i']=0;$MusselPlugins['tempdata']['i']<$GLOBALS['MusselPlugins']['hookcounts']['before_phpmussel'];$MusselPlugins['tempdata']['i']++)
+			reset($MusselPlugins['hooks']['before_phpmussel']);
+			for($MusselPlugins['tempdata']['i']=0;$MusselPlugins['tempdata']['i']<$MusselPlugins['hookcounts']['before_phpmussel'];$MusselPlugins['tempdata']['i']++)
 				{
-				$MusselPlugins['tempdata']['k']=key($GLOBALS['MusselPlugins']['hooks']['before_phpmussel']);
-				if(!is_array($GLOBALS['MusselPlugins']['hooks']['before_phpmussel'][$MusselPlugins['tempdata']['k']]))$GLOBALS['MusselPlugins']['hooks']['before_phpmussel'][$MusselPlugins['tempdata']['k']]=array(0=>$GLOBALS['MusselPlugins']['hooks']['before_phpmussel'][$MusselPlugins['tempdata']['k']]);
-				$MusselPlugins['tempdata']['kc']=count($GLOBALS['MusselPlugins']['hooks']['before_phpmussel'][$MusselPlugins['tempdata']['k']]);
+				$MusselPlugins['tempdata']['k']=key($MusselPlugins['hooks']['before_phpmussel']);
+				if(!is_array($MusselPlugins['hooks']['before_phpmussel'][$MusselPlugins['tempdata']['k']]))$MusselPlugins['hooks']['before_phpmussel'][$MusselPlugins['tempdata']['k']]=array(0=>$MusselPlugins['hooks']['before_phpmussel'][$MusselPlugins['tempdata']['k']]);
+				$MusselPlugins['tempdata']['kc']=count($MusselPlugins['hooks']['before_phpmussel'][$MusselPlugins['tempdata']['k']]);
 				$MusselPlugins['tempdata']['varsfeed']=array();
 				for($MusselPlugins['tempdata']['ki']=0;$MusselPlugins['tempdata']['ki']<$MusselPlugins['tempdata']['kc'];$MusselPlugins['tempdata']['ki']++)
 					{
-					$x=$GLOBALS['MusselPlugins']['hooks']['before_phpmussel'][$MusselPlugins['tempdata']['k']][$MusselPlugins['tempdata']['ki']];
+					$x=$MusselPlugins['hooks']['before_phpmussel'][$MusselPlugins['tempdata']['k']][$MusselPlugins['tempdata']['ki']];
 					if($x)$MusselPlugins['tempdata']['varsfeed'][$MusselPlugins['tempdata']['ki']]=(isset($$x))?$$x:$x;
 					}
 				$MusselPlugins['tempdata']['out']=call_user_func($MusselPlugins['tempdata']['k'],$MusselPlugins['tempdata']['varsfeed']);
@@ -261,24 +261,24 @@ if(!defined('phpMussel'))
 						next($x);
 						}
 					}
-				next($GLOBALS['MusselPlugins']['hooks']['before_phpmussel']);
+				next($MusselPlugins['hooks']['before_phpmussel']);
 				}
 			$MusselPlugins['tempdata']=array();
 			}
 		if(!file_exists($vault.'phpmussel.inc'))plaintext_echo_die('[phpMussel] '.$MusselConfig['lang']['core_scriptfile_missing']);
 		require $vault.'phpmussel.inc';
-		if(isset($GLOBALS['MusselPlugins']['hookcounts']['after_phpmussel']))if($GLOBALS['MusselPlugins']['hookcounts']['after_phpmussel']>0)
+		if(isset($MusselPlugins['hookcounts']['after_phpmussel']))if($MusselPlugins['hookcounts']['after_phpmussel']>0)
 			{
-			reset($GLOBALS['MusselPlugins']['hooks']['after_phpmussel']);
-			for($MusselPlugins['tempdata']['i']=0;$MusselPlugins['tempdata']['i']<$GLOBALS['MusselPlugins']['hookcounts']['after_phpmussel'];$MusselPlugins['tempdata']['i']++)
+			reset($MusselPlugins['hooks']['after_phpmussel']);
+			for($MusselPlugins['tempdata']['i']=0;$MusselPlugins['tempdata']['i']<$MusselPlugins['hookcounts']['after_phpmussel'];$MusselPlugins['tempdata']['i']++)
 				{
-				$MusselPlugins['tempdata']['k']=key($GLOBALS['MusselPlugins']['hooks']['after_phpmussel']);
-				if(!is_array($GLOBALS['MusselPlugins']['hooks']['after_phpmussel'][$MusselPlugins['tempdata']['k']]))$GLOBALS['MusselPlugins']['hooks']['after_phpmussel'][$MusselPlugins['tempdata']['k']]=array(0=>$GLOBALS['MusselPlugins']['hooks']['after_phpmussel'][$MusselPlugins['tempdata']['k']]);
-				$MusselPlugins['tempdata']['kc']=count($GLOBALS['MusselPlugins']['hooks']['after_phpmussel'][$MusselPlugins['tempdata']['k']]);
+				$MusselPlugins['tempdata']['k']=key($MusselPlugins['hooks']['after_phpmussel']);
+				if(!is_array($MusselPlugins['hooks']['after_phpmussel'][$MusselPlugins['tempdata']['k']]))$MusselPlugins['hooks']['after_phpmussel'][$MusselPlugins['tempdata']['k']]=array(0=>$MusselPlugins['hooks']['after_phpmussel'][$MusselPlugins['tempdata']['k']]);
+				$MusselPlugins['tempdata']['kc']=count($MusselPlugins['hooks']['after_phpmussel'][$MusselPlugins['tempdata']['k']]);
 				$MusselPlugins['tempdata']['varsfeed']=array();
 				for($MusselPlugins['tempdata']['ki']=0;$MusselPlugins['tempdata']['ki']<$MusselPlugins['tempdata']['kc'];$MusselPlugins['tempdata']['ki']++)
 					{
-					$x=$GLOBALS['MusselPlugins']['hooks']['after_phpmussel'][$MusselPlugins['tempdata']['k']][$MusselPlugins['tempdata']['ki']];
+					$x=$MusselPlugins['hooks']['after_phpmussel'][$MusselPlugins['tempdata']['k']][$MusselPlugins['tempdata']['ki']];
 					if($x)$MusselPlugins['tempdata']['varsfeed'][$MusselPlugins['tempdata']['ki']]=(isset($$x))?$$x:$x;
 					}
 				$MusselPlugins['tempdata']['out']=call_user_func($MusselPlugins['tempdata']['k'],$MusselPlugins['tempdata']['varsfeed']);
@@ -292,7 +292,7 @@ if(!defined('phpMussel'))
 						next($x);
 						}
 					}
-				next($GLOBALS['MusselPlugins']['hooks']['after_phpmussel']);
+				next($MusselPlugins['hooks']['after_phpmussel']);
 				}
 			$MusselPlugins['tempdata']=array();
 			}

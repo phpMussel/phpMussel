@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Russian/Русский Language Data (29th October 2015).
+ This File: phpMussel Russian/Русский Language Data (6th November 2015).
  <%phpMussel%/vault/lang/lang.ru.inc>
 
 */
@@ -61,9 +61,8 @@ $MusselConfig['lang']['phpmussel_enabled']='phpMussel активен.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel уже активен.';
 $MusselConfig['lang']['plugins_directory_nonexistent']='Каталог Плагины не существует!';
 $MusselConfig['lang']['recursive']='Лимит глубины рекурсии превышена';
-$MusselConfig['lang']['refer_to_scan_kills']=' (сослаться на '.$MusselConfig['general']['scan_kills'].' для деталей)';
 $MusselConfig['lang']['required_variables_not_defined']='Обязательные переменные не установлены: Продолжение невозможно.';
-$MusselConfig['lang']['scan_aborted']='Сканирование прерывается';
+$MusselConfig['lang']['scan_aborted']='Сканирование прерывается!';
 $MusselConfig['lang']['scan_chameleon']='Обнаружена {x} хамелеон-атака';
 $MusselConfig['lang']['scan_checking']='Проверить';
 $MusselConfig['lang']['scan_checking_contents']='Сделано! Исходная проверка содержимого.';
@@ -125,5 +124,9 @@ $MusselConfig['lang']['upload_error_8']='PHP реконфигурация обн
 $MusselConfig['lang']['upload_limit_exceeded']='Лимит загрузки превышен';
 $MusselConfig['lang']['wrong_password']='Неправильный пароль; Действие отказано.';
 $MusselConfig['lang']['x_does_not_exist']='не существует';
+$MusselConfig['lang']['_exclamation']='! ';
+$MusselConfig['lang']['_exclamation_final']='!';
+$MusselConfig['lang']['_fullstop']='. ';
+$MusselConfig['lang']['_fullstop_final']='.';
 
 ?>

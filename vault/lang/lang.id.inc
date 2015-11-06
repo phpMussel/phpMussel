@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Indonesian Language Data (29th October 2015).
+ This File: phpMussel Indonesian Language Data (6th November 2015).
  <%phpMussel%/vault/lang/lang.id.inc>
 
 */
@@ -61,9 +61,8 @@ $MusselConfig['lang']['phpmussel_enabled']='phpMussel diaktifkan.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel sudah diaktifkan.';
 $MusselConfig['lang']['plugins_directory_nonexistent']='Direktori plugin tidak ada!';
 $MusselConfig['lang']['recursive']='Batas kedalaman rekursi melebihi';
-$MusselConfig['lang']['refer_to_scan_kills']=' (mengacu pada '.$MusselConfig['general']['scan_kills'].' untuk rincian)';
 $MusselConfig['lang']['required_variables_not_defined']='Variabel diharuskan tidak didefinisikan: Tidak dapat dilanjutkan.';
-$MusselConfig['lang']['scan_aborted']='Memindai dibatalkan';
+$MusselConfig['lang']['scan_aborted']='Memindai dibatalkan!';
 $MusselConfig['lang']['scan_chameleon']='Bunglon {x} serangan terdeteksi';
 $MusselConfig['lang']['scan_checking']='Memeriksa';
 $MusselConfig['lang']['scan_checking_contents']='Sukses! Melanjutkan untuk memeriksa isi.';
@@ -125,5 +124,9 @@ $MusselConfig['lang']['upload_error_8']='PHP salah-konfigurasi terdeteksi! Silah
 $MusselConfig['lang']['upload_limit_exceeded']='Upload batas melebihi';
 $MusselConfig['lang']['wrong_password']='Password yang salah; Aksi ditolak.';
 $MusselConfig['lang']['x_does_not_exist']='tidak ada';
+$MusselConfig['lang']['_exclamation']='! ';
+$MusselConfig['lang']['_exclamation_final']='!';
+$MusselConfig['lang']['_fullstop']='. ';
+$MusselConfig['lang']['_fullstop_final']='.';
 
 ?>
