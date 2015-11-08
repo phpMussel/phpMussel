@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.9-BETA (6th November 2015) Loader file.
+ This File: phpMussel v0.9-BETA (8th November 2015) Loader file.
  <%phpMussel%/phpmussel.php>
 
                                      ~ ~ ~
@@ -82,7 +82,7 @@ if(!defined('phpMussel'))
 	if(!file_exists($vault.'lang.inc'))plaintext_echo_die('[phpMussel] Language data file missing! Please reinstall phpMussel.');
 	require $vault.'lang.inc';
 	if(!isset($MusselConfig['general']))$MusselConfig['general']=array();
-	if(!isset($MusselConfig['general']['cleanup']))$MusselConfig['general']['cleanup']=1;
+	if(!isset($MusselConfig['general']['cleanup']))$MusselConfig['general']['cleanup']=true;
 	$disable_lock=file_exists($vault.'disable.lck');
 	if(!$disable_lock)
 		{
@@ -96,7 +96,7 @@ if(!defined('phpMussel'))
 			}
 		unset($update_timer,$update_lock);
 		}
-	if(!isset($MusselConfig['general']['enable_plugins']))$MusselConfig['general']['enable_plugins']=1;
+	if(!isset($MusselConfig['general']['enable_plugins']))$MusselConfig['general']['enable_plugins']=true;
 	$x='';
 	$MusselPlugins=array();
 	$MusselPlugins['hooks']=array();
