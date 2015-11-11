@@ -117,6 +117,11 @@ Anything less than sub-minor:
   entries to allow non-ascii fullstops and exclamation marks (fullwidth,
   halfwidth, etc).
 
+- [2015.11.11; Sub-minor code change; Maikuolan]: Corrected an issue where some
+  $_POST variables were being manually defined (this should never happen) by
+  the loader [phpmussel.php], which caused some conflicts between phpMussel and
+  certain CMS.
+
 === Version/Release 0.8 (Previous Release: 0.7a; Next: 0.9) ===
 MINOR RELEASE; Updated to the latest signatures set (55+20975+8).
 

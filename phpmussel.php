@@ -118,18 +118,10 @@ if(!defined('phpMussel'))
 	if(!file_exists($vault.'controls.lck'))
 		{
 		parse_str($_SERVER['QUERY_STRING'],$query);
-		if(!isset($_POST['phpmussel']))$_POST['phpmussel']=false;
-		if(!isset($query['phpmussel']))$query['phpmussel']=false;
-		if(!$phpmussel=$_POST['phpmussel'])if(!$phpmussel=$query['phpmussel'])$phpmussel=false;
-		if(!isset($_POST['pword']))$_POST['pword']=false;
-		if(!isset($query['pword']))$query['pword']=false;
-		if(!$pword=$_POST['pword'])if(!$pword=$query['pword'])$pword=false;
-		if(!isset($_POST['logspword']))$_POST['logspword']=false;
-		if(!isset($query['logspword']))$query['logspword']=false;
-		if(!$logspword=$_POST['logspword'])if(!$logspword=$query['logspword'])$logspword=false;
-		if(!isset($_POST['musselvar']))$_POST['musselvar']=false;
-		if(!isset($query['musselvar']))$query['musselvar']=false;
-		if(!$musselvar=$_POST['musselvar'])if(!$musselvar=$query['musselvar'])$musselvar=false;
+		$phpmussel=(!empty($_POST['phpmussel']))?$_POST['phpmussel']:(!empty($query['phpmussel']))?$query['phpmussel']:'';
+		$pword=(!empty($_POST['pword']))?$_POST['pword']:(!empty($query['pword']))?$query['pword']:'';
+		$logspword=(!empty($_POST['logspword']))?$_POST['logspword']:(!empty($query['logspword']))?$query['logspword']:'';
+		$musselvar=(!empty($_POST['musselvar']))?$_POST['musselvar']:(!empty($query['musselvar']))?$query['musselvar']:'';
 		if(!isset($MusselConfig['general']['logs_password']))$MusselConfig['general']['logs_password']='';
 		if(!empty($MusselConfig['general']['logs_password'])&&!empty($phpmussel)&&!empty($logspword))
 			{
