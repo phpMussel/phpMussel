@@ -9,6 +9,7 @@
         "wiki": "https://github.com/Maikuolan/phpMussel/wiki",
         "source": "https://github.com/Maikuolan/phpMussel",
         "docs": "https://github.com/Maikuolan/phpMussel/tree/master/_docs"
+    }
     "require": {
         "php": ">=5.4.0"
     }
