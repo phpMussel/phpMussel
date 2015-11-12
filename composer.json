@@ -1,5 +1,5 @@
 {
-    "name": "Maikuolan/phpMussel",
+    "name": "maikuolan/phpmussel",
     "description": "PHP-based anti-virus anti-trojan anti-malware solution.",
     "keywords": ["anti-virus","anti-trojan","anti-malware","anti-exploit","anti-spam","antivirus","uploads","security","protection"],
     "license": "GPL-2.0+",
