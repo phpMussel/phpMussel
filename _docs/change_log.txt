@@ -1,38 +1,19 @@
 phpMussel change_log.txt
 
-== CURRENT GOALS AND FUTURE VERSIONING GUIDELINES ==
-SemVer will be used for phpMussel versioning from Version 1.0.0 and onwards.
+=== VERSIONING GUIDELINES ===
+Version 0.9.0 of phpMussel and all versions thereafter follow the SemVer
+standard for versioning (prior versions don't, but the chronological order of
+all versions and all releases should nonetheless be obvious due to all of them
+adhering to consistent alphanumeric incrementation).
+
 Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
-Versions of phpMussel prior to 1.0.0, won't be using SemVer, but can be
-interpreted via the following information.
+=== FUTURE GOALS ===
+New entries will be added to this list when new goals are created, and old
+entries will be deleted when those goals have been achieved.
 
-The reason for this is, although I like the idea of using SemVer, I hadn't
-discovered SemVer until after phpMussel was already at production stage and was
-already used in live environments, and by that point, I'd already had a system
-of my own making in use for phpMussel. This system of my own is adequately
-similar to SemVer that I believe it should be a simple and easy task to convert
-from one to the other, but I'm holding off switching until Version 1.0.0,
-because it is recommended by SemVer that anything prior to Version 1.0.0 should
-be considered pre-production stage (alpha, beta, etc) versions whereas anything
-released after reaching production stage should be versioned as 1.0.0 and
-onward, and although phpMussel is already in production stage live use, it
-hasn't yet been iterated to Version 1.0.0 (v1.0), and so, I believe v1.0 of my
-system would be the most appropriate time to switch to SemVer, versioning that
-release as "Version 1.0.0" as per SemVer standard.
-
-My system was a goal-oriented system, whereby the incremental increase was
-based upon which pre-planned goals had been achieved and upon the perceived
-importance of those goals. Not accounting for versions beyond v1.0, seeing as
-I'll be switching to SemVer at that point anyhow, nor those goals already
-completed, listed below are my current goals leading up to the switch (after
-reaching Version 1.0.0, I'll remove these paragraphs and this explanation, as
-they won't be relevant anymore after that point):
-
-To-do list for potential future major version (v1.0):
-
-- Currently supported archive formats are BZ/BZ2, GZ, LZF, TAR and ZIP.
-  At minimum, this should also extend to RAR, SHAR and 7z.
+- Currently supported archive formats are BZ/BZ2, GZ, LZF, TAR and ZIP. At
+  minimum, this should also extend to RAR, SHAR and 7z.
   Refer github.com/Maikuolan/phpMussel/issues/2
 
 - Currently, all formats for archive metadata signatures that are supported,
@@ -46,30 +27,31 @@ To-do list for potential future major version (v1.0):
 - Wish list: Certificate parsing.
   Refer github.com/Maikuolan/phpMussel/issues/4
 
-- Wish list: Establishing some sort of website.
-  Refer spambotsecurity.com/forum/viewtopic.php?f=59&t=3441
-  Refer github.com/Maikuolan/phpMussel/issues/11
+- Develop some general plugins for the phpMussel plugin system.
+  Refer github.com/Maikuolan/phpMussel/issues/23
 
-To-do list for potential future minor version (v0.9):
+- Audit all currently completed but not-yet-audited translations of the
+  phpMussel documentation and language data and work on new translations.
+  Refer github.com/Maikuolan/phpMussel/issues/3
+  Refer spambotsecurity.com/forum/viewtopic.php?f=57&t=2929
 
-- Any significant changes to the script including completing of any of the
-  aforementioned above, whereby having done so, the release doesn't yet qualify
-  as a major release. Definition of "significant" extends to the addition of
-  any new major features and to the fixing of any bugs that could break normal
-  functionality, but not to minor bug-fixes or to any signature updates.
+- Fix client language bug.
+  Refer github.com/Maikuolan/phpMussel/issues/28
 
-To-do list for potential future sub-minor version (v0.8a):
+- Get serialised logging working for CLI mode.
+  Refer github.com/Maikuolan/phpMussel/issues/54
 
-- Any non-significant changes or other unrelated changes to the core code, such
-  as, for example, bug-fixes, as well as any other changes deemed to be of
-  importance.
+- Fix non-ANSI/non-ASCII filenames in CLI mode bug.
+  Refer github.com/Maikuolan/phpMussel/issues/61
 
-Anything less than sub-minor:
+- Complete Google Safe Browsing integration.
+  Refer github.com/Maikuolan/phpMussel/issues/65
 
-- Updates to signatures released without any changes to the core code,
-  any changes deemed non-important, release candidates and anything else less
-  than sub-minor (generally used as an excuse to mainline signature updates
-  where no updates to the core script have been recently made).
+- Improve data decoding procedures.
+
+- Build plugin and extension variants of phpMussel for improved integration
+  with various CMS, forums, other website systems and etc.
+  Refer https://github.com/Maikuolan/phpMussel/issues/57
 
 === Changes made since last versioned release ===
 
@@ -122,7 +104,11 @@ Anything less than sub-minor:
   the loader [phpmussel.php], which caused some conflicts between phpMussel and
   certain CMS.
 
-=== Version/Release 0.8 (Previous Release: 0.7a; Next: 0.9) ===
+- [2015.11.14; Sub-minor code change; Maikuolan]: Added two new hooks for the
+  plugin system to the loader file [phpmussel.php]; Modified the changelog
+  header in preparation for switching to the SemVer versioning standard.
+
+=== Version/Release 0.8 (Previous Release: 0.7a; Next: 0.9.0) ===
 MINOR RELEASE; Updated to the latest signatures set (55+20975+8).
 
 - [2015.08.20; Sub-minor code change; Maikuolan]: Added one new "shorthand"

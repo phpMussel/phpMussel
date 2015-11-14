@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.9-BETA (6th November 2015) Update Script.
+ This File: phpMussel v0.9.0-BETA (14th November 2015) Update Script.
  <%phpMussel%/vault/update.inc>
 
                                      ~ ~ ~
@@ -91,15 +91,12 @@ $is_cli=@(isset($is_cli))?$is_cli:false;
 while(true)
 	{
 	$phpmusselversion=array();
-	if($is_cli)
+	if(!file_exists($vault.'update.dat'))
 		{
-		if(!file_exists($vault.'update.dat'))
-			{
-			echo ' '.$MusselConfig['lang']['update_err1'];
-			break;
-			}
+		if(!$is_cli)plaintext_echo_die('[phpMussel] '.$MusselConfig['lang']['update_err1']);
+		echo ' '.$MusselConfig['lang']['update_err1'];
+		break;
 		}
-	else if(!file_exists($vault.'update.dat'))plaintext_echo_die('[phpMussel] '.$MusselConfig['lang']['update_err1']);
 	$phpmusselversion['raw']=implode(file($vault.'update.dat'));
 	$phpmusselversion['current_time']=time();
 	$phpmusselversion['crc']=array();
@@ -121,15 +118,12 @@ while(true)
 				}
 			}
 		}
-	if($is_cli)
+	if($phpmusselversion['update_addresses_count']<1)
 		{
-		if($phpmusselversion['update_addresses_count']<1)
-			{
-			echo ' '.$MusselConfig['lang']['update_err2'];
-			break;
-			}
+		if(!$is_cli)plaintext_echo_die('[phpMussel] '.$MusselConfig['lang']['update_err2']);
+		echo ' '.$MusselConfig['lang']['update_err2'];
+		break;
 		}
-	else if($phpmusselversion['update_addresses_count']<1)plaintext_echo_die('[phpMussel] '.$MusselConfig['lang']['update_err2']);
 	$phpmusselversion['script_version']=trim(substr($phpmusselversion['raw'],16,16));
 	$phpmusselversion['first_compatible']=trim(substr($phpmusselversion['script_version'],strpos($phpmusselversion['script_version'],' ')));
 	$phpmusselversion['script_version']=trim(substr($phpmusselversion['script_version'],0,strpos($phpmusselversion['script_version'],' ')));
@@ -149,7 +143,7 @@ while(true)
 	$phpmusselversion['request_content'].='lang.inc%3A'.md5(ReadUpdateFile($vault.'lang.inc')).'%3B';
 	$phpmusselversion['request_content'].='update.inc%3A'.md5(ReadUpdateFile($vault.'update.inc')).'%3B';
 	$phpmusselversion['request_content'].='switch.dat%3A'.md5(ReadUpdateFile($vault.'switch.dat')).'%3B';
-	$phpmusselversion['langCodes']=array('de','en','es','fr','id','it','ja','nl','pt','ru','vi','zh-tw','zh');
+	$phpmusselversion['langCodes']=array('de','ar','en','es','fr','id','it','ja','nl','pt','ru','vi','zh-tw','zh');
 	$c=count($phpmusselversion['langCodes']);
 	for($i=0;$i<$c;$i++)
 		{
@@ -271,6 +265,35 @@ while(true)
 				}
 			$phpmusselversion['remote_update_instructions'][$i]='';
 			}
+		}
+	if(isset($MusselPlugins['hookcounts']['update']))if($MusselPlugins['hookcounts']['update']>0)
+		{
+		reset($MusselPlugins['hooks']['update']);
+		for($MusselPlugins['tempdata']['i']=0;$MusselPlugins['tempdata']['i']<$MusselPlugins['hookcounts']['update'];$MusselPlugins['tempdata']['i']++)
+			{
+			$MusselPlugins['tempdata']['k']=key($MusselPlugins['hooks']['update']);
+			if(!is_array($MusselPlugins['hooks']['update'][$MusselPlugins['tempdata']['k']]))$MusselPlugins['hooks']['update'][$MusselPlugins['tempdata']['k']]=array(0=>$MusselPlugins['hooks']['update'][$MusselPlugins['tempdata']['k']]);
+			$MusselPlugins['tempdata']['kc']=count($MusselPlugins['hooks']['update'][$MusselPlugins['tempdata']['k']]);
+			$MusselPlugins['tempdata']['varsfeed']=array();
+			for($MusselPlugins['tempdata']['ki']=0;$MusselPlugins['tempdata']['ki']<$MusselPlugins['tempdata']['kc'];$MusselPlugins['tempdata']['ki']++)
+				{
+				$x=$MusselPlugins['hooks']['update'][$MusselPlugins['tempdata']['k']][$MusselPlugins['tempdata']['ki']];
+				if($x)$MusselPlugins['tempdata']['varsfeed'][$MusselPlugins['tempdata']['ki']]=(isset($$x))?$$x:$x;
+				}
+			$MusselPlugins['tempdata']['out']=call_user_func($MusselPlugins['tempdata']['k'],$MusselPlugins['tempdata']['varsfeed']);
+			if(is_array($MusselPlugins['tempdata']['out']))
+				{
+				$MusselPlugins['tempdata']['outs']=count($MusselPlugins['tempdata']['out']);
+				for($MusselPlugins['tempdata']['ki']=0;$MusselPlugins['tempdata']['ki']<$MusselPlugins['tempdata']['outs'];$MusselPlugins['tempdata']['ki']++)
+					{
+					$x=key($MusselPlugins['tempdata']['out']);
+					$$x=$MusselPlugins['tempdata']['out'][$x];
+					next($x);
+					}
+				}
+			next($MusselPlugins['hooks']['update']);
+			}
+		$MusselPlugins['tempdata']=array();
 		}
 	echo $MusselConfig['lang']['update_complete'];
 	break;

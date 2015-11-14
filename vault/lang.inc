@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.9-BETA (2nd November 2015) Language Data.
+ This File: phpMussel v0.9.0 (14th November 2015) Language Data.
  <%phpMussel%/vault/lang.inc>
 
                                      ~ ~ ~
@@ -58,7 +58,7 @@ $MusselConfig['lang']=array();
 $MusselConfig['lang']['cli_ln1']="      _____  _     _  _____  _______ _     _ _______ _______ _______           \n <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >\n     |       |     | |       |  |  | |_____| ______| ______| |______ |_____    \n";
 $MusselConfig['lang']['cli_prompt']="\n\n>> ";
 if(!isset($MusselConfig['general']['lang_override']))$MusselConfig['general']['lang_override']=0;
-if(!isset($MusselConfig['lang_acceptable']))$MusselConfig['lang_acceptable']=',en,de,es,fr,id,it,ja,nl,pt,ru,vi,zh,zh-TW,';
+if(!isset($MusselConfig['lang_acceptable']))$MusselConfig['lang_acceptable']=',en,ar,de,es,fr,id,it,ja,nl,pt,ru,vi,zh,zh-TW,';
 if(!isset($_SERVER['HTTP_ACCEPT_LANGUAGE']))$_SERVER['HTTP_ACCEPT_LANGUAGE']='';
 if($MusselConfig['general']['lang_override']&&$_SERVER['HTTP_ACCEPT_LANGUAGE'])
 	{
