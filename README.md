@@ -26,6 +26,4 @@ README/Markdown: [ **[English](https://github.com/Maikuolan/phpMussel/blob/maste
 
 [\[maikuolan.github.io/phpMussel\] **Want to donate?**](http://maikuolan.github.io/phpMussel/)
 
-[![PHPPackages Rank](http://phppackages.org/p/maikuolan/phpmussel/badge/rank.svg)](http://phppackages.org/p/maikuolan/phpmussel)
-
-*This file, "README.md", last edited: 13th November 2015 (2015.11.13).*
+*This file, "README.md", last edited: 15th November 2015 (2015.11.15).*
