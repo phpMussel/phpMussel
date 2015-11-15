@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.9-BETA (9th November 2015) Core Script.
+ This File: phpMussel v0.9.0-BETA (15th November 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -51,8 +51,8 @@
 
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
-$phpmusselversion='phpMussel v0.9-BETA';
-$phpmusselversion_int='0.9-BETA';
+$phpmusselversion='phpMussel v0.9.0-BETA';
+$phpmusselversion_int='0.9.0-BETA';
 $linebreak=chr(10);
 $time=time();
 if(!isset($MusselConfig['general']['ipaddr']))$MusselConfig['general']['ipaddr']='REMOTE_ADDR';
@@ -7339,8 +7339,6 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 		$lnap.='-';
 		}
 	$lnap.='> ';
-	$ofn=@prescan_decode($ofn);
-	$ofnSafe=urlencode($ofn);
 	if(is_array($f))
 		{
 		$k=key($f);
@@ -7353,6 +7351,8 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 		if($n&&$zz)return implode_md($f);
 		return $f;
 		}
+	$ofn=@(is_array($ofn))?prescan_decode($f):prescan_decode($ofn);
+	$ofnSafe=urlencode($ofn);
 	if($d=@is_dir($f))
 		{
 		if(!$d=@scandir($f))

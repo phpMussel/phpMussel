@@ -99,14 +99,22 @@ entries will be deleted when those goals have been achieved.
   entries to allow non-ascii fullstops and exclamation marks (fullwidth,
   halfwidth, etc).
 
-- [2015.11.11; Sub-minor code change; Maikuolan]: Corrected an issue where some
-  $_POST variables were being manually defined (this should never happen) by
-  the loader [phpmussel.php], which caused some conflicts between phpMussel and
+- [2015.11.11; Bug-fix; Maikuolan]: Corrected an issue where some $_POST
+  variables were being manually defined (this should never happen!) by the
+  loader [phpmussel.php], which caused some conflicts between phpMussel and
   certain CMS.
 
 - [2015.11.14; Sub-minor code change; Maikuolan]: Added two new hooks for the
   plugin system to the loader file [phpmussel.php]; Modified the changelog
   header in preparation for switching to the SemVer versioning standard.
+
+- [2015.11.15; Sub-minor code change; Maikuolan]: Added a new hook for the
+  plugin system to the updater [update.inc].
+
+- [2015.11.15; Bug-fix; Maikuolan]: Corrected an issue where "Array" would
+  sometimes be cited as the original filename of files being uploaded (instead
+  of the actual original filenames) if those files were being uploaded
+  simultaneously and one or more of those files were blocked by phpMussel.
 
 === Version/Release 0.8 (Previous Release: 0.7a; Next: 0.9.0) ===
 MINOR RELEASE; Updated to the latest signatures set (55+20975+8).
