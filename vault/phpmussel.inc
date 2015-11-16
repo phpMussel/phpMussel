@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.9.0-BETA (15th November 2015) Core Script.
+ This File: phpMussel v0.9.0-BETA (16th November 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -7314,11 +7314,10 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 		$GLOBALS['whyflagged']=$GLOBALS['killdata']=$GLOBALS['pedata']='';
 		if($dpt===0||!isset($GLOBALS['memCache']['objects_scanned'])||!isset($GLOBALS['memCache']['detections_count'])||!isset($GLOBALS['memCache']['scan_errors']))
 			{
-			$GLOBALS['memCache']['objects_scanned']=1;
+			$GLOBALS['memCache']['objects_scanned']=0;
 			$GLOBALS['memCache']['detections_count']=0;
 			$GLOBALS['memCache']['scan_errors']=0;
 			}
-		else if($dpt>0)$GLOBALS['memCache']['objects_scanned']++;
 		}
 	else
 		{
@@ -7327,11 +7326,10 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 		if(!isset($GLOBALS['pedata']))$GLOBALS['pedata']='';
 		if(!isset($GLOBALS['memCache']['objects_scanned'])||!isset($GLOBALS['memCache']['detections_count'])||!isset($GLOBALS['memCache']['scan_errors']))
 			{
-			$GLOBALS['memCache']['objects_scanned']=1;
+			$GLOBALS['memCache']['objects_scanned']=0;
 			$GLOBALS['memCache']['detections_count']=0;
 			$GLOBALS['memCache']['scan_errors']=0;
 			}
-		else if($dpt>0)$GLOBALS['memCache']['objects_scanned']++;
 		}
 	$dpt++;
 	for($lnap='',$i=0;$i<($dpt-1);$i++)
@@ -7351,7 +7349,7 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 		if($n&&$zz)return implode_md($f);
 		return $f;
 		}
-	$ofn=@(is_array($ofn))?prescan_decode($f):prescan_decode($ofn);
+	$ofn=@prescan_decode($ofn);
 	$ofnSafe=urlencode($ofn);
 	if($d=@is_dir($f))
 		{
@@ -7373,6 +7371,7 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 		if($n&&$zz)return implode_md($d);
 		return $d;
 		}
+	$GLOBALS['memCache']['objects_scanned']++;
 	$GLOBALS['memCache']['phase']='file';
 	$GLOBALS['memCache']['container']='none';
 	$GLOBALS['memCache']['file_is_ole']=false;
@@ -9480,167 +9479,142 @@ if(!empty($HashCache))
 	}
 if($c>0)
 	{
+	reset($_FILES);
 	$memCache['start_time']=time();
-	if(!$MusselConfig['general']['honeypot_mode'])
-		{
-		if($c>$MusselConfig['files']['max_uploads']&&$MusselConfig['files']['max_uploads']>=1)
-			{
-			for($i=0;$i<$c;$i++)
-				{
-				$k=key($_FILES);
-				if($MusselConfig['compatibility']['ignore_upload_errors'])
-					{
-					if(!isset($_FILES[$k]['name'])||!isset($_FILES[$k]['tmp_name'])||!isset($_FILES[$k]['error'])||!isset($_FILES[$k]['size']))continue;
-					$killdata.='-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-					$whyflagged.=$MusselConfig['lang']['upload_limit_exceeded'].' ('.$_FILES[$k]['name'].')'.$GLOBALS['MusselConfig']['lang']['_exclamation'];
-					if($_FILES[$k]['error']>0)continue;
-					if($MusselConfig['general']['delete_on_sight'])@unlink($_FILES[$k]['tmp_name']);
-					}
-				else if(!isset($_FILES[$k]['name'])||!isset($_FILES[$k]['tmp_name'])||!isset($_FILES[$k]['error'])||!isset($_FILES[$k]['size']))
-					{
-					$killdata.='-UNAUTHORISED-UPLOAD-MISCONFIG-:?:?'.$linebreak;
-					$whyflagged.=$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig'];
-					}
-				else
-					{
-					if($_FILES[$k]['error']==1)
-						{
-						$killdata.='---------UPLOAD-ERROR-1---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['upload_error_1'];
-						if($MusselConfig['general']['delete_on_sight']&&is_uploaded_file($_FILES[$k]['tmp_name']))@unlink($_FILES[$k]['tmp_name']);
-						}
-					else if($_FILES[$k]['error']==2)
-						{
-						$killdata.='---------UPLOAD-ERROR-2---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['upload_error_2'];
-						if($MusselConfig['general']['delete_on_sight']&&is_uploaded_file($_FILES[$k]['tmp_name']))@unlink($_FILES[$k]['tmp_name']);
-						}
-					else if($_FILES[$k]['error']==3)
-						{
-						$killdata.='---------UPLOAD-ERROR-3---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['upload_error_34'];
-						}
-					else if($_FILES[$k]['error']==4)
-						{
-						$killdata.='---------UPLOAD-ERROR-4---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['upload_error_34'];
-						}
-					else if($_FILES[$k]['error']==6)
-						{
-						$killdata.='---------UPLOAD-ERROR-6---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['upload_error_6'];
-						}
-					else if($_FILES[$k]['error']==7)
-						{
-						$killdata.='---------UPLOAD-ERROR-7---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['upload_error_7'];
-						}
-					else if($_FILES[$k]['error']==8)
-						{
-						$killdata.='---------UPLOAD-ERROR-8---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['upload_error_8'];
-						}
-					else if(!is_uploaded_file($_FILES[$k]['tmp_name']))
-						{
-						$killdata.='UNAUTHORISED-FILE-UPLOAD-NO-HASH:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['scan_unauthorised_upload'].' ('.$_FILES[$k]['name'].')'.$GLOBALS['MusselConfig']['lang']['_exclamation'];
-						}
-					else
-						{
-						$killdata.='-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['upload_limit_exceeded'].' ('.$_FILES[$k]['name'].')'.$GLOBALS['MusselConfig']['lang']['_exclamation'];
-						if($MusselConfig['general']['delete_on_sight'])@unlink($_FILES[$k]['tmp_name']);
-						}
-					}
-				}
-			}
-		else
-			{
-			for($i=0;$i<$c;$i++)
-				{
-				$k=key($_FILES);
-				if($MusselConfig['compatibility']['ignore_upload_errors'])
-					{
-					if(!isset($_FILES[$k]['name'])||!isset($_FILES[$k]['tmp_name'])||!isset($_FILES[$k]['error'])||!isset($_FILES[$k]['size']))continue;
-					if($_FILES[$k]['error']>0)continue;
-					$r=phpMussel($_FILES[$k]['tmp_name'],true,true,0,$_FILES[$k]['name']);
-					}
-				else if(!isset($_FILES[$k]['name'])||!isset($_FILES[$k]['tmp_name'])||!isset($_FILES[$k]['error'])||!isset($_FILES[$k]['size']))
-					{
-					$killdata.='-UNAUTHORISED-UPLOAD-MISCONFIG-:?:?'.$linebreak;
-					$whyflagged.=$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig'];
-					}
-				else
-					{
-					if($_FILES[$k]['error']==1)
-						{
-						$killdata.='---------UPLOAD-ERROR-1---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['upload_error_1'];
-						if($MusselConfig['general']['delete_on_sight']&&is_uploaded_file($_FILES[$k]['tmp_name']))@unlink($_FILES[$k]['tmp_name']);
-						}
-					else if($_FILES[$k]['error']==2)
-						{
-						$killdata.='---------UPLOAD-ERROR-2---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['upload_error_2'];
-						if($MusselConfig['general']['delete_on_sight']&&is_uploaded_file($_FILES[$k]['tmp_name']))@unlink($_FILES[$k]['tmp_name']);
-						}
-					else if($_FILES[$k]['error']==3)
-						{
-						$killdata.='---------UPLOAD-ERROR-3---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['upload_error_3'];
-						}
-					else if($_FILES[$k]['error']==4)
-						{
-						$killdata.='---------UPLOAD-ERROR-4---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['upload_error_3'];
-						}
-					else if($_FILES[$k]['error']==6)
-						{
-						$killdata.='---------UPLOAD-ERROR-6---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['upload_error_6'];
-						}
-					else if($_FILES[$k]['error']==7)
-						{
-						$killdata.='---------UPLOAD-ERROR-7---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['upload_error_7'];
-						}
-					else if($_FILES[$k]['error']==8)
-						{
-						$killdata.='---------UPLOAD-ERROR-8---------:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['upload_error_8'];
-						}
-					else if(!is_uploaded_file($_FILES[$k]['tmp_name']))
-						{
-						$killdata.='UNAUTHORISED-FILE-UPLOAD-NO-HASH:'.$_FILES[$k]['size'].':'.$_FILES[$k]['name'].$linebreak;
-						$whyflagged.=$MusselConfig['lang']['scan_unauthorised_upload'].' ('.$_FILES[$k]['name'].')'.$GLOBALS['MusselConfig']['lang']['_exclamation'];
-						}
-					else $r=phpMussel($_FILES[$k]['tmp_name'],true,true,0,$_FILES[$k]['name']);
-					}
-				}
-			}
-		}
-	else
+	$memCache['FilesData']=array();
+	if($MusselConfig['general']['honeypot_mode'])
 		{
 		$memCache['handle']=array();
-		$memCache['handle']['qdata']='== HONEYPOT EVENT =='.$linebreak.'DATE: '.date('r').$linebreak.'IP ADDRESS: '.$_SERVER[$MusselConfig['general']['ipaddr']].$linebreak.$linebreak;
-		if($MusselConfig['general']['quarantine_key'])for($i=0;$i<$c;$i++)
+		$memCache['handle']['qdata']='== HONEYPOT EVENT =='.$linebreak.'DATE: '.date('r',$memCache['start_time']).$linebreak.'IP ADDRESS: '.$_SERVER[$MusselConfig['general']['ipaddr']].$linebreak.$linebreak;
+		}
+	for($memCache['FilesData']['i']=0;$memCache['FilesData']['i']<$c;$memCache['FilesData']['i']++)
+		{
+		$memCache['FilesData']['k']=key($_FILES);
+		if(!isset($_FILES[$memCache['FilesData']['k']]['error']))
 			{
-			$k=key($_FILES);
-			if(isset($_FILES[$k]['name'])&&isset($_FILES[$k]['tmp_name'])&&isset($_FILES[$k]['size']))
+			next($_FILES);
+			continue;
+			}
+		if(!is_array($_FILES[$memCache['FilesData']['k']]['error']))
+			{
+			$memCache['FilesData']['FileSet']=array();
+			$memCache['FilesData']['FileSet']['name']=array($_FILES[$memCache['FilesData']['k']]['name']);
+			$memCache['FilesData']['FileSet']['type']=array($_FILES[$memCache['FilesData']['k']]['type']);
+			$memCache['FilesData']['FileSet']['tmp_name']=array($_FILES[$memCache['FilesData']['k']]['tmp_name']);
+			$memCache['FilesData']['FileSet']['error']=array($_FILES[$memCache['FilesData']['k']]['error']);
+			$memCache['FilesData']['FileSet']['size']=array($_FILES[$memCache['FilesData']['k']]['size']);
+			}
+		else $memCache['FilesData']['FileSet']=$_FILES[$memCache['FilesData']['k']];
+		$memCache['FilesData']['FileSet']['c']=count($memCache['FilesData']['FileSet']['error']);
+		for($memCache['FilesData']['FileSet']['i']=0;$memCache['FilesData']['FileSet']['i']<$memCache['FilesData']['FileSet']['c'];$memCache['FilesData']['FileSet']['i']++)
+			{
+			if(empty($memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']])||empty($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]))
 				{
-				if(isset($_FILES[$k]['error']))$_FILES[$k]['error']=0;
-				if($_FILES[$k]['error']===0)if(is_uploaded_file($_FILES[$k]['tmp_name']))
+				next($_FILES);
+				continue;
+				}
+			if($MusselConfig['compatibility']['ignore_upload_errors'])
+				{
+				if(!isset($memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']])||!isset($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']])||!isset($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']])||!isset($memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']]))
 					{
-					$memCache['handle']['odata']=phpMusselFile($_FILES[$k]['tmp_name']);
-					$memCache['handle']['len']=strlen($memCache['handle']['odata']);
-					$memCache['handle']['crc']=@hash('crc32b',$memCache['handle']['odata']);
-					$memCache['handle']['qfile']=$time.'-'.md5($MusselConfig['general']['quarantine_key'].$memCache['handle']['crc'].$time);
-					if($memCache['handle']['len']>0&&$memCache['handle']['len']<($MusselConfig['general']['quarantine_max_filesize']*1024))@phpMusselQ($memCache['handle']['odata'],$MusselConfig['general']['quarantine_key'],$_SERVER[$MusselConfig['general']['ipaddr']],$memCache['handle']['qfile']);
-					if($MusselConfig['general']['delete_on_sight'])@unlink($_FILES[$k]['tmp_name']);
-					$memCache['handle']['qdata'].='TEMP FILENAME: '.$_FILES[$k]['tmp_name'].$linebreak.'FILENAME: '.urlencode($_FILES[$k]['name']).$linebreak.'FILESIZE: '.$memCache['handle']['len'].$linebreak.'MD5: '.md5($memCache['handle']['odata']).$linebreak.'QUARANTINED AS: \'/vault/quarantine/'.$memCache['handle']['qfile'].'.qfu\''.$linebreak.$linebreak;
+					next($_FILES);
+					continue;
+					}
+				if($c>$MusselConfig['files']['max_uploads']&&$MusselConfig['files']['max_uploads']>=1)
+					{
+					$killdata.='-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
+					$whyflagged.=$MusselConfig['lang']['upload_limit_exceeded'].' ('.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].')'.$GLOBALS['MusselConfig']['lang']['_exclamation'];
+					}
+				if($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]>0)
+					{
+					next($_FILES);
+					continue;
+					}
+				if($c>$MusselConfig['files']['max_uploads']&&$MusselConfig['files']['max_uploads']>=1)
+					{
+					if($MusselConfig['general']['delete_on_sight']&&is_uploaded_file($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]))@unlink($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]);
+					next($_FILES);
+					continue;
+					}
+				$r=phpMussel($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']],true,true,0,$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']]);
+				}
+			else if(!isset($memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']])||!isset($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']])||!isset($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']])||!isset($memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']]))
+				{
+				$killdata.='-UNAUTHORISED-UPLOAD-MISCONFIG-:?:?'.$linebreak;
+				$whyflagged.=$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig'];
+				}
+			else
+				{
+				if($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]===1)
+					{
+					$killdata.='---------UPLOAD-ERROR-1---------:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
+					$whyflagged.=$MusselConfig['lang']['upload_error_1'];
+					if($MusselConfig['general']['delete_on_sight']&&is_uploaded_file($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]))@unlink($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]);
+					}
+				else if($memCache['FilesData']['FileSet']['error']===2)
+					{
+					$killdata.='---------UPLOAD-ERROR-2---------:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
+					$whyflagged.=$MusselConfig['lang']['upload_error_2'];
+					if($MusselConfig['general']['delete_on_sight']&&is_uploaded_file($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]))@unlink($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]);
+					}
+				else if($memCache['FilesData']['FileSet']['error']===3)
+					{
+					$killdata.='---------UPLOAD-ERROR-3---------:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
+					$whyflagged.=$MusselConfig['lang']['upload_error_3'];
+					}
+				else if($memCache['FilesData']['FileSet']['error']===4)
+					{
+					$killdata.='---------UPLOAD-ERROR-4---------:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
+					$whyflagged.=$MusselConfig['lang']['upload_error_3'];
+					}
+				else if($memCache['FilesData']['FileSet']['error']===6)
+					{
+					$killdata.='---------UPLOAD-ERROR-6---------:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
+					$whyflagged.=$MusselConfig['lang']['upload_error_6'];
+					}
+				else if($memCache['FilesData']['FileSet']['error']===7)
+					{
+					$killdata.='---------UPLOAD-ERROR-7---------:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
+					$whyflagged.=$MusselConfig['lang']['upload_error_7'];
+					}
+				else if($memCache['FilesData']['FileSet']['error']===8)
+					{
+					$killdata.='---------UPLOAD-ERROR-8---------:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
+					$whyflagged.=$MusselConfig['lang']['upload_error_8'];
+					}
+				else if(!is_uploaded_file($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]))
+					{
+					$killdata.='UNAUTHORISED-FILE-UPLOAD-NO-HASH:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
+					$whyflagged.=$MusselConfig['lang']['scan_unauthorised_upload'].' ('.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].')'.$GLOBALS['MusselConfig']['lang']['_exclamation'];
+					}
+				else
+					{
+					if($MusselConfig['general']['honeypot_mode']&&$MusselConfig['general']['quarantine_key']&&is_uploaded_file($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]))
+						{
+						$memCache['handle']['odata']=phpMusselFile($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]);
+						$memCache['handle']['len']=strlen($memCache['handle']['odata']);
+						$memCache['handle']['crc']=@hash('crc32b',$memCache['handle']['odata']);
+						$memCache['handle']['qfile']=$time.'-'.md5($MusselConfig['general']['quarantine_key'].$memCache['handle']['crc'].$time);
+						if($memCache['handle']['len']>0&&$memCache['handle']['len']<($MusselConfig['general']['quarantine_max_filesize']*1024))@phpMusselQ($memCache['handle']['odata'],$MusselConfig['general']['quarantine_key'],$_SERVER[$MusselConfig['general']['ipaddr']],$memCache['handle']['qfile']);
+						if($MusselConfig['general']['delete_on_sight'])@unlink($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]);
+						$memCache['handle']['qdata'].='TEMP FILENAME: '.$memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']].$linebreak.'FILENAME: '.urlencode($memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']]).$linebreak.'FILESIZE: '.$memCache['handle']['len'].$linebreak.'MD5: '.md5($memCache['handle']['odata']).$linebreak.'QUARANTINED AS: \'/vault/quarantine/'.$memCache['handle']['qfile'].'.qfu\''.$linebreak.$linebreak;
+						}
+					if($c>$MusselConfig['files']['max_uploads']&&$MusselConfig['files']['max_uploads']>=1)
+						{
+						$killdata.='-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
+						$whyflagged.=$MusselConfig['lang']['upload_limit_exceeded'].' ('.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].')'.$GLOBALS['MusselConfig']['lang']['_exclamation'];
+						if($MusselConfig['general']['delete_on_sight']&&is_uploaded_file($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]))@unlink($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]);
+						next($_FILES);
+						continue;
+						}
+					$r=phpMussel($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']],true,true,0,$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']]);
 					}
 				}
 			}
+		next($_FILES);
+		}
+	if($MusselConfig['general']['honeypot_mode']&&$MusselConfig['general']['scan_kills'])
+		{
 		if(!file_exists($vault.$MusselConfig['general']['scan_kills']))$memCache['handle']['qdata']=$phpmusselsafety.$linebreak.$linebreak.$memCache['handle']['qdata'];
 		$memCache['handle']['logfile']=fopen($vault.$MusselConfig['general']['scan_kills'],'a');
 		fwrite($memCache['handle']['logfile'],$memCache['handle']['qdata']);
@@ -9665,6 +9639,9 @@ if($c>0)
 	$whyflagged=trim($whyflagged);
 	if($MusselConfig['general']['scan_log_serialized'])
 		{
+		if(!isset($memCache['objects_scanned']))$memCache['objects_scanned']=0;
+		if(!isset($memCache['detections_count']))$memCache['detections_count']=0;
+		if(!isset($memCache['scan_errors']))$memCache['scan_errors']=1;
 		$memCache['handle']=array();
 		$memCache['handle']['s']=serialize(array('start_time'=>$memCache['start_time'],'end_time'=>$memCache['end_time'],'origin'=>$_SERVER[$MusselConfig['general']['ipaddr']],'objects_scanned'=>$memCache['objects_scanned'],'detections_count'=>$memCache['detections_count'],'scan_errors'=>$memCache['scan_errors'],'detections'=>$whyflagged)).$linebreak;
 		$memCache['handle']['f']=fopen($vault.$MusselConfig['general']['scan_log_serialized'],'a');
@@ -9672,6 +9649,8 @@ if($c>0)
 		fclose($memCache['handle']['f']);
 		$memCache['handle']='';
 		}
+	unset($memCache['FilesData']);
+	reset($_FILES);
 	}
 if(!empty($whyflagged))
 	{

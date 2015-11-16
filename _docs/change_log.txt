@@ -51,7 +51,7 @@ entries will be deleted when those goals have been achieved.
 
 - Build plugin and extension variants of phpMussel for improved integration
   with various CMS, forums, other website systems and etc.
-  Refer https://github.com/Maikuolan/phpMussel/issues/57
+  Refer github.com/Maikuolan/phpMussel/issues/57
 
 === Changes made since last versioned release ===
 
@@ -111,10 +111,13 @@ entries will be deleted when those goals have been achieved.
 - [2015.11.15; Sub-minor code change; Maikuolan]: Added a new hook for the
   plugin system to the updater [update.inc].
 
-- [2015.11.15; Bug-fix; Maikuolan]: Corrected an issue where "Array" would
-  sometimes be cited as the original filename of files being uploaded (instead
-  of the actual original filenames) if those files were being uploaded
-  simultaneously and one or more of those files were blocked by phpMussel.
+- [2015.11.16; Bug-fix; Maikuolan]: Bug found by BugBuster1701 whereby "Array"
+  would be cited as the original filename of files being uploaded (instead
+  of the actual original filenames) and those files would be blocked from being
+  uploaded, citing the reason of "Unauthorised file upload manipulation
+  detected (Array)!", if those files were being uploaded using a webform whose
+  file field (or fields) handled entries as arrays; Fixed.
+  Refer github.com/Maikuolan/phpMussel/issues/74
 
 === Version/Release 0.8 (Previous Release: 0.7a; Next: 0.9.0) ===
 MINOR RELEASE; Updated to the latest signatures set (55+20975+8).
