@@ -12,6 +12,8 @@ $md5:eba1e255e46ed6d037717ac5c7f7e888;$str_len:3469;$fourcc:47494638;0/Securit
 .:: 2015/02
 $md5:0df9eed1da986b5ffd2d9ea4c0a7dbe9;$str_len:87875;FD:ffd8ff:A:3;0/Indonesia-00
 $md5:90b93d26ac3670c333b8d5da7806f7ba;$str_len:3056;$fourcc:47494638;0/AliHAwleRy
+.:: 2015/11
+$md5:22caf3c53b3e14a54cfc735709b2692d;$str_len:71744;FD:ffd8ff:A:3;0/AnonGhost-00
 === Some additional chameleon attack signatures ===
 $fourcc:47494638;FD:(0[ad]|2[345]|3c):6;1;5GIF-00
 $fourcc:4c000000;FS-MIN:8192;5LNK-00
