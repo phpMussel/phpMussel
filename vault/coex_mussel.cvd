@@ -7351,6 +7351,12 @@ $md5:79cfa0afc7706492cf0e7ef832ff865e;$sha:72d7183d123412f8feba7b25a1d7eb6e72c88
 .:: 2015/09
 $md5:6602206b80eb5ae74c94a15410d9486e;$sha:4ab64028921a6f263d903cd519ff3c052c61bd91;$str_len:144431;01509X-09979
 $md5:de47960cd5fbb0fc37be97101700aedc;$sha:66ba2990d82c78b07e3f145edc1308888fbc62c8;$str_len:61729;01509X-10116
+.:: 2015/11
+$md5:22dc1db1a876721727cca37c21d31655;$sha:98e057a4755e89fbfda043eaca1ab072674a3154;$str_len:317530;0!Encoder.1-00
+$md5:934b91c62fec7c99e56dc564e89831cb;$sha:5bd6b41aa29bd5ea1424a31dadd7c1cfb3e09616;$str_len:278198;0!Encoder.1-01
+$md5:60e0f1362da65e11bb268be5b1ad1053;$sha:810806c3967e03f2fa2b9223d24ee0e3d42209d3;$str_len:1438592;0!Encoder.1-02
+$md5:fb8eac22caa97d5fe5f96e3f79455096;$sha:12df5d886d43236582b57d036f84f078c15a14b0;$str_len:129908;0!Encoder.1-03
+$md5:1e19b857a5f5a9680555fa9623a88e99;$sha:a5054babc853ec280f70a06cb090e05259ca1aa7;$str_len:139348;0!Encoder.1-04
 === Speculative signatures ===
 .:: 2015/04
 $xt:scr;FN:(company_|download_|install_|invoice_|notification_|order_|payment_|_company|_download|_install|_invoice|_notification|_order|_payment);7X-00.A
