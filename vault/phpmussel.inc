@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.9.0-BETA (16th November 2015) Core Script.
+ This File: phpMussel v0.9.0 (27th November 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -51,8 +51,8 @@
 
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
-$phpmusselversion='phpMussel v0.9.0-BETA';
-$phpmusselversion_int='0.9.0-BETA';
+$phpmusselversion='phpMussel v0.9.0';
+$phpmusselversion_int='0.9.0';
 $linebreak=chr(10);
 $time=time();
 if(!isset($MusselConfig['general']['ipaddr']))$MusselConfig['general']['ipaddr']='REMOTE_ADDR';
@@ -62,6 +62,8 @@ $inidefaults['display_errors']=@ini_get('display_errors');
 @ini_set('display_errors','1');
 $inidefaults['backtrack_limit']=@ini_get('pcre.backtrack_limit');
 @ini_set('pcre.backtrack_limit','4K');
+$inidefaults['recursion_limit']=@ini_get('pcre.recursion_limit');
+@ini_set('pcre.recursion_limit','4K');
 $inidefaults['default_charset']=@ini_get('default_charset');
 @ini_set('default_charset','utf-8');
 $inidefaults['internal_encoding']=@ini_get('mbstring.internal_encoding');
@@ -10002,6 +10004,7 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&s
 @ini_set('user_agent',$inidefaults['user_agent']);
 @ini_set('mbstring.internal_encoding',$inidefaults['internal_encoding']);
 @ini_set('default_charset',$inidefaults['default_charset']);
+@ini_set('pcre.recursion_limit',$inidefaults['recursion_limit']);
 @ini_set('pcre.backtrack_limit',$inidefaults['backtrack_limit']);
 @ini_set('display_errors',$inidefaults['display_errors']);
 if($MusselConfig['general']['cleanup'])unset($cli_args,$r,$pedata,$killdata,$whyflagged,$k,$i,$c,$phpmusselsafety,$phpmusselua,$memCache,$inidefaults,$linebreak,$time,$phpmusselversion,$phpmusselversion_int);

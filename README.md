@@ -26,4 +26,4 @@ README/Markdown: [ **[English](https://github.com/Maikuolan/phpMussel/blob/maste
 
 [\[maikuolan.github.io/phpMussel\] **Want to donate?**](http://maikuolan.github.io/phpMussel/)
 
-*This file, "README.md", last edited: 15th November 2015 (2015.11.21).*
+*This file, "README.md", last edited: 21st November 2015 (2015.11.21).*
