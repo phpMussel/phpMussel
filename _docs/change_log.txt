@@ -55,6 +55,11 @@ entries will be deleted when those goals have been achieved.
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 0.9.0 ===
+MINOR RELEASE (Signatures 55+21062+9).
+
 - [2015.10.28; NEW FEATURE; Maikuolan]: A plugin system has been built and
   integrated into phpMussel, so, as of now, phpMussel supports plugins! This
   means that it's now possible to add certain types of functionality to
@@ -118,6 +123,28 @@ entries will be deleted when those goals have been achieved.
   detected (Array)!", if those files were being uploaded using a webform whose
   file field (or fields) handled entries as arrays; Fixed.
   Refer github.com/Maikuolan/phpMussel/issues/74
+
+- [2015.11.16-23; Signatures update; Maikuolan]: Multiple problematic false
+  positives found by BugBuster1701 (thanks for finding these!); Fixed.
+  Refer github.com/Maikuolan/phpMussel/issues/75
+  Refer github.com/Maikuolan/phpMussel/issues/76
+  Refer github.com/Maikuolan/phpMussel/issues/77
+
+- [2015.11.27; Sub-minor code change; Maikuolan]: Added code to temporarily,
+  during the execution of phpMussel, modify the default value of the
+  "pcre.recursion_limit" directive. This, along with the already existing code
+  to temporarily modify the default value of the "pcre.backtrack_limit"
+  directive, should serve as a reinforcing measure to protect against the PCRE
+  runaway backticking bug, originally mentioned during the release of "v0.3g".
+  Additionally, some related (but non-critical) issues have been found with the
+  current phpMussel code for normalising and decoding encoded data; In order to
+  resolve these issues, further changes may be made in the near future.
+  Refer spambotsecurity.com/forum/viewtopic.php?f=58&t=2794
+  Refer php.net/manual/en/pcre.configuration.php
+  Also relates to the goal of improving data decoding procedures.
+
+Maikuolan,
+30th November 2015.
 
 === Version/Release 0.8 (Previous Release: 0.7a; Next: 0.9.0) ===
 MINOR RELEASE; Updated to the latest signatures set (55+20975+8).
@@ -1508,7 +1535,7 @@ NEW CHANGES:
 
 PROBLEMS/BUGS FIXED:
 - Corrected a bug whereby scanning for a specific file via CLI mode would
-  trigger the false-positive, "phpMussel-FN.Illegal.Character-5C", due to the
+  trigger the false positive, "phpMussel-FN.Illegal.Character-5C", due to the
   inherent presence of forward-slashes in the full-path.
 - A minor translation correction done to the Language Data; PT (lang.inc).
 
