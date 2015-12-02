@@ -24,13 +24,13 @@
 
 <div dir="rtl">حقوق النسخ والنشر لـ بي اتش بيم اسل 2013وما بعده GNU/GPLv2كتبها كالب أم (مايكولان).<br /><br /></div>
 
-<div dir="rtl">هذا البرنامج النصي من البرمجيات المجانية, يمكنك إعادة توزيعه أو تعديله تحت شروط رخصة GNU("جي أن يو") العالمية و التي نشرتها مؤسسة البرمجيات المجانية ؛ إما في الإصدار الثاني أو (حسب اختيارك) لأحد الإصدارات اللاحقة. يتم توزيع هذا البرنامج على أمل أن يكون مفيداً و لكن دون أي ضمان , حتى دون ضمان التسويق أو الملائمة لغرض معين. اطلع على رخصة GNUالعالمية لمزيد من التفاصيل و تقع في ملف Licenseداخل الدليل (المجلد) _docsضمن الحزمة المرتبطة بها و مستودع أيضاً ضمن هذا الملف, كذلك تتوفر في:</div>
+<div dir="rtl">هذا البرنامج النصي من البرمجيات المجانية، يمكنك إعادة توزيعه أو تعديله تحت شروط رخصة GNU("جي أن يو") العالمية و التي نشرتها مؤسسة البرمجيات المجانية ؛ إما في الإصدار الثاني أو (حسب اختيارك) لأحد الإصدارات اللاحقة. يتم توزيع هذا البرنامج على أمل أن يكون مفيداً و لكن دون أي ضمان، حتى دون ضمان التسويق أو الملائمة لغرض معين. اطلع على رخصة GNUالعالمية لمزيد من التفاصيل و تقع في ملف Licenseداخل الدليل (المجلد) _docsضمن الحزمة المرتبطة بها و مستودع أيضاً ضمن هذا الملف، كذلك تتوفر في:</div>
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-<div dir="rtl">شكر خاص لـ "كلام ايه في"(<a href="http://www.clamav.net/">ClamAV</a>)لكل من الإلهام للمشروع وللتوقيعات المستخدمة في هذا البرنامج النصي و التي من دونها فمن المرجح أنه لا وجود للبرنامج ، أو في أحسن الأحوال له قيمة محدودة للغاية.<br /><br /></div>
+<div dir="rtl">شكر خاص لـ "كلام ايه في"(<a href="http://www.clamav.net/">ClamAV</a>)لكل من الإلهام للمشروع وللتوقيعات المستخدمة في هذا البرنامج النصي و التي من دونها فمن المرجح أنه لا وجود للبرنامج، أو في أحسن الأحوال له قيمة محدودة للغاية.<br /><br /></div>
 
-<div dir="rtl">شكر خاص لكل من "سورس فورج"(Sourceforge)و "جيت هاب"(Github)على استضافتهم لملفات المشروع, كذلك الشكر لـ <a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">Spambot Security</a>على استضافتهم لمنتديات مناقشة "بي اتش بي ماسل"(phpMussel)و إلى المصادر الإضافية لعدد من التوقيعات المستخدمة في "بي اتش بي ماسل"و منها: <a href="http://www.securiteinfo.com/">SecuriteInfo.com</a>, <a href="http://www.phishtank.com/">PhishTank</a>, <a href="http://nlnetlabs.nl/">NLNetLabs</a> و مصادر أخرى و شكر خاص لكل الذين دعموا المشروع و إلى أي أحد قد نسيت أن أذكره و لكم بالتأكيد على استخدامكم البرنامج.<br /><br /></div>
+<div dir="rtl">شكر خاص لكل من "سورس فورج"(Sourceforge)و "جيت هاب"(Github)على استضافتهم لملفات المشروع، كذلك الشكر لـ <a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">Spambot Security</a>على استضافتهم لمنتديات مناقشة "بي اتش بي ماسل"(phpMussel)و إلى المصادر الإضافية لعدد من التوقيعات المستخدمة في "بي اتش بي ماسل"و منها: <a href="http://www.securiteinfo.com/">SecuriteInfo.com</a>، <a href="http://www.phishtank.com/">PhishTank</a>، <a href="http://nlnetlabs.nl/">NLNetLabs</a> و مصادر أخرى و شكر خاص لكل الذين دعموا المشروع و إلى أي أحد قد نسيت أن أذكره و لكم بالتأكيد على استخدامكم البرنامج.<br /><br /></div>
 
 <div dir="rtl">هذا المستند و الحزمة المرتبطة به يمكن تحميلها مجاناً من:</div>
 - [Sourceforge](http://phpmussel.sourceforge.net/).
@@ -45,17 +45,17 @@
 
 <div dir="rtl">1) حسب قراءتك لهذا، فإنني أفترض أنك قد قمت بالفعل بتنزيل نسخة مؤرشفة من البرنامج النصي و قمت بفك ضغط محتوياته وأنها توجد في مكان ما على جهازك المحلي. من هنا، فأنت تريد أن تعمل خارجا على المضيف الخاص بك أو CMSحيث تريد أن تضع تلك المحتويات. الدليل مثل "/public_html/phpmussel/"أو ما شابه ذلك (على الرغم من أنه لا يهم الذي تختاره، وطالما انه شيء آمن وشيء يرضيك) فلن يكون كافيا. قبل بدء التحميل، واصل القراءة ..<br /><br /></div>
 
-<div dir="rtl">2) بشكل اختياري (موصى به بشدة للمستخدمين المتقدمين، ولكن لا ينصح به للمبتدئين أو لعديمي الخبرة)، افتح "phpmussel.ini"مفتوحة (الموجود داخل "vault") - يحتوي هذا الملف على كافة التوجيهات المتاحة لـphpMussel. فوق كل خيار سيكون تعليق مختصر يصف ما يقوم به وإلى ما هو هذا التوجيه. اضبط هذه الخيارات على النحو الذي تراه مناسبا، حسب ما هو مناسب لإعداداتك المعينة , قم بحفظ الملف ثم أغلق.<br /><br /></div>
+<div dir="rtl">2) بشكل اختياري (موصى به بشدة للمستخدمين المتقدمين، ولكن لا ينصح به للمبتدئين أو لعديمي الخبرة)، افتح "phpmussel.ini" مفتوحة (الموجود داخل "vault") - يحتوي هذا الملف على كافة التوجيهات المتاحة لـphpMussel. فوق كل خيار سيكون تعليق مختصر يصف ما يقوم به وإلى ما هو هذا التوجيه. اضبط هذه الخيارات على النحو الذي تراه مناسبا، حسب ما هو مناسب لإعداداتك المعينة، قم بحفظ الملف ثم أغلق.<br /><br /></div>
 
 <div dir="rtl">3) قم بتحميل المحتويات (phpMusselوملفاته) إلى الدليل الذي كنت قد قررت استخدامه في وقت سابق (أنت لا تحتاج إلى تضمين ملفات *.txt/*.md ولكن في الغالب، يجب تحميل كل شيء).<br /><br /></div>
 
 <div dir="rtl">4) قم بتغيير وضع الدليل "vault"إلى "777". الدليل الرئيسي لتخزين المحتويات (الذي اخترته سابقا) عادة يمكن أن يترك وحده ولكن يجب فحص حالة تغيير الوضع إذا كان لديك مشاكل الأذونات في الماضي على النظام الخاص بك (افتراضيا، يجب أن يكون شيء مثل "755").<br /><br /></div>
 
-<div dir="rtl">5) بعد ذلك، سوف تحتاج إلى ربط "بي اتش بي ماسل"على النظام الخاص بك أو CMS. هناك العديد من الطرق المختلفة التي تمكنك من "ربط"البرامج النصية مثل "بي اتش بي ماسل"على النظام الخاص بك أو CMS، ولكن الأسهل هو أن تضم ببساطة البرنامج النصي في بداية ملف أساسي من النظام الخاص بك أو CMS (هو الواحد الذي سيكون عموما بشكل دائم يمكن تحميله عندما يقوم شخص ما بالوصول إلى أي صفحة عبر موقع الويب الخاص بك) باستخدام أمر "require()"أو "include()". بشكل اعتيادي, سيكون هذا الشيء مخزن في دليل مثل "/includes", "/assets" أو "/functions", و غالباً يكون اسمه شيء مثل "init.php", "common_functions.php", "functions.php" أو ما شابه ذلك. سيكون عليك التوصل أي ملف هو الذي يناسب حالتك. إذا واجهت صعوبات في عمل هذا بنفسك، قم بزيارة منتدى الدعم الفني لـ "بي اتش بي ماسل"phpMusselو قم بإعلامنا, فمن الممكن أن أكون أنا أو مستخدم آخر قد يكون له تجربة مع نظام التشغيل الذي تستخدمه (ستحتاج لإعلامنا نوع نظام التشغيل الذي تستخدمه) وبالتالي قد نكون قادرين على توفير بعض المساعدة في هذا المجال. للقيام بذلك [لاستخدام "require()" أو "include()"]، أدخل السطر التالي من التعليمات البرمجية إلى بداية هذا الملف الأساسي، ليحل محل السلسلة الموجودة داخل علامتي الاقتباس مع العنوان الدقيق لملف "phpmussel.php" (العنوان المحلي وليس عنوان HTTP، بل سوف يبدو مشابه إلى عنوان vault المذكور سابقا).<br /><br /></div>
+<div dir="rtl">5) بعد ذلك، سوف تحتاج إلى ربط "بي اتش بي ماسل" على النظام الخاص بك أو CMS. هناك العديد من الطرق المختلفة التي تمكنك من "ربط" البرامج النصية مثل "بي اتش بي ماسل"على النظام الخاص بك أو CMS، ولكن الأسهل هو أن تضم ببساطة البرنامج النصي في بداية ملف أساسي من النظام الخاص بك أو CMS (هو الواحد الذي سيكون عموما بشكل دائم يمكن تحميله عندما يقوم شخص ما بالوصول إلى أي صفحة عبر موقع الويب الخاص بك) باستخدام أمر "require()"أو "include()". بشكل اعتيادي، سيكون هذا الشيء مخزن في دليل مثل "/includes"، "/assets" أو "/functions"، و غالباً يكون اسمه شيء مثل "init.php"، "common_functions.php"، "functions.php" أو ما شابه ذلك. سيكون عليك التوصل أي ملف هو الذي يناسب حالتك. إذا واجهت صعوبات في عمل هذا بنفسك، قم بزيارة منتدى الدعم الفني لـ "بي اتش بي ماسل" phpMusselو قم بإعلامنا، فمن الممكن أن أكون أنا أو مستخدم آخر قد يكون له تجربة مع نظام التشغيل الذي تستخدمه (ستحتاج لإعلامنا نوع نظام التشغيل الذي تستخدمه) وبالتالي قد نكون قادرين على توفير بعض المساعدة في هذا المجال. للقيام بذلك [لاستخدام "require()" أو "include()"]، أدخل السطر التالي من التعليمات البرمجية إلى بداية هذا الملف الأساسي، ليحل محل السلسلة الموجودة داخل علامتي الاقتباس مع العنوان الدقيق لملف "phpmussel.php" (العنوان المحلي وليس عنوان HTTP، بل سوف يبدو مشابه إلى عنوان vault المذكور سابقا).<br /><br /></div>
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
-<div dir="rtl">احفظ الملف, إغلاق, إعادة تحميل(تحديث).<br /><br /></div>
+<div dir="rtl">احفظ الملف، إغلاق، إعادة تحميل(تحديث).<br /><br /></div>
 
 <div dir="rtl">-- أو بدلا من ذلك --<br /><br /></div>
 
@@ -74,43 +74,46 @@
 
 ### <div dir="rtl">2ب. <a name="SECTION2B"></a>كيفية التحميل (لخدمات واجهة سطر الأوامر)</div>
 
-<div dir="rtl">آمل أن يتم تبسيط هذه العملية عن طريق المثبت في مرحلة ما في المستقبل غير البعيد جدا، ولكن حتى ذلك الحين، اتبع الإرشادات للحصول على "بي اتش بي ماسل"جاهز للعمل مع واجهة سطر الأوامر, (يجب أن تكون على علم أنه عند هذه النقطة، دعم واجهة سطر الأوامر لا تنطبق إلا على أنظمة ويندوز ؛ لينكس والأنظمة الأخرى سيتم قريبا عند إصدار إصدارات أحدث من بي اتش بي ماسل):<br /><br /></div>
+<div dir="rtl">آمل أن يتم تبسيط هذه العملية عن طريق المثبت في مرحلة ما في المستقبل غير البعيد جدا، ولكن حتى ذلك الحين، اتبع الإرشادات للحصول على "بي اتش بي ماسل"جاهز للعمل مع واجهة سطر الأوامر، (يجب أن تكون على علم أنه عند هذه النقطة، دعم واجهة سطر الأوامر لا تنطبق إلا على أنظمة ويندوز ؛ لينكس والأنظمة الأخرى سيتم قريبا عند إصدار إصدارات أحدث من بي اتش بي ماسل):<br /><br /></div>
 
-<div dir="rtl">1) حسب قراءتك لهذا، فإنني أفترض أنك قد قمت بالفعل بتنزيل نسخة مؤرشفة من البرنامج ، و قمت بفك ضغط محتوياته، وأنها تجلس في مكان ما على جهازك المحلي. بمجرد ان تكون قد قررت أنك راضيا عن الموقع الذي تم اختياره لـ"بي اتش بي ماسل"، قم بالمتابعة.<br /><br /></div>
+<div dir="rtl">1) حسب قراءتك لهذا، فإنني أفترض أنك قد قمت بالفعل بتنزيل نسخة مؤرشفة من البرنامج، و قمت بفك ضغط محتوياته، وأنها تجلس في مكان ما على جهازك المحلي. بمجرد ان تكون قد قررت أنك راضيا عن الموقع الذي تم اختياره لـ"بي اتش بي ماسل"، قم بالمتابعة.<br /><br /></div>
 
 <div dir="rtl">2) يتطلب "بي اتش بي ماسل"أن يتم تثبيتPHPعلى الجهاز المضيف من أجل تنفيذه. إذا لم يكن لديك PHPمثبتا على جهازك، الرجاء قم بتثبيت PHPعلى جهازك، و اتبع أي تعليمات يقدمها مثبت PHP.<br /><br /></div>
 
-<div dir="rtl">3) بشكل اختياري (موصى به بشدة للمستخدمين المتقدمين، ولكن لا ينصح به للمبتدئين أو لعديمي الخبرة)، افتح "phpmussel.ini"مفتوحة (الموجود داخل "vault") - يحتوي هذا الملف على كافة التوجيهات المتاحة لـphpMussel. فوق كل خيار سيكون تعليق مختصر يصف ما يقوم به وإلى ما هو هذا التوجيه. اضبط هذه الخيارات على النحو الذي تراه مناسبا، حسب ما هو مناسب لإعداداتك المعينة , قم بحفظ الملف ثم أغلق.<br /><br /></div>
+<div dir="rtl">3) بشكل اختياري (موصى به بشدة للمستخدمين المتقدمين، ولكن لا ينصح به للمبتدئين أو لعديمي الخبرة)، افتح "phpmussel.ini" مفتوحة (الموجود داخل "vault") - يحتوي هذا الملف على كافة التوجيهات المتاحة لـphpMussel. فوق كل خيار سيكون تعليق مختصر يصف ما يقوم به وإلى ما هو هذا التوجيه. اضبط هذه الخيارات على النحو الذي تراه مناسبا، حسب ما هو مناسب لإعداداتك المعينة، قم بحفظ الملف ثم أغلق.<br /><br /></div>
 
-<div dir="rtl">4) بشكل اختياري، يمكنك جعل استخدام"بي اتش بي ماسل"في وضع"واجهة سطر الاوامر"أسهل لنفسك عن طريق إنشاء ملف باتش لتحميل PHPوphpMusselتلقائيا. للقيام بذلك، قم بفتح محرر نص عادي مثل المفكرة أو Notepad++ ثم اكتب المسار الكامل لملف php.exeفي دليل التثبيت الخاص بك متبوعا بمسافة ثم متبوعا بالمسار الكامل لملف "phpmussel.php"في دليل التركيب "بي اتش بي ماسل"الخاص بك، قم بحفظ الملف بملحق ".bat"في مكان يمكن أن تجده بسهولة، ثم انقر نقراً مزدوجاً على هذا الملف لتشغيل"بي اتش بي ماسل"في المستقبل.<br /><br /></div>
+<div dir="rtl">4) بشكل اختياري، يمكنك جعل استخدام"بي اتش بي ماسل"في وضع"واجهة سطر الاوامر"أسهل لنفسك عن طريق إنشاء ملف باتش لتحميل PHPوphpMusselتلقائيا. للقيام بذلك، قم بفتح محرر نص عادي مثل المفكرة أو Notepad++ ثم اكتب المسار الكامل لملف php.exe في دليل التثبيت الخاص بك متبوعا بمسافة ثم متبوعا بالمسار الكامل لملف "phpmussel.php" في دليل التركيب "بي اتش بي ماسل"الخاص بك، قم بحفظ الملف بملحق ".bat" في مكان يمكن أن تجده بسهولة، ثم انقر نقراً مزدوجاً على هذا الملف لتشغيل"بي اتش بي ماسل"في المستقبل.<br /><br /></div>
 
-<div dir="rtl">5) في هذه المرحلة, لقد انتهيت! ومع ذلك فربما يجب عليك اختباره للتأكد من أنه يعمل بشكل صحيح. لاختبار "بي اتش بي ماسل"، قم بتشغيله و حاول فحص الدليل "_testfiles"المتوفر مع الحزمة.<br /><br /></div>
+<div dir="rtl">5) في هذه المرحلة، لقد انتهيت! ومع ذلك فربما يجب عليك اختباره للتأكد من أنه يعمل بشكل صحيح. لاختبار "بي اتش بي ماسل"، قم بتشغيله و حاول فحص الدليل "_testfiles" المتوفر مع الحزمة.<br /><br /></div>
 
 ---
 
 
 ### <div dir="rtl">3أ. <a name="SECTION3A"></a>كيفية الاستخدام (لخدمات الويب)</div>
 
-phpMussel is intended to be a script that'll function adequately right from the box with a bare minimum level of requirements on your part: Once it has been installed, basically, it simply should work.
+<div dir="rtl">لقد تم إعداد "بي اتش بي ماسل" ليكون البرنامج النصي الذي سوف يعمل بشكل مرضي على جهازك مع مستوى الحد الأدنى من المتطلبات على جهازك: بمجرد تثبيته -بشكلي أساسي- فإنه ببساطة يجب أن يعمل.<br /><br /></div>
 
-Scanning of file uploads is automated and enabled by default, so nothing is required on your behalf for this particular function.
+<div dir="rtl">إن مسح تحميل الملفات يتم بشكل تلقائي و تم تمكينه افتراضيا، لذلك ليس هناك شيء مطلوب نيابة عنك لهذه الوظائف المحددة.<br /><br /></div>
 
-However, you're also able to instruct phpMussel to scan specific files, directories and/or archives. To do this, firstly, you'll need to ensure that the appropriate configuration is set in the `"phpmussel.ini"` file (`cleanup` must be disabled), and when done, in a PHP file that's hooked to phpMussel, use the following function in your code:
+<div dir="rtl">مع ذلك، فإنك قادراً أيضاً على إرشاد "بي اتش بي ماسل" لمسح ملفات معينة مثل الدلائل و/ أو المحفوظات. للقيام بذلك فعليك أولاً: سوف تحتاج إلى التأكد من أن يتم تعيين التكوين المناسب في ملف "phpmussel.ini" (يجب تعطيل عملية التنظيف) وعندما تنتهي من ذلك، في ملف PHP و الذي تم ربطه مع "بي اتش بي ماسل"، استخدم الدالة التالية في التعليمة البرمجية "الكود" الذي ستضعه:<br /><br /></div>
 
 `phpMussel($what_to_scan,$output_type,$output_flatness);`
 
-- `$what_to_scan` can be a string, an array, or an array of arrays, and indicates which file, files, directory and/or directories to scan.
-- `$output_type` is a boolean, indicating the format for the scan results to be returned as. False instructs the function to return results as an integer (a returned result of -3 indicates problems were encountered with the phpMussel signatures files or signature map files and that they may possible be missing or corrupted, -2 indicates that corrupt data was detected during the scan and thus the scan failed to complete, -1 indicates that extensions or addons required by PHP to execute the scan were missing and thus the scan failed to complete, 0 indicates that the scan target doesn't exist and thus there was nothing to scan, 1 indicates that the target was successfully scanned and no problems were detected, and 2 indicates that the target was successfully scanned and problems were detected). True instructs the function to return results as human readable text. Additionally, in either case, the results can be accessed via global variables after scanning has completed. This variable is optional, defaulting to false.
-- `$output_flatness` is a boolean, indicating to the function whether to return the results of scanning (when there are multiple scan targets) as an array or a string. False will return the results as an array. True will return the results as a string. This variable is optional, defaulting to false.
 
-Examples:
+<div dir="rtl"><ul>
+ <li>"$what_to_scan" يمكن أن تكون سلسلة، مصفوفة، أو مجموعة من المصفوفات، وتشير إلى أي ملف\ملفات، دليل و/أو دلائل ليتم إجراء المسح عليها.</li>
+ <li>"$output_type" هي قيمة منطقية تدل على نتائج الفحص ليتم إرجاعها كالتالي، الخطأ يرشد الدالة لإرجاع نتائج الفحص على شكل عدد (النتائج المرجعة -3 تشير إلى مشاكل واجهها "بي اتش بي ماسل" مع التوقيعات أو ملفات خريطة  التوقيع و التي من الممكن أن تكون مفقودة أو تالفة، -2 تشير إلى أنه تم الكشف عن بيانات تالفة خلال الفحص وبالتالي فشل في إكمال الفحص، 0 يشير إلى أن هدف الفحص غير موجود و بالتالي لم تكن هناك حاجة لعملية الفحص، 1 يشير إلى أن الهدف تم فحصه بنجاح و لم يتم الكشف عن أي مشاكل، 2 يشير إلى أن الهدف تم فحصه بنجاح و تم الكشف عن مشاكل. القيمة الصحيحة ترشد الدالة لإرجاع نتائج الفحص كنص مقروء للبشر. بالإضافة إلى ذلك، في كلتا الحالتين، يمكن الوصول إلى النتائج عبر المتغيرات العالمية بعد اكتمال الفحص. هذا المتغير هو اختياري و إذا لم تحدد فالافتراضي هو القيمة الخطأ.</li>
+ <li>"$output_flatness" هي قيمة منطقية تشير إلى دالة بالعودة لنتائج الفحص من النوعين (عندما يكون هناك أهداف فحص متعددة)،  سواء خاطئة فتعود النتائج على شكل مصفوفة، أو صحيحة فتعود النتائج على شكل سلسلة. هذا المتغير هو اختياري و إذا لم تحدد فالافتراضي هو القيمة الخطأ.</li>
+</ul></div>
+
+<div dir="rtl">أمثلة:<br /><br /></div>
 
 ```
  $results=phpMussel('/user_name/public_html/my_file.html',true,true);
  echo $results;
 ```
 
-Returns something like this (as a string):
+<div dir="rtl">يتحول  كالتالي (كسلسلة):<br /><br /></div>
 
 ```
  Wed, 16 Sep 2013 02:49:46 +0000 Started.
@@ -119,32 +122,32 @@ Returns something like this (as a string):
  Wed, 16 Sep 2013 02:49:47 +0000 Finished.
 ```
 
-For a full break-down of what sort of signatures phpMussel uses during its scans and how it handles these signatures, refer to the شكلالتوقيع section of this README file.
+<div dir="rtl">للحصول على مفعول كامل لأي من التوقيعات التي يستخدمها "بي اتش بي ماسل" أثناء التفحص، وكيف يتعامل مع هذه التوقيعات، راجع قسم (7) شكل\صيغة التوقيع في هذا الملف التمهيدي.<br /><br /></div>
 
-If you encounter any false positives, if you encounter something new that you think should be blocked, or for anything else regarding signatures, please contact me about it so that I may make the necessary changes, which, if you do not contact me, I may not necessarily be aware of.
+<div dir="rtl">إذا واجهت أي إيجابيات زائفة أي إذا واجهت شيئا جديدا تعتقد أنه يجب أن يكون قد تم حظره أو أي شيء آخر بخصوص التوقيعات، فيرجى الاتصال بي لإبلاغي عن ذلك حتى أستطيع إجراء التغييرات اللازمة، والتي إذا لم تقوم بالاتصال بي، فإنني قد لا أكون منتبه لها.<br /><br /></div>
 
-To disable signatures included with phpMussel (such as if you're experiencing a false positive specific to your purposes that shouldn't normally be removed from streamline), refer to the Greylisting notes within the أوامر المتصفح section of this README file.
+<div dir="rtl">لتعطيل التواقيع التي يتضمنها phpMussel (مثل إذا كنت تعاني من إيجابية زائفة محددة لأغراضك التي لا ينبغي أن يتم عادة إزالتها)، فارجع إلى القائمة الرمادية ضمن قسم أوامر المتصفح من هذا الملف التمهيدي.<br /><br /></div>
 
-In addition to the default file upload scanning and the optional scanning of other files and/or directories specified via the above function, included in phpMussel is a function intended for scanning the body of email messages. This function behaves similarly to the standard phpMussel() function, but focuses solely on matching against the ClamAV email-based signatures. I have not tied these signatures into the standard phpMussel() function, because it is highly unlikely that you'd ever find the body of an incoming email message in need of scanning within a file upload targeted to a page where phpMussel is hooked, and thus, to tie these signatures into the phpMussel() function would be redundant. However, that said, having a separate function to match against these signatures could prove to be extremely useful for some, especially for those whose CMS or webfront system is somehow tied into their email system and for those parsing their emails via a PHP script that they could potentially hook into phpMussel. Configuration for this function, like all others, is controlled via the `"phpmussel.ini"` file. To use this function (you'll need to do your own implementation), in a PHP file that is hooked to phpMussel, use the following function in your code:
+<div dir="rtl">بالإضافة للمسح الافتراضي للملفات و المسح الاختياري للملفات و\أو الدلائل الأخرى المحددة عن طريق الدالة أعلاه المضمنة في phpMussel و هي وظيفة معدة لفحص محتوى رسائل البريد الإلكتروني. هذه الوظيفة تسلك بشكل مشابه للوظيفة المعيارية ل"بي اتش بي ماسل"  ولكن تركز فقط على المطابقة ضد توقيعات "كلام ايه في"  القائمة على البريد الإلكتروني. إنني لم أربط هذه التوقيعات بالوظيفة الافتراضية  لـ"بي اتش بي ماسل" لأنه من المستبعد جداً أن تجد محتوى رسالة يحتاج للفحص ضمن تحميل الملف المستهدف إلى صفحة حيث يكون "بي اتش بي ماسل" مثبت. و بذلك فإن ربط هذه التوقيعات بوظيفة "بي اتش بي ماسل" غير ضروري أو مجدي، ومع ذلك فوجود وظيفة منفصلة تطابق ضد هذه التوقيعات يمكن أن تكون مفيدة للغاية بالنسبة للبعض، خصوصا بالنسبة لأولئك الذين لديهم نظام CMS أو نظام webfront مرتبط بطريقة أو بأخرى مع نظام بريدهم الإلكتروني وبالنسبة لأولئك الذين يحيلون رسائل بريدهم الإلكتروني عن طريق نص برمجي PHP فإنهم من المحتمل أن ربطوه مع "بي اتش بي ماسل". تكوين هذه الدالة مثل كل الدوال الأخرى والتحكم فيها عن طريق ملف "phpmussel.ini". لاستخدام هذه الدالة (سوف تحتاج إلى القيام بالإجراء الخاص بك)، في ملف PHP التي يتم ربطه مع "بي اتش بي ماسل"، استخدم الدالة التالية في التعليمات البرمجية:<br /><br /></div>
 
 `phpMussel_mail($body);`
 
-Where $body is body of the email message you wish to scan (additionally, you could try scanning new forum posts, inbound messages from your online contact form or similar). If any error occurs preventing the function from completing its scan, a value of -1 will be returned. If the function completes its scan and doesn't match anything, a value of 0 will be returned (meaning clean). If, however, the function does match something, a string will be returned containing a message declaring what it has matched.
+<div dir="rtl">حيث "$body" هي محتوى رسالة البريد الإلكتروني المارد فحصها (بالإضافة إلى ذلك، فيمكنك تجربة فحص المشاركات الجديدة في منتدى، الرسائل الواردة من نموذج اتصالك بالانترنت أو ما شابه ذلك. في حالة حدوث أي خطأ يمنع الدالة من إكمال فحصها فسوف تعاد قيمة -1. إذا اكتمل فحص الدالة ولم تطابق أي شيء فسيتم إرجاع قيمة "0" (بمعنى نظيفة). غير أنه إذا كانت الدالة لا تتطابق مع شيء فسيتم إرجاع سلسلة تحتوي على رسالة تعلن ما يقابل ذلك.<br /><br /></div>
 
-In addition to the above, if you look at the source code, you may notice the function phpMusselD() and phpMusselR(). These functions are sub-functions of phpMussel(), and shouldn't be called directly outside of that parent function (not because of adverse effects, but rather, simply because it'd serve no purpose, and most probably won't actually work correctly anyhow).
+<div dir="rtl">بالإضافة إلى ما سبق، إذا نظرتم إلى التعليمات البرمجية من المصدر فقد تلاحظ الدالة "phpMusselD()" و"phpMusselR()". هذه الدوال هي دوال فرعية من "phpMussel()"، ويجب أن لا يتم استدعاءها مباشرة خارج تلك الدالة الأم (ليس بسبب الآثار السلبية، ولكن يفضل ذلك، لأنه ببساطة لا تخدم أي غرض وستكون على الأرجح لا تعمل بشكل صحيح على أية حال).<br /><br /></div>
 
-There are many other controls and functions available within phpMussel for your use, too. For any such controls and functions which, by the end of this section of the README, have not yet been documented, please continue reading and refer to the أوامر المتصفح section of this README file.
+<div dir="rtl">هناك العديد من الضوابط وغيرها من المهام المتاحة داخل phpMussel للاستخدام الخاص أيضا. عن أي من هذه الضوابط والمهام الموجودة بنهاية هذا الملف التمهيدي، فيرجى مواصلة القراءة والرجوع إلى قسم أوامر المتصفح من هذا الملف التمهيدي.<br /><br /></div>
 
 ---
 
 
 ### <div dir="rtl">3ب. <a name="SECTION3B"></a>كيفية الاستخدام (لخدمات واجهة سطر الأوامر)</div>
 
-Please refer to the "كيفية التحميل (لخدمات واجهة سطر الأوامر)" section of this README file.
+<div dir="rtl">يرجى الرجوع إلى قسم "التحميل (لخدمات واجهة سطر الأوامر)" من هذا الملف التمهيدي.<br /><br /></div>
 
-Be aware that, although future versions of phpMussel should support other systems, at this time, phpMussel CLI mode support is only optimized for use on Windows-based system (you can, of course, try it on other systems, but I can't guarantee it'll work as intended).
+<div dir="rtl">يجب أن تدرك أنه على الرغم من أن الإصدارات المستقبلية من "بي اتش بي ماسل"  ينبغي أن تدعم الأنظمة الأخرى، لكن في هذا الوقت phpMussel CLI  في وضعه الأمثل يدعم فقط الاستخدام على نظام Windows (يمكنك بطبيعة الحال محاولة استخدامه على الأنظمة الأخرى، ولكن لا أستطيع أن أضمن لك أنه سوف يعمل على النحو المنشود).<br /><br /></div>
 
-Also be aware that phpMussel is not the functional equivalent of a complete anti-virus suite, and unlike conventional anti-virus suites, doesn't monitor active memory or detect viruses on-the-fly! It'll only detect viruses contained by those specific files that you explicitly tell it to scan.
+<div dir="rtl">كما يجب أن تدرك أن "بي اتش بي ماسل" ليس المكافئ الوظيفي لمجموعة متكاملة من مضاد الفيروسات، وعلى عكس البرامج التقليدية لمكافحة الفيروسات فإنها لا تراقب الذاكرة النشطة أو الكشف عن الفيروسات بشكل مباشر و على الطاير! لكنها سوف تكشف عن الفيروسات فقط الواردة في تلك الملفات المحددة التي طلبت منه فحصها.<br /><br /></div>
 
 ---
 
@@ -979,4 +982,4 @@ This information was last updated 7th September 2015 and is current for all phpM
 ---
 
 
-Last Updated: 22nd November 2015 (2015.11.22).
+Last Updated: 2nd December 2015 (2015.12.02).
