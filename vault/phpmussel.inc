@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.9.0 (27th November 2015) Core Script.
+ This File: phpMussel v0.9.1-BETA (3rd December 2015) Core Script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -51,8 +51,8 @@
 
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
-$phpmusselversion='phpMussel v0.9.0';
-$phpmusselversion_int='0.9.0';
+$phpmusselversion='phpMussel v0.9.1-BETA';
+$phpmusselversion_int='0.9.1-BETA';
 $linebreak=chr(10);
 $time=time();
 if(!isset($MusselConfig['general']['ipaddr']))$MusselConfig['general']['ipaddr']='REMOTE_ADDR';
@@ -8337,6 +8337,7 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
 						}
 					$x.=$lnap.$GLOBALS['MusselConfig']['lang']['scan_checking'].' \''.$ofn.'\' > \''.$eN.'\' (FN: '.$znCRC.'; FD: '.$zCRC.'):'.$GLOBALS['linebreak'].'-'.$lnap.$GLOBALS['MusselConfig']['lang']['scan_no_problems_found'].$GLOBALS['linebreak'];
 					}
+				zip_close($fS);
 				}
 			}
 		if($xt=='rar'||substr($in,0,4)==='Rar!'||bin2hex(substr($in,0,4))==='52457e5e')

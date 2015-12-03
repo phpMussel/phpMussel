@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.9.0 (27th November 2015) Loader file.
+ This File: phpMussel v0.9.1-BETA (3rd December 2015) Loader file.
  <%phpMussel%/phpmussel.php>
 
                                      ~ ~ ~
@@ -117,10 +117,10 @@ if(!defined('phpMussel'))
 	if(!file_exists($vault.'controls.lck'))
 		{
 		parse_str($_SERVER['QUERY_STRING'],$query);
-		$phpmussel=(!empty($_POST['phpmussel']))?$_POST['phpmussel']:(!empty($query['phpmussel']))?$query['phpmussel']:'';
-		$pword=(!empty($_POST['pword']))?$_POST['pword']:(!empty($query['pword']))?$query['pword']:'';
-		$logspword=(!empty($_POST['logspword']))?$_POST['logspword']:(!empty($query['logspword']))?$query['logspword']:'';
-		$musselvar=(!empty($_POST['musselvar']))?$_POST['musselvar']:(!empty($query['musselvar']))?$query['musselvar']:'';
+		$phpmussel=(!empty($_POST['phpmussel']))?$_POST['phpmussel']:((!empty($query['phpmussel']))?$query['phpmussel']:'');
+		$pword=(!empty($_POST['pword']))?$_POST['pword']:((!empty($query['pword']))?$query['pword']:'');
+		$logspword=(!empty($_POST['logspword']))?$_POST['logspword']:((!empty($query['logspword']))?$query['logspword']:'');
+		$musselvar=(!empty($_POST['musselvar']))?$_POST['musselvar']:((!empty($query['musselvar']))?$query['musselvar']:'');
 		if(!isset($MusselConfig['general']['logs_password']))$MusselConfig['general']['logs_password']='';
 		if(!empty($MusselConfig['general']['logs_password'])&&!empty($phpmussel)&&!empty($logspword))
 			{
