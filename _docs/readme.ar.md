@@ -7,7 +7,7 @@
  <li>2ب. <a href="#SECTION2B">كيفية التحميل (لخدمات واجهة سطر الأوامر).</a></li>
  <li>3أ. <a href="#SECTION3A">كيفية الاستخدام (لخدمات الويب).</a></li>
  <li>3ب. <a href="#SECTION3B">كيفية الاستخدام (لخدمات واجهة سطر الأوامر).</a></li>
- <li>4أ. <a href="#SECTION4A">أوامر المتصفح.</a></li>
+ <li>4أ. <a href="#SECTION4A">أوامرالمتصفح.</a></li>
  <li>4ب. <a href="#SECTION4B">CLI (واجهة سطر الأوامر).</a></li>
  <li>5. <a href="#SECTION5">الملفاتالموجودةفيهذهالحزمة.</a></li>
  <li>6. <a href="#SECTION6">خياراتالتكوين/التهيئة.</a></li>
@@ -43,7 +43,7 @@
 
 <div dir="rtl">آمل أن يتم تسهيل هذه العملية عن طريق المثبت في مرحلة ما في المستقبل غير البعيد جدا، ولكن حتى ذلك الحين اتبع الإرشادات للحصول على "بي اتش بي ماسل"phpMusselو الذي يعمل على *معظم الأنظمة و CMS:<br /><br /></div>
 
-<div dir="rtl">1) حسب قراءتك لهذا، فإنني أفترض أنك قد قمت بالفعل بتنزيل نسخة مؤرشفة من البرنامج النصي و قمت بفك ضغط محتوياته وأنها توجد في مكان ما على جهازك المحلي. من هنا، فأنت تريد أن تعمل خارجا على المضيف الخاص بك أو CMSحيث تريد أن تضع تلك المحتويات. الدليل مثل "/public_html/phpmussel/"أو ما شابه ذلك (على الرغم من أنه لا يهم الذي تختاره، وطالما انه شيء آمن وشيء يرضيك) فلن يكون كافيا. قبل بدء التحميل، واصل القراءة ..<br /><br /></div>
+<div dir="rtl">1) حسب قراءتك لهذا، فإنني أفترض أنك قد قمت بالفعل بتنزيل نسخة مؤرشفة من البرنامج النصي و قمت بفك ضغط محتوياته وأنها توجد في مكان ما على جهازك المحلي. من هنا، فأنت تريد أن تعمل خارجا على المضيف الخاص بك أو CMSحيث تريد أن تضع تلك المحتويات. الدليل مثل "/public_html/phpmussel/"أو ما شابه ذلك (على الرغم من أنه لا يهم الذي تختاره، وطالما انه شيء آمن وشيء يرضيك) فلن يكون كافيا. قبل بدء التحميل، واصل القراءة..<br /><br /></div>
 
 <div dir="rtl">2) بشكل اختياري (موصى به بشدة للمستخدمين المتقدمين، ولكن لا ينصح به للمبتدئين أو لعديمي الخبرة)، افتح "phpmussel.ini" مفتوحة (الموجود داخل "vault") - يحتوي هذا الملف على كافة التوجيهات المتاحة لـphpMussel. فوق كل خيار سيكون تعليق مختصر يصف ما يقوم به وإلى ما هو هذا التوجيه. اضبط هذه الخيارات على النحو الذي تراه مناسبا، حسب ما هو مناسب لإعداداتك المعينة، قم بحفظ الملف ثم أغلق.<br /><br /></div>
 
@@ -53,7 +53,7 @@
 
 <div dir="rtl">5) بعد ذلك، سوف تحتاج إلى ربط "بي اتش بي ماسل" على النظام الخاص بك أو CMS. هناك العديد من الطرق المختلفة التي تمكنك من "ربط" البرامج النصية مثل "بي اتش بي ماسل"على النظام الخاص بك أو CMS، ولكن الأسهل هو أن تضم ببساطة البرنامج النصي في بداية ملف أساسي من النظام الخاص بك أو CMS (هو الواحد الذي سيكون عموما بشكل دائم يمكن تحميله عندما يقوم شخص ما بالوصول إلى أي صفحة عبر موقع الويب الخاص بك) باستخدام أمر "require()"أو "include()". بشكل اعتيادي، سيكون هذا الشيء مخزن في دليل مثل "/includes"، "/assets" أو "/functions"، و غالباً يكون اسمه شيء مثل "init.php"، "common_functions.php"، "functions.php" أو ما شابه ذلك. سيكون عليك التوصل أي ملف هو الذي يناسب حالتك. إذا واجهت صعوبات في عمل هذا بنفسك، قم بزيارة منتدى الدعم الفني لـ "بي اتش بي ماسل" phpMusselو قم بإعلامنا، فمن الممكن أن أكون أنا أو مستخدم آخر قد يكون له تجربة مع نظام التشغيل الذي تستخدمه (ستحتاج لإعلامنا نوع نظام التشغيل الذي تستخدمه) وبالتالي قد نكون قادرين على توفير بعض المساعدة في هذا المجال. للقيام بذلك [لاستخدام "require()" أو "include()"]، أدخل السطر التالي من التعليمات البرمجية إلى بداية هذا الملف الأساسي، ليحل محل السلسلة الموجودة داخل علامتي الاقتباس مع العنوان الدقيق لملف "phpmussel.php" (العنوان المحلي وليس عنوان HTTP، بل سوف يبدو مشابه إلى عنوان vault المذكور سابقا).<br /><br /></div>
 
-`<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
+"<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>"
 
 <div dir="rtl">احفظ الملف، إغلاق، إعادة تحميل(تحديث).<br /><br /></div>
 
@@ -61,11 +61,11 @@
 
 <div dir="rtl">إذا كنت تستخدم خادم الويب أباتشي و كان لديك الوصول إلى "php.ini"، يمكنك استخدام التوجيه "auto_prepend_file"للإضافة لبداية phpMusselكلما أجريت أي طلب PHP. شيء مثل:<br /><br /></div>
 
-`auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"`
+"auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php""
 
 <div dir="rtl">أو هذا في ملف ".htaccess":<br /><br /></div>
 
-`php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"`
+"php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php""
 
 <div dir="rtl">6) في هذه المرحلة، لقد انتهيت! ومع ذلك، ربما يجب عليك اختباره للتأكد من أنه يعمل بشكل صحيح. لاختبار حماية تحميل الملفات، حاول تحميل ملفات الاختبار الموجودة في الحزمة بالأسفل "_testfiles"إلى موقع الويب الخاص بك عبر وسائل تحميل المتصفح الاعتيادية الخاصة بك. إذا كان كل شيء يعمل، يجب أن تظهر رسالة من "بي اتش بي ماسل"مؤكدا أن التحميل تم حجبه بنجاح.<br /><br /></div>
 
@@ -97,46 +97,46 @@
 
 <div dir="rtl">مع ذلك، فإنك قادراً أيضاً على إرشاد "بي اتش بي ماسل" لمسح ملفات معينة مثل الدلائل و/ أو المحفوظات. للقيام بذلك فعليك أولاً: سوف تحتاج إلى التأكد من أن يتم تعيين التكوين المناسب في ملف "phpmussel.ini" (يجب تعطيل عملية التنظيف) وعندما تنتهي من ذلك، في ملف PHP و الذي تم ربطه مع "بي اتش بي ماسل"، استخدم الدالة التالية في التعليمة البرمجية "الكود" الذي ستضعه:<br /><br /></div>
 
-`phpMussel($what_to_scan,$output_type,$output_flatness);`
+"phpMussel($what_to_scan,$output_type,$output_flatness);"
 
 
 <div dir="rtl"><ul>
- <li>"$what_to_scan" يمكن أن تكون سلسلة، مصفوفة، أو مجموعة من المصفوفات، وتشير إلى أي ملف\ملفات، دليل و/أو دلائل ليتم إجراء المسح عليها.</li>
- <li>"$output_type" هي قيمة منطقية تدل على نتائج الفحص ليتم إرجاعها كالتالي، الخطأ يرشد الدالة لإرجاع نتائج الفحص على شكل عدد (النتائج المرجعة -3 تشير إلى مشاكل واجهها "بي اتش بي ماسل" مع التوقيعات أو ملفات خريطة  التوقيع و التي من الممكن أن تكون مفقودة أو تالفة، -2 تشير إلى أنه تم الكشف عن بيانات تالفة خلال الفحص وبالتالي فشل في إكمال الفحص، 0 يشير إلى أن هدف الفحص غير موجود و بالتالي لم تكن هناك حاجة لعملية الفحص، 1 يشير إلى أن الهدف تم فحصه بنجاح و لم يتم الكشف عن أي مشاكل، 2 يشير إلى أن الهدف تم فحصه بنجاح و تم الكشف عن مشاكل. القيمة الصحيحة ترشد الدالة لإرجاع نتائج الفحص كنص مقروء للبشر. بالإضافة إلى ذلك، في كلتا الحالتين، يمكن الوصول إلى النتائج عبر المتغيرات العالمية بعد اكتمال الفحص. هذا المتغير هو اختياري و إذا لم تحدد فالافتراضي هو القيمة الخطأ.</li>
- <li>"$output_flatness" هي قيمة منطقية تشير إلى دالة بالعودة لنتائج الفحص من النوعين (عندما يكون هناك أهداف فحص متعددة)،  سواء خاطئة فتعود النتائج على شكل مصفوفة، أو صحيحة فتعود النتائج على شكل سلسلة. هذا المتغير هو اختياري و إذا لم تحدد فالافتراضي هو القيمة الخطأ.</li>
+ <li>"$what_to_scan" يمكن أن تكون سلسلة، مصفوفة، أو مجموعة من المصفوفات، وتشير إلى أي ملف/ملفات، دليل و/أو دلائل ليتم إجراء المسح عليها.</li>
+ <li>"$output_type" هي قيمة منطقية تدل على نتائج الفحص ليتم إرجاعها كالتالي، الخطأ يرشد الدالة لإرجاع نتائج الفحص على شكل عدد (النتائج المرجعة -3 تشير إلى مشاكل واجهها "بي اتش بي ماسل" مع التوقيعات أو ملفات خريطة التوقيع و التي من الممكن أن تكون مفقودة أو تالفة، -2 تشير إلى أنه تم الكشف عن بيانات تالفة خلال الفحص وبالتالي فشل في إكمال الفحص، 0 يشير إلى أن هدف الفحص غير موجود و بالتالي لم تكن هناك حاجة لعملية الفحص، 1 يشير إلى أن الهدف تم فحصه بنجاح و لم يتم الكشف عن أي مشاكل، 2 يشير إلى أن الهدف تم فحصه بنجاح و تم الكشف عن مشاكل. القيمة الصحيحة ترشد الدالة لإرجاع نتائج الفحص كنص مقروء للبشر. بالإضافة إلى ذلك، في كلتا الحالتين، يمكن الوصول إلى النتائج عبر المتغيرات العالمية بعد اكتمال الفحص. هذا المتغير هو اختياري و إذا لم تحدد فالافتراضي هو القيمة الخطأ.</li>
+ <li>"$output_flatness" هي قيمة منطقية تشير إلى دالة بالعودة لنتائج الفحص من النوعين (عندما يكون هناك أهداف فحص متعددة)، سواء خاطئة فتعود النتائج على شكل مصفوفة، أو صحيحة فتعود النتائج على شكل سلسلة. هذا المتغير هو اختياري و إذا لم تحدد فالافتراضي هو القيمة الخطأ.</li>
 </ul></div>
 
 <div dir="rtl">أمثلة:<br /><br /></div>
 
-```
+"""
  $results=phpMussel('/user_name/public_html/my_file.html',true,true);
  echo $results;
-```
+"""
 
-<div dir="rtl">يتحول  كالتالي (كسلسلة):<br /><br /></div>
+<div dir="rtl">يتحول كالتالي (كسلسلة):<br /><br /></div>
 
-```
+"""
  Wed, 16 Sep 2013 02:49:46 +0000 Started.
  > Checking '/user_name/public_html/my_file.html':
  -> No problems found.
  Wed, 16 Sep 2013 02:49:47 +0000 Finished.
-```
+"""
 
-<div dir="rtl">للحصول على مفعول كامل لأي من التوقيعات التي يستخدمها "بي اتش بي ماسل" أثناء التفحص، وكيف يتعامل مع هذه التوقيعات، راجع قسم (7) شكل\صيغة التوقيع في هذا الملف التمهيدي.<br /><br /></div>
+<div dir="rtl">للحصول على مفعول كامل لأي من التوقيعات التي يستخدمها "بي اتش بي ماسل" أثناء التفحص، وكيف يتعامل مع هذه التوقيعات، راجع قسم (7) شكل/صيغة التوقيع في هذا الملف التمهيدي.<br /><br /></div>
 
 <div dir="rtl">إذا واجهت أي إيجابيات زائفة أي إذا واجهت شيئا جديدا تعتقد أنه يجب أن يكون قد تم حظره أو أي شيء آخر بخصوص التوقيعات، فيرجى الاتصال بي لإبلاغي عن ذلك حتى أستطيع إجراء التغييرات اللازمة، والتي إذا لم تقوم بالاتصال بي، فإنني قد لا أكون منتبه لها.<br /><br /></div>
 
-<div dir="rtl">لتعطيل التواقيع التي يتضمنها phpMussel (مثل إذا كنت تعاني من إيجابية زائفة محددة لأغراضك التي لا ينبغي أن يتم عادة إزالتها)، فارجع إلى القائمة الرمادية ضمن قسم أوامر المتصفح من هذا الملف التمهيدي.<br /><br /></div>
+<div dir="rtl">لتعطيل التواقيع التي يتضمنها phpMussel (مثل إذا كنت تعاني من إيجابية زائفة محددة لأغراضك التي لا ينبغي أن يتم عادة إزالتها)، فارجع إلى القائمة الرمادية ضمن قسم أوامرالمتصفح من هذا الملف التمهيدي.<br /><br /></div>
 
-<div dir="rtl">بالإضافة للمسح الافتراضي للملفات و المسح الاختياري للملفات و\أو الدلائل الأخرى المحددة عن طريق الدالة أعلاه المضمنة في phpMussel و هي وظيفة معدة لفحص محتوى رسائل البريد الإلكتروني. هذه الوظيفة تسلك بشكل مشابه للوظيفة المعيارية ل"بي اتش بي ماسل"  ولكن تركز فقط على المطابقة ضد توقيعات "كلام ايه في"  القائمة على البريد الإلكتروني. إنني لم أربط هذه التوقيعات بالوظيفة الافتراضية  لـ"بي اتش بي ماسل" لأنه من المستبعد جداً أن تجد محتوى رسالة يحتاج للفحص ضمن تحميل الملف المستهدف إلى صفحة حيث يكون "بي اتش بي ماسل" مثبت. و بذلك فإن ربط هذه التوقيعات بوظيفة "بي اتش بي ماسل" غير ضروري أو مجدي، ومع ذلك فوجود وظيفة منفصلة تطابق ضد هذه التوقيعات يمكن أن تكون مفيدة للغاية بالنسبة للبعض، خصوصا بالنسبة لأولئك الذين لديهم نظام CMS أو نظام webfront مرتبط بطريقة أو بأخرى مع نظام بريدهم الإلكتروني وبالنسبة لأولئك الذين يحيلون رسائل بريدهم الإلكتروني عن طريق نص برمجي PHP فإنهم من المحتمل أن ربطوه مع "بي اتش بي ماسل". تكوين هذه الدالة مثل كل الدوال الأخرى والتحكم فيها عن طريق ملف "phpmussel.ini". لاستخدام هذه الدالة (سوف تحتاج إلى القيام بالإجراء الخاص بك)، في ملف PHP التي يتم ربطه مع "بي اتش بي ماسل"، استخدم الدالة التالية في التعليمات البرمجية:<br /><br /></div>
+<div dir="rtl">بالإضافة للمسح الافتراضي للملفات و المسح الاختياري للملفات و/أو الدلائل الأخرى المحددة عن طريق الدالة أعلاه المضمنة في phpMussel و هي وظيفة معدة لفحص محتوى رسائل البريد الإلكتروني. هذه الوظيفة تسلك بشكل مشابه للوظيفة المعيارية ل"بي اتش بي ماسل" ولكن تركز فقط على المطابقة ضد توقيعات "كلام ايه في" القائمة على البريد الإلكتروني. إنني لم أربط هذه التوقيعات بالوظيفة الافتراضية لـ"بي اتش بي ماسل" لأنه من المستبعد جداً أن تجد محتوى رسالة يحتاج للفحص ضمن تحميل الملف المستهدف إلى صفحة حيث يكون "بي اتش بي ماسل" مثبت. و بذلك فإن ربط هذه التوقيعات بوظيفة "بي اتش بي ماسل" غير ضروري أو مجدي، ومع ذلك فوجود وظيفة منفصلة تطابق ضد هذه التوقيعات يمكن أن تكون مفيدة للغاية بالنسبة للبعض، خصوصا بالنسبة لأولئك الذين لديهم نظام CMS أو نظام webfront مرتبط بطريقة أو بأخرى مع نظام بريدهم الإلكتروني وبالنسبة لأولئك الذين يحيلون رسائل بريدهم الإلكتروني عن طريق نص برمجي PHP فإنهم من المحتمل أن ربطوه مع "بي اتش بي ماسل". تكوين هذه الدالة مثل كل الدوال الأخرى والتحكم فيها عن طريق ملف "phpmussel.ini". لاستخدام هذه الدالة (سوف تحتاج إلى القيام بالإجراء الخاص بك)، في ملف PHP التي يتم ربطه مع "بي اتش بي ماسل"، استخدم الدالة التالية في التعليمات البرمجية:<br /><br /></div>
 
-`phpMussel_mail($body);`
+"phpMussel_mail($body);"
 
 <div dir="rtl">حيث "$body" هي محتوى رسالة البريد الإلكتروني المارد فحصها (بالإضافة إلى ذلك، فيمكنك تجربة فحص المشاركات الجديدة في منتدى، الرسائل الواردة من نموذج اتصالك بالانترنت أو ما شابه ذلك. في حالة حدوث أي خطأ يمنع الدالة من إكمال فحصها فسوف تعاد قيمة -1. إذا اكتمل فحص الدالة ولم تطابق أي شيء فسيتم إرجاع قيمة "0" (بمعنى نظيفة). غير أنه إذا كانت الدالة لا تتطابق مع شيء فسيتم إرجاع سلسلة تحتوي على رسالة تعلن ما يقابل ذلك.<br /><br /></div>
 
 <div dir="rtl">بالإضافة إلى ما سبق، إذا نظرتم إلى التعليمات البرمجية من المصدر فقد تلاحظ الدالة "phpMusselD()" و"phpMusselR()". هذه الدوال هي دوال فرعية من "phpMussel()"، ويجب أن لا يتم استدعاءها مباشرة خارج تلك الدالة الأم (ليس بسبب الآثار السلبية، ولكن يفضل ذلك، لأنه ببساطة لا تخدم أي غرض وستكون على الأرجح لا تعمل بشكل صحيح على أية حال).<br /><br /></div>
 
-<div dir="rtl">هناك العديد من الضوابط وغيرها من المهام المتاحة داخل phpMussel للاستخدام الخاص أيضا. عن أي من هذه الضوابط والمهام الموجودة بنهاية هذا الملف التمهيدي، فيرجى مواصلة القراءة والرجوع إلى قسم أوامر المتصفح من هذا الملف التمهيدي.<br /><br /></div>
+<div dir="rtl">هناك العديد من الضوابط وغيرها من المهام المتاحة داخل phpMussel للاستخدام الخاص أيضا. عن أي من هذه الضوابط والمهام الموجودة بنهاية هذا الملف التمهيدي، فيرجى مواصلة القراءة والرجوع إلى قسم أوامرالمتصفح من هذا الملف التمهيدي.<br /><br /></div>
 
 ---
 
@@ -145,113 +145,135 @@
 
 <div dir="rtl">يرجى الرجوع إلى قسم "التحميل (لخدمات واجهة سطر الأوامر)" من هذا الملف التمهيدي.<br /><br /></div>
 
-<div dir="rtl">يجب أن تدرك أنه على الرغم من أن الإصدارات المستقبلية من "بي اتش بي ماسل"  ينبغي أن تدعم الأنظمة الأخرى، لكن في هذا الوقت phpMussel CLI  في وضعه الأمثل يدعم فقط الاستخدام على نظام Windows (يمكنك بطبيعة الحال محاولة استخدامه على الأنظمة الأخرى، ولكن لا أستطيع أن أضمن لك أنه سوف يعمل على النحو المنشود).<br /><br /></div>
+<div dir="rtl">يجب أن تدرك أنه على الرغم من أن الإصدارات المستقبلية من "بي اتش بي ماسل" ينبغي أن تدعم الأنظمة الأخرى، لكن في هذا الوقت phpMussel CLI في وضعه الأمثل يدعم فقط الاستخدام على نظام Windows (يمكنك بطبيعة الحال محاولة استخدامه على الأنظمة الأخرى، ولكن لا أستطيع أن أضمن لك أنه سوف يعمل على النحو المنشود).<br /><br /></div>
 
 <div dir="rtl">كما يجب أن تدرك أن "بي اتش بي ماسل" ليس المكافئ الوظيفي لمجموعة متكاملة من مضاد الفيروسات، وعلى عكس البرامج التقليدية لمكافحة الفيروسات فإنها لا تراقب الذاكرة النشطة أو الكشف عن الفيروسات بشكل مباشر و على الطاير! لكنها سوف تكشف عن الفيروسات فقط الواردة في تلك الملفات المحددة التي طلبت منه فحصها.<br /><br /></div>
 
 ---
 
 
-### <div dir="rtl">4أ. <a name="SECTION4A"></a>أوامر المتصفح</div>
+### <div dir="rtl">4أ. <a name="SECTION4A"></a>أوامرالمتصفح</div>
 
-Once phpMussel has been installed and is correctly functioning on your system, if you've set the `script_password` and `logs_password` variables in your configuration file, you will be able to perform some limited number of administrative functions and input some number of commands to phpMussel via your browser. The reason these passwords need to be set in order to enable these browser-side controls is both to ensure proper security, proper protection of these browser-side controls and to ensure that there exists a way for these browser-side controls to be entirely disabled if they are not desired by you and/or other webmasters/administrators using phpMussel. So, in other words, to enable these controls, set a password, and to disable these controls, set no password. Alternatively, if you choose to enable these controls and then choose to disable these controls at a later date, there is a command to do this (such can be useful if you perform some actions that you feel could potentially compromise the delegated passwords and need to quickly disable these controls without modifying your configuration file).
+<div dir="rtl">بمجرد أن تم تثبيت "بي اتش بي ماسل" و يعمل بشكل صحيح على النظام الخاص بك، فإذا قمت بضبط المتغيرات "script_password" و "logs_password" في ملف التكوين الخاص بك، ستكون قادرة على أداء بعض من الوظائف الإدارية المحدودة و إدخال بعض من الأوامر لـ"بي اتش بي ماسل" عبر متصفحك.السبب في أن كلمات السر هذه يجب وضعها من أجل تمكين هذه الضوابط من جانب المتصفح لضمان الأمن السليم، سواء للحماية المناسبة من هذه الضوابط من جانب المتصفح و كذلك لضمان أن هناك وسيلة لهذه الضوابط من جانب المتصفح ليكون معطل تماما إذا لم يتم طلبه من قبلك و/أو مشرفي المواقع الأخرى الذين يستخدمون "بي اتش بي ماسل". لذلك، وبعبارة أخرى، لتمكين هذه الضوابط قم بتعيين كلمة مرور، و لتعطيل هذه الضوابط لا تقم بتعيين أية كلمة مرور. بدلا من ذلك، إذا أردت تمكين هذه الضوابط و من ثم تعطيل هذه الضوابط في وقت لاحق، هناك أمر للقيام بذلك (مثل هذا يمكن أن يكون مفيد اًإذا قمت بإجراء بعض الإجراءات التي تشعر باحتمالية أن تؤثر سلبا على كلمات السر المفوضة وتحتاج إلى تعطيل هذه الضوابط بسرعة دون تعديل ملف التكوين الخاص بك).<br /><br /></div>
 
-A couple of reasons why you _**SHOULD**_ enable these controls:
-- Provides a way to greylist signatures on-the-fly in instances such as when you discover a signature that is producing a false-positive while uploading files to your system and you don't have time to manually edit and reupload your greylist file.
-- Provides a way for you to allow someone other than yourself to control your copy of phpMussel without the implicit need to grant them access to FTP.
-- Provides a way to provide controlled access to your log files.
-- Provides an easy way to update phpMussel when updates are available.
-- Provides a way for you to monitor phpMussel when FTP access or other conventional access points for monitoring phpMussel are not available.
+<div dir="rtl">يجب عليك <strong>تفعيل</strong> هذه الضوابط لمجموعة أسباب:<br /></div>
+<div dir="rtl"><ul>
+ <li>يوفر وسيلة للتوقيعات الموجودة في القائمة الرمادية على الفور في حالات مثل عندما تكتشف توقيع ينتج إيجابية كاذبة(أي أنه صنف الملف على أنه تحت تأثير الفايروس و لكن في الحقيقة أن الملف سليم و غير مصاب بالفايروس) أثناء تحميل الملفات على النظام الخاص بك و ليس لديك الوقت لتعديل وإعادة رفع ملف القائمة الرمادية يدويا.</li>
+ <li>يوفر لك طريقة لتمكن شخص غيرك من التحكم في نسختك من "بي اتش بي ماسل" دون الحاجة لمنحهم إمكانية الوصول إلى بروتوكول نقل الملفات.</li>
+ <li>يوفر طريقة لتوفير مراقب إلى سجل ملفاتك.</li>
+ <li>يوفر طريقة سهلة لتحديث "بي اتش بي ماسل" عندما تتوفر تحديثات.</li>
+ <li>يوفر طريقة لتتمكن من مراقبة "بي اتش بي ماسل"عند عدم توفر مراقبة من FTPأ و نقاط الوصول التقليدية الأخرى.</li>
+</ul></div>
 
-A couple of reasons why you should _**NOT**_ enable these controls:
-- Provides a vector for potential attackers and undesirables to determine whether you're using phpMussel or not (although, this could be both a reason for and a reason against, depending on perspective) by way of blindly sending commands to servers as a means to probe. On one hand, this could discourage attackers from targeting your system if they learn that you're using phpMussel, assuming that they are probing because their attack method is rendered ineffective as a result of using phpMussel. However, on the other hand, if some unforeseen and currently unknown exploit within phpMussel or a future version thereof comes to light, and if it could potentially provide an attack vector, a positive result from such probing could actually encourage attackers to target your system.
-- If your delegated passwords were ever compromised, unless changed, could provide a way for an attacker to bypass whatever signatures may be otherwise normally preventing their attacks from succeeding, or even potentially disable phpMussel altogether, thus providing a way to render the effectiveness of phpMussel moot.
+كذلك يجب عليك <strong>عدم تفعيل</strong> هذه الضوابط لمجموعة أسباب:
+<div dir="rtl"><ul>
+ <li>يوفر ناقل للمهاجمين المحتملين وغير المرغوب فيهم لتحديد ما إذا كنت تستخدم "بي اتش بي ماسل" أم لا (على الرغم من أن هذا يمكن أن يكون سبب لها أو ضدها بناء على نوعيتها) عن طريق إرسال أوامر بصورة عمياء إلى الخادم كوسيلة لفحص. من جهة فيمكن أن يثني المهاجمين من استهداف النظام الخاص بك إذا كانوا يعلمون أنك تستخدم"بي اتش بي ماسل" على افتراض أنهم يفحصون و وجدوا أن طريقة هجومهم ستكون غير فعالة نتيجة لاستخدام"بي اتش بي ماسل". مع ذلك فمن ناحية أخرى، فقد يمكن استغلال بعض المداخل غير المتوقعة وغير المعروفة حاليا داخل "بي اتش بي ماسل" أو في إصدار لاحق من البرنامج، فمن المحتمل أن توفر ناقلات لهجومهم، كنتيجة إيجابية من مثل هذا الفحص (أي أنهم يجدون مدخل أو ثغرة في البرنامج) في الواقع يمكن أن تشجع المعتدين على استهداف النظام الخاص بك.</li>
+ <li>إذا تعرضت كلمات السر التي قمت بتعيينها للخطر في أي وقت، إلا إذا تغيرت، فيمكن أن توفر وسيلة للمهاجمين لتجاوز كل ما قد تكون التوقيعات كفيلة عادة بمنع هجماتهم من النجاح، أو حتى يحتمل تعطيل "بي اتش بي ماسل" تماما، وبالتالي توفير وسيلة لجعل فعالية "بي اتش بي ماسل" شكلية غير فعالة.</li>
+</ul></div>
 
-Either way, regardless of what you choose, the choice is ultimately yours. By default, these controls will be disabled, but have a think about it, and if you decide you want them, this section explains both how to enable them and how to use them.
+<div dir="rtl">في كلتا الحالتين بغض النظر عن ما اخترت والخيار في النهاية لك، فإنه بشكل افتراضي سيتم تعطيل هذه الضوابط، ولكن فكر في ذلك، وإذا قررت أنك تريدهم، فهذا القسم يوضح كل من كيفية تمكينها وكيفية استخدامها.<br /><br /></div>
 
-A list of available browser-side commands:
+<div dir="rtl">قائمة الأوامر المتاحة من جانب متصفح:<br /><br /></div>
 
-scan_log
-- Password required: `logs_password`
-- Other requirements: scan_log must be set.
-- Required parameters: (none)
-- Optional parameters: (none)
-- Example: `?logspword=[logs_password]&phpmussel=scan_log`
-- What it does: Prints the contents of your scan_log file to the screen.
+<div dir="rtl">scan_log (سجل_الفحص)<br /></div>
+<div dir="rtl"><ul>
+ <li>كلمة المرور مطلوبة: "logs_password"</li>
+ <li>متطلبات أخرى: يجب ضبط "scan_log".</li>
+ <li>المعاملات المطلوبة: (لا يوجد)</li>
+ <li>المعاملات الاختيارية: (لا يوجد)</li>
+ <li>مثال: "?logspword=[logs_password]&phpmussel=scan_log"</li>
+ <li>ماذا يفعل: إظهار محتويات ملف (سجل الفحص) scan_log إلى الشاشة.</li>
+</ul></div>
 
-scan_kills
-- Password required: `logs_password`
-- Other requirements: scan_kills must be set.
-- Required parameters: (none)
-- Optional parameters: (none)
-- Example: `?logspword=[logs_password]&phpmussel=scan_kills`
-- What it does: Prints the contents of your scan_kills file to the screen.
+<div dir="rtl">scan_kills (تعطل_الفحص)<br /></div>
+<div dir="rtl"><ul>
+ <li>كلمة المرور مطلوبة: "logs_password"</li>
+ <li>متطلبات أخرى: يجب ضبط scan_kills.</li>
+ <li>المعاملات المطلوبة: (لا يوجد)</li>
+ <li>المعاملات الاختيارية: (لا يوجد)</li>
+ <li>مثال: "?logspword=[logs_password]&phpmussel=scan_kills"</li>
+ <li>ماذا يفعل: إظهار محتويات ملف (تعطل الفحص) scan_kills إلى الشاشة.</li>
+</ul></div>
 
-controls_lockout
-- Password required: `logs_password` OR `script_password`
-- Other requirements: (none)
-- Required parameters: (none)
-- Optional parameters: (none)
-- Example 1: `?logspword=[logs_password]&phpmussel=controls_lockout`
-- Example 2: `?pword=[script_password]&phpmussel=controls_lockout`
-- What it does: Disables ("locks out") all browser-side controls. This should be used if you suspect that either of your passwords have been compromised (this can happen if you're using these controls from a computer that's not secured and/or not trusted). controls_lockout works by creating a file, `controls.lck`, in your "vault", that phpMussel will check for before performing any commands of any kind. Once this happens, to reenable controls, you'll need to manually delete the `controls.lck` file via FTP or similar. Can be called using either password.
+<div dir="rtl">controls_lockout (قفل التحكم)<br /></div>
+<div dir="rtl"><ul>
+ <li>كلمة المرور مطلوبة: "logs_password" أو "script_password"</li>
+ <li>متطلبات أخرى: (لا يوجد)</li>
+ <li>المعاملات المطلوبة: (لا يوجد)</li>
+ <li>المعاملات الاختيارية: (لا يوجد)</li>
+ <li>مثال 1: "?logspword=[logs_password]&phpmussel=controls_lockout"</li>
+ <li>مثال 2: "?pword=[script_password]&phpmussel=controls_lockout"</li>
+ <li>ماذا يفعل: تعطل جميع عناصر التحكم من قبل المتصفح. هذا ينبغي أن تستخدم إذا كنت تظن أن أي من كلمات السر الخاصة بك قد تم اختراقها (هذا يمكن أن يحدث إذا كنت تستخدم هذه الضوابط من جهاز كمبيوتر ليس آمن و/أو غير موثوق). "controls_lockout" (قفل التحكم) يعمل عن طريق إنشاء ملف يسمى (controls.lck) في مجلد خاص و الذي سوف يقوم (بي اتش بي ماسل) بالتحقق من خلاله قبل تنفيذ أي أوامر من أي نوع. عندما يحدث هذا فإنك لإعادة تمكين الضوابط، ستحتاج إلى حذف الملف (controls.lck) يدويا عبر بروتوكول نقل الملفات أو ما شابه ذلك و الذي يمكن استدعاءه باستخدام كلمة مرور.</li>
+</ul></div>
 
-disable
-- Password required: `script_password`
-- Other requirements: (none)
-- Required parameters: (none)
-- Optional parameters: (none)
-- Example: `?pword=[script_password]&phpmussel=disable`
-- What it does: Disables phpMussel. This should be used if you're performing any updates or changes to your system or if you're installing any new software or modules to your system that either does or potentially could trigger false positives. This should also be used if you're having any problems with phpMussel but don't wish to remove it from your system. Once this happens, to reenable phpMussel, use "enable".
+<div dir="rtl">disable (تعطل)<br /></div>
+<div dir="rtl"><ul>
+ <li>كلمة المرور مطلوبة: "script_password"</li>
+ <li>متطلبات أخرى: (لا يوجد)</li>
+ <li>المعاملات المطلوبة: (لا يوجد)</li>
+ <li>المعاملات الاختيارية: (لا يوجد)</li>
+ <li>مثال: "?pword=[script_password]&phpmussel=disable"</li>
+ <li>ماذا يفعل: تعطيل (بي اتش بي ماسل). هذا ينبغي أن تستخدم إذا كنت تود بالقيام بأي تحديثات أو تغييرات على النظام الخاص بك أو يمكن إذا كنت تقوم بتثبيت أي برنامج جديد أو وحدات لنظامك فإما أن يفعل أو يحتمل أن يؤدي لفحص خاطئ (أن يعطي الفحص نتيجة بان البرنامج مصاب بالفايروس و هو غير ضار أو غير مصاب فعلياً). ينبغي أن يستخدم أيضا إذا كنت تواجه أي مشاكل مع (بي اتش بي ماسل) ولكن لا ترغب في إزالته من النظام الخاص بك. عندما يحدث هذا، لإعادة تمكين (بي اتش بي ماسل)، استخدم "تمكين".</li>
+</ul></div>
 
-enable
-- Password required: `script_password`
-- Other requirements: (none)
-- Required parameters: (none)
-- Optional parameters: (none)
-- Example: `?pword=[script_password]&phpmussel=enable`
-- What it does: Enables phpMussel. This should be used if you've previously disabled phpMussel using "disable" and want to reenable it.
+<div dir="rtl">enable (تمكين)<br /></div>
+<div dir="rtl"><ul>
+ <li>كلمة المرور مطلوبة: "script_password"</li>
+ <li>متطلبات أخرى: (لا يوجد)</li>
+ <li>المعاملات المطلوبة: (لا يوجد)</li>
+ <li>المعاملات الاختيارية: (لا يوجد)</li>
+ <li>مثال: "?pword=[script_password]&phpmussel=enable"</li>
+ <li>ماذا يفعل: تمكين بي اتش بي ماسل. هذا ينبغي أن تستخدم إذا كنت قد قمت بتعطيل (بي اتش بي ماسل) مسبقاً باستخدام "تعطيل" و تود إعادة تمكينه.</li>
+</ul></div>
 
-update
-- Password required: `script_password`
-- Other requirements: `update.dat` and `update.inc` must exist.
-- Required parameters: (none)
-- Optional parameters: (none)
-- Example: `?pword=[script_password]&phpmussel=update`
-- What it does: Checks for updates to both phpMussel and its signatures. If update checks succeed and updates are found, will attempt to download and install these updates. If update checks fail, update will abort. Results of the entire process are printed to the screen. I recommend checking at least once per month to ensure that your signatures and your copy of phpMussel are kept up to-date (unless, of course, you're checking for updates and installing them manually, which, I'd still recommend doing at least once per month). Checking more than twice per month is probably pointless, considering that I'm very unlikely to be able to produce updates of any kind more frequently than that (nor do I particularly want to for the most part).
+<div dir="rtl">update (تحديث)<br /></div>
+<div dir="rtl"><ul>
+ <li>كلمة المرور مطلوبة: "script_password"</li>
+ <li>متطلبات أخرى: يجب أن تكون update.dat و  update.inc موجودة.</li>
+ <li>المعاملات المطلوبة: (لا يوجد)</li>
+ <li>المعاملات الاختيارية: (لا يوجد)</li>
+ <li>مثال: "?pword=[script_password]&phpmussel=update"</li>
+ <li>ماذا يفعل: البحث عن التحديثات لكلاً من (بي اتش بي ماسل) و توقيعاته. إذا نجحت الفحوصات و أشارات لوجود تحديث، فستحاول تحميل وتثبيت هذه التحديثات. إذا فشلت الفحوصات بإيجاد التحديث، فسوف تحبط عملية التحديث و تظهر نتائج العملية برمتها إلى الشاشة. أنا أوصي بالفحص مرة واحدة على الأقل في الشهر لضمان أن يتم الاحتفاظ بالتوقيعات الخاصة بك ونسختك من (بي اتش بي ماسل) حديثة (باستثناء أن تكون قد قمت بالتحقق من التحديثات وتثبيتها يدويا والتي كنت و لا زلت أوصي به مرة واحدة في الشهر على الأقل). فحص أكثر من مرتين في الشهر ربما لا فائدة منه بإعتبار أنني أستبعد جدا أن أكون قادر على إنتاج التحديثات أياً كان نوعها في كثير من الأحيان لأكثر من مرة في الشهر (لا سيما الجزء الأكبر منهاً).</li>
+</ul></div>
 
-greylist
-- Password required: `script_password`
-- Other requirements: (none)
-- Required parameters: [Name of signature to be greylisted]
-- Optional parameters: (none)
-- Example: `?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]`
-- What it does: Add a signature to the greylist.
+<div dir="rtl">greylist (القائمة الرمادية "قائمة التوقيعات")<br /></div>
+<div dir="rtl"><ul>
+ <li>كلمة المرور مطلوبة: "script_password"</li>
+ <li>متطلبات أخرى: (لا يوجد)</li>
+ <li>المعاملات المطلوبة: (اسم التوقيع ليتم ضمه للقائمة)</li>
+ <li>المعاملات الاختيارية: (لا يوجد)</li>
+ <li>مثال: "?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]"</li>
+ <li>ماذا يفعل: إضافة التوقيع للقائمة.</li>
+</ul></div>
 
-greylist_clear
-- Password required: `script_password`
-- Other requirements: (none)
-- Required parameters: (none)
-- Optional parameters: (none)
-- Example: `?pword=[script_password]&phpmussel=greylist_clear`
-- What it does: Clears the entire greylist.
+<div dir="rtl">greylist_clear (مسح القائمة الرمادية)<br /></div>
+<div dir="rtl"><ul>
+ <li>كلمة المرور مطلوبة: "script_password"</li>
+ <li>متطلبات أخرى: (لا يوجد)</li>
+ <li>المعاملات المطلوبة: (لا يوجد)</li>
+ <li>المعاملات الاختيارية: (لا يوجد)</li>
+ <li>مثال: "?pword=[script_password]&phpmussel=greylist_clear"</li>
+ <li>ماذا يفعل: مسح القائمة الرمادية.</li>
+</ul></div>
 
-greylist_show
-- Password required: `script_password`
-- Other requirements: (none)
-- Required parameters: (none)
-- Optional parameters: (none)
-- Example: `?pword=[script_password]&phpmussel=greylist_show`
-- What it does: Prints the contents of the greylist to the screen.
+<div dir="rtl">greylist_show (عرض القائمة الرمادية)<br /></div>
+<div dir="rtl"><ul>
+ <li>كلمة المرور مطلوبة: "script_password"</li>
+ <li>متطلبات أخرى: (لا يوجد)</li>
+ <li>المعاملات المطلوبة: (لا يوجد)</li>
+ <li>المعاملات الاختيارية: (لا يوجد)</li>
+ <li>مثال: "?pword=[script_password]&phpmussel=greylist_show"</li>
+ <li>ماذا يفعل: عرض القائمة الرمادية على الشاشة.</li>
+</ul></div>
 
 ---
 
 
 ### <div dir="rtl">4ب. <a name="SECTION4B"></a>CLI (واجهة سطر الأوامر)</div>
 
-phpMussel can be run as an interactive file scanner in CLI mode under Windows-based systems. Refer to the "كيفية التحميل (لخدمات واجهة سطر الأوامر)" section of this README file for more details.
+<div dir="rtl">يمكن تشغيل (بي اتش بي  ماسل) باعتباره برنامج فحص ملفات تفاعلي في وضع CLI في ظل النظم المستندة إلى Windows. راجع قسم "كيفية التثبيت (لواجهة سطر الاوامر)" من هذا الملف التمهيدي لمزيد من التفاصيل.<br /><br /></div>
 
-For a list of available CLI commands, at the CLI prompt, type 'c', and press Enter.
+<div dir="rtl">للحصول على قائمة الأوامر المتاحة لواجهة سطر الأوامر، اكتب "c" في موجه واجهة سطر الأوامر واضغط "دخول" Enter.<br /><br /></div>
 
 ---
 
@@ -263,7 +285,7 @@ The following is a list of all of the files that should have been included in th
 File                                       | Description
 -------------------------------------------|--------------------------------------
 /phpmussel.php                             | Loader file. Loads the main script, updater, etcetera. This is what you're supposed to be hooking into (essential)!
-/web.config                                | An ASP.NET configuration file (in this instance, to protect the `/vault` directory from being accessed by non-authorised sources in the event that the script is installed on a server based upon ASP.NET technologies).
+/web.config                                | An ASP.NET configuration file (in this instance, to protect the "/vault" directory from being accessed by non-authorised sources in the event that the script is installed on a server based upon ASP.NET technologies).
 /_docs/                                    | Documentation directory (contains various files).
 /_docs/change_log.txt                      | A record of changes made to the script between different versions (not required for proper function of script).
 /_docs/readme.de.md                        | Documentation: DEUTSCH
@@ -456,7 +478,7 @@ File                                       | Description
 /vault/xmlxdp_mussel_regex.cvd             | File for XML/XDP-Chunk signatures.
 /vault/xmlxdp_mussel_standard.cvd          | File for XML/XDP-Chunk signatures.
 
-※ Filename may differ based on configuration stipulations (in `"phpmussel.ini"`).
+※ Filename may differ based on configuration stipulations (in ""phpmussel.ini"").
 
 ####*REGARDING SIGNATURE FILES*
 CVD is an acronym for "ClamAV Virus Definitions", in reference both to how ClamAV refers to its own signatures and to the use of those signatures for phpMussel; Files ending with "CVD" contain signatures.
@@ -480,21 +502,21 @@ Signature files marked with "_mussel" contain signatures that specifically are n
 
 
 ### <div dir="rtl">6. <a name="SECTION6"></a>خياراتالتكوين/التهيئة</div>
-The following is a list of variables found in the `"phpmussel.ini"` configuration file of phpMussel, along with a description of their purpose and function.
+The following is a list of variables found in the ""phpmussel.ini"" configuration file of phpMussel, along with a description of their purpose and function.
 
 ####"general" (Category)
 General phpMussel configuration.
 
 "script_password"
-- As a convenience, phpMussel will allow certain functions (including the ability to update phpMussel on-the-fly) to be manually triggered via POST, GET and QUERY. However, as a security precaution, to do this, phpMussel will expect a password to be included with the command, as to ensure that it's you, and not someone else, attempting to manually trigger these functions. Set `script_password` to whatever password you would like to use. If no password is set, manual triggering will be disabled by default. Use something you will remember but which is hard for others to guess.
+- As a convenience, phpMussel will allow certain functions (including the ability to update phpMussel on-the-fly) to be manually triggered via POST, GET and QUERY. However, as a security precaution, to do this, phpMussel will expect a password to be included with the command, as to ensure that it's you, and not someone else, attempting to manually trigger these functions. Set "script_password" to whatever password you would like to use. If no password is set, manual triggering will be disabled by default. Use something you will remember but which is hard for others to guess.
 - Has no influence in CLI mode.
 
 "logs_password"
-- The same as `script_password`, but for viewing the contents of scan_log and scan_kills. Having separate passwords can be useful if you want to give someone else access to one set of functions but not the other.
+- The same as "script_password", but for viewing the contents of scan_log and scan_kills. Having separate passwords can be useful if you want to give someone else access to one set of functions but not the other.
 - Has no influence in CLI mode.
 
 "cleanup"
-- Unset variables and cache used by the script after the initial upload scanning? False = No; True = Yes [Default]. If you -aren't- using the script beyond the initial scanning of uploads, you should set this to `true` (yes), to minimize memory usage. If you -are- using the script beyond the initial scanning of uploads, should set to `false` (no), to avoid unnecessarily reloading duplicate data into memory. In general practice, it should usually be set to `true`, but, if you do this, you won't be able to use the script for anything other than the initial file upload scanning.
+- Unset variables and cache used by the script after the initial upload scanning? False = No; True = Yes [Default]. If you -aren't- using the script beyond the initial scanning of uploads, you should set this to "true" (yes), to minimize memory usage. If you -are- using the script beyond the initial scanning of uploads, should set to "false" (no), to avoid unnecessarily reloading duplicate data into memory. In general practice, it should usually be set to "true", but, if you do this, you won't be able to use the script for anything other than the initial file upload scanning.
 - Has no influence in CLI mode.
 
 "scan_log"
@@ -519,10 +541,10 @@ General phpMussel configuration.
 - Specify if phpMussel should, when possible, override the language specification with the language preference declared by inbound requests (HTTP_ACCEPT_LANGUAGE). False = No [Default]; True = Yes.
 
 "lang_acceptable"
-- The `lang_acceptable` directive tells phpMussel which languages may be accepted by the script from `lang` or from `HTTP_ACCEPT_LANGUAGE`. This directive should **ONLY** be modified if you're adding your own customised language files or forcibly removing language files. The directive is a comma delimited string of the codes used by those languages accepted by the script.
+- The "lang_acceptable" directive tells phpMussel which languages may be accepted by the script from "lang" or from "HTTP_ACCEPT_LANGUAGE". This directive should **ONLY** be modified if you're adding your own customised language files or forcibly removing language files. The directive is a comma delimited string of the codes used by those languages accepted by the script.
 
 "quarantine_key"
-- phpMussel is able to quarantine flagged attempted file uploads in isolation within the phpMussel "vault", if this is something you want it to do. Casual users of phpMussel that simply wish to protect their websites or hosting environment without having any interest in deeply analysing any flagged attempted file uploads should leave this functionality disabled, but any users interested in further analysis of flagged attempted file uploads for malware research or for similar such things should enable this functionality. Quarantining of flagged attempted file uploads can sometimes also assist in debugging false-positives, if this is something that frequently occurs for you. To disable quarantine functionality, simply leave the `quarantine_key` directive empty, or erase the contents of that directive if it isn't already empty. To enable quarantine functionality, enter some value into the directive. The `quarantine_key` is an important security feature of the quarantine functionality required as a means of preventing the quarantine functionality from being exploited by potential attackers and as a means of preventing any potential execution of data stored within the quarantine. The `quarantine_key` should be treated in the same manner as your passwords: The longer the better, and guard it tightly. For best effect, use in conjunction with `delete_on_sight`.
+- phpMussel is able to quarantine flagged attempted file uploads in isolation within the phpMussel "vault", if this is something you want it to do. Casual users of phpMussel that simply wish to protect their websites or hosting environment without having any interest in deeply analysing any flagged attempted file uploads should leave this functionality disabled, but any users interested in further analysis of flagged attempted file uploads for malware research or for similar such things should enable this functionality. Quarantining of flagged attempted file uploads can sometimes also assist in debugging false-positives, if this is something that frequently occurs for you. To disable quarantine functionality, simply leave the "quarantine_key" directive empty, or erase the contents of that directive if it isn't already empty. To enable quarantine functionality, enter some value into the directive. The "quarantine_key" is an important security feature of the quarantine functionality required as a means of preventing the quarantine functionality from being exploited by potential attackers and as a means of preventing any potential execution of data stored within the quarantine. The "quarantine_key" should be treated in the same manner as your passwords: The longer the better, and guard it tightly. For best effect, use in conjunction with "delete_on_sight".
 
 "quarantine_max_filesize"
 - The maximum allowable filesize of files to be quarantined. Files larger than the value specified will NOT be quarantined. This directive is important as a means of making it more difficult for any potential attackers to flood your quarantine with unwanted data potentially causing run-away data usage on your hosting service. Value is in KB. Default =2048 =2048KB =2MB.
@@ -735,10 +757,10 @@ Chameleon attack detection: False = Off; True = On.
 - Recognised archive file extensions (format is CSV; should only add or remove when problems occur; unnecessarily removing may cause false-positives to appear for archive files, whereas unnecessarily adding will essentially whitelist what you're adding from attack specific detection; modify with caution; also note that this has no effect on what archives can and can't be analysed at content-level). The list, as is at default, lists those formats used most commonly across the majority of systems and CMS, but intentionally isn't necessarily comprehensive.
 
 "general_commands"
-- Search content of files for general commands such as `eval()`, `exec()` and `include()`? False = Don't check [Default]; True = Check. Disable this option if you intend to upload any of the following to your system or CMS via your browser: PHP, JavaScript, HTML, python, perl files and etcetera. Enable this option if you don't have any additional protections on your system and do not intend to upload such files. If you use additional security in conjunction with phpMussel such as ZB Block, there is no need to turn this option on, because most of what phpMussel will look for (in the context of this option) are duplications of protections that are already provided.
+- Search content of files for general commands such as "eval()", "exec()" and "include()"? False = Don't check [Default]; True = Check. Disable this option if you intend to upload any of the following to your system or CMS via your browser: PHP, JavaScript, HTML, python, perl files and etcetera. Enable this option if you don't have any additional protections on your system and do not intend to upload such files. If you use additional security in conjunction with phpMussel such as ZB Block, there is no need to turn this option on, because most of what phpMussel will look for (in the context of this option) are duplications of protections that are already provided.
 
 "block_control_characters"
-- Block any files containing any control characters (other than newlines)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) If you're _**ONLY**_ uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. False = Don't block [Default]; True = Block.
+- Block any files containing any control characters (other than newlines)? ("[\x00-\x08\x0b\x0c\x0e\x1f\x7f]") If you're _**ONLY**_ uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. False = Don't block [Default]; True = Block.
 
 "corrupted_exe"
 - Corrupted files and parse errors. False = Ignore; True = Block [Default]. Detect and block potentially corrupted PE (Portable Executable) files? Often (but not always), when certain aspects of a PE file are corrupted or can't be parsed correctly, it can be indicative of a viral infection. The processes used by most anti-virus programs to detect viruses in PE files require parsing those files in certain ways, which, if the programmer of a virus is aware of, will specifically try to prevent, in order to allow their virus to remain undetected.
@@ -753,7 +775,7 @@ Chameleon attack detection: False = Off; True = On.
 Compatibility directives for phpMussel.
 
 "ignore_upload_errors"
-- This directive should generally be disabled unless it's required for correct functionality of phpMussel on your specific system. Normally, when disabled, when phpMussel detects the presence of elements in the `$_FILES` array(), it'll attempt to initiate a scan of the files that those elements represent, and, if those elements are blank or empty, phpMussel will return an error message. This is proper behaviour for phpMussel. However, for some CMS, empty elements in `$_FILES` can occur as a result of the natural behaviour of those CMS, or errors may be reported when there aren't any, in which case, the normal behaviour for phpMussel will be interfering with the normal behaviour of those CMS. If such a situation occurs for you, enabling this option will instruct phpMussel to not attempt to initiate scans for such empty elements, ignore them when found and to not return any related error messages, thus allowing continuation of the page request. False = OFF; True = ON.
+- This directive should generally be disabled unless it's required for correct functionality of phpMussel on your specific system. Normally, when disabled, when phpMussel detects the presence of elements in the "$_FILES" array(), it'll attempt to initiate a scan of the files that those elements represent, and, if those elements are blank or empty, phpMussel will return an error message. This is proper behaviour for phpMussel. However, for some CMS, empty elements in "$_FILES" can occur as a result of the natural behaviour of those CMS, or errors may be reported when there aren't any, in which case, the normal behaviour for phpMussel will be interfering with the normal behaviour of those CMS. If such a situation occurs for you, enabling this option will instruct phpMussel to not attempt to initiate scans for such empty elements, ignore them when found and to not return any related error messages, thus allowing continuation of the page request. False = OFF; True = ON.
 
 "only_allow_images"
 - If you only expect or only intend to allow images to be uploaded to your system or CMS, and if you absolutely don't require any files other than images to be uploaded to your system or CMS, this directive should be enabled, but should otherwise be disabled. If this directive is enabled, it'll instruct phpMussel to indiscriminately block any uploads identified as non-image files, without scanning them. This may reduce processing time and memory usage for attempted uploads of non-image files. False = OFF; True = ON.
@@ -772,13 +794,13 @@ VirusTotal.com directives.
  - You have read and agree to the Terms of Service of Virus Total and its API. The Terms of Service of Virus Total and its API can be found [Here](https://www.virustotal.com/en/about/terms-of-service/).
  - You have read and you understand, at a minimum, the preamble of the Virus Total Public API documentation (everything after "VirusTotal Public API v2.0" but before "Contents"). The Virus Total Public API documentation can be found [Here](https://www.virustotal.com/en/documentation/public-api/).
 
-Note: If scanning files using the Virus Total API is disabled, you won't need to review any of the directives in this category (`virustotal`), because none of them will do anything if this is disabled. To acquire a Virus Total API key, from anywhere on their website, click the "Join our Community" link located towards the top-right of the page, enter in the information requested, and click "Sign up" when done. Follow all instructions supplied, and when you've got your public API key, copy/paste that public API key to the `vt_public_api_key` directive of the `"phpmussel.ini"` configuration file.
+Note: If scanning files using the Virus Total API is disabled, you won't need to review any of the directives in this category ("virustotal"), because none of them will do anything if this is disabled. To acquire a Virus Total API key, from anywhere on their website, click the "Join our Community" link located towards the top-right of the page, enter in the information requested, and click "Sign up" when done. Follow all instructions supplied, and when you've got your public API key, copy/paste that public API key to the "vt_public_api_key" directive of the ""phpmussel.ini"" configuration file.
 
 "vt_suspicion_level"
-- By default, phpMussel will restrict which files it scans using the Virus Total API to those files that it considers "suspicious". You can optionally adjust this restriction by changing the value of the `vt_suspicion_level` directive.
-- `0`: Files are only considered suspicious if, upon being scanned by phpMussel using its own signatures, they are deemed to carry a heuristic weight. This would effectively mean that use of the Virus Total API would be for a second opinion for when phpMussel suspects that a file may potentially be malicious, but can't entirely rule out that it may also potentially be benign (non-malicious) and therefore would otherwise normally not block it or flag it as being malicious.
-- `1`: Files are considered suspicious if, upon being scanned by phpMussel using its own signatures, they are deemed to carry a heuristic weight, if they're known to be executable (PE files, Mach-O files, ELF/Linux files, etc), or if they're known to be of a format that could potentially contain executable data (such as executable macros, DOC/DOCX files, archive files such as RARs, ZIPS and etc). This is the default and recommended suspicion level to apply, effectively meaning that use of the Virus Total API would be for a second opinion for when phpMussel doesn't initially find anything malicious or wrong with a file that it considers to be suspicious and therefore would otherwise normally not block it or flag it as being malicious.
-- `2`: All files are considered suspicious and should be scanned using the Virus Total API. I don't generally recommend applying this suspicion level, due to the risk of reaching your API quota much quicker than would otherwise be the case, but there are certain circumstances (such as when the webmaster or hostmaster has very little faith or trust whatsoever in any of the uploaded content of their users) where this suspicion level could be appropriate. With this suspicion level, all files not normally blocked or flagged as being malicious would be scanned using the Virus Total API. Note, however, that phpMussel will cease using the Virus Total API when your API quota has been reached (regardless of suspicion level), and that your quota will likely be reached much faster when using this suspicion level.
+- By default, phpMussel will restrict which files it scans using the Virus Total API to those files that it considers "suspicious". You can optionally adjust this restriction by changing the value of the "vt_suspicion_level" directive.
+- "0": Files are only considered suspicious if, upon being scanned by phpMussel using its own signatures, they are deemed to carry a heuristic weight. This would effectively mean that use of the Virus Total API would be for a second opinion for when phpMussel suspects that a file may potentially be malicious, but can't entirely rule out that it may also potentially be benign (non-malicious) and therefore would otherwise normally not block it or flag it as being malicious.
+- "1": Files are considered suspicious if, upon being scanned by phpMussel using its own signatures, they are deemed to carry a heuristic weight, if they're known to be executable (PE files, Mach-O files, ELF/Linux files, etc), or if they're known to be of a format that could potentially contain executable data (such as executable macros, DOC/DOCX files, archive files such as RARs, ZIPS and etc). This is the default and recommended suspicion level to apply, effectively meaning that use of the Virus Total API would be for a second opinion for when phpMussel doesn't initially find anything malicious or wrong with a file that it considers to be suspicious and therefore would otherwise normally not block it or flag it as being malicious.
+- "2": All files are considered suspicious and should be scanned using the Virus Total API. I don't generally recommend applying this suspicion level, due to the risk of reaching your API quota much quicker than would otherwise be the case, but there are certain circumstances (such as when the webmaster or hostmaster has very little faith or trust whatsoever in any of the uploaded content of their users) where this suspicion level could be appropriate. With this suspicion level, all files not normally blocked or flagged as being malicious would be scanned using the Virus Total API. Note, however, that phpMussel will cease using the Virus Total API when your API quota has been reached (regardless of suspicion level), and that your quota will likely be reached much faster when using this suspicion level.
 
 Note: Regardless of suspicion level, any files that are either blacklisted or whitelisted by phpMussel won't be scanned using the Virus Total API, because those such files would've already been declared as either malicious or benign by phpMussel by the time that they would've otherwise been scanned by the Virus Total API, and therefore, additional scanning wouldn't be required. The ability of phpMussel to scan files using the Virus Total API is intended to build further confidence for whether a file is malicious or benign in those circumstances where phpMussel itself isn't entirely certain as to whether a file is malicious or benign.
 
@@ -786,15 +808,15 @@ Note: Regardless of suspicion level, any files that are either blacklisted or wh
 - Should phpMussel apply the results of scanning using the Virus Total API as detections or as detection weighting? This directive exists, because, although scanning a file using multiple engines (as Virus Total does) should result in an increased detection rate (and therefore in a higher number of malicious files being caught), it can also result in a higher number of false positives, and therefore, in some circumstances, the results of scanning may be better utilised as a confidence score rather than as a definitive conclusion. If a value of 0 is used, the results of scanning using the Virus Total API will be applied as detections, and therefore, if any engine used by Virus Total flags the file being scanned as being malicious, phpMussel will consider the file to be malicious. If any other value is used, the results of scanning using the Virus Total API will be applied as detection weighting, and therefore, the number of engines used by Virus Total that flag the file being scanned as being malicious will serve as a confidence score (or detection weighting) for whether or not the file being scanned should be considered malicious by phpMussel (the value used will represent the minimum confidence score or weight required in order to be considered malicious). A value of 0 is used by default.
 
 "vt_quota_rate" and "vt_quota_time"
-- According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly adhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values _**MAY**_ sometimes help you in dealing with these problems. Your rate limit is determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame.
+- According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly adhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values _**MAY**_ sometimes help you in dealing with these problems. Your rate limit is determined as "vt_quota_rate" requests of any nature in any given "vt_quota_time" minute time frame.
 
 ####"urlscanner" (Category)
 URL scanner configuration.
 
 "urlscanner"
-- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the `urlscanner` directive to true; To disable it, set this directive to false.
+- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the "urlscanner" directive to true; To disable it, set this directive to false.
 
-Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
+Note: If the URL scanner is disabled, you won't need to review any of the directives in this category ("urlscanner"), because none of them will do anything if this is disabled.
 
 URL scanner API lookup configuration.
 
@@ -817,10 +839,10 @@ URL scanner API lookup configuration.
 ####"template_data" (Category)
 Directives/Variables for templates and themes.
 
-Template data relates to the HTML output used to generate the "Upload Denied" message displayed to users upon a file upload being blocked. If you're using custom themes for phpMussel, HTML output is sourced from the `template_custom.html` file, and otherwise, HTML output is sourced from the `template.html` file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where `foo="bar"`, any instance of `<p>{foo}</p>` found within the HTML output will become `<p>bar</p>`.
+Template data relates to the HTML output used to generate the "Upload Denied" message displayed to users upon a file upload being blocked. If you're using custom themes for phpMussel, HTML output is sourced from the "template_custom.html" file, and otherwise, HTML output is sourced from the "template.html" file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where "foo="bar"", any instance of "<p>{foo}</p>" found within the HTML output will become "<p>bar</p>".
 
 "css_url"
-- The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct phpMussel to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the `css_url` variable. If you leave this variable blank, phpMussel will use the template file for the default theme.
+- The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct phpMussel to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the "css_url" variable. If you leave this variable blank, phpMussel will use the template file for the default theme.
 
 ---
 
@@ -830,54 +852,54 @@ Template data relates to the HTML output used to generate the "Upload Denied" me
 ####*FILENAME SIGNATURES*
 All filename signatures follow the format:
 
-`NAME:FNRX`
+"NAME:FNRX"
 
 Where NAME is the name to cite for that signature and FNRX is the regex pattern to match filenames (unencoded) against.
 
 ####*MD5 SIGNATURES*
 All MD5 signatures follow the format:
 
-`HASH:FILESIZE:NAME`
+"HASH:FILESIZE:NAME"
 
 Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of that file and NAME is the name to cite for that signature.
 
 ####*ARCHIVE METADATA SIGNATURES*
 All archive metadata signatures follow the format:
 
-`NAME:FILESIZE:CRC32`
+"NAME:FILESIZE:CRC32"
 
 Where NAME is the name to cite for that signature, FILESIZE is the total size (uncompressed) of a file contained within the archive and CRC32 is the CRC32 checksum of that contained file.
 
 ####*PE SECTIONAL SIGNATURES*
 All PE Sectional signatures follow the format:
 
-`SIZE:HASH:NAME`
+"SIZE:HASH:NAME"
 
 Where HASH is the MD5 hash of a section of a PE file, SIZE is the total size of that section and NAME is the name to cite for that signature.
 
 ####*PE EXTENDED SIGNATURES*
 All PE extended signatures follow the format:
 
-`$VAR:HASH:SIZE:NAME`
+"$VAR:HASH:SIZE:NAME"
 
 Where $VAR is the name of the PE variable to match against, HASH is the MD5 hash of that variable, SIZE is the total size of that variable and NAME is the name to cite for that signature.
 
 ####*WHITELIST SIGNATURES*
 All Whitelist signatures follow the format:
 
-`HASH:FILESIZE:TYPE`
+"HASH:FILESIZE:TYPE"
 
 Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of that file and TYPE is the type of signatures the whitelisted file is to be immune against.
 
 ####*COMPLEX EXTENDED SIGNATURES*
 Complex Extended signatures are rather different to the other types of signatures possible with phpMussel, in that what they are matching against is specified by the signatures themselves and they can match against multiple criteria. The match criterias are delimited by ";" and the match type and match data of each match criteria is delimited by ":" as so that format for these signatures tends to look a bit like:
 
-`$variable1:SOMEDATA;$variable2:SOMEDATA;SignatureName`
+"$variable1:SOMEDATA;$variable2:SOMEDATA;SignatureName"
 
 ####*EVERYTHING ELSE*
 All other signatures follow the format:
 
-`NAME:HEX:FROM:TO`
+"NAME:HEX:FROM:TO"
 
 Where NAME is the name to cite for that signature and HEX is a hexadecimal-encoded segment of the file intended to be matched by the given signature. FROM and TO are optional parameters, indicating from which and to which positions in the source data to check against (not supported by the mail function).
 
@@ -909,7 +931,7 @@ The following is a breakdown of the types of signatures used by phpMussel:
 - "SWF Signatures" (swf_*). Checked against the contents of every non-whitelisted Shockwave file targeted for scanning.
 - "Whitelist Signatures" (whitelist_*). Checked against the MD5 hash of the contents and the filesize of every file targeted for scanning. Matched files will be immune to being matched by the type of signature mentioned in their whitelist entry.
 - "XML/XDP-Chunk Signatures" (xmlxdp_*). Checked against any XML/XDP chunks found within any non-whitelisted files targeted for scanning.
-(Note that any of these signatures may be easily disabled via `"phpmussel.ini"`).
+(Note that any of these signatures may be easily disabled via ""phpmussel.ini"").
 
 ---
 
@@ -982,4 +1004,4 @@ This information was last updated 7th September 2015 and is current for all phpM
 ---
 
 
-Last Updated: 2nd December 2015 (2015.12.02).
+Last Updated: 5th December 2015 (2015.12.05).
