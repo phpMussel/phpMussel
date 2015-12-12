@@ -538,28 +538,29 @@
     Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara
     perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
     ~
- /_docs/readme.de.md (Dokumentasi, Diikutkan); DEUTSCH
- /_docs/readme.de.txt (Dokumentasi, Diikutkan); DEUTSCH
- /_docs/readme.en.md (Dokumentasi, Diikutkan); ENGLISH
- /_docs/readme.en.txt (Dokumentasi, Diikutkan); ENGLISH
- /_docs/readme.es.md (Dokumentasi, Diikutkan); ESPAÑOL
- /_docs/readme.es.txt (Dokumentasi, Diikutkan); ESPAÑOL
- /_docs/readme.fr.md (Dokumentasi, Diikutkan); FRANÇAIS
- /_docs/readme.fr.txt (Dokumentasi, Diikutkan); FRANÇAIS
- /_docs/readme.id.md (Dokumentasi, Diikutkan); BAHASA INDONESIA
- /_docs/readme.id.txt (Dokumentasi, Diikutkan); BAHASA INDONESIA
- /_docs/readme.it.md (Dokumentasi, Diikutkan); ITALIANO
- /_docs/readme.it.txt (Dokumentasi, Diikutkan); ITALIANO
- /_docs/readme.nl.md (Dokumentasi, Diikutkan); NEDERLANDSE
- /_docs/readme.nl.txt (Dokumentasi, Diikutkan); NEDERLANDSE
- /_docs/readme.pt.md (Dokumentasi, Diikutkan); PORTUGUÊS
- /_docs/readme.pt.txt (Dokumentasi, Diikutkan); PORTUGUÊS
- /_docs/readme.ru.md (Dokumentasi, Diikutkan); РУССКИЙ
- /_docs/readme.ru.txt (Dokumentasi, Diikutkan); РУССКИЙ
- /_docs/readme.vi.md (Dokumentasi, Diikutkan); TIẾNG VIỆT
- /_docs/readme.vi.txt (Dokumentasi, Diikutkan); TIẾNG VIỆT
- /_docs/readme.zh.md (Dokumentasi, Diikutkan); 中文（简体）
- /_docs/readme.zh-TW.md (Dokumentasi, Diikutkan); 中文（傳統）
+ /_docs/readme.ar.md (Dokumentasi, Diikutkan); Bahasa Arab
+ /_docs/readme.de.md (Dokumentasi, Diikutkan); Bahasa Jerman
+ /_docs/readme.de.txt (Dokumentasi, Diikutkan); Bahasa Jerman
+ /_docs/readme.en.md (Dokumentasi, Diikutkan); Bahasa Inggris
+ /_docs/readme.en.txt (Dokumentasi, Diikutkan); Bahasa Inggris
+ /_docs/readme.es.md (Dokumentasi, Diikutkan); Bahasa Spanyol
+ /_docs/readme.es.txt (Dokumentasi, Diikutkan); Bahasa Spanyol
+ /_docs/readme.fr.md (Dokumentasi, Diikutkan); Bahasa Perancis
+ /_docs/readme.fr.txt (Dokumentasi, Diikutkan); Bahasa Perancis
+ /_docs/readme.id.md (Dokumentasi, Diikutkan); Bahasa Indonesia
+ /_docs/readme.id.txt (Dokumentasi, Diikutkan); Bahasa Indonesia
+ /_docs/readme.it.md (Dokumentasi, Diikutkan); Bahasa Italia
+ /_docs/readme.it.txt (Dokumentasi, Diikutkan); Bahasa Italia
+ /_docs/readme.nl.md (Dokumentasi, Diikutkan); Bahasa Belanda
+ /_docs/readme.nl.txt (Dokumentasi, Diikutkan); Bahasa Belanda
+ /_docs/readme.pt.md (Dokumentasi, Diikutkan); Bahasa Portugis
+ /_docs/readme.pt.txt (Dokumentasi, Diikutkan); Bahasa Portugis
+ /_docs/readme.ru.md (Dokumentasi, Diikutkan); Bahasa Rusia
+ /_docs/readme.ru.txt (Dokumentasi, Diikutkan); Bahasa Rusia
+ /_docs/readme.vi.md (Dokumentasi, Diikutkan); Bahasa Vietnam
+ /_docs/readme.vi.txt (Dokumentasi, Diikutkan); Bahasa Vietnam
+ /_docs/readme.zh.md (Dokumentasi, Diikutkan); Cina Sederhana
+ /_docs/readme.zh-TW.md (Dokumentasi, Diikutkan); Cina Sederhana
     File-file baca saya (misalnya; file yang Anda sedang membaca).
     ~
  /_docs/signatures_tally.txt (Dokumentasi, Diikutkan)
@@ -618,7 +619,7 @@
     File test untuk mentest tanda tangan SWF phpMussel.
     ~
  /_testfiles/xdp_standard_testfile.xdp (Data test, Diikutkan)
-    File test untuk mentest tanda tangan potongan XML/XDP phpMussel.
+    File test untuk mentest tanda tangan blok data XML/XDP phpMussel.
     ~
  /vault/ (Direktori)
     Direktori Vault (berisikan bermacam file).
@@ -637,19 +638,19 @@
     Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file
     sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
     ~
- /vault/lang/lang.de.inc (Skrip, Diikutkan); DEUTSCH
- /vault/lang/lang.en.inc (Skrip, Diikutkan); ENGLISH
- /vault/lang/lang.es.inc (Skrip, Diikutkan); ESPAÑOL
- /vault/lang/lang.fr.inc (Skrip, Diikutkan); FRANÇAIS
- /vault/lang/lang.id.inc (Skrip, Diikutkan); BAHASA INDONESIA
- /vault/lang/lang.it.inc (Skrip, Diikutkan); ITALIANO
- /vault/lang/lang.ja.inc (Skrip, Diikutkan); 日本語
- /vault/lang/lang.nl.inc (Skrip, Diikutkan); NEDERLANDSE
- /vault/lang/lang.pt.inc (Skrip, Diikutkan); PORTUGUÊS
- /vault/lang/lang.ru.inc (Skrip, Diikutkan); РУССКИЙ
- /vault/lang/lang.vi.inc (Skrip, Diikutkan); TIẾNG VIỆT
- /vault/lang/lang.zh.inc (Skrip, Diikutkan); 中文（简体）
- /vault/lang/lang.zh-TW.inc (Skrip, Diikutkan); 中文（傳統）
+ /vault/lang/lang.de.inc (Skrip, Diikutkan); Bahasa Jerman
+ /vault/lang/lang.en.inc (Skrip, Diikutkan); Bahasa Inggris
+ /vault/lang/lang.es.inc (Skrip, Diikutkan); Bahasa Spanyol
+ /vault/lang/lang.fr.inc (Skrip, Diikutkan); Bahasa Perancis
+ /vault/lang/lang.id.inc (Skrip, Diikutkan); Bahasa Indonesia
+ /vault/lang/lang.it.inc (Skrip, Diikutkan); Bahasa Italia
+ /vault/lang/lang.ja.inc (Skrip, Diikutkan); Bahasa Jepang
+ /vault/lang/lang.nl.inc (Skrip, Diikutkan); Bahasa Belanda
+ /vault/lang/lang.pt.inc (Skrip, Diikutkan); Bahasa Portugis
+ /vault/lang/lang.ru.inc (Skrip, Diikutkan); Bahasa Rusia
+ /vault/lang/lang.vi.inc (Skrip, Diikutkan); Bahasa Vietnam
+ /vault/lang/lang.zh.inc (Skrip, Diikutkan); Bahasa Cina Sederhana
+ /vault/lang/lang.zh-TW.inc (Skrip, Diikutkan); Bahasa Cina Tradisional
     Data bahasa untuk phpMussel.
     ~
  /vault/quarantine/ (Direktori)
@@ -848,6 +849,9 @@
  /vault/scan_log.txt *(File catatan, Diciptakan)
     Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
     ~
+ /vault/scan_log_serialized.txt *(File catatan, Diciptakan)
+    Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
+    ~
  /vault/scan_kills.txt *(File catatan, Diciptakan)
     Sebuah catatan dari setiap file upload yang diblok/dibunuh oleh phpMussel.
     ~
@@ -902,8 +906,8 @@
  /vault/xmlxdp_custom_standard.cvd (Tanda tangan, Diikutkan)
  /vault/xmlxdp_mussel_regex.cvd (Tanda tangan, Diikutkan)
  /vault/xmlxdp_mussel_standard.cvd (Tanda tangan, Diikutkan)
-    File-file untuk tanda tangan potongan XML/XDP.
-    Diharuskan jika opsi tanda tangan potongan XML/XDP di "phpmussel.ini"
+    File-file untuk tanda tangan blok data XML/XDP.
+    Diharuskan jika opsi tanda tangan blok data XML/XDP di "phpmussel.ini"
     diaktifkan. Dapat menghapus jika opsi dinonaktifkan.
     ~
 
@@ -988,6 +992,9 @@
     "scan_log"
     - Nama dari file untuk mencatat semua hasil pemindaian. Spesifikasikan nama
       atau biarkan kosong untuk menonaktifkan.
+    "scan_log_serialized"
+    - Nama dari file untuk mencatat semua hasil pemindaian (menggunakan format
+      serial). Spesifikasikan nama atau biarkan kosong untuk menonaktifkan.
     "scan_kills"
     - Nama dari fata untuk mencatat semua rekord dari upload terblok atau
       terbunuh. Spesifikan nama atau biarkan kosong untuk menonaktifkan.
@@ -1168,8 +1175,8 @@
      "whitelist_clamav"
      "whitelist_custom"
      "whitelist_mussel"
-   - Cek XML/XDP potongan pada tanda tangan potongan XML/XDP ketika pemindaian?
-     False = Tidak; True = Ya [Default].
+   - Cek blok data XML/XDP pada tanda tangan blok data XML/XDP ketika
+     pemindaian? False = Tidak; True = Ya [Default].
      "xmlxdp_clamav"
      "xmlxdp_custom"
      "xmlxdp_mussel"
@@ -1737,7 +1744,7 @@
       ukuran file dari apapun file ditargetkan untuk dipindai. File dicocokkan
       akan kebal terhadap dari dicocokkan dengan jenis tanda tangan yang
       disebutkan dalam entri daftar putih mereka.
-   - "Tanda tangan potongan XML/XDP" (xmlxdp_*). Dicek pada apapun XML/XDP
+   - "Tanda tangan blok data XML/XDP" (xmlxdp_*). Dicek pada apapun XML/XDP
       potongan ditemukan dari apapun file tidak bertanda putih dan ditargetkan
       untuk dipindai.
      (Catat itu bahwa semua ini tanda tangan dapat dinonaktifkan melalui
@@ -1768,26 +1775,33 @@
  bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke
  software anti virus atau phpMussel.
 
- Informasi ini diupdate 7 September 2015 dan cocok untuk semua rilis phpMussel
- dari dua versi minor terbaru versi (v0.6-v0.7a) pada waktu saya menuliskan
+ Informasi ini diupdate 12 Desember 2015 dan cocok untuk semua rilis phpMussel
+ dari dua versi minor terbaru versi (v0.7-v0.9.0) pada waktu saya menuliskan
  ini.
 
  Ad-Aware                Tidak masalah
+ AegisLab                Tidak masalah
  Agnitum                 Tidak masalah
  AhnLab-V3               Tidak masalah
+ Alibaba                 Tidak masalah
+ ALYac                   Tidak masalah
  AntiVir                 Tidak masalah
  Antiy-AVL               Tidak masalah
+ Arcabit                 Tidak masalah
  Avast                !  Melaporkan "JS:ScriptSH-inf [Trj]"
  AVG                     Tidak masalah
+ Avira                   Tidak masalah
+ AVware                  Tidak masalah
  Baidu-International     Tidak masalah
  BitDefender             Tidak masalah
- Bkav                 !  Melaporkan "VEXDAD2.Webshell"
+ Bkav                 !  Melaporkan "VEXD737.Webshell"
  ByteHero                Tidak masalah
  CAT-QuickHeal           Tidak masalah
  ClamAV                  Tidak masalah
  CMC                     Tidak masalah
  Commtouch               Tidak masalah
  Comodo                  Tidak masalah
+ Cyren                !  Melaporkan "W32/GenBl.DE4CF18E!Olympus"
  DrWeb                   Tidak masalah
  Emsisoft                Tidak masalah
  ESET-NOD32              Tidak masalah
@@ -1815,6 +1829,7 @@
  Sophos                  Tidak masalah
  SUPERAntiSpyware        Tidak masalah
  Symantec                Tidak masalah
+ Tencent                 Tidak masalah
  TheHacker               Tidak masalah
  TotalDefense            Tidak masalah
  TrendMicro              Tidak masalah
@@ -1822,9 +1837,11 @@
  VBA32                   Tidak masalah
  VIPRE                   Tidak masalah
  ViRobot                 Tidak masalah
+ Zillya                  Tidak masalah
+ Zoner                   Tidak masalah
 
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 19 Oktober 2015 (2015.10.19).
+Terakhir Diperbarui: 12 Desember 2015 (2015.12.12).
 EOF

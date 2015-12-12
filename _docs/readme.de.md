@@ -261,28 +261,29 @@ Datei                                      | Beschreibung
 /web.config                                | Eine ASP.NET-Konfigurationsdatei (in diesem Fall zum Schutz des Verzeichnisses `/vault` vor einem nicht authorisierten Zugriff, sofern das Script auf einem auf der ASP.NET-Technologie basierenden Server installiert wurde).
 /_docs/                                    | Verzeichnis für die Dokumentationen (beinhaltet verschiedene Dateien).
 /_docs/change_log.txt                      | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
-/_docs/readme.de.md                        | Dokumentation: DEUTSCH
-/_docs/readme.de.txt                       | Dokumentation: DEUTSCH
-/_docs/readme.en.md                        | Dokumentation: ENGLISH
-/_docs/readme.en.txt                       | Dokumentation: ENGLISH
-/_docs/readme.es.md                        | Dokumentation: ESPAÑOL
-/_docs/readme.es.txt                       | Dokumentation: ESPAÑOL
-/_docs/readme.fr.md                        | Dokumentation: FRANÇAIS
-/_docs/readme.fr.txt                       | Dokumentation: FRANÇAIS
-/_docs/readme.id.md                        | Dokumentation: BAHASA INDONESIA
-/_docs/readme.id.txt                       | Dokumentation: BAHASA INDONESIA
-/_docs/readme.it.md                        | Dokumentation: ITALIANO
-/_docs/readme.it.txt                       | Dokumentation: ITALIANO
-/_docs/readme.nl.md                        | Dokumentation: NEDERLANDSE
-/_docs/readme.nl.txt                       | Dokumentation: NEDERLANDSE
-/_docs/readme.pt.md                        | Dokumentation: PORTUGUÊS
-/_docs/readme.pt.txt                       | Dokumentation: PORTUGUÊS
-/_docs/readme.ru.md                        | Dokumentation: РУССКИЙ
-/_docs/readme.ru.txt                       | Dokumentation: РУССКИЙ
-/_docs/readme.vi.md                        | Dokumentation: TIẾNG VIỆT
-/_docs/readme.vi.txt                       | Dokumentation: TIẾNG VIỆT
-/_docs/readme.zh.md                        | Dokumentation: 中文（简体）
-/_docs/readme.zh-TW.md                     | Dokumentation: 中文（傳統）
+/_docs/readme.ar.md                        | Arabisch-Dokumentation.
+/_docs/readme.de.md                        | Deutsch-Dokumentation.
+/_docs/readme.de.txt                       | Deutsch-Dokumentation.
+/_docs/readme.en.md                        | Englisch-Dokumentation.
+/_docs/readme.en.txt                       | Englisch-Dokumentation.
+/_docs/readme.es.md                        | Spanisch-Dokumentation.
+/_docs/readme.es.txt                       | Spanisch-Dokumentation.
+/_docs/readme.fr.md                        | Französisch-Dokumentation.
+/_docs/readme.fr.txt                       | Französisch-Dokumentation.
+/_docs/readme.id.md                        | Indonesisch-Dokumentation.
+/_docs/readme.id.txt                       | Indonesisch-Dokumentation.
+/_docs/readme.it.md                        | Italienisch-Dokumentation.
+/_docs/readme.it.txt                       | Italienisch-Dokumentation.
+/_docs/readme.nl.md                        | Niederländisch-Dokumentation.
+/_docs/readme.nl.txt                       | Niederländisch-Dokumentation.
+/_docs/readme.pt.md                        | Portugiesisch-Dokumentation.
+/_docs/readme.pt.txt                       | Portugiesisch-Dokumentation.
+/_docs/readme.ru.md                        | Russisch-Dokumentation.
+/_docs/readme.ru.txt                       | Russisch-Dokumentation.
+/_docs/readme.vi.md                        | Vietnamesisch-Dokumentation.
+/_docs/readme.vi.txt                       | Vietnamesisch-Dokumentation.
+/_docs/readme.zh.md                        | Vereinfacht Chinesisch-Dokumentation.
+/_docs/readme.zh-TW.md                     | Traditionell Chinesisch-Dokumentation.
 /_docs/signatures_tally.txt                | Netto-Veränderungs-Anzahl von enthaltenen Signaturen (für die korrekte Funktion des Scripts nicht notwendig).
 /_testfiles/                               | Verzeichnis für Testdateien (beinhaltet verschiedene Dateien). Alle enthaltenen Dateien dienen zur Überprüfung, ob phpMussel auf Ihrem System ordnungsgemäß installiert wurde. Sie müssen dieses Verzeichnis oder die Dateien nicht hochladen, sofern Sie keinen solchen Test durchführen möchten.
 /_testfiles/ascii_standard_testfile.txt    | Testdatei zur Überprüfung der normierten ASCII-Signaturerkennung.
@@ -302,25 +303,25 @@ Datei                                      | Beschreibung
 /_testfiles/xdp_standard_testfile.xdp      | Testdatei zur Überprüfung der XML/XDP-Datenblock-Signaturerkennung.
 /vault/                                    | Vault-Verzeichnis (beinhaltet verschiedene Dateien).
 /vault/cache/                              | Cache-Verzeichnis (für temporäre Daten).
-/vault/cache/.htaccess                     | Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+/vault/cache/.htaccess                     | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/lang/                               | Enthält Sprachdaten für phpMussel.
-/vault/lang/.htaccess                      | Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/lang/lang.de.inc                    | Sprachdateien: DEUTSCH
-/vault/lang/lang.en.inc                    | Sprachdateien: ENGLISH
-/vault/lang/lang.es.inc                    | Sprachdateien: ESPAÑOL
-/vault/lang/lang.fr.inc                    | Sprachdateien: FRANÇAIS
-/vault/lang/lang.id.inc                    | Sprachdateien: BAHASA INDONESIA
-/vault/lang/lang.it.inc                    | Sprachdateien: ITALIANO
-/vault/lang/lang.ja.inc                    | Sprachdateien: 日本語
-/vault/lang/lang.nl.inc                    | Sprachdateien: NEDERLANDSE
-/vault/lang/lang.pt.inc                    | Sprachdateien: PORTUGUÊS
-/vault/lang/lang.ru.inc                    | Sprachdateien: РУССКИЙ
-/vault/lang/lang.vi.inc                    | Sprachdateien: TIẾNG VIỆT
-/vault/lang/lang.zh.inc                    | Sprachdateien: 中文（简体）
-/vault/lang/lang.zh-TW.inc                 | Sprachdateien: 中文（傳統）
+/vault/lang/.htaccess                      | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+/vault/lang/lang.de.inc                    | Deutsch-Sprachdateien.
+/vault/lang/lang.en.inc                    | Englisch-Sprachdateien.
+/vault/lang/lang.es.inc                    | Spanisch-Sprachdateien.
+/vault/lang/lang.fr.inc                    | Französisch-Sprachdateien.
+/vault/lang/lang.id.inc                    | Indonesisch-Sprachdateien.
+/vault/lang/lang.it.inc                    | Italienisch-Sprachdateien.
+/vault/lang/lang.ja.inc                    | Japanisch-Sprachdateien.
+/vault/lang/lang.nl.inc                    | Niederländisch-Sprachdateien.
+/vault/lang/lang.pt.inc                    | Portugiesisch-Sprachdateien.
+/vault/lang/lang.ru.inc                    | Russisch-Sprachdateien.
+/vault/lang/lang.vi.inc                    | Vietnamesisch-Sprachdateien.
+/vault/lang/lang.zh.inc                    | Vereinfacht Chinesisch-Sprachdateien.
+/vault/lang/lang.zh-TW.inc                 | Traditionell Chinesisch-Sprachdateien.
 /vault/quarantine/                         | Quarantäne-Verzeichnis (enthält Dateien in Quarantäne).
-/vault/quarantine/.htaccess                | Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/.htaccess                           | Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+/vault/quarantine/.htaccess                | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+/vault/.htaccess                           | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/ascii_clamav_regex.cvd              | Datei der normierten ASCII-Signaturen.
 /vault/ascii_clamav_regex.map              | Datei der normierten ASCII-Signaturen.
 /vault/ascii_clamav_standard.cvd           | Datei der normierten ASCII-Signaturen.
@@ -424,6 +425,7 @@ Datei                                      | Beschreibung
 /vault/phpmussel.inc                       | Core Script (absolut notwendig)!
 /vault/phpmussel.ini                       | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von phpMussel (absolut notwendig)!
 ※ /vault/scan_log.txt                     | Eine Aufzeichnung aller von phpMussel gescannten Objekte.
+※ /vault/scan_log_serialized.txt          | Eine Aufzeichnung aller von phpMussel gescannten Objekte.
 ※ /vault/scan_kills.txt                   | Eine Aufzeichnung aller von phpMussel blockierten Dateiuploads.
 /vault/swf_clamav_regex.cvd                | Datei der Shockwave-Signaturen.
 /vault/swf_clamav_regex.map                | Datei der Shockwave-Signaturen.
@@ -493,6 +495,9 @@ Generelle Konfiguration von phpMussel.
 
 "scan_log"
 - Name einer Datei zum Aufzeichnen aller Resultate von Überprüfungen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
+
+"scan_log_serialized"
+- Name einer Datei zum Aufzeichnen aller Resultate von Überprüfungen (Format ist serialisiert). Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
 "scan_kills"
 - Name einer Datei zum Aufzeichnen aller blockierten Uploads. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
@@ -916,26 +921,33 @@ Im Folgenden eine Aufschlüsselung der Signaturen, die von phpMussel genutzt wer
 
 In den meisten Fällen sollte phpMussel mit den meisten anderen Antiviren-Softwareprodukten kompatibel sein. Jedoch wurden in der Vergangenheit Konflikte von anderen Nutzern festgestellt. Die folgenden Informationen stammen von VirusTotal.com, welche einige Fehlalarme von verschiedenen Antiviren-Programmen gegen phpMussel beschreiben. Diese Informationen garantieren nicht, ob Kompatibilitätsprobleme zwischen phpMussel und Ihrem eingesetzten Antiviren-Produkt bestehen. Sollte Ihre Antiviren-Software als problematisch aufgelistet sein, sollten Sie diese entweder vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen überlegen.
 
-Diese Informationen wurden zuletzt am 7. September 2015 aktualisiert und gelten für alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen (v0.6-v0.7a) zu diesem Zeitpunkt.
+Diese Informationen wurden zuletzt am 12. Dezember 2015 aktualisiert und gelten für alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen (v0.7-v0.9.0) zu diesem Zeitpunkt.
 
 | Scanner              |  Ergebnisse                          |
 |----------------------|--------------------------------------|
 | Ad-Aware             |  Keine bekannten Probleme            |
+| AegisLab             |  Keine bekannten Probleme            |
 | Agnitum              |  Keine bekannten Probleme            |
 | AhnLab-V3            |  Keine bekannten Probleme            |
+| Alibaba              |  Keine bekannten Probleme            |
+| ALYac                |  Keine bekannten Probleme            |
 | AntiVir              |  Keine bekannten Probleme            |
 | Antiy-AVL            |  Keine bekannten Probleme            |
+| Arcabit              |  Keine bekannten Probleme            |
 | Avast                |  Meldet "JS:ScriptSH-inf [Trj]"      |
 | AVG                  |  Keine bekannten Probleme            |
+| Avira                |  Keine bekannten Probleme            |
+| AVware               |  Keine bekannten Probleme            |
 | Baidu-International  |  Keine bekannten Probleme            |
 | BitDefender          |  Keine bekannten Probleme            |
-| Bkav                 |  Meldet "VEXDAD2.Webshell"           |
+| Bkav                 |  Meldet "VEXD737.Webshell"           |
 | ByteHero             |  Keine bekannten Probleme            |
 | CAT-QuickHeal        |  Keine bekannten Probleme            |
 | ClamAV               |  Keine bekannten Probleme            |
 | CMC                  |  Keine bekannten Probleme            |
 | Commtouch            |  Keine bekannten Probleme            |
 | Comodo               |  Keine bekannten Probleme            |
+| Cyren                |  Meldet "W32/GenBl.DE4CF18E!Olympus" |
 | DrWeb                |  Keine bekannten Probleme            |
 | Emsisoft             |  Keine bekannten Probleme            |
 | ESET-NOD32           |  Keine bekannten Probleme            |
@@ -963,6 +975,7 @@ Diese Informationen wurden zuletzt am 7. September 2015 aktualisiert und gelten 
 | Sophos               |  Keine bekannten Probleme            |
 | SUPERAntiSpyware     |  Keine bekannten Probleme            |
 | Symantec             |  Keine bekannten Probleme            |
+| Tencent              |  Keine bekannten Probleme            |
 | TheHacker            |  Keine bekannten Probleme            |
 | TotalDefense         |  Keine bekannten Probleme            |
 | TrendMicro           |  Keine bekannten Probleme            |
@@ -970,9 +983,11 @@ Diese Informationen wurden zuletzt am 7. September 2015 aktualisiert und gelten 
 | VBA32                |  Keine bekannten Probleme            |
 | VIPRE                |  Keine bekannten Probleme            |
 | ViRobot              |  Keine bekannten Probleme            |
+| Zillya               |  Keine bekannten Probleme            |
+| Zoner                |  Keine bekannten Probleme            |
 
 
 ---
 
 
-Zuletzt aktualisiert: 22. Oktober 2015 (2015.10.22).
+Zuletzt aktualisiert: 12. Dezember 2015 (2015.12.12).

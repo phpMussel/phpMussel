@@ -261,28 +261,29 @@ Data                                       | Deskripsi
 /web.config                                | Sebuah file konfigurasi ASP.NET (dalam instansi ini, untuk melindungi direktori `/vault` dari pengaksesan oleh sumber-sumber tidak terauthorisasi dalam kejadian yang mana skrip ini diinstal pada server berbasis teknologi ASP.NET).
 /_docs/                                    | Direktori dokumentasi (berisi bermacam file).
 /_docs/change_log.txt                      | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
-/_docs/readme.de.md                        | Dokumentasi: DEUTSCH
-/_docs/readme.de.txt                       | Dokumentasi: DEUTSCH
-/_docs/readme.en.md                        | Dokumentasi: ENGLISH
-/_docs/readme.en.txt                       | Dokumentasi: ENGLISH
-/_docs/readme.es.md                        | Dokumentasi: ESPAÑOL
-/_docs/readme.es.txt                       | Dokumentasi: ESPAÑOL
-/_docs/readme.fr.md                        | Dokumentasi: FRANÇAIS
-/_docs/readme.fr.txt                       | Dokumentasi: FRANÇAIS
-/_docs/readme.id.md                        | Dokumentasi: BAHASA INDONESIA
-/_docs/readme.id.txt                       | Dokumentasi: BAHASA INDONESIA
-/_docs/readme.it.md                        | Dokumentasi: ITALIANO
-/_docs/readme.it.txt                       | Dokumentasi: ITALIANO
-/_docs/readme.nl.md                        | Dokumentasi: NEDERLANDSE
-/_docs/readme.nl.txt                       | Dokumentasi: NEDERLANDSE
-/_docs/readme.pt.md                        | Dokumentasi: PORTUGUÊS
-/_docs/readme.pt.txt                       | Dokumentasi: PORTUGUÊS
-/_docs/readme.ru.md                        | Dokumentasi: РУССКИЙ
-/_docs/readme.ru.txt                       | Dokumentasi: РУССКИЙ
-/_docs/readme.vi.md                        | Dokumentasi: TIẾNG VIỆT
-/_docs/readme.vi.txt                       | Dokumentasi: TIẾNG VIỆT
-/_docs/readme.zh.md                        | Dokumentasi: 中文（简体）
-/_docs/readme.zh-TW.md                     | Dokumentasi: 中文（傳統）
+/_docs/readme.ar.md                        | Dokumentasi Bahasa Arab.
+/_docs/readme.de.md                        | Dokumentasi Bahasa Jerman.
+/_docs/readme.de.txt                       | Dokumentasi Bahasa Jerman.
+/_docs/readme.en.md                        | Dokumentasi Bahasa Inggris.
+/_docs/readme.en.txt                       | Dokumentasi Bahasa Inggris.
+/_docs/readme.es.md                        | Dokumentasi Bahasa Spanyol.
+/_docs/readme.es.txt                       | Dokumentasi Bahasa Spanyol.
+/_docs/readme.fr.md                        | Dokumentasi Bahasa Perancis.
+/_docs/readme.fr.txt                       | Dokumentasi Bahasa Perancis.
+/_docs/readme.id.md                        | Dokumentasi Bahasa Indonesia.
+/_docs/readme.id.txt                       | Dokumentasi Bahasa Indonesia.
+/_docs/readme.it.md                        | Dokumentasi Bahasa Italia.
+/_docs/readme.it.txt                       | Dokumentasi Bahasa Italia.
+/_docs/readme.nl.md                        | Dokumentasi Bahasa Belanda.
+/_docs/readme.nl.txt                       | Dokumentasi Bahasa Belanda.
+/_docs/readme.pt.md                        | Dokumentasi Bahasa Portugis.
+/_docs/readme.pt.txt                       | Dokumentasi Bahasa Portugis.
+/_docs/readme.ru.md                        | Dokumentasi Bahasa Rusia.
+/_docs/readme.ru.txt                       | Dokumentasi Bahasa Rusia.
+/_docs/readme.vi.md                        | Dokumentasi Bahasa Vietnam.
+/_docs/readme.vi.txt                       | Dokumentasi Bahasa Vietnam.
+/_docs/readme.zh.md                        | Dokumentasi Cina Sederhana.
+/_docs/readme.zh-TW.md                     | Dokumentasi Cina Tradisional.
 /_docs/signatures_tally.txt                | Perhitungan dari diikutkan tanda tangan (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /_testfiles/                               | Direktori test file-file (berisi bermacam file). Semua file-file berisikan di dalamnya adalah file test untuk testing jika phpMussel dengan benar diinstal pada sistem, dan Anda tidak perlu mengupload direktori ini atau file-filenya jika melakukan testing.
 /_testfiles/ascii_standard_testfile.txt    | File test untuk mentest tanda tangan ASCII dinormalisasi phpMussel.
@@ -299,25 +300,25 @@ Data                                       | Deskripsi
 /_testfiles/pdf_standard_testfile.pdf      | File test untuk mentest tanda tangan PDF phpMussel.
 /_testfiles/pe_sectional_testfile.exe      | File test untuk mentest tanda tangan PE Sectional phpMussel.
 /_testfiles/swf_standard_testfile.swf      | File test untuk mentest tanda tangan SWF phpMussel.
-/_testfiles/xdp_standard_testfile.xdp      | File test untuk mentest tanda tangan potongan XML/XDP phpMussel.
+/_testfiles/xdp_standard_testfile.xdp      | File test untuk mentest tanda tangan blok data XML/XDP phpMussel.
 /vault/                                    | Direktori Vault (berisikan bermacam file).
 /vault/cache/                              | Direktori Cache (untuk file sementara).
 /vault/cache/.htaccess                     | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/lang/                               | Berisikan file bahasa.
 /vault/lang/.htaccess                      | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/lang/lang.de.inc                    | File bahasa: DEUTSCH
-/vault/lang/lang.en.inc                    | File bahasa: ENGLISH
-/vault/lang/lang.es.inc                    | File bahasa: ESPAÑOL
-/vault/lang/lang.fr.inc                    | File bahasa: FRANÇAIS
-/vault/lang/lang.id.inc                    | File bahasa: BAHASA INDONESIA
-/vault/lang/lang.it.inc                    | File bahasa: ITALIANO
-/vault/lang/lang.ja.inc                    | File bahasa: 日本語
-/vault/lang/lang.nl.inc                    | File bahasa: NEDERLANDSE
-/vault/lang/lang.pt.inc                    | File bahasa: PORTUGUÊS
-/vault/lang/lang.ru.inc                    | File bahasa: РУССКИЙ
-/vault/lang/lang.vi.inc                    | File bahasa: TIẾNG VIỆT
-/vault/lang/lang.zh.inc                    | File bahasa: 中文（简体）
-/vault/lang/lang.zh-TW.inc                 | File bahasa: 中文（傳統）
+/vault/lang/lang.de.inc                    | File Bahasa Jerman.
+/vault/lang/lang.en.inc                    | File Bahasa Inggris.
+/vault/lang/lang.es.inc                    | File Bahasa Spanyol.
+/vault/lang/lang.fr.inc                    | File Bahasa Perancis.
+/vault/lang/lang.id.inc                    | File Bahasa Indonesia.
+/vault/lang/lang.it.inc                    | File Bahasa Italia.
+/vault/lang/lang.ja.inc                    | File Bahasa Jepang.
+/vault/lang/lang.nl.inc                    | File Bahasa Belanda.
+/vault/lang/lang.pt.inc                    | File Bahasa Portugis.
+/vault/lang/lang.ru.inc                    | File Bahasa Rusia.
+/vault/lang/lang.vi.inc                    | File Bahasa Vietnam.
+/vault/lang/lang.zh.inc                    | File Bahasa Cina Sederhana.
+/vault/lang/lang.zh-TW.inc                 | File Bahasa Cina Tradisional.
 /vault/quarantine/                         | Direktori Karantina (berisikan file yang dikarantina).
 /vault/quarantine/.htaccess                | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/.htaccess                           | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
@@ -424,6 +425,7 @@ Data                                       | Deskripsi
 /vault/phpmussel.inc                       | Skrip murni phpMussel; Body utama dan vital dari phpMussel (utama)!
 /vault/phpmussel.ini                       | File konfigurasi phpMussel; Berisi semua opsi konfigurasi dari phpMussel, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (utama)!
 ※ /vault/scan_log.txt                     | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
+※ /vault/scan_log_serialized.txt          | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
 ※ /vault/scan_kills.txt                   | Sebuah catatan dari setiap file upload yang diblok/dibunuh oleh phpMussel.
 /vault/swf_clamav_regex.cvd                | File untuk tanda tangan Shockwave.
 /vault/swf_clamav_regex.map                | File untuk tanda tangan Shockwave.
@@ -442,14 +444,14 @@ Data                                       | Deskripsi
 /vault/whitelist_clamav.cvd                | File spesifik daftar putih.
 /vault/whitelist_custom.cvd                | File spesifik daftar putih.
 /vault/whitelist_mussel.cvd                | File spesifik daftar putih.
-/vault/xmlxdp_clamav_regex.cvd             | File untuk tanda tangan potongan XML/XDP.
-/vault/xmlxdp_clamav_regex.map             | File untuk tanda tangan potongan XML/XDP.
-/vault/xmlxdp_clamav_standard.cvd          | File untuk tanda tangan potongan XML/XDP.
-/vault/xmlxdp_clamav_standard.map          | File untuk tanda tangan potongan XML/XDP.
-/vault/xmlxdp_custom_regex.cvd             | File untuk tanda tangan potongan XML/XDP.
-/vault/xmlxdp_custom_standard.cvd          | File untuk tanda tangan potongan XML/XDP.
-/vault/xmlxdp_mussel_regex.cvd             | File untuk tanda tangan potongan XML/XDP.
-/vault/xmlxdp_mussel_standard.cvd          | File untuk tanda tangan potongan XML/XDP.
+/vault/xmlxdp_clamav_regex.cvd             | File untuk tanda tangan blok data XML/XDP.
+/vault/xmlxdp_clamav_regex.map             | File untuk tanda tangan blok data XML/XDP.
+/vault/xmlxdp_clamav_standard.cvd          | File untuk tanda tangan blok data XML/XDP.
+/vault/xmlxdp_clamav_standard.map          | File untuk tanda tangan blok data XML/XDP.
+/vault/xmlxdp_custom_regex.cvd             | File untuk tanda tangan blok data XML/XDP.
+/vault/xmlxdp_custom_standard.cvd          | File untuk tanda tangan blok data XML/XDP.
+/vault/xmlxdp_mussel_regex.cvd             | File untuk tanda tangan blok data XML/XDP.
+/vault/xmlxdp_mussel_standard.cvd          | File untuk tanda tangan blok data XML/XDP.
 
 ※ Nama file bisa berbeda berdasarkan ketentuan konfigurasi (di dalam `phpmussel.ini`).
 
@@ -494,6 +496,9 @@ Konfigurasi umum dari phpMussel.
 
 "scan_log"
 - Nama dari file untuk mencatat semua hasil pemindaian. Spesifikasikan nama atau biarkan kosong untuk menonaktifkan.
+
+"scan_log_serialized"
+- Nama dari file untuk mencatat semua hasil pemindaian (menggunakan format serial). Spesifikasikan nama atau biarkan kosong untuk menonaktifkan.
 
 "scan_kills"
 - Nama dari fata untuk mencatat semua rekord dari upload terblok atau terbunuh. Spesifikan nama atau biarkan kosong untuk menonaktifkan.
@@ -614,7 +619,7 @@ Aktifkan daftar putih tertentu file? False = Tidak; True = Ya [Default].
 - "whitelist_custom"
 - "whitelist_mussel"
 
-Cek XML/XDP potongan pada tanda tangan potongan XML/XDP ketika pemindaian? False = Tidak; True = Ya [Default].
+Cek blok data XML/XDP pada tanda tangan blok data XML/XDP ketika pemindaian? False = Tidak; True = Ya [Default].
 - "xmlxdp_clamav"
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
@@ -903,7 +908,7 @@ Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
 - "Tanda tangan diperpanjang portable executable" (pex_*). Dicek pada hash MD5 dan ukuran dari variabel dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
 - "Tanda tangan SWF" (swf_*). Dicek pada isi dari apapun file Shockwave tidak bertanda putih.
 - "Tanda tangan Putih" (whitelist_*). Dicek pada hash MD5 dari isi dan ukuran file dari apapun file ditargetkan untuk dipindai. File dicocokkan akan kebal terhadap dari dicocokkan dengan jenis tanda tangan yang disebutkan dalam entri daftar putih mereka.
-- "Tanda tangan potongan XML/XDP" (xmlxdp_*). Dicek pada apapun XML/XDP potongan ditemukan dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
+- "Tanda tangan blok data XML/XDP" (xmlxdp_*). Dicek pada apapun blok data XML/XDP ditemukan dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
 (Catat itu bahwa semua ini tanda tangan dapat dinonaktifkan melalui `phpmussel.ini`).
 
 ---
@@ -918,26 +923,33 @@ Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
 
 Untuk banyak bagian, phpMussel seharusnya kompatibel dengan software pemindaian virus. Bagaimanapun konflik telah dilaporkan oleh penggunak di masa lalu. Informasi di bawah adalah dari virustotal.com, dan menguraikan sejumlah angka positif yang salah yang dilaporkan oleh bermacam-macam program anti-virus pada phpMussel. Walaupun informasi ini tidak jaminan absolut dari apa dan atau tidak mengalami masalah kompatibilitas antara phpMussel dan perangkat anti-virus Anda, jika perangkat lunak anti-virus Anda tercatat berlawanan dengan phpMussel, Anda seharusnya mempertimbangkan menonaktifkannya bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke software anti virus atau phpMussel.
 
-Informasi ini diupdate 7 September 2015 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v0.6-v0.7a) pada waktu saya menuliskan ini.
+Informasi ini diupdate 12 Desember 2015 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v0.7-v0.9.0) pada waktu saya menuliskan ini.
 
 | Scanner              |  Hasil                               |
 |----------------------|--------------------------------------|
 | Ad-Aware             |  Tidak masalah                       |
+| AegisLab             |  Tidak masalah                       |
 | Agnitum              |  Tidak masalah                       |
 | AhnLab-V3            |  Tidak masalah                       |
+| Alibaba              |  Tidak masalah                       |
+| ALYac                |  Tidak masalah                       |
 | AntiVir              |  Tidak masalah                       |
 | Antiy-AVL            |  Tidak masalah                       |
+| Arcabit              |  Tidak masalah                       |
 | Avast                |  Melaporkan "JS:ScriptSH-inf [Trj]"  |
 | AVG                  |  Tidak masalah                       |
+| Avira                |  Tidak masalah                       |
+| AVware               |  Tidak masalah                       |
 | Baidu-International  |  Tidak masalah                       |
 | BitDefender          |  Tidak masalah                       |
-| Bkav                 |  Melaporkan "VEXDAD2.Webshell"       |
+| Bkav                 |  Melaporkan "VEXD737.Webshell"       |
 | ByteHero             |  Tidak masalah                       |
 | CAT-QuickHeal        |  Tidak masalah                       |
 | ClamAV               |  Tidak masalah                       |
 | CMC                  |  Tidak masalah                       |
 | Commtouch            |  Tidak masalah                       |
 | Comodo               |  Tidak masalah                       |
+| Cyren                |  Melaporkan "W32/GenBl.DE4CF18E!Olympus"|
 | DrWeb                |  Tidak masalah                       |
 | Emsisoft             |  Tidak masalah                       |
 | ESET-NOD32           |  Tidak masalah                       |
@@ -965,6 +977,7 @@ Informasi ini diupdate 7 September 2015 dan cocok untuk semua rilis phpMussel da
 | Sophos               |  Tidak masalah                       |
 | SUPERAntiSpyware     |  Tidak masalah                       |
 | Symantec             |  Tidak masalah                       |
+| Tencent              |  Tidak masalah                       |
 | TheHacker            |  Tidak masalah                       |
 | TotalDefense         |  Tidak masalah                       |
 | TrendMicro           |  Tidak masalah                       |
@@ -972,9 +985,11 @@ Informasi ini diupdate 7 September 2015 dan cocok untuk semua rilis phpMussel da
 | VBA32                |  Tidak masalah                       |
 | VIPRE                |  Tidak masalah                       |
 | ViRobot              |  Tidak masalah                       |
+| Zillya               |  Tidak masalah                       |
+| Zoner                |  Tidak masalah                       |
 
 
 ---
 
 
-Terakhir Diperbarui: 19 Oktober 2015 (2015.10.19).
+Terakhir Diperbarui: 12 Desember 2015 (2015.12.12).

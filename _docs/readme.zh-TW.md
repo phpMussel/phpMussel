@@ -261,28 +261,29 @@ phpMussel可以執行作為一個互動文件掃描在CLI模式在基於Windows�
 /web.config                                | 一個ASP.NET配置文件（在這種情況，以保護`/vault`文件夾從被訪問由非授權來源在事件的腳本是安裝在服務器根據ASP.NET技術）。
 /_docs/                                    | 筆記文件夾（包含若干文件）。
 /_docs/change_log.txt                      | 記錄的變化做出至腳本間不同版本（不需要為正確經營腳本）。
-/_docs/readme.de.md                        | 自述文件：DEUTSCH
-/_docs/readme.de.txt                       | 自述文件：DEUTSCH
-/_docs/readme.en.md                        | 自述文件：ENGLISH
-/_docs/readme.en.txt                       | 自述文件：ENGLISH
-/_docs/readme.es.md                        | 自述文件：ESPAÑOL
-/_docs/readme.es.txt                       | 自述文件：ESPAÑOL
-/_docs/readme.fr.md                        | 自述文件：FRANÇAIS
-/_docs/readme.fr.txt                       | 自述文件：FRANÇAIS
-/_docs/readme.id.md                        | 自述文件：BAHASA INDONESIA
-/_docs/readme.id.txt                       | 自述文件：BAHASA INDONESIA
-/_docs/readme.it.md                        | 自述文件：ITALIANO
-/_docs/readme.it.txt                       | 自述文件：ITALIANO
-/_docs/readme.nl.md                        | 自述文件：NEDERLANDSE
-/_docs/readme.nl.txt                       | 自述文件：NEDERLANDSE
-/_docs/readme.pt.md                        | 自述文件：PORTUGUÊS
-/_docs/readme.pt.txt                       | 自述文件：PORTUGUÊS
-/_docs/readme.ru.md                        | 自述文件：РУССКИЙ
-/_docs/readme.ru.txt                       | 自述文件：РУССКИЙ
-/_docs/readme.vi.md                        | 自述文件：TIẾNG VIỆT
-/_docs/readme.vi.txt                       | 自述文件：TIẾNG VIỆT
-/_docs/readme.zh.md                        | 自述文件：中文（简体）
-/_docs/readme.zh-TW.md                     | 自述文件：中文（傳統）
+/_docs/readme.ar.md                        | 阿拉伯文自述文件。
+/_docs/readme.de.md                        | 德文自述文件。
+/_docs/readme.de.txt                       | 德文自述文件。
+/_docs/readme.en.md                        | 英文自述文件。
+/_docs/readme.en.txt                       | 英文自述文件。
+/_docs/readme.es.md                        | 西班牙文自述文件。
+/_docs/readme.es.txt                       | 西班牙文自述文件。
+/_docs/readme.fr.md                        | 法文自述文件。
+/_docs/readme.fr.txt                       | 法文自述文件。
+/_docs/readme.id.md                        | 印度尼西亞文自述文件。
+/_docs/readme.id.txt                       | 印度尼西亞文自述文件。
+/_docs/readme.it.md                        | 意大利文自述文件。
+/_docs/readme.it.txt                       | 意大利文自述文件。
+/_docs/readme.nl.md                        | 荷蘭文自述文件。
+/_docs/readme.nl.txt                       | 荷蘭文自述文件。
+/_docs/readme.pt.md                        | 葡萄牙文自述文件。
+/_docs/readme.pt.txt                       | 葡萄牙文自述文件。
+/_docs/readme.ru.md                        | 俄文自述文件。
+/_docs/readme.ru.txt                       | 俄文自述文件。
+/_docs/readme.vi.md                        | 越南文自述文件。
+/_docs/readme.vi.txt                       | 越南文自述文件。
+/_docs/readme.zh.md                        | 中文（簡體）自述文件。
+/_docs/readme.zh-TW.md                     | 中文（傳統）自述文件。
 /_docs/signatures_tally.txt                | 文件為數量追踪的為包含的簽名（不需要為正確經營腳本）。
 /_testfiles/                               | 測試文件文件夾（包含若干文件）。所有包含文件是測試文件為測試如果phpMussel是正確地安裝上您的系統，和您不需要上傳這個文件夾或任何其文件除為上傳測試。
 /_testfiles/ascii_standard_testfile.txt    | 測試文件以測試phpMussel標準化ASCII簽名。
@@ -305,19 +306,19 @@ phpMussel可以執行作為一個互動文件掃描在CLI模式在基於Windows�
 /vault/cache/.htaccess                     | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/lang/                               | 包含phpMussel語言數據。
 /vault/lang/.htaccess                      | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
-/vault/lang/lang.de.inc                    | 語言數據：DEUTSCH
-/vault/lang/lang.en.inc                    | 語言數據：ENGLISH
-/vault/lang/lang.es.inc                    | 語言數據：ESPAÑOL
-/vault/lang/lang.fr.inc                    | 語言數據：FRANÇAIS
-/vault/lang/lang.id.inc                    | 語言數據：BAHASA INDONESIA
-/vault/lang/lang.it.inc                    | 語言數據：ITALIANO
-/vault/lang/lang.ja.inc                    | 語言數據：日本語
-/vault/lang/lang.nl.inc                    | 語言數據：NEDERLANDSE
-/vault/lang/lang.pt.inc                    | 語言數據：PORTUGUÊS
-/vault/lang/lang.ru.inc                    | 語言數據：РУССКИЙ
-/vault/lang/lang.vi.inc                    | 語言數據：TIẾNG VIỆT
-/vault/lang/lang.zh.inc                    | 語言數據：中文（简体）
-/vault/lang/lang.zh-TW.inc                 | 語言數據：中文（傳統）
+/vault/lang/lang.de.inc                    | 德文語言數據。
+/vault/lang/lang.en.inc                    | 英文語言數據。
+/vault/lang/lang.es.inc                    | 西班牙文語言數據。
+/vault/lang/lang.fr.inc                    | 法文語言數據。
+/vault/lang/lang.id.inc                    | 印度尼西亞文語言數據。
+/vault/lang/lang.it.inc                    | 意大利文語言數據。
+/vault/lang/lang.ja.inc                    | 日文語言數據。
+/vault/lang/lang.nl.inc                    | 荷蘭文語言數據。
+/vault/lang/lang.pt.inc                    | 葡萄牙文語言數據。
+/vault/lang/lang.ru.inc                    | 俄文語言數據。
+/vault/lang/lang.vi.inc                    | 越南文語言數據。
+/vault/lang/lang.zh.inc                    | 中文（簡體）語言數據。
+/vault/lang/lang.zh-TW.inc                 | 中文（傳統）語言數據。
 /vault/quarantine/                         | 隔離文件夾（包含隔離文件）。
 /vault/quarantine/.htaccess                | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/.htaccess                           | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
@@ -424,6 +425,7 @@ phpMussel可以執行作為一個互動文件掃描在CLI模式在基於Windows�
 /vault/phpmussel.inc                       | 主腳本；主體和機制的phpMussel（必不可少）！
 /vault/phpmussel.ini                       | 配置文件;包含所有配置指令為phpMussel，告訴它什麼做和怎麼正確地經營（必不可少）!
 ※ /vault/scan_log.txt                     | 記錄的一切phpMussel掃描。
+※ /vault/scan_log_serialized.txt          | 記錄的一切phpMussel掃描。
 ※ /vault/scan_kills.txt                   | 記錄的所有上傳文件phpMussel受阻／殺。
 /vault/swf_clamav_regex.cvd                | SWF簽名文件。
 /vault/swf_clamav_regex.map                | SWF簽名文件。
@@ -494,6 +496,9 @@ CVD是一個acronym為｢ClamAV Virus Definitions｣，在參照如何ClamAV參�
 
 “scan_log”
 - 文件為記錄在所有掃描結果。指定一個文件名，或留空以關閉。
+
+“scan_log_serialized”
+- 文件為記錄在所有掃描結果（它採用序列化格式）。指定一個文件名，或留空以關閉。
 
 “scan_kills”
 - 文件為記錄在所有受阻或已殺上傳。指定一個文件名，或留空以關閉。
@@ -918,26 +923,33 @@ URL掃描儀API配置。
 
 在大多數情況下，phpMussel應該相當兼容性與大多數殺毒軟件。然，衝突已經報導由多個用戶以往。下面這些信息是從VirusTotal.com，和它描述了一個數的假陽性報告的各種殺毒軟件針對phpMussel。雖說這個信息是不絕對保證的如果您會遇到兼容性問題間phpMussel和您的殺毒軟件，如果您的殺毒軟件注意衝突針對phpMussel，您應該考慮關閉它之前使用phpMussel或您應該考慮替代選項從您的殺毒軟件或從phpMussel。
 
-這個信息最後更新2015年9月7日和是準確為至少phpMussel的兩個最近次要版本（v0.6-v0.7a）在這個現在時候的寫作。
+這個信息最後更新2015年12月12日和是準確為至少phpMussel的兩個最近次要版本（v0.7-v0.9.0）在這個現在時候的寫作。
 
 | 掃描儀               |  結果                                 |
 |----------------------|--------------------------------------|
 | Ad-Aware             |  無衝突 |
+| AegisLab             |  無衝突 |
 | Agnitum              |  無衝突 |
 | AhnLab-V3            |  無衝突 |
+| Alibaba              |  無衝突 |
+| ALYac                |  無衝突 |
 | AntiVir              |  無衝突 |
 | Antiy-AVL            |  無衝突 |
+| Arcabit              |  無衝突 |
 | Avast                |  報告 "JS:ScriptSH-inf [Trj]" |
 | AVG                  |  無衝突 |
+| Avira                |  無衝突 |
+| AVware               |  無衝突 |
 | Baidu-International  |  無衝突 |
 | BitDefender          |  無衝突 |
-| Bkav                 |  報告 "VEXDAD2.Webshell" |
+| Bkav                 |  報告 "VEXD737.Webshell" |
 | ByteHero             |  無衝突 |
 | CAT-QuickHeal        |  無衝突 |
 | ClamAV               |  無衝突 |
 | CMC                  |  無衝突 |
 | Commtouch            |  無衝突 |
 | Comodo               |  無衝突 |
+| Cyren                |  報告 "W32/GenBl.DE4CF18E!Olympus" |
 | DrWeb                |  無衝突 |
 | Emsisoft             |  無衝突 |
 | ESET-NOD32           |  無衝突 |
@@ -965,6 +977,7 @@ URL掃描儀API配置。
 | Sophos               |  無衝突 |
 | SUPERAntiSpyware     |  無衝突 |
 | Symantec             |  無衝突 |
+| Tencent              |  無衝突 |
 | TheHacker            |  無衝突 |
 | TotalDefense         |  無衝突 |
 | TrendMicro           |  無衝突 |
@@ -972,9 +985,11 @@ URL掃描儀API配置。
 | VBA32                |  無衝突 |
 | VIPRE                |  無衝突 |
 | ViRobot              |  無衝突 |
+| Zillya               |  無衝突 |
+| Zoner                |  無衝突 |
 
 
 ---
 
 
-最後更新：2015年10月23日。
+最後更新：2015年12月12日。

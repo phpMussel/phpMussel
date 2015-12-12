@@ -140,7 +140,7 @@ Ci sono molti altri controlli e funzioni disponibili all'interno phpMussel per i
 
 Si prega di fare riferimento alla "COME INSTALLARE (PER CLI)" sezione di questo README file.
 
-Essere consapevoli che, sebbene futuri versioni di phpMussel dovrebbero sostenere altri sistemi, in questo momento, phpMussel CLI modalità supporto è ottimizzata solo per l'utilizzo su Windows basati sistemi (si può, ovviamente, provare su altri sistemi, Ma non posso garantire che funzionerà come previsto).
+Essere consapevoli che, sebbene futuri versioni di phpMussel dovrebbe sostenere altri sistemi, in questo momento, phpMussel CLI modalità supporto è ottimizzata solo per l'utilizzo su Windows basati sistemi (si può, ovviamente, provare su altri sistemi, Ma non posso garantire che funzionerà come previsto).
 
 Anche essere consapevoli che phpMussel è non l'equivalente di un completa funzionale anti-virus suite, e diverso dai convenzionali anti-virus suite, non protegge l'attiva memoria o simili! Essa solo rileva virus contenuti da quei specifici file che si esplicitamente dica per scansione.
 
@@ -253,7 +253,7 @@ Per un elenco di comandi disponibili all'interno CLI , al CLI prompt, tipo 'c', 
 
 ###5. <a name="SECTION5"></a>FILE INCLUSI IN QUESTO PACCHETTO
 
-Il seguente è un elenco di tutti i file che dovrebbe essere incluso nella archiviato copia di questo script quando si scaricalo, qualsiasi di file che potrebbero potenzialmente essere creato come risultato della vostra utilizzando questo script, insieme con una breve descrizione di ciò che tutti questi file sono per.
+Il seguente è un elenco di tutti i file che dovrebbero essere incluso nella archiviato copia di questo script quando si scaricalo, qualsiasi di file che potrebbero potenzialmente essere creato come risultato della vostra utilizzando questo script, insieme con una breve descrizione di ciò che tutti questi file sono per.
 
 File                                       | Descrizione
 -------------------------------------------|--------------------------------------
@@ -261,28 +261,29 @@ File                                       | Descrizione
 /web.config                                | Un ASP.NET configurazione file (in questo caso, a proteggere la `/vault` cartella da l'acceso di non autorizzate origini nel caso che lo script è installato su un server basata su ASP.NET tecnologie).
 /_docs/                                    | Documentazione cartella (contiene vari file).
 /_docs/change_log.txt                      | Un record delle modifiche apportate allo script tra diverse versioni (non richiesto per il corretto funzionamento dello script).
-/_docs/readme.de.md                        | Documentazione: DEUTSCH
-/_docs/readme.de.txt                       | Documentazione: DEUTSCH
-/_docs/readme.en.md                        | Documentazione: ENGLISH
-/_docs/readme.en.txt                       | Documentazione: ENGLISH
-/_docs/readme.es.md                        | Documentazione: ESPAÑOL
-/_docs/readme.es.txt                       | Documentazione: ESPAÑOL
-/_docs/readme.fr.md                        | Documentazione: FRANÇAIS
-/_docs/readme.fr.txt                       | Documentazione: FRANÇAIS
-/_docs/readme.id.md                        | Documentazione: BAHASA INDONESIA
-/_docs/readme.id.txt                       | Documentazione: BAHASA INDONESIA
-/_docs/readme.it.md                        | Documentazione: ITALIANO
-/_docs/readme.it.txt                       | Documentazione: ITALIANO
-/_docs/readme.nl.md                        | Documentazione: NEDERLANDSE
-/_docs/readme.nl.txt                       | Documentazione: NEDERLANDSE
-/_docs/readme.pt.md                        | Documentazione: PORTUGUÊS
-/_docs/readme.pt.txt                       | Documentazione: PORTUGUÊS
-/_docs/readme.ru.md                        | Documentazione: РУССКИЙ
-/_docs/readme.ru.txt                       | Documentazione: РУССКИЙ
-/_docs/readme.vi.md                        | Documentazione: TIẾNG VIỆT
-/_docs/readme.vi.txt                       | Documentazione: TIẾNG VIỆT
-/_docs/readme.zh.md                        | Documentazione: 中文（简体）
-/_docs/readme.zh-TW.md                     | Documentazione: 中文（傳統）
+/_docs/readme.ar.md                        | Arabo documentazione.
+/_docs/readme.de.md                        | Tedesco documentazione.
+/_docs/readme.de.txt                       | Tedesco documentazione.
+/_docs/readme.en.md                        | Inglese documentazione.
+/_docs/readme.en.txt                       | Inglese documentazione.
+/_docs/readme.es.md                        | Spagnolo documentazione.
+/_docs/readme.es.txt                       | Spagnolo documentazione.
+/_docs/readme.fr.md                        | Francese documentazione.
+/_docs/readme.fr.txt                       | Francese documentazione.
+/_docs/readme.id.md                        | Indonesiano documentazione.
+/_docs/readme.id.txt                       | Indonesiano documentazione.
+/_docs/readme.it.md                        | Italiano documentazione.
+/_docs/readme.it.txt                       | Italiano documentazione.
+/_docs/readme.nl.md                        | Olandese documentazione.
+/_docs/readme.nl.txt                       | Olandese documentazione.
+/_docs/readme.pt.md                        | Portoghese documentazione.
+/_docs/readme.pt.txt                       | Portoghese documentazione.
+/_docs/readme.ru.md                        | Russo documentazione.
+/_docs/readme.ru.txt                       | Russo documentazione.
+/_docs/readme.vi.md                        | Vietnamita documentazione.
+/_docs/readme.vi.txt                       | Vietnamita documentazione.
+/_docs/readme.zh.md                        | Cinese (Semplificato) documentazione.
+/_docs/readme.zh-TW.md                     | Cinese (Tradizionale) documentazione.
 /_docs/signatures_tally.txt                | Conteggio delle firme incluso (non richiesto per il corretto funzionamento dello script).
 /_testfiles/                               | Test file cartella (contiene vari file). Tutti i file contenuti sono test file per la verifica se phpMussel è installato correttamente sulla vostra sistema, e non è necessario a caricare questa cartella o qualsiasi dei suoi file, tranne quando fa tali test.
 /_testfiles/ascii_standard_testfile.txt    | Test file per test di phpMussel normalizzati ASCII firme.
@@ -299,25 +300,25 @@ File                                       | Descrizione
 /_testfiles/pdf_standard_testfile.pdf      | Test file per test di phpMussel PDF firme.
 /_testfiles/pe_sectional_testfile.exe      | Test file per test di phpMussel PE Sezionale firme.
 /_testfiles/swf_standard_testfile.swf      | Test file per test di phpMussel SWF firme.
-/_testfiles/xdp_standard_testfile.xdp      | Test file per test di phpMussel XML/XDP-Pezzo firme.
+/_testfiles/xdp_standard_testfile.xdp      | Test file per test di phpMussel XML/XDP firme.
 /vault/                                    | La vault cartella (contiene vari file).
 /vault/cache/                              | La cartella della cache (per i dati temporanei).
 /vault/cache/.htaccess                     | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/lang/                               | Contiene linguistici dati.
 /vault/lang/.htaccess                      | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
-/vault/lang/lang.de.inc                    | Linguistici dati: DEUTSCH
-/vault/lang/lang.en.inc                    | Linguistici dati: ENGLISH
-/vault/lang/lang.es.inc                    | Linguistici dati: ESPAÑOL
-/vault/lang/lang.fr.inc                    | Linguistici dati: FRANÇAIS
-/vault/lang/lang.id.inc                    | Linguistici dati: BAHASA INDONESIA
-/vault/lang/lang.it.inc                    | Linguistici dati: ITALIANO
-/vault/lang/lang.ja.inc                    | Linguistici dati: 日本語
-/vault/lang/lang.nl.inc                    | Linguistici dati: NEDERLANDSE
-/vault/lang/lang.pt.inc                    | Linguistici dati: PORTUGUÊS
-/vault/lang/lang.ru.inc                    | Linguistici dati: РУССКИЙ
-/vault/lang/lang.vi.inc                    | Linguistici dati: TIẾNG VIỆT
-/vault/lang/lang.zh.inc                    | Linguistici dati: 中文（简体）
-/vault/lang/lang.zh-TW.inc                 | Linguistici dati: 中文（傳統）
+/vault/lang/lang.de.inc                    | Linguistici dati Tedesca.
+/vault/lang/lang.en.inc                    | Linguistici dati Inglese.
+/vault/lang/lang.es.inc                    | Linguistici dati Spagnola.
+/vault/lang/lang.fr.inc                    | Linguistici dati Francese.
+/vault/lang/lang.id.inc                    | Linguistici dati Indonesiana.
+/vault/lang/lang.it.inc                    | Linguistici dati Italiana.
+/vault/lang/lang.ja.inc                    | Linguistici dati Giapponese.
+/vault/lang/lang.nl.inc                    | Linguistici dati Olandese.
+/vault/lang/lang.pt.inc                    | Linguistici dati Portoghese.
+/vault/lang/lang.ru.inc                    | Linguistici dati Russa.
+/vault/lang/lang.vi.inc                    | Linguistici dati Vietnamita.
+/vault/lang/lang.zh.inc                    | Linguistici dati Cinese (Semplificata).
+/vault/lang/lang.zh-TW.inc                 | Linguistici dati Cinese (Tradizionale).
 /vault/quarantine/                         | Quarantena cartella (contiene i file in quarantena).
 /vault/quarantine/.htaccess                | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/.htaccess                           | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
@@ -367,7 +368,7 @@ File                                       | Descrizione
 /vault/graphics_custom_standard.cvd        | File per grafica firme.
 /vault/graphics_mussel_regex.cvd           | File per grafica firme.
 /vault/graphics_mussel_standard.cvd        | File per grafica firme.
-/vault/greylist.csv                        | CSV di firme sulla greylist indicando a phpMussel cui firme dovrebbe essere ignorato (il file sarà ricreato automaticamente se è cancellato).
+/vault/greylist.csv                        | CSV di firme indicando per phpMussel cui firme dovrebbero essere ignorato (il file sarà ricreato automaticamente se è cancellato).
 /vault/hex_general_commands.csv            | Hex-codificata CSV di generale comando rilevazioni opzionalmente utilizzati da phpMussel.
 /vault/html_clamav_regex.cvd               | File per le normalizzati HTML firme.
 /vault/html_clamav_regex.map               | File per le normalizzati HTML firme.
@@ -424,6 +425,7 @@ File                                       | Descrizione
 /vault/phpmussel.inc                       | Nucleo Script; Il principale corpo e budella di phpMussel (essenziale)!
 /vault/phpmussel.ini                       | Configurazione file; Contiene tutte l'opzioni di configurazione per phpMussel, dicendogli cosa fare e come operare correttamente (essenziale)!
 ※ /vault/scan_log.txt                     | Un record di tutto scansionato da phpMussel.
+※ /vault/scan_log_serialized.txt          | Un record di tutto scansionato da phpMussel.
 ※ /vault/scan_kills.txt                   | Un record di tutti i file bloccati/uccisi da phpMussel.
 /vault/swf_clamav_regex.cvd                | File per Shockwave firme.
 /vault/swf_clamav_regex.map                | File per Shockwave firme.
@@ -442,21 +444,21 @@ File                                       | Descrizione
 /vault/whitelist_clamav.cvd                | File specifico whitelist.
 /vault/whitelist_custom.cvd                | File specifico whitelist.
 /vault/whitelist_mussel.cvd                | File specifico whitelist.
-/vault/xmlxdp_clamav_regex.cvd             | File per XML/XDP-Pezzo firme.
-/vault/xmlxdp_clamav_regex.map             | File per XML/XDP-Pezzo firme.
-/vault/xmlxdp_clamav_standard.cvd          | File per XML/XDP-Pezzo firme.
-/vault/xmlxdp_clamav_standard.map          | File per XML/XDP-Pezzo firme.
-/vault/xmlxdp_custom_regex.cvd             | File per XML/XDP-Pezzo firme.
-/vault/xmlxdp_custom_standard.cvd          | File per XML/XDP-Pezzo firme.
-/vault/xmlxdp_mussel_regex.cvd             | File per XML/XDP-Pezzo firme.
-/vault/xmlxdp_mussel_standard.cvd          | File per XML/XDP-Pezzo firme.
+/vault/xmlxdp_clamav_regex.cvd             | File per XML/XDP firme.
+/vault/xmlxdp_clamav_regex.map             | File per XML/XDP firme.
+/vault/xmlxdp_clamav_standard.cvd          | File per XML/XDP firme.
+/vault/xmlxdp_clamav_standard.map          | File per XML/XDP firme.
+/vault/xmlxdp_custom_regex.cvd             | File per XML/XDP firme.
+/vault/xmlxdp_custom_standard.cvd          | File per XML/XDP firme.
+/vault/xmlxdp_mussel_regex.cvd             | File per XML/XDP firme.
+/vault/xmlxdp_mussel_standard.cvd          | File per XML/XDP firme.
 
 ※ Nome del file può variare dipendente di configurazione (in `phpmussel.ini`).
 
 ####*IN RIGUARDA PER FIRME FILE*
 CVD è l'acronimo di "ClamAV Virus Definitions", in riferimento sia come ClamAV riferisce alle proprie firme e all'uso di tali firme da phpMussel; I file che terminano con "CVD" contengono firme.
 
-I file che terminano con "MAP", letteralmente, Mappa cui delle firme phpMussel dovrebbe e non dovrebbe usare per individuale scansioni; Non tutte le firme sono necessariamente richiesti per ogni singola scansione, così, phpMussel utilizza mappe delle firme file a accelerare il processo di scansione (un processo che sarebbe altrimenti essere estremamente lento e noioso).
+I file che terminano con "MAP", letteralmente, mappa cui delle firme phpMussel dovrebbe e non dovrebbe usare per individuale scansioni; Non tutte le firme sono necessariamente richiesti per ogni singola scansione, così, phpMussel utilizza mappe delle firme file a accelerare il processo di scansione (un processo che sarebbe altrimenti essere estremamente lento e noioso).
 
 Firma file contrassegnati con "_regex" contengono le firme che utilizzano regolari espressioni (regex) modello verifica.
 
@@ -495,6 +497,9 @@ Generale configurazione per phpMussel.
 "scan_log"
 - Il nome del file per registrare tutti i risultati di la scansione. Specificare un nome del file, o lasciare vuoto per disattivarlo.
 
+"scan_log_serialized"
+- Il nome del file per registrare tutti i risultati di la scansione (utilizzando un formato serializzato). Specificare un nome del file, o lasciare vuoto per disattivarlo.
+
 "scan_kills"
 - Il nome del file per registrare tutti i record di bloccato o ucciso caricamenti. Specificare un nome del file, o lasciare vuoto per disattivarlo.
 
@@ -511,7 +516,7 @@ Generale configurazione per phpMussel.
 - Specifica la lingua predefinita per phpMussel.
 
 "lang_override"
-- Specifica se phpMussel dovrebbero, ove possibile, sostituire la lingua specificazione con la lingua preferenza dichiarato da richieste in entrata (HTTP_ACCEPT_LANGUAGE). False = No [Predefinito]; True = Sì.
+- Specifica se phpMussel dovrebbe, ove possibile, sostituire la lingua specificazione con la lingua preferenza dichiarato da richieste in entrata (HTTP_ACCEPT_LANGUAGE). False = No [Predefinito]; True = Sì.
 
 "lang_acceptable"
 - La `lang_acceptable` direttiva indica per phpMussel quali lingue può essere accettato dallo script da `lang` o da `HTTP_ACCEPT_LANGUAGE`. La direttiva dovrebbe essere modificato **SOLO** se si aggiunge i propri personalizzati lingua file o rimuovere con forza di lingua file. La direttiva è una stringa delimitata da virgole dei codici utilizzati da tali lingue accettate dallo script.
@@ -614,7 +619,7 @@ Abilita file-specifico whitelist? False = No; True = Sì [Predefinito].
 - "whitelist_custom"
 - "whitelist_mussel"
 
-Verificare XML/XDP pezzi contro XML/XDP-pezzo firme durante la scansione? False = No; True = Sì [Predefinito].
+Verificare XML/XDP pezzi contro XML/XDP firme durante la scansione? False = No; True = Sì [Predefinito].
 - "xmlxdp_clamav"
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
@@ -903,7 +908,7 @@ I seguenti sono i tipi di firme utilizzate da phpMussel:
 - "Portatili Eseguibili Esteso Firme" (pex_*). Verificato contro l'MD5 hash e la dimensione di ogni variabili del ogni file non sulla whitelist mirati per la scansione e verificato allo PE formato.
 - "SWF Firme" (swf_*). Verificato contro i contenuti del ogni Shockwave file mirati per scansionare quello che non è sulla whitelist.
 - "Whitelist Firme" (whitelist_*). Verificato contro l'MD5 hash dei contenuti e la dimensione del ogni file mirati per scansionare. Corrispondenti file saranno immuni contro l'essere bloccato dal tipo di firme di cui al loro whitelist listato.
-- "XML/XDP Pezzo Firme" (xmlxdp_*). Verificato contro qualsiasi XML/XDP pezzi trovato all'interno di qualsiasi dei file mirati per scansionare quello che non è sulla whitelist.
+- "XML/XDP Firme" (xmlxdp_*). Verificato contro qualsiasi XML/XDP pezzi trovato all'interno di qualsiasi dei file mirati per scansionare quello che non è sulla whitelist.
 (Si noti che qualsiasi di queste firme possono essere disattivato facilmente tramite `phpmussel.ini`).
 
 ---
@@ -918,26 +923,33 @@ I seguenti sono i tipi di firme utilizzate da phpMussel:
 
 Per la maggior parte, phpMussel dovrebbe essere compatibile abbastanza con la maggior parte dei antivirus software. Ma, conflitti sono stati riportati da un numero di utenti in passato. Queste informazioni qui di seguito è da VirusTotal.com, e descrive un certo numero di falsi positivi riportato dai vari anti-virus programmi contro phpMussel. Sebbene questa informazione non è un'assoluta garanzia di se o non si sarà verificheranno problemi di compatibilità tra phpMussel e il vostro anti-virus software, se il vostro software anti-virus è stati ha notato o ha bandierato contro phpMussel, si dovrebbe considerare sia disattivarlo prima di lavorare con phpMussel o dovrebbe considerare l'alternative opzioni per sia il vostro anti-virus software o phpMussel.
 
-Questa informazione è stato lo scorso aggiornato 7 Settembre 2015 ed è in corso per tutte le phpMussel rilasci delle due più recenti minori versioni (v0.6-v0.7a) al momento di scrivere questo.
+Questa informazione è stato lo scorso aggiornato 12 Dicembre 2015 ed è in corso per tutte le phpMussel rilasci delle due più recenti minori versioni (v0.7-v0.9.0) al momento di scrivere questo.
 
 | Scanner              |  Risultati                           |
 |----------------------|--------------------------------------|
 | Ad-Aware             |  Senza noti problemi                 |
+| AegisLab             |  Senza noti problemi                 |
 | Agnitum              |  Senza noti problemi                 |
 | AhnLab-V3            |  Senza noti problemi                 |
+| Alibaba              |  Senza noti problemi                 |
+| ALYac                |  Senza noti problemi                 |
 | AntiVir              |  Senza noti problemi                 |
 | Antiy-AVL            |  Senza noti problemi                 |
+| Arcabit              |  Senza noti problemi                 |
 | Avast                |  Riferisce "JS:ScriptSH-inf [Trj]"   |
 | AVG                  |  Senza noti problemi                 |
+| Avira                |  Senza noti problemi                 |
+| AVware               |  Senza noti problemi                 |
 | Baidu-International  |  Senza noti problemi                 |
 | BitDefender          |  Senza noti problemi                 |
-| Bkav                 |  Riferisce "VEXDAD2.Webshell"        |
+| Bkav                 |  Riferisce "VEXD737.Webshell"        |
 | ByteHero             |  Senza noti problemi                 |
 | CAT-QuickHeal        |  Senza noti problemi                 |
 | ClamAV               |  Senza noti problemi                 |
 | CMC                  |  Senza noti problemi                 |
 | Commtouch            |  Senza noti problemi                 |
 | Comodo               |  Senza noti problemi                 |
+| Cyren                |  Riferisce "W32/GenBl.DE4CF18E!Olympus"|
 | DrWeb                |  Senza noti problemi                 |
 | Emsisoft             |  Senza noti problemi                 |
 | ESET-NOD32           |  Senza noti problemi                 |
@@ -965,6 +977,7 @@ Questa informazione è stato lo scorso aggiornato 7 Settembre 2015 ed è in cors
 | Sophos               |  Senza noti problemi                 |
 | SUPERAntiSpyware     |  Senza noti problemi                 |
 | Symantec             |  Senza noti problemi                 |
+| Tencent              |  Senza noti problemi                 |
 | TheHacker            |  Senza noti problemi                 |
 | TotalDefense         |  Senza noti problemi                 |
 | TrendMicro           |  Senza noti problemi                 |
@@ -972,9 +985,11 @@ Questa informazione è stato lo scorso aggiornato 7 Settembre 2015 ed è in cors
 | VBA32                |  Senza noti problemi                 |
 | VIPRE                |  Senza noti problemi                 |
 | ViRobot              |  Senza noti problemi                 |
+| Zillya               |  Senza noti problemi                 |
+| Zoner                |  Senza noti problemi                 |
 
 
 ---
 
 
-Ultimo Aggiornamento: 19 Ottobre 2015 (2015.10.19).
+Ultimo Aggiornamento: 12 Dicembre 2015 (2015.12.12).

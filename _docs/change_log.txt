@@ -60,6 +60,9 @@ entries will be deleted when those goals have been achieved.
   Missing call to "zip_close" in the code section of the core script for
   processing ZIP files [phpmussel.inc]; Fixed.
 
+- [2015.12.12; Documentation; Maikuolan]: Updated the anti-virus compatibility
+  information in the READMEs.
+
 === Version/Release 0.9.0 ===
 MINOR RELEASE (Signatures 55+21062+9).
 

@@ -261,63 +261,64 @@ File                                       | Description
 /web.config                                | An ASP.NET configuration file (in this instance, to protect the `/vault` directory from being accessed by non-authorised sources in the event that the script is installed on a server based upon ASP.NET technologies).
 /_docs/                                    | Documentation directory (contains various files).
 /_docs/change_log.txt                      | A record of changes made to the script between different versions (not required for proper function of script).
-/_docs/readme.de.md                        | Documentation: DEUTSCH
-/_docs/readme.de.txt                       | Documentation: DEUTSCH
-/_docs/readme.en.md                        | Documentation: ENGLISH
-/_docs/readme.en.txt                       | Documentation: ENGLISH
-/_docs/readme.es.md                        | Documentation: ESPAÑOL
-/_docs/readme.es.txt                       | Documentation: ESPAÑOL
-/_docs/readme.fr.md                        | Documentation: FRANÇAIS
-/_docs/readme.fr.txt                       | Documentation: FRANÇAIS
-/_docs/readme.id.md                        | Documentation: BAHASA INDONESIA
-/_docs/readme.id.txt                       | Documentation: BAHASA INDONESIA
-/_docs/readme.it.md                        | Documentation: ITALIANO
-/_docs/readme.it.txt                       | Documentation: ITALIANO
-/_docs/readme.nl.md                        | Documentation: NEDERLANDSE
-/_docs/readme.nl.txt                       | Documentation: NEDERLANDSE
-/_docs/readme.pt.md                        | Documentation: PORTUGUÊS
-/_docs/readme.pt.txt                       | Documentation: PORTUGUÊS
-/_docs/readme.ru.md                        | Documentation: РУССКИЙ
-/_docs/readme.ru.txt                       | Documentation: РУССКИЙ
-/_docs/readme.vi.md                        | Documentation: TIẾNG VIỆT
-/_docs/readme.vi.txt                       | Documentation: TIẾNG VIỆT
-/_docs/readme.zh.md                        | Documentation: 中文（简体）
-/_docs/readme.zh-TW.md                     | Documentation: 中文（傳統）
+/_docs/readme.ar.md                        | Arabic documentation.
+/_docs/readme.de.md                        | German documentation.
+/_docs/readme.de.txt                       | German documentation.
+/_docs/readme.en.md                        | English documentation.
+/_docs/readme.en.txt                       | English documentation.
+/_docs/readme.es.md                        | Spanish documentation.
+/_docs/readme.es.txt                       | Spanish documentation.
+/_docs/readme.fr.md                        | French documentation.
+/_docs/readme.fr.txt                       | French documentation.
+/_docs/readme.id.md                        | Indonesian documentation.
+/_docs/readme.id.txt                       | Indonesian documentation.
+/_docs/readme.it.md                        | Italian documentation.
+/_docs/readme.it.txt                       | Italian documentation.
+/_docs/readme.nl.md                        | Dutch documentation.
+/_docs/readme.nl.txt                       | Dutch documentation.
+/_docs/readme.pt.md                        | Portuguese documentation.
+/_docs/readme.pt.txt                       | Portuguese documentation.
+/_docs/readme.ru.md                        | Russian documentation.
+/_docs/readme.ru.txt                       | Russian documentation.
+/_docs/readme.vi.md                        | Vietnamese documentation.
+/_docs/readme.vi.txt                       | Vietnamese documentation.
+/_docs/readme.zh.md                        | Chinese (Simplified) documentation.
+/_docs/readme.zh-TW.md                     | Chinese (Traditional) documentation.
 /_docs/signatures_tally.txt                | Net-shift tally of included signatures (not required for proper function of script).
-/_testfiles/                               | Test files directory (contains various files). All contained files are test files for testing if phpMussel was correctly installed on your system, and you don't need to upload this directory or any of its files except when doing such testing.
-/_testfiles/ascii_standard_testfile.txt    | Test file for testing phpMussel normalised ASCII signatures.
-/_testfiles/coex_testfile.rtf              | Test file for testing phpMussel Complex Extended signatures.
-/_testfiles/exe_standard_testfile.exe      | Test file for testing phpMussel PE signatures.
-/_testfiles/general_standard_testfile.txt  | Test file for testing phpMussel general signatures.
-/_testfiles/graphics_standard_testfile.gif | Test file for testing phpMussel graphics signatures.
-/_testfiles/html_standard_testfile.txt     | Test file for testing phpMussel normalised HTML signatures.
-/_testfiles/md5_testfile.txt               | Test file for testing phpMussel MD5 signatures.
-/_testfiles/metadata_testfile.tar          | Test file for testing phpMussel metadata signatures and for testing TAR file support on your system.
-/_testfiles/metadata_testfile.txt.gz       | Test file for testing phpMussel metadata signatures and for testing GZ file support on your system.
-/_testfiles/metadata_testfile.zip          | Test file for testing phpMussel metadata signatures and for testing ZIP file support on your system.
-/_testfiles/ole_testfile.ole               | Test file for testing phpMussel OLE signatures.
-/_testfiles/pdf_standard_testfile.pdf      | Test file for testing phpMussel PDF signatures.
-/_testfiles/pe_sectional_testfile.exe      | Test file for testing phpMussel PE Sectional signatures.
-/_testfiles/swf_standard_testfile.swf      | Test file for testing phpMussel SWF signatures.
-/_testfiles/xdp_standard_testfile.xdp      | Test file for testing phpMussel XML/XDP-Chunk signatures.
+/_testfiles/                               | Testfiles directory (contains various files). All contained files are testfiles for testing if phpMussel was correctly installed on your system, and you don't need to upload this directory or any of its files except when doing such testing.
+/_testfiles/ascii_standard_testfile.txt    | Testfile for testing phpMussel normalised ASCII signatures.
+/_testfiles/coex_testfile.rtf              | Testfile for testing phpMussel Complex Extended signatures.
+/_testfiles/exe_standard_testfile.exe      | Testfile for testing phpMussel PE signatures.
+/_testfiles/general_standard_testfile.txt  | Testfile for testing phpMussel general signatures.
+/_testfiles/graphics_standard_testfile.gif | Testfile for testing phpMussel graphics signatures.
+/_testfiles/html_standard_testfile.txt     | Testfile for testing phpMussel normalised HTML signatures.
+/_testfiles/md5_testfile.txt               | Testfile for testing phpMussel MD5 signatures.
+/_testfiles/metadata_testfile.tar          | Testfile for testing phpMussel metadata signatures and for testing TAR file support on your system.
+/_testfiles/metadata_testfile.txt.gz       | Testfile for testing phpMussel metadata signatures and for testing GZ file support on your system.
+/_testfiles/metadata_testfile.zip          | Testfile for testing phpMussel metadata signatures and for testing ZIP file support on your system.
+/_testfiles/ole_testfile.ole               | Testfile for testing phpMussel OLE signatures.
+/_testfiles/pdf_standard_testfile.pdf      | Testfile for testing phpMussel PDF signatures.
+/_testfiles/pe_sectional_testfile.exe      | Testfile for testing phpMussel PE Sectional signatures.
+/_testfiles/swf_standard_testfile.swf      | Testfile for testing phpMussel SWF signatures.
+/_testfiles/xdp_standard_testfile.xdp      | Testfile for testing phpMussel XML/XDP signatures.
 /vault/                                    | Vault directory (contains various files).
 /vault/cache/                              | Cache directory (for temporary data).
 /vault/cache/.htaccess                     | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/lang/                               | Contains phpMussel language data.
 /vault/lang/.htaccess                      | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/lang/lang.de.inc                    | Language data: DEUTSCH
-/vault/lang/lang.en.inc                    | Language data: ENGLISH
-/vault/lang/lang.es.inc                    | Language data: ESPAÑOL
-/vault/lang/lang.fr.inc                    | Language data: FRANÇAIS
-/vault/lang/lang.id.inc                    | Language data: BAHASA INDONESIA
-/vault/lang/lang.it.inc                    | Language data: ITALIANO
-/vault/lang/lang.ja.inc                    | Language data: 日本語
-/vault/lang/lang.nl.inc                    | Language data: NEDERLANDSE
-/vault/lang/lang.pt.inc                    | Language data: PORTUGUÊS
-/vault/lang/lang.ru.inc                    | Language data: РУССКИЙ
-/vault/lang/lang.vi.inc                    | Language data: TIẾNG VIỆT
-/vault/lang/lang.zh.inc                    | Language data: 中文（简体）
-/vault/lang/lang.zh-TW.inc                 | Language data: 中文（傳統）
+/vault/lang/lang.de.inc                    | German language data.
+/vault/lang/lang.en.inc                    | English language data.
+/vault/lang/lang.es.inc                    | Spanish language data.
+/vault/lang/lang.fr.inc                    | French language data.
+/vault/lang/lang.id.inc                    | Indonesian language data.
+/vault/lang/lang.it.inc                    | Italian language data.
+/vault/lang/lang.ja.inc                    | Japanese language data.
+/vault/lang/lang.nl.inc                    | Dutch language data.
+/vault/lang/lang.pt.inc                    | Portuguese language data.
+/vault/lang/lang.ru.inc                    | Russian language data.
+/vault/lang/lang.vi.inc                    | Vietnamese language data.
+/vault/lang/lang.zh.inc                    | Chinese (Simplified) language data.
+/vault/lang/lang.zh-TW.inc                 | Chinese (Traditional) language data.
 /vault/quarantine/                         | Quarantine directory (contains quarantined files).
 /vault/quarantine/.htaccess                | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/.htaccess                           | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
@@ -424,6 +425,7 @@ File                                       | Description
 /vault/phpmussel.inc                       | Core Script; The main body and guts of phpMussel (essential)!
 /vault/phpmussel.ini                       | Configuration file; Contains all the configuration options of phpMussel, telling it what to do and how to operate correctly (essential)!
 ※ /vault/scan_log.txt                     | A record of everything scanned by phpMussel.
+※ /vault/scan_log_serialized.txt          | A record of everything scanned by phpMussel.
 ※ /vault/scan_kills.txt                   | A record of every file upload blocked/killed by phpMussel.
 /vault/swf_clamav_regex.cvd                | File for the Shockwave signatures.
 /vault/swf_clamav_regex.map                | File for the Shockwave signatures.
@@ -442,14 +444,14 @@ File                                       | Description
 /vault/whitelist_clamav.cvd                | File specific whitelist.
 /vault/whitelist_custom.cvd                | File specific whitelist.
 /vault/whitelist_mussel.cvd                | File specific whitelist.
-/vault/xmlxdp_clamav_regex.cvd             | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_clamav_regex.map             | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_clamav_standard.cvd          | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_clamav_standard.map          | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_custom_regex.cvd             | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_custom_standard.cvd          | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_mussel_regex.cvd             | File for XML/XDP-Chunk signatures.
-/vault/xmlxdp_mussel_standard.cvd          | File for XML/XDP-Chunk signatures.
+/vault/xmlxdp_clamav_regex.cvd             | File for XML/XDP signatures.
+/vault/xmlxdp_clamav_regex.map             | File for XML/XDP signatures.
+/vault/xmlxdp_clamav_standard.cvd          | File for XML/XDP signatures.
+/vault/xmlxdp_clamav_standard.map          | File for XML/XDP signatures.
+/vault/xmlxdp_custom_regex.cvd             | File for XML/XDP signatures.
+/vault/xmlxdp_custom_standard.cvd          | File for XML/XDP signatures.
+/vault/xmlxdp_mussel_regex.cvd             | File for XML/XDP signatures.
+/vault/xmlxdp_mussel_standard.cvd          | File for XML/XDP signatures.
 
 ※ Filename may differ based on configuration stipulations (in `phpmussel.ini`).
 
@@ -494,6 +496,9 @@ General phpMussel configuration.
 
 "scan_log"
 - Filename of file to log all scanning results to. Specify a filename, or leave blank to disable.
+
+"scan_log_serialized"
+- Filename of file to log all scanning results to (using a serialised format). Specify a filename, or leave blank to disable.
 
 "scan_kills"
 - Filename of file to log all records of blocked or killed uploads to. Specify a filename, or leave blank to disable.
@@ -614,7 +619,7 @@ Enable file specific whitelist? False = No; True = Yes [Default].
 - "whitelist_custom"
 - "whitelist_mussel"
 
-Check XML/XDP chunks against XML/XDP-chunk signatures when scanning? False = No; True = Yes [Default].
+Check XML/XDP chunks against XML/XDP signatures when scanning? False = No; True = Yes [Default].
 - "xmlxdp_clamav"
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
@@ -903,7 +908,7 @@ The following is a breakdown of the types of signatures used by phpMussel:
 - "Portable Executable Extended Signatures" (pex_*). Checked against the MD5 hash and the size of variables within every non-whitelisted file targeted for scanning and matched to the PE format.
 - "SWF Signatures" (swf_*). Checked against the contents of every non-whitelisted Shockwave file targeted for scanning.
 - "Whitelist Signatures" (whitelist_*). Checked against the MD5 hash of the contents and the filesize of every file targeted for scanning. Matched files will be immune to being matched by the type of signature mentioned in their whitelist entry.
-- "XML/XDP-Chunk Signatures" (xmlxdp_*). Checked against any XML/XDP chunks found within any non-whitelisted files targeted for scanning.
+- "XML/XDP Signatures" (xmlxdp_*). Checked against any XML/XDP chunks found within any non-whitelisted files targeted for scanning.
 (Note that any of these signatures may be easily disabled via `phpmussel.ini`).
 
 ---
@@ -918,26 +923,33 @@ The following is a breakdown of the types of signatures used by phpMussel:
 
 For the most part, phpMussel should be fairly compatible with most other virus scanning software. However, conflictions have been reported by a number of users in the past. This information below is from VirusTotal.com, and it describes a number of false-positives reported by various anti-virus programs against phpMussel. Although this information isn't an absolute guarantee of whether or not you will encounter compatibility problems between phpMussel and your anti-virus software, if your anti-virus software is noted as flagging against phpMussel, you should either consider disabling it prior to working with phpMussel or should consider alternative options to either your anti-virus software or phpMussel.
 
-This information was last updated 7th September 2015 and is current for all phpMussel releases of the two most recent minor versions (v0.6-v0.7a) at the time of writing this.
+This information was last updated 12th December 2015 and is current for all phpMussel releases of the two most recent minor versions (v0.7-v0.9.0) at the time of writing this.
 
 | Scanner              |  Results                             |
 |----------------------|--------------------------------------|
 | Ad-Aware             |  No known problems                   |
+| AegisLab             |  No known problems                   |
 | Agnitum              |  No known problems                   |
 | AhnLab-V3            |  No known problems                   |
+| Alibaba              |  No known problems                   |
+| ALYac                |  No known problems                   |
 | AntiVir              |  No known problems                   |
 | Antiy-AVL            |  No known problems                   |
+| Arcabit              |  No known problems                   |
 | Avast                |  Reports "JS:ScriptSH-inf [Trj]"     |
 | AVG                  |  No known problems                   |
+| Avira                |  No known problems                   |
+| AVware               |  No known problems                   |
 | Baidu-International  |  No known problems                   |
 | BitDefender          |  No known problems                   |
-| Bkav                 |  Reports "VEXDAD2.Webshell"          |
+| Bkav                 |  Reports "VEXD737.Webshell"          |
 | ByteHero             |  No known problems                   |
 | CAT-QuickHeal        |  No known problems                   |
 | ClamAV               |  No known problems                   |
 | CMC                  |  No known problems                   |
 | Commtouch            |  No known problems                   |
 | Comodo               |  No known problems                   |
+| Cyren                |  Reports "W32/GenBl.DE4CF18E!Olympus"|
 | DrWeb                |  No known problems                   |
 | Emsisoft             |  No known problems                   |
 | ESET-NOD32           |  No known problems                   |
@@ -965,6 +977,7 @@ This information was last updated 7th September 2015 and is current for all phpM
 | Sophos               |  No known problems                   |
 | SUPERAntiSpyware     |  No known problems                   |
 | Symantec             |  No known problems                   |
+| Tencent              |  No known problems                   |
 | TheHacker            |  No known problems                   |
 | TotalDefense         |  No known problems                   |
 | TrendMicro           |  No known problems                   |
@@ -972,9 +985,11 @@ This information was last updated 7th September 2015 and is current for all phpM
 | VBA32                |  No known problems                   |
 | VIPRE                |  No known problems                   |
 | ViRobot              |  No known problems                   |
+| Zillya               |  No known problems                   |
+| Zoner                |  No known problems                   |
 
 
 ---
 
 
-Last Updated: 19th October 2015 (2015.10.19).
+Last Updated: 12th October 2015 (2015.12.12).

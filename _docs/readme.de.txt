@@ -495,28 +495,29 @@
     Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für
     die korrekte Funktion des Scripts nicht notwendig).
     ~
- /_docs/readme.de.md (Dokumentation, enthalten); DEUTSCH
- /_docs/readme.de.txt (Dokumentation, enthalten); DEUTSCH
- /_docs/readme.en.md (Dokumentation, enthalten); ENGLISH
- /_docs/readme.en.txt (Dokumentation, enthalten); ENGLISH
- /_docs/readme.es.md (Dokumentation, enthalten); ESPAÑOL
- /_docs/readme.es.txt (Dokumentation, enthalten); ESPAÑOL
- /_docs/readme.fr.md (Dokumentation, enthalten); FRANÇAIS
- /_docs/readme.fr.txt (Dokumentation, enthalten); FRANÇAIS
- /_docs/readme.id.md (Dokumentation, enthalten); BAHASA INDONESIA
- /_docs/readme.id.txt (Dokumentation, enthalten); BAHASA INDONESIA
- /_docs/readme.it.md (Dokumentation, enthalten); ITALIANO
- /_docs/readme.it.txt (Dokumentation, enthalten); ITALIANO
- /_docs/readme.nl.md (Dokumentation, enthalten); NEDERLANDSE
- /_docs/readme.nl.txt (Dokumentation, enthalten); NEDERLANDSE
- /_docs/readme.pt.md (Dokumentation, enthalten); PORTUGUÊS
- /_docs/readme.pt.txt (Dokumentation, enthalten); PORTUGUÊS
- /_docs/readme.ru.md (Dokumentation, enthalten); РУССКИЙ
- /_docs/readme.ru.txt (Dokumentation, enthalten); РУССКИЙ
- /_docs/readme.vi.md (Dokumentation, enthalten); TIẾNG VIỆT
- /_docs/readme.vi.txt (Dokumentation, enthalten); TIẾNG VIỆT
- /_docs/readme.zh.md (Dokumentation, enthalten); 中文（简体）
- /_docs/readme.zh-TW.md (Dokumentation, enthalten); 中文（傳統）
+ /_docs/readme.ar.md (Dokumentation, enthalten); Arabisch
+ /_docs/readme.de.md (Dokumentation, enthalten); Deutsch
+ /_docs/readme.de.txt (Dokumentation, enthalten); Deutsch
+ /_docs/readme.en.md (Dokumentation, enthalten); Englisch
+ /_docs/readme.en.txt (Dokumentation, enthalten); Englisch
+ /_docs/readme.es.md (Dokumentation, enthalten); Spanisch
+ /_docs/readme.es.txt (Dokumentation, enthalten); Spanisch
+ /_docs/readme.fr.md (Dokumentation, enthalten); Französisch
+ /_docs/readme.fr.txt (Dokumentation, enthalten); Französisch
+ /_docs/readme.id.md (Dokumentation, enthalten); Indonesisch
+ /_docs/readme.id.txt (Dokumentation, enthalten); Indonesisch
+ /_docs/readme.it.md (Dokumentation, enthalten); Italienisch
+ /_docs/readme.it.txt (Dokumentation, enthalten); Italienisch
+ /_docs/readme.nl.md (Dokumentation, enthalten); Niederländisch
+ /_docs/readme.nl.txt (Dokumentation, enthalten); Niederländisch
+ /_docs/readme.pt.md (Dokumentation, enthalten); Portugiesisch
+ /_docs/readme.pt.txt (Dokumentation, enthalten); Portugiesisch
+ /_docs/readme.ru.md (Dokumentation, enthalten); Russisch
+ /_docs/readme.ru.txt (Dokumentation, enthalten); Russisch
+ /_docs/readme.vi.md (Dokumentation, enthalten); Vietnamesisch
+ /_docs/readme.vi.txt (Dokumentation, enthalten); Vietnamesisch
+ /_docs/readme.zh.md (Dokumentation, enthalten); Vereinfacht Chinesisch
+ /_docs/readme.zh-TW.md (Dokumentation, enthalten); Traditionell Chinesisch
     Die README-Dateien (z.B. die Datei, die Sie gerade lesen).
     ~
  /_docs/signatures_tally.txt (Dokumentation, enthalten)
@@ -586,14 +587,14 @@
     Cache directory (for temporary data).
     ~
  /vault/cache/.htaccess (Sonstiges, enthalten)
-    Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien
+    Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien
     des Scripts vor einem nicht authorisierten Zugriff).
     ~
  /vault/lang/ (Verzeichnis)
     Enthält Sprachdaten für phpMussel.
     ~
  /vault/lang/.htaccess (Sonstiges, enthalten)
-    Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien
+    Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien
     des Scripts vor einem nicht authorisierten Zugriff).
     ~
  /vault/lang/lang.de.inc (Script, enthalten); DEUTSCH
@@ -615,11 +616,11 @@
     Quarantäne-Verzeichnis (enthält Dateien in Quarantäne).
     ~
  /vault/quarantine/.htaccess (Sonstiges, enthalten)
-    Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien
+    Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien
     des Scripts vor einem nicht authorisierten Zugriff).
     ~
  /vault/.htaccess (Sonstiges, enthalten)
-    Ein hypertext access file (in diesem Fall zum Schutz von sensiblen Dateien
+    Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien
     des Scripts vor einem nicht authorisierten Zugriff).
     ~
  /vault/ascii_clamav_regex.cvd (Signaturen, enthalten)
@@ -808,6 +809,9 @@
  /vault/scan_log.txt *(Logfile, wird erstellt)
     Eine Aufzeichnung aller von phpMussel gescannten Objekte.
     ~
+ /vault/scan_log_serialized.txt *(Logfile, wird erstellt)
+    Eine Aufzeichnung aller von phpMussel gescannten Objekte.
+    ~
  /vault/scan_kills.txt *(Logfile, wird erstellt)
     Eine Aufzeichnung aller von phpMussel blockierten Dateiuploads.
     ~
@@ -863,8 +867,8 @@
  /vault/xmlxdp_mussel_regex.cvd (Signaturen, enthalten)
  /vault/xmlxdp_mussel_standard.cvd (Signaturen, enthalten)
     Dateien der XML/XDP-Datenblock-Signaturen. Benötigt, wenn die Option
-    "XML/XDP-Chunk Signatures" in der "phpmussel.ini" aktiviert ist. Die
-    Dateien können entfernt werden, wenn die Option deaktiviert ist.
+    "XML/XDP Signatures" in der "phpmussel.ini" aktiviert ist. Die Dateien
+    können entfernt werden, wenn die Option deaktiviert ist.
     ~
 
  * Der Dateiname kann je nach Konfiguratuion in der "phpmussel.ini" variieren.
@@ -940,6 +944,10 @@
     "scan_log"
     - Name einer Datei zum Aufzeichnen aller Resultate von Überprüfungen. Geben
       Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
+    "scan_log_serialized"
+    - Name einer Datei zum Aufzeichnen aller Resultate von Überprüfungen
+      (Format ist serialisiert). Geben Sie einen Dateinamen an oder lassen Sie
+      die Option zum Deaktivieren leer.
     "scan_kills"
     - Name einer Datei zum Aufzeichnen aller blockierten Uploads. Geben Sie
       einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
@@ -1732,26 +1740,33 @@
  entweder vor der Benutzung von phpMussel deaktivieren oder sich andere
  Alternativen überlegen.
 
- Diese Informationen wurden zuletzt am 7. September 2015 aktualisiert und
+ Diese Informationen wurden zuletzt am 12. Dezember 2015 aktualisiert und
  gelten für alle phpMussel Veröffentlichungen von den beiden letzten
- Nebenversionen (v0.6-v0.7a) zu diesem Zeitpunkt.
+ Nebenversionen (v0.7-v0.9.0) zu diesem Zeitpunkt.
 
  Ad-Aware                Keine bekannten Probleme
+ AegisLab                Keine bekannten Probleme
  Agnitum                 Keine bekannten Probleme
  AhnLab-V3               Keine bekannten Probleme
+ Alibaba                 Keine bekannten Probleme
+ ALYac                   Keine bekannten Probleme
  AntiVir                 Keine bekannten Probleme
  Antiy-AVL               Keine bekannten Probleme
+ Arcabit                 Keine bekannten Probleme
  Avast                !  Meldet "JS:ScriptSH-inf [Trj]"
  AVG                     Keine bekannten Probleme
+ Avira                   Keine bekannten Probleme
+ AVware                  Keine bekannten Probleme
  Baidu-International     Keine bekannten Probleme
  BitDefender             Keine bekannten Probleme
- Bkav                 !  Meldet "VEXDAD2.Webshell"
+ Bkav                 !  Meldet "VEXD737.Webshell"
  ByteHero                Keine bekannten Probleme
  CAT-QuickHeal           Keine bekannten Probleme
  ClamAV                  Keine bekannten Probleme
  CMC                     Keine bekannten Probleme
  Commtouch               Keine bekannten Probleme
  Comodo                  Keine bekannten Probleme
+ Cyren                !  Meldet "W32/GenBl.DE4CF18E!Olympus"
  DrWeb                   Keine bekannten Probleme
  Emsisoft                Keine bekannten Probleme
  ESET-NOD32              Keine bekannten Probleme
@@ -1779,6 +1794,7 @@
  Sophos                  Keine bekannten Probleme
  SUPERAntiSpyware        Keine bekannten Probleme
  Symantec                Keine bekannten Probleme
+ Tencent                 Keine bekannten Probleme
  TheHacker               Keine bekannten Probleme
  TotalDefense            Keine bekannten Probleme
  TrendMicro              Keine bekannten Probleme
@@ -1786,9 +1802,11 @@
  VBA32                   Keine bekannten Probleme
  VIPRE                   Keine bekannten Probleme
  ViRobot                 Keine bekannten Probleme
+ Zillya                  Keine bekannten Probleme
+ Zoner                   Keine bekannten Probleme
 
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 22. Oktober 2015 (2015.10.22).
+Zuletzt aktualisiert: 12. Dezember 2015 (2015.12.12).
 EOF

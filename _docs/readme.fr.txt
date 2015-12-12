@@ -544,28 +544,29 @@
     Un enregistrement des modifications apportées au script entre les
     différentes versions (pas nécessaire pour le bon fonctionnement du script).
     ~
- /_docs/readme.de.md (Documentation, Inclu); DEUTSCH
- /_docs/readme.de.txt (Documentation, Inclu); DEUTSCH
- /_docs/readme.en.md (Documentation, Inclu); ENGLISH
- /_docs/readme.en.txt (Documentation, Inclu); ENGLISH
- /_docs/readme.es.md (Documentation, Inclu); ESPAÑOL
- /_docs/readme.es.txt (Documentation, Inclu); ESPAÑOL
- /_docs/readme.fr.md (Documentation, Inclu); FRANÇAIS
- /_docs/readme.fr.txt (Documentation, Inclu); FRANÇAIS
- /_docs/readme.id.md (Documentation, Inclu); BAHASA INDONESIA
- /_docs/readme.id.txt (Documentation, Inclu); BAHASA INDONESIA
- /_docs/readme.it.md (Documentation, Inclu); ITALIANO
- /_docs/readme.it.txt (Documentation, Inclu); ITALIANO
- /_docs/readme.nl.md (Documentation, Inclu); NEDERLANDSE
- /_docs/readme.nl.txt (Documentation, Inclu); NEDERLANDSE
- /_docs/readme.pt.md (Documentation, Inclu); PORTUGUÊS
- /_docs/readme.pt.txt (Documentation, Inclu); PORTUGUÊS
- /_docs/readme.ru.md (Documentation, Inclu); РУССКИЙ
- /_docs/readme.ru.txt (Documentation, Inclu); РУССКИЙ
- /_docs/readme.vi.md (Documentation, Inclu); TIẾNG VIỆT
- /_docs/readme.vi.txt (Documentation, Inclu); TIẾNG VIỆT
- /_docs/readme.zh.md (Documentation, Inclu); 中文（简体）
- /_docs/readme.zh-TW.md (Documentation, Inclu); 中文（傳統）
+ /_docs/readme.ar.md (Documentation, Inclu); Arabe
+ /_docs/readme.de.md (Documentation, Inclu); Allemand
+ /_docs/readme.de.txt (Documentation, Inclu); Allemand
+ /_docs/readme.en.md (Documentation, Inclu); Anglais
+ /_docs/readme.en.txt (Documentation, Inclu); Anglais
+ /_docs/readme.es.md (Documentation, Inclu); Espagnol
+ /_docs/readme.es.txt (Documentation, Inclu); Espagnol
+ /_docs/readme.fr.md (Documentation, Inclu); Français
+ /_docs/readme.fr.txt (Documentation, Inclu); Français
+ /_docs/readme.id.md (Documentation, Inclu); Indonésien
+ /_docs/readme.id.txt (Documentation, Inclu); Indonésien
+ /_docs/readme.it.md (Documentation, Inclu); Italien
+ /_docs/readme.it.txt (Documentation, Inclu); Italien
+ /_docs/readme.nl.md (Documentation, Inclu); Néerlandais
+ /_docs/readme.nl.txt (Documentation, Inclu); Néerlandais
+ /_docs/readme.pt.md (Documentation, Inclu); Portugais
+ /_docs/readme.pt.txt (Documentation, Inclu); Portugais
+ /_docs/readme.ru.md (Documentation, Inclu); Russe
+ /_docs/readme.ru.txt (Documentation, Inclu); Russe
+ /_docs/readme.vi.md (Documentation, Inclu); Vietnamien
+ /_docs/readme.vi.txt (Documentation, Inclu); Vietnamien
+ /_docs/readme.zh.md (Documentation, Inclu); Chinois (Simplifié)
+ /_docs/readme.zh-TW.md (Documentation, Inclu); Chinois (Traditionnel)
     Le README fichiers (par exemple; le fichier vous êtes en cours de lire).
     ~
  /_docs/signatures_tally.txt (Documentation, Inclu)
@@ -624,7 +625,7 @@
     Test fichier à test phpMussel SWF signatures.
     ~
  /_testfiles/xdp_standard_testfile.xdp (Test fichier, Inclu)
-    Test fichier à test phpMussel XML/XDP morceaux signatures.
+    Test fichier à test phpMussel XML/XDP signatures.
     ~
  /vault/ (Répertoire)
     Voûte répertoire (contient divers fichiers).
@@ -645,19 +646,19 @@
     fichiers appartenant au script contre être consulté par non autorisées
     sources).
     ~
- /vault/lang/lang.de.inc (Script, Inclu); DEUTSCH
- /vault/lang/lang.en.inc (Script, Inclu); ENGLISH
- /vault/lang/lang.es.inc (Script, Inclu); ESPAÑOL
- /vault/lang/lang.fr.inc (Script, Inclu); FRANÇAIS
- /vault/lang/lang.id.inc (Script, Inclu); BAHASA INDONESIA
- /vault/lang/lang.it.inc (Script, Inclu); ITALIANO
- /vault/lang/lang.ja.inc (Script, Inclu); 日本語
- /vault/lang/lang.nl.inc (Script, Inclu); NEDERLANDSE
- /vault/lang/lang.pt.inc (Script, Inclu); PORTUGUÊS
- /vault/lang/lang.ru.inc (Script, Inclu); РУССКИЙ
- /vault/lang/lang.vi.inc (Script, Inclu); TIẾNG VIỆT
- /vault/lang/lang.zh.inc (Script, Inclu); 中文（简体）
- /vault/lang/lang.zh-TW.inc (Script, Inclu); 中文（傳統）
+ /vault/lang/lang.de.inc (Script, Inclu); Allemand
+ /vault/lang/lang.en.inc (Script, Inclu); Anglais
+ /vault/lang/lang.es.inc (Script, Inclu); Espagnol
+ /vault/lang/lang.fr.inc (Script, Inclu); Français
+ /vault/lang/lang.id.inc (Script, Inclu); Indonésien
+ /vault/lang/lang.it.inc (Script, Inclu); Italien
+ /vault/lang/lang.ja.inc (Script, Inclu); Japonais
+ /vault/lang/lang.nl.inc (Script, Inclu); Néerlandais
+ /vault/lang/lang.pt.inc (Script, Inclu); Portugais
+ /vault/lang/lang.ru.inc (Script, Inclu); Russe
+ /vault/lang/lang.vi.inc (Script, Inclu); Vietnamien
+ /vault/lang/lang.zh.inc (Script, Inclu); Chinois (Simplifié)
+ /vault/lang/lang.zh-TW.inc (Script, Inclu); Chinois (Traditionnel)
     Fichiers de linguistiques données pour phpMussel.
     ~
  /vault/quarantine/ (Répertoire)
@@ -851,6 +852,9 @@
  /vault/scan_log.txt *(Logfile, Créé)
     Un enregistrement de tout analysé par phpMussel.
     ~
+ /vault/scan_log_serialized.txt *(Logfile, Créé)
+    Un enregistrement de tout analysé par phpMussel.
+    ~
  /vault/scan_kills.txt *(Logfile, Créé)
     Les résultats de chaque fichier téléchargement bloqué/tués par phpMussel.
     ~
@@ -907,9 +911,8 @@
  /vault/xmlxdp_custom_standard.cvd (Signatures, Inclus)
  /vault/xmlxdp_mussel_regex.cvd (Signatures, Inclus)
  /vault/xmlxdp_mussel_standard.cvd (Signatures, Inclus)
-    Fichiers pour XML/XDP morceaux signatures. Nécessaire si le XML/XDP
-    morceaux option dans "phpmussel.ini" est activée. Peut enlever si l'option
-    est désactivée.
+    Fichiers pour XML/XDP signatures. Nécessaire si l'XML/XDP option dans
+    "phpmussel.ini" est activée. Peut enlever si l'option est désactivée.
     ~
 
  * Noms du fichiers peut varier basé sur configuration stipulations (dans
@@ -992,11 +995,15 @@
       l'analyse des fichiers téléchargements.
       * N'a pas d'influence en CLI mode.
     "scan_log"
-    - Nom du fichier à enregistrer tous les résultats d'analyse à. Spécifiez
+    - Nom du fichier à enregistrer tous les résultats de l'analyse. Spécifiez
       un nom de fichier, ou laisser vide à désactiver.
+    "scan_log_serialized"
+    - Nom du fichier à enregistrer tous les résultats de l'analyse (le format
+      est sérialisé). Spécifiez un nom de fichier, ou laisser vide à
+      désactiver.
     "scan_kills"
     - Nom du fichier à enregistrer tous les résultats de bloqué ou tué
-      téléchargements à. Spécifiez un nom de fichier, ou laisser vide à
+      téléchargements. Spécifiez un nom de fichier, ou laisser vide à
       désactiver.
     "ipaddr"
     - Où trouver l'IP adresse du connexion demande? (Utile pour services tels
@@ -1184,7 +1191,7 @@
      "whitelist_clamav"
      "whitelist_custom"
      "whitelist_mussel"
-   - Vérifier XML/XDP morceaux contre XML/XDP morceaux signatures au cours de
+   - Vérifier XML/XDP contre XML/XDP signatures au cours de
      analyse? False = Non; True = Oui [Défaut].
      "xmlxdp_clamav"
      "xmlxdp_custom"
@@ -1771,9 +1778,8 @@
       contenus et la taille de chaque fichier ciblée pour d'analyse. Les
       identifiés fichiers sera immunitaire d'être identifié par le type de
       signature mentionné dans leur entrée de blanche liste.
-   - "XML/XDP Morceaux Signatures" (xmlxdp_*). Vérifié contre de chaque XML/XDP
-      morceaux trouvés dans tout fichier non listé blanche et ciblée pour
-      l'analyse.
+   - "XML/XDP Signatures" (xmlxdp_*). Vérifié contre de chaque XML/XDP trouvés
+      dans tout fichier non listé blanche et ciblée pour l'analyse.
    (Noter que ces signatures peut être désactivé facilement via
     "phpmussel.ini").
 
@@ -1802,26 +1808,33 @@
  désactivation avant à travailler avec phpMussel ou devrait envisager d'autres
  options soit votre logiciel anti-virus ou phpMussel.
 
- Cette information a été réactualisé le 7 Septembre 2015 et est courant pour
+ Cette information a été réactualisé le 12 Décembre 2015 et est courant pour
  toutes les phpMussel parutions des deux plus récentes mineures versions
- (v0.6-v0.7a) au moment de la rédaction de cette.
+ (v0.7-v0.9.0) au moment de la rédaction de cette.
 
  Ad-Aware                Pas problèmes connus
+ AegisLab                Pas problèmes connus
  Agnitum                 Pas problèmes connus
  AhnLab-V3               Pas problèmes connus
+ Alibaba                 Pas problèmes connus
+ ALYac                   Pas problèmes connus
  AntiVir                 Pas problèmes connus
  Antiy-AVL               Pas problèmes connus
+ Arcabit                 Pas problèmes connus
  Avast                !  Rapports "JS:ScriptSH-inf [Trj]"
  AVG                     Pas problèmes connus
+ Avira                   Pas problèmes connus
+ AVware                  Pas problèmes connus
  Baidu-International     Pas problèmes connus
  BitDefender             Pas problèmes connus
- Bkav                 !  Rapports "VEXDAD2.Webshell"
+ Bkav                 !  Rapports "VEXD737.Webshell"
  ByteHero                Pas problèmes connus
  CAT-QuickHeal           Pas problèmes connus
  ClamAV                  Pas problèmes connus
  CMC                     Pas problèmes connus
  Commtouch               Pas problèmes connus
  Comodo                  Pas problèmes connus
+ Cyren                !  Rapports "W32/GenBl.DE4CF18E!Olympus"
  DrWeb                   Pas problèmes connus
  Emsisoft                Pas problèmes connus
  ESET-NOD32              Pas problèmes connus
@@ -1849,6 +1862,7 @@
  Sophos                  Pas problèmes connus
  SUPERAntiSpyware        Pas problèmes connus
  Symantec                Pas problèmes connus
+ Tencent                 Pas problèmes connus
  TheHacker               Pas problèmes connus
  TotalDefense            Pas problèmes connus
  TrendMicro              Pas problèmes connus
@@ -1856,9 +1870,11 @@
  VBA32                   Pas problèmes connus
  VIPRE                   Pas problèmes connus
  ViRobot                 Pas problèmes connus
+ Zillya                  Pas problèmes connus
+ Zoner                   Pas problèmes connus
 
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 19 Octobre 2015 (2015.10.19).
+Dernière Réactualisé: 12 Décembre 2015 (2015.12.12).
 EOF

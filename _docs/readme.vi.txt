@@ -503,29 +503,30 @@
     Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa
     các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
     ~
- /_docs/readme.de.md (Tài liệu, Bao gồm); DEUTSCH
- /_docs/readme.de.txt (Tài liệu, Bao gồm); DEUTSCH
- /_docs/readme.en.md (Tài liệu, Bao gồm); ENGLISH
- /_docs/readme.en.txt (Tài liệu, Bao gồm); ENGLISH
- /_docs/readme.es.md (Tài liệu, Bao gồm); ESPAÑOL
- /_docs/readme.es.txt (Tài liệu, Bao gồm); ESPAÑOL
- /_docs/readme.fr.md (Tài liệu, Bao gồm); FRANÇAIS
- /_docs/readme.fr.txt (Tài liệu, Bao gồm); FRANÇAIS
- /_docs/readme.id.md (Tài liệu, Bao gồm); BAHASA INDONESIA
- /_docs/readme.id.txt (Tài liệu, Bao gồm); BAHASA INDONESIA
- /_docs/readme.it.md (Tài liệu, Bao gồm); ITALIANO
- /_docs/readme.it.txt (Tài liệu, Bao gồm); ITALIANO
- /_docs/readme.nl.md (Tài liệu, Bao gồm); NEDERLANDSE
- /_docs/readme.nl.txt (Tài liệu, Bao gồm); NEDERLANDSE
- /_docs/readme.pt.md (Tài liệu, Bao gồm); PORTUGUÊS
- /_docs/readme.pt.txt (Tài liệu, Bao gồm); PORTUGUÊS
- /_docs/readme.ru.md (Tài liệu, Bao gồm); РУССКИЙ
- /_docs/readme.ru.txt (Tài liệu, Bao gồm); РУССКИЙ
- /_docs/readme.vi.md (Tài liệu, Bao gồm); TIẾNG VIỆT
- /_docs/readme.vi.txt (Tài liệu, Bao gồm); TIẾNG VIỆT
- /_docs/readme.zh.md (Tài liệu, Bao gồm); 中文（简体）
- /_docs/readme.zh-TW.md (Tài liệu, Bao gồm); 中文（傳統）
-    The README files (for example; the file you're currently reading).
+ /_docs/readme.ar.md (Tài liệu, Bao gồm); Tiếng Tiếng Ả Rập
+ /_docs/readme.de.md (Tài liệu, Bao gồm); Tiếng Đức
+ /_docs/readme.de.txt (Tài liệu, Bao gồm); Tiếng Đức
+ /_docs/readme.en.md (Tài liệu, Bao gồm); Tiếng Anh
+ /_docs/readme.en.txt (Tài liệu, Bao gồm); Tiếng Anh
+ /_docs/readme.es.md (Tài liệu, Bao gồm); Tiếng Tây Ban Nha
+ /_docs/readme.es.txt (Tài liệu, Bao gồm); Tiếng Tây Ban Nha
+ /_docs/readme.fr.md (Tài liệu, Bao gồm); Tiếng Pháp
+ /_docs/readme.fr.txt (Tài liệu, Bao gồm); Tiếng Pháp
+ /_docs/readme.id.md (Tài liệu, Bao gồm); Tiếng Indonesia
+ /_docs/readme.id.txt (Tài liệu, Bao gồm); Tiếng Indonesia
+ /_docs/readme.it.md (Tài liệu, Bao gồm); Tiếng Ý
+ /_docs/readme.it.txt (Tài liệu, Bao gồm); Tiếng Ý
+ /_docs/readme.nl.md (Tài liệu, Bao gồm); Tiếng Hà Lan
+ /_docs/readme.nl.txt (Tài liệu, Bao gồm); Tiếng Hà Lan
+ /_docs/readme.pt.md (Tài liệu, Bao gồm); Tiếng Bồ Đào Nha
+ /_docs/readme.pt.txt (Tài liệu, Bao gồm); Tiếng Bồ Đào Nha
+ /_docs/readme.ru.md (Tài liệu, Bao gồm); Tiếng Nga
+ /_docs/readme.ru.txt (Tài liệu, Bao gồm); Tiếng Nga
+ /_docs/readme.vi.md (Tài liệu, Bao gồm); Tiếng Việt
+ /_docs/readme.vi.txt (Tài liệu, Bao gồm); Tiếng Việt
+ /_docs/readme.zh.md (Tài liệu, Bao gồm); Tiếng Trung Quốc (Giản Thể)
+ /_docs/readme.zh-TW.md (Tài liệu, Bao gồm); Tiếng Trung Quốc (Truyền Thống)
+    Tài liệu README (ví dụ như; các tài liệu mà bạn đang đọc).
     ~
  /_docs/signatures_tally.txt (Tài liệu, Bao gồm)
     Lý lịch của net-shift có bao gồm chữ ký (không cần thiết cho chức năng phù
@@ -538,58 +539,58 @@
     bất kỳ các hồ sơ của mình trừ khi làm xét nghiệm như vậy.
     ~
  /_testfiles/ascii_standard_testfile.txt (Hồ sơ xét nghiệm, Bao gồm)
-    Kiểm tra hồ sơ cho xét nghiệm phpMussel chữ ký ASCII bình thường.
+    Kiểm tra tập tin cho xét nghiệm phpMussel chữ ký ASCII bình thường.
     ~
  /_testfiles/coex_testfile.rtf (Hồ sơ xét nghiệm, Bao gồm)
-    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký kéo dài phức tạp.
+    Kiểm tra tập tin cho xét nghiệm phpMussel chử ký kéo dài phức tạp.
     ~
  /_testfiles/exe_standard_testfile.exe (Hồ sơ xét nghiệm, Bao gồm)
-    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký PE.
+    Kiểm tra tập tin cho xét nghiệm phpMussel chử ký PE.
     ~
  /_testfiles/general_standard_testfile.txt (Hồ sơ xét nghiệm, Bao gồm)
-    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký chung.
+    Kiểm tra tập tin cho xét nghiệm phpMussel chử ký chung.
     ~
  /_testfiles/graphics_standard_testfile.gif (Hồ sơ xét nghiệm, Bao gồm)
-    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký đồ họa.
+    Kiểm tra tập tin cho xét nghiệm phpMussel chử ký đồ họa.
     ~
  /_testfiles/html_standard_testfile.txt (Hồ sơ xét nghiệm, Bao gồm)
-    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký HTML bình thường.
+    Kiểm tra tập tin cho xét nghiệm phpMussel chử ký HTML bình thường.
     ~
  /_testfiles/md5_testfile.txt (Hồ sơ xét nghiệm, Bao gồm)
-    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký dựa MD5.
+    Kiểm tra tập tin cho xét nghiệm phpMussel chử ký dựa MD5.
     ~
  /_testfiles/metadata_testfile.tar (Hồ sơ xét nghiệm, Bao gồm)
-    Test file for testing phpMussel metadata signatures and for testing TAR
-    file support on your system.
+    Kiểm tra tập tin cho xét nghiệm phpMussel chử ký siêu dữ liệu kho lưu trữ
+    và cho xét nghiệm hỗ trợ tập tin TAR trên hệ thống của bạn.
     ~
  /_testfiles/metadata_testfile.txt.gz (Hồ sơ xét nghiệm, Bao gồm)
-    Test file for testing phpMussel metadata signatures and for testing GZ file
-    support on your system.
+    Kiểm tra tập tin cho xét nghiệm phpMussel chử ký siêu dữ liệu kho lưu trữ
+    và cho xét nghiệm hỗ trợ tập tin GZ trên hệ thống của bạn.
     ~
  /_testfiles/metadata_testfile.zip (Hồ sơ xét nghiệm, Bao gồm)
-    Test file for testing phpMussel metadata signatures and for testing ZIP
-    file support on your system.
+    Kiểm tra tập tin cho xét nghiệm phpMussel chử ký siêu dữ liệu kho lưu trữ
+    và cho xét nghiệm hỗ trợ tập tin ZIP trên hệ thống của bạn.
     ~
  /_testfiles/ole_testfile.ole (Hồ sơ xét nghiệm, Bao gồm)
-    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký OLE.
+    Kiểm tra tập tin cho xét nghiệm phpMussel chử ký OLE.
     ~
  /_testfiles/pdf_standard_testfile.pdf (Hồ sơ xét nghiệm, Bao gồm)
-    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký PDF.
+    Kiểm tra tập tin cho xét nghiệm phpMussel chử ký PDF.
     ~
  /_testfiles/pe_sectional_testfile.exe (Hồ sơ xét nghiệm, Bao gồm)
-    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký phần PE.
+    Kiểm tra tập tin cho xét nghiệm phpMussel chử ký phần PE.
     ~
  /_testfiles/swf_standard_testfile.swf (Hồ sơ xét nghiệm, Bao gồm)
-    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký Shockwave.
+    Kiểm tra tập tin cho xét nghiệm phpMussel chử ký Shockwave.
     ~
  /_testfiles/xdp_standard_testfile.xdp (Hồ sơ xét nghiệm, Bao gồm)
-    Kiểm tra hồ sơ cho xét nghiệm phpMussel chử ký XML/XDP.
+    Kiểm tra tập tin cho xét nghiệm phpMussel chử ký XML/XDP.
     ~
  /vault/ (Thư mực)
-    Vault directory (contains various files).
+    Vault thư mục (chứa các tập tin khác nhau).
     ~
  /vault/cache/ (Thư mực)
-    Cache directory (for temporary data).
+    Cache thư mục (cho dữ liệu tạm thời).
     ~
  /vault/cache/.htaccess (Khác, Bao gồm)
     A hypertext access file (in this instance, to protect sensitive files
@@ -602,20 +603,20 @@
     A hypertext access file (in this instance, to protect sensitive files
     belonging to the script from being accessed by non-authorised sources).
     ~
- /vault/lang/lang.de.inc (Script, Bao gồm); DEUTSCH
- /vault/lang/lang.en.inc (Script, Bao gồm); ENGLISH
- /vault/lang/lang.es.inc (Script, Bao gồm); ESPAÑOL
- /vault/lang/lang.fr.inc (Script, Bao gồm); FRANÇAIS
- /vault/lang/lang.id.inc (Script, Bao gồm); BAHASA INDONESIA
- /vault/lang/lang.it.inc (Script, Bao gồm); ITALIANO
- /vault/lang/lang.ja.inc (Script, Bao gồm); 日本語
- /vault/lang/lang.nl.inc (Script, Bao gồm); NEDERLANDSE
- /vault/lang/lang.pt.inc (Script, Bao gồm); PORTUGUÊS
- /vault/lang/lang.ru.inc (Script, Bao gồm); РУССКИЙ
- /vault/lang/lang.vi.inc (Script, Bao gồm); TIẾNG VIỆT
- /vault/lang/lang.zh.inc (Script, Bao gồm); 中文（简体）
- /vault/lang/lang.zh-TW.inc (Script, Bao gồm); 中文（傳統）
-    Language data files for phpMussel.
+ /vault/lang/lang.de.inc (Script, Bao gồm); Tiếng Đức
+ /vault/lang/lang.en.inc (Script, Bao gồm); Tiếng Anh
+ /vault/lang/lang.es.inc (Script, Bao gồm); Tiếng Tây Ban Nha
+ /vault/lang/lang.fr.inc (Script, Bao gồm); Tiếng Pháp
+ /vault/lang/lang.id.inc (Script, Bao gồm); Tiếng Indonesia
+ /vault/lang/lang.it.inc (Script, Bao gồm); Tiếng Ý
+ /vault/lang/lang.ja.inc (Script, Bao gồm); Tiếng Nhật
+ /vault/lang/lang.nl.inc (Script, Bao gồm); Tiếng Hà Lan
+ /vault/lang/lang.pt.inc (Script, Bao gồm); Tiếng Bồ Đào Nha
+ /vault/lang/lang.ru.inc (Script, Bao gồm); Tiếng Nga
+ /vault/lang/lang.vi.inc (Script, Bao gồm); Tiếng Việt
+ /vault/lang/lang.zh.inc (Script, Bao gồm); Tiếng Trung Quốc (Giản Thể)
+ /vault/lang/lang.zh-TW.inc (Script, Bao gồm); Tiếng Trung Quốc (Truyền Thống)
+    Tập tin dữ liệu tiếng cho phpMussel.
     ~
  /vault/quarantine/ (Thư mực)
     Quarantine directory (contains quarantined files).
@@ -800,6 +801,9 @@
  /vault/scan_log.txt *(Logfile, Created)
     A record of everything scanned by phpMussel.
     ~
+ /vault/scan_log_serialized.txt *(Logfile, Created)
+    A record of everything scanned by phpMussel.
+    ~
  /vault/scan_kills.txt *(Logfile, Created)
     A record of every file upload blocked/killed by phpMussel.
     ~
@@ -850,8 +854,8 @@
  /vault/xmlxdp_custom_standard.cvd (Chữ ký, Bao gồm)
  /vault/xmlxdp_mussel_regex.cvd (Chữ ký, Bao gồm)
  /vault/xmlxdp_mussel_standard.cvd (Chữ ký, Bao gồm)
-    Files for XML/XDP-Chunk signatures. Required if XML/XDP-Chunk signatures
-    option in "phpmussel.ini" is enabled. Can remove if the option is disabled.
+    Files for XML/XDP signatures. Required if XML/XDP signatures option in
+    "phpmussel.ini" is enabled. Can remove if the option is disabled.
     ~
 
  * Tên tài liệu có thể thay đổi tuy theo các quy định của cấu hình (in
@@ -931,6 +935,9 @@
     "scan_log"
     - Filename of file to log all scanning results to. Specify a filename, or
       leave blank to disable.
+    "scan_log_serialized"
+    - Filename of file to log all scanning results to (using a serialised
+      format). Specify a filename, or leave blank to disable.
     "scan_kills"
     - Filename of file to log all records of blocked or killed uploads to.
       Specify a filename, or leave blank to disable.
@@ -1107,7 +1114,7 @@
      "whitelist_clamav"
      "whitelist_custom"
      "whitelist_mussel"
-   - Check XML/XDP chunks against XML/XDP-chunk signatures when scanning?
+   - Check XML/XDP chunks against XML/XDP signatures when scanning?
      False = No; True = Yes [Default].
      "xmlxdp_clamav"
      "xmlxdp_custom"
@@ -1648,7 +1655,7 @@
       contents and the filesize of every file targeted for scanning. Matched
       files will be immune to being matched by the type of signature mentioned
       in their whitelist entry.
-   - "XML/XDP-Chunk Signatures" (xmlxdp_*). Checked against any XML/XDP chunks
+   - "XML/XDP Signatures" (xmlxdp_*). Checked against any XML/XDP chunks
       found within any non-whitelisted files targeted for scanning.
      (Note that any of these signatures may be easily disabled via
       "phpmussel.ini").
@@ -1676,26 +1683,33 @@
  phpMussel hoặc nên xét các lựa chọn khác cho một trong hai phần mềm chống
  virus của bạn hoặc phpMussel.
 
- Thông tin này được cập nhật lần cứơi vào ngày 7 Tháng Chín 2015 và có thể áp
- dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.6-v0.7a) vào
- thời gian cái này được viết.
+ Thông tin này được cập nhật lần cứơi vào ngày 12 Tháng Mười Hai 2015 và có thể
+ áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.7-v0.9.0)
+ vào thời gian cái này được viết.
 
  Ad-Aware                Không có vấn đề
+ AegisLab                Không có vấn đề
  Agnitum                 Không có vấn đề
  AhnLab-V3               Không có vấn đề
+ Alibaba                 Không có vấn đề
+ ALYac                   Không có vấn đề
  AntiVir                 Không có vấn đề
  Antiy-AVL               Không có vấn đề
+ Arcabit                 Không có vấn đề
  Avast                !  Báo cáo "JS:ScriptSH-inf [Trj]"
  AVG                     Không có vấn đề
+ Avira                   Không có vấn đề
+ AVware                  Không có vấn đề
  Baidu-International     Không có vấn đề
  BitDefender             Không có vấn đề
- Bkav                 !  Báo cáo "VEXDAD2.Webshell"
+ Bkav                 !  Báo cáo "VEXD737.Webshell"
  ByteHero                Không có vấn đề
  CAT-QuickHeal           Không có vấn đề
  ClamAV                  Không có vấn đề
  CMC                     Không có vấn đề
  Commtouch               Không có vấn đề
  Comodo                  Không có vấn đề
+ Cyren                !  Báo cáo "W32/GenBl.DE4CF18E!Olympus"
  DrWeb                   Không có vấn đề
  Emsisoft                Không có vấn đề
  ESET-NOD32              Không có vấn đề
@@ -1723,6 +1737,7 @@
  Sophos                  Không có vấn đề
  SUPERAntiSpyware        Không có vấn đề
  Symantec                Không có vấn đề
+ Tencent                 Không có vấn đề
  TheHacker               Không có vấn đề
  TotalDefense            Không có vấn đề
  TrendMicro              Không có vấn đề
@@ -1730,9 +1745,11 @@
  VBA32                   Không có vấn đề
  VIPRE                   Không có vấn đề
  ViRobot                 Không có vấn đề
+ Zillya                  Không có vấn đề
+ Zoner                   Không có vấn đề
 
                                      ~ ~ ~
 
 
-Lần cuối cập nhật: 23 Tháng Mười 2015 (2015.10.23).
+Lần cuối cập nhật: 12 Tháng Mười Hai 2015 (2015.12.12).
 EOF

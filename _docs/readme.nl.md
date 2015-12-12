@@ -261,28 +261,29 @@ Bestand                                    | Beschrijving
 /web.config                                | Een ASP.NET-configuratiebestand (in dit geval, naar het bestandsmap "vault" te beschermen tegen toegang door niet-geautoriseerde bronnen indien het script is geïnstalleerd op een server op basis van ASP.NET technologieën).
 /_docs/                                    | Documentatie bestandsmap (bevat verschillende bestanden).
 /_docs/change_log.txt                      | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
-/_docs/readme.de.md                        | Documentatie: DEUTSCH
-/_docs/readme.de.txt                       | Documentatie: DEUTSCH
-/_docs/readme.en.md                        | Documentatie: ENGLISH
-/_docs/readme.en.txt                       | Documentatie: ENGLISH
-/_docs/readme.es.md                        | Documentatie: ESPAÑOL
-/_docs/readme.es.txt                       | Documentatie: ESPAÑOL
-/_docs/readme.fr.md                        | Documentatie: FRANÇAIS
-/_docs/readme.fr.txt                       | Documentatie: FRANÇAIS
-/_docs/readme.id.md                        | Documentatie: BAHASA INDONESIA
-/_docs/readme.id.txt                       | Documentatie: BAHASA INDONESIA
-/_docs/readme.it.md                        | Documentatie: ITALIANO
-/_docs/readme.it.txt                       | Documentatie: ITALIANO
-/_docs/readme.nl.md                        | Documentatie: NEDERLANDSE
-/_docs/readme.nl.txt                       | Documentatie: NEDERLANDSE
-/_docs/readme.pt.md                        | Documentatie: PORTUGUÊS
-/_docs/readme.pt.txt                       | Documentatie: PORTUGUÊS
-/_docs/readme.ru.md                        | Documentatie: РУССКИЙ
-/_docs/readme.ru.txt                       | Documentatie: РУССКИЙ
-/_docs/readme.vi.md                        | Documentatie: TIẾNG VIỆT
-/_docs/readme.vi.txt                       | Documentatie: TIẾNG VIỆT
-/_docs/readme.zh.md                        | Documentatie: 中文（简体）
-/_docs/readme.zh-TW.md                     | Documentatie: 中文（傳統）
+/_docs/readme.ar.md                        | Arabisch documentatie.
+/_docs/readme.de.md                        | Duitse documentatie.
+/_docs/readme.de.txt                       | Duitse documentatie.
+/_docs/readme.en.md                        | Engels documentatie.
+/_docs/readme.en.txt                       | Engels documentatie.
+/_docs/readme.es.md                        | Spaanse documentatie.
+/_docs/readme.es.txt                       | Spaanse documentatie.
+/_docs/readme.fr.md                        | Franse documentatie.
+/_docs/readme.fr.txt                       | Franse documentatie.
+/_docs/readme.id.md                        | Indonesisch documentatie.
+/_docs/readme.id.txt                       | Indonesisch documentatie.
+/_docs/readme.it.md                        | Italiaanse documentatie.
+/_docs/readme.it.txt                       | Italiaanse documentatie.
+/_docs/readme.nl.md                        | Nederlandse documentatie.
+/_docs/readme.nl.txt                       | Nederlandse documentatie.
+/_docs/readme.pt.md                        | Portugees documentatie.
+/_docs/readme.pt.txt                       | Portugees documentatie.
+/_docs/readme.ru.md                        | Russische documentatie.
+/_docs/readme.ru.txt                       | Russische documentatie.
+/_docs/readme.vi.md                        | Vietnamees documentatie.
+/_docs/readme.vi.txt                       | Vietnamees documentatie.
+/_docs/readme.zh.md                        | Chinees (Vereenvoudigd) documentatie.
+/_docs/readme.zh-TW.md                     | Chinees (Traditioneel) documentatie.
 /_docs/signatures_tally.txt                | Net-shift tally van meegeleverde handtekeningen (niet vereist voor een goede werking van het script).
 /_testfiles/                               | Testbestanden bestandsmap (bevat verschillende bestanden). Alle opgenomen bestanden zijn testbestanden voor het testen als phpMussel correct op uw systeem is geïnstalleerd, en u hoeft niet om deze map of een van het bestanden, behalve bij het doen van dergelijke testen te uploaden.
 /_testfiles/ascii_standard_testfile.txt    | Testbestand voor het testen phpMussel genormaliseerde ASCII handtekeningen.
@@ -305,19 +306,19 @@ Bestand                                    | Beschrijving
 /vault/cache/.htaccess                     | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/lang/                               | Bevat phpMussel taaldata.
 /vault/lang/.htaccess                      | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/lang/lang.de.inc                    | Taaldata: DEUTSCH
-/vault/lang/lang.en.inc                    | Taaldata: ENGLISH
-/vault/lang/lang.es.inc                    | Taaldata: ESPAÑOL
-/vault/lang/lang.fr.inc                    | Taaldata: FRANÇAIS
-/vault/lang/lang.id.inc                    | Taaldata: BAHASA INDONESIA
-/vault/lang/lang.it.inc                    | Taaldata: ITALIANO
-/vault/lang/lang.ja.inc                    | Taaldata: 日本語
-/vault/lang/lang.nl.inc                    | Taaldata: NEDERLANDSE
-/vault/lang/lang.pt.inc                    | Taaldata: PORTUGUÊS
-/vault/lang/lang.ru.inc                    | Taaldata: РУССКИЙ
-/vault/lang/lang.vi.inc                    | Taaldata: TIẾNG VIỆT
-/vault/lang/lang.zh.inc                    | Taaldata: 中文（简体）
-/vault/lang/lang.zh-TW.inc                 | Taaldata: 中文（傳統）
+/vault/lang/lang.de.inc                    | Duitse taaldata.
+/vault/lang/lang.en.inc                    | Engels taaldata.
+/vault/lang/lang.es.inc                    | Spaanse taaldata.
+/vault/lang/lang.fr.inc                    | Franse taaldata.
+/vault/lang/lang.id.inc                    | Indonesisch taaldata.
+/vault/lang/lang.it.inc                    | Italiaanse taaldata.
+/vault/lang/lang.ja.inc                    | Japanse taaldata.
+/vault/lang/lang.nl.inc                    | Nederlandse taaldata.
+/vault/lang/lang.pt.inc                    | Portugees taaldata.
+/vault/lang/lang.ru.inc                    | Russische taaldata.
+/vault/lang/lang.vi.inc                    | Vietnamees taaldata.
+/vault/lang/lang.zh.inc                    | Chinees (Vereenvoudigd) taaldata.
+/vault/lang/lang.zh-TW.inc                 | Chinees (Traditioneel) taaldata.
 /vault/quarantine/                         | Quarantaine bestandsmap (bestanden in quarantaine bevat).
 /vault/quarantine/.htaccess                | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/.htaccess                           | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
@@ -377,7 +378,7 @@ Bestand                                    | Beschrijving
 /vault/html_custom_standard.cvd            | Bestand voor genormaliseerde HTML handtekeningen.
 /vault/html_mussel_regex.cvd               | Bestand voor genormaliseerde HTML handtekeningen.
 /vault/html_mussel_standard.cvd            | Bestand voor genormaliseerde HTML handtekeningen.
-/vault/lang.inc                            | Taaldata.
+/vault/lang.inc                            | taaldata.
 /vault/macho_clamav_regex.cvd              | Bestand voor Mach-O handtekeningen.
 /vault/macho_clamav_regex.map              | Bestand voor Mach-O handtekeningen.
 /vault/macho_clamav_standard.cvd           | Bestand voor Mach-O handtekeningen.
@@ -424,6 +425,7 @@ Bestand                                    | Beschrijving
 /vault/phpmussel.inc                       | Kern Script; De belangrijkste lichaam van phpMussel (essentiële)!
 /vault/phpmussel.ini                       | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (essentiële)!
 ※ /vault/scan_log.txt                     | Een record van alles gescand door phpMussel.
+※ /vault/scan_log_serialized.txt          | Een record van alles gescand door phpMussel.
 ※ /vault/scan_kills.txt                   | Een record van elk bestand uploaden geblokkeerde/gedood door phpMussel.
 /vault/swf_clamav_regex.cvd                | Bestand voor the Shockwave handtekeningen.
 /vault/swf_clamav_regex.map                | Bestand voor the Shockwave handtekeningen.
@@ -493,10 +495,13 @@ Algemene configuratie voor phpMussel.
 - Heeft geen invloed in CLI-modus.
 
 "scan_log"
-- Bestandsnaam van het bestand te opnemen alle scanresultaten. Geef een bestandsnaam of laat leeg om uit te schakelen.
+- Bestandsnaam van het bestand te opnemen alle scanresultaten. Geef een bestandsnaam of laat leeg om te uitschakelen.
+
+"scan_log_serialized"
+- Bestandsnaam van het bestand te opnemen alle scanresultaten (formaat is geserialiseerd). Geef een bestandsnaam of laat leeg om te uitschakelen.
 
 "scan_kills"
-- Bestandsnaam van het bestand te opnemen alle geblokkeerde of gedood upload. Geef een bestandsnaam of laat leeg om uit te schakelen.
+- Bestandsnaam van het bestand te opnemen alle geblokkeerde of gedood upload. Geef een bestandsnaam of laat leeg om te uitschakelen.
 
 "ipaddr"
 - Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke) Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
@@ -918,26 +923,33 @@ Het volgende is een overzicht van de soorten handtekeningen gebruikt door phpMus
 
 Voor het grootste deel, phpMussel is algemeen compatibel met de meeste andere anti-virus software. Echter, conflictions geweest beschreven door een aantal gebruikers in het verleden. Deze informatie hieronder is afkomstig van VirusTotal.com, het beschrijven van een aantal fout-positieven gemeld door anti-virus programma's tegen phpMussel. Hoewel deze informatie is geen absolute garantie van wel of niet u zult compatibiliteitsproblemen ondervindt tussen phpMussel en uw anti-virus software, als uw anti-virus software wordt gemarkeerd tegen phpMussel, moet u ofwel overwegen uit te schakelen voorafgaand aan het werken met phpMussel of moeten overwegen alternatieve opties om ofwel uw anti-virus software of phpMussel.
 
-Dit informatie werd laatst bijgewerkt 7 September 2015 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v0.6-v0.7a) op het moment van schrijven dit.
+Dit informatie werd laatst bijgewerkt 12 December 2015 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v0.7-v0.9.0) op het moment van schrijven dit.
 
 | Scanner              |  Resultaten                          |
 |----------------------|--------------------------------------|
 | Ad-Aware             |  Geen bekend problemen               |
+| AegisLab             |  Geen bekend problemen               |
 | Agnitum              |  Geen bekend problemen               |
 | AhnLab-V3            |  Geen bekend problemen               |
+| Alibaba              |  Geen bekend problemen               |
+| ALYac                |  Geen bekend problemen               |
 | AntiVir              |  Geen bekend problemen               |
 | Antiy-AVL            |  Geen bekend problemen               |
+| Arcabit              |  Geen bekend problemen               |
 | Avast                |  Berichten "JS:ScriptSH-inf [Trj]"   |
 | AVG                  |  Geen bekend problemen               |
+| Avira                |  Geen bekend problemen               |
+| AVware               |  Geen bekend problemen               |
 | Baidu-International  |  Geen bekend problemen               |
 | BitDefender          |  Geen bekend problemen               |
-| Bkav                 |  Berichten "VEXDAD2.Webshell"        |
+| Bkav                 |  Berichten "VEXD737.Webshell"        |
 | ByteHero             |  Geen bekend problemen               |
 | CAT-QuickHeal        |  Geen bekend problemen               |
 | ClamAV               |  Geen bekend problemen               |
 | CMC                  |  Geen bekend problemen               |
 | Commtouch            |  Geen bekend problemen               |
 | Comodo               |  Geen bekend problemen               |
+| Cyren                |  Berichten "W32/GenBl.DE4CF18E!Olympus"|
 | DrWeb                |  Geen bekend problemen               |
 | Emsisoft             |  Geen bekend problemen               |
 | ESET-NOD32           |  Geen bekend problemen               |
@@ -965,6 +977,7 @@ Dit informatie werd laatst bijgewerkt 7 September 2015 en is op de hoogte voor a
 | Sophos               |  Geen bekend problemen               |
 | SUPERAntiSpyware     |  Geen bekend problemen               |
 | Symantec             |  Geen bekend problemen               |
+| Tencent              |  Geen bekend problemen               |
 | TheHacker            |  Geen bekend problemen               |
 | TotalDefense         |  Geen bekend problemen               |
 | TrendMicro           |  Geen bekend problemen               |
@@ -972,9 +985,11 @@ Dit informatie werd laatst bijgewerkt 7 September 2015 en is op de hoogte voor a
 | VBA32                |  Geen bekend problemen               |
 | VIPRE                |  Geen bekend problemen               |
 | ViRobot              |  Geen bekend problemen               |
+| Zillya               |  Geen bekend problemen               |
+| Zoner                |  Geen bekend problemen               |
 
 
 ---
 
 
-Laatste Bijgewerkt: 19 Oktober 2015 (2015.10.19).
+Laatste Bijgewerkt: 12 December 2015 (2015.12.12).

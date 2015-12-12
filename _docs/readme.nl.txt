@@ -534,28 +534,29 @@
     Een overzicht van wijzigingen in het script tussen verschillende versies
     (niet vereist voor een goede werking van het script).
     ~
- /_docs/readme.de.md (Documentatie, Opgenomen); DEUTSCH
- /_docs/readme.de.txt (Documentatie, Opgenomen); DEUTSCH
- /_docs/readme.en.md (Documentatie, Opgenomen); ENGLISH
- /_docs/readme.en.txt (Documentatie, Opgenomen); ENGLISH
- /_docs/readme.es.md (Documentatie, Opgenomen); ESPAÑOL
- /_docs/readme.es.txt (Documentatie, Opgenomen); ESPAÑOL
- /_docs/readme.fr.md (Documentatie, Opgenomen); FRANÇAIS
- /_docs/readme.fr.txt (Documentatie, Opgenomen); FRANÇAIS
- /_docs/readme.id.md (Documentatie, Opgenomen); BAHASA INDONESIA
- /_docs/readme.id.txt (Documentatie, Opgenomen); BAHASA INDONESIA
- /_docs/readme.it.md (Documentatie, Opgenomen); ITALIANO
- /_docs/readme.it.txt (Documentatie, Opgenomen); ITALIANO
- /_docs/readme.nl.md (Documentatie, Opgenomen); NEDERLANDSE
- /_docs/readme.nl.txt (Documentatie, Opgenomen); NEDERLANDSE
- /_docs/readme.pt.md (Documentatie, Opgenomen); PORTUGUÊS
- /_docs/readme.pt.txt (Documentatie, Opgenomen); PORTUGUÊS
- /_docs/readme.ru.md (Documentatie, Opgenomen); РУССКИЙ
- /_docs/readme.ru.txt (Documentatie, Opgenomen); РУССКИЙ
- /_docs/readme.vi.md (Documentatie, Opgenomen); TIẾNG VIỆT
- /_docs/readme.vi.txt (Documentatie, Opgenomen); TIẾNG VIỆT
- /_docs/readme.zh.md (Documentatie, Opgenomen); 中文（简体）
- /_docs/readme.zh-TW.md (Documentatie, Opgenomen); 中文（傳統）
+ /_docs/readme.ar.md (Documentatie, Opgenomen); Arabisch
+ /_docs/readme.de.md (Documentatie, Opgenomen); Duitse
+ /_docs/readme.de.txt (Documentatie, Opgenomen); Duitse
+ /_docs/readme.en.md (Documentatie, Opgenomen); Engels
+ /_docs/readme.en.txt (Documentatie, Opgenomen); Engels
+ /_docs/readme.es.md (Documentatie, Opgenomen); Spaanse
+ /_docs/readme.es.txt (Documentatie, Opgenomen); Spaanse
+ /_docs/readme.fr.md (Documentatie, Opgenomen); Franse
+ /_docs/readme.fr.txt (Documentatie, Opgenomen); Franse
+ /_docs/readme.id.md (Documentatie, Opgenomen); Indonesisch
+ /_docs/readme.id.txt (Documentatie, Opgenomen); Indonesisch
+ /_docs/readme.it.md (Documentatie, Opgenomen); Italiaanse
+ /_docs/readme.it.txt (Documentatie, Opgenomen); Italiaanse
+ /_docs/readme.nl.md (Documentatie, Opgenomen); Nederlandse
+ /_docs/readme.nl.txt (Documentatie, Opgenomen); Nederlandse
+ /_docs/readme.pt.md (Documentatie, Opgenomen); Portugees
+ /_docs/readme.pt.txt (Documentatie, Opgenomen); Portugees
+ /_docs/readme.ru.md (Documentatie, Opgenomen); Russische
+ /_docs/readme.ru.txt (Documentatie, Opgenomen); Russische
+ /_docs/readme.vi.md (Documentatie, Opgenomen); Vietnamees
+ /_docs/readme.vi.txt (Documentatie, Opgenomen); Vietnamees
+ /_docs/readme.zh.md (Documentatie, Opgenomen); Chinees (Vereenvoudigd)
+ /_docs/readme.zh-TW.md (Documentatie, Opgenomen); Chinees (Traditioneel)
     De README-bestanden (bijvoorbeeld, het bestand dat u momenteel aan het
     lezen).
     ~
@@ -636,19 +637,19 @@
     behoren tot het script te beschermen tegen toegang door niet-geautoriseerde
     bronnen).
     ~
- /vault/lang/lang.de.inc (Script, Opgenomen); DEUTSCH
- /vault/lang/lang.en.inc (Script, Opgenomen); ENGLISH
- /vault/lang/lang.es.inc (Script, Opgenomen); ESPAÑOL
- /vault/lang/lang.fr.inc (Script, Opgenomen); FRANÇAIS
- /vault/lang/lang.id.inc (Script, Opgenomen); BAHASA INDONESIA
- /vault/lang/lang.it.inc (Script, Opgenomen); ITALIANO
- /vault/lang/lang.ja.inc (Script, Opgenomen); 日本語
- /vault/lang/lang.nl.inc (Script, Opgenomen); NEDERLANDSE
- /vault/lang/lang.pt.inc (Script, Opgenomen); PORTUGUÊS
- /vault/lang/lang.ru.inc (Script, Opgenomen); РУССКИЙ
- /vault/lang/lang.vi.inc (Script, Opgenomen); TIẾNG VIỆT
- /vault/lang/lang.zh.inc (Script, Opgenomen); 中文（简体）
- /vault/lang/lang.zh-TW.inc (Script, Opgenomen); 中文（傳統）
+ /vault/lang/lang.de.inc (Script, Opgenomen); Duitse
+ /vault/lang/lang.en.inc (Script, Opgenomen); Engels
+ /vault/lang/lang.es.inc (Script, Opgenomen); Spaanse
+ /vault/lang/lang.fr.inc (Script, Opgenomen); Franse
+ /vault/lang/lang.id.inc (Script, Opgenomen); Indonesisch
+ /vault/lang/lang.it.inc (Script, Opgenomen); Italiaanse
+ /vault/lang/lang.ja.inc (Script, Opgenomen); Japanse
+ /vault/lang/lang.nl.inc (Script, Opgenomen); Nederlandse
+ /vault/lang/lang.pt.inc (Script, Opgenomen); Portugees
+ /vault/lang/lang.ru.inc (Script, Opgenomen); Russische
+ /vault/lang/lang.vi.inc (Script, Opgenomen); Vietnamees
+ /vault/lang/lang.zh.inc (Script, Opgenomen); Chinees (Vereenvoudigd)
+ /vault/lang/lang.zh-TW.inc (Script, Opgenomen); Chinees (Traditioneel)
     Taaldatabestanden voor phpMussel.
     ~
  /vault/quarantine/ (Bestandsmap)
@@ -849,6 +850,9 @@
  /vault/scan_log.txt *(Logfile, Created)
     Een record van alles gescand door phpMussel.
     ~
+ /vault/scan_log_serialized.txt *(Logfile, Created)
+    Een record van alles gescand door phpMussel.
+    ~
  /vault/scan_kills.txt *(Logfile, Created)
     Een record van elk bestand uploaden geblokkeerde/gedood door phpMussel.
     ~
@@ -989,10 +993,13 @@
       * Heeft geen invloed in CLI-modus.
     "scan_log"
     - Bestandsnaam van het bestand te opnemen alle scanresultaten. Geef een
-      bestandsnaam of laat leeg om uit te schakelen.
+      bestandsnaam of laat leeg om te uitschakelen.
+    "scan_log_serialized"
+    - Bestandsnaam van het bestand te opnemen alle scanresultaten (formaat is
+      geserialiseerd). Geef een bestandsnaam of laat leeg om te uitschakelen.
     "scan_kills"
     - Bestandsnaam van het bestand te opnemen alle geblokkeerde of gedood
-      upload. Geef een bestandsnaam of laat leeg om uit te schakelen.
+      upload. Geef een bestandsnaam of laat leeg om te uitschakelen.
     "ipaddr"
     - Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor
       diensten zoals Cloudflare en dergelijke) Standaard = REMOTE_ADDR.
@@ -1806,26 +1813,33 @@
  voorafgaand aan het werken met phpMussel of moeten overwegen alternatieve
  opties om ofwel uw anti-virus software of phpMussel.
 
- Dit informatie werd laatst bijgewerkt 7 September 2015 en is op de hoogte voor
+ Dit informatie werd laatst bijgewerkt 12 December 2015 en is op de hoogte voor
  alle phpMussel publicaties van de twee meest recente mineur versies
- (v0.6-v0.7a) op het moment van schrijven dit.
+ (v0.7-v0.9.0) op het moment van schrijven dit.
 
  Ad-Aware                Geen bekend problemen
+ AegisLab                Geen bekend problemen
  Agnitum                 Geen bekend problemen
  AhnLab-V3               Geen bekend problemen
+ Alibaba                 Geen bekend problemen
+ ALYac                   Geen bekend problemen
  AntiVir                 Geen bekend problemen
  Antiy-AVL               Geen bekend problemen
+ Arcabit                 Geen bekend problemen
  Avast                !  Berichten "JS:ScriptSH-inf [Trj]"
  AVG                     Geen bekend problemen
+ Avira                   Geen bekend problemen
+ AVware                  Geen bekend problemen
  Baidu-International     Geen bekend problemen
  BitDefender             Geen bekend problemen
- Bkav                 !  Berichten "VEXDAD2.Webshell"
+ Bkav                 !  Berichten "VEXD737.Webshell"
  ByteHero                Geen bekend problemen
  CAT-QuickHeal           Geen bekend problemen
  ClamAV                  Geen bekend problemen
  CMC                     Geen bekend problemen
  Commtouch               Geen bekend problemen
  Comodo                  Geen bekend problemen
+ Cyren                !  Berichten "W32/GenBl.DE4CF18E!Olympus"
  DrWeb                   Geen bekend problemen
  Emsisoft                Geen bekend problemen
  ESET-NOD32              Geen bekend problemen
@@ -1853,6 +1867,7 @@
  Sophos                  Geen bekend problemen
  SUPERAntiSpyware        Geen bekend problemen
  Symantec                Geen bekend problemen
+ Tencent                 Geen bekend problemen
  TheHacker               Geen bekend problemen
  TotalDefense            Geen bekend problemen
  TrendMicro              Geen bekend problemen
@@ -1860,9 +1875,11 @@
  VBA32                   Geen bekend problemen
  VIPRE                   Geen bekend problemen
  ViRobot                 Geen bekend problemen
+ Zillya                  Geen bekend problemen
+ Zoner                   Geen bekend problemen
 
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 19 Oktober 2015 (2015.10.19).
+Laatste Bijgewerkt: 12 December 2015 (2015.12.12).
 EOF
