@@ -49,7 +49,7 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 4） 修改的`vault`文件夹权限为“755”。注意，主文件夹也应该是该权限，如果遇上其他权限问题，请修改对应文件夹和文件的权限。
 
-5） 接下来，您需要为您的系统或CMS设定启动phpMussel的钩子。有几种不同的方式为您的系统或CMS设定钩子，最简单的是在您的系统或CMS的核心文件的开头中使用`require()`或`include()`命令直接包含脚本（这个方法通常会导致在有人访问时每次都加载）。平时，这些都是存储的在文件夹中，例如`/includes`，`/assets`或`/functions`等文件夹，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。这是根据您自己的情况决定的，并不需要完全遵守；如果您遇到困难，访问phpMussel支持论坛和发送issus；可能其他用户或者我自己也有这个问题并且解决了（您需要让我们您在使用哪些CMS）。为了使用`require()`或`include()`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`phpmussel.php`文件（本地地址，不是HTTP地址；它会类似于前面提到的vault地址）。（注意，本人不是PHP程序员，关于这一段仅仅是直译，如有错误，请在对应项目上提交issus更正）
+5） 接下来，您需要为您的系统或CMS设定启动phpMussel的钩子。有几种不同的方式为您的系统或CMS设定钩子，最简单的是在您的系统或CMS的核心文件的开头中使用`require()`或`include()`命令直接包含脚本（这个方法通常会导致在有人访问时每次都加载）。平时，这些都是存储的在文件夹中，例如`/includes`，`/assets`或`/functions`等文件夹，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。这是根据您自己的情况决定的，并不需要完全遵守；如果您遇到困难，访问phpMussel支持论坛和发送问题；可能其他用户或者我自己也有这个问题并且解决了（您需要让我们您在使用哪些CMS）。为了使用`require()`或`include()`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`phpmussel.php`文件（本地地址，不是HTTP地址；它会类似于前面提到的vault地址）。（注意，本人不是PHP程序员，关于这一段仅仅是直译，如有错误，请在对应项目上提交问题更正）。
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
@@ -65,37 +65,37 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"`
 
-6） 从这里，您已经完成安装当然，您应测试它以确保它的正常运行。为了测试文件上传保护，尝试上传测试文件包括在`_testfiles`文件夹内的内容至您的网站通过您常用的基于浏览器的上传方法。如果一切正常，信息应出现从phpMussel以确认上传已成功阻止，如果出现什么不正常情况例如您使用的其他任何先进的功能或使用的其它类型的扫描，我建议尝试它跟他们一起使用以确保其工作正常。
+6） 到这里，您已经完成安装，现在您应测试phpMussel以确保它的正常运行！为了保护系统中的文件（或者应该翻译为保护上传的文件），可以尝试通过常用的浏览器上传的方式上传包含在`_testfiles`文件夹内的内容到您的网站。如果一切正常，phpMussel应该出现阻止上传信息，如果出现什么不正常情况例如您使用了其他高级的功能或使用的其它类型的扫描，我建议尝试它跟他们一起使用以确保都能工作正常。
 
 ---
 
 
 ###2B. <a name="SECTION2B"></a>如何安装（CLI）
 
-我可能在将来会创建一个安装程序来简化安装过程，但在之前，按照这些说明将使phpMussel能使用CLI模式（请注意，在这个时候，CLI支持仅适用于Windows系统；Linux和其他系统支持请关注推更高版本的phpMussel）：
+我可能在将来会创建一个安装程序来简化安装过程，但在之前，按照这些说明将使phpMussel能使用CLI模式（请注意，在这个时候，CLI支持仅适用于Windows系统；Linux和其他系统支持请关注更高版本的phpMussel）：
 
-1） 在阅读到这里之前，我假设您已经下载脚本的一个副本，已解压缩其内容并保存在您的机器的某个地方。当您满意选择的位置时，继续。
+1） 在阅读到这里之前，我假设您已经下载脚本并且已经解压缩并且保存在您指定的位置。
 
 2） phpMussel需要PHP运行环境支持。如果您没有安装PHP，请安装。
 
-3） 自定义（强烈推荐高级用户使用，但不推荐业余用户或没有经验的用户使用）：打开`phpmussel.ini`（位于内`vault`） - 这个文件包含所有指令可用的为phpMussel。以上的每指令应有一个简评以说明它做什么和它的功能。调整这些指令您认为合适的，按照随您是适合为您的特定的设置。保存文件，关闭。
+3） 自定义（强烈推荐高级用户使用，但不推荐新手或没有经验的用户使用）：打开`phpmussel.ini`（位于内`vault`） - 这个文件包含phpMussel所有的配置选项。每选项应有一个简评以说明它做什么和它的功能。按照您认为合适的参数调整这些选项，然后保存文件，关闭。
 
-4） 自选，使用的phpMussel在CLI模式可能是更容易为您如果您创建一个批处理文件为自动加载的PHP和phpMussel。要做到这一点，打开一个纯文本编辑器例如Notepad或Notepad++，键入完整路径为`php.exe`文件在文件夹的您的PHP安装，其次是一个空格，然后完整路径为`phpmussel.php`文件在文件夹的您的phpMussel安装，最后，保存此文件使用一个".bat"扩展名在一个地方您会容易发现它；从这里，双击的文件以经营phpMussel在未来。
+4） 您如果您创建一个批处理文件来自动加载的PHP和phpMussel，那么使用phpMussel的CLI模式将更加方便。要做到这一点，打开一个纯文本编辑器例如Notepad或Notepad++，输入php.exe的完整路径（注意是绝对路径不是相对路径），其次是一个空格，然后是`phpmussel.php`的路径（同php.exe），最后，保存此文件使用一个".bat"扩展名放在常用的位置；在你指定的位置，能通过双击你保存的`.bat`文件来调用phpMussel。
 
-5） 从这里，您完成了！当然您应测试以确保正常运行。测试phpMussel，请通过phpMussel尝试扫描`_testfiles`文件夹内提供的文件。
+5） 到这里，您完成了CLI模式的安装！当然您应测试以确保正常运行。如果要测试phpMussel，请通过phpMussel尝试扫描`_testfiles`文件夹内提供的文件。
 
 ---
 
 
 ###3A. <a name="SECTION3A"></a>如何使用（对于WEB服务器）
 
-phpMussel的目的是作为一个脚本这将将满意地和正确地执行｢从开箱｣有最小的要求为您完成：如果正确地安装的，简而言之，它应正确地功能。
+phpMussel的目的是作为一个脚本并且能做到最小化安装和开箱即用：如果正确地安装的，它应就正常的工作。
 
-文件上传扫描是自动和按说已激活，所以，您不需要做任何事为这个功能。
+文件上传扫描是自动的和按照设定规则激活的，所以，您不需要做任何额外的事情。
 
-然而，另外，您能指示phpMussel至扫描文件，文件夹或存档该您指示以做。要做到这一点，首先，您需要确保适当配置是确定在`phpmussel.ini`文件（`cleanup`｢清理｣必须关闭），和在做完，在任何一个PHP文件是钩子至phpMussel，使用下列功能在您的代码：
+另外，您能手动使用phpMussel扫描文件，文件夹或存档当您需要时。要做到这一点，首先，您需要确保`phpmussel.ini`文件（`cleanup`｢清理｣必须关闭）的配置是正常的，然后通过任何一个PHP文件的钩子至phpMussel，在您的代码中添加以下代码：
 
-`phpmussel($what_to_scan，$output_type，$output_flatness);`
+`phpMussel($what_to_scan,$output_type,$output_flatness);`
 
 - `$what_to_scan`可以是字符串，数组，或多维数组，和表明什么文件，收集的文件，文件夹和／或文件夹至扫描。
 - `$output_type`是布尔，和表明什么格式到回报扫描结果作为。False｢假／负｣指示关于功能以回报扫描结果作为整数（结果回报的-3表明问题是遇到关于phpMussel签名文件或签名MAP｢地图｣文件和表明他们可能是失踪或损坏，-2表明损坏数据是检测中扫描和因此扫描失败完成，-1表明扩展或插件需要通过PHP以经营扫描是失踪和因此扫描失败完成，0表明扫描目标不存在和因此没有任何事为扫描，1表明扫描目标是成功扫描和没有任何问题检测，和2表明扫描目标是成功扫描和至少一些问题是检测）。True｢真／正｣指示关于功能以回报扫描结果作为人类可读文本。此外，在任一情况下，结果可以访问通过全局变量后扫描是完成。变量是自选，确定作为False｢假／负｣作为标准。
@@ -108,143 +108,143 @@ phpMussel的目的是作为一个脚本这将将满意地和正确地执行｢�
  echo $results;
 ```
 
-回报这样的事情或类似（作为字符串）：
+返回结果类似于（作为字符串）：
 
 ```
- Wed, 16 Sep 2013 02:49:46 +0000 开始.
- > 检查 '/user_name/public_html/my_file.html'：
- -> 没有任何问题发现。
- Wed, 16 Sep 2013 02:49:47 +0000 完了.
+ Wed, 16 Sep 2013 02:49:46 +0000 Started.
+ > Checking '/user_name/public_html/my_file.html':
+ -> No problems found.
+ Wed, 16 Sep 2013 02:49:47 +0000 Finished.
 ```
 
-为一个全说明的什么类型的签名phpMussel使用中它的扫描和怎么它手柄这些签名，参考｢签名格式｣部分的这个自述文件。
+对一个签名类型进行完整的检查测试以及phpMussel如何扫描和使用签名文件，请参阅｢签名格式｣部分的自述文件。
 
-如果您遇到任何假阳性，如果您遇到某物新您想应该受阻，或为任何其他题关于签名，请联系我关于它为使我可以使需要变化，该，如果您不联系我，我可能不一定知关于。
+如果您遇到任何误报，如果您遇到无法检测的新类型，或者关于签名的其他任何问题，请联系我以便于后续的版本支持，该，如果您不联系我，我可能不会知道并在下一版本中进行处理。
 
-以关闭签名包括在phpMussel（例如如果您遇到假阳性具体至您的目的该不应该按说去掉），参考灰名单笔记在｢浏览器命令｣部分的这个自述文件。
+如果您遇到误报严重或者不需要检测该签名下的文件或者其他不需要使用签名验证的场景，请关闭签名验证，具体请参考｢浏览器命令｣部分的这个自述文件中的黑名单部分。
 
-除了前述的文件上传扫描和自选扫描的其他文件和／或文件夹指定通过上述功能，包括在phpMussel是一个功能意为扫描入站电子邮件正文。这个功能行为类似至标准`phpMussel()`功能，但只考虑在对照的ClamAV基于电子邮件签名。我不链接这些签名在标准phpMussel()功能，因为它是不太可能您将会发现任何入站电子邮件正文在需要的扫描在一个文件上传目标的向一个网页哪里phpMussel是钩子到，和从而，以链接这些签名在phpMussel()功能将会无意义。然而，这说，拥有一个单独功能以对照的这些签名可以证明是极有用为一些，特别为那些谁的CMS或系统是在任何方式链接在他们的电子邮件系统和为那些处理他们的电子邮件通过一个PHP脚本他们可以可能钩子在phpMussel。配置为这个功能，像所有其他，是控制通过`phpmussel.ini`文件。以使用这个功能（您需要做您的自己实施），在一个PHP文件是钩子在phpMussel，使用下列功能在您的代码：
+除了前面锁说的的文件上传扫描和自选扫描的其他文件和／或文件夹指定扫描外，phpMussel还提供扫描入站电子邮件正文功能。这个功能行为类似至标准`phpMussel()`功能，但只扫描电子邮件的签名并且对照的ClamAV的数据。我不支持这些签名在标准`phpMussel()`功能，因为这些电子邮件的签名不太可能出现在你需要检测的文件中，从而使得支持这些签名能将会毫无意义。但是，拥有一个单独功能以对比这些签名可以证明是极有用的，为一部分特别是那些CMS或系统是以任何方式直接连接在他们的电子邮件系统上和那些处理他们的电子邮件是通过一个PHP脚本的，他们可以配置钩子使用邮件检测这个功能，使用这个功能同样是修改`phpmussel.ini`文件内的相关选项（您需要自己修改，意思就是不提供开箱即用支持）。然后在您使用的PHP文件中设定钩子，就是在您的代码中插入：
 
-`phpmussel_mail($body);`
+`phpMussel_mail($body);`
 
-`$body`是电子邮件正文您想扫描（还，您可以尝试扫描新论坛帖子，入站信息从您的在线联系方式页面或等等）。如果任何错误发生阻碍这个功能从完成它的扫描，一个数值的-1将会回报。如果这个功能完成它的扫描和它不发现任何问题，一个数值的0将会回报（表明它是良性）。如果，然而，这个功能发现某物，一个字符串将会回报包含一个信息声明什么它发现。
+`$body`是您想扫描的电子邮件正文（您还可以尝试扫描论坛新帖子，入站信息或您的在线联系方式页面等等）。如果在扫描过程中发生任何错误导致无法完成扫描，将会返回一个数值-1。如果没有发现任何问题，返回0（表明它是正常无害的）。如果这个发现任何东西，将会返回一个字符串包含它发现的信息。
 
-除了上述，如果您看源代码，您可能注意到这些功能`phpmusselD()`和`phpmusselR()`。这些功能是子功能的`phpMussel()`，和不应该叫直外的该父功能（不因为不利影响，但更使，因为它将会提供没有目的，和可能将不会正确执行无论如何）。
+除了上述，如果您看源代码，您可能注意到这些功能`phpMusselD()`和`phpMusselR()`。这些功能是`phpMussel()`的子功能，和不应该叫直外的父功能（没有直接提供是因为他们可能不能正确执行）。
 
-有许多其他控制和功能可用在phpMussel为您的，还。为了任何这样的控制和功能哪里，由端的这个部分的自述，是还不说明，请继续阅读和参考｢浏览器命令｣部分的这个自述文件。
+有许多其他控制和功能可用在phpMussel中，其他没有说明的功能，请继续阅读和参考这个自述文件的｢浏览器命令｣部分。
 
 ---
 
 
-###3B. <a name="SECTION3B"></a>如何使用（对于CLI）
+###3B. <a name="SECTION3B"></a>如何使用（CLI）
 
 请参考｢如何安装（对于CLI）｣部分的这个自述文件。
 
-请注意，虽说未来版本的phpMussel应该支持其他系统，在这个时候，phpMussel CLI模式支持是只优化为使用在基于Windows系统（您可以，当然，尝试它在其他系统，但我不能保证它会执行如预期）。
+请注意，虽说未来版本的phpMussel应该支持其他系统，在这个时候，phpMussel CLI模式仅支持基于Windows系统（您可以，当然，尝试它在其他系统，但我不能保证它正常工作）。
 
-还注意，phpMussel是功能不相等的一个全杀毒套房，和违背了的常规杀毒套房，它不监控活动内存或检测病毒自发地！它将会只检测病毒从那些具体文件您明确地告诉它来扫描。
+还注意，phpMussel是功能不完全的杀毒软件，但是它不监控活动内存或检测病毒自发地！它将会只检测病毒从那些具体文件并且您需要明确地告诉它需要扫描哪些文件。
 
 ---
 
 
 ###4A. <a name="SECTION4A"></a>浏览器命令
 
-之后phpMussel是安装和是正确地功能在您的系统，如果您已经设置`script_password`和`logs_password`变量（访问密码）在您的配置文件，您将会可以执行一些有限数的行政功能和输入一些有限数的命令在phpMussel通过您的浏览器。这些密码需要被设置以激活这些浏览器控制，以保证正确安全，正确保护的这些浏览器控制和以保证存在一个方法为这些浏览器控制被完全关闭如果您和／或其他网站管理员使用phpMussel不想要他们。所以，换句话说，以激活这些控制，设置一个密码，和以关闭这些控制，设置没有密码。另外，如果您选择激活这些控制和然后选择关闭这些控制在稍后的日期，有一个命令以做这个（可以有用如果您执行一些行动您感觉可以可能妥协分配的密码和需要很快关闭这些控制没有修改您的配置文件）。
+假设您已经正确的安装并且功能正常，如果您已经设置`script_password`和`logs_password`变量（访问密码）在您的配置文件中，通过您的浏览器您将会可以执行一些有限数的行政功能和输入一些有限数的命令来执行phpMussel。这些密码需要被设置来激活这些浏览器控制，以保证安全，如果您和／或其他网站管理员使用phpMussel不想要他们，请正确保护的这些浏览器控制和保证存在一个方法保证浏览器控制被完全关闭。换句话说，激活这些控制，需要设置一个密码，设置没有密码则关闭这些控制，设。另外，如果您选择激活这些控制和然后过段时间关闭这些控制，有一个命令以做这个。（这里请参考英文原文）
 
-有些原因为什么您应该激活这些控制：
-- 提供一个办法的灰名单签名自发地在情况例如当您发现一个签名产生一个假阳性中文件上传到您的系统和您没有时间为手动编辑和重新上传您的灰名单文件。
-- 提供一个办法为您允许有人除了您自己控制您的副本的phpMussel没有含蓄需要发放他们访问在FTP。
-- 提供一个办法的提供控制的访问办您的日志文件。
-- 提供一个简易办法的更新phpMussel当更新是可用的。
-- 提供一个办法为您监控phpMussel当FTP访问或其他常规访问点为监控phpMussel是不可用的。
+以下原因是为什么您应该激活这些控制：
+- 提供一个自定义的签名黑名单，例如当您发现一个签名产生一个误报，但是您没有时间去手动编辑和重新上传您的黑名单文件。
+- 提供一个方法为您允许除了您自己外的其他人控制您的副本的phpMussel在没有安全的可用FTP的情况下。
+- 提供一个方法以供其他人或者程序访问您的日志文件。
+- 提供一个简易办法来更新phpMussel（当更新可用时）。
+- 提供一个方法为您监控phpMussel，当FTP访问或其他常规访问phpMussel不可用时。
 
 有些原因为什么您不应该激活这些控制：
-- 提供一个向量为潜力攻击者和不受欢迎的人查明如果您使用phpMussel（虽说，这个可以二者一个目的赞成和一个目的反对，根据透视)通过盲目地发送命令向服务器作为一种手段来探测。这个可以阻碍攻击者从目标您的系统如果他们学习您使用phpMussel，在假设他们是探测因为他们的攻击方法是使不有力因之的使用phpMussel。然，如果一些意外和目前未知漏洞在phpMussel或一个未来版本其被曝光，和如果它可以的可能提供一个攻击向量，一个正面结果从这探测可以可能鼓励攻击者目标您的系统。
-- 如果您的分配密码成为妥协，如果不变，可以提供一个方法为一个攻击者为旁路任何签名按说防止他们的攻击成功，或潜在共关闭phpMussel，从而提供一个方法为使phpMussel的效用无实际意义。
+- 提供一个为潜力攻击者和不受欢迎的人查明您使用phpMussel，因为phpmussel可能存在漏洞或者其他问题，如果被查明则可能会被利用。
+- 如果您设定的密码被泄露，如果不变，可能会导致攻击者自定义签名检测文件来绕过phpMussel检测。
 
-无论哪种方式，无论您选择什么样，选择最终是您的。标准，这些控制将会已关闭，但思考关于它，和如果您决定您想他们，这个部分说明如何激活他们和如何使用他们。
+无论哪种方式，无论您选择什么样的设置，最终选择权在您，这里仅提供建议，下面给出了一些未被提及的选项，如果您决定使用他们，这个部分说明如何激活和使用他们。
 
 可用浏览器命令列表：
 
 scan_log
 - 密码需要：`logs_password`
 - 其他需要：您需要确定`scan_log`指令。
-- 需要参数：（不任何）
-- 自选參數：（不任何）
+- 需要参数：不需要
+- 自选參數：不需要
 - 例子：`?logspword=[logs_password]&phpmussel=scan_log`
 - 它的作用：打印您的`scan_log`文件内容到屏幕。
 
 scan_kills
 - 密码需要：`logs_password`
 - 其他需要：您需要确定`scan_kills`指令。
-- 需要参数：（不任何）
-- 自选參數：（不任何）
+- 需要参数：不需要
+- 自选參數：不需要
 - 例子：`?logspword=[logs_password]&phpmussel=scan_kills`
 - 它的作用：打印您的`scan_kills`文件内容到屏幕。
 
 controls_lockout
 - 密码需要：`logs_password`或`script_password`
-- 其他需要：（不任何）
-- 需要参数：（不任何）
-- 自选參數：（不任何）
+- 其他需要：不需要
+- 需要参数：不需要
+- 自选參數：不需要
 - 例子1：`?logspword=[logs_password]&phpmussel=controls_lockout`
 - 例子2：`?pword=[script_password]&phpmussel=controls_lockout`
 - 它的作用：关闭所有浏览器控制。这个应该使用如果您疑似任一您的密码已成为妥协（这个可以发生如果您使用这些控制从一个不安全和／或不信赖计算机）。`controls_lockout`执行途经创建一个文件，`controls.lck`，在您的安全／保险库｢Vault｣文件夹，哪里phpMussel将寻找之前执行任何类型的命令。当这个发生，以重新激活控制，您需要手动删除`controls.lck`文件通过FTP或类似。可以使叫使用任一密码。
 
 disable
 - 密码需要：`script_password`
-- 其他需要：（不任何）
-- 需要参数：（不任何）
-- 自选參數：（不任何）
+- 其他需要：不需要
+- 需要参数：不需要
+- 自选參數：不需要
 - 例子：`?pword=[script_password]&phpmussel=disable`
 - 它的作用：关闭phpMussel。这个应该使用如果您执行任何更新或修改在您的系统或如果您安装任何新软件或模块在您的系统哪里可能的可以扳机假阳性。这个还应该使用如果您遇到任何问题从phpMussel但您不想去掉它从您的系统。当这个发生，以重新激活phpMussel，使用“enable”。
 
 enable
 - 密码需要：`script_password`
-- 其他需要：（不任何）
-- 需要参数：（不任何）
-- 自选參數：（不任何）
+- 其他需要：不需要
+- 需要参数：不需要
+- 自选參數：不需要
 - 例子：`?pword=[script_password]&phpmussel=enable`
 - 它的作用：激活phpMussel。这个应该使用如果您先前关闭phpMussel通过“disable”和想重新激活它。
 
 update
 - 密码需要：`script_password`
 - 其他需要：`update.dat`和`update.inc`必须存在。
-- 需要参数：（不任何）
-- 自选參數：（不任何）
+- 需要参数：不需要
+- 自选參數：不需要
 - 例子：`?pword=[script_password]&phpmussel=update`
 - 它的作用：查找更新的phpMussel和它的签名。如果更新是发现，这个命令将尝试下载和安装这些更新。如果更新不发现或失败，更新将退出。整个过程结果是印刷到屏幕。我推荐检查至少一次每月以确保您的签名和您的phpMussel是最新（除非，当然，您手动更新一切，但我依然推荐更新至少一次每月）。更新更频繁是可能毫无意义，考虑到我不太可能有能力的产生任何类型更新更频繁比这（也不我实在想）。
 
 greylist
 - 密码需要：`script_password`
-- 其他需要：（不任何）
-- 需要参数：【名的签名为灰名单】
-- 自选參數：（不任何）
+- 其他需要：不需要
+- 需要参数：【需要添加到黑名单的签名】
+- 自选參數：不需要
 - 例子：`?pword=[script_password]&phpmussel=greylist&musselvar=[签名]`
-- 它的作用：添加一个签名在灰名单。
+- 它的作用：添加一个签名在黑名单。
 
 greylist_clear
 - 密码需要：`script_password`
-- 其他需要：（不任何）
-- 需要参数：（不任何）
-- 自选參數：（不任何）
+- 其他需要：不需要
+- 需要参数：不需要
+- 自选參數：不需要
 - 例子：`?pword=[script_password]&phpmussel=greylist_clear`
-- 它的作用：抹去整个灰名单。
+- 它的作用：删除整个黑名单。
 
 greylist_show
 - 密码需要：`script_password`
-- 其他需要：（不任何）
-- 需要参数：（不任何）
-- 自选參數：（不任何）
+- 其他需要：不需要
+- 需要参数：不需要
+- 自选參數：不需要
 - 例子：`?pword=[script_password]&phpmussel=greylist_show`
-- 它的作用：打印内容的灰名单到屏幕。
+- 它的作用：打印内容的黑名单到屏幕。
 
 ---
 
 
 ###4B. <a name="SECTION4B"></a>CLI（命令行界面）
 
-phpMussel可以执行作为一个互动文件扫描在CLI模式在基于Windows系统。参考｢如何安装（对于CLI）｣部分的这个自述文件为更信息。
+在Windows系统上phpMussel在CLI模式可以作为一个互动文件执行扫描。参考｢如何安装（对于CLI）｣部分的这个自述文件为更信息。
 
 为一个列表的可用CLI命令，在CLI提示，键入【c】，和按Enter键。
 
@@ -252,6 +252,7 @@ phpMussel可以执行作为一个互动文件扫描在CLI模式在基于Windows�
 
 
 ###5. <a name="SECTION5"></a>文件在包
+（本段文件采用的自动翻译，因为都是一些文件描述，参考意义不是很大，如有疑问，请参考英文原版）
 
 下面是一个列表的所有的文件该应该是存在在您的存档在下载时间，任何文件该可能创建因之的您的使用这个脚本，包括一个简短说明的他们的目的。
 
@@ -261,28 +262,29 @@ phpMussel可以执行作为一个互动文件扫描在CLI模式在基于Windows�
 /web.config                                | 一个ASP.NET配置文件（在这种情况，以保护`/vault`文件夹从被访问由非授权来源在事件的脚本是安装在服务器根据ASP.NET技术）。
 /_docs/                                    | 笔记文件夹（包含若干文件）。
 /_docs/change_log.txt                      | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。
-/_docs/readme.de.md                        | 自述文件：DEUTSCH
-/_docs/readme.de.txt                       | 自述文件：DEUTSCH
-/_docs/readme.en.md                        | 自述文件：ENGLISH
-/_docs/readme.en.txt                       | 自述文件：ENGLISH
-/_docs/readme.es.md                        | 自述文件：ESPAÑOL
-/_docs/readme.es.txt                       | 自述文件：ESPAÑOL
-/_docs/readme.fr.md                        | 自述文件：FRANÇAIS
-/_docs/readme.fr.txt                       | 自述文件：FRANÇAIS
-/_docs/readme.id.md                        | 自述文件：BAHASA INDONESIA
-/_docs/readme.id.txt                       | 自述文件：BAHASA INDONESIA
-/_docs/readme.it.md                        | 自述文件：ITALIANO
-/_docs/readme.it.txt                       | 自述文件：ITALIANO
-/_docs/readme.nl.md                        | 自述文件：NEDERLANDSE
-/_docs/readme.nl.txt                       | 自述文件：NEDERLANDSE
-/_docs/readme.pt.md                        | 自述文件：PORTUGUÊS
-/_docs/readme.pt.txt                       | 自述文件：PORTUGUÊS
-/_docs/readme.ru.md                        | 自述文件：РУССКИЙ
-/_docs/readme.ru.txt                       | 自述文件：РУССКИЙ
-/_docs/readme.vi.md                        | 自述文件：TIẾNG VIỆT
-/_docs/readme.vi.txt                       | 自述文件：TIẾNG VIỆT
-/_docs/readme.zh.md                        | 自述文件：中文（简体）
-/_docs/readme.zh-TW.md                     | 自述文件：中文（傳統）
+/_docs/readme.ar.md                        | 阿拉伯文自述文件。
+/_docs/readme.de.md                        | 德文自述文件。
+/_docs/readme.de.txt                       | 德文自述文件。
+/_docs/readme.en.md                        | 英文自述文件。
+/_docs/readme.en.txt                       | 英文自述文件。
+/_docs/readme.es.md                        | 西班牙文自述文件。
+/_docs/readme.es.txt                       | 西班牙文自述文件。
+/_docs/readme.fr.md                        | 法文自述文件。
+/_docs/readme.fr.txt                       | 法文自述文件。
+/_docs/readme.id.md                        | 印度尼西亚文自述文件。
+/_docs/readme.id.txt                       | 印度尼西亚文自述文件。
+/_docs/readme.it.md                        | 意大利文自述文件。
+/_docs/readme.it.txt                       | 意大利文自述文件。
+/_docs/readme.nl.md                        | 荷兰文自述文件。
+/_docs/readme.nl.txt                       | 荷兰文自述文件。
+/_docs/readme.pt.md                        | 葡萄牙文自述文件。
+/_docs/readme.pt.txt                       | 葡萄牙文自述文件。
+/_docs/readme.ru.md                        | 俄文自述文件。
+/_docs/readme.ru.txt                       | 俄文自述文件。
+/_docs/readme.vi.md                        | 越南文自述文件。
+/_docs/readme.vi.txt                       | 越南文自述文件。
+/_docs/readme.zh.md                        | 中文（简体）自述文件。
+/_docs/readme.zh-TW.md                     | 中文（传统）自述文件。
 /_docs/signatures_tally.txt                | 文件为数量追踪的为包含的签名（不需要为正确经营脚本）。
 /_testfiles/                               | 测试文件文件夹（包含若干文件）。所有包含文件是测试文件为测试如果phpMussel是正确地安装上您的系统，和您不需要上传这个文件夹或任何其文件除为上传测试。
 /_testfiles/ascii_standard_testfile.txt    | 测试文件以测试phpMussel标准化ASCII签名。
@@ -305,19 +307,19 @@ phpMussel可以执行作为一个互动文件扫描在CLI模式在基于Windows�
 /vault/cache/.htaccess                     | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/lang/                               | 包含phpMussel语言数据。
 /vault/lang/.htaccess                      | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
-/vault/lang/lang.de.inc                    | 语言数据：DEUTSCH
-/vault/lang/lang.en.inc                    | 语言数据：ENGLISH
-/vault/lang/lang.es.inc                    | 语言数据：ESPAÑOL
-/vault/lang/lang.fr.inc                    | 语言数据：FRANÇAIS
-/vault/lang/lang.id.inc                    | 语言数据：BAHASA INDONESIA
-/vault/lang/lang.it.inc                    | 语言数据：ITALIANO
-/vault/lang/lang.ja.inc                    | 语言数据：日本語
-/vault/lang/lang.nl.inc                    | 语言数据：NEDERLANDSE
-/vault/lang/lang.pt.inc                    | 语言数据：PORTUGUÊS
-/vault/lang/lang.ru.inc                    | 语言数据：РУССКИЙ
-/vault/lang/lang.vi.inc                    | 语言数据：TIẾNG VIỆT
-/vault/lang/lang.zh.inc                    | 语言数据：中文（简体）
-/vault/lang/lang.zh-TW.inc                 | 语言数据：中文（傳統）
+/vault/lang/lang.de.inc                    | 德文语言数据。
+/vault/lang/lang.en.inc                    | 英文语言数据。
+/vault/lang/lang.es.inc                    | 西班牙文语言数据。
+/vault/lang/lang.fr.inc                    | 法文语言数据。
+/vault/lang/lang.id.inc                    | 印度尼西亚文语言数据。
+/vault/lang/lang.it.inc                    | 意大利文语言数据。
+/vault/lang/lang.ja.inc                    | 日文语言数据。
+/vault/lang/lang.nl.inc                    | 荷兰文语言数据。
+/vault/lang/lang.pt.inc                    | 葡萄牙文语言数据。
+/vault/lang/lang.ru.inc                    | 俄文语言数据。
+/vault/lang/lang.vi.inc                    | 越南文语言数据。
+/vault/lang/lang.zh.inc                    | 中文（简体）语言数据。
+/vault/lang/lang.zh-TW.inc                 | 中文（传统）语言数据。
 /vault/quarantine/                         | 隔离文件夹（包含隔离文件）。
 /vault/quarantine/.htaccess                | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/.htaccess                           | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
@@ -422,8 +424,9 @@ phpMussel可以执行作为一个互动文件扫描在CLI模式在基于Windows�
 /vault/pex_custom.cvd                      | 移植可执行｢PE｣扩展签名文件。
 /vault/pex_mussel.cvd                      | 移植可执行｢PE｣扩展签名文件。
 /vault/phpmussel.inc                       | 主脚本；主体和机制的phpMussel（必不可少）！
-/vault/phpmussel.ini                       | 配置文件;包含所有配置指令为phpMussel，告诉它什么做和怎么正确地经营（必不可少）!
+/vault/phpmussel.ini                       | 配置文件；包含所有配置指令为phpMussel，告诉它什么做和怎么正确地经营（必不可少）！
 ※ /vault/scan_log.txt                     | 记录的一切phpMussel扫描。
+※ /vault/scan_log_serialized.txt          | 记录的一切phpMussel扫描。
 ※ /vault/scan_kills.txt                   | 记录的所有上传文件phpMussel受阻／杀。
 /vault/swf_clamav_regex.cvd                | SWF签名文件。
 /vault/swf_clamav_regex.map                | SWF签名文件。
@@ -454,7 +457,8 @@ phpMussel可以执行作为一个互动文件扫描在CLI模式在基于Windows�
 ※ 文件名可能不同基于配置规定（在`phpmussel.ini`）。
 
 ####*关于签名文件*
-CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参考它自己的签名和在参的用法的那些签名在phpMussel;文件名结尾有｢CVD｣包含签名。
+（这里是关于phpMussel引用的签名文件来源以及格式说明，请参考英文部分以及签名文件提供商的说明）
+CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参考它自己的签名和在参的用法的那些签名在phpMussel；文件名结尾有｢CVD｣包含签名。
 
 文件名结尾有｢MAP｣绘制该签名phpMussel应该和不应该使用为独特扫描；不所有签名是一定需要为所有独特扫描，所以，phpMussel使用签名地图文件以加快扫描过程（一个过程该否则将会极其缓慢和乏味）。
 
@@ -462,7 +466,7 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 
 签名文件标有“_standard”包含签名特别是不使用任何类型的特殊式或正则表达式扫描。
 
-签名文件标有不"_regex"也不"_standard"将会作为一个或其他，但不二者（参考｢签名格式｣部分的这个自述文件为详细信息）。
+签名文件标有不“_regex”也不“_standard”将会作为一个或其他，但不二者（参考｢签名格式｣部分的这个自述文件为详细信息）。
 
 签名文件标有“_clamav”包含签名完全从ClamAV的数据库（GNU/GPL）。
 
@@ -489,11 +493,14 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - 无影响在CLI模式。
 
 “cleanup”
-- ｢反设置／删除／清洁｣脚本变量和缓存｢Cache｣之后执行吗？如果您不使用脚本外初始上传扫描，应该设置true｢真／正｣，为了最小化内存使用。如果您使用脚本为目的外初始上传扫描，应该设置false｢假／负｣，为了避免不必要重新加载复制数据在内存。在一般的做法，它应该设置true｢真／正｣，但，如果您做这样，您将不能够使用脚本为任何目的以外文件上传扫描。
+- ｢反设置／删除／清洁｣脚本变量和缓存｢Cache｣之后执行吗？如果您不使用脚本外初始上传扫描，应该设置True｢真／正｣，为了最小化内存使用。如果您使用脚本为目的外初始上传扫描，应该设置False｢假／负｣，为了避免不必要重新加载复制数据在内存。在一般的做法，它应该设置True｢真／正｣，但，如果您做这样，您将不能够使用脚本为任何目的以外文件上传扫描。
 - 无影响在CLI模式。
 
 “scan_log”
 - 文件为记录在所有扫描结果。指定一个文件名，或留空以关闭。
+
+“scan_log_serialized”
+- 文件为记录在所有扫描结果（它采用序列化格式）。指定一个文件名，或留空以关闭。
 
 “scan_kills”
 - 文件为记录在所有受阻或已杀上传。指定一个文件名，或留空以关闭。
@@ -661,7 +668,7 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - phpMussel应该使用签名为打包机和打包数据检测吗？ False = 不检查， True = 检查【默认】。
 
 “detect_shell”
-- phpMussel应该使用签名为webshel​​l脚本检测吗？ False = 不检查， True = 检查【默认】。
+- phpMussel应该使用签名为webshell脚本检测吗？ False = 不检查， True = 检查【默认】。
 
 “detect_deface”
 - phpMussel应该使用签名为污损和污损软件检测吗？ False = 不检查， True = 检查【默认】。
@@ -736,13 +743,13 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - 受阻任何文件包含任何控制字符吗（以外换行符）？ (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) 如果您只上传纯文本，您可以激活这个指令以提供某些另外保护在您的系统。然而，如果您上传任何事以外纯文本，激活这个可能结果在假阳性。 False = 不受阻【默认】； True = 受阻。
 
 “corrupted_exe”
-- 损坏文件和处理错误。 False = 忽略； True = 受阻【默认】。 检测和受阻潜在的损坏移植可执行｢PE｣文件吗？时常（但不始终），当某些零件的一个移植可执行｢PE｣文件是损坏或不能被正确处理，它可以建议建议的一个病毒感染。过程使用通过最杀毒程序以检测病毒在PE文件需要处理那些文件在某些​​方式，哪里，如果程序员的一个病毒是意识的，将特别尝试防止，以允许他们的病毒留不检测。
+- 损坏文件和处理错误。 False = 忽略； True = 受阻【默认】。 检测和受阻潜在的损坏移植可执行｢PE｣文件吗？时常（但不始终），当某些零件的一个移植可执行｢PE｣文件是损坏或不能被正确处理，它可以建议建议的一个病毒感染。过程使用通过最杀毒程序以检测病毒在PE文件需要处理那些文件在某些方式，哪里，如果程序员的一个病毒是意识的，将特别尝试防止，以允许他们的病毒留不检测。
 
 “decode_threshold”
-- 可选限或门槛​​的长度的原始数据在其中解码命令应该被检测（如果有任何引人注目性能问题当扫描）。值是一个整数代表文件大小在KB。 默认 = 512 （512KB）。 零或空值将关闭门槛（去除任何这样的限基于文件大小）。
+- 可选限或门槛的长度的原始数据在其中解码命令应该被检测（如果有任何引人注目性能问题当扫描）。值是一个整数代表文件大小在KB。 默认 = 512 （512KB）。 零或空值将关闭门槛（去除任何这样的限基于文件大小）。
 
 “scannable_threshold”
-- 可选限或门槛​​为原始数据长度phpMussel是允许为阅读和扫描（如果有任何引人注目性能问题当扫描）。值是一个整数代表文件大小在KB。 默认 = 32768 （32MB）。 零或空值将关闭门槛。按说，这个数值应不会少于平均文件大小的文件上传您想和期待收到您的服务器或网站，应不会多于`filesize_limit`指令，和应不会多于大致五分之一的总允许内存分配获授PHP通过`php.ini`配置文件。这个指令存在为尝试防止phpMussel从用的太多内存（这个将防止它从能够顺利扫描文件以上的一个特别文件大小）。
+- 可选限或门槛为原始数据长度phpMussel是允许为阅读和扫描（如果有任何引人注目性能问题当扫描）。值是一个整数代表文件大小在KB。 默认 = 32768 （32MB）。 零或空值将关闭门槛。按说，这个数值应不会少于平均文件大小的文件上传您想和期待收到您的服务器或网站，应不会多于`filesize_limit`指令，和应不会多于大致五分之一的总允许内存分配获授PHP通过`php.ini`配置文件。这个指令存在为尝试防止phpMussel从用的太多内存（这个将防止它从能够顺利扫描文件以上的一个特别文件大小）。
 
 ####"compatibility" （类别）
 phpMussel兼容性指令。
@@ -781,13 +788,13 @@ VirusTotal.com指令。
 - phpMussel应使用扫描结果使用｢Virus Total API｣作为检测或作为检测重量吗？这个指令存在，因为，虽说扫描一个文件使用多AV引擎（例如怎么样VirusTotal做）应结果有一个增加检测率（和因此在一个更恶意文件被抓），它可以还结果有更假阳性，和因此，为某些情况，扫描结果可能被更好使用作为一个置信得分而不是作为一个明确结论。如果一个数值的`0`是使用，扫描结果使用｢Virus Total API｣将会适用作为检测，和因此，如果任何AV引擎使用通过VirusTotal标志文件被扫描作为恶意，phpMussel将考虑文件作为恶意。如果任何其他数值是使用，扫描结果使用｢Virus Total API｣将会适用作为检测重量，和因此，数的AV引擎使用通过VirusTotal标志文件被扫描作为恶意将服务作为一个置信得分（或检测重量）为如果文件被扫描应会考虑恶意通过phpMussel（数值使用将代表最低限度的置信得分或重量需要以被考虑恶意）。一个数值的`0`是使用作为标准。
 
 “vt_quota_rate”和“vt_quota_time”
-- 根据｢Virus Total API｣阅读材料，它是限于最大的`4`请求的任何类型在任​​何`1`分钟大体时间。如果您经营一个“honeyclient”，蜜罐或任何其他自动化将会提供资源为VirusTotal和不只取回报告您是有权一个更高请求率配额。作为标准，phpMussel将严格的坚持这些限制，但因为可能性的这些率配额被增加，这些二指令是提供为您指示phpMussel为什么限它应坚持。除非您是指示这样做，它是不推荐为您增加这些数值，但，如果您遇到问题相关的到达您的率配额，减少这些数值可能有时帮助您解析这些问题。您的率限是决定作为`vt_quota_rate`请求的任何类型在任​​何`vt_quota_time`分钟大体时间。
+- 根据｢Virus Total API｣阅读材料，它是限于最大的`4`请求的任何类型在任何`1`分钟大体时间。如果您经营一个“honeyclient”，蜜罐或任何其他自动化将会提供资源为VirusTotal和不只取回报告您是有权一个更高请求率配额。作为标准，phpMussel将严格的坚持这些限制，但因为可能性的这些率配额被增加，这些二指令是提供为您指示phpMussel为什么限它应坚持。除非您是指示这样做，它是不推荐为您增加这些数值，但，如果您遇到问题相关的到达您的率配额，减少这些数值可能有时帮助您解析这些问题。您的率限是决定作为`vt_quota_rate`请求的任何类型在任何`vt_quota_time`分钟大体时间。
 
 ####"urlscanner" （类别）
 URL扫描仪配置。
 
 "urlscanner"
-- 内phpMussel是一个URL扫描仪，能够检测恶意URL在任何数据或文件它扫描。以激活URL扫描仪，设置`urlscanner`指令`true`;以关闭它，设置这个指令`false`。
+- 内phpMussel是一个URL扫描仪，能够检测恶意URL在任何数据或文件它扫描。以激活URL扫描仪，设置`urlscanner`指令`true`；以关闭它，设置这个指令`false`。
 
 请注意：如果URL扫描仪已关闭，您将不需要复习任何指令在这个类别（`urlscanner`），因为没有指令会做任何事如果这个已关闭。
 
@@ -812,7 +819,7 @@ URL扫描仪API配置。
 ####"template_data" （类别）
 指令和变量为模板和主题。
 
-模板数据涉及到HTML产量使用以生成“上传是否认”信息显示为用户当一个文件上传是受阻。如果您使用个性化主题为phpMussel，HTML产量资源是从`template_cu​​stom.html`文件，和否则，HTML产量资源是从`template.html`文件。变量书面在这个配置文件部分是喂在HTML产量通过更换任何变量名包围在大括号发现在HTML产量使用相应变量数据。为例子，哪里`foo="bar"`，任何发生的`<p>{foo}</p>`发现在HTML产量将成为`<p>bar</p>`。
+模板数据涉及到HTML产量使用以生成“上传是否认”信息显示为用户当一个文件上传是受阻。如果您使用个性化主题为phpMussel，HTML产量资源是从`template_custom.html`文件，和否则，HTML产量资源是从`template.html`文件。变量书面在这个配置文件部分是喂在HTML产量通过更换任何变量名包围在大括号发现在HTML产量使用相应变量数据。为例子，哪里`foo="bar"`，任何发生的`<p>{foo}</p>`发现在HTML产量将成为`<p>bar</p>`。
 
 “css_url”
 - 模板文件为个性化主题使用外部CSS属性，而模板文件为t标准主题使用内部CSS属性。以指示phpMussel使用模板文件为个性化主题，指定公共HTTP地址的您的个性化主题的CSS文件使用`css_url`变量。如果您离开这个变量空白，phpMussel将使用模板文件为默认主题。
@@ -904,7 +911,7 @@ URL扫描仪API配置。
 - “SWF签名” （swf_*）。匹配针对内容的所有非白名单SWF文件目标为扫描。
 - “白名单签名” （whitelist_*）。匹配针对MD5哈希的内容和文件大小的所有文件目标为扫描。识别文件将会免疫的成为匹配通过签名类型提到从他们的白名单项。
 - “XML/XDP块签名” （xmlxdp_*）。匹配针对任何XML/XDP块发现从任何非白名单文件目标为扫描。
-(请注意任何的这些签名可以很容易地关闭通过`phpmussel.ini`）。
+（请注意任何的这些签名可以很容易地关闭通过`phpmussel.ini`）。
 
 ---
 
@@ -918,26 +925,33 @@ URL扫描仪API配置。
 
 在大多数情况下，phpMussel应该相当兼容性与大多数杀毒软件。然，冲突已经报道由多个用户以往。下面这些信息是从VirusTotal.com，和它描述了一个数的假阳性报告的各种杀毒软件针对phpMussel。虽说这个信息是不绝对保证的如果您会遇到兼容性问题间phpMussel和您的杀毒软件，如果您的杀毒软件注意冲突针对phpMussel，您应该考虑关闭它之前使用phpMussel或您应该考虑替代选项从您的杀毒软件或从phpMussel。
 
-这个信息最后更新2015年9月7日和是准确为至少phpMussel的两个最近次要版本（v0.6-v0.7a）在这个现在时候的写作。
+这个信息最后更新2015年12月12日和是准确为至少phpMussel的两个最近次要版本（v0.7-v0.9.0）在这个现在时候的写作。
 
-| 扫描仪               |  结果                                 |
+| 扫描器               |  结果                                 |
 |----------------------|--------------------------------------|
 | Ad-Aware             |  无冲突 |
+| AegisLab             |  无冲突 |
 | Agnitum              |  无冲突 |
 | AhnLab-V3            |  无冲突 |
+| Alibaba              |  无冲突 |
+| ALYac                |  无冲突 |
 | AntiVir              |  无冲突 |
 | Antiy-AVL            |  无冲突 |
+| Arcabit              |  无冲突 |
 | Avast                |  报告 "JS:ScriptSH-inf [Trj]" |
 | AVG                  |  无冲突 |
+| Avira                |  无冲突 |
+| AVware               |  无冲突 |
 | Baidu-International  |  无冲突 |
 | BitDefender          |  无冲突 |
-| Bkav                 |  报告 "VEXDAD2.Webshell" |
+| Bkav                 |  报告 "VEXD737.Webshell" |
 | ByteHero             |  无冲突 |
 | CAT-QuickHeal        |  无冲突 |
 | ClamAV               |  无冲突 |
 | CMC                  |  无冲突 |
 | Commtouch            |  无冲突 |
 | Comodo               |  无冲突 |
+| Cyren                |  报告 "W32/GenBl.DE4CF18E!Olympus" |
 | DrWeb                |  无冲突 |
 | Emsisoft             |  无冲突 |
 | ESET-NOD32           |  无冲突 |
@@ -965,6 +979,7 @@ URL扫描仪API配置。
 | Sophos               |  无冲突 |
 | SUPERAntiSpyware     |  无冲突 |
 | Symantec             |  无冲突 |
+| Tencent              |  无冲突 |
 | TheHacker            |  无冲突 |
 | TotalDefense         |  无冲突 |
 | TrendMicro           |  无冲突 |
@@ -972,11 +987,13 @@ URL扫描仪API配置。
 | VBA32                |  无冲突 |
 | VIPRE                |  无冲突 |
 | ViRobot              |  无冲突 |
+| Zillya               |  无冲突 |
+| Zoner                |  无冲突 |
 
 
 ---
 
 
-最后更新：2015年10月23日。
+最后更新：2015年12月13日。
 
-翻译声明：本文档翻译基于英文原始文档，但由于本人水平有限，且非PHP程序员，对其中某些字词的翻译可能不是很准确，故如果出现错误，请指出并联系原作者予以更正，另外，本翻译仅简体中文，与繁体中文无关亦未参考繁体中文的译文！！
+翻译声明：本文档翻译基于英文原始文档，但由于本人水平有限，且非php程序员，对其中某些字词的翻译可能不是很准确，故如果出现错误，请指出并联系原作者予以更正，另外，本翻译仅简体中文，与繁体中文无关亦未参考繁体中文的译文！！
