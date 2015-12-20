@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Japanese/日本語 Language Data (6th November 2015).
+ This file: phpMussel Japanese/日本語 language data (18th December 2015).
  <%phpMussel%/vault/lang/lang.ja.inc>
 
 */

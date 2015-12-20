@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel German/Deutsch Language Data (6th November 2015).
+ This file: phpMussel German/Deutsch language data (18th December 2015).
  <%phpMussel%/vault/lang/lang.de.inc>
 
 */
@@ -22,11 +22,11 @@
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
 $MusselConfig['lang']['bad_command']='Entschuldigung, ich verstehe diesen Befehl nicht.';
-$MusselConfig['lang']['cli_commands']="q\n - Beendet den CLI-Modus.\n - Alias: quit, exit.\n md5_file\n - Generiert MD5-Signaturen einer Datei\n   [Syntax: md5_file filename].\n - Alias: m.\n md5\n - Generiert MD5-Signaturen eines String-Wertes\n   [Syntax: md5 string].\n hex_encode\n - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert\n   [Syntax: hex_encode string].\n - Alias: x.\n hex_decode\n - Konvertiert einen Hexidezimal-Wert in einen Binär-Wert\n   [Syntax: hex_decode string].\n base64_encode\n -  Konvertiert einen Binär-Wert in einen Base64-Wert\n   [Syntax: base64_encode string].\n - Alias: b.\n base64_decode\n - Konvertiert einen Base64-Wert in einen Binär-Wert\n   [Syntax: base64_decode string].\n scan\n - Überprüft eine Datei oder ein Verzeichnis\n   [Syntax: scan filename].\n - Alias: s.\n update\n - Aktualisiert phpMussel.\n - Alias: u.\n c\n - Gibt diese Befehlsliste aus.\n";
+$MusselConfig['lang']['cli_commands']=" q\n - Beendet den CLI-Modus.\n - Alias: quit, exit.\n md5_file\n - Generiert MD5-Signaturen einer Datei\n   [Syntax: md5_file filename].\n - Alias: m.\n md5\n - Generiert MD5-Signaturen eines String-Wertes\n   [Syntax: md5 string].\n hex_encode\n - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert\n   [Syntax: hex_encode string].\n - Alias: x.\n hex_decode\n - Konvertiert einen Hexidezimal-Wert in einen Binär-Wert\n   [Syntax: hex_decode string].\n base64_encode\n -  Konvertiert einen Binär-Wert in einen Base64-Wert\n   [Syntax: base64_encode string].\n - Alias: b.\n base64_decode\n - Konvertiert einen Base64-Wert in einen Binär-Wert\n   [Syntax: base64_decode string].\n scan\n - Überprüft eine Datei oder ein Verzeichnis\n   [Syntax: scan filename].\n - Alias: s.\n update\n - Aktualisiert phpMussel.\n - Alias: u.\n c\n - Gibt diese Befehlsliste aus.\n";
 $MusselConfig['lang']['cli_failed_to_complete']='Ein vollständiger Scan konnte nicht durchgeführt werden';
 $MusselConfig['lang']['cli_is_not_a']=' ist keine Datei oder ein Verzeichnis.';
 $MusselConfig['lang']['cli_ln2']=" Vielen Dank für die Benutzung von phpMussel, einem auf PHP basiertem Script,\n um Trojaner, Viren, Malware und andere Bedrohungen in Dateien zu entdecken,\n die auf Ihr System hochgeladen werden könnten, welches die Signaturen von\n ClamAV und andere nutzt.\n\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
-$MusselConfig['lang']['cli_ln3']=" phpMussel befindet sich im CLI-Modus (Command line interface).\n\n Um eine Datei oder ein Verzeichnis mit phpMussel zu überprüfen, geben Sie\n 'scan', gefolgt vom Namen der Datei oder des Verzeichnisses ein und\n bestätigen mit Enter;\n\n Geben Sie 'c' und Enter für eine Liste der verfügbaren Befehle im CLI-Modus\n ein; Geben Sie 'q' und Enter zum Beenden ein: ";
+$MusselConfig['lang']['cli_ln3']=" phpMussel befindet sich im CLI-Modus (Command Line Interface).\n\n Um eine Datei oder ein Verzeichnis mit phpMussel zu überprüfen, geben Sie\n 'scan', gefolgt vom Namen der Datei oder des Verzeichnisses ein und\n bestätigen mit Enter;\n\n Geben Sie 'c' und Enter für eine Liste der verfügbaren Befehle im CLI-Modus\n ein; Geben Sie 'q' und Enter zum Beenden ein: ";
 $MusselConfig['lang']['cli_pe1']='Keine gültige PE-Datei!';
 $MusselConfig['lang']['cli_pe2']='PE-Sektionen:';
 $MusselConfig['lang']['cli_update_restart']=' phpMussel muss neu gestartet werden, damit die Aktualisierungen wirksam werden.';
@@ -59,7 +59,7 @@ $MusselConfig['lang']['phpmussel_disabled']='phpMussel deaktiviert.';
 $MusselConfig['lang']['phpmussel_disabled_already']='phpMussel bereits deaktiviert.';
 $MusselConfig['lang']['phpmussel_enabled']='phpMussel aktiviert.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel bereits aktiviert.';
-$MusselConfig['lang']['plugins_directory_nonexistent']='Plugins directory doesn\'t exist!';
+$MusselConfig['lang']['plugins_directory_nonexistent']='Plugins-Verzeichnis nicht vorhanden!';
 $MusselConfig['lang']['recursive']='Rekursionstiefe-Limit überschritten';
 $MusselConfig['lang']['required_variables_not_defined']='Benötigte Variablen sind nicht definiert: Kann nicht fortfahren.';
 $MusselConfig['lang']['scan_aborted']='Scan abgebrochen!';

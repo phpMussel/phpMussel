@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Russian/Русский Language Data (6th November 2015).
+ This file: phpMussel Russian/Русский language data (18th December 2015).
  <%phpMussel%/vault/lang/lang.ru.inc>
 
 */
@@ -49,7 +49,7 @@ $MusselConfig['lang']['generated_by']='Генерируется';
 $MusselConfig['lang']['greylist_cleared']=' Серый список очищен.';
 $MusselConfig['lang']['greylist_not_updated']=' Серый список не обновлён.';
 $MusselConfig['lang']['greylist_updated']=' Серый список обновлён.';
-$MusselConfig['lang']['image']='изображение';
+$MusselConfig['lang']['image']='Изображение';
 $MusselConfig['lang']['instance_already_active']='Пример уже активен! Пожалуйста перепроверьте свои крючки.';
 $MusselConfig['lang']['invalid_file']='Неверный файл';
 $MusselConfig['lang']['invalid_url']='Неверный URL!';
@@ -59,7 +59,7 @@ $MusselConfig['lang']['phpmussel_disabled']='phpMussel неактивен.';
 $MusselConfig['lang']['phpmussel_disabled_already']='phpMussel уже неактивен.';
 $MusselConfig['lang']['phpmussel_enabled']='phpMussel активен.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel уже активен.';
-$MusselConfig['lang']['plugins_directory_nonexistent']='Каталог Плагины не существует!';
+$MusselConfig['lang']['plugins_directory_nonexistent']='Каталог плагины не существует!';
 $MusselConfig['lang']['recursive']='Лимит глубины рекурсии превышена';
 $MusselConfig['lang']['required_variables_not_defined']='Обязательные переменные не установлены: Продолжение невозможно.';
 $MusselConfig['lang']['scan_aborted']='Сканирование прерывается!';
@@ -116,7 +116,7 @@ $MusselConfig['lang']['update_version_yours']='ВАША ВЕРСИЯ СЦЕНА�
 $MusselConfig['lang']['update_was']='{x}';
 $MusselConfig['lang']['update_wrd1']='подписи';
 $MusselConfig['lang']['upload_error_1']='Файл превышает размер директивы MAX_FILE_SIZE. ';
-$MusselConfig['lang']['upload_error_2']='Файл превышает размер заданных в директиве ФОРМЫ. ';
+$MusselConfig['lang']['upload_error_2']='Файл превышает размер заданных в директиве формы. ';
 $MusselConfig['lang']['upload_error_34']='Загрузка Отказана! Пожалуйста свяжитесь с хостмастером о помощи! ';
 $MusselConfig['lang']['upload_error_6']='Загрузка директорий отсутствует! Пожалуйста свяжитесь с хостмастером о помощи! ';
 $MusselConfig['lang']['upload_error_7']='Ошибка диск-записи! Пожалуйста свяжитесь с хостмастером о помощи! ';

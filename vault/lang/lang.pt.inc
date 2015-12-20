@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Portuguese/Português Language Data (6th November 2015).
+ This file: phpMussel Portuguese/Português language data (18th December 2015).
  <%phpMussel%/vault/lang/lang.pt.inc>
 
 */
@@ -26,7 +26,7 @@ $MusselConfig['lang']['cli_commands']=" q\n - Deixar CLI.\n - Alias: quit, exit.
 $MusselConfig['lang']['cli_failed_to_complete']='Falha ao completar processo de verificação';
 $MusselConfig['lang']['cli_is_not_a']=' não é um arquivo ou diretório.';
 $MusselConfig['lang']['cli_ln2']=" Obrigado por usando phpMussel, um PHP script projetado para detectar trojans,\n vírus, malware e outras ameaças dentro dos arquivos enviados para o seu\n sistema onde quer que o script é enganchado, baseado no assinaturas do ClamAV\n e outros.\n\n PHPMUSSEL COPYRIGHT 2013 e além GNU/GPL V.2 através do Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
-$MusselConfig['lang']['cli_ln3']=" Correntemente execução phpMussel em CLI modo (Comando linha interface).\n\n Para analisar um arquivo ou diretório, digitá 'scan', seguido pelo nome do\n arquivo ou diretório que você deseja phpMussel para analisar e pressione\n Enter; Digitá 'c' e pressione Enter por uma lista de CLI modo comandos; Digitá\n 'q' e pressione Enter para sair:";
+$MusselConfig['lang']['cli_ln3']=" Correntemente execução phpMussel em CLI modo (comando linha interface).\n\n Para analisar um arquivo ou diretório, digitá 'scan', seguido pelo nome do\n arquivo ou diretório que você deseja phpMussel para analisar e pressione\n Enter; Digitá 'c' e pressione Enter por uma lista de CLI modo comandos; Digitá\n 'q' e pressione Enter para sair:";
 $MusselConfig['lang']['cli_pe1']='Não é um válido PE arquivo!';
 $MusselConfig['lang']['cli_pe2']='PE Seções:';
 $MusselConfig['lang']['cli_update_restart']=" Reiniciando phpMussel podem ser necessários antes que as atualizações se\n tornam aparentes.";
@@ -38,7 +38,7 @@ $MusselConfig['lang']['denied']='Carregar Negado!';
 $MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='Carregamento tentativa foi bloqueado pelos motivos a seguir indicados / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Detectado {vn}';
-$MusselConfig['lang']['detected_control_characters']='Detectados Controle Caracteres';
+$MusselConfig['lang']['detected_control_characters']='Caracteres de controle detectado';
 $MusselConfig['lang']['encrypted_archive']='Detectado compactado arquivo criptografado; Compactado arquivos criptografados não permitido';
 $MusselConfig['lang']['failed_to_access']='Falha ao acesso ';
 $MusselConfig['lang']['file']='Arquivo';
@@ -79,8 +79,8 @@ $MusselConfig['lang']['scan_reading']='Lendo';
 $MusselConfig['lang']['scan_signature_file_corrupted']='Assinatura arquivo corrompido';
 $MusselConfig['lang']['scan_signature_file_missing']='Assinatura arquivo faltando';
 $MusselConfig['lang']['scan_tampering']='Detectado potencialmente perigoso arquivo adulteração';
-$MusselConfig['lang']['scan_unauthorised_upload']='Não autorizada Arquivo carregar manipulação detectado';
-$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Não autorizada Arquivo carregar manipulação ou mau configuração detectado! ';
+$MusselConfig['lang']['scan_unauthorised_upload']='Não autorizada arquivo carregar manipulação detectado';
+$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Não autorizada arquivo carregar manipulação ou mau configuração detectado! ';
 $MusselConfig['lang']['started']='Começado';
 $MusselConfig['lang']['too_many_urls']='Demasiados URLs';
 $MusselConfig['lang']['update_']='phpMussel agora tentará se atualizar.';

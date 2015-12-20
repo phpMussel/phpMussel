@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- Questo file è la traduzione Italiana di phpMussel (6th November 2015).
+ This file: phpMussel Italian/Italiano language data (18th December 2015).
  <%phpMussel%/vault/lang/lang.it.inc>
 
 */

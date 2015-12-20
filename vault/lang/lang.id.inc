@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Indonesian Language Data (6th November 2015).
+ This file: phpMussel Indonesian language data (18th December 2015).
  <%phpMussel%/vault/lang/lang.id.inc>
 
 */
@@ -26,7 +26,7 @@ $MusselConfig['lang']['cli_commands']=" q\n - Berhenti CLI.\n - Alias: quit, exi
 $MusselConfig['lang']['cli_failed_to_complete']='Gagal untuk menyelesaikan memindai proses';
 $MusselConfig['lang']['cli_is_not_a']=' bukan file atau direktori.';
 $MusselConfig['lang']['cli_ln2']=" Terima kasih untuk menggunakan phpMussel, sebuah skrip php di-design untuk\n mendeteksi trojan-trojan, virus-virus dan serangan-serangan lainnya dalam\n file-file diupload ke system Anda dimana saja skrip di kaitkan, berdasarkan\n tanda tangan dari ClamAV dan lain-lain.\n\n PHPMUSSEL HAK CIPTA 2013 dan di atas GNU/GPL V.2 oleh Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
-$MusselConfig['lang']['cli_ln3']=" Sekarang phpMussel operasi di CLI mode (Command line interface).\n\n Untuk memindai file atau direktori, menulis 'scan', diikuti dengan nama file\n atau direktori yang ingin Anda phpMussel untuk memindai dan tekan Enter;\n Menulis 'c' dan tekan Enter untuk daftar CLI mode perintah; Menulis 'q' dan\n tekan Enter untuk keluar:";
+$MusselConfig['lang']['cli_ln3']=" Sekarang phpMussel operasi di CLI mode (command line interface).\n\n Untuk memindai file atau direktori, menulis 'scan', diikuti dengan nama file\n atau direktori yang ingin Anda phpMussel untuk memindai dan tekan Enter;\n Menulis 'c' dan tekan Enter untuk daftar CLI mode perintah; Menulis 'q' dan\n tekan Enter untuk keluar:";
 $MusselConfig['lang']['cli_pe1']='Tidak valid file PE!';
 $MusselConfig['lang']['cli_pe2']='Seksi PE:';
 $MusselConfig['lang']['cli_update_restart']=' Restart phpMussel mungkin diperlukan sebelum perbarui menjadi jelas.';
@@ -38,7 +38,7 @@ $MusselConfig['lang']['denied']='Upload Ditolak!';
 $MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='Upload diblokir karena alasan yang tercantum di bawah / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Terdeteksi {vn}';
-$MusselConfig['lang']['detected_control_characters']='Terdeteksi Kontrol Karakter';
+$MusselConfig['lang']['detected_control_characters']='Terdeteksi kontrol karakter';
 $MusselConfig['lang']['encrypted_archive']='Terdeteksi arsip dienkripsi; Arsip dienkripsi tidak diizinkan';
 $MusselConfig['lang']['failed_to_access']='Gagal untuk akses ';
 $MusselConfig['lang']['file']='File';
@@ -49,7 +49,7 @@ $MusselConfig['lang']['generated_by']='Dihasilkan oleh';
 $MusselConfig['lang']['greylist_cleared']=' Greylist dikosongkan.';
 $MusselConfig['lang']['greylist_not_updated']=' Greylist tidak diperbarui.';
 $MusselConfig['lang']['greylist_updated']=' Greylist diperbarui.';
-$MusselConfig['lang']['image']='gambar';
+$MusselConfig['lang']['image']='Gambar';
 $MusselConfig['lang']['instance_already_active']='Kejadian sudah aktif! Silakan periksa kait Anda.';
 $MusselConfig['lang']['invalid_file']='File tidak valid';
 $MusselConfig['lang']['invalid_url']='URL tidak valid!';

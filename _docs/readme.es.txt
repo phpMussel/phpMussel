@@ -1364,7 +1364,7 @@
      parte de lo que phpMussel buscará (en el contexto de esta opción) son
      duplicaciones de protecciones que ya previsto.
    "block_control_characters"
-   - Bloquear cualquier archivos que contenga cualquier control carácter
+   - Bloquear cualquier archivos que contenga cualquier caracteres de control
      (aparte de saltos de línea)? ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) Si usted
      sólo subir texto sin cualquier formato, usted puede activar esta opción
      para proporcionar alguna adicional protección para su sistema. Pero, si
@@ -1872,5 +1872,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 12 Octubre 2015 (2015.12.12).
+Última Actualización: 18 Octubre 2015 (2015.12.18).
 EOF

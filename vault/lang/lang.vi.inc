@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Vietnamese/Việt Language Data (6th November 2015).
+ This file: phpMussel Vietnamese/Việt language data (18th December 2015).
  <%phpMussel%/vault/lang/lang.vi.inc>
 
 */
@@ -26,7 +26,7 @@ $MusselConfig['lang']['cli_commands']=" q\n – Thoát ra CLI.\n - Bí danh: qui
 $MusselConfig['lang']['cli_failed_to_complete']='Quá trình quét chưa được hoàn thành';
 $MusselConfig['lang']['cli_is_not_a']=' không phải là file hoạc thư mục.';
 $MusselConfig['lang']['cli_ln2']=" Cảm ơn bạn đã chọn phpMussel, một loại bản PHP được thiết kế để phát hiện\n trojan, vi rút, phần mềm đọc hại và những gì có thể gây nguy hiểm trong những\n các tài liệu tài lên trên máy của bạn. Bất cứ nơi nào mà bản đã được nối, dưa\n trên chử ký của ClamAV và những người khác.\n\n BẢN QUYỀN PHPMUSSEL 2013 và hơn GNU/GPLv2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
-$MusselConfig['lang']['cli_ln3']=" phpMussel đang chạy trong chế độ CLI (Command line interface).\n\n Đễ quét tài liệu hoạc thư mục, hảy đánh vào 'scan', sau đó tên của tài liệu\n hoạc thư mực mà bạn muốn phpMussel quét ròi bấm Enter; Đánh vào 'c' và bấm\n Enter đễ xem những loại chế độ CLI; Đánh 'q' và bấm Enter đế thoát ra:";
+$MusselConfig['lang']['cli_ln3']=" phpMussel đang chạy trong chế độ CLI (command line interface).\n\n Đễ quét tài liệu hoạc thư mục, hảy đánh vào 'scan', sau đó tên của tài liệu\n hoạc thư mực mà bạn muốn phpMussel quét ròi bấm Enter; Đánh vào 'c' và bấm\n Enter đễ xem những loại chế độ CLI; Đánh 'q' và bấm Enter đế thoát ra:";
 $MusselConfig['lang']['cli_pe1']='Tài liệu PE không hợp lệ!';
 $MusselConfig['lang']['cli_pe2']='Các loại PE:';
 $MusselConfig['lang']['cli_update_restart']=' Có thể phải bắt đầu lại phpMussel trước khi cập nhật hiện lên.';

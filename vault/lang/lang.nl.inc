@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Dutch/Nederlandse Language Data (6th November 2015).
+ This file: phpMussel Dutch/Nederlandse language data (18th December 2015).
  <%phpMussel%/vault/lang/lang.nl.inc>
 
 */
@@ -26,7 +26,7 @@ $MusselConfig['lang']['cli_commands']=" q\n - Verlaten CLI.\n - Aliassen: quit, 
 $MusselConfig['lang']['cli_failed_to_complete']='Mislukt om het voltooien te scannen';
 $MusselConfig['lang']['cli_is_not_a']=' is geen bestand of map.';
 $MusselConfig['lang']['cli_ln2']=" Dank u voor het gebruiken van phpMussel, een PHP-script ontwikkeld om trojans,\n virussen, malware en andere bedreigingen te ontworpen, binnen bestanden\n geüpload naar uw systeem waar het script is haakte, gebaseerd op de\n handtekeningen van ClamAV en anderen.\n PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPL V.2 van Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
-$MusselConfig['lang']['cli_ln3']=" Momenteel phpMussel is in CLI-modus (Commandlijn interface).\n\n Om scannen een bestand of map, typ 'scan', gevolgd door de naam van het\n bestand of de map die u wilt phpMussel te scannen en druk op Enter; Typ 'c' en\n druk op Enter voor een lijst op CLI-modus commando's; Typ 'q' en druk op Enter\n om te stoppen:";
+$MusselConfig['lang']['cli_ln3']=" Momenteel phpMussel is in CLI-modus (commandlijn interface).\n\n Om scannen een bestand of map, typ 'scan', gevolgd door de naam van het\n bestand of de map die u wilt phpMussel te scannen en druk op Enter; Typ 'c' en\n druk op Enter voor een lijst op CLI-modus commando's; Typ 'q' en druk op Enter\n om te stoppen:";
 $MusselConfig['lang']['cli_pe1']='Geen geldig PE-bestand!';
 $MusselConfig['lang']['cli_pe2']='PE Secties:';
 $MusselConfig['lang']['cli_update_restart']=' Herstarten phpMussel kan nodig zijn voordat updates zichtbaar worden.';
@@ -79,7 +79,7 @@ $MusselConfig['lang']['scan_reading']='Lezen van';
 $MusselConfig['lang']['scan_signature_file_corrupted']='Handtekening bestand beschadigd';
 $MusselConfig['lang']['scan_signature_file_missing']='Handtekening bestand ontbreekt';
 $MusselConfig['lang']['scan_tampering']='Gedetecteerd potentieel gevaarlijke bestandswijziging';
-$MusselConfig['lang']['scan_unauthorised_upload']='ngeautoriseerde bestand uploaden manipulatie gedetecteerd';
+$MusselConfig['lang']['scan_unauthorised_upload']='Ongeautoriseerde bestand uploaden manipulatie gedetecteerd';
 $MusselConfig['lang']['scan_unauthorised_upload_or_misconfig']='Ongeautoriseerde bestand uploaden manipulatie of misconfiguratie gedetecteerd! ';
 $MusselConfig['lang']['started']='Gestart';
 $MusselConfig['lang']['too_many_urls']='Te veel URL\'s';

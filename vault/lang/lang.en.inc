@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel English Language Data (6th November 2015).
+ This file: phpMussel English language data (18th December 2015).
  <%phpMussel%/vault/lang/lang.en.inc>
 
 */
@@ -26,7 +26,7 @@ $MusselConfig['lang']['cli_commands']=" q\n - Quit CLI.\n - Aliases: quit, exit.
 $MusselConfig['lang']['cli_failed_to_complete']='Failed to complete scanning process';
 $MusselConfig['lang']['cli_is_not_a']=' is not a file or directory.';
 $MusselConfig['lang']['cli_ln2']=" Thank you for using phpMussel, a PHP script designed to detect trojans,\n viruses, malware and other threats within files uploaded to your system\n wherever the script is hooked, based on the signatures of ClamAV and others.\n\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
-$MusselConfig['lang']['cli_ln3']=" Currently running phpMussel in CLI mode (Command line interface).\n\n To scan a file or directory, type 'scan', followed by the name of the file or\n directory that you want phpMussel to scan and press Enter; Type 'c' and press\n Enter for a list of CLI mode commands; Type 'q' and press Enter to quit:";
+$MusselConfig['lang']['cli_ln3']=" Currently running phpMussel in CLI mode (command line interface).\n\n To scan a file or directory, type 'scan', followed by the name of the file or\n directory that you want phpMussel to scan and press Enter; Type 'c' and press\n Enter for a list of CLI mode commands; Type 'q' and press Enter to quit:";
 $MusselConfig['lang']['cli_pe1']='Not a valid PE file!';
 $MusselConfig['lang']['cli_pe2']='PE Sections:';
 $MusselConfig['lang']['cli_update_restart']=' Restarting phpMussel may be required before updates become apparent.';
@@ -38,7 +38,7 @@ $MusselConfig['lang']['denied']='Upload Denied!';
 $MusselConfig['lang']['denied_other']='Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='Your upload was blocked for the reasons listed below / 您的上传被拒绝由于这些原因:';
 $MusselConfig['lang']['detected']='Detected {vn}';
-$MusselConfig['lang']['detected_control_characters']='Detected Control Characters';
+$MusselConfig['lang']['detected_control_characters']='Detected control characters';
 $MusselConfig['lang']['encrypted_archive']='Detected encrypted archive; Encrypted archives not permitted';
 $MusselConfig['lang']['failed_to_access']='Failed to access ';
 $MusselConfig['lang']['file']='File';

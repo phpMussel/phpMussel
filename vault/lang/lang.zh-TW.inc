@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Chinese (Traditional) / 中文（傳統） Language Data (6th November 2015).
+ This file: phpMussel Chinese (Traditional) / 中文（傳統） language data (18th December 2015).
  <%phpMussel%/vault/lang/lang.zh-TW.inc>
 
 */

@@ -1371,9 +1371,9 @@
      contexte de cette option) sont duplications de protections qui sont déjà
      fournis.
    "block_control_characters"
-   - Bloquer tous les fichiers contenant des contrôle caractères (autre que les
-     sauts de ligne)? ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) Si vous êtes
-     -seulement- télécharger de brut texte fichiers, puis vous pouvez activer
+   - Bloquer tous les fichiers contenant les caractères de contrôle (autre que
+     les sauts de ligne)? ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) Si vous êtes
+     -SEULEMENT- télécharger de brut texte fichiers, puis vous pouvez activer
      cette option à fournir une supplémentaire protection à votre système.
      Mais, si vous télécharger quelque chose plus que brut texte, l'activation
      de cette peut créer faux positifs.
@@ -1876,5 +1876,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 12 Décembre 2015 (2015.12.12).
+Dernière Réactualisé: 18 Décembre 2015 (2015.12.18).
 EOF

@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel French/Français Language Data (6th November 2015).
+ This file: phpMussel French/Français language data (18th December 2015).
  <%phpMussel%/vault/lang/lang.fr.inc>
 
 */
@@ -24,9 +24,9 @@ if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.'
 $MusselConfig['lang']['bad_command']='Je ne comprends pas cette commande, désolé.';
 $MusselConfig['lang']['cli_commands']=" q\n - Quitter CLI.\n - Alias: quit, exit.\n md5_file\n - Générer MD5 signatures des fichiers [Syntaxe: md5_file nom_de_fichier].\n - Alias: m.\n md5\n - Générer MD5 signature de string [Syntaxe: md5 string].\n hex_encode\n - Convertir binaire string à hexadécimal [Syntaxe: hex_encode string].\n - Alias: x.\n hex_decode\n - Convertir hexadécimal à binaire string [Syntaxe: hex_decode string].\n base64_encode\n - Convertir binaire string à base64 string [Syntaxe: base64_encode string].\n - Alias: b.\n base64_decode\n - Convertir base64 string à binaire string [Syntaxe: base64_decode string].\n scan\n - Analyser fichier ou répertoire [Syntaxe: scan nom_de_fichier].\n - Alias: s.\n update\n - Réactualiser phpMussel.\n - Alias: u.\n c\n - Imprimer cette liste des commandes.\n";
 $MusselConfig['lang']['cli_failed_to_complete']='Échec du terminer le processus d\'analyse';
-$MusselConfig['lang']['cli_is_not_a']='  n\'est pas un fichier ou un répertoire.';
+$MusselConfig['lang']['cli_is_not_a']=' n\'est pas un fichier ou un répertoire.';
 $MusselConfig['lang']['cli_ln2']=" Merci pour l'utiliser de phpMusel, un PHP script pour la détection de virus,\n malveillants logiciels et autres menaces dans les fichiers téléchargés sur\n votre système partout où le script est accroché, basé sur les signatures de\n ClamAV et autres.\n\n PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPL V.2 par Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
-$MusselConfig['lang']['cli_ln3']=" Fonctionne comme CLI mode pour le moment (Commande Ligne Interface).\n\n Pour analyser un fichier ou répertoire, taper 'scan', suivi par le nom du\n fichier ou répertoire que vous voulez phpMussel pour analyser et appuyez sur\n Entrée; Tapez 'c' et appuyez sur Entrée pour une liste de CLI mode commandes;\n Taper 'q' et appuyez sur Entrée pour quitter:";
+$MusselConfig['lang']['cli_ln3']=" Fonctionne comme CLI mode pour le moment (commande ligne interface).\n\n Pour analyser un fichier ou répertoire, taper 'scan', suivi par le nom du\n fichier ou répertoire que vous voulez phpMussel pour analyser et appuyez sur\n Entrée; Tapez 'c' et appuyez sur Entrée pour une liste de CLI mode commandes;\n Taper 'q' et appuyez sur Entrée pour quitter:";
 $MusselConfig['lang']['cli_pe1']='Pas un valide PE fichier!';
 $MusselConfig['lang']['cli_pe2']='PE Sections:';
 $MusselConfig['lang']['cli_update_restart']=' Redémarrage phpMussel peut être nécessaire avant les réactualisations deviennent apparents.';
@@ -38,7 +38,7 @@ $MusselConfig['lang']['denied']='Téléchargement Refusé!';
 $MusselConfig['lang']['denied_other']='Upload Denied! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='Votre tentative à télécharger a été bloqué pour les raisons énumérées ci-dessous / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Détecté {vn}';
-$MusselConfig['lang']['detected_control_characters']='Contrôle Caractères Détectés';
+$MusselConfig['lang']['detected_control_characters']='Caractères de contrôle ont été détectés';
 $MusselConfig['lang']['encrypted_archive']='Detected archive cryptée; Archives cryptées pas autorisés';
 $MusselConfig['lang']['failed_to_access']='Échec d\'accès ';
 $MusselConfig['lang']['file']='Fichier';
@@ -59,7 +59,7 @@ $MusselConfig['lang']['phpmussel_disabled']='phpMussel désactivé.';
 $MusselConfig['lang']['phpmussel_disabled_already']='phpMussel déjà désactivé.';
 $MusselConfig['lang']['phpmussel_enabled']='phpMussel activé.';
 $MusselConfig['lang']['phpmussel_enabled_already']='phpMussel déjà activé.';
-$MusselConfig['lang']['plugins_directory_nonexistent']='Répertoire plugins n\'existe pas!';
+$MusselConfig['lang']['plugins_directory_nonexistent']='Répertoire de plugins n\'existe pas!';
 $MusselConfig['lang']['recursive']='Recursion limite de profondeur dépassé';
 $MusselConfig['lang']['required_variables_not_defined']='Variables requises ne sont pas définies: Ne pouvez pas continuer.';
 $MusselConfig['lang']['scan_aborted']='Analyse avorté!';

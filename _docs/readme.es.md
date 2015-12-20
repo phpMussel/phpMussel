@@ -737,7 +737,7 @@ Camaleón ataque detección: False = Desactivado; True = Activado.
 - Buscar contenidos de archivos para generales comandos como tal `eval()`, `exec()` y `include()`? False = No (no buscar) [Predefinido]; True = Sí (buscar). Desactivar esta opción si tiene intención de subir cualquiera de los siguientes para su sistema o CMS a través de su navegador: PHP, JavaScript, HTML, python, perl archivos y etcétera. Activar esta opción si usted no tiene cualquier adicional protección en su sistema y no tiene intención de subir estos tipos de archivos. Si utiliza adicional seguridad junto con phpMussel como tal ZB Block, no hay necesidad de activar esta opción, porque la mayor parte de lo que phpMussel buscará (en el contexto de esta opción) son duplicaciones de protecciones que ya previsto.
 
 "block_control_characters"
-- Bloquear cualquier archivos que contenga cualquier control carácter (aparte de saltos de línea)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Si usted sólo subir texto sin cualquier formato, usted puede activar esta opción para proporcionar alguna adicional protección para su sistema. Pero, si usted subir cualquier cosa otro de texto sin cualquier formato, activando esto puede dar lugar a falsos positivos. False = No bloquear [Predefinido]; True = Bloquear.
+- Bloquear cualquier archivos que contenga cualquier caracteres de control (aparte de saltos de línea)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Si usted sólo subir texto sin cualquier formato, usted puede activar esta opción para proporcionar alguna adicional protección para su sistema. Pero, si usted subir cualquier cosa otro de texto sin cualquier formato, activando esto puede dar lugar a falsos positivos. False = No bloquear [Predefinido]; True = Bloquear.
 
 "corrupted_exe"
 - Corrompido archivos y procesamiento errores. False = Ignorar; True = Bloquear [Predefinido]. Detectar y bloquear potencialmente corrompido PE (Portátil Ejecutable) archivos? Frecuentemente (pero no siempre), cuando ciertos aspectos de un PE archivo están corrompido, dañados o no podrá ser analizado correctamente, lo puede ser indicativo de una infección viral. Los procesos utilizados por la mayoría de los antivirus programas para detectar un virus en PE archivos requerir analizando esos archivos en ciertas maneras, que, si el programador de un virus es consciente de, intentará específicamente para prevenir, con el fin de permitir su virus permanezca sin ser detectado.
@@ -991,4 +991,4 @@ Esta información ha sido actualizado 12 Diciembre 2015 y es a hoy para todas la
 ---
 
 
-Última Actualización: 12 Octubre 2015 (2015.12.12).
+Última Actualización: 18 Octubre 2015 (2015.12.18).

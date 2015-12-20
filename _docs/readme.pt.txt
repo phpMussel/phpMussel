@@ -1349,7 +1349,7 @@
      ativar esta opção, porque a maioria dos que phpMussel irá olha por (no
      contexto desta opção) são duplicações de proteções que já estão fornecida.
    "block_control_characters"
-   - Bloquear todos os arquivos que contenham quaisquer controle caracteres
+   - Bloquear todos os arquivos que contenham quaisquer caracteres de controle
      (exceto linha quebras) - [\x00-\x08\x0b\x0c\x0e\x1f\x7f]? Se você está
      -APENAS- carregando simple texto, então você pode ativar essa opção para
      fornecer alguma adicional proteção para o seu sistema. Mas, se você
@@ -1848,5 +1848,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 12 Dezembro 2015 (2015.12.12).
+Última Atualização: 18 Dezembro 2015 (2015.12.18).
 EOF

@@ -738,7 +738,7 @@ Caméléon Attaque Détection: False = Désactivé; True = Activé.
 - Vérifier de fichiers pour générales commandes comme `eval()`, `exec()` et `include()`? False = Non (pas vérifier) [Défaut]; True = Oui (vérifier). Définir à `false` si vous avez l'intention à téléchargez de la suivant à votre système ou CMS via votre navigateur: PHP, JavaScript, HTML, python, perl fichiers, etc. Définir à `true` si vous n'avez pas supplémentaire protections pour votre système et n'ont pas l'intention de téléchargement de ces fichiers. Si vous utilisez supplémentaire sécurité en conjonction avec phpMussel comme ZB Block, il n'est pas nécessaire d'activer cette option, parce la plupart de que phpMussel va chercher pour (dans le contexte de cette option) sont duplications de protections qui sont déjà fournis.
 
 "block_control_characters"
-- Bloquer tous les fichiers contenant des contrôle caractères (autre que les sauts de ligne)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Si vous êtes _**SEULEMENT**_ télécharger de brut texte fichiers, puis vous pouvez activer cette option à fournir une supplémentaire protection à votre système. Mais, si vous télécharger quelque chose plus que brut texte, l'activation de cette peut créer faux positifs. False = Ne pas bloquer [Défaut]; True = Bloquer.
+- Bloquer tous les fichiers contenant les caractères de contrôle (autre que les sauts de ligne)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Si vous êtes _**SEULEMENT**_ télécharger de brut texte fichiers, puis vous pouvez activer cette option à fournir une supplémentaire protection à votre système. Mais, si vous télécharger quelque chose plus que brut texte, l'activation de cette peut créer faux positifs. False = Ne pas bloquer [Défaut]; True = Bloquer.
 
 "corrupted_exe"
 - Corrompus fichiers et des erreurs d'analyse. False = Ignorer; True = Bloquer [Défaut]. Détecter et bloquer les potentiellement corrompus PE (Portable Executable) fichiers? Souvent (mais pas toujours), lorsque certains aspects d'un PE fichier sont corrompus ou ne peut pas être analysée correctement, il peut être le signe d'une virale infection. Les processus utilisés par la plupart des anti-virus programmes pour détecter les virus dans PE fichiers requérir l'analyse de ces fichiers par certaines méthodes, de ce que, si le programmeur d'un virus est conscient de, seront spécifiquement tenter d'empêcher, en vue de permettre leur virus n'être pas détectée.
@@ -992,4 +992,4 @@ Cette information a été réactualisé le 12 Décembre 2015 et est courant pour
 ---
 
 
-Dernière Réactualisé: 12 Décembre 2015 (2015.12.12).
+Dernière Réactualisé: 18 Décembre 2015 (2015.12.18).

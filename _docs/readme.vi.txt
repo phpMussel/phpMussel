@@ -1608,54 +1608,57 @@
    careful to test new signatures for false-positives beforehand if you intend
    to share them or use them in a live environment.
 
- = SIGNATURE BREAKDOWN =
+ = GIẢI THÍCH CHỮ KÝ =
    The following is a breakdown of the types of signatures used by phpMussel:
-   - "Normalised ASCII Signatures" (ascii_*). Checked against the contents of
-      every non-whitelisted file targeted for scanning.
-   - "Complex Extended Signatures" (coex_*). Mixed signature type matching.
-   - "ELF Signatures" (elf_*). Checked against the contents of every
-      non-whitelisted file targeted for scanning and matched to the ELF format.
-   - "Portable Executable Signatures" (exe_*). Checked against the contents of
-      every non-whitelisted targeted for scanning and matched to the PE format.
-   - "Filename Signatures" (filenames_*). Checked against the filenames of
-      files targeted for scanning.
-   - "General Signatures" (general_*). Checked against the contents of every
-      non-whitelisted file targeted for scanning.
-   - "Graphics Signatures" (graphics_*). Checked against the contents of every
-      non-whitelisted file targeted for scanning and matched to a known
-      graphical file format.
+   - "Chữ Ký ASCII Bình Thường" (ascii_*). Kiểm tra đối với các nội dung của
+      mỗi tập tin không thuộc danh sách trắng và dự định để quét.
+   - "Chữ Ký Kéo Dài Phức Tạp" (coex_*). Chữ ký của hỗn hợp kiểu.
+   - "Chữ Ký ELF" (elf_*). Kiểm tra đối với các nội dung của mỗi tập tin không
+      thuộc danh sách trắng và dự định để quét và xác nhận là tập tin ELF.
+   - "Chữ Ký PE" (exe_*). Kiểm tra đối với các nội dung của mỗi tập tin không
+      thuộc danh sách trắng và dự định để quét và xác nhận là tập tin PE.
+   - "Chữ Ký Tên Tài Liệu" (filenames_*). Kiểm tra đối với các tên tài liệu của
+      mỗi tập tin dự định để quét.
+   - "Chữ Ký Chung" (general_*). Kiểm tra đối với các nội dung của mỗi tập tin
+      không thuộc danh sách trắng và dự định để quét.
+   - "Chữ Ký Đồ Họa" (graphics_*). Kiểm tra đối với các nội dung của mỗi tập
+      tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin
+      công nhận đồ họa.
    - "General Commands" (hex_general_commands.csv). Checked against the
       contents of every non-whitelisted file targeted for scanning.
-   - "Normalised HTML Signatures" (html_*). Checked against the contents of
-      every non-whitelisted HTML file targeted for scanning.
-   - "Mach-O Signatures" (macho_*). Checked against the contents of every
-      non-whitelisted file targeted for scanning and matched to the Mach-O
-      format.
-   - "Email Signatures" (mail_*). Checked against the $body variable parsed to
-      the phpMussel_mail() function, which is intended to be the body of email
-      messages or similar entities (potentially forum posts and etcetera).
-   - "MD5 Signatures" (md5_*). Checked against the MD5 hash of the contents and
-      the filesize of every non-whitelisted file targeted for scanning.
-   - "Archive Metadata Signatures" (metadata_*). Checked against the CRC32 hash
+   - "Chữ Ký HTML Bình Thường" (html_*). Kiểm tra đối với các nội dung của mỗi
+      tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là
+      tập tin HTML.
+   - "Chữ Ký Mach-O" (macho_*). Kiểm tra đối với các nội dung của mỗi tập tin
+      không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin
+      Mach-O.
+   - "Chữ Ký Email" (mail_*). Kiểm tra đối với các biến số $body phân tích cú
+      pháp để các chức năng phpMussel_mail() (dành cho thông điệp email và
+      những thứ tương tự).
+   - "Chữ Ký Dựa MD5" (md5_*). Kiểm tra đối với các MD5 hash của nội dung và
+      các kích thước tập tin của mỗi tập tin không thuộc danh sách trắng và
+      dự định để quét.
+   - "Chữ Ký Siêu Dữ Liệu Kho Lưu Trữ" (metadata_*). Checked against the CRC32 hash
       and filesize of the initial file contained inside of any non-whitelisted
       archive targeted for scanning.
-   - "OLE Signatures" (ole_*). Checked against the contents of every
-      non-whitelisted OLE object targeted for scanning.
-   - "PDF Signatures" (pdf_*). Checked against the contents of every
-      non-whitelisted PDF file targeted for scanning.
-   - "Portable Executable Sectional Signatures" (pe_*). Checked against the MD5
-      hash and the size of each PE section of every non-whitelisted file
-      targeted for scanning and matched to the PE format.
-   - "Portable Executable Extended Signatures" (pex_*). Checked against the MD5
+   - "Chữ Ký OLE" (ole_*). Kiểm tra đối với các nội dung của mỗi OLE không
+      thuộc danh sách trắng và dự định để quét.
+   - "Chữ Ký PDF" (pdf_*). Kiểm tra đối với các nội dung của mỗi tập tin không
+      thuộc danh sách trắng và dự định để quét và xác nhận là tập tin PDF.
+   - "Chữ Ký Phần PE" (pe_*). Kiểm tra đối với các MD5 hash và các kích thước
+      của mỗi phần của mỗi tập tin không thuộc danh sách trắng và dự định
+      để quét và xác nhận là tập tin PE.
+   - "Chữ Ký Kéo Dài PE" (pex_*). Checked against the MD5
       hash and the size of variables within every non-whitelisted file targeted
       for scanning and matched to the PE format.
-   - "SWF Signatures" (swf_*). Checked against the contents of every
-      non-whitelisted Shockwave file targeted for scanning.
-   - "Whitelist Signatures" (whitelist_*). Checked against the MD5 hash of the
+   - "Chữ Ký Shockwave" (swf_*). Kiểm tra đối với các nội dung của mỗi tập tin
+      không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin
+      Shockwave.
+   - "Chữ Ký Danh Sách Trắng" (whitelist_*). Checked against the MD5 hash of the
       contents and the filesize of every file targeted for scanning. Matched
       files will be immune to being matched by the type of signature mentioned
       in their whitelist entry.
-   - "XML/XDP Signatures" (xmlxdp_*). Checked against any XML/XDP chunks
+   - "Chữ Ký XML/XDP" (xmlxdp_*). Checked against any XML/XDP chunks
       found within any non-whitelisted files targeted for scanning.
      (Note that any of these signatures may be easily disabled via
       "phpmussel.ini").
@@ -1751,5 +1754,5 @@
                                      ~ ~ ~
 
 
-Lần cuối cập nhật: 12 Tháng Mười Hai 2015 (2015.12.12).
+Lần cuối cập nhật: 21 Tháng Mười Hai 2015 (2015.12.21).
 EOF

@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel Spanish/Español Language Data (6th November 2015).
+ This file: phpMussel Spanish/Español language data (18th December 2015).
  <%phpMussel%/vault/lang/lang.es.inc>
 
 */
@@ -26,7 +26,7 @@ $MusselConfig['lang']['cli_commands']=" q\n - Dejar CLI.\n - Alias: quit, exit.\
 $MusselConfig['lang']['cli_failed_to_complete']='No se pudo completar el proceso de escaneo';
 $MusselConfig['lang']['cli_is_not_a']=' no es un archivo o directorio.';
 $MusselConfig['lang']['cli_ln2']=" Gracias por usar phpMussel, un PHP script diseñado para detectar troyanos,\n virus, malware y otras amenazas en los archivos subidos en el sistema donde el\n script está adjunto, basado en las firmas de ClamAV y otros.\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
-$MusselConfig['lang']['cli_ln3']=" Corrientemente phpMussel en ejecución en modo CLI (Comandos línea interfaz).\n\n Para analizar un archivo o directorio, escribir 'scan', seguido por el nombre\n del archivo o directorio que usted desea phpMussel para escanear y pulse Enter;\n Escribir 'c' y pulse Enter para obtener una lista de CLI modo comandos;\n Escribir 'q' y pulse Enter para salir:";
+$MusselConfig['lang']['cli_ln3']=" Corrientemente phpMussel en ejecución en modo CLI (comandos línea interfaz).\n\n Para analizar un archivo o directorio, escribir 'scan', seguido por el nombre\n del archivo o directorio que usted desea phpMussel para escanear y pulse Enter;\n Escribir 'c' y pulse Enter para obtener una lista de CLI modo comandos;\n Escribir 'q' y pulse Enter para salir:";
 $MusselConfig['lang']['cli_pe1']='No es un válido PE archivo!';
 $MusselConfig['lang']['cli_pe2']='PE Secciones:';
 $MusselConfig['lang']['cli_update_restart']=" Reinicio phpMussel puede ser requerido antes de las actualizaciones se hacen\n evidentes.";
@@ -38,7 +38,7 @@ $MusselConfig['lang']['denied']='Carga Negado!';
 $MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Upload verweigert! Upload Geweigerd! Caricamento Negato! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
 $MusselConfig['lang']['denied_reason']='Intento de subida ha sido bloqueada por las razones que se indican a continuación / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Detectado {vn}';
-$MusselConfig['lang']['detected_control_characters']='Detectado Control Caracteres';
+$MusselConfig['lang']['detected_control_characters']='Caracteres de control detectados';
 $MusselConfig['lang']['encrypted_archive']='Detectado archivo encriptado; Archivos encriptados no permitidos';
 $MusselConfig['lang']['failed_to_access']='No se pudo acceso ';
 $MusselConfig['lang']['file']='Archivo';
@@ -70,8 +70,8 @@ $MusselConfig['lang']['scan_command_injection']='Comandos inyección intento det
 $MusselConfig['lang']['scan_complete']='Completo';
 $MusselConfig['lang']['scan_extensions_missing']='Fracasado (desaparecido requeridos extensiones)!';
 $MusselConfig['lang']['scan_filename_manipulation_detected']='Manipulación del fichero nombre detectado';
-$MusselConfig['lang']['scan_map_corrupted']='Firma Mapa corrompido';
-$MusselConfig['lang']['scan_map_missing']='Firma Mapa desaparecido';
+$MusselConfig['lang']['scan_map_corrupted']='Firma mapa corrompido';
+$MusselConfig['lang']['scan_map_missing']='Firma mapa desaparecido';
 $MusselConfig['lang']['scan_missing_filename']='Nombre del archivo está ausente';
 $MusselConfig['lang']['scan_not_archive']='Fracasado (vacío o no es un archivo)!';
 $MusselConfig['lang']['scan_no_problems_found']='No problemas encontrado.';
