@@ -590,7 +590,7 @@
  /_testfiles/graphics_standard_testfile.gif (Test file, Incluso)
     Test file per test di phpMussel grafica firme.
     ~
- /_testfiles/html_standard_testfile.html(Test file, Incluso)
+ /_testfiles/html_standard_testfile.html (Test file, Incluso)
     Test file per test di phpMussel normalizzati HTML firme.
     ~
  /_testfiles/md5_testfile.txt (Test file, Incluso)

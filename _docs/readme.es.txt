@@ -583,7 +583,7 @@
  /_testfiles/graphics_standard_testfile.gif (Prueba archivo, Incluido)
     Prueba archivo para probando phpMussel gráficas firmas.
     ~
- /_testfiles/html_standard_testfile.html(Prueba archivo, Incluido)
+ /_testfiles/html_standard_testfile.html (Prueba archivo, Incluido)
     Prueba archivo para probando phpMussel normalizados HTML firmas.
     ~
  /_testfiles/md5_testfile.txt (Prueba archivo, Incluido)

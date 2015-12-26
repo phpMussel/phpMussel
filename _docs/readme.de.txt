@@ -546,7 +546,7 @@
  /_testfiles/graphics_standard_testfile.gif (Testdatei, enthalten)
     Testdatei zur Überprüfung der Grafik-Signaturerkennung.
     ~
- /_testfiles/html_standard_testfile.html(Testdatei, enthalten)
+ /_testfiles/html_standard_testfile.html (Testdatei, enthalten)
     Testdatei zur Überprüfung der normierten HTML-Signaturerkennung.
     ~
  /_testfiles/md5_testfile.txt (Testdatei, enthalten)

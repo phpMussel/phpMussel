@@ -577,7 +577,7 @@
  /_testfiles/graphics_standard_testfile.gif (Test file, Incluído)
     Teste arquivo para testar phpMussel gráficas assinaturas.
     ~
- /_testfiles/html_standard_testfile.html(Test file, Incluído)
+ /_testfiles/html_standard_testfile.html (Test file, Incluído)
     Teste arquivo para testar phpMussel normalizada HTML assinaturas.
     ~
  /_testfiles/md5_testfile.txt (Test file, Incluído)

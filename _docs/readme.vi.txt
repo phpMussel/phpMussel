@@ -553,7 +553,7 @@
  /_testfiles/graphics_standard_testfile.gif (Hồ sơ xét nghiệm, Bao gồm)
     Kiểm tra tập tin cho xét nghiệm phpMussel chử ký đồ họa.
     ~
- /_testfiles/html_standard_testfile.html(Hồ sơ xét nghiệm, Bao gồm)
+ /_testfiles/html_standard_testfile.html (Hồ sơ xét nghiệm, Bao gồm)
     Kiểm tra tập tin cho xét nghiệm phpMussel chử ký HTML bình thường.
     ~
  /_testfiles/md5_testfile.txt (Hồ sơ xét nghiệm, Bao gồm)

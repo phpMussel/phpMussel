@@ -585,7 +585,7 @@
  /_testfiles/graphics_standard_testfile.gif (Testbestand, Opgenomen)
     Testbestand voor het testen phpMussel grafische handtekeningen.
     ~
- /_testfiles/html_standard_testfile.html(Testbestand, Opgenomen)
+ /_testfiles/html_standard_testfile.html (Testbestand, Opgenomen)
     Testbestand voor het testen phpMussel genormaliseerde HTML handtekeningen.
     ~
  /_testfiles/md5_testfile.txt (Testbestand, Opgenomen)

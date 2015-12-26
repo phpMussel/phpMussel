@@ -588,7 +588,7 @@
  /_testfiles/graphics_standard_testfile.gif (Data test, Diikutkan)
     File test untuk mentest tanda tangan grafis phpMussel.
     ~
- /_testfiles/html_standard_testfile.html(Data test, Diikutkan)
+ /_testfiles/html_standard_testfile.html (Data test, Diikutkan)
     File test untuk mentest tanda tangan HTML dinormalisasi phpMussel.
     ~
  /_testfiles/md5_testfile.txt (Data test, Diikutkan)
