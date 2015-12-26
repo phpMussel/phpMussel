@@ -577,7 +577,7 @@
  /_testfiles/graphics_standard_testfile.gif (Test file, Incluído)
     Teste arquivo para testar phpMussel gráficas assinaturas.
     ~
- /_testfiles/html_standard_testfile.txt (Test file, Incluído)
+ /_testfiles/html_standard_testfile.html(Test file, Incluído)
     Teste arquivo para testar phpMussel normalizada HTML assinaturas.
     ~
  /_testfiles/md5_testfile.txt (Test file, Incluído)
@@ -1781,7 +1781,7 @@
  anti-vírus software ou phpMussel.
 
  Esta informação foi atualizada dia 12 Dezembro 2015 e é corrente para todas
- phpMussel lançamentos das duas mais recentes menores versões (v0.7-v0.9.0) no
+ phpMussel lançamentos das duas mais recentes menores versões (v0.8-v0.9.0) no
  momento de escrever este.
 
  Ad-Aware                Não apresentou problemas
@@ -1848,5 +1848,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 18 Dezembro 2015 (2015.12.18).
+Última Atualização: 27 Dezembro 2015 (2015.12.27).
 EOF

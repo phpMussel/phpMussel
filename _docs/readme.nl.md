@@ -291,7 +291,7 @@ Bestand                                    | Beschrijving
 /_testfiles/exe_standard_testfile.exe      | Testbestand voor het testen phpMussel PE handtekeningen.
 /_testfiles/general_standard_testfile.txt  | Testbestand voor het testen phpMussel algemene handtekeningen.
 /_testfiles/graphics_standard_testfile.gif | Testbestand voor het testen phpMussel grafische handtekeningen.
-/_testfiles/html_standard_testfile.txt     | Testbestand voor het testen phpMussel genormaliseerde HTML handtekeningen.
+/_testfiles/html_standard_testfile.html    | Testbestand voor het testen phpMussel genormaliseerde HTML handtekeningen.
 /_testfiles/md5_testfile.txt               | Testbestand voor het testen phpMussel MD5 handtekeningen.
 /_testfiles/metadata_testfile.tar          | Testbestand voor het testen phpMussel metadata handtekeningen en voor het testen van TAR bestandsondersteuning op uw systeem.
 /_testfiles/metadata_testfile.txt.gz       | Testbestand voor het testen phpMussel metadata handtekeningen en voor het testen van GZ bestandsondersteuning op uw systeem.
@@ -923,7 +923,7 @@ Het volgende is een overzicht van de soorten handtekeningen gebruikt door phpMus
 
 Voor het grootste deel, phpMussel is algemeen compatibel met de meeste andere anti-virus software. Echter, conflictions geweest beschreven door een aantal gebruikers in het verleden. Deze informatie hieronder is afkomstig van VirusTotal.com, het beschrijven van een aantal fout-positieven gemeld door anti-virus programma's tegen phpMussel. Hoewel deze informatie is geen absolute garantie van wel of niet u zult compatibiliteitsproblemen ondervindt tussen phpMussel en uw anti-virus software, als uw anti-virus software wordt gemarkeerd tegen phpMussel, moet u ofwel overwegen uit te schakelen voorafgaand aan het werken met phpMussel of moeten overwegen alternatieve opties om ofwel uw anti-virus software of phpMussel.
 
-Dit informatie werd laatst bijgewerkt 12 December 2015 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v0.7-v0.9.0) op het moment van schrijven dit.
+Dit informatie werd laatst bijgewerkt 12 December 2015 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v0.8-v0.9.0) op het moment van schrijven dit.
 
 | Scanner              |  Resultaten                          |
 |----------------------|--------------------------------------|
@@ -992,4 +992,4 @@ Dit informatie werd laatst bijgewerkt 12 December 2015 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 12 December 2015 (2015.12.12).
+Laatste Bijgewerkt: 27 December 2015 (2015.12.27).

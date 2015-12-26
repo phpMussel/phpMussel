@@ -291,7 +291,7 @@ File                                       | Description
 /_testfiles/exe_standard_testfile.exe      | Testfile for testing phpMussel PE signatures.
 /_testfiles/general_standard_testfile.txt  | Testfile for testing phpMussel general signatures.
 /_testfiles/graphics_standard_testfile.gif | Testfile for testing phpMussel graphics signatures.
-/_testfiles/html_standard_testfile.txt     | Testfile for testing phpMussel normalised HTML signatures.
+/_testfiles/html_standard_testfile.html    | Testfile for testing phpMussel normalised HTML signatures.
 /_testfiles/md5_testfile.txt               | Testfile for testing phpMussel MD5 signatures.
 /_testfiles/metadata_testfile.tar          | Testfile for testing phpMussel metadata signatures and for testing TAR file support on your system.
 /_testfiles/metadata_testfile.txt.gz       | Testfile for testing phpMussel metadata signatures and for testing GZ file support on your system.
@@ -923,7 +923,7 @@ The following is a breakdown of the types of signatures used by phpMussel:
 
 For the most part, phpMussel should be fairly compatible with most other virus scanning software. However, conflictions have been reported by a number of users in the past. This information below is from VirusTotal.com, and it describes a number of false-positives reported by various anti-virus programs against phpMussel. Although this information isn't an absolute guarantee of whether or not you will encounter compatibility problems between phpMussel and your anti-virus software, if your anti-virus software is noted as flagging against phpMussel, you should either consider disabling it prior to working with phpMussel or should consider alternative options to either your anti-virus software or phpMussel.
 
-This information was last updated 12th December 2015 and is current for all phpMussel releases of the two most recent minor versions (v0.7-v0.9.0) at the time of writing this.
+This information was last updated 12th December 2015 and is current for all phpMussel releases of the two most recent minor versions (v0.8-v0.9.0) at the time of writing this.
 
 | Scanner              |  Results                             |
 |----------------------|--------------------------------------|
@@ -992,4 +992,4 @@ This information was last updated 12th December 2015 and is current for all phpM
 ---
 
 
-Last Updated: 12th October 2015 (2015.12.12).
+Last Updated: 27th December 2015 (2015.12.27).

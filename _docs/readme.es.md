@@ -291,7 +291,7 @@ Archivo                                    | Descripción
 /_testfiles/exe_standard_testfile.exe      | Prueba archivo para probando phpMussel PE firmas.
 /_testfiles/general_standard_testfile.txt  | Prueba archivo para probando phpMussel generales firmas.
 /_testfiles/graphics_standard_testfile.gif | Prueba archivo para probando phpMussel gráficas firmas.
-/_testfiles/html_standard_testfile.txt     | Prueba archivo para probando phpMussel normalizados HTML firmas.
+/_testfiles/html_standard_testfile.html    | Prueba archivo para probando phpMussel normalizados HTML firmas.
 /_testfiles/md5_testfile.txt               | Prueba archivo para probando phpMussel MD5 firmas.
 /_testfiles/metadata_testfile.tar          | Prueba archivo para probando phpMussel metadatos firmas y para probando TAR archivo apoyo en su sistema.
 /_testfiles/metadata_testfile.txt.gz       | Prueba archivo para probando phpMussel metadatos firmas y para probando GZ archivo apoyo en su sistema.
@@ -922,7 +922,7 @@ El siguiente es el desglose de los tipos de firmas utilizado por phpMussel:
 
 En su mayor parte, phpMussel debe ser bastante compatible con la mayoría de anti-virus software. Aunque, conflictividades han sido reportados por un número de usuarios en el pasado. Esta información de abajo es de VirusTotal.com, y describe un número de falsos positivos reportados por diversos anti-virus programas contra phpMussel. Aunque esta información no es una garantía absoluta de si o no se encontrará con compatibilidad problemas entre phpMussel y su anti-virus software, se su anti-virus software se observa como marcar contra phpMussel, usted debe considerar desactivarlo antes de trabajar con phpMussel o debería considerar opciones alternativas a de su anti-virus software o phpMussel.
 
-Esta información ha sido actualizado 12 Diciembre 2015 y es a hoy para todas las phpMussel versiones de la dos más recientes menores versiones (v0.7-v0.9.0) al momento de escribir esto.
+Esta información ha sido actualizado 12 Diciembre 2015 y es a hoy para todas las phpMussel versiones de la dos más recientes menores versiones (v0.8-v0.9.0) al momento de escribir esto.
 
 | Escáner              |  Resultados                          |
 |----------------------|--------------------------------------|
@@ -991,4 +991,4 @@ Esta información ha sido actualizado 12 Diciembre 2015 y es a hoy para todas la
 ---
 
 
-Última Actualización: 18 Octubre 2015 (2015.12.18).
+Última Actualización: 27 Diciembre 2015 (2015.12.27).

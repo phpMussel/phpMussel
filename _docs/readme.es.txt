@@ -583,7 +583,7 @@
  /_testfiles/graphics_standard_testfile.gif (Prueba archivo, Incluido)
     Prueba archivo para probando phpMussel gráficas firmas.
     ~
- /_testfiles/html_standard_testfile.txt (Prueba archivo, Incluido)
+ /_testfiles/html_standard_testfile.html(Prueba archivo, Incluido)
     Prueba archivo para probando phpMussel normalizados HTML firmas.
     ~
  /_testfiles/md5_testfile.txt (Prueba archivo, Incluido)
@@ -1806,7 +1806,7 @@
 
  Esta información ha sido actualizado 12 Diciembre 2015 y es a hoy para todas
  las phpMussel versiones de la dos más recientes menores versiones
- (v0.7-v0.9.0) al momento de escribir esto.
+ (v0.8-v0.9.0) al momento de escribir esto.
 
  Ad-Aware                No hay conocidos problemas
  AegisLab                No hay conocidos problemas
@@ -1872,5 +1872,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 18 Octubre 2015 (2015.12.18).
+Última Actualización: 27 Diciembre 2015 (2015.12.27).
 EOF

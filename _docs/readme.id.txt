@@ -588,7 +588,7 @@
  /_testfiles/graphics_standard_testfile.gif (Data test, Diikutkan)
     File test untuk mentest tanda tangan grafis phpMussel.
     ~
- /_testfiles/html_standard_testfile.txt (Data test, Diikutkan)
+ /_testfiles/html_standard_testfile.html(Data test, Diikutkan)
     File test untuk mentest tanda tangan HTML dinormalisasi phpMussel.
     ~
  /_testfiles/md5_testfile.txt (Data test, Diikutkan)
@@ -1776,7 +1776,7 @@
  software anti virus atau phpMussel.
 
  Informasi ini diupdate 12 Desember 2015 dan cocok untuk semua rilis phpMussel
- dari dua versi minor terbaru versi (v0.7-v0.9.0) pada waktu saya menuliskan
+ dari dua versi minor terbaru versi (v0.8-v0.9.0) pada waktu saya menuliskan
  ini.
 
  Ad-Aware                Tidak masalah
@@ -1843,5 +1843,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 12 Desember 2015 (2015.12.12).
+Terakhir Diperbarui: 27 Desember 2015 (2015.12.27).
 EOF

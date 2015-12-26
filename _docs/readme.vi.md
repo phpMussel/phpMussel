@@ -291,7 +291,7 @@ Hồ sơ                                      | Chi tiết
 /_testfiles/exe_standard_testfile.exe      | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký PE.
 /_testfiles/general_standard_testfile.txt  | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký chung.
 /_testfiles/graphics_standard_testfile.gif | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký đồ họa.
-/_testfiles/html_standard_testfile.txt     | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký HTML bình thường.
+/_testfiles/html_standard_testfile.html    | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký HTML bình thường.
 /_testfiles/md5_testfile.txt               | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký dựa MD5.
 /_testfiles/metadata_testfile.tar          | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký siêu dữ liệu kho lưu trữ và cho xét nghiệm hỗ trợ tập tin TAR trên hệ thống của bạn.
 /_testfiles/metadata_testfile.txt.gz       | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký siêu dữ liệu kho lưu trữ và cho xét nghiệm hỗ trợ tập tin GZ trên hệ thống của bạn.
@@ -923,7 +923,7 @@ The following is a breakdown of the types of signatures used by phpMussel:
 
 Cho hầu hết các phần, phpMussel sẽ tương hợp với hầu hết các phần mềm quét virus khác. Nhưng mà, có một số người sử dụng trong quá khứ đã báo cáo một số vấn đề. Thông tin dưới đây là từ VirusTotal.com, và nó miêu tả một số giả tích cực báo cáo bởi các chương trình chống virus khác nhau chống phpMussel. Mặc dù thông tin này không đảm bảo nếu bạn gặp phải vấn đề tương hợp giữa phpMussel và phần mềm chống virus của bạn, nếu phần mềm chống virus của bạn được ghi nhận là cách gắn cờ chống lại phpMussel, bạn nên tắt nó trước khi sử dụng phpMussel hoặc nên xét các lựa chọn khác cho một trong hai phần mềm chống virus của bạn hoặc phpMussel.
 
-Thông tin này được cập nhật lần cứơi vào ngày 12 Tháng Mười Hai 2015 và có thể áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.7-v0.9.0) vào thời gian cái này được viết.
+Thông tin này được cập nhật lần cứơi vào ngày 12 Tháng Mười Hai 2015 và có thể áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.8-v0.9.0) vào thời gian cái này được viết.
 
 | Chương trình quét    |  Kết quả                             |
 |----------------------|--------------------------------------|
@@ -992,4 +992,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 12 Tháng Mười
 ---
 
 
-Lần cuối cập nhật: 21 Tháng Mười Hai 2015 (2015.12.21).
+Lần cuối cập nhật: 27 Tháng Mười Hai 2015 (2015.12.27).

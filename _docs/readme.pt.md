@@ -291,7 +291,7 @@ Arquivo                                    | Descrição
 /_testfiles/exe_standard_testfile.exe      | Teste arquivo para testar phpMussel PE assinaturas.
 /_testfiles/general_standard_testfile.txt  | Teste arquivo para testar phpMussel gerais assinaturas.
 /_testfiles/graphics_standard_testfile.gif | Teste arquivo para testar phpMussel gráficas assinaturas.
-/_testfiles/html_standard_testfile.txt     | Teste arquivo para testar phpMussel normalizada HTML assinaturas.
+/_testfiles/html_standard_testfile.html    | Teste arquivo para testar phpMussel normalizada HTML assinaturas.
 /_testfiles/md5_testfile.txt               | Teste arquivo para testar phpMussel MD5 assinaturas.
 /_testfiles/metadata_testfile.tar          | Teste arquivo por testando phpMussel metadados assinaturas e por testando TAR arquivo suport no seu sistema.
 /_testfiles/metadata_testfile.txt.gz       | Teste arquivo por testando phpMussel metadados assinaturas e por testando GZ arquivo suport no seu sistema.
@@ -923,7 +923,7 @@ A seguir estão os diferentes tipos de assinaturas utilizadas por phpMussel:
 
 Em geral, phpMussel deve ser bastante compatível com a maioria dos outros vírus detecção softwares. Embora, conflitos foram relatadas por um número de utilizadores no passado. Esta informação abaixo é de VirusTotal.com, e descreve um número de falso-positivos relatados por vários anti-vírus programas contra phpMussel. Embora esta informação não é um absoluta garantia de haver ou não você vai encontrar problemas de compatibilidade entre phpMussel e seu anti-vírus software, se o seu anti-vírus software é conhecido como sinalização contra phpMussel, você deve considerar desativá-lo antes de trabalhar com phpMussel ou deve considerar alternativas opções para o seu anti-vírus software ou phpMussel.
 
-Esta informação foi atualizada dia 12 Dezembro 2015 e é corrente para todas phpMussel lançamentos das duas mais recentes menores versões (v0.7-v0.9.0) no momento de escrever este.
+Esta informação foi atualizada dia 12 Dezembro 2015 e é corrente para todas phpMussel lançamentos das duas mais recentes menores versões (v0.8-v0.9.0) no momento de escrever este.
 
 | Analisador           |  Resultados                          |
 |----------------------|--------------------------------------|
@@ -992,4 +992,4 @@ Esta informação foi atualizada dia 12 Dezembro 2015 e é corrente para todas p
 ---
 
 
-Última Atualização: 18 Dezembro 2015 (2015.12.18).
+Última Atualização: 27 Dezembro 2015 (2015.12.27).

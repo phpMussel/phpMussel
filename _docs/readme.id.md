@@ -291,7 +291,7 @@ Data                                       | Deskripsi
 /_testfiles/exe_standard_testfile.exe      | File test untuk mentest tanda tangan PE phpMussel.
 /_testfiles/general_standard_testfile.txt  | File test untuk mentest tanda tangan umum phpMussel.
 /_testfiles/graphics_standard_testfile.gif | File test untuk mentest tanda tangan grafis phpMussel.
-/_testfiles/html_standard_testfile.txt     | File test untuk mentest tanda tangan HTML dinormalisasi phpMussel.
+/_testfiles/html_standard_testfile.html    | File test untuk mentest tanda tangan HTML dinormalisasi phpMussel.
 /_testfiles/md5_testfile.txt               | File test untuk mentest tanda tangan MD5 phpMussel.
 /_testfiles/metadata_testfile.tar          | File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest file support TAR pada sistem Anda.
 /_testfiles/metadata_testfile.txt.gz       | File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest file support GZ pada sistem Anda.
@@ -923,7 +923,7 @@ Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
 
 Untuk banyak bagian, phpMussel seharusnya kompatibel dengan software pemindaian virus. Bagaimanapun konflik telah dilaporkan oleh penggunak di masa lalu. Informasi di bawah adalah dari virustotal.com, dan menguraikan sejumlah angka positif yang salah yang dilaporkan oleh bermacam-macam program anti-virus pada phpMussel. Walaupun informasi ini tidak jaminan absolut dari apa dan atau tidak mengalami masalah kompatibilitas antara phpMussel dan perangkat anti-virus Anda, jika perangkat lunak anti-virus Anda tercatat berlawanan dengan phpMussel, Anda seharusnya mempertimbangkan menonaktifkannya bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke software anti virus atau phpMussel.
 
-Informasi ini diupdate 12 Desember 2015 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v0.7-v0.9.0) pada waktu saya menuliskan ini.
+Informasi ini diupdate 12 Desember 2015 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v0.8-v0.9.0) pada waktu saya menuliskan ini.
 
 | Scanner              |  Hasil                               |
 |----------------------|--------------------------------------|
@@ -992,4 +992,4 @@ Informasi ini diupdate 12 Desember 2015 dan cocok untuk semua rilis phpMussel da
 ---
 
 
-Terakhir Diperbarui: 12 Desember 2015 (2015.12.12).
+Terakhir Diperbarui: 27 Desember 2015 (2015.12.27).

@@ -293,7 +293,7 @@ greylist_show
 /_testfiles/exe_standard_testfile.exe      | 測試文件以測試phpMussel移植可執行｢PE｣簽名。
 /_testfiles/general_standard_testfile.txt  | 測試文件以測試phpMussel通用簽名。
 /_testfiles/graphics_standard_testfile.gif | 測試文件以測試phpMussel圖像簽名。
-/_testfiles/html_standard_testfile.txt     | 測試文件以測試phpMussel標準化HTML簽名。
+/_testfiles/html_standard_testfile.html    | 測試文件以測試phpMussel標準化HTML簽名。
 /_testfiles/md5_testfile.txt               | 測試文件以測試phpMussel MD5簽名。
 /_testfiles/metadata_testfile.tar          | 測試文件以測試phpMussel元數據簽名和以測試TAR文件支持在您的系統。
 /_testfiles/metadata_testfile.txt.gz       | 測試文件以測試phpMussel元數據簽名和以測試GZ文件支持在您的系統。
@@ -926,7 +926,7 @@ URL掃描儀API配置。
 
 在大多數情況下，phpMussel應該相當兼容性與大多數殺毒軟件。然，衝突已經報導由多個用戶以往。下面這些信息是從VirusTotal.com，和它描述了一個數的假陽性報告的各種殺毒軟件針對phpMussel。雖說這個信息是不絕對保證的如果您會遇到兼容性問題間phpMussel和您的殺毒軟件，如果您的殺毒軟件注意衝突針對phpMussel，您應該考慮關閉它之前使用phpMussel或您應該考慮替代選項從您的殺毒軟件或從phpMussel。
 
-這個信息最後更新2015年12月12日和是準確為至少phpMussel的兩個最近次要版本（v0.7-v0.9.0）在這個現在時候的寫作。
+這個信息最後更新2015年12月12日和是準確為至少phpMussel的兩個最近次要版本（v0.8-v0.9.0）在這個現在時候的寫作。
 
 | 掃描器               |  結果                                 |
 |----------------------|--------------------------------------|
@@ -995,6 +995,6 @@ URL掃描儀API配置。
 ---
 
 
-最後更新：2015年12月18日。
+最後更新：2015年12月27日。
 
 翻譯聲明：本文檔翻譯基於英文原始文檔，但由於本人水平有限，且非PHP程序員，對其中某些字詞的翻譯可能不是很準確，故如果出現錯誤，請指出並聯繫原作者予以更正，另外，本翻譯僅簡體中文，與繁體中文無關亦未參考繁體中文的譯文！！

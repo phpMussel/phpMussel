@@ -585,7 +585,7 @@
  /_testfiles/graphics_standard_testfile.gif (Testbestand, Opgenomen)
     Testbestand voor het testen phpMussel grafische handtekeningen.
     ~
- /_testfiles/html_standard_testfile.txt (Testbestand, Opgenomen)
+ /_testfiles/html_standard_testfile.html(Testbestand, Opgenomen)
     Testbestand voor het testen phpMussel genormaliseerde HTML handtekeningen.
     ~
  /_testfiles/md5_testfile.txt (Testbestand, Opgenomen)
@@ -1815,7 +1815,7 @@
 
  Dit informatie werd laatst bijgewerkt 12 December 2015 en is op de hoogte voor
  alle phpMussel publicaties van de twee meest recente mineur versies
- (v0.7-v0.9.0) op het moment van schrijven dit.
+ (v0.8-v0.9.0) op het moment van schrijven dit.
 
  Ad-Aware                Geen bekend problemen
  AegisLab                Geen bekend problemen
@@ -1881,5 +1881,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 12 December 2015 (2015.12.12).
+Laatste Bijgewerkt: 27 December 2015 (2015.12.27).
 EOF

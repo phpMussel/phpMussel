@@ -554,7 +554,7 @@
  /_testfiles/graphics_standard_testfile.gif (Testfile, Included)
     Testfile for testing phpMussel graphics signatures.
     ~
- /_testfiles/html_standard_testfile.txt (Testfile, Included)
+ /_testfiles/html_standard_testfile.html(Testfile, Included)
     Testfile for testing phpMussel normalised HTML signatures.
     ~
  /_testfiles/md5_testfile.txt (Testfile, Included)
@@ -1686,7 +1686,7 @@
  anti-virus software or phpMussel.
 
  This information was last updated 12th December 2015 and is current for all
- phpMussel releases of the two most recent minor versions (v0.7-v0.9.0) at the
+ phpMussel releases of the two most recent minor versions (v0.8-v0.9.0) at the
  time of writing this.
 
  Ad-Aware                No known problems
@@ -1753,5 +1753,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 12th October 2015 (2015.12.12).
+Last Updated: 27th December 2015 (2015.12.27).
 EOF

@@ -553,7 +553,7 @@
  /_testfiles/graphics_standard_testfile.gif (Hồ sơ xét nghiệm, Bao gồm)
     Kiểm tra tập tin cho xét nghiệm phpMussel chử ký đồ họa.
     ~
- /_testfiles/html_standard_testfile.txt (Hồ sơ xét nghiệm, Bao gồm)
+ /_testfiles/html_standard_testfile.html(Hồ sơ xét nghiệm, Bao gồm)
     Kiểm tra tập tin cho xét nghiệm phpMussel chử ký HTML bình thường.
     ~
  /_testfiles/md5_testfile.txt (Hồ sơ xét nghiệm, Bao gồm)
@@ -1687,7 +1687,7 @@
  virus của bạn hoặc phpMussel.
 
  Thông tin này được cập nhật lần cứơi vào ngày 12 Tháng Mười Hai 2015 và có thể
- áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.7-v0.9.0)
+ áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.8-v0.9.0)
  vào thời gian cái này được viết.
 
  Ad-Aware                Không có vấn đề
@@ -1754,5 +1754,5 @@
                                      ~ ~ ~
 
 
-Lần cuối cập nhật: 21 Tháng Mười Hai 2015 (2015.12.21).
+Lần cuối cập nhật: 27 Tháng Mười Hai 2015 (2015.12.27).
 EOF

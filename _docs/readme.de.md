@@ -291,7 +291,7 @@ Datei                                      | Beschreibung
 /_testfiles/exe_standard_testfile.exe      | Testdatei zur Überprüfung der PE-Signaturerkennung.
 /_testfiles/general_standard_testfile.txt  | Testdatei zur Überprüfung der Erkennung der allgemeinen Signaturen.
 /_testfiles/graphics_standard_testfile.gif | Testdatei zur Überprüfung der Grafik-Signaturerkennung.
-/_testfiles/html_standard_testfile.txt     | Testdatei zur Überprüfung der normierten HTML-Signaturerkennung.
+/_testfiles/html_standard_testfile.html    | Testdatei zur Überprüfung der normierten HTML-Signaturerkennung.
 /_testfiles/md5_testfile.txt               | Testdatei zur Überprüfung der MD5-Signaturerkennung.
 /_testfiles/metadata_testfile.tar          | Testdatei zur Überprüfung der Metadata-Signaturerkennung und zur Überprüfung der TAR-Archivunterstützung Ihres Systems.
 /_testfiles/metadata_testfile.txt.gz       | Testdatei zur Überprüfung der Metadata-Signaturerkennung und zur Überprüfung der GZ-Archivunterstützung Ihres Systems.
@@ -921,7 +921,7 @@ Im Folgenden eine Aufschlüsselung der Signaturen, die von phpMussel genutzt wer
 
 In den meisten Fällen sollte phpMussel mit den meisten anderen Antiviren-Softwareprodukten kompatibel sein. Jedoch wurden in der Vergangenheit Konflikte von anderen Nutzern festgestellt. Die folgenden Informationen stammen von VirusTotal.com, welche einige Fehlalarme von verschiedenen Antiviren-Programmen gegen phpMussel beschreiben. Diese Informationen garantieren nicht, ob Kompatibilitätsprobleme zwischen phpMussel und Ihrem eingesetzten Antiviren-Produkt bestehen. Sollte Ihre Antiviren-Software als problematisch aufgelistet sein, sollten Sie diese entweder vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen überlegen.
 
-Diese Informationen wurden zuletzt am 12. Dezember 2015 aktualisiert und gelten für alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen (v0.7-v0.9.0) zu diesem Zeitpunkt.
+Diese Informationen wurden zuletzt am 12. Dezember 2015 aktualisiert und gelten für alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen (v0.8-v0.9.0) zu diesem Zeitpunkt.
 
 | Scanner              |  Ergebnisse                          |
 |----------------------|--------------------------------------|
@@ -990,4 +990,4 @@ Diese Informationen wurden zuletzt am 12. Dezember 2015 aktualisiert und gelten 
 ---
 
 
-Zuletzt aktualisiert: 12. Dezember 2015 (2015.12.12).
+Zuletzt aktualisiert: 27. Dezember 2015 (2015.12.27).

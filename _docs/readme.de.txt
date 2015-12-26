@@ -546,7 +546,7 @@
  /_testfiles/graphics_standard_testfile.gif (Testdatei, enthalten)
     Testdatei zur Überprüfung der Grafik-Signaturerkennung.
     ~
- /_testfiles/html_standard_testfile.txt (Testdatei, enthalten)
+ /_testfiles/html_standard_testfile.html(Testdatei, enthalten)
     Testdatei zur Überprüfung der normierten HTML-Signaturerkennung.
     ~
  /_testfiles/md5_testfile.txt (Testdatei, enthalten)
@@ -1742,7 +1742,7 @@
 
  Diese Informationen wurden zuletzt am 12. Dezember 2015 aktualisiert und
  gelten für alle phpMussel Veröffentlichungen von den beiden letzten
- Nebenversionen (v0.7-v0.9.0) zu diesem Zeitpunkt.
+ Nebenversionen (v0.8-v0.9.0) zu diesem Zeitpunkt.
 
  Ad-Aware                Keine bekannten Probleme
  AegisLab                Keine bekannten Probleme
@@ -1808,5 +1808,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 12. Dezember 2015 (2015.12.12).
+Zuletzt aktualisiert: 27. Dezember 2015 (2015.12.27).
 EOF
