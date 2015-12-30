@@ -640,6 +640,7 @@
     Un ipertesto accesso file (in questo caso, a proteggere di riservati file
     appartenente allo script da l'acceso di non autorizzate origini).
     ~
+ /vault/lang/lang.ar.inc (Script, Incluso); Araba
  /vault/lang/lang.de.inc (Script, Incluso); Tedesco
  /vault/lang/lang.en.inc (Script, Incluso); Inglese
  /vault/lang/lang.es.inc (Script, Incluso); Spagnolo

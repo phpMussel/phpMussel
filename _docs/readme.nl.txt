@@ -637,6 +637,7 @@
     behoren tot het script te beschermen tegen toegang door niet-geautoriseerde
     bronnen).
     ~
+ /vault/lang/lang.ar.inc (Script, Opgenomen); Arabisch
  /vault/lang/lang.de.inc (Script, Opgenomen); Duitse
  /vault/lang/lang.en.inc (Script, Opgenomen); Engels
  /vault/lang/lang.es.inc (Script, Opgenomen); Spaanse

@@ -306,6 +306,7 @@ File                                       | Description
 /vault/cache/.htaccess                     | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/lang/                               | Contains phpMussel language data.
 /vault/lang/.htaccess                      | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
+/vault/lang/lang.ar.inc                    | Arabic language data.
 /vault/lang/lang.de.inc                    | German language data.
 /vault/lang/lang.en.inc                    | English language data.
 /vault/lang/lang.es.inc                    | Spanish language data.

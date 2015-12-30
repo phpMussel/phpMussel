@@ -597,19 +597,20 @@
     Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien
     des Scripts vor einem nicht authorisierten Zugriff).
     ~
- /vault/lang/lang.de.inc (Script, enthalten); DEUTSCH
- /vault/lang/lang.en.inc (Script, enthalten); ENGLISH
- /vault/lang/lang.es.inc (Script, enthalten); ESPAÑOL
- /vault/lang/lang.fr.inc (Script, enthalten); FRANÇAIS
- /vault/lang/lang.id.inc (Script, enthalten); BAHASA INDONESIA
- /vault/lang/lang.it.inc (Script, enthalten); ITALIANO
- /vault/lang/lang.ja.inc (Script, enthalten); 日本語
- /vault/lang/lang.nl.inc (Script, enthalten); NEDERLANDSE
- /vault/lang/lang.pt.inc (Script, enthalten); PORTUGUÊS
- /vault/lang/lang.ru.inc (Script, enthalten); РУССКИЙ
- /vault/lang/lang.vi.inc (Script, enthalten); TIẾNG VIỆT
- /vault/lang/lang.zh.inc (Script, enthalten); 中文（简体）
- /vault/lang/lang.zh-TW.inc (Script, enthalten); 中文（傳統）
+ /vault/lang/lang.ar.inc (Script, enthalten); Arabische
+ /vault/lang/lang.de.inc (Script, enthalten); Deutsche
+ /vault/lang/lang.en.inc (Script, enthalten); Englische
+ /vault/lang/lang.es.inc (Script, enthalten); Spanische
+ /vault/lang/lang.fr.inc (Script, enthalten); Französische
+ /vault/lang/lang.id.inc (Script, enthalten); Indonesische
+ /vault/lang/lang.it.inc (Script, enthalten); Italienische
+ /vault/lang/lang.ja.inc (Script, enthalten); Japanische
+ /vault/lang/lang.nl.inc (Script, enthalten); Niederländische
+ /vault/lang/lang.pt.inc (Script, enthalten); Portugiesische
+ /vault/lang/lang.ru.inc (Script, enthalten); Russische
+ /vault/lang/lang.vi.inc (Script, enthalten); Vietnamesische
+ /vault/lang/lang.zh.inc (Script, enthalten); Chinesische (vereinfacht)
+ /vault/lang/lang.zh-TW.inc (Script, enthalten); Chinesische (traditionell)
     Sprachdateien für phpMussel.
     ~
  /vault/quarantine/ (Verzeichnis)

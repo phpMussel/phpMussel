@@ -603,6 +603,7 @@
     A hypertext access file (in this instance, to protect sensitive files
     belonging to the script from being accessed by non-authorised sources).
     ~
+ /vault/lang/lang.ar.inc (Script, Bao gồm); Tiếng Ả Rập
  /vault/lang/lang.de.inc (Script, Bao gồm); Tiếng Đức
  /vault/lang/lang.en.inc (Script, Bao gồm); Tiếng Anh
  /vault/lang/lang.es.inc (Script, Bao gồm); Tiếng Tây Ban Nha

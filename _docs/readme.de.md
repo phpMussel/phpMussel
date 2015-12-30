@@ -261,29 +261,29 @@ Datei                                      | Beschreibung
 /web.config                                | Eine ASP.NET-Konfigurationsdatei (in diesem Fall zum Schutz des Verzeichnisses `/vault` vor einem nicht authorisierten Zugriff, sofern das Script auf einem auf der ASP.NET-Technologie basierenden Server installiert wurde).
 /_docs/                                    | Verzeichnis für die Dokumentationen (beinhaltet verschiedene Dateien).
 /_docs/change_log.txt                      | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
-/_docs/readme.ar.md                        | arabische Dokumentation.
-/_docs/readme.de.md                        | deutsche Dokumentation.
-/_docs/readme.de.txt                       | deutsche Dokumentation.
-/_docs/readme.en.md                        | englische Dokumentation.
-/_docs/readme.en.txt                       | englische Dokumentation.
-/_docs/readme.es.md                        | spanische Dokumentation.
-/_docs/readme.es.txt                       | spanische Dokumentation.
-/_docs/readme.fr.md                        | französische Dokumentation.
-/_docs/readme.fr.txt                       | französische Dokumentation.
-/_docs/readme.id.md                        | indonesische Dokumentation.
-/_docs/readme.id.txt                       | indonesische Dokumentation.
-/_docs/readme.it.md                        | italienische Dokumentation.
-/_docs/readme.it.txt                       | italienische Dokumentation.
-/_docs/readme.nl.md                        | niederländische Dokumentation.
-/_docs/readme.nl.txt                       | niederländische Dokumentation.
-/_docs/readme.pt.md                        | portugiesische Dokumentation.
-/_docs/readme.pt.txt                       | portugiesische Dokumentation.
-/_docs/readme.ru.md                        | russische Dokumentation.
-/_docs/readme.ru.txt                       | russische Dokumentation.
-/_docs/readme.vi.md                        | vietnamesische Dokumentation.
-/_docs/readme.vi.txt                       | vietnamesische Dokumentation.
-/_docs/readme.zh.md                        | chinesische Dokumentation (vereinfacht).
-/_docs/readme.zh-TW.md                     | chinesische Dokumentation (traditionell).
+/_docs/readme.ar.md                        | Arabische Dokumentation.
+/_docs/readme.de.md                        | Deutsche Dokumentation.
+/_docs/readme.de.txt                       | Deutsche Dokumentation.
+/_docs/readme.en.md                        | Englische Dokumentation.
+/_docs/readme.en.txt                       | Englische Dokumentation.
+/_docs/readme.es.md                        | Spanische Dokumentation.
+/_docs/readme.es.txt                       | Spanische Dokumentation.
+/_docs/readme.fr.md                        | Französische Dokumentation.
+/_docs/readme.fr.txt                       | Französische Dokumentation.
+/_docs/readme.id.md                        | Indonesische Dokumentation.
+/_docs/readme.id.txt                       | Indonesische Dokumentation.
+/_docs/readme.it.md                        | Italienische Dokumentation.
+/_docs/readme.it.txt                       | Italienische Dokumentation.
+/_docs/readme.nl.md                        | Niederländische Dokumentation.
+/_docs/readme.nl.txt                       | Niederländische Dokumentation.
+/_docs/readme.pt.md                        | Portugiesische Dokumentation.
+/_docs/readme.pt.txt                       | Portugiesische Dokumentation.
+/_docs/readme.ru.md                        | Russische Dokumentation.
+/_docs/readme.ru.txt                       | Russische Dokumentation.
+/_docs/readme.vi.md                        | Vietnamesische Dokumentation.
+/_docs/readme.vi.txt                       | Vietnamesische Dokumentation.
+/_docs/readme.zh.md                        | Chinesische Dokumentation (vereinfacht).
+/_docs/readme.zh-TW.md                     | Chinesische Dokumentation (traditionell).
 /_docs/signatures_tally.txt                | Netto-Veränderungs-Anzahl von enthaltenen Signaturen (für die korrekte Funktion des Scripts nicht notwendig).
 /_testfiles/                               | Verzeichnis für Testdateien (beinhaltet verschiedene Dateien). Alle enthaltenen Dateien dienen zur Überprüfung, ob phpMussel auf Ihrem System ordnungsgemäß installiert wurde. Sie müssen dieses Verzeichnis oder die Dateien nicht hochladen, sofern Sie keinen solchen Test durchführen möchten.
 /_testfiles/ascii_standard_testfile.txt    | Testdatei zur Überprüfung der normierten ASCII-Signaturerkennung.
@@ -306,19 +306,20 @@ Datei                                      | Beschreibung
 /vault/cache/.htaccess                     | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/lang/                               | Enthält Sprachdaten für phpMussel.
 /vault/lang/.htaccess                      | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/lang/lang.de.inc                    | deutsche Sprachdateien.
-/vault/lang/lang.en.inc                    | englische Sprachdateien.
-/vault/lang/lang.es.inc                    | spanische Sprachdateien.
-/vault/lang/lang.fr.inc                    | französische Sprachdateien.
-/vault/lang/lang.id.inc                    | indonesische Sprachdateien.
-/vault/lang/lang.it.inc                    | italienische Sprachdateien.
-/vault/lang/lang.ja.inc                    | japanische Sprachdateien.
-/vault/lang/lang.nl.inc                    | niederländische Sprachdateien.
-/vault/lang/lang.pt.inc                    | portugiesische Sprachdateien.
-/vault/lang/lang.ru.inc                    | russische Sprachdateien.
-/vault/lang/lang.vi.inc                    | vietnamesische Sprachdateien.
-/vault/lang/lang.zh.inc                    | chinesische Sprachdateien (vereinfacht).
-/vault/lang/lang.zh-TW.inc                 | chinesische Sprachdateien (traditionell).
+/vault/lang/lang.ar.inc                    | Arabische Sprachdateien.
+/vault/lang/lang.de.inc                    | Deutsche Sprachdateien.
+/vault/lang/lang.en.inc                    | Englische Sprachdateien.
+/vault/lang/lang.es.inc                    | Spanische Sprachdateien.
+/vault/lang/lang.fr.inc                    | Französische Sprachdateien.
+/vault/lang/lang.id.inc                    | Indonesische Sprachdateien.
+/vault/lang/lang.it.inc                    | Italienische Sprachdateien.
+/vault/lang/lang.ja.inc                    | Japanische Sprachdateien.
+/vault/lang/lang.nl.inc                    | Niederländische Sprachdateien.
+/vault/lang/lang.pt.inc                    | Portugiesische Sprachdateien.
+/vault/lang/lang.ru.inc                    | Russische Sprachdateien.
+/vault/lang/lang.vi.inc                    | Vietnamesische Sprachdateien.
+/vault/lang/lang.zh.inc                    | Chinesische Sprachdateien (vereinfacht).
+/vault/lang/lang.zh-TW.inc                 | Chinesische Sprachdateien (traditionell).
 /vault/quarantine/                         | Quarantäne-Verzeichnis (enthält Dateien in Quarantäne).
 /vault/quarantine/.htaccess                | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/.htaccess                           | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).

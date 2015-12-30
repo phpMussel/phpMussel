@@ -306,6 +306,7 @@ Data                                       | Deskripsi
 /vault/cache/.htaccess                     | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/lang/                               | Berisikan file bahasa.
 /vault/lang/.htaccess                      | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/lang/lang.ar.inc                    | File Bahasa Arab.
 /vault/lang/lang.de.inc                    | File Bahasa Jerman.
 /vault/lang/lang.en.inc                    | File Bahasa Inggris.
 /vault/lang/lang.es.inc                    | File Bahasa Spanyol.

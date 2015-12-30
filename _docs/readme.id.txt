@@ -638,6 +638,7 @@
     Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file
     sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
     ~
+ /vault/lang/lang.ar.inc (Skrip, Diikutkan); Bahasa Arab
  /vault/lang/lang.de.inc (Skrip, Diikutkan); Bahasa Jerman
  /vault/lang/lang.en.inc (Skrip, Diikutkan); Bahasa Inggris
  /vault/lang/lang.es.inc (Skrip, Diikutkan); Bahasa Spanyol

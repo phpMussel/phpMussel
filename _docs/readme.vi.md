@@ -306,6 +306,7 @@ Hồ sơ                                      | Chi tiết
 /vault/cache/.htaccess                     | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/lang/                               | Contains phpMussel language data.
 /vault/lang/.htaccess                      | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
+/vault/lang/lang.ar.inc                    | Dữ liệu tiếng Ả Rập.
 /vault/lang/lang.de.inc                    | Dữ liệu tiếng Đức.
 /vault/lang/lang.en.inc                    | Dữ liệu tiếng Anh.
 /vault/lang/lang.es.inc                    | Dữ liệu tiếng Tây Ban Nha.

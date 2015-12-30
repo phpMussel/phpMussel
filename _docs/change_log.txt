@@ -55,6 +55,11 @@ entries will be deleted when those goals have been achieved.
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 0.9.1 ===
+PATCH RELEASE (signatures updated to 55+21192+9.1).
+
 - [2015.12.03; Bug-fixes; Maikuolan]: Missing secondary encapsulations around
   some certain inline conditionals within the loader [phpmussel.php]; Fixed.
   Missing call to "zip_close" in the code section of the core script for
@@ -66,8 +71,11 @@ entries will be deleted when those goals have been achieved.
 - [2015.12.12; Documentation; 独孤青冥/zxzllyj]: Completed audit/review/rewrite for
   the Chinese (Simplified) translation of the README documentation.
 
+Caleb M / Maikuolan,
+30th December 2015.
+
 === Version/Release 0.9.0 ===
-MINOR RELEASE (Signatures 55+21062+9).
+MINOR RELEASE (signatures updated to 55+21062+9).
 
 - [2015.10.28; NEW FEATURE; Maikuolan]: A plugin system has been built and
   integrated into phpMussel, so, as of now, phpMussel supports plugins! This

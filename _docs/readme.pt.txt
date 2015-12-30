@@ -629,6 +629,7 @@
     arquivos pertencentes ao script contra serem acessados por fontes não
     autorizadas).
     ~
+ /vault/lang/lang.ar.inc (Script, Incluído); Árabe
  /vault/lang/lang.de.inc (Script, Incluído); Alemão
  /vault/lang/lang.en.inc (Script, Incluído); Inglês
  /vault/lang/lang.es.inc (Script, Incluído); Espanhol

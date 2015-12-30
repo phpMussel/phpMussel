@@ -306,6 +306,7 @@ Bestand                                    | Beschrijving
 /vault/cache/.htaccess                     | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/lang/                               | Bevat phpMussel taaldata.
 /vault/lang/.htaccess                      | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/lang/lang.ar.inc                    | Arabisch taaldata.
 /vault/lang/lang.de.inc                    | Duitse taaldata.
 /vault/lang/lang.en.inc                    | Engels taaldata.
 /vault/lang/lang.es.inc                    | Spaanse taaldata.

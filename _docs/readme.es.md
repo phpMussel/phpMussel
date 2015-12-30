@@ -306,6 +306,7 @@ Archivo                                    | Descripción
 /vault/cache/.htaccess                     | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/lang/                               | Contiene lingüísticos datos.
 /vault/lang/.htaccess                      | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
+/vault/lang/lang.ar.inc                    | Lingüísticos datos Árabe.
 /vault/lang/lang.de.inc                    | Lingüísticos datos Alemán.
 /vault/lang/lang.en.inc                    | Lingüísticos datos Inglés.
 /vault/lang/lang.es.inc                    | Lingüísticos datos Español.

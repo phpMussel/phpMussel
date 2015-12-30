@@ -307,6 +307,7 @@ greylist_show
 /vault/cache/.htaccess                     | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/lang/                               | 包含phpMussel语言数据。
 /vault/lang/.htaccess                      | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
+/vault/lang/lang.ar.inc                    | 阿拉伯文语言数据。
 /vault/lang/lang.de.inc                    | 德文语言数据。
 /vault/lang/lang.en.inc                    | 英文语言数据。
 /vault/lang/lang.es.inc                    | 西班牙文语言数据。

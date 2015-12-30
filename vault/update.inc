@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This File: phpMussel v0.9.0 (27th November 2015) Update Script.
+ This file: phpMussel v0.9.1 (27th December 2015) Update Script.
  <%phpMussel%/vault/update.inc>
 
                                      ~ ~ ~
@@ -94,7 +94,7 @@ while(true)
 	if(!file_exists($vault.'update.dat'))
 		{
 		if(!$is_cli)plaintext_echo_die('[phpMussel] '.$MusselConfig['lang']['update_err1']);
-		echo ' '.$MusselConfig['lang']['update_err1'];
+		echo wordwrap(' '.$MusselConfig['lang']['update_err1'],79,"\n ",true);
 		break;
 		}
 	$phpmusselversion['raw']=implode(file($vault.'update.dat'));
@@ -121,7 +121,7 @@ while(true)
 	if($phpmusselversion['update_addresses_count']<1)
 		{
 		if(!$is_cli)plaintext_echo_die('[phpMussel] '.$MusselConfig['lang']['update_err2']);
-		echo ' '.$MusselConfig['lang']['update_err2'];
+		echo wordwrap(' '.$MusselConfig['lang']['update_err2'],79,"\n ",true);
 		break;
 		}
 	$phpmusselversion['script_version']=trim(substr($phpmusselversion['raw'],16,16));
@@ -229,7 +229,7 @@ while(true)
 			}
 		if($phpmusselversion['remote_hack_detected'])
 			{
-			echo $MusselConfig['lang']['update_err3'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
+			echo (!$is_cli)?$MusselConfig['lang']['update_err3'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n":wordwrap($MusselConfig['lang']['update_err3'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n",79,"\n",true);
 			break;
 			}
 		for($i=0;$i<$phpmusselversion['remote_update_instructions_count'];$i++)

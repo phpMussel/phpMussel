@@ -306,6 +306,7 @@ File                                       | Descrizione
 /vault/cache/.htaccess                     | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/lang/                               | Contiene linguistici dati.
 /vault/lang/.htaccess                      | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
+/vault/lang/lang.ar.inc                    | Linguistici dati Araba.
 /vault/lang/lang.de.inc                    | Linguistici dati Tedesca.
 /vault/lang/lang.en.inc                    | Linguistici dati Inglese.
 /vault/lang/lang.es.inc                    | Linguistici dati Spagnola.

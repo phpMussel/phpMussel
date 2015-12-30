@@ -604,6 +604,7 @@
     A hypertext access file (in this instance, to protect sensitive files
     belonging to the script from being accessed by non-authorised sources).
     ~
+ /vault/lang/lang.ar.inc (Script, Included); Arabic
  /vault/lang/lang.de.inc (Script, Included); German
  /vault/lang/lang.en.inc (Script, Included); English
  /vault/lang/lang.es.inc (Script, Included); Spanish
