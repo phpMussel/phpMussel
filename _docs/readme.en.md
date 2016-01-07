@@ -473,7 +473,6 @@ Signature files marked with "_custom", by default, don't contain any signatures 
 
 Signature files marked with "_mussel" contain signatures that specifically are not sourced from ClamAV, signatures which, generally, I've either come up with myself and/or based on information gathered from various sources.
 
-
 ---
 
 
@@ -989,8 +988,7 @@ This information was last updated 12th December 2015 and is current for all phpM
 | Zillya               |  No known problems                   |
 | Zoner                |  No known problems                   |
 
-
 ---
 
 
-Last Updated: 27th December 2015 (2015.12.27).
+Last Updated: 6th January 2016 (2016.01.06).

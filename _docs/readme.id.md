@@ -461,18 +461,17 @@ CVD adalah akronim dari "ClamAV Virus Definitions", dalam referensi dari bagaima
 
 Data berakhir dengan "MAP", secara harfiah, memetakan tanda tangan mana phpMussel seharusnya dan seharusnya tidak gunakan untuk pemindaian individual. Tidak semua tanda tangan secocoknya diharuskan untuk pemindaian tunggal, jadi, phpMussel menggunakan peta-peta dari file-file tanda tangan untuk mempercepat proses pemindaian (sebuah proses yang akan menjadi lambat dan monoton).
 
-file-file tanda tangan ditandai dengan "_regex" berisikan tanda tangan yang mengarahkan bentuk pengecekan regular expression (regex).
+File-file tanda tangan ditandai dengan "_regex" berisikan tanda tangan yang mengarahkan bentuk pengecekan regular expression (regex).
 
-file-file tanda tangan ditandai dengan "_standard" berisikan tanda tangan yang secara spesifik tidak mengarahkan bentuk pengecekan apapun.
+File-file tanda tangan ditandai dengan "_standard" berisikan tanda tangan yang secara spesifik tidak mengarahkan bentuk pengecekan apapun.
 
-file-file tanda tangan tidak ditandai dengan "_regex" atau "_standard" akan menjadi satu atau yang lain, tapi tidak keduanya (merujuk pada seksi format tanda tangan dari file README untuk dokumentasi dan detail spesifik).
+File-file tanda tangan tidak ditandai dengan "_regex" atau "_standard" akan menjadi satu atau yang lain, tapi tidak keduanya (merujuk pada seksi format tanda tangan dari file README untuk dokumentasi dan detail spesifik).
 
-file-file tanda tangan ditandai dengan "_clamav" berisikan tanda tangan yang berasal dari basis file ClamAV (GNU/GPL).
+File-file tanda tangan ditandai dengan "_clamav" berisikan tanda tangan yang berasal dari basis file ClamAV (GNU/GPL).
 
-file-file tanda tangan ditandai dengan "_custom", secara default, tidak berisikan tanda tangan apapun; file-file ini ada untuk memberikan Anda kemana saja untuk meletakkan tanda tangan Anda jika Anda datang dengan milik diri Anda sendiri.
+File-file tanda tangan ditandai dengan "_custom", secara default, tidak berisikan tanda tangan apapun; File-file ini ada untuk memberikan Anda kemana saja untuk meletakkan tanda tangan Anda jika Anda datang dengan milik diri Anda sendiri.
 
-file-file tanda tangan ditandai dengan "_mussel" berisikan tanda tangan yang secara spesifik tidak berasal dari ClamAV, tanda tangan yang secara umum, Yang saya buat sendiri atau informasi dari berbagai sumber.
-
+File-file tanda tangan ditandai dengan "_mussel" berisikan tanda tangan yang secara spesifik tidak berasal dari ClamAV, tanda tangan yang secara umum, Yang saya buat sendiri atau informasi dari berbagai sumber.
 
 ---
 
@@ -989,8 +988,7 @@ Informasi ini diupdate 12 Desember 2015 dan cocok untuk semua rilis phpMussel da
 | Zillya               |  Tidak masalah                       |
 | Zoner                |  Tidak masalah                       |
 
-
 ---
 
 
-Terakhir Diperbarui: 27 Desember 2015 (2015.12.27).
+Terakhir Diperbarui: 6 Januari 2016 (2016.01.06).

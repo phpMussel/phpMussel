@@ -473,7 +473,6 @@ Signaturdateien mit der Kennzeichnung "_custom" enthalten in der Voreinstellung 
 
 Signaturdateien mit der Kennzeichnung "_mussel" enthalten Signaturen, welche nicht von ClamAV stammen.
 
-
 ---
 
 
@@ -987,8 +986,7 @@ Diese Informationen wurden zuletzt am 12. Dezember 2015 aktualisiert und gelten 
 | Zillya               |  Keine bekannten Probleme            |
 | Zoner                |  Keine bekannten Probleme            |
 
-
 ---
 
 
-Zuletzt aktualisiert: 27. Dezember 2015 (2015.12.27).
+Zuletzt aktualisiert: 6. Januar 2016 (2016.01.06).

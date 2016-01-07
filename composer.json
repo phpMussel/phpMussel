@@ -13,5 +13,8 @@
     },
     "require": {
         "php": ">=5.4.0"
+    },
+    "suggest": {
+        "maikuolan/phpmussel-plugin-notifications": "A phpMussel plugin to receive email notifications from phpMussel whenever a file upload is blocked."
     }
 }

@@ -473,7 +473,6 @@ Assinatura arquivos marcados com "_custom", por padrão, não contêm qualquer a
 
 Assinatura arquivos marcados com "_mussel" contêm assinaturas que são especificamente não provenientes de ClamAV, assinaturas que, em geral, eu criei pessoalmente ou baseado em informações obtidas através de várias fontes.
 
-
 ---
 
 
@@ -989,8 +988,7 @@ Esta informação foi atualizada dia 12 Dezembro 2015 e é corrente para todas p
 | Zillya               |  Não apresentou problemas            |
 | Zoner                |  Não apresentou problemas            |
 
-
 ---
 
 
-Última Atualização: 27 Dezembro 2015 (2015.12.27).
+Última Atualização: 6 Janeiro 2016 (2016.01.06).

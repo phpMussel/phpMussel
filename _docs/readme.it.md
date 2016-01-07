@@ -473,7 +473,6 @@ Firma file contrassegnati con "_custom", per predefinita, contengono non firme; 
 
 Firma file contrassegnati con "_mussel" contengono le firme che in particolare non sono forniti da ClamAV, firme che, in generale, l'ho venire con me stesso e/o sulla base di informazioni raccolte da varie fonti.
 
-
 ---
 
 
@@ -989,8 +988,7 @@ Questa informazione è stato lo scorso aggiornato 12 Dicembre 2015 ed è in cors
 | Zillya               |  Senza noti problemi                 |
 | Zoner                |  Senza noti problemi                 |
 
-
 ---
 
 
-Ultimo Aggiornamento: 27 Dicembre 2015 (2015.12.27).
+Ultimo Aggiornamento: 6 Gennaio 2016 (2016.01.06).

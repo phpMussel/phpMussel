@@ -473,7 +473,6 @@ Firmas archivos marcados con "_custom", por predefinido, no contienen cualquiera
 
 Firmas archivos marcados con "_mussel" contienen firmas que se obtenido específicamente no desde ClamAV, firmas que, en general, uno u otro, yo mismo he escrito y/o basado en la información obtenida de diversas fuentes.
 
-
 ---
 
 
@@ -988,8 +987,7 @@ Esta información ha sido actualizado 12 Diciembre 2015 y es a hoy para todas la
 | Zillya               |  No hay conocidos problemas          |
 | Zoner                |  No hay conocidos problemas          |
 
-
 ---
 
 
-Última Actualización: 27 Diciembre 2015 (2015.12.27).
+Última Actualización: 6 Enero 2016 (2016.01.06).

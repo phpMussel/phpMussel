@@ -473,7 +473,6 @@ Handtekening bestanden gemarkeerd met "_custom", als standaard, bevat geen handt
 
 Handtekening bestanden gemarkeerd met "_mussel" bevatten handtekeningen dat specifiek zijn niet afkomstig van ClamAV, handtekeningen dat, in algemeen, ik heeft persoonlijk geschreven en/of gebaseerd op diverse verschillende bronnen.
 
-
 ---
 
 
@@ -989,8 +988,7 @@ Dit informatie werd laatst bijgewerkt 12 December 2015 en is op de hoogte voor a
 | Zillya               |  Geen bekend problemen               |
 | Zoner                |  Geen bekend problemen               |
 
-
 ---
 
 
-Laatste Bijgewerkt: 27 December 2015 (2015.12.27).
+Laatste Bijgewerkt: 6 Januari 2016 (2016.01.06).

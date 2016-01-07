@@ -5,20 +5,6 @@
 # Written based on the .gitattributes guide available from:
 # https://help.github.com/articles/dealing-with-line-endings/
 
-# Which EOL is best could be easily debated for or against any one way or
-# another, which is, perhaps, the reason why those various OS adopted by the
-# wider IT community don't follow any one particular strict standard, with
-# Windows defaulting to CRLF, Unix/Linux to LF, and so on and so forth.
-# Although I do the vast bulk of my coding via a Windows machine, and by
-# extension, it might be assumed I prefer CRLF, contrarily, I personally
-# prefer LF over CRLF or any other alternatives, due in part to my own personal
-# experiences and in part to my desire to minimise the overall size of the
-# phpMussel package. Linux users shouldn't normally have any issue reading
-# files that use LF linebreaks, but, for Windows users, to avoid issues
-# readings these files, I'd recommend using Notepad++ for opening and reading
-# these files, because, unlike traditional Notepad or other similar native
-# text readers/editors, Notepad++ has no difficulties in readning textfiles of
-# of various linebreak types (TXT and INI files will remain as CRLF, however).
 * text eol=lf
 *.ini text eol=crlf
 *.txt text eol=crlf

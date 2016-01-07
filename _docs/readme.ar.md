@@ -11,7 +11,7 @@
  <li>4ب. <a href="#SECTION4B">CLI (واجهة سطر الأوامر).</a></li>
  <li>5. <a href="#SECTION5">الملفاتالموجودةفيهذهالحزمة.</a></li>
  <li>6. <a href="#SECTION6">خياراتالتكوين/التهيئة.</a></li>
- <li>7. <a href="#SECTION7">شكلالتوقيع.</a></li>
+ <li>7. <a href="#SECTION7">شكل/تنسيق التوقيع.</a></li>
  <li>8. <a href="#SECTION8">مشاكلالتوافقالمعروفة.</a></li>
 </ul></div>
 
@@ -165,7 +165,7 @@
  <li>يوفر طريقة لتتمكن من مراقبة "بي اتش بي ماسل"عند عدم توفر مراقبة من FTPأ و نقاط الوصول التقليدية الأخرى.</li>
 </ul></div>
 
-كذلك يجب عليك <strong>عدم تفعيل</strong> هذه الضوابط لمجموعة أسباب:
+<div dir="rtl">كذلك يجب عليك <strong>عدم تفعيل</strong> هذه الضوابط لمجموعة أسباب:<br /></div>
 <div dir="rtl"><ul>
  <li>يوفر ناقل للمهاجمين المحتملين وغير المرغوب فيهم لتحديد ما إذا كنت تستخدم "بي اتش بي ماسل" أم لا (على الرغم من أن هذا يمكن أن يكون سبب لها أو ضدها بناء على نوعيتها) عن طريق إرسال أوامر بصورة عمياء إلى الخادم كوسيلة لفحص. من جهة فيمكن أن يثني المهاجمين من استهداف النظام الخاص بك إذا كانوا يعلمون أنك تستخدم"بي اتش بي ماسل" على افتراض أنهم يفحصون و وجدوا أن طريقة هجومهم ستكون غير فعالة نتيجة لاستخدام"بي اتش بي ماسل". مع ذلك فمن ناحية أخرى، فقد يمكن استغلال بعض المداخل غير المتوقعة وغير المعروفة حاليا داخل "بي اتش بي ماسل" أو في إصدار لاحق من البرنامج، فمن المحتمل أن توفر ناقلات لهجومهم، كنتيجة إيجابية من مثل هذا الفحص (أي أنهم يجدون مدخل أو ثغرة في البرنامج) في الواقع يمكن أن تشجع المعتدين على استهداف النظام الخاص بك.</li>
  <li>إذا تعرضت كلمات السر التي قمت بتعيينها للخطر في أي وقت، إلا إذا تغيرت، فيمكن أن توفر وسيلة للمهاجمين لتجاوز كل ما قد تكون التوقيعات كفيلة عادة بمنع هجماتهم من النجاح، أو حتى يحتمل تعطيل "بي اتش بي ماسل" تماما، وبالتالي توفير وسيلة لجعل فعالية "بي اتش بي ماسل" شكلية غير فعالة.</li>
@@ -284,7 +284,7 @@
 
 الوصف | الملف
 ----|----
-<div dir="rtl" style="display:inline;">الملف المحمل (المسئول عن التحميل) : يحمل البرنامج الرئيسي و التحديث و ... إلى آخره. هذا هو الذي من المفترض أن تكون على علاقة به و تقوم بتركيبه (أساسي)!</div> | /phpmussel.php
+<div dir="rtl" style="display:inline;">الملف المحمل (المسئول عن التحميل): يحمل البرنامج الرئيسي و التحديث و ... إلى آخره. هذا هو الذي من المفترض أن تكون على علاقة به و تقوم بتركيبه (أساسي)!</div> | /phpmussel.php
 <div dir="rtl" style="display:inline;">ملف تكوين ASP.NET (في هذه الحالة , لحماية دليل /vault من أن يتم الوصول إليه بواسطة مصادر غير مأذون لها في حالة إذا ما تم تثبيت البرنامج النصي على ملقم يستند إلى تقنيات ASP.NET</div> | /web.config
 <div dir="rtl" style="display:inline;">دليل الوثائق (يحتوي على ملفات مختلفة).</div> | /_docs/
 <div dir="rtl" style="display:inline;">سجل للتغييرات التي أجريت على البرنامج بين التحديثات المختلفة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /_docs/change_log.txt
@@ -486,7 +486,7 @@
 ####*<div dir="rtl">فيما يتعلق بملفات التوقيع</div>*
 <div dir="rtl">CVD هو اختصار ل "تعريفات فيروسات (كلام ايه في)"، في إشارة إلى كل من كيف تشير (كلام ايه في) إلى التوقيعات الخاصة بهم واستخدام تلك التوقيعات في "بي اتش بي ماسل". الملفات التي تنتهي ب "CVD" تحتوي على التوقيعات.<br /><br /></div>
 
-<div dir="rtl">ملفات تنتهي ب "MAP" و معناها قد يكون حرفيا، و هي خريطة تواقيع "بي اتش بي ماسل" التي ينبغي أو يجب عدم استخدامها لاجراء الفحوصات الفردية؛ ليس مطلوبا من جميع التوقيعات بالضرورة لكل فحص ، لذلك، يستخدم "بي اتش بي ماسل " خرائط ملفات التوقيع لتسريع عملية الفحص (عملية من شأنها أن تكون لولا ذلك بطيئة للغاية ومملة).<br /><br /></div>
+<div dir="rtl">ملفات تنتهي ب "MAP" و معناها قد يكون حرفيا، و هي خريطة تواقيع "بي اتش بي ماسل" التي ينبغي أو يجب عدم استخدامها لاجراء الفحوصات الفردية؛ ليس مطلوبا من جميع التوقيعات بالضرورة لكل فحص، لذلك، يستخدم "بي اتش بي ماسل " خرائط ملفات التوقيع لتسريع عملية الفحص (عملية من شأنها أن تكون لولا ذلك بطيئة للغاية ومملة).<br /><br /></div>
 
 <div dir="rtl">ملفات التوقيع المحددة بعلامة "_regex" تحتوي على التوقيعات التي تستخدم نمط التحقق المعتاد (regex).<br /><br /></div>
 
@@ -498,8 +498,7 @@
 
 <div dir="rtl">ملفات التوقيع المحددة بعلامة "_custom"بشكل افتراضي، لا تحتوي على أي توقيعات على الإطلاق؛ توجد مثل هذه الملفات لتعطيك مكان لوضع التوقيعات المخصصة الخاصة بك، إذا كنت تأتي بأي منها بنفسك.<br /><br /></div>
 
-<div dir="rtl">ملفات التوقيع المحددة بعلامة "_mussel" تحتوي على التوقيعات التي على وجه التحديد التي ليست مصدرها كلام ايه في ، والتوقيعات التي عموما قد إما أتيت بها بنفسي و / أو بناء على المعلومات التي تم جمعها من مصار مختلفة.<br /><br /></div>
-
+<div dir="rtl">ملفات التوقيع المحددة بعلامة "_mussel" تحتوي على التوقيعات التي على وجه التحديد التي ليست مصدرها كلام ايه في، والتوقيعات التي عموما قد إما أتيت بها بنفسي و/أو بناء على المعلومات التي تم جمعها من مصار مختلفة.<br /><br /></div>
 
 ---
 
@@ -853,70 +852,70 @@ Template data relates to the HTML output used to generate the "Upload Denied" me
 ---
 
 
-### <div dir="rtl">7. <a name="SECTION7"></a>شكلالتوقيع</div>
+### <div dir="rtl">7. <a name="SECTION7"></a>شكل/تنسيق التوقيع</div>
 
-####*FILENAME SIGNATURES*
-All filename signatures follow the format:
+####*<div dir="rtl">توقيعات اسم الملف</div>*
+<div dir="rtl">كل توقيعات اسم الملف تتبع التنسيق التالي:<br /><br /></div>
 
 `NAME:FNRX`
 
-Where NAME is the name to cite for that signature and FNRX is the regex pattern to match filenames (unencoded) against.
+<div dir="rtl">حيث "NAME" هو الاسم المذكور في التوقيع و "FNRX" نمط التعابير المنطقية بحيث تتطابق الأسماء (الغير مشفرة) مقابله.<br /><br /></div>
 
-####*MD5 SIGNATURES*
-All MD5 signatures follow the format:
+####*<div dir="rtl">توقيعات MD5</div>*
+<div dir="rtl">جميع التوقيعات MD5 تتبع التنسيق:<br /><br /></div>
 
 `HASH:FILESIZE:NAME`
 
-Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of that file and NAME is the name to cite for that signature.
+<div dir="rtl">حيث "HASH" هي تجزئة "MD5" للملف كله، و "FILESIZE" هي الحجم الإجمالي لذلك الملف و "NAME"  هو الاسم المذكور في التوقيع.<br /><br /></div>
 
-####*ARCHIVE METADATA SIGNATURES*
-All archive metadata signatures follow the format:
+####*<div dir="rtl">توقيعات أرشيف البيانات الوصفية</div>*
+<div dir="rtl">جميع توقيعات أرشيف البيانات الوصفية تتبع التنسيق:<br /><br /></div>
 
 `NAME:FILESIZE:CRC32`
 
-Where NAME is the name to cite for that signature, FILESIZE is the total size (uncompressed) of a file contained within the archive and CRC32 is the CRC32 checksum of that contained file.
+<div dir="rtl">حيث "NAME" هو الاسم المذكور لهذا التوقيع، حجم الملف هو الحجم الكلي (غير مضغوط) للملف الوارد في الأرشيف و "CRC32" هو المجموع الاختباري لذلك الملف الوارد.<br /><br /></div>
 
-####*PE SECTIONAL SIGNATURES*
-All PE Sectional signatures follow the format:
+####*<div dir="rtl">توقيعات PE الجزئية</div>*
+<div dir="rtl">جميع توقيعات PE الجزئية تتبع التنسيق:<br /><br /></div>
 
 `SIZE:HASH:NAME`
 
-Where HASH is the MD5 hash of a section of a PE file, SIZE is the total size of that section and NAME is the name to cite for that signature.
+<div dir="rtl">حيث "HASH" هو تجزئة "MD5" لجزء من ملف PE، "SIZE" هو الحجم الكلي لهذا القسم، "NAME" هو الاسم المذكور في التوقيع.<br /><br /></div>
 
-####*PE EXTENDED SIGNATURES*
-All PE extended signatures follow the format:
+####*<div dir="rtl">توقيعات PE الموسعة</div>*
+<div dir="rtl">جميع توقيعات PE الموسعة تتبع التنسيق:<br /><br /></div>
 
 `$VAR:HASH:SIZE:NAME`
 
-Where $VAR is the name of the PE variable to match against, HASH is the MD5 hash of that variable, SIZE is the total size of that variable and NAME is the name to cite for that signature.
+<div dir="rtl">حيث "$VAR" هو اسم المتغير PE للتطابق معه، "HASH" هو تجزئة "MD5" هذا المتغير، "SIZE" هو الحجم الكلي لهذا المتغير والاسم هو الاسم المذكور في التوقيع.<br /><br /></div>
 
-####*WHITELIST SIGNATURES*
-All Whitelist signatures follow the format:
+####*<div dir="rtl">توقيعات قائمة السماح</div>*
+<div dir="rtl">جميع توقيعات قائمة السماح تتبع التنسيق:<br /><br /></div>
 
 `HASH:FILESIZE:TYPE`
 
-Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of that file and TYPE is the type of signatures the whitelisted file is to be immune against.
+<div dir="rtl">حيث "HASH" هو تجزئة "MD5" لكامل الملف "FILESIZE" هو الحجم الكلي لهذا الملف و "TYPE" هو نوع تحصين توقيعات ملف قائمة السماح.<br /><br /></div>
 
-####*COMPLEX EXTENDED SIGNATURES*
-Complex Extended signatures are rather different to the other types of signatures possible with phpMussel, in that what they are matching against is specified by the signatures themselves and they can match against multiple criteria. The match criterias are delimited by ";" and the match type and match data of each match criteria is delimited by ":" as so that format for these signatures tends to look a bit like:
+####*<div dir="rtl">التوقيعات المركبة الموسعة</div>*
+<div dir="rtl">التواقيع المركبة الموسعة هي مختلفة عن أنواع أخرى من التوقيعات المحتملة مع "بي اتش بي ماسل"، في أنهم يقومون بمطابقة مع ما تم تعيينه من قبل التوقيعات أنفسهم وأنها يمكن أن تتطابق ضد معايير متعددة. محدد مع معايير المطابقة ";" ونوع المطابقة و بيانات المطابقة و كل معايير المطابقة محددة بواسطة ":" ذلك أن شكل هذه التوقيعات يميل قليلا إلى مثل:<br /><br /></div>
 
 `$variable1:SOMEDATA;$variable2:SOMEDATA;SignatureName`
 
-####*EVERYTHING ELSE*
-All other signatures follow the format:
+####*<div dir="rtl">كل شيء آخر</div>*
+<div dir="rtl">جميع التوقيعات الأخرى تتبع التنسيق:<br /><br /></div>
 
 `NAME:HEX:FROM:TO`
 
-Where NAME is the name to cite for that signature and HEX is a hexadecimal-encoded segment of the file intended to be matched by the given signature. FROM and TO are optional parameters, indicating from which and to which positions in the source data to check against (not supported by the mail function).
+<div dir="rtl">حيث "NAME" هو الاسم المذكور لهذا التوقيع و "HEX" هو الترميز الجزئي السادس عشري من الملف المراد أن يقابله تواقيع معينة. من وإلى المعاملات الاختيارية، مشيرا من خلالها إلى المواضع في البيانات المصدر للتحقق منها (غير معتمدة من قبل المهمة البريد).<br /><br /></div>
 
-####*REGEX*
-Any form of regex understood and correctly processed by PHP should also be correctly understood and processed by phpMussel and its signatures. However, I'd suggest taking extreme caution when writing new regex based signatures, because, if you're not entirely sure what you're doing, there can be highly irregular and/or unexpected results. Take a look at the phpMussel source-code if you're not entirely sure about the context in which regex statements are parsed. Also, remember that all patterns (with exception to filename, archive metadata and MD5 patterns) must be hexadecimally encoded (foregoing pattern syntax, of course)!
+####*<div dir="rtl">التعابير المنطقية</div>*
+<div dir="rtl">أي شكل من أشكال التعابير المنطقية يتم فهمها ومعالجتها بشكل صحيح عن طريق PHP و يجب أيضا أن يكون مفهوما بشكل صحيح و تتم معالجتها بواسطة"بي اتش بي ماسل" و توقيعاتها. مع ذلك، أود أن أقترح اتخاذ الحذر الشديد عند كتابة توقيعات التعابير المنطقية الجديدة، لأنه إذا لم تكن متأكدا تماما مما تفعله، يمكن أن يكون هناك عدم انتظام كبير و/أو نتائج غير متوقعة. القي نظرة على "بي اتش بي ماسل" مصدر الترميز إذا لم تكن متأكدا تماما من السياق الذي يتم تحليل البيانات باستخدام التعابير المنطقية. أيضا، تذكر أن كل أنماط (باستثناء اسم الملف، أرشيف البيانات الوصفية وأنماط MD5) يجب أن تتبع ترميز سادس عشري(عند تركيب نمط ما، بالتأكيد)!<br /><br /></div>
 
-####*WHERE TO PUT CUSTOM SIGNATURES?*
-Only put custom signatures in those files intended for custom signatures. Those files should contain "_custom" in their filenames. You should also avoid editing the default signature files, unless you know exactly what you're doing, because, aside from being good practise in general and aside from helping you distinguish between your own signatures and the default signatures included with phpMussel, it's good to stick to editing only the files intended for editing, because tampering with the default signature files can cause them to stop working correctly, due to the "maps" files: The maps files tell phpMussel where in the signature files to look for signatures required by phpMussel as per when required, and these maps can become out-of-sync with their associated signature files if those signature files are tampered with. You can put pretty much whatever you want into your custom signatures, so long as you follow the correct syntax. However, be careful to test new signatures for false-positives beforehand if you intend to share them or use them in a live environment.
+####*<div dir="rtl">أين يضع التوقيعات المخصصة؟</div>*
+<div dir="rtl">فقط ضع التوقيعات المخصصة في تلك الملفات المعدة للتوقيعات مخصصة. ينبغي أن تتضمن تلك الملفات "_custom" في أسماء الملفات الخاصة بهم. يجب عليك أيضا تجنب تحرير ملفات التوقيع الافتراضي، إلا إذا كنتم تعرفون بالضبط ما تفعلونه، لأنه بصرف النظر عن كونها ممارسة جيدة بشكل عام، و بعيدا عن مساعدتك على التمييز بين التوقيعات الخاصة بك والتوقيعات الافتراضية المتضمنة في "بي اتش بي  ماسل"، انها جيدة للتحرير فقط على الملفات المعدة للتحرير لأن العبث في ملفات التوقيع الافتراضي يمكن أن تسبب لهم التوقف عن العمل بشكل صحيح، ويرجع ذلك إلى ملفات "خرائط" : ملفات الخرائط في "بي اتش بي  ماسل" حيث في ملفات التوقيع للبحث عن التوقيعات المطلوبة بواسطة "بي اتش بي  ماسل" عند الحاجة، ويمكن لهذه الخرائط أن تصبح غير متزامنة مع توقيع الملفات المرتبطة بها إذا تم العبث بملفات التوقيع معه. يمكنك وضع حد كبير ما تريد في التوقيعات المخصصة، طالما كنت تتبع بناء الجملة الصحيح. مع ذلك، وتوخي الحذر لاختبار توقيعات جديدة ل-فحص خاطئ مسبقا إذا كنت تنوي مشاركتها أو استخدامها في بيئة حية.<br /><br /></div>
 
-####*SIGNATURE BREAKDOWN*
-The following is a breakdown of the types of signatures used by phpMussel:
+####*<div dir="rtl">التوزيع التفصيلي للتوقيع</div>*
+<div dir="rtl">فيما يلي تفصيل لأنواع التوقيعات التي يستخدمها "بي اتش بي  ماسل":<br /><br /></div>
 - "Normalised ASCII Signatures" (ascii_*). Checked against the contents of every non-whitelisted file targeted for scanning.
 - "Complex Extended Signatures" (coex_*). Mixed signature type matching.
 - "ELF Signatures" (elf_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to the ELF format.
@@ -937,7 +936,7 @@ The following is a breakdown of the types of signatures used by phpMussel:
 - "SWF Signatures" (swf_*). Checked against the contents of every non-whitelisted Shockwave file targeted for scanning.
 - "Whitelist Signatures" (whitelist_*). Checked against the MD5 hash of the contents and the filesize of every file targeted for scanning. Matched files will be immune to being matched by the type of signature mentioned in their whitelist entry.
 - "XML/XDP Signatures" (xmlxdp_*). Checked against any XML/XDP chunks found within any non-whitelisted files targeted for scanning.
-(Note that any of these signatures may be easily disabled via "phpmussel.ini").
+<div dir="rtl">(لاحظ أن أي من هذه التوقيعات قد يتم تعطيل بسهولة عبر "phpmussel.ini").<br /><br /></div>
 
 ---
 
@@ -1016,8 +1015,7 @@ This information was last updated 12th December 2015 and is current for all phpM
 | Zillya               |  No known problems                   |
 | Zoner                |  No known problems                   |
 
-
 ---
 
 
-Last Updated: 27th December 2015 (2015.12.27).
+Last Updated: 6th January 2016 (2016.01.06).

@@ -473,7 +473,6 @@ Signature fichiers marqué avec "_custom", par défaut, ne contiennent pas de si
 
 Signature fichiers marqué avec "_mussel" contenir signatures qui ne sont pas spécifiquement provenant par ClamAV, signatures qui, en général, je développé par moi-même et/ou basé sur informations recueillies de diverses sources.
 
-
 ---
 
 
@@ -989,8 +988,7 @@ Cette information a été réactualisé le 12 Décembre 2015 et est courant pour
 | Zillya               |  Pas problèmes connus                |
 | Zoner                |  Pas problèmes connus                |
 
-
 ---
 
 
-Dernière Réactualisé: 27 Décembre 2015 (2015.12.27).
+Dernière Réactualisé: 6 Janvier 2016 (2016.01.06).

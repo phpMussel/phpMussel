@@ -473,7 +473,6 @@ Signature files marked with "_custom", by default, don't contain any signatures 
 
 Signature files marked with "_mussel" contain signatures that specifically are not sourced from ClamAV, signatures which, generally, I've either come up with myself and/or based on information gathered from various sources.
 
-
 ---
 
 
@@ -989,8 +988,7 @@ Thông tin này được cập nhật lần cứơi vào ngày 12 Tháng Mười
 | Zillya               |  Không có vấn đề                     |
 | Zoner                |  Không có vấn đề                     |
 
-
 ---
 
 
-Lần cuối cập nhật: 27 Tháng Mười Hai 2015 (2015.12.27).
+Lần cuối cập nhật: 6 Tháng Một 2016 (2016.01.06).

@@ -942,7 +942,7 @@
     yang berasal dari basis file ClamAV (GNU/GPL).
     ~
     File-file tanda tangan ditandai dengan "_custom", secara default,
-    tidak berisikan tanda tangan apapun; file-file ini ada untuk memberikan
+    tidak berisikan tanda tangan apapun; File-file ini ada untuk memberikan
     Anda kemana saja untuk meletakkan tanda tangan Anda jika Anda datang
     dengan milik diri Anda sendiri.
     ~
@@ -1844,5 +1844,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 27 Desember 2015 (2015.12.27).
+Terakhir Diperbarui: 6 Januari 2016 (2016.01.06).
 EOF
