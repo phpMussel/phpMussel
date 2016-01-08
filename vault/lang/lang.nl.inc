@@ -14,11 +14,26 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Dutch/Nederlandse language data (18th December 2015).
+ This file: phpMussel Dutch/Nederlandse language data (8th January 2016).
  <%phpMussel%/vault/lang/lang.nl.inc>
 
 */
 
+/**
+ * phpMussel: A PHP script designed to detect trojans, viruses, malware and
+ * other threats within files uploaded to your system wherever the script is
+ * hooked, based on the signatures of ClamAV and others.
+ *
+ * This file: Dutch language data for phpMussel.
+ *
+ * PO/POT version of this file is available via: https://github.com/Maikuolan/phpMussel-extras/blob/master/PO/phpMussel-nl.po
+ *
+ * @package Maikuolan/phpMussel
+ */
+
+/**
+ * Prevents execution from outside of phpMussel.
+ */
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
 $MusselConfig['lang']['bad_command']='Ik begrijp niet dat bevel, sorry.';
@@ -128,5 +143,3 @@ $MusselConfig['lang']['_exclamation']='! ';
 $MusselConfig['lang']['_exclamation_final']='!';
 $MusselConfig['lang']['_fullstop']='. ';
 $MusselConfig['lang']['_fullstop_final']='.';
-
-?>

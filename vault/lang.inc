@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel v0.9.1 (27th December 2015) Language Data.
+ This file: phpMussel v0.9.2 (8th January 2016) language data.
  <%phpMussel%/vault/lang.inc>
 
                                      ~ ~ ~
@@ -49,6 +49,19 @@
 
 */
 
+/**
+ * phpMussel: A PHP script designed to detect trojans, viruses, malware and
+ * other threats within files uploaded to your system wherever the script is
+ * hooked, based on the signatures of ClamAV and others.
+ *
+ * This file: Script for calling phpMussel language data.
+ *
+ * @package Maikuolan/phpMussel
+ */
+
+/**
+ * Prevents execution from outside of phpMussel.
+ */
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
 if(!isset($MusselConfig['general']))$MusselConfig['general']=array();
@@ -61,11 +74,9 @@ if(!isset($MusselConfig['general']['lang_override']))$MusselConfig['general']['l
 if(!isset($MusselConfig['lang_acceptable']))$MusselConfig['lang_acceptable']=',en,ar,de,es,fr,id,it,ja,nl,pt,ru,vi,zh,zh-TW,';
 if(!isset($_SERVER['HTTP_ACCEPT_LANGUAGE']))$_SERVER['HTTP_ACCEPT_LANGUAGE']='';
 if($MusselConfig['general']['lang_override']&&$_SERVER['HTTP_ACCEPT_LANGUAGE'])
-	{
-	if(substr_count($MusselConfig['lang_acceptable'],substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,5)))$MusselConfig['general']['lang']=substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,5);
-	else if(substr_count($MusselConfig['lang_acceptable'],substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2)))$MusselConfig['general']['lang']=substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
-	}
+    {
+    if(substr_count($MusselConfig['lang_acceptable'],substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,5)))$MusselConfig['general']['lang']=substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,5);
+    else if(substr_count($MusselConfig['lang_acceptable'],substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2)))$MusselConfig['general']['lang']=substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
+    }
 if(!file_exists($vault.'lang/lang.'.$MusselConfig['general']['lang'].'.inc'))plaintext_echo_die('[phpMussel] Language undefined or incorrectly defined. Can\'t continue.');
 require $vault.'lang/lang.'.$MusselConfig['general']['lang'].'.inc';
-
-?>
