@@ -3,8 +3,3 @@ checks:
     php:
         code_rating: true
         duplication: true
-filter:
-    paths:
-        - *.php
-        - vault/*.inc
-        - vault/lang/*.inc
