@@ -2,6 +2,10 @@
 
 An ideal solution for shared hosting environments, where it's often not possible to utilise or install conventional anti-virus protection solutions, phpMussel is a PHP script designed to **detect trojans, viruses, malware and other threats** within files uploaded to your system wherever the script is hooked, based on the signatures of [ClamAV](http://www.clamav.net/) and others. For information regarding *HOW TO INSTALL* {2A+2B} and *HOW TO USE* {3A+3B} phpMussel, please refer either to the [Wiki](https://github.com/Maikuolan/phpMussel/wiki) or to documentation included within the "[_docs](https://github.com/Maikuolan/phpMussel/tree/master/_docs)" directory of [this repository](https://github.com/Maikuolan/phpMussel) (direct links to that documentation included under the "Documentation" header below this paragraph).
 
+[![Scrutinizer Quality Badge](https://scrutinizer-ci.com/g/Maikuolan/phpMussel/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Maikuolan/phpMussel/) [![Scrutinizer Coverage Badge](https://scrutinizer-ci.com/g/Maikuolan/phpMussel/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Maikuolan/phpMussel/) [![Scrutinizer Build Badge](https://scrutinizer-ci.com/g/Maikuolan/phpMussel/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Maikuolan/phpMussel/)
+
+---
+
 ### Features:
 - Licensed as [GNU General Public License version 2.0](https://github.com/Maikuolan/phpMussel/blob/master/_docs/LICENSE) (GPLv2).
 - Easy to install, easy to customise, easy to use.
@@ -13,6 +17,8 @@ An ideal solution for shared hosting environments, where it's often not possible
 - Does NOT require administrative privileges.
 - CLI mode available (for now, just under Windows, very soon with other OS).
 - Good, strong, stable support base.
+
+---
 
 ### Documentation:
 
@@ -26,4 +32,6 @@ README/Markdown: [ **[English](https://github.com/Maikuolan/phpMussel/blob/maste
 
 [\[maikuolan.github.io/phpMussel\] **Want to donate?**](http://maikuolan.github.io/phpMussel/)
 
-*This file, "README.md", last edited: 21st November 2015 (2015.11.21).*
+---
+
+*This file, "README.md", last edited: 11th January 2016 (2016.01.11).*
