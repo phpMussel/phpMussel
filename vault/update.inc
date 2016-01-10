@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel v0.9.2 (8th January 2016) update script.
+ This file: phpMussel v0.9.2 (10th January 2016) update script.
  <%phpMussel%/vault/update.inc>
 
                                      ~ ~ ~
@@ -50,14 +50,13 @@
 */
 
 /**
- * phpMussel: A PHP script designed to detect trojans, viruses, malware and
- * other threats within files uploaded to your system wherever the script is
- * hooked, based on the signatures of ClamAV and others.
+ * phpMussel: A PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your
+ * system wherever the script is hooked, based on the signatures of ClamAV and others.
  *
- * This file: Update script, required for updating phpMussel via your browser
- * and/or via CLI mode.
+ * This file: Update script, required for updating phpMussel via your browser and/or via CLI mode.
  *
  * @package Maikuolan/phpMussel
+ *
  * @todo Currently, no update server is defined by `update.dat` (because currently, none exist). This means that this entire update script, at this time, basically, just won't work. There aren't any coding problems or errors in the script (as far as I'm aware), but rather, I just don't currently have somewhere appropriate to host the update server. The way I see it, currently, I have two options for dealing with it: Either get an operable update server running somewhere, or, completely scrap and then re-write this entire update script. I'll let everyone concerned know when a decision has been made and/or when some action has been taken.
  */
 
@@ -66,6 +65,9 @@
  */
 if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
 
+/**
+ * @todo phpDocs block here.
+ */
 function ReadUpdateFile($f,$s=0)
     {
     if(!file_exists($f))return '';
@@ -86,22 +88,7 @@ function ReadUpdateFile($f,$s=0)
         }
     return (!empty($d))?$d:'';
     }
-if(!function_exists('phpMusselV'))
-    {
-    function phpMusselV($v,$b)
-        {
-        if(!is_array($v)||!$b)return '';
-        $c=count($v);
-        reset($v);
-        for($i=0;$i<$c;$i++)
-            {
-            $k=key($v);
-            $b=str_replace('{'.$k.'}',$v[$k],$b);
-            next($v);
-            }
-        return $b;
-        }
-    }
+
 $is_cli=@(isset($is_cli))?$is_cli:false;
 while(true)
     {

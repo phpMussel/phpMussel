@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel v0.9.2 (8th January 2016) language data.
+ This file: phpMussel v0.9.2 (10th January 2016) language data.
  <%phpMussel%/vault/lang.inc>
 
                                      ~ ~ ~
@@ -50,9 +50,8 @@
 */
 
 /**
- * phpMussel: A PHP script designed to detect trojans, viruses, malware and
- * other threats within files uploaded to your system wherever the script is
- * hooked, based on the signatures of ClamAV and others.
+ * phpMussel: A PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your
+ * system wherever the script is hooked, based on the signatures of ClamAV and others.
  *
  * This file: Script for calling phpMussel language data.
  *

@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel v0.9.2 (8th January 2016) loader file.
+ This file: phpMussel v0.9.2 (10th January 2016) loader file.
  <%phpMussel%/phpmussel.php>
 
                                      ~ ~ ~
@@ -50,34 +50,30 @@
 */
 
 /**
- * phpMussel: A PHP script designed to detect trojans, viruses, malware and
- * other threats within files uploaded to your system wherever the script is
- * hooked, based on the signatures of ClamAV and others.
+ * phpMussel: A PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your
+ * system wherever the script is hooked, based on the signatures of ClamAV and others.
  *
- * This file: Loader file, responsible for initialising phpMussel and for
- * loading everything that could needed (this is the file that you hook into
- * your CMS and/or website).
+ * This file: Loader file, responsible for initialising phpMussel and for loading everything that could needed (this is
+ * the file that you hook into your CMS and/or website).
  *
  * @package Maikuolan/phpMussel
  */
 
 /**
- * Determines the location of the "vault" directory of phpMussel and saves this
- * information to the $vault variable, required by phpMussel in order to call,
- * read, write, delete, etc, its files (signatures, includes, logs, etc).
+ * Determines the location of the "vault" directory of phpMussel and saves this information to the $vault variable,
+ * required by phpMussel in order to call, read, write, delete, etc, its files (signatures, includes, logs, etc).
  */
 $vault=@(__DIR__==='__DIR__')?dirname(__FILE__).'/vault/':__DIR__.'/vault/';
 
-/**
- * Function serves as a quick-and-lazy way to render some text as plain-text
- * to the page output (for browsers) and to then kill the script. Nothing
- * special; Just means that we can do this with one function call rather than
- * three different calls (header, echo, die), to save time.
- *
- * @param string $out The text to be rendered.
- */
 if(!function_exists('plaintext_echo_die'))
     {
+    /**
+     * Function serves as a quick-and-lazy way to render some text as plain-text to the page output (for browsers) and to
+     * then kill the script. Nothing special; Just means that we can do this with one function call rather than three
+     * different calls (header, echo, die), to save time.
+     *
+     * @param string $out The text to be rendered.
+     */
     function plaintext_echo_die($out)
         {
         header('Content-Type: text/plain');
@@ -86,17 +82,16 @@ if(!function_exists('plaintext_echo_die'))
         }
     }
 
-/**
- * The `phpMussel_Register_Hook` function is used to register plugin functions
- * to their intended hooks.
- *
- * @param string $what The name of the chosen function to execute at the desired point in the script.
- * @param string $where Instructs the function which "hook" your chosen function should be registered to.
- * @param string|array $with Represents the variables that need to be parsed to your function from the scope in which it'll be executed from (optional).
- * @return bool
- */
 if(!function_exists('phpMussel_Register_Hook'))
     {
+    /**
+     * The `phpMussel_Register_Hook` function is used to register plugin functions to their intended hooks.
+     *
+     * @param string $what The name of the chosen function to execute at the desired point in the script.
+     * @param string $where Instructs the function which "hook" your chosen function should be registered to.
+     * @param string|array $with Represents the variables that need to be parsed to your function from the scope in which it'll be executed from (optional).
+     * @return bool
+     */
     function phpMussel_Register_Hook($what,$where,$with='')
         {
         if(!isset($GLOBALS['MusselPlugins']['hooks'])||!isset($GLOBALS['MusselPlugins']['hookcounts']))return false;
@@ -105,6 +100,37 @@ if(!function_exists('phpMussel_Register_Hook'))
         $GLOBALS['MusselPlugins']['hooks'][$where][$what]=$with;
         $GLOBALS['MusselPlugins']['hookcounts'][$where]++;
         return true;
+        }
+    }
+
+if(!function_exists('phpMusselV'))
+    {
+    /**
+     * This is a specialised search-and-replace function, designed to replace encapsulated substrings within a given
+     * input string based upon the elements of a given input array. The function accepts two input parameters: The
+     * first, the input array, and the second, the input string. The function searches for any instances of each array
+     * key, encapsulated by curly brackets, as substrings within the input string, and replaces any instances found
+     * with the array element content corresponding to the array key associated with each instance found.
+     *
+     * This function is used extensively throughout phpMussel, to parse its language data and to parse any messages
+     * related to any detections found during the scan process and any other related processes.
+     *
+     * @param array $v The input array.
+     * @param string $b The input string.
+     * @return string The results of the function are returned directly to the calling scope as a string.
+     */
+    function phpMusselV($v,$b)
+        {
+        if(!is_array($v)||empty($b))return '';
+        $c=count($v);
+        reset($v);
+        for($i=0;$i<$c;$i++)
+            {
+            $k=key($v);
+            $b=str_replace('{'.$k.'}',$v[$k],$b);
+            next($v);
+            }
+        return $b;
         }
     }
 

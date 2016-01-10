@@ -55,7 +55,19 @@ entries will be deleted when those goals have been achieved.
 
 === Changes made since last versioned release ===
 
-(none)
+- [2016.01.08; Sub-minor code change; Maikuolan]: Closing PHP tags removed and
+  all tabs converted to spaces (in order to improve compliance with PSR); Added
+  some phpDoc blocks information into all script files; No other changes.
+  Refer github.com/Maikuolan/phpMussel/issues/80
+
+- [2016.01.10; Sub-minor code change; Maikuolan]: More phpDoc work done for all
+  script files (almost all functions now documented); The "phpMusselV()"
+  function moved to the loader file, due to duplication of the function between
+  the core script and the update script (because the loader file is higher in
+  the execution chain than those two files, we can avoid duplication by moving
+  the function there); Some minor corrections done across multiple functions,
+  in order to better comply with their supposed defaults to better comply with
+  the new phpDoc blocks information.
 
 === Version/Release 0.9.1 ===
 PATCH RELEASE (signatures updated to 55+21192+9.1).
@@ -68,8 +80,8 @@ PATCH RELEASE (signatures updated to 55+21192+9.1).
 - [2015.12.12; Documentation; Maikuolan]: Updated the anti-virus compatibility
   information in the READMEs.
 
-- [2015.12.12; Documentation; 独孤青冥/zxzllyj]: Completed audit/review/rewrite for
-  the Chinese (Simplified) translation of the README documentation.
+- [2015.12.12; Documentation; 独孤青冥/zxzllyj]: Completed audit/review/rewrite
+  for the Chinese (Simplified) translation of the README documentation.
 
 Caleb M / Maikuolan,
 30th December 2015.

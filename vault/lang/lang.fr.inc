@@ -14,15 +14,14 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel French/Français language data (8th January 2016).
+ This file: phpMussel French/Français language data (10th January 2016).
  <%phpMussel%/vault/lang/lang.fr.inc>
 
 */
 
 /**
- * phpMussel: A PHP script designed to detect trojans, viruses, malware and
- * other threats within files uploaded to your system wherever the script is
- * hooked, based on the signatures of ClamAV and others.
+ * phpMussel: A PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your
+ * system wherever the script is hooked, based on the signatures of ClamAV and others.
  *
  * This file: French language data for phpMussel.
  *

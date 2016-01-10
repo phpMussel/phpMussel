@@ -14,21 +14,21 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Arabic/العربية language data (8th January 2016).
+ This file: phpMussel Arabic/العربية language data (10th January 2016).
  <%phpMussel%/vault/lang/lang.ar.inc>
 
 */
 
 /**
- * phpMussel: A PHP script designed to detect trojans, viruses, malware and
- * other threats within files uploaded to your system wherever the script is
- * hooked, based on the signatures of ClamAV and others.
+ * phpMussel: A PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your
+ * system wherever the script is hooked, based on the signatures of ClamAV and others.
  *
  * This file: Arabic language data for phpMussel.
  *
  * PO/POT version of this file is available via: https://github.com/Maikuolan/phpMussel-extras/blob/master/PO/phpMussel-ar.po
  *
  * @package Maikuolan/phpMussel
+ *
  * @todo English->Arabic i18n not yet done, but a translator is currently working it; It should be ready by the next release. Need this file to exist in the repo, nonetheless, as a placeholder for this future translation work.
  */
 

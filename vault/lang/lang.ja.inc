@@ -14,21 +14,21 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Japanese/日本語 language data (8th January 2016).
+ This file: phpMussel Japanese/日本語 language data (10th January 2016).
  <%phpMussel%/vault/lang/lang.ja.inc>
 
 */
 
 /**
- * phpMussel: A PHP script designed to detect trojans, viruses, malware and
- * other threats within files uploaded to your system wherever the script is
- * hooked, based on the signatures of ClamAV and others.
+ * phpMussel: A PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your
+ * system wherever the script is hooked, based on the signatures of ClamAV and others.
  *
  * This file: Japanese language data for phpMussel.
  *
  * PO/POT version of this file is available via: https://github.com/Maikuolan/phpMussel-extras/blob/master/PO/phpMussel-ja.po
  *
  * @package Maikuolan/phpMussel
+ *
  * @todo English->Japanese i18n should be considered to be extremely fuzzy; I did these myself, but I strongly doubt their accuracy; An audit or re-do would be strongly welcomed.
  */
 

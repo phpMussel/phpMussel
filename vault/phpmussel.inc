@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel v0.9.2 (8th January 2016) core script.
+ This file: phpMussel v0.9.2 (10th January 2016) core script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -50,13 +50,20 @@
 */
 
 /**
- * phpMussel: A PHP script designed to detect trojans, viruses, malware and
- * other threats within files uploaded to your system wherever the script is
- * hooked, based on the signatures of ClamAV and others.
+ * phpMussel: A PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your
+ * system wherever the script is hooked, based on the signatures of ClamAV and others.
  *
  * This file: Core phpMussel script (contains all the main functions and etc).
  *
  * @package Maikuolan/phpMussel
+ *
+ * @todo Wish list: Icon parsing (github.com/Maikuolan/phpMussel/issues/5).
+ * @todo Wish list: Certificate parsing (github.com/Maikuolan/phpMussel/issues/4).
+ * @todo Fix client language bug (github.com/Maikuolan/phpMussel/issues/28).
+ * @todo Get serialised logging working for CLI mode (github.com/Maikuolan/phpMussel/issues/54).
+ * @todo Fix non-ANSI/non-ASCII filenames in CLI mode bug (github.com/Maikuolan/phpMussel/issues/61).
+ * @todo Complete Google Safe Browsing integration (github.com/Maikuolan/phpMussel/issues/65).
+ * @todo Improve data decoding procedures.
  */
 
 /**
@@ -87,9 +94,19 @@ $phpmusselua=$phpmusselversion.' ('.hash('crc32b',$_SERVER['SERVER_ADDR']).'-'.h
 $memCache=array();
 $memCache['eof']=false;
 $phpmusselsafety="\x3c\x3f".'php die; '."\x3f\x3e";
+
 if(!function_exists('implode_md'))
     {
-    function implode_md($ar,$j='',$i=0,$e=1)
+    /**
+     * A function for imploding multidimensional arrays.
+     *
+     * @param array $ar The array to be imploded.
+     * @param string|array $j A "needle" or "joiner" to use for imploding the array (optional). If a numeric array is used, an element of the array corresponding to the recursion depth will be used as the needle or joiner.
+     * @param int $i Used by the function when calling itself recursively, for the purpose of tracking recursion depth (shouldn't be used outside the function).
+     * @param bool $e When set to false, empty elements will be ignored (optional).
+     * @return string The imploded array.
+     */
+    function implode_md($ar,$j='',$i=0,$e=true)
         {
         if(!is_array($ar))return $ar;
         $c=count($ar);
@@ -110,23 +127,41 @@ if(!function_exists('implode_md'))
                 $i--;
                 }
             if(!$out)$out=$ar[$key];
-            else if(!(!$e&&!$ar[$key]))$out.=$x.$ar[$key];
+            else if(!(!$e&&empty($ar[$key])))$out.=$x.$ar[$key];
             next($ar);
             $c--;
             }
         return $out;
         }
     }
+
 if(!function_exists('str_split'))
     {
+    /**
+     * A fallback function for `str_split()` (it converts strings to arrays).
+     *
+     * @param string $s The string to be converted/split.
+     * @return array The converted/split string.
+     */
     function str_split($s)
         {
         return preg_split("//",$s,-1,PREG_SPLIT_NO_EMPTY);
         }
     }
+
 if(!function_exists('substr_compare_hex'))
     {
-    function substr_compare_hex($str=0,$st=0,$l=0,$x=0,$p=false)
+    /**
+     * A function for comparing substrings with hex values.
+     *
+     * @param string $str The source/raw string to be compared.
+     * @param int $st At what point in the source/raw string should the comparing begin (optional)? The first character of the string starts at "0".
+     * @param int $l For how many bytes of the string, starting from `$st`, should the comparing occur (optional)? Defaults to the total length of the string.
+     * @param string $x The hexadecimal value to compare the string against.
+     * @param bool $p When set to false, the function will return true if the hexadecimal value can be matched to at least some part of the substring being compared; When set to true, the function will return true if the hexadecimal value is an exact match to the entirety of the substring being compared (optional).
+     * @return bool The results of the comparison (true if matched, false if not matched).
+     */
+    function substr_compare_hex($str='',$st=0,$l=0,$x=0,$p=false)
         {
         if(!$l)$l=strlen($str);
         if(!$x||!$l)return false;
@@ -140,8 +175,15 @@ if(!function_exists('substr_compare_hex'))
         return ($y===strtolower($x))?true:false;
         }
     }
+
 if(!function_exists('bin2hex'))
     {
+    /**
+     * A fallback function for `bin2hex()` (it converts binary strings to hexadecimal values).
+     *
+     * @param string $str The string to be converted.
+     * @return string The converted string.
+     */
     function bin2hex($str)
         {
         $l=strlen($str);
@@ -154,8 +196,15 @@ if(!function_exists('bin2hex'))
         return $y;
         }
     }
+
 if(!function_exists('hex2bin'))
     {
+    /**
+     * A fallback function for `hex2bin()` (it converts hexadecimal values to binary strings).
+     *
+     * @param string $str The string to be converted.
+     * @return string The converted string.
+     */
     function hex2bin($str)
         {
         $l=strlen($str);
@@ -171,8 +220,15 @@ if(!function_exists('hex2bin'))
         return $n;
         }
     }
+
 if(!function_exists('prescan_decode'))
     {
+    /**
+     * A function for doing some very simplistic decoding work on strings prior to their use in various contexts.
+     *
+     * @param string $str The string to be decoded.
+     * @return string The decoded string.
+     */
     function prescan_decode($str)
         {
         $nstr=html_entity_decode(urldecode(str_ireplace('&amp;#','&#',str_ireplace('&amp;amp;','&amp;',$str))));
@@ -180,8 +236,20 @@ if(!function_exists('prescan_decode'))
         return $nstr;
         }
     }
+
 if(!function_exists('prescan_normalise'))
     {
+    /**
+     * A function for doing some more complex decoding and normalisation work on strings prior to their use in various
+     * contexts.
+     *
+     * @param string $str The string to be decoded/normalised.
+     * @param bool $html If true, "style" and "script" tags will be stripped from the input string (optional; defaults to false).
+     * @param bool $decode If false, the input string will be normalised, but not decoded; If true, the input string will be normalised -and- decoded (optional; defaults to false).
+     * @return string The decoded/normalised string.
+     *
+     * @todo There are many common forms of obfuscation and packing that aren't yet being detected, decoded or normalised by the function; The capabilities of the function needs to eventually be expanded upon, in order to resolve this and thus improve upon the defensive capabilities of phpMussel as a whole.
+     */
     function prescan_normalise($str,$html=false,$decode=false)
         {
         $ostr='';
@@ -306,9 +374,25 @@ if(!function_exists('prescan_normalise'))
         return trim($str);
         }
     }
+
 if(!function_exists('prescan_xmlxdp'))
     {
-    function prescan_xmlxdp($str,$md5=false,$pdf=false)
+    /**
+     * This function looks for XML/XDP chunks within the input string, and for any chunks found, firstly, decodes them,
+     * then, if an MD5 hash is supplied to the function (optionally used as an index key for storing additional
+     * information about the chunks), the function will construct a record similar to the MD5 signatures of phpMussel,
+     * which phpMussel will then later use to check those chunks against its MD5 signatures (if this scanning option is
+     * enabled), and lastly, the function will then return the decoded chunks (as a single, merged string) back to the
+     * calling scope. If the `$pdf` option is enabled, the original input string, normalised, but non-decoded, will be
+     * appended to the beginning of the decoded chunk data to be returned to the calling scope. This data is used in
+     * multiple contexts of the scanning functionality of phpMussel.
+     *
+     * @param string $str The input string to be checked (generally, the raw binary data of the files being scanned by phpMussel).
+     * @param string $md5 An MD5 hash, optionally used as an index key for storing additional information about the XML/XDP chunks.
+     * @param bool $pdf When set to true, the original input string, normalised, but non-decoded, will be appended to the beginning of the decoded chunk data to be returned to the calling scope. This option/parameter should be true when checking PDF file data, but otherwise should be false.
+     * @return string The decoded XML/XDP chunk data to be returned to the calling scope.
+     */
+    function prescan_xmlxdp($str,$md5='',$pdf=false)
         {
         if($md5)
             {
@@ -339,36 +423,77 @@ if(!function_exists('prescan_xmlxdp'))
         return $chunks;
         }
     }
+
 if(!function_exists('substrbf'))
     {
+    /**
+     * Gets substring from haystack prior to the first occurrence of needle.
+     *
+     * @param string $h The haystack.
+     * @param string $n The needle.
+     * @return string The substring.
+     */
     function substrbf($h,$n)
         {
         return @substr($h,0,strpos($h,$n));
         }
     }
+
 if(!function_exists('substraf'))
     {
+    /**
+     * Gets substring from haystack after the first occurrence of needle.
+     *
+     * @param string $h The haystack.
+     * @param string $n The needle.
+     * @return string The substring.
+     */
     function substraf($h,$n)
         {
         return @substr($h,strpos($h,$n)+strlen($n));
         }
     }
+
 if(!function_exists('substrbl'))
     {
+    /**
+     * Gets substring from haystack prior to the last occurrence of needle.
+     *
+     * @param string $h The haystack.
+     * @param string $n The needle.
+     * @return string The substring.
+     */
     function substrbl($h,$n)
         {
         return @substr($h,0,strrpos($h,$n));
         }
     }
+
 if(!function_exists('substral'))
     {
+    /**
+     * Gets substring from haystack after the last occurrence of needle.
+     *
+     * @param string $h The haystack.
+     * @param string $n The needle.
+     * @return string The substring.
+     */
     function substral($h,$n)
         {
         return @substr($h,strrpos($h,$n)+strlen($n));
         }
     }
+
 if(!function_exists('phpMusselFile'))
     {
+    /**
+     * This function reads files and returns the contents of those files.
+     *
+     * @param string $f Path and filename of the file to read.
+     * @param int $s Number of 48KB blocks to read from the file (optional; can be manually specified, but, it's best to just ignore it and let the function work it out for itself).
+     * @param bool $c If false, perform basic safety check prior to reading the file (check if the file exists); If true, skip check (optional; defaults to false).
+     * @return string Content of the file returned by the function.
+     */
     function phpMusselFile($f,$s=0,$c=false)
         {
         if(!$c)
@@ -392,8 +517,12 @@ if(!function_exists('phpMusselFile'))
         return (!empty($d))?$d:false;
         }
     }
+
 if(!function_exists('phpMusselCacheClean'))
     {
+    /**
+     * Deletes expired cache entries and regenerates cache files.
+     */
     function phpMusselCacheClean()
         {
         if(isset($GLOBALS['memCache']['CacheCleaned']))if($GLOBALS['memCache']['CacheCleaned'])return true;
@@ -450,8 +579,15 @@ if(!function_exists('phpMusselCacheClean'))
         return true;
         }
     }
+
 if(!function_exists('phpMusselCacheGet'))
     {
+    /**
+     * Retrieves cache entries.
+     *
+     * @param string|array $entry The name of the cache entry (or entries) to retrieve (can be a string to specify a single entry, or an array of strings to specify multiple entries).
+     * @return string|array Contents of the cache entry (or entries).
+     */
     function phpMusselCacheGet($entry='')
         {
         $x=phpMusselCacheClean();
@@ -489,12 +625,21 @@ if(!function_exists('phpMusselCacheGet'))
         return (!$item_data)?'':$item_data;
         }
     }
+
 if(!function_exists('phpMusselCacheSet'))
     {
-    function phpMusselCacheSet($entry='',$item_ex='',$item_data='')
+    /**
+     * Creates cache entry and saves it to the cache.
+     *
+     * @param string $entry The name of the cache entry to create.
+     * @param int $item_ex The time (in unix time) after which the cache entry should expire.
+     * @param string $item_data Contents of the cache entry.
+     * @return bool This should always return true, unless something goes wrong.
+     */
+    function phpMusselCacheSet($entry='',$item_ex=0,$item_data='')
         {
         $x=phpMusselCacheClean();
-        if(!$entry||!$item_data)return '';
+        if(!$entry||!$item_data)return false;
         if(!$item_ex)$item_ex=$GLOBALS['time'];
         $f=$GLOBALS['vault'].'cache/'.bin2hex($entry[0]).'.tmp';
         $d=(!file_exists($f))?'':phpMusselFile($f,0,true);
@@ -516,8 +661,25 @@ if(!function_exists('phpMusselCacheSet'))
         return true;
         }
     }
+
 if(!function_exists('phpMusselQ'))
     {
+    /**
+     * This function quarantines file uploads.
+     *
+     * The function uses a key generated from your quarantine key to bitshift against the input string, adds a custom
+     * quarantine header with an explanation of what the bitshifted data is along with an MD5 hash checksum of the
+     * original unquarantined input string, and then saves it all to a QFU file, stored in your quarantine directory.
+     * This isn't hardcore encryption, but it should be sufficient to prevent accidental execution of quarantined
+     * files and to allow safe handling of those files, which is the whole point of quarantining them in the first
+     * place, and so, should be sufficient. Improvements may be made in the future.
+     *
+     * @param string $s The input string to be quarantined (usually derived from malicious files).
+     * @param string $key Your quarantine key.
+     * @param string $ip Original source of the input string (usually, the IP address of the uploader of the malicious file).
+     * @param string $id Name of the QFU file to save the quarantined input string into (in the context that this function is used, this is a unique identifier calculated prior to calling the function).
+     * @return bool This should always return true, unless something goes wrong.
+     */
     function phpMusselQ($s,$key,$ip,$id)
         {
         if(!$s||!$key||!$ip||!$id||!function_exists('gzdeflate'))return false;
@@ -539,30 +701,28 @@ if(!function_exists('phpMusselQ'))
         return true;
         }
     }
-if(!function_exists('phpMusselV'))
-    {
-    function phpMusselV($v,$b)
-        {
-        if(!is_array($v)||!$b)return '';
-        $c=count($v);
-        reset($v);
-        for($i=0;$i<$c;$i++)
-            {
-            $k=key($v);
-            $b=str_replace('{'.$k.'}',$v[$k],$b);
-            next($v);
-            }
-        return $b;
-        }
-    }
+
 if(!function_exists('phpMusselMemUse'))
     {
+    /**
+     * A function for calculating the memory usage of a directory, and optionally, for enforcing a limitation upon the
+     * memory usage of that directory by way of deleting the contents of that directory until a specified quota of bytes
+     * to be deleted has been met.
+     *
+     * This function is recursive, and will check (and/or delete from) the specified directory and all subdirectories
+     * that it contains; It should be regarded as a subfunction of the quarantine functionality, used by the quarantine
+     * functionality to enforce the quarantine memory usage limit.
+     *
+     * @param string $p The path and name of the directory to be checked.
+     * @param int $d A quota for how many bytes should be deleted from the target directory when the function is executed (omitting this parameter, or setting it to zero or less, will prevent the deletion of any files).
+     * @return array The function will return an array containing four elements, all integers: `s` is the actual total memory usage of the target directory, `c` is a count of the total number of objects (files and subdirectories) detected within the target directory, `dc` is a count only of the total number of subdirectories detected within the target directory, and `d` is how much remaining quota there is to be met by the time the function has finished executing (usually, should be zero or less).
+     */
     function phpMusselMemUse($p,$d=0)
         {
         $t=array('s'=>0,'c'=>0,'dc'=>0,'d'=>$d);
         if(is_dir($p))if($h=@opendir($p))while(false!==($f=readdir($h)))
             {
-            if($f!='.'&&$f!='..'&&!is_link($np=$p.'/'.$f))
+            if($f!=='.'&&$f!=='..'&&!is_link($np=$p.'/'.$f))
                 {
                 if(is_dir($np))
                     {
@@ -593,16 +753,29 @@ if(!function_exists('phpMusselMemUse'))
         return $t;
         }
     }
+
 if(!function_exists('scandir'))
     {
-    function scandir($r,$x=false)
+    /**
+     * A fallback function for `scandir()` (scans a directory specified by the input and returns a list of its contents
+     * as an array).
+     *
+     * Note: The second and third parameters available to PHP's in-built `scandir()` function don't have equivalents in
+     * our fallback function, because phpMussel doesn't require them. As with all our fallback functions, however, we
+     * always prefer to use PHP's in-built functions, whenever possible, but will use our fallback functions whenever
+     * PHP's in-built functions aren't available (such as for older version of PHP).
+     *
+     * @param string $r The directory to scan.
+     * @return array A list of the contents of the directory specified, returned as a numeric array.
+     */
+    function scandir($r)
         {
         if(!is_dir($r))return false;
         $d=array();
         $i=0;
         if($h=@opendir($r))while(false!==($f=readdir($h)))
             {
-            if($f!='.'&&$f!='..'&&!is_link($np=$p.'/'.$f))
+            if($f!=='.'&&$f!=='..'&&!is_link($np=$p.'/'.$f))
                 {
                 $d[$i]=$np;
                 $i++;
@@ -612,46 +785,65 @@ if(!function_exists('scandir'))
         return $d;
         }
     }
+
 if(!function_exists('lv_match'))
     {
-    if(!function_exists('levenshtein'))
+    /**
+     * A function to check if $needle (string) matches (is equal or identical to) $haystack (string), or a specific
+     * substring of $haystack, to within a specific threshold of the levenshtein distance between the $needle and the
+     * $haystack or the $haystack substring specified.
+     *
+     * This function is useful for expressing the differences between two strings as an integer value and for then
+     * determining whether a specific value as per those differences is met.
+     *
+     * @param string $needle The needle (will be matched against the $haystack, or, if substring positions are specified, against the $haystack substring specified).
+     * @param string $haystack The haystack (will be matched against the $needle). Note that for the purposes of calculating the levenshtein distance, it doesn't matter which string is a $needle and which is a $haystack (the value should be the same if the two were reversed). However, when specifying substring positions, those substring positions are applied to the $haystack, and not the $needle. Note, too, that if the $needle length is greater than the $haystack length (after having applied the substring positions to the $haystack), $needle and $haystack will be switched.
+     * @param int $pos_A The initial position of the $haystack to use for the substring, if using a substring (optional; defaults to `0`; `0` is the beginning of the $haystack).
+     * @param int $pos_Z The final position of the $haystack to use for the substring, if using a substring (optional; defaults to `0`; `0` will instruct the function to continue to the end of the $haystack, and thus, if both $pos_A and $pos_Z are `0`, the entire $haystack will be used).
+     * @param int $min The threshold minimum (the minimum levenshtein distance required in order for the two strings to be considered a match). Optional; Defaults to `0`. If `0` or less is specified, there is no minimum, and so, any and all strings should always match, as long as the levenshtein distance doesn't surpass the threshold maximum.
+     * @param int $max The threshold maximum (the maximum levenshtein distance allowed for the two strings to be considered a match). Optional; Defaults to `-1`. If exactly `-1` is specified, there is no maximum, and so, any and all strings should always match, as long as the threshold minimum is met.
+     * @param bool $bool Specifies to the function whether to return the levenshtein distance of the two strings (as an integer) or to return the results of the match (as a boolean; true for match success, false for match failure). Optional; Defaults to true. If true is specified, the function will return a boolean value (the results of the match), and if false is specified, the levenshtein distance will be returned.
+     * @param bool $case Specifies to the function whether to treat the two strings as case-sensitive (when true is specified) or case-insensitive (when false is specified) when calculating the levenshtein distance. Optional; Defaults to false.
+     * @param int $cost_ins The cost to apply for character/byte insertions for when calculating the levenshtein distance. Optional; Defaults to 1.
+     * @param int $cost_rep The cost to apply for character/byte replacements for when calculating the levenshtein distance. Optional; Defaults to 1.
+     * @param int $cost_del The cost to apply for character/byte deletions for when calculating the levenshtein distance. Optional; Defaults to 1.
+     * @return bool|int The function will return either a boolean or an integer, depending on the state of $bool (but will also return false whenever an error occurs).
+     */
+    function lv_match($needle,$haystack,$pos_A=0,$pos_Z=0,$min=0,$max=-1,$bool=true,$case=false,$cost_ins=1,$cost_rep=1,$cost_del=1)
         {
-        function lv_match($needle,$haystack,$pos_A=0,$pos_Z=0,$min=0,$max=-1,$bool=true,$case=false,$cost_ins=1,$cost_rep=1,$cost_del=1)
+        if(!function_exists('levenshtein')||is_array($needle)||is_array($haystack))return false;
+        $nlen=strlen($needle);
+        $pos_A=(int)$pos_A;
+        $pos_Z=(int)$pos_Z;
+        $min=(int)$min;
+        $max=(int)$max;
+        if($pos_A!==0||$pos_Z!==0)$haystack=($pos_Z===0)?substr($haystack,$pos_A):substr($haystack,$pos_A,$pos_Z);
+        $hlen=strlen($haystack);
+        if($nlen<1||$hlen<1)return ($bool)?false:0;
+        if($nlen>$hlen)
             {
-            return false;
+            $x=array($needle,$nlen,$haystack,$hlen);
+            $haystack=$x[0];
+            $hlen=$x[1];
+            $needle=$x[2];
+            $nlen=$x[3];
+            $x='';
             }
-        }
-    else
-        {
-        function lv_match($needle,$haystack,$pos_A=0,$pos_Z=0,$min=0,$max=-1,$bool=true,$case=false,$cost_ins=1,$cost_rep=1,$cost_del=1)
-            {
-            if(is_array($needle)||is_array($haystack))return 0;
-            $nlen=strlen($needle);
-            $pos_A=(int)$pos_A;
-            $pos_Z=(int)$pos_Z;
-            $min=(int)$min;
-            $max=(int)$max;
-            if($pos_A!==0||$pos_Z!==0)$haystack=@($pos_Z===0)?substr($haystack,$pos_A):substr($haystack,$pos_A,$pos_Z);
-            $hlen=strlen($haystack);
-            if($nlen<1||$hlen<1)return 0;
-            if($nlen>$hlen)
-                {
-                $x=array($needle,$nlen,$haystack,$hlen);
-                $haystack=$x[0];
-                $hlen=$x[1];
-                $needle=$x[2];
-                $nlen=$x[3];
-                $x='';
-                }
-            if($cost_ins===1&&$cost_rep===1&&$cost_del===1)$lv=@($case)?levenshtein($haystack,$needle):levenshtein(strtolower($haystack),strtolower($needle));
-            else $lv=@($case)?levenshtein($haystack,$needle,$cost_ins,$cost_rep,$cost_del):levenshtein(strtolower($haystack),strtolower($needle),$cost_ins,$cost_rep,$cost_del);
-            if($bool)return (($min===0||$lv>=$min)&&($max===-1||$lv<=$max))?true:false;
-            return $lv;
-            }
+        if($cost_ins===1&&$cost_rep===1&&$cost_del===1)$lv=@($case)?levenshtein($haystack,$needle):levenshtein(strtolower($haystack),strtolower($needle));
+        else $lv=@($case)?levenshtein($haystack,$needle,$cost_ins,$cost_rep,$cost_del):levenshtein(strtolower($haystack),strtolower($needle),$cost_ins,$cost_rep,$cost_del);
+        if($bool)return (($min===0||$lv>=$min)&&($max===-1||$lv<=$max))?true:false;
+        return $lv;
         }
     }
+
 if(!function_exists('split_nibble'))
     {
+    /**
+     * Splits the nibbles of a single byte/character.
+     *
+     * @param string $n A byte/character to split.
+     * @return array Returns an array containing two elements, both integers; The first, a decimal representation of the high nibble of the input byte/character, and the second, a decimal representation of the low nibble of the input byte/character.
+     */
     function split_nibble($n)
         {
         $n=@bin2hex($n);
@@ -660,8 +852,17 @@ if(!function_exists('split_nibble'))
         return array($h,$l);
         }
     }
+
 if(!function_exists('explode_bits'))
     {
+    /**
+     * Explodes a byte/character or string into an array containing elements representing the individual bits
+     * constituting the byte/character or string. Each element is a bool, with "false" representing "0" (or "off") and
+     * "true" representing "1" (or "on"). `explode_bits()` is the reverse of `implode_bits()`.
+     *
+     * @param string $n A byte/character or string to explode.
+     * @return array Returns an array containing elements representing the individual bits constituting the byte/character or string.
+     */
     function explode_bits($n)
         {
         if(is_array($n))return '';
@@ -680,8 +881,17 @@ if(!function_exists('explode_bits'))
         return $a;
         }
     }
+
 if(!function_exists('implode_bits'))
     {
+    /**
+     * Implodes an array of bits into a byte/character or string reconstituted from those bits. Each element is a bool,
+     * with "false" representing "0" (or "off") and "true" representing "1" (or "on"). `implode_bits()` is the reverse
+     * of `explode_bits()`.
+     *
+     * @param array $n An array of bits to implode.
+     * @return string Returns a string reconstituted from the input array.
+     */
     function implode_bits($n)
         {
         if(!is_array($n))return '';
@@ -702,8 +912,48 @@ if(!function_exists('implode_bits'))
         return $x;
         }
     }
+
 if(!function_exists('vn_shorthand'))
     {
+    /**
+     * A function to translate the virus name/identifier shorthand adopted by phpMussel to proper virus
+     * names/identifiers and to make some determinations regarding detections based upon the interpretation and
+     * understanding of that shorthand against the phpMussel configuration (for example, whether some certain
+     * classifications, such as hoax/joke viruses, adware, etc, should be entirely ignored by the scanner, or should be
+     * identified as malicious, and therefore blocked).
+     *
+     * Originally, this function was created to allow a way for phpMussel to partially compress its signatures without
+     * jeopardising speed, performance or processing efficiency, because, by allowing phpMussel to partially compress
+     * its signatures, the total footprint of its signature files could be reduced, therefore allowing the inclusion of
+     * a greater number of signatures in the signature files without causing an excessive bloat in the total footprint.
+     *
+     * However, since then, its purpose has expanded, to determining whether a signature should be considered a
+     * weighted signature (for more complex detections involving multiple signatures) or a non-weighted signature (for
+     * signatures that are detections in their own right, not requiring additional signatures for the detection to
+     * occur), and to determining whether or not a signature should be ignored, based upon its classification.
+     *
+     * The function takes an input string (the shorthand virus name), and if byte 0 of the input string is "\x1A" (the
+     * substitute character), the input string is a shorthand virus name, and processing continues; If it doesn't begin
+     * with "\x1A", it isn't a shorthand virus name, and the input string should be returned to the calling scope
+     * unmodified. When processing continues, the function splits the nibbles of bytes 1-2, and uses that information
+     * to reconstruct a complete virus name from the shorthand virus name; 1H represents the signature vendor name and
+     * 1L optionally provides some additional generic indicators (heuristic, CVE, etc), except when 1H == 8 (in which
+     * case, 1L represents the signature vendor name, 1H == 8 being used to access that additional set of allocations),
+     * 2H+2L represents the virus target (ie, the file format or system that the virus that the signature is intended
+     * to detect is intended to be targeting), and 3H+3L represents the nature of what the signature is intended to
+     * detect (ie, whether we should call it a virus, a trojan, adware, ransomware, etc).
+     *
+     * Warning: When modifying these allocations (such as to include a new vendor or a new type of detection), be very
+     * careful to ensure that your choice of allocations won't conflict with the what phpMussel recognises as its
+     * delimiters or as special characters (newlines, semicolons, colons, etc), or else your signature files could
+     * break very badly, leading either to a failure to properly detect anything or to numerous severe false positives.
+     * Generally (but not exclusively), you should avoid: "\x0?" (or any ?H0 character/byte), \x3A and \x3B. Also avoid
+     * using the null character ("\x00") in particular, because it can severely break things in certain situations.
+     *
+     * @param string $p The path and name of the directory to be checked.
+     * @param int $d A quota for how many bytes should be deleted from the target directory when the function is executed (omitting this parameter, or setting it to zero or less, will prevent the deletion of any files).
+     * @return array The function will return an array containing four elements, all integers: `s` is the actual total memory usage of the target directory, `c` is a count of the total number of objects (files and subdirectories) detected within the target directory, `dc` is a count only of the total number of subdirectories detected within the target directory, and `d` is how much remaining quota there is to be met by the time the function has finished executing (usually, should be zero or less).
+     */
     function vn_shorthand($vn)
         {
         $GLOBALS['memCache']['weighted']=false;
@@ -871,6 +1121,24 @@ if(!function_exists('vn_shorthand'))
         return $out.substr($vn,4);
         }
     }
+
+/**
+ * This function (`phpMusselD()`, or, the phpMussel data handler) is one of two sub-functions of the core scanning
+ * function of phpMussel (`phpMussel()`).
+ *
+ * Whereas `phpMusselR()` handles metadata-based and non-signature-based detections, and performs the preparations
+ * necessary for scanning files (such as reading the contents of files prior to checking the contents of files
+ * against anti-virus signatures), `phpMusselD()` is responsible for handling that data after `phpMusselR()` has read
+ * it. `phpMusselD()` is called from `phpMusselR()`, and should never be called in any other contexts or from anywhere
+ * else; It takes the data given to it from the calling function, processes it, and then checks it against the various
+ * signatures of phpMussel, before returning the results of those checks back to the calling function.
+ *
+ * @param string $str The raw binary data to be checked, supplied by the calling function (generally, the contents of files to being scanned).
+ * @param bool $n Inherited from the calling function (`phpMusselR()`, which in turn inherits this parameter from its own calling function, `phpMussel()`), this optional parameter is a boolean (defaults to false, but set to true during the initial scan of file uploads), indicating the format that the scan results should be returned as. False instructs the function to return results as an integer; True instructs the function to return results as human readable text (refer to Section 3A of the README documentation, "HOW TO USE (FOR WEB SERVERS)", for more information).
+ * @param int $dpt Represents the current depth of recursion from which the function has been called. `phpMusselD()` and `phpMusselR()` use this information for determining how much they should indent any entries they generate for logging and for the display of scan results in CLI mode.
+ * @param string $ofn Represents the "original filename" of the file being scanned (the original filename, in this context, referring to the name of the file being scanned as per supplied by the upload client or CLI operator, as opposed to the temporary filename assigned by the server or any other filename).
+ * @return bool|int The scan results, as per described by the README documentation. The function may also die the script and return nothing, if something goes wrong, such as if the function is triggered in the absense of the required $memCache variable being set.
+ */
 function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
     {
     if(!isset($GLOBALS['memCache']))
@@ -7317,6 +7585,29 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
         }
     return (!$n)?2:$out;
     }
+
+/**
+ * This function (`phpMusselR()`, or, the phpMussel recursor) is one of two sub-functions of the core scanning function
+ * of phpMussel (`phpMussel()`).
+ *
+ * `phpMusselR()` handles metadata-based and non-signature-based detections, and performs the preparations necessary
+ * for scanning files (such as reading the contents of files prior to checking the contents of files against anti-virus
+ * signatures). Additionally, it performs all necessary whitelist, blacklist and greylist checks, filesize and file
+ * extension-based checks, and handles the processing and extraction of files from archives, fetching the files
+ * contained in archives being scanned in order to process those contained files as so that they, too, may be scanned.
+ *
+ * When phpMussel is instructed to scan a directory or an array of multiple files, the phpMussel recursor is the
+ * function responsible for iterating through that directory and/or array in order to scan each object required to be
+ * scanned, and if necessary, recurse itself (such as for when scanning a directory containing sub-directories or when
+ * scanning a multidimensional array of multiple files and/or directories).
+ *
+ * @param string|array $f In the context of the initial file upload scanning that phpMussel performs when operating via a server, this parameter (a string) represents the "temporary filename" of the file being scanned (the temporary filename, in this context, referring to the name temporarily assigned to the file by the server upon the file being uploaded to the temporary uploads location assigned to the server). When operating in the context of CLI mode, both $f and $ofn represent the scan target, as per specified by the CLI operator; The only difference between the two is when the scan target is a directory, rather than a single file; $f will represent the full path to the file (so, directory plus filename), whereas $ofn will represent only the filename. This parameter can also accept an array of filenames.
+ * @param bool $n Usually inherited from the calling function (`phpMussel()`), this optional parameter is a boolean (defaults to false, but set to true during the initial scan of file uploads), indicating the format that the scan results should be returned as. False instructs the function to return results as an integer; True instructs the function to return results as human readable text (refer to Section 3A of the README documentation, "HOW TO USE (FOR WEB SERVERS)", for more information).
+ * @param bool $zz Usually inherited from the calling function (`phpMussel()`), this optional parameter is a boolean (defaults to false, but set to true during the initial scan of file uploads), indicating to the function whether or not arrayed results should be imploded prior to being returned to the calling function. False instructs the function to return the arrayed results as verbatim; True instructs the function to return the arrayed results as an imploded string.
+ * @param int $dpt Represents the current depth of recursion from which the function has been called. `phpMusselD()` and `phpMusselR()` use this information for determining how much they should indent any entries they generate for logging and for the display of scan results in CLI mode.
+ * @param string $ofn In the context of the initial file upload scanning that phpMussel performs when operating via a server, this parameter (a string) represents the "original filename" of the file being scanned (the original filename, in this context, referring to the name of the file being scanned as per supplied by the upload client, as opposed to the temporary filename assigned by the server or any other filename). When operating in the context of CLI mode, both $f and $ofn represent the scan target, as per specified by the CLI operator; The only difference between the two is when the scan target is a directory, rather than a single file; $f will represent the full path to the file (so, directory plus filename), whereas $ofn will represent only the filename.
+ * @return bool|int|array The scan results, returned as an array when the $f parameter is an array and when $n and/or $zz is/are false, and otherwise returned as per described by the README documentation. The function may also die the script and return nothing, if something goes wrong, such as if the function is triggered in the absense of the required $memCache variable being set.
+ */
 function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
     {
     if(!isset($GLOBALS['memCache']))
@@ -8353,20 +8644,38 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
                 zip_close($fS);
                 }
             }
+        /**
+         * @todo Future RAR functions to go here!
+         */
         if($xt=='rar'||substr($in,0,4)==='Rar!'||bin2hex(substr($in,0,4))==='52457e5e')
             {
             // $GLOBALS['memCache']['container']='rarfile';
-            // AAA FUTURE RAR FUNCTIONS TO GO HERE! AAA
             }
         if($r===2&&$GLOBALS['MusselConfig']['general']['delete_on_sight'])@unlink($f);
         }
     return (!$n)?$r:$x;
     }
+
 define('mussel_php',defined('PHP_BINARY')?PHP_BINARY:'');
 define('mussel_os',strtoupper(substr(PHP_OS,0,3)));
 define('mussel_sapi',php_sapi_name());
 if(strlen(mussel_php)>0&&mussel_os=='WIN'&&mussel_sapi=='cli'&&!function_exists('phpMusselFork'))
     {
+    /**
+     * This function is used by phpMussel to fork the PHP process when scanning files in CLI mode. It does this as so
+     * that if PHP happens to crash while scanning a file and/or directory, phpMussel can continue to scan any
+     * remaining files and/or directories queued for scanning (because if the parent process handles the scanning queue
+     * and the child process handles the actual scanning of each file queued for scanning, if the child process
+     * crashes, the parent process can simply create a new child process to continue iterating through the queue).
+     *
+     * There are also some additional benefits to be had by scanning in this way, such as the ability to kill a child
+     * process, responsible for the actual scanning, and yet still have the results of this scanning logged (which, of
+     * course, if killed in this way prior to completing the scan, would likely entail some manner of error).
+     *
+     * @param string $f The name of the file and/or directory to be scanned, with path included (so, the complete file address).
+     * @param string $ofn The name of the file and/or directory to be scanned, without any path included (so, just the name by itself).
+     * @return string The scan results, piped back to the parent from the child process and returned to the calling function as a string.
+     */
     function phpMusselFork($f='',$ofn='')
         {
         $pf=popen(mussel_php.' "'.$GLOBALS['vault'].'../phpmussel.php" "cli_win_scan" "'.$f.'" "'.$ofn.'"','r');
@@ -8376,6 +8685,7 @@ if(strlen(mussel_php)>0&&mussel_os=='WIN'&&mussel_sapi=='cli'&&!function_exists(
         return $s;
         }
     }
+
 if(!isset($MusselConfig['general']['scan_log']))$MusselConfig['general']['scan_log']='';
 if(!isset($MusselConfig['general']['scan_log_serialized']))$MusselConfig['general']['scan_log_serialized']='';
 if(!isset($MusselConfig['general']['scan_kills']))$MusselConfig['general']['scan_kills']='';
@@ -8460,6 +8770,7 @@ if(!isset($MusselConfig['urlscanner']['maximum_api_lookups_response']))$MusselCo
 if(!isset($MusselConfig['urlscanner']['cache_time']))$MusselConfig['urlscanner']['cache_time']=3600;
 if(!isset($MusselConfig['template_data']))$MusselConfig['template_data']=array();
 if(!isset($MusselConfig['template_data']['css_url']))$MusselConfig['template_data']['css_url']='';
+
 $cli_args=array(isset($argv[0])?$argv[0]:'',isset($argv[1])?$argv[1]:'',isset($argv[2])?$argv[2]:'',isset($argv[3])?$argv[3]:'');
 if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
     {
@@ -8712,6 +9023,10 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
         die;
         }
     }
+
+/**
+ * @todo phpDocs block here.
+ */
 function phpMussel($f='',$n=false,$zz=false,$dpt=0,$ofn='')
     {
     if(!isset($GLOBALS['memCache']))
@@ -8811,6 +9126,10 @@ function phpMussel($f='',$n=false,$zz=false,$dpt=0,$ofn='')
         }
     return $r;
     }
+
+/**
+ * @todo phpDocs block here.
+ */
 function phpMussel_mail($body='')
     {
     $f='';

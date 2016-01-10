@@ -14,15 +14,14 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Chinese (Traditional) / 中文（傳統） language data (8th January 2016).
+ This file: phpMussel Chinese (Traditional) / 中文（傳統） language data (10th January 2016).
  <%phpMussel%/vault/lang/lang.zh-TW.inc>
 
 */
 
 /**
- * phpMussel: A PHP script designed to detect trojans, viruses, malware and
- * other threats within files uploaded to your system wherever the script is
- * hooked, based on the signatures of ClamAV and others.
+ * phpMussel: A PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your
+ * system wherever the script is hooked, based on the signatures of ClamAV and others.
  *
  * This file: Chinese (Traditional) language data for phpMussel.
  *
