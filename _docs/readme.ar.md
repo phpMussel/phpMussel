@@ -12,7 +12,7 @@
  <li>5. <a href="#SECTION5">الملفاتالموجودةفيهذهالحزمة.</a></li>
  <li>6. <a href="#SECTION6">خياراتالتكوين/التهيئة.</a></li>
  <li>7. <a href="#SECTION7">شكل/تنسيق التوقيع.</a></li>
- <li>8. <a href="#SECTION8">مشاكلالتوافقالمعروفة.</a></li>
+ <li>8. <a href="#SECTION8">مشاكل التوافق المعروفة.</a></li>
 </ul></div>
 
 ---
@@ -916,106 +916,109 @@ Template data relates to the HTML output used to generate the "Upload Denied" me
 
 ####*<div dir="rtl">التوزيع التفصيلي للتوقيع</div>*
 <div dir="rtl">فيما يلي تفصيل لأنواع التوقيعات التي يستخدمها "بي اتش بي  ماسل":<br /><br /></div>
-- "Normalised ASCII Signatures" (ascii_*). Checked against the contents of every non-whitelisted file targeted for scanning.
-- "Complex Extended Signatures" (coex_*). Mixed signature type matching.
-- "ELF Signatures" (elf_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to the ELF format.
-- "Portable Executable Signatures" (exe_*). Checked against the contents of every non-whitelisted targeted for scanning and matched to the PE format.
-- "Filename Signatures" (filenames_*). Checked against the filenames of files targeted for scanning.
-- "General Signatures" (general_*). Checked against the contents of every non-whitelisted file targeted for scanning.
-- "Graphics Signatures" (graphics_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to a known graphical file format.
-- "General Commands" (hex_general_commands.csv). Checked against the contents of every non-whitelisted file targeted for scanning.
-- "Normalised HTML Signatures" (html_*). Checked against the contents of every non-whitelisted HTML file targeted for scanning.
-- "Mach-O Signatures" (macho_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to the Mach-O format.
-- "Email Signatures" (mail_*). Checked against the $body variable parsed to the phpMussel_mail() function, which is intended to be the body of email messages or similar entities (potentially forum posts and etcetera).
-- "MD5 Signatures" (md5_*). Checked against the MD5 hash of the contents and the filesize of every non-whitelisted file targeted for scanning.
-- "Archive Metadata Signatures" (metadata_*). Checked against the CRC32 hash and filesize of the initial file contained inside of any non-whitelisted archive targeted for scanning.
-- "OLE Signatures" (ole_*). Checked against the contents of every non-whitelisted OLE object targeted for scanning.
-- "PDF Signatures" (pdf_*). Checked against the contents of every non-whitelisted PDF file targeted for scanning.
-- "Portable Executable Sectional Signatures" (pe_*). Checked against the MD5 hash and the size of each PE section of every non-whitelisted file targeted for scanning and matched to the PE format.
-- "Portable Executable Extended Signatures" (pex_*). Checked against the MD5 hash and the size of variables within every non-whitelisted file targeted for scanning and matched to the PE format.
-- "SWF Signatures" (swf_*). Checked against the contents of every non-whitelisted Shockwave file targeted for scanning.
-- "Whitelist Signatures" (whitelist_*). Checked against the MD5 hash of the contents and the filesize of every file targeted for scanning. Matched files will be immune to being matched by the type of signature mentioned in their whitelist entry.
-- "XML/XDP Signatures" (xmlxdp_*). Checked against any XML/XDP chunks found within any non-whitelisted files targeted for scanning.
+<div dir="rtl"><ul>
+ <li>"التوقيعات التي تمت تسويتها بواسطة ASCII" (ascii_*). تم الفحص ضد محتويات كل ملف غير موجود في لائحة السماح المستهدفة للفحص.</li>
+ <li>"التوقيعات المركبة الموسعة" (coex_*). نوع مطابقة التواقيع المختلطة.</li>
+ <li>"توقيعات ELF" (elf_*). تم الفحص ضد محتويات كل ملف غير موجود في لائحة السماح المستهدفة للفحص ومطابقة لتنسيق ELF.</li>
+ <li>"التواقيع المحمولة القابلة للتنفيذ"  (exe_*). تم الفحص ضد محتويات كل ملف غير موجود في لائحة السماح المستهدفة للفحص ومطابقة لتنسيق PE.</li>
+ <li>"توقيعات اسم الملف"  (filenames_*). تم الفحص ضد أسماء الملفات المستهدفة للفحص.</li>
+ <li>"التوقيعات العامة" (general_*). تم الفحص ضد محتويات كل ملف غير موجود في لائحة السماح المستهدفة للفحص.</li>
+ <li>"توقيعات الرسومات" (graphics_*). تم الفحص ضد محتويات كل ملف غير موجود في لائحة السماح المستهدفة للفحص و معروف كذلك كملف رسومات.</li>
+ <li>"الاوامر العامة" (hex_general_commands.csv). تم الفحص ضد محتويات كل ملف غير موجود في لائحة السماح المستهدفة للفحص.</li>
+ <li>"التوقيعات التي تمت تسويتها بواسطة HTML" (html_*). تم الفحص ضد محتويات كل ملف HTML غير الموجودة في قائمة السماح المستهدفة للفحص.</li>
+ <li>"توقيعات Mach-O" (macho_*). تم الفحص ضد محتويات كل ملف غير موجود في لائحة السماح المستهدفة للفحص ومطابقة لتنسيق Mach-O.</li>
+ <li>"توقيعات البريد" (mail_*). تم الفحص ضد المتغير "$body" و الذي يقوم بتحليل لوظيفة phpMussel_mail()، والذي يهدف إلى أن يكون جسم من رسائل البريد الإلكتروني أو الكيانات المماثلة (يحتمل أن تكون المشاركات في المنتدى وإلى آخره).</li>
+ <li>"توقيعات MD5" (md5_*). تم الفحص ضد تجزئة MD5 من محتويات وحجم الملف من كل ملف غير موجود في لائحة السماح المستهدفة للفحص.</li>
+ <li>"توقيعات أرشيف البيانات الوصفية" (metadata_*). فحص ضد تجزئة CRC32 الملف وحجم الملف الأولي الموجودة داخل أي أرشيف غير موجود في لائحة السماح المستهدفة للفحص.</li>
+ <li>"توقيعات OLE" (ole_*). تم الفحص ضد محتويات كل كائن OLE غير موجود في لائحة السماح المستهدفة للفحص.</li>
+ <li>"توقيعات PDF" (pdf_*). تم الفحص ضد محتويات كل كائن PDF غير موجود في لائحة السماح المستهدفة للفحص.</li>
+ <li>"التوقيعات الفرعية المحمولة القابلة للتنفيذ" (pe_*). تم الفحص ضد تجزئة MD5 وحجم كل قسم PE من كل ملف غير موجود في لائحة السماح المستهدفة للفحص ومطابقة لتنسيق PE.</li>
+ <li>"التوقيعات الموسعة المحمولة القابلة للتنفيذ" (pex_*). تم الفحص ضد تجزئة MD5 وحجم المتغيرات داخل كل ملف غير موجود في لائحة السماح المستهدفة للفحص ومطابقة لتنسيق PE.</li>
+ <li>"توقيعات SWF" (swf_*). تم الفحص ضد محتويات كل ملف بالمستخدمين غير موجود في لائحة السماح المستهدفة للفحص.</li>
+ <li>"توقيعات قائمة السماح" (whitelist_*). تم الفحص ضد تجزئة MD5 من محتويات وحجم الملف من كل ملف المستهدفة للفحص. الملفات المتطابقة سوف تكون في مأمن من أن يقابله نوع من التوقيع المذكورة في دخولهم قائمة السماح.</li>
+ <li>"توقيعات XML/XDP" (xmlxdp_*). تم الفحص ضد أي قطع XML/XDP وجدت داخل أي ملفات غير لائحة السماح المستهدفة للفحص.</li>
+</ul></div>
 <div dir="rtl">(لاحظ أن أي من هذه التوقيعات قد يتم تعطيل بسهولة عبر "phpmussel.ini").<br /><br /></div>
 
 ---
 
 
-### <div dir="rtl">8. <a name="SECTION8"></a>مشاكلالتوافقالمعروفة</div>
+### <div dir="rtl">8. <a name="SECTION8"></a>مشاكل التوافق المعروفة</div>
 
-####PHP and PCRE
-- phpMussel requires PHP and PCRE to execute and function correctly. Without PHP, or without the PCRE extension of PHP, phpMussel won't execute or function correctly. Should make sure your system has both PHP and PCRE installed and available prior to downloading and installing phpMussel.
+####<div dir="rtl">PHP و PCRE</div>
 
-####ANTI-VIRUS SOFTWARE COMPATIBILITY
+<div dir="rtl">"بي اتش بي  ماسل" يتطلب PHP و PCRE لتنفيذ وظيفته بشكل صحيح و بدون أحدهما أو كلاهما فإن البرنامج لن يعمل بشكل صحيح. تأكد من أن نظامك يمتلك كلا من PHP و PCRE مثبتين و متاحين قبل أن تقوم بتنزيل و تثبيت "بي اتش بي  ماسل".<br /><br /></div>
 
-For the most part, phpMussel should be fairly compatible with most other virus scanning software. However, conflictions have been reported by a number of users in the past. This information below is from VirusTotal.com, and it describes a number of false-positives reported by various anti-virus programs against phpMussel. Although this information isn't an absolute guarantee of whether or not you will encounter compatibility problems between phpMussel and your anti-virus software, if your anti-virus software is noted as flagging against phpMussel, you should either consider disabling it prior to working with phpMussel or should consider alternative options to either your anti-virus software or phpMussel.
+####<div dir="rtl">التوافق البرمجي لبرنامج مكافحة الفيروسات</div>
 
-This information was last updated 12th December 2015 and is current for all phpMussel releases of the two most recent minor versions (v0.8-v0.9.0) at the time of writing this.
+<div dir="rtl">بالنسبة للجزء الأكبر، ينبغي أن يكون "بي اتش بي  ماسل" متوافق إلى حد ما مع معظم برامج مكافحة و فحص الفيروسات الأخرى. مع ذلك ، فقد تم الإبلاغ عن تعارضات من قبل عدد من المستخدمين في الماضي. وهذه المعلومات أدناه من VirusTotal.com، و توضح عدد من ايجابيات كاذبة (فحص خاطئ بوجود فايروس) ذكرت من قبل مختلف برامج مكافحة الفيروسات ضد "بي اتش بي  ماسل". على الرغم من أن هذه المعلومات ليست ضمانة مطلقة من أنك سوف تواجه أو لا مشاكل توافق بين "بي اتش بي  ماسل" وبرنامج مكافحة الفيروسات الخاص بك، إذا لاحظ برنامج مكافحة الفيروسات الخاص بك ضعف تجاه "بي اتش بي  ماسل"، يجب عليك إما النظر في تعطيله قبل العمل مع "بي اتش بي  ماسل" أو أن تنظر في خيارات بديلة إما الخاصة ببرنامج مكافحة الفيروسات أو "بي اتش بي  ماسل".<br /><br /></div>
 
-| Scanner              |  Results                             |
-|----------------------|--------------------------------------|
-| Ad-Aware             |  No known problems                   |
-| AegisLab             |  No known problems                   |
-| Agnitum              |  No known problems                   |
-| AhnLab-V3            |  No known problems                   |
-| Alibaba              |  No known problems                   |
-| ALYac                |  No known problems                   |
-| AntiVir              |  No known problems                   |
-| Antiy-AVL            |  No known problems                   |
-| Arcabit              |  No known problems                   |
-| Avast                |  Reports "JS:ScriptSH-inf [Trj]"     |
-| AVG                  |  No known problems                   |
-| Avira                |  No known problems                   |
-| AVware               |  No known problems                   |
-| Baidu-International  |  No known problems                   |
-| BitDefender          |  No known problems                   |
-| Bkav                 |  Reports "VEXD737.Webshell"          |
-| ByteHero             |  No known problems                   |
-| CAT-QuickHeal        |  No known problems                   |
-| ClamAV               |  No known problems                   |
-| CMC                  |  No known problems                   |
-| Commtouch            |  No known problems                   |
-| Comodo               |  No known problems                   |
-| Cyren                |  Reports "W32/GenBl.DE4CF18E!Olympus"|
-| DrWeb                |  No known problems                   |
-| Emsisoft             |  No known problems                   |
-| ESET-NOD32           |  No known problems                   |
-| F-Prot               |  No known problems                   |
-| F-Secure             |  No known problems                   |
-| Fortinet             |  No known problems                   |
-| GData                |  No known problems                   |
-| Ikarus               |  No known problems                   |
-| Jiangmin             |  No known problems                   |
-| K7AntiVirus          |  No known problems                   |
-| K7GW                 |  No known problems                   |
-| Kaspersky            |  No known problems                   |
-| Kingsoft             |  No known problems                   |
-| Malwarebytes         |  No known problems                   |
-| McAfee               |  Reports "New Script.c"              |
-| McAfee-GW-Edition    |  Reports "New Script.c"              |
-| Microsoft            |  No known problems                   |
-| MicroWorld-eScan     |  No known problems                   |
-| NANO-Antivirus       |  No known problems                   |
-| Norman               |  No known problems                   |
-| nProtect             |  No known problems                   |
-| Panda                |  No known problems                   |
-| Qihoo-360            |  No known problems                   |
-| Rising               |  No known problems                   |
-| Sophos               |  No known problems                   |
-| SUPERAntiSpyware     |  No known problems                   |
-| Symantec             |  No known problems                   |
-| Tencent              |  No known problems                   |
-| TheHacker            |  No known problems                   |
-| TotalDefense         |  No known problems                   |
-| TrendMicro           |  No known problems                   |
-| TrendMicro-HouseCall |  No known problems                   |
-| VBA32                |  No known problems                   |
-| VIPRE                |  No known problems                   |
-| ViRobot              |  No known problems                   |
-| Zillya               |  No known problems                   |
-| Zoner                |  No known problems                   |
+<div dir="rtl">آخر تحديث لهذه المعلومات كان في 12 ديسمبر 2015, و هي كذلك الحالية للإصدارين الثانويين الذين تم إصدارهما مؤخرا (v0.8-v0.9.0) من "بي اتش بي  ماسل".<br /><br /></div>
+
+برنامج فحص الفيروسات | النتيجة
+----|----
+Ad-Aware | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+AegisLab | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Agnitum | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+AhnLab-V3 | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Alibaba | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+ALYac | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+AntiVir | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Antiy-AVL | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Arcabit | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Avast | <div dir="rtl" style="display:inline;">"JS:ScriptSH-inf [Trj]" تقارير</div>
+AVG | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Avira | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+AVware | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Baidu-International | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+BitDefender | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Bkav | <div dir="rtl" style="display:inline;">"VEXD737.Webshell" تقارير</div>
+ByteHero | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+CAT-QuickHeal | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+ClamAV | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+CMC | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Commtouch | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Comodo | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Cyren | <div dir="rtl" style="display:inline;">"W32/GenBl.DE4CF18E!Olympus" تقارير</div>
+DrWeb | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Emsisoft | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+ESET-NOD32 | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+F-Prot | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+F-Secure | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Fortinet | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+GData | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Ikarus | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Jiangmin | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+K7AntiVirus | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+K7GW | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Kaspersky | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Kingsoft | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Malwarebytes | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+McAfee | <div dir="rtl" style="display:inline;">"New Script.c" تقارير</div>
+McAfee-GW-Edition | <div dir="rtl" style="display:inline;">"New Script.c" تقارير</div>
+Microsoft | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+MicroWorld-eScan | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+NANO-Antivirus | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Norman | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+nProtect | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Panda | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Qihoo-360 | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Rising | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Sophos | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+SUPERAntiSpyware | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Symantec | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Tencent | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+TheHacker | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+TotalDefense | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+TrendMicro | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+TrendMicro-HouseCall | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+VBA32 | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+VIPRE | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+ViRobot | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Zillya | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
+Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 
 ---
 
 
-Last Updated: 6th January 2016 (2016.01.06).
+<div dir="rtl">آخر تحديث: 11 يناير 2016 (2016.01.11).</div>
