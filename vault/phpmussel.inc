@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel v0.9.2 (12th January 2016) core script.
+ This file: phpMussel v0.9.2 (13th January 2016) core script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -1139,7 +1139,7 @@ if(!function_exists('vn_shorthand'))
  * @param bool $n Inherited from the calling function (`phpMusselR()`, which in turn inherits this parameter from its own calling function, `phpMussel()`), this optional parameter is a boolean (defaults to false, but set to true during the initial scan of file uploads), indicating the format that the scan results should be returned as. False instructs the function to return results as an integer; True instructs the function to return results as human readable text (refer to Section 3A of the README documentation, "HOW TO USE (FOR WEB SERVERS)", for more information).
  * @param int $dpt Represents the current depth of recursion from which the function has been called. `phpMusselD()` and `phpMusselR()` use this information for determining how much they should indent any entries they generate for logging and for the display of scan results in CLI mode.
  * @param string $ofn Represents the "original filename" of the file being scanned (the original filename, in this context, referring to the name of the file being scanned as per supplied by the upload client or CLI operator, as opposed to the temporary filename assigned by the server or any other filename).
- * @return bool|int The scan results, as per described by the README documentation. The function may also die the script and return nothing, if something goes wrong, such as if the function is triggered in the absense of the required $memCache variable being set.
+ * @return int|string The scan results, as per described by the README documentation. The function may also die the script and return nothing, if something goes wrong, such as if the function is triggered in the absense of the required $memCache variable being set.
  */
 function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
     {
@@ -7608,7 +7608,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
  * @param bool $zz Usually inherited from the calling function (`phpMussel()`), this optional parameter is a boolean (defaults to false, but set to true during the initial scan of file uploads), indicating to the function whether or not arrayed results should be imploded prior to being returned to the calling function. False instructs the function to return the arrayed results as verbatim; True instructs the function to return the arrayed results as an imploded string.
  * @param int $dpt Represents the current depth of recursion from which the function has been called. `phpMusselD()` and `phpMusselR()` use this information for determining how much they should indent any entries they generate for logging and for the display of scan results in CLI mode.
  * @param string $ofn In the context of the initial file upload scanning that phpMussel performs when operating via a server, this parameter (a string) represents the "original filename" of the file being scanned (the original filename, in this context, referring to the name of the file being scanned as per supplied by the upload client, as opposed to the temporary filename assigned by the server or any other filename). When operating in the context of CLI mode, both $f and $ofn represent the scan target, as per specified by the CLI operator; The only difference between the two is when the scan target is a directory, rather than a single file; $f will represent the full path to the file (so, directory plus filename), whereas $ofn will represent only the filename.
- * @return bool|int|array The scan results, returned as an array when the $f parameter is an array and when $n and/or $zz is/are false, and otherwise returned as per described by the README documentation. The function may also die the script and return nothing, if something goes wrong, such as if the function is triggered in the absense of the required $memCache variable being set.
+ * @return int|string|array The scan results, returned as an array when the $f parameter is an array and when $n and/or $zz is/are false, and otherwise returned as per described by the README documentation. The function may also die the script and return nothing, if something goes wrong, such as if the function is triggered in the absense of the required $memCache variable being set.
  */
 function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
     {
@@ -9038,7 +9038,7 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
  * @param bool $zz A boolean, indicating to the function whether or not arrayed results should be imploded prior to being returned to the calling function. False instructs the function to return the arrayed results as verbatim; True instructs the function to return the arrayed results as an imploded string. Optional; Defaults to false.
  * @param int $dpt Represents the current depth of recursion from which the function has been called. `phpMusselD()` and `phpMusselR()` use this information for determining how much they should indent any entries they generate for logging and for the display of scan results in CLI mode (you should never manually set this parameter yourself).
  * @param string $ofn In the context of the initial file upload scanning that phpMussel performs when operating via a server, this parameter (a string) represents the "original filename" of the file being scanned (the original filename, in this context, referring to the name of the file being scanned as per supplied by the upload client, as opposed to the temporary filename assigned by the server or any other filename). When operating in the context of CLI mode, both $f and $ofn represent the scan target, as per specified by the CLI operator; The only difference between the two is when the scan target is a directory, rather than a single file; $f will represent the full path to the file (so, directory plus filename), whereas $ofn will represent only the filename.
- * @return bool|int|array The scan results, returned as an array when the $f parameter is an array and when $n and/or $zz is/are false, and otherwise returned as per described by the README documentation. The function may also die the script and return nothing, if something goes wrong, such as if the function is triggered in the absense of the required $memCache variable being set.
+ * @return bool|int|string|array The scan results, returned as an array when the $f parameter is an array and when $n and/or $zz is/are false, and otherwise returned as per described by the README documentation. The function may also die the script and return nothing, if something goes wrong, such as if the function is triggered in the absense of the required $memCache variable being set, and may also return false, in the absense of the required $HashCache variable being set.
  */
 function phpMussel($f='',$n=false,$zz=false,$dpt=0,$ofn='')
     {
@@ -9817,7 +9817,7 @@ function phpMussel_mail($body='')
 
 /**
  * We need to count the number of elements contained by the $_FILES array, to know if there are any file uploads to be
- * scanned during this execution of the script.
+ * scanned during execution of the script.
  */
 $c=empty($_FILES)?0:count($_FILES);
 
