@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel v0.9.2 (10th January 2016) loader file.
+ This file: phpMussel v0.9.2 (12th January 2016) loader file.
  <%phpMussel%/phpmussel.php>
 
                                      ~ ~ ~
@@ -151,15 +151,13 @@ if(!defined('phpMussel'))
     if(!isset($MusselConfig['general']['cleanup']))$MusselConfig['general']['cleanup']=true;
     if(!$disable_lock=file_exists($vault.'disable.lck'))
         {
-        $update_lock=file_exists($vault.'update.lck');
         $update_timer=time();
-        while($update_lock)
+        while(file_exists($vault.'update.lck'))
             {
             sleep(2);
-            $update_lock=file_exists($vault.'update.lck');
             if((time()-$update_timer)>12)plaintext_echo_die('[phpMussel] '.$MusselConfig['lang']['update_lock_detected']);
             }
-        unset($update_timer,$update_lock);
+        unset($update_timer);
         }
     if(!isset($MusselConfig['general']['enable_plugins']))$MusselConfig['general']['enable_plugins']=true;
     $x='';

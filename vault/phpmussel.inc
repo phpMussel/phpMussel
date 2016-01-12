@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel v0.9.2 (10th January 2016) core script.
+ This file: phpMussel v0.9.2 (12th January 2016) core script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -57,6 +57,8 @@
  *
  * @package Maikuolan/phpMussel
  *
+ * @todo Archive support should extend to include RAR, SHAR and 7z, if possible (github.com/Maikuolan/phpMussel/issues/2).
+ * @todo ZIP support and future support for other archive formats should be made to be recursive.
  * @todo Wish list: Icon parsing (github.com/Maikuolan/phpMussel/issues/5).
  * @todo Wish list: Certificate parsing (github.com/Maikuolan/phpMussel/issues/4).
  * @todo Fix client language bug (github.com/Maikuolan/phpMussel/issues/28).
@@ -9025,7 +9027,18 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
     }
 
 /**
- * @todo phpDocs block here.
+ * This is the core scanning function of phpMussel, responsible for initialising the scanning performed by phpMussel
+ * for most circumstances. It's the function that generally should be called whenever phpMussel is required by external
+ * scripts, apps, CMS, etc.
+ *
+ * Please refer to Section 3A of the README documentation, "HOW TO USE (FOR WEB SERVERS)", for more information.
+ *
+ * @param string|array $f Indicates which file, files, directory and/or directories to scan (can be a string, an array, or a multidimensional array).
+ * @param bool $n A boolean, indicating the format for the scan results to be returned as. False instructs the function to return the results as an integer; True instructs the function to return the results as human readable text. Optional; Defaults to false.
+ * @param bool $zz A boolean, indicating to the function whether or not arrayed results should be imploded prior to being returned to the calling function. False instructs the function to return the arrayed results as verbatim; True instructs the function to return the arrayed results as an imploded string. Optional; Defaults to false.
+ * @param int $dpt Represents the current depth of recursion from which the function has been called. `phpMusselD()` and `phpMusselR()` use this information for determining how much they should indent any entries they generate for logging and for the display of scan results in CLI mode (you should never manually set this parameter yourself).
+ * @param string $ofn In the context of the initial file upload scanning that phpMussel performs when operating via a server, this parameter (a string) represents the "original filename" of the file being scanned (the original filename, in this context, referring to the name of the file being scanned as per supplied by the upload client, as opposed to the temporary filename assigned by the server or any other filename). When operating in the context of CLI mode, both $f and $ofn represent the scan target, as per specified by the CLI operator; The only difference between the two is when the scan target is a directory, rather than a single file; $f will represent the full path to the file (so, directory plus filename), whereas $ofn will represent only the filename.
+ * @return bool|int|array The scan results, returned as an array when the $f parameter is an array and when $n and/or $zz is/are false, and otherwise returned as per described by the README documentation. The function may also die the script and return nothing, if something goes wrong, such as if the function is triggered in the absense of the required $memCache variable being set.
  */
 function phpMussel($f='',$n=false,$zz=false,$dpt=0,$ofn='')
     {
@@ -9128,11 +9141,18 @@ function phpMussel($f='',$n=false,$zz=false,$dpt=0,$ofn='')
     }
 
 /**
- * @todo phpDocs block here.
+ * This is an additional scanning function that can be used for scanning email messages, forum posts, contact form
+ * messages and other similar such things, and is unrelated to the core scanning function of phpMussel. The function is
+ * unused by phpMussel itself, not being called anywhere in any contexts, but exists here nonetheless for the benefit
+ * of those that may wish to use it within their scripts, apps, CMS, etc.
+ *
+ * Please refer to Section 3A of the README documentation, "HOW TO USE (FOR WEB SERVERS)", for more information.
+ *
+ * @param string $body The actual content (email message, forum post, etc) that you wish to scan (must be a string).
+ * @return int|string If any error occurs preventing the function from completing its scan, a value of -1 (integer) will be returned. If the function completes its scan and doesn't match anything, a value of 0 (integer) will be returned. If, however, the function does match something, a string will be returned containing a message citing what has been matched.
  */
 function phpMussel_mail($body='')
     {
-    $f='';
     if(!$len=strlen($body))return -1;
     if(!isset($GLOBALS['memCache']['greylist']))
         {
@@ -9146,6 +9166,7 @@ function phpMussel_mail($body='')
             }
         else $GLOBALS['memCache']['greylist']=phpMusselFile($GLOBALS['vault'].'greylist.csv');
         }
+    $f='';
     $hex=@bin2hex($body);
     $hexlc=@bin2hex(strtolower($body));
     $hexlen=strlen($hexlc);
@@ -9793,8 +9814,31 @@ function phpMussel_mail($body='')
         }
     return (!$f)?0:$f;
     }
+
+/**
+ * We need to count the number of elements contained by the $_FILES array, to know if there are any file uploads to be
+ * scanned during this execution of the script.
+ */
 $c=empty($_FILES)?0:count($_FILES);
+
+/**
+ * Initialise $whyflagged (string), $killdata (string) and $pedata (string).
+ *
+ * Whenever something is detected in a file being scanned, a human-readable description of what has been detected is
+ * appended to $whyflagged; This variable contains the "Detected ... !" message you see on the "Upload Denied!" page
+ * generated whenever a file upload has been blocked.
+ *
+ * The $killdata variable contains a hash reference to every file upload blocked and to every file where something has
+ * been detected in that file, in the form of "FILE-MD5-HASH:FILESIZE:FILENAME".
+ *
+ * If the file being scanned happens to be a PE file, in addition to the information appended to $whyflagged and
+ * $killdata, reconstructed references to the PE sections of that PE file will be appended to the $pedata variable.
+ *
+ * If logging is enabled, the information contained by these three variables will all be logged as per the specified by
+ * the logging-related directives of the phpMussel configuration file.
+ */
 $whyflagged=$killdata=$pedata='';
+
 $HashCache=($c>0&&$MusselConfig['general']['scan_cache_expiry']>0)?phpMusselCacheGet('HashCache'):array();
 if(!empty($HashCache))
     {
@@ -9812,6 +9856,7 @@ if(!empty($HashCache))
     $HashCache=$HashCacheN;
     unset($HashCacheN);
     }
+
 if($c>0)
     {
     reset($_FILES);
