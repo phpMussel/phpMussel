@@ -252,7 +252,7 @@
 2 X-05:^[Ss][Hh][0-9]+\.[Pp][Hh][Pp]
 2 X-06:[Ss]{2}[Hh][0-9]+\.[Pp][Hh][Pp]
 2 X-07:tool[0-9]{2,}\.php
-2 X-08:^(cih|reno|som2|upnew|txt|xia|xpl)\.php
+2 X-08:^(aha|axa|cih|myshe|reno|som2|upnew|xia|xpl)\.php
 2 X-09:^[Uu][Pp][Xx]\.[Pp][Hh][Pp]
 2 /X-00:^[Hh]3[Xx]\.[Pp][Hh][Pp]$
 >FN>\.[Pp][^Hh]>265

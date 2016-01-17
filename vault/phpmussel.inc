@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel v0.9.2 (13th January 2016) core script.
+ This file: phpMussel v0.9.2 (17th January 2016) core script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -494,7 +494,7 @@ if(!function_exists('phpMusselFile'))
      * @param string $f Path and filename of the file to read.
      * @param int $s Number of 48KB blocks to read from the file (optional; can be manually specified, but, it's best to just ignore it and let the function work it out for itself).
      * @param bool $c If false, perform basic safety check prior to reading the file (check if the file exists); If true, skip check (optional; defaults to false).
-     * @return string Content of the file returned by the function.
+     * @return string|bool Content of the file returned by the function (or false on failure).
      */
     function phpMusselFile($f,$s=0,$c=false)
         {
