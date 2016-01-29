@@ -69,8 +69,11 @@ entries will be deleted when those goals have been achieved.
   in order to better comply with their supposed defaults to better comply with
   the new phpDoc blocks information.
 
-- [2016.01.29; Bug-fix; Maikuolan]: Found a very minor typo in the language
-  string of one of the error codes (low priority); Fixed.
+- [2016.01.29; Bug-fixes; Maikuolan]: Found a very minor typo in the language
+  string of one of the error codes (low priority); Fixed. Bug found by
+  DanielRuf whereby an incorrect error ("Invalid file") was given when an
+  UPLOAD_ERR_FORM_SIZE error should've been given instead; Fixed. Several error
+  code if conditionals found to be incomplete; Fixed.
 
 === Version/Release 0.9.1 ===
 PATCH RELEASE (signatures updated to 55+21192+9.1).
