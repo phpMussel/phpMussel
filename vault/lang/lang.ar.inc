@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Arabic/العربية language data (10th January 2016).
+ This file: phpMussel Arabic/العربية language data (29th January 2016).
  <%phpMussel%/vault/lang/lang.ar.inc>
 
 */
@@ -131,7 +131,7 @@ $MusselConfig['lang']['update_version_latest']='LATEST SCRIPT VERSION';
 $MusselConfig['lang']['update_version_yours']='YOUR SCRIPT VERSION';
 $MusselConfig['lang']['update_was']='{x}';
 $MusselConfig['lang']['update_wrd1']='signatures';
-$MusselConfig['lang']['upload_error_1']='Filesize exceeds MAX_FILE_SIZE directive. ';
+$MusselConfig['lang']['upload_error_1']='Filesize exceeds the upload_max_filesize directive. ';
 $MusselConfig['lang']['upload_error_2']='Filesize exceeds form-specified filesize limit. ';
 $MusselConfig['lang']['upload_error_34']='Upload failure! Please contact the hostmaster for assistance! ';
 $MusselConfig['lang']['upload_error_6']='Upload directory missing! Please contact the hostmaster for assistance! ';

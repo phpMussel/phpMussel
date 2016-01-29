@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel French/Français language data (10th January 2016).
+ This file: phpMussel French/Français language data (29th January 2016).
  <%phpMussel%/vault/lang/lang.fr.inc>
 
 */
@@ -129,8 +129,8 @@ $MusselConfig['lang']['update_version_latest']='DERNIÈRE SCRIPT VERSION';
 $MusselConfig['lang']['update_version_yours']='VOS SCRIPT VERSION';
 $MusselConfig['lang']['update_was']='{x}';
 $MusselConfig['lang']['update_wrd1']='signatures';
-$MusselConfig['lang']['upload_error_1']='Fichier taille dépasse MAX_FILE_SIZE directive. ';
-$MusselConfig['lang']['upload_error_2']='Fichier taille dépasse forme spécifiée fichier taille limite. ';
+$MusselConfig['lang']['upload_error_1']='Fichier taille dépasse la directive upload_max_filesize. ';
+$MusselConfig['lang']['upload_error_2']='Fichier taille dépasse la forme spécifiée fichier taille limite. ';
 $MusselConfig['lang']['upload_error_34']='Téléchargement échec! S\'il vous plaît contacter le hostmaster pour l\'aide! ';
 $MusselConfig['lang']['upload_error_6']='Téléchargement répertoire manquant! S\'il vous plaît contacter le hostmaster pour l\'aide! ';
 $MusselConfig['lang']['upload_error_7']='Disque-écriture erreur! S\'il vous plaît contacter le hostmaster pour l\'aide! ';

@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Japanese/日本語 language data (10th January 2016).
+ This file: phpMussel Japanese/日本語 language data (29th January 2016).
  <%phpMussel%/vault/lang/lang.ja.inc>
 
 */
@@ -131,7 +131,7 @@ $MusselConfig['lang']['update_version_latest']='最新のスクリプト·バー
 $MusselConfig['lang']['update_version_yours']='あなたのスクリプト·バージョン';
 $MusselConfig['lang']['update_was']='{x}しました';
 $MusselConfig['lang']['update_wrd1']='署名';
-$MusselConfig['lang']['upload_error_1']='ファイルサイズは、「MAX_FILE_SIZE」ディレクティブを超えています。';
+$MusselConfig['lang']['upload_error_1']='ファイルサイズは、「upload_max_filesize」ディレクティブを超えています。';
 $MusselConfig['lang']['upload_error_2']='ファイルサイズは、フォーム指定ファイルサイズの上限を超えています。';
 $MusselConfig['lang']['upload_error_34']='アップロードの失敗！支援のためのホストマスタに連絡してください！';
 $MusselConfig['lang']['upload_error_6']='アップロードのディレクトリが存在しません！支援のためのホストマスタに連絡してください！';

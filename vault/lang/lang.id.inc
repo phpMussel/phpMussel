@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Indonesian language data (10th January 2016).
+ This file: phpMussel Indonesian language data (29th January 2016).
  <%phpMussel%/vault/lang/lang.id.inc>
 
 */
@@ -129,7 +129,7 @@ $MusselConfig['lang']['update_version_latest']='TERAKHIR SKRIPT VERSI';
 $MusselConfig['lang']['update_version_yours']='SKRIPT VERSI ANDA';
 $MusselConfig['lang']['update_was']='{x}';
 $MusselConfig['lang']['update_wrd1']='tanda tangan';
-$MusselConfig['lang']['upload_error_1']='File ukuran melebihi MAX_FILE_SIZE direktif. ';
+$MusselConfig['lang']['upload_error_1']='File ukuran melebihi direktif upload_max_filesize. ';
 $MusselConfig['lang']['upload_error_2']='File ukuran melebihi formulir ditentukan file ukuran batas. ';
 $MusselConfig['lang']['upload_error_34']='Upload gagal! Silahkan hubungi hostmaster untuk bantuan! ';
 $MusselConfig['lang']['upload_error_6']='Upload direktori hilang! Silahkan hubungi hostmaster untuk bantuan! ';

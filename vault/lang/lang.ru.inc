@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Russian/Русский language data (10th January 2016).
+ This file: phpMussel Russian/Русский language data (29th January 2016).
  <%phpMussel%/vault/lang/lang.ru.inc>
 
 */
@@ -129,7 +129,7 @@ $MusselConfig['lang']['update_version_latest']='ПОСЛЕДНЯЯ ВЕРСИЯ 
 $MusselConfig['lang']['update_version_yours']='ВАША ВЕРСИЯ СЦЕНАРИЯ';
 $MusselConfig['lang']['update_was']='{x}';
 $MusselConfig['lang']['update_wrd1']='подписи';
-$MusselConfig['lang']['upload_error_1']='Файл превышает размер директивы MAX_FILE_SIZE. ';
+$MusselConfig['lang']['upload_error_1']='Файл превышает размер директивы upload_max_filesize. ';
 $MusselConfig['lang']['upload_error_2']='Файл превышает размер заданных в директиве формы. ';
 $MusselConfig['lang']['upload_error_34']='Загрузка Отказана! Пожалуйста свяжитесь с хостмастером о помощи! ';
 $MusselConfig['lang']['upload_error_6']='Загрузка директорий отсутствует! Пожалуйста свяжитесь с хостмастером о помощи! ';

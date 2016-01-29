@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Vietnamese/Việt language data (10th January 2016).
+ This file: phpMussel Vietnamese/Việt language data (29th January 2016).
  <%phpMussel%/vault/lang/lang.vi.inc>
 
 */
@@ -129,7 +129,7 @@ $MusselConfig['lang']['update_version_latest']='PHIÊN BẢN MỚI NHẤT';
 $MusselConfig['lang']['update_version_yours']='PHIÊN BẢN CỦA BẠN';
 $MusselConfig['lang']['update_was']='{x}';
 $MusselConfig['lang']['update_wrd1']='Những chữ ký';
-$MusselConfig['lang']['upload_error_1']='Cỡ của tài liệu quá giới hạn MAX_FILE_SIZE chỉ dẫn. ';
+$MusselConfig['lang']['upload_error_1']='Cỡ của tài liệu quá giới hạn upload_max_filesize chỉ dẫn. ';
 $MusselConfig['lang']['upload_error_2']='Cỡ của tài liệu quá giới hạn của cỡ file chỉ định. ';
 $MusselConfig['lang']['upload_error_34']='Sự tải lên đã bị lối! Xin vui lòng liên lạc với hostmaster để được giúp đỡ! ';
 $MusselConfig['lang']['upload_error_6']='Thư mục tải lên bị thiếu! Xin vui lòng liên lạc với hostmaster để được giúp đỡ! ';

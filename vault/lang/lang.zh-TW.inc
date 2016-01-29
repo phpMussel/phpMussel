@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Chinese (Traditional) / 中文（傳統） language data (10th January 2016).
+ This file: phpMussel Chinese (Traditional) / 中文（傳統） language data (29th January 2016).
  <%phpMussel%/vault/lang/lang.zh-TW.inc>
 
 */
@@ -129,7 +129,7 @@ $MusselConfig['lang']['update_version_latest']='最新編程版本';
 $MusselConfig['lang']['update_version_yours']='您的編程版本';
 $MusselConfig['lang']['update_was']='是{x}';
 $MusselConfig['lang']['update_wrd1']='簽名';
-$MusselConfig['lang']['upload_error_1']='文件大小超過MAX_FILE_SIZE指令。';
+$MusselConfig['lang']['upload_error_1']='文件大小超過upload_max_filesize指令。';
 $MusselConfig['lang']['upload_error_2']='文件大小超过文件大小限制指定由文件上傳信息。';
 $MusselConfig['lang']['upload_error_34']='上傳失敗！請聯繫網站管理員或網站託管服務！';
 $MusselConfig['lang']['upload_error_6']='上傳文件夾是失踪！請聯繫網站管理員或網站託管服務！';

@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Portuguese/Português language data (10th January 2016).
+ This file: phpMussel Portuguese/Português language data (29th January 2016).
  <%phpMussel%/vault/lang/lang.pt.inc>
 
 */
@@ -129,8 +129,8 @@ $MusselConfig['lang']['update_version_latest']='ÚLTIMA SCRIPT VERSÃO';
 $MusselConfig['lang']['update_version_yours']='SEU SCRIPT VERSÃO';
 $MusselConfig['lang']['update_was']='{x}';
 $MusselConfig['lang']['update_wrd1']='assinaturas';
-$MusselConfig['lang']['upload_error_1']='Arquivo tamanho excede MAX_FILE_SIZE directiva. ';
-$MusselConfig['lang']['upload_error_2']='Arquivo tamanho excede formulário especificados arquivo tamanho limite. ';
+$MusselConfig['lang']['upload_error_1']='Arquivo tamanho excede a directiva upload_max_filesize. ';
+$MusselConfig['lang']['upload_error_2']='Arquivo tamanho excede o formulário especificados arquivo tamanho limite. ';
 $MusselConfig['lang']['upload_error_34']='Carregar falha! Contato o hostmaster para ajuda! ';
 $MusselConfig['lang']['upload_error_6']='Carregar diretório faltando! Contato o hostmaster para ajuda! ';
 $MusselConfig['lang']['upload_error_7']='Disco escrita erro! Contato o hostmaster para ajuda! ';

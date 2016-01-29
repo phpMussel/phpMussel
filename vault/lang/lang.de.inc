@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel German/Deutsch language data (10th January 2016).
+ This file: phpMussel German/Deutsch language data (29th January 2016).
  <%phpMussel%/vault/lang/lang.de.inc>
 
 */
@@ -129,7 +129,7 @@ $MusselConfig['lang']['update_version_latest']='AKTUELLE SCRIPT VERSION';
 $MusselConfig['lang']['update_version_yours']='IHRE SCRIPT VERSION';
 $MusselConfig['lang']['update_was']='{x}';
 $MusselConfig['lang']['update_wrd1']='Signaturen';
-$MusselConfig['lang']['upload_error_1']='Dateigröße überschreitet die Richtlinie MAX_FILE_SIZE. ';
+$MusselConfig['lang']['upload_error_1']='Dateigröße überschreitet die Richtlinie upload_max_filesize. ';
 $MusselConfig['lang']['upload_error_2']='Dateigröße überschreitet die im Formular angegebene Dateigröße. ';
 $MusselConfig['lang']['upload_error_34']='Upload gescheitert! Bitte kontaktieren Sie den Hostmaster für Unterstützung! ';
 $MusselConfig['lang']['upload_error_6']='Fehlendes Uploadverzeichnis! Bitte kontaktieren Sie den Hostmaster für Unterstützung! ';

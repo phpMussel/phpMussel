@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Italian/Italiano language data (10th January 2016).
+ This file: phpMussel Italian/Italiano language data (29th January 2016).
  <%phpMussel%/vault/lang/lang.it.inc>
 
 */
@@ -129,7 +129,7 @@ $MusselConfig['lang']['update_version_latest']='ULTIMA VERSIONE DEL PROGRAMMA';
 $MusselConfig['lang']['update_version_yours']='TUA VERSIONE DEL PROGRAMMA';
 $MusselConfig['lang']['update_was']='{x}';
 $MusselConfig['lang']['update_wrd1']='firme';
-$MusselConfig['lang']['upload_error_1']='La dimensione del file supera la direttiva MAX_FILE_SIZE. ';
+$MusselConfig['lang']['upload_error_1']='La dimensione del file supera la direttiva upload_max_filesize. ';
 $MusselConfig['lang']['upload_error_2']='La dimensione del file supera la dimensione limite specificata dal modulo. ';
 $MusselConfig['lang']['upload_error_34']='Caricamento fallito! Contatta l\'hostmaster per assistenza! ';
 $MusselConfig['lang']['upload_error_6']='Cartella per il caricamento mancante! Contatta l\'hostmaster per assistenza! ';

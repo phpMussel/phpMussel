@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Dutch/Nederlandse language data (10th January 2016).
+ This file: phpMussel Dutch/Nederlandse language data (29th January 2016).
  <%phpMussel%/vault/lang/lang.nl.inc>
 
 */
@@ -129,8 +129,8 @@ $MusselConfig['lang']['update_version_latest']='NIEUWSTE SCRIPT VERSIE';
 $MusselConfig['lang']['update_version_yours']='UW SCRIPT VERSIE';
 $MusselConfig['lang']['update_was']='{x}';
 $MusselConfig['lang']['update_wrd1']='handtekeningen';
-$MusselConfig['lang']['upload_error_1']='Bestandsgrootte overschrijdt MAX_FILE_SIZE richtlijn. ';
-$MusselConfig['lang']['upload_error_2']='Bestandsgrootte overschrijdt vorm gespecificeerde bestandsgrootte limiet. ';
+$MusselConfig['lang']['upload_error_1']='Bestandsgrootte overschrijdt de upload_max_filesize richtlijn. ';
+$MusselConfig['lang']['upload_error_2']='Bestandsgrootte overschrijdt de vorm gespecificeerde bestandsgrootte limiet. ';
 $MusselConfig['lang']['upload_error_34']='Upload mislukking! Contact op met de hostmaster voor hulp! ';
 $MusselConfig['lang']['upload_error_6']='Uploadmap ontbreekt! Contact op met de hostmaster voor hulp! ';
 $MusselConfig['lang']['upload_error_7']='Disc-schrijffout! Contact op met de hostmaster voor hulp! ';
