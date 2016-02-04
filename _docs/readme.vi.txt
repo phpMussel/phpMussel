@@ -93,7 +93,7 @@
     CMS, nhưng cách đơn giản nhất là cần có bản vào cốt lõi ở đầu của tài liệu
     hoạc hệ thống hoặc CMS của bạn (một mà thường sẽ luôn luôn được nạp khi ai
     đó truy cập bất kỳ trang nào trên trang web của bạn) bằng cách sử dụng một
-    lời chỉ thị "require()" hoạc "include()". Thường, cái nàu sẽ được lưu trong
+    lời chỉ thị "require" hoạc "include". Thường, cái nàu sẽ được lưu trong
     một thư mục như "/includes", "/assets" hoạc "/functions", và sẽ thường được
     gọi là "init.php", "common_functions.php", "functions.php" hoạc tương tự.
     Bạn sẽ cần tiềm ra hồ sơ nào cho trường hợp của bạn; Nếu bạn gặp khó khăn
@@ -101,7 +101,7 @@
     biêt; Có thể là tôi họac các người dùng khác có có kinh nghiệm với các CMS
     mà bạn đang sử dụng (bạn phải biết mình đang sử dụng CMS nào), và như vậy,
     có thể cung cấp hỗ trợ trong trường hợp này. Để làm chuyện này [sử dụng
-    "require()" họac "include()"], đánh các dòng mã sao đây vào đầu của cốt lõi
+    "require" họac "include"], đánh các dòng mã sao đây vào đầu của cốt lõi
     của hồ sơ, thay thế các dây chứa bên trong các dấu ngoặc kép với địa chỉ
     chính xác của tài liệu "phpmussel.php" địa chỉ địa phương, chứ không phải
     địa chỉ HTTP; nó sẽ nhình gióng địa chỉ kho nói ở trên).
@@ -1271,16 +1271,16 @@
      default, lists those formats used most commonly across the majority of
      systems and CMS, but intentionally isn't necessarily comprehensive.
    "general_commands"
-   - Search content of files for general commands such as "eval()", "exec()"
-     and "include()"? False = Don't check [Default]; True = Check.
-     Disable this option if you intend to upload any of the following to your
-     system or CMS via your browser: PHP, JavaScript, HTML, python, perl files
-     and etcetera. Enable this option if you don't have any additional
+   - Search the content of files for statements and general commands such as
+     "eval()" and "exec()"? False = Don't check [Default]; True = Check.
+     Disable this directive if you intend to upload any of the following to
+     your system or CMS via your browser: PHP, JavaScript, HTML, python, perl
+     files and etcetera. Enable this directive if you don't have any additional
      protections on your system and do not intend to upload such files. If you
-     use additional security in conjunction with phpMussel such as ZB Block,
-     there is no need to turn this option on, because most of what phpMussel
-     will look for (in the context of this option) are duplications of
-     protections that are already provided.
+     use additional security in conjunction with phpMussel (such as ZB Block),
+     there's no need to enable this directive, because most of what phpMussel
+     will look for (in the context of this directive) are duplications of
+     protections that will most likely already be provided.
    "block_control_characters"
    - Block any files containing any control characters (other than newlines)?
      ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) If you're -only- uploading plain-text,
@@ -1755,5 +1755,5 @@
                                      ~ ~ ~
 
 
-Lần cuối cập nhật: 27 Tháng Mười Hai 2015 (2015.12.27).
+Lần cuối cập nhật: 4 Tháng Hai 2016 (2016.02.04).
 EOF

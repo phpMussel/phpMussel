@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Dutch/Nederlandse language data (29th January 2016).
+ This file: phpMussel Dutch/Nederlandse language data (4th February 2016).
  <%phpMussel%/vault/lang/lang.nl.inc>
 
 */
@@ -49,7 +49,7 @@ $MusselConfig['lang']['controls_lockout']='phpMussel controles-slot ingeschakeld
 $MusselConfig['lang']['core_scriptfile_missing']='Kern script ontbreekt! Opnieuw installeer phpMussel.';
 $MusselConfig['lang']['corrupted']='Gedetecteerd beschadigd PE';
 $MusselConfig['lang']['denied']='Upload Geweigerd!';
-$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
 $MusselConfig['lang']['denied_reason']='De upload poging werd geblokkeerd voor de hieronder vermelde redenen / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Gedetecteerd {vn}';
 $MusselConfig['lang']['detected_control_characters']='Gedetecteerd controle karakters';
@@ -110,7 +110,7 @@ $MusselConfig['lang']['update_err5']='Vermist data!';
 $MusselConfig['lang']['update_err6']='Slecht data!';
 $MusselConfig['lang']['update_err7']='Slecht checksum!';
 $MusselConfig['lang']['update_failed']='Mislukt.';
-$MusselConfig['lang']['update_fetch']='Proberen te halen versie gegevens van';
+$MusselConfig['lang']['update_fetch']='Proberen te halen versie gegevens van {Location} ...';
 $MusselConfig['lang']['update_lock_detected']='Update slot gedetecteerd: Kan niet doorgaan. Controleren op updates corrupte of probeer later opnieuw.';
 $MusselConfig['lang']['update_not']='NIET {x}';
 $MusselConfig['lang']['update_not_available']='Geen script bijwerk beschikbaar op dit moment.';

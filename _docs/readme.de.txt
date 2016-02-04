@@ -1304,7 +1304,7 @@
      absichtlich nicht vollständig.
    "general_commands"
    - Soll der Inhalt von Dateien auf allgemeine Befehle wie "eval()", "exec()"
-     und "include()" durchsucht werden?
+     und "include" durchsucht werden?
      False = Nein (nicht überprüfen) [Standardeinstellung];
      True = Ja (überprüfen). Stellen Sie diese Option aus, wenn Sie vorhaben,
      folgende Dateien mittels Browser auf Ihr System oder CMS hochzuladen: PHP,
@@ -1809,5 +1809,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 27. Dezember 2015 (2015.12.27).
+Zuletzt aktualisiert: 4. Februar 2016 (2016.02.04).
 EOF

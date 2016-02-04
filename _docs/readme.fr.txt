@@ -100,22 +100,22 @@
     CMS, mais le plus simple est à simplement inclure le script au début d'un
     fichier de la base de données de votre système ou CMS (un qui va
     généralement toujours être chargé lorsque quelqu'un accède à n'importe
-    quelle page sur votre website) utilisant un "require()" ou include()
-    commande. Généralement, ce sera quelque chose de stocké dans un répertoire
-    comme "/includes", "/assets" ou "/functions", et il sera souvent nommé
-    quelque chose comme "init.php", "common_functions.php", "functions.php" ou
-    similaire. Vous sera besoin à déterminer qui est le fichier c'est pour
-    votre situation; Si vous rencontrez des difficultés dans déterminer de ce
-    pour vous-même, visiter les phpMussel support forums et laissez-nous
-    savoir; Il est possible que ce soit moi ou un autre utilisateur peuvent
-    avoir de l'expérience avec le CMS que vous utilisez (vous aurez besoin pour
-    nous faire savoir ce qui CMS vous utilisez), et ainsi, peut être en mesure
-    de fournir une assistance pour cette question. Pour ce faire [à utiliser
-    "require()" ou "include()"], insérez la ligne de code suivante au début de
-    ce le noyau fichier et remplacer la string contenue à l'intérieur des
-    guillemets avec l'exacte adresse le fichier "phpmussel.php" (l'adresse
-    locale, pas l'adresse HTTP; il ressemblera l'adresse de "vault" mentionné
-    précédemment).
+    quelle page sur votre website) utilisant un "require" ou "include"
+    déclaration. Généralement, ce sera quelque chose de stocké dans un
+    répertoire comme "/includes", "/assets" ou "/functions", et il sera souvent
+    nommé quelque chose comme "init.php", "common_functions.php",
+    "functions.php" ou similaire. Vous sera besoin à déterminer qui est le
+    fichier c'est pour votre situation; Si vous rencontrez des difficultés dans
+    déterminer de ce pour vous-même, visiter les phpMussel support forums et
+    laissez-nous savoir; Il est possible que ce soit moi ou un autre
+    utilisateur peuvent avoir de l'expérience avec le CMS que vous utilisez
+    (vous aurez besoin pour nous faire savoir ce qui CMS vous utilisez), et
+    ainsi, peut être en mesure de fournir une assistance pour cette question.
+    Pour ce faire [à utiliser "require" ou "include"], insérez la ligne de code
+    suivante au début de ce le noyau fichier et remplacer la string contenue à
+    l'intérieur des guillemets avec l'exacte adresse le fichier "phpmussel.php"
+    (l'adresse locale, pas l'adresse HTTP; il ressemblera l'adresse de "vault"
+    mentionné précédemment).
 
     <?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>
 
@@ -1360,17 +1360,18 @@
      la majorité des systèmes et CMS, mais volontairement pas nécessairement
      complète.
    "general_commands"
-   - Vérifier de fichiers pour générales commandes comme "eval()", "exec()" et
-     "include()"? False = Non (pas vérifier) [Défaut]; True = Oui (vérifier).
-     Définir à "false" si vous avez l'intention à téléchargez de la suivant à
-     votre système ou CMS via votre navigateur: PHP, JavaScript, HTML, python,
-     perl fichiers, etc. Définir à "true" si vous n'avez pas supplémentaire
+   - Vérifier de fichiers pour des déclarations et des commandes générales
+     comme "eval()" et "exec()"?
+     False = Non (pas vérifier) [Défaut]; True = Oui (vérifier). Définir à
+     "false" si vous avez l'intention à téléchargez de la suivant à votre
+     système ou CMS via votre navigateur: PHP, JavaScript, HTML, python, perl
+     fichiers, etc. Définir à "true" si vous n'avez pas supplémentaire
      protections pour votre système et n'ont pas l'intention de téléchargement
      de ces fichiers. Si vous utilisez supplémentaire sécurité en conjonction
-     avec phpMussel comme ZB Block, il n'est pas nécessaire d'activer cette
-     option, parce la plupart de que phpMussel va chercher pour (dans le
-     contexte de cette option) sont duplications de protections qui sont déjà
-     fournis.
+     avec phpMussel (comme ZB Block), il n'est pas nécessaire d'activer cette
+     directive, parce la plupart de que phpMussel va chercher pour (dans le
+     contexte de cette directive) sont duplications de protections qui sont
+     déjà fournis.
    "block_control_characters"
    - Bloquer tous les fichiers contenant les caractères de contrôle (autre que
      les sauts de ligne)? ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) Si vous êtes
@@ -1877,5 +1878,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 27 Décembre 2015 (2015.12.27).
+Dernière Réactualisé: 4 Février 2016 (2016.02.04).
 EOF

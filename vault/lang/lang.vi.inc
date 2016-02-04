@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Vietnamese/Việt language data (29th January 2016).
+ This file: phpMussel Vietnamese/Việt language data (4th February 2016).
  <%phpMussel%/vault/lang/lang.vi.inc>
 
 */
@@ -49,7 +49,7 @@ $MusselConfig['lang']['controls_lockout']='Cho phép các điều khiển khóa 
 $MusselConfig['lang']['core_scriptfile_missing']='Bản tài liệu chính đang thiểu! Xin hảy cài đặt lại phpMussel.';
 $MusselConfig['lang']['corrupted']='Lối của PE đã được phát hiện ra';
 $MusselConfig['lang']['denied']='Sự tải lên đã bị từ chối!';
-$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부!';
 $MusselConfig['lang']['denied_reason']='Sự tải lên của bạn đã bị từ chối bởi lý do dưới đây / 您的上传被拒绝由于这些原因:';
 $MusselConfig['lang']['detected']='Đã được phát hiện {vn}';
 $MusselConfig['lang']['detected_control_characters']='Ký tự điều khiển đã được phát hiện';
@@ -110,7 +110,7 @@ $MusselConfig['lang']['update_err5']='Tài liệu bị mất!';
 $MusselConfig['lang']['update_err6']='Tài liệu xấu!';
 $MusselConfig['lang']['update_err7']='Tổng kiểm tra xấu!';
 $MusselConfig['lang']['update_failed']='Thất bại.';
-$MusselConfig['lang']['update_fetch']='Đang tìm cách để lấy phiên bản dữ liệu từ';
+$MusselConfig['lang']['update_fetch']='Đang tìm cách để lấy phiên bản dữ liệu từ {Location} ...';
 $MusselConfig['lang']['update_lock_detected']='Thông tin khóa được phát hiện: Có thể không có thể tiếp tục. Tiềm các bản cập nhật sai hoạc thử lại sau.';
 $MusselConfig['lang']['update_not']='KHÔNG {x}';
 $MusselConfig['lang']['update_not_available']='Chưa có cập nhật cho kịch bản vào thời điểm này.';

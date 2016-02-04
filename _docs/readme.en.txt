@@ -92,7 +92,7 @@
     your system or CMS, but the easiest is to simply include the script at the
     beginning of a core file of your system or CMS (one that'll generally
     always be loaded when someone accesses any page across your website) using
-    a "require()" or "include()" command. Usually, this'll be something stored
+    a "require" or "include" statement. Usually, this'll be something stored
     in a directory such as "/includes", "/assets" or "/functions", and will
     often be named something like "init.php", "common_functions.php",
     "functions.php" or similar. You'll have to work out which file this is for
@@ -101,7 +101,7 @@
     that either myself or another user may have experience with the CMS that
     you're using (you'll need to let us know which CMS you're using), and thus,
     may be able to provide some assistance in this area. To do this [to use
-    "require()" or "include()"], insert the following line of code to the very
+    "require" or "include"], insert the following line of code to the very
     beginning of that core file, replacing the string contained inside the
     quotation marks with the exact address of the "phpmussel.php" file (local
     address, not the HTTP address; it'll look similar to the vault address
@@ -1272,16 +1272,16 @@
      default, lists those formats used most commonly across the majority of
      systems and CMS, but intentionally isn't necessarily comprehensive.
    "general_commands"
-   - Search content of files for general commands such as "eval()", "exec()"
-     and "include()"? False = Don't check [Default]; True = Check.
-     Disable this option if you intend to upload any of the following to your
-     system or CMS via your browser: PHP, JavaScript, HTML, python, perl files
-     and etcetera. Enable this option if you don't have any additional
+   - Search the content of files for statements and general commands such as
+     "eval()" and "exec()"? False = Don't check [Default]; True = Check.
+     Disable this directive if you intend to upload any of the following to
+     your system or CMS via your browser: PHP, JavaScript, HTML, python, perl
+     files and etcetera. Enable this directive if you don't have any additional
      protections on your system and do not intend to upload such files. If you
-     use additional security in conjunction with phpMussel such as ZB Block,
-     there is no need to turn this option on, because most of what phpMussel
-     will look for (in the context of this option) are duplications of
-     protections that are already provided.
+     use additional security in conjunction with phpMussel (such as ZB Block),
+     there's no need to enable this directive, because most of what phpMussel
+     will look for (in the context of this directive) are duplications of
+     protections that will most likely already be provided.
    "block_control_characters"
    - Block any files containing any control characters (other than newlines)?
      ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) If you're -only- uploading plain-text,
@@ -1754,5 +1754,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 27th December 2015 (2015.12.27).
+Last Updated: 4th February 2016 (2016.02.04).
 EOF

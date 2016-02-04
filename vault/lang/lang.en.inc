@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel English language data (29th January 2016).
+ This file: phpMussel English language data (4th February 2016).
  <%phpMussel%/vault/lang/lang.en.inc>
 
 */
@@ -49,7 +49,7 @@ $MusselConfig['lang']['controls_lockout']='phpMussel controls lockout enabled.';
 $MusselConfig['lang']['core_scriptfile_missing']='Core script file missing! Please reinstall phpMussel.';
 $MusselConfig['lang']['corrupted']='Detected corrupted PE';
 $MusselConfig['lang']['denied']='Upload Denied!';
-$MusselConfig['lang']['denied_other']='Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
 $MusselConfig['lang']['denied_reason']='Your upload was blocked for the reasons listed below / 您的上传被拒绝由于这些原因:';
 $MusselConfig['lang']['detected']='Detected {vn}';
 $MusselConfig['lang']['detected_control_characters']='Detected control characters';
@@ -110,7 +110,7 @@ $MusselConfig['lang']['update_err5']='Missing data!';
 $MusselConfig['lang']['update_err6']='Bad data!';
 $MusselConfig['lang']['update_err7']='Bad checksum!';
 $MusselConfig['lang']['update_failed']='Failed.';
-$MusselConfig['lang']['update_fetch']='Attempting to fetch version data from';
+$MusselConfig['lang']['update_fetch']='Attempting to fetch version data from {Location} ...';
 $MusselConfig['lang']['update_lock_detected']='Update lock detected: Can\'t continue. Check for corrupt updates or try again later.';
 $MusselConfig['lang']['update_not']='NOT {x}';
 $MusselConfig['lang']['update_not_available']='No script update is available at this time.';

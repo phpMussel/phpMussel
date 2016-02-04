@@ -96,7 +96,7 @@
     CMS, pero lo más fácil es simplemente incluir el script al principio de un
     núcleo archivo de su sistema o CMS (uno que va en general siempre sera
     cargado cuando alguien accede cualquier página a través de su website)
-    utilizando un "require()" o "include()" comando. Por lo general, esto sera
+    utilizando un "require" o "include" declaración. Por lo general, esto sera
     algo almacenado en un directorio como "/includes", "/assets" o
     "/functions", y será menudo llamado algo así como "init.php",
     "common_functions.php", "functions.php" o similar. Vas a tener que
@@ -105,8 +105,8 @@
     soporte y háganos saber; Es posible que sea yo u otro usuario puede tener
     experiencia con el CMS que está utilizando (que necesita para hacernos
     saber que CMS está utilizando), y por lo tanto, puede ser capaz de
-    proporcionar alguna ayuda en esta área. Para ello [utilizar "require()" o
-    "include()"], inserte la siguiente línea de código al principio de ese
+    proporcionar alguna ayuda en esta área. Para ello [utilizar "require" o
+    "include"], inserte la siguiente línea de código al principio de ese
     núcleo archivo, con sustitución de la string contenida dentro las comillas
     con la exacta dirección del "phpmussel.php" archivo (local dirección, no la
     HTTP dirección; que será similar a la "vault" dirección mencionó
@@ -1353,17 +1353,18 @@
      utilizados a través de la mayoría de sistemas y CMS, pero intencionalmente
      no es necesariamente exhaustiva.
    "general_commands"
-   - Buscar contenidos de archivos para generales comandos como tal "eval()",
-     "exec()" y "include()"?
+   - Buscar contenidos de archivos para declaraciones y comandos generales como
+     tal `eval()` y `exec()`?
      False = No (no buscar) [Predefinido]; True = Sí (buscar). Desactivar esta
-     opción si tiene intención de subir cualquiera de los siguientes para su
+     directiva si tiene intención de subir cualquiera de los siguientes para su
      sistema o CMS a través de su navegador: PHP, JavaScript, HTML, python,
-     perl archivos y etcétera. Activar esta opción si usted no tiene cualquier
-     adicional protección en su sistema y no tiene intención de subir estos
-     tipos de archivos. Si utiliza adicional seguridad junto con phpMussel como
-     tal ZB Block, no hay necesidad de activar esta opción, porque la mayor
-     parte de lo que phpMussel buscará (en el contexto de esta opción) son
-     duplicaciones de protecciones que ya previsto.
+     perl archivos y etcétera. Activar esta directiva si usted no tiene
+     cualquier adicional protección en su sistema y no tiene intención de subir
+     estos tipos de archivos. Si utiliza adicional seguridad junto con
+     phpMussel (como tal ZB Block), no hay necesidad de activar esta directiva,
+     porque la mayor parte de lo que phpMussel buscará (en el contexto de esta
+     directiva) son duplicaciones de protecciones que probablemente ya está
+     previsto.
    "block_control_characters"
    - Bloquear cualquier archivos que contenga cualquier caracteres de control
      (aparte de saltos de línea)? ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) Si usted
@@ -1873,5 +1874,5 @@
                                      ~ ~ ~
 
 
-Última Actualización: 27 Diciembre 2015 (2015.12.27).
+Última Actualización: 4 Febrero 2016 (2016.02.04).
 EOF

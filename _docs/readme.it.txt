@@ -99,7 +99,7 @@
     phpMussel al vostre sistema o CMS, Ma il più semplice è di inserire lo
     script all'inizio di un file del vostre sistema o CMS (quello che sarà
     generalmente sempre essere caricato quando qualcuno accede a una pagina
-    attraverso il vostro sito) utilizzando un "require()" o "include()"
+    attraverso il vostro sito) utilizzando un "require" o "include"
     comando. Solitamente, questo sarà qualcosa memorizzate in una cartella, ad
     esempio "/includes", "/assets" o "/functions", e spesso essere chiamato
     qualcosa come "init.php", "common_functions.php", "functions.php" o simili.
@@ -109,7 +109,7 @@
     esperienza con il CMS che si sta utilizzando (avrete bisogno di fateci
     sapere quale CMS si sta utilizzando), e quindi, può essere in grado di
     fornire assistenza in questo settore. Per fare questo [utilizzare
-    "require()" o "include()"], inserire la seguente linea di codice all'inizio
+    "require" o "include"], inserire la seguente linea di codice all'inizio
     di quel core file, sostituendo la stringa contenuta all'interno delle
     virgolette con l'esatto indirizzo della "phpmussel" file (indirizzo locale,
     non l'indirizzo HTTP; sarà simile all'indirizzo citato in precedenza).
@@ -1338,7 +1338,7 @@
      e CMS, Ma apposta non è necessariamente completo.
    "general_commands"
    - Cercare contenuti dei file per generali comandi quali "eval()", "exec()" e
-     "include()"?
+     "include"?
      False = No (no verifica) [Predefinito]; True = Sì (fare verifica).
      Disattivare questa opzione se si intende caricare qualsiasi delle seguenti
      al vostra sistema o CMS tramite il browser: PHP, JavaScript, HTML, python,
@@ -1852,5 +1852,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 27 Dicembre 2015 (2015.12.27).
+Ultimo Aggiornamento: 4 Febbraio 2016 (2016.02.04).
 EOF

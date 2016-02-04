@@ -97,7 +97,7 @@
     como phpMussel ao seu sistema ou CMS, mas o mais fácil é simplesmente
     incluir o script no início de um núcleo arquivo de seu sistema ou CMS (uma
     que vai geralmente sempre ser carregado quando alguém acessa qualquer
-    página através de seu site) utilizando um "require()" ou "include()"
+    página através de seu site) utilizando um "require" ou "include"
     comando. Normalmente, isso vai ser algo armazenado em um diretório como
     "/includes", "/assets" ou "/functions", e muitas vezes, ser nomeado algo
     como "init.php", "common_functions.php", "functions.php" ou semelhante.
@@ -106,8 +106,8 @@
     suporte fóruns e deixe-nos saber; É possível que eu ou outro usuário podem
     ter experiência com o CMS que você está usando (você precisa deixar-nos
     saber qual CMS você está usando), e assim, pode ser capaz de prestar alguma
-    assistência neste domínio. Para fazer isso [usar "require()" ou
-    "include()"], insira a seguinte linha de código para o início desse núcleo
+    assistência neste domínio. Para fazer isso [usar "require" ou
+    "include"], insira a seguinte linha de código para o início desse núcleo
     arquivo, substituindo a string contida dentro das aspas com o exato
     endereço do "phpmussel.php" arquivo (endereço local, não o endereço HTTP;
     será semelhante ao vault endereço mencionado anteriormente).
@@ -1338,17 +1338,17 @@
      é do formatos utilizados mais comumente através da maioria dos sistemas e
      CMS, mas intencionalmente não é necessariamente abrangente.
    "general_commands"
-   - Olha por gerais comandos como tais "eval()", "exec()" e "include()" em
-     conteúdos de arquivos?
-     False = Não (não olha por) [Padrão]; True = Sim (olha por).
-     Desativar essa opção se você são tencionando de carregando qualquer um do
-     seguinte para o seu sistema ou CMS através do seu navegador: PHP,
-     JavaScript, HTML, python, perl arquivos e etcetera. Ativar essa opção se
-     você não tem quaisquer adicionais proteções no seu sistema e não são
+   - Olha por comandos gerais como tais `eval()` e `exec()` em conteúdos de
+     arquivos? False = Não (não olha por) [Padrão]; True = Sim (olha por).
+     Desativar essa directiva se você são tencionando de carregando qualquer um
+     do seguinte para o seu sistema ou CMS através do seu navegador: PHP,
+     JavaScript, HTML, python, perl arquivos e etcetera. Ativar essa directiva
+     se você não tem quaisquer adicionais proteções no seu sistema e não são
      tencionando de carregando desses tais arquivos. Se você usar adicional
-     segurança em conjunto com phpMussel como ZB Block, não há necessidade de
-     ativar esta opção, porque a maioria dos que phpMussel irá olha por (no
-     contexto desta opção) são duplicações de proteções que já estão fornecida.
+     segurança em conjunto com phpMussel (como ZB Block), não há necessidade de
+     ativar esta directiva, porque a maioria dos que phpMussel irá olha por (no
+     contexto desta directiva) são duplicações de proteções que já estão
+     fornecida.
    "block_control_characters"
    - Bloquear todos os arquivos que contenham quaisquer caracteres de controle
      (exceto linha quebras) - [\x00-\x08\x0b\x0c\x0e\x1f\x7f]? Se você está
@@ -1849,5 +1849,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 27 Dezembro 2015 (2015.12.27).
+Última Atualização: 4 Fevereiro 2016 (2016.02.04).
 EOF

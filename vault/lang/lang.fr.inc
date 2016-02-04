@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel French/Français language data (29th January 2016).
+ This file: phpMussel French/Français language data (4th February 2016).
  <%phpMussel%/vault/lang/lang.fr.inc>
 
 */
@@ -49,7 +49,7 @@ $MusselConfig['lang']['controls_lockout']='phpMussel verrouillage des commandes 
 $MusselConfig['lang']['core_scriptfile_missing']='Base script fichier manquant! S\'il vous plaît réinstaller phpMussel.';
 $MusselConfig['lang']['corrupted']='Détecté corrompu PE';
 $MusselConfig['lang']['denied']='Téléchargement Refusé!';
-$MusselConfig['lang']['denied_other']='Upload Denied! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
 $MusselConfig['lang']['denied_reason']='Votre tentative à télécharger a été bloqué pour les raisons énumérées ci-dessous / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Détecté {vn}';
 $MusselConfig['lang']['detected_control_characters']='Caractères de contrôle ont été détectés';
@@ -110,7 +110,7 @@ $MusselConfig['lang']['update_err5']='Données manquant!';
 $MusselConfig['lang']['update_err6']='Mauvais données!';
 $MusselConfig['lang']['update_err7']='Mauvais checksum!';
 $MusselConfig['lang']['update_failed']='Manqué.';
-$MusselConfig['lang']['update_fetch']='Tenter d\'apporter les données de la version de';
+$MusselConfig['lang']['update_fetch']='Tenter d\'apporter les données de la version de {Location} ...';
 $MusselConfig['lang']['update_lock_detected']='Verrouillage des réactualisations a été détecté: Ne pouvez pas continuer. Examiner pour réactualisations corrompues ou réessayez plus tard.';
 $MusselConfig['lang']['update_not']='PAS {x}';
 $MusselConfig['lang']['update_not_available']='Aucune réactualisation du script est disponible à ce moment.';

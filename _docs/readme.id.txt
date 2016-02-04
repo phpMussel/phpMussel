@@ -97,17 +97,17 @@
     sistem atau CMS, tetapi yang paling mudah adalah memasukkan skrip pada
     permulaan dari file murni dari sistem atau CMS (satu yang akan secara umum
     di muat ketika seseorang mengakses halaman apapun pada website) berdasarkan
-    perintah "require()" atau include(). Umumnya, ini akan menjadi sesuatu yang
+    pernyataan "require" atau "include". Umumnya, ini akan menjadi sesuatu yang
     disimpan di sebuah direktori seperti "/includes", "/assets" atau
     "/functions" dan akan selalu di namai sesuatu seperti "init.php",
-    "common_functions.php","functions.php" atau yang sama. Anda harus bekerja
+    "common_functions.php", "functions.php" atau yang sama. Anda harus bekerja
     pada file apa untuk situasi ini; Jika Anda mengalami kesulitan dalam
     menentukan ini untuk diri sendiri, kunjungi forum dukungan phpMussel dan
     biarkan kami tahu; Ada kemungkinan bahwa saya sendiri atau pengguna lain
     mungkin memiliki pengalaman dengan CMS yang Anda gunakan (Anda harus
     memberitahu kami tahu mana CMS yang Anda gunakan), dan demikian, mungkin
     dapat memberikan beberapa bantuan kepada Anda. Untuk melakukannya
-    [menggunakan "require()" atau "include()"], sisipkan baris kode dibawah
+    [menggunakan "require" atau "include"], sisipkan baris kode dibawah
     pada file murni, menggantikan kata-kata berisikan didalam tanda kutip dari
     alamat file "phpmussel.php" (alamat lokal, tidak alamat HTTP; akan terlihat
     seperti alamat vault yang di bicarakan sebelumnya).
@@ -1338,16 +1338,16 @@
      yang paling umum melalui melalui mayoritas sistem dan CMS, tapi bermaksud
      tidak komprehensif.
    "general_commands"
-   - Mencari isi file-file untuk perintah umum seperti "eval()", "exec()" and
-     "include()"? False = Tidak (tidak mencek) [Default]; True = Ya (mencek).
-     Matikan opsi ini jika Anda bermaksud untuk mengupload yang manapun dari
-     ini ke sistem ata CMS Anda via browser Anda: file-file PHP, JavaScript,
-     HTML, python, perl dll. Hidupkan opsi ini jika Anda tidak punya tambahan
+   - Mencari isi file-file untuk pernyataan atau perintah umum seperti "eval()"
+     dan "exec()"? False = Tidak (tidak mencek) [Default]; True = Ya (mencek).
+     Matikan direktif ini jika Anda bermaksud untuk mengupload yang manapun
+     dari ini ke sistem ata CMS Anda via browser Anda: PHP, JavaScript, HTML,
+     python, perl dll. Hidupkan direktif ini jika Anda tidak punya tambahan
      perlindungan pada sistem Anda dan tidak bermaksud mengupload file-file
      apapun. Jika Anda menggunakan keamanan tambahan dalam kata penghubung
-     dengan phpMussel seperti ZB Block, tidak perlu menghidupkan opsi ini,
-     karena kebanyakan apa yang akan phpMussel cari (dalam konteks opsi ini)
-     adalah duplikasi dari perlindungan yang telah disediakan.
+     dengan phpMussel (seperti ZB Block), tidak perlu menghidupkan direktif
+     ini, karena kebanyakan apa yang akan phpMussel cari (dalam konteks
+     direktif ini) adalah duplikasi dari perlindungan yang telah disediakan.
    "block_control_characters"
    - Memblokade file apapun yang berisi karakter pengendali (lain dari baris
      baru)? ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) Jika Anda hanya sedang mengupload
@@ -1844,5 +1844,5 @@
                                      ~ ~ ~
 
 
-Terakhir Diperbarui: 6 Januari 2016 (2016.01.06).
+Terakhir Diperbarui: 4 Februari 2016 (2016.02.04).
 EOF

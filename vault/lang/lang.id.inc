@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Indonesian language data (29th January 2016).
+ This file: phpMussel Indonesian language data (4th February 2016).
  <%phpMussel%/vault/lang/lang.id.inc>
 
 */
@@ -49,7 +49,7 @@ $MusselConfig['lang']['controls_lockout']='phpMussel mengunci kontrol diaktifkan
 $MusselConfig['lang']['core_scriptfile_missing']='File skrip inti hilang! Silakan instal ulang phpMussel.';
 $MusselConfig['lang']['corrupted']='Terdeteksi rusak PE';
 $MusselConfig['lang']['denied']='Upload Ditolak!';
-$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
 $MusselConfig['lang']['denied_reason']='Upload diblokir karena alasan yang tercantum di bawah / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Terdeteksi {vn}';
 $MusselConfig['lang']['detected_control_characters']='Terdeteksi kontrol karakter';
@@ -110,7 +110,7 @@ $MusselConfig['lang']['update_err5']='Data yang hilang!';
 $MusselConfig['lang']['update_err6']='Data yang buruk!';
 $MusselConfig['lang']['update_err7']='Checksum yang buruk!';
 $MusselConfig['lang']['update_failed']='Gagal.';
-$MusselConfig['lang']['update_fetch']='Mencoba untuk mengambil versi data dari';
+$MusselConfig['lang']['update_fetch']='Mencoba untuk mengambil versi data dari {Location} ...';
 $MusselConfig['lang']['update_lock_detected']='Mengunci memperbarui terdeteksi: Tidak dapat dilanjutkan. Memeriksa pembaruan korup atau coba lagi nanti.';
 $MusselConfig['lang']['update_not']='TIDAK {x}';
 $MusselConfig['lang']['update_not_available']='Skrip update yang tidak tersedia saat ini.';

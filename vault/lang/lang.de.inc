@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel German/Deutsch language data (29th January 2016).
+ This file: phpMussel German/Deutsch language data (4th February 2016).
  <%phpMussel%/vault/lang/lang.de.inc>
 
 */
@@ -49,7 +49,7 @@ $MusselConfig['lang']['controls_lockout']='phpMussel Kontrollen-Sperrung aktivie
 $MusselConfig['lang']['core_scriptfile_missing']='Coree-Script Datei fehlt! Bitte phpMussel erneut installieren.';
 $MusselConfig['lang']['corrupted']='Beschädigte PE entdeckt';
 $MusselConfig['lang']['denied']='Upload verweigert!';
-$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
 $MusselConfig['lang']['denied_reason']='Der Upload wurde aus den unten aufgeführten Gründen blockiert / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Entdeckt {vn}';
 $MusselConfig['lang']['detected_control_characters']='Steuerzeichen erkannt';
@@ -110,7 +110,7 @@ $MusselConfig['lang']['update_err5']='Daten fehlen!';
 $MusselConfig['lang']['update_err6']='Daten beschädigt!';
 $MusselConfig['lang']['update_err7']='Checksumme beschädigt!';
 $MusselConfig['lang']['update_failed']='Gescheitert.';
-$MusselConfig['lang']['update_fetch']='Abrufen von Versionsdaten aus';
+$MusselConfig['lang']['update_fetch']='Abrufen von Versionsdaten aus {Location} ...';
 $MusselConfig['lang']['update_lock_detected']='Update-Sperrung entdeckt: Kann nicht fortfahren. Prüf auf fehlerhafte Updates oder versuch es später nochmal.';
 $MusselConfig['lang']['update_not']='NICHT {x}';
 $MusselConfig['lang']['update_not_available']='Es steht zur Zeit kein Script-Update zur Verfügung.';

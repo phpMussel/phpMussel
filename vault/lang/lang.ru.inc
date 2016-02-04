@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Russian/Русский language data (29th January 2016).
+ This file: phpMussel Russian/Русский language data (4th February 2016).
  <%phpMussel%/vault/lang/lang.ru.inc>
 
 */
@@ -49,7 +49,7 @@ $MusselConfig['lang']['controls_lockout']='phpMussel контроль блоки
 $MusselConfig['lang']['core_scriptfile_missing']='Файл основного сценария отсутствует! Пожалуйста инсталлируете phpMussel заново.';
 $MusselConfig['lang']['corrupted']='Обнаружена поврежденная ПЭ';
 $MusselConfig['lang']['denied']='Загрузка Отказана!';
-$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! 上傳是否認! Uppladda Nekas! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
 $MusselConfig['lang']['denied_reason']='Ваша загрузка была заблокирована по причинам перечисленным ниже / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='Обнаружено {vn}';
 $MusselConfig['lang']['detected_control_characters']='Обнаружены символы управления';
@@ -110,7 +110,7 @@ $MusselConfig['lang']['update_err5']='Отсутствуют данные!';
 $MusselConfig['lang']['update_err6']='Неправильные данные!';
 $MusselConfig['lang']['update_err7']='Неправильный кзш!';
 $MusselConfig['lang']['update_failed']='Безуспешно.';
-$MusselConfig['lang']['update_fetch']='Попытка получить версию данных от';
+$MusselConfig['lang']['update_fetch']='Попытка получить версию данных от {Location} ...';
 $MusselConfig['lang']['update_lock_detected']='Обнаружено обновление блокировки: Продолжение невозможно. Проверьте на повреждение обновлений или повторите попытку позже.';
 $MusselConfig['lang']['update_not']='НЕТ {x}';
 $MusselConfig['lang']['update_not_available']='В это время доступных обновлений сценария нет.';

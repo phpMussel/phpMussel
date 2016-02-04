@@ -13,7 +13,7 @@ New entries will be added to this list when new goals are created, and old
 entries will be deleted when those goals have been achieved.
 
 - Currently supported archive formats are BZ/BZ2, GZ, LZF, TAR and ZIP. At
-  minimum, this should also extend to RAR, SHAR and 7z.
+  minimum, this should also extend to RAR, SHAR, PHAR and 7z.
   Refer github.com/Maikuolan/phpMussel/issues/2
 
 - Currently, all formats for archive metadata signatures that are supported,
@@ -52,6 +52,9 @@ entries will be deleted when those goals have been achieved.
 - Build plugin and extension variants of phpMussel for improved integration
   with various CMS, forums, other website systems and etc.
   Refer github.com/Maikuolan/phpMussel/issues/57
+  
+- Achieve 100% PSR compliancy.
+  Refer github.com/Maikuolan/phpMussel/issues/80
 
 === Changes made since last versioned release ===
 
@@ -74,6 +77,21 @@ entries will be deleted when those goals have been achieved.
   DanielRuf whereby an incorrect error ("Invalid file") was given when an
   UPLOAD_ERR_FORM_SIZE error should've been given instead; Fixed. Several error
   code if conditionals found to be incomplete; Fixed.
+
+- [2016.02.04; Sub-minor code change; Mie Shinohara]: Completed translation of
+  Japanese/日本語 language data [lang.ja.inc] (this replaces the fuzzy/incomplete
+  translations used previously by phpMussel).
+
+- [2016.02.04; Sub-minor code change; Maikuolan]: Adjusted one of the language
+  strings ("update_fetch") and adjusted its usage by the updater [update.inc],
+  due to constraints previously imposed by its usage (some problems with
+  correct word order for some languages could be caused by its previously
+  imposed usage).
+
+- [2016.02.04; Documentation; Maikuolan]: Added some more goals to the
+  changelog goals list. Found a small error in the documentation ("require" and
+  "include" are referred to as commands, and presented as functions, but they
+  are statements; documentation updated to reflect this).
 
 === Version/Release 0.9.1 ===
 PATCH RELEASE (signatures updated to 55+21192+9.1).

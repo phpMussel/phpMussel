@@ -14,7 +14,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel Chinese (Traditional) / 中文（傳統） language data (29th January 2016).
+ This file: phpMussel Chinese (Traditional) / 中文（傳統） language data (4th February 2016).
  <%phpMussel%/vault/lang/lang.zh-TW.inc>
 
 */
@@ -49,7 +49,7 @@ $MusselConfig['lang']['controls_lockout']='phpMussel控制閉鎖是啟用。';
 $MusselConfig['lang']['core_scriptfile_missing']='核心文件是丟失！請重新安裝phpMussel。';
 $MusselConfig['lang']['corrupted']='檢測損壞PE';
 $MusselConfig['lang']['denied']='上傳是否認！';
-$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否されました! 上传是否认! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối! تحميل نفى!';
+$MusselConfig['lang']['denied_other']='Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
 $MusselConfig['lang']['denied_reason']='您的上傳被拒绝由于这些原因 / Your upload was blocked for the reasons listed below:';
 $MusselConfig['lang']['detected']='檢測{vn}';
 $MusselConfig['lang']['detected_control_characters']='檢測控製字符';
@@ -110,7 +110,7 @@ $MusselConfig['lang']['update_err5']='數據失踪！';
 $MusselConfig['lang']['update_err6']='數據損壞！';
 $MusselConfig['lang']['update_err7']='哈希碼損壞！';
 $MusselConfig['lang']['update_failed']='失敗。';
-$MusselConfig['lang']['update_fetch']='試圖獲取版本數據從';
+$MusselConfig['lang']['update_fetch']='試圖獲取版本數據從“{Location}”。。。';
 $MusselConfig['lang']['update_lock_detected']='更新鎖檢測：無法繼續。檢查是否有損壞的更新或稍後再試。';
 $MusselConfig['lang']['update_not']='不{x}';
 $MusselConfig['lang']['update_not_available']='沒有可用編程更新這個時。';

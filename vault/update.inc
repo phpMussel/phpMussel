@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel v0.9.2 (10th January 2016) update script.
+ This file: phpMussel v0.9.2 (4th February 2016) update script.
  <%phpMussel%/vault/update.inc>
 
                                      ~ ~ ~
@@ -175,7 +175,7 @@ while(true)
     $phpmusselversion['request_content'].='update.dat%3A'.md5(ReadUpdateFile($vault.'update.dat')).'%3B';
     for($i=0;$i<$phpmusselversion['update_addresses_count'];$i++)
         {
-        echo $MusselConfig['lang']['update_fetch'].' http://'.substr($phpmusselversion['update_addresses'][$i],0,(strlen($phpmusselversion['update_addresses'][$i])-strpos($phpmusselversion['update_addresses'][$i],'/'))*-1).'/ ... ';
+        echo phpMusselV(array('Location'=>'http://'.substr($phpmusselversion['update_addresses'][$i],0,(strlen($phpmusselversion['update_addresses'][$i])-strpos($phpmusselversion['update_addresses'][$i],'/'))*-1).'/'),$MusselConfig['lang']['update_fetch']);
         $phpmusselversion['stream']=stream_context_create(array('http'=>array('method'=>'POST','header'=>'Content-type: application/x-www-form-urlencoded; charset=iso-8859-1','user_agent'=>$phpmusselversion['phpmussel_ua'],'content'=>$phpmusselversion['request_content'],'timeout'=>8)));
         $phpmusselversion['request']=file_get_contents('http://'.$phpmusselversion['update_addresses'][$i],false,$phpmusselversion['stream']);
         if(trim(substr($phpmusselversion['request'],0,16))!=='¡phpMussel!')

@@ -97,7 +97,7 @@
     systeem of CMS, maar het makkelijkste is om gewoon omvatten voor het script
     aan het begin van een kern bestand van uw systeem of CMS (een die het
     algemeen altijd zal worden geladen wanneer iemand heeft toegang tot een
-    pagina in uw website) met behulp van een "require()" of "include()"
+    pagina in uw website) met behulp van een "require" of "include"
     opdracht. Meestal is dit wel iets worden opgeslagen in een bestandsmap
     zoals "/includes", "/assets" of "/functions", en zal vaak zijn vernoemd
     iets als "init.php", "common_functions.php", "functions.php" of
@@ -107,7 +107,7 @@
     mijzelf of een andere gebruiker kunt ervaring met de CMS die u gebruikt
     heeft (u nodig om ons te laten weten welk CMS u gebruikt), en dus, in staat
     zijn om wat hulp te bieden in dit gebied. Om dit te doen [te gebruiken
-    "require()" of "include()"], plaatst u de volgende regel code aan het begin
+    "require" of "include"], plaatst u de volgende regel code aan het begin
     op die kern bestand, vervangen van de string die binnen de aanhalingstekens
     met het exacte adres van het "phpmussel.php" bestand (lokaal adres, niet
     het HTTP-adres; zal vergelijkbaar zijn met de eerder genoemde vault adres).
@@ -1361,7 +1361,7 @@
      niet noodzakelijk alomvattend.
    "general_commands"
    - Zoeken de inhoud van bestanden voor algemene commando's zoals "eval()",
-     "exec()" en "include()"?
+     "exec()" en "include"?
      False = Nee (niet doen controleer) [Standaard];
      True = Ja (doen controleer). Uitschakelen dit optie als u plannen te
      uploaden om één van de volgende om uw systeem of CMS via uw browser: PHP,
@@ -1882,5 +1882,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 27 December 2015 (2015.12.27).
+Laatste Bijgewerkt: 4 Februari 2016 (2016.02.04).
 EOF
