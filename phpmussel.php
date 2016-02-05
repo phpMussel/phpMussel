@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel v0.9.2 (12th January 2016) loader file.
+ This file: phpMussel v0.9.2 (5th February 2016) loader file.
  <%phpMussel%/phpmussel.php>
 
                                      ~ ~ ~
@@ -87,6 +87,7 @@ if(!function_exists('phpMussel_Register_Hook'))
     /**
      * The `phpMussel_Register_Hook` function is used to register plugin functions to their intended hooks.
      *
+     * @since v0.9.0
      * @param string $what The name of the chosen function to execute at the desired point in the script.
      * @param string $where Instructs the function which "hook" your chosen function should be registered to.
      * @param string|array $with Represents the variables that need to be parsed to your function from the scope in which it'll be executed from (optional).
@@ -115,6 +116,7 @@ if(!function_exists('phpMusselV'))
      * This function is used extensively throughout phpMussel, to parse its language data and to parse any messages
      * related to any detections found during the scan process and any other related processes.
      *
+     * @since v0.6j
      * @param array $v The input array.
      * @param string $b The input string.
      * @return string The results of the function are returned directly to the calling scope as a string.

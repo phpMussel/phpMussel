@@ -37,7 +37,7 @@
  - GitHub <https://github.com/Maikuolan/phpMussel/>.
 
                                      ~ ~ ~
- This file: phpMussel v0.9.2 (29th January 2016) core script.
+ This file: phpMussel v0.9.2 (5th February 2016) core script.
  <%phpMussel%/vault/phpmussel.inc>
 
                                      ~ ~ ~
@@ -142,6 +142,10 @@ if(!function_exists('str_split'))
     /**
      * A fallback function for `str_split()` (it converts strings to arrays).
      *
+     * Fallback functions ensure backwards compatibility between phpMussel and older versions of PHP, whereby phpMussel
+     * may require some particular function that isn't support or implemented by those older versions of PHP.
+     *
+     * @deprecated PHP's in-built `str_split()` function was introduced with PHP 5.0.0.-BETA1, and the minimum version of PHP required by phpMussel according to our "composer.json" file is PHP 5.4.0, and therefore, this fallback should already no longer be in use. We are marking this fallback as deprecated, and it will be it removed as part of the next major version release (1.0.0).
      * @param string $s The string to be converted/split.
      * @return array The converted/split string.
      */
@@ -183,6 +187,10 @@ if(!function_exists('bin2hex'))
     /**
      * A fallback function for `bin2hex()` (it converts binary strings to hexadecimal values).
      *
+     * Fallback functions ensure backwards compatibility between phpMussel and older versions of PHP, whereby phpMussel
+     * may require some particular function that isn't support or implemented by those older versions of PHP.
+     *
+     * @deprecated PHP's in-built `bin2hex()` function was introduced with PHP4, and the minimum version of PHP required by phpMussel according to our "composer.json" file is PHP 5.4.0, and therefore, this fallback should already no longer be in use. We are marking this fallback as deprecated, and it will be it removed as part of the next major version release (1.0.0).
      * @param string $str The string to be converted.
      * @return string The converted string.
      */
@@ -204,6 +212,10 @@ if(!function_exists('hex2bin'))
     /**
      * A fallback function for `hex2bin()` (it converts hexadecimal values to binary strings).
      *
+     * Fallback functions ensure backwards compatibility between phpMussel and older versions of PHP, whereby phpMussel
+     * may require some particular function that isn't support or implemented by those older versions of PHP.
+     *
+     * @deprecated PHP's in-built `hex2bin()` function was introduced with PHP 5.4.0, and the minimum version of PHP required by phpMussel according to our "composer.json" file is PHP 5.4.0, and therefore, this fallback should already no longer be in use. We are marking this fallback as deprecated, and it will be it removed as part of the next major version release (1.0.0).
      * @param string $str The string to be converted.
      * @return string The converted string.
      */
@@ -669,9 +681,9 @@ if(!function_exists('phpMusselQ'))
     /**
      * This function quarantines file uploads.
      *
-     * The function uses a key generated from your quarantine key to bitshift against the input string, adds a custom
-     * quarantine header with an explanation of what the bitshifted data is along with an MD5 hash checksum of the
-     * original unquarantined input string, and then saves it all to a QFU file, stored in your quarantine directory.
+     * The function uses a key generated from your quarantine key to bitshift the input string, appending a header with
+     * an explanation of what the bitshifted data is along with an MD5 hash checksum of the original unquarantined
+     * input string to it, and then saves it all to a QFU file, storing these QFU files in your quarantine directory.
      * This isn't hardcore encryption, but it should be sufficient to prevent accidental execution of quarantined
      * files and to allow safe handling of those files, which is the whole point of quarantining them in the first
      * place, and so, should be sufficient. Improvements may be made in the future.
