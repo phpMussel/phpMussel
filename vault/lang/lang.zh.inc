@@ -1,39 +1,27 @@
 <?php
-/*    _____  _     _  _____  _______ _     _ _______ _______ _______
- <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
-     |       |     | |       |  |  | |_____| ______| ______| |______ |_____
-
- Thank you for using phpMussel, a PHP script designed to detect trojans,
- viruses, malware and other threats within files uploaded to your system
- wherever the script is hooked, based on the signatures of ClamAV and others.
-
- PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
-
- This document and its associated package can be downloaded for free from:
- - Sourceforge <http://phpmussel.sourceforge.net/>.
- - GitHub <https://github.com/Maikuolan/phpMussel/>.
-
-                                     ~ ~ ~
- This file: phpMussel Chinese (Simplified) / 中文（简体） language data (4th February 2016).
- <%phpMussel%/vault/lang/lang.zh.inc>
-
-*/
-
 /**
- * phpMussel: A PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your
- * system wherever the script is hooked, based on the signatures of ClamAV and others.
+ * This file is a part of the phpMussel package, and can be downloaded for free
+ * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
  *
- * This file: Chinese (Simplified) language data for phpMussel.
+ * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
- * PO/POT version of this file is available via: https://github.com/Maikuolan/phpMussel-extras/blob/master/PO/phpMussel-zh.po
+ * Authors:
+ * @see PEOPLE.md
+ *
+ * License: GNU/GPLv2
+ * @see LICENSE.txt
+ *
+ * This file: Chinese (simplified) language data (last modified: 2016.02.07).
  *
  * @package Maikuolan/phpMussel
  */
 
-/**
- * Prevents execution from outside of phpMussel.
- */
-if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
+// namespace phpMussel; <- The namespace declaration seems to kill phpMussel in CLI-mode for some reason. I don't know why!! Need to investigate this to figure it out!!
+
+/** Prevents execution from outside of phpMussel. */
+if (!defined('phpMussel')) {
+    die('[phpMussel] This should not be accessed directly.');
+}
 
 $MusselConfig['lang']['bad_command']='我不明白的命令，对不起。';
 $MusselConfig['lang']['cli_commands']=" q\n - 戒烟CLI模式。\n - 别名：quit，exit。\n md5_file\n - 生成MD5签名从文件[语法：md5_file 文件名]。\n - 别名：m.\n md5\n - 生成MD5签名从数据[语法：md5 数据]。\n hex_encode\n - 兑换从二进制数据至十六进制[语法：hex_encode 数据]。\n - 别名：x.\n hex_decode\n - 兑换从十六进制二进制数据至[语法：hex_decode 数据]。\n base64_encode\n - 兑换从二进制数据至基地64数据[语法：base64_encode 数据]。\n - 别名：b.\n base64_decode\n - 兑换从基地64数据至二进制数据[语法：base64_decode 数据]。\n scan\n - 扫描文件或文件夹[语法：scan 文件名]。\n - 别名：s。\n update\n - 更新phpMussel。\n - 别名：u。\n c\n - 打印此命令列表。\n";

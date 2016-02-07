@@ -33,7 +33,7 @@
  version. This script is distributed in the hope that it will be useful, but
  WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
  FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- details, located in the "LICENSE" file within the "_docs" directory of the
+ details, located in the "LICENSE.txt" file within the "_docs" directory of the
  associated package and repository for this file and available also from:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 

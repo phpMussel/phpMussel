@@ -34,7 +34,7 @@
  phiên bản nào sau này. Bản này được phân phối với hy vọng rằng nó sẽ có hữu
  ích, nhưng mà KHÔNG CÓ BẢO HÀNH; ngay cả những bảo đảm ngụ ý KHẢ NĂNG BÁN
  HÀNG hoạc PHÙ HỢP VỚI MỤC ĐÍT VÀO. Hảy xem GNU Giấy Phép Công Cộng để biết
- them chi tiết, nằm trong hồ sơ "LICENSE" trong thư mục "_docs" của các gói
+ them chi tiết, nằm trong hồ sơ "LICENSE.txt" trong thư mục "_docs" của các gói
  liên quan và kho chứa của hồ sơ này có thể tiềm đước tại:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 

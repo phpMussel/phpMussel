@@ -22,7 +22,7 @@
 
 PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
-本脚本是基于GNU通用许可V2.0版许可协议发布的，您可以在许可协议的允许范围内自行修改和发布，但请遵守GNU通用许可协议。使用脚本的过程中，作者不提供任何担保和任何隐含担保。更多的细节请参见GNU通用公共许可证，位于`_docs`文件夹下的`LICENSE`文件也可从访问：
+本脚本是基于GNU通用许可V2.0版许可协议发布的，您可以在许可协议的允许范围内自行修改和发布，但请遵守GNU通用许可协议。使用脚本的过程中，作者不提供任何担保和任何隐含担保。更多的细节请参见GNU通用公共许可证，位于`_docs`文件夹下的`LICENSE.txt`文件也可从访问：
 - <http://www.gnu.org/licenses/>。
 - <http://opensource.org/licenses/>。
 

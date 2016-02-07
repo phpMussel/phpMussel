@@ -34,8 +34,8 @@
  toute version ultérieure. Ce script est distribué dans l'espoir qu'il sera
  utile, mais SANS AUCUNE GARANTIE, sans même la implicite garantie de
  COMMERCIALISATION ou D'ADAPTATION À UN PARTICULIER USAGE. Voir la GNU General
- Public License pour plus de détails, situé dans le "LICENCE" fichier dans le
- "_docs" répertoire de l'emballage associé et référentiel pour ce fichier et
+ Public License pour plus de détails, situé dans le "LICENSE.txt" fichier dans
+ le "_docs" répertoire de l'emballage associé et référentiel pour ce fichier et
  également disponible à partir de:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 

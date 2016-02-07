@@ -1,39 +1,27 @@
 <?php
-/*    _____  _     _  _____  _______ _     _ _______ _______ _______
- <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
-     |       |     | |       |  |  | |_____| ______| ______| |______ |_____
-
- Thank you for using phpMussel, a PHP script designed to detect trojans,
- viruses, malware and other threats within files uploaded to your system
- wherever the script is hooked, based on the signatures of ClamAV and others.
-
- PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
-
- This document and its associated package can be downloaded for free from:
- - Sourceforge <http://phpmussel.sourceforge.net/>.
- - GitHub <https://github.com/Maikuolan/phpMussel/>.
-
-                                     ~ ~ ~
- This file: phpMussel English language data (4th February 2016).
- <%phpMussel%/vault/lang/lang.en.inc>
-
-*/
-
 /**
- * phpMussel: A PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your
- * system wherever the script is hooked, based on the signatures of ClamAV and others.
+ * This file is a part of the phpMussel package, and can be downloaded for free
+ * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
  *
- * This file: English language data for phpMussel.
+ * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
- * PO/POT version of this file is available via: https://github.com/Maikuolan/phpMussel-extras/blob/master/PO/phpMussel-en-SOURCE.pot
+ * Authors:
+ * @see PEOPLE.md
+ *
+ * License: GNU/GPLv2
+ * @see LICENSE.txt
+ *
+ * This file: German language data (last modified: 2016.02.07).
  *
  * @package Maikuolan/phpMussel
  */
 
-/**
- * Prevents execution from outside of phpMussel.
- */
-if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
+// namespace phpMussel; <- The namespace declaration seems to kill phpMussel in CLI-mode for some reason. I don't know why!! Need to investigate this to figure it out!!
+
+/** Prevents execution from outside of phpMussel. */
+if (!defined('phpMussel')) {
+    die('[phpMussel] This should not be accessed directly.');
+}
 
 $MusselConfig['lang']['bad_command']='I don\'t understand that command, sorry.';
 $MusselConfig['lang']['cli_commands']=" q\n - Quit CLI.\n - Aliases: quit, exit.\n md5_file\n - Generate MD5 signatures from files [Syntax: md5_file filename].\n - Alias: m.\n md5\n - Generate MD5 signature from string [Syntax: md5 string].\n hex_encode\n - Convert binary string to hexadecimal [Syntax: hex_encode string].\n - Alias: x.\n hex_decode\n - Convert hexadecimal to binary string [Syntax: hex_decode string].\n base64_encode\n - Convert binary string to base64 string [Syntax: base64_encode string].\n - Alias: b.\n base64_decode\n - Convert base64 string to binary string [Syntax: base64_decode string].\n scan\n - Scan file or directory [Syntax: scan filename].\n - Alias: s.\n update\n - Update phpMussel.\n - Alias: u.\n c\n - Print this command list.\n";

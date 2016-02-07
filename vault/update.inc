@@ -1,69 +1,35 @@
 <?php
-/*    _____  _     _  _____  _______ _     _ _______ _______ _______
- <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
-     |       |     | |       |  |  | |_____| ______| ______| |______ |_____
-
- Thank you for using phpMussel, a PHP script designed to detect trojans,
- viruses, malware and other threats within files uploaded to your system
- wherever the script is hooked, based on the signatures of ClamAV and others.
-
- PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
-
- This script is free software; you can redistribute it and/or modify it under
- the terms of the GNU General Public License as published by the Free Software
- Foundation; either version 2 of the License, or (at your option) any later
- version. This script is distributed in the hope that it will be useful, but
- WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- details, located in the "LICENSE" file within the "_docs" directory of the
- associated package and repository for this file and available also from:
- <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
-
- Special thanks to ClamAV for both project inspiration and for the signatures
- that this script utilises, without which, the script would likely not exist,
- or at best, would have very limited value <http://www.clamav.net/>.
-
- Special thanks to Sourceforge and GitHub for hosting the project files, to
- Spambot Security for hosting the phpMussel discussion forums, located at
- <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, and to the
- additional sources of a number of the signatures utilised by phpMussel:
- SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
- <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> and others, and
- special thanks to all those supporting the project, to anyone else that I may
- have otherwise forgotten to mention, and to you, for using the script.
-
- This document and its associated package can be downloaded for free from:
- - Sourceforge <http://phpmussel.sourceforge.net/>.
- - GitHub <https://github.com/Maikuolan/phpMussel/>.
-
-                                     ~ ~ ~
- This file: phpMussel v0.9.2 (4th February 2016) update script.
- <%phpMussel%/vault/update.inc>
-
-                                     ~ ~ ~
- Please refer to the README documentation for installation instructions and for
- instructions regarding how to correctly use phpMussel.
-
- You may change any part of phpMussel as you see fit, but you are not required
- to change anything in this file in order for phpMussel to work effectively.
-
-*/
-
 /**
- * phpMussel: A PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your
- * system wherever the script is hooked, based on the signatures of ClamAV and others.
+ * This file is a part of the phpMussel package, and can be downloaded for free
+ * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
  *
- * This file: Update script, required for updating phpMussel via your browser and/or via CLI mode.
+ * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+ *
+ * Authors:
+ * @see PEOPLE.md
+ *
+ * License: GNU/GPLv2
+ * @see LICENSE.txt
+ *
+ * This file: phpMussel update script (last modified: 2016.02.07).
  *
  * @package Maikuolan/phpMussel
  *
- * @todo Currently, no update server is defined by `update.dat` (because currently, none exist). This means that this entire update script, at this time, basically, just won't work. There aren't any coding problems or errors in the script (as far as I'm aware), but rather, I just don't currently have somewhere appropriate to host the update server. The way I see it, currently, I have two options for dealing with it: Either get an operable update server running somewhere, or, completely scrap and then re-write this entire update script. I'll let everyone concerned know when a decision has been made and/or when some action has been taken.
+ * @todo Currently, no update server is defined by `update.dat` (because
+ *      currently, none exist). This means that this entire update script, at
+ *      this time, won't work. There aren't any coding problems or errors in
+ *      the script (as far as I'm aware), but rather, I just don't currently
+ *      have somewhere appropriate to host the update server. We'll probably
+ *      rewrite this entire script in the near future anyhow, so, for now, it's
+ *      best to just ignore this and not use it.
  */
 
-/**
- * Prevents execution from outside of phpMussel.
- */
-if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
+// namespace phpMussel; <- The namespace declaration seems to kill phpMussel in CLI-mode for some reason. I don't know why!! Need to investigate this to figure it out!!
+
+/** Prevents execution from outside of phpMussel. */
+if (!defined('phpMussel')) {
+    die('[phpMussel] This should not be accessed directly.');
+}
 
 /**
  * @todo phpDocs block here.
@@ -237,8 +203,8 @@ while(true)
         for($i=0;$i<$phpmusselversion['remote_update_instructions_count'];$i++)
             {
             if($phpmusselversion['remote_update_instructions'][$i][0]=='crc')$phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]]=$phpmusselversion['remote_update_instructions'][$i][2];
-            else if($phpmusselversion['remote_update_instructions'][$i][0]=='fdata')$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]=@base64_decode($phpmusselversion['remote_update_instructions'][$i][2]);
-            else if($phpmusselversion['remote_update_instructions'][$i][0]=='delete')
+            elseif($phpmusselversion['remote_update_instructions'][$i][0]=='fdata')$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]=@base64_decode($phpmusselversion['remote_update_instructions'][$i][2]);
+            elseif($phpmusselversion['remote_update_instructions'][$i][0]=='delete')
                 {
                 if(file_exists($vault.$phpmusselversion['remote_update_instructions'][$i][1]))
                     {
@@ -246,12 +212,12 @@ while(true)
                     echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$MusselConfig['lang']['update_deleted'].$MusselConfig['lang']['update_successfully']),$MusselConfig['lang']['update_was']).'. ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
                     }
                 }
-            else if($phpmusselversion['remote_update_instructions'][$i][0]=='patch'||$phpmusselversion['remote_update_instructions'][$i][0]=='patchgz')
+            elseif($phpmusselversion['remote_update_instructions'][$i][0]=='patch'||$phpmusselversion['remote_update_instructions'][$i][0]=='patchgz')
                 {
                 $phpmusselversion['adj_word']=(file_exists($vault.$phpmusselversion['remote_update_instructions'][$i][1]))?$MusselConfig['lang']['update_patched']:$MusselConfig['lang']['update_created'];
                 if(!isset($phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]]))echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err4'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
-                else if(!isset($phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]))echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err5'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
-                else if(!$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]])echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err6'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
+                elseif(!isset($phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]))echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err5'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
+                elseif(!$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]])echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err6'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
                 else
                     {
                     if($phpmusselversion['remote_update_instructions'][$i][0]=='patchgz')$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]=@gzinflate($phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]);

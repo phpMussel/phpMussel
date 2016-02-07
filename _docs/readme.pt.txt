@@ -34,7 +34,7 @@
  versão posterior. Este script é distribuído na esperança que possa ser útil,
  mas SEM QUALQUER GARANTIA; sem mesmo a implícita garantia de COMERCIALIZAÇÃO
  ou ADEQUAÇÃO A UM DETERMINADO FIM. Consulte a GNU General Public License para
- obter mais detalhes, localizado no "LICENSE" arquivo dentro do "_docs"
+ obter mais detalhes, localizado no "LICENSE.txt" arquivo dentro do "_docs"
  diretório do associado pacote e repositório de este arquivo e também
  disponível desde:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.

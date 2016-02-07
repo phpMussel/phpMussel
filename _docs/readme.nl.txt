@@ -34,9 +34,9 @@
  uw keuze) enige latere versie. Dit script wordt gedistribueerd in de hoop dat
  het nuttig zal zijn, maar ZONDER ENIGE GARANTIE; zonder zelfs de impliciete
  garantie van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de GNU
- General Public License voor meer informatie, gelegen in het "LICENCE" bestand
- binnen de "_docs" bestandsmap van de bijbehorende pakket en het repository
- voor dit bestand en ook beschikbaar uit:
+ General Public License voor meer informatie, gelegen in het "LICENSE.txt"
+ bestand binnen de "_docs" bestandsmap van de bijbehorende pakket en het
+ repository voor dit bestand en ook beschikbaar uit:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Speciale dank aan ClamAV voor zowel project inspiratie en voor de

@@ -1,39 +1,27 @@
 <?php
-/*    _____  _     _  _____  _______ _     _ _______ _______ _______
- <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
-     |       |     | |       |  |  | |_____| ______| ______| |______ |_____
-
- Thank you for using phpMussel, a PHP script designed to detect trojans,
- viruses, malware and other threats within files uploaded to your system
- wherever the script is hooked, based on the signatures of ClamAV and others.
-
- PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
-
- This document and its associated package can be downloaded for free from:
- - Sourceforge <http://phpmussel.sourceforge.net/>.
- - GitHub <https://github.com/Maikuolan/phpMussel/>.
-
-                                     ~ ~ ~
- This file: phpMussel Vietnamese/Việt language data (4th February 2016).
- <%phpMussel%/vault/lang/lang.vi.inc>
-
-*/
-
 /**
- * phpMussel: A PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your
- * system wherever the script is hooked, based on the signatures of ClamAV and others.
+ * This file is a part of the phpMussel package, and can be downloaded for free
+ * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
  *
- * This file: Vietnamese language data for phpMussel.
+ * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
- * PO/POT version of this file is available via: https://github.com/Maikuolan/phpMussel-extras/blob/master/PO/phpMussel-vi.po
+ * Authors:
+ * @see PEOPLE.md
+ *
+ * License: GNU/GPLv2
+ * @see LICENSE.txt
+ *
+ * This file: Vietnamese language data (last modified: 2016.02.07).
  *
  * @package Maikuolan/phpMussel
  */
 
-/**
- * Prevents execution from outside of phpMussel.
- */
-if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
+// namespace phpMussel; <- The namespace declaration seems to kill phpMussel in CLI-mode for some reason. I don't know why!! Need to investigate this to figure it out!!
+
+/** Prevents execution from outside of phpMussel. */
+if (!defined('phpMussel')) {
+    die('[phpMussel] This should not be accessed directly.');
+}
 
 $MusselConfig['lang']['bad_command']='Xin lỗi, tôi không hiểu câu lệnh này.';
 $MusselConfig['lang']['cli_commands']=" q\n – Thoát ra CLI.\n - Bí danh: quit, exit.\n md5_file\n - Phát ra MD5 chử ký từ tài liệu [Syntax: md5_file filename].\n – Bí danh: m.\n md5\n – Phát ra MD5 chử ký từ dây [Syntax: md5 string].\n hex_encode\n - Chuyển đổi dây nhị phân thành hệ thập lục phân [Syntax: hex_encode string].\n – Bí danh: x.\n hex_decode\n - Chuyển đổi hệ thập lục phân thành dây nhị phân [Syntax: hex_decode string].\n base64_encode\n – Chuyển đổi dây nhị phân thành dây base64 [Syntax: base64_encode string].\n – Bí danh: b.\n base64_decode\n – Chuyển đổi dây base64 thành dây nhị phân [Syntax: base64_decode string].\n scan\n – Xem tài liệu hoạc hồ sơ [Syntax: scan filename].\n – Bí danh: s.\n update\n – Cập nhật phpMussel.\n – Bí danh: u.\n c\n – In danh sách lệnh này.\n";

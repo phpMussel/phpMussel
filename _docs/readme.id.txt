@@ -35,8 +35,8 @@
  didistribusikan untuk harapan dapat digunakan tapi TANPA JAMINAN; tanpa
  walaupun garansi dari DIPERJUALBELIKAN atau KECOCOKAN UNTUK TUJUAN TERTENTU.
  Mohon Lihat GNU General Public Licence untuk lebih detail, terletak di
- "LICENCE" file dalam "_docs" direktori dari paket terkait dan repositori untuk
- file ini dan tersedia juga dari:
+ "LICENSE.txt" file dalam "_docs" direktori dari paket terkait dan repositori
+ untuk file ini dan tersedia juga dari:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Terima kasih khususnya untuk ClamAV buat inspirasi project dan tanda tangan

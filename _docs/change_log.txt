@@ -1,4 +1,7 @@
-phpMussel change_log.txt
+Changelog for phpMussel versions/releases from =>"0.4" to <"1.0.0".
+
+Changelogs for earlier and later versions/releases not included in this
+package; Please refer to those earlier and later packages for those changelogs.
 
 === VERSIONING GUIDELINES ===
 Version 0.9.0 of phpMussel and all versions thereafter follow the SemVer
@@ -15,6 +18,7 @@ entries will be deleted when those goals have been achieved.
 - Currently supported archive formats are BZ/BZ2, GZ, LZF, TAR and ZIP. At
   minimum, this should also extend to RAR, SHAR, PHAR and 7z.
   Refer github.com/Maikuolan/phpMussel/issues/2
+  Refer github.com/phpMussel/universe/issues/5
 
 - Currently, all formats for archive metadata signatures that are supported,
   with exception to ZIP format, can be scanned recursively. Ideally, ability to
@@ -60,7 +64,7 @@ entries will be deleted when those goals have been achieved.
 
 - [2016.01.08; Sub-minor code change; Maikuolan]: Closing PHP tags removed and
   all tabs converted to spaces (in order to improve compliance with PSR); Added
-  some phpDoc blocks information into all script files; No other changes.
+  some phpDoc comments into all script files; No other changes.
   Refer github.com/Maikuolan/phpMussel/issues/80
 
 - [2016.01.10; Sub-minor code change; Maikuolan]: More phpDoc work done for all
@@ -70,7 +74,7 @@ entries will be deleted when those goals have been achieved.
   the execution chain than those two files, we can avoid duplication by moving
   the function there); Some minor corrections done across multiple functions,
   in order to better comply with their supposed defaults to better comply with
-  the new phpDoc blocks information.
+  the new phpDoc comments.
 
 - [2016.01.29; Bug-fixes; Maikuolan]: Found a very minor typo in the language
   string of one of the error codes (low priority); Fixed. Bug found by
@@ -92,6 +96,14 @@ entries will be deleted when those goals have been achieved.
   changelog goals list. Found a small error in the documentation ("require" and
   "include" are referred to as commands, and presented as functions, but they
   are statements; documentation updated to reflect this).
+
+- [2016.02.07; Sub-minor code change; Maikuolan]: Completely rewrote the header
+  included with all the PHP files of phpMussel, ditching the ASCII art,
+  simplifying all the information contained within [the header] and
+  restructuring it as a singular page-level phpDoc comment (as per discussed
+  with the team, prior to implementation). Some more PSR work done.
+
+- [2016.02.07; Documentation]: "/_docs/LICENSE" renamed to "/LICENSE.txt".
 
 === Version/Release 0.9.1 ===
 PATCH RELEASE (signatures updated to 55+21192+9.1).
@@ -1750,13 +1762,5 @@ PROBLEMS/BUGS FIXED:
 
 Maikuolan,
 8th July 2014.
-
-« Entries prior to 0.4 (8th July 2014) redacted from this release of the
-  change_log to keep the size of the change_log to a manageable level and due
-  to those entries having only limited relevance to the most recently available
-  release of phpMussel. Older releases will still contain those older entries
-  where relevant and those entries should nonetheless be available for viewing
-  via the support forums release information thread and via older commits of
-  the change_log. »
 
 EOF

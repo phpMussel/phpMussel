@@ -1,64 +1,22 @@
 <?php
-/*    _____  _     _  _____  _______ _     _ _______ _______ _______
- <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >
-     |       |     | |       |  |  | |_____| ______| ______| |______ |_____
-
- Thank you for using phpMussel, a PHP script designed to detect trojans,
- viruses, malware and other threats within files uploaded to your system
- wherever the script is hooked, based on the signatures of ClamAV and others.
-
- PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).
-
- This script is free software; you can redistribute it and/or modify it under
- the terms of the GNU General Public License as published by the Free Software
- Foundation; either version 2 of the License, or (at your option) any later
- version. This script is distributed in the hope that it will be useful, but
- WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- details, located in the "LICENSE" file within the "_docs" directory of the
- associated package and repository for this file and available also from:
- <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
-
- Special thanks to ClamAV for both project inspiration and for the signatures
- that this script utilises, without which, the script would likely not exist,
- or at best, would have very limited value <http://www.clamav.net/>.
-
- Special thanks to Sourceforge and GitHub for hosting the project files, to
- Spambot Security for hosting the phpMussel discussion forums, located at
- <http://www.spambotsecurity.com/forum/viewforum.php?f=55>, and to the
- additional sources of a number of the signatures utilised by phpMussel:
- SecuriteInfo.com <http://www.securiteinfo.com/>, PhishTank
- <http://www.phishtank.com/>, NLNetLabs <http://nlnetlabs.nl/> and others, and
- special thanks to all those supporting the project, to anyone else that I may
- have otherwise forgotten to mention, and to you, for using the script.
-
- This document and its associated package can be downloaded for free from:
- - Sourceforge <http://phpmussel.sourceforge.net/>.
- - GitHub <https://github.com/Maikuolan/phpMussel/>.
-
-                                     ~ ~ ~
- This file: phpMussel v0.9.2 (5th February 2016) core script.
- <%phpMussel%/vault/phpmussel.inc>
-
-                                     ~ ~ ~
- Please refer to the README documentation for installation instructions and for
- instructions regarding how to correctly use phpMussel.
-
- You may change any part of phpMussel as you see fit, but you are not required
- to change anything in this file in order for phpMussel to work effectively.
-
-*/
-
 /**
- * phpMussel: A PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your
- * system wherever the script is hooked, based on the signatures of ClamAV and others.
+ * This file is a part of the phpMussel package, and can be downloaded for free
+ * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
  *
- * This file: Core phpMussel script (contains all the main functions and etc).
+ * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
+ *
+ * Authors:
+ * @see PEOPLE.md
+ *
+ * License: GNU/GPLv2
+ * @see LICENSE.txt
+ *
+ * This file: phpMussel core functions (last modified: 2016.02.07).
  *
  * @package Maikuolan/phpMussel
  *
- * @todo Archive support should extend to include RAR, SHAR and 7z, if possible (github.com/Maikuolan/phpMussel/issues/2).
- * @todo ZIP support and future support for other archive formats should be made to be recursive.
+ * @todo Add support for PHAR, 7z, RAR (github.com/phpMussel/universe/issues/5).
+ * @todo Add recursion support for ZIP scanning.
  * @todo Wish list: Icon parsing (github.com/Maikuolan/phpMussel/issues/5).
  * @todo Wish list: Certificate parsing (github.com/Maikuolan/phpMussel/issues/4).
  * @todo Fix client language bug (github.com/Maikuolan/phpMussel/issues/28).
@@ -66,12 +24,16 @@
  * @todo Fix non-ANSI/non-ASCII filenames in CLI mode bug (github.com/Maikuolan/phpMussel/issues/61).
  * @todo Complete Google Safe Browsing integration (github.com/Maikuolan/phpMussel/issues/65).
  * @todo Improve data decoding procedures.
+ * @todo PSR (github.com/Maikuolan/phpMussel/issues/80)
+ * @todo phpMussel v1.0.0 Transitional Preparations Checklist (github.com/Maikuolan/phpMussel/issues/82)
  */
 
-/**
- * Prevents execution from outside of phpMussel.
- */
-if(!defined('phpMussel'))die('[phpMussel] This should not be accessed directly.');
+// namespace phpMussel; <- The namespace declaration seems to kill phpMussel in CLI-mode for some reason. I don't know why!! Need to investigate this to figure it out!!
+
+/** Prevents execution from outside of phpMussel. */
+if (!defined('phpMussel')) {
+    die('[phpMussel] This should not be accessed directly.');
+}
 
 $phpmusselversion='phpMussel v0.9.2';
 $phpmusselversion_int='0.9.2';
@@ -129,7 +91,7 @@ if(!function_exists('implode_md'))
                 $i--;
                 }
             if(!$out)$out=$ar[$key];
-            else if(!(!$e&&empty($ar[$key])))$out.=$x.$ar[$key];
+            elseif(!(!$e&&empty($ar[$key])))$out.=$x.$ar[$key];
             next($ar);
             $c--;
             }
@@ -747,7 +709,7 @@ if(!function_exists('phpMusselMemUse'))
                     $t['dc']+=$r['dc'];
                     $t['d']-=$r['d'];
                     }
-                else if(is_file($np))
+                elseif(is_file($np))
                     {
                     $ns=filesize($np);
                     if($t['d']>0&&substr_count($np."\x01",".qfu\x01")>0)
@@ -976,74 +938,74 @@ if(!function_exists('vn_shorthand'))
         $n=split_nibble($vn[1]);
         $out='';
         if($n[0]===2)$out.='ClamAV-';
-        else if($n[0]===3)$out.='phpMussel-';
-        else if($n[0]===4)$out.='SecuriteInfo-';
-        else if($n[0]===5)$out.='ZBB-';
-        else if($n[0]===6)$out.='NLNetLabs-';
-        else if($n[0]===7)$out.='FoxIT-';
-        else if($n[0]===8)
+        elseif($n[0]===3)$out.='phpMussel-';
+        elseif($n[0]===4)$out.='SecuriteInfo-';
+        elseif($n[0]===5)$out.='ZBB-';
+        elseif($n[0]===6)$out.='NLNetLabs-';
+        elseif($n[0]===7)$out.='FoxIT-';
+        elseif($n[0]===8)
             {
             if($n[1]===0)$out.='PhishTank-';
-            else if($n[1]===1)$out.='Malc0de-';
-            else if($n[1]===2)$out.='hpHosts-';
-            else if($n[1]===3)$out.='Spam404-';
+            elseif($n[1]===1)$out.='Malc0de-';
+            elseif($n[1]===2)$out.='hpHosts-';
+            elseif($n[1]===3)$out.='Spam404-';
             }
-        else if($n[0]===9)
+        elseif($n[0]===9)
             {
             $GLOBALS['memCache']['weighted']=true;
             $out.='phpMussel-';
             }
-        else if($n[0]===15)$GLOBALS['memCache']['weighted']=true;
+        elseif($n[0]===15)$GLOBALS['memCache']['weighted']=true;
         if($n[0]!==8)
             {
             if($n[1]===1)$out.='Testfile.';
-            else if($n[1]===2)$out.='FN.';
-            else if($n[1]===3)$out.='VT.';
-            else if($n[1]===4)$out.='META.';
-            else if($n[1]===5)$out.='Chameleon.';
-            else if($n[1]===6)$out.='Werewolf.';
-            else if($n[1]===7)$out.='Suspect.';
-            else if($n[1]===8)$out.='Fake.';
-            else if($n[1]===9)$out.='CVE.';
-            else if($n[1]===15)$out.='HEUR.';
+            elseif($n[1]===2)$out.='FN.';
+            elseif($n[1]===3)$out.='VT.';
+            elseif($n[1]===4)$out.='META.';
+            elseif($n[1]===5)$out.='Chameleon.';
+            elseif($n[1]===6)$out.='Werewolf.';
+            elseif($n[1]===7)$out.='Suspect.';
+            elseif($n[1]===8)$out.='Fake.';
+            elseif($n[1]===9)$out.='CVE.';
+            elseif($n[1]===15)$out.='HEUR.';
             }
         $n=split_nibble($vn[2]);
         if($n[0]===1)
             {
             if($n[1]===1)$out.='Win.';
-            else if($n[1]===2)$out.='W32.';
-            else if($n[1]===3)$out.='W64.';
-            else if($n[1]===4)$out.='ELF.';
-            else if($n[1]===5)$out.='OSX.';
-            else if($n[1]===6)$out.='Android.';
-            else if($n[1]===7)$out.='Email.';
-            else if($n[1]===8)$out.='JS.';
-            else if($n[1]===9)$out.='Java.';
-            else if($n[1]===10)$out.='XXE.';
-            else if($n[1]===11)$out.='Graphics.';
-            else if($n[1]===12)$out.='OLE.';
-            else if($n[1]===13)$out.='HTML.';
-            else if($n[1]===14)$out.='RTF.';
-            else if($n[1]===15)$out.='Archive.';
+            elseif($n[1]===2)$out.='W32.';
+            elseif($n[1]===3)$out.='W64.';
+            elseif($n[1]===4)$out.='ELF.';
+            elseif($n[1]===5)$out.='OSX.';
+            elseif($n[1]===6)$out.='Android.';
+            elseif($n[1]===7)$out.='Email.';
+            elseif($n[1]===8)$out.='JS.';
+            elseif($n[1]===9)$out.='Java.';
+            elseif($n[1]===10)$out.='XXE.';
+            elseif($n[1]===11)$out.='Graphics.';
+            elseif($n[1]===12)$out.='OLE.';
+            elseif($n[1]===13)$out.='HTML.';
+            elseif($n[1]===14)$out.='RTF.';
+            elseif($n[1]===15)$out.='Archive.';
             }
         if($n[0]===2)
             {
             if($n[1]===0)$out.='PHP.';
-            else if($n[1]===1)$out.='XML.';
-            else if($n[1]===2)$out.='ASP.';
-            else if($n[1]===3)$out.='VBS.';
-            else if($n[1]===4)$out.='BAT.';
-            else if($n[1]===5)$out.='PDF.';
-            else if($n[1]===6)$out.='SWF.';
-            else if($n[1]===7)$out.='W97M.';
-            else if($n[1]===8)$out.='X97M.';
-            else if($n[1]===9)$out.='O97M.';
-            else if($n[1]===10)$out.='ASCII.';
-            else if($n[1]===11)$out.='Unix.';
-            else if($n[1]===12)$out.='Python.';
-            else if($n[1]===13)$out.='Perl.';
-            else if($n[1]===14)$out.='Ruby.';
-            else if($n[1]===15)$out.='INF/INI.';
+            elseif($n[1]===1)$out.='XML.';
+            elseif($n[1]===2)$out.='ASP.';
+            elseif($n[1]===3)$out.='VBS.';
+            elseif($n[1]===4)$out.='BAT.';
+            elseif($n[1]===5)$out.='PDF.';
+            elseif($n[1]===6)$out.='SWF.';
+            elseif($n[1]===7)$out.='W97M.';
+            elseif($n[1]===8)$out.='X97M.';
+            elseif($n[1]===9)$out.='O97M.';
+            elseif($n[1]===10)$out.='ASCII.';
+            elseif($n[1]===11)$out.='Unix.';
+            elseif($n[1]===12)$out.='Python.';
+            elseif($n[1]===13)$out.='Perl.';
+            elseif($n[1]===14)$out.='Ruby.';
+            elseif($n[1]===15)$out.='INF/INI.';
             }
         if($n[0]===3)
             {
@@ -1053,66 +1015,66 @@ if(!function_exists('vn_shorthand'))
         if($n[0]===1)
             {
             if($n[1]===1)$out.='Worm.';
-            else if($n[1]===2)$out.='Trojan.';
-            else if($n[1]===3)
+            elseif($n[1]===2)$out.='Trojan.';
+            elseif($n[1]===3)
                 {
                 $out.='Adware.';
                 if(!$GLOBALS['MusselConfig']['signatures']['detect_adware'])$GLOBALS['memCache']['ignoreme']=true;
                 }
-            else if($n[1]===4)$out.='Flooder.';
-            else if($n[1]===5)$out.='IRCBot.';
-            else if($n[1]===6)$out.='Exploit.';
-            else if($n[1]===7)$out.='VirTool.';
-            else if($n[1]===8)$out.='Dialer.';
-            else if($n[1]===9)
+            elseif($n[1]===4)$out.='Flooder.';
+            elseif($n[1]===5)$out.='IRCBot.';
+            elseif($n[1]===6)$out.='Exploit.';
+            elseif($n[1]===7)$out.='VirTool.';
+            elseif($n[1]===8)$out.='Dialer.';
+            elseif($n[1]===9)
                 {
                 $out.='Joke/Hoax.';
                 if(!$GLOBALS['MusselConfig']['signatures']['detect_joke_hoax'])$GLOBALS['memCache']['ignoreme']=true;
                 }
-            else if($n[1]===11)$out.='Malware.';
-            else if($n[1]===12)$out.='Riskware.';
-            else if($n[1]===13)$out.='Rootkit.';
-            else if($n[1]===14)$out.='Backdoor.';
-            else if($n[1]===15)$out.='Hacktool.';
+            elseif($n[1]===11)$out.='Malware.';
+            elseif($n[1]===12)$out.='Riskware.';
+            elseif($n[1]===13)$out.='Rootkit.';
+            elseif($n[1]===14)$out.='Backdoor.';
+            elseif($n[1]===15)$out.='Hacktool.';
             }
         if($n[0]===2)
             {
             if($n[1]===0)$out.='Keylogger.';
-            else if($n[1]===1)$out.='Ransomware.';
-            else if($n[1]===2)$out.='Spyware.';
-            else if($n[1]===3)$out.='Virus.';
-            else if($n[1]===4)$out.='Dropper.';
-            else if($n[1]===5)$out.='Dropped.';
-            else if($n[1]===6)$out.='Downloader.';
-            else if($n[1]===7)$out.='Obfuscation.';
-            else if($n[1]===8)$out.='Obfuscator.';
-            else if($n[1]===9)$out.='Obfuscated.';
-            else if($n[1]===10)
+            elseif($n[1]===1)$out.='Ransomware.';
+            elseif($n[1]===2)$out.='Spyware.';
+            elseif($n[1]===3)$out.='Virus.';
+            elseif($n[1]===4)$out.='Dropper.';
+            elseif($n[1]===5)$out.='Dropped.';
+            elseif($n[1]===6)$out.='Downloader.';
+            elseif($n[1]===7)$out.='Obfuscation.';
+            elseif($n[1]===8)$out.='Obfuscator.';
+            elseif($n[1]===9)$out.='Obfuscated.';
+            elseif($n[1]===10)
                 {
                 $out.='Packer.';
                 if(!$GLOBALS['MusselConfig']['signatures']['detect_packer_packed'])$GLOBALS['memCache']['ignoreme']=true;
                 }
-            else if($n[1]===11)
+            elseif($n[1]===11)
                 {
                 $out.='Packed.';
                 if(!$GLOBALS['MusselConfig']['signatures']['detect_packer_packed'])$GLOBALS['memCache']['ignoreme']=true;
                 }
-            else if($n[1]===12)
+            elseif($n[1]===12)
                 {
                 $out.='PUA/PUP.';
                 if(!$GLOBALS['MusselConfig']['signatures']['detect_pua_pup'])$GLOBALS['memCache']['ignoreme']=true;
                 }
-            else if($n[1]===13)
+            elseif($n[1]===13)
                 {
                 $out.='Shell.';
                 if(!$GLOBALS['MusselConfig']['signatures']['detect_shell'])$GLOBALS['memCache']['ignoreme']=true;
                 }
-            else if($n[1]===14)
+            elseif($n[1]===14)
                 {
                 $out.='Defacer.';
                 if(!$GLOBALS['MusselConfig']['signatures']['detect_deface'])$GLOBALS['memCache']['ignoreme']=true;
                 }
-            else if($n[1]===15)
+            elseif($n[1]===15)
                 {
                 $out.='Defacement.';
                 if(!$GLOBALS['MusselConfig']['signatures']['detect_deface'])$GLOBALS['memCache']['ignoreme']=true;
@@ -1121,16 +1083,16 @@ if(!function_exists('vn_shorthand'))
         if($n[0]===3)
             {
             if($n[1]===0)$out.='Cryptor.';
-            else if($n[1]===1)$out.='Phish.';
-            else if($n[1]===2)$out.='Spam.';
-            else if($n[1]===3)$out.='Spammer.';
-            else if($n[1]===4)$out.='Scam.';
-            else if($n[1]===5)$out.='ZipBomb.';
-            else if($n[1]===6)$out.='ForkBomb.';
-            else if($n[1]===7)$out.='LogicBomb.';
-            else if($n[1]===8)$out.='CyberBomb.';
-            else if($n[1]===9)$out.='Malvertisement.';
-            else if($n[1]===15)$out.='BadURL.';
+            elseif($n[1]===1)$out.='Phish.';
+            elseif($n[1]===2)$out.='Spam.';
+            elseif($n[1]===3)$out.='Spammer.';
+            elseif($n[1]===4)$out.='Scam.';
+            elseif($n[1]===5)$out.='ZipBomb.';
+            elseif($n[1]===6)$out.='ForkBomb.';
+            elseif($n[1]===7)$out.='LogicBomb.';
+            elseif($n[1]===8)$out.='CyberBomb.';
+            elseif($n[1]===9)$out.='Malvertisement.';
+            elseif($n[1]===15)$out.='BadURL.';
             }
         return $out.substr($vn,4);
         }
@@ -1271,7 +1233,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===1)
+        elseif($SigSet===1)
             {
             if($GLOBALS['MusselConfig']['signatures']['filenames_custom'])
                 {
@@ -1279,7 +1241,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===2)
+        elseif($SigSet===2)
             {
             if($GLOBALS['MusselConfig']['signatures']['filenames_mussel'])
                 {
@@ -1318,7 +1280,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             continue;
                             }
                         }
-                    else if(substr($xsig[1],0,1)=='$')
+                    elseif(substr($xsig[1],0,1)=='$')
                         {
                         $vf=substr($xsig[1],1);
                         if(isset($$vf))if(!is_array($$vf))
@@ -1336,7 +1298,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                         $i=$xsig[3]-1;
                         continue;
                         }
-                    else if(substr($xsig[1],0,2)=='!$')
+                    elseif(substr($xsig[1],0,2)=='!$')
                         {
                         $vf=substr($xsig[1],2);
                         if(isset($$vf))if(!is_array($$vf))
@@ -1410,7 +1372,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===1)
+        elseif($SigSet===1)
             {
             if($GLOBALS['MusselConfig']['signatures']['whitelist_custom'])
                 {
@@ -1418,7 +1380,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===2)
+        elseif($SigSet===2)
             {
             if($GLOBALS['MusselConfig']['signatures']['whitelist_mussel'])
                 {
@@ -1487,7 +1449,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===1)
+        elseif($SigSet===1)
             {
             if($GLOBALS['MusselConfig']['signatures']['md5_custom'])
                 {
@@ -1495,7 +1457,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===2)
+        elseif($SigSet===2)
             {
             if($GLOBALS['MusselConfig']['signatures']['md5_mussel'])
                 {
@@ -1647,7 +1609,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$mapcon[3]-1;
                                     }
                                 }
-                            else if($mapcon[1]=='FS-MIN')
+                            elseif($mapcon[1]=='FS-MIN')
                                 {
                                 if($str_len<$mapcon[2])
                                     {
@@ -1655,7 +1617,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$mapcon[3]-1;
                                     }
                                 }
-                            else if($mapcon[1]=='FS-MAX')
+                            elseif($mapcon[1]=='FS-MAX')
                                 {
                                 if($str_len>$mapcon[2])
                                     {
@@ -1663,7 +1625,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$mapcon[3]-1;
                                     }
                                 }
-                            else if($mapcon[1]=='FD')
+                            elseif($mapcon[1]=='FD')
                                 {
                                 if(!substr_count($str_hex,$mapcon[2]))
                                     {
@@ -1671,7 +1633,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$mapcon[3]-1;
                                     }
                                 }
-                            else if($mapcon[1]=='FD-RX')
+                            elseif($mapcon[1]=='FD-RX')
                                 {
                                 if(!preg_match('/'.$mapcon[2].'/i',$str_hex))
                                     {
@@ -1679,7 +1641,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$mapcon[3]-1;
                                     }
                                 }
-                            else if(substr($mapcon[1],0,1)=='$')
+                            elseif(substr($mapcon[1],0,1)=='$')
                                 {
                                 $vf=substr($mapcon[1],1);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -1694,7 +1656,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 if($mapcon[3]<=$i)break;
                                 $i=$mapcon[3]-1;
                                 }
-                            else if(substr($mapcon[1],0,2)=='!$')
+                            elseif(substr($mapcon[1],0,2)=='!$')
                                 {
                                 $vf=substr($mapcon[1],2);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -1742,7 +1704,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                             $this_xmlxdp="\x01".$this_xmlxdp;
                                             $xsig[0]="\x01".$xsig[0];
                                             }
-                                        else if($xstrf!='*')
+                                        elseif($xstrf!='*')
                                             {
                                             $this_str=substr($this_str,$xstrf*2);
                                             $this_xmlxdp=substr($this_xmlxdp,$xstrf*2);
@@ -1830,7 +1792,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$mapcon[3]-1;
                                     }
                                 }
-                            else if($mapcon[1]=='FS-MIN')
+                            elseif($mapcon[1]=='FS-MIN')
                                 {
                                 if($str_len<$mapcon[2])
                                     {
@@ -1838,7 +1800,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$mapcon[3]-1;
                                     }
                                 }
-                            else if($mapcon[1]=='FS-MAX')
+                            elseif($mapcon[1]=='FS-MAX')
                                 {
                                 if($str_len>$mapcon[2])
                                     {
@@ -1846,7 +1808,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$mapcon[3]-1;
                                     }
                                 }
-                            else if($mapcon[1]=='FD')
+                            elseif($mapcon[1]=='FD')
                                 {
                                 if(!substr_count($str_hex,$mapcon[2]))
                                     {
@@ -1854,7 +1816,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$mapcon[3]-1;
                                     }
                                 }
-                            else if($mapcon[1]=='FD-RX')
+                            elseif($mapcon[1]=='FD-RX')
                                 {
                                 if(!preg_match('/'.$mapcon[2].'/i',$str_hex))
                                     {
@@ -1862,7 +1824,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$mapcon[3]-1;
                                     }
                                 }
-                            else if(substr($mapcon[1],0,1)=='$')
+                            elseif(substr($mapcon[1],0,1)=='$')
                                 {
                                 $vf=substr($mapcon[1],1);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -1877,7 +1839,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 if($mapcon[3]<=$i)break;
                                 $i=$mapcon[3]-1;
                                 }
-                            else if(substr($mapcon[1],0,2)=='!$')
+                            elseif(substr($mapcon[1],0,2)=='!$')
                                 {
                                 $vf=substr($mapcon[1],2);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -1920,15 +1882,15 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                                 {
                                                 if(!preg_match('/'.$xsig.'/i',$str_html)&&!preg_match('/'.$xsig.'/i',$str_xmlxdp_html))continue;
                                                 }
-                                            else if(!preg_match('/'.$xsig.'/i',substr($str_html,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_html,0,$xstrt*2)))continue;
+                                            elseif(!preg_match('/'.$xsig.'/i',substr($str_html,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_html,0,$xstrt*2)))continue;
                                             }
-                                        else if($xstrf=='A')
+                                        elseif($xstrf=='A')
                                             {
                                             if($xstrt=='*')
                                                 {
                                                 if(!preg_match('/\A'.$xsig.'/i',$str_html)&&!preg_match('/\A'.$xsig.'/i',$str_xmlxdp_html))continue;
                                                 }
-                                            else if(!preg_match('/\A'.$xsig.'/i',substr($str_html,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp_html,0,$xstrt*2)))continue;
+                                            elseif(!preg_match('/\A'.$xsig.'/i',substr($str_html,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp_html,0,$xstrt*2)))continue;
                                             }
                                         else
                                             {
@@ -1936,7 +1898,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                                 {
                                                 if(!preg_match('/'.$xsig.'/i',substr($str_html,$xstrf*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_html,$xstrf*2)))continue;
                                                 }
-                                            else if(!preg_match('/'.$xsig.'/i',substr($str_html,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_html,$xstrf*2,$xstrt*2)))continue;
+                                            elseif(!preg_match('/'.$xsig.'/i',substr($str_html,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_html,$xstrf*2,$xstrt*2)))continue;
                                             }
                                         if(!$flagged)
                                             {
@@ -1967,7 +1929,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                         $SigDo=true;
                         }
                     }
-                else if($SigSet===1)
+                elseif($SigSet===1)
                     {
                     if($GLOBALS['MusselConfig']['signatures']['html_mussel'])
                         {
@@ -2008,7 +1970,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FS-MIN')
+                                elseif($xsig[1]=='FS-MIN')
                                     {
                                     if($str_len<$xsig[2])
                                         {
@@ -2016,7 +1978,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FS-MAX')
+                                elseif($xsig[1]=='FS-MAX')
                                     {
                                     if($str_len>$xsig[2])
                                         {
@@ -2024,7 +1986,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FD')
+                                elseif($xsig[1]=='FD')
                                     {
                                     if(!substr_count($str_html,$xsig[2]))
                                         {
@@ -2032,7 +1994,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FD-RX')
+                                elseif($xsig[1]=='FD-RX')
                                     {
                                     if(!preg_match('/'.$xsig[2].'/i',$str_html))
                                         {
@@ -2040,7 +2002,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if(substr($xsig[1],0,1)=='$')
+                                elseif(substr($xsig[1],0,1)=='$')
                                     {
                                     $vf=substr($xsig[1],1);
                                     if(isset($$vf))if(!is_array($$vf))
@@ -2055,7 +2017,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     if($xsig[3]<=$i)break;
                                     $i=$xsig[3]-1;
                                     }
-                                else if(substr($xsig[1],0,2)=='!$')
+                                elseif(substr($xsig[1],0,2)=='!$')
                                     {
                                     $vf=substr($xsig[1],2);
                                     if(isset($$vf))if(!is_array($$vf))
@@ -2095,7 +2057,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $this_xmlxdp="\x01".$this_xmlxdp;
                                         $xsig[0]="\x01".$xsig[0];
                                         }
-                                    else if($xstrf!='*')
+                                    elseif($xstrf!='*')
                                         {
                                         $this_str=substr($this_str,$xstrf*2);
                                         $this_xmlxdp=substr($this_xmlxdp,$xstrf*2);
@@ -2168,7 +2130,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FS-MIN')
+                                elseif($xsig[1]=='FS-MIN')
                                     {
                                     if($str_len<$xsig[2])
                                         {
@@ -2176,7 +2138,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FS-MAX')
+                                elseif($xsig[1]=='FS-MAX')
                                     {
                                     if($str_len>$xsig[2])
                                         {
@@ -2184,7 +2146,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FD')
+                                elseif($xsig[1]=='FD')
                                     {
                                     if(!substr_count($str_html,$xsig[2]))
                                         {
@@ -2192,7 +2154,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FD-RX')
+                                elseif($xsig[1]=='FD-RX')
                                     {
                                     if(!preg_match('/'.$xsig[2].'/i',$str_html))
                                         {
@@ -2200,7 +2162,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if(substr($xsig[1],0,1)=='$')
+                                elseif(substr($xsig[1],0,1)=='$')
                                     {
                                     $vf=substr($xsig[1],1);
                                     if(isset($$vf))if(!is_array($$vf))
@@ -2215,7 +2177,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     if($xsig[3]<=$i)break;
                                     $i=$xsig[3]-1;
                                     }
-                                else if(substr($xsig[1],0,2)=='!$')
+                                elseif(substr($xsig[1],0,2)=='!$')
                                     {
                                     $vf=substr($xsig[1],2);
                                     if(isset($$vf))if(!is_array($$vf))
@@ -2250,15 +2212,15 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                             {
                                             if(!preg_match('/'.$xsig.'/i',$str_html)&&!preg_match('/'.$xsig.'/i',$str_xmlxdp_html))continue;
                                             }
-                                        else if(!preg_match('/'.$xsig.'/i',substr($str_html,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_html,0,$xstrt*2)))continue;
+                                        elseif(!preg_match('/'.$xsig.'/i',substr($str_html,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_html,0,$xstrt*2)))continue;
                                         }
-                                    else if($xstrf=='A')
+                                    elseif($xstrf=='A')
                                         {
                                         if($xstrt=='*')
                                             {
                                             if(!preg_match('/\A'.$xsig.'/i',$str_html)&&!preg_match('/\A'.$xsig.'/i',$str_xmlxdp_html))continue;
                                             }
-                                        else if(!preg_match('/\A'.$xsig.'/i',substr($str_html,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp_html,0,$xstrt*2)))continue;
+                                        elseif(!preg_match('/\A'.$xsig.'/i',substr($str_html,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp_html,0,$xstrt*2)))continue;
                                         }
                                     else
                                         {
@@ -2266,7 +2228,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                             {
                                             if(!preg_match('/'.$xsig.'/i',substr($str_html,$xstrf*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_html,$xstrf*2)))continue;
                                             }
-                                        else if(!preg_match('/'.$xsig.'/i',substr($str_html,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_html,$xstrf*2,$xstrt*2)))continue;
+                                        elseif(!preg_match('/'.$xsig.'/i',substr($str_html,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_html,$xstrf*2,$xstrt*2)))continue;
                                         }
                                     if(!$flagged)
                                         {
@@ -2348,7 +2310,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $lv_max=(isset($xsig[$sxi][6]))?$xsig[$sxi][6]:-1;
                 if(!lv_match($lv_needle,$lv_haystack,$pos_A,$pos_Z,$lv_min,$lv_max))continue 2;
                 }
-            else if(isset($xsig[$sxi][2]))
+            elseif(isset($xsig[$sxi][2]))
                 {
                 if(isset($xsig[$sxi][3]))
                     {
@@ -2406,14 +2368,14 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                     if(is_array($$vf))continue 2;
                     if($$vf!=$xsig[$sxi][1])continue 2;
                     }
-                else if(substr($xsig[$sxi][0],0,2)=='!$')
+                elseif(substr($xsig[$sxi][0],0,2)=='!$')
                     {
                     $vf=substr($xsig[$sxi][0],2);
                     if(!isset($$vf))continue 2;
                     if(is_array($$vf))continue 2;
                     if($$vf==$xsig[$sxi][1])continue 2;
                     }
-                else if(!substr_count(',FN,FS-MIN,FS-MAX,FD,FD-RX,FD-NORM,FD-NORM-RX,',','.$xsig[$sxi][0].','))continue 2;
+                elseif(!substr_count(',FN,FS-MIN,FS-MAX,FD,FD-RX,FD-NORM,FD-NORM-RX,',','.$xsig[$sxi][0].','))continue 2;
                 }
             }
         $sxc=count($switch);
@@ -2810,7 +2772,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===1)
+        elseif($SigSet===1)
             {
             $is_elf=false;
             if(!isset($whitelist['ELF'])&&($GLOBALS['MusselConfig']['signatures']['elf_clamav']||$GLOBALS['MusselConfig']['signatures']['elf_custom']||$GLOBALS['MusselConfig']['signatures']['elf_mussel'])&&($xt=='elf'||substr($str_hex,0,8)==='7f454c46'))
@@ -2830,7 +2792,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===2)
+        elseif($SigSet===2)
             {
             $is_macho=false;
             if(!isset($whitelist['OSX'])&&($GLOBALS['MusselConfig']['signatures']['macho_clamav']||$GLOBALS['MusselConfig']['signatures']['macho_custom']||$GLOBALS['MusselConfig']['signatures']['macho_mussel'])&&substr_count(',cafebabe,cafed00d,cefaedfe,cffaedfe,feedface,feedfacf,',','.substr($str_hex,0,8).','))
@@ -2850,7 +2812,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===3)
+        elseif($SigSet===3)
             {
             if(!isset($whitelist['PDF'])&&($GLOBALS['MusselConfig']['signatures']['pdf_clamav']||$GLOBALS['MusselConfig']['signatures']['pdf_custom']||$GLOBALS['MusselConfig']['signatures']['pdf_mussel']))if(substr_count(',pdf,',','.$xt.',')>0||$pdf_magic)
                 {
@@ -2868,7 +2830,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===4)
+        elseif($SigSet===4)
             {
             $is_swf=false;
             if(!isset($whitelist['SWF'])&&($GLOBALS['MusselConfig']['signatures']['swf_clamav']||$GLOBALS['MusselConfig']['signatures']['swf_custom']||$GLOBALS['MusselConfig']['signatures']['swf_mussel']))if(substr_count(",435753,465753,5a5753,",",".substr($str_hex,0,6).",")||substr_count(",swf,swt,",",".$xt.","))
@@ -2960,7 +2922,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                             $this_str="\x01".$this_str;
                                             $xsig[0]="\x01".$xsig[0];
                                             }
-                                        else if($xstrf!='*')$this_str=substr($this_str,$xstrf*2);
+                                        elseif($xstrf!='*')$this_str=substr($this_str,$xstrf*2);
                                         if($xstrt!='*')$this_str=substr($this_str,0,$xstrt*2);
                                         for($xsigi=0;$xsigi<$xsigc;$xsigi++)
                                             {
@@ -3049,15 +3011,15 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                                 {
                                                 if(!preg_match('/'.$xsig.'/i',$str_hex))continue;
                                                 }
-                                            else if(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2)))continue;
+                                            elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2)))continue;
                                             }
-                                        else if($xstrf=='A')
+                                        elseif($xstrf=='A')
                                             {
                                             if($xstrt=='*')
                                                 {
                                                 if(!preg_match('/\A'.$xsig.'/i',$str_hex))continue;
                                                 }
-                                            else if(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2)))continue;
+                                            elseif(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2)))continue;
                                             }
                                         else
                                             {
@@ -3065,7 +3027,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                                 {
                                                 if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2)))continue;
                                                 }
-                                            else if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2)))continue;
+                                            elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2)))continue;
                                             }
                                         if(!$flagged)
                                             {
@@ -3116,7 +3078,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FS-MIN')
+                            elseif($xsig[1]=='FS-MIN')
                                 {
                                 if($str_len<$xsig[2])
                                     {
@@ -3124,7 +3086,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FS-MAX')
+                            elseif($xsig[1]=='FS-MAX')
                                 {
                                 if($str_len>$xsig[2])
                                     {
@@ -3132,7 +3094,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FD')
+                            elseif($xsig[1]=='FD')
                                 {
                                 if(!substr_count($str_hex,$xsig[2]))
                                     {
@@ -3140,7 +3102,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FD-RX')
+                            elseif($xsig[1]=='FD-RX')
                                 {
                                 if(!preg_match('/'.$xsig[2].'/i',$str_hex))
                                     {
@@ -3148,7 +3110,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if(substr($xsig[1],0,1)=='$')
+                            elseif(substr($xsig[1],0,1)=='$')
                                 {
                                 $vf=substr($xsig[1],1);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -3163,7 +3125,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 if($xsig[3]<=$i)break;
                                 $i=$xsig[3]-1;
                                 }
-                            else if(substr($xsig[1],0,2)=='!$')
+                            elseif(substr($xsig[1],0,2)=='!$')
                                 {
                                 $vf=substr($xsig[1],2);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -3201,7 +3163,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $this_str="\x01".$this_str;
                                     $xsig[0]="\x01".$xsig[0];
                                     }
-                                else if($xstrf!='*')$this_str=substr($this_str,$xstrf*2);
+                                elseif($xstrf!='*')$this_str=substr($this_str,$xstrf*2);
                                 if($xstrt!='*')$this_str=substr($this_str,0,$xstrt*2);
                                 for($xsigi=0;$xsigi<$xsigc;$xsigi++)
                                     {
@@ -3262,7 +3224,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FS-MIN')
+                            elseif($xsig[1]=='FS-MIN')
                                 {
                                 if($str_len<$xsig[2])
                                     {
@@ -3270,7 +3232,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FS-MAX')
+                            elseif($xsig[1]=='FS-MAX')
                                 {
                                 if($str_len>$xsig[2])
                                     {
@@ -3278,7 +3240,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FD')
+                            elseif($xsig[1]=='FD')
                                 {
                                 if(!substr_count($str_hex,$xsig[2]))
                                     {
@@ -3286,7 +3248,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FD-RX')
+                            elseif($xsig[1]=='FD-RX')
                                 {
                                 if(!preg_match('/'.$xsig[2].'/i',$str_hex))
                                     {
@@ -3294,7 +3256,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if(substr($xsig[1],0,1)=='$')
+                            elseif(substr($xsig[1],0,1)=='$')
                                 {
                                 $vf=substr($xsig[1],1);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -3309,7 +3271,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 if($xsig[3]<=$i)break;
                                 $i=$xsig[3]-1;
                                 }
-                            else if(substr($xsig[1],0,2)=='!$')
+                            elseif(substr($xsig[1],0,2)=='!$')
                                 {
                                 $vf=substr($xsig[1],2);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -3344,15 +3306,15 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         {
                                         if(!preg_match('/'.$xsig.'/i',$str_hex))continue;
                                         }
-                                    else if(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2)))continue;
+                                    elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2)))continue;
                                     }
-                                else if($xstrf=='A')
+                                elseif($xstrf=='A')
                                     {
                                     if($xstrt=='*')
                                         {
                                         if(!preg_match('/\A'.$xsig.'/i',$str_hex))continue;
                                         }
-                                    else if(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2)))continue;
+                                    elseif(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2)))continue;
                                     }
                                 else
                                     {
@@ -3360,7 +3322,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         {
                                         if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2)))continue;
                                         }
-                                    else if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2)))continue;
+                                    elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2)))continue;
                                     }
                                 if(!$flagged)
                                     {
@@ -3418,7 +3380,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FS-MIN')
+                            elseif($xsig[1]=='FS-MIN')
                                 {
                                 if($str_len<$xsig[2])
                                     {
@@ -3426,7 +3388,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FS-MAX')
+                            elseif($xsig[1]=='FS-MAX')
                                 {
                                 if($str_len>$xsig[2])
                                     {
@@ -3434,7 +3396,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FD')
+                            elseif($xsig[1]=='FD')
                                 {
                                 if(!substr_count($str_hex,$xsig[2]))
                                     {
@@ -3442,7 +3404,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FD-RX')
+                            elseif($xsig[1]=='FD-RX')
                                 {
                                 if(!preg_match('/'.$xsig[2].'/i',$str_hex))
                                     {
@@ -3450,7 +3412,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if(substr($xsig[1],0,1)=='$')
+                            elseif(substr($xsig[1],0,1)=='$')
                                 {
                                 $vf=substr($xsig[1],1);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -3465,7 +3427,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 if($xsig[3]<=$i)break;
                                 $i=$xsig[3]-1;
                                 }
-                            else if(substr($xsig[1],0,2)=='!$')
+                            elseif(substr($xsig[1],0,2)=='!$')
                                 {
                                 $vf=substr($xsig[1],2);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -3503,7 +3465,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $this_str="\x01".$this_str;
                                     $xsig[0]="\x01".$xsig[0];
                                     }
-                                else if($xstrf!='*')$this_str=substr($this_str,$xstrf*2);
+                                elseif($xstrf!='*')$this_str=substr($this_str,$xstrf*2);
                                 if($xstrt!='*')$this_str=substr($this_str,0,$xstrt*2);
                                 for($xsigi=0;$xsigi<$xsigc;$xsigi++)
                                     {
@@ -3564,7 +3526,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FS-MIN')
+                            elseif($xsig[1]=='FS-MIN')
                                 {
                                 if($str_len<$xsig[2])
                                     {
@@ -3572,7 +3534,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FS-MAX')
+                            elseif($xsig[1]=='FS-MAX')
                                 {
                                 if($str_len>$xsig[2])
                                     {
@@ -3580,7 +3542,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FD')
+                            elseif($xsig[1]=='FD')
                                 {
                                 if(!substr_count($str_hex,$xsig[2]))
                                     {
@@ -3588,7 +3550,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FD-RX')
+                            elseif($xsig[1]=='FD-RX')
                                 {
                                 if(!preg_match('/'.$xsig[2].'/i',$str_hex))
                                     {
@@ -3596,7 +3558,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if(substr($xsig[1],0,1)=='$')
+                            elseif(substr($xsig[1],0,1)=='$')
                                 {
                                 $vf=substr($xsig[1],1);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -3611,7 +3573,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 if($xsig[3]<=$i)break;
                                 $i=$xsig[3]-1;
                                 }
-                            else if(substr($xsig[1],0,2)=='!$')
+                            elseif(substr($xsig[1],0,2)=='!$')
                                 {
                                 $vf=substr($xsig[1],2);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -3646,15 +3608,15 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         {
                                         if(!preg_match('/'.$xsig.'/i',$str_hex))continue;
                                         }
-                                    else if(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2)))continue;
+                                    elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2)))continue;
                                     }
-                                else if($xstrf=='A')
+                                elseif($xstrf=='A')
                                     {
                                     if($xstrt=='*')
                                         {
                                         if(!preg_match('/\A'.$xsig.'/i',$str_hex))continue;
                                         }
-                                    else if(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2)))continue;
+                                    elseif(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2)))continue;
                                     }
                                 else
                                     {
@@ -3662,7 +3624,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         {
                                         if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2)))continue;
                                         }
-                                    else if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2)))continue;
+                                    elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2)))continue;
                                     }
                                 if(!$flagged)
                                     {
@@ -3748,7 +3710,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FS-MIN')
+                    elseif($mapcon[1]=='FS-MIN')
                         {
                         if($str_len<$mapcon[2])
                             {
@@ -3756,7 +3718,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FS-MAX')
+                    elseif($mapcon[1]=='FS-MAX')
                         {
                         if($str_len>$mapcon[2])
                             {
@@ -3764,7 +3726,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FD')
+                    elseif($mapcon[1]=='FD')
                         {
                         if(!substr_count($str_hex,$mapcon[2]))
                             {
@@ -3772,7 +3734,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FD-RX')
+                    elseif($mapcon[1]=='FD-RX')
                         {
                         if(!preg_match('/'.$mapcon[2].'/i',$str_hex))
                             {
@@ -3780,7 +3742,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if(substr($mapcon[1],0,1)=='$')
+                    elseif(substr($mapcon[1],0,1)=='$')
                         {
                         $vf=substr($mapcon[1],1);
                         if(isset($$vf))if(!is_array($$vf))
@@ -3795,7 +3757,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                         if($mapcon[3]<=$i)break;
                         $i=$mapcon[3]-1;
                         }
-                    else if(substr($mapcon[1],0,2)=='!$')
+                    elseif(substr($mapcon[1],0,2)=='!$')
                         {
                         $vf=substr($mapcon[1],2);
                         if(isset($$vf))if(!is_array($$vf))
@@ -3846,7 +3808,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $this_xmlxdp="\x01".$this_xmlxdp;
                                     $xsig[0]="\x01".$xsig[0];
                                     }
-                                else if($xstrf!='*')
+                                elseif($xstrf!='*')
                                     {
                                     $this_str=substr($this_str,$xstrf*2);
                                     $this_xmlxdp=substr($this_xmlxdp,$xstrf*2);
@@ -3934,7 +3896,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FS-MIN')
+                    elseif($mapcon[1]=='FS-MIN')
                         {
                         if($str_len<$mapcon[2])
                             {
@@ -3942,7 +3904,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FS-MAX')
+                    elseif($mapcon[1]=='FS-MAX')
                         {
                         if($str_len>$mapcon[2])
                             {
@@ -3950,7 +3912,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FD')
+                    elseif($mapcon[1]=='FD')
                         {
                         if(!substr_count($str_hex,$mapcon[2]))
                             {
@@ -3958,7 +3920,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FD-RX')
+                    elseif($mapcon[1]=='FD-RX')
                         {
                         if(!preg_match('/'.$mapcon[2].'/i',$str_hex))
                             {
@@ -3966,7 +3928,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if(substr($mapcon[1],0,1)=='$')
+                    elseif(substr($mapcon[1],0,1)=='$')
                         {
                         $vf=substr($mapcon[1],1);
                         if(isset($$vf))if(!is_array($$vf))
@@ -3981,7 +3943,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                         if($mapcon[3]<=$i)break;
                         $i=$mapcon[3]-1;
                         }
-                    else if(substr($mapcon[1],0,2)=='!$')
+                    elseif(substr($mapcon[1],0,2)=='!$')
                         {
                         $vf=substr($mapcon[1],2);
                         if(isset($$vf))if(!is_array($$vf))
@@ -4027,15 +3989,15 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         {
                                         if(!preg_match('/'.$xsig.'/i',$str_hex)&&!preg_match('/'.$xsig.'/i',$str_xmlxdp))continue;
                                         }
-                                    else if(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
+                                    elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
                                     }
-                                else if($xstrf=='A')
+                                elseif($xstrf=='A')
                                     {
                                     if($xstrt=='*')
                                         {
                                         if(!preg_match('/\A'.$xsig.'/i',$str_hex)&&!preg_match('/\A'.$xsig.'/i',$str_xmlxdp))continue;
                                         }
-                                    else if(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
+                                    elseif(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
                                     }
                                 else
                                     {
@@ -4043,7 +4005,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         {
                                         if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,$xstrf*2)))continue;
                                         }
-                                    else if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,$xstrf*2,$xstrt*2)))continue;
+                                    elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,$xstrf*2,$xstrt*2)))continue;
                                     }
                                 if(!$flagged)
                                     {
@@ -4075,7 +4037,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===1)
+        elseif($SigSet===1)
             {
             if($GLOBALS['MusselConfig']['signatures']['general_mussel'])
                 {
@@ -4116,7 +4078,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FS-MIN')
+                        elseif($xsig[1]=='FS-MIN')
                             {
                             if($str_len<$xsig[2])
                                 {
@@ -4124,7 +4086,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FS-MAX')
+                        elseif($xsig[1]=='FS-MAX')
                             {
                             if($str_len>$xsig[2])
                                 {
@@ -4132,7 +4094,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FD')
+                        elseif($xsig[1]=='FD')
                             {
                             if(!substr_count($str_hex,$xsig[2]))
                                 {
@@ -4140,7 +4102,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FD-RX')
+                        elseif($xsig[1]=='FD-RX')
                             {
                             if(!preg_match('/'.$xsig[2].'/i',$str_hex))
                                 {
@@ -4148,7 +4110,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if(substr($xsig[1],0,1)=='$')
+                        elseif(substr($xsig[1],0,1)=='$')
                             {
                             $vf=substr($xsig[1],1);
                             if(isset($$vf))if(!is_array($$vf))
@@ -4163,7 +4125,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             if($xsig[3]<=$i)break;
                             $i=$xsig[3]-1;
                             }
-                        else if(substr($xsig[1],0,2)=='!$')
+                        elseif(substr($xsig[1],0,2)=='!$')
                             {
                             $vf=substr($xsig[1],2);
                             if(isset($$vf))if(!is_array($$vf))
@@ -4206,7 +4168,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $this_xmlxdp="\x01".$this_xmlxdp;
                                 $xsig[0]="\x01".$xsig[0];
                                 }
-                            else if($xstrf!='*')
+                            elseif($xstrf!='*')
                                 {
                                 $this_str=substr($this_str,$xstrf*2);
                                 $this_xmlxdp=substr($this_xmlxdp,$xstrf*2);
@@ -4279,7 +4241,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FS-MIN')
+                        elseif($xsig[1]=='FS-MIN')
                             {
                             if($str_len<$xsig[2])
                                 {
@@ -4287,7 +4249,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FS-MAX')
+                        elseif($xsig[1]=='FS-MAX')
                             {
                             if($str_len>$xsig[2])
                                 {
@@ -4295,7 +4257,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FD')
+                        elseif($xsig[1]=='FD')
                             {
                             if(!substr_count($str_hex,$xsig[2]))
                                 {
@@ -4303,7 +4265,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FD-RX')
+                        elseif($xsig[1]=='FD-RX')
                             {
                             if(!preg_match('/'.$xsig[2].'/i',$str_hex))
                                 {
@@ -4311,7 +4273,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if(substr($xsig[1],0,1)=='$')
+                        elseif(substr($xsig[1],0,1)=='$')
                             {
                             $vf=substr($xsig[1],1);
                             if(isset($$vf))if(!is_array($$vf))
@@ -4326,7 +4288,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             if($xsig[3]<=$i)break;
                             $i=$xsig[3]-1;
                             }
-                        else if(substr($xsig[1],0,2)=='!$')
+                        elseif(substr($xsig[1],0,2)=='!$')
                             {
                             $vf=substr($xsig[1],2);
                             if(isset($$vf))if(!is_array($$vf))
@@ -4364,15 +4326,15 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     {
                                     if(!preg_match('/'.$xsig.'/i',$str_hex)&&!preg_match('/'.$xsig.'/i',$str_xmlxdp))continue;
                                     }
-                                else if(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
+                                elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
                                 }
-                            else if($xstrf=='A')
+                            elseif($xstrf=='A')
                                 {
                                 if($xstrt=='*')
                                     {
                                     if(!preg_match('/\A'.$xsig.'/i',$str_hex)&&!preg_match('/\A'.$xsig.'/i',$str_xmlxdp))continue;
                                     }
-                                else if(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
+                                elseif(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
                                 }
                             else
                                 {
@@ -4380,7 +4342,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     {
                                     if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,$xstrf*2)))continue;
                                     }
-                                else if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,$xstrf*2,$xstrt*2)))continue;
+                                elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,$xstrf*2,$xstrt*2)))continue;
                                 }
                             if(!$flagged)
                                 {
@@ -4461,7 +4423,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FS-MIN')
+                    elseif($mapcon[1]=='FS-MIN')
                         {
                         if($str_len<$mapcon[2])
                             {
@@ -4469,7 +4431,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FS-MAX')
+                    elseif($mapcon[1]=='FS-MAX')
                         {
                         if($str_len>$mapcon[2])
                             {
@@ -4477,7 +4439,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FD')
+                    elseif($mapcon[1]=='FD')
                         {
                         if(!substr_count($str_hex,$mapcon[2]))
                             {
@@ -4485,7 +4447,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FD-RX')
+                    elseif($mapcon[1]=='FD-RX')
                         {
                         if(!preg_match('/'.$mapcon[2].'/i',$str_hex))
                             {
@@ -4493,7 +4455,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if(substr($mapcon[1],0,1)=='$')
+                    elseif(substr($mapcon[1],0,1)=='$')
                         {
                         $vf=substr($mapcon[1],1);
                         if(isset($$vf))if(!is_array($$vf))
@@ -4508,7 +4470,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                         if($mapcon[3]<=$i)break;
                         $i=$mapcon[3]-1;
                         }
-                    else if(substr($mapcon[1],0,2)=='!$')
+                    elseif(substr($mapcon[1],0,2)=='!$')
                         {
                         $vf=substr($mapcon[1],2);
                         if(isset($$vf))if(!is_array($$vf))
@@ -4559,7 +4521,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $this_xmlxdp="\x01".$this_xmlxdp;
                                     $xsig[0]="\x01".$xsig[0];
                                     }
-                                else if($xstrf!='*')
+                                elseif($xstrf!='*')
                                     {
                                     $this_str=substr($this_str,$xstrf*2);
                                     $this_xmlxdp=substr($this_xmlxdp,$xstrf*2);
@@ -4647,7 +4609,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FS-MIN')
+                    elseif($mapcon[1]=='FS-MIN')
                         {
                         if($str_len<$mapcon[2])
                             {
@@ -4655,7 +4617,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FS-MAX')
+                    elseif($mapcon[1]=='FS-MAX')
                         {
                         if($str_len>$mapcon[2])
                             {
@@ -4663,7 +4625,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FD')
+                    elseif($mapcon[1]=='FD')
                         {
                         if(!substr_count($str_hex,$mapcon[2]))
                             {
@@ -4671,7 +4633,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if($mapcon[1]=='FD-RX')
+                    elseif($mapcon[1]=='FD-RX')
                         {
                         if(!preg_match('/'.$mapcon[2].'/i',$str_hex))
                             {
@@ -4679,7 +4641,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             $i=$mapcon[3]-1;
                             }
                         }
-                    else if(substr($mapcon[1],0,1)=='$')
+                    elseif(substr($mapcon[1],0,1)=='$')
                         {
                         $vf=substr($mapcon[1],1);
                         if(isset($$vf))if(!is_array($$vf))
@@ -4694,7 +4656,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                         if($mapcon[3]<=$i)break;
                         $i=$mapcon[3]-1;
                         }
-                    else if(substr($mapcon[1],0,2)=='!$')
+                    elseif(substr($mapcon[1],0,2)=='!$')
                         {
                         $vf=substr($mapcon[1],2);
                         if(isset($$vf))if(!is_array($$vf))
@@ -4740,15 +4702,15 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         {
                                         if(!preg_match('/'.$xsig.'/i',$str_norm)&&!preg_match('/'.$xsig.'/i',$str_xmlxdp_norm))continue;
                                         }
-                                    else if(!preg_match('/'.$xsig.'/i',substr($str_norm,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_norm,0,$xstrt*2)))continue;
+                                    elseif(!preg_match('/'.$xsig.'/i',substr($str_norm,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_norm,0,$xstrt*2)))continue;
                                     }
-                                else if($xstrf=='A')
+                                elseif($xstrf=='A')
                                     {
                                     if($xstrt=='*')
                                         {
                                         if(!preg_match('/\A'.$xsig.'/i',$str_norm)&&!preg_match('/\A'.$xsig.'/i',$str_xmlxdp_norm))continue;
                                         }
-                                    else if(!preg_match('/\A'.$xsig.'/i',substr($str_norm,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp_norm,0,$xstrt*2)))continue;
+                                    elseif(!preg_match('/\A'.$xsig.'/i',substr($str_norm,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp_norm,0,$xstrt*2)))continue;
                                     }
                                 else
                                     {
@@ -4756,7 +4718,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         {
                                         if(!preg_match('/'.$xsig.'/i',substr($str_norm,$xstrf*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_norm,$xstrf*2)))continue;
                                         }
-                                    else if(!preg_match('/'.$xsig.'/i',substr($str_norm,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_norm,$xstrf*2,$xstrt*2)))continue;
+                                    elseif(!preg_match('/'.$xsig.'/i',substr($str_norm,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_norm,$xstrf*2,$xstrt*2)))continue;
                                     }
                                 if(!$flagged)
                                     {
@@ -4788,7 +4750,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===1)
+        elseif($SigSet===1)
             {
             if($GLOBALS['MusselConfig']['signatures']['ascii_mussel'])
                 {
@@ -4829,7 +4791,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FS-MIN')
+                        elseif($xsig[1]=='FS-MIN')
                             {
                             if($str_len<$xsig[2])
                                 {
@@ -4837,7 +4799,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FS-MAX')
+                        elseif($xsig[1]=='FS-MAX')
                             {
                             if($str_len>$xsig[2])
                                 {
@@ -4845,7 +4807,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FD')
+                        elseif($xsig[1]=='FD')
                             {
                             if(!substr_count($str_norm,$xsig[2]))
                                 {
@@ -4853,7 +4815,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FD-RX')
+                        elseif($xsig[1]=='FD-RX')
                             {
                             if(!preg_match('/'.$xsig[2].'/i',$str_norm))
                                 {
@@ -4861,7 +4823,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if(substr($xsig[1],0,1)=='$')
+                        elseif(substr($xsig[1],0,1)=='$')
                             {
                             $vf=substr($xsig[1],1);
                             if(isset($$vf))if(!is_array($$vf))
@@ -4876,7 +4838,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             if($xsig[3]<=$i)break;
                             $i=$xsig[3]-1;
                             }
-                        else if(substr($xsig[1],0,2)=='!$')
+                        elseif(substr($xsig[1],0,2)=='!$')
                             {
                             $vf=substr($xsig[1],2);
                             if(isset($$vf))if(!is_array($$vf))
@@ -4919,7 +4881,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $this_xmlxdp="\x01".$this_xmlxdp;
                                 $xsig[0]="\x01".$xsig[0];
                                 }
-                            else if($xstrf!='*')
+                            elseif($xstrf!='*')
                                 {
                                 $this_str=substr($this_str,$xstrf*2);
                                 $this_xmlxdp=substr($this_xmlxdp,$xstrf*2);
@@ -4992,7 +4954,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FS-MIN')
+                        elseif($xsig[1]=='FS-MIN')
                             {
                             if($str_len<$xsig[2])
                                 {
@@ -5000,7 +4962,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FS-MAX')
+                        elseif($xsig[1]=='FS-MAX')
                             {
                             if($str_len>$xsig[2])
                                 {
@@ -5008,7 +4970,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FD')
+                        elseif($xsig[1]=='FD')
                             {
                             if(!substr_count($str_norm,$xsig[2]))
                                 {
@@ -5016,7 +4978,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FD-RX')
+                        elseif($xsig[1]=='FD-RX')
                             {
                             if(!preg_match('/'.$xsig[2].'/i',$str_norm))
                                 {
@@ -5024,7 +4986,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if(substr($xsig[1],0,1)=='$')
+                        elseif(substr($xsig[1],0,1)=='$')
                             {
                             $vf=substr($xsig[1],1);
                             if(isset($$vf))if(!is_array($$vf))
@@ -5039,7 +5001,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             if($xsig[3]<=$i)break;
                             $i=$xsig[3]-1;
                             }
-                        else if(substr($xsig[1],0,2)=='!$')
+                        elseif(substr($xsig[1],0,2)=='!$')
                             {
                             $vf=substr($xsig[1],2);
                             if(isset($$vf))if(!is_array($$vf))
@@ -5077,15 +5039,15 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     {
                                     if(!preg_match('/'.$xsig.'/i',$str_norm)&&!preg_match('/'.$xsig.'/i',$str_xmlxdp_norm))continue;
                                     }
-                                else if(!preg_match('/'.$xsig.'/i',substr($str_norm,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_norm,0,$xstrt*2)))continue;
+                                elseif(!preg_match('/'.$xsig.'/i',substr($str_norm,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_norm,0,$xstrt*2)))continue;
                                 }
-                            else if($xstrf=='A')
+                            elseif($xstrf=='A')
                                 {
                                 if($xstrt=='*')
                                     {
                                     if(!preg_match('/\A'.$xsig.'/i',$str_norm)&&!preg_match('/\A'.$xsig.'/i',$str_xmlxdp_norm))continue;
                                     }
-                                else if(!preg_match('/\A'.$xsig.'/i',substr($str_norm,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp_norm,0,$xstrt*2)))continue;
+                                elseif(!preg_match('/\A'.$xsig.'/i',substr($str_norm,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp_norm,0,$xstrt*2)))continue;
                                 }
                             else
                                 {
@@ -5093,7 +5055,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     {
                                     if(!preg_match('/'.$xsig.'/i',substr($str_norm,$xstrf*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_norm,$xstrf*2)))continue;
                                     }
-                                else if(!preg_match('/'.$xsig.'/i',substr($str_norm,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_norm,$xstrf*2,$xstrt*2)))continue;
+                                elseif(!preg_match('/'.$xsig.'/i',substr($str_norm,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp_norm,$xstrf*2,$xstrt*2)))continue;
                                 }
                             if(!$flagged)
                                 {
@@ -5321,7 +5283,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $this_xmlxdp="\x01".$this_xmlxdp;
                                         $xsig[0]="\x01".$xsig[0];
                                         }
-                                    else if($xstrf!='*')
+                                    elseif($xstrf!='*')
                                         {
                                         $this_str=substr($this_str,$xstrf*2);
                                         $this_xmlxdp=substr($this_xmlxdp,$xstrf*2);
@@ -5422,15 +5384,15 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                             {
                                             if(!preg_match('/'.$xsig.'/i',$str_hex)&&!preg_match('/'.$xsig.'/i',$str_xmlxdp))continue;
                                             }
-                                        else if(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
+                                        elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
                                         }
-                                    else if($xstrf=='A')
+                                    elseif($xstrf=='A')
                                         {
                                         if($xstrt=='*')
                                             {
                                             if(!preg_match('/\A'.$xsig.'/i',$str_hex)&&!preg_match('/\A'.$xsig.'/i',$str_xmlxdp))continue;
                                             }
-                                        else if(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
+                                        elseif(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
                                         }
                                     else
                                         {
@@ -5438,7 +5400,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                             {
                                             if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,$xstrf*2)))continue;
                                             }
-                                        else if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,$xstrf*2,$xstrt*2)))continue;
+                                        elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,$xstrf*2,$xstrt*2)))continue;
                                         }
                                     if(!$flagged)
                                         {
@@ -5469,7 +5431,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                     $SigDo=true;
                     }
                 }
-            else if($SigSet===1)
+            elseif($SigSet===1)
                 {
                 if($GLOBALS['MusselConfig']['signatures']['ole_mussel'])
                     {
@@ -5510,7 +5472,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FS-MIN')
+                            elseif($xsig[1]=='FS-MIN')
                                 {
                                 if($str_len<$xsig[2])
                                     {
@@ -5518,7 +5480,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FS-MAX')
+                            elseif($xsig[1]=='FS-MAX')
                                 {
                                 if($str_len>$xsig[2])
                                     {
@@ -5526,7 +5488,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FD')
+                            elseif($xsig[1]=='FD')
                                 {
                                 if(!substr_count($str_hex,$xsig[2]))
                                     {
@@ -5534,7 +5496,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FD-RX')
+                            elseif($xsig[1]=='FD-RX')
                                 {
                                 if(!preg_match('/'.$xsig[2].'/i',$str_hex))
                                     {
@@ -5542,7 +5504,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if(substr($xsig[1],0,1)=='$')
+                            elseif(substr($xsig[1],0,1)=='$')
                                 {
                                 $vf=substr($xsig[1],1);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -5557,7 +5519,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 if($xsig[3]<=$i)break;
                                 $i=$xsig[3]-1;
                                 }
-                            else if(substr($xsig[1],0,2)=='!$')
+                            elseif(substr($xsig[1],0,2)=='!$')
                                 {
                                 $vf=substr($xsig[1],2);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -5597,7 +5559,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $this_xmlxdp="\x01".$this_xmlxdp;
                                     $xsig[0]="\x01".$xsig[0];
                                     }
-                                else if($xstrf!='*')
+                                elseif($xstrf!='*')
                                     {
                                     $this_str=substr($this_str,$xstrf*2);
                                     $this_xmlxdp=substr($this_xmlxdp,$xstrf*2);
@@ -5670,7 +5632,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FS-MIN')
+                            elseif($xsig[1]=='FS-MIN')
                                 {
                                 if($str_len<$xsig[2])
                                     {
@@ -5678,7 +5640,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FS-MAX')
+                            elseif($xsig[1]=='FS-MAX')
                                 {
                                 if($str_len>$xsig[2])
                                     {
@@ -5686,7 +5648,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FD')
+                            elseif($xsig[1]=='FD')
                                 {
                                 if(!substr_count($str_hex,$xsig[2]))
                                     {
@@ -5694,7 +5656,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if($xsig[1]=='FD-RX')
+                            elseif($xsig[1]=='FD-RX')
                                 {
                                 if(!preg_match('/'.$xsig[2].'/i',$str_hex))
                                     {
@@ -5702,7 +5664,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     $i=$xsig[3]-1;
                                     }
                                 }
-                            else if(substr($xsig[1],0,1)=='$')
+                            elseif(substr($xsig[1],0,1)=='$')
                                 {
                                 $vf=substr($xsig[1],1);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -5717,7 +5679,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 if($xsig[3]<=$i)break;
                                 $i=$xsig[3]-1;
                                 }
-                            else if(substr($xsig[1],0,2)=='!$')
+                            elseif(substr($xsig[1],0,2)=='!$')
                                 {
                                 $vf=substr($xsig[1],2);
                                 if(isset($$vf))if(!is_array($$vf))
@@ -5752,15 +5714,15 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         {
                                         if(!preg_match('/'.$xsig.'/i',$str_hex)&&!preg_match('/'.$xsig.'/i',$str_xmlxdp))continue;
                                         }
-                                    else if(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
+                                    elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
                                     }
-                                else if($xstrf=='A')
+                                elseif($xstrf=='A')
                                     {
                                     if($xstrt=='*')
                                         {
                                         if(!preg_match('/\A'.$xsig.'/i',$str_hex)&&!preg_match('/\A'.$xsig.'/i',$str_xmlxdp))continue;
                                         }
-                                    else if(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
+                                    elseif(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
                                     }
                                 else
                                     {
@@ -5768,7 +5730,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         {
                                         if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,$xstrf*2)))continue;
                                         }
-                                    else if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,$xstrf*2,$xstrt*2)))continue;
+                                    elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,$xstrf*2,$xstrt*2)))continue;
                                     }
                                 if(!$flagged)
                                     {
@@ -6146,7 +6108,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                             $this_norm="\x01".$this_norm;
                                             $xsig[0]="\x01".$xsig[0];
                                             }
-                                        else if($xstrf!='*')
+                                        elseif($xstrf!='*')
                                             {
                                             $this_str=substr($this_str,$xstrf*2);
                                             $this_norm=substr($this_norm,$xstrf*2);
@@ -6247,15 +6209,15 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                                 {
                                                 if(!preg_match('/'.$xsig.'/i',$str_hex)&&!preg_match('/'.$xsig.'/i',$str_norm))continue;
                                                 }
-                                            else if(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_norm,0,$xstrt*2)))continue;
+                                            elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_norm,0,$xstrt*2)))continue;
                                             }
-                                        else if($xstrf=='A')
+                                        elseif($xstrf=='A')
                                             {
                                             if($xstrt=='*')
                                                 {
                                                 if(!preg_match('/\A'.$xsig.'/i',$str_hex)&&!preg_match('/\A'.$xsig.'/i',$str_norm))continue;
                                                 }
-                                            else if(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_norm,0,$xstrt*2)))continue;
+                                            elseif(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_norm,0,$xstrt*2)))continue;
                                             }
                                         else
                                             {
@@ -6263,7 +6225,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                                 {
                                                 if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2))&&!preg_match('/'.$xsig.'/i',substr($str_norm,$xstrf*2)))continue;
                                                 }
-                                            else if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_norm,$xstrf*2,$xstrt*2)))continue;
+                                            elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_norm,$xstrf*2,$xstrt*2)))continue;
                                             }
                                         if(!$flagged)
                                             {
@@ -6294,7 +6256,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                         $SigDo=true;
                         }
                     }
-                else if($SigSet===1)
+                elseif($SigSet===1)
                     {
                     if($GLOBALS['MusselConfig']['signatures']['graphics_mussel'])
                         {
@@ -6335,7 +6297,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FS-MIN')
+                                elseif($xsig[1]=='FS-MIN')
                                     {
                                     if($str_len<$xsig[2])
                                         {
@@ -6343,7 +6305,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FS-MAX')
+                                elseif($xsig[1]=='FS-MAX')
                                     {
                                     if($str_len>$xsig[2])
                                         {
@@ -6351,7 +6313,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FD')
+                                elseif($xsig[1]=='FD')
                                     {
                                     if(!substr_count($str_hex,$xsig[2]))
                                         {
@@ -6359,7 +6321,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FD-RX')
+                                elseif($xsig[1]=='FD-RX')
                                     {
                                     if(!preg_match('/'.$xsig[2].'/i',$str_hex))
                                         {
@@ -6367,7 +6329,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if(substr($xsig[1],0,1)=='$')
+                                elseif(substr($xsig[1],0,1)=='$')
                                     {
                                     $vf=substr($xsig[1],1);
                                     if(isset($$vf))if(!is_array($$vf))
@@ -6382,7 +6344,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     if($xsig[3]<=$i)break;
                                     $i=$xsig[3]-1;
                                     }
-                                else if(substr($xsig[1],0,2)=='!$')
+                                elseif(substr($xsig[1],0,2)=='!$')
                                     {
                                     $vf=substr($xsig[1],2);
                                     if(isset($$vf))if(!is_array($$vf))
@@ -6422,7 +6384,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $this_norm="\x01".$this_norm;
                                         $xsig[0]="\x01".$xsig[0];
                                         }
-                                    else if($xstrf!='*')
+                                    elseif($xstrf!='*')
                                         {
                                         $this_str=substr($this_str,$xstrf*2);
                                         $this_norm=substr($this_norm,$xstrf*2);
@@ -6495,7 +6457,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FS-MIN')
+                                elseif($xsig[1]=='FS-MIN')
                                     {
                                     if($str_len<$xsig[2])
                                         {
@@ -6503,7 +6465,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FS-MAX')
+                                elseif($xsig[1]=='FS-MAX')
                                     {
                                     if($str_len>$xsig[2])
                                         {
@@ -6511,7 +6473,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FD')
+                                elseif($xsig[1]=='FD')
                                     {
                                     if(!substr_count($str_hex,$xsig[2]))
                                         {
@@ -6519,7 +6481,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if($xsig[1]=='FD-RX')
+                                elseif($xsig[1]=='FD-RX')
                                     {
                                     if(!preg_match('/'.$xsig[2].'/i',$str_hex))
                                         {
@@ -6527,7 +6489,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                         $i=$xsig[3]-1;
                                         }
                                     }
-                                else if(substr($xsig[1],0,1)=='$')
+                                elseif(substr($xsig[1],0,1)=='$')
                                     {
                                     $vf=substr($xsig[1],1);
                                     if(isset($$vf))if(!is_array($$vf))
@@ -6542,7 +6504,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     if($xsig[3]<=$i)break;
                                     $i=$xsig[3]-1;
                                     }
-                                else if(substr($xsig[1],0,2)=='!$')
+                                elseif(substr($xsig[1],0,2)=='!$')
                                     {
                                     $vf=substr($xsig[1],2);
                                     if(isset($$vf))if(!is_array($$vf))
@@ -6577,15 +6539,15 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                             {
                                             if(!preg_match('/'.$xsig.'/i',$str_hex)&&!preg_match('/'.$xsig.'/i',$str_norm))continue;
                                             }
-                                        else if(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_norm,0,$xstrt*2)))continue;
+                                        elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_norm,0,$xstrt*2)))continue;
                                         }
-                                    else if($xstrf=='A')
+                                    elseif($xstrf=='A')
                                         {
                                         if($xstrt=='*')
                                             {
                                             if(!preg_match('/\A'.$xsig.'/i',$str_hex)&&!preg_match('/\A'.$xsig.'/i',$str_norm))continue;
                                             }
-                                        else if(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_norm,0,$xstrt*2)))continue;
+                                        elseif(!preg_match('/\A'.$xsig.'/i',substr($str_hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($str_norm,0,$xstrt*2)))continue;
                                         }
                                     else
                                         {
@@ -6593,7 +6555,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                             {
                                             if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2))&&!preg_match('/'.$xsig.'/i',substr($str_norm,$xstrf*2)))continue;
                                             }
-                                        else if(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_norm,$xstrf*2,$xstrt*2)))continue;
+                                        elseif(!preg_match('/'.$xsig.'/i',substr($str_hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($str_norm,$xstrf*2,$xstrt*2)))continue;
                                         }
                                     if(!$flagged)
                                         {
@@ -6635,7 +6597,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===1)
+        elseif($SigSet===1)
             {
             if($GLOBALS['MusselConfig']['signatures']['xmlxdp_custom'])
                 {
@@ -6644,7 +6606,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===2)
+        elseif($SigSet===2)
             {
             if($GLOBALS['MusselConfig']['signatures']['xmlxdp_mussel'])
                 {
@@ -6685,7 +6647,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FS-MIN')
+                        elseif($xsig[1]=='FS-MIN')
                             {
                             if($str_len<$xsig[2])
                                 {
@@ -6693,7 +6655,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FS-MAX')
+                        elseif($xsig[1]=='FS-MAX')
                             {
                             if($str_len>$xsig[2])
                                 {
@@ -6701,7 +6663,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FD')
+                        elseif($xsig[1]=='FD')
                             {
                             if(!substr_count($str_hex,$xsig[2]))
                                 {
@@ -6709,7 +6671,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FD-RX')
+                        elseif($xsig[1]=='FD-RX')
                             {
                             if(!preg_match('/'.$xsig[2].'/i',$str_hex))
                                 {
@@ -6717,7 +6679,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if(substr($xsig[1],0,1)=='$')
+                        elseif(substr($xsig[1],0,1)=='$')
                             {
                             $vf=substr($xsig[1],1);
                             if(isset($$vf))if(!is_array($$vf))
@@ -6732,7 +6694,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             if($xsig[3]<=$i)break;
                             $i=$xsig[3]-1;
                             }
-                        else if(substr($xsig[1],0,2)=='!$')
+                        elseif(substr($xsig[1],0,2)=='!$')
                             {
                             $vf=substr($xsig[1],2);
                             if(isset($$vf))if(!is_array($$vf))
@@ -6770,7 +6732,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $this_xmlxdp="\x01".$this_xmlxdp;
                                 $xsig[0]="\x01".$xsig[0];
                                 }
-                            else if($xstrf!='*')$this_xmlxdp=substr($this_xmlxdp,$xstrf*2);
+                            elseif($xstrf!='*')$this_xmlxdp=substr($this_xmlxdp,$xstrf*2);
                             if($xstrt!='*')$this_xmlxdp=substr($this_xmlxdp,0,$xstrt*2);
                             for($xsigi=0;$xsigi<$xsigc;$xsigi++)
                                 {
@@ -6831,7 +6793,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FS-MIN')
+                        elseif($xsig[1]=='FS-MIN')
                             {
                             if($str_len<$xsig[2])
                                 {
@@ -6839,7 +6801,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FS-MAX')
+                        elseif($xsig[1]=='FS-MAX')
                             {
                             if($str_len>$xsig[2])
                                 {
@@ -6847,7 +6809,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FD')
+                        elseif($xsig[1]=='FD')
                             {
                             if(!substr_count($str_hex,$xsig[2]))
                                 {
@@ -6855,7 +6817,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='FD-RX')
+                        elseif($xsig[1]=='FD-RX')
                             {
                             if(!preg_match('/'.$xsig[2].'/i',$str_hex))
                                 {
@@ -6863,7 +6825,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if(substr($xsig[1],0,1)=='$')
+                        elseif(substr($xsig[1],0,1)=='$')
                             {
                             $vf=substr($xsig[1],1);
                             if(isset($$vf))if(!is_array($$vf))
@@ -6878,7 +6840,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                             if($xsig[3]<=$i)break;
                             $i=$xsig[3]-1;
                             }
-                        else if(substr($xsig[1],0,2)=='!$')
+                        elseif(substr($xsig[1],0,2)=='!$')
                             {
                             $vf=substr($xsig[1],2);
                             if(isset($$vf))if(!is_array($$vf))
@@ -6913,15 +6875,15 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     {
                                     if(!preg_match('/'.$xsig.'/i',$str_xmlxdp))continue;
                                     }
-                                else if(!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
+                                elseif(!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
                                 }
-                            else if($xstrf=='A')
+                            elseif($xstrf=='A')
                                 {
                                 if($xstrt=='*')
                                     {
                                     if(!preg_match('/\A'.$xsig.'/i',$str_xmlxdp))continue;
                                     }
-                                else if(!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
+                                elseif(!preg_match('/\A'.$xsig.'/i',substr($str_xmlxdp,0,$xstrt*2)))continue;
                                 }
                             else
                                 {
@@ -6929,7 +6891,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     {
                                     if(!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,$xstrf*2)))continue;
                                     }
-                                else if(!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,$xstrf*2,$xstrt*2)))continue;
+                                elseif(!preg_match('/'.$xsig.'/i',substr($str_xmlxdp,$xstrf*2,$xstrt*2)))continue;
                                 }
                             if(!$flagged)
                                 {
@@ -7267,7 +7229,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===1)
+        elseif($SigSet===1)
             {
             if($GLOBALS['MusselConfig']['signatures']['coex_custom'])
                 {
@@ -7275,7 +7237,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===2)
+        elseif($SigSet===2)
             {
             if($GLOBALS['MusselConfig']['signatures']['coex_mussel'])
                 {
@@ -7361,7 +7323,7 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                 $lv_max=(isset($xsig[$xi][$sxi][6]))?$xsig[$xi][$sxi][6]:-1;
                                 if(!lv_match($lv_needle,$lv_haystack,$pos_A,$pos_Z,$lv_min,$lv_max))continue 2;
                                 }
-                            else if(isset($xsig[$xi][$sxi][2]))
+                            elseif(isset($xsig[$xi][$sxi][2]))
                                 {
                                 if(isset($xsig[$xi][$sxi][3]))
                                     {
@@ -7424,14 +7386,14 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
                                     if(is_array($$vf))continue 2;
                                     if($$vf!=$xsig[$xi][$sxi][1])continue 2;
                                     }
-                                else if(substr($xsig[$xi][$sxi][0],0,2)=='!$')
+                                elseif(substr($xsig[$xi][$sxi][0],0,2)=='!$')
                                     {
                                     $vf=substr($xsig[$xi][$sxi][0],2);
                                     if(!isset($$vf))continue 2;
                                     if(is_array($$vf))continue 2;
                                     if($$vf==$xsig[$xi][$sxi][1])continue 2;
                                     }
-                                else if(!substr_count(',FN,FS-MIN,FS-MAX,FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
+                                elseif(!substr_count(',FN,FS-MIN,FS-MAX,FD,FD-RX,FD-NORM,FD-NORM-RX,META,',','.$xsig[$xi][$sxi][0].','))continue 2;
                                 }
                             }
                         if($signame&&!substr_count($GLOBALS['memCache']['greylist'],','.$signame.',')&&!$GLOBALS['memCache']['ignoreme'])
@@ -7476,11 +7438,11 @@ function phpMusselD($str='',$n=false,$dpt=0,$ofn='')
             {
             if($heur['weight']>0)$doscan=true;
             }
-        else if($GLOBALS['MusselConfig']['virustotal']['vt_suspicion_level']===1)
+        elseif($GLOBALS['MusselConfig']['virustotal']['vt_suspicion_level']===1)
             {
             if($heur['weight']>0||$fileswitch=='chrome'||$fileswitch=='java'||$fileswitch=='docfile'||$fileswitch=='vt_interest'||$is_pe)$doscan=true;
             }
-        else if($GLOBALS['MusselConfig']['virustotal']['vt_suspicion_level']===2)$doscan=true;
+        elseif($GLOBALS['MusselConfig']['virustotal']['vt_suspicion_level']===2)$doscan=true;
         if($doscan)
             {
             $vt_weight=array('weight'=>0,'cli'=>'','web'=>'');
@@ -8199,7 +8161,7 @@ function phpMusselR($f='',$n=false,$zz=false,$dpt=0,$ofn='')
                 $TarFile='';
                 break;
                 }
-            else if($zDo)
+            elseif($zDo)
                 {
                 $lnap='-'.$lnap;
                 $depth++;
@@ -8877,7 +8839,7 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
                         }
                     }
                 }
-            else if(@is_file($stl))
+            elseif(@is_file($stl))
                 {
                 $hashme=@phpMusselFile($stl,0,true);
                 echo md5($hashme).':'.strlen($hashme).':YOUR-SIGNATURE-NAME'.$linebreak;
@@ -8902,7 +8864,7 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
                         }
                     }
                 }
-            else if(@is_file($stl))
+            elseif(@is_file($stl))
                 {
                 $hashme=@phpMusselFile($stl,0,true);
                 echo '$md5:'.md5($hashme).';$sha:'.sha1($hashme).';$str_len:'.strlen($hashme).';YOUR-SIGNATURE-NAME'.$linebreak;
@@ -8927,7 +8889,7 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork'))
                         }
                     }
                 }
-            else if(@is_file($stl))
+            elseif(@is_file($stl))
                 {
                 $hashme=@phpMusselFile($stl,0,true);
                 if(substr($hashme,0,2)==='MZ')
@@ -9260,7 +9222,7 @@ function phpMussel_mail($body='')
                                     $this_strlc="\x01".$this_strlc;
                                     $xsig[0]="\x01".$xsig[0];
                                     }
-                                else if($xstrf!='*')
+                                elseif($xstrf!='*')
                                     {
                                     $this_str=substr($this_str,$xstrf*2);
                                     $this_strlc=substr($this_strlc,$xstrf*2);
@@ -9331,15 +9293,15 @@ function phpMussel_mail($body='')
                                         {
                                         if(!preg_match('/'.$xsig.'/i',$hex)&&!preg_match('/'.$xsig.'/i',$hexlc))continue;
                                         }
-                                    else if(!preg_match('/'.$xsig.'/i',substr($hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($hexlc,0,$xstrt*2)))continue;
+                                    elseif(!preg_match('/'.$xsig.'/i',substr($hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($hexlc,0,$xstrt*2)))continue;
                                     }
-                                else if($xstrf=='A')
+                                elseif($xstrf=='A')
                                     {
                                     if($xstrt=='*')
                                         {
                                         if(!preg_match('/\A'.$xsig.'/i',$hex)&&!preg_match('/\A'.$xsig.'/i',$hexlc))continue;
                                         }
-                                    else if(!preg_match('/\A'.$xsig.'/i',substr($hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($hexlc,0,$xstrt*2)))continue;
+                                    elseif(!preg_match('/\A'.$xsig.'/i',substr($hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($hexlc,0,$xstrt*2)))continue;
                                     }
                                 else
                                     {
@@ -9347,7 +9309,7 @@ function phpMussel_mail($body='')
                                         {
                                         if(!preg_match('/'.$xsig.'/i',substr($hex,$xstrf*2))&&!preg_match('/'.$xsig.'/i',substr($hexlc,$xstrf*2)))continue;
                                         }
-                                    else if(!preg_match('/'.$xsig.'/i',substr($hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($hexlc,$xstrf*2,$xstrt*2)))continue;
+                                    elseif(!preg_match('/'.$xsig.'/i',substr($hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($hexlc,$xstrf*2,$xstrt*2)))continue;
                                     }
                                 $f.=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).$GLOBALS['MusselConfig']['lang']['_exclamation'];
                                 }
@@ -9370,7 +9332,7 @@ function phpMussel_mail($body='')
                 $SigDo=true;
                 }
             }
-        else if($SigSet===1)
+        elseif($SigSet===1)
             {
             if($GLOBALS['MusselConfig']['signatures']['mail_mussel'])
                 {
@@ -9405,7 +9367,7 @@ function phpMussel_mail($body='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='STR-LC')
+                        elseif($xsig[1]=='STR-LC')
                             {
                             if(!substr_count($hexlc,$xsig[2]))
                                 {
@@ -9413,7 +9375,7 @@ function phpMussel_mail($body='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='STR-RX')
+                        elseif($xsig[1]=='STR-RX')
                             {
                             if(!preg_match('/'.$xsig[2].'/i',$hex))
                                 {
@@ -9421,7 +9383,7 @@ function phpMussel_mail($body='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='STR-RX-LC')
+                        elseif($xsig[1]=='STR-RX-LC')
                             {
                             if(!preg_match('/'.$xsig[2].'/i',$hexlc))
                                 {
@@ -9429,7 +9391,7 @@ function phpMussel_mail($body='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if(substr($xsig[1],0,1)=='$')
+                        elseif(substr($xsig[1],0,1)=='$')
                             {
                             $vf=substr($xsig[1],1);
                             if(isset($$vf))if(!is_array($$vf))
@@ -9469,7 +9431,7 @@ function phpMussel_mail($body='')
                                 $this_strlc="\x01".$this_strlc;
                                 $xsig[0]="\x01".$xsig[0];
                                 }
-                            else if($xstrf!='*')
+                            elseif($xstrf!='*')
                                 {
                                 $this_str=substr($this_str,$xstrf*2);
                                 $this_strlc=substr($this_strlc,$xstrf*2);
@@ -9519,7 +9481,7 @@ function phpMussel_mail($body='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='STR-LC')
+                        elseif($xsig[1]=='STR-LC')
                             {
                             if(!substr_count($hexlc,$xsig[2]))
                                 {
@@ -9527,7 +9489,7 @@ function phpMussel_mail($body='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='STR-RX')
+                        elseif($xsig[1]=='STR-RX')
                             {
                             if(!preg_match('/'.$xsig[2].'/i',$hex))
                                 {
@@ -9535,7 +9497,7 @@ function phpMussel_mail($body='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if($xsig[1]=='STR-RX-LC')
+                        elseif($xsig[1]=='STR-RX-LC')
                             {
                             if(!preg_match('/'.$xsig[2].'/i',$hexlc))
                                 {
@@ -9543,7 +9505,7 @@ function phpMussel_mail($body='')
                                 $i=$xsig[3]-1;
                                 }
                             }
-                        else if(substr($xsig[1],0,1)=='$')
+                        elseif(substr($xsig[1],0,1)=='$')
                             {
                             $vf=substr($xsig[1],1);
                             if(isset($$vf))if(!is_array($$vf))
@@ -9579,15 +9541,15 @@ function phpMussel_mail($body='')
                                     {
                                     if(!preg_match('/'.$xsig.'/i',$hex)&&!preg_match('/'.$xsig.'/i',$hexlc))continue;
                                     }
-                                else if(!preg_match('/'.$xsig.'/i',substr($hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($hexlc,0,$xstrt*2)))continue;
+                                elseif(!preg_match('/'.$xsig.'/i',substr($hex,0,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($hexlc,0,$xstrt*2)))continue;
                                 }
-                            else if($xstrf=='A')
+                            elseif($xstrf=='A')
                                 {
                                 if($xstrt=='*')
                                     {
                                     if(!preg_match('/\A'.$xsig.'/i',$hex)&&!preg_match('/\A'.$xsig.'/i',$hexlc))continue;
                                     }
-                                else if(!preg_match('/\A'.$xsig.'/i',substr($hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($hexlc,0,$xstrt*2)))continue;
+                                elseif(!preg_match('/\A'.$xsig.'/i',substr($hex,0,$xstrt*2))&&!preg_match('/\A'.$xsig.'/i',substr($hexlc,0,$xstrt*2)))continue;
                                 }
                             else
                                 {
@@ -9595,7 +9557,7 @@ function phpMussel_mail($body='')
                                     {
                                     if(!preg_match('/'.$xsig.'/i',substr($hex,$xstrf*2))&&!preg_match('/'.$xsig.'/i',substr($hexlc,$xstrf*2)))continue;
                                     }
-                                else if(!preg_match('/'.$xsig.'/i',substr($hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($hexlc,$xstrf*2,$xstrt*2)))continue;
+                                elseif(!preg_match('/'.$xsig.'/i',substr($hex,$xstrf*2,$xstrt*2))&&!preg_match('/'.$xsig.'/i',substr($hexlc,$xstrf*2,$xstrt*2)))continue;
                                 }
                             $f.=phpMusselV(array('vn'=>$vn),$GLOBALS['MusselConfig']['lang']['detected']).$GLOBALS['MusselConfig']['lang']['_exclamation'];
                             }
@@ -9932,49 +9894,49 @@ if($c>0)
                     }
                 $r=phpMussel($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']],true,true,0,$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']]);
                 }
-            else if($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]===1)
+            elseif($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]===1)
                 {
                 $killdata.='---------UPLOAD-ERROR-1---------:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
                 $whyflagged.=$MusselConfig['lang']['upload_error_1'];
                 if($MusselConfig['general']['delete_on_sight']&&is_uploaded_file($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]))@unlink($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]);
                 }
-            else if($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]===2)
+            elseif($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]===2)
                 {
                 $killdata.='---------UPLOAD-ERROR-2---------:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
                 $whyflagged.=$MusselConfig['lang']['upload_error_2'];
                 if($MusselConfig['general']['delete_on_sight']&&is_uploaded_file($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]))@unlink($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]);
                 }
-            else if($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]===3)
+            elseif($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]===3)
                 {
                 $killdata.='---------UPLOAD-ERROR-3---------:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
                 $whyflagged.=$MusselConfig['lang']['upload_error_3'];
                 }
-            else if($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]===4)
+            elseif($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]===4)
                 {
                 $killdata.='---------UPLOAD-ERROR-4---------:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
                 $whyflagged.=$MusselConfig['lang']['upload_error_4'];
                 }
-            else if($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]===6)
+            elseif($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]===6)
                 {
                 $killdata.='---------UPLOAD-ERROR-6---------:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
                 $whyflagged.=$MusselConfig['lang']['upload_error_6'];
                 }
-            else if($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]===7)
+            elseif($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]===7)
                 {
                 $killdata.='---------UPLOAD-ERROR-7---------:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
                 $whyflagged.=$MusselConfig['lang']['upload_error_7'];
                 }
-            else if($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]===8)
+            elseif($memCache['FilesData']['FileSet']['error'][$memCache['FilesData']['FileSet']['i']]===8)
                 {
                 $killdata.='---------UPLOAD-ERROR-8---------:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
                 $whyflagged.=$MusselConfig['lang']['upload_error_8'];
                 }
-            else if(!is_uploaded_file($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]))
+            elseif(!is_uploaded_file($memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']]))
                 {
                 $killdata.='UNAUTHORISED-FILE-UPLOAD-NO-HASH:'.$memCache['FilesData']['FileSet']['size'][$memCache['FilesData']['FileSet']['i']].':'.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].$linebreak;
                 $whyflagged.=$MusselConfig['lang']['scan_unauthorised_upload'].' ('.$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']].')'.$GLOBALS['MusselConfig']['lang']['_exclamation'];
                 }
-            else if(!$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']]||!$memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']])
+            elseif(!$memCache['FilesData']['FileSet']['name'][$memCache['FilesData']['FileSet']['i']]||!$memCache['FilesData']['FileSet']['tmp_name'][$memCache['FilesData']['FileSet']['i']])
                 {
                 $killdata.='-UNAUTHORISED-UPLOAD-MISCONFIG-:?:?'.$linebreak;
                 $whyflagged.=$MusselConfig['lang']['scan_unauthorised_upload_or_misconfig'];
@@ -10131,7 +10093,7 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&s
                         }
                     }
                 }
-            else if(@is_file($stl))
+            elseif(@is_file($stl))
                 {
                 $hashme=@phpMusselFile($stl,0,true);
                 echo md5($hashme).':'.strlen($hashme).':YOUR-SIGNATURE-NAME'.$linebreak;
@@ -10157,7 +10119,7 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&s
                         }
                     }
                 }
-            else if(@is_file($stl))
+            elseif(@is_file($stl))
                 {
                 $hashme=@phpMusselFile($stl,0,true);
                 echo '$md5:'.md5($hashme).';$sha:'.sha1($hashme).';$str_len:'.strlen($hashme).';YOUR-SIGNATURE-NAME'.$linebreak;
@@ -10183,7 +10145,7 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&s
                         }
                     }
                 }
-            else if(@is_file($stl))
+            elseif(@is_file($stl))
                 {
                 echo phpMusselFork('pe_meta '.$stl,$stl).$linebreak;
                 }
@@ -10299,12 +10261,12 @@ if(!$MusselConfig['general']['disable_cli']&&function_exists('phpMusselFork')&&s
                         }
                     }
                 }
-            else if(@is_file($stl))
+            elseif(@is_file($stl))
                 {
                 $out=phpMusselFork('scan '.$stl,$stl);
                 if(!$out)$out='> '.$MusselConfig['lang']['cli_failed_to_complete'].$MusselConfig['lang']['_exclamation_final'].$linebreak;
                 }
-            else if(!$out)$out='> '.$stl.$MusselConfig['lang']['cli_is_not_a'].$linebreak;
+            elseif(!$out)$out='> '.$stl.$MusselConfig['lang']['cli_is_not_a'].$linebreak;
             $r.=$out;
             if($out)
                 {
