@@ -23,7 +23,7 @@
  * information to the $vault variable, required by phpMussel in order to call,
  * read, write, delete, etc, its files (signatures, includes, logs, etc).
  */
-$vault=@(__DIR__==='__DIR__')?dirname(__FILE__).'/vault/':__DIR__.'/vault/';
+$vault = sprintf('%s/vault/', defined('__DIR__') ? __DIR__ : dirname(__FILE__));
 
 if (!function_exists('plaintext_echo_die')) {
     /**
@@ -90,6 +90,8 @@ if (!function_exists('phpMusselV')) {
      * language data and to parse any messages related to any detections found
      * during the scan process and any other related processes.
      *
+     * ToDo: Flag to @api if it works properly
+     *
      * @since v0.6j
      * @param array $v The input array.
      * @param string $b The input string.
@@ -100,14 +102,43 @@ if (!function_exists('phpMusselV')) {
         if (!is_array($v) || empty($b)) {
             return '';
         }
-        $c=count($v);
-        reset($v);
-        for($i=0;$i<$c;$i++) {
-            $k=key($v);
-            $b=str_replace('{'.$k.'}', $v[$k], $b);
-            next($v);
-        }
-        return $b;
+
+        /**
+         * Changed logic: For testing purposes
+         * @author Matthias Kaschubowski
+         */
+        return strtr($b, phpMussel_incubatePairs($v));
+    }
+
+    /**
+     * extends the keys of $pairs to replaceable selectors
+     *
+     * ToDo: flag to @api if it works properly
+     *
+     * @author Matthias Kaschubowski
+     * @param string[] $pairs
+     * @return string[]
+     */
+    function phpMussel_incubatePairs(array $pairs)
+    {
+        return array_combine(
+            array_map('phpMussel_normalizeKeySelector', array_keys($pairs)),
+            array_values($pairs)
+        );
+    }
+
+    /**
+     * normalizes a string as a replaceable selector
+     *
+     * ToDo: flag to @api if it works properly
+     *
+     * @author Matthias Kaschubowski
+     * @param string $string
+     * @return string
+     */
+    function phpMussel_normalizeKeySelector($string)
+    {
+        return sprintf('{%s}', trim($string, '{}'));
     }
 }
 
