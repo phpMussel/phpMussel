@@ -23,7 +23,7 @@
  * information to the $vault variable, required by phpMussel in order to call,
  * read, write, delete, etc, its files (signatures, includes, logs, etc).
  */
-$vault = sprintf('%s/vault/', defined('__DIR__') ? __DIR__ : dirname(__FILE__));
+$vault = sprintf('%s/vault/', __DIR__);
 
 if (!function_exists('plaintext_echo_die')) {
     /**
