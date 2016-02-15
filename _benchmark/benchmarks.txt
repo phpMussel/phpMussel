@@ -1,0 +1,8 @@
+
+phpMussel\Benchmark\Replacement
+    Method Name      Iterations    Average Time      Ops/second
+    --------------  ------------  --------------    -------------
+    originReplacer: [50,000    ] [0.0000409035492] [24,447.75624]
+    actualReplacer: [50,000    ] [0.0000322405529] [31,016.83780]
+
+

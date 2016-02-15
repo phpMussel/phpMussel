@@ -141,10 +141,10 @@ while(true)
     $phpmusselversion['request_content'].='update.dat%3A'.md5(ReadUpdateFile($vault.'update.dat')).'%3B';
     for($i=0;$i<$phpmusselversion['update_addresses_count'];$i++)
         {
-        echo phpMusselV(array('Location'=>'http://'.substr($phpmusselversion['update_addresses'][$i],0,(strlen($phpmusselversion['update_addresses'][$i])-strpos($phpmusselversion['update_addresses'][$i],'/'))*-1).'/'),$MusselConfig['lang']['update_fetch']);
+        echo injectInto(array('Location'=>'http://'.substr($phpmusselversion['update_addresses'][$i],0,(strlen($phpmusselversion['update_addresses'][$i])-strpos($phpmusselversion['update_addresses'][$i],'/'))*-1).'/'),$MusselConfig['lang']['update_fetch']);
         $phpmusselversion['stream']=stream_context_create(array('http'=>array('method'=>'POST','header'=>'Content-type: application/x-www-form-urlencoded; charset=iso-8859-1','user_agent'=>$phpmusselversion['phpmussel_ua'],'content'=>$phpmusselversion['request_content'],'timeout'=>8)));
         $phpmusselversion['request']=file_get_contents('http://'.$phpmusselversion['update_addresses'][$i],false,$phpmusselversion['stream']);
-        if(trim(substr($phpmusselversion['request'],0,16))!=='¡phpMussel!')
+        if(trim(substr($phpmusselversion['request'],0,16))!=='ï¿½phpMussel!')
             {
             echo $MusselConfig['lang']['update_failed'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
             $phpmusselversion['update_addresses'][$i]='';
@@ -209,25 +209,25 @@ while(true)
                 if(file_exists($vault.$phpmusselversion['remote_update_instructions'][$i][1]))
                     {
                     @unlink($vault.$phpmusselversion['remote_update_instructions'][$i][1]);
-                    echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$MusselConfig['lang']['update_deleted'].$MusselConfig['lang']['update_successfully']),$MusselConfig['lang']['update_was']).'. ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
+                    echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.injectInto(array('x'=>$MusselConfig['lang']['update_deleted'].$MusselConfig['lang']['update_successfully']),$MusselConfig['lang']['update_was']).'. ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
                     }
                 }
             elseif($phpmusselversion['remote_update_instructions'][$i][0]=='patch'||$phpmusselversion['remote_update_instructions'][$i][0]=='patchgz')
                 {
                 $phpmusselversion['adj_word']=(file_exists($vault.$phpmusselversion['remote_update_instructions'][$i][1]))?$MusselConfig['lang']['update_patched']:$MusselConfig['lang']['update_created'];
-                if(!isset($phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]]))echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err4'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
-                elseif(!isset($phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]))echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err5'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
-                elseif(!$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]])echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err6'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
+                if(!isset($phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]]))echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.injectInto(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err4'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
+                elseif(!isset($phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]))echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.injectInto(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err5'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
+                elseif(!$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]])echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.injectInto(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err6'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
                 else
                     {
                     if($phpmusselversion['remote_update_instructions'][$i][0]=='patchgz')$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]=@gzinflate($phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]);
-                    if(@hash('crc32b',$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]])!=$phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]])echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err7'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
+                    if(@hash('crc32b',$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]])!=$phpmusselversion['crc'][$phpmusselversion['remote_update_instructions'][$i][1]])echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.injectInto(array('x'=>$phpmusselversion['adj_word']),$MusselConfig['lang']['update_not']).': '.$MusselConfig['lang']['update_err7'].' ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
                     else
                         {
                         $phpmusselversion['df']=fopen($vault.$phpmusselversion['remote_update_instructions'][$i][1],'w');
                         fwrite($phpmusselversion['df'],$phpmusselversion['fdata'][$phpmusselversion['remote_update_instructions'][$i][1]]);
                         fclose($phpmusselversion['df']);
-                        echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.phpMusselV(array('x'=>$phpmusselversion['adj_word'].$MusselConfig['lang']['update_successfully']),$MusselConfig['lang']['update_was']).'. ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
+                        echo $MusselConfig['lang']['file'].' \''.$phpmusselversion['remote_update_instructions'][$i][1].'\' '.injectInto(array('x'=>$phpmusselversion['adj_word'].$MusselConfig['lang']['update_successfully']),$MusselConfig['lang']['update_was']).'. ('.(time()-$phpmusselversion['current_time']).$MusselConfig['lang']['update_seconds_elapsed'].")\n";
                         }
                     }
                 }
