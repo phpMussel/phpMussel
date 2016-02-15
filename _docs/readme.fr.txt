@@ -34,9 +34,8 @@
  toute version ultérieure. Ce script est distribué dans l'espoir qu'il sera
  utile, mais SANS AUCUNE GARANTIE, sans même la implicite garantie de
  COMMERCIALISATION ou D'ADAPTATION À UN PARTICULIER USAGE. Voir la GNU General
- Public License pour plus de détails, situé dans le "LICENSE.txt" fichier dans
- le "_docs" répertoire de l'emballage associé et référentiel pour ce fichier et
- également disponible à partir de:
+ Public License pour plus de détails, situé dans le "LICENSE.txt" fichier et
+ disponible également à partir de:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Un spécial merci à ClamAV pour l'inspiration du le projet et pour les
@@ -89,7 +88,7 @@
     aviez décidé plus tôt (vous n'avez pas besoin les *.txt/*.md fichiers,
     mais surtout, vous devriez télécharger tous les fichiers sur le serveur).
 
- 4) CMHOD la "vault" répertoire à "777". Le principal répertoire qui est
+ 4) CHMOD la "vault" répertoire à "777". Le principal répertoire qui est
     stocker le contenu (celui que vous avez choisi plus tôt), généralement,
     peut être laissé seul, mais CHMOD état devrait être vérifié si vous avez eu
     problèmes d'autorisations dans le passé sur votre système (par défaut,
@@ -1878,5 +1877,5 @@
                                      ~ ~ ~
 
 
-Dernière Réactualisé: 4 Février 2016 (2016.02.04).
+Dernière Réactualisé: 7 Février 2016 (2016.02.07).
 EOF

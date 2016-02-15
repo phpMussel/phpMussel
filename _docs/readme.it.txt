@@ -34,9 +34,8 @@
  versione successiva. Questo script è distribuito nella speranza che possa
  essere utile, Ma SENZA ALCUNA GARANZIA; senza neppure la implicita garanzia di
  COMMERCIABILITÀ o IDONEITÀ PER UN PARTICOLARE SCOPO. Vedere la GNU General
- Public License per ulteriori dettagli, situato nella "LICENSE.txt" file
- all'interno della "_docs" cartella del associato pacchetto e repository per
- questo file e disponibili anche da:
+ Public License per ulteriori dettagli, situato nella "LICENSE.txt" file e
+ disponibili anche da:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Uno speciale grazie a ClamAV per l'ispirazione del progetto e per le firme che
@@ -88,7 +87,7 @@
     in precedenza (non è necessario includere i *.txt/*.md file, ma altrimenti,
     si dovrebbe caricare tutto).
 
- 4) CMHOD la cartella "vault" a "777". La principale cartella che memorizzare
+ 4) CHMOD la cartella "vault" a "777". La principale cartella che memorizzare
     il contenuti (quello scelto in precedenza), solitamente, può essere
     lasciato solo, Ma lo CHMOD stato dovrebbe essere controllato se hai avuto
     problemi di autorizzazioni in passato sul vostro sistema (per predefinita,
@@ -1852,5 +1851,5 @@
                                      ~ ~ ~
 
 
-Ultimo Aggiornamento: 4 Febbraio 2016 (2016.02.04).
+Ultimo Aggiornamento: 7 Febbraio 2016 (2016.02.07).
 EOF

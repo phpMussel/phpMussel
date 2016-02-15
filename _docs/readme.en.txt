@@ -33,8 +33,7 @@
  version. This script is distributed in the hope that it will be useful, but
  WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
  FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- details, located in the "LICENSE.txt" file within the "_docs" directory of the
- associated package and repository for this file and available also from:
+ details, located in the "LICENSE.txt" file and available also from:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Special thanks to ClamAV for both project inspiration and for the signatures
@@ -82,7 +81,7 @@
     decided on earlier (you don't need to include the *.txt/*.md files, but
     mostly, you should upload everything).
 
- 4) CMHOD the "vault" directory to "777". The main directory storing the
+ 4) CHMOD the "vault" directory to "777". The main directory storing the
     contents (the one you chose earlier), usually, can be left alone, but CHMOD
     status should be checked if you've had permissions issues in the past on
     your system (by default, should be something like "755").
@@ -1754,5 +1753,5 @@
                                      ~ ~ ~
 
 
-Last Updated: 4th February 2016 (2016.02.04).
+Last Updated: 7th February 2016 (2016.02.07).
 EOF

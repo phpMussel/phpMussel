@@ -34,8 +34,8 @@
  phiên bản nào sau này. Bản này được phân phối với hy vọng rằng nó sẽ có hữu
  ích, nhưng mà KHÔNG CÓ BẢO HÀNH; ngay cả những bảo đảm ngụ ý KHẢ NĂNG BÁN
  HÀNG hoạc PHÙ HỢP VỚI MỤC ĐÍT VÀO. Hảy xem GNU Giấy Phép Công Cộng để biết
- them chi tiết, nằm trong hồ sơ "LICENSE.txt" trong thư mục "_docs" của các gói
- liên quan và kho chứa của hồ sơ này có thể tiềm đước tại:
+ them chi tiết, nằm trong hồ sơ "LICENSE.txt", và kho chứa của hồ sơ này có thể
+ tiềm đước tại:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Chân thành cám ơn ClamAV cho cả hai nguồn cảm hứng cho chương trình này và
@@ -83,7 +83,7 @@
     trước (bạn không cần phải dùng hồ sơ *.txt/*.md nhưng chủ yếu, bạn nên tải
     lên tất cả mọi thứ).
 
- 4) CMHOD cái "vault" thư mục thành "777". Các thư mục chính lưu trữ các nội
+ 4) CHMOD cái "vault" thư mục thành "777". Các thư mục chính lưu trữ các nội
     dung (một trong những cái bạn đã chọn trước), bình thường, có thể riêng,
     nhưng tình hình CHMOD nên kiểm tra, nếu bạn đã có vấn đề cho phép trong quá
     khứ về hệ thống của bạn (theo mặc định, nên giống như "755").
@@ -1755,5 +1755,5 @@
                                      ~ ~ ~
 
 
-Lần cuối cập nhật: 4 Tháng Hai 2016 (2016.02.04).
+Lần cuối cập nhật: 7 Tháng Hai 2016 (2016.02.07).
 EOF

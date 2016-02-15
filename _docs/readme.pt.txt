@@ -34,10 +34,8 @@
  versão posterior. Este script é distribuído na esperança que possa ser útil,
  mas SEM QUALQUER GARANTIA; sem mesmo a implícita garantia de COMERCIALIZAÇÃO
  ou ADEQUAÇÃO A UM DETERMINADO FIM. Consulte a GNU General Public License para
- obter mais detalhes, localizado no "LICENSE.txt" arquivo dentro do "_docs"
- diretório do associado pacote e repositório de este arquivo e também
- disponível desde:
- <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
+ obter mais detalhes, localizado no "LICENSE.txt" arquivo e disponível também
+ desde: <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Um especial obrigado para ClamAV por o projeto inspiração e para as
  assinaturas que este script utiliza, sem que, o script provavelmente não
@@ -86,7 +84,7 @@
     tinha decidido anteriormente (você não requerer os *.txt/*.md arquivos
     incluídos, mas principalmente, você deve carregar tudo).
 
- 4) CMHOD o "vault" diretório para "777". O principal diretório armazenar o
+ 4) CHMOD o "vault" diretório para "777". O principal diretório armazenar o
     conteúdo (o que você escolheu anteriormente), geralmente, pode ser deixado
     sozinho, mas o CHMOD status deve ser verificado se você já teve problemas
     de permissões no passado no seu sistema (por padrão, deve ser algo como
@@ -1849,5 +1847,5 @@
                                      ~ ~ ~
 
 
-Última Atualização: 4 Fevereiro 2016 (2016.02.04).
+Última Atualização: 7 Fevereiro 2016 (2016.02.07).
 EOF

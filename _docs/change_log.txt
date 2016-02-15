@@ -63,18 +63,13 @@ entries will be deleted when those goals have been achieved.
 === Changes made since last versioned release ===
 
 - [2016.01.08; Sub-minor code change; Maikuolan]: Closing PHP tags removed and
-  all tabs converted to spaces (in order to improve compliance with PSR); Added
-  some phpDoc comments into all script files; No other changes.
+  all tabs converted to spaces (PSR-2); Added some phpDoc comments to all
+  script files, most of the functions now documented; No other changes.
   Refer github.com/Maikuolan/phpMussel/issues/80
 
-- [2016.01.10; Sub-minor code change; Maikuolan]: More phpDoc work done for all
-  script files (almost all functions now documented); The "phpMusselV()"
-  function moved to the loader file, due to duplication of the function between
-  the core script and the update script (because the loader file is higher in
-  the execution chain than those two files, we can avoid duplication by moving
-  the function there); Some minor corrections done across multiple functions,
-  in order to better comply with their supposed defaults to better comply with
-  the new phpDoc comments.
+- [2016.01.10; Sub-minor code change; Maikuolan]: Minor adjustments made to
+  various functions, in order to better comply with the stipulations of their
+  associated phpDoc comments.
 
 - [2016.01.29; Bug-fixes; Maikuolan]: Found a very minor typo in the language
   string of one of the error codes (low priority); Fixed. Bug found by

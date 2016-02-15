@@ -22,7 +22,7 @@ Vielen Dank für die Benutzung von phpMussel, einem PHP-Script, um Trojaner, Vir
 
 PHPMUSSEL COPYRIGHT 2013 und darüber hinaus GNU/GPLv2 by Caleb M (Maikuolan).
 
-Dieses Skript ist freie Software; Sie können Sie weitergeben und/oder modifizieren unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht; entweder unter Version 2 der Lizenz oder (nach Ihrer Wahl) jeder späteren Version. Dieses Skript wird in der Hoffnung verteilt, dass es nützlich sein wird, allerdings OHNE JEGLICHE GARANTIE; ohne implizite Garantien für VERMARKTUNG/VERKAUF/VERTRIEB oder FÜR EINEN BESTIMMTEN ZWECK. Lesen Sie die GNU General Public License für weitere Details, in der Datei `LICENSE.txt` im Verzeichnis `_docs` im zugeordneten Paket und Repository für diese Datei, ebenfalls verfügbar auf:
+Dieses Skript ist freie Software; Sie können Sie weitergeben und/oder modifizieren unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht; entweder unter Version 2 der Lizenz oder (nach Ihrer Wahl) jeder späteren Version. Dieses Skript wird in der Hoffnung verteilt, dass es nützlich sein wird, allerdings OHNE JEGLICHE GARANTIE; ohne implizite Garantien für VERMARKTUNG/VERKAUF/VERTRIEB oder FÜR EINEN BESTIMMTEN ZWECK. Lesen Sie die GNU General Public License für weitere Details, in der Datei `LICENSE.txt`, ebenfalls verfügbar auf:
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
@@ -257,7 +257,13 @@ Die folgende Liste beinhaltet alle Dateien, die im heruntergeladenen Archiv des 
 
 Datei                                      | Beschreibung
 -------------------------------------------|--------------------------------------
+/.gitattributes                            | @todo
+/composer.json                             | @todo
+/CONTRIBUTING.md                           | @todo
+/LICENSE.txt                               | @todo
+/PEOPLE.md                                 | @todo
 /phpmussel.php                             | Loader Datei. Lädt das Script, Updater, etc. Diese Datei wird in Ihr CMS eingebunden (notwendig)!
+/README.md                                 | @todo
 /web.config                                | Eine ASP.NET-Konfigurationsdatei (in diesem Fall zum Schutz des Verzeichnisses `/vault` vor einem nicht authorisierten Zugriff, sofern das Script auf einem auf der ASP.NET-Technologie basierenden Server installiert wurde).
 /_docs/                                    | Verzeichnis für die Dokumentationen (beinhaltet verschiedene Dateien).
 /_docs/change_log.txt                      | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
@@ -989,4 +995,4 @@ Diese Informationen wurden zuletzt am 12. Dezember 2015 aktualisiert und gelten 
 ---
 
 
-Zuletzt aktualisiert: 4. Februar 2016 (2016.02.04).
+Zuletzt aktualisiert: 7. Februar 2016 (2016.02.07).

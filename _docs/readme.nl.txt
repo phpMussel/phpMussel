@@ -35,8 +35,7 @@
  het nuttig zal zijn, maar ZONDER ENIGE GARANTIE; zonder zelfs de impliciete
  garantie van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de GNU
  General Public License voor meer informatie, gelegen in het "LICENSE.txt"
- bestand binnen de "_docs" bestandsmap van de bijbehorende pakket en het
- repository voor dit bestand en ook beschikbaar uit:
+ bestand en ook beschikbaar uit:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Speciale dank aan ClamAV voor zowel project inspiratie en voor de
@@ -86,7 +85,7 @@
     zou op eerder besloten (u nodig niet de *.txt/*.md bestanden opgenomen,
     maar meestal, u moeten uploaden alles).
 
- 4) CMHOD het bestandsmap "vault" naar "777". De belangrijkste bestandsmap
+ 4) CHMOD het bestandsmap "vault" naar "777". De belangrijkste bestandsmap
     opslaan van de inhoud (degene die u eerder koos), gewoonlijk, kunt worden
     genegeerd, maar CHMOD-status moet worden gecontroleerd als u machtigingen
     problemen heeft in het verleden met uw systeem (standaard, moet iets zijn
@@ -1882,5 +1881,5 @@
                                      ~ ~ ~
 
 
-Laatste Bijgewerkt: 4 Februari 2016 (2016.02.04).
+Laatste Bijgewerkt: 7 Februari 2016 (2016.02.07).
 EOF

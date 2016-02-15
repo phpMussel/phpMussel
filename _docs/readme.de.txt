@@ -35,8 +35,7 @@
  Hoffnung verteilt, dass es nützlich sein wird, allerdings OHNE JEGLICHE
  GARANTIE; ohne implizite Garantien für VERMARKTUNG/VERKAUF/VERTRIEB oder FÜR
  EINEN BESTIMMTEN ZWECK. Lesen Sie die GNU General Public License für weitere
- Details, in der Datei "LICENSE.txt" im Verzeichnis "_docs" im zugeordneten
- Paket und Repository für diese Datei, ebenfalls verfügbar auf:
+ Details, in der Datei "LICENSE.txt", ebenfalls verfügbar auf:
  <http://www.gnu.org/licenses/> <http://opensource.org/licenses/>.
 
  Besonderer Dank geht an ClamAV für die Inspiration und die Signaturen, die
@@ -1809,5 +1808,5 @@
                                      ~ ~ ~
 
 
-Zuletzt aktualisiert: 4. Februar 2016 (2016.02.04).
+Zuletzt aktualisiert: 7. Februar 2016 (2016.02.07).
 EOF
