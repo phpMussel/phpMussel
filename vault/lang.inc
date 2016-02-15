@@ -16,7 +16,7 @@
  * @package Maikuolan/phpMussel
  */
 
-// namespace phpMussel; <- The namespace declaration seems to kill phpMussel in CLI-mode for some reason. I don't know why!! Need to investigate this to figure it out!!
+namespace phpMussel; #<- The namespace declaration seems to kill phpMussel in CLI-mode for some reason. I don't know why!! Need to investigate this to figure it out!!
 
 /** Prevents execution from outside of phpMussel. */
 if (!defined('phpMussel')) {

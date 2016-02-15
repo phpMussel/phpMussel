@@ -1,0 +1,13 @@
+{
+    "require-dev": {
+        "athletic/athletic": "~0.1"
+    },
+    "autoload": {
+        "files": [
+            "../vault/includes/functions.php"
+        ],
+        "psr-4": {
+            "phpMussel\\Benchmark\\": "./src"
+        }
+    }
+}

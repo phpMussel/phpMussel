@@ -16,100 +16,16 @@
  * @package Maikuolan/phpMussel
  */
 
-// namespace phpMussel; <- The namespace declaration seems to kill phpMussel in CLI-mode for some reason. I don't know why!! Need to investigate this to figure it out!!
+namespace phpMussel; # <- The namespace declaration seems to kill phpMussel in CLI-mode for some reason. I don't know why!! Need to investigate this to figure it out!!
 
 /**
  * Determines the location of the "vault" directory of phpMussel and saves this
  * information to the $vault variable, required by phpMussel in order to call,
  * read, write, delete, etc, its files (signatures, includes, logs, etc).
  */
-$vault=@(__DIR__==='__DIR__')?dirname(__FILE__).'/vault/':__DIR__.'/vault/';
+$vault = sprintf('%s/vault/', __DIR__);
 
-if (!function_exists('plaintext_echo_die')) {
-    /**
-     * Function serves as a quick-and-lazy way to render some text as
-     * plain-text to the page output (for browsers) and to then kill the
-     * script. Nothing special; Just means that we can do this with one
-     * function call rather than three different calls (header, echo, die), to
-     * save time.
-     *
-     * @deprecated Don't use this. Will kill it off by the next minor or major
-     *      version/release.
-     * @param string $out The text to be rendered.
-     */
-    function plaintext_echo_die($out) {
-        header('Content-Type: text/plain');
-        echo $out;
-        die;
-    }
-}
-
-if (!function_exists('phpMussel_Register_Hook')) {
-    /**
-     * The `phpMussel_Register_Hook` function is used to register plugin
-     * functions to their intended hooks.
-     *
-     * @since v0.9.0
-     * @param string $what The name of the chosen function to execute at the
-     *      desired point in the script.
-     * @param string $where Instructs the function which "hook" your chosen
-     *      function should be registered to.
-     * @param string|array $with Represents the variables that need to be
-     *      parsed to your function from the scope in which it'll be executed
-     *      from (optional).
-     * @return bool
-     */
-    function phpMussel_Register_Hook($what, $where, $with='') {
-        if (!isset($GLOBALS['MusselPlugins']['hooks']) || !isset($GLOBALS['MusselPlugins']['hookcounts'])) {
-            return false;
-        }
-        if (!isset($GLOBALS['MusselPlugins']['hooks'][$where])) {
-            $GLOBALS['MusselPlugins']['hooks'][$where]=array();
-        }
-        if (!isset($GLOBALS['MusselPlugins']['hookcounts'][$where])) {
-            $GLOBALS['MusselPlugins']['hookcounts'][$where]=0;
-        }
-        $GLOBALS['MusselPlugins']['hooks'][$where][$what]=$with;
-        $GLOBALS['MusselPlugins']['hookcounts'][$where]++;
-        return true;
-    }
-}
-
-if (!function_exists('phpMusselV')) {
-    /**
-     * This is a specialised search-and-replace function, designed to replace
-     * encapsulated substrings within a given input string based upon the
-     * elements of a given input array. The function accepts two input
-     * parameters: The first, the input array, and the second, the input
-     * string. The function searches for any instances of each array key,
-     * encapsulated by curly brackets, as substrings within the input string,
-     * and replaces any instances found with the array element content
-     * corresponding to the array key associated with each instance found.
-     *
-     * This function is used extensively throughout phpMussel, to parse its
-     * language data and to parse any messages related to any detections found
-     * during the scan process and any other related processes.
-     *
-     * @since v0.6j
-     * @param array $v The input array.
-     * @param string $b The input string.
-     * @return string The results of the function are returned directly to the
-     *      calling scope as a string.
-     */
-    function phpMusselV($v, $b) {
-        if (!is_array($v) || empty($b)) {
-            return '';
-        }
-        $c=count($v);
-        reset($v);
-        for($i=0;$i<$c;$i++) {
-            $k=key($v);
-            $b=str_replace('{'.$k.'}', $v[$k], $b);
-            next($v);
-        }
-        return $b;
-    }
-}
+require_once $vault.'includes/functions.php';
 
 /**
  * Kills the script if $vault isn't defined or if it isn't a valid directory.
@@ -123,7 +39,7 @@ if (!is_dir($vault)) {
 if (!defined('phpMussel')) {
     /** We define this constant here to ensure that we only instantiate once. */
     define('phpMussel',true);
-    $display_errors=error_reporting(0);
+    $display_errors=error_reporting(-1);
     /** Read the phpMussel configuration file and parse its directives to $MusselConfig. */
     $MusselConfig=@(!file_exists($vault.'phpmussel.ini'))?false:parse_ini_file($vault.'phpmussel.ini',true);
     if (!is_array($MusselConfig))plaintext_echo_die('[phpMussel] Could not read phpmussel.ini: Can\'t continue. Refer to documentation if this is a first-time run, and if problems persist, seek assistance.');
