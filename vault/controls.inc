@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: phpMussel controls handler (last modified: 2016.02.12).
+ * This file: phpMussel controls handler (last modified: 2016.02.18).
  *
  * @package Maikuolan/phpMussel
  */
@@ -78,7 +78,7 @@ if (
             $phpMussel['MusselPlugins']['tempdata']['k'] = key($phpMussel['MusselPlugins']['hooks']['browser_log_commands']);
             if (!is_array($phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$phpMussel['MusselPlugins']['tempdata']['k']])) {
                 $phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$phpMussel['MusselPlugins']['tempdata']['k']] =
-                    array(0 => $phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$phpMussel['MusselPlugins']['tempdata']['k']]);
+                    array($phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$phpMussel['MusselPlugins']['tempdata']['k']]);
             }
             $phpMussel['MusselPlugins']['tempdata']['kc'] =
                 count($phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$phpMussel['MusselPlugins']['tempdata']['k']]);
@@ -191,7 +191,7 @@ if (
             $phpMussel['MusselPlugins']['tempdata']['k'] = key($phpMussel['MusselPlugins']['hooks']['browser_commands']);
             if (!is_array($phpMussel['MusselPlugins']['hooks']['browser_commands'][$phpMussel['MusselPlugins']['tempdata']['k']])) {
                 $phpMussel['MusselPlugins']['hooks']['browser_commands'][$phpMussel['MusselPlugins']['tempdata']['k']] =
-                    array(0 => $phpMussel['MusselPlugins']['hooks']['browser_commands'][$phpMussel['MusselPlugins']['tempdata']['k']]);
+                    array($phpMussel['MusselPlugins']['hooks']['browser_commands'][$phpMussel['MusselPlugins']['tempdata']['k']]);
             }
             $phpMussel['MusselPlugins']['tempdata']['kc'] =
                 count($phpMussel['MusselPlugins']['hooks']['browser_commands'][$phpMussel['MusselPlugins']['tempdata']['k']]);

@@ -43,8 +43,5 @@ $fileswitch:unassigned;FN:\.([Rr][Uu]?[Bb][WwYy]?|[Gg][Ee][Mm])$;fileswitch=ruby
 $fileswitch:unassigned;FN:\.([Cc][Vv][Dd]|[Ii][Nn][Cc]|[Mm][Dd]|[Tt][Xx][Tt])$;fileswitch=ignore
 $fileswitch:unassigned;FD-RX:(1f8b|425a68|504b|52617221|7f454c46):A:4;fileswitch=vt_interest
 $fileswitch:unassigned;FD:7801:A:2;FD:6b6f6c79:-512;fileswitch=vt_interest
-!$is_html:1;FN:\.([Ee][Mm][Ll]|.?[Hh][Tt][AaMm][Ll]?|[Aa][Ss][Pp][FfXx]?|[Pp][Yy]|[Jj][Ss][Pp]?|[Pp][Hh][Pp].?)$;is_html=true
-!$is_html:1;FD-NORM-RX:3c(21646f6374797065|6120|626f6479|68656164|68746d6c|696672616d65|696d67|6f626a656374|736372697074|7461626c65|7469746c65);is_html=true
-!$is_html:1;FD-NORM-RX:(626f6479|68656164|68746d6c|736372697074|7461626c65|7469746c65)3e;is_html=true
 
 EOF

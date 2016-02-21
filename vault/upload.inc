@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: phpMussel upload handler (last modified: 2016.02.12).
+ * This file: phpMussel upload handler (last modified: 2016.02.18).
  *
  * @package Maikuolan/phpMussel
  */
@@ -574,7 +574,7 @@ if ($phpMussel['upload']['count'] > 0) {
                 $phpMussel['MusselPlugins']['tempdata']['k'] = key($phpMussel['MusselPlugins']['hooks']['before_html_out']);
                 if (!is_array($phpMussel['MusselPlugins']['hooks']['before_html_out'][$phpMussel['MusselPlugins']['tempdata']['k']])) {
                     $phpMussel['MusselPlugins']['hooks']['before_html_out'][$phpMussel['MusselPlugins']['tempdata']['k']] =
-                        array(0 => $phpMussel['MusselPlugins']['hooks']['before_html_out'][$phpMussel['MusselPlugins']['tempdata']['k']]);
+                        array($phpMussel['MusselPlugins']['hooks']['before_html_out'][$phpMussel['MusselPlugins']['tempdata']['k']]);
                 }
                 $phpMussel['MusselPlugins']['tempdata']['kc'] =
                     count($phpMussel['MusselPlugins']['hooks']['before_html_out'][$phpMussel['MusselPlugins']['tempdata']['k']]);
