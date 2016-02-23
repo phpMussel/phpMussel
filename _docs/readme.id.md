@@ -255,210 +255,216 @@ Untuk daftar yang tersedia CLI perintah, pada prompt CLI, ketik 'c', dan tekan E
 
 Berikut list dari semua file yang diikutkan di dalam kopi skrip yang dikompres ketika Anda mendownloadnya, setiap file-file yang secara potensial diciptakan sebagai hasil dari menggunakan skrip ini, sejalan dengan deskripsi singkat dari untuk apa file-file ini.
 
-Data                                       | Deskripsi
--------------------------------------------|--------------------------------------
-/.gitattributes                            | @todo
-/composer.json                             | @todo
-/CONTRIBUTING.md                           | @todo
-/LICENSE.txt                               | @todo
-/PEOPLE.md                                 | @todo
-/phpmussel.php                             | File pemuat phpMussel. Memuat skrip utama, pengupdate, dll. Ini yang apa Anda ingin masukkan (utama)!
-/README.md                                 | @todo
-/web.config                                | Sebuah file konfigurasi ASP.NET (dalam instansi ini, untuk melindungi direktori `/vault` dari pengaksesan oleh sumber-sumber tidak terauthorisasi dalam kejadian yang mana skrip ini diinstal pada server berbasis teknologi ASP.NET).
-/_docs/                                    | Direktori dokumentasi (berisi bermacam file).
-/_docs/change_log.txt                      | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
-/_docs/readme.ar.md                        | Dokumentasi Bahasa Arab.
-/_docs/readme.de.md                        | Dokumentasi Bahasa Jerman.
-/_docs/readme.de.txt                       | Dokumentasi Bahasa Jerman.
-/_docs/readme.en.md                        | Dokumentasi Bahasa Inggris.
-/_docs/readme.en.txt                       | Dokumentasi Bahasa Inggris.
-/_docs/readme.es.md                        | Dokumentasi Bahasa Spanyol.
-/_docs/readme.es.txt                       | Dokumentasi Bahasa Spanyol.
-/_docs/readme.fr.md                        | Dokumentasi Bahasa Perancis.
-/_docs/readme.fr.txt                       | Dokumentasi Bahasa Perancis.
-/_docs/readme.id.md                        | Dokumentasi Bahasa Indonesia.
-/_docs/readme.id.txt                       | Dokumentasi Bahasa Indonesia.
-/_docs/readme.it.md                        | Dokumentasi Bahasa Italia.
-/_docs/readme.it.txt                       | Dokumentasi Bahasa Italia.
-/_docs/readme.nl.md                        | Dokumentasi Bahasa Belanda.
-/_docs/readme.nl.txt                       | Dokumentasi Bahasa Belanda.
-/_docs/readme.pt.md                        | Dokumentasi Bahasa Portugis.
-/_docs/readme.pt.txt                       | Dokumentasi Bahasa Portugis.
-/_docs/readme.ru.md                        | Dokumentasi Bahasa Rusia.
-/_docs/readme.ru.txt                       | Dokumentasi Bahasa Rusia.
-/_docs/readme.vi.md                        | Dokumentasi Bahasa Vietnam.
-/_docs/readme.vi.txt                       | Dokumentasi Bahasa Vietnam.
-/_docs/readme.zh.md                        | Dokumentasi Cina Sederhana.
-/_docs/readme.zh-TW.md                     | Dokumentasi Cina Tradisional.
-/_docs/signatures_tally.txt                | Perhitungan dari diikutkan tanda tangan (tidak dibutuhkan untuk fungsi teratur dari skrip).
-/_testfiles/                               | Direktori test file-file (berisi bermacam file). Semua file-file berisikan di dalamnya adalah file test untuk testing jika phpMussel dengan benar diinstal pada sistem, dan Anda tidak perlu mengupload direktori ini atau file-filenya jika melakukan testing.
-/_testfiles/ascii_standard_testfile.txt    | File test untuk mentest tanda tangan ASCII dinormalisasi phpMussel.
-/_testfiles/coex_testfile.rtf              | File test untuk mentest tanda tangan diperpanjang kompleks phpMussel.
-/_testfiles/exe_standard_testfile.exe      | File test untuk mentest tanda tangan PE phpMussel.
-/_testfiles/general_standard_testfile.txt  | File test untuk mentest tanda tangan umum phpMussel.
+Data | Deskripsi
+----|----
+/.gitattributes | Sebuah file proyek GitHub (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/composer.json | Informasi untuk Composer/Packagist (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/CONTRIBUTING.md | Informasi tentang cara berkontribusi pada proyek.
+/LICENSE.txt | Salinan lisensi GNU/GPLv2.
+/PEOPLE.md | Informasi tentang orang-orang yang terlibat dalam proyek.
+/phpmussel.php | Pemuat (memuat skrip utama, pengupdate, dll). Ini yang apa Anda ingin masukkan (utama)!
+/README.md | Ringkasan informasi proyek.
+/web.config | Sebuah file konfigurasi ASP.NET (dalam instansi ini, untuk melindungi direktori `/vault` dari pengaksesan oleh sumber-sumber tidak terauthorisasi dalam kejadian yang mana skrip ini diinstal pada server berbasis teknologi ASP.NET).
+/_docs/ | Direktori dokumentasi (berisi bermacam file).
+/_docs/change_log.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/_docs/readme.ar.md | Dokumentasi Bahasa Arab.
+/_docs/readme.de.md | Dokumentasi Bahasa Jerman.
+/_docs/readme.de.txt | Dokumentasi Bahasa Jerman.
+/_docs/readme.en.md | Dokumentasi Bahasa Inggris.
+/_docs/readme.en.txt | Dokumentasi Bahasa Inggris.
+/_docs/readme.es.md | Dokumentasi Bahasa Spanyol.
+/_docs/readme.es.txt | Dokumentasi Bahasa Spanyol.
+/_docs/readme.fr.md | Dokumentasi Bahasa Perancis.
+/_docs/readme.fr.txt | Dokumentasi Bahasa Perancis.
+/_docs/readme.id.md | Dokumentasi Bahasa Indonesia.
+/_docs/readme.id.txt | Dokumentasi Bahasa Indonesia.
+/_docs/readme.it.md | Dokumentasi Bahasa Italia.
+/_docs/readme.it.txt | Dokumentasi Bahasa Italia.
+/_docs/readme.nl.md | Dokumentasi Bahasa Belanda.
+/_docs/readme.nl.txt | Dokumentasi Bahasa Belanda.
+/_docs/readme.pt.md | Dokumentasi Bahasa Portugis.
+/_docs/readme.pt.txt | Dokumentasi Bahasa Portugis.
+/_docs/readme.ru.md | Dokumentasi Bahasa Rusia.
+/_docs/readme.ru.txt | Dokumentasi Bahasa Rusia.
+/_docs/readme.vi.md | Dokumentasi Bahasa Vietnam.
+/_docs/readme.vi.txt | Dokumentasi Bahasa Vietnam.
+/_docs/readme.zh-TW.md | Dokumentasi Cina Tradisional.
+/_docs/readme.zh.md | Dokumentasi Cina Sederhana.
+/_docs/signatures_tally.txt | Perhitungan dari diikutkan tanda tangan (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/_testfiles/ | Direktori test file-file (berisi bermacam file). Semua file-file berisikan di dalamnya adalah file test untuk testing jika phpMussel dengan benar diinstal pada sistem, dan Anda tidak perlu mengupload direktori ini atau file-filenya jika melakukan testing.
+/_testfiles/ascii_standard_testfile.txt | File test untuk mentest tanda tangan ASCII dinormalisasi phpMussel.
+/_testfiles/coex_testfile.rtf | File test untuk mentest tanda tangan diperpanjang kompleks phpMussel.
+/_testfiles/exe_standard_testfile.exe | File test untuk mentest tanda tangan PE phpMussel.
+/_testfiles/general_standard_testfile.txt | File test untuk mentest tanda tangan umum phpMussel.
 /_testfiles/graphics_standard_testfile.gif | File test untuk mentest tanda tangan grafis phpMussel.
-/_testfiles/html_standard_testfile.html    | File test untuk mentest tanda tangan HTML dinormalisasi phpMussel.
-/_testfiles/md5_testfile.txt               | File test untuk mentest tanda tangan MD5 phpMussel.
-/_testfiles/metadata_testfile.tar          | File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest file support TAR pada sistem Anda.
-/_testfiles/metadata_testfile.txt.gz       | File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest file support GZ pada sistem Anda.
-/_testfiles/metadata_testfile.zip          | File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest file support ZIP pada sistem Anda.
-/_testfiles/ole_testfile.ole               | File test untuk mentest tanda tangan OLE phpMussel.
-/_testfiles/pdf_standard_testfile.pdf      | File test untuk mentest tanda tangan PDF phpMussel.
-/_testfiles/pe_sectional_testfile.exe      | File test untuk mentest tanda tangan PE Sectional phpMussel.
-/_testfiles/swf_standard_testfile.swf      | File test untuk mentest tanda tangan SWF phpMussel.
-/_testfiles/xdp_standard_testfile.xdp      | File test untuk mentest tanda tangan blok data XML/XDP phpMussel.
-/vault/                                    | Direktori Vault (berisikan bermacam file).
-/vault/cache/                              | Direktori Cache (untuk file sementara).
-/vault/cache/.htaccess                     | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/lang/                               | Berisikan file bahasa.
-/vault/lang/.htaccess                      | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/lang/lang.ar.inc                    | File Bahasa Arab.
-/vault/lang/lang.de.inc                    | File Bahasa Jerman.
-/vault/lang/lang.en.inc                    | File Bahasa Inggris.
-/vault/lang/lang.es.inc                    | File Bahasa Spanyol.
-/vault/lang/lang.fr.inc                    | File Bahasa Perancis.
-/vault/lang/lang.id.inc                    | File Bahasa Indonesia.
-/vault/lang/lang.it.inc                    | File Bahasa Italia.
-/vault/lang/lang.ja.inc                    | File Bahasa Jepang.
-/vault/lang/lang.nl.inc                    | File Bahasa Belanda.
-/vault/lang/lang.pt.inc                    | File Bahasa Portugis.
-/vault/lang/lang.ru.inc                    | File Bahasa Rusia.
-/vault/lang/lang.vi.inc                    | File Bahasa Vietnam.
-/vault/lang/lang.zh.inc                    | File Bahasa Cina Sederhana.
-/vault/lang/lang.zh-TW.inc                 | File Bahasa Cina Tradisional.
-/vault/quarantine/                         | Direktori Karantina (berisikan file yang dikarantina).
-/vault/quarantine/.htaccess                | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/.htaccess                           | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/ascii_clamav_regex.cvd              | File untuk tanda tangan ASCII dinormalisasi.
-/vault/ascii_clamav_regex.map              | File untuk tanda tangan ASCII dinormalisasi.
-/vault/ascii_clamav_standard.cvd           | File untuk tanda tangan ASCII dinormalisasi.
-/vault/ascii_clamav_standard.map           | File untuk tanda tangan ASCII dinormalisasi.
-/vault/ascii_custom_regex.cvd              | File untuk tanda tangan ASCII dinormalisasi.
-/vault/ascii_custom_standard.cvd           | File untuk tanda tangan ASCII dinormalisasi.
-/vault/ascii_mussel_regex.cvd              | File untuk tanda tangan ASCII dinormalisasi.
-/vault/ascii_mussel_standard.cvd           | File untuk tanda tangan ASCII dinormalisasi.
-/vault/coex_clamav.cvd                     | File untuk tanda tangan diperpanjang kompleks.
-/vault/coex_custom.cvd                     | File untuk tanda tangan diperpanjang kompleks.
-/vault/coex_mussel.cvd                     | File untuk tanda tangan diperpanjang kompleks.
-/vault/elf_clamav_regex.cvd                | File untuk tanda tangan ELF.
-/vault/elf_clamav_regex.map                | File untuk tanda tangan ELF.
-/vault/elf_clamav_standard.cvd             | File untuk tanda tangan ELF.
-/vault/elf_clamav_standard.map             | File untuk tanda tangan ELF.
-/vault/elf_custom_regex.cvd                | File untuk tanda tangan ELF.
-/vault/elf_custom_standard.cvd             | File untuk tanda tangan ELF.
-/vault/elf_mussel_regex.cvd                | File untuk tanda tangan ELF.
-/vault/elf_mussel_standard.cvd             | File untuk tanda tangan ELF.
-/vault/exe_clamav_regex.cvd                | File untuk tanda tangan file eksekusi portable.
-/vault/exe_clamav_regex.map                | File untuk tanda tangan file eksekusi portable.
-/vault/exe_clamav_standard.cvd             | File untuk tanda tangan file eksekusi portable.
-/vault/exe_clamav_standard.map             | File untuk tanda tangan file eksekusi portable.
-/vault/exe_custom_regex.cvd                | File untuk tanda tangan file eksekusi portable.
-/vault/exe_custom_standard.cvd             | File untuk tanda tangan file eksekusi portable.
-/vault/exe_mussel_regex.cvd                | File untuk tanda tangan file eksekusi portable.
-/vault/exe_mussel_standard.cvd             | File untuk tanda tangan file eksekusi portable.
-/vault/filenames_clamav.cvd                | File untuk tanda tangan nama file.
-/vault/filenames_custom.cvd                | File untuk tanda tangan nama file.
-/vault/filenames_mussel.cvd                | File untuk tanda tangan nama file.
-/vault/general_clamav_regex.cvd            | File untuk tanda tangan umum.
-/vault/general_clamav_regex.map            | File untuk tanda tangan umum.
-/vault/general_clamav_standard.cvd         | File untuk tanda tangan umum.
-/vault/general_clamav_standard.map         | File untuk tanda tangan umum.
-/vault/general_custom_regex.cvd            | File untuk tanda tangan umum.
-/vault/general_custom_standard.cvd         | File untuk tanda tangan umum.
-/vault/general_mussel_regex.cvd            | File untuk tanda tangan umum.
-/vault/general_mussel_standard.cvd         | File untuk tanda tangan umum.
-/vault/graphics_clamav_regex.cvd           | File untuk tanda tangan grafis.
-/vault/graphics_clamav_regex.map           | File untuk tanda tangan grafis.
-/vault/graphics_clamav_standard.cvd        | File untuk tanda tangan grafis.
-/vault/graphics_clamav_standard.map        | File untuk tanda tangan grafis.
-/vault/graphics_custom_regex.cvd           | File untuk tanda tangan grafis.
-/vault/graphics_custom_standard.cvd        | File untuk tanda tangan grafis.
-/vault/graphics_mussel_regex.cvd           | File untuk tanda tangan grafis.
-/vault/graphics_mussel_standard.cvd        | File untuk tanda tangan grafis.
-/vault/greylist.csv                        | CSV terdiri dari tanda tangan daftar abu-abu mengindikasikan phpMussel tanda tangan mana yang harus diabaikan (file automatis diciptakan kembali jika dihapus).
-/vault/hex_general_commands.csv            | CSV terencode Hex dari deteksi perintah umum secara opsional digunakan phpMussel.
-/vault/html_clamav_regex.cvd               | File untuk tanda tangan HTML dinormalisasi.
-/vault/html_clamav_regex.map               | File untuk tanda tangan HTML dinormalisasi.
-/vault/html_clamav_standard.cvd            | File untuk tanda tangan HTML dinormalisasi.
-/vault/html_clamav_standard.map            | File untuk tanda tangan HTML dinormalisasi.
-/vault/html_custom_regex.cvd               | File untuk tanda tangan HTML dinormalisasi.
-/vault/html_custom_standard.cvd            | File untuk tanda tangan HTML dinormalisasi.
-/vault/html_mussel_regex.cvd               | File untuk tanda tangan HTML dinormalisasi.
-/vault/html_mussel_standard.cvd            | File untuk tanda tangan HTML dinormalisasi.
-/vault/lang.inc                            | File bahasa.
-/vault/macho_clamav_regex.cvd              | File untuk tanda tangan Mach-O.
-/vault/macho_clamav_regex.map              | File untuk tanda tangan Mach-O.
-/vault/macho_clamav_standard.cvd           | File untuk tanda tangan Mach-O.
-/vault/macho_clamav_standard.map           | File untuk tanda tangan Mach-O.
-/vault/macho_custom_regex.cvd              | File untuk tanda tangan Mach-O.
-/vault/macho_custom_standard.cvd           | File untuk tanda tangan Mach-O.
-/vault/macho_mussel_regex.cvd              | File untuk tanda tangan Mach-O.
-/vault/macho_mussel_standard.cvd           | File untuk tanda tangan Mach-O.
-/vault/mail_clamav_regex.cvd               | File untuk tanda tangan mail.
-/vault/mail_clamav_regex.map               | File untuk tanda tangan mail.
-/vault/mail_clamav_standard.cvd            | File untuk tanda tangan mail.
-/vault/mail_clamav_standard.map            | File untuk tanda tangan mail.
-/vault/mail_custom_regex.cvd               | File untuk tanda tangan mail.
-/vault/mail_custom_standard.cvd            | File untuk tanda tangan mail.
-/vault/mail_mussel_regex.cvd               | File untuk tanda tangan mail.
-/vault/mail_mussel_standard.cvd            | File untuk tanda tangan mail.
-/vault/md5_clamav.cvd                      | File untuk tanda tangan berbasis MD5.
-/vault/md5_custom.cvd                      | File untuk tanda tangan berbasis MD5.
-/vault/md5_mussel.cvd                      | File untuk tanda tangan berbasis MD5.
-/vault/metadata_clamav.cvd                 | File untuk tanda tangan metadata yang terkompres.
-/vault/metadata_custom.cvd                 | File untuk tanda tangan metadata yang terkompres.
-/vault/metadata_mussel.cvd                 | File untuk tanda tangan metadata yang terkompres.
-/vault/ole_clamav_regex.cvd                | File untuk tanda tangan OLE.
-/vault/ole_clamav_regex.map                | File untuk tanda tangan OLE.
-/vault/ole_clamav_standard.cvd             | File untuk tanda tangan OLE.
-/vault/ole_clamav_standard.map             | File untuk tanda tangan OLE.
-/vault/ole_custom_regex.cvd                | File untuk tanda tangan OLE.
-/vault/ole_custom_standard.cvd             | File untuk tanda tangan OLE.
-/vault/ole_mussel_regex.cvd                | File untuk tanda tangan OLE.
-/vault/ole_mussel_standard.cvd             | File untuk tanda tangan OLE.
-/vault/pdf_clamav_regex.cvd                | File untuk tanda tangan PDF.
-/vault/pdf_clamav_regex.map                | File untuk tanda tangan PDF.
-/vault/pdf_clamav_standard.cvd             | File untuk tanda tangan PDF.
-/vault/pdf_clamav_standard.map             | File untuk tanda tangan PDF.
-/vault/pdf_custom_regex.cvd                | File untuk tanda tangan PDF.
-/vault/pdf_custom_standard.cvd             | File untuk tanda tangan PDF.
-/vault/pdf_mussel_regex.cvd                | File untuk tanda tangan PDF.
-/vault/pdf_mussel_standard.cvd             | File untuk tanda tangan PDF.
-/vault/pe_clamav.cvd                       | File untuk tanda tangan PE Sectional.
-/vault/pe_custom.cvd                       | File untuk tanda tangan PE Sectional.
-/vault/pe_mussel.cvd                       | File untuk tanda tangan PE Sectional.
-/vault/pex_custom.cvd                      | File untuk tanda tangan PE diperpanjang.
-/vault/pex_mussel.cvd                      | File untuk tanda tangan PE diperpanjang.
-/vault/phpmussel.inc                       | Skrip murni phpMussel; Body utama dan vital dari phpMussel (utama)!
-/vault/phpmussel.ini                       | File konfigurasi phpMussel; Berisi semua opsi konfigurasi dari phpMussel, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (utama)!
-※ /vault/scan_log.txt                     | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
-※ /vault/scan_log_serialized.txt          | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
-※ /vault/scan_kills.txt                   | Sebuah catatan dari setiap file upload yang diblok/dibunuh oleh phpMussel.
-/vault/swf_clamav_regex.cvd                | File untuk tanda tangan Shockwave.
-/vault/swf_clamav_regex.map                | File untuk tanda tangan Shockwave.
-/vault/swf_clamav_standard.cvd             | File untuk tanda tangan Shockwave.
-/vault/swf_clamav_standard.map             | File untuk tanda tangan Shockwave.
-/vault/swf_custom_regex.cvd                | File untuk tanda tangan Shockwave.
-/vault/swf_custom_standard.cvd             | File untuk tanda tangan Shockwave.
-/vault/swf_mussel_regex.cvd                | File untuk tanda tangan Shockwave.
-/vault/swf_mussel_standard.cvd             | File untuk tanda tangan Shockwave.
-/vault/switch.dat                          | Kontrol dan set variabel tertentu.
-/vault/template.html                       | File template phpMussel; Template untuk output HTML yang diproduksi oleh phpMussel untuk file pesan upload yang dibloknya (pesan dilihat oleh pengupload).
-/vault/template_custom.html                | File template phpMussel; Template untuk output HTML yang diproduksi oleh phpMussel untuk file pesan upload yang dibloknya (pesan dilihat oleh pengupload).
-/vault/update.dat                          | File berisi informasi versi untuk skrip phpMussel dan tanda tangan phpMussel. Jika Anda pernah ingin mengupgrade phpMussel atau ingin mengupdate phpMussel via browser file ini penting.
-/vault/update.inc                          | Skrip upgrade phpMussel; Diharuskan untuk upgrade otomatis dan untuk mengupgrade phpMussel dengan menggunakan browser Anda, tapi tidak diharuskan juga.
-/vault/urlscanner.cvd                      | File untuk tanda tangan scanner URL.
-/vault/whitelist_clamav.cvd                | File spesifik daftar putih.
-/vault/whitelist_custom.cvd                | File spesifik daftar putih.
-/vault/whitelist_mussel.cvd                | File spesifik daftar putih.
-/vault/xmlxdp_clamav_regex.cvd             | File untuk tanda tangan blok data XML/XDP.
-/vault/xmlxdp_clamav_regex.map             | File untuk tanda tangan blok data XML/XDP.
-/vault/xmlxdp_clamav_standard.cvd          | File untuk tanda tangan blok data XML/XDP.
-/vault/xmlxdp_clamav_standard.map          | File untuk tanda tangan blok data XML/XDP.
-/vault/xmlxdp_custom_regex.cvd             | File untuk tanda tangan blok data XML/XDP.
-/vault/xmlxdp_custom_standard.cvd          | File untuk tanda tangan blok data XML/XDP.
-/vault/xmlxdp_mussel_regex.cvd             | File untuk tanda tangan blok data XML/XDP.
-/vault/xmlxdp_mussel_standard.cvd          | File untuk tanda tangan blok data XML/XDP.
+/_testfiles/html_standard_testfile.html | File test untuk mentest tanda tangan HTML dinormalisasi phpMussel.
+/_testfiles/md5_testfile.txt | File test untuk mentest tanda tangan MD5 phpMussel.
+/_testfiles/metadata_testfile.tar | File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest file support TAR pada sistem Anda.
+/_testfiles/metadata_testfile.txt.gz | File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest file support GZ pada sistem Anda.
+/_testfiles/metadata_testfile.zip | File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest file support ZIP pada sistem Anda.
+/_testfiles/ole_testfile.ole | File test untuk mentest tanda tangan OLE phpMussel.
+/_testfiles/pdf_standard_testfile.pdf | File test untuk mentest tanda tangan PDF phpMussel.
+/_testfiles/pe_sectional_testfile.exe | File test untuk mentest tanda tangan PE Sectional phpMussel.
+/_testfiles/swf_standard_testfile.swf | File test untuk mentest tanda tangan SWF phpMussel.
+/_testfiles/xdp_standard_testfile.xdp | File test untuk mentest tanda tangan blok data XML/XDP phpMussel.
+/vault/ | Direktori Vault (berisikan bermacam file).
+/vault/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/cache/ | Direktori Cache (untuk file sementara).
+/vault/cache/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/cli.inc | CLI handler. @TranslateMe@
+/vault/config.inc | Configuration handler. @TranslateMe@
+/vault/controls.inc | Controls handler. @TranslateMe@
+/vault/functions.inc | Functions file (essential). @TranslateMe@
+/vault/greylist.csv | CSV terdiri dari tanda tangan daftar abu-abu mengindikasikan phpMussel tanda tangan mana yang harus diabaikan (file automatis diciptakan kembali jika dihapus).
+/vault/lang.inc | File bahasa.
+/vault/lang/ | Berisikan file bahasa.
+/vault/lang/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/lang/lang.ar.inc | File Bahasa Arab.
+/vault/lang/lang.de.inc | File Bahasa Jerman.
+/vault/lang/lang.en.inc | File Bahasa Inggris.
+/vault/lang/lang.es.inc | File Bahasa Spanyol.
+/vault/lang/lang.fr.inc | File Bahasa Perancis.
+/vault/lang/lang.id.inc | File Bahasa Indonesia.
+/vault/lang/lang.it.inc | File Bahasa Italia.
+/vault/lang/lang.ja.inc | File Bahasa Jepang.
+/vault/lang/lang.nl.inc | File Bahasa Belanda.
+/vault/lang/lang.pt.inc | File Bahasa Portugis.
+/vault/lang/lang.ru.inc | File Bahasa Rusia.
+/vault/lang/lang.vi.inc | File Bahasa Vietnam.
+/vault/lang/lang.zh-TW.inc | File Bahasa Cina Tradisional.
+/vault/lang/lang.zh.inc | File Bahasa Cina Sederhana.
+/vault/phpmussel.ini | File konfigurasi phpMussel; Berisi semua opsi konfigurasi dari phpMussel, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (utama)!
+/vault/quarantine/ | Direktori karantina (berisikan file yang dikarantina).
+/vault/quarantine/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+※ /vault/scan_kills.txt | Sebuah catatan dari setiap file upload yang diblok/dibunuh oleh phpMussel.
+※ /vault/scan_log.txt | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
+※ /vault/scan_log_serialized.txt | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
+/vault/signatures/ | Direktori tanda tangan (berisikan file tanda tangan).
+/vault/signatures/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/signatures/ascii_clamav_regex.cvd | File untuk tanda tangan ASCII dinormalisasi.
+/vault/signatures/ascii_clamav_regex.map | File untuk tanda tangan ASCII dinormalisasi.
+/vault/signatures/ascii_clamav_standard.cvd | File untuk tanda tangan ASCII dinormalisasi.
+/vault/signatures/ascii_clamav_standard.map | File untuk tanda tangan ASCII dinormalisasi.
+/vault/signatures/ascii_custom_regex.cvd | File untuk tanda tangan ASCII dinormalisasi.
+/vault/signatures/ascii_custom_standard.cvd | File untuk tanda tangan ASCII dinormalisasi.
+/vault/signatures/ascii_mussel_regex.cvd | File untuk tanda tangan ASCII dinormalisasi.
+/vault/signatures/ascii_mussel_standard.cvd | File untuk tanda tangan ASCII dinormalisasi.
+/vault/signatures/coex_clamav.cvd | File untuk tanda tangan diperpanjang kompleks.
+/vault/signatures/coex_custom.cvd | File untuk tanda tangan diperpanjang kompleks.
+/vault/signatures/coex_mussel.cvd | File untuk tanda tangan diperpanjang kompleks.
+/vault/signatures/elf_clamav_regex.cvd | File untuk tanda tangan ELF.
+/vault/signatures/elf_clamav_regex.map | File untuk tanda tangan ELF.
+/vault/signatures/elf_clamav_standard.cvd | File untuk tanda tangan ELF.
+/vault/signatures/elf_clamav_standard.map | File untuk tanda tangan ELF.
+/vault/signatures/elf_custom_regex.cvd | File untuk tanda tangan ELF.
+/vault/signatures/elf_custom_standard.cvd | File untuk tanda tangan ELF.
+/vault/signatures/elf_mussel_regex.cvd | File untuk tanda tangan ELF.
+/vault/signatures/elf_mussel_standard.cvd | File untuk tanda tangan ELF.
+/vault/signatures/exe_clamav_regex.cvd | File untuk tanda tangan file eksekusi portable.
+/vault/signatures/exe_clamav_regex.map | File untuk tanda tangan file eksekusi portable.
+/vault/signatures/exe_clamav_standard.cvd | File untuk tanda tangan file eksekusi portable.
+/vault/signatures/exe_clamav_standard.map | File untuk tanda tangan file eksekusi portable.
+/vault/signatures/exe_custom_regex.cvd | File untuk tanda tangan file eksekusi portable.
+/vault/signatures/exe_custom_standard.cvd | File untuk tanda tangan file eksekusi portable.
+/vault/signatures/exe_mussel_regex.cvd | File untuk tanda tangan file eksekusi portable.
+/vault/signatures/exe_mussel_standard.cvd | File untuk tanda tangan file eksekusi portable.
+/vault/signatures/filenames_clamav.cvd | File untuk tanda tangan nama file.
+/vault/signatures/filenames_custom.cvd | File untuk tanda tangan nama file.
+/vault/signatures/filenames_mussel.cvd | File untuk tanda tangan nama file.
+/vault/signatures/general_clamav_regex.cvd | File untuk tanda tangan umum.
+/vault/signatures/general_clamav_regex.map | File untuk tanda tangan umum.
+/vault/signatures/general_clamav_standard.cvd | File untuk tanda tangan umum.
+/vault/signatures/general_clamav_standard.map | File untuk tanda tangan umum.
+/vault/signatures/general_custom_regex.cvd | File untuk tanda tangan umum.
+/vault/signatures/general_custom_standard.cvd | File untuk tanda tangan umum.
+/vault/signatures/general_mussel_regex.cvd | File untuk tanda tangan umum.
+/vault/signatures/general_mussel_standard.cvd | File untuk tanda tangan umum.
+/vault/signatures/graphics_clamav_regex.cvd | File untuk tanda tangan grafis.
+/vault/signatures/graphics_clamav_regex.map | File untuk tanda tangan grafis.
+/vault/signatures/graphics_clamav_standard.cvd | File untuk tanda tangan grafis.
+/vault/signatures/graphics_clamav_standard.map | File untuk tanda tangan grafis.
+/vault/signatures/graphics_custom_regex.cvd | File untuk tanda tangan grafis.
+/vault/signatures/graphics_custom_standard.cvd | File untuk tanda tangan grafis.
+/vault/signatures/graphics_mussel_regex.cvd | File untuk tanda tangan grafis.
+/vault/signatures/graphics_mussel_standard.cvd | File untuk tanda tangan grafis.
+/vault/signatures/hex_general_commands.csv | CSV terencode Hex dari deteksi perintah umum secara opsional digunakan phpMussel.
+/vault/signatures/html_clamav_regex.cvd | File untuk tanda tangan HTML dinormalisasi.
+/vault/signatures/html_clamav_regex.map | File untuk tanda tangan HTML dinormalisasi.
+/vault/signatures/html_clamav_standard.cvd | File untuk tanda tangan HTML dinormalisasi.
+/vault/signatures/html_clamav_standard.map | File untuk tanda tangan HTML dinormalisasi.
+/vault/signatures/html_custom_regex.cvd | File untuk tanda tangan HTML dinormalisasi.
+/vault/signatures/html_custom_standard.cvd | File untuk tanda tangan HTML dinormalisasi.
+/vault/signatures/html_mussel_regex.cvd | File untuk tanda tangan HTML dinormalisasi.
+/vault/signatures/html_mussel_standard.cvd | File untuk tanda tangan HTML dinormalisasi.
+/vault/signatures/macho_clamav_regex.cvd | File untuk tanda tangan Mach-O.
+/vault/signatures/macho_clamav_regex.map | File untuk tanda tangan Mach-O.
+/vault/signatures/macho_clamav_standard.cvd | File untuk tanda tangan Mach-O.
+/vault/signatures/macho_clamav_standard.map | File untuk tanda tangan Mach-O.
+/vault/signatures/macho_custom_regex.cvd | File untuk tanda tangan Mach-O.
+/vault/signatures/macho_custom_standard.cvd | File untuk tanda tangan Mach-O.
+/vault/signatures/macho_mussel_regex.cvd | File untuk tanda tangan Mach-O.
+/vault/signatures/macho_mussel_standard.cvd | File untuk tanda tangan Mach-O.
+/vault/signatures/mail_clamav_regex.cvd | File untuk tanda tangan mail.
+/vault/signatures/mail_clamav_regex.map | File untuk tanda tangan mail.
+/vault/signatures/mail_clamav_standard.cvd | File untuk tanda tangan mail.
+/vault/signatures/mail_clamav_standard.map | File untuk tanda tangan mail.
+/vault/signatures/mail_custom_regex.cvd | File untuk tanda tangan mail.
+/vault/signatures/mail_custom_standard.cvd | File untuk tanda tangan mail.
+/vault/signatures/mail_mussel_regex.cvd | File untuk tanda tangan mail.
+/vault/signatures/mail_mussel_standard.cvd | File untuk tanda tangan mail.
+/vault/signatures/md5_clamav.cvd | File untuk tanda tangan berbasis MD5.
+/vault/signatures/md5_custom.cvd | File untuk tanda tangan berbasis MD5.
+/vault/signatures/md5_mussel.cvd | File untuk tanda tangan berbasis MD5.
+/vault/signatures/metadata_clamav.cvd | File untuk tanda tangan metadata yang terkompres.
+/vault/signatures/metadata_custom.cvd | File untuk tanda tangan metadata yang terkompres.
+/vault/signatures/metadata_mussel.cvd | File untuk tanda tangan metadata yang terkompres.
+/vault/signatures/ole_clamav_regex.cvd | File untuk tanda tangan OLE.
+/vault/signatures/ole_clamav_regex.map | File untuk tanda tangan OLE.
+/vault/signatures/ole_clamav_standard.cvd | File untuk tanda tangan OLE.
+/vault/signatures/ole_clamav_standard.map | File untuk tanda tangan OLE.
+/vault/signatures/ole_custom_regex.cvd | File untuk tanda tangan OLE.
+/vault/signatures/ole_custom_standard.cvd | File untuk tanda tangan OLE.
+/vault/signatures/ole_mussel_regex.cvd | File untuk tanda tangan OLE.
+/vault/signatures/ole_mussel_standard.cvd | File untuk tanda tangan OLE.
+/vault/signatures/pdf_clamav_regex.cvd | File untuk tanda tangan PDF.
+/vault/signatures/pdf_clamav_regex.map | File untuk tanda tangan PDF.
+/vault/signatures/pdf_clamav_standard.cvd | File untuk tanda tangan PDF.
+/vault/signatures/pdf_clamav_standard.map | File untuk tanda tangan PDF.
+/vault/signatures/pdf_custom_regex.cvd | File untuk tanda tangan PDF.
+/vault/signatures/pdf_custom_standard.cvd | File untuk tanda tangan PDF.
+/vault/signatures/pdf_mussel_regex.cvd | File untuk tanda tangan PDF.
+/vault/signatures/pdf_mussel_standard.cvd | File untuk tanda tangan PDF.
+/vault/signatures/pex_custom.cvd | File untuk tanda tangan PE diperpanjang.
+/vault/signatures/pex_mussel.cvd | File untuk tanda tangan PE diperpanjang.
+/vault/signatures/pe_clamav.cvd | File untuk tanda tangan PE Sectional.
+/vault/signatures/pe_custom.cvd | File untuk tanda tangan PE Sectional.
+/vault/signatures/pe_mussel.cvd | File untuk tanda tangan PE Sectional.
+/vault/signatures/swf_clamav_regex.cvd | File untuk tanda tangan Shockwave.
+/vault/signatures/swf_clamav_regex.map | File untuk tanda tangan Shockwave.
+/vault/signatures/swf_clamav_standard.cvd | File untuk tanda tangan Shockwave.
+/vault/signatures/swf_clamav_standard.map | File untuk tanda tangan Shockwave.
+/vault/signatures/swf_custom_regex.cvd | File untuk tanda tangan Shockwave.
+/vault/signatures/swf_custom_standard.cvd | File untuk tanda tangan Shockwave.
+/vault/signatures/swf_mussel_regex.cvd | File untuk tanda tangan Shockwave.
+/vault/signatures/swf_mussel_standard.cvd | File untuk tanda tangan Shockwave.
+/vault/signatures/switch.dat | Kontrol dan set variabel tertentu.
+/vault/signatures/urlscanner.cvd | File untuk tanda tangan scanner URL.
+/vault/signatures/whitelist_clamav.cvd | File spesifik daftar putih.
+/vault/signatures/whitelist_custom.cvd | File spesifik daftar putih.
+/vault/signatures/whitelist_mussel.cvd | File spesifik daftar putih.
+/vault/signatures/xmlxdp_clamav_regex.cvd | File untuk tanda tangan blok data XML/XDP.
+/vault/signatures/xmlxdp_clamav_regex.map | File untuk tanda tangan blok data XML/XDP.
+/vault/signatures/xmlxdp_clamav_standard.cvd | File untuk tanda tangan blok data XML/XDP.
+/vault/signatures/xmlxdp_clamav_standard.map | File untuk tanda tangan blok data XML/XDP.
+/vault/signatures/xmlxdp_custom_regex.cvd | File untuk tanda tangan blok data XML/XDP.
+/vault/signatures/xmlxdp_custom_standard.cvd | File untuk tanda tangan blok data XML/XDP.
+/vault/signatures/xmlxdp_mussel_regex.cvd | File untuk tanda tangan blok data XML/XDP.
+/vault/signatures/xmlxdp_mussel_standard.cvd | File untuk tanda tangan blok data XML/XDP.
+/vault/template.html | File template phpMussel; Template untuk output HTML yang diproduksi oleh phpMussel untuk file pesan upload yang dibloknya (pesan dilihat oleh pengupload).
+/vault/template_custom.html | File template phpMussel; Template untuk output HTML yang diproduksi oleh phpMussel untuk file pesan upload yang dibloknya (pesan dilihat oleh pengupload).
+/vault/update.dat | File berisi informasi versi untuk skrip phpMussel dan tanda tangan phpMussel. Jika Anda pernah ingin mengupgrade phpMussel atau ingin mengupdate phpMussel via browser file ini penting.
+/vault/update.inc | Skrip upgrade phpMussel; Diharuskan untuk upgrade otomatis dan untuk mengupgrade phpMussel dengan menggunakan browser Anda, tapi tidak diharuskan juga.
+/vault/upload.inc | Upload handler. @TranslateMe@
 
 ※ Nama file bisa berbeda berdasarkan ketentuan konfigurasi (di dalam `phpmussel.ini`).
 
@@ -997,4 +1003,4 @@ Informasi ini diupdate 12 Desember 2015 dan cocok untuk semua rilis phpMussel da
 ---
 
 
-Terakhir Diperbarui: 7 Februari 2016 (2016.02.07).
+Terakhir Diperbarui: 24 Februari 2016 (2016.02.23).

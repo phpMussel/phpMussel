@@ -255,210 +255,216 @@ Para obtener una lista de los disponibles CLI comandos, para el CLI aviso, escri
 
 La siguiente es una lista de todos los archivos que debería haberse incluido en la copia de este script cuando descargado, todos los archivos que pueden ser potencialmente creados como resultado de su uso de este script, junto con una breve descripción de lo que todos estos archivos son para.
 
-Archivo                                    | Descripción
--------------------------------------------|--------------------------------------
-/.gitattributes                            | @todo
-/composer.json                             | @todo
-/CONTRIBUTING.md                           | @todo
-/LICENSE.txt                               | @todo
-/PEOPLE.md                                 | @todo
-/phpmussel.php                             | Cargador archivo. Lo cargar el principal script, el actualizador, etcétera. Esto es lo que se supone debe enganchando (esencial)!
-/README.md                                 | @todo
-/web.config                                | Un ASP.NET configuración archivo (en este caso, para proteger la `/vault` directorio contra el acceso de fuentes no autorizadas en el caso de que la script está instalado en un servidor basado en ASP.NET tecnologías).
-/_docs/                                    | Documentación directorio (contiene varios archivos).
-/_docs/change_log.txt                      | Un registro de los cambios realizados en la principal script entre las diferentes versiones (no se requiere para lo adecuado funcionalidad de la script).
-/_docs/readme.ar.md                        | Documentación Árabe.
-/_docs/readme.de.md                        | Documentación Alemán.
-/_docs/readme.de.txt                       | Documentación Alemán.
-/_docs/readme.en.md                        | Documentación Inglés.
-/_docs/readme.en.txt                       | Documentación Inglés.
-/_docs/readme.es.md                        | Documentación Español.
-/_docs/readme.es.txt                       | Documentación Español.
-/_docs/readme.fr.md                        | Documentación Francés.
-/_docs/readme.fr.txt                       | Documentación Francés.
-/_docs/readme.id.md                        | Documentación Indonesio.
-/_docs/readme.id.txt                       | Documentación Indonesio.
-/_docs/readme.it.md                        | Documentación Italiano.
-/_docs/readme.it.txt                       | Documentación Italiano.
-/_docs/readme.nl.md                        | Documentación Holandés.
-/_docs/readme.nl.txt                       | Documentación Holandés.
-/_docs/readme.pt.md                        | Documentación Portugués.
-/_docs/readme.pt.txt                       | Documentación Portugués.
-/_docs/readme.ru.md                        | Documentación Ruso.
-/_docs/readme.ru.txt                       | Documentación Ruso.
-/_docs/readme.vi.md                        | Documentación Vietnamita.
-/_docs/readme.vi.txt                       | Documentación Vietnamita.
-/_docs/readme.zh.md                        | Documentación Chino (Simplificado).
-/_docs/readme.zh-TW.md                     | Documentación Chino (Tradicional).
-/_docs/signatures_tally.txt                | Cifra neta de cambio de las incluidas firmas (no se requiere para lo adecuado funcionalidad de la script).
-/_testfiles/                               | Prueba archivos directorio (contiene varios archivos). Todos los archivos contenidos son prueba archivos para probando si phpMussel ha sido instalado correctamente en su sistema, y que no es necesario subir este directorio o cualquiera de sus archivos excepto cuando haciendo tales pruebas.
-/_testfiles/ascii_standard_testfile.txt    | Prueba archivo para probando phpMussel normalizados ASCII firmas.
-/_testfiles/coex_testfile.rtf              | Prueba archivo para probando phpMussel complejos extendidas firmas.
-/_testfiles/exe_standard_testfile.exe      | Prueba archivo para probando phpMussel PE firmas.
-/_testfiles/general_standard_testfile.txt  | Prueba archivo para probando phpMussel generales firmas.
+Archivo | Descripción
+----|----
+/.gitattributes | Un archivo de la GitHub proyecto (no se requiere para usar la script).
+/composer.json | Composer/Packagist información (no se requiere para usar la script).
+/CONTRIBUTING.md | Información en respecto a cómo contribuir al proyecto.
+/LICENSE.txt | Una copia de la GNU/GPLv2 licencia.
+/PEOPLE.md | Información en respecto a las personas involucradas en el proyecto.
+/phpmussel.php | Cargador (cargar el principal script, el actualizador, etcétera). Esto es lo que se supone debe enganchando (esencial)!
+/README.md | Sumario información del proyecto.
+/web.config | Un ASP.NET configuración archivo (en este caso, para proteger la `/vault` directorio contra el acceso de fuentes no autorizadas en el caso de que la script está instalado en un servidor basado en ASP.NET tecnologías).
+/_docs/ | Documentación directorio (contiene varios archivos).
+/_docs/change_log.txt | Un registro de los cambios realizados en la principal script entre las diferentes versiones (no se requiere para usar la script).
+/_docs/readme.ar.md | Documentación Árabe.
+/_docs/readme.de.md | Documentación Alemán.
+/_docs/readme.de.txt | Documentación Alemán.
+/_docs/readme.en.md | Documentación Inglés.
+/_docs/readme.en.txt | Documentación Inglés.
+/_docs/readme.es.md | Documentación Español.
+/_docs/readme.es.txt | Documentación Español.
+/_docs/readme.fr.md | Documentación Francés.
+/_docs/readme.fr.txt | Documentación Francés.
+/_docs/readme.id.md | Documentación Indonesio.
+/_docs/readme.id.txt | Documentación Indonesio.
+/_docs/readme.it.md | Documentación Italiano.
+/_docs/readme.it.txt | Documentación Italiano.
+/_docs/readme.nl.md | Documentación Holandés.
+/_docs/readme.nl.txt | Documentación Holandés.
+/_docs/readme.pt.md | Documentación Portugués.
+/_docs/readme.pt.txt | Documentación Portugués.
+/_docs/readme.ru.md | Documentación Ruso.
+/_docs/readme.ru.txt | Documentación Ruso.
+/_docs/readme.vi.md | Documentación Vietnamita.
+/_docs/readme.vi.txt | Documentación Vietnamita.
+/_docs/readme.zh-TW.md | Documentación Chino (Tradicional).
+/_docs/readme.zh.md | Documentación Chino (Simplificado).
+/_docs/signatures_tally.txt | Cifra neta de cambio de las incluidas firmas (no se requiere para usar la script).
+/_testfiles/ | Prueba archivos directorio (contiene varios archivos). Todos los archivos contenidos son prueba archivos para probando si phpMussel ha sido instalado correctamente en su sistema, y que no es necesario subir este directorio o cualquiera de sus archivos excepto cuando haciendo tales pruebas.
+/_testfiles/ascii_standard_testfile.txt | Prueba archivo para probando phpMussel normalizados ASCII firmas.
+/_testfiles/coex_testfile.rtf | Prueba archivo para probando phpMussel complejos extendidas firmas.
+/_testfiles/exe_standard_testfile.exe | Prueba archivo para probando phpMussel PE firmas.
+/_testfiles/general_standard_testfile.txt | Prueba archivo para probando phpMussel generales firmas.
 /_testfiles/graphics_standard_testfile.gif | Prueba archivo para probando phpMussel gráficas firmas.
-/_testfiles/html_standard_testfile.html    | Prueba archivo para probando phpMussel normalizados HTML firmas.
-/_testfiles/md5_testfile.txt               | Prueba archivo para probando phpMussel MD5 firmas.
-/_testfiles/metadata_testfile.tar          | Prueba archivo para probando phpMussel metadatos firmas y para probando TAR archivo apoyo en su sistema.
-/_testfiles/metadata_testfile.txt.gz       | Prueba archivo para probando phpMussel metadatos firmas y para probando GZ archivo apoyo en su sistema.
-/_testfiles/metadata_testfile.zip          | Prueba archivo para probando phpMussel metadatos firmas y para probando ZIP archivo apoyo en su sistema.
-/_testfiles/ole_testfile.ole               | Prueba archivo para probando phpMussel OLE firmas.
-/_testfiles/pdf_standard_testfile.pdf      | Prueba archivo para probando phpMussel PDF firmas.
-/_testfiles/pe_sectional_testfile.exe      | Prueba archivo para probando phpMussel PE Secciónal firmas.
-/_testfiles/swf_standard_testfile.swf      | Prueba archivo para probando phpMussel SWF firmas.
-/_testfiles/xdp_standard_testfile.xdp      | Prueba archivo para probando phpMussel XML/XDP firmas.
-/vault/                                    | Vault directorio (contiene varios archivos).
-/vault/cache/                              | Cache directorio (para los datos temporal).
-/vault/cache/.htaccess                     | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
-/vault/lang/                               | Contiene lingüísticos datos.
-/vault/lang/.htaccess                      | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
-/vault/lang/lang.ar.inc                    | Lingüísticos datos Árabe.
-/vault/lang/lang.de.inc                    | Lingüísticos datos Alemán.
-/vault/lang/lang.en.inc                    | Lingüísticos datos Inglés.
-/vault/lang/lang.es.inc                    | Lingüísticos datos Español.
-/vault/lang/lang.fr.inc                    | Lingüísticos datos Francés.
-/vault/lang/lang.id.inc                    | Lingüísticos datos Indonesio.
-/vault/lang/lang.it.inc                    | Lingüísticos datos Italiano.
-/vault/lang/lang.ja.inc                    | Lingüísticos datos Japonés.
-/vault/lang/lang.nl.inc                    | Lingüísticos datos Holandés.
-/vault/lang/lang.pt.inc                    | Lingüísticos datos Portugués.
-/vault/lang/lang.ru.inc                    | Lingüísticos datos Ruso.
-/vault/lang/lang.vi.inc                    | Lingüísticos datos Vietnamita.
-/vault/lang/lang.zh.inc                    | Lingüísticos datos Chino (Simplificado).
-/vault/lang/lang.zh-TW.inc                 | Lingüísticos datos Chino (Tradicional).
-/vault/quarantine/                         | Cuarentena directorio (contiene los cuarentenadas archivos).
-/vault/quarantine/.htaccess                | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
-/vault/.htaccess                           | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
-/vault/ascii_clamav_regex.cvd              | Archivo para normalizados ASCII firmas.
-/vault/ascii_clamav_regex.map              | Archivo para normalizados ASCII firmas.
-/vault/ascii_clamav_standard.cvd           | Archivo para normalizados ASCII firmas.
-/vault/ascii_clamav_standard.map           | Archivo para normalizados ASCII firmas.
-/vault/ascii_custom_regex.cvd              | Archivo para normalizados ASCII firmas.
-/vault/ascii_custom_standard.cvd           | Archivo para normalizados ASCII firmas.
-/vault/ascii_mussel_regex.cvd              | Archivo para normalizados ASCII firmas.
-/vault/ascii_mussel_standard.cvd           | Archivo para normalizados ASCII firmas.
-/vault/coex_clamav.cvd                     | Archivo para complejos extendidas firmas.
-/vault/coex_custom.cvd                     | Archivo para complejos extendidas firmas.
-/vault/coex_mussel.cvd                     | Archivo para complejos extendidas firmas.
-/vault/elf_clamav_regex.cvd                | Archivo para ELF firmas.
-/vault/elf_clamav_regex.map                | Archivo para ELF firmas.
-/vault/elf_clamav_standard.cvd             | Archivo para ELF firmas.
-/vault/elf_clamav_standard.map             | Archivo para ELF firmas.
-/vault/elf_custom_regex.cvd                | Archivo para ELF firmas.
-/vault/elf_custom_standard.cvd             | Archivo para ELF firmas.
-/vault/elf_mussel_regex.cvd                | Archivo para ELF firmas.
-/vault/elf_mussel_standard.cvd             | Archivo para ELF firmas.
-/vault/exe_clamav_regex.cvd                | Archivo para Portátil Ejecutable firmas.
-/vault/exe_clamav_regex.map                | Archivo para Portátil Ejecutable firmas.
-/vault/exe_clamav_standard.cvd             | Archivo para Portátil Ejecutable firmas.
-/vault/exe_clamav_standard.map             | Archivo para Portátil Ejecutable firmas.
-/vault/exe_custom_regex.cvd                | Archivo para Portátil Ejecutable firmas.
-/vault/exe_custom_standard.cvd             | Archivo para Portátil Ejecutable firmas.
-/vault/exe_mussel_regex.cvd                | Archivo para Portátil Ejecutable firmas.
-/vault/exe_mussel_standard.cvd             | Archivo para Portátil Ejecutable firmas.
-/vault/filenames_clamav.cvd                | Archivo para archivo nombre firmas.
-/vault/filenames_custom.cvd                | Archivo para archivo nombre firmas.
-/vault/filenames_mussel.cvd                | Archivo para archivo nombre firmas.
-/vault/general_clamav_regex.cvd            | Archivo para generales firmas.
-/vault/general_clamav_regex.map            | Archivo para generales firmas.
-/vault/general_clamav_standard.cvd         | Archivo para generales firmas.
-/vault/general_clamav_standard.map         | Archivo para generales firmas.
-/vault/general_custom_regex.cvd            | Archivo para generales firmas.
-/vault/general_custom_standard.cvd         | Archivo para generales firmas.
-/vault/general_mussel_regex.cvd            | Archivo para generales firmas.
-/vault/general_mussel_standard.cvd         | Archivo para generales firmas.
-/vault/graphics_clamav_regex.cvd           | Archivo para gráficas firmas.
-/vault/graphics_clamav_regex.map           | Archivo para gráficas firmas.
-/vault/graphics_clamav_standard.cvd        | Archivo para gráficas firmas.
-/vault/graphics_clamav_standard.map        | Archivo para gráficas firmas.
-/vault/graphics_custom_regex.cvd           | Archivo para gráficas firmas.
-/vault/graphics_custom_standard.cvd        | Archivo para gráficas firmas.
-/vault/graphics_mussel_regex.cvd           | Archivo para gráficas firmas.
-/vault/graphics_mussel_standard.cvd        | Archivo para gráficas firmas.
-/vault/greylist.csv                        | CSV de las firmas en la Greylist indicando para phpMussel las firmas que deben ser ignorados (archivo será recreado automáticamente si eliminado).
-/vault/hex_general_commands.csv            | Hex-codificado CSV de generales comandos detecciones opcionalmente utilizado por phpMussel.
-/vault/html_clamav_regex.cvd               | Archivo para normalizados HTML firmas.
-/vault/html_clamav_regex.map               | Archivo para normalizados HTML firmas.
-/vault/html_clamav_standard.cvd            | Archivo para normalizados HTML firmas.
-/vault/html_clamav_standard.map            | Archivo para normalizados HTML firmas.
-/vault/html_custom_regex.cvd               | Archivo para normalizados HTML firmas.
-/vault/html_custom_standard.cvd            | Archivo para normalizados HTML firmas.
-/vault/html_mussel_regex.cvd               | Archivo para normalizados HTML firmas.
-/vault/html_mussel_standard.cvd            | Archivo para normalizados HTML firmas.
-/vault/lang.inc                            | Lingüísticos datos.
-/vault/macho_clamav_regex.cvd              | Archivo para Mach-O firmas.
-/vault/macho_clamav_regex.map              | Archivo para Mach-O firmas.
-/vault/macho_clamav_standard.cvd           | Archivo para Mach-O firmas.
-/vault/macho_clamav_standard.map           | Archivo para Mach-O firmas.
-/vault/macho_custom_regex.cvd              | Archivo para Mach-O firmas.
-/vault/macho_custom_standard.cvd           | Archivo para Mach-O firmas.
-/vault/macho_mussel_regex.cvd              | Archivo para Mach-O firmas.
-/vault/macho_mussel_standard.cvd           | Archivo para Mach-O firmas.
-/vault/mail_clamav_regex.cvd               | Archivo para mail firmas.
-/vault/mail_clamav_regex.map               | Archivo para mail firmas.
-/vault/mail_clamav_standard.cvd            | Archivo para mail firmas.
-/vault/mail_clamav_standard.map            | Archivo para mail firmas.
-/vault/mail_custom_regex.cvd               | Archivo para mail firmas.
-/vault/mail_custom_standard.cvd            | Archivo para mail firmas.
-/vault/mail_mussel_regex.cvd               | Archivo para mail firmas.
-/vault/mail_mussel_standard.cvd            | Archivo para mail firmas.
-/vault/md5_clamav.cvd                      | Archivo para MD5 basadas firmas.
-/vault/md5_custom.cvd                      | Archivo para MD5 basadas firmas.
-/vault/md5_mussel.cvd                      | Archivo para MD5 basadas firmas.
-/vault/metadata_clamav.cvd                 | Archivo para archivo metadatos firmas.
-/vault/metadata_custom.cvd                 | Archivo para archivo metadatos firmas.
-/vault/metadata_mussel.cvd                 | Archivo para archivo metadatos firmas.
-/vault/ole_clamav_regex.cvd                | Archivo para OLE firmas.
-/vault/ole_clamav_regex.map                | Archivo para OLE firmas.
-/vault/ole_clamav_standard.cvd             | Archivo para OLE firmas.
-/vault/ole_clamav_standard.map             | Archivo para OLE firmas.
-/vault/ole_custom_regex.cvd                | Archivo para OLE firmas.
-/vault/ole_custom_standard.cvd             | Archivo para OLE firmas.
-/vault/ole_mussel_regex.cvd                | Archivo para OLE firmas.
-/vault/ole_mussel_standard.cvd             | Archivo para OLE firmas.
-/vault/pdf_clamav_regex.cvd                | Archivo para PDF firmas.
-/vault/pdf_clamav_regex.map                | Archivo para PDF firmas.
-/vault/pdf_clamav_standard.cvd             | Archivo para PDF firmas.
-/vault/pdf_clamav_standard.map             | Archivo para PDF firmas.
-/vault/pdf_custom_regex.cvd                | Archivo para PDF firmas.
-/vault/pdf_custom_standard.cvd             | Archivo para PDF firmas.
-/vault/pdf_mussel_regex.cvd                | Archivo para PDF firmas.
-/vault/pdf_mussel_standard.cvd             | Archivo para PDF firmas.
-/vault/pe_clamav.cvd                       | Archivo para PE Secciónal firmas.
-/vault/pe_custom.cvd                       | Archivo para PE Secciónal firmas.
-/vault/pe_mussel.cvd                       | Archivo para PE Secciónal firmas.
-/vault/pex_custom.cvd                      | Archivo para PE extendidas firmas.
-/vault/pex_mussel.cvd                      | Archivo para PE extendidas firmas.
-/vault/phpmussel.inc                       | Núcleo Script; La principal cuerpo de phpMussel (esencial)!
-/vault/phpmussel.ini                       | Configuración archivo; Contiene todas las configuración opciones para phpMussel, instruyendo para qué hacer y cómo operar correctamente (esencial)!
-※ /vault/scan_log.txt                     | Un registro de todo escaneado por phpMussel.
-※ /vault/scan_log_serialized.txt          | Un registro de todo escaneado por phpMussel.
-※ /vault/scan_kills.txt                   | Un registro de todos archivos subidos bloqueado/asesinado por phpMussel.
-/vault/swf_clamav_regex.cvd                | Archivo para Shockwave firmas.
-/vault/swf_clamav_regex.map                | Archivo para Shockwave firmas.
-/vault/swf_clamav_standard.cvd             | Archivo para Shockwave firmas.
-/vault/swf_clamav_standard.map             | Archivo para Shockwave firmas.
-/vault/swf_custom_regex.cvd                | Archivo para Shockwave firmas.
-/vault/swf_custom_standard.cvd             | Archivo para Shockwave firmas.
-/vault/swf_mussel_regex.cvd                | Archivo para Shockwave firmas.
-/vault/swf_mussel_standard.cvd             | Archivo para Shockwave firmas.
-/vault/switch.dat                          | Esto controla y establece ciertas variables.
-/vault/template.html                       | Plantilla archivo; Plantilla para HTML producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
-/vault/template_custom.html                | Plantilla archivo; Plantilla para HTML producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
-/vault/update.dat                          | Archivo que contiene la versión información tanto para la phpMussel script y para la phpMussel firmas. Si alguna vez desea actualizar automáticamente phpMussel o desea actualizar phpMussel través de su navegador, este archivo es esencial.
-/vault/update.inc                          | Actualización Script; Requerido para automáticas actualizaciones y para actualizando phpMussel través de su navegador, pero no es requerido por lo demás.
-/vault/urlscanner.cvd                      | Archivo para URL escáner firmas.
-/vault/whitelist_clamav.cvd                | Archivo específico whitelist.
-/vault/whitelist_custom.cvd                | Archivo específico whitelist.
-/vault/whitelist_mussel.cvd                | Archivo específico whitelist.
-/vault/xmlxdp_clamav_regex.cvd             | Archivo para XML/XDP firmas.
-/vault/xmlxdp_clamav_regex.map             | Archivo para XML/XDP firmas.
-/vault/xmlxdp_clamav_standard.cvd          | Archivo para XML/XDP firmas.
-/vault/xmlxdp_clamav_standard.map          | Archivo para XML/XDP firmas.
-/vault/xmlxdp_custom_regex.cvd             | Archivo para XML/XDP firmas.
-/vault/xmlxdp_custom_standard.cvd          | Archivo para XML/XDP firmas.
-/vault/xmlxdp_mussel_regex.cvd             | Archivo para XML/XDP firmas.
-/vault/xmlxdp_mussel_standard.cvd          | Archivo para XML/XDP firmas.
+/_testfiles/html_standard_testfile.html | Prueba archivo para probando phpMussel normalizados HTML firmas.
+/_testfiles/md5_testfile.txt | Prueba archivo para probando phpMussel MD5 firmas.
+/_testfiles/metadata_testfile.tar | Prueba archivo para probando phpMussel metadatos firmas y para probando TAR archivo apoyo en su sistema.
+/_testfiles/metadata_testfile.txt.gz | Prueba archivo para probando phpMussel metadatos firmas y para probando GZ archivo apoyo en su sistema.
+/_testfiles/metadata_testfile.zip | Prueba archivo para probando phpMussel metadatos firmas y para probando ZIP archivo apoyo en su sistema.
+/_testfiles/ole_testfile.ole | Prueba archivo para probando phpMussel OLE firmas.
+/_testfiles/pdf_standard_testfile.pdf | Prueba archivo para probando phpMussel PDF firmas.
+/_testfiles/pe_sectional_testfile.exe | Prueba archivo para probando phpMussel PE Secciónal firmas.
+/_testfiles/swf_standard_testfile.swf | Prueba archivo para probando phpMussel SWF firmas.
+/_testfiles/xdp_standard_testfile.xdp | Prueba archivo para probando phpMussel XML/XDP firmas.
+/vault/ | Vault directorio (contiene varios archivos).
+/vault/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
+/vault/cache/ | Cache directorio (para los datos temporal).
+/vault/cache/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
+/vault/cli.inc | CLI handler. @TranslateMe@
+/vault/config.inc | Configuration handler. @TranslateMe@
+/vault/controls.inc | Controls handler. @TranslateMe@
+/vault/functions.inc | Functions file (essential). @TranslateMe@
+/vault/greylist.csv | CSV de las firmas en la Greylist indicando para phpMussel las firmas que deben ser ignorados (archivo será recreado automáticamente si eliminado).
+/vault/lang.inc | Lingüísticos datos.
+/vault/lang/ | Contiene lingüísticos datos.
+/vault/lang/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
+/vault/lang/lang.ar.inc | Lingüísticos datos Árabe.
+/vault/lang/lang.de.inc | Lingüísticos datos Alemán.
+/vault/lang/lang.en.inc | Lingüísticos datos Inglés.
+/vault/lang/lang.es.inc | Lingüísticos datos Español.
+/vault/lang/lang.fr.inc | Lingüísticos datos Francés.
+/vault/lang/lang.id.inc | Lingüísticos datos Indonesio.
+/vault/lang/lang.it.inc | Lingüísticos datos Italiano.
+/vault/lang/lang.ja.inc | Lingüísticos datos Japonés.
+/vault/lang/lang.nl.inc | Lingüísticos datos Holandés.
+/vault/lang/lang.pt.inc | Lingüísticos datos Portugués.
+/vault/lang/lang.ru.inc | Lingüísticos datos Ruso.
+/vault/lang/lang.vi.inc | Lingüísticos datos Vietnamita.
+/vault/lang/lang.zh-TW.inc | Lingüísticos datos Chino (Tradicional).
+/vault/lang/lang.zh.inc | Lingüísticos datos Chino (Simplificado).
+/vault/phpmussel.ini | Configuración archivo; Contiene todas las configuración opciones para phpMussel, instruyendo para qué hacer y cómo operar correctamente (esencial)!
+/vault/quarantine/ | Directorio de cuarentena (contiene los cuarentenadas archivos).
+/vault/quarantine/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
+※ /vault/scan_kills.txt | Un registro de todos archivos subidos bloqueado/asesinado por phpMussel.
+※ /vault/scan_log.txt | Un registro de todo escaneado por phpMussel.
+※ /vault/scan_log_serialized.txt | Un registro de todo escaneado por phpMussel.
+/vault/signatures/ | Directorio de firmas (contiene los archivos de firmas).
+/vault/signatures/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
+/vault/signatures/ascii_clamav_regex.cvd | Archivo para normalizados ASCII firmas.
+/vault/signatures/ascii_clamav_regex.map | Archivo para normalizados ASCII firmas.
+/vault/signatures/ascii_clamav_standard.cvd | Archivo para normalizados ASCII firmas.
+/vault/signatures/ascii_clamav_standard.map | Archivo para normalizados ASCII firmas.
+/vault/signatures/ascii_custom_regex.cvd | Archivo para normalizados ASCII firmas.
+/vault/signatures/ascii_custom_standard.cvd | Archivo para normalizados ASCII firmas.
+/vault/signatures/ascii_mussel_regex.cvd | Archivo para normalizados ASCII firmas.
+/vault/signatures/ascii_mussel_standard.cvd | Archivo para normalizados ASCII firmas.
+/vault/signatures/coex_clamav.cvd | Archivo para complejos extendidas firmas.
+/vault/signatures/coex_custom.cvd | Archivo para complejos extendidas firmas.
+/vault/signatures/coex_mussel.cvd | Archivo para complejos extendidas firmas.
+/vault/signatures/elf_clamav_regex.cvd | Archivo para ELF firmas.
+/vault/signatures/elf_clamav_regex.map | Archivo para ELF firmas.
+/vault/signatures/elf_clamav_standard.cvd | Archivo para ELF firmas.
+/vault/signatures/elf_clamav_standard.map | Archivo para ELF firmas.
+/vault/signatures/elf_custom_regex.cvd | Archivo para ELF firmas.
+/vault/signatures/elf_custom_standard.cvd | Archivo para ELF firmas.
+/vault/signatures/elf_mussel_regex.cvd | Archivo para ELF firmas.
+/vault/signatures/elf_mussel_standard.cvd | Archivo para ELF firmas.
+/vault/signatures/exe_clamav_regex.cvd | Archivo para Portátil Ejecutable firmas.
+/vault/signatures/exe_clamav_regex.map | Archivo para Portátil Ejecutable firmas.
+/vault/signatures/exe_clamav_standard.cvd | Archivo para Portátil Ejecutable firmas.
+/vault/signatures/exe_clamav_standard.map | Archivo para Portátil Ejecutable firmas.
+/vault/signatures/exe_custom_regex.cvd | Archivo para Portátil Ejecutable firmas.
+/vault/signatures/exe_custom_standard.cvd | Archivo para Portátil Ejecutable firmas.
+/vault/signatures/exe_mussel_regex.cvd | Archivo para Portátil Ejecutable firmas.
+/vault/signatures/exe_mussel_standard.cvd | Archivo para Portátil Ejecutable firmas.
+/vault/signatures/filenames_clamav.cvd | Archivo para archivo nombre firmas.
+/vault/signatures/filenames_custom.cvd | Archivo para archivo nombre firmas.
+/vault/signatures/filenames_mussel.cvd | Archivo para archivo nombre firmas.
+/vault/signatures/general_clamav_regex.cvd | Archivo para generales firmas.
+/vault/signatures/general_clamav_regex.map | Archivo para generales firmas.
+/vault/signatures/general_clamav_standard.cvd | Archivo para generales firmas.
+/vault/signatures/general_clamav_standard.map | Archivo para generales firmas.
+/vault/signatures/general_custom_regex.cvd | Archivo para generales firmas.
+/vault/signatures/general_custom_standard.cvd | Archivo para generales firmas.
+/vault/signatures/general_mussel_regex.cvd | Archivo para generales firmas.
+/vault/signatures/general_mussel_standard.cvd | Archivo para generales firmas.
+/vault/signatures/graphics_clamav_regex.cvd | Archivo para gráficas firmas.
+/vault/signatures/graphics_clamav_regex.map | Archivo para gráficas firmas.
+/vault/signatures/graphics_clamav_standard.cvd | Archivo para gráficas firmas.
+/vault/signatures/graphics_clamav_standard.map | Archivo para gráficas firmas.
+/vault/signatures/graphics_custom_regex.cvd | Archivo para gráficas firmas.
+/vault/signatures/graphics_custom_standard.cvd | Archivo para gráficas firmas.
+/vault/signatures/graphics_mussel_regex.cvd | Archivo para gráficas firmas.
+/vault/signatures/graphics_mussel_standard.cvd | Archivo para gráficas firmas.
+/vault/signatures/hex_general_commands.csv | Hex-codificado CSV de generales comandos detecciones opcionalmente utilizado por phpMussel.
+/vault/signatures/html_clamav_regex.cvd | Archivo para normalizados HTML firmas.
+/vault/signatures/html_clamav_regex.map | Archivo para normalizados HTML firmas.
+/vault/signatures/html_clamav_standard.cvd | Archivo para normalizados HTML firmas.
+/vault/signatures/html_clamav_standard.map | Archivo para normalizados HTML firmas.
+/vault/signatures/html_custom_regex.cvd | Archivo para normalizados HTML firmas.
+/vault/signatures/html_custom_standard.cvd | Archivo para normalizados HTML firmas.
+/vault/signatures/html_mussel_regex.cvd | Archivo para normalizados HTML firmas.
+/vault/signatures/html_mussel_standard.cvd | Archivo para normalizados HTML firmas.
+/vault/signatures/macho_clamav_regex.cvd | Archivo para Mach-O firmas.
+/vault/signatures/macho_clamav_regex.map | Archivo para Mach-O firmas.
+/vault/signatures/macho_clamav_standard.cvd | Archivo para Mach-O firmas.
+/vault/signatures/macho_clamav_standard.map | Archivo para Mach-O firmas.
+/vault/signatures/macho_custom_regex.cvd | Archivo para Mach-O firmas.
+/vault/signatures/macho_custom_standard.cvd | Archivo para Mach-O firmas.
+/vault/signatures/macho_mussel_regex.cvd | Archivo para Mach-O firmas.
+/vault/signatures/macho_mussel_standard.cvd | Archivo para Mach-O firmas.
+/vault/signatures/mail_clamav_regex.cvd | Archivo para mail firmas.
+/vault/signatures/mail_clamav_regex.map | Archivo para mail firmas.
+/vault/signatures/mail_clamav_standard.cvd | Archivo para mail firmas.
+/vault/signatures/mail_clamav_standard.map | Archivo para mail firmas.
+/vault/signatures/mail_custom_regex.cvd | Archivo para mail firmas.
+/vault/signatures/mail_custom_standard.cvd | Archivo para mail firmas.
+/vault/signatures/mail_mussel_regex.cvd | Archivo para mail firmas.
+/vault/signatures/mail_mussel_standard.cvd | Archivo para mail firmas.
+/vault/signatures/md5_clamav.cvd | Archivo para MD5 basadas firmas.
+/vault/signatures/md5_custom.cvd | Archivo para MD5 basadas firmas.
+/vault/signatures/md5_mussel.cvd | Archivo para MD5 basadas firmas.
+/vault/signatures/metadata_clamav.cvd | Archivo para archivo metadatos firmas.
+/vault/signatures/metadata_custom.cvd | Archivo para archivo metadatos firmas.
+/vault/signatures/metadata_mussel.cvd | Archivo para archivo metadatos firmas.
+/vault/signatures/ole_clamav_regex.cvd | Archivo para OLE firmas.
+/vault/signatures/ole_clamav_regex.map | Archivo para OLE firmas.
+/vault/signatures/ole_clamav_standard.cvd | Archivo para OLE firmas.
+/vault/signatures/ole_clamav_standard.map | Archivo para OLE firmas.
+/vault/signatures/ole_custom_regex.cvd | Archivo para OLE firmas.
+/vault/signatures/ole_custom_standard.cvd | Archivo para OLE firmas.
+/vault/signatures/ole_mussel_regex.cvd | Archivo para OLE firmas.
+/vault/signatures/ole_mussel_standard.cvd | Archivo para OLE firmas.
+/vault/signatures/pdf_clamav_regex.cvd | Archivo para PDF firmas.
+/vault/signatures/pdf_clamav_regex.map | Archivo para PDF firmas.
+/vault/signatures/pdf_clamav_standard.cvd | Archivo para PDF firmas.
+/vault/signatures/pdf_clamav_standard.map | Archivo para PDF firmas.
+/vault/signatures/pdf_custom_regex.cvd | Archivo para PDF firmas.
+/vault/signatures/pdf_custom_standard.cvd | Archivo para PDF firmas.
+/vault/signatures/pdf_mussel_regex.cvd | Archivo para PDF firmas.
+/vault/signatures/pdf_mussel_standard.cvd | Archivo para PDF firmas.
+/vault/signatures/pex_custom.cvd | Archivo para PE extendidas firmas.
+/vault/signatures/pex_mussel.cvd | Archivo para PE extendidas firmas.
+/vault/signatures/pe_clamav.cvd | Archivo para PE Secciónal firmas.
+/vault/signatures/pe_custom.cvd | Archivo para PE Secciónal firmas.
+/vault/signatures/pe_mussel.cvd | Archivo para PE Secciónal firmas.
+/vault/signatures/swf_clamav_regex.cvd | Archivo para Shockwave firmas.
+/vault/signatures/swf_clamav_regex.map | Archivo para Shockwave firmas.
+/vault/signatures/swf_clamav_standard.cvd | Archivo para Shockwave firmas.
+/vault/signatures/swf_clamav_standard.map | Archivo para Shockwave firmas.
+/vault/signatures/swf_custom_regex.cvd | Archivo para Shockwave firmas.
+/vault/signatures/swf_custom_standard.cvd | Archivo para Shockwave firmas.
+/vault/signatures/swf_mussel_regex.cvd | Archivo para Shockwave firmas.
+/vault/signatures/swf_mussel_standard.cvd | Archivo para Shockwave firmas.
+/vault/signatures/switch.dat | Esto controla y establece ciertas variables.
+/vault/signatures/urlscanner.cvd | Archivo para URL escáner firmas.
+/vault/signatures/whitelist_clamav.cvd | Archivo específico whitelist.
+/vault/signatures/whitelist_custom.cvd | Archivo específico whitelist.
+/vault/signatures/whitelist_mussel.cvd | Archivo específico whitelist.
+/vault/signatures/xmlxdp_clamav_regex.cvd | Archivo para XML/XDP firmas.
+/vault/signatures/xmlxdp_clamav_regex.map | Archivo para XML/XDP firmas.
+/vault/signatures/xmlxdp_clamav_standard.cvd | Archivo para XML/XDP firmas.
+/vault/signatures/xmlxdp_clamav_standard.map | Archivo para XML/XDP firmas.
+/vault/signatures/xmlxdp_custom_regex.cvd | Archivo para XML/XDP firmas.
+/vault/signatures/xmlxdp_custom_standard.cvd | Archivo para XML/XDP firmas.
+/vault/signatures/xmlxdp_mussel_regex.cvd | Archivo para XML/XDP firmas.
+/vault/signatures/xmlxdp_mussel_standard.cvd | Archivo para XML/XDP firmas.
+/vault/template.html | Plantilla archivo; Plantilla para HTML producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
+/vault/template_custom.html | Plantilla archivo; Plantilla para HTML producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
+/vault/update.dat | Archivo que contiene la versión información tanto para la phpMussel script y para la phpMussel firmas. Si alguna vez desea actualizar automáticamente phpMussel o desea actualizar phpMussel través de su navegador, este archivo es esencial.
+/vault/update.inc | Actualización Script; Requerido para automáticas actualizaciones y para actualizando phpMussel través de su navegador, pero no es requerido por lo demás.
+/vault/upload.inc | Upload handler. @TranslateMe@
 
 ※ Nombre del archivo puede variar basado de las estipulaciones de configuración (en `phpmussel.ini`).
 
@@ -996,4 +1002,4 @@ Esta información ha sido actualizado 12 Diciembre 2015 y es a hoy para todas la
 ---
 
 
-Última Actualización: 7 Febrero 2016 (2016.02.07).
+Última Actualización: 24 Febrero 2016 (2016.02.23).

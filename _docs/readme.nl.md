@@ -255,210 +255,216 @@ Voor een lijst van beschikbare CLI commando's, bij de CLI-prompt, typ 'c', en dr
 
 Het volgende is een lijst van alle bestanden die moeten worden opgenomen in de gearchiveerde kopie van dit script als u gedownload het, alle bestanden die kunt mogelijk worden gemaakt als resultaat van uw gebruik van dit script, samen met een korte beschrijving van wat al deze bestanden zijn voor.
 
-Bestand                                    | Beschrijving
--------------------------------------------|--------------------------------------
-/.gitattributes                            | @todo
-/composer.json                             | @todo
-/CONTRIBUTING.md                           | @todo
-/LICENSE.txt                               | @todo
-/PEOPLE.md                                 | @todo
-/phpmussel.php                             | Laderbestand. Laadt de belangrijkste script, updater, ezv. Dit is wat u zou moeten worden inhaken in (essentieel)!
-/README.md                                 | @todo
-/web.config                                | Een ASP.NET-configuratiebestand (in dit geval, naar het bestandsmap "vault" te beschermen tegen toegang door niet-geautoriseerde bronnen indien het script is geïnstalleerd op een server op basis van ASP.NET technologieën).
-/_docs/                                    | Documentatie bestandsmap (bevat verschillende bestanden).
-/_docs/change_log.txt                      | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
-/_docs/readme.ar.md                        | Arabisch documentatie.
-/_docs/readme.de.md                        | Duitse documentatie.
-/_docs/readme.de.txt                       | Duitse documentatie.
-/_docs/readme.en.md                        | Engels documentatie.
-/_docs/readme.en.txt                       | Engels documentatie.
-/_docs/readme.es.md                        | Spaanse documentatie.
-/_docs/readme.es.txt                       | Spaanse documentatie.
-/_docs/readme.fr.md                        | Franse documentatie.
-/_docs/readme.fr.txt                       | Franse documentatie.
-/_docs/readme.id.md                        | Indonesisch documentatie.
-/_docs/readme.id.txt                       | Indonesisch documentatie.
-/_docs/readme.it.md                        | Italiaanse documentatie.
-/_docs/readme.it.txt                       | Italiaanse documentatie.
-/_docs/readme.nl.md                        | Nederlandse documentatie.
-/_docs/readme.nl.txt                       | Nederlandse documentatie.
-/_docs/readme.pt.md                        | Portugees documentatie.
-/_docs/readme.pt.txt                       | Portugees documentatie.
-/_docs/readme.ru.md                        | Russische documentatie.
-/_docs/readme.ru.txt                       | Russische documentatie.
-/_docs/readme.vi.md                        | Vietnamees documentatie.
-/_docs/readme.vi.txt                       | Vietnamees documentatie.
-/_docs/readme.zh.md                        | Chinees (Vereenvoudigd) documentatie.
-/_docs/readme.zh-TW.md                     | Chinees (Traditioneel) documentatie.
-/_docs/signatures_tally.txt                | Net-shift tally van meegeleverde handtekeningen (niet vereist voor een goede werking van het script).
-/_testfiles/                               | Testbestanden bestandsmap (bevat verschillende bestanden). Alle opgenomen bestanden zijn testbestanden voor het testen als phpMussel correct op uw systeem is geïnstalleerd, en u hoeft niet om deze map of een van het bestanden, behalve bij het doen van dergelijke testen te uploaden.
-/_testfiles/ascii_standard_testfile.txt    | Testbestand voor het testen phpMussel genormaliseerde ASCII handtekeningen.
-/_testfiles/coex_testfile.rtf              | Testbestand voor het testen phpMussel complexe uitgebreide handtekeningen.
-/_testfiles/exe_standard_testfile.exe      | Testbestand voor het testen phpMussel PE handtekeningen.
-/_testfiles/general_standard_testfile.txt  | Testbestand voor het testen phpMussel algemene handtekeningen.
+Bestand | Beschrijving
+----|----
+/.gitattributes | Een GitHub project bestand (niet vereist voor een goede werking van het script).
+/composer.json | Composer/Packagist informatie (niet vereist voor een goede werking van het script).
+/CONTRIBUTING.md | Informatie over hoe bij te dragen aan het project.
+/LICENSE.txt | Een kopie van de GNU/GPLv2 licentie.
+/PEOPLE.md | Informatie over de bij het project betrokken personen.
+/phpmussel.php | Lader (laadt de belangrijkste script, updater, ezv). Dit is wat u zou moeten worden inhaken in (essentieel)!
+/README.md | Project beknopte informatie.
+/web.config | Een ASP.NET-configuratiebestand (in dit geval, naar het bestandsmap "vault" te beschermen tegen toegang door niet-geautoriseerde bronnen indien het script is geïnstalleerd op een server op basis van ASP.NET technologieën).
+/_docs/ | Documentatie bestandsmap (bevat verschillende bestanden).
+/_docs/change_log.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
+/_docs/readme.ar.md | Arabisch documentatie.
+/_docs/readme.de.md | Duitse documentatie.
+/_docs/readme.de.txt | Duitse documentatie.
+/_docs/readme.en.md | Engels documentatie.
+/_docs/readme.en.txt | Engels documentatie.
+/_docs/readme.es.md | Spaanse documentatie.
+/_docs/readme.es.txt | Spaanse documentatie.
+/_docs/readme.fr.md | Franse documentatie.
+/_docs/readme.fr.txt | Franse documentatie.
+/_docs/readme.id.md | Indonesisch documentatie.
+/_docs/readme.id.txt | Indonesisch documentatie.
+/_docs/readme.it.md | Italiaanse documentatie.
+/_docs/readme.it.txt | Italiaanse documentatie.
+/_docs/readme.nl.md | Nederlandse documentatie.
+/_docs/readme.nl.txt | Nederlandse documentatie.
+/_docs/readme.pt.md | Portugees documentatie.
+/_docs/readme.pt.txt | Portugees documentatie.
+/_docs/readme.ru.md | Russische documentatie.
+/_docs/readme.ru.txt | Russische documentatie.
+/_docs/readme.vi.md | Vietnamees documentatie.
+/_docs/readme.vi.txt | Vietnamees documentatie.
+/_docs/readme.zh-TW.md | Chinees (Traditioneel) documentatie.
+/_docs/readme.zh.md | Chinees (Vereenvoudigd) documentatie.
+/_docs/signatures_tally.txt | Net-shift tally van meegeleverde handtekeningen (niet vereist voor een goede werking van het script).
+/_testfiles/ | Testbestanden bestandsmap (bevat verschillende bestanden). Alle opgenomen bestanden zijn testbestanden voor het testen als phpMussel correct op uw systeem is geïnstalleerd, en u hoeft niet om deze map of een van het bestanden, behalve bij het doen van dergelijke testen te uploaden.
+/_testfiles/ascii_standard_testfile.txt | Testbestand voor het testen phpMussel genormaliseerde ASCII handtekeningen.
+/_testfiles/coex_testfile.rtf | Testbestand voor het testen phpMussel complexe uitgebreide handtekeningen.
+/_testfiles/exe_standard_testfile.exe | Testbestand voor het testen phpMussel PE handtekeningen.
+/_testfiles/general_standard_testfile.txt | Testbestand voor het testen phpMussel algemene handtekeningen.
 /_testfiles/graphics_standard_testfile.gif | Testbestand voor het testen phpMussel grafische handtekeningen.
-/_testfiles/html_standard_testfile.html    | Testbestand voor het testen phpMussel genormaliseerde HTML handtekeningen.
-/_testfiles/md5_testfile.txt               | Testbestand voor het testen phpMussel MD5 handtekeningen.
-/_testfiles/metadata_testfile.tar          | Testbestand voor het testen phpMussel metadata handtekeningen en voor het testen van TAR bestandsondersteuning op uw systeem.
-/_testfiles/metadata_testfile.txt.gz       | Testbestand voor het testen phpMussel metadata handtekeningen en voor het testen van GZ bestandsondersteuning op uw systeem.
-/_testfiles/metadata_testfile.zip          | Testbestand voor het testen phpMussel metadata handtekeningen en voor het testen van ZIP bestandsondersteuning op uw systeem.
-/_testfiles/ole_testfile.ole               | Testbestand voor het testen phpMussel OLE handtekeningen.
-/_testfiles/pdf_standard_testfile.pdf      | Testbestand voor het testen phpMussel PDF handtekeningen.
-/_testfiles/pe_sectional_testfile.exe      | Testbestand voor het testen phpMussel PE Sectionele handtekeningen.
-/_testfiles/swf_standard_testfile.swf      | Testbestand voor het testen phpMussel SWF handtekeningen.
-/_testfiles/xdp_standard_testfile.xdp      | Testbestand voor het testen phpMussel XML/XDP handtekeningen.
-/vault/                                    | Vault bestandsmap (bevat verschillende bestanden).
-/vault/cache/                              | Cache bestandsmap (tijdelijke data).
-/vault/cache/.htaccess                     | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/lang/                               | Bevat phpMussel taaldata.
-/vault/lang/.htaccess                      | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/lang/lang.ar.inc                    | Arabisch taaldata.
-/vault/lang/lang.de.inc                    | Duitse taaldata.
-/vault/lang/lang.en.inc                    | Engels taaldata.
-/vault/lang/lang.es.inc                    | Spaanse taaldata.
-/vault/lang/lang.fr.inc                    | Franse taaldata.
-/vault/lang/lang.id.inc                    | Indonesisch taaldata.
-/vault/lang/lang.it.inc                    | Italiaanse taaldata.
-/vault/lang/lang.ja.inc                    | Japanse taaldata.
-/vault/lang/lang.nl.inc                    | Nederlandse taaldata.
-/vault/lang/lang.pt.inc                    | Portugees taaldata.
-/vault/lang/lang.ru.inc                    | Russische taaldata.
-/vault/lang/lang.vi.inc                    | Vietnamees taaldata.
-/vault/lang/lang.zh.inc                    | Chinees (Vereenvoudigd) taaldata.
-/vault/lang/lang.zh-TW.inc                 | Chinees (Traditioneel) taaldata.
-/vault/quarantine/                         | Quarantaine bestandsmap (bestanden in quarantaine bevat).
-/vault/quarantine/.htaccess                | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/.htaccess                           | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/ascii_clamav_regex.cvd              | Bestand voor genormaliseerde ASCII handtekeningen.
-/vault/ascii_clamav_regex.map              | Bestand voor genormaliseerde ASCII handtekeningen.
-/vault/ascii_clamav_standard.cvd           | Bestand voor genormaliseerde ASCII handtekeningen.
-/vault/ascii_clamav_standard.map           | Bestand voor genormaliseerde ASCII handtekeningen.
-/vault/ascii_custom_regex.cvd              | Bestand voor genormaliseerde ASCII handtekeningen.
-/vault/ascii_custom_standard.cvd           | Bestand voor genormaliseerde ASCII handtekeningen.
-/vault/ascii_mussel_regex.cvd              | Bestand voor genormaliseerde ASCII handtekeningen.
-/vault/ascii_mussel_standard.cvd           | Bestand voor genormaliseerde ASCII handtekeningen.
-/vault/coex_clamav.cvd                     | Bestand voor complexe uitgebreide handtekeningen.
-/vault/coex_custom.cvd                     | Bestand voor complexe uitgebreide handtekeningen.
-/vault/coex_mussel.cvd                     | Bestand voor complexe uitgebreide handtekeningen.
-/vault/elf_clamav_regex.cvd                | Bestand voor ELF handtekeningen.
-/vault/elf_clamav_regex.map                | Bestand voor ELF handtekeningen.
-/vault/elf_clamav_standard.cvd             | Bestand voor ELF handtekeningen.
-/vault/elf_clamav_standard.map             | Bestand voor ELF handtekeningen.
-/vault/elf_custom_regex.cvd                | Bestand voor ELF handtekeningen.
-/vault/elf_custom_standard.cvd             | Bestand voor ELF handtekeningen.
-/vault/elf_mussel_regex.cvd                | Bestand voor ELF handtekeningen.
-/vault/elf_mussel_standard.cvd             | Bestand voor ELF handtekeningen.
-/vault/exe_clamav_regex.cvd                | Bestand voor PE (Portable Executable) handtekeningen.
-/vault/exe_clamav_regex.map                | Bestand voor PE (Portable Executable) handtekeningen.
-/vault/exe_clamav_standard.cvd             | Bestand voor PE (Portable Executable) handtekeningen.
-/vault/exe_clamav_standard.map             | Bestand voor PE (Portable Executable) handtekeningen.
-/vault/exe_custom_regex.cvd                | Bestand voor PE (Portable Executable) handtekeningen.
-/vault/exe_custom_standard.cvd             | Bestand voor PE (Portable Executable) handtekeningen.
-/vault/exe_mussel_regex.cvd                | Bestand voor PE (Portable Executable) handtekeningen.
-/vault/exe_mussel_standard.cvd             | Bestand voor PE (Portable Executable) handtekeningen.
-/vault/filenames_clamav.cvd                | Bestand voor bestandsnaam handtekeningen.
-/vault/filenames_custom.cvd                | Bestand voor bestandsnaam handtekeningen.
-/vault/filenames_mussel.cvd                | Bestand voor bestandsnaam handtekeningen.
-/vault/general_clamav_regex.cvd            | Bestand voor algemene handtekeningen.
-/vault/general_clamav_regex.map            | Bestand voor algemene handtekeningen.
-/vault/general_clamav_standard.cvd         | Bestand voor algemene handtekeningen.
-/vault/general_clamav_standard.map         | Bestand voor algemene handtekeningen.
-/vault/general_custom_regex.cvd            | Bestand voor algemene handtekeningen.
-/vault/general_custom_standard.cvd         | Bestand voor algemene handtekeningen.
-/vault/general_mussel_regex.cvd            | Bestand voor algemene handtekeningen.
-/vault/general_mussel_standard.cvd         | Bestand voor algemene handtekeningen.
-/vault/graphics_clamav_regex.cvd           | Bestand voor grafische handtekeningen.
-/vault/graphics_clamav_regex.map           | Bestand voor grafische handtekeningen.
-/vault/graphics_clamav_standard.cvd        | Bestand voor grafische handtekeningen.
-/vault/graphics_clamav_standard.map        | Bestand voor grafische handtekeningen.
-/vault/graphics_custom_regex.cvd           | Bestand voor grafische handtekeningen.
-/vault/graphics_custom_standard.cvd        | Bestand voor grafische handtekeningen.
-/vault/graphics_mussel_regex.cvd           | Bestand voor grafische handtekeningen.
-/vault/graphics_mussel_standard.cvd        | Bestand voor grafische handtekeningen.
-/vault/greylist.csv                        | CSV van greylisted handtekeningen aangeeft om phpMussel waarop handtekeningen moet worden negeren (bestand automatisch aangemaakt opnieuw als verwijderd).
-/vault/hex_general_commands.csv            | Hex-gecodeerde CSV van algemene commando detecties optioneel gebruikt door phpMussel.
-/vault/html_clamav_regex.cvd               | Bestand voor genormaliseerde HTML handtekeningen.
-/vault/html_clamav_regex.map               | Bestand voor genormaliseerde HTML handtekeningen.
-/vault/html_clamav_standard.cvd            | Bestand voor genormaliseerde HTML handtekeningen.
-/vault/html_clamav_standard.map            | Bestand voor genormaliseerde HTML handtekeningen.
-/vault/html_custom_regex.cvd               | Bestand voor genormaliseerde HTML handtekeningen.
-/vault/html_custom_standard.cvd            | Bestand voor genormaliseerde HTML handtekeningen.
-/vault/html_mussel_regex.cvd               | Bestand voor genormaliseerde HTML handtekeningen.
-/vault/html_mussel_standard.cvd            | Bestand voor genormaliseerde HTML handtekeningen.
-/vault/lang.inc                            | taaldata.
-/vault/macho_clamav_regex.cvd              | Bestand voor Mach-O handtekeningen.
-/vault/macho_clamav_regex.map              | Bestand voor Mach-O handtekeningen.
-/vault/macho_clamav_standard.cvd           | Bestand voor Mach-O handtekeningen.
-/vault/macho_clamav_standard.map           | Bestand voor Mach-O handtekeningen.
-/vault/macho_custom_regex.cvd              | Bestand voor Mach-O handtekeningen.
-/vault/macho_custom_standard.cvd           | Bestand voor Mach-O handtekeningen.
-/vault/macho_mussel_regex.cvd              | Bestand voor Mach-O handtekeningen.
-/vault/macho_mussel_standard.cvd           | Bestand voor Mach-O handtekeningen.
-/vault/mail_clamav_regex.cvd               | Bestand voor mail handtekeningen.
-/vault/mail_clamav_regex.map               | Bestand voor mail handtekeningen.
-/vault/mail_clamav_standard.cvd            | Bestand voor mail handtekeningen.
-/vault/mail_clamav_standard.map            | Bestand voor mail handtekeningen.
-/vault/mail_custom_regex.cvd               | Bestand voor mail handtekeningen.
-/vault/mail_custom_standard.cvd            | Bestand voor mail handtekeningen.
-/vault/mail_mussel_regex.cvd               | Bestand voor mail handtekeningen.
-/vault/mail_mussel_standard.cvd            | Bestand voor mail handtekeningen.
-/vault/md5_clamav.cvd                      | Bestand voor MD5 gebaseerde handtekeningen.
-/vault/md5_custom.cvd                      | Bestand voor MD5 gebaseerde handtekeningen.
-/vault/md5_mussel.cvd                      | Bestand voor MD5 gebaseerde handtekeningen.
-/vault/metadata_clamav.cvd                 | Bestand voor archief metadata handtekeningen.
-/vault/metadata_custom.cvd                 | Bestand voor archief metadata handtekeningen.
-/vault/metadata_mussel.cvd                 | Bestand voor archief metadata handtekeningen.
-/vault/ole_clamav_regex.cvd                | Bestand voor OLE handtekeningen.
-/vault/ole_clamav_regex.map                | Bestand voor OLE handtekeningen.
-/vault/ole_clamav_standard.cvd             | Bestand voor OLE handtekeningen.
-/vault/ole_clamav_standard.map             | Bestand voor OLE handtekeningen.
-/vault/ole_custom_regex.cvd                | Bestand voor OLE handtekeningen.
-/vault/ole_custom_standard.cvd             | Bestand voor OLE handtekeningen.
-/vault/ole_mussel_regex.cvd                | Bestand voor OLE handtekeningen.
-/vault/ole_mussel_standard.cvd             | Bestand voor OLE handtekeningen.
-/vault/pdf_clamav_regex.cvd                | Bestand voor PDF handtekeningen.
-/vault/pdf_clamav_regex.map                | Bestand voor PDF handtekeningen.
-/vault/pdf_clamav_standard.cvd             | Bestand voor PDF handtekeningen.
-/vault/pdf_clamav_standard.map             | Bestand voor PDF handtekeningen.
-/vault/pdf_custom_regex.cvd                | Bestand voor PDF handtekeningen.
-/vault/pdf_custom_standard.cvd             | Bestand voor PDF handtekeningen.
-/vault/pdf_mussel_regex.cvd                | Bestand voor PDF handtekeningen.
-/vault/pdf_mussel_standard.cvd             | Bestand voor PDF handtekeningen.
-/vault/pe_clamav.cvd                       | Bestand voor PE Sectionele handtekeningen.
-/vault/pe_custom.cvd                       | Bestand voor PE Sectionele handtekeningen.
-/vault/pe_mussel.cvd                       | Bestand voor PE Sectionele handtekeningen.
-/vault/pex_custom.cvd                      | Bestand voor PE uitgebreide handtekeningen.
-/vault/pex_mussel.cvd                      | Bestand voor PE uitgebreide handtekeningen.
-/vault/phpmussel.inc                       | Kern Script; De belangrijkste lichaam van phpMussel (essentiële)!
-/vault/phpmussel.ini                       | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (essentiële)!
-※ /vault/scan_log.txt                     | Een record van alles gescand door phpMussel.
-※ /vault/scan_log_serialized.txt          | Een record van alles gescand door phpMussel.
-※ /vault/scan_kills.txt                   | Een record van elk bestand uploaden geblokkeerde/gedood door phpMussel.
-/vault/swf_clamav_regex.cvd                | Bestand voor the Shockwave handtekeningen.
-/vault/swf_clamav_regex.map                | Bestand voor the Shockwave handtekeningen.
-/vault/swf_clamav_standard.cvd             | Bestand voor the Shockwave handtekeningen.
-/vault/swf_clamav_standard.map             | Bestand voor the Shockwave handtekeningen.
-/vault/swf_custom_regex.cvd                | Bestand voor the Shockwave handtekeningen.
-/vault/swf_custom_standard.cvd             | Bestand voor the Shockwave handtekeningen.
-/vault/swf_mussel_regex.cvd                | Bestand voor the Shockwave handtekeningen.
-/vault/swf_mussel_standard.cvd             | Bestand voor the Shockwave handtekeningen.
-/vault/switch.dat                          | Controles en sets bepaalde variabelen.
-/vault/template.html                       | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
-/vault/template_custom.html                | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
-/vault/update.dat                          | Bestand met versie-informatie voor zowel de phpMussel script en de phpMussel handtekeningen. Als u ooit wilt te automatisch update phpMussel of willen phpMussel updaten via uw browser, dit bestand is essentieel.
-/vault/update.inc                          | Update Script; Vereist voor automatische updates en voor het bijwerken van phpMussel via uw browser, maar niet anders vereist.
-/vault/urlscanner.cvd                      | Bestand voor URL scanner handtekeningen.
-/vault/whitelist_clamav.cvd                | Bestand-specifieke whitelist.
-/vault/whitelist_custom.cvd                | Bestand-specifieke whitelist.
-/vault/whitelist_mussel.cvd                | Bestand-specifieke whitelist.
-/vault/xmlxdp_clamav_regex.cvd             | Bestand voor XML/XDP handtekeningen.
-/vault/xmlxdp_clamav_regex.map             | Bestand voor XML/XDP handtekeningen.
-/vault/xmlxdp_clamav_standard.cvd          | Bestand voor XML/XDP handtekeningen.
-/vault/xmlxdp_clamav_standard.map          | Bestand voor XML/XDP handtekeningen.
-/vault/xmlxdp_custom_regex.cvd             | Bestand voor XML/XDP handtekeningen.
-/vault/xmlxdp_custom_standard.cvd          | Bestand voor XML/XDP handtekeningen.
-/vault/xmlxdp_mussel_regex.cvd             | Bestand voor XML/XDP handtekeningen.
-/vault/xmlxdp_mussel_standard.cvd          | Bestand voor XML/XDP handtekeningen.
+/_testfiles/html_standard_testfile.html | Testbestand voor het testen phpMussel genormaliseerde HTML handtekeningen.
+/_testfiles/md5_testfile.txt | Testbestand voor het testen phpMussel MD5 handtekeningen.
+/_testfiles/metadata_testfile.tar | Testbestand voor het testen phpMussel metadata handtekeningen en voor het testen van TAR bestandsondersteuning op uw systeem.
+/_testfiles/metadata_testfile.txt.gz | Testbestand voor het testen phpMussel metadata handtekeningen en voor het testen van GZ bestandsondersteuning op uw systeem.
+/_testfiles/metadata_testfile.zip | Testbestand voor het testen phpMussel metadata handtekeningen en voor het testen van ZIP bestandsondersteuning op uw systeem.
+/_testfiles/ole_testfile.ole | Testbestand voor het testen phpMussel OLE handtekeningen.
+/_testfiles/pdf_standard_testfile.pdf | Testbestand voor het testen phpMussel PDF handtekeningen.
+/_testfiles/pe_sectional_testfile.exe | Testbestand voor het testen phpMussel PE Sectionele handtekeningen.
+/_testfiles/swf_standard_testfile.swf | Testbestand voor het testen phpMussel SWF handtekeningen.
+/_testfiles/xdp_standard_testfile.xdp | Testbestand voor het testen phpMussel XML/XDP handtekeningen.
+/vault/ | Vault bestandsmap (bevat verschillende bestanden).
+/vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/cache/ | Cache bestandsmap (tijdelijke data).
+/vault/cache/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/cli.inc | CLI handler. @TranslateMe@
+/vault/config.inc | Configuration handler. @TranslateMe@
+/vault/controls.inc | Controls handler. @TranslateMe@
+/vault/functions.inc | Functions file (essential). @TranslateMe@
+/vault/greylist.csv | CSV van greylisted handtekeningen aangeeft om phpMussel waarop handtekeningen moet worden negeren (bestand automatisch aangemaakt opnieuw als verwijderd).
+/vault/lang.inc | taaldata.
+/vault/lang/ | Bevat phpMussel taaldata.
+/vault/lang/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/lang/lang.ar.inc | Arabisch taaldata.
+/vault/lang/lang.de.inc | Duitse taaldata.
+/vault/lang/lang.en.inc | Engels taaldata.
+/vault/lang/lang.es.inc | Spaanse taaldata.
+/vault/lang/lang.fr.inc | Franse taaldata.
+/vault/lang/lang.id.inc | Indonesisch taaldata.
+/vault/lang/lang.it.inc | Italiaanse taaldata.
+/vault/lang/lang.ja.inc | Japanse taaldata.
+/vault/lang/lang.nl.inc | Nederlandse taaldata.
+/vault/lang/lang.pt.inc | Portugees taaldata.
+/vault/lang/lang.ru.inc | Russische taaldata.
+/vault/lang/lang.vi.inc | Vietnamees taaldata.
+/vault/lang/lang.zh-TW.inc | Chinees (Traditioneel) taaldata.
+/vault/lang/lang.zh.inc | Chinees (Vereenvoudigd) taaldata.
+/vault/phpmussel.ini | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (essentiële)!
+/vault/quarantine/ | Quarantaine bestandsmap (bestanden in quarantaine bevat).
+/vault/quarantine/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+※ /vault/scan_kills.txt | Een record van elk bestand uploaden geblokkeerde/gedood door phpMussel.
+※ /vault/scan_log.txt | Een record van alles gescand door phpMussel.
+※ /vault/scan_log_serialized.txt | Een record van alles gescand door phpMussel.
+/vault/signatures/ | Handtekeningen bestandsmap (handtekening bestanden bevat).
+/vault/signatures/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/signatures/ascii_clamav_regex.cvd | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/signatures/ascii_clamav_regex.map | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/signatures/ascii_clamav_standard.cvd | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/signatures/ascii_clamav_standard.map | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/signatures/ascii_custom_regex.cvd | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/signatures/ascii_custom_standard.cvd | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/signatures/ascii_mussel_regex.cvd | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/signatures/ascii_mussel_standard.cvd | Bestand voor genormaliseerde ASCII handtekeningen.
+/vault/signatures/coex_clamav.cvd | Bestand voor complexe uitgebreide handtekeningen.
+/vault/signatures/coex_custom.cvd | Bestand voor complexe uitgebreide handtekeningen.
+/vault/signatures/coex_mussel.cvd | Bestand voor complexe uitgebreide handtekeningen.
+/vault/signatures/elf_clamav_regex.cvd | Bestand voor ELF handtekeningen.
+/vault/signatures/elf_clamav_regex.map | Bestand voor ELF handtekeningen.
+/vault/signatures/elf_clamav_standard.cvd | Bestand voor ELF handtekeningen.
+/vault/signatures/elf_clamav_standard.map | Bestand voor ELF handtekeningen.
+/vault/signatures/elf_custom_regex.cvd | Bestand voor ELF handtekeningen.
+/vault/signatures/elf_custom_standard.cvd | Bestand voor ELF handtekeningen.
+/vault/signatures/elf_mussel_regex.cvd | Bestand voor ELF handtekeningen.
+/vault/signatures/elf_mussel_standard.cvd | Bestand voor ELF handtekeningen.
+/vault/signatures/exe_clamav_regex.cvd | Bestand voor PE (Portable Executable) handtekeningen.
+/vault/signatures/exe_clamav_regex.map | Bestand voor PE (Portable Executable) handtekeningen.
+/vault/signatures/exe_clamav_standard.cvd | Bestand voor PE (Portable Executable) handtekeningen.
+/vault/signatures/exe_clamav_standard.map | Bestand voor PE (Portable Executable) handtekeningen.
+/vault/signatures/exe_custom_regex.cvd | Bestand voor PE (Portable Executable) handtekeningen.
+/vault/signatures/exe_custom_standard.cvd | Bestand voor PE (Portable Executable) handtekeningen.
+/vault/signatures/exe_mussel_regex.cvd | Bestand voor PE (Portable Executable) handtekeningen.
+/vault/signatures/exe_mussel_standard.cvd | Bestand voor PE (Portable Executable) handtekeningen.
+/vault/signatures/filenames_clamav.cvd | Bestand voor bestandsnaam handtekeningen.
+/vault/signatures/filenames_custom.cvd | Bestand voor bestandsnaam handtekeningen.
+/vault/signatures/filenames_mussel.cvd | Bestand voor bestandsnaam handtekeningen.
+/vault/signatures/general_clamav_regex.cvd | Bestand voor algemene handtekeningen.
+/vault/signatures/general_clamav_regex.map | Bestand voor algemene handtekeningen.
+/vault/signatures/general_clamav_standard.cvd | Bestand voor algemene handtekeningen.
+/vault/signatures/general_clamav_standard.map | Bestand voor algemene handtekeningen.
+/vault/signatures/general_custom_regex.cvd | Bestand voor algemene handtekeningen.
+/vault/signatures/general_custom_standard.cvd | Bestand voor algemene handtekeningen.
+/vault/signatures/general_mussel_regex.cvd | Bestand voor algemene handtekeningen.
+/vault/signatures/general_mussel_standard.cvd | Bestand voor algemene handtekeningen.
+/vault/signatures/graphics_clamav_regex.cvd | Bestand voor grafische handtekeningen.
+/vault/signatures/graphics_clamav_regex.map | Bestand voor grafische handtekeningen.
+/vault/signatures/graphics_clamav_standard.cvd | Bestand voor grafische handtekeningen.
+/vault/signatures/graphics_clamav_standard.map | Bestand voor grafische handtekeningen.
+/vault/signatures/graphics_custom_regex.cvd | Bestand voor grafische handtekeningen.
+/vault/signatures/graphics_custom_standard.cvd | Bestand voor grafische handtekeningen.
+/vault/signatures/graphics_mussel_regex.cvd | Bestand voor grafische handtekeningen.
+/vault/signatures/graphics_mussel_standard.cvd | Bestand voor grafische handtekeningen.
+/vault/signatures/hex_general_commands.csv | Hex-gecodeerde CSV van algemene commando detecties optioneel gebruikt door phpMussel.
+/vault/signatures/html_clamav_regex.cvd | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/signatures/html_clamav_regex.map | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/signatures/html_clamav_standard.cvd | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/signatures/html_clamav_standard.map | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/signatures/html_custom_regex.cvd | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/signatures/html_custom_standard.cvd | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/signatures/html_mussel_regex.cvd | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/signatures/html_mussel_standard.cvd | Bestand voor genormaliseerde HTML handtekeningen.
+/vault/signatures/macho_clamav_regex.cvd | Bestand voor Mach-O handtekeningen.
+/vault/signatures/macho_clamav_regex.map | Bestand voor Mach-O handtekeningen.
+/vault/signatures/macho_clamav_standard.cvd | Bestand voor Mach-O handtekeningen.
+/vault/signatures/macho_clamav_standard.map | Bestand voor Mach-O handtekeningen.
+/vault/signatures/macho_custom_regex.cvd | Bestand voor Mach-O handtekeningen.
+/vault/signatures/macho_custom_standard.cvd | Bestand voor Mach-O handtekeningen.
+/vault/signatures/macho_mussel_regex.cvd | Bestand voor Mach-O handtekeningen.
+/vault/signatures/macho_mussel_standard.cvd | Bestand voor Mach-O handtekeningen.
+/vault/signatures/mail_clamav_regex.cvd | Bestand voor mail handtekeningen.
+/vault/signatures/mail_clamav_regex.map | Bestand voor mail handtekeningen.
+/vault/signatures/mail_clamav_standard.cvd | Bestand voor mail handtekeningen.
+/vault/signatures/mail_clamav_standard.map | Bestand voor mail handtekeningen.
+/vault/signatures/mail_custom_regex.cvd | Bestand voor mail handtekeningen.
+/vault/signatures/mail_custom_standard.cvd | Bestand voor mail handtekeningen.
+/vault/signatures/mail_mussel_regex.cvd | Bestand voor mail handtekeningen.
+/vault/signatures/mail_mussel_standard.cvd | Bestand voor mail handtekeningen.
+/vault/signatures/md5_clamav.cvd | Bestand voor MD5 gebaseerde handtekeningen.
+/vault/signatures/md5_custom.cvd | Bestand voor MD5 gebaseerde handtekeningen.
+/vault/signatures/md5_mussel.cvd | Bestand voor MD5 gebaseerde handtekeningen.
+/vault/signatures/metadata_clamav.cvd | Bestand voor archief metadata handtekeningen.
+/vault/signatures/metadata_custom.cvd | Bestand voor archief metadata handtekeningen.
+/vault/signatures/metadata_mussel.cvd | Bestand voor archief metadata handtekeningen.
+/vault/signatures/ole_clamav_regex.cvd | Bestand voor OLE handtekeningen.
+/vault/signatures/ole_clamav_regex.map | Bestand voor OLE handtekeningen.
+/vault/signatures/ole_clamav_standard.cvd | Bestand voor OLE handtekeningen.
+/vault/signatures/ole_clamav_standard.map | Bestand voor OLE handtekeningen.
+/vault/signatures/ole_custom_regex.cvd | Bestand voor OLE handtekeningen.
+/vault/signatures/ole_custom_standard.cvd | Bestand voor OLE handtekeningen.
+/vault/signatures/ole_mussel_regex.cvd | Bestand voor OLE handtekeningen.
+/vault/signatures/ole_mussel_standard.cvd | Bestand voor OLE handtekeningen.
+/vault/signatures/pdf_clamav_regex.cvd | Bestand voor PDF handtekeningen.
+/vault/signatures/pdf_clamav_regex.map | Bestand voor PDF handtekeningen.
+/vault/signatures/pdf_clamav_standard.cvd | Bestand voor PDF handtekeningen.
+/vault/signatures/pdf_clamav_standard.map | Bestand voor PDF handtekeningen.
+/vault/signatures/pdf_custom_regex.cvd | Bestand voor PDF handtekeningen.
+/vault/signatures/pdf_custom_standard.cvd | Bestand voor PDF handtekeningen.
+/vault/signatures/pdf_mussel_regex.cvd | Bestand voor PDF handtekeningen.
+/vault/signatures/pdf_mussel_standard.cvd | Bestand voor PDF handtekeningen.
+/vault/signatures/pex_custom.cvd | Bestand voor PE uitgebreide handtekeningen.
+/vault/signatures/pex_mussel.cvd | Bestand voor PE uitgebreide handtekeningen.
+/vault/signatures/pe_clamav.cvd | Bestand voor PE Sectionele handtekeningen.
+/vault/signatures/pe_custom.cvd | Bestand voor PE Sectionele handtekeningen.
+/vault/signatures/pe_mussel.cvd | Bestand voor PE Sectionele handtekeningen.
+/vault/signatures/swf_clamav_regex.cvd | Bestand voor the Shockwave handtekeningen.
+/vault/signatures/swf_clamav_regex.map | Bestand voor the Shockwave handtekeningen.
+/vault/signatures/swf_clamav_standard.cvd | Bestand voor the Shockwave handtekeningen.
+/vault/signatures/swf_clamav_standard.map | Bestand voor the Shockwave handtekeningen.
+/vault/signatures/swf_custom_regex.cvd | Bestand voor the Shockwave handtekeningen.
+/vault/signatures/swf_custom_standard.cvd | Bestand voor the Shockwave handtekeningen.
+/vault/signatures/swf_mussel_regex.cvd | Bestand voor the Shockwave handtekeningen.
+/vault/signatures/swf_mussel_standard.cvd | Bestand voor the Shockwave handtekeningen.
+/vault/signatures/switch.dat | Controles en sets bepaalde variabelen.
+/vault/signatures/urlscanner.cvd | Bestand voor URL scanner handtekeningen.
+/vault/signatures/whitelist_clamav.cvd | Bestand-specifieke whitelist.
+/vault/signatures/whitelist_custom.cvd | Bestand-specifieke whitelist.
+/vault/signatures/whitelist_mussel.cvd | Bestand-specifieke whitelist.
+/vault/signatures/xmlxdp_clamav_regex.cvd | Bestand voor XML/XDP handtekeningen.
+/vault/signatures/xmlxdp_clamav_regex.map | Bestand voor XML/XDP handtekeningen.
+/vault/signatures/xmlxdp_clamav_standard.cvd | Bestand voor XML/XDP handtekeningen.
+/vault/signatures/xmlxdp_clamav_standard.map | Bestand voor XML/XDP handtekeningen.
+/vault/signatures/xmlxdp_custom_regex.cvd | Bestand voor XML/XDP handtekeningen.
+/vault/signatures/xmlxdp_custom_standard.cvd | Bestand voor XML/XDP handtekeningen.
+/vault/signatures/xmlxdp_mussel_regex.cvd | Bestand voor XML/XDP handtekeningen.
+/vault/signatures/xmlxdp_mussel_standard.cvd | Bestand voor XML/XDP handtekeningen.
+/vault/template.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
+/vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
+/vault/update.dat | Bestand met versie-informatie voor zowel de phpMussel script en de phpMussel handtekeningen. Als u ooit wilt te automatisch update phpMussel of willen phpMussel updaten via uw browser, dit bestand is essentieel.
+/vault/update.inc | Update Script; Vereist voor automatische updates en voor het bijwerken van phpMussel via uw browser, maar niet anders vereist.
+/vault/upload.inc | Upload handler. @TranslateMe@
 
 ※ Bestandsnaam kan verschillen, afhankelijk van de configuratie bedingen (van `phpmussel.ini`).
 
@@ -997,4 +1003,4 @@ Dit informatie werd laatst bijgewerkt 12 December 2015 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 7 Februari 2016 (2016.02.07).
+Laatste Bijgewerkt: 24 Februari 2016 (2016.02.23).

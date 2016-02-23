@@ -284,7 +284,13 @@
 
 الوصف | الملف
 ----|----
-<div dir="rtl" style="display:inline;">الملف المحمل (المسئول عن التحميل): يحمل البرنامج الرئيسي و التحديث و ... إلى آخره. هذا هو الذي من المفترض أن تكون على علاقة به و تقوم بتركيبه (أساسي)!</div> | /phpmussel.php
+<div dir="rtl" style="display:inline;">أ ملف المشروع GitHub (غير مطلوب لتشغيل سليم للبرنامج).</div> | /.gitattributes
+<div dir="rtl" style="display:inline;">معلومات Composer/Packagist (غير مطلوب لتشغيل سليم للبرنامج).</div> | /composer.json
+<div dir="rtl" style="display:inline;">معلومات حول كيفية المساهمة في المشروع.</div> | /CONTRIBUTING.md
+<div dir="rtl" style="display:inline;">نسخة من GNU/GPLv2 رخصة.</div> | /LICENSE.txt
+<div dir="rtl" style="display:inline;">معلومات حول الأشخاص الذين شاركوا في المشروع.</div> | /PEOPLE.md
+<div dir="rtl" style="display:inline;">الملف المحمل (المسئول عن التحميل): يحمل البرنامج الرئيسي و التحديث و، إلى آخره. هذا هو الذي من المفترض أن تكون على علاقة به و تقوم بتركيبه (أساسي)!</div> | /phpmussel.php
+<div dir="rtl" style="display:inline;">معلومات موجزة المشروع.</div> | /README.md
 <div dir="rtl" style="display:inline;">ملف تكوين ASP.NET (في هذه الحالة , لحماية دليل /vault من أن يتم الوصول إليه بواسطة مصادر غير مأذون لها في حالة إذا ما تم تثبيت البرنامج النصي على ملقم يستند إلى تقنيات ASP.NET</div> | /web.config
 <div dir="rtl" style="display:inline;">دليل الوثائق (يحتوي على ملفات مختلفة).</div> | /_docs/
 <div dir="rtl" style="display:inline;">سجل للتغييرات التي أجريت على البرنامج بين التحديثات المختلفة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /_docs/change_log.txt
@@ -329,8 +335,15 @@
 <div dir="rtl" style="display:inline;">ملف اختبار لاختبار توقيعات swf في "بي اتش بي ماسل".</div> | /_testfiles/swf_standard_testfile.swf
 <div dir="rtl" style="display:inline;">ملف اختبار لاختبار توقيعات XML/XDP في "بي اتش بي ماسل".</div> | /_testfiles/xdp_standard_testfile.xdp
 <div dir="rtl" style="display:inline;">دليل /vault/ (يحتوي على ملفات متنوعة).</div> | /vault/
+<div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/.htaccess
 <div dir="rtl" style="display:inline;">دليل ذاكرة التخزين المؤقت (للبيانات المؤقتة).</div> | /vault/cache/
 <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/cache/.htaccess
+<div dir="rtl" style="display:inline;">CLI handler. @TranslateMe@</div> | /vault/cli.inc
+<div dir="rtl" style="display:inline;">Configuration handler. @TranslateMe@</div> | /vault/config.inc
+<div dir="rtl" style="display:inline;">Controls handler. @TranslateMe@</div> | /vault/controls.inc
+<div dir="rtl" style="display:inline;">Functions file (essential). @TranslateMe@</div> | /vault/functions.inc
+<div dir="rtl" style="display:inline;">ملف CSV توقيعات القائمة الرمادية المشيرة إلى التوقيعات التي ينبغي على "بي اتش بي ماسل" أن يتجاهلها (هذا ملف يتم إعادة إنشاءه تلقائيا إذا حذف).</div> | /vault/greylist.csv
+<div dir="rtl" style="display:inline;">ملف لغة.</div> | /vault/lang.inc
 <div dir="rtl" style="display:inline;">يحتوي على بيانات اللغة لـ "بي اتش بي ماسل".</div> | /vault/lang/
 <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/lang/.htaccess
 <div dir="rtl" style="display:inline;">ملفات اللغة العربية.</div> | /vault/lang/lang.ar.inc
@@ -347,139 +360,138 @@
 <div dir="rtl" style="display:inline;">ملفات اللغة الفيتنامية.</div> | /vault/lang/lang.vi.inc
 <div dir="rtl" style="display:inline;">ملفات اللغة الصينية (المبسطة).</div> | /vault/lang/lang.zh.inc
 <div dir="rtl" style="display:inline;">ملفات اللغة الصينية (التقليدية).</div> | /vault/lang/lang.zh-TW.inc
+<div dir="rtl" style="display:inline;">ملف التكوين. يحتوي على جميع خيارات تهيئة "بي اتش بي ماسل"، يخبرك ماذا يفعل وكيف يعمل بشكل صحيح (ضروري)!</div> | /vault/phpmussel.ini
 <div dir="rtl" style="display:inline;">دليل العزل (يحتوي على الملفات المعزولة).</div> | /vault/quarantine/
 <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/quarantine/.htaccess
-<div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/.htaccess
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/ascii_clamav_regex.cvd
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/ascii_clamav_regex.map
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/ascii_clamav_standard.cvd
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/ascii_clamav_standard.map
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/ascii_custom_regex.cvd
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/ascii_custom_standard.cvd
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/ascii_mussel_regex.cvd
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/ascii_mussel_standard.cvd
-<div dir="rtl" style="display:inline;">ملف للتوقيعات الموسعة المعقدة.</div> | /vault/coex_clamav.cvd
-<div dir="rtl" style="display:inline;">ملف للتوقيعات الموسعة المعقدة.</div> | /vault/coex_custom.cvd
-<div dir="rtl" style="display:inline;">ملف للتوقيعات الموسعة المعقدة.</div> | /vault/coex_mussel.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/elf_clamav_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/elf_clamav_regex.map
-<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/elf_clamav_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/elf_clamav_standard.map
-<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/elf_custom_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/elf_custom_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/elf_mussel_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/elf_mussel_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/exe_clamav_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/exe_clamav_regex.map
-<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/exe_clamav_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/exe_clamav_standard.map
-<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/exe_custom_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/exe_custom_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/exe_mussel_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/exe_mussel_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات اسم الملف.</div> | /vault/filenames_clamav.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات اسم الملف.</div> | /vault/filenames_custom.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات اسم الملف.</div> | /vault/filenames_mussel.cvd
-<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/general_clamav_regex.cvd
-<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/general_clamav_regex.map
-<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/general_clamav_standard.cvd
-<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/general_clamav_standard.map
-<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/general_custom_regex.cvd
-<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/general_custom_standard.cvd
-<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/general_mussel_regex.cvd
-<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/general_mussel_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/graphics_clamav_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/graphics_clamav_regex.map
-<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/graphics_clamav_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/graphics_clamav_standard.map
-<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/graphics_custom_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/graphics_custom_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/graphics_mussel_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/graphics_mussel_standard.cvd
-<div dir="rtl" style="display:inline;">ملف CSV توقيعات القائمة الرمادية المشيرة إلى التوقيعات التي ينبغي على "بي اتش بي ماسل" أن يتجاهلها (هذا ملف يتم إعادة إنشاءه تلقائيا إذا حذف).</div> | /vault/greylist.csv
-<div dir="rtl" style="display:inline;">ترميز ملف CSV الأوامر العامة المكتشفة المستخدمة اختياريا من قبل phpMussel.</div> | /vault/hex_general_commands.csv
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/html_clamav_regex.cvd
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/html_clamav_regex.map
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/html_clamav_standard.cvd
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/html_clamav_standard.map
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/html_custom_regex.cvd
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/html_custom_standard.cvd
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/html_mussel_regex.cvd
-<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/html_mussel_standard.cvd
-<div dir="rtl" style="display:inline;">ملف لغة.</div> | /vault/lang.inc
-<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/macho_clamav_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/macho_clamav_regex.map
-<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/macho_clamav_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/macho_clamav_standard.map
-<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/macho_custom_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/macho_custom_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/macho_mussel_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/macho_mussel_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/mail_clamav_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/mail_clamav_regex.map
-<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/mail_clamav_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/mail_clamav_standard.map
-<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/mail_custom_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/mail_custom_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/mail_mussel_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/mail_mussel_standard.cvd
-<div dir="rtl" style="display:inline;">ملف التوقيعات القائمة على MD5.</div> | /vault/md5_clamav.cvd
-<div dir="rtl" style="display:inline;">ملف التوقيعات القائمة على MD5.</div> | /vault/md5_custom.cvd
-<div dir="rtl" style="display:inline;">ملف التوقيعات القائمة على MD5.</div> | /vault/md5_mussel.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات البيانات الوصفية المؤرشفة.</div> | /vault/metadata_clamav.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات البيانات الوصفية المؤرشفة.</div> | /vault/metadata_custom.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات البيانات الوصفية المؤرشفة.</div> | /vault/metadata_mussel.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/ole_clamav_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/ole_clamav_regex.map
-<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/ole_clamav_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/ole_clamav_standard.map
-<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/ole_custom_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/ole_custom_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/ole_mussel_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/ole_mussel_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/pdf_clamav_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/pdf_clamav_regex.map
-<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/pdf_clamav_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/pdf_clamav_standard.map
-<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/pdf_custom_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/pdf_custom_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/pdf_mussel_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/pdf_mussel_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PE الجزئية.</div> | /vault/pe_clamav.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PE الجزئية.</div> | /vault/pe_custom.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PE الجزئية.</div> | /vault/pe_mussel.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PE الموسعة.</div> | /vault/pex_clamav.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات PE الموسعة.</div> | /vault/pex_custom.cvd
-<div dir="rtl" style="display:inline;">البرامج الأساسية؛ الجسم الرئيسي و أجزاء من "بي اتش بي ماسل" (ضروري)!</div> | /vault/phpmussel.inc
-<div dir="rtl" style="display:inline;">ملف التكوين. يحتوي على جميع خيارات تهيئة "بي اتش بي ماسل"، يخبرك ماذا يفعل وكيف يعمل بشكل صحيح (ضروري)!</div> | /vault/phpmussel.ini
 <div dir="rtl" style="display:inline;">سجل لكل ما تم فحصه بواسطة "بي اتش بي ماسل".</div> | ※ /vault/scan_log.txt
 <div dir="rtl" style="display:inline;">سجل لكل ما تم فحصه بواسطة "بي اتش بي ماسل".</div> | ※ /vault/scan_log_serialized.txt
 <div dir="rtl" style="display:inline;">سجل لكل ما تم القضاء عليه بواسطة "بي اتش بي ماسل".</div> | ※ /vault/scan_kills.txt
-<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/swf_clamav_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/swf_clamav_regex.map
-<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/swf_clamav_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/swf_clamav_standard.map
-<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/swf_custom_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/swf_custom_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/swf_mussel_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/swf_mussel_standard.cvd
-<div dir="rtl" style="display:inline;">يتحكم و يضع متغيرات محددة.</div> | /vault/switch.dat
+<div dir="rtl" style="display:inline;">دليل توقيعات (يحتوي توقيعات).</div> | /vault/signatures/
+<div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/signatures/.htaccess
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/signatures/ascii_clamav_regex.cvd
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/signatures/ascii_clamav_regex.map
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/signatures/ascii_clamav_standard.cvd
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/signatures/ascii_clamav_standard.map
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/signatures/ascii_custom_regex.cvd
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/signatures/ascii_custom_standard.cvd
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/signatures/ascii_mussel_regex.cvd
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من ASCII.</div> | /vault/signatures/ascii_mussel_standard.cvd
+<div dir="rtl" style="display:inline;">ملف للتوقيعات الموسعة المعقدة.</div> | /vault/signatures/coex_clamav.cvd
+<div dir="rtl" style="display:inline;">ملف للتوقيعات الموسعة المعقدة.</div> | /vault/signatures/coex_custom.cvd
+<div dir="rtl" style="display:inline;">ملف للتوقيعات الموسعة المعقدة.</div> | /vault/signatures/coex_mussel.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/signatures/elf_clamav_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/signatures/elf_clamav_regex.map
+<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/signatures/elf_clamav_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/signatures/elf_clamav_standard.map
+<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/signatures/elf_custom_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/signatures/elf_custom_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/signatures/elf_mussel_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات ELF.</div> | /vault/signatures/elf_mussel_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/signatures/exe_clamav_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/signatures/exe_clamav_regex.map
+<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/signatures/exe_clamav_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/signatures/exe_clamav_standard.map
+<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/signatures/exe_custom_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/signatures/exe_custom_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/signatures/exe_mussel_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PE (المحمولة التنفيذية).</div> | /vault/signatures/exe_mussel_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات اسم الملف.</div> | /vault/signatures/filenames_clamav.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات اسم الملف.</div> | /vault/signatures/filenames_custom.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات اسم الملف.</div> | /vault/signatures/filenames_mussel.cvd
+<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/signatures/general_clamav_regex.cvd
+<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/signatures/general_clamav_regex.map
+<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/signatures/general_clamav_standard.cvd
+<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/signatures/general_clamav_standard.map
+<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/signatures/general_custom_regex.cvd
+<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/signatures/general_custom_standard.cvd
+<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/signatures/general_mussel_regex.cvd
+<div dir="rtl" style="display:inline;">ملف التوقيعات العامة.</div> | /vault/signatures/general_mussel_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/signatures/graphics_clamav_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/signatures/graphics_clamav_regex.map
+<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/signatures/graphics_clamav_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/signatures/graphics_clamav_standard.map
+<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/signatures/graphics_custom_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/signatures/graphics_custom_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/signatures/graphics_mussel_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات الرسومات.</div> | /vault/signatures/graphics_mussel_standard.cvd
+<div dir="rtl" style="display:inline;">ترميز ملف CSV الأوامر العامة المكتشفة المستخدمة اختياريا من قبل phpMussel.</div> | /vault/signatures/hex_general_commands.csv
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/signatures/html_clamav_regex.cvd
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/signatures/html_clamav_regex.map
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/signatures/html_clamav_standard.cvd
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/signatures/html_clamav_standard.map
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/signatures/html_custom_regex.cvd
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/signatures/html_custom_standard.cvd
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/signatures/html_mussel_regex.cvd
+<div dir="rtl" style="display:inline;">ملف للتوقيعات التي تمت تسويتها/تطبيعها من HTML.</div> | /vault/signatures/html_mussel_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/signatures/macho_clamav_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/signatures/macho_clamav_regex.map
+<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/signatures/macho_clamav_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/signatures/macho_clamav_standard.map
+<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/signatures/macho_custom_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/signatures/macho_custom_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/signatures/macho_mussel_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات Mach-O.</div> | /vault/signatures/macho_mussel_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/signatures/mail_clamav_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/signatures/mail_clamav_regex.map
+<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/signatures/mail_clamav_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/signatures/mail_clamav_standard.map
+<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/signatures/mail_custom_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/signatures/mail_custom_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/signatures/mail_mussel_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات البريد.</div> | /vault/signatures/mail_mussel_standard.cvd
+<div dir="rtl" style="display:inline;">ملف التوقيعات القائمة على MD5.</div> | /vault/signatures/md5_clamav.cvd
+<div dir="rtl" style="display:inline;">ملف التوقيعات القائمة على MD5.</div> | /vault/signatures/md5_custom.cvd
+<div dir="rtl" style="display:inline;">ملف التوقيعات القائمة على MD5.</div> | /vault/signatures/md5_mussel.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات البيانات الوصفية المؤرشفة.</div> | /vault/signatures/metadata_clamav.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات البيانات الوصفية المؤرشفة.</div> | /vault/signatures/metadata_custom.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات البيانات الوصفية المؤرشفة.</div> | /vault/signatures/metadata_mussel.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/signatures/ole_clamav_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/signatures/ole_clamav_regex.map
+<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/signatures/ole_clamav_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/signatures/ole_clamav_standard.map
+<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/signatures/ole_custom_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/signatures/ole_custom_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/signatures/ole_mussel_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات OLE.</div> | /vault/signatures/ole_mussel_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/signatures/pdf_clamav_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/signatures/pdf_clamav_regex.map
+<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/signatures/pdf_clamav_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/signatures/pdf_clamav_standard.map
+<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/signatures/pdf_custom_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/signatures/pdf_custom_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/signatures/pdf_mussel_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PDF.</div> | /vault/signatures/pdf_mussel_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PE الجزئية.</div> | /vault/signatures/pe_clamav.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PE الجزئية.</div> | /vault/signatures/pe_custom.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PE الجزئية.</div> | /vault/signatures/pe_mussel.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PE الموسعة.</div> | /vault/signatures/pex_clamav.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات PE الموسعة.</div> | /vault/signatures/pex_custom.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/signatures/swf_clamav_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/signatures/swf_clamav_regex.map
+<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/signatures/swf_clamav_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/signatures/swf_clamav_standard.map
+<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/signatures/swf_custom_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/signatures/swf_custom_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/signatures/swf_mussel_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات Shockwave.</div> | /vault/signatures/swf_mussel_standard.cvd
+<div dir="rtl" style="display:inline;">يتحكم و يضع متغيرات محددة.</div> | /vault/signatures/switch.dat
+<div dir="rtl" style="display:inline;">ملق توقيعات مسح الروابط.</div> | /vault/signatures/urlscanner.cvd
+<div dir="rtl" style="display:inline;">ملف قائمة السماح المحددة.</div> | /vault/signatures/whitelist_clamav.cvd
+<div dir="rtl" style="display:inline;">ملف قائمة السماح المحددة.</div> | /vault/signatures/whitelist_custom.cvd
+<div dir="rtl" style="display:inline;">ملف قائمة السماح المحددة.</div> | /vault/signatures/whitelist_mussel.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/signatures/xmlxdp_clamav_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/signatures/xmlxdp_clamav_regex.map
+<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/signatures/xmlxdp_clamav_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/signatures/xmlxdp_clamav_standard.map
+<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/signatures/xmlxdp_custom_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/signatures/xmlxdp_custom_standard.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/signatures/xmlxdp_mussel_regex.cvd
+<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/signatures/xmlxdp_mussel_standard.cvd
 <div dir="rtl" style="display:inline;">ملف القالب. قالب لمخرجات HTML التي تنتجها phpMussel لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template.html
 <div dir="rtl" style="display:inline;">ملف القالب. قالب لمخرجات HTML التي تنتجها phpMussel لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template_custom.html
 <div dir="rtl" style="display:inline;">ملف يحتوي على معلومات الإصدار لبرنامج "بي اتش بي ماسل" وتوقيعاته. إذا كنت تريد في أي وقت عمل تحديثا تلقائيا أو ترغب في تحديثه عن طريق المتصفح فهذا الملف ضروري.</div> | /vault/update.dat
 <div dir="rtl" style="display:inline;">برنامج التحديث ؛ مطلوب للحصول على التحديثات التلقائية وتحديث "بي اتش بي ماسل"عن طريق المتصفح، ولكن ليس مطلوب لغير ذلك.</div> | /vault/update.inc
-<div dir="rtl" style="display:inline;">ملق توقيعات مسح الروابط.</div> | /vault/urlscanner.cvd
-<div dir="rtl" style="display:inline;">ملف قائمة السماح المحددة.</div> | /vault/whitelist_clamav.cvd
-<div dir="rtl" style="display:inline;">ملف قائمة السماح المحددة.</div> | /vault/whitelist_custom.cvd
-<div dir="rtl" style="display:inline;">ملف قائمة السماح المحددة.</div> | /vault/whitelist_mussel.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/xmlxdp_clamav_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/xmlxdp_clamav_regex.map
-<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/xmlxdp_clamav_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/xmlxdp_clamav_standard.map
-<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/xmlxdp_custom_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/xmlxdp_custom_standard.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/xmlxdp_mussel_regex.cvd
-<div dir="rtl" style="display:inline;">ملف توقيعات XML/XDP.</div> | /vault/xmlxdp_mussel_standard.cvd
+<div dir="rtl" style="display:inline;">Upload handler. @TranslateMe@</div> | /vault/upload.inc
 
 <div dir="rtl">※ اسم الملف قد يختلف استنادا إلى نصوص التكوين (في phpmussel.ini).</div>
 
@@ -771,10 +783,10 @@ Chameleon attack detection: False = Off; True = On.
 - Corrupted files and parse errors. False = Ignore; True = Block [Default]. Detect and block potentially corrupted PE (Portable Executable) files? Often (but not always), when certain aspects of a PE file are corrupted or can't be parsed correctly, it can be indicative of a viral infection. The processes used by most anti-virus programs to detect viruses in PE files require parsing those files in certain ways, which, if the programmer of a virus is aware of, will specifically try to prevent, in order to allow their virus to remain undetected.
 
 "decode_threshold"
-- Optional limitation or threshold to the length of raw data within which decode commands should be detected (in case there are any noticeable performance issues whilst scanning). Value is an integer representing filesize in KB. Default = 512 (512KB). Zero or null value disables the threshold (removing any such limitation based on filesize).
+- Optional limitation or threshold to the length of raw data within which decode commands should be detected (in case there are any noticeable performance issues while scanning). Value is an integer representing filesize in KB. Default = 512 (512KB). Zero or null value disables the threshold (removing any such limitation based on filesize).
 
 "scannable_threshold"
-- Optional limitation or threshold to the length of raw data that phpMussel is permitted to read and scan (in case there are any noticeable performance issues whilst scanning). Value is an integer representing filesize in KB. Default = 32768 (32MB). Zero or null value disables the threshold. Generally, this value shouldn't be less than the average filesize of file uploads that you want and expect to receive to your server or website, shouldn't be more than the filesize_limit directive, and shouldn't be more than roughly one fifth of the total allowable memory allocation granted to PHP via the php.ini configuration file. This directive exists to try to prevent phpMussel from using up too much memory (that'd prevent it from being able to successfully scan files above a certain filesize).
+- Optional limitation or threshold to the length of raw data that phpMussel is permitted to read and scan (in case there are any noticeable performance issues while scanning). Value is an integer representing filesize in KB. Default = 32768 (32MB). Zero or null value disables the threshold. Generally, this value shouldn't be less than the average filesize of file uploads that you want and expect to receive to your server or website, shouldn't be more than the filesize_limit directive, and shouldn't be more than roughly one fifth of the total allowable memory allocation granted to PHP via the php.ini configuration file. This directive exists to try to prevent phpMussel from using up too much memory (that'd prevent it from being able to successfully scan files above a certain filesize).
 
 ####"compatibility" (Category)
 Compatibility directives for phpMussel.
@@ -1021,4 +1033,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 7 فبراير 2016 (2016.02.07).</div>
+<div dir="rtl">آخر تحديث: 24 فبراير 2016 (2016.02.23).</div>

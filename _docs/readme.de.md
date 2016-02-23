@@ -255,210 +255,216 @@ Um eine Liste der verfügbaren CLI-Befehle zu erhalten, geben Sie in der Befehls
 
 Die folgende Liste beinhaltet alle Dateien, die im heruntergeladenen Archiv des Scripts enthalten sind und Dateien, die durch die Benutzung des Scripts eventuell erstellt werden, inkl. einer kurzen Beschreibung.
 
-Datei                                      | Beschreibung
--------------------------------------------|--------------------------------------
-/.gitattributes                            | @todo
-/composer.json                             | @todo
-/CONTRIBUTING.md                           | @todo
-/LICENSE.txt                               | @todo
-/PEOPLE.md                                 | @todo
-/phpmussel.php                             | Loader Datei. Lädt das Script, Updater, etc. Diese Datei wird in Ihr CMS eingebunden (notwendig)!
-/README.md                                 | @todo
-/web.config                                | Eine ASP.NET-Konfigurationsdatei (in diesem Fall zum Schutz des Verzeichnisses `/vault` vor einem nicht authorisierten Zugriff, sofern das Script auf einem auf der ASP.NET-Technologie basierenden Server installiert wurde).
-/_docs/                                    | Verzeichnis für die Dokumentationen (beinhaltet verschiedene Dateien).
-/_docs/change_log.txt                      | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
-/_docs/readme.ar.md                        | Arabische Dokumentation.
-/_docs/readme.de.md                        | Deutsche Dokumentation.
-/_docs/readme.de.txt                       | Deutsche Dokumentation.
-/_docs/readme.en.md                        | Englische Dokumentation.
-/_docs/readme.en.txt                       | Englische Dokumentation.
-/_docs/readme.es.md                        | Spanische Dokumentation.
-/_docs/readme.es.txt                       | Spanische Dokumentation.
-/_docs/readme.fr.md                        | Französische Dokumentation.
-/_docs/readme.fr.txt                       | Französische Dokumentation.
-/_docs/readme.id.md                        | Indonesische Dokumentation.
-/_docs/readme.id.txt                       | Indonesische Dokumentation.
-/_docs/readme.it.md                        | Italienische Dokumentation.
-/_docs/readme.it.txt                       | Italienische Dokumentation.
-/_docs/readme.nl.md                        | Niederländische Dokumentation.
-/_docs/readme.nl.txt                       | Niederländische Dokumentation.
-/_docs/readme.pt.md                        | Portugiesische Dokumentation.
-/_docs/readme.pt.txt                       | Portugiesische Dokumentation.
-/_docs/readme.ru.md                        | Russische Dokumentation.
-/_docs/readme.ru.txt                       | Russische Dokumentation.
-/_docs/readme.vi.md                        | Vietnamesische Dokumentation.
-/_docs/readme.vi.txt                       | Vietnamesische Dokumentation.
-/_docs/readme.zh.md                        | Chinesische Dokumentation (vereinfacht).
-/_docs/readme.zh-TW.md                     | Chinesische Dokumentation (traditionell).
-/_docs/signatures_tally.txt                | Netto-Veränderungs-Anzahl von enthaltenen Signaturen (für die korrekte Funktion des Scripts nicht notwendig).
-/_testfiles/                               | Verzeichnis für Testdateien (beinhaltet verschiedene Dateien). Alle enthaltenen Dateien dienen zur Überprüfung, ob phpMussel auf Ihrem System ordnungsgemäß installiert wurde. Sie müssen dieses Verzeichnis oder die Dateien nicht hochladen, sofern Sie keinen solchen Test durchführen möchten.
-/_testfiles/ascii_standard_testfile.txt    | Testdatei zur Überprüfung der normierten ASCII-Signaturerkennung.
-/_testfiles/coex_testfile.rtf              | Testdatei zur Überprüfung der Komplex-Erweitert-Signaturerkennung.
-/_testfiles/exe_standard_testfile.exe      | Testdatei zur Überprüfung der PE-Signaturerkennung.
-/_testfiles/general_standard_testfile.txt  | Testdatei zur Überprüfung der Erkennung der allgemeinen Signaturen.
+Datei | Beschreibung
+----|----
+/.gitattributes | Ein GitHub Projektdatei (für die korrekte Funktion des Scripts nicht notwendig).
+/composer.json | Composer/Packagist Informationen (für die korrekte Funktion des Scripts nicht notwendig).
+/CONTRIBUTING.md | Information about how to contribute to the project. @TranslateMe@
+/LICENSE.txt | Eine Kopie der GNU/GPLv2 Lizenz.
+/PEOPLE.md | Information about the people involved in the project. @TranslateMe@
+/phpmussel.php | Loader (lädt das Script, Updater, etc). Diese Datei wird in Ihr CMS eingebunden (notwendig)!
+/README.md | Project summary information. @TranslateMe@
+/web.config | Eine ASP.NET-Konfigurationsdatei (in diesem Fall zum Schutz des Verzeichnisses `/vault` vor einem nicht authorisierten Zugriff, sofern das Script auf einem auf der ASP.NET-Technologie basierenden Server installiert wurde).
+/_docs/ | Verzeichnis für die Dokumentationen (beinhaltet verschiedene Dateien).
+/_docs/change_log.txt | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
+/_docs/readme.ar.md | Arabische Dokumentation.
+/_docs/readme.de.md | Deutsche Dokumentation.
+/_docs/readme.de.txt | Deutsche Dokumentation.
+/_docs/readme.en.md | Englische Dokumentation.
+/_docs/readme.en.txt | Englische Dokumentation.
+/_docs/readme.es.md | Spanische Dokumentation.
+/_docs/readme.es.txt | Spanische Dokumentation.
+/_docs/readme.fr.md | Französische Dokumentation.
+/_docs/readme.fr.txt | Französische Dokumentation.
+/_docs/readme.id.md | Indonesische Dokumentation.
+/_docs/readme.id.txt | Indonesische Dokumentation.
+/_docs/readme.it.md | Italienische Dokumentation.
+/_docs/readme.it.txt | Italienische Dokumentation.
+/_docs/readme.nl.md | Niederländische Dokumentation.
+/_docs/readme.nl.txt | Niederländische Dokumentation.
+/_docs/readme.pt.md | Portugiesische Dokumentation.
+/_docs/readme.pt.txt | Portugiesische Dokumentation.
+/_docs/readme.ru.md | Russische Dokumentation.
+/_docs/readme.ru.txt | Russische Dokumentation.
+/_docs/readme.vi.md | Vietnamesische Dokumentation.
+/_docs/readme.vi.txt | Vietnamesische Dokumentation.
+/_docs/readme.zh-TW.md | Chinesische Dokumentation (traditionell).
+/_docs/readme.zh.md | Chinesische Dokumentation (vereinfacht).
+/_docs/signatures_tally.txt | Netto-Veränderungs-Anzahl von enthaltenen Signaturen (für die korrekte Funktion des Scripts nicht notwendig).
+/_testfiles/ | Verzeichnis für Testdateien (beinhaltet verschiedene Dateien). Alle enthaltenen Dateien dienen zur Überprüfung, ob phpMussel auf Ihrem System ordnungsgemäß installiert wurde. Sie müssen dieses Verzeichnis oder die Dateien nicht hochladen, sofern Sie keinen solchen Test durchführen möchten.
+/_testfiles/ascii_standard_testfile.txt | Testdatei zur Überprüfung der normierten ASCII-Signaturerkennung.
+/_testfiles/coex_testfile.rtf | Testdatei zur Überprüfung der Komplex-Erweitert-Signaturerkennung.
+/_testfiles/exe_standard_testfile.exe | Testdatei zur Überprüfung der PE-Signaturerkennung.
+/_testfiles/general_standard_testfile.txt | Testdatei zur Überprüfung der Erkennung der allgemeinen Signaturen.
 /_testfiles/graphics_standard_testfile.gif | Testdatei zur Überprüfung der Grafik-Signaturerkennung.
-/_testfiles/html_standard_testfile.html    | Testdatei zur Überprüfung der normierten HTML-Signaturerkennung.
-/_testfiles/md5_testfile.txt               | Testdatei zur Überprüfung der MD5-Signaturerkennung.
-/_testfiles/metadata_testfile.tar          | Testdatei zur Überprüfung der Metadata-Signaturerkennung und zur Überprüfung der TAR-Archivunterstützung Ihres Systems.
-/_testfiles/metadata_testfile.txt.gz       | Testdatei zur Überprüfung der Metadata-Signaturerkennung und zur Überprüfung der GZ-Archivunterstützung Ihres Systems.
-/_testfiles/metadata_testfile.zip          | Testdatei zur Überprüfung der Metadata-Signaturerkennung und zur Überprüfung der ZIP-Archivunterstützung Ihres Systems.
-/_testfiles/ole_testfile.ole               | Testdatei zur Überprüfung der OLE-Signaturerkennung.
-/_testfiles/pdf_standard_testfile.pdf      | Testdatei zur Überprüfung der PDF-Signaturerkennung.
-/_testfiles/pe_sectional_testfile.exe      | Testdatei zur Überprüfung der PE-Sectional-Signaturerkennung.
-/_testfiles/swf_standard_testfile.swf      | Testdatei zur Überprüfung der Shockwave-Signaturerkennung.
-/_testfiles/xdp_standard_testfile.xdp      | Testdatei zur Überprüfung der XML/XDP-Datenblock-Signaturerkennung.
-/vault/                                    | Vault-Verzeichnis (beinhaltet verschiedene Dateien).
-/vault/cache/                              | Cache-Verzeichnis (für temporäre Daten).
-/vault/cache/.htaccess                     | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/lang/                               | Enthält Sprachdaten für phpMussel.
-/vault/lang/.htaccess                      | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/lang/lang.ar.inc                    | Arabische Sprachdateien.
-/vault/lang/lang.de.inc                    | Deutsche Sprachdateien.
-/vault/lang/lang.en.inc                    | Englische Sprachdateien.
-/vault/lang/lang.es.inc                    | Spanische Sprachdateien.
-/vault/lang/lang.fr.inc                    | Französische Sprachdateien.
-/vault/lang/lang.id.inc                    | Indonesische Sprachdateien.
-/vault/lang/lang.it.inc                    | Italienische Sprachdateien.
-/vault/lang/lang.ja.inc                    | Japanische Sprachdateien.
-/vault/lang/lang.nl.inc                    | Niederländische Sprachdateien.
-/vault/lang/lang.pt.inc                    | Portugiesische Sprachdateien.
-/vault/lang/lang.ru.inc                    | Russische Sprachdateien.
-/vault/lang/lang.vi.inc                    | Vietnamesische Sprachdateien.
-/vault/lang/lang.zh.inc                    | Chinesische Sprachdateien (vereinfacht).
-/vault/lang/lang.zh-TW.inc                 | Chinesische Sprachdateien (traditionell).
-/vault/quarantine/                         | Quarantäne-Verzeichnis (enthält Dateien in Quarantäne).
-/vault/quarantine/.htaccess                | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/.htaccess                           | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/ascii_clamav_regex.cvd              | Datei der normierten ASCII-Signaturen.
-/vault/ascii_clamav_regex.map              | Datei der normierten ASCII-Signaturen.
-/vault/ascii_clamav_standard.cvd           | Datei der normierten ASCII-Signaturen.
-/vault/ascii_clamav_standard.map           | Datei der normierten ASCII-Signaturen.
-/vault/ascii_custom_regex.cvd              | Datei der normierten ASCII-Signaturen.
-/vault/ascii_custom_standard.cvd           | Datei der normierten ASCII-Signaturen.
-/vault/ascii_mussel_regex.cvd              | Datei der normierten ASCII-Signaturen.
-/vault/ascii_mussel_standard.cvd           | Datei der normierten ASCII-Signaturen.
-/vault/coex_clamav.cvd                     | Datei der Komplex-Erweitert-Signaturen.
-/vault/coex_custom.cvd                     | Datei der Komplex-Erweitert-Signaturen.
-/vault/coex_mussel.cvd                     | Datei der Komplex-Erweitert-Signaturen.
-/vault/elf_clamav_regex.cvd                | Datei der ELF-Signaturen.
-/vault/elf_clamav_regex.map                | Datei der ELF-Signaturen.
-/vault/elf_clamav_standard.cvd             | Datei der ELF-Signaturen.
-/vault/elf_clamav_standard.map             | Datei der ELF-Signaturen.
-/vault/elf_custom_regex.cvd                | Datei der ELF-Signaturen.
-/vault/elf_custom_standard.cvd             | Datei der ELF-Signaturen.
-/vault/elf_mussel_regex.cvd                | Datei der ELF-Signaturen.
-/vault/elf_mussel_standard.cvd             | Datei der ELF-Signaturen.
-/vault/exe_clamav_regex.cvd                | Datei der Portable-Executable-Signaturen.
-/vault/exe_clamav_regex.map                | Datei der Portable-Executable-Signaturen.
-/vault/exe_clamav_standard.cvd             | Datei der Portable-Executable-Signaturen.
-/vault/exe_clamav_standard.map             | Datei der Portable-Executable-Signaturen.
-/vault/exe_custom_regex.cvd                | Datei der Portable-Executable-Signaturen.
-/vault/exe_custom_standard.cvd             | Datei der Portable-Executable-Signaturen.
-/vault/exe_mussel_regex.cvd                | Datei der Portable-Executable-Signaturen.
-/vault/exe_mussel_standard.cvd             | Datei der Portable-Executable-Signaturen.
-/vault/filenames_clamav.cvd                | Datei der Dateinamen-Signaturen.
-/vault/filenames_custom.cvd                | Datei der Dateinamen-Signaturen.
-/vault/filenames_mussel.cvd                | Datei der Dateinamen-Signaturen.
-/vault/general_clamav_regex.cvd            | Datei der allgemeinen Signaturen.
-/vault/general_clamav_regex.map            | Datei der allgemeinen Signaturen.
-/vault/general_clamav_standard.cvd         | Datei der allgemeinen Signaturen.
-/vault/general_clamav_standard.map         | Datei der allgemeinen Signaturen.
-/vault/general_custom_regex.cvd            | Datei der allgemeinen Signaturen.
-/vault/general_custom_standard.cvd         | Datei der allgemeinen Signaturen.
-/vault/general_mussel_regex.cvd            | Datei der allgemeinen Signaturen.
-/vault/general_mussel_standard.cvd         | Datei der allgemeinen Signaturen.
-/vault/graphics_clamav_regex.cvd           | Datei der Signaturen für Bilddateien.
-/vault/graphics_clamav_regex.map           | Datei der Signaturen für Bilddateien.
-/vault/graphics_clamav_standard.cvd        | Datei der Signaturen für Bilddateien.
-/vault/graphics_clamav_standard.map        | Datei der Signaturen für Bilddateien.
-/vault/graphics_custom_regex.cvd           | Datei der Signaturen für Bilddateien.
-/vault/graphics_custom_standard.cvd        | Datei der Signaturen für Bilddateien.
-/vault/graphics_mussel_regex.cvd           | Datei der Signaturen für Bilddateien.
-/vault/graphics_mussel_standard.cvd        | Datei der Signaturen für Bilddateien.
-/vault/greylist.csv                        | CSV der Signaturen in der Greylist, die phpMussel ignorieren soll (Datei wird nach dem Löschen automatisch neu erstellt).
-/vault/hex_general_commands.csv            | Hex-codierte CSV mit allgemeinen Befehlserkennung.
-/vault/html_clamav_regex.cvd               | Datei der normierten HTML-Signaturen.
-/vault/html_clamav_regex.map               | Datei der normierten HTML-Signaturen.
-/vault/html_clamav_standard.cvd            | Datei der normierten HTML-Signaturen.
-/vault/html_clamav_standard.map            | Datei der normierten HTML-Signaturen.
-/vault/html_custom_regex.cvd               | Datei der normierten HTML-Signaturen.
-/vault/html_custom_standard.cvd            | Datei der normierten HTML-Signaturen.
-/vault/html_mussel_regex.cvd               | Datei der normierten HTML-Signaturen.
-/vault/html_mussel_standard.cvd            | Datei der normierten HTML-Signaturen.
-/vault/lang.inc                            | Sprachdateien.
-/vault/macho_clamav_regex.cvd              | Datei der Mach-O-Signaturen.
-/vault/macho_clamav_regex.map              | Datei der Mach-O-Signaturen.
-/vault/macho_clamav_standard.cvd           | Datei der Mach-O-Signaturen.
-/vault/macho_clamav_standard.map           | Datei der Mach-O-Signaturen.
-/vault/macho_custom_regex.cvd              | Datei der Mach-O-Signaturen.
-/vault/macho_custom_standard.cvd           | Datei der Mach-O-Signaturen.
-/vault/macho_mussel_regex.cvd              | Datei der Mach-O-Signaturen.
-/vault/macho_mussel_standard.cvd           | Datei der Mach-O-Signaturen.
-/vault/mail_clamav_regex.cvd               | Signaturdateien für phpMussel_mail()-Signaturen.
-/vault/mail_clamav_regex.map               | Signaturdateien für phpMussel_mail()-Signaturen.
-/vault/mail_clamav_standard.cvd            | Signaturdateien für phpMussel_mail()-Signaturen.
-/vault/mail_clamav_standard.map            | Signaturdateien für phpMussel_mail()-Signaturen.
-/vault/mail_custom_regex.cvd               | Signaturdateien für phpMussel_mail()-Signaturen.
-/vault/mail_custom_standard.cvd            | Signaturdateien für phpMussel_mail()-Signaturen.
-/vault/mail_mussel_regex.cvd               | Signaturdateien für phpMussel_mail()-Signaturen.
-/vault/mail_mussel_standard.cvd            | Signaturdateien für phpMussel_mail()-Signaturen.
-/vault/md5_clamav.cvd                      | Datei der MD5-Signaturen.
-/vault/md5_custom.cvd                      | Datei der MD5-Signaturen.
-/vault/md5_mussel.cvd                      | Datei der MD5-Signaturen.
-/vault/metadata_clamav.cvd                 | Datei für die Signaturen der Archiv-Metadaten.
-/vault/metadata_custom.cvd                 | Datei für die Signaturen der Archiv-Metadaten.
-/vault/metadata_mussel.cvd                 | Datei für die Signaturen der Archiv-Metadaten.
-/vault/ole_clamav_regex.cvd                | Datei der OLE-Signaturen.
-/vault/ole_clamav_regex.map                | Datei der OLE-Signaturen.
-/vault/ole_clamav_standard.cvd             | Datei der OLE-Signaturen.
-/vault/ole_clamav_standard.map             | Datei der OLE-Signaturen.
-/vault/ole_custom_regex.cvd                | Datei der OLE-Signaturen.
-/vault/ole_custom_standard.cvd             | Datei der OLE-Signaturen.
-/vault/ole_mussel_regex.cvd                | Datei der OLE-Signaturen.
-/vault/ole_mussel_standard.cvd             | Datei der OLE-Signaturen.
-/vault/pdf_clamav_regex.cvd                | Datei der PDF-Signaturen.
-/vault/pdf_clamav_regex.map                | Datei der PDF-Signaturen.
-/vault/pdf_clamav_standard.cvd             | Datei der PDF-Signaturen.
-/vault/pdf_clamav_standard.map             | Datei der PDF-Signaturen.
-/vault/pdf_custom_regex.cvd                | Datei der PDF-Signaturen.
-/vault/pdf_custom_standard.cvd             | Datei der PDF-Signaturen.
-/vault/pdf_mussel_regex.cvd                | Datei der PDF-Signaturen.
-/vault/pdf_mussel_standard.cvd             | Datei der PDF-Signaturen.
-/vault/pe_clamav.cvd                       | Datei der PE-Sectional-Signaturen.
-/vault/pe_custom.cvd                       | Datei der PE-Sectional-Signaturen.
-/vault/pe_mussel.cvd                       | Datei der PE-Sectional-Signaturen.
-/vault/pex_custom.cvd                      | Datei der PE-Erweitert-Signaturen.
-/vault/pex_mussel.cvd                      | Datei der PE-Erweitert-Signaturen.
-/vault/phpmussel.inc                       | Core Script (absolut notwendig)!
-/vault/phpmussel.ini                       | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von phpMussel (absolut notwendig)!
-※ /vault/scan_log.txt                     | Eine Aufzeichnung aller von phpMussel gescannten Objekte.
-※ /vault/scan_log_serialized.txt          | Eine Aufzeichnung aller von phpMussel gescannten Objekte.
-※ /vault/scan_kills.txt                   | Eine Aufzeichnung aller von phpMussel blockierten Dateiuploads.
-/vault/swf_clamav_regex.cvd                | Datei der Shockwave-Signaturen.
-/vault/swf_clamav_regex.map                | Datei der Shockwave-Signaturen.
-/vault/swf_clamav_standard.cvd             | Datei der Shockwave-Signaturen.
-/vault/swf_clamav_standard.map             | Datei der Shockwave-Signaturen.
-/vault/swf_custom_regex.cvd                | Datei der Shockwave-Signaturen.
-/vault/swf_custom_standard.cvd             | Datei der Shockwave-Signaturen.
-/vault/swf_mussel_regex.cvd                | Datei der Shockwave-Signaturen.
-/vault/swf_mussel_standard.cvd             | Datei der Shockwave-Signaturen.
-/vault/switch.dat                          | Diese Datei definiert bestimmte Variablen.
-/vault/template.html                       | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
-/vault/template_custom.html                | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
-/vault/update.dat                          | Datei beinhaltet Versionsinformationen des Scripts und der Signaturen. Diese Datei ist notwendig, wenn Sie phpMussel automatisch oder mittels Browser aktualisieren wollen.
-/vault/update.inc                          | Update Script; Wird nur für die automatische und manuelle Aktualisierung mittels Browser benötigt.
-/vault/urlscanner.cvd                      | Datei der URL-Scanner-Signaturen.
-/vault/whitelist_clamav.cvd                | Datei-spezifische Whitelist.
-/vault/whitelist_custom.cvd                | Datei-spezifische Whitelist.
-/vault/whitelist_mussel.cvd                | Datei-spezifische Whitelist.
-/vault/xmlxdp_clamav_regex.cvd             | Datei der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_clamav_regex.map             | Datei der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_clamav_standard.cvd          | Datei der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_clamav_standard.map          | Datei der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_custom_regex.cvd             | Datei der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_custom_standard.cvd          | Datei der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_mussel_regex.cvd             | Datei der XML/XDP-Datenblock-Signaturen.
-/vault/xmlxdp_mussel_standard.cvd          | Datei der XML/XDP-Datenblock-Signaturen.
+/_testfiles/html_standard_testfile.html | Testdatei zur Überprüfung der normierten HTML-Signaturerkennung.
+/_testfiles/md5_testfile.txt | Testdatei zur Überprüfung der MD5-Signaturerkennung.
+/_testfiles/metadata_testfile.tar | Testdatei zur Überprüfung der Metadata-Signaturerkennung und zur Überprüfung der TAR-Archivunterstützung Ihres Systems.
+/_testfiles/metadata_testfile.txt.gz | Testdatei zur Überprüfung der Metadata-Signaturerkennung und zur Überprüfung der GZ-Archivunterstützung Ihres Systems.
+/_testfiles/metadata_testfile.zip | Testdatei zur Überprüfung der Metadata-Signaturerkennung und zur Überprüfung der ZIP-Archivunterstützung Ihres Systems.
+/_testfiles/ole_testfile.ole | Testdatei zur Überprüfung der OLE-Signaturerkennung.
+/_testfiles/pdf_standard_testfile.pdf | Testdatei zur Überprüfung der PDF-Signaturerkennung.
+/_testfiles/pe_sectional_testfile.exe | Testdatei zur Überprüfung der PE-Sectional-Signaturerkennung.
+/_testfiles/swf_standard_testfile.swf | Testdatei zur Überprüfung der Shockwave-Signaturerkennung.
+/_testfiles/xdp_standard_testfile.xdp | Testdatei zur Überprüfung der XML/XDP-Datenblock-Signaturerkennung.
+/vault/ | Vault-Verzeichnis (beinhaltet verschiedene Dateien).
+/vault/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+/vault/cache/ | Cache-Verzeichnis (für temporäre Daten).
+/vault/cache/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+/vault/cli.inc | CLI handler. @TranslateMe@
+/vault/config.inc | Configuration handler. @TranslateMe@
+/vault/controls.inc | Controls handler. @TranslateMe@
+/vault/functions.inc | Functions file (essential). @TranslateMe@
+/vault/greylist.csv | CSV der Signaturen in der Greylist, die phpMussel ignorieren soll (Datei wird nach dem Löschen automatisch neu erstellt).
+/vault/lang.inc | Sprachdateien.
+/vault/lang/ | Enthält Sprachdaten für phpMussel.
+/vault/lang/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+/vault/lang/lang.ar.inc | Arabische Sprachdateien.
+/vault/lang/lang.de.inc | Deutsche Sprachdateien.
+/vault/lang/lang.en.inc | Englische Sprachdateien.
+/vault/lang/lang.es.inc | Spanische Sprachdateien.
+/vault/lang/lang.fr.inc | Französische Sprachdateien.
+/vault/lang/lang.id.inc | Indonesische Sprachdateien.
+/vault/lang/lang.it.inc | Italienische Sprachdateien.
+/vault/lang/lang.ja.inc | Japanische Sprachdateien.
+/vault/lang/lang.nl.inc | Niederländische Sprachdateien.
+/vault/lang/lang.pt.inc | Portugiesische Sprachdateien.
+/vault/lang/lang.ru.inc | Russische Sprachdateien.
+/vault/lang/lang.vi.inc | Vietnamesische Sprachdateien.
+/vault/lang/lang.zh-TW.inc | Chinesische Sprachdateien (traditionell).
+/vault/lang/lang.zh.inc | Chinesische Sprachdateien (vereinfacht).
+/vault/phpmussel.ini | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von phpMussel (absolut notwendig)!
+/vault/quarantine/ | Quarantäne-Verzeichnis (enthält Dateien in Quarantäne).
+/vault/quarantine/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+※ /vault/scan_kills.txt | Eine Aufzeichnung aller von phpMussel blockierten Dateiuploads.
+※ /vault/scan_log.txt | Eine Aufzeichnung aller von phpMussel gescannten Objekte.
+※ /vault/scan_log_serialized.txt | Eine Aufzeichnung aller von phpMussel gescannten Objekte.
+/vault/signatures/ | Signaturverzeichnis (enthält Signaturdateien).
+/vault/signatures/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
+/vault/signatures/ascii_clamav_regex.cvd | Datei der normierten ASCII-Signaturen.
+/vault/signatures/ascii_clamav_regex.map | Datei der normierten ASCII-Signaturen.
+/vault/signatures/ascii_clamav_standard.cvd | Datei der normierten ASCII-Signaturen.
+/vault/signatures/ascii_clamav_standard.map | Datei der normierten ASCII-Signaturen.
+/vault/signatures/ascii_custom_regex.cvd | Datei der normierten ASCII-Signaturen.
+/vault/signatures/ascii_custom_standard.cvd | Datei der normierten ASCII-Signaturen.
+/vault/signatures/ascii_mussel_regex.cvd | Datei der normierten ASCII-Signaturen.
+/vault/signatures/ascii_mussel_standard.cvd | Datei der normierten ASCII-Signaturen.
+/vault/signatures/coex_clamav.cvd | Datei der Komplex-Erweitert-Signaturen.
+/vault/signatures/coex_custom.cvd | Datei der Komplex-Erweitert-Signaturen.
+/vault/signatures/coex_mussel.cvd | Datei der Komplex-Erweitert-Signaturen.
+/vault/signatures/elf_clamav_regex.cvd | Datei der ELF-Signaturen.
+/vault/signatures/elf_clamav_regex.map | Datei der ELF-Signaturen.
+/vault/signatures/elf_clamav_standard.cvd | Datei der ELF-Signaturen.
+/vault/signatures/elf_clamav_standard.map | Datei der ELF-Signaturen.
+/vault/signatures/elf_custom_regex.cvd | Datei der ELF-Signaturen.
+/vault/signatures/elf_custom_standard.cvd | Datei der ELF-Signaturen.
+/vault/signatures/elf_mussel_regex.cvd | Datei der ELF-Signaturen.
+/vault/signatures/elf_mussel_standard.cvd | Datei der ELF-Signaturen.
+/vault/signatures/exe_clamav_regex.cvd | Datei der Portable-Executable-Signaturen.
+/vault/signatures/exe_clamav_regex.map | Datei der Portable-Executable-Signaturen.
+/vault/signatures/exe_clamav_standard.cvd | Datei der Portable-Executable-Signaturen.
+/vault/signatures/exe_clamav_standard.map | Datei der Portable-Executable-Signaturen.
+/vault/signatures/exe_custom_regex.cvd | Datei der Portable-Executable-Signaturen.
+/vault/signatures/exe_custom_standard.cvd | Datei der Portable-Executable-Signaturen.
+/vault/signatures/exe_mussel_regex.cvd | Datei der Portable-Executable-Signaturen.
+/vault/signatures/exe_mussel_standard.cvd | Datei der Portable-Executable-Signaturen.
+/vault/signatures/filenames_clamav.cvd | Datei der Dateinamen-Signaturen.
+/vault/signatures/filenames_custom.cvd | Datei der Dateinamen-Signaturen.
+/vault/signatures/filenames_mussel.cvd | Datei der Dateinamen-Signaturen.
+/vault/signatures/general_clamav_regex.cvd | Datei der allgemeinen Signaturen.
+/vault/signatures/general_clamav_regex.map | Datei der allgemeinen Signaturen.
+/vault/signatures/general_clamav_standard.cvd | Datei der allgemeinen Signaturen.
+/vault/signatures/general_clamav_standard.map | Datei der allgemeinen Signaturen.
+/vault/signatures/general_custom_regex.cvd | Datei der allgemeinen Signaturen.
+/vault/signatures/general_custom_standard.cvd | Datei der allgemeinen Signaturen.
+/vault/signatures/general_mussel_regex.cvd | Datei der allgemeinen Signaturen.
+/vault/signatures/general_mussel_standard.cvd | Datei der allgemeinen Signaturen.
+/vault/signatures/graphics_clamav_regex.cvd | Datei der Signaturen für Bilddateien.
+/vault/signatures/graphics_clamav_regex.map | Datei der Signaturen für Bilddateien.
+/vault/signatures/graphics_clamav_standard.cvd | Datei der Signaturen für Bilddateien.
+/vault/signatures/graphics_clamav_standard.map | Datei der Signaturen für Bilddateien.
+/vault/signatures/graphics_custom_regex.cvd | Datei der Signaturen für Bilddateien.
+/vault/signatures/graphics_custom_standard.cvd | Datei der Signaturen für Bilddateien.
+/vault/signatures/graphics_mussel_regex.cvd | Datei der Signaturen für Bilddateien.
+/vault/signatures/graphics_mussel_standard.cvd | Datei der Signaturen für Bilddateien.
+/vault/signatures/hex_general_commands.csv | Hex-codierte CSV mit allgemeinen Befehlserkennung.
+/vault/signatures/html_clamav_regex.cvd | Datei der normierten HTML-Signaturen.
+/vault/signatures/html_clamav_regex.map | Datei der normierten HTML-Signaturen.
+/vault/signatures/html_clamav_standard.cvd | Datei der normierten HTML-Signaturen.
+/vault/signatures/html_clamav_standard.map | Datei der normierten HTML-Signaturen.
+/vault/signatures/html_custom_regex.cvd | Datei der normierten HTML-Signaturen.
+/vault/signatures/html_custom_standard.cvd | Datei der normierten HTML-Signaturen.
+/vault/signatures/html_mussel_regex.cvd | Datei der normierten HTML-Signaturen.
+/vault/signatures/html_mussel_standard.cvd | Datei der normierten HTML-Signaturen.
+/vault/signatures/macho_clamav_regex.cvd | Datei der Mach-O-Signaturen.
+/vault/signatures/macho_clamav_regex.map | Datei der Mach-O-Signaturen.
+/vault/signatures/macho_clamav_standard.cvd | Datei der Mach-O-Signaturen.
+/vault/signatures/macho_clamav_standard.map | Datei der Mach-O-Signaturen.
+/vault/signatures/macho_custom_regex.cvd | Datei der Mach-O-Signaturen.
+/vault/signatures/macho_custom_standard.cvd | Datei der Mach-O-Signaturen.
+/vault/signatures/macho_mussel_regex.cvd | Datei der Mach-O-Signaturen.
+/vault/signatures/macho_mussel_standard.cvd | Datei der Mach-O-Signaturen.
+/vault/signatures/mail_clamav_regex.cvd | Signaturdateien für phpMussel_mail()-Signaturen.
+/vault/signatures/mail_clamav_regex.map | Signaturdateien für phpMussel_mail()-Signaturen.
+/vault/signatures/mail_clamav_standard.cvd | Signaturdateien für phpMussel_mail()-Signaturen.
+/vault/signatures/mail_clamav_standard.map | Signaturdateien für phpMussel_mail()-Signaturen.
+/vault/signatures/mail_custom_regex.cvd | Signaturdateien für phpMussel_mail()-Signaturen.
+/vault/signatures/mail_custom_standard.cvd | Signaturdateien für phpMussel_mail()-Signaturen.
+/vault/signatures/mail_mussel_regex.cvd | Signaturdateien für phpMussel_mail()-Signaturen.
+/vault/signatures/mail_mussel_standard.cvd | Signaturdateien für phpMussel_mail()-Signaturen.
+/vault/signatures/md5_clamav.cvd | Datei der MD5-Signaturen.
+/vault/signatures/md5_custom.cvd | Datei der MD5-Signaturen.
+/vault/signatures/md5_mussel.cvd | Datei der MD5-Signaturen.
+/vault/signatures/metadata_clamav.cvd | Datei für die Signaturen der Archiv-Metadaten.
+/vault/signatures/metadata_custom.cvd | Datei für die Signaturen der Archiv-Metadaten.
+/vault/signatures/metadata_mussel.cvd | Datei für die Signaturen der Archiv-Metadaten.
+/vault/signatures/ole_clamav_regex.cvd | Datei der OLE-Signaturen.
+/vault/signatures/ole_clamav_regex.map | Datei der OLE-Signaturen.
+/vault/signatures/ole_clamav_standard.cvd | Datei der OLE-Signaturen.
+/vault/signatures/ole_clamav_standard.map | Datei der OLE-Signaturen.
+/vault/signatures/ole_custom_regex.cvd | Datei der OLE-Signaturen.
+/vault/signatures/ole_custom_standard.cvd | Datei der OLE-Signaturen.
+/vault/signatures/ole_mussel_regex.cvd | Datei der OLE-Signaturen.
+/vault/signatures/ole_mussel_standard.cvd | Datei der OLE-Signaturen.
+/vault/signatures/pdf_clamav_regex.cvd | Datei der PDF-Signaturen.
+/vault/signatures/pdf_clamav_regex.map | Datei der PDF-Signaturen.
+/vault/signatures/pdf_clamav_standard.cvd | Datei der PDF-Signaturen.
+/vault/signatures/pdf_clamav_standard.map | Datei der PDF-Signaturen.
+/vault/signatures/pdf_custom_regex.cvd | Datei der PDF-Signaturen.
+/vault/signatures/pdf_custom_standard.cvd | Datei der PDF-Signaturen.
+/vault/signatures/pdf_mussel_regex.cvd | Datei der PDF-Signaturen.
+/vault/signatures/pdf_mussel_standard.cvd | Datei der PDF-Signaturen.
+/vault/signatures/pex_custom.cvd | Datei der PE-Erweitert-Signaturen.
+/vault/signatures/pex_mussel.cvd | Datei der PE-Erweitert-Signaturen.
+/vault/signatures/pe_clamav.cvd | Datei der PE-Sectional-Signaturen.
+/vault/signatures/pe_custom.cvd | Datei der PE-Sectional-Signaturen.
+/vault/signatures/pe_mussel.cvd | Datei der PE-Sectional-Signaturen.
+/vault/signatures/swf_clamav_regex.cvd | Datei der Shockwave-Signaturen.
+/vault/signatures/swf_clamav_regex.map | Datei der Shockwave-Signaturen.
+/vault/signatures/swf_clamav_standard.cvd | Datei der Shockwave-Signaturen.
+/vault/signatures/swf_clamav_standard.map | Datei der Shockwave-Signaturen.
+/vault/signatures/swf_custom_regex.cvd | Datei der Shockwave-Signaturen.
+/vault/signatures/swf_custom_standard.cvd | Datei der Shockwave-Signaturen.
+/vault/signatures/swf_mussel_regex.cvd | Datei der Shockwave-Signaturen.
+/vault/signatures/swf_mussel_standard.cvd | Datei der Shockwave-Signaturen.
+/vault/signatures/switch.dat | Diese Datei definiert bestimmte Variablen.
+/vault/signatures/urlscanner.cvd | Datei der URL-Scanner-Signaturen.
+/vault/signatures/whitelist_clamav.cvd | Datei-spezifische Whitelist.
+/vault/signatures/whitelist_custom.cvd | Datei-spezifische Whitelist.
+/vault/signatures/whitelist_mussel.cvd | Datei-spezifische Whitelist.
+/vault/signatures/xmlxdp_clamav_regex.cvd | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/signatures/xmlxdp_clamav_regex.map | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/signatures/xmlxdp_clamav_standard.cvd | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/signatures/xmlxdp_clamav_standard.map | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/signatures/xmlxdp_custom_regex.cvd | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/signatures/xmlxdp_custom_standard.cvd | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/signatures/xmlxdp_mussel_regex.cvd | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/signatures/xmlxdp_mussel_standard.cvd | Datei der XML/XDP-Datenblock-Signaturen.
+/vault/template.html | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
+/vault/template_custom.html | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
+/vault/update.dat | Datei beinhaltet Versionsinformationen des Scripts und der Signaturen. Diese Datei ist notwendig, wenn Sie phpMussel automatisch oder mittels Browser aktualisieren wollen.
+/vault/update.inc | Update Script; Wird nur für die automatische und manuelle Aktualisierung mittels Browser benötigt.
+/vault/upload.inc | Upload handler. @TranslateMe@
 
 ※ Der Dateiname kann je nach Konfiguratuion in der `phpmussel.ini` variieren.
 
@@ -995,4 +1001,4 @@ Diese Informationen wurden zuletzt am 12. Dezember 2015 aktualisiert und gelten 
 ---
 
 
-Zuletzt aktualisiert: 7. Februar 2016 (2016.02.07).
+Zuletzt aktualisiert: 24. Februar 2016 (2016.02.23).

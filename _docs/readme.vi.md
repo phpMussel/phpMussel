@@ -255,210 +255,216 @@ For a list of available CLI commands, at the CLI prompt, type 'c', and press Ent
 
 The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, any files that may be potentially created as a result of your using this script, along with a short description of what all these files are for.
 
-Hồ sơ                                      | Chi tiết
--------------------------------------------|--------------------------------------
-/.gitattributes                            | @todo
-/composer.json                             | @todo
-/CONTRIBUTING.md                           | @todo
-/LICENSE.txt                               | @todo
-/PEOPLE.md                                 | @todo
-/phpmussel.php                             | Hồ sơ tải. Tải bản chính, tải lên, vân vân. Đây là điều bạn cần nối vào (cần thiết)!
-/README.md                                 | @todo
-/web.config                                | Một hồ sơ cấu hình của ASP.NET (trong trường hợp này, để bảo vệ `/vault` thư mực khỏi bị truy cập bởi những nguồn không có quền trong trường hợp bản được cài trên serever chạy trên công nghệ ASP.NET).
-/_docs/                                    | Thư mực tài liệu (Chứa nhiều loại hồ sơ).
-/_docs/change_log.txt                      | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
-/_docs/readme.ar.md                        | Tài liệu tiếng Ả Rập.
-/_docs/readme.de.md                        | Tài liệu tiếng Đức.
-/_docs/readme.de.txt                       | Tài liệu tiếng Đức.
-/_docs/readme.en.md                        | Tài liệu tiếng Anh.
-/_docs/readme.en.txt                       | Tài liệu tiếng Anh.
-/_docs/readme.es.md                        | Tài liệu tiếng Tây Ban Nha.
-/_docs/readme.es.txt                       | Tài liệu tiếng Tây Ban Nha.
-/_docs/readme.fr.md                        | Tài liệu tiếng Pháp.
-/_docs/readme.fr.txt                       | Tài liệu tiếng Pháp.
-/_docs/readme.id.md                        | Tài liệu tiếng Indonesia.
-/_docs/readme.id.txt                       | Tài liệu tiếng Indonesia.
-/_docs/readme.it.md                        | Tài liệu tiếng Ý.
-/_docs/readme.it.txt                       | Tài liệu tiếng Ý.
-/_docs/readme.nl.md                        | Tài liệu tiếng Hà Lan.
-/_docs/readme.nl.txt                       | Tài liệu tiếng Hà Lan.
-/_docs/readme.pt.md                        | Tài liệu tiếng Bồ Đào Nha.
-/_docs/readme.pt.txt                       | Tài liệu tiếng Bồ Đào Nha.
-/_docs/readme.ru.md                        | Tài liệu tiếng Nga.
-/_docs/readme.ru.txt                       | Tài liệu tiếng Nga.
-/_docs/readme.vi.md                        | Tài liệu tiếng Việt.
-/_docs/readme.vi.txt                       | Tài liệu tiếng Việt.
-/_docs/readme.zh.md                        | Tài liệu tiếng Trung Quốc (Giản Thể).
-/_docs/readme.zh-TW.md                     | Tài liệu tiếng Trung Quốc (Truyền Thống).
-/_docs/signatures_tally.txt                | Lý lịch của net-shift có bao gồm chữ ký (không cần thiết cho chức năng phù hợp của kịch bản).
-/_testfiles/                               | Thư mục kiểm tra tập tin (chứa các tập tin khác nhau). Tất cả các hồ sơ chứa những hồ sơ thử nghiệm để thử nghiệm nếu phpMussel đã được cài đặt đúng trên hệ thống của bạn, và bạn không cần phải tải lên thư mục này hoặc bất kỳ các hồ sơ của mình trừ khi làm xét nghiệm như vậy.
-/_testfiles/ascii_standard_testfile.txt    | Kiểm tra tập tin cho xét nghiệm phpMussel chữ ký ASCII bình thường.
-/_testfiles/coex_testfile.rtf              | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký kéo dài phức tạp.
-/_testfiles/exe_standard_testfile.exe      | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký PE.
-/_testfiles/general_standard_testfile.txt  | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký chung.
+Hồ sơ | Chi tiết
+----|----
+/.gitattributes | Hồ sơ dự án GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
+/composer.json | Composer/Packagist thông tin (không cần thiết cho chức năng phù hợp của kịch bản).
+/CONTRIBUTING.md | Information about how to contribute to the project. @TranslateMe@
+/LICENSE.txt | A copy of the GNU/GPLv2 license. @TranslateMe@
+/PEOPLE.md | Information about the people involved in the project. @TranslateMe@
+/phpmussel.php | Hồ sơ tải (tải bản chính, tải lên, vân vân). Đây là điều bạn cần nối vào (cần thiết)!
+/README.md | Project summary information. @TranslateMe@
+/web.config | Một hồ sơ cấu hình của ASP.NET (trong trường hợp này, để bảo vệ `/vault` thư mực khỏi bị truy cập bởi những nguồn không có quền trong trường hợp bản được cài trên serever chạy trên công nghệ ASP.NET).
+/_docs/ | Thư mực tài liệu (Chứa nhiều loại hồ sơ).
+/_docs/change_log.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
+/_docs/readme.ar.md | Tài liệu tiếng Ả Rập.
+/_docs/readme.de.md | Tài liệu tiếng Đức.
+/_docs/readme.de.txt | Tài liệu tiếng Đức.
+/_docs/readme.en.md | Tài liệu tiếng Anh.
+/_docs/readme.en.txt | Tài liệu tiếng Anh.
+/_docs/readme.es.md | Tài liệu tiếng Tây Ban Nha.
+/_docs/readme.es.txt | Tài liệu tiếng Tây Ban Nha.
+/_docs/readme.fr.md | Tài liệu tiếng Pháp.
+/_docs/readme.fr.txt | Tài liệu tiếng Pháp.
+/_docs/readme.id.md | Tài liệu tiếng Indonesia.
+/_docs/readme.id.txt | Tài liệu tiếng Indonesia.
+/_docs/readme.it.md | Tài liệu tiếng Ý.
+/_docs/readme.it.txt | Tài liệu tiếng Ý.
+/_docs/readme.nl.md | Tài liệu tiếng Hà Lan.
+/_docs/readme.nl.txt | Tài liệu tiếng Hà Lan.
+/_docs/readme.pt.md | Tài liệu tiếng Bồ Đào Nha.
+/_docs/readme.pt.txt | Tài liệu tiếng Bồ Đào Nha.
+/_docs/readme.ru.md | Tài liệu tiếng Nga.
+/_docs/readme.ru.txt | Tài liệu tiếng Nga.
+/_docs/readme.vi.md | Tài liệu tiếng Việt.
+/_docs/readme.vi.txt | Tài liệu tiếng Việt.
+/_docs/readme.zh-TW.md | Tài liệu tiếng Trung Quốc (Truyền Thống).
+/_docs/readme.zh.md | Tài liệu tiếng Trung Quốc (Giản Thể).
+/_docs/signatures_tally.txt | Lý lịch của net-shift có bao gồm chữ ký (không cần thiết cho chức năng phù hợp của kịch bản).
+/_testfiles/ | Thư mục kiểm tra tập tin (chứa các tập tin khác nhau). Tất cả các hồ sơ chứa những hồ sơ thử nghiệm để thử nghiệm nếu phpMussel đã được cài đặt đúng trên hệ thống của bạn, và bạn không cần phải tải lên thư mục này hoặc bất kỳ các hồ sơ của mình trừ khi làm xét nghiệm như vậy.
+/_testfiles/ascii_standard_testfile.txt | Kiểm tra tập tin cho xét nghiệm phpMussel chữ ký ASCII bình thường.
+/_testfiles/coex_testfile.rtf | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký kéo dài phức tạp.
+/_testfiles/exe_standard_testfile.exe | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký PE.
+/_testfiles/general_standard_testfile.txt | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký chung.
 /_testfiles/graphics_standard_testfile.gif | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký đồ họa.
-/_testfiles/html_standard_testfile.html    | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký HTML bình thường.
-/_testfiles/md5_testfile.txt               | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký dựa MD5.
-/_testfiles/metadata_testfile.tar          | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký siêu dữ liệu kho lưu trữ và cho xét nghiệm hỗ trợ tập tin TAR trên hệ thống của bạn.
-/_testfiles/metadata_testfile.txt.gz       | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký siêu dữ liệu kho lưu trữ và cho xét nghiệm hỗ trợ tập tin GZ trên hệ thống của bạn.
-/_testfiles/metadata_testfile.zip          | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký siêu dữ liệu kho lưu trữ và cho xét nghiệm hỗ trợ tập tin ZIP trên hệ thống của bạn.
-/_testfiles/ole_testfile.ole               | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký OLE.
-/_testfiles/pdf_standard_testfile.pdf      | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký PDF.
-/_testfiles/pe_sectional_testfile.exe      | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký phần PE.
-/_testfiles/swf_standard_testfile.swf      | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký Shockwave.
-/_testfiles/xdp_standard_testfile.xdp      | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký XML/XDP.
-/vault/                                    | Vault thư mục (chứa các tập tin khác nhau).
-/vault/cache/                              | Cache thư mục (cho dữ liệu tạm thời).
-/vault/cache/.htaccess                     | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/lang/                               | Contains phpMussel language data.
-/vault/lang/.htaccess                      | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/lang/lang.ar.inc                    | Dữ liệu tiếng Ả Rập.
-/vault/lang/lang.de.inc                    | Dữ liệu tiếng Đức.
-/vault/lang/lang.en.inc                    | Dữ liệu tiếng Anh.
-/vault/lang/lang.es.inc                    | Dữ liệu tiếng Tây Ban Nha.
-/vault/lang/lang.fr.inc                    | Dữ liệu tiếng Pháp.
-/vault/lang/lang.id.inc                    | Dữ liệu tiếng Indonesia.
-/vault/lang/lang.it.inc                    | Dữ liệu tiếng Ý.
-/vault/lang/lang.ja.inc                    | Dữ liệu tiếng Nhật.
-/vault/lang/lang.nl.inc                    | Dữ liệu tiếng Hà Lan.
-/vault/lang/lang.pt.inc                    | Dữ liệu tiếng Bồ Đào Nha.
-/vault/lang/lang.ru.inc                    | Dữ liệu tiếng Nga.
-/vault/lang/lang.vi.inc                    | Dữ liệu tiếng Việt.
-/vault/lang/lang.zh.inc                    | Dữ liệu tiếng Trung Quốc (Giản Thể).
-/vault/lang/lang.zh-TW.inc                 | Dữ liệu tiếng Trung Quốc (Truyền Thống).
-/vault/quarantine/                         | Quarantine directory (contains quarantined files).
-/vault/quarantine/.htaccess                | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/.htaccess                           | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/ascii_clamav_regex.cvd              | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/ascii_clamav_regex.map              | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/ascii_clamav_standard.cvd           | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/ascii_clamav_standard.map           | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/ascii_custom_regex.cvd              | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/ascii_custom_standard.cvd           | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/ascii_mussel_regex.cvd              | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/ascii_mussel_standard.cvd           | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/coex_clamav.cvd                     | Hồ sơ cho chữ ký kéo dài phức tạp.
-/vault/coex_custom.cvd                     | Hồ sơ cho chữ ký kéo dài phức tạp.
-/vault/coex_mussel.cvd                     | Hồ sơ cho chữ ký kéo dài phức tạp.
-/vault/elf_clamav_regex.cvd                | Hồ sơ cho chữ ký ELF.
-/vault/elf_clamav_regex.map                | Hồ sơ cho chữ ký ELF.
-/vault/elf_clamav_standard.cvd             | Hồ sơ cho chữ ký ELF.
-/vault/elf_clamav_standard.map             | Hồ sơ cho chữ ký ELF.
-/vault/elf_custom_regex.cvd                | Hồ sơ cho chữ ký ELF.
-/vault/elf_custom_standard.cvd             | Hồ sơ cho chữ ký ELF.
-/vault/elf_mussel_regex.cvd                | Hồ sơ cho chữ ký ELF.
-/vault/elf_mussel_standard.cvd             | Hồ sơ cho chữ ký ELF.
-/vault/exe_clamav_regex.cvd                | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/exe_clamav_regex.map                | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/exe_clamav_standard.cvd             | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/exe_clamav_standard.map             | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/exe_custom_regex.cvd                | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/exe_custom_standard.cvd             | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/exe_mussel_regex.cvd                | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/exe_mussel_standard.cvd             | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/filenames_clamav.cvd                | Hồ sơ cho chữ ký tên tài liệu.
-/vault/filenames_custom.cvd                | Hồ sơ cho chữ ký tên tài liệu.
-/vault/filenames_mussel.cvd                | Hồ sơ cho chữ ký tên tài liệu.
-/vault/general_clamav_regex.cvd            | Hồ sơ cho chữ ký chung.
-/vault/general_clamav_regex.map            | Hồ sơ cho chữ ký chung.
-/vault/general_clamav_standard.cvd         | Hồ sơ cho chữ ký chung.
-/vault/general_clamav_standard.map         | Hồ sơ cho chữ ký chung.
-/vault/general_custom_regex.cvd            | Hồ sơ cho chữ ký chung.
-/vault/general_custom_standard.cvd         | Hồ sơ cho chữ ký chung.
-/vault/general_mussel_regex.cvd            | Hồ sơ cho chữ ký chung.
-/vault/general_mussel_standard.cvd         | Hồ sơ cho chữ ký chung.
-/vault/graphics_clamav_regex.cvd           | Hồ sơ cho chữ ký đồ họa.
-/vault/graphics_clamav_regex.map           | Hồ sơ cho chữ ký đồ họa.
-/vault/graphics_clamav_standard.cvd        | Hồ sơ cho chữ ký đồ họa.
-/vault/graphics_clamav_standard.map        | Hồ sơ cho chữ ký đồ họa.
-/vault/graphics_custom_regex.cvd           | Hồ sơ cho chữ ký đồ họa.
-/vault/graphics_custom_standard.cvd        | Hồ sơ cho chữ ký đồ họa.
-/vault/graphics_mussel_regex.cvd           | Hồ sơ cho chữ ký đồ họa.
-/vault/graphics_mussel_standard.cvd        | Hồ sơ cho chữ ký đồ họa.
-/vault/greylist.csv                        | CSV of greylisted signatures indicating to phpMussel which signatures it should be ignoring (file automatically recreated if deleted).
-/vault/hex_general_commands.csv            | Hex-encoded CSV of general command detections optionally used by phpMussel.
-/vault/html_clamav_regex.cvd               | Hồ sơ cho chữ ký HTML bình thường.
-/vault/html_clamav_regex.map               | Hồ sơ cho chữ ký HTML bình thường.
-/vault/html_clamav_standard.cvd            | Hồ sơ cho chữ ký HTML bình thường.
-/vault/html_clamav_standard.map            | Hồ sơ cho chữ ký HTML bình thường.
-/vault/html_custom_regex.cvd               | Hồ sơ cho chữ ký HTML bình thường.
-/vault/html_custom_standard.cvd            | Hồ sơ cho chữ ký HTML bình thường.
-/vault/html_mussel_regex.cvd               | Hồ sơ cho chữ ký HTML bình thường.
-/vault/html_mussel_standard.cvd            | Hồ sơ cho chữ ký HTML bình thường.
-/vault/lang.inc                            | Language data.
-/vault/macho_clamav_regex.cvd              | Hồ sơ cho chữ ký Mach-O.
-/vault/macho_clamav_regex.map              | Hồ sơ cho chữ ký Mach-O.
-/vault/macho_clamav_standard.cvd           | Hồ sơ cho chữ ký Mach-O.
-/vault/macho_clamav_standard.map           | Hồ sơ cho chữ ký Mach-O.
-/vault/macho_custom_regex.cvd              | Hồ sơ cho chữ ký Mach-O.
-/vault/macho_custom_standard.cvd           | Hồ sơ cho chữ ký Mach-O.
-/vault/macho_mussel_regex.cvd              | Hồ sơ cho chữ ký Mach-O.
-/vault/macho_mussel_standard.cvd           | Hồ sơ cho chữ ký Mach-O.
-/vault/mail_clamav_regex.cvd               | Hồ sơ cho chữ ký mail.
-/vault/mail_clamav_regex.map               | Hồ sơ cho chữ ký mail.
-/vault/mail_clamav_standard.cvd            | Hồ sơ cho chữ ký mail.
-/vault/mail_clamav_standard.map            | Hồ sơ cho chữ ký mail.
-/vault/mail_custom_regex.cvd               | Hồ sơ cho chữ ký mail.
-/vault/mail_custom_standard.cvd            | Hồ sơ cho chữ ký mail.
-/vault/mail_mussel_regex.cvd               | Hồ sơ cho chữ ký mail.
-/vault/mail_mussel_standard.cvd            | Hồ sơ cho chữ ký mail.
-/vault/md5_clamav.cvd                      | Hồ sơ cho chữ ký dựa MD5.
-/vault/md5_custom.cvd                      | Hồ sơ cho chữ ký dựa MD5.
-/vault/md5_mussel.cvd                      | Hồ sơ cho chữ ký dựa MD5.
-/vault/metadata_clamav.cvd                 | Hồ sơ cho chữ ký siêu dữ liệu kho lưu trữ.
-/vault/metadata_custom.cvd                 | Hồ sơ cho chữ ký siêu dữ liệu kho lưu trữ.
-/vault/metadata_mussel.cvd                 | Hồ sơ cho chữ ký siêu dữ liệu kho lưu trữ.
-/vault/ole_clamav_regex.cvd                | Hồ sơ cho chữ ký OLE.
-/vault/ole_clamav_regex.map                | Hồ sơ cho chữ ký OLE.
-/vault/ole_clamav_standard.cvd             | Hồ sơ cho chữ ký OLE.
-/vault/ole_clamav_standard.map             | Hồ sơ cho chữ ký OLE.
-/vault/ole_custom_regex.cvd                | Hồ sơ cho chữ ký OLE.
-/vault/ole_custom_standard.cvd             | Hồ sơ cho chữ ký OLE.
-/vault/ole_mussel_regex.cvd                | Hồ sơ cho chữ ký OLE.
-/vault/ole_mussel_standard.cvd             | Hồ sơ cho chữ ký OLE.
-/vault/pdf_clamav_regex.cvd                | Hồ sơ cho chữ ký PDF.
-/vault/pdf_clamav_regex.map                | Hồ sơ cho chữ ký PDF.
-/vault/pdf_clamav_standard.cvd             | Hồ sơ cho chữ ký PDF.
-/vault/pdf_clamav_standard.map             | Hồ sơ cho chữ ký PDF.
-/vault/pdf_custom_regex.cvd                | Hồ sơ cho chữ ký PDF.
-/vault/pdf_custom_standard.cvd             | Hồ sơ cho chữ ký PDF.
-/vault/pdf_mussel_regex.cvd                | Hồ sơ cho chữ ký PDF.
-/vault/pdf_mussel_standard.cvd             | Hồ sơ cho chữ ký PDF.
-/vault/pe_clamav.cvd                       | Hồ sơ cho chữ ký phần PE.
-/vault/pe_custom.cvd                       | Hồ sơ cho chữ ký phần PE.
-/vault/pe_mussel.cvd                       | Hồ sơ cho chữ ký phần PE.
-/vault/pex_custom.cvd                      | Hồ sơ cho chữ ký kéo dài PE.
-/vault/pex_mussel.cvd                      | Hồ sơ cho chữ ký kéo dài PE.
-/vault/phpmussel.inc                       | Core Script; The main body and guts of phpMussel (essential)!
-/vault/phpmussel.ini                       | Configuration file; Contains all the configuration options of phpMussel, telling it what to do and how to operate correctly (essential)!
-※ /vault/scan_log.txt                     | A record of everything scanned by phpMussel.
-※ /vault/scan_log_serialized.txt          | A record of everything scanned by phpMussel.
-※ /vault/scan_kills.txt                   | A record of every file upload blocked/killed by phpMussel.
-/vault/swf_clamav_regex.cvd                | Hồ sơ cho chữ ký Shockwave.
-/vault/swf_clamav_regex.map                | Hồ sơ cho chữ ký Shockwave.
-/vault/swf_clamav_standard.cvd             | Hồ sơ cho chữ ký Shockwave.
-/vault/swf_clamav_standard.map             | Hồ sơ cho chữ ký Shockwave.
-/vault/swf_custom_regex.cvd                | Hồ sơ cho chữ ký Shockwave.
-/vault/swf_custom_standard.cvd             | Hồ sơ cho chữ ký Shockwave.
-/vault/swf_mussel_regex.cvd                | Hồ sơ cho chữ ký Shockwave.
-/vault/swf_mussel_standard.cvd             | Hồ sơ cho chữ ký Shockwave.
-/vault/switch.dat                          | Controls and sets certain variables.
-/vault/template.html                       | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
-/vault/template_custom.html                | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
-/vault/update.dat                          | File containing version information for both the phpMussel script and the phpMussel signatures. If you ever want to automatically update phpMussel or want to update phpMussel via your browser, this file is essential.
-/vault/update.inc                          | Update Script; Required for automatic updates and for updating phpMussel via your browser, but not required otherwise.
-/vault/urlscanner.cvd                      | Hồ sơ cho chữ ký máy quét URL.
-/vault/whitelist_clamav.cvd                | Hồ sơ riêng cho danh sách trắng.
-/vault/whitelist_custom.cvd                | Hồ sơ riêng cho danh sách trắng.
-/vault/whitelist_mussel.cvd                | Hồ sơ riêng cho danh sách trắng.
-/vault/xmlxdp_clamav_regex.cvd             | Hồ sơ cho chữ ký XML/XDP.
-/vault/xmlxdp_clamav_regex.map             | Hồ sơ cho chữ ký XML/XDP.
-/vault/xmlxdp_clamav_standard.cvd          | Hồ sơ cho chữ ký XML/XDP.
-/vault/xmlxdp_clamav_standard.map          | Hồ sơ cho chữ ký XML/XDP.
-/vault/xmlxdp_custom_regex.cvd             | Hồ sơ cho chữ ký XML/XDP.
-/vault/xmlxdp_custom_standard.cvd          | Hồ sơ cho chữ ký XML/XDP.
-/vault/xmlxdp_mussel_regex.cvd             | Hồ sơ cho chữ ký XML/XDP.
-/vault/xmlxdp_mussel_standard.cvd          | Hồ sơ cho chữ ký XML/XDP.
+/_testfiles/html_standard_testfile.html | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký HTML bình thường.
+/_testfiles/md5_testfile.txt | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký dựa MD5.
+/_testfiles/metadata_testfile.tar | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký siêu dữ liệu kho lưu trữ và cho xét nghiệm hỗ trợ tập tin TAR trên hệ thống của bạn.
+/_testfiles/metadata_testfile.txt.gz | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký siêu dữ liệu kho lưu trữ và cho xét nghiệm hỗ trợ tập tin GZ trên hệ thống của bạn.
+/_testfiles/metadata_testfile.zip | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký siêu dữ liệu kho lưu trữ và cho xét nghiệm hỗ trợ tập tin ZIP trên hệ thống của bạn.
+/_testfiles/ole_testfile.ole | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký OLE.
+/_testfiles/pdf_standard_testfile.pdf | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký PDF.
+/_testfiles/pe_sectional_testfile.exe | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký phần PE.
+/_testfiles/swf_standard_testfile.swf | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký Shockwave.
+/_testfiles/xdp_standard_testfile.xdp | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký XML/XDP.
+/vault/ | Vault thư mục (chứa các tập tin khác nhau).
+/vault/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
+/vault/cache/ | Cache thư mục (cho dữ liệu tạm thời).
+/vault/cache/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
+/vault/cli.inc | CLI handler. @TranslateMe@
+/vault/config.inc | Configuration handler. @TranslateMe@
+/vault/controls.inc | Controls handler. @TranslateMe@
+/vault/functions.inc | Functions file (essential). @TranslateMe@
+/vault/greylist.csv | CSV of greylisted signatures indicating to phpMussel which signatures it should be ignoring (file automatically recreated if deleted).
+/vault/lang.inc | Language data.
+/vault/lang/ | Contains phpMussel language data.
+/vault/lang/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
+/vault/lang/lang.ar.inc | Dữ liệu tiếng Ả Rập.
+/vault/lang/lang.de.inc | Dữ liệu tiếng Đức.
+/vault/lang/lang.en.inc | Dữ liệu tiếng Anh.
+/vault/lang/lang.es.inc | Dữ liệu tiếng Tây Ban Nha.
+/vault/lang/lang.fr.inc | Dữ liệu tiếng Pháp.
+/vault/lang/lang.id.inc | Dữ liệu tiếng Indonesia.
+/vault/lang/lang.it.inc | Dữ liệu tiếng Ý.
+/vault/lang/lang.ja.inc | Dữ liệu tiếng Nhật.
+/vault/lang/lang.nl.inc | Dữ liệu tiếng Hà Lan.
+/vault/lang/lang.pt.inc | Dữ liệu tiếng Bồ Đào Nha.
+/vault/lang/lang.ru.inc | Dữ liệu tiếng Nga.
+/vault/lang/lang.vi.inc | Dữ liệu tiếng Việt.
+/vault/lang/lang.zh-TW.inc | Dữ liệu tiếng Trung Quốc (Truyền Thống).
+/vault/lang/lang.zh.inc | Dữ liệu tiếng Trung Quốc (Giản Thể).
+/vault/phpmussel.ini | Configuration file; Contains all the configuration options of phpMussel, telling it what to do and how to operate correctly (essential)!
+/vault/quarantine/ | Quarantine directory (contains quarantined files).
+/vault/quarantine/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
+※ /vault/scan_kills.txt | A record of every file upload blocked/killed by phpMussel.
+※ /vault/scan_log.txt | A record of everything scanned by phpMussel.
+※ /vault/scan_log_serialized.txt | A record of everything scanned by phpMussel.
+/vault/signatures/ | Signatures directory (contains signature files).
+/vault/signatures/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
+/vault/signatures/ascii_clamav_regex.cvd | Hồ sơ cho chữ ký ASCII bình thường.
+/vault/signatures/ascii_clamav_regex.map | Hồ sơ cho chữ ký ASCII bình thường.
+/vault/signatures/ascii_clamav_standard.cvd | Hồ sơ cho chữ ký ASCII bình thường.
+/vault/signatures/ascii_clamav_standard.map | Hồ sơ cho chữ ký ASCII bình thường.
+/vault/signatures/ascii_custom_regex.cvd | Hồ sơ cho chữ ký ASCII bình thường.
+/vault/signatures/ascii_custom_standard.cvd | Hồ sơ cho chữ ký ASCII bình thường.
+/vault/signatures/ascii_mussel_regex.cvd | Hồ sơ cho chữ ký ASCII bình thường.
+/vault/signatures/ascii_mussel_standard.cvd | Hồ sơ cho chữ ký ASCII bình thường.
+/vault/signatures/coex_clamav.cvd | Hồ sơ cho chữ ký kéo dài phức tạp.
+/vault/signatures/coex_custom.cvd | Hồ sơ cho chữ ký kéo dài phức tạp.
+/vault/signatures/coex_mussel.cvd | Hồ sơ cho chữ ký kéo dài phức tạp.
+/vault/signatures/elf_clamav_regex.cvd | Hồ sơ cho chữ ký ELF.
+/vault/signatures/elf_clamav_regex.map | Hồ sơ cho chữ ký ELF.
+/vault/signatures/elf_clamav_standard.cvd | Hồ sơ cho chữ ký ELF.
+/vault/signatures/elf_clamav_standard.map | Hồ sơ cho chữ ký ELF.
+/vault/signatures/elf_custom_regex.cvd | Hồ sơ cho chữ ký ELF.
+/vault/signatures/elf_custom_standard.cvd | Hồ sơ cho chữ ký ELF.
+/vault/signatures/elf_mussel_regex.cvd | Hồ sơ cho chữ ký ELF.
+/vault/signatures/elf_mussel_standard.cvd | Hồ sơ cho chữ ký ELF.
+/vault/signatures/exe_clamav_regex.cvd | Hồ sơ cho chữ ký PE (Portable Executable).
+/vault/signatures/exe_clamav_regex.map | Hồ sơ cho chữ ký PE (Portable Executable).
+/vault/signatures/exe_clamav_standard.cvd | Hồ sơ cho chữ ký PE (Portable Executable).
+/vault/signatures/exe_clamav_standard.map | Hồ sơ cho chữ ký PE (Portable Executable).
+/vault/signatures/exe_custom_regex.cvd | Hồ sơ cho chữ ký PE (Portable Executable).
+/vault/signatures/exe_custom_standard.cvd | Hồ sơ cho chữ ký PE (Portable Executable).
+/vault/signatures/exe_mussel_regex.cvd | Hồ sơ cho chữ ký PE (Portable Executable).
+/vault/signatures/exe_mussel_standard.cvd | Hồ sơ cho chữ ký PE (Portable Executable).
+/vault/signatures/filenames_clamav.cvd | Hồ sơ cho chữ ký tên tài liệu.
+/vault/signatures/filenames_custom.cvd | Hồ sơ cho chữ ký tên tài liệu.
+/vault/signatures/filenames_mussel.cvd | Hồ sơ cho chữ ký tên tài liệu.
+/vault/signatures/general_clamav_regex.cvd | Hồ sơ cho chữ ký chung.
+/vault/signatures/general_clamav_regex.map | Hồ sơ cho chữ ký chung.
+/vault/signatures/general_clamav_standard.cvd | Hồ sơ cho chữ ký chung.
+/vault/signatures/general_clamav_standard.map | Hồ sơ cho chữ ký chung.
+/vault/signatures/general_custom_regex.cvd | Hồ sơ cho chữ ký chung.
+/vault/signatures/general_custom_standard.cvd | Hồ sơ cho chữ ký chung.
+/vault/signatures/general_mussel_regex.cvd | Hồ sơ cho chữ ký chung.
+/vault/signatures/general_mussel_standard.cvd | Hồ sơ cho chữ ký chung.
+/vault/signatures/graphics_clamav_regex.cvd | Hồ sơ cho chữ ký đồ họa.
+/vault/signatures/graphics_clamav_regex.map | Hồ sơ cho chữ ký đồ họa.
+/vault/signatures/graphics_clamav_standard.cvd | Hồ sơ cho chữ ký đồ họa.
+/vault/signatures/graphics_clamav_standard.map | Hồ sơ cho chữ ký đồ họa.
+/vault/signatures/graphics_custom_regex.cvd | Hồ sơ cho chữ ký đồ họa.
+/vault/signatures/graphics_custom_standard.cvd | Hồ sơ cho chữ ký đồ họa.
+/vault/signatures/graphics_mussel_regex.cvd | Hồ sơ cho chữ ký đồ họa.
+/vault/signatures/graphics_mussel_standard.cvd | Hồ sơ cho chữ ký đồ họa.
+/vault/signatures/hex_general_commands.csv | Hex-encoded CSV of general command detections optionally used by phpMussel.
+/vault/signatures/html_clamav_regex.cvd | Hồ sơ cho chữ ký HTML bình thường.
+/vault/signatures/html_clamav_regex.map | Hồ sơ cho chữ ký HTML bình thường.
+/vault/signatures/html_clamav_standard.cvd | Hồ sơ cho chữ ký HTML bình thường.
+/vault/signatures/html_clamav_standard.map | Hồ sơ cho chữ ký HTML bình thường.
+/vault/signatures/html_custom_regex.cvd | Hồ sơ cho chữ ký HTML bình thường.
+/vault/signatures/html_custom_standard.cvd | Hồ sơ cho chữ ký HTML bình thường.
+/vault/signatures/html_mussel_regex.cvd | Hồ sơ cho chữ ký HTML bình thường.
+/vault/signatures/html_mussel_standard.cvd | Hồ sơ cho chữ ký HTML bình thường.
+/vault/signatures/macho_clamav_regex.cvd | Hồ sơ cho chữ ký Mach-O.
+/vault/signatures/macho_clamav_regex.map | Hồ sơ cho chữ ký Mach-O.
+/vault/signatures/macho_clamav_standard.cvd | Hồ sơ cho chữ ký Mach-O.
+/vault/signatures/macho_clamav_standard.map | Hồ sơ cho chữ ký Mach-O.
+/vault/signatures/macho_custom_regex.cvd | Hồ sơ cho chữ ký Mach-O.
+/vault/signatures/macho_custom_standard.cvd | Hồ sơ cho chữ ký Mach-O.
+/vault/signatures/macho_mussel_regex.cvd | Hồ sơ cho chữ ký Mach-O.
+/vault/signatures/macho_mussel_standard.cvd | Hồ sơ cho chữ ký Mach-O.
+/vault/signatures/mail_clamav_regex.cvd | Hồ sơ cho chữ ký mail.
+/vault/signatures/mail_clamav_regex.map | Hồ sơ cho chữ ký mail.
+/vault/signatures/mail_clamav_standard.cvd | Hồ sơ cho chữ ký mail.
+/vault/signatures/mail_clamav_standard.map | Hồ sơ cho chữ ký mail.
+/vault/signatures/mail_custom_regex.cvd | Hồ sơ cho chữ ký mail.
+/vault/signatures/mail_custom_standard.cvd | Hồ sơ cho chữ ký mail.
+/vault/signatures/mail_mussel_regex.cvd | Hồ sơ cho chữ ký mail.
+/vault/signatures/mail_mussel_standard.cvd | Hồ sơ cho chữ ký mail.
+/vault/signatures/md5_clamav.cvd | Hồ sơ cho chữ ký dựa MD5.
+/vault/signatures/md5_custom.cvd | Hồ sơ cho chữ ký dựa MD5.
+/vault/signatures/md5_mussel.cvd | Hồ sơ cho chữ ký dựa MD5.
+/vault/signatures/metadata_clamav.cvd | Hồ sơ cho chữ ký siêu dữ liệu kho lưu trữ.
+/vault/signatures/metadata_custom.cvd | Hồ sơ cho chữ ký siêu dữ liệu kho lưu trữ.
+/vault/signatures/metadata_mussel.cvd | Hồ sơ cho chữ ký siêu dữ liệu kho lưu trữ.
+/vault/signatures/ole_clamav_regex.cvd | Hồ sơ cho chữ ký OLE.
+/vault/signatures/ole_clamav_regex.map | Hồ sơ cho chữ ký OLE.
+/vault/signatures/ole_clamav_standard.cvd | Hồ sơ cho chữ ký OLE.
+/vault/signatures/ole_clamav_standard.map | Hồ sơ cho chữ ký OLE.
+/vault/signatures/ole_custom_regex.cvd | Hồ sơ cho chữ ký OLE.
+/vault/signatures/ole_custom_standard.cvd | Hồ sơ cho chữ ký OLE.
+/vault/signatures/ole_mussel_regex.cvd | Hồ sơ cho chữ ký OLE.
+/vault/signatures/ole_mussel_standard.cvd | Hồ sơ cho chữ ký OLE.
+/vault/signatures/pdf_clamav_regex.cvd | Hồ sơ cho chữ ký PDF.
+/vault/signatures/pdf_clamav_regex.map | Hồ sơ cho chữ ký PDF.
+/vault/signatures/pdf_clamav_standard.cvd | Hồ sơ cho chữ ký PDF.
+/vault/signatures/pdf_clamav_standard.map | Hồ sơ cho chữ ký PDF.
+/vault/signatures/pdf_custom_regex.cvd | Hồ sơ cho chữ ký PDF.
+/vault/signatures/pdf_custom_standard.cvd | Hồ sơ cho chữ ký PDF.
+/vault/signatures/pdf_mussel_regex.cvd | Hồ sơ cho chữ ký PDF.
+/vault/signatures/pdf_mussel_standard.cvd | Hồ sơ cho chữ ký PDF.
+/vault/signatures/pex_custom.cvd | Hồ sơ cho chữ ký kéo dài PE.
+/vault/signatures/pex_mussel.cvd | Hồ sơ cho chữ ký kéo dài PE.
+/vault/signatures/pe_clamav.cvd | Hồ sơ cho chữ ký phần PE.
+/vault/signatures/pe_custom.cvd | Hồ sơ cho chữ ký phần PE.
+/vault/signatures/pe_mussel.cvd | Hồ sơ cho chữ ký phần PE.
+/vault/signatures/swf_clamav_regex.cvd | Hồ sơ cho chữ ký Shockwave.
+/vault/signatures/swf_clamav_regex.map | Hồ sơ cho chữ ký Shockwave.
+/vault/signatures/swf_clamav_standard.cvd | Hồ sơ cho chữ ký Shockwave.
+/vault/signatures/swf_clamav_standard.map | Hồ sơ cho chữ ký Shockwave.
+/vault/signatures/swf_custom_regex.cvd | Hồ sơ cho chữ ký Shockwave.
+/vault/signatures/swf_custom_standard.cvd | Hồ sơ cho chữ ký Shockwave.
+/vault/signatures/swf_mussel_regex.cvd | Hồ sơ cho chữ ký Shockwave.
+/vault/signatures/swf_mussel_standard.cvd | Hồ sơ cho chữ ký Shockwave.
+/vault/signatures/switch.dat | Controls and sets certain variables.
+/vault/signatures/urlscanner.cvd | Hồ sơ cho chữ ký máy quét URL.
+/vault/signatures/whitelist_clamav.cvd | Hồ sơ riêng cho danh sách trắng.
+/vault/signatures/whitelist_custom.cvd | Hồ sơ riêng cho danh sách trắng.
+/vault/signatures/whitelist_mussel.cvd | Hồ sơ riêng cho danh sách trắng.
+/vault/signatures/xmlxdp_clamav_regex.cvd | Hồ sơ cho chữ ký XML/XDP.
+/vault/signatures/xmlxdp_clamav_regex.map | Hồ sơ cho chữ ký XML/XDP.
+/vault/signatures/xmlxdp_clamav_standard.cvd | Hồ sơ cho chữ ký XML/XDP.
+/vault/signatures/xmlxdp_clamav_standard.map | Hồ sơ cho chữ ký XML/XDP.
+/vault/signatures/xmlxdp_custom_regex.cvd | Hồ sơ cho chữ ký XML/XDP.
+/vault/signatures/xmlxdp_custom_standard.cvd | Hồ sơ cho chữ ký XML/XDP.
+/vault/signatures/xmlxdp_mussel_regex.cvd | Hồ sơ cho chữ ký XML/XDP.
+/vault/signatures/xmlxdp_mussel_standard.cvd | Hồ sơ cho chữ ký XML/XDP.
+/vault/template.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
+/vault/template_custom.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
+/vault/update.dat | File containing version information for both the phpMussel script and the phpMussel signatures. If you ever want to automatically update phpMussel or want to update phpMussel via your browser, this file is essential.
+/vault/update.inc | Update Script; Required for automatic updates and for updating phpMussel via your browser, but not required otherwise.
+/vault/upload.inc | Upload handler. @TranslateMe@
 
 ※ Tên tài liệu có thể thay đổi tuy theo các quy định của cấu hình (in `phpmussel.ini`).
 
@@ -750,10 +756,10 @@ Chameleon attack detection: False = Off; True = On.
 - Corrupted files and parse errors. False = Ignore; True = Block [Default]. Detect and block potentially corrupted PE (Portable Executable) files? Often (but not always), when certain aspects of a PE file are corrupted or can't be parsed correctly, it can be indicative of a viral infection. The processes used by most anti-virus programs to detect viruses in PE files require parsing those files in certain ways, which, if the programmer of a virus is aware of, will specifically try to prevent, in order to allow their virus to remain undetected.
 
 "decode_threshold"
-- Optional limitation or threshold to the length of raw data within which decode commands should be detected (in case there are any noticeable performance issues whilst scanning). Value is an integer representing filesize in KB. Default = 512 (512KB). Zero or null value disables the threshold (removing any such limitation based on filesize).
+- Optional limitation or threshold to the length of raw data within which decode commands should be detected (in case there are any noticeable performance issues while scanning). Value is an integer representing filesize in KB. Default = 512 (512KB). Zero or null value disables the threshold (removing any such limitation based on filesize).
 
 "scannable_threshold"
-- Optional limitation or threshold to the length of raw data that phpMussel is permitted to read and scan (in case there are any noticeable performance issues whilst scanning). Value is an integer representing filesize in KB. Default = 32768 (32MB). Zero or null value disables the threshold. Generally, this value shouldn't be less than the average filesize of file uploads that you want and expect to receive to your server or website, shouldn't be more than the filesize_limit directive, and shouldn't be more than roughly one fifth of the total allowable memory allocation granted to PHP via the php.ini configuration file. This directive exists to try to prevent phpMussel from using up too much memory (that'd prevent it from being able to successfully scan files above a certain filesize).
+- Optional limitation or threshold to the length of raw data that phpMussel is permitted to read and scan (in case there are any noticeable performance issues while scanning). Value is an integer representing filesize in KB. Default = 32768 (32MB). Zero or null value disables the threshold. Generally, this value shouldn't be less than the average filesize of file uploads that you want and expect to receive to your server or website, shouldn't be more than the filesize_limit directive, and shouldn't be more than roughly one fifth of the total allowable memory allocation granted to PHP via the php.ini configuration file. This directive exists to try to prevent phpMussel from using up too much memory (that'd prevent it from being able to successfully scan files above a certain filesize).
 
 ####"compatibility" (Category)
 Compatibility directives for phpMussel.
@@ -997,4 +1003,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 12 Tháng Mười
 ---
 
 
-Lần cuối cập nhật: 7 Tháng Hai 2016 (2016.02.07).
+Lần cuối cập nhật: 24 Tháng Hai 2016 (2016.02.23).
