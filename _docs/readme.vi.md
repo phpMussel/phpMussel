@@ -308,17 +308,17 @@ Hồ sơ | Chi tiết
 /_testfiles/swf_standard_testfile.swf | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký Shockwave.
 /_testfiles/xdp_standard_testfile.xdp | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký XML/XDP.
 /vault/ | Vault thư mục (chứa các tập tin khác nhau).
-/vault/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
+/vault/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/cache/ | Cache thư mục (cho dữ liệu tạm thời).
-/vault/cache/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
+/vault/cache/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/cli.inc | CLI handler. @TranslateMe@
 /vault/config.inc | Configuration handler. @TranslateMe@
 /vault/controls.inc | Controls handler. @TranslateMe@
 /vault/functions.inc | Functions file (essential). @TranslateMe@
-/vault/greylist.csv | CSV of greylisted signatures indicating to phpMussel which signatures it should be ignoring (file automatically recreated if deleted).
-/vault/lang.inc | Language data.
-/vault/lang/ | Contains phpMussel language data.
-/vault/lang/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
+/vault/greylist.csv | CSV of greylisted signatures indicating to phpMussel which signatures it should be ignoring (file automatically recreated if deleted). @TranslateMe@
+/vault/lang.inc | Language data. @TranslateMe@
+/vault/lang/ | Contains phpMussel language data. @TranslateMe@
+/vault/lang/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/lang/lang.ar.inc | Dữ liệu tiếng Ả Rập.
 /vault/lang/lang.de.inc | Dữ liệu tiếng Đức.
 /vault/lang/lang.en.inc | Dữ liệu tiếng Anh.
@@ -333,14 +333,14 @@ Hồ sơ | Chi tiết
 /vault/lang/lang.vi.inc | Dữ liệu tiếng Việt.
 /vault/lang/lang.zh-TW.inc | Dữ liệu tiếng Trung Quốc (Truyền Thống).
 /vault/lang/lang.zh.inc | Dữ liệu tiếng Trung Quốc (Giản Thể).
-/vault/phpmussel.ini | Configuration file; Contains all the configuration options of phpMussel, telling it what to do and how to operate correctly (essential)!
-/vault/quarantine/ | Quarantine directory (contains quarantined files).
-/vault/quarantine/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-※ /vault/scan_kills.txt | A record of every file upload blocked/killed by phpMussel.
-※ /vault/scan_log.txt | A record of everything scanned by phpMussel.
-※ /vault/scan_log_serialized.txt | A record of everything scanned by phpMussel.
-/vault/signatures/ | Signatures directory (contains signature files).
-/vault/signatures/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
+/vault/phpmussel.ini | Configuration file; Contains all the configuration options of phpMussel, telling it what to do and how to operate correctly (essential)! @TranslateMe@
+/vault/quarantine/ | Quarantine directory (contains quarantined files). @TranslateMe@
+/vault/quarantine/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
+※ /vault/scan_kills.txt | A record of every file upload blocked/killed by phpMussel. @TranslateMe@
+※ /vault/scan_log.txt | A record of everything scanned by phpMussel. @TranslateMe@
+※ /vault/scan_log_serialized.txt | A record of everything scanned by phpMussel. @TranslateMe@
+/vault/signatures/ | Signatures directory (contains signature files). @TranslateMe@
+/vault/signatures/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/signatures/ascii_clamav_regex.cvd | Hồ sơ cho chữ ký ASCII bình thường.
 /vault/signatures/ascii_clamav_regex.map | Hồ sơ cho chữ ký ASCII bình thường.
 /vault/signatures/ascii_clamav_standard.cvd | Hồ sơ cho chữ ký ASCII bình thường.
@@ -387,7 +387,7 @@ Hồ sơ | Chi tiết
 /vault/signatures/graphics_custom_standard.cvd | Hồ sơ cho chữ ký đồ họa.
 /vault/signatures/graphics_mussel_regex.cvd | Hồ sơ cho chữ ký đồ họa.
 /vault/signatures/graphics_mussel_standard.cvd | Hồ sơ cho chữ ký đồ họa.
-/vault/signatures/hex_general_commands.csv | Hex-encoded CSV of general command detections optionally used by phpMussel.
+/vault/signatures/hex_general_commands.csv | Hex-encoded CSV of general command detections optionally used by phpMussel. @TranslateMe@
 /vault/signatures/html_clamav_regex.cvd | Hồ sơ cho chữ ký HTML bình thường.
 /vault/signatures/html_clamav_regex.map | Hồ sơ cho chữ ký HTML bình thường.
 /vault/signatures/html_clamav_standard.cvd | Hồ sơ cho chữ ký HTML bình thường.
@@ -460,10 +460,10 @@ Hồ sơ | Chi tiết
 /vault/signatures/xmlxdp_custom_standard.cvd | Hồ sơ cho chữ ký XML/XDP.
 /vault/signatures/xmlxdp_mussel_regex.cvd | Hồ sơ cho chữ ký XML/XDP.
 /vault/signatures/xmlxdp_mussel_standard.cvd | Hồ sơ cho chữ ký XML/XDP.
-/vault/template.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
-/vault/template_custom.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
-/vault/update.dat | File containing version information for both the phpMussel script and the phpMussel signatures. If you ever want to automatically update phpMussel or want to update phpMussel via your browser, this file is essential.
-/vault/update.inc | Update Script; Required for automatic updates and for updating phpMussel via your browser, but not required otherwise.
+/vault/template.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader). @TranslateMe@
+/vault/template_custom.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader). @TranslateMe@
+/vault/update.dat | File containing version information for both the phpMussel script and the phpMussel signatures. If you ever want to automatically update phpMussel or want to update phpMussel via your browser, this file is essential. @TranslateMe@
+/vault/update.inc | Update Script; Required for automatic updates and for updating phpMussel via your browser, but not required otherwise. @TranslateMe@
 /vault/upload.inc | Upload handler. @TranslateMe@
 
 ※ Tên tài liệu có thể thay đổi tuy theo các quy định của cấu hình (in `phpmussel.ini`).
@@ -935,7 +935,7 @@ The following is a breakdown of the types of signatures used by phpMussel:
 
 Cho hầu hết các phần, phpMussel sẽ tương hợp với hầu hết các phần mềm quét virus khác. Nhưng mà, có một số người sử dụng trong quá khứ đã báo cáo một số vấn đề. Thông tin dưới đây là từ VirusTotal.com, và nó miêu tả một số giả tích cực báo cáo bởi các chương trình chống virus khác nhau chống phpMussel. Mặc dù thông tin này không đảm bảo nếu bạn gặp phải vấn đề tương hợp giữa phpMussel và phần mềm chống virus của bạn, nếu phần mềm chống virus của bạn được ghi nhận là cách gắn cờ chống lại phpMussel, bạn nên tắt nó trước khi sử dụng phpMussel hoặc nên xét các lựa chọn khác cho một trong hai phần mềm chống virus của bạn hoặc phpMussel.
 
-Thông tin này được cập nhật lần cứơi vào ngày 12 Tháng Mười Hai 2015 và có thể áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.8-v0.9.0) vào thời gian cái này được viết.
+Thông tin này được cập nhật lần cứơi vào ngày 25 Tháng Hai 2016 và có thể áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.9.0-v0.10.0) vào thời gian cái này được viết.
 
 | Chương trình quét    |  Kết quả                             |
 |----------------------|--------------------------------------|
@@ -954,14 +954,14 @@ Thông tin này được cập nhật lần cứơi vào ngày 12 Tháng Mười
 | AVware               |  Không có vấn đề                     |
 | Baidu-International  |  Không có vấn đề                     |
 | BitDefender          |  Không có vấn đề                     |
-| Bkav                 |  Báo cáo "VEXD737.Webshell"          |
+| Bkav                 |  Báo cáo "VEXC640.Webshell" và "VEXD737.Webshell"|
 | ByteHero             |  Không có vấn đề                     |
 | CAT-QuickHeal        |  Không có vấn đề                     |
 | ClamAV               |  Không có vấn đề                     |
 | CMC                  |  Không có vấn đề                     |
 | Commtouch            |  Không có vấn đề                     |
 | Comodo               |  Không có vấn đề                     |
-| Cyren                |  Báo cáo "W32/GenBl.DE4CF18E!Olympus"|
+| Cyren                |  Không có vấn đề                     |
 | DrWeb                |  Không có vấn đề                     |
 | Emsisoft             |  Không có vấn đề                     |
 | ESET-NOD32           |  Không có vấn đề                     |
@@ -1003,4 +1003,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 12 Tháng Mười
 ---
 
 
-Lần cuối cập nhật: 24 Tháng Hai 2016 (2016.02.23).
+Lần cuối cập nhật: 25 Tháng Hai 2016 (2016.02.25).

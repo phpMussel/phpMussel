@@ -260,9 +260,9 @@ greylist_show
 ----|----
 /.gitattributes | GitHub文件（不需要为正确经营脚本）。
 /composer.json | Composer/Packagist 信息（不需要为正确经营脚本）。
-/CONTRIBUTING.md | Information about how to contribute to the project. @TranslateMe@
+/CONTRIBUTING.md | 相关信息如何有助于该项目。
 /LICENSE.txt | GNU/GPLv2 执照文件。
-/PEOPLE.md | Information about the people involved in the project. @TranslateMe@
+/PEOPLE.md | 人民卷入到该项目。
 /phpmussel.php | 加载文件（它加载主脚本，更新文件，和等等）。这个是文件您应该｢钩子｣（必不可少）!
 /README.md | 项目概要信息。
 /web.config | 一个ASP.NET配置文件（在这种情况，以保护`/vault`文件夹从被访问由非授权来源在事件的脚本是安装在服务器根据ASP.NET技术）。
@@ -312,10 +312,10 @@ greylist_show
 /vault/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/cache/ | 缓存｢Cache｣文件夹（为临时数据）。
 /vault/cache/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
-/vault/cli.inc | CLI handler. @TranslateMe@
-/vault/config.inc | Configuration handler. @TranslateMe@
-/vault/controls.inc | Controls handler. @TranslateMe@
-/vault/functions.inc | Functions file (essential). @TranslateMe@
+/vault/cli.inc | CLI处理文件。
+/vault/config.inc | 配置处理文件。
+/vault/controls.inc | 控制处理文件。
+/vault/functions.inc | 功能处理文件（必不可少）。
 /vault/greylist.csv | 灰名单签名CSV（逗号分隔变量）文件说明为phpMussel什么签名它应该忽略（文件自动重新创建如果删除）。
 /vault/lang.inc | 语言数据。
 /vault/lang/ | 包含phpMussel语言数据。
@@ -465,7 +465,7 @@ greylist_show
 /vault/template_custom.html | 模板文件；模板为HTML产量产生通过phpMussel为它的受阻文件上传信息（信息可见向上传者）。
 /vault/update.dat | 文件包含版本信息为phpMussel的脚本和phpMussel的签名。如果您随时需要自动更新phpMussel或需要更新phpMussel通过您的浏览器，这个文件是必不可少。
 /vault/update.inc | 更新脚本；需要为自动更新和为更新phpMussel通过您的浏览器，但不否则需要。
-/vault/upload.inc | Upload handler. @TranslateMe@
+/vault/upload.inc | 上传处理文件。
 
 ※ 文件名可能不同基于配置规定（在`phpmussel.ini`）。
 
@@ -937,7 +937,7 @@ URL扫描仪API配置。
 
 在大多数情况下，phpMussel应该相当兼容性与大多数杀毒软件。然，冲突已经报道由多个用户以往。下面这些信息是从VirusTotal.com，和它描述了一个数的假阳性报告的各种杀毒软件针对phpMussel。虽说这个信息是不绝对保证的如果您会遇到兼容性问题间phpMussel和您的杀毒软件，如果您的杀毒软件注意冲突针对phpMussel，您应该考虑关闭它之前使用phpMussel或您应该考虑替代选项从您的杀毒软件或从phpMussel。
 
-这个信息最后更新2015年12月12日和是准确为至少phpMussel的两个最近次要版本（v0.8-v0.9.0）在这个现在时候的写作。
+这个信息最后更新2016年2月25日和是准确为至少phpMussel的两个最近次要版本（v0.9.0-v0.10.0）在这个现在时候的写作。
 
 | 扫描器               |  结果                                 |
 |----------------------|--------------------------------------|
@@ -956,14 +956,14 @@ URL扫描仪API配置。
 | AVware               |  无冲突 |
 | Baidu-International  |  无冲突 |
 | BitDefender          |  无冲突 |
-| Bkav                 |  报告 "VEXD737.Webshell" |
+| Bkav                 |  报告 "VEXC640.Webshell" 和 "VEXD737.Webshell"|
 | ByteHero             |  无冲突 |
 | CAT-QuickHeal        |  无冲突 |
 | ClamAV               |  无冲突 |
 | CMC                  |  无冲突 |
 | Commtouch            |  无冲突 |
 | Comodo               |  无冲突 |
-| Cyren                |  报告 "W32/GenBl.DE4CF18E!Olympus" |
+| Cyren                |  无冲突 |
 | DrWeb                |  无冲突 |
 | Emsisoft             |  无冲突 |
 | ESET-NOD32           |  无冲突 |
@@ -1005,6 +1005,6 @@ URL扫描仪API配置。
 ---
 
 
-最后更新：2016年2月7日。
+最后更新：2016年2月25日。
 
 翻译声明：本文档翻译基于英文原始文档，但由于本人水平有限，且非PHP程序员，对其中某些字词的翻译可能不是很准确，故如果出现错误，请指出并联系原作者予以更正，另外，本翻译仅简体中文，与繁体中文无关亦未参考繁体中文的译文！！

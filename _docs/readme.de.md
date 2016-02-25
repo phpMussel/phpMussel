@@ -933,7 +933,7 @@ Im Folgenden eine Aufschlüsselung der Signaturen, die von phpMussel genutzt wer
 
 In den meisten Fällen sollte phpMussel mit den meisten anderen Antiviren-Softwareprodukten kompatibel sein. Jedoch wurden in der Vergangenheit Konflikte von anderen Nutzern festgestellt. Die folgenden Informationen stammen von VirusTotal.com, welche einige Fehlalarme von verschiedenen Antiviren-Programmen gegen phpMussel beschreiben. Diese Informationen garantieren nicht, ob Kompatibilitätsprobleme zwischen phpMussel und Ihrem eingesetzten Antiviren-Produkt bestehen. Sollte Ihre Antiviren-Software als problematisch aufgelistet sein, sollten Sie diese entweder vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen überlegen.
 
-Diese Informationen wurden zuletzt am 12. Dezember 2015 aktualisiert und gelten für alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen (v0.8-v0.9.0) zu diesem Zeitpunkt.
+Diese Informationen wurden zuletzt am 25. Februar 2016 aktualisiert und gelten für alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen (v0.9.0-v0.10.0) zu diesem Zeitpunkt.
 
 | Scanner              |  Ergebnisse                          |
 |----------------------|--------------------------------------|
@@ -952,14 +952,14 @@ Diese Informationen wurden zuletzt am 12. Dezember 2015 aktualisiert und gelten 
 | AVware               |  Keine bekannten Probleme            |
 | Baidu-International  |  Keine bekannten Probleme            |
 | BitDefender          |  Keine bekannten Probleme            |
-| Bkav                 |  Meldet "VEXD737.Webshell"           |
+| Bkav                 |  Meldet "VEXC640.Webshell" und "VEXD737.Webshell"|
 | ByteHero             |  Keine bekannten Probleme            |
 | CAT-QuickHeal        |  Keine bekannten Probleme            |
 | ClamAV               |  Keine bekannten Probleme            |
 | CMC                  |  Keine bekannten Probleme            |
 | Commtouch            |  Keine bekannten Probleme            |
 | Comodo               |  Keine bekannten Probleme            |
-| Cyren                |  Meldet "W32/GenBl.DE4CF18E!Olympus" |
+| Cyren                |  Keine bekannten Probleme            |
 | DrWeb                |  Keine bekannten Probleme            |
 | Emsisoft             |  Keine bekannten Probleme            |
 | ESET-NOD32           |  Keine bekannten Probleme            |
@@ -1001,4 +1001,4 @@ Diese Informationen wurden zuletzt am 12. Dezember 2015 aktualisiert und gelten 
 ---
 
 
-Zuletzt aktualisiert: 24. Februar 2016 (2016.02.23).
+Zuletzt aktualisiert: 25. Februar 2016 (2016.02.25).

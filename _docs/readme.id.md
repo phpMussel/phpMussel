@@ -311,10 +311,10 @@ Data | Deskripsi
 /vault/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/cache/ | Direktori Cache (untuk file sementara).
 /vault/cache/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/cli.inc | CLI handler. @TranslateMe@
-/vault/config.inc | Configuration handler. @TranslateMe@
-/vault/controls.inc | Controls handler. @TranslateMe@
-/vault/functions.inc | Functions file (essential). @TranslateMe@
+/vault/cli.inc | Modul CLI handler.
+/vault/config.inc | Modul konfigurasi.
+/vault/controls.inc | Modul kontrol.
+/vault/functions.inc | Modul fungsi (utama).
 /vault/greylist.csv | CSV terdiri dari tanda tangan daftar abu-abu mengindikasikan phpMussel tanda tangan mana yang harus diabaikan (file automatis diciptakan kembali jika dihapus).
 /vault/lang.inc | File bahasa.
 /vault/lang/ | Berisikan file bahasa.
@@ -464,7 +464,7 @@ Data | Deskripsi
 /vault/template_custom.html | File template phpMussel; Template untuk output HTML yang diproduksi oleh phpMussel untuk file pesan upload yang dibloknya (pesan dilihat oleh pengupload).
 /vault/update.dat | File berisi informasi versi untuk skrip phpMussel dan tanda tangan phpMussel. Jika Anda pernah ingin mengupgrade phpMussel atau ingin mengupdate phpMussel via browser file ini penting.
 /vault/update.inc | Skrip upgrade phpMussel; Diharuskan untuk upgrade otomatis dan untuk mengupgrade phpMussel dengan menggunakan browser Anda, tapi tidak diharuskan juga.
-/vault/upload.inc | Upload handler. @TranslateMe@
+/vault/upload.inc | Modul upload.
 
 ※ Nama file bisa berbeda berdasarkan ketentuan konfigurasi (di dalam `phpmussel.ini`).
 
@@ -935,7 +935,7 @@ Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
 
 Untuk banyak bagian, phpMussel seharusnya kompatibel dengan software pemindaian virus. Bagaimanapun konflik telah dilaporkan oleh penggunak di masa lalu. Informasi di bawah adalah dari virustotal.com, dan menguraikan sejumlah angka positif yang salah yang dilaporkan oleh bermacam-macam program anti-virus pada phpMussel. Walaupun informasi ini tidak jaminan absolut dari apa dan atau tidak mengalami masalah kompatibilitas antara phpMussel dan perangkat anti-virus Anda, jika perangkat lunak anti-virus Anda tercatat berlawanan dengan phpMussel, Anda seharusnya mempertimbangkan menonaktifkannya bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke software anti virus atau phpMussel.
 
-Informasi ini diupdate 12 Desember 2015 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v0.8-v0.9.0) pada waktu saya menuliskan ini.
+Informasi ini diupdate 25 Februari 2016 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v0.9.0-v0.10.0) pada waktu saya menuliskan ini.
 
 | Scanner              |  Hasil                               |
 |----------------------|--------------------------------------|
@@ -954,14 +954,14 @@ Informasi ini diupdate 12 Desember 2015 dan cocok untuk semua rilis phpMussel da
 | AVware               |  Tidak masalah                       |
 | Baidu-International  |  Tidak masalah                       |
 | BitDefender          |  Tidak masalah                       |
-| Bkav                 |  Melaporkan "VEXD737.Webshell"       |
+| Bkav                 |  Melaporkan "VEXC640.Webshell" dan "VEXD737.Webshell"|
 | ByteHero             |  Tidak masalah                       |
 | CAT-QuickHeal        |  Tidak masalah                       |
 | ClamAV               |  Tidak masalah                       |
 | CMC                  |  Tidak masalah                       |
 | Commtouch            |  Tidak masalah                       |
 | Comodo               |  Tidak masalah                       |
-| Cyren                |  Melaporkan "W32/GenBl.DE4CF18E!Olympus"|
+| Cyren                |  Tidak masalah                       |
 | DrWeb                |  Tidak masalah                       |
 | Emsisoft             |  Tidak masalah                       |
 | ESET-NOD32           |  Tidak masalah                       |
@@ -1003,4 +1003,4 @@ Informasi ini diupdate 12 Desember 2015 dan cocok untuk semua rilis phpMussel da
 ---
 
 
-Terakhir Diperbarui: 24 Februari 2016 (2016.02.23).
+Terakhir Diperbarui: 25 Februari 2016 (2016.02.25).

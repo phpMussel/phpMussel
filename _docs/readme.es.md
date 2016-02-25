@@ -311,10 +311,10 @@ Archivo | Descripción
 /vault/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/cache/ | Cache directorio (para los datos temporal).
 /vault/cache/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
-/vault/cli.inc | CLI handler. @TranslateMe@
-/vault/config.inc | Configuration handler. @TranslateMe@
-/vault/controls.inc | Controls handler. @TranslateMe@
-/vault/functions.inc | Functions file (essential). @TranslateMe@
+/vault/cli.inc | Módulo de la CLI.
+/vault/config.inc | Módulo de configuración.
+/vault/controls.inc | Módulo de controles.
+/vault/functions.inc | Archivo de funciones (esencial).
 /vault/greylist.csv | CSV de las firmas en la Greylist indicando para phpMussel las firmas que deben ser ignorados (archivo será recreado automáticamente si eliminado).
 /vault/lang.inc | Lingüísticos datos.
 /vault/lang/ | Contiene lingüísticos datos.
@@ -464,7 +464,7 @@ Archivo | Descripción
 /vault/template_custom.html | Plantilla archivo; Plantilla para HTML producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
 /vault/update.dat | Archivo que contiene la versión información tanto para la phpMussel script y para la phpMussel firmas. Si alguna vez desea actualizar automáticamente phpMussel o desea actualizar phpMussel través de su navegador, este archivo es esencial.
 /vault/update.inc | Actualización Script; Requerido para automáticas actualizaciones y para actualizando phpMussel través de su navegador, pero no es requerido por lo demás.
-/vault/upload.inc | Upload handler. @TranslateMe@
+/vault/upload.inc | Módulo de carga.
 
 ※ Nombre del archivo puede variar basado de las estipulaciones de configuración (en `phpmussel.ini`).
 
@@ -934,7 +934,7 @@ El siguiente es el desglose de los tipos de firmas utilizado por phpMussel:
 
 En su mayor parte, phpMussel debe ser bastante compatible con la mayoría de anti-virus software. Aunque, conflictividades han sido reportados por un número de usuarios en el pasado. Esta información de abajo es de VirusTotal.com, y describe un número de falsos positivos reportados por diversos anti-virus programas contra phpMussel. Aunque esta información no es una garantía absoluta de si o no se encontrará con compatibilidad problemas entre phpMussel y su anti-virus software, se su anti-virus software se observa como marcar contra phpMussel, usted debe considerar desactivarlo antes de trabajar con phpMussel o debería considerar opciones alternativas a de su anti-virus software o phpMussel.
 
-Esta información ha sido actualizado 12 Diciembre 2015 y es a hoy para todas las phpMussel versiones de la dos más recientes menores versiones (v0.8-v0.9.0) al momento de escribir esto.
+Esta información ha sido actualizado 25 Febrero 2016 y es a hoy para todas las phpMussel versiones de la dos más recientes menores versiones (v0.9.0-v0.10.0) al momento de escribir esto.
 
 | Escáner              |  Resultados                          |
 |----------------------|--------------------------------------|
@@ -953,14 +953,14 @@ Esta información ha sido actualizado 12 Diciembre 2015 y es a hoy para todas la
 | AVware               |  No hay conocidos problemas          |
 | Baidu-International  |  No hay conocidos problemas          |
 | BitDefender          |  No hay conocidos problemas          |
-| Bkav                 |  Informa como "VEXD737.Webshell"     |
+| Bkav                 |  Informa como "VEXC640.Webshell" y "VEXD737.Webshell"|
 | ByteHero             |  No hay conocidos problemas          |
 | CAT-QuickHeal        |  No hay conocidos problemas          |
 | ClamAV               |  No hay conocidos problemas          |
 | CMC                  |  No hay conocidos problemas          |
 | Commtouch            |  No hay conocidos problemas          |
 | Comodo               |  No hay conocidos problemas          |
-| Cyren                |  Informa "W32/GenBl.DE4CF18E!Olympus"|
+| Cyren                |  No hay conocidos problemas          |
 | DrWeb                |  No hay conocidos problemas          |
 | Emsisoft             |  No hay conocidos problemas          |
 | ESET-NOD32           |  No hay conocidos problemas          |
@@ -1002,4 +1002,4 @@ Esta información ha sido actualizado 12 Diciembre 2015 y es a hoy para todas la
 ---
 
 
-Última Actualización: 24 Febrero 2016 (2016.02.23).
+Última Actualización: 25 Febrero 2016 (2016.02.25).

@@ -311,10 +311,10 @@ Bestand | Beschrijving
 /vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/cache/ | Cache bestandsmap (tijdelijke data).
 /vault/cache/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/cli.inc | CLI handler. @TranslateMe@
-/vault/config.inc | Configuration handler. @TranslateMe@
-/vault/controls.inc | Controls handler. @TranslateMe@
-/vault/functions.inc | Functions file (essential). @TranslateMe@
+/vault/cli.inc | CLI handler.
+/vault/config.inc | Configuratie handler.
+/vault/controls.inc | Controls handler.
+/vault/functions.inc | Functies bestand (essentieel).
 /vault/greylist.csv | CSV van greylisted handtekeningen aangeeft om phpMussel waarop handtekeningen moet worden negeren (bestand automatisch aangemaakt opnieuw als verwijderd).
 /vault/lang.inc | taaldata.
 /vault/lang/ | Bevat phpMussel taaldata.
@@ -464,7 +464,7 @@ Bestand | Beschrijving
 /vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
 /vault/update.dat | Bestand met versie-informatie voor zowel de phpMussel script en de phpMussel handtekeningen. Als u ooit wilt te automatisch update phpMussel of willen phpMussel updaten via uw browser, dit bestand is essentieel.
 /vault/update.inc | Update Script; Vereist voor automatische updates en voor het bijwerken van phpMussel via uw browser, maar niet anders vereist.
-/vault/upload.inc | Upload handler. @TranslateMe@
+/vault/upload.inc | Upload handler.
 
 ※ Bestandsnaam kan verschillen, afhankelijk van de configuratie bedingen (van `phpmussel.ini`).
 
@@ -935,7 +935,7 @@ Het volgende is een overzicht van de soorten handtekeningen gebruikt door phpMus
 
 Voor het grootste deel, phpMussel is algemeen compatibel met de meeste andere anti-virus software. Echter, conflictions geweest beschreven door een aantal gebruikers in het verleden. Deze informatie hieronder is afkomstig van VirusTotal.com, het beschrijven van een aantal fout-positieven gemeld door anti-virus programma's tegen phpMussel. Hoewel deze informatie is geen absolute garantie van wel of niet u zult compatibiliteitsproblemen ondervindt tussen phpMussel en uw anti-virus software, als uw anti-virus software wordt gemarkeerd tegen phpMussel, moet u ofwel overwegen uit te schakelen voorafgaand aan het werken met phpMussel of moeten overwegen alternatieve opties om ofwel uw anti-virus software of phpMussel.
 
-Dit informatie werd laatst bijgewerkt 12 December 2015 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v0.8-v0.9.0) op het moment van schrijven dit.
+Dit informatie werd laatst bijgewerkt 25 Februari 2016 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v0.9.0-v0.10.0) op het moment van schrijven dit.
 
 | Scanner              |  Resultaten                          |
 |----------------------|--------------------------------------|
@@ -954,14 +954,14 @@ Dit informatie werd laatst bijgewerkt 12 December 2015 en is op de hoogte voor a
 | AVware               |  Geen bekend problemen               |
 | Baidu-International  |  Geen bekend problemen               |
 | BitDefender          |  Geen bekend problemen               |
-| Bkav                 |  Berichten "VEXD737.Webshell"        |
+| Bkav                 |  Berichten "VEXC640.Webshell" en "VEXD737.Webshell"|
 | ByteHero             |  Geen bekend problemen               |
 | CAT-QuickHeal        |  Geen bekend problemen               |
 | ClamAV               |  Geen bekend problemen               |
 | CMC                  |  Geen bekend problemen               |
 | Commtouch            |  Geen bekend problemen               |
 | Comodo               |  Geen bekend problemen               |
-| Cyren                |  Berichten "W32/GenBl.DE4CF18E!Olympus"|
+| Cyren                |  Geen bekend problemen               |
 | DrWeb                |  Geen bekend problemen               |
 | Emsisoft             |  Geen bekend problemen               |
 | ESET-NOD32           |  Geen bekend problemen               |
@@ -1003,4 +1003,4 @@ Dit informatie werd laatst bijgewerkt 12 December 2015 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 24 Februari 2016 (2016.02.23).
+Laatste Bijgewerkt: 25 Februari 2016 (2016.02.25).

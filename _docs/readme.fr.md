@@ -288,8 +288,8 @@ Fichier | Description
 /_docs/readme.ru.txt | Documentation en Russe.
 /_docs/readme.vi.md | Documentation en Vietnamien.
 /_docs/readme.vi.txt | Documentation en Vietnamien.
-/_docs/readme.zh-TW.md | Documentation en Chinois (Traditionnel).
-/_docs/readme.zh.md | Documentation en Chinois (Simplifié).
+/_docs/readme.zh-TW.md | Documentation en Chinois (traditionnel).
+/_docs/readme.zh.md | Documentation en Chinois (simplifié).
 /_docs/signatures_tally.txt | Décompte de signatures inclus (pas nécessaire pour le bon fonctionnement du script).
 /_testfiles/ | Test fichiers répertoire (contient divers fichiers). Tous les fichiers contenus sont des fichiers à test si phpMussel a été correctement installé sur votre système, et vous n'avez pas besoin de télécharger ce répertoire ou l'un de ses fichiers, sauf si faire ces tests.
 /_testfiles/ascii_standard_testfile.txt | Test fichier à test phpMussel normalisé ASCII signatures.
@@ -311,10 +311,10 @@ Fichier | Description
 /vault/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/cache/ | Cache répertoire (pour les données temporaires).
 /vault/cache/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
-/vault/cli.inc | CLI handler. @TranslateMe@
-/vault/config.inc | Configuration handler. @TranslateMe@
-/vault/controls.inc | Controls handler. @TranslateMe@
-/vault/functions.inc | Functions file (essential). @TranslateMe@
+/vault/cli.inc | Module de CLI.
+/vault/config.inc | Module de configuration.
+/vault/controls.inc | Module de contrôles.
+/vault/functions.inc | Fichier de fonctions (essentiel).
 /vault/greylist.csv | CSV de grise listé signatures indiquant pour phpMussel qui signatures il faut ignorer (fichier recréé automatiquement si supprimé).
 /vault/lang.inc | Linguistiques données.
 /vault/lang/ | Contient linguistiques données.
@@ -464,7 +464,7 @@ Fichier | Description
 /vault/template_custom.html | Modèle fichier; Modèle pour l'HTML sortie produit par phpMussel pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /vault/update.dat | Fichier contenant les version informations pour le script et les signatures de phpMussel. Si jamais vous voulez à réactualiser automatiquement phpMussel ou réactualiser phpMussel par votre navigateur, ce fichier est indispensable.
 /vault/update.inc | Réactualiser Script; Requis pour automatique réactualisation et pour réactualisation phpMussel par votre navigateur, mais n'est pas autrement requise.
-/vault/upload.inc | Upload handler. @TranslateMe@
+/vault/upload.inc | Module de téléchargements.
 
 ※ Noms du fichiers peut varier basé sur configuration stipulations (dans `phpmussel.ini`).
 
@@ -935,7 +935,7 @@ Ce qui suit est un détail des types de signatures utilisées par phpMussel:
 
 Pour la plupart, phpMussel devrait être assez compatible avec plupart du virus détection logiciels. Cependant, conflictualités ont été signalés par un nombre d'utilisateurs dans le passé. Cette information ci-dessous est VirusTotal.com, et il décrit un certain nombre de faux positifs signalé par divers anti-virus programmes contre phpMussel. Bien que cette information ne constitue pas une absolue garantie de si oui ou non vous rencontrerez des problèmes de compatibilité entre phpMussel et votre anti-virus logiciel, si votre logiciel anti-virus est noté comme signalant contre phpMussel, vous devriez envisager désactivation avant à travailler avec phpMussel ou devrait envisager d'autres options soit votre logiciel anti-virus ou phpMussel.
 
-Cette information a été réactualisé le 12 Décembre 2015 et est courant pour toutes les phpMussel parutions des deux plus récentes mineures versions (v0.8-v0.9.0) au moment de la rédaction de cette.
+Cette information a été réactualisé le 25 Février 2016 et est courant pour toutes les phpMussel parutions des deux plus récentes mineures versions (v0.9.0-v0.10.0) au moment de la rédaction de cette.
 
 | Scanner              |  Résultats                           |
 |----------------------|--------------------------------------|
@@ -954,14 +954,14 @@ Cette information a été réactualisé le 12 Décembre 2015 et est courant pour
 | AVware               |  Pas problèmes connus                |
 | Baidu-International  |  Pas problèmes connus                |
 | BitDefender          |  Pas problèmes connus                |
-| Bkav                 |  Rapports "VEXD737.Webshell"         |
+| Bkav                 |  Rapports "VEXC640.Webshell" et "VEXD737.Webshell"|
 | ByteHero             |  Pas problèmes connus                |
 | CAT-QuickHeal        |  Pas problèmes connus                |
 | ClamAV               |  Pas problèmes connus                |
 | CMC                  |  Pas problèmes connus                |
 | Commtouch            |  Pas problèmes connus                |
 | Comodo               |  Pas problèmes connus                |
-| Cyren                |  Rapports "W32/GenBl.DE4CF18E!Olympus"|
+| Cyren                |  Pas problèmes connus                |
 | DrWeb                |  Pas problèmes connus                |
 | Emsisoft             |  Pas problèmes connus                |
 | ESET-NOD32           |  Pas problèmes connus                |
@@ -1003,4 +1003,4 @@ Cette information a été réactualisé le 12 Décembre 2015 et est courant pour
 ---
 
 
-Dernière Réactualisé: 24 Février 2016 (2016.02.23).
+Dernière Réactualisé: 25 Février 2016 (2016.02.25).

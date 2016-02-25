@@ -1,4 +1,4 @@
-Changelog for phpMussel versions/releases from =>"0.4" to <"1.0.0".
+Changelog for phpMussel (=> v0.4, < v1.0.0).
 
 Changelogs for earlier and later versions/releases not included in this
 package; Please refer to those earlier and later packages for those changelogs.
@@ -60,6 +60,26 @@ entries will be deleted when those goals have been achieved.
 - Achieve 100% PSR compliancy.
   Refer github.com/Maikuolan/phpMussel/issues/80
 
+- [phpMussel => v1.0.0] Implement namespace conventions and class-based OOP
+  standards from Version 1 and thereafter.
+  
+- [phpMussel => v1.0.0] Idea: Investigate the possibility of a Swoole
+  implementation of phpMussel.
+
+- [phpMussel => v1.0.0] Utilise SQLite as a signature database (alternative
+  deployment option to the current standard flatfile database system)
+  Refer github.com/phpMussel/universe/issues/1
+
+- [phpMussel => v1.0.0] Rewrite the entire update system.
+
+- [phpMussel => v1.0.0] Fat-free pre-executable implementation.
+  Refer github.com/phpMussel/universe/issues/12
+
+- [phpMussel => v1.0.0] Investigate possible future project directions.
+  Refer github.com/phpMussel/universe/issues/13
+
+
+
 === Changes made since last versioned release ===
 
 - [2016.01.08; Sub-minor code change; Maikuolan]: Closing PHP tags removed and
@@ -96,9 +116,98 @@ entries will be deleted when those goals have been achieved.
   included with all the PHP files of phpMussel, ditching the ASCII art,
   simplifying all the information contained within [the header] and
   restructuring it as a singular page-level phpDoc comment (as per discussed
-  with the team, prior to implementation). Some more PSR work done.
+  with the team, prior to implementation). Some more PSR work done. Marked all
+  PHP <5.4.0 fallback functions as deprecated (these will be removed from
+  phpMussel v1.0.0 and should no longer be used; the minimum required version
+  of PHP for phpMussel should be regarded as PHP 5.4.0; additionally, more
+  recent versions of PHP are encouraged whenever possible).
+  Refer github.com/Maikuolan/phpMussel/issues/82
 
 - [2016.02.07; Documentation]: "/_docs/LICENSE" renamed to "/LICENSE.txt".
+
+- [2016.02.08-2016.02.16; Minor code change; Maikuolan]: Completely reorganised
+  the structure of the entirety of the phpMussel core code: The "core script"
+  [phpmussel.inc] doesn't exist anymore, having now since been split apart into
+  separate files to handle the separate various aspects and functions of the
+  core code; Along with the other existing script files that constitute the
+  core code of phpMussel (not inclusive of non-code files or the language
+  data), they now number eight (8) separate script files; This improves PSR
+  compliancy (PSR-1: "Files SHOULD either declare symbols {classes, functions,
+  constants, etc.} or cause side-effects {e.g. generate output, change .ini
+  settings, etc.} but SHOULD NOT do both.") and improves the overall logical
+  flow of phpMussel, reducing potential cognitive dissonance between different
+  developers and different users. These eight (8) separate script files consist
+  of the "loader" [phpmussel.php], the "functions file" [functions.inc], the
+  "CLI handler" [cli.inc], the "configuration handler" [config.inc], the
+  "controls handler" [controls.inc], the "language handler" [lang.inc] and the
+  "update handler" [update.inc]. Completely ceased using the $_GLOBALS
+  superglobal of PHP in favour of simply declaring a global variable within the
+  various functions of phpMussel wherever required; This should improve
+  performance and memory usage. All variables defined by phpMussel within the
+  global scope have been merged as elements into a single array variable, and
+  this single array variable will be used for similar variables in the future,
+  to make cleanup afterwards easier, simpler and more efficient; This should
+  help to ensure that phpMussel can correctly unset itself from memory when
+  it's no longer required by the request or the running PHP process. Signatures
+  have been moved into their own subdirectory within the vault, "/signatures/";
+  This improves the logical flow of phpMussel and makes it easier for
+  developers and users alike to find the files they're looking for when looking
+  for files (because it means, for example, that when looking for a specific
+  script file, they won't need to scan over 130+ different files with their
+  eyes to find it); All code dealing with signatures has been updated
+  accordingly, and so, moving the signatures shouldn't be considered a breaking
+  change (the format of the signatures, for example, hasn't changed at all).
+  Removed the fallback for "__DIR__" ("dirname(__FILE__)"), because "__DIR__"
+  is already supported by PHP 5.4.0 (the currently listed minimum PHP version
+  required by phpMussel), and so, the fallback shouldn't be necessary and
+  shouldn't be used anymore.
+  Refer github.com/Maikuolan/phpMussel/issues/80
+  Refer github.com/Maikuolan/phpMussel/issues/82
+
+- [2016.02.08-2016.02.21; Minor code change; Maikuolan]: Significant code
+  cleanups implemented throughout the core code and overall PSR compliance
+  improved; More phpDoc comments added throughout the core code. Improved the
+  way that many file format checks are performed. Created a new way of parsing
+  existing signatures with the main data handler function, whereby the focus on
+  the way in which signature files are processed is more oriented towards the
+  formatting and type of the signature files in question rather than which
+  actual signature files are in question; An array has been created that
+  references each required signature file and parses them based upon various
+  datapoints also included in this array, and all related signature files are
+  parsed based upon those datapoints, allowing phpMussel to process all
+  signature files in a more homogeneous manner, thus significantly reducing
+  code redundancy and significantly reducing the overall footprint of the core
+  code. Various superfluous parts of the core code have been removed, a number
+  of conditionals with excessive depths have been merged and phpMussel has
+  become more flexible in the way that signatures are handled; It's now much
+  easier to include non-core thirdparty signatures into phpMussel via plugins
+  and without the need to modify the core code.
+  Refer github.com/Maikuolan/phpMussel/issues/80
+  Refer github.com/Maikuolan/phpMussel/issues/82
+
+- [2016.02.22-2016.02.23; Sub-minor code change; Maikuolan]: Slightly improved
+  the process for handling archives and rewrote some somewhat clunky-looking
+  parts of it. Some more PSR work done (almost completely compliant with PSR-1
+  and PSR-2; the next commit to the core code should address any remaining
+  issues and result in complete compliancy).
+  Refer github.com/Maikuolan/phpMussel/issues/80
+
+- [2016.02.24; Documentation; Maikuolan]: Updated the "FILES INCLUDED IN THIS
+  PACKAGE" section of the documentation to reflect the various recent changes
+  made to phpMussel and its package.
+
+- [2016.02.25; Documentation; Maikuolan]: Deleted the plain-text READMEs in
+  favour of maintaining only the markdown READMEs (the plain-text READMEs were
+  superfluous, and maintaining two separate versions/formats of READMEs added
+  to the time required to produce new releases whenever changes were made
+  necessitating any change to the documentation; maintaining only one
+  version/format should improve maintainability and increase the speed at which
+  progress can be made). Deleted the signatures tally (this file wasn't used by
+  anyone and was also superfluous to the package). Updated the anti-virus
+  compatibility information in the READMEs. Added references to some of the
+  ideas/suggestions made by Matthias Kaschubowski to the goals list.
+  Refer github.com/Maikuolan/phpMussel/issues/84
+  Refer spambotsecurity.com/forum/viewtopic.php?f=57&t=3781
 
 === Version/Release 0.9.1 ===
 PATCH RELEASE (signatures updated to 55+21192+9.1).

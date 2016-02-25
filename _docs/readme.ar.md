@@ -338,10 +338,10 @@
 <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/.htaccess
 <div dir="rtl" style="display:inline;">دليل ذاكرة التخزين المؤقت (للبيانات المؤقتة).</div> | /vault/cache/
 <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/cache/.htaccess
-<div dir="rtl" style="display:inline;">CLI handler. @TranslateMe@</div> | /vault/cli.inc
-<div dir="rtl" style="display:inline;">Configuration handler. @TranslateMe@</div> | /vault/config.inc
-<div dir="rtl" style="display:inline;">Controls handler. @TranslateMe@</div> | /vault/controls.inc
-<div dir="rtl" style="display:inline;">Functions file (essential). @TranslateMe@</div> | /vault/functions.inc
+<div dir="rtl" style="display:inline;">معالج CLI.</div> | /vault/cli.inc
+<div dir="rtl" style="display:inline;">معالج التكوين.</div> | /vault/config.inc
+<div dir="rtl" style="display:inline;">معالج أوامر.</div> | /vault/controls.inc
+<div dir="rtl" style="display:inline;">ملف وظائف (ضروري).</div> | /vault/functions.inc
 <div dir="rtl" style="display:inline;">ملف CSV توقيعات القائمة الرمادية المشيرة إلى التوقيعات التي ينبغي على "بي اتش بي ماسل" أن يتجاهلها (هذا ملف يتم إعادة إنشاءه تلقائيا إذا حذف).</div> | /vault/greylist.csv
 <div dir="rtl" style="display:inline;">ملف لغة.</div> | /vault/lang.inc
 <div dir="rtl" style="display:inline;">يحتوي على بيانات اللغة لـ "بي اتش بي ماسل".</div> | /vault/lang/
@@ -491,7 +491,7 @@
 <div dir="rtl" style="display:inline;">ملف القالب. قالب لمخرجات HTML التي تنتجها phpMussel لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template_custom.html
 <div dir="rtl" style="display:inline;">ملف يحتوي على معلومات الإصدار لبرنامج "بي اتش بي ماسل" وتوقيعاته. إذا كنت تريد في أي وقت عمل تحديثا تلقائيا أو ترغب في تحديثه عن طريق المتصفح فهذا الملف ضروري.</div> | /vault/update.dat
 <div dir="rtl" style="display:inline;">برنامج التحديث ؛ مطلوب للحصول على التحديثات التلقائية وتحديث "بي اتش بي ماسل"عن طريق المتصفح، ولكن ليس مطلوب لغير ذلك.</div> | /vault/update.inc
-<div dir="rtl" style="display:inline;">Upload handler. @TranslateMe@</div> | /vault/upload.inc
+<div dir="rtl" style="display:inline;">معالج تحميل.</div> | /vault/upload.inc
 
 <div dir="rtl">※ اسم الملف قد يختلف استنادا إلى نصوص التكوين (في phpmussel.ini).</div>
 
@@ -965,7 +965,7 @@ Template data relates to the HTML output used to generate the "Upload Denied" me
 
 <div dir="rtl">بالنسبة للجزء الأكبر، ينبغي أن يكون "بي اتش بي  ماسل" متوافق إلى حد ما مع معظم برامج مكافحة و فحص الفيروسات الأخرى. مع ذلك ، فقد تم الإبلاغ عن تعارضات من قبل عدد من المستخدمين في الماضي. وهذه المعلومات أدناه من VirusTotal.com، و توضح عدد من ايجابيات كاذبة (فحص خاطئ بوجود فايروس) ذكرت من قبل مختلف برامج مكافحة الفيروسات ضد "بي اتش بي  ماسل". على الرغم من أن هذه المعلومات ليست ضمانة مطلقة من أنك سوف تواجه أو لا مشاكل توافق بين "بي اتش بي  ماسل" وبرنامج مكافحة الفيروسات الخاص بك، إذا لاحظ برنامج مكافحة الفيروسات الخاص بك ضعف تجاه "بي اتش بي  ماسل"، يجب عليك إما النظر في تعطيله قبل العمل مع "بي اتش بي  ماسل" أو أن تنظر في خيارات بديلة إما الخاصة ببرنامج مكافحة الفيروسات أو "بي اتش بي  ماسل".<br /><br /></div>
 
-<div dir="rtl">آخر تحديث لهذه المعلومات كان في 12 ديسمبر 2015, و هي كذلك الحالية للإصدارين الثانويين الذين تم إصدارهما مؤخرا (v0.8-v0.9.0) من "بي اتش بي  ماسل".<br /><br /></div>
+<div dir="rtl">آخر تحديث لهذه المعلومات كان في 25 فبراير 2016، و هي كذلك الحالية للإصدارين الثانويين الذين تم إصدارهما مؤخرا (v0.9.0-v0.10.0) من "بي اتش بي  ماسل".<br /><br /></div>
 
 برنامج فحص الفيروسات | النتيجة
 ----|----
@@ -984,14 +984,14 @@ Avira | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 AVware | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 Baidu-International | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 BitDefender | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Bkav | <div dir="rtl" style="display:inline;">"VEXD737.Webshell" تقارير</div>
+Bkav | <div dir="rtl" style="display:inline;">"VEXC640.Webshell" و "VEXD737.Webshell" تقارير</div>
 ByteHero | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 CAT-QuickHeal | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 ClamAV | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 CMC | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 Commtouch | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 Comodo | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Cyren | <div dir="rtl" style="display:inline;">"W32/GenBl.DE4CF18E!Olympus" تقارير</div>
+Cyren | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 DrWeb | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 Emsisoft | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 ESET-NOD32 | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
@@ -1033,4 +1033,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 24 فبراير 2016 (2016.02.23).</div>
+<div dir="rtl">آخر تحديث: 25 فبراير 2016 (2016.02.25).</div>
