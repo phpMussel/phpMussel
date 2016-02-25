@@ -19,10 +19,19 @@ An ideal solution for shared hosting environments, where it's often not possible
 ---
 
 ### Documentation:
-
-README/Plain-text: [ **[English](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.en.txt) | [Deutsch](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.de.txt) | [Español](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.es.txt) | [Français](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.fr.txt) | [Bahasa Indonesia](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.id.txt) | [Italiano](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.it.txt) | [Nederlandse](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.nl.txt) | [Português](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.pt.txt) | [Русский](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.ru.txt) | ※[Tiếng Việt](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.vi.txt)** ]
-
-README/Markdown: [ **[English](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.en.md) | ※[العربية‏](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.ar.md) | [Deutsch](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.de.md) | [Español](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.es.md) | [Français](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.fr.md) | [Bahasa Indonesia](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.id.md) | [Italiano](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.it.md) | [Nederlandse](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.nl.md) | [Português](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.pt.md) | [Русский](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.ru.md) | ※[Tiếng Việt](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.vi.md) | [中文（简体）](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.zh.md) | [中文（傳統）](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.zh-TW.md)** ]
+- **[English](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.en.md)**
+- **※[العربية‏](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.ar.md)**
+- **[Deutsch](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.de.md)**
+- **[Español](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.es.md)**
+- **[Français](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.fr.md)**
+- **[Bahasa Indonesia](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.id.md)**
+- **[Italiano](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.it.md)**
+- **[Nederlandse](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.nl.md)**
+- **[Português](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.pt.md)**
+- **[Русский](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.ru.md)**
+- **※[Tiếng Việt](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.vi.md)**
+- **[中文（简体）](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.zh.md)**
+- **[中文（傳統）](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.zh-TW.md)**
 
 ※ = W.I.P. (Work-In-Progress) / Incomplete.
 
@@ -32,4 +41,4 @@ README/Markdown: [ **[English](https://github.com/Maikuolan/phpMussel/blob/maste
 
 ---
 
-*This file, "README.md", last edited: 11th January 2016 (2016.01.11).*
+*This file, "README.md", last edited: 25th February 2016 (2016.02.25).*
