@@ -82,6 +82,11 @@ entries will be deleted when those goals have been achieved.
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 0.10.0 ===
+MINOR RELEASE (CVDs: +55+21419+10).
+
 - [2016.01.08; Sub-minor code change; Maikuolan]: Closing PHP tags removed and
   all tabs converted to spaces (PSR-2); Added some phpDoc comments to all
   script files, most of the functions now documented; No other changes.
@@ -229,6 +234,9 @@ entries will be deleted when those goals have been achieved.
   phpMussel to ensure that they match their associated sourcecode files, due to
   my having recently updated those sourcecode files; Signatures updated
   accordingly.
+
+Caleb M / Maikuolan,
+27th February 2016.
 
 === Version/Release 0.9.1 ===
 PATCH RELEASE (signatures updated to 55+21192+9.1).
