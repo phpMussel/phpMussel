@@ -120,7 +120,7 @@ entries will be deleted when those goals have been achieved.
   PHP <5.4.0 fallback functions as deprecated (these will be removed from
   phpMussel v1.0.0 and should no longer be used; the minimum required version
   of PHP for phpMussel should be regarded as PHP 5.4.0; additionally, more
-  recent versions of PHP are encouraged whenever possible).
+  recent versions of PHP are strongly encouraged wherever possible).
   Refer github.com/Maikuolan/phpMussel/issues/82
 
 - [2016.02.07; Documentation]: "/_docs/LICENSE" renamed to "/LICENSE.txt".
@@ -208,6 +208,27 @@ entries will be deleted when those goals have been achieved.
   ideas/suggestions made by Matthias Kaschubowski to the goals list.
   Refer github.com/Maikuolan/phpMussel/issues/84
   Refer spambotsecurity.com/forum/viewtopic.php?f=57&t=3781
+
+- [2016.02.26; Signatures update; Maikuolan]: Integrated the URLs and domains
+  from Cybercrime Tracker to the URL scanner.
+
+- [2016.02.26; Minor code change; Maikuolan]: Added the ability to prevent the
+  API lookup of specific domains and/or URLs to the URL scanner by way of a new
+  type of entry that can now be added to the URL scanner signatures that'll
+  prevent the API lookup code from looking up specific domains and/or URLs;
+  This will be useful to prevent unnecessary API lookups that would've
+  previously been made to some particular commonly referenced and well known
+  domains and URLs already known to be safe (such as w3.org and schema.org, for
+  example, due to their being linked commonly across numerous websites and HTML
+  files as part of their related specifications). Completed the final
+  adjustments of the core code of phpMussel required in order to be fully
+  compliant with PSR-1 and PSR-2; As such, phpMussel should now be fully
+  compliant with PSR-1 and PSR-2 (the remaining PSRs aren't yet relevant to
+  phpMussel, but will become relevant in the future, and so, will be addressed
+  with later versions of phpMussel). Recompiled the executable testfiles of
+  phpMussel to ensure that they match their associated sourcecode files, due to
+  my having recently updated those sourcecode files; Signatures updated
+  accordingly.
 
 === Version/Release 0.9.1 ===
 PATCH RELEASE (signatures updated to 55+21192+9.1).

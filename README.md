@@ -39,6 +39,8 @@ An ideal solution for shared hosting environments, where it's often not possible
 
 [\[maikuolan.github.io/phpMussel\] **Want to donate?**](http://maikuolan.github.io/phpMussel/)
 
+[\[PEOPLE.md\] **Learn about the people behind phpMussel.**](https://github.com/Maikuolan/phpMussel/blob/master/PEOPLE.md)
+
 ---
 
-*This file, "README.md", last edited: 25th February 2016 (2016.02.25).*
+*This file, "README.md", last edited: 26th February 2016 (2016.02.26).*
