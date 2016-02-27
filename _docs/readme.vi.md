@@ -269,28 +269,17 @@ Hồ sơ | Chi tiết
 /_docs/change_log.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
 /_docs/readme.ar.md | Tài liệu tiếng Ả Rập.
 /_docs/readme.de.md | Tài liệu tiếng Đức.
-/_docs/readme.de.txt | Tài liệu tiếng Đức.
 /_docs/readme.en.md | Tài liệu tiếng Anh.
-/_docs/readme.en.txt | Tài liệu tiếng Anh.
 /_docs/readme.es.md | Tài liệu tiếng Tây Ban Nha.
-/_docs/readme.es.txt | Tài liệu tiếng Tây Ban Nha.
 /_docs/readme.fr.md | Tài liệu tiếng Pháp.
-/_docs/readme.fr.txt | Tài liệu tiếng Pháp.
 /_docs/readme.id.md | Tài liệu tiếng Indonesia.
-/_docs/readme.id.txt | Tài liệu tiếng Indonesia.
 /_docs/readme.it.md | Tài liệu tiếng Ý.
-/_docs/readme.it.txt | Tài liệu tiếng Ý.
 /_docs/readme.nl.md | Tài liệu tiếng Hà Lan.
-/_docs/readme.nl.txt | Tài liệu tiếng Hà Lan.
 /_docs/readme.pt.md | Tài liệu tiếng Bồ Đào Nha.
-/_docs/readme.pt.txt | Tài liệu tiếng Bồ Đào Nha.
 /_docs/readme.ru.md | Tài liệu tiếng Nga.
-/_docs/readme.ru.txt | Tài liệu tiếng Nga.
 /_docs/readme.vi.md | Tài liệu tiếng Việt.
-/_docs/readme.vi.txt | Tài liệu tiếng Việt.
 /_docs/readme.zh-TW.md | Tài liệu tiếng Trung Quốc (Truyền Thống).
 /_docs/readme.zh.md | Tài liệu tiếng Trung Quốc (Giản Thể).
-/_docs/signatures_tally.txt | Lý lịch của net-shift có bao gồm chữ ký (không cần thiết cho chức năng phù hợp của kịch bản).
 /_testfiles/ | Thư mục kiểm tra tập tin (chứa các tập tin khác nhau). Tất cả các hồ sơ chứa những hồ sơ thử nghiệm để thử nghiệm nếu phpMussel đã được cài đặt đúng trên hệ thống của bạn, và bạn không cần phải tải lên thư mục này hoặc bất kỳ các hồ sơ của mình trừ khi làm xét nghiệm như vậy.
 /_testfiles/ascii_standard_testfile.txt | Kiểm tra tập tin cho xét nghiệm phpMussel chữ ký ASCII bình thường.
 /_testfiles/coex_testfile.rtf | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký kéo dài phức tạp.
@@ -311,10 +300,10 @@ Hồ sơ | Chi tiết
 /vault/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/cache/ | Cache thư mục (cho dữ liệu tạm thời).
 /vault/cache/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
-/vault/cli.inc | CLI handler. @TranslateMe@
-/vault/config.inc | Configuration handler. @TranslateMe@
-/vault/controls.inc | Controls handler. @TranslateMe@
-/vault/functions.inc | Functions file (essential). @TranslateMe@
+/vault/cli.inc | Xử lý tập tin CLI.
+/vault/config.inc | Xử lý tập tin cấu hình.
+/vault/controls.inc | Xử lý tập tin lệnh cho.
+/vault/functions.inc | Tập tin chức năng.
 /vault/greylist.csv | CSV of greylisted signatures indicating to phpMussel which signatures it should be ignoring (file automatically recreated if deleted). @TranslateMe@
 /vault/lang.inc | Language data. @TranslateMe@
 /vault/lang/ | Contains phpMussel language data. @TranslateMe@
@@ -464,7 +453,7 @@ Hồ sơ | Chi tiết
 /vault/template_custom.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader). @TranslateMe@
 /vault/update.dat | File containing version information for both the phpMussel script and the phpMussel signatures. If you ever want to automatically update phpMussel or want to update phpMussel via your browser, this file is essential. @TranslateMe@
 /vault/update.inc | Update Script; Required for automatic updates and for updating phpMussel via your browser, but not required otherwise. @TranslateMe@
-/vault/upload.inc | Upload handler. @TranslateMe@
+/vault/upload.inc | Xử lý tập tin tải lên.
 
 ※ Tên tài liệu có thể thay đổi tuy theo các quy định của cấu hình (in `phpmussel.ini`).
 
@@ -1003,4 +992,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 25 Tháng Hai 201
 ---
 
 
-Lần cuối cập nhật: 25 Tháng Hai 2016 (2016.02.25).
+Lần cuối cập nhật: 27 Tháng Hai 2016 (2016.02.27).

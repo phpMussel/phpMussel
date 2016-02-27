@@ -269,28 +269,17 @@ Datei | Beschreibung
 /_docs/change_log.txt | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
 /_docs/readme.ar.md | Arabische Dokumentation.
 /_docs/readme.de.md | Deutsche Dokumentation.
-/_docs/readme.de.txt | Deutsche Dokumentation.
 /_docs/readme.en.md | Englische Dokumentation.
-/_docs/readme.en.txt | Englische Dokumentation.
 /_docs/readme.es.md | Spanische Dokumentation.
-/_docs/readme.es.txt | Spanische Dokumentation.
 /_docs/readme.fr.md | Französische Dokumentation.
-/_docs/readme.fr.txt | Französische Dokumentation.
 /_docs/readme.id.md | Indonesische Dokumentation.
-/_docs/readme.id.txt | Indonesische Dokumentation.
 /_docs/readme.it.md | Italienische Dokumentation.
-/_docs/readme.it.txt | Italienische Dokumentation.
 /_docs/readme.nl.md | Niederländische Dokumentation.
-/_docs/readme.nl.txt | Niederländische Dokumentation.
 /_docs/readme.pt.md | Portugiesische Dokumentation.
-/_docs/readme.pt.txt | Portugiesische Dokumentation.
 /_docs/readme.ru.md | Russische Dokumentation.
-/_docs/readme.ru.txt | Russische Dokumentation.
 /_docs/readme.vi.md | Vietnamesische Dokumentation.
-/_docs/readme.vi.txt | Vietnamesische Dokumentation.
 /_docs/readme.zh-TW.md | Chinesische Dokumentation (traditionell).
 /_docs/readme.zh.md | Chinesische Dokumentation (vereinfacht).
-/_docs/signatures_tally.txt | Netto-Veränderungs-Anzahl von enthaltenen Signaturen (für die korrekte Funktion des Scripts nicht notwendig).
 /_testfiles/ | Verzeichnis für Testdateien (beinhaltet verschiedene Dateien). Alle enthaltenen Dateien dienen zur Überprüfung, ob phpMussel auf Ihrem System ordnungsgemäß installiert wurde. Sie müssen dieses Verzeichnis oder die Dateien nicht hochladen, sofern Sie keinen solchen Test durchführen möchten.
 /_testfiles/ascii_standard_testfile.txt | Testdatei zur Überprüfung der normierten ASCII-Signaturerkennung.
 /_testfiles/coex_testfile.rtf | Testdatei zur Überprüfung der Komplex-Erweitert-Signaturerkennung.
@@ -1001,4 +990,4 @@ Diese Informationen wurden zuletzt am 25. Februar 2016 aktualisiert und gelten f
 ---
 
 
-Zuletzt aktualisiert: 25. Februar 2016 (2016.02.25).
+Zuletzt aktualisiert: 27. Februar 2016 (2016.02.27).

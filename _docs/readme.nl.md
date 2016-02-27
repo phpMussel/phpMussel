@@ -269,28 +269,17 @@ Bestand | Beschrijving
 /_docs/change_log.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
 /_docs/readme.ar.md | Arabisch documentatie.
 /_docs/readme.de.md | Duitse documentatie.
-/_docs/readme.de.txt | Duitse documentatie.
 /_docs/readme.en.md | Engels documentatie.
-/_docs/readme.en.txt | Engels documentatie.
 /_docs/readme.es.md | Spaanse documentatie.
-/_docs/readme.es.txt | Spaanse documentatie.
 /_docs/readme.fr.md | Franse documentatie.
-/_docs/readme.fr.txt | Franse documentatie.
 /_docs/readme.id.md | Indonesisch documentatie.
-/_docs/readme.id.txt | Indonesisch documentatie.
 /_docs/readme.it.md | Italiaanse documentatie.
-/_docs/readme.it.txt | Italiaanse documentatie.
 /_docs/readme.nl.md | Nederlandse documentatie.
-/_docs/readme.nl.txt | Nederlandse documentatie.
 /_docs/readme.pt.md | Portugees documentatie.
-/_docs/readme.pt.txt | Portugees documentatie.
 /_docs/readme.ru.md | Russische documentatie.
-/_docs/readme.ru.txt | Russische documentatie.
 /_docs/readme.vi.md | Vietnamees documentatie.
-/_docs/readme.vi.txt | Vietnamees documentatie.
 /_docs/readme.zh-TW.md | Chinees (Traditioneel) documentatie.
 /_docs/readme.zh.md | Chinees (Vereenvoudigd) documentatie.
-/_docs/signatures_tally.txt | Net-shift tally van meegeleverde handtekeningen (niet vereist voor een goede werking van het script).
 /_testfiles/ | Testbestanden bestandsmap (bevat verschillende bestanden). Alle opgenomen bestanden zijn testbestanden voor het testen als phpMussel correct op uw systeem is geïnstalleerd, en u hoeft niet om deze map of een van het bestanden, behalve bij het doen van dergelijke testen te uploaden.
 /_testfiles/ascii_standard_testfile.txt | Testbestand voor het testen phpMussel genormaliseerde ASCII handtekeningen.
 /_testfiles/coex_testfile.rtf | Testbestand voor het testen phpMussel complexe uitgebreide handtekeningen.
@@ -1003,4 +992,4 @@ Dit informatie werd laatst bijgewerkt 25 Februari 2016 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 25 Februari 2016 (2016.02.25).
+Laatste Bijgewerkt: 27 Februari 2016 (2016.02.27).

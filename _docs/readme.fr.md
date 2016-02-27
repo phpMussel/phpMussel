@@ -269,28 +269,17 @@ Fichier | Description
 /_docs/change_log.txt | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
 /_docs/readme.ar.md | Documentation en Arabe.
 /_docs/readme.de.md | Documentation en Allemand.
-/_docs/readme.de.txt | Documentation en Allemand.
 /_docs/readme.en.md | Documentation en Anglais.
-/_docs/readme.en.txt | Documentation en Anglais.
 /_docs/readme.es.md | Documentation en Espagnol.
-/_docs/readme.es.txt | Documentation en Espagnol.
 /_docs/readme.fr.md | Documentation en Français.
-/_docs/readme.fr.txt | Documentation en Français.
 /_docs/readme.id.md | Documentation en Indonésien.
-/_docs/readme.id.txt | Documentation en Indonésien.
 /_docs/readme.it.md | Documentation en Italien.
-/_docs/readme.it.txt | Documentation en Italien.
 /_docs/readme.nl.md | Documentation en Néerlandais.
-/_docs/readme.nl.txt | Documentation en Néerlandais.
 /_docs/readme.pt.md | Documentation en Portugais.
-/_docs/readme.pt.txt | Documentation en Portugais.
 /_docs/readme.ru.md | Documentation en Russe.
-/_docs/readme.ru.txt | Documentation en Russe.
 /_docs/readme.vi.md | Documentation en Vietnamien.
-/_docs/readme.vi.txt | Documentation en Vietnamien.
 /_docs/readme.zh-TW.md | Documentation en Chinois (traditionnel).
 /_docs/readme.zh.md | Documentation en Chinois (simplifié).
-/_docs/signatures_tally.txt | Décompte de signatures inclus (pas nécessaire pour le bon fonctionnement du script).
 /_testfiles/ | Test fichiers répertoire (contient divers fichiers). Tous les fichiers contenus sont des fichiers à test si phpMussel a été correctement installé sur votre système, et vous n'avez pas besoin de télécharger ce répertoire ou l'un de ses fichiers, sauf si faire ces tests.
 /_testfiles/ascii_standard_testfile.txt | Test fichier à test phpMussel normalisé ASCII signatures.
 /_testfiles/coex_testfile.rtf | Test fichier à test phpMussel complexes étendues signatures.
@@ -1003,4 +992,4 @@ Cette information a été réactualisé le 25 Février 2016 et est courant pour 
 ---
 
 
-Dernière Réactualisé: 25 Février 2016 (2016.02.25).
+Dernière Réactualisé: 27 Février 2016 (2016.02.27).

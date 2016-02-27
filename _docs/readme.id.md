@@ -269,28 +269,17 @@ Data | Deskripsi
 /_docs/change_log.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /_docs/readme.ar.md | Dokumentasi Bahasa Arab.
 /_docs/readme.de.md | Dokumentasi Bahasa Jerman.
-/_docs/readme.de.txt | Dokumentasi Bahasa Jerman.
 /_docs/readme.en.md | Dokumentasi Bahasa Inggris.
-/_docs/readme.en.txt | Dokumentasi Bahasa Inggris.
 /_docs/readme.es.md | Dokumentasi Bahasa Spanyol.
-/_docs/readme.es.txt | Dokumentasi Bahasa Spanyol.
 /_docs/readme.fr.md | Dokumentasi Bahasa Perancis.
-/_docs/readme.fr.txt | Dokumentasi Bahasa Perancis.
 /_docs/readme.id.md | Dokumentasi Bahasa Indonesia.
-/_docs/readme.id.txt | Dokumentasi Bahasa Indonesia.
 /_docs/readme.it.md | Dokumentasi Bahasa Italia.
-/_docs/readme.it.txt | Dokumentasi Bahasa Italia.
 /_docs/readme.nl.md | Dokumentasi Bahasa Belanda.
-/_docs/readme.nl.txt | Dokumentasi Bahasa Belanda.
 /_docs/readme.pt.md | Dokumentasi Bahasa Portugis.
-/_docs/readme.pt.txt | Dokumentasi Bahasa Portugis.
 /_docs/readme.ru.md | Dokumentasi Bahasa Rusia.
-/_docs/readme.ru.txt | Dokumentasi Bahasa Rusia.
 /_docs/readme.vi.md | Dokumentasi Bahasa Vietnam.
-/_docs/readme.vi.txt | Dokumentasi Bahasa Vietnam.
 /_docs/readme.zh-TW.md | Dokumentasi Cina Tradisional.
 /_docs/readme.zh.md | Dokumentasi Cina Sederhana.
-/_docs/signatures_tally.txt | Perhitungan dari diikutkan tanda tangan (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /_testfiles/ | Direktori test file-file (berisi bermacam file). Semua file-file berisikan di dalamnya adalah file test untuk testing jika phpMussel dengan benar diinstal pada sistem, dan Anda tidak perlu mengupload direktori ini atau file-filenya jika melakukan testing.
 /_testfiles/ascii_standard_testfile.txt | File test untuk mentest tanda tangan ASCII dinormalisasi phpMussel.
 /_testfiles/coex_testfile.rtf | File test untuk mentest tanda tangan diperpanjang kompleks phpMussel.
@@ -1003,4 +992,4 @@ Informasi ini diupdate 25 Februari 2016 dan cocok untuk semua rilis phpMussel da
 ---
 
 
-Terakhir Diperbarui: 25 Februari 2016 (2016.02.25).
+Terakhir Diperbarui: 27 Februari 2016 (2016.02.27).

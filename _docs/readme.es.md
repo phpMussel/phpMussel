@@ -269,28 +269,17 @@ Archivo | Descripción
 /_docs/change_log.txt | Un registro de los cambios realizados en la principal script entre las diferentes versiones (no se requiere para usar la script).
 /_docs/readme.ar.md | Documentación Árabe.
 /_docs/readme.de.md | Documentación Alemán.
-/_docs/readme.de.txt | Documentación Alemán.
 /_docs/readme.en.md | Documentación Inglés.
-/_docs/readme.en.txt | Documentación Inglés.
 /_docs/readme.es.md | Documentación Español.
-/_docs/readme.es.txt | Documentación Español.
 /_docs/readme.fr.md | Documentación Francés.
-/_docs/readme.fr.txt | Documentación Francés.
 /_docs/readme.id.md | Documentación Indonesio.
-/_docs/readme.id.txt | Documentación Indonesio.
 /_docs/readme.it.md | Documentación Italiano.
-/_docs/readme.it.txt | Documentación Italiano.
 /_docs/readme.nl.md | Documentación Holandés.
-/_docs/readme.nl.txt | Documentación Holandés.
 /_docs/readme.pt.md | Documentación Portugués.
-/_docs/readme.pt.txt | Documentación Portugués.
 /_docs/readme.ru.md | Documentación Ruso.
-/_docs/readme.ru.txt | Documentación Ruso.
 /_docs/readme.vi.md | Documentación Vietnamita.
-/_docs/readme.vi.txt | Documentación Vietnamita.
 /_docs/readme.zh-TW.md | Documentación Chino (Tradicional).
 /_docs/readme.zh.md | Documentación Chino (Simplificado).
-/_docs/signatures_tally.txt | Cifra neta de cambio de las incluidas firmas (no se requiere para usar la script).
 /_testfiles/ | Prueba archivos directorio (contiene varios archivos). Todos los archivos contenidos son prueba archivos para probando si phpMussel ha sido instalado correctamente en su sistema, y que no es necesario subir este directorio o cualquiera de sus archivos excepto cuando haciendo tales pruebas.
 /_testfiles/ascii_standard_testfile.txt | Prueba archivo para probando phpMussel normalizados ASCII firmas.
 /_testfiles/coex_testfile.rtf | Prueba archivo para probando phpMussel complejos extendidas firmas.
@@ -1002,4 +991,4 @@ Esta información ha sido actualizado 25 Febrero 2016 y es a hoy para todas las 
 ---
 
 
-Última Actualización: 25 Febrero 2016 (2016.02.25).
+Última Actualización: 27 Febrero 2016 (2016.02.27).

@@ -271,28 +271,17 @@ greylist_show
 /_docs/change_log.txt | 記錄的變化做出至腳本間不同版本（不需要為正確經營腳本）。
 /_docs/readme.ar.md | 阿拉伯文自述文件。
 /_docs/readme.de.md | 德文自述文件。
-/_docs/readme.de.txt | 德文自述文件。
 /_docs/readme.en.md | 英文自述文件。
-/_docs/readme.en.txt | 英文自述文件。
 /_docs/readme.es.md | 西班牙文自述文件。
-/_docs/readme.es.txt | 西班牙文自述文件。
 /_docs/readme.fr.md | 法文自述文件。
-/_docs/readme.fr.txt | 法文自述文件。
 /_docs/readme.id.md | 印度尼西亞文自述文件。
-/_docs/readme.id.txt | 印度尼西亞文自述文件。
 /_docs/readme.it.md | 意大利文自述文件。
-/_docs/readme.it.txt | 意大利文自述文件。
 /_docs/readme.nl.md | 荷蘭文自述文件。
-/_docs/readme.nl.txt | 荷蘭文自述文件。
 /_docs/readme.pt.md | 葡萄牙文自述文件。
-/_docs/readme.pt.txt | 葡萄牙文自述文件。
 /_docs/readme.ru.md | 俄文自述文件。
-/_docs/readme.ru.txt | 俄文自述文件。
 /_docs/readme.vi.md | 越南文自述文件。
-/_docs/readme.vi.txt | 越南文自述文件。
 /_docs/readme.zh-TW.md | 中文（簡體）自述文件。
 /_docs/readme.zh.md | 中文（簡體）自述文件。
-/_docs/signatures_tally.txt | 文件為數量追踪的為包含的簽名（不需要為正確經營腳本）。
 /_testfiles/ | 測試文件文件夾（包含若干文件）。所有包含文件是測試文件為測試如果phpMussel是正確地安裝上您的系統，和您不需要上傳這個文件夾或任何其文件除為上傳測試。
 /_testfiles/ascii_standard_testfile.txt | 測試文件以測試phpMussel標準化ASCII簽名。
 /_testfiles/coex_testfile.rtf | 測試文件以測試phpMussel複雜擴展簽名。
@@ -1006,6 +995,6 @@ URL掃描儀API配置。
 ---
 
 
-最後更新：2016年2月25日。
+最後更新：2016年2月27日。
 
 翻譯聲明：本文檔翻譯基於英文原始文檔，但由於本人水平有限，且非PHP程序員，對其中某些字詞的翻譯可能不是很準確，故如果出現錯誤，請指出並聯繫原作者予以更正，另外，本翻譯僅簡體中文，與繁體中文無關亦未參考繁體中文的譯文！！

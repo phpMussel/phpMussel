@@ -5,7 +5,7 @@ An ideal solution for shared hosting environments, where it's often not possible
 ---
 
 ### Features:
-- Licensed as [GNU General Public License version 2.0](https://github.com/Maikuolan/phpMussel/blob/master/_docs/LICENSE) (GPLv2).
+- Licensed as [GNU General Public License version 2.0](https://github.com/Maikuolan/phpMussel/blob/master/LICENSE.txt) (GPLv2).
 - Easy to install, easy to customise, easy to use.
 - Works for any system with PHP+PCRE installed, regardless of OS (PHP+PCRE required).
 - Fully configurable based on your needs.
@@ -43,4 +43,4 @@ An ideal solution for shared hosting environments, where it's often not possible
 
 ---
 
-*This file, "README.md", last edited: 26th February 2016 (2016.02.26).*
+*This file, "README.md", last edited: 27th February 2016 (2016.02.27).*

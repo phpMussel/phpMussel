@@ -296,28 +296,17 @@
 <div dir="rtl" style="display:inline;">سجل للتغييرات التي أجريت على البرنامج بين التحديثات المختلفة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /_docs/change_log.txt
 <div dir="rtl" style="display:inline;">الوثائق العربية.</div> | /_docs/readme.ar.md
 <div dir="rtl" style="display:inline;">الوثائق الألمانية.</div> | /_docs/readme.de.md
-<div dir="rtl" style="display:inline;">الوثائق الألمانية.</div> | /_docs/readme.de.txt
 <div dir="rtl" style="display:inline;">الوثائق الإنجليزية.</div> | /_docs/readme.en.md
-<div dir="rtl" style="display:inline;">الوثائق الإنجليزية.</div> | /_docs/readme.en.txt
 <div dir="rtl" style="display:inline;">الوثائق الأسبانية.</div> | /_docs/readme.es.md
-<div dir="rtl" style="display:inline;">الوثائق الأسبانية.</div> | /_docs/readme.es.txt
 <div dir="rtl" style="display:inline;">الوثائق الفرنسية.</div> | /_docs/readme.fr.md
-<div dir="rtl" style="display:inline;">الوثائق الفرنسية.</div> | /_docs/readme.fr.txt
 <div dir="rtl" style="display:inline;">الوثائق الاندونيسية.</div> | /_docs/readme.id.md
-<div dir="rtl" style="display:inline;">الوثائق الاندونيسية.</div> | /_docs/readme.id.txt
 <div dir="rtl" style="display:inline;">الوثائق الايطالية.</div> | /_docs/readme.it.md
-<div dir="rtl" style="display:inline;">الوثائق الايطالية.</div> | /_docs/readme.it.txt
 <div dir="rtl" style="display:inline;">الوثائق الهولندية.</div> | /_docs/readme.nl.md
-<div dir="rtl" style="display:inline;">الوثائق الهولندية.</div> | /_docs/readme.nl.txt
 <div dir="rtl" style="display:inline;">الوثائق البرتغالية.</div> | /_docs/readme.pt.md
-<div dir="rtl" style="display:inline;">الوثائق البرتغالية.</div> | /_docs/readme.pt.txt
 <div dir="rtl" style="display:inline;">الوثائق الروسية.</div> | /_docs/readme.ru.md
-<div dir="rtl" style="display:inline;">الوثائق الروسية.</div> | /_docs/readme.ru.txt
 <div dir="rtl" style="display:inline;">الوثائق الفيتنامية.</div> | /_docs/readme.vi.md
-<div dir="rtl" style="display:inline;">الوثائق الفيتنامية.</div> | /_docs/readme.vi.txt
 <div dir="rtl" style="display:inline;">الوثائق الصينية (المبسطة).</div> | /_docs/readme.zh.md
 <div dir="rtl" style="display:inline;">الوثائق الصينية (التقليدية).</div> | /_docs/readme.zh-TW.md
-<div dir="rtl" style="display:inline;">جدول صافي التحول الذي تضمنته التوقيعات ( غير ضروري لتشغيل سليم للبرنامج).</div> | /_docs/signatures_tally.txt
 <div dir="rtl" style="display:inline;">دليل اختبار الملفات ( يحتوي على العديد من الملفات). كل الملفات الواردة هي ملفات اختبار لاختبار إذا ما تم تثبيت "بي اتش بي ماسل" بشكل صحيح على النظام الخاص بك , لن تحتاج لتحميل هذا الدليل أو أي من ملفاته إلا عند القيام بهذا الاختبار.</div> | /_testfiles/
 <div dir="rtl" style="display:inline;">ملف اختبار للتأكد بأن "بي اتش بيم اسل" قد قام بتطبيع توقيعات ASCII.</div> | /_testfiles/ascii_standard_testfile.txt
 <div dir="rtl" style="display:inline;">ملف اختبار لاختبار توقيعات "بي اتش بي ماسل" الموسعة المعقدة.</div> | /_testfiles/coex_testfile.rtf
@@ -1033,4 +1022,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 25 فبراير 2016 (2016.02.25).</div>
+<div dir="rtl">آخر تحديث: 27 فبراير 2016 (2016.02.27).</div>

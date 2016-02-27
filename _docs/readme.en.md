@@ -269,28 +269,17 @@ File | Description
 /_docs/change_log.txt | A record of changes made to the script between different versions (not required for proper function of script).
 /_docs/readme.ar.md | Arabic documentation.
 /_docs/readme.de.md | German documentation.
-/_docs/readme.de.txt | German documentation.
 /_docs/readme.en.md | English documentation.
-/_docs/readme.en.txt | English documentation.
 /_docs/readme.es.md | Spanish documentation.
-/_docs/readme.es.txt | Spanish documentation.
 /_docs/readme.fr.md | French documentation.
-/_docs/readme.fr.txt | French documentation.
 /_docs/readme.id.md | Indonesian documentation.
-/_docs/readme.id.txt | Indonesian documentation.
 /_docs/readme.it.md | Italian documentation.
-/_docs/readme.it.txt | Italian documentation.
 /_docs/readme.nl.md | Dutch documentation.
-/_docs/readme.nl.txt | Dutch documentation.
 /_docs/readme.pt.md | Portuguese documentation.
-/_docs/readme.pt.txt | Portuguese documentation.
 /_docs/readme.ru.md | Russian documentation.
-/_docs/readme.ru.txt | Russian documentation.
 /_docs/readme.vi.md | Vietnamese documentation.
-/_docs/readme.vi.txt | Vietnamese documentation.
 /_docs/readme.zh-TW.md | Chinese (Traditional) documentation.
 /_docs/readme.zh.md | Chinese (Simplified) documentation.
-/_docs/signatures_tally.txt | Net-shift tally of included signatures (not required for proper function of script).
 /_testfiles/ | Testfiles directory (contains various files). All contained files are testfiles for testing if phpMussel was correctly installed on your system, and you don't need to upload this directory or any of its files except when doing such testing.
 /_testfiles/ascii_standard_testfile.txt | Testfile for testing phpMussel normalised ASCII signatures.
 /_testfiles/coex_testfile.rtf | Testfile for testing phpMussel Complex Extended signatures.
@@ -1003,4 +992,4 @@ This information was last updated 25th February 2016 and is current for all phpM
 ---
 
 
-Last Updated: 25th February 2016 (2016.02.25).
+Last Updated: 27th February 2016 (2016.02.27).
