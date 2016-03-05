@@ -56,13 +56,10 @@ entries will be deleted when those goals have been achieved.
 - Build plugin and extension variants of phpMussel for improved integration
   with various CMS, forums, other website systems and etc.
   Refer github.com/Maikuolan/phpMussel/issues/57
-  
-- Achieve 100% PSR compliancy.
-  Refer github.com/Maikuolan/phpMussel/issues/80
 
 - [phpMussel => v1.0.0] Implement namespace conventions and class-based OOP
   standards from Version 1 and thereafter.
-  
+
 - [phpMussel => v1.0.0] Idea: Investigate the possibility of a Swoole
   implementation of phpMussel.
 

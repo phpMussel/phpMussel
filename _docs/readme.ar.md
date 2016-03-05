@@ -505,25 +505,25 @@
 
 
 ### <div dir="rtl">6. <a name="SECTION6"></a>خياراتالتكوين/التهيئة</div>
-The following is a list of variables found in the "phpmussel.ini" configuration file of phpMussel, along with a description of their purpose and function.
+وفيما يلي قائمة من المتغيرات الموجودة في ملف تكوين phpmussel.ini، بالإضافة إلى وصف الغرض منه و وظيفته.
 
-####"general" (Category)
-General phpMussel configuration.
+####"general" (التصنيف)
+التكوين العام لـ "بي اتش بي  ماسل".
 
 "script_password"
-- As a convenience, phpMussel will allow certain functions (including the ability to update phpMussel on-the-fly) to be manually triggered via POST, GET and QUERY. However, as a security precaution, to do this, phpMussel will expect a password to be included with the command, as to ensure that it's you, and not someone else, attempting to manually trigger these functions. Set "script_password" to whatever password you would like to use. If no password is set, manual triggering will be disabled by default. Use something you will remember but which is hard for others to guess.
-- Has no influence in CLI mode.
+- للسهولة، "بي اتش بي  ماسل" يقوم بالسماح لوظائف معينة (بما في ذلك القدرة على تحديث "بي اتش بي  ماسل" بشكل تلقائي) يمكن تشغيلها يدويا من خلال وظيفة الحصول على والاستعلام. مع ذلك، كإجراء أمني احترازي ، للقيام بذلك، "بي اتش بي  ماسل" تتوقع كلمة مرور ليتم تضمينها مع الأمر لضمان أنك من أصدرت الامر وليس شخصا آخر، في محاولة لبدء هذه الوظائف يدويا. تحدد script_password  أي كلمة سر ترغب في استخدامها. إذا تم تعيين أية كلمة مرور، سيتم تعطيل البدء اليدوي بشكل افتراضي. ننصح باستخدام شيء تذكرونه ككلمة مرور ولكن يصعب على الآخرين تخمينها.
+- ليس له أي تأثير في وضع CLI "واجهة سطر الأوامر".
 
 "logs_password"
-- The same as "script_password", but for viewing the contents of scan_log and scan_kills. Having separate passwords can be useful if you want to give someone else access to one set of functions but not the other.
-- Has no influence in CLI mode.
+- نفس "script_password"، ولكن لعرض محتويات scan_log وscan_kills. يمكن وجود كلمات سر منفصلة تكون مفيدة إذا كنت تريد أن تعطي شخص آخر الوصول إلى مجموعة واحدة من وظائف دون غيرها.
+- ليس له أي تأثير في وضع CLI "واجهة سطر الأوامر".
 
 "cleanup"
-- Unset variables and cache used by the script after the initial upload scanning? False = No; True = Yes [Default]. If you -aren't- using the script beyond the initial scanning of uploads, you should set this to "true" (yes), to minimize memory usage. If you -are- using the script beyond the initial scanning of uploads, should set to "false" (no), to avoid unnecessarily reloading duplicate data into memory. In general practice, it should usually be set to "true", but, if you do this, you won't be able to use the script for anything other than the initial file upload scanning.
-- Has no influence in CLI mode.
+- إلغاء تعيين المتغيرات وذاكرة التخزين المؤقت التي يستخدمها البرنامج النصي بعد المسح الأولي للتحميل؟ زائفة/False = لا؛ صحيح/True = نعم [افتراضي]. إذا كنت -لا -تستخدم البرنامج النصي وراء المسح الأولي للتحميل، يجب تعيين هذا صحيح (نعم)، للحد من استخدام الذاكرة. إذا كنت تستخدم البرنامج النصي وراء المسح الأولي للتحميل، ينبغي أن تحدد إلى زائفة =(لا)، لتجنب داع إعادة تحميل البيانات المكررة في الذاكرة. في الممارسة العامة، ينبغي عادة أن يتم تعيين إلى صحيح، ولكن، إذا كنت تفعل ذلك، فإنك لن تكون قادرا على استخدام البرنامج النصي في أي شيء سوى المسح الأولي لتحميل الملف.
+- ليس له أي تأثير في وضع CLI "واجهة سطر الأوامر".
 
 "scan_log"
-- Filename of file to log all scanning results to. Specify a filename, or leave blank to disable.
+- اسم الملف لملف تسجيل جميع نتائج المسح. قم بتعيين اسم الملف، أو اتركه فارغا للتعطيل.
 
 "scan_log_serialized"
 - Filename of file to log all scanning results to (using a serialised format). Specify a filename, or leave blank to disable.
@@ -532,7 +532,7 @@ General phpMussel configuration.
 - Filename of file to log all records of blocked or killed uploads to. Specify a filename, or leave blank to disable.
 
 "ipaddr"
-- Where to find IP address of connecting request? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
+- Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
 
 "forbid_on_block"
 - Should phpMussel send 403 headers with the file upload blocked message, or stick with the usual 200 OK? False = No (200) [Default]; True = Yes (403).
@@ -567,7 +567,7 @@ General phpMussel configuration.
 "disable_cli"
 - Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere with certain testing tools (such as PHPUnit, for example) and other CLI-based applications. If you don't need to disable CLI mode, you should ignore this directive. False = Enable CLI mode [Default]; True = Disable CLI mode.
 
-####"signatures" (Category)
+####"signatures" (التصنيف)
 Signatures configuration.
 - %%%_clamav = ClamAV signatures (both mains and daily).
 - %%%_custom = Your custom signatures (if you've written any).
@@ -699,7 +699,7 @@ Signature matching length limiting options. Only change these if you know what y
 "detect_deface"
 - Should phpMussel parse signatures for detecting defacements and defacers? False = No; True = Yes [Default].
 
-####"files" (Category)
+####"files" (التصنيف)
 File handling configuration.
 
 "max_uploads"
@@ -736,7 +736,7 @@ File handling configuration.
 "block_encrypted_archives"
 - Detect and block encrypted archives? Because phpMussel isn't able to scan the contents of encrypted archives, it's possible that archive encryption may be employed by an attacker as a means of attempting to bypass phpMussel, anti-virus scanners and other such protections. Instructing phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. False = No; True = Yes [Default].
 
-####"attack_specific" (Category)
+####"attack_specific" (التصنيف)
 Attack-specific directives.
 
 Chameleon attack detection: False = Off; True = On.
@@ -777,7 +777,7 @@ Chameleon attack detection: False = Off; True = On.
 "scannable_threshold"
 - Optional limitation or threshold to the length of raw data that phpMussel is permitted to read and scan (in case there are any noticeable performance issues while scanning). Value is an integer representing filesize in KB. Default = 32768 (32MB). Zero or null value disables the threshold. Generally, this value shouldn't be less than the average filesize of file uploads that you want and expect to receive to your server or website, shouldn't be more than the filesize_limit directive, and shouldn't be more than roughly one fifth of the total allowable memory allocation granted to PHP via the php.ini configuration file. This directive exists to try to prevent phpMussel from using up too much memory (that'd prevent it from being able to successfully scan files above a certain filesize).
 
-####"compatibility" (Category)
+####"compatibility" (التصنيف)
 Compatibility directives for phpMussel.
 
 "ignore_upload_errors"
@@ -786,13 +786,13 @@ Compatibility directives for phpMussel.
 "only_allow_images"
 - If you only expect or only intend to allow images to be uploaded to your system or CMS, and if you absolutely don't require any files other than images to be uploaded to your system or CMS, this directive should be enabled, but should otherwise be disabled. If this directive is enabled, it'll instruct phpMussel to indiscriminately block any uploads identified as non-image files, without scanning them. This may reduce processing time and memory usage for attempted uploads of non-image files. False = OFF; True = ON.
 
-####"heuristic" (Category)
+####"heuristic" (التصنيف)
 Heuristic directives.
 
 "threshold"
 - There are certain signatures of phpMussel that are intended to identify suspicious and potentially malicious qualities of files being uploaded without in themselves identifying those files being uploaded specifically as being malicious. This "threshold" value tells phpMussel what the maximum total weight of suspicious and potentially malicious qualities of files being uploaded that's allowable is before those files are to be flagged as malicious. The definition of weight in this context is the total number of suspicious and potentially malicious qualities identified. By default, this value will be set to 3. A lower value generally will result in a higher occurrence of false positives but a higher number of malicious files being flagged, whereas a higher value generally will result in a lower occurrence of false positives but a lower number of malicious files being flagged. It's generally best to leave this value at its default unless you're experiencing problems related to it.
 
-####"virustotal" (Category)
+####"virustotal" (التصنيف)
 VirusTotal.com directives.
 
 "vt_public_api_key"
@@ -816,7 +816,7 @@ Note: Regardless of suspicion level, any files that are either blacklisted or wh
 `vt_quota_rate" and "vt_quota_time`
 - According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly adhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values _**MAY**_ sometimes help you in dealing with these problems. Your rate limit is determined as "vt_quota_rate" requests of any nature in any given "vt_quota_time" minute time frame.
 
-####"urlscanner" (Category)
+####"urlscanner" (التصنيف)
 URL scanner configuration.
 
 "urlscanner"
@@ -842,7 +842,7 @@ URL scanner API lookup configuration.
 "cache_time"
 - How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour).
 
-####"template_data" (Category)
+####"template_data" (التصنيف)
 Directives/Variables for templates and themes.
 
 Template data relates to the HTML output used to generate the "Upload Denied" message displayed to users upon a file upload being blocked. If you're using custom themes for phpMussel, HTML output is sourced from the "template_custom.html" file, and otherwise, HTML output is sourced from the "template.html" file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where "foo="bar"", any instance of "<p>{foo}</p>" found within the HTML output will become "<p>bar</p>".
@@ -1022,4 +1022,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 27 فبراير 2016 (2016.02.27).</div>
+<div dir="rtl">آخر تحديث: 6 مارس 2016 (2016.03.06).</div>

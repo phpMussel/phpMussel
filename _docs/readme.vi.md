@@ -22,7 +22,7 @@ Cảm ơn bạn đã chọn phpMussel, một loại bản PHP được thiết k
 
 BẢN QUYỀN PHPMUSSEL 2013 và hơn GNU/GPLv2 by Caleb M (Maikuolan).
 
-Bản này là chương trình miễn phí; bạn có thể phân phối lại hoạc sửa đổi dưới điều kiện của GNU Giấy Phép Công Cộng xuất bản bởi Free Software Foundation; một trong giấy phép phần hai, hoạc (tùy theo sự lựa chọn của bạn) bất kỳ phiên bản nào sau này. Bản này được phân phối với hy vọng rằng nó sẽ có hữu ích, nhưng mà KHÔNG CÓ BẢO HÀNH; ngay cả những bảo đảm ngụ ý KHẢ NĂNG BÁN HÀNG hoạc PHÙ HỢP VỚI MỤC ĐÍT VÀO. Hảy xem GNU Giấy Phép Công Cộng để biết them chi tiết, nằm trong hồ sơ `LICENSE.txt`, và kho chứa của hồ sơ này có thể tiềm đước tại:
+Bản này là chương trình miễn phí; bạn có thể phân phối lại hoạc sửa đổi dưới điều kiện của GNU Giấy Phép Công Cộng xuất bản bởi Free Software Foundation; một trong giấy phép phần hai, hoạc (tùy theo sự lựa chọn của bạn) bất kỳ phiên bản nào sau này. Bản này được phân phối với hy vọng rằng nó sẽ có hữu ích, nhưng mà KHÔNG CÓ BẢO HÀNH; ngay cả những bảo đảm ngụ ý KHẢ NĂNG BÁN HÀNG hoạc PHÙ HỢP VỚI MỤC ĐÍT VÀO. Hảy xem GNU Giấy Phép Công Cộng để biết them chi tiết, nằm trong tập tin `LICENSE.txt`, và kho chứa của tập tin này có thể tiềm đước tại:
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
@@ -45,15 +45,15 @@ Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện mộ
 
 2) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới bắt đầu hoặc chưa có kinh nghiệm không nên chọn), hảy mở `phpmussel.ini` (nằm ớ trong `vault`) - Tài liệu này có chứa tất cả các chỉ thị sẵn cho phpMussel. Trên mỗi tùy chọn sẽ có chi tiết ngắn mô tả những gì nó làm. Hảy điều chỉnh các tùy chọn như bạn thấy phù hợp, theo bất cứ điều gì là thích hợp cho nhữn cài đặt của bạn. Lưu tập tin, đóng lại.
 
-3) Tải nội dung lên (phpMussel và tài liệu của nó) vào thư mục bạn đã chọn trước (bạn không cần phải dùng hồ sơ `*.txt`/`*.md`, nhưng chủ yếu, bạn nên tải lên tất cả mọi thứ).
+3) Tải nội dung lên (phpMussel và tài liệu của nó) vào thư mục bạn đã chọn trước (bạn không cần phải dùng tập tin `*.txt`/`*.md`, nhưng chủ yếu, bạn nên tải lên tất cả mọi thứ).
 
 4) CHMOD cái `vault` thư mục thành "777". Các thư mục chính lưu trữ các nội dung (một trong những cái bạn đã chọn trước), bình thường, có thể riêng, nhưng tình hình CHMOD nên kiểm tra, nếu bạn đã có vấn đề cho phép trong quá khứ về hệ thống của bạn (theo mặc định, nên giống như "755").
 
-5) Tiếp theo, bạn sẽ cần "nối" phpMussel vào hệ thống của bạn hoặc CMS. Có một số cách mà bạn có thể "nối" bản chẳng hạn như phpMussel vào hệ thống hoạc CMS, nhưng cách đơn giản nhất là cần có bản vào cốt lõi ở đầu của tài liệu hoạc hệ thống hoặc CMS của bạn (một mà thường sẽ luôn luôn được nạp khi ai đó truy cập bất kỳ trang nào trên trang web của bạn) bằng cách sử dụng một lời chỉ thị `require` hoạc `include`. Thường, cái nàu sẽ được lưu trong một thư mục như `/includes`, `/assets` hoạc `/functions`, và sẽ thường được gọi là `init.php`, `common_functions.php`, `functions.php` hoạc tương tự. Bạn sẽ cần tiềm ra hồ sơ nào cho trường hợp của bạn; Nếu bạn gặp khó khăn trong việc này, hãy truy cập diễn đàn hỗ trợ của phpMussel và cho chúng tôi biêt; Có thể là tôi họac các người dùng khác có có kinh nghiệm với các CMS mà bạn đang sử dụng (bạn phải biết mình đang sử dụng CMS nào), và như vậy, có thể cung cấp hỗ trợ trong trường hợp này. Để làm chuyện này [sử dụng `require` họac `include`], đánh các dòng mã sao đây vào đầu của cốt lõi của hồ sơ, thay thế các dây chứa bên trong các dấu ngoặc kép với địa chỉ chính xác của tài liệu `phpmussel.php` (địa chỉ địa phương, chứ không phải địa chỉ HTTP; nó sẽ nhình gióng địa chỉ kho nói ở trên).
+5) Tiếp theo, bạn sẽ cần "nối" phpMussel vào hệ thống của bạn hoặc CMS. Có một số cách mà bạn có thể "nối" bản chẳng hạn như phpMussel vào hệ thống hoạc CMS, nhưng cách đơn giản nhất là cần có bản vào cốt lõi ở đầu của tài liệu hoạc hệ thống hoặc CMS của bạn (một mà thường sẽ luôn luôn được nạp khi ai đó truy cập bất kỳ trang nào trên trang web của bạn) bằng cách sử dụng một lời chỉ thị `require` hoạc `include`. Thường, cái nàu sẽ được lưu trong một thư mục như `/includes`, `/assets` hoạc `/functions`, và sẽ thường được gọi là `init.php`, `common_functions.php`, `functions.php` hoạc tương tự. Bạn sẽ cần tiềm ra tập tin nào cho trường hợp của bạn; Nếu bạn gặp khó khăn trong việc này, hãy truy cập diễn đàn hỗ trợ của phpMussel và cho chúng tôi biêt; Có thể là tôi họac các người dùng khác có có kinh nghiệm với các CMS mà bạn đang sử dụng (bạn phải biết mình đang sử dụng CMS nào), và như vậy, có thể cung cấp hỗ trợ trong trường hợp này. Để làm chuyện này [sử dụng `require` họac `include`], đánh các dòng mã sao đây vào đầu của cốt lõi của tập tin, thay thế các dây chứa bên trong các dấu ngoặc kép với địa chỉ chính xác của tài liệu `phpmussel.php` (địa chỉ địa phương, chứ không phải địa chỉ HTTP; nó sẽ nhình gióng địa chỉ kho nói ở trên).
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
-Lưu hồ sơ, đóng lại, tải lên lại.
+Lưu tập tin, đóng lại, tải lên lại.
 
 -- CÁCH KHÁC --
 
@@ -61,11 +61,11 @@ Nếu bạn đang sử dụng trang chủ Apache và nếu bạn có thể truy 
 
 `auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"`
 
-Hoạc cái này trong hồ sơ `.htaccess`:
+Hoạc cái này trong tập tin `.htaccess`:
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"`
 
-6) Tại điểm này, bạn đã xong! Nhưng mà, bạn nên kiểm tra nó ra để đảm bảo nó hoạt động đúng. Để kiểm tra các hồ sơ tải lên bảo vệ, thử tải lên các hồ sơ thử nghiệm bao gồm trong gói dưới `_testfiles` vào trang web của bạn thông qua các phương pháp tải lên dựa trên trình duyệt thông thường của bạn. Nếu tất cả mọi thứ đang hoạt động, một tin nhắn sẽ xuất hiện từ phpMussel xác nhận là việc tải lên đã bị chặn thành công. Nếu không có gì xuất hiện, đây là điều biểu hiện cho một vấn đề với sự hoạt động. Nếu bạn đang sử dụng chức năng cao cấp, hoặc sử dụng các loại chức năng quét khác có thể với công cụ này, bạn nên thử nó ra với những điều đó để đảm bảo nó hoạt động như yêu cầu.
+6) Tại điểm này, bạn đã xong! Nhưng mà, bạn nên kiểm tra nó ra để đảm bảo nó hoạt động đúng. Để kiểm tra các tập tin tải lên bảo vệ, thử tải lên các tập tin thử nghiệm bao gồm trong gói dưới `_testfiles` vào trang web của bạn thông qua các phương pháp tải lên dựa trên trình duyệt thông thường của bạn. Nếu tất cả mọi thứ đang hoạt động, một tin nhắn sẽ xuất hiện từ phpMussel xác nhận là việc tải lên đã bị chặn thành công. Nếu không có gì xuất hiện, đây là điều biểu hiện cho một vấn đề với sự hoạt động. Nếu bạn đang sử dụng chức năng cao cấp, hoặc sử dụng các loại chức năng quét khác có thể với công cụ này, bạn nên thử nó ra với những điều đó để đảm bảo nó hoạt động như yêu cầu.
 
 ---
 
@@ -80,7 +80,7 @@ Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện mộ
 
 3) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới bắt đầu hoặc chưa có kinh nghiệm không nên chọn), hảy mở `phpmussel.ini` (nằm ớ trong `vault`) - Tài liệu này có chứa tất cả các chỉ thị sẵn cho phpMussel. Trên mỗi tùy chọn sẽ có chi tiết ngắn mô tả những gì nó làm. Hảy điều chỉnh các tùy chọn như bạn thấy phù hợp, theo bất cứ điều gì là thích hợp cho nhữn cài đặt của bạn. Lưu tập tin, đóng lại.
 
-4) Tùy ý, bạn có thể sử dụng phpMussel trong chế độ CLI dể hơn với cách tạo ra hồ sơ lô để tự động tải PHP và phpMussel. Để làm điều này, mở một chương trình văn bản đơn giản như Notepad hoạc Notepad++, đánh vào đường dẫn đầy đủ cho hồ sơ `php.exe` trong thư mục cài đặt PHP của bạn, tiếp theo là một khoảng trống, theo sau là đường dẫn đầy đủ đến hồ sơ `phpmussel.php` trong thư mục cài đặt phpMussel của bạn, lưu tài liệu với tư bổ sung ".bat" một nơi nào bạn sẽ tìm thấy dễ dàng, và nhấn đúp vào vào hồ sơ đó để chạy phpMussel trong tương lai.
+4) Tùy ý, bạn có thể sử dụng phpMussel trong chế độ CLI dể hơn với cách tạo ra tập tin lô để tự động tải PHP và phpMussel. Để làm điều này, mở một chương trình văn bản đơn giản như Notepad hoạc Notepad++, đánh vào đường dẫn đầy đủ cho tập tin `php.exe` trong thư mục cài đặt PHP của bạn, tiếp theo là một khoảng trống, theo sau là đường dẫn đầy đủ đến tập tin `phpmussel.php` trong thư mục cài đặt phpMussel của bạn, lưu tài liệu với tư bổ sung ".bat" một nơi nào bạn sẽ tìm thấy dễ dàng, và nhấn đúp vào vào tập tin đó để chạy phpMussel trong tương lai.
 
 5) Tại thời điểm này, bạ đã xong! Nhưng mà, bạn nên kiểm tra nó để đảm bảo sự hoạt động. Để kiểm tra phpMussel,chạy phpMussel và thử quét `_testfiles` thư mục cung cấp trong gói.
 
@@ -255,17 +255,17 @@ For a list of available CLI commands, at the CLI prompt, type 'c', and press Ent
 
 The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, any files that may be potentially created as a result of your using this script, along with a short description of what all these files are for.
 
-Hồ sơ | Chi tiết
+Tập tin | Chi tiết
 ----|----
-/.gitattributes | Hồ sơ dự án GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
-/composer.json | Composer/Packagist thông tin (không cần thiết cho chức năng phù hợp của kịch bản).
-/CONTRIBUTING.md | Information about how to contribute to the project. @TranslateMe@
-/LICENSE.txt | A copy of the GNU/GPLv2 license. @TranslateMe@
-/PEOPLE.md | Information about the people involved in the project. @TranslateMe@
-/phpmussel.php | Hồ sơ tải (tải bản chính, tải lên, vân vân). Đây là điều bạn cần nối vào (cần thiết)!
-/README.md | Project summary information. @TranslateMe@
-/web.config | Một hồ sơ cấu hình của ASP.NET (trong trường hợp này, để bảo vệ `/vault` thư mực khỏi bị truy cập bởi những nguồn không có quền trong trường hợp bản được cài trên serever chạy trên công nghệ ASP.NET).
-/_docs/ | Thư mực tài liệu (Chứa nhiều loại hồ sơ).
+/.gitattributes | Tập tin dự án cho GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
+/composer.json | Thông tin về dự án cho Composer/Packagist (không cần thiết cho chức năng phù hợp của kịch bản).
+/CONTRIBUTING.md | Thông tin về làm thế nào để đóng góp cho dự án.
+/LICENSE.txt | Bản sao của giấy phép GNU/GPLv2.
+/PEOPLE.md | Thông tin về những người trong dự án.
+/phpmussel.php | Tập tin cho tải. Đây là điều bạn cần nối vào (cần thiết)!
+/README.md | Thông tin tóm tắt dự án.
+/web.config | Tập tin cấu hình của ASP.NET (trong trường hợp này, để bảo vệ `/vault` thư mực khỏi bị truy cập bởi những nguồn không có quền trong trường hợp bản được cài trên serever chạy trên công nghệ ASP.NET).
+/_docs/ | Thư mực tài liệu (chứa nhiều loại tập tin).
 /_docs/change_log.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
 /_docs/readme.ar.md | Tài liệu tiếng Ả Rập.
 /_docs/readme.de.md | Tài liệu tiếng Đức.
@@ -278,9 +278,9 @@ Hồ sơ | Chi tiết
 /_docs/readme.pt.md | Tài liệu tiếng Bồ Đào Nha.
 /_docs/readme.ru.md | Tài liệu tiếng Nga.
 /_docs/readme.vi.md | Tài liệu tiếng Việt.
-/_docs/readme.zh-TW.md | Tài liệu tiếng Trung Quốc (Truyền Thống).
-/_docs/readme.zh.md | Tài liệu tiếng Trung Quốc (Giản Thể).
-/_testfiles/ | Thư mục kiểm tra tập tin (chứa các tập tin khác nhau). Tất cả các hồ sơ chứa những hồ sơ thử nghiệm để thử nghiệm nếu phpMussel đã được cài đặt đúng trên hệ thống của bạn, và bạn không cần phải tải lên thư mục này hoặc bất kỳ các hồ sơ của mình trừ khi làm xét nghiệm như vậy.
+/_docs/readme.zh-TW.md | Tài liệu tiếng Trung Quốc (truyền thống).
+/_docs/readme.zh.md | Tài liệu tiếng Trung Quốc (giản thể).
+/_testfiles/ | Thư mục kiểm tra tập tin (chứa các tập tin khác nhau). Tất cả các tập tin chứa những tập tin thử nghiệm để thử nghiệm nếu phpMussel đã được cài đặt đúng trên hệ thống của bạn, và bạn không cần phải tải lên thư mục này hoặc bất kỳ các tập tin của mình trừ khi làm xét nghiệm như vậy.
 /_testfiles/ascii_standard_testfile.txt | Kiểm tra tập tin cho xét nghiệm phpMussel chữ ký ASCII bình thường.
 /_testfiles/coex_testfile.rtf | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký kéo dài phức tạp.
 /_testfiles/exe_standard_testfile.exe | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký PE.
@@ -300,13 +300,13 @@ Hồ sơ | Chi tiết
 /vault/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/cache/ | Cache thư mục (cho dữ liệu tạm thời).
 /vault/cache/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
-/vault/cli.inc | Xử lý tập tin CLI.
-/vault/config.inc | Xử lý tập tin cấu hình.
-/vault/controls.inc | Xử lý tập tin lệnh cho.
-/vault/functions.inc | Tập tin chức năng.
-/vault/greylist.csv | CSV of greylisted signatures indicating to phpMussel which signatures it should be ignoring (file automatically recreated if deleted). @TranslateMe@
-/vault/lang.inc | Language data. @TranslateMe@
-/vault/lang/ | Contains phpMussel language data. @TranslateMe@
+/vault/cli.inc | Tập tin cho xử lý CLI.
+/vault/config.inc | Tập tin cho xử lý cấu hình.
+/vault/controls.inc | Tập tin cho xử lý lệnh cho.
+/vault/functions.inc | Tập tin cho chức năng.
+/vault/greylist.csv | Tập tin CSV cho danh sách xám chử ký chỉ thị cho phpMussel cái nào chử ký nó phải được bỏ qua (tập tin tự động tạo lại nếu xóa).
+/vault/lang.inc | Dữ liệu tiếng.
+/vault/lang/ | Chứa dữ liệu tiếng phpMussel.
 /vault/lang/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/lang/lang.ar.inc | Dữ liệu tiếng Ả Rập.
 /vault/lang/lang.de.inc | Dữ liệu tiếng Đức.
@@ -322,138 +322,138 @@ Hồ sơ | Chi tiết
 /vault/lang/lang.vi.inc | Dữ liệu tiếng Việt.
 /vault/lang/lang.zh-TW.inc | Dữ liệu tiếng Trung Quốc (Truyền Thống).
 /vault/lang/lang.zh.inc | Dữ liệu tiếng Trung Quốc (Giản Thể).
-/vault/phpmussel.ini | Configuration file; Contains all the configuration options of phpMussel, telling it what to do and how to operate correctly (essential)! @TranslateMe@
-/vault/quarantine/ | Quarantine directory (contains quarantined files). @TranslateMe@
+/vault/phpmussel.ini | Tập tin cho cấu hình; Chứa tất cả các sự lựa chọn của cấu hình của phpMussel (cần thiết)!
+/vault/quarantine/ | Thư mục kiểm dịch (chứa các tập tin trong kiểm dịch).
 /vault/quarantine/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
-※ /vault/scan_kills.txt | A record of every file upload blocked/killed by phpMussel. @TranslateMe@
-※ /vault/scan_log.txt | A record of everything scanned by phpMussel. @TranslateMe@
-※ /vault/scan_log_serialized.txt | A record of everything scanned by phpMussel. @TranslateMe@
-/vault/signatures/ | Signatures directory (contains signature files). @TranslateMe@
+※ /vault/scan_kills.txt | Kỷ lục của mỗi tập tin tải lên từ chối/giết bởi phpMussel.
+※ /vault/scan_log.txt | Kỷ lục của mỗi tập tin quét bởi phpMussel.
+※ /vault/scan_log_serialized.txt | Kỷ lục của mỗi tập tin quét bởi phpMussel.
+/vault/signatures/ | Thư mục cho chữ ký (chứa các tập tin cho chữ ký).
 /vault/signatures/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
-/vault/signatures/ascii_clamav_regex.cvd | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/signatures/ascii_clamav_regex.map | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/signatures/ascii_clamav_standard.cvd | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/signatures/ascii_clamav_standard.map | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/signatures/ascii_custom_regex.cvd | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/signatures/ascii_custom_standard.cvd | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/signatures/ascii_mussel_regex.cvd | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/signatures/ascii_mussel_standard.cvd | Hồ sơ cho chữ ký ASCII bình thường.
-/vault/signatures/coex_clamav.cvd | Hồ sơ cho chữ ký kéo dài phức tạp.
-/vault/signatures/coex_custom.cvd | Hồ sơ cho chữ ký kéo dài phức tạp.
-/vault/signatures/coex_mussel.cvd | Hồ sơ cho chữ ký kéo dài phức tạp.
-/vault/signatures/elf_clamav_regex.cvd | Hồ sơ cho chữ ký ELF.
-/vault/signatures/elf_clamav_regex.map | Hồ sơ cho chữ ký ELF.
-/vault/signatures/elf_clamav_standard.cvd | Hồ sơ cho chữ ký ELF.
-/vault/signatures/elf_clamav_standard.map | Hồ sơ cho chữ ký ELF.
-/vault/signatures/elf_custom_regex.cvd | Hồ sơ cho chữ ký ELF.
-/vault/signatures/elf_custom_standard.cvd | Hồ sơ cho chữ ký ELF.
-/vault/signatures/elf_mussel_regex.cvd | Hồ sơ cho chữ ký ELF.
-/vault/signatures/elf_mussel_standard.cvd | Hồ sơ cho chữ ký ELF.
-/vault/signatures/exe_clamav_regex.cvd | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/signatures/exe_clamav_regex.map | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/signatures/exe_clamav_standard.cvd | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/signatures/exe_clamav_standard.map | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/signatures/exe_custom_regex.cvd | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/signatures/exe_custom_standard.cvd | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/signatures/exe_mussel_regex.cvd | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/signatures/exe_mussel_standard.cvd | Hồ sơ cho chữ ký PE (Portable Executable).
-/vault/signatures/filenames_clamav.cvd | Hồ sơ cho chữ ký tên tài liệu.
-/vault/signatures/filenames_custom.cvd | Hồ sơ cho chữ ký tên tài liệu.
-/vault/signatures/filenames_mussel.cvd | Hồ sơ cho chữ ký tên tài liệu.
-/vault/signatures/general_clamav_regex.cvd | Hồ sơ cho chữ ký chung.
-/vault/signatures/general_clamav_regex.map | Hồ sơ cho chữ ký chung.
-/vault/signatures/general_clamav_standard.cvd | Hồ sơ cho chữ ký chung.
-/vault/signatures/general_clamav_standard.map | Hồ sơ cho chữ ký chung.
-/vault/signatures/general_custom_regex.cvd | Hồ sơ cho chữ ký chung.
-/vault/signatures/general_custom_standard.cvd | Hồ sơ cho chữ ký chung.
-/vault/signatures/general_mussel_regex.cvd | Hồ sơ cho chữ ký chung.
-/vault/signatures/general_mussel_standard.cvd | Hồ sơ cho chữ ký chung.
-/vault/signatures/graphics_clamav_regex.cvd | Hồ sơ cho chữ ký đồ họa.
-/vault/signatures/graphics_clamav_regex.map | Hồ sơ cho chữ ký đồ họa.
-/vault/signatures/graphics_clamav_standard.cvd | Hồ sơ cho chữ ký đồ họa.
-/vault/signatures/graphics_clamav_standard.map | Hồ sơ cho chữ ký đồ họa.
-/vault/signatures/graphics_custom_regex.cvd | Hồ sơ cho chữ ký đồ họa.
-/vault/signatures/graphics_custom_standard.cvd | Hồ sơ cho chữ ký đồ họa.
-/vault/signatures/graphics_mussel_regex.cvd | Hồ sơ cho chữ ký đồ họa.
-/vault/signatures/graphics_mussel_standard.cvd | Hồ sơ cho chữ ký đồ họa.
-/vault/signatures/hex_general_commands.csv | Hex-encoded CSV of general command detections optionally used by phpMussel. @TranslateMe@
-/vault/signatures/html_clamav_regex.cvd | Hồ sơ cho chữ ký HTML bình thường.
-/vault/signatures/html_clamav_regex.map | Hồ sơ cho chữ ký HTML bình thường.
-/vault/signatures/html_clamav_standard.cvd | Hồ sơ cho chữ ký HTML bình thường.
-/vault/signatures/html_clamav_standard.map | Hồ sơ cho chữ ký HTML bình thường.
-/vault/signatures/html_custom_regex.cvd | Hồ sơ cho chữ ký HTML bình thường.
-/vault/signatures/html_custom_standard.cvd | Hồ sơ cho chữ ký HTML bình thường.
-/vault/signatures/html_mussel_regex.cvd | Hồ sơ cho chữ ký HTML bình thường.
-/vault/signatures/html_mussel_standard.cvd | Hồ sơ cho chữ ký HTML bình thường.
-/vault/signatures/macho_clamav_regex.cvd | Hồ sơ cho chữ ký Mach-O.
-/vault/signatures/macho_clamav_regex.map | Hồ sơ cho chữ ký Mach-O.
-/vault/signatures/macho_clamav_standard.cvd | Hồ sơ cho chữ ký Mach-O.
-/vault/signatures/macho_clamav_standard.map | Hồ sơ cho chữ ký Mach-O.
-/vault/signatures/macho_custom_regex.cvd | Hồ sơ cho chữ ký Mach-O.
-/vault/signatures/macho_custom_standard.cvd | Hồ sơ cho chữ ký Mach-O.
-/vault/signatures/macho_mussel_regex.cvd | Hồ sơ cho chữ ký Mach-O.
-/vault/signatures/macho_mussel_standard.cvd | Hồ sơ cho chữ ký Mach-O.
-/vault/signatures/mail_clamav_regex.cvd | Hồ sơ cho chữ ký mail.
-/vault/signatures/mail_clamav_regex.map | Hồ sơ cho chữ ký mail.
-/vault/signatures/mail_clamav_standard.cvd | Hồ sơ cho chữ ký mail.
-/vault/signatures/mail_clamav_standard.map | Hồ sơ cho chữ ký mail.
-/vault/signatures/mail_custom_regex.cvd | Hồ sơ cho chữ ký mail.
-/vault/signatures/mail_custom_standard.cvd | Hồ sơ cho chữ ký mail.
-/vault/signatures/mail_mussel_regex.cvd | Hồ sơ cho chữ ký mail.
-/vault/signatures/mail_mussel_standard.cvd | Hồ sơ cho chữ ký mail.
-/vault/signatures/md5_clamav.cvd | Hồ sơ cho chữ ký dựa MD5.
-/vault/signatures/md5_custom.cvd | Hồ sơ cho chữ ký dựa MD5.
-/vault/signatures/md5_mussel.cvd | Hồ sơ cho chữ ký dựa MD5.
-/vault/signatures/metadata_clamav.cvd | Hồ sơ cho chữ ký siêu dữ liệu kho lưu trữ.
-/vault/signatures/metadata_custom.cvd | Hồ sơ cho chữ ký siêu dữ liệu kho lưu trữ.
-/vault/signatures/metadata_mussel.cvd | Hồ sơ cho chữ ký siêu dữ liệu kho lưu trữ.
-/vault/signatures/ole_clamav_regex.cvd | Hồ sơ cho chữ ký OLE.
-/vault/signatures/ole_clamav_regex.map | Hồ sơ cho chữ ký OLE.
-/vault/signatures/ole_clamav_standard.cvd | Hồ sơ cho chữ ký OLE.
-/vault/signatures/ole_clamav_standard.map | Hồ sơ cho chữ ký OLE.
-/vault/signatures/ole_custom_regex.cvd | Hồ sơ cho chữ ký OLE.
-/vault/signatures/ole_custom_standard.cvd | Hồ sơ cho chữ ký OLE.
-/vault/signatures/ole_mussel_regex.cvd | Hồ sơ cho chữ ký OLE.
-/vault/signatures/ole_mussel_standard.cvd | Hồ sơ cho chữ ký OLE.
-/vault/signatures/pdf_clamav_regex.cvd | Hồ sơ cho chữ ký PDF.
-/vault/signatures/pdf_clamav_regex.map | Hồ sơ cho chữ ký PDF.
-/vault/signatures/pdf_clamav_standard.cvd | Hồ sơ cho chữ ký PDF.
-/vault/signatures/pdf_clamav_standard.map | Hồ sơ cho chữ ký PDF.
-/vault/signatures/pdf_custom_regex.cvd | Hồ sơ cho chữ ký PDF.
-/vault/signatures/pdf_custom_standard.cvd | Hồ sơ cho chữ ký PDF.
-/vault/signatures/pdf_mussel_regex.cvd | Hồ sơ cho chữ ký PDF.
-/vault/signatures/pdf_mussel_standard.cvd | Hồ sơ cho chữ ký PDF.
-/vault/signatures/pex_custom.cvd | Hồ sơ cho chữ ký kéo dài PE.
-/vault/signatures/pex_mussel.cvd | Hồ sơ cho chữ ký kéo dài PE.
-/vault/signatures/pe_clamav.cvd | Hồ sơ cho chữ ký phần PE.
-/vault/signatures/pe_custom.cvd | Hồ sơ cho chữ ký phần PE.
-/vault/signatures/pe_mussel.cvd | Hồ sơ cho chữ ký phần PE.
-/vault/signatures/swf_clamav_regex.cvd | Hồ sơ cho chữ ký Shockwave.
-/vault/signatures/swf_clamav_regex.map | Hồ sơ cho chữ ký Shockwave.
-/vault/signatures/swf_clamav_standard.cvd | Hồ sơ cho chữ ký Shockwave.
-/vault/signatures/swf_clamav_standard.map | Hồ sơ cho chữ ký Shockwave.
-/vault/signatures/swf_custom_regex.cvd | Hồ sơ cho chữ ký Shockwave.
-/vault/signatures/swf_custom_standard.cvd | Hồ sơ cho chữ ký Shockwave.
-/vault/signatures/swf_mussel_regex.cvd | Hồ sơ cho chữ ký Shockwave.
-/vault/signatures/swf_mussel_standard.cvd | Hồ sơ cho chữ ký Shockwave.
+/vault/signatures/ascii_clamav_regex.cvd | Tập tin cho chữ ký ASCII bình thường.
+/vault/signatures/ascii_clamav_regex.map | Tập tin cho chữ ký ASCII bình thường.
+/vault/signatures/ascii_clamav_standard.cvd | Tập tin cho chữ ký ASCII bình thường.
+/vault/signatures/ascii_clamav_standard.map | Tập tin cho chữ ký ASCII bình thường.
+/vault/signatures/ascii_custom_regex.cvd | Tập tin cho chữ ký ASCII bình thường.
+/vault/signatures/ascii_custom_standard.cvd | Tập tin cho chữ ký ASCII bình thường.
+/vault/signatures/ascii_mussel_regex.cvd | Tập tin cho chữ ký ASCII bình thường.
+/vault/signatures/ascii_mussel_standard.cvd | Tập tin cho chữ ký ASCII bình thường.
+/vault/signatures/coex_clamav.cvd | Tập tin cho chữ ký kéo dài phức tạp.
+/vault/signatures/coex_custom.cvd | Tập tin cho chữ ký kéo dài phức tạp.
+/vault/signatures/coex_mussel.cvd | Tập tin cho chữ ký kéo dài phức tạp.
+/vault/signatures/elf_clamav_regex.cvd | Tập tin cho chữ ký ELF.
+/vault/signatures/elf_clamav_regex.map | Tập tin cho chữ ký ELF.
+/vault/signatures/elf_clamav_standard.cvd | Tập tin cho chữ ký ELF.
+/vault/signatures/elf_clamav_standard.map | Tập tin cho chữ ký ELF.
+/vault/signatures/elf_custom_regex.cvd | Tập tin cho chữ ký ELF.
+/vault/signatures/elf_custom_standard.cvd | Tập tin cho chữ ký ELF.
+/vault/signatures/elf_mussel_regex.cvd | Tập tin cho chữ ký ELF.
+/vault/signatures/elf_mussel_standard.cvd | Tập tin cho chữ ký ELF.
+/vault/signatures/exe_clamav_regex.cvd | Tập tin cho chữ ký PE (Portable Executable).
+/vault/signatures/exe_clamav_regex.map | Tập tin cho chữ ký PE (Portable Executable).
+/vault/signatures/exe_clamav_standard.cvd | Tập tin cho chữ ký PE (Portable Executable).
+/vault/signatures/exe_clamav_standard.map | Tập tin cho chữ ký PE (Portable Executable).
+/vault/signatures/exe_custom_regex.cvd | Tập tin cho chữ ký PE (Portable Executable).
+/vault/signatures/exe_custom_standard.cvd | Tập tin cho chữ ký PE (Portable Executable).
+/vault/signatures/exe_mussel_regex.cvd | Tập tin cho chữ ký PE (Portable Executable).
+/vault/signatures/exe_mussel_standard.cvd | Tập tin cho chữ ký PE (Portable Executable).
+/vault/signatures/filenames_clamav.cvd | Tập tin cho chữ ký tên tài liệu.
+/vault/signatures/filenames_custom.cvd | Tập tin cho chữ ký tên tài liệu.
+/vault/signatures/filenames_mussel.cvd | Tập tin cho chữ ký tên tài liệu.
+/vault/signatures/general_clamav_regex.cvd | Tập tin cho chữ ký chung.
+/vault/signatures/general_clamav_regex.map | Tập tin cho chữ ký chung.
+/vault/signatures/general_clamav_standard.cvd | Tập tin cho chữ ký chung.
+/vault/signatures/general_clamav_standard.map | Tập tin cho chữ ký chung.
+/vault/signatures/general_custom_regex.cvd | Tập tin cho chữ ký chung.
+/vault/signatures/general_custom_standard.cvd | Tập tin cho chữ ký chung.
+/vault/signatures/general_mussel_regex.cvd | Tập tin cho chữ ký chung.
+/vault/signatures/general_mussel_standard.cvd | Tập tin cho chữ ký chung.
+/vault/signatures/graphics_clamav_regex.cvd | Tập tin cho chữ ký đồ họa.
+/vault/signatures/graphics_clamav_regex.map | Tập tin cho chữ ký đồ họa.
+/vault/signatures/graphics_clamav_standard.cvd | Tập tin cho chữ ký đồ họa.
+/vault/signatures/graphics_clamav_standard.map | Tập tin cho chữ ký đồ họa.
+/vault/signatures/graphics_custom_regex.cvd | Tập tin cho chữ ký đồ họa.
+/vault/signatures/graphics_custom_standard.cvd | Tập tin cho chữ ký đồ họa.
+/vault/signatures/graphics_mussel_regex.cvd | Tập tin cho chữ ký đồ họa.
+/vault/signatures/graphics_mussel_standard.cvd | Tập tin cho chữ ký đồ họa.
+/vault/signatures/hex_general_commands.csv | CSV (dấu phẩy tách giá trị) thập lục phân được mã hóa của phát hiện lệnh chung chung tùy chọn sử dụng qua phpMussel.
+/vault/signatures/html_clamav_regex.cvd | Tập tin cho chữ ký HTML bình thường.
+/vault/signatures/html_clamav_regex.map | Tập tin cho chữ ký HTML bình thường.
+/vault/signatures/html_clamav_standard.cvd | Tập tin cho chữ ký HTML bình thường.
+/vault/signatures/html_clamav_standard.map | Tập tin cho chữ ký HTML bình thường.
+/vault/signatures/html_custom_regex.cvd | Tập tin cho chữ ký HTML bình thường.
+/vault/signatures/html_custom_standard.cvd | Tập tin cho chữ ký HTML bình thường.
+/vault/signatures/html_mussel_regex.cvd | Tập tin cho chữ ký HTML bình thường.
+/vault/signatures/html_mussel_standard.cvd | Tập tin cho chữ ký HTML bình thường.
+/vault/signatures/macho_clamav_regex.cvd | Tập tin cho chữ ký Mach-O.
+/vault/signatures/macho_clamav_regex.map | Tập tin cho chữ ký Mach-O.
+/vault/signatures/macho_clamav_standard.cvd | Tập tin cho chữ ký Mach-O.
+/vault/signatures/macho_clamav_standard.map | Tập tin cho chữ ký Mach-O.
+/vault/signatures/macho_custom_regex.cvd | Tập tin cho chữ ký Mach-O.
+/vault/signatures/macho_custom_standard.cvd | Tập tin cho chữ ký Mach-O.
+/vault/signatures/macho_mussel_regex.cvd | Tập tin cho chữ ký Mach-O.
+/vault/signatures/macho_mussel_standard.cvd | Tập tin cho chữ ký Mach-O.
+/vault/signatures/mail_clamav_regex.cvd | Tập tin cho chữ ký mail.
+/vault/signatures/mail_clamav_regex.map | Tập tin cho chữ ký mail.
+/vault/signatures/mail_clamav_standard.cvd | Tập tin cho chữ ký mail.
+/vault/signatures/mail_clamav_standard.map | Tập tin cho chữ ký mail.
+/vault/signatures/mail_custom_regex.cvd | Tập tin cho chữ ký mail.
+/vault/signatures/mail_custom_standard.cvd | Tập tin cho chữ ký mail.
+/vault/signatures/mail_mussel_regex.cvd | Tập tin cho chữ ký mail.
+/vault/signatures/mail_mussel_standard.cvd | Tập tin cho chữ ký mail.
+/vault/signatures/md5_clamav.cvd | Tập tin cho chữ ký dựa MD5.
+/vault/signatures/md5_custom.cvd | Tập tin cho chữ ký dựa MD5.
+/vault/signatures/md5_mussel.cvd | Tập tin cho chữ ký dựa MD5.
+/vault/signatures/metadata_clamav.cvd | Tập tin cho chữ ký siêu dữ liệu kho lưu trữ.
+/vault/signatures/metadata_custom.cvd | Tập tin cho chữ ký siêu dữ liệu kho lưu trữ.
+/vault/signatures/metadata_mussel.cvd | Tập tin cho chữ ký siêu dữ liệu kho lưu trữ.
+/vault/signatures/ole_clamav_regex.cvd | Tập tin cho chữ ký OLE.
+/vault/signatures/ole_clamav_regex.map | Tập tin cho chữ ký OLE.
+/vault/signatures/ole_clamav_standard.cvd | Tập tin cho chữ ký OLE.
+/vault/signatures/ole_clamav_standard.map | Tập tin cho chữ ký OLE.
+/vault/signatures/ole_custom_regex.cvd | Tập tin cho chữ ký OLE.
+/vault/signatures/ole_custom_standard.cvd | Tập tin cho chữ ký OLE.
+/vault/signatures/ole_mussel_regex.cvd | Tập tin cho chữ ký OLE.
+/vault/signatures/ole_mussel_standard.cvd | Tập tin cho chữ ký OLE.
+/vault/signatures/pdf_clamav_regex.cvd | Tập tin cho chữ ký PDF.
+/vault/signatures/pdf_clamav_regex.map | Tập tin cho chữ ký PDF.
+/vault/signatures/pdf_clamav_standard.cvd | Tập tin cho chữ ký PDF.
+/vault/signatures/pdf_clamav_standard.map | Tập tin cho chữ ký PDF.
+/vault/signatures/pdf_custom_regex.cvd | Tập tin cho chữ ký PDF.
+/vault/signatures/pdf_custom_standard.cvd | Tập tin cho chữ ký PDF.
+/vault/signatures/pdf_mussel_regex.cvd | Tập tin cho chữ ký PDF.
+/vault/signatures/pdf_mussel_standard.cvd | Tập tin cho chữ ký PDF.
+/vault/signatures/pex_custom.cvd | Tập tin cho chữ ký kéo dài PE.
+/vault/signatures/pex_mussel.cvd | Tập tin cho chữ ký kéo dài PE.
+/vault/signatures/pe_clamav.cvd | Tập tin cho chữ ký phần PE.
+/vault/signatures/pe_custom.cvd | Tập tin cho chữ ký phần PE.
+/vault/signatures/pe_mussel.cvd | Tập tin cho chữ ký phần PE.
+/vault/signatures/swf_clamav_regex.cvd | Tập tin cho chữ ký Shockwave.
+/vault/signatures/swf_clamav_regex.map | Tập tin cho chữ ký Shockwave.
+/vault/signatures/swf_clamav_standard.cvd | Tập tin cho chữ ký Shockwave.
+/vault/signatures/swf_clamav_standard.map | Tập tin cho chữ ký Shockwave.
+/vault/signatures/swf_custom_regex.cvd | Tập tin cho chữ ký Shockwave.
+/vault/signatures/swf_custom_standard.cvd | Tập tin cho chữ ký Shockwave.
+/vault/signatures/swf_mussel_regex.cvd | Tập tin cho chữ ký Shockwave.
+/vault/signatures/swf_mussel_standard.cvd | Tập tin cho chữ ký Shockwave.
 /vault/signatures/switch.dat | Controls and sets certain variables.
-/vault/signatures/urlscanner.cvd | Hồ sơ cho chữ ký máy quét URL.
-/vault/signatures/whitelist_clamav.cvd | Hồ sơ riêng cho danh sách trắng.
-/vault/signatures/whitelist_custom.cvd | Hồ sơ riêng cho danh sách trắng.
-/vault/signatures/whitelist_mussel.cvd | Hồ sơ riêng cho danh sách trắng.
-/vault/signatures/xmlxdp_clamav_regex.cvd | Hồ sơ cho chữ ký XML/XDP.
-/vault/signatures/xmlxdp_clamav_regex.map | Hồ sơ cho chữ ký XML/XDP.
-/vault/signatures/xmlxdp_clamav_standard.cvd | Hồ sơ cho chữ ký XML/XDP.
-/vault/signatures/xmlxdp_clamav_standard.map | Hồ sơ cho chữ ký XML/XDP.
-/vault/signatures/xmlxdp_custom_regex.cvd | Hồ sơ cho chữ ký XML/XDP.
-/vault/signatures/xmlxdp_custom_standard.cvd | Hồ sơ cho chữ ký XML/XDP.
-/vault/signatures/xmlxdp_mussel_regex.cvd | Hồ sơ cho chữ ký XML/XDP.
-/vault/signatures/xmlxdp_mussel_standard.cvd | Hồ sơ cho chữ ký XML/XDP.
+/vault/signatures/urlscanner.cvd | Tập tin cho chữ ký máy quét URL.
+/vault/signatures/whitelist_clamav.cvd | Tập tin riêng cho danh sách trắng.
+/vault/signatures/whitelist_custom.cvd | Tập tin riêng cho danh sách trắng.
+/vault/signatures/whitelist_mussel.cvd | Tập tin riêng cho danh sách trắng.
+/vault/signatures/xmlxdp_clamav_regex.cvd | Tập tin cho chữ ký XML/XDP.
+/vault/signatures/xmlxdp_clamav_regex.map | Tập tin cho chữ ký XML/XDP.
+/vault/signatures/xmlxdp_clamav_standard.cvd | Tập tin cho chữ ký XML/XDP.
+/vault/signatures/xmlxdp_clamav_standard.map | Tập tin cho chữ ký XML/XDP.
+/vault/signatures/xmlxdp_custom_regex.cvd | Tập tin cho chữ ký XML/XDP.
+/vault/signatures/xmlxdp_custom_standard.cvd | Tập tin cho chữ ký XML/XDP.
+/vault/signatures/xmlxdp_mussel_regex.cvd | Tập tin cho chữ ký XML/XDP.
+/vault/signatures/xmlxdp_mussel_standard.cvd | Tập tin cho chữ ký XML/XDP.
 /vault/template.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader). @TranslateMe@
 /vault/template_custom.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader). @TranslateMe@
 /vault/update.dat | File containing version information for both the phpMussel script and the phpMussel signatures. If you ever want to automatically update phpMussel or want to update phpMussel via your browser, this file is essential. @TranslateMe@
 /vault/update.inc | Update Script; Required for automatic updates and for updating phpMussel via your browser, but not required otherwise. @TranslateMe@
-/vault/upload.inc | Xử lý tập tin tải lên.
+/vault/upload.inc | Tập tin cho xử lý tải lên.
 
 ※ Tên tài liệu có thể thay đổi tuy theo các quy định của cấu hình (in `phpmussel.ini`).
 
@@ -505,7 +505,7 @@ General phpMussel configuration.
 - Filename of file to log all records of blocked or killed uploads to. Specify a filename, or leave blank to disable.
 
 "ipaddr"
-- Where to find IP address of connecting request? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
+- Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
 
 "forbid_on_block"
 - Should phpMussel send 403 headers with the file upload blocked message, or stick with the usual 200 OK? False = No (200) [Default]; True = Yes (403).
@@ -992,4 +992,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 25 Tháng Hai 201
 ---
 
 
-Lần cuối cập nhật: 27 Tháng Hai 2016 (2016.02.27).
+Lần cuối cập nhật: 6 Tháng Ba 2016 (2016.03.06).

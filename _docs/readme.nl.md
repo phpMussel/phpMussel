@@ -262,7 +262,7 @@ Bestand | Beschrijving
 /CONTRIBUTING.md | Informatie over hoe bij te dragen aan het project.
 /LICENSE.txt | Een kopie van de GNU/GPLv2 licentie.
 /PEOPLE.md | Informatie over de bij het project betrokken personen.
-/phpmussel.php | Lader (laadt de belangrijkste script, updater, ezv). Dit is wat u zou moeten worden inhaken in (essentieel)!
+/phpmussel.php | De lader/loader. Dit is wat u zou moeten worden inhaken in (essentieel)!
 /README.md | Project beknopte informatie.
 /web.config | Een ASP.NET-configuratiebestand (in dit geval, naar het bestandsmap "vault" te beschermen tegen toegang door niet-geautoriseerde bronnen indien het script is geïnstalleerd op een server op basis van ASP.NET technologieën).
 /_docs/ | Documentatie bestandsmap (bevat verschillende bestanden).
@@ -305,23 +305,23 @@ Bestand | Beschrijving
 /vault/controls.inc | Controls handler.
 /vault/functions.inc | Functies bestand (essentieel).
 /vault/greylist.csv | CSV van greylisted handtekeningen aangeeft om phpMussel waarop handtekeningen moet worden negeren (bestand automatisch aangemaakt opnieuw als verwijderd).
-/vault/lang.inc | taaldata.
-/vault/lang/ | Bevat phpMussel taaldata.
+/vault/lang.inc | Taal-handler.
+/vault/lang/ | Bevat phpMussel taaldata/taalgegevens.
 /vault/lang/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/lang/lang.ar.inc | Arabisch taaldata.
-/vault/lang/lang.de.inc | Duitse taaldata.
-/vault/lang/lang.en.inc | Engels taaldata.
-/vault/lang/lang.es.inc | Spaanse taaldata.
-/vault/lang/lang.fr.inc | Franse taaldata.
-/vault/lang/lang.id.inc | Indonesisch taaldata.
-/vault/lang/lang.it.inc | Italiaanse taaldata.
-/vault/lang/lang.ja.inc | Japanse taaldata.
-/vault/lang/lang.nl.inc | Nederlandse taaldata.
-/vault/lang/lang.pt.inc | Portugees taaldata.
-/vault/lang/lang.ru.inc | Russische taaldata.
-/vault/lang/lang.vi.inc | Vietnamees taaldata.
-/vault/lang/lang.zh-TW.inc | Chinees (Traditioneel) taaldata.
-/vault/lang/lang.zh.inc | Chinees (Vereenvoudigd) taaldata.
+/vault/lang/lang.ar.inc | Arabisch taaldata/taalgegevens.
+/vault/lang/lang.de.inc | Duitse taaldata/taalgegevens.
+/vault/lang/lang.en.inc | Engels taaldata/taalgegevens.
+/vault/lang/lang.es.inc | Spaanse taaldata/taalgegevens.
+/vault/lang/lang.fr.inc | Franse taaldata/taalgegevens.
+/vault/lang/lang.id.inc | Indonesisch taaldata/taalgegevens.
+/vault/lang/lang.it.inc | Italiaanse taaldata/taalgegevens.
+/vault/lang/lang.ja.inc | Japanse taaldata/taalgegevens.
+/vault/lang/lang.nl.inc | Nederlandse taaldata/taalgegevens.
+/vault/lang/lang.pt.inc | Portugees taaldata/taalgegevens.
+/vault/lang/lang.ru.inc | Russische taaldata/taalgegevens.
+/vault/lang/lang.vi.inc | Vietnamees taaldata/taalgegevens.
+/vault/lang/lang.zh-TW.inc | Chinees (Traditioneel) taaldata/taalgegevens.
+/vault/lang/lang.zh.inc | Chinees (Vereenvoudigd) taaldata/taalgegevens.
 /vault/phpmussel.ini | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (essentiële)!
 /vault/quarantine/ | Quarantaine bestandsmap (bestanden in quarantaine bevat).
 /vault/quarantine/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
@@ -508,7 +508,7 @@ Algemene configuratie voor phpMussel.
 - Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke) Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
 
 "forbid_on_block"
-- Mocht phpMussel sturen 403 headers met het bestanden upload geblokkeerd bericht, of houd de gebruikelijke 200 OK? False = Nee (200) [Standaard]; True = Ja (403).
+- Moet CIDRAM reageren met 403 headers met het bestanden upload geblokkeerd bericht, of blijven met de gebruikelijke 200 OK? False = Nee (200) [Standaard]; True = Ja (403).
 
 "delete_on_sight"
 - Het inschakelen van dit richtlijn zal instrueren het script om elke gescande geprobeerd bestand upload dat gecontroleerd tegen elke detectie criteria te proberen onmiddellijk verwijderen, via handtekeningen of anderszins. Bestanden vastbesloten te zijn schoon zal niet worden aangeraakt. In het geval van archieven, het hele archief wordt verwijderd, ongeacht of niet het overtredende bestand is slechts één van meerdere bestanden vervat in het archief. Voor het geval van bestand upload scannen, doorgaans, het is niet nodig om dit richtlijn te inschakelen, omdat doorgaans, PHP zal automatisch zuiveren de inhoud van zijn cache wanneer de uitvoering is voltooid, wat betekent dat het doorgans zal verwijdert ieder bestanden geüpload doorheen aan de server tenzij ze zijn verhuisd, gekopieerd of verwijderd alreeds. Dit richtlijn is toegevoegd hier als een extra maatregel van veiligheid voor degenen wier kopies van PHP misschien niet altijd gedragen op de manier verwacht. False = Na het scannen, met rust laten het bestand [Standaard]; True = Na het scannen, als niet schoon, onmiddellijk verwijderen.
@@ -535,7 +535,7 @@ Algemene configuratie voor phpMussel.
 - Wanneer honeypot-modus is ingeschakeld, phpMussel zal proberen om ieder bestandsupload dat het tegenkomt in quarantaine plaatsen, ongeacht of niet het bestand wordt geüpload is gecontroleerd tegen een meegeleverde handtekeningen, en geen daadwerkelijke scannen of analyse van deze gevlagd geprobeerd bestandsuploads zal daadwerkelijk optreedt. Dit functionaliteit moet nuttig zijn voor degenen dat willen gebruik phpMussel voor de toepassing van virus/malware onderzoek, maar het is niet aanbevolen om dit functionaliteit te inschakelen wanneer het beoogde gebruik van phpMussel door de gebruiker is voor werkelijke bestandsupload scannen, noch aanbevolen te gebruik de honeypot functionaliteit voor andere doeleinden andere dan honeypotting. Als standaard, dit optie is uitgeschakeld. False = Uitgeschakeld [Standaard]; True = Ingeschakeld.
 
 "scan_cache_expiry"
-- Hoe lang moet phpMussel cache de resultaten van de scan? Waarde is het aantal seconden dat de resultaten van het scannen moet wordt gecached voor. Standaard is 21600 seconden (6 uur); Een waarde van 0 zal uitschakelen caching de resultaten van de scan.
+- Hoe lang Moeten phpMussel cache de resultaten van de scan? Waarde is het aantal seconden dat de resultaten van het scannen moet wordt gecached voor. Standaard is 21600 seconden (6 uur); Een waarde van 0 zal uitschakelen caching de resultaten van de scan.
 
 "disable_cli"
 - Uitschakelen CLI-modus? CLI-modus is standaard ingeschakeld, maar kunt somtijds interfereren met bepaalde testtools (zoals PHPUnit bijvoorbeeld) en andere CLI-gebaseerde applicaties. Als u niet hoeft te uitschakelen CLI-modus, u moeten om dit richtlijn te negeren. False = Inschakelen CLI-modus [Standaard]; True = Uitschakelen CLI-modus.
@@ -649,28 +649,28 @@ Handtekening controleren lengte beperken opties. Alleen veranderen deze als u we
 - "sd_siglen_max"
 
 "fail_silently"
-- Mocht phpMussel rapport wanneer handtekeningen bestanden zijn ontbrekend of beschadigd? Als fail_silently is uitgeschakeld, ontbrekende en beschadigde bestanden zal worden gerapporteerd op het scannen, en als fail_silently is ingeschakeld, ontbrekende en beschadigde bestanden zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Dit moet in het algemeen met rust gelaten worden tenzij u ervaart mislukt of soortgelijke problemen. False = Uitgeschakeld; True = Ingeschakeld [Standaard].
+- Moet phpMussel rapporteren wanneer handtekeningen bestanden zijn ontbrekend of beschadigd? Als fail_silently is uitgeschakeld, ontbrekende en beschadigde bestanden zal worden gerapporteerd op het scannen, en als fail_silently is ingeschakeld, ontbrekende en beschadigde bestanden zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Dit moet in het algemeen met rust gelaten worden tenzij u ervaart mislukt of soortgelijke problemen. False = Uitgeschakeld; True = Ingeschakeld [Standaard].
 
 "fail_extensions_silently"
-- Mocht phpMussel rapport wanneer extensies zijn ontbreken? Als fail_extensions_silently is uitgeschakeld, ontbrekende extensies zal worden gerapporteerd op het scannen, en als fail_extensions_silently is ingeschakeld, ontbrekende extensies zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Het uitschakelen van dit richtlijn kunt mogelijk verhogen van uw veiligheid, maar kunt ook leiden tot een toename van valse positieven. False = Uitgeschakeld; True = Ingeschakeld [Standaard].
+- Moet phpMussel rapporteren wanneer extensies zijn ontbreken? Als fail_extensions_silently is uitgeschakeld, ontbrekende extensies zal worden gerapporteerd op het scannen, en als fail_extensions_silently is ingeschakeld, ontbrekende extensies zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Het uitschakelen van dit richtlijn kunt mogelijk verhogen van uw veiligheid, maar kunt ook leiden tot een toename van valse positieven. False = Uitgeschakeld; True = Ingeschakeld [Standaard].
 
 "detect_adware"
-- Mocht phpMussel verwerken handtekeningen voor het detecteren van adware? False = Nee; True = Ja [Standaard].
+- Moet phpMussel verwerken handtekeningen voor het detecteren van adware? False = Nee; True = Ja [Standaard].
 
 "detect_joke_hoax"
-- Mocht phpMussel verwerken handtekeningen voor het detecteren van grap/beetnemerij malware/virussen? False = Nee; True = Ja [Standaard].
+- Moet phpMussel verwerken handtekeningen voor het detecteren van grap/beetnemerij malware/virussen? False = Nee; True = Ja [Standaard].
 
 "detect_pua_pup"
-- Mocht phpMussel verwerken handtekeningen voor het detecteren van PUAs/PUPs? False = Nee; True = Ja [Standaard].
+- Moet phpMussel verwerken handtekeningen voor het detecteren van PUAs/PUPs? False = Nee; True = Ja [Standaard].
 
 "detect_packer_packed"
-- Mocht phpMussel verwerken handtekeningen voor het detecteren van verpakkers en verpakt gegevens? False = Nee; True = Ja [Standaard].
+- Moet phpMussel verwerken handtekeningen voor het detecteren van verpakkers en verpakt gegevens? False = Nee; True = Ja [Standaard].
 
 "detect_shell"
-- Mocht phpMussel verwerken handtekeningen voor het detecteren van shell scripts? False = Nee; True = Ja [Standaard].
+- Moet phpMussel verwerken handtekeningen voor het detecteren van shell scripts? False = Nee; True = Ja [Standaard].
 
 "detect_deface"
-- Mocht phpMussel verwerken handtekeningen voor het detecteren van schendingen/defacements en schenders/defacers? False = Nee; True = Ja [Standaard].
+- Moet phpMussel verwerken handtekeningen voor het detecteren van schendingen/defacements en schenders/defacers? False = Nee; True = Ja [Standaard].
 
 ####"files" (Categorie)
 Bestand hanteren configuratie.
@@ -784,7 +784,7 @@ Noteren: Als het scannen van bestanden met behulp van de Virus Total API is uitg
 Noteren: Ongeacht van achterdocht niveau, elke bestanden die ofwel worden de zwarte lijst of witte lijst door phpMussel zal niet worden gescand met behulp van de Virus Total API, omdat die dergelijke bestanden reeds zou hebben verklaard als ofwel kwaadaardig of goedaardig door phpMussel tegen de tijd dat ze anders zouden hebben gescand door de Virus Total API, en daarom, extra scannen zou niet nodig. Het vermogen van phpMussel om bestanden te scannen met de Virus Total API is bedoeld om het vertrouwen bouwen verder voor of een bestand is kwaadaardig of goedaardig in die omstandigheden waarin phpMussel zelf is niet helemaal zeker de vraag van of een bestand is kwaadaardig of goedaardig.
 
 "vt_weighting"
-- Mocht phpMussel de resultaten van het scannen met behulp van de Virus Total API toe te passen als detecties of detectie weging? Dit richtlijn bestaat, omdat, hoewel het scannen van een bestand met behulp van meerdere motoren (als Virus Total doet) moet leiden tot een verhoogde aantal van detecties (en dus in een hoger aantal van kwaadaardige bestanden worden gedetecteerd), het kan ook resulteren in een hoger aantal van valse positieven, en daarom, in sommige gevallen, de resultaten van de scan kan beter worden benut als betrouwbaarheidsscore eerder dan als een definitieve conclusie. Als een waarde van 0 wordt gebruikt, de resultaten van het scannen met behulp van de Virus Total API zal worden toegepast als detecties, en zo, als een motor gebruikt door Virus Total vlaggen het bestand wordt gescand als kwaadaardige, phpMussel zal het bestand overwegen kwaadaardig te zijn. Als een andere waarde wordt gebruikt, de resultaten van het scannen met behulp van de Virus Total API zal worden toegepast als detectie weging, en zo, het aantal van motoren gebruikt door Virus Total dat vlag het bestand wordt gescand als kwaadaardige zal dienen als een betrouwbaarheidsscore (of detectie weging) voor of het bestand dat wordt gescand moet worden beschouwd als kwaadaardige door phpMussel (de waarde die wordt gebruikt zal vertegenwoordigen de minimale betrouwbaarheidsscore of weging vereist om kwaadaardige te worden beschouwd). Een waarde van 0 wordt standaard gebruikt.
+- Moeten phpMussel de resultaten van het scannen met behulp van de Virus Total API toe te passen als detecties of detectie weging? Dit richtlijn bestaat, omdat, hoewel het scannen van een bestand met behulp van meerdere motoren (als Virus Total doet) moet leiden tot een verhoogde aantal van detecties (en dus in een hoger aantal van kwaadaardige bestanden worden gedetecteerd), het kan ook resulteren in een hoger aantal van valse positieven, en daarom, in sommige gevallen, de resultaten van de scan kan beter worden benut als betrouwbaarheidsscore eerder dan als een definitieve conclusie. Als een waarde van 0 wordt gebruikt, de resultaten van het scannen met behulp van de Virus Total API zal worden toegepast als detecties, en zo, als een motor gebruikt door Virus Total vlaggen het bestand wordt gescand als kwaadaardige, phpMussel zal het bestand overwegen kwaadaardig te zijn. Als een andere waarde wordt gebruikt, de resultaten van het scannen met behulp van de Virus Total API zal worden toegepast als detectie weging, en zo, het aantal van motoren gebruikt door Virus Total dat vlag het bestand wordt gescand als kwaadaardige zal dienen als een betrouwbaarheidsscore (of detectie weging) voor of het bestand dat wordt gescand moet worden beschouwd als kwaadaardige door phpMussel (de waarde die wordt gebruikt zal vertegenwoordigen de minimale betrouwbaarheidsscore of weging vereist om kwaadaardige te worden beschouwd). Een waarde van 0 wordt standaard gebruikt.
 
 "vt_quota_rate" en "vt_quota_time"
 - Volgens de Virus Total API-documentatie, het is beperkt tot maximaal 4 verzoeken van welke aard in elk 1 minuut tijdsbestek. Als u een honeyclient, honeypot of andere automatisering te voorzien, dat gaat om middelen te verschaffen om VirusTotal en niet alleen rapporten opvragen heeft u recht op een hogere API-quotum. Normaal, phpMussel zal strikt houden aan deze beperkingen, maar vanwege de mogelijkheid van deze API-quotum verhoogd te worden, deze twee richtlijnen worden verstrekt als middel voor u om instrueren phpMussel wat limiet moeten houden worden. Tenzij u heeft geïnstrueerd om dit te doen, het is niet aan te raden voor u om deze waarden te verhogen, maar, als u heeft ondervonden problemen met betrekking tot uw tarief quota bereiken, afnemende deze waarden kunnen u soms helpen in het omgaan met deze problemen. Uw maximaal tarief bepaald als `vt_quota_rate` verzoeken van welke aard in elk `vt_quota_time` minuut tijdsbestek.
@@ -992,4 +992,4 @@ Dit informatie werd laatst bijgewerkt 25 Februari 2016 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 27 Februari 2016 (2016.02.27).
+Laatste Bijgewerkt: 6 Maart 2016 (2016.03.06).

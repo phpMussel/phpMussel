@@ -9,8 +9,8 @@
 - 4A. [NAVEGADOR COMANDOS](#SECTION4A)
 - 4B. [CLI (COMANDO LINHA INTERFACE)](#SECTION4B)
 - 5. [ARQUIVOS INCLUÍDOS NESTE PACOTE](#SECTION5)
-- 6. [CONFIGURAÇÃO OPÇÕES](#SECTION6)
-- 7. [ASSINATURA FORMATO](#SECTION7)
+- 6. [OPÇÕES DE CONFIGURAÇÃO](#SECTION6)
+- 7. [FORMATOS DE ASSINATURAS](#SECTION7)
 - 8. [CONHECIDOS COMPATIBILIDADE PROBLEMAS](#SECTION8)
 
 ---
@@ -30,7 +30,7 @@ Um especial obrigado para [ClamAV](http://www.clamav.net/) por o projeto inspira
 
 Um especial obrigado para Sourceforge e GitHub por hospedar os projeto arquivos, para [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) por hospedar os phpMussel discussão fóruns, e para adicionais recursos de um número de o assinaturas utilizados através do phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) e outros, e um especial obrigado a todos aqueles que apoiam o projeto, a qualquer outra pessoa que eu possa ter esquecido de mencionar, e para você, por usando o script.
 
-Este documento e seu associado pacote pode ser baixado gratuitamente desde:
+Este documento e seu associado pacote pode ser baixado gratuitamente de:
 - [Sourceforge](http://phpmussel.sourceforge.net/).
 - [GitHub](https://github.com/Maikuolan/phpMussel/).
 
@@ -43,7 +43,7 @@ Espero para agilizar este processo via fazendo um instalado em algum momento no 
 
 1) Por o seu lendo isso, eu estou supondo que você já tenha baixado uma cópia arquivada do script, descomprimido seu conteúdo e tê-lo sentado em algum lugar em sua máquina local. A partir daqui, você vai querer determinar onde no seu host ou CMS pretende colocar esses conteúdos. Um diretório como `/public_html/phpmussel/` ou semelhante (porém, está não importa qual você escolher, assumindo que é seguro e algo você esteja feliz com) vai bastará.
 
-2) Opcionalmente (fortemente recomendado para avançados usuários, mas não recomendado para iniciantes ou para os inexperientes), abrir `phpmussel.ini` (localizado dentro `vault`) - Este arquivo contém todas as directivas disponíveis para phpMussel. Acima de cada opção deve ser um breve comentário descrevendo o que faz e para que serve. Ajuste essas opções de como você vê o ajuste, conforme o que for apropriado para sua particular configuração. Salve o arquivo, fechar.
+2) Opcionalmente (fortemente recomendado para avançados usuários, mas não recomendado para iniciantes ou para os inexperientes), abrir `phpmussel.ini` (localizado dentro `vault`) - Este arquivo contém todas as directivas disponíveis para phpMussel. Acima de cada opção deve ser um breve comentário descrevendo o que faz e para que serve. Ajuste essas opções de como você vê o ajuste, conforme o que for apropriado para sua configuração específica. Salve o arquivo, fechar.
 
 3) Carregar os conteúdos (phpMussel e seus arquivos) para o diretório que você tinha decidido anteriormente (você não requerer os `*.txt`/`*.md` arquivos incluídos, mas principalmente, você deve carregar tudo).
 
@@ -78,7 +78,7 @@ Espero para agilizar este processo via fazendo um instalado em algum momento no 
 
 2) phpMussel requer PHP para ser instalado na host máquina a fim de executar. Se você não ainda tno PHP instalado em sua máquina, por favor instalar o PHP em sua máquina, seguindo as instruções fornecidas pelo PHP instalador.
 
-3) Opcionalmente (fortemente recomendado para avançados usuários, mas não recomendado para iniciantes ou para os inexperientes), abrir `phpmussel.ini` (localizado dentro `vault`) - Este arquivo contém todas as directivas disponíveis para phpMussel. Acima de cada opção deve ser um breve comentário descrevendo o que faz e para que serve. Ajuste essas opções de como você vê o ajuste, conforme o que for apropriado para sua particular configuração. Salve o arquivo, fechar.
+3) Opcionalmente (fortemente recomendado para avançados usuários, mas não recomendado para iniciantes ou para os inexperientes), abrir `phpmussel.ini` (localizado dentro `vault`) - Este arquivo contém todas as directivas disponíveis para phpMussel. Acima de cada opção deve ser um breve comentário descrevendo o que faz e para que serve. Ajuste essas opções de como você vê o ajuste, conforme o que for apropriado para sua configuração específica. Salve o arquivo, fechar.
 
 4) Opcionalmente, você pode fazer usando phpMussel no modo CLI mais fácil para si mesmo através da criação de um batch arquivo para carregar automaticamente PHP e phpMussel. Para fazer isso, abra um editor de simples texto como Notepad ou Notepad++, digite o completo caminho para o `php.exe` arquivo no PHP instalação diretório, seguido por um espaço, seguido pelo completo caminho para o `phpmussel.php` arquivo no diretório da sua phpMussel instalação, salvar o arquivo com a extensão ".bat" Em algum lugar que você vai encontrá-lo facilmente, e clique duas vezes nesse arquivo para executar phpMussel no futuro.
 
@@ -117,11 +117,11 @@ Retorna algo tal como esta (como uma string):
  Wed, 16 Sep 2013 02:49:47 +0000 Terminado.
 ```
 
-Por completos detalhes sobre que tipo de assinaturas phpMussel usa durante a análise e como ele usa essas assinaturas, consulte a Assinatura Formato seção deste arquivo README.
+Por completos detalhes sobre que tipo de assinaturas phpMussel usa durante a análise e como ele usa essas assinaturas, consulte a formatos de assinaturas seção deste arquivo README.
 
 Se você encontrar quaisquer falsos positivos, se você encontrar algo novo que você acha deve ser bloqueado, ou para qualquer outra coisa com relação a assinatura, entre em contato comigo sobre isso para que eu possa fazer as mudanças necessárias, que, se você não entrar em contato comigo, eu posso não ser necessariamente conscientes de.
 
-Para desativar as assinaturas que estão incluídos com phpMussel (tal como se você está experimentando falsos positivos específico para seus fins que não deve normalmente ser removidos da agilize), consulte as notas sobre Greylisting dentro do Navegador Comandos seção deste README arquivo.
+Para desativar as assinaturas que estão incluídos com phpMussel (tal como se você está experimentando falsos positivos específico para seus fins que não deve normalmente ser removidos da agilize), consulte as notas sobre Greylisting dentro do Navegador Comandos seção deste arquivo README.
 
 Além da padrão arquivo carregamento análise e a opcional análise de outros arquivos e/ou diretórios especificado através da função acima, incluído no phpMussel é uma função destinada à análise do corpo das e-mail mensagens. Esta função funciona da mesma forma para a phpMussel() função, mas se concentra exclusivamente em fazer a comparação com as assinaturas de ClamAV baseiam e-mail. Eu tenho amarrei essas assinaturas para a padrão phpMussel() função, porque é muito pouco provável que você jamais encontrar o corpo de uma recebidos e-mail mensagem na necessidade de análise dentro um arquivo carregamento direcionado para uma página onde phpMussel é enganchada, e assim, para amarrar essas assinaturas para a phpMussel() função seria redundante. Mas, o que disse, tendo uma separada função para comparar contra essas assinaturas poderia revelar-se extremamente útil para alguns, especialmente para aqueles cuja CMS ou webfront sistema está de alguma modo enganchado em seu e-mail sistema e para aqueles de quem verificar seus e-mails através de um PHP script de que eles poderiam engancho para phpMussel. Configuração para esta função, como todos os outros, é controlado através do `phpmussel.ini` arquivo. Para utilizar esta função (você vai precisar para fazer a sua própria implementação) em um PHP arquivo que está enganchado ao phpMussel, usar a seguinte função no seu código:
 
@@ -131,14 +131,14 @@ Onde $body é o corpo da email mensagem que você deseja verificar (Além, você
 
 Além do acima, se você olhar para o código-fonte, você pode notar a função phpMusselD() e phpMusselR(). Estas funções são sub-funções de phpMussel(), e não deve ser chamado diretamente fora dessa pai função (não por causa de adversos efeitos.. Mais-lo, simplesmente porque ele tinha nenhuma utilidade, e provavelmente não irá realmente funcionar corretamente qualquer maneira).
 
-Existem muitos outros controlos e funções disponíveis dentro phpMussel para seu uso, também. Para qualquer esses controlos e funções que, até o final desta seção do README, ainda não foram documentados, por favor, continue a leitura e consulte o Navegador Comandos seção deste README arquivo.
+Existem muitos outros controlos e funções disponíveis dentro phpMussel para seu uso, também. Para qualquer esses controlos e funções que, até o final desta seção do README, ainda não foram documentados, por favor, continue a leitura e consulte o Navegador Comandos seção deste arquivo README.
 
 ---
 
 
 ###3B. <a name="SECTION3B"></a>COMO USAR (PARA CLI)
 
-Por favor, consulte ao "COMO INSTALAR (PARA CLI)" seção deste README arquivo.
+Por favor, consulte ao "COMO INSTALAR (PARA CLI)" seção deste arquivo README.
 
 Esteja ciente de que, embora versões futuras do phpMussel deve apoiar sistemas outros, neste momento, phpMussel CLI modo suporte só é otimizado para uso em sistemas baseados no Windows (você pode, é claro, experimentá-lo em outros sistemas, mas eu não posso garantir que vai funcionar como pretendido).
 
@@ -244,7 +244,7 @@ greylist_show
 
 ###4B. <a name="SECTION4B"></a>CLI (COMANDO LINHA INTERFACE)
 
-phpMussel pode ser executado como um interativo arquivo analisador no CLI modo em sistemas baseados em Windows. Por favor, consulte ao "COMO INSTALAR (PARA CLI)" seção deste README arquivo por mais detalhes.
+phpMussel pode ser executado como um interativo arquivo analisador no CLI modo em sistemas baseados em Windows. Por favor, consulte ao "COMO INSTALAR (PARA CLI)" seção deste arquivo README por mais detalhes.
 
 Por uma lista de comandos disponíveis Em CLI, no CLI prompt, digite 'c', e pressione Enter.
 
@@ -262,9 +262,9 @@ Arquivo | Descrição
 /CONTRIBUTING.md | Informações sobre como contribuir para o projeto.
 /LICENSE.txt | Uma cópia da GNU/GPLv2 licença.
 /PEOPLE.md | Informações sobre as pessoas envolvidas no projeto.
-/phpmussel.php | Carregador (carrega o principal script, atualizador, etc). Isto é o que você deveria ser enganchando em (essencial)!
+/phpmussel.php | O carregador. Isto é o que você deveria ser enganchando em (essencial)!
 /README.md | Informações do projeto em sumário.
-/web.config | Um ASP.NET configuração arquivo (neste caso, para proteger o `/vault` diretório contra serem acessado por fontes não autorizadas em caso que o script está instalado em um servidor baseado em ASP.NET tecnologias).
+/web.config | Um arquivo de configuração para ASP.NET (neste caso, para protegendo o`/vault` diretório contra serem acessado por fontes não autorizadas em caso que o script está instalado em um servidor baseado em ASP.NET tecnologias).
 /_docs/ | Documentação diretório (contém vários arquivos).
 /_docs/change_log.txt | Um registro das mudanças feitas para o script entre o diferentes versões (não é necessário para o correto funcionamento do script).
 /_docs/readme.ar.md | Documentação Árabe.
@@ -322,7 +322,7 @@ Arquivo | Descrição
 /vault/lang/lang.vi.inc | Linguagem dados Vietnamita.
 /vault/lang/lang.zh-TW.inc | Linguagem dados Chinês (Tradicional).
 /vault/lang/lang.zh.inc | Linguagem dados Chinês (Simplificado).
-/vault/phpmussel.ini | Configuração arquivo; Contém todas ao configuração opções de phpMussel, dizendo-lhe o que fazer e como operar corretamente (essencial)!
+/vault/phpmussel.ini | Arquivo de configuração; Contém todas as opções de configuração para phpMussel, dizendo-lhe o que fazer e como operar corretamente (essencial)!
 /vault/quarantine/ | Diretório de quarentena (contém os arquivos em quarentena).
 /vault/quarantine/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 ※ /vault/scan_kills.txt | Um registro de tudos os arquivos carregamentos bloqueado ou matado por phpMussel.
@@ -466,7 +466,7 @@ Assinatura arquivos marcados com "_regex" contêm assinaturas que utilizam regul
 
 Assinatura arquivos marcados com "_standard" contêm assinaturas que especificamente não utilizam qualquer forma de regulares expressões.
 
-Assinatura arquivos marcados com nenhum "_regex" nem "_standard" será como um ou outro, mas não tanto (consulte Assinatura Formato seção deste README arquivo por documentação e específicos detalhes).
+Assinatura arquivos marcados com nenhum "_regex" nem "_standard" será como um ou outro, mas não tanto (consulte formatos de assinaturas seção deste arquivo README por documentação e específicos detalhes).
 
 Assinatura arquivos marcados com "_clamav" contêm assinaturas, provenientes exclusivamente do ClamAV database (GNU/GPL).
 
@@ -477,11 +477,11 @@ Assinatura arquivos marcados com "_mussel" contêm assinaturas que são especifi
 ---
 
 
-###6. <a name="SECTION6"></a>CONFIGURAÇÃO OPÇÕES
-O seguinte é uma lista de variáveis encontradas no `phpmussel.ini` configuração arquivo de phpMussel, juntamente com uma descrição de sua propósito e função.
+###6. <a name="SECTION6"></a>OPÇÕES DE CONFIGURAÇÃO
+O seguinte é uma lista de variáveis encontradas no `phpmussel.ini` arquivo de configuração para phpMussel, juntamente com uma descrição de sua propósito e função.
 
 ####"general" (Categoria)
-Geral configuração por phpMussel.
+Configuração geral por phpMussel.
 
 "script_password"
 - Como uma conveniência, phpMussel permitirás certas funções (incluindo a capacidade de atualizando phpMussel remotamente) ao ser acionado manualmente através de POST, GET e QUERY. Mas, como medida de segurança, para fazer isso, phpMussel esperam uma senha para ser incluída com o comando, forma a garantir que é você, e não outra pessoa, tentando de acionar manualmente essas funções. Definir `script_password` para qualquer senha que você desejá usar. Se nenhuma senha for definida, o manual acionamento será desativado por padrão. Uso algo que você vai se lembrar, mas que é difícil por outros adivinharem.
@@ -673,7 +673,7 @@ Assinatura analisando comprimento limitando opções. Apenas alterar estes se vo
 - Deve phpMussel usam assinaturas para detectar vandalismo e vândalos? False = Não; True = Sim [Padrão].
 
 ####"files" (Categoria)
-Geral configuração por a manipulação de arquivos.
+Configuração geral por a manipulação de arquivos.
 
 "max_uploads"
 - O máximo permitido número de arquivos para analisar durante os arquivos carregamentos análise antes de abortar a análise e informando ao usuário eles estão carregando demais muito de uma vez! Oferece proteção contra um teórico ataque pelo qual um atacante tenta DDoS o seu sistema ou CMS por meio de sobrecarregando phpMussel a fim de retardar o PHP processo para uma parada. Recomendado: 10. Você pode querer aumentar ou diminuir esse número, dependendo das atributos do seu hardware. Note-se que este número não lev. Em conta ou incluir o conteúdos dos compactados arquivos.
@@ -826,7 +826,7 @@ Template dados está associada com o HTML usado para gerar a "Carregar Negado" m
 ---
 
 
-###7. <a name="SECTION7"></a>ASSINATURA FORMATO
+###7. <a name="SECTION7"></a>FORMATOS DE ASSINATURAS
 
 ####*ARQUIVO NOME ASSINATURAS*
 Todas as arquivo nome assinaturas seguir o formato:
@@ -992,4 +992,4 @@ Esta informação foi atualizada dia 25 Fevereiro 2016 e é corrente para todas 
 ---
 
 
-Última Atualização: 27 Fevereiro 2016 (2016.02.27).
+Última Atualização: 6 Março 2016 (2016.03.06).

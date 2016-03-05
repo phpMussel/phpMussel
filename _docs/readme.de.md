@@ -261,9 +261,9 @@ Datei | Beschreibung
 /composer.json | Composer/Packagist Informationen (für die korrekte Funktion des Scripts nicht notwendig).
 /CONTRIBUTING.md | Information about how to contribute to the project. @TranslateMe@
 /LICENSE.txt | Eine Kopie der GNU/GPLv2 Lizenz.
-/PEOPLE.md | Information about the people involved in the project. @TranslateMe@
-/phpmussel.php | Loader (lädt das Script, Updater, etc). Diese Datei wird in Ihr CMS eingebunden (notwendig)!
-/README.md | Project summary information. @TranslateMe@
+/PEOPLE.md | Informationen zu den am Projekt beteiligten Personen.
+/phpmussel.php | Loader. Diese Datei wird in Ihr CMS eingebunden (notwendig)!
+/README.md | Projektübersicht.
 /web.config | Eine ASP.NET-Konfigurationsdatei (in diesem Fall zum Schutz des Verzeichnisses `/vault` vor einem nicht authorisierten Zugriff, sofern das Script auf einem auf der ASP.NET-Technologie basierenden Server installiert wurde).
 /_docs/ | Verzeichnis für die Dokumentationen (beinhaltet verschiedene Dateien).
 /_docs/change_log.txt | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
@@ -300,10 +300,10 @@ Datei | Beschreibung
 /vault/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/cache/ | Cache-Verzeichnis (für temporäre Daten).
 /vault/cache/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/cli.inc | CLI handler. @TranslateMe@
-/vault/config.inc | Configuration handler. @TranslateMe@
-/vault/controls.inc | Controls handler. @TranslateMe@
-/vault/functions.inc | Functions file (essential). @TranslateMe@
+/vault/cli.inc | CLI-Handler.
+/vault/config.inc | Konfiguration-Handler.
+/vault/controls.inc | Kontrollen-Handler.
+/vault/functions.inc | Funktionen-Datei.
 /vault/greylist.csv | CSV der Signaturen in der Greylist, die phpMussel ignorieren soll (Datei wird nach dem Löschen automatisch neu erstellt).
 /vault/lang.inc | Sprachdateien.
 /vault/lang/ | Enthält Sprachdaten für phpMussel.
@@ -453,7 +453,7 @@ Datei | Beschreibung
 /vault/template_custom.html | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
 /vault/update.dat | Datei beinhaltet Versionsinformationen des Scripts und der Signaturen. Diese Datei ist notwendig, wenn Sie phpMussel automatisch oder mittels Browser aktualisieren wollen.
 /vault/update.inc | Update Script; Wird nur für die automatische und manuelle Aktualisierung mittels Browser benötigt.
-/vault/upload.inc | Upload handler. @TranslateMe@
+/vault/upload.inc | Upload-Handler.
 
 ※ Der Dateiname kann je nach Konfiguratuion in der `phpmussel.ini` variieren.
 
@@ -990,4 +990,4 @@ Diese Informationen wurden zuletzt am 25. Februar 2016 aktualisiert und gelten f
 ---
 
 
-Zuletzt aktualisiert: 27. Februar 2016 (2016.02.27).
+Zuletzt aktualisiert: 6. März 2016 (2016.03.06).

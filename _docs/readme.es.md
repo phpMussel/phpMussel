@@ -9,8 +9,8 @@
 - 4A. [NAVEGADOR COMANDOS](#SECTION4A)
 - 4B. [CLI (COMANDOS LÍNEA INTERFAZ)](#SECTION4B)
 - 5. [ARCHIVOS INCLUIDOS EN ESTE PAQUETE](#SECTION5)
-- 6. [CONFIGURACIÓN OPCIONES](#SECTION6)
-- 7. [FIRMA FORMATOS](#SECTION7)
+- 6. [OPCIONES DE CONFIGURACIÓN](#SECTION6)
+- 7. [FORMATOS DE FIRMAS](#SECTION7)
 - 8. [CONOCIDOS PROBLEMAS DE COMPATIBILIDAD](#SECTION8)
 
 ---
@@ -30,7 +30,7 @@ Un especial agradecimiento a [ClamAV](http://www.clamav.net/) para la inspiraci�
 
 Un especial agradecimiento a Sourceforge y GitHub para alojar los archivos de proyecto, a [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) para la phpMussel discusión foros, y a las adicionales fuentes de un número de las firmas utilizadas por phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) y otros, y agradecimiento especial a todos aquellos que apoyan el proyecto, a cualquier otra persona que yo haya olvidado de lo contrario mencionar, y a usted, por el uso de la script.
 
-Este documento y asociado paquete pueden descargado de gratis desde:
+Este documento y su paquete asociado puede ser descargado de forma gratuita desde:
 - [Sourceforge](http://phpmussel.sourceforge.net/).
 - [GitHub](https://github.com/Maikuolan/phpMussel/).
 
@@ -117,7 +117,7 @@ Devuelve algo como esto (como una cadena):
  Wed, 16 Sep 2013 02:49:47 +0000 Terminado.
 ```
 
-Para una descripción completa del tipo de firmas phpMussel utiliza durante el escanear y la forma en que maneja estas firmas, consulte la sección Firma Formatos de este README archivo.
+Para una descripción completa del tipo de firmas phpMussel utiliza durante el escanear y la forma en que maneja estas firmas, consulte la sección formatos de firmas de este README archivo.
 
 Si se encuentra algún falsos positivos, si se encuentra con algo nuevo que crees que debería ser bloqueada, o para cualquier otra cosa en relación con las firmas, por favor contacto conmigo al respecto para que pueda hacer los cambios necesarios, para que, si no se comunica conmigo, posiblemente no necesariamente tener en cuenta.
 
@@ -262,7 +262,7 @@ Archivo | Descripción
 /CONTRIBUTING.md | Información en respecto a cómo contribuir al proyecto.
 /LICENSE.txt | Una copia de la GNU/GPLv2 licencia.
 /PEOPLE.md | Información en respecto a las personas involucradas en el proyecto.
-/phpmussel.php | Cargador (cargar el principal script, el actualizador, etcétera). Esto es lo que se supone debe enganchando (esencial)!
+/phpmussel.php | El cargador. Esto es lo que se supone debe enganchando (esencial)!
 /README.md | Sumario información del proyecto.
 /web.config | Un ASP.NET configuración archivo (en este caso, para proteger la `/vault` directorio contra el acceso de fuentes no autorizadas en el caso de que la script está instalado en un servidor basado en ASP.NET tecnologías).
 /_docs/ | Documentación directorio (contiene varios archivos).
@@ -322,7 +322,7 @@ Archivo | Descripción
 /vault/lang/lang.vi.inc | Lingüísticos datos Vietnamita.
 /vault/lang/lang.zh-TW.inc | Lingüísticos datos Chino (Tradicional).
 /vault/lang/lang.zh.inc | Lingüísticos datos Chino (Simplificado).
-/vault/phpmussel.ini | Configuración archivo; Contiene todas las configuración opciones para phpMussel, instruyendo para qué hacer y cómo operar correctamente (esencial)!
+/vault/phpmussel.ini | Archivo de configuración; Contiene todas las opciones de configuración para phpMussel, instruyendo para qué hacer y cómo operar correctamente (esencial)!
 /vault/quarantine/ | Directorio de cuarentena (contiene los cuarentenadas archivos).
 /vault/quarantine/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 ※ /vault/scan_kills.txt | Un registro de todos archivos subidos bloqueado/asesinado por phpMussel.
@@ -449,8 +449,8 @@ Archivo | Descripción
 /vault/signatures/xmlxdp_custom_standard.cvd | Archivo para XML/XDP firmas.
 /vault/signatures/xmlxdp_mussel_regex.cvd | Archivo para XML/XDP firmas.
 /vault/signatures/xmlxdp_mussel_standard.cvd | Archivo para XML/XDP firmas.
-/vault/template.html | Plantilla archivo; Plantilla para HTML producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
-/vault/template_custom.html | Plantilla archivo; Plantilla para HTML producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
+/vault/template.html | Template archivo; Plantilla para HTML salida producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
+/vault/template_custom.html | Template archivo; Plantilla para HTML salida producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
 /vault/update.dat | Archivo que contiene la versión información tanto para la phpMussel script y para la phpMussel firmas. Si alguna vez desea actualizar automáticamente phpMussel o desea actualizar phpMussel través de su navegador, este archivo es esencial.
 /vault/update.inc | Actualización Script; Requerido para automáticas actualizaciones y para actualizando phpMussel través de su navegador, pero no es requerido por lo demás.
 /vault/upload.inc | Módulo de carga.
@@ -466,7 +466,7 @@ Firmas archivos marcados con "_regex" contienen firmas utilizando regulares expr
 
 Firmas archivos marcados con "_standard" contienen firmas que específicamente no utiliza ningún tipo de patrones.
 
-Firmas archivos marcados con no "_regex" ni "_standard" será como uno o el otro, pero no ambos (consulte la FIRMA FORMATOS sección de este README archivo para la documentación y específicos detalles).
+Firmas archivos marcados con no "_regex" ni "_standard" será como uno o el otro, pero no ambos (consulte la formatos de firmas sección de este README archivo para la documentación y específicos detalles).
 
 Firmas archivos marcados con "_clamav" contienen firmas que se obtenido enteramente de la base de datos de ClamAV (GNU/GPL).
 
@@ -477,7 +477,7 @@ Firmas archivos marcados con "_mussel" contienen firmas que se obtenido específ
 ---
 
 
-###6. <a name="SECTION6"></a>CONFIGURACIÓN OPCIONES
+###6. <a name="SECTION6"></a>OPCIONES DE CONFIGURACIÓN
 La siguiente es una lista de variables encuentran en la `phpmussel.ini` configuración archivo de phpMussel, junto con una descripción de sus propósito y función.
 
 ####"general" (Categoría)
@@ -825,7 +825,7 @@ Plantilla datos es relacionados a la HTML utilizado para generar el "Carga Negad
 ---
 
 
-###7. <a name="SECTION7"></a>FIRMA FORMATOS
+###7. <a name="SECTION7"></a>FORMATOS DE FIRMAS
 
 ####*FIRMAS BASADAS EN LAS NOMBRES DEL ARCHIVOS*
 Todas firmas basadas en las nombres del archivos seguir el formato:
@@ -991,4 +991,4 @@ Esta información ha sido actualizado 25 Febrero 2016 y es a hoy para todas las 
 ---
 
 
-Última Actualización: 27 Febrero 2016 (2016.02.27).
+Última Actualización: 6 Marzo 2016 (2016.03.06).

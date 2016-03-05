@@ -9,8 +9,8 @@
 - 4A. [COMMANDES DU NAVIGATEUR](#SECTION4A)
 - 4B. [CLI (COMMANDE LIGNE INTERFACE)](#SECTION4B)
 - 5. [FICHIERS INCLUS DANS CETTE PAQUET](#SECTION5)
-- 6. [CONFIGURATION OPTIONS](#SECTION6)
-- 7. [SIGNATURE FORMAT](#SECTION7)
+- 6. [OPTIONS DE CONFIGURATION](#SECTION6)
+- 7. [FORMATS DE SIGNATURES](#SECTION7)
 - 8. [CONNUS PROBLÈMES DE COMPATIBILITÉ](#SECTION8)
 
 ---
@@ -18,7 +18,7 @@
 
 ###1. <a name="SECTION1"></a>PRÉAMBULE
 
-Merci pour l'utiliser de phpMussel, un PHP script pour la détection de virus, logiciels malveillants et autres menaces dans les fichiers téléchargés sur votre système partout où le script est accroché, basé sur les signatures de ClamAV et autres.
+Merci pour l'utiliser de phpMussel, un PHP script pour la détection de virus, logiciels malveillants et autres menaces dans les fichiers téléchargés sur votre système partout où le script est attaché, basé sur les signatures de ClamAV et autres.
 
 PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPLv2 par Caleb M (Maikuolan).
 
@@ -49,7 +49,7 @@ J'ai l'intention de simplifier ce processus par la création d'un programme d'in
 
 4) CHMOD la `vault` répertoire à "777". Le principal répertoire qui est stocker le contenu (celui que vous avez choisi plus tôt), généralement, peut être laissé seul, mais CHMOD état devrait être vérifié si vous avez eu problèmes d'autorisations dans le passé sur votre système (par défaut, devrait être quelque chose comme "755").
 
-5) Suivant, vous aurez besoin de "crochet" phpMussel à votre système ou CMS. Il est plusieurs façons vous pouvez "crochet" phpMussel à votre système ou CMS, mais le plus simple est à simplement inclure le script au début d'un fichier de la base de données de votre système ou CMS (un qui va généralement toujours être chargé lorsque quelqu'un accède à n'importe quelle page sur votre website) utilisant un `require` ou `include` déclaration. Généralement, ce sera quelque chose de stocké dans un répertoire comme `/includes`, `/assets` ou `/functions`, et il sera souvent nommé quelque chose comme `init.php`, `common_functions.php`, `functions.php` ou similaire. Vous sera besoin à déterminer qui est le fichier c'est pour votre situation; Si vous rencontrez des difficultés dans déterminer de ce pour vous-même, visiter les phpMussel support forums et laissez-nous savoir; Il est possible que ce soit moi ou un autre utilisateur peuvent avoir de l'expérience avec le CMS que vous utilisez (vous aurez besoin pour nous faire savoir ce qui CMS vous utilisez), et ainsi, peut être en mesure de fournir une assistance pour cette question. Pour ce faire [à utiliser `require` ou `include`], insérez la ligne de code suivante au début de ce le noyau fichier et remplacer la string contenue à l'intérieur des guillemets avec l'exacte adresse le fichier `phpmussel.php` (l'adresse locale, pas l'adresse HTTP; il ressemblera l'adresse de `vault` mentionné précédemment).
+5) Suivant, vous aurez besoin de l'attacher phpMussel à votre système ou CMS. Il est plusieurs façons vous pouvez attacher phpMussel à votre système ou CMS, mais le plus simple est à simplement inclure le script au début d'un fichier de la base de données de votre système ou CMS (un qui va généralement toujours être chargé lorsque quelqu'un accède à n'importe quelle page sur votre website) utilisant un `require` ou `include` déclaration. Généralement, ce sera quelque chose de stocké dans un répertoire comme `/includes`, `/assets` ou `/functions`, et il sera souvent nommé quelque chose comme `init.php`, `common_functions.php`, `functions.php` ou similaire. Vous sera besoin à déterminer qui est le fichier c'est pour votre situation; Si vous rencontrez des difficultés dans déterminer de ce pour vous-même, visiter les phpMussel support forums et laissez-nous savoir; Il est possible que ce soit moi ou un autre utilisateur peuvent avoir de l'expérience avec le CMS que vous utilisez (vous aurez besoin pour nous faire savoir ce qui CMS vous utilisez), et ainsi, peut être en mesure de fournir une assistance pour cette question. Pour ce faire [à utiliser `require` ou `include`], insérez la ligne de code suivante au début de ce le noyau fichier et remplacer la string contenue à l'intérieur des guillemets avec l'exacte adresse le fichier `phpmussel.php` (l'adresse locale, pas l'adresse HTTP; il ressemblera l'adresse de `vault` mentionné précédemment).
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
@@ -93,7 +93,7 @@ phpMussel est destiné à être un script qui va fonctionner correctement droit 
 
 L'analyses des téléchargements des fichiers est automatisée et activée par défaut, donc rien est nécessaire à partir de vous pour cette fonction particulière.
 
-Cependant, vous êtes également capable d'instruire phpMussel à analyser spécifiques fichiers, répertoires et/ou archives. Pour ce faire, premièrement, vous devez assurer que la appropriée configuration est imposé dans le `phpmussel.ini` fichier (`cleanup` doit être désactivé), et lorsque vous avez terminé, dans un fichier PHP qui est accroché à phpMussel, utilisez la fonction suivante dans votre code:
+Cependant, vous êtes également capable d'instruire phpMussel à analyser spécifiques fichiers, répertoires et/ou archives. Pour ce faire, premièrement, vous devez assurer que la appropriée configuration est imposé dans le `phpmussel.ini` fichier (`cleanup` doit être désactivé), et lorsque vous avez terminé, dans un fichier PHP qui est attaché à phpMussel, utilisez la fonction suivante dans votre code:
 
 `phpMussel($what_to_scan,$output_type,$output_flatness);`
 
@@ -123,7 +123,7 @@ Si vous rencontrez des faux positifs, si vous rencontrez quelque chose nouveau q
 
 Pour désactiver les signatures qui sont incluent avec phpMussel (comme si vous rencontrez un faux positif spécifique à vos besoins dont ne devrait normalement pas être retiré à partir de rationaliser), référer aux les notes de la liste grise dans les Commandes du Navigateur section de ce README fichier.
 
-En plus de la défaut analyse de fichier téléchargement et la facultative analyse d'autres fichiers et/ou répertoires spécifiés par la fonction ci-dessus, inclus dans phpMussel est une fonction destinée pour l'analyse du corps des courriels messages. Cette fonction se comporte comme la standard phpMussel() fonction, mais se concentre uniquement sur la correspondance contre les ClamAV courriels basées signatures. Je n'ai pas attaché ces signatures dans la standard phpMussel() fonction, parce que il est hautement improbable que vous auriez trouver le corps d'un entrant message dans le besoin de l'analyse dans un fichier téléchargement ciblé d'un page où phpMussel est accroché, et ainsi, pour lier ces signatures dans la phpMussel() fonction serait redondant. Cependant, à ce que ledit, ayant une distincte fonction pour correspondre encontre ces signatures pourrait s'avérer extrêmement utile pour quelque, surtout pour ceux dont CMS ou système webfront est en quelque sorte lié à leur messagerie système et pour ceux dont analyser leurs courriels à travers un script PHP dont ils pourraient s'accrocher dans phpMussel. Configuration pour cette fonction, comme tous les autres, est contrôlé par le `phpmussel.ini` fichier. Pour utiliser cette fonction (vous aurez besoin de faire votre propre implémentation), dans un PHP fichier qui est accroché à phpMussel, utiliser ce fonction dans votre code:
+En plus de la défaut analyse de fichier téléchargement et la facultative analyse d'autres fichiers et/ou répertoires spécifiés par la fonction ci-dessus, inclus dans phpMussel est une fonction destinée pour l'analyse du corps des courriels messages. Cette fonction se comporte comme la standard phpMussel() fonction, mais se concentre uniquement sur la correspondance contre les ClamAV courriels basées signatures. Je n'ai pas attaché ces signatures dans la standard phpMussel() fonction, parce que il est hautement improbable que vous auriez trouver le corps d'un entrant message dans le besoin de l'analyse dans un fichier téléchargement ciblé d'un page où phpMussel est attaché, et ainsi, pour lier ces signatures dans la phpMussel() fonction serait redondant. Cependant, à ce que ledit, ayant une distincte fonction pour correspondre encontre ces signatures pourrait s'avérer extrêmement utile pour quelque, surtout pour ceux dont CMS ou système webfront est en quelque sorte lié à leur messagerie système et pour ceux dont analyser leurs courriels à travers un script PHP dont ils pourraient s'attacher dans phpMussel. Configuration pour cette fonction, comme tous les autres, est contrôlé par le `phpmussel.ini` fichier. Pour utiliser cette fonction (vous aurez besoin de faire votre propre implémentation), dans un PHP fichier qui est attaché à phpMussel, utiliser ce fonction dans votre code:
 
 `phpMussel_mail($corps);`
 
@@ -149,7 +149,7 @@ Aussi soyez conscient que phpMussel est pas la fonctionnel équivalent d'une com
 
 ###4A. <a name="SECTION4A"></a>COMMANDES DU NAVIGATEUR
 
-Après phpMussel a été installé et est fonctionner correctement sur votre système, si vous avez défini les variables `script_password` et `logs_password` dans votre configuration fichier, vous sera pouvoir d'effectuer un certain nombre de administratives fonctions et entrée un nombre de commandes à phpMussel par votre navigateur. La raison de ces mots de passe doivent être defini afin de permettre à ces navigateur contrôles est pour assurer adéquate sécurité, l'adéquate protection de ces navigateur contrôles et faire en sorte une méthode existe pour ceux navigateur contrôle à être entièrement désactivé si elles ne sont pas souhaitées par vous et/ou autres webmasters/administrateurs dont sont l'utiliser phpMussel. Ainsi, en d'autres termes, pour activer ces contrôles, définir un mot de passe, et pour désactiver ces contrôles, définir aucun mot de passe. Comme alternatif, si vous choisir d'activer ces contrôles et puis choisir de désactiver ces contrôles à une ultérieure date, il existe une commande à faire ce (tel peut être utile si vous effectuer certaines actions vous sentez pourrait compromettre les mots de pass que vous avez délégué et besoin de désactiver rapidement ces contrôles sans modifier votre configuration fichier).
+Après phpMussel a été installé et est fonctionner correctement sur votre système, si vous avez défini les variables `script_password` et `logs_password` dans votre fichier de configuration, vous sera pouvoir d'effectuer un certain nombre de administratives fonctions et entrée un nombre de commandes à phpMussel par votre navigateur. La raison de ces mots de passe doivent être defini afin de permettre à ces navigateur contrôles est pour assurer adéquate sécurité, l'adéquate protection de ces navigateur contrôles et faire en sorte une méthode existe pour ceux navigateur contrôle à être entièrement désactivé si elles ne sont pas souhaitées par vous et/ou autres webmasters/administrateurs dont sont l'utiliser phpMussel. Ainsi, en d'autres termes, pour activer ces contrôles, définir un mot de passe, et pour désactiver ces contrôles, définir aucun mot de passe. Comme alternatif, si vous choisir d'activer ces contrôles et puis choisir de désactiver ces contrôles à une ultérieure date, il existe une commande à faire ce (tel peut être utile si vous effectuer certaines actions vous sentez pourrait compromettre les mots de pass que vous avez délégué et besoin de désactiver rapidement ces contrôles sans modifier votre fichier de configuration).
 
 Quelques raisons pour lesquelles vous _**DEVRIEZ**_ permettre à ces contrôles:
 - Fournit une méthode à liste grise les signatures sur la volée dans des cas comme lorsque vous découvrez une signature qui produit un faux positif tandis le téléchargement de fichiers à votre système et vous n'avez pas le temps à manuellement modifier et rétélécharger votre liste grise fichier.
@@ -262,9 +262,9 @@ Fichier | Description
 /CONTRIBUTING.md | Informations sur la façon de contribuer au projet.
 /LICENSE.txt | Une copie de la GNU/GPLv2 license.
 /PEOPLE.md | Informations sur les personnes impliquées dans le projet.
-/phpmussel.php | Chargeur/Loader (charge le principal script et etc). C'est ce que vous êtes censé être accrochage dans à (essentiel)!
+/phpmussel.php | Le chargeur. C'est ce que vous êtes censé être attacher dans à (essentiel)!
 /README.md | Sommaire de l'information du projet.
-/web.config | Un ASP.NET configuration fichier (dans ce cas, pour protéger de la `/vault` répertoire contre d'être consulté par des non autorisée sources dans le cas où le script est installé sur un serveur basé sur les ASP.NET technologies).
+/web.config | Un ASP.NET fichier de configuration (dans ce cas, pour protéger de la `/vault` répertoire contre d'être consulté par des non autorisée sources dans le cas où le script est installé sur un serveur basé sur les ASP.NET technologies).
 /_docs/ | Documentation répertoire (contient divers fichiers).
 /_docs/change_log.txt | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
 /_docs/readme.ar.md | Documentation en Arabe.
@@ -305,7 +305,7 @@ Fichier | Description
 /vault/controls.inc | Module de contrôles.
 /vault/functions.inc | Fichier de fonctions (essentiel).
 /vault/greylist.csv | CSV de grise listé signatures indiquant pour phpMussel qui signatures il faut ignorer (fichier recréé automatiquement si supprimé).
-/vault/lang.inc | Linguistiques données.
+/vault/lang.inc | Module de linguistiques.
 /vault/lang/ | Contient linguistiques données.
 /vault/lang/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/lang/lang.ar.inc | Linguistiques données en Arabe.
@@ -322,7 +322,7 @@ Fichier | Description
 /vault/lang/lang.vi.inc | Linguistiques données en Vietnamien.
 /vault/lang/lang.zh-TW.inc | Linguistiques données en Chinois (Traditionnel).
 /vault/lang/lang.zh.inc | Linguistiques données en Chinois (Simplifié).
-/vault/phpmussel.ini | Configuration fichier; Contient toutes les configuration options de phpMussel, diriger comment faire fonctionner correctement (essentiel)!
+/vault/phpmussel.ini | Fichier de configuration; Contient toutes les options de configuration pour phpMussel, pour comment fonctionner correctement (essentiel)!
 /vault/quarantine/ | Quarantaine répertoire (contient des fichiers de la quarantaine).
 /vault/quarantine/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 ※ /vault/scan_kills.txt | Les résultats de chaque fichier téléchargement bloqué/tués par phpMussel.
@@ -477,8 +477,8 @@ Signature fichiers marqué avec "_mussel" contenir signatures qui ne sont pas sp
 ---
 
 
-###6. <a name="SECTION6"></a>CONFIGURATION OPTIONS
-Ce qui suit est une liste de variables trouvé dans le `phpmussel.ini` configuration fichier de phpMussel, avec une description de leur objet et leur fonction.
+###6. <a name="SECTION6"></a>OPTIONS DE CONFIGURATION
+Ce qui suit est une liste des directives disponibles pour phpMussel dans le `phpmussel.ini` fichier de configuration, avec une description de leur objectif et leur fonction.
 
 ####"general" (Catégorie)
 Configuration générale pour phpMussel.
@@ -505,7 +505,7 @@ Configuration générale pour phpMussel.
 - Nom du fichier à enregistrer tous les résultats de bloqué ou tué téléchargements. Spécifiez un nom de fichier, ou laisser vide à désactiver.
 
 "ipaddr"
-- Où trouver l'IP adresse du connexion demande? (Utile pour services tels que Cloudflare et les goûts) Par Défaut = REMOTE_ADDR. AVERTISSEMENT: Ne pas changer si vous ne sais pas ce que vous faites!
+- Où trouver l'adresse IP de demandes de connexion? (Utile pour services tels que Cloudflare et similaires) Par Défaut = REMOTE_ADDR. AVERTISSEMENT: Ne pas changer si vous ne sais pas ce que vous faites!
 
 "forbid_on_block"
 - Devrait phpMussel envoyer 403 têtes avec le fichier téléchargement bloqué message, ou rester avec l'habitude 200 bien (200 OK)? False = Non (200) [Défaut]; True = Oui (403).
@@ -514,7 +514,7 @@ Configuration générale pour phpMussel.
 - Mise en cette option sera instruire le script à tenter immédiatement supprimer tout fichiers elle constate au cours de son analyse correspondant à des critères de détection, que ce soit via des signatures ou autrement. Fichiers jugées "propre" ne seront pas touchés. Dans le cas des archives, l'ensemble d'archive sera supprimé (indépendamment de si le incriminé fichier est que l'un de plusieurs fichiers contenus dans l'archive). Pour le cas d'analyse de fichiers téléchargement, généralement, il n'est pas nécessaire d'activer cette option sur, parce généralement, PHP faire purger automatiquement les contenus de son cache lorsque l'exécution est terminée, ce qui signifie que il va généralement supprimer tous les fichiers téléchargés à travers elle au serveur sauf qu'ils ont déménagé, copié ou supprimé déjà. L'option est ajoutée ici comme une supplémentaire mesure de sécurité pour ceux dont copies de PHP peut pas toujours se comporter de la manière attendu. False = Après l'analyse, laissez le fichier tel quel [Défaut]; True = Après l'analyse, si pas propre, supprimer immédiatement.
 
 "lang"
-- Spécifier la défaut langue pour phpMussel.
+- Spécifiez la langue défaut pour phpMussel.
 
 "lang_override"
 - Spécifiez si phpMussel devrait, quand c'est possible, remplacer la spécification du langage avec la préférence de langue déclarée par les demandes entrantes (HTTP_ACCEPT_LANGUAGE). False = Non [Défaut]; True = Oui.
@@ -748,7 +748,7 @@ Caméléon Attaque Détection: False = Désactivé; True = Activé.
 - Facultatif limitation ou seuil à la longueur de brutes données dans laquelle commandes des décodages doivent être détectés (dans le cas où il ya remarquable performance problèmes au cours de l'analyse). La valeur est un entier représentant la tailles des fichiers en Ko. Défaut = 512 (512Ko). Zéro ou nulle valeur désactive le seuil (supprimant toute restriction basé sur la taille du fichier).
 
 "scannable_threshold"
-- Facultatif limitation ou seuil à la longueur de brutes données dans laquelle phpMussel est autorisé à lire et à analyser (dans le cas où il ya remarquable performance problèmes au cours de l'analyse). La valeur est un entier représentant la tailles des fichiers en Ko. Défaut = 32768 (32Mo). Zéro ou nulle valeur désactive le seuil. En général, cette valeur ne doit pas être moins que la moyenne tailles des fichiers des téléchargements que vous voulez et s'attendent à recevoir de votre serveur ou website, ne devrait pas être plus que la filesize_limit directive, et ne devrait pas être plus que d'un cinquième de l'allocation de totale mémoire autorisée à PHP via le php.ini configuration fichier. Cette directive existe pour tenter d'empêcher phpMussel d'utiliser trop de mémoire (ce qui l'empêcherait d'être capable d'analyse fichiers dessus d'une certaine taille avec succès).
+- Facultatif limitation ou seuil à la longueur de brutes données dans laquelle phpMussel est autorisé à lire et à analyser (dans le cas où il ya remarquable performance problèmes au cours de l'analyse). La valeur est un entier représentant la tailles des fichiers en Ko. Défaut = 32768 (32Mo). Zéro ou nulle valeur désactive le seuil. En général, cette valeur ne doit pas être moins que la moyenne tailles des fichiers des téléchargements que vous voulez et s'attendent à recevoir de votre serveur ou website, ne devrait pas être plus que la filesize_limit directive, et ne devrait pas être plus que d'un cinquième de l'allocation de totale mémoire autorisée à PHP via le php.ini fichier de configuration. Cette directive existe pour tenter d'empêcher phpMussel d'utiliser trop de mémoire (ce qui l'empêcherait d'être capable d'analyse fichiers dessus d'une certaine taille avec succès).
 
 ####"compatibility" (Catégorie)
 Compatibilité directives pour phpMussel.
@@ -773,7 +773,7 @@ Configuration pour Virus Total intégration.
   - Vous avez lu et accepté les Conditions d'Utilisation (Terms of Service) de Total Virus et son API. Les Conditions d'Utilisation de Total Virus et son API peut être trouvé [Ici](https://www.virustotal.com/en/about/terms-of-service/).
   - Vous avez lu et vous comprendre, au minimum, le préambule du Virus Total Publique API documentation (tout ce qui suit "VirusTotal Public API v2.0" mais avant "Contents"). Le Virus Total Publique API documentation peut être trouvé [Ici](https://www.virustotal.com/en/documentation/public-api/).
 
-Noter: Si l'analyse des fichiers en utilisant le Virus Total API est désactivé, vous ne serez pas besoin de revoir tout des directives dans cette catégorie (`virustotal`), parce qu'aucun d'eux ne fait rien si cette option est désactivée. Pour acquérir une Virus Total API clé, à partir de quelque part sur leur website, cliquez sur le "Rejoindre notre communauté" lien situé vers le haut à droite de la page, saisissez les informations demandées, et cliquez sur "S'enregistrer" quand vous avez terminé. Suivez toutes les instructions fournies, et quand vous avez votre publique API clé, copier/coller cette publique API clé à la `vt_public_api_key` directive du `phpmussel.ini` configuration fichier.
+Noter: Si l'analyse des fichiers en utilisant le Virus Total API est désactivé, vous ne serez pas besoin de revoir tout des directives dans cette catégorie (`virustotal`), parce qu'aucun d'eux ne fait rien si cette option est désactivée. Pour acquérir une Virus Total API clé, à partir de quelque part sur leur website, cliquez sur le "Rejoindre notre communauté" lien situé vers le haut à droite de la page, saisissez les informations demandées, et cliquez sur "S'enregistrer" quand vous avez terminé. Suivez toutes les instructions fournies, et quand vous avez votre publique API clé, copier/coller cette publique API clé à la `vt_public_api_key` directive du `phpmussel.ini` fichier de configuration.
 
 "vt_suspicion_level"
 - Par défaut, phpMussel va restreindre les fichiers de l'analyse utilisant le Virus Total API à ces fichiers qu'il juges comme "soupçonneux". Facultativement, vous pouvez régler cette restriction par changeant la valeur de la `vt_suspicion_level` directive.
@@ -818,7 +818,7 @@ URL scanner API chercher configuration.
 ####"template_data" (Catégorie)
 Directives/Variables pour les modèles et thèmes.
 
-Modèles données est liée à la sortie HTML utilisé pour générer le "Téléchargement Refusé" message affiché aux utilisateurs sur un fichier téléchargement est bloqué. Si vous utilisez des thèmes personnalisés pour phpMussel, sortie HTML provient du `template_custom.html` fichier, et sinon, sortie HTML provient du `template.html` fichier. Variables écrites à cette section du configuration fichier sont préparé pour la sortie HTML par voie de remplacer tous les noms de variables circonfixé par accolades trouvés dans la sortie HTML avec les variables données correspondant. Par exemple, où `foo="bar"`, toute instance de `<p>{foo}</p>` trouvés dans la sortie HTML deviendra `<p>bar</p>`.
+Modèles données est liée à la sortie HTML utilisé pour générer le "Téléchargement Refusé" message affiché aux utilisateurs sur un fichier téléchargement est bloqué. Si vous utilisez des thèmes personnalisés pour phpMussel, sortie HTML provient du `template_custom.html` fichier, et sinon, sortie HTML provient du `template.html` fichier. Variables écrites à cette section du fichier de configuration sont préparé pour la sortie HTML par voie de remplacer tous les noms de variables circonfixé par accolades trouvés dans la sortie HTML avec les variables données correspondant. Par exemple, où `foo="bar"`, toute instance de `<p>{foo}</p>` trouvés dans la sortie HTML deviendra `<p>bar</p>`.
 
 "css_url"
 - Le modèle fichier pour des thèmes personnalisés utilise les propriétés CSS externes, tandis que le modèle fichier pour le défaut thème utilise les propriétés CSS internes. Pour instruire phpMussel d'utiliser le modèle fichier pour des thèmes personnalisés, spécifier l'adresse HTTP public de votre thèmes personnalisés CSS fichiers utilisant le `css_url` variable. Si vous laissez cette variable vide, phpMussel va utiliser le modèle fichier pour le défaut thème.
@@ -826,7 +826,7 @@ Modèles données est liée à la sortie HTML utilisé pour générer le "Télé
 ---
 
 
-###7. <a name="SECTION7"></a>SIGNATURE FORMAT
+###7. <a name="SECTION7"></a>FORMATS DE SIGNATURES
 
 ####*NOM DE FICHIER SIGNATURES*
 Toutes les nom de fichier signatures suivez le format:
@@ -992,4 +992,4 @@ Cette information a été réactualisé le 25 Février 2016 et est courant pour 
 ---
 
 
-Dernière Réactualisé: 27 Février 2016 (2016.02.27).
+Dernière Réactualisé: 6 Mars 2016 (2016.03.06).
