@@ -6,7 +6,7 @@
 - 2B. [CẢCH CÀI ĐẶT (CHO CLI)](#SECTION2B)
 - 3A. [CÁCH SỬ DỤNG (CHO CÁC TRANG WEB CHỦ)](#SECTION3A)
 - 3B. [CÁCH SỬ DỤNG (CHO CLI)](#SECTION3B)
-- 4A. [LỆNH CHO BROWSER](#SECTION4A)
+- 4A. [LỆNH CHO TRÌNH DUYỆT](#SECTION4A)
 - 4B. [CLI (LỆNH CHO DÒNG GIAO DIỆN)](#SECTION4B)
 - 5. [TÀI LIỆU BAO GỒM TRONG GÓI NÀY](#SECTION5)
 - 6. [SỰ LỰA CHỌN CỦA CẤU HÌNH](#SECTION6)
@@ -147,7 +147,7 @@ Also be aware that phpMussel is not the functional equivalent of a complete anti
 ---
 
 
-###4A. <a name="SECTION4A"></a>LỆNH CHO BROWSER
+###4A. <a name="SECTION4A"></a>LỆNH CHO TRÌNH DUYỆT
 
 Once phpMussel has been installed and is correctly functioning on your system, if you've set the `script_password` and `logs_password` variables in your configuration file, you will be able to perform some limited number of administrative functions and input some number of commands to phpMussel via your browser. The reason these passwords need to be set in order to enable these browser-side controls is both to ensure proper security, proper protection of these browser-side controls and to ensure that there exists a way for these browser-side controls to be entirely disabled if they are not desired by you and/or other webmasters/administrators using phpMussel. So, in other words, to enable these controls, set a password, and to disable these controls, set no password. Alternatively, if you choose to enable these controls and then choose to disable these controls at a later date, there is a command to do this (such can be useful if you perform some actions that you feel could potentially compromise the delegated passwords and need to quickly disable these controls without modifying your configuration file).
 
@@ -164,80 +164,80 @@ A couple of reasons why you should _**NOT**_ enable these controls:
 
 Either way, regardless of what you choose, the choice is ultimately yours. By default, these controls will be disabled, but have a think about it, and if you decide you want them, this section explains both how to enable them and how to use them.
 
-A list of available browser-side commands:
+Một danh sách của có sẵn lệnh cho trình duyệt:
 
 scan_log
-- Password required: `logs_password`
-- Other requirements: scan_log must be set.
-- Required parameters: (none)
-- Optional parameters: (none)
-- Example: `?logspword=[logs_password]&phpmussel=scan_log`
-- What it does: Prints the contents of your scan_log file to the screen.
+- Mật khẩu cần thiết: `logs_password`
+- Các yêu cầu khác: scan_log cần phải được xác định.
+- Thông số cần thiết: (không có gì)
+- Thông số không bắt buộc: (không có gì)
+- Thí dụ: `?logspword=[logs_password]&phpmussel=scan_log`
+- Những gì nó làm: In nội dung tập tin scan_log của bạn vào màn hình.
 
 scan_kills
-- Password required: `logs_password`
-- Other requirements: scan_kills must be set.
-- Required parameters: (none)
-- Optional parameters: (none)
-- Example: `?logspword=[logs_password]&phpmussel=scan_kills`
-- What it does: Prints the contents of your scan_kills file to the screen.
+- Mật khẩu cần thiết: `logs_password`
+- Các yêu cầu khác: scan_kills cần phải được xác định.
+- Thông số cần thiết: (không có gì)
+- Thông số không bắt buộc: (không có gì)
+- Thí dụ: `?logspword=[logs_password]&phpmussel=scan_kills`
+- Những gì nó làm: In nội dung tập tin scan_kills của bạn vào màn hình.
 
 controls_lockout
-- Password required: `logs_password` OR `script_password`
-- Other requirements: (none)
-- Required parameters: (none)
-- Optional parameters: (none)
+- Mật khẩu cần thiết: `logs_password` HOẶC `script_password`
+- Các yêu cầu khác: (không có gì)
+- Thông số cần thiết: (không có gì)
+- Thông số không bắt buộc: (không có gì)
 - Example 1: `?logspword=[logs_password]&phpmussel=controls_lockout`
 - Example 2: `?pword=[script_password]&phpmussel=controls_lockout`
-- What it does: Disables ("locks out") all browser-side controls. This should be used if you suspect that either of your passwords have been compromised (this can happen if you're using these controls from a computer that's not secured and/or not trusted). controls_lockout works by creating a file, `controls.lck`, in your vault, that phpMussel will check for before performing any commands of any kind. Once this happens, to reenable controls, you'll need to manually delete the `controls.lck` file via FTP or similar. Can be called using either password.
+- Những gì nó làm: Vô hiệu hóa (hoặc khóa) tất cả các điều khiển cho trình duyệt. Điều này nên được sử dụng nếu bạn nghi ngờ mà một hoặc cả hai của mật khẩu của bạn đã bị xâm nhập (điều này có thể xảy ra nếu bạn đang sử dụng các điều khiển từ một máy tính không là an toàn và/hoặc đáng tin cậy). controls_lockout hoạt động bằng cách tạo ra một tập tin, `controls.lck`, trong vault (kho tiền) của bạn, rằng phpMussel sẽ kiểm tra trước khi thực hiện bất lệnh của bất cứ loại nào. Khi điều này xảy ra, để lại cho phép điều khiển, bạn sẽ cần phải tự xóa các tập tin `controls.lck` thông qua FTP hoặc tương tự. Có thể được gọi qua sử dụng một trong hai mật khẩu.
 
 disable
-- Password required: `script_password`
-- Other requirements: (none)
-- Required parameters: (none)
-- Optional parameters: (none)
-- Example: `?pword=[script_password]&phpmussel=disable`
-- What it does: Disables phpMussel. This should be used if you're performing any updates or changes to your system or if you're installing any new software or modules to your system that either does or potentially could trigger false positives. This should also be used if you're having any problems with phpMussel but don't wish to remove it from your system. Once this happens, to reenable phpMussel, use "enable".
+- Mật khẩu cần thiết: `script_password`
+- Các yêu cầu khác: (không có gì)
+- Thông số cần thiết: (không có gì)
+- Thông số không bắt buộc: (không có gì)
+- Thí dụ: `?pword=[script_password]&phpmussel=disable`
+- Những gì nó làm: Vô hiệu hóa phpMussel. Điều này nên được sử dụng if you're performing any updates or changes to your system or if you're installing any new software or modules to your system that either does or potentially could trigger false positives. This should also be used if you're having any problems with phpMussel but don't wish to remove it from your system. Once this happens, to reenable phpMussel, use "enable".
 
 enable
-- Password required: `script_password`
-- Other requirements: (none)
-- Required parameters: (none)
-- Optional parameters: (none)
-- Example: `?pword=[script_password]&phpmussel=enable`
-- What it does: Enables phpMussel. This should be used if you've previously disabled phpMussel using "disable" and want to reenable it.
+- Mật khẩu cần thiết: `script_password`
+- Các yêu cầu khác: (không có gì)
+- Thông số cần thiết: (không có gì)
+- Thông số không bắt buộc: (không có gì)
+- Thí dụ: `?pword=[script_password]&phpmussel=enable`
+- Những gì nó làm: Cho phép phpMussel. Điều này nên được sử dụng if you've previously disabled phpMussel using "disable" and want to reenable it.
 
 update
-- Password required: `script_password`
-- Other requirements: `update.dat` and `update.inc` must exist.
-- Required parameters: (none)
-- Optional parameters: (none)
-- Example: `?pword=[script_password]&phpmussel=update`
-- What it does: Checks for updates to both phpMussel and its signatures. If update checks succeed and updates are found, will attempt to download and install these updates. If update checks fail, update will abort. Results of the entire process are printed to the screen. I recommend checking at least once per month to ensure that your signatures and your copy of phpMussel are kept up to-date (unless, of course, you're checking for updates and installing them manually, which, I'd still recommend doing at least once per month). Checking more than twice per month is probably pointless, considering that I'm very unlikely to be able to produce updates of any kind more frequently than that (nor do I particularly want to for the most part).
+- Mật khẩu cần thiết: `script_password`
+- Các yêu cầu khác: `update.dat` and `update.inc` must exist.
+- Thông số cần thiết: (không có gì)
+- Thông số không bắt buộc: (không có gì)
+- Thí dụ: `?pword=[script_password]&phpmussel=update`
+- Những gì nó làm: Checks for updates to both phpMussel and its signatures. If update checks succeed and updates are found, will attempt to download and install these updates. If update checks fail, update will abort. Results of the entire process are printed to the screen. I recommend checking at least once per month to ensure that your signatures and your copy of phpMussel are kept up to-date (unless, of course, you're checking for updates and installing them manually, which, I'd still recommend doing at least once per month). Checking more than twice per month is probably pointless, considering that I'm very unlikely to be able to produce updates of any kind more frequently than that (nor do I particularly want to for the most part).
 
 greylist
-- Password required: `script_password`
-- Other requirements: (none)
-- Required parameters: [Name of signature to be greylisted]
-- Optional parameters: (none)
-- Example: `?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]`
-- What it does: Add a signature to the greylist.
+- Mật khẩu cần thiết: `script_password`
+- Các yêu cầu khác: (không có gì)
+- Thông số cần thiết: [Name of signature to be greylisted]
+- Thông số không bắt buộc: (không có gì)
+- Thí dụ: `?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]`
+- Những gì nó làm: Add a signature to the greylist.
 
 greylist_clear
-- Password required: `script_password`
-- Other requirements: (none)
-- Required parameters: (none)
-- Optional parameters: (none)
-- Example: `?pword=[script_password]&phpmussel=greylist_clear`
-- What it does: Clears the entire greylist.
+- Mật khẩu cần thiết: `script_password`
+- Các yêu cầu khác: (không có gì)
+- Thông số cần thiết: (không có gì)
+- Thông số không bắt buộc: (không có gì)
+- Thí dụ: `?pword=[script_password]&phpmussel=greylist_clear`
+- Những gì nó làm: Clears the entire greylist.
 
 greylist_show
-- Password required: `script_password`
-- Other requirements: (none)
-- Required parameters: (none)
-- Optional parameters: (none)
-- Example: `?pword=[script_password]&phpmussel=greylist_show`
-- What it does: Prints the contents of the greylist to the screen.
+- Mật khẩu cần thiết: `script_password`
+- Các yêu cầu khác: (không có gì)
+- Thông số cần thiết: (không có gì)
+- Thông số không bắt buộc: (không có gì)
+- Thí dụ: `?pword=[script_password]&phpmussel=greylist_show`
+- Những gì nó làm: Prints the contents of the greylist to the screen.
 
 ---
 
@@ -253,7 +253,7 @@ For a list of available CLI commands, at the CLI prompt, type 'c', and press Ent
 
 ###5. <a name="SECTION5"></a>TÀI LIỆU BAO GỒM TRONG GÓI NÀY
 
-The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, any files that may be potentially created as a result of your using this script, along with a short description of what all these files are for.
+Sau đây là một list of all of the files that should have been included in the archived copy of this script when you downloaded it, any files that may be potentially created as a result of your using this script, along with a short description of what all these files are for.
 
 Tập tin | Chi tiết
 ----|----
@@ -436,7 +436,7 @@ Tập tin | Chi tiết
 /vault/signatures/swf_custom_standard.cvd | Tập tin cho chữ ký Shockwave.
 /vault/signatures/swf_mussel_regex.cvd | Tập tin cho chữ ký Shockwave.
 /vault/signatures/swf_mussel_standard.cvd | Tập tin cho chữ ký Shockwave.
-/vault/signatures/switch.dat | Controls and sets certain variables.
+/vault/signatures/switch.dat | Điều khiển và định nghĩa biến.
 /vault/signatures/urlscanner.cvd | Tập tin cho chữ ký máy quét URL.
 /vault/signatures/whitelist_clamav.cvd | Tập tin riêng cho danh sách trắng.
 /vault/signatures/whitelist_custom.cvd | Tập tin riêng cho danh sách trắng.
@@ -449,10 +449,10 @@ Tập tin | Chi tiết
 /vault/signatures/xmlxdp_custom_standard.cvd | Tập tin cho chữ ký XML/XDP.
 /vault/signatures/xmlxdp_mussel_regex.cvd | Tập tin cho chữ ký XML/XDP.
 /vault/signatures/xmlxdp_mussel_standard.cvd | Tập tin cho chữ ký XML/XDP.
-/vault/template.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader). @TranslateMe@
-/vault/template_custom.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader). @TranslateMe@
-/vault/update.dat | File containing version information for both the phpMussel script and the phpMussel signatures. If you ever want to automatically update phpMussel or want to update phpMussel via your browser, this file is essential. @TranslateMe@
-/vault/update.inc | Update Script; Required for automatic updates and for updating phpMussel via your browser, but not required otherwise. @TranslateMe@
+/vault/template.html | Tập tin mẫu; Mẫu cho HTML sản xuất qua phpMussel cho các thông điệp tải lên tập tin bị chặn (các thông điệp nhìn thấy bằng người tải lên).
+/vault/template_custom.html | Tập tin mẫu; Mẫu cho HTML sản xuất qua phpMussel cho các thông điệp tải lên tập tin bị chặn (các thông điệp nhìn thấy bằng người tải lên).
+/vault/update.dat | Tập tin có chứa thông tin phiên bản cho kịch bản phpMussel và chữ ký phpMussel. Nếu bạn đã bao giờ muốn cập nhật tự động phpMussel hoặc muốn cập nhật phpMussel qua trình duyệt của bạn, tập tin này là điều cần thiết.
+/vault/update.inc | Kịch bản cập nhật; Cần thiết cho cập nhật tự động và cho cập nhật phpMussel qua trình duyệt của bạn, nhưng không cần thiết cho bất cứ điều gì khác.
 /vault/upload.inc | Tập tin cho xử lý tải lên.
 
 ※ Tên tài liệu có thể thay đổi tuy theo các quy định của cấu hình (in `phpmussel.ini`).
@@ -478,7 +478,7 @@ Signature files marked with "_mussel" contain signatures that specifically are n
 
 
 ###6. <a name="SECTION6"></a>SỰ LỰA CHỌN CỦA CẤU HÌNH
-The following is a list of variables found in the `phpmussel.ini` configuration file of phpMussel, along with a description of their purpose and function.
+Sau đây là một list of variables found in the `phpmussel.ini` configuration file of phpMussel, along with a description of their purpose and function.
 
 ####"general" (Category)
 General phpMussel configuration.
@@ -492,7 +492,7 @@ General phpMussel configuration.
 - Has no influence in CLI mode.
 
 "cleanup"
-- Unset variables and cache used by the script after the initial upload scanning? False = No; True = Yes [Default]. If you -aren't- using the script beyond the initial scanning of uploads, you should set this to `true` (yes), to minimize memory usage. If you -are- using the script beyond the initial scanning of uploads, should set to `false` (no), to avoid unnecessarily reloading duplicate data into memory. In general practice, it should usually be set to `true`, but, if you do this, you won't be able to use the script for anything other than the initial file upload scanning.
+- Unset variables and cache used by the script after the initial upload scanning? False = Không; True = Vâng [Mặc định]. If you -aren't- using the script beyond the initial scanning of uploads, you should set this to `true` (yes), to minimize memory usage. If you -are- using the script beyond the initial scanning of uploads, should set to `false` (no), to avoid unnecessarily reloading duplicate data into memory. In general practice, it should usually be set to `true`, but, if you do this, you won't be able to use the script for anything other than the initial file upload scanning.
 - Has no influence in CLI mode.
 
 "scan_log"
@@ -505,19 +505,19 @@ General phpMussel configuration.
 - Filename of file to log all records of blocked or killed uploads to. Specify a filename, or leave blank to disable.
 
 "ipaddr"
-- Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
+- Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Mặc định = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
 
 "forbid_on_block"
-- Should phpMussel send 403 headers with the file upload blocked message, or stick with the usual 200 OK? False = No (200) [Default]; True = Yes (403).
+- Should phpMussel send 403 headers with the file upload blocked message, or stick with the usual 200 OK? False = Không (200) [Mặc định]; True = Vâng (403).
 
 "delete_on_sight"
-- Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won't be touched. In the case of archives, the entire archive will be deleted, regardless of whether or not the offending file is only one of several files contained within the archive. For the case of file upload scanning, usually, it isn't necessary to enable this directive, because usually, PHP will automatically purge the contents of its cache when execution has finished, meaning it'll usually delete any files uploaded through it to the server unless they've been moved, copied or deleted already. This directive is added here as an extra measure of security for those whose copies of PHP mightn't always behave in the manner expected. False = After scanning, leave the file alone [Default]; True = After scanning, if not clean, delete immediately.
+- Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won't be touched. In the case of archives, the entire archive will be deleted, regardless of whether or not the offending file is only one of several files contained within the archive. For the case of file upload scanning, usually, it isn't necessary to enable this directive, because usually, PHP will automatically purge the contents of its cache when execution has finished, meaning it'll usually delete any files uploaded through it to the server unless they've been moved, copied or deleted already. This directive is added here as an extra measure of security for those whose copies of PHP mightn't always behave in the manner expected. False = After scanning, leave the file alone [Mặc định]; True = After scanning, if not clean, delete immediately.
 
 "lang"
 - Specify the default language for phpMussel.
 
 "lang_override"
-- Specify if phpMussel should, when possible, override the language specification with the language preference declared by inbound requests (HTTP_ACCEPT_LANGUAGE). False = No [Default]; True = Yes.
+- Specify if phpMussel should, when possible, override the language specification with the language preference declared by inbound requests (HTTP_ACCEPT_LANGUAGE). False = Không [Mặc định]; True = Vâng.
 
 "lang_acceptable"
 - The `lang_acceptable` directive tells phpMussel which languages may be accepted by the script from `lang` or from `HTTP_ACCEPT_LANGUAGE`. This directive should **ONLY** be modified if you're adding your own customised language files or forcibly removing language files. The directive is a comma delimited string of the codes used by those languages accepted by the script.
@@ -526,19 +526,19 @@ General phpMussel configuration.
 - phpMussel is able to quarantine flagged attempted file uploads in isolation within the phpMussel vault, if this is something you want it to do. Casual users of phpMussel that simply wish to protect their websites or hosting environment without having any interest in deeply analysing any flagged attempted file uploads should leave this functionality disabled, but any users interested in further analysis of flagged attempted file uploads for malware research or for similar such things should enable this functionality. Quarantining of flagged attempted file uploads can sometimes also assist in debugging false-positives, if this is something that frequently occurs for you. To disable quarantine functionality, simply leave the `quarantine_key` directive empty, or erase the contents of that directive if it isn't already empty. To enable quarantine functionality, enter some value into the directive. The `quarantine_key` is an important security feature of the quarantine functionality required as a means of preventing the quarantine functionality from being exploited by potential attackers and as a means of preventing any potential execution of data stored within the quarantine. The `quarantine_key` should be treated in the same manner as your passwords: The longer the better, and guard it tightly. For best effect, use in conjunction with `delete_on_sight`.
 
 "quarantine_max_filesize"
-- The maximum allowable filesize of files to be quarantined. Files larger than the value specified will NOT be quarantined. This directive is important as a means of making it more difficult for any potential attackers to flood your quarantine with unwanted data potentially causing run-away data usage on your hosting service. Value is in KB. Default =2048 =2048KB =2MB.
+- The maximum allowable filesize of files to be quarantined. Files larger than the value specified will NOT be quarantined. This directive is important as a means of making it more difficult for any potential attackers to flood your quarantine with unwanted data potentially causing run-away data usage on your hosting service. Value is in KB. Mặc định =2048 =2048KB =2MB.
 
 "quarantine_max_usage"
-- The maximum memory usage allowed for the quarantine. If the total memory used by the quarantine reaches this value, the oldest quarantined files will be deleted until the total memory used no longer reaches this value. This directive is important as a means of making it more difficult for any potential attackers to flood your quarantine with unwanted data potentially causing run-away data usage on your hosting service. Value is in KB. Default =65536 =65536KB =64MB.
+- The maximum memory usage allowed for the quarantine. If the total memory used by the quarantine reaches this value, the oldest quarantined files will be deleted until the total memory used no longer reaches this value. This directive is important as a means of making it more difficult for any potential attackers to flood your quarantine with unwanted data potentially causing run-away data usage on your hosting service. Value is in KB. Mặc định =65536 =65536KB =64MB.
 
 "honeypot_mode"
-- When honeypot mode is enabled, phpMussel will attempt to quarantine every single file upload that it encounters, regardless of whether or not the file being uploaded matches any included signatures, and no actual scanning or analysis of those attempted file uploads will actually occur. This functionality should be useful for those that wish to use phpMussel for the purposes of virus/malware research, but it's neither recommended to enable this functionality if the intended use of phpMussel by the user is for actual file upload scanning, nor recommended to use the honeypot functionality for purposes other than honeypotting. By default, this option is disabled. False = Disabled [Default]; True = Enabled.
+- When honeypot mode is enabled, phpMussel will attempt to quarantine every single file upload that it encounters, regardless of whether or not the file being uploaded matches any included signatures, and no actual scanning or analysis of those attempted file uploads will actually occur. This functionality should be useful for those that wish to use phpMussel for the purposes of virus/malware research, but it's neither recommended to enable this functionality if the intended use of phpMussel by the user is for actual file upload scanning, nor recommended to use the honeypot functionality for purposes other than honeypotting. By default, this option is disabled. False = Disabled [Mặc định]; True = Enabled.
 
 "scan_cache_expiry"
 - For how long should phpMussel cache the results of scanning? Value is the number of seconds to cache the results of scanning for. Default is 21600 seconds (6 hours); A value of 0 will disable caching the results of scanning.
 
 "disable_cli"
-- Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere with certain testing tools (such as PHPUnit, for example) and other CLI-based applications. If you don't need to disable CLI mode, you should ignore this directive. False = Enable CLI mode [Default]; True = Disable CLI mode.
+- Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere with certain testing tools (such as PHPUnit, for example) and other CLI-based applications. If you don't need to disable CLI mode, you should ignore this directive. False = Enable CLI mode [Mặc định]; True = Disable CLI mode.
 
 ####"signatures" (Category)
 Signatures configuration.
@@ -546,96 +546,96 @@ Signatures configuration.
 - %%%_custom = Your custom signatures (if you've written any).
 - %%%_mussel = phpMussel signatures included in your current signatures set that aren't from ClamAV.
 
-Check against MD5 signatures when scanning? False = No; True = Yes [Default].
+Check against MD5 signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "md5_clamav"
 - "md5_custom"
 - "md5_mussel"
 
-Check against general signatures when scanning? False = No; True = Yes [Default].
+Check against general signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "general_clamav"
 - "general_custom"
 - "general_mussel"
 
-Check against normalised ASCII signatures when scanning? False = No; True = Yes [Default].
+Check against normalised ASCII signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "ascii_clamav"
 - "ascii_custom"
 - "ascii_mussel"
 
-Check against normalised HTML signatures when scanning? False = No; True = Yes [Default].
+Check against normalised HTML signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "html_clamav"
 - "html_custom"
 - "html_mussel"
 
-Check PE (Portable Executable) files (EXE, DLL, etc) against PE Sectional signatures when scanning? False = No; True = Yes [Default].
+Check PE (Portable Executable) files (EXE, DLL, etc) against PE Sectional signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "pe_clamav"
 - "pe_custom"
 - "pe_mussel"
 
-Check PE (Portable Executable) files (EXE, DLL, etc) against PE extended signatures when scanning? False = No; True = Yes [Default].
+Check PE (Portable Executable) files (EXE, DLL, etc) against PE extended signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "pex_custom"
 - "pex_mussel"
 
-Check PE (Portable Executable) files (EXE, DLL, etc) against PE signatures when scanning? False = No; True = Yes [Default].
+Check PE (Portable Executable) files (EXE, DLL, etc) against PE signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "exe_clamav"
 - "exe_custom"
 - "exe_mussel"
 
-Check ELF files against ELF signatures when scanning? False = No; True = Yes [Default].
+Check ELF files against ELF signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "elf_clamav"
 - "elf_custom"
 - "elf_mussel"
 
-Check Mach-O files (OSX, etc) against Mach-O signatures when scanning? False = No; True = Yes [Default].
+Check Mach-O files (OSX, etc) against Mach-O signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "macho_clamav"
 - "macho_custom"
 - "macho_mussel"
 
-Check graphics files against graphics based signatures when scanning? False = No; True = Yes [Default].
+Check graphics files against graphics based signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "graphics_clamav"
 - "graphics_custom"
 - "graphics_mussel"
 
-Check archive contents against archive metadata signatures when scanning? False = No; True = Yes [Default].
+Check archive contents against archive metadata signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "metadata_clamav"
 - "metadata_custom"
 - "metadata_mussel"
 
-Check OLE objects against OLE signatures when scanning? False = No; True = Yes [Default].
+Check OLE objects against OLE signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "ole_clamav"
 - "ole_custom"
 - "ole_mussel"
 
-Check filenames against filename based signatures when scanning? False = No; True = Yes [Default].
+Check filenames against filename based signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "filenames_clamav"
 - "filenames_custom"
 - "filenames_mussel"
 
-Allow scanning with phpMussel_mail()? False = No; True = Yes [Default].
+Allow scanning with phpMussel_mail()? False = Không; True = Vâng [Mặc định].
 - "mail_clamav"
 - "mail_custom"
 - "mail_mussel"
 
-Enable file specific whitelist? False = No; True = Yes [Default].
+Enable file specific whitelist? False = Không; True = Vâng [Mặc định].
 - "whitelist_clamav"
 - "whitelist_custom"
 - "whitelist_mussel"
 
-Check XML/XDP chunks against XML/XDP signatures when scanning? False = No; True = Yes [Default].
+Check XML/XDP chunks against XML/XDP signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "xmlxdp_clamav"
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
 
-Check against complex extended signatures when scanning? False = No; True = Yes [Default].
+Check against complex extended signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "coex_clamav"
 - "coex_custom"
 - "coex_mussel"
 
-Check against PDF signatures when scanning? False = No; True = Yes [Default].
+Check against PDF signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "pdf_clamav"
 - "pdf_custom"
 - "pdf_mussel"
 
-Check against Shockwave signatures when scanning? False = No; True = Yes [Default].
+Check against Shockwave signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "swf_clamav"
 - "swf_custom"
 - "swf_mussel"
@@ -649,28 +649,28 @@ Signature matching length limiting options. Only change these if you know what y
 - "sd_siglen_max"
 
 "fail_silently"
-- Should phpMussel report when signatures files are missing or corrupted? If fail_silently is disabled, missing and corrupted files will be reported on scanning, and if fail_silently is enabled, missing and corrupted files will be ignored, with scanning reporting for those files that there aren't any problems. This should generally be left alone unless you're experiencing crashes or similar problems. False = Disabled; True = Enabled [Default].
+- Should phpMussel report when signatures files are missing or corrupted? If fail_silently is disabled, missing and corrupted files will be reported on scanning, and if fail_silently is enabled, missing and corrupted files will be ignored, with scanning reporting for those files that there aren't any problems. This should generally be left alone unless you're experiencing crashes or similar problems. False = Disabled; True = Enabled [Mặc định].
 
 "fail_extensions_silently"
-- Should phpMussel report when extensions are missing? If fail_extensions_silently is disabled, missing extensions will be reported on scanning, and if fail_extensions_silently is enabled, missing extensions will be ignored, with scanning reporting for those files that there aren't any problems. Disabling this directive may potentially increase your security, but may also lead to an increase of false positives. False = Disabled; True = Enabled [Default].
+- Should phpMussel report when extensions are missing? If fail_extensions_silently is disabled, missing extensions will be reported on scanning, and if fail_extensions_silently is enabled, missing extensions will be ignored, with scanning reporting for those files that there aren't any problems. Disabling this directive may potentially increase your security, but may also lead to an increase of false positives. False = Disabled; True = Enabled [Mặc định].
 
 "detect_adware"
-- Should phpMussel parse signatures for detecting adware? False = No; True = Yes [Default].
+- Should phpMussel parse signatures for detecting adware? False = Không; True = Vâng [Mặc định].
 
 "detect_joke_hoax"
-- Should phpMussel parse signatures for detecting joke/hoax malware/viruses? False = No; True = Yes [Default].
+- Should phpMussel parse signatures for detecting joke/hoax malware/viruses? False = Không; True = Vâng [Mặc định].
 
 "detect_pua_pup"
-- Should phpMussel parse signatures for detecting PUAs/PUPs? False = No; True = Yes [Default].
+- Should phpMussel parse signatures for detecting PUAs/PUPs? False = Không; True = Vâng [Mặc định].
 
 "detect_packer_packed"
-- Should phpMussel parse signatures for detecting packers and packed data? False = No; True = Yes [Default].
+- Should phpMussel parse signatures for detecting packers and packed data? False = Không; True = Vâng [Mặc định].
 
 "detect_shell"
-- Should phpMussel parse signatures for detecting shell scripts? False = No; True = Yes [Default].
+- Should phpMussel parse signatures for detecting shell scripts? False = Không; True = Vâng [Mặc định].
 
 "detect_deface"
-- Should phpMussel parse signatures for detecting defacements and defacers? False = No; True = Yes [Default].
+- Should phpMussel parse signatures for detecting defacements and defacers? False = Không; True = Vâng [Mặc định].
 
 ####"files" (Category)
 File handling configuration.
@@ -679,10 +679,10 @@ File handling configuration.
 - Maximum allowable number of files to scan during files upload scan before aborting the scan and informing the user they are uploading too much at once! Provides protection against a theoretical attack whereby an attacker attempts to DDoS your system or CMS by overloading phpMussel to slow down the PHP process to a grinding halt. Recommended: 10. You may wish to raise or lower this number depending on the speed of your hardware. Note that this number doesn't account for or include the contents of archives.
 
 "filesize_limit"
-- Filesize limit in KB. 65536 = 64MB [Default]; 0 = No limit (always greylisted), any (positive) numeric value accepted. This can be useful when your PHP configuration limits the amount of memory a process can hold or if your PHP configuration limits filesize of uploads.
+- Filesize limit in KB. 65536 = 64MB [Mặc định]; 0 = No limit (always greylisted), any (positive) numeric value accepted. This can be useful when your PHP configuration limits the amount of memory a process can hold or if your PHP configuration limits filesize of uploads.
 
 "filesize_response"
-- What to do with files that exceed the filesize limit (if one exists). False = Whitelist; True = Blacklist [Default].
+- What to do with files that exceed the filesize limit (if one exists). False = Whitelist; True = Blacklist [Mặc định].
 
 "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
 - If your system only allows specific types of files to be uploaded, or if your system explicitly denies certain types of files, specifying those filetypes in whitelists, blacklists and greylists can increase the speed at which scanning is performed by allowing the script to skip over certain filetypes. Format is CSV (comma separated values). If you want to scan everything, rather than whitelist, blacklist or greylist, leave the variable(/s) blank; Doing so will disable whitelist/blacklist/greylist.
@@ -692,22 +692,22 @@ File handling configuration.
   - If the greylist is empty or if the greylist is not empty and the filetype is greylisted, scan the file as per normal and determine whether to block it based on the results of the scan, but if the greylist is not empty and the filetype is not greylisted, treat the file as blacklisted, therefore not scanning it but blocking it anyway.
 
 "check_archives"
-- Attempt to check the contents of archives? False = Don't check; True = Check [Default].
+- Attempt to check the contents of archives? False = Don't check; True = Check [Mặc định].
 - Currently, only checking of BZ, GZ, LZF and ZIP files is supported (checking of RAR, CAB, 7z and etcetera not currently supported).
 - This is not foolproof! While I highly recommend keeping this turned on, I can't guarantee it'll always find everything.
 - Also be aware that archive checking currently is not recursive for ZIPs.
 
 "filesize_archives"
-- Carry over filesize blacklisting/whitelisting to the contents of archives? False = No (just greylist everything); True = Yes [Default].
+- Carry over filesize blacklisting/whitelisting to the contents of archives? False = Không (just greylist everything); True = Vâng [Mặc định].
 
 "filetype_archives"
-- Carry over filetype blacklisting/whitelisting to the contents of archives? False = No (just greylist everything) [Default]; True = Yes.
+- Carry over filetype blacklisting/whitelisting to the contents of archives? False = Không (just greylist everything) [Mặc định]; True = Vâng.
 
 "max_recursion"
-- Maximum recursion depth limit for archives. Default = 10.
+- Maximum recursion depth limit for archives. Mặc định = 10.
 
 "block_encrypted_archives"
-- Detect and block encrypted archives? Because phpMussel isn't able to scan the contents of encrypted archives, it's possible that archive encryption may be employed by an attacker as a means of attempting to bypass phpMussel, anti-virus scanners and other such protections. Instructing phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. False = No; True = Yes [Default].
+- Detect and block encrypted archives? Because phpMussel isn't able to scan the contents of encrypted archives, it's possible that archive encryption may be employed by an attacker as a means of attempting to bypass phpMussel, anti-virus scanners and other such protections. Instructing phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. False = Không; True = Vâng [Mặc định].
 
 ####"attack_specific" (Category)
 Attack-specific directives.
@@ -736,13 +736,13 @@ Chameleon attack detection: False = Off; True = On.
 - Recognised archive file extensions (format is CSV; should only add or remove when problems occur; unnecessarily removing may cause false-positives to appear for archive files, whereas unnecessarily adding will essentially whitelist what you're adding from attack specific detection; modify with caution; also note that this has no effect on what archives can and can't be analysed at content-level). The list, as is at default, lists those formats used most commonly across the majority of systems and CMS, but intentionally isn't necessarily comprehensive.
 
 "general_commands"
-- Search the content of files for statements and general commands such as `eval()` and `exec()`? False = Don't check [Default]; True = Check. Disable this directive if you intend to upload any of the following to your system or CMS via your browser: PHP, JavaScript, HTML, python, perl files and etcetera. Enable this directive if you don't have any additional protections on your system and do not intend to upload such files. If you use additional security in conjunction with phpMussel (such as ZB Block), there's no need to enable this directive, because most of what phpMussel will look for (in the context of this directive) are duplications of protections that will most likely already be provided.
+- Search the content of files for statements and general commands such as `eval()` and `exec()`? False = Don't check [Mặc định]; True = Check. Disable this directive if you intend to upload any of the following to your system or CMS via your browser: PHP, JavaScript, HTML, python, perl files and etcetera. Enable this directive if you don't have any additional protections on your system and do not intend to upload such files. If you use additional security in conjunction with phpMussel (such as ZB Block), there's no need to enable this directive, because most of what phpMussel will look for (in the context of this directive) are duplications of protections that will most likely already be provided.
 
 "block_control_characters"
-- Block any files containing any control characters (other than newlines)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) If you're _**ONLY**_ uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. False = Don't block [Default]; True = Block.
+- Block any files containing any control characters (other than newlines)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) If you're _**ONLY**_ uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. False = Don't block [Mặc định]; True = Block.
 
 "corrupted_exe"
-- Corrupted files and parse errors. False = Ignore; True = Block [Default]. Detect and block potentially corrupted PE (Portable Executable) files? Often (but not always), when certain aspects of a PE file are corrupted or can't be parsed correctly, it can be indicative of a viral infection. The processes used by most anti-virus programs to detect viruses in PE files require parsing those files in certain ways, which, if the programmer of a virus is aware of, will specifically try to prevent, in order to allow their virus to remain undetected.
+- Corrupted files and parse errors. False = Ignore; True = Block [Mặc định]. Detect and block potentially corrupted PE (Portable Executable) files? Often (but not always), when certain aspects of a PE file are corrupted or can't be parsed correctly, it can be indicative of a viral infection. The processes used by most anti-virus programs to detect viruses in PE files require parsing those files in certain ways, which, if the programmer of a virus is aware of, will specifically try to prevent, in order to allow their virus to remain undetected.
 
 "decode_threshold"
 - Optional limitation or threshold to the length of raw data within which decode commands should be detected (in case there are any noticeable performance issues while scanning). Value is an integer representing filesize in KB. Default = 512 (512KB). Zero or null value disables the threshold (removing any such limitation based on filesize).
@@ -810,7 +810,7 @@ URL scanner API lookup configuration.
 - Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expedite the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
 
 "maximum_api_lookups_response"
-- What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Default]; True = Flag/block the file.
+- What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Mặc định]; True = Flag/block the file.
 
 "cache_time"
 - How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour).
@@ -840,7 +840,7 @@ All MD5 signatures follow the format:
 
 `HASH:FILESIZE:NAME`
 
-Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of that file and NAME is the name to cite for that signature.
+Where HASH is the băm MD5 of an entire file, FILESIZE is the total size of that file and NAME is the name to cite for that signature.
 
 ####*ARCHIVE METADATA SIGNATURES*
 All archive metadata signatures follow the format:
@@ -854,21 +854,21 @@ All PE Sectional signatures follow the format:
 
 `SIZE:HASH:NAME`
 
-Where HASH is the MD5 hash of a section of a PE file, SIZE is the total size of that section and NAME is the name to cite for that signature.
+Where HASH is the băm MD5 of a section of a PE file, SIZE is the total size of that section and NAME is the name to cite for that signature.
 
 ####*CHỮ KÝ KÉO DÀI PE*
 All PE extended signatures follow the format:
 
 `$VAR:HASH:SIZE:NAME`
 
-Where $VAR is the name of the PE variable to match against, HASH is the MD5 hash of that variable, SIZE is the total size of that variable and NAME is the name to cite for that signature.
+Where $VAR is the name of the PE variable to match against, HASH is the băm MD5 of that variable, SIZE is the total size of that variable and NAME is the name to cite for that signature.
 
 ####*CHỮ KÝ DANH SÁCH TRẮNG*
 All Whitelist signatures follow the format:
 
 `HASH:FILESIZE:TYPE`
 
-Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of that file and TYPE is the type of signatures the whitelisted file is to be immune against.
+Where HASH is the băm MD5 of an entire file, FILESIZE is the total size of that file and TYPE is the type of signatures the whitelisted file is to be immune against.
 
 ####*CHỮ KÝ KÉO DÀI PHỨC TẠP*
 Complex Extended signatures are rather different to the other types of signatures possible with phpMussel, in that what they are matching against is specified by the signatures themselves and they can match against multiple criteria. The match criterias are delimited by ";" and the match type and match data of each match criteria is delimited by ":" as so that format for these signatures tends to look a bit like:
@@ -889,28 +889,28 @@ Any form of regex understood and correctly processed by PHP should also be corre
 Only put custom signatures in those files intended for custom signatures. Those files should contain "_custom" in their filenames. You should also avoid editing the default signature files, unless you know exactly what you're doing, because, aside from being good practise in general and aside from helping you distinguish between your own signatures and the default signatures included with phpMussel, it's good to stick to editing only the files intended for editing, because tampering with the default signature files can cause them to stop working correctly, due to the "maps" files: The maps files tell phpMussel where in the signature files to look for signatures required by phpMussel as per when required, and these maps can become out-of-sync with their associated signature files if those signature files are tampered with. You can put pretty much whatever you want into your custom signatures, so long as you follow the correct syntax. However, be careful to test new signatures for false-positives beforehand if you intend to share them or use them in a live environment.
 
 ####*GIẢI THÍCH CHỮ KÝ*
-The following is a breakdown of the types of signatures used by phpMussel:
+Sau đây là một danh sách các loại chữ ký được sử dụng bởi phpMussel:
 - "Chữ Ký ASCII Bình Thường" (ascii_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
 - "Chữ Ký Kéo Dài Phức Tạp" (coex_*). Chữ ký của hỗn hợp kiểu.
 - "Chữ Ký ELF" (elf_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin ELF.
-- "Chữ Ký PE" (exe_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin PE.
+- "Chữ Ký PE" (exe_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác định như các định dạng PE.
 - "Chữ Ký Tên Tài Liệu" (filenames_*). Kiểm tra đối với các tên tài liệu của mỗi tập tin dự định để quét.
 - "Chữ Ký Chung" (general_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
 - "Chữ Ký Đồ Họa" (graphics_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin công nhận đồ họa.
-- "General Commands" (hex_general_commands.csv). Checked against the contents of every non-whitelisted file targeted for scanning.
+- "General Commands" (hex_general_commands.csv). Kiểm tra đối với các nội dung của mỗi tập tin không trong danh sách trắng và nhắm mục tiêu cho quét.
 - "Chữ Ký HTML Bình Thường" (html_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin HTML.
 - "Chữ Ký Mach-O" (macho_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin Mach-O.
 - "Chữ Ký Email" (mail_*). Kiểm tra đối với các biến số $body phân tích cú pháp để các chức năng phpMussel_mail() (dành cho thông điệp email và những thứ tương tự).
-- "Chữ Ký Dựa MD5" (md5_*). Kiểm tra đối với các MD5 hash của nội dung và các kích thước tập tin của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
-- "Chữ Ký Siêu Dữ Liệu Kho Lưu Trữ" (metadata_*). Checked against the CRC32 hash and filesize of the initial file contained inside of any non-whitelisted archive targeted for scanning.
+- "Chữ Ký Dựa MD5" (md5_*). Kiểm tra đối với các băm MD5 của nội dung và các kích thước tập tin của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
+- "Chữ Ký Siêu Dữ Liệu Kho Lưu Trữ" (metadata_*). Kiểm tra đối với the băm CRC32 và kích thước của tập tin đầu tiên chứa bên trong mỗi lưu trữ không trong danh sách trắng và nhắm mục tiêu cho quét.
 - "Chữ Ký OLE" (ole_*). Kiểm tra đối với các nội dung của mỗi OLE không thuộc danh sách trắng và dự định để quét.
 - "Chữ Ký PDF" (pdf_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin PDF.
-- "Chữ Ký Phần PE" (pe_*). Kiểm tra đối với các MD5 hash và các kích thước của mỗi phần của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin PE.
-- "Chữ Ký Kéo Dài PE" (pex_*). Checked against the MD5 hash and the size of variables within every non-whitelisted file targeted for scanning and matched to the PE format.
+- "Chữ Ký Phần PE" (pe_*). Kiểm tra đối với các băm MD5 và các kích thước của mỗi phần của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác định như các định dạng PE.
+- "Chữ Ký Kéo Dài PE" (pex_*). Kiểm tra đối với băm MD5 và kích thước của các biến trong mỗi tập tin không trong danh sách trắng, nhắm mục tiêu cho quét và xác định như các định dạng PE.
 - "Chữ Ký Shockwave" (swf_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin Shockwave.
-- "Chữ Ký Danh Sách Trắng" (whitelist_*). Checked against the MD5 hash of the contents and the filesize of every file targeted for scanning. Matched files will be immune to being matched by the type of signature mentioned in their whitelist entry.
-- "Chữ Ký XML/XDP" (xmlxdp_*). Checked against any XML/XDP chunks found within any non-whitelisted files targeted for scanning.
-(Note that any of these signatures may be easily disabled via `phpmussel.ini`).
+- "Chữ Ký Danh Sách Trắng" (whitelist_*). Kiểm tra đối với các băm MD5 các nội dung và kích thước tập tin của mỗi tập tin nhắm mục tiêu cho quét. Tập tin xác định sẽ được miễn dịch để được xác định bởi các loại chữ ký đề cập trong nhập danh sách trắng của họ.
+- "Chữ Ký XML/XDP" (xmlxdp_*). Kiểm tra đối với bất kỳ XML/XDP tìm thấy trong bất kỳ tập tin không trong danh sách trắng và nhắm mục tiêu cho quét.
+(Hãy lưu ý bất kỳ của các chữ ký có thể bị vô hiệu hóa thông qua `phpmussel.ini`).
 
 ---
 
@@ -992,4 +992,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 25 Tháng Hai 201
 ---
 
 
-Lần cuối cập nhật: 6 Tháng Ba 2016 (2016.03.06).
+Lần cuối cập nhật: 12 Tháng Ba 2016 (2016.03.12).
