@@ -209,7 +209,7 @@ enable
 
 update
 - Password required: `script_password`
-- Other requirements: `update.dat` and `update.inc` must exist.
+- Other requirements: `update.dat` and `update.php` must exist.
 - Required parameters: (none)
 - Optional parameters: (none)
 - Example: `?pword=[script_password]&phpmussel=update`
@@ -258,6 +258,7 @@ The following is a list of all of the files that should have been included in th
 File | Description
 ----|----
 /.gitattributes | A GitHub project file (not required for proper function of script).
+/Changelog-v0.txt | A record of changes made to the script between different versions (not required for proper function of script).
 /composer.json | Composer/Packagist information (not required for proper function of script).
 /CONTRIBUTING.md | Information about how to contribute to the project.
 /LICENSE.txt | A copy of the GNU/GPLv2 license.
@@ -266,7 +267,6 @@ File | Description
 /README.md | Project summary information.
 /web.config | An ASP.NET configuration file (in this instance, to protect the `/vault` directory from being accessed by non-authorised sources in the event that the script is installed on a server based upon ASP.NET technologies).
 /_docs/ | Documentation directory (contains various files).
-/_docs/change_log.txt | A record of changes made to the script between different versions (not required for proper function of script).
 /_docs/readme.ar.md | Arabic documentation.
 /_docs/readme.de.md | German documentation.
 /_docs/readme.en.md | English documentation.
@@ -300,28 +300,28 @@ File | Description
 /vault/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/cache/ | Cache directory (for temporary data).
 /vault/cache/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/cli.inc | CLI handler.
-/vault/config.inc | Configuration handler.
-/vault/controls.inc | Controls handler.
-/vault/functions.inc | Functions file (essential).
+/vault/cli.php | CLI handler.
+/vault/config.php | Configuration handler.
+/vault/controls.php | Controls handler.
+/vault/functions.php | Functions file (essential).
 /vault/greylist.csv | CSV of greylisted signatures indicating to phpMussel which signatures it should be ignoring (file automatically recreated if deleted).
-/vault/lang.inc | Language handler.
+/vault/lang.php | Language handler.
 /vault/lang/ | Contains phpMussel language data.
 /vault/lang/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/lang/lang.ar.inc | Arabic language data.
-/vault/lang/lang.de.inc | German language data.
-/vault/lang/lang.en.inc | English language data.
-/vault/lang/lang.es.inc | Spanish language data.
-/vault/lang/lang.fr.inc | French language data.
-/vault/lang/lang.id.inc | Indonesian language data.
-/vault/lang/lang.it.inc | Italian language data.
-/vault/lang/lang.ja.inc | Japanese language data.
-/vault/lang/lang.nl.inc | Dutch language data.
-/vault/lang/lang.pt.inc | Portuguese language data.
-/vault/lang/lang.ru.inc | Russian language data.
-/vault/lang/lang.vi.inc | Vietnamese language data.
-/vault/lang/lang.zh-TW.inc | Chinese (Traditional) language data.
-/vault/lang/lang.zh.inc | Chinese (Simplified) language data.
+/vault/lang/lang.ar.php | Arabic language data.
+/vault/lang/lang.de.php | German language data.
+/vault/lang/lang.en.php | English language data.
+/vault/lang/lang.es.php | Spanish language data.
+/vault/lang/lang.fr.php | French language data.
+/vault/lang/lang.id.php | Indonesian language data.
+/vault/lang/lang.it.php | Italian language data.
+/vault/lang/lang.ja.php | Japanese language data.
+/vault/lang/lang.nl.php | Dutch language data.
+/vault/lang/lang.pt.php | Portuguese language data.
+/vault/lang/lang.ru.php | Russian language data.
+/vault/lang/lang.vi.php | Vietnamese language data.
+/vault/lang/lang.zh-TW.php | Chinese (Traditional) language data.
+/vault/lang/lang.zh.php | Chinese (Simplified) language data.
 /vault/phpmussel.ini | Configuration file; Contains all the configuration options of phpMussel, telling it what to do and how to operate correctly (essential)!
 /vault/quarantine/ | Quarantine directory (contains quarantined files).
 /vault/quarantine/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
@@ -452,8 +452,8 @@ File | Description
 /vault/template.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
 /vault/template_custom.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
 /vault/update.dat | File containing version information for both the phpMussel script and the phpMussel signatures. If you ever want to automatically update phpMussel or want to update phpMussel via your browser, this file is essential.
-/vault/update.inc | Update Script; Required for automatic updates and for updating phpMussel via your browser, but not required otherwise.
-/vault/upload.inc | Upload handler.
+/vault/update.php | Update Script; Required for automatic updates and for updating phpMussel via your browser, but not required otherwise.
+/vault/upload.php | Upload handler.
 
 ※ Filename may differ based on configuration stipulations (in `phpmussel.ini`).
 
@@ -992,4 +992,4 @@ This information was last updated 25th February 2016 and is current for all phpM
 ---
 
 
-Last Updated: 6th March 2016 (2016.03.06).
+Last Updated: 18th March 2016 (2016.03.18).

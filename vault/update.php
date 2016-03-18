@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: phpMussel update handler (last modified: 2016.02.16).
+ * This file: phpMussel update handler (last modified: 2016.03.18).
  *
  * @package Maikuolan/phpMussel
  *
@@ -82,15 +82,15 @@ while (true)
     $phpMussel['ScriptIdent']['request_status'] = false;
     $phpMussel['ScriptIdent']['gz'] = (!function_exists('gzinflate'))?'n':'y';
     $phpMussel['ScriptIdent']['request_content'] = 'gz='.$phpMussel['ScriptIdent']['gz'].'&files=';
-    $phpMussel['ScriptIdent']['request_content'] .= 'phpmussel.inc%3A'.md5(phpMusselFile($phpMussel['vault'] . 'phpmussel.inc')).'%3B';
-    $phpMussel['ScriptIdent']['request_content'] .= 'lang.inc%3A'.md5(phpMusselFile($phpMussel['vault'] . 'lang.inc')).'%3B';
-    $phpMussel['ScriptIdent']['request_content'] .= 'update.inc%3A'.md5(phpMusselFile($phpMussel['vault'] . 'update.inc')).'%3B';
+    $phpMussel['ScriptIdent']['request_content'] .= 'phpmussel.php%3A'.md5(phpMusselFile($phpMussel['vault'] . 'phpmussel.php')).'%3B';
+    $phpMussel['ScriptIdent']['request_content'] .= 'lang.php%3A'.md5(phpMusselFile($phpMussel['vault'] . 'lang.php')).'%3B';
+    $phpMussel['ScriptIdent']['request_content'] .= 'update.php%3A'.md5(phpMusselFile($phpMussel['vault'] . 'update.php')).'%3B';
     $phpMussel['ScriptIdent']['request_content'] .= 'switch.dat%3A'.md5(phpMusselFile($phpMussel['vault'] . 'switch.dat')).'%3B';
     $phpMussel['ScriptIdent']['langCodes']=array('de','ar','en','es','fr','id','it','ja','nl','pt','ru','vi','zh-tw','zh');
     $c = count($phpMussel['ScriptIdent']['langCodes']);
     for ($i = 0; $i < $c; $i++)
         {
-        $phpMussel['ScriptIdent']['request_content'] .= 'lang/lang.'.$phpMussel['ScriptIdent']['langCodes'][$i].'.inc%3A'.md5(phpMusselFile($phpMussel['vault'] . 'lang/lang.'.$phpMussel['ScriptIdent']['langCodes'][$i].'.inc')).'%3B';
+        $phpMussel['ScriptIdent']['request_content'] .= 'lang/lang.'.$phpMussel['ScriptIdent']['langCodes'][$i].'.php%3A'.md5(phpMusselFile($phpMussel['vault'] . 'lang/lang.'.$phpMussel['ScriptIdent']['langCodes'][$i].'.php')).'%3B';
         }
     $SigFileSet=array('ascii_clamav'=>array('ascii_clamav_regex.cvd','ascii_clamav_regex.map','ascii_clamav_standard.cvd','ascii_clamav_standard.map'),'ascii_mussel'=>array('ascii_mussel_regex.cvd','ascii_mussel_standard.cvd'),'coex_clamav'=>array('coex_clamav.cvd'),'coex_mussel'=>array('coex_mussel.cvd'),'elf_clamav'=>array('elf_clamav_regex.cvd','elf_clamav_regex.map','elf_clamav_standard.cvd','elf_clamav_standard.map'),'elf_mussel'=>array('elf_mussel_regex.cvd','elf_mussel_standard.cvd'),'exe_clamav'=>array('exe_clamav_regex.cvd','exe_clamav_regex.map','exe_clamav_standard.cvd','exe_clamav_standard.map'),'exe_mussel'=>array('exe_mussel_regex.cvd','exe_mussel_standard.cvd'),'filenames_clamav'=>array('filenames_clamav.cvd'),'filenames_mussel'=>array('filenames_mussel.cvd'),'general_clamav'=>array('general_clamav_regex.cvd','general_clamav_regex.map','general_clamav_standard.cvd','general_clamav_standard.map'),'general_mussel'=>array('general_mussel_regex.cvd','general_mussel_standard.cvd'),'graphics_clamav'=>array('graphics_clamav_regex.cvd','graphics_clamav_regex.map','graphics_clamav_standard.cvd','graphics_clamav_standard.map'),'graphics_mussel'=>array('graphics_mussel_regex.cvd','graphics_mussel_standard.cvd'),'html_clamav'=>array('html_clamav_regex.cvd','html_clamav_regex.map','html_clamav_standard.cvd','html_clamav_standard.map'),'html_mussel'=>array('html_mussel_regex.cvd','html_mussel_standard.cvd'),'macho_clamav'=>array('macho_clamav_regex.cvd','macho_clamav_regex.map','macho_clamav_standard.cvd','macho_clamav_standard.map'),'macho_mussel'=>array('macho_mussel_regex.cvd','macho_mussel_standard.cvd'),'mail_clamav'=>array('mail_clamav_regex.cvd','mail_clamav_regex.map','mail_clamav_standard.cvd','mail_clamav_standard.map'),'mail_mussel'=>array('mail_mussel_regex.cvd','mail_mussel_standard.cvd'),'md5_clamav'=>array('md5_clamav.cvd'),'md5_mussel'=>array('md5_mussel.cvd'),'metadata_clamav'=>array('metadata_clamav.cvd'),'metadata_mussel'=>array('metadata_mussel.cvd'),'ole_clamav'=>array('ole_clamav_regex.cvd','ole_clamav_regex.map','ole_clamav_standard.cvd','ole_clamav_standard.map'),'ole_mussel'=>array('ole_mussel_regex.cvd','ole_mussel_standard.cvd'),'pdf_clamav'=>array('pdf_clamav_regex.cvd','pdf_clamav_regex.map','pdf_clamav_standard.cvd','pdf_clamav_standard.map'),'pdf_mussel'=>array('pdf_mussel_regex.cvd','pdf_mussel_standard.cvd'),'pe_clamav'=>array('pe_clamav.cvd'),'pe_mussel'=>array('pe_mussel.cvd'),'urlscanner'=>array('urlscanner.cvd'),'swf_clamav'=>array('swf_clamav_regex.cvd','swf_clamav_regex.map','swf_clamav_standard.cvd','swf_clamav_standard.map'),'swf_mussel'=>array('swf_mussel_regex.cvd','swf_mussel_standard.cvd'),'whitelist_clamav'=>array('whitelist_clamav.cvd'),'whitelist_mussel'=>array('whitelist_mussel.cvd'),'xmlxdp_clamav'=>array('xmpxdp_clamav_regex.cvd','xmpxdp_clamav_regex.map','xmpxdp_clamav_standard.cvd','xmpxdp_clamav_standard.map'),'xmlxdp_mussel'=>array('xmpxdp_mussel_regex.cvd','xmpxdp_mussel_standard.cvd'));
     $c = count($SigFileSet);

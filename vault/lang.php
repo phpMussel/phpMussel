@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: phpMussel language handler (last modified: 2016.02.14).
+ * This file: phpMussel language handler (last modified: 2016.03.18).
  *
  * @package Maikuolan/phpMussel
  */
@@ -53,12 +53,12 @@ if ($phpMussel['Config']['general']['lang_override'] && $_SERVER['HTTP_ACCEPT_LA
 
 /**
  * Kills the script if the language data file corresponding to the language
- * directive (%phpMussel%/vault/lang/lang.%%.inc) doesn't exist.
+ * directive (%phpMussel%/vault/lang/lang.%%.php) doesn't exist.
  */
-if (!file_exists($phpMussel['langPath'] . 'lang.' . $phpMussel['Config']['general']['lang'] . '.inc')) {
+if (!file_exists($phpMussel['langPath'] . 'lang.' . $phpMussel['Config']['general']['lang'] . '.php')) {
     header('Content-Type: text/plain');
     die('[phpMussel] Language undefined or incorrectly defined. Can\'t continue.');
 }
 
 /** Load the necessary language data. */
-require $phpMussel['langPath'] . 'lang.' . $phpMussel['Config']['general']['lang'] . '.inc';
+require $phpMussel['langPath'] . 'lang.' . $phpMussel['Config']['general']['lang'] . '.php';

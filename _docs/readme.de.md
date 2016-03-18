@@ -209,7 +209,7 @@ enable
 
 update
 - Benötigtes Passwort: `script_password`
-- Weitere Bedingungen: `update.dat` und `update.inc` müssen vorhanden sein.
+- Weitere Bedingungen: `update.dat` und `update.php` müssen vorhanden sein.
 - Benötigte Parameter: (keine)
 - Optionale Parameter: (keine)
 - Beispiele: `?pword=[script_password]&phpmussel=update`
@@ -258,6 +258,7 @@ Die folgende Liste beinhaltet alle Dateien, die im heruntergeladenen Archiv des 
 Datei | Beschreibung
 ----|----
 /.gitattributes | Ein GitHub Projektdatei (für die korrekte Funktion des Scripts nicht notwendig).
+/Changelog-v0.txt | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
 /composer.json | Composer/Packagist Informationen (für die korrekte Funktion des Scripts nicht notwendig).
 /CONTRIBUTING.md | Information about how to contribute to the project. @TranslateMe@
 /LICENSE.txt | Eine Kopie der GNU/GPLv2 Lizenz.
@@ -266,7 +267,6 @@ Datei | Beschreibung
 /README.md | Projektübersicht.
 /web.config | Eine ASP.NET-Konfigurationsdatei (in diesem Fall zum Schutz des Verzeichnisses `/vault` vor einem nicht authorisierten Zugriff, sofern das Script auf einem auf der ASP.NET-Technologie basierenden Server installiert wurde).
 /_docs/ | Verzeichnis für die Dokumentationen (beinhaltet verschiedene Dateien).
-/_docs/change_log.txt | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
 /_docs/readme.ar.md | Arabische Dokumentation.
 /_docs/readme.de.md | Deutsche Dokumentation.
 /_docs/readme.en.md | Englische Dokumentation.
@@ -300,28 +300,28 @@ Datei | Beschreibung
 /vault/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/cache/ | Cache-Verzeichnis (für temporäre Daten).
 /vault/cache/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/cli.inc | CLI-Handler.
-/vault/config.inc | Konfiguration-Handler.
-/vault/controls.inc | Kontrollen-Handler.
-/vault/functions.inc | Funktionen-Datei.
+/vault/cli.php | CLI-Handler.
+/vault/config.php | Konfiguration-Handler.
+/vault/controls.php | Kontrollen-Handler.
+/vault/functions.php | Funktionen-Datei.
 /vault/greylist.csv | CSV der Signaturen in der Greylist, die phpMussel ignorieren soll (Datei wird nach dem Löschen automatisch neu erstellt).
-/vault/lang.inc | Sprachdateien.
+/vault/lang.php | Sprachdateien.
 /vault/lang/ | Enthält Sprachdaten für phpMussel.
 /vault/lang/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/lang/lang.ar.inc | Arabische Sprachdateien.
-/vault/lang/lang.de.inc | Deutsche Sprachdateien.
-/vault/lang/lang.en.inc | Englische Sprachdateien.
-/vault/lang/lang.es.inc | Spanische Sprachdateien.
-/vault/lang/lang.fr.inc | Französische Sprachdateien.
-/vault/lang/lang.id.inc | Indonesische Sprachdateien.
-/vault/lang/lang.it.inc | Italienische Sprachdateien.
-/vault/lang/lang.ja.inc | Japanische Sprachdateien.
-/vault/lang/lang.nl.inc | Niederländische Sprachdateien.
-/vault/lang/lang.pt.inc | Portugiesische Sprachdateien.
-/vault/lang/lang.ru.inc | Russische Sprachdateien.
-/vault/lang/lang.vi.inc | Vietnamesische Sprachdateien.
-/vault/lang/lang.zh-TW.inc | Chinesische Sprachdateien (traditionell).
-/vault/lang/lang.zh.inc | Chinesische Sprachdateien (vereinfacht).
+/vault/lang/lang.ar.php | Arabische Sprachdateien.
+/vault/lang/lang.de.php | Deutsche Sprachdateien.
+/vault/lang/lang.en.php | Englische Sprachdateien.
+/vault/lang/lang.es.php | Spanische Sprachdateien.
+/vault/lang/lang.fr.php | Französische Sprachdateien.
+/vault/lang/lang.id.php | Indonesische Sprachdateien.
+/vault/lang/lang.it.php | Italienische Sprachdateien.
+/vault/lang/lang.ja.php | Japanische Sprachdateien.
+/vault/lang/lang.nl.php | Niederländische Sprachdateien.
+/vault/lang/lang.pt.php | Portugiesische Sprachdateien.
+/vault/lang/lang.ru.php | Russische Sprachdateien.
+/vault/lang/lang.vi.php | Vietnamesische Sprachdateien.
+/vault/lang/lang.zh-TW.php | Chinesische Sprachdateien (traditionell).
+/vault/lang/lang.zh.php | Chinesische Sprachdateien (vereinfacht).
 /vault/phpmussel.ini | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von phpMussel (absolut notwendig)!
 /vault/quarantine/ | Quarantäne-Verzeichnis (enthält Dateien in Quarantäne).
 /vault/quarantine/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
@@ -452,8 +452,8 @@ Datei | Beschreibung
 /vault/template.html | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
 /vault/template_custom.html | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
 /vault/update.dat | Datei beinhaltet Versionsinformationen des Scripts und der Signaturen. Diese Datei ist notwendig, wenn Sie phpMussel automatisch oder mittels Browser aktualisieren wollen.
-/vault/update.inc | Update Script; Wird nur für die automatische und manuelle Aktualisierung mittels Browser benötigt.
-/vault/upload.inc | Upload-Handler.
+/vault/update.php | Update Script; Wird nur für die automatische und manuelle Aktualisierung mittels Browser benötigt.
+/vault/upload.php | Upload-Handler.
 
 ※ Der Dateiname kann je nach Konfiguratuion in der `phpmussel.ini` variieren.
 
@@ -990,4 +990,4 @@ Diese Informationen wurden zuletzt am 25. Februar 2016 aktualisiert und gelten f
 ---
 
 
-Zuletzt aktualisiert: 6. März 2016 (2016.03.06).
+Zuletzt aktualisiert: 18. März 2016 (2016.03.18).

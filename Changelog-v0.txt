@@ -75,11 +75,20 @@ entries will be deleted when those goals have been achieved.
 - [phpMussel => v1.0.0] Investigate possible future project directions.
   Refer github.com/phpMussel/universe/issues/13
 
+- [phpMussel => v1.0.0] Abstract the phpMussel configuration from the current
+  "INI" naming convention to a "hidden gem" for Apache (".htsecurity", etc).
+
 
 
 === Changes made since last versioned release ===
 
-(none)
+- [2016.03.18; Documentation]: "/_docs/change_log.txt" renamed to
+  "/Changelog-v0.txt" (this also helps prep for the next major version release,
+  whereby => v1.0.0 can use a "/Changelog-v1.txt" to distinguish it from the
+  previous major version).
+
+- [2016.03.18; Minor code change; Maikuolan]: Renamed all "INC" files to "PHP"
+  files and changed all references to them accordingly.
 
 === Version/Release 0.10.0 ===
 MINOR RELEASE (CVDs: +55+21419+10).

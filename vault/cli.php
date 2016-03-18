@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: phpMussel CLI handler (last modified: 2016.02.15).
+ * This file: phpMussel CLI handler (last modified: 2016.03.18).
  *
  * @package Maikuolan/phpMussel
  */
@@ -550,10 +550,10 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             echo "\n";
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
             $is_cli = true;
-            if (!file_exists($phpMussel['vault'] . 'update.inc')) {
+            if (!file_exists($phpMussel['vault'] . 'update.php')) {
                 echo $phpMussel['Config']['lang']['update_scriptfile_missing'];
             } else {
-                require $phpMussel['vault'] . 'update.inc';
+                require $phpMussel['vault'] . 'update.php';
                 echo "\n" . $phpMussel['Config']['lang']['cli_update_restart'];
             }
         }

@@ -209,7 +209,7 @@ enable
 
 update
 - Wachtwoord vereist: `script_password`
-- Andere vereisten: `update.dat` en `update.inc` moet bestaan
+- Andere vereisten: `update.dat` en `update.php` moet bestaan
 - Andere vereisten: (geen)
 - Optionele parameters: (geen)
 - Voorbeeld: `?pword=[script_password]&phpmussel=update`
@@ -258,6 +258,7 @@ Het volgende is een lijst van alle bestanden die moeten worden opgenomen in de g
 Bestand | Beschrijving
 ----|----
 /.gitattributes | Een GitHub project bestand (niet vereist voor een goede werking van het script).
+/Changelog-v0.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
 /composer.json | Composer/Packagist informatie (niet vereist voor een goede werking van het script).
 /CONTRIBUTING.md | Informatie over hoe bij te dragen aan het project.
 /LICENSE.txt | Een kopie van de GNU/GPLv2 licentie.
@@ -266,7 +267,6 @@ Bestand | Beschrijving
 /README.md | Project beknopte informatie.
 /web.config | Een ASP.NET-configuratiebestand (in dit geval, naar het bestandsmap "vault" te beschermen tegen toegang door niet-geautoriseerde bronnen indien het script is geïnstalleerd op een server op basis van ASP.NET technologieën).
 /_docs/ | Documentatie bestandsmap (bevat verschillende bestanden).
-/_docs/change_log.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
 /_docs/readme.ar.md | Arabisch documentatie.
 /_docs/readme.de.md | Duitse documentatie.
 /_docs/readme.en.md | Engels documentatie.
@@ -300,28 +300,28 @@ Bestand | Beschrijving
 /vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/cache/ | Cache bestandsmap (tijdelijke data).
 /vault/cache/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/cli.inc | CLI handler.
-/vault/config.inc | Configuratie handler.
-/vault/controls.inc | Controls handler.
-/vault/functions.inc | Functies bestand (essentieel).
+/vault/cli.php | CLI handler.
+/vault/config.php | Configuratie handler.
+/vault/controls.php | Controls handler.
+/vault/functions.php | Functies bestand (essentieel).
 /vault/greylist.csv | CSV van greylisted handtekeningen aangeeft om phpMussel waarop handtekeningen moet worden negeren (bestand automatisch aangemaakt opnieuw als verwijderd).
-/vault/lang.inc | Taal-handler.
+/vault/lang.php | Taal-handler.
 /vault/lang/ | Bevat phpMussel taaldata/taalgegevens.
 /vault/lang/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/lang/lang.ar.inc | Arabisch taaldata/taalgegevens.
-/vault/lang/lang.de.inc | Duitse taaldata/taalgegevens.
-/vault/lang/lang.en.inc | Engels taaldata/taalgegevens.
-/vault/lang/lang.es.inc | Spaanse taaldata/taalgegevens.
-/vault/lang/lang.fr.inc | Franse taaldata/taalgegevens.
-/vault/lang/lang.id.inc | Indonesisch taaldata/taalgegevens.
-/vault/lang/lang.it.inc | Italiaanse taaldata/taalgegevens.
-/vault/lang/lang.ja.inc | Japanse taaldata/taalgegevens.
-/vault/lang/lang.nl.inc | Nederlandse taaldata/taalgegevens.
-/vault/lang/lang.pt.inc | Portugees taaldata/taalgegevens.
-/vault/lang/lang.ru.inc | Russische taaldata/taalgegevens.
-/vault/lang/lang.vi.inc | Vietnamees taaldata/taalgegevens.
-/vault/lang/lang.zh-TW.inc | Chinees (Traditioneel) taaldata/taalgegevens.
-/vault/lang/lang.zh.inc | Chinees (Vereenvoudigd) taaldata/taalgegevens.
+/vault/lang/lang.ar.php | Arabisch taaldata/taalgegevens.
+/vault/lang/lang.de.php | Duitse taaldata/taalgegevens.
+/vault/lang/lang.en.php | Engels taaldata/taalgegevens.
+/vault/lang/lang.es.php | Spaanse taaldata/taalgegevens.
+/vault/lang/lang.fr.php | Franse taaldata/taalgegevens.
+/vault/lang/lang.id.php | Indonesisch taaldata/taalgegevens.
+/vault/lang/lang.it.php | Italiaanse taaldata/taalgegevens.
+/vault/lang/lang.ja.php | Japanse taaldata/taalgegevens.
+/vault/lang/lang.nl.php | Nederlandse taaldata/taalgegevens.
+/vault/lang/lang.pt.php | Portugees taaldata/taalgegevens.
+/vault/lang/lang.ru.php | Russische taaldata/taalgegevens.
+/vault/lang/lang.vi.php | Vietnamees taaldata/taalgegevens.
+/vault/lang/lang.zh-TW.php | Chinees (Traditioneel) taaldata/taalgegevens.
+/vault/lang/lang.zh.php | Chinees (Vereenvoudigd) taaldata/taalgegevens.
 /vault/phpmussel.ini | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (essentiële)!
 /vault/quarantine/ | Quarantaine bestandsmap (bestanden in quarantaine bevat).
 /vault/quarantine/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
@@ -452,8 +452,8 @@ Bestand | Beschrijving
 /vault/template.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
 /vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
 /vault/update.dat | Bestand met versie-informatie voor zowel de phpMussel script en de phpMussel handtekeningen. Als u ooit wilt te automatisch update phpMussel of willen phpMussel updaten via uw browser, dit bestand is essentieel.
-/vault/update.inc | Update Script; Vereist voor automatische updates en voor het bijwerken van phpMussel via uw browser, maar niet anders vereist.
-/vault/upload.inc | Upload handler.
+/vault/update.php | Update Script; Vereist voor automatische updates en voor het bijwerken van phpMussel via uw browser, maar niet anders vereist.
+/vault/upload.php | Upload handler.
 
 ※ Bestandsnaam kan verschillen, afhankelijk van de configuratie bedingen (van `phpmussel.ini`).
 
@@ -992,4 +992,4 @@ Dit informatie werd laatst bijgewerkt 25 Februari 2016 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 6 Maart 2016 (2016.03.06).
+Laatste Bijgewerkt: 18 Maart 2016 (2016.03.18).

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: phpMussel loader (last modified: 2016.02.15).
+ * This file: phpMussel loader (last modified: 2016.03.18).
  *
  * @package Maikuolan/phpMussel
  */
@@ -63,20 +63,20 @@ if (!defined('phpMussel')) {
     $phpMussel['sigPath'] = $phpMussel['vault'] . 'signatures/';
 
     /** Check if the configuration handler exists; If it doesn't, kill the script. */
-    if (!file_exists($phpMussel['vault'] . 'config.inc')) {
+    if (!file_exists($phpMussel['vault'] . 'config.php')) {
         header('Content-Type: text/plain');
         die('[phpMussel] Configuration handler missing! Please reinstall phpMussel.');
     }
     /** Load the configuration handler. */
-    require $phpMussel['vault'] . 'config.inc';
+    require $phpMussel['vault'] . 'config.php';
 
     /** Check if the language handler exists; If it doesn't, kill the script. */
-    if (!file_exists($phpMussel['vault'] . 'lang.inc')) {
+    if (!file_exists($phpMussel['vault'] . 'lang.php')) {
         header('Content-Type: text/plain');
         die('[phpMussel] Language handler missing! Please reinstall phpMussel.');
     }
     /** Load the language handler. */
-    require $phpMussel['vault'] . 'lang.inc';
+    require $phpMussel['vault'] . 'lang.php';
 
     /** Halts and/or kills the script if an update is in progress. */
     while (file_exists($phpMussel['vault'] . 'update.lck')) {
@@ -142,13 +142,13 @@ if (!defined('phpMussel')) {
     if (!$phpMussel['disable_lock'] = file_exists($phpMussel['vault'] . 'disable.lck')) {
 
         /** Check if the functions file exists; If it doesn't, kill the script. */
-        if (!file_exists($phpMussel['vault'] . 'functions.inc')) {
+        if (!file_exists($phpMussel['vault'] . 'functions.php')) {
             header('Content-Type: text/plain');
             die('[phpMussel] ' . $phpMussel['Config']['lang']['core_scriptfile_missing']);
         }
 
         /** Load the functions file. */
-        require $phpMussel['vault'] . 'functions.inc';
+        require $phpMussel['vault'] . 'functions.php';
 
         /** Plugins are detected and processed by phpMussel here. */
         $phpMussel['MusselPlugins'] = array();
@@ -191,8 +191,8 @@ if (!defined('phpMussel')) {
      */
     if (!file_exists($phpMussel['vault'] . 'controls.lck')) {
         if ($phpMussel['Mussel_sapi'] !== 'cli') {
-            if (file_exists($phpMussel['vault'] . 'controls.inc')) {
-                require $phpMussel['vault'] . 'controls.inc';
+            if (file_exists($phpMussel['vault'] . 'controls.php')) {
+                require $phpMussel['vault'] . 'controls.php';
             }
         }
     }
@@ -208,8 +208,8 @@ if (!defined('phpMussel')) {
          * Skip this check if we're in CLI-mode.
          */
         if ($phpMussel['Mussel_sapi'] !== 'cli') {
-            if (file_exists($phpMussel['vault'] . 'upload.inc')) {
-                require $phpMussel['vault'] . 'upload.inc';
+            if (file_exists($phpMussel['vault'] . 'upload.php')) {
+                require $phpMussel['vault'] . 'upload.php';
             }
         }
 
@@ -218,8 +218,8 @@ if (!defined('phpMussel')) {
          * Skip this check if we're NOT in CLI-mode.
          */
         if ($phpMussel['Mussel_sapi'] === 'cli') {
-            if (file_exists($phpMussel['vault'] . 'cli.inc')) {
-                require $phpMussel['vault'] . 'cli.inc';
+            if (file_exists($phpMussel['vault'] . 'cli.php')) {
+                require $phpMussel['vault'] . 'cli.php';
             }
         }
 

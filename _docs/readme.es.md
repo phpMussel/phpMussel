@@ -209,7 +209,7 @@ enable
 
 update
 - Contraseña necesario: `script_password`
-- Otros requisitos: `update.dat` y `update.inc` deben existir.
+- Otros requisitos: `update.dat` y `update.php` deben existir.
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
 - Ejemplo: `?pword=[script_password]&phpmussel=update`
@@ -258,6 +258,7 @@ La siguiente es una lista de todos los archivos que debería haberse incluido en
 Archivo | Descripción
 ----|----
 /.gitattributes | Un archivo de la GitHub proyecto (no se requiere para usar la script).
+/Changelog-v0.txt | Un registro de los cambios realizados en la principal script entre las diferentes versiones (no se requiere para usar la script).
 /composer.json | Composer/Packagist información (no se requiere para usar la script).
 /CONTRIBUTING.md | Información en respecto a cómo contribuir al proyecto.
 /LICENSE.txt | Una copia de la GNU/GPLv2 licencia.
@@ -266,7 +267,6 @@ Archivo | Descripción
 /README.md | Sumario información del proyecto.
 /web.config | Un ASP.NET configuración archivo (en este caso, para proteger la `/vault` directorio contra el acceso de fuentes no autorizadas en el caso de que la script está instalado en un servidor basado en ASP.NET tecnologías).
 /_docs/ | Documentación directorio (contiene varios archivos).
-/_docs/change_log.txt | Un registro de los cambios realizados en la principal script entre las diferentes versiones (no se requiere para usar la script).
 /_docs/readme.ar.md | Documentación Árabe.
 /_docs/readme.de.md | Documentación Alemán.
 /_docs/readme.en.md | Documentación Inglés.
@@ -300,28 +300,28 @@ Archivo | Descripción
 /vault/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/cache/ | Cache directorio (para los datos temporal).
 /vault/cache/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
-/vault/cli.inc | Módulo de la CLI.
-/vault/config.inc | Módulo de configuración.
-/vault/controls.inc | Módulo de controles.
-/vault/functions.inc | Archivo de funciones (esencial).
+/vault/cli.php | Módulo de la CLI.
+/vault/config.php | Módulo de configuración.
+/vault/controls.php | Módulo de controles.
+/vault/functions.php | Archivo de funciones (esencial).
 /vault/greylist.csv | CSV de las firmas en la Greylist indicando para phpMussel las firmas que deben ser ignorados (archivo será recreado automáticamente si eliminado).
-/vault/lang.inc | Lingüísticos datos.
+/vault/lang.php | Lingüísticos datos.
 /vault/lang/ | Contiene lingüísticos datos.
 /vault/lang/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
-/vault/lang/lang.ar.inc | Lingüísticos datos Árabe.
-/vault/lang/lang.de.inc | Lingüísticos datos Alemán.
-/vault/lang/lang.en.inc | Lingüísticos datos Inglés.
-/vault/lang/lang.es.inc | Lingüísticos datos Español.
-/vault/lang/lang.fr.inc | Lingüísticos datos Francés.
-/vault/lang/lang.id.inc | Lingüísticos datos Indonesio.
-/vault/lang/lang.it.inc | Lingüísticos datos Italiano.
-/vault/lang/lang.ja.inc | Lingüísticos datos Japonés.
-/vault/lang/lang.nl.inc | Lingüísticos datos Holandés.
-/vault/lang/lang.pt.inc | Lingüísticos datos Portugués.
-/vault/lang/lang.ru.inc | Lingüísticos datos Ruso.
-/vault/lang/lang.vi.inc | Lingüísticos datos Vietnamita.
-/vault/lang/lang.zh-TW.inc | Lingüísticos datos Chino (Tradicional).
-/vault/lang/lang.zh.inc | Lingüísticos datos Chino (Simplificado).
+/vault/lang/lang.ar.php | Lingüísticos datos Árabe.
+/vault/lang/lang.de.php | Lingüísticos datos Alemán.
+/vault/lang/lang.en.php | Lingüísticos datos Inglés.
+/vault/lang/lang.es.php | Lingüísticos datos Español.
+/vault/lang/lang.fr.php | Lingüísticos datos Francés.
+/vault/lang/lang.id.php | Lingüísticos datos Indonesio.
+/vault/lang/lang.it.php | Lingüísticos datos Italiano.
+/vault/lang/lang.ja.php | Lingüísticos datos Japonés.
+/vault/lang/lang.nl.php | Lingüísticos datos Holandés.
+/vault/lang/lang.pt.php | Lingüísticos datos Portugués.
+/vault/lang/lang.ru.php | Lingüísticos datos Ruso.
+/vault/lang/lang.vi.php | Lingüísticos datos Vietnamita.
+/vault/lang/lang.zh-TW.php | Lingüísticos datos Chino (Tradicional).
+/vault/lang/lang.zh.php | Lingüísticos datos Chino (Simplificado).
 /vault/phpmussel.ini | Archivo de configuración; Contiene todas las opciones de configuración para phpMussel, instruyendo para qué hacer y cómo operar correctamente (esencial)!
 /vault/quarantine/ | Directorio de cuarentena (contiene los cuarentenadas archivos).
 /vault/quarantine/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
@@ -452,8 +452,8 @@ Archivo | Descripción
 /vault/template.html | Template archivo; Plantilla para HTML salida producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
 /vault/template_custom.html | Template archivo; Plantilla para HTML salida producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
 /vault/update.dat | Archivo que contiene la versión información tanto para la phpMussel script y para la phpMussel firmas. Si alguna vez desea actualizar automáticamente phpMussel o desea actualizar phpMussel través de su navegador, este archivo es esencial.
-/vault/update.inc | Actualización Script; Requerido para automáticas actualizaciones y para actualizando phpMussel través de su navegador, pero no es requerido por lo demás.
-/vault/upload.inc | Módulo de carga.
+/vault/update.php | Actualización Script; Requerido para automáticas actualizaciones y para actualizando phpMussel través de su navegador, pero no es requerido por lo demás.
+/vault/upload.php | Módulo de carga.
 
 ※ Nombre del archivo puede variar basado de las estipulaciones de configuración (en `phpmussel.ini`).
 
@@ -991,4 +991,4 @@ Esta información ha sido actualizado 25 Febrero 2016 y es a hoy para todas las 
 ---
 
 
-Última Actualización: 6 Marzo 2016 (2016.03.06).
+Última Actualización: 18 Marzo 2016 (2016.03.18).

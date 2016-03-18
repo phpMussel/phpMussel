@@ -209,7 +209,7 @@ enable
 
 update
 - Mot de passe requis: `script_password`
-- Autre exigences: `update.dat` et `update.inc` doivent exister.
+- Autre exigences: `update.dat` et `update.php` doivent exister.
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
 - Exemple: `?pword=[script_password]&phpmussel=update`
@@ -258,6 +258,7 @@ Voici une liste de tous les fichiers inclus dans phpMussel dans son natif état,
 Fichier | Description
 ----|----
 /.gitattributes | Un fichier du GitHub projet (pas nécessaire pour le bon fonctionnement du script).
+/Changelog-v0.txt | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
 /composer.json | Composer/Packagist information (pas nécessaire pour le bon fonctionnement du script).
 /CONTRIBUTING.md | Informations sur la façon de contribuer au projet.
 /LICENSE.txt | Une copie de la GNU/GPLv2 license.
@@ -266,7 +267,6 @@ Fichier | Description
 /README.md | Sommaire de l'information du projet.
 /web.config | Un ASP.NET fichier de configuration (dans ce cas, pour protéger de la `/vault` répertoire contre d'être consulté par des non autorisée sources dans le cas où le script est installé sur un serveur basé sur les ASP.NET technologies).
 /_docs/ | Documentation répertoire (contient divers fichiers).
-/_docs/change_log.txt | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
 /_docs/readme.ar.md | Documentation en Arabe.
 /_docs/readme.de.md | Documentation en Allemand.
 /_docs/readme.en.md | Documentation en Anglais.
@@ -300,28 +300,28 @@ Fichier | Description
 /vault/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/cache/ | Cache répertoire (pour les données temporaires).
 /vault/cache/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
-/vault/cli.inc | Module de CLI.
-/vault/config.inc | Module de configuration.
-/vault/controls.inc | Module de contrôles.
-/vault/functions.inc | Fichier de fonctions (essentiel).
+/vault/cli.php | Module de CLI.
+/vault/config.php | Module de configuration.
+/vault/controls.php | Module de contrôles.
+/vault/functions.php | Fichier de fonctions (essentiel).
 /vault/greylist.csv | CSV de grise listé signatures indiquant pour phpMussel qui signatures il faut ignorer (fichier recréé automatiquement si supprimé).
-/vault/lang.inc | Module de linguistiques.
+/vault/lang.php | Module de linguistiques.
 /vault/lang/ | Contient linguistiques données.
 /vault/lang/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
-/vault/lang/lang.ar.inc | Linguistiques données en Arabe.
-/vault/lang/lang.de.inc | Linguistiques données en Allemand.
-/vault/lang/lang.en.inc | Linguistiques données en Anglais.
-/vault/lang/lang.es.inc | Linguistiques données en Espagnol.
-/vault/lang/lang.fr.inc | Linguistiques données en Français.
-/vault/lang/lang.id.inc | Linguistiques données en Indonésien.
-/vault/lang/lang.it.inc | Linguistiques données en Italien.
-/vault/lang/lang.ja.inc | Linguistiques données en Japonais.
-/vault/lang/lang.nl.inc | Linguistiques données en Néerlandais.
-/vault/lang/lang.pt.inc | Linguistiques données en Portugais.
-/vault/lang/lang.ru.inc | Linguistiques données en Russe.
-/vault/lang/lang.vi.inc | Linguistiques données en Vietnamien.
-/vault/lang/lang.zh-TW.inc | Linguistiques données en Chinois (Traditionnel).
-/vault/lang/lang.zh.inc | Linguistiques données en Chinois (Simplifié).
+/vault/lang/lang.ar.php | Linguistiques données en Arabe.
+/vault/lang/lang.de.php | Linguistiques données en Allemand.
+/vault/lang/lang.en.php | Linguistiques données en Anglais.
+/vault/lang/lang.es.php | Linguistiques données en Espagnol.
+/vault/lang/lang.fr.php | Linguistiques données en Français.
+/vault/lang/lang.id.php | Linguistiques données en Indonésien.
+/vault/lang/lang.it.php | Linguistiques données en Italien.
+/vault/lang/lang.ja.php | Linguistiques données en Japonais.
+/vault/lang/lang.nl.php | Linguistiques données en Néerlandais.
+/vault/lang/lang.pt.php | Linguistiques données en Portugais.
+/vault/lang/lang.ru.php | Linguistiques données en Russe.
+/vault/lang/lang.vi.php | Linguistiques données en Vietnamien.
+/vault/lang/lang.zh-TW.php | Linguistiques données en Chinois (Traditionnel).
+/vault/lang/lang.zh.php | Linguistiques données en Chinois (Simplifié).
 /vault/phpmussel.ini | Fichier de configuration; Contient toutes les options de configuration pour phpMussel, pour comment fonctionner correctement (essentiel)!
 /vault/quarantine/ | Quarantaine répertoire (contient des fichiers de la quarantaine).
 /vault/quarantine/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
@@ -452,8 +452,8 @@ Fichier | Description
 /vault/template.html | Modèle fichier; Modèle pour l'HTML sortie produit par phpMussel pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /vault/template_custom.html | Modèle fichier; Modèle pour l'HTML sortie produit par phpMussel pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /vault/update.dat | Fichier contenant les version informations pour le script et les signatures de phpMussel. Si jamais vous voulez à réactualiser automatiquement phpMussel ou réactualiser phpMussel par votre navigateur, ce fichier est indispensable.
-/vault/update.inc | Réactualiser Script; Requis pour automatique réactualisation et pour réactualisation phpMussel par votre navigateur, mais n'est pas autrement requise.
-/vault/upload.inc | Module de téléchargements.
+/vault/update.php | Réactualiser Script; Requis pour automatique réactualisation et pour réactualisation phpMussel par votre navigateur, mais n'est pas autrement requise.
+/vault/upload.php | Module de téléchargements.
 
 ※ Noms du fichiers peut varier basé sur configuration stipulations (dans `phpmussel.ini`).
 
@@ -992,4 +992,4 @@ Cette information a été réactualisé le 25 Février 2016 et est courant pour 
 ---
 
 
-Dernière Réactualisé: 6 Mars 2016 (2016.03.06).
+Dernière Réactualisé: 18 Mars 2016 (2016.03.18).

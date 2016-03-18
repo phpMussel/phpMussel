@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: phpMussel controls handler (last modified: 2016.02.18).
+ * This file: phpMussel controls handler (last modified: 2016.03.18).
  *
  * @package Maikuolan/phpMussel
  */
@@ -251,10 +251,10 @@ if (
 
     /** Calls the update handler. */
     if ($phpMussel['controls']['command'] == 'update') {
-        if (!file_exists($phpMussel['vault'] . 'update.inc')) {
+        if (!file_exists($phpMussel['vault'] . 'update.php')) {
             die('[phpMussel]' . $phpMussel['Config']['lang']['update_scriptfile_missing']);
         }
-        require $phpMussel['vault'] . 'update.inc';
+        require $phpMussel['vault'] . 'update.php';
         die;
     }
 

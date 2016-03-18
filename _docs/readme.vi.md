@@ -209,7 +209,7 @@ enable
 
 update
 - Mật khẩu cần thiết: `script_password`
-- Các yêu cầu khác: `update.dat` and `update.inc` must exist.
+- Các yêu cầu khác: `update.dat` and `update.php` must exist.
 - Thông số cần thiết: (không có gì)
 - Thông số không bắt buộc: (không có gì)
 - Thí dụ: `?pword=[script_password]&phpmussel=update`
@@ -258,6 +258,7 @@ Sau đây là một list of all of the files that should have been included in t
 Tập tin | Chi tiết
 ----|----
 /.gitattributes | Tập tin dự án cho GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
+/Changelog-v0.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
 /composer.json | Thông tin về dự án cho Composer/Packagist (không cần thiết cho chức năng phù hợp của kịch bản).
 /CONTRIBUTING.md | Thông tin về làm thế nào để đóng góp cho dự án.
 /LICENSE.txt | Bản sao của giấy phép GNU/GPLv2.
@@ -266,7 +267,6 @@ Tập tin | Chi tiết
 /README.md | Thông tin tóm tắt dự án.
 /web.config | Tập tin cấu hình của ASP.NET (trong trường hợp này, để bảo vệ `/vault` thư mực khỏi bị truy cập bởi những nguồn không có quền trong trường hợp bản được cài trên serever chạy trên công nghệ ASP.NET).
 /_docs/ | Thư mực tài liệu (chứa nhiều loại tập tin).
-/_docs/change_log.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
 /_docs/readme.ar.md | Tài liệu tiếng Ả Rập.
 /_docs/readme.de.md | Tài liệu tiếng Đức.
 /_docs/readme.en.md | Tài liệu tiếng Anh.
@@ -300,28 +300,28 @@ Tập tin | Chi tiết
 /vault/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/cache/ | Cache thư mục (cho dữ liệu tạm thời).
 /vault/cache/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
-/vault/cli.inc | Tập tin cho xử lý CLI.
-/vault/config.inc | Tập tin cho xử lý cấu hình.
-/vault/controls.inc | Tập tin cho xử lý lệnh cho.
-/vault/functions.inc | Tập tin cho chức năng.
+/vault/cli.php | Tập tin cho xử lý CLI.
+/vault/config.php | Tập tin cho xử lý cấu hình.
+/vault/controls.php | Tập tin cho xử lý lệnh cho.
+/vault/functions.php | Tập tin cho chức năng.
 /vault/greylist.csv | Tập tin CSV cho danh sách xám chử ký chỉ thị cho phpMussel cái nào chử ký nó phải được bỏ qua (tập tin tự động tạo lại nếu xóa).
-/vault/lang.inc | Dữ liệu tiếng.
+/vault/lang.php | Dữ liệu tiếng.
 /vault/lang/ | Chứa dữ liệu tiếng phpMussel.
 /vault/lang/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
-/vault/lang/lang.ar.inc | Dữ liệu tiếng Ả Rập.
-/vault/lang/lang.de.inc | Dữ liệu tiếng Đức.
-/vault/lang/lang.en.inc | Dữ liệu tiếng Anh.
-/vault/lang/lang.es.inc | Dữ liệu tiếng Tây Ban Nha.
-/vault/lang/lang.fr.inc | Dữ liệu tiếng Pháp.
-/vault/lang/lang.id.inc | Dữ liệu tiếng Indonesia.
-/vault/lang/lang.it.inc | Dữ liệu tiếng Ý.
-/vault/lang/lang.ja.inc | Dữ liệu tiếng Nhật.
-/vault/lang/lang.nl.inc | Dữ liệu tiếng Hà Lan.
-/vault/lang/lang.pt.inc | Dữ liệu tiếng Bồ Đào Nha.
-/vault/lang/lang.ru.inc | Dữ liệu tiếng Nga.
-/vault/lang/lang.vi.inc | Dữ liệu tiếng Việt.
-/vault/lang/lang.zh-TW.inc | Dữ liệu tiếng Trung Quốc (Truyền Thống).
-/vault/lang/lang.zh.inc | Dữ liệu tiếng Trung Quốc (Giản Thể).
+/vault/lang/lang.ar.php | Dữ liệu tiếng Ả Rập.
+/vault/lang/lang.de.php | Dữ liệu tiếng Đức.
+/vault/lang/lang.en.php | Dữ liệu tiếng Anh.
+/vault/lang/lang.es.php | Dữ liệu tiếng Tây Ban Nha.
+/vault/lang/lang.fr.php | Dữ liệu tiếng Pháp.
+/vault/lang/lang.id.php | Dữ liệu tiếng Indonesia.
+/vault/lang/lang.it.php | Dữ liệu tiếng Ý.
+/vault/lang/lang.ja.php | Dữ liệu tiếng Nhật.
+/vault/lang/lang.nl.php | Dữ liệu tiếng Hà Lan.
+/vault/lang/lang.pt.php | Dữ liệu tiếng Bồ Đào Nha.
+/vault/lang/lang.ru.php | Dữ liệu tiếng Nga.
+/vault/lang/lang.vi.php | Dữ liệu tiếng Việt.
+/vault/lang/lang.zh-TW.php | Dữ liệu tiếng Trung Quốc (Truyền Thống).
+/vault/lang/lang.zh.php | Dữ liệu tiếng Trung Quốc (Giản Thể).
 /vault/phpmussel.ini | Tập tin cho cấu hình; Chứa tất cả các sự lựa chọn của cấu hình của phpMussel (cần thiết)!
 /vault/quarantine/ | Thư mục kiểm dịch (chứa các tập tin trong kiểm dịch).
 /vault/quarantine/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
@@ -452,8 +452,8 @@ Tập tin | Chi tiết
 /vault/template.html | Tập tin mẫu; Mẫu cho HTML sản xuất qua phpMussel cho các thông điệp tải lên tập tin bị chặn (các thông điệp nhìn thấy bằng người tải lên).
 /vault/template_custom.html | Tập tin mẫu; Mẫu cho HTML sản xuất qua phpMussel cho các thông điệp tải lên tập tin bị chặn (các thông điệp nhìn thấy bằng người tải lên).
 /vault/update.dat | Tập tin có chứa thông tin phiên bản cho kịch bản phpMussel và chữ ký phpMussel. Nếu bạn đã bao giờ muốn cập nhật tự động phpMussel hoặc muốn cập nhật phpMussel qua trình duyệt của bạn, tập tin này là điều cần thiết.
-/vault/update.inc | Kịch bản cập nhật; Cần thiết cho cập nhật tự động và cho cập nhật phpMussel qua trình duyệt của bạn, nhưng không cần thiết cho bất cứ điều gì khác.
-/vault/upload.inc | Tập tin cho xử lý tải lên.
+/vault/update.php | Kịch bản cập nhật; Cần thiết cho cập nhật tự động và cho cập nhật phpMussel qua trình duyệt của bạn, nhưng không cần thiết cho bất cứ điều gì khác.
+/vault/upload.php | Tập tin cho xử lý tải lên.
 
 ※ Tên tài liệu có thể thay đổi tuy theo các quy định của cấu hình (in `phpmussel.ini`).
 
@@ -992,4 +992,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 25 Tháng Hai 201
 ---
 
 
-Lần cuối cập nhật: 12 Tháng Ba 2016 (2016.03.12).
+Lần cuối cập nhật: 18 Tháng Ba 2016 (2016.03.18).

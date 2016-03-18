@@ -209,7 +209,7 @@ enable
 
 update
 - Sandi diharuskan: `script_password`
-- Keperluan lain: `update.dat` dan `update.inc` harus ada.
+- Keperluan lain: `update.dat` dan `update.php` harus ada.
 - Parameter-parameter yang diharuskan: (tidak ada)
 - Parameter-parameter opsional: (tidak ada)
 - Contoh: `?pword=[script_password]&phpmussel=update`
@@ -258,6 +258,7 @@ Berikut list dari semua file yang diikutkan di dalam kopi skrip yang dikompres k
 Data | Deskripsi
 ----|----
 /.gitattributes | Sebuah file proyek GitHub (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/Changelog-v0.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /composer.json | Informasi untuk Composer/Packagist (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /CONTRIBUTING.md | Informasi tentang cara berkontribusi pada proyek.
 /LICENSE.txt | Salinan lisensi GNU/GPLv2.
@@ -266,7 +267,6 @@ Data | Deskripsi
 /README.md | Ringkasan informasi proyek.
 /web.config | Sebuah file konfigurasi ASP.NET (dalam instansi ini, untuk melindungi direktori `/vault` dari pengaksesan oleh sumber-sumber tidak terauthorisasi dalam kejadian yang mana skrip ini diinstal pada server berbasis teknologi ASP.NET).
 /_docs/ | Direktori dokumentasi (berisi bermacam file).
-/_docs/change_log.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /_docs/readme.ar.md | Dokumentasi Bahasa Arab.
 /_docs/readme.de.md | Dokumentasi Bahasa Jerman.
 /_docs/readme.en.md | Dokumentasi Bahasa Inggris.
@@ -300,28 +300,28 @@ Data | Deskripsi
 /vault/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/cache/ | Direktori Cache (untuk file sementara).
 /vault/cache/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/cli.inc | Modul CLI handler.
-/vault/config.inc | Modul konfigurasi.
-/vault/controls.inc | Modul kontrol.
-/vault/functions.inc | Modul fungsi (utama).
+/vault/cli.php | Modul CLI handler.
+/vault/config.php | Modul konfigurasi.
+/vault/controls.php | Modul kontrol.
+/vault/functions.php | Modul fungsi (utama).
 /vault/greylist.csv | CSV terdiri dari tanda tangan daftar abu-abu mengindikasikan phpMussel tanda tangan mana yang harus diabaikan (file automatis diciptakan kembali jika dihapus).
-/vault/lang.inc | File bahasa.
+/vault/lang.php | File bahasa.
 /vault/lang/ | Berisikan file bahasa.
 /vault/lang/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/lang/lang.ar.inc | File Bahasa Arab.
-/vault/lang/lang.de.inc | File Bahasa Jerman.
-/vault/lang/lang.en.inc | File Bahasa Inggris.
-/vault/lang/lang.es.inc | File Bahasa Spanyol.
-/vault/lang/lang.fr.inc | File Bahasa Perancis.
-/vault/lang/lang.id.inc | File Bahasa Indonesia.
-/vault/lang/lang.it.inc | File Bahasa Italia.
-/vault/lang/lang.ja.inc | File Bahasa Jepang.
-/vault/lang/lang.nl.inc | File Bahasa Belanda.
-/vault/lang/lang.pt.inc | File Bahasa Portugis.
-/vault/lang/lang.ru.inc | File Bahasa Rusia.
-/vault/lang/lang.vi.inc | File Bahasa Vietnam.
-/vault/lang/lang.zh-TW.inc | File Bahasa Cina Tradisional.
-/vault/lang/lang.zh.inc | File Bahasa Cina Sederhana.
+/vault/lang/lang.ar.php | File Bahasa Arab.
+/vault/lang/lang.de.php | File Bahasa Jerman.
+/vault/lang/lang.en.php | File Bahasa Inggris.
+/vault/lang/lang.es.php | File Bahasa Spanyol.
+/vault/lang/lang.fr.php | File Bahasa Perancis.
+/vault/lang/lang.id.php | File Bahasa Indonesia.
+/vault/lang/lang.it.php | File Bahasa Italia.
+/vault/lang/lang.ja.php | File Bahasa Jepang.
+/vault/lang/lang.nl.php | File Bahasa Belanda.
+/vault/lang/lang.pt.php | File Bahasa Portugis.
+/vault/lang/lang.ru.php | File Bahasa Rusia.
+/vault/lang/lang.vi.php | File Bahasa Vietnam.
+/vault/lang/lang.zh-TW.php | File Bahasa Cina Tradisional.
+/vault/lang/lang.zh.php | File Bahasa Cina Sederhana.
 /vault/phpmussel.ini | File konfigurasi phpMussel; Berisi semua opsi konfigurasi dari phpMussel, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (utama)!
 /vault/quarantine/ | Direktori karantina (berisikan file yang dikarantina).
 /vault/quarantine/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
@@ -452,8 +452,8 @@ Data | Deskripsi
 /vault/template.html | File template phpMussel; Template untuk output HTML yang diproduksi oleh phpMussel untuk file pesan upload yang dibloknya (pesan dilihat oleh pengupload).
 /vault/template_custom.html | File template phpMussel; Template untuk output HTML yang diproduksi oleh phpMussel untuk file pesan upload yang dibloknya (pesan dilihat oleh pengupload).
 /vault/update.dat | File berisi informasi versi untuk skrip phpMussel dan tanda tangan phpMussel. Jika Anda pernah ingin mengupgrade phpMussel atau ingin mengupdate phpMussel via browser file ini penting.
-/vault/update.inc | Skrip upgrade phpMussel; Diharuskan untuk upgrade otomatis dan untuk mengupgrade phpMussel dengan menggunakan browser Anda, tapi tidak diharuskan juga.
-/vault/upload.inc | Modul upload.
+/vault/update.php | Skrip upgrade phpMussel; Diharuskan untuk upgrade otomatis dan untuk mengupgrade phpMussel dengan menggunakan browser Anda, tapi tidak diharuskan juga.
+/vault/upload.php | Modul upload.
 
 ※ Nama file bisa berbeda berdasarkan ketentuan konfigurasi (di dalam `phpmussel.ini`).
 
@@ -992,4 +992,4 @@ Informasi ini diupdate 25 Februari 2016 dan cocok untuk semua rilis phpMussel da
 ---
 
 
-Terakhir Diperbarui: 6 Maret 2016 (2016.03.06).
+Terakhir Diperbarui: 18 Maret 2016 (2016.03.18).

@@ -210,7 +210,7 @@ enable
 
 update
 - 密碼需要：`script_password`
-- 其他需要：`update.dat`和`update.inc`必須存在。
+- 其他需要：`update.dat`和`update.php`必須存在。
 - 需要參數：不需要
 - 自選參數：不需要
 - 例子：`?pword=[script_password]&phpmussel=update`
@@ -260,6 +260,7 @@ greylist_show
 文件 | 說明
 ----|----
 /.gitattributes | GitHub文件（不需要為正確經營腳本）。
+/Changelog-v0.txt | 記錄的變化做出至腳本間不同版本（不需要為正確經營腳本）。
 /composer.json | Composer/Packagist 信息（不需要為正確經營腳本）。
 /CONTRIBUTING.md | 相關信息如何有助於該項目。
 /LICENSE.txt | GNU/GPLv2 執照文件。
@@ -268,7 +269,6 @@ greylist_show
 /README.md | 項目概要信息。
 /web.config | 一個ASP.NET配置文件（在這種情況，以保護`/vault`文件夾從被訪問由非授權來源在事件的腳本是安裝在服務器根據ASP.NET技術）。
 /_docs/ | 筆記文件夾（包含若干文件）。
-/_docs/change_log.txt | 記錄的變化做出至腳本間不同版本（不需要為正確經營腳本）。
 /_docs/readme.ar.md | 阿拉伯文自述文件。
 /_docs/readme.de.md | 德文自述文件。
 /_docs/readme.en.md | 英文自述文件。
@@ -302,28 +302,28 @@ greylist_show
 /vault/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/cache/ | 緩存｢Cache｣文件夾（為臨時數據）。
 /vault/cache/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
-/vault/cli.inc | CLI處理文件。
-/vault/config.inc | 配置處理文件。
-/vault/controls.inc | 控制處理文件。
-/vault/functions.inc | 功能處理文件（必不可少）。
+/vault/cli.php | CLI處理文件。
+/vault/config.php | 配置處理文件。
+/vault/controls.php | 控制處理文件。
+/vault/functions.php | 功能處理文件（必不可少）。
 /vault/greylist.csv | 灰名單簽名CSV（逗號分隔變量）文件說明為phpMussel什麼簽名它應該忽略（文件自動重新創建如果刪除）。
-/vault/lang.inc | 語音數據。
+/vault/lang.php | 語音數據。
 /vault/lang/ | 包含phpMussel語言數據。
 /vault/lang/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
-/vault/lang/lang.ar.inc | 阿拉伯文語言數據。
-/vault/lang/lang.de.inc | 德文語言數據。
-/vault/lang/lang.en.inc | 英文語言數據。
-/vault/lang/lang.es.inc | 西班牙文語言數據。
-/vault/lang/lang.fr.inc | 法文語言數據。
-/vault/lang/lang.id.inc | 印度尼西亞文語言數據。
-/vault/lang/lang.it.inc | 意大利文語言數據。
-/vault/lang/lang.ja.inc | 日文語言數據。
-/vault/lang/lang.nl.inc | 荷蘭文語言數據。
-/vault/lang/lang.pt.inc | 葡萄牙文語言數據。
-/vault/lang/lang.ru.inc | 俄文語言數據。
-/vault/lang/lang.vi.inc | 越南文語言數據。
-/vault/lang/lang.zh-TW.inc | 中文（傳統）語言數據。
-/vault/lang/lang.zh.inc | 中文（簡體）語言數據。
+/vault/lang/lang.ar.php | 阿拉伯文語言數據。
+/vault/lang/lang.de.php | 德文語言數據。
+/vault/lang/lang.en.php | 英文語言數據。
+/vault/lang/lang.es.php | 西班牙文語言數據。
+/vault/lang/lang.fr.php | 法文語言數據。
+/vault/lang/lang.id.php | 印度尼西亞文語言數據。
+/vault/lang/lang.it.php | 意大利文語言數據。
+/vault/lang/lang.ja.php | 日文語言數據。
+/vault/lang/lang.nl.php | 荷蘭文語言數據。
+/vault/lang/lang.pt.php | 葡萄牙文語言數據。
+/vault/lang/lang.ru.php | 俄文語言數據。
+/vault/lang/lang.vi.php | 越南文語言數據。
+/vault/lang/lang.zh-TW.php | 中文（傳統）語言數據。
+/vault/lang/lang.zh.php | 中文（簡體）語言數據。
 /vault/phpmussel.ini | 配置文件；包含所有配置指令為phpMussel，告訴它什麼做和怎麼正確地經營（必不可少）！
 /vault/quarantine/ | 隔離文件夾（包含隔離文件）。
 /vault/quarantine/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
@@ -454,8 +454,8 @@ greylist_show
 /vault/template.html | 模板文件；模板為HTML產量產生通過phpMussel為它的受阻文件上傳信息（信息可見向上傳者）。
 /vault/template_custom.html | 模板文件；模板為HTML產量產生通過phpMussel為它的受阻文件上傳信息（信息可見向上傳者）。
 /vault/update.dat | 文件包含版本信息為phpMussel的腳本和phpMussel的簽名。如果您隨時需要自動更新phpMussel或需要更新phpMussel通過您的瀏覽器，這個文件是必不可少。
-/vault/update.inc | 更新腳本；需要為自動更新和為更新phpMussel通過您的瀏覽器，但不否則需要。
-/vault/upload.inc | 上傳處理文件。
+/vault/update.php | 更新腳本；需要為自動更新和為更新phpMussel通過您的瀏覽器，但不否則需要。
+/vault/upload.php | 上傳處理文件。
 
 ※ 文件名可能不同基於配置規定（在`phpmussel.ini`）。
 
@@ -995,6 +995,6 @@ URL掃描儀API配置。
 ---
 
 
-最後更新：2016年3月6日。
+最後更新：2016年3月18日。
 
 翻譯聲明：本文檔翻譯基於英文原始文檔，但由於本人水平有限，且非PHP程序員，對其中某些字詞的翻譯可能不是很準確，故如果出現錯誤，請指出並聯繫原作者予以更正，另外，本翻譯僅簡體中文，與繁體中文無關亦未參考繁體中文的譯文！！

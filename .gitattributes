@@ -24,7 +24,3 @@
 *.tar binary
 *.xdp binary
 *.zip binary
-
-# Recognize .inc files as PHP
-
-*.inc linguist-language=PHP

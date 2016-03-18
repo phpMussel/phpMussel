@@ -209,7 +209,7 @@ enable
 
 update
 - Password requisito: `script_password`
-- Altri requisiti: `update.dat` e `update.inc` deve esistere.
+- Altri requisiti: `update.dat` e `update.php` deve esistere.
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
 - Esempio: `?pword=[script_password]&phpmussel=update`
@@ -258,6 +258,7 @@ Il seguente è un elenco di tutti i file che dovrebbero essere incluso nella arc
 File | Descrizione
 ----|----
 /.gitattributes | Un file del GitHub progetto (non richiesto per il corretto funzionamento dello script).
+/Changelog-v0.txt | Un record delle modifiche apportate allo script tra diverse versioni (non richiesto per il corretto funzionamento dello script).
 /composer.json | Composer/Packagist informazioni (non richiesto per il corretto funzionamento dello script).
 /CONTRIBUTING.md | Informazioni su come contribuire al progetto.
 /LICENSE.txt | Una copia della GNU/GPLv2 licenza.
@@ -266,7 +267,6 @@ File | Descrizione
 /README.md | Informazioni di riepilogo del progetto.
 /web.config | Un ASP.NET file di configurazione (in questo caso, a proteggere la `/vault` cartella da l'acceso di non autorizzate origini nel caso che lo script è installato su un server basata su ASP.NET tecnologie).
 /_docs/ | Documentazione cartella (contiene vari file).
-/_docs/change_log.txt | Un record delle modifiche apportate allo script tra diverse versioni (non richiesto per il corretto funzionamento dello script).
 /_docs/readme.ar.md | Arabo documentazione.
 /_docs/readme.de.md | Tedesco documentazione.
 /_docs/readme.en.md | Inglese documentazione.
@@ -300,28 +300,28 @@ File | Descrizione
 /vault/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/cache/ | La cartella della cache (per i dati temporanei).
 /vault/cache/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
-/vault/cli.inc | Gestore di CLI.
-/vault/config.inc | Gestore di configurazione.
-/vault/controls.inc | Gestore dei controlli.
-/vault/functions.inc | File di funzioni.
+/vault/cli.php | Gestore di CLI.
+/vault/config.php | Gestore di configurazione.
+/vault/controls.php | Gestore dei controlli.
+/vault/functions.php | File di funzioni.
 /vault/greylist.csv | CSV di firme indicando per phpMussel cui firme dovrebbero essere ignorato (il file sarà ricreato automaticamente se è cancellato).
-/vault/lang.inc | Linguistici dati.
+/vault/lang.php | Linguistici dati.
 /vault/lang/ | Contiene linguistici dati.
 /vault/lang/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
-/vault/lang/lang.ar.inc | Linguistici dati Araba.
-/vault/lang/lang.de.inc | Linguistici dati Tedesca.
-/vault/lang/lang.en.inc | Linguistici dati Inglese.
-/vault/lang/lang.es.inc | Linguistici dati Spagnola.
-/vault/lang/lang.fr.inc | Linguistici dati Francese.
-/vault/lang/lang.id.inc | Linguistici dati Indonesiana.
-/vault/lang/lang.it.inc | Linguistici dati Italiana.
-/vault/lang/lang.ja.inc | Linguistici dati Giapponese.
-/vault/lang/lang.nl.inc | Linguistici dati Olandese.
-/vault/lang/lang.pt.inc | Linguistici dati Portoghese.
-/vault/lang/lang.ru.inc | Linguistici dati Russa.
-/vault/lang/lang.vi.inc | Linguistici dati Vietnamita.
-/vault/lang/lang.zh-TW.inc | Linguistici dati Cinese (Tradizionale).
-/vault/lang/lang.zh.inc | Linguistici dati Cinese (Semplificata).
+/vault/lang/lang.ar.php | Linguistici dati Araba.
+/vault/lang/lang.de.php | Linguistici dati Tedesca.
+/vault/lang/lang.en.php | Linguistici dati Inglese.
+/vault/lang/lang.es.php | Linguistici dati Spagnola.
+/vault/lang/lang.fr.php | Linguistici dati Francese.
+/vault/lang/lang.id.php | Linguistici dati Indonesiana.
+/vault/lang/lang.it.php | Linguistici dati Italiana.
+/vault/lang/lang.ja.php | Linguistici dati Giapponese.
+/vault/lang/lang.nl.php | Linguistici dati Olandese.
+/vault/lang/lang.pt.php | Linguistici dati Portoghese.
+/vault/lang/lang.ru.php | Linguistici dati Russa.
+/vault/lang/lang.vi.php | Linguistici dati Vietnamita.
+/vault/lang/lang.zh-TW.php | Linguistici dati Cinese (Tradizionale).
+/vault/lang/lang.zh.php | Linguistici dati Cinese (Semplificata).
 /vault/phpmussel.ini | File di configurazione; Contiene tutte l'opzioni di configurazione per phpMussel, dicendogli cosa fare e come operare correttamente (essenziale)!
 /vault/quarantine/ | Quarantena cartella (contiene i file in quarantena).
 /vault/quarantine/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
@@ -452,8 +452,8 @@ File | Descrizione
 /vault/template.html | Template file; Template per l'HTML output prodotto da phpMussel per il suo messaggio di bloccato file caricamento (il messaggio visto dallo caricatore).
 /vault/template_custom.html | Template file; Template per l'HTML output prodotto da phpMussel per il suo messaggio di bloccato file caricamento (il messaggio visto dallo caricatore).
 /vault/update.dat | File contenente informazioni sulla versione sia di phpMussel e le phpMussel firme. Se si desidero automaticamente aggiornare di phpMussel o si desidero l'aggiornare di phpMussel tramite il browser, questo file è essenziale.
-/vault/update.inc | Aggiornare Script; Richiesto per l'automatico aggiornare di phpMussel e per l'aggiornare di phpMussel tramite il browser, ma non richiesto altrimenti.
-/vault/upload.inc | Gestore di caricamenti.
+/vault/update.php | Aggiornare Script; Richiesto per l'automatico aggiornare di phpMussel e per l'aggiornare di phpMussel tramite il browser, ma non richiesto altrimenti.
+/vault/upload.php | Gestore di caricamenti.
 
 ※ Nome del file può variare dipendente di configurazione (in `phpmussel.ini`).
 
@@ -992,4 +992,4 @@ Questa informazione è stato lo scorso aggiornato 25 Febbraio 2016 ed è in cors
 ---
 
 
-Ultimo Aggiornamento: 6 Marzo 2016 (2016.03.06).
+Ultimo Aggiornamento: 18 Marzo 2016 (2016.03.18).

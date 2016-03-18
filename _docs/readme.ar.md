@@ -229,7 +229,7 @@
 <div dir="rtl">update (تحديث)<br /></div>
 <div dir="rtl"><ul>
  <li>كلمة المرور مطلوبة: "script_password"</li>
- <li>متطلبات أخرى: يجب أن تكون update.dat و update.inc موجودة.</li>
+ <li>متطلبات أخرى: يجب أن تكون update.dat و update.php موجودة.</li>
  <li>المعاملات المطلوبة: (لا يوجد)</li>
  <li>المعاملات الاختيارية: (لا يوجد)</li>
  <li>مثال: "?pword=[script_password]&phpmussel=update"</li>
@@ -285,6 +285,7 @@
 الوصف | الملف
 ----|----
 <div dir="rtl" style="display:inline;">أ ملف المشروع GitHub (غير مطلوب لتشغيل سليم للبرنامج).</div> | /.gitattributes
+<div dir="rtl" style="display:inline;">سجل للتغييرات التي أجريت على البرنامج بين التحديثات المختلفة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /Changelog-v0.txt
 <div dir="rtl" style="display:inline;">معلومات Composer/Packagist (غير مطلوب لتشغيل سليم للبرنامج).</div> | /composer.json
 <div dir="rtl" style="display:inline;">معلومات حول كيفية المساهمة في المشروع.</div> | /CONTRIBUTING.md
 <div dir="rtl" style="display:inline;">نسخة من GNU/GPLv2 رخصة.</div> | /LICENSE.txt
@@ -293,7 +294,6 @@
 <div dir="rtl" style="display:inline;">معلومات موجزة المشروع.</div> | /README.md
 <div dir="rtl" style="display:inline;">ملف تكوين ASP.NET (في هذه الحالة , لحماية دليل /vault من أن يتم الوصول إليه بواسطة مصادر غير مأذون لها في حالة إذا ما تم تثبيت البرنامج النصي على ملقم يستند إلى تقنيات ASP.NET</div> | /web.config
 <div dir="rtl" style="display:inline;">دليل الوثائق (يحتوي على ملفات مختلفة).</div> | /_docs/
-<div dir="rtl" style="display:inline;">سجل للتغييرات التي أجريت على البرنامج بين التحديثات المختلفة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /_docs/change_log.txt
 <div dir="rtl" style="display:inline;">الوثائق العربية.</div> | /_docs/readme.ar.md
 <div dir="rtl" style="display:inline;">الوثائق الألمانية.</div> | /_docs/readme.de.md
 <div dir="rtl" style="display:inline;">الوثائق الإنجليزية.</div> | /_docs/readme.en.md
@@ -327,28 +327,28 @@
 <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/.htaccess
 <div dir="rtl" style="display:inline;">دليل ذاكرة التخزين المؤقت (للبيانات المؤقتة).</div> | /vault/cache/
 <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/cache/.htaccess
-<div dir="rtl" style="display:inline;">معالج CLI.</div> | /vault/cli.inc
-<div dir="rtl" style="display:inline;">معالج التكوين.</div> | /vault/config.inc
-<div dir="rtl" style="display:inline;">معالج أوامر.</div> | /vault/controls.inc
-<div dir="rtl" style="display:inline;">ملف وظائف (ضروري).</div> | /vault/functions.inc
+<div dir="rtl" style="display:inline;">معالج CLI.</div> | /vault/cli.php
+<div dir="rtl" style="display:inline;">معالج التكوين.</div> | /vault/config.php
+<div dir="rtl" style="display:inline;">معالج أوامر.</div> | /vault/controls.php
+<div dir="rtl" style="display:inline;">ملف وظائف (ضروري).</div> | /vault/functions.php
 <div dir="rtl" style="display:inline;">ملف CSV توقيعات القائمة الرمادية المشيرة إلى التوقيعات التي ينبغي على "بي اتش بي ماسل" أن يتجاهلها (هذا ملف يتم إعادة إنشاءه تلقائيا إذا حذف).</div> | /vault/greylist.csv
-<div dir="rtl" style="display:inline;">ملف لغة.</div> | /vault/lang.inc
+<div dir="rtl" style="display:inline;">ملف لغة.</div> | /vault/lang.php
 <div dir="rtl" style="display:inline;">يحتوي على بيانات اللغة لـ "بي اتش بي ماسل".</div> | /vault/lang/
 <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/lang/.htaccess
-<div dir="rtl" style="display:inline;">ملفات اللغة العربية.</div> | /vault/lang/lang.ar.inc
-<div dir="rtl" style="display:inline;">ملفات اللغة الألمانية.</div> | /vault/lang/lang.de.inc
-<div dir="rtl" style="display:inline;">ملفات اللغة الإنجليزية.</div> | /vault/lang/lang.en.inc
-<div dir="rtl" style="display:inline;">ملفات اللغة الاسبانية.</div> | /vault/lang/lang.es.inc
-<div dir="rtl" style="display:inline;">ملفات اللغة الفرنسية.</div> | /vault/lang/lang.fr.inc
-<div dir="rtl" style="display:inline;">ملفات اللغة الاندونيسية.</div> | /vault/lang/lang.id.inc
-<div dir="rtl" style="display:inline;">ملفات اللغة الايطالية.</div> | /vault/lang/lang.it.inc
-<div dir="rtl" style="display:inline;">ملفات اللغة اليابانية.</div> | /vault/lang/lang.ja.inc
-<div dir="rtl" style="display:inline;">ملفات اللغة الهولندية.</div> | /vault/lang/lang.nl.inc
-<div dir="rtl" style="display:inline;">ملفات اللغة البرتغالية.</div> | /vault/lang/lang.pt.inc
-<div dir="rtl" style="display:inline;">ملفات اللغة الروسية.</div> | /vault/lang/lang.ru.inc
-<div dir="rtl" style="display:inline;">ملفات اللغة الفيتنامية.</div> | /vault/lang/lang.vi.inc
-<div dir="rtl" style="display:inline;">ملفات اللغة الصينية (المبسطة).</div> | /vault/lang/lang.zh.inc
-<div dir="rtl" style="display:inline;">ملفات اللغة الصينية (التقليدية).</div> | /vault/lang/lang.zh-TW.inc
+<div dir="rtl" style="display:inline;">ملفات اللغة العربية.</div> | /vault/lang/lang.ar.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الألمانية.</div> | /vault/lang/lang.de.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الإنجليزية.</div> | /vault/lang/lang.en.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الاسبانية.</div> | /vault/lang/lang.es.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الفرنسية.</div> | /vault/lang/lang.fr.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الاندونيسية.</div> | /vault/lang/lang.id.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الايطالية.</div> | /vault/lang/lang.it.php
+<div dir="rtl" style="display:inline;">ملفات اللغة اليابانية.</div> | /vault/lang/lang.ja.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الهولندية.</div> | /vault/lang/lang.nl.php
+<div dir="rtl" style="display:inline;">ملفات اللغة البرتغالية.</div> | /vault/lang/lang.pt.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الروسية.</div> | /vault/lang/lang.ru.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الفيتنامية.</div> | /vault/lang/lang.vi.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الصينية (المبسطة).</div> | /vault/lang/lang.zh.php
+<div dir="rtl" style="display:inline;">ملفات اللغة الصينية (التقليدية).</div> | /vault/lang/lang.zh-TW.php
 <div dir="rtl" style="display:inline;">ملف التكوين. يحتوي على جميع خيارات تهيئة "بي اتش بي ماسل"، يخبرك ماذا يفعل وكيف يعمل بشكل صحيح (ضروري)!</div> | /vault/phpmussel.ini
 <div dir="rtl" style="display:inline;">دليل العزل (يحتوي على الملفات المعزولة).</div> | /vault/quarantine/
 <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/quarantine/.htaccess
@@ -479,8 +479,8 @@
 <div dir="rtl" style="display:inline;">ملف القالب. قالب لمخرجات HTML التي تنتجها phpMussel لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template.html
 <div dir="rtl" style="display:inline;">ملف القالب. قالب لمخرجات HTML التي تنتجها phpMussel لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template_custom.html
 <div dir="rtl" style="display:inline;">ملف يحتوي على معلومات الإصدار لبرنامج "بي اتش بي ماسل" وتوقيعاته. إذا كنت تريد في أي وقت عمل تحديثا تلقائيا أو ترغب في تحديثه عن طريق المتصفح فهذا الملف ضروري.</div> | /vault/update.dat
-<div dir="rtl" style="display:inline;">برنامج التحديث ؛ مطلوب للحصول على التحديثات التلقائية وتحديث "بي اتش بي ماسل"عن طريق المتصفح، ولكن ليس مطلوب لغير ذلك.</div> | /vault/update.inc
-<div dir="rtl" style="display:inline;">معالج تحميل.</div> | /vault/upload.inc
+<div dir="rtl" style="display:inline;">برنامج التحديث ؛ مطلوب للحصول على التحديثات التلقائية وتحديث "بي اتش بي ماسل"عن طريق المتصفح، ولكن ليس مطلوب لغير ذلك.</div> | /vault/update.php
+<div dir="rtl" style="display:inline;">معالج تحميل.</div> | /vault/upload.php
 
 <div dir="rtl">※ اسم الملف قد يختلف استنادا إلى نصوص التكوين (في phpmussel.ini).</div>
 
@@ -1022,4 +1022,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 6 مارس 2016 (2016.03.06).</div>
+<div dir="rtl">آخر تحديث: 18 مارس 2016 (2016.03.18).</div>
