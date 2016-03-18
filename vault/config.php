@@ -11,13 +11,13 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: phpMussel configuration handler (last modified: 2016.02.10).
+ * This file: Configuration handler (last modified: 2016.03.18).
  *
  * @package Maikuolan/phpMussel
  */
 
 /** phpMussel version number (SemVer). */
-$phpMussel['ScriptVersion'] = '0.10.0';
+$phpMussel['ScriptVersion'] = '0.11.0-DEV';
 
 /** phpMussel version identifier (complete notation). */
 $phpMussel['ScriptIdent'] = 'phpMussel v' . $phpMussel['ScriptVersion'];

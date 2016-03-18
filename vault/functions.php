@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: phpMussel functions file (last modified: 2016.02.26).
+ * This file: Functions file (last modified: 2016.03.18).
  *
  * @package Maikuolan/phpMussel
  *

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: phpMussel update handler (last modified: 2016.03.18).
+ * This file: Update handler (last modified: 2016.03.18).
  *
  * @package Maikuolan/phpMussel
  *

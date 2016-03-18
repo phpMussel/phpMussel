@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2016.02.10).
+ * This file: English language data (last modified: 2016.03.18).
  *
  * @package Maikuolan/phpMussel
  */

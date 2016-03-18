@@ -75,8 +75,8 @@ entries will be deleted when those goals have been achieved.
 - [phpMussel => v1.0.0] Investigate possible future project directions.
   Refer github.com/phpMussel/universe/issues/13
 
-- [phpMussel => v1.0.0] Abstract the phpMussel configuration from the current
-  "INI" naming convention to a "hidden gem" for Apache (".htsecurity", etc).
+- [phpMussel => v1.0.0] Adopt ".htsecurity" for the configuration file naming
+  convention rather than use the current "phpmussel.ini" naming convention.
 
 
 

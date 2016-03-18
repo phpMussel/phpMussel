@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: phpMussel upload handler (last modified: 2016.02.18).
+ * This file: Upload handler (last modified: 2016.03.18).
  *
  * @package Maikuolan/phpMussel
  */
