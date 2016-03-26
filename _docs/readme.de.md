@@ -93,9 +93,9 @@ phpMussel ist dafür vorgesehen, fast vollständig autonom zu funktionieren, ohn
 
 Das Scannen von Dateiuploads ist automatisiert und standardmäßig eingeschaltet, Sie müssen nichts weiter unternehmen.
 
-Sie sind jedoch auch in der Lage, phpMussel anzuweisen, spezifische Dateien, Ordner und/oder Archive zu scannen. Um dies auszuführen, stellen Sie sicher, dass diese Konfiguration in der `phpmussel.ini` festgelegt ist (`cleanup` muß deaktiviert sein). Erstellen Sie eine mit phpMussel eingebundene PHP-Datei mit folgender Funktion:
+Sie sind jedoch auch in der Lage, phpMussel anzuweisen, spezifische Dateien, Ordner und/oder Archive zu scannen. Um dies auszuführen, stellen Sie sicher, dass diese Konfiguration in der `phpmussel.ini` festgelegt ist (`cleanup` muß deaktiviert sein). Erstellen Sie eine mit phpMussel eingebundene PHP-Datei mit folgender Closure:
 
-`phpMussel($what_to_scan,$output_type,$output_flatness);`
+`$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
 - `$what_to_scan` kann ein String, ein Array oder ein Array von Arrays sein und gibt an, welche Datei, Dateien, Ordner und/oder Ordner gescannt werden sollen.
 - `$output_type` ist ein boolescher Wert und gibt an, in welchem Format die Scan-Ergebnisse zurückgegeben werden sollen. False weist die Funktion an, Ergebnisse als Integer (Ganzzahl) zurückzugeben (ein Rückgabewert von -3 zeigt an, dass es Probleme mit den phpMussel Signatur-Dateien oder Signatur-Map-Dateien gibt und dass sie wahrscheinlich fehlen oder beschädigt sind, -2 zeigt an, dass beschädigte Dateien gefunden wurden und der Scan nicht abgeschlossen wurde, -1 zeigt an, dass fehlende Erweiterungen oder Addons von PHP benötigt werden, um den Scan durchzuführen und der Scan deshalb nicht abgeschlossen wurde, 0 zeigt an, dass das Ziel nicht existiert und somit nichts überprüft werden konnte, 1 zeigt an, dass das Ziel erfolgreich geprüft wurde und keine Probleme erkannt wurden, 2 zeigt an, dass das Ziel erfolgreich geprüft wurde, jedoch Probleme gefunden wurden). True weist die Funktion an, Ergebnisse als lesbaren Text zurückzugeben. Zusätzlich können in beiden Fällen auf die Ergebnisse über globale Variablen nach dem Scannen zugegriffen werden. Diese Variable ist optional und standardmäßig auf false.
@@ -104,7 +104,7 @@ Sie sind jedoch auch in der Lage, phpMussel anzuweisen, spezifische Dateien, Ord
 Beispiel:
 
 ```
- $results=phpMussel('/user_name/public_html/my_file.html',true,true);
+ $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```
 
@@ -122,16 +122,6 @@ Eine vollständige Liste der Signaturen, die phpMussel nutzt und wie diese verar
 Sollten irgendwelche Fehlalarme auftreten, Sie etwas entdecken, was Ihrer Meinung nach blockiert werden sollte oder etwas mit den Signaturen nicht funktionieren, so informieren Sie den Autor, damit die erforderlichen Änderungen durchgeführt werden können.
 
 Um die Signaturen, die in phpMussel enthalten sind, zu deaktivieren, lesen Sie bitte die Hinweise zum Greylisting im Abschnitt BROWSER BEFEHLE.
-
-Zusätzlich zum Überprüfen von hochgeladenen Dateien und dem optionalen Überprüfen von Dateien und Verzeichnissen mittels der oben genannten Funktion, ist in phpMussel eine Funktion enthalten, Textkörper (body) von E-Mails zu überprüfen. Diese Funktion verhält sich ähnlich wie die normalen Scan-Funktionen von phpMussel, ist allerdings auf die E-Mail-Signaturen von ClamAV fokussiert. Diese Signaturen sind nicht in der normalen phpMussel() Funktion eingebunden, da es höchst unwahrscheinlich ist, eine E-Mail auf einer Webseite, in der phpMussel eingebunden ist, innerhalb eines Dateiuploads überprüfen zu müssen. Diese Signaturen in die phpMussel() Funktion einzubinden wäre redundant. Diese separate Funktion ist nützlich für CMS, die mit dem E-Mail-System zusammenarbeiten oder Systeme, die E-Mails mittels PHP analysieren. Diese Funktion wird in der `phpmussel.ini` konfiguriert. Um diese Funktion zu nutzen (Sie benötigen Ihre eigene Implementierung), fügen Sie in eine PHP-Datei, in welcher phpMussel eingebunden ist, folgenden Code hinzu:
-
-`phpMussel_mail($body);`
-
-$body ist der Textkörper (Body) der E-Mail, die Sie überprüfen möchten (zusätzlich können Sie versuchen, neue Forenbeiträge oder eingehende Nachrichten aus einem Formular zu scannen). Tritt ein Fehler auf, wird ein Wert von -1 zurückgegeben. Wurde der Scan beendet und keine Auffälligkeiten festgestellt, gibt die Funktion den Wert 0 zurück. Sollte etwas festgestellt werden, gibt die Funktion einen String mit einer Nachricht, was gefunden wurde, zurück.
-
-Sollten Sie die Quelltexte betrachten, werden Sie die Funktionen phpMusselD() und phpMusselR() auffinden. Diese Funktionen sind Subroutinen von phpMussel() und sollten nicht außerhalb der übergeordneten Funktion aufgerufen werden (nicht wegen der Nebeneffekte, Sie hätten allein ausgeführt einfach nur keinen Zweck und würden nicht korrekt ausgeführt werden).
-
-Es gibt noch viele weitere Funktionen und Steuermöglichkeiten in phpMussel für Ihren Einsatzzweck. Für andere Funktionen und Steuermöglichkeiten, die hier nicht aufgelistet sind, lesen Sie bitte den Abschnitt BROWSER BEFEHLE.
 
 ---
 
@@ -155,7 +145,6 @@ Gründe, warum Sie diese Kontrollen aktivieren sollten:
 - Bietet die Möglichkeit, Signaturen schnell in eine Greylist aufzunehmen, wenn Sie Dateien auf Ihr System hochladen und Fehlalarme erzeugt werden und Sie nicht die Zeit haben, die Greylist manuell zu bearbeiten.
 - Bietet die Möglichkeit, anderen Personen die Kontrollen über phpMussel zu geben, ohne ihnen Zugang über FTP zu gewähren.
 - Bietet die Möglichkeit, kontrollierten Zugang zu Ihren Log-Dateien zu gewähren.
-- Bietet einen einfachen Weg, phpMussel zu aktualisieren.
 - Bietet die Möglichkeit, phpMussel zu überwachen, wenn kein FTP-Zugang oder andere Zugangsmethoden verfügbar sind.
 
 Gründe, warum Sie diese Kontrollen nicht aktivieren sollten:
@@ -207,14 +196,6 @@ enable
 - Beispiel: `?pword=[script_password]&phpmussel=enable`
 - Zweck: Aktiviert phpMussel. Wird benutzt, wenn Sie phpMussel mittels "disable" deaktiviert haben und es wieder aktivieren möchten.
 
-update
-- Benötigtes Passwort: `script_password`
-- Weitere Bedingungen: `update.dat` und `update.php` müssen vorhanden sein.
-- Benötigte Parameter: (keine)
-- Optionale Parameter: (keine)
-- Beispiele: `?pword=[script_password]&phpmussel=update`
-- Zweck: Sucht nach Aktualisierungen für phpMussel und Signaturen. War die Suche erfolgreich und Aktualisierungen sind verfügbar, so werden diese heruntergeladen und installiert. Schlägt die Suche fehl, wird der Vorgang abgebrochen. Die Ergebnisse des gesamten Vorgangs werden ausgegeben. Es wird empfohlen, mindestens einmal monatlich nach Aktualisierungen zu suchen, um sicherzustellen, dass die Signaturen und Ihre Kopie von phpMussel auf dem neuesten Stand sind. Eine häufigere Suche nach Aktualisierungen ist fruchtlos, da die entsprechenden Pakete meist monatlich eingestellt werden.
-
 greylist
 - Benötigtes Passwort: `script_password`
 - Weitere Bedingungen: (keine)
@@ -258,7 +239,7 @@ Die folgende Liste beinhaltet alle Dateien, die im heruntergeladenen Archiv des 
 Datei | Beschreibung
 ----|----
 /.gitattributes | Ein GitHub Projektdatei (für die korrekte Funktion des Scripts nicht notwendig).
-/Changelog-v0.txt | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
+/Changelog-v1.txt | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
 /composer.json | Composer/Packagist Informationen (für die korrekte Funktion des Scripts nicht notwendig).
 /CONTRIBUTING.md | Information about how to contribute to the project. @TranslateMe@
 /LICENSE.txt | Eine Kopie der GNU/GPLv2 Lizenz.
@@ -451,8 +432,6 @@ Datei | Beschreibung
 /vault/signatures/xmlxdp_mussel_standard.cvd | Datei der XML/XDP-Datenblock-Signaturen.
 /vault/template.html | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
 /vault/template_custom.html | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
-/vault/update.dat | Datei beinhaltet Versionsinformationen des Scripts und der Signaturen. Diese Datei ist notwendig, wenn Sie phpMussel automatisch oder mittels Browser aktualisieren wollen.
-/vault/update.php | Update Script; Wird nur für die automatische und manuelle Aktualisierung mittels Browser benötigt.
 /vault/upload.php | Upload-Handler.
 
 ※ Der Dateiname kann je nach Konfiguratuion in der `phpmussel.ini` variieren.
@@ -484,7 +463,7 @@ Nachfolgend finden Sie eine Liste der Variablen in der Konfigurationsdatei `phpm
 Generelle Konfiguration von phpMussel.
 
 "script_password"
-- Als Komfort-Funktion ermöglicht es phpMussel, einige Funktionen (inkl. des schnellen Updates) manuell via POST, GET und QUERY auszulösen. Um sicherzustellen, dass diese Anfrage auch nur von Ihnen und keinem anderen abgeschickt wurde, erwartet phpMussel das Passwort innerhalb der Anfrage. Setzen Sie das `script_password` nach Belieben, wählen Sie ein Passwort, das Sie sich leicht merken können, aber für andere schwer zu erraten ist. Ist kein Passwort vergeben, sind die manuellen Anfragen deaktiviert.
+- Als Komfort-Funktion ermöglicht es phpMussel, einige Funktionen manuell via POST, GET und QUERY auszulösen. Um sicherzustellen, dass diese Anfrage auch nur von Ihnen und keinem anderen abgeschickt wurde, erwartet phpMussel das Passwort innerhalb der Anfrage. Setzen Sie das `script_password` nach Belieben, wählen Sie ein Passwort, das Sie sich leicht merken können, aber für andere schwer zu erraten ist. Ist kein Passwort vergeben, sind die manuellen Anfragen deaktiviert.
 - Kein Einfluss im CLI-Modus.
 
 "logs_password"
@@ -747,7 +726,7 @@ Chameleon-Angriffserkennung: False = Deaktiviert; True = Aktiviert.
 - Optionale Beschränkung oder Schwelle der Menge der Rohdaten, die durch den Decode-Befehl erkannt werden sollen (sofern während des Scanvorgangs spürbare Performance-Probleme auftreten). Der Wert ist ein Integer (Ganzzahl) und repräsentiert die Dateigröße in KB. Standardeinstellung ist 512 (512 KB). Null oder ein Null-Wert deaktiviert die Beschränkung (Entfernen aller solcher Einschränkungen basierend auf die Dateigröße).
 
 "scannable_threshold"
-- Optionale Beschränkung oder Schwelle der Menge der Rohdaten, die phpMussel lesen und scannen darf (sofern während des Scanvorgangs spürbare Performance-Probleme auftreten). Der Wert ist ein Integer (Ganzzahl) und repräsentiert die Dateigröße in KB. Standardeinstellung ist 32768 (32 MB). Null oder ein Null-Wert deaktiviert die Beschränkung. Generell sollte dieser Wert nicht kleiner sein als die durchschnittliche Dateigröße von Datei-Uploads, die Sie auf Ihrem Server oder Ihrer Website erwarten, sollte nicht größer sein als die Richtlinie filesize_limit und sollte nicht mehr als ein Fünftel der Gesamtspeicherzuweisung für PHP in der Konfigurationsdatei php.ini sein. Diese Richtlinie verhindert, dass phpMussel zu viel Speicher benutzt (was phpMussel daran hindern würde, einen Scan ab einer bestimmten Dateigröße erfolgreich durchzuführen).
+- Optionale Beschränkung oder Schwelle der Menge der Rohdaten, die phpMussel lesen und scannen darf (sofern während des Scanvorgangs spürbare Performance-Probleme auftreten). Der Wert ist ein Integer (Ganzzahl) und repräsentiert die Dateigröße in KB. Standardeinstellung ist 32768 (32 MB). Null oder ein Null-Wert deaktiviert die Beschränkung. Generell sollte dieser Wert nicht kleiner sein als die durchschnittliche Dateigröße von Datei-Uploads, die Sie auf Ihrem Server oder Ihrer Website erwarten, sollte nicht größer sein als die Richtlinie filesize_limit und sollte nicht mehr als ein Fünftel der Gesamtspeicherzuweisung für PHP in der Konfigurationsdatei `php.ini` sein. Diese Richtlinie verhindert, dass phpMussel zu viel Speicher benutzt (was phpMussel daran hindern würde, einen Scan ab einer bestimmten Dateigröße erfolgreich durchzuführen).
 
 ####"compatibility" (Kategorie)
 Kompatibilitätsdirektiven für phpMussel.
@@ -878,7 +857,7 @@ Alle sonstigen Signaturen besitzen folgendes Format:
 
 `NAME:HEX:FROM:TO`
 
-NAME ist der Name, um die Signatur zu benennen und HEX ist ein hexidezimal-kodiertes Segment der Datei, welches mit der gegebenen Signatur geprüft werden soll. FROM und TO sind optionale Parameter, sie geben Start- und Endpunkt in den Quelldaten zur Überprüfung an (wird nicht von der Mail-Funktion unterstützt).
+NAME ist der Name, um die Signatur zu benennen und HEX ist ein hexidezimal-kodiertes Segment der Datei, welches mit der gegebenen Signatur geprüft werden soll. FROM und TO sind optionale Parameter, sie geben Start- und Endpunkt in den Quelldaten zur Überprüfung an.
 
 ####*REGEX*
 Jede Form von regulären Ausdrücken, die von PHP verstanden und korrekt ausgeführt werden, sollten auch von phpMussel und den Signaturen verstanden und korrekt ausgeführt werden können. Lassen Sie extreme Vorsicht walten, wenn Sie neue Signaturen schreiben, die auf regulären Ausdrücken basieren. Wenn Sie nicht absolut sicher sind, was Sie dort machen, kann dies zu nicht korrekten und/oder unerwarteten Ergebnissen führen. Schauen Sie im Quelltext von phpMussel nach, wenn Sie sich nicht absolut sicher sind, wie die regulären Ausdrücke verarbeitet werden. Beachten Sie bitte, dass alle Suchmuster (außer Dateinamen, Archive-Metadata and MD5-Prüfmuster) hexadezimal kodiert sein müssen (mit Ausnahme von Syntax, natürlich)!
@@ -898,7 +877,7 @@ Im Folgenden eine Aufschlüsselung der Signaturen, die von phpMussel genutzt wer
 - "Allgemeine Befehle" (hex_general_commands.csv). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
 - "Normierte HTML-Signaturen" (html_*). Überprüft den Inhalt jeder HTML-Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
 - "Mach-O-Signaturen" (macho_*). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem Mach-O-Format entspricht.
-- "Email-Signaturen" (mail_*). Überprüft mittels der Funktion phpMussel_mail() die Variable $body von E-Mail-Nachrichten oder ähnlichen Einträgen (Foreneinträge etc.).
+- "Email-Signaturen" (mail_*). Überprüft den Inhalt jeder EML-Dateien, die nicht in der Whitelist aufgeführt ist.
 - "MD5-Signaturen" (md5_*). Überprüft mittels MD5-Hash des Inhalts und der Dateigröße jede Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
 - "Archiv-Metadata-Signaturen" (metadata_*). Überprüft die CRC32-Prüfsumme und Dateigröße der ersten Datei in jedem Archiv, welche nicht in der Whitelist aufgeführt ist und überprüft werden soll.
 - "OLE-Signaturen" (ole_*). Überprüft den Inhalt jeder Objekten, die nicht in der Whitelist aufgeführt ist.
@@ -990,4 +969,4 @@ Diese Informationen wurden zuletzt am 25. Februar 2016 aktualisiert und gelten f
 ---
 
 
-Zuletzt aktualisiert: 18. März 2016 (2016.03.18).
+Zuletzt aktualisiert: 21. März 2016 (2016.03.21).

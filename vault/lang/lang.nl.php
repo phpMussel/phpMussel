@@ -11,26 +11,22 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2016.02.10).
- *
- * @package Maikuolan/phpMussel
+ * This file: Dutch language data (last modified: 2016.03.25).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Ik begrijp niet dat bevel, sorry.';
-$phpMussel['Config']['lang']['cli_commands'] = " q\n - Verlaten CLI.\n - Aliassen: quit, exit.\n md5_file\n - Genereer MD5 handtekeningen van bestanden [Syntaxis: md5_file bestandsnaam].\n - Alias: m.\n md5\n - Genereer MD5 handtekening van string [Syntaxis: md5 string].\n hex_encode\n - Converteren van binaire string naar hexadecimaal [Syntaxis: hex_encode string].\n - Alias: x.\n hex_decode\n - Converteren van hexadecimaal naar binaire string [Syntaxis: hex_decode string].\n base64_encode\n - Converteren van binaire string naar base64 string [Syntaxis: base64_encode string].\n - Alias: b.\n base64_decode\n - Converteren van base64 string naar binaire string [Syntaxis: base64_decode string].\n scan\n - Scannen bestand of map [Syntaxis: scan bestandsnaam].\n - Alias: s.\n update\n - Update phpMussel.\n - Alias: u.\n c\n - Print dit commando lijst.\n";
 $phpMussel['Config']['lang']['cli_failed_to_complete'] = 'Mislukt om het voltooien te scannen';
 $phpMussel['Config']['lang']['cli_is_not_a'] = ' is geen bestand of map.';
 $phpMussel['Config']['lang']['cli_ln2'] = " Dank u voor het gebruiken van phpMussel, een PHP-script ontwikkeld om trojans,\n virussen, malware en andere bedreigingen te ontworpen, binnen bestanden\n geüpload naar uw systeem waar het script is haakte, gebaseerd op de\n handtekeningen van ClamAV en anderen.\n PHPMUSSEL COPYRIGHT 2013 en verder GNU/GPL V.2 van Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $phpMussel['Config']['lang']['cli_ln3'] = " Momenteel phpMussel is in CLI-modus (commandlijn interface).\n\n Om scannen een bestand of map, typ 'scan', gevolgd door de naam van het\n bestand of de map die u wilt phpMussel te scannen en druk op Enter; Typ 'c' en\n druk op Enter voor een lijst op CLI-modus commando's; Typ 'q' en druk op Enter\n om te stoppen:";
 $phpMussel['Config']['lang']['cli_pe1'] = 'Geen geldig PE-bestand!';
 $phpMussel['Config']['lang']['cli_pe2'] = 'PE Secties:';
-$phpMussel['Config']['lang']['cli_update_restart'] = ' Herstarten phpMussel kan nodig zijn voordat updates zichtbaar worden.';
 $phpMussel['Config']['lang']['cli_working'] = 'Aan de gang';
 $phpMussel['Config']['lang']['controls_lockout'] = 'phpMussel controles-slot ingeschakeld.';
 $phpMussel['Config']['lang']['core_scriptfile_missing'] = 'Kern script ontbreekt! Opnieuw installeer phpMussel.';
 $phpMussel['Config']['lang']['corrupted'] = 'Gedetecteerd beschadigd PE';
 $phpMussel['Config']['lang']['denied'] = 'Upload Geweigerd!';
-$phpMussel['Config']['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
+$phpMussel['Config']['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
 $phpMussel['Config']['lang']['denied_reason'] = 'De upload poging werd geblokkeerd voor de hieronder vermelde redenen / Your upload was blocked for the reasons listed below:';
 $phpMussel['Config']['lang']['detected'] = 'Gedetecteerd {vn}';
 $phpMussel['Config']['lang']['detected_control_characters'] = 'Gedetecteerd controle karakters';
@@ -78,38 +74,6 @@ $phpMussel['Config']['lang']['scan_unauthorised_upload'] = 'Ongeautoriseerde bes
 $phpMussel['Config']['lang']['scan_unauthorised_upload_or_misconfig'] = 'Ongeautoriseerde bestand uploaden manipulatie of misconfiguratie gedetecteerd! ';
 $phpMussel['Config']['lang']['started'] = 'Gestart';
 $phpMussel['Config']['lang']['too_many_urls'] = 'Te veel URL\'s';
-$phpMussel['Config']['lang']['update_'] = 'phpMussel zal nu proberen om zichzelf te bijwerken.';
-$phpMussel['Config']['lang']['update_available'] = 'Een script bijwerk is beschikbaar.';
-$phpMussel['Config']['lang']['update_complete'] = 'Bijwerk verificatie afgerond geslaagd.';
-$phpMussel['Config']['lang']['update_created'] = 'gecreëerd';
-$phpMussel['Config']['lang']['update_deleted'] = 'verwijderd';
-$phpMussel['Config']['lang']['update_err1'] = 'Bijwerken mislukte: \'update.dat\' vermist. Opnieuw installeren of bijwerken handmatig.';
-$phpMussel['Config']['lang']['update_err2'] = 'Bijwerken mislukte: \'update.dat\' bevat geen geldige bijwerken bronnen. Bijwerken handmatig.';
-$phpMussel['Config']['lang']['update_err3'] = 'Mogelijke hack of vervalsing ontdekt in de instructies door de bijwerken bron; Bron mogelijk gecompromitteerd. Gelieve verwittigen het scriptschrijver. Handmatig updaten wordt aanbevolen.';
-$phpMussel['Config']['lang']['update_err4'] = 'Vermist checksum!';
-$phpMussel['Config']['lang']['update_err5'] = 'Vermist data!';
-$phpMussel['Config']['lang']['update_err6'] = 'Slecht data!';
-$phpMussel['Config']['lang']['update_err7'] = 'Slecht checksum!';
-$phpMussel['Config']['lang']['update_failed'] = 'Mislukt.';
-$phpMussel['Config']['lang']['update_fetch'] = 'Proberen te halen versie gegevens van {Location} ...';
-$phpMussel['Config']['lang']['update_lock_detected'] = 'Update slot gedetecteerd: Kan niet doorgaan. Controleren op updates corrupte of probeer later opnieuw.';
-$phpMussel['Config']['lang']['update_not'] = 'NIET {x}';
-$phpMussel['Config']['lang']['update_not_available'] = 'Geen script bijwerk beschikbaar op dit moment.';
-$phpMussel['Config']['lang']['update_not_possible'] = 'Een script bijwerk zijn beschikbaar, maar kan niet worden volledig bijgewerkt met deze versie van de bijwerkscript. Alstublieft bijwerken handmatig.';
-$phpMussel['Config']['lang']['update_no_source'] = 'phpMussel heeft mislukt te bijwerken, omdat het niet kon verbinden met een geldige bijwerkenbron. Handmatig bijwerk zijn aanbevolen.';
-$phpMussel['Config']['lang']['update_patched'] = 'versteld';
-$phpMussel['Config']['lang']['update_scriptfile_missing'] = ' Update script bestand vermist! Opnieuw installeer phpMussel.';
-$phpMussel['Config']['lang']['update_seconds_elapsed'] = ' seconden verstreken';
-$phpMussel['Config']['lang']['update_signatures_available'] = 'Een handtekeningen bijwerken zijn beschikbaar.';
-$phpMussel['Config']['lang']['update_signatures_latest'] = 'LAATSTE HANDTEKENINGEN';
-$phpMussel['Config']['lang']['update_signatures_not_available'] = 'Geen handtekeningen bijwerken beschikbaar op dit moment.';
-$phpMussel['Config']['lang']['update_signatures_yours'] = 'UW HANDTEKENINGEN';
-$phpMussel['Config']['lang']['update_success'] = 'Succes.';
-$phpMussel['Config']['lang']['update_successfully'] = ' met succes';
-$phpMussel['Config']['lang']['update_version_latest'] = 'NIEUWSTE SCRIPT VERSIE';
-$phpMussel['Config']['lang']['update_version_yours'] = 'UW SCRIPT VERSIE';
-$phpMussel['Config']['lang']['update_was'] = '{x}';
-$phpMussel['Config']['lang']['update_wrd1'] = 'handtekeningen';
 $phpMussel['Config']['lang']['upload_error_1'] = 'Bestandsgrootte overschrijdt de upload_max_filesize richtlijn. ';
 $phpMussel['Config']['lang']['upload_error_2'] = 'Bestandsgrootte overschrijdt de vorm gespecificeerde bestandsgrootte limiet. ';
 $phpMussel['Config']['lang']['upload_error_34'] = 'Upload mislukking! Contact op met de hostmaster voor hulp! ';
@@ -123,3 +87,32 @@ $phpMussel['Config']['lang']['_exclamation'] = '! ';
 $phpMussel['Config']['lang']['_exclamation_final'] = '!';
 $phpMussel['Config']['lang']['_fullstop'] = '. ';
 $phpMussel['Config']['lang']['_fullstop_final'] = '.';
+
+$phpMussel['Config']['lang']['cli_commands'] = " q
+ - Verlaten CLI.
+ - Aliassen: quit, exit.
+ md5_file
+ - Genereer MD5 handtekeningen van bestanden [Syntaxis: md5_file bestandsnaam].
+ - Alias: m.
+ md5
+ - Genereer MD5 handtekening van string [Syntaxis: md5 string].
+ hex_encode
+ - Converteren van binaire string naar hexadecimaal
+   [Syntaxis: hex_encode string].
+ - Alias: x.
+ hex_decode
+ - Converteren van hexadecimaal naar binaire string
+   [Syntaxis: hex_decode string].
+ base64_encode
+ - Converteren van binaire string naar base64 string
+   [Syntaxis: base64_encode string].
+ - Alias: b.
+ base64_decode
+ - Converteren van base64 string naar binaire string
+   [Syntaxis: base64_decode string].
+ scan
+ - Scannen bestand of map [Syntaxis: scan bestandsnaam].
+ - Alias: s.
+ c
+ - Print dit commando lijst.
+";

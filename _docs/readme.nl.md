@@ -89,13 +89,13 @@ Ik hoop te stroomlijnen dit proces door maken een installateur op een bepaald pu
 
 ###3A. <a name="SECTION3A"></a>HOE TE GEBRUIKEN (VOOR WEBSERVERS)
 
-phpMussel is bedoeld te zijn een script dat zal adequaat functioneren direct uit de doos met een minimum niveau van de eisen van uw kant: Eenmaal geïnstalleerd, in principe, het gewoon moeten werken.
+phpMussel moet in staat zijn om correct te werken met minimale eisen van uw kant: Na de installatie, het moeten onmiddellijk aan het werk en zijn onmiddellijk bruikbare.
 
 Het scannen van het bestanden uploaden is geautomatiseerd en ingeschakeld door standaard, zo niets is vereist op namens u voor deze specifieke functie.
 
 Echter, u bent ook in staat om te instrueren phpMussel om te scannen specifiek bestanden, bestandsmappen en/of archieven. Om dit te doen, ten eerste, moet u ervoor zorgen dat de juiste configuratie is ingesteld in het `phpmussel.ini` configuratiebestand (`cleanup` moet worden uitgeschakeld), en als u klaar bent, in een PHP-bestand dat wordt gehaakt op phpMussel, gebruik de volgende functie in uw code:
 
-`phpMussel($what_to_scan,$output_type,$output_flatness);`
+`$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
 - `$what_to_scan` kunt worden een tekenreeks, een array, of een array van arrays, en vermelding welk bestand, bestanden, bestandsmap en/of bestandsmappen om scannen.
 - `$output_type` is een boolean, met vermelding van het formaat voor de scanresultaten te worden geretourneerd als. False instrueert de functie om de resultaten als een integer retourneer (een geretourneerd resultaat van -3 betekent problemen werden aangetroffen met de phpMussel handtekeningen bestanden of handtekening kaart bestanden en dat zij mogelijk worden beschadigd of ontbreekt, -2 betekent dat beschadigd gegevens tijdens de scan werd ontdekt en dus de scan niet voltooid, -1 betekent dat uitbreidingen of addons vereist door PHP om de scan te voeren werd ontbraken zijn en dus de scan niet voltooid, 0 betekent dat het scandoel bestaat niet en dus was er niets te scannen, 1 betekent dat het doel met succes werden gescand en geen problemen gedetecteerd, en 2 betekent dat het doel met succes werd gescand en problemen werden gedetecteerd). True instrueert de functie om de resultaten als leesbare tekst retourneer. Bovendien, in elk geval, de resultaten kunnen worden geraadpleegd via globale variabelen na het scannen is voltooid. Deze variabele is optioneel, voorgedefinieerd als false.
@@ -104,7 +104,7 @@ Echter, u bent ook in staat om te instrueren phpMussel om te scannen specifiek b
 Voorbeeld:
 
 ```
- $results=phpMussel('/user_name/public_html/my_file.html',true,true);
+ $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```
 
@@ -122,16 +122,6 @@ Voor een volledige beschrijving van de soorten van de handtekeningen gebruikt do
 Als u tegenkomen valse positieven, als u iets nieuws tegenkomen waarvan u denkt dat zou moeten geblokkeerd worden, of voor iets anders met betrekking tot handtekeningen, neem dan contact met mij over het zo dat ik de noodzakelijke veranderingen kunnen maken, die, als u niet contact met mij over, ik zou niet per se bewust van.
 
 Voor uitschakelen om de handtekeningen die bij phpMussel (zoals als u het ervaren van een vals positief specifiek voor uw doeleinden dat mag niet normaal van stroomlijn worden verwijderd), raadpleeg de greylisting aantekeningen binnen de Browser Richtlijnen sectie van dit README bestand.
-
-In aanvulling op de standaard bestand uploaden scannen en de optionele scannen van andere bestanden en/of bestandsmappen opgegeven via de bovenstaande functie, in phpMussel een functie bestemd voor het scannen van het lichaam van emailberichten. Deze functie gedraagt zich zoals de phpMussel() standaardfunctie, maar richt zich uitsluitend op bijpassende tegen de ClamAV email-gebaseerde handtekeningen. Ik heb niet gebonden deze handtekeningen naar de phpMussel() standaardfunctie, want het is zeer onwaarschijnlijk dat u zou ooit het lichaam van een inkomende emailbericht vinden in het behoefte van scannen binnen een bestand-upload gericht op een pagina waar phpMussel is haakte, en dus, om deze handtekeningen te binden in de phpMussel() functie zou overbodig zijn. Echter, dat gezegd hebbende, een aparte functie te meten met deze handtekeningen kunnen blijken uiterst nuttig voor sommigen, vooral voor degenen wier CMS of webfront systeem is een of andere manier gebonden in hun email systeem en voor degenen die het ontleden van hun emails via een PHP-script dat ze zou kunnen haak in phpMussel. Configuratie voor deze functie, net als alle anderen, wordt via het `phpmussel.ini` bestand gecontroleerde. Om deze functie te gebruiken (u nodig om uw eigen implementatie), in een PHP-bestand dat wordt aangesloten op phpMussel, gebruik de volgende functie in uw code:
-
-`phpMussel_mail($body);`
-
-Waar $body is het lichaam van het emailbericht dat u wilt scannen (bovendien, u zou kunnen proberen te scannen nieuwe forum posts, inkomende berichten van uw online contactformulier of soortgelijk). Bij een fout voorkomen dat de functie voltooien de scan, een waarde van -1 zal worden geretourneerd. Als de functie voltooit haar scan en niets is vinden, een waarde van 0 zal worden geretourneerd (wat betekent niet-kwaadaardige). Als, echter, iets is vinden door de functie, een string zal worden geretourneerd, met daarin een bericht te verklaren wat het heeft gevonden.
-
-In aanvulling op het bovenstaande, als u kijkt naar de broncode, u zou kunnen opmerken deze functies: phpMusselD() en phpMusselR(). Deze functies zijn sub-functies van phpMussel(), en moeten niet worden opgeroepen direct buiten die ouder functie (niet vanwege bijwerkingen; meer-zo, simpelweg het zou geen enkel doel dienen, en waarschijnlijk zal niet echt goed werken hoe dan ook).
-
-Er zijn vele andere controles en functies beschikbaar zijn binnen phpMussel voor uw gebruik, ook. Voor dergelijke controles en functies dat, met het einde van dit deel van de README, zijn nog niet gedocumenteerd, gelieve verder te lezen en raadpleeg de Browser Richtlijnen sectie van dit README bestand.
 
 ---
 
@@ -155,7 +145,6 @@ Redenen voor deze controles te wordt ingeschakeld:
 - Biedt een manier om handtekeningen te greylist in gevallen zoals wanneer u ontdekken een handtekening dat is produceren van een vals-positieve tijdens het uploaden van bestanden naar uw systeem en u heeft geen tijd te handmatig bewerken en heruploaden uw greylist bestand.
 - Biedt een manier voor u te toestaan iemand anders dan uzelf te controleer uw exemplaar van phpMussel zonder de impliciete behoefte te geven om hen toegang tot FTP.
 - Biedt een manier om gecontroleerde toegang tot uw logbestanden te bieden.
-- Biedt een eenvoudige manier om phpMussel bijgewerkt wanneer er updates beschikbaar zijn.
 - Biedt een manier voor u om te controleren phpMussel wanneer FTP-toegang of andere conventionele toegangspunten voor het toezicht op phpMussel zijn niet beschikbaar.
 
 Redenen voor deze controles te _**NIET**_ wordt ingeschakeld:
@@ -207,14 +196,6 @@ enable
 - Voorbeeld: `?pword=[script_password]&phpmussel=enable`
 - Wat het doet: Inschakelen phpMussel. Dit moet worden gebruikt als u eerder heeft uitgeschakeld phpMussel gebruiken "disable" en wil het herinschakeld.
 
-update
-- Wachtwoord vereist: `script_password`
-- Andere vereisten: `update.dat` en `update.php` moet bestaan
-- Andere vereisten: (geen)
-- Optionele parameters: (geen)
-- Voorbeeld: `?pword=[script_password]&phpmussel=update`
-- Wat het doet: Controleert of er updates voor phpMussel en handtekeningen. Als update-controleert slagen en updates worden gevonden, zal proberen om deze updates te downloaden en te installeren. Als update-controleert mislukt, update zal aborteren. De resultaten van het hele proces worden afgedrukt naar het scherm. Ik raad ten minste eenmaal per maand te controleren om ervoor te zorgen dat uw handtekeningen en uw kopie van phpMussel zijn huidige (tenzij, natuurlijk, u controleren op updates en installeren handmatig, dat, ik zou nog steeds aanbevelen dat te doen ten minste eenmaal per maand). Controleren meer dan tweemaal per maand is waarschijnlijk zinloos, aangezien dat ik ben zeer onwaarschijnlijk te produceren updates van welke aard meer vaker dan dat (noch heb ik in het bijzonder wil voor het grootste gedeelte).
-
 greylist
 - Wachtwoord vereist: `script_password`
 - Andere vereisten: (geen)
@@ -258,7 +239,7 @@ Het volgende is een lijst van alle bestanden die moeten worden opgenomen in de g
 Bestand | Beschrijving
 ----|----
 /.gitattributes | Een GitHub project bestand (niet vereist voor een goede werking van het script).
-/Changelog-v0.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
+/Changelog-v1.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
 /composer.json | Composer/Packagist informatie (niet vereist voor een goede werking van het script).
 /CONTRIBUTING.md | Informatie over hoe bij te dragen aan het project.
 /LICENSE.txt | Een kopie van de GNU/GPLv2 licentie.
@@ -451,8 +432,6 @@ Bestand | Beschrijving
 /vault/signatures/xmlxdp_mussel_standard.cvd | Bestand voor XML/XDP handtekeningen.
 /vault/template.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
 /vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
-/vault/update.dat | Bestand met versie-informatie voor zowel de phpMussel script en de phpMussel handtekeningen. Als u ooit wilt te automatisch update phpMussel of willen phpMussel updaten via uw browser, dit bestand is essentieel.
-/vault/update.php | Update Script; Vereist voor automatische updates en voor het bijwerken van phpMussel via uw browser, maar niet anders vereist.
 /vault/upload.php | Upload handler.
 
 ※ Bestandsnaam kan verschillen, afhankelijk van de configuratie bedingen (van `phpmussel.ini`).
@@ -484,7 +463,7 @@ Het volgende is een lijst van variabelen die in de `phpmussel.ini` configuratieb
 Algemene configuratie voor phpMussel.
 
 "script_password"
-- Voor het gemak, phpMussel zullen bepaalde functies toestaan (inclusief de mogelijkheid om actief update phpMussel) te handmatig worden geactiveerd via POST, GET en QUERY. Echter, als een veiligheidsmaatregel, om dit te doen, phpMussel zal verwachten een wachtwoord te worden opgenomen met het commando, te waarborgen dat het u, en niet iemand anders, dat is proberen te handmatig activeren deze functies. Zetten `script_password` aan de wachtwoord zou u willen te gebruiken. Als er geen wachtwoord ingesteld, handmatige gebruik door standaard wordt uitgeschakeld. Gebruik iets wat u zult herinneren, maar dat is moeilijk voor anderen te gissen.
+- Voor het gemak, phpMussel zullen bepaalde functies toestaan te handmatig worden geactiveerd via POST, GET en QUERY. Echter, als een veiligheidsmaatregel, om dit te doen, phpMussel zal verwachten een wachtwoord te worden opgenomen met het commando, te waarborgen dat het u, en niet iemand anders, dat is proberen te handmatig activeren deze functies. Zetten `script_password` aan de wachtwoord zou u willen te gebruiken. Als er geen wachtwoord ingesteld, handmatige gebruik door standaard wordt uitgeschakeld. Gebruik iets wat u zult herinneren, maar dat is moeilijk voor anderen te gissen.
 - Heeft geen invloed in CLI-modus.
 
 "logs_password"
@@ -748,7 +727,7 @@ Chameleon aanval detectie: False = Uitgeschakeld; True = Ingeschakeld.
 - Optionele limiet of drempelwaarde de lengte van onverwerkte gegevens waarbinnen decoderen commando's moeten worden gedetecteerd (in het geval er enige merkbare prestatieproblemen terwijl scannen). Waarde is een integer vertegenwoordigen bestandsgrootte in KB. Standaard = 512 (512KB). Zero of nulwaarde zal uitschakelen het drempelwaarde (het verwijderen van een dergelijke limiet gebaseerd op bestandsgrootte).
 
 "scannable_threshold"
-- Optionele limiet of drempelwaarde de lengte van onverwerkte gegevens dat phpMussel is toegestaan te lezen en scan (in het geval er enige merkbare prestatieproblemen terwijl scannen). Waarde is een integer vertegenwoordigen bestandsgrootte in KB. Standaard = 32768 (32MB). Zero of nulwaarde zal uitschakelen het drempelwaarde. Algemeen, dit waarde moeten niet zijn lagere dan de gemiddelde bestandsgrootte van het bestandsuploads dat u wilt en verwacht te ontvangen aan uw server of website, moeten niet zijn meer dan de filesize_limit richtlijn, en moeten niet zijn meet dan ongeveer een vijfde van de totale toegestane geheugentoewijzing toegekend aan PHP via de php.ini configuratiebestand. Dit richtlijn bestaat te proberen om phpMussel te verhinderen van het gebruik van teveel geheugen (dat zou verhinderen het van de mogelijkheid te scannen bestanden met succes boven een bepaalde bestandsgrootte).
+- Optionele limiet of drempelwaarde de lengte van onverwerkte gegevens dat phpMussel is toegestaan te lezen en scan (in het geval er enige merkbare prestatieproblemen terwijl scannen). Waarde is een integer vertegenwoordigen bestandsgrootte in KB. Standaard = 32768 (32MB). Zero of nulwaarde zal uitschakelen het drempelwaarde. Algemeen, dit waarde moeten niet zijn lagere dan de gemiddelde bestandsgrootte van het bestandsuploads dat u wilt en verwacht te ontvangen aan uw server of website, moeten niet zijn meer dan de filesize_limit richtlijn, en moeten niet zijn meet dan ongeveer een vijfde van de totale toegestane geheugentoewijzing toegekend aan PHP via de `php.ini` configuratiebestand. Dit richtlijn bestaat te proberen om phpMussel te verhinderen van het gebruik van teveel geheugen (dat zou verhinderen het van de mogelijkheid te scannen bestanden met succes boven een bepaalde bestandsgrootte).
 
 ####"compatibility" (Categorie)
 Compatibiliteit richtlijnen voor phpMussel.
@@ -880,7 +859,7 @@ Alle andere handtekeningen volgt het formaat:
 
 `NAME:HEX:FROM:TO`
 
-Waar NAME is de naam te noemen voor die handtekening en HEX is een hexadecimale gecodeerd segment van het bestand bestemd om te worden gecontroleerd door de gegeven handtekening. FROM en TO optioneel parameters zijn, aangeeft van waaruit en waaraan in de brongegevens om te controleren tegen (niet ondersteund door de mail functie).
+Waar NAME is de naam te noemen voor die handtekening en HEX is een hexadecimale gecodeerd segment van het bestand bestemd om te worden gecontroleerd door de gegeven handtekening. FROM en TO optioneel parameters zijn, aangeeft van waaruit en waaraan in de brongegevens om te controleren tegen.
 
 ####*REGEX*
 Elke vorm van reguliere expressie begrepen en correct verwerkt door moet ook correct worden begrepen en verwerkt door phpMussel en handtekeningen. Echter, Ik stel voor het nemen van extreem voorzichtigheid bij het schrijven van nieuwe handtekeningen op basis van reguliere expressie, omdat, als u niet helemaal zeker wat u doet, kan er zeer onregelmatig en/of onverwachte resultaten worden. Neem een kijkje op de phpMussel broncode als u niet helemaal zeker over de context waarin regex verklaringen geïnterpreteerd worden. Ook, vergeet niet dat alle patronen (met uitzondering van bestandsnaam, archief metadata en MD5 patronen) moet hexadecimaal gecodeerd worden (voorgaande patroon syntaxis, natuurlijk)!
@@ -900,7 +879,7 @@ Het volgende is een overzicht van de soorten handtekeningen gebruikt door phpMus
 - "Algemene Commando's" (hex_general_commands.csv). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen.
 - "Genormaliseerde HTML Handtekeningen" (html_*). Gecontroleerd tegen de inhoud van elke niet-whitelist HTML-bestand gericht voor het scannen.
 - "Mach-O Handtekeningen" (macho_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de Mach-O-formaat.
-- "Email Handtekeningen" (mail_*). Gecontroleerd tegen de $body variabele parsed aan de phpMussel_mail() functie, die bedoeld is om het lichaam van e-mailberichten of soortgelijke entiteiten (potentieel forum posten en etcetera).
+- "Email Handtekeningen" (mail_*). Gecontroleerd tegen de inhoud van elke niet-whitelist EML-bestand gericht voor het scannen.
 - "MD5 Handtekeningen" (md5_*). Gecontroleerd tegen de MD5 hash van de inhoud en het bestandsgrootte van elke niet-whitelist bestand gericht voor het scannen.
 - "Archief Metadata Handtekeningen" (metadata_*). Gecontroleerd tegen de CRC32 hash van de inhoud en het bestandsgrootte van de eerste bestand bevatte binnenkant van ieder niet-whitelist archief gericht voor het scannen.
 - "OLE Handtekeningen" (ole_*). Gecontroleerd tegen de inhoud van elke niet-whitelist OLE-object gericht voor het scannen.
@@ -992,4 +971,4 @@ Dit informatie werd laatst bijgewerkt 25 Februari 2016 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 18 Maart 2016 (2016.03.18).
+Laatste Bijgewerkt: 21 Maart 2016 (2016.03.21).

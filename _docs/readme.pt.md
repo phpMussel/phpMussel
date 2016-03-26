@@ -89,13 +89,13 @@ Espero para agilizar este processo via fazendo um instalado em algum momento no 
 
 ###3A. <a name="SECTION3A"></a>COMO USAR (PARA WEB SERVIDORES)
 
-phpMussel é um script destinado a funcionar de adequadamente, sem complicações, com um mínimo nível de requisitos por você: Após ter sido instalado, basicamente, ele simplesmente deve funcionar.
+phpMussel deve ser capaz de operar correctamente com requisitos mínimos sobre a sua parte: Após instalá-lo, ele deve funcionar imediatamente e ser imediatamente utilizável.
 
 Análise dos arquivos carregamentos é automatizado e ativado por padrão, por isso nada é exigido por você por essa particular função.
 
 Porém, você também é capaz de instruir phpMussel para verificar arquivos e/ou diretórios específicos. Para fazer isso, em primeiro lugar, você vai precisar para assegurar que configuração apropriada é definida no `phpmussel.ini` arquivo (`cleanup` deve ser desativado), e quando feito, em um PHP arquivo que está enganchado ao phpMussel, usar a seguinte função no seu código:
 
-`phpMussel($what_to_scan,$output_type,$output_flatness);`
+`$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
 - `$what_to_scan` pode ser uma string, um matriz, ou um matriz de matrizes, e indica qual arquivo, arquivos, diretório e/ou diretórios para analisar.
 - `$output_type` é um booleano, indicando o formato para os resultados da verificação a serem retornados como. False/Falso instrui a função para retornar resultados como um número inteiro (um resultado retornado de -3 indica problemas foram encontrados com o phpMussel assinaturas arquivos ou mapas assinaturas arquivos e que eles podem possível estar ausente ou corrompido, -2 indica que corrompido dados foi detectado durante a análise, e portanto, a análise não foi concluída, -1 indica que extensões ou complementos necessários pelo PHP para executar a análise estavam faltando, e portanto, a análise não foi concluída, 0 indica que o alvo de análise não existe, e portanto, havia nada para verificar, 1 indica que o alvo foi analisado e não problemas foram detectados, e 2 indica que o alvo foi analisado e problemas foram detectados). True/Verdadeiro instrui a função para retornar os resultados como texto legível. Adicionalmente, em ambos os casos, os resultados podem ser acessados através de variáveis globais após o análise já concluída. Esta variável é opcional, definida como false/falso por padrão.
@@ -104,7 +104,7 @@ Porém, você também é capaz de instruir phpMussel para verificar arquivos e/o
 Exemplos:
 
 ```
- $results=phpMussel('/user_name/public_html/my_file.html',true,true);
+ $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```
 
@@ -122,16 +122,6 @@ Por completos detalhes sobre que tipo de assinaturas phpMussel usa durante a an�
 Se você encontrar quaisquer falsos positivos, se você encontrar algo novo que você acha deve ser bloqueado, ou para qualquer outra coisa com relação a assinatura, entre em contato comigo sobre isso para que eu possa fazer as mudanças necessárias, que, se você não entrar em contato comigo, eu posso não ser necessariamente conscientes de.
 
 Para desativar as assinaturas que estão incluídos com phpMussel (tal como se você está experimentando falsos positivos específico para seus fins que não deve normalmente ser removidos da agilize), consulte as notas sobre Greylisting dentro do Navegador Comandos seção deste arquivo README.
-
-Além da padrão arquivo carregamento análise e a opcional análise de outros arquivos e/ou diretórios especificado através da função acima, incluído no phpMussel é uma função destinada à análise do corpo das e-mail mensagens. Esta função funciona da mesma forma para a phpMussel() função, mas se concentra exclusivamente em fazer a comparação com as assinaturas de ClamAV baseiam e-mail. Eu tenho amarrei essas assinaturas para a padrão phpMussel() função, porque é muito pouco provável que você jamais encontrar o corpo de uma recebidos e-mail mensagem na necessidade de análise dentro um arquivo carregamento direcionado para uma página onde phpMussel é enganchada, e assim, para amarrar essas assinaturas para a phpMussel() função seria redundante. Mas, o que disse, tendo uma separada função para comparar contra essas assinaturas poderia revelar-se extremamente útil para alguns, especialmente para aqueles cuja CMS ou webfront sistema está de alguma modo enganchado em seu e-mail sistema e para aqueles de quem verificar seus e-mails através de um PHP script de que eles poderiam engancho para phpMussel. Configuração para esta função, como todos os outros, é controlado através do `phpmussel.ini` arquivo. Para utilizar esta função (você vai precisar para fazer a sua própria implementação) em um PHP arquivo que está enganchado ao phpMussel, usar a seguinte função no seu código:
-
-`phpMussel_mail($body);`
-
-Onde $body é o corpo da email mensagem que você deseja verificar (Além, você pode tentar verificar novos fórum posts, mensagens do seu on-line contato form ou similar). Se algum erro ocorrer impedindo a função de completar a sua análise, um valor de -1 será retornado. Se a função faz completa a sua análise e detecta nada, um valor de 0 será retornado (ou seja, limpo). Se, contudo, a função faz detectar algo, uma string será retornado contendo uma mensagem declarando o que foi detectado.
-
-Além do acima, se você olhar para o código-fonte, você pode notar a função phpMusselD() e phpMusselR(). Estas funções são sub-funções de phpMussel(), e não deve ser chamado diretamente fora dessa pai função (não por causa de adversos efeitos.. Mais-lo, simplesmente porque ele tinha nenhuma utilidade, e provavelmente não irá realmente funcionar corretamente qualquer maneira).
-
-Existem muitos outros controlos e funções disponíveis dentro phpMussel para seu uso, também. Para qualquer esses controlos e funções que, até o final desta seção do README, ainda não foram documentados, por favor, continue a leitura e consulte o Navegador Comandos seção deste arquivo README.
 
 ---
 
@@ -155,7 +145,6 @@ Algumas razões pelas quais você _**DEVE**_ ativar esses controles:
 - Fornece uma maneira para greylist assinaturas em casos como quando você descobre uma assinatura que está produzindo um falso-positivo durante o carregar de arquivos para o seu sistema e você não tem tempo para manualmente editar e recarregar o greylist arquivo.
 - Fornece uma maneira por você para permitir alguém diferente de si mesmo para controlar a sua cópia do phpMussel sem a implícita necessidade a dar o acesso ao FTP.
 - Fornece uma maneira de fornecer controlado acesso aos seus log arquivos.
-- Fornece um fácil maneira para atualizar phpMussel quando atualizações são disponíveis.
 - Fornece uma maneira por você para monitorar phpMussel quando FTP acesso ou outras convencionais vias de acesso para monitoramento phpMussel não estão disponíveis.
 
 Algumas razões pelas quais você _**NÃO**_ deve ativar esses controles:
@@ -207,14 +196,6 @@ enable
 - Exemplo: `?pword=[script_password]&phpmussel=enable`
 - Que faz: Ativar phpMussel. Este deve ser usado se você já desativado phpMussel usando "disable" e desejar para reativá-la.
 
-update
-- Senha necessária: `script_password`
-- Outros requisitos: `update.dat` e `update.php` devem existir.
-- Parâmetros necessários: (nenhum)
-- Parâmetros opcionais: (nenhum)
-- Exemplo: `?pword=[script_password]&phpmussel=update`
-- Que faz: Verifica se há atualizações para ambos phpMussel e suas assinaturas. Se as atualização verificações suceder e atualizações são encontrados, tentará baixar e instalar essas atualizações. Se atualização verificação falha, atualização irá abortar. Os resultados de o inteiro processo são impressos na tela. Eu recomendo verificando pelo menos uma vez por mês para garantir que seus assinaturas e sua cópia do phpMussel são mantidos atualizados (a menos, claro, você está verificando se há atualizações e instalá-los manualmente, que, eu ainda recomendo fazer pelo menos uma vez por mês). Verificando mais que duas vezes por mês é provavelmente inútil, considerando que eu estou muito improvável que seja capaz de produzir atualizações de qualquer variedade com mais freqüência do que (nem eu particularmente quero para a maior parte).
-
 greylist
 - Senha necessária: `script_password`
 - Outros requisitos: (nenhum)
@@ -258,7 +239,7 @@ O seguinte está uma lista de todos os arquivos que deveria sido incluídos na a
 Arquivo | Descrição
 ----|----
 /.gitattributes | Um arquivo do GitHub projeto (não é necessário para o correto funcionamento do script).
-/Changelog-v0.txt | Um registro das mudanças feitas para o script entre o diferentes versões (não é necessário para o correto funcionamento do script).
+/Changelog-v1.txt | Um registro das mudanças feitas para o script entre o diferentes versões (não é necessário para o correto funcionamento do script).
 /composer.json | Composer/Packagist informação (não é necessário para o correto funcionamento do script).
 /CONTRIBUTING.md | Informações sobre como contribuir para o projeto.
 /LICENSE.txt | Uma cópia da GNU/GPLv2 licença.
@@ -451,8 +432,6 @@ Arquivo | Descrição
 /vault/signatures/xmlxdp_mussel_standard.cvd | Arquivo por XML/XDP assinaturas.
 /vault/template.html | Template arquivo; Template por HTML produzido através do phpMussel por o bloqueado arquivo carregamento mensagem (a mensagem visto por o carregador).
 /vault/template_custom.html | Template arquivo; Template por HTML produzido através do phpMussel por o bloqueado arquivo carregamento mensagem (a mensagem visto por o carregador).
-/vault/update.dat | Arquivo contendo informações sobre a versão por tanto script e assinaturas de phpMussel. Se você está tencionando automaticamente atualizar phpMussel ou deseja atualizar phpMussel através de seu navegador, este arquivo é essencial.
-/vault/update.php | Atualização Script; Necessário por automáticas atualizações e para atualizar phpMussel através de seu navegador, mas não é necessário contrário.
 /vault/upload.php | Módulo de carregamento.
 
 ※ Arquivo nome podem variar baseado em configuração estipulação (referem-se a `phpmussel.ini`).
@@ -484,7 +463,7 @@ O seguinte é uma lista de variáveis encontradas no `phpmussel.ini` arquivo de 
 Configuração geral por phpMussel.
 
 "script_password"
-- Como uma conveniência, phpMussel permitirás certas funções (incluindo a capacidade de atualizando phpMussel remotamente) ao ser acionado manualmente através de POST, GET e QUERY. Mas, como medida de segurança, para fazer isso, phpMussel esperam uma senha para ser incluída com o comando, forma a garantir que é você, e não outra pessoa, tentando de acionar manualmente essas funções. Definir `script_password` para qualquer senha que você desejá usar. Se nenhuma senha for definida, o manual acionamento será desativado por padrão. Uso algo que você vai se lembrar, mas que é difícil por outros adivinharem.
+- Como uma conveniência, phpMussel permitirás certas funções ao ser acionado manualmente através de POST, GET e QUERY. Mas, como medida de segurança, para fazer isso, phpMussel esperam uma senha para ser incluída com o comando, forma a garantir que é você, e não outra pessoa, tentando de acionar manualmente essas funções. Definir `script_password` para qualquer senha que você desejá usar. Se nenhuma senha for definida, o manual acionamento será desativado por padrão. Uso algo que você vai se lembrar, mas que é difícil por outros adivinharem.
 - Não tem influência em CLI modo.
 
 "logs_password"
@@ -748,7 +727,7 @@ Chameleon ataque detecções: False = Inativo; True = Ativo.
 - Opcional limitação para o comprimento dos brutos dados para que dentro de decodificar comandos devem ser detectados (em caso de existirem quaisquer notável problemas de desempenho enquanto analisando). Valor é um inteiro que representa tamanho do arquivo Em KB. Padrão = 512 (512KB). Zero ou nulo valor desativa o limitação (removendo qualquer limitação baseado em tamanho do arquivo).
 
 "scannable_threshold"
-- Opcional limitação para o comprimento dos brutos dados para que phpMussel é permitido a ler e analisar (em caso de existirem quaisquer notável problemas de desempenho enquanto analisando). Valor é um inteiro que representa tamanho do arquivo Em KB. Padrão = 32768 (32MB). Zero ou nulo valor desativa o limitação. Em geral, esse valor não deve ser menor que o médio arquivo tamanho de carregamentos que você quer e espera para receber no seu servidor ou website, não deve ser mais que o filesize_limit directivo, e não deve ser menor que aproximadamente um quinto do total permissível memória alocação concedido para PHP através do php.ini configuração arquivo. Esta directiva existe para tentar impedir phpMussel de usando demais memória (que seria impedir-lo de ser capaz de analisando arquivos acima de um certo tamanho com sucesso).
+- Opcional limitação para o comprimento dos brutos dados para que phpMussel é permitido a ler e analisar (em caso de existirem quaisquer notável problemas de desempenho enquanto analisando). Valor é um inteiro que representa tamanho do arquivo Em KB. Padrão = 32768 (32MB). Zero ou nulo valor desativa o limitação. Em geral, esse valor não deve ser menor que o médio arquivo tamanho de carregamentos que você quer e espera para receber no seu servidor ou website, não deve ser mais que o filesize_limit directivo, e não deve ser menor que aproximadamente um quinto do total permissível memória alocação concedido para PHP através do `php.ini` configuração arquivo. Esta directiva existe para tentar impedir phpMussel de usando demais memória (que seria impedir-lo de ser capaz de analisando arquivos acima de um certo tamanho com sucesso).
 
 ####"compatibility" (Categoria)
 Compatibilidade directivas por phpMussel.
@@ -840,7 +819,7 @@ Todas as MD5 assinaturas seguir o formato:
 
 `HASH:TAMANHO:NOME`
 
-Onde HASH é o MD5 hash de um inteiro arquivo, TAMANHO é o total tamanho do arquivo e NOME é o nome para citar por essa assinatura.
+Onde HASH é o hash MD5 de um inteiro arquivo, TAMANHO é o total tamanho do arquivo e NOME é o nome para citar por essa assinatura.
 
 ####*COMPACTADOS ARQUIVOS METADADOS ASSINATURAS*
 Todas as compactados arquivos metadados assinaturas seguir o formato:
@@ -854,7 +833,7 @@ Todas as PE Seccional assinaturas seguir o formato:
 
 `TAMANHO:HASH:NOME`
 
-Onde HASH é o MD5 hash de uma secção do PE arquivo, TAMANHO é o total tamanho da secção e NOME é o nome para citar por essa assinatura.
+Onde HASH é o hash MD5 de uma secção do PE arquivo, TAMANHO é o total tamanho da secção e NOME é o nome para citar por essa assinatura.
 
 ####*PE ESTENDIDAS ASSINATURAS*
 Todas as PE estendidas assinaturas seguir o formato:
@@ -868,7 +847,7 @@ Todas as Whitelist assinaturas seguir o formato:
 
 `HASH:TAMANHO:TYPE`
 
-Onde HASH é o MD5 hash de um inteiro arquivo, TAMANHO é o total tamanho do arquivo e TYPE é o tipo de assinaturas o arquivo é ser imune contra.
+Onde HASH é o hash MD5 de um inteiro arquivo, TAMANHO é o total tamanho do arquivo e TYPE é o tipo de assinaturas o arquivo é ser imune contra.
 
 ####*COMPLEXOS ESTENDIDAS ASSINATURAS*
 Complexos estendidas assinaturas são bastante diferente para os outros tipos de assinaturas possíveis com phpMussel em que o que eles estão verificando contra é especificado pelas assinaturas e eles podem verificar contra vários critérios. Os critérios de verificação são delimitados por ";" e o verificação tipo e os verificação dados de cada verificação critérios é delimitados por ":" como assim que o formato por estas assinaturas tende a olhar um pouco assim:
@@ -880,7 +859,7 @@ Todas as outras assinaturas seguir o formato:
 
 `NOME:HEX:FROM:TO`
 
-Onde NOME é o nome para citar por essa assinatura e HEX é um hexadecimal codificado segmento do arquivo intentado a ser correspondido pela dado assinatura. TO e FROM são opcionais parâmetros, indicando de onde e para quais posições nos origem dados para verificar contra (não suportado pela mail função).
+Onde NOME é o nome para citar por essa assinatura e HEX é um hexadecimal codificado segmento do arquivo intentado a ser correspondido pela dado assinatura. TO e FROM são opcionais parâmetros, indicando de onde e para quais posições nos origem dados para verificar contra.
 
 ####*REGEX*
 Qualquer forma de regex compreendido e processado corretamente pelo PHP também deve ser correctamente compreendido e processado por phpMussel e suas assinaturas. Mas, eu sugiro tomar extremo cuidado quando escrevendo novas assinaturas baseadas regex, porque, se você não está inteiramente certo do que está fazendo, isto pode tem altamente irregulares e inesperadas resultados. Olha para o código-fonte de phpMussel Se você não está totalmente certo sobre o contexto em que as regex declarações são processada. Além, lembre-se que todos isso (com exceção para arquivo nome, compactado arquivo metadados, MD5 a sintaxe) deve ser codificado hexadecimalmente!
@@ -898,17 +877,17 @@ A seguir estão os diferentes tipos de assinaturas utilizadas por phpMussel:
 - "Gerais Assinaturas" (general_*). Verificado contra o conteúdo de arquivo não no whitelist e alvo por analisando.
 - "Gráficas Assinaturas" (graphics_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmado tal de um conhecidos gráficos arquivos formato.
 - "Gerais Comandos" (hex_general_commands.csv). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando.
-- "Normalizadas HTML Assinaturas" (html_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando.
+- "Normalizadas HTML Assinaturas" (html_*). Verificado contra o conteúdo de cada arquivo HTML não no whitelist e alvo por analisando.
 - "Mach-O Assinaturas" (macho_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmados tal do formato Mach-O.
-- "E-mail Assinaturas" (mail_*). Verificado contra o $body variável alimentado para o phpMussel_mail() função, que se intencionado para ser o corpo das e-mail mensagens ou similares entidades (potencialmente fórum mensagens e etcetera).
-- "MD5 Assinaturas" (md5_*). Verificado contra o MD5 hash do conteúdo e contra o arquivo tamanho de cada arquivo não no whitelist e alvo por analisando.
-- "Compactado Arquivo Metadado Assinaturas" (metadata_*). Verificado contra o CRC32 hash eo arquivo tamanho do inicial arquivo contida dentro de cada compactado arquivo não no whitelist e alvo por analisando.
+- "E-mail Assinaturas" (mail_*). Verificado contra o conteúdo de cada arquivo EML não no whitelist.
+- "MD5 Assinaturas" (md5_*). Verificado contra o hash MD5 do conteúdo e contra o arquivo tamanho de cada arquivo não no whitelist e alvo por analisando.
+- "Compactado Arquivo Metadado Assinaturas" (metadata_*). Verificado contra o hash CRC32 eo arquivo tamanho do inicial arquivo contida dentro de cada compactado arquivo não no whitelist e alvo por analisando.
 - "OLE Assinaturas" (ole_*). Verificado contra o conteúdo de cada objeto não no whitelist e alvo por analisando.
-- "PDF Assinaturas" (pdf_*). Verificado contra o conteúdo de cada PDF arquivo não no whitelist.
-- "Portátil Executável Seccional Assinaturas" (pe_*). Verificado contra o tamanho eo MD5 hash de cada PE seção de cada arquivo não em o whitelist e alvo por analisando e confirmados tal do formato PE.
-- "Portátil Executável Estendidas Assinaturas" (pex_*). Verificado contra o tamanho eo MD5 hash de todas as variáveis de cada arquivo não em o whitelist e alvo por analisando e confirmados tal do formato PE.
+- "PDF Assinaturas" (pdf_*). Verificado contra o conteúdo de cada arquivo PDF não no whitelist.
+- "Portátil Executável Seccional Assinaturas" (pe_*). Verificado contra o tamanho eo hash MD5 de cada PE seção de cada arquivo não em o whitelist e alvo por analisando e confirmados tal do formato PE.
+- "Portátil Executável Estendidas Assinaturas" (pex_*). Verificado contra o tamanho eo hash MD5 de todas as variáveis de cada arquivo não em o whitelist e alvo por analisando e confirmados tal do formato PE.
 - "SWF Assinaturas" (swf_*). Verificado contra o conteúdo de cada Shockwave arquivo não no whitelist.
-- "Whitelist Assinaturas" (whitelist_*). Verificado contra o MD5 hash do conteúdo e contra o arquivo tamanho de cada arquivo alvo por analisando. Verificados arquivos será imune de sendo verificado pelo tipo de assinatura mencionada no seu whitelist entrada.
+- "Whitelist Assinaturas" (whitelist_*). Verificado contra o hash MD5 do conteúdo e contra o arquivo tamanho de cada arquivo alvo por analisando. Verificados arquivos será imune de sendo verificado pelo tipo de assinatura mencionada no seu whitelist entrada.
 - "XML/XDP Assinaturas" (xmlxdp_*). Verificado contra quaisquer XML/XDP pedaços encontrados dentro cada arquivo não no whitelist e alvo por analisando.
 (Notar que qualquer uma destas assinaturas podem ser desativada facilmente através de `phpmussel.ini`).
 
@@ -992,4 +971,4 @@ Esta informação foi atualizada dia 25 Fevereiro 2016 e é corrente para todas 
 ---
 
 
-Última Atualização: 18 Março 2016 (2016.03.18).
+Última Atualização: 21 Março 2016 (2016.03.21).

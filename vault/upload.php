@@ -11,9 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2016.03.18).
- *
- * @package Maikuolan/phpMussel
+ * This file: Upload handler (last modified: 2016.03.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -62,7 +60,7 @@ if ($phpMussel['upload']['count'] > 0) {
     /** Fetch the hash cache (a record of recently scanned files). */
     $phpMussel['HashCache']['Data'] =
         ($phpMussel['upload']['count'] > 0 && $phpMussel['Config']['general']['scan_cache_expiry'] > 0) ?
-        phpMusselCacheGet('HashCache') :
+        $phpMussel['FetchCache']('HashCache') :
         array();
 
     /** Process the hash cache. */
@@ -172,7 +170,7 @@ if ($phpMussel['upload']['count'] > 0) {
                     is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']])
                 ) {
                     $phpMussel['memCache']['handle']['odata'] =
-                        phpMusselFile($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
+                        $phpMussel['ReadFile']($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
                     $phpMussel['memCache']['handle']['len'] = strlen($phpMussel['memCache']['handle']['odata']);
                     $phpMussel['memCache']['handle']['crc'] = @hash('crc32b', $phpMussel['memCache']['handle']['odata']);
                     $phpMussel['memCache']['handle']['qfile'] =
@@ -186,7 +184,7 @@ if ($phpMussel['upload']['count'] > 0) {
                         $phpMussel['memCache']['handle']['len'] > 0 &&
                         $phpMussel['memCache']['handle']['len'] < ($phpMussel['Config']['general']['quarantine_max_filesize'] * 1024)
                     ) {
-                        phpMusselQ(
+                        $phpMussel['Quarantine'](
                             $phpMussel['memCache']['handle']['odata'],
                             $phpMussel['Config']['general']['quarantine_key'],
                             $_SERVER[$phpMussel['Config']['general']['ipaddr']],
@@ -239,7 +237,7 @@ if ($phpMussel['upload']['count'] > 0) {
                 }
 
                 /** Execute the scan! */
-                $r = phpMussel(
+                $r = $phpMussel['Scan'](
                     $phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']],
                     true,
                     true,
@@ -342,7 +340,7 @@ if ($phpMussel['upload']['count'] > 0) {
                     $phpMussel['Config']['general']['quarantine_key']
                 ) {
                     $phpMussel['memCache']['handle']['odata'] =
-                        phpMusselFile($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
+                        $phpMussel['ReadFile']($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
                     $phpMussel['memCache']['handle']['len'] =
                         strlen($phpMussel['memCache']['handle']['odata']);
                     $phpMussel['memCache']['handle']['crc'] =
@@ -359,7 +357,7 @@ if ($phpMussel['upload']['count'] > 0) {
                         $phpMussel['memCache']['handle']['len'] > 0 &&
                         $phpMussel['memCache']['handle']['len'] < ($phpMussel['Config']['general']['quarantine_max_filesize'] * 1024)
                     ) {
-                        phpMusselQ(
+                        $phpMussel['Quarantine'](
                             $phpMussel['memCache']['handle']['odata'],
                             $phpMussel['Config']['general']['quarantine_key'],
                             $_SERVER[$phpMussel['Config']['general']['ipaddr']],
@@ -411,7 +409,7 @@ if ($phpMussel['upload']['count'] > 0) {
                 }
 
                 /** Execute the scan! */
-                $r = phpMussel(
+                $r = $phpMussel['Scan'](
                     $phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']],
                     true,
                     true,
@@ -456,7 +454,7 @@ if ($phpMussel['upload']['count'] > 0) {
             next($phpMussel['HashCache']['Data']);
         }
         $phpMussel['HashCache']['Data'] = implode('', $phpMussel['HashCache']['Data']);
-        $phpMussel['HashCache']['Data'] = phpMusselCacheSet(
+        $phpMussel['HashCache']['Data'] = $phpMussel['SaveCache'](
             'HashCache',
             $phpMussel['time'] + $phpMussel['Config']['general']['scan_cache_expiry'],
             $phpMussel['HashCache']['Data']
@@ -555,9 +553,9 @@ if ($phpMussel['upload']['count'] > 0) {
         }
 
         /** Generate HTML output. */
-        $html = phpMusselV(
+        $html = $phpMussel['ParseVars'](
             $phpMussel['TemplateData'],
-            phpMusselFile($phpMussel['vault'] . $phpMussel['memCache']['template_file'],0,true)
+            $phpMussel['ReadFile']($phpMussel['vault'] . $phpMussel['memCache']['template_file'],0,true)
         );
 
         /** Plugin hook: "before_html_out". */
@@ -571,29 +569,39 @@ if ($phpMussel['upload']['count'] > 0) {
                 $phpMussel['MusselPlugins']['tempdata']['i'] < $phpMussel['MusselPlugins']['hookcounts']['before_html_out'];
                 $phpMussel['MusselPlugins']['tempdata']['i']++
             ) {
-                $phpMussel['MusselPlugins']['tempdata']['k'] = key($phpMussel['MusselPlugins']['hooks']['before_html_out']);
-                if (!is_array($phpMussel['MusselPlugins']['hooks']['before_html_out'][$phpMussel['MusselPlugins']['tempdata']['k']])) {
-                    $phpMussel['MusselPlugins']['hooks']['before_html_out'][$phpMussel['MusselPlugins']['tempdata']['k']] =
-                        array($phpMussel['MusselPlugins']['hooks']['before_html_out'][$phpMussel['MusselPlugins']['tempdata']['k']]);
+                $HookID = key($phpMussel['MusselPlugins']['hooks']['during_scan']);
+                if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
+                    $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
+                } elseif (function_exists($HookID)) {
+                    $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'function';
+                } else {
+                    continue;
+                }
+                if (!is_array($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID])) {
+                    $phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID] =
+                        array($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID]);
                 }
                 $phpMussel['MusselPlugins']['tempdata']['kc'] =
-                    count($phpMussel['MusselPlugins']['hooks']['before_html_out'][$phpMussel['MusselPlugins']['tempdata']['k']]);
+                    count($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID]);
                 $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
                 for (
                     $phpMussel['MusselPlugins']['tempdata']['ki'] = 0;
                     $phpMussel['MusselPlugins']['tempdata']['ki'] < $phpMussel['MusselPlugins']['tempdata']['kc'];
                     $phpMussel['MusselPlugins']['tempdata']['ki']++
                 ) {
-                    $x = $phpMussel['MusselPlugins']['hooks']['before_html_out'][$phpMussel['MusselPlugins']['tempdata']['k']][$phpMussel['MusselPlugins']['tempdata']['ki']];
+                    $x = $phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID][$phpMussel['MusselPlugins']['tempdata']['ki']];
                     if ($x) {
-                        $phpMussel['MusselPlugins']['tempdata']['varsfeed'][$phpMussel['MusselPlugins']['tempdata']['ki']] =
-                            (isset($$x)) ? $$x : $x;
+                        $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = (isset($$x)) ? $$x : $x;
                     }
                 }
-                $phpMussel['MusselPlugins']['tempdata']['out'] =
-                    call_user_func($phpMussel['MusselPlugins']['tempdata']['k'], $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-                if (is_array($phpMussel['MusselPlugins']['tempdata']['out'])) {
-                    $phpMussel['MusselPlugins']['tempdata']['outs'] = count($phpMussel['MusselPlugins']['tempdata']['out']);
+                if ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'closure') {
+                    $x = $GLOBALS[$HookID]($phpMussel['MusselPlugins']['tempdata']['varsfeed']);
+                } elseif ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'function') {
+                    $x = call_user_func($HookID, $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
+                }
+                if (is_array($x)) {
+                    $phpMussel['MusselPlugins']['tempdata']['out'] = $x;
+                    $phpMussel['MusselPlugins']['tempdata']['outs'] = count($x);
                     for (
                         $phpMussel['MusselPlugins']['tempdata']['ki'] = 0;
                         $phpMussel['MusselPlugins']['tempdata']['ki'] < $phpMussel['MusselPlugins']['tempdata']['outs'];

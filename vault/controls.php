@@ -11,9 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Controls handler (last modified: 2016.03.18).
- *
- * @package Maikuolan/phpMussel
+ * This file: Controls handler (last modified: 2016.03.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -75,29 +73,39 @@ if (
             $phpMussel['MusselPlugins']['tempdata']['i'] < $phpMussel['MusselPlugins']['hookcounts']['browser_log_commands'];
             $phpMussel['MusselPlugins']['tempdata']['i']++
         ) {
-            $phpMussel['MusselPlugins']['tempdata']['k'] = key($phpMussel['MusselPlugins']['hooks']['browser_log_commands']);
-            if (!is_array($phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$phpMussel['MusselPlugins']['tempdata']['k']])) {
-                $phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$phpMussel['MusselPlugins']['tempdata']['k']] =
-                    array($phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$phpMussel['MusselPlugins']['tempdata']['k']]);
+            $HookID = key($phpMussel['MusselPlugins']['hooks']['during_scan']);
+            if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
+                $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
+            } elseif (function_exists($HookID)) {
+                $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'function';
+            } else {
+                continue;
+            }
+            if (!is_array($phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$HookID])) {
+                $phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$HookID] =
+                    array($phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$HookID]);
             }
             $phpMussel['MusselPlugins']['tempdata']['kc'] =
-                count($phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$phpMussel['MusselPlugins']['tempdata']['k']]);
+                count($phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$HookID]);
             $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
             for (
                 $phpMussel['MusselPlugins']['tempdata']['ki'] = 0;
                 $phpMussel['MusselPlugins']['tempdata']['ki'] < $phpMussel['MusselPlugins']['tempdata']['kc'];
                 $phpMussel['MusselPlugins']['tempdata']['ki']++
             ) {
-                $x = $phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$phpMussel['MusselPlugins']['tempdata']['k']][$phpMussel['MusselPlugins']['tempdata']['ki']];
+                $x = $phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$HookID][$phpMussel['MusselPlugins']['tempdata']['ki']];
                 if ($x) {
-                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][$phpMussel['MusselPlugins']['tempdata']['ki']] =
-                        (isset($$x)) ? $$x : $x;
+                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = (isset($$x)) ? $$x : $x;
                 }
             }
-            $phpMussel['MusselPlugins']['tempdata']['out'] =
-                call_user_func($phpMussel['MusselPlugins']['tempdata']['k'], $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-            if (is_array($phpMussel['MusselPlugins']['tempdata']['out'])) {
-                $phpMussel['MusselPlugins']['tempdata']['outs'] = count($phpMussel['MusselPlugins']['tempdata']['out']);
+            if ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'closure') {
+                $x = $GLOBALS[$HookID]($phpMussel['MusselPlugins']['tempdata']['varsfeed']);
+            } elseif ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'function') {
+                $x = call_user_func($HookID, $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
+            }
+            if (is_array($x)) {
+                $phpMussel['MusselPlugins']['tempdata']['out'] = $x;
+                $phpMussel['MusselPlugins']['tempdata']['outs'] = count($x);
                 for (
                     $phpMussel['MusselPlugins']['tempdata']['ki'] = 0;
                     $phpMussel['MusselPlugins']['tempdata']['ki'] < $phpMussel['MusselPlugins']['tempdata']['outs'];
@@ -121,14 +129,12 @@ if (
         echo $phpMussel['Config']['lang']['cli_ln1'] . $phpMussel['Config']['lang']['cli_ln2'];
         if (file_exists($phpMussel['vault'] . $phpMussel['Config']['general']['scan_log'])) {
             echo
-                $phpMussel['Config']['general']['scan_log'] .
-                ":\n\n" .
+                $phpMussel['Config']['general']['scan_log'] . ":\n\n" .
                 implode(file($phpMussel['vault'] . $phpMussel['Config']['general']['scan_log']));
             die;
         }
         echo
-            $phpMussel['Config']['general']['scan_log'] .
-            ' ' .
+            $phpMussel['Config']['general']['scan_log'] . ' ' .
             $phpMussel['Config']['lang']['x_does_not_exist'] .
             $phpMussel['Config']['lang']['_exclamation_final'];
         die;
@@ -139,14 +145,12 @@ if (
         echo $phpMussel['Config']['lang']['cli_ln1'] . $phpMussel['Config']['lang']['cli_ln2'];
         if (file_exists($phpMussel['vault'] . $phpMussel['Config']['general']['scan_kills'])) {
             echo
-                $phpMussel['Config']['general']['scan_kills'] .
-                ":\n\n" .
+                $phpMussel['Config']['general']['scan_kills'] . ":\n\n" .
                 implode(file($phpMussel['vault'] . $phpMussel['Config']['general']['scan_kills']));
             die;
         }
         echo
-            $phpMussel['Config']['general']['scan_kills'] .
-            ' ' .
+            $phpMussel['Config']['general']['scan_kills'] . ' ' .
             $phpMussel['Config']['lang']['x_does_not_exist'] .
             $phpMussel['Config']['lang']['_exclamation_final'];
         die;
@@ -188,29 +192,39 @@ if (
             $phpMussel['MusselPlugins']['tempdata']['i'] < $phpMussel['MusselPlugins']['hookcounts']['browser_commands'];
             $phpMussel['MusselPlugins']['tempdata']['i']++
         ) {
-            $phpMussel['MusselPlugins']['tempdata']['k'] = key($phpMussel['MusselPlugins']['hooks']['browser_commands']);
-            if (!is_array($phpMussel['MusselPlugins']['hooks']['browser_commands'][$phpMussel['MusselPlugins']['tempdata']['k']])) {
-                $phpMussel['MusselPlugins']['hooks']['browser_commands'][$phpMussel['MusselPlugins']['tempdata']['k']] =
-                    array($phpMussel['MusselPlugins']['hooks']['browser_commands'][$phpMussel['MusselPlugins']['tempdata']['k']]);
+            $HookID = key($phpMussel['MusselPlugins']['hooks']['during_scan']);
+            if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
+                $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
+            } elseif (function_exists($HookID)) {
+                $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'function';
+            } else {
+                continue;
+            }
+            if (!is_array($phpMussel['MusselPlugins']['hooks']['browser_commands'][$HookID])) {
+                $phpMussel['MusselPlugins']['hooks']['browser_commands'][$HookID] =
+                    array($phpMussel['MusselPlugins']['hooks']['browser_commands'][$HookID]);
             }
             $phpMussel['MusselPlugins']['tempdata']['kc'] =
-                count($phpMussel['MusselPlugins']['hooks']['browser_commands'][$phpMussel['MusselPlugins']['tempdata']['k']]);
+                count($phpMussel['MusselPlugins']['hooks']['browser_commands'][$HookID]);
             $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
             for (
                 $phpMussel['MusselPlugins']['tempdata']['ki'] = 0;
                 $phpMussel['MusselPlugins']['tempdata']['ki'] < $phpMussel['MusselPlugins']['tempdata']['kc'];
                 $phpMussel['MusselPlugins']['tempdata']['ki']++
             ) {
-                $x = $phpMussel['MusselPlugins']['hooks']['browser_commands'][$phpMussel['MusselPlugins']['tempdata']['k']][$phpMussel['MusselPlugins']['tempdata']['ki']];
+                $x = $phpMussel['MusselPlugins']['hooks']['browser_commands'][$HookID][$phpMussel['MusselPlugins']['tempdata']['ki']];
                 if ($x) {
-                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][$phpMussel['MusselPlugins']['tempdata']['ki']] =
-                        (isset($$x)) ? $$x : $x;
+                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = (isset($$x)) ? $$x : $x;
                 }
             }
-            $phpMussel['MusselPlugins']['tempdata']['out'] =
-                call_user_func($phpMussel['MusselPlugins']['tempdata']['k'], $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-            if (is_array($phpMussel['MusselPlugins']['tempdata']['out'])) {
-                $phpMussel['MusselPlugins']['tempdata']['outs'] = count($phpMussel['MusselPlugins']['tempdata']['out']);
+            if ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'closure') {
+                $x = $GLOBALS[$HookID]($phpMussel['MusselPlugins']['tempdata']['varsfeed']);
+            } elseif ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'function') {
+                $x = call_user_func($HookID, $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
+            }
+            if (is_array($x)) {
+                $phpMussel['MusselPlugins']['tempdata']['out'] = $x;
+                $phpMussel['MusselPlugins']['tempdata']['outs'] = count($x);
                 for (
                     $phpMussel['MusselPlugins']['tempdata']['ki'] = 0;
                     $phpMussel['MusselPlugins']['tempdata']['ki'] < $phpMussel['MusselPlugins']['tempdata']['outs'];
@@ -247,15 +261,6 @@ if (
         }
         $phpMussel['disable_lock'] = @unlink($phpMussel['vault'] . 'disable.lck');
         die('[phpMussel] ' . $phpMussel['Config']['lang']['phpmussel_enabled']);
-    }
-
-    /** Calls the update handler. */
-    if ($phpMussel['controls']['command'] == 'update') {
-        if (!file_exists($phpMussel['vault'] . 'update.php')) {
-            die('[phpMussel]' . $phpMussel['Config']['lang']['update_scriptfile_missing']);
-        }
-        require $phpMussel['vault'] . 'update.php';
-        die;
     }
 
     /** Adds entries to the greylist. */

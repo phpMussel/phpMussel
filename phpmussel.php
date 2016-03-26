@@ -11,9 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.03.18).
- *
- * @package Maikuolan/phpMussel
+ * This file: The loader (last modified: 2016.03.24).
  */
 
 /**
@@ -31,9 +29,6 @@ if (!defined('phpMussel')) {
      */
     $phpMussel = array();
 
-    /** Make our array a superglobal. */
-    global $phpMussel;
-
     /** Determine the location of the "vault" directory. */
     $phpMussel['vault'] = __DIR__ . '/vault/';
 
@@ -41,9 +36,9 @@ if (!defined('phpMussel')) {
     if (!is_dir($phpMussel['vault'])) {
         header('Content-Type: text/plain');
         die(
-            '[phpMussel] Vault directory not correctly set: Can\'t ' .
-            'continue. Refer to documentation if this is a first-time run, ' .
-            'and if problems persist, seek assistance.'
+            '[phpMussel] Vault directory not correctly set: Can\'t continue.' .
+            ' Refer to documentation if this is a first-time run, and if pro' .
+            'blems persist, seek assistance.'
         );
     }
 
@@ -78,17 +73,8 @@ if (!defined('phpMussel')) {
     /** Load the language handler. */
     require $phpMussel['vault'] . 'lang.php';
 
-    /** Halts and/or kills the script if an update is in progress. */
-    while (file_exists($phpMussel['vault'] . 'update.lck')) {
-        sleep(2);
-        if ((time() - $phpMussel['time']) > 12) {
-            header('Content-Type: text/plain');
-            die('[phpMussel] ' . $phpMussel['Config']['lang']['update_lock_detected']);
-        }
-    }
-
-    /** Scrap variable used for processing plugins. */
-    $x = '';
+    /** Scrap variables used for processing plugins. */
+    $x = $HookID = '';
 
     /** Preserve INI defaults for when we exit cleanly. */
     $phpMussel['inidefaults'] = array();
@@ -151,9 +137,7 @@ if (!defined('phpMussel')) {
         require $phpMussel['vault'] . 'functions.php';
 
         /** Plugins are detected and processed by phpMussel here. */
-        $phpMussel['MusselPlugins'] = array();
-        $phpMussel['MusselPlugins']['hooks'] = array();
-        $phpMussel['MusselPlugins']['hookcounts'] = array();
+        $phpMussel['MusselPlugins'] = array('hooks' => array(), 'hookcounts' => array(), 'closures' => array());
         if ($phpMussel['Config']['general']['enable_plugins']) {
             if (!is_dir($phpMussel['vault'] . 'plugins')) {
                 header('Content-Type: text/plain');
@@ -165,14 +149,11 @@ if (!defined('phpMussel')) {
                     if (
                         $phpMussel['MusselPlugins']['tempdata']['f'] !== '.' &&
                         $phpMussel['MusselPlugins']['tempdata']['f'] !== '..' &&
-                        is_dir($phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'])
+                        is_dir($phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f']) &&
+                        file_exists($phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php') &&
+                        !is_link($phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php')
                     ) {
-                        if (
-                            file_exists($phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php') &&
-                            !is_link($phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php')
-                        ) {
-                            require_once $phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php';
-                        }
+                        require_once $phpMussel['pluginPath'] . $phpMussel['MusselPlugins']['tempdata']['f'] . '/plugin.php';
                     }
                 }
             }
@@ -190,7 +171,7 @@ if (!defined('phpMussel')) {
      * removed) in the future. Skip this check if we're in CLI-mode.
      */
     if (!file_exists($phpMussel['vault'] . 'controls.lck')) {
-        if ($phpMussel['Mussel_sapi'] !== 'cli') {
+        if (!$phpMussel['Mussel_sapi']) {
             if (file_exists($phpMussel['vault'] . 'controls.php')) {
                 require $phpMussel['vault'] . 'controls.php';
             }
@@ -207,7 +188,7 @@ if (!defined('phpMussel')) {
          * Check if the upload handler exists; If it exists, load it.
          * Skip this check if we're in CLI-mode.
          */
-        if ($phpMussel['Mussel_sapi'] !== 'cli') {
+        if (!$phpMussel['Mussel_sapi']) {
             if (file_exists($phpMussel['vault'] . 'upload.php')) {
                 require $phpMussel['vault'] . 'upload.php';
             }
@@ -217,7 +198,7 @@ if (!defined('phpMussel')) {
          * Check if the CLI handler exists; If it exists, load it.
          * Skip this check if we're NOT in CLI-mode.
          */
-        if ($phpMussel['Mussel_sapi'] === 'cli') {
+        if ($phpMussel['Mussel_sapi']) {
             if (file_exists($phpMussel['vault'] . 'cli.php')) {
                 require $phpMussel['vault'] . 'cli.php';
             }
@@ -239,8 +220,23 @@ if (!defined('phpMussel')) {
         /** Restore default PCRE backtrack limit. */
         ini_set('pcre.backtrack_limit', $phpMussel['inidefaults']['backtrack_limit']);
 
+        /** Destroy unrequired plugin closures. */
+        if (isset($phpMussel['MusselPlugins']['closures'])) {
+            $phpMussel['MusselPlugins']['c'] = count($phpMussel['MusselPlugins']['closures']);
+            for (
+                $phpMussel['MusselPlugins']['i'] = 0;
+                $phpMussel['MusselPlugins']['i'] < $phpMussel['MusselPlugins']['c'];
+                $phpMussel['MusselPlugins']['i']++
+            ) {
+                $x = $phpMussel['MusselPlugins']['closures'][$phpMussel['MusselPlugins']['i']];
+                if (isset($$x) && is_object($$x)) {
+                    unset($$x);
+                }
+            }
+        }
+
         /** Unset our working data so that we can exit cleanly. */
-        unset($x, $phpMussel);
+        unset($HookID, $x, $phpMussel);
 
     } else {
 

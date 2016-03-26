@@ -89,13 +89,13 @@ Spero di semplificare questo processo tramite un installatore ad un certo punto 
 
 ###3A. <a name="SECTION3A"></a>COME USARE (PER WEB SERVER)
 
-phpMussel è uno script destinato a funzionare adeguatamente con solo minimi requisiti: Quando è stato installato, fondamentalmente, è dovrebbe funzionare.
+phpMussel dovrebbe essere in grado di funzionare correttamente con requisiti minimi da parte vostra: Dopo l'installazione, dovrebbe funzionare immediatamente ed essere immediatamente utilizzabile.
 
 Scansionare di file caricamenti è automatizzato e abilitato per predefinita, perciò nulla è richiesto a vostro nome per questa particolare funzione.
 
 Ma, si è anche in grado di istruire phpMussel per la scansione per i specifici file, cartelle o archivi. Per fare questo, in primo luogo, è necessario assicurarsi che l'appropriata configurazione è impostato nella `phpmussel.ini` file (`cleanup` deve essere disattivato), e quando fatto, in un PHP file che è collegato allo phpMussel, utilizzare la seguente funzione nelle codice:
 
-`phpMussel($cosa_a_scansione,$tipi_di_output,$output_pianura);`
+`$phpMussel['Scan']($cosa_a_scansione, $tipi_di_output, $output_pianura);`
 
 - `$cosa_a_scansione` può essere una stringa, un array o un array di array multipli, e indica quale d'il file, cartella e/o cartelle a scansiona.
 - `$tipi_di_output` è un valore booleano, indicanti il formato per i risultati della scansione a essere restituire come. False/Falso istruisce la funzione a restituire i risultati come un intero (un risultato restituito di -3 indica problemi sono stati incontrati con il phpMussel firme file o file di firme mappe e che possono essere possibile mancanti o corrotto, -2 indica che i corrotto dato è stato rilevato durante la scansione e quindi la scansione non abbia completato, -1 indica che estensioni o addon richiesti per PHP a eseguire la scansione erano assente e quindi la scansione non abbia completato, 0 indica che l'obiettivo di scansione non esiste e quindi non c'era nulla a scansione, 1 indica che l'obiettivo è stato scansionata correttamente e non problemi stati rilevati, e 2 indica che l'obiettivo è stato scansionata correttamente e problemi stati rilevati). True/Vero istruisce la funzione a restituire i risultati come testo leggibile. In aggiunta, in ogni caso, i risultati sono accessibili tramite variabili globali dopo la scansione è stata completata. Questa variabile è facoltativa, inadempiente su false/falso.
@@ -104,7 +104,7 @@ Ma, si è anche in grado di istruire phpMussel per la scansione per i specifici 
 Esempi:
 
 ```
- $results=phpMussel('/user_name/public_html/my_file.html',true,true);
+ $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```
 
@@ -122,16 +122,6 @@ Per una dettagliata spiegazione del tipo di firme di cui phpMussel usa durante l
 Se si incontrano qualsiasi falsi positivi, se si incontrano qualcosa nuova che si pensa dovrebbe essere bloccato, o per qualsiasi altri scopi o materia a riguardo delle firme, si prega di contattare me a riguardo esso così che io possa apportare le necessarie modifiche, di cui, se si non contatto me, io non necessariamente essere consapevole ne.
 
 Per disabilita firme incluso con phpMussel (come se stai sperimentando falsi positivi specifico alle vostri scopi di cui non dovrebbero normalmente essere rimosso dalla streamline), fare riferimento alle note per greylisting all'interno del Browser Comandi sezione di questo README file.
-
-Oltre alla predefinito scansione dei file caricamenti e l'opzionale scansione di altri file e/o cartelle specificato tramite la sopra funzione, incluso in phpMussel è una funzione intendeva per la scansione dello corpo dei email messaggi. Questa funzione si comporta in simile modi alla norma phpMussel() funzione, Ma si concentra esclusivamente sulla verificare contro i ClamAV email basato firme. L'ho non legato queste firme alla norma phpMussel() funzione, perché è altamente improbabile che mai avresti trovato il corpo di un in arrivo e-mail messaggio di bisogno di scansione dall'interno un file caricamento mirato a una pagina dove phpMussel è collegato, e così, a legare queste firme nella phpMussel() funzione sarebbe ridondante. Ma, con quello detto, avente una separata funzione per verificare contro queste firme potrebbe rivelarsi estremamente utile per alcuni, soprattutto per coloro il cui CMS o webfront sistema è in qualche modo legato nel loro email sistema e per quelli di cui parsare i loro email tramite uno script PHP di cui essi potenzialmente potrebbero collegare a phpMussel. Configurazione per questa funzione, come tutti gli altri, è controllato tramite delle `phpmussel.ini` file. Per utilizzare di questa funzione (avrete bisogno a fare la propria implementazione), in un PHP file che è collegato al phpMussel, utilizzare la seguente funzione nel vostre codice:
-
-`phpMussel_mail($corpo);`
-
-Dove $corpo è corpo dello email messaggio che si desidera a scansione (inoltre, si potrebbe provare a scansione nuovi forum messaggi, in arrivo messaggi dal vostro online contatto form o simile). se qualsiasi errori accadere impedendo la funzione di completare il sue scansione, un valore di -1 verrà restituito. Se la funzione completa il sue scansione e nulla è trovato, un valore di 0 verrà restituito (che significa pulito). Se, ma, la funzione lo fa trovare qualcosa, una stringa sarà restituito contenente un messaggio che dichiara ciò che ha trovato.
-
-In aggiunta a quanto sopra, se si guarda il sorgente codice, è possibile si può notare le funzioni phpMusselD() e phpMusselR(). Queste funzioni sono sub-funzioni di phpMussel(), e non deve essere chiamato direttamente al di fuori di tale genitore funzione (non a causa di avversi effetti.. Più così, semplicemente perché che sarebbe stato inutile, e molto probabilmente non sarà effettivamente funziona correttamente comunque).
-
-Ci sono molti altri controlli e funzioni disponibili all'interno phpMussel per il vostro uso. Per tali controlli e funzioni che, dalla fine di questa sezione del README, non sono ancora stato documentato, si prego continuare a leggere e fare riferimento alla Browser Comandi sezione di questo README file.
 
 ---
 
@@ -155,7 +145,6 @@ Un paio di motivi per cui si _**DOVREBBE**_ abilita questi controlli:
 - Fornisce un modo per facilmente aggiungere firme alla greylist in casi come quando si scopre una firma che sta producendo un falso positivo durante il caricamento dei file di vostra sistema e non avete il tempo di modificare manualmente e caricare di nuovo il greylist file.
 - Fornisce un modo per permettere a qualcuno diverso da te per controllare la vostra copia di phpMussel senza l'implicita necessità di concedere loro l'accesso a FTP.
 - Fornisce un modo per fornire controllato accesso ai log file.
-- Fornisce un semplice modo per aggiornare phpMussel quando sono aggiornamenti disponibili.
 - Fornisce un modo per monitorare phpMussel quando l'accesso a FTP o altri convenzionali punti di accesso per il monitoraggio di phpMussel non sono disponibili.
 
 Un paio di motivi per cui si dovrebbe _**NON**_ abilita questi controlli:
@@ -207,14 +196,6 @@ enable
 - Esempio: `?pword=[script_password]&phpmussel=enable`
 - Cosa fa: Abilita phpMussel. Questo dovrebbe essere usato se in precedenza vostra ha disattivato phpMussel con "disable" e vogliono riabilitarla.
 
-update
-- Password requisito: `script_password`
-- Altri requisiti: `update.dat` e `update.php` deve esistere.
-- Parametri requisiti: (nessuno)
-- Parametri opzionali: (nessuno)
-- Esempio: `?pword=[script_password]&phpmussel=update`
-- Cosa fa: Verifica la presenza di aggiornamenti sia per phpMussel e le sue firme. Se l'aggiornamento verificare è successo e aggiornamenti sono trovano, sarà tenterà per scaricare e installare gli aggiornamenti. Se l'aggiornamento verificare fallisce, l'aggiornamento sarà abortito. Risultati dell'intero processo sono stampati sullo schermo. Mi raccomando di fare l'aggiornamento verificare almeno una volta al mese per garantire le vostre firme e la vostra copia di phpMussel sono aggiornato all'ultimo edizioni (a meno, ovviamente, si fare l'aggiornamento verificare e fare l'installazione di manualmente, di cui, mi piacerebbe ancora consiglio di fare almeno una volta al mese). Verifica più di due volte al mese è probabilmente inutile, considerando sto molto improbabile essere grado per produzione qualsiasi aggiornamenti di qualsiasi tipo più spesso di quello (né faccio in modo particolare voglio per la maggior parte).
-
 greylist
 - Password requisito: `script_password`
 - Altri requisiti: (nessuno)
@@ -258,7 +239,7 @@ Il seguente è un elenco di tutti i file che dovrebbero essere incluso nella arc
 File | Descrizione
 ----|----
 /.gitattributes | Un file del GitHub progetto (non richiesto per il corretto funzionamento dello script).
-/Changelog-v0.txt | Un record delle modifiche apportate allo script tra diverse versioni (non richiesto per il corretto funzionamento dello script).
+/Changelog-v1.txt | Un record delle modifiche apportate allo script tra diverse versioni (non richiesto per il corretto funzionamento dello script).
 /composer.json | Composer/Packagist informazioni (non richiesto per il corretto funzionamento dello script).
 /CONTRIBUTING.md | Informazioni su come contribuire al progetto.
 /LICENSE.txt | Una copia della GNU/GPLv2 licenza.
@@ -451,8 +432,6 @@ File | Descrizione
 /vault/signatures/xmlxdp_mussel_standard.cvd | File per XML/XDP firme.
 /vault/template.html | Template file; Template per l'HTML output prodotto da phpMussel per il suo messaggio di bloccato file caricamento (il messaggio visto dallo caricatore).
 /vault/template_custom.html | Template file; Template per l'HTML output prodotto da phpMussel per il suo messaggio di bloccato file caricamento (il messaggio visto dallo caricatore).
-/vault/update.dat | File contenente informazioni sulla versione sia di phpMussel e le phpMussel firme. Se si desidero automaticamente aggiornare di phpMussel o si desidero l'aggiornare di phpMussel tramite il browser, questo file è essenziale.
-/vault/update.php | Aggiornare Script; Richiesto per l'automatico aggiornare di phpMussel e per l'aggiornare di phpMussel tramite il browser, ma non richiesto altrimenti.
 /vault/upload.php | Gestore di caricamenti.
 
 ※ Nome del file può variare dipendente di configurazione (in `phpmussel.ini`).
@@ -484,7 +463,7 @@ Il seguente è un elenco di variabili trovate nelle `phpmussel.ini` file di conf
 Generale configurazione per phpMussel.
 
 "script_password"
-- Per conveniance, phpMussel permette alcune funzioni (per esempio, l'aggiornare di phpMussel tramite il browser) essere innescato manualmente tramite POST, GET e QUERY. Ma, come precauzione di sicurezza, per fare questo, phpMussel aspetta una password essere incluso con il comando, al fine per garantire che sia tu, e non qualcun altro, tentando per manualmente attivare queste funzioni. Impostare `script_password` a qualunque password che si desidera utilizzare. Se non alcuna password è impostata, Manuale innescando sarà disattivato per predefinita. Usa qualcosa si ricorda, Ma che è difficile per indovinare d'altrui.
+- Per conveniance, phpMussel permette alcune funzioni essere innescato manualmente tramite POST, GET e QUERY. Ma, come precauzione di sicurezza, per fare questo, phpMussel aspetta una password essere incluso con il comando, al fine per garantire che sia tu, e non qualcun altro, tentando per manualmente attivare queste funzioni. Impostare `script_password` a qualunque password che si desidera utilizzare. Se non alcuna password è impostata, Manuale innescando sarà disattivato per predefinita. Usa qualcosa si ricorda, Ma che è difficile per indovinare d'altrui.
 - Non ha alcuna influenza in CLI modalità.
 
 "logs_password"
@@ -880,7 +859,7 @@ Tutte le altre firme seguono il formato:
 
 `NOME:HEX:FROM:TO`
 
-Dove NOME è il nome per citare per quella firma e HEX è un esadecimale codificato segmento del file destinato essere verificato dal pertinente firma. FROM e TO sono opzionali parametri, indicando da cui ea cui posizioni nei sorgenti dati per verificare contra (non supportata dal mail funzione).
+Dove NOME è il nome per citare per quella firma e HEX è un esadecimale codificato segmento del file destinato essere verificato dal pertinente firma. FROM e TO sono opzionali parametri, indicando da cui ea cui posizioni nei sorgenti dati per verificare contra.
 
 ####*REGEX*
 Ogni forma di regex correttamente capito da PHP anche dovrebbe essere correttamente capito da phpMussel el sue firme. Ma, io suggerirei di prendere estrema cautela quando scrittura nuove regex basato firme, perché, se non sei certo quello stai facendo, ci possono essere molto irregolari e/o inaspettati risultati. Occhiata al sorgente codice di phpMussel se non sei certo sul contesto in cui le regolari espressioni dichiarazioni vengono parsato. Anche, ricordare che tutti i espressioni (ad eccezione per i file nomi, archivio metadati e l'MD5 espressioni) deve essere esadecimale codificato (tranne sintassi, naturalmente)!
@@ -900,7 +879,7 @@ I seguenti sono i tipi di firme utilizzate da phpMussel:
 - "Generali Comandi" (hex_general_commands.csv). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist.
 - "Normalizzati HTML Firme" (html_*). Verificato contro i contenuti del ogni HTML file mirati per scansionare quello che non è sulla whitelist.
 - "Mach-O Firme" (macho_*). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist e verificato allo Mach-O formato.
-- "Email Firme" (mail_*). Verificato contro la $body variabile parsato a la phpMussel_mail() funzione, che è destinato a essere il corpo de email messaggi o simili entità (potenzialmente forum messaggi e etcetera).
+- "Email Firme" (mail_*). Verificato contro i contenuti del ogni EML file mirati per scansionare quello che non è sulla whitelist.
 - "MD5 Firme" (md5_*). Verificato contro l'MD5 hash dei contenuti e la dimensione del ogni file mirati per scansionare quello che non è sulla whitelist.
 - "Archive Metadati Firme" (metadata_*). Verificato contro l'CRC32 hash e la dimensione dell'iniziale file contenuto all'interno di qualsiasi file mirati per scansionare quello che non è sulla whitelist.
 - "OLE Firme" (ole_*). Verificato contro i contenuti del ogni oggetti mirati per scansionare quello che non è sulla whitelist.
@@ -992,4 +971,4 @@ Questa informazione è stato lo scorso aggiornato 25 Febbraio 2016 ed è in cors
 ---
 
 
-Ultimo Aggiornamento: 18 Marzo 2016 (2016.03.18).
+Ultimo Aggiornamento: 21 Marzo 2016 (2016.03.21).

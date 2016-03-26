@@ -41,11 +41,11 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 我可能在将来会创建一个安装程序来简化安装过程，但在之前，按照下面的这些安装说明能在大多数的系统和CMS上成功安装：
 
-1） 在阅读到这里之前，我假设您已经下载脚本的一个副本，已解压缩其内容并保存在您的机器的某个地方。现在，您要决定将脚本放在您服务器上的哪些文件夹中，例如`/public_html/phpmussel/`或其他任何你觉得满意和安全的地方。*上传完成后，继续阅读。。*
+1） 在阅读到这里之前，我假设您已经下载脚本的一个副本，已解压缩其内容并保存在您的机器的某个地方。现在，您要决定将脚本放在您服务器上的哪些文件夹中，例如`/public_html/phpmussel/`或其他任何您觉得满意和安全的地方。*上传完成后，继续阅读。。*
 
-2） 自定义（强烈推荐高级用户，但不推荐业余用户或者新手使用这个方法），打开`phpmussel.ini`（位于内`vault`） - 这个文件包含所有phpMussel的可用配置选项。以上的每一个配置选项应有一个简介来说明它是做什么的和它的具有的功能。按照你认为合适的参数来调整这些选项，然后保存文件，关闭。
+2） 自定义（强烈推荐高级用户，但不推荐业余用户或者新手使用这个方法），打开`phpmussel.ini`（位于内`vault`） - 这个文件包含所有phpMussel的可用配置选项。以上的每一个配置选项应有一个简介来说明它是做什么的和它的具有的功能。按照您认为合适的参数来调整这些选项，然后保存文件，关闭。
 
-3） 上传（phpMussel和它的文件）到你选定的文件夹（不需要包括`*.txt`/`*.md`文件，但大多数情况下，您应上传所有的文件）。
+3） 上传（phpMussel和它的文件）到您选定的文件夹（不需要包括`*.txt`/`*.md`文件，但大多数情况下，您应上传所有的文件）。
 
 4） 修改的`vault`文件夹权限为“755”。注意，主文件夹也应该是该权限，如果遇上其他权限问题，请修改对应文件夹和文件的权限。
 
@@ -80,7 +80,7 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 3） 自定义（强烈推荐高级用户使用，但不推荐新手或没有经验的用户使用）：打开`phpmussel.ini`（位于内`vault`） - 这个文件包含phpMussel所有的配置选项。每选项应有一个简评以说明它做什么和它的功能。按照您认为合适的参数调整这些选项，然后保存文件，关闭。
 
-4） 您如果您创建一个批处理文件来自动加载的PHP和phpMussel，那么使用phpMussel的CLI模式将更加方便。要做到这一点，打开一个纯文本编辑器例如Notepad或Notepad++，输入php.exe的完整路径（注意是绝对路径不是相对路径），其次是一个空格，然后是`phpmussel.php`的路径（同php.exe），最后，保存此文件使用一个".bat"扩展名放在常用的位置；在你指定的位置，能通过双击你保存的`.bat`文件来调用phpMussel。
+4） 您如果您创建一个批处理文件来自动加载的PHP和phpMussel，那么使用phpMussel的CLI模式将更加方便。要做到这一点，打开一个纯文本编辑器例如Notepad或Notepad++，输入php.exe的完整路径（注意是绝对路径不是相对路径），其次是一个空格，然后是`phpmussel.php`的路径（同php.exe），最后，保存此文件使用一个".bat"扩展名放在常用的位置；在您指定的位置，能通过双击您保存的`.bat`文件来调用phpMussel。
 
 5） 到这里，您完成了CLI模式的安装！当然您应测试以确保正常运行。如果要测试phpMussel，请通过phpMussel尝试扫描`_testfiles`文件夹内提供的文件。
 
@@ -89,13 +89,13 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 ###3A. <a name="SECTION3A"></a>如何使用（对于WEB服务器）
 
-phpMussel的目的是作为一个脚本并且能做到最小化安装和开箱即用：如果正确地安装的，它应就正常的工作。
+phpMussel应该能够正确操作与最低要求从您：安装后，它应该立即开展工作和应该立即有用。
 
 文件上传扫描是自动的和按照设定规则激活的，所以，您不需要做任何额外的事情。
 
 另外，您能手动使用phpMussel扫描文件，文件夹或存档当您需要时。要做到这一点，首先，您需要确保`phpmussel.ini`文件（`cleanup`｢清理｣必须关闭）的配置是正常的，然后通过任何一个PHP文件的钩子至phpMussel，在您的代码中添加以下代码：
 
-`phpMussel($what_to_scan,$output_type,$output_flatness);`
+`$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
 - `$what_to_scan`可以是字符串，数组，或多维数组，和表明什么文件，收集的文件，文件夹和／或文件夹至扫描。
 - `$output_type`是布尔，和表明什么格式到回报扫描结果作为。False｢假／负｣指示关于功能以回报扫描结果作为整数（结果回报的-3表明问题是遇到关于phpMussel签名文件或签名MAP｢地图｣文件和表明他们可能是失踪或损坏，-2表明损坏数据是检测中扫描和因此扫描失败完成，-1表明扩展或插件需要通过PHP以经营扫描是失踪和因此扫描失败完成，0表明扫描目标不存在和因此没有任何事为扫描，1表明扫描目标是成功扫描和没有任何问题检测，和2表明扫描目标是成功扫描和至少一些问题是检测）。True｢真／正｣指示关于功能以回报扫描结果作为人类可读文本。此外，在任一情况下，结果可以访问通过全局变量后扫描是完成。变量是自选，确定作为False｢假／负｣作为标准。
@@ -104,7 +104,7 @@ phpMussel的目的是作为一个脚本并且能做到最小化安装和开箱�
 例子：
 
 ```
- $results=phpMussel('/user_name/public_html/my_file.html',true,true);
+ $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```
 
@@ -122,16 +122,6 @@ phpMussel的目的是作为一个脚本并且能做到最小化安装和开箱�
 如果您遇到任何误报，如果您遇到无法检测的新类型，或者关于签名的其他任何问题，请联系我以便于后续的版本支持，该，如果您不联系我，我可能不会知道并在下一版本中进行处理。
 
 如果您遇到误报严重或者不需要检测该签名下的文件或者其他不需要使用签名验证的场景，请关闭签名验证，具体请参考｢浏览器命令｣部分的这个自述文件中的黑名单部分。
-
-除了前面锁说的的文件上传扫描和自选扫描的其他文件和／或文件夹指定扫描外，phpMussel还提供扫描入站电子邮件正文功能。这个功能行为类似至标准`phpMussel()`功能，但只扫描电子邮件的签名并且对照的ClamAV的数据。我不支持这些签名在标准`phpMussel()`功能，因为这些电子邮件的签名不太可能出现在你需要检测的文件中，从而使得支持这些签名能将会毫无意义。但是，拥有一个单独功能以对比这些签名可以证明是极有用的，为一部分特别是那些CMS或系统是以任何方式直接连接在他们的电子邮件系统上和那些处理他们的电子邮件是通过一个PHP脚本的，他们可以配置钩子使用邮件检测这个功能，使用这个功能同样是修改`phpmussel.ini`文件内的相关选项（您需要自己修改，意思就是不提供开箱即用支持）。然后在您使用的PHP文件中设定钩子，就是在您的代码中插入：
-
-`phpMussel_mail($body);`
-
-`$body`是您想扫描的电子邮件正文（您还可以尝试扫描论坛新帖子，入站信息或您的在线联系方式页面等等）。如果在扫描过程中发生任何错误导致无法完成扫描，将会返回一个数值-1。如果没有发现任何问题，返回0（表明它是正常无害的）。如果这个发现任何东西，将会返回一个字符串包含它发现的信息。
-
-除了上述，如果您看源代码，您可能注意到这些功能`phpMusselD()`和`phpMusselR()`。这些功能是`phpMussel()`的子功能，和不应该叫直外的父功能（没有直接提供是因为他们可能不能正确执行）。
-
-有许多其他控制和功能可用在phpMussel中，其他没有说明的功能，请继续阅读和参考这个自述文件的｢浏览器命令｣部分。
 
 ---
 
@@ -155,7 +145,6 @@ phpMussel的目的是作为一个脚本并且能做到最小化安装和开箱�
 - 提供一个自定义的签名黑名单，例如当您发现一个签名产生一个误报，但是您没有时间去手动编辑和重新上传您的黑名单文件。
 - 提供一个方法为您允许除了您自己外的其他人控制您的副本的phpMussel在没有安全的可用FTP的情况下。
 - 提供一个方法以供其他人或者程序访问您的日志文件。
-- 提供一个简易办法来更新phpMussel（当更新可用时）。
 - 提供一个方法为您监控phpMussel，当FTP访问或其他常规访问phpMussel不可用时。
 
 有些原因为什么您不应该激活这些控制：
@@ -207,14 +196,6 @@ enable
 - 例子：`?pword=[script_password]&phpmussel=enable`
 - 它的作用：激活phpMussel。这个应该使用如果您先前关闭phpMussel通过“disable”和想重新激活它。
 
-update
-- 密码需要：`script_password`
-- 其他需要：`update.dat`和`update.php`必须存在。
-- 需要参数：不需要
-- 自选參數：不需要
-- 例子：`?pword=[script_password]&phpmussel=update`
-- 它的作用：查找更新的phpMussel和它的签名。如果更新是发现，这个命令将尝试下载和安装这些更新。如果更新不发现或失败，更新将退出。整个过程结果是印刷到屏幕。我推荐检查至少一次每月以确保您的签名和您的phpMussel是最新（除非，当然，您手动更新一切，但我依然推荐更新至少一次每月）。更新更频繁是可能毫无意义，考虑到我不太可能有能力的产生任何类型更新更频繁比这（也不我实在想）。
-
 greylist
 - 密码需要：`script_password`
 - 其他需要：不需要
@@ -259,7 +240,7 @@ greylist_show
 文件 | 说明
 ----|----
 /.gitattributes | GitHub文件（不需要为正确经营脚本）。
-/Changelog-v0.txt | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。
+/Changelog-v1.txt | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。
 /composer.json | Composer/Packagist 信息（不需要为正确经营脚本）。
 /CONTRIBUTING.md | 相关信息如何有助于该项目。
 /LICENSE.txt | GNU/GPLv2 执照文件。
@@ -452,8 +433,6 @@ greylist_show
 /vault/signatures/xmlxdp_mussel_standard.cvd | XML/XDP块签名文件。
 /vault/template.html | 模板文件；模板为HTML产量产生通过phpMussel为它的受阻文件上传信息（信息可见向上传者）。
 /vault/template_custom.html | 模板文件；模板为HTML产量产生通过phpMussel为它的受阻文件上传信息（信息可见向上传者）。
-/vault/update.dat | 文件包含版本信息为phpMussel的脚本和phpMussel的签名。如果您随时需要自动更新phpMussel或需要更新phpMussel通过您的浏览器，这个文件是必不可少。
-/vault/update.php | 更新脚本；需要为自动更新和为更新phpMussel通过您的浏览器，但不否则需要。
 /vault/upload.php | 上传处理文件。
 
 ※ 文件名可能不同基于配置规定（在`phpmussel.ini`）。
@@ -482,11 +461,11 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 ###6. <a name="SECTION6"></a>配置选项
 下列是一个列表的变量发现在`phpmussel.ini`配置文件的phpMussel，以及一个说明的他们的目的和功能。
 
-####"general" （类别）
+####“general” （类别）
 基本phpMussel配置。
 
 “script_password”
-- 为方便，phpMussel将允许某些功能（包括phpMussel的更新能力）成为手动引发通过POST，GET和QUERY。然而，作为一种安全措施，要做到这一点，phpMussel将期待一个密码是包括随着命令，以确保它是您，和不其他人，尝试手动引发这些功能。设置`script_password`到什么密码您将想用。如果没有密码是设置，手动引发将会关闭作为标准。使用某物您将记得但某物难为其他人猜测。
+- 为方便，phpMussel将允许某些功能成为手动引发通过POST，GET和QUERY。然而，作为一种安全措施，要做到这一点，phpMussel将期待一个密码是包括随着命令，以确保它是您，和不其他人，尝试手动引发这些功能。设置`script_password`到什么密码您将想用。如果没有密码是设置，手动引发将会关闭作为标准。使用某物您将记得但某物难为其他人猜测。
 - 无影响在CLI模式。
 
 “logs_password”
@@ -542,7 +521,7 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 “disable_cli”
 - 关闭CLI模式吗？CLI模式是按说激活作为标准，但可以有时干扰某些测试工具（例如PHPUnit，为例子）和其他基于CLI应用。如果您没有需要关闭CLI模式，您应该忽略这个指令。 False = 激活CLI模式【标准】； True = 关闭CLI模式。
 
-####"signatures" （类别）
+####“signatures” （类别）
 签名配置。
 - %%%_clamav = ClamAV签名（二者mains和daily）。
 - %%%_custom = 您的个性化签名（如果您写任何）。
@@ -642,7 +621,7 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - “swf_custom”
 - “swf_mussel”
 
-签名匹配长度限制选项。只修改这些如果您知道什么您做。 SD = 标准签名。 RX = PCRE（Perl兼容的正则表达式，或"Regex"）签名。 FN = 文件名签名。 如果您通知PHP失败当phpMussel尝试扫描，尝试降低这些"max"数值。如果可能和方便，让我知道当这个发生和结果的什么您尝试。
+签名匹配长度限制选项。只修改这些如果您知道什么您做。 SD = 标准签名。 RX = PCRE（Perl兼容的正则表达式，或“Regex”）签名。 FN = 文件名签名。 如果您通知PHP失败当phpMussel尝试扫描，尝试降低这些"max"数值。如果可能和方便，让我知道当这个发生和结果的什么您尝试。
 - “fn_siglen_min”
 - “fn_siglen_max”
 - “rx_siglen_min”
@@ -674,7 +653,7 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 “detect_deface”
 - phpMussel应该使用签名为污损和污损软件检测吗？ False = 不检查， True = 检查【默认】。
 
-####"files" （类别）
+####“files” （类别）
 文件处理配置。
 
 “max_uploads”
@@ -711,7 +690,7 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 “block_encrypted_archives”
 - 检测和受阻加密的存档吗？因为phpMussel是不能够扫描加密的存档内容，它是可能存档加密可能的可以使用通过一个攻击者作为一种手段尝试绕过phpMussel，杀毒扫描仪和其他这样的保护。指示phpMussel受阻任何存档它发现被加密可能的可以帮助减少任何风险有关联这些可能性。 False = 不受阻； True = 受阻【默认】。
 
-####"attack_specific" （类别）
+####“attack_specific” （类别）
 专用攻击指令。
 
 蜴攻击检测： False = 是关闭； True = 是激活。
@@ -752,7 +731,7 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 “scannable_threshold”
 - 可选限或门槛为原始数据长度phpMussel是允许为阅读和扫描（如果有任何引人注目性能问题当扫描）。值是一个整数代表文件大小在KB。 默认 = 32768 （32MB）。 零或空值将关闭门槛。按说，这个数值应不会少于平均文件大小的文件上传您想和期待收到您的服务器或网站，应不会多于`filesize_limit`指令，和应不会多于大致五分之一的总允许内存分配获授PHP通过`php.ini`配置文件。这个指令存在为尝试防止phpMussel从用的太多内存（这个将防止它从能够顺利扫描文件以上的一个特别文件大小）。
 
-####"compatibility" （类别）
+####“compatibility” （类别）
 phpMussel兼容性指令。
 
 “ignore_upload_errors”
@@ -761,13 +740,13 @@ phpMussel兼容性指令。
 “only_allow_images”
 - 如果您只期待或只意味到允许图像被上传在您的系统或CMS，和如果您绝对不需要任何文件以外图像被上传在您的系统或CMS，这个指令应会激活，但其他应会关闭。如果这个指令是激活，它将指示phpMussel受阻而不例外任何上传确定为非图像文件，而不扫描他们。这个可能减少处理时间和内存使用为非图像文件上传尝试。 False = 还允许其他文件； True = 只允许图像文件。
 
-####"heuristic" （类别）
+####“heuristic” （类别）
 启发式指令。
 
 “threshold”
 - 有某些签名的phpMussel意味为确定可疑和可能恶意文件零件被上传有不在他们自己确定那些文件被上传特别是作为恶意。这个“threshold”数值告诉phpMussel什么是最大总重量的可疑和潜在恶意文件零件被上传允许之前那些文件是被识别作为恶意。定义的重量在这个上下文是总数值的可疑和可能恶意文件零件确定。作为默认，这个数值将会设置作为3。一个较低的值通常将结果在一个更高的发生的假阳性但一个更高的发生的恶意文件被确定，而一个更高的数值将通常结果在一个较低的发生的假阳性但一个较低的数值的恶意文件被确定。它是通常最好忽略这个数值除非您遇到关联问题。
 
-####"virustotal" （类别）
+####“virustotal” （类别）
 VirusTotal.com指令。
 
 “vt_public_api_key”
@@ -791,33 +770,33 @@ VirusTotal.com指令。
 “vt_quota_rate”和“vt_quota_time”
 - 根据｢Virus Total API｣阅读材料，它是限于最大的`4`请求的任何类型在任何`1`分钟大体时间。如果您经营一个“honeyclient”，蜜罐或任何其他自动化将会提供资源为VirusTotal和不只取回报告您是有权一个更高请求率配额。作为标准，phpMussel将严格的坚持这些限制，但因为可能性的这些率配额被增加，这些二指令是提供为您指示phpMussel为什么限它应坚持。除非您是指示这样做，它是不推荐为您增加这些数值，但，如果您遇到问题相关的到达您的率配额，减少这些数值可能有时帮助您解析这些问题。您的率限是决定作为`vt_quota_rate`请求的任何类型在任何`vt_quota_time`分钟大体时间。
 
-####"urlscanner" （类别）
+####“urlscanner” （类别）
 URL扫描仪配置。
 
-"urlscanner"
+“urlscanner”
 - 内phpMussel是一个URL扫描仪，能够检测恶意URL在任何数据或文件它扫描。以激活URL扫描仪，设置`urlscanner`指令`true`；以关闭它，设置这个指令`false`。
 
 请注意：如果URL扫描仪已关闭，您将不需要复习任何指令在这个类别（`urlscanner`），因为没有指令会做任何事如果这个已关闭。
 
 URL扫描仪API配置。
 
-"lookup_hphosts"
+“lookup_hphosts”
 - 激活[hpHosts](http://hosts-file.net/) API当设置`true`。hpHosts不需要API密钥为了执行API请求。
 
-"google_api_key"
+“google_api_key”
 - 激活Google Safe Browsing API当API密钥是设置。Google Safe Browsing API需要API密钥，可以得到从[这里](https://console.developers.google.com/)。
 - 请注意：这是一个将来的功能！Google Safe Browsing API功能尚未完成！
 
-"maximum_api_lookups"
+“maximum_api_lookups”
 - 最大数值API请求来执行每个扫描迭代。额外API请求将增加的总要求完成时间每扫描迭代，所以，您可能想来规定一个限以加快全扫描过程。当设置`0`，没有最大数值将会应用的。设置`10`作为默认。
 
-"maximum_api_lookups_response"
+“maximum_api_lookups_response”
 - 该什么办如果最大数值API请求已超过？ False = 没做任何事（继续处理） 【默认】； True = 标志/受阻文件。
 
-"cache_time"
+“cache_time”
 - 多长时间（以秒为单位）应API结果被缓存？默认是3600秒（1小时）。
 
-####"template_data" （类别）
+####“template_data” （类别）
 指令和变量为模板和主题。
 
 模板数据涉及到HTML产量使用以生成“上传是否认”信息显示为用户当一个文件上传是受阻。如果您使用个性化主题为phpMussel，HTML产量资源是从`template_custom.html`文件，和否则，HTML产量资源是从`template.html`文件。变量书面在这个配置文件部分是喂在HTML产量通过更换任何变量名包围在大括号发现在HTML产量使用相应变量数据。为例子，哪里`foo="bar"`，任何发生的`<p>{foo}</p>`发现在HTML产量将成为`<p>bar</p>`。
@@ -882,7 +861,7 @@ URL扫描仪API配置。
 
 `NAME:HEX:FROM:TO`
 
-`NAME`是名援引为签名和`HEX`是一个十六进制编码分割的文件意味被匹配通过有关签名。`FROM`和`TO`是可选参数，说明从哪里和向哪里在源数据匹配针对（不支持通过电子邮件功能）。
+`NAME`是名援引为签名和`HEX`是一个十六进制编码分割的文件意味被匹配通过有关签名。`FROM`和`TO`是可选参数，说明从哪里和向哪里在源数据匹配针对。
 
 ####*正则表达式／REGEX*
 任何形式的正则表达式了解和正确地处理通过PHP应还会正确地了解和处理通过phpMussel和它的签名。然而，我将建议采取极端谨慎当写作新正则表达式为基础的签名，因为，如果您不完全肯定什么您被做，可以有很不规则和／或意外结果。看一眼的phpMussel源代码如果您不完全肯定的上下文其中正则表达式语句被处理。还，记得，所有语句（除外为文件名，存档元数据和MD5语句）必须是十六进制编码（和除外为语句句法，还，当然）！
@@ -902,7 +881,7 @@ URL扫描仪API配置。
 - “通用命令” （hex_general_commands.csv）。匹配针对内容的所有非白名单文件目标为扫描。
 - “标准化HTML签名” （html_*）。匹配针对内容的所有非白名单HTML文件目标为扫描。
 - “Mach-O签名” （macho_*）。匹配针对内容的所有非白名单文件目标为扫描识别的Mach-O文件。
-- “电子邮件签名” （mail_*）。匹配针对`$body`变量在`phpMussel_mail()`功能（`$body`变量是为电子邮件正文或类似实体，可能论坛帖子和等等）。
+- “电子邮件签名” （mail_*）。匹配针对内容的所有非白名单EML文件目标为扫描。
 - “MD5签名” （md5_*）。匹配针对MD5哈希的内容和文件大小的所有非白名单文件目标为扫描。
 - “存档元数据签名” （metadata_*）。匹配针对CRC32哈希和文件大小的第一文件包含在任何非白名单存档目标为扫描。
 - “OLE签名” （ole_*）。匹配针对内容的所有非白名单OLE对象目标为扫描。
@@ -994,6 +973,6 @@ URL扫描仪API配置。
 ---
 
 
-最后更新：2016年3月18日。
+最后更新：2016年3月21日。
 
 翻译声明：本文档翻译基于英文原始文档，但由于本人水平有限，且非PHP程序员，对其中某些字词的翻译可能不是很准确，故如果出现错误，请指出并联系原作者予以更正，另外，本翻译仅简体中文，与繁体中文无关亦未参考繁体中文的译文！！

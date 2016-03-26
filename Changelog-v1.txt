@@ -1,0 +1,123 @@
+Changelog for phpMussel (=> v1.0.0, < v2.0.0), "Changelog-v1.txt".
+
+=== VERSIONING GUIDELINES ===
+phpMussel adheres to the SemVer guidelines for versioning.
+
+Versioning guidelines for SemVer can be found at: http://www.semver.org/
+
+=== FUTURE GOALS ===
+New entries will be added to this list when new goals are created, and old
+entries will be deleted when those goals have been achieved.
+
+- Currently supported archive formats are BZ/BZ2, GZ, LZF, TAR and ZIP. At
+  minimum, this should also extend to RAR, SHAR, PHAR and 7z.
+  Refer github.com/Maikuolan/phpMussel/issues/2
+  Refer github.com/phpMussel/universe/issues/5
+
+- Currently, all formats for archive metadata signatures that are supported,
+  with exception to ZIP format, can be scanned recursively. Ideally, ability to
+  scan ZIP files recursively should also be supported at some point (along with
+  all future formats that are planned to be supported).
+
+- Wish list: Icon parsing.
+  Refer github.com/Maikuolan/phpMussel/issues/5
+
+- Wish list: Certificate parsing.
+  Refer github.com/Maikuolan/phpMussel/issues/4
+
+- Develop some general plugins for the phpMussel plugin system.
+  Refer github.com/Maikuolan/phpMussel/issues/23
+
+- Audit all currently completed but not-yet-audited translations of the
+  phpMussel documentation and language data and work on new translations.
+  Refer github.com/Maikuolan/phpMussel/issues/3
+  Refer spambotsecurity.com/forum/viewtopic.php?f=57&t=2929
+
+- Fix client language bug.
+  Refer github.com/Maikuolan/phpMussel/issues/28
+
+- Get serialised logging working for CLI mode.
+  Refer github.com/Maikuolan/phpMussel/issues/54
+
+- Fix non-ANSI/non-ASCII filenames in CLI mode bug.
+  Refer github.com/Maikuolan/phpMussel/issues/61
+
+- Complete Google Safe Browsing integration.
+  Refer github.com/Maikuolan/phpMussel/issues/65
+
+- Improve data decoding procedures.
+
+- Build plugin and extension variants of phpMussel for improved integration
+  with various CMS, forums, other website systems and etc.
+  Refer github.com/Maikuolan/phpMussel/issues/57
+
+- [phpMussel => v1.0.0] Further investigate the possibility of a class-based
+  implementation for phpMussel.
+
+- [phpMussel => v1.0.0] Further investigate the possibility of a Swoole
+  implementation for phpMussel.
+
+- [phpMussel => v1.0.0] Utilise SQLite as a signature database (alternative
+  deployment option to the current standard flatfile database system)
+  Refer github.com/phpMussel/universe/issues/1
+
+- [phpMussel => v1.0.0] Investigate possible future project directions.
+  Refer github.com/phpMussel/universe/issues/13
+
+- [phpMussel => v1.0.0] Adopt ".htsecurity" for the configuration file naming
+  convention rather than use the current "phpmussel.ini" naming convention.
+
+
+
+=== Changes made since last versioned release ===
+
+- [2016.03.18; Documentation]: Deleted the version zero changelog and created
+  a new changelog for our new major version one, "Changelog-v1.txt".
+
+- [2016.03.18; Minor code change; Maikuolan]: Renamed all "INC" files to "PHP"
+  files and changed all references to them accordingly.
+
+- [2016.03.18; Major code change; Maikuolan]: Removed all deprecated < v1.0.0
+  functions.
+
+- [2016.03.19; Major code change; Maikuolan]: Converted all functions to
+  closures to help towards a fat-free implementation of phpMussel. Removed the
+  old "phpMussel_mail()" function from phpMussel entirely (this function would
+  make more sense as a plugin or an extension, rather than as part of the core
+  of phpMussel). Removed the update handler and all of its associated
+  components from phpMussel. Abandoned the use of globals entirely in favour of
+  using "use" for closures to reference our former globals.
+
+- [2016.03.21; Sub-minor code change; Maikuolan]: Improved the way in which we
+  can detect whether we're in CLI-mode.
+  Refer github.com/Maikuolan/CIDRAM/issues/4
+
+- [2016.03.22; Minor code change; Maikuolan]: Added an obfuscation closure in
+  order to avoid needing to directly call some certain potentially blocked
+  in-built PHP functions that are known to sometimes trigger false positives
+  for some certain potentially overzealous server-based security solutions.
+  Modified our normalisation closure to make use of our new obfuscation closure
+  in favour of using problematic falsing in-built functions as was previously
+  the case.
+  Refer github.com/Maikuolan/phpMussel/issues/87
+
+- [2016.03.24; Sub-minor code change; Maikuolan]: Removed references to the
+  "package" tag from all phpDoc page blocks in the package (we don't need
+  these, because we already have README documentation and don't use api-docs).
+  Refer github.com/Maikuolan/phpMussel/issues/85
+
+- [2016.03.24; Minor code change; Maikuolan]: Updated the plugin system as so
+  that hooks can now be registered for closures as well as functions (whereas
+  previously, they could only be registered for functions; note that this
+  partially reintroduces the use of globals, which in this case is used purely
+  for destructing unrequired closures when phpMussel terminates). This allows
+  the use of both functions and closures together (and to that extent, is
+  backwards-compatible); However, the prior change of the function for
+  registering hooks from being a function to being closure means that at least
+  that part of pre-v1 plugins must be modified to function correctly post-v1.
+
+======
+
+Changelog notes for versions < v1.0.0 can be found in "Changelog-v0.txt".
+
+EOF

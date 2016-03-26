@@ -11,9 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2016.03.18).
- *
- * @package Maikuolan/phpMussel
+ * This file: Language handler (last modified: 2016.03.24).
  */
 
 /** Prevents execution from outside of phpMussel. */

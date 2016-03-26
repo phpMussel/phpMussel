@@ -11,26 +11,22 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data (last modified: 2016.02.10).
- *
- * @package Maikuolan/phpMussel
+ * This file: Italian language data (last modified: 2016.03.25).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Non capisco quel comando, mi dispiace.';
-$phpMussel['Config']['lang']['cli_commands'] = " q\n - Esci dall'interfaccia a riga di comando.\n - Alias: quit, exit.\n md5_file\n - Genera le firme MD5 da file [Sintassi: md5_file nomefile].\n - Alias: m.\n md5\n - Genera le firme md5 da stringa [Sintassi: md5 stringa].\n hex_encode\n - Converti la stringa binaria in esadecimale [Sintassi: hex_encode stringa].\n - Alias: x.\n hex_decode\n - Converti la stringa esadecimale in binaria [Sintassi: hex_decode stringa].\n base64_encode\n - Converti la stringa binaria in base64 [Sintassi: base64_encode stringa].\n - Alias: b.\n base64_decode\n - Converti la stringa da base64 a binaria [Sintassi: base64_decode stringa].\n scan\n - Controlla un file o una cartella [Sintassi: scan nomefile].\n - Alias: s.\n update\n - Aggiorna phpMussel.\n - Alias: u.\n c\n - Mostra questa lista di comandi.\n";
 $phpMussel['Config']['lang']['cli_failed_to_complete'] = 'Completamento del processo di controllo fallito';
 $phpMussel['Config']['lang']['cli_is_not_a'] = ' non è né un file né una cartella.';
 $phpMussel['Config']['lang']['cli_ln2'] = " Grazie per aver scelto phpMussel, un programma in PHP progettato per rilevare\n trojan, virus, malware ed altre minacce nei file caricati sul tuo sistama\n dovunque il programma stesso è collegato, basato sulle firme di ClamAV\n ed altri.\n\n PHPMUSSEL COPYRIGHT 2013 e oltre GNU/GPL V.2 Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $phpMussel['Config']['lang']['cli_ln3'] = " Attualmente in esecuzione in modalità CLI (interfaccia a riga di comando).\n\n Per controllare un file o una cartella digita 'scan' seguito dal nome del\n file o della cartella e premi Invio; digita 'c' e premi Invio per l\'elenco\n dei comandi in modalità CLI; digita 'q' e premi Invio per uscire.";
 $phpMussel['Config']['lang']['cli_pe1'] = 'Non è un PE file valida!';
 $phpMussel['Config']['lang']['cli_pe2'] = 'PE Sezioni:';
-$phpMussel['Config']['lang']['cli_update_restart'] = " Può essere necessario riavviare phpMussel prima che gli aggiornamenti\n diventino effettivi.";
 $phpMussel['Config']['lang']['cli_working'] = 'In corso';
 $phpMussel['Config']['lang']['controls_lockout'] = 'phpMussel blocco di controlli attivato.';
 $phpMussel['Config']['lang']['core_scriptfile_missing'] = 'Nucleo script file mancante! Reinstalla phpMussel.';
 $phpMussel['Config']['lang']['corrupted'] = 'Rilevato PE corrotto';
 $phpMussel['Config']['lang']['denied'] = 'Caricamento Negato!';
-$phpMussel['Config']['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Carga Negado! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
+$phpMussel['Config']['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
 $phpMussel['Config']['lang']['denied_reason'] = 'Il tentativo di caricamento è stato bloccato per i motivi elencati di seguito / Your upload was blocked for the reasons listed below:';
 $phpMussel['Config']['lang']['detected'] = 'Rilevato {vn}';
 $phpMussel['Config']['lang']['detected_control_characters'] = 'Rilevati caratteri di controllo';
@@ -78,38 +74,6 @@ $phpMussel['Config']['lang']['scan_unauthorised_upload'] = 'Rilevata manipolazio
 $phpMussel['Config']['lang']['scan_unauthorised_upload_or_misconfig'] = 'Rilevata manipolazione non autorizzata del caricamento del file o malconfigurazione! ';
 $phpMussel['Config']['lang']['started'] = 'Iniziato';
 $phpMussel['Config']['lang']['too_many_urls'] = 'Troppi URL';
-$phpMussel['Config']['lang']['update_'] = 'phpMussel tenterà di aggiornarsi adesso.';
-$phpMussel['Config']['lang']['update_available'] = 'Un aggiornamento del programma è disponibile.';
-$phpMussel['Config']['lang']['update_complete'] = 'Verifica dell\'aggiornamento completata con successo.';
-$phpMussel['Config']['lang']['update_created'] = 'creato';
-$phpMussel['Config']['lang']['update_deleted'] = 'cancellato';
-$phpMussel['Config']['lang']['update_err1'] = 'Aggiornamento non riuscito: \'update.dat\' mancante. Reinstallare o aggiornare manualmente.';
-$phpMussel['Config']['lang']['update_err2'] = 'Aggiornamento non riuscito: \'update.dat\' non contiene nessuna valida sorgente per l\'aggiornamento. Si prega di aggiornare manualmente.';
-$phpMussel['Config']['lang']['update_err3'] = 'Rilevata una possibile manipolazione malevola delle istruzioni di aggiornamento fornite dalla sorgente di aggiornamento; la sorgente è probabilmente compromessa. Si prega di avvisare l\'autore del programma. È consigliato aggiornare manualmente.';
-$phpMussel['Config']['lang']['update_err4'] = 'Checksum mancanti!';
-$phpMussel['Config']['lang']['update_err5'] = 'Dati mancanti!';
-$phpMussel['Config']['lang']['update_err6'] = 'Dati errati!';
-$phpMussel['Config']['lang']['update_err7'] = 'Checksum errati!';
-$phpMussel['Config']['lang']['update_failed'] = 'Fallito.';
-$phpMussel['Config']['lang']['update_fetch'] = 'Tentativo di ottenere i dati della versione da {Location} ...';
-$phpMussel['Config']['lang']['update_lock_detected'] = 'Blocco di aggiornamento rilevato: Impossibile di continuare. Controlla per aggiornamenti corrotti o riprova più tardi.';
-$phpMussel['Config']['lang']['update_not'] = 'NON {x}';
-$phpMussel['Config']['lang']['update_not_available'] = 'Nessun aggiornamento del programma è disponibile in questo momento.';
-$phpMussel['Config']['lang']['update_not_possible'] = 'Un aggiornamento del programma è disponibile, ma non è possibile l\'aggiornamento completo con questa versione del programma di aggornamento. Si prega di aggiornare manualmente.';
-$phpMussel['Config']['lang']['update_no_source'] = 'phpMussel non è riuscito ad aggiornarsi perché non poteva connettersi ad una valida sorgente di aggiornamenti. È consigliato aggiornare manualmente.';
-$phpMussel['Config']['lang']['update_patched'] = 'patchato';
-$phpMussel['Config']['lang']['update_scriptfile_missing'] = ' Il file dell\'aggiornamento del programma è mancante! Reinstalla phpMussel.';
-$phpMussel['Config']['lang']['update_seconds_elapsed'] = ' secondi trascorsi';
-$phpMussel['Config']['lang']['update_signatures_available'] = 'Un aggiornamento delle firme è disponibile.';
-$phpMussel['Config']['lang']['update_signatures_latest'] = 'ULTIME FIRME';
-$phpMussel['Config']['lang']['update_signatures_not_available'] = 'Nessun aggiornamento delle firme è disponibile in questo momento.';
-$phpMussel['Config']['lang']['update_signatures_yours'] = 'TUE FIRME';
-$phpMussel['Config']['lang']['update_success'] = 'Successo.';
-$phpMussel['Config']['lang']['update_successfully'] = ' con successo';
-$phpMussel['Config']['lang']['update_version_latest'] = 'ULTIMA VERSIONE DEL PROGRAMMA';
-$phpMussel['Config']['lang']['update_version_yours'] = 'TUA VERSIONE DEL PROGRAMMA';
-$phpMussel['Config']['lang']['update_was'] = '{x}';
-$phpMussel['Config']['lang']['update_wrd1'] = 'firme';
 $phpMussel['Config']['lang']['upload_error_1'] = 'La dimensione del file supera la direttiva upload_max_filesize. ';
 $phpMussel['Config']['lang']['upload_error_2'] = 'La dimensione del file supera la dimensione limite specificata dal modulo. ';
 $phpMussel['Config']['lang']['upload_error_34'] = 'Caricamento fallito! Contatta l\'hostmaster per assistenza! ';
@@ -123,3 +87,28 @@ $phpMussel['Config']['lang']['_exclamation'] = '! ';
 $phpMussel['Config']['lang']['_exclamation_final'] = '!';
 $phpMussel['Config']['lang']['_fullstop'] = '. ';
 $phpMussel['Config']['lang']['_fullstop_final'] = '.';
+
+$phpMussel['Config']['lang']['cli_commands'] = " q
+ - Esci dall'interfaccia a riga di comando.
+ - Alias: quit, exit.
+ md5_file
+ - Genera le firme MD5 da file [Sintassi: md5_file nomefile].
+ - Alias: m.
+ md5
+ - Genera le firme md5 da stringa [Sintassi: md5 stringa].
+ hex_encode
+ - Converti la stringa binaria in esadecimale [Sintassi: hex_encode stringa].
+ - Alias: x.
+ hex_decode
+ - Converti la stringa esadecimale in binaria [Sintassi: hex_decode stringa].
+ base64_encode
+ - Converti la stringa binaria in base64 [Sintassi: base64_encode stringa].
+ - Alias: b.
+ base64_decode
+ - Converti la stringa da base64 a binaria [Sintassi: base64_decode stringa].
+ scan
+ - Controlla un file o una cartella [Sintassi: scan nomefile].
+ - Alias: s.
+ c
+ - Mostra questa lista di comandi.
+";

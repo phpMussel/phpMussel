@@ -11,26 +11,22 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2016.02.10).
- *
- * @package Maikuolan/phpMussel
+ * This file: French language data (last modified: 2016.03.25).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Je ne comprends pas cette commande, désolé.';
-$phpMussel['Config']['lang']['cli_commands'] = " q\n - Quitter CLI.\n - Alias: quit, exit.\n md5_file\n - Générer MD5 signatures des fichiers [Syntaxe: md5_file nom_de_fichier].\n - Alias: m.\n md5\n - Générer MD5 signature de string [Syntaxe: md5 string].\n hex_encode\n - Convertir binaire string à hexadécimal [Syntaxe: hex_encode string].\n - Alias: x.\n hex_decode\n - Convertir hexadécimal à binaire string [Syntaxe: hex_decode string].\n base64_encode\n - Convertir binaire string à base64 string [Syntaxe: base64_encode string].\n - Alias: b.\n base64_decode\n - Convertir base64 string à binaire string [Syntaxe: base64_decode string].\n scan\n - Analyser fichier ou répertoire [Syntaxe: scan nom_de_fichier].\n - Alias: s.\n update\n - Réactualiser phpMussel.\n - Alias: u.\n c\n - Imprimer cette liste des commandes.\n";
 $phpMussel['Config']['lang']['cli_failed_to_complete'] = 'Échec du terminer le processus d\'analyse';
 $phpMussel['Config']['lang']['cli_is_not_a'] = ' n\'est pas un fichier ou un répertoire.';
 $phpMussel['Config']['lang']['cli_ln2'] = " Merci pour l'utiliser de phpMusel, un PHP script pour la détection de virus,\n malveillants logiciels et autres menaces dans les fichiers téléchargés sur\n votre système partout où le script est accroché, basé sur les signatures de\n ClamAV et autres.\n\n PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPL V.2 par Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $phpMussel['Config']['lang']['cli_ln3'] = " Fonctionne comme CLI mode pour le moment (commande ligne interface).\n\n Pour analyser un fichier ou répertoire, taper 'scan', suivi par le nom du\n fichier ou répertoire que vous voulez phpMussel pour analyser et appuyez sur\n Entrée; Tapez 'c' et appuyez sur Entrée pour une liste de CLI mode commandes;\n Taper 'q' et appuyez sur Entrée pour quitter:";
 $phpMussel['Config']['lang']['cli_pe1'] = 'Pas un valide PE fichier!';
 $phpMussel['Config']['lang']['cli_pe2'] = 'PE Sections:';
-$phpMussel['Config']['lang']['cli_update_restart'] = ' Redémarrage phpMussel peut être nécessaire avant les réactualisations deviennent apparents.';
 $phpMussel['Config']['lang']['cli_working'] = 'En cours';
 $phpMussel['Config']['lang']['controls_lockout'] = 'phpMussel verrouillage des commandes est activées.';
 $phpMussel['Config']['lang']['core_scriptfile_missing'] = 'Base script fichier manquant! S\'il vous plaît réinstaller phpMussel.';
 $phpMussel['Config']['lang']['corrupted'] = 'Détecté corrompu PE';
 $phpMussel['Config']['lang']['denied'] = 'Téléchargement Refusé!';
-$phpMussel['Config']['lang']['denied_other'] = 'Upload Denied! Carga Negado! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
+$phpMussel['Config']['lang']['denied_other'] = 'Upload Denied! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
 $phpMussel['Config']['lang']['denied_reason'] = 'Votre tentative à télécharger a été bloqué pour les raisons énumérées ci-dessous / Your upload was blocked for the reasons listed below:';
 $phpMussel['Config']['lang']['detected'] = 'Détecté {vn}';
 $phpMussel['Config']['lang']['detected_control_characters'] = 'Caractères de contrôle ont été détectés';
@@ -78,38 +74,6 @@ $phpMussel['Config']['lang']['scan_unauthorised_upload'] = 'Non autorisée manip
 $phpMussel['Config']['lang']['scan_unauthorised_upload_or_misconfig'] = 'Non autorisée manipulation de téléchargement de fichiers ou mauvaise configuration détecté! ';
 $phpMussel['Config']['lang']['started'] = 'Commencé';
 $phpMussel['Config']['lang']['too_many_urls'] = 'Trop de URL';
-$phpMussel['Config']['lang']['update_'] = 'phpMussel va maintenant tenter à réactualiser.';
-$phpMussel['Config']['lang']['update_available'] = 'Une réactualisation du script est disponible.';
-$phpMussel['Config']['lang']['update_complete'] = 'Réactualisation chèque réussi.';
-$phpMussel['Config']['lang']['update_created'] = 'créé';
-$phpMussel['Config']['lang']['update_deleted'] = 'supprimé';
-$phpMussel['Config']['lang']['update_err1'] = 'Update échec: \'update.dat\' manquant. Réinstaller ou réactualiser manuellement.';
-$phpMussel['Config']['lang']['update_err2'] = 'Update échec: \'update.dat\' ne contient pas de sources valide de réactualisations. Réactualiser manuellement s\'il vous plaît.';
-$phpMussel['Config']['lang']['update_err3'] = 'Possible hack ou falsification de données détecté dans les réactualisation instructions fournie par la source de la réactualisation; Source peut être compromise. S\'il vous plaît, aviser l\'auteur de la script. Réactualisation manuellement est recommandé.';
-$phpMussel['Config']['lang']['update_err4'] = 'Checksum manquant!';
-$phpMussel['Config']['lang']['update_err5'] = 'Données manquant!';
-$phpMussel['Config']['lang']['update_err6'] = 'Mauvais données!';
-$phpMussel['Config']['lang']['update_err7'] = 'Mauvais checksum!';
-$phpMussel['Config']['lang']['update_failed'] = 'Manqué.';
-$phpMussel['Config']['lang']['update_fetch'] = 'Tenter d\'apporter les données de la version de {Location} ...';
-$phpMussel['Config']['lang']['update_lock_detected'] = 'Verrouillage des réactualisations a été détecté: Ne pouvez pas continuer. Examiner pour réactualisations corrompues ou réessayez plus tard.';
-$phpMussel['Config']['lang']['update_not'] = 'PAS {x}';
-$phpMussel['Config']['lang']['update_not_available'] = 'Aucune réactualisation du script est disponible à ce moment.';
-$phpMussel['Config']['lang']['update_not_possible'] = 'Une réactualisation du script est disponible, mais ne peut pas être entièrement réactualisé avec cette version du réactualisation script. S\'il vous plaît réactualiser manuellement.';
-$phpMussel['Config']['lang']['update_no_source'] = 'phpMussel n\'a pas réussi à réactualiser parce qu\'il ne pouvait pas connecter à une valide réactualisation source. Réactualisation manuelle est recommandé.';
-$phpMussel['Config']['lang']['update_patched'] = 'patché';
-$phpMussel['Config']['lang']['update_scriptfile_missing'] = ' Réactualisation script fichier manquant! S\'il vous plaît, réinstaller phpMussel.';
-$phpMussel['Config']['lang']['update_seconds_elapsed'] = ' secondes écoulées';
-$phpMussel['Config']['lang']['update_signatures_available'] = 'Une signatures réactualisation est disponible.';
-$phpMussel['Config']['lang']['update_signatures_latest'] = 'DERNIÈRES SIGNATURES';
-$phpMussel['Config']['lang']['update_signatures_not_available'] = 'Aucune réactualisation du signatures est disponible à ce moment.';
-$phpMussel['Config']['lang']['update_signatures_yours'] = 'VOS SIGNATURES';
-$phpMussel['Config']['lang']['update_success'] = 'Succès.';
-$phpMussel['Config']['lang']['update_successfully'] = ' avec succès';
-$phpMussel['Config']['lang']['update_version_latest'] = 'DERNIÈRE SCRIPT VERSION';
-$phpMussel['Config']['lang']['update_version_yours'] = 'VOS SCRIPT VERSION';
-$phpMussel['Config']['lang']['update_was'] = '{x}';
-$phpMussel['Config']['lang']['update_wrd1'] = 'signatures';
 $phpMussel['Config']['lang']['upload_error_1'] = 'Fichier taille dépasse la directive upload_max_filesize. ';
 $phpMussel['Config']['lang']['upload_error_2'] = 'Fichier taille dépasse la forme spécifiée fichier taille limite. ';
 $phpMussel['Config']['lang']['upload_error_34'] = 'Téléchargement échec! S\'il vous plaît contacter le hostmaster pour l\'aide! ';
@@ -123,3 +87,28 @@ $phpMussel['Config']['lang']['_exclamation'] = '! ';
 $phpMussel['Config']['lang']['_exclamation_final'] = '!';
 $phpMussel['Config']['lang']['_fullstop'] = '. ';
 $phpMussel['Config']['lang']['_fullstop_final'] = '.';
+
+$phpMussel['Config']['lang']['cli_commands'] = " q
+ - Quitter CLI.
+ - Alias: quit, exit.
+ md5_file
+ - Générer MD5 signatures des fichiers [Syntaxe: md5_file \"nom du fichier\"].
+ - Alias: m.
+ md5
+ - Générer MD5 signature de string [Syntaxe: md5 string].
+ hex_encode
+ - Convertir binaire string à hexadécimal [Syntaxe: hex_encode string].
+ - Alias: x.
+ hex_decode
+ - Convertir hexadécimal à binaire string [Syntaxe: hex_decode string].
+ base64_encode
+ - Convertir binaire string à base64 string [Syntaxe: base64_encode string].
+ - Alias: b.
+ base64_decode
+ - Convertir base64 string à binaire string [Syntaxe: base64_decode string].
+ scan
+ - Analyser fichier ou répertoire [Syntaxe: scan \"nom du fichier\"].
+ - Alias: s.
+ c
+ - Imprimer cette liste des commandes.
+";

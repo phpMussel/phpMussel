@@ -97,7 +97,7 @@
 
 <div dir="rtl">مع ذلك، فإنك قادراً أيضاً على إرشاد "بي اتش بي ماسل" لمسح ملفات معينة مثل الدلائل و/ أو المحفوظات. للقيام بذلك فعليك أولاً: سوف تحتاج إلى التأكد من أن يتم تعيين التكوين المناسب في ملف "phpmussel.ini" (يجب تعطيل عملية التنظيف) وعندما تنتهي من ذلك، في ملف PHP و الذي تم ربطه مع "بي اتش بي ماسل"، استخدم الدالة التالية في التعليمة البرمجية "الكود" الذي ستضعه:<br /><br /></div>
 
-`phpMussel($what_to_scan,$output_type,$output_flatness);`
+`$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
 
 <div dir="rtl"><ul>
@@ -109,7 +109,7 @@
 <div dir="rtl">أمثلة:<br /><br /></div>
 
 ```
- $results=phpMussel('/user_name/public_html/my_file.html',true,true);
+ $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```
 
@@ -127,16 +127,6 @@
 <div dir="rtl">إذا واجهت أي إيجابيات زائفة أي إذا واجهت شيئا جديدا تعتقد أنه يجب أن يكون قد تم حظره أو أي شيء آخر بخصوص التوقيعات، فيرجى الاتصال بي لإبلاغي عن ذلك حتى أستطيع إجراء التغييرات اللازمة، والتي إذا لم تقوم بالاتصال بي، فإنني قد لا أكون منتبه لها.<br /><br /></div>
 
 <div dir="rtl">لتعطيل التواقيع التي يتضمنها phpMussel (مثل إذا كنت تعاني من إيجابية زائفة محددة لأغراضك التي لا ينبغي أن يتم عادة إزالتها)، فارجع إلى القائمة الرمادية ضمن قسم أوامرالمتصفح من هذا الملف التمهيدي.<br /><br /></div>
-
-<div dir="rtl">بالإضافة للمسح الافتراضي للملفات و المسح الاختياري للملفات و/أو الدلائل الأخرى المحددة عن طريق الدالة أعلاه المضمنة في phpMussel و هي وظيفة معدة لفحص محتوى رسائل البريد الإلكتروني. هذه الوظيفة تسلك بشكل مشابه للوظيفة المعيارية ل"بي اتش بي ماسل" ولكن تركز فقط على المطابقة ضد توقيعات "كلام ايه في" القائمة على البريد الإلكتروني. إنني لم أربط هذه التوقيعات بالوظيفة الافتراضية لـ"بي اتش بي ماسل" لأنه من المستبعد جداً أن تجد محتوى رسالة يحتاج للفحص ضمن تحميل الملف المستهدف إلى صفحة حيث يكون "بي اتش بي ماسل" مثبت. و بذلك فإن ربط هذه التوقيعات بوظيفة "بي اتش بي ماسل" غير ضروري أو مجدي، ومع ذلك فوجود وظيفة منفصلة تطابق ضد هذه التوقيعات يمكن أن تكون مفيدة للغاية بالنسبة للبعض، خصوصا بالنسبة لأولئك الذين لديهم نظام CMS أو نظام webfront مرتبط بطريقة أو بأخرى مع نظام بريدهم الإلكتروني وبالنسبة لأولئك الذين يحيلون رسائل بريدهم الإلكتروني عن طريق نص برمجي PHP فإنهم من المحتمل أن ربطوه مع "بي اتش بي ماسل". تكوين هذه الدالة مثل كل الدوال الأخرى والتحكم فيها عن طريق ملف "phpmussel.ini". لاستخدام هذه الدالة (سوف تحتاج إلى القيام بالإجراء الخاص بك)، في ملف PHP التي يتم ربطه مع "بي اتش بي ماسل"، استخدم الدالة التالية في التعليمات البرمجية:<br /><br /></div>
-
-`phpMussel_mail($body);`
-
-<div dir="rtl">حيث "$body" هي محتوى رسالة البريد الإلكتروني المارد فحصها (بالإضافة إلى ذلك، فيمكنك تجربة فحص المشاركات الجديدة في منتدى، الرسائل الواردة من نموذج اتصالك بالانترنت أو ما شابه ذلك. في حالة حدوث أي خطأ يمنع الدالة من إكمال فحصها فسوف تعاد قيمة -1. إذا اكتمل فحص الدالة ولم تطابق أي شيء فسيتم إرجاع قيمة "0" (بمعنى نظيفة). غير أنه إذا كانت الدالة لا تتطابق مع شيء فسيتم إرجاع سلسلة تحتوي على رسالة تعلن ما يقابل ذلك.<br /><br /></div>
-
-<div dir="rtl">بالإضافة إلى ما سبق، إذا نظرتم إلى التعليمات البرمجية من المصدر فقد تلاحظ الدالة "phpMusselD()" و"phpMusselR()". هذه الدوال هي دوال فرعية من "phpMussel()"، ويجب أن لا يتم استدعاءها مباشرة خارج تلك الدالة الأم (ليس بسبب الآثار السلبية، ولكن يفضل ذلك، لأنه ببساطة لا تخدم أي غرض وستكون على الأرجح لا تعمل بشكل صحيح على أية حال).<br /><br /></div>
-
-<div dir="rtl">هناك العديد من الضوابط وغيرها من المهام المتاحة داخل phpMussel للاستخدام الخاص أيضا. عن أي من هذه الضوابط والمهام الموجودة بنهاية هذا الملف التمهيدي، فيرجى مواصلة القراءة والرجوع إلى قسم أوامرالمتصفح من هذا الملف التمهيدي.<br /><br /></div>
 
 ---
 
@@ -161,7 +151,6 @@
  <li>يوفر وسيلة للتوقيعات الموجودة في القائمة الرمادية على الفور في حالات مثل عندما تكتشف توقيع ينتج إيجابية كاذبة(أي أنه صنف الملف على أنه تحت تأثير الفايروس و لكن في الحقيقة أن الملف سليم و غير مصاب بالفايروس) أثناء تحميل الملفات على النظام الخاص بك و ليس لديك الوقت لتعديل وإعادة رفع ملف القائمة الرمادية يدويا.</li>
  <li>يوفر لك طريقة لتمكن شخص غيرك من التحكم في نسختك من "بي اتش بي ماسل" دون الحاجة لمنحهم إمكانية الوصول إلى بروتوكول نقل الملفات.</li>
  <li>يوفر طريقة لتوفير مراقب إلى سجل ملفاتك.</li>
- <li>يوفر طريقة سهلة لتحديث "بي اتش بي ماسل" عندما تتوفر تحديثات.</li>
  <li>يوفر طريقة لتتمكن من مراقبة "بي اتش بي ماسل"عند عدم توفر مراقبة من FTPأ و نقاط الوصول التقليدية الأخرى.</li>
 </ul></div>
 
@@ -285,7 +274,7 @@
 الوصف | الملف
 ----|----
 <div dir="rtl" style="display:inline;">أ ملف المشروع GitHub (غير مطلوب لتشغيل سليم للبرنامج).</div> | /.gitattributes
-<div dir="rtl" style="display:inline;">سجل للتغييرات التي أجريت على البرنامج بين التحديثات المختلفة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /Changelog-v0.txt
+<div dir="rtl" style="display:inline;">سجل للتغييرات التي أجريت على البرنامج بين التحديثات المختلفة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /Changelog-v1.txt
 <div dir="rtl" style="display:inline;">معلومات Composer/Packagist (غير مطلوب لتشغيل سليم للبرنامج).</div> | /composer.json
 <div dir="rtl" style="display:inline;">معلومات حول كيفية المساهمة في المشروع.</div> | /CONTRIBUTING.md
 <div dir="rtl" style="display:inline;">نسخة من GNU/GPLv2 رخصة.</div> | /LICENSE.txt
@@ -511,7 +500,7 @@
 التكوين العام لـ "بي اتش بي  ماسل".
 
 "script_password"
-- للسهولة، "بي اتش بي  ماسل" يقوم بالسماح لوظائف معينة (بما في ذلك القدرة على تحديث "بي اتش بي  ماسل" بشكل تلقائي) يمكن تشغيلها يدويا من خلال وظيفة الحصول على والاستعلام. مع ذلك، كإجراء أمني احترازي ، للقيام بذلك، "بي اتش بي  ماسل" تتوقع كلمة مرور ليتم تضمينها مع الأمر لضمان أنك من أصدرت الامر وليس شخصا آخر، في محاولة لبدء هذه الوظائف يدويا. تحدد script_password  أي كلمة سر ترغب في استخدامها. إذا تم تعيين أية كلمة مرور، سيتم تعطيل البدء اليدوي بشكل افتراضي. ننصح باستخدام شيء تذكرونه ككلمة مرور ولكن يصعب على الآخرين تخمينها.
+- للسهولة، "بي اتش بي  ماسل" يقوم بالسماح لوظائف معينة يمكن تشغيلها يدويا من خلال وظيفة الحصول على والاستعلام. مع ذلك، كإجراء أمني احترازي ، للقيام بذلك، "بي اتش بي  ماسل" تتوقع كلمة مرور ليتم تضمينها مع الأمر لضمان أنك من أصدرت الامر وليس شخصا آخر، في محاولة لبدء هذه الوظائف يدويا. تحدد script_password  أي كلمة سر ترغب في استخدامها. إذا تم تعيين أية كلمة مرور، سيتم تعطيل البدء اليدوي بشكل افتراضي. ننصح باستخدام شيء تذكرونه ككلمة مرور ولكن يصعب على الآخرين تخمينها.
 - ليس له أي تأثير في وضع CLI "واجهة سطر الأوامر".
 
 "logs_password"
@@ -775,7 +764,7 @@ Chameleon attack detection: False = Off; True = On.
 - Optional limitation or threshold to the length of raw data within which decode commands should be detected (in case there are any noticeable performance issues while scanning). Value is an integer representing filesize in KB. Default = 512 (512KB). Zero or null value disables the threshold (removing any such limitation based on filesize).
 
 "scannable_threshold"
-- Optional limitation or threshold to the length of raw data that phpMussel is permitted to read and scan (in case there are any noticeable performance issues while scanning). Value is an integer representing filesize in KB. Default = 32768 (32MB). Zero or null value disables the threshold. Generally, this value shouldn't be less than the average filesize of file uploads that you want and expect to receive to your server or website, shouldn't be more than the filesize_limit directive, and shouldn't be more than roughly one fifth of the total allowable memory allocation granted to PHP via the php.ini configuration file. This directive exists to try to prevent phpMussel from using up too much memory (that'd prevent it from being able to successfully scan files above a certain filesize).
+- Optional limitation or threshold to the length of raw data that phpMussel is permitted to read and scan (in case there are any noticeable performance issues while scanning). Value is an integer representing filesize in KB. Default = 32768 (32MB). Zero or null value disables the threshold. Generally, this value shouldn't be less than the average filesize of file uploads that you want and expect to receive to your server or website, shouldn't be more than the filesize_limit directive, and shouldn't be more than roughly one fifth of the total allowable memory allocation granted to PHP via the `php.ini` configuration file. This directive exists to try to prevent phpMussel from using up too much memory (that'd prevent it from being able to successfully scan files above a certain filesize).
 
 ####"compatibility" (التصنيف)
 Compatibility directives for phpMussel.
@@ -907,7 +896,7 @@ Template data relates to the HTML output used to generate the "Upload Denied" me
 
 `NAME:HEX:FROM:TO`
 
-<div dir="rtl">حيث "NAME" هو الاسم المذكور لهذا التوقيع و "HEX" هو الترميز الجزئي السادس عشري من الملف المراد أن يقابله تواقيع معينة. من وإلى المعاملات الاختيارية، مشيرا من خلالها إلى المواضع في البيانات المصدر للتحقق منها (غير معتمدة من قبل المهمة البريد).<br /><br /></div>
+<div dir="rtl">حيث "NAME" هو الاسم المذكور لهذا التوقيع و "HEX" هو الترميز الجزئي السادس عشري من الملف المراد أن يقابله تواقيع معينة. من وإلى المعاملات الاختيارية، مشيرا من خلالها إلى المواضع في البيانات المصدر للتحقق منها.<br /><br /></div>
 
 ####*<div dir="rtl">التعابير المنطقية</div>*
 <div dir="rtl">أي شكل من أشكال التعابير المنطقية يتم فهمها ومعالجتها بشكل صحيح عن طريق PHP و يجب أيضا أن يكون مفهوما بشكل صحيح و تتم معالجتها بواسطة"بي اتش بي ماسل" و توقيعاتها. مع ذلك، أود أن أقترح اتخاذ الحذر الشديد عند كتابة توقيعات التعابير المنطقية الجديدة، لأنه إذا لم تكن متأكدا تماما مما تفعله، يمكن أن يكون هناك عدم انتظام كبير و/أو نتائج غير متوقعة. القي نظرة على "بي اتش بي ماسل" مصدر الترميز إذا لم تكن متأكدا تماما من السياق الذي يتم تحليل البيانات باستخدام التعابير المنطقية. أيضا، تذكر أن كل أنماط (باستثناء اسم الملف، أرشيف البيانات الوصفية وأنماط MD5) يجب أن تتبع ترميز سادس عشري(عند تركيب نمط ما، بالتأكيد)!<br /><br /></div>
@@ -928,7 +917,7 @@ Template data relates to the HTML output used to generate the "Upload Denied" me
  <li>"الاوامر العامة" (hex_general_commands.csv). تم الفحص ضد محتويات كل ملف غير موجود في لائحة السماح المستهدفة للفحص.</li>
  <li>"التوقيعات التي تمت تسويتها بواسطة HTML" (html_*). تم الفحص ضد محتويات كل ملف HTML غير الموجودة في قائمة السماح المستهدفة للفحص.</li>
  <li>"توقيعات Mach-O" (macho_*). تم الفحص ضد محتويات كل ملف غير موجود في لائحة السماح المستهدفة للفحص ومطابقة لتنسيق Mach-O.</li>
- <li>"توقيعات البريد" (mail_*). تم الفحص ضد المتغير "$body" و الذي يقوم بتحليل لوظيفة phpMussel_mail()، والذي يهدف إلى أن يكون جسم من رسائل البريد الإلكتروني أو الكيانات المماثلة (يحتمل أن تكون المشاركات في المنتدى وإلى آخره).</li>
+ <li>"توقيعات البريد" (mail_*). تم الفحص ضد محتويات كل كائن EML غير موجود في لائحة السماح المستهدفة للفحص.</li>
  <li>"توقيعات MD5" (md5_*). تم الفحص ضد تجزئة MD5 من محتويات وحجم الملف من كل ملف غير موجود في لائحة السماح المستهدفة للفحص.</li>
  <li>"توقيعات أرشيف البيانات الوصفية" (metadata_*). فحص ضد تجزئة CRC32 الملف وحجم الملف الأولي الموجودة داخل أي أرشيف غير موجود في لائحة السماح المستهدفة للفحص.</li>
  <li>"توقيعات OLE" (ole_*). تم الفحص ضد محتويات كل كائن OLE غير موجود في لائحة السماح المستهدفة للفحص.</li>
@@ -1022,4 +1011,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 18 مارس 2016 (2016.03.18).</div>
+<div dir="rtl">آخر تحديث: 21 مارس 2016 (2016.03.21).</div>

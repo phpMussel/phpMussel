@@ -11,13 +11,11 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2016.03.18).
- *
- * @package Maikuolan/phpMussel
+ * This file: Configuration handler (last modified: 2016.03.26).
  */
 
 /** phpMussel version number (SemVer). */
-$phpMussel['ScriptVersion'] = '0.11.0-DEV';
+$phpMussel['ScriptVersion'] = '1.0.0-DEV';
 
 /** phpMussel version identifier (complete notation). */
 $phpMussel['ScriptIdent'] = 'phpMussel v' . $phpMussel['ScriptVersion'];
@@ -31,8 +29,11 @@ $phpMussel['Mussel_PHP'] = defined('PHP_BINARY') ? PHP_BINARY : '';
 /** Determine the operating system in use. */
 $phpMussel['Mussel_OS'] = strtoupper(substr(PHP_OS, 0, 3));
 
-/** Determine if operating in CLI. */
-$phpMussel['Mussel_sapi'] = php_sapi_name();
+/** Determine if operating in CLI-mode. */
+$phpMussel['Mussel_sapi'] = (
+    substr(php_sapi_name(), 0, 3) === 'cli' ||
+    (!empty($_SERVER['argc']) && is_numeric($_SERVER['argc']) && $_SERVER['argc'] > 0)
+);
 
 /** Current time at script execution; Used for various purposes. */
 $phpMussel['time']=time();
@@ -47,9 +48,9 @@ $phpMussel['Config'] =
 if (!is_array($phpMussel['Config'])) {
     header('Content-Type: text/plain');
     die(
-        '[phpMussel] Could not read phpmussel.ini: Can\'t continue. Refer to '.
-        'the documentation if this is a first-time run, and if problems '.
-        'persist, seek assistance.'
+        '[phpMussel] Could not read phpmussel.ini: Can\'t continue. Refer to the ' .
+        'documentation if this is a first-time run, and if problems persist, seek' .
+        'assistance.'
     );
 }
 

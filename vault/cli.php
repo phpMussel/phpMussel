@@ -11,9 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.03.18).
- *
- * @package Maikuolan/phpMussel
+ * This file: CLI handler (last modified: 2016.03.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -23,9 +21,10 @@ if (!defined('phpMussel')) {
 
 /** Prevents execution from outside of CLI-mode. */
 if (!(
-    strlen($phpMussel['Mussel_PHP']) &&
-    $phpMussel['Mussel_OS'] == 'WIN' &&
-    $phpMussel['Mussel_sapi'] == 'cli'
+    $phpMussel['Mussel_sapi'] &&
+    $phpMussel['Mussel_PHP'] &&
+    $phpMussel['Mussel_OS'] == 'WIN'
+    
 )) {
     die('[phpMussel] This should not be accessed directly.');
 }
@@ -44,12 +43,12 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
     /** Triggered by the forked child process in CLI-mode via Windows. */
     if ($phpMussel['cli_args'][1] == 'cli_win_scan') {
         /** Fetch the command. **/
-        $phpMussel['cmd'] = strtolower((substr_count($phpMussel['cli_args'][2], ' ')) ? substrbf($phpMussel['cli_args'][2], ' ') : $phpMussel['cli_args'][2]);
+        $phpMussel['cmd'] = strtolower((substr_count($phpMussel['cli_args'][2], ' ')) ? $phpMussel['substrbf']($phpMussel['cli_args'][2], ' ') : $phpMussel['cli_args'][2]);
 
         /** Scan a file or directory. **/
         if ($phpMussel['cmd'] == 'scan') {
             if ($phpMussel['Config']['general']['scan_cache_expiry']) {
-                $phpMussel['HashCache']['Data'] = phpMusselCacheGet('HashCache');
+                $phpMussel['HashCache']['Data'] = $phpMussel['FetchCache']('HashCache');
                 if (empty($phpMussel['HashCache']['Data'])) {
                     $phpMussel['HashCache']['Data'] = array();
                 } else {
@@ -74,7 +73,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                     unset($phpMussel['HashCache']['Build']);
                 }
             }
-            echo phpMusselR(substr($phpMussel['cli_args'][2], 5), true, true, 0, $phpMussel['cli_args'][3]);
+            echo $phpMussel['Recursor'](substr($phpMussel['cli_args'][2], 5), true, true, 0, $phpMussel['cli_args'][3]);
             if ($phpMussel['Config']['general']['scan_cache_expiry']) {
                 reset($phpMussel['HashCache']['Data']);
                 $phpMussel['HashCache']['Count'] = count($phpMussel['HashCache']['Data']);
@@ -91,7 +90,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                     next($phpMussel['HashCache']['Data']);
                 }
                 $phpMussel['HashCache']['Data'] = implode('', $phpMussel['HashCache']['Data']);
-                $phpMussel['HashCache']['Data'] = phpMusselCacheSet(
+                $phpMussel['HashCache']['Data'] = $phpMussel['SaveCache'](
                     'HashCache',
                     $phpMussel['time'] + $phpMussel['Config']['general']['scan_cache_expiry'],
                     $phpMussel['HashCache']['Data']
@@ -116,11 +115,11 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         if ($d[$i] == '.'|| $d[$i] == '..') {
                             continue;
                         }
-                        echo phpMusselFork('md5_file ' . $stl . $d[$i], $d[$i]) . "\n";
+                        echo $phpMussel['Fork']('md5_file ' . $stl . $d[$i], $d[$i]) . "\n";
                     }
                 }
             } elseif (@is_file($stl)) {
-                $hashme = phpMusselFile($stl, 0, true);
+                $hashme = $phpMussel['ReadFile']($stl, 0, true);
                 echo md5($hashme) . ':' . strlen($hashme) . ":YOUR-SIGNATURE-NAME\n";
             } else {
                 echo $stl . $phpMussel['Config']['lang']['cli_is_not_a'] . "\n";
@@ -143,11 +142,11 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         if ($d[$i] == '.'||$d[$i] == '..') {
                             continue;
                         }
-                        echo phpMusselFork('coex_file ' . $stl . $d[$i], $d[$i]) . "\n";
+                        echo $phpMussel['Fork']('coex_file ' . $stl . $d[$i], $d[$i]) . "\n";
                     }
                 }
             } elseif (@is_file($stl)) {
-                $hashme = phpMusselFile($stl, 0, true);
+                $hashme = $phpMussel['ReadFile']($stl, 0, true);
                 echo '$md5:' . md5($hashme) . ';$sha:' . sha1($hashme) . ';$str_len:' . strlen($hashme) . ";YOUR-SIGNATURE-NAME\n";
             }
             else echo $stl . $phpMussel['Config']['lang']['cli_is_not_a'] . "\n";
@@ -169,11 +168,11 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         if ($d[$i] == '.' || $d[$i] == '..') {
                             continue;
                         }
-                        echo phpMusselFork('pe_meta ' . $stl . $d[$i], $d[$i]) . "\n";
+                        echo $phpMussel['Fork']('pe_meta ' . $stl . $d[$i], $d[$i]) . "\n";
                     }
                 }
             } elseif (@is_file($stl)) {
-                $hashme = phpMusselFile($stl, 0, true);
+                $hashme = $phpMussel['ReadFile']($stl, 0, true);
                 if (substr($hashme, 0, 2) === 'MZ') {
                     $PEArr = array();
                     $PEArr['Len'] = strlen($hashme);
@@ -226,33 +225,33 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         }
                         echo "\n";
                         if (substr_count($hashme, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24")) {
-                            $PEArr['FINFO'] = substral($hashme, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24");
+                            $PEArr['FINFO'] = $phpMussel['substral']($hashme, "V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00\x24");
                             if (substr_count($PEArr['FINFO'], "F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00")) {
-                                $PEArr['ThisData'] = trim(str_ireplace("\x00", '', substrbf(substral($PEArr['FINFO'], "F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00"), "\x00\x00\x00")));
+                                $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00"), "\x00\x00\x00")));
                                 echo '$PEFileDescription:' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ":YOUR-SIGNATURE-NAME\n";
                             }
                             if (substr_count($PEArr['FINFO'], "F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00")) {
-                                $PEArr['ThisData'] = trim(str_ireplace("\x00", '', substrbf(substral($PEArr['FINFO'], "F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"), "\x00\x00\x00")));
+                                $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"), "\x00\x00\x00")));
                                 echo '$PEFileVersion:' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ":YOUR-SIGNATURE-NAME\n";
                             }
                             if (substr_count($PEArr['FINFO'], "P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00")) {
-                                $PEArr['ThisData'] = trim(str_ireplace("\x00", '', substrbf(substral($PEArr['FINFO'], "P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00"), "\x00\x00\x00")));
+                                $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00"), "\x00\x00\x00")));
                                 echo '$PEProductName:' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ":YOUR-SIGNATURE-NAME\n";
                             }
                             if (substr_count($PEArr['FINFO'], "P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00")) {
-                                $PEArr['ThisData'] = trim(str_ireplace("\x00", '', substrbf(substral($PEArr['FINFO'], "P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"), "\x00\x00\x00")));
+                                $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00"), "\x00\x00\x00")));
                                 echo '$PEProductVersion:' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ":YOUR-SIGNATURE-NAME\n";
                                 }
                             if (substr_count($PEArr['FINFO'], "L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00")) {
-                                $PEArr['ThisData'] = trim(str_ireplace("\x00", '', substrbf(substral($PEArr['FINFO'], "L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00"), "\x00\x00\x00")));
+                                $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00"), "\x00\x00\x00")));
                                 echo '$PECopyright:' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ":YOUR-SIGNATURE-NAME\n";
                             }
                             if (substr_count($PEArr['FINFO'], "O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00")) {
-                                $PEArr['ThisData'] = trim(str_ireplace("\x00", '', substrbf(substral($PEArr['FINFO'], "O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00"), "\x00\x00\x00")));
+                                $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00"), "\x00\x00\x00")));
                                 echo '$PEOriginalFilename:' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ":YOUR-SIGNATURE-NAME\n";
                             }
                             if (substr_count($PEArr['FINFO'], "C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00")) {
-                                $PEArr['ThisData'] = trim(str_ireplace("\x00", '', substrbf(substral($PEArr['FINFO'], "C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00"), "\x00\x00\x00")));
+                                $PEArr['ThisData'] = trim(str_ireplace("\x00", '', $phpMussel['substrbf']($phpMussel['substral']($PEArr['FINFO'], "C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00"), "\x00\x00\x00")));
                                 echo '$PECompanyName:' . md5($PEArr['ThisData']) . ':' . strlen($PEArr['ThisData']) . ":YOUR-SIGNATURE-NAME\n";
                             }
                         }
@@ -295,7 +294,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         }
 
         /** Fetch the command. **/
-        $phpMussel['cmd'] = strtolower((substr_count($stl, ' ')) ? substrbf($stl, ' ') : $stl);
+        $phpMussel['cmd'] = strtolower((substr_count($stl, ' ')) ? $phpMussel['substrbf']($stl, ' ') : $stl);
 
         /** Exit CLI-mode. **/
         if ($phpMussel['cmd'] == 'quit' || $phpMussel['cmd'] == 'q' || $phpMussel['cmd'] == 'exit') {
@@ -319,11 +318,11 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         if ($d[$i] == '.' || $d[$i] == '..') {
                             continue;
                         }
-                        echo phpMusselFork('md5_file ' . $stl . $d[$i], $d[$i]) . "\n";
+                        echo $phpMussel['Fork']('md5_file ' . $stl . $d[$i], $d[$i]) . "\n";
                     }
                 }
             } elseif (@is_file($stl)) {
-                $hashme = phpMusselFile($stl, 0, true);
+                $hashme = $phpMussel['ReadFile']($stl, 0, true);
                 echo md5($hashme) . ':' . strlen($hashme) . ":YOUR-SIGNATURE-NAME\n";
             } else {
                 echo $stl . $phpMussel['Config']['lang']['cli_is_not_a'] . "\n";
@@ -347,11 +346,11 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         if ($d[$i] == '.' || $d[$i] == '..') {
                             continue;
                         }
-                        echo phpMusselFork('coex_file ' . $stl . $d[$i], $d[$i]) . "\n";
+                        echo $phpMussel['Fork']('coex_file ' . $stl . $d[$i], $d[$i]) . "\n";
                     }
                 }
             } elseif (@is_file($stl)) {
-                $hashme = phpMusselFile($stl, 0, true);
+                $hashme = $phpMussel['ReadFile']($stl, 0, true);
                 echo '$md5:' . md5($hashme) . ';$sha:' . sha1($hashme) . ';$str_len:' . strlen($hashme) . ";YOUR-SIGNATURE-NAME\n";
             } else {
                 echo $stl . $phpMussel['Config']['lang']['cli_is_not_a'] . "\n";
@@ -375,11 +374,11 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         if ($d[$i] == '.' || $d[$i] == '..') {
                             continue;
                         }
-                        echo phpMusselFork('pe_meta ' . $stl . $d[$i], $d[$i]) . "\n";
+                        echo $phpMussel['Fork']('pe_meta ' . $stl . $d[$i], $d[$i]) . "\n";
                     }
                 }
             } elseif (@is_file($stl)) {
-                echo phpMusselFork('pe_meta ' . $stl, $stl) . "\n";
+                echo $phpMussel['Fork']('pe_meta ' . $stl, $stl) . "\n";
             } else {
                 echo $stl . $phpMussel['Config']['lang']['cli_is_not_a'] . "\n";
             }
@@ -395,7 +394,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         /** Generate a URL scanner signature from a URL. **/
         if ($phpMussel['cmd'] == 'url_sig') {
             echo "\n";
-            $stl = prescan_normalise(substr($stl, strlen($phpMussel['cmd']) + 1));
+            $stl = $phpMussel['prescan_normalise'](substr($stl, strlen($phpMussel['cmd']) + 1));
             $urlsig = array();
             $urlsig['avoidme'] = $urlsig['forthis'] = '';
             if (
@@ -417,13 +416,13 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                     }
                 }
                 if (substr_count($urlsig['url'][3][0], '?')) {
-                    $urlsig['x'] = substrbf($urlsig['url'][3][0], '?');
+                    $urlsig['x'] = $phpMussel['substrbf']($urlsig['url'][3][0], '?');
                     $urlsig['forthis'] = md5($urlsig['x']) . ':' . strlen($urlsig['x']);
                     if (!substr_count($urlsig['avoidme'], $urlsig['forthis'])) {
                         $urlsig['avoidme'] .= ',' . $urlsig['forthis'] . ',';
                         echo 'URL:' . $urlsig['forthis'] . ":YOUR-SIGNATURE-NAME\n";
                     }
-                    $urlsig['x'] = substraf($urlsig['url'][3][0], '?');
+                    $urlsig['x'] = $phpMussel['substraf']($urlsig['url'][3][0], '?');
                     $urlsig['forthis'] = md5($urlsig['x']) . ':' . strlen($urlsig['x']);
                     if (
                         !substr_count($urlsig['avoidme'], $urlsig['forthis']) &&
@@ -496,17 +495,17 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         }
                         $pcent = @round(($i / $c) * 100, 2) . '%';
                         echo $pcent . ' ' . $phpMussel['Config']['lang']['scan_complete'] . $phpMussel['Config']['lang']['_fullstop_final'];
-                        $out = phpMusselFork('scan ' . $stl . $d[$i], $d[$i]);
+                        $out = $phpMussel['Fork']('scan ' . $stl . $d[$i], $d[$i]);
                         if (!$out) {
                             $out = '> ' . $phpMussel['Config']['lang']['cli_failed_to_complete'] . ' (' . $d[$i] . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
                         }
                         $r .= $out;
-                        echo "\r" . prescan_decode($out);
+                        echo "\r" . $phpMussel['prescan_decode']($out);
                         $out = '';
                     }
                 }
             } elseif (@is_file($stl)) {
-                $out = phpMusselFork('scan ' . $stl, $stl);
+                $out = $phpMussel['Fork']('scan ' . $stl, $stl);
                 if (!$out) {
                     $out = '> ' . $phpMussel['Config']['lang']['cli_failed_to_complete'] . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
                 }
@@ -515,7 +514,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             }
             $r .= $out;
             if ($out) {
-                echo prescan_decode($out);
+                echo $phpMussel['prescan_decode']($out);
                 $out = '';
             }
             $phpMussel['memCache']['end_time'] = time();
@@ -543,19 +542,6 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                 $phpMussel['memCache']['handle'] = '';
             }
             $s = $r = '';
-        }
-
-        /** Call the update handler. **/
-        if ($phpMussel['cmd'] == 'update' || $phpMussel['cmd'] == 'u') {
-            echo "\n";
-            $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            $is_cli = true;
-            if (!file_exists($phpMussel['vault'] . 'update.php')) {
-                echo $phpMussel['Config']['lang']['update_scriptfile_missing'];
-            } else {
-                require $phpMussel['vault'] . 'update.php';
-                echo "\n" . $phpMussel['Config']['lang']['cli_update_restart'];
-            }
         }
 
         /** Add an entry to the greylist. **/
@@ -590,7 +576,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
             echo
                 (file_exists($phpMussel['vault'] . 'greylist.csv')) ?
-                " greylist.csv:\n" . implode("\n ", explode(',', phpMusselFile($phpMussel['vault'] . 'greylist.csv'))) :
+                " greylist.csv:\n" . implode("\n ", explode(',', $phpMussel['ReadFile']($phpMussel['vault'] . 'greylist.csv'))) :
                 ' greylist.csv ' . $phpMussel['Config']['lang']['x_does_not_exist'] . $phpMussel['Config']['lang']['_exclamation_final'];
         }
 
