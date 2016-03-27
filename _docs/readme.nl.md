@@ -903,7 +903,7 @@ Het volgende is een overzicht van de soorten handtekeningen gebruikt door phpMus
 
 Voor het grootste deel, phpMussel is algemeen compatibel met de meeste andere anti-virus software. Echter, conflictions geweest beschreven door een aantal gebruikers in het verleden. Deze informatie hieronder is afkomstig van VirusTotal.com, het beschrijven van een aantal fout-positieven gemeld door anti-virus programma's tegen phpMussel. Hoewel deze informatie is geen absolute garantie van wel of niet u zult compatibiliteitsproblemen ondervindt tussen phpMussel en uw anti-virus software, als uw anti-virus software wordt gemarkeerd tegen phpMussel, moet u ofwel overwegen uit te schakelen voorafgaand aan het werken met phpMussel of moeten overwegen alternatieve opties om ofwel uw anti-virus software of phpMussel.
 
-Dit informatie werd laatst bijgewerkt 25 Februari 2016 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v0.9.0-v0.10.0) op het moment van schrijven dit.
+Dit informatie werd laatst bijgewerkt 27 Maart 2016 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v0.10.0-v1.0.0) op het moment van schrijven dit.
 
 | Scanner              |  Resultaten                          |
 |----------------------|--------------------------------------|
@@ -922,7 +922,7 @@ Dit informatie werd laatst bijgewerkt 25 Februari 2016 en is op de hoogte voor a
 | AVware               |  Geen bekend problemen               |
 | Baidu-International  |  Geen bekend problemen               |
 | BitDefender          |  Geen bekend problemen               |
-| Bkav                 |  Berichten "VEXC640.Webshell" en "VEXD737.Webshell"|
+| Bkav                 |  Berichten "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
 | ByteHero             |  Geen bekend problemen               |
 | CAT-QuickHeal        |  Geen bekend problemen               |
 | ClamAV               |  Geen bekend problemen               |
@@ -971,4 +971,4 @@ Dit informatie werd laatst bijgewerkt 25 Februari 2016 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 21 Maart 2016 (2016.03.21).
+Laatste Bijgewerkt: 27 Maart 2016 (2016.03.27).

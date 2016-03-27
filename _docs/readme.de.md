@@ -901,7 +901,7 @@ Im Folgenden eine Aufschlüsselung der Signaturen, die von phpMussel genutzt wer
 
 In den meisten Fällen sollte phpMussel mit den meisten anderen Antiviren-Softwareprodukten kompatibel sein. Jedoch wurden in der Vergangenheit Konflikte von anderen Nutzern festgestellt. Die folgenden Informationen stammen von VirusTotal.com, welche einige Fehlalarme von verschiedenen Antiviren-Programmen gegen phpMussel beschreiben. Diese Informationen garantieren nicht, ob Kompatibilitätsprobleme zwischen phpMussel und Ihrem eingesetzten Antiviren-Produkt bestehen. Sollte Ihre Antiviren-Software als problematisch aufgelistet sein, sollten Sie diese entweder vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen überlegen.
 
-Diese Informationen wurden zuletzt am 25. Februar 2016 aktualisiert und gelten für alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen (v0.9.0-v0.10.0) zu diesem Zeitpunkt.
+Diese Informationen wurden zuletzt am 27. März 2016 aktualisiert und gelten für alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen (v0.10.0-v1.0.0) zu diesem Zeitpunkt.
 
 | Scanner              |  Ergebnisse                          |
 |----------------------|--------------------------------------|
@@ -920,7 +920,7 @@ Diese Informationen wurden zuletzt am 25. Februar 2016 aktualisiert und gelten f
 | AVware               |  Keine bekannten Probleme            |
 | Baidu-International  |  Keine bekannten Probleme            |
 | BitDefender          |  Keine bekannten Probleme            |
-| Bkav                 |  Meldet "VEXC640.Webshell" und "VEXD737.Webshell"|
+| Bkav                 |  Meldet "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
 | ByteHero             |  Keine bekannten Probleme            |
 | CAT-QuickHeal        |  Keine bekannten Probleme            |
 | ClamAV               |  Keine bekannten Probleme            |
@@ -969,4 +969,4 @@ Diese Informationen wurden zuletzt am 25. Februar 2016 aktualisiert und gelten f
 ---
 
 
-Zuletzt aktualisiert: 21. März 2016 (2016.03.21).
+Zuletzt aktualisiert: 27. März 2016 (2016.03.27).

@@ -903,7 +903,7 @@ A seguir estão os diferentes tipos de assinaturas utilizadas por phpMussel:
 
 Em geral, phpMussel deve ser bastante compatível com a maioria dos outros vírus detecção softwares. Embora, conflitos foram relatadas por um número de utilizadores no passado. Esta informação abaixo é de VirusTotal.com, e descreve um número de falso-positivos relatados por vários anti-vírus programas contra phpMussel. Embora esta informação não é um absoluta garantia de haver ou não você vai encontrar problemas de compatibilidade entre phpMussel e seu anti-vírus software, se o seu anti-vírus software é conhecido como sinalização contra phpMussel, você deve considerar desativá-lo antes de trabalhar com phpMussel ou deve considerar alternativas opções para o seu anti-vírus software ou phpMussel.
 
-Esta informação foi atualizada dia 25 Fevereiro 2016 e é corrente para todas phpMussel lançamentos das duas mais recentes menores versões (v0.9.0-v0.10.0) no momento de escrever este.
+Esta informação foi atualizada dia 27 Março 2016 e é corrente para todas phpMussel lançamentos das duas mais recentes menores versões (v0.10.0-v1.0.0) no momento de escrever este.
 
 | Analisador           |  Resultados                          |
 |----------------------|--------------------------------------|
@@ -922,7 +922,7 @@ Esta informação foi atualizada dia 25 Fevereiro 2016 e é corrente para todas 
 | AVware               |  Não apresentou problemas            |
 | Baidu-International  |  Não apresentou problemas            |
 | BitDefender          |  Não apresentou problemas            |
-| Bkav                 |  Reportar "VEXC640.Webshell" e "VEXD737.Webshell"|
+| Bkav                 |  Reportar "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
 | ByteHero             |  Não apresentou problemas            |
 | CAT-QuickHeal        |  Não apresentou problemas            |
 | ClamAV               |  Não apresentou problemas            |
@@ -971,4 +971,4 @@ Esta informação foi atualizada dia 25 Fevereiro 2016 e é corrente para todas 
 ---
 
 
-Última Atualização: 21 Março 2016 (2016.03.21).
+Última Atualização: 27 Março 2016 (2016.03.27).

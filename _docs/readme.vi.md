@@ -30,7 +30,7 @@ Chân thành cám ơn [ClamAV](http://www.clamav.net/) cho cả hai nguồn cả
 
 Chân thành cám ơn Sourceforge và GitHub đã lưu trữ các tập tin của chương trình này, và [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55) đã lưu trữ diễn đàn thảo luận của phpMussel, và các chữ ký sử dụng bởi phpMussel: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) vân vân, và chân thành cảm ơn những người đã ủng hộ chương trình này, và bất cứ ai khác mà tôi quên cảm ơn, và bạn, đã sử dụng bản này.
 
-Tập tin này và các gói liên quan của nó có thể được tải về miễn phí từ:
+Tài liệu này và các gói liên quan của nó có thể được tải về miễn phí từ:
 - [Sourceforge](http://phpmussel.sourceforge.net/).
 - [GitHub](https://github.com/Maikuolan/phpMussel/).
 
@@ -117,22 +117,22 @@ Trả về một cái gì đó như thế này (như một string):
  Wed, 16 Sep 2013 02:49:47 +0000 Hoàn thành.
 ```
 
-For a full break-down of what sort of signatures phpMussel uses during its scans and how it handles these signatures, refer to the Signature Format section of this README file.
+Đối với một phân tích đầy đủ những gì sắp xếp của chữ ký phpMussel sử dụng trong quá trình quét của nó và cách nó xử lý chữ ký của nó, tham khảo các phần Định Dạng Của Chử Ký của tập tin README này.
 
-If you encounter any false positives, if you encounter something new that you think should be blocked, or for anything else regarding signatures, please contact me about it so that I may make the necessary changes, which, if you do not contact me, I may not necessarily be aware of.
+Nếu bạn gặp bất kỳ sai tích cực, nếu bạn gặp một số điều mới bạn nghĩ rằng nên bị chặn, hoặc cho bất cứ điều gì khác có liên quan đến chữ ký, xin vui lòng liên hệ với tôi vì vậy mà tôi có thể thực hiện các thay đổi cần thiết, mà, nếu bạn không liên hệ với tôi, tôi có thể không nhất thiết phải nhận thức được.
 
-To disable signatures included with phpMussel (such as if you're experiencing a false positive specific to your purposes that shouldn't normally be removed from streamline), refer to the Greylisting notes within the Browser Commands section of this README file.
+Để vô hiệu hóa chữ ký đã bao gồm trong phpMussel (chẳng hạn như nếu bạn gặp một sai tích cực và bạn không thể loại bỏ nó), tham khảo các ghi chú cho các danh sách xám trong các phần Lệnh Cho Trình Duyệt của tập tin README này.
 
 ---
 
 
 ###3B. <a name="SECTION3B"></a>CÁCH SỬ DỤNG (CHO CLI)
 
-Please refer to the "CẢCH CÀI ĐẶT (CHO CLI)" section of this README file.
+Tham khảo phần "CẢCH CÀI ĐẶT (CHO CLI)" của tập tin README này.
 
-Be aware that, although future versions of phpMussel should support other systems, at this time, phpMussel CLI mode support is only optimised for use on Windows-based system (you can, of course, try it on other systems, but I can't guarantee it'll work as intended).
+Hãy nhận biết rằng, mặc dù các phiên bản tương lai của phpMussel nên hỗ trợ các hệ thống khác, tại thơi điểm nay, hỗ trợ cho chế độ CLI của phpMussel đã được tối ưu chỉ dành cho sử dụng trên hệ thống Windows (bạn có thể, tất nhiên, thử nó trên các hệ thống khác, nhưng tôi không thể đảm bảo nó sẽ làm việc như dự định).
 
-Also be aware that phpMussel is not the functional equivalent of a complete anti-virus suite, and unlike conventional anti-virus suites, doesn't monitor active memory or detect viruses on-the-fly! It'll only detect viruses contained by those specific files that you explicitly tell it to scan.
+Ngoài ra, ý thức được rằng phpMussel không phải là chức năng tương đương của một bộ chống vi rút hoàn thiện, và không giống như chống vi rút thông thường, nó không theo dõi bộ nhớ hoạt động hoặc phát hiện vi rút với sự tự phát! Nó sẽ chỉ phát hiện vi rút chứa trong các tập tin mà bạn nói với nó để quét.
 
 ---
 
@@ -436,8 +436,8 @@ Tập tin | Chi tiết
 
 ※ Tên tập tin có thể thay đổi tuy theo các quy định của cấu hình (xem `phpmussel.ini`).
 
-####*REGARDING SIGNATURE FILES*
-CVD is an acronym for "ClamAV Virus Definitions", in reference both to how ClamAV refers to its own signatures and to the use of those signatures for phpMussel; Files ending with "CVD" contain signatures.
+####*LIÊN QUAN ĐẾN CÁC TẬP TIN CHỮ KÝ*
+CVD là một từ viết tắt cho "ClamAV Virus Definitions", in reference to how ClamAV refers to its own signatures and to the use of those signatures for phpMussel; Files ending with "CVD" contain signatures.
 
 Files ending with "MAP", quite literally, map which signatures phpMussel should and shouldn't use for individual scans; Not all signatures are necessarily required for every single scan, so, phpMussel uses maps of the signature files to speed up the scanning process (a process that would otherwise be extremely slow and tedious).
 
@@ -457,31 +457,31 @@ Signature files marked with "_mussel" contain signatures that specifically are n
 
 
 ###6. <a name="SECTION6"></a>SỰ LỰA CHỌN CỦA CẤU HÌNH
-Sau đây là một list of variables found in the `phpmussel.ini` configuration tập tin of phpMussel, along with a description of their purpose and function.
+Sau đây là danh sách các biến tìm thấy trong tập tin cấu hình cho phpMussel `phpmussel.ini`, cùng với một mô tả về mục đích và chức năng của chúng.
 
 ####"general" (Thể loại)
-General phpMussel configuration.
+Cấu hình chung cho phpMussel.
 
 "script_password"
 - As a convenience, phpMussel will allow certain functions to be manually triggered via POST, GET and QUERY. Tuy nhiên, as a security precaution, to do this, phpMussel will expect a password to be included with the command, as to ensure that it's you, and not someone else, attempting to manually trigger these functions. Set `script_password` to whatever password you would like to use. If no password is set, manual triggering will be disabled by default. Use something you will remember but which is hard for others to guess.
-- Has no influence in CLI mode.
+- Không có ảnh hưởng trong CLI.
 
 "logs_password"
 - The same as `script_password`, but for viewing the contents of scan_log and scan_kills. Having separate passwords can be useful if you want to give someone else access to one set of functions but not the other.
-- Has no influence in CLI mode.
+- Không có ảnh hưởng trong CLI.
 
 "cleanup"
 - Unset variables and cache used by the script after the initial upload scanning? False = Không; True = Vâng [Mặc định]. If you -aren't- using the script beyond the initial scanning of uploads, you should set this to `true` (yes), to minimize memory usage. If you -are- using the script beyond the initial scanning of uploads, should set to `false` (no), to avoid unnecessarily reloading duplicate dữ liệu into memory. In general practice, it should usually be set to `true`, but, if you do this, you won't be able to use the script for anything other than the initial tập tin upload scanning.
-- Has no influence in CLI mode.
+- Không có ảnh hưởng trong CLI.
 
 "scan_log"
-- Filename of tập tin to log all scanning results to. Specify a filename, or leave blank to disable.
+- Tên của tập tin để ghi lại tất cả các kết quả quét. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
 "scan_log_serialized"
-- Filename of tập tin to log all scanning results to (using a serialised format). Specify a filename, or leave blank to disable.
+- Tên của tập tin để ghi lại tất cả các kết quả quét (sử dụng một định dạng tuần tự). Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
 "scan_kills"
-- Filename of tập tin to log all records of blocked or killed uploads to. Specify a filename, or leave blank to disable.
+- Tên của tập tin để ghi lại tất cả hồ sơ của bị chặn hoặc bị giết tải lên. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
 "ipaddr"
 - Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Mặc định = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
@@ -808,58 +808,58 @@ Template dữ liệu relates to the HTML output used to generate the "Upload Den
 ###7. <a name="SECTION7"></a>ĐỊNH DẠNG CỦA CHỬ KÝ
 
 ####*CHỮ KÝ TÊN TẬP TIN*
-All filename signatures follow the format:
+Tất cả các chữ ký tên tập tin tuân theo các định dạng:
 
 `NAME:FNRX`
 
-Where NAME is the name to cite for that signature and FNRX is the regex pattern to match filenames (unencoded) against.
+NAME là tên cho các chữ ký và FNRX là mô hình biểu thức chính quy để kiểm tra tên tập tin (không mã hóa).
 
 ####*CHỮ KÝ DỰA MD5*
-All MD5 signatures follow the format:
+Tất cả các chữ ký dựa MD5 tuân theo các định dạng:
 
 `HASH:FILESIZE:NAME`
 
-Where HASH is the băm MD5 of an entire file, FILESIZE is the total size of that tập tin and NAME is the name to cite for that signature.
+HASH là băm MD5 của toàn bộ tập tin, FILESIZE là tổng dung lượng tập tin và NAME là tên cho các chữ ký.
 
-####*ARCHIVE METADATA SIGNATURES*
-All siêu dữ liệu lưu trữ signatures follow the format:
+####*CHỮ KÝ SIÊU DỮ LIỆU LƯU TRỮ*
+Tất cả các chữ ký siêu dữ liệu lưu trữ tuân theo các định dạng:
 
 `NAME:FILESIZE:CRC32`
 
-Where NAME is the name to cite for that signature, FILESIZE is the total size (uncompressed) of a tập tin contained within the lưu trữ and CRC32 is the CRC32 checksum of that contained file.
+NAME là tên cho các chữ ký, FILESIZE là tổng dung lượng (không nén) của một tập tin chứa trong lưu trữ và CRC32 là băm CRC32 của tập tin đó.
 
 ####*CHỮ KÝ PHẦN PE*
-All PE Sectional signatures follow the format:
+Tất cả các chữ ký phần PE tuân theo các định dạng:
 
 `SIZE:HASH:NAME`
 
-Where HASH is the băm MD5 of a section of a PE file, SIZE is the total size of that section and NAME is the name to cite for that signature.
+HASH là băm MD5 của một phần của một tập tin PE, SIZE là tổng kích thước của phần đó và NAME là tên cho các chữ ký.
 
 ####*CHỮ KÝ KÉO DÀI PE*
-All PE extended signatures follow the format:
+Tất cả các chữ ký kéo dài PE tuân theo các định dạng:
 
 `$VAR:HASH:SIZE:NAME`
 
-Where $VAR is the name of the PE variable to match against, HASH is the băm MD5 of that variable, SIZE is the total size of that variable and NAME is the name to cite for that signature.
+$VAR là tên của các biến PE để kiểm tra, HASH là băm MD5 của biến đó, SIZE là tổng kích thước biến và NAME là tên cho các chữ ký.
 
 ####*CHỮ KÝ DANH SÁCH TRẮNG*
-All Whitelist signatures follow the format:
+Tất cả các chữ ký danh sách trắng tuân theo các định dạng:
 
 `HASH:FILESIZE:TYPE`
 
-Where HASH is the băm MD5 of an entire file, FILESIZE is the total size of that tập tin and TYPE is the type of signatures the whitelisted tập tin is to be immune against.
+HASH là băm MD5 của toàn bộ tập tin, FILESIZE là tổng dung lượng tập tin và TYPE là các loại chữ ký các danh sách trắng tập tin là để được miễn dịch chống lại.
 
 ####*CHỮ KÝ KÉO DÀI PHỨC TẠP*
-Complex Extended signatures are rather different to the other types of signatures possible with phpMussel, in that what they are matching against is specified by the signatures themselves and they can match against multiple criteria. The match criterias are delimited by ";" and the match type and match dữ liệu of each match criteria is delimited by ":" as so that format for these signatures tends to look a bit like:
+Chữ ký kéo dài phức tạp là khá khác nhau với các loại khác của chữ ký có thể với phpMussel, trong ý nghĩa rằng những gì họ đang kiểm tra cho được quy định bởi những chữ ký tự và họ có thể kiểm tra cho nhiều tiêu chí. Các tiêu chí được giới hạn bởi ";" và các loại kiểm tra và dữ liệu kiểm tra cho từng tiêu chí được giới hạn bởi ":" như vậy mà định dạng cho những chữ ký trông hơi giống như:
 
-`$variable1:SOMEDATA;$variable2:SOMEDATA;SignatureName`
+`$Biến_Số1:Một_Số_Dữ_Liệu;$Biến_Số2:Một_Số_Dữ_Liệu;Tên_Chữ_Ký`
 
 ####*MỌI THỨ KHÁC*
 Tất cả các chữ ký khác làm theo các định dạng:
 
 `NAME:HEX:FROM:TO`
 
-NAME là tên trích dẫn cho các chữ ký và HEX là một phân khúc thập lục phân mã hóa của các tập tin dự định để được xuất hiện bởi các chữ ký. FROM và TO là thông số tùy chọn, cho thấy nơi trong nguồn dữ liệu, bắt đầu và kết thúc, để kiểm tra lại.
+NAME là tên cho các chữ ký và HEX là một phân khúc thập lục phân mã hóa của các tập tin dự định để được xuất hiện bởi các chữ ký. FROM và TO là thông số tùy chọn, cho thấy nơi trong nguồn dữ liệu, bắt đầu và kết thúc, để kiểm tra lại.
 
 ####*BIỂU THỨC CHÍNH QUY*
 Bất kỳ cách thức biểu thức chính quy hiểu và xử lý một cách chính xác qua PHP cũng nên được hiểu hiểu và xử lý một cách chính xác qua phpMussel và chữ ký của nó. Tuy nhiên, tôi muốn đề nghị lấy hết sức thận trọng khi viết chữ ký biểu thức chính quy mới, bởi vì, nếu bạn không hoàn toàn chắc chắn bạn đang làm gì vậy, có thể có kết quả rất bất thường và/hoặc bất ngờ. Nhìn vào các mã nguồn nếu bạn không hoàn toàn về bối cảnh rằng họ đang phân tích cú pháp. Ngoài ra, nhớ lại rằng tất cả mọi thứ (ngoại trừ tên tập tin, cú pháp, siêu dữ liệu lưu trữ và mẫu MD5) phải được mã hóa hệ thập lục phân!
@@ -899,11 +899,11 @@ Sau đây là một danh sách các loại chữ ký được sử dụng bởi 
 ####PHP và PCRE
 - phpMussel cần PHP và PCRE để thực hiện và hoạt động. Nếu không có PHP, hoạc không có PCRE thêm của PHP, phpMussel sẽ không thực hiện và hoạt động bình thường. Bạn nên chắc chắc rằng hệ thống của bạn có PHP và PCRE cài vào và có sẵn trước khi tải và cài đặt phpMussel.
 
-####KHẢ NĂNG TƯƠNG THÍCH PHẦN MỀM CHỐNG VIRUS
+####KHẢ NĂNG TƯƠNG THÍCH PHẦN MỀM CHỐNG VI RÚT
 
-Cho hầu hết các phần, phpMussel sẽ tương hợp với hầu hết các phần mềm quét virus khác. Nhưng mà, có một số người sử dụng trong quá khứ đã báo cáo một số vấn đề. Thông tin dưới đây là từ VirusTotal.com, và nó miêu tả một số giả tích cực báo cáo bởi các chương trình chống virus khác nhau chống phpMussel. Mặc dù thông tin này không đảm bảo nếu bạn gặp phải vấn đề tương hợp giữa phpMussel và phần mềm chống virus của bạn, nếu phần mềm chống virus của bạn được ghi nhận là cách gắn cờ chống lại phpMussel, bạn nên tắt nó trước khi sử dụng phpMussel hoặc nên xét các lựa chọn khác cho một trong hai phần mềm chống virus của bạn hoặc phpMussel.
+Cho hầu hết các phần, phpMussel sẽ tương hợp với hầu hết các phần mềm quét vi rút khác. Nhưng mà, có một số người sử dụng trong quá khứ đã báo cáo một số vấn đề. Thông tin dưới đây là từ VirusTotal.com, và nó miêu tả một số giả tích cực báo cáo bởi các chương trình chống vi rút khác nhau chống phpMussel. Mặc dù thông tin này không đảm bảo nếu bạn gặp phải vấn đề tương hợp giữa phpMussel và phần mềm chống vi rút của bạn, nếu phần mềm chống vi rút của bạn được ghi nhận là cách gắn cờ chống lại phpMussel, bạn nên tắt nó trước khi sử dụng phpMussel hoặc nên xét các lựa chọn khác cho một trong hai phần mềm chống vi rút của bạn hoặc phpMussel.
 
-Thông tin này được cập nhật lần cứơi vào ngày 25 Tháng Hai 2016 và có thể áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.9.0-v0.10.0) vào thời gian cái này được viết.
+Thông tin này được cập nhật lần cứơi vào ngày 27 Tháng Ba 2016 và có thể áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.10.0-v1.0.0) vào thời gian cái này được viết.
 
 | Chương trình quét    |  Kết quả                             |
 |----------------------|--------------------------------------|
@@ -922,7 +922,7 @@ Thông tin này được cập nhật lần cứơi vào ngày 25 Tháng Hai 201
 | AVware               |  Không có vấn đề                     |
 | Baidu-International  |  Không có vấn đề                     |
 | BitDefender          |  Không có vấn đề                     |
-| Bkav                 |  Báo cáo "VEXC640.Webshell" và "VEXD737.Webshell"|
+| Bkav                 |  Báo cáo "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
 | ByteHero             |  Không có vấn đề                     |
 | CAT-QuickHeal        |  Không có vấn đề                     |
 | ClamAV               |  Không có vấn đề                     |
@@ -971,4 +971,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 25 Tháng Hai 201
 ---
 
 
-Lần cuối cập nhật: 21 Tháng Ba 2016 (2016.03.21).
+Lần cuối cập nhật: 27 Tháng Ba 2016 (2016.03.27).

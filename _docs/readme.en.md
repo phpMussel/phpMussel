@@ -903,7 +903,7 @@ The following is a breakdown of the types of signatures used by phpMussel:
 
 For the most part, phpMussel should be fairly compatible with most other virus scanning software. However, conflictions have been reported by a number of users in the past. This information below is from VirusTotal.com, and it describes a number of false-positives reported by various anti-virus programs against phpMussel. Although this information isn't an absolute guarantee of whether or not you will encounter compatibility problems between phpMussel and your anti-virus software, if your anti-virus software is noted as flagging against phpMussel, you should either consider disabling it prior to working with phpMussel or should consider alternative options to either your anti-virus software or phpMussel.
 
-This information was last updated 25th February 2016 and is current for all phpMussel releases of the two most recent minor versions (v0.9.0-v0.10.0) at the time of writing this.
+This information was last updated 27th March 2016 and is current for all phpMussel releases of the two most recent minor versions (v0.10.0-v1.0.0) at the time of writing this.
 
 | Scanner              |  Results                             |
 |----------------------|--------------------------------------|
@@ -922,7 +922,7 @@ This information was last updated 25th February 2016 and is current for all phpM
 | AVware               |  No known problems                   |
 | Baidu-International  |  No known problems                   |
 | BitDefender          |  No known problems                   |
-| Bkav                 |  Reports "VEXC640.Webshell" and "VEXD737.Webshell"|
+| Bkav                 |  Reports "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
 | ByteHero             |  No known problems                   |
 | CAT-QuickHeal        |  No known problems                   |
 | ClamAV               |  No known problems                   |
@@ -971,4 +971,4 @@ This information was last updated 25th February 2016 and is current for all phpM
 ---
 
 
-Last Updated: 21st March 2016 (2016.03.21).
+Last Updated: 27th March 2016 (2016.03.27).

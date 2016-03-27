@@ -903,7 +903,7 @@ Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
 
 Untuk banyak bagian, phpMussel seharusnya kompatibel dengan software pemindaian virus. Bagaimanapun konflik telah dilaporkan oleh penggunak di masa lalu. Informasi di bawah adalah dari virustotal.com, dan menguraikan sejumlah angka positif yang salah yang dilaporkan oleh bermacam-macam program anti-virus pada phpMussel. Walaupun informasi ini bukan jaminan absolut dari apakah Anda mengalami masalah kompatibilitas antara phpMussel dan perangkat anti-virus Anda, jika perangkat lunak anti-virus Anda tercatat berlawanan dengan phpMussel, Anda seharusnya mempertimbangkan menonaktifkannya bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke software anti virus atau phpMussel.
 
-Informasi ini diupdate 25 Februari 2016 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v0.9.0-v0.10.0) pada waktu saya menuliskan ini.
+Informasi ini diupdate 27 Maret 2016 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v0.10.0-v1.0.0) pada waktu saya menuliskan ini.
 
 | Scanner              |  Hasil                               |
 |----------------------|--------------------------------------|
@@ -922,7 +922,7 @@ Informasi ini diupdate 25 Februari 2016 dan cocok untuk semua rilis phpMussel da
 | AVware               |  Tidak masalah                       |
 | Baidu-International  |  Tidak masalah                       |
 | BitDefender          |  Tidak masalah                       |
-| Bkav                 |  Melaporkan "VEXC640.Webshell" dan "VEXD737.Webshell"|
+| Bkav                 |  Melaporkan "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
 | ByteHero             |  Tidak masalah                       |
 | CAT-QuickHeal        |  Tidak masalah                       |
 | ClamAV               |  Tidak masalah                       |
@@ -971,4 +971,4 @@ Informasi ini diupdate 25 Februari 2016 dan cocok untuk semua rilis phpMussel da
 ---
 
 
-Terakhir Diperbarui: 21 Maret 2016 (2016.03.21).
+Terakhir Diperbarui: 27 Maret 2016 (2016.03.27).

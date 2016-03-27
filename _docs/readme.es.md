@@ -902,7 +902,7 @@ El siguiente es el desglose de los tipos de firmas utilizado por phpMussel:
 
 En su mayor parte, phpMussel debe ser bastante compatible con la mayoría de anti-virus software. Aunque, conflictividades han sido reportados por un número de usuarios en el pasado. Esta información de abajo es de VirusTotal.com, y describe un número de falsos positivos reportados por diversos anti-virus programas contra phpMussel. Aunque esta información no es una garantía absoluta de si o no se encontrará con compatibilidad problemas entre phpMussel y su anti-virus software, se su anti-virus software se observa como marcar contra phpMussel, usted debe considerar desactivarlo antes de trabajar con phpMussel o debería considerar opciones alternativas a de su anti-virus software o phpMussel.
 
-Esta información ha sido actualizado 25 Febrero 2016 y es a hoy para todas las phpMussel versiones de la dos más recientes menores versiones (v0.9.0-v0.10.0) al momento de escribir esto.
+Esta información ha sido actualizado 27 Marzo 2016 y es a hoy para todas las phpMussel versiones de la dos más recientes menores versiones (v0.10.0-v1.0.0) al momento de escribir esto.
 
 | Escáner              |  Resultados                          |
 |----------------------|--------------------------------------|
@@ -921,7 +921,7 @@ Esta información ha sido actualizado 25 Febrero 2016 y es a hoy para todas las 
 | AVware               |  No hay conocidos problemas          |
 | Baidu-International  |  No hay conocidos problemas          |
 | BitDefender          |  No hay conocidos problemas          |
-| Bkav                 |  Informa como "VEXC640.Webshell" y "VEXD737.Webshell"|
+| Bkav                 |  Informa como "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
 | ByteHero             |  No hay conocidos problemas          |
 | CAT-QuickHeal        |  No hay conocidos problemas          |
 | ClamAV               |  No hay conocidos problemas          |
@@ -970,4 +970,4 @@ Esta información ha sido actualizado 25 Febrero 2016 y es a hoy para todas las 
 ---
 
 
-Última Actualización: 21 Marzo 2016 (2016.03.21).
+Última Actualización: 27 Marzo 2016 (2016.03.27).

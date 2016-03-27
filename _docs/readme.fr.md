@@ -903,7 +903,7 @@ Ce qui suit est un détail des types de signatures utilisées par phpMussel:
 
 Pour la plupart, phpMussel devrait être assez compatible avec plupart du virus détection logiciels. Cependant, conflictualités ont été signalés par un nombre d'utilisateurs dans le passé. Cette information ci-dessous est VirusTotal.com, et il décrit un certain nombre de faux positifs signalé par divers anti-virus programmes contre phpMussel. Bien que cette information ne constitue pas une absolue garantie de si oui ou non vous rencontrerez des problèmes de compatibilité entre phpMussel et votre anti-virus logiciel, si votre logiciel anti-virus est noté comme signalant contre phpMussel, vous devriez envisager désactivation avant à travailler avec phpMussel ou devrait envisager d'autres options soit votre logiciel anti-virus ou phpMussel.
 
-Cette information a été réactualisé le 25 Février 2016 et est courant pour toutes les phpMussel parutions des deux plus récentes mineures versions (v0.9.0-v0.10.0) au moment de la rédaction de cette.
+Cette information a été réactualisé le 27 Mars 2016 et est courant pour toutes les phpMussel parutions des deux plus récentes mineures versions (v0.10.0-v1.0.0) au moment de la rédaction de cette.
 
 | Scanner              |  Résultats                           |
 |----------------------|--------------------------------------|
@@ -922,7 +922,7 @@ Cette information a été réactualisé le 25 Février 2016 et est courant pour 
 | AVware               |  Pas problèmes connus                |
 | Baidu-International  |  Pas problèmes connus                |
 | BitDefender          |  Pas problèmes connus                |
-| Bkav                 |  Rapports "VEXC640.Webshell" et "VEXD737.Webshell"|
+| Bkav                 |  Rapports "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
 | ByteHero             |  Pas problèmes connus                |
 | CAT-QuickHeal        |  Pas problèmes connus                |
 | ClamAV               |  Pas problèmes connus                |
@@ -971,4 +971,4 @@ Cette information a été réactualisé le 25 Février 2016 et est courant pour 
 ---
 
 
-Dernière Réactualisé: 21 Mars 2016 (2016.03.21).
+Dernière Réactualisé: 27 Mars 2016 (2016.03.27).

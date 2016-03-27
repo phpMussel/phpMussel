@@ -90,7 +90,12 @@ if (!isset($phpMussel['Config']['general']['scan_kills'])) {
 }
 
 /** Fallback for missing "ipaddr" configuration directive. */
-if (!isset($phpMussel['Config']['general']['ipaddr'])) {
+if (
+    empty($phpMussel['Config']['general']['ipaddr']) || (
+        $phpMussel['Config']['general']['ipaddr'] !== 'REMOTE_ADDR' &&
+        empty($_SERVER[$phpMussel['Config']['general']['ipaddr']])
+    )
+) {
     $phpMussel['Config']['general']['ipaddr'] = 'REMOTE_ADDR';
 }
 
