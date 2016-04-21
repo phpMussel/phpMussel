@@ -903,7 +903,7 @@ Sau đây là một danh sách các loại chữ ký được sử dụng bởi 
 
 Cho hầu hết các phần, phpMussel sẽ tương hợp với hầu hết các phần mềm quét vi rút khác. Nhưng mà, có một số người sử dụng trong quá khứ đã báo cáo một số vấn đề. Thông tin dưới đây là từ VirusTotal.com, và nó miêu tả một số giả tích cực báo cáo bởi các chương trình chống vi rút khác nhau chống phpMussel. Mặc dù thông tin này không đảm bảo nếu bạn gặp phải vấn đề tương hợp giữa phpMussel và phần mềm chống vi rút của bạn, nếu phần mềm chống vi rút của bạn được ghi nhận là cách gắn cờ chống lại phpMussel, bạn nên tắt nó trước khi sử dụng phpMussel hoặc nên xét các lựa chọn khác cho một trong hai phần mềm chống vi rút của bạn hoặc phpMussel.
 
-Thông tin này được cập nhật lần cứơi vào ngày 27 Tháng Ba 2016 và có thể áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.10.0-v1.0.0) vào thời gian cái này được viết.
+Thông tin này được cập nhật lần cứơi vào ngày 21 Tháng Tư 2016 và có thể áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.10.0-v1.0.0) vào thời gian cái này được viết.
 
 | Chương trình quét    |  Kết quả                             |
 |----------------------|--------------------------------------|
@@ -920,6 +920,7 @@ Thông tin này được cập nhật lần cứơi vào ngày 27 Tháng Ba 2016
 | AVG                  |  Không có vấn đề                     |
 | Avira                |  Không có vấn đề                     |
 | AVware               |  Không có vấn đề                     |
+| Baidu                |  Báo cáo "VBS.Trojan.VBSWG.a"        |
 | Baidu-International  |  Không có vấn đề                     |
 | BitDefender          |  Không có vấn đề                     |
 | Bkav                 |  Báo cáo "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
@@ -952,7 +953,7 @@ Thông tin này được cập nhật lần cứơi vào ngày 27 Tháng Ba 2016
 | Norman               |  Không có vấn đề                     |
 | nProtect             |  Không có vấn đề                     |
 | Panda                |  Không có vấn đề                     |
-| Qihoo-360            |  Không có vấn đề                     |
+| Qihoo-360            |  Báo cáo "Script/Trojan.Script.393"  |
 | Rising               |  Không có vấn đề                     |
 | Sophos               |  Không có vấn đề                     |
 | SUPERAntiSpyware     |  Không có vấn đề                     |
@@ -971,4 +972,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 27 Tháng Ba 2016
 ---
 
 
-Lần cuối cập nhật: 27 Tháng Ba 2016 (2016.03.27).
+Lần cuối cập nhật: 21 Tháng Tư 2016 (2016.04.21).

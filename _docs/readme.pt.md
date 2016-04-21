@@ -463,7 +463,7 @@ O seguinte é uma lista de variáveis encontradas no `phpmussel.ini` arquivo de 
 Configuração geral por phpMussel.
 
 "script_password"
-- Como uma conveniência, phpMussel permitirás certas funções ao ser acionado manualmente através de POST, GET e QUERY. Mas, como medida de segurança, para fazer isso, phpMussel esperam uma senha para ser incluída com o comando, forma a garantir que é você, e não outra pessoa, tentando de acionar manualmente essas funções. Definir `script_password` para qualquer senha que você desejá usar. Se nenhuma senha for definida, o manual acionamento será desativado por padrão. Uso algo que você vai se lembrar, mas que é difícil por outros adivinharem.
+- Como uma conveniência, phpMussel permitirás certas funções ao ser desencadeado manualmente através de POST, GET e QUERY. Mas, como medida de segurança, para fazer isso, phpMussel esperam uma senha para ser incluída com o comando, forma a garantir que é você, e não outra pessoa, tentando de acionar manualmente essas funções. Definir `script_password` para qualquer senha que você desejá usar. Se nenhuma senha for definida, o manual acionamento será desativado por padrão. Uso algo que você vai se lembrar, mas que é difícil por outros adivinharem.
 - Não tem influência em CLI modo.
 
 "logs_password"
@@ -903,7 +903,7 @@ A seguir estão os diferentes tipos de assinaturas utilizadas por phpMussel:
 
 Em geral, phpMussel deve ser bastante compatível com a maioria dos outros vírus detecção softwares. Embora, conflitos foram relatadas por um número de utilizadores no passado. Esta informação abaixo é de VirusTotal.com, e descreve um número de falso-positivos relatados por vários anti-vírus programas contra phpMussel. Embora esta informação não é um absoluta garantia de haver ou não você vai encontrar problemas de compatibilidade entre phpMussel e seu anti-vírus software, se o seu anti-vírus software é conhecido como sinalização contra phpMussel, você deve considerar desativá-lo antes de trabalhar com phpMussel ou deve considerar alternativas opções para o seu anti-vírus software ou phpMussel.
 
-Esta informação foi atualizada dia 27 Março 2016 e é corrente para todas phpMussel lançamentos das duas mais recentes menores versões (v0.10.0-v1.0.0) no momento de escrever este.
+Esta informação foi atualizada dia 21 Abril 2016 e é corrente para todas phpMussel lançamentos das duas mais recentes menores versões (v0.10.0-v1.0.0) no momento de escrever este.
 
 | Analisador           |  Resultados                          |
 |----------------------|--------------------------------------|
@@ -920,6 +920,7 @@ Esta informação foi atualizada dia 27 Março 2016 e é corrente para todas php
 | AVG                  |  Não apresentou problemas            |
 | Avira                |  Não apresentou problemas            |
 | AVware               |  Não apresentou problemas            |
+| Baidu                |  Reportar "VBS.Trojan.VBSWG.a"       |
 | Baidu-International  |  Não apresentou problemas            |
 | BitDefender          |  Não apresentou problemas            |
 | Bkav                 |  Reportar "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
@@ -952,7 +953,7 @@ Esta informação foi atualizada dia 27 Março 2016 e é corrente para todas php
 | Norman               |  Não apresentou problemas            |
 | nProtect             |  Não apresentou problemas            |
 | Panda                |  Não apresentou problemas            |
-| Qihoo-360            |  Não apresentou problemas            |
+| Qihoo-360            |  Reportar "Script/Trojan.Script.393" |
 | Rising               |  Não apresentou problemas            |
 | Sophos               |  Não apresentou problemas            |
 | SUPERAntiSpyware     |  Não apresentou problemas            |
@@ -971,4 +972,4 @@ Esta informação foi atualizada dia 27 Março 2016 e é corrente para todas php
 ---
 
 
-Última Atualização: 27 Março 2016 (2016.03.27).
+Última Atualização: 21 Abril 2016 (2016.04.21).

@@ -116,6 +116,9 @@ entries will be deleted when those goals have been achieved.
   registering hooks from being a function to being closure means that at least
   that part of pre-v1 plugins must be modified to function correctly post-v1.
 
+- [2016.04.18; Sub-minor code change; Maikuolan]: Slightly improved the error
+  handling for the configuration file.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in "Changelog-v0.txt".

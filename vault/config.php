@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2016.03.26).
+ * This file: Configuration handler (last modified: 2016.04.18).
  */
 
 /** phpMussel version number (SemVer). */
@@ -36,21 +36,28 @@ $phpMussel['Mussel_sapi'] = (
 );
 
 /** Current time at script execution; Used for various purposes. */
-$phpMussel['time']=time();
+$phpMussel['time'] = time();
 
-/** Parses the phpMussel configuration file. */
-$phpMussel['Config'] =
-    @(!file_exists($phpMussel['vault'] . 'phpmussel.ini')) ?
-    false :
-    parse_ini_file($phpMussel['vault'] . 'phpmussel.ini', true);
-
-/** Kill the script if we fail to parse the configuration file. */
-if (!is_array($phpMussel['Config'])) {
+/** Checks whether the phpMussel configuration file is readable. */
+if (!is_readable($phpMussel['vault'] . 'phpmussel.ini')) {
     header('Content-Type: text/plain');
     die(
-        '[phpMussel] Could not read phpmussel.ini: Can\'t continue. Refer to the ' .
-        'documentation if this is a first-time run, and if problems persist, seek' .
-        'assistance.'
+        '[phpMussel] Configuration file is unreadable: Can\'t continue. Refer to ' .
+        'the documentation if this is a first-time run, and if problems persist, ' .
+        'seek assistance.'
+    );
+}
+
+/** Attempt to parse the phpMussel configuration file. */
+$phpMussel['Config'] = parse_ini_file($phpMussel['vault'] . 'phpmussel.ini', true);
+
+/** Kill the script if we fail to parse the configuration file. */
+if ($phpMussel['Config'] === false) {
+    header('Content-Type: text/plain');
+    die(
+        '[phpMussel] Configuration file is corrupted: Can\'t continue. Refer to ' .
+        'the documentation if this is a first-time run, and if problems persist, ' .
+        'seek assistance.'
     );
 }
 

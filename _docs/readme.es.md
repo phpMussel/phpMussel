@@ -18,7 +18,7 @@
 
 ###1. <a name="SECTION1"></a>PREÁMBULO
 
-Gracias por usar phpMussel, un PHP script diseñado para detectar troyanos, virus, malware y otras amenazas en los archivos subidos en el sistema donde el script está adjunto, basado en las firmas de ClamAV y otros.
+Gracias por usar phpMussel, un PHP script diseñado para detectar troyanos, virus, malware y otras amenazas en los archivos subidos en el sistema donde la script está adjunto, basado en las firmas de ClamAV y otros.
 
 PHPMUSSEL COPYRIGHT 2013 y más allá GNU/GPLv2 por Caleb M (Maikuolan).
 
@@ -45,11 +45,11 @@ Espero para agilizar este proceso al hacer un instalador en algún momento en un
 
 2) Opcionalmente (muy recomendable para avanzados usuarios, pero no se recomienda para los principiantes o para los inexpertos), abrir `phpmussel.ini` (situado en el interior del `vault`) - Este archivo contiene todas las disponibles operativas opciones para phpMussel. Por encima de cada opción debe ser un breve comentario que describe lo que hace y para lo qué sirve. Ajuste estas opciones según sus necesidades, según lo que sea apropiado para su particular configuración. Guardar archivo, cerrar.
 
-3) Cargar contenidos (phpMussel y sus archivos) al directorio que habías decidido sobre más temprano (los `*.txt`/`*.md` archivos no son necesarios, pero, en su mayoría, usted debe subir todos).
+3) Subir el contenidos (phpMussel y sus archivos) al directorio que habías decidido sobre más temprano (los `*.txt`/`*.md` archivos no son necesarios, pero, en su mayoría, usted debe subir todos).
 
 4) CHMOD al `vault` directorio a "777". La principal directorio de almacenamiento de los contenidos (el uno decidió desde antes), en general, puede dejar solos, pero CHMOD estado debe ser comprobado si ha tenido problemas de permisos en el pasado en su sistema (predefinido, debería ser algo como "755").
 
-5) Luego, tendrás que phpMussel "gancho" para el sistema o CMS. Hay varias maneras en que usted puede "gancho" scripts como phpMussel a su sistema o CMS, pero lo más fácil es simplemente incluir el script al principio de un núcleo archivo de su sistema o CMS (uno que va en general siempre sera cargado cuando alguien accede cualquier página a través de su website) utilizando un `require` o `include` declaración. Por lo general, esto sera algo almacenado en un directorio como `/includes`, `/assets` o `/functions`, y será menudo llamado algo así como `init.php`, `common_functions.php`, `functions.php` o similar. Vas a tener que averiguar qué archivo se por su situación; Si se encuentra con dificultades en la determinación de esto por ti mismo, visite los phpMussel foros de soporte y háganos saber; Es posible que sea yo u otro usuario puede tener experiencia con el CMS que está utilizando (que necesita para hacernos saber que CMS está utilizando), y por lo tanto, puede ser capaz de proporcionar alguna ayuda en esta área. Para ello [utilizar `require` o `include`], inserte la siguiente línea de código al principio de ese núcleo archivo, con sustitución de la string contenida dentro las comillas con la exacta dirección del `phpmussel.php` archivo (local dirección, no la HTTP dirección; que será similar a la `vault` dirección mencionó anteriormente).
+5) Luego, tendrás que phpMussel "gancho" para el sistema o CMS. Hay varias maneras en que usted puede "gancho" scripts como phpMussel a su sistema o CMS, pero lo más fácil es simplemente incluir la script al principio de un núcleo archivo de su sistema o CMS (uno que va en general siempre sera cargado cuando alguien accede cualquier página a través de su website) utilizando un `require` o `include` declaración. Por lo general, esto sera algo almacenado en un directorio como `/includes`, `/assets` o `/functions`, y será menudo llamado algo así como `init.php`, `common_functions.php`, `functions.php` o similar. Vas a tener que averiguar qué archivo se por su situación; Si se encuentra con dificultades en la determinación de esto por ti mismo, visite los phpMussel foros de soporte y háganos saber; Es posible que sea yo u otro usuario puede tener experiencia con el CMS que está utilizando (que necesita para hacernos saber que CMS está utilizando), y por lo tanto, puede ser capaz de proporcionar alguna ayuda en esta área. Para ello [utilizar `require` o `include`], inserte la siguiente línea de código al principio de ese núcleo archivo, con sustitución de la string contenida dentro las comillas con la exacta dirección del `phpmussel.php` archivo (local dirección, no la HTTP dirección; que será similar a la `vault` dirección mencionó anteriormente).
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
@@ -498,7 +498,7 @@ General configuración para phpMussel.
 - Especifique si phpMussel debería, cuando sea posible, reemplazar la especificación del lenguaje con el preferencia del lenguaje declarada por peticiones entrantes (HTTP_ACCEPT_LANGUAGE). False = No [Predefinido]; True = Sí.
 
 "lang_acceptable"
-- La `lang_acceptable` directiva instruye a phpMussel qué idiomas puede ser aceptada por el script de parte de `lang` o de parte de `HTTP_ACCEPT_LANGUAGE`. Esta directiva **SÓLO** debe ser modificada si va a añadir sus propios personalizados idiomas archivos o retirando por la fuerza los idiomas archivos. La directiva es una cadena separada por comas de los códigos utilizados por los idiomas aceptados por el script.
+- La `lang_acceptable` directiva instruye a phpMussel qué idiomas puede ser aceptada por la script de parte de `lang` o de parte de `HTTP_ACCEPT_LANGUAGE`. Esta directiva **SÓLO** debe ser modificada si va a añadir sus propios personalizados idiomas archivos o retirando por la fuerza los idiomas archivos. La directiva es una cadena separada por comas de los códigos utilizados por los idiomas aceptados por la script.
 
 "quarantine_key"
 - phpMussel es capaz de poner en cuarentena intentados archivos subidos en aisladamente dentro de la phpMussel vault, si esto es algo que usted quiere que haga. Usuarios casual de phpMussel de los cuales simplemente desean proteger sus website o hosting ambiente sin tener ningún interés con analizando profundamente cualquier marcados intentados archivos subidos debería dejar esta funcionalidad desactivado, pero cualquier usuarios interesados en más análisis de marcados intentados archivos subidos para la investigación de malware o para cosas similares debe activar esta funcionalidad. Cuarentenando de marcados intentados archivos subidos a veces puede también ayudar en la depuración de falsos positivos, si esto es algo que ocurre con frecuencia para usted. Para desactivar la cuarentena funcionalidad, simplemente dejar la directiva `quarantine_key` vacío, o borrar el contenidos de que directiva si no está ya vacío. Para activar la cuarentena funcionalidad, entrar algún valor en la directiva. La `quarantine_key` es un importante característica de seguridad de la cuarentena funcionalidad requiere como un medio para la prevención de la explotación de la cuarentena funcionalidad por potenciales atacantes y como un medio de evitar cualquier potencial ejecución de los datos almacenados dentro la cuarentena. La `quarantine_key` debería ser tratado de la misma manera que sus contraseñas: El más grande es el mejor, y guárdela bien. Para un mejor efecto, utilice conjuntamente con `delete_on_sight`.
@@ -919,6 +919,7 @@ Esta información ha sido actualizado 27 Marzo 2016 y es a hoy para todas las ph
 | AVG                  |  No hay conocidos problemas          |
 | Avira                |  No hay conocidos problemas          |
 | AVware               |  No hay conocidos problemas          |
+| Baidu                |  Informa como "VBS.Trojan.VBSWG.a"   |
 | Baidu-International  |  No hay conocidos problemas          |
 | BitDefender          |  No hay conocidos problemas          |
 | Bkav                 |  Informa como "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
@@ -951,7 +952,7 @@ Esta información ha sido actualizado 27 Marzo 2016 y es a hoy para todas las ph
 | Norman               |  No hay conocidos problemas          |
 | nProtect             |  No hay conocidos problemas          |
 | Panda                |  No hay conocidos problemas          |
-| Qihoo-360            |  No hay conocidos problemas          |
+| Qihoo-360            |  Informa como "Script/Trojan.Script.393"|
 | Rising               |  No hay conocidos problemas          |
 | Sophos               |  No hay conocidos problemas          |
 | SUPERAntiSpyware     |  No hay conocidos problemas          |
@@ -970,4 +971,4 @@ Esta información ha sido actualizado 27 Marzo 2016 y es a hoy para todas las ph
 ---
 
 
-Última Actualización: 27 Marzo 2016 (2016.03.27).
+Última Actualización: 21 Abril 2016 (2016.04.21).

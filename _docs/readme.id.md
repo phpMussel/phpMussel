@@ -43,7 +43,7 @@ Saya berharap untuk mempersingkat proses ini dengan membuat sebuah installer pad
 
 1) Dengan membaca ini, Saya asumsikan Anda telah mengunduh dan menyimpan copy dari skrip, membuka data terkompres dan isinya dan Anda meletakkannya pada mesin komputer lokal Anda. Dari sini, Anda akan latihan dimana di host Anda atau CMS Anda untuk meletakkan isi data terkompres nya. Sebuah direktori seperti `/public_html/phpmussel/` atau yang lain (walaupun tidak masalah Anda memilih direktori apa, selama dia aman dan dimana pun yang Anda senangi) akan mencukupi. *Sebelum Anda mulai upload, mohon baca dulu..*
 
-2) Secara fakultatif (sangat direkomendasikan untuk user dengan pengalaman lebih lanjut, tapi tidak untuk pemula atau yang tidak berpengalaman), buka `phpmussel.ini` (berada di dalam `vault`) - File ini berisikan semua opsi operasional yang tersedia untuk phpMussel. Di atas tiap opsi seharusnya ada komentar tegas menguraikan tentang apa yang dilakukan dan untuk apa. Atur opsi-opsi ini seperti Anda lihat cocok, seperti apapun yang cocok untuk setup tertentu. Simpan file, tutup.
+2) Secara fakultatif (sangat direkomendasikan untuk user dengan pengalaman lebih lanjut, tapi tidak untuk pemula atau yang tidak berpengalaman), buka `phpmussel.ini` (berada di dalam `vault`) - File ini berisikan semua opsi operasional yang tersedia untuk phpMussel. Di atas tiap opsi seharusnya ada komentar tegas menguraikan tentang apa yang dilakukan dan untuk apa. Atur opsi-opsi ini seperti Anda lihat cocok, seperti apapun yang cocok untuk setup tertentu. Simpan file, menutupnya.
 
 3) Upload isi (phpMussel dan file-filenya) ke direktori yang telah kamu putuskan sebelumnya (Anda tidak memerlukan file-file `*.txt`/`*.md`, tapi kebanyakan Anda harus mengupload semuanya).
 
@@ -53,7 +53,7 @@ Saya berharap untuk mempersingkat proses ini dengan membuat sebuah installer pad
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
-Simpan file dan tutup. Upload kembali.
+Simpan file dan menutupnya. Upload kembali.
 
 -- ATAU ALTERNATIF --
 
@@ -78,7 +78,7 @@ Saya berharap untuk mempersingkat proses ini dengan membuat sebuah installer dar
 
 2) phpMussel memerlukan PHP untuk diinstall pada mesin host untuk mengeksekusinya. Jika Anda tidak memiliki PHP pada mesin Anda, ikuti instruksi yang di supply oleh installer PHP.
 
-3) Secara fakultatif (sangat direkomendasikan untuk user dengan pengalaman lebih lanjut, tapi tidak untuk pemula atau yang tidak berpengalaman), buka `phpmussel.ini` (berada di dalam `vault`) - File ini berisikan semua opsi operasional yang tersedia untuk phpMussel. Di atas tiap opsi seharusnya ada komentar tegas menguraikan tentang apa yang dilakukan dan untuk apa. Atur opsi-opsi ini seperti Anda lihat cocok, seperti apapun yang cocok untuk setup tertentu. Simpan file, tutup.
+3) Secara fakultatif (sangat direkomendasikan untuk user dengan pengalaman lebih lanjut, tapi tidak untuk pemula atau yang tidak berpengalaman), buka `phpmussel.ini` (berada di dalam `vault`) - File ini berisikan semua opsi operasional yang tersedia untuk phpMussel. Di atas tiap opsi seharusnya ada komentar tegas menguraikan tentang apa yang dilakukan dan untuk apa. Atur opsi-opsi ini seperti Anda lihat cocok, seperti apapun yang cocok untuk setup tertentu. Simpan file, menutupnya.
 
 4) Secara fakultatif, Anda dapat menggunakan phpMussel di dalam mode CLI untuk diri Anda sendiri dengan menciptakan file batch untuk secara automatis memuat PHP dan phpMussel. Untuk melakukannya, buka sebuah text editor kosong seperti Notepad atau Notepad++, ketikkan jalur dari file `php.exe` di dalam direktori dari instalasi PHP Anda, diikuti spasi, diikuti dengan jalur lengkap dari file `phpmussel.php` di dalam direktori dari instalasi phpMussel, simpan file dengan ekstensi ".bat" di simpan di tempat yang Anda mudah temukan dan klik dua kali pada file itu untuk menjalankan phpMussel di masa yang akan datang.
 
@@ -903,7 +903,7 @@ Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
 
 Untuk banyak bagian, phpMussel seharusnya kompatibel dengan software pemindaian virus. Bagaimanapun konflik telah dilaporkan oleh penggunak di masa lalu. Informasi di bawah adalah dari virustotal.com, dan menguraikan sejumlah angka positif yang salah yang dilaporkan oleh bermacam-macam program anti-virus pada phpMussel. Walaupun informasi ini bukan jaminan absolut dari apakah Anda mengalami masalah kompatibilitas antara phpMussel dan perangkat anti-virus Anda, jika perangkat lunak anti-virus Anda tercatat berlawanan dengan phpMussel, Anda seharusnya mempertimbangkan menonaktifkannya bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke software anti virus atau phpMussel.
 
-Informasi ini diupdate 27 Maret 2016 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v0.10.0-v1.0.0) pada waktu saya menuliskan ini.
+Informasi ini diupdate 21 April 2016 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v0.10.0-v1.0.0) pada waktu saya menuliskan ini.
 
 | Scanner              |  Hasil                               |
 |----------------------|--------------------------------------|
@@ -920,6 +920,7 @@ Informasi ini diupdate 27 Maret 2016 dan cocok untuk semua rilis phpMussel dari 
 | AVG                  |  Tidak masalah                       |
 | Avira                |  Tidak masalah                       |
 | AVware               |  Tidak masalah                       |
+| Baidu                |  Melaporkan "VBS.Trojan.VBSWG.a"     |
 | Baidu-International  |  Tidak masalah                       |
 | BitDefender          |  Tidak masalah                       |
 | Bkav                 |  Melaporkan "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
@@ -952,7 +953,7 @@ Informasi ini diupdate 27 Maret 2016 dan cocok untuk semua rilis phpMussel dari 
 | Norman               |  Tidak masalah                       |
 | nProtect             |  Tidak masalah                       |
 | Panda                |  Tidak masalah                       |
-| Qihoo-360            |  Tidak masalah                       |
+| Qihoo-360            |  Melaporkan "Script/Trojan.Script.393"|
 | Rising               |  Tidak masalah                       |
 | Sophos               |  Tidak masalah                       |
 | SUPERAntiSpyware     |  Tidak masalah                       |
@@ -971,4 +972,4 @@ Informasi ini diupdate 27 Maret 2016 dan cocok untuk semua rilis phpMussel dari 
 ---
 
 
-Terakhir Diperbarui: 27 Maret 2016 (2016.03.27).
+Terakhir Diperbarui: 21 April 2016 (2016.04.21).

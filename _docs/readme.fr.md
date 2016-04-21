@@ -903,7 +903,7 @@ Ce qui suit est un détail des types de signatures utilisées par phpMussel:
 
 Pour la plupart, phpMussel devrait être assez compatible avec plupart du virus détection logiciels. Cependant, conflictualités ont été signalés par un nombre d'utilisateurs dans le passé. Cette information ci-dessous est VirusTotal.com, et il décrit un certain nombre de faux positifs signalé par divers anti-virus programmes contre phpMussel. Bien que cette information ne constitue pas une absolue garantie de si oui ou non vous rencontrerez des problèmes de compatibilité entre phpMussel et votre anti-virus logiciel, si votre logiciel anti-virus est noté comme signalant contre phpMussel, vous devriez envisager désactivation avant à travailler avec phpMussel ou devrait envisager d'autres options soit votre logiciel anti-virus ou phpMussel.
 
-Cette information a été réactualisé le 27 Mars 2016 et est courant pour toutes les phpMussel parutions des deux plus récentes mineures versions (v0.10.0-v1.0.0) au moment de la rédaction de cette.
+Cette information a été réactualisé le 21 Avril 2016 et est courant pour toutes les phpMussel parutions des deux plus récentes mineures versions (v0.10.0-v1.0.0) au moment de la rédaction de cette.
 
 | Scanner              |  Résultats                           |
 |----------------------|--------------------------------------|
@@ -920,6 +920,7 @@ Cette information a été réactualisé le 27 Mars 2016 et est courant pour tout
 | AVG                  |  Pas problèmes connus                |
 | Avira                |  Pas problèmes connus                |
 | AVware               |  Pas problèmes connus                |
+| Baidu                |  Rapports "VBS.Trojan.VBSWG.a"       |
 | Baidu-International  |  Pas problèmes connus                |
 | BitDefender          |  Pas problèmes connus                |
 | Bkav                 |  Rapports "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
@@ -952,7 +953,7 @@ Cette information a été réactualisé le 27 Mars 2016 et est courant pour tout
 | Norman               |  Pas problèmes connus                |
 | nProtect             |  Pas problèmes connus                |
 | Panda                |  Pas problèmes connus                |
-| Qihoo-360            |  Pas problèmes connus                |
+| Qihoo-360            |  Rapports "Script/Trojan.Script.393" |
 | Rising               |  Pas problèmes connus                |
 | Sophos               |  Pas problèmes connus                |
 | SUPERAntiSpyware     |  Pas problèmes connus                |
@@ -971,4 +972,4 @@ Cette information a été réactualisé le 27 Mars 2016 et est courant pour tout
 ---
 
 
-Dernière Réactualisé: 27 Mars 2016 (2016.03.27).
+Dernière Réactualisé: 21 Avril 2016 (2016.04.21).

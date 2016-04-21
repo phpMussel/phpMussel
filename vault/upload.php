@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2016.03.24).
+ * This file: Upload handler (last modified: 2016.04.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -508,10 +508,7 @@ if ($phpMussel['upload']['count'] > 0) {
         $phpMussel['TemplateData']['phpmusselversion'] = $phpMussel['ScriptIdent'];
         $phpMussel['TemplateData']['xmlLang'] = $phpMussel['Config']['general']['lang'];
         $phpMussel['memCache']['template_file'] =
-            (!$phpMussel['Config']['template_data']['css_url']) ?
-            'template.html' :
-            'template_custom.html';
-
+            (!$phpMussel['Config']['template_data']['css_url']) ? 'template.html' : 'template_custom.html';
         /** Log "scan_kills" data. */
         if ($phpMussel['Config']['general']['scan_kills'] && !empty($phpMussel['killdata'])) {
             $phpMussel['memCache']['handle'] = array();
@@ -555,7 +552,7 @@ if ($phpMussel['upload']['count'] > 0) {
         /** Generate HTML output. */
         $html = $phpMussel['ParseVars'](
             $phpMussel['TemplateData'],
-            $phpMussel['ReadFile']($phpMussel['vault'] . $phpMussel['memCache']['template_file'],0,true)
+            $phpMussel['ReadFile']($phpMussel['vault'] . $phpMussel['memCache']['template_file'], 0, true)
         );
 
         /** Plugin hook: "before_html_out". */

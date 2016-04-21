@@ -7,7 +7,7 @@
 - 3A. [COME USARE (PER WEB SERVER)](#SECTION3A)
 - 3B. [COME USARE (PER CLI)](#SECTION3B)
 - 4A. [BROWSER COMANDI](#SECTION4A)
-- 4B. [CLI (COMANDO LINEA INTERFACCIA)](#SECTION4B)
+- 4B. [CLI (INTERFACCIA A RIGA DI COMANDO)](#SECTION4B)
 - 5. [FILE INCLUSI IN QUESTO PACCHETTO](#SECTION5)
 - 6. [OPZIONI DI CONFIGURAZIONE](#SECTION6)
 - 7. [FIRMA FORMATO](#SECTION7)
@@ -49,7 +49,7 @@ Spero di semplificare questo processo tramite un installatore ad un certo punto 
 
 4) CHMOD la cartella `vault` a "777". La principale cartella che memorizzare il contenuti (quello scelto in precedenza), solitamente, può essere lasciato solo, Ma lo CHMOD stato dovrebbe essere controllato se hai avuto problemi di autorizzazioni in passato sul vostro sistema (per predefinita, dovrebbe essere qualcosa simile a "755").
 
-5) Successivamente, sarà necessario collegare phpMussel al vostro sistema o CMS. Ci sono diversi modi in cui è possibile collegare script come phpMussel al vostre sistema o CMS, Ma il più semplice è di inserire lo script all'inizio di un file del vostre sistema o CMS (quello che sarà generalmente sempre essere caricato quando qualcuno accede a una pagina attraverso il vostro sito) utilizzando un `require` o `include` comando. Solitamente, questo sarà qualcosa memorizzate in una cartella, ad esempio `/includes`, `/assets` o `/functions`, e spesso essere chiamato qualcosa come `init.php`, `common_functions.php`, `functions.php` o simili. Avrete bisogno determinare quale file è per la vostra situazione; In caso di difficoltà nel determinare questo per te, visitare il phpMussel supporto forum e fateci sapere; È possibile che io o un altro utente possono avere esperienza con il CMS che si sta utilizzando (avrete bisogno di fateci sapere quale CMS si sta utilizzando), e quindi, può essere in grado di fornire assistenza in questo settore. Per fare questo [utilizzare `require` o `include`], inserire la seguente linea di codice all'inizio di quel core file, sostituendo la stringa contenuta all'interno delle virgolette con l'indirizzo esatto della "phpmussel" file (l'indirizzo locale, non l'indirizzo HTTP; sarà simile all'indirizzo citato in precedenza).
+5) Successivamente, sarà necessario collegare phpMussel al vostro sistema o CMS. Ci sono diversi modi in cui è possibile collegare script come phpMussel al vostre sistema o CMS, Ma il più semplice è di inserire lo script all'inizio di un file del vostre sistema o CMS (quello che sarà generalmente sempre essere caricato quando qualcuno accede a una pagina attraverso il vostro sito) utilizzando un `require` o `include` comando. Solitamente, questo sarà qualcosa memorizzate in una cartella, ad esempio `/includes`, `/assets` o `/functions`, e spesso essere chiamato qualcosa come `init.php`, `common_functions.php`, `functions.php` o simili. Avrete bisogno determinare quale file è per la vostra situazione; In caso di difficoltà nel determinare questo per te, visitare il phpMussel supporto forum e fateci sapere; È possibile che io o un altro utente possono avere esperienza con il CMS che si sta utilizzando (avrete bisogno di fateci sapere quale CMS si sta utilizzando), e quindi, può essere in grado di fornire assistenza in questo settore. Per fare questo [utilizzare `require` o `include`], inserire la seguente riga di codice all'inizio di quel core file, sostituendo la stringa contenuta all'interno delle virgolette con l'indirizzo esatto della "phpmussel" file (l'indirizzo locale, non l'indirizzo HTTP; sarà simile all'indirizzo citato in precedenza).
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
@@ -223,7 +223,7 @@ greylist_show
 ---
 
 
-###4B. <a name="SECTION4B"></a>CLI (COMANDO LINEA INTERFACCIA)
+###4B. <a name="SECTION4B"></a>CLI (INTERFACCIA A RIGA DI COMANDO)
 
 phpMussel può essere eseguito come uno interattivo file scanner in CLI modalità da Windows. Fare riferimento alla "COME INSTALLARE (PER CLI)" sezione di questo README file per maggiori dettagli.
 
@@ -903,7 +903,7 @@ I seguenti sono i tipi di firme utilizzate da phpMussel:
 
 Per la maggior parte, phpMussel dovrebbe essere compatibile abbastanza con la maggior parte dei antivirus software. Ma, conflitti sono stati riportati da un numero di utenti in passato. Queste informazioni qui di seguito è da VirusTotal.com, e descrive un certo numero di falsi positivi riportato dai vari anti-virus programmi contro phpMussel. Sebbene questa informazione non è un'assoluta garanzia di se o non si sarà verificheranno problemi di compatibilità tra phpMussel e il vostro anti-virus software, se il vostro software anti-virus è stati ha notato o ha bandierato contro phpMussel, si dovrebbe considerare sia disattivarlo prima di lavorare con phpMussel o dovrebbe considerare l'alternative opzioni per sia il vostro anti-virus software o phpMussel.
 
-Questa informazione è stato lo scorso aggiornato 27 Marzo 2016 ed è in corso per tutte le phpMussel rilasci delle due più recenti minori versioni (v0.10.0-v1.0.0) al momento di scrivere questo.
+Questa informazione è stato lo scorso aggiornato 21 Aprile 2016 ed è in corso per tutte le phpMussel rilasci delle due più recenti minori versioni (v0.10.0-v1.0.0) al momento di scrivere questo.
 
 | Scanner              |  Risultati                           |
 |----------------------|--------------------------------------|
@@ -920,6 +920,7 @@ Questa informazione è stato lo scorso aggiornato 27 Marzo 2016 ed è in corso p
 | AVG                  |  Senza noti problemi                 |
 | Avira                |  Senza noti problemi                 |
 | AVware               |  Senza noti problemi                 |
+| Baidu                |  Riferisce "VBS.Trojan.VBSWG.a"      |
 | Baidu-International  |  Senza noti problemi                 |
 | BitDefender          |  Senza noti problemi                 |
 | Bkav                 |  Riferisce "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
@@ -952,7 +953,7 @@ Questa informazione è stato lo scorso aggiornato 27 Marzo 2016 ed è in corso p
 | Norman               |  Senza noti problemi                 |
 | nProtect             |  Senza noti problemi                 |
 | Panda                |  Senza noti problemi                 |
-| Qihoo-360            |  Senza noti problemi                 |
+| Qihoo-360            |  Riferisce "Script/Trojan.Script.393"|
 | Rising               |  Senza noti problemi                 |
 | Sophos               |  Senza noti problemi                 |
 | SUPERAntiSpyware     |  Senza noti problemi                 |
@@ -971,4 +972,4 @@ Questa informazione è stato lo scorso aggiornato 27 Marzo 2016 ed è in corso p
 ---
 
 
-Ultimo Aggiornamento: 27 Marzo 2016 (2016.03.27).
+Ultimo Aggiornamento: 21 Aprile 2016 (2016.04.21).

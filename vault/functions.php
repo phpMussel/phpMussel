@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.03.24).
+ * This file: Functions file (last modified: 2016.04.18).
  *
  * @todo Add support for PHAR, 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -1498,27 +1498,28 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
     $phase = $phpMussel['memCache']['phase'];
     $container = $phpMussel['memCache']['container'];
     $pdf_magic = ($fourcc == '25504446');
-    $xt = $xts = $gzxt = $gzxts = '-';
     $detect_adware = ($phpMussel['Config']['signatures']['detect_adware']) ? 1 : 0;
     $detect_joke_hoax = ($phpMussel['Config']['signatures']['detect_joke_hoax']) ? 1 : 0;
     $detect_pua_pup = ($phpMussel['Config']['signatures']['detect_pua_pup']) ? 1 : 0;
     $detect_packer_packed = ($phpMussel['Config']['signatures']['detect_packer_packed']) ? 1 : 0;
     $detect_shell = ($phpMussel['Config']['signatures']['detect_shell']) ? 1 : 0;
     $detect_deface = ($phpMussel['Config']['signatures']['detect_deface']) ? 1 : 0;
-    if (substr_count($ofn, '.') > 0) {
-        $xt = explode('.', strtolower($ofn));
-        $xts = substr($xt[count($xt) - 1], 0, 3) . '*';
-        $xt = $xt[count($xt) - 1];
-        if (strlen($xt) < 1) {
-            $xt = $xts = '-';
-        }
-    }
-    if (substr_count($ofn, '.') > 1) {
-        $gzxt = explode('.', str_replace('.gz', '', strtolower($ofn)));
-        $gzxts = substr($gzxt[count($gzxt) - 1], 0, 3) . '*';
-        $gzxt = strtolower($gzxt[count($gzxt) - 1]);
-        if (strlen($gzxt) < 1) {
-            $gzxt = $gzxts = '-';
+    $decPos = strrpos($ofn, '.');
+    $ofnLen = strlen($ofn);
+    if ($decPos === false || $decPos === ($ofnLen - 1)) {
+        $gzxts = $gzxt = $xts = $xt = '-';
+    } else {
+        $xt = substr($ofn, ($decPos + 1));
+        $xts = substr($xt, 0, 3) . '*';
+        if (strtolower(substr($ofn, -3)) === '.gz') {
+            $ofnNoGZ = substr($ofn, 0, ($ofnLen - 3));
+            $decPosNoGZ = strrpos($ofnNoGZ, '.');
+            if ($decPosNoGZ !== false && $decPosNoGZ !== (strlen($ofnNoGZ) - 1)) {
+                $gzxt = substr($ofnNoGZ, ($decPosNoGZ + 1));
+                $gzxts = substr($gzxt, 0, 3) . '*';
+            }
+        } else {
+            $gzxts = $gzxt = '-';
         }
     }
     $CoExMeta .= '$xt:' . $xt . ';$xts:' . $xts . ';';
@@ -6315,18 +6316,22 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['Config']['lang']['scan_filename_manipulation_detected'] .
             $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
     }
-    $xt = $xts = $gzxt = $gzxts = '-';
-    if (substr_count($ofn, '.')) {
-        $xt = explode('.', strtolower($ofn));
-        $xts = substr($xt[count($xt) - 1], 0, 3) . '*';
-        $xt = $xt[count($xt) - 1];
-        if (substr_count($ofn, '.')) {
-            $gzxt = explode('.', str_replace('.gz', '', strtolower($ofn)));
-            $gzxts = substr($gzxt[count($gzxt) - 1], 0, 3) . '*';
-            $gzxt = strtolower($gzxt[count($gzxt) - 1]);
-        }
-        if (strlen($xt)<1) {
-            $xt = $xts = $gzxt = $gzxts = '-';
+    $decPos = strrpos($ofn, '.');
+    $ofnLen = strlen($ofn);
+    if ($decPos === false || $decPos === ($ofnLen - 1)) {
+        $gzxts = $gzxt = $xts = $xt = '-';
+    } else {
+        $xt = substr($ofn, ($decPos + 1));
+        $xts = substr($xt, 0, 3) . '*';
+        if (strtolower(substr($ofn, -3)) === '.gz') {
+            $ofnNoGZ = substr($ofn, 0, ($ofnLen - 3));
+            $decPosNoGZ = strrpos($ofnNoGZ, '.');
+            if ($decPosNoGZ !== false && $decPosNoGZ !== (strlen($ofnNoGZ) - 1)) {
+                $gzxt = substr($ofnNoGZ, ($decPosNoGZ + 1));
+                $gzxts = substr($gzxt, 0, 3) . '*';
+            }
+        } else {
+            $gzxts = $gzxt = '-';
         }
     }
     if (
