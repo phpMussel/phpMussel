@@ -486,6 +486,9 @@ Algemene configuratie voor phpMussel.
 "ipaddr"
 - Waar het IP-adres van het aansluiten verzoek te vinden? (Handig voor diensten zoals Cloudflare en dergelijke) Standaard = REMOTE_ADDR. WAARSCHUWING: Verander dit niet tenzij u weet wat u doet!
 
+"enable_plugins"
+- Activeer ondersteuning voor phpMussel plugins? False = Nee; True = Ja [Standaard].
+
 "forbid_on_block"
 - Moet CIDRAM reageren met 403 headers met het bestanden upload geblokkeerd bericht, of blijven met de gebruikelijke 200 OK? False = Nee (200) [Standaard]; True = Ja (403).
 
@@ -589,7 +592,7 @@ Controleer bestandsnamen tegen bestandsnaam gebaseerd handtekeningen wanneer sca
 - "filenames_custom"
 - "filenames_mussel"
 
-Toestaan scannen met phpMussel_mail()? False = Nee; True = Ja [Standaard].
+Controleer tegen email handtekeningen wanneer scannen? False = Nee; True = Ja [Standaard].
 - "mail_clamav"
 - "mail_custom"
 - "mail_mussel"
@@ -869,26 +872,26 @@ Alleen zet aangepaste handtekeningen in die bestanden bedoeld voor aangepaste ha
 
 ####*HANDTEKENINGEN OVERZICHT*
 Het volgende is een overzicht van de soorten handtekeningen gebruikt door phpMussel:
-- "Genormaliseerde ASCII Handtekeningen" (ascii_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen.
-- "Complexe Uitgebreide Handtekeningen" (coex_*). Gemengde soort van handtekeningen controleren.
-- "ELF Handtekeningen" (elf_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de ELF-formaat.
-- "Portable Executable Handtekeningen" (exe_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de PE-formaat.
-- "Bestandsnaam Handtekeningen" (filenames_*). Gecontroleerd tegen het bestandsnamen van het bestanden gerichte voor het scannen.
-- "Algemene Handtekeningen" (general_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen.
-- "Grafische Handtekeningen" (graphics_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd naar een bekende grafisch formaat.
-- "Algemene Commando's" (hex_general_commands.csv). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen.
-- "Genormaliseerde HTML Handtekeningen" (html_*). Gecontroleerd tegen de inhoud van elke niet-whitelist HTML-bestand gericht voor het scannen.
-- "Mach-O Handtekeningen" (macho_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de Mach-O-formaat.
-- "Email Handtekeningen" (mail_*). Gecontroleerd tegen de inhoud van elke niet-whitelist EML-bestand gericht voor het scannen.
-- "MD5 Handtekeningen" (md5_*). Gecontroleerd tegen de MD5 hash van de inhoud en het bestandsgrootte van elke niet-whitelist bestand gericht voor het scannen.
-- "Archief Metadata Handtekeningen" (metadata_*). Gecontroleerd tegen de CRC32 hash van de inhoud en het bestandsgrootte van de eerste bestand bevatte binnenkant van ieder niet-whitelist archief gericht voor het scannen.
-- "OLE Handtekeningen" (ole_*). Gecontroleerd tegen de inhoud van elke niet-whitelist OLE-object gericht voor het scannen.
-- "PDF Handtekeningen" (pdf_*). Gecontroleerd tegen de inhoud van elke niet-whitelist PDF-bestand gericht voor het scannen.
-- "Portable Executable Sectionele Handtekeningen" (pe_*). Gecontroleerd tegen de MD5 hash en de grootte van elke PE-sectie van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de PE-formaat.
-- "Portable Executable Uitgebreide Handtekeningen" (pex_*). Gecontroleerd tegen de MD5 hash en de grootte van variabelen in elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de PE-formaat.
-- "Shockwave Handtekeningen" (swf_*). Gecontroleerd tegen de inhoud van elke niet-whitelist Shockwave-bestand gericht voor het scannen.
-- "Whitelist Handtekeningen" (whitelist_*). Gecontroleerd tegen de MD5 hash van de inhoud en het bestandsgrootte van elke bestand gericht voor het scannen. Gecontroleerd bestanden zal zijn immuun van gecontroleerd te worden door de soort van handtekening in hun whitelist binnenkomst.
-- "XML/XDP Handtekeningen" (xmlxdp_*). Gecontroleerd tegen elke XML/XDP data binnen elke niet-whitelist bestanden gericht voor het scannen.
+- "Genormaliseerde ASCII handtekeningen" (ascii_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen.
+- "Complexe Uitgebreide handtekeningen" (coex_*). Gemengde soort van handtekeningen controleren.
+- "ELF handtekeningen" (elf_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de ELF-formaat.
+- "Portable Executable handtekeningen" (exe_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de PE-formaat.
+- "Bestandsnaam handtekeningen" (filenames_*). Gecontroleerd tegen het bestandsnamen van het bestanden gerichte voor het scannen.
+- "Algemene handtekeningen" (general_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen.
+- "Grafische handtekeningen" (graphics_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd naar een bekende grafisch formaat.
+- "Algemene commando's" (hex_general_commands.csv). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen.
+- "Genormaliseerde HTML handtekeningen" (html_*). Gecontroleerd tegen de inhoud van elke niet-whitelist HTML-bestand gericht voor het scannen.
+- "Mach-O handtekeningen" (macho_*). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de Mach-O-formaat.
+- "Email handtekeningen" (mail_*). Gecontroleerd tegen de inhoud van elke niet-whitelist EML-bestand gericht voor het scannen.
+- "MD5 handtekeningen" (md5_*). Gecontroleerd tegen de MD5 hash van de inhoud en het bestandsgrootte van elke niet-whitelist bestand gericht voor het scannen.
+- "Archief metadata handtekeningen" (metadata_*). Gecontroleerd tegen de CRC32 hash van de inhoud en het bestandsgrootte van de eerste bestand bevatte binnenkant van ieder niet-whitelist archief gericht voor het scannen.
+- "OLE handtekeningen" (ole_*). Gecontroleerd tegen de inhoud van elke niet-whitelist OLE-object gericht voor het scannen.
+- "PDF handtekeningen" (pdf_*). Gecontroleerd tegen de inhoud van elke niet-whitelist PDF-bestand gericht voor het scannen.
+- "Portable executable sectionele handtekeningen" (pe_*). Gecontroleerd tegen de MD5 hash en de grootte van elke PE-sectie van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de PE-formaat.
+- "Portable executable uitgebreide handtekeningen" (pex_*). Gecontroleerd tegen de MD5 hash en de grootte van variabelen in elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de PE-formaat.
+- "Shockwave handtekeningen" (swf_*). Gecontroleerd tegen de inhoud van elke niet-whitelist Shockwave-bestand gericht voor het scannen.
+- "Whitelist handtekeningen" (whitelist_*). Gecontroleerd tegen de MD5 hash van de inhoud en het bestandsgrootte van elke bestand gericht voor het scannen. Gecontroleerd bestanden zal zijn immuun van gecontroleerd te worden door de soort van handtekening in hun whitelist binnenkomst.
+- "XML/XDP handtekeningen" (xmlxdp_*). Gecontroleerd tegen elke XML/XDP data binnen elke niet-whitelist bestanden gericht voor het scannen.
 (Bewust zijn van dat elk van deze handtekeningen gemakkelijk kunnen worden uitgeschakeld via `phpmussel.ini`).
 
 ---
@@ -972,4 +975,4 @@ Dit informatie werd laatst bijgewerkt 21 April 2016 en is op de hoogte voor alle
 ---
 
 
-Laatste Bijgewerkt: 21 April 2016 (2016.04.21).
+Laatste Bijgewerkt: 23 April 2016 (2016.04.23).

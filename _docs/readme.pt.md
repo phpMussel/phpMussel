@@ -486,6 +486,9 @@ Configuração geral por phpMussel.
 "ipaddr"
 - Onde encontrar o IP endereço dos pedidos? (Útil por serviços como o Cloudflare e tal) Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!
 
+"enable_plugins"
+- Ativar o suporte para os plugins do phpMussel? False = Não; True = Sim [Padrão].
+
 "forbid_on_block"
 - Deve phpMussel enviar 403 header com a bloqueado arquivo carregamento mensagem, ou ficar com os habituais 200 OK? False = Não (200) [Padrão]; True = Sim (403).
 
@@ -589,7 +592,7 @@ Verificar arquivos nomes contra assinaturas arquivos nomes baseadas assinaturas 
 - "filenames_custom"
 - "filenames_mussel"
 
-Permitir análise com phpMussel_mail()? False = Não; True = Sim [Padrão].
+Verificar contra email assinaturas quando analisando? False = Não; True = Sim [Padrão].
 - "mail_clamav"
 - "mail_custom"
 - "mail_mussel"
@@ -869,26 +872,26 @@ Colocar personalizadas assinaturas nos arquivos destinado por personalizadas ass
 
 ####*ASSINATURA COMPOSIÇÃO*
 A seguir estão os diferentes tipos de assinaturas utilizadas por phpMussel:
-- "Normalizadas ASCII Assinaturas" (ascii_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando.
-- "Complexos Estendidas Assinaturas" (coex_*). Misto tipo de assinatura verificando.
-- "ELF Assinaturas" (elf_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmados tal do formato ELF.
-- "Portátil Executável Assinaturas" (exe_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmados tal do formato PE.
-- "Arquivo Nome Assinaturas" (filenames_*). Verificado contra os nomes de cada arquivo não no whitelist e alvo por analisando.
-- "Gerais Assinaturas" (general_*). Verificado contra o conteúdo de arquivo não no whitelist e alvo por analisando.
-- "Gráficas Assinaturas" (graphics_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmado tal de um conhecidos gráficos arquivos formato.
-- "Gerais Comandos" (hex_general_commands.csv). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando.
-- "Normalizadas HTML Assinaturas" (html_*). Verificado contra o conteúdo de cada arquivo HTML não no whitelist e alvo por analisando.
-- "Mach-O Assinaturas" (macho_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmados tal do formato Mach-O.
-- "E-mail Assinaturas" (mail_*). Verificado contra o conteúdo de cada arquivo EML não no whitelist.
-- "MD5 Assinaturas" (md5_*). Verificado contra o hash MD5 do conteúdo e contra o arquivo tamanho de cada arquivo não no whitelist e alvo por analisando.
-- "Compactado Arquivo Metadado Assinaturas" (metadata_*). Verificado contra o hash CRC32 eo arquivo tamanho do inicial arquivo contida dentro de cada compactado arquivo não no whitelist e alvo por analisando.
-- "OLE Assinaturas" (ole_*). Verificado contra o conteúdo de cada objeto não no whitelist e alvo por analisando.
-- "PDF Assinaturas" (pdf_*). Verificado contra o conteúdo de cada arquivo PDF não no whitelist.
-- "Portátil Executável Seccional Assinaturas" (pe_*). Verificado contra o tamanho eo hash MD5 de cada PE seção de cada arquivo não em o whitelist e alvo por analisando e confirmados tal do formato PE.
-- "Portátil Executável Estendidas Assinaturas" (pex_*). Verificado contra o tamanho eo hash MD5 de todas as variáveis de cada arquivo não em o whitelist e alvo por analisando e confirmados tal do formato PE.
-- "SWF Assinaturas" (swf_*). Verificado contra o conteúdo de cada Shockwave arquivo não no whitelist.
-- "Whitelist Assinaturas" (whitelist_*). Verificado contra o hash MD5 do conteúdo e contra o arquivo tamanho de cada arquivo alvo por analisando. Verificados arquivos será imune de sendo verificado pelo tipo de assinatura mencionada no seu whitelist entrada.
-- "XML/XDP Assinaturas" (xmlxdp_*). Verificado contra quaisquer XML/XDP pedaços encontrados dentro cada arquivo não no whitelist e alvo por analisando.
+- "Assinaturas ASCII normalizadas" (ascii_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando.
+- "Assinaturas estendidos complexos" (coex_*). Misto tipo de assinatura verificando.
+- "Assinaturas ELF" (elf_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmados tal do formato ELF.
+- "Assinaturas portátil executável" (exe_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmados tal do formato PE.
+- "Assinaturas baseadas em nomes de arquivos" (filenames_*). Verificado contra os nomes de cada arquivo não no whitelist e alvo por analisando.
+- "Assinaturas gerais" (general_*). Verificado contra o conteúdo de arquivo não no whitelist e alvo por analisando.
+- "Assinaturas gráficas" (graphics_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmado tal de um conhecidos gráficos arquivos formato.
+- "Gerais comandos" (hex_general_commands.csv). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando.
+- "Assinaturas HTML normalizadas" (html_*). Verificado contra o conteúdo de cada arquivo HTML não no whitelist e alvo por analisando.
+- "Assinaturas Mach-O" (macho_*). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmados tal do formato Mach-O.
+- "Assinaturas E-mail" (mail_*). Verificado contra o conteúdo de cada arquivo EML não no whitelist.
+- "Assinaturas MD5" (md5_*). Verificado contra o hash MD5 do conteúdo e contra o arquivo tamanho de cada arquivo não no whitelist e alvo por analisando.
+- "Assinaturas compactado arquivo metadado" (metadata_*). Verificado contra o hash CRC32 eo arquivo tamanho do inicial arquivo contida dentro de cada compactado arquivo não no whitelist e alvo por analisando.
+- "Assinaturas OLE" (ole_*). Verificado contra o conteúdo de cada objeto não no whitelist e alvo por analisando.
+- "Assinaturas PDF" (pdf_*). Verificado contra o conteúdo de cada arquivo PDF não no whitelist.
+- "Assinaturas portátil executável seccional" (pe_*). Verificado contra o tamanho eo hash MD5 de cada PE seção de cada arquivo não em o whitelist e alvo por analisando e confirmados tal do formato PE.
+- "Assinaturas portátil executável estendidas" (pex_*). Verificado contra o tamanho eo hash MD5 de todas as variáveis de cada arquivo não em o whitelist e alvo por analisando e confirmados tal do formato PE.
+- "Assinaturas SWF" (swf_*). Verificado contra o conteúdo de cada Shockwave arquivo não no whitelist.
+- "Assinaturas whitelist" (whitelist_*). Verificado contra o hash MD5 do conteúdo e contra o arquivo tamanho de cada arquivo alvo por analisando. Verificados arquivos será imune de sendo verificado pelo tipo de assinatura mencionada no seu whitelist entrada.
+- "Assinaturas XML/XDP" (xmlxdp_*). Verificado contra quaisquer XML/XDP pedaços encontrados dentro cada arquivo não no whitelist e alvo por analisando.
 (Notar que qualquer uma destas assinaturas podem ser desativada facilmente através de `phpmussel.ini`).
 
 ---
@@ -972,4 +975,4 @@ Esta informação foi atualizada dia 21 Abril 2016 e é corrente para todas phpM
 ---
 
 
-Última Atualização: 21 Abril 2016 (2016.04.21).
+Última Atualização: 23 Abril 2016 (2016.04.23).

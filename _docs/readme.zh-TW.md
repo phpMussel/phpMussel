@@ -489,6 +489,9 @@ CVD是一個acronym為｢ClamAV Virus Definitions｣，在參照如何ClamAV參�
 “ipaddr”
 - 在哪裡可以找到連接請求IP地址？（可以使用為服務例如Cloudflare和類似）標準是`REMOTE_ADDR`。警告！不要修改此除非您知道什麼您做著！
 
+“enable_plugins”
+- 啟用phpMussel插件支持嗎？ False = 不要啟用； True = 要啟用【標準】。
+
 “forbid_on_block”
 - phpMussel應該發送`403`頭隨著文件上傳受阻信息，或堅持標準`200 OK`？ False = 發送`200`【標準】； True = 發送`403`。
 
@@ -592,7 +595,7 @@ CVD是一個acronym為｢ClamAV Virus Definitions｣，在參照如何ClamAV參�
 - “filenames_custom”
 - “filenames_mussel”
 
-允許掃描通過`phpMussel_mail()`嗎？ False = 不檢查， True = 檢查【默認】。
+檢查針對電子郵件簽名當掃描嗎？ False = 不檢查， True = 檢查【默認】。
 - “mail_clamav”
 - “mail_custom”
 - “mail_mussel”
@@ -975,6 +978,6 @@ URL掃描儀API配置。
 ---
 
 
-最後更新：2016年4月21日。
+最後更新：2016年4月23日。
 
 翻譯聲明：本文檔翻譯基於英文原始文檔，但由於本人水平有限，且非PHP程序員，對其中某些字詞的翻譯可能不是很準確，故如果出現錯誤，請指出並聯繫原作者予以更正，另外，本翻譯僅簡體中文，與繁體中文無關亦未參考繁體中文的譯文！！

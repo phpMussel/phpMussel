@@ -485,6 +485,9 @@ Generelle Konfiguration von phpMussel.
 "ipaddr"
 - Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services) Standardeinstellung = REMOTE_ADDR. Achtung: Ändern Sie diesen Wert nur, wenn Sie wissen, was Sie tun!
 
+"enable_plugins"
+- Aktivieren Sie die Unterstützung für phpMussel Plugins? False = Nein; True = Ja [Standardeinstellung].
+
 "forbid_on_block"
 - Zurückgegebener 403-HTTP-Header bei einem blockierten Dateiupload. False = Nein (200) [Standardeinstellung]; True = Ja (403).
 
@@ -588,7 +591,7 @@ Scan von Dateinamen mit den Dateinamen-Signaturen? False = Nein; True = Ja [Stan
 - "filenames_custom"
 - "filenames_mussel"
 
-Scan mit phpMussel_mail() erlauben? False = Nein; True = Ja [Standardeinstellung].
+Scan mit den Email-Signaturen? False = Nein; True = Ja [Standardeinstellung].
 - "mail_clamav"
 - "mail_custom"
 - "mail_mussel"
@@ -970,4 +973,4 @@ Diese Informationen wurden zuletzt am 21. April 2016 aktualisiert und gelten fü
 ---
 
 
-Zuletzt aktualisiert: 21. April 2016 (2016.04.21).
+Zuletzt aktualisiert: 23. April 2016 (2016.04.23).

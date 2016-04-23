@@ -486,6 +486,9 @@ General phpMussel configuration.
 "ipaddr"
 - Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
 
+"enable_plugins"
+- Enable support for phpMussel plugins? False = No; True = Yes [Default].
+
 "forbid_on_block"
 - Should phpMussel send 403 headers with the file upload blocked message, or stick with the usual 200 OK? False = No (200) [Default]; True = Yes (403).
 
@@ -589,7 +592,7 @@ Check filenames against filename based signatures when scanning? False = No; Tru
 - "filenames_custom"
 - "filenames_mussel"
 
-Allow scanning with phpMussel_mail()? False = No; True = Yes [Default].
+Check against email signatures when scanning? False = No; True = Yes [Default].
 - "mail_clamav"
 - "mail_custom"
 - "mail_mussel"
@@ -869,26 +872,26 @@ Only put custom signatures in those files intended for custom signatures. Those 
 
 ####*SIGNATURE BREAKDOWN*
 The following is a breakdown of the types of signatures used by phpMussel:
-- "Normalised ASCII Signatures" (ascii_*). Checked against the contents of every non-whitelisted file targeted for scanning.
-- "Complex Extended Signatures" (coex_*). Mixed signature type matching.
-- "ELF Signatures" (elf_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to the ELF format.
-- "Portable Executable Signatures" (exe_*). Checked against the contents of every non-whitelisted targeted for scanning and matched to the PE format.
-- "Filename Signatures" (filenames_*). Checked against the filenames of files targeted for scanning.
-- "General Signatures" (general_*). Checked against the contents of every non-whitelisted file targeted for scanning.
-- "Graphics Signatures" (graphics_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to a known graphical file format.
-- "General Commands" (hex_general_commands.csv). Checked against the contents of every non-whitelisted file targeted for scanning.
-- "Normalised HTML Signatures" (html_*). Checked against the contents of every non-whitelisted HTML file targeted for scanning.
-- "Mach-O Signatures" (macho_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to the Mach-O format.
-- "Email Signatures" (mail_*). Checked against the contents of every non-whitelisted EML file targeted for scanning.
-- "MD5 Signatures" (md5_*). Checked against the MD5 hash of the contents and the filesize of every non-whitelisted file targeted for scanning.
-- "Archive Metadata Signatures" (metadata_*). Checked against the CRC32 hash and filesize of the initial file contained inside of any non-whitelisted archive targeted for scanning.
-- "OLE Signatures" (ole_*). Checked against the contents of every non-whitelisted OLE object targeted for scanning.
-- "PDF Signatures" (pdf_*). Checked against the contents of every non-whitelisted PDF file targeted for scanning.
-- "Portable Executable Sectional Signatures" (pe_*). Checked against the MD5 hash and the size of each PE section of every non-whitelisted file targeted for scanning and matched to the PE format.
-- "Portable Executable Extended Signatures" (pex_*). Checked against the MD5 hash and the size of variables within every non-whitelisted file targeted for scanning and matched to the PE format.
-- "SWF Signatures" (swf_*). Checked against the contents of every non-whitelisted Shockwave file targeted for scanning.
-- "Whitelist Signatures" (whitelist_*). Checked against the MD5 hash of the contents and the filesize of every file targeted for scanning. Matched files will be immune to being matched by the type of signature mentioned in their whitelist entry.
-- "XML/XDP Signatures" (xmlxdp_*). Checked against any XML/XDP chunks found within any non-whitelisted files targeted for scanning.
+- "Normalised ASCII signatures" (ascii_*). Checked against the contents of every non-whitelisted file targeted for scanning.
+- "Complex Extended signatures" (coex_*). Mixed signature type matching.
+- "ELF signatures" (elf_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to the ELF format.
+- "Portable executable signatures" (exe_*). Checked against the contents of every non-whitelisted targeted for scanning and matched to the PE format.
+- "Filename signatures" (filenames_*). Checked against the filenames of files targeted for scanning.
+- "General signatures" (general_*). Checked against the contents of every non-whitelisted file targeted for scanning.
+- "Graphics signatures" (graphics_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to a known graphical file format.
+- "General commands" (hex_general_commands.csv). Checked against the contents of every non-whitelisted file targeted for scanning.
+- "Normalised HTML signatures" (html_*). Checked against the contents of every non-whitelisted HTML file targeted for scanning.
+- "Mach-O signatures" (macho_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to the Mach-O format.
+- "Email signatures" (mail_*). Checked against the contents of every non-whitelisted EML file targeted for scanning.
+- "MD5 signatures" (md5_*). Checked against the MD5 hash of the contents and the filesize of every non-whitelisted file targeted for scanning.
+- "Archive metadata signatures" (metadata_*). Checked against the CRC32 hash and filesize of the initial file contained inside of any non-whitelisted archive targeted for scanning.
+- "OLE signatures" (ole_*). Checked against the contents of every non-whitelisted OLE object targeted for scanning.
+- "PDF signatures" (pdf_*). Checked against the contents of every non-whitelisted PDF file targeted for scanning.
+- "Portable executable sectional signatures" (pe_*). Checked against the MD5 hash and the size of each PE section of every non-whitelisted file targeted for scanning and matched to the PE format.
+- "Portable executable extended signatures" (pex_*). Checked against the MD5 hash and the size of variables within every non-whitelisted file targeted for scanning and matched to the PE format.
+- "SWF signatures" (swf_*). Checked against the contents of every non-whitelisted Shockwave file targeted for scanning.
+- "Whitelist signatures" (whitelist_*). Checked against the MD5 hash of the contents and the filesize of every file targeted for scanning. Matched files will be immune to being matched by the type of signature mentioned in their whitelist entry.
+- "XML/XDP signatures" (xmlxdp_*). Checked against any XML/XDP chunks found within any non-whitelisted files targeted for scanning.
 (Note that any of these signatures may be easily disabled via `phpmussel.ini`).
 
 ---
@@ -972,4 +975,4 @@ This information was last updated 21st April 2016 and is current for all phpMuss
 ---
 
 
-Last Updated: 21st April 2016 (2016.04.21).
+Last Updated: 23rd April 2016 (2016.04.23).

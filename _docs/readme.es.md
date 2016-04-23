@@ -132,7 +132,7 @@ Por favor, consulte la sección "CÓMO INSTALAR (PARA CLI)" de este README.
 
 Tenga en cuenta que, aunque las futuras versiones de phpMussel deben apoyar otros sistemas, en este momento, phpMussel CLI modo compatibilidad sólo está optimizado para su uso en sistemas basados en Windows (por supuesto, usted puede probarlo en otros sistemas, pero no puedo garantizar que va funcionar como es debido).
 
-También tenga en cuenta que phpMussel no es el funcional equivalente de una completa anti-virus suite, y no como convencionales anti-virus suites, no supervisa la memoria activa o detectar virus fuera del alcance de su acceso! Es sólo detecta virus contenidos en los archivos específicos explícitamente para escaneo.
+También tenga en cuenta que phpMussel no es el funcional equivalente de una antivirus suite completa, y no como antivirus suites convencionales, no supervisa la memoria activa o detectar virus fuera del alcance de su acceso! Es sólo detecta virus contenidos en los archivos específicos explícitamente para escaneo.
 
 ---
 
@@ -485,6 +485,9 @@ General configuración para phpMussel.
 "ipaddr"
 - Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales) Predefinido = REMOTE_ADDR. AVISO: No cambie esto a menos que sepas lo que estás haciendo!
 
+"enable_plugins"
+- Habilitar el soporte para los plugins de phpMussel? False = No; True = Sí [Predefinido].
+
 "forbid_on_block"
 - Debería phpMussel enviar 403 header con la bloqueados archivos subidos mensaje, o quedarse con los usual 200 OK? False = No (200) [Predefinido]; True = Sí (403).
 
@@ -588,7 +591,7 @@ Cotejar nombres de archivos con firmas basado en nombres cuando escaneando? Fals
 - "filenames_custom"
 - "filenames_mussel"
 
-Permitir escaneando con phpMussel_mail()? False = No; True = Sí [Predefinido].
+Cotejar contra email firmas cuando escaneando? False = No; True = Sí [Predefinido].
 - "mail_clamav"
 - "mail_custom"
 - "mail_mussel"
@@ -818,7 +821,7 @@ Todos MD5 firmas seguir el formato:
 
 `HASH:TAMAÑO:NOMBRE`
 
-Donde HASH es el MD5 hash de un entero archivo, TAMAÑO es el total tamaño de eso archivo y NOMBRE es el nombre a citar para esa firma.
+Donde HASH es el hash MD5 de un entero archivo, TAMAÑO es el total tamaño de eso archivo y NOMBRE es el nombre a citar para esa firma.
 
 ####*COMPACTADOS ARCHIVOS METADATOS FIRMAS*
 Donde compactados archivos metadatos firmas seguir el formato:
@@ -832,21 +835,21 @@ Todos PE Secciónal firmas seguir el formato:
 
 `TAMAÑO:HASH:NOMBRE`
 
-Donde HASH es el MD5 hash de una sección del PE archivo, TAMAÑO es el total tamaño de esa sección y NOMBRE es el nombre a citar para esa firma.
+Donde HASH es el hash MD5 de una sección del PE archivo, TAMAÑO es el total tamaño de esa sección y NOMBRE es el nombre a citar para esa firma.
 
 ####*PE EXTENDIDAS FIRMAS*
 Todos PE extendidas firmas seguir el formato:
 
 `$VAR:HASH:TAMAÑO:NOMBRE`
 
-Donde $VAR es el nombre de la PE variable para comprobar contra, HASH es el MD5 hash de esa variable, TAMAÑO es el total tamaño de esa variable y NOMBRE es el nombre de citar para esa firma.
+Donde $VAR es el nombre de la PE variable para comprobar contra, HASH es el hash MD5 de esa variable, TAMAÑO es el total tamaño de esa variable y NOMBRE es el nombre de citar para esa firma.
 
 ####*WHITELIST FIRMAS*
 Todos Whitelist firmas seguir el formato:
 
 `HASH:TAMAÑO:TIPO`
 
-Donde HASH es el MD5 hash de un entero archivo, TAMAÑO es el total tamaño de eso archivo y TIPO es el tipo de firmas el archivo en la whitelist es estar inmune contra.
+Donde HASH es el hash MD5 de un entero archivo, TAMAÑO es el total tamaño de eso archivo y TIPO es el tipo de firmas el archivo en la whitelist es estar inmune contra.
 
 ####*COMPLEJOS EXTENDIDAS FIRMAS*
 Complejos extendidas firmas son bastante diferentes a los otros tipos de firmas posibles con phpMussel, en que qué ellos son cotejando contra se especificado por las firmas ellos mismos y que ellos pueden cotejar contra múltiples criterios. La cotejar criterios están delimitados por ";" y la cotejar tipo y cotejar datos de cada cotejar criterio es delimitado por ":" como tal que formato para estas firmas tiene tendencia a aparecer como:
@@ -868,26 +871,26 @@ Sólo poner personalizadas firmas en esos archivos destinados para personalizada
 
 ####*FIRMA DESGLOSE*
 El siguiente es el desglose de los tipos de firmas utilizado por phpMussel:
-- "Normalizados ASCII Firmas" (ascii_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Complejos Extendidas Firmas" (coex_*). Mixtas tipos de firmas para cotejar/comprobar.
-- "ELF Firmas" (elf_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del ELF formato.
-- "Portátil Ejecutable Firmas" (exe_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del PE formato.
-- "Firmas Basadas En Las Nombres Del Archivos" (filenames_*). Cotejado contra los nombres de archivos destinado para escaneando.
-- "Generales Firmas" (general_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Gráficas Firmas" (graphics_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como de un conocido gráficos formato.
-- "Generales Comandos" (hex_general_commands.csv). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Normalizados HTML Firmas" (html_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del HTML formato.
-- "Mach-O Firmas" (macho_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del Mach-O formato.
-- "Email Firmas" (mail_*). Cotejado contra los contenidos de cada EML archivo que no está en la whitelist que es destinado para escaneando.
-- "MD5 Firmas" (md5_*). Cotejado contra el MD5 hash de los contenidos y el tamaño de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Compactados Archivos Metadatos Firmas" (metadata_*). Cotejado contra el CRC32 hash y tamaño del inicial archivo contenido en el interior de cualquier que no está en la whitelist que es destinado para escaneando.
-- "OLE Firmas" (ole_*). Cotejado contra los contenidos de cada OLE objeto que no está en la whitelist que es destinado para escaneando.
-- "PDF Firmas" (pdf_*). Cotejado contra los contenidos de cada PDF archivo que no está en la whitelist que es destinado para escaneando.
-- "Portátil Ejecutable Secciónal Firmas" (pe_*). Cotejado contra el MD5 hash y el tamaño de cada PE sección de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Portátil Ejecutable Extendidas Firmas" (pex_*). Cotejado contra el MD5 hash y el tamaño de las variables de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "SWF Firmas" (swf_*). Cotejado contra los contenidos de cada Shockwave archivo que no está en la whitelist que es destinado para escaneando.
-- "Whitelist Firmas" (whitelist_*). Cotejado contra el MD5 hash de los contenidos y el tamaño de cada archivo que es destinado para escaneando. Cotejados archivos será inmune de ser cotejado por el tipo de firma mencionado en su entrada de la whitelist.
-- "XML/XDP Firmas" (xmlxdp_*). Cotejado contra cualquier XML/XDP trozos encontrado dentro de cualquier archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas ASCII normalizados" (ascii_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas complejos extendidas" (coex_*). Mixtas tipos de firmas para cotejar/comprobar.
+- "Firmas ELF" (elf_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato ELF.
+- "Firmas portátil ejecutable" (exe_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato PE.
+- "Firmas basadas en las nombres del archivos" (filenames_*). Cotejado contra los nombres de archivos destinado para escaneando.
+- "Firmas generales" (general_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas gráficas" (graphics_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como de un formato gráfico conocido.
+- "Generales comandos" (hex_general_commands.csv). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas HTML normalizados" (html_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato HTML.
+- "Firmas Mach-O" (macho_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato Mach-O.
+- "Firmas email" (mail_*). Cotejado contra los contenidos de cada EML archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas MD5" (md5_*). Cotejado contra el hash MD5 de los contenidos y el tamaño de cada archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas compactados archivos metadatos" (metadata_*). Cotejado contra el hash CRC32 y tamaño del inicial archivo contenido en el interior de cualquier que no está en la whitelist que es destinado para escaneando.
+- "Firmas OLE" (ole_*). Cotejado contra los contenidos de cada OLE objeto que no está en la whitelist que es destinado para escaneando.
+- "Firmas PDF" (pdf_*). Cotejado contra los contenidos de cada PDF archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas portátil ejecutable secciónal" (pe_*). Cotejado contra el hash MD5 y el tamaño de cada PE sección de cada archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas portátil ejecutable extendidas" (pex_*). Cotejado contra el hash MD5 y el tamaño de las variables de cada archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas SWF" (swf_*). Cotejado contra los contenidos de cada Shockwave archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas whitelist" (whitelist_*). Cotejado contra el hash MD5 de los contenidos y el tamaño de cada archivo que es destinado para escaneando. Cotejados archivos será inmune de ser cotejado por el tipo de firma mencionado en su entrada de la whitelist.
+- "Firmas XML/XDP" (xmlxdp_*). Cotejado contra cualquier XML/XDP trozos encontrado dentro de cualquier archivo que no está en la whitelist que es destinado para escaneando.
 (Notar que cualquier de estas firmas pueden estar desactivado fácilmente a través de `phpmussel.ini`).
 
 ---
@@ -971,4 +974,4 @@ Esta información ha sido actualizado 27 Marzo 2016 y es a hoy para todas las ph
 ---
 
 
-Última Actualización: 21 Abril 2016 (2016.04.21).
+Última Actualización: 23 Abril 2016 (2016.04.23).

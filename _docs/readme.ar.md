@@ -523,6 +523,9 @@
 "ipaddr"
 - Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
 
+"enable_plugins"
+- Enable support for phpMussel plugins? False = No; True = Yes [Default].
+
 "forbid_on_block"
 - Should phpMussel send 403 headers with the file upload blocked message, or stick with the usual 200 OK? False = No (200) [Default]; True = Yes (403).
 
@@ -626,7 +629,7 @@ Check filenames against filename based signatures when scanning? False = No; Tru
 - "filenames_custom"
 - "filenames_mussel"
 
-Allow scanning with phpMussel_mail()? False = No; True = Yes [Default].
+Check against email signatures when scanning? False = No; True = Yes [Default].
 - "mail_clamav"
 - "mail_custom"
 - "mail_mussel"
@@ -1012,4 +1015,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 21 أبريل 2016 (2016.04.21).</div>
+<div dir="rtl">آخر تحديث: 23 أبريل 2016 (2016.04.23).</div>

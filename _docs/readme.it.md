@@ -486,6 +486,9 @@ Generale configurazione per phpMussel.
 "ipaddr"
 - Dove trovare l'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili) Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!
 
+"enable_plugins"
+- Attiva il supporto per i plugin di phpMussel? False = No; True = Sì [Predefinito].
+
 "forbid_on_block"
 - phpMussel dovrebbe rispondere con 403 header con il file caricamente bloccato messaggio, o rimanere con il solito 200 OK? False = No (200) [Predefinito]; True = Sì (403).
 
@@ -589,7 +592,7 @@ Verificare nomi del file contro file nome basate firme durante la scansione? Fal
 - "filenames_custom"
 - "filenames_mussel"
 
-Permettere scansione con phpMussel_mail()? False = No; True = Sì [Predefinito].
+Verificare contro email firme durante la scansione? False = No; True = Sì [Predefinito].
 - "mail_clamav"
 - "mail_custom"
 - "mail_mussel"
@@ -869,26 +872,26 @@ Solo mettere personalizzate firme in quei file destinati personalizzate firme. Q
 
 ####*TIPI DI FIRME*
 I seguenti sono i tipi di firme utilizzate da phpMussel:
-- "Normalizzati ASCII Firme" (ascii_*). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist.
-- "Complesso Esteso Firme" (coex_*). Misto tipi dei firme verifica.
-- "ELF Firme" (elf_*). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist e verificato allo ELF formato.
-- "Portatili Eseguibili Firme" (exe_*). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist e verificato allo PE formato.
-- "File Nomi Firme" (filenames_*). Verificato contro i file nomi dei file mirati per la scansionare.
-- "Generali Firme" (general_*). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist.
-- "Grafiche Firme" (graphics_*). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist e verificato come un conosciuto grafico file formato.
-- "Generali Comandi" (hex_general_commands.csv). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist.
-- "Normalizzati HTML Firme" (html_*). Verificato contro i contenuti del ogni HTML file mirati per scansionare quello che non è sulla whitelist.
-- "Mach-O Firme" (macho_*). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist e verificato allo Mach-O formato.
-- "Email Firme" (mail_*). Verificato contro i contenuti del ogni EML file mirati per scansionare quello che non è sulla whitelist.
-- "MD5 Firme" (md5_*). Verificato contro l'MD5 hash dei contenuti e la dimensione del ogni file mirati per scansionare quello che non è sulla whitelist.
-- "Archive Metadati Firme" (metadata_*). Verificato contro l'CRC32 hash e la dimensione dell'iniziale file contenuto all'interno di qualsiasi file mirati per scansionare quello che non è sulla whitelist.
-- "OLE Firme" (ole_*). Verificato contro i contenuti del ogni oggetti mirati per scansionare quello che non è sulla whitelist.
-- "PDF Firme" (pdf_*). Verificato contro i contenuti del ogni PDF file mirati per scansionare quello che non è sulla whitelist.
-- "Portatili Eseguibili Sezionale Firme" (pe_*). Verificato contro l'MD5 hash e la dimensione di ogni PE sezione del ogni file non sulla whitelist mirati per la scansione e verificato allo PE formato.
-- "Portatili Eseguibili Esteso Firme" (pex_*). Verificato contro l'MD5 hash e la dimensione di ogni variabili del ogni file non sulla whitelist mirati per la scansione e verificato allo PE formato.
-- "SWF Firme" (swf_*). Verificato contro i contenuti del ogni Shockwave file mirati per scansionare quello che non è sulla whitelist.
-- "Whitelist Firme" (whitelist_*). Verificato contro l'MD5 hash dei contenuti e la dimensione del ogni file mirati per scansionare. Corrispondenti file saranno immuni contro l'essere bloccato dal tipo di firme di cui al loro whitelist listato.
-- "XML/XDP Firme" (xmlxdp_*). Verificato contro qualsiasi XML/XDP pezzi trovato all'interno di qualsiasi dei file mirati per scansionare quello che non è sulla whitelist.
+- "Firme ASCII normalizzati" (ascii_*). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist.
+- "Firme estesi complessi" (coex_*). Misto tipi dei firme verifica.
+- "Firme ELF" (elf_*). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist e verificato al formato ELF.
+- "Firme portatili eseguibili" (exe_*). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist e verificato al formato PE.
+- "Firme basati su nomi di file" (filenames_*). Verificato contro i file nomi dei file mirati per la scansionare.
+- "Firme generali" (general_*). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist.
+- "Firme grafiche" (graphics_*). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist e verificato come un conosciuto grafico file formato.
+- "Comandi generali" (hex_general_commands.csv). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist.
+- "Firme HTML normalizzati" (html_*). Verificato contro i contenuti del ogni HTML file mirati per scansionare quello che non è sulla whitelist.
+- "Firme Mach-O" (macho_*). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist e verificato al formato Mach-O.
+- "Firme Email" (mail_*). Verificato contro i contenuti del ogni EML file mirati per scansionare quello che non è sulla whitelist.
+- "Firme MD5" (md5_*). Verificato contro l'MD5 hash dei contenuti e la dimensione del ogni file mirati per scansionare quello che non è sulla whitelist.
+- "Firme archive metadati" (metadata_*). Verificato contro l'CRC32 hash e la dimensione dell'iniziale file contenuto all'interno di qualsiasi file mirati per scansionare quello che non è sulla whitelist.
+- "Firme OLE" (ole_*). Verificato contro i contenuti del ogni oggetti mirati per scansionare quello che non è sulla whitelist.
+- "Firme PDF" (pdf_*). Verificato contro i contenuti del ogni PDF file mirati per scansionare quello che non è sulla whitelist.
+- "Firme portatili eseguibili sezionale" (pe_*). Verificato contro l'MD5 hash e la dimensione di ogni PE sezione del ogni file non sulla whitelist mirati per la scansione e verificato al formato PE.
+- "Firme portatili eseguibili estesi" (pex_*). Verificato contro l'MD5 hash e la dimensione di ogni variabili del ogni file non sulla whitelist mirati per la scansione e verificato al formato PE.
+- "Firme SWF" (swf_*). Verificato contro i contenuti del ogni Shockwave file mirati per scansionare quello che non è sulla whitelist.
+- "Firme whitelist" (whitelist_*). Verificato contro l'MD5 hash dei contenuti e la dimensione del ogni file mirati per scansionare. Corrispondenti file saranno immuni contro l'essere bloccato dal tipo di firme di cui al loro whitelist listato.
+- "Firme XML/XDP" (xmlxdp_*). Verificato contro qualsiasi XML/XDP pezzi trovato all'interno di qualsiasi dei file mirati per scansionare quello che non è sulla whitelist.
 (Si noti che qualsiasi di queste firme possono essere disattivato facilmente tramite `phpmussel.ini`).
 
 ---
@@ -972,4 +975,4 @@ Questa informazione è stato lo scorso aggiornato 21 Aprile 2016 ed è in corso 
 ---
 
 
-Ultimo Aggiornamento: 21 Aprile 2016 (2016.04.21).
+Ultimo Aggiornamento: 23 Aprile 2016 (2016.04.23).

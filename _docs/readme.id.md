@@ -486,6 +486,9 @@ Konfigurasi umum dari phpMussel.
 "ipaddr"
 - Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!
 
+"enable_plugins"
+- Mengaktifkan dukungan untuk plugin phpMussel? False = Tidak; True = Ya [Default].
+
 "forbid_on_block"
 - Seharusnya phpMussel mengirimkan 403 headers dengan pesan upload file yang terblok, atau cocok dengan 200 OK? False = Tidak (200) [Default]; True = Ya (403).
 
@@ -589,7 +592,7 @@ Cek nama file pada tanda tangan berbasis nama file ketika pemindaian? False = Ti
 - "filenames_custom"
 - "filenames_mussel"
 
-Mengizinkan pemindaian dengan phpMussel_mail()? False = Tidak; True = Ya [Default].
+Cek tanda tangan email ketika pemindaian? False = Tidak; True = Ya [Default].
 - "mail_clamav"
 - "mail_custom"
 - "mail_mussel"
@@ -872,22 +875,22 @@ Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
 - "Tanda tangan ASCII dinormalisasi" (ascii_*). Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
 - "Tanda tangan diperpanjang kompleks" (coex_*). Campuran pencocokan jenis tanda tangan.
 - "Tanda tangan ELF" (elf_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format ELF.
-- "Tanda tangan Portable Executable" (exe_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
-- "Tanda tangan Nama file" (filenames_*). Dicek pada nama file dari file yang ditargetkan pada pemindaian.
+- "Tanda tangan portable executable" (exe_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
+- "Tanda tangan nama file" (filenames_*). Dicek pada nama file dari file yang ditargetkan pada pemindaian.
 - "Tanda tangan umum" (general_*). Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan Grafis" (graphics_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke apapun diketahui format grafis.
+- "Tanda tangan grafis" (graphics_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke apapun diketahui format grafis.
 - "Perintah umum" (hex_general_commands.csv). Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
 - "Tanda tangan HTML dinormalisasi" (html_*). Dicek pada isi dari apapun file HTML tidak bertanda putih dan ditargetkan untuk dipindai.
 - "Tanda tangan Mach-O" (macho_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format Mach-O.
 - "Tanda tangan Email" (mail_*). Dicek pada isi dari apapun file EML tidak bertanda putih.
 - "Tanda tangan MD5" (md5_*). Dicek pada hash MD5 dari isi dan ukuran file dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan Metadata Arsip" (metadata_*). Dicek pada hash CRC32 dan ukuran file dari pertama file berisikan dalam apapun arsip terkompress tidak bertanda putih dan ditargetkan untuk dipindai.
+- "Tanda tangan metadata arsip" (metadata_*). Dicek pada hash CRC32 dan ukuran file dari pertama file berisikan dalam apapun arsip terkompress tidak bertanda putih dan ditargetkan untuk dipindai.
 - "Tanda tangan OLE" (ole_*). Dicek pada isi dari apapun objek tidak bertanda putih dan ditargetkan untuk dipindai.
 - "Tanda tangan PDF" (pdf_*). Dicek pada isi dari apapun file PDF tidak bertanda putih.
-- "Tanda tangan Portable Executable Sectional" (pe_*). Dicek pada hash MD5 dan ukuran dari seksi PE dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
+- "Tanda tangan portable executable sectional" (pe_*). Dicek pada hash MD5 dan ukuran dari seksi PE dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
 - "Tanda tangan diperpanjang portable executable" (pex_*). Dicek pada hash MD5 dan ukuran dari variabel dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
 - "Tanda tangan SWF" (swf_*). Dicek pada isi dari apapun file Shockwave tidak bertanda putih.
-- "Tanda tangan Putih" (whitelist_*). Dicek pada hash MD5 dari isi dan ukuran file dari apapun file ditargetkan untuk dipindai. File dicocokkan akan kebal terhadap dari dicocokkan dengan jenis tanda tangan yang disebutkan dalam entri daftar putih mereka.
+- "Tanda tangan putih" (whitelist_*). Dicek pada hash MD5 dari isi dan ukuran file dari apapun file ditargetkan untuk dipindai. File dicocokkan akan kebal terhadap dari dicocokkan dengan jenis tanda tangan yang disebutkan dalam entri daftar putih mereka.
 - "Tanda tangan blok data XML/XDP" (xmlxdp_*). Dicek pada apapun blok data XML/XDP ditemukan dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
 (Catat itu bahwa semua ini tanda tangan dapat dinonaktifkan melalui `phpmussel.ini`).
 
@@ -972,4 +975,4 @@ Informasi ini diupdate 21 April 2016 dan cocok untuk semua rilis phpMussel dari 
 ---
 
 
-Terakhir Diperbarui: 21 April 2016 (2016.04.21).
+Terakhir Diperbarui: 23 April 2016 (2016.04.23).
