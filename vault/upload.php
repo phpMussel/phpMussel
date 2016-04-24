@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2016.04.03).
+ * This file: Upload handler (last modified: 2016.04.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -211,7 +211,7 @@ if ($phpMussel['upload']['count'] > 0) {
                 /** Process this block if the number of files being uploaded exceeds "max_uploads". */
                 if (
                     $phpMussel['upload']['count'] > $phpMussel['Config']['files']['max_uploads'] &&
-                    $phpMussel['Config']['files']['max_uploads'] >=1
+                    $phpMussel['Config']['files']['max_uploads'] >= 1
                 ) {
                     $phpMussel['killdata'] .=
                         '-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:' .
@@ -384,7 +384,7 @@ if ($phpMussel['upload']['count'] > 0) {
                 /** Process this block if the number of files being uploaded exceeds "max_uploads". */
                 if (
                     $phpMussel['upload']['count'] > $phpMussel['Config']['files']['max_uploads'] &&
-                    $phpMussel['Config']['files']['max_uploads'] >=1
+                    $phpMussel['Config']['files']['max_uploads'] >= 1
                 ) {
                     $phpMussel['killdata'] .=
                         '-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:' .

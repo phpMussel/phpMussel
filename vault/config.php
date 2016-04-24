@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2016.04.18).
+ * This file: Configuration handler (last modified: 2016.04.24).
  */
 
 /** phpMussel version number (SemVer). */
@@ -314,11 +314,11 @@ if (!isset($phpMussel['Config']['files']['filetype_whitelist'])) {
 /** Fallback for missing "filetype_blacklist" configuration directive. */
 if (!isset($phpMussel['Config']['files']['filetype_blacklist'])) {
     $phpMussel['Config']['files']['filetype_blacklist'] =
-        '386,acc*,acm,act*,apk,app,ash*,asm*,asx*,ax,bat,bin,ccc,cgi,cmd,' .
-        'com*,cpl,cpp,csh,dll,drv,elf,exe,fxp,gad*,hta*,htp*,ico,inf,ins,' .
-        'inx,ipa,isu,job,js,jse,ksh,lnk,msc,msi,msp,mst,net,ocx,ops,org,osx,' .
-        'out,paf,php*,pif,pl,prg,ps1,reg,rgs,rs,run,scr*,sct,shb,shs,sql*,' .
-        'sys,u3p,url,vb,vbe,vbs*,wor*,ws,wsf,xsl';
+        '386,acc*,acm,act*,apk,app,ash*,asm*,asx*,ax,bat,bin,ccc,cgi,cmd,com*,cpl' .
+        ',cpp,csh,dll,drv,elf,exe,fxp,gad*,hta*,htp*,ico,inf,ins,inx,ipa,isu,job,' .
+        'js,jse,ksh,lnk,msc,msi,msp,mst,net,ocx,ops,org,osx,out,paf,php*,pif,pl,p' .
+        'rg,ps1,reg,rgs,rs,run,scr*,sct,shb,shs,sql*,sys,u3p,url,vb,vbe,vbs*,wor*' .
+        ',ws,wsf,xsl';
 }
 
 /** Fallback for missing "filetype_greylist" configuration directive. */

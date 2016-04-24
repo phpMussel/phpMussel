@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.03.24).
+ * This file: CLI handler (last modified: 2016.04.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -209,7 +209,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         $PEArr['OptHdrSize'] = $PEArr['OptHdrSize'][1];
                         echo $phpMussel['Config']['lang']['cli_pe2'] . "\n";
                         for ($PEArr['k'] = 0; $PEArr['k'] < $PEArr['NumOfSections']; $PEArr['k']++) {
-                            $PEArr['SectionHead'] = substr($hashme,$PEArr['Offset'] + 24 + $PEArr['OptHdrSize'] + ($PEArr['k'] * 40), $PEArr['NumOfSections'] * 40);
+                            $PEArr['SectionHead'] = substr($hashme, $PEArr['Offset'] + 24 + $PEArr['OptHdrSize'] + ($PEArr['k'] * 40), $PEArr['NumOfSections'] * 40);
                             $PEArr['SectionName'] = str_ireplace("\x00", '', substr($PEArr['SectionHead'], 0, 8));
                             $PEArr['VirtualSize'] = @unpack('S', substr($PEArr['SectionHead'], 8, 4));
                             $PEArr['VirtualSize'] = $PEArr['VirtualSize'][1];
@@ -273,7 +273,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
     echo $phpMussel['Config']['lang']['cli_ln1'] . $phpMussel['Config']['lang']['cli_ln2'] . $phpMussel['Config']['lang']['cli_ln3'];
 
     /** Open STDIN. */
-    $sth=fopen('php://stdin', 'r');
+    $sth = fopen('php://stdin', 'r');
 
     while (true) {
 
