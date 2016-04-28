@@ -148,10 +148,10 @@ Một số lý do tại sao bạn _**NÊN**_ cho phép những điều khiển n
 - Cung cấp một cách cho bạn để giám sát phpMussel khi truy cập FTP hoặc các điểm truy cập thông thường khác cho giám sát phpMussel không có sẵn.
 
 Một số lý do tại sao bạn _**KHÔNG**_ nên cho phép những điều khiển này:
-- Cung cấp một véc tơ cho kẻ tấn công tiềm năng và người không ai ưa để xác định xem bạn đang sử dụng phpMussel (mặc dù, điều này có thể là một lý do cho hay chống lại, tùy thuộc vào quan điểm) bằng cách mù quáng gửi lệnh đến máy chủ như một phương tiện để thăm dò. Một mặt, điều này có thể làm nản lòng kẻ tấn công nhắm mục tiêu hệ thống của bạn nếu họ biết rằng bạn đang sử dụng phpMussel, giả định rằng họ đang thăm dò bởi vì phương pháp tấn công của họ là ra không hiệu quả như là kết quả của việc sử dụng phpMussel. Tuy nhiên, mặt khác, nếu một số không lường trước và khai thác hiện hành không biết đến phpMussel hoặc một phiên bản tương lai của chúng trở nên được biết đến, và nếu nó có khả năng cung cấp một vec tơ tấn công, a positive result from such probing could actually encourage kẻ tấn côngs to target your system.
+- Cung cấp một véc tơ cho kẻ tấn công tiềm năng và người không ai ưa để xác định xem bạn đang sử dụng phpMussel (mặc dù, điều này có thể là một lý do cho hay chống lại, tùy thuộc vào quan điểm) bằng cách mù quáng gửi lệnh đến máy chủ như một phương tiện để thăm dò. Một mặt, điều này có thể làm nản lòng kẻ tấn công nhắm mục tiêu hệ thống của bạn nếu họ biết rằng bạn đang sử dụng phpMussel, giả định rằng họ đang thăm dò bởi vì phương pháp tấn công của họ là ra không hiệu quả như là kết quả của việc sử dụng phpMussel. Tuy nhiên, mặt khác, nếu một số không lường trước và khai thác hiện hành không biết đến phpMussel hoặc một phiên bản tương lai của chúng trở nên được biết đến, và nếu nó có khả năng cung cấp một vec tơ tấn công, một kết quả tích cực từ thăm dò thực sự có thể khuyến khích kẻ tấn côngs để nhắm mục tiêu hệ thống của bạn.
 - Nếu mật khẩu giao của bạn là bất cứ lúc nào bị thỏa hiệp, trừ khi thay đổi, có thể cung cấp một cách cho một kẻ tấn công để bỏ qua bất cứ chữ ký rằng thường có thể là ngăn chặn cuộc tấn công của họ từ thành công, hoặc thậm chí có khả năng vô hiệu hóa phpMussel hoàn toàn, do đó cung cấp một cách để làm cho phpMussel không hiệu quả.
 
-Dù bằng cách nào, bất kể những gì bạn lựa chọn, các sự lựa chọn là của bạn. Theo mặc định, these controls will be disabled, but have a think about it, và nếu you decide you want them, this section explains both how to enable them và how to use them.
+Dù bằng cách nào, bất kể những gì bạn lựa chọn, các sự lựa chọn là của bạn. Theo mặc định, các điều khiển sẽ bị vô hiệu, nhưng suy nghĩ về nó, và nếu bạn quyết định bạn muốn họ, phần này giải thích làm thế nào để kích hoạt họ và làm thế nào để sử dụng họ.
 
 Một danh sách của có sẵn điều khiển trình duyệt:
 
@@ -176,8 +176,8 @@ controls_lockout
 - Các yêu cầu khác: (không có gì)
 - Thông số cần thiết: (không có gì)
 - Thông số không bắt buộc: (không có gì)
-- Example 1: `?logspword=[logs_password]&phpmussel=controls_lockout`
-- Example 2: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=controls_lockout`
+- Thí dụ 1: `?logspword=[logs_password]&phpmussel=controls_lockout`
+- Thí dụ 2: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=controls_lockout`
 - Những gì nó làm: Vô hiệu hóa (hoặc khóa) tất cả các điều khiển cho trình duyệt. Điều này nên được sử dụng nếu bạn nghi ngờ mà một hoặc cả hai của mật khẩu của bạn đã bị xâm nhập (điều này có thể xảy ra nếu bạn đang sử dụng các điều khiển từ một máy tính không là an toàn và/hoặc đáng tin cậy). controls_lockout hoạt động bằng cách tạo ra một tập tin, `controls.lck`, trong vault (kho tiền) của bạn, rằng phpMussel sẽ kiểm tra trước khi thực hiện bất lệnh của bất cứ loại nào. Khi điều này xảy ra, để lại cho phép điều khiển, bạn sẽ cần phải tự xóa các tập tin `controls.lck` thông qua FTP hoặc tương tự. Có thể được gọi qua sử dụng một trong hai mật khẩu.
 
 disable
@@ -186,7 +186,7 @@ disable
 - Thông số cần thiết: (không có gì)
 - Thông số không bắt buộc: (không có gì)
 - Thí dụ: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=disable`
-- Những gì nó làm: Vô hiệu hóa phpMussel. Điều này nên được sử dụng nếu you're performing any updates hoặc changes to your system hoặc nếu you're installing any new software hoặc modules to your system that either does hoặc potentially could trigger false positives. This should also be used nếu you're having any problems with phpMussel but don't wish to remove it from your system. Once this happens, to reenable phpMussel, use "enable".
+- Những gì nó làm: Vô hiệu hóa phpMussel. Điều này nên được sử dụng nếu bạn đang thực hiện bất kỳ bản cập nhật hoặc thay đổi cho hệ thống của bạn hoặc nếu bạn đang cài đặt bất kỳ phần mềm mới hoặc module cho hệ thống của bạn rằng làm hoặc khả năng có thể kích hoạt sai tích cực. Điều này nên được sử dụng nếu bạn đang gặp bất kỳ vấn đề với phpMussel nhưng không muốn loại bỏ nó khỏi hệ thống của bạn. Khi điều này xảy ra, để tái kích hoạt phpMussel, sử dụng "enable".
 
 enable
 - Mật khẩu cần thiết: `script_password`
@@ -201,7 +201,7 @@ greylist
 - Các yêu cầu khác: (không có gì)
 - Thông số cần thiết: [Tên của chữ ký để đưa vào danh sách xám]
 - Thông số không bắt buộc: (không có gì)
-- Thí dụ: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=greylist&musselvar=[Signature]`
+- Thí dụ: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=greylist&musselvar=[Chữ_ký]`
 - Những gì nó làm: Đặt một chữ ký vào danh sách xám.
 
 greylist_clear
@@ -225,16 +225,16 @@ greylist_show
 
 ###4B. <a name="SECTION4B"></a>CLI (LỆNH CHO DÒNG GIAO DIỆN)
 
-phpMussel can be run as an interactive tập tin scanner in CLI mode under Windows-based systems. Refer to các "CẢCH CÀI ĐẶT (CHO CLI)" section of this README tập tin for more details.
+phpMussel có thể được chạy như một máy quét tập tin tương tác trong chế độ CLI theo các hệ thống dựa trên Windows. Tham khảo phần "CẢCH CÀI ĐẶT (CHO CLI)" của tập tin README này để biết thêm chi tiết.
 
-For a list of available CLI commands, at các CLI prompt, type 'c', và press Enter.
+Để xem một danh sách các lệnh CLI có sẵn, tại dấu nhắc CLI, đánh 'c', và bấm Enter.
 
 ---
 
 
 ###5. <a name="SECTION5"></a>TẬP TIN BAO GỒM TRONG GÓI NÀY
 
-Sau đây là một list of all of các files that should have been included in các archived copy of this script when you downloaded it, any files that may be potentially created as a result of your using this script, along with a short description of what all these files are for.
+Sau đây là một danh sách tất cả các tập tin mà cần phải có được bao gồm trong bản sao lưu của kịch bản này khi bạn tải về nó, bất kỳ tập tin mà có thể có lẽ được tạo ra là kết quả của bạn sử dụng kịch bản này, cùng với một mô tả ngắn of cho những gì tất cả những tập tin này là dành cho.
 
 Tập tin | Chi tiết
 ----|----
@@ -330,14 +330,14 @@ Tập tin | Chi tiết
 /vault/signatures/elf_custom_standard.cvd | Tập tin cho chữ ký ELF.
 /vault/signatures/elf_mussel_regex.cvd | Tập tin cho chữ ký ELF.
 /vault/signatures/elf_mussel_standard.cvd | Tập tin cho chữ ký ELF.
-/vault/signatures/exe_clamav_regex.cvd | Tập tin cho chữ ký PE (Portable Executable).
-/vault/signatures/exe_clamav_regex.map | Tập tin cho chữ ký PE (Portable Executable).
-/vault/signatures/exe_clamav_standard.cvd | Tập tin cho chữ ký PE (Portable Executable).
-/vault/signatures/exe_clamav_standard.map | Tập tin cho chữ ký PE (Portable Executable).
-/vault/signatures/exe_custom_regex.cvd | Tập tin cho chữ ký PE (Portable Executable).
-/vault/signatures/exe_custom_standard.cvd | Tập tin cho chữ ký PE (Portable Executable).
-/vault/signatures/exe_mussel_regex.cvd | Tập tin cho chữ ký PE (Portable Executable).
-/vault/signatures/exe_mussel_standard.cvd | Tập tin cho chữ ký PE (Portable Executable).
+/vault/signatures/exe_clamav_regex.cvd | Tập tin cho chữ ký PE (portable executable / thực thi di động).
+/vault/signatures/exe_clamav_regex.map | Tập tin cho chữ ký PE (portable executable / thực thi di động).
+/vault/signatures/exe_clamav_standard.cvd | Tập tin cho chữ ký PE (portable executable / thực thi di động).
+/vault/signatures/exe_clamav_standard.map | Tập tin cho chữ ký PE (portable executable / thực thi di động).
+/vault/signatures/exe_custom_regex.cvd | Tập tin cho chữ ký PE (portable executable / thực thi di động).
+/vault/signatures/exe_custom_standard.cvd | Tập tin cho chữ ký PE (portable executable / thực thi di động).
+/vault/signatures/exe_mussel_regex.cvd | Tập tin cho chữ ký PE (portable executable / thực thi di động).
+/vault/signatures/exe_mussel_standard.cvd | Tập tin cho chữ ký PE (portable executable / thực thi di động).
 /vault/signatures/filenames_clamav.cvd | Tập tin cho chữ ký tên tập tin.
 /vault/signatures/filenames_custom.cvd | Tập tin cho chữ ký tên tập tin.
 /vault/signatures/filenames_mussel.cvd | Tập tin cho chữ ký tên tập tin.
@@ -437,9 +437,9 @@ Tập tin | Chi tiết
 ※ Tên tập tin có thể thay đổi tuy theo các quy định của cấu hình (xem `phpmussel.ini`).
 
 ####*LIÊN QUAN ĐẾN CÁC TẬP TIN CHỮ KÝ*
-CVD là một từ viết tắt cho "ClamAV Virus Definitions", in reference to how ClamAV refers to its own signatures và to các use of those signatures for phpMussel; Files ending with "CVD" contain signatures.
+CVD là một từ viết tắt cho "ClamAV Virus Definitions" (định nghĩa vi rút ClamAV), như một tham khảo để cách mà ClamAV đề cập đến chữ ký riêng của mình và đến việc sử dụng những chữ ký cho phpMussel; Tập tin kết thúc với "CVD" chứa chữ ký.
 
-Files ending with "MAP", quite literally, map which signatures phpMussel should và shouldn't use for individual scans; Not all signatures are necessarily required for every single scan, so, phpMussel uses maps of các signature files to speed up các scanning process (a process that would otherwise be extremely slow và tedious).
+Tập tin kết thúc với "MAP" đồ mà chữ ký phpMussel nên và không nên sử dụng cho quét cá nhân; Không phải tất cả các chữ ký được cần thiết cho mỗi lần quét, vì thế, phpMussel sử dụng bản đồ của các tập tin chữ ký để đẩy nhanh các quá trình quét (một quá trình mà nếu không sẽ là rất chậm và buồn chán).
 
 Signature files marked with "_regex" contain signatures that utilise regular expression pattern checking (regex).
 
@@ -548,16 +548,16 @@ Check against normalised HTML signatures when scanning? False = Không; True = V
 - "html_custom"
 - "html_mussel"
 
-Check PE (Portable Executable) files (EXE, DLL, etc) against PE Sectional signatures when scanning? False = Không; True = Vâng [Mặc định].
+Check PE (portable executable / thực thi di động) files (EXE, DLL, etc) against PE Sectional signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "pe_clamav"
 - "pe_custom"
 - "pe_mussel"
 
-Check PE (Portable Executable) files (EXE, DLL, etc) against PE extended signatures when scanning? False = Không; True = Vâng [Mặc định].
+Check PE (portable executable / thực thi di động) files (EXE, DLL, etc) against PE extended signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "pex_custom"
 - "pex_mussel"
 
-Check PE (Portable Executable) files (EXE, DLL, etc) against PE signatures when scanning? False = Không; True = Vâng [Mặc định].
+Check PE (portable executable / thực thi di động) files (EXE, DLL, etc) against PE signatures when scanning? False = Không; True = Vâng [Mặc định].
 - "exe_clamav"
 - "exe_custom"
 - "exe_mussel"
@@ -724,7 +724,7 @@ Chameleon attack detection: False = Off; True = On.
 - Block any files containing any control characters (other than newlines)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Nếu you're _**ONLY**_ uploading plain-text, then you can turn this option on to provide some additional protection to your system. Tuy nhiên, nếu you upload anything other than plain-text, turning this on may result in false positives. False = Don't block [Mặc định]; True = Block.
 
 "corrupted_exe"
-- Corrupted files và parse errors. False = Ignore; True = Block [Mặc định]. Detect và block potentially corrupted PE (Portable Executable) files? Often (but not always), when certain aspects of a PE tập tin are corrupted hoặc can't be parsed correctly, it can be indicative of a viral infection. Các processes used by most anti-virus programs to detect viruses in PE files require parsing those files in certain ways, which, nếu các programmer of a virus is aware of, will specifically try to prevent, in order to allow their virus to remain undetected.
+- Corrupted files và parse errors. False = Ignore; True = Block [Mặc định]. Detect và block potentially corrupted PE (portable executable / thực thi di động) files? Often (but not always), when certain aspects of a PE tập tin are corrupted hoặc can't be parsed correctly, it can be indicative of a viral infection. Các processes used by most anti-virus programs to detect viruses in PE files require parsing those files in certain ways, which, nếu các programmer of a virus is aware of, will specifically try to prevent, in order to allow their virus to remain undetected.
 
 "decode_threshold"
 - Optional limitation hoặc threshold to các length of raw dữ liệu within which decode commands should be detected (in case there are any noticeable performance issues while scanning). Value is an integer representing filesize in KB. Default = 512 (512KB). Zero hoặc null value disables các threshold (removing any such limitation based on filesize).
@@ -975,4 +975,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 21 Tháng Tư 201
 ---
 
 
-Lần cuối cập nhật: 25 Tháng Tư 2016 (2016.04.25).
+Lần cuối cập nhật: 29 Tháng Tư 2016 (2016.04.29).
