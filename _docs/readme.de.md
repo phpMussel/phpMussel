@@ -785,7 +785,7 @@ URL-Scanner API-Abfrage Konfiguration.
 
 "google_api_key"
 - Aktiviert API-Abfragen zur Google Safe Browsing API wenn der benötigte API-Schlüssel festgelegt ist. Google Safe Browsing API-Abfragen erfordern einen API-Schlüssel, den Sie [hier](https://console.developers.google.com/) erhalten können.
-- Hinweis: Der cURL-Erweiterung ist erforderlich, um diese Funktion zu nutzen.
+- Hinweis: Die cURL-Erweiterung ist erforderlich, um diese Funktion zu nutzen.
 
 "maximum_api_lookups"
 - Die maximal erlaubte Anzahl von API-Abfragen die bei jedem Scan-Durchgang durchgeführt werden. Weil jede zusätzliche API-Abfrage die Zeit für einen Scan-Durchgang erhöht, wollen Sie unter Umständen ein Limit festlegen, um den gedamten Scan-Prozess zu beschleunigen. Wenn 0 eingestellt wird, wird kein Limit angewendet. Standardmäßig ist der Wert auf 10 gesetzt.
