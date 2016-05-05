@@ -198,7 +198,7 @@ if (!defined('phpMussel')) {
          * Check if the CLI handler exists; If it exists, load it.
          * Skip this check if we're NOT in CLI-mode.
          */
-        if ($phpMussel['Mussel_sapi']) {
+        else {
             if (file_exists($phpMussel['vault'] . 'cli.php')) {
                 require $phpMussel['vault'] . 'cli.php';
             }
