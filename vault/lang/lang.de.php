@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2016.03.25).
+ * This file: German language data (last modified: 2016.05.06).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Entschuldigung, ich verstehe diesen Befehl nicht.';
@@ -40,6 +40,7 @@ $phpMussel['Config']['lang']['generated_by'] = 'Generiert von';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' Greylist gelöscht.';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' Greylist nicht aktualisiert.';
 $phpMussel['Config']['lang']['greylist_updated'] = ' Greylist aktualisiert.';
+$phpMussel['Config']['lang']['harmful_url'] = 'Potentiell schädliche URL entdeckt';
 $phpMussel['Config']['lang']['image'] = 'Bild';
 $phpMussel['Config']['lang']['instance_already_active'] = 'Instanz bereits aktiv! Bitte prüfe deine Hooks.';
 $phpMussel['Config']['lang']['invalid_file'] = 'Ungültige Datei';

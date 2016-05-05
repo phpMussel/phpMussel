@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.03.24).
+ * This file: The loader (last modified: 2016.05.06).
  */
 
 /**
@@ -198,10 +198,8 @@ if (!defined('phpMussel')) {
          * Check if the CLI handler exists; If it exists, load it.
          * Skip this check if we're NOT in CLI-mode.
          */
-        else {
-            if (file_exists($phpMussel['vault'] . 'cli.php')) {
-                require $phpMussel['vault'] . 'cli.php';
-            }
+        elseif (file_exists($phpMussel['vault'] . 'cli.php')) {
+            require $phpMussel['vault'] . 'cli.php';
         }
 
     }

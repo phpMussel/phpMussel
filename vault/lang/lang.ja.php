@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2016.03.25).
+ * This file: Japanese language data (last modified: 2016.05.06).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'すみませんが、コマンドが理解できません。';
@@ -40,6 +40,7 @@ $phpMussel['Config']['lang']['generated_by'] = '作成者';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' グレーリストが解除されました。';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' グレーリストがアップデートされていません。';
 $phpMussel['Config']['lang']['greylist_updated'] = ' グレーリストがアップデートされました。';
+$phpMussel['Config']['lang']['harmful_url'] = '潜在的に有害なURLが検出されました';
 $phpMussel['Config']['lang']['image'] = '画像';
 $phpMussel['Config']['lang']['instance_already_active'] = 'インスタンスが既にアクティブです！フックを再確認して下さい。';
 $phpMussel['Config']['lang']['invalid_file'] = '不正ファイル';

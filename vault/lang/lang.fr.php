@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2016.03.25).
+ * This file: French language data (last modified: 2016.05.06).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Je ne comprends pas cette commande, désolé.';
@@ -40,6 +40,7 @@ $phpMussel['Config']['lang']['generated_by'] = 'Généré par';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' Greylist vidé.';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' Greylist n\'a pas été réactualisé';
 $phpMussel['Config']['lang']['greylist_updated'] = ' Greylist réactualisé.';
+$phpMussel['Config']['lang']['harmful_url'] = 'URL potentiellement nuisible détecté';
 $phpMussel['Config']['lang']['image'] = 'Image';
 $phpMussel['Config']['lang']['instance_already_active'] = 'Instance déjà actif! S\'il vous plaît vérifiez vos crochets.';
 $phpMussel['Config']['lang']['invalid_file'] = 'Fichier non valide';

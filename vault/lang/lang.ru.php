@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2016.03.25).
+ * This file: Russian language data (last modified: 2016.05.06).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Извините, команда непонятна.';
@@ -40,6 +40,7 @@ $phpMussel['Config']['lang']['generated_by'] = 'Генерируется';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' Серый список очищен.';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' Серый список не обновлён.';
 $phpMussel['Config']['lang']['greylist_updated'] = ' Серый список обновлён.';
+$phpMussel['Config']['lang']['harmful_url'] = 'Потенциально вредное URL обнаружено';
 $phpMussel['Config']['lang']['image'] = 'Изображение';
 $phpMussel['Config']['lang']['instance_already_active'] = 'Пример уже активен! Пожалуйста перепроверьте свои крючки.';
 $phpMussel['Config']['lang']['invalid_file'] = 'Неверный файл';

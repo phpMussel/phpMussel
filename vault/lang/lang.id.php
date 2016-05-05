@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2016.03.25).
+ * This file: Indonesian language data (last modified: 2016.05.06).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Saya tidak mengerti perintah itu, maaf.';
@@ -40,6 +40,7 @@ $phpMussel['Config']['lang']['generated_by'] = 'Dihasilkan oleh';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' Greylist dikosongkan.';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' Greylist tidak diperbarui.';
 $phpMussel['Config']['lang']['greylist_updated'] = ' Greylist diperbarui.';
+$phpMussel['Config']['lang']['harmful_url'] = 'Berpotensi URL berbahaya terdeteksi';
 $phpMussel['Config']['lang']['image'] = 'Gambar';
 $phpMussel['Config']['lang']['instance_already_active'] = 'Kejadian sudah aktif! Silakan periksa kait Anda.';
 $phpMussel['Config']['lang']['invalid_file'] = 'File tidak valid';

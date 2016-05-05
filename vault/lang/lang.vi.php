@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2016.03.25).
+ * This file: Vietnamese language data (last modified: 2016.05.06).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Xin lỗi, tôi không hiểu câu lệnh này.';
@@ -40,6 +40,7 @@ $phpMussel['Config']['lang']['generated_by'] = 'Được tạo bởi';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' Danh sách xám đã được xóa.';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' Danh sách không được cập nhật.';
 $phpMussel['Config']['lang']['greylist_updated'] = ' Danh sách xám được cập nhật.';
+$phpMussel['Config']['lang']['harmful_url'] = 'URL đó là có khả năng có hại đã được phát hiện';
 $phpMussel['Config']['lang']['image'] = 'Hình ảnh';
 $phpMussel['Config']['lang']['instance_already_active'] = 'Trường hợp đã hoạt động! Xin hảy kiểm tra giây nói.';
 $phpMussel['Config']['lang']['invalid_file'] = 'Tập tin không hợp lệ';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2016.03.25).
+ * This file: Dutch language data (last modified: 2016.05.06).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Ik begrijp niet dat bevel, sorry.';
@@ -40,6 +40,7 @@ $phpMussel['Config']['lang']['generated_by'] = 'Gegenereerde door';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' Greylist geleegd.';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' Greylist niet bijgewerkt.';
 $phpMussel['Config']['lang']['greylist_updated'] = ' Greylist bijgewerkt.';
+$phpMussel['Config']['lang']['harmful_url'] = 'Potentieel schadelijke URL gedetecteerd';
 $phpMussel['Config']['lang']['image'] = 'Image';
 $phpMussel['Config']['lang']['instance_already_active'] = 'Instantie al actief! Controleer uw haken.';
 $phpMussel['Config']['lang']['invalid_file'] = 'Ongeldige bestand';

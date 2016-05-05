@@ -786,7 +786,7 @@ API configurazione per l'URL scanner.
 
 "google_api_key"
 - Abilita API richieste per l'API di Google Safe Browsing quando le API chiave necessarie è definito. L'API di Google Safe Browsing richiede un API chiave, che può essere ottenuto da [Qui](https://console.developers.google.com/).
-- Notare: Questa è una caratteristica futuro! Google Safe Browsing API funzionalità non completato a quest'ora!
+- Notare: L'estensione cURL è necessaria al fine di utilizzare questa funzione.
 
 "maximum_api_lookups"
 - Numero massimo di richieste per l'API di eseguire per iterazione di scansione individuo. Perché ogni richiesta supplementare per l'API farà aggiungere al tempo totale necessario per completare ogni iterazione di scansione, si potrebbe desiderare di stipulare una limitazione al fine di accelerare il processo di scansione. Quando è impostato su 0, no tale ammissibile numero massimo sarà applicata. Impostato su 10 per impostazione predefinite.
@@ -975,4 +975,4 @@ Questa informazione è stato lo scorso aggiornato 21 Aprile 2016 ed è in corso 
 ---
 
 
-Ultimo Aggiornamento: 23 Aprile 2016 (2016.04.23).
+Ultimo Aggiornamento: 6 Maggio 2016 (2016.05.06).

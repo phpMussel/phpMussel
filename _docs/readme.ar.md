@@ -823,7 +823,7 @@ URL scanner API lookup configuration.
 
 "google_api_key"
 - Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
-- Note: This is a future feature! Google Safe Browsing API lookup functionality not yet completed!
+- Note: The cURL extension is required in order to use this feature.
 
 "maximum_api_lookups"
 - Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expedite the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
@@ -1015,4 +1015,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 23 أبريل 2016 (2016.04.23).</div>
+<div dir="rtl">آخر تحديث: 6 مايو 2016 (2016.05.06).</div>

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data (last modified: 2016.03.25).
+ * This file: Chinese (traditional) language data (last modified: 2016.05.06).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = '我不明白的命令，對不起。';
@@ -40,6 +40,7 @@ $phpMussel['Config']['lang']['generated_by'] = '所產生通過';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' 灰名單清空。';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' 灰名單不更新。';
 $phpMussel['Config']['lang']['greylist_updated'] = ' 灰名單更新。';
+$phpMussel['Config']['lang']['harmful_url'] = '可能有害的URL檢測';
 $phpMussel['Config']['lang']['image'] = '圖像';
 $phpMussel['Config']['lang']['instance_already_active'] = '腳本已激活！請仔細檢查您的鉤子。';
 $phpMussel['Config']['lang']['invalid_file'] = '無效的文件';

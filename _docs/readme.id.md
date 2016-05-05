@@ -786,7 +786,7 @@ Konfigurasi scanner URL memeriksa API.
 
 "google_api_key"
 - Memungkinkan pemeriksaan API ke Google Safe Browsing API ketika kunci API diperlukan didefinisikan. Pemeriksaan Google Safe Browsing API memerlukan kunci API, diperoleh dari di [Sini](https://console.developers.google.com/).
-- Mencatat: Ini adalah fitur untuk masa depan! Google Safe Browsing API fitur belum selesai!
+- Mencatat: Ekstensi cURL diperlukan untuk menggunakan fitur ini.
 
 "maximum_api_lookups"
 - Jumlah maksimum pemeriksaan API melakukan per iterasi memindai individual. Karena setiap API pemeriksaan akan menambah tambahan waktu total dibutuhkan untuk menyelesaikan setiap iterasi pemindaian, Anda mungkin ingin menetapkan batasan untuk mempercepat proses pemindaian secara keseluruhan. Bila diset untuk 0, sejumlah maksimum tidak akan diterapkan. Diset untuk 10 secara default.
@@ -975,4 +975,4 @@ Informasi ini diupdate 21 April 2016 dan cocok untuk semua rilis phpMussel dari 
 ---
 
 
-Terakhir Diperbarui: 23 April 2016 (2016.04.23).
+Terakhir Diperbarui: 6 Mei 2016 (2016.05.06).

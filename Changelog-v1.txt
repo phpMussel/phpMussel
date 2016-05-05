@@ -42,9 +42,6 @@ entries will be deleted when those goals have been achieved.
 - Fix non-ANSI/non-ASCII filenames in CLI mode bug.
   Refer github.com/Maikuolan/phpMussel/issues/61
 
-- Complete Google Safe Browsing integration.
-  Refer github.com/Maikuolan/phpMussel/issues/65
-
 - Improve data decoding procedures.
 
 - Build plugin and extension variants of phpMussel for improved integration
@@ -119,8 +116,17 @@ entries will be deleted when those goals have been achieved.
 - [2016.04.18; Sub-minor code change; Maikuolan]: Slightly improved the error
   handling for the configuration file.
 
+- [2016.06.05; NEW FEATURE; Maikuolan]: Support for performing lookups to the
+  Google Safe Browsing API has now been implemented to a functional state;
+  Lookups to the Google Safe Browsing API can be enabled by including an API
+  key in the phpMussel configuration file (cURL is required in order for it to
+  work correctly).
+  Refer github.com/Maikuolan/phpMussel/issues/65
+
 ======
 
-Changelog notes for versions < v1.0.0 can be found in "Changelog-v0.txt".
+Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"
+file or in the "docs/change_log.txt" file (depending on which release version
+you're working from) from any release versions prior to v1.
 
 EOF
