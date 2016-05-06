@@ -138,7 +138,7 @@ if (!isset($phpMussel['Config']['general']['lang_override'])) {
 
 /** Fallback for missing "lang_acceptable" configuration directive. */
 if (!isset($phpMussel['Config']['general']['lang_acceptable'])) {
-    $phpMussel['Config']['general']['lang_acceptable'] = ',en,ar,de,es,fr,id,it,ja,nl,pt,ru,vi,zh,zh-TW,';
+    $phpMussel['Config']['general']['lang_acceptable'] = 'en,ar,de,es,fr,id,it,ja,nl,pt,ru,vi,zh,zh-TW';
 }
 
 /** Fallback for missing "quarantine_key" configuration directive. */
