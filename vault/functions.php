@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.05.06).
+ * This file: Functions file (last modified: 2016.05.10).
  *
  * @todo Add support for PHAR, 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -668,10 +668,10 @@ $phpMussel['CleanCache'] = function () use (&$phpMussel) {
 /**
  * Retrieves cache entries.
  *
- * @param string|array $entry The name of the cache entry (or entries) to
- *      retrieve (can be a string to specify a single entry, or an array of
- *      strings to specify multiple entries).
- * @return string|array Contents of the cache entry (or entries).
+ * @param string|array $entry The name of the cache entry/entries to retrieve;
+ *      Can be a string to specify a single entry, or an array of strings to
+ *      specify multiple entries.
+ * @return string|array Contents of the cache entry/entries.
  */
 $phpMussel['FetchCache'] = function ($entry = '') use (&$phpMussel) {
     $x = $phpMussel['CleanCache']();
@@ -1388,6 +1388,48 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
     /** After we've encoded and counted them, implode them. */
     $urls = $c . "\n" . implode("\n", $urls);
 
+    /** Fetch the cache entry for Google Safe Browsing, if it doesn't already exist. */
+    if (!isset($phpMussel['memCache']['urlscanner_google'])) {
+        $phpMussel['memCache']['urlscanner_google'] = $phpMussel['FetchCache']('urlscanner_google');
+    }
+    /** Generate new cache expiry time. */
+    $newExpiry = $phpMussel['time'] + $phpMussel['Config']['urlscanner']['cache_time'];
+    /** Generate a reference for the cache entry for this lookup. */
+    $cacheRef = md5($urls) . ':' . $c . ':' . strlen($urls) . ':';
+    /** This will contain the lookup response. */
+    $response = '';
+    /** Check if this lookup has already been performed. */
+    while (substr_count($phpMussel['memCache']['urlscanner_google'], $cacheRef)) {
+        $response = $phpMussel['substrbf']($phpMussel['substral']($phpMussel['memCache']['urlscanner_google'], $cacheRef), ';');
+        /** Safety mechanism. */
+        if (!$response || !substr_count($phpMussel['memCache']['urlscanner_google'], $cacheRef . $response . ';')) {
+            $response = '';
+            break;
+        }
+        $expiry = $phpMussel['substrbf']($response, ':');
+        if ($expiry > $phpMussel['time']) {
+            $response = $phpMussel['substraf']($response, ':');
+            break;
+        } else {
+            $response = '';
+            $phpMussel['memCache']['urlscanner_google'] =
+                str_ireplace($cacheRef . $response . ';', '', $phpMussel['memCache']['urlscanner_google']);
+        }
+    }
+    /** If this lookup has already been performed, return the results without repeating it. */
+    if ($response) {
+        /** Update the cache entry for Google Safe Browsing. */
+        $newExpiry = $phpMussel['SaveCache']('urlscanner_google', $newExpiry, $phpMussel['memCache']['urlscanner_google']);
+        if ($response === '204') {
+            return false;
+        } else if ($response === '200') {
+            return true;
+        } else {
+            /** @todo: This was coded quick and dirty, and can be improved. Could possibly implement logging for this. */
+            die('An error has occurred.');
+        }
+    }
+
     /** Prepare the URL to use with cURL. */
     $uri = sprintf(
         'https://sb-ssl.google.com/safebrowsing/api/lookup?client=phpMussel&key=%s&appver=%s&pver=3.1',
@@ -1414,6 +1456,7 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
     curl_setopt($request, CURLOPT_POSTFIELDS, $urls);
     /** Execute and get the response. */
     $response = curl_exec($request);
+    $phpMussel['LookupCount']++;
 
     /**
      * Check for errors and print to the screen if there were any.
@@ -1441,6 +1484,10 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
      *      also indicate that the client has been “throttled” for sending too many requests.
      */
     $response = substr($response, 9, 3);
+
+    /** Update the cache entry for Google Safe Browsing. */
+    $phpMussel['memCache']['urlscanner_google'] .= $cacheRef . ':' . $newExpiry . ':' . $response . ';';
+    $newExpiry = $phpMussel['SaveCache']('urlscanner_google', $newExpiry, $phpMussel['memCache']['urlscanner_google']);
 
     if ($response === '204') {
         return false;
@@ -4628,13 +4675,14 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                 }
             } else {
                 $urlscanner = array();
-                $urlscanner['req_c'] =
+                $phpMussel['LookupCount'] =
                 $urlscanner['domains_c'] =
                 $urlscanner['urls_c'] = 0;
                 $urlscanner['domains_p'] =
                 $urlscanner['domains'] =
                 $urlscanner['tlds'] = array();
                 $urlscanner['z'] = 0;
+                /** @todo Need to improve this regex. Terminating characters sometimes aren't found and URLs fail to be caught. */
                 $urlscanner['c'] = preg_match_all(
                     '/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,' .
                     '3}\.)?([0-9a-z.-]{1,512})[^0-9a-z.-]/i',
@@ -4758,6 +4806,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                 $urlscanner['urls'] =
                 $urlscanner['queries'] = array();
                 $urlscanner['z'] = 0;
+                /** @todo Need to improve this regex. Terminating characters sometimes aren't found and URLs fail to be caught. */
                 $urlscanner['c'] = preg_match_all(
                     '/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,' .
                     '3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4096})(\&quot;|[;' .
@@ -4915,6 +4964,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                     $urlscanner['domains_c'] &&
                     !empty($SigData[$SigSet]['UseAPI'])
                 ) {
+                    /** Fetch the cache entry for hpHosts, if it doesn't already exist. */
                     if (!isset($phpMussel['memCache']['urlscanner_domains'])) {
                         $phpMussel['memCache']['urlscanner_domains'] =
                             $phpMussel['FetchCache']('urlscanner_domains');
@@ -4930,10 +4980,10 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         'PHA' => "\x1a\x82\x10\x32XXX",
                         'PSH' => "\x1a\x82\x10\x31XXX"
                     );
-                    for ($i = 0; $i < $urlscanner['domains_c'];$i++) {
+                    for ($i = 0; $i < $urlscanner['domains_c']; $i++) {
                         if (
                             $phpMussel['Config']['urlscanner']['maximum_api_lookups'] > 0 &&
-                            $urlscanner['req_c'] > $phpMussel['Config']['urlscanner']['maximum_api_lookups']
+                            $phpMussel['LookupCount'] > $phpMussel['Config']['urlscanner']['maximum_api_lookups']
                         ) {
                             if ($phpMussel['Config']['urlscanner']['maximum_api_lookups_response']) {
                                 if (!$flagged) {
@@ -4953,19 +5003,19 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         $urlscanner['this'] =
                             md5($urlscanner['domains_p'][$i]) . ':' .
                             strlen($urlscanner['domains_p'][$i]) . ':';
-                        if (substr_count($phpMussel['memCache']['urlscanner_domains'], $urlscanner['this'])) {
+                        while (substr_count($phpMussel['memCache']['urlscanner_domains'], $urlscanner['this'])) {
                             $urlscanner['class'] =
                                 $phpMussel['substrbf']($phpMussel['substral']($phpMussel['memCache']['urlscanner_domains'], $urlscanner['this']), ';');
-                            $urlscanner['expiry'] =
-                                $phpMussel['substrbf']($urlscanner['class'],':');
+                            if (!substr_count($phpMussel['memCache']['urlscanner_domains'], $urlscanner['this'] . ':' . $urlscanner['class'] . ';')) {
+                                break;
+                            }
+                            $urlscanner['expiry'] = $phpMussel['substrbf']($urlscanner['class'], ':');
                             if ($urlscanner['expiry'] > $phpMussel['time']) {
-                                $urlscanner['class'] =
-                                    $phpMussel['substraf']($urlscanner['class'],':');
+                                $urlscanner['class'] = $phpMussel['substraf']($urlscanner['class'], ':');
                                 if (!$urlscanner['class']) {
-                                    continue;
+                                    continue 2;
                                 }
-                                $urlscanner['class'] =
-                                    $phpMussel['vn_shorthand']($urlscanner['class']);
+                                $urlscanner['class'] = $phpMussel['vn_shorthand']($urlscanner['class']);
                                 if (!$flagged) {
                                     $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
                                     $flagged = true;
@@ -4978,7 +5028,10 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                                     array('vn' => $urlscanner['class']),
                                     $phpMussel['Config']['lang']['detected']
                                 ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                                break;
+                                break 2;
+                            } else {
+                                $phpMussel['memCache']['urlscanner_domains'] =
+                                    str_ireplace($urlscanner['this'] . $urlscanner['class'] . ';', '', $phpMussel['memCache']['urlscanner_domains']);
                             }
                         }
                         $urlscanner['req'] =
@@ -4994,17 +5047,15 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                                 'timeout' => 12
                             )
                         );
-                        $urlscanner['req_stream'] =
-                            stream_context_create($urlscanner['req_context']);
+                        $urlscanner['req_stream'] = stream_context_create($urlscanner['req_context']);
                         $urlscanner['req_result'] = @file_get_contents(
                             'http://verify.hosts-file.net/?' . $urlscanner['req'],
                             false,
                             $urlscanner['req_stream']
                         );
-                        $urlscanner['req_c']++;
+                        $phpMussel['LookupCount']++;
                         if (substr($urlscanner['req_result'], 0, 6) == "Listed") {
-                            $urlscanner['class'] =
-                                substr($urlscanner['req_result'], 7, 3);
+                            $urlscanner['class'] = substr($urlscanner['req_result'], 7, 3);
                             $urlscanner['class'] =
                                 (isset($urlscanner['classes'][$urlscanner['class']])) ?
                                 $urlscanner['classes'][$urlscanner['class']] :
@@ -5040,22 +5091,46 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                     !$out &&
                     $phpMussel['Config']['urlscanner']['google_api_key'] &&
                     $urlscanner['urls_c'] &&
-                    $urlscanner['urls_c'] < 500 &&
                     !empty($SigData[$SigSet]['UseAPI'])
                 ) {
-                    $urlscanner['SafeBrowseLookup'] = $phpMussel['SafeBrowseLookup']($urlscanner['urls_p']);
-                    if ($urlscanner['SafeBrowseLookup']) {
-                        $urlscanner['req_c']++;
-                        if (!$flagged) {
-                            $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                            $flagged = true;
+                    $urlscanner['urls_chunked'] =
+                        ($urlscanner['urls_c'] > 500) ?
+                        array_chunk($urlscanner['urls_p'], 500) :
+                        array($urlscanner['urls_p']);
+                    $urlscanner['url_chunks'] = count($urlscanner['urls_chunked']);
+                    for ($i = 0; $i < $urlscanner['url_chunks']; $i++) {
+                        if (
+                            $phpMussel['Config']['urlscanner']['maximum_api_lookups'] > 0 &&
+                            $phpMussel['LookupCount'] > $phpMussel['Config']['urlscanner']['maximum_api_lookups']
+                        ) {
+                            if ($phpMussel['Config']['urlscanner']['maximum_api_lookups_response']) {
+                                if (!$flagged) {
+                                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
+                                    $flagged = true;
+                                }
+                                $out .=
+                                    $lnap . $phpMussel['Config']['lang']['too_many_urls'] .
+                                    $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                $phpMussel['whyflagged'] .=
+                                    $phpMussel['Config']['lang']['too_many_urls'] .
+                                    ' (' . $ofnSafe . ')' .
+                                    $phpMussel['Config']['lang']['_exclamation'];
+                            }
+                            break;
                         }
-                        $out .=
-                            $lnap . $phpMussel['Config']['lang']['harmful_url'] .
-                            $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
-                        $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['harmful_url'] . ' (' . $ofnSafe . ')' .
-                            $phpMussel['Config']['lang']['_exclamation'];
+                        $urlscanner['SafeBrowseLookup'] = $phpMussel['SafeBrowseLookup']($urlscanner['urls_chunked'][$i]);
+                        if ($urlscanner['SafeBrowseLookup']) {
+                            if (!$flagged) {
+                                $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
+                                $flagged = true;
+                            }
+                            $out .=
+                                $lnap . $phpMussel['Config']['lang']['harmful_url'] .
+                                $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                            $phpMussel['whyflagged'] .=
+                                $phpMussel['Config']['lang']['harmful_url'] . ' (' . $ofnSafe . ')' .
+                                $phpMussel['Config']['lang']['_exclamation'];
+                        }
                     }
                 }
                 $urlscanner = '';
