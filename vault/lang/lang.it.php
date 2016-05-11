@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data (last modified: 2016.05.06).
+ * This file: Italian language data (last modified: 2016.05.11).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Non capisco quel comando, mi dispiace.';
@@ -40,7 +40,6 @@ $phpMussel['Config']['lang']['generated_by'] = 'Generato da';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' Lista grigia svuotata.';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' Lista grigia non aggiornata.';
 $phpMussel['Config']['lang']['greylist_updated'] = ' Lista grigia aggiornata.';
-$phpMussel['Config']['lang']['harmful_url'] = 'URL potenzialmente dannosi rilevati';
 $phpMussel['Config']['lang']['image'] = 'Immagine';
 $phpMussel['Config']['lang']['instance_already_active'] = 'Istanza già attivo! Si prega di ricontrolla i vostri ganci.';
 $phpMussel['Config']['lang']['invalid_file'] = 'File non valido';
@@ -54,6 +53,11 @@ $phpMussel['Config']['lang']['phpmussel_enabled_already'] = 'phpMussel già atti
 $phpMussel['Config']['lang']['plugins_directory_nonexistent'] = 'Direttorio dei plugin non esiste!';
 $phpMussel['Config']['lang']['recursive'] = 'Limite di profondità di controllo superato';
 $phpMussel['Config']['lang']['required_variables_not_defined'] = 'Variabili obbligatori non sono definite: Impossibile di continuare.';
+$phpMussel['Config']['lang']['SafeBrowseLookup_200'] = 'URL potenzialmente dannosi rilevati';
+$phpMussel['Config']['lang']['SafeBrowseLookup_400'] = 'Errore di richiesta delle API';
+$phpMussel['Config']['lang']['SafeBrowseLookup_401'] = 'Errore di autorizzazione delle API';
+$phpMussel['Config']['lang']['SafeBrowseLookup_503'] = 'Servizio delle API è non disponibile';
+$phpMussel['Config']['lang']['SafeBrowseLookup_999'] = 'Errore di API è sconosciuto';
 $phpMussel['Config']['lang']['scan_aborted'] = 'Controllo interrotto!';
 $phpMussel['Config']['lang']['scan_chameleon'] = 'Rilevato attacco camaleonte {x}';
 $phpMussel['Config']['lang']['scan_checking'] = 'Verifica';

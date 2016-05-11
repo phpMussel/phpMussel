@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2016.05.06).
+ * This file: French language data (last modified: 2016.05.11).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Je ne comprends pas cette commande, désolé.';
@@ -40,7 +40,6 @@ $phpMussel['Config']['lang']['generated_by'] = 'Généré par';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' Greylist vidé.';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' Greylist n\'a pas été réactualisé';
 $phpMussel['Config']['lang']['greylist_updated'] = ' Greylist réactualisé.';
-$phpMussel['Config']['lang']['harmful_url'] = 'URL potentiellement nuisible détecté';
 $phpMussel['Config']['lang']['image'] = 'Image';
 $phpMussel['Config']['lang']['instance_already_active'] = 'Instance déjà actif! S\'il vous plaît vérifiez vos crochets.';
 $phpMussel['Config']['lang']['invalid_file'] = 'Fichier non valide';
@@ -54,6 +53,11 @@ $phpMussel['Config']['lang']['phpmussel_enabled_already'] = 'phpMussel déjà ac
 $phpMussel['Config']['lang']['plugins_directory_nonexistent'] = 'Répertoire de plugins n\'existe pas!';
 $phpMussel['Config']['lang']['recursive'] = 'Recursion limite de profondeur dépassé';
 $phpMussel['Config']['lang']['required_variables_not_defined'] = 'Variables requises ne sont pas définies: Ne pouvez pas continuer.';
+$phpMussel['Config']['lang']['SafeBrowseLookup_200'] = 'URL potentiellement nuisible détecté';
+$phpMussel['Config']['lang']['SafeBrowseLookup_400'] = 'Erreur de requête de l\'API';
+$phpMussel['Config']['lang']['SafeBrowseLookup_401'] = 'Erreur d\'autorisation de l\'API';
+$phpMussel['Config']['lang']['SafeBrowseLookup_503'] = 'Le service de l\'API est indisponible';
+$phpMussel['Config']['lang']['SafeBrowseLookup_999'] = 'API erreur inconnue';
 $phpMussel['Config']['lang']['scan_aborted'] = 'Analyse avorté!';
 $phpMussel['Config']['lang']['scan_chameleon'] = '{x} caméléon attaque détecté';
 $phpMussel['Config']['lang']['scan_checking'] = 'Vérification';

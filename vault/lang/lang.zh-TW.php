@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data (last modified: 2016.05.06).
+ * This file: Chinese (traditional) language data (last modified: 2016.05.11).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = '我不明白的命令，對不起。';
@@ -40,7 +40,6 @@ $phpMussel['Config']['lang']['generated_by'] = '所產生通過';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' 灰名單清空。';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' 灰名單不更新。';
 $phpMussel['Config']['lang']['greylist_updated'] = ' 灰名單更新。';
-$phpMussel['Config']['lang']['harmful_url'] = '可能有害的URL檢測';
 $phpMussel['Config']['lang']['image'] = '圖像';
 $phpMussel['Config']['lang']['instance_already_active'] = '腳本已激活！請仔細檢查您的鉤子。';
 $phpMussel['Config']['lang']['invalid_file'] = '無效的文件';
@@ -54,6 +53,11 @@ $phpMussel['Config']['lang']['phpmussel_enabled_already'] = 'phpMussel已激活�
 $phpMussel['Config']['lang']['plugins_directory_nonexistent'] = '插件文件夾不存在！';
 $phpMussel['Config']['lang']['recursive'] = '遞歸深度超過是限制';
 $phpMussel['Config']['lang']['required_variables_not_defined'] = '需要的變量是未定義：無法繼續。';
+$phpMussel['Config']['lang']['SafeBrowseLookup_200'] = '可能有害的URL檢測';
+$phpMussel['Config']['lang']['SafeBrowseLookup_400'] = 'API請求錯誤';
+$phpMussel['Config']['lang']['SafeBrowseLookup_401'] = 'API授權錯誤';
+$phpMussel['Config']['lang']['SafeBrowseLookup_503'] = 'API服務不可用';
+$phpMussel['Config']['lang']['SafeBrowseLookup_999'] = '未知API錯誤';
 $phpMussel['Config']['lang']['scan_aborted'] = '掃描中止！';
 $phpMussel['Config']['lang']['scan_chameleon'] = '{x}变色龙攻击检测';
 $phpMussel['Config']['lang']['scan_checking'] = '檢查';

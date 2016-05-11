@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2016.05.06).
+ * This file: Dutch language data (last modified: 2016.05.11).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Ik begrijp niet dat bevel, sorry.';
@@ -40,7 +40,6 @@ $phpMussel['Config']['lang']['generated_by'] = 'Gegenereerde door';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' Greylist geleegd.';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' Greylist niet bijgewerkt.';
 $phpMussel['Config']['lang']['greylist_updated'] = ' Greylist bijgewerkt.';
-$phpMussel['Config']['lang']['harmful_url'] = 'Potentieel schadelijke URL gedetecteerd';
 $phpMussel['Config']['lang']['image'] = 'Image';
 $phpMussel['Config']['lang']['instance_already_active'] = 'Instantie al actief! Controleer uw haken.';
 $phpMussel['Config']['lang']['invalid_file'] = 'Ongeldige bestand';
@@ -54,6 +53,11 @@ $phpMussel['Config']['lang']['phpmussel_enabled_already'] = 'phpMussel al ingesc
 $phpMussel['Config']['lang']['plugins_directory_nonexistent'] = 'Plugins bestandsmap bestaat niet!';
 $phpMussel['Config']['lang']['recursive'] = 'Recursie dieptelimiet overschreden';
 $phpMussel['Config']['lang']['required_variables_not_defined'] = 'Vereiste variabelen zijn niet gedefinieerd: Kan niet doorgaan.';
+$phpMussel['Config']['lang']['SafeBrowseLookup_200'] = 'Potentieel schadelijke URL gedetecteerd';
+$phpMussel['Config']['lang']['SafeBrowseLookup_400'] = 'API aanvraag foute';
+$phpMussel['Config']['lang']['SafeBrowseLookup_401'] = 'API niet geautoriseerd';
+$phpMussel['Config']['lang']['SafeBrowseLookup_503'] = 'API dienst niet beschikbaar';
+$phpMussel['Config']['lang']['SafeBrowseLookup_999'] = 'Onbekende API fout';
 $phpMussel['Config']['lang']['scan_aborted'] = 'Scannen afgebroken!';
 $phpMussel['Config']['lang']['scan_chameleon'] = '{x} kameleon aanval gedetecteerd';
 $phpMussel['Config']['lang']['scan_checking'] = 'Verifiëren';

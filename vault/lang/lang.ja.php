@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2016.05.06).
+ * This file: Japanese language data (last modified: 2016.05.11).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'すみませんが、コマンドが理解できません。';
@@ -40,7 +40,6 @@ $phpMussel['Config']['lang']['generated_by'] = '作成者';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' グレーリストが解除されました。';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' グレーリストがアップデートされていません。';
 $phpMussel['Config']['lang']['greylist_updated'] = ' グレーリストがアップデートされました。';
-$phpMussel['Config']['lang']['harmful_url'] = '潜在的に有害なURLが検出されました';
 $phpMussel['Config']['lang']['image'] = '画像';
 $phpMussel['Config']['lang']['instance_already_active'] = 'インスタンスが既にアクティブです！フックを再確認して下さい。';
 $phpMussel['Config']['lang']['invalid_file'] = '不正ファイル';
@@ -54,6 +53,11 @@ $phpMussel['Config']['lang']['phpmussel_enabled_already'] = 'phpMusselは既に�
 $phpMussel['Config']['lang']['plugins_directory_nonexistent'] = 'プラグインデイレクトリが存在しません！';
 $phpMussel['Config']['lang']['recursive'] = '再帰定義呼び出しの繰り返し回数が上限を超えました';
 $phpMussel['Config']['lang']['required_variables_not_defined'] = 'リクエストのあった変数は定義されていないため、続行できません。';
+$phpMussel['Config']['lang']['SafeBrowseLookup_200'] = '潜在的に有害なURLが検出されました';
+$phpMussel['Config']['lang']['SafeBrowseLookup_400'] = 'APIリクエストが不正である';
+$phpMussel['Config']['lang']['SafeBrowseLookup_401'] = 'API認証エラー';
+$phpMussel['Config']['lang']['SafeBrowseLookup_503'] = 'APIサービス利用不可';
+$phpMussel['Config']['lang']['SafeBrowseLookup_999'] = '不明なAPIエラー';
 $phpMussel['Config']['lang']['scan_aborted'] = 'スキャニング中断！';
 $phpMussel['Config']['lang']['scan_chameleon'] = '{x} Chameleon（カメレオン）攻撃が検出されました';
 $phpMussel['Config']['lang']['scan_checking'] = 'チェック中';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2016.05.06).
+ * This file: Indonesian language data (last modified: 2016.05.11).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Saya tidak mengerti perintah itu, maaf.';
@@ -40,7 +40,6 @@ $phpMussel['Config']['lang']['generated_by'] = 'Dihasilkan oleh';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' Greylist dikosongkan.';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' Greylist tidak diperbarui.';
 $phpMussel['Config']['lang']['greylist_updated'] = ' Greylist diperbarui.';
-$phpMussel['Config']['lang']['harmful_url'] = 'Berpotensi URL berbahaya terdeteksi';
 $phpMussel['Config']['lang']['image'] = 'Gambar';
 $phpMussel['Config']['lang']['instance_already_active'] = 'Kejadian sudah aktif! Silakan periksa kait Anda.';
 $phpMussel['Config']['lang']['invalid_file'] = 'File tidak valid';
@@ -54,6 +53,11 @@ $phpMussel['Config']['lang']['phpmussel_enabled_already'] = 'phpMussel sudah dia
 $phpMussel['Config']['lang']['plugins_directory_nonexistent'] = 'Direktori plugin tidak ada!';
 $phpMussel['Config']['lang']['recursive'] = 'Batas kedalaman rekursi melebihi';
 $phpMussel['Config']['lang']['required_variables_not_defined'] = 'Variabel diharuskan tidak didefinisikan: Tidak dapat dilanjutkan.';
+$phpMussel['Config']['lang']['SafeBrowseLookup_200'] = 'Berpotensi URL berbahaya terdeteksi';
+$phpMussel['Config']['lang']['SafeBrowseLookup_400'] = 'Kesalahan permintaan API';
+$phpMussel['Config']['lang']['SafeBrowseLookup_401'] = 'Kesalahan otorisasi API';
+$phpMussel['Config']['lang']['SafeBrowseLookup_503'] = 'Layanan API tidak tersedia';
+$phpMussel['Config']['lang']['SafeBrowseLookup_999'] = 'Kesalahan API tidak diketahui';
 $phpMussel['Config']['lang']['scan_aborted'] = 'Memindai dibatalkan!';
 $phpMussel['Config']['lang']['scan_chameleon'] = 'Bunglon {x} serangan terdeteksi';
 $phpMussel['Config']['lang']['scan_checking'] = 'Memeriksa';

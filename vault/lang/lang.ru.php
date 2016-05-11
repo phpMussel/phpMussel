@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2016.05.06).
+ * This file: Russian language data (last modified: 2016.05.11).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Извините, команда непонятна.';
@@ -40,7 +40,6 @@ $phpMussel['Config']['lang']['generated_by'] = 'Генерируется';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' Серый список очищен.';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' Серый список не обновлён.';
 $phpMussel['Config']['lang']['greylist_updated'] = ' Серый список обновлён.';
-$phpMussel['Config']['lang']['harmful_url'] = 'Потенциально вредное URL обнаружено';
 $phpMussel['Config']['lang']['image'] = 'Изображение';
 $phpMussel['Config']['lang']['instance_already_active'] = 'Пример уже активен! Пожалуйста перепроверьте свои крючки.';
 $phpMussel['Config']['lang']['invalid_file'] = 'Неверный файл';
@@ -54,6 +53,11 @@ $phpMussel['Config']['lang']['phpmussel_enabled_already'] = 'phpMussel уже а
 $phpMussel['Config']['lang']['plugins_directory_nonexistent'] = 'Каталог плагины не существует!';
 $phpMussel['Config']['lang']['recursive'] = 'Лимит глубины рекурсии превышена';
 $phpMussel['Config']['lang']['required_variables_not_defined'] = 'Обязательные переменные не установлены: Продолжение невозможно.';
+$phpMussel['Config']['lang']['SafeBrowseLookup_200'] = 'Потенциально вредное URL обнаружено';
+$phpMussel['Config']['lang']['SafeBrowseLookup_400'] = 'Ошибка запроса API';
+$phpMussel['Config']['lang']['SafeBrowseLookup_401'] = 'Ошибка авторизации API';
+$phpMussel['Config']['lang']['SafeBrowseLookup_503'] = 'Сервис недоступен API';
+$phpMussel['Config']['lang']['SafeBrowseLookup_999'] = 'Неизвестная API ошибка';
 $phpMussel['Config']['lang']['scan_aborted'] = 'Сканирование прерывается!';
 $phpMussel['Config']['lang']['scan_chameleon'] = 'Обнаружена {x} хамелеон-атака';
 $phpMussel['Config']['lang']['scan_checking'] = 'Проверить';

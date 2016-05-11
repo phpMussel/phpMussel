@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2016.05.06).
+ * This file: Vietnamese language data (last modified: 2016.05.11).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Xin lỗi, tôi không hiểu câu lệnh này.';
@@ -40,7 +40,6 @@ $phpMussel['Config']['lang']['generated_by'] = 'Được tạo bởi';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' Danh sách xám đã được xóa.';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' Danh sách không được cập nhật.';
 $phpMussel['Config']['lang']['greylist_updated'] = ' Danh sách xám được cập nhật.';
-$phpMussel['Config']['lang']['harmful_url'] = 'URL đó là có khả năng có hại đã được phát hiện';
 $phpMussel['Config']['lang']['image'] = 'Hình ảnh';
 $phpMussel['Config']['lang']['instance_already_active'] = 'Trường hợp đã hoạt động! Xin hảy kiểm tra giây nói.';
 $phpMussel['Config']['lang']['invalid_file'] = 'Tập tin không hợp lệ';
@@ -54,6 +53,11 @@ $phpMussel['Config']['lang']['phpmussel_enabled_already'] = 'phpMussel đã đư
 $phpMussel['Config']['lang']['plugins_directory_nonexistent'] = 'Thư mực plugin không tồn tại!';
 $phpMussel['Config']['lang']['recursive'] = 'Độ sâu đệ quy bị quá giới hạn';
 $phpMussel['Config']['lang']['required_variables_not_defined'] = 'Các biến số cần thiết chưa có định nghĩa: Có thể không có thể tiếp tục.';
+$phpMussel['Config']['lang']['SafeBrowseLookup_200'] = 'URL đó là có khả năng có hại đã được phát hiện';
+$phpMussel['Config']['lang']['SafeBrowseLookup_400'] = 'Lỗi yêu cầu API';
+$phpMussel['Config']['lang']['SafeBrowseLookup_401'] = 'Lỗi ủy quyền API';
+$phpMussel['Config']['lang']['SafeBrowseLookup_503'] = 'Dịch vụ của API không có sẵn';
+$phpMussel['Config']['lang']['SafeBrowseLookup_999'] = 'Lỗi API không xác định';
 $phpMussel['Config']['lang']['scan_aborted'] = 'Hủy bỏ quét!';
 $phpMussel['Config']['lang']['scan_chameleon'] = '{x} tấn công tắc kè hoa được phát hiện';
 $phpMussel['Config']['lang']['scan_checking'] = 'Đang kiểm tra';

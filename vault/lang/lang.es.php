@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data (last modified: 2016.05.06).
+ * This file: Spanish language data (last modified: 2016.05.11).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'No entiendo ese comando, lo siento.';
@@ -40,7 +40,6 @@ $phpMussel['Config']['lang']['generated_by'] = 'Generado por';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' Greylist vaciado.';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' Greylist no actualizado.';
 $phpMussel['Config']['lang']['greylist_updated'] = ' Greylist actualizado.';
-$phpMussel['Config']['lang']['harmful_url'] = 'URL potencialmente dañino detectado';
 $phpMussel['Config']['lang']['image'] = 'Imagen';
 $phpMussel['Config']['lang']['instance_already_active'] = 'Instancia ya está activo! Por favor, compruebe sus ganchos.';
 $phpMussel['Config']['lang']['invalid_file'] = 'Archivo no válido';
@@ -54,6 +53,11 @@ $phpMussel['Config']['lang']['phpmussel_enabled_already'] = 'phpMussel ya está 
 $phpMussel['Config']['lang']['plugins_directory_nonexistent'] = 'Directorio de plugins no existe!';
 $phpMussel['Config']['lang']['recursive'] = 'Recursión profundidad límite excedido';
 $phpMussel['Config']['lang']['required_variables_not_defined'] = 'Variables requeridas no están definidos: No puede continuar.';
+$phpMussel['Config']['lang']['SafeBrowseLookup_200'] = 'URL potencialmente dañino detectado';
+$phpMussel['Config']['lang']['SafeBrowseLookup_400'] = 'Error de solicitud de la API';
+$phpMussel['Config']['lang']['SafeBrowseLookup_401'] = 'Error de autorización de la API';
+$phpMussel['Config']['lang']['SafeBrowseLookup_503'] = 'Servicio de la API no está disponible';
+$phpMussel['Config']['lang']['SafeBrowseLookup_999'] = 'Error da la API desconocido';
 $phpMussel['Config']['lang']['scan_aborted'] = 'Escaneo abortado!';
 $phpMussel['Config']['lang']['scan_chameleon'] = '{x} camaleón ataque detectado';
 $phpMussel['Config']['lang']['scan_checking'] = 'Comprobando';

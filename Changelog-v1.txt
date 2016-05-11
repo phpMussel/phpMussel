@@ -116,7 +116,7 @@ entries will be deleted when those goals have been achieved.
 - [2016.04.18; Sub-minor code change; Maikuolan]: Slightly improved the error
   handling for the configuration file.
 
-- [2016.06.05; NEW FEATURE; Maikuolan]: Support for performing lookups to the
+- [2016.05.06; NEW FEATURE; Maikuolan]: Support for performing lookups to the
   Google Safe Browsing API has now been implemented to a functional state;
   Lookups to the Google Safe Browsing API can be enabled by including an API
   key in the phpMussel configuration file (cURL is required in order for it to

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.05.10).
+ * This file: Functions file (last modified: 2016.05.11).
  *
  * @todo Add support for PHAR, 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -1376,8 +1376,7 @@ $phpMussel['vn_shorthand'] = function ($vn) use (&$phpMussel) {
  * Used for performing lookups to the Google Safe Browsing API.
  *
  * @param array $urls An array of the URLs to lookup.
- * @return bool The results of the lookup. True indicates that one or more URLs were flagged by the API. False
- *      indicates that none of the URLs were flagged by the API.
+ * @return int The results of the lookup. Refer to the "Response Codes" notes below for more information.
  */
 $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
     /** Count and encode the URLs. */
@@ -1410,23 +1409,33 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
         if ($expiry > $phpMussel['time']) {
             $response = $phpMussel['substraf']($response, ':');
             break;
-        } else {
-            $response = '';
-            $phpMussel['memCache']['urlscanner_google'] =
-                str_ireplace($cacheRef . $response . ';', '', $phpMussel['memCache']['urlscanner_google']);
         }
+        $response = '';
+        $phpMussel['memCache']['urlscanner_google'] =
+            str_ireplace($cacheRef . $response . ';', '', $phpMussel['memCache']['urlscanner_google']);
     }
     /** If this lookup has already been performed, return the results without repeating it. */
     if ($response) {
         /** Update the cache entry for Google Safe Browsing. */
         $newExpiry = $phpMussel['SaveCache']('urlscanner_google', $newExpiry, $phpMussel['memCache']['urlscanner_google']);
-        if ($response === '204') {
-            return false;
-        } else if ($response === '200') {
-            return true;
+        if ($response === '200') {
+            /** Potentially harmful URL detected. */
+            return 200;
+        } else if ($response === '204') {
+            /** Potentially harmful URL *NOT* detected. */
+            return 204;
+        } else if ($response === '400') {
+            /** Bad/malformed request. */
+            return 400;
+        } else if ($response === '401') {
+            /** Unauthorised (possibly a bad API key). */
+            return 401;
+        } else if ($response === '503') {
+            /** Service unavailable. */
+            return 503;
         } else {
-            /** @todo: This was coded quick and dirty, and can be improved. Could possibly implement logging for this. */
-            die('An error has occurred.');
+            /** Something bad/unexpected happened. */
+            return 999;
         }
     }
 
@@ -1489,13 +1498,24 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
     $phpMussel['memCache']['urlscanner_google'] .= $cacheRef . ':' . $newExpiry . ':' . $response . ';';
     $newExpiry = $phpMussel['SaveCache']('urlscanner_google', $newExpiry, $phpMussel['memCache']['urlscanner_google']);
 
-    if ($response === '204') {
-        return false;
-    } else if ($response === '200') {
-        return true;
+    if ($response === '200') {
+        /** Potentially harmful URL detected. */
+        return 200;
+    } else if ($response === '204') {
+        /** Potentially harmful URL *NOT* detected. */
+        return 204;
+    } else if ($response === '400') {
+        /** Bad/malformed request. */
+        return 400;
+    } else if ($response === '401') {
+        /** Unauthorised (possibly a bad API key). */
+        return 401;
+    } else if ($response === '503') {
+        /** Service unavailable. */
+        return 503;
     } else {
-        /** @todo: This was coded quick and dirty, and can be improved. Could possibly implement logging for this. */
-        die('An error has occurred.');
+        /** Something bad/unexpected happened. */
+        return 999;
     }
 };
 
@@ -1530,6 +1550,7 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
  *      absense of the required $phpMussel['memCache'] variable being set.
  */
 $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = '') use (&$phpMussel) {
+    /** If the memory cahce isn't set at this point, something has gone very wrong. */
     if (!isset($phpMussel['memCache'])) {
         echo
             (!isset($phpMussel['Config']['lang']['required_variables_not_defined'])) ?
@@ -1537,14 +1558,22 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
             '[phpMussel] ' . $phpMussel['Config']['lang']['required_variables_not_defined'];
         die;
     }
+
+    /** Identifies whether the scan target has been flagged for any reason yet. */
     $flagged = false;
+
+    /** Increment scan depth. */
     $dpt++;
+    /** Controls indenting relating to scan depth for normal logging and for CLI-mode scanning. */
     for ($lnap = '', $i = 0; $i < ($dpt - 1); $i++) {
         $lnap .= '-';
     }
     $lnap .= '> ';
+
+    /** Output variable (for when the output is a string). */
     $out = '';
 
+    /** There's no point bothering to scan zero-byte files. */
     if (!$str_len = strlen($str)) {
         return 1;
     }
@@ -1552,16 +1581,26 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
     $md5 = md5($str);
     $sha = sha1($str);
     $crc = @hash('crc32b', $str);
+    /** $fourcc: First four bytes of the scan target in hexadecimal notation. */
     $fourcc = strtolower(bin2hex(substr($str, 0, 4)));
+    /** $twocc: First two bytes of the scan target in hexadecimal notation. */
     $twocc = substr($fourcc, 0, 4);
+    /**
+     * $CoExMeta: Some juicy meta-data for the scan target generated for the convenience of the "complex extended" signatures.
+     * This can be leveraged in some interesting ways by the complex extended signatures for when standard signatures just don't cut it.
+     */
     $CoExMeta =
         '$ofn:' . $ofn . ';md5($ofn):' . md5($ofn) . ';$dpt:' . $dpt .
         ';$str_len:' . $str_len . ';$md5:' . $md5 . ';$sha:' . $sha .
         ';$crc:' . $crc . ';$fourcc:' . $fourcc . ';$twocc:' . $twocc . ';';
+
+    /** Indicates whether a signature is considered a "weighted" signature. */
     $phpMussel['memCache']['weighted'] = false;
 
+    /** Variables used for weighted signatures and for heuristic analysis. */
     $heur = array('detections' => 0, 'weight' => 0, 'cli' => '', 'web' => '');
 
+    /** Scan target has no name? That's a little suspicious. */
     if (!$ofn) {
         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
         $phpMussel['memCache']['detections_count']++;
@@ -1573,6 +1612,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
             $phpMussel['Config']['lang']['_exclamation'];
         return (!$n) ? 2 : $out;
     }
+    /** URL-encoded version of the scan target name. */
     $ofnSafe = urlencode($ofn);
 
     $phpMussel['HashCacheData'] = $md5 . md5($ofn);
@@ -1593,6 +1633,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
         return (!$n) ? 2 : $out;
     }
 
+    /** Indicates whether we're in CLI-mode. */
     $climode = (
         $phpMussel['Mussel_sapi'] &&
         $phpMussel['Mussel_PHP'] &&
@@ -1610,6 +1651,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
         $str_cut = 0;
     }
 
+    /** Indicates whether we need to decode the contents of the scan target. */
     $decode_or_not = (
         (
             $phpMussel['Config']['attack_specific']['decode_threshold'] > 0 &&
@@ -1617,19 +1659,34 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
         ) ||
         $str_len < 16
     ) ? 0 : 1;
+    /** Indicates whether the scan target is greater than 1KB (can sometimes save time for coex). */
     $len_kb = ($str_len > 1024) ? 1 : 0;
+    /** Indicates whether the scan target is greater than half of 1MB (can sometimes save time for coex). */
     $len_hmb = ($str_len > 524288) ? 1 : 0;
+    /** Indicates whether the scan target is greater than 1MB (can sometimes save time for coex). */
     $len_mb = ($str_len > 1048576) ? 1 : 0;
+    /** Indicates whether the scan target is greater than half of 1GB (can sometimes save time for coex). */
     $len_hgb = ($str_len > 536870912) ? 1 : 0;
+    /** Indicates which phase of the scan process we're currently at. */
     $phase = $phpMussel['memCache']['phase'];
+    /** Indicates whether the scan target is a part of a container (and if so, which type of container). */
     $container = $phpMussel['memCache']['container'];
+    /** Indicates whether the scan target possesses the PDF magic number. */
     $pdf_magic = ($fourcc == '25504446');
+
+    /** Corresponds to the "detect_adware" configuration directive. */
     $detect_adware = ($phpMussel['Config']['signatures']['detect_adware']) ? 1 : 0;
+    /** Corresponds to the "detect_joke_hoax" configuration directive. */
     $detect_joke_hoax = ($phpMussel['Config']['signatures']['detect_joke_hoax']) ? 1 : 0;
+    /** Corresponds to the "detect_pua_pup" configuration directive. */
     $detect_pua_pup = ($phpMussel['Config']['signatures']['detect_pua_pup']) ? 1 : 0;
+    /** Corresponds to the "detect_packer_packed" configuration directive. */
     $detect_packer_packed = ($phpMussel['Config']['signatures']['detect_packer_packed']) ? 1 : 0;
+    /** Corresponds to the "detect_shell" configuration directive. */
     $detect_shell = ($phpMussel['Config']['signatures']['detect_shell']) ? 1 : 0;
+    /** Corresponds to the "detect_deface" configuration directive. */
     $detect_deface = ($phpMussel['Config']['signatures']['detect_deface']) ? 1 : 0;
+
     $decPos = strrpos($ofn, '.');
     $ofnLen = strlen($ofn);
     if ($decPos === false || $decPos === ($ofnLen - 1)) {
@@ -5029,10 +5086,9 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                                     $phpMussel['Config']['lang']['detected']
                                 ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
                                 break 2;
-                            } else {
-                                $phpMussel['memCache']['urlscanner_domains'] =
-                                    str_ireplace($urlscanner['this'] . $urlscanner['class'] . ';', '', $phpMussel['memCache']['urlscanner_domains']);
                             }
+                            $phpMussel['memCache']['urlscanner_domains'] =
+                                str_ireplace($urlscanner['this'] . $urlscanner['class'] . ';', '', $phpMussel['memCache']['urlscanner_domains']);
                         }
                         $urlscanner['req'] =
                             'v=' . $urlscanner['req_v'] .
@@ -5119,16 +5175,17 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                             break;
                         }
                         $urlscanner['SafeBrowseLookup'] = $phpMussel['SafeBrowseLookup']($urlscanner['urls_chunked'][$i]);
-                        if ($urlscanner['SafeBrowseLookup']) {
+                        if ($urlscanner['SafeBrowseLookup'] !== 204) {
                             if (!$flagged) {
                                 $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
                                 $flagged = true;
                             }
+                            $urlscanner['langRef'] = 'SafeBrowseLookup_' . $urlscanner['SafeBrowseLookup'];
                             $out .=
-                                $lnap . $phpMussel['Config']['lang']['harmful_url'] .
+                                $lnap . $phpMussel['Config']['lang'][$urlscanner['langRef']] .
                                 $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
                             $phpMussel['whyflagged'] .=
-                                $phpMussel['Config']['lang']['harmful_url'] . ' (' . $ofnSafe . ')' .
+                                $phpMussel['Config']['lang'][$urlscanner['langRef']] . ' (' . $ofnSafe . ')' .
                                 $phpMussel['Config']['lang']['_exclamation'];
                         }
                     }
