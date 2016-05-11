@@ -1376,7 +1376,13 @@ $phpMussel['vn_shorthand'] = function ($vn) use (&$phpMussel) {
  * Used for performing lookups to the Google Safe Browsing API.
  *
  * @param array $urls An array of the URLs to lookup.
- * @return int The results of the lookup. Refer to the "Response Codes" notes below for more information.
+ * @return bool|string The results of the lookup. True if at least one of
+ *                     the queried URLs are matched in either the phishing,
+ *                     malware, or unwanted software lists. False if none
+ *                     of the queried URLs matched the phishing, malware,
+ *                     or unwanted software lists, and no response body is
+ *                     returned. If an error has occured a string is returned
+ *                     with further information.
  */
 $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
     /** Count and encode the URLs. */
