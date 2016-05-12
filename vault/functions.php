@@ -987,19 +987,17 @@ $phpMussel['lv_match'] = function ($needle, $haystack, $pos_A = 0, $pos_Z = 0, $
 };
 
 /**
- * Splits the nibbles of a single byte/character.
+ * Returns the high and low nibbles corresponding to the first byte of the
+ * input string.
  *
- * @param string $n A byte/character to split.
- * @return array Returns an array containing two elements, both integers; The
- *      first, a decimal representation of the high nibble of the input
- *      byte/character, and the second, a decimal representation of the low
- *      nibble of the input byte/character.
+ * @param string $n The input string.
+ * @return array Contains two elements, both standard decimal integers; The
+ *      first is the high nibble of the input string, and the second is the low
+ *      nibble of the input string.
  */
 $phpMussel['split_nibble'] = function ($n) {
     $n = bin2hex($n);
-    $h = hexdec(isset($n[0]) ? $n[0] : '0');
-    $l = hexdec(isset($n[1]) ? $n[1] : '0');
-    return array($h, $l);
+    return array(hexdec(substr($n, 0, 1)), hexdec(substr($n, 1, 1)));
 };
 
 /**
