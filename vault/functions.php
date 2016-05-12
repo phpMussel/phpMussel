@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.05.11).
+ * This file: Functions file (last modified: 2016.05.12).
  *
  * @todo Add support for PHAR, 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -568,30 +568,36 @@ $phpMussel['substral'] = function ($h, $n) {
  * This function reads files and returns the contents of those files.
  *
  * @param string $f Path and filename of the file to read.
- * @param int $s Number of 48KB blocks to read from the file (optional; can be
- *      manually specified, but, it's best to just ignore it and let the
+ * @param int $s Number of blocks to read from the file (optional; can be
+ *      manually specified, but it's best to just ignore it and let the
  *      function work it out for itself).
  * @param bool $c If false, perform basic safety check prior to reading the
  *      file (check if the file exists); If true, skip check (optional;
  *      defaults to false).
+ * @param int $b The total size of a single block in kilobytes (optional;
+ *      defaults to 128, ie, 128KB or 131072 bytes). This can be modified by
+ *      developers as per their individual needs. Generally, a smaller value
+ *      will increase stability but decrease performance, whereas a larger
+ *      value will increase performance but decrease stability.
  * @return string|bool Content of the file returned by the function (or false
  *      on failure).
  */
-$phpMussel['ReadFile'] = function ($f, $s = 0, $c = false) {
+$phpMussel['ReadFile'] = function ($f, $s = 0, $c = false, $b = 128) {
     if (!$c) {
         if (!is_file($f)) {
             return false;
         }
     }
+    $bsize = $b * 1024;
     if (!$s) {
-        $s = @ceil(filesize($f) / 131072);
+        $s = @ceil(filesize($f) / $bsize);
     }
     $d = '';
     if ($s > 0) {
         $fh = fopen($f, 'rb');
         $r = 0;
         while ($r < $s) {
-            $d .= fread($fh, 131072);
+            $d .= fread($fh, $bsize);
             $r++;
         }
     fclose($fh);
@@ -1555,7 +1561,7 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
  *      absense of the required $phpMussel['memCache'] variable being set.
  */
 $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = '') use (&$phpMussel) {
-    /** If the memory cahce isn't set at this point, something has gone very wrong. */
+    /** If the memory cache isn't set at this point, something has gone very wrong. */
     if (!isset($phpMussel['memCache'])) {
         echo
             (!isset($phpMussel['Config']['lang']['required_variables_not_defined'])) ?
