@@ -123,6 +123,18 @@ entries will be deleted when those goals have been achieved.
   work correctly).
   Refer github.com/Maikuolan/phpMussel/issues/65
 
+- [2016.05.12; Sub-minor code change; DanielRuf/Maikuolan]: Improved the
+  "ReadFile" closure; It's now possible for developers/users to specify custom
+  block sizes for file reading.
+  Refer github.com/Maikuolan/phpMussel/issues/89
+
+- [2016.05.15; Sub-minor code change; DanielRuf/Maikuolan]: Improved the
+  "implode_bits" and "explode_bits" closures; Both these closures now return
+  strings rather than arrays (although these strings are still manipulated in
+  the same ways as before) and both these closures now execute about ~2.5-~2.7
+  times faster than they did before.
+  Refer github.com/Maikuolan/phpMussel/issues/91
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"
