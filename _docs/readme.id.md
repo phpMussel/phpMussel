@@ -631,10 +631,10 @@ Opsi Tanda tangan cocok batas panjangnya. Hanya ubah ini jika Anda tahu apa yang
 - "sd_siglen_max"
 
 "fail_silently"
-- Seharusnya laporan phpMussel ketika file tanda tangan hilang atau dikorup? Jika fail_silently dinonaktifkan, file dikorup dan hilang akan dilaporkan ketika pemindaian, dan jika fail_silently diaktifkan, file dikorup dan hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crash atau masalah lain. False = Dinonaktifkan; True = Diaktifkan [Default].
+- Seharusnya laporan phpMussel ketika file tanda tangan hilang atau dikorup? Jika `fail_silently` dinonaktifkan, file dikorup dan hilang akan dilaporkan ketika pemindaian, dan jika `fail_silently` diaktifkan, file dikorup dan hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crash atau masalah lain. False = Dinonaktifkan; True = Diaktifkan [Default].
 
 "fail_extensions_silently"
-- Seharusnya laporan phpMussel ketika ekstensi hilang? Jika fail_extensions_silently dinonaktifkan, ekstensi hilang akan dilaporkan ketika pemindaian, dan jika fail_extensions_silently diaktifkan, ekstensi hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Menonaktifkan direktif ini berpotensi dapat meningkatkan keamanan Anda, tetapi juga dapat menyebabkan peningkatan positif palsu. False = Dinonaktifkan; True = Diaktifkan [Default].
+- Seharusnya laporan phpMussel ketika ekstensi hilang? Jika `fail_extensions_silently` dinonaktifkan, ekstensi hilang akan dilaporkan ketika pemindaian, dan jika `fail_extensions_silently` diaktifkan, ekstensi hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Menonaktifkan direktif ini berpotensi dapat meningkatkan keamanan Anda, tetapi juga dapat menyebabkan peningkatan positif palsu. False = Dinonaktifkan; True = Diaktifkan [Default].
 
 "detect_adware"
 - Harus phpMussel menggunakan tanda tangan untuk mendeteksi adware? False = Tidak; True = Ya [Default].
@@ -975,4 +975,4 @@ Informasi ini diupdate 21 April 2016 dan cocok untuk semua rilis phpMussel dari 
 ---
 
 
-Terakhir Diperbarui: 6 Mei 2016 (2016.05.06).
+Terakhir Diperbarui: 16 Mei 2016 (2016.05.16).

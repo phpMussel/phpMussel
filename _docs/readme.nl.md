@@ -631,10 +631,10 @@ Handtekening controleren lengte beperken opties. Alleen veranderen deze als u we
 - "sd_siglen_max"
 
 "fail_silently"
-- Moet phpMussel rapporteren wanneer handtekeningen bestanden zijn ontbrekend of beschadigd? Als fail_silently is uitgeschakeld, ontbrekende en beschadigde bestanden zal worden gerapporteerd op het scannen, en als fail_silently is ingeschakeld, ontbrekende en beschadigde bestanden zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Dit moet in het algemeen met rust gelaten worden tenzij u ervaart mislukt of soortgelijke problemen. False = Uitgeschakeld; True = Ingeschakeld [Standaard].
+- Moet phpMussel rapporteren wanneer handtekeningen bestanden zijn ontbrekend of beschadigd? Als `fail_silently` is uitgeschakeld, ontbrekende en beschadigde bestanden zal worden gerapporteerd op het scannen, en als `fail_silently` is ingeschakeld, ontbrekende en beschadigde bestanden zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Dit moet in het algemeen met rust gelaten worden tenzij u ervaart mislukt of soortgelijke problemen. False = Uitgeschakeld; True = Ingeschakeld [Standaard].
 
 "fail_extensions_silently"
-- Moet phpMussel rapporteren wanneer extensies zijn ontbreken? Als fail_extensions_silently is uitgeschakeld, ontbrekende extensies zal worden gerapporteerd op het scannen, en als fail_extensions_silently is ingeschakeld, ontbrekende extensies zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Het uitschakelen van dit richtlijn kunt mogelijk verhogen van uw veiligheid, maar kunt ook leiden tot een toename van valse positieven. False = Uitgeschakeld; True = Ingeschakeld [Standaard].
+- Moet phpMussel rapporteren wanneer extensies zijn ontbreken? Als `fail_extensions_silently` is uitgeschakeld, ontbrekende extensies zal worden gerapporteerd op het scannen, en als `fail_extensions_silently` is ingeschakeld, ontbrekende extensies zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Het uitschakelen van dit richtlijn kunt mogelijk verhogen van uw veiligheid, maar kunt ook leiden tot een toename van valse positieven. False = Uitgeschakeld; True = Ingeschakeld [Standaard].
 
 "detect_adware"
 - Moet phpMussel verwerken handtekeningen voor het detecteren van adware? False = Nee; True = Ja [Standaard].
@@ -975,4 +975,4 @@ Dit informatie werd laatst bijgewerkt 21 April 2016 en is op de hoogte voor alle
 ---
 
 
-Laatste Bijgewerkt: 6 Mei 2016 (2016.05.06).
+Laatste Bijgewerkt: 16 Mei 2016 (2016.05.16).

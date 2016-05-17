@@ -631,10 +631,10 @@ Firma lunghezza corrispondenza limitando opzioni. Modificata solo se si sa cosa 
 - "sd_siglen_max"
 
 "fail_silently"
-- Dovrebbe phpMussel rapporto quando le file di firme sono mancanti o danneggiati? Se fail_silently è disattivato, mancanti e danneggiati file saranno riportato sulla scansione, e se fail_silently è abilitato, mancanti e danneggiati file saranno ignorato, con scansione riportando per quei file che non ha sono problemi. Questo dovrebbe essere generalmente lasciata sola a meno che sperimentando inaspettate terminazioni o simili problemi. False = Disattivato; True = Attivato [Predefinito].
+- Dovrebbe phpMussel rapporto quando le file di firme sono mancanti o danneggiati? Se `fail_silently` è disattivato, mancanti e danneggiati file saranno riportato sulla scansione, e se `fail_silently` è abilitato, mancanti e danneggiati file saranno ignorato, con scansione riportando per quei file che non ha sono problemi. Questo dovrebbe essere generalmente lasciata sola a meno che sperimentando inaspettate terminazioni o simili problemi. False = Disattivato; True = Attivato [Predefinito].
 
 "fail_extensions_silently"
-- Dovrebbe phpMussel rapporto quando le estensioni sono mancanti? Se fail_extensions_silently è disattivato, mancanti estensioni saranno riportato sulla scansione, e se fail_extensions_silently è abilitato, mancanti estensioni saranno ignorato, con scansione riportando per quei file che non ha sono problemi. La disattivazione di questa direttiva potrebbe potenzialmente aumentare la sicurezza, ma può anche portare ad un aumento di falsi positivi. False = Disattivato; True = Attivato [Predefinito].
+- Dovrebbe phpMussel rapporto quando le estensioni sono mancanti? Se `fail_extensions_silently` è disattivato, mancanti estensioni saranno riportato sulla scansione, e se `fail_extensions_silently` è abilitato, mancanti estensioni saranno ignorato, con scansione riportando per quei file che non ha sono problemi. La disattivazione di questa direttiva potrebbe potenzialmente aumentare la sicurezza, ma può anche portare ad un aumento di falsi positivi. False = Disattivato; True = Attivato [Predefinito].
 
 "detect_adware"
 - Dovrebbe phpMussel utilizzare le firme per il rilevamento di adware? False = No; True = Sì [Predefinito].
@@ -975,4 +975,4 @@ Questa informazione è stato lo scorso aggiornato 21 Aprile 2016 ed è in corso 
 ---
 
 
-Ultimo Aggiornamento: 6 Maggio 2016 (2016.05.06).
+Ultimo Aggiornamento: 16 Maggio 2016 (2016.05.16).

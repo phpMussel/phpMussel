@@ -631,10 +631,10 @@ Signature correspondance longueur limiter options. Modifier seulement si vous sa
 - "sd_siglen_max"
 
 "fail_silently"
-- Devrait phpMussel signaler lorsque les fichiers du signatures sont manquants ou endommagés? Si fail_silently est désactivé, fichiers manquants et corrompus seront signalé sur analyse, et si fail_silently est activé, fichiers manquants et corrompus seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. Cela devrait généralement être laissé seul sauf si vous rencontrez accidents ou similaires problèmes. False = Désactivé; True = Activé [Défaut].
+- Devrait phpMussel signaler lorsque les fichiers du signatures sont manquants ou endommagés? Si `fail_silently` est désactivé, fichiers manquants et corrompus seront signalé sur analyse, et si `fail_silently` est activé, fichiers manquants et corrompus seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. Cela devrait généralement être laissé seul sauf si vous rencontrez accidents ou similaires problèmes. False = Désactivé; True = Activé [Défaut].
 
 "fail_extensions_silently"
-- Devrait phpMussel signaler lorsque les extensions sont manquantes? Si fail_extensions_silently est désactivé, extensions manquantes seront signalé sur analyse, et si fail_extensions_silently est activé, extensions manquantes seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. La désactivation de cette directive peut potentiellement augmenter votre sécurité, mais peut aussi conduire à une augmentation de faux positifs. False = Désactivé; True = Activé [Défaut].
+- Devrait phpMussel signaler lorsque les extensions sont manquantes? Si `fail_extensions_silently` est désactivé, extensions manquantes seront signalé sur analyse, et si `fail_extensions_silently` est activé, extensions manquantes seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. La désactivation de cette directive peut potentiellement augmenter votre sécurité, mais peut aussi conduire à une augmentation de faux positifs. False = Désactivé; True = Activé [Défaut].
 
 "detect_adware"
 - Devrait phpMussel utiliser signatures pour détecter les adwares? False = Non; True = Oui [Défaut].
@@ -975,4 +975,4 @@ Cette information a été réactualisé le 21 Avril 2016 et est courant pour tou
 ---
 
 
-Dernière Réactualisé: 6 Mai 2016 (2016.05.06).
+Dernière Réactualisé: 16 Mai 2016 (2016.05.16).

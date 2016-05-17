@@ -157,7 +157,7 @@ Một danh sách của có sẵn điều khiển trình duyệt:
 
 scan_log
 - Mật khẩu cần thiết: `logs_password`
-- Các yêu cầu khác: scan_log cần phải được xác định.
+- Yêu cầu khác: scan_log cần phải được xác định.
 - Thông số cần thiết: (không có gì)
 - Thông số không bắt buộc: (không có gì)
 - Thí dụ: `?logspword=[logs_password]&phpmussel=scan_log`
@@ -165,7 +165,7 @@ scan_log
 
 scan_kills
 - Mật khẩu cần thiết: `logs_password`
-- Các yêu cầu khác: scan_kills cần phải được xác định.
+- Yêu cầu khác: scan_kills cần phải được xác định.
 - Thông số cần thiết: (không có gì)
 - Thông số không bắt buộc: (không có gì)
 - Thí dụ: `?logspword=[logs_password]&phpmussel=scan_kills`
@@ -173,7 +173,7 @@ scan_kills
 
 controls_lockout
 - Mật khẩu cần thiết: `logs_password` HAY `script_password`
-- Các yêu cầu khác: (không có gì)
+- Yêu cầu khác: (không có gì)
 - Thông số cần thiết: (không có gì)
 - Thông số không bắt buộc: (không có gì)
 - Thí dụ 1: `?logspword=[logs_password]&phpmussel=controls_lockout`
@@ -182,7 +182,7 @@ controls_lockout
 
 disable
 - Mật khẩu cần thiết: `script_password`
-- Các yêu cầu khác: (không có gì)
+- Yêu cầu khác: (không có gì)
 - Thông số cần thiết: (không có gì)
 - Thông số không bắt buộc: (không có gì)
 - Thí dụ: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=disable`
@@ -190,7 +190,7 @@ disable
 
 enable
 - Mật khẩu cần thiết: `script_password`
-- Các yêu cầu khác: (không có gì)
+- Yêu cầu khác: (không có gì)
 - Thông số cần thiết: (không có gì)
 - Thông số không bắt buộc: (không có gì)
 - Thí dụ: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=enable`
@@ -198,7 +198,7 @@ enable
 
 greylist
 - Mật khẩu cần thiết: `script_password`
-- Các yêu cầu khác: (không có gì)
+- Yêu cầu khác: (không có gì)
 - Thông số cần thiết: [Tên của chữ ký để đưa vào danh sách xám]
 - Thông số không bắt buộc: (không có gì)
 - Thí dụ: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=greylist&musselvar=[Chữ_ký]`
@@ -206,7 +206,7 @@ greylist
 
 greylist_clear
 - Mật khẩu cần thiết: `script_password`
-- Các yêu cầu khác: (không có gì)
+- Yêu cầu khác: (không có gì)
 - Thông số cần thiết: (không có gì)
 - Thông số không bắt buộc: (không có gì)
 - Thí dụ: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=greylist_clear`
@@ -214,7 +214,7 @@ greylist_clear
 
 greylist_show
 - Mật khẩu cần thiết: `script_password`
-- Các yêu cầu khác: (không có gì)
+- Yêu cầu khác: (không có gì)
 - Thông số cần thiết: (không có gì)
 - Thông số không bắt buộc: (không có gì)
 - Thí dụ: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=greylist_show`
@@ -505,22 +505,22 @@ Cấu hình chung cho phpMussel.
 - Tùy chọn `lang_acceptable` nói phpMussel cái nào tiếng có thể được chấp nhận bởi các kịch bản từ `lang` hoặc từ `HTTP_ACCEPT_LANGUAGE`. Tùy chọn này chỉ **NÊN** được sửa đổi nếu bạn đang thêm tập tin tiếng tùy chỉnh của riêng bạn hay ép buộc gỡ bỏ tập tin tiếng. Các tùy chọn là một chuỗi dấu phẩy phân cách của mã sử dụng bởi các tiếng chấp nhận bởi các kịch bản.
 
 "quarantine_key"
-- phpMussel is able to quarantine flagged attempted tập tin uploads in isolation within các phpMussel vault, nếu this is something you want it to do. Casual users of phpMussel that simply wish to protect their websites hoặc hosting environment without having any interest in deeply analysing any flagged attempted tập tin uploads should leave this functionality disabled, but any users interested in further analysis of flagged attempted tập tin uploads for malware research hoặc for similar such things should enable this functionality. Quarantining of flagged attempted tập tin uploads can sometimes also assist in debugging sai tích cực, nếu this is something that frequently occurs for you. To disable quarantine functionality, simply leave các `quarantine_key` directive empty, hoặc erase các contents of that directive nếu it isn't already empty. To enable quarantine functionality, enter some value into các directive. Các `quarantine_key` is an important security feature of các quarantine functionality required as a means of preventing các quarantine functionality from being exploited by kẻ tấn công tiềm năng và as a means of preventing any potential execution of dữ liệu stored within các quarantine. Các `quarantine_key` should be treated in các same manner as your passwords: Các longer các better, và guard it tightly. For best effect, use in conjunction with `delete_on_sight`. @FROM HERE@
+- phpMussel có thể kiểm dịch tải lên tập tin mà đã được đánh dấu trong sự cô lập trong vòng các vault của phpMussel, nếu đây là cái gì bạn muốn nó làm. Người dùng bình thường của phpMussel mà chỉ đơn giản là muốn bảo vệ các môi trường lưu trữ hay trang web của họ, mà không có bất cứ quan tâm trong việc phân tích sâu sắc của bất kỳ tải lên tập tin mà đã được đánh dấu, nên để chức năng này bị vô hiệu hóa còn lại, nhưng bất kỳ người dùng quan tâm trong phân tích sâu hơn của tải lên tập tin mà đã được đánh dấu cho nghiên cứu phần mềm độc hại hay cho những thứ tương tự như vậy nên kích hoạt chức năng này. Các kiểm dịch của tải lên tập tin mà đã được đánh dấu đôi khi cũng có thể hỗ trợ trong việc gỡ lỗi sai tích cực, nếu đây là cái gì đó thường xuyên xảy ra đối với bạn. Để vô hiệu hóa chức năng kiểm dịch, chỉ đơn giản để lại tùy chọn `quarantine_key` trống rỗng, hay xóa nội dung của nó nếu nó không phải là đã trống rỗng. Để kích hoạt chức năng kiểm dịch, nhập một số giá trị vào các tùy chọn. `quarantine_key` là một tính năng bảo mật quan trọng của chức năng kiểm dịch yêu cầu như là một phương tiện cho ngăn chặn chức năng kiểm dịch được khai thác bởi kẻ tấn công tiềm năng và như một phương tiện ngăn chặn bất kỳ thực hiện tiềm năng của dữ liệu lưu trữ trong kiểm dịch. `quarantine_key` nên được đối xử theo cách tương tự như mật khẩu của bạn: Càng dài thì càng tốt, và cất giữ nó thật chặt. Đối với hiệu quả tốt nhất, sử dụng kết hợp với `delete_on_sight`.
 
 "quarantine_max_filesize"
-- Các maximum allowable filesize of files to be quarantined. Files larger than các value specified will NOT be quarantined. This directive is important as a means of making it more difficult for any kẻ tấn công tiềm năng to flood your quarantine with unwanted dữ liệu potentially causing run-away dữ liệu usage on your hosting service. Value is in KB. Mặc định =2048 =2048KB =2MB.
+- Cho phép tối đa kích thước của tập tin để được kiểm dịch. Tập tin mà lớn hơn giá trị quy định sẽ KHÔNG được kiểm dịch. Tùy chọn này là rất quan trọng như là một phương tiện làm cho nó khó khăn hơn cho bất kỳ kẻ tấn công tiềm năng lũ kiểm dịch của bạn với các dữ liệu không mong muốn, có khả năng gây ra việc sử dụng quá mức dữ liệu trên dịch vụ lưu trữ của bạn. Giá trị là ở KB. Mặc định =2048 =2048KB =2MB.
 
 "quarantine_max_usage"
-- Các maximum memory usage allowed for các quarantine. Nếu các total memory used by các quarantine reaches this value, các oldest quarantined files will be deleted until các total memory used no longer reaches this value. This directive is important as a means of making it more difficult for any kẻ tấn công tiềm năng to flood your quarantine with unwanted dữ liệu potentially causing run-away dữ liệu usage on your hosting service. Value is in KB. Mặc định =65536 =65536KB =64MB.
+- Cho phép tối đa sử dụng bộ nhớ cho kiểm dịch. Nếu tổng số sử dụng bộ nhớ bởi các kiểm dịch đạt giá trị này, các tập tin trong kiểm dịch cho dài nhất sẽ bị xóa cho đến khi các tổng bộ nhớ sử dụng không còn đạt giá trị này. Tùy chọn này là rất quan trọng như là một phương tiện làm cho nó khó khăn hơn cho bất kỳ kẻ tấn công tiềm năng lũ kiểm dịch của bạn với các dữ liệu không mong muốn, có khả năng gây ra việc sử dụng quá mức dữ liệu trên dịch vụ lưu trữ của bạn. Giá trị là ở KB. Mặc định =65536 =65536KB =64MB.
 
 "honeypot_mode"
-- When honeypot mode is enabled, phpMussel will attempt to quarantine every single tập tin upload that it encounters, regardless of whether các tập tin being uploaded matches any included signatures, và no actual scanning hoặc analysis of those attempted tập tin uploads will actually occur. This functionality should be useful for those that wish to use phpMussel for các purposes of virus/malware research, but it's neither recommended to enable this functionality nếu các intended use of phpMussel by các user is for actual tập tin upload scanning, nor recommended to use các honeypot functionality for purposes other than honeypotting. Theo mặc định, this option is disabled. False = Không cho phép [Mặc định]; True = Cho phép.
+- Khi chế độ honeypot được kích hoạt, phpMussel sẽ cố gắng kiểm dịch mỗi tập tin tải lên mà nó gặp, bất kể liệu tập tin được tải lên kích hoạt với bất kỳ chữ ký bao gồm, và không có quét hoặc phân tích của những tập tin tải lên thực sự sẽ xảy ra. Chức năng này sẽ hữu ích cho những ai muốn sử dụng phpMussel cho các mục đích của nghiên cứu cho vi rút hay phần mềm độc hại, nhưng nó không được khuyến khích để kích hoạt chức năng này nếu các mục đích sử dụng của phpMussel bởi người sử dụng là cho tải lên tập tin quét thực sự, cũng không được khuyến khích để sử dụng chức năng honeypot cho các mục đích khác hơn các honeypot. Theo mặc định, tùy chọn này bị vô hiệu hóa. False = Không cho phép [Mặc định]; True = Cho phép.
 
 "scan_cache_expiry"
-- For how long should phpMussel cache các results of scanning? Value is các number of seconds to cache các results of scanning for. Default is 21600 seconds (6 hours); A value of 0 will disable caching các results of scanning.
+- Trong bao lâu phpMussel nên nhớ đệm kết quả quét? Giá trị là số giây để nhớ đệm các kết quả quét cho. Mặc định là 21600 giây (6 giờ); Giá trị 0 sẽ vô hiệu hóa bộ nhớ đệm kết quả quét.
 
 "disable_cli"
-- Disable CLI mode? CLI mode is enabled theo mặc định, but can sometimes interfere with certain testing tools (such as PHPUnit, for example) và other CLI-based applications. Nếu you don't need to disable CLI mode, you should ignore this directive. False = Enable CLI mode [Mặc định]; True = Disable CLI mode.
+- Vô hiệu hóa chế độ CLI? Chế độ CLI được kích hoạt theo mặc định, nhưng đôi khi có thể gây trở ngại cho công cụ kiểm tra nhất định (như PHPUnit, cho ví dụ) và khác ứng dụng mà CLI dựa trên. Nếu bạn không cần phải vô hiệu hóa chế độ CLI, bạn nên bỏ qua tùy chọn này. False = Kích hoạt chế độ CLI [Mặc định]; True = Vô hiệu hóa chế độ CLI.
 
 ####"signatures" (Thể loại)
 Cấu hình cho chữ ký.
@@ -622,7 +622,7 @@ Kiểm tra chống lại chữ ký Shockwave khi quét? False = Không; True = V
 - "swf_custom"
 - "swf_mussel"
 
-Signature matching length limiting options. Only change these nếu you know what you're doing. SD = Standard signatures. RX = PCRE (Perl Compatible Regular Expressions, hoặc "Regex") signatures. FN = Filename signatures. Nếu you notice PHP crashing when phpMussel attempts to scan, try lowering these "max" values. Nếu possible và convenient, let me know when this happens và các results of whatever you try.
+Tùy chọn cho chiều dài hạn chế chữ ký. Chỉ thay đổi này nếu bạn biết những gì bạn đang làm. SD = Chữ ký tiêu chuẩn. RX = Chữ ký cho PCRE (Perl Compatible Regular Expressions, hay "Regex"). FN = Chữ ký cho tên tập tin. Nếu bạn nhận thấy PHP vụ tai nạn khi phpMussel cố gắng để quét, cố gắng hạ thấp các giá trị "max". Nếu có thể và thuận tiện, cho tôi biết khi điều này xảy ra và các kết quả của bất cứ điều gì bạn cố gắng.
 - "fn_siglen_min"
 - "fn_siglen_max"
 - "rx_siglen_min"
@@ -631,34 +631,34 @@ Signature matching length limiting options. Only change these nếu you know wha
 - "sd_siglen_max"
 
 "fail_silently"
-- Should phpMussel report when chữ ký files are missing hoặc corrupted? Nếu fail_silently is disabled, missing và corrupted files will be reported on scanning, và nếu fail_silently is enabled, missing và corrupted files will be ignored, with scanning reporting for those files that there aren't any problems. This should generally be left alone unless you're experiencing crashes hoặc similar problems. False = Không cho phép; True = Cho phép [Mặc định].
+- phpMussel nên báo cáo khi tập tin chữ ký bị mất hay bị hỏng? Nếu `fail_silently` được vô hiệu hóa, tập tin bị mất hay bị hỏng sẽ được báo cáo khi quét, và nếu `fail_silently` được kích hoạt, tập tin bị mất hay bị hỏng sẽ bị bỏ qua, với báo cáo quét cho những tập tin mà không có bất kỳ vấn đề. Điều này thường cần được ở một mình trừ khi bạn gặp sự cố hay vấn đề tương tự. False = Không cho phép; True = Cho phép [Mặc định].
 
 "fail_extensions_silently"
-- Should phpMussel report when extensions are missing? Nếu fail_extensions_silently is disabled, missing extensions will be reported on scanning, và nếu fail_extensions_silently is enabled, missing extensions will be ignored, with scanning reporting for those files that there aren't any problems. Disabling this directive may potentially increase your security, but may also lead to an increase of false positives. False = Không cho phép; True = Cho phép [Mặc định].
+- phpMussel nên báo cáo khi mở rộng bị mất? Nếu `fail_extensions_silently` được vô hiệu hóa, mở rộng bị mất sẽ được báo cáo khi quét, và nếu `fail_extensions_silently` được kích hoạt, mở rộng bị mất hay bị hỏng sẽ bị bỏ qua, với báo cáo quét cho những tập tin mà không có bất kỳ vấn đề. Vô hiệu hóa tùy chọn này có khả năng có thể làm tăng bảo mật của bạn, nhưng cũng có thể dẫn đến sự gia tăng giả tích cực. False = Không cho phép; True = Cho phép [Mặc định].
 
 "detect_adware"
-- Should phpMussel parse chữ ký for detecting adware? False = Không; True = Vâng [Mặc định].
+- phpMussel nên sử dụng chữ ký cho phát hiện adware? False = Không; True = Vâng [Mặc định].
 
 "detect_joke_hoax"
-- Should phpMussel parse chữ ký for detecting joke/hoax malware/viruses? False = Không; True = Vâng [Mặc định].
+- phpMussel nên sử dụng chữ ký cho phát hiện câu nói đùa và chơi khăm phần mềm độc hại và vi rút? False = Không; True = Vâng [Mặc định].
 
 "detect_pua_pup"
-- Should phpMussel parse chữ ký for detecting PUAs/PUPs? False = Không; True = Vâng [Mặc định].
+- phpMussel nên sử dụng chữ ký cho phát hiện PUAs/PUPs? False = Không; True = Vâng [Mặc định].
 
 "detect_packer_packed"
-- Should phpMussel parse chữ ký for detecting packers và packed data? False = Không; True = Vâng [Mặc định].
+- phpMussel nên sử dụng chữ ký cho phát hiện đóng gói tập tin và dữ liệu đã đóng gói? False = Không; True = Vâng [Mặc định].
 
 "detect_shell"
-- Should phpMussel parse chữ ký for detecting shell scripts? False = Không; True = Vâng [Mặc định].
+- phpMussel nên sử dụng chữ ký cho phát hiện shell script? False = Không; True = Vâng [Mặc định].
 
 "detect_deface"
-- Should phpMussel parse chữ ký for detecting defacements và defacers? False = Không; True = Vâng [Mặc định].
+- phpMussel nên sử dụng chữ ký cho phát hiện deface và công cụ làm xấu? False = Không; True = Vâng [Mặc định].
 
 ####"files" (Thể loại)
 Cấu hình cho xử lý tập tin.
 
 "max_uploads"
-- Maximum allowable number of files to scan during files upload scan before aborting các scan và informing các user they are uploading too much at once! Provides protection chống lại a theoretical attack whereby an kẻ tấn công attempts to DDoS your system hoặc CMS by overloading phpMussel to slow down các PHP process to a grinding halt. Recommended: 10. You may wish to raise hoặc lower this number depending on các speed of your hardware. Note that this number doesn't account for hoặc include các contents of archives.
+- Maximum allowable number of files to scan during files upload scan before aborting các scan và informing các user they are uploading too much at once! Provides protection chống lại a theoretical attack whereby an kẻ tấn công attempts to DDoS your system hoặc CMS by overloading phpMussel to slow down các PHP process to a grinding halt. Recommended: 10. You may wish to raise hoặc lower this number depending on các speed of your hardware. Note that this number doesn't account for hoặc include các contents of archives. @FROM HERE@
 
 "filesize_limit"
 - Filesize limit in KB. 65536 = 64MB [Mặc định]; 0 = No limit (always greylisted), any (positive) numeric value accepted. This can be useful when your PHP configuration limits các amount of memory a process can hold hoặc nếu your PHP configuration limits filesize of uploads.
@@ -766,7 +766,7 @@ Note: Nếu scanning files using các Virus Total API is disabled, you won't nee
 Note: Regardless of suspicion level, any files that are either blacklisted hoặc whitelisted by phpMussel won't be scanned using các Virus Total API, bởi vì those such files would've already been declared as either malicious hoặc benign by phpMussel by các time that they would've otherwise been scanned by các Virus Total API, và therefore, additional scanning wouldn't be required. Các ability of phpMussel to scan files using các Virus Total API is intended to build further confidence for whether a tập tin is malicious hoặc benign in those circumstances where phpMussel itself isn't entirely certain as to whether a tập tin is malicious hoặc benign.
 
 "vt_weighting"
-- Should phpMussel apply các results of scanning using các Virus Total API as detections hoặc as detection weighting? This directive exists, bởi vì, although scanning a tập tin using multiple engines (as Virus Total does) should result in an increased detection rate (and therefore in a higher number of malicious files being caught), it can also result in a higher number of false positives, và therefore, in some circumstances, các results of scanning may be better utilised as a confidence score rather than as a definitive conclusion. Nếu a value of 0 is used, các results of scanning using các Virus Total API will be applied as detections, và therefore, nếu any engine used by Virus Total flags các tập tin being scanned as being malicious, phpMussel will consider các tập tin to be malicious. Nếu any other value is used, các results of scanning using các Virus Total API will be applied as detection weighting, và therefore, các number of engines used by Virus Total that flag các tập tin being scanned as being malicious will serve as a confidence score (or detection weighting) for whether các tập tin being scanned should be considered malicious by phpMussel (the value used will represent các minimum confidence score hoặc weight required in order to be considered malicious). A value of 0 is used by default.
+- phpMussel nên apply các results of scanning using các Virus Total API as detections hoặc as detection weighting? This directive exists, bởi vì, although scanning a tập tin using multiple engines (as Virus Total does) should result in an increased detection rate (and therefore in a higher number of malicious files being caught), it can also result in a higher number of false positives, và therefore, in some circumstances, các results of scanning may be better utilised as a confidence score rather than as a definitive conclusion. Nếu a value of 0 is used, các results of scanning using các Virus Total API will be applied as detections, và therefore, nếu any engine used by Virus Total flags các tập tin being scanned as being malicious, phpMussel will consider các tập tin to be malicious. Nếu any other value is used, các results of scanning using các Virus Total API will be applied as detection weighting, và therefore, các number of engines used by Virus Total that flag các tập tin being scanned as being malicious will serve as a confidence score (or detection weighting) for whether các tập tin being scanned should be considered malicious by phpMussel (the value used will represent các minimum confidence score hoặc weight required in order to be considered malicious). A value of 0 is used by default.
 
 "vt_quota_rate" và "vt_quota_time"
 - According to các Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. Nếu you run a honeyclient, honeypot hoặc any other automation that is going to provide resources to VirusTotal và not only retrieve reports you are entitled to a higher request rate quota". Theo mặc định, phpMussel will strictly adhere to these limitations, but due to các possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, nếu you've encountered problems relating to reaching your rate quota, decreasing these values _**MAY**_ sometimes help you in dealing with these problems. Your rate limit is determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame.
@@ -803,15 +803,15 @@ Cấu hình cho mẫu thiết kế và chủ đề.
 Dữ liệu mẫu thiết kế relates to các HTML output used to generate các "Upload Denied" message displayed to users upon a tập tin upload being blocked. Nếu you're using chủ đề tùy chỉnh for phpMussel, HTML output is sourced from các `template_custom.html` file, và otherwise, HTML output is sourced from các `template.html` file. Variables written to this section of các configuration tập tin are parsed to các HTML output bằng cách replacing any variable names circumfixed by curly brackets found within các HTML output with các corresponding variable data. For example, where `foo="bar"`, any instance of `<p>{foo}</p>` found within các HTML output will become `<p>bar</p>`.
 
 "css_url"
-- Các tập tin mẫu thiết kế cho chủ đề tùy chỉnh sử dụng thuộc tính CSS bên ngoài, trong khi các tập tin mẫu thiết kế cho các chủ đề mặc định sử dụng thuộc tính CSS nội bộ. Để hướng dẫn phpMussel để sử dụng các tập tin mẫu thiết kế cho chủ đề tùy chỉnh, xác định các địa chỉ HTTP cho các tập tin CSS chủ đề tùy chỉnh của bạn sử dụng các biến số `css_url`. Nếu bạn để cho biến số này chỗ trống, phpMussel sẽ sử dụng các tập tin mẫu thiết kế cho các chủ đề mặc định.
+- Tập tin mẫu thiết kế cho chủ đề tùy chỉnh sử dụng thuộc tính CSS bên ngoài, trong khi các tập tin mẫu thiết kế cho các chủ đề mặc định sử dụng thuộc tính CSS nội bộ. Để hướng dẫn phpMussel để sử dụng các tập tin mẫu thiết kế cho chủ đề tùy chỉnh, xác định các địa chỉ HTTP cho các tập tin CSS chủ đề tùy chỉnh của bạn sử dụng các biến số `css_url`. Nếu bạn để cho biến số này chỗ trống, phpMussel sẽ sử dụng các tập tin mẫu thiết kế cho các chủ đề mặc định.
 
 ---
 
 
 ###7. <a name="SECTION7"></a>ĐỊNH DẠNG CỦA CHỬ KÝ
 
-####*CHỮ KÝ TÊN TẬP TIN*
-Tất cả các chữ ký tên tập tin tuân theo các định dạng:
+####*CHỮ KÝ CHO TÊN TẬP TIN*
+Tất cả các chữ ký cho tên tập tin tuân theo các định dạng:
 
 `NAME:FNRX`
 
@@ -876,7 +876,7 @@ Sau đây là một danh sách các loại chữ ký được sử dụng bởi 
 - "Chữ ký kéo dài phức tạp" (coex_*). Chữ ký của hỗn hợp kiểu.
 - "Chữ ký ELF" (elf_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin ELF.
 - "Chữ ký PE" (exe_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác định như các định dạng PE.
-- "Chữ ký tên tập tin" (filenames_*). Kiểm tra đối với các tên tập tin của mỗi tập tin dự định để quét.
+- "Chữ ký cho tên tập tin" (filenames_*). Kiểm tra đối với các tên tập tin của mỗi tập tin dự định để quét.
 - "Chữ ký chung" (general_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
 - "Chữ ký đồ họa" (graphics_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin công nhận đồ họa.
 - "Lệnh chung" (hex_general_commands.csv). Kiểm tra đối với các nội dung của mỗi tập tin không trong danh sách trắng và nhắm mục tiêu cho quét.
@@ -975,4 +975,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 21 Tháng Tư 201
 ---
 
 
-Lần cuối cập nhật: 6 Tháng Năm 2016 (2016.05.12).
+Lần cuối cập nhật: 17 Tháng Năm 2016 (2016.05.17).

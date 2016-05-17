@@ -630,10 +630,10 @@ Firma cotejando longitud limitando opciones. Sólo cambiarlos si sabes lo que es
 - "sd_siglen_max"
 
 "fail_silently"
-- Debe phpMussel informan cuando los firmas archivos están desaparecidos o dañados? Si fail_silently está desactivado, desaparecidos y dañados archivos será reportado cuando escaneando, y si fail_silently está activado, desaparecidos y dañados archivos será ignorado, con escaneando reportando para aquellos archivos que no hay cualquier problemas. Esto generalmente debe ser dejar sola a menos que usted está experimentando estrellarse o problemas similares. False = Desactivado; True = Activado [Predefinido].
+- Debe phpMussel informan cuando los firmas archivos están desaparecidos o dañados? Si `fail_silently` está desactivado, desaparecidos y dañados archivos será reportado cuando escaneando, y si `fail_silently` está activado, desaparecidos y dañados archivos será ignorado, con escaneando reportando para aquellos archivos que no hay cualquier problemas. Esto generalmente debe ser dejar sola a menos que usted está experimentando estrellarse o problemas similares. False = Desactivado; True = Activado [Predefinido].
 
 "fail_extensions_silently"
-- Debe phpMussel informan cuando extensiones están desaparecidos? Si fail_extensions_silently está desactivado, desaparecidos extensiones será reportado cuando escaneando, y si fail_extensions_silently está activado, desaparecidos extensiones será ignorado, with scanning reportando para aquellos archivos que no hay cualquier problemas. Desactivando esta directiva puede potencialmente aumentar su seguridad, pero también puede conducir a un aumento de falsos positivos. False = Desactivado; True = Activado [Predefinido].
+- Debe phpMussel informan cuando extensiones están desaparecidos? Si `fail_extensions_silently` está desactivado, desaparecidos extensiones será reportado cuando escaneando, y si `fail_extensions_silently` está activado, desaparecidos extensiones será ignorado, with scanning reportando para aquellos archivos que no hay cualquier problemas. Desactivando esta directiva puede potencialmente aumentar su seguridad, pero también puede conducir a un aumento de falsos positivos. False = Desactivado; True = Activado [Predefinido].
 
 "detect_adware"
 - Debe phpMussel utilizar firmas para detectar adware? False = No; True = Sí [Predefinido].
@@ -974,4 +974,4 @@ Esta información ha sido actualizado 27 Marzo 2016 y es a hoy para todas las ph
 ---
 
 
-Última Actualización: 6 Mayo 2016 (2016.05.06).
+Última Actualización: 16 Mayo 2016 (2016.05.16).
