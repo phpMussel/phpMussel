@@ -135,6 +135,26 @@ entries will be deleted when those goals have been achieved.
   times faster than they did before.
   Refer github.com/Maikuolan/phpMussel/issues/91
 
+- [2016.05.18-22; Major code change; Maikuolan]: Removed "compressor" as a
+  possible value for "$container". Completely rewrote the way that archives
+  are handled and processed by phpMussel (phpMussel will now attempt to parse
+  archives using in-built PHAR support prior to doing any further processing of
+  them; as a result, PHAR files are now supported by phpMussel). The code for
+  handling ZIP files has been removed in favour of simply using in-built PHAR
+  support, which also already supports ZIP files, TAR files and PHAR files (but
+  unfortunately, not recursively). The code for handling TAR files has been
+  heavily modified, but not removed (due to that this code could already handle
+  and process TAR files recursively; in-built PHAR support will be favoured for
+  handling these types of files, but the code for handling TAR files will be
+  used nonetheless when dealing with recursive TARs). Two new closures have
+  been added to the functions file [/vault/functions.php]; "BuildPharList" for
+  generating lists of the contents of files processed using the in-built PHAR
+  support, and "MetaDataScan", which will act as an intermediary wrapper for
+  the Data Handler whenever called from within the Recursor during the archive
+  scan phase. Some minor refactoring has occurred, removing some unrequired
+  error suppression and cleaning up duplicated code. Calls to "die" from within
+  closures have been removed in favour of using exceptions.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2016.05.11).
+ * This file: Dutch language data (last modified: 2016.05.20).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Ik begrijp niet dat bevel, sorry.';
@@ -51,6 +51,7 @@ $phpMussel['Config']['lang']['phpmussel_disabled_already'] = 'phpMussel al uitge
 $phpMussel['Config']['lang']['phpmussel_enabled'] = 'phpMussel ingeschakeld.';
 $phpMussel['Config']['lang']['phpmussel_enabled_already'] = 'phpMussel al ingeschakeld.';
 $phpMussel['Config']['lang']['plugins_directory_nonexistent'] = 'Plugins bestandsmap bestaat niet!';
+$phpMussel['Config']['lang']['quarantined_as'] = "In quarantaine geplaatst als \"/vault/quarantine/{QFU}.qfu\".\n";
 $phpMussel['Config']['lang']['recursive'] = 'Recursie dieptelimiet overschreden';
 $phpMussel['Config']['lang']['required_variables_not_defined'] = 'Vereiste variabelen zijn niet gedefinieerd: Kan niet doorgaan.';
 $phpMussel['Config']['lang']['SafeBrowseLookup_200'] = 'Potentieel schadelijke URL gedetecteerd';

@@ -11,9 +11,9 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.05.15).
+ * This file: Functions file (last modified: 2016.05.22).
  *
- * @todo Add support for PHAR, 7z, RAR (github.com/phpMussel/universe/issues/5).
+ * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
  * @todo Wish list: Icon parsing (github.com/Maikuolan/phpMussel/issues/5).
  * @todo Wish list: Certificate parsing (github.com/Maikuolan/phpMussel/issues/4).
@@ -25,9 +25,8 @@
  */
 
 /**
- * Used to register plugin functions to their intended hooks.
+ * Registers plugin functions to their intended hooks.
  *
- * @since v0.9.0
  * @param string $what The name of the chosen function to execute at the
  *      desired point in the script.
  * @param string $where Instructs the function which "hook" your chosen
@@ -73,7 +72,6 @@ $phpMussel['Register_Hook'] = function ($what, $where, $with = '') use (&$phpMus
  * language data and to parse any messages related to any detections found
  * during the scan process and any other related processes.
  *
- * @since v0.6j
  * @param array $v The input array.
  * @param string $b The input string.
  * @return string Results are returned directly to the calling scope as a
@@ -198,6 +196,8 @@ $phpMussel['prescan_decode'] = function ($str) use (&$phpMussel) {
  * Some simple obfuscation for potentially blocked functions; We need this to
  * avoid triggering false positives for some potentially overzealous
  * server-based security solutions.
+ *
+ * @todo Param description.
  */
 $phpMussel['Function'] = function ($n, $str = false) {
     $x = 'abcdefghilnorstxz12346_';
@@ -606,6 +606,29 @@ $phpMussel['ReadFile'] = function ($f, $s = 0, $c = false, $b = 128) {
 };
 
 /**
+ * A very simple wrapper for file() that checks for the existence of files
+ * before attempting to read them, in order to avoid warnings about
+ * non-existent files.
+ *
+ * @param string $Filename Refer to the description for file().
+ * @param int $Flags Refer to the description for file().
+ * @param array $Context Refer to the description for file().
+ * @return array|bool Same as with file(), but won't trigger warnings.
+ */
+$phpMussel['ReadFileAsArray'] = function ($Filename, $Flags = 0, $Context = false) {
+    if (!file_exists($Filename) || !is_readable($Filename)) {
+        return false;
+    }
+    if (!$Flags && !$Context) {
+        return file($Filename);
+    }
+    if (!$Context) {
+        return file($Filename, $Flags);
+    }
+    return file($Filename, $Flags, $Context);
+};
+
+/**
  * Deletes expired cache entries and regenerates cache files.
  */
 $phpMussel['CleanCache'] = function () use (&$phpMussel) {
@@ -659,7 +682,7 @@ $phpMussel['CleanCache'] = function () use (&$phpMussel) {
         $k = key($CacheFiles);
         if (strlen($CacheFiles[$k]) < 2) {
             if (file_exists($phpMussel['cachePath'] . $k . '.tmp')) {
-                @unlink($phpMussel['cachePath'] . $k . '.tmp');
+                unlink($phpMussel['cachePath'] . $k . '.tmp');
             }
         } else {
             $fh = fopen($phpMussel['cachePath'] . $k . '.tmp', 'w');
@@ -869,7 +892,7 @@ $phpMussel['MemoryUse'] = function ($p, $d = 0) use (&$phpMussel) {
                 } elseif (is_file($np)) {
                     $ns = filesize($np);
                     if ($t['d'] > 0 && substr_count($np . "\x01", ".qfu\x01") > 0) {
-                        @unlink($np);
+                        unlink($np);
                         $t['d'] -= $ns;
                     } else {
                         $t['s'] += $ns;
@@ -1394,16 +1417,16 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
         if ($response === '200') {
             /** Potentially harmful URL detected. */
             return 200;
-        } else if ($response === '204') {
+        } elseif ($response === '204') {
             /** Potentially harmful URL *NOT* detected. */
             return 204;
-        } else if ($response === '400') {
+        } elseif ($response === '400') {
             /** Bad/malformed request. */
             return 400;
-        } else if ($response === '401') {
+        } elseif ($response === '401') {
             /** Unauthorised (possibly a bad API key). */
             return 401;
-        } else if ($response === '503') {
+        } elseif ($response === '503') {
             /** Service unavailable. */
             return 503;
         } else {
@@ -1445,7 +1468,7 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
      * @todo: This was coded quick and dirty, and can be improved. Could possibly implement logging for this.
      */
     if (!$response) {
-        die(curl_error($request));
+        throw new \Exception(curl_error($request));
     }
 
     /** Close the cURL session. */
@@ -1474,16 +1497,16 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
     if ($response === '200') {
         /** Potentially harmful URL detected. */
         return 200;
-    } else if ($response === '204') {
+    } elseif ($response === '204') {
         /** Potentially harmful URL *NOT* detected. */
         return 204;
-    } else if ($response === '400') {
+    } elseif ($response === '400') {
         /** Bad/malformed request. */
         return 400;
-    } else if ($response === '401') {
+    } elseif ($response === '401') {
         /** Unauthorised (possibly a bad API key). */
         return 401;
-    } else if ($response === '503') {
+    } elseif ($response === '503') {
         /** Service unavailable. */
         return 503;
     } else {
@@ -1493,43 +1516,55 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
 };
 
 /**
- * The "data handler" is responsible for handling any data fed to it from the
- * "recursor". It shouldn't be called from any other contexts. It takes the
- * data given to it from the recursor and checks that data against the various
- * signatures of phpMussel, before returning the results of those checks back
- * to the recursor.
+ * @todo: phpDoc description here.
+ */
+$phpMussel['BuildPharList'] = function ($PharFile, $PharDepth = 0) use (&$phpMussel) {
+    $PharDepth++;
+    $Out = '';
+    $PharDir = scandir('phar://' . $PharFile);
+    $PharCount = count($PharDir);
+    for ($PharIter = 0; $PharIter < $PharCount; $PharIter++) {
+        if (is_dir('phar://' . $PharFile . '/' . $PharDir[$PharIter])) {
+            $PharDir[$PharIter] = $phpMussel['BuildPharList']($PharFile . '/' . $PharDir[$PharIter], $PharDepth);
+        } else {
+            $PharDir[$PharIter] = $PharDepth . ' ' . $PharFile . '/' . $PharDir[$PharIter];
+        }
+        $Out .= $PharDir[$PharIter] . "\n";
+    }
+    return $Out;
+};
+
+/**
+ * Responsible for handling any data fed to it from the recursor. It shouldn't
+ * be called manually nor from any other contexts. It takes the data given to
+ * it from the recursor and checks that data against the various signatures of
+ * phpMussel, before returning the results of those checks back to the
+ * recursor.
  *
- * @param string $str The raw binary data to be checked, supplied by the
- *      calling function (generally, the contents of files to being scanned).
- * @param bool $n Inherited from the calling function, this optional parameter
- *      is a boolean (defaults to false, but set to true during the initial
- *      scan of file uploads), indicating the format for returning the scan
- *      results. False instructs the function to return results as an integer;
- *      True instructs the function to return results as human readable text
- *      (refer to Section 3A of the README documentation, "HOW TO USE (FOR WEB
- *      SERVERS)", for more information).
+ * @param string $str Raw binary data to be checked, supplied by the parent
+ *      closure (generally, the contents of files to being scanned).
  * @param int $dpt Represents the current depth of recursion from which the
- *      function has been called. This information is used for determining how
- *      far to indent any entries generated for logging and for the display of
- *      scan results in CLI.
+ *      closure has been called, used for determining how far to indent any
+ *      entries generated for logging and for the display of scan results in
+ *      CLI.
  * @param string $ofn Represents the "original filename" of the file being
  *      scanned (the original filename, in this context, referring to the name
  *      of the file being scanned as per supplied by the upload client or CLI
  *      operator, as opposed to the temporary filename assigned by the server
  *      or any other filename).
- * @return int|string The scan results, as per described by the README
- *      documentation. The function may also die the script and return nothing,
- *      if something goes wrong, such as if the function is triggered in the
- *      absense of the required $phpMussel['memCache'] variable being set.
+ * @return array|bool Returns an array containing the results of the scan as
+ *      both an integer (the first element) and as human-readable text (the
+ *      second element), or returns false if any problems occur preventing the
+ *      data handler from completing its normal process.
  */
-$phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = '') use (&$phpMussel) {
+$phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$phpMussel) {
     /** If the memory cache isn't set at this point, something has gone very wrong. */
     if (!isset($phpMussel['memCache'])) {
-        echo
+        throw new \Exception(
             (!isset($phpMussel['Config']['lang']['required_variables_not_defined'])) ?
             '[phpMussel] Required variables aren\'t defined: Can\'t continue.' :
-            '[phpMussel] ' . $phpMussel['Config']['lang']['required_variables_not_defined'];
-        die;
+            '[phpMussel] ' . $phpMussel['Config']['lang']['required_variables_not_defined']
+        );
     }
 
     /** Identifies whether the scan target has been flagged for any reason yet. */
@@ -1538,22 +1573,19 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
     /** Increment scan depth. */
     $dpt++;
     /** Controls indenting relating to scan depth for normal logging and for CLI-mode scanning. */
-    for ($lnap = '', $i = 0; $i < ($dpt - 1); $i++) {
-        $lnap .= '-';
-    }
-    $lnap .= '> ';
+    $lnap = str_pad('> ', ($dpt + 1), '-', STR_PAD_LEFT);
 
     /** Output variable (for when the output is a string). */
     $out = '';
 
     /** There's no point bothering to scan zero-byte files. */
     if (!$str_len = strlen($str)) {
-        return 1;
+        return array(1, '');
     }
 
     $md5 = md5($str);
     $sha = sha1($str);
-    $crc = @hash('crc32b', $str);
+    $crc = hash('crc32b', $str);
     /** $fourcc: First four bytes of the scan target in hexadecimal notation. */
     $fourcc = strtolower(bin2hex(substr($str, 0, 4)));
     /** $twocc: First two bytes of the scan target in hexadecimal notation. */
@@ -1583,7 +1615,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
         $phpMussel['whyflagged'] .=
             $phpMussel['Config']['lang']['scan_missing_filename'] .
             $phpMussel['Config']['lang']['_exclamation'];
-        return (!$n) ? 2 : $out;
+        return array(2, $out);
     }
     /** URL-encoded version of the scan target name. */
     $ofnSafe = urlencode($ofn);
@@ -1601,9 +1633,9 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
             $phpMussel['whyflagged'] .= $phpMussel['Function']('HEX', $phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][3]);
         }
         if (!$out) {
-            return 1;
+            return array(1, '');
         }
-        return (!$n) ? 2 : $out;
+        return array(2, $out);
     }
 
     /** Indicates whether we're in CLI-mode. */
@@ -1845,7 +1877,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
     /** Worked by the switch file. */
     $fileswitch = 'unassigned';
     if (!isset($phpMussel['memCache']['switch.dat'])) {
-        $phpMussel['memCache']['switch.dat'] = @file($phpMussel['sigPath'] . 'switch.dat');
+        $phpMussel['memCache']['switch.dat'] = $phpMussel['ReadFileAsArray']($phpMussel['sigPath'] . 'switch.dat', FILE_IGNORE_NEW_LINES);
     }
     if (!$phpMussel['memCache']['switch.dat']) {
         $phpMussel['memCache']['scan_errors']++;
@@ -1856,9 +1888,10 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
             $phpMussel['whyflagged'] .=
                 $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                 ' (switch.dat)' . $phpMussel['Config']['lang']['_exclamation'];
-            return (!$n) ? -3 :
+            return array(-3,
                 $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                ' (switch.dat)' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                ' (switch.dat)' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+            );
         }
     }
     $c = count($phpMussel['memCache']['switch.dat']);
@@ -1872,16 +1905,16 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
         ) {
             continue;
         }
-        $Switch = @explode('=', preg_replace('/[^\x20-\xff]/', '', $phpMussel['substral']($xsig, ';')));
+        $Switch = explode('=', preg_replace('/[^\x20-\xff]/', '', $phpMussel['substral']($xsig, ';')));
         if (!strlen($Switch[0])) {
             continue;
         }
         $theSwitch = $Switch[0];
-        $xsig = @explode(';', $phpMussel['substrbl']($xsig, ';'));
+        $xsig = explode(';', $phpMussel['substrbl']($xsig, ';'));
         $sxc = count($xsig);
         if ($sxc > 0) {
             for ($sxi = 0; $sxi < $sxc; $sxi++) {
-                $xsig[$sxi] = @explode(':', $xsig[$sxi], 7);
+                $xsig[$sxi] = explode(':', $xsig[$sxi], 7);
                 if (!strlen($xsig[$sxi][0])) {
                     continue 2;
                 }
@@ -1901,7 +1934,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                     }
                     $lv_haystack = $$lv_haystack;
                     if ($climode) {
-                        $lv_haystack = $phpMussel['substral']($phpMussel['substral']($lv_haystack, "/"), "\\");
+                        $lv_haystack = $phpMussel['substral']($phpMussel['substral']($lv_haystack, '/'), "\\");
                     }
                     $lv_needle = (isset($xsig[$sxi][2])) ? $xsig[$sxi][2] : '';
                     $pos_A = (isset($xsig[$sxi][3])) ? $xsig[$sxi][3] : 0;
@@ -2084,7 +2117,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                     $PEArr['DoScan'] = false;
                     break;
                 }
-                $PEArr['Magic'] = @substr($str, $PEArr['Offset'], 2);
+                $PEArr['Magic'] = substr($str, $PEArr['Offset'], 2);
                 if ($PEArr['Magic']!=='PE') {
                     $PEArr['DoScan'] = false;
                     break;
@@ -3266,10 +3299,11 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
                         $phpMussel['Config']['lang']['_exclamation'];
-                    return (!$n) ? -3 :
+                    return array(-3,
                         $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
-                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                    );
                 }
             } else {
                 $xmatches = array('c' => substr_count($phpMussel['memCache'][$SigFile], $md5 . ':' . $str_len . ':'));
@@ -3286,7 +3320,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
             }
         } elseif ($SigData[$SigSet]['SigMode'] === 'filenames') {
             if (!isset($phpMussel['memCache'][$SigFile])) {
-                $phpMussel['memCache'][$SigFile] = @file($phpMussel['sigPath'] . $SigFile);
+                $phpMussel['memCache'][$SigFile] = $phpMussel['ReadFileAsArray']($phpMussel['sigPath'] . $SigFile, FILE_IGNORE_NEW_LINES);
             }
             if (!$phpMussel['memCache'][$SigFile]) {
                 $phpMussel['memCache']['scan_errors']++;
@@ -3298,10 +3332,11 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
                         $phpMussel['Config']['lang']['_exclamation'];
-                    return (!$n) ? -3 :
+                    return array(-3,
                         $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
-                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                    );
                 }
             $c = 0;
             } else {
@@ -3381,8 +3416,8 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                     continue;
                 }
                 if (substr_count($xsig, ':') > 0) {
-                    $vn = @explode(':', $xsig);
-                    $xsig = @preg_split('/[\x00-\x1f]+/', $vn[1], -1, PREG_SPLIT_NO_EMPTY);
+                    $vn = explode(':', $xsig);
+                    $xsig = preg_split('/[\x00-\x1f]+/', $vn[1], -1, PREG_SPLIT_NO_EMPTY);
                     $xsig = ($xsig === false ? '' : $phpMussel['rxPrep'](implode('', $xsig)));
                     $xlen = strlen($xsig);
                     if (
@@ -3442,10 +3477,11 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
                         $phpMussel['Config']['lang']['_exclamation'];
-                    return (!$n) ? -3 :
+                    return array(-3,
                         $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
-                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                    );
                 }
             } else {
                 if (substr_count($phpMussel['memCache'][$SigFile], $md5 . ':' . $str_len . ':')) {
@@ -3520,9 +3556,10 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                     $phpMussel['whyflagged'] .=
                         $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                    return (!$n) ? -3 :
+                    return array(-3,
                         $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                        ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                        ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                    );
                 }
             } else {
                 for ($PEArr['k'] = 0; $PEArr['k'] < $NumOfSections; $PEArr['k']++) {
@@ -3568,9 +3605,10 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                     $phpMussel['whyflagged'] .=
                         $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                    return (!$n) ? -3 :
+                    return array(-3,
                         $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                        ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                        ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                    );
                 }
             } else {
                 for ($PEArr['PEMDI'] = 0; $PEArr['PEMDI'] < $PEArr['FINDX']; $PEArr['PEMDI']++) {
@@ -3623,7 +3661,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
             $DataMode = (empty($DataB) || empty($$DataB));
             while (true) {
                 if (!isset($phpMussel['memCache'][$SigMap])) {
-                    $phpMussel['memCache'][$SigMap] = @file($phpMussel['sigPath'] . $SigMap);
+                    $phpMussel['memCache'][$SigMap] = $phpMussel['ReadFileAsArray']($phpMussel['sigPath'] . $SigMap, FILE_IGNORE_NEW_LINES);
                 }
                 if (!$phpMussel['memCache'][$SigMap]) {
                     $phpMussel['memCache']['scan_errors']++;
@@ -3634,14 +3672,15 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         $phpMussel['whyflagged'] .=
                             $phpMussel['Config']['lang']['scan_map_missing'] .
                             ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                        return (!$n) ? -3 :
+                        return array(-3,
                             $lnap . $phpMussel['Config']['lang']['scan_map_missing'] .
-                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        );
                     }
                     break;
                 }
                 if (!isset($phpMussel['memCache'][$SigFile])) {
-                    $phpMussel['memCache'][$SigFile] = @file($phpMussel['sigPath'] . $SigFile);
+                    $phpMussel['memCache'][$SigFile] = $phpMussel['ReadFileAsArray']($phpMussel['sigPath'] . $SigFile, FILE_IGNORE_NEW_LINES);
                 }
                 if (!$phpMussel['memCache'][$SigFile]) {
                     $phpMussel['memCache']['scan_errors']++;
@@ -3652,9 +3691,10 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         $phpMussel['whyflagged'] .=
                             $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                             ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                        return (!$n) ? -3 :
+                        return array(-3,
                             $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        );
                     }
                     break;
                 }
@@ -3668,9 +3708,10 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         $phpMussel['whyflagged'] .=
                             $phpMussel['Config']['lang']['scan_map_corrupted'] .
                             ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                        return (!$n) ? -3 :
+                        return array(-3,
                             $lnap . $phpMussel['Config']['lang']['scan_map_corrupted'] .
-                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        );
                     }
                     break;
                 }
@@ -3758,8 +3799,8 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         for ($xind = $map[1]; $xind < ($map[2] + 1); $xind++) {
                             $xsig = $phpMussel['memCache'][$SigFile][$xind];
                             if (substr_count($xsig, ':')) {
-                                $vn = @explode(':', $xsig);
-                                $xsig = @preg_split('/[\x00-\x1f]+/', $vn[1], -1, PREG_SPLIT_NO_EMPTY);
+                                $vn = explode(':', $xsig);
+                                $xsig = preg_split('/[\x00-\x1f]+/', $vn[1], -1, PREG_SPLIT_NO_EMPTY);
                                 $xsig = ($xsig === false ? '' : $phpMussel['rxPrep'](implode('', $xsig)));
                                 $xlen = strlen($xsig);
                                 if (
@@ -3907,7 +3948,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
             $DataMode = (empty($DataB) || empty($$DataB));
             while (true) {
                 if (!isset($phpMussel['memCache'][$SigMap])) {
-                    $phpMussel['memCache'][$SigMap] = @file($phpMussel['sigPath'] . $SigMap);
+                    $phpMussel['memCache'][$SigMap] = $phpMussel['ReadFileAsArray']($phpMussel['sigPath'] . $SigMap, FILE_IGNORE_NEW_LINES);
                 }
                 if (!$phpMussel['memCache'][$SigMap]) {
                     $phpMussel['memCache']['scan_errors']++;
@@ -3918,14 +3959,15 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         $phpMussel['whyflagged'] .=
                             $phpMussel['Config']['lang']['scan_map_missing'] .
                             ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                        return (!$n) ? -3 :
+                        return array(-3,
                             $lnap . $phpMussel['Config']['lang']['scan_map_missing'] .
-                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        );
                     }
                     break;
                 }
                 if (!isset($phpMussel['memCache'][$SigFile])) {
-                    $phpMussel['memCache'][$SigFile] = @file($phpMussel['sigPath'] . $SigFile);
+                    $phpMussel['memCache'][$SigFile] = $phpMussel['ReadFileAsArray']($phpMussel['sigPath'] . $SigFile, FILE_IGNORE_NEW_LINES);
                 }
                 if (!$phpMussel['memCache'][$SigFile]) {
                     $phpMussel['memCache']['scan_errors']++;
@@ -3936,9 +3978,10 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         $phpMussel['whyflagged'] .=
                             $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                             ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                        return (!$n) ? -3 :
+                        return array(-3,
                             $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        );
                     }
                     break;
                 }
@@ -3952,9 +3995,10 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         $phpMussel['whyflagged'] .=
                             $phpMussel['Config']['lang']['scan_map_corrupted'] .
                             ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                        return (!$n) ? -3 :
+                        return array(-3,
                             $lnap . $phpMussel['Config']['lang']['scan_map_corrupted'] .
-                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        );
                     }
                     break;
                 }
@@ -4042,8 +4086,8 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         for ($xind = $map[1]; $xind < ($map[2] + 1); $xind++) {
                             $xsig = $phpMussel['memCache'][$SigFile][$xind];
                             if (substr_count($xsig, ':')) {
-                                $vn = @explode(':', $xsig);
-                                $xsig = @preg_split('/[^a-fA-F0-9>]+/i', $vn[1], -1, PREG_SPLIT_NO_EMPTY);
+                                $vn = explode(':', $xsig);
+                                $xsig = preg_split('/[^a-fA-F0-9>]+/i', $vn[1], -1, PREG_SPLIT_NO_EMPTY);
                                 $xsig = ($xsig === false ? '' : implode('', $xsig));
                                 $xlen = strlen($xsig);
                                 if (
@@ -4177,7 +4221,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
             $DataMode = (empty($DataB) || empty($$DataB));
             while (true) {
                 if (!isset($phpMussel['memCache'][$SigFile])) {
-                    $phpMussel['memCache'][$SigFile] = @file($phpMussel['sigPath'] . $SigFile);
+                    $phpMussel['memCache'][$SigFile] = $phpMussel['ReadFileAsArray']($phpMussel['sigPath'] . $SigFile, FILE_IGNORE_NEW_LINES);
                 }
                 if (!$phpMussel['memCache'][$SigFile]) {
                     $phpMussel['memCache']['scan_errors']++;
@@ -4188,9 +4232,10 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         $phpMussel['whyflagged'] .=
                             $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                             ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                        return (!$n) ? -3 :
+                        return array(-3,
                             $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        );
                     }
                     break;
                 }
@@ -4269,8 +4314,8 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         continue;
                     }
                     if (substr_count($xsig, ':')) {
-                        $vn = @explode(':', $xsig);
-                        $xsig = @preg_split('/[\x00-\x1f]+/', $vn[1], -1, PREG_SPLIT_NO_EMPTY);
+                        $vn = explode(':', $xsig);
+                        $xsig = preg_split('/[\x00-\x1f]+/', $vn[1], -1, PREG_SPLIT_NO_EMPTY);
                         $xsig = ($xsig === false ? '' : $phpMussel['rxPrep'](implode('', $xsig)));
                         $xlen = strlen($xsig);
                         if (
@@ -4439,7 +4484,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
             $DataMode = (empty($DataB) || empty($$DataB));
             while (true) {
                 if (!isset($phpMussel['memCache'][$SigFile])) {
-                    $phpMussel['memCache'][$SigFile] = @file($phpMussel['sigPath'] . $SigFile);
+                    $phpMussel['memCache'][$SigFile] = $phpMussel['ReadFileAsArray']($phpMussel['sigPath'] . $SigFile, FILE_IGNORE_NEW_LINES);
                 }
                 if (!$phpMussel['memCache'][$SigFile]) {
                     $phpMussel['memCache']['scan_errors']++;
@@ -4450,9 +4495,10 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         $phpMussel['whyflagged'] .=
                             $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                             ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                        return (!$n) ? -3 :
+                        return array(-3,
                             $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        );
                     }
                     break;
                 }
@@ -4534,8 +4580,8 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         continue;
                     }
                     if (substr_count($xsig, ':')) {
-                        $vn = @explode(':', $xsig);
-                        $xsig = @preg_split('/[^a-fA-F0-9>]+/i', $vn[1], -1, PREG_SPLIT_NO_EMPTY);
+                        $vn = explode(':', $xsig);
+                        $xsig = preg_split('/[^a-fA-F0-9>]+/i', $vn[1], -1, PREG_SPLIT_NO_EMPTY);
                         $xsig = ($xsig === false ? '' : implode('', $xsig));
                         $xlen = strlen($xsig);
                         if (
@@ -4698,10 +4744,11 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
                         $phpMussel['Config']['lang']['_exclamation'];
-                    return (!$n) ? -3 :
+                    return array(-3,
                         $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
-                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                    );
                 }
             } else {
                 $urlscanner = array();
@@ -5147,7 +5194,11 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                             }
                             break;
                         }
-                        $urlscanner['SafeBrowseLookup'] = $phpMussel['SafeBrowseLookup']($urlscanner['urls_chunked'][$i]);
+                        try {
+                            $urlscanner['SafeBrowseLookup'] = $phpMussel['SafeBrowseLookup']($urlscanner['urls_chunked'][$i]);
+                        } catch (\Exception $e) {
+                            throw new \Exception($e->getMessage());
+                        }
                         if ($urlscanner['SafeBrowseLookup'] !== 204) {
                             if (!$flagged) {
                                 $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
@@ -5180,10 +5231,11 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                         $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
                         $phpMussel['Config']['lang']['_exclamation'];
-                    return (!$n) ? -3 :
+                    return array(-3,
                         $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
-                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                    );
                 }
             } else {
                 $coexi = 0;
@@ -5332,7 +5384,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                                         }
                                         $lv_haystack = $$lv_haystack;
                                         if ($climode) {
-                                            $lv_haystack = $phpMussel['substral']($phpMussel['substral']($lv_haystack, "/"), "\\");
+                                            $lv_haystack = $phpMussel['substral']($phpMussel['substral']($lv_haystack, '/'), "\\");
                                         }
                                         $lv_needle = (isset($xsig[$xi][$sxi][2])) ? $xsig[$xi][$sxi][2] : '';
                                         $pos_A = (isset($xsig[$xi][$sxi][3])) ? $xsig[$xi][$sxi][3] : 0;
@@ -5961,7 +6013,7 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
         while (true) {
             if (!isset($phpMussel['memCache']['hex_general_commands.csv'])) {
                 $phpMussel['memCache']['hex_general_commands.csv'] =
-                    @explode(',', $phpMussel['ReadFile']($phpMussel['sigPath'] . 'hex_general_commands.csv'));
+                    explode(',', $phpMussel['ReadFile']($phpMussel['sigPath'] . 'hex_general_commands.csv'));
             }
             if (!$phpMussel['memCache']['hex_general_commands.csv']) {
                 $phpMussel['memCache']['scan_errors']++;
@@ -5972,9 +6024,10 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                     $phpMussel['whyflagged'] .=
                         $phpMussel['Config']['lang']['scan_signature_file_missing'] .
                         ' (hex_general_commands.csv)' . $phpMussel['Config']['lang']['_exclamation'];
-                    return (!$n) ? -3 :
+                    return array(-3,
                         $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                        ' (hex_general_commands.csv)' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                        ' (hex_general_commands.csv)' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                    );
                 }
                 break;
             }
@@ -5988,9 +6041,10 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
                     $phpMussel['whyflagged'] .=
                         $phpMussel['Config']['lang']['scan_signature_file_corrupted'] .
                         ' (hex_general_commands.csv)' . $phpMussel['Config']['lang']['_exclamation'];
-                    return (!$n) ? -3 :
+                    return array(-3,
                         $lnap . $phpMussel['Config']['lang']['scan_signature_file_corrupted'] .
-                        ' (hex_general_commands.csv)' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                        ' (hex_general_commands.csv)' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                    );
                 }
                 break;
             }
@@ -6262,33 +6316,204 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
     }
 
     if (!$out) {
-        return 1;
+        return array(1, '');
     }
 
-    if (
-        $phpMussel['Config']['general']['quarantine_key'] &&
-        !$phpMussel['Config']['general']['honeypot_mode']
-    ) {
-        if ($str_len < ($phpMussel['Config']['general']['quarantine_max_filesize'] * 1024)) {
-            $qfu = $phpMussel['time'] . '-' . md5($phpMussel['Config']['general']['quarantine_key'] . $crc . $phpMussel['time']);
-            $phpMussel['Quarantine']($str, $phpMussel['Config']['general']['quarantine_key'], $_SERVER[$phpMussel['Config']['general']['ipaddr']], $qfu);
-            $phpMussel['killdata'] .= 'Quarantined as "/vault/quarantine/' . $qfu . '.qfu".' . "\n";
-        }
-    }
-
-    return (!$n) ? 2 : $out;
+    return array(2, $out);
 };
 
 /**
- * The "recursor" is responsible for "recursing" through any files given to it
- * to be scanned, which may be necessary for the case of archives and
- * directories. It handles metadata signatures and non-signature-based
- * detections, and performs the preparations necessary for scanning files using
- * the "data handler". Additionally, it performs all necessary whitelist,
- * blacklist and greylist checks, filesize and file extension checks, and
- * handles the processing and extraction of files from archives, fetching the
- * files contained in archives being scanned in order to process those
- * contained files as so that they, too, may be scanned.
+ * @todo: phpDoc description here.
+ */
+$phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap, $r, $x) use (&$phpMussel) {
+    if (!$Filesize = strlen($Data)) {
+        return array($r, $x);
+    }
+    $ItemRefSafe = urlencode($ItemRef);
+    $MD5 = md5($Data);
+    if (
+        $phpMussel['Config']['files']['filesize_archives'] &&
+        $phpMussel['Config']['files']['filesize_limit'] > 0 &&
+        $Filesize > ($phpMussel['Config']['files']['filesize_limit'] * 1024)
+    ) {
+        if (!$phpMussel['Config']['files']['filesize_response']) {
+            $x .=
+                $lnap . $phpMussel['Config']['lang']['ok'] . ' (' .
+                $phpMussel['Config']['lang']['filesize_limit_exceeded'] . ").\n";
+            return array($r, $x);
+        }
+        $r = 2;
+        $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
+        $phpMussel['whyflagged'] .=
+            $phpMussel['Config']['lang']['filesize_limit_exceeded'] .
+            ' (' . $ItemRefSafe . ')' .
+            $phpMussel['Config']['lang']['_exclamation'];
+        $x .=
+            $lnap . $phpMussel['Config']['lang']['filesize_limit_exceeded'] .
+            $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+        return array($r, $x);
+    }
+    if (
+        substr($Filename, 0, 1) === '.' ||
+        substr($Filename, -1) === '.'
+    ) {
+        $r = 2;
+        $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
+        $phpMussel['whyflagged'] .=
+            $phpMussel['Config']['lang']['scan_filename_manipulation_detected'] .
+            ' (' . $ItemRefSafe . ')' .
+            $phpMussel['Config']['lang']['_exclamation'];
+        $x .=
+            $lnap . $phpMussel['Config']['lang']['scan_filename_manipulation_detected'] .
+            $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+        return array($r, $x);
+    }
+    if ($phpMussel['Config']['files']['filetype_archives']) {
+        $decPos = strrpos($Filename, '.');
+        $ofnLen = strlen($Filename);
+        if ($decPos === false || $decPos === ($ofnLen - 1)) {
+            $xts = $xt = '-';
+        } else {
+            $xt = strtolower(substr($Filename, ($decPos + 1)));
+            $xts = substr($xt, 0, 3) . '*';
+        }
+        if (
+            substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $xt . ',') ||
+            substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $xts . ',')
+        ) {
+            $x .= $lnap . $phpMussel['Config']['lang']['scan_no_problems_found'] . "\n";
+            return array($r, $x);
+        }
+        if (
+            substr_count(',' . $phpMussel['Config']['files']['filetype_blacklist'] . ',', ',' . $xt . ',') ||
+            substr_count(',' . $phpMussel['Config']['files']['filetype_blacklist'] . ',', ',' . $xts . ',')
+        ) {
+            $r = 2;
+            $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
+            $phpMussel['whyflagged'] .=
+                $phpMussel['Config']['lang']['filetype_blacklisted'] .
+                ' (' . $ItemRefSafe . ')' .
+                $phpMussel['Config']['lang']['_exclamation'];
+            $x .=
+                $lnap . $phpMussel['Config']['lang']['filetype_blacklisted'] .
+                $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+            return array($r, $x);
+        }
+        if (
+            $phpMussel['Config']['files']['filetype_greylist'] &&
+            !substr_count(',' . $phpMussel['Config']['files']['filetype_greylist'] . ',', ',' . $xt . ',') &&
+            !substr_count(',' . $phpMussel['Config']['files']['filetype_greylist'] . ',', ',' . $xts . ',')
+        ) {
+            $r = 2;
+            $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
+            $phpMussel['whyflagged'] .=
+                $phpMussel['Config']['lang']['filetype_blacklisted'] .
+                ' (' . $ItemRefSafe . ')' .
+                $phpMussel['Config']['lang']['_exclamation'];
+            $x .=
+                $lnap . $phpMussel['Config']['lang']['filetype_blacklisted'] .
+                $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+            return array($r, $x);
+        }
+    }
+    $phpMussel['memCache']['objects_scanned']++;
+    try {
+        $Scan = $phpMussel['DataHandler']($Data, $Depth, $Filename);
+    } catch (\Exception $e) {
+        throw new \Exception($e->getMessage());
+    }
+    if ($Scan[0] !== 1) {
+        return array($Scan[0], $x . $Scan[1]);
+    }
+    $CRC32 = hash('crc32b', $Data);
+    for ($i = 0; $i < $phpMussel['MetaCount']; $i++) {
+        $MetaConfig = $phpMussel['MetaSigArray'][$i]['Config'];
+        if (!$phpMussel['Config']['signatures'][$MetaConfig]) {
+            continue;
+        }
+        $MetaSigFile = $phpMussel['MetaSigArray'][$i]['SigFile'];
+        if (!isset($phpMussel['memCache'][$MetaSigFile])) {
+            $phpMussel['memCache'][$MetaSigFile] =
+                $phpMussel['ReadFileAsArray']($phpMussel['sigPath'] . $MetaSigFile, FILE_IGNORE_NEW_LINES);
+        }
+        if (!$phpMussel['memCache'][$MetaSigFile]) {
+            $SigCount = 0;
+            if ($r !== 2) {
+                $r = -3;
+            }
+            $phpMussel['memCache']['scan_errors']++;
+            if (!$phpMussel['Config']['signatures']['fail_silently']) {
+                $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
+                $phpMussel['whyflagged'] .=
+                    $phpMussel['Config']['lang']['scan_signature_file_missing'] .
+                    ' (' . $MetaSigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
+            }
+            $x .=
+                '-' . $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
+                ' (' . $MetaSigFile . ')' .
+                $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+        } else {
+            $SigCount = count($phpMussel['memCache'][$MetaSigFile]);
+            if ($SigCount < 1) {
+                if ($r !== 2) {
+                    $r = -3;
+                }
+                $phpMussel['memCache']['scan_errors']++;
+                if (!$phpMussel['Config']['signatures']['fail_silently']) {
+                    $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
+                    $phpMussel['whyflagged'] .=
+                        $phpMussel['Config']['lang']['scan_signature_file_corrupted'] .
+                        ' (' . $MetaSigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                }
+                $x .=
+                    '-' . $lnap . $phpMussel['Config']['lang']['scan_signature_file_corrupted'] .
+                    ' (' . $MetaSigFile . ')' .
+                    $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+            }
+        }
+        if ($SigCount > 0) {
+            for ($SigIndex = 0; $SigIndex < $SigCount; $SigIndex++) {
+                $Signature = explode(':', $phpMussel['memCache'][$MetaSigFile][$SigIndex]);
+                $Signature[0] = $phpMussel['vn_shorthand']($Signature[0]);
+                if (!isset($Signature[1])) {
+                    $Signature[1] = 0;
+                }
+                $Signature[2] = (!isset($Signature[2])) ? '' : preg_replace('/[^a-z0-9]/', '', $Signature[2]);
+                if (
+                    !substr_count($phpMussel['memCache']['greylist'], ',' . $Signature[0] . ',') &&
+                    !$phpMussel['memCache']['ignoreme'] &&
+                    $Signature[0] &&
+                    $Signature[1] &&
+                    $Signature[2] &&
+                    $Signature[1] == $Filesize &&
+                    $Signature[2] == $CRC32
+                ) {
+                    $r = 2;
+                    $x .= '-' . $lnap . $phpMussel['ParseVars'](
+                        array('vn' => $Signature[0]),
+                        $phpMussel['Config']['lang']['detected']
+                    ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
+                    $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
+                        array('vn' => $Signature[0]),
+                        $phpMussel['Config']['lang']['detected']
+                    ) . ' (' . $ItemRefSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                }
+            }
+        }
+    }
+    return array($r, $x);
+};
+
+/**
+ * Responsible for recursing through any files given to it to be scanned, which
+ * may be necessary for the case of archives and directories. It performs the
+ * preparations necessary for scanning files using the "data handler" and the
+ * "meta data scan" closures. Additionally, it performs some necessary
+ * whitelist, blacklist and greylist checks, filesize and file extension
+ * checks, and handles the processing and extraction of files from archives,
+ * fetching the files contained in archives being scanned in order to process
+ * those contained files as so that they, too, may be scanned.
  *
  * When phpMussel is instructed to scan a directory or an array of multiple
  * files, the recursor is the closure function responsible for iterating
@@ -6346,11 +6571,11 @@ $phpMussel['DataHandler'] = function ($str = '', $n = false, $dpt = 0, $ofn = ''
  */
 $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn = '') use (&$phpMussel) {
     if (!isset($phpMussel['memCache'])) {
-        echo
+        throw new \Exception(
             (!isset($phpMussel['Config']['lang']['required_variables_not_defined'])) ?
             '[phpMussel] Required variables aren\'t defined: Can\'t continue.' :
-            '[phpMussel] ' . $phpMussel['Config']['lang']['required_variables_not_defined'];
-        die;
+            '[phpMussel] ' . $phpMussel['Config']['lang']['required_variables_not_defined']
+        );
     }
     if ($phpMussel['EOF']) {
         $phpMussel['whyflagged'] =
@@ -6386,16 +6611,25 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['memCache']['scan_errors'] = 0;
         }
     }
+
+    /** Increment scan depth. */
     $dpt++;
-    for ($lnap = '', $i = 0; $i < ($dpt - 1); $i++) {
-        $lnap .= '-';
-    }
-    $lnap .= '> ';
+    /** Controls indenting relating to scan depth for normal logging and for CLI-mode scanning. */
+    $lnap = str_pad('> ', ($dpt + 1), '-', STR_PAD_LEFT);
+
+    /**
+     * If the scan target is an array, iterate through the array and recurse
+     * the recursor with each array element.
+     */
     if (is_array($f)) {
         $k = key($f);
         $c = count($f);
         for ($i = 0; $i < $c; $i++) {
-            $f[$k] = $phpMussel['Recursor']($f[$k], $n, false, $dpt, $f[$k]);
+            try {
+                $f[$k] = $phpMussel['Recursor']($f[$k], $n, false, $dpt, $f[$k]);
+            } catch (\Exception $e) {
+                throw new \Exception($e->getMessage());
+            }
             next($f);
         }
         if ($n && $zz) {
@@ -6403,10 +6637,16 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         }
         return $f;
     }
+
     $ofn = @$phpMussel['prescan_decode']($ofn);
     $ofnSafe = urlencode($ofn);
-    if ($d = is_dir($f)) {
-        if (!$d = @scandir($f)) {
+
+    /**
+     * If the scan target is a directory, iterate through the directory
+     * contents and recurse the recursor with these contents.
+     */
+    if (is_dir($f)) {
+        if (!is_readable($f) || !$d = scandir($f)) {
             $phpMussel['memCache']['scan_errors']++;
             return (!$n) ? 0 :
                 $lnap . $phpMussel['Config']['lang']['failed_to_access'] . '\'' . $ofn . '\'' .
@@ -6418,17 +6658,31 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 unset($d[$i]);
                 continue;
             }
-            $d[$i] = $phpMussel['Recursor']($f . '/' . $d[$i], $n, false, $dpt, $d[$i]);
+            try {
+                $d[$i] = $phpMussel['Recursor']($f . '/' . $d[$i], $n, false, $dpt, $d[$i]);
+            } catch (\Exception $e) {
+                throw new \Exception($e->getMessage());
+            }
         }
         if ($n && $zz) {
             return $phpMussel['implode_md']($d);
         }
         return $d;
     }
+
+    /** Increment our scanned files/objects tally. */
     $phpMussel['memCache']['objects_scanned']++;
+    /** Define file phase. */
     $phpMussel['memCache']['phase'] = 'file';
+    /**
+     * Indicates whether the file/object being scanned is a part of a
+     * container (eg, an OLE object, ZIP file, TAR, PHAR, etc).
+     */
     $phpMussel['memCache']['container'] = 'none';
+    /** Indicates whether the file/object being scanned is an OLE object. */
     $phpMussel['memCache']['file_is_ole'] = false;
+
+    /** Fetch the greylist if it hasn't already been fetched. */
     if (!isset($phpMussel['memCache']['greylist'])) {
         if (!file_exists($phpMussel['vault'] . 'greylist.csv')) {
             $phpMussel['memCache']['greylist'] = ',';
@@ -6501,8 +6755,10 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         $phpMussel['MusselPlugins']['tempdata'] = array();
     }
 
-    $d = @is_file($f);
-    $fnCRC = @hash('crc32b', $ofn);
+    $d = is_file($f);
+    $fnCRC = hash('crc32b', $ofn);
+
+    /** Kill it here if the scan target isn't a valid file. */
     if (!$d || !$f) {
         return (!$n) ? 0 :
             $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn .
@@ -6510,6 +6766,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['Config']['lang']['invalid_file'] .
             $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
     }
+
     $fS = filesize($f);
     if ($phpMussel['Config']['files']['filesize_limit'] > 0) {
         if ($fS > ($phpMussel['Config']['files']['filesize_limit'] * 1024)) {
@@ -6522,7 +6779,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 $phpMussel['Config']['lang']['filesize_limit_exceeded'] .
                 ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
             if ($phpMussel['Config']['general']['delete_on_sight']) {
-                @unlink($f);
+                unlink($f);
             }
             return (!$n) ? 2 :
                 $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn .
@@ -6538,7 +6795,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['Config']['lang']['scan_filename_manipulation_detected'] .
             ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
         if ($phpMussel['Config']['general']['delete_on_sight']) {
-            @unlink($f);
+            unlink($f);
         }
         return (!$n) ? 2 :
             $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn .
@@ -6587,7 +6844,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['Config']['lang']['filetype_blacklisted'] .
             ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
         if ($phpMussel['Config']['general']['delete_on_sight']) {
-            @unlink($f);
+            unlink($f);
         }
         return (!$n) ? 2 :
             $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' .
@@ -6608,7 +6865,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['Config']['lang']['filetype_blacklisted'] .
             ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
         if ($phpMussel['Config']['general']['delete_on_sight']) {
-            @unlink($f);
+            unlink($f);
         }
         return (!$n) ? 2 :
             $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' .
@@ -6623,7 +6880,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['Config']['attack_specific']['scannable_threshold'] * 1024 :
             $fS,
         true);
-    $fdCRC = @hash('crc32b', $in);
+    $fdCRC = hash('crc32b', $in);
     if ($in && $phpMussel['Config']['compatibility']['only_allow_images']) {
         $is_img = (
             substr_count(
@@ -6652,7 +6909,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 $phpMussel['Config']['lang']['only_allow_images'] .
                 ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
             if ($phpMussel['Config']['general']['delete_on_sight']) {
-                @unlink($f);
+                unlink($f);
             }
             return (!$n) ? 2 :
                 $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' .
@@ -6661,34 +6918,68 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
         }
     }
-    $z = $phpMussel['DataHandler']($in, $n, $dpt, $ofn);
-    if ($z !== 1) {
-        if ($phpMussel['Config']['general']['delete_on_sight']) {
-            @unlink($f);
+
+    /** Send the file/object being scanned to the data handler. */
+    try {
+        $z = $phpMussel['DataHandler']($in, $dpt, $ofn);
+    } catch (\Exception $e) {
+        throw new \Exception($e->getMessage());
+    }
+    /** Executed if there were any problems or anything detected: */
+    if ($z[0] !== 1) {
+        if ($z[0] === 2) {
+            if (
+                $phpMussel['Config']['general']['quarantine_key'] &&
+                !$phpMussel['Config']['general']['honeypot_mode'] &&
+                (strlen($in) < ($phpMussel['Config']['general']['quarantine_max_filesize'] * 1024))
+            ) {
+                $qfu =
+                    $phpMussel['time'] .
+                    '-' .
+                    md5($phpMussel['Config']['general']['quarantine_key'] . $fdCRC . $phpMussel['time']);
+                $phpMussel['Quarantine'](
+                    $in,
+                    $phpMussel['Config']['general']['quarantine_key'],
+                    $_SERVER[$phpMussel['Config']['general']['ipaddr']],
+                    $qfu
+                );
+                $phpMussel['killdata'] .=
+                    $phpMussel['ParseVars'](array('QFU' => $qfu), $phpMussel['Config']['lang']['quarantined_as']);
+            }
         }
-        return (!$n) ? $z :
+        if ($phpMussel['Config']['general']['delete_on_sight']) {
+            unlink($f);
+        }
+        return (!$n) ? $z[0] :
             $lnap . $phpMussel['Config']['lang']['scan_checking'] .
             ' \'' . $ofn . '\' (FN: ' . $fnCRC . '; FD: ' . $fdCRC . "):\n" .
-            $z;
+            $z[1];
     }
+
     $x =
         $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' .
-        $ofn . '\' (FN: ' . $fnCRC . '; FD: ' . $fdCRC . "):\n-" .
-        $lnap . $phpMussel['Config']['lang']['scan_no_problems_found'] . "\n";
+        $ofn . '\' (FN: ' . $fnCRC . '; FD: ' . $fdCRC . "):\n-" . $lnap .
+        $phpMussel['Config']['lang']['scan_no_problems_found'] . "\n";
     $r = 1;
+
+    /**
+     * Begin archive phase.
+     * Note: Archive phase will only occur when "check_archives" is enabled and
+     * when no problems were detected with the file/object being scanned by
+     * this stage of the scan.
+     */
     if (
         $phpMussel['Config']['files']['check_archives'] &&
         !empty($in) &&
         $phpMussel['Config']['files']['max_recursion'] > 1
     ) {
+        /** Define archive phase. */
         $phpMussel['memCache']['phase'] = 'archive';
-        $depth = 0;
-        $eN = $ofn;
-        $eNSafe = urlencode($eN);
-        $eS = strlen($in);
-        $zCRC = @hash('crc32b', $in);
-        $lnap = '-' . $lnap;
-        $MetaSigArray = array(
+        /**
+         * $phpMussel['MetaSigArray'] tells phpMussel which signature files to use for
+         * archive metadata scanning.
+         */
+        $phpMussel['MetaSigArray'] = array(
             array(
                 'Config' => 'metadata_clamav',
                 'SigFile' => 'metadata_clamav.cvd',
@@ -6702,1024 +6993,568 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 'SigFile' => 'metadata_mussel.cvd',
             )
         );
-        $MetaCnt = count($MetaSigArray);
-        while (true) {
-            if ($depth > $phpMussel['Config']['files']['max_recursion']) {
-                $r = 2;
-                $phpMussel['killdata'] .= md5($in) . ':' . $eS . ':' . $ofn . '>' . $eN . "\n";
-                $phpMussel['whyflagged'] .=
-                    $phpMussel['Config']['lang']['recursive'] .
-                    ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                $x .=
-                    $lnap . $phpMussel['Config']['lang']['scan_checking'] .
-                    ' \'' . $ofn . '\' > \'' . $eN . '\' (FD: ' . $zCRC . "):\n-" .
-                    $lnap . $phpMussel['Config']['lang']['recursive'] .
-                    $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
-                break;
+        $phpMussel['MetaCount'] = count($phpMussel['MetaSigArray']);
+
+        /** Reset container definition. */
+        $phpMussel['memCache']['container'] = 'none';
+        /** Set appropriate container definitions. */
+        if (substr($in, 0, 2) === 'PK') {
+            if ($xt === 'ole') {
+                $PharType = 'OLE';
+            } elseif ($xt === 'smpk') {
+                $PharType = 'SMPTE';
+            } elseif ($xt === 'xpi') {
+                $PharType = 'XPInstall';
+            } elseif ($xts === 'app*') {
+                $PharType = 'App';
+            } elseif (substr_count(
+                ',docm,docx,dotm,dotx,potm,potx,ppam,ppsm,ppsx,pptm,pptx,xlam,xlsb,xlsm,x' .
+                'lsx,xltm,xltx,', ',' . $xt . ','
+            )) {
+                $PharType = 'OpenXML';
+            } elseif (substr_count(
+                ',odc,odf,odg,odm,odp,ods,odt,otg,oth,otp,ots,ott,', ',' . $xt . ','
+            ) || $xts === 'fod*') {
+                $PharType = 'OpenDocument';
+            } elseif (substr_count(',opf,epub,', ',' . $xt . ',')) {
+                $PharType = 'EPUB';
+            } else {
+                $PharType = 'ZIP';
+                $phpMussel['memCache']['container'] = 'zipfile';
             }
-            $zDo = false;
-            if ($phpMussel['substr_compare_hex']($in, 0, 2, '1f8b', true)) {
-                if (!function_exists('gzdecode')) {
-                    $phpMussel['memCache']['scan_errors']++;
-                    if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
-                        $phpMussel['killdata'] .= md5($in) . ':' . $eS . ':' . $ofn . "\n";
-                        $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
-                    }
-                    return (!$n) ? -1 :
-                        $lnap . $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
-                        $ofn . "' (GZIP):\n-" . $lnap .
-                        $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
-                }
-                $in = @gzdecode($in);
-                if (!$in) {
-                    return (!$n) ? 0 :
-                        $lnap . $phpMussel['Config']['lang']['scan_reading'] .
-                        ' \'' . $ofn . "' (GZIP):\n-" . $lnap .
-                        $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
-                }
-                $x .=
-                    $lnap . $phpMussel['Config']['lang']['scan_reading'] . ' \'' . $ofn .
-                    "' (GZIP):\n-" . $lnap .
-                    $phpMussel['Config']['lang']['scan_checking_contents'] . "\n";
-                $zDo = true;
-            } elseif ($phpMussel['substr_compare_hex']($in, 0, 3, '425a68', true)) {
-                if (!function_exists('bzdecompress')) {
-                    $phpMussel['memCache']['scan_errors']++;
-                    if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
-                        $phpMussel['killdata'] .= md5($in) . ':' . $eS . ':' . $ofn . "\n";
-                        $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
-                    }
-                    return (!$n) ? -1 :
-                        $lnap . $phpMussel['Config']['lang']['scan_reading'] . ' \'' . $ofn .
-                        "' (BZIP2):\n-" . $lnap .
-                        $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
-                }
-                $in = @bzdecompress($in);
-                if (!$in) {
-                    return (!$n) ? 0 :
-                        $lnap . $phpMussel['Config']['lang']['scan_reading'] . ' \'' . $ofn .
-                        "' (BZIP2):\n-" . $lnap .
-                        $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
-                }
-                $x .=
-                    $lnap . $phpMussel['Config']['lang']['scan_reading'] . ' \'' . $ofn .
-                    "' (BZIP2):\n-" . $lnap .
-                    $phpMussel['Config']['lang']['scan_checking_contents'] . "\n";
-                $zDo = true;
+            if ($PharType !== 'ZIP') {
+                $phpMussel['memCache']['file_is_ole'] = true;
+                $phpMussel['memCache']['container'] = 'pkfile';
             }
-            $xtt =
-                (substr_count($eN, '.')) ?
-                array(
-                    substr($eN, -3),
-                    substr($eN, -4),
-                    substr($eN, -7, 4),
-                    substr($eN, -8, 4)
-                ) :
-                false;
-            if (
-                !empty($xtt) &&
-                !$zDo && (
-                    substr_count(',.gz,', ',' . $xtt[0] . ',') ||
-                    substr_count(',.tgz,', ',' . $xtt[1] . ',')
-                )
-            ) {
-                if (!function_exists('gzdecode')) {
-                    $phpMussel['memCache']['scan_errors']++;
-                    if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
-                        $phpMussel['killdata'] .= md5($in) . ':' . $eS . ':' . $ofn . "\n";
-                        $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
-                    }
-                    return (!$n) ? -1 :
-                        $lnap . $phpMussel['Config']['lang']['scan_reading'] .
-                        ' \'' . $ofn . "' (GZIP):\n-" . $lnap .
-                        $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
+        } elseif (
+            substr($in, 257, 6) === "ustar\x00" ||
+            substr_count(',tar,tgz,tbz,tlz,tz,', ',' . $xt . ',')
+        ) {
+            $PharType = 'TarFile';
+            $phpMussel['memCache']['container'] = 'tarfile';
+        } elseif (
+            substr($in, 0, 4) === 'Rar!' ||
+            bin2hex(substr($in, 0, 4)) === '52457e5e'
+        ) {
+            $PharType = 'RarFile';
+            $phpMussel['memCache']['container'] = 'rarfile';
+        } else {
+            $PharType = '';
+        }
+
+        /** Check if PHARable, and if so, generate an array of the contents. */
+        if (is_dir('phar://' . $f) && is_readable('phar://' . $f)) {
+            $x .=
+                '-' . $lnap . $phpMussel['Config']['lang']['scan_reading'] .
+                ' \'' . $ofn . "' (PHAR):\n";
+            $PharData = $phpMussel['BuildPharList']($f, $dpt);
+            $PharData = explode("\n", $PharData);
+            $PharCount = count($PharData);
+            /** Iterate through each item in the PHARable file/object. */
+            for ($PharIter = 0; $PharIter < $PharCount; $PharIter++) {
+                if (empty($PharData[$PharIter])) {
+                    continue;
                 }
-                $in = @gzdecode($in);
-                if (!$in) {
-                    return (!$n) ? 0 :
-                        $lnap . $phpMussel['Config']['lang']['scan_reading'] .
-                        ' \'' . $ofn . "' (GZIP):\n-" . $lnap .
-                        $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
-                }
-                $x .=
-                    $lnap . $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
-                    $ofn . "' (GZIP):\n-" . $lnap .
-                    $phpMussel['Config']['lang']['scan_checking_contents'] . "\n";
-                $zDo = true;
-            } elseif (
-                !empty($xtt) &&
-                !$zDo && (
-                    substr_count(',.bz,', ',' . $xtt[0] . ',') ||
-                    substr_count(',.bz2,.tbz,', ',' . $xtt[1] . ',')
-                )
-            ) {
-                if (!function_exists('bzdecompress')) {
-                    $phpMussel['memCache']['scan_errors']++;
-                    if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
-                        $phpMussel['killdata'] .= md5($in) . ':' . $eS . ':' . $ofn . "\n";
-                        $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
-                    }
-                    return (!$n) ? -1 :
-                        $lnap . $phpMussel['Config']['lang']['scan_reading'] . ' \'' . $ofn .
-                        "' (BZIP2):\n-" . $lnap .
-                        $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
-                }
-                $in = @bzdecompress($in);
-                if (!$in) {
-                    return (!$n) ? 0 :
-                        $lnap . $phpMussel['Config']['lang']['scan_reading'] . ' \'' . $ofn .
-                        "' (BZIP2):\n-" . $lnap .
-                        $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
-                }
-                $x .=
-                    $lnap . $phpMussel['Config']['lang']['scan_reading'] . ' \'' . $ofn .
-                    "' (BZIP2):\n-" . $lnap .
-                    $phpMussel['Config']['lang']['scan_checking_contents'] . "\n";
-                $zDo = true;
-            } elseif (
-                !empty($xtt) &&
-                !$zDo && (
-                    substr_count(',.lz,', ',' . $xtt[0] . ',') ||
-                    substr_count(',.lha,.lzh,.lzo,.lzw,.lzx,.tlz,', ',' . $xtt[1] . ',')
-                )
-            ) {
-                if (!function_exists('lzf_decompress')) {
-                    $phpMussel['memCache']['scan_errors']++;
-                    if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
-                        $phpMussel['killdata'] .= md5($in) . ':' . $eS . ':' . $ofn . "\n";
-                        $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
-                    }
-                    return (!$n) ? -1 :
-                        $lnap . $phpMussel['Config']['lang']['scan_reading'] . ' \'' . $ofn .
-                        "' (LZF):\n-" . $lnap .
-                        $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
-                }
-                $in = @lzf_decompress($in);
-                if (!$in) {
-                    return (!$n) ? 0 :
-                        $lnap . $phpMussel['Config']['lang']['scan_reading'] . ' \'' . $ofn .
-                        "' (LZF):\n-" . $lnap .
-                        $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
-                }
-                $x .=
-                    $lnap . $phpMussel['Config']['lang']['scan_reading'] . ' \'' . $ofn .
-                    "' (LZF):\n-" . $lnap .
-                    $phpMussel['Config']['lang']['scan_checking_contents'] . "\n";
-                $zDo = true;
-            }
-            if (
-                substr($in, 257, 6) === "ustar\x00" || (
-                    !empty($xtt) && (
-                        substr_count(',.tar,.tgz,.tbz,.tlz,', ',' . $xtt[1] . ',') ||
-                        substr_count(',.tar,.tgz,.tbz,.tlz,', ',' . $xtt[2] . ',') ||
-                        substr_count(',.tar,.tgz,.tbz,.tlz,', ',' . $xtt[3] . ',')
-                    )
-                )
-            ) {
-                $lnap = '-' . $lnap;
-                $depth++;
-                $phpMussel['memCache']['container'] = 'tarfile';
-                if ($zDo) {
-                    $eS = strlen($in);
-                    $zCRC = @hash('crc32b', $in);
-                }
-                $TarFile = array();
-                // $TarFile['blocksize'] = ceil($eS / 512);
-                $TarFile['file'] = array(
-                    'filename' => $ofn,
-                    'filesize' => $eS,
-                    'rawdata' => $in,
-                    'crc32' => $zCRC,
-                    'fncrc32' => $fnCRC,
-                    'md5' => md5($in),
-                    'directory' => false
+                $PharData[$PharIter] = array(
+                    'DoScan' => true,
+                    'Depth' => $phpMussel['substrbf']($PharData[$PharIter], ' '),
+                    'Path' => $phpMussel['substraf']($PharData[$PharIter], ' ')
                 );
-                if (strtolower(substr($TarFile['file']['filename'], -4)) !== '.tar') {
-                    $TarFile['file']['filename'] =
-                        (substr_count($TarFile['file']['filename'],'.')) ?
-                        $phpMussel['substrbl']($TarFile['file']['filename'], '.') :
-                        $TarFile['file']['filename'];
+                $PharData[$PharIter]['Data'] = $phpMussel['ReadFile']('phar://' . $PharData[$PharIter]['Path']);
+                $PharData[$PharIter]['Filename'] =
+                        (substr_count($PharData[$PharIter]['Path'], '/')) ?
+                        $phpMussel['substral']($PharData[$PharIter]['Path'], '/') :
+                        $PharData[$PharIter]['Path'];
+                $PharData[$PharIter]['ItemRef'] = $ofn . '>' . $PharData[$PharIter]['Path'];
+            }
+        } else {
+            /** Default to the parent if the parent isn't PHARable. */
+            $PharData = array(0 => array(
+                'DoScan' => false,
+                'Depth' => 1,
+                'Path' => $f,
+                'Data' => $in
+            ));
+            $PharData[0]['Filename'] = (substr_count($f, '/')) ? $phpMussel['substral']($f, '/') : $f;
+            $PharData[0]['ItemRef'] = $ofn . '>' . $PharData[0]['Path'];
+            $PharCount = 1;
+        }
+
+        /** And now we begin processing our PHARable contents array. */
+        for ($PharIter = 0; $PharIter < $PharCount; $PharIter++) {
+            if (empty($PharData[$PharIter])) {
+                continue;
+            }
+            $PharData[$PharIter]['Filesize'] = strlen($PharData[$PharIter]['Data']);
+            $PharData[$PharIter]['MD5'] = md5($PharData[$PharIter]['Data']);
+            $PharData[$PharIter]['NameCRC32'] = hash('crc32b', $PharData[$PharIter]['Filename']);
+            $PharData[$PharIter]['DataCRC32'] = hash('crc32b', $PharData[$PharIter]['Data']);
+            if (
+                $phpMussel['Config']['files']['block_encrypted_archives'] &&
+                substr($PharData[$PharIter]['Data'], 0, 2) === 'PK'
+            ) {
+                /**
+                 * ZIP File Format Specification:
+                 * - https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT
+                 */
+                $PharData[$PharIter]['ZipBits'] =
+                    $phpMussel['explode_bits'](substr($PharData[$PharIter]['Data'], 6, 2));
+                if ($PharData[$PharIter]['ZipBits'] && $PharData[$PharIter]['ZipBits'][7]) {
+                    /** Encryption detected. */
+                    $r = 2;
+                    $phpMussel['killdata'] .=
+                        $PharData[$PharIter]['MD5'] . ':' .
+                        $PharData[$PharIter]['Filesize'] . ':' .
+                        $PharData[$PharIter]['ItemRef'] . "\n";
+                    $phpMussel['whyflagged'] .=
+                        $phpMussel['Config']['lang']['encrypted_archive'] .
+                        ' (' . urlencode($PharData[$PharIter]['ItemRef']) . ')' .
+                        $phpMussel['Config']['lang']['_exclamation'];
+                    $x .=
+                        '-' . $lnap . $phpMussel['Config']['lang']['scan_checking'] .
+                        ' \'' . $PharData[$PharIter]['ItemRef'] . '\' (FN: ' .
+                        $PharData[$PharIter]['NameCRC32'] . '; FD: ' .
+                        $PharData[$PharIter]['DataCRC32'] . "):\n--" . $lnap .
+                        $phpMussel['Config']['lang']['encrypted_archive'] .
+                        $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+                    break;
                 }
-                $TarFile['file']['filename'] =
-                    (substr_count($TarFile['file']['filename'], "\x5c")) ?
-                    $phpMussel['substral']($TarFile['file']['filename'], "\x5c") :
-                    $TarFile['file']['filename'];
-                $TarFile['file']['filename'] =
-                    (substr_count($TarFile['file']['filename'], "\x2f")) ?
-                    $phpMussel['substral']($TarFile['file']['filename'], "\x2f") :
-                    $TarFile['file']['filename'];
-                $TarFile['file']['filenameSafe'] = urlencode($TarFile['file']['filename']);
-                $TarFile['offset'] = 0;
-                $TarFile['badmetadata'] = false;
-                while (true) {
-                    if (($TarFile['offset'] + 1024) > $eS) {
-                        break;
-                    }
-                    while (true) {
-                        if ($TarFile['file']['directory']) {
-                            break;
+            }
+            if ($PharData[$PharIter]['DoScan']) {
+                $x .=
+                    '-' . $lnap . $phpMussel['Config']['lang']['scan_checking'] .
+                    ' \'' . $PharData[$PharIter]['ItemRef'] .
+                    '\' (FN: ' . $PharData[$PharIter]['NameCRC32'] .
+                    '; FD: ' . $PharData[$PharIter]['DataCRC32'] . "):\n";
+                try {
+                    list($r, $x) = $phpMussel['MetaDataScan'](
+                        $PharData[$PharIter]['ItemRef'],
+                        $PharData[$PharIter]['Filename'],
+                        $PharData[$PharIter]['Data'],
+                        $PharData[$PharIter]['Depth'],
+                        '-' . $lnap,
+                        $r,
+                        $x
+                    );
+                } catch (\Exception $e) {
+                    throw new \Exception($e->getMessage());
+                }
+                if ($r === 1) {
+                    $x .= '--' . $lnap . $phpMussel['Config']['lang']['scan_no_problems_found'] . "\n";
+                } else {
+                    break;
+                }
+            }
+            $ScanDepth = 0;
+            while (true) {
+                if ($ScanDepth > $phpMussel['Config']['files']['max_recursion']) {
+                    $r = 2;
+                    $phpMussel['killdata'] .=
+                        $PharData[$PharIter]['MD5'] . ':' .
+                        $PharData[$PharIter]['Filesize'] . ':' .
+                        $PharData[$PharIter]['ItemRef'] . "\n";
+                    $phpMussel['whyflagged'] .=
+                        $phpMussel['Config']['lang']['recursive'] .
+                        ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    $x .=
+                        '-' . $lnap . $phpMussel['Config']['lang']['scan_checking'] .
+                        ' \'' . $PharData[$PharIter]['ItemRef'] . '\' (FN: ' .
+                        $PharData[$PharIter]['NameCRC32'] . '; FD: ' .
+                        $PharData[$PharIter]['DataCRC32'] . "):\n--" .
+                        $lnap . $phpMussel['Config']['lang']['recursive'] .
+                        $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+                    break 2;
+                }
+                $zDo = false;
+                /** Indenting may require refinement. */
+                $PharData[$PharIter]['Indent'] = str_repeat('-', $ScanDepth + $dpt) . $lnap;
+                $xtt =
+                    (substr_count($PharData[$PharIter]['Filename'], '.')) ?
+                    array(
+                        substr($PharData[$PharIter]['Filename'], -3),
+                        substr($PharData[$PharIter]['Filename'], -4),
+                        substr($PharData[$PharIter]['Filename'], -7, 4),
+                        substr($PharData[$PharIter]['Filename'], -8, 4)
+                    ) :
+                    false;
+                if ($phpMussel['substr_compare_hex']($PharData[$PharIter]['Data'], 0, 2, '1f8b', true)) {
+                    if (!function_exists('gzdecode')) {
+                        $phpMussel['memCache']['scan_errors']++;
+                        if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
+                            $r = -1;
+                            $phpMussel['killdata'] .=
+                                $PharData[$PharIter]['MD5'] . ':' .
+                                $PharData[$PharIter]['Filesize'] . ':' .
+                                $PharData[$PharIter]['ItemRef'] . "\n";
+                            $phpMussel['whyflagged'] .=
+                                $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
                         }
                         $x .=
-                            $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn .
-                            '\' > \'' . $TarFile['file']['filename'] . '\' (FN: ' .
-                            $TarFile['file']['fncrc32'] . '; FD: ' . $TarFile['file']['crc32'] . "):\n";
-                        if (!$TarFile['file']['filename']) {
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $PharData[$PharIter]['ItemRef'] . "' (GZIP):\n-" .
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
+                        break;
+                    }
+                    if (!$PharData[$PharIter]['Data'] = @gzdecode($PharData[$PharIter]['Data'])) {
+                        $x .=
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $PharData[$PharIter]['ItemRef'] . "' (GZIP):\n-" .
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
+                        break;
+                    }
+                    $x .=
+                        $PharData[$PharIter]['Indent'] .
+                        $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                        $PharData[$PharIter]['ItemRef'] . "' (GZIP):\n";
+                    $zDo = true;
+                } elseif ($phpMussel['substr_compare_hex']($PharData[$PharIter]['Data'], 0, 3, '425a68', true)) {
+                    if (!function_exists('bzdecompress')) {
+                        $phpMussel['memCache']['scan_errors']++;
+                        if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
+                            $r = -1;
+                            $phpMussel['killdata'] .=
+                                $PharData[$PharIter]['MD5'] . ':' .
+                                $PharData[$PharIter]['Filesize'] . ':' .
+                                $PharData[$PharIter]['ItemRef'] . "\n";
+                            $phpMussel['whyflagged'] .=
+                                $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
+                        }
+                        $x .=
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $PharData[$PharIter]['ItemRef'] . "' (BZIP2):\n-" .
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
+                        break;
+                    }
+                    if (!$PharData[$PharIter]['Data'] = @bzdecompress($PharData[$PharIter]['Data'])) {
+                        $x .=
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $PharData[$PharIter]['ItemRef'] . "' (BZIP2):\n-" .
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
+                        break;
+                    }
+                    $x .=
+                        $PharData[$PharIter]['Indent'] .
+                        $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                        $PharData[$PharIter]['ItemRef'] . "' (BZIP2):\n";
+                    $zDo = true;
+                } elseif (
+                    !empty($xtt) &&
+                    !$zDo && (
+                        substr_count(',.gz,', ',' . $xtt[0] . ',') ||
+                        substr_count(',.tgz,', ',' . $xtt[1] . ',')
+                    )
+                ) {
+                    if (!function_exists('gzdecode')) {
+                        $phpMussel['memCache']['scan_errors']++;
+                        if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
+                            $r = -1;
+                            $phpMussel['killdata'] .=
+                                $PharData[$PharIter]['MD5'] . ':' .
+                                $PharData[$PharIter]['Filesize'] . ':' .
+                                $PharData[$PharIter]['ItemRef'] . "\n";
+                            $phpMussel['whyflagged'] .=
+                                $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
+                        }
+                        $x .=
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $PharData[$PharIter]['ItemRef'] . "' (GZIP):\n-" .
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
+                        break;
+                    }
+                    if (!$PharData[$PharIter]['Data'] = @gzdecode($PharData[$PharIter]['Data'])) {
+                        $x .=
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $PharData[$PharIter]['ItemRef'] . "' (GZIP):\n-" .
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
+                        break;
+                    }
+                    $x .=
+                        $PharData[$PharIter]['Indent'] .
+                        $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                        $PharData[$PharIter]['ItemRef'] . "' (GZIP):\n";
+                    $zDo = true;
+                } elseif (
+                    !empty($xtt) &&
+                    !$zDo && (
+                        substr_count(',.bz,', ',' . $xtt[0] . ',') ||
+                        substr_count(',.bz2,.tbz,', ',' . $xtt[1] . ',')
+                    )
+                ) {
+                    if (!function_exists('bzdecompress')) {
+                        $phpMussel['memCache']['scan_errors']++;
+                        if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
+                            $r = -1;
+                            $phpMussel['killdata'] .=
+                                $PharData[$PharIter]['MD5'] . ':' .
+                                $PharData[$PharIter]['Filesize'] . ':' .
+                                $PharData[$PharIter]['ItemRef'] . "\n";
+                            $phpMussel['whyflagged'] .=
+                                $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
+                        }
+                        $x .=
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $PharData[$PharIter]['ItemRef'] . "' (BZIP2):\n-" .
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
+                        break;
+                    }
+                    if (!$PharData[$PharIter]['Data'] = @bzdecompress($PharData[$PharIter]['Data'])) {
+                        $x .=
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $PharData[$PharIter]['ItemRef'] . "' (BZIP2):\n-" .
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
+                        break;
+                    }
+                    $x .=
+                        $PharData[$PharIter]['Indent'] .
+                        $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                        $PharData[$PharIter]['ItemRef'] . "' (BZIP2):\n";
+                    $zDo = true;
+                } elseif (
+                    !empty($xtt) &&
+                    !$zDo && (
+                        substr_count(',.lz,', ',' . $xtt[0] . ',') ||
+                        substr_count(',.lha,.lzh,.lzo,.lzw,.lzx,.tlz,', ',' . $xtt[1] . ',')
+                    )
+                ) {
+                    if (!function_exists('lzf_decompress')) {
+                        $phpMussel['memCache']['scan_errors']++;
+                        if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
+                            $r = -1;
+                            $phpMussel['killdata'] .=
+                                $PharData[$PharIter]['MD5'] . ':' .
+                                $PharData[$PharIter]['Filesize'] . ':' .
+                                $PharData[$PharIter]['ItemRef'] . "\n";
+                            $phpMussel['whyflagged'] .=
+                                $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
+                        }
+                        $x .=
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $PharData[$PharIter]['ItemRef'] . "' (LZF):\n-" .
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
+                        break;
+                    }
+                    if (!$PharData[$PharIter]['Data'] = @lzf_decompress($PharData[$PharIter]['Data'])) {
+                        $x .=
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $PharData[$PharIter]['ItemRef'] . "' (LZF):\n-" .
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
+                        break;
+                    }
+                    $x .=
+                        $PharData[$PharIter]['Indent'] .
+                        $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                        $PharData[$PharIter]['ItemRef'] . "' (LZF):\n";
+                    $zDo = true;
+                } elseif (
+                    !$zDo && (
+                        substr($PharData[$PharIter]['Data'], 257, 6) === "ustar\x00" || (
+                            !empty($xtt) && (
+                                substr_count(',.tar,.tgz,.tbz,.tlz,', ',' . $xtt[1] . ',') ||
+                                substr_count(',.tar,.tgz,.tbz,.tlz,', ',' . $xtt[2] . ',') ||
+                                substr_count(',.tar,.tgz,.tbz,.tlz,', ',' . $xtt[3] . ',')
+                            )
+                        )
+                    )
+                ) {
+                    /** Allows recursion for TAR files. */
+                    $x .=
+                        $PharData[$PharIter]['Indent'] .
+                        $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                        $PharData[$PharIter]['ItemRef'] . "' (TAR):\n";
+                    $TarFile = array('Offset' => 0);
+                    while (true) {
+                        if (($TarFile['Offset'] + 1024) > $PharData[$PharIter]['Filesize']) {
+                            break;
+                        }
+                        $TarFile['File'] = array(
+                            'Filename' =>
+                                preg_replace('/[^\x20-\xff]/', '', substr($PharData[$PharIter]['Data'], $TarFile['Offset'], 100)),
+                            'Filesize' =>
+                                octdec(preg_replace('/[^0-9]/', '', substr($PharData[$PharIter]['Data'], $TarFile['Offset'] + 124, 12))),
+                        );
+                        if ($TarFile['File']['Filesize'] < 0) {
                             $r = 2;
                             $phpMussel['killdata'] .=
-                                $TarFile['file']['md5'] . ':' .
-                                $TarFile['file']['filesize'] .
+                                $TarFile['File']['MD5'] . ':' .
+                                $TarFile['File']['Filesize'] . ':' .
+                                $PharData[$PharIter]['ItemRef'] . "\n";
+                            $phpMussel['whyflagged'] .=
+                                $phpMussel['Config']['lang']['scan_tampering'] . ' (' .
+                                urlencode($PharData[$PharIter]['ItemRef']) .
+                                ')' . $phpMussel['Config']['lang']['_exclamation'];
+                            $x .=
+                                '-' . $PharData[$PharIter]['Indent'] .
+                                $phpMussel['Config']['lang']['scan_tampering'] .
+                                $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                            break;
+                        }
+                        $TarFile['File']['Directory'] = (
+                            substr($TarFile['File']['Filename'], -1, 1) === '/' &&
+                            $TarFile['File']['Filesize'] === 0
+                        );
+                        $TarFile['File']['Blocks'] = ceil($TarFile['File']['Filesize'] / 512) + 1;
+                        if ($TarFile['File']['Directory']) {
+                            $TarFile['Offset'] += $TarFile['File']['Blocks'] * 512;
+                            continue;
+                        }
+                        if ($TarFile['File']['Filename']) {
+                            if (substr_count($TarFile['File']['Filename'], "\\")) {
+                                $TarFile['File']['Filename'] =
+                                    $phpMussel['substral']($TarFile['File']['Filename'], "\\") ;
+                            }
+                            if (substr_count($TarFile['File']['Filename'], '/')) {
+                                $TarFile['File']['Filename'] =
+                                    $phpMussel['substral']($TarFile['File']['Filename'], '/') ;
+                            }
+                        }
+                        $TarFile['File']['Data'] =
+                            substr($PharData[$PharIter]['Data'], $TarFile['Offset'] + 512, $TarFile['File']['Filesize']);
+                        if (empty($TarFile['File']['Data'])) {
+                            break;
+                        }
+                        $TarFile['File']['MD5'] = md5($TarFile['File']['Data']);
+                        if (!$TarFile['File']['Filename']) {
+                            $r = 2;
+                            $phpMussel['killdata'] .=
+                                $TarFile['File']['MD5'] . ':' .
+                                $TarFile['File']['Filesize'] .
                                 ":MISSING-FILENAME\n";
                             $phpMussel['whyflagged'] .=
                                 $phpMussel['Config']['lang']['scan_missing_filename'] .
                                 $phpMussel['Config']['lang']['_exclamation'];
                             $x .=
-                                '-' . $lnap . $phpMussel['Config']['lang']['scan_missing_filename'] .
+                                '-' . $PharData[$PharIter]['Indent'] .
+                                $phpMussel['Config']['lang']['scan_missing_filename'] .
                                 $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
-                            break 2;
-                        }
-                        if (
-                            $phpMussel['Config']['files']['filesize_archives'] &&
-                            $phpMussel['Config']['files']['filesize_limit'] > 0
-                        ) {
-                            if ($TarFile['file']['filesize'] > ($phpMussel['Config']['files']['filesize_limit'] * 1024)) {
-                                if (!$phpMussel['Config']['files']['filesize_response']) {
-                                    $x .=
-                                        '-' . $lnap . $phpMussel['Config']['lang']['ok'] . ' (' .
-                                        $phpMussel['Config']['lang']['filesize_limit_exceeded'] . ").\n";
-                                    break;
-                                }
-                                $r = 2;
-                                $phpMussel['killdata'] .=
-                                    $TarFile['file']['md5'] . ':' .
-                                    $TarFile['file']['filesize'] . ':' .
-                                    $ofn . '>' . $TarFile['file']['filename'] . "\n";
-                                $phpMussel['whyflagged'] .=
-                                    $phpMussel['Config']['lang']['filesize_limit_exceeded'] .
-                                    ' (' . $ofnSafe . '>' . $TarFile['file']['filenameSafe'] . ')' .
-                                    $phpMussel['Config']['lang']['_exclamation'];
-                                $x .=
-                                    '-' . $lnap . $phpMussel['Config']['lang']['filesize_limit_exceeded'] .
-                                    $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
-                                break 2;
-                            }
-                        }
-                        if (
-                            substr($TarFile['file']['filename'], 0, 1) === '.' ||
-                            substr($TarFile['file']['filename'], -1) === '.'
-                        ) {
-                            $r = 2;
-                            $phpMussel['killdata'] .=
-                                $TarFile['file']['md5'] . ':' .
-                                $TarFile['file']['filesize'] . ':' .
-                                $ofn . '>' . $TarFile['file']['filename'] . "\n";
-                            $phpMussel['whyflagged'] .=
-                                $phpMussel['Config']['lang']['scan_filename_manipulation_detected'] .
-                                ' (' . $ofnSafe . '>' . $TarFile['file']['filenameSafe'] . ')' .
-                                $phpMussel['Config']['lang']['_exclamation'];
-                            $x .=
-                                '-' . $lnap .
-                                $phpMussel['Config']['lang']['scan_filename_manipulation_detected'] .
-                                $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
-                            break 2;
-                        }
-                        if ($phpMussel['Config']['files']['filetype_archives']) {
-                            $decPos = strrpos($TarFile['file']['filename'], '.');
-                            $ofnLen = strlen($TarFile['file']['filename']);
-                            if ($decPos === false || $decPos === ($ofnLen - 1)) {
-                                $xts = $xt = '-';
-                            } else {
-                                $xt = strtolower(substr($TarFile['file']['filename'], ($decPos + 1)));
-                                $xts = substr($xt, 0, 3) . '*';
-                            }
-                            if (
-                                substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $xt . ',') ||
-                                substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $xts . ',')
-                            ) {
-                                $x .=
-                                    '-' . $lnap . $phpMussel['Config']['lang']['scan_no_problems_found'] . "\n";
-                                break;
-                            }
-                            if (
-                                substr_count(',' . $phpMussel['Config']['files']['filetype_blacklist'] . ',', ',' . $xt . ',') ||
-                                substr_count(',' . $phpMussel['Config']['files']['filetype_blacklist'] . ',', ',' . $xts . ',')
-                            ) {
-                                $r = 2;
-                                $phpMussel['killdata'] .=
-                                    $TarFile['file']['md5'] . ':' .
-                                    $TarFile['file']['filesize'] . ':' .
-                                    $ofn . '>' . $TarFile['file']['filename'] . "\n";
-                                $phpMussel['whyflagged'] .=
-                                    $phpMussel['Config']['lang']['filetype_blacklisted'] .
-                                    ' (' . $ofnSafe . '>' . $TarFile['file']['filenameSafe'] . ')' .
-                                    $phpMussel['Config']['lang']['_exclamation'];
-                                $x .=
-                                    '-' . $lnap . $phpMussel['Config']['lang']['filetype_blacklisted'] .
-                                    $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
-                                break 2;
-                            }
-                            if (
-                                $phpMussel['Config']['files']['filetype_greylist'] &&
-                                !substr_count(',' . $phpMussel['Config']['files']['filetype_greylist'] . ',', ',' . $xt . ',') &&
-                                !substr_count(',' . $phpMussel['Config']['files']['filetype_greylist'] . ',', ',' . $xts . ',')
-                            ) {
-                                $r = 2;
-                                $phpMussel['killdata'] .=
-                                    $TarFile['file']['md5'] . ':' .
-                                    $TarFile['file']['filesize'] . ':' .
-                                    $ofn . '>' . $TarFile['file']['filename'] . "\n";
-                                $phpMussel['whyflagged'] .=
-                                    $phpMussel['Config']['lang']['filetype_blacklisted'] .
-                                    ' (' . $ofnSafe . '>' . $TarFile['file']['filenameSafe'] . ')' .
-                                    $phpMussel['Config']['lang']['_exclamation'];
-                                $x .=
-                                    '-' . $lnap . $phpMussel['Config']['lang']['filetype_blacklisted'] .
-                                    $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
-                                break 2;
-                            }
-                        }
-                        $phpMussel['memCache']['objects_scanned']++;
-                        $TarFile['file']['scan'] =
-                            $phpMussel['DataHandler']($TarFile['file']['rawdata'], $n, $dpt, $TarFile['file']['filename']);
-                        if ($TarFile['file']['scan'] !== 1) {
-                            $r = 2;
-                            $x .= $TarFile['file']['scan'];
-                            break 2;
-                        }
-                        for ($MetaItr = 0; $MetaItr < $MetaCnt; $MetaItr++) {
-                            $MetaSigConfig = $MetaSigArray[$MetaItr]['Config'];
-                            if (!$phpMussel['Config']['signatures'][$MetaSigConfig]) {
-                                continue;
-                            }
-                            $MetaSigFile = $MetaSigArray[$MetaItr]['SigFile'];
-                            if (!isset($phpMussel['memCache'][$MetaSigFile])) {
-                                $phpMussel['memCache'][$MetaSigFile] =
-                                    @file($phpMussel['sigPath'] . $MetaSigFile);
-                            }
-                            if (!$phpMussel['memCache'][$MetaSigFile]) {
-                                $xc = 0;
-                                if ($r !== 2) {
-                                    $r = -3;
-                                }
-                                $phpMussel['memCache']['scan_errors']++;
-                                if (!$phpMussel['Config']['signatures']['fail_silently']) {
-                                    $x .=
-                                        '-' . $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                                        ' (' . $MetaSigFile . ')' .
-                                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
-                                    break 2;
-                                }
-                            } else {
-                                $xc = count($phpMussel['memCache'][$MetaSigFile]);
-                                if (
-                                    $phpMussel['memCache'][$MetaSigFile] &&
-                                    $xc < 1
-                                ) {
-                                    if ($r !== 2) {
-                                        $r = -3;
-                                    }
-                                    $phpMussel['memCache']['scan_errors']++;
-                                    if (!$phpMussel['Config']['signatures']['fail_silently']) {
-                                        $x .=
-                                            '-' . $lnap . $phpMussel['Config']['lang']['scan_signature_file_corrupted'] .
-                                            ' (' . $MetaSigFile . ')' .
-                                            $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
-                                        break 2;
-                                    }
-                                }
-                            }
-                            if ($xc > 0) {
-                                for ($xi = 0; $xi < $xc; $xi++) {
-                                    $TarFile['sig'] =
-                                        @explode(':', $phpMussel['memCache'][$MetaSigFile][$xi]);
-                                    $TarFile['sig'][0] = $phpMussel['vn_shorthand']($TarFile['sig'][0]);
-                                    if (!isset($TarFile['sig'][1])) {
-                                        $TarFile['sig'][1] = 0;
-                                    }
-                                    $TarFile['sig'][2] =
-                                        (!isset($TarFile['sig'][2])) ?
-                                        '' :
-                                        preg_replace('/[^a-z0-9]/', '', $TarFile['sig'][2]);
-                                    if (
-                                        !substr_count($phpMussel['memCache']['greylist'], ',' . $TarFile['sig'][0] . ',') &&
-                                        !$phpMussel['memCache']['ignoreme'] &&
-                                        $TarFile['sig'][0] &&
-                                        $TarFile['sig'][1] &&
-                                        $TarFile['sig'][2] &&
-                                        $TarFile['sig'][1] == $TarFile['file']['filesize'] &&
-                                        $TarFile['sig'][2] == $TarFile['file']['crc32']
-                                    ) {
-                                        $r = 2;
-                                        $TarFile['badmetadata'] = true;
-                                        $x .=
-                                            '-' . $lnap . $phpMussel['ParseVars'](
-                                                array('vn' => $TarFile['sig'][0]),
-                                                $phpMussel['Config']['lang']['detected']
-                                            ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
-                                        $phpMussel['killdata'] .=
-                                            md5($TarFile['file']['rawdata']) . ':' .
-                                            $TarFile['file']['filesize'] . ':' .
-                                            $ofn . '>' . $TarFile['file']['filename'] . "\n";
-                                        $phpMussel['whyflagged'] .=
-                                            $phpMussel['ParseVars'](
-                                                array('vn' => $TarFile['sig'][0]),
-                                                $phpMussel['Config']['lang']['detected']
-                                            ) . ' (' . $ofnSafe . '>' . $TarFile['file']['filenameSafe'] . ')' .
-                                            $phpMussel['Config']['lang']['_exclamation'];
-                                        break 3;
-                                    }
-                                }
-                            }
-                        }
-                        $x .=
-                            '-' . $lnap . $phpMussel['Config']['lang']['scan_no_problems_found'] . "\n";
-                        break;
-                    }
-                    $TarFile['file'] = array();
-                    $TarFile['file']['filename'] =
-                        preg_replace('/[^\x20-\xff]/', '', substr($in, $TarFile['offset'], 100));
-                    $TarFile['file']['filesize'] =
-                        octdec(preg_replace('/[^0-9]/', '', substr($in, $TarFile['offset'] + 124, 12)));
-                    $TarFile['file']['directory'] = (
-                        substr($TarFile['file']['filename'], -1, 1) === '/' &&
-                        $TarFile['file']['filesize'] === 0
-                    );
-                    /* There's also a bit-check for confirming directory status
-                       with POSIX TARs, will add that in later, as well as
-                       other bit flags (`typeflag` and etc). */
-                    if ($TarFile['file']['filename']) {
-                        if (substr_count($TarFile['file']['filename'], "\x5c")) {
-                            $TarFile['file']['filename'] =
-                                $phpMussel['substral']($TarFile['file']['filename'], "\x5c") ;
-                        }
-                        if (substr_count($TarFile['file']['filename'], "\x2f")) {
-                            $TarFile['file']['filename'] =
-                                $phpMussel['substral']($TarFile['file']['filename'], "\x2f") ;
-                        }
-                    }
-                    $TarFile['file']['filenameSafe'] = urlencode($TarFile['file']['filename']);
-                    if ($TarFile['file']['filesize'] < 0) {
-                        $r = 2;
-                        $TarFile['badmetadata'] = true;
-                        $phpMussel['killdata'] .=
-                            $TarFile['file']['md5'] . ':' .
-                            $TarFile['file']['filesize'] . ':' .
-                            $ofn . '>' . $TarFile['file']['filename'] . "\n";
-                        $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_filename_manipulation_detected'] .
-                            ' (' . $ofnSafe . '>' . $TarFile['file']['filenameSafe'] . ')' .
-                            $phpMussel['Config']['lang']['_exclamation'];
-                        $x .=
-                            '-' . $lnap . $phpMussel['Config']['lang']['scan_tampering'] .
-                            $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
-                        break;
-                    }
-                    /* $TarFile['file']['mode'] =
-                        octdec(preg_replace('/[^0-9]/', '', substr($in, $TarFile['offset'] + 100, 8)));
-                    $TarFile['file']['uid'] =
-                        octdec(preg_replace('/[^0-9]/', '', substr($in, $TarFile['offset'] + 108, 8)));
-                    $TarFile['file']['gid'] =
-                        octdec(preg_replace('/[^0-9]/', '', substr($in, $TarFile['offset'] + 116, 8)));
-                    $TarFile['file']['mtime'] =
-                        octdec(preg_replace('/[^0-9]/', '', substr($in, $TarFile['offset'] + 136, 12)));
-                    $TarFile['file']['chksum'] =
-                        octdec(preg_replace('/[^0-9]/', '', substr($in, $TarFile['offset'] + 148, 8)));
-                    $TarFile['file']['typeflag'] =
-                        substr($in, $TarFile['offset'] + 156, 1);
-                    $TarFile['file']['linkname'] =
-                        preg_replace('/[^\x20-\xff]/', '', substr($in, $TarFile['offset'] + 157, 100)); */
-                    $TarFile['file']['magic'] =
-                        preg_replace('/[^\x20-\xff]/', '', substr($in, $TarFile['offset'] + 257, 6));
-                    /* $TarFile['file']['version'] =
-                        octdec(preg_replace('/[^0-9]/', '', substr($in, $TarFile['offset'] + 263, 2)));
-                    $TarFile['file']['uname'] =
-                        preg_replace('/[^\x20-\xff]/', '', substr($in, $TarFile['offset'] + 265, 32));
-                    $TarFile['file']['gname'] =
-                        preg_replace('/[^\x20-\xff]/', '', substr($in, $TarFile['offset'] + 297, 32));
-                    $TarFile['file']['devmajor'] =
-                        octdec(preg_replace('/[^0-9]/', '', substr($in, $TarFile['offset'] + 329, 8)));
-                    $TarFile['file']['devminor'] =
-                        octdec(preg_replace('/[^0-9]/', '', substr($in, $TarFile['offset'] + 337, 8)));
-                    $TarFile['file']['prefix'] =
-                        octdec(preg_replace('/[^0-9]/', '', substr($in, $TarFile['offset'] + 345, 155))); */
-                    $TarFile['file']['rawdata'] =
-                        substr($in, $TarFile['offset'] + 512, $TarFile['file']['filesize']);
-                    $TarFile['file']['crc32'] = hash('crc32b', $TarFile['file']['rawdata']);
-                    $TarFile['file']['fncrc32'] = hash('crc32b', $TarFile['file']['filename']);
-                    $TarFile['file']['md5'] = md5($TarFile['file']['rawdata']);
-                    $TarFile['file']['blocks'] = ceil($TarFile['file']['filesize'] / 512) + 1;
-                    $TarFile['offset'] += $TarFile['file']['blocks'] * 512;
-                }
-                if ($TarFile['badmetadata'] && $r === 2) {
-                    if (
-                        $phpMussel['Config']['general']['quarantine_key'] &&
-                        !$phpMussel['Config']['general']['honeypot_mode'] &&
-                        $eS < ($phpMussel['Config']['general']['quarantine_max_filesize'] * 1024)
-                    ) {
-                        $qfu =
-                            $phpMussel['time'] . '-' .
-                            md5($phpMussel['Config']['general']['quarantine_key'] . $zCRC . $phpMussel['time']);
-                        $phpMussel['Quarantine'](
-                            $in,
-                            $phpMussel['Config']['general']['quarantine_key'],
-                            $_SERVER[$phpMussel['Config']['general']['ipaddr']],
-                            $qfu
-                        );
-                        $phpMussel['killdata'] .=
-                            'Quarantined as "/vault/quarantine/' . $qfu . ".qfu\".\n";
-                    }
-                }
-                $TarFile = '';
-                break;
-            } elseif ($zDo) {
-                $lnap = '-' . $lnap;
-                $depth++;
-                $phpMussel['memCache']['container'] = 'compressor';
-                if (substr_count($eN, '.')) {
-                    $eN = $phpMussel['substrbl']($eN, '.');
-                }
-                if (substr_count($eN, "\x5c")) {
-                    $eN = $phpMussel['substral']($eN, "\x5c");
-                }
-                if (substr_count($eN, "\x2f")) {
-                    $eN = $phpMussel['substral']($eN, "\x2f");
-                }
-                $eNSafe = urlencode($eN);
-                $eS = strlen($in);
-                $zCRC = @hash('crc32b', $in);
-                if (
-                    $phpMussel['Config']['files']['filesize_archives'] &&
-                    $phpMussel['Config']['files']['filesize_limit'] > 0
-                ) {
-                    if ($eS > ($phpMussel['Config']['files']['filesize_limit'] * 1024)) {
-                        if (!$phpMussel['Config']['files']['filesize_response']) {
-                            $x .=
-                                $lnap . $phpMussel['Config']['lang']['scan_checking'] .
-                                ' \'' . $ofn . '\' > \'' . $eN . '\' (FD: ' . $zCRC . "):\n-" . $lnap .
-                                $phpMussel['Config']['lang']['ok'] .
-                                ' (' . $phpMussel['Config']['lang']['filesize_limit_exceeded'] . ").\n";
                             break;
                         }
-                        $r = 2;
-                        $phpMussel['killdata'] .= md5($in) . ':' . $eS . ':' . $ofn . '>' . $eN . "\n";
-                        $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['filesize_limit_exceeded'] .
-                            ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                        $x .=
-                            $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' .
-                            $ofn . '\' > \'' . $eN . '\' (FD: ' . $zCRC . "):\n-" . $lnap .
-                            $phpMussel['Config']['lang']['filesize_limit_exceeded'] .
-                            $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
-                        break;
-                    }
-                }
-                $x .=
-                    $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn .
-                    '\' > \'' . $eN . '\' (FN: ' . $fnCRC . '; FD: ' . $zCRC . "):\n";
-                $phpMussel['memCache']['objects_scanned']++;
-                $bad = $phpMussel['DataHandler']($in, $n, $dpt, $eN);
-                if ($bad !== 1) {
-                    $r = 2;
-                    $x .= $bad;
-                    break;
-                }
-                for ($MetaItr = 0; $MetaItr < $MetaCnt; $MetaItr++) {
-                    $MetaSigConfig = $MetaSigArray[$MetaItr]['Config'];
-                    if (!$phpMussel['Config']['signatures'][$MetaSigConfig]) {
-                        continue;
-                    }
-                    $MetaSigFile = $MetaSigArray[$MetaItr]['SigFile'];
-                    if (!isset($phpMussel['memCache'][$MetaSigFile])) {
-                        $phpMussel['memCache'][$MetaSigFile] =
-                            @file($phpMussel['sigPath'] . $MetaSigFile);
-                    }
-                    if (!$phpMussel['memCache'][$MetaSigFile]) {
-                        $zmdc = 0;
-                        if ($r !== 2) {
-                            $r = -3;
-                        }
-                        $phpMussel['memCache']['scan_errors']++;
-                        if (!$phpMussel['Config']['signatures']['fail_silently']) {
-                            $phpMussel['killdata'] .= md5($in) . ':' . $eS . ":\n";
-                            $phpMussel['whyflagged'] .=
-                                $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                                ' (' . $MetaSigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                        }
-                        $x .=
-                            '-' . $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                            ' (' . $MetaSigFile . ')' .
-                            $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
-                    } else {
-                        $zmdc = count($phpMussel['memCache'][$MetaSigFile]);
-                        if ($zmdc < 1) {
-                            if ($r !== 2) {
-                                $r = -3;
-                            }
-                            $phpMussel['memCache']['scan_errors']++;
-                            if (!$phpMussel['Config']['signatures']['fail_silently']) {
-                                $phpMussel['killdata'] .= md5($in) . ':' . $eS . ":\n";
-                                $phpMussel['whyflagged'] .=
-                                    $phpMussel['Config']['lang']['scan_signature_file_corrupted'] .
-                                    ' (' . $MetaSigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                            }
-                            $x .=
-                                '-' . $lnap . $phpMussel['Config']['lang']['scan_signature_file_corrupted'] .
-                                ' (' . $MetaSigFile . ')' .
-                                $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
-                        }
-                    }
-                    if ($zmdc > 0) {
-                        for ($zmdi = 0; $zmdi < $zmdc; $zmdi++) {
-                            $zmds = @explode(':', $phpMussel['memCache'][$MetaSigFile][$zmdi]);
-                            $zmds[0] = $phpMussel['vn_shorthand']($zmds[0]);
-                            if (!isset($zmds[1])) {
-                                $zmds[1] = 0;
-                            }
-                            $zmds[2] = (!isset($zmds[2])) ? '' : preg_replace('/[^a-z0-9]/', '', $zmds[2]);
-                            if (
-                                !substr_count($phpMussel['memCache']['greylist'], ',' . $zmds[0] . ',') &&
-                                !$phpMussel['memCache']['ignoreme'] &&
-                                $zmds[0] &&
-                                $zmds[1] &&
-                                $zmds[2] &&
-                                $zmds[1] == $eS &&
-                                $zmds[2] == $zCRC
-                            ) {
-                                $r = 2;
-                                $x .=
-                                    '-' . $lnap . $phpMussel['ParseVars'](
-                                        array('vn' => $zmds[0]),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
-                                $phpMussel['killdata'] .= md5($in) . ':' . $eS . ':' . $ofn . '>' . $eN . "\n";
-                                $phpMussel['whyflagged'] .=
-                                    $phpMussel['ParseVars'](
-                                        array('vn' => $zmds[0]),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . ' (' . $ofnSafe . '>' . $eNSafe . ')' .
-                                    $phpMussel['Config']['lang']['_exclamation'];
-                            }
-                        }
-                    }
-                }
-                if ($r === 2) {
-                    if (
-                        $phpMussel['Config']['general']['quarantine_key'] &&
-                        !$phpMussel['Config']['general']['honeypot_mode']
-                    ) {
-                        if ($eS < ($phpMussel['Config']['general']['quarantine_max_filesize'] * 1024)) {
-                            $qfu =
-                                $phpMussel['time'] . '-' . md5(
-                                    $phpMussel['Config']['general']['quarantine_key'] . $zCRC . $phpMussel['time']
-                                );
-                            $phpMussel['Quarantine'](
-                                $in,
-                                $phpMussel['Config']['general']['quarantine_key'],
-                                $_SERVER[$phpMussel['Config']['general']['ipaddr']],
-                                $qfu
+                        $phpMussel['memCache']['objects_scanned']++;
+                        try {
+                            list($r, $x) = $phpMussel['MetaDataScan'](
+                                $PharData[$PharIter]['ItemRef'] . '>' . $TarFile['File']['Filename'],
+                                $TarFile['File']['Filename'],
+                                $TarFile['File']['Data'],
+                                $dpt,
+                                $PharData[$PharIter]['Indent'],
+                                $r,
+                                $x
                             );
-                            $phpMussel['killdata'] .=
-                                'Quarantined as "/vault/quarantine/' . $qfu . ".qfu\".\n";
+                        } catch (\Exception $e) {
+                            throw new \Exception($e->getMessage());
                         }
-                    }
-                    break;
-                }
-                $x .=
-                    '-' . $lnap . $phpMussel['Config']['lang']['scan_no_problems_found'] . "\n";
-                continue;
-            }
-            break;
-        }
-        if ($xts === 'zip*' || substr($in, 0, 2) === 'PK') {
-            if ($xt === 'ole') {
-                $ziptype = 'OLE';
-            } elseif ($xt === 'smpk') {
-                $ziptype = 'SMPTE';
-            } elseif ($xt === 'xpi') {
-                $ziptype = 'XPInstall';
-            } elseif ($xts === 'app*') {
-                $ziptype = 'App';
-            } elseif (substr_count(
-                ',docm,docx,dotm,dotx,potm,potx,ppam,ppsm,ppsx,pptm,pptx,xlam,xlsb,xlsm,x' .
-                'lsx,xltm,xltx,', ',' . $xt . ','
-            )) {
-                $ziptype = 'OpenXML';
-            } elseif (substr_count(
-                ',odc,odf,odg,odm,odp,ods,odt,otg,oth,otp,ots,ott,', ',' . $xt . ','
-            ) || $xts === 'fod*') {
-                $ziptype = 'OpenDocument';
-            } elseif (substr_count(',opf,epub,', ',' . $xt . ',')) {
-                $ziptype = 'EPUB';
-            } else {
-                $ziptype = 'ZIP';
-                $phpMussel['memCache']['container'] = 'zipfile';
-            }
-            if ($ziptype !== 'ZIP') {
-                $phpMussel['memCache']['file_is_ole'] = true;
-                $phpMussel['memCache']['container'] = 'pkfile';
-            }
-            /* AAA MORE WORK TO BE DONE, FUTURE ZIP FUNCTIONS TO GO HERE! AAA
-               WORKING NOTES: https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT
-               $ziphead['version_needed'] = $phpMussel['explode_bits'](substr($in, 4, 2));
-               $ziphead['compression_method'] = $phpMussel['explode_bits'](substr($in, 8, 2));
-               I'm hoping to eventually re-code this whole section. */
-            $ziphead = array('passed' => true);
-            $ziphead['general_purpose'] = $phpMussel['explode_bits'](substr($in, 6, 2));
-            if ($ziphead['general_purpose'][7]) {
-                /** Encryption detected. */
-                $ziphead['passed'] = false;
-                if ($phpMussel['Config']['files']['block_encrypted_archives']) {
-                    $r = 2;
-                    $phpMussel['killdata'] .= md5($in) . ':' . $eS . ':' . $ofn . '>' . $eN . "\n";
-                    $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['encrypted_archive'] .
-                        ' (' . $ofnSafe . '>' . $eNSafe . ')' .
-                        $phpMussel['Config']['lang']['_exclamation'];
-                    $x .=
-                        $lnap . $phpMussel['Config']['lang']['scan_checking'] .
-                        ' \'' . $ofn . '\' > \'' . $eN . '\' (FN: ' . $zCRC . "):\n-" .
-                        $lnap . $phpMussel['Config']['lang']['encrypted_archive'] .
-                        $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
-                }
-            }
-            if ($ziphead['passed']) {
-                if (!function_exists('zip_open')) {
-                    $phpMussel['memCache']['scan_errors']++;
-                    if (!$phpMussel['Config']['signatures']['fail_extensions_silently']) {
-                        $phpMussel['killdata'] .= md5($in) . ':' . $eS . ':' . $ofn . '>' . $eN . "\n";
-                        $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
-                    }
-                    return (!$n) ? -1 :
-                        $lnap . $phpMussel['Config']['lang']['scan_reading'] . ' \'' . $ofn . '\' (' .
-                        $ziptype. "):\n-" . $lnap .
-                        $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
-                }
-                if (!$fS = @zip_open($f)) {
-                    return (!$n) ? 0 :
-                        $lnap . $phpMussel['Config']['lang']['scan_reading'] . ' \'' . $ofn . '\' (' .
-                        $ziptype. "):\n-" . $lnap .
-                        $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
-                }
-                $x .=
-                    $lnap . $phpMussel['Config']['lang']['scan_reading'] . ' \'' . $ofn . '\' (' .
-                    $ziptype. "):\n-" . $lnap .
-                    $phpMussel['Config']['lang']['scan_checking_contents'] . "\n";
-                $b = false;
-                $lnap = '-' . $lnap;
-                $bi = -1;
-                while (!$b) {
-                    $bi++;
-                    if (!$fD = @zip_read($fS)) {
-                        $b = true;
-                        continue;
-                    }
-                    $eN = @zip_entry_name($fD);
-                    $eNSafe = urlencode($eN);
-                    $eS = @zip_entry_filesize($fD);
-                    $znCRC = @hash('crc32b', $eN);
-                    if (
-                        $phpMussel['Config']['files']['filesize_archives'] &&
-                        $phpMussel['Config']['files']['filesize_limit'] > 0
-                    ) {
-                        if ($eS > ($phpMussel['Config']['files']['filesize_limit']*1024)) {
-                            if (!$phpMussel['Config']['files']['filesize_response']) {
-                                $x .=
-                                    $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn .
-                                    '\' > \'' . $eN . '\' (FN: ' . $znCRC . "):\n-" . $lnap .
-                                    $phpMussel['Config']['lang']['ok'] . ' (' .
-                                    $phpMussel['Config']['lang']['filesize_limit_exceeded'] . ").\n";
-                                continue;
-                            }
-                            $r = 2;
-                            $phpMussel['killdata'] .=
-                                '--FILESIZE-LIMIT--------NO-HASH-:' . $eS . ':' . $ofn . '>' . $eN . "\n";
-                            $phpMussel['whyflagged'] .=
-                                $phpMussel['Config']['lang']['filesize_limit_exceeded'] .
-                                ' (' . $ofnSafe . ')' .
-                                $phpMussel['Config']['lang']['_exclamation'];
-                            $x .=
-                                $lnap . $phpMussel['Config']['lang']['scan_checking'] .
-                                ' \'' . $ofn . '\' > \'' . $eN . '\' (FN: ' . $znCRC . "):\n-" . $lnap .
-                                $phpMussel['Config']['lang']['filesize_limit_exceeded'] .
-                                $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
-                            continue;
-                        }
-                    }
-                    if (substr($eN, 0, 1) === '.' || substr($eN, -1) === '.') {
-                        $r = 2;
-                        $phpMussel['killdata'] .=
-                            '--FILENAME-MANIPULATION-NO-HASH-:' . $eS . ':' . $ofn . '>' . $eN . "\n";
-                        $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_filename_manipulation_detected'] .
-                            ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                        $TarFile['File']['DataCRC32'] = hash('crc32b', $TarFile['File']['Data']);
+                        $TarFile['File']['NameCRC32'] = hash('crc32b', $TarFile['File']['Filename']);
+                        $TarFile['Offset'] += $TarFile['File']['Blocks'] * 512;
                         $x .=
-                            $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn .
-                            '\' > \'' . $eN . '\' (FN: ' . $znCRC . "):\n-" . $lnap .
-                            $phpMussel['Config']['lang']['scan_filename_manipulation_detected'] .
-                            $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
-                        continue;
-                    }
-                    if ($phpMussel['Config']['files']['filetype_archives']) {
-                        $decPos = strrpos($eN, '.');
-                        $ofnLen = strlen($eN);
-                        if ($decPos === false || $decPos === ($ofnLen - 1)) {
-                            $xts = $xt = '-';
-                        } else {
-                            $xt = strtolower(substr($eN, ($decPos + 1)));
-                            $xts = substr($xt, 0, 3) . '*';
-                        }
-                        if (
-                            substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $xt . ',') ||
-                            substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $xts . ',')
-                        ) {
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_checking'] . ' \'' .
+                            $PharData[$PharIter]['ItemRef'] . '>' . $TarFile['File']['Filename'] .
+                            '\' (FN: ' . $TarFile['File']['NameCRC32'] . '; FD: ' .
+                            $TarFile['File']['DataCRC32'] . "):\n";
+                        if ($r === 1) {
                             $x .=
-                                $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn .
-                                '\' > \'' . $eN . '\' (FN: ' . $znCRC . "):\n-" . $lnap .
+                                '-' . $PharData[$PharIter]['Indent'] .
                                 $phpMussel['Config']['lang']['scan_no_problems_found'] . "\n";
-                            continue;
-                        }
-                        if (
-                            substr_count(',' . $phpMussel['Config']['files']['filetype_blacklist'] . ',', ',' . $xt . ',') ||
-                            substr_count(',' . $phpMussel['Config']['files']['filetype_blacklist'] . ',', ',' . $xts . ',')
-                        ) {
-                            $r = 2;
-                            $phpMussel['killdata'] .=
-                                '--FILETYPE-BLACKLISTED--NO-HASH-:' . $eS . ':' . $ofn . '>' . $eN . "\n";
-                            $phpMussel['whyflagged'] .=
-                                $phpMussel['Config']['lang']['filetype_blacklisted'] . ' (' . $ofnSafe . '>' .
-                                $eNSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                            $x .=
-                                $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn .
-                                '\' > \'' . $eN . '\' (FN: ' . $znCRC . "):\n-" . $lnap .
-                                $phpMussel['Config']['lang']['filetype_blacklisted'] .
-                                $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
-                            continue;
-                        }
-                        if (
-                            $phpMussel['Config']['files']['filetype_greylist'] &&
-                            !substr_count(',' . $phpMussel['Config']['files']['filetype_greylist'] . ',', ',' . $xt . ',') &&
-                            !substr_count(',' . $phpMussel['Config']['files']['filetype_greylist'] . ',', ',' . $xts . ',')
-                        ) {
-                            $r = 2;
-                            $phpMussel['killdata'] .=
-                                '----FILETYPE--NOT-GREYLISTED----:' . $eS . ':' . $ofn . '>' . $eN . "\n";
-                            $phpMussel['whyflagged'] .=
-                                $phpMussel['Config']['lang']['filetype_blacklisted'] . ' (' . $ofnSafe . '>' .
-                                $eNSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
-                            $x .=
-                                $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn .
-                                '\' > \'' . $eN . '\' (FN: ' . $znCRC . "):\n-" . $lnap .
-                                $phpMussel['Config']['lang']['filetype_blacklisted'] .
-                                $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
-                            continue;
                         }
                     }
-                    $eD = @zip_entry_read($fD, $eS);
-                    if (!$eD || !$eS) {
-                        continue;
-                    }
-                    $eFS = strlen($eD);
-                    $phpMussel['memCache']['objects_scanned']++;
-                    $bad = $phpMussel['DataHandler']($eD, $n, $dpt, $eN);
-                    $zmd = '';
-                    $zCRC = @hash('crc32b', $eD);
-                    if ($bi < 2) {
-                        for ($MetaItr = 0; $MetaItr < $MetaCnt; $MetaItr++) {
-                            $MetaSigConfig = $MetaSigArray[$MetaItr]['Config'];
-                            if (!$phpMussel['Config']['signatures'][$MetaSigConfig]) {
-                                continue;
-                            }
-                            $MetaSigFile = $MetaSigArray[$MetaItr]['SigFile'];
-                            if (!isset($phpMussel['memCache'][$MetaSigFile])) {
-                                $phpMussel['memCache'][$MetaSigFile] =
-                                    @file($phpMussel['sigPath'] . $MetaSigFile);
-                            }
-                            if (!$phpMussel['memCache'][$MetaSigFile]) {
-                                $zmdc = 0;
-                                if ($r !== 2) {
-                                    $r = -3;
-                                }
-                                $phpMussel['memCache']['scan_errors']++;
-                                if (!$phpMussel['Config']['signatures']['fail_silently']) {
-                                    $zmd .=
-                                        '-' . $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                                        ' (' . $MetaSigFile . ')' .
-                                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
-                                }
-                            } else {
-                                $zmdc = count($phpMussel['memCache'][$MetaSigFile]);
-                                if ($zmdc < 1) {
-                                    if ($r !== 2) {
-                                        $r = -3;
-                                    }
-                                    $phpMussel['memCache']['scan_errors']++;
-                                    if (!$phpMussel['Config']['signatures']['fail_silently']) {
-                                        $zmd .=
-                                            '-' . $lnap . $phpMussel['Config']['lang']['scan_signature_file_corrupted'] .
-                                            ' (' . $MetaSigFile . ')' .
-                                            $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
-                                    }
-                                }
-                            }
-                            if ($zmdc > 0) {
-                                for ($zmdi = 0; $zmdi < $zmdc; $zmdi++) {
-                                    $zmds = @explode(':', $phpMussel['memCache'][$MetaSigFile][$zmdi]);
-                                    $zmds[0] = $phpMussel['vn_shorthand']($zmds[0]);
-                                    if (!isset($zmds[1])) {
-                                        $zmds[1] = 0;
-                                    }
-                                    $zmds[2] = (!isset($zmds[2])) ? '' : preg_replace('/[^a-z0-9]/' ,'', $zmds[2]);
-                                    if (
-                                        !substr_count($phpMussel['memCache']['greylist'], ',' . $zmds[0] . ',') &&
-                                        !$phpMussel['memCache']['ignoreme'] &&
-                                        $zmds[0] &&
-                                        $zmds[1] &&
-                                        $zmds[2] &&
-                                        $zmds[1] == $eFS &&
-                                        $zmds[2] == $zCRC
-                                    ) {
-                                        $r = 2;
-                                        $zmd .=
-                                            '-' . $lnap . $phpMussel['ParseVars'](
-                                                array('vn' => $zmds[0]),
-                                                $phpMussel['Config']['lang']['detected']
-                                            ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
-                                        $phpMussel['killdata'] .= md5($eD) . ':' . $eFS . ':' . $ofn . '>' . $eN . "\n";
-                                        $phpMussel['whyflagged'] .=
-                                            $phpMussel['ParseVars'](
-                                                array('vn' => $zmds[0]),
-                                                $phpMussel['Config']['lang']['detected']
-                                            ) . ' (' . $ofnSafe . '>' . $eNSafe . ')' .
-                                            $phpMussel['Config']['lang']['_exclamation'];
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    if ($bad !== 1) {
-                        $r = 2;
-                        $x .=
-                            $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn .
-                            '\' > \'' . $eN . '\' (FN: ' . $znCRC . '; FD: ' . $zCRC. "):\n" . $bad . $zmd;
-                        continue;
-                    }
-                    if ($r === 2 && $zmd) {
-                        if (
-                            $phpMussel['Config']['general']['quarantine_key'] &&
-                            !$phpMussel['Config']['general']['honeypot_mode'] &&
-                            $eFS < ($phpMussel['Config']['general']['quarantine_max_filesize'] * 1024)
-                        ) {
-                            $qfu =
-                                $phpMussel['time'] . '-' . md5(
-                                    $phpMussel['Config']['general']['quarantine_key'] . $zCRC . $phpMussel['time']
-                                );
-                            $phpMussel['Quarantine'](
-                                $eD,
-                                $phpMussel['Config']['general']['quarantine_key'],
-                                $_SERVER[$phpMussel['Config']['general']['ipaddr']],
-                                $qfu
-                            );
-                            $phpMussel['killdata'] .=
-                                'Quarantined as "/vault/quarantine/' . $qfu . ".qfu\".\n";
-                        }
-                        $x .=
-                            $lnap . $phpMussel['Config']['lang']['scan_checking'] .
-                            ' \'' . $ofn . '\' > \'' . $eN . '\' (FN: ' . $znCRC . '; FD: ' . $zCRC .
-                            "):\n" . $zmd;
-                        continue;
-                    }
-                    $x .=
-                        $lnap . $phpMussel['Config']['lang']['scan_checking'] .
-                        ' \'' . $ofn . '\' > \'' . $eN . '\' (FN: ' . $znCRC . '; FD: ' . $zCRC .
-                        "):\n-" . $lnap . $phpMussel['Config']['lang']['scan_no_problems_found'] . "\n";
+                    $TarFile = '';
                 }
-                zip_close($fS);
+                if ($zDo) {
+                    $ScanDepth++;
+                    if (substr_count($PharData[$PharIter]['Filename'], '.')) {
+                        $PharData[$PharIter]['Filename'] = $phpMussel['substrbl']($PharData[$PharIter]['Filename'], '.');
+                    }
+                    if (substr_count($PharData[$PharIter]['Filename'], "\\")) {
+                        $PharData[$PharIter]['Filename'] = $phpMussel['substral']($PharData[$PharIter]['Filename'], "\\");
+                    }
+                    if (substr_count($PharData[$PharIter]['Filename'], '/')) {
+                        $PharData[$PharIter]['Filename'] = $phpMussel['substral']($PharData[$PharIter]['Filename'], '/');
+                    }
+                    $PharData[$PharIter]['Filesize'] = strlen($PharData[$PharIter]['Data']);
+                    $PharData[$PharIter]['ItemRef'] .= '>' . $PharData[$PharIter]['Filename'];
+                    $PharData[$PharIter]['NameCRC32'] = hash('crc32b', $PharData[$PharIter]['Filename']);
+                    $PharData[$PharIter]['DataCRC32'] = hash('crc32b', $PharData[$PharIter]['Data']);
+                    $x .=
+                        $PharData[$PharIter]['Indent'] .
+                        $phpMussel['Config']['lang']['scan_checking'] .
+                        ' \'' . $PharData[$PharIter]['ItemRef'] .
+                        '\' (FN: ' . $PharData[$PharIter]['NameCRC32'] .
+                        '; FD: ' . $PharData[$PharIter]['DataCRC32'] . "):\n";
+                    try {
+                        list($r, $x) = $phpMussel['MetaDataScan'](
+                            $PharData[$PharIter]['ItemRef'],
+                            $PharData[$PharIter]['Filename'],
+                            $PharData[$PharIter]['Data'],
+                            $PharData[$PharIter]['Depth'] + $ScanDepth + $dpt,
+                            $PharData[$PharIter]['Indent'],
+                            $r,
+                            $x
+                        );
+                    } catch (\Exception $e) {
+                        throw new \Exception($e->getMessage());
+                    }
+                    if ($r === 1) {
+                        $x .=
+                            $PharData[$PharIter]['Indent'] .
+                            $phpMussel['Config']['lang']['scan_no_problems_found'] .
+                            "\n";
+                    } else {
+                        break 2;
+                    }
+                    continue;
+                }
+                break;
             }
         }
-        /**
-         * @todo Future RAR functions to go here!
-         */
+    }
+    if ($r === 2) {
         if (
-            $xt === 'rar' ||
-            substr($in, 0, 4) === 'Rar!' ||
-            bin2hex(substr($in, 0, 4)) === '52457e5e'
+            $phpMussel['Config']['general']['quarantine_key'] &&
+            !$phpMussel['Config']['general']['honeypot_mode'] &&
+            (strlen($in) < ($phpMussel['Config']['general']['quarantine_max_filesize'] * 1024))
         ) {
-            // $phpMussel['memCache']['container'] = 'rarfile';
+            $qfu =
+                $phpMussel['time'] .
+                '-' .
+                md5($phpMussel['Config']['general']['quarantine_key'] . $fdCRC . $phpMussel['time']);
+            $phpMussel['Quarantine'](
+                $in,
+                $phpMussel['Config']['general']['quarantine_key'],
+                $_SERVER[$phpMussel['Config']['general']['ipaddr']],
+                $qfu
+            );
+            $phpMussel['killdata'] .=
+                $phpMussel['ParseVars'](array('QFU' => $qfu), $phpMussel['Config']['lang']['quarantined_as']);
         }
-        if ($r === 2 && $phpMussel['Config']['general']['delete_on_sight']) {
-            @unlink($f);
-        }
+    }
+    if ($r !== 1 && $phpMussel['Config']['general']['delete_on_sight']) {
+        unlink($f);
     }
     return (!$n) ? $r : $x;
 };
 
 /**
- * Used to fork the PHP process when scanning in CLI mode. This so that if PHP
+ * Forks the PHP process when scanning in CLI mode. This ensures that if PHP
  * crashes during scanning, phpMussel can continue to scan any remaining items
  * queued for scanning (because if the parent process handles the scan queue
  * and the child process handles the actual scanning of each item queued for
@@ -7753,9 +7588,9 @@ $phpMussel['Fork'] = function ($f = '', $ofn = '') use (&$phpMussel) {
 };
 
 /**
- * The main scan function, responsible for initialising scans in most
- * circumstances. It's the function that should generally be called
- * whenever phpMussel is required by external scripts, apps, CMS, etc.
+ * The main scan closure, responsible for initialising scans in most
+ * circumstances. Should generally be called whenever phpMussel is
+ * required by external scripts, apps, CMS, etc.
  *
  * Please refer to Section 3A of the README documentation, "HOW TO USE (FOR WEB
  * SERVERS)", for more information.
@@ -7800,11 +7635,11 @@ $phpMussel['Fork'] = function ($f = '', $ofn = '') use (&$phpMussel) {
  */
 $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn = '') use (&$phpMussel) {
     if (!isset($phpMussel['memCache'])) {
-        echo
+        throw new \Exception(
             (!isset($phpMussel['Config']['lang']['required_variables_not_defined'])) ?
             '[phpMussel] Required variables aren\'t defined: Can\'t continue.' :
-            '[phpMussel] ' . $phpMussel['Config']['lang']['required_variables_not_defined'];
-        die;
+            '[phpMussel] ' . $phpMussel['Config']['lang']['required_variables_not_defined']
+        );
     }
     if ($phpMussel['EOF']) {
         $phpMussel['HashCache']['Data'] =
@@ -7841,7 +7676,11 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
     }
     $xst = time();
     $xst2822 = date('r', $xst);
-    $r = $phpMussel['Recursor']($f, $n, $zz, $dpt, $ofn);
+    try {
+        $r = $phpMussel['Recursor']($f, $n, $zz, $dpt, $ofn);
+    } catch (\Exception $e) {
+        throw new \Exception($e->getMessage());
+    }
     $xet = time();
     $xet2822 = date('r', $xet);
 

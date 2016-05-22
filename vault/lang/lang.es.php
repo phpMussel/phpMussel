@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data (last modified: 2016.05.11).
+ * This file: Spanish language data (last modified: 2016.05.20).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'No entiendo ese comando, lo siento.';
@@ -51,6 +51,7 @@ $phpMussel['Config']['lang']['phpmussel_disabled_already'] = 'phpMussel ya está
 $phpMussel['Config']['lang']['phpmussel_enabled'] = 'phpMussel activado.';
 $phpMussel['Config']['lang']['phpmussel_enabled_already'] = 'phpMussel ya está activado.';
 $phpMussel['Config']['lang']['plugins_directory_nonexistent'] = 'Directorio de plugins no existe!';
+$phpMussel['Config']['lang']['quarantined_as'] = "En cuarentena como \"/vault/quarantine/{QFU}.qfu\".\n";
 $phpMussel['Config']['lang']['recursive'] = 'Recursión profundidad límite excedido';
 $phpMussel['Config']['lang']['required_variables_not_defined'] = 'Variables requeridas no están definidos: No puede continuar.';
 $phpMussel['Config']['lang']['SafeBrowseLookup_200'] = 'URL potencialmente dañino detectado';

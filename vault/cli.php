@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.04.24).
+ * This file: CLI handler (last modified: 2016.05.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,7 +24,7 @@ if (!(
     $phpMussel['Mussel_sapi'] &&
     $phpMussel['Mussel_PHP'] &&
     $phpMussel['Mussel_OS'] == 'WIN'
-    
+
 )) {
     die('[phpMussel] This should not be accessed directly.');
 }
@@ -73,7 +73,12 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                     unset($phpMussel['HashCache']['Build']);
                 }
             }
-            echo $phpMussel['Recursor'](substr($phpMussel['cli_args'][2], 5), true, true, 0, $phpMussel['cli_args'][3]);
+            try {
+                echo $phpMussel['Recursor'](substr($phpMussel['cli_args'][2], 5), true, true, 0, $phpMussel['cli_args'][3]);
+            } catch (\Exception $e) {
+                // trigger_error($e->getMessage(), E_USER_ERROR);
+                die($e->getMessage());
+            }
             if ($phpMussel['Config']['general']['scan_cache_expiry']) {
                 reset($phpMussel['HashCache']['Data']);
                 $phpMussel['HashCache']['Count'] = count($phpMussel['HashCache']['Data']);

@@ -67,9 +67,6 @@ $md5:1df9a18b18332f153918030b7b516615;$sha:6c42c62696616b72bbfc88a4be4ead57aa7bc
 .:: 2015/01
 $md5:2db0536589b7d34331e3fa84bea2a827;$sha:64c1f581a23a92e005cb0a9fbf4591e3049d14b1;$str_len:9570;054YoB.7z
 .:: Suspect embedding/multi-level (not necessarily always malicious; some of these are temporary until current capabilities/support within phpMussel improves); 2015/07
-$container:compressor;FD:504b:A:2;—+X-00
-$container:compressor;FD:52457e5e:A:4;—+X-01
-$container:compressor;FD:52617221:A:4;—+X-02
 $container:pkfile;FD:1f8b:A:2;—+OLE-00
 $container:pkfile;FD:425a68:A:3;—+OLE-01
 $container:pkfile;FD:504b:A:2;—+OLE-02

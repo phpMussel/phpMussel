@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2016.05.11).
+ * This file: Indonesian language data (last modified: 2016.05.20).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Saya tidak mengerti perintah itu, maaf.';
@@ -51,6 +51,7 @@ $phpMussel['Config']['lang']['phpmussel_disabled_already'] = 'phpMussel sudah di
 $phpMussel['Config']['lang']['phpmussel_enabled'] = 'phpMussel diaktifkan.';
 $phpMussel['Config']['lang']['phpmussel_enabled_already'] = 'phpMussel sudah diaktifkan.';
 $phpMussel['Config']['lang']['plugins_directory_nonexistent'] = 'Direktori plugin tidak ada!';
+$phpMussel['Config']['lang']['quarantined_as'] = "Dikarantina sebagai \"/vault/quarantine/{QFU}.qfu\".\n";
 $phpMussel['Config']['lang']['recursive'] = 'Batas kedalaman rekursi melebihi';
 $phpMussel['Config']['lang']['required_variables_not_defined'] = 'Variabel diharuskan tidak didefinisikan: Tidak dapat dilanjutkan.';
 $phpMussel['Config']['lang']['SafeBrowseLookup_200'] = 'Berpotensi URL berbahaya terdeteksi';

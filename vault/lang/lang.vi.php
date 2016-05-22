@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2016.05.11).
+ * This file: Vietnamese language data (last modified: 2016.05.20).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Xin lỗi, tôi không hiểu câu lệnh này.';
@@ -51,6 +51,7 @@ $phpMussel['Config']['lang']['phpmussel_disabled_already'] = 'phpMussel đã b�
 $phpMussel['Config']['lang']['phpmussel_enabled'] = 'phpMussel cho phép.';
 $phpMussel['Config']['lang']['phpmussel_enabled_already'] = 'phpMussel đã được cho phép.';
 $phpMussel['Config']['lang']['plugins_directory_nonexistent'] = 'Thư mực plugin không tồn tại!';
+$phpMussel['Config']['lang']['quarantined_as'] = "Đã được kiểm dịch là \"/vault/quarantine/{QFU}.qfu\".\n";
 $phpMussel['Config']['lang']['recursive'] = 'Độ sâu đệ quy bị quá giới hạn';
 $phpMussel['Config']['lang']['required_variables_not_defined'] = 'Các biến số cần thiết chưa có định nghĩa: Có thể không có thể tiếp tục.';
 $phpMussel['Config']['lang']['SafeBrowseLookup_200'] = 'URL đó là có khả năng có hại đã được phát hiện';

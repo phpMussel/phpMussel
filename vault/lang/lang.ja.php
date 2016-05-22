@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2016.05.11).
+ * This file: Japanese language data (last modified: 2016.05.20).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'すみませんが、コマンドが理解できません。';
@@ -51,6 +51,7 @@ $phpMussel['Config']['lang']['phpmussel_disabled_already'] = 'phpMusselはすで
 $phpMussel['Config']['lang']['phpmussel_enabled'] = 'phpMusselはオンです。';
 $phpMussel['Config']['lang']['phpmussel_enabled_already'] = 'phpMusselは既にオンです。';
 $phpMussel['Config']['lang']['plugins_directory_nonexistent'] = 'プラグインデイレクトリが存在しません！';
+$phpMussel['Config']['lang']['quarantined_as'] = "「/vault/quarantine/{QFU}.qfu」として隔離。\n";
 $phpMussel['Config']['lang']['recursive'] = '再帰定義呼び出しの繰り返し回数が上限を超えました';
 $phpMussel['Config']['lang']['required_variables_not_defined'] = 'リクエストのあった変数は定義されていないため、続行できません。';
 $phpMussel['Config']['lang']['SafeBrowseLookup_200'] = '潜在的に有害なURLが検出されました';
