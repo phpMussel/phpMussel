@@ -493,7 +493,7 @@ Cấu hình chung cho phpMussel.
 - phpMussel nên gửi 403 Forbidden chúng với các thông điệp tải lên tập tin bị chặn, hoặc chỉ sử dụng 200 OK? False = Không (200) [Mặc định]; True = Vâng (403).
 
 "delete_on_sight"
-- Bật tùy chọn này sẽ hướng dẫn các kịch bản để cố gắng xóa ngay lập tức bất kỳ đã quét tải lên tập tin mà phù hợp bất kỳ tiêu chí phát hiện, dù qua chữ ký hay thứ khác. Tập tin xác định là "sạch" sẽ không được bị chạm vào. Trong trường hợp tập tin lưu trữ, các toàn bộ lưu trữ sẽ bị xóa, bất kể nếu các tập tin vi phạm chỉ là một trong nhiều tập tin chứa trong các lưu trữ. Trong trường hợp quét tập tin tải lên, thông thường, nó không phải là cần thiết để kích hoạt tùy chọn này, bởi vì thông thường, PHP sẽ tự động tẩy các nội dung của bộ nhớ cache của nó khi thực hiện xong, điều đó có nghĩa là nó thường sẽ xóa bất kỳ tập tin tải lên thông qua nó đến máy chủ trừ khi họ đã được chuyển, sao chép hay xóa rồi. Tùy chọn này được thêm vào ở đây như một biện pháp bảo mật thêm cho những người có bản sao của PHP mà có thể không luôn luôn cư xử theo cách mong đợi. False = Sau khi quét, làm không có gì để các tập tin [Mặc định]; True = Sau khi quét, nếu không sạch, xóa ngay lập tức.
+- Bật tùy chọn này sẽ hướng dẫn các kịch bản để cố gắng xóa ngay lập tức bất kỳ đã quét tải lên tập tin mà phù hợp bất kỳ tiêu chí phát hiện, dù qua chữ ký hay thứ khác. Tập tin xác định là "sạch" sẽ không được bị chạm vào. Trong trường hợp dữ liệu lưu trữ, các toàn bộ lưu trữ sẽ bị xóa, bất kể nếu các tập tin vi phạm chỉ là một trong nhiều tập tin chứa trong các lưu trữ. Trong trường hợp quét tập tin tải lên, thông thường, nó không phải là cần thiết để kích hoạt tùy chọn này, bởi vì thông thường, PHP sẽ tự động tẩy các nội dung của bộ nhớ cache của nó khi thực hiện xong, điều đó có nghĩa là nó thường sẽ xóa bất kỳ tập tin tải lên thông qua nó đến máy chủ trừ khi họ đã được chuyển, sao chép hay xóa rồi. Tùy chọn này được thêm vào ở đây như một biện pháp bảo mật thêm cho những người có bản sao của PHP mà có thể không luôn luôn cư xử theo cách mong đợi. False = Sau khi quét, làm không có gì để các tập tin [Mặc định]; True = Sau khi quét, nếu không sạch, xóa ngay lập tức.
 
 "lang"
 - Xác định tiếng mặc định cho phpMussel.
@@ -577,7 +577,7 @@ Kiểm tra tập tin đồ họa chống lại chữ ký đồ họa khi quét? 
 - "graphics_custom"
 - "graphics_mussel"
 
-Kiểm tra nội dung của tập tin lưu trữ chống lại siêu dữ liệu lưu trữ chữ ký khi quét? False = Không; True = Vâng [Mặc định].
+Kiểm tra nội dung của dữ liệu lưu trữ chống lại siêu dữ liệu lưu trữ chữ ký khi quét? False = Không; True = Vâng [Mặc định].
 - "metadata_clamav"
 - "metadata_custom"
 - "metadata_mussel"
@@ -658,7 +658,7 @@ Tùy chọn cho chiều dài hạn chế chữ ký. Chỉ thay đổi này nếu
 Cấu hình cho xử lý tập tin.
 
 "max_uploads"
-- Số lượng tối đa của tập tin cho phép để quét trong khi quét tập tin tải lên trước khi hủy bỏ quá trình quét và thông báo cho người dùng rằng họ đang tải lên quá nhiều cùng một lúc! Trong lý thuyết, cung cấp bảo vệ chống lại một cuộc tấn công nhờ đó mà một kẻ tấn công cố gắng DDoS hệ thống hay CMS của bạn bằng cách quá tải phpMussel để làm chậm quá trình PHP đến khi nó dừng lại. Đề xuất: 10. Bạn có thể muốn tăng hoặc giảm số này tùy thuộc vào tốc độ của phần cứng của bạn. Chú ý rằng con số này không tính đến hoặc bao gồm các nội dung của tài liệu lưu trữ.
+- Số lượng tối đa của tập tin cho phép để quét trong khi quét tập tin tải lên trước khi hủy bỏ quá trình quét và thông báo cho người dùng rằng họ đang tải lên quá nhiều cùng một lúc! Trong lý thuyết, cung cấp bảo vệ chống lại một cuộc tấn công nhờ đó mà một kẻ tấn công cố gắng DDoS hệ thống hay CMS của bạn bằng cách quá tải phpMussel để làm chậm quá trình PHP đến khi nó dừng lại. Đề xuất: 10. Bạn có thể muốn tăng hoặc giảm số này tùy thuộc vào tốc độ của phần cứng của bạn. Chú ý rằng con số này không tính đến hoặc bao gồm các nội dung của dữ liệu lưu trữ.
 
 "filesize_limit"
 - Giới hạn của kích thước tập tin trong KB. 65536 = 64MB [Mặc định]; 0 = Không giới hạn (luôn có trên danh sách xám), bất kỳ giá trị số dương chấp nhận. Điều này có thể hữu ích khi cấu hình PHP của bạn hạn chế số lượng bộ nhớ một quá trình có thể giữ hay nếu hình PHP của bạn giới hạn kích thước của tải lên tập tin.
@@ -667,34 +667,34 @@ Cấu hình cho xử lý tập tin.
 - Làm gì với tập tin mà vượt quá các giới hạn kích thước của tải lên (nếu tồn tại). False = Danh sách trắng; True = Danh sách đen [Mặc định].
 
 "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
-- Nếu your system only allows specific types of files to be uploaded, hoặc nếu your system explicitly denies certain types of files, specifying those filetypes in whitelists, blacklists và greylists can increase các speed at which scanning is performed by allowing các kịch bản to skip over certain filetypes. Format is CSV (comma separated values). Nếu you want to scan everything, rather than whitelist, blacklist hoặc greylist, leave các variable(/s) blank; Doing so will disable whitelist/blacklist/greylist. @FROM HERE@
-- Logical order of processing is:
-  - Nếu các filetype is whitelisted, don't scan và don't block các file, và don't check các tập tin chống lại các blacklist hoặc các greylist.
-  - Nếu các filetype is blacklisted, don't scan các tập tin but block it anyway, và don't check các tập tin chống lại các greylist.
-  - Nếu các danh sách xám is empty hoặc nếu các danh sách xám is not empty và các filetype is greylisted, scan các tập tin as per normal và determine whether to block it based on các results of các scan, but nếu các danh sách xám is not empty và các filetype is not greylisted, treat các tập tin as blacklisted, therefore not scanning it but blocking it anyway.
+- Nếu hệ thống của bạn chỉ cho phép các loại tệp cụ thể được tải lên, hay nếu hệ thống của bạn từ chối một cách rõ ràng các loại tập tin cụ thể, xác định các loại tập tin trong danh sách trắng, danh sách đen và danh sách xám có thể tăng tốc độ quét được tiến hành bằng cách cho phép các kịch bản bỏ qua các loại tập tin nhất định. Định dạng là CSV (dấu phẩy ngăn cách giá trị). Nếu bạn muốn quét tất cả mọi thứ, thay vì sử dụng danh sách trắng, danh sách đen hay danh sách xám, để lại những biến trống; Làm như vậy sẽ vô hiệu hóa danh sách trắng/đen/xám.
+- Thứ tự hợp lý của chế biến là:
+  - Nếu loại tệp là trên danh sách trắng, không quét và không chặn các tập tin, và không kiểm tra các tập tin chống lại danh sách đen hay danh sách xám.
+  - Nếu loại tệp là trên danh sách đen, không quét các tập tin nhưng chặn nó dù sao, và không kiểm tra các tập tin chống lại danh sách xám.
+  - Nếu danh sách xám là trống hay nếu danh sách xám không phải là trống và các loại tệp là danh sách xám, quét các tập tin như bình thường và xác định xem có chặn nó dựa trên kết quả của quá trình quét, nhưng nếu danh sách xám không phải là trống và các loại tệp không phải trên danh sách xám, điều trị các tập tin như thể nó là trên danh sách đen, vì thế không quét nó nhưng chặn nó dù sao.
 
 "check_archives"
-- Attempt to check các contents of archives? False = Don't check; True = Check [Mặc định].
-- Currently, only checking of BZ, GZ, LZF và ZIP files is supported (checking of RAR, CAB, 7z và etcetera not currently supported).
-- This is not foolproof! While I highly recommend keeping this turned on, I can't guarantee it'll always find everything.
-- Also be aware that lưu trữ checking currently is not recursive for ZIPs.
+- Cố gắng để kiểm tra nội dung của dữ liệu lưu trữ? False = Không kiểm tra; True = Kiểm tra [Mặc định].
+- Tại thơi điểm nay, các chỉ định dạng lưu trữ và nén được hỗ trợ là BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR và ZIP (định dạng lưu trữ và nén RAR, CAB, 7z và vân vân không được hỗ trợ tại thơi điểm nay).
+- Đây không phải là hoàn hảo! Trong khi tôi rất khuyên bạn nên giữ này được kích hoạt, tôi không thể đảm bảo nó sẽ luôn luôn tìm thấy tất cả mọi thứ.
+- Cũng lưu ý lưu trữ kiểm tra là không đệ quy cho PHAR hay ZIP.
 
 "filesize_archives"
-- Carry over filesize blacklisting/whitelisting to các contents of archives? False = Không (just danh sách xám everything); True = Vâng [Mặc định].
+- Thừa kế danh sách đen/trắng cho kích thước của tập tin trong lưu trữ? False = Không (chỉ danh sách xám mọi điều); True = Vâng [Mặc định].
 
 "filetype_archives"
-- Carry over filetype blacklisting/whitelisting to các contents of archives? False = Không (just danh sách xám everything) [Mặc định]; True = Vâng.
+- Thừa kế danh sách đen/trắng cho loại tệp của tập tin trong lưu trữ? False = Không (chỉ danh sách xám mọi điều) [Mặc định]; True = Vâng.
 
 "max_recursion"
-- Maximum recursion depth limit for archives. Mặc định = 10.
+- Tối đa đệ quy chiều sâu giới hạn cho lưu trữ. Mặc định = 10.
 
 "block_encrypted_archives"
-- Detect và block encrypted archives? Because phpMussel isn't able to scan các contents of encrypted archives, it's possible that lưu trữ encryption may be employed by an kẻ tấn công as a means of attempting to bypass phpMussel, anti-virus scanners và other such protections. Instructing phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. False = Không; True = Vâng [Mặc định].
+- Phát hiện và chặn lưu trữ được mã hóa? Bởi vì phpMussel không thể quét các nội dung của lưu trữ được mã hóa, nó có thể mã hóa lưu trữ có thể được sử dụng bởi một kẻ tấn công như một phương tiện cố gắng để vượt qua phpMussel, máy quét chống vi rút và bảo vệ khác như. Hướng dẫn phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. False = Không; True = Vâng [Mặc định]. @FROM HERE@
 
 ####"attack_specific" (Thể loại)
 Cấu hình chống lại tấn công cụ thể.
 
-Chameleon attack detection: False = Off; True = On.
+Phát hiện của tấn công tắc kè hoa: False = Tắt; True = Trên.
 
 "chameleon_from_php"
 - Search for PHP header in files that are neither PHP files nor recognised archives.
@@ -715,7 +715,7 @@ Chameleon attack detection: False = Off; True = On.
 - Search for PDF files whose headers are incorrect.
 
 "archive_file_extensions" và "archive_file_extensions_wc"
-- Recognised lưu trữ tập tin extensions (format is CSV; should only add hoặc remove when problems occur; unnecessarily removing may cause sai tích cực to appear for lưu trữ files, trong khi unnecessarily adding will essentially whitelist what you're adding from attack specific detection; modify with caution; also note that this has no effect on what archives can và can't be analysed at content-level). Các list, as is at default, lists those formats used most commonly across các majority of systems và CMS, but intentionally isn't necessarily comprehensive.
+- Được công nhận mở rộng cho tập tin lưu trữ (định dạng là CSV; should only add hoặc remove when problems occur; unnecessarily removing may cause sai tích cực to appear for lưu trữ files, trong khi unnecessarily adding will essentially whitelist what you're adding from attack specific detection; modify with caution; also note that this has no effect on what archives can và can't be analysed at content-level). Các list, as is at default, lists those formats used most commonly across các majority of systems và CMS, but intentionally isn't necessarily comprehensive.
 
 "general_commands"
 - Search các content of files for statements và general commands như thế `eval()` và `exec()`? False = Don't check [Mặc định]; True = Check. Disable this directive nếu you intend to upload any of các following to your system hoặc CMS thông qua trình duyệt của bạn: PHP, JavaScript, HTML, python, perl files và etcetera. Enable this directive nếu you don't have any additional protections on your system và do not intend to upload such files. Nếu you use additional security in conjunction with phpMussel (such as ZB Block), there's no need to enable this directive, bởi vì most of what phpMussel will look for (in các context of this directive) are duplications of protections that will most likely already be provided.
@@ -975,4 +975,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 21 Tháng Tư 201
 ---
 
 
-Lần cuối cập nhật: 22 Tháng Năm 2016 (2016.05.22).
+Lần cuối cập nhật: 23 Tháng Năm 2016 (2016.05.23).

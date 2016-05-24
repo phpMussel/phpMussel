@@ -678,9 +678,9 @@ CVD是一個acronym為｢ClamAV Virus Definitions｣，在參照如何ClamAV參�
 
 “check_archives”
 - 嘗試匹配存檔內容嗎？ False = 不匹配； True = 匹配【默認】。
-- 目前，只BZ，GZ，LZF和ZIP文件匹配是支持（匹配的RAR，CAB，7z和等等不還支持）。
+- 目前，只BZ/BZIP2，GZ/GZIP，LZF，PHAR，TAR和ZIP文件格式是支持（匹配的RAR，CAB，7z和等等不還支持）。
 - 這個是不完美！雖說我很推薦保持這個激活，我不能保證它將始終發現一切。
-- 還，請注意存檔匹配目前是不遞歸為ZIP格式。
+- 還，請注意存檔匹配目前是不遞歸為PHAR或ZIP格式。
 
 “filesize_archives”
 - 繼承文件大小黑名單／白名單在存檔內容嗎？ False = 不繼承（剛灰名單一切）； True = 繼承【默認】。

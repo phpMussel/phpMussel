@@ -675,9 +675,9 @@ Configuração geral por a manipulação de arquivos.
 
 "check_archives"
 - Tentativa de verificar os conteúdos dos compactados arquivos? False = Não (Não verificar); True = Sim (Verificar) [Padrão].
-- Neste momento, apenas a verificação de BZ, GZ, LZF e ZIP arquivos é suportados (verificação de RAR, CAB, 7z e etcetera suportados neste momento).
+- Neste momento, os únicos formatos suportados são BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR e ZIP (os formatos RAR, CAB, 7z e etc. não suportadas neste momento).
 - Este não é infalível! Embora eu recomendo mantê-lo ativado, eu não posso garantir que sempre vai encontrar tudo.
-- Também estar ciente de que a verificação do compactados arquivos, neste momento, não é recursiva por ZIP arquivos.
+- Também estar ciente de que a verificação do compactados arquivos, neste momento, não é recursiva por PHAR ou ZIP arquivos.
 
 "filesize_archives"
 - Herdar o arquivo tamanho blacklist/whitelist para o conteúdo de compactados arquivos? False = Não (greylist tudo); True = Sim [Padrão].
@@ -975,4 +975,4 @@ Esta informação foi atualizada dia 21 Abril 2016 e é corrente para todas phpM
 ---
 
 
-Última Atualização: 16 Maio 2016 (2016.05.16).
+Última Atualização: 23 Maio 2016 (2016.05.23).

@@ -675,9 +675,9 @@ Configuration générale pour les gestion des fichiers.
 
 "check_archives"
 - Essayer vérifier les contenus des archives? False = Non (ne pas vérifier); True = Oui (vérifier) [Défaut].
-- Actuellement, seulement l'examen de BZ, GZ, LZF et ZIP fichiers est supporté (l'examen RAR, CAB, 7z etc actuellement pas supporté).
+- En ce moment, les seuls formats d'archives et de compression supporté sont BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR et ZIP (les formats d'archives et de compression RAR, CAB, 7z et etc ne sont pas supporté en ce moment).
 - Ce n'est pas à toute épreuve! Bien que je recommande fortement d'avoir ce reste activée, je ne peux pas garantir il va toujours trouver tout.
-- Aussi être conscient que l'examen d'archives actuellement n'est pas récursif pour ZIPs.
+- Aussi être conscient que l'examen d'archives actuellement n'est pas récursif pour PHARs ou ZIPs formats.
 
 "filesize_archives"
 - Étendre taille du fichier liste noire/blanche paramètres à le contenu des archives? False = Non (énumérer grise tout); True = Oui [Défaut].
@@ -975,4 +975,4 @@ Cette information a été réactualisé le 21 Avril 2016 et est courant pour tou
 ---
 
 
-Dernière Réactualisé: 16 Mai 2016 (2016.05.16).
+Dernière Réactualisé: 23 Mai 2016 (2016.05.23).

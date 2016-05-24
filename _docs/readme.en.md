@@ -675,9 +675,9 @@ File handling configuration.
 
 "check_archives"
 - Attempt to check the contents of archives? False = Don't check; True = Check [Default].
-- Currently, only checking of BZ, GZ, LZF and ZIP files is supported (checking of RAR, CAB, 7z and etcetera not currently supported).
+- Currently, the only archive and compression formats supported are BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR and ZIP (archive and compression formats RAR, CAB, 7z and etcetera not currently supported).
 - This is not foolproof! While I highly recommend keeping this turned on, I can't guarantee it'll always find everything.
-- Also be aware that archive checking currently is not recursive for ZIPs.
+- Also be aware that archive checking currently is not recursive for PHARs or ZIPs.
 
 "filesize_archives"
 - Carry over filesize blacklisting/whitelisting to the contents of archives? False = No (just greylist everything); True = Yes [Default].
@@ -975,4 +975,4 @@ This information was last updated 21st April 2016 and is current for all phpMuss
 ---
 
 
-Last Updated: 16th May 2016 (2016.05.16).
+Last Updated: 23rd May 2016 (2016.05.23).

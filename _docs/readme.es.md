@@ -674,9 +674,9 @@ General configuración para el manejo de archivos.
 
 "check_archives"
 - Intente comprobar el contenido de los compactados archivos? False = No (no comprobar); True = Sí (comprobar) [Predefinido].
-- Corrientemente, sólo la comprobación de BZ, GZ, LZF y ZIP archivos está soportado (comprobación de RAR, CAB, 7z y etcétera no soportado en este momento).
+- Corrientemente, los únicos formatos soportados son BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR y ZIP (los formatos RAR, CAB, 7z y etc. corrientemente no es soportados).
 - Esto no es infalible! Mientras yo altamente recomiendo mantener este activado, no puedo garantizar que siempre encontrará todo.
-- También ser conscientes que la comprobación de compactados archivos corrientemente no es recursivo para ZIPs.
+- También ser conscientes que la comprobación de compactados archivos corrientemente no es recursivo para PHAR o ZIP formatos.
 
 "filesize_archives"
 - Heredar tamaño de archivos blacklist/whitelist para los contenidos de compactados archivos? False = No (todo en la greylist); True = Sí [Predefinido].
@@ -974,4 +974,4 @@ Esta información ha sido actualizado 27 Marzo 2016 y es a hoy para todas las ph
 ---
 
 
-Última Actualización: 16 Mayo 2016 (2016.05.16).
+Última Actualización: 23 Mayo 2016 (2016.05.23).

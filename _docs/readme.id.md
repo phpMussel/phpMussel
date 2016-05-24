@@ -675,9 +675,9 @@ Konfigurasi umum untuk mengambil alih file-file.
 
 "check_archives"
 - Berusaha mencek isi file terkompress? False = Tidak (Tidak mencek); True = Ya (Mencek) [Default].
-- Hanya mencek BZ, GZ, LZF dan ZIP file-file didukung (mencek RAR, CAB, 7z, dll tidak didukung).
+- Sekarang, hanya BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR dan ZIP format yang didukung (RAR, CAB, 7z, dll tidak didukung).
 - Ini tidak selalu sempurna! Selama saya sangat rekomendasikan menjaga ini aktif, saya tidak dapat menjamin itu hanya menemukan segala sesuatunya.
-- Juga diingatkan bahwa mencek file terkompres tidak rekursif untuk ZIP.
+- Juga diingatkan bahwa mencek file terkompres tidak rekursif untuk format PHAR atau ZIP.
 
 "filesize_archives"
 - Memperlalaikan ukuran daftar hitam/putih dari isi file terkompress? False = Tidak (Bertanda abu-abu semua); True = Ya [Default].
@@ -975,4 +975,4 @@ Informasi ini diupdate 21 April 2016 dan cocok untuk semua rilis phpMussel dari 
 ---
 
 
-Terakhir Diperbarui: 16 Mei 2016 (2016.05.16).
+Terakhir Diperbarui: 23 Mei 2016 (2016.05.23).

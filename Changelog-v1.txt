@@ -155,6 +155,12 @@ entries will be deleted when those goals have been achieved.
   error suppression and cleaning up duplicated code. Calls to "die" from within
   closures have been removed in favour of using exceptions.
 
+- [2015.08.22; Documentation; Nadeen Shawa / Maikuolan]: Completed translation
+  of the documentation to Arabic (documentation prep and markdown formatting by
+  Maikuolan/Caleb, but the actual translations were done by Nadeen Shawa). With
+  this translation completed, the phpMussel documentation is now available in
+  12 fully completed translations with 1 other translation near to completion.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

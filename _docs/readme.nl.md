@@ -675,9 +675,9 @@ Bestand hanteren configuratie.
 
 "check_archives"
 - Om de inhoud van archieven proberen te controleer? False = Nee (niet doen controleer); True = Ja (doen controleer) [Standaard].
-- Momenteel, alleen het controleren van BZ, GZ, LZF en ZIP bestanden is ondersteund (controleer van RAR, CAB, 7z en en zo voort momenteel niet ondersteund).
+- Momenteel, het enige archief en compressie-formaten ondersteund zijn BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR en ZIP (archief en compressie-formaten RAR, CAB, 7z en etcetera momenteel niet ondersteund).
 - Dit is niet onfeilbaar! Hoewel ik beveel het houden van dit ingeschakeld, ik kan niet garanderen dat het zal altijd vind alles.
-- Ook noteren dat archief controleren momenteel is niet recursief voor ZIP.
+- Ook noteren dat archief controleren momenteel is niet recursief voor PHAR of ZIP formaten.
 
 "filesize_archives"
 - Erven het bestandsgrootte blacklist/whitelist staat om de inhoud van archieven? False = Nee (gewoon greylist alles); True = Ja [Standaard].
@@ -975,4 +975,4 @@ Dit informatie werd laatst bijgewerkt 21 April 2016 en is op de hoogte voor alle
 ---
 
 
-Laatste Bijgewerkt: 16 Mei 2016 (2016.05.16).
+Laatste Bijgewerkt: 23 Mei 2016 (2016.05.23).

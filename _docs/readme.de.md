@@ -674,9 +674,9 @@ Generelle Konfigurationen für die Handhabung von Dateien.
 
 "check_archives"
 - Soll der Inhalt von Archiven überprüft werden? False = Nein (keine Überprüfung); True = Ja (wird überprüft) [Standardeinstellung].
-- Zur Zeit wird NUR die Überprüfung von BZ, GZ, LZF und ZIP Archiven unterstützt (Überprüfung von RAR, CAB, 7z usw. wird zur Zeit NICHT unterstützt).
+- Zur Zeit wird NUR die Überprüfung von BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR und ZIP Archiven unterstützt (Überprüfung von RAR, CAB, 7z usw. wird zur Zeit NICHT unterstützt).
 - Diese Funktion ist nicht sicher! Es wird dringend empfohlen, diese Funktion aktiviert zu lassen, es kann jedoch nicht garantiert werden, dass alles entdeckt wird.
-- Die Archivüberprüfung ist derzeit nicht rekursiv für ZIP-Archive.
+- Die Archivüberprüfung ist derzeit nicht rekursiv für PHAR-Archive oder ZIP-Archive.
 
 "filesize_archives"
 - Soll das Blacklisting/Whitelisting der Dateigröße auf den Inhalt des Archivs übertragen werden? False = Nein (alles nur in die Greylist aufnehmen); True = Ja [Standardeinstellung].
@@ -973,4 +973,4 @@ Diese Informationen wurden zuletzt am 21. April 2016 aktualisiert und gelten fü
 ---
 
 
-Zuletzt aktualisiert: 16. Mai 2016 (2016.05.16).
+Zuletzt aktualisiert: 23. Mai 2016 (2016.05.23).

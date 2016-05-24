@@ -30,7 +30,7 @@
 
 <div dir="rtl">شكر خاص لـ "كلام ايه في"(<a href="http://www.clamav.net/">ClamAV</a>)لكل من الإلهام للمشروع وللتوقيعات المستخدمة في هذا البرنامج النصي و التي من دونها فمن المرجح أنه لا وجود للبرنامج، أو في أحسن الأحوال له قيمة محدودة للغاية.<br /><br /></div>
 
-<div dir="rtl">شكر خاص لكل من Sourceforge ("سورس فورج") و Github ("جيت هاب") على استضافتهم لملفات المشروع، كذلك الشكر لـ <a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">Spambot Security</a> على استضافتهم لمنتديات مناقشة phpMussel(phpMussel)و إلى المصادر الإضافية لعدد من التوقيعات المستخدمة في phpMussel و منها: <a href="http://www.securiteinfo.com/">SecuriteInfo.com</a>، <a href="http://www.phishtank.com/">PhishTank</a>، <a href="http://nlnetlabs.nl/">NLNetLabs</a> و مصادر أخرى و شكر خاص لكل الذين دعموا المشروع و إلى أي أحد قد نسيت أن أذكره و لكم بالتأكيد على استخدامكم البرنامج.<br /><br /></div>
+<div dir="rtl">شكر خاص لكل من Sourceforge ("سورس فورج") و Github ("جيت هاب") على استضافتهم لملفات المشروع، كذلك الشكر لـ <a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">Spambot Security</a> على استضافتهم لمنتديات مناقشة phpMusselو إلى المصادر الإضافية لعدد من التوقيعات المستخدمة في phpMussel و منها: <a href="http://www.securiteinfo.com/">SecuriteInfo.com</a>، <a href="http://www.phishtank.com/">PhishTank</a>، <a href="http://nlnetlabs.nl/">NLNetLabs</a> و مصادر أخرى و شكر خاص لكل الذين دعموا المشروع و إلى أي أحد قد نسيت أن أذكره و لكم بالتأكيد على استخدامكم البرنامج.<br /><br /></div>
 
 <div dir="rtl">هذا المستند و الحزمة المرتبطة به يمكن تحميلها مجاناً من:</div>
 - [Sourceforge](http://phpmussel.sourceforge.net/).
@@ -74,7 +74,7 @@
 
 ### <div dir="rtl">2ب. <a name="SECTION2B"></a>كيفية التحميل (لخدمات واجهة سطر الأوامر)</div>
 
-<div dir="rtl">آمل أن يتم تبسيط هذه العملية عن طريق المثبت في مرحلة ما في المستقبل غير البعيد جدا، ولكن حتى ذلك الحين، اتبع الإرشادات للحصول على phpMusselجاهز للعمل مع واجهة سطر الأوامر، (يجب أن تكون على علم أنه عند هذه النقطة، دعم واجهة سطر الأوامر لا تنطبق إلا على أنظمة ويندوز؛ لينكس والأنظمة الأخرى سيتم قريبا عند إصدار إصدارات أحدث من بي اتش بي ماسل):<br /><br /></div>
+<div dir="rtl">آمل أن يتم تبسيط هذه العملية عن طريق المثبت في مرحلة ما في المستقبل غير البعيد جدا، ولكن حتى ذلك الحين، اتبع الإرشادات للحصول على phpMusselجاهز للعمل مع واجهة سطر الأوامر، (يجب أن تكون على علم أنه عند هذه النقطة، دعم واجهة سطر الأوامر لا تنطبق إلا على أنظمة ويندوز؛ لينكس والأنظمة الأخرى سيتم قريبا عند إصدار إصدارات أحدث من phpMussel):<br /><br /></div>
 
 <div dir="rtl">1) حسب قراءتك لهذا، فإنني أفترض أنك قد قمت بالفعل بتنزيل نسخة مؤرشفة من البرنامج، و قمت بفك ضغط محتوياته، وأنها تجلس في مكان ما على جهازك المحلي. بمجرد ان تكون قد قررت أنك راضيا عن الموقع الذي تم اختياره لـphpMussel، قم بالمتابعة.<br /><br /></div>
 
@@ -192,7 +192,7 @@
  <li>المعاملات الاختيارية: (لا يوجد)</li>
  <li>مثال 1: "?logspword=[logs_password]&phpmussel=controls_lockout"</li>
  <li>مثال 2: "?pword=[script_password]&phpmussel=controls_lockout"</li>
- <li>ماذا يفعل: تعطل جميع عناصر التحكم من قبل المتصفح. هذا ينبغي أن تستخدم إذا كنت تظن أن أي من كلمات السر الخاصة بك قد تم اختراقها (هذا يمكن أن يحدث إذا كنت تستخدم هذه الضوابط من جهاز كمبيوتر ليس آمن و/أو غير موثوق). "controls_lockout" (قفل التحكم) يعمل عن طريق إنشاء ملف يسمى (controls.lck) في مجلد خاص و الذي سوف يقوم (بي اتش بي ماسل) بالتحقق من خلاله قبل تنفيذ أي أوامر من أي نوع. عندما يحدث هذا فإنك لإعادة تمكين الضوابط، ستحتاج إلى حذف الملف (controls.lck) يدويا عبر بروتوكول نقل الملفات أو ما شابه ذلك و الذي يمكن استدعاءه باستخدام كلمة مرور.</li>
+ <li>ماذا يفعل: تعطل جميع عناصر التحكم من قبل المتصفح. هذا ينبغي أن تستخدم إذا كنت تظن أن أي من كلمات السر الخاصة بك قد تم اختراقها (هذا يمكن أن يحدث إذا كنت تستخدم هذه الضوابط من جهاز كمبيوتر ليس آمن و/أو غير موثوق). "controls_lockout" (قفل التحكم) يعمل عن طريق إنشاء ملف يسمى (controls.lck) في مجلد خاص و الذي سوف يقوم phpMussel بالتحقق من خلاله قبل تنفيذ أي أوامر من أي نوع. عندما يحدث هذا فإنك لإعادة تمكين الضوابط، ستحتاج إلى حذف الملف (controls.lck) يدويا عبر بروتوكول نقل الملفات أو ما شابه ذلك و الذي يمكن استدعاءه باستخدام كلمة مرور.</li>
 </ul></div>
 
 <div dir="rtl">disable (تعطل)<br /></div>
@@ -202,7 +202,7 @@
  <li>المعاملات المطلوبة: (لا يوجد)</li>
  <li>المعاملات الاختيارية: (لا يوجد)</li>
  <li>مثال: "?pword=[script_password]&phpmussel=disable"</li>
- <li>ماذا يفعل: تعطيل (بي اتش بي ماسل). هذا ينبغي أن تستخدم إذا كنت تود بالقيام بأي تحديثات أو تغييرات على النظام الخاص بك أو يمكن إذا كنت تقوم بتثبيت أي برنامج جديد أو وحدات لنظامك فإما أن يفعل أو يحتمل أن يؤدي لفحص خاطئ (أن يعطي الفحص نتيجة بان البرنامج مصاب بالفايروس و هو غير ضار أو غير مصاب فعلياً). ينبغي أن يستخدم أيضا إذا كنت تواجه أي مشاكل مع (بي اتش بي ماسل) ولكن لا ترغب في إزالته من النظام الخاص بك. عندما يحدث هذا، لإعادة تمكين (بي اتش بي ماسل)، استخدم "تمكين".</li>
+ <li>ماذا يفعل: تعطيل phpMussel. هذا ينبغي أن تستخدم إذا كنت تود بالقيام بأي تحديثات أو تغييرات على النظام الخاص بك أو يمكن إذا كنت تقوم بتثبيت أي برنامج جديد أو وحدات لنظامك فإما أن يفعل أو يحتمل أن يؤدي لفحص خاطئ (أن يعطي الفحص نتيجة بان البرنامج مصاب بالفايروس و هو غير ضار أو غير مصاب فعلياً). ينبغي أن يستخدم أيضا إذا كنت تواجه أي مشاكل مع phpMussel ولكن لا ترغب في إزالته من النظام الخاص بك. عندما يحدث هذا، لإعادة تمكين phpMussel، استخدم "تمكين".</li>
 </ul></div>
 
 <div dir="rtl">enable (تمكين)<br /></div>
@@ -212,7 +212,7 @@
  <li>المعاملات المطلوبة: (لا يوجد)</li>
  <li>المعاملات الاختيارية: (لا يوجد)</li>
  <li>مثال: "?pword=[script_password]&phpmussel=enable"</li>
- <li>ماذا يفعل: تمكين بي اتش بي ماسل. هذا ينبغي أن تستخدم إذا كنت قد قمت بتعطيل (بي اتش بي ماسل) مسبقاً باستخدام "تعطيل" و تود إعادة تمكينه.</li>
+ <li>ماذا يفعل: تمكين phpMussel. هذا ينبغي أن تستخدم إذا كنت قد قمت بتعطيل phpMussel مسبقاً باستخدام "تعطيل" و تود إعادة تمكينه.</li>
 </ul></div>
 
 <div dir="rtl">update (تحديث)<br /></div>
@@ -222,7 +222,7 @@
  <li>المعاملات المطلوبة: (لا يوجد)</li>
  <li>المعاملات الاختيارية: (لا يوجد)</li>
  <li>مثال: "?pword=[script_password]&phpmussel=update"</li>
- <li>ماذا يفعل: البحث عن التحديثات لكلاً من (بي اتش بي ماسل) و توقيعاته. إذا نجحت الفحوصات و أشارات لوجود تحديث، فستحاول تحميل وتثبيت هذه التحديثات. إذا فشلت الفحوصات بإيجاد التحديث، فسوف تحبط عملية التحديث و تظهر نتائج العملية برمتها إلى الشاشة. أنا أوصي بالفحص مرة واحدة على الأقل في الشهر لضمان أن يتم الاحتفاظ بالتوقيعات الخاصة بك ونسختك من (بي اتش بي ماسل) حديثة (باستثناء أن تكون قد قمت بالتحقق من التحديثات وتثبيتها يدويا والتي كنت و لا زلت أوصي به مرة واحدة في الشهر على الأقل). فحص أكثر من مرتين في الشهر ربما لا فائدة منه بإعتبار أنني أستبعد جدا أن أكون قادر على إنتاج التحديثات أياً كان نوعها في كثير من الأحيان لأكثر من مرة في الشهر (لا سيما الجزء الأكبر منهاً).</li>
+ <li>ماذا يفعل: البحث عن التحديثات لكلاً من phpMussel و توقيعاته. إذا نجحت الفحوصات و أشارات لوجود تحديث، فستحاول تحميل وتثبيت هذه التحديثات. إذا فشلت الفحوصات بإيجاد التحديث، فسوف تحبط عملية التحديث و تظهر نتائج العملية برمتها إلى الشاشة. أنا أوصي بالفحص مرة واحدة على الأقل في الشهر لضمان أن يتم الاحتفاظ بالتوقيعات الخاصة بك ونسختك من phpMussel حديثة (باستثناء أن تكون قد قمت بالتحقق من التحديثات وتثبيتها يدويا والتي كنت و لا زلت أوصي به مرة واحدة في الشهر على الأقل). فحص أكثر من مرتين في الشهر ربما لا فائدة منه بإعتبار أنني أستبعد جدا أن أكون قادر على إنتاج التحديثات أياً كان نوعها في كثير من الأحيان لأكثر من مرة في الشهر (لا سيما الجزء الأكبر منهاً).</li>
 </ul></div>
 
 <div dir="rtl">greylist (القائمة الرمادية "قائمة التوقيعات")<br /></div>
@@ -260,7 +260,7 @@
 
 ### <div dir="rtl">4ب. <a name="SECTION4B"></a>CLI (واجهة سطر الأوامر)</div>
 
-<div dir="rtl">يمكن تشغيل (بي اتش بي ماسل) باعتباره برنامج فحص ملفات تفاعلي في وضع CLI في ظل النظم المستندة إلى Windows. راجع قسم "كيفية التثبيت (لواجهة سطر الاوامر)" من هذا الملف التمهيدي لمزيد من التفاصيل.<br /><br /></div>
+<div dir="rtl">يمكن تشغيل phpMussel باعتباره برنامج فحص ملفات تفاعلي في وضع CLI في ظل النظم المستندة إلى Windows. راجع قسم "كيفية التثبيت (لواجهة سطر الاوامر)" من هذا الملف التمهيدي لمزيد من التفاصيل.<br /><br /></div>
 
 <div dir="rtl">للحصول على قائمة الأوامر المتاحة لواجهة سطر الأوامر، اكتب "c" في موجه واجهة سطر الأوامر واضغط "دخول" Enter.<br /><br /></div>
 
@@ -281,7 +281,7 @@
 <div dir="rtl" style="display:inline;">معلومات حول الأشخاص الذين شاركوا في المشروع.</div> | /PEOPLE.md
 <div dir="rtl" style="display:inline;">الملف المحمل (المسئول عن التحميل): يحمل البرنامج الرئيسي و التحديث و، إلى آخره. هذا هو الذي من المفترض أن تكون على علاقة به و تقوم بتركيبه (أساسي)!</div> | /phpmussel.php
 <div dir="rtl" style="display:inline;">معلومات موجزة المشروع.</div> | /README.md
-<div dir="rtl" style="display:inline;">ملف تكوين ASP.NET (في هذه الحالة, لحماية دليل /vault من أن يتم الوصول إليه بواسطة مصادر غير مأذون لها في حالة إذا ما تم تثبيت البرنامج النصي على ملقم يستند إلى تقنيات ASP.NET</div> | /web.config
+<div dir="rtl" style="display:inline;">ملف تكوين ASP.NET (في هذه الحالة، لحماية دليل /vault من أن يتم الوصول إليه بواسطة مصادر غير مأذون لها في حالة إذا ما تم تثبيت البرنامج النصي على ملقم يستند إلى تقنيات ASP.NET</div> | /web.config
 <div dir="rtl" style="display:inline;">دليل الوثائق (يحتوي على ملفات مختلفة).</div> | /_docs/
 <div dir="rtl" style="display:inline;">الوثائق العربية.</div> | /_docs/readme.ar.md
 <div dir="rtl" style="display:inline;">الوثائق الألمانية.</div> | /_docs/readme.de.md
@@ -476,7 +476,7 @@
 ####*<div dir="rtl">فيما يتعلق بملفات التوقيع</div>*
 <div dir="rtl">CVD هو اختصار ل "تعريفات فيروسات (كلام ايه في)"، في إشارة إلى كل من كيف تشير (كلام ايه في) إلى التوقيعات الخاصة بهم واستخدام تلك التوقيعات في phpMussel. الملفات التي تنتهي ب "CVD" تحتوي على التوقيعات.<br /><br /></div>
 
-<div dir="rtl">ملفات تنتهي ب "MAP" و معناها قد يكون حرفيا، و هي خريطة تواقيع phpMussel التي ينبغي أو يجب عدم استخدامها لاجراء الفحوصات الفردية؛ ليس مطلوبا من جميع التوقيعات بالضرورة لكل فحص، لذلك، يستخدم "بي اتش بي ماسل " خرائط ملفات التوقيع لتسريع عملية الفحص (عملية من شأنها أن تكون لولا ذلك بطيئة للغاية ومملة).<br /><br /></div>
+<div dir="rtl">ملفات تنتهي ب "MAP" و معناها قد يكون حرفيا، و هي خريطة تواقيع phpMussel التي ينبغي أو يجب عدم استخدامها لاجراء الفحوصات الفردية؛ ليس مطلوبا من جميع التوقيعات بالضرورة لكل فحص، لذلك، يستخدم phpMussel خرائط ملفات التوقيع لتسريع عملية الفحص (عملية من شأنها أن تكون لولا ذلك بطيئة للغاية ومملة).<br /><br /></div>
 
 <div dir="rtl">ملفات التوقيع المحددة بعلامة "_regex" تحتوي على التوقيعات التي تستخدم نمط التحقق المعتاد (regex).<br /><br /></div>
 
@@ -534,7 +534,7 @@
 
 <div dir="rtl">"ipaddr"<br /></div>
 <div dir="rtl"><ul>
- <li>أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها) الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!	</li>
+ <li>أين يمكن العثور على عنوان IP لربط الطلبات؟ (مفيدة للخدمات مثل لايتكلاود و مثلها) الافتراضي = REMOTE_ADDR. تحذير: لا تغير هذا إلا إذا كنت تعرف ما تفعلونه!</li>
 </ul></div>
 
 <div dir="rtl">"enable_plugins"<br /></div>
@@ -641,6 +641,7 @@
 </ul></div>
 
 <div dir="rtl">تحقق PE الملفات (محمول الملف التنفيذي) (EXE، DLL، الخ) على التوقيعات طويلة PE أثناء الفحص؟ كاذبة = لا؛ صحيح = نعم [الافتراضي].<br /></div>
+<div dir="rtl"><ul>
  <li>"pex_custom"</li>
  <li>"pex_mussel"</li>
 </ul></div>
@@ -707,7 +708,7 @@
  <li>"whitelist_mussel"</li>
 </ul></div>
 
-<div dir="rtl">افحص XML / قطع XDP ضد XML / التوقيعات XDP أثناء الفحص؟ كاذبة = لا؛ صحيح = نعم [افتراضي].<br /></div>
+<div dir="rtl">افحص XML/XDP ضد XML/XDP التوقيعات أثناء الفحص؟ كاذبة = لا؛ صحيح = نعم [افتراضي].<br /></div>
 <div dir="rtl"><ul>
  <li>"xmlxdp_clamav"</li>
  <li>"xmlxdp_custom"</li>
@@ -746,179 +747,269 @@
 </ul></div>
 
 <div dir="rtl">"fail_silently"<br /></div>
-- Should phpMussel report when signatures files are missing or corrupted? If `fail_silently` is disabled, missing and corrupted files will be reported on scanning, and if `fail_silently` is enabled, missing and corrupted files will be ignored, with scanning reporting for those files that there aren't any problems. This should generally be left alone unless you're experiencing crashes or similar problems. False = Disabled; True = Enabled [Default].
+<div dir="rtl"><ul>
+ <li>هل يجب على phpMussel الابلاغ عندما يتم توقيع ملفات مفقودة أو تالفة؟ إذا كان `fail_silently` المعوقين، في عداد المفقودين وسيتم الإبلاغ عن ملفات فساد في المسح، وإذا `fail_silently` تمكين، في عداد المفقودين وسيتم تجاهل ملفات فساد، مع مسح الإبلاغ عن تلك الملفات أنه لا توجد أي مشاكل. وهذا ين بغي عموما أن تترك وحدها إلا إذا كنت تعاني من أعطال أو مشاكل مشابهة. خطأ = معطل. صحيح = ممكن [افتراضي].</li>
+</ul></div>
 
 <div dir="rtl">"fail_extensions_silently"<br /></div>
-- Should phpMussel report when extensions are missing? If `fail_extensions_silently` is disabled, missing extensions will be reported on scanning, and if `fail_extensions_silently` is enabled, missing extensions will be ignored, with scanning reporting for those files that there aren't any problems. Disabling this directive may potentially increase your security, but may also lead to an increase of false positives. False = Disabled; True = Enabled [Default].
+<div dir="rtl"><ul>
+ <li>هل يجب على phpMussel الابلاغ عندما تفقد الملحقات؟ إذا تم تعطيل `fail_extensions_silently`، وسيتم إبلاغ ملحقات مفقودة على المسح، وإذا تم تمكين `fail_extensions_silently`، سيتم تجاهل ملحقات المفقودة، مع مسح الإبلاغ عن تلك الملفات أنه لا توجد أي مشاكل. تعطيل هذا التوجيه قد يحتمل زيادة الأمان، ولكن قد يؤدي أيضا إلى زيادة من ايجابيات كاذبة. خطأ = معطل. صحيح = ممكن [افتراضي].</li>
+</ul></div>
 
 <div dir="rtl">"detect_adware"<br /></div>
-- Should phpMussel parse signatures for detecting adware? False = No; True = Yes [Default].
+<div dir="rtl"><ul>
+ <li>هل يجب على توقيعات phpMussel الكشف عن تجسس؟ كاذبة = لا؛ صحيح = نعم [افتراضي].</li>
+</ul></div>
 
 <div dir="rtl">"detect_joke_hoax"<br /></div>
-- Should phpMussel parse signatures for detecting joke/hoax malware/viruses? False = No; True = Yes [Default].
+<div dir="rtl"><ul>
+ <li>هل يجب على توقيعات phpMussel الكشف عن خدعة البرمجيات الخبيثة / الفيروسات؟ كاذبة = لا؛ صحيح = نعم [افتراضي].</li>
+</ul></div>
 
 <div dir="rtl">"detect_pua_pup"<br /></div>
-- Should phpMussel parse signatures for detecting PUAs/PUPs? False = No; True = Yes [Default].
+<div dir="rtl"><ul>
+ <li>هل يجب على توقيعات phpMussel الكشف عن PUAs؟ كاذبة = لا؛ صحيح = نعم [افتراضي].</li>
+</ul></div>
 
 <div dir="rtl">"detect_packer_packed"<br /></div>
-- Should phpMussel parse signatures for detecting packers and packed data? False = No; True = Yes [Default].
+<div dir="rtl"><ul>
+ <li>هل يجب على توقيعات phpMussel الكشف عن تعبئة والبيانات المعبأة؟ كاذبة = لا؛ صحيح = نعم [افتراضي].</li>
+</ul></div>
 
 <div dir="rtl">"detect_shell"<br /></div>
-- Should phpMussel parse signatures for detecting shell scripts? False = No; True = Yes [Default].
+<div dir="rtl"><ul>
+ <li>هل يجب على توقيعات phpMussel الكشف عن البرامج النصية قذيفة؟ كاذبة = لا؛ صحيح = نعم [افتراضي].</li>
+</ul></div>
 
 <div dir="rtl">"detect_deface"<br /></div>
-- Should phpMussel parse signatures for detecting defacements and defacers? False = No; True = Yes [Default].
+<div dir="rtl"><ul>
+ <li>هل يجب على توقيعات phpMussel الكشف عن مهاجمات وdefacers؟ كاذبة = لا؛ صحيح = نعم [افتراضي].</li>
+</ul></div>
 
 #### <div dir="rtl">"files" (التصنيف)<br /></div>
-File handling configuration.
+<div dir="rtl">ملف التعامل مع التكوين.<br /><br /></div>
 
 <div dir="rtl">"max_uploads"<br /></div>
-- Maximum allowable number of files to scan during files upload scan before aborting the scan and informing the user they are uploading too much at once! Provides protection against a theoretical attack whereby an attacker attempts to DDoS your system or CMS by overloading phpMussel to slow down the PHP process to a grinding halt. Recommended: 10. You may wish to raise or lower this number depending on the speed of your hardware. Note that this number doesn't account for or include the contents of archives.
+<div dir="rtl"><ul>
+ <li>العدد الأقصى المسموح به من ملفات لمسح أثناء تحميل الملفات مسح قبل إحباط عملية الفحص وإعلام المستخدم أنهم تحميل أكثر من اللازم في وقت واحد! يوفر الحماية ضد هجوم النظري حيث يحاول أحد المهاجمين دوس النظام الخاص بك أو CMS من الحمولة الزائدة phpMussel إلى إبطاء عملية PHP لوقف طحن. الموصى بها: 10. أنت قد ترغب في رفع أو خفض هذا الرقم اعتمادا على سرعة الجهاز. لاحظ أن هذا الرقم لا يأخذ في الحسبان أو تتضمن محتويات المحفوظات.</li>
+</ul></div>
 
 <div dir="rtl">"filesize_limit"<br /></div>
-- Filesize limit in KB. 65536 = 64MB [Default]; 0 = No limit (always greylisted), any (positive) numeric value accepted. This can be useful when your PHP configuration limits the amount of memory a process can hold or if your PHP configuration limits filesize of uploads.
+<div dir="rtl"><ul>
+ <li>حدود حجم الملف بالكيلو بايت. 65536 = 64MB [افتراضي]. 0 = لا يوجد حد (greylisted دائما)، أي (إيجابية) قيمة رقمية قبلت. هذا يمكن أن يكون مفيدا عندما يحد التكوين الخاص بي مقدار الذاكرة عملية يمكن أن تعقد أو إذا كان لديك PHP حدود التكوين حجم الملف من الإضافات.</li>
+</ul></div>
 
 <div dir="rtl">"filesize_response"<br /></div>
-- What to do with files that exceed the filesize limit (if one exists). False = Whitelist; True = Blacklist [Default].
+<div dir="rtl"><ul>
+ <li>ماذا تفعل مع الملفات التي تتجاوز الحد الأقصى لحجم الملف (إن وجد). كاذبة = القائمة البيضاء. صحيح = القائمة السوداء [افتراضي].</li>
+</ul></div>
 
-`filetype_whitelist", "filetype_blacklist", "filetype_greylist`
-- If your system only allows specific types of files to be uploaded, or if your system explicitly denies certain types of files, specifying those filetypes in whitelists, blacklists and greylists can increase the speed at which scanning is performed by allowing the script to skip over certain filetypes. Format is CSV (comma separated values). If you want to scan everything, rather than whitelist, blacklist or greylist, leave the variable(/s) blank; Doing so will disable whitelist/blacklist/greylist.
-- Logical order of processing is:
- - If the filetype is whitelisted, don't scan and don't block the file, and don't check the file against the blacklist or the greylist.
- - If the filetype is blacklisted, don't scan the file but block it anyway, and don't check the file against the greylist.
- - If the greylist is empty or if the greylist is not empty and the filetype is greylisted, scan the file as per normal and determine whether to block it based on the results of the scan, but if the greylist is not empty and the filetype is not greylisted, treat the file as blacklisted, therefore not scanning it but blocking it anyway.
+<div dir="rtl">"filetype_whitelist", "filetype_blacklist", "filetype_greylist"<br /></div>
+<div dir="rtl"><ul>
+ <li>إذا كان النظام يسمح فقط أنواع معينة من الملفات المراد تحميلها، أو إذا كان النظام ينفي صراحة أنواع معينة من الملفات، تحديد تلك نوع الملف في قوائم بيضاء، القوائم السوداء و القوائم الرمادية يمكن أن تزيد من السرعة التي يتم تنفيذ المسح من خلال السماح للبرنامج بتخطي بعض أنواع الملفات. الشكل هو CSV (قيم مفصولة بفواصل). إذا كنت ترغب في مسح كل شيء، وليس من القائمة البيضاء، القائمة السوداء أو القائمة الرمادية، وترك المتغير (/ ث) فارغة. وبذلك تعطيل القائمة البيضاء / السوداء / القائمة الرمادية.</li>
+ <li><strong>الترتيب المنطقي للمعالجة هو:</strong></li>
+ <ul>
+ <li>إذا نوع الملف موجود في القائمة البيضاء، لا يفحص ولا تحجب الملف، وعدم التدقيق في ملف ضد القائمة السوداء أو القائمة الرمادية.</li>
+ <li>إذا نوع الملف موجود في القائمة السوداء، لا تفحص الملف ولكن منع ذلك على أي حال، وعدم التدقيق في ملف ضد قائمة رمادية.</li>
+ <li>إذا كانت قائمة رمادية فارغة أو إذا كانت قائمة رمادية ليس فارغا من نوع الملف، مسح الملفات حسب طبيعتها وتحديد ما إذا كان لمنع ذلك بناء على نتائج الفحص، ولكن إذا كانت قائمة رمادية ليس فارغا ونوع الملف هو ليس ملف قائمة رمادية، معالجة الملف على القائمة السوداء، لذلك لا المسح الضوئي ولكن منع ذلك على أي حال.</li>
+ </ul>
+</ul></div>
 
 <div dir="rtl">"check_archives"<br /></div>
-- Attempt to check the contents of archives? False = Don't check; True = Check [Default].
-- Currently, only checking of BZ, GZ, LZF and ZIP files is supported (checking of RAR, CAB, 7z and etcetera not currently supported).
-- This is not foolproof! While I highly recommend keeping this turned on, I can't guarantee it'll always find everything.
-- Also be aware that archive checking currently is not recursive for ZIPs.
+<div dir="rtl"><ul>
+ <li>محاولة للتحقق من محتويات المحفوظات؟ = كاذبة لا تحقق. صحيح = افحص [افتراضي].</li>
+ <li>في الوقت الراهن، يتم اعتماد فحص فقط من BZ/BZIP2، GZ/GZIP، LZF، PHAR، TAR و ZIP (فحص من RAR، CAB، 7Z وإلى آخره غير معتمدة حاليا).</li>
+ <li>هذه ليست مضمونة! بينما أنا أوصي حفظ هذا قيد التشغيل، لا يمكنني ان اضمن انها سوف تجد دائما كل شيء.</li>
+ <li>أيضا أن ندرك أن أرشيف التحقق حاليا ليست متكررة ملفات PHAR أو ZIP.</li>
+</ul></div>
 
 <div dir="rtl">"filesize_archives"<br /></div>
-- Carry over filesize blacklisting/whitelisting to the contents of archives? False = No (just greylist everything); True = Yes [Default].
+<div dir="rtl"><ul>
+ <li>ترحيل حجم ملف القائمة السوداء / قائمة بيضاء لمحتويات المحفوظات؟ كاذبة = لا (فقط كل ما يدرجون)؛ صحيح = نعم [افتراضي].</li>
+</ul></div>
 
 <div dir="rtl">"filetype_archives"<br /></div>
-- Carry over filetype blacklisting/whitelisting to the contents of archives? False = No (just greylist everything) [Default]; True = Yes.
+<div dir="rtl"><ul>
+ <li>ترحيل نوع الملف القائمة السوداء / القائمة البيضاء لمحتويات المحفوظات؟ كاذبة = لا (فقط كل ما يدرجون) [افتراضي]. صحيح = نعم.</li>
+</ul></div>
 
 <div dir="rtl">"max_recursion"<br /></div>
-- Maximum recursion depth limit for archives. Default = 10.
+<div dir="rtl"><ul>
+ <li>الحد الأقصى لإعادة الحد الأقصى لعمق المحفوظات. افتراضي = 10.</li>
+</ul></div>
 
 <div dir="rtl">"block_encrypted_archives"<br /></div>
-- Detect and block encrypted archives? Because phpMussel isn't able to scan the contents of encrypted archives, it's possible that archive encryption may be employed by an attacker as a means of attempting to bypass phpMussel, anti-virus scanners and other such protections. Instructing phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. False = No; True = Yes [Default].
+<div dir="rtl"><ul>
+ <li>كشف ومنع تشفير المحفوظات؟ لأن phpMussel ليست قادرة على مسح محتويات المحفوظات مشفرة، فمن الممكن أن التشفير أرشيف يجوز توظيف من قبل مهاجم كوسيلة لمحاولة تجاوز phpMussel، والماسحات الضوئية مكافحة الفيروسات وغيرها من مثل هذه الحماية. يمكن أن تعليمات phpMussel لمنع أي المحفوظات التي كان تكتشف لتكون مشفرة المحتمل أن يساعد على الحد من أي مخاطر المرتبطة بهذه مثل هذه الاحتمالات. كاذبة = لا؛ صحيح = نعم [افتراضي].</li>
+</ul></div>
 
 #### <div dir="rtl">"attack_specific" (التصنيف)<br /></div>
-Attack-specific directives.
+<div dir="rtl">تعليمات للهجوم المحدد.<br /><br /></div>
 
-Chameleon attack detection: False = Off; True = On.
+<div dir="rtl">الكشف عن الهجوم المتقلب: = زائف. صحيح = تشغيل.<br /><br /></div>
 
 <div dir="rtl">"chameleon_from_php"<br /></div>
-- Search for PHP header in files that are neither PHP files nor recognised archives.
+<div dir="rtl"><ul>
+ <li>البحث عن العنوان PHP في الملفات التي ليست ملفات PHP و لا المحفوظات معترفة بها.</li>
+</ul></div>
 
 <div dir="rtl">"chameleon_from_exe"<br /></div>
-- Search for executable headers in files that are neither executables nor recognised archives and for executables whose headers are incorrect.
+<div dir="rtl"><ul>
+ <li>البحث عن العناوين قابلة للتنفيذ في الملفات التي ليست التنفيذية ولا المحفوظات المعترف بها والقابلة للتنفيذ التي هي العناوين غير صحيحة.</li>
+</ul></div>
 
 <div dir="rtl">"chameleon_to_archive"<br /></div>
-- Search for archives whose headers are incorrect (Supported: BZ, GZ, RAR, ZIP, RAR, GZ).
+<div dir="rtl"><ul>
+ <li>البحث عن المحفوظات التي عناوينها غير صحيحة (المدعومة: BZ، GZ، RAR، ZIP، RAR، GZ).</li>
+</ul></div>
 
 <div dir="rtl">"chameleon_to_doc"<br /></div>
-- Search for office documents whose headers are incorrect (Supported: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
+<div dir="rtl"><ul>
+ <li>البحث عن المستندات التي عناوينها غير صحيحة (المدعومة: DOC، وزارة النقل، PPS، PPT، XLA، XLS، WIZ).</li>
+</ul></div>
 
 <div dir="rtl">"chameleon_to_img"<br /></div>
-- Search for images whose headers are incorrect (Supported: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
+<div dir="rtl"><ul>
+ <li>البحث عن الصور التي عناوينها غير صحيحة (المدعومة: BMP، DIB، PNG، GIF، JPEG، JPG، XCF، PSD، PDD، WEBP).</li>
+</ul></div>
 
 <div dir="rtl">"chameleon_to_pdf"<br /></div>
-- Search for PDF files whose headers are incorrect.
+<div dir="rtl"><ul>
+ <li>البحث عن الملفات PDF التي عناوينها غير صحيحة.</li>
+</ul></div>
 
-`archive_file_extensions" and "archive_file_extensions_wc`
-- Recognised archive file extensions (format is CSV; should only add or remove when problems occur; unnecessarily removing may cause false-positives to appear for archive files, whereas unnecessarily adding will essentially whitelist what you're adding from attack specific detection; modify with caution; also note that this has no effect on what archives can and can't be analysed at content-level). The list, as is at default, lists those formats used most commonly across the majority of systems and CMS, but intentionally isn't necessarily comprehensive.
+<div dir="rtl">"archive_file_extensions" و "archive_file_extensions_wc"<br /></div>
+<div dir="rtl"><ul>
+ <li>ملحقات ملفات الأرشيف المعترف بها (الشكل هو CSV، وينبغي فقط إضافة أو إزالة عندما تحدث المشاكل؛ إزالة دون داع قد يسبب ايجابيات كاذبة لتظهر لملفات الأرشيف، في حين اضاف داع سوف القائمة البيضاء أساسا ما كنت تقوم بإضافة من كشف المحدد الهجوم؛ تعديل مع الحذر، لاحظ أيضا أن هذا ليس له تأثير على ما المحفوظات يمكن ولا يمكن تحليلها على مستوى المحتوى). القائمة، كما هو في التقصير، يسرد تلك الأشكال الأكثر شيوعا في غالبية النظم واتفاقية الأنواع المهاجرة، ولكن عمدا ليست شاملة بالضرورة.</li>
+</ul></div>
 
 <div dir="rtl">"general_commands"<br /></div>
-- Search the content of files for statements and general commands such as `eval()` and `exec()`? False = Don't check [Default]; True = Check. Disable this directive if you intend to upload any of the following to your system or CMS via your browser: PHP, JavaScript, HTML, python, perl files and etcetera. Enable this directive if you don't have any additional protections on your system and do not intend to upload such files. If you use additional security in conjunction with phpMussel (such as ZB Block), there's no need to enable this directive, because most of what phpMussel will look for (in the context of this directive) are duplications of protections that will most likely already be provided.
+<div dir="rtl"><ul>
+ <li>البحث في محتوى الملفات للبيانات وأوامر عامة مثل وحدة التقييم () والذي exec ()؟ = كاذبة لا تحقق [افتراضي]. صحيح = افحص. تعطيل هذا التوجيه إذا كنت تنوي تحميل أي من الإجراءات التالية على النظام الخاص بك أو CMS عبر المتصفح: PHP، جافا سكريبت، HTML، python، ملفات بيرل وإلى آخره. تمكين هذا التوجيه إذا لم يكن لديك أي حماية إضافية على النظام الخاص بك ولا تنوي تحميل هذه الملفات. إذا كنت تستخدم أمنية إضافية بالتزامن مع phpMussel (مثل ZB Block)، وليس هناك حاجة لتمكين هذا التوجيه، لأن معظم ما سوف phpMussel ننظر ل (في سياق هذا التوجيه) والازدواجية من الحماية التي من المرجح أن تكون بالفعل المقدمة.</li>
+</ul></div>
 
 <div dir="rtl">"block_control_characters"<br /></div>
-- Block any files containing any control characters (other than newlines)? ("[\x00-\x08\x0b\x0c\x0e\x1f\x7f]") If you're _**ONLY**_ uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. False = Don't block [Default]; True = Block.
+<div dir="rtl"><ul>
+ <li>حظر أي ملفات تحتوي على أي أحرف التحكم (عدا أسطر جديدة)؟ ("[\x00-\x08\x0b\x0c\x0e\x1f\x7f]") إذا كنت **فقط** تحميل نص عادي، ثم يمكنك تشغيل هذا الخيار لتوفير بعض الحماية إضافية على النظام الخاص بك. ومع ذلك، إذا قمت بتحميل أي شيء آخر غير نص عادي، وتحول هذا على قد يؤدي إلى ايجابيات كاذبة. = كاذبة لا منع [افتراضي]. صحيح = بلوك.</li>
+</ul></div>
 
 <div dir="rtl">"corrupted_exe"<br /></div>
-- Corrupted files and parse errors. False = Ignore; True = Block [Default]. Detect and block potentially corrupted PE (Portable Executable) files? Often (but not always), when certain aspects of a PE file are corrupted or can't be parsed correctly, it can be indicative of a viral infection. The processes used by most anti-virus programs to detect viruses in PE files require parsing those files in certain ways, which, if the programmer of a virus is aware of, will specifically try to prevent, in order to allow their virus to remain undetected.
+<div dir="rtl"><ul>
+ <li>تلف الملفات وتحليل الأخطاء. خطأ = تجاهل. صحيح = كتلة [افتراضي]. كشف ومنع الملفات المحتمل تلف PE (محمول قابل للتنفيذ)؟ في كثير من الأحيان (ولكن ليس دائما)، عندما تلف جوانب معينة من ملف PE أو لا يمكن تحليله بشكل صحيح، فإنه يمكن أن يكون مؤشرا على وجود عدوى فيروسية. العمليات المستخدمة من قبل معظم برامج مكافحة الفيروسات للكشف عن الفيروسات في ملفات PE تتطلب تحليل تلك الملفات بطرق معينة والتي إذا كان مبرمج للفيروس هو على علم، ومحاولة خصيصا لمنع، من أجل السماح للفيروس لتبقى غير مكتشفة .</li>
+</ul></div>
 
 <div dir="rtl">"decode_threshold"<br /></div>
-- Optional limitation or threshold to the length of raw data within which decode commands should be detected (in case there are any noticeable performance issues while scanning). Value is an integer representing filesize in KB. Default = 512 (512KB). Zero or null value disables the threshold (removing any such limitation based on filesize).
+<div dir="rtl"><ul>
+ <li>الحد الاختياري أو الحد الأقصى لطول البيانات الخام من خلاله أن يتم الكشف عن أوامر فك (في حالة وجود أي مشكلات في الأداء ملحوظة أثناء المسح). القيمة هي عدد صحيح يمثل حجم الملف بالكيلو بايت. افتراضي = 512 (512KB). صفر أو قيمة فارغة تعطيل عتبة (إزالة مثل هذا القيد على أساس حجم الملف).</li>
+</ul></div>
 
 <div dir="rtl">"scannable_threshold"<br /></div>
-- Optional limitation or threshold to the length of raw data that phpMussel is permitted to read and scan (in case there are any noticeable performance issues while scanning). Value is an integer representing filesize in KB. Default = 32768 (32MB). Zero or null value disables the threshold. Generally, this value shouldn't be less than the average filesize of file uploads that you want and expect to receive to your server or website, shouldn't be more than the filesize_limit directive, and shouldn't be more than roughly one fifth of the total allowable memory allocation granted to PHP via the `php.ini` configuration file. This directive exists to try to prevent phpMussel from using up too much memory (that'd prevent it from being able to successfully scan files above a certain filesize).
+<div dir="rtl"><ul>
+ <li>الحد الاختياري أو الحد الأقصى لطول البيانات الخام التي يسمح phpMussel لقراءة ومسح (في حالة وجود أي مشكلات في الأداء ملحوظة أثناء المسح). القيمة هي عدد صحيح يمثل حجم الملف بالكيلو بايت. افتراضي = 32768 (32MB). صفر أو قيمة فارغة تعطيل العتبة. عموما، يجب أن لا تكون هذه القيمة أقل من متوسط حجم الملف من تحميل الملفات التي تريد وتتوقع الحصول على الخادم الخاص بك أو الموقع، لا ينبغي أن يكون أكثر من التوجيه filesize_limit، ويجب أن لا يكون خامس أكثر من ما يقرب من واحد من مجموع تخصيص الذاكرة المسموح منح لPHP عن طريق ملف php.iniconfiguration. هذا التوجيه موجود في محاولة لمنع phpMussel من استخدام ما يصل الكثير من الذاكرة (التي تريد منعها من أن تكون قادرة على مسح بنجاح الملفات فوق حجم الملف معين).</li>
+</ul></div>
 
 #### <div dir="rtl">"compatibility" (التصنيف)<br /></div>
-Compatibility directives for phpMussel.
+<div dir="rtl">تعليمات التوافق مع phpMussel.<br /><br /></div>
 
 <div dir="rtl">"ignore_upload_errors"<br /></div>
-- This directive should generally be disabled unless it's required for correct functionality of phpMussel on your specific system. Normally, when disabled, when phpMussel detects the presence of elements in the "$_FILES" array(), it'll attempt to initiate a scan of the files that those elements represent, and, if those elements are blank or empty, phpMussel will return an error message. This is proper behaviour for phpMussel. However, for some CMS, empty elements in "$_FILES" can occur as a result of the natural behaviour of those CMS, or errors may be reported when there aren't any, in which case, the normal behaviour for phpMussel will be interfering with the normal behaviour of those CMS. If such a situation occurs for you, enabling this option will instruct phpMussel to not attempt to initiate scans for such empty elements, ignore them when found and to not return any related error messages, thus allowing continuation of the page request. False = OFF; True = ON.
+<div dir="rtl"><ul>
+ <li>يجب أن يكون هذا التوجيه عموما هو تعطيل ما لم تصبح مطلوبة حصول على الوظائف الصحيحة لـ phpMussel على النظام الخاص بك محددة. عادة، عندما يكون في وضع تعطيل، عندما يكتشف phpMussel وجود عناصر في مجموعة "$ _files" ()، وأنها سوف محاولة لبدء فحص الملفات التي تمثل تلك العناصر، وإذا كانت تلك العناصر هي فارغة أو فارغة، سوف phpMussel العودة رسالة خطأ. هذا هو السلوك الصحيح للـ phpMussel. ومع ذلك، بالنسبة لبعض CMS، العناصر الفارغة في "$ _files" يمكن أن تحدث نتيجة لسلوك طبيعي لتلك CMS، أو أخطاء قد يتم الإعلام عندما لم تكن هناك أي، في هذه الحالة، السلوك العادي للphpMussel سوف تتدخل مع السلوك العادي من تلك CMS. في حال حدوث مثل هذه الحالة بالنسبة لك، تمكين هذا الخيار سوف يكلف phpMussel ليست محاولة لبدء المسح الضوئي لمثل هذه العناصر الفارغة، تجاهلها عندما وجدت وعدم إعادة أي رسائل خطأ ذات الصلة، مما يتيح استمرار طلب الصفحة. كاذبة = OFF؛ صحيح = ON.</li>
+</ul></div>
 
 <div dir="rtl">"only_allow_images"<br /></div>
-- If you only expect or only intend to allow images to be uploaded to your system or CMS, and if you absolutely don't require any files other than images to be uploaded to your system or CMS, this directive should be enabled, but should otherwise be disabled. If this directive is enabled, it'll instruct phpMussel to indiscriminately block any uploads identified as non-image files, without scanning them. This may reduce processing time and memory usage for attempted uploads of non-image files. False = OFF; True = ON.
+<div dir="rtl"><ul>
+ <li>إذا كنت تتوقع فقط أو تنوي فقط للسماح الصور المراد تحميلها على النظام الخاص بك أو CMS، وإذا كنت على الاطلاق لا تتطلب أية ملفات أخرى من الصور ليتم تحميلها على النظام الخاص بك أو CMS، ينبغي تمكين هذا التوجيه، ولكن ينبغي خلاف ذلك يتم تعطيل. إذا تم تمكين هذا التوجيه، أنه سوف يكلف phpMussel لمنع عشوائيا أي الإضافات التي تم تحديدها كملفات صورة غير، دون مسحها. هذا قد يقلل من الوقت اللازم لتجهيز واستخدام الذاكرة لمحاولة تحميل الملفات غير الصورة. كاذبة = OFF؛ صحيح = ON.</li>
+</ul></div>
 
 #### <div dir="rtl">"heuristic" (التصنيف)<br /></div>
-Heuristic directives.
-
-<div dir="rtl">"threshold"<br /></div>
-- There are certain signatures of phpMussel that are intended to identify suspicious and potentially malicious qualities of files being uploaded without in themselves identifying those files being uploaded specifically as being malicious. This "threshold" value tells phpMussel what the maximum total weight of suspicious and potentially malicious qualities of files being uploaded that's allowable is before those files are to be flagged as malicious. The definition of weight in this context is the total number of suspicious and potentially malicious qualities identified. By default, this value will be set to 3. A lower value generally will result in a higher occurrence of false positives but a higher number of malicious files being flagged, whereas a higher value generally will result in a lower occurrence of false positives but a lower number of malicious files being flagged. It's generally best to leave this value at its default unless you're experiencing problems related to it.
+<div dir="rtl">تعليمات الكشف عن مجريات الأمور.<br /><br /></div>
+ <li></li>
+ <li><div dir="rtl">"threshold"<br /></div></li>
+ <li><div dir="rtl"><ul></li>
+ <li>- هناك توقيعات معينة من phpMussel التي تهدف إلى تحديد الصفات المشبوهة والمحتمل أن تكون ضارة من الملفات التي يتم تحميلها دون في أنفسهم تحديد تلك الملفات التي تم تحميلها على وجه التحديد بأنها خبيثة. هذه القيمة "الحد الأقصى " تقول phpMussel ما الحد الأقصى للوزن الكلي من الصفات المشبوهة والمحتمل أن تكون ضارة من الملفات التي يتم تحميلها هذا المسموح به هو قبل تلك الملفات ليتم وضع علامة بأنها خبيثة. تعريف الوزن في هذا السياق هو العدد الإجمالي من الصفات المشبوهة والمحتمل أن تكون ضارة تحديدها. افتراضيا، سيتم تعيين هذه القيمة إلى 3. القيمة المنخفضة عموما سوف يؤدي إلى حدوث أعلى من ايجابيات كاذبة ولكن عددا أكبر من الملفات الخبيثة التي لوحت، في حين أن أعلى قيمة عموما سوف يؤدي إلى حدوث انخفاض من ايجابيات كاذبة ولكن انخفاض عدد الملفات الخبيثة التي توضع. انها عموما من الأفضل ترك هذه القيمة في الافتراضي إلا إذا كنت تعاني من مشاكل المتعلقة بها.</li>
+ <li></ul></div></li>
 
 #### <div dir="rtl">"virustotal" (التصنيف)<br /></div>
-VirusTotal.com directives.
+<div dir="rtl">تعليمات VirusTotal.com.<br /><br /></div>
 
 <div dir="rtl">"vt_public_api_key"<br /></div>
-- Optionally, phpMussel is able to scan files using the Virus Total API as a way to provide a greatly enhanced level of protection against viruses, trojans, malware and other threats. By default, scanning files using the Virus Total API is disabled. To enable it, an API key from Virus Total is required. Due to the significant benefit that this could provide to you, it's something that I highly recommend enabling. Please be aware, however, that to use the Virus Total API, you _**MUST**_ agree to their Terms of Service and you _**MUST**_ adhere to all guidelines as per described by the Virus Total documentation! You are NOT permitted to use this integration feature UNLESS:
- - You have read and agree to the Terms of Service of Virus Total and its API. The Terms of Service of Virus Total and its API can be found [Here](https://www.virustotal.com/en/about/terms-of-service/).
- - You have read and you understand, at a minimum, the preamble of the Virus Total Public API documentation (everything after "VirusTotal Public API v2.0" but before "Contents"). The Virus Total Public API documentation can be found [Here](https://www.virustotal.com/en/documentation/public-api/).
+<div dir="rtl"><ul>
+ <li>اختياريا، phpMussel غير قادرة على مسح الملفات باستخدام الفيروسات مجموع API كوسيلة لتوفير مستوى تتعزز بشكل كبير من الحماية ضد الفيروسات، و ملفات التجسس، والبرمجيات الخبيثة وغيرها من التهديدات. افتراضيا، ملفات المسح الضوئي باستخدام الفيروسات مجموع API يتم تعطيل. لتمكينه، لا بد من وضع مفتاح API من الفيروسات إجمالي. ويرجع ذلك إلى فائدة كبيرة أن هذا يمكن أن توفر لك، هذا شيء أنا أوصي تمكين. يرجى أن يكون على علم، مع ذلك، أن استخدام الفيروسات مجموع API، التي يجب أن تتوافق مع شروط الخدمة، ويجب أن تلتزم جميع المبادئ التوجيهية حسب وصفه الفيروسات مجموع الوثائق! لا يجوز لك استخدام هذه الميزة التكامل ما لم :</li>
+ <ul>
+ <li>لقد قرأت ووافقت على شروط الخدمة من فيروس توتال و API لها. شروط الخدمة من فيروس توتال و API ليمكن العثور عليها [هنا](https://www.virustotal.com/en/about/terms-of-service/).</li>
+ <li> لقد قرأت وفهمت، كحد أدنى، ديباجة الفيروسات وثائق API ملفه مجموع (كل شيء بعد "فايروس توتال V2.0 API العام" ولكن قبل "المحتويات"). يمكن العثور على وثائق API العام الفيروسات إجمالي [هنا](https://www.virustotal.com/en/documentation/public-api/).</li>
+ </ul>
+</ul></div>
 
-Note: If scanning files using the Virus Total API is disabled, you won't need to review any of the directives in this category ("virustotal"), because none of them will do anything if this is disabled. To acquire a Virus Total API key, from anywhere on their website, click the "Join our Community" link located towards the top-right of the page, enter in the information requested, and click "Sign up" when done. Follow all instructions supplied, and when you've got your public API key, copy/paste that public API key to the "vt_public_api_key" directive of the "phpmussel.ini" configuration file.
+<div dir="rtl">ملاحظة: إذا مسح الملفات باستخدام فيروس معطل مجموع API، فلن تحتاج إلى مراجعة أي من توجيهات في هذه الفئة ("virustotal")، لأن أيا منهم سوف تفعل أي شيء إذا تم تعطيل هذا. للحصول على الفيروسات مجموع مفتاح API، من أي مكان على موقعه على الانترنت، انقر على الرابط "تاريخ جماعتنا " التي تقع نحو الجزء العلوي الأيسر من الصفحة، أدخل المعلومات المطلوبة، ثم انقر على "اشترك" عند الانتهاء. اتباع جميع التعليمات المرفقة، وعندما كنت قد حصلت على مفتاح API العام، نسخ/لصق هذا المفتاح API العام إلى توجيه "vt_public_api_key" من "phpmussel.ini" ملف التكوين.<br /><br /></div>
 
 <div dir="rtl">"vt_suspicion_level"<br /></div>
-- By default, phpMussel will restrict which files it scans using the Virus Total API to those files that it considers "suspicious". You can optionally adjust this restriction by changing the value of the "vt_suspicion_level" directive.
-- "0": Files are only considered suspicious if, upon being scanned by phpMussel using its own signatures, they are deemed to carry a heuristic weight. This would effectively mean that use of the Virus Total API would be for a second opinion for when phpMussel suspects that a file may potentially be malicious, but can't entirely rule out that it may also potentially be benign (non-malicious) and therefore would otherwise normally not block it or flag it as being malicious.
-- "1": Files are considered suspicious if, upon being scanned by phpMussel using its own signatures, they are deemed to carry a heuristic weight, if they're known to be executable (PE files, Mach-O files, ELF/Linux files, etc), or if they're known to be of a format that could potentially contain executable data (such as executable macros, DOC/DOCX files, archive files such as RARs, ZIPS and etc). This is the default and recommended suspicion level to apply, effectively meaning that use of the Virus Total API would be for a second opinion for when phpMussel doesn't initially find anything malicious or wrong with a file that it considers to be suspicious and therefore would otherwise normally not block it or flag it as being malicious.
-- "2": All files are considered suspicious and should be scanned using the Virus Total API. I don't generally recommend applying this suspicion level, due to the risk of reaching your API quota much quicker than would otherwise be the case, but there are certain circumstances (such as when the webmaster or hostmaster has very little faith or trust whatsoever in any of the uploaded content of their users) where this suspicion level could be appropriate. With this suspicion level, all files not normally blocked or flagged as being malicious would be scanned using the Virus Total API. Note, however, that phpMussel will cease using the Virus Total API when your API quota has been reached (regardless of suspicion level), and that your quota will likely be reached much faster when using this suspicion level.
+<div dir="rtl"><ul>
+ <li>افتراضيا، سوف يقوم phpMussel بتقييد الملفات التي تقوم بمسح باستخدام الفيروسات API الكلي لتلك الملفات التي تعتبرها "المشبوهة". يمكنك ضبط اختياريا هذا التقييد عن طريق تغيير قيمة التوجيه "vt_suspicion_level".</li>
+ <li>"0": تعتبر الملفات فقط مشبوهة إذا، عند مسحها بواسطة phpMussel باستخدام التواقيع الخاصة بها، وتعتبر أنها لحمل الوزن الكشف عن مجريات الأمور. وهذا يعني عمليا أن استخدام الفيروسات أن مجموع API يكون للرأي ثان لأنه عندما يشتبه phpMussel أن ملف يحتمل أن تكون ضارة، ولكن لا يمكن استبعاد تماما إلى أنه قد يحتمل أيضا أن تكون حميدة (غير الخبيثة)، وبالتالي لولاها عادة لا يرفضها أو العلم بأنها خبيثة.</li>
+ <li>"1": تعتبر الملفات المشبوهة إذا، عند مسحها بواسطة phpMussel باستخدام التواقيع الخاصة بها، وتعتبر أنها لحمل الوزن الكشف عن مجريات الأمور، إذا كنت معروفة ليكون قابل للتنفيذ (ملفات PE، ملفات mach-o، ELF / لينكس، الخ)، أو إذا كنت معروفة لتكون ذات شكل التي يمكن أن تحتوي على بيانات قابلة للتنفيذ (مثل وحدات الماكرو القابلة للتنفيذ، DOC / ملفات DOCX، ملفات الأرشيف مثل RARS، الكود البريدية وغيرها). هذا هو مستوى الشكوك الافتراضية وأوصت للتطبيق، وهذا يعني فعليا أن استخدام الفيروسات أن مجموع API يكون للرأي ثان لأنه عندما phpMussel لا يجد في البداية أي شيء ضار أو خطأ في ملف أنها تعتبر أن تكون مشبوهة، وبالتالي سوف خلاف ذلك عادة لا يرفضها أو العلم بأنها خبيثة.</li>
+ <li>"2": تعتبر جميع الملفات المشبوهة ويجب أن يتم فحصها باستخدام الفيروسات مجموع API. أنا لا أوصي عموما تطبيق هذا المستوى الشك، نظرا لخطر الوصول إلى الحصة API بشكل أسرع مما سيكون عليه الحال كثيرا، ولكن هناك ظروف معينة (مثل عندما المسئول عن الموقع أو المضيف لديها القليل جدا من الإيمان أو الثقة على الإطلاق في أي من المحتويات التي يتم تحميلها من مستخدميها) حيث هذا المستوى شك يمكن أن يكون مناسبا. مع هذا المستوى الشك، كل الملفات لا يتم حظر عادة أو ترفع العلم بأنها خبيثة سيتم مسحها ضوئيا باستخدام الفيروسات مجموع API. نلاحظ مع ذلك، أن phpMussel والتوقف عن استخدام الفيروسات API الكلي عندما تم التوصل إلى الحصص API الخاص بك (بغض النظر عن مستوى الشك)، والتي من المرجح أن يتم التوصل الحصص بشكل أسرع بكثير عند استخدام هذا المستوى الشك.</li>
+</ul></div>
 
-Note: Regardless of suspicion level, any files that are either blacklisted or whitelisted by phpMussel won't be scanned using the Virus Total API, because those such files would've already been declared as either malicious or benign by phpMussel by the time that they would've otherwise been scanned by the Virus Total API, and therefore, additional scanning wouldn't be required. The ability of phpMussel to scan files using the Virus Total API is intended to build further confidence for whether a file is malicious or benign in those circumstances where phpMussel itself isn't entirely certain as to whether a file is malicious or benign.
+<div dir="rtl">ملاحظة: بغض النظر عن مستوى الشبهات، لن يتم فحصها أي الملفات التي إما أن تكون على القائمة السوداء أو التي أدرجها phpMussel باستخدام الفيروسات مجموع API، لان لقد أعلن هؤلاء مثل هذه الملفات بالفعل إما خبيثة أو حميدة من قبل phpMussel بحلول الوقت الذي كانوا لظل ذلك تم فحصها من قبل الفيروسات مجموع API، وبالتالي لن تكون هناك حاجة مسح إضافي. والقصد من قدرة phpMussel لمسح الملفات باستخدام الفيروسات مجموع API لبناء المزيد من الثقة لما إذا كان ملف خبيث أو حميد في هذه الظروف حيث phpMussel نفسها ليس من المؤكد تماما ما إذا كان ملف خبيث أو حميد.<br /><br /></div>
 
 <div dir="rtl">"vt_weighting"<br /></div>
-- Should phpMussel apply the results of scanning using the Virus Total API as detections or as detection weighting? This directive exists, because, although scanning a file using multiple engines (as Virus Total does) should result in an increased detection rate (and therefore in a higher number of malicious files being caught), it can also result in a higher number of false positives, and therefore, in some circumstances, the results of scanning may be better utilised as a confidence score rather than as a definitive conclusion. If a value of 0 is used, the results of scanning using the Virus Total API will be applied as detections, and therefore, if any engine used by Virus Total flags the file being scanned as being malicious, phpMussel will consider the file to be malicious. If any other value is used, the results of scanning using the Virus Total API will be applied as detection weighting, and therefore, the number of engines used by Virus Total that flag the file being scanned as being malicious will serve as a confidence score (or detection weighting) for whether or not the file being scanned should be considered malicious by phpMussel (the value used will represent the minimum confidence score or weight required in order to be considered malicious). A value of 0 is used by default.
+<div dir="rtl"><ul>
+ <li>هل phpMussel يطبق نتائج المسح باستخدام الفيروسات مجموع API كما المكتشفة أو الممكن كشفها؟ يوجد هذا التوجيه لأنه على الرغم من أن مسح ملف باستخدام محركات متعددة (كما فايروس توتال لا) ينبغي أن يؤدي في معدل اكتشاف زيادة (وبالتالي في عدد أكبر من الملفات الخبيثة الوقوع)، فإنه يمكن أن يؤدي أيضا إلى ارتفاع عدد كاذبة الإيجابيات، وبالتالي، في بعض الظروف، فإن نتائج المسح يمكن الاستفادة بشكل أفضل كما على درجة الثقة بدلا من أن تكون نتيجة محددة. إذا تم استخدام قيمة 0، سيتم تطبيق نتائج المسح باستخدام الفيروسات مجموع API كما المكتشفة و بالتالي إذا أي محرك تستخدم من قبل الفيروسات مجموع أعلام الملف تم مسحها ضوئيا بأنها خبيثة، وphpMussel النظر في الملف إلى تكون ضارة. إذا تم استخدام أي قيمة أخرى، سيتم تطبيق نتائج المسح باستخدام الفيروسات مجموع API كما الترجيح الكشف و بالتالي فإن عدد من المحركات المستخدمة من قبل الفيروسات إجمالي هذا العلم الملف تم مسحها ضوئيا بأنها خبيثة سيكون بمثابة نتيجة الثقة (أو الترجيح الكشف) عن ما إذا كان ملف تم مسحها ضوئيا ينبغي النظر الخبيثة التي كتبها phpMussel (القيمة المستخدمة سيمثل الحد الأدنى من الثقة يسجل أو الوزن المطلوب من أجل أن تعتبر ضارة). يتم استخدام قيمة 0 افتراضيا.</li>
+</ul></div>
 
-`vt_quota_rate" and "vt_quota_time`
-- According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly adhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values _**MAY**_ sometimes help you in dealing with these problems. Your rate limit is determined as "vt_quota_rate" requests of any nature in any given "vt_quota_time" minute time frame.
+<div dir="rtl">"vt_quota_rate" و "vt_quota_time"<br /><br /></div>
+<div dir="rtl"><ul>
+ <li>استنادا إلى وثائق الفيروسات الكلي API، "فإنه يقتصر على الأكثر 4 طلبات من أي نوع في أي إطار زمني معين 1 دقيقة. إذا قمت بتشغيل honeyclient، مصيدة أو أي أتمتة الآخر الذي يجري لتوفير الموارد اللازمة لفايروس توتال ولا استرداد فقط تقارير يحق لك الحصول على أعلى حصص معدلات الطلب". افتراضيا، سوف phpMussel الالتزام الصارم لهذه القيود، ولكن نظرا لإمكانية هذه الحصص نسبة تجري زيادة، وتقدم هذه التوجيهات اثنين كوسيلة لتتمكن من إرشاد phpMussel على ما الحد الأقصى ينبغي أن تلتزم بها. إلا إذا كنت قد أعطيت تعليمات للقيام بذلك، فإنه من غير المستحسن بالنسبة لك لزيادة هذه القيم و لكن إذا كنت قد واجهت مشاكل تتعلق الوصول الحصص الخاصة بك، وخفض هذه القيم قد يساعد في بعض الأحيان كنت في التعامل مع هذه المشاكل. يتم تحديد الحد الأقصى معدل حسابك عن طلبات "vt_quota_rate" من أي نوع في أي إطار "vt_quota_time" الوقت دقيقة معين.</li>
+</ul></div>
 
 #### <div dir="rtl">"urlscanner" (التصنيف)<br /></div>
-URL scanner configuration.
+<div dir="rtl">تكوين فحص URL.<br /><br /></div>
 
 <div dir="rtl">"urlscanner"<br /></div>
-- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the "urlscanner" directive to true; To disable it, set this directive to false.
+<div dir="rtl"><ul>
+ <li>مدمج في phpMussel هو ماسح URL، قادر على الكشف عن عناوين المواقع الخبيثة من داخل أي بيانات أو ملفات تم فحصها. لتمكين الماسح URL، تعيين "urlscanner" التوجيه إلى صحيح. لتعطيله، تعيين هذا التوجيه إلى خطأ.</li>
+</ul></div>
 
-Note: If the URL scanner is disabled, you won't need to review any of the directives in this category ("urlscanner"), because none of them will do anything if this is disabled.
+<div dir="rtl">ملاحظة: إذا تم تعطيل فحص URL، فلن تحتاج إلى مراجعة أي من توجيهات في هذه الفئة ("urlscanner")، لأن لا احد منهم سوف تفعل أي شيء إذا تم تعطيل هذا.<br /><br /></div>
 
-URL scanner API lookup configuration.
+<div dir="rtl">تكوين بحث API في فحص URL.<br /><br /></div>
 
 <div dir="rtl">"lookup_hphosts"<br /></div>
-- Enables API lookups to the [hpHosts](http://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
+<div dir="rtl"><ul>
+ <li>تمكين عمليات بحث API إلى API hpHosts عند وضع [hpHosts](http://hosts-file.net/) على hpHosts لا يحتاج الى مفتاح API لأداء عمليات البحث API.</li>
+</ul></div>
 
 <div dir="rtl">"google_api_key"<br /></div>
-- Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
-- Note: The cURL extension is required in order to use this feature.
+<div dir="rtl"><ul>
+ <li>تمكين عمليات بحث API إلى API التصفح الآمن من Google عندما يتم تعريف مفتاح API الضروري. التصفح الآمن في جوجل: عمليات البحث API بحاجة إلى مفتاح API، والتي يمكن الحصول عليها من [هنا](https://console.developers.google.com/).</li>
+ <li>ملاحظة: مطلوب تمديد cURL من أجل استخدام هذه الميزة.</li>
+</ul></div>
 
 <div dir="rtl">"maximum_api_lookups"<br /></div>
-- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expedite the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
+<div dir="rtl"><ul>
+ <li>العدد الأقصى المسموح به من عمليات بحث واجهة برمجة التطبيقات لأداء في تكرار المسح الفردية. لأن كل بحث API إضافية سوف يضيف إلى الوقت الإجمالي المطلوب لإكمال كل تكرار المسح ، قد ترغب في اشتراط وجود قيود من أجل الإسراع في عملية المسح الشاملة. عند تعيينها إلى 0، سيتم تطبيق الحد الأقصى لا هذا العدد المسموح به. تعيين إلى 10 افتراضيا.</li>
+</ul></div>
 
 <div dir="rtl">"maximum_api_lookups_response"<br /></div>
-- What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Default]; True = Flag/block the file.
+<div dir="rtl"><ul>
+ <li>ماذا تفعل إذا تم تجاوز الحد الأقصى المسموح به من عمليات بحث API؟ = كاذبة لا تفعل شيئا (متابعة المعالجة) [افتراضي]. صحيح = تحديد الملف.</li>
+</ul></div>
 
 <div dir="rtl">"cache_time"<br /></div>
-- How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour).
+<div dir="rtl"><ul>
+ <li>متى (بالثواني) يجب التوصل إلى نتائج عمليات بحث API؟ الافتراضي هو 3600 ثانية (1 ساعة).</li>
+</ul></div>
 
 #### <div dir="rtl">"template_data" (التصنيف)<br /></div>
-Directives/Variables for templates and themes.
+<div dir="rtl">توجيهات/متغيرات القوالب والمواضيع.<br /><br /></div>
 
-Template data relates to the HTML output used to generate the "Upload Denied" message displayed to users upon a file upload being blocked. If you're using custom themes for phpMussel, HTML output is sourced from the "template_custom.html" file, and otherwise, HTML output is sourced from the "template.html" file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where "foo="bar"", any instance of "<p>{foo}</p>" found within the HTML output will become "<p>bar</p>".
+<div dir="rtl">تتعلق البيانات بقالب انتاج HTML تستخدم لتوليد "رفض تحميل " الرسالة المعروضة للمستخدمين على تحميل ملف حجبها. إذا كنت تستخدم موضوعات مخصصة لـ phpMussel، هو مصدر إخراج HTML من ملف "template_custom.html" وغيرها ، ويتم الحصول على إخراج HTML من ملف "template.html". يتم تحليل المتغيرات الخطية لهذا القسم من ملف التكوين إلى إخراج HTML عن طريق استبدال أي أسماء المتغيرات محاط بواسطة الأقواس الموجودة داخل إخراج HTML مع البيانات المتغيرة المناظرة. فمثلا، أين `foo="bar"`، أي مثيل `<p>{foo}</p>` وجدت داخل إخراج HTML ستصبح `<p>bar</p>`.<br /><br /></div>
 
 <div dir="rtl">"css_url"<br /></div>
-- The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct phpMussel to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the "css_url" variable. If you leave this variable blank, phpMussel will use the template file for the default theme.
+<div dir="rtl"><ul>
+ <li>ملف الصيغة النموذجية للمواضيع مخصصة يستخدم خصائص CSS الخارجية ، في حين أن ملف قالب لموضوع الافتراضي يستخدم خصائص CSS الداخلية. لإرشاد phpMussel لاستخدام ملف النموذجية للمواضيع مخصصة ، تحديد عنوان HTTP العام من ملفات CSS موضوع المخصصة لديك باستخدام "css_url" متغير. إذا تركت هذا الحقل فارغا متغير ، سوف يقوم phpMussel باستخدام ملف القالب لموضوع التقصير.</li>
+</ul></div>
 
 ---
 
@@ -983,7 +1074,7 @@ Template data relates to the HTML output used to generate the "Upload Denied" me
 <div dir="rtl">أي شكل من أشكال التعابير المنطقية يتم فهمها ومعالجتها بشكل صحيح عن طريق PHP و يجب أيضا أن يكون مفهوما بشكل صحيح و تتم معالجتها بواسطة phpMussel و توقيعاتها. مع ذلك، أود أن أقترح اتخاذ الحذر الشديد عند كتابة توقيعات التعابير المنطقية الجديدة، لأنه إذا لم تكن متأكدا تماما مما تفعله، يمكن أن يكون هناك عدم انتظام كبير و/أو نتائج غير متوقعة. القي نظرة على phpMussel مصدر الترميز إذا لم تكن متأكدا تماما من السياق الذي يتم تحليل البيانات باستخدام التعابير المنطقية. أيضا، تذكر أن كل أنماط (باستثناء اسم الملف، أرشيف البيانات الوصفية وأنماط MD5) يجب أن تتبع ترميز سادس عشري(عند تركيب نمط ما، بالتأكيد)!<br /><br /></div>
 
 ####*<div dir="rtl">أين يضع التوقيعات المخصصة؟</div>*
-<div dir="rtl">فقط ضع التوقيعات المخصصة في تلك الملفات المعدة للتوقيعات مخصصة. ينبغي أن تتضمن تلك الملفات "_custom" في أسماء الملفات الخاصة بهم. يجب عليك أيضا تجنب تحرير ملفات التوقيع الافتراضي، إلا إذا كنتم تعرفون بالضبط ما تفعلونه، لأنه بصرف النظر عن كونها ممارسة جيدة بشكل عام، و بعيدا عن مساعدتك على التمييز بين التوقيعات الخاصة بك والتوقيعات الافتراضية المتضمنة في phpMussel، انها جيدة للتحرير فقط على الملفات المعدة للتحرير لأن العبث في ملفات التوقيع الافتراضي يمكن أن تسبب لهم التوقف عن العمل بشكل صحيح، ويرجع ذلك إلى ملفات "خرائط" : ملفات الخرائط في phpMussel حيث في ملفات التوقيع للبحث عن التوقيعات المطلوبة بواسطة phpMussel عند الحاجة، ويمكن لهذه الخرائط أن تصبح غير متزامنة مع توقيع الملفات المرتبطة بها إذا تم العبث بملفات التوقيع معه. يمكنك وضع حد كبير ما تريد في التوقيعات المخصصة، طالما كنت تتبع بناء الجملة الصحيح. مع ذلك، وتوخي الحذر لاختبار توقيعات جديدة ل-فحص خاطئ مسبقا إذا كنت تنوي مشاركتها أو استخدامها في بيئة حية.<br /><br /></div>
+<div dir="rtl">فقط ضع التوقيعات المخصصة في تلك الملفات المعدة للتوقيعات مخصصة. ينبغي أن تتضمن تلك الملفات "_custom" في أسماء الملفات الخاصة بهم. يجب عليك أيضا تجنب تحرير ملفات التوقيع الافتراضي، إلا إذا كنتم تعرفون بالضبط ما تفعلونه، لأنه بصرف النظر عن كونها ممارسة جيدة بشكل عام، و بعيدا عن مساعدتك على التمييز بين التوقيعات الخاصة بك والتوقيعات الافتراضية المتضمنة في phpMussel، انها جيدة للتحرير فقط على الملفات المعدة للتحرير لأن العبث في ملفات التوقيع الافتراضي يمكن أن تسبب لهم التوقف عن العمل بشكل صحيح، ويرجع ذلك إلى ملفات "خرائط": ملفات الخرائط في phpMussel حيث في ملفات التوقيع للبحث عن التوقيعات المطلوبة بواسطة phpMussel عند الحاجة، ويمكن لهذه الخرائط أن تصبح غير متزامنة مع توقيع الملفات المرتبطة بها إذا تم العبث بملفات التوقيع معه. يمكنك وضع حد كبير ما تريد في التوقيعات المخصصة، طالما كنت تتبع بناء الجملة الصحيح. مع ذلك، وتوخي الحذر لاختبار توقيعات جديدة ل-فحص خاطئ مسبقا إذا كنت تنوي مشاركتها أو استخدامها في بيئة حية.<br /><br /></div>
 
 ####*<div dir="rtl">التوزيع التفصيلي للتوقيع</div>*
 <div dir="rtl">فيما يلي تفصيل لأنواع التوقيعات التي يستخدمها phpMussel:<br /><br /></div>

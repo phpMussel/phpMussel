@@ -675,9 +675,9 @@ Generale configurazione per la gestione dei file.
 
 "check_archives"
 - Tenta per verifica il contenuti degli archivi? False = No (no verifica); True = Sì (fare verifica) [Predefinito].
-- Al momento, solo verifica di BZ, GZ, LZF e ZIP file è supportato (verifica di RAR, CAB, 7z eccetera è supportato al momento).
+- Al momento, gli unici formati di archiviazione e compressione supportati sono BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR e ZIP (formati di archiviazione e compressione RAR, CAB, 7z e eccetera non sono supportate al momento).
 - Questo non è infallibile! Mentre mi assai raccomando che è attivato, non posso garantire che sarà sempre trovare tutto.
-- Anche essere consapevoli che verifica per archivio al momento è non ricorsiva per ZIP.
+- Anche essere consapevoli che verifica per archivio al momento è non ricorsiva per PHAR o ZIP formati.
 
 "filesize_archives"
 - Eredita file dimensione limite blacklist/whitelist al contenuti degli archivi? False = No (appena greylist tutto); True = Sì [Predefinito].
@@ -975,4 +975,4 @@ Questa informazione è stato lo scorso aggiornato 21 Aprile 2016 ed è in corso 
 ---
 
 
-Ultimo Aggiornamento: 16 Maggio 2016 (2016.05.16).
+Ultimo Aggiornamento: 23 Maggio 2016 (2016.05.23).
