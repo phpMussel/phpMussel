@@ -43,4 +43,4 @@ An ideal solution for shared hosting environments, where it's often not possible
 
 ---
 
-*This file, "README.md", last edited: 27th February 2016 (2016.05.24).*
+*This file, "README.md", last edited: 25th May 2016 (2016.05.25).*
