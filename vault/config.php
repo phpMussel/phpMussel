@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2016.04.24).
+ * This file: Configuration handler (last modified: 2016.05.23).
  */
 
 /** phpMussel version number (SemVer). */
@@ -31,8 +31,14 @@ $phpMussel['Mussel_OS'] = strtoupper(substr(PHP_OS, 0, 3));
 
 /** Determine if operating in CLI-mode. */
 $phpMussel['Mussel_sapi'] = (
-    substr(php_sapi_name(), 0, 3) === 'cli' ||
-    (!empty($_SERVER['argc']) && is_numeric($_SERVER['argc']) && $_SERVER['argc'] > 0)
+    empty($_SERVER['REQUEST_METHOD']) ||
+    substr(php_sapi_name(), 0, 3) === 'cli' || (
+        empty($_SERVER['REMOTE_ADDR']) &&
+        empty($_SERVER['HTTP_USER_AGENT']) &&
+        !empty($_SERVER['argc']) &&
+        is_numeric($_SERVER['argc']) &&
+        $_SERVER['argc'] > 0
+    )
 );
 
 /** Current time at script execution; Used for various purposes. */

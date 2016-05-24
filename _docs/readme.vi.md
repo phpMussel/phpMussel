@@ -658,16 +658,16 @@ Tùy chọn cho chiều dài hạn chế chữ ký. Chỉ thay đổi này nếu
 Cấu hình cho xử lý tập tin.
 
 "max_uploads"
-- Maximum allowable number of files to scan during files upload scan before aborting các scan và informing các user they are uploading too much at once! Provides protection chống lại a theoretical attack whereby an kẻ tấn công attempts to DDoS your system hoặc CMS by overloading phpMussel to slow down các PHP process to a grinding halt. Recommended: 10. You may wish to raise hoặc lower this number depending on các speed of your hardware. Note that this number doesn't account for hoặc include các contents of archives. @FROM HERE@
+- Số lượng tối đa của tập tin cho phép để quét trong khi quét tập tin tải lên trước khi hủy bỏ quá trình quét và thông báo cho người dùng rằng họ đang tải lên quá nhiều cùng một lúc! Trong lý thuyết, cung cấp bảo vệ chống lại một cuộc tấn công nhờ đó mà một kẻ tấn công cố gắng DDoS hệ thống hay CMS của bạn bằng cách quá tải phpMussel để làm chậm quá trình PHP đến khi nó dừng lại. Đề xuất: 10. Bạn có thể muốn tăng hoặc giảm số này tùy thuộc vào tốc độ của phần cứng của bạn. Chú ý rằng con số này không tính đến hoặc bao gồm các nội dung của tài liệu lưu trữ.
 
 "filesize_limit"
-- Filesize limit in KB. 65536 = 64MB [Mặc định]; 0 = No limit (always greylisted), any (positive) numeric value accepted. This can be useful when your PHP configuration limits các amount of memory a process can hold hoặc nếu your PHP configuration limits filesize of uploads.
+- Giới hạn của kích thước tập tin trong KB. 65536 = 64MB [Mặc định]; 0 = Không giới hạn (luôn có trên danh sách xám), bất kỳ giá trị số dương chấp nhận. Điều này có thể hữu ích khi cấu hình PHP của bạn hạn chế số lượng bộ nhớ một quá trình có thể giữ hay nếu hình PHP của bạn giới hạn kích thước của tải lên tập tin.
 
 "filesize_response"
-- What to do with files that exceed các filesize limit (if one exists). False = Whitelist; True = Blacklist [Mặc định].
+- Làm gì với tập tin mà vượt quá các giới hạn kích thước của tải lên (nếu tồn tại). False = Danh sách trắng; True = Danh sách đen [Mặc định].
 
 "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
-- Nếu your system only allows specific types of files to be uploaded, hoặc nếu your system explicitly denies certain types of files, specifying those filetypes in whitelists, blacklists và greylists can increase các speed at which scanning is performed by allowing các kịch bản to skip over certain filetypes. Format is CSV (comma separated values). Nếu you want to scan everything, rather than whitelist, blacklist hoặc greylist, leave các variable(/s) blank; Doing so will disable whitelist/blacklist/greylist.
+- Nếu your system only allows specific types of files to be uploaded, hoặc nếu your system explicitly denies certain types of files, specifying those filetypes in whitelists, blacklists và greylists can increase các speed at which scanning is performed by allowing các kịch bản to skip over certain filetypes. Format is CSV (comma separated values). Nếu you want to scan everything, rather than whitelist, blacklist hoặc greylist, leave các variable(/s) blank; Doing so will disable whitelist/blacklist/greylist. @FROM HERE@
 - Logical order of processing is:
   - Nếu các filetype is whitelisted, don't scan và don't block các file, và don't check các tập tin chống lại các blacklist hoặc các greylist.
   - Nếu các filetype is blacklisted, don't scan các tập tin but block it anyway, và don't check các tập tin chống lại các greylist.
@@ -975,4 +975,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 21 Tháng Tư 201
 ---
 
 
-Lần cuối cập nhật: 17 Tháng Năm 2016 (2016.05.17).
+Lần cuối cập nhật: 22 Tháng Năm 2016 (2016.05.22).
