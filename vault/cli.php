@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.05.20).
+ * This file: CLI handler (last modified: 2016.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -63,7 +63,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         if (substr_count($phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']], ':')) {
                             $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']] =
                                 explode(':', $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']], 4);
-                            if (!($phpMussel['time'] > $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']][1])) {
+                            if (!($phpMussel['Time'] > $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']][1])) {
                                 $phpMussel['HashCache']['Build'][$phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']][0]] =
                                     $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']];
                             }
@@ -97,7 +97,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                 $phpMussel['HashCache']['Data'] = implode('', $phpMussel['HashCache']['Data']);
                 $phpMussel['HashCache']['Data'] = $phpMussel['SaveCache'](
                     'HashCache',
-                    $phpMussel['time'] + $phpMussel['Config']['general']['scan_cache_expiry'],
+                    $phpMussel['Time'] + $phpMussel['Config']['general']['scan_cache_expiry'],
                     $phpMussel['HashCache']['Data']
                 );
             }
@@ -481,7 +481,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             echo "\n";
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
             $out = $r = '';
-            $phpMussel['memCache']['start_time'] = time();
+            $phpMussel['memCache']['start_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
             $phpMussel['memCache']['start_time_2822'] = date('r', $phpMussel['memCache']['start_time']);
             $s = $phpMussel['memCache']['start_time_2822'] . ' ' . $phpMussel['Config']['lang']['started'] . $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
             echo $s;
@@ -522,28 +522,27 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                 echo $phpMussel['prescan_decode']($out);
                 $out = '';
             }
-            $phpMussel['memCache']['end_time'] = time();
+            $phpMussel['memCache']['end_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
             $phpMussel['memCache']['end_time_2822'] = date('r', $phpMussel['memCache']['end_time']);
-            /* Serialised logging code should probably go here, when we can
-               figure out how to make it work with CLI. The "detections"
-               serialised variable comes from the "$phpMussel['whyflagged']"
-               variable, normally populated during scanning, but inaccessible,
-               due to process forking. Data is logged by the parent process but
-               $phpMussel['whyflagged'] is populated by the child process. This
-               messes up the ability to correctly write to the serialised log
-               when in CLI mode. I don't have any solution yet. '-.-     AAA */
+            /** @todo Get serialised logging working for CLI mode (github.com/Maikuolan/phpMussel/issues/54). */
             $r = $s . $r;
             $s = $phpMussel['memCache']['end_time_2822'] . ' ' . $phpMussel['Config']['lang']['finished'] . $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
             echo $s;
             $r .= $s;
             if ($phpMussel['Config']['general']['scan_log']) {
-                $phpMussel['memCache']['handle'] = array();
-                if (!file_exists($phpMussel['vault'] . $phpMussel['Config']['general']['scan_log'])) {
+                $phpMussel['memCache']['handle'] = array(
+                    'File' => $phpMussel['Time2Logfile'](
+                        $phpMussel['Time'],
+                        $phpMussel['Config']['general']['scan_log']
+                    )
+                );
+                if (!file_exists($phpMussel['vault'] . $phpMussel['memCache']['handle']['File'])) {
                     $r = $phpMussel['safety'] . "\n" . $r;
                 }
-                $phpMussel['memCache']['handle']['f'] = fopen($phpMussel['vault'] . $phpMussel['Config']['general']['scan_log'], 'a');
-                fwrite($phpMussel['memCache']['handle']['f'], $r);
-                fclose($phpMussel['memCache']['handle']['f']);
+                $phpMussel['memCache']['handle'] =
+                    fopen($phpMussel['vault'] . $phpMussel['memCache']['handle']['File'], 'a');
+                fwrite($phpMussel['memCache']['handle'], $r);
+                fclose($phpMussel['memCache']['handle']);
                 $phpMussel['memCache']['handle'] = '';
             }
             $s = $r = '';
@@ -556,10 +555,10 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             if (!empty($stl)) {
                 $greylist = (!file_exists($phpMussel['vault'] . 'greylist.csv')) ? ',' : '';
                 $greylist .= $stl . ',';
-                $greylistf = fopen($phpMussel['vault'] . 'greylist.csv', 'a');
-                fwrite($greylistf, $greylist);
-                fclose($greylistf);
-                unset($greylistf, $greylist);
+                $handle = fopen($phpMussel['vault'] . 'greylist.csv', 'a');
+                fwrite($handle, $greylist);
+                fclose($handle);
+                unset($handle, $greylist);
                 echo $phpMussel['Config']['lang']['greylist_updated'];
             }
         }
@@ -567,11 +566,11 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         /** Clear the greylist. **/
         if ($phpMussel['cmd'] == 'greylist_clear' || $phpMussel['cmd'] == 'gc') {
             echo "\n";
-            $greylistf = fopen($phpMussel['vault'] . 'greylist.csv', 'a');
-            ftruncate($greylistf, 0);
-            fwrite($greylistf, ',');
-            fclose($greylistf);
-            unset($greylistf, $greylist);
+            $handle = fopen($phpMussel['vault'] . 'greylist.csv', 'a');
+            ftruncate($handle, 0);
+            fwrite($handle, ',');
+            fclose($handle);
+            unset($handle, $greylist);
             echo $phpMussel['Config']['lang']['greylist_cleared'];
         }
 

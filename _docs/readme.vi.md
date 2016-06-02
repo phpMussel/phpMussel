@@ -483,6 +483,17 @@ Cấu hình chung cho phpMussel.
 "scan_kills"
 - Tên của tập tin để ghi lại tất cả hồ sơ của bị chặn hay bị giết tải lên. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
+*Mẹo hữu ích: Nếu bạn muốn, bạn có thể bao gồm thông tin ngày/giờ trong tên các tập tin bản ghi (`scan_log`, `scan_log_serialized`, `scan_kills`, vv) của bạn bằng cách bao gồm những trong tên: `{yyyy}` cho năm hoàn thành, `{yy}` cho năm viết tắt, `{mm}` cho tháng, `{dd}` cho ngày, `{hh}` cho giờ.
+
+*Các ví dụ:*
+- *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+- *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+- *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+
+"timeOffset"
+- Nếu thời gian máy chủ của bạn không phù hợp với thời gian địa phương của bạn, bạn có thể chỉ định một bù đắp đây để điều chỉnh thông tin ngày/giờ được tạo ra bởi CIDRAM theo như yêu cầu của bạn. Nó nói chung được đề nghị điều chỉnh tùy chọn múi giờ trong `php.ini` tập tin của bạn, nhưng đôi khi (chẳng hạn như khi làm việc với dịch vụ lưu trữ web chia sẻ mà được giới hạn) đây không phải là luôn luôn có thể làm, và như vậy, tùy chọn này được cung cấp ở đây. Bù đắp là trong từ phút.
+- Ví dụ (để thêm một giờ): `timeOffset=60`
+
 "ipaddr"
 - Nơi để tìm thấy các địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như thế Cloudflare và vv) Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này trừ khi bạn biết những gì bạn đang làm!
 
@@ -975,4 +986,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 21 Tháng Tư 201
 ---
 
 
-Lần cuối cập nhật: 31 Tháng Năm 2016 (2016.05.31).
+Lần cuối cập nhật: 2 Tháng Sáu 2016 (2016.06.02).

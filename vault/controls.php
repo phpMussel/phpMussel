@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Controls handler (last modified: 2016.03.24).
+ * This file: Controls handler (last modified: 2016.06.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -127,14 +127,20 @@ if (
     /** Print the scan_log file. */
     if ($phpMussel['controls']['command'] == 'scan_log') {
         echo $phpMussel['Config']['lang']['cli_ln1'] . $phpMussel['Config']['lang']['cli_ln2'];
-        if (file_exists($phpMussel['vault'] . $phpMussel['Config']['general']['scan_log'])) {
+        $phpMussel['handle'] = array(
+            'File' => $phpMussel['Time2Logfile'](
+                $phpMussel['Time'],
+                $phpMussel['Config']['general']['scan_log']
+            )
+        );
+        if (file_exists($phpMussel['vault'] . $phpMussel['handle']['File'])) {
             echo
-                $phpMussel['Config']['general']['scan_log'] . ":\n\n" .
-                implode(file($phpMussel['vault'] . $phpMussel['Config']['general']['scan_log']));
+                $phpMussel['handle']['File'] . ":\n\n" .
+                $phpMussel['ReadFile']($phpMussel['vault'] . $phpMussel['handle']['File']);
             die;
         }
         echo
-            $phpMussel['Config']['general']['scan_log'] . ' ' .
+            $phpMussel['handle']['File'] . ' ' .
             $phpMussel['Config']['lang']['x_does_not_exist'] .
             $phpMussel['Config']['lang']['_exclamation_final'];
         die;
@@ -143,14 +149,20 @@ if (
     /** Print the scan_kills file. */
     if ($phpMussel['controls']['command'] == 'scan_kills') {
         echo $phpMussel['Config']['lang']['cli_ln1'] . $phpMussel['Config']['lang']['cli_ln2'];
-        if (file_exists($phpMussel['vault'] . $phpMussel['Config']['general']['scan_kills'])) {
+        $phpMussel['handle'] = array(
+            'File' => $phpMussel['Time2Logfile'](
+                $phpMussel['Time'],
+                $phpMussel['Config']['general']['scan_kills']
+            )
+        );
+        if (file_exists($phpMussel['vault'] . $phpMussel['handle']['File'])) {
             echo
-                $phpMussel['Config']['general']['scan_kills'] . ":\n\n" .
-                implode(file($phpMussel['vault'] . $phpMussel['Config']['general']['scan_kills']));
+                $phpMussel['handle']['File'] . ":\n\n" .
+                $phpMussel['ReadFile']($phpMussel['vault'] . $phpMussel['handle']['File']);
             die;
         }
         echo
-            $phpMussel['Config']['general']['scan_kills'] . ' ' .
+            $phpMussel['handle']['File'] . ' ' .
             $phpMussel['Config']['lang']['x_does_not_exist'] .
             $phpMussel['Config']['lang']['_exclamation_final'];
         die;

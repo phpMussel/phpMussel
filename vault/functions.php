@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.05.22).
+ * This file: Functions file (last modified: 2016.06.02).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -72,23 +72,23 @@ $phpMussel['Register_Hook'] = function ($what, $where, $with = '') use (&$phpMus
  * language data and to parse any messages related to any detections found
  * during the scan process and any other related processes.
  *
- * @param array $v The input array.
- * @param string $b The input string.
+ * @param array $Needle The input array (what we're looking *for*).
+ * @param string $Haystack The input string (what we're looking *in*).
  * @return string Results are returned directly to the calling scope as a
  *      string.
  */
-$phpMussel['ParseVars'] = function ($v, $b) {
-    if (!is_array($v) || empty($b)) {
+$phpMussel['ParseVars'] = function ($Needle, $Haystack) {
+    if (!is_array($Needle) || empty($Haystack)) {
         return '';
     }
-    $c = count($v);
-    reset($v);
+    $c = count($Needle);
+    reset($Needle);
     for ($i = 0; $i < $c; $i++) {
-        $k = key($v);
-        $b = str_replace('{' . $k . '}', $v[$k], $b);
-        next($v);
+        $k = key($Needle);
+        $Haystack = str_replace('{' . $k . '}', $Needle[$k], $Haystack);
+        next($Needle);
     }
-    return $b;
+    return $Haystack;
 };
 
 /**
@@ -645,7 +645,7 @@ $phpMussel['CleanCache'] = function () use (&$phpMussel) {
         for ($i = 0; $i < $c; $i++) {
             if (substr_count($fdata[$i], ':')) {
                 $fdata[$i] = explode(':', $fdata[$i], 3);
-                if ($phpMussel['time'] > $fdata[$i][1]) {
+                if ($phpMussel['Time'] > $fdata[$i][1]) {
                     $xf = bin2hex(substr($fdata[$i][0], 0, 1));
                     if (!isset($CacheFiles[$xf])) {
                         $CacheFiles[$xf] =
@@ -732,7 +732,7 @@ $phpMussel['FetchCache'] = function ($entry = '') use (&$phpMussel) {
         return '';
     }
     $item_ex = $phpMussel['substrbf']($phpMussel['substraf']($item, $entry . ':'), ':');
-    if ($phpMussel['time'] > $item_ex) {
+    if ($phpMussel['Time'] > $item_ex) {
         while (substr_count($d, $entry . ':')) {
             $d = str_ireplace($item, '', $d);
         }
@@ -764,7 +764,7 @@ $phpMussel['SaveCache'] = function ($entry = '', $item_ex = 0, $item_data = '') 
         return false;
     }
     if (!$item_ex) {
-        $item_ex = $phpMussel['time'];
+        $item_ex = $phpMussel['Time'];
     }
     $f = $phpMussel['cachePath'] . bin2hex($entry[0]) . '.tmp';
     $d = (!file_exists($f)) ? '' : $phpMussel['ReadFile']($f, 0, true);
@@ -836,7 +836,7 @@ $phpMussel['Quarantine'] = function ($s, $key, $ip, $id) use (&$phpMussel) {
     $o =
         "\x2f\x3d\x3d\x20phpMussel\x20Quarantined\x20File\x20Upload\x20\x3d" .
         "\x3d\x5c\n\x7c\x20Time\x2fDate\x20Uploaded\x3a\x20" .
-        str_pad($phpMussel['time'], 18, "\x20") .
+        str_pad($phpMussel['Time'], 18, "\x20") .
         "\x7c\n\x7c\x20Uploaded\x20From\x3a\x20" . str_pad($ip, 22, "\x20") .
         "\x20\x7c\n\x5c" . str_repeat("\x3d", 39) . "\x2f\n\n\n" . $h . $o;
     $u = $phpMussel['MemoryUse']($phpMussel['qfuPath']);
@@ -1388,7 +1388,7 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
         $phpMussel['memCache']['urlscanner_google'] = $phpMussel['FetchCache']('urlscanner_google');
     }
     /** Generate new cache expiry time. */
-    $newExpiry = $phpMussel['time'] + $phpMussel['Config']['urlscanner']['cache_time'];
+    $newExpiry = $phpMussel['Time'] + $phpMussel['Config']['urlscanner']['cache_time'];
     /** Generate a reference for the cache entry for this lookup. */
     $cacheRef = md5($urls) . ':' . $c . ':' . strlen($urls) . ':';
     /** This will contain the lookup response. */
@@ -1402,7 +1402,7 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
             break;
         }
         $expiry = $phpMussel['substrbf']($response, ':');
-        if ($expiry > $phpMussel['time']) {
+        if ($expiry > $phpMussel['Time']) {
             $response = $phpMussel['substraf']($response, ':');
             break;
         }
@@ -5047,7 +5047,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             $phpMussel['FetchCache']('urlscanner_domains');
                     }
                     $urlscanner['y'] =
-                        $phpMussel['time'] + $phpMussel['Config']['urlscanner']['cache_time'];
+                        $phpMussel['Time'] + $phpMussel['Config']['urlscanner']['cache_time'];
                     $urlscanner['req_v'] = urlencode($phpMussel['ScriptIdent']);
                     $urlscanner['classes'] = array(
                         'EMD' => "\x1a\x82\x10\x1bXXX",
@@ -5087,7 +5087,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 break;
                             }
                             $urlscanner['expiry'] = $phpMussel['substrbf']($urlscanner['class'], ':');
-                            if ($urlscanner['expiry'] > $phpMussel['time']) {
+                            if ($urlscanner['expiry'] > $phpMussel['Time']) {
                                 $urlscanner['class'] = $phpMussel['substraf']($urlscanner['class'], ':');
                                 if (!$urlscanner['class']) {
                                     continue 2;
@@ -6143,7 +6143,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $phpMussel['memCache']['vt_quota'] = explode(';', $phpMussel['memCache']['vt_quota']);
                 $c = count($phpMussel['memCache']['vt_quota']);
                 for ($i = 0; $i < $c; $i++) {
-                    if ($phpMussel['memCache']['vt_quota'][$i] > $phpMussel['time']) {
+                    if ($phpMussel['memCache']['vt_quota'][$i] > $phpMussel['Time']) {
                         $x++;
                     } else {
                         $phpMussel['memCache']['vt_quota'][$i] = '';
@@ -6175,7 +6175,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $vtx
                     ), true
                 );
-                $y = $phpMussel['time'] + ($phpMussel['Config']['virustotal']['vt_quota_time'] * 60);
+                $y = $phpMussel['Time'] + ($phpMussel['Config']['virustotal']['vt_quota_time'] * 60);
                 $phpMussel['memCache']['vt_quota'] .= $y . ';';
                 while (substr_count($phpMussel['memCache']['vt_quota'], ';;')) {
                     $phpMussel['memCache']['vt_quota'] =
@@ -6308,7 +6308,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         $phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][0] =
             $phpMussel['HashCacheData'];
         $phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][1] =
-            $phpMussel['time'] + $phpMussel['Config']['general']['scan_cache_expiry'];
+            $phpMussel['Time'] + $phpMussel['Config']['general']['scan_cache_expiry'];
         $phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][2] =
             (empty($out)) ? '' : bin2hex($out);
         $phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][3] =
@@ -6934,9 +6934,9 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 (strlen($in) < ($phpMussel['Config']['general']['quarantine_max_filesize'] * 1024))
             ) {
                 $qfu =
-                    $phpMussel['time'] .
+                    $phpMussel['Time'] .
                     '-' .
-                    md5($phpMussel['Config']['general']['quarantine_key'] . $fdCRC . $phpMussel['time']);
+                    md5($phpMussel['Config']['general']['quarantine_key'] . $fdCRC . $phpMussel['Time']);
                 $phpMussel['Quarantine'](
                     $in,
                     $phpMussel['Config']['general']['quarantine_key'],
@@ -7534,9 +7534,9 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             (strlen($in) < ($phpMussel['Config']['general']['quarantine_max_filesize'] * 1024))
         ) {
             $qfu =
-                $phpMussel['time'] .
+                $phpMussel['Time'] .
                 '-' .
-                md5($phpMussel['Config']['general']['quarantine_key'] . $fdCRC . $phpMussel['time']);
+                md5($phpMussel['Config']['general']['quarantine_key'] . $fdCRC . $phpMussel['Time']);
             $phpMussel['Quarantine'](
                 $in,
                 $phpMussel['Config']['general']['quarantine_key'],
@@ -7658,7 +7658,7 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
                 if (substr_count($phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']], ':')) {
                     $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']] =
                         explode(':', $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']], 4);
-                    if (!($phpMussel['time'] > $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']][1])) {
+                    if (!($phpMussel['Time'] > $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']][1])) {
                         $phpMussel['HashCache']['Build'][$phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']][0]] =
                             $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']];
                     }
@@ -7674,14 +7674,14 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
     if (!$ofn) {
         $ofn = $f;
     }
-    $xst = time();
+    $xst = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
     $xst2822 = date('r', $xst);
     try {
         $r = $phpMussel['Recursor']($f, $n, $zz, $dpt, $ofn);
     } catch (\Exception $e) {
         throw new \Exception($e->getMessage());
     }
-    $xet = time();
+    $xet = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
     $xet2822 = date('r', $xet);
 
     /** Plugin hook: "after_scan". */
@@ -7753,12 +7753,19 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
             $phpMussel['Config']['lang']['_fullstop_final'] . "\n" .
             $r . $xet2822 . ' ' . $phpMussel['Config']['lang']['finished'] .
             $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
-        if (!file_exists($phpMussel['vault'] . $phpMussel['Config']['general']['scan_log'])) {
+        $handle = array(
+            'File' => $phpMussel['Time2Logfile'](
+                $phpMussel['Time'],
+                $phpMussel['Config']['general']['scan_log']
+            )
+        );
+        if (!file_exists($phpMussel['vault'] . $handle['File'])) {
             $r = $phpMussel['safety'] . "\n" . $r;
         }
-        $xf = fopen($phpMussel['vault'] . $phpMussel['Config']['general']['scan_log'], 'a');
-        fwrite($xf, $r);
-        fclose($xf);
+        $handle['Stream'] = fopen($phpMussel['vault'] . $handle['File'], 'a');
+        fwrite($handle['Stream'], $r);
+        fclose($handle['Stream']);
+        $handle = '';
     }
     if ($phpMussel['EOF']) {
         if ($phpMussel['Config']['general']['scan_cache_expiry'] > 0) {
@@ -7776,11 +7783,10 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
                 }
                 next($phpMussel['HashCache']['Data']);
             }
-            $phpMussel['HashCache']['Data'] = implode('', $phpMussel['HashCache']['Data']);
             $phpMussel['HashCache']['Data'] = $phpMussel['SaveCache'](
                 'HashCache',
-                $phpMussel['time'] + $phpMussel['Config']['general']['scan_cache_expiry'],
-                $phpMussel['HashCache']['Data']
+                $phpMussel['Time'] + $phpMussel['Config']['general']['scan_cache_expiry'],
+                implode('', $phpMussel['HashCache']['Data'])
             );
             unset($phpMussel['HashCache']['Data']);
         }
@@ -7788,22 +7794,52 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
             !empty($phpMussel['whyflagged']) &&
             $phpMussel['Config']['general']['scan_log_serialized']
         ) {
-            $handle = array();
-            $handle['whyflagged'] = trim($phpMussel['whyflagged']);
-            $handle['s'] = serialize(array(
-                'start_time' => $xst,
-                'end_time' => $xet,
-                'origin' => $_SERVER[$phpMussel['Config']['general']['ipaddr']],
-                'objects_scanned' => $phpMussel['memCache']['objects_scanned'],
-                'detections_count' => $phpMussel['memCache']['detections_count'],
-                'scan_errors' => $phpMussel['memCache']['scan_errors'],
-                'detections' => $handle['whyflagged']
-            )) . "\n";
-            $handle['f'] =
-                fopen($phpMussel['vault'] . $phpMussel['Config']['general']['scan_log_serialized'], 'a');
-            fwrite($handle['f'], $handle['s']);
-            fclose($handle['f']);
+            $handle = array(
+                'Data' => serialize(array(
+                    'start_time' => $xst,
+                    'end_time' => $xet,
+                    'origin' => $_SERVER[$phpMussel['Config']['general']['ipaddr']],
+                    'objects_scanned' => $phpMussel['memCache']['objects_scanned'],
+                    'detections_count' => $phpMussel['memCache']['detections_count'],
+                    'scan_errors' => $phpMussel['memCache']['scan_errors'],
+                    'detections' => trim($phpMussel['whyflagged'])
+                )) . "\n",
+                'File' => $phpMussel['Time2Logfile'](
+                    $phpMussel['Time'],
+                    $phpMussel['Config']['general']['scan_log_serialized']
+                )
+            );
+            $handle['Stream'] = fopen($phpMussel['vault'] . $handle['File'], 'a');
+            fwrite($handle['Stream'], $handle['Data']);
+            fclose($handle['Stream']);
         }
     }
     return $r;
+};
+
+/**
+ * A simple closure for replacing date/time placeholders in the logfile
+ * directives with corresponding date/time information.
+ *
+ * @param int $time A unix timestamp.
+ * @param string|array $dir A directive entry or an array of directive entries.
+ * @return string|array The adjusted directive entry or entries.
+ */
+$phpMussel['Time2Logfile'] = function ($time, $dir) use (&$phpMussel) {
+    $time = date('dmYH', $time);
+    $values = array(
+        'dd' => substr($time, 0, 2),
+        'mm' => substr($time, 2, 2),
+        'yyyy' => substr($time, 4, 4),
+        'yy' => substr($time, 6, 2),
+        'hh' => substr($time, 8, 2)
+    );
+    if (is_array($dir)) {
+        $c = count($dir);
+        for ($i = 0; $i < $c; $i++) {
+            $dir[$i] = $phpMussel['ParseVars']($values, $dir[$i]);
+        }
+        return $dir;
+    }
+    return $phpMussel['ParseVars']($values, $dir);
 };

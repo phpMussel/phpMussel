@@ -20,19 +20,19 @@
 
 ### <div dir="rtl">1. <a name="SECTION1"></a>مقدمة</div>
 
-<div dir="rtl">شكراً لك على إستخدام phpMussel, المبرمج بلغة php للكشف عن ملفات الإختراق والفيروسات والبرمجيات الخبيثة الموجودة حيث يعتمد السكربت على توقيعات ClamAV وغيرها.<br /><br /></div>
+<div dir="rtl">شكراً لك على إستخدام phpMussel، المبرمج بلغة php للكشف عن ملفات الإختراق والفيروسات والبرمجيات الخبيثة الموجودة حيث يعتمد السكربت على توقيعات ClamAV وغيرها.<br /><br /></div>
 
 <div dir="rtl">حقوق النشر محفوظة ل phpMussel لعام 2013 وما بعده تحت رخصة GNU/GPLv2 للمبرمج (Caleb M (Maikuolan.<br /><br /></div>
 
-<div dir="rtl">هذا البرنامج مجاني, يمكنك تعديله وإعادة نشره تحت رخصة GNU.<br /><br /></div>
+<div dir="rtl">هذا البرنامج مجاني، يمكنك تعديله وإعادة نشره تحت رخصة GNU.<br /><br /></div>
 
-<div dir="rtl">نشارك هذا السكربت على أمل أن تعم الفائدة لكن لا نتحمل أية مسؤولية أو أية ضمانات لاستخدامك, اطلع على تفاصيل رخصة GNU للمزيد من المعلومات عبر الملف LICENSE.txt وللمزيد من المعلومات :</div>
+<div dir="rtl">نشارك هذا السكربت على أمل أن تعم الفائدة لكن لا نتحمل أية مسؤولية أو أية ضمانات لاستخدامك، اطلع على تفاصيل رخصة GNU للمزيد من المعلومات عبر الملف LICENSE.txt وللمزيد من المعلومات :</div>
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-<div dir="rtl">شكر خاص ل<a href="http://www.clamav.net/">ClamAV</a> لكل من الإلهام للمشروع والتواقيع التي يعمد عليها السكربت, والتي من دونها كان من الممكن أن لا يتم إنجاز هذا البرنامج أو بأفضل الأحوال ستكون قيمته محدودة جداً. <br /><br /></div>
+<div dir="rtl">شكر خاص ل<a href="http://www.clamav.net/">ClamAV</a> لكل من الإلهام للمشروع والتواقيع التي يعمد عليها السكربت، والتي من دونها كان من الممكن أن لا يتم إنجاز هذا البرنامج أو بأفضل الأحوال ستكون قيمته محدودة جداً. <br /><br /></div>
 
-<div dir="rtl">شكر خاص أيضاً ل Sourceforge و GitHub لإستضافتهم ملفات المشروع, و <a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">Spambot Security</a> لإستضافة phpMussel لمنتديات المناقشة, وأيضاً لمصادر التوقيعات التي يستخدمها phpMussel مثل : <a href="http://www.securiteinfo.com/">SecuriteInfo.com</a> و <a href="http://www.phishtank.com/">PhishTank</a>  و <a href="http://nlnetlabs.nl/">NLNetLabs</a> وغيرهم, والشكر مقدم لكل من يدعم المشروع وشكراً لك لاستخدامك للسكربت. <br /><br /></div>
+<div dir="rtl">شكر خاص أيضاً ل Sourceforge و GitHub لإستضافتهم ملفات المشروع، و <a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">Spambot Security</a> لإستضافة phpMussel لمنتديات المناقشة، وأيضاً لمصادر التوقيعات التي يستخدمها phpMussel مثل : <a href="http://www.securiteinfo.com/">SecuriteInfo.com</a> و <a href="http://www.phishtank.com/">PhishTank</a>  و <a href="http://nlnetlabs.nl/">NLNetLabs</a> وغيرهم، والشكر مقدم لكل من يدعم المشروع وشكراً لك لاستخدامك للسكربت. <br /><br /></div>
  
 <div dir="rtl">هذا المستند و الحزم المرتبطة به يمكن تحميلها مجاناً من:</div>
 - [Sourceforge](http://phpmussel.sourceforge.net/).
@@ -43,15 +43,15 @@
 
 ### <div dir="rtl">2-أ. <a name="SECTION2A"></a>كيفية التحميل (لخدمات الويب)</div>
 
-<div dir="rtl">أرجو أن يتم تسهيل هذه العملية في المستقبل القريب, لكن في الوقت الحالي إتبع هذه التعليمات والتي تعمل على أغلب الأنظمة وأنظمة إدارة المحتوى CMS : <br /><br /></div>
+<div dir="rtl">أرجو أن يتم تسهيل هذه العملية في المستقبل القريب، لكن في الوقت الحالي إتبع هذه التعليمات والتي تعمل على أغلب الأنظمة وأنظمة إدارة المحتوى CMS : <br /><br /></div>
 
-<div dir="rtl">1_بقراءتك لهذا سنفرض بأنك قمت بتحميل السكربت, من هنا عليك العمل على جهازك المحلي أو نظام إدارة المحتوى لإضافة هذه الأمور, مجلد مثل "/public_html/phpmussel/" أو ما شابه سيكون كاف.<br /><br /></div>
+<div dir="rtl">1_بقراءتك لهذا سنفرض بأنك قمت بتحميل السكربت، من هنا عليك العمل على جهازك المحلي أو نظام إدارة المحتوى لإضافة هذه الأمور، مجلد مثل "/public_html/phpmussel/" أو ما شابه سيكون كاف.<br /><br /></div>
 
-<div dir="rtl">2_هذه الخطوة اختيارية ينصح بها للمستخدمين المتقدمين ولا ينصح بها للمبتدئين, إفتح phpmussel.ini الموجود داخل vault هذا الملف يحتوي جميع التعليمات ل phpMussel, أعلى كل خيار يوجد وصف مختصر للوظيفة التي يقوم بها, عدل الخيارات كما يناسبك.<br /><br /></div>
+<div dir="rtl">2_هذه الخطوة اختيارية ينصح بها للمستخدمين المتقدمين ولا ينصح بها للمبتدئين، إفتح phpmussel.ini الموجود داخل vault هذا الملف يحتوي جميع التعليمات ل phpMussel، أعلى كل خيار يوجد وصف مختصر للوظيفة التي يقوم بها، عدل الخيارات كما يناسبك.<br /><br /></div>
 
 <div dir="rtl">3_إرفع الملفات للمجلد الذي اخترته(لست بحاجة لرفع *.txt-*.md لكن في الغالب يجب أن ترفع جميع الملفات).<br /><br /></div>
 
-<div dir="rtl">4_غير التصريح لمجلد vault للتصريح 777. المجلد الرئيسي الذي يحتوي على الملفات-المجلد الذي اخترته سابقاً-, بالعادة يمكن تجاهله, لكن يجب التأكد من التصريح إذا واجهت مشاكل في الماضي(إفتراضيا يجب أن يكون 755).<br /><br /></div>
+<div dir="rtl">4_غير التصريح لمجلد vault للتصريح 777. المجلد الرئيسي الذي يحتوي على الملفات-المجلد الذي اخترته سابقاً-، بالعادة يمكن تجاهله، لكن يجب التأكد من التصريح إذا واجهت مشاكل في الماضي(إفتراضيا يجب أن يكون 755).<br /><br /></div>
 
 <div dir="rtl">5_الآن أنت بحاجة لربط phpMussel لنظام إدارة المحتوى أو النظام الذي تستخدمه, هناك عدة طرق لفعل هذا لكن أسهل طريقة ببساطة إضافة السكربت لبداية النواة في نظامك (سيتم إعادة التحميل لكل وصول لأي صفحة في الموقع) بإستخدام جمل require أو include, بالعادة سيتم التخزين في  /includes, /assets أو /functions, وسيتم تسميته بالغالب مثل: init.php, common_functions.php, functions.php أو ما شابه.
 من الممكن أن تكون مستخدم ل CMS لذا يمكن أن أقدم بعض المساعدة بخصوص هذا الموضوع, لإستخدام require أو include قم بإضافة الكود التالي لبداية الملف الرئيسي لبرنامجك, عدل النص الموجود داخل علامات التنصيص لمسار phpmussel.php لديك.<br /><br /></div>
@@ -62,7 +62,7 @@
 
 <div dir="rtl">--أو بدلاً من ذلك--<br /><br /></div>
 
-<div dir="rtl">إذا كنت تستخدم Apache webserver وتستطيع الوصول ل php.ini, بإستطاعتك إستخدام auto_prpend_file للتوجيه ل phpMussel لكل طلب مثل:<br /><br /></div>
+<div dir="rtl">إذا كنت تستخدم Apache webserver وتستطيع الوصول ل php.ini، بإستطاعتك إستخدام auto_prpend_file للتوجيه ل phpMussel لكل طلب مثل:<br /><br /></div>
 
 `auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"`
 
@@ -70,23 +70,23 @@
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"`
 
-<div dir="rtl">6_لقد إنتهيت لكن يجب عليك التأكد من أن كل شيئ على ما يرام, للتأكد حاول رفع ملفات الفحص الموجودة في الحزمة _testfiles لموقعك, إذا كل شيئ يعمل على ما يرام يجب أن تظهر رسالة من phpMussel لتأكيد على أنه تم حجب الملفات المرفوعة بنجاح, إذا لم يظهر شيئ إذاً هناك شيئ لا يعمل على ما يرام, إذا كنت تستخدم إضافات متقدمة أو أدوات فحص أخرى أقترح أن تجرب من خلالهم أيضاً للتأكد إذا ما كان كل شيئ على ما يرام.<br /><br /></div>
+<div dir="rtl">6_لقد إنتهيت لكن يجب عليك التأكد من أن كل شيئ على ما يرام، للتأكد حاول رفع ملفات الفحص الموجودة في الحزمة _testfiles لموقعك، إذا كل شيئ يعمل على ما يرام يجب أن تظهر رسالة من phpMussel لتأكيد على أنه تم حجب الملفات المرفوعة بنجاح، إذا لم يظهر شيئ إذاً هناك شيئ لا يعمل على ما يرام، إذا كنت تستخدم إضافات متقدمة أو أدوات فحص أخرى أقترح أن تجرب من خلالهم أيضاً للتأكد إذا ما كان كل شيئ على ما يرام.<br /><br /></div>
 
 ---
 
 
 ### <div dir="rtl">2-ب. <a name="SECTION2B"></a>كيفية التحميل (لخدمات واجهة سطر الأوامر)</div>
 
-<div dir="rtl">أرجو أن يتم تسهيل هذه العملية في المستقبل القريب, لكن في الوقت الحالي إتبع هذه التعليمات للعمل من خلال واجهة سطر الأوامر(في الوقت الحالي واجهة سطر الأوامر تدعم فقط أنظمة ويندوز سيتم دعم لينكس والأنظمة الأخرى في الإصدار القادم).<br /><br /></div>
+<div dir="rtl">أرجو أن يتم تسهيل هذه العملية في المستقبل القريب، لكن في الوقت الحالي إتبع هذه التعليمات للعمل من خلال واجهة سطر الأوامر(في الوقت الحالي واجهة سطر الأوامر تدعم فقط أنظمة ويندوز سيتم دعم لينكس والأنظمة الأخرى في الإصدار القادم).<br /><br /></div>
 
-<div dir="rtl">1_بقراءتك لهذا سنفرض بأنك قمت بتحميل السكربت,  من هنا عليك العمل على جهازك المحلي.<br /><br /></div>
+<div dir="rtl">1_بقراءتك لهذا سنفرض بأنك قمت بتحميل السكربت،  من هنا عليك العمل على جهازك المحلي.<br /><br /></div>
 
 <div dir="rtl">2_ يتطلب phpMussel أن يتم تثبيت PHP على الجهاز المضيف من أجل تنفيذه. إذا لم يكن PHP مثبتا على جهازك، الرجاء قم بتثبيت PHP على جهازك، و اتبع أي تعليمات يقدمها مثبت PHP.<br /><br /></div>
 
-<div dir="rtl">3_هذه الخطوة اختيارية ينصح بها للمستخدمين المتقدمين ولا ينصح بها للمبتدئين,إفتح phpmussel.ini الموجود داخل vault هذا الملف يحتوي جميع التعليمات ل phpMussel, أعلى كل خيار يوجد وصف مختصر للوظيفة التي يقوم بها, عدل الخيارات كما يناسبك.
+<div dir="rtl">3_هذه الخطوة اختيارية ينصح بها للمستخدمين المتقدمين ولا ينصح بها للمبتدئين،إفتح phpmussel.ini الموجود داخل vault هذا الملف يحتوي جميع التعليمات ل phpMussel، أعلى كل خيار يوجد وصف مختصر للوظيفة التي يقوم بها، عدل الخيارات كما يناسبك.
 <br /><br /></div>
 
-<div dir="rtl">4_بشكل إختياري, يمكنك إستخدام phpMussel لواجهة سطر الأوامر بإنشاء ملف "باتش" لتحميل php و phpMussel تلقائياً, للقيام بهذا إفتح محرر النصوص مثل Notepad++ ثم أكتب المسار الكامل لملف php.exe الموجود في دليل التثبيت متبوع بمسافة ثم المسار الكامل لملف phpmussel1.php احفظ الملف بصيغة bat., إفتح الملف الذي قمت بإنشاءه لتشغيل phpMussel في المستقبل. <br /><br /></div>
+<div dir="rtl">4_بشكل إختياري، يمكنك إستخدام phpMussel لواجهة سطر الأوامر بإنشاء ملف "باتش" لتحميل php و phpMussel تلقائياً، للقيام بهذا إفتح محرر النصوص مثل Notepad++ ثم أكتب المسار الكامل لملف php.exe الموجود في دليل التثبيت متبوع بمسافة ثم المسار الكامل لملف phpmussel1.php احفظ الملف بصيغة bat.، إفتح الملف الذي قمت بإنشاءه لتشغيل phpMussel في المستقبل. <br /><br /></div>
 
 <div dir="rtl">5) في هذه المرحلة، لقد انتهيت! ومع ذلك فربما يجب عليك اختباره للتأكد من أنه يعمل بشكل صحيح. لاختبار phpMussel، قم بتشغيله و حاول فحص الدليل "_testfiles" المتوفر مع الحزمة.<br /><br /></div>
 
@@ -534,6 +534,21 @@
 <div dir="rtl">"scan_kills"<br /></div>
 <div dir="rtl"><ul>
  <li>اسم الملف من ملف لتسجيل كل سجلات الملفات التي منعت او اوقفت من .تحديد اسم الملف، أو اتركه فارغا لتعطيل.</li>
+</ul></div>
+
+<div dir="rtl"><em>Useful tip: If you want, you can append date/time information to the names of your logfiles by including these in the name: `{yyyy}` for complete year, `{yy}` for abbreviated year, `{mm}` for month, `{dd}` for day, `{hh}` for hour. @TranslateMe@</em><br /><br /></div>
+
+<div dir="rtl"><em>Examples: @TranslateMe@</em><br /></div>
+<div dir="rtl"><ul><em>
+ <li>logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'</li>
+ <li>logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'</li>
+ <li>logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'</li>
+</em></ul></div>
+
+<div dir="rtl">"timeOffset"<br /></div>
+<div dir="rtl"><ul>
+ <li>If your server time doesn't match your local time, you can specify an offset here to adjust the date/time information generated by CIDRAM according to your needs. It's generally recommended instead to adjust the timezone directive in your `php.ini` file, but sometimes (such as when working with limited shared hosting providers) this isn't always possible to do, and so, this option is provided here. Offset is in minutes. @TranslateMe@</li>
+ <li>Example (to add one hour): `timeOffset=60` @TranslateMe@</li>
 </ul></div>
 
 <div dir="rtl">"ipaddr"<br /></div>
@@ -1189,4 +1204,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 25 مايو 2016 (2016.05.25).</div>
+<div dir="rtl">آخر تحديث: 2 يونيو 2016 (2016.06.02).</div>

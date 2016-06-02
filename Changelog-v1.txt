@@ -155,11 +155,21 @@ entries will be deleted when those goals have been achieved.
   error suppression and cleaning up duplicated code. Calls to "die" from within
   closures have been removed in favour of using exceptions.
 
-- [2015.08.22; Documentation; Nadeen Shawa / Maikuolan]: Completed translation
+- [2016.05.25; Documentation; Nadeen Shawa / Maikuolan]: Completed translation
   of the documentation to Arabic (documentation prep and markdown formatting by
   Maikuolan/Caleb, but the actual translations were done by Nadeen Shawa). With
   this translation completed, the phpMussel documentation is now available in
   12 fully completed translations with 1 other translation near to completion.
+
+- [2016.05.31; Documentation; m7mdtiger]: Completed audit/review/rewrite for
+  the Arabic translation of the README documentation.
+
+- [2016.06.02; Minor code change; Maikuolan]: Added the ability to use dated
+  logfiles! Now, some simple variables ({dd}, {mm}, {yyyy}/{yy}, {hh}) can be
+  included when specifying the names to use for logfiles in order to organise
+  logfiles by date/time. Added a new directive ("timeOffset") to account for
+  the possibility of discrepancies between servers and the local time of those
+  using phpMussel.
 
 ======
 

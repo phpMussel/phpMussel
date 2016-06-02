@@ -483,6 +483,17 @@ Generale configurazione per phpMussel.
 "scan_kills"
 - Il nome del file per registrare tutti i record di bloccato o ucciso caricamenti. Specificare un nome del file, o lasciare vuoto per disattivarlo.
 
+*Consiglio utile: Se vuoi, è possibile aggiungere data/ora informazioni per i nomi dei file per la registrazione par includendo queste nel nome: `{yyyy}` per l'anno completo, `{yy}` per l'anno abbreviato, `{mm}` per mese, `{dd}` per giorno, `{hh}` per ora.*
+
+*Esempi:*
+- *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+- *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+- *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+
+"timeOffset"
+- Se il tempo del server non corrisponde l'ora locale, è possibile specificare un offset qui per regolare le informazioni di data/tempo generato da CIDRAM in base alle proprie esigenze. È generalmente raccomandato invece, regolare à la direttiva fuso orario nel file `php.ini`, ma a volte (come ad esempio quando si lavora con i fornitori di hosting condiviso limitati) questo non è sempre possibile fare, e così, questa opzione è fornito qui. Offset è in minuti.
+- Esempio (per aggiungere un'ora): `timeOffset=60`
+
 "ipaddr"
 - Dove trovare l'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili) Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!
 
@@ -975,4 +986,4 @@ Questa informazione è stato lo scorso aggiornato 21 Aprile 2016 ed è in corso 
 ---
 
 
-Ultimo Aggiornamento: 23 Maggio 2016 (2016.05.23).
+Ultimo Aggiornamento: 2 Giugno 2016 (2016.06.02).

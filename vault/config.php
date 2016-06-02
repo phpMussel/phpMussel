@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2016.05.23).
+ * This file: Configuration handler (last modified: 2016.06.02).
  */
 
 /** phpMussel version number (SemVer). */
@@ -40,9 +40,6 @@ $phpMussel['Mussel_sapi'] = (
         $_SERVER['argc'] > 0
     )
 );
-
-/** Current time at script execution; Used for various purposes. */
-$phpMussel['time'] = time();
 
 /** Checks whether the phpMussel configuration file is readable. */
 if (!is_readable($phpMussel['vault'] . 'phpmussel.ini')) {
@@ -99,8 +96,18 @@ if (!isset($phpMussel['Config']['general']['scan_log_serialized'])) {
 
 /** Fallback for missing "scan_kills" configuration directive. */
 if (!isset($phpMussel['Config']['general']['scan_kills'])) {
-    $phpMussel['Config']['general']['scan_log'] = 'scan_kills.txt';
+    $phpMussel['Config']['general']['scan_kills'] = 'scan_kills.txt';
 }
+
+/** Fallback for missing "timeOffset" configuration directive. */
+if (!isset($phpMussel['Config']['general']['timeOffset'])) {
+    $phpMussel['Config']['general']['timeOffset'] = 0;
+}
+/** Ensure "timeOffset" is an integer. */
+$phpMussel['Config']['general']['timeOffset'] = (int)$phpMussel['Config']['general']['timeOffset'];
+
+/** Current time at script execution; Used for various purposes. */
+$phpMussel['Time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
 
 /** Fallback for missing "ipaddr" configuration directive. */
 if (
