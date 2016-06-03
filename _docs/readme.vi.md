@@ -157,19 +157,27 @@ Một danh sách của có sẵn điều khiển trình duyệt:
 
 scan_log
 - Mật khẩu cần thiết: `logs_password`
-- Yêu cầu khác: scan_log cần phải được xác định.
+- Yêu cầu khác: `scan_log` cần phải được xác định.
 - Thông số cần thiết: (không có gì)
 - Thông số không bắt buộc: (không có gì)
 - Thí dụ: `?logspword=[logs_password]&phpmussel=scan_log`
-- Những gì nó làm: In nội dung tập tin scan_log của bạn vào màn hình.
+- Những gì nó làm: In nội dung tập tin `scan_log` của bạn vào màn hình.
+
+scan_log_serialized
+- Mật khẩu cần thiết: `logs_password`
+- Yêu cầu khác: `scan_log_serialized` cần phải được xác định.
+- Thông số cần thiết: (không có gì)
+- Thông số không bắt buộc: (không có gì)
+- Thí dụ: `?logspword=[logs_password]&phpmussel=scan_log_serialized`
+- Những gì nó làm: In nội dung tập tin `scan_log_serialized` của bạn vào màn hình.
 
 scan_kills
 - Mật khẩu cần thiết: `logs_password`
-- Yêu cầu khác: scan_kills cần phải được xác định.
+- Yêu cầu khác: `scan_kills` cần phải được xác định.
 - Thông số cần thiết: (không có gì)
 - Thông số không bắt buộc: (không có gì)
 - Thí dụ: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Những gì nó làm: In nội dung tập tin scan_kills của bạn vào màn hình.
+- Những gì nó làm: In nội dung tập tin `scan_kills` của bạn vào màn hình.
 
 controls_lockout
 - Mật khẩu cần thiết: `logs_password` HAY `script_password`
@@ -467,7 +475,7 @@ Cấu hình chung cho phpMussel.
 - Không có ảnh hưởng trong CLI.
 
 "logs_password"
-- Giống như `script_password`, nhưng để xem các nội dung của of scan_log và scan_kills. Có mật khẩu riêng biệt có thể có ích nếu bạn muốn cho một người nào khác truy cập để một tập các chức năng nhưng không để khác.
+- Giống như `script_password`, nhưng để xem các nội dung của of `scan_log` và `scan_kills`. Có mật khẩu riêng biệt có thể có ích nếu bạn muốn cho một người nào khác truy cập để một tập các chức năng nhưng không để khác.
 - Không có ảnh hưởng trong CLI.
 
 "cleanup"
@@ -986,4 +994,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 21 Tháng Tư 201
 ---
 
 
-Lần cuối cập nhật: 2 Tháng Sáu 2016 (2016.06.02).
+Lần cuối cập nhật: 3 Tháng Sáu 2016 (2016.06.03).

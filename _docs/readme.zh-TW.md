@@ -158,15 +158,23 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 
 scan_log
 - 密碼需要：`logs_password`
-- 其他需要：您需要確定`scan log`指令。
+- 其他需要：您需要確定`scan_log`指令。
 - 需要參數：不需要
 - 自選參數：不需要
 - 例子：`?logspword=[logs_password]&phpmussel=scan_log`
-- 它的作用：打印您的`scan log`文件內容到屏幕。
+- 它的作用：打印您的`scan_log`文件內容到屏幕。
+
+scan_log_serialized
+- 密碼需要：`logs_password`
+- 其他需要：您需要確定`scan_log_serialized`指令。
+- 需要參數：不需要
+- 自選參數：不需要
+- 例子：`?logspword=[logs_password]&phpmussel=scan_log_serialized`
+- 它的作用：打印您的`scan_log_serialized`文件內容到屏幕。
 
 scan_kills
 - 密碼需要：`logs_password`
-- 其他需要：您需要確定`scan kills`指令。
+- 其他需要：您需要確定`scan_kills`指令。
 - 需要參數：不需要
 - 自選參數：不需要
 - 例子：`?logspword=[logs_password]&phpmussel=scan_kills`
@@ -989,6 +997,6 @@ URL掃描儀API配置。
 ---
 
 
-最後更新：2016年6月2日。
+最後更新：2016年6月3日。
 
 翻譯聲明：本文檔翻譯基於英文原始文檔，但由於本人水平有限，且非PHP程序員，對其中某些字詞的翻譯可能不是很準確，故如果出現錯誤，請指出並聯繫原作者予以更正，另外，本翻譯僅簡體中文，與繁體中文無關亦未參考繁體中文的譯文！！

@@ -157,19 +157,27 @@ Una lista de los comandos disponibles del navegador:
 
 scan_log
 - Contraseña necesario: `logs_password`
-- Otros requisitos: scan_log necesario ser definido.
+- Otros requisitos: `scan_log` necesario ser definido.
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
-- Ejemplo: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Qué hace: Imprime el contenido de su scan_log archivo a la pantalla.
+- Ejemplo: `?logspword=[logs_password]&phpmussel=scan_log`
+- Qué hace: Imprime el contenido de su `scan_log` archivo a la pantalla.
+
+scan_log_serialized
+- Contraseña necesario: `logs_password`
+- Otros requisitos: `scan_log_serialized` necesario ser definido.
+- Parámetros necesarios: (nada)
+- Parámetros opcionales: (nada)
+- Ejemplo: `?logspword=[logs_password]&phpmussel=scan_log_serialized`
+- Qué hace: Imprime el contenido de su `scan_log_serialized` archivo a la pantalla.
 
 scan_kills
 - Contraseña necesario: `logs_password`
-- Otros requisitos: scan_kills necesario ser definido.
+- Otros requisitos: `scan_kills` necesario ser definido.
 - Parámetros necesarios: (nada)
 - Parámetros opcionales: (nada)
 - Ejemplo: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Qué hace: Imprime el contenido de su scan_kills archivo a la pantalla.
+- Qué hace: Imprime el contenido de su `scan_kills` archivo a la pantalla.
 
 controls_lockout
 - Contraseña necesario: `logs_password` O `script_password`
@@ -467,7 +475,7 @@ General configuración para phpMussel.
 - No tiene influencia en CLI modo.
 
 "logs_password"
-- El mismo como `script_password`, pero para ver el contenido de scan_log y scan_kills. Tener contraseñas separado puede ser útil si usted desea dar alguna otra persona acceso a un conjunto de funciones, pero no el otro. - No tiene influencia en CLI modo.
+- El mismo como `script_password`, pero para ver el contenido de `scan_log` y `scan_kills`. Tener contraseñas separado puede ser útil si usted desea dar alguna otra persona acceso a un conjunto de funciones, pero no el otro. - No tiene influencia en CLI modo.
 
 "cleanup"
 - Despejar la variables y la caché de la script después la script ejecución? False = No; True = Sí [Predefinido]. Si usted no está utilizando la script más allá de inicial escaneando de archivos subidos, debe definir como `true` (sí), para minimizar el uso de memoria. Si usted está utilizando la script para propósitos más allá de inicial escaneando de archivos subidos, debe definir como `false` (no), para evitar recargar innecesariamente duplicados datos en la memoria. En general práctica, probablemente debería definirse como `true`, pero, si usted hace esto, usted no será capaz de utilizar la script para cualquier cosa otro que de escaneando archivos subidos.
@@ -985,4 +993,4 @@ Esta información ha sido actualizado 27 Marzo 2016 y es a hoy para todas las ph
 ---
 
 
-Última Actualización: 2 Junio 2016 (2016.06.02).
+Última Actualización: 3 Junio 2016 (2016.06.03).

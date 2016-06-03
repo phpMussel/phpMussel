@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.06.02).
+ * This file: Functions file (last modified: 2016.06.03).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -195,9 +195,13 @@ $phpMussel['prescan_decode'] = function ($str) use (&$phpMussel) {
 /**
  * Some simple obfuscation for potentially blocked functions; We need this to
  * avoid triggering false positives for some potentially overzealous
- * server-based security solutions.
+ * server-based security solutions that would usually flag this file as
+ * malicious when they detect it containing the names of suspect functions.
  *
- * @todo Param description.
+ * @param string $n An alias for the function that we want to call.
+ * @param string $str Some data to parse to the function being called.
+ * @return string The parsed data and/or decoded string (if $str is empty, the
+ *      the resolved alias will be returned instead).
  */
 $phpMussel['Function'] = function ($n, $str = false) {
     $x = 'abcdefghilnorstxz12346_';
@@ -1516,7 +1520,15 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
 };
 
 /**
- * @todo: phpDoc description here.
+ * Constructs a list of files contained within a PHARable file (in this
+ * context, a PHARable file is defined as a file of any the following formats:
+ * TAR, ZIP, PHAR) and returns that list as a string, entries delimited by a
+ * linefeed (\x0A) and preceeded by an integer representing the depth of the
+ * entry (in relation to where it exists within the tree of the PHARable file).
+ *
+ * @param string $PharFile The PHARable file to analyse.
+ * @param int $PharDepth An offset for the depth of entries.
+ * @return string The constructed list (as per described above).
  */
 $phpMussel['BuildPharList'] = function ($PharFile, $PharDepth = 0) use (&$phpMussel) {
     $PharDepth++;
@@ -6771,7 +6783,11 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     if ($phpMussel['Config']['files']['filesize_limit'] > 0) {
         if ($fS > ($phpMussel['Config']['files']['filesize_limit'] * 1024)) {
             if (!$phpMussel['Config']['files']['filesize_response']) {
-                return (!$n)?1:$lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn . '\' (FN: '.$fnCRC. "):\n-" . $lnap . $phpMussel['Config']['lang']['ok'] . ' (' . $phpMussel['Config']['lang']['filesize_limit_exceeded'] . ").\n";
+                return (!$n) ? 1 :
+                    $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' .
+                    $ofn . '\' (FN: ' . $fnCRC . "):\n-" . $lnap .
+                    $phpMussel['Config']['lang']['ok'] . ' (' .
+                    $phpMussel['Config']['lang']['filesize_limit_exceeded'] . ").\n";
             }
             $phpMussel['killdata'] .=
                 '--FILESIZE-LIMIT--------NO-HASH-:' . $fS . ':' . $ofn . "\n";
@@ -7842,4 +7858,29 @@ $phpMussel['Time2Logfile'] = function ($time, $dir) use (&$phpMussel) {
         return $dir;
     }
     return $phpMussel['ParseVars']($values, $dir);
+};
+
+/**
+ * A simple closure for fetching the contents of logfiles (used by the controls
+ * handler).
+ *
+ * @param string $logfile Whichever logfile directive is appropriate.
+ * @return string The contents of the logfile.
+ */
+$phpMussel['ReturnLogfile'] = function ($logfile) use (&$phpMussel) {
+    $handle = $phpMussel['Time2Logfile'](
+        $phpMussel['Time'],
+        $phpMussel['Config']['general'][$logfile]
+    );
+    if (file_exists($phpMussel['vault'] . $handle)) {
+        return
+            $phpMussel['Config']['lang']['cli_ln1'] .
+            $phpMussel['Config']['lang']['cli_ln2'] .
+            $handle . ":\n\n" .
+            $phpMussel['ReadFile']($phpMussel['vault'] . $handle);
+    }
+    return
+        $handle . ' ' .
+        $phpMussel['Config']['lang']['x_does_not_exist'] .
+        $phpMussel['Config']['lang']['_exclamation_final'];
 };

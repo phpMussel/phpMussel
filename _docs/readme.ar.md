@@ -168,24 +168,34 @@
 
 <div dir="rtl">قائمة الأوامر المتاحة من جانب متصفح:<br /><br /></div>
 
-<div dir="rtl">scan_log (سجل_الفحص)<br /></div>
+<div dir="rtl">scan_log<br /></div>
 <div dir="rtl"><ul>
  <li>كلمة المرور مطلوبة: "logs_password"</li>
  <li>متطلبات أخرى: يجب ضبط "scan_log".</li>
  <li>المعاملات المطلوبة: (لا يوجد)</li>
  <li>المعاملات الاختيارية: (لا يوجد)</li>
  <li>مثال: "?logspword=[logs_password]&phpmussel=scan_log"</li>
- <li>ماذا يفعل: إظهار محتويات ملف (سجل الفحص) scan_log إلى الشاشة.</li>
+ <li>ماذا يفعل: إظهار محتويات ملف (سجل الفحص) `scan_log` إلى الشاشة.</li>
 </ul></div>
 
-<div dir="rtl">scan_kills (تعطل_الفحص)<br /></div>
+<div dir="rtl">scan_log_serialized<br /></div>
 <div dir="rtl"><ul>
  <li>كلمة المرور مطلوبة: "logs_password"</li>
- <li>متطلبات أخرى: يجب ضبط scan_kills.</li>
+ <li>متطلبات أخرى: يجب ضبط "scan_log_serialized".</li>
+ <li>المعاملات المطلوبة: (لا يوجد)</li>
+ <li>المعاملات الاختيارية: (لا يوجد)</li>
+ <li>مثال: "?logspword=[logs_password]&phpmussel=scan_log_serialized"</li>
+ <li>ماذا يفعل: إظهار محتويات ملف (سجل الفحص) `scan_log_serialized` إلى الشاشة.</li>
+</ul></div>
+
+<div dir="rtl">scan_kills<br /></div>
+<div dir="rtl"><ul>
+ <li>كلمة المرور مطلوبة: "logs_password"</li>
+ <li>متطلبات أخرى: يجب ضبط `scan_kills`.</li>
  <li>المعاملات المطلوبة: (لا يوجد)</li>
  <li>المعاملات الاختيارية: (لا يوجد)</li>
  <li>مثال: "?logspword=[logs_password]&phpmussel=scan_kills"</li>
- <li>ماذا يفعل: إظهار محتويات ملف (تعطل الفحص) scan_kills إلى الشاشة.</li>
+ <li>ماذا يفعل: إظهار محتويات ملف (تعطل الفحص) `scan_kills` إلى الشاشة.</li>
 </ul></div>
 
 <div dir="rtl">controls_lockout (قفل التحكم)<br /></div>
@@ -511,7 +521,7 @@
 
 <div dir="rtl">"logs_password"<br /></div>
 <div dir="rtl"><ul>
- <li>نفس "script_password"، ولكن لعرض محتويات scan_log وscan_kills. يمكن وجود كلمات سر منفصلة تكون مفيدة إذا كنت تريد أن تعطي شخص آخر الوصول إلى مجموعة واحدة من وظائف دون غيرها.</li>
+ <li>نفس "script_password"، ولكن لعرض محتويات `scan_log` وscan_kills. يمكن وجود كلمات سر منفصلة تكون مفيدة إذا كنت تريد أن تعطي شخص آخر الوصول إلى مجموعة واحدة من وظائف دون غيرها.</li>
  <li>ليس له أي تأثير في وضع CLI "واجهة سطر الأوامر".</li>
 </ul></div>
 
@@ -1204,4 +1214,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 2 يونيو 2016 (2016.06.02).</div>
+<div dir="rtl">آخر تحديث: 3 يونيو 2016 (2016.06.03).</div>

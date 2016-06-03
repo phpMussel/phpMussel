@@ -157,19 +157,27 @@ Een lijst van beschikbare browser commando's.
 
 scan_log
 - Wachtwoord vereist: `logs_password`
-- Andere vereisten: scan_log moet worden ingesteld.
+- Andere vereisten: `scan_log` moet worden ingesteld.
 - Andere vereisten: (geen)
 - Optionele parameters: (geen)
 - Voorbeeld: `?logspword=[logs_password]&phpmussel=scan_log`
-- Wat het doet: Drukt de inhoud van uw scan_log bestand naar het scherm.
+- Wat het doet: Drukt de inhoud van uw `scan_log` bestand naar het scherm.
+
+scan_log_serialized
+- Wachtwoord vereist: `logs_password`
+- Andere vereisten: `scan_log_serialized` moet worden ingesteld.
+- Andere vereisten: (geen)
+- Optionele parameters: (geen)
+- Voorbeeld: `?logspword=[logs_password]&phpmussel=scan_log_serialized`
+- Wat het doet: Drukt de inhoud van uw `scan_log_serialized` bestand naar het scherm.
 
 scan_kills
 - Wachtwoord vereist: `logs_password`
-- Andere vereisten: scan_kills moet worden ingesteld.
+- Andere vereisten: `scan_kills` moet worden ingesteld.
 - Andere vereisten: (geen)
 - Optionele parameters: (geen)
 - Voorbeeld: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Wat het doet: Drukt de inhoud van uw scan_kills bestand naar het scherm.
+- Wat het doet: Drukt de inhoud van uw `scan_kills` bestand naar het scherm.
 
 controls_lockout
 - Wachtwoord vereist: `logs_password` OF `script_password`
@@ -467,7 +475,7 @@ Algemene configuratie voor phpMussel.
 - Heeft geen invloed in CLI-modus.
 
 "logs_password"
-- Hetzelfde als `script_password`, maar voor het bekijken van de inhoud van scan_log en scan_kills. Hebben verschillende wachtwoorden kan nuttig zijn als u wilt te geven toegang tot iemand anders voor een set van functies, maar niet de andere.
+- Hetzelfde als `script_password`, maar voor het bekijken van de inhoud van `scan_log` en `scan_kills`. Hebben verschillende wachtwoorden kan nuttig zijn als u wilt te geven toegang tot iemand anders voor een set van functies, maar niet de andere.
 - Heeft geen invloed in CLI-modus.
 
 "cleanup"
@@ -986,4 +994,4 @@ Dit informatie werd laatst bijgewerkt 21 April 2016 en is op de hoogte voor alle
 ---
 
 
-Laatste Bijgewerkt: 2 Juni 2016 (2016.06.02).
+Laatste Bijgewerkt: 3 Juni 2016 (2016.06.03).

@@ -157,19 +157,27 @@ Liste der verfügbaren Browser Befehle:
 
 scan_log
 - Benötigtes Passwort: `logs_password`
-- Weitere Bedingungen: scan_log muss gesetzt sein.
+- Weitere Bedingungen: `scan_log` muss gesetzt sein.
 - Benötigte Parameter: (keine)
 - Optionale Parameter: (keine)
-- Beispiel: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Zweck: Gibt den Inhalt der Datei scan_log aus.
+- Beispiel: `?logspword=[logs_password]&phpmussel=scan_log`
+- Zweck: Gibt den Inhalt der Datei `scan_log` aus.
+
+scan_log_serialized
+- Benötigtes Passwort: `logs_password`
+- Weitere Bedingungen: `scan_log_serialized` muss gesetzt sein.
+- Benötigte Parameter: (keine)
+- Optionale Parameter: (keine)
+- Beispiel: `?logspword=[logs_password]&phpmussel=scan_log_serialized`
+- Zweck: Gibt den Inhalt der Datei `scan_log_serialized` aus.
 
 scan_kills
 - Benötigtes Passwort: `logs_password`
-- Weitere Bedingungen: scan_kills muss gesetzt sein.
+- Weitere Bedingungen: `scan_kills` muss gesetzt sein.
 - Benötigte Parameter: (keine)
 - Optionale Parameter: (keine)
 - Beispiel: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Zweck: Gibt den Inhalt der Datei scan_kills aus.
+- Zweck: Gibt den Inhalt der Datei `scan_kills` aus.
 
 controls_lockout
 - Benötigtes Passwort: `logs_password` ODER `script_password`
@@ -467,7 +475,7 @@ Generelle Konfiguration von phpMussel.
 - Kein Einfluss im CLI-Modus.
 
 "logs_password"
-- Wie `script_password`, allerdings nur zur Ausgabe des Inhalts von scan_log und scan_kills. Separate Passworte sind nützlich, wenn Sie jemandem Zugang zur einen Funktionalität gewähren wollen, aber nicht zur anderen. - Kein Einfluss im CLI-Modus.
+- Wie `script_password`, allerdings nur zur Ausgabe des Inhalts von `scan_log` und `scan_kills`. Separate Passworte sind nützlich, wenn Sie jemandem Zugang zur einen Funktionalität gewähren wollen, aber nicht zur anderen. - Kein Einfluss im CLI-Modus.
 
 "cleanup"
 - Löscht die Scriptvariablen und den Cache nach der Ausführung. False = Nicht löschen; True = Löschen [Standardeinstellung]. Sollten Sie das Script nach der Überprüfung des Uploads nicht mehr nutzen, stellen Sie diese Option auf `true`, um die Speichernutzung zu minimieren. Verwenden Sie das Script noch für weitere Zwecke, stellen Sie die Option auf `false`, um unnötiges mehrfaches Einlesen der Daten in den Speicher zu vermeiden. Normalerweise sollte diese Option auf `true` gesetzt werden, allerdings können Sie das Script dann nur zur Dateiüberprüfung verwenden.
@@ -984,4 +992,4 @@ Diese Informationen wurden zuletzt am 21. April 2016 aktualisiert und gelten fü
 ---
 
 
-Zuletzt aktualisiert: 2. Juni 2016 (2016.06.02).
+Zuletzt aktualisiert: 3. Juni 2016 (2016.06.03).

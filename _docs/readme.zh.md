@@ -163,6 +163,14 @@ scan_log
 - 例子：`?logspword=[logs_password]&phpmussel=scan_log`
 - 它的作用：打印您的`scan_log`文件内容到屏幕。
 
+scan_log_serialized
+- 密码需要：`logs_password`
+- 其他需要：您需要确定`scan_log_serialized`指令。
+- 需要参数：不需要
+- 自选參數：不需要
+- 例子：`?logspword=[logs_password]&phpmussel=scan_log_serialized`
+- 它的作用：打印您的`scan_log_serialized`文件内容到屏幕。
+
 scan_kills
 - 密码需要：`logs_password`
 - 其他需要：您需要确定`scan_kills`指令。
@@ -988,6 +996,6 @@ URL扫描仪API配置。
 ---
 
 
-最后更新：2016年6月2日。
+最后更新：2016年6月3日。
 
 翻译声明：本文档翻译基于英文原始文档，但由于本人水平有限，且非PHP程序员，对其中某些字词的翻译可能不是很准确，故如果出现错误，请指出并联系原作者予以更正，另外，本翻译仅简体中文，与繁体中文无关亦未参考繁体中文的译文！！

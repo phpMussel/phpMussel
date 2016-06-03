@@ -157,19 +157,27 @@ Une liste de commandes du navigateur disponibles:
 
 scan_log
 - Mot de passe requis: `logs_password`
-- Autre exigences: scan_log doit être défini.
+- Autre exigences: `scan_log` doit être défini.
 - Paramètres requis: (aucun)
 - Paramètres optionnels: (aucun)
-- Exemple: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Quel est-il: Imprime le contenu de votre scan_log fichier à l'écran.
+- Exemple: `?logspword=[logs_password]&phpmussel=scan_log`
+- Quel est-il: Imprime le contenu de votre `scan_log` fichier à l'écran.
+
+scan_log_serialized
+- Mot de passe requis: `logs_password`
+- Autre exigences: `scan_log_serialized` doit être défini.
+- Paramètres requis: (aucun)
+- Paramètres optionnels: (aucun)
+- Exemple: `?logspword=[logs_password]&phpmussel=scan_log_serialized`
+- Quel est-il: Imprime le contenu de votre `scan_log_serialized` fichier à l'écran.
 
 scan_kills
 - Mot de passe requis: `logs_password`
-- Autre exigences: scan_kills doit être défini.
+- Autre exigences: `scan_kills` doit être défini.
 - Paramètres requis: (aucun)
 - Optional parameters: (aucun)
 - Exemple: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Quel est-il: Imprime le contenu de votre scan_kills fichier à l'écran.
+- Quel est-il: Imprime le contenu de votre `scan_kills` fichier à l'écran.
 
 controls_lockout
 - Mot de passe requis: `logs_password` OU `script_password`
@@ -467,7 +475,7 @@ Configuration générale pour phpMussel.
 - N'a pas d'influence en le mode CLI.
 
 "logs_password"
-- La même comme `script_password`, mais par l'affichage du contenu de scan_log et scan_kills. Pour avoir distincts mots de passe peut être utile si vous voulez donner à quelqu'un autre accès à un ensemble de fonctions mais pas l'autre.
+- La même comme `script_password`, mais par l'affichage du contenu de `scan_log` et `scan_kills`. Pour avoir distincts mots de passe peut être utile si vous voulez donner à quelqu'un autre accès à un ensemble de fonctions mais pas l'autre.
 - N'a pas d'influence en le mode CLI.
 
 "cleanup"
@@ -986,4 +994,4 @@ Cette information a été réactualisé le 21 Avril 2016 et est courant pour tou
 ---
 
 
-Dernière Réactualisé: 2 Juin 2016 (2016.06.02).
+Dernière Réactualisé: 3 Juin 2016 (2016.06.03).

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2016.06.02).
+ * This file: Upload handler (last modified: 2016.06.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -171,8 +171,10 @@ if ($phpMussel['upload']['count'] > 0) {
                 ) {
                     $phpMussel['memCache']['handle']['odata'] =
                         $phpMussel['ReadFile']($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
-                    $phpMussel['memCache']['handle']['len'] = strlen($phpMussel['memCache']['handle']['odata']);
-                    $phpMussel['memCache']['handle']['crc'] = @hash('crc32b', $phpMussel['memCache']['handle']['odata']);
+                    $phpMussel['memCache']['handle']['len'] =
+                        strlen($phpMussel['memCache']['handle']['odata']);
+                    $phpMussel['memCache']['handle']['crc'] =
+                        hash('crc32b', $phpMussel['memCache']['handle']['odata']);
                     $phpMussel['memCache']['handle']['qfile'] =
                         $phpMussel['Time'] . '-' .
                         md5(
@@ -350,7 +352,7 @@ if ($phpMussel['upload']['count'] > 0) {
                     $phpMussel['memCache']['handle']['len'] =
                         strlen($phpMussel['memCache']['handle']['odata']);
                     $phpMussel['memCache']['handle']['crc'] =
-                        @hash('crc32b',$phpMussel['memCache']['handle']['odata']);
+                        hash('crc32b', $phpMussel['memCache']['handle']['odata']);
                     $phpMussel['memCache']['handle']['qfile'] =
                         $phpMussel['Time'] .
                         '-' .

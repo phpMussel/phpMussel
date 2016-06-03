@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Controls handler (last modified: 2016.06.02).
+ * This file: Controls handler (last modified: 2016.06.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -23,7 +23,7 @@ if (!defined('phpMussel')) {
 $phpMussel['controls'] = array();
 
 /** Fetch and parse query components. */
-parse_str($_SERVER['QUERY_STRING'],$phpMussel['controls']['query']);
+parse_str($_SERVER['QUERY_STRING'], $phpMussel['controls']['query']);
 
 /** Check for and try to fetch any commands submitted by the client. */
 $phpMussel['controls']['command'] =
@@ -126,45 +126,19 @@ if (
 
     /** Print the scan_log file. */
     if ($phpMussel['controls']['command'] == 'scan_log') {
-        echo $phpMussel['Config']['lang']['cli_ln1'] . $phpMussel['Config']['lang']['cli_ln2'];
-        $phpMussel['handle'] = array(
-            'File' => $phpMussel['Time2Logfile'](
-                $phpMussel['Time'],
-                $phpMussel['Config']['general']['scan_log']
-            )
-        );
-        if (file_exists($phpMussel['vault'] . $phpMussel['handle']['File'])) {
-            echo
-                $phpMussel['handle']['File'] . ":\n\n" .
-                $phpMussel['ReadFile']($phpMussel['vault'] . $phpMussel['handle']['File']);
-            die;
-        }
-        echo
-            $phpMussel['handle']['File'] . ' ' .
-            $phpMussel['Config']['lang']['x_does_not_exist'] .
-            $phpMussel['Config']['lang']['_exclamation_final'];
+        $phpMussel['ReturnLogfile']('scan_log');
+        die;
+    }
+
+    /** Print the scan_log_serialized file. */
+    if ($phpMussel['controls']['command'] == 'scan_log_serialized') {
+        $phpMussel['ReturnLogfile']('scan_log_serialized');
         die;
     }
 
     /** Print the scan_kills file. */
     if ($phpMussel['controls']['command'] == 'scan_kills') {
-        echo $phpMussel['Config']['lang']['cli_ln1'] . $phpMussel['Config']['lang']['cli_ln2'];
-        $phpMussel['handle'] = array(
-            'File' => $phpMussel['Time2Logfile'](
-                $phpMussel['Time'],
-                $phpMussel['Config']['general']['scan_kills']
-            )
-        );
-        if (file_exists($phpMussel['vault'] . $phpMussel['handle']['File'])) {
-            echo
-                $phpMussel['handle']['File'] . ":\n\n" .
-                $phpMussel['ReadFile']($phpMussel['vault'] . $phpMussel['handle']['File']);
-            die;
-        }
-        echo
-            $phpMussel['handle']['File'] . ' ' .
-            $phpMussel['Config']['lang']['x_does_not_exist'] .
-            $phpMussel['Config']['lang']['_exclamation_final'];
+        $phpMussel['ReturnLogfile']('scan_kills');
         die;
     }
 

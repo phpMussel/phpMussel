@@ -157,19 +157,27 @@ A lista de disponíveis browser comandos:
 
 scan_log
 - Senha necessária: `logs_password`
-- Outros requisitos: scan_log deve ser definido.
+- Outros requisitos: `scan_log` deve ser definido.
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
-- Exemplo: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Que faz: Imprime o conteúdo de seu scan_log arquivo para a tela.
+- Exemplo: `?logspword=[logs_password]&phpmussel=scan_log`
+- Que faz: Imprime o conteúdo de seu `scan_log` arquivo para a tela.
+
+scan_log_serialized
+- Senha necessária: `logs_password`
+- Outros requisitos: `scan_log_serialized` deve ser definido.
+- Parâmetros necessários: (nenhum)
+- Parâmetros opcionais: (nenhum)
+- Exemplo: `?logspword=[logs_password]&phpmussel=scan_log_serialized`
+- Que faz: Imprime o conteúdo de seu `scan_log_serialized` arquivo para a tela.
 
 scan_kills
 - Senha necessária: `logs_password`
-- Outros requisitos: scan_kills deve ser definido.
+- Outros requisitos: `scan_kills` deve ser definido.
 - Parâmetros necessários: (nenhum)
 - Parâmetros opcionais: (nenhum)
 - Exemplo: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Que faz: Imprime o conteúdo de seu scan_kills arquivo para a tela.
+- Que faz: Imprime o conteúdo de seu `scan_kills` arquivo para a tela.
 
 controls_lockout
 - Senha necessária: `logs_password` OU `script_password`
@@ -467,7 +475,7 @@ Configuração geral por phpMussel.
 - Não tem influência em CLI modo.
 
 "logs_password"
-- O mesmo como `script_password`, mas por visualizando conteúdo de scan_log e scan_kills. Tendo separadas senhas pode ser útil se você quiser dar alguém o acesso a um conjunto de funções mas não o outro.
+- O mesmo como `script_password`, mas por visualizando conteúdo de `scan_log` e `scan_kills`. Tendo separadas senhas pode ser útil se você quiser dar alguém o acesso a um conjunto de funções mas não o outro.
 - Não tem influência em CLI modo.
 
 "cleanup"
@@ -986,4 +994,4 @@ Esta informação foi atualizada dia 21 Abril 2016 e é corrente para todas phpM
 ---
 
 
-Última Atualização: 2 Junho 2016 (2016.06.02).
+Última Atualização: 3 Junho 2016 (2016.06.03).

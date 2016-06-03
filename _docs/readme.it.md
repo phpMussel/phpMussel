@@ -157,19 +157,27 @@ Un elenco di disponibili browser lato comandi:
 
 scan_log
 - Password requisito: `logs_password`
-- Altri requisiti: scan_log deve essere definito.
+- Altri requisiti: `scan_log` deve essere definito.
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
-- Esempio: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Cosa fa: Stampi il contenuti del scan_log file sullo vostro schermo.
+- Esempio: `?logspword=[logs_password]&phpmussel=scan_log`
+- Cosa fa: Stampi il contenuti del `scan_log` file sullo vostro schermo.
+
+scan_log_serialized
+- Password requisito: `logs_password`
+- Altri requisiti: `scan_log_serialized` deve essere definito.
+- Parametri requisiti: (nessuno)
+- Parametri opzionali: (nessuno)
+- Esempio: `?logspword=[logs_password]&phpmussel=scan_log_serialized`
+- Cosa fa: Stampi il contenuti del `scan_log_serialized` file sullo vostro schermo.
 
 scan_kills
 - Password requisito: `logs_password`
-- Altri requisiti: scan_kills deve essere definito.
+- Altri requisiti: `scan_kills` deve essere definito.
 - Parametri requisiti: (nessuno)
 - Parametri opzionali: (nessuno)
 - Esempio: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Cosa fa: Stampi il contenuti del scan_kills file sullo vostro schermo.
+- Cosa fa: Stampi il contenuti del `scan_kills` file sullo vostro schermo.
 
 controls_lockout
 - Password requisito: `logs_password` O `script_password`
@@ -467,7 +475,7 @@ Generale configurazione per phpMussel.
 - Non ha alcuna influenza in CLI modalità.
 
 "logs_password"
-- Stesso come `script_password`, ma per la visualizzazione dei contenuti di scan_log e scan_kills. Avendo separate password può essere utile se si vuole dare l'accesso a qualcun altro a una serie di funzioni ma non l'altro.
+- Stesso come `script_password`, ma per la visualizzazione dei contenuti di `scan_log` e `scan_kills`. Avendo separate password può essere utile se si vuole dare l'accesso a qualcun altro a una serie di funzioni ma non l'altro.
 - Non ha alcuna influenza in CLI modalità.
 
 "cleanup"
@@ -986,4 +994,4 @@ Questa informazione è stato lo scorso aggiornato 21 Aprile 2016 ed è in corso 
 ---
 
 
-Ultimo Aggiornamento: 2 Giugno 2016 (2016.06.02).
+Ultimo Aggiornamento: 3 Giugno 2016 (2016.06.03).

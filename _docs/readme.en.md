@@ -157,19 +157,27 @@ A list of available browser-side commands:
 
 scan_log
 - Password required: `logs_password`
-- Other requirements: scan_log must be set.
+- Other requirements: `scan_log` must be set.
 - Required parameters: (none)
 - Optional parameters: (none)
 - Example: `?logspword=[logs_password]&phpmussel=scan_log`
-- What it does: Prints the contents of your scan_log file to the screen.
+- What it does: Prints the contents of your `scan_log` file to the screen.
+
+scan_log_serialized
+- Password required: `logs_password`
+- Other requirements: `scan_log_serialized` must be set.
+- Required parameters: (none)
+- Optional parameters: (none)
+- Example: `?logspword=[logs_password]&phpmussel=scan_log_serialized`
+- What it does: Prints the contents of your `scan_log_serialized` file to the screen.
 
 scan_kills
 - Password required: `logs_password`
-- Other requirements: scan_kills must be set.
+- Other requirements: `scan_kills` must be set.
 - Required parameters: (none)
 - Optional parameters: (none)
 - Example: `?logspword=[logs_password]&phpmussel=scan_kills`
-- What it does: Prints the contents of your scan_kills file to the screen.
+- What it does: Prints the contents of your `scan_kills` file to the screen.
 
 controls_lockout
 - Password required: `logs_password` OR `script_password`
@@ -467,7 +475,7 @@ General phpMussel configuration.
 - Has no influence in CLI mode.
 
 "logs_password"
-- The same as `script_password`, but for viewing the contents of scan_log and scan_kills. Having separate passwords can be useful if you want to give someone else access to one set of functions but not the other.
+- The same as `script_password`, but for viewing the contents of `scan_log` and `scan_kills`. Having separate passwords can be useful if you want to give someone else access to one set of functions but not the other.
 - Has no influence in CLI mode.
 
 "cleanup"
@@ -986,4 +994,4 @@ This information was last updated 21st April 2016 and is current for all phpMuss
 ---
 
 
-Last Updated: 2nd June 2016 (2016.06.02).
+Last Updated: 3rd June 2016 (2016.06.03).

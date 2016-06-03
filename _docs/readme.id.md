@@ -157,19 +157,27 @@ Daftar dari perintah-perintah dari sisi browser:
 
 scan_log
 - Sandi diharuskan: `logs_password`
-- Keperluan lain: scan_log harus didefinisikan.
+- Keperluan lain: `scan_log` harus didefinisikan.
 - Parameter-parameter yang diharuskan: (tidak ada)
 - Parameter-parameter opsional: (tidak ada)
-- Contoh: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Apa yang dilakukannya: Mencetak isi dari file scan_log ke layar.
+- Contoh: `?logspword=[logs_password]&phpmussel=scan_log`
+- Apa yang dilakukannya: Mencetak isi dari file `scan_log` ke layar.
+
+scan_log_serialized
+- Sandi diharuskan: `logs_password`
+- Keperluan lain: `scan_log_serialized` harus didefinisikan.
+- Parameter-parameter yang diharuskan: (tidak ada)
+- Parameter-parameter opsional: (tidak ada)
+- Contoh: `?logspword=[logs_password]&phpmussel=scan_log_serialized`
+- Apa yang dilakukannya: Mencetak isi dari file `scan_log_serialized` ke layar.
 
 scan_kills
 - Sandi diharuskan: `logs_password`
-- Keperluan lain: scan_kills harus didefinisikan.
+- Keperluan lain: `scan_kills` harus didefinisikan.
 - Parameter-parameter yang diharuskan: (tidak ada)
 - Parameter-parameter opsional: (tidak ada)
 - Contoh: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Apa yang dilakukannya: Mencetak isi dari file scan_kills ke layar.
+- Apa yang dilakukannya: Mencetak isi dari file `scan_kills` ke layar.
 
 controls_lockout
 - Sandi diharuskan: `logs_password` ATAU `script_password`
@@ -467,7 +475,7 @@ Konfigurasi umum dari phpMussel.
 - Tidak memiliki pengaruh di dalam mode CLI.
 
 "logs_password"
-- Sama seperti `script_password` tapi untuk melihat semua isi dari scan_log dan scan_kills. Memiliki sandi yang lain dapat bergunan jika Anda ingin memberikan akses pada orang lain untuk mengakses dan menset fungsi tapi tidak yang lain.
+- Sama seperti `script_password` tapi untuk melihat semua isi dari `scan_log` dan `scan_kills`. Memiliki sandi yang lain dapat bergunan jika Anda ingin memberikan akses pada orang lain untuk mengakses dan menset fungsi tapi tidak yang lain.
 - Tidak memiliki pengaruh di dalam mode CLI.
 
 "cleanup"
@@ -986,4 +994,4 @@ Informasi ini diupdate 21 April 2016 dan cocok untuk semua rilis phpMussel dari 
 ---
 
 
-Terakhir Diperbarui: 2 Juni 2016 (2016.06.02).
+Terakhir Diperbarui: 3 Juni 2016 (2016.06.03).
