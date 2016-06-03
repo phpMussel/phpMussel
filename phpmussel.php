@@ -100,7 +100,7 @@ if (!defined('phpMussel')) {
     ini_set('default_charset', 'utf-8');
 
     /** We should always use UTF-8. */
-    ini_set('mbstring.internal_encoding', 'UTF-8');
+    if(version_compare(PHP_VERSION, '5.6', '=>')) ini_set('mbstring.internal_encoding', 'UTF-8');
 
     /** Set the phpMussel User Agent. */
     ini_set('user_agent', $phpMussel['ScriptUA']);
