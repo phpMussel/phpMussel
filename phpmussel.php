@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.05.06).
+ * This file: The loader (last modified: 2016.06.04).
  */
 
 /**
@@ -76,13 +76,36 @@ if (!defined('phpMussel')) {
     /** Scrap variables used for processing plugins. */
     $x = $HookID = '';
 
+    /** PHP binary version-specific switch variables. */
+    $phpMussel['binary_versions'] = array(
+        '7.0.0' => version_compare(PHP_VERSION, '7.0.0', '>=')
+    );
+    if ($phpMussel['binary_versions']['7.0.0']) {
+        $phpMussel['binary_versions']['5.4.0'] =
+        $phpMussel['binary_versions']['5.6.0'] = true;
+    } else {
+        $phpMussel['binary_versions']['5.6.0'] =
+            version_compare(PHP_VERSION, '5.6.0', '>=');
+        if ($phpMussel['binary_versions']['5.6.0']) {
+            $phpMussel['binary_versions']['5.4.0'] = true;
+        } else {
+            $phpMussel['binary_versions']['5.4.0'] =
+                version_compare(PHP_VERSION, '5.4.0', '>=');
+        }
+    }
+
     /** Preserve INI defaults for when we exit cleanly. */
-    $phpMussel['inidefaults'] = array();
-    $phpMussel['inidefaults']['backtrack_limit'] = ini_get('pcre.backtrack_limit');
-    $phpMussel['inidefaults']['recursion_limit'] = ini_get('pcre.recursion_limit');
-    $phpMussel['inidefaults']['default_charset'] = ini_get('default_charset');
-    $phpMussel['inidefaults']['internal_encoding'] = ini_get('mbstring.internal_encoding');
-    $phpMussel['inidefaults']['user_agent'] = ini_get('user_agent');
+    $phpMussel['inidefaults'] = array(
+        'backtrack_limit' => ini_get('pcre.backtrack_limit'),
+        'recursion_limit' => ini_get('pcre.recursion_limit'),
+        'default_charset' => ini_get('default_charset'),
+        'user_agent' => ini_get('user_agent')
+    );
+
+    /** Preserve INI defaults for when we exit cleanly. */
+    if (!$phpMussel['binary_versions']['5.6.0']) {
+        $phpMussel['inidefaults']['internal_encoding'] = ini_get('mbstring.internal_encoding');
+    }
 
     /**
      * Helps to prevent PCRE from backticking itself and the entire PHP process
@@ -100,7 +123,9 @@ if (!defined('phpMussel')) {
     ini_set('default_charset', 'utf-8');
 
     /** We should always use UTF-8. */
-    ini_set('mbstring.internal_encoding', 'UTF-8');
+    if (!$phpMussel['binary_versions']['5.6.0']) {
+        ini_set('mbstring.internal_encoding', 'UTF-8');
+    }
 
     /** Set the phpMussel User Agent. */
     ini_set('user_agent', $phpMussel['ScriptUA']);
@@ -210,7 +235,9 @@ if (!defined('phpMussel')) {
     if ($phpMussel['Config']['general']['cleanup']) {
 
         /** Restore default internal encoding. */
-        ini_set('mbstring.internal_encoding', $phpMussel['inidefaults']['internal_encoding']);
+        if (!$phpMussel['binary_versions']['5.6.0']) {
+            ini_set('mbstring.internal_encoding', $phpMussel['inidefaults']['internal_encoding']);
+        }
         /** Restore default charset. */
         ini_set('default_charset', $phpMussel['inidefaults']['default_charset']);
         /** Restore default PCRE recursion limit. */

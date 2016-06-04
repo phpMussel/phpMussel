@@ -176,5 +176,3 @@ entries will be deleted when those goals have been achieved.
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"
 file or in the "docs/change_log.txt" file (depending on which release version
 you're working from) from any release versions prior to v1.
-
-EOF

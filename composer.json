@@ -15,6 +15,8 @@
         "php": ">=5.4.0"
     },
     "suggest": {
-        "maikuolan/phpmussel-plugin-notifications": "A phpMussel plugin to receive email notifications from phpMussel whenever a file upload is blocked."
+        "php": ">=7.0.0 (this package performs significantly better with PHP >= 7.0.0 than it does with previous versions).",
+        "maikuolan/phpmussel-plugin-notifications": "A phpMussel plugin to receive email notifications from phpMussel whenever a file upload is blocked.",
+        "maikuolan/cidram": "Classless Inter-Domain Routing Access Manager (works great in conjunction with phpMussel)."
     }
 }
