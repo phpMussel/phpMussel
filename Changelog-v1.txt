@@ -171,6 +171,10 @@ entries will be deleted when those goals have been achieved.
   the possibility of discrepancies between servers and the local time of those
   using phpMussel.
 
+- [2016.06.11; Documentation; Maikuolan/Vy]: Completed translation of the
+  documentation to Vietnamese. With this translation completed, the phpMussel
+  documentation is now available in 13 fully completed translations.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"
