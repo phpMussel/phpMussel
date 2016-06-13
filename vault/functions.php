@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.06.03).
+ * This file: Functions file (last modified: 2016.06.13).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -1368,24 +1368,46 @@ $phpMussel['vn_shorthand'] = function ($vn) use (&$phpMussel) {
 };
 
 /**
- * Used for performing lookups to the Google Safe Browsing API.
+ * Used for performing lookups to the Google Safe Browsing API (v4).
+ * @link https://developers.google.com/safe-browsing/v4/lookup-api
  *
  * @param array $urls An array of the URLs to lookup.
- * @return bool|string The results of the lookup. True if at least one of
- *      the queried URLs are matched in either the phishing, mlware, or
- *      unwanted software lists. False if none of the queried URLs matched
- *      the phishing, malware, or unwanted software lists, and no response
- *      body is returned. If an error has occured a string is returned
- *      with further information.
+ * @return int The results of the lookup. 200 if AT LEAST ONE of the queried
+ *      URLs are listed on any of Google Safe Browsing lists; 204 if NONE of
+ *      the queried URLs are listed on any of Google Safe Browsing lists; 400
+ *      if the request is malformed; 401 if the API key is missing or isn't
+ *      authorised; 503 if the service is unavailable (eg, if it's been
+ *      throttled); 999 if something unexpected occurs (such as, for example,
+ *      if a programmatic error is encountered).
  */
 $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
-    /** Count and encode the URLs. */
+    if (empty($phpMussel['Config']['urlscanner']['google_api_key'])) {
+        return 401;
+    }
+    /** Count and prepare the URLs. */
     $c = count($urls);
     for ($i = 0; $i < $c; $i++) {
-        $urls[$i] = urlencode($urls[$i]);
+        $urls[$i] = array('url' => $urls[$i]);
     }
-    /** After we've encoded and counted them, implode them. */
-    $urls = $c . "\n" . implode("\n", $urls);
+    /** After we've prepared the URLs, we prepare our JSON array. */
+    $arr = json_encode(array(
+        'client' => array(
+            'clientId' => 'phpMussel',
+            'clientVersion' => $phpMussel['ScriptVersion']
+        ),
+        'threatInfo' => array(
+            'threatTypes' => array(
+                'THREAT_TYPE_UNSPECIFIED',
+                'MALWARE',
+                'SOCIAL_ENGINEERING',
+                'UNWANTED_SOFTWARE',
+                'POTENTIALLY_HARMFUL_APPLICATION'
+            ),
+            'platformTypes' => array('ANY_PLATFORM'),
+            'threatEntryTypes' => array('URL'),
+            'threatEntries' => $urls
+        )
+    ), JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 
     /** Fetch the cache entry for Google Safe Browsing, if it doesn't already exist. */
     if (!isset($phpMussel['memCache']['urlscanner_google'])) {
@@ -1394,7 +1416,7 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
     /** Generate new cache expiry time. */
     $newExpiry = $phpMussel['Time'] + $phpMussel['Config']['urlscanner']['cache_time'];
     /** Generate a reference for the cache entry for this lookup. */
-    $cacheRef = md5($urls) . ':' . $c . ':' . strlen($urls) . ':';
+    $cacheRef = md5($arr) . ':' . $c . ':' . strlen($arr) . ':';
     /** This will contain the lookup response. */
     $response = '';
     /** Check if this lookup has already been performed. */
@@ -1410,9 +1432,9 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
             $response = $phpMussel['substraf']($response, ':');
             break;
         }
-        $response = '';
         $phpMussel['memCache']['urlscanner_google'] =
             str_ireplace($cacheRef . $response . ';', '', $phpMussel['memCache']['urlscanner_google']);
+        $response = '';
     }
     /** If this lookup has already been performed, return the results without repeating it. */
     if ($response) {
@@ -1440,17 +1462,18 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
     }
 
     /** Prepare the URL to use with cURL. */
-    $uri = sprintf(
-        'https://sb-ssl.google.com/safebrowsing/api/lookup?client=phpMussel&key=%s&appver=%s&pver=3.1',
-        $phpMussel['Config']['urlscanner']['google_api_key'],
-        $phpMussel['ScriptVersion']
-    );
+    $uri =
+        'https://safebrowsing.googleapis.com/v4/threatMatches:find?key=' .
+        $phpMussel['Config']['urlscanner']['google_api_key'];
+
     /** cURL stuff here. */
     $request = curl_init($uri);
     curl_setopt($request, CURLOPT_FRESH_CONNECT, true);
-    curl_setopt($request, CURLOPT_HEADER, true);
+    curl_setopt($request, CURLOPT_HEADER, false);
     curl_setopt($request, CURLOPT_POST, true);
-    /** The Google Safe Browsing API v3.1 requires HTTPS+SSL (there's no way around this). */
+    /** Ensure it knows we're sending JSON data. */
+    curl_setopt($request, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
+    /** The Google Safe Browsing API requires HTTPS+SSL (there's no way around this). */
     curl_setopt($request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
     curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
     /*
@@ -1462,15 +1485,13 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
     /* We don't want to leave the client waiting for *too* long. */
     curl_setopt($request, CURLOPT_TIMEOUT, 12);
     curl_setopt($request, CURLOPT_USERAGENT, $phpMussel['ScriptUA']);
-    curl_setopt($request, CURLOPT_POSTFIELDS, $urls);
+    curl_setopt($request, CURLOPT_POSTFIELDS, $arr);
+
     /** Execute and get the response. */
     $response = curl_exec($request);
     $phpMussel['LookupCount']++;
 
-    /**
-     * Check for errors and print to the screen if there were any.
-     * @todo: This was coded quick and dirty, and can be improved. Could possibly implement logging for this.
-     */
+    /** Check for errors and print to the screen if there were any. */
     if (!$response) {
         throw new \Exception(curl_error($request));
     }
@@ -1478,45 +1499,19 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
     /** Close the cURL session. */
     curl_close($request);
 
-    /**
-     * At the moment, we only need the response code; Everything else can be ditched.
-     *
-     * Response Codes (( source: https://developers.google.com/safe-browsing/lookup_guide#HTTPPOSTRequest )).
-     * The server generates the following HTTP error codes for the POST request:
-     * 200: AT LEAST ONE of the queried URLs are matched in either the phishing, malware, or unwanted software lists.
-     *      The actual results are returned through the response body.
-     * 204: NONE of the queried URLs matched the phishing, malware, or unwanted software lists, and no response body is
-     *      returned.
-     * 400: Bad Request—The HTTP request was not correctly formed.
-     * 401: Not Authorized—The API key is not authorized.
-     * 503: Service Unavailable—The server cannot handle the request. Besides the normal server failures, this could
-     *      also indicate that the client has been “throttled” for sending too many requests.
-     */
-    $response = substr($response, 9, 3);
+    if (substr_count($response, '"matches":')) {
+        /** Potentially harmful URL detected. */
+        $returnVal = 200;
+    } else {
+        /** Potentially harmful URL *NOT* detected. */
+        $returnVal = 204;
+    }
 
     /** Update the cache entry for Google Safe Browsing. */
-    $phpMussel['memCache']['urlscanner_google'] .= $cacheRef . ':' . $newExpiry . ':' . $response . ';';
+    $phpMussel['memCache']['urlscanner_google'] .= $cacheRef . ':' . $newExpiry . ':' . $returnVal . ';';
     $newExpiry = $phpMussel['SaveCache']('urlscanner_google', $newExpiry, $phpMussel['memCache']['urlscanner_google']);
 
-    if ($response === '200') {
-        /** Potentially harmful URL detected. */
-        return 200;
-    } elseif ($response === '204') {
-        /** Potentially harmful URL *NOT* detected. */
-        return 204;
-    } elseif ($response === '400') {
-        /** Bad/malformed request. */
-        return 400;
-    } elseif ($response === '401') {
-        /** Unauthorised (possibly a bad API key). */
-        return 401;
-    } elseif ($response === '503') {
-        /** Service unavailable. */
-        return 503;
-    } else {
-        /** Something bad/unexpected happened. */
-        return 999;
-    }
+    return $returnVal;
 };
 
 /**
@@ -6335,7 +6330,22 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 };
 
 /**
- * @todo: phpDoc description here.
+ * Handles scanning for files contained within archives and handles all
+ * scanning tasks related to archive metadata.
+ *
+ * @param string $ItemRef A reference to the path and original filename of the
+ *      item being scanned in relation to its container and/or its heirarchy
+ *      within the scan process.
+ * @param string $Filename The original filename of the item being scanned.
+ * @param string $Data The data to be scanned.
+ * @param int $Depth The depth of the item being scanned in relation to its
+ *      container and/or its heirarchy within the scan process.
+ * @param string $lnap Line padding for the scan results.
+ * @param int $r Scan results inherited from parent in the form of an integer.
+ * @param string $x Scan results inherited from parent in the form of a string.
+ * @return array Returns an array containing the results of the scan as both an
+ *      integer (the first element) and as human-readable text (the second
+ *      element).
  */
 $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap, $r, $x) use (&$phpMussel) {
     if (!$Filesize = strlen($Data)) {
