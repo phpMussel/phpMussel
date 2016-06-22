@@ -64,8 +64,6 @@ entries will be deleted when those goals have been achieved.
 - [phpMussel => v1.0.0] Adopt ".htsecurity" for the configuration file naming
   convention rather than use the current "phpmussel.ini" naming convention.
 
-
-
 === Changes made since last versioned release ===
 
 - [2016.03.18; Documentation]: Deleted the version zero changelog and created
@@ -174,6 +172,12 @@ entries will be deleted when those goals have been achieved.
 - [2016.06.11; Documentation; Maikuolan/Vy]: Completed translation of the
   documentation to Vietnamese. With this translation completed, the phpMussel
   documentation is now available in 13 fully completed translations.
+  
+- [2016.06.13; Minor code change; Maikuolan]: Updated the Google Safe Browsing
+  API from v3.1 to v4; Did some more phpDoc work.
+
+- [2016.06.22; Bug-fix; Maikuolan]: Incorrect language data entry used for some
+  upload errors; Fixed. Refer github.com/Maikuolan/phpMussel/issues/98
 
 ======
 

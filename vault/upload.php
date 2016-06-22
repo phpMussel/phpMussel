@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2016.06.03).
+ * This file: Upload handler (last modified: 2016.06.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -288,7 +288,7 @@ if ($phpMussel['upload']['count'] > 0) {
                     ':' .
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
                     "\n";
-                $phpMussel['whyflagged'] .= $phpMussel['Config']['lang']['upload_error_3'];
+                $phpMussel['whyflagged'] .= $phpMussel['Config']['lang']['upload_error_34'];
             } elseif ($phpMussel['upload']['FilesData']['FileSet']['error'][$phpMussel['upload']['FilesData']['FileSet']['i']] === 4) {
                 $phpMussel['killdata'] .=
                     '---------UPLOAD-ERROR-4---------:' .
@@ -296,7 +296,7 @@ if ($phpMussel['upload']['count'] > 0) {
                     ':' .
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
                     "\n";
-                $phpMussel['whyflagged'] .= $phpMussel['Config']['lang']['upload_error_4'];
+                $phpMussel['whyflagged'] .= $phpMussel['Config']['lang']['upload_error_34'];
             } elseif ($phpMussel['upload']['FilesData']['FileSet']['error'][$phpMussel['upload']['FilesData']['FileSet']['i']] === 6) {
                 $phpMussel['killdata'] .=
                     '---------UPLOAD-ERROR-6---------:' .
