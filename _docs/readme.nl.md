@@ -509,7 +509,7 @@ Algemene configuratie voor phpMussel.
 - Activeer ondersteuning voor phpMussel plugins? False = Nee; True = Ja [Standaard].
 
 "forbid_on_block"
-- Moet phpMussel reageren met 403 headers met het bestanden upload geblokkeerd bericht, of blijven met de gebruikelijke 200 OK? False = Nee (200) [Standaard]; True = Ja (403).
+- Moet phpMussel reageren met 403 headers met het bestanden upload geblokkeerd bericht, of blijven met de gebruikelijke 200 OK? False = Nee (200); True = Ja (403) [Standaard].
 
 "delete_on_sight"
 - Het inschakelen van dit richtlijn zal instrueren het script om elke gescande geprobeerd bestand upload dat gecontroleerd tegen elke detectie criteria te proberen onmiddellijk verwijderen, via handtekeningen of anderszins. Bestanden vastbesloten te zijn schoon zal niet worden aangeraakt. In het geval van archieven, het hele archief wordt verwijderd, ongeacht of niet het overtredende bestand is slechts één van meerdere bestanden vervat in het archief. Voor het geval van bestand upload scannen, doorgaans, het is niet nodig om dit richtlijn te inschakelen, omdat doorgaans, PHP zal automatisch zuiveren de inhoud van zijn cache wanneer de uitvoering is voltooid, wat betekent dat het doorgans zal verwijdert ieder bestanden geüpload doorheen aan de server tenzij ze zijn verhuisd, gekopieerd of verwijderd alreeds. Dit richtlijn is toegevoegd hier als een extra maatregel van veiligheid voor degenen wier kopies van PHP misschien niet altijd gedragen op de manier verwacht. False = Na het scannen, met rust laten het bestand [Standaard]; True = Na het scannen, als niet schoon, onmiddellijk verwijderen.
@@ -994,4 +994,4 @@ Dit informatie werd laatst bijgewerkt 21 April 2016 en is op de hoogte voor alle
 ---
 
 
-Laatste Bijgewerkt: 11 Juni 2016 (2016.06.11).
+Laatste Bijgewerkt: 24 Juni 2016 (2016.06.24).

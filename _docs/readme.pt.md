@@ -509,7 +509,7 @@ Configuração geral por phpMussel.
 - Ativar o suporte para os plugins do phpMussel? False = Não; True = Sim [Padrão].
 
 "forbid_on_block"
-- Deve phpMussel enviar 403 header com a bloqueado arquivo carregamento mensagem, ou ficar com os habituais 200 OK? False = Não (200) [Padrão]; True = Sim (403).
+- Deve phpMussel enviar 403 header com a bloqueado arquivo carregamento mensagem, ou ficar com os habituais 200 OK? False = Não (200); True = Sim (403) [Padrão].
 
 "delete_on_sight"
 - Ativando esta opção irá instruir o script para tentar imediatamente deletando qualquer arquivo que ele encontra durante a análise que corresponde a qualquer critério de detecção, quer seja através de assinaturas ou de outra forma. Arquivos determinados para ser "limpo" não serão tocados. Em caso de compactados arquivos, o inteiro arquivo será deletado (independentemente de se o problemático arquivo é apenas um dos vários arquivos contidos dentro do compactado arquivo). Para o caso de arquivo carregamento análise, em geral, não é necessário ativar essa opção, porque normalmente, PHP irá automaticamente expurgar os conteúdos de o seu cache quando a execução foi concluída, significando que ele vai normalmente deletar todos os arquivos enviados através dele para o servidor a menos que tenha movido, copiado ou deletado já. A opção é adicionado aqui como uma medida de segurança para aqueles cujas cópias de PHP nem sempre se comportam da forma esperada. False = Após a análise, deixe o arquivo sozinho [Padrão]; True = Após a análise, se não limpo, deletar imediatamente.
@@ -994,4 +994,4 @@ Esta informação foi atualizada dia 21 Abril 2016 e é corrente para todas phpM
 ---
 
 
-Última Atualização: 11 Junho 2016 (2016.06.11).
+Última Atualização: 24 Junho 2016 (2016.06.24).

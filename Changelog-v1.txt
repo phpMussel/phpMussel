@@ -179,6 +179,10 @@ entries will be deleted when those goals have been achieved.
 - [2016.06.22; Bug-fix; Maikuolan]: Incorrect language data entry used for some
   upload errors; Fixed. Refer github.com/Maikuolan/phpMussel/issues/98
 
+- [2016.06.24; Sub-minor code change; Maikuolan]: Changed the default value for
+  "forbid_on_block" from false to true (this should improve compatibility with
+  PJAX-based frameworks and systems).
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

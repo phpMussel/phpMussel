@@ -509,7 +509,7 @@ General phpMussel configuration.
 - Enable support for phpMussel plugins? False = No; True = Yes [Default].
 
 "forbid_on_block"
-- Should phpMussel send 403 headers with the file upload blocked message, or stick with the usual 200 OK? False = No (200) [Default]; True = Yes (403).
+- Should phpMussel send 403 headers with the file upload blocked message, or stick with the usual 200 OK? False = No (200); True = Yes (403) [Default].
 
 "delete_on_sight"
 - Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won't be touched. In the case of archives, the entire archive will be deleted, regardless of whether or not the offending file is only one of several files contained within the archive. For the case of file upload scanning, usually, it isn't necessary to enable this directive, because usually, PHP will automatically purge the contents of its cache when execution has finished, meaning it'll usually delete any files uploaded through it to the server unless they've been moved, copied or deleted already. This directive is added here as an extra measure of security for those whose copies of PHP mightn't always behave in the manner expected. False = After scanning, leave the file alone [Default]; True = After scanning, if not clean, delete immediately.
@@ -994,4 +994,4 @@ This information was last updated 21st April 2016 and is current for all phpMuss
 ---
 
 
-Last Updated: 11th June 2016 (2016.06.11).
+Last Updated: 24th June 2016 (2016.06.24).

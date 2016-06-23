@@ -508,7 +508,7 @@ General configuración para phpMussel.
 - Habilitar el soporte para los plugins de phpMussel? False = No; True = Sí [Predefinido].
 
 "forbid_on_block"
-- Debería phpMussel enviar 403 header con la bloqueados archivos subidos mensaje, o quedarse con los usual 200 OK? False = No (200) [Predefinido]; True = Sí (403).
+- Debería phpMussel enviar 403 header con la bloqueados archivos subidos mensaje, o quedarse con los usual 200 OK? False = No (200); True = Sí (403) [Predefinido].
 
 "delete_on_sight"
 - Activando esta directiva instruirá la script para intentar para eliminar inmediatamente cualquier escaneados intentados archivos subidos emparejando a los criterios de detección, si través de firmas o de otras maneras. Archivos determinados como limpia no serán tocados. En el caso de los compactados archivos, la totalidad del compactado archivo será eliminado (independientemente de si el emparejando archivo es sólo uno de muchos varios archivos contenida dentro del compactado archivo). Para el caso de archivo subir escaneo, en general, no es necesario activar esta directiva, porque en general, PHP purgará automáticamente el contenido de su caché cuando la ejecución ha terminado, significando que lo en general eliminará cualquier archivos subidos a través de él con el servidor a no ser que se han movido, copiado o eliminado ya. La directiva se añade aquí como una medida adicional de seguridad para aquellos cuyas copias de PHP no siempre se comportan de la manera esperada. False = Después escaneando, dejar el archivo solo [Predefinido]; True = Después escaneando, si no se limpia, eliminar inmediatamente.
@@ -993,4 +993,4 @@ Esta información ha sido actualizado 27 Marzo 2016 y es a hoy para todas las ph
 ---
 
 
-Última Actualización: 11 Junio 2016 (2016.06.11).
+Última Actualización: 24 Junio 2016 (2016.06.24).

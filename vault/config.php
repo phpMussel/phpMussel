@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2016.06.02).
+ * This file: Configuration handler (last modified: 2016.06.24).
  */
 
 /** phpMussel version number (SemVer). */
@@ -131,7 +131,7 @@ if (!isset($phpMussel['Config']['general']['enable_plugins'])) {
 
 /** Fallback for missing "forbid_on_block" configuration directive. */
 if (!isset($phpMussel['Config']['general']['forbid_on_block'])) {
-    $phpMussel['Config']['general']['forbid_on_block'] = false;
+    $phpMussel['Config']['general']['forbid_on_block'] = true;
 }
 
 /** Fallback for missing "delete_on_sight" configuration directive. */

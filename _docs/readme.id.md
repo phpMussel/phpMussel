@@ -509,7 +509,7 @@ Konfigurasi umum dari phpMussel.
 - Mengaktifkan dukungan untuk plugin phpMussel? False = Tidak; True = Ya [Default].
 
 "forbid_on_block"
-- Seharusnya phpMussel mengirimkan 403 headers dengan pesan upload file yang terblok, atau cocok dengan 200 OK? False = Tidak (200) [Default]; True = Ya (403).
+- Seharusnya phpMussel mengirimkan 403 headers dengan pesan upload file yang terblok, atau cocok dengan 200 OK? False = Tidak (200); True = Ya (403) [Default].
 
 "delete_on_sight"
 - Mengaktifkan opsi ini akan menginstruksikan skrip untuk berusaha secepatnya menghapus file apapun yang ditemukannya selama scan yang mencocokkan pada kriteria deteksi apapun, baik melalui tanda tangan atau yang lain. file-file ditentukan "clean" tidak akan disentuh. Pada kasus file terkompress seluruh file terkompress akan didelate (kecuali file yang menyerang adalah satu-satunya dari beberapa file yang menjadi isi file terkompress). Untuk kasus pemindaian upload file biasanya, tidak cocok untuk mengaktifkan opsi ini, karena biasanya PHP akan secara otomatis menyatukan isi dari cache ketika eksekusi selesai, berarti bahwa dia akan selalu menghapus file terupload apapun melalui server jika tidak dipindahkan, dikopi atau dihapus sebelumnya. Opsi tersebut ditambahkan di sini sebagai ukuran keamanan ekstra untuk semua salinan PHP yang tidak selalu bersikap pada perilaku yang diharapkan. False = Setelah pemindahaian, biarkan file [Default]; True = Setelah pemindaian, jika tidak bersih, hapus langsung.
@@ -994,4 +994,4 @@ Informasi ini diupdate 21 April 2016 dan cocok untuk semua rilis phpMussel dari 
 ---
 
 
-Terakhir Diperbarui: 11 Juni 2016 (2016.06.11).
+Terakhir Diperbarui: 24 Juni 2016 (2016.06.24).

@@ -509,7 +509,7 @@ Generale configurazione per phpMussel.
 - Attiva il supporto per i plugin di phpMussel? False = No; True = Sì [Predefinito].
 
 "forbid_on_block"
-- phpMussel dovrebbe rispondere con 403 header con il file caricamente bloccato messaggio, o rimanere con il solito 200 OK? False = No (200) [Predefinito]; True = Sì (403).
+- phpMussel dovrebbe rispondere con 403 header con il file caricamente bloccato messaggio, o rimanere con il solito 200 OK? False = No (200); True = Sì (403) [Predefinito].
 
 "delete_on_sight"
 - Abilitando questa opzione sarà istruirà lo script per tentare immediatamente eliminare qualsiasi file trovato durante scansioni che corrisponde a qualsiasi i criteri di rilevazione, attraverso le firme o altrimenti. I file determinati ad essere "pulito" non verranno toccati. Nel caso degli archivi, l'intero archivio verrà eliminato (indipendentemente se il file all'origine è soltanto uno dei vari file contenuti all'interno dell'archivio o non). Nel caso di file caricamente scansione, solitamente, non è necessario attivare questa opzione, perché solitamente, PHP sarà automaticamente eliminerà il contenuto della cache quando l'esecuzione è terminata, il che significa che lo farà solitamente eliminare tutti i file caricati tramite al server tranne ciò che già è spostato, copiato o cancellato. L'opzione viene aggiunto qui come ulteriore misura di sicurezza per coloro le cui copie di PHP non sempre comportarsi nel previsto modo. False = Dopo la scansione, lasciare il file solo [Predefinito]; True = Dopo la scansione, se non pulite, immediatamente eliminarlo.
@@ -994,4 +994,4 @@ Questa informazione è stato lo scorso aggiornato 21 Aprile 2016 ed è in corso 
 ---
 
 
-Ultimo Aggiornamento: 11 Giugno 2016 (2016.06.11).
+Ultimo Aggiornamento: 24 Giugno 2016 (2016.06.24).
