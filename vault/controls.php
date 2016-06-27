@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Controls handler (last modified: 2016.06.03).
+ * This file: Controls handler (last modified: 2016.06.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -73,7 +73,7 @@ if (
             $phpMussel['MusselPlugins']['tempdata']['i'] < $phpMussel['MusselPlugins']['hookcounts']['browser_log_commands'];
             $phpMussel['MusselPlugins']['tempdata']['i']++
         ) {
-            $HookID = key($phpMussel['MusselPlugins']['hooks']['during_scan']);
+            $HookID = key($phpMussel['MusselPlugins']['hooks']['browser_log_commands']);
             if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                 $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
             } elseif (function_exists($HookID)) {
@@ -178,7 +178,7 @@ if (
             $phpMussel['MusselPlugins']['tempdata']['i'] < $phpMussel['MusselPlugins']['hookcounts']['browser_commands'];
             $phpMussel['MusselPlugins']['tempdata']['i']++
         ) {
-            $HookID = key($phpMussel['MusselPlugins']['hooks']['during_scan']);
+            $HookID = key($phpMussel['MusselPlugins']['hooks']['browser_commands']);
             if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                 $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
             } elseif (function_exists($HookID)) {

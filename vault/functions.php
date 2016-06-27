@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.06.13).
+ * This file: Functions file (last modified: 2016.06.27).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -6258,7 +6258,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             $phpMussel['MusselPlugins']['tempdata']['i'] < $phpMussel['MusselPlugins']['hookcounts']['after_vt'];
             $phpMussel['MusselPlugins']['tempdata']['i']++
         ) {
-            $HookID = key($phpMussel['MusselPlugins']['hooks']['during_scan']);
+            $HookID = key($phpMussel['MusselPlugins']['hooks']['after_vt']);
             if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                 $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
             } elseif (function_exists($HookID)) {
@@ -6729,7 +6729,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['MusselPlugins']['tempdata']['i'] < $phpMussel['MusselPlugins']['hookcounts']['before_scan'];
             $phpMussel['MusselPlugins']['tempdata']['i']++
         ) {
-            $HookID = key($phpMussel['MusselPlugins']['hooks']['during_scan']);
+            $HookID = key($phpMussel['MusselPlugins']['hooks']['before_scan']);
             if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                 $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
             } elseif (function_exists($HookID)) {
@@ -7721,7 +7721,7 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
             $phpMussel['MusselPlugins']['tempdata']['i'] < $phpMussel['MusselPlugins']['hookcounts']['after_scan'];
             $phpMussel['MusselPlugins']['tempdata']['i']++
         ) {
-            $HookID = key($phpMussel['MusselPlugins']['hooks']['during_scan']);
+            $HookID = key($phpMussel['MusselPlugins']['hooks']['after_scan']);
             if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                 $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
             } elseif (function_exists($HookID)) {

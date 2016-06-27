@@ -2,14 +2,14 @@
 
 ### Nội dung
 - 1. [LỜI GIỚI THIỆU](#SECTION1)
-- 2A. [CẢCH ĐỂCÀI ĐẶT (CHO CÁC TRANG WEB CHỦ)](#SECTION2A)
-- 2B. [CẢCH CÀI ĐẶT (CHO CLI)](#SECTION2B)
+- 2A. [CÁCH CÀI ĐẶT (CHO CÁC TRANG WEB CHỦ)](#SECTION2A)
+- 2B. [CÁCH CÀI ĐẶT (CHO CLI)](#SECTION2B)
 - 3A. [CÁCH SỬ DỤNG (CHO CÁC TRANG WEB CHỦ)](#SECTION3A)
 - 3B. [CÁCH SỬ DỤNG (CHO CLI)](#SECTION3B)
 - 4A. [ĐIỀU KHIỂN TRÌNH DUYỆT](#SECTION4A)
 - 4B. [CLI (LỆNH CHO DÒNG GIAO DIỆN)](#SECTION4B)
 - 5. [TẬP TIN BAO GỒM TRONG GÓI NÀY](#SECTION5)
-- 6. [SỰ LỰA CHỌN CỦA CẤU HÌNH](#SECTION6)
+- 6. [TÙY CHỌN CHO CẤU HÌNH](#SECTION6)
 - 7. [ĐỊNH DẠNG CỦA CHỬ KÝ](#SECTION7)
 - 8. [NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH](#SECTION8)
 
@@ -37,7 +37,7 @@ Tài liệu này và các gói liên quan của nó có thể được tải v�
 ---
 
 
-###2A. <a name="SECTION2A"></a>CẢCH ĐỂCÀI ĐẶT (CHO CÁC TRANG WEB CHỦ)
+###2A. <a name="SECTION2A"></a>CÁCH CÀI ĐẶT (CHO CÁC TRANG WEB CHỦ)
 
 Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện một cài đặt tại một thời điểm nào trong tương lai không quá xa, nhưng cho đến lúc đó, bạn hảy làm theo hướng dẫn để có thể cho phpMussel làm việc trên hầu hết các hệ thống và CMS:
 
@@ -47,7 +47,7 @@ Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện mộ
 
 3) Tải nội dung lên (phpMussel và tập tin của nó) vào thư mục bạn đã chọn trước (bạn không cần phải dùng tập tin `*.txt`/`*.md`, nhưng chủ yếu, bạn nên tải lên tất cả mọi thứ).
 
-4) CHMOD cái `vault` thư mục thành "777". Các thư mục chính kho lưu trữ các nội dung (một trong những cái bạn đã chọn trước), bình thường, có thể riêng, nhưng tình hình CHMOD nên kiểm tra, nếu bạn đã có vấn đề cho phép trong quá khứ về hệ thống của bạn (theo mặc định, nên giống như "755").
+4) CHMOD thư mục `vault` thành "777". Các thư mục chính kho lưu trữ các nội dung (một trong những cái bạn đã chọn trước), bình thường, có thể riêng, nhưng tình hình CHMOD nên kiểm tra, nếu bạn đã có vấn đề cho phép trong quá khứ về hệ thống của bạn (theo mặc định, nên giống như "755").
 
 5) Tiếp theo, bạn sẽ cần "nối" phpMussel vào hệ thống của bạn hay CMS. Có một số cách mà bạn có thể "nối" bản chẳng hạn như phpMussel vào hệ thống hoạc CMS, nhưng cách đơn giản nhất là cần có bản vào cốt lõi ở đầu của tập tin hoạc hệ thống hay CMS của bạn (một mà thường sẽ luôn luôn được nạp khi ai đó truy cập bất kỳ trang nào trên trang web của bạn) bằng cách sử dụng một lời chỉ thị `require` hoạc `include`. Thường, cái nàu sẽ được lưu trong một thư mục như `/includes`, `/assets` hoạc `/functions`, và sẽ thường được gọi là `init.php`, `common_functions.php`, `functions.php` hoạc tương tự. Bạn sẽ cần tiềm ra tập tin nào cho trường hợp của bạn; Nếu bạn gặp khó khăn trong việc này, hãy truy cập diễn đàn hỗ trợ của phpMussel và cho chúng tôi biêt; Có thể là tôi họac các người dùng khác có có kinh nghiệm với các CMS mà bạn đang sử dụng (bạn phải biết mình đang sử dụng CMS nào), và như vậy, có thể cung cấp hỗ trợ trong trường hợp này. Để làm chuyện này [sử dụng `require` họac `include`], đánh các dòng mã sao đây vào đầu của cốt lõi của tập tin, thay thế các dây chứa bên trong các dấu ngoặc kép với địa chỉ chính xác của tập tin `phpmussel.php` (địa chỉ địa phương, chứ không phải địa chỉ HTTP; nó sẽ nhình gióng địa chỉ kho nói ở trên).
 
@@ -70,7 +70,7 @@ Hoạc cái này trong tập tin `.htaccess`:
 ---
 
 
-###2B. <a name="SECTION2B"></a>CẢCH CÀI ĐẶT (CHO CLI)
+###2B. <a name="SECTION2B"></a>CÁCH CÀI ĐẶT (CHO CLI)
 
 Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện một cài đặt tại một thời điểm nào trong tương lai không quá xa, nhưng cho đến lúc đó, bạn hảy làm theo hướng dẫn để có thể cho phpMussel hoạt động với CLI (hảy cẩn thận, vào lúc này hỗ trợ cho CLI chỉ áp dụng với hệ thống dựa trên Windows; Linux và các hệ thống khác sẽ sau trong phiên bản sau này của phpMussel):
 
@@ -128,7 +128,7 @@ Nếu bạn gặp bất kỳ sai tích cực, nếu bạn gặp một số đi�
 
 ###3B. <a name="SECTION3B"></a>CÁCH SỬ DỤNG (CHO CLI)
 
-Tham khảo phần "CẢCH CÀI ĐẶT (CHO CLI)" của tập tin README này.
+Tham khảo phần "CÁCH CÀI ĐẶT (CHO CLI)" của tập tin README này.
 
 Hãy nhận biết rằng, mặc dù các phiên bản tương lai của phpMussel nên hỗ trợ các hệ thống khác, tại thơi điểm nay, hỗ trợ cho chế độ CLI của phpMussel đã được tối ưu chỉ dành cho sử dụng trên hệ thống Windows (bạn có thể, tất nhiên, thử nó trên các hệ thống khác, nhưng tôi không thể đảm bảo nó sẽ làm việc như dự định).
 
@@ -233,7 +233,7 @@ greylist_show
 
 ###4B. <a name="SECTION4B"></a>CLI (LỆNH CHO DÒNG GIAO DIỆN)
 
-phpMussel có thể được chạy như một máy quét tập tin tương tác trong chế độ CLI theo các hệ thống dựa trên Windows. Tham khảo phần "CẢCH CÀI ĐẶT (CHO CLI)" của tập tin README này để biết thêm chi tiết.
+phpMussel có thể được chạy như một máy quét tập tin tương tác trong chế độ CLI theo các hệ thống dựa trên Windows. Tham khảo phần "CÁCH CÀI ĐẶT (CHO CLI)" của tập tin README này để biết thêm chi tiết.
 
 Để xem một danh sách các lệnh CLI có sẵn, tại dấu nhắc CLI, đánh 'c', và bấm Enter.
 
@@ -311,7 +311,7 @@ Tập tin | Chi tiết
 /vault/lang/lang.vi.php | Dữ liệu tiếng Việt.
 /vault/lang/lang.zh-TW.php | Dữ liệu tiếng Trung Quốc (Truyền Thống).
 /vault/lang/lang.zh.php | Dữ liệu tiếng Trung Quốc (Giản Thể).
-/vault/phpmussel.ini | Tập tin cho cấu hình; Chứa tất cả các sự lựa chọn của cấu hình của phpMussel (cần thiết)!
+/vault/phpmussel.ini | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của phpMussel (cần thiết)!
 /vault/quarantine/ | Thư mục kiểm dịch (chứa các tập tin trong kiểm dịch).
 /vault/quarantine/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 ※ /vault/scan_kills.txt | Kỷ lục của mỗi tập tin tải lên từ chối/giết bởi phpMussel.
@@ -464,7 +464,7 @@ Tập tin chữ ký đánh dấu với "_mussel" chứa chữ ký mà đặc bi�
 ---
 
 
-###6. <a name="SECTION6"></a>SỰ LỰA CHỌN CỦA CẤU HÌNH
+###6. <a name="SECTION6"></a>TÙY CHỌN CHO CẤU HÌNH
 Sau đây là danh sách các biến tìm thấy trong tập tin cấu hình cho phpMussel `phpmussel.ini`, cùng với một mô tả về mục đích và chức năng của chúng.
 
 ####"general" (Thể loại)

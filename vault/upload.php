@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2016.06.22).
+ * This file: Upload handler (last modified: 2016.06.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -597,7 +597,7 @@ if ($phpMussel['upload']['count'] > 0) {
                 $phpMussel['MusselPlugins']['tempdata']['i'] < $phpMussel['MusselPlugins']['hookcounts']['before_html_out'];
                 $phpMussel['MusselPlugins']['tempdata']['i']++
             ) {
-                $HookID = key($phpMussel['MusselPlugins']['hooks']['during_scan']);
+                $HookID = key($phpMussel['MusselPlugins']['hooks']['before_html_out']);
                 if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                     $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
                 } elseif (function_exists($HookID)) {

@@ -177,11 +177,16 @@ entries will be deleted when those goals have been achieved.
   API from v3.1 to v4; Did some more phpDoc work.
 
 - [2016.06.22; Bug-fix; Maikuolan]: Incorrect language data entry used for some
-  upload errors; Fixed. Refer github.com/Maikuolan/phpMussel/issues/98
+  upload errors; Fixed. Thanks to mtrefzer for spotting this. :-)
+  Refer github.com/Maikuolan/phpMussel/issues/98
 
 - [2016.06.24; Sub-minor code change; Maikuolan]: Changed the default value for
   "forbid_on_block" from false to true (this should improve compatibility with
   PJAX-based frameworks and systems).
+
+- [2016.06.27; Bug-fix; Maikuolan]: Key value was being fetched from an
+  incorrect array for $HookID by the plugin hooks (affected all hooks); Fixed.
+  Refer github.com/Maikuolan/phpMussel/issues/99
 
 ======
 
