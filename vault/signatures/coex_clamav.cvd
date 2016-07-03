@@ -1,5 +1,10 @@
-== ClamAV Complex Extended (CoEx) Signatures ==
-=== Derived from ClamAV Logical Extended Signatures; Manually modified for use with phpMussel; Slow and tedious process, expect irregular updates. ===
+== .:: ClamAV Complex Extended (CoEx) Signatures ::. ==
+=== Derived from ClamAV container database (CDB) files. ===
+$container:zipfile;FN:Order\.Pdf_______________________________________________________________\.exe$; X-1435085
+$container:zipfile;FN:Courrt.{1,15}\.scr$; Toa-1
+$container:zipfile;FN:(?i)shipment.{0,50}\.exe\.doc$; Toa-2
+$container:rarfile;FN:(?i).*invoice.*\.exe$; Toa-3
+=== Derived from ClamAV logical database  / extended signatures (LDB/LDU) files (adapting these for phpMussel is a slow and tedious process; expect updates to be irregular). ===
 $fourcc:25504446;FD-RX:(474946383961.*255044462d|89504e470d0a1a0a.*255044462d|ffd8ffe0.*faffda000c.*255044462d|d0cf11e0.*255044462d);)%,2013.0624
 $fourcc:25504446;FD-RX:255044462d.*14ffffff.{0,400}55ffffff.{0,50}000000..0000000e0[1-9]000000000e01000[1-9]0000000[3-9]; %X
 $fourcc:25504446;FD-RX:55554e4d535a2b5454464641.*3e3e73747265616d{-29}636d6170.*000000020001000000000014000300000000011a.*000c0052000000;)%2012.4157
