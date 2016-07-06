@@ -295,7 +295,7 @@ Tập tin | Chi tiết
 /vault/functions.php | Tập tin cho chức năng.
 /vault/greylist.csv | Tập tin CSV cho danh sách xám chử ký chỉ thị cho phpMussel cái nào chử ký nó phải được bỏ qua (tập tin tự động tạo lại nếu xóa).
 /vault/lang.php | Dữ liệu tiếng.
-/vault/lang/ | Chứa dữ liệu tiếng phpMussel.
+/vault/lang/ | Chứa dữ liệu tiếng cho phpMussel.
 /vault/lang/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/lang/lang.ar.php | Dữ liệu tiếng Ả Rập.
 /vault/lang/lang.de.php | Dữ liệu tiếng Đức.
@@ -309,8 +309,8 @@ Tập tin | Chi tiết
 /vault/lang/lang.pt.php | Dữ liệu tiếng Bồ Đào Nha.
 /vault/lang/lang.ru.php | Dữ liệu tiếng Nga.
 /vault/lang/lang.vi.php | Dữ liệu tiếng Việt.
-/vault/lang/lang.zh-TW.php | Dữ liệu tiếng Trung Quốc (Truyền Thống).
-/vault/lang/lang.zh.php | Dữ liệu tiếng Trung Quốc (Giản Thể).
+/vault/lang/lang.zh-TW.php | Dữ liệu tiếng Trung Quốc (truyền thống).
+/vault/lang/lang.zh.php | Dữ liệu tiếng Trung Quốc (giản thể).
 /vault/phpmussel.ini | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của phpMussel (cần thiết)!
 /vault/quarantine/ | Thư mục kiểm dịch (chứa các tập tin trong kiểm dịch).
 /vault/quarantine/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
@@ -925,7 +925,7 @@ Sau đây là một danh sách các loại chữ ký được sử dụng bởi 
 
 Cho hầu hết các phần, phpMussel sẽ tương hợp với hầu hết các phần mềm quét vi rút khác. Nhưng mà, có một số người sử dụng trong quá khứ đã báo cáo một số vấn đề. Thông tin dưới đây là từ VirusTotal.com, và nó miêu tả một số giả tích cực báo cáo bởi các chương trình chống vi rút khác nhau chống phpMussel. Mặc dù thông tin này không đảm bảo nếu bạn gặp phải vấn đề tương hợp giữa phpMussel và phần mềm chống vi rút của bạn, nếu phần mềm chống vi rút của bạn được ghi nhận là cách gắn cờ chống lại phpMussel, bạn nên tắt nó trước khi sử dụng phpMussel hoặc nên xét các lựa chọn khác cho một trong hai phần mềm chống vi rút của bạn hoặc phpMussel.
 
-Thông tin này được cập nhật lần cứơi vào ngày 21 Tháng Tư 2016 và có thể áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.10.0-v1.0.0) vào thời gian cái này được viết.
+Thông tin này được cập nhật lần cứơi vào ngày 4 Tháng Bảy 2016 và có thể áp dụng cho phpMussel công bố hai loại phiên bản nhỏ mới nhất (v0.10.0-v1.0.0) vào thời gian cái này được viết.
 
 | Chương trình quét    |  Kết quả                             |
 |----------------------|--------------------------------------|
@@ -945,7 +945,7 @@ Thông tin này được cập nhật lần cứơi vào ngày 21 Tháng Tư 201
 | Baidu                |  Báo cáo "VBS.Trojan.VBSWG.a"        |
 | Baidu-International  |  Không có vấn đề                     |
 | BitDefender          |  Không có vấn đề                     |
-| Bkav                 |  Báo cáo "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
+| Bkav                 |  Báo cáo "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell", "VEXEFFC.Webshell"|
 | ByteHero             |  Không có vấn đề                     |
 | CAT-QuickHeal        |  Không có vấn đề                     |
 | ClamAV               |  Không có vấn đề                     |
@@ -994,4 +994,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 21 Tháng Tư 201
 ---
 
 
-Lần cuối cập nhật: 24 Tháng Sáu 2016 (2016.06.24).
+Lần cuối cập nhật: 4 Tháng Bảy 2016 (2016.07.04).

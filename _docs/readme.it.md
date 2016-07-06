@@ -267,8 +267,8 @@ File | Descrizione
 /_docs/readme.pt.md | Portoghese documentazione.
 /_docs/readme.ru.md | Russo documentazione.
 /_docs/readme.vi.md | Vietnamita documentazione.
-/_docs/readme.zh-TW.md | Cinese (Tradizionale) documentazione.
-/_docs/readme.zh.md | Cinese (Semplificato) documentazione.
+/_docs/readme.zh-TW.md | Cinese (tradizionale) documentazione.
+/_docs/readme.zh.md | Cinese (semplificato) documentazione.
 /_testfiles/ | Test file cartella (contiene vari file). Tutti i file contenuti sono test file per la verifica se phpMussel è installato correttamente sulla vostra sistema, e non è necessario a caricare questa cartella o qualsiasi dei suoi file, tranne quando fa tali test.
 /_testfiles/ascii_standard_testfile.txt | Test file per test di phpMussel normalizzati ASCII firme.
 /_testfiles/coex_testfile.rtf | Test file per test di phpMussel complesso esteso firme.
@@ -309,8 +309,8 @@ File | Descrizione
 /vault/lang/lang.pt.php | Linguistici dati Portoghese.
 /vault/lang/lang.ru.php | Linguistici dati Russa.
 /vault/lang/lang.vi.php | Linguistici dati Vietnamita.
-/vault/lang/lang.zh-TW.php | Linguistici dati Cinese (Tradizionale).
-/vault/lang/lang.zh.php | Linguistici dati Cinese (Semplificata).
+/vault/lang/lang.zh-TW.php | Linguistici dati Cinese (tradizionale).
+/vault/lang/lang.zh.php | Linguistici dati Cinese (semplificata).
 /vault/phpmussel.ini | File di configurazione; Contiene tutte l'opzioni di configurazione per phpMussel, dicendogli cosa fare e come operare correttamente (essenziale)!
 /vault/quarantine/ | Quarantena cartella (contiene i file in quarantena).
 /vault/quarantine/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
@@ -925,7 +925,7 @@ I seguenti sono i tipi di firme utilizzate da phpMussel:
 
 Per la maggior parte, phpMussel dovrebbe essere compatibile abbastanza con la maggior parte dei antivirus software. Ma, conflitti sono stati riportati da un numero di utenti in passato. Queste informazioni qui di seguito è da VirusTotal.com, e descrive un certo numero di falsi positivi riportato dai vari anti-virus programmi contro phpMussel. Sebbene questa informazione non è un'assoluta garanzia di se o non si sarà verificheranno problemi di compatibilità tra phpMussel e il vostro anti-virus software, se il vostro software anti-virus è stati ha notato o ha bandierato contro phpMussel, si dovrebbe considerare sia disattivarlo prima di lavorare con phpMussel o dovrebbe considerare l'alternative opzioni per sia il vostro anti-virus software o phpMussel.
 
-Questa informazione è stato lo scorso aggiornato 21 Aprile 2016 ed è in corso per tutte le phpMussel rilasci delle due più recenti minori versioni (v0.10.0-v1.0.0) al momento di scrivere questo.
+Questa informazione è stato lo scorso aggiornato 4 Luglio 2016 ed è in corso per tutte le phpMussel rilasci delle due più recenti minori versioni (v0.10.0-v1.0.0) al momento di scrivere questo.
 
 | Scanner              |  Risultati                           |
 |----------------------|--------------------------------------|
@@ -945,7 +945,7 @@ Questa informazione è stato lo scorso aggiornato 21 Aprile 2016 ed è in corso 
 | Baidu                |  Riferisce "VBS.Trojan.VBSWG.a"      |
 | Baidu-International  |  Senza noti problemi                 |
 | BitDefender          |  Senza noti problemi                 |
-| Bkav                 |  Riferisce "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
+| Bkav                 |  Riferisce "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell", "VEXEFFC.Webshell"|
 | ByteHero             |  Senza noti problemi                 |
 | CAT-QuickHeal        |  Senza noti problemi                 |
 | ClamAV               |  Senza noti problemi                 |
@@ -994,4 +994,4 @@ Questa informazione è stato lo scorso aggiornato 21 Aprile 2016 ed è in corso 
 ---
 
 
-Ultimo Aggiornamento: 24 Giugno 2016 (2016.06.24).
+Ultimo Aggiornamento: 4 Luglio 2016 (2016.07.04).

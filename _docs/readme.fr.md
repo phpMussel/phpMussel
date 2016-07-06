@@ -309,8 +309,8 @@ Fichier | Description
 /vault/lang/lang.pt.php | Linguistiques données en Portugais.
 /vault/lang/lang.ru.php | Linguistiques données en Russe.
 /vault/lang/lang.vi.php | Linguistiques données en Vietnamien.
-/vault/lang/lang.zh-TW.php | Linguistiques données en Chinois (Traditionnel).
-/vault/lang/lang.zh.php | Linguistiques données en Chinois (Simplifié).
+/vault/lang/lang.zh-TW.php | Linguistiques données en Chinois (traditionnel).
+/vault/lang/lang.zh.php | Linguistiques données en Chinois (simplifié).
 /vault/phpmussel.ini | Fichier de configuration; Contient toutes les options de configuration pour phpMussel, pour comment fonctionner correctement (essentiel)!
 /vault/quarantine/ | Quarantaine répertoire (contient des fichiers de la quarantaine).
 /vault/quarantine/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
@@ -925,7 +925,7 @@ Ce qui suit est un détail des types de signatures utilisées par phpMussel:
 
 Pour la plupart, phpMussel devrait être assez compatible avec plupart du virus détection logiciels. Cependant, conflictualités ont été signalés par un nombre d'utilisateurs dans le passé. Cette information ci-dessous est VirusTotal.com, et il décrit un certain nombre de faux positifs signalé par divers anti-virus programmes contre phpMussel. Bien que cette information ne constitue pas une absolue garantie de si oui ou non vous rencontrerez des problèmes de compatibilité entre phpMussel et votre anti-virus logiciel, si votre logiciel anti-virus est noté comme signalant contre phpMussel, vous devriez envisager désactivation avant à travailler avec phpMussel ou devrait envisager d'autres options soit votre logiciel anti-virus ou phpMussel.
 
-Cette information a été réactualisé le 21 Avril 2016 et est courant pour toutes les phpMussel parutions des deux plus récentes mineures versions (v0.10.0-v1.0.0) au moment de la rédaction de cette.
+Cette information a été réactualisé le 4 Juillet 2016 et est courant pour toutes les phpMussel parutions des deux plus récentes mineures versions (v0.10.0-v1.0.0) au moment de la rédaction de cette.
 
 | Scanner              |  Résultats                           |
 |----------------------|--------------------------------------|
@@ -945,7 +945,7 @@ Cette information a été réactualisé le 21 Avril 2016 et est courant pour tou
 | Baidu                |  Rapports "VBS.Trojan.VBSWG.a"       |
 | Baidu-International  |  Pas problèmes connus                |
 | BitDefender          |  Pas problèmes connus                |
-| Bkav                 |  Rapports "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
+| Bkav                 |  Rapports "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell", "VEXEFFC.Webshell"|
 | ByteHero             |  Pas problèmes connus                |
 | CAT-QuickHeal        |  Pas problèmes connus                |
 | ClamAV               |  Pas problèmes connus                |
@@ -994,4 +994,4 @@ Cette information a été réactualisé le 21 Avril 2016 et est courant pour tou
 ---
 
 
-Dernière Réactualisé: 24 Juin 2016 (2016.06.24).
+Dernière Réactualisé: 4 Juillet 2016 (2016.07.04).

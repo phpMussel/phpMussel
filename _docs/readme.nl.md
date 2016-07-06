@@ -267,8 +267,8 @@ Bestand | Beschrijving
 /_docs/readme.pt.md | Portugees documentatie.
 /_docs/readme.ru.md | Russische documentatie.
 /_docs/readme.vi.md | Vietnamees documentatie.
-/_docs/readme.zh-TW.md | Chinees (Traditioneel) documentatie.
-/_docs/readme.zh.md | Chinees (Vereenvoudigd) documentatie.
+/_docs/readme.zh-TW.md | Chinees (traditioneel) documentatie.
+/_docs/readme.zh.md | Chinees (vereenvoudigd) documentatie.
 /_testfiles/ | Testbestanden bestandsmap (bevat verschillende bestanden). Alle opgenomen bestanden zijn testbestanden voor het testen als phpMussel correct op uw systeem is geïnstalleerd, en u hoeft niet om deze map of een van het bestanden, behalve bij het doen van dergelijke testen te uploaden.
 /_testfiles/ascii_standard_testfile.txt | Testbestand voor het testen phpMussel genormaliseerde ASCII handtekeningen.
 /_testfiles/coex_testfile.rtf | Testbestand voor het testen phpMussel complexe uitgebreide handtekeningen.
@@ -309,8 +309,8 @@ Bestand | Beschrijving
 /vault/lang/lang.pt.php | Portugees taaldata/taalgegevens.
 /vault/lang/lang.ru.php | Russische taaldata/taalgegevens.
 /vault/lang/lang.vi.php | Vietnamees taaldata/taalgegevens.
-/vault/lang/lang.zh-TW.php | Chinees (Traditioneel) taaldata/taalgegevens.
-/vault/lang/lang.zh.php | Chinees (Vereenvoudigd) taaldata/taalgegevens.
+/vault/lang/lang.zh-TW.php | Chinees (traditioneel) taaldata/taalgegevens.
+/vault/lang/lang.zh.php | Chinees (vereenvoudigd) taaldata/taalgegevens.
 /vault/phpmussel.ini | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (essentiële)!
 /vault/quarantine/ | Quarantaine bestandsmap (bestanden in quarantaine bevat).
 /vault/quarantine/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
@@ -925,7 +925,7 @@ Het volgende is een overzicht van de soorten handtekeningen gebruikt door phpMus
 
 Voor het grootste deel, phpMussel is algemeen compatibel met de meeste andere anti-virus software. Echter, conflictions geweest beschreven door een aantal gebruikers in het verleden. Deze informatie hieronder is afkomstig van VirusTotal.com, het beschrijven van een aantal fout-positieven gemeld door anti-virus programma's tegen phpMussel. Hoewel deze informatie is geen absolute garantie van wel of niet u zult compatibiliteitsproblemen ondervindt tussen phpMussel en uw anti-virus software, als uw anti-virus software wordt gemarkeerd tegen phpMussel, moet u ofwel overwegen uit te schakelen voorafgaand aan het werken met phpMussel of moeten overwegen alternatieve opties om ofwel uw anti-virus software of phpMussel.
 
-Dit informatie werd laatst bijgewerkt 21 April 2016 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v0.10.0-v1.0.0) op het moment van schrijven dit.
+Dit informatie werd laatst bijgewerkt 4 Juli 2016 en is op de hoogte voor alle phpMussel publicaties van de twee meest recente mineur versies (v0.10.0-v1.0.0) op het moment van schrijven dit.
 
 | Scanner              |  Resultaten                          |
 |----------------------|--------------------------------------|
@@ -945,7 +945,7 @@ Dit informatie werd laatst bijgewerkt 21 April 2016 en is op de hoogte voor alle
 | Baidu                |  Berichten "VBS.Trojan.VBSWG.a"      |
 | Baidu-International  |  Geen bekend problemen               |
 | BitDefender          |  Geen bekend problemen               |
-| Bkav                 |  Berichten "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
+| Bkav                 |  Berichten "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell", "VEXEFFC.Webshell"|
 | ByteHero             |  Geen bekend problemen               |
 | CAT-QuickHeal        |  Geen bekend problemen               |
 | ClamAV               |  Geen bekend problemen               |
@@ -994,4 +994,4 @@ Dit informatie werd laatst bijgewerkt 21 April 2016 en is op de hoogte voor alle
 ---
 
 
-Laatste Bijgewerkt: 24 Juni 2016 (2016.06.24).
+Laatste Bijgewerkt: 4 Juli 2016 (2016.07.04).

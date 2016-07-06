@@ -267,8 +267,8 @@ Data | Deskripsi
 /_docs/readme.pt.md | Dokumentasi Bahasa Portugis.
 /_docs/readme.ru.md | Dokumentasi Bahasa Rusia.
 /_docs/readme.vi.md | Dokumentasi Bahasa Vietnam.
-/_docs/readme.zh-TW.md | Dokumentasi Cina Tradisional.
-/_docs/readme.zh.md | Dokumentasi Cina Sederhana.
+/_docs/readme.zh-TW.md | Dokumentasi Cina tradisional.
+/_docs/readme.zh.md | Dokumentasi Cina sederhana.
 /_testfiles/ | Direktori test file-file (berisi bermacam file). Semua file-file berisikan di dalamnya adalah file test untuk testing jika phpMussel dengan benar diinstal pada sistem, dan Anda tidak perlu mengupload direktori ini atau file-filenya jika melakukan testing.
 /_testfiles/ascii_standard_testfile.txt | File test untuk mentest tanda tangan ASCII dinormalisasi phpMussel.
 /_testfiles/coex_testfile.rtf | File test untuk mentest tanda tangan diperpanjang kompleks phpMussel.
@@ -309,8 +309,8 @@ Data | Deskripsi
 /vault/lang/lang.pt.php | File Bahasa Portugis.
 /vault/lang/lang.ru.php | File Bahasa Rusia.
 /vault/lang/lang.vi.php | File Bahasa Vietnam.
-/vault/lang/lang.zh-TW.php | File Bahasa Cina Tradisional.
-/vault/lang/lang.zh.php | File Bahasa Cina Sederhana.
+/vault/lang/lang.zh-TW.php | File Bahasa Cina tradisional.
+/vault/lang/lang.zh.php | File Bahasa Cina sederhana.
 /vault/phpmussel.ini | File konfigurasi phpMussel; Berisi semua opsi konfigurasi dari phpMussel, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (utama)!
 /vault/quarantine/ | Direktori karantina (berisikan file yang dikarantina).
 /vault/quarantine/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
@@ -925,7 +925,7 @@ Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
 
 Untuk banyak bagian, phpMussel seharusnya kompatibel dengan software pemindaian virus. Bagaimanapun konflik telah dilaporkan oleh penggunak di masa lalu. Informasi di bawah adalah dari virustotal.com, dan menguraikan sejumlah angka positif yang salah yang dilaporkan oleh bermacam-macam program anti-virus pada phpMussel. Walaupun informasi ini bukan jaminan absolut dari apakah Anda mengalami masalah kompatibilitas antara phpMussel dan perangkat anti-virus Anda, jika perangkat lunak anti-virus Anda tercatat berlawanan dengan phpMussel, Anda seharusnya mempertimbangkan menonaktifkannya bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke software anti virus atau phpMussel.
 
-Informasi ini diupdate 21 April 2016 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v0.10.0-v1.0.0) pada waktu saya menuliskan ini.
+Informasi ini diupdate 4 Juli 2016 dan cocok untuk semua rilis phpMussel dari dua versi minor terbaru versi (v0.10.0-v1.0.0) pada waktu saya menuliskan ini.
 
 | Scanner              |  Hasil                               |
 |----------------------|--------------------------------------|
@@ -945,7 +945,7 @@ Informasi ini diupdate 21 April 2016 dan cocok untuk semua rilis phpMussel dari 
 | Baidu                |  Melaporkan "VBS.Trojan.VBSWG.a"     |
 | Baidu-International  |  Tidak masalah                       |
 | BitDefender          |  Tidak masalah                       |
-| Bkav                 |  Melaporkan "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell"|
+| Bkav                 |  Melaporkan "VEXC640.Webshell", "VEXD737.Webshell", "VEX5824.Webshell", "VEXEFFC.Webshell"|
 | ByteHero             |  Tidak masalah                       |
 | CAT-QuickHeal        |  Tidak masalah                       |
 | ClamAV               |  Tidak masalah                       |
@@ -994,4 +994,4 @@ Informasi ini diupdate 21 April 2016 dan cocok untuk semua rilis phpMussel dari 
 ---
 
 
-Terakhir Diperbarui: 24 Juni 2016 (2016.06.24).
+Terakhir Diperbarui: 4 Juli 2016 (2016.07.04).

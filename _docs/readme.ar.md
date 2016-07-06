@@ -1145,7 +1145,7 @@
 
 <div dir="rtl">بالنسبة للجزء الأكبر، ينبغي أن يكون phpMussel متوافق إلى حد ما مع معظم برامج مكافحة و فحص الفيروسات الأخرى. مع ذلك، فقد تم الإبلاغ عن تعارضات من قبل عدد من المستخدمين في الماضي. وهذه المعلومات أدناه من VirusTotal.com، و توضح عدد من ايجابيات كاذبة (فحص خاطئ بوجود فايروس) ذكرت من قبل مختلف برامج مكافحة الفيروسات ضد phpMussel. على الرغم من أن هذه المعلومات ليست ضمانة مطلقة من أنك سوف تواجه أو لا مشاكل توافق بين phpMussel وبرنامج مكافحة الفيروسات الخاص بك، إذا لاحظ برنامج مكافحة الفيروسات الخاص بك ضعف تجاه phpMussel، يجب عليك إما النظر في تعطيله قبل العمل مع phpMussel أو أن تنظر في خيارات بديلة إما الخاصة ببرنامج مكافحة الفيروسات أو phpMussel.<br /><br /></div>
 
-<div dir="rtl">آخر تحديث لهذه المعلومات كان في 21 أبريل 2016، و هي كذلك الحالية للإصدارين الثانويين الذين تم إصدارهما مؤخرا (v0.10.0-v1.0.0) من phpMussel.<br /><br /></div>
+<div dir="rtl">آخر تحديث لهذه المعلومات كان في 4 يوليو 2016 و هي كذلك الحالية للإصدارين الثانويين الذين تم إصدارهما مؤخرا (v0.10.0-v1.0.0) من phpMussel.<br /><br /></div>
 
 برنامج فحص الفيروسات | النتيجة
 ----|----
@@ -1165,7 +1165,7 @@ AVware | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</di
 Baidu | <div dir="rtl" style="display:inline;">"VBS.Trojan.VBSWG.a" تقارير</div>
 Baidu-International | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 BitDefender | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Bkav | <div dir="rtl" style="display:inline;">"VEXC640.Webshell"، "VEXD737.Webshell"، "VEX5824.Webshell" تقارير</div>
+Bkav | <div dir="rtl" style="display:inline;">"VEXC640.Webshell"، "VEXD737.Webshell"، "VEX5824.Webshell"، "VEXEFFC.Webshell" تقارير</div>
 ByteHero | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 CAT-QuickHeal | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 ClamAV | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
@@ -1214,4 +1214,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 24 يونيو 2016 (2016.06.24).</div>
+<div dir="rtl">آخر تحديث: 4 يوليو 2016 (2016.07.04).</div>
