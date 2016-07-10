@@ -186,7 +186,10 @@ entries will be deleted when those goals have been achieved.
 
 - [2016.06.27; Bug-fix; Maikuolan]: Key value was being fetched from an
   incorrect array for $HookID by the plugin hooks (affected all hooks); Fixed.
+  Thanks to mtrefzer for spotting this. :-)
   Refer github.com/Maikuolan/phpMussel/issues/99
+
+- [2016.07.04-06; Signatures update; Maikuolan]: ClamAV main 57, daily 21811.
 
 ======
 

@@ -1,7 +1,7 @@
 ## Documentation for phpMussel (English).
 
 ### Contents
-- 1. [PRE-RAMBLE](#SECTION1)
+- 1. [PREAMBLE](#SECTION1)
 - 2A. [HOW TO INSTALL (FOR WEB SERVERS)](#SECTION2A)
 - 2B. [HOW TO INSTALL (FOR CLI)](#SECTION2B)
 - 3A. [HOW TO USE (FOR WEB SERVERS)](#SECTION3A)
@@ -16,7 +16,7 @@
 ---
 
 
-###1. <a name="SECTION1"></a>PRE-RAMBLE
+###1. <a name="SECTION1"></a>PREAMBLE
 
 Thank you for using phpMussel, a PHP script designed to detect trojans, viruses, malware and other threats within files uploaded to your system wherever the script is hooked, based on the signatures of ClamAV and others.
 
@@ -994,4 +994,4 @@ This information was last updated 4th July 2016 and is current for all phpMussel
 ---
 
 
-Last Updated: 4th July 2016 (2016.07.04).
+Last Updated: 4th July 2016 (2016.07.08).

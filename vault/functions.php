@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.06.27).
+ * This file: Functions file (last modified: 2016.07.05).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -1385,7 +1385,9 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
         return 401;
     }
     /** Count and prepare the URLs. */
-    $c = count($urls);
+    if (!$c = count($urls)) {
+        return 400;
+    }
     for ($i = 0; $i < $c; $i++) {
         $urls[$i] = array('url' => $urls[$i]);
     }
