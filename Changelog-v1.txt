@@ -28,11 +28,6 @@ entries will be deleted when those goals have been achieved.
 - Develop some general plugins for the phpMussel plugin system.
   Refer github.com/Maikuolan/phpMussel/issues/23
 
-- Audit all currently completed but not-yet-audited translations of the
-  phpMussel documentation and language data and work on new translations.
-  Refer github.com/Maikuolan/phpMussel/issues/3
-  Refer spambotsecurity.com/forum/viewtopic.php?f=57&t=2929
-
 - Fix client language bug.
   Refer github.com/Maikuolan/phpMussel/issues/28
 
@@ -172,7 +167,7 @@ entries will be deleted when those goals have been achieved.
 - [2016.06.11; Documentation; Maikuolan/Vy]: Completed translation of the
   documentation to Vietnamese. With this translation completed, the phpMussel
   documentation is now available in 13 fully completed translations.
-  
+
 - [2016.06.13; Minor code change; Maikuolan]: Updated the Google Safe Browsing
   API from v3.1 to v4; Did some more phpDoc work.
 
@@ -191,8 +186,12 @@ entries will be deleted when those goals have been achieved.
 
 - [2016.07.04-06; Signatures update; Maikuolan]: ClamAV main 57, daily 21811.
 
+- [2016.08.02; Documentation; Mie Shinohara]: Completed translation of the
+  documentation to Japanese. With this translation completed, the phpMussel
+  documentation is now available in 14 fully completed translations.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"
-file or in the "docs/change_log.txt" file (depending on which release version
-you're working from) from any release versions prior to v1.
+file or in the "_docs/change_log.txt" file from any release versions prior to
+v1 (depending on which release version you're working from).

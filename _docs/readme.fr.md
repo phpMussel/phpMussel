@@ -263,6 +263,7 @@ Fichier | Description
 /_docs/readme.fr.md | Documentation en Français.
 /_docs/readme.id.md | Documentation en Indonésien.
 /_docs/readme.it.md | Documentation en Italien.
+/_docs/readme.ja.md | Documentation en Japonaise.
 /_docs/readme.nl.md | Documentation en Néerlandais.
 /_docs/readme.pt.md | Documentation en Portugais.
 /_docs/readme.ru.md | Documentation en Russe.
@@ -994,4 +995,4 @@ Cette information a été réactualisé le 4 Juillet 2016 et est courant pour to
 ---
 
 
-Dernière Réactualisé: 4 Juillet 2016 (2016.07.04).
+Dernière Réactualisé: 2 Août 2016 (2016.08.02).

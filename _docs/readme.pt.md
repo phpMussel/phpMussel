@@ -263,6 +263,7 @@ Arquivo | Descrição
 /_docs/readme.fr.md | Documentação Francesa.
 /_docs/readme.id.md | Documentação Indonésio.
 /_docs/readme.it.md | Documentação Italiano.
+/_docs/readme.ja.md | Documentação Japonesa.
 /_docs/readme.nl.md | Documentação Holandês.
 /_docs/readme.pt.md | Documentação Português.
 /_docs/readme.ru.md | Documentação Russo.
@@ -994,4 +995,4 @@ Esta informação foi atualizada dia 4 Julho 2016 e é corrente para todas phpMu
 ---
 
 
-Última Atualização: 4 Julho 2016 (2016.07.04).
+Última Atualização: 2 Agosto 2016 (2016.08.02).

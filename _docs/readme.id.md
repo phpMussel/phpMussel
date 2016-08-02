@@ -263,6 +263,7 @@ Data | Deskripsi
 /_docs/readme.fr.md | Dokumentasi Bahasa Perancis.
 /_docs/readme.id.md | Dokumentasi Bahasa Indonesia.
 /_docs/readme.it.md | Dokumentasi Bahasa Italia.
+/_docs/readme.ja.md | Dokumentasi Bahasa Jepang.
 /_docs/readme.nl.md | Dokumentasi Bahasa Belanda.
 /_docs/readme.pt.md | Dokumentasi Bahasa Portugis.
 /_docs/readme.ru.md | Dokumentasi Bahasa Rusia.
@@ -994,4 +995,4 @@ Informasi ini diupdate 4 Juli 2016 dan cocok untuk semua rilis phpMussel dari du
 ---
 
 
-Terakhir Diperbarui: 4 Juli 2016 (2016.07.04).
+Terakhir Diperbarui: 2 Agustus 2016 (2016.08.02).

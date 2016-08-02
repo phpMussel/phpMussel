@@ -305,6 +305,7 @@
 <div dir="rtl" style="display:inline;">الوثائق الفرنسية.</div> | /_docs/readme.fr.md
 <div dir="rtl" style="display:inline;">الوثائق الاندونيسية.</div> | /_docs/readme.id.md
 <div dir="rtl" style="display:inline;">الوثائق الايطالية.</div> | /_docs/readme.it.md
+<div dir="rtl" style="display:inline;">الوثائق اليابانية.</div> | /_docs/readme.ja.md
 <div dir="rtl" style="display:inline;">الوثائق الهولندية.</div> | /_docs/readme.nl.md
 <div dir="rtl" style="display:inline;">الوثائق البرتغالية.</div> | /_docs/readme.pt.md
 <div dir="rtl" style="display:inline;">الوثائق الروسية.</div> | /_docs/readme.ru.md
@@ -1215,4 +1216,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 4 يوليو 2016 (2016.07.04).</div>
+<div dir="rtl">آخر تحديث: 2 أغسطس 2016 (2016.08.02).</div>

@@ -263,6 +263,7 @@ Archivo | Descripción
 /_docs/readme.fr.md | Documentación Francés.
 /_docs/readme.id.md | Documentación Indonesio.
 /_docs/readme.it.md | Documentación Italiano.
+/_docs/readme.ja.md | Documentación Japonés.
 /_docs/readme.nl.md | Documentación Holandés.
 /_docs/readme.pt.md | Documentación Portugués.
 /_docs/readme.ru.md | Documentación Ruso.
@@ -993,4 +994,4 @@ Esta información ha sido actualizado 4 Julio 2016 y es a hoy para todas las php
 ---
 
 
-Última Actualización: 4 Julio 2016 (2016.07.04).
+Última Actualización: 2 Agosto 2016 (2016.08.02).

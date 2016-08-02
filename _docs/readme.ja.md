@@ -23,16 +23,16 @@ phpMussel（ピー・エイチ・ピー・マッスル）をご利用頂き、�
 PHPMUSSEL著作権2013とGNU一般公衆ライセンスv2を超える権利について: Caleb M (Maikuolan)著。
 
 本スクリプトはフリーウェアです。フリーソフトウェア財団発行のGNU一般公衆ライセンス・バージョン２（またはそれ以降のバージョン）に従い、再配布ならびに加工が可能です。配布の目的は、役に立つことを願ってのものですが、『保証はなく、また商品性や特定の目的に適合するのを示唆するものでもありません』。"LICENSE.txt" にあるGNU General Public License（一般ライセンス）を参照して下さい。 以下のURLからも閲覧できます：
-- <http://www.gnu.org/licenses/>.
-- <http://opensource.org/licenses/>.
+- <http://www.gnu.org/licenses/>。
+- <http://opensource.org/licenses/>。
 
 作成のインスピレーションと本スクリプトが利用する署名（シグニチャ）について[ClamAV](http://www.clamav.net/)に感謝の意を表したいと思います。この２つがなければ、本スクリプトは存在しえないか、あるいは極めて限られた利用価値しかもたないと言ってよいでしょう。
 
 本プロジェクトファイルのホスト先であるSourceforgeとGitHub、 phpMusselのディスカッションフォーラムのホスト先である[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)、 phpMusselが利用する署名（シグニチャ）の提供先である: [SecuriteInfo.com](http://www.securiteinfo.com/)、 [PhishTank](http://www.phishtank.com/)、 [NLNetLabs](http://nlnetlabs.nl/) 他、 本プロジェクトを支援して下さった全ての方々に感謝の意を表したいと思います。
 
 本ドキュメントならびに関連パッケージは以下のURLからダウンロードできます。
-- [Sourceforge](http://phpmussel.sourceforge.net/).
-- [GitHub](https://github.com/Maikuolan/phpMussel/).
+- [Sourceforge](http://phpmussel.sourceforge.net/)。
+- [GitHub](https://github.com/Maikuolan/phpMussel/)。
 
 ---
 
@@ -43,13 +43,13 @@ PHPMUSSEL著作権2013とGNU一般公衆ライセンスv2を超える権利に�
 
 1) 本項を読んでいるということから、アーカイブ・スクリプトのローカルマシンへのダウンロードと解凍は終了していると考えます。ホストあるいはCMSに`/public_html/phpmussel/`のようなディレクトリを作り、ローカルマシンからそこにコンテンツをアップロードするのが次のステップです。アップロード先のディレクトリ名や場所については、安全でさえあれば、もちろん制約などはありませんので、自由に決めて下さい。
 
-2) オプションの修正のため（初心者には推奨できませんが、経験が豊富なユーザーには強く推奨します。）`vault`内の`phpmussel.ini`を開いて下さい。本ファイルはphpMusselが利用可能なディレクティブを含んでおり、それぞれのオプションについての機能と目的に関した簡単な説明があります。セットアップ環境にあわせて、適当な修正を行いファイルを保存して下さい。
+2) オプションの修正のため（初心者には推奨できませんが、経験が豊富なユーザーには強く推奨します）。`vault`内の`phpmussel.ini`を開いて下さい。本ファイルはphpMusselが利用可能なディレクティブを含んでおり、それぞれのオプションについての機能と目的に関した簡単な説明があります。セットアップ環境にあわせて、適当な修正を行いファイルを保存して下さい。
 
-3) コンテンツ（phpMussel本体とファイル）を先に定めたディレクトリにアップロードします。（`*.txt`や`*.md`ファイルはアップロードの必要はありませんが、大抵は全てをアップロードしてもらって構いません。）
+3) コンテンツ（phpMussel本体とファイル）を先に定めたディレクトリにアップロードします。（`*.txt`や`*.md`ファイルはアップロードの必要はありませんが、大抵は全てをアップロードしてもらって構いません）。
 
-4) `vault`ディレクトリは`777`にアクセス権変更します。コンテンツをアップロードしたディレクトリそのものは、通常特に何もする必要ありませんが、過去にパーミッションで問題があった場合、CHMODのステータスは確認しておくと良いでしょう。（デフォルトでは`755`が一般的です。）
+4) `vault`ディレクトリは`777`にアクセス権変更します。コンテンツをアップロードしたディレクトリそのものは、通常特に何もする必要ありませんが、過去にパーミッションで問題があった場合、CHMODのステータスは確認しておくと良いでしょう。（デフォルトでは`755`が一般的です）。
 
-5) 次に、システム内あるいはCMSにphpMusselをフックします。方法はいくつかありますが、最も容易なのは、`require`や`include`でスクリプトをシステム内／CMCのコアファイルの最初の部分に記載する方法です。（コアファイルとは、サイト内のどのページにアクセスがあっても必ずロードされるファイルのことです。）一般的には、`/includes`や`/assets`や`/functions`のようなディレクトリ内のファイルで、`init.php`、`common_functions.php`、`functions.php`といったファイル名が付けられています。実際にどのファイルなのかは、見つけてもうらう必要があります。よく分からない場合は、phpMusselサポートフォーラムを参照するか、あるいはお知らせください（CMS情報必須）。私自身を含め、ユーザーの中に類似のCMSを扱った経験があれば、何かしらのサポートを提供できます。コアファイルが見つかったなら、[`require`か`include`を使って]以下のコードをファイルの先頭に挿入して下さい。ただし、クォーテーションマークで囲まれた部分は`phpmussel.php`ファイルの正確なアドレス（HTTPアドレスでなく、ローカルなアドレス。前述のvaultのアドレスに類似）に置き換えます。
+5) 次に、システム内あるいはCMSにphpMusselをフックします。方法はいくつかありますが、最も容易なのは、`require`や`include`でスクリプトをシステム内／CMCのコアファイルの最初の部分に記載する方法です。（コアファイルとは、サイト内のどのページにアクセスがあっても必ずロードされるファイルのことです）。一般的には、`/includes`や`/assets`や`/functions`のようなディレクトリ内のファイルで、`init.php`、`common_functions.php`、`functions.php`といったファイル名が付けられています。実際にどのファイルなのかは、見つけてもうらう必要があります。よく分からない場合は、phpMusselサポートフォーラムを参照するか、あるいはお知らせください（CMS情報必須）。私自身を含め、ユーザーの中に類似のCMSを扱った経験があれば、何かしらのサポートを提供できます。コアファイルが見つかったなら、「`require`か`include`を使って」以下のコードをファイルの先頭に挿入して下さい。ただし、クォーテーションマークで囲まれた部分は`phpmussel.php`ファイルの正確なアドレス（HTTPアドレスでなく、ローカルなアドレス。前述のvaultのアドレスに類似）に置き換えます。
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
@@ -72,13 +72,13 @@ Apacheウェブサーバーを利用していて、かつ`php.ini`を編集で�
 
 ###2B. <a name="SECTION2B"></a>インストール方法（CLI編）
 
-近い将来にはインストーラーを作成しインストールの簡素化を図りたいと考えていますが、現状では以下のインストラクションに従ってphpMusselをインストールして下さい。（現段階ではウィンドウズベースのCLIのみサポートされています。Linuxおよび他のシステムは以降のバージョンにてサポートされる予定しています。）
+近い将来にはインストーラーを作成しインストールの簡素化を図りたいと考えていますが、現状では以下のインストラクションに従ってphpMusselをインストールして下さい。（現段階ではウィンドウズベースのCLIのみサポートされています。Linuxおよび他のシステムは以降のバージョンにてサポートされる予定しています）。
 
 1) 本項を読んでいるということから、アーカイブ・スクリプトのローカルマシンへのダウンロードと解凍は終了していると考えます。phpmusselの保存場所が決まったら、次へ進んで下さい。
 
 2) phpMusselを使うには、PHPがホストマシンにインストールされている必要があります。もし、まだであれば、各種PHPインストーラーのどれを使っても構いませんので、インストールして下さい。
 
-3) オプションの修正のため（初心者には推奨できませんが、経験が豊富なユーザーには強く推奨します。）`vault`内の`phpmussel.ini`を開いて下さい。本ファイルはphpMusselが利用可能なディレクティブを含んでおり、それぞれのオプションについての機能と目的に関した簡単な説明があります。セットアップ環境にあわせて、適当な修正を行いファイルを保存して下さい。
+3) オプションの修正のため（初心者には推奨できませんが、経験が豊富なユーザーには強く推奨します）。`vault`内の`phpmussel.ini`を開いて下さい。本ファイルはphpMusselが利用可能なディレクティブを含んでおり、それぞれのオプションについての機能と目的に関した簡単な説明があります。セットアップ環境にあわせて、適当な修正を行いファイルを保存して下さい。
 
 4) オプションですが、バッチファイルを作成することにより、phpMusselのCLIモードでの使用を容易にすることができます。バッチファイルはPHPとphpMusselを自動的にロードするものです。まず、Notepadか Notepad++のようなテキストエディタを開いて下さい。そして、インストールしたPHPの`php.exe`の絶対パス、半角スペース、`phpmussel.php`の絶対パスをタイプして、拡張子".bat"でファイルを目につくところに保存します。このファイルをダブルクリックすることでphpMusselを起動することができます。
 
@@ -98,8 +98,8 @@ phpMusselは特別な使用環境を必要としないスクリプトです。�
 `$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
 - `$what_to_scan` には、文字列あるいは（多次元）配列を代入することができます。どのファイル（一つないしは複数）あるいはディレクトリ（一つないしは複数）をスキャンすべきか指定します。
-- `$output_type` はブーレアンで、スキャン結果のフォーマットを指定できます。Falseは結果を整数型で返します（-3は、phpMusselの署名ファイルか署名マップがない、もしくは破損している可能性があることを示しています。-2はスキャン中に破損データを検出したためスキャン失敗、-1はPHPがスキャンに必要な拡張子あるいはアドオンがないためにスキャン失敗、0はスキャンの対象が存在しないこと、１は対象のスキャンを完了しかつ問題がないこと、２は対象のスキャンを完了しかつ問題を検出したことを意味します）。True（真）は結果をテキスト形式で返します。どちらを選択しても、スキャン後にグローバル変数によって結果にアクセスすることが可能です。$output_typeはオプションでデフォルト設定はFalse（偽）になっています。
-- `$output_flatness` はブーレアンで、スキャン結果を配列で返すか、文字列で返すかを指定します（対象が複数の場合）。False（偽）は配列、True（真）は文字列での返り値となります。`$output_flatness`はオプションでデフォルト設定はFalse（偽）です。
+- `$output_type` はブーレアンで、スキャン結果のフォーマットを指定できます。Falseは結果を整数型で返します（-3は、phpMusselの署名ファイルか署名マップがない、もしくは破損している可能性があることを示しています。-2はスキャン中に破損データを検出したためスキャン失敗、-1はPHPがスキャンに必要な拡張子あるいはアドオンがないためにスキャン失敗、0はスキャンの対象が存在しないこと、１は対象のスキャンを完了しかつ問題がないこと、２は対象のスキャンを完了しかつ問題を検出したことを意味します）。`true`（真）は結果をテキスト形式で返します。どちらを選択しても、スキャン後にグローバル変数によって結果にアクセスすることが可能です。$output_typeはオプションでデフォルト設定は`false`（偽）になっています。
+- `$output_flatness` はブーレアンで、スキャン結果を配列で返すか、文字列で返すかを指定します（対象が複数の場合）。`false`（偽）は配列、`true`（真）は文字列での返り値となります。`$output_flatness`はオプションでデフォルト設定は`false`（偽）です。
 
 例:
 
@@ -130,7 +130,7 @@ phpMusselに含まれる署名を無効にするには、本READMEファイル�
 
 本READMEファイルのインストール方法（CLI編）を参照して下さい。
 
-将来的にはウィンドウズベース以外のシステムもサポートする予定ですが、現バージョンのphpMussel CLIモードではウィンドウズベースのみです。（試して頂いたくことに問題はありません。ただ期待通りの機能を保証することはできない旨ご了承下さい。）
+将来的にはウィンドウズベース以外のシステムもサポートする予定ですが、現バージョンのphpMussel CLIモードではウィンドウズベースのみです。（試して頂いたくことに問題はありません。ただ期待通りの機能を保証することはできない旨ご了承下さい）。
 
 なお、phpMusselを通常のウィルスソフトと混同しないで下さい。アクティブメモリーを監視してウィルスを即時検出するものではありません。指定されたファイルのみをスキャンし、含まれるウィルスを検出します。
 
@@ -139,7 +139,7 @@ phpMusselに含まれる署名を無効にするには、本READMEファイル�
 
 ###4A. <a name="SECTION4A"></a>ブラウザ・コマンド
 
-phpMusselがシステムに適切にインストールされ機能し、かつ設定ファイル内に`script_password`（スクリプト＿パスワード）と`logs_password`（ログ＿パスワード）が設定されていれば、いくつかの管理機能、ならびにブラウザを介したコマンドを実行することができます。ブラウザでのコントロールにパスワードが必要な理由は、セキュリティー面は当然のこと、phpMusselのユーザー（ウェブマスターや管理者を含む）が、必要とあれば、この機能を無効にできるようにするためです。言い換えれば、これらのコントロールを有効にするためにはパスワードを設定する、無効にするにはパスワードを設定しないということです。また、当初は有効であったが後日無効にする場合には、コマンドから行うこともできます（パスワード保護の面から早急に無効にする必要性が生じた時などに、設定ファイルを編集することなく、無効に変更できます）。
+phpMusselがシステムに適切にインストールされ機能し、かつ設定ファイル内に`script_password`（スクリプト・パスワード）と`logs_password`（ログ・パスワード）が設定されていれば、いくつかの管理機能、ならびにブラウザを介したコマンドを実行することができます。ブラウザでのコントロールにパスワードが必要な理由は、セキュリティー面は当然のこと、phpMusselのユーザー（ウェブマスターや管理者を含む）が、必要とあれば、この機能を無効にできるようにするためです。言い換えれば、これらのコントロールを有効にするためにはパスワードを設定する、無効にするにはパスワードを設定しないということです。また、当初は有効であったが後日無効にする場合には、コマンドから行うこともできます（パスワード保護の面から早急に無効にする必要性が生じた時などに、設定ファイルを編集することなく、無効に変更できます）。
 
 このコントロールを有効にすべき理由としては:
 - ファイルをアップロード中に誤検出の原因となる署名を発見したものの、グレーリスト・ファイルを編集し再アップロードするような時間がない場合でも、署名を迅速にグレーリスト化できる。
@@ -156,7 +156,7 @@ phpMusselがシステムに適切にインストールされ機能し、かつ�
 利用可能なブラウザ側コマンド:
 
 scan_log
-- 必須パスワード: `logs_password`（ログ＿パスワード）
+- 必須パスワード: `logs_password`（ログ・パスワード）
 - その他: `scan_log`は必須。
 - 必須パラメータ: なし
 - オプション・パラメータ: なし
@@ -164,7 +164,7 @@ scan_log
 - 機能: `scan_log`ファイルの内容がスクリーンに表示されます。
 
 scan_log_serialized
-- 必須パスワード: `logs_password`（ログ＿パスワード）
+- 必須パスワード: `logs_password`（ログ・パスワード）
 - その他: `scan_log_serialized`は必須。
 - 必須パラメータ: なし
 - オプション・パラメータ: なし
@@ -172,7 +172,7 @@ scan_log_serialized
 - 機能: `scan_log_serialized`ファイルの内容がスクリーンに表示されます。
 
 scan_kills
-- 必須パスワード: `logs_password`（ログ＿パスワード）
+- 必須パスワード: `logs_password`（ログ・パスワード）
 - その他: `scan_kills`は必須。
 - 必須パラメータ: なし
 - オプション・パラメータ: なし
@@ -180,16 +180,16 @@ scan_kills
 - 機能: `scan_kills`ファイルの内容がスクリーンに表示されます。
 
 controls_lockout
-- 必須パスワード: `logs_password`（ログ＿パスワード）または`script_password`（スクリプト＿パスワード）
+- 必須パスワード: `logs_password`（ログ・パスワード）または`script_password`（スクリプト・パスワード）
 - その他: なし
 - 必須パラメータ: なし
 - オプション・パラメータ: なし
 - 例１: `?logspword=[logs_password]&phpmussel=controls_lockout`
 - 例２: `?pword=[script_password]&phpmussel=controls_lockout`
-- 機能: ブラウザからのコントロールを無効（ロックアウト）にします。パスワードの不正利用の疑い（セキュリティー面に問題があるコンピュータでブラウザコントロールを使用した場合に起こりえます。）がある時に使用して下さい。`controls_lockout`（コントロールズ＿ロックアウト）が機能すると、`vault`（ヴォルト）内に`controls.lck`ファイルが作成され、phpMusselはコマンドを実行する前に必ずそのファイルをチェックするようになります。コントロールを再び有効にするためには`controls.lck`ファイルをFTP類を介して削除しなければなりません。いずれのパスワードを使っても呼び出すことができます。
+- 機能: ブラウザからのコントロールを無効（ロックアウト）にします。パスワードの不正利用の疑い（セキュリティー面に問題があるコンピュータでブラウザコントロールを使用した場合に起こりえます）。がある時に使用して下さい。`controls_lockout`（コントロールズ・ロックアウト）が機能すると、`vault`（ヴォルト）内に`controls.lck`ファイルが作成され、phpMusselはコマンドを実行する前に必ずそのファイルをチェックするようになります。コントロールを再び有効にするためには`controls.lck`ファイルをFTP類を介して削除しなければなりません。いずれのパスワードを使っても呼び出すことができます。
 
 disable
-- 必須パスワード: `script_password`（スクリプト＿パスワード）
+- 必須パスワード: `script_password`（スクリプト・パスワード）
 - その他: なし
 - 必須パラメータ: なし
 - オプション・パラメータ: なし
@@ -197,7 +197,7 @@ disable
 - 機能: phpMusselを無効にします。システムアップデートや変更、新しいソフトウェアやモデュールのインストールなどは、誤検出を引き起こす危険性がありますので、一時的に無効にします。phpMusselが期待通りに機能しないものの、アンインストールはしたくない場合にも無効を使用するとよいでしょう。再び有効にするには、`enable`（有効）を使用します。
 
 enable
-- 必須パスワード: `script_password`（スクリプト＿パスワード）
+- 必須パスワード: `script_password`（スクリプト・パスワード）
 - その他: なし
 - 必須パラメータ: なし
 - オプション・パラメータ: なし
@@ -205,15 +205,15 @@ enable
 - 機能: phpMusselを有効にします。無効の状態にあるphpMusselを再び有効に戻す時に使用します。
 
 greylist （グレーリスト）
-- 必須パスワード: `script_password`（スクリプト＿パスワード）
+- 必須パスワード: `script_password`（スクリプト・パスワード）
 - その他: なし
-- 必須パラメータ: [グレーリスト化される署名の名前]
+- 必須パラメータ: 「グレーリスト化される署名の名前」
 - オプション・パラメータ: なし
 - 例: `?pword=[script_password]&phpmussel=greylist&musselvar=[署名]`
 - 機能: グレーリストに署名を追加します。
 
 greylist_clear （グレーリストクリア）
-- 必須パスワード: `script_password`（スクリプト＿パスワード）
+- 必須パスワード: `script_password`（スクリプト・パスワード）
 - その他: なし
 - 必須パラメータ: なし
 - オプション・パラメータ: なし
@@ -221,7 +221,7 @@ greylist_clear （グレーリストクリア）
 - 機能: 全グレイリストをクリアします。
 
 greylist_show （グレイリストショー）
-- 必須パスワード: `script_password`（スクリプト＿パスワード）
+- 必須パスワード: `script_password`（スクリプト・パスワード）
 - その他: なし
 - 必須パラメータ: なし
 - オプション・パラメータ: なし
@@ -244,404 +244,407 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 
 以下はアーカイブから一括ダウンロードされるファイルのリスト、ならびにスクリプト使用により作成されるファイルとこれらのファイルが何のためかという簡単な説明です。
 
-File | Description
+ファイル | 説明
 ----|----
-/.gitattributes | A GitHub project file (not required for proper function of script).
-/Changelog-v1.txt | A record of changes made to the script between different versions (not required for proper function of script).
-/composer.json | Composer/Packagist information (not required for proper function of script).
-/CONTRIBUTING.md | Information about how to contribute to the project.
-/LICENSE.txt | A copy of the GNU/GPLv2 license.
-/PEOPLE.md | Information about the people involved in the project.
-/phpmussel.php | The loader. This is what you're supposed to be hooking into (essential)!
-/README.md | Project summary information.
-/web.config | An ASP.NET configuration file (in this instance, to protect the `/vault` directory from being accessed by non-authorised sources in the event that the script is installed on a server based upon ASP.NET technologies).
-/_docs/ | Documentation directory (contains various files).
-/_docs/readme.ar.md | Arabic documentation.
-/_docs/readme.de.md | German documentation.
-/_docs/readme.en.md | English documentation.
-/_docs/readme.es.md | Spanish documentation.
-/_docs/readme.fr.md | French documentation.
-/_docs/readme.id.md | Indonesian documentation.
-/_docs/readme.it.md | Italian documentation.
-/_docs/readme.nl.md | Dutch documentation.
-/_docs/readme.pt.md | Portuguese documentation.
-/_docs/readme.ru.md | Russian documentation.
-/_docs/readme.vi.md | Vietnamese documentation.
-/_docs/readme.zh-TW.md | Chinese (traditional) documentation.
-/_docs/readme.zh.md | Chinese (simplified) documentation.
-/_testfiles/ | Testfiles directory (contains various files). All contained files are testfiles for testing if phpMussel was correctly installed on your system, and you don't need to upload this directory or any of its files except when doing such testing.
-/_testfiles/ascii_standard_testfile.txt | Testfile for testing phpMussel normalised ASCII signatures.
-/_testfiles/coex_testfile.rtf | Testfile for testing phpMussel Complex Extended signatures.
-/_testfiles/exe_standard_testfile.exe | Testfile for testing phpMussel PE signatures.
-/_testfiles/general_standard_testfile.txt | Testfile for testing phpMussel general signatures.
-/_testfiles/graphics_standard_testfile.gif | Testfile for testing phpMussel graphics signatures.
-/_testfiles/html_standard_testfile.html | Testfile for testing phpMussel normalised HTML signatures.
-/_testfiles/md5_testfile.txt | Testfile for testing phpMussel MD5 signatures.
-/_testfiles/metadata_testfile.tar | Testfile for testing phpMussel metadata signatures and for testing TAR file support on your system.
-/_testfiles/metadata_testfile.txt.gz | Testfile for testing phpMussel metadata signatures and for testing GZ file support on your system.
-/_testfiles/metadata_testfile.zip | Testfile for testing phpMussel metadata signatures and for testing ZIP file support on your system.
-/_testfiles/ole_testfile.ole | Testfile for testing phpMussel OLE signatures.
-/_testfiles/pdf_standard_testfile.pdf | Testfile for testing phpMussel PDF signatures.
-/_testfiles/pe_sectional_testfile.exe | Testfile for testing phpMussel PE Sectional signatures.
-/_testfiles/swf_standard_testfile.swf | Testfile for testing phpMussel SWF signatures.
-/_testfiles/xdp_standard_testfile.xdp | Testfile for testing phpMussel XML/XDP signatures.
-/vault/ | Vault directory (contains various files).
-/vault/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/cache/ | Cache directory (for temporary data).
-/vault/cache/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/cli.php | CLI handler.
-/vault/config.php | Configuration handler.
-/vault/controls.php | Controls handler.
-/vault/functions.php | Functions file (essential).
-/vault/greylist.csv | CSV of greylisted signatures indicating to phpMussel which signatures it should be ignoring (file automatically recreated if deleted).
-/vault/lang.php | Language handler.
-/vault/lang/ | Contains phpMussel language data.
-/vault/lang/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/lang/lang.ar.php | Arabic language data.
-/vault/lang/lang.de.php | German language data.
-/vault/lang/lang.en.php | English language data.
-/vault/lang/lang.es.php | Spanish language data.
-/vault/lang/lang.fr.php | French language data.
-/vault/lang/lang.id.php | Indonesian language data.
-/vault/lang/lang.it.php | Italian language data.
-/vault/lang/lang.ja.php | Japanese language data.
-/vault/lang/lang.nl.php | Dutch language data.
-/vault/lang/lang.pt.php | Portuguese language data.
-/vault/lang/lang.ru.php | Russian language data.
-/vault/lang/lang.vi.php | Vietnamese language data.
-/vault/lang/lang.zh-TW.php | Chinese (traditional) language data.
-/vault/lang/lang.zh.php | Chinese (simplified) language data.
-/vault/phpmussel.ini | Configuration file; Contains all the 設定オプション of phpMussel, telling it what to do and how to operate correctly (essential)!
-/vault/quarantine/ | Quarantine directory (contains quarantined files).
-/vault/quarantine/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-※ /vault/scan_kills.txt | A record of every file upload blocked/killed by phpMussel.
-※ /vault/scan_log.txt | A record of everything scanned by phpMussel.
-※ /vault/scan_log_serialized.txt | A record of everything scanned by phpMussel.
-/vault/signatures/ | Signatures directory (contains signature files).
-/vault/signatures/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
-/vault/signatures/ascii_clamav_regex.cvd | File for normalised ASCII signatures.
-/vault/signatures/ascii_clamav_regex.map | File for normalised ASCII signatures.
-/vault/signatures/ascii_clamav_standard.cvd | File for normalised ASCII signatures.
-/vault/signatures/ascii_clamav_standard.map | File for normalised ASCII signatures.
-/vault/signatures/ascii_custom_regex.cvd | File for normalised ASCII signatures.
-/vault/signatures/ascii_custom_standard.cvd | File for normalised ASCII signatures.
-/vault/signatures/ascii_mussel_regex.cvd | File for normalised ASCII signatures.
-/vault/signatures/ascii_mussel_standard.cvd | File for normalised ASCII signatures.
-/vault/signatures/coex_clamav.cvd | File for complex extended signatures.
-/vault/signatures/coex_custom.cvd | File for complex extended signatures.
-/vault/signatures/coex_mussel.cvd | File for complex extended signatures.
-/vault/signatures/elf_clamav_regex.cvd | File for ELF signatures.
-/vault/signatures/elf_clamav_regex.map | File for ELF signatures.
-/vault/signatures/elf_clamav_standard.cvd | File for ELF signatures.
-/vault/signatures/elf_clamav_standard.map | File for ELF signatures.
-/vault/signatures/elf_custom_regex.cvd | File for ELF signatures.
-/vault/signatures/elf_custom_standard.cvd | File for ELF signatures.
-/vault/signatures/elf_mussel_regex.cvd | File for ELF signatures.
-/vault/signatures/elf_mussel_standard.cvd | File for ELF signatures.
-/vault/signatures/exe_clamav_regex.cvd | File for PE (Portable Executable) signatures.
-/vault/signatures/exe_clamav_regex.map | File for PE (Portable Executable) signatures.
-/vault/signatures/exe_clamav_standard.cvd | File for PE (Portable Executable) signatures.
-/vault/signatures/exe_clamav_standard.map | File for PE (Portable Executable) signatures.
-/vault/signatures/exe_custom_regex.cvd | File for PE (Portable Executable) signatures.
-/vault/signatures/exe_custom_standard.cvd | File for PE (Portable Executable) signatures.
-/vault/signatures/exe_mussel_regex.cvd | File for PE (Portable Executable) signatures.
-/vault/signatures/exe_mussel_standard.cvd | File for PE (Portable Executable) signatures.
-/vault/signatures/filenames_clamav.cvd | File for filename signatures.
-/vault/signatures/filenames_custom.cvd | File for filename signatures.
-/vault/signatures/filenames_mussel.cvd | File for filename signatures.
-/vault/signatures/general_clamav_regex.cvd | File for general signatures.
-/vault/signatures/general_clamav_regex.map | File for general signatures.
-/vault/signatures/general_clamav_standard.cvd | File for general signatures.
-/vault/signatures/general_clamav_standard.map | File for general signatures.
-/vault/signatures/general_custom_regex.cvd | File for general signatures.
-/vault/signatures/general_custom_standard.cvd | File for general signatures.
-/vault/signatures/general_mussel_regex.cvd | File for general signatures.
-/vault/signatures/general_mussel_standard.cvd | File for general signatures.
-/vault/signatures/graphics_clamav_regex.cvd | File for graphics signatures.
-/vault/signatures/graphics_clamav_regex.map | File for graphics signatures.
-/vault/signatures/graphics_clamav_standard.cvd | File for graphics signatures.
-/vault/signatures/graphics_clamav_standard.map | File for graphics signatures.
-/vault/signatures/graphics_custom_regex.cvd | File for graphics signatures.
-/vault/signatures/graphics_custom_standard.cvd | File for graphics signatures.
-/vault/signatures/graphics_mussel_regex.cvd | File for graphics signatures.
-/vault/signatures/graphics_mussel_standard.cvd | File for graphics signatures.
-/vault/signatures/hex_general_commands.csv | Hex-encoded CSV of general command detections optionally used by phpMussel.
-/vault/signatures/html_clamav_regex.cvd | File for normalised HTML signatures.
-/vault/signatures/html_clamav_regex.map | File for normalised HTML signatures.
-/vault/signatures/html_clamav_standard.cvd | File for normalised HTML signatures.
-/vault/signatures/html_clamav_standard.map | File for normalised HTML signatures.
-/vault/signatures/html_custom_regex.cvd | File for normalised HTML signatures.
-/vault/signatures/html_custom_standard.cvd | File for normalised HTML signatures.
-/vault/signatures/html_mussel_regex.cvd | File for normalised HTML signatures.
-/vault/signatures/html_mussel_standard.cvd | File for normalised HTML signatures.
-/vault/signatures/macho_clamav_regex.cvd | File for Mach-O signatures.
-/vault/signatures/macho_clamav_regex.map | File for Mach-O signatures.
-/vault/signatures/macho_clamav_standard.cvd | File for Mach-O signatures.
-/vault/signatures/macho_clamav_standard.map | File for Mach-O signatures.
-/vault/signatures/macho_custom_regex.cvd | File for Mach-O signatures.
-/vault/signatures/macho_custom_standard.cvd | File for Mach-O signatures.
-/vault/signatures/macho_mussel_regex.cvd | File for Mach-O signatures.
-/vault/signatures/macho_mussel_standard.cvd | File for Mach-O signatures.
-/vault/signatures/mail_clamav_regex.cvd | File for mail signatures.
-/vault/signatures/mail_clamav_regex.map | File for mail signatures.
-/vault/signatures/mail_clamav_standard.cvd | File for mail signatures.
-/vault/signatures/mail_clamav_standard.map | File for mail signatures.
-/vault/signatures/mail_custom_regex.cvd | File for mail signatures.
-/vault/signatures/mail_custom_standard.cvd | File for mail signatures.
-/vault/signatures/mail_mussel_regex.cvd | File for mail signatures.
-/vault/signatures/mail_mussel_standard.cvd | File for mail signatures.
-/vault/signatures/md5_clamav.cvd | File for MD5 based signatures.
-/vault/signatures/md5_custom.cvd | File for MD5 based signatures.
-/vault/signatures/md5_mussel.cvd | File for MD5 based signatures.
-/vault/signatures/metadata_clamav.cvd | File for archive metadata signatures.
-/vault/signatures/metadata_custom.cvd | File for archive metadata signatures.
-/vault/signatures/metadata_mussel.cvd | File for archive metadata signatures.
-/vault/signatures/ole_clamav_regex.cvd | File for OLE signatures.
-/vault/signatures/ole_clamav_regex.map | File for OLE signatures.
-/vault/signatures/ole_clamav_standard.cvd | File for OLE signatures.
-/vault/signatures/ole_clamav_standard.map | File for OLE signatures.
-/vault/signatures/ole_custom_regex.cvd | File for OLE signatures.
-/vault/signatures/ole_custom_standard.cvd | File for OLE signatures.
-/vault/signatures/ole_mussel_regex.cvd | File for OLE signatures.
-/vault/signatures/ole_mussel_standard.cvd | File for OLE signatures.
-/vault/signatures/pdf_clamav_regex.cvd | File for PDF signatures.
-/vault/signatures/pdf_clamav_regex.map | File for PDF signatures.
-/vault/signatures/pdf_clamav_standard.cvd | File for PDF signatures.
-/vault/signatures/pdf_clamav_standard.map | File for PDF signatures.
-/vault/signatures/pdf_custom_regex.cvd | File for PDF signatures.
-/vault/signatures/pdf_custom_standard.cvd | File for PDF signatures.
-/vault/signatures/pdf_mussel_regex.cvd | File for PDF signatures.
-/vault/signatures/pdf_mussel_standard.cvd | File for PDF signatures.
-/vault/signatures/pex_custom.cvd | File for PE extended signatures.
-/vault/signatures/pex_mussel.cvd | File for PE extended signatures.
-/vault/signatures/pe_clamav.cvd | File for PE Sectional signatures.
-/vault/signatures/pe_custom.cvd | File for PE Sectional signatures.
-/vault/signatures/pe_mussel.cvd | File for PE Sectional signatures.
-/vault/signatures/swf_clamav_regex.cvd | File for the Shockwave signatures.
-/vault/signatures/swf_clamav_regex.map | File for the Shockwave signatures.
-/vault/signatures/swf_clamav_standard.cvd | File for the Shockwave signatures.
-/vault/signatures/swf_clamav_standard.map | File for the Shockwave signatures.
-/vault/signatures/swf_custom_regex.cvd | File for the Shockwave signatures.
-/vault/signatures/swf_custom_standard.cvd | File for the Shockwave signatures.
-/vault/signatures/swf_mussel_regex.cvd | File for the Shockwave signatures.
-/vault/signatures/swf_mussel_standard.cvd | File for the Shockwave signatures.
-/vault/signatures/switch.dat | Controls and sets certain variables.
-/vault/signatures/urlscanner.cvd | File for URL scanner signatures.
-/vault/signatures/whitelist_clamav.cvd | File specific whitelist.
-/vault/signatures/whitelist_custom.cvd | File specific whitelist.
-/vault/signatures/whitelist_mussel.cvd | File specific whitelist.
-/vault/signatures/xmlxdp_clamav_regex.cvd | File for XML/XDP signatures.
-/vault/signatures/xmlxdp_clamav_regex.map | File for XML/XDP signatures.
-/vault/signatures/xmlxdp_clamav_standard.cvd | File for XML/XDP signatures.
-/vault/signatures/xmlxdp_clamav_standard.map | File for XML/XDP signatures.
-/vault/signatures/xmlxdp_custom_regex.cvd | File for XML/XDP signatures.
-/vault/signatures/xmlxdp_custom_standard.cvd | File for XML/XDP signatures.
-/vault/signatures/xmlxdp_mussel_regex.cvd | File for XML/XDP signatures.
-/vault/signatures/xmlxdp_mussel_standard.cvd | File for XML/XDP signatures.
-/vault/template.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
-/vault/template_custom.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
-/vault/upload.php | Upload handler.
+/.gitattributes | GitHubのプロジェクトファイル（機能には関係のないファイルです）。
+/Changelog-v1.txt | バージョンによる違いを記録したものです（機能には関係のないファイルです）。
+/composer.json | Composer/Packagist情報（機能には関係のないファイルです）。
+/CONTRIBUTING.md | プロジェクトに貢献する方法について。
+/LICENSE.txt | GNU/GPLv2のライセンスのコピー。
+/PEOPLE.md | プロジェクトに関わる人々についての情報。
+/phpmussel.php | ローダー・ファイルです。主要スクリプトのロード、アップロード等を行います。フックするのはまさにこれです（本質的ファイル）！
+/README.md | プロジェクト概要情報。
+/web.config | ASP.NET設定ファイルです（スクリプトがASP.NET テクノロジーを基礎とするサーバーにインストールされた時に`/vault`ディレクトリを権限のないソースによるアクセスから保護するためです）。
+/_docs/ | ドキュメンテーション用のディレクトリです（様々なファイルを含みます）。
+/_docs/readme.ar.md | アラビア語ドキュメンテーション。
+/_docs/readme.de.md | ドイツ語ドキュメンテーション。
+/_docs/readme.en.md | 英語ドキュメンテーション。
+/_docs/readme.es.md | スペイン語ドキュメンテーション。
+/_docs/readme.fr.md | フランス語ドキュメンテーション。
+/_docs/readme.id.md | インドネシア語ドキュメンテーション。
+/_docs/readme.it.md | 伊語ドキュメンテーション。
+/_docs/readme.ja.md | 日本語ドキュメンテーション。
+/_docs/readme.nl.md | オランダ語ドキュメンテーション。
+/_docs/readme.pt.md | ポルトガル語ドキュメンテーション。
+/_docs/readme.ru.md | ロシア語ドキュメンテーション。
+/_docs/readme.vi.md | ベトナム語ドキュメンテーション。
+/_docs/readme.zh-TW.md | 繁体字中国語ドキュメンテーション。
+/_docs/readme.zh.md | 簡体字中国語ドキュメンテーション。
+/_testfiles/ | テストファイルのディレクトリです（様々なファイルを含んでいます）。phpMusselがシステムに正しくインストールされたかどうかをテストするファイルです。テスト以外の目的でこのディレクトリをアップロードすることはありません。
+/_testfiles/ascii_standard_testfile.txt | phpMussel正規化ASCII署名用テストファイル。
+/_testfiles/coex_testfile.rtf | phpMussel拡張コンプレックス署名用テストファイル。
+/_testfiles/exe_standard_testfile.exe | phpMussel PE署名用テストファイル。
+/_testfiles/general_standard_testfile.txt | phpMussel一般署名用テストファイル。
+/_testfiles/graphics_standard_testfile.gif | phpMusselグラフィック署名用テストファイル。
+/_testfiles/html_standard_testfile.html | phpMussel正規化HTML署名テストファイル。
+/_testfiles/md5_testfile.txt | phpMussel MD5署名用テストファイル。
+/_testfiles/metadata_testfile.tar | システム内TARファイルサポート確認ならびにphpMusselメタデータ署名用テストファイル。
+/_testfiles/metadata_testfile.txt.gz | システム内GZファイルサポート確認ならびにphpMusselメタデータ署名用テストファイル。
+/_testfiles/metadata_testfile.zip | システム内ZIPファイルサポート確認ならびにphpMusselメタデータ署名用テストファイル。
+/_testfiles/ole_testfile.ole | phpMussel OLE署名用テストファイル。
+/_testfiles/pdf_standard_testfile.pdf | phpMussel PDF署名用テストファイル。
+/_testfiles/pe_sectional_testfile.exe | phpMussel PEセクショナル署名用テストファイル。
+/_testfiles/swf_standard_testfile.swf | phpMussel SWF署名用テストファイル。
+/_testfiles/xdp_standard_testfile.xdp | phpMussel XML/XDP署名用テストファイル。
+/vault/ | ヴォルト・ディレクトリ（様々なファイルを含んでいます）。
+/vault/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
+/vault/cache/ | キャッシュ・ディレクトリ（一時データ用）。
+/vault/cache/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
+/vault/cli.php | CLIハンドラ。
+/vault/config.php | コンフィギュレーション・ハンドラ。
+/vault/controls.php | コントロール・ハンドラ。
+/vault/functions.php | 関数ファイル（本質的ファイル）。
+/vault/greylist.csv | グレーリスト化された署名のCSVで、phpMusselがどの署名を無視すべきかを指示するものです（削除しても自動的に再作成されます）。
+/vault/lang.php | 言語・ハンドラ。
+/vault/lang/ | phpMusselの言語データを含んでいます。
+/vault/lang/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
+/vault/lang/lang.ar.php | アラビア語言語データ。
+/vault/lang/lang.de.php | ドイツ語言語データ。
+/vault/lang/lang.en.php | 英語言語データ。
+/vault/lang/lang.es.php | スペイン語言語データ。
+/vault/lang/lang.fr.php | フランス語言語データ。
+/vault/lang/lang.id.php | インドネシア語言語データ。
+/vault/lang/lang.it.php | 伊語言語データ。
+/vault/lang/lang.ja.php | Japanese 言語データ。
+/vault/lang/lang.nl.php | オランダ語言語データ。
+/vault/lang/lang.pt.php | ポルトガル語言語データ。
+/vault/lang/lang.ru.php | ロシア語言語データ。
+/vault/lang/lang.vi.php | ベトナム語言語データ。
+/vault/lang/lang.zh-TW.php | 繁体字中国語言語データ。
+/vault/lang/lang.zh.php | 簡体字中国語言語データ。
+/vault/phpmussel.ini | phpMussel設定ファイル；phpMusselの全オプション設定を記載しています。それぞれのオプションの機能と動作手法の説明です（重要）！
+/vault/quarantine/ | 検疫ディレクトリ（検疫されたファイル含んでいます）。
+/vault/quarantine/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
+※ /vault/scan_kills.txt | phpMusselによりブロック／削除されたアップロードファイルの全記録。
+※ /vault/scan_log.txt | phpMusselによりスキャンされたものの全記録。
+※ /vault/scan_log_serialized.txt | phpMusselによりスキャンされたものの全記録。
+/vault/signatures/ | 署名ディレクトリ（署名ファイルが含まれています）。
+/vault/signatures/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
+/vault/signatures/ascii_clamav_regex.cvd | 正規化ASCII署名用ファイル。
+/vault/signatures/ascii_clamav_regex.map | 正規化ASCII署名用ファイル。
+/vault/signatures/ascii_clamav_standard.cvd | 正規化ASCII署名用ファイル。
+/vault/signatures/ascii_clamav_standard.map | 正規化ASCII署名用ファイル。
+/vault/signatures/ascii_custom_regex.cvd | 正規化ASCII署名用ファイル。
+/vault/signatures/ascii_custom_standard.cvd | 正規化ASCII署名用ファイル。
+/vault/signatures/ascii_mussel_regex.cvd | 正規化ASCII署名用ファイル。
+/vault/signatures/ascii_mussel_standard.cvd | 正規化ASCII署名用ファイル。
+/vault/signatures/coex_clamav.cvd | 複合拡張署名用ファイル。
+/vault/signatures/coex_custom.cvd | 複合拡張署名用ファイル。
+/vault/signatures/coex_mussel.cvd | 複合拡張署名用ファイル。
+/vault/signatures/elf_clamav_regex.cvd | ELF署名用ファイル。
+/vault/signatures/elf_clamav_regex.map | ELF署名用ファイル。
+/vault/signatures/elf_clamav_standard.cvd | ELF署名用ファイル。
+/vault/signatures/elf_clamav_standard.map | ELF署名用ファイル。
+/vault/signatures/elf_custom_regex.cvd | ELF署名用ファイル。
+/vault/signatures/elf_custom_standard.cvd | ELF署名用ファイル。
+/vault/signatures/elf_mussel_regex.cvd | ELF署名用ファイル。
+/vault/signatures/elf_mussel_standard.cvd | ELF署名用ファイル。
+/vault/signatures/exe_clamav_regex.cvd | PE（ポータブル実行可能）署名用ファイル。
+/vault/signatures/exe_clamav_regex.map | PE（ポータブル実行可能）署名用ファイル。
+/vault/signatures/exe_clamav_standard.cvd | PE（ポータブル実行可能）署名用ファイル。
+/vault/signatures/exe_clamav_standard.map | PE（ポータブル実行可能）署名用ファイル。
+/vault/signatures/exe_custom_regex.cvd | PE（ポータブル実行可能）署名用ファイル。
+/vault/signatures/exe_custom_standard.cvd | PE（ポータブル実行可能）署名用ファイル。
+/vault/signatures/exe_mussel_regex.cvd | PE（ポータブル実行可能）署名用ファイル。
+/vault/signatures/exe_mussel_standard.cvd | PE（ポータブル実行可能）署名用ファイル。
+/vault/signatures/filenames_clamav.cvd | ファイル名署名用ファイル。
+/vault/signatures/filenames_custom.cvd | ファイル名署名用ファイル。
+/vault/signatures/filenames_mussel.cvd | ファイル名署名用ファイル。
+/vault/signatures/general_clamav_regex.cvd | 一般署名用ファイル。
+/vault/signatures/general_clamav_regex.map | 一般署名用ファイル。
+/vault/signatures/general_clamav_standard.cvd | 一般署名用ファイル。
+/vault/signatures/general_clamav_standard.map | 一般署名用ファイル。
+/vault/signatures/general_custom_regex.cvd | 一般署名用ファイル。
+/vault/signatures/general_custom_standard.cvd | 一般署名用ファイル。
+/vault/signatures/general_mussel_regex.cvd | 一般署名用ファイル。
+/vault/signatures/general_mussel_standard.cvd | 一般署名用ファイル。
+/vault/signatures/graphics_clamav_regex.cvd | グラフィック署名用ファイル。
+/vault/signatures/graphics_clamav_regex.map | グラフィック署名用ファイル。
+/vault/signatures/graphics_clamav_standard.cvd | グラフィック署名用ファイル。
+/vault/signatures/graphics_clamav_standard.map | グラフィック署名用ファイル。
+/vault/signatures/graphics_custom_regex.cvd | グラフィック署名用ファイル。
+/vault/signatures/graphics_custom_standard.cvd | グラフィック署名用ファイル。
+/vault/signatures/graphics_mussel_regex.cvd | グラフィック署名用ファイル。
+/vault/signatures/graphics_mussel_standard.cvd | グラフィック署名用ファイル。
+/vault/signatures/hex_general_commands.csv | phpMussel がオプション利用する一般コマンド検知の１６進法変換CSV。
+/vault/signatures/html_clamav_regex.cvd | 正規化HTML署名用ファイル。
+/vault/signatures/html_clamav_regex.map | 正規化HTML署名用ファイル。
+/vault/signatures/html_clamav_standard.cvd | 正規化HTML署名用ファイル。
+/vault/signatures/html_clamav_standard.map | 正規化HTML署名用ファイル。
+/vault/signatures/html_custom_regex.cvd | 正規化HTML署名用ファイル。
+/vault/signatures/html_custom_standard.cvd | 正規化HTML署名用ファイル。
+/vault/signatures/html_mussel_regex.cvd | 正規化HTML署名用ファイル。
+/vault/signatures/html_mussel_standard.cvd | 正規化HTML署名用ファイル。
+/vault/signatures/macho_clamav_regex.cvd | Mach-O署名用ファイル。
+/vault/signatures/macho_clamav_regex.map | Mach-O署名用ファイル。
+/vault/signatures/macho_clamav_standard.cvd | Mach-O署名用ファイル。
+/vault/signatures/macho_clamav_standard.map | Mach-O署名用ファイル。
+/vault/signatures/macho_custom_regex.cvd | Mach-O署名用ファイル。
+/vault/signatures/macho_custom_standard.cvd | Mach-O署名用ファイル。
+/vault/signatures/macho_mussel_regex.cvd | Mach-O署名用ファイル。
+/vault/signatures/macho_mussel_standard.cvd | Mach-O署名用ファイル。
+/vault/signatures/mail_clamav_regex.cvd | メール署名用のファイル。
+/vault/signatures/mail_clamav_regex.map | メール署名用のファイル。
+/vault/signatures/mail_clamav_standard.cvd | メール署名用のファイル。
+/vault/signatures/mail_clamav_standard.map | メール署名用のファイル。
+/vault/signatures/mail_custom_regex.cvd | メール署名用のファイル。
+/vault/signatures/mail_custom_standard.cvd | メール署名用のファイル。
+/vault/signatures/mail_mussel_regex.cvd | メール署名用のファイル。
+/vault/signatures/mail_mussel_standard.cvd | メール署名用のファイル。
+/vault/signatures/md5_clamav.cvd | MD5ベース署名用ファイル。
+/vault/signatures/md5_custom.cvd | MD5ベース署名用ファイル。
+/vault/signatures/md5_mussel.cvd | MD5ベース署名用ファイル。
+/vault/signatures/metadata_clamav.cvd | アーカイブメタデータ署名用ファイル。
+/vault/signatures/metadata_custom.cvd | アーカイブメタデータ署名用ファイル。
+/vault/signatures/metadata_mussel.cvd | アーカイブメタデータ署名用ファイル。
+/vault/signatures/ole_clamav_regex.cvd | OLE署名用ファイル。
+/vault/signatures/ole_clamav_regex.map | OLE署名用ファイル。
+/vault/signatures/ole_clamav_standard.cvd | OLE署名用ファイル。
+/vault/signatures/ole_clamav_standard.map | OLE署名用ファイル。
+/vault/signatures/ole_custom_regex.cvd | OLE署名用ファイル。
+/vault/signatures/ole_custom_standard.cvd | OLE署名用ファイル。
+/vault/signatures/ole_mussel_regex.cvd | OLE署名用ファイル。
+/vault/signatures/ole_mussel_standard.cvd | OLE署名用ファイル。
+/vault/signatures/pdf_clamav_regex.cvd | PDF署名用ファイル。
+/vault/signatures/pdf_clamav_regex.map | PDF署名用ファイル。
+/vault/signatures/pdf_clamav_standard.cvd | PDF署名用ファイル。
+/vault/signatures/pdf_clamav_standard.map | PDF署名用ファイル。
+/vault/signatures/pdf_custom_regex.cvd | PDF署名用ファイル。
+/vault/signatures/pdf_custom_standard.cvd | PDF署名用ファイル。
+/vault/signatures/pdf_mussel_regex.cvd | PDF署名用ファイル。
+/vault/signatures/pdf_mussel_standard.cvd | PDF署名用ファイル。
+/vault/signatures/pex_custom.cvd | PE拡張署名用ファイル。
+/vault/signatures/pex_mussel.cvd | PE拡張署名用ファイル。
+/vault/signatures/pe_clamav.cvd | PEセクショナル署名用ファイル。
+/vault/signatures/pe_custom.cvd | PEセクショナル署名用ファイル。
+/vault/signatures/pe_mussel.cvd | PEセクショナル署名用ファイル。
+/vault/signatures/swf_clamav_regex.cvd | ショックウェーブ署名用ファイル。
+/vault/signatures/swf_clamav_regex.map | ショックウェーブ署名用ファイル。
+/vault/signatures/swf_clamav_standard.cvd | ショックウェーブ署名用ファイル。
+/vault/signatures/swf_clamav_standard.map | ショックウェーブ署名用ファイル。
+/vault/signatures/swf_custom_regex.cvd | ショックウェーブ署名用ファイル。
+/vault/signatures/swf_custom_standard.cvd | ショックウェーブ署名用ファイル。
+/vault/signatures/swf_mussel_regex.cvd | ショックウェーブ署名用ファイル。
+/vault/signatures/swf_mussel_standard.cvd | ショックウェーブ署名用ファイル。
+/vault/signatures/switch.dat | 変数をコントロール、セットします。
+/vault/signatures/urlscanner.cvd | URLスキャナー署名用ファイル。
+/vault/signatures/whitelist_clamav.cvd | 特定ホワイトリスト用ファイル。
+/vault/signatures/whitelist_custom.cvd | 特定ホワイトリスト用ファイル。
+/vault/signatures/whitelist_mussel.cvd | 特定ホワイトリスト用ファイル。
+/vault/signatures/xmlxdp_clamav_regex.cvd | XML/XDP署名用ファイル。
+/vault/signatures/xmlxdp_clamav_regex.map | XML/XDP署名用ファイル。
+/vault/signatures/xmlxdp_clamav_standard.cvd | XML/XDP署名用ファイル。
+/vault/signatures/xmlxdp_clamav_standard.map | XML/XDP署名用ファイル。
+/vault/signatures/xmlxdp_custom_regex.cvd | XML/XDP署名用ファイル。
+/vault/signatures/xmlxdp_custom_standard.cvd | XML/XDP署名用ファイル。
+/vault/signatures/xmlxdp_mussel_regex.cvd | XML/XDP署名用ファイル。
+/vault/signatures/xmlxdp_mussel_standard.cvd | XML/XDP署名用ファイル。
+/vault/template.html | phpMusselテンプレートファイル; phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
+/vault/template_custom.html | phpMusselテンプレートファイル; phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
+/vault/upload.php | アップロード・ハンドラ。
 
-※ Filename may differ based on configuration stipulations (in `phpmussel.ini`).
+※ ファイル名は設定の仕方（`phpmussel.ini`内）により異なることがあります。
 
-####*REGARDING SIGNATURE FILES*
-CVD is an acronym for "ClamAV Virus Definitions", in reference both to how ClamAV refers to its own signatures and to the use of those signatures for phpMussel; Files ending with "CVD" contain signatures.
+####*署名ファイルについて*
+CVDは"ClamAV Virus Definitions"（ClamAV ウィルス定義）の頭文字をとったもので、ClamAVがどのように署名を参照するか、phpMusselに対してどのように使用するかに関連しています。"CVD"で終了するファイルは署名を含んでいます。
 
-Files ending with "MAP", quite literally, map which signatures phpMussel should and shouldn't use for individual scans; Not all signatures are necessarily required for every single scan, so, phpMussel uses maps of the signature files to speed up the scanning process (a process that would otherwise be extremely slow and tedious).
+"MAP"で終了するファイルは、文字通り、phpMusselが各々のスキャンにおいてどの署名を使用すべきか否かをマッピングしています。スキャンは必ずしも全ての署名を必要とはしません。phpMusselは署名ファイルのマップを使ってスキャン工程をスピードアップします（さもなければ、長時間を要する可能性がある場合など）。
 
-Signature files marked with "_regex" contain signatures that utilise regular expression pattern checking (regex).
+"_regex"でマークされた署名ファイルは、正規表現パターンチェッキング(regex)を利用する署名を含んでいます。
 
-Signature files marked with "_standard" contain signatures that specifically don't utilise any form of pattern checking.
+"_standard"でマークされた署名ファイルは、特にパターンチェッキングを利用しない署名を含んでいます。
 
-Signature files marked with neither "_regex" nor "_standard" will be as one or the other, but not both (refer to the 署名（シグニチャ）フォーマット section of this README file for documentation and specific details).
+"_regex" でも "_standard"でもマークされていない署名ファイルでも、そのどちらか一方に属し、両方の性質をもつことはありません（本READMEファイルの署名フォーマットのセクションにてドキュメンテーション及び詳細を参照して下さい）。
 
-Signature files marked with "_clamav" contain signatures that are sourced entirely from the ClamAV database (GNU/GPL).
+"_clamav"でマークされた署名ファイルは、ClamAVデータベース（GNU/GPL）をソースとする署名のみを含んでいます。
 
-Signature files marked with "_custom", by default, don't contain any signatures at all; These such files exist to give you somewhere to place your own custom signatures, if you come up with any of your own.
+"_custom"でマークされた署名ファイルは、署名を含んでいません。その必要があれば、ユーザーが自由にカスタム署名のために利用できます。
 
-Signature files marked with "_mussel" contain signatures that specifically are not sourced from ClamAV, signatures which, generally, I've either come up with myself and/or based on information gathered from various sources.
+"_mussel"でマークされた署名は、ClamAVをソースとしない署名を含んでいます。概して私自身か種々の情報源から集めた署名です。
 
 ---
 
 
 ###6. <a name="SECTION6"></a>設定オプション
-The following is a list of variables found in the `phpmussel.ini` configuration file of phpMussel, along with a description of their purpose and function.
+以下は`phpmussel.ini`設定ファイルにある変数ならびにその目的と機能のリストです。
 
-####"general" (Category)
-General phpMussel configuration.
+####"general" （全般、カテゴリー）
+全般的な設定。
 
-"script_password"
-- As a convenience, phpMussel will allow certain functions to be manually triggered via POST, GET and QUERY. However, as a security precaution, to do this, phpMussel will expect a password to be included with the command, as to ensure that it's you, and not someone else, attempting to manually trigger these functions. Set `script_password` to whatever password you would like to use. If no password is set, manual triggering will be disabled by default. Use something you will remember but which is hard for others to guess.
-- Has no influence in CLI mode.
+"script_password" （スクリプト・パスワード）
+- 利便性向上のため、phpMusselには、POST、GET 、QUERYを使ったいくつかの手動機能があります（迅速なアップデート等）。しかし、セキュリティーを考慮し、これを実行するには、コマンドとともにパスワードを必要とするようになっています。`script_password`は自由に設定してもらって構いません。デフォルトでは、パスワードの設定なくしては、手動機能は無効です。パスワードは覚えやすいが他人には想像できないものにして下さい。
+- CLIモードでは影響しません。
 
-"logs_password"
-- The same as `script_password`, but for viewing the contents of `scan_log` and `scan_kills`. Having separate passwords can be useful if you want to give someone else access to one set of functions but not the other.
-- Has no influence in CLI mode.
+"logs_password" （ログ・パスワード）
+- `script_password`と同じですが、`scan_log`と`scan_kills`を見るためのパスワードです。パスワードが２つ存在する理由は、ユーザーが他者に`scan_log`と`scan_kills`のみのアクセスを与えることができるようにするためです。
+- CLIモードでは影響しません。
 
-"cleanup"
-- Unset variables and cache used by the script after the initial upload scanning? False = No; True = Yes [Default]. If you -aren't- using the script beyond the initial scanning of uploads, you should set this to `true` (yes), to minimize memory usage. If you -are- using the script beyond the initial scanning of uploads, should set to `false` (no), to avoid unnecessarily reloading duplicate data into memory. In general practice, it should usually be set to `true`, but, if you do this, you won't be able to use the script for anything other than the initial file upload scanning.
-- Has no influence in CLI mode.
+"cleanup" （クリーンアップ）
+- 初回アップロード後に変数とキャッシュの設定をクリアするか否かについてのスクリプトです。`false`(偽） = いいえ; `true`（真） = はい 「Default（デフォルト設定）」。初回アップロードスキャニング以外で使用することがなければ、 `true`（真）としメモリーの使用量を最小にします。使用するのであれば、`false`（偽）とし、メモリーに不要な重複データを再ロードするのを防ぎます。通常は`true`（真）。 に設定しますが、初回アップロードスキャニングに対してしか使用できないことを覚えておいて下さい。
+- CLIモードでは影響しません。
 
-"scan_log"
-- Filename of file to log all scanning results to. Specify a filename, or leave blank to disable.
+"scan_log" （スキャンログ）
+- 全スキャニング結果を記録するファイルのファイル名。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。
 
-"scan_log_serialized"
-- Filename of file to log all scanning results to (using a serialised format). Specify a filename, or leave blank to disable.
+"scan_log_serialized" （スキャンログシリアライズド）
+- 全スキャニング結果を記録するファイルのファイル名（シリアル化形式を利用）。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。
 
-"scan_kills"
-- Filename of file to log all records of blocked or killed uploads to. Specify a filename, or leave blank to disable.
+"scan_kills" （スキャンキルズ）
+- ブロックしたか削除したアップロードの全てを記録するファイのファイル名。ファイル名指定するか、無効にしたい場合は空白のままにして下さい。
 
-*Useful tip: If you want, you can append date/time information to the names of your logfiles by including these in the name: `{yyyy}` for complete year, `{yy}` for abbreviated year, `{mm}` for month, `{dd}` for day, `{hh}` for hour.*
+*有用な先端： あなたがしたい場合は、ログファイルの名前に日付/時刻情報を付加することができます、名前にこれらを含めることで:完全な年のため`{yyyy}`、省略された年のため`{yy}`、月`{mm}`、日`{dd}`、時間`{hh}`。*
 
-*例: *
+*例:*
 - *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 "timeOffset"
-- If your server time doesn't match your local time, you can specify an offset here to adjust the date/time information generated by phpMussel according to your needs. It's generally recommended instead to adjust the timezone directive in your `php.ini` file, but sometimes (such as when working with limited shared hosting providers) this isn't always possible to do, and so, this option is provided here. Offset is in minutes.
+- If your server time doesn't match your local time, you can specify an offset here to adjust the date/time information generated by phpMussel according to your needs. It's generally recommended instead to adjust the timezone directive in your `php.ini` file, but sometimes (such as when working with limited shared hosting providers) this isn't always possible to do, and so, this option is provided here. Offset is in minutes。
 - Example (to add one hour): `timeOffset=60`
 
-"ipaddr"
-- Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don't change this unless you know what you're doing!
+"ipaddr" （アイピーアドレス）
+- 接続要求のIPアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。 Default（デフォルト設定） = REMOTE_ADDR。
+- 注意: 変更には最新の注意が必要です。
 
-"enable_plugins"
-- Enable support for phpMussel plugins? False = No; True = Yes [Default].
+"enable_plugins" （イネーブル・プラグインす）
+- プラグインのサポートを有効にしますか？ `false` = いいえ; `true` = はい 「Default（デフォルト設定）」。
 
-"forbid_on_block"
-- Should phpMussel send 403 headers with the file upload blocked message, or stick with the usual 200 OK? False = No (200); True = Yes (403) [Default].
+"forbid_on_block" （フォービッド・オン・ブロック）
+- アップロードファイルがブロックされたメッセージと共に、phpMusselから４０３ヘッダーを送るべきか、通常の２００でよいかどうかについて。`false`（偽） = いいえ（２００） 「Default（デフォルト設定）」； `true`（真） = はい（４０３）。
 
-"delete_on_sight"
-- Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won't be touched. In the case of archives, the entire archive will be deleted, regardless of whether or not the offending file is only one of several files contained within the archive. For the case of file upload scanning, usually, it isn't necessary to enable this directive, because usually, PHP will automatically purge the contents of its cache when execution has finished, meaning it'll usually delete any files uploaded through it to the server unless they've been moved, copied or deleted already. This directive is added here as an extra measure of security for those whose copies of PHP mightn't always behave in the manner expected. False = After scanning, leave the file alone [Default]; True = After scanning, if not clean, delete immediately.
+"delete_on_sight" （デリート・オン・サイト）
+- このディレクティブを有効にすると、検知基準（署名でも何でも）にあったアップロードファイルは直ちに削除されます。クリーンと判断されたファイルはそのままです。アーカイブの場合、問題のファイルが一部であってもアーカイブ全てが削除の対象となります。アップロードファイルのスキャンにおいては、本ディレクティブを有効にすることは必須ではありません。なぜならPHPはスクリプト実行後に自動的にキャッシュの内容を破棄するからです。言い換えれば、ファイルが移動されたか、コピーされたか、削除されない限り、PHPはサーバーにアップロードしたファイルを残しておくことは通常ありません。このディレクティブはセキュリティーに念を入れる目的で設置されています。PHPは稀に予測外の振る舞いをすることがあるからです。`false`（偽） = スキャニング後、ファイルはそのまま（デフォルト設定）。`true`（真） = スキャニング後、クリーンでなければ直ちに削除。
 
-"lang"
-- Specify the default language for phpMussel.
+"lang" （ラング）
+- phpMusselのデフォルト言語を設定します。
 
-"lang_override"
-- Specify if phpMussel should, when possible, override the language specification with the language preference declared by inbound requests (HTTP_ACCEPT_LANGUAGE). False = No [Default]; True = Yes.
+"lang_override" （ラング・オーバーライド）
+- phpMusselが、可能であれば、インバウンド要求によって宣言された言語選択により言語設定を無視すべきかを設定します（HTTP_ACCEPT_LANGUAGE）。 `false`（偽） = いいえ「Default（デフォルト）」； `true`（真） = はい。
 
-"lang_acceptable"
-- The `lang_acceptable` directive tells phpMussel which languages may be accepted by the script from `lang` or from `HTTP_ACCEPT_LANGUAGE`. This directive should **ONLY** be modified if you're adding your own customised language files or forcibly removing language files. The directive is a comma delimited string of the codes used by those languages accepted by the script.
+"lang_acceptable" （ラング・アクセクタブル）
+- `lang_acceptable`ディレクティブは、スクリプト`lang`からの言語かそれとも`HTTP_ACCEPT_LANGUAGE`から言語のどちらを受け入れるべきかphpMusselに指示します。このディレクティブは、カスタマイズ言語ファイルが追加された場合、あるいは言語ファイルが強制的に取り除かれた場合にのみ修正して下さい。利用可能な言語で、カンマ区切りの文字列で指定します。
 
-"quarantine_key"
-- phpMussel is able to quarantine flagged attempted file uploads in isolation within the phpMussel vault, if this is something you want it to do. Casual users of phpMussel that simply wish to protect their websites or hosting environment without having any interest in deeply analysing any flagged attempted file uploads should leave this functionality disabled, but any users interested in further analysis of flagged attempted file uploads for malware research or for similar such things should enable this functionality. Quarantining of flagged attempted file uploads can sometimes also assist in debugging false-positives, if this is something that frequently occurs for you. To disable quarantine functionality, simply leave the `quarantine_key` directive empty, or erase the contents of that directive if it isn't already empty. To enable quarantine functionality, enter some value into the directive. The `quarantine_key` is an important security feature of the quarantine functionality required as a means of preventing the quarantine functionality from being exploited by potential attackers and as a means of preventing any potential execution of data stored within the quarantine. The `quarantine_key` should be treated in the same manner as your passwords: The longer the better, and guard it tightly. For best effect, use in conjunction with `delete_on_sight`.
+"quarantine_key" （クオランティン・キ―）
+- phpMusselは、必要とあれば、phpMusselのヴォルト内で独立してフラグ付ファイルのアップロードを検疫することができます。一般的なphpMusselのユーザーは、ウェブサイトやホスティング環境の保護ができれば充分と考えており、フラグ付のようなものにさらなる分析を加えようまでの要求はないようですので、無効で構いません。ですが詳細に分析してマルウェアに備えたいユーザーは有効にすると良いでしょう。フラグ付ファイルのアップロードの検疫は誤検出のデバッグに役立つことがあります。検疫機能を無効にするには、`quarantine_key`ディレクティブを空にしておくか、空でない場合はディレクティブ内のコンテンツを消去して下さい。有効にするには、デイレクティブに何らかの値を入れて下さい。`quarantine_key`は検疫機能における重要なセキュリティー要素であり、検疫機能内に保存されたデータの執行を各種の攻撃から守っています。`quarantine_key`はパスワードと同様に考えて下さい。長い方がより安全と言えます。最も効果的な使用法は`delete_on_sight`との併用です。
 
-"quarantine_max_filesize"
-- The maximum allowable filesize of files to be quarantined. Files larger than the value specified will NOT be quarantined. This directive is important as a means of making it more difficult for any potential attackers to flood your quarantine with unwanted data potentially causing run-away data usage on your hosting service. Value is in KB. Default =2048 =2048KB =2MB.
+"quarantine_max_filesize" （クオランティン・マックス・ファイルサイズ）
+- 検疫されるファイルサイズの上限。この値より大きなファイルは検疫されません。クオランティンの容量を超える異常に大きなファイルサイズによる攻撃で、メモリーが無駄に消費されるのを防ぐ意味で重要です。単位はKB、デフォルト設定は２MB
+（Default/デフォルト =2048 =2048KB =2MB）です。
 
-"quarantine_max_usage"
-- The maximum memory usage allowed for the quarantine. If the total memory used by the quarantine reaches this value, the oldest quarantined files will be deleted until the total memory used no longer reaches this value. This directive is important as a means of making it more difficult for any potential attackers to flood your quarantine with unwanted data potentially causing run-away data usage on your hosting service. Value is in KB. Default =65536 =65536KB =64MB.
+"quarantine_max_usage" （クオランティン・マックス・ユーセッジ）
+- 検疫のために利用する最大メモリー量。全メモリー量が使用されると、この範囲内に収まるよう古いファイルが削除の対象となります。クオランティンの容量を超える異常に大きなファイルサイズによる攻撃で、メモリーが無駄に消費されるのを防ぐ意味で重要です。単位はKB、デフォルト設定は６４MB（Default/デフォルト =65536 =65536KB =64MB）です。
 
-"honeypot_mode"
-- When honeypot mode is enabled, phpMussel will attempt to quarantine every single file upload that it encounters, regardless of whether or not the file being uploaded matches any included signatures, and no actual scanning or analysis of those attempted file uploads will actually occur. This functionality should be useful for those that wish to use phpMussel for the purposes of virus/malware research, but it's neither recommended to enable this functionality if the intended use of phpMussel by the user is for actual file upload scanning, nor recommended to use the honeypot functionality for purposes other than honeypotting. By default, this option is disabled. False = Disabled [Default]; True = Enabled.
+"honeypot_mode" （ハニーポット・モード）
+- ハニーポットモードが有効になっていると、phpMusselはアップロードされてきた全てのファイルを例外なく検疫します。署名にマッチするかどうかは問題としません。スキャニングや分析もなされません。phpMusselをウィルス／マルウェアのリサーチに利用と考えているユーザーにとって有益と言えるでしょう。ただし、アップロードファイルのスキャニングという点からは、あまり推奨できませんし、ハニーポット・モードを本来の目的以外に使用することもお勧めできません。デフォルト設定では無効です。`false`（偽） = Disabled（無効） 「Default（デフォルト）」； `true`（真） = Enabled（有効）。
 
-"scan_cache_expiry"
-- For how long should phpMussel cache the results of scanning? Value is the number of seconds to cache the results of scanning for. Default is 21600 seconds (6 hours); A value of 0 will disable caching the results of scanning.
+"scan_cache_expiry" （スキャン・キャッシュ・エクスパイヤリー）
+- phpMusselはスキャニング結果をどれくらいの期間キャッシュすべきか？秒単位で、デフォルトは２１，６００秒（６時間）となっています。０にするとキャッシュ無効になります。
 
-"disable_cli"
-- Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere with certain testing tools (such as PHPUnit, for example) and other CLI-based applications. If you don't need to disable CLI mode, you should ignore this directive. False = Enable CLI mode [Default]; True = Disable CLI mode.
+"disable_cli" （ディスエイブル・シーエルアイ）
+- CLIモードを無効にするか？CLIモードはデフォルトでは有効になっていますが、テストツール(PHPUnit等)やCLIベースのアプリケーションと干渉しあう可能性が無いとは言い切れません。CLIモードを無効にする必要がなければ、このデレクティブは無視してもらって結構です。`false`（偽） = Enable CLIモード（CLIモード有効） 「Default（デフォルルト）」； `true`（真） = Disable CLIモード（CLI モード無効）。
 
-####"signatures" (Category)
-Signatures configuration.
-- %%%_clamav = ClamAV signatures (both mains and daily).
-- %%%_custom = Your custom signatures (if you've written any).
-- %%%_mussel = phpMussel signatures included in your current signatures set that aren't from ClamAV.
+####"signatures" （シグニチャーズ、カテゴリ）
+署名（シグニチャ）の設定。
+- %%%_clamav = ClamAV署名（メインとデイリーの両方）。
+- %%%_custom = カスタム署名（作成した場合）。
+- %%%_mussel = ClamAVからでなく、ユーザーの現在の署名に含まれるphpMussel署名。
 
-Check against MD5 signatures when scanning? False = No; True = Yes [Default].
+スキャニング時にMD5署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "md5_clamav"
 - "md5_custom"
 - "md5_mussel"
 
-Check against general signatures when scanning? False = No; True = Yes [Default].
+スキャニング時に一般署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "general_clamav"
 - "general_custom"
 - "general_mussel"
 
-Check against normalised ASCII signatures when scanning? False = No; True = Yes [Default].
+スキャニング時に正規ASCII署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "ascii_clamav"
 - "ascii_custom"
 - "ascii_mussel"
 
-Check against normalised HTML signatures when scanning? False = No; True = Yes [Default].
+スキャニング時に正規HTML署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "html_clamav"
 - "html_custom"
 - "html_mussel"
 
-Check PE (Portable Executable) files (EXE, DLL, etc) against PE Sectional signatures when scanning? False = No; True = Yes [Default].
+スキャニング時にPE（ポータブル・エグゼキュータブル）ファイル（EXE, DLL等）をPEセクショナル署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "pe_clamav"
 - "pe_custom"
 - "pe_mussel"
 
-Check PE (Portable Executable) files (EXE, DLL, etc) against PE extended signatures when scanning? False = No; True = Yes [Default].
+スキャニング時にPE（ポータブル・エグゼキュータブル）ファイル（EXE, DLL等）をPE拡張署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "pex_custom"
 - "pex_mussel"
 
-Check PE (Portable Executable) files (EXE, DLL, etc) against PE signatures when scanning? False = No; True = Yes [Default].
+スキャニング時にPE（ポータブル・エグゼキュータブル）ファイル（EXE, DLL等）をPE署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "exe_clamav"
 - "exe_custom"
 - "exe_mussel"
 
-Check ELF files against ELF signatures when scanning? False = No; True = Yes [Default].
+スキャニング時にELFファイルをELF署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "elf_clamav"
 - "elf_custom"
 - "elf_mussel"
 
-Check Mach-O files (OSX, etc) against Mach-O signatures when scanning? False = No; True = Yes [Default].
+スキャニング時にMach-Oファイル（OSX、など）をMach-O署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "macho_clamav"
 - "macho_custom"
 - "macho_mussel"
 
-Check graphics files against graphics based signatures when scanning? False = No; True = Yes [Default].
+スキャニング時にグラフィックファイルをグラフィックベース署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "graphics_clamav"
 - "graphics_custom"
 - "graphics_mussel"
 
-Check archive contents against archive metadata signatures when scanning? False = No; True = Yes [Default].
+スキャニング時にアーカイブコンテンツをアーカイブメタデータ署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "metadata_clamav"
 - "metadata_custom"
 - "metadata_mussel"
 
-Check OLE objects against OLE signatures when scanning? False = No; True = Yes [Default].
+スキャニング時にOLEオブジェクトをOLE署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "ole_clamav"
 - "ole_custom"
 - "ole_mussel"
 
-Check filenames against filename based signatures when scanning? False = No; True = Yes [Default].
+スキャニング時にファイル名をファイル名ベース署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "filenames_clamav"
 - "filenames_custom"
 - "filenames_mussel"
 
-Check against email signatures when scanning? False = No; True = Yes [Default].
+スキャンする際に、電子メール署名を使用しますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "mail_clamav"
 - "mail_custom"
 - "mail_mussel"
 
-Enable file specific whitelist? False = No; True = Yes [Default].
+ファイル特定ホワイトリストを有効にしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "whitelist_clamav"
 - "whitelist_custom"
 - "whitelist_mussel"
 
-Check XML/XDP chunks against XML/XDP signatures when scanning? False = No; True = Yes [Default].
+スキャニング時にXML/XDPチャンクをXML/XDP署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "xmlxdp_clamav"
 - "xmlxdp_custom"
 - "xmlxdp_mussel"
 
-Check against complex extended signatures when scanning? False = No; True = Yes [Default].
+スキャニング時に複合拡張署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "coex_clamav"
 - "coex_custom"
 - "coex_mussel"
 
-Check against PDF signatures when scanning? False = No; True = Yes [Default].
+スキャニング時にPDF署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "pdf_clamav"
 - "pdf_custom"
 - "pdf_mussel"
 
-Check against Shockwave signatures when scanning? False = No; True = Yes [Default].
+ショックウェーブ署名に対してチェックしますか？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 - "swf_clamav"
 - "swf_custom"
 - "swf_mussel"
 
-Signature matching length limiting options. Only change these if you know what you're doing. SD = Standard signatures. RX = PCRE (Perl Compatible Regular Expressions, or "Regex") signatures. FN = Filename signatures. If you notice PHP crashing when phpMussel attempts to scan, try lowering these "max" values. If possible and convenient, let me know when this happens and the results of whatever you try.
+署名マッチング長さ制限オプション。理解の上、変更して下さい。SD = スタンダード署名、RX = PCRE（Perl適合正規表現、あるいは"Regex"）署名、FN =ファイル名署名。phpMusselがスキャンしようした時にPHPがクラッシュするようなら、最大値を下げてみて下さい。どのような状況で発生するか、何を試して結果どうだったか、お知らせ頂ければ幸いです。
 - "fn_siglen_min"
 - "fn_siglen_max"
 - "rx_siglen_min"
@@ -649,269 +652,269 @@ Signature matching length limiting options. Only change these if you know what y
 - "sd_siglen_min"
 - "sd_siglen_max"
 
-"fail_silently"
-- Should phpMussel report when signatures files are missing or corrupted? If `fail_silently` is disabled, missing and corrupted files will be reported on scanning, and if `fail_silently` is enabled, missing and corrupted files will be ignored, with scanning reporting for those files that there aren't any problems. This should generally be left alone unless you're experiencing crashes or similar problems. False = Disabled; True = Enabled [Default].
+"fail_silently" （フェイル・サイレントリー）
+- 署名ファイルがない、あるいは破損している場合に、phpMusselがそれをリポートすべきか否か？`fail_silently`が無効ならば、問題はリポートされ、有効であれば、問題は無視されたスキャニングレポートが作成されます。クラッシュするというような害がなければ、デフォルト設定のままにしておくべきです。 `false`（偽） = Disabled（無効）; `true`（真） = Enabled（有効） 「Default（デフォルト）」
 
-"fail_extensions_silently"
-- Should phpMussel report when extensions are missing? If `fail_extensions_silently` is disabled, missing extensions will be reported on scanning, and if `fail_extensions_silently` is enabled, missing extensions will be ignored, with scanning reporting for those files that there aren't any problems. Disabling this directive may potentially increase your security, but may also lead to an increase of false positives. False = Disabled; True = Enabled [Default].
+"fail_extensions_silently" （フェイル・エクステンションズ・サイレントリー）
+- 拡張子がない場合にphpMusselがそれをレポートすべきか否か？`fail_extensions_silently`が無効の場合、拡張子なしはスキャニング時にレポートされ、有効の場合は無視され問題は報告されません。このディレクティブを無効にすることは、セキュリティーを向上させるかもしれませんが、誤検出も増加する恐れがあります。 `false`（偽） = Disabled（無効）; `true`（真） = Enabled（有効） 「Default（デフォルト）」
 
-"detect_adware"
-- Should phpMussel parse signatures for detecting adware? False = No; True = Yes [Default].
+"detect_adware" （ディテクト・アドウェア）
+- phpMusselはアドウェア検出のために署名を分析すべきか否か？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 
-"detect_joke_hoax"
-- Should phpMussel parse signatures for detecting joke/hoax malware/viruses? False = No; True = Yes [Default].
+"detect_joke_hoax" （ディテクト・ジョーク・ホークス）
+- phpMusselは悪戯／偽造やマルウェア／ウィルス検出のために署名を分析すべきか否か？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 
-"detect_pua_pup"
-- Should phpMussel parse signatures for detecting PUAs/PUPs? False = No; True = Yes [Default].
+"detect_pua_pup" （ディテクト・PUA・PUP）
+- phpMusselはPUAs/PUPs検出のために署名を分析すべきか否か？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 
-"detect_packer_packed"
-- Should phpMussel parse signatures for detecting packers and packed data? False = No; True = Yes [Default].
+"detect_packer_packed" （ディテクト・パッカー・パックト）
+- phpMusselはパッカーやパックデータ検出のために署名を分析すべきか否か？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 
-"detect_shell"
-- Should phpMussel parse signatures for detecting shell scripts? False = No; True = Yes [Default].
+"detect_shell" （ディテクト・シェル）
+- phpMusselはshellスクリプト検出のために署名を分析すべきか否か？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 
-"detect_deface"
-- Should phpMussel parse signatures for detecting defacements and defacers? False = No; True = Yes [Default].
+"detect_deface" （ディテクト・ディフェーサ）
+- phpMusselは改ざんやディフェーサー検出のために署名を分析すべきか否か？ `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 
-####"files" (Category)
-File handling configuration.
+####"files" （ファイルズ、カテゴリー）
+ファイル取扱い設定。
 
-"max_uploads"
-- Maximum allowable number of files to scan during files upload scan before aborting the scan and informing the user they are uploading too much at once! Provides protection against a theoretical attack whereby an attacker attempts to DDoS your system or CMS by overloading phpMussel to slow down the PHP process to a grinding halt. Recommended: 10. You may wish to raise or lower this number depending on the speed of your hardware. Note that this number doesn't account for or include the contents of archives.
+"max_uploads" （マックス・アップローズ）
+- 一度にスキャンできるアップロードファイル数の上限で、これを超えるとスキャンを中断し、ユーザーにその旨を知らせ、論理攻撃からの保護として機能します。システムやCMSがDDoS攻撃にあい、phpMusselがオーバーロードしてPHPプロセスに支障をきたすことがないようにするためです。推奨数は１０ですが、ハードウェアのスピードによっては、これ以上／以下がよいということもあるでしょう。この数は、アーカイブのコンテンツは含まないことを覚えておいて下さい。
 
-"filesize_limit"
-- Filesize limit in KB. 65536 = 64MB [Default]; 0 = No limit (always greylisted), any (positive) numeric value accepted. This can be useful when your PHP configuration limits the amount of memory a process can hold or if your PHP configuration limits filesize of uploads.
+"filesize_limit" （ファイルサイズ・リミット）
+- ファイルサイズ上限の単位はKｂです。. 65536 = 64MB 「Default（デフォルト）」； 0 = リミットしません（上限なし、常にグレイリスト化）、正の数値であれば何でも構いません。PHPの設定でメモリーに制限があったり、アップロードファイルサイズの上限が設定されている場合に有効的です。
 
-"filesize_response"
-- What to do with files that exceed the filesize limit (if one exists). False = Whitelist; True = Blacklist [Default].
+"filesize_response" （ファイルサイズ・レスポンス）
+- 上限サイズを超えるファイルをどう処理するかについてです。 `false`（偽） = Whitelist（ホワイトリスト）; `true`（真） = Blacklist（ブラックリスト） 「Default（デフォルト）」
 
-"filetype_whitelist"、 "filetype_blacklist"、 "filetype_greylist"
-- If your system only allows specific types of files to be uploaded, or if your system explicitly denies certain types of files, specifying those filetypes in whitelists, blacklists and greylists can increase the speed at which scanning is performed by allowing the script to skip over certain filetypes. Format is CSV (comma separated values). If you want to scan everything, rather than whitelist, blacklist or greylist, leave the variable(/s) blank; Doing so will disable whitelist/blacklist/greylist.
-- Logical order of processing is:
-  - If the filetype is whitelisted, don't scan and don't block the file, and don't check the file against the blacklist or the greylist.
-  - If the filetype is blacklisted, don't scan the file but block it anyway, and don't check the file against the greylist.
-  - If the greylist is empty or if the greylist is not empty and the filetype is greylisted, scan the file as per normal and determine whether to block it based on the results of the scan, but if the greylist is not empty and the filetype is not greylisted, treat the file as blacklisted, therefore not scanning it but blocking it anyway.
+"filetype_whitelist" （ファイルタイプ・ホワイトリスト）、 "filetype_blacklist" （ファイルタイプ・ブラックリスト）、 "filetype_greylist" （ファイルタイプ・グレーリスト）
+- システムが特定タイプのファイルのみアップロードを許可する、あるいは拒絶する場合は、ファイルタイプを適切にホワイトリスト、ブラックリスト、グレーリストにて分類しておくと、ファイルタイプによって弾かれるファイルはスキャンをスキップできるため、スピードアップに繋がります。フォーマットはCSV（カンマ区切り）です。リストによらず全てをスキャンしたい場合は、変数は空白のままとし、ホワイトリスト／ブラックリスト／グレーリストを無効にします。
+- プロセスの論理的順序:
+ - ファイルタイプがホワイトリストに記載されていれば、スキャンせず、ブロックせず、ブラックリストおよびグレイリストに対してチェックを行いません。
+ - ファイルタイプがブラックリストに記載されていれば、スキャンすることなく、直ちににブロックし、グレーリストに対してチェックを行いません。
+ - グレーリストが空、あるいはグレーリストが空でなくかつそのファイルタイプがあれば、通常通りスキャンしブロックするか否かを判断します。グレーリストが空でなくかつそのファイルタイプが含まれていなければ、ブラックリストと同様の扱いをすることになり、スキャンなしにブロックします。
 
-"check_archives"
-- Attempt to check the contents of archives? False = Don't check; True = Check [Default].
-- Currently, the only archive and compression formats supported are BZ/BZIP2, GZ/GZIP, LZF, PHAR, TAR and ZIP (archive and compression formats RAR, CAB, 7z and etcetera not currently supported).
-- This is not foolproof! While I highly recommend keeping this turned on, I can't guarantee it'll always find everything.
-- Also be aware that archive checking currently is not recursive for PHARs or ZIPs.
+"check_archives" （チェック・アーカイブズ）
+- アーカイブのコンテンツに対してチェックを試みるか否かについてです。 `false`（偽） = チェックしない; `true`（真） = チェックする「Default（デフォルト）」
+- 現在サポートしているのはBZ、GZ、 LZF、 ZIP形式です（RAR、CAB、7z等は対象外）。
+- 本機能は万能ではありませんので、有効にしておくことを推奨していますが、必ず全てを検出することを保証するものではありません。
+- また現在チェックのアーカイブはZIPに対して再帰的でないことに注意して下さい。
 
-"filesize_archives"
-- Carry over filesize blacklisting/whitelisting to the contents of archives? False = No (just greylist everything); True = Yes [Default].
+"filesize_archives" （ファイルサイズ・アーカイブズ）
+- ファイルサイズのブラックリスト化／ホワイトリスト化をアーカイブのコンテンツに持ち込むか否か？ `false` = いいえ（ただグレーリストすべて）; `true` = はい 「Default（デフォルト設定）」。
 
-"filetype_archives"
-- Carry over filetype blacklisting/whitelisting to the contents of archives? False = No (just greylist everything) [Default]; True = Yes.
+"filetype_archives" （ファイルタイプ・アーカイブズ）
+- ファイルタイプのブラックリスト化／ホワイトリスト化をアーカイブのコンテンツに持ち込むか否か？ `false` = いいえ（ただグレーリストすべて） 「Default（デフォルト設定）」; `true` = はい。
 
-"max_recursion"
-- Maximum recursion depth limit for archives. Default = 10.
+"max_recursion" （マックス・リカーション）
+- アーカイブに対する最大再帰深さです。デフォルト＝１０
 
-"block_encrypted_archives"
-- Detect and block encrypted archives? Because phpMussel isn't able to scan the contents of encrypted archives, it's possible that archive encryption may be employed by an attacker as a means of attempting to bypass phpMussel, anti-virus scanners and other such protections. Instructing phpMussel to block any archives that it discovers to be encrypted could potentially help reduce any risk associated with these such possibilities. False = No; True = Yes [Default].
+"block_encrypted_archives" （ブロック・エンクリプティッド・アーカイブズ）
+- 暗号化されたアーカイブを検出しブロックするか否か？phpMusselは暗号化されたアーカイブをスキャンすることはできないので、アーカイブの暗号化によってphpMussel、アンチウィルススキャナー等をかいくぐろうとする攻撃者がいるかもしれません。暗号化されたアーカイブをブロックすることにより、このようなリスクを回避することができます。 `false`（偽） = いいえ; `true`（真） = はい 「Default（デフォルト）」
 
-####"attack_specific" (Category)
-Attack-specific directives.
+####"attack_specific" （アタック・スペシフィック、カテゴリー）
+アタックースペシフィック　ディレクティブ。
 
-Chameleon attack detection: False = Off; True = On.
+キャメロンアタック検出。 `false`（偽） = オフ; `true`（真） = オン
 
-"chameleon_from_php"
-- Search for PHP header in files that are neither PHP files nor recognised archives.
+"chameleon_from_php" （キャメロン・フロム・ピーエイチピー）
+- ファイルでもなくPHPアーカイブとも認識できないファイル中のPHPヘッダーを探します。
 
-"chameleon_from_exe"
-- Search for executable headers in files that are neither executables nor recognised archives and for executables whose headers are incorrect.
+"chameleon_from_exe" （キャメロン・フロム・エグゼ）
+- 実行ファイルでもなく実行ファイルのアーカイブとも認識できないファイル中の実行ヘッダーや不正なヘッダーの実行ファイルを探します。
 
-"chameleon_to_archive"
-- Search for archives whose headers are incorrect (Supported: BZ, GZ, RAR, ZIP, RAR, GZ).
+"chameleon_to_archive" （キャメロン・トゥ・アーカイブ）
+- ヘッダーが正しくないアーカイブを探します（BZ、GZ、RAR、ZIP、RAR、GZをサポート）。
 
-"chameleon_to_doc"
-- Search for office documents whose headers are incorrect (Supported: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
+"chameleon_to_doc" （キャメロン・トゥ・ドク）
+- ヘッダーが正しくないオフィスドキュメントを探します（DOC、DOT、PPS、PPT、XLA、XLS、WIZをサポート）。
 
-"chameleon_to_img"
-- Search for images whose headers are incorrect (Supported: BMP, DIB, PNG, GIF, JPEG, JPG, XCF, PSD, PDD, WEBP).
+"chameleon_to_img" （キャメロン・トゥ・アイエムジー）
+- ヘッダーが正しくない画像ファイルを探します（BMP、DIB、PNG、GIF、JPEG、JPG、XCF、PSD、PDD、WEBPをサポート）。
 
-"chameleon_to_pdf"
-- Search for PDF files whose headers are incorrect.
+"chameleon_to_pdf" （キャメロン・トゥ・ピーディーエフ）
+- ヘッダーが正しくないPDFファイルを探します。
 
-"archive_file_extensions" and "archive_file_extensions_wc"
-- Recognised archive file extensions (format is CSV; should only add or remove when problems occur; unnecessarily removing may cause false-positives to appear for archive files, whereas unnecessarily adding will essentially whitelist what you're adding from attack specific detection; modify with caution; also note that this has no effect on what archives can and can't be analysed at content-level). The list, as is at default, lists those formats used most commonly across the majority of systems and CMS, but intentionally isn't necessarily comprehensive.
+"archive_file_extensions" （アーカイブ・ファイル・エクステンション） と "archive_file_extensions_wc" （アーカイブ・ファイル・エクステンション・ダブリューシー）
+- 認識可能なアーカイブファイルエクステンションです（フォーマットはCSV；問題があった場合にのみ追加あるいは取り除くべきです。不用意に取り除くと誤検出の原因となる可能性があります。反対に不用意に追加すると、アタックースペシフィック検出から追加したものをホワイトリスト化してしまいます。充分に注意に上、変更して下さい。なお、コンテントレベルにおいてアーカイブを分析することが出来るか否かには影響しません）。デフォルトでは最も一般なフォーマットをリストしていますが、意図的に包括的にはしていません。
 
-"general_commands"
-- Search the content of files for statements and general commands such as `eval()` and `exec()`? False = Don't check [Default]; True = Check. Disable this directive if you intend to upload any of the following to your system or CMS via your browser: PHP, JavaScript, HTML, python, perl files and etcetera. Enable this directive if you don't have any additional protections on your system and do not intend to upload such files. If you use additional security in conjunction with phpMussel (such as ZB Block), there's no need to enable this directive, because most of what phpMussel will look for (in the context of this directive) are duplications of protections that will most likely already be provided.
+"general_commands" （ジェネラル・コマンズ）
+- `eval()`や`exec()`といった通常のコマンドがファイルに含まれていないか調べます。ブラウザを介してPHP、JavaScript、HTML、python、perlといったファイルをシステムおよびCMSにアップロードすることあるならば無効にして下さい。他にプロテクションがなく、かつ前述のファイルをアップロードすることがなければ有効にします。phpMusselをZB Blockなどと併せて用いセキュリティーの向上を目的としているなら、本オプション機能をオンにする必要はないでしょう。なぜなら、phpMusselが探すものは（この意味において）既に存在するプロテクションと同じ物であり、機能が重複するだけだからです。`false`（偽） = チェックしない「Default（デフォルト）」； `true`（真） = チェックする。
 
-"block_control_characters"
-- Block any files containing any control characters (other than newlines)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) If you're _**ONLY**_ uploading plain-text, then you can turn this option on to provide some additional protection to your system. However, if you upload anything other than plain-text, turning this on may result in false positives. False = Don't block [Default]; True = Block.
+"block_control_characters" （ブロック・コントロール・キャラクターズ）
+- 制御文字を含んだファイルをブロックするか否か（改行以外）？についてです（[\x00-\x08\x0b\x0c\x0e\x1f\x7f]）。もし、テキストのみをアップロードするなら、このオプションを有効にして、さらにプロテクションを強化できます。テキスト以外もアップロード対象であれば、有効にすると誤検出の原因になりえます。`false`（偽） = ブロックしない「Default（デフォルト）」； `true`（真） = ブロックする。
 
-"corrupted_exe"
-- Corrupted files and parse errors. False = Ignore; True = Block [Default]. Detect and block potentially corrupted PE (Portable Executable) files? Often (but not always), when certain aspects of a PE file are corrupted or can't be parsed correctly, it can be indicative of a viral infection. The processes used by most anti-virus programs to detect viruses in PE files require parsing those files in certain ways, which, if the programmer of a virus is aware of, will specifically try to prevent, in order to allow their virus to remain undetected.
+"corrupted_exe" （コラプティッド・エグゼ）
+- 破損ファイルとエラー解析。`false`（偽） = 無視する； `true`（真） = ブロックする「Default（デフォルト）」。破損の可能性があるPEファイルをブロックし検出するか否か？についてです。PEファイルの一部が破損し、正しく分析できないことは珍しくなく、ウィルス感染をみるバロメーターになります。PEファイル内のウィルスを検出するアンチウィルスプログラムは、PEファイルの解析を行いますが、ウィルスを作る側では、ウィルスが検出されないようそれを避けようとするものだからです。
 
-"decode_threshold"
-- Optional limitation or threshold to the length of raw data within which decode commands should be detected (in case there are any noticeable performance issues while scanning). Value is an integer representing filesize in KB. Default = 512 (512KB). Zero or null value disables the threshold (removing any such limitation based on filesize).
+"decode_threshold" （デコード・スレッシュホールド）
+- デコード・コマンドが検出されるべき生データの長さの制限あるいはしきい値（スキャニング中に顕著な問題がある場合に必要に応じて設定）。値はファイルサイズを示す整数値で単位はKB。デフォルト＝５１２（５１２KB）。ゼロあるいは値なし（null）はしきい値を無効化します（ファイルサイズによる制限を取り除きます）。
 
-"scannable_threshold"
-- Optional limitation or threshold to the length of raw data that phpMussel is permitted to read and scan (in case there are any noticeable performance issues while scanning). Value is an integer representing filesize in KB. Default = 32768 (32MB). Zero or null value disables the threshold. Generally, this value shouldn't be less than the average filesize of file uploads that you want and expect to receive to your server or website, shouldn't be more than the filesize_limit directive, and shouldn't be more than roughly one fifth of the total allowable memory allocation granted to PHP via the `php.ini` configuration file. This directive exists to try to prevent phpMussel from using up too much memory (that'd prevent it from being able to successfully scan files above a certain filesize).
+"scannable_threshold" （スキャナブル・スレッシュホールド）
+- phpMusselが読みスキャンしてよい生データの長さの制限あるいはしきい値（スキャニング中に顕著な問題がある場合に必要に応じて設定）。値はファイルサイズを示す整数値で単位はKb。デフォルト＝32768（32MB）。ゼロあるいは値なし（null）はしきい値を無効化します。値は、サーバーやウェブサイトでアップロードされるファイルの平均ファイルサイズより大きく、filesize_limitディレクティブより小さく設定すべきです。またphp.ini設定によってPHPに割り当てられたメモリーのおおよそ5分の１を超えるべきではありません。このディレクティブはphpMusselがメモリーを使い過ぎないようにするためのものです。（一定のサイズ以上のファイルはスキャンできなくなることもあります）。
 
-####"compatibility" (Category)
-Compatibility directives for phpMussel.
+####"compatibility" （コンパーティブリティ、カテゴリ）
+phpMusselの互換性ディレクティブ。
 
-"ignore_upload_errors"
-- This directive should generally be disabled unless it's required for correct functionality of phpMussel on your specific system. Normally, when disabled, when phpMussel detects the presence of elements in the `$_FILES` array(), it'll attempt to initiate a scan of the files that those elements represent, and, if those elements are blank or empty, phpMussel will return an error message. This is proper behaviour for phpMussel. However, for some CMS, empty elements in `$_FILES` can occur as a result of the natural behaviour of those CMS, or errors may be reported when there aren't any, in which case, the normal behaviour for phpMussel will be interfering with the normal behaviour of those CMS. If such a situation occurs for you, enabling this option will instruct phpMussel to not attempt to initiate scans for such empty elements, ignore them when found and to not return any related error messages, thus allowing continuation of the page request. False = OFF; True = ON.
+"ignore_upload_errors" （イグノア・アップロード・エラーズ）
+- システム上でphpMusselの機能に修正が必要でない限りはこのディレクティブは通常無効です。無効に設定すると、`$_FILES` array()に要素の存在を検知したとき、その要素が表すファイルのスキャンが開始され、要素が空白か無であればphpMusselはエラーメッセージを返します。これは本来phpMusselがあるべき姿です。しかしCMSにおいては、$_FILESの空要素は普通に発生するものであり、正常なphpMusselの挙動が正常なCMSの挙動を阻害する恐れがあります。このような場合は、本オプションを有効にして、phpMusselが空要素をスキャンしてエラーメッセージを返すのを避け、要求のあったページへスムーズに進むことができるようにします。`false`（偽） = OFF （オフ）； `true`（真） = ON （オン）です。
 
-"only_allow_images"
-- If you only expect or only intend to allow images to be uploaded to your system or CMS, and if you absolutely don't require any files other than images to be uploaded to your system or CMS, this directive should be enabled, but should otherwise be disabled. If this directive is enabled, it'll instruct phpMussel to indiscriminately block any uploads identified as non-image files, without scanning them. This may reduce processing time and memory usage for attempted uploads of non-image files. False = OFF; True = ON.
+"only_allow_images" （オンリー・アロウ・イメージ）
+- システムあるいはCMSに画像ファイルのアップロードのみを許可するのであれば、このディレクティブは有効にすべきであり、そうでなければ無効とします。有効にすると、画像と特定できないファイルはスキャンすることなしにブロックしますので、プロセス時間の短縮とメモリーの節約が期待できます。`false`（偽） = OFF （オフ）； `true`（真） = ON （オン） です。
 
-####"heuristic" (Category)
-Heuristic directives.
+####"heuristic" （ヒューリスティック、カテゴリ）
+ヒューリスティック・ディレクティブズ。
 
-"threshold"
-- There are certain signatures of phpMussel that are intended to identify suspicious and potentially malicious qualities of files being uploaded without in themselves identifying those files being uploaded specifically as being malicious. This "threshold" value tells phpMussel what the maximum total weight of suspicious and potentially malicious qualities of files being uploaded that's allowable is before those files are to be flagged as malicious. The definition of weight in this context is the total number of suspicious and potentially malicious qualities identified. By default, this value will be set to 3. A lower value generally will result in a higher occurrence of false positives but a higher number of malicious files being flagged, whereas a higher value generally will result in a lower occurrence of false positives but a lower number of malicious files being flagged. It's generally best to leave this value at its default unless you're experiencing problems related to it.
+"threshold" （スレッシュホールド）
+- phpMusselには、このファイルは疑わしく危険性が高いと判断する署名があります。しきい値は、アップロードされているファイルの危険性の最大値であり、これを超えるとマルウェアと判断されます。ここにおける危険性の定義とは、疑わしいと特定されたものの総数です。デフォルトでは３に設定されています。これより低いと誤検出の可能性が増え、大きすぎると、誤検出は減るものの危険性のあるファイルが検出されない可能性が増加してしまいます。特に問題がなければ、デフォルト値のままにしておくことお勧めします。
 
-####"virustotal" (Category)
-VirusTotal.com directives.
+####"virustotal" （ウィルストータル、カテゴリ）
+VirusTotal.comディレクティブズ。
 
-"vt_public_api_key"
-- Optionally, phpMussel is able to scan files using the Virus Total API as a way to provide a greatly enhanced level of protection against viruses, trojans, malware and other threats. By default, scanning files using the Virus Total API is disabled. To enable it, an API key from Virus Total is required. Due to the significant benefit that this could provide to you, it's something that I highly recommend enabling. Please be aware, however, that to use the Virus Total API, you _**MUST**_ agree to their Terms of Service and you _**MUST**_ adhere to all guidelines as per described by the Virus Total documentation! You are NOT permitted to use this integration feature UNLESS:
-  - You have read and agree to the Terms of Service of Virus Total and its API. The Terms of Service of Virus Total and its API can be found [Here](https://www.virustotal.com/en/about/terms-of-service/).
-  - You have read and you understand, at a minimum, the 序文 of the Virus Total Public API documentation (everything after "VirusTotal Public API v2.0" but before "Contents"). The Virus Total Public API documentation can be found [Here](https://www.virustotal.com/en/documentation/public-api/).
+"vt_public_api_key" （ヴィティ・パブリック・エイピーアイ・キー）
+- オプションですが、phpMusselはVirus Total APIを使ってファイルをスキャンすることができます。ウィルス、トロイの木馬、マルウェア、その他の攻撃に対して非常に効果的に機能します。デフォルトではVirus Total APIを使ったスキャニングは無効になっています。有効にするには、Virus TotalのAPIキーが必要です。メリットが極めて大きいため、有効にすることを強く推奨します。Virus Total APIの使用にあたっては、Virus Totalのドキュメンテーションにある通り、利用規定ならびにガイドラインを遵守しなくてはなりません。この統合機能を使用するためには、
+ - Virus TotalとAPIのサービス規定を読み同意すること。[サービス規定はこちらから](https://www.virustotal.com/en/about/terms-of-service/)。
+ - 最低でもVirus Total Public APIドキュメンテーションの前文を読み理解すること（VirusTotalPublic API v2.0以降Contents（コンテンツ）前まで）Virus Total Public APIの[ドキュメンテーションはこちらから](https://www.virustotal.com/en/documentation/public-api/)。
 
-Note: If scanning files using the Virus Total API is disabled, you won't need to review any of the directives in this category (`virustotal`), because none of them will do anything if this is disabled. To acquire a Virus Total API key, from anywhere on their website, click the "Join our Community" link located towards the top-right of the page, enter in the information requested, and click "Sign up" when done. Follow all instructions supplied, and when you've got your public API key, copy/paste that public API key to the `vt_public_api_key` directive of the `phpmussel.ini` configuration file.
+注意: Virus Total API使用したスキャニングが無効になっている場合、このカテゴリー（`virustotal`）のディレクティブを参照する必要はありません。無効であれば、どれも機能しません。Virus Total APIキーを取得するには、Virus Totalのサイトのページ右上にあるリンク「コミュニティに参加」をクリックして、必要事項を記入しサインアップします。インストラクションに従ってパブリックAPIキーを取得した後、`phpmussel.ini`設定ファイルの`vt_public_api_key`ディレクティブのそれをコピー＆ペーストして下さい。
 
-"vt_suspicion_level"
-- By default, phpMussel will restrict which files it scans using the Virus Total API to those files that it considers "suspicious". You can optionally adjust this restriction by changing the value of the `vt_suspicion_level` directive.
-- `0`: Files are only considered suspicious if, upon being scanned by phpMussel using its own signatures, they are deemed to carry a heuristic weight. This would effectively mean that use of the Virus Total API would be for a second opinion for when phpMussel suspects that a file may potentially be malicious, but can't entirely rule out that it may also potentially be benign (non-malicious) and therefore would otherwise normally not block it or flag it as being malicious.
-- `1`: Files are considered suspicious if, upon being scanned by phpMussel using its own signatures, they are deemed to carry a heuristic weight, if they're known to be executable (PE files, Mach-O files, ELF/Linux files, etc), or if they're known to be of a format that could potentially contain executable data (such as executable macros, DOC/DOCX files, archive files such as RARs, ZIPS and etc). This is the default and recommended suspicion level to apply, effectively meaning that use of the Virus Total API would be for a second opinion for when phpMussel doesn't initially find anything malicious or wrong with a file that it considers to be suspicious and therefore would otherwise normally not block it or flag it as being malicious.
-- `2`: All files are considered suspicious and should be scanned using the Virus Total API. I don't generally recommend applying this suspicion level, due to the risk of reaching your API quota much quicker than would otherwise be the case, but there are certain circumstances (such as when the webmaster or hostmaster has very little faith or trust whatsoever in any of the uploaded content of their users) where this suspicion level could be appropriate. With this suspicion level, all files not normally blocked or flagged as being malicious would be scanned using the Virus Total API. Note, however, that phpMussel will cease using the Virus Total API when your API quota has been reached (regardless of suspicion level), and that your quota will likely be reached much faster when using this suspicion level.
+"vt_suspicion_level" （ヴィティ・サスピション・レベル）
+- デフォルト設定では、phpMusselがVirus Total APIを使ってスキャンするファイル（疑がわしいもの）には制限があります。`vt_suspicion_level`ディレクティブを編集することのより、この制限を変更することが可能です。
+- `0`: phpMusselの署名を使ってスキャンした結果、ヒューリスティックな重みがあると判断された場合にのみ、疑わしいファイルと結論付けられます。すなわちTotal APIは、phpMusselが危険性を察知はしたが完全にそうとは言い切れず、したがってブロックもせず、フラグを付けることもしなかった時のセカンドオピニオンです。
+- `1`: phpMusselの署名を使ってスキャンした結果、実行ファイルと思われる（PEファイル、Mach-O ファイル、ELF/Linuxファイル等）、ないしは実行可能なデータを含んだフォーマット（マクロ、DOC/DOCXファイル、アーカイブRARs／ZIPSファイル等)があれば、ヒューリスティックな重みがあるとして疑わしいファイルと結論付けられます。これはデフォルト設定であり、推奨レベルでもあります。Virus Total APIは、phpMusselが危険性なしと判断し、したがってブロックもせず、フラグを付けることもしなかった時のセカンドオピニオンです。
+- `2`: ファイルは全て疑わしいものとされ、Virus Total APIを使ってスキャンされます。API割り当てを使い切る恐れがあるため、推奨は控えますが、状況によっては適切と言えるでしょう（例えば、ウェブマスターやホストマスターがアップロードされる内容を信頼できない状況等）。この警戒レベルでは、通常ブロック／フラグも対象にならないファイルも全てVirus Total APIを使ってスキャンされます。したがって、Virus Total APIの割り当てを早々に消費してしまうこともあり得、またAPI割り当てを使い切れば、phpMusselはVirus Total APIの使用を中止します（警戒レベルに関係なく）。
 
-Note: Regardless of suspicion level, any files that are either blacklisted or whitelisted by phpMussel won't be scanned using the Virus Total API, because those such files would've already been declared as either malicious or benign by phpMussel by the time that they would've otherwise been scanned by the Virus Total API, and therefore, additional scanning wouldn't be required. The ability of phpMussel to scan files using the Virus Total API is intended to build further confidence for whether a file is malicious or benign in those circumstances where phpMussel itself isn't entirely certain as to whether a file is malicious or benign.
+注意: phpMusselによってブラックリスト化、ホワイトリスト化されたファイルはVirus Total APIを使ったスキャンの対象にはなりません。これらは既に善悪が結論付けられたものであり、Virus Total APIで再びスキャンする必要性はないためです。phpMusseがVirus Total APIを利用するのは、phpMusse自身が危険性の有無について判断しかねる状況においての補助と言えます。
 
-"vt_weighting"
-- Should phpMussel apply the results of scanning using the Virus Total API as detections or as detection weighting? This directive exists, because, although scanning a file using multiple engines (as Virus Total does) should result in an increased detection rate (and therefore in a higher number of malicious files being caught), it can also result in a higher number of false positives, and therefore, in some circumstances, the results of scanning may be better utilised as a confidence score rather than as a definitive conclusion. If a value of 0 is used, the results of scanning using the Virus Total API will be applied as detections, and therefore, if any engine used by Virus Total flags the file being scanned as being malicious, phpMussel will consider the file to be malicious. If any other value is used, the results of scanning using the Virus Total API will be applied as detection weighting, and therefore, the number of engines used by Virus Total that flag the file being scanned as being malicious will serve as a confidence score (or detection weighting) for whether or not the file being scanned should be considered malicious by phpMussel (the value used will represent the minimum confidence score or weight required in order to be considered malicious). A value of 0 is used by default.
+"vt_weighting" （ヴィティ・ウェイティング）
+- phpMusselがVirus Total APIを使ったスキャニング結果を検出として扱うか、検出の重み付けとして扱うべきか？複数のエンジン（Virus Totalのように）を使用したスキャニングは、検出率の向上（より多くのマルウェアが検出）をもたらす一方で誤検出の増加も招くため、このディレクティブが存在します。したがって、スキャニング結果は、決定的判断ではなく信頼スコアとして利用した方が適当なケースもあります。値が０の場合、Virus Total APIを使ったスキャンは検出として扱われ、Virus Totalのエンジンがマルウェアとフラグを付けたファイルは、phpMusselもマルウェアと判断します。その他の値の場合は結果は検出の重み付けとなり、スキャンされたファイルがマルウェアかどうかphpMusselが判断するための信頼スコア（あるいは検出の重み付け）となります（値はマルウェアと判断するための最小信頼スコア、あるいは重み）。デフォルト値は０です。
 
-"vt_quota_rate" and "vt_quota_time"
-- According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly adhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values _**MAY**_ sometimes help you in dealing with these problems. Your rate limit is determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame.
+"vt_quota_rate" （ヴィティ・クォータ・レート） と "vt_quota_time" （ヴィティ・クォータ・タイム）
+- Virus Total APIのドキュメンテーションによると「１分間のタイムフレームの間にリクエストは最大４回」の上限があります。ハニークライアントやハニーポット等のオートメーションを使用し、リポートを受け取るだけでなく、VirusTotal にリソースを提供していれば、上限は引き上げられます。phpMussel のデフォルトでは最大４回を遵守していますが、前述の事情から、この２つのディレクトリを準備し、状況に合わせて変更できるようになっています。制限に達してしまうといった不都合や問題がない限りデフォルト値を変更することは勧められませんが、値を小さくすることが適当なケースもあります。上限はタイムフレーム`vt_quota_time`（ヴィティ・クォータ・タイム）「 分内に」`vt_quota_rate`（ヴィティ・クォータ・レート）で設定します。
 
-####"urlscanner" (Category)
-URL scanner configuration.
+####"urlscanner" （ユーアールエルスキャナー、カテゴリ）
+URLスキャナー設定。
 
-"urlscanner"
-- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the `urlscanner` directive to true; To disable it, set this directive to false.
+"urlscanner" （ユーアールエルスキャナー）
+- phpMusselにはURLスキャナーがビルトインされていて、スキャンされたファイルやデータ内の悪質なURLを検出することができます。URLスキャナーを有効にするには`urlscanner`（ユーアールエルスキャナー）ディレクティブを`true`（真）、無効にするには`false`（偽）にして下さい。
 
-Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
+注意：URLスキャナーが無効の場合、このカテゴリー（`urlscanner`）を参照する必要はありません。
 
-URL scanner API lookup configuration.
+URLスキャナーAPIルックアップ設定。
 
-"lookup_hphosts"
-- Enables API lookups to the [hpHosts](http://hosts-file.net/) API when set to true. hpHosts doesn't require an API key for performing API lookups.
+"lookup_hphosts" （ルックアップ・エイチピーホスツ）
+- Trueにすると、APIの[hpHosts](http://hosts-file.net/)ルックアップが有効になります。hpHostsはAPIルックアップを実行するのに API鍵を必要としません。
 
-"google_api_key"
-- Enables API lookups to the Google Safe Browsing API when the necessary API key is defined. Google Safe Browsing API lookups requires an API key, which can be obtained from [Here](https://console.developers.google.com/).
-- Note: The cURL extension is required in order to use this feature.
+"google_api_key" （グーグル・エーピーアイ・キー）
+- 必要なAPI鍵が定義されれば、APIのGoogle Safe Browsing APIルックアップが有効になります。Google Safe Browsing APIルックアップスに必要なAPI鍵は、[から取得することができます](https://console.developers.google.com/)。
+- 注意: Google Safe Browsing APIルックアップはまだ完成していないので、将来的な利用を想定しています。
 
-"maximum_api_lookups"
-- Maximum allowable number of API lookups to perform per individual scan iteration. Because each additional API lookup will add to the total time required to complete each scan iteration, you may wish to stipulate a limitation in order to expedite the overall scan process. When set to 0, no such maximum allowable number will be applied. Set to 10 by default.
+"maximum_api_lookups" （マクシマム・エーピーアイ・ルックアップス）
+- スキャン反復におけるAPIルックアップの最大回数。APIルックアップの度にスキャン反復の時間が積み重なってしまうので、スキャン処理の速度向上のため、制限を設けたいと考えるかもしれません。０は制限なしを意味します。デフォルトは１０です。
 
-"maximum_api_lookups_response"
-- What to do if the maximum allowable number of API lookups is exceeded? False = Do nothing (continue processing) [Default]; True = Flag/block the file.
+"maximum_api_lookups_response" （マクシマム・エーピーアイ・ルックアップス・レスポンス）
+- APIルックアップの回数制限を超えた時の対応です。`false`（偽） = 何もしない（処理を継続する）「Default（デフォルト）」;`true`（真） = ファイルにフラグを付ける／ブロックする。
 
-"cache_time"
-- How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour).
+"cache_time" （キャッシュ・タイム）
+- APIルックアップの結果をどれくらいキャッシュするか（秒単位です）？デフォルトは３６００秒（一時間）。
 
-####"template_data" (Category)
-Directives/Variables for templates and themes.
+####"template_data" （テンプレート・データ、カテゴリ）
+テンプレートとテーマ用のディレクティブ／変数。
 
-Template data relates to the HTML output used to generate the "Upload Denied" message displayed to users upon a file upload being blocked. If you're using custom themes for phpMussel, HTML output is sourced from the `template_custom.html` file, and otherwise, HTML output is sourced from the `template.html` file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where `foo="bar"`, any instance of `<p>{foo}</p>` found within the HTML output will become `<p>bar</p>`.
+テンプレートのデータは、ユーザーに向けてアップロード拒否のメッセージをHTML形式でアウトプットする際に使用されます。カスタムテーマを使っている場合は`template_custom.html`を使用して、そうでない場合は`template.html`を使用してHTMLアウトプットが生成されます。設定ファイル内にあるこのセクション用の変数は、HTMLアウトプットのために解析され、{｝で囲まれた変数名は対応する変数データに置き換えられます。例えば `foo="bar"`とすると、HTMLアウトプット内の`<p>{foo}</p>`は`<p>bar</p>`となります。
 
-"css_url"
-- The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct phpMussel to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the `css_url` variable. If you leave this variable blank, phpMussel will use the template file for the default theme.
+"css_url" （シーエスエス・ユーアールエル）
+- カスタムテーマ用のテンプレートファイルは、外部CSSプロパティーを使っています。一方、デフォルトテーマは内部CSSです。カスタムテーマを適用するためには、CSSファイルのパブリック HTTPアドレスを"css_url"変数を使って指定して下さい。この変数が空白であれば、デフォルトテーマが適用されます。
 
 ---
 
 
 ###7. <a name="SECTION7"></a>署名（シグニチャ）フォーマット
 
-####*FILENAME SIGNATURES*
-All filename signatures follow the format:
+####*ファイル名署名*
+ファイル名署名のフォーマットは例外なく次のようになります。
 
 `NAME:FNRX`
 
-Where NAME is the name to cite for that signature and FNRX is the regex pattern to match filenames (unencoded) against.
+NAMEはその署名を指す名前でFNRXはファイル名（エンコードされていない）にマッチする正規表現パターンです。
 
-####*MD5 SIGNATURES*
-All MD5 signatures follow the format:
+####*MD5署名*
+MD5署名のフォーマットは例外なく次のようになります。
 
 `HASH:FILESIZE:NAME`
 
-Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of that file and NAME is the name to cite for that signature.
+HASHは全ファイルのMD5 ハッシュ、FILESIZEはファイルの全サイズ、NAMEはその署名を指す名前です。
 
-####*ARCHIVE METADATA SIGNATURES*
-All archive metadata signatures follow the format:
+####*アーカイブ・メタデータ署名*
+アーカイブ・メタデータ署名のフォーマットは例外なく次のようになります。
 
 `NAME:FILESIZE:CRC32`
 
-Where NAME is the name to cite for that signature, FILESIZE is the total size (uncompressed) of a file contained within the archive and CRC32 is the CRC32 checksum of that contained file.
+NAMEはその署名を指す名前、FILESIZEはアーカイブに含まれるファイルサイズ（解凍後）トータル、CRC32は含まれるファイルのCRC32チェックサムです。
 
-####*PE SECTIONAL SIGNATURES*
-All PE Sectional signatures follow the format:
+####*PEセクショナル署名*
+PEセクショナル署名のフォーマットは例外なく次のようになります。
 
 `SIZE:HASH:NAME`
 
-Where HASH is the MD5 hash of a section of a PE file, SIZE is the total size of that section and NAME is the name to cite for that signature.
+HASHはPEファイルのある部分のMD5ハッシュ、SIZEはその部分の全サイズ、NAMEは署名を指す名前です。
 
-####*PE EXTENDED SIGNATURES*
-All PE extended signatures follow the format:
+####*PE拡張署名*
+PE拡張署名のフォーマットは例外なく次のようになります。
 
 `$VAR:HASH:SIZE:NAME`
 
-Where $VAR is the name of the PE variable to match against, HASH is the MD5 hash of that variable, SIZE is the total size of that variable and NAME is the name to cite for that signature.
+$VARはマッチするPE変数の名前、HASHはその変数のMD5ハッシュ、サイズは変数の全サイズ、NAMEはその署名を指す名前です。
 
-####*WHITELIST SIGNATURES*
-All Whitelist signatures follow the format:
+####*ホワイトリスト署名*
+ホワイトリスト署名のフォーマットは例外なく次のようになります。
 
 `HASH:FILESIZE:TYPE`
 
-Where HASH is the MD5 hash of an entire file, FILESIZE is the total size of that file and TYPE is the type of signatures the whitelisted file is to be immune against.
+HASHは全ファイルのMD5ハッシュ、FILESIZEはそのファイルの全サイズ、TYPEはホワイトリスト化されたファイルが攻撃を受ける恐れのないの署名タイプです。
 
-####*COMPLEX EXTENDED SIGNATURES*
-Complex Extended signatures are rather different to the other types of signatures possible with phpMussel, in that what they are matching against is specified by the signatures themselves and they can match against multiple criteria. The match criterias are delimited by ";" and the match type and match data of each match criteria is delimited by ":" as so that format for these signatures tends to look a bit like:
+####*複合拡張署名*
+複合拡張署名は他の署名とは少し違い、何に適合するかはそれ自身の署名によって決まり、基準は一つではありません。適合基準は「;」により、適合タイプ、適合データは「: 」によります。したがってフォーマットは、$変数１:何らかのデータ;$変数２:SOMEDATA;何らかのデータのようになります。
 
 `$variable1:SOMEDATA;$variable2:SOMEDATA;SignatureName`
 
-####*EVERYTHING ELSE*
-All other signatures follow the format:
+####*その他*
+その他の署名のフォーマットです。
 
 `NAME:HEX:FROM:TO`
 
-Where NAME is the name to cite for that signature and HEX is a hexadecimal-encoded segment of the file intended to be matched by the given signature. FROM and TO are optional parameters, indicating from which and to which positions in the source data to check against.
+NAMEはその署名を指す名前、HEXは与えられた署名により適合を見るファイルの１６進法にエンコードされたセグメントです。FROMとTOはオプション・パラメータで、データソースのどこからどこまでチェックするかを示します（メール機能ではサポートしていません）。
 
-####*REGEX*
-Any form of regex understood and correctly processed by PHP should also be correctly understood and processed by phpMussel and its signatures. However, I'd suggest taking extreme caution when writing new regex based signatures, because, if you're not entirely sure what you're doing, there can be highly irregular and/or unexpected results. Take a look at the phpMussel source-code if you're not entirely sure about the context in which regex statements are parsed. Also, remember that all patterns (with exception to filename, archive metadata and MD5 patterns) must be hexadecimally encoded (foregoing pattern syntax, of course)!
+####*正規表現*
+PHPが正規表現と判断し処理するフォーマットであれば、phpMusselと署名によって間違いなく処理されます。しかし念のため、署名を基礎とする正規表現を新規に作成する場合は細心の注意を払って下さい。絶対的な自信がない状況では、思いもしないエラーが発生しかねません。正規表現ステートメントが解析されているコンテキストを完全に理解していないならば、phpMusselのコードを見て下さい。パターンは全て（ファイル名、アーカイブ・メタデータ、MD5 パターンを除く）１６進法でエンコードされなければならない点に注意(上記のパターン構文も)です！
 
-####*WHERE TO PUT CUSTOM SIGNATURES?*
-Only put custom signatures in those files intended for custom signatures. Those files should contain "_custom" in their filenames. You should also avoid editing the default signature files, unless you know exactly what you're doing, because, aside from being good practise in general and aside from helping you distinguish between your own signatures and the default signatures included with phpMussel, it's good to stick to editing only the files intended for editing, because tampering with the default signature files can cause them to stop working correctly, due to the "maps" files: The maps files tell phpMussel where in the signature files to look for signatures required by phpMussel as per when required, and these maps can become out-of-sync with their associated signature files if those signature files are tampered with. You can put pretty much whatever you want into your custom signatures, so long as you follow the correct syntax. However, be careful to test new signatures for false-positives beforehand if you intend to share them or use them in a live environment.
+####*カスタム署名の場所*
+カスタム署名は、カスタム署名があるべきファイルに置いて下さい。ファイル名は"_custom"を含むものとします。加えて、デフォルト署名ファイルを編集するのは可能な限り避けるべきで、一般的に推奨されるだけでなく、あるいは自身の署名とphpMusselのデフォルト署名の区別という観点だけなく、デフォルト署名ファイルの改ざんは、"maps"ファイルとの関係で正常な機能を阻害する恐れがあります。というのも、mapsファイルによりphpMusselは署名ファイルのどこを探すか判断するためです。改ざんによりmapsと関連署名ファイルの同期は破壊されかねません。構文さえ守れば、カスタム署名にはかなりの自由度がありますが、稼働環境では十分な注意が必要で、新しい署名は誤検出のテストを欠かさずに行って下さい。
 
-####*SIGNATURE BREAKDOWN*
-The following is a breakdown of the types of signatures used by phpMussel:
-- "Normalised ASCII signatures" (ascii_*). Checked against the contents of every non-whitelisted file targeted for scanning.
-- "Complex Extended signatures" (coex_*). Mixed signature type matching.
-- "ELF signatures" (elf_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to the ELF format.
-- "Portable executable signatures" (exe_*). Checked against the contents of every non-whitelisted targeted for scanning and matched to the PE format.
-- "Filename signatures" (filenames_*). Checked against the filenames of files targeted for scanning.
-- "General signatures" (general_*). Checked against the contents of every non-whitelisted file targeted for scanning.
-- "Graphics signatures" (graphics_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to a known graphical file format.
-- "General commands" (hex_general_commands.csv). Checked against the contents of every non-whitelisted file targeted for scanning.
-- "Normalised HTML signatures" (html_*). Checked against the contents of every non-whitelisted HTML file targeted for scanning.
-- "Mach-O signatures" (macho_*). Checked against the contents of every non-whitelisted file targeted for scanning and matched to the Mach-O format.
-- "Email signatures" (mail_*). Checked against the contents of every non-whitelisted EML file targeted for scanning.
-- "MD5 signatures" (md5_*). Checked against the MD5 hash of the contents and the filesize of every non-whitelisted file targeted for scanning.
-- "Archive metadata signatures" (metadata_*). Checked against the CRC32 hash and filesize of the initial file contained inside of any non-whitelisted archive targeted for scanning.
-- "OLE signatures" (ole_*). Checked against the contents of every non-whitelisted OLE object targeted for scanning.
-- "PDF signatures" (pdf_*). Checked against the contents of every non-whitelisted PDF file targeted for scanning.
-- "Portable executable sectional signatures" (pe_*). Checked against the MD5 hash and the size of each PE section of every non-whitelisted file targeted for scanning and matched to the PE format.
-- "Portable executable extended signatures" (pex_*). Checked against the MD5 hash and the size of variables within every non-whitelisted file targeted for scanning and matched to the PE format.
-- "SWF signatures" (swf_*). Checked against the contents of every non-whitelisted Shockwave file targeted for scanning.
-- "Whitelist signatures" (whitelist_*). Checked against the MD5 hash of the contents and the filesize of every file targeted for scanning. Matched files will be immune to being matched by the type of signature mentioned in their whitelist entry.
-- "XML/XDP signatures" (xmlxdp_*). Checked against any XML/XDP chunks found within any non-whitelisted files targeted for scanning.
-(Note that any of these signatures may be easily disabled via `phpmussel.ini`).
+####*署名詳細*
+phpMusselが使う署名タイプの詳細です。
+- "正規ASCII署名" (ascii_*)　スキャン対象ファイルがホワイトリスト化されていない場合、そのコンテンツに対して使用されます。
+- "複合拡張署名" (coex_*)　ミックスした署名タイプのマッチングです。
+- "ELF署名" (elf_*)　スキャン対象ファイルがホワイトリスト化されていない場合、そのコンテンツに対して使用され、 ELFフォーマットへの適合をみます。
+- "ポータブル実行署名" (exe_*)　スキャン対象ファイルがホワイトリスト化されていない場合、そのコンテンツに対して使用され、PEフォーマットへの適合をみます。
+- "ファイル名署名" (filenames_*)　スキャン対象ファイルのファイル名に対して使用されます。
+- "一般署名" (general_*)　スキャン対象ファイルがホワイトリスト化されていない場合、そのコンテンツに対して使用されます。
+- "グラフィック署名" (graphics_*)　スキャン対象ファイルがホワイトリスト化されていない場合、そのコンテンツに対して使用され、既知のグラフィカルファイルフォーマットへの適合をみます。
+- "一般コマンド" (hex_general_commands.csv)　スキャン対象ファイルがホワイトリスト化されていないファイルのコンテンツに対して使用されます。
+- "正規ＨＴＭＬ署名" (html_*)　スキャン対象ファイルがホワイトリスト化されていないＨＴＭＬファイル場合、そのコンテンツに対して使用されます。
+- "マッチＯ署名" (macho_*) スキャン対象ファイルがホワイトリスト化されていない場合、そのファイルのコンテンツに対して使用され、マッチＯフォーマットへの適合をみます。
+- "Ｅメール署名" (mail_*)　スキャン対象ファイルがホワイトリスト化されていないEMLファイルの場合、そのコンテンツに対して使用されます。
+- "MD5署名" (md5_*)　スキャン対象ファイルがホワイトリスト化されていない場合、そのコンテンツのMD5ハッシュ、ファイルサイズに対して使用されます。
+- "アーカイブメタデータ署名" (metadata_*) スキャン対象ファイルがホワイトリスト化されていないアーカイブを含む場合、スキャン対象ファイルのCRC32ハッシュとファイルサイズに対して使用されます。
+- "OLE署名" (ole_*) スキャン対象ファイルがホワイトリスト化されていないOLEオブジェクトの場合、そのコンテンツに対して使用されます。
+- "PDF署名" (pdf_*)　スキャン対象ファイルがホワイトリスト化されていないPDFファイルの場合、そのコンテンツに対して使用されます。
+- "ポータブル実行セクショナル署名" (pe_*)　スキャン対象ファイルがホワイトリスト化されていない場合、全てのPE部分のMD5ハッシュとファイルサイズに対して使用され、PEフォーマットへの適合をみます。
+- "ポータブル実行拡張署名" (pex_*)　スキャン対象ファイルがホワイトリスト化されていない場合、ファイル内のMD5ハッシュと変数のサイズに対して使用され、PEフォーマットへの適合をみます。
+- "SWF署名" (swf_*)　スキャン対象ファイルがホワイトリスト化されていないショックウェーブファイルの場合、そのコンテンツに対して使用されます。
+- "ホワイトリスト署名" (whitelist_*)　スキャン対象ファイルのコンテンツのMD5ハッシュとファイルサイズに対して使用されます。適合ファイルは、ホワイトリスト・エントリー内に記載された署名タイプへの適合性を必要としません。
+- "XML/XDP署名 " (xmlxdp_*)　スキャン対象ファイルがホワイトリスト化されていない場合、ファイル内で確認されたXML/XDPに対して使用されます。
+（注意: これらの署名は`phpmussel.ini`において容易に無効設定できます）。
 
 ---
 

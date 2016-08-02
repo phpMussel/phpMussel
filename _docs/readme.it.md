@@ -256,19 +256,20 @@ File | Descrizione
 /README.md | Informazioni di riepilogo del progetto.
 /web.config | Un ASP.NET file di configurazione (in questo caso, a proteggere la `/vault` cartella da l'acceso di non autorizzate origini nel caso che lo script è installato su un server basata su ASP.NET tecnologie).
 /_docs/ | Documentazione cartella (contiene vari file).
-/_docs/readme.ar.md | Arabo documentazione.
-/_docs/readme.de.md | Tedesco documentazione.
-/_docs/readme.en.md | Inglese documentazione.
-/_docs/readme.es.md | Spagnolo documentazione.
-/_docs/readme.fr.md | Francese documentazione.
-/_docs/readme.id.md | Indonesiano documentazione.
-/_docs/readme.it.md | Italiano documentazione.
-/_docs/readme.nl.md | Olandese documentazione.
-/_docs/readme.pt.md | Portoghese documentazione.
-/_docs/readme.ru.md | Russo documentazione.
-/_docs/readme.vi.md | Vietnamita documentazione.
-/_docs/readme.zh-TW.md | Cinese (tradizionale) documentazione.
-/_docs/readme.zh.md | Cinese (semplificato) documentazione.
+/_docs/readme.ar.md | Documentazione Arabo.
+/_docs/readme.de.md | Documentazione Tedesco.
+/_docs/readme.en.md | Documentazione Inglese.
+/_docs/readme.es.md | Documentazione Spagnolo.
+/_docs/readme.fr.md | Documentazione Francese.
+/_docs/readme.id.md | Documentazione Indonesiano.
+/_docs/readme.it.md | Documentazione Italiano.
+/_docs/readme.ja.md | Documentazione Giapponese.
+/_docs/readme.nl.md | Documentazione Olandese.
+/_docs/readme.pt.md | Documentazione Portoghese.
+/_docs/readme.ru.md | Documentazione Russo.
+/_docs/readme.vi.md | Documentazione Vietnamita.
+/_docs/readme.zh-TW.md | Documentazione Cinese (tradizionale).
+/_docs/readme.zh.md | Documentazione Cinese (semplificato).
 /_testfiles/ | Test file cartella (contiene vari file). Tutti i file contenuti sono test file per la verifica se phpMussel è installato correttamente sulla vostra sistema, e non è necessario a caricare questa cartella o qualsiasi dei suoi file, tranne quando fa tali test.
 /_testfiles/ascii_standard_testfile.txt | Test file per test di phpMussel normalizzati ASCII firme.
 /_testfiles/coex_testfile.rtf | Test file per test di phpMussel complesso esteso firme.
@@ -994,4 +995,4 @@ Questa informazione è stato lo scorso aggiornato 4 Luglio 2016 ed è in corso p
 ---
 
 
-Ultimo Aggiornamento: 4 Luglio 2016 (2016.07.04).
+Ultimo Aggiornamento: 2 Agosto 2016 (2016.08.02).

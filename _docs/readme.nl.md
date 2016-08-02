@@ -263,6 +263,7 @@ Bestand | Beschrijving
 /_docs/readme.fr.md | Franse documentatie.
 /_docs/readme.id.md | Indonesisch documentatie.
 /_docs/readme.it.md | Italiaanse documentatie.
+/_docs/readme.ja.md | Japanse documentatie.
 /_docs/readme.nl.md | Nederlandse documentatie.
 /_docs/readme.pt.md | Portugees documentatie.
 /_docs/readme.ru.md | Russische documentatie.
@@ -994,4 +995,4 @@ Dit informatie werd laatst bijgewerkt 4 Juli 2016 en is op de hoogte voor alle p
 ---
 
 
-Laatste Bijgewerkt: 4 Juli 2016 (2016.07.04).
+Laatste Bijgewerkt: 2 Augustus 2016 (2016.08.02).

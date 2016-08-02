@@ -263,6 +263,7 @@ Tập tin | Chi tiết
 /_docs/readme.fr.md | Tài liệu tiếng Pháp.
 /_docs/readme.id.md | Tài liệu tiếng Indonesia.
 /_docs/readme.it.md | Tài liệu tiếng Ý.
+/_docs/readme.ja.md | Tài liệu tiếng Nhật.
 /_docs/readme.nl.md | Tài liệu tiếng Hà Lan.
 /_docs/readme.pt.md | Tài liệu tiếng Bồ Đào Nha.
 /_docs/readme.ru.md | Tài liệu tiếng Nga.
@@ -994,4 +995,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 4 Tháng Bảy 20
 ---
 
 
-Lần cuối cập nhật: 4 Tháng Bảy 2016 (2016.07.04).
+Lần cuối cập nhật: 2 Tháng Tám 2016 (2016.08.02).
