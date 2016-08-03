@@ -3,16 +3,16 @@
 ### <div dir="rtl">المحتويات:</div>
 <div dir="rtl"><ul>
  <li>1. <a href="#SECTION1">مقدمة</a></li>
- <li>2-أ. <a href="#SECTION2A">التحميل(لخدمات الويب).</a></li>
- <li>2-ب. <a href="#SECTION2B">التحميل(واجهة سطر الأوامر).</a></li>
- <li>3-أ. <a href="#SECTION3A">كيفية الإستخدام (لخدمات الويب).</a></li>
- <li>3-ب. <a href="#SECTION3B">كيفية الإستخدام (واجهة سطر الأوامر).</a></li>
- <li>4-أ. <a href="#SECTION4A">أوامرالمتصفح.</a></li>
- <li>4-ب. <a href="#SECTION4B">واجهة سطر الأوامر(CLI) .</a></li>
- <li>5. <a href="#SECTION5">الملفات الموجودة في هذه الحزمة.</a></li>
- <li>6. <a href="#SECTION6">خيارات التكوين/التهيئة.</a></li>
- <li>7. <a href="#SECTION7">شكل/تنسيق التوقيع.</a></li>
- <li>8. <a href="#SECTION8">مشاكل التوافق الشائعة.</a></li>
+ <li>2-أ. <a href="#SECTION2A">كيفية التحميل (لخدمات الويب)</a></li>
+ <li>2-ب. <a href="#SECTION2B">كيفية التحميل (لخدمات واجهة سطر الأوامر)</a></li>
+ <li>3-أ. <a href="#SECTION3A">كيفية الإستخدام (لخدمات الويب)</a></li>
+ <li>3-ب. <a href="#SECTION3B">كيفية الاستخدام (لخدمات واجهة سطر الأوامر)</a></li>
+ <li>4-أ. <a href="#SECTION4A">أوامرالمتصفح</a></li>
+ <li>4-ب. <a href="#SECTION4B">CLI (واجهة سطر الأوامر)</a></li>
+ <li>5. <a href="#SECTION5">الملفاتالموجودةفيهذهالحزمة</a></li>
+ <li>6. <a href="#SECTION6">خياراتالتكوين/التهيئة</a></li>
+ <li>7. <a href="#SECTION7">شكل/تنسيق التوقيع</a></li>
+ <li>8. <a href="#SECTION8">مشاكل التوافق المعروفة</a></li>
 </ul></div>
 
 ---
@@ -24,24 +24,22 @@
 
 <div dir="rtl">حقوق النشر محفوظة ل phpMussel لعام 2013 وما بعده تحت رخصة GNU/GPLv2 للمبرمج (Caleb M (Maikuolan.<br /><br /></div>
 
-<div dir="rtl">هذا البرنامج مجاني، يمكنك تعديله وإعادة نشره تحت رخصة GNU.<br /><br /></div>
-
-<div dir="rtl">نشارك هذا السكربت على أمل أن تعم الفائدة لكن لا نتحمل أية مسؤولية أو أية ضمانات لاستخدامك، اطلع على تفاصيل رخصة GNU للمزيد من المعلومات عبر الملف LICENSE.txt وللمزيد من المعلومات :</div>
+<div dir="rtl">هذا البرنامج مجاني، يمكنك تعديله وإعادة نشره تحت رخصة GNU. نشارك هذا السكربت على أمل أن تعم الفائدة لكن لا نتحمل أية مسؤولية أو أية ضمانات لاستخدامك، اطلع على تفاصيل رخصة GNU للمزيد من المعلومات عبر الملف `LICENSE.txt` وللمزيد من المعلومات:</div>
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
-<div dir="rtl">شكر خاص ل<a href="http://www.clamav.net/">ClamAV</a> لكل من الإلهام للمشروع والتواقيع التي يعمد عليها السكربت، والتي من دونها كان من الممكن أن لا يتم إنجاز هذا البرنامج أو بأفضل الأحوال ستكون قيمته محدودة جداً. <br /><br /></div>
+<div dir="rtl">شكر خاص ل<a href="http://www.clamav.net/">ClamAV</a> لكل من الإلهام للمشروع والتواقيع التي يعمد عليها السكربت، والتي من دونها كان من الممكن أن لا يتم إنجاز هذا البرنامج أو بأفضل الأحوال ستكون قيمته محدودة جداً.<br /><br /></div>
 
-<div dir="rtl">شكر خاص أيضاً ل Sourceforge و GitHub لإستضافتهم ملفات المشروع، و <a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">Spambot Security</a> لإستضافة phpMussel لمنتديات المناقشة، وأيضاً لمصادر التوقيعات التي يستخدمها phpMussel مثل : <a href="http://www.securiteinfo.com/">SecuriteInfo.com</a> و <a href="http://www.phishtank.com/">PhishTank</a>  و <a href="http://nlnetlabs.nl/">NLNetLabs</a> وغيرهم، والشكر مقدم لكل من يدعم المشروع وشكراً لك لاستخدامك للسكربت. <br /><br /></div>
- 
+<div dir="rtl">شكر خاص أيضاً ل Sourceforge و Github لإستضافتهم ملفات المشروع، و <a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">Spambot Security</a> لإستضافة phpMussel لمنتديات المناقشة، وأيضاً لمصادر التوقيعات التي يستخدمها phpMussel مثل : <a href="http://www.securiteinfo.com/">SecuriteInfo.com</a> و <a href="http://www.phishtank.com/">PhishTank</a>  و <a href="http://nlnetlabs.nl/">NLNetLabs</a> وغيرهم، والشكر مقدم لكل من يدعم المشروع وشكراً لك لاستخدامك للسكربت.<br /><br /></div>
+
 <div dir="rtl">هذا المستند و الحزم المرتبطة به يمكن تحميلها مجاناً من:</div>
 - [Sourceforge](http://phpmussel.sourceforge.net/).
-- [GitHub](https://github.com/Maikuolan/phpMussel/).
+- [Github](https://github.com/Maikuolan/phpMussel/).
 
 ---
 
 
-### <div dir="rtl">2-أ. <a name="SECTION2A"></a>كيفية التحميل (لخدمات الويب)</div>
+### <div dir="rtl">2-أ. <a name="SECTION2A"></a>كيفية كيفية التحميل (لخدمات الويب)</div>
 
 <div dir="rtl">أرجو أن يتم تسهيل هذه العملية في المستقبل القريب، لكن في الوقت الحالي إتبع هذه التعليمات والتي تعمل على أغلب الأنظمة وأنظمة إدارة المحتوى CMS : <br /><br /></div>
 
@@ -53,8 +51,7 @@
 
 <div dir="rtl">4_غير التصريح لمجلد vault للتصريح 777. المجلد الرئيسي الذي يحتوي على الملفات-المجلد الذي اخترته سابقاً-، بالعادة يمكن تجاهله، لكن يجب التأكد من التصريح إذا واجهت مشاكل في الماضي(إفتراضيا يجب أن يكون 755).<br /><br /></div>
 
-<div dir="rtl">5_الآن أنت بحاجة لربط phpMussel لنظام إدارة المحتوى أو النظام الذي تستخدمه, هناك عدة طرق لفعل هذا لكن أسهل طريقة ببساطة إضافة السكربت لبداية النواة في نظامك (سيتم إعادة التحميل لكل وصول لأي صفحة في الموقع) بإستخدام جمل require أو include, بالعادة سيتم التخزين في  /includes, /assets أو /functions, وسيتم تسميته بالغالب مثل: init.php, common_functions.php, functions.php أو ما شابه.
-من الممكن أن تكون مستخدم ل CMS لذا يمكن أن أقدم بعض المساعدة بخصوص هذا الموضوع, لإستخدام require أو include قم بإضافة الكود التالي لبداية الملف الرئيسي لبرنامجك, عدل النص الموجود داخل علامات التنصيص لمسار phpmussel.php لديك.<br /><br /></div>
+<div dir="rtl">5_الآن أنت بحاجة لربط phpMussel لنظام إدارة المحتوى أو النظام الذي تستخدمه، هناك عدة طرق لفعل هذا لكن أسهل طريقة ببساطة إضافة السكربت لبداية النواة في نظامك (سيتم إعادة التحميل لكل وصول لأي صفحة في الموقع) بإستخدام جمل `require` أو `include`، بالعادة سيتم التخزين في  `/includes`، `/assets` أو `/functions`، وسيتم تسميته بالغالب مثل: `init.php`، `common_functions.php`، `functions.php` أو ما شابه. من الممكن أن تكون مستخدم ل CMS لذا يمكن أن أقدم بعض المساعدة بخصوص هذا الموضوع، لإستخدام `require` أو `include` قم بإضافة الكود التالي لبداية الملف الرئيسي لبرنامجك، عدل النص الموجود داخل علامات التنصيص لمسار `phpmussel.php` لديك.<br /><br /></div>
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
@@ -62,11 +59,11 @@
 
 <div dir="rtl">--أو بدلاً من ذلك--<br /><br /></div>
 
-<div dir="rtl">إذا كنت تستخدم Apache webserver وتستطيع الوصول ل php.ini، بإستطاعتك إستخدام auto_prpend_file للتوجيه ل phpMussel لكل طلب مثل:<br /><br /></div>
+<div dir="rtl">إذا كنت تستخدم Apache webserver وتستطيع الوصول ل `php.ini`، بإستطاعتك إستخدام `auto_prpend_file` للتوجيه ل phpMussel لكل طلب مثل:<br /><br /></div>
 
 `auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"`
 
-<div dir="rtl">أو هذا في ملف ".htaccess":<br /><br /></div>
+<div dir="rtl">أو هذا في ملف `.htaccess`:<br /><br /></div>
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"`
 
@@ -86,7 +83,7 @@
 <div dir="rtl">3_هذه الخطوة اختيارية ينصح بها للمستخدمين المتقدمين ولا ينصح بها للمبتدئين،إفتح phpmussel.ini الموجود داخل vault هذا الملف يحتوي جميع التعليمات ل phpMussel، أعلى كل خيار يوجد وصف مختصر للوظيفة التي يقوم بها، عدل الخيارات كما يناسبك.
 <br /><br /></div>
 
-<div dir="rtl">4_بشكل إختياري، يمكنك إستخدام phpMussel لواجهة سطر الأوامر بإنشاء ملف "باتش" لتحميل php و phpMussel تلقائياً، للقيام بهذا إفتح محرر النصوص مثل Notepad++ ثم أكتب المسار الكامل لملف php.exe الموجود في دليل التثبيت متبوع بمسافة ثم المسار الكامل لملف phpmussel1.php احفظ الملف بصيغة bat.، إفتح الملف الذي قمت بإنشاءه لتشغيل phpMussel في المستقبل. <br /><br /></div>
+<div dir="rtl">4_بشكل إختياري، يمكنك إستخدام phpMussel لواجهة سطر الأوامر بإنشاء ملف "باتش" لتحميل php و phpMussel تلقائياً، للقيام بهذا إفتح محرر النصوص مثل Notepad++ ثم أكتب المسار الكامل لملف php.exe الموجود في دليل التثبيت متبوع بمسافة ثم المسار الكامل لملف phpmussel1.php احفظ الملف بصيغة bat.، إفتح الملف الذي قمت بإنشاءه لتشغيل phpMussel في المستقبل.<br /><br /></div>
 
 <div dir="rtl">5) في هذه المرحلة، لقد انتهيت! ومع ذلك فربما يجب عليك اختباره للتأكد من أنه يعمل بشكل صحيح. لاختبار phpMussel، قم بتشغيله و حاول فحص الدليل "_testfiles" المتوفر مع الحزمة.<br /><br /></div>
 
@@ -164,7 +161,7 @@
  <li>إذا تعرضت كلمات السر التي قمت بتعيينها للخطر في أي وقت, فيمكن أن توفر وسيلة للمهاجمين لتجاوز كل ما قد يكون كفيل عادة بمنع هجماتهم من النجاح أو حتى تعطيل phpMussel.</li>
 </ul></div>
 
-<div dir="rtl">بغض النظر عن إختيارك بتشغيل الضوابط أم لا, سيتم تعطيل الضوابط إفتراضياً وإذا أردت استخدام هذه الضوابط 
+<div dir="rtl">بغض النظر عن إختيارك بتشغيل الضوابط أم لا, سيتم تعطيل الضوابط إفتراضياً وإذا أردت استخدام هذه الضوابط
 فهذه قائمة بالأوامر المتاحة من قبل المتصفح: <br /><br /></div>
 
 <div dir="rtl">قائمة الأوامر المتاحة من قبل المتصفح:<br /><br /></div>
@@ -273,7 +270,7 @@
 ---
 
 
-### <div dir="rtl">4ب. <a name="SECTION4B"></a>CLI (واجهة سطر الأوامر)</div>
+### <div dir="rtl">4ب. <a name="SECTION4B"></a>CLI (واجهة سطر الأوامر).</div>
 
 <div dir="rtl">يمكن تشغيل phpMussel باعتباره برنامج فحص ملفات تفاعلي في وضع CLI في ظل النظم المستندة إلى Windows. راجع قسم "كيفية التثبيت (لواجهة سطر الاوامر)" من هذا الملف التمهيدي لمزيد من التفاصيل.<br /><br /></div>
 
@@ -288,7 +285,7 @@
 
 الوصف | الملف
 ----|----
-<div dir="rtl" style="display:inline;">أ ملف المشروع GitHub (غير مطلوب لتشغيل سليم للبرنامج).</div> | /.gitattributes
+<div dir="rtl" style="display:inline;">أ ملف المشروع Github (غير مطلوب لتشغيل سليم للبرنامج).</div> | /.gitattributes
 <div dir="rtl" style="display:inline;">سجل للتغييرات التي أجريت على البرنامج بين التحديثات المختلفة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /Changelog-v1.txt
 <div dir="rtl" style="display:inline;">معلومات Composer/Packagist (غير مطلوب لتشغيل سليم للبرنامج).</div> | /composer.json
 <div dir="rtl" style="display:inline;">معلومات حول كيفية المساهمة في المشروع.</div> | /CONTRIBUTING.md
@@ -510,7 +507,7 @@
 
 
 ### <div dir="rtl">6. <a name="SECTION6"></a>خياراتالتكوين/التهيئة</div>
-<div dir="rtl">وفيما يلي قائمة من المتغيرات الموجودة في ملف تكوين phpmussel.ini، بالإضافة إلى وصف الغرض منه و وظيفته.<br /><br /></div>
+<div dir="rtl">وفيما يلي قائمة من المتغيرات الموجودة في ملف تكوين `phpmussel.ini`، بالإضافة إلى وصف الغرض منه و وظيفته.<br /><br /></div>
 
 #### <div dir="rtl">"general" (التصنيف)<br /></div>
 <div dir="rtl">التكوين العام لـ phpMussel.<br /><br /></div>
@@ -1216,4 +1213,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 2 أغسطس 2016 (2016.08.02).</div>
+<div dir="rtl">آخر تحديث: 3 أغسطس 2016 (2016.08.03).</div>

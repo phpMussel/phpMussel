@@ -29,11 +29,11 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 謝謝[ClamAV](http://www.clamav.net/)為本腳本提供文件簽名庫訪問許可。沒有它，這個腳本很可能不會存在，或者其價值有限。
 
-謝謝Sourceforge和GitHub開通了，[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)的phpMussel的討論論壇，謝謝為phpMussel提供簽名文件的：[SecuriteInfo.com](http://www.securiteinfo.com/)，[PhishTank](http://www.phishtank.com/)，[NLNetLabs](http://nlnetlabs.nl/)，還有更多的我忘了提及的人（抱歉，語文水平有限，這句話實在不知道怎麼翻譯才通順）。
+謝謝Sourceforge和Github開通了，[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)的phpMussel的討論論壇，謝謝為phpMussel提供簽名文件的：[SecuriteInfo.com](http://www.securiteinfo.com/)，[PhishTank](http://www.phishtank.com/)，[NLNetLabs](http://nlnetlabs.nl/)，還有更多的我忘了提及的人（抱歉，語文水平有限，這句話實在不知道怎麼翻譯才通順）。
 
 現在phpMussel的代碼文件和關聯包可以從以下地址免費下載：
 - [Sourceforge](http://phpmussel.sourceforge.net/)。
-- [GitHub](https://github.com/Maikuolan/phpMussel/)。
+- [Github](https://github.com/Maikuolan/phpMussel/)。
 
 ---
 
@@ -50,7 +50,7 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 4） 修改的`vault`文件夾權限為“755”。注意，主文件夾也應該是該權限，如果遇上其他權限問題，請修改對應文件夾和文件的權限。
 
-5） 接下來，您需要為您的系統或CMS設定啟動phpMussel的鉤子。有幾種不同的方式為您的系統或CMS設定鉤子，最簡單的是在您的系統或CMS的核心文件的開頭中使用`require`或`include`命令直接包含腳本（這個方法通常會導致在有人訪問時每次都加載）。平時，這些都是存儲的在文件夾中，例如`/includes`，`/assets`或`/functions`等文件夾，和將經常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。這是根據您自己的情況決定的，並不需要完全遵守；如果您遇到困難，訪問phpMussel支持論壇和發送問題；可能其他用戶或者我自己也有這個問題並且解決了（您需要讓我們您在使用哪些CMS）。為了使用`require`或`include`，插入下面的代碼行到最開始的該核心文件，更換裡面的數據引號以確切的地址的`phpmussel.php`文件（本地地址，不是HTTP地址；它會類似於前面提到的vault地址）。（注意，本人不是PHP程序員，關於這一段僅僅是直譯，如有錯誤，請在對應項目上提交問題更正）。
+5） 接下來，您需要為您的系統或CMS設定啟動phpMussel的鉤子。有幾種不同的方式為您的系統或CMS設定鉤子，最簡單的是在您的系統或CMS的核心文件的開頭中使用`require`或`include`命令直接包含腳本（這個方法通常會導致在有人訪問時每次都加載）。平時，這些都是存儲的在文件夾中，例如`/includes`，`/assets`或`/functions`等文件夾，和將經常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。這是根據您自己的情況決定的，並不需要完全遵守；如果您遇到困難，參觀Github上的phpMussel問題頁面和/或訪問phpMussel支持論壇和發送問題；可能其他用戶或者我自己也有這個問題並且解決了（您需要讓我們您在使用哪些CMS）。為了使用`require`或`include`，插入下面的代碼行到最開始的該核心文件，更換裡面的數據引號以確切的地址的`phpmussel.php`文件（本地地址，不是HTTP地址；它會類似於前面提到的vault地址）。
 
 `<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
 
@@ -248,7 +248,7 @@ greylist_show
 
 文件 | 說明
 ----|----
-/.gitattributes | GitHub文件（不需要為正確經營腳本）。
+/.gitattributes | Github文件（不需要為正確經營腳本）。
 /Changelog-v1.txt | 記錄的變化做出至腳本間不同版本（不需要為正確經營腳本）。
 /composer.json | Composer/Packagist 信息（不需要為正確經營腳本）。
 /CONTRIBUTING.md | 相關信息如何有助於該項目。
@@ -998,4 +998,4 @@ URL掃描儀API配置。
 ---
 
 
-最後更新：2016年8月2日。
+最後更新：2016年8月3日。
