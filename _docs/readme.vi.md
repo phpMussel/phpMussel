@@ -250,7 +250,7 @@ Tập tin | Chi tiết
 /Changelog-v1.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
 /composer.json | Thông tin về dự án cho Composer/Packagist (không cần thiết cho chức năng phù hợp của kịch bản).
 /CONTRIBUTING.md | Thông tin về làm thế nào để đóng góp cho dự án.
-/LICENSE.txt | Bản sao của giấy phép GNU/GPLv2.
+/LICENSE.txt | Bản sao của giấy phép GNU/GPLv2 (không cần thiết cho chức năng phù hợp của kịch bản).
 /PEOPLE.md | Thông tin về những người trong dự án.
 /phpmussel.php | Tập tin cho tải. Đây là điều bạn cần nối vào (cần thiết)!
 /README.md | Thông tin tóm tắt dự án.
@@ -995,4 +995,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 4 Tháng Bảy 20
 ---
 
 
-Lần cuối cập nhật: 3 Tháng Tám 2016 (2016.08.03).
+Lần cuối cập nhật: 5 Tháng Tám 2016 (2016.08.05).

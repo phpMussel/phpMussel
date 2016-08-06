@@ -11,9 +11,10 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2016.05.20).
+ * This file: Arabic language data (last modified: 2016.08.06).
  */
 
+$phpMussel['Config']['lang']['textDir'] = 'rtl';
 $phpMussel['Config']['lang']['bad_command'] = 'I don\'t understand that command, sorry.';
 $phpMussel['Config']['lang']['cli_failed_to_complete'] = 'Failed to complete scanning process';
 $phpMussel['Config']['lang']['cli_is_not_a'] = ' is not a file or directory.';
@@ -25,7 +26,7 @@ $phpMussel['Config']['lang']['cli_working'] = 'In progress';
 $phpMussel['Config']['lang']['controls_lockout'] = 'phpMussel controls lockout enabled.';
 $phpMussel['Config']['lang']['core_scriptfile_missing'] = 'Core script file missing! Please reinstall phpMussel.';
 $phpMussel['Config']['lang']['corrupted'] = 'Detected corrupted PE';
-$phpMussel['Config']['lang']['denied'] = 'Upload Denied!';
+$phpMussel['Config']['lang']['denied'] = 'رفض تحميل!';
 $phpMussel['Config']['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
 $phpMussel['Config']['lang']['denied_reason'] = 'Your upload was blocked for the reasons listed below / 您的上传被拒绝由于这些原因:';
 $phpMussel['Config']['lang']['detected'] = 'Detected {vn}';

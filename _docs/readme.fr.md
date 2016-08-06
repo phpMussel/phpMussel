@@ -250,7 +250,7 @@ Fichier | Description
 /Changelog-v1.txt | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
 /composer.json | Composer/Packagist information (pas nécessaire pour le bon fonctionnement du script).
 /CONTRIBUTING.md | Informations sur la façon de contribuer au projet.
-/LICENSE.txt | Une copie de la GNU/GPLv2 license.
+/LICENSE.txt | Une copie de la GNU/GPLv2 license (pas nécessaire pour le bon fonctionnement du script).
 /PEOPLE.md | Informations sur les personnes impliquées dans le projet.
 /phpmussel.php | Le chargeur. C'est ce que vous êtes censé être attacher dans à (essentiel)!
 /README.md | Sommaire de l'information du projet.
@@ -995,4 +995,4 @@ Cette information a été réactualisé le 4 Juillet 2016 et est courant pour to
 ---
 
 
-Dernière Réactualisé: 3 Août 2016 (2016.08.03).
+Dernière Réactualisé: 5 Août 2016 (2016.08.05).

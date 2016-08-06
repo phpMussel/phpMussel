@@ -252,7 +252,7 @@ greylist_show
 /Changelog-v1.txt | 記錄的變化做出至腳本間不同版本（不需要為正確經營腳本）。
 /composer.json | Composer/Packagist 信息（不需要為正確經營腳本）。
 /CONTRIBUTING.md | 相關信息如何有助於該項目。
-/LICENSE.txt | GNU/GPLv2 執照文件。
+/LICENSE.txt | GNU/GPLv2 執照文件（不需要為正確經營腳本）。
 /PEOPLE.md | 人民捲入到該項目。
 /phpmussel.php | 加載文件。這個是文件您應該｢鉤子｣（必不可少）!
 /README.md | 項目概要信息。
@@ -998,4 +998,4 @@ URL掃描儀API配置。
 ---
 
 
-最後更新：2016年8月3日。
+最後更新：2016年8月5日。

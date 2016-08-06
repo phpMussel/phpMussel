@@ -11,9 +11,10 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data (last modified: 2016.05.20).
+ * This file: Spanish language data (last modified: 2016.08.06).
  */
 
+$phpMussel['Config']['lang']['textDir'] = 'ltr';
 $phpMussel['Config']['lang']['bad_command'] = 'No entiendo ese comando, lo siento.';
 $phpMussel['Config']['lang']['cli_failed_to_complete'] = 'No se pudo completar el proceso de escaneo';
 $phpMussel['Config']['lang']['cli_is_not_a'] = ' no es un archivo o directorio.';

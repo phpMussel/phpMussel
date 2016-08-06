@@ -250,7 +250,7 @@ File | Descrizione
 /Changelog-v1.txt | Un record delle modifiche apportate allo script tra diverse versioni (non richiesto per il corretto funzionamento dello script).
 /composer.json | Composer/Packagist informazioni (non richiesto per il corretto funzionamento dello script).
 /CONTRIBUTING.md | Informazioni su come contribuire al progetto.
-/LICENSE.txt | Una copia della GNU/GPLv2 licenza.
+/LICENSE.txt | Una copia della GNU/GPLv2 licenza (non richiesto per il corretto funzionamento dello script).
 /PEOPLE.md | Informazioni sulle persone coinvolte nel progetto.
 /phpmussel.php | Il caricatore. Questo è il file si collegare alla vostra sistema (essenziale)!
 /README.md | Informazioni di riepilogo del progetto.
@@ -995,4 +995,4 @@ Questa informazione è stato lo scorso aggiornato 4 Luglio 2016 ed è in corso p
 ---
 
 
-Ultimo Aggiornamento: 3 Agosto 2016 (2016.08.03).
+Ultimo Aggiornamento: 5 Agosto 2016 (2016.08.05).

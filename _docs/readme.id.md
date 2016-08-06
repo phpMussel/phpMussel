@@ -250,7 +250,7 @@ Data | Deskripsi
 /Changelog-v1.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /composer.json | Informasi untuk Composer/Packagist (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /CONTRIBUTING.md | Informasi tentang cara berkontribusi pada proyek.
-/LICENSE.txt | Salinan lisensi GNU/GPLv2.
+/LICENSE.txt | Salinan lisensi GNU/GPLv2 (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /PEOPLE.md | Informasi tentang orang-orang yang terlibat dalam proyek.
 /phpmussel.php | Pemuat/Loader. Ini yang apa Anda ingin masukkan (utama)!
 /README.md | Ringkasan informasi proyek.
@@ -995,4 +995,4 @@ Informasi ini diupdate 4 Juli 2016 dan cocok untuk semua rilis phpMussel dari du
 ---
 
 
-Terakhir Diperbarui: 3 Agustus 2016 (2016.08.03).
+Terakhir Diperbarui: 5 Agustus 2016 (2016.08.05).

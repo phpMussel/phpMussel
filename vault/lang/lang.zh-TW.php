@@ -11,9 +11,10 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data (last modified: 2016.05.20).
+ * This file: Chinese (traditional) language data (last modified: 2016.08.06).
  */
 
+$phpMussel['Config']['lang']['textDir'] = 'ltr';
 $phpMussel['Config']['lang']['bad_command'] = '我不明白的命令，對不起。';
 $phpMussel['Config']['lang']['cli_failed_to_complete'] = '完成掃描過程失敗';
 $phpMussel['Config']['lang']['cli_is_not_a'] = '不是文件或文件夾。';

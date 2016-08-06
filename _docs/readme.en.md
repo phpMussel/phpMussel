@@ -250,7 +250,7 @@ File | Description
 /Changelog-v1.txt | A record of changes made to the script between different versions (not required for proper function of script).
 /composer.json | Composer/Packagist information (not required for proper function of script).
 /CONTRIBUTING.md | Information about how to contribute to the project.
-/LICENSE.txt | A copy of the GNU/GPLv2 license.
+/LICENSE.txt | A copy of the GNU/GPLv2 license (not required for proper function of script).
 /PEOPLE.md | Information about the people involved in the project.
 /phpmussel.php | The loader. This is what you're supposed to be hooking into (essential)!
 /README.md | Project summary information.
@@ -995,4 +995,4 @@ This information was last updated 4th July 2016 and is current for all phpMussel
 ---
 
 
-Last Updated: 3rd August 2016 (2016.08.03).
+Last Updated: 5th August 2016 (2016.08.05).

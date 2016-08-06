@@ -250,7 +250,7 @@ Bestand | Beschrijving
 /Changelog-v1.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
 /composer.json | Composer/Packagist informatie (niet vereist voor een goede werking van het script).
 /CONTRIBUTING.md | Informatie over hoe bij te dragen aan het project.
-/LICENSE.txt | Een kopie van de GNU/GPLv2 licentie.
+/LICENSE.txt | Een kopie van de GNU/GPLv2 licentie (niet vereist voor een goede werking van het script).
 /PEOPLE.md | Informatie over de bij het project betrokken personen.
 /phpmussel.php | De lader/loader. Dit is wat u zou moeten worden inhaken in (essentieel)!
 /README.md | Project beknopte informatie.
@@ -995,4 +995,4 @@ Dit informatie werd laatst bijgewerkt 4 Juli 2016 en is op de hoogte voor alle p
 ---
 
 
-Laatste Bijgewerkt: 3 Augustus 2016 (2016.08.03).
+Laatste Bijgewerkt: 5 Augustus 2016 (2016.08.05).

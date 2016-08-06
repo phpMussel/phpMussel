@@ -250,7 +250,7 @@ Arquivo | Descrição
 /Changelog-v1.txt | Um registro das mudanças feitas para o script entre o diferentes versões (não é necessário para o correto funcionamento do script).
 /composer.json | Composer/Packagist informação (não é necessário para o correto funcionamento do script).
 /CONTRIBUTING.md | Informações sobre como contribuir para o projeto.
-/LICENSE.txt | Uma cópia da GNU/GPLv2 licença.
+/LICENSE.txt | Uma cópia da GNU/GPLv2 licença (não é necessário para o correto funcionamento do script).
 /PEOPLE.md | Informações sobre as pessoas envolvidas no projeto.
 /phpmussel.php | O carregador. Isto é o que você deveria ser enganchando em (essencial)!
 /README.md | Informações do projeto em sumário.
@@ -995,4 +995,4 @@ Esta informação foi atualizada dia 4 Julho 2016 e é corrente para todas phpMu
 ---
 
 
-Última Atualização: 3 Agosto 2016 (2016.08.03).
+Última Atualização: 5 Agosto 2016 (2016.08.05).

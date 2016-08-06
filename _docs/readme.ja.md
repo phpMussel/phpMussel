@@ -250,7 +250,7 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /Changelog-v1.txt | バージョンによる違いを記録したものです（機能には関係のないファイルです）。
 /composer.json | Composer/Packagist情報（機能には関係のないファイルです）。
 /CONTRIBUTING.md | プロジェクトに貢献する方法について。
-/LICENSE.txt | GNU/GPLv2のライセンスのコピー。
+/LICENSE.txt | GNU/GPLv2のライセンスのコピー（機能には関係のないファイルです）。
 /PEOPLE.md | プロジェクトに関わる人々についての情報。
 /phpmussel.php | ローダー・ファイルです。主要スクリプトのロード、アップロード等を行います。フックするのはまさにこれです（本質的ファイル）！
 /README.md | プロジェクト概要情報。
@@ -305,7 +305,7 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /vault/lang/lang.fr.php | フランス語言語データ。
 /vault/lang/lang.id.php | インドネシア語言語データ。
 /vault/lang/lang.it.php | 伊語言語データ。
-/vault/lang/lang.ja.php | Japanese 言語データ。
+/vault/lang/lang.ja.php | 日本語言語データ。
 /vault/lang/lang.nl.php | オランダ語言語データ。
 /vault/lang/lang.pt.php | ポルトガル語言語データ。
 /vault/lang/lang.ru.php | ロシア語言語データ。
@@ -439,8 +439,8 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /vault/signatures/xmlxdp_custom_standard.cvd | XML/XDP署名用ファイル。
 /vault/signatures/xmlxdp_mussel_regex.cvd | XML/XDP署名用ファイル。
 /vault/signatures/xmlxdp_mussel_standard.cvd | XML/XDP署名用ファイル。
-/vault/template.html | phpMusselテンプレートファイル; phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
-/vault/template_custom.html | phpMusselテンプレートファイル; phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
+/vault/template.html | phpMusselテンプレートファイル；phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
+/vault/template_custom.html | phpMusselテンプレートファイル；phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
 /vault/upload.php | アップロード・ハンドラ。
 
 ※ ファイル名は設定の仕方（`phpmussel.ini`内）により異なることがあります。
@@ -499,7 +499,7 @@ CVDは"ClamAV Virus Definitions"（ClamAV ウィルス定義）の頭文字を�
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
-"timeOffset"
+"timeOffset" （タイム・オフセット）
 - お使いのサーバの時刻は、ローカル時刻と一致しない場合、あなたのニーズに応じて、時間を調整するために、あなたはここにオフセットを指定することができます。しかし、その代わりに、一般的にタイムゾーンディレクティブ（あなたの`php.ini`ファイルで）を調整ーることをお勧めします、でも時々（といった、限ら共有ホスティングプロバイダでの作業時）これは何をすることは必ずしも可能ではありません、したがって、このオプションは、ここで提供されています。オフセット分であります。
 - 例（１時間を追加します）：`timeOffset=60`
 
@@ -822,7 +822,7 @@ URLスキャナーAPIルックアップ設定。
 ####"template_data" （テンプレート・データ、カテゴリ）
 テンプレートとテーマ用のディレクティブ／変数。
 
-テンプレートのデータは、ユーザーに向けてアップロード拒否のメッセージをHTML形式でアウトプットする際に使用されます。カスタムテーマを使っている場合は`template_custom.html`を使用して、そうでない場合は`template.html`を使用してHTMLアウトプットが生成されます。設定ファイル内にあるこのセクション用の変数は、HTMLアウトプットのために解析され、{｝で囲まれた変数名は対応する変数データに置き換えられます。例えば `foo="bar"`とすると、HTMLアウトプット内の`<p>{foo}</p>`は`<p>bar</p>`となります。
+テンプレートのデータは、ユーザーに向けてアップロード拒否のメッセージをHTML形式でアウトプットする際に使用されます。カスタムテーマを使っている場合は`template_custom.html`を使用して、そうでない場合は`template.html`を使用してHTMLアウトプットが生成されます。設定ファイル内にあるこのセクション用の変数は、HTMLアウトプットのために解析され、で囲まれた変数名は対応する変数データに置き換えられます。例えば`foo="bar"`とすると、HTMLアウトプット内の`<p>{foo}</p>`は`<p>bar</p>`となります。
 
 "css_url" （シーエスエス・ユーアールエル）
 - カスタムテーマ用のテンプレートファイルは、外部CSSプロパティーを使っています。一方、デフォルトテーマは内部CSSです。カスタムテーマを適用するためには、CSSファイルのパブリック HTTPアドレスを"css_url"変数を使って指定して下さい。この変数が空白であれば、デフォルトテーマが適用されます。
@@ -997,4 +997,4 @@ phpMusselは大概のウィルススキャンソフトウェアに対して互�
 ---
 
 
-最終アップデート： 2016年08月03日。
+最終アップデート： 2016年08月05日。
