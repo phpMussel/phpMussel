@@ -11,10 +11,9 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2016.08.06).
+ * This file: Indonesian language data (last modified: 2016.08.07).
  */
 
-$phpMussel['Config']['lang']['textDir'] = 'ltr';
 $phpMussel['Config']['lang']['bad_command'] = 'Saya tidak mengerti perintah itu, maaf.';
 $phpMussel['Config']['lang']['cli_failed_to_complete'] = 'Gagal untuk menyelesaikan memindai proses';
 $phpMussel['Config']['lang']['cli_is_not_a'] = ' bukan file atau direktori.';

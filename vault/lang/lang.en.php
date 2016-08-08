@@ -11,10 +11,9 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data (last modified: 2016.08.06).
+ * This file: English language data (last modified: 2016.08.07).
  */
 
-$phpMussel['Config']['lang']['textDir'] = 'ltr';
 $phpMussel['Config']['lang']['bad_command'] = 'I don\'t understand that command, sorry.';
 $phpMussel['Config']['lang']['cli_failed_to_complete'] = 'Failed to complete scanning process';
 $phpMussel['Config']['lang']['cli_is_not_a'] = ' is not a file or directory.';

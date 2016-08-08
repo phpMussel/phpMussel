@@ -11,10 +11,9 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2016.08.06).
+ * This file: Russian language data (last modified: 2016.08.07).
  */
 
-$phpMussel['Config']['lang']['textDir'] = 'ltr';
 $phpMussel['Config']['lang']['bad_command'] = 'Извините, команда непонятна.';
 $phpMussel['Config']['lang']['cli_failed_to_complete'] = 'Не удалось завершить процесс сканирования';
 $phpMussel['Config']['lang']['cli_is_not_a'] = ' не файл или каталог.';

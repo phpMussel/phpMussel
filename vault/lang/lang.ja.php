@@ -11,10 +11,9 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2016.08.06).
+ * This file: Japanese language data (last modified: 2016.08.07).
  */
 
-$phpMussel['Config']['lang']['textDir'] = 'ltr';
 $phpMussel['Config']['lang']['bad_command'] = 'すみませんが、コマンドが理解できません。';
 $phpMussel['Config']['lang']['cli_failed_to_complete'] = 'スキャンを完了できませんでした';
 $phpMussel['Config']['lang']['cli_is_not_a'] = 'はファイルでもディレクトリでもありません。';

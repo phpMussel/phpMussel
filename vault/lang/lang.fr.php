@@ -11,10 +11,9 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2016.08.06).
+ * This file: French language data (last modified: 2016.08.07).
  */
 
-$phpMussel['Config']['lang']['textDir'] = 'ltr';
 $phpMussel['Config']['lang']['bad_command'] = 'Je ne comprends pas cette commande, désolé.';
 $phpMussel['Config']['lang']['cli_failed_to_complete'] = 'Échec du terminer le processus d\'analyse';
 $phpMussel['Config']['lang']['cli_is_not_a'] = ' n\'est pas un fichier ou un répertoire.';

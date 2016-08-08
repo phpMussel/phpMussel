@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2016.06.27).
+ * This file: Upload handler (last modified: 2016.08.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -528,6 +528,12 @@ if ($phpMussel['upload']['count'] > 0) {
     /** Begin processing file upload detections. */
     if (!empty($phpMussel['whyflagged'])) {
 
+        /** A fix for correctly displaying LTR/RTL text. */
+        if (empty($phpMussel['Config']['lang']['textDir']) || $phpMussel['Config']['lang']['textDir'] !== 'rtl') {
+            $phpMussel['Config']['lang']['textDir'] = 'ltr';
+        }
+
+        /** Merging parsable variables for the template data. */
         $phpMussel['TemplateData'] = $phpMussel['Config']['lang'] + $phpMussel['Config']['template_data'];
         $phpMussel['TemplateData']['detected'] = $phpMussel['whyflagged'];
         $phpMussel['TemplateData']['phpmusselversion'] = $phpMussel['ScriptIdent'];

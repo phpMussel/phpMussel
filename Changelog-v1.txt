@@ -190,6 +190,9 @@ entries will be deleted when those goals have been achieved.
   documentation to Japanese. With this translation completed, the phpMussel
   documentation is now available in 14 fully completed translations.
 
+- [2016.08.07; Sub-minor code change; Maikuolan]: Slightly improved RTL text
+  support. Slightly improved/optimised the template file.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

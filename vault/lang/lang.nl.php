@@ -11,10 +11,9 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2016.08.06).
+ * This file: Dutch language data (last modified: 2016.08.07).
  */
 
-$phpMussel['Config']['lang']['textDir'] = 'ltr';
 $phpMussel['Config']['lang']['bad_command'] = 'Ik begrijp niet dat bevel, sorry.';
 $phpMussel['Config']['lang']['cli_failed_to_complete'] = 'Mislukt om het voltooien te scannen';
 $phpMussel['Config']['lang']['cli_is_not_a'] = ' is geen bestand of map.';

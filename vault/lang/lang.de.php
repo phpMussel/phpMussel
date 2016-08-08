@@ -11,10 +11,9 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2016.08.06).
+ * This file: German language data (last modified: 2016.08.07).
  */
 
-$phpMussel['Config']['lang']['textDir'] = 'ltr';
 $phpMussel['Config']['lang']['bad_command'] = 'Entschuldigung, ich verstehe diesen Befehl nicht.';
 $phpMussel['Config']['lang']['cli_failed_to_complete'] = 'Ein vollständiger Scan konnte nicht durchgeführt werden';
 $phpMussel['Config']['lang']['cli_is_not_a'] = ' ist keine Datei oder ein Verzeichnis.';
