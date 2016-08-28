@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.07.05).
+ * This file: Functions file (last modified: 2016.08.28).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -604,9 +604,9 @@ $phpMussel['ReadFile'] = function ($f, $s = 0, $c = false, $b = 128) {
             $d .= fread($fh, $bsize);
             $r++;
         }
-    fclose($fh);
+        fclose($fh);
     }
-    return (!empty($d)) ? $d : false;
+    return $d ?: false;
 };
 
 /**
@@ -623,10 +623,10 @@ $phpMussel['ReadFileAsArray'] = function ($Filename, $Flags = 0, $Context = fals
     if (!file_exists($Filename) || !is_readable($Filename)) {
         return false;
     }
-    if (!$Flags && !$Context) {
-        return file($Filename);
-    }
     if (!$Context) {
+        if (!$Flags) {
+            return file($Filename);
+        }
         return file($Filename, $Flags);
     }
     return file($Filename, $Flags, $Context);
@@ -1058,8 +1058,7 @@ $phpMussel['explode_bits'] = function ($n) {
 $phpMussel['implode_bits'] = function ($n) {
     $chars_chunks = str_split($n, 8);
     $num = count($chars_chunks);
-    $out = '';
-    for ($i = 0; $i < $num; $i++) {
+    for ($out = '', $i = 0; $i < $num; $i++) {
         $out .= chr(bindec($chars_chunks[$i]));
     }
     return $out;
@@ -3221,7 +3220,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             ) {
                 $x = $phpMussel['MusselPlugins']['hooks']['during_scan'][$HookID][$phpMussel['MusselPlugins']['tempdata']['ki']];
                 if ($x) {
-                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = (isset($$x)) ? $$x : $x;
+                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = $$x ?? $x;
                 }
             }
             if ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'closure') {
@@ -6282,7 +6281,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             ) {
                 $x = $phpMussel['MusselPlugins']['hooks']['after_vt'][$HookID][$phpMussel['MusselPlugins']['tempdata']['ki']];
                 if ($x) {
-                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = (isset($$x)) ? $$x : $x;
+                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = $$x ?? $x;
                 }
             }
             if ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'closure') {
@@ -6753,7 +6752,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             ) {
                 $x = $phpMussel['MusselPlugins']['hooks']['before_scan'][$HookID][$phpMussel['MusselPlugins']['tempdata']['ki']];
                 if ($x) {
-                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = (isset($$x)) ? $$x : $x;
+                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = $$x ?? $x;
                 }
             }
             if ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'closure') {
@@ -7745,7 +7744,7 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
             ) {
                 $x = $phpMussel['MusselPlugins']['hooks']['after_scan'][$HookID][$phpMussel['MusselPlugins']['tempdata']['ki']];
                 if ($x) {
-                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = (isset($$x)) ? $$x : $x;
+                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = $$x ?? $x;
                 }
             }
             if ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'closure') {
