@@ -1142,7 +1142,7 @@
 
 <div dir="rtl">بالنسبة للجزء الأكبر، ينبغي أن يكون phpMussel متوافق إلى حد ما مع معظم برامج مكافحة و فحص الفيروسات الأخرى. مع ذلك، فقد تم الإبلاغ عن تعارضات من قبل عدد من المستخدمين في الماضي. وهذه المعلومات أدناه من VirusTotal.com، و توضح عدد من ايجابيات كاذبة (فحص خاطئ بوجود فايروس) ذكرت من قبل مختلف برامج مكافحة الفيروسات ضد phpMussel. على الرغم من أن هذه المعلومات ليست ضمانة مطلقة من أنك سوف تواجه أو لا مشاكل توافق بين phpMussel وبرنامج مكافحة الفيروسات الخاص بك، إذا لاحظ برنامج مكافحة الفيروسات الخاص بك ضعف تجاه phpMussel، يجب عليك إما النظر في تعطيله قبل العمل مع phpMussel أو أن تنظر في خيارات بديلة إما الخاصة ببرنامج مكافحة الفيروسات أو phpMussel.<br /><br /></div>
 
-<div dir="rtl">آخر تحديث لهذه المعلومات كان في 4 يوليو 2016 و هي كذلك الحالية للإصدارين الثانويين الذين تم إصدارهما مؤخرا (v0.10.0-v1.0.0) من phpMussel.<br /><br /></div>
+<div dir="rtl">آخر تحديث لهذه المعلومات كان في 29 أغسطس 2016 و هي كذلك الحالية للإصدارين الثانويين الذين تم إصدارهما مؤخرا (v0.10.0-v1.0.0) من phpMussel.<br /><br /></div>
 
 برنامج فحص الفيروسات | النتيجة
 ----|----
@@ -1192,7 +1192,7 @@ NANO-Antivirus | <div dir="rtl" style="display:inline;">لا مشاكل معرو
 Norman | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 nProtect | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 Panda | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
-Qihoo-360 | <div dir="rtl" style="display:inline;">"Script/Trojan.Script.393" تقارير</div>
+Qihoo-360 | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 Rising | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 Sophos | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
 SUPERAntiSpyware | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div>
@@ -1211,4 +1211,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 5 أغسطس 2016 (2016.08.05).</div>
+<div dir="rtl">آخر تحديث: 29 أغسطس 2016 (2016.08.29).</div>

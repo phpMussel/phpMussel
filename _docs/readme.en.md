@@ -926,7 +926,7 @@ The following is a breakdown of the types of signatures used by phpMussel:
 
 For the most part, phpMussel should be fairly compatible with most other virus scanning software. However, conflictions have been reported by a number of users in the past. This information below is from VirusTotal.com, and it describes a number of false-positives reported by various anti-virus programs against phpMussel. Although this information isn't an absolute guarantee of whether or not you will encounter compatibility problems between phpMussel and your anti-virus software, if your anti-virus software is noted as flagging against phpMussel, you should either consider disabling it prior to working with phpMussel or should consider alternative options to either your anti-virus software or phpMussel.
 
-This information was last updated 4th July 2016 and is current for all phpMussel releases of the two most recent minor versions (v0.10.0-v1.0.0) at the time of writing this.
+This information was last updated 29th August 2016 and is current for all phpMussel releases of the two most recent minor versions (v0.10.0-v1.0.0) at the time of writing this.
 
 | Scanner              |  Results                             |
 |----------------------|--------------------------------------|
@@ -976,7 +976,7 @@ This information was last updated 4th July 2016 and is current for all phpMussel
 | Norman               |  No known problems                   |
 | nProtect             |  No known problems                   |
 | Panda                |  No known problems                   |
-| Qihoo-360            |  Reports "Script/Trojan.Script.393"  |
+| Qihoo-360            |  No known problems                   |
 | Rising               |  No known problems                   |
 | Sophos               |  No known problems                   |
 | SUPERAntiSpyware     |  No known problems                   |
@@ -995,4 +995,4 @@ This information was last updated 4th July 2016 and is current for all phpMussel
 ---
 
 
-Last Updated: 5th August 2016 (2016.08.05).
+Last Updated: 29th August 2016 (2016.08.29).

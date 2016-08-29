@@ -926,7 +926,7 @@ I seguenti sono i tipi di firme utilizzate da phpMussel:
 
 Per la maggior parte, phpMussel dovrebbe essere compatibile abbastanza con la maggior parte dei antivirus software. Ma, conflitti sono stati riportati da un numero di utenti in passato. Queste informazioni qui di seguito è da VirusTotal.com, e descrive un certo numero di falsi positivi riportato dai vari anti-virus programmi contro phpMussel. Sebbene questa informazione non è un'assoluta garanzia di se o non si sarà verificheranno problemi di compatibilità tra phpMussel e il vostro anti-virus software, se il vostro software anti-virus è stati ha notato o ha bandierato contro phpMussel, si dovrebbe considerare sia disattivarlo prima di lavorare con phpMussel o dovrebbe considerare l'alternative opzioni per sia il vostro anti-virus software o phpMussel.
 
-Questa informazione è stato lo scorso aggiornato 4 Luglio 2016 ed è in corso per tutte le phpMussel rilasci delle due più recenti minori versioni (v0.10.0-v1.0.0) al momento di scrivere questo.
+Questa informazione è stato lo scorso aggiornato 29 Agosto 2016 ed è in corso per tutte le phpMussel rilasci delle due più recenti minori versioni (v0.10.0-v1.0.0) al momento di scrivere questo.
 
 | Scanner              |  Risultati                           |
 |----------------------|--------------------------------------|
@@ -976,7 +976,7 @@ Questa informazione è stato lo scorso aggiornato 4 Luglio 2016 ed è in corso p
 | Norman               |  Senza noti problemi                 |
 | nProtect             |  Senza noti problemi                 |
 | Panda                |  Senza noti problemi                 |
-| Qihoo-360            |  Riferisce "Script/Trojan.Script.393"|
+| Qihoo-360            |  Senza noti problemi                 |
 | Rising               |  Senza noti problemi                 |
 | Sophos               |  Senza noti problemi                 |
 | SUPERAntiSpyware     |  Senza noti problemi                 |
@@ -995,4 +995,4 @@ Questa informazione è stato lo scorso aggiornato 4 Luglio 2016 ed è in corso p
 ---
 
 
-Ultimo Aggiornamento: 5 Agosto 2016 (2016.08.05).
+Ultimo Aggiornamento: 29 Agosto 2016 (2016.08.29).

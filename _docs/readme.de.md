@@ -924,7 +924,7 @@ Im Folgenden eine Aufschlüsselung der Signaturen, die von phpMussel genutzt wer
 
 In den meisten Fällen sollte phpMussel mit den meisten anderen Antiviren-Softwareprodukten kompatibel sein. Jedoch wurden in der Vergangenheit Konflikte von anderen Nutzern festgestellt. Die folgenden Informationen stammen von VirusTotal.com, welche einige Fehlalarme von verschiedenen Antiviren-Programmen gegen phpMussel beschreiben. Diese Informationen garantieren nicht, ob Kompatibilitätsprobleme zwischen phpMussel und Ihrem eingesetzten Antiviren-Produkt bestehen. Sollte Ihre Antiviren-Software als problematisch aufgelistet sein, sollten Sie diese entweder vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen überlegen.
 
-Diese Informationen wurden zuletzt am 4. Juli 2016 aktualisiert und gelten für alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen (v0.10.0-v1.0.0) zu diesem Zeitpunkt.
+Diese Informationen wurden zuletzt am 29. August 2016 aktualisiert und gelten für alle phpMussel Veröffentlichungen von den beiden letzten Nebenversionen (v0.10.0-v1.0.0) zu diesem Zeitpunkt.
 
 | Scanner              |  Ergebnisse                          |
 |----------------------|--------------------------------------|
@@ -974,7 +974,7 @@ Diese Informationen wurden zuletzt am 4. Juli 2016 aktualisiert und gelten für 
 | Norman               |  Keine bekannten Probleme            |
 | nProtect             |  Keine bekannten Probleme            |
 | Panda                |  Keine bekannten Probleme            |
-| Qihoo-360            |  Meldet "Script/Trojan.Script.393"   |
+| Qihoo-360            |  Keine bekannten Probleme            |
 | Rising               |  Keine bekannten Probleme            |
 | Sophos               |  Keine bekannten Probleme            |
 | SUPERAntiSpyware     |  Keine bekannten Probleme            |
@@ -993,4 +993,4 @@ Diese Informationen wurden zuletzt am 4. Juli 2016 aktualisiert und gelten für 
 ---
 
 
-Zuletzt aktualisiert: 5. August 2016 (2016.08.05).
+Zuletzt aktualisiert: 29. August 2016 (2016.08.29).

@@ -925,7 +925,7 @@ El siguiente es el desglose de los tipos de firmas utilizado por phpMussel:
 
 En su mayor parte, phpMussel debe ser bastante compatible con la mayoría de anti-virus software. Aunque, conflictividades han sido reportados por un número de usuarios en el pasado. Esta información de abajo es de VirusTotal.com, y describe un número de falsos positivos reportados por diversos anti-virus programas contra phpMussel. Aunque esta información no es una garantía absoluta de si o no se encontrará con compatibilidad problemas entre phpMussel y su anti-virus software, se su anti-virus software se observa como marcar contra phpMussel, usted debe considerar desactivarlo antes de trabajar con phpMussel o debería considerar opciones alternativas a de su anti-virus software o phpMussel.
 
-Esta información ha sido actualizado 4 Julio 2016 y es a hoy para todas las phpMussel versiones de la dos más recientes menores versiones (v0.10.0-v1.0.0) al momento de escribir esto.
+Esta información ha sido actualizado 29 Agosto 2016 y es a hoy para todas las phpMussel versiones de la dos más recientes menores versiones (v0.10.0-v1.0.0) al momento de escribir esto.
 
 | Escáner              |  Resultados                          |
 |----------------------|--------------------------------------|
@@ -975,7 +975,7 @@ Esta información ha sido actualizado 4 Julio 2016 y es a hoy para todas las php
 | Norman               |  No hay conocidos problemas          |
 | nProtect             |  No hay conocidos problemas          |
 | Panda                |  No hay conocidos problemas          |
-| Qihoo-360            |  Informa como "Script/Trojan.Script.393"|
+| Qihoo-360            |  No hay conocidos problemas          |
 | Rising               |  No hay conocidos problemas          |
 | Sophos               |  No hay conocidos problemas          |
 | SUPERAntiSpyware     |  No hay conocidos problemas          |
@@ -994,4 +994,4 @@ Esta información ha sido actualizado 4 Julio 2016 y es a hoy para todas las php
 ---
 
 
-Última Actualización: 5 Agosto 2016 (2016.08.05).
+Última Actualización: 29 Agosto 2016 (2016.08.29).
