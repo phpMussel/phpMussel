@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Controls handler (last modified: 2016.08.28).
+ * This file: Controls handler (last modified: 2016.08.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,16 +26,24 @@ $phpMussel['controls'] = array();
 parse_str($_SERVER['QUERY_STRING'], $phpMussel['controls']['query']);
 
 /** Check for and try to fetch any commands submitted by the client. */
-$phpMussel['controls']['command'] = $_POST['phpmussel'] ?? $phpMussel['controls']['query']['phpmussel'] ?? '';
+$phpMussel['controls']['command'] =
+    (!empty($_POST['phpmussel'])) ? $_POST['phpmussel'] :
+        ((!empty($phpMussel['controls']['query']['phpmussel'])) ? $phpMussel['controls']['query']['phpmussel'] : '');
 
 /** Check for and try to fetch any command password submitted by the client. */
-$phpMussel['controls']['pword'] = $_POST['pword'] ?? $phpMussel['controls']['query']['pword'] ?? '';
+$phpMussel['controls']['pword'] =
+    (!empty($_POST['pword'])) ? $_POST['pword'] :
+        ((!empty($phpMussel['controls']['query']['pword'])) ? $phpMussel['controls']['query']['pword'] : '');
 
 /** Check for and try to fetch any logs password submitted by the client. */
-$phpMussel['controls']['logspword'] = $_POST['logspword'] ?? $phpMussel['controls']['query']['logspword'] ?? '';
+$phpMussel['controls']['logspword'] =
+    (!empty($_POST['logspword'])) ? $_POST['logspword'] :
+        ((!empty($phpMussel['controls']['query']['logspword'])) ? $phpMussel['controls']['query']['logspword'] : '');
 
 /** Check for and try to fetch any optional parameters submitted by the client. */
-$phpMussel['controls']['musselvar'] = $_POST['musselvar'] ?? $phpMussel['controls']['query']['musselvar'] ?? '';
+$phpMussel['controls']['musselvar'] =
+    (!empty($_POST['musselvar'])) ? $_POST['musselvar'] :
+        ((!empty($phpMussel['controls']['query']['musselvar'])) ? $phpMussel['controls']['query']['musselvar'] : '');
 
 /** Commands requiring the logs password. */
 if (
@@ -83,7 +91,7 @@ if (
             ) {
                 $x = $phpMussel['MusselPlugins']['hooks']['browser_log_commands'][$HookID][$phpMussel['MusselPlugins']['tempdata']['ki']];
                 if ($x) {
-                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = $$x ?? $x;
+                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = (isset($$x)) ? $$x : $x;
                 }
             }
             if ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'closure') {
@@ -114,19 +122,19 @@ if (
 
     /** Print the scan_log file. */
     if ($phpMussel['controls']['command'] == 'scan_log') {
-        $phpMussel['ReturnLogfile']('scan_log');
+        echo $phpMussel['ReturnLogfile']('scan_log');
         die;
     }
 
     /** Print the scan_log_serialized file. */
     if ($phpMussel['controls']['command'] == 'scan_log_serialized') {
-        $phpMussel['ReturnLogfile']('scan_log_serialized');
+        echo $phpMussel['ReturnLogfile']('scan_log_serialized');
         die;
     }
 
     /** Print the scan_kills file. */
     if ($phpMussel['controls']['command'] == 'scan_kills') {
-        $phpMussel['ReturnLogfile']('scan_kills');
+        echo $phpMussel['ReturnLogfile']('scan_kills');
         die;
     }
 
@@ -188,7 +196,7 @@ if (
             ) {
                 $x = $phpMussel['MusselPlugins']['hooks']['browser_commands'][$HookID][$phpMussel['MusselPlugins']['tempdata']['ki']];
                 if ($x) {
-                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = $$x ?? $x;
+                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = (isset($$x)) ? $$x : $x;
                 }
             }
             if ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'closure') {
