@@ -20,7 +20,7 @@
 
 phpMussel（ピー・エイチ・ピー・マッスル）をご利用頂き、ありがとうございます。phpMusselは、ClamAV をはじめとした署名（シグニチャ）を利用して、システムにアップロードされるファイルを対象して、トロイ型のウィルスやマルウェア等を検出するようデザインされたPHPスクリプトです。
 
-PHPMUSSEL著作権2013とGNU一般公衆ライセンスv2を超える権利について: Caleb M (Maikuolan)著。
+PHPMUSSEL著作権2013とGNU一般公衆ライセンスv2を超える権利について： Caleb M (Maikuolan)著。
 
 本スクリプトはフリーウェアです。フリーソフトウェア財団発行のGNU一般公衆ライセンス・バージョン２（またはそれ以降のバージョン）に従い、再配布ならびに加工が可能です。配布の目的は、役に立つことを願ってのものですが、『保証はなく、また商品性や特定の目的に適合するのを示唆するものでもありません』。"LICENSE.txt" にあるGNU General Public License（一般ライセンス）を参照して下さい。 以下のURLからも閲覧できます：
 - <http://www.gnu.org/licenses/>。
@@ -28,7 +28,7 @@ PHPMUSSEL著作権2013とGNU一般公衆ライセンスv2を超える権利に�
 
 作成のインスピレーションと本スクリプトが利用する署名（シグニチャ）について[ClamAV](http://www.clamav.net/)に感謝の意を表したいと思います。この２つがなければ、本スクリプトは存在しえないか、あるいは極めて限られた利用価値しかもたないと言ってよいでしょう。
 
-本プロジェクトファイルのホスト先であるSourceforgeとGithub、 phpMusselのディスカッションフォーラムのホスト先である[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)、 phpMusselが利用する署名（シグニチャ）の提供先である: [SecuriteInfo.com](http://www.securiteinfo.com/)、 [PhishTank](http://www.phishtank.com/)、 [NLNetLabs](http://nlnetlabs.nl/) 他、 本プロジェクトを支援して下さった全ての方々に感謝の意を表したいと思います。
+本プロジェクトファイルのホスト先であるSourceforgeとGithub、 phpMusselのディスカッションフォーラムのホスト先である[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)、 phpMusselが利用する署名（シグニチャ）の提供先である： [SecuriteInfo.com](http://www.securiteinfo.com/)、 [PhishTank](http://www.phishtank.com/)、 [NLNetLabs](http://nlnetlabs.nl/) 他、 本プロジェクトを支援して下さった全ての方々に感謝の意を表したいと思います。
 
 本ドキュメントならびに関連パッケージは以下のURLからダウンロードできます。
 - [Sourceforge](http://phpmussel.sourceforge.net/)。
@@ -101,7 +101,7 @@ phpMusselは特別な使用環境を必要としないスクリプトです。�
 - `$output_type` はブーレアンで、スキャン結果のフォーマットを指定できます。Falseは結果を整数型で返します（-3は、phpMusselの署名ファイルか署名マップがない、もしくは破損している可能性があることを示しています。-2はスキャン中に破損データを検出したためスキャン失敗、-1はPHPがスキャンに必要な拡張子あるいはアドオンがないためにスキャン失敗、0はスキャンの対象が存在しないこと、１は対象のスキャンを完了しかつ問題がないこと、２は対象のスキャンを完了しかつ問題を検出したことを意味します）。`true`（真）は結果をテキスト形式で返します。どちらを選択しても、スキャン後にグローバル変数によって結果にアクセスすることが可能です。$output_typeはオプションでデフォルト設定は`false`（偽）になっています。
 - `$output_flatness` はブーレアンで、スキャン結果を配列で返すか、文字列で返すかを指定します（対象が複数の場合）。`false`（偽）は配列、`true`（真）は文字列での返り値となります。`$output_flatness`はオプションでデフォルト設定は`false`（偽）です。
 
-例:
+例：
 
 ```
  $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
@@ -156,77 +156,77 @@ phpMusselがシステムに適切にインストールされ機能し、かつ�
 利用可能なブラウザ側コマンド:
 
 scan_log
-- 必須パスワード: `logs_password`（ログ・パスワード）
-- その他: `scan_log`は必須。
-- 必須パラメータ: なし
-- オプション・パラメータ: なし
-- 例: `?logspword=[logs_password]&phpmussel=scan_log`
-- 機能: `scan_log`ファイルの内容がスクリーンに表示されます。
+- 必須パスワード： `logs_password`（ログ・パスワード）
+- その他： `scan_log`は必須。
+- 必須パラメータ： なし
+- オプション・パラメータ： なし
+- 例： `?logspword=[logs_password]&phpmussel=scan_log`
+- 機能： `scan_log`ファイルの内容がスクリーンに表示されます。
 
 scan_log_serialized
-- 必須パスワード: `logs_password`（ログ・パスワード）
-- その他: `scan_log_serialized`は必須。
-- 必須パラメータ: なし
-- オプション・パラメータ: なし
-- 例: `?logspword=[logs_password]&phpmussel=scan_log_serialized`
-- 機能: `scan_log_serialized`ファイルの内容がスクリーンに表示されます。
+- 必須パスワード： `logs_password`（ログ・パスワード）
+- その他： `scan_log_serialized`は必須。
+- 必須パラメータ： なし
+- オプション・パラメータ： なし
+- 例： `?logspword=[logs_password]&phpmussel=scan_log_serialized`
+- 機能： `scan_log_serialized`ファイルの内容がスクリーンに表示されます。
 
 scan_kills
-- 必須パスワード: `logs_password`（ログ・パスワード）
-- その他: `scan_kills`は必須。
-- 必須パラメータ: なし
-- オプション・パラメータ: なし
-- 例: `?logspword=[logs_password]&phpmussel=scan_kills`
-- 機能: `scan_kills`ファイルの内容がスクリーンに表示されます。
+- 必須パスワード： `logs_password`（ログ・パスワード）
+- その他： `scan_kills`は必須。
+- 必須パラメータ： なし
+- オプション・パラメータ： なし
+- 例： `?logspword=[logs_password]&phpmussel=scan_kills`
+- 機能： `scan_kills`ファイルの内容がスクリーンに表示されます。
 
 controls_lockout
-- 必須パスワード: `logs_password`（ログ・パスワード）または`script_password`（スクリプト・パスワード）
-- その他: なし
-- 必須パラメータ: なし
-- オプション・パラメータ: なし
-- 例１: `?logspword=[logs_password]&phpmussel=controls_lockout`
-- 例２: `?pword=[script_password]&phpmussel=controls_lockout`
-- 機能: ブラウザからのコントロールを無効（ロックアウト）にします。パスワードの不正利用の疑い（セキュリティー面に問題があるコンピュータでブラウザコントロールを使用した場合に起こりえます）。がある時に使用して下さい。`controls_lockout`（コントロールズ・ロックアウト）が機能すると、`vault`（ヴォルト）内に`controls.lck`ファイルが作成され、phpMusselはコマンドを実行する前に必ずそのファイルをチェックするようになります。コントロールを再び有効にするためには`controls.lck`ファイルをFTP類を介して削除しなければなりません。いずれのパスワードを使っても呼び出すことができます。
+- 必須パスワード： `logs_password`（ログ・パスワード）または`script_password`（スクリプト・パスワード）
+- その他： なし
+- 必須パラメータ： なし
+- オプション・パラメータ： なし
+- 例１： `?logspword=[logs_password]&phpmussel=controls_lockout`
+- 例２： `?pword=[script_password]&phpmussel=controls_lockout`
+- 機能： ブラウザからのコントロールを無効（ロックアウト）にします。パスワードの不正利用の疑い（セキュリティー面に問題があるコンピュータでブラウザコントロールを使用した場合に起こりえます）。がある時に使用して下さい。`controls_lockout`（コントロールズ・ロックアウト）が機能すると、`vault`（ヴォルト）内に`controls.lck`ファイルが作成され、phpMusselはコマンドを実行する前に必ずそのファイルをチェックするようになります。コントロールを再び有効にするためには`controls.lck`ファイルをFTP類を介して削除しなければなりません。いずれのパスワードを使っても呼び出すことができます。
 
 disable
-- 必須パスワード: `script_password`（スクリプト・パスワード）
-- その他: なし
-- 必須パラメータ: なし
-- オプション・パラメータ: なし
-- 例: `?pword=[script_password]&phpmussel=disable`
-- 機能: phpMusselを無効にします。システムアップデートや変更、新しいソフトウェアやモデュールのインストールなどは、誤検出を引き起こす危険性がありますので、一時的に無効にします。phpMusselが期待通りに機能しないものの、アンインストールはしたくない場合にも無効を使用するとよいでしょう。再び有効にするには、`enable`（有効）を使用します。
+- 必須パスワード： `script_password`（スクリプト・パスワード）
+- その他： なし
+- 必須パラメータ： なし
+- オプション・パラメータ： なし
+- 例： `?pword=[script_password]&phpmussel=disable`
+- 機能： phpMusselを無効にします。システムアップデートや変更、新しいソフトウェアやモデュールのインストールなどは、誤検出を引き起こす危険性がありますので、一時的に無効にします。phpMusselが期待通りに機能しないものの、アンインストールはしたくない場合にも無効を使用するとよいでしょう。再び有効にするには、`enable`（有効）を使用します。
 
 enable
-- 必須パスワード: `script_password`（スクリプト・パスワード）
-- その他: なし
-- 必須パラメータ: なし
-- オプション・パラメータ: なし
-- 例: `?pword=[script_password]&phpmussel=enable`
-- 機能: phpMusselを有効にします。無効の状態にあるphpMusselを再び有効に戻す時に使用します。
+- 必須パスワード： `script_password`（スクリプト・パスワード）
+- その他： なし
+- 必須パラメータ： なし
+- オプション・パラメータ： なし
+- 例： `?pword=[script_password]&phpmussel=enable`
+- 機能： phpMusselを有効にします。無効の状態にあるphpMusselを再び有効に戻す時に使用します。
 
 greylist （グレーリスト）
-- 必須パスワード: `script_password`（スクリプト・パスワード）
-- その他: なし
-- 必須パラメータ: 「グレーリスト化される署名の名前」
-- オプション・パラメータ: なし
-- 例: `?pword=[script_password]&phpmussel=greylist&musselvar=[署名]`
-- 機能: グレーリストに署名を追加します。
+- 必須パスワード： `script_password`（スクリプト・パスワード）
+- その他： なし
+- 必須パラメータ： 「グレーリスト化される署名の名前」
+- オプション・パラメータ： なし
+- 例： `?pword=[script_password]&phpmussel=greylist&musselvar=[署名]`
+- 機能： グレーリストに署名を追加します。
 
 greylist_clear （グレーリストクリア）
-- 必須パスワード: `script_password`（スクリプト・パスワード）
-- その他: なし
-- 必須パラメータ: なし
-- オプション・パラメータ: なし
-- 例: `?pword=[script_password]&phpmussel=greylist_clear`
-- 機能: 全グレイリストをクリアします。
+- 必須パスワード： `script_password`（スクリプト・パスワード）
+- その他： なし
+- 必須パラメータ： なし
+- オプション・パラメータ： なし
+- 例： `?pword=[script_password]&phpmussel=greylist_clear`
+- 機能： 全グレイリストをクリアします。
 
 greylist_show （グレイリストショー）
-- 必須パスワード: `script_password`（スクリプト・パスワード）
-- その他: なし
-- 必須パラメータ: なし
-- オプション・パラメータ: なし
-- 例: `?pword=[script_password]&phpmussel=greylist_show`
-- 機能: グレーリストの内容をスクリーンに表示します。
+- 必須パスワード： `script_password`（スクリプト・パスワード）
+- その他： なし
+- 必須パラメータ： なし
+- オプション・パラメータ： なし
+- 例： `?pword=[script_password]&phpmussel=greylist_show`
+- 機能： グレーリストの内容をスクリーンに表示します。
 
 ---
 
@@ -494,7 +494,7 @@ CVDは"ClamAV Virus Definitions"（ClamAV ウィルス定義）の頭文字を�
 
 *有用な先端： あなたがしたい場合は、ログファイルの名前に日付/時刻情報を付加することができます、名前にこれらを含めることで:完全な年のため`{yyyy}`、省略された年のため`{yy}`、月`{mm}`、日`{dd}`、時間`{hh}`。*
 
-*例:*
+*例：*
 - *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
@@ -505,7 +505,7 @@ CVDは"ClamAV Virus Definitions"（ClamAV ウィルス定義）の頭文字を�
 
 "ipaddr" （アイピーアドレス）
 - 接続要求のIPアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。 Default（デフォルト設定） = REMOTE_ADDR。
-- 注意: 変更には最新の注意が必要です。
+- 注意：変更には最新の注意が必要です。
 
 "enable_plugins" （イネーブル・プラグインす）
 - プラグインのサポートを有効にしますか？ `false` = いいえ; `true` = はい 「Default（デフォルト設定）」。
@@ -777,15 +777,15 @@ VirusTotal.comディレクティブズ。
  - Virus TotalとAPIのサービス規定を読み同意すること。[サービス規定はこちらから](https://www.virustotal.com/en/about/terms-of-service/)。
  - 最低でもVirus Total Public APIドキュメンテーションの前文を読み理解すること（VirusTotalPublic API v2.0以降Contents（コンテンツ）前まで）Virus Total Public APIの[ドキュメンテーションはこちらから](https://www.virustotal.com/en/documentation/public-api/)。
 
-注意: Virus Total API使用したスキャニングが無効になっている場合、このカテゴリー（`virustotal`）のディレクティブを参照する必要はありません。無効であれば、どれも機能しません。Virus Total APIキーを取得するには、Virus Totalのサイトのページ右上にあるリンク「コミュニティに参加」をクリックして、必要事項を記入しサインアップします。インストラクションに従ってパブリックAPIキーを取得した後、`phpmussel.ini`設定ファイルの`vt_public_api_key`ディレクティブのそれをコピー＆ペーストして下さい。
+注意：Virus Total API使用したスキャニングが無効になっている場合、このカテゴリー（`virustotal`）のディレクティブを参照する必要はありません。無効であれば、どれも機能しません。Virus Total APIキーを取得するには、Virus Totalのサイトのページ右上にあるリンク「コミュニティに参加」をクリックして、必要事項を記入しサインアップします。インストラクションに従ってパブリックAPIキーを取得した後、`phpmussel.ini`設定ファイルの`vt_public_api_key`ディレクティブのそれをコピー＆ペーストして下さい。
 
 "vt_suspicion_level" （ヴィティ・サスピション・レベル）
 - デフォルト設定では、phpMusselがVirus Total APIを使ってスキャンするファイル（疑がわしいもの）には制限があります。`vt_suspicion_level`ディレクティブを編集することのより、この制限を変更することが可能です。
-- `0`: phpMusselの署名を使ってスキャンした結果、ヒューリスティックな重みがあると判断された場合にのみ、疑わしいファイルと結論付けられます。すなわちTotal APIは、phpMusselが危険性を察知はしたが完全にそうとは言い切れず、したがってブロックもせず、フラグを付けることもしなかった時のセカンドオピニオンです。
-- `1`: phpMusselの署名を使ってスキャンした結果、実行ファイルと思われる（PEファイル、Mach-O ファイル、ELF/Linuxファイル等）、ないしは実行可能なデータを含んだフォーマット（マクロ、DOC/DOCXファイル、アーカイブRARs／ZIPSファイル等)があれば、ヒューリスティックな重みがあるとして疑わしいファイルと結論付けられます。これはデフォルト設定であり、推奨レベルでもあります。Virus Total APIは、phpMusselが危険性なしと判断し、したがってブロックもせず、フラグを付けることもしなかった時のセカンドオピニオンです。
-- `2`: ファイルは全て疑わしいものとされ、Virus Total APIを使ってスキャンされます。API割り当てを使い切る恐れがあるため、推奨は控えますが、状況によっては適切と言えるでしょう（例えば、ウェブマスターやホストマスターがアップロードされる内容を信頼できない状況等）。この警戒レベルでは、通常ブロック／フラグも対象にならないファイルも全てVirus Total APIを使ってスキャンされます。したがって、Virus Total APIの割り当てを早々に消費してしまうこともあり得、またAPI割り当てを使い切れば、phpMusselはVirus Total APIの使用を中止します（警戒レベルに関係なく）。
+- `0`： phpMusselの署名を使ってスキャンした結果、ヒューリスティックな重みがあると判断された場合にのみ、疑わしいファイルと結論付けられます。すなわちTotal APIは、phpMusselが危険性を察知はしたが完全にそうとは言い切れず、したがってブロックもせず、フラグを付けることもしなかった時のセカンドオピニオンです。
+- `1`： phpMusselの署名を使ってスキャンした結果、実行ファイルと思われる（PEファイル、Mach-O ファイル、ELF/Linuxファイル等）、ないしは実行可能なデータを含んだフォーマット（マクロ、DOC/DOCXファイル、アーカイブRARs／ZIPSファイル等)があれば、ヒューリスティックな重みがあるとして疑わしいファイルと結論付けられます。これはデフォルト設定であり、推奨レベルでもあります。Virus Total APIは、phpMusselが危険性なしと判断し、したがってブロックもせず、フラグを付けることもしなかった時のセカンドオピニオンです。
+- `2`： ファイルは全て疑わしいものとされ、Virus Total APIを使ってスキャンされます。API割り当てを使い切る恐れがあるため、推奨は控えますが、状況によっては適切と言えるでしょう（例えば、ウェブマスターやホストマスターがアップロードされる内容を信頼できない状況等）。この警戒レベルでは、通常ブロック／フラグも対象にならないファイルも全てVirus Total APIを使ってスキャンされます。したがって、Virus Total APIの割り当てを早々に消費してしまうこともあり得、またAPI割り当てを使い切れば、phpMusselはVirus Total APIの使用を中止します（警戒レベルに関係なく）。
 
-注意: phpMusselによってブラックリスト化、ホワイトリスト化されたファイルはVirus Total APIを使ったスキャンの対象にはなりません。これらは既に善悪が結論付けられたものであり、Virus Total APIで再びスキャンする必要性はないためです。phpMusseがVirus Total APIを利用するのは、phpMusse自身が危険性の有無について判断しかねる状況においての補助と言えます。
+注意：phpMusselによってブラックリスト化、ホワイトリスト化されたファイルはVirus Total APIを使ったスキャンの対象にはなりません。これらは既に善悪が結論付けられたものであり、Virus Total APIで再びスキャンする必要性はないためです。phpMusseがVirus Total APIを利用するのは、phpMusse自身が危険性の有無について判断しかねる状況においての補助と言えます。
 
 "vt_weighting" （ヴィティ・ウェイティング）
 - phpMusselがVirus Total APIを使ったスキャニング結果を検出として扱うか、検出の重み付けとして扱うべきか？複数のエンジン（Virus Totalのように）を使用したスキャニングは、検出率の向上（より多くのマルウェアが検出）をもたらす一方で誤検出の増加も招くため、このディレクティブが存在します。したがって、スキャニング結果は、決定的判断ではなく信頼スコアとして利用した方が適当なケースもあります。値が０の場合、Virus Total APIを使ったスキャンは検出として扱われ、Virus Totalのエンジンがマルウェアとフラグを付けたファイルは、phpMusselもマルウェアと判断します。その他の値の場合は結果は検出の重み付けとなり、スキャンされたファイルがマルウェアかどうかphpMusselが判断するための信頼スコア（あるいは検出の重み付け）となります（値はマルウェアと判断するための最小信頼スコア、あるいは重み）。デフォルト値は０です。
@@ -808,7 +808,7 @@ URLスキャナーAPIルックアップ設定。
 
 "google_api_key" （グーグル・エーピーアイ・キー）
 - 必要なAPI鍵が定義されれば、APIのGoogle Safe Browsing APIルックアップが有効になります。Google Safe Browsing APIルックアップスに必要なAPI鍵は、[から取得することができます](https://console.developers.google.com/)。
-- 注意: Google Safe Browsing APIルックアップはまだ完成していないので、将来的な利用を想定しています。
+- 注意：Google Safe Browsing APIルックアップはまだ完成していないので、将来的な利用を想定しています。
 
 "maximum_api_lookups" （マクシマム・エーピーアイ・ルックアップス）
 - スキャン反復におけるAPIルックアップの最大回数。APIルックアップの度にスキャン反復の時間が積み重なってしまうので、スキャン処理の速度向上のため、制限を設けたいと考えるかもしれません。０は制限なしを意味します。デフォルトは１０です。
@@ -875,7 +875,7 @@ $VARはマッチするPE変数の名前、HASHはその変数のMD5ハッシュ�
 HASHは全ファイルのMD5ハッシュ、FILESIZEはそのファイルの全サイズ、TYPEはホワイトリスト化されたファイルが攻撃を受ける恐れのないの署名タイプです。
 
 ####*複合拡張署名*
-複合拡張署名は他の署名とは少し違い、何に適合するかはそれ自身の署名によって決まり、基準は一つではありません。適合基準は「;」により、適合タイプ、適合データは「: 」によります。したがってフォーマットは、$変数１:何らかのデータ;$変数２:SOMEDATA;何らかのデータのようになります。
+複合拡張署名は他の署名とは少し違い、何に適合するかはそれ自身の署名によって決まり、基準は一つではありません。適合基準は「;」により、適合タイプ、適合データは「:」によります。したがってフォーマットは、$変数１:何らかのデータ;$変数２:SOMEDATA;何らかのデータのようになります。
 
 `$variable1:SOMEDATA;$variable2:SOMEDATA;SignatureName`
 
@@ -914,7 +914,7 @@ phpMusselが使う署名タイプの詳細です。
 - "SWF署名" (swf_*)　スキャン対象ファイルがホワイトリスト化されていないショックウェーブファイルの場合、そのコンテンツに対して使用されます。
 - "ホワイトリスト署名" (whitelist_*)　スキャン対象ファイルのコンテンツのMD5ハッシュとファイルサイズに対して使用されます。適合ファイルは、ホワイトリスト・エントリー内に記載された署名タイプへの適合性を必要としません。
 - "XML/XDP署名 " (xmlxdp_*)　スキャン対象ファイルがホワイトリスト化されていない場合、ファイル内で確認されたXML/XDPに対して使用されます。
-（注意: これらの署名は`phpmussel.ini`において容易に無効設定できます）。
+（注意：これらの署名は`phpmussel.ini`において容易に無効設定できます）。
 
 ---
 
@@ -997,4 +997,4 @@ phpMusselは大概のウィルススキャンソフトウェアに対して互�
 ---
 
 
-最終アップデート： 2016年8月29日。
+最終アップデート： 2016年9月2日。
