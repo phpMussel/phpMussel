@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.08.29).
+ * This file: Functions file (last modified: 2016.09.13).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -204,7 +204,7 @@ $phpMussel['prescan_decode'] = function ($str) use (&$phpMussel) {
  *      the resolved alias will be returned instead).
  */
 $phpMussel['Function'] = function ($n, $str = false) {
-    $x = 'abcdefghilnorstxz12346_';
+    static $x = 'abcdefghilnorstxz12346_';
     $fList = array(
         'GZ' =>
             $x[6] . $x[16] . $x[8] . $x[10] . $x[5] . $x[9] . $x[0] . $x[14] . $x[4],
@@ -587,10 +587,8 @@ $phpMussel['substral'] = function ($h, $n) {
  *      on failure).
  */
 $phpMussel['ReadFile'] = function ($f, $s = 0, $c = false, $b = 128) {
-    if (!$c) {
-        if (!is_file($f)) {
-            return false;
-        }
+    if (!$c && !is_file($f)) {
+        return false;
     }
     $bsize = $b * 1024;
     if (!$s) {
@@ -779,16 +777,16 @@ $phpMussel['SaveCache'] = function ($entry = '', $item_ex = 0, $item_data = '') 
     $fh = fopen($f, 'w');
     fwrite($fh, $d);
     fclose($fh);
-    $idxf = $phpMussel['vault'] . 'cache/index.dat';
-    $idxnd = $idxd = (!file_exists($idxf)) ? '' : $phpMussel['ReadFile']($idxf, 0, true);
-    while (substr_count($idxnd, $entry . ':')) {
-        $idxnd = str_ireplace($entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($idxnd, $entry . ':'), ';') . ';', '', $idxnd);
+    $IndexFile = $phpMussel['vault'] . 'cache/index.dat';
+    $IndexNewData = $IndexData = (!file_exists($IndexFile)) ? '' : $phpMussel['ReadFile']($IndexFile, 0, true);
+    while (substr_count($IndexNewData, $entry . ':')) {
+        $IndexNewData = str_ireplace($entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($IndexNewData, $entry . ':'), ';') . ';', '', $IndexNewData);
     }
-    $idxnd .= $entry . ':' . $item_ex . ';';
-    if ($idxnd !== $idxd) {
-        $idxfh = fopen($idxf, 'w');
-        fwrite($idxfh, $idxnd);
-        fclose($idxfh);
+    $IndexNewData .= $entry . ':' . $item_ex . ';';
+    if ($IndexNewData !== $IndexData) {
+        $IndexHandle = fopen($IndexFile, 'w');
+        fwrite($IndexHandle, $IndexNewData);
+        fclose($IndexHandle);
     }
     return true;
 };
@@ -905,9 +903,9 @@ $phpMussel['MemoryUse'] = function ($p, $d = 0) use (&$phpMussel) {
                 }
             }
         }
-    closedir($h);
-    return $t;
+        closedir($h);
     }
+    return $t;
 };
 
 /**
