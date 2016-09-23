@@ -10,6 +10,7 @@ TLD:review:0?TLD.REVIEW
 TLD:science:0?TLD.SCIENCE
 TLD:work:0?TLD.WORK
 TLD:zip:0?TLD.ZIP
+TLD:onion:7?Onion.TLD.Anonymous.Domain
 
 == NO API LOOKUP / API BYPASS SIGNATURES ==
 = DOMAINS 2016/02 =

@@ -47,7 +47,7 @@ Espero para agilizar este processo via fazendo um instalado em algum momento no 
 
 3) Carregar os conteúdos (phpMussel e seus arquivos) para o diretório que você tinha decidido anteriormente (você não requerer os `*.txt`/`*.md` arquivos incluídos, mas principalmente, você deve carregar tudo).
 
-4) CHMOD o `vault` diretório para "777". O principal diretório armazenar o conteúdo (o que você escolheu anteriormente), geralmente, pode ser deixado sozinho, mas o CHMOD status deve ser verificado se você já teve problemas de permissões no passado no seu sistema (por padrão, deve ser algo como "755").
+4) CHMOD o `vault` diretório para "755" (se houver problemas, você pode tentar "777"; isto é menos seguro, embora). O principal diretório armazenar o conteúdo (o que você escolheu anteriormente), geralmente, pode ser deixado sozinho, mas o CHMOD status deve ser verificado se você já teve problemas de permissões no passado no seu sistema (por padrão, deve ser algo como "755").
 
 5) Seguida, você vai precisar "enganchar" phpMussel ao seu sistema ou CMS. Existem várias diferentes maneiras em que você pode "enganchar" scripts como phpMussel ao seu sistema ou CMS, mas o mais fácil é simplesmente incluir o script no início de um núcleo arquivo de seu sistema ou CMS (uma que vai geralmente sempre ser carregado quando alguém acessa qualquer página através de seu site) utilizando um `require` ou `include` comando. Normalmente, isso vai ser algo armazenado em um diretório como `/includes`, `/assets` ou `/functions`, e muitas vezes, ser nomeado algo como `init.php`, `common_functions.php`, `functions.php` ou semelhante. Você precisará determinar qual arquivo isso é para a sua situação; Se você encontrar dificuldades em determinar isso por si mesmo, para assistência, visite a página de problemas/issues phpMussel no Github ou os fóruns de suporte para phpMussel; É possível que eu ou outro usuário podem ter experiência com o CMS que você está usando (você precisa deixar-nos saber qual CMS você está usando), e assim, pode ser capaz de prestar alguma assistência neste domínio. Para fazer isso [usar `require` ou `include`], insira a seguinte linha de código para o início desse núcleo arquivo, substituindo a string contida dentro das aspas com o exato endereço do arquivo `phpmussel.php` (endereço local, não o endereço HTTP; será semelhante ao vault endereço mencionado anteriormente).
 
@@ -132,7 +132,7 @@ Por favor, consulte ao "COMO INSTALAR (PARA CLI)" seção deste arquivo README.
 
 Esteja ciente de que, embora versões futuras do phpMussel deve apoiar sistemas outros, neste momento, phpMussel CLI modo suporte só é otimizado para uso em sistemas baseados no Windows (você pode, é claro, experimentá-lo em outros sistemas, mas eu não posso garantir que vai funcionar como pretendido).
 
-Também estar ciente de que phpMussel não é o funcional equivalente de um completa antivírus suíte, e contrário de antivírus suítes convencionais, não monitora ativa memória ou detectar vírus proativamente! Ele só irá detectar vírus contidos por esses arquivos específicos que você explicitamente diga a ele analisar.
+Também estar ciente de que phpMussel é um scanner *on-demand*; *NÃO* é um scanner *on-access* (excepto para o carregamento de arquivos, no momento de carregamento), e ao contrário de antivírus suítes convencionais, não monitora memória ativa! Ele só vai detectar vírus contidos pelo carregamento de arquivos, e por esses arquivos específicos que você explicitamente diga a ele analisar.
 
 ---
 
@@ -995,4 +995,4 @@ Esta informação foi atualizada dia 29 Agosto 2016 e é corrente para todas php
 ---
 
 
-Última Atualização: 29 Agosto 2016 (2016.08.29).
+Última Atualização: 22 Setembro 2016 (2016.09.22).

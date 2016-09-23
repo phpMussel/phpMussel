@@ -205,7 +205,7 @@ $phpMussel['prescan_decode'] = function ($str) use (&$phpMussel) {
  */
 $phpMussel['Function'] = function ($n, $str = false) {
     static $x = 'abcdefghilnorstxz12346_';
-    $fList = array(
+    static $fList = array(
         'GZ' =>
             $x[6] . $x[16] . $x[8] . $x[10] . $x[5] . $x[9] . $x[0] . $x[14] . $x[4],
         'R13' =>

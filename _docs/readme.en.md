@@ -47,7 +47,7 @@ I hope to streamline this process by making an installer at some point in the no
 
 3) Upload the contents (phpMussel and its files) to the directory you'd decided on earlier (you don't need to include the `*.txt`/`*.md` files, but mostly, you should upload everything).
 
-4) CHMOD the `vault` directory to "777". The main directory storing the contents (the one you chose earlier), usually, can be left alone, but CHMOD status should be checked if you've had permissions issues in the past on your system (by default, should be something like "755").
+4) CHMOD the `vault` directory to "755" (if there are problems, you can try "777"; this is less secure, though). The main directory storing the contents (the one you chose earlier), usually, can be left alone, but CHMOD status should be checked if you've had permissions issues in the past on your system (by default, should be something like "755").
 
 5) Next, you'll need to "hook" phpMussel to your system or CMS. There are several different ways you can "hook" scripts such as phpMussel to your system or CMS, but the easiest is to simply include the script at the beginning of a core file of your system or CMS (one that'll generally always be loaded when someone accesses any page across your website) using a `require` or `include` statement. Usually, this'll be something stored in a directory such as `/includes`, `/assets` or `/functions`, and will often be named something like `init.php`, `common_functions.php`, `functions.php` or similar. You'll have to work out which file this is for your situation; If you encounter difficulties in determining this for yourself, visit the phpMussel issues page at Github or the phpMussel support forums for assistance; It's possible that either myself or another user may have experience with the CMS that you're using (you'll need to let us know which CMS you're using), and thus, may be able to provide some assistance in this area. To do this [to use `require` or `include`], insert the following line of code to the very beginning of that core file, replacing the string contained inside the quotation marks with the exact address of the `phpmussel.php` file (local address, not the HTTP address; it'll look similar to the vault address mentioned earlier).
 
@@ -130,9 +130,9 @@ To disable signatures included with phpMussel (such as if you're experiencing a 
 
 Please refer to the "HOW TO INSTALL (FOR CLI)" section of this README file.
 
-Be aware that, although future versions of phpMussel should support other systems, at this time, phpMussel CLI mode support is only optimised for use on Windows-based system (you can, of course, try it on other systems, but I can't guarantee it'll work as intended).
+Be aware that, although future versions of phpMussel should support other systems, at this time, phpMussel CLI mode support is only optimised for use on Windows-based systems (you can, of course, try it on other systems, but I can't guarantee it'll work as intended).
 
-Also be aware that phpMussel is not the functional equivalent of a complete anti-virus suite, and unlike conventional anti-virus suites, doesn't monitor active memory or detect viruses on-the-fly! It'll only detect viruses contained by those specific files that you explicitly tell it to scan.
+Also be aware that phpMussel is an *on-demand* scanner; It is *NOT* an *on-access* scanner (other than for file uploads, at the time of upload), and unlike conventional anti-virus suites, doesn't monitor active memory! It'll only detect viruses contained by file uploads, and by those specific files that you explicitly tell it to scan.
 
 ---
 
@@ -995,4 +995,4 @@ This information was last updated 29th August 2016 and is current for all phpMus
 ---
 
 
-Last Updated: 2nd September 2016 (2016.09.02).
+Last Updated: 22nd September 2016 (2016.09.22).
