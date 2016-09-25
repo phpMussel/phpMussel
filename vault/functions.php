@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.09.13).
+ * This file: Functions file (last modified: 2016.09.26).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -205,7 +205,7 @@ $phpMussel['prescan_decode'] = function ($str) use (&$phpMussel) {
  */
 $phpMussel['Function'] = function ($n, $str = false) {
     static $x = 'abcdefghilnorstxz12346_';
-    static $fList = array(
+    $fList = array(
         'GZ' =>
             $x[6] . $x[16] . $x[8] . $x[10] . $x[5] . $x[9] . $x[0] . $x[14] . $x[4],
         'R13' =>
