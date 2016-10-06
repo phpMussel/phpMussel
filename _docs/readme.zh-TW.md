@@ -7,7 +7,7 @@
 - 2B. [如何安裝（CLI）](#SECTION2B)
 - 3A. [如何使用（WEB服務器）](#SECTION3A)
 - 3B. [如何使用（CLI）](#SECTION3B)
-- 4A. [瀏覽器命令](#SECTION4A)
+- 4A. [瀏覽器命令](#SECTION4A) @DEPRECATED@
 - 4B. [CLI（命令行界面）](#SECTION4B)
 - 5. [文件在包](#SECTION5)
 - 6. [配置選項](#SECTION6)
@@ -44,15 +44,15 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 1） 在閱讀到這里之前，我假設您已經下載腳本的一個副本，已解壓縮其內容並保存在您的機器的某個地方。現在，您要決定將腳本放在您服務器上的哪些文件夾中，例如`/public_html/phpmussel/`或其他任何您覺得滿意和安全的地方。*上傳完成後，繼續閱讀。。*
 
-2） 自定義（強烈推薦高級用戶，但不推薦業餘用戶或者新手使用這個方法），打開`phpmussel.ini`（位於內`vault`） - 這個文件包含所有phpMussel的可用配置選項。以上的每一個配置選項應有一個簡介來說明它是做什麼的和它的具有的功能。按照您認為合適的參數來調整這些選項，然後保存文件，關閉。
+2） 自定義（強烈推薦高級用戶，但不推薦業餘用戶或者新手使用這個方法），打開`config.ini`（位於內`vault`） - 這個文件包含所有phpMussel的可用配置選項。以上的每一個配置選項應有一個簡介來說明它是做什麼的和它的具有的功能。按照您認為合適的參數來調整這些選項，然後保存文件，關閉。
 
 3） 上傳（phpMussel和它的文件）到您選定的文件夾（不需要包括`*.txt`/`*.md`文件，但大多數情況下，您應上傳所有的文件）。
 
 4） 修改的`vault`文件夾權限為“755”（如果有問題，您可以試試“777”，但是這是不太安全）。注意，主文件夾也應該是該權限，如果遇上其他權限問題，請修改對應文件夾和文件的權限。
 
-5） 接下來，您需要為您的系統或CMS設定啟動phpMussel的鉤子。有幾種不同的方式為您的系統或CMS設定鉤子，最簡單的是在您的系統或CMS的核心文件的開頭中使用`require`或`include`命令直接包含腳本（這個方法通常會導致在有人訪問時每次都加載）。平時，這些都是存儲的在文件夾中，例如`/includes`，`/assets`或`/functions`等文件夾，和將經常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。這是根據您自己的情況決定的，並不需要完全遵守；如果您遇到困難，參觀Github上的phpMussel問題頁面和/或訪問phpMussel支持論壇和發送問題；可能其他用戶或者我自己也有這個問題並且解決了（您需要讓我們您在使用哪些CMS）。為了使用`require`或`include`，插入下面的代碼行到最開始的該核心文件，更換裡面的數據引號以確切的地址的`phpmussel.php`文件（本地地址，不是HTTP地址；它會類似於前面提到的vault地址）。
+5） 接下來，您需要為您的系統或CMS設定啟動phpMussel的鉤子。有幾種不同的方式為您的系統或CMS設定鉤子，最簡單的是在您的系統或CMS的核心文件的開頭中使用`require`或`include`命令直接包含腳本（這個方法通常會導致在有人訪問時每次都加載）。平時，這些都是存儲的在文件夾中，例如`/includes`，`/assets`或`/functions`等文件夾，和將經常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。這是根據您自己的情況決定的，並不需要完全遵守；如果您遇到困難，參觀Github上的phpMussel問題頁面和/或訪問phpMussel支持論壇和發送問題；可能其他用戶或者我自己也有這個問題並且解決了（您需要讓我們您在使用哪些CMS）。為了使用`require`或`include`，插入下面的代碼行到最開始的該核心文件，更換裡面的數據引號以確切的地址的`loader.php`文件（本地地址，不是HTTP地址；它會類似於前面提到的vault地址）。
 
-`<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
+`<?php require '/user_name/public_html/phpmussel/loader.php'; ?>`
 
 保存文件，關閉，重新上傳。
 
@@ -60,11 +60,11 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 如果您使用Apache網絡服務器並且您可以訪問`php.ini`，您可以使用該`auto_prepend_file`指令為任何PHP請求創建附上的phpMussel。就像是：
 
-`auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"`
+`auto_prepend_file = "/user_name/public_html/phpmussel/loader.php"`
 
 或在該`.htaccess`文件：
 
-`php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"`
+`php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
 6） 到這裡，您已經完成安裝，現在您應測試phpMussel以確保它的正常運行！為了保護系統中的文件（或者應該翻譯為保護上傳的文件），可以嘗試通過常用的瀏覽器上傳的方式上傳包含在`_testfiles`文件夾內的內容到您的網站。如果一切正常，phpMussel應該出現阻止上傳信息，如果出現什麼不正常情況例如您使用了其他高級的功能或使用的其它類型的掃描，我建議嘗試它跟他們一起使用以確保都能工作正常。
 
@@ -79,9 +79,9 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 2） phpMussel需要PHP運行環境支持。如果您沒有安裝PHP，請安裝。
 
-3） 自定義（強烈推薦高級用戶使用，但不推薦新手或沒有經驗的用戶使用）：打開`phpmussel.ini`（位於內`vault`） - 這個文件包含phpMussel所有的配置選項。每選項應有一個簡評以說明它做什麼和它的功能。按照您認為合適的參數調整這些選項，然後保存文件，關閉。
+3） 自定義（強烈推薦高級用戶使用，但不推薦新手或沒有經驗的用戶使用）：打開`config.ini`（位於內`vault`） - 這個文件包含phpMussel所有的配置選項。每選項應有一個簡評以說明它做什麼和它的功能。按照您認為合適的參數調整這些選項，然後保存文件，關閉。
 
-4） 您如果您創建一個批處理文件來自動加載的PHP和phpMussel，那麼使用phpMussel的CLI模式將更加方便。要做到這一點，打開一個純文本編輯器例如Notepad或Notepad++，輸入php.exe的完整路徑（注意是絕對路徑不是相對路徑），其次是一個空格，然後是`phpmussel.php`的路徑（同php.exe），最後，保存此文件使用一個".bat"擴展名放在常用的位置；在您指定的位置，能通過雙擊您保存的`.bat`文件來調用phpMussel。
+4） 您如果您創建一個批處理文件來自動加載的PHP和phpMussel，那麼使用phpMussel的CLI模式將更加方便。要做到這一點，打開一個純文本編輯器例如Notepad或Notepad++，輸入php.exe的完整路徑（注意是絕對路徑不是相對路徑），其次是一個空格，然後是`loader.php`的路徑（同php.exe），最後，保存此文件使用一個".bat"擴展名放在常用的位置；在您指定的位置，能通過雙擊您保存的`.bat`文件來調用phpMussel。
 
 5） 到這裡，您完成了CLI模式的安裝！當然您應測試以確保正常運行。如果要測試phpMussel，請通過phpMussel嘗試掃描`_testfiles`文件夾內提供的文件。
 
@@ -94,7 +94,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 
 文件上傳掃描是自動的和按照設定規則激活的，所以，您不需要做任何額外的事情。
 
-另外，您能手動使用phpMussel掃描文件，文件夾或存檔當您需要時。要做到這一點，首先，您需要確保`phpmussel.ini`文件（`cleanup`｢清理｣必須關閉）的配置是正常的，然後通過任何一個PHP文件的鉤子至phpMussel，在您的代碼中添加以下代碼：
+另外，您能手動使用phpMussel掃描文件，文件夾或存檔當您需要時。要做到這一點，首先，您需要確保`config.ini`文件（`cleanup`｢清理｣必須關閉）的配置是正常的，然後通過任何一個PHP文件的鉤子至phpMussel，在您的代碼中添加以下代碼：
 
 `$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
@@ -140,7 +140,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 
 ###4A. <a name="SECTION4A"></a>瀏覽器命令
 
-假設您已經正確的安裝並且功能正常，如果您已經設置`script_password`和`logs_password`變量（訪問密碼）在您的配置文件中，通過您的瀏覽器您將會可以執行一些有限數的行政功能和輸入一些有限數的命令來執行phpMussel。這些密碼需要被設置來激活這些瀏覽器控制，以保證安全，如果您和／或其他網站管理員使用phpMussel不想要他們，請正確保護的這些瀏覽器控制和保證存在一個方法保證瀏覽器控制被完全關閉。換句話說，激活這些控制，需要設置一個密碼，設置沒有密碼則關閉這些控制，設。另外，如果您選擇激活這些控制和然後過段時間關閉這些控制，有一個命令以做這個。（這裡請參考英文原文）
+@DEPRECATED@
 
 以下原因是為什麼您應該激活這些控制：
 - 提供一個自定義的簽名黑名單，例如當您發現一個簽名產生一個誤報，但是您沒有時間去手動編輯和重新上傳您的黑名單文件。
@@ -154,81 +154,6 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 
 無論哪種方式，無論您選擇什麼樣的設置，最終選擇權在您，這裡僅提供建議，下面給出了一些未被提及的選項，如果您決定使用他們，這個部分說明如何激活和使用他們。
 
-可用瀏覽器命令列表：
-
-scan_log
-- 密碼需要：`logs_password`
-- 其他需要：您需要確定`scan_log`指令。
-- 需要參數：不需要
-- 自選參數：不需要
-- 例子：`?logspword=[logs_password]&phpmussel=scan_log`
-- 它的作用：打印您的`scan_log`文件內容到屏幕。
-
-scan_log_serialized
-- 密碼需要：`logs_password`
-- 其他需要：您需要確定`scan_log_serialized`指令。
-- 需要參數：不需要
-- 自選參數：不需要
-- 例子：`?logspword=[logs_password]&phpmussel=scan_log_serialized`
-- 它的作用：打印您的`scan_log_serialized`文件內容到屏幕。
-
-scan_kills
-- 密碼需要：`logs_password`
-- 其他需要：您需要確定`scan_kills`指令。
-- 需要參數：不需要
-- 自選參數：不需要
-- 例子：`?logspword=[logs_password]&phpmussel=scan_kills`
-- 它的作用：打印您的`scan_kills`文件內容到屏幕。
-
-controls_lockout
-- 密碼需要：`logs_password`或`script_password`
-- 其他需要：不需要
-- 需要參數：不需要
-- 自選參數：不需要
-- 例子1：`?logspword=[logs_password]&phpmussel=controls_lockout`
-- 例子2：`?pword=[script_password]&phpmussel=controls_lockout`
-- 它的作用：關閉所有瀏覽器控制。這個應該使用如果您疑似任一您的密碼已成為妥協（這個可以發生如果您使用這些控制從一個不安全和／或不信賴計算機）。`controls_lockout`執行途經創建一個文件，`controls.lck`，在您的安全／保險庫｢Vault｣文件夾，哪裡phpMussel將尋找之前執行任何類型的命令。當這個發生，以重新激活控制，您需要手動刪除`controls.lck`文件通過FTP或類似。可以使叫使用任一密碼。
-
-disable
-- 密碼需要：`script_password`
-- 其他需要：不需要
-- 需要參數：不需要
-- 自選參數：不需要
-- 例子：`?pword=[script_password]&phpmussel=disable`
-- 它的作用：關閉phpMussel。這個應該使用如果您執行任何更新或修改在您的系統或如果您安裝任何新軟件或模塊在您的系統哪裡可能的可以扳機假陽性。這個還應該使用如果您遇到任何問題從phpMussel但您不想去掉它從您的系統。當這個發生，以重新激活phpMussel，使用“enable”。
-
-enable
-- 密碼需要：`script_password`
-- 其他需要：不需要
-- 需要參數：不需要
-- 自選參數：不需要
-- 例子：`?pword=[script_password]&phpmussel=enable`
-- 它的作用：激活phpMussel。這個應該使用如果您先前關閉phpMussel通過“disable”和想重新激活它。
-
-greylist
-- 密碼需要：`script_password`
-- 其他需要：不需要
-- 需要參數：【需要添加到黑名單的簽名】
-- 自選參數：不需要
-- 例子：`?pword=[script_password]&phpmussel=greylist&musselvar=[签名]`
-- 它的作用：添加一個簽名在黑名單。
-
-greylist_clear
-- 密碼需要：`script_password`
-- 其他需要：不需要
-- 需要參數：不需要
-- 自選參數：不需要
-- 例子：`?pword=[script_password]&phpmussel=greylist_clear`
-- 它的作用：刪除整個黑名單。
-
-greylist_show
-- 密碼需要：`script_password`
-- 其他需要：不需要
-- 需要參數：不需要
-- 自選參數：不需要
-- 例子：`?pword=[script_password]&phpmussel=greylist_show`
-- 它的作用：打印內容的黑名單到屏幕。
-
 ---
 
 
@@ -237,6 +162,9 @@ greylist_show
 在Windows系統上phpMussel在CLI模式可以作為一個互動文件執行掃描。參考｢如何安裝（對於CLI）｣部分的這個自述文件為更信息。
 
 為一個列表的可用CLI命令，在CLI提示，鍵入【c】，和按Enter鍵。
+
+另外，對於那些有興趣，一個視頻教程如何使用phpMussel在命令行模式是可在這裡：
+- <https://www.youtube.com/watch?v=H-Pa740-utc>
 
 ---
 
@@ -253,8 +181,8 @@ greylist_show
 /composer.json | Composer/Packagist 信息（不需要為正確經營腳本）。
 /CONTRIBUTING.md | 相關信息如何有助於該項目。
 /LICENSE.txt | GNU/GPLv2 執照文件（不需要為正確經營腳本）。
+/loader.php | 加載文件。這個是文件您應該｢鉤子｣（必不可少）!
 /PEOPLE.md | 人民捲入到該項目。
-/phpmussel.php | 加載文件。這個是文件您應該｢鉤子｣（必不可少）!
 /README.md | 項目概要信息。
 /web.config | 一個ASP.NET配置文件（在這種情況，以保護`/vault`文件夾從被訪問由非授權來源在事件的腳本是安裝在服務器根據ASP.NET技術）。
 /_docs/ | 筆記文件夾（包含若干文件）。
@@ -294,7 +222,6 @@ greylist_show
 /vault/cache/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/cli.php | CLI處理文件。
 /vault/config.php | 配置處理文件。
-/vault/controls.php | 控制處理文件。
 /vault/functions.php | 功能處理文件（必不可少）。
 /vault/greylist.csv | 灰名單簽名CSV（逗號分隔變量）文件說明為phpMussel什麼簽名它應該忽略（文件自動重新創建如果刪除）。
 /vault/lang.php | 語音數據。
@@ -314,7 +241,7 @@ greylist_show
 /vault/lang/lang.vi.php | 越南文語言數據。
 /vault/lang/lang.zh-TW.php | 中文（傳統）語言數據。
 /vault/lang/lang.zh.php | 中文（簡體）語言數據。
-/vault/phpmussel.ini | 配置文件；包含所有配置指令為phpMussel，告訴它什麼做和怎麼正確地經營（必不可少）！
+/vault/config.ini | 配置文件；包含所有配置指令為phpMussel，告訴它什麼做和怎麼正確地經營（必不可少）！
 /vault/quarantine/ | 隔離文件夾（包含隔離文件）。
 /vault/quarantine/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
 ※ /vault/scan_kills.txt | 記錄的所有上傳文件phpMussel受阻／殺。
@@ -445,7 +372,7 @@ greylist_show
 /vault/template_custom.html | 模板文件；模板為HTML產量產生通過phpMussel為它的受阻文件上傳信息（信息可見向上傳者）。
 /vault/upload.php | 上傳處理文件。
 
-※ 文件名可能不同基於配置規定（在`phpmussel.ini`）。
+※ 文件名可能不同基於配置規定（在`config.ini`）。
 
 ####*關於簽名文件*
 （這裡是關於phpMussel引用的簽名文件來源以及格式說明，請參考英文部分以及簽名文件提供商的說明）
@@ -469,7 +396,7 @@ CVD是一個acronym為｢ClamAV Virus Definitions｣，在參照如何ClamAV參�
 
 
 ###6. <a name="SECTION6"></a>配置選項
-下列是一個列表的變量發現在`phpmussel.ini`配置文件的phpMussel，以及一個說明的他們的目的和功能。
+下列是一個列表的變量發現在`config.ini`配置文件的phpMussel，以及一個說明的他們的目的和功能。
 
 ####“general” （類別）
 基本phpMussel配置。
@@ -778,7 +705,7 @@ VirusTotal.com指令。
   - 您已閱讀和您同意服務條款的VirusTotal和它的API。服務條款的VirusTotal和它的API可以發現[這裡](https://www.virustotal.com/en/about/terms-of-service/)。
   - 您已閱讀和您了解至少序言的VirusTotal公共API閱讀材料(一切之後“VirusTotal Public API v2.0”但之前“Contents”）。VirusTotal公共API閱讀材料可以發現[這裡](https://www.virustotal.com/en/documentation/public-api/)。
 
-請注意：如果掃描文件使用｢Virus Total API｣是關閉，您不需要修改任何指令在這個類別（`virustotal`），因為沒有人將做任何事如果這個是關閉。以獲得一個VirusTotalAPI密鑰，從隨地在他們的網站，點擊“進入我們的社區”連接位於朝向右上方的頁面，輸入在信息請求，和點擊“註冊”在做完。跟隨所有指令提供，和當您有您的公共API密鑰，複製／粘貼您的公共API密鑰到`vt_public_api_key`指令的`phpmussel.ini`配置文件。
+請注意：如果掃描文件使用｢Virus Total API｣是關閉，您不需要修改任何指令在這個類別（`virustotal`），因為沒有人將做任何事如果這個是關閉。以獲得一個VirusTotalAPI密鑰，從隨地在他們的網站，點擊“進入我們的社區”連接位於朝向右上方的頁面，輸入在信息請求，和點擊“註冊”在做完。跟隨所有指令提供，和當您有您的公共API密鑰，複製／粘貼您的公共API密鑰到`vt_public_api_key`指令的`config.ini`配置文件。
 
 “vt_suspicion_level”
 - 作為標準，phpMussel將限制什麼文件它掃描通過使用｢Virus Total API｣為那些文件它考慮作為“可疑”。您可以可選調整這個局限性通過修改的`vt_suspicion_level`指令數值。
@@ -915,7 +842,7 @@ URL掃描儀API配置。
 - “SWF簽名” （swf_*）。匹配針對內容的所有非白名單SWF文件目標為掃描。
 - “白名單簽名” （whitelist_*）。匹配針對MD5哈希的內容和文件大小的所有文件目標為掃描。識別文件將會免疫的成為匹配通過簽名類型提到從他們的白名單項。
 - “XML/XDP塊簽名” （xmlxdp_*）。匹配針對任何XML/XDP塊發現從任何非白名單文件目標為掃描。
-（請注意任何的這些簽名可以很容易地關閉通過`phpmussel.ini`）。
+（請注意任何的這些簽名可以很容易地關閉通過`config.ini`）。
 
 ---
 
@@ -998,4 +925,4 @@ URL掃描儀API配置。
 ---
 
 
-最後更新：2016年9月22日。
+最後更新：2016年10月06日。

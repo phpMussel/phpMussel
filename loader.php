@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.06.04).
+ * This file: The loader (last modified: 2016.10.06).
  */
 
 /**
@@ -23,10 +23,7 @@
 if (!defined('phpMussel')) {
     define('phpMussel', true);
 
-    /**
-     * Create an array for our working data.
-     * @global array $phpMussel
-     */
+    /** Create an array for our working data. */
     $phpMussel = array();
 
     /** Determine the location of the "vault" directory. */
@@ -57,7 +54,16 @@ if (!defined('phpMussel')) {
     /** Define the location of the "signatures" directory. */
     $phpMussel['sigPath'] = $phpMussel['vault'] . 'signatures/';
 
-    /** Check if the configuration handler exists; If it doesn't, kill the script. */
+    /**
+     * Before processing any includes, let's count them, to know whether we're
+     * running phpMussel directly or via as a wrapper (ie, from a hook).
+     */
+    $phpMussel['Direct'] = (count(get_included_files()) === 1);
+
+    /**
+     * Check whether the configuration handler exists; If it doesn't, kill the
+     * script.
+     */
     if (!file_exists($phpMussel['vault'] . 'config.php')) {
         header('Content-Type: text/plain');
         die('[phpMussel] Configuration handler missing! Please reinstall phpMussel.');
@@ -65,7 +71,10 @@ if (!defined('phpMussel')) {
     /** Load the configuration handler. */
     require $phpMussel['vault'] . 'config.php';
 
-    /** Check if the language handler exists; If it doesn't, kill the script. */
+    /**
+     * Check whether the language handler exists; If it doesn't, kill the
+     * script.
+     */
     if (!file_exists($phpMussel['vault'] . 'lang.php')) {
         header('Content-Type: text/plain');
         die('[phpMussel] Language handler missing! Please reinstall phpMussel.');
@@ -152,12 +161,14 @@ if (!defined('phpMussel')) {
      */
     if (!$phpMussel['disable_lock'] = file_exists($phpMussel['vault'] . 'disable.lck')) {
 
-        /** Check if the functions file exists; If it doesn't, kill the script. */
+        /**
+         * Check whether the functions file exists; If it doesn't, kill the
+         * script.
+         */
         if (!file_exists($phpMussel['vault'] . 'functions.php')) {
             header('Content-Type: text/plain');
             die('[phpMussel] ' . $phpMussel['Config']['lang']['core_scriptfile_missing']);
         }
-
         /** Load the functions file. */
         require $phpMussel['vault'] . 'functions.php';
 
@@ -189,28 +200,13 @@ if (!defined('phpMussel')) {
     }
 
     /**
-     * Check if controls are disabled (if the "controls lock" is engaged); If
-     * they are, do nothing; If they aren't, then, check if the controls
-     * handler exists; If it exists, load it. Note that the controls handler
-     * will likely be superseded by a frontend management system (and thus,
-     * removed) in the future. Skip this check if we're in CLI-mode.
-     */
-    if (!file_exists($phpMussel['vault'] . 'controls.lck')) {
-        if (!$phpMussel['Mussel_sapi']) {
-            if (file_exists($phpMussel['vault'] . 'controls.php')) {
-                require $phpMussel['vault'] . 'controls.php';
-            }
-        }
-    }
-
-    /**
      * If phpMussel is "disabled" (if the "disable lock" is engaged), nothing
      * within this block should execute (thus effectively disabling phpMussel).
      */
     if (!$phpMussel['disable_lock'] = file_exists($phpMussel['vault'] . 'disable.lck')) {
 
         /**
-         * Check if the upload handler exists; If it exists, load it.
+         * Check whether the upload handler exists; If it exists, load it.
          * Skip this check if we're in CLI-mode.
          */
         if (!$phpMussel['Mussel_sapi']) {
@@ -220,11 +216,23 @@ if (!defined('phpMussel')) {
         }
 
         /**
-         * Check if the CLI handler exists; If it exists, load it.
+         * Check whether the CLI handler exists; If it exists, load it.
          * Skip this check if we're NOT in CLI-mode.
          */
         elseif (file_exists($phpMussel['vault'] . 'cli.php')) {
             require $phpMussel['vault'] . 'cli.php';
+        }
+
+        /**
+         * Check whether the front-end handler exists; Load it if it does.
+         * Skip this check if front-end access is disabled.
+         */
+        if (
+            !$phpMussel['Config']['general']['disable_frontend'] &&
+            file_exists($phpMussel['vault'] . 'frontend.php') &&
+            $phpMussel['Direct']
+        ) {
+            require $phpMussel['vault'] . 'frontend.php';
         }
 
     }

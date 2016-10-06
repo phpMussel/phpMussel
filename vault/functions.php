@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.09.26).
+ * This file: Functions file (last modified: 2016.10.06).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -7601,7 +7601,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
 $phpMussel['Fork'] = function ($f = '', $ofn = '') use (&$phpMussel) {
     $pf = popen(
         $phpMussel['Mussel_PHP'] . ' "' . $phpMussel['vault'] .
-        '../phpmussel.php" "cli_win_scan" "' . $f . '" "' . $ofn . '"',
+        '../loader.php" "cli_win_scan" "' . $f . '" "' . $ofn . '"',
         'r'
     );
     $s = '';

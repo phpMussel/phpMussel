@@ -6,7 +6,7 @@
 - 2B. [HOE TE INSTALLEREN (VOOR CLI)](#SECTION2B)
 - 3A. [HOE TE GEBRUIKEN (VOOR WEBSERVERS)](#SECTION3A)
 - 3B. [HOE TE GEBRUIKEN (VOOR CLI)](#SECTION3B)
-- 4A. [BROWSER RICHTLIJNEN](#SECTION4A)
+- 4A. [BROWSER RICHTLIJNEN](#SECTION4A) @DEPRECATED@
 - 4B. [CLI (COMMANDLIJN INTERFACE)](#SECTION4B)
 - 5. [BESTANDEN IN DIT PAKKET](#SECTION5)
 - 6. [CONFIGURATIEOPTIES](#SECTION6)
@@ -43,15 +43,15 @@ Ik hoop te stroomlijnen dit proces door maken een installateur op een bepaald pu
 
 1) Omdat u zijn lezen dit, ik ben ervan uit u al gedownload een gearchiveerde kopie van het script, uitgepakt zijn inhoud en heeft het ergens op uw lokale computer. Vanaf hier, u nodig te bepalen waar op uw host of CMS die inhoud te plaatsen. Een bestandsmap zoals `/public_html/phpmussel/` of soortgelijk (hoewel, het is niet belangrijk welke u kiest, zolang het is iets veilig en iets waar u blij mee bent) zal volstaan. *Voordat u het uploaden begint, lees verder..*
 
-2) Facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te raden voor beginners of voor de onervaren), open `phpmussel.ini` (gelegen binnen `vault`) - Dit bestand bevat alle beschikbare phpMussel configuratie opties. Boven elke optie moet een korte opmerking te beschrijven wat het doet en wat het voor. Pas deze opties als het u past, volgens welke geschikt is voor uw configuratie. Sla het bestand, sluiten.
+2) Facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te raden voor beginners of voor de onervaren), open `config.ini` (gelegen binnen `vault`) - Dit bestand bevat alle beschikbare phpMussel configuratie opties. Boven elke optie moet een korte opmerking te beschrijven wat het doet en wat het voor. Pas deze opties als het u past, volgens welke geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
 3) Upload de inhoud (phpMussel en zijn bestanden) naar het bestandsmap die u zou op eerder besloten (u nodig niet de `*.txt`/`*.md` bestanden opgenomen, maar meestal, u moeten uploaden alles).
 
 4) CHMOD het bestandsmap `vault` naar "755" (als er problemen, u kan proberen "777"; dit is minder veilig, hoewel). De belangrijkste bestandsmap opslaan van de inhoud (degene die u eerder koos), gewoonlijk, kunt worden genegeerd, maar CHMOD-status moet worden gecontroleerd als u machtigingen problemen heeft in het verleden met uw systeem (standaard, moet iets zijn als "755").
 
-5) Volgende, u nodig om "haak" phpMussel om uw systeem of CMS. Er zijn verschillende manieren waarop u kunt "haak" scripts zoals phpMussel om uw systeem of CMS, maar het makkelijkste is om gewoon omvatten voor het script aan het begin van een kern bestand van uw systeem of CMS (een die het algemeen altijd zal worden geladen wanneer iemand heeft toegang tot een pagina in uw website) met behulp van een `require` of `include` opdracht. Meestal is dit wel iets worden opgeslagen in een bestandsmap zoals `/includes`, `/assets` of `/functions`, en zal vaak zijn vernoemd iets als `init.php`, `common_functions.php`, `functions.php` of soortgelijk. U nodig om te bepalen welk bestand dit is voor uw situatie; Als u problemen ondervindt bij het bepalen van dit voor uzelf, ga naar de phpMussel kwesties/issues pagina op Github of de phpMussel support forums voor assistentie; Het is mogelijk dat ofwel mijzelf of een andere gebruiker kunt ervaring met de CMS die u gebruikt heeft (u nodig om ons te laten weten welk CMS u gebruikt), en dus, in staat zijn om wat hulp te bieden in dit gebied. Om dit te doen [te gebruiken `require` of `include`], plaatst u de volgende regel code aan het begin op die kern bestand, vervangen van de string die binnen de aanhalingstekens met het exacte adres van het `phpmussel.php` bestand (lokaal adres, niet het HTTP-adres; zal vergelijkbaar zijn met de eerder genoemde vault adres).
+5) Volgende, u nodig om "haak" phpMussel om uw systeem of CMS. Er zijn verschillende manieren waarop u kunt "haak" scripts zoals phpMussel om uw systeem of CMS, maar het makkelijkste is om gewoon omvatten voor het script aan het begin van een kern bestand van uw systeem of CMS (een die het algemeen altijd zal worden geladen wanneer iemand heeft toegang tot een pagina in uw website) met behulp van een `require` of `include` opdracht. Meestal is dit wel iets worden opgeslagen in een bestandsmap zoals `/includes`, `/assets` of `/functions`, en zal vaak zijn vernoemd iets als `init.php`, `common_functions.php`, `functions.php` of soortgelijk. U nodig om te bepalen welk bestand dit is voor uw situatie; Als u problemen ondervindt bij het bepalen van dit voor uzelf, ga naar de phpMussel kwesties/issues pagina op Github of de phpMussel support forums voor assistentie; Het is mogelijk dat ofwel mijzelf of een andere gebruiker kunt ervaring met de CMS die u gebruikt heeft (u nodig om ons te laten weten welk CMS u gebruikt), en dus, in staat zijn om wat hulp te bieden in dit gebied. Om dit te doen [te gebruiken `require` of `include`], plaatst u de volgende regel code aan het begin op die kern bestand, vervangen van de string die binnen de aanhalingstekens met het exacte adres van het `loader.php` bestand (lokaal adres, niet het HTTP-adres; zal vergelijkbaar zijn met de eerder genoemde vault adres).
 
-`<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
+`<?php require '/user_name/public_html/phpmussel/loader.php'; ?>`
 
 Opslaan bestand, sluiten, heruploaden.
 
@@ -59,11 +59,11 @@ Opslaan bestand, sluiten, heruploaden.
 
 Als u gebruik een Apache webserver en als u heeft toegang om `php.ini`, u kunt gebruiken de `auto_prepend_file` richtlijn naar prepend phpMussel wanneer een PHP verzoek wordt gemaakt. Zoiets als:
 
-`auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"`
+`auto_prepend_file = "/user_name/public_html/phpmussel/loader.php"`
 
 Of dit in het `.htaccess` bestand:
 
-`php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"`
+`php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
 6) Op dit punt, u bent klaar! Echter, u moet waarschijnlijk test het uit om ervoor te zorgen dat het werken correct. Voor het testen van het bestand upload protecties, proberen om de testen bestanden te uploaden opgenomen in het pakket als `_testfiles` naar uw website via uw gebruikelijke browser-gebaseerde uploaden methoden. Wanneer alles werkt, verschijnt er een bericht uit phpMussel bevestigen dat de upload met succes werd geblokkeerd. Wanneer er niets, is er iets niet correct werkt. Als u met behulp van een geavanceerde functies of als u met behulp van de andere types van het scannen mogelijk met het gereedschap, ik stel het uit te proberen met die ervoor zorgen dat het werkt zoals verwacht, ook.
 
@@ -78,9 +78,9 @@ Ik hoop te stroomlijnen dit proces door maken een installateur op een bepaald pu
 
 2) phpMussel vereist van PHP moet worden geïnstalleerd op de host machine om uit te werken correct. Als u niet heeft PHP geïnstalleerd op uw machine, installeer PHP op uw machine, volgende instructies door de PHP installateur geleverd.
 
-3) Facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te raden voor beginners of voor de onervaren), open `phpmussel.ini` (gelegen binnen `vault`) - Dit bestand bevat alle beschikbare phpMussel configuratie opties. Boven elke optie moet een korte opmerking te beschrijven wat het doet en wat het voor. Wijzigen deze opties volgens welke geschikt is voor uw configuratie. Sla het bestand, sluiten.
+3) Facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te raden voor beginners of voor de onervaren), open `config.ini` (gelegen binnen `vault`) - Dit bestand bevat alle beschikbare phpMussel configuratie opties. Boven elke optie moet een korte opmerking te beschrijven wat het doet en wat het voor. Wijzigen deze opties volgens welke geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
-4) Facultatief, u kunt om phpMussel in CLI-modus te maken makkelijker voor uzelf door het creëren van een batch-bestand te automatisch laden PHP en phpMussel. Om dit te doen, open een platte tekst editor zoals Notepad of Notepad++, typt u het volledige pad naar de `php.exe` bestand in het bestandsmap van uw PHP-installatie, gevolgd door een spatie, gevolgd door het volledige pad naar de `phpmussel.php` bestand in het bestandsmap van uw phpMussel installatie, Sla het bestand op met een ".bat" extensie ergens dat u het gemakkelijk vinden, en dubbelklik op het bestand om phpMussel te opereren in de toekomst.
+4) Facultatief, u kunt om phpMussel in CLI-modus te maken makkelijker voor uzelf door het creëren van een batch-bestand te automatisch laden PHP en phpMussel. Om dit te doen, open een platte tekst editor zoals Notepad of Notepad++, typt u het volledige pad naar de `php.exe` bestand in het bestandsmap van uw PHP-installatie, gevolgd door een spatie, gevolgd door het volledige pad naar de `loader.php` bestand in het bestandsmap van uw phpMussel installatie, Sla het bestand op met een ".bat" extensie ergens dat u het gemakkelijk vinden, en dubbelklik op het bestand om phpMussel te opereren in de toekomst.
 
 5) Op dit punt, u bent klaar! Echter, u moet waarschijnlijk test het uit om ervoor te zorgen dat het werken correct. Om phpMussel testen, draaien phpMussel en probeer het scannen van de `_testfiles` bestandsmap die bij het pakket.
 
@@ -93,7 +93,7 @@ phpMussel moet in staat zijn om correct te werken met minimale eisen van uw kant
 
 Het scannen van het bestanden uploaden is geautomatiseerd en ingeschakeld door standaard, zo niets is vereist op namens u voor deze specifieke functie.
 
-Echter, u bent ook in staat om te instrueren phpMussel om te scannen specifiek bestanden, bestandsmappen en/of archieven. Om dit te doen, ten eerste, moet u ervoor zorgen dat de juiste configuratie is ingesteld in het `phpmussel.ini` configuratiebestand (`cleanup` moet worden uitgeschakeld), en als u klaar bent, in een PHP-bestand dat wordt gehaakt op phpMussel, gebruik de volgende functie in uw code:
+Echter, u bent ook in staat om te instrueren phpMussel om te scannen specifiek bestanden, bestandsmappen en/of archieven. Om dit te doen, ten eerste, moet u ervoor zorgen dat de juiste configuratie is ingesteld in het `config.ini` configuratiebestand (`cleanup` moet worden uitgeschakeld), en als u klaar bent, in een PHP-bestand dat wordt gehaakt op phpMussel, gebruik de volgende functie in uw code:
 
 `$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
@@ -139,7 +139,7 @@ Eveneens, noteren dat phpMussel is een *on-demand* scanner; Het is *GEEN* *on-ac
 
 ###4A. <a name="SECTION4A"></a>BROWSER RICHTLIJNEN
 
-Wanneer phpMussel is geïnstalleerd en correct functionerende op uw systeem, als u de `script_password` en `logs_password` variabelen heeft ingesteld in het configuratiebestand, u zult in staat om te presteren sommige beperkt aantal administratieve functies en input sommige aantal commando's naar phpMussel via uw browser. De reden dat deze wachtwoorden moeten worden ingesteld om te deze browser controles te worden ingeschakeld is om een goede veiligheid te verzekeren, een goede bescherming van deze browser controles en zodat er een manier voor deze browser controles te geheel uitgeschakeld worden als ze niet gewenst door jou en/of ander webmasters/beheerders gebruikmakend van phpMussel. Dus, in andere woorden, om deze controles te inschakelen, stel een wachtwoord, en om deze controles te uitschakelen, stel geen wachtwoord. Alternatief, als u kiezen om deze controles te inschakelen en dan kiezen om deze controles te uitschakelen op een toekomst tijdstip, er is een commando om dit te doen (zodanig kan nuttig zijn als u heeft actie te ondernemen met potentieel van om de gedelegeerde wachtwoorden te compromitteer en daarom moeten om deze controles te snel uitschakelen zonder uw configuratiebestand te modificeren).
+@DEPRECATED@
 
 Redenen voor deze controles te wordt ingeschakeld:
 - Biedt een manier om handtekeningen te greylist in gevallen zoals wanneer u ontdekken een handtekening dat is produceren van een vals-positieve tijdens het uploaden van bestanden naar uw systeem en u heeft geen tijd te handmatig bewerken en heruploaden uw greylist bestand.
@@ -153,81 +153,6 @@ Redenen voor deze controles te _**NIET**_ wordt ingeschakeld:
 
 In elk geval, ongeacht wat u kiest, de keuze is uiteindelijk jou. Standaard, deze controles zullen worden uitgeschakeld, maar hebben een over nadenken, en als u besluit dat u wilt hen, dit sectie verklaart hoe te inschakelen en hoe te gebruiken hen.
 
-Een lijst van beschikbare browser commando's.
-
-scan_log
-- Wachtwoord vereist: `logs_password`
-- Andere vereisten: `scan_log` moet worden ingesteld.
-- Andere vereisten: (geen)
-- Optionele parameters: (geen)
-- Voorbeeld: `?logspword=[logs_password]&phpmussel=scan_log`
-- Wat het doet: Drukt de inhoud van uw `scan_log` bestand naar het scherm.
-
-scan_log_serialized
-- Wachtwoord vereist: `logs_password`
-- Andere vereisten: `scan_log_serialized` moet worden ingesteld.
-- Andere vereisten: (geen)
-- Optionele parameters: (geen)
-- Voorbeeld: `?logspword=[logs_password]&phpmussel=scan_log_serialized`
-- Wat het doet: Drukt de inhoud van uw `scan_log_serialized` bestand naar het scherm.
-
-scan_kills
-- Wachtwoord vereist: `logs_password`
-- Andere vereisten: `scan_kills` moet worden ingesteld.
-- Andere vereisten: (geen)
-- Optionele parameters: (geen)
-- Voorbeeld: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Wat het doet: Drukt de inhoud van uw `scan_kills` bestand naar het scherm.
-
-controls_lockout
-- Wachtwoord vereist: `logs_password` OF `script_password`
-- Andere vereisten: (geen)
-- Andere vereisten: (geen)
-- Optionele parameters: (geen)
-- Example 1: `?logspword=[logs_password]&phpmussel=controls_lockout`
-- Example 2: `?pword=[script_password]&phpmussel=controls_lockout`
-- Wat het doet: Uitschakelen alle browser controles. Deze moet worden gebruikt als u vermoedt dat een van uw wachtwoorden zijn gecompromitteerd (dit kan gebeuren als u gebruik deze controles vanaf een computer die niet is beveiligd en/of niet vertrouwd). controls_lockout werkt door creëren van een bestand, `controls.lck`, in uw vault, dat phpMussel zal controleren voordat om uitvoeren van commando's van welke aard. Zodra dit gebeurt, om herinschakelen van controles, u nodig om het bestand `controls.lck` te handmatig verwijderen via FTP of soortgelijke. Kunt worden opgeroepen met behulp van ieder van het wachtwoorden.
-
-disable
-- Wachtwoord vereist: `script_password`
-- Andere vereisten: (geen)
-- Andere vereisten: (geen)
-- Optionele parameters: (geen)
-- Voorbeeld: `?pword=[script_password]&phpmussel=disable`
-- Wat het doet: Uitschakelen phpMussel. Dit moet gebruikt als u bent uitvoeren ieder updaten of wijzigingen aan uw systeem of als u bent installeren ieder nieuwe software of modules aan uw systeem dat doet of zou kunnen potentieel leiden valse positieven. Ook, dit moet worden gebruikt als heeft u een problemen met phpMussel maar niet willen het te verwijderen van uw systeem. Zodra dit gebeurt, om herinschakelen van phpMussel, gebruik "enable".
-
-enable
-- Wachtwoord vereist: `script_password`
-- Andere vereisten: (geen)
-- Andere vereisten: (geen)
-- Optionele parameters: (geen)
-- Voorbeeld: `?pword=[script_password]&phpmussel=enable`
-- Wat het doet: Inschakelen phpMussel. Dit moet worden gebruikt als u eerder heeft uitgeschakeld phpMussel gebruiken "disable" en wil het herinschakeld.
-
-greylist
-- Wachtwoord vereist: `script_password`
-- Andere vereisten: (geen)
-- Andere vereisten: [Naam van de handtekening van de greylist]
-- Optionele parameters: (geen)
-- Voorbeeld: `?pword=[script_password]&phpmussel=greylist&musselvar=[Signature]`
-- Wat het doet: Toevoegen een handtekening aan de greylist.
-
-greylist_clear
-- Wachtwoord vereist: `script_password`
-- Andere vereisten: (geen)
-- Andere vereisten: (geen)
-- Optionele parameters: (geen)
-- Voorbeeld: `?pword=[script_password]&phpmussel=greylist_clear`
-- Wat het doet: Verwijderen de hele greylist.
-
-greylist_show
-- Wachtwoord vereist: `script_password`
-- Andere vereisten: (geen)
-- Andere vereisten: (geen)
-- Optionele parameters: (geen)
-- Voorbeeld: `?pword=[script_password]&phpmussel=greylist_show`
-- Wat het doet: Drukt de inhoud van de greylist naar het scherm.
-
 ---
 
 
@@ -236,6 +161,9 @@ greylist_show
 phpMussel kan worden uitgevoerd als een interactief bestand scanner in de CLI-modus onder Windows-gebaseerde systemen. Raadpleeg de sectie "HOE TE INSTALLEREN (VOOR CLI)" van deze README bestand voor meer informatie.
 
 Voor een lijst van beschikbare CLI commando's, bij de CLI-prompt, typ 'c', en druk op Enter.
+
+Daarnaast, voor diegenen die geïnteresseerd, een video-tutorial voor hoe te gebruiken phpMussel in de CLI-modus is hier beschikbaar:
+- <https://www.youtube.com/watch?v=H-Pa740-utc>
 
 ---
 
@@ -251,8 +179,8 @@ Bestand | Beschrijving
 /composer.json | Composer/Packagist informatie (niet vereist voor een goede werking van het script).
 /CONTRIBUTING.md | Informatie over hoe bij te dragen aan het project.
 /LICENSE.txt | Een kopie van de GNU/GPLv2 licentie (niet vereist voor een goede werking van het script).
+/loader.php | De lader/loader. Dit is wat u zou moeten worden inhaken in (essentieel)!
 /PEOPLE.md | Informatie over de bij het project betrokken personen.
-/phpmussel.php | De lader/loader. Dit is wat u zou moeten worden inhaken in (essentieel)!
 /README.md | Project beknopte informatie.
 /web.config | Een ASP.NET-configuratiebestand (in dit geval, naar het bestandsmap "vault" te beschermen tegen toegang door niet-geautoriseerde bronnen indien het script is geïnstalleerd op een server op basis van ASP.NET technologieën).
 /_docs/ | Documentatie bestandsmap (bevat verschillende bestanden).
@@ -292,7 +220,6 @@ Bestand | Beschrijving
 /vault/cache/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/cli.php | CLI handler.
 /vault/config.php | Configuratie handler.
-/vault/controls.php | Controls handler.
 /vault/functions.php | Functies bestand (essentieel).
 /vault/greylist.csv | CSV van greylisted handtekeningen aangeeft om phpMussel waarop handtekeningen moet worden negeren (bestand automatisch aangemaakt opnieuw als verwijderd).
 /vault/lang.php | Taal-handler.
@@ -312,7 +239,7 @@ Bestand | Beschrijving
 /vault/lang/lang.vi.php | Vietnamees taaldata/taalgegevens.
 /vault/lang/lang.zh-TW.php | Chinees (traditioneel) taaldata/taalgegevens.
 /vault/lang/lang.zh.php | Chinees (vereenvoudigd) taaldata/taalgegevens.
-/vault/phpmussel.ini | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (essentiële)!
+/vault/config.ini | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (essentiële)!
 /vault/quarantine/ | Quarantaine bestandsmap (bestanden in quarantaine bevat).
 /vault/quarantine/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 ※ /vault/scan_kills.txt | Een record van elk bestand uploaden geblokkeerde/gedood door phpMussel.
@@ -443,7 +370,7 @@ Bestand | Beschrijving
 /vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
 /vault/upload.php | Upload handler.
 
-※ Bestandsnaam kan verschillen, afhankelijk van de configuratie bedingen (van `phpmussel.ini`).
+※ Bestandsnaam kan verschillen, afhankelijk van de configuratie bedingen (van `config.ini`).
 
 ####*MET BETREKKING TOT HANDTEKENING BESTANDEN*
 CVD is een acroniem voor "ClamAV Virus Definitions", in verwijzing zowel om hoe ClamAV verwijst aan zijn eigen handtekeningen en het gebruik van de handtekeningen voor phpMussel; Bestanden eindigend met "CVD" bevatten handtekeningen.
@@ -466,7 +393,7 @@ Handtekening bestanden gemarkeerd met "_mussel" bevatten handtekeningen dat spec
 
 
 ###6. <a name="SECTION6"></a>CONFIGURATIEOPTIES
-Het volgende is een lijst van variabelen die in de `phpmussel.ini` configuratiebestand van phpMussel, samen met een beschrijving van hun doel en functie.
+Het volgende is een lijst van variabelen die in de `config.ini` configuratiebestand van phpMussel, samen met een beschrijving van hun doel en functie.
 
 ####"general" (Categorie)
 Algemene configuratie voor phpMussel.
@@ -775,7 +702,7 @@ VirusTotal.com richtlijnen.
   - U heeft gelezen en u akkoord met de Algemene Voorwaarden van de Virus Total en zijn API. De Algemene Voorwaarden van de Virus Total en zijn API kan [Hier](https://www.virustotal.com/en/about/terms-of-service/) worden gevonden.
   - U heeft gelezen en u begrijpt, ten minste, de preambule van de Virus Total Public API-documentatie (alles na "VirusTotal Public API v2.0" maar vóór "Contents"). De Virus Total Public API-documentatie kan [Hier](https://www.virustotal.com/en/documentation/public-api/) worden gevonden.
 
-Noteren: Als het scannen van bestanden met behulp van de Virus Total API is uitgeschakeld, u hoeft niet herziening van de richtlijnen in dit categorie (`virustotal`), omdat geen van hen iets te doen als dit is uitgeschakeld. Om een Virus Total API-sleutel te verwerven, van ergens op hun website, klik op de "Registreren" link gelegen in de richting van de rechterbovenhoek van de pagina, invoeren in de gevraagde informatie, en klik "Registreren" wanneer u klaar. Volg alle instructies geleverd, en wanneer u uw publieke API-sleutel heeft, kopieren/plakken dat publieke API om de `vt_public_api_key` richtlijn van de `phpmussel.ini` configuratiebestand.
+Noteren: Als het scannen van bestanden met behulp van de Virus Total API is uitgeschakeld, u hoeft niet herziening van de richtlijnen in dit categorie (`virustotal`), omdat geen van hen iets te doen als dit is uitgeschakeld. Om een Virus Total API-sleutel te verwerven, van ergens op hun website, klik op de "Registreren" link gelegen in de richting van de rechterbovenhoek van de pagina, invoeren in de gevraagde informatie, en klik "Registreren" wanneer u klaar. Volg alle instructies geleverd, en wanneer u uw publieke API-sleutel heeft, kopieren/plakken dat publieke API om de `vt_public_api_key` richtlijn van de `config.ini` configuratiebestand.
 
 "vt_suspicion_level"
 - Normaal, phpMussel zal beperken welke bestanden scant met behulp van de Virus Total API om het bestanden die zijn beschouwd "achterdochtig". Optioneel, u kan dit beperking aan te passen door de waarde van het `vt_suspicion_level` richtlijn.
@@ -912,7 +839,7 @@ Het volgende is een overzicht van de soorten handtekeningen gebruikt door phpMus
 - "Shockwave handtekeningen" (swf_*). Gecontroleerd tegen de inhoud van elke niet-whitelist Shockwave-bestand gericht voor het scannen.
 - "Whitelist handtekeningen" (whitelist_*). Gecontroleerd tegen de MD5 hash van de inhoud en het bestandsgrootte van elke bestand gericht voor het scannen. Gecontroleerd bestanden zal zijn immuun van gecontroleerd te worden door de soort van handtekening in hun whitelist binnenkomst.
 - "XML/XDP handtekeningen" (xmlxdp_*). Gecontroleerd tegen elke XML/XDP data binnen elke niet-whitelist bestanden gericht voor het scannen.
-(Bewust zijn van dat elk van deze handtekeningen gemakkelijk kunnen worden uitgeschakeld via `phpmussel.ini`).
+(Bewust zijn van dat elk van deze handtekeningen gemakkelijk kunnen worden uitgeschakeld via `config.ini`).
 
 ---
 
@@ -995,4 +922,4 @@ Dit informatie werd laatst bijgewerkt 29 Augustus 2016 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 22 September 2016 (2016.09.22).
+Laatste Bijgewerkt: 6 Oktober 2016 (2016.10.06).

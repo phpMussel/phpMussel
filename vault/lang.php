@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2016.04.18).
+ * This file: Language handler (last modified: 2016.10.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -38,8 +38,8 @@ if (!isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
 
 /**
  * If lang_override is enabled, and if HTTP_ACCEPT_LANGUAGE matches a
- * permissible language choice, we will override the configuration file defined
- * language directive using the language specified by HTTP_ACCEPT_LANGUAGE.
+ * permissible language choice, we'll override the language directive using the
+ * language specified by HTTP_ACCEPT_LANGUAGE.
  */
 if ($phpMussel['Config']['general']['lang_override'] && $_SERVER['HTTP_ACCEPT_LANGUAGE']) {
     if (substr_count($phpMussel['Config']['lang_acceptable'], substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5))) {

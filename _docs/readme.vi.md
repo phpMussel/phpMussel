@@ -6,7 +6,7 @@
 - 2B. [CÁCH CÀI ĐẶT (CHO CLI)](#SECTION2B)
 - 3A. [CÁCH SỬ DỤNG (CHO CÁC TRANG MẠNG)](#SECTION3A)
 - 3B. [CÁCH SỬ DỤNG (CHO CLI)](#SECTION3B)
-- 4A. [ĐIỀU KHIỂN TRÌNH DUYỆT](#SECTION4A)
+- 4A. [ĐIỀU KHIỂN TRÌNH DUYỆT](#SECTION4A) @DEPRECATED@
 - 4B. [CLI (LỆNH CHO DÒNG GIAO DIỆN)](#SECTION4B)
 - 5. [TẬP TIN BAO GỒM TRONG GÓI NÀY](#SECTION5)
 - 6. [TÙY CHỌN CHO CẤU HÌNH](#SECTION6)
@@ -43,15 +43,15 @@ Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện mộ
 
 1) Nếu bạn đang đọc cái này thì tôi hy vọng là bạn đã tải về một bản sao kho lưu trữ của bản, giải nén nội dung của nó và nó đang nằm ở một nơi nào đó trên máy tính của bạn. Từ đây, bạn sẽ muốn đặt nội dung ở một nơi trên máy chủ hoặc CMS của bạn. Một thư mục chẳng hạn như `/public_html/phpmussel/` hay tương tự (mặc dù sự lựa chọn của bạn không quan trọng, miễn là nó an toàn và bạn hài lòng với sự lựa chọn) sẽ đủ.. *Trước khi bạn bắt đầu tải lên, hảy tiếp tục đọc..*
 
-2) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới bắt đầu hoặc chưa có kinh nghiệm không nên chọn), hảy mở `phpmussel.ini` (nằm ớ trong `vault`) - Tập tin này có chứa tất cả các chỉ thị sẵn cho phpMussel. Trên mỗi tùy chọn sẽ có chi tiết ngắn mô tả những gì nó làm. Hảy điều chỉnh các tùy chọn như bạn thấy phù hợp, theo bất cứ điều gì là thích hợp cho nhữn cài đặt của bạn. Lưu tập tin, đóng lại.
+2) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới bắt đầu hoặc chưa có kinh nghiệm không nên chọn), hảy mở `config.ini` (nằm ớ trong `vault`) - Tập tin này có chứa tất cả các chỉ thị sẵn cho phpMussel. Trên mỗi tùy chọn sẽ có chi tiết ngắn mô tả những gì nó làm. Hảy điều chỉnh các tùy chọn như bạn thấy phù hợp, theo bất cứ điều gì là thích hợp cho nhữn cài đặt của bạn. Lưu tập tin, đóng lại.
 
 3) Tải nội dung lên (phpMussel và tập tin của nó) vào thư mục bạn đã chọn trước (bạn không cần phải dùng tập tin `*.txt`/`*.md`, nhưng chủ yếu, bạn nên tải lên tất cả mọi thứ).
 
 4) CHMOD thư mục `vault` thành "755" (nếu có vấn đề, bạn có thể thử "777", mặc dù này là kém an toàn). Các thư mục chính kho lưu trữ các nội dung (một trong những cái bạn đã chọn trước), bình thường, có thể riêng, nhưng tình hình CHMOD nên kiểm tra, nếu bạn đã có vấn đề cho phép trong quá khứ về hệ thống của bạn (theo mặc định, nên giống như "755").
 
-5) Tiếp theo, bạn sẽ cần "nối" phpMussel vào hệ thống của bạn hay CMS. Có một số cách mà bạn có thể "nối" bản chẳng hạn như phpMussel vào hệ thống hoạc CMS, nhưng cách đơn giản nhất là cần có bản vào cốt lõi ở đầu của tập tin hoạc hệ thống hay CMS của bạn (một mà thường sẽ luôn luôn được nạp khi ai đó truy cập bất kỳ trang nào trên trang mạng của bạn) bằng cách sử dụng một lời chỉ thị `require` hoạc `include`. Thường, cái nàu sẽ được lưu trong một thư mục như `/includes`, `/assets` hoạc `/functions`, và sẽ thường được gọi là `init.php`, `common_functions.php`, `functions.php` hoạc tương tự. Bạn sẽ cần tiềm ra tập tin nào cho trường hợp của bạn; Nếu bạn gặp khó khăn trong việc này, hãy truy các trang issues (các vấn đề) của phpMussel hay cập diễn đàn hỗ trợ của phpMussel và cho chúng tôi biêt; Có thể là tôi họac các người dùng khác có có kinh nghiệm với các CMS mà bạn đang sử dụng (bạn phải biết mình đang sử dụng CMS nào), và như vậy, có thể cung cấp hỗ trợ trong trường hợp này. Để làm chuyện này [sử dụng `require` họac `include`], đánh các dòng mã sao đây vào đầu của cốt lõi của tập tin, thay thế các dây chứa bên trong các dấu ngoặc kép với địa chỉ chính xác của tập tin `phpmussel.php` (địa chỉ địa phương, chứ không phải địa chỉ HTTP; nó sẽ nhình gióng địa chỉ kho nói ở trên).
+5) Tiếp theo, bạn sẽ cần "nối" phpMussel vào hệ thống của bạn hay CMS. Có một số cách mà bạn có thể "nối" bản chẳng hạn như phpMussel vào hệ thống hoạc CMS, nhưng cách đơn giản nhất là cần có bản vào cốt lõi ở đầu của tập tin hoạc hệ thống hay CMS của bạn (một mà thường sẽ luôn luôn được nạp khi ai đó truy cập bất kỳ trang nào trên trang mạng của bạn) bằng cách sử dụng một lời chỉ thị `require` hoạc `include`. Thường, cái nàu sẽ được lưu trong một thư mục như `/includes`, `/assets` hoạc `/functions`, và sẽ thường được gọi là `init.php`, `common_functions.php`, `functions.php` hoạc tương tự. Bạn sẽ cần tiềm ra tập tin nào cho trường hợp của bạn; Nếu bạn gặp khó khăn trong việc này, hãy truy các trang issues (các vấn đề) của phpMussel hay cập diễn đàn hỗ trợ của phpMussel và cho chúng tôi biêt; Có thể là tôi họac các người dùng khác có có kinh nghiệm với các CMS mà bạn đang sử dụng (bạn phải biết mình đang sử dụng CMS nào), và như vậy, có thể cung cấp hỗ trợ trong trường hợp này. Để làm chuyện này [sử dụng `require` họac `include`], đánh các dòng mã sao đây vào đầu của cốt lõi của tập tin, thay thế các dây chứa bên trong các dấu ngoặc kép với địa chỉ chính xác của tập tin `loader.php` (địa chỉ địa phương, chứ không phải địa chỉ HTTP; nó sẽ nhình gióng địa chỉ kho nói ở trên).
 
-`<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
+`<?php require '/user_name/public_html/phpmussel/loader.php'; ?>`
 
 Lưu tập tin, đóng lại, tải lên lại.
 
@@ -59,11 +59,11 @@ Lưu tập tin, đóng lại, tải lên lại.
 
 Nếu bạn đang sử dụng trang chủ Apache và nếu bạn có thể truy cập `php.ini`, bạn có thể sử dụng `auto_prepend_file` chỉ thị để thêm vào trước phpMussel bất cứ khi nào bất kỳ yêu cầu PHP được xin. Gióng như:
 
-`auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"`
+`auto_prepend_file = "/user_name/public_html/phpmussel/loader.php"`
 
 Hoạc cái này trong tập tin `.htaccess`:
 
-`php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"`
+`php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
 6) Tại điểm này, bạn đã xong! Nhưng mà, bạn nên kiểm tra nó ra để đảm bảo nó hoạt động đúng. Để kiểm tra các tập tin tải lên bảo vệ, thử tải lên các tập tin thử nghiệm bao gồm trong gói dưới `_testfiles` vào trang mạng của bạn thông qua các phương pháp tải lên dựa trên trình duyệt thông thường của bạn. Nếu tất cả mọi thứ đang hoạt động, một tin nhắn sẽ xuất hiện từ phpMussel xác nhận là việc tải lên đã bị chặn thành công. Nếu không có gì xuất hiện, đây là điều biểu hiện cho một vấn đề với sự hoạt động. Nếu bạn đang sử dụng chức năng cao cấp, hay sử dụng các loại chức năng quét khác có thể với công cụ này, bạn nên thử nó ra với những điều đó để đảm bảo nó hoạt động như yêu cầu.
 
@@ -78,9 +78,9 @@ Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện mộ
 
 2) phpMussel cần PHP được cài đặt trên máy chủ để thực hiện. Nếu bạn không có PHP cài trên máy, xin hảy cài PHP, theo hướng dẫn được cung cấp bởi người cài đặt PHP.
 
-3) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới bắt đầu hay chưa có kinh nghiệm không nên chọn), hảy mở `phpmussel.ini` (nằm ớ trong `vault`) - Tập tin này có chứa tất cả các chỉ thị sẵn cho phpMussel. Trên mỗi tùy chọn sẽ có chi tiết ngắn mô tả những gì nó làm. Hảy điều chỉnh các tùy chọn như bạn thấy phù hợp, theo bất cứ điều gì là thích hợp cho nhữn cài đặt của bạn. Lưu tập tin, đóng lại.
+3) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới bắt đầu hay chưa có kinh nghiệm không nên chọn), hảy mở `config.ini` (nằm ớ trong `vault`) - Tập tin này có chứa tất cả các chỉ thị sẵn cho phpMussel. Trên mỗi tùy chọn sẽ có chi tiết ngắn mô tả những gì nó làm. Hảy điều chỉnh các tùy chọn như bạn thấy phù hợp, theo bất cứ điều gì là thích hợp cho nhữn cài đặt của bạn. Lưu tập tin, đóng lại.
 
-4) Tùy ý, bạn có thể sử dụng phpMussel trong chế độ CLI dể hơn với cách tạo ra tập tin lô để tự động tải PHP và phpMussel. Để làm điều này, mở một chương trình văn bản đơn giản như Notepad hoạc Notepad++, đánh vào đường dẫn đầy đủ cho tập tin `php.exe` trong thư mục cài đặt PHP của bạn, tiếp theo là một khoảng trống, theo sau là đường dẫn đầy đủ đến tập tin `phpmussel.php` trong thư mục cài đặt phpMussel của bạn, lưu tập tin với tư bổ sung ".bat" một nơi nào bạn sẽ tìm thấy dễ dàng, và nhấn đúp vào vào tập tin đó để chạy phpMussel trong tương lai.
+4) Tùy ý, bạn có thể sử dụng phpMussel trong chế độ CLI dể hơn với cách tạo ra tập tin lô để tự động tải PHP và phpMussel. Để làm điều này, mở một chương trình văn bản đơn giản như Notepad hoạc Notepad++, đánh vào đường dẫn đầy đủ cho tập tin `php.exe` trong thư mục cài đặt PHP của bạn, tiếp theo là một khoảng trống, theo sau là đường dẫn đầy đủ đến tập tin `loader.php` trong thư mục cài đặt phpMussel của bạn, lưu tập tin với tư bổ sung ".bat" một nơi nào bạn sẽ tìm thấy dễ dàng, và nhấn đúp vào vào tập tin đó để chạy phpMussel trong tương lai.
 
 5) Tại thời điểm này, bạ đã xong! Nhưng mà, bạn nên kiểm tra nó để đảm bảo sự hoạt động. Để kiểm tra phpMussel, chạy phpMussel và thử quét `_testfiles` thư mục cung cấp trong gói.
 
@@ -93,7 +93,7 @@ phpMussel sẽ có thể hoạt động một cách chính xác với yêu cầu
 
 Quét tập tin tải lên là tự động và kích hoạt theo mặc định, như vậy không có gì là cần thiết từ bạn cho các chức năng đặc biệt này.
 
-Tuy nhiên, bạn cũng có thể nói với phpMussel để quét tập tin cụ thể, thư mục hay kho lưu trữ. Để làm điều này, trước hết, bạn sẽ cần phải đảm bảo rằng các cấu hình thích hợp được thiết lập trong tập tin `phpmussel.ini` (`cleanup` phải được vô hiệu hóa), và khi thực hiện, trong một tập tin PHP được kết nối với phpMussel, sử dụng sau đây trong mã của bạn:
+Tuy nhiên, bạn cũng có thể nói với phpMussel để quét tập tin cụ thể, thư mục hay kho lưu trữ. Để làm điều này, trước hết, bạn sẽ cần phải đảm bảo rằng các cấu hình thích hợp được thiết lập trong tập tin `config.ini` (`cleanup` phải được vô hiệu hóa), và khi thực hiện, trong một tập tin PHP được kết nối với phpMussel, sử dụng sau đây trong mã của bạn:
 
 `$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
@@ -139,7 +139,7 @@ Ngoài ra, ý thức được rằng phpMussel là một máy quét *khi yêu c�
 
 ###4A. <a name="SECTION4A"></a>ĐIỀU KHIỂN TRÌNH DUYỆT
 
-Khi phpMussel đã được cài đặt và hoạt động đúng trên hệ thống của bạn, nếu bạn đã thiết lập biến `script_password` và `logs_password` trong tập tin cấu hình của bạn, bạn sẽ có thể thực hiện một số hạn chế số chức năng hành chính và đầu vào một số lệnh cho phpMussel thông qua trình duyệt của bạn. Lý do các mật khẩu này cần phải được thiết lập để cho phép điều khiển trình duyệt là để đảm bảo an ninh thích hợp, bảo vệ thích hợp cho các điều khiển trình duyệt và để đảm bảo rằng có tồn tại một cách cho điều khiển trình duyệt này để bị vô hiệu hoàn toàn nếu họ không mong muốn của bạn, quản trị web khác hay quản trị sử dụng phpMussel. Vì vậy, nói cách khác, để cho phép những điều khiển này, đặt một mật khẩu, và để vô hiệu hóa những điều khiển này, thiết lập không mật khẩu. Ngoài ra, nếu bạn chọn để cho phép những điều khiển này và chọn để vô hiệu hóa các điều khiển vào một ngày sau, có một lệnh để làm điều này (như vậy có thể có ích nếu bạn thực hiện một số hành động rằng bạn cảm thấy có khả năng có sự thỏa hiệp các mật khẩu giao và cần nhanh chóng vô hiệu hóa những điều khiển này mà không sửa đổi tập tin cấu hình của bạn).
+@DEPRECATED@
 
 Một số lý do tại sao bạn _**NÊN**_ cho phép những điều khiển này:
 - Cung cấp một cách để đánh dấu chữ ký xám tự phát trong trường hợp như thế khi bạn phát hiện ra một chữ ký đó là sản xuất một sai tích cực trong khi tải lên các tập tin để hệ thống của bạn và bạn không có thời gian để tự chỉnh sửa và tải lên tập tin danh sách xám của bạn lần nữa.
@@ -153,81 +153,6 @@ Một số lý do tại sao bạn _**KHÔNG**_ nên cho phép những điều kh
 
 Dù bằng cách nào, bất kể những gì bạn lựa chọn, các sự lựa chọn là của bạn. Theo mặc định, các điều khiển sẽ bị vô hiệu, nhưng suy nghĩ về nó, và nếu bạn quyết định bạn muốn họ, phần này giải thích làm thế nào để kích hoạt họ và làm thế nào để sử dụng họ.
 
-Một danh sách của có sẵn điều khiển trình duyệt:
-
-scan_log
-- Mật khẩu cần thiết: `logs_password`
-- Yêu cầu khác: `scan_log` cần phải được xác định.
-- Thông số cần thiết: (không có gì)
-- Thông số không bắt buộc: (không có gì)
-- Thí dụ: `?logspword=[logs_password]&phpmussel=scan_log`
-- Những gì nó làm: In nội dung tập tin `scan_log` của bạn vào màn hình.
-
-scan_log_serialized
-- Mật khẩu cần thiết: `logs_password`
-- Yêu cầu khác: `scan_log_serialized` cần phải được xác định.
-- Thông số cần thiết: (không có gì)
-- Thông số không bắt buộc: (không có gì)
-- Thí dụ: `?logspword=[logs_password]&phpmussel=scan_log_serialized`
-- Những gì nó làm: In nội dung tập tin `scan_log_serialized` của bạn vào màn hình.
-
-scan_kills
-- Mật khẩu cần thiết: `logs_password`
-- Yêu cầu khác: `scan_kills` cần phải được xác định.
-- Thông số cần thiết: (không có gì)
-- Thông số không bắt buộc: (không có gì)
-- Thí dụ: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Những gì nó làm: In nội dung tập tin `scan_kills` của bạn vào màn hình.
-
-controls_lockout
-- Mật khẩu cần thiết: `logs_password` HAY `script_password`
-- Yêu cầu khác: (không có gì)
-- Thông số cần thiết: (không có gì)
-- Thông số không bắt buộc: (không có gì)
-- Thí dụ 1: `?logspword=[logs_password]&phpmussel=controls_lockout`
-- Thí dụ 2: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=controls_lockout`
-- Những gì nó làm: Vô hiệu hóa (hay khóa) tất cả các điều khiển cho trình duyệt. Điều này nên được sử dụng nếu bạn nghi ngờ mà một hay cả hai của mật khẩu của bạn đã bị xâm nhập (điều này có thể xảy ra nếu bạn đang sử dụng các điều khiển từ một máy tính không là an toàn hay đáng tin cậy). controls_lockout hoạt động bằng cách tạo ra một tập tin, `controls.lck`, trong vault (kho tiền) của bạn, rằng phpMussel sẽ kiểm tra trước khi thực hiện bất lệnh của bất cứ loại nào. Khi điều này xảy ra, để lại cho phép điều khiển, bạn sẽ cần phải tự xóa các tập tin `controls.lck` thông qua FTP hay tương tự. Có thể được gọi qua sử dụng một trong hai mật khẩu.
-
-disable
-- Mật khẩu cần thiết: `script_password`
-- Yêu cầu khác: (không có gì)
-- Thông số cần thiết: (không có gì)
-- Thông số không bắt buộc: (không có gì)
-- Thí dụ: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=disable`
-- Những gì nó làm: Vô hiệu hóa phpMussel. Điều này nên được sử dụng nếu bạn đang thực hiện bất kỳ bản cập nhật hay thay đổi cho hệ thống của bạn hay nếu bạn đang cài đặt bất kỳ phần mềm mới hay module cho hệ thống của bạn rằng làm hay khả năng có thể kích hoạt sai tích cực. Điều này nên được sử dụng nếu bạn đang gặp bất kỳ vấn đề với phpMussel nhưng không muốn loại bỏ nó khỏi hệ thống của bạn. Khi điều này xảy ra, để tái kích hoạt phpMussel, sử dụng "enable".
-
-enable
-- Mật khẩu cần thiết: `script_password`
-- Yêu cầu khác: (không có gì)
-- Thông số cần thiết: (không có gì)
-- Thông số không bắt buộc: (không có gì)
-- Thí dụ: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=enable`
-- Những gì nó làm: Cho phép phpMussel. Điều này nên được sử dụng nếu trước đó bạn đã bị vô hiệu hóa phpMussel sử dụng "disable" và muốn tái kích hoạt nó.
-
-greylist
-- Mật khẩu cần thiết: `script_password`
-- Yêu cầu khác: (không có gì)
-- Thông số cần thiết: [Tên của chữ ký để đưa vào danh sách xám]
-- Thông số không bắt buộc: (không có gì)
-- Thí dụ: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=greylist&musselvar=[Chữ_ký]`
-- Những gì nó làm: Đặt một chữ ký vào danh sách xám.
-
-greylist_clear
-- Mật khẩu cần thiết: `script_password`
-- Yêu cầu khác: (không có gì)
-- Thông số cần thiết: (không có gì)
-- Thông số không bắt buộc: (không có gì)
-- Thí dụ: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=greylist_clear`
-- Những gì nó làm: Xóa toàn bộ danh sách xám.
-
-greylist_show
-- Mật khẩu cần thiết: `script_password`
-- Yêu cầu khác: (không có gì)
-- Thông số cần thiết: (không có gì)
-- Thông số không bắt buộc: (không có gì)
-- Thí dụ: `?pword=[Mật_Khẩu_Kịch_Bản]&phpmussel=greylist_show`
-- Những gì nó làm: In các nội dung của danh sách xám vào màn hình.
-
 ---
 
 
@@ -236,6 +161,9 @@ greylist_show
 phpMussel có thể được chạy như một máy quét tập tin tương tác trong chế độ CLI theo các hệ thống dựa trên Windows. Tham khảo phần "CÁCH CÀI ĐẶT (CHO CLI)" của tập tin README này để biết thêm chi tiết.
 
 Để xem một danh sách các lệnh CLI có sẵn, tại dấu nhắc CLI, đánh 'c', và bấm Enter.
+
+Ngoài ra, cho những người quan tâm, một hướng dẫn video về cách sử dụng phpMussel trong chế độ CLI là có sẵn ở đây:
+- <https://www.youtube.com/watch?v=H-Pa740-utc>
 
 ---
 
@@ -251,8 +179,8 @@ Tập tin | Chi tiết
 /composer.json | Thông tin về dự án cho Composer/Packagist (không cần thiết cho chức năng phù hợp của kịch bản).
 /CONTRIBUTING.md | Thông tin về làm thế nào để đóng góp cho dự án.
 /LICENSE.txt | Bản sao của giấy phép GNU/GPLv2 (không cần thiết cho chức năng phù hợp của kịch bản).
+/loader.php | Tập tin cho tải. Đây là điều bạn cần nối vào (cần thiết)!
 /PEOPLE.md | Thông tin về những người trong dự án.
-/phpmussel.php | Tập tin cho tải. Đây là điều bạn cần nối vào (cần thiết)!
 /README.md | Thông tin tóm tắt dự án.
 /web.config | Tập tin cấu hình của ASP.NET (trong trường hợp này, để bảo vệ `/vault` thư mực khỏi bị truy cập bởi những nguồn không có quền trong trường hợp bản được cài trên serever chạy trên công nghệ ASP.NET).
 /_docs/ | Thư mực cho tài liệu.
@@ -292,7 +220,6 @@ Tập tin | Chi tiết
 /vault/cache/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/cli.php | Tập tin cho xử lý CLI.
 /vault/config.php | Tập tin cho xử lý cấu hình.
-/vault/controls.php | Tập tin cho xử lý lệnh cho.
 /vault/functions.php | Tập tin cho chức năng.
 /vault/greylist.csv | Tập tin CSV cho danh sách xám chử ký chỉ thị cho phpMussel cái nào chử ký nó phải được bỏ qua (tập tin tự động tạo lại nếu xóa).
 /vault/lang.php | Dữ liệu tiếng.
@@ -312,7 +239,7 @@ Tập tin | Chi tiết
 /vault/lang/lang.vi.php | Dữ liệu tiếng Việt.
 /vault/lang/lang.zh-TW.php | Dữ liệu tiếng Trung Quốc (truyền thống).
 /vault/lang/lang.zh.php | Dữ liệu tiếng Trung Quốc (giản thể).
-/vault/phpmussel.ini | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của phpMussel (cần thiết)!
+/vault/config.ini | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của phpMussel (cần thiết)!
 /vault/quarantine/ | Thư mục kiểm dịch (chứa các tập tin trong kiểm dịch).
 /vault/quarantine/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 ※ /vault/scan_kills.txt | Kỷ lục của mỗi tập tin tải lên từ chối/giết bởi phpMussel.
@@ -443,7 +370,7 @@ Tập tin | Chi tiết
 /vault/template_custom.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi phpMussel cho các thông điệp tải lên tập tin bị chặn (các thông điệp nhìn thấy bằng người tải lên).
 /vault/upload.php | Tập tin cho xử lý tải lên.
 
-※ Tên tập tin có thể thay đổi tuy theo các quy định của cấu hình (xem `phpmussel.ini`).
+※ Tên tập tin có thể thay đổi tuy theo các quy định của cấu hình (xem `config.ini`).
 
 ####*LIÊN QUAN ĐẾN CÁC TẬP TIN CHỮ KÝ*
 CVD là một từ viết tắt cho "ClamAV Virus Definitions" (định nghĩa vi rút ClamAV), như một tham khảo để cách mà ClamAV đề cập đến chữ ký riêng của mình và đến việc sử dụng những chữ ký cho phpMussel; Tập tin kết thúc với "CVD" chứa chữ ký.
@@ -466,7 +393,7 @@ Tập tin chữ ký đánh dấu với "_mussel" chứa chữ ký mà đặc bi�
 
 
 ###6. <a name="SECTION6"></a>TÙY CHỌN CHO CẤU HÌNH
-Sau đây là danh sách các biến tìm thấy trong tập tin cấu hình cho phpMussel `phpmussel.ini`, cùng với một mô tả về mục đích và chức năng của chúng.
+Sau đây là danh sách các biến tìm thấy trong tập tin cấu hình cho phpMussel `config.ini`, cùng với một mô tả về mục đích và chức năng của chúng.
 
 ####"general" (Thể loại)
 Cấu hình chung cho phpMussel.
@@ -775,7 +702,7 @@ Cấu hình cho VirusTotal.com.
   - Bạn đã đọc và đồng ý với các Điều khoản và Điều kiện của Virus Total và API của nó. Các Điều khoản và Điều kiện của Virus Total và API của nó có thể được tìm thấy [Ở ĐÂY](https://www.virustotal.com/en/about/terms-of-service/).
   - Bạn đã đọc và bạn hiểu, ở mức nhỏ nhất, lời mở đầu của các tài liệu API công cộng của Virus Total (mọi điều sau "VirusTotal Public API v2.0" nhưng trước "Contents"). Các tài liệu API công cộng của Virus Total có thể được tìm thấy [Ở ĐÂY](https://www.virustotal.com/en/documentation/public-api/).
 
-Lưu ý: Nếu quét tập tin sử dụng các Virus Total API bị vô hiệu hóa, bạn sẽ không cần phải xem xét bất kỳ tùy chọn trong thể loại này (`virustotal`), bởi vì không ai trong số họ sẽ làm bất cứ điều gì nếu bị vô hiệu hóa này. Để có được một khóa API của Virus Total, từ bất cứ nơi nào trên trang mạng của họ, nhấp vào liên kết "Tham gia cộng đồng" nằm phía trên cùng bên phải của trang, nhập vào các thông tin yêu cầu, và nhấp vào "Đăng ký" khi thực hiện. Thực hiện theo các hướng dẫn được cung cấp, và khi bạn đã có khóa API công cộng của bạn, sao chép và dán khóa API công cộng của bạn vào tùy chọn `vt_public_api_key` của các tập tin cấu hình `phpmussel.ini`.
+Lưu ý: Nếu quét tập tin sử dụng các Virus Total API bị vô hiệu hóa, bạn sẽ không cần phải xem xét bất kỳ tùy chọn trong thể loại này (`virustotal`), bởi vì không ai trong số họ sẽ làm bất cứ điều gì nếu bị vô hiệu hóa này. Để có được một khóa API của Virus Total, từ bất cứ nơi nào trên trang mạng của họ, nhấp vào liên kết "Tham gia cộng đồng" nằm phía trên cùng bên phải của trang, nhập vào các thông tin yêu cầu, và nhấp vào "Đăng ký" khi thực hiện. Thực hiện theo các hướng dẫn được cung cấp, và khi bạn đã có khóa API công cộng của bạn, sao chép và dán khóa API công cộng của bạn vào tùy chọn `vt_public_api_key` của các tập tin cấu hình `config.ini`.
 
 "vt_suspicion_level"
 - Theo mặc định, phpMussel sẽ hạn chế các tập tin nó quét bằng cách sử dụng Virus Total API đến các tập tin mà nó coi như là "đáng ngờ". Bạn có thể tùy chọn điều chỉnh hạn chế này bằng cách thay đổi các giá trị của tùy chọn `vt_suspicion_level`.
@@ -912,7 +839,7 @@ Sau đây là một danh sách các loại chữ ký được sử dụng bởi 
 - "Chữ ký Shockwave" (swf_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin Shockwave.
 - "Chữ ký danh sách trắng" (whitelist_*). Kiểm tra đối với các băm MD5 các nội dung và kích thước tập tin của mỗi tập tin nhắm mục tiêu cho quét. Tập tin xác định sẽ được miễn dịch để được xác định bởi các loại chữ ký đề cập trong nhập danh sách trắng của họ.
 - "Chữ ký XML/XDP" (xmlxdp_*). Kiểm tra đối với bất kỳ XML/XDP tìm thấy trong bất kỳ tập tin không trong danh sách trắng và nhắm mục tiêu cho quét.
-(Hãy lưu ý bất kỳ của các chữ ký có thể bị vô hiệu hóa thông qua `phpmussel.ini`).
+(Hãy lưu ý bất kỳ của các chữ ký có thể bị vô hiệu hóa thông qua `config.ini`).
 
 ---
 
@@ -995,4 +922,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 29 Tháng Tám 20
 ---
 
 
-Lần cuối cập nhật: 22 Tháng Chín 2016 (2016.09.22).
+Lần cuối cập nhật: 6 Tháng Mười 2016 (2016.10.06).
