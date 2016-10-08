@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.10.06).
+ * This file: The loader (last modified: 2016.10.08).
  */
 
 /**

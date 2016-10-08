@@ -60,3 +60,23 @@ if (!file_exists($phpMussel['langPath'] . 'lang.' . $phpMussel['Config']['genera
 
 /** Load the necessary language data. */
 require $phpMussel['langPath'] . 'lang.' . $phpMussel['Config']['general']['lang'] . '.php';
+
+/** Load front-end language data if necessary. */
+if (
+    !$phpMussel['Config']['general']['disable_frontend'] &&
+    file_exists($phpMussel['vault'] . 'frontend.php') &&
+    file_exists($phpMussel['vault'] . 'fe_assets/frontend.html') &&
+    $phpMussel['Direct']
+) {
+    /**
+     * Kill the script if the front-end language data file corresponding to
+     * the language directive (%phpMussel%/vault/lang/lang.%%.fe.php) doesn't
+     * exist.
+     */
+    if (!file_exists($phpMussel['langPath'] . 'lang.' . $phpMussel['Config']['general']['lang'] . '.fe.php')) {
+        header('Content-Type: text/plain');
+        die('[phpMussel] Language undefined or incorrectly defined. Can\'t continue.');
+    }
+    /** Load the necessary language data. */
+    require $phpMussel['langPath'] . 'lang.' . $phpMussel['Config']['general']['lang'] . '.fe.php';
+}

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.10.06).
+ * This file: Functions file (last modified: 2016.10.08).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -7892,4 +7892,161 @@ $phpMussel['ReturnLogfile'] = function ($logfile) use (&$phpMussel) {
         $handle . ' ' .
         $phpMussel['Config']['lang']['x_does_not_exist'] .
         $phpMussel['Config']['lang']['_exclamation_final'];
+};
+
+/**
+ * Used to send cURL requests.
+ *
+ * @param string $URI The resource to request.
+ * @param array $Params (Optional) An associative array of key-value pairs to
+ *      to send along with the request.
+ * @return string The results of the request.
+ */
+$phpMussel['Request'] = function ($URI, $Params = '') use (&$phpMussel) {
+    /** Initialise the cURL session. */
+    $Request = curl_init($URI);
+
+    $LCURI = strtolower($URI);
+    $SSL = (substr($LCURI, 0, 6) === 'https:');
+
+    curl_setopt($Request, CURLOPT_FRESH_CONNECT, true);
+    curl_setopt($Request, CURLOPT_HEADER, false);
+    if (empty($Params)) {
+        curl_setopt($Request, CURLOPT_POST, false);
+    } else {
+        curl_setopt($Request, CURLOPT_POST, true);
+        curl_setopt($Request, CURLOPT_POSTFIELDS, $Params);
+    }
+    if ($SSL) {
+        curl_setopt($Request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
+        curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, false);
+    }
+    curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($Request, CURLOPT_TIMEOUT, 30);
+    curl_setopt($Request, CURLOPT_USERAGENT, $phpMussel['ScriptUA']);
+
+    /** Execute and get the response. */
+    $Response = curl_exec($Request);
+
+    /** Close the cURL session. */
+    curl_close($Request);
+
+    /** Return the results of the request. */
+    return $Response;
+};
+
+/**
+ * Used to generate new salts when necessary, which may be occasionally used by
+ * some specific optional peripheral features (note: should not be considered
+ * cryptographically secure; especially so for versions of PHP < 7).
+ *
+ * @return string Salt.
+ */
+$phpMussel['GenerateSalt'] = function () {
+    static $MinLen = 32;
+    static $MaxLen = 72;
+    static $MinChr = 1;
+    static $MaxChr = 255;
+    $Salt = '';
+    if (function_exists('random_int')) {
+        try {
+            $Length = random_int($MinLen, $MaxLen);
+        } catch (\Exception $e) {
+            $Length = rand($MinLen, $MaxLen);
+        }
+    } else {
+        $Length = rand($MinLen, $MaxLen);
+    }
+    if (function_exists('random_bytes')) {
+        try {
+            $Salt = random_bytes($Length);
+        } catch (\Exception $e) {
+            $Salt = '';
+        }
+    }
+    if (empty($Salt)) {
+        if (function_exists('random_int')) {
+            try {
+                for ($Index = 0; $Index < $Length; $Index++) {
+                    $Salt .= chr(random_int($MinChr, $MaxChr));
+                }
+            } catch (\Exception $e) {
+                $Salt = '';
+                for ($Index = 0; $Index < $Length; $Index++) {
+                    $Salt .= chr(rand($MinChr, $MaxChr));
+                }
+            }
+        } else {
+            for ($Index = 0; $Index < $Length; $Index++) {
+                $Salt .= chr(rand($MinChr, $MaxChr));
+            }
+        }
+    }
+    return $Salt;
+};
+
+/**
+ * Clears expired entries from a list.
+ */
+$phpMussel['ClearExpired'] = function (&$List, &$Check) use (&$phpMussel) {
+    if ($List) {
+        $End = 0;
+        while (true) {
+            $Begin = $End;
+            if ($End = strpos($List, "\n", $Begin + 1)) {
+                $Line = substr($List, $Begin, $End - $Begin);
+                if ($Split = strrpos($Line, ',')) {
+                    $Expiry = (int)substr($Line, $Split + 1);
+                    if ($Expiry < $phpMussel['Now']) {
+                        $List = str_replace($Line, '', $List);
+                        $End = 0;
+                        $Check = true;
+                    }
+                }
+            } else {
+                break;
+            }
+        }
+    }
+};
+
+/**
+ * Adds integer values; Returns zero if the sum total is negative or if any
+ * contained values aren't integers, and otherwise, returns the sum total.
+ */
+$phpMussel['ZeroMin'] = function () {
+    $Values = func_get_args();
+    $Count = count($Values);
+    $Sum = 0;
+    for ($Index = 0; $Index < $Count; $Index++) {
+        $ThisValue = (int)$Values[$Index];
+        if ($ThisValue !== $Values[$Index]) {
+            return 0;
+        }
+        $Sum += $ThisValue;
+    }
+    if ($Sum < 0) {
+        return 0;
+    }
+    return $Sum;
+};
+
+/** Wrap state message for front-end. */
+$phpMussel['WrapRedText'] = function($Err) {
+    return '<div class="txtRd">' . $Err . '<br /><br /></div>';
+};
+
+/** Format filesize information. */
+$phpMussel['FormatFilesize'] = function (&$Filesize) {
+    $Scale = array('bytes', 'KB', 'MB', 'GB', 'TB');
+    $Iterate = 0;
+    $Filesize = (int)$Filesize;
+    while ($Filesize > 1024) {
+        $Filesize = $Filesize / 1024;
+        $Iterate++;
+        if ($Iterate > 4) {
+            break;
+        }
+    }
+    $Filesize = number_format($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $Scale[$Iterate];
 };

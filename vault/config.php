@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2016.10.06).
+ * This file: Configuration handler (last modified: 2016.10.08).
  */
 
 /** phpMussel version number (SemVer). */
@@ -40,6 +40,15 @@ $phpMussel['Mussel_sapi'] = (
         $_SERVER['argc'] > 0
     )
 );
+
+/** Process the request query and query variables (if any exist). */
+if (!empty($_SERVER['QUERY_STRING'])) {
+    $phpMussel['Query'] = $_SERVER['QUERY_STRING'];
+    parse_str($_SERVER['QUERY_STRING'], $phpMussel['QueryVars']);
+} else {
+    $phpMussel['Query'] = '';
+    $phpMussel['QueryVars'] = array();
+}
 
 /** Checks whether the phpMussel configuration file is readable. */
 if (!is_readable($phpMussel['vault'] . 'config.ini')) {
