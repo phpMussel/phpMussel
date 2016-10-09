@@ -6,12 +6,12 @@
 - 2B. [CÁCH CÀI ĐẶT (CHO CLI)](#SECTION2B)
 - 3A. [CÁCH SỬ DỤNG (CHO CÁC TRANG MẠNG)](#SECTION3A)
 - 3B. [CÁCH SỬ DỤNG (CHO CLI)](#SECTION3B)
-- 4A. [ĐIỀU KHIỂN TRÌNH DUYỆT](#SECTION4A) @DEPRECATED@
-- 4B. [CLI (LỆNH CHO DÒNG GIAO DIỆN)](#SECTION4B)
-- 5. [TẬP TIN BAO GỒM TRONG GÓI NÀY](#SECTION5)
-- 6. [TÙY CHỌN CHO CẤU HÌNH](#SECTION6)
-- 7. [ĐỊNH DẠNG CỦA CHỬ KÝ](#SECTION7)
-- 8. [NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH](#SECTION8)
+- 4. [FRONT-END MANAGEMENT](#SECTION4)
+- 5. [CLI (LỆNH CHO DÒNG GIAO DIỆN)](#SECTION5)
+- 6. [TẬP TIN BAO GỒM TRONG GÓI NÀY](#SECTION6)
+- 7. [TÙY CHỌN CHO CẤU HÌNH](#SECTION7)
+- 8. [ĐỊNH DẠNG CỦA CHỬ KÝ](#SECTION8)
+- 9. [NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH](#SECTION9)
 
 ---
 
@@ -43,7 +43,7 @@ Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện mộ
 
 1) Nếu bạn đang đọc cái này thì tôi hy vọng là bạn đã tải về một bản sao kho lưu trữ của bản, giải nén nội dung của nó và nó đang nằm ở một nơi nào đó trên máy tính của bạn. Từ đây, bạn sẽ muốn đặt nội dung ở một nơi trên máy chủ hoặc CMS của bạn. Một thư mục chẳng hạn như `/public_html/phpmussel/` hay tương tự (mặc dù sự lựa chọn của bạn không quan trọng, miễn là nó an toàn và bạn hài lòng với sự lựa chọn) sẽ đủ.. *Trước khi bạn bắt đầu tải lên, hảy tiếp tục đọc..*
 
-2) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới bắt đầu hoặc chưa có kinh nghiệm không nên chọn), hảy mở `config.ini` (nằm ớ trong `vault`) - Tập tin này có chứa tất cả các chỉ thị sẵn cho phpMussel. Trên mỗi tùy chọn sẽ có chi tiết ngắn mô tả những gì nó làm. Hảy điều chỉnh các tùy chọn như bạn thấy phù hợp, theo bất cứ điều gì là thích hợp cho nhữn cài đặt của bạn. Lưu tập tin, đóng lại.
+2) Đổi tên `config.ini.RenameMe` đến `config.ini` (nằm bên trong `vault`), và nếu bạn muốn (đề nghị mạnh mẽ cho người dùng cao cấp, nhưng không đề nghị cho người mới bắt đầu hay cho người thiếu kinh nghiệm), mở nó (tập tin này bao gồm tất cả các tùy chọn có sẵn cho phpMussel; trên mỗi tùy chọn nên có một nhận xét ngắn gọn mô tả những gì nó làm và những gì nó cho). Điều chỉnh các tùy chọn như bạn thấy phù hợp, theo bất cứ điều gì là thích hợp cho tập hợp cụ thể của bạn lên. Lưu tập tin, đóng.
 
 3) Tải nội dung lên (phpMussel và tập tin của nó) vào thư mục bạn đã chọn trước (bạn không cần phải dùng tập tin `*.txt`/`*.md`, nhưng chủ yếu, bạn nên tải lên tất cả mọi thứ).
 
@@ -137,7 +137,7 @@ Ngoài ra, ý thức được rằng phpMussel là một máy quét *khi yêu c�
 ---
 
 
-###4A. <a name="SECTION4A"></a>ĐIỀU KHIỂN TRÌNH DUYỆT
+###4A. <a name="SECTION4"></a>ĐIỀU KHIỂN TRÌNH DUYỆT
 
 @DEPRECATED@
 
@@ -156,7 +156,7 @@ Dù bằng cách nào, bất kể những gì bạn lựa chọn, các sự lự
 ---
 
 
-###4B. <a name="SECTION4B"></a>CLI (LỆNH CHO DÒNG GIAO DIỆN)
+###4B. <a name="SECTION5"></a>CLI (LỆNH CHO DÒNG GIAO DIỆN)
 
 phpMussel có thể được chạy như một máy quét tập tin tương tác trong chế độ CLI theo các hệ thống dựa trên Windows. Tham khảo phần "CÁCH CÀI ĐẶT (CHO CLI)" của tập tin README này để biết thêm chi tiết.
 
@@ -168,7 +168,7 @@ Ngoài ra, cho những người quan tâm, một hướng dẫn video về cách
 ---
 
 
-###5. <a name="SECTION5"></a>TẬP TIN BAO GỒM TRONG GÓI NÀY
+###5. <a name="SECTION6"></a>TẬP TIN BAO GỒM TRONG GÓI NÀY
 
 Sau đây là một danh sách tất cả các tập tin mà cần phải có được bao gồm trong bản sao lưu của kịch bản này khi bạn tải về nó, bất kỳ tập tin mà có thể có lẽ được tạo ra là kết quả của bạn sử dụng kịch bản này, cùng với một mô tả ngắn cho những gì tất cả những tập tin này là dành cho.
 
@@ -219,6 +219,7 @@ Tập tin | Chi tiết
 /vault/cache/ | Cache thư mục (cho dữ liệu tạm thời).
 /vault/cache/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/cli.php | Tập tin cho xử lý CLI.
+/vault/config.ini.RenameMe | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của phpMussel, nói cho nó biết phải làm gì và làm thế nào để hoạt động (đổi tên để kích hoạt).
 /vault/config.php | Tập tin cho xử lý cấu hình.
 /vault/functions.php | Tập tin cho chức năng.
 /vault/greylist.csv | Tập tin CSV cho danh sách xám chử ký chỉ thị cho phpMussel cái nào chử ký nó phải được bỏ qua (tập tin tự động tạo lại nếu xóa).
@@ -239,7 +240,6 @@ Tập tin | Chi tiết
 /vault/lang/lang.vi.php | Dữ liệu tiếng Việt.
 /vault/lang/lang.zh-TW.php | Dữ liệu tiếng Trung Quốc (truyền thống).
 /vault/lang/lang.zh.php | Dữ liệu tiếng Trung Quốc (giản thể).
-/vault/config.ini | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của phpMussel (cần thiết)!
 /vault/quarantine/ | Thư mục kiểm dịch (chứa các tập tin trong kiểm dịch).
 /vault/quarantine/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 ※ /vault/scan_kills.txt | Kỷ lục của mỗi tập tin tải lên từ chối/giết bởi phpMussel.
@@ -392,7 +392,7 @@ Tập tin chữ ký đánh dấu với "_mussel" chứa chữ ký mà đặc bi�
 ---
 
 
-###6. <a name="SECTION6"></a>TÙY CHỌN CHO CẤU HÌNH
+###6. <a name="SECTION7"></a>TÙY CHỌN CHO CẤU HÌNH
 Sau đây là danh sách các biến tìm thấy trong tập tin cấu hình cho phpMussel `config.ini`, cùng với một mô tả về mục đích và chức năng của chúng.
 
 ####"general" (Thể loại)
@@ -755,7 +755,7 @@ Dữ liệu mẫu thiết kế liên quan đến đầu ra HTML sử dụng đ�
 ---
 
 
-###7. <a name="SECTION7"></a>ĐỊNH DẠNG CỦA CHỬ KÝ
+###7. <a name="SECTION8"></a>ĐỊNH DẠNG CỦA CHỬ KÝ
 
 ####*CHỮ KÝ CHO TÊN TẬP TIN*
 Tất cả các chữ ký cho tên tập tin tuân theo các định dạng:
@@ -844,7 +844,7 @@ Sau đây là một danh sách các loại chữ ký được sử dụng bởi 
 ---
 
 
-###8. <a name="SECTION8"></a>NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH
+###8. <a name="SECTION9"></a>NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH
 
 ####PHP và PCRE
 - phpMussel cần PHP và PCRE để thực hiện và hoạt động. Nếu không có PHP, hoạc không có PCRE thêm của PHP, phpMussel sẽ không thực hiện và hoạt động bình thường. Bạn nên chắc chắc rằng hệ thống của bạn có PHP và PCRE cài vào và có sẵn trước khi tải và cài đặt phpMussel.
@@ -922,4 +922,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 29 Tháng Tám 20
 ---
 
 
-Lần cuối cập nhật: 6 Tháng Mười 2016 (2016.10.06).
+Lần cuối cập nhật: 9 Tháng Mười 2016 (2016.10.09).

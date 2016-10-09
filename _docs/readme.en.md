@@ -6,12 +6,12 @@
 - 2B. [HOW TO INSTALL (FOR CLI)](#SECTION2B)
 - 3A. [HOW TO USE (FOR WEB SERVERS)](#SECTION3A)
 - 3B. [HOW TO USE (FOR CLI)](#SECTION3B)
-- 4A. [BROWSER COMMANDS](#SECTION4A) @DEPRECATED@
-- 4B. [CLI (COMMAND LINE INTERFACE)](#SECTION4B)
-- 5. [FILES INCLUDED IN THIS PACKAGE](#SECTION5)
-- 6. [CONFIGURATION OPTIONS](#SECTION6)
-- 7. [SIGNATURE FORMAT](#SECTION7)
-- 8. [KNOWN COMPATIBILITY PROBLEMS](#SECTION8)
+- 4. [FRONT-END MANAGEMENT](#SECTION4)
+- 5. [CLI (COMMAND LINE INTERFACE)](#SECTION5)
+- 6. [FILES INCLUDED IN THIS PACKAGE](#SECTION6)
+- 7. [CONFIGURATION OPTIONS](#SECTION7)
+- 8. [SIGNATURE FORMAT](#SECTION8)
+- 9. [KNOWN COMPATIBILITY PROBLEMS](#SECTION9)
 
 ---
 
@@ -43,7 +43,7 @@ I hope to streamline this process by making an installer at some point in the no
 
 1) By your reading this, I'm assuming you've already downloaded an archived copy of the script, decompressed its contents and have it sitting somewhere on your local machine. From here, you'll want to work out where on your host or CMS you want to place those contents. A directory such as `/public_html/phpmussel/` or similar (though, it doesn't matter which you choose, so long as it's something secure and something you're happy with) will suffice. *Before you begin uploading, read on..*
 
-2) Optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), open `config.ini` (located inside `vault`) - This file contains all the directives available for phpMussel. Above each option should be a brief comment describing what it does and what it's for. Adjust these options as you see fit, as per whatever is appropriate for your particular setup. Save file, close.
+2) Rename `config.ini.RenameMe` to `config.ini` (located inside `vault`), and optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), open it (this file contains all the directives available for phpMussel; above each option should be a brief comment describing what it does and what it's for). Adjust these directives as you see fit, as per whatever is appropriate for your particular setup. Save file, close.
 
 3) Upload the contents (phpMussel and its files) to the directory you'd decided on earlier (you don't need to include the `*.txt`/`*.md` files, but mostly, you should upload everything).
 
@@ -140,7 +140,7 @@ Additionally, for those interested, a video tutorial for how to use phpMussel in
 ---
 
 
-###4A. <a name="SECTION4A"></a>BROWSER COMMANDS
+###4A. <a name="SECTION4"></a>FRONT-END MANAGEMENT
 
 @DEPRECATED@
 
@@ -159,7 +159,7 @@ Either way, regardless of what you choose, the choice is ultimately yours. By de
 ---
 
 
-###4B. <a name="SECTION4B"></a>CLI (COMMAND LINE INTERFACE)
+###4B. <a name="SECTION5"></a>CLI (COMMAND LINE INTERFACE)
 
 phpMussel can be run as an interactive file scanner in CLI mode under Windows-based systems. Refer to the "HOW TO INSTALL (FOR CLI)" section of this README file for more details.
 
@@ -168,7 +168,7 @@ For a list of available CLI commands, at the CLI prompt, type 'c', and press Ent
 ---
 
 
-###5. <a name="SECTION5"></a>FILES INCLUDED IN THIS PACKAGE
+###5. <a name="SECTION6"></a>FILES INCLUDED IN THIS PACKAGE
 
 The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, any files that may be potentially created as a result of your using this script, along with a short description of what all these files are for.
 
@@ -219,6 +219,7 @@ File | Description
 /vault/cache/ | Cache directory (for temporary data).
 /vault/cache/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/cli.php | CLI handler.
+/vault/config.ini.RenameMe | Configuration file; Contains all the configuration options of phpMussel, telling it what to do and how to operate correctly (rename to activate).
 /vault/config.php | Configuration handler.
 /vault/functions.php | Functions file (essential).
 /vault/greylist.csv | CSV of greylisted signatures indicating to phpMussel which signatures it should be ignoring (file automatically recreated if deleted).
@@ -239,7 +240,6 @@ File | Description
 /vault/lang/lang.vi.php | Vietnamese language data.
 /vault/lang/lang.zh-TW.php | Chinese (traditional) language data.
 /vault/lang/lang.zh.php | Chinese (simplified) language data.
-/vault/config.ini | Configuration file; Contains all the configuration options of phpMussel, telling it what to do and how to operate correctly (essential)!
 /vault/quarantine/ | Quarantine directory (contains quarantined files).
 /vault/quarantine/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 ※ /vault/scan_kills.txt | A record of every file upload blocked/killed by phpMussel.
@@ -392,7 +392,7 @@ Signature files marked with "_mussel" contain signatures that specifically are n
 ---
 
 
-###6. <a name="SECTION6"></a>CONFIGURATION OPTIONS
+###6. <a name="SECTION7"></a>CONFIGURATION OPTIONS
 The following is a list of variables found in the `config.ini` configuration file of phpMussel, along with a description of their purpose and function.
 
 ####"general" (Category)
@@ -755,7 +755,7 @@ Template data relates to the HTML output used to generate the "Upload Denied" me
 ---
 
 
-###7. <a name="SECTION7"></a>SIGNATURE FORMAT
+###7. <a name="SECTION8"></a>SIGNATURE FORMAT
 
 ####*FILENAME SIGNATURES*
 All filename signatures follow the format:
@@ -844,7 +844,7 @@ The following is a breakdown of the types of signatures used by phpMussel:
 ---
 
 
-###8. <a name="SECTION8"></a>KNOWN COMPATIBILITY PROBLEMS
+###8. <a name="SECTION9"></a>KNOWN COMPATIBILITY PROBLEMS
 
 ####PHP and PCRE
 - phpMussel requires PHP and PCRE to execute and function correctly. Without PHP, or without the PCRE extension of PHP, phpMussel won't execute or function correctly. Should make sure your system has both PHP and PCRE installed and available prior to downloading and installing phpMussel.
@@ -922,4 +922,4 @@ This information was last updated 29th August 2016 and is current for all phpMus
 ---
 
 
-Last Updated: 6th October 2016 (2016.10.06).
+Last Updated: 9th October 2016 (2016.10.09).

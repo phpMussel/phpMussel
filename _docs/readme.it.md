@@ -6,12 +6,12 @@
 - 2B. [COME INSTALLARE (PER CLI)](#SECTION2B)
 - 3A. [COME USARE (PER WEB SERVER)](#SECTION3A)
 - 3B. [COME USARE (PER CLI)](#SECTION3B)
-- 4A. [BROWSER COMANDI](#SECTION4A) @DEPRECATED@
-- 4B. [CLI (INTERFACCIA A RIGA DI COMANDO)](#SECTION4B)
-- 5. [FILE INCLUSI IN QUESTO PACCHETTO](#SECTION5)
-- 6. [OPZIONI DI CONFIGURAZIONE](#SECTION6)
-- 7. [FIRMA FORMATO](#SECTION7)
-- 8. [CONOSCIUTI COMPATIBILITÀ PROBLEMI](#SECTION8)
+- 4. [FRONT-END MANAGEMENT](#SECTION4)
+- 5. [CLI (INTERFACCIA A RIGA DI COMANDO)](#SECTION5)
+- 6. [FILE INCLUSI IN QUESTO PACCHETTO](#SECTION6)
+- 7. [OPZIONI DI CONFIGURAZIONE](#SECTION7)
+- 8. [FIRMA FORMATO](#SECTION8)
+- 9. [CONOSCIUTI COMPATIBILITÀ PROBLEMI](#SECTION9)
 
 ---
 
@@ -43,7 +43,7 @@ Spero di semplificare questo processo tramite un installatore ad un certo punto 
 
 1) Con la vostra lettura di questo, sto supponendo che hai già scaricato una archiviata copia dello script, decompresso il contenuto e lo hanno seduto da qualche parte sul tuo locale macchina. Da qui, ti consigliamo di determinare dove sulla macchina o CMS si desidera inserire quei contenuti. Una cartella come `/public_html/phpmussel/` o simile (però, è non importa quale si sceglie, purché sia qualcosa sicuro e qualcosa si è soddisfatti) sarà sufficiente. *Prima di iniziare il caricamento, continua a leggere..*
 
-2) Facoltativamente (fortemente consigliata per gli avanzati utenti, Ma non è consigliata per i principianti o per gli inesperti), apri `config.ini` (situato della `vault`) - Questo file contiene tutte le direttive disponibili per phpMussel. Sopra ogni opzione dovrebbe essere un breve commento che descrive ciò che fa e ciò che è per. Regolare queste opzioni come meglio credi, come per ciò che è appropriato per la vostre particolare configurazione. Salvare il file, chiudere.
+2) Rinomina `config.ini.RenameMe` a `config.ini` (situato della `vault`), e facoltativamente (fortemente consigliata per gli avanzati utenti, Ma non è consigliata per i principianti o per gli inesperti), aprirlo (questo file contiene tutte le direttive disponibili per phpMussel; sopra ogni opzione dovrebbe essere un breve commento che descrive ciò che fa e ciò che è per). Regolare queste opzioni come meglio credi, come per ciò che è appropriato per la vostre particolare configurazione. Salvare il file, chiudere.
 
 3) Carica i contenuti (phpMussel e le sue file) nella cartella che ci deciso in precedenza (non è necessario includere i `*.txt`/`*.md` file, ma altrimenti, si dovrebbe caricare tutto).
 
@@ -137,7 +137,7 @@ Anche essere consapevoli che phpMussel è uno scanner *on-demand* (cioè, su ric
 ---
 
 
-###4A. <a name="SECTION4A"></a>BROWSER COMANDI
+###4A. <a name="SECTION4"></a>BROWSER COMANDI
 
 @DEPRECATED@
 
@@ -156,7 +156,7 @@ In entrambi i casi, senza riguardo di ciò che si sceglie, la scelta in definiti
 ---
 
 
-###4B. <a name="SECTION4B"></a>CLI (INTERFACCIA A RIGA DI COMANDO)
+###4B. <a name="SECTION5"></a>CLI (INTERFACCIA A RIGA DI COMANDO)
 
 phpMussel può essere eseguito come uno interattivo file scanner in modalità CLI da Windows. Fare riferimento alla "COME INSTALLARE (PER CLI)" sezione di questo README file per maggiori dettagli.
 
@@ -168,7 +168,7 @@ Inoltre, per chi fosse interessato, un video tutorial su come utilizzare phpMuss
 ---
 
 
-###5. <a name="SECTION5"></a>FILE INCLUSI IN QUESTO PACCHETTO
+###5. <a name="SECTION6"></a>FILE INCLUSI IN QUESTO PACCHETTO
 
 Il seguente è un elenco di tutti i file che dovrebbero essere incluso nella archiviato copia di questo script quando si scaricalo, qualsiasi di file che potrebbero potenzialmente essere creato come risultato della vostra utilizzando questo script, insieme con una breve descrizione di ciò che tutti questi file sono per.
 
@@ -219,6 +219,7 @@ File | Descrizione
 /vault/cache/ | La cartella della cache (per i dati temporanei).
 /vault/cache/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/cli.php | Gestore di CLI.
+/vault/config.ini.RenameMe | File di configurazione; Contiene tutte l'opzioni di configurazione per phpMussel, dicendogli cosa fare e come operare correttamente (rinomina per attivare).
 /vault/config.php | Gestore di configurazione.
 /vault/functions.php | File di funzioni.
 /vault/greylist.csv | CSV di firme indicando per phpMussel cui firme dovrebbero essere ignorato (il file sarà ricreato automaticamente se è cancellato).
@@ -239,7 +240,6 @@ File | Descrizione
 /vault/lang/lang.vi.php | Linguistici dati Vietnamita.
 /vault/lang/lang.zh-TW.php | Linguistici dati Cinese (tradizionale).
 /vault/lang/lang.zh.php | Linguistici dati Cinese (semplificata).
-/vault/config.ini | File di configurazione; Contiene tutte l'opzioni di configurazione per phpMussel, dicendogli cosa fare e come operare correttamente (essenziale)!
 /vault/quarantine/ | Quarantena cartella (contiene i file in quarantena).
 /vault/quarantine/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 ※ /vault/scan_kills.txt | Un record di tutti i file bloccati/uccisi da phpMussel.
@@ -392,7 +392,7 @@ Firma file contrassegnati con "_mussel" contengono le firme che in particolare n
 ---
 
 
-###6. <a name="SECTION6"></a>OPZIONI DI CONFIGURAZIONE
+###6. <a name="SECTION7"></a>OPZIONI DI CONFIGURAZIONE
 Il seguente è un elenco di variabili trovate nelle `config.ini` file di configurazione di phpMussel, insieme con una descrizione del loro scopo e funzione.
 
 ####"general" (Categoria)
@@ -755,7 +755,7 @@ Modelli dati riferisce alla prodotti HTML utilizzato per generare il "Caricament
 ---
 
 
-###7. <a name="SECTION7"></a>FIRMA FORMATO
+###7. <a name="SECTION8"></a>FIRMA FORMATO
 
 ####*FILE NOMI FIRME*
 Tutte le file nomi firme seguono il formato:
@@ -844,7 +844,7 @@ I seguenti sono i tipi di firme utilizzate da phpMussel:
 ---
 
 
-###8. <a name="SECTION8"></a>CONOSCIUTI COMPATIBILITÀ PROBLEMI
+###8. <a name="SECTION9"></a>CONOSCIUTI COMPATIBILITÀ PROBLEMI
 
 ####PHP e PCRE
 - phpMussel richiede PHP e PCRE a eseguire ea funzionare correttamente. Senza PHP, o senza il PCRE estensione di PHP, phpMussel non sarà eseguirà o funzionare correttamente. Dovrebbe assicurarsi che il vostra sistema ha sia PHP e PCRE installati e disponibili prima di scaricare e installare phpMussel.
@@ -922,4 +922,4 @@ Questa informazione è stato lo scorso aggiornato 29 Agosto 2016 ed è in corso 
 ---
 
 
-Ultimo Aggiornamento: 6 Ottobre 2016 (2016.10.06).
+Ultimo Aggiornamento: 9 Ottobre 2016 (2016.10.09).

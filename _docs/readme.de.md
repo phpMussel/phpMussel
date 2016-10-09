@@ -6,12 +6,12 @@
 - 2B. [INSTALLATION (CLI - BEFEHLSZEILENMODUS)](#SECTION2B)
 - 3A. [BENUTZUNG (SERVER)](#SECTION3A)
 - 3B. [BENUTZUNG (CLI - BEFEHLSZEILENMODUS)](#SECTION3B)
-- 4A. [BROWSER BEFEHLE](#SECTION4A) @DEPRECATED@
-- 4B. [CLI (BEFEHLSZEILENMODUS)](#SECTION4B)
-- 5. [IM PAKET ENTHALTENE DATEIEN](#SECTION5)
-- 6. [EINSTELLUNGEN](#SECTION6)
-- 7. [SIGNATURENFORMAT](#SECTION7)
-- 8. [BEKANNTE KOMPATIBILITÄTSPROBLEME](#SECTION8)
+- 4. [FRONT-END MANAGEMENT](#SECTION4)
+- 5. [CLI (BEFEHLSZEILENMODUS)](#SECTION5)
+- 6. [IM PAKET ENTHALTENE DATEIEN](#SECTION6)
+- 7. [EINSTELLUNGEN](#SECTION7)
+- 8. [SIGNATURENFORMAT](#SECTION8)
+- 9. [BEKANNTE KOMPATIBILITÄTSPROBLEME](#SECTION9)
 
 ---
 
@@ -43,7 +43,7 @@ Zufünftig wird dieser Prozess mit einem Installationsmanager vereinfacht, bis d
 
 1) Entpacken Sie das heruntergeladene Archiv auf Ihren lokalen PC. Erstellen Sie ein Verzeichnis, wohin Sie den Inhalt dieses Paketes auf Ihrem Host oder CMS installieren möchten. Ein Verzeichnis wie `/public_html/phpmussel/` o.ä. genügt, solange es Ihren Sicherheitsbedürfnissen oder persönlichen Präferenzen entspricht.
 
-2) Optional (empfohlen für erfahrene Anwender, nicht empfohlen für Anwender ohne entsprechende Kenntnisse), öffnen Sie die Datei `config.ini` im `vault`-Verzeichnis) - Diese Datei beinhaltet alle funktionalen Optionen für phpMussel. Über jeder Option beschreibt ein kurzer Kommentar die Aufgabe dieser Option. Verändern Sie die Werte nach Ihren Bedürfnissen. Speichern und schließen Sie die Datei.
+2) Die Datei `config.ini.RenameMe` (im `vault`-Verzeichnis) zu `config.ini` umbenennen, und optional (empfohlen für erfahrene Anwender, nicht empfohlen für Anwender ohne entsprechende Kenntnisse), öffnen Sie diese Datei (diese Datei beinhaltet alle funktionalen Optionen für phpMussel; über jeder Option beschreibt ein kurzer Kommentar die Aufgabe dieser Option). Verändern Sie die Werte nach Ihren Bedürfnissen. Speichern und schließen Sie die Datei.
 
 3) Laden Sie den kompletten Inhalt (phpMussel und die Dateien) in das Verzeichnis hoch, für das Sie sich in Schritt 1 entschieden haben. Die Dateien `*.txt`/`*.md` müssen nicht mit hochgeladen werden.
 
@@ -137,7 +137,7 @@ Beachten Sie außerdem, dass phpMussel eine *On-Demand-Scanner*; Keine *On-Acces
 ---
 
 
-###4A. <a name="SECTION4A"></a>BROWSER BEFEHLE
+###4A. <a name="SECTION4"></a>BROWSER BEFEHLE
 
 @DEPRECATED@
 
@@ -156,7 +156,7 @@ Die Entscheidung müssen Sie selbst treffen. Standardmäßig sind diese Kontroll
 ---
 
 
-###4B. <a name="SECTION4B"></a>CLI (BEFEHLSZEILENMODUS)
+###4B. <a name="SECTION5"></a>CLI (BEFEHLSZEILENMODUS)
 
 phpMussel kann als interaktiver Scanner im CLI-Modus in einer Windows-Systemumgebung genutzt werden. Bitte lesen Sie den Abschnitt INSTALLATION (CLI - BEFEHLSZEILENMODUS).
 
@@ -168,7 +168,7 @@ Zusätzlich, für Interessenten, ein Video-Tutorial, wie phpMussel im CLI-Modus 
 ---
 
 
-###5. <a name="SECTION5"></a>IM PAKET ENTHALTENE DATEIEN
+###5. <a name="SECTION6"></a>IM PAKET ENTHALTENE DATEIEN
 
 Die folgende Liste beinhaltet alle Dateien, die im heruntergeladenen Archiv des Scripts enthalten sind und Dateien, die durch die Benutzung des Scripts eventuell erstellt werden, inkl. einer kurzen Beschreibung.
 
@@ -219,6 +219,7 @@ Datei | Beschreibung
 /vault/cache/ | Cache-Verzeichnis (für temporäre Daten).
 /vault/cache/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/cli.php | CLI-Handler.
+/vault/config.ini.RenameMe | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von phpMussel (umbenennen zu aktivieren).
 /vault/config.php | Konfiguration-Handler.
 /vault/functions.php | Funktionen-Datei.
 /vault/greylist.csv | CSV der Signaturen in der Greylist, die phpMussel ignorieren soll (Datei wird nach dem Löschen automatisch neu erstellt).
@@ -239,7 +240,6 @@ Datei | Beschreibung
 /vault/lang/lang.vi.php | Vietnamesische Sprachdateien.
 /vault/lang/lang.zh-TW.php | Chinesische Sprachdateien (traditionell).
 /vault/lang/lang.zh.php | Chinesische Sprachdateien (vereinfacht).
-/vault/config.ini | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von phpMussel (absolut notwendig)!
 /vault/quarantine/ | Quarantäne-Verzeichnis (enthält Dateien in Quarantäne).
 /vault/quarantine/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 ※ /vault/scan_kills.txt | Eine Aufzeichnung aller von phpMussel blockierten Dateiuploads.
@@ -392,7 +392,7 @@ Signaturdateien mit der Kennzeichnung "_mussel" enthalten Signaturen, welche nic
 ---
 
 
-###6. <a name="SECTION6"></a>EINSTELLUNGEN
+###6. <a name="SECTION7"></a>EINSTELLUNGEN
 Nachfolgend finden Sie eine Liste der Variablen in der Konfigurationsdatei `config.ini` mit einer kurzen Beschreibung ihrer Funktionen.
 
 ####"general" (Kategorie)
@@ -754,7 +754,7 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Upl
 ---
 
 
-###7. <a name="SECTION7"></a>SIGNATURENFORMAT
+###7. <a name="SECTION8"></a>SIGNATURENFORMAT
 
 ####*DATEINAMEN-SIGNATUREN*
 Alle Dateinamen-Signaturen besitzen folgendes Format:
@@ -842,7 +842,7 @@ Im Folgenden eine Aufschlüsselung der Signaturen, die von phpMussel genutzt wer
 ---
 
 
-###8. <a name="SECTION8"></a>BEKANNTE KOMPATIBILITÄTSPROBLEME
+###8. <a name="SECTION9"></a>BEKANNTE KOMPATIBILITÄTSPROBLEME
 
 ####PHP und PCRE
 - phpMussel benötigt PHP und PCRE, um ausgeführt werden zu können. Ohne PHP und ohne die PCRE-Erweiterungen von PHP, kann phpMussel nicht oder nicht ordnungsgemäß ausgeführt werden. Stellen Sie sicher, dass auf Ihrem System PHP und PCRE installiert und verfügbar ist, bevor Sie phpMussel herunterladen und installieren.
@@ -920,4 +920,4 @@ Diese Informationen wurden zuletzt am 29. August 2016 aktualisiert und gelten f�
 ---
 
 
-Zuletzt aktualisiert: 6. Oktober 2016 (2016.10.06).
+Zuletzt aktualisiert: 9. Oktober 2016 (2016.10.09).

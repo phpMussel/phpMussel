@@ -7,12 +7,12 @@
  <li>2-ب. <a href="#SECTION2B">كيفية التحميل (لخدمات واجهة سطر الأوامر)</a></li>
  <li>3-أ. <a href="#SECTION3A">كيفية الإستخدام (لخدمات الويب)</a></li>
  <li>3-ب. <a href="#SECTION3B">كيفية الاستخدام (لخدمات واجهة سطر الأوامر)</a></li>
- <li>4-أ. <a href="#SECTION4A">أوامرالمتصفح</a></li>
- <li>4-ب. <a href="#SECTION4B">CLI (واجهة سطر الأوامر)</a> @DEPRECATED@</li>
- <li>5. <a href="#SECTION5">الملفاتالموجودةفيهذهالحزمة</a></li>
- <li>6. <a href="#SECTION6">خياراتالتكوين/التهيئة</a></li>
- <li>7. <a href="#SECTION7">شكل/تنسيق التوقيع</a></li>
- <li>8. <a href="#SECTION8">مشاكل التوافق المعروفة</a></li>
+ <li>4. <a href="#SECTION4">FRONT-END MANAGEMENT</a></li>
+ <li>5. <a href="#SECTION5">CLI (واجهة سطر الأوامر)</a></li>
+ <li>6. <a href="#SECTION6">الملفاتالموجودةفيهذهالحزمة</a></li>
+ <li>7. <a href="#SECTION7">خياراتالتكوين/التهيئة</a></li>
+ <li>8. <a href="#SECTION8">شكل/تنسيق التوقيع</a></li>
+ <li>9. <a href="#SECTION9">مشاكل التوافق المعروفة</a></li>
 </ul></div>
 
 ---
@@ -45,7 +45,7 @@
 
 <div dir="rtl">1. بقراءتك لهذا سنفرض بأنك قمت بتحميل السكربت، من هنا عليك العمل على جهازك المحلي أو نظام إدارة المحتوى لإضافة هذه الأمور، مجلد مثل `/public_html/phpmussel/` أو ما شابه سيكون كاف.<br /><br /></div>
 
-<div dir="rtl">2. هذه الخطوة اختيارية ينصح بها للمستخدمين المتقدمين ولا ينصح بها للمبتدئين، إفتح `config.ini` الموجود داخل vault هذا الملف يحتوي جميع التعليمات ل phpMussel، أعلى كل خيار يوجد وصف مختصر للوظيفة التي يقوم بها، عدل الخيارات كما يناسبك.<br /><br /></div>
+<div dir="rtl">2. إعادة تسمية "config.ini.RenameMe" إلى "config.ini" (تقع داخل "vault")، واختياريا (هذه الخطوة اختيارية ينصح بها للمستخدمين المتقدمين ولا ينصح بها للمبتدئين)، افتحه، وعدل الخيارات كما يناسبك (أعلى كل خيار يوجد وصف مختصر للوظيفة التي يقوم بها).<br /><br /></div>
 
 <div dir="rtl">3. إرفع الملفات للمجلد الذي اخترته(لست بحاجة لرفع `*.txt/*.md` لكن في الغالب يجب أن ترفع جميع الملفات).<br /><br /></div>
 
@@ -142,7 +142,7 @@
 ---
 
 
-### <div dir="rtl">4-أ. <a name="SECTION4A"></a>أوامرالمتصفح</div>
+### <div dir="rtl">4-أ. <a name="SECTION4"></a>أوامرالمتصفح</div>
 
 @DEPRECATED@
 
@@ -165,7 +165,7 @@
 ---
 
 
-### <div dir="rtl">4ب. <a name="SECTION4B"></a>CLI (واجهة سطر الأوامر).</div>
+### <div dir="rtl">4ب. <a name="SECTION5"></a>CLI (واجهة سطر الأوامر).</div>
 
 <div dir="rtl">يمكن تشغيل phpMussel باعتباره برنامج فحص ملفات تفاعلي في وضع CLI في ظل النظم المستندة إلى Windows. راجع قسم "كيفية التثبيت (لواجهة سطر الاوامر)" من هذا الملف التمهيدي لمزيد من التفاصيل.<br /><br /></div>
 
@@ -177,7 +177,7 @@
 ---
 
 
-### <div dir="rtl">5. <a name="SECTION5"></a>الملفاتالموجودةفيهذهالحزمة</div>
+### <div dir="rtl">5. <a name="SECTION6"></a>الملفاتالموجودةفيهذهالحزمة</div>
 
 <div dir="rtl">فيما يلي قائمة بجميع الملفات التي ينبغي أن تدرج في النسخة المحفوظة من هذا البرنامج النصي عند تحميله، أي الملفات التي يمكن أن يحتمل أن تكون نشأت نتيجة استعمالك لهذا البرنامج النصي، بالإضافة إلى وصفا موجزا لدور و وظيفة كل ملف.<br /><br /></div>
 
@@ -228,6 +228,7 @@
 <div dir="rtl" style="display:inline;">دليل ذاكرة التخزين المؤقت (للبيانات المؤقتة).</div> | /vault/cache/
 <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/cache/.htaccess
 <div dir="rtl" style="display:inline;">معالج CLI.</div> | /vault/cli.php
+<div dir="rtl" style="display:inline;">ملف التكوين. يحتوي على جميع خيارات تهيئة phpMussel، يخبرك ماذا يفعل وكيف يعمل بشكل صحيح (إعادة تسمية لتفعيل)!</div> | /vault/config.ini.RenameMe
 <div dir="rtl" style="display:inline;">معالج التكوين.</div> | /vault/config.php
 <div dir="rtl" style="display:inline;">ملف وظائف (ضروري).</div> | /vault/functions.php
 <div dir="rtl" style="display:inline;">ملف CSV توقيعات القائمة الرمادية المشيرة إلى التوقيعات التي ينبغي على phpMussel أن يتجاهلها (هذا ملف يتم إعادة إنشاءه تلقائيا إذا حذف).</div> | /vault/greylist.csv
@@ -248,7 +249,6 @@
 <div dir="rtl" style="display:inline;">ملفات اللغة الفيتنامية.</div> | /vault/lang/lang.vi.php
 <div dir="rtl" style="display:inline;">ملفات اللغة الصينية (المبسطة).</div> | /vault/lang/lang.zh.php
 <div dir="rtl" style="display:inline;">ملفات اللغة الصينية (التقليدية).</div> | /vault/lang/lang.zh-TW.php
-<div dir="rtl" style="display:inline;">ملف التكوين. يحتوي على جميع خيارات تهيئة phpMussel، يخبرك ماذا يفعل وكيف يعمل بشكل صحيح (ضروري)!</div> | /vault/config.ini
 <div dir="rtl" style="display:inline;">دليل العزل (يحتوي على الملفات المعزولة).</div> | /vault/quarantine/
 <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/quarantine/.htaccess
 <div dir="rtl" style="display:inline;">سجل لكل ما تم فحصه بواسطة phpMussel.</div> | ※ /vault/scan_log.txt
@@ -403,7 +403,7 @@
 ---
 
 
-### <div dir="rtl">6. <a name="SECTION6"></a>خياراتالتكوين/التهيئة</div>
+### <div dir="rtl">6. <a name="SECTION7"></a>خياراتالتكوين/التهيئة</div>
 <div dir="rtl">وفيما يلي قائمة من المتغيرات الموجودة في ملف تكوين `config.ini`، بالإضافة إلى وصف الغرض منه و وظيفته.<br /><br /></div>
 
 #### <div dir="rtl">"general" (التصنيف)<br /></div>
@@ -940,7 +940,7 @@
 ---
 
 
-### <div dir="rtl">7. <a name="SECTION7"></a>شكل/تنسيق التوقيع</div>
+### <div dir="rtl">7. <a name="SECTION8"></a>شكل/تنسيق التوقيع</div>
 
 ####*<div dir="rtl">توقيعات اسم الملف</div>*
 <div dir="rtl">كل توقيعات اسم الملف تتبع التنسيق التالي:<br /><br /></div>
@@ -1031,7 +1031,7 @@
 ---
 
 
-### <div dir="rtl">8. <a name="SECTION8"></a>مشاكل التوافق المعروفة</div>
+### <div dir="rtl">8. <a name="SECTION9"></a>مشاكل التوافق المعروفة</div>
 
 ####<div dir="rtl">PHP و PCRE</div>
 
@@ -1110,4 +1110,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 6 اكتوبر 2016 (2016.10.06).</div>
+<div dir="rtl">آخر تحديث: 9 اكتوبر 2016 (2016.10.09).</div>

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.10.08).
+ * This file: The loader (last modified: 2016.10.10).
  */
 
 /**
@@ -205,34 +205,36 @@ if (!defined('phpMussel')) {
      */
     if (!$phpMussel['disable_lock'] = file_exists($phpMussel['vault'] . 'disable.lck')) {
 
-        /**
-         * Check whether the upload handler exists; If it exists, load it.
-         * Skip this check if we're in CLI-mode.
-         */
+        /* This code block only executed if we're NOT in CLI mode. */
         if (!$phpMussel['Mussel_sapi']) {
+
+            /**
+             * Check whether the upload handler exists and attempt to load it.
+             */
             if (file_exists($phpMussel['vault'] . 'upload.php')) {
                 require $phpMussel['vault'] . 'upload.php';
             }
+
+            /**
+             * Check whether the front-end handler exists and attempt to load
+             * it. Skip this check if front-end access is disabled.
+             */
+            if (
+                !$phpMussel['Config']['general']['disable_frontend'] &&
+                file_exists($phpMussel['vault'] . 'frontend.php') &&
+                $phpMussel['Direct']
+            ) {
+                require $phpMussel['vault'] . 'frontend.php';
+            }
+
         }
 
         /**
-         * Check whether the CLI handler exists; If it exists, load it.
-         * Skip this check if we're NOT in CLI-mode.
+         * Check whether the CLI handler exists and attempt to load it.
+         * This code block only executed if we're in CLI mode.
          */
         elseif (file_exists($phpMussel['vault'] . 'cli.php')) {
             require $phpMussel['vault'] . 'cli.php';
-        }
-
-        /**
-         * Check whether the front-end handler exists; Load it if it does.
-         * Skip this check if front-end access is disabled.
-         */
-        if (
-            !$phpMussel['Config']['general']['disable_frontend'] &&
-            file_exists($phpMussel['vault'] . 'frontend.php') &&
-            $phpMussel['Direct']
-        ) {
-            require $phpMussel['vault'] . 'frontend.php';
         }
 
     }

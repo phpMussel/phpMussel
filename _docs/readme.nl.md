@@ -6,12 +6,12 @@
 - 2B. [HOE TE INSTALLEREN (VOOR CLI)](#SECTION2B)
 - 3A. [HOE TE GEBRUIKEN (VOOR WEBSERVERS)](#SECTION3A)
 - 3B. [HOE TE GEBRUIKEN (VOOR CLI)](#SECTION3B)
-- 4A. [BROWSER RICHTLIJNEN](#SECTION4A) @DEPRECATED@
-- 4B. [CLI (COMMANDLIJN INTERFACE)](#SECTION4B)
-- 5. [BESTANDEN IN DIT PAKKET](#SECTION5)
-- 6. [CONFIGURATIEOPTIES](#SECTION6)
-- 7. [HANDTEKENINGFORMAAT](#SECTION7)
-- 8. [BEKENDE COMPATIBILITEITSPROBLEMEN](#SECTION8)
+- 4. [FRONT-END MANAGEMENT](#SECTION4)
+- 5. [CLI (COMMANDLIJN INTERFACE)](#SECTION5)
+- 6. [BESTANDEN IN DIT PAKKET](#SECTION6)
+- 7. [CONFIGURATIEOPTIES](#SECTION7)
+- 8. [HANDTEKENINGFORMAAT](#SECTION8)
+- 9. [BEKENDE COMPATIBILITEITSPROBLEMEN](#SECTION9)
 
 ---
 
@@ -43,7 +43,7 @@ Ik hoop te stroomlijnen dit proces door maken een installateur op een bepaald pu
 
 1) Omdat u zijn lezen dit, ik ben ervan uit u al gedownload een gearchiveerde kopie van het script, uitgepakt zijn inhoud en heeft het ergens op uw lokale computer. Vanaf hier, u nodig te bepalen waar op uw host of CMS die inhoud te plaatsen. Een bestandsmap zoals `/public_html/phpmussel/` of soortgelijk (hoewel, het is niet belangrijk welke u kiest, zolang het is iets veilig en iets waar u blij mee bent) zal volstaan. *Voordat u het uploaden begint, lees verder..*
 
-2) Facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te raden voor beginners of voor de onervaren), open `config.ini` (gelegen binnen `vault`) - Dit bestand bevat alle beschikbare phpMussel configuratie opties. Boven elke optie moet een korte opmerking te beschrijven wat het doet en wat het voor. Pas deze opties als het u past, volgens welke geschikt is voor uw configuratie. Sla het bestand, sluiten.
+2) Hernoemen `config.ini.RenameMe` naar `config.ini` (gelegen binnen `vault`), en facultatief (sterk aanbevolen voor ervaren gebruikers, maar niet aan te raden voor beginners of voor de onervaren), open het (dit bestand bevat alle beschikbare phpMussel configuratie opties; boven elke optie moet een korte opmerking te beschrijven wat het doet en wat het voor). Pas deze opties als het u past, volgens welke geschikt is voor uw configuratie. Sla het bestand, sluiten.
 
 3) Upload de inhoud (phpMussel en zijn bestanden) naar het bestandsmap die u zou op eerder besloten (u nodig niet de `*.txt`/`*.md` bestanden opgenomen, maar meestal, u moeten uploaden alles).
 
@@ -137,7 +137,7 @@ Eveneens, noteren dat phpMussel is een *on-demand* scanner; Het is *GEEN* *on-ac
 ---
 
 
-###4A. <a name="SECTION4A"></a>BROWSER RICHTLIJNEN
+###4A. <a name="SECTION4"></a>BROWSER RICHTLIJNEN
 
 @DEPRECATED@
 
@@ -156,7 +156,7 @@ In elk geval, ongeacht wat u kiest, de keuze is uiteindelijk jou. Standaard, dez
 ---
 
 
-###4B. <a name="SECTION4B"></a>CLI (COMMANDLIJN INTERFACE)
+###4B. <a name="SECTION5"></a>CLI (COMMANDLIJN INTERFACE)
 
 phpMussel kan worden uitgevoerd als een interactief bestand scanner in de CLI-modus onder Windows-gebaseerde systemen. Raadpleeg de sectie "HOE TE INSTALLEREN (VOOR CLI)" van deze README bestand voor meer informatie.
 
@@ -168,7 +168,7 @@ Daarnaast, voor diegenen die geïnteresseerd, een video-tutorial voor hoe te geb
 ---
 
 
-###5. <a name="SECTION5"></a>BESTANDEN IN DIT PAKKET
+###5. <a name="SECTION6"></a>BESTANDEN IN DIT PAKKET
 
 Het volgende is een lijst van alle bestanden die moeten worden opgenomen in de gearchiveerde kopie van dit script als u gedownload het, alle bestanden die kunt mogelijk worden gemaakt als resultaat van uw gebruik van dit script, samen met een korte beschrijving van wat al deze bestanden zijn voor.
 
@@ -219,6 +219,7 @@ Bestand | Beschrijving
 /vault/cache/ | Cache bestandsmap (tijdelijke data).
 /vault/cache/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/cli.php | CLI handler.
+/vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
 /vault/config.php | Configuratie handler.
 /vault/functions.php | Functies bestand (essentieel).
 /vault/greylist.csv | CSV van greylisted handtekeningen aangeeft om phpMussel waarop handtekeningen moet worden negeren (bestand automatisch aangemaakt opnieuw als verwijderd).
@@ -239,7 +240,6 @@ Bestand | Beschrijving
 /vault/lang/lang.vi.php | Vietnamees taaldata/taalgegevens.
 /vault/lang/lang.zh-TW.php | Chinees (traditioneel) taaldata/taalgegevens.
 /vault/lang/lang.zh.php | Chinees (vereenvoudigd) taaldata/taalgegevens.
-/vault/config.ini | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (essentiële)!
 /vault/quarantine/ | Quarantaine bestandsmap (bestanden in quarantaine bevat).
 /vault/quarantine/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 ※ /vault/scan_kills.txt | Een record van elk bestand uploaden geblokkeerde/gedood door phpMussel.
@@ -392,7 +392,7 @@ Handtekening bestanden gemarkeerd met "_mussel" bevatten handtekeningen dat spec
 ---
 
 
-###6. <a name="SECTION6"></a>CONFIGURATIEOPTIES
+###6. <a name="SECTION7"></a>CONFIGURATIEOPTIES
 Het volgende is een lijst van variabelen die in de `config.ini` configuratiebestand van phpMussel, samen met een beschrijving van hun doel en functie.
 
 ####"general" (Categorie)
@@ -755,7 +755,7 @@ Sjabloongegevens betreft op de HTML-uitvoer die wordt gegenereerd en gebruikt vo
 ---
 
 
-###7. <a name="SECTION7"></a>HANDTEKENINGFORMAAT
+###7. <a name="SECTION8"></a>HANDTEKENINGFORMAAT
 
 ####*BESTANDSNAAM HANDTEKENINGEN*
 Alle bestandsnaam handtekeningen volgt het formaat:
@@ -844,7 +844,7 @@ Het volgende is een overzicht van de soorten handtekeningen gebruikt door phpMus
 ---
 
 
-###8. <a name="SECTION8"></a>BEKENDE COMPATIBILITEITSPROBLEMEN
+###8. <a name="SECTION9"></a>BEKENDE COMPATIBILITEITSPROBLEMEN
 
 ####PHP en PCRE
 - PHP en PCRE is vereist voor phpMussel te kunnen functioneren juist. Zonder PHP, of zonder de PCRE extensie van PHP, phpMussel zullen niet worden uitgevoerd of functioneren juist. U moet er zeker van uw systeem heeft zowel PHP en PCRE geïnstalleerd en beschikbaar voordat downloaden en installeren phpMussel.
@@ -922,4 +922,4 @@ Dit informatie werd laatst bijgewerkt 29 Augustus 2016 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 6 Oktober 2016 (2016.10.06).
+Laatste Bijgewerkt: 9 Oktober 2016 (2016.10.09).

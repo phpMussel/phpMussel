@@ -6,12 +6,12 @@
 - 2B. [BAGAIMANA CARA MENGINSTALL (UNTUK CLI)](#SECTION2B)
 - 3A. [BAGAIMANA CARA MENGGUNAKAN (UNTUK SERVER WEB)](#SECTION3A)
 - 3B. [BAGAIMANA CARA MENGGUNAKAN (UNTUK CLI)](#SECTION3B)
-- 4A. [PERINTAH-PERINTAH BROWSER](#SECTION4A) @DEPRECATED@
-- 4B. [CLI (COMMAND LINE INTERFACE)](#SECTION4B)
-- 5. [FILE YANG DIIKUTKAN DALAM PAKET INI](#SECTION5)
-- 6. [OPSI KONFIGURASI](#SECTION6)
-- 7. [FORMAT TANDA TANGAN](#SECTION7)
-- 8. [MASALAH KOMPATIBILITAS DIKETAHUI](#SECTION8)
+- 4. [FRONT-END MANAGEMENT](#SECTION4)
+- 5. [CLI (COMMAND LINE INTERFACE)](#SECTION5)
+- 6. [FILE YANG DIIKUTKAN DALAM PAKET INI](#SECTION6)
+- 7. [OPSI KONFIGURASI](#SECTION7)
+- 8. [FORMAT TANDA TANGAN](#SECTION8)
+- 9. [MASALAH KOMPATIBILITAS DIKETAHUI](#SECTION9)
 
 ---
 
@@ -43,7 +43,7 @@ Saya berharap untuk mempersingkat proses ini dengan membuat sebuah installer pad
 
 1) Dengan membaca ini, Saya asumsikan Anda telah mengunduh dan menyimpan copy dari skrip, membuka data terkompres dan isinya dan Anda meletakkannya pada mesin komputer lokal Anda. Dari sini, Anda akan latihan dimana di host Anda atau CMS Anda untuk meletakkan isi data terkompres nya. Sebuah direktori seperti `/public_html/phpmussel/` atau yang lain (walaupun tidak masalah Anda memilih direktori apa, selama dia aman dan dimana pun yang Anda senangi) akan mencukupi. *Sebelum Anda mulai upload, mohon baca dulu..*
 
-2) Secara fakultatif (sangat direkomendasikan untuk user dengan pengalaman lebih lanjut, tapi tidak untuk pemula atau yang tidak berpengalaman), buka `config.ini` (berada di dalam `vault`) - File ini berisikan semua opsi operasional yang tersedia untuk phpMussel. Di atas tiap opsi seharusnya ada komentar tegas menguraikan tentang apa yang dilakukan dan untuk apa. Atur opsi-opsi ini seperti Anda lihat cocok, seperti apapun yang cocok untuk setup tertentu. Simpan file, menutupnya.
+2) Mengubah file nama `config.ini.RenameMe` ke `config.ini` (berada di dalam `vault`), dan secara fakultatif (sangat direkomendasikan untuk user dengan pengalaman lebih lanjut, tapi tidak untuk pemula atau yang tidak berpengalaman), membukanya (file ini berisikan semua opsi operasional yang tersedia untuk phpMussel; di atas tiap opsi seharusnya ada komentar tegas menguraikan tentang apa yang dilakukan dan untuk apa). Atur opsi-opsi ini seperti Anda lihat cocok, seperti apapun yang cocok untuk setup tertentu. Simpan file, menutupnya.
 
 3) Upload isi (phpMussel dan file-filenya) ke direktori yang telah kamu putuskan sebelumnya (Anda tidak memerlukan file-file `*.txt`/`*.md`, tapi kebanyakan Anda harus mengupload semuanya).
 
@@ -137,7 +137,7 @@ Mohon diingat bahwa phpMussel adalah scanner *on-demand*; adalah *BUKAN* scanner
 ---
 
 
-###4A. <a name="SECTION4A"></a>PERINTAH-PERINTAH BROWSER
+###4A. <a name="SECTION4"></a>PERINTAH-PERINTAH BROWSER
 
 @DEPRECATED@
 
@@ -156,7 +156,7 @@ Cara lain, tanpa bergantung dengan apa yang Anda pilih, pilihan adalah milik And
 ---
 
 
-###4B. <a name="SECTION4B"></a>CLI (COMMAND LINE INTERFACE)
+###4B. <a name="SECTION5"></a>CLI (COMMAND LINE INTERFACE)
 
 phpMussel dapat dijalankan sebagai sebuah file interaktif pemindai dalam mode CLI dalam Windows. Merujuk ke seksi "BAGAIMANA CARA MENGINSTALL (UNTUK CLI)" dari file README untuk lebih detail.
 
@@ -168,7 +168,7 @@ Sebagai tambahan, bagi yang berminat, sebuah video tutorial untuk bagaimana meng
 ---
 
 
-###5. <a name="SECTION5"></a>FILE YANG DIIKUTKAN DALAM PAKET INI
+###5. <a name="SECTION6"></a>FILE YANG DIIKUTKAN DALAM PAKET INI
 
 Berikut list dari semua file yang diikutkan di dalam kopi skrip yang dikompres ketika Anda mendownloadnya, setiap file-file yang secara potensial diciptakan sebagai hasil dari menggunakan skrip ini, sejalan dengan deskripsi singkat dari untuk apa file-file ini.
 
@@ -219,6 +219,7 @@ Data | Deskripsi
 /vault/cache/ | Direktori Cache (untuk file sementara).
 /vault/cache/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/cli.php | Modul CLI handler.
+/vault/config.ini.RenameMe | File konfigurasi phpMussel; Berisi semua opsi konfigurasi dari phpMussel, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (mengubah nama untuk mengaktifkan).
 /vault/config.php | Modul konfigurasi.
 /vault/functions.php | Modul fungsi (utama).
 /vault/greylist.csv | CSV terdiri dari tanda tangan daftar abu-abu mengindikasikan phpMussel tanda tangan mana yang harus diabaikan (file automatis diciptakan kembali jika dihapus).
@@ -239,7 +240,6 @@ Data | Deskripsi
 /vault/lang/lang.vi.php | File Bahasa Vietnam.
 /vault/lang/lang.zh-TW.php | File Bahasa Cina tradisional.
 /vault/lang/lang.zh.php | File Bahasa Cina sederhana.
-/vault/config.ini | File konfigurasi phpMussel; Berisi semua opsi konfigurasi dari phpMussel, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (utama)!
 /vault/quarantine/ | Direktori karantina (berisikan file yang dikarantina).
 /vault/quarantine/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 ※ /vault/scan_kills.txt | Sebuah catatan dari setiap file upload yang diblok/dibunuh oleh phpMussel.
@@ -392,7 +392,7 @@ File-file tanda tangan ditandai dengan "_mussel" berisikan tanda tangan yang sec
 ---
 
 
-###6. <a name="SECTION6"></a>OPSI KONFIGURASI
+###6. <a name="SECTION7"></a>OPSI KONFIGURASI
 Berikut list variabel yang ditemukan pada file konfigurasi phpMussel `config.ini`, dengan deskripsi dari tujuan dan fungsi.
 
 ####"general" (Kategori)
@@ -755,7 +755,7 @@ File template berkaitan untuk HTML diproduksi yang digunakan untuk menghasilkan 
 ---
 
 
-###7. <a name="SECTION7"></a>FORMAT TANDA TANGAN
+###7. <a name="SECTION8"></a>FORMAT TANDA TANGAN
 
 ####*TANDA TANGAN NAMA FILE*
 Semua tanda tangan nama file mengikuti format ini:
@@ -844,7 +844,7 @@ Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
 ---
 
 
-###8. <a name="SECTION8"></a>MASALAH KOMPATIBILITAS DIKETAHUI
+###8. <a name="SECTION9"></a>MASALAH KOMPATIBILITAS DIKETAHUI
 
 ####PHP dan PCRE
 - phpMussel memerlukan PHP dan PCRE untuk mengeksekusi dan berfungsi dengan baik. Tanpa PHP, atau tanpa ekstensi PCRE, phpMussel tidak akan mengeksekusi atau berfungsi dengan baik. Seharusnya memastikan sistem Anda terinstal PHP dan PCRE dan tersedia secara prioritas untuk mengunduh dan menginstal phpMussel.
@@ -922,4 +922,4 @@ Informasi ini diupdate 29 Agustus 2016 dan cocok untuk semua rilis phpMussel dar
 ---
 
 
-Terakhir Diperbarui: 6 Oktober 2016 (2016.10.06).
+Terakhir Diperbarui: 9 Oktober 2016 (2016.10.09).

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.10.08).
+ * This file: Front-end handler (last modified: 2016.10.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,25 +29,30 @@ $phpMussel['Now'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60
 /** Populate common front-end variables. */
 $phpMussel['FE'] = array(
     'Template' => $phpMussel['ReadFile']($phpMussel['vault'] . 'fe_assets/frontend.html'),
+    'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
+    'FE_Lang' => $phpMussel['Config']['general']['lang'],
     'DateTime' => date('r', $phpMussel['Now']),
     'ScriptIdent' => $phpMussel['ScriptIdent'],
     'UserList' => "\n",
     'SessionList' => "\n",
     'UserState' => 0,
     'UserRaw' => '',
-    'UserLevel' => 0,
+    'Permissions' => 0,
     'state_msg' => '',
     'ThisSession' => '',
     'bNav' => '&nbsp;',
     'FE_Title' => ''
 );
 
+/** Set form target if not already set. */
+$phpMussel['FE']['FormTarget'] = (empty($_POST['phpmussel-form-target'])) ? '' : $_POST['phpmussel-form-target'];
+
 /** Fetch user list and sessions list. */
 if (file_exists($phpMussel['vault'] . 'fe_assets/frontend.dat')) {
     $phpMussel['FE']['FrontEndData'] = $phpMussel['ReadFile']($phpMussel['vault'] . 'fe_assets/frontend.dat');
     $phpMussel['FE']['Rebuild'] = false;
 } else {
-    $phpMussel['FE']['FrontEndData'] = "USERS\n-----\nYWRtaW4=,\$2y\$10\$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK,1\n\nSESSIONS\n--------\n";
+    $phpMussel['FE']['FrontEndData'] = "USERS\n-----\nYWRtaW4=," . $phpMussel['FE']['DefaultPassword'] . ",1\n\nSESSIONS\n--------\n";
     $phpMussel['FE']['Rebuild'] = true;
 }
 $phpMussel['FE']['UserListPos'] = strpos($phpMussel['FE']['FrontEndData'], "USERS\n-----\n");
@@ -78,47 +83,49 @@ if (empty($phpMussel['Config']['lang']['textDir']) || $phpMussel['Config']['lang
 }
 
 /** Attempt to log in the user. */
-if (!empty($_POST['username']) && empty($_POST['password'])) {
-    $phpMussel['FE']['UserState'] = -1;
-    $phpMussel['FE']['state_msg'] = $phpMussel['WrapRedText']($phpMussel['Config']['lang']['error_login_password_field_empty']);
-} elseif (empty($_POST['username']) && !empty($_POST['password'])) {
-    $phpMussel['FE']['UserState'] = -1;
-    $phpMussel['FE']['state_msg'] = $phpMussel['WrapRedText']($phpMussel['Config']['lang']['error_login_username_field_empty']);
-} elseif (!empty($_POST['username']) && !empty($_POST['password'])) {
+if ($phpMussel['FE']['FormTarget'] === 'login') {
+    if (!empty($_POST['username']) && empty($_POST['password'])) {
+        $phpMussel['FE']['UserState'] = -1;
+        $phpMussel['FE']['state_msg'] = $phpMussel['WrapRedText']($phpMussel['Config']['lang']['response_login_password_field_empty']);
+    } elseif (empty($_POST['username']) && !empty($_POST['password'])) {
+        $phpMussel['FE']['UserState'] = -1;
+        $phpMussel['FE']['state_msg'] = $phpMussel['WrapRedText']($phpMussel['Config']['lang']['response_login_username_field_empty']);
+    } elseif (!empty($_POST['username']) && !empty($_POST['password'])) {
 
-    $phpMussel['FE']['UserState'] = -1;
-    $phpMussel['FE']['UserRaw'] = $_POST['username'];
-    $phpMussel['FE']['User'] = base64_encode($phpMussel['FE']['UserRaw']);
-    $phpMussel['FE']['UserPos'] = strpos($phpMussel['FE']['UserList'], "\n" . $phpMussel['FE']['User'] . ',');
+        $phpMussel['FE']['UserState'] = -1;
+        $phpMussel['FE']['UserRaw'] = $_POST['username'];
+        $phpMussel['FE']['User'] = base64_encode($phpMussel['FE']['UserRaw']);
+        $phpMussel['FE']['UserPos'] = strpos($phpMussel['FE']['UserList'], "\n" . $phpMussel['FE']['User'] . ',');
 
-    if ($phpMussel['FE']['UserPos'] !== false) {
-        $phpMussel['FE']['UserOffset'] = $phpMussel['FE']['UserPos'] + strlen($phpMussel['FE']['User']) + 2;
-        $phpMussel['FE']['Password'] = substr(
-            $phpMussel['FE']['UserList'],
-            $phpMussel['FE']['UserOffset'],
-            strpos($phpMussel['FE']['UserList'], "\n", $phpMussel['FE']['UserOffset']) - $phpMussel['FE']['UserOffset']
-        );
-        $phpMussel['FE']['UserLevel'] = (int)substr($phpMussel['FE']['Password'], -1);
-        $phpMussel['FE']['Password'] = substr($phpMussel['FE']['Password'], 0, -2);
-        if (password_verify($_POST['password'], $phpMussel['FE']['Password'])) {
-            $phpMussel['FE']['SessionKey'] = md5($phpMussel['GenerateSalt']());
-            $phpMussel['FE']['Cookie'] = $_POST['username'] . $phpMussel['FE']['SessionKey'];
-            setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Now'] + 604800, '/', (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : '', false, true);
-            $phpMussel['FE']['UserState'] = 1;
-            $phpMussel['FE']['ThisSession'] =
-                $phpMussel['FE']['User'] . ',' .
-                password_hash($phpMussel['FE']['SessionKey'], PASSWORD_DEFAULT) . ',' .
-                ($phpMussel['Now'] + 604800) . "\n";
-            $phpMussel['FE']['SessionList'] .= $phpMussel['FE']['ThisSession'];
-            $phpMussel['FE']['Rebuild'] = true;
+        if ($phpMussel['FE']['UserPos'] !== false) {
+            $phpMussel['FE']['UserOffset'] = $phpMussel['FE']['UserPos'] + strlen($phpMussel['FE']['User']) + 2;
+            $phpMussel['FE']['Password'] = substr(
+                $phpMussel['FE']['UserList'],
+                $phpMussel['FE']['UserOffset'],
+                strpos($phpMussel['FE']['UserList'], "\n", $phpMussel['FE']['UserOffset']) - $phpMussel['FE']['UserOffset']
+            );
+            $phpMussel['FE']['Permissions'] = (int)substr($phpMussel['FE']['Password'], -1);
+            $phpMussel['FE']['Password'] = substr($phpMussel['FE']['Password'], 0, -2);
+            if (password_verify($_POST['password'], $phpMussel['FE']['Password'])) {
+                $phpMussel['FE']['SessionKey'] = md5($phpMussel['GenerateSalt']());
+                $phpMussel['FE']['Cookie'] = $_POST['username'] . $phpMussel['FE']['SessionKey'];
+                setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Now'] + 604800, '/', (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : '', false, true);
+                $phpMussel['FE']['UserState'] = 1;
+                $phpMussel['FE']['ThisSession'] =
+                    $phpMussel['FE']['User'] . ',' .
+                    password_hash($phpMussel['FE']['SessionKey'], PASSWORD_DEFAULT) . ',' .
+                    ($phpMussel['Now'] + 604800) . "\n";
+                $phpMussel['FE']['SessionList'] .= $phpMussel['FE']['ThisSession'];
+                $phpMussel['FE']['Rebuild'] = true;
+            } else {
+                $phpMussel['FE']['Permissions'] = 0;
+                $phpMussel['FE']['state_msg'] = $phpMussel['WrapRedText']($phpMussel['Config']['lang']['response_login_invalid_password']);
+            }
         } else {
-            $phpMussel['FE']['UserLevel'] = 0;
-            $phpMussel['FE']['state_msg'] = $phpMussel['WrapRedText']($phpMussel['Config']['lang']['error_login_invalid_password']);
+            $phpMussel['FE']['state_msg'] = $phpMussel['WrapRedText']($phpMussel['Config']['lang']['response_login_invalid_username']);
         }
-    } else {
-        $phpMussel['FE']['state_msg'] = $phpMussel['WrapRedText']($phpMussel['Config']['lang']['error_login_invalid_username']);
-    }
 
+    }
 }
 
 /** Determine whether the user has logged in. */
@@ -160,7 +167,7 @@ elseif (!empty($_COOKIE['PHPMUSSEL-ADMIN'])) {
                 if ($phpMussel['FE']['UserPos'] !== false) {
                     $phpMussel['FE']['ThisSession'] = $phpMussel['FE']['User'] . ',' . $phpMussel['FE']['SessionEntry'] . "\n";
                     $phpMussel['FE']['UserOffset'] = $phpMussel['FE']['UserPos'] + $phpMussel['FE']['UserLen'] + 2;
-                    $phpMussel['FE']['UserLevel'] = (int)substr(substr(
+                    $phpMussel['FE']['Permissions'] = (int)substr(substr(
                         $phpMussel['FE']['UserList'],
                         $phpMussel['FE']['UserOffset'],
                         strpos($phpMussel['FE']['UserList'], "\n", $phpMussel['FE']['UserOffset']) - $phpMussel['FE']['UserOffset']
@@ -176,13 +183,14 @@ elseif (!empty($_COOKIE['PHPMUSSEL-ADMIN'])) {
 
 /** Only execute this code block for users that are logged in. */
 if ($phpMussel['FE']['UserState'] === 1) {
+
     if ($phpMussel['QueryVars']['phpmussel-page'] === 'logout') {
 
         /** Log out the user. */
         $phpMussel['FE']['SessionList'] = str_ireplace($phpMussel['FE']['ThisSession'], '', $phpMussel['FE']['SessionList']);
         $phpMussel['FE']['ThisSession'] = '';
         $phpMussel['FE']['Rebuild'] = true;
-        $phpMussel['FE']['UserState'] = $phpMussel['FE']['UserLevel'] = 0;
+        $phpMussel['FE']['UserState'] = $phpMussel['FE']['Permissions'] = 0;
         setcookie('PHPMUSSEL-ADMIN', '', -1, '/', (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : '', false, true);
 
     } else {
@@ -194,6 +202,25 @@ if ($phpMussel['FE']['UserState'] === 1) {
         );
 
     }
+
+    /** If the user has complete access. */
+    if ($phpMussel['FE']['Permissions'] === 1) {
+
+        $phpMussel['FE']['nav'] = $phpMussel['ParseVars'](
+            $phpMussel['Config']['lang'] + $phpMussel['FE'],
+            $phpMussel['ReadFile']($phpMussel['vault'] . 'fe_assets/_nav_complete_access.html')
+        );
+
+    /** If the user has logs access only. */
+    } elseif ($phpMussel['FE']['Permissions'] === 2) {
+
+        $phpMussel['FE']['nav'] = $phpMussel['ParseVars'](
+            $phpMussel['Config']['lang'] + $phpMussel['FE'],
+            $phpMussel['ReadFile']($phpMussel['vault'] . 'fe_assets/_nav_logs_access_only.html')
+        );
+
+    }
+
 }
 
 /** The user hasn't logged in. Show them the login page. */
@@ -222,32 +249,168 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '') {
 
     $phpMussel['FE']['bNav'] = $phpMussel['Config']['lang']['bNav_logout'];
 
-    if ($phpMussel['FE']['UserLevel'] === 1) {
-
-        $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-            $phpMussel['Config']['lang'] + $phpMussel['FE'],
-            $phpMussel['ReadFile']($phpMussel['vault'] . 'fe_assets/_home_admin.html')
-        );
-
-    } elseif ($phpMussel['FE']['UserLevel'] === 2) {
-
-        $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-            $phpMussel['Config']['lang'] + $phpMussel['FE'],
-            $phpMussel['ReadFile']($phpMussel['vault'] . 'fe_assets/_home_mod.html')
-        );
-
-    }
+    $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
+        $phpMussel['Config']['lang'] + $phpMussel['FE'],
+        $phpMussel['ReadFile']($phpMussel['vault'] . 'fe_assets/_home.html')
+    );
 
     echo $phpMussel['ParseVars']($phpMussel['Config']['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
 
 }
 
 /** Accounts. */
-elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['FE']['UserLevel'] === 1) {
+elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['FE']['Permissions'] === 1) {
+
+    /** A form has been submitted. */
+    if ($phpMussel['FE']['FormTarget'] === 'accounts' && !empty($_POST['do'])) {
+
+        /** Create a new account. */
+        if ($_POST['do'] === 'create-account' && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['permissions'])) {
+            $phpMussel['FE']['NewUser'] = $_POST['username'];
+            $phpMussel['FE']['NewPass'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $phpMussel['FE']['NewPerm'] = (int)$_POST['permissions'];
+            $phpMussel['FE']['NewUserB64'] = base64_encode($_POST['username']);
+            if (strpos($phpMussel['FE']['UserList'], "\n" . $phpMussel['FE']['NewUserB64'] . ',') !== false) {
+                $phpMussel['FE']['state_msg'] = $phpMussel['Config']['lang']['response_accounts_already_exists'];
+            } else {
+                $phpMussel['FE']['NewAccount'] =
+                    $phpMussel['FE']['NewUserB64'] . ',' .
+                    $phpMussel['FE']['NewPass'] . ',' .
+                    $phpMussel['FE']['NewPerm'] . "\n";
+                $phpMussel['AccountsArray'] = array(
+                    'Iterate' => 0,
+                    'Count' => 1,
+                    'ByName' => array($phpMussel['FE']['NewUser'] => $phpMussel['FE']['NewAccount'])
+                );
+                $phpMussel['FE']['NewLineOffset'] = 0;
+                while (($phpMussel['FE']['NewLinePos'] = strpos(
+                    $phpMussel['FE']['UserList'], "\n", $phpMussel['FE']['NewLineOffset'] + 1
+                )) !== false) {
+                    $phpMussel['FE']['NewLine'] = substr(
+                        $phpMussel['FE']['UserList'],
+                        $phpMussel['FE']['NewLineOffset'] + 1,
+                        $phpMussel['FE']['NewLinePos'] - $phpMussel['FE']['NewLineOffset']
+                    );
+                    $phpMussel['RowInfo'] = explode(',', $phpMussel['FE']['NewLine'], 3);
+                    $phpMussel['RowInfo'] = base64_decode($phpMussel['RowInfo'][0]);
+                    $phpMussel['AccountsArray']['ByName'][$phpMussel['RowInfo']] = $phpMussel['FE']['NewLine'];
+                    $phpMussel['FE']['NewLineOffset'] = $phpMussel['FE']['NewLinePos'];
+                }
+                ksort($phpMussel['AccountsArray']['ByName']);
+                $phpMussel['FE']['UserList'] = "\n" . implode('', $phpMussel['AccountsArray']['ByName']);
+                $phpMussel['FE']['Rebuild'] = true;
+                unset($phpMussel['AccountsArray']);
+                $phpMussel['FE']['state_msg'] = $phpMussel['Config']['lang']['response_accounts_created'];
+            }
+        }
+
+        /** Delete an account. */
+        if ($_POST['do'] === 'delete-account' && !empty($_POST['username'])) {
+            $phpMussel['FE']['User64'] = base64_encode($_POST['username']);
+            $phpMussel['FE']['UserLinePos'] = strpos($phpMussel['FE']['UserList'], "\n" . $phpMussel['FE']['User64'] . ',');
+            if ($phpMussel['FE']['UserLinePos'] === false) {
+                $phpMussel['FE']['state_msg'] = $phpMussel['Config']['lang']['response_accounts_doesnt_exist'];
+            } else {
+                $phpMussel['FE']['UserLineEndPos'] = strpos($phpMussel['FE']['UserList'], "\n", $phpMussel['FE']['UserLinePos'] + 1);
+                if ($phpMussel['FE']['UserLineEndPos'] !== false) {
+                    $phpMussel['FE']['UserLine'] = substr(
+                        $phpMussel['FE']['UserList'],
+                        $phpMussel['FE']['UserLinePos'] + 1,
+                        $phpMussel['FE']['UserLineEndPos'] - $phpMussel['FE']['UserLinePos']
+                    );
+                    $phpMussel['FE']['UserList'] = str_replace($phpMussel['FE']['UserLine'], '', $phpMussel['FE']['UserList']);
+                    $phpMussel['FE']['Rebuild'] = true;
+                    $phpMussel['FE']['state_msg'] = $phpMussel['Config']['lang']['response_accounts_deleted'];
+                }
+            }
+            $phpMussel['FE']['UserLinePos'] = strpos($phpMussel['FE']['SessionList'], "\n" . $phpMussel['FE']['User64'] . ',');
+            if ($phpMussel['FE']['UserLinePos'] !== false) {
+                $phpMussel['FE']['UserLineEndPos'] = strpos($phpMussel['FE']['SessionList'], "\n", $phpMussel['FE']['UserLinePos'] + 1);
+                if ($phpMussel['FE']['UserLineEndPos'] !== false) {
+                    $phpMussel['FE']['SessionLine'] = substr(
+                        $phpMussel['FE']['SessionList'],
+                        $phpMussel['FE']['UserLinePos'] + 1,
+                        $phpMussel['FE']['UserLineEndPos'] - $phpMussel['FE']['UserLinePos']
+                    );
+                    $phpMussel['FE']['SessionList'] = str_replace($phpMussel['FE']['SessionLine'], '', $phpMussel['FE']['SessionList']);
+                    $phpMussel['FE']['Rebuild'] = true;
+                }
+            }
+        }
+
+        /** Update an account password. */
+        if ($_POST['do'] === 'update-password' && !empty($_POST['username']) && !empty($_POST['password'])) {
+            $phpMussel['FE']['User64'] = base64_encode($_POST['username']);
+            $phpMussel['FE']['NewPass'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $phpMussel['FE']['UserLinePos'] = strpos($phpMussel['FE']['UserList'], "\n" . $phpMussel['FE']['User64'] . ',');
+            if ($phpMussel['FE']['UserLinePos'] === false) {
+                $phpMussel['FE']['state_msg'] = $phpMussel['Config']['lang']['response_accounts_doesnt_exist'];
+            } else {
+                $phpMussel['FE']['UserLineEndPos'] = strpos($phpMussel['FE']['UserList'], "\n", $phpMussel['FE']['UserLinePos'] + 1);
+                if ($phpMussel['FE']['UserLineEndPos'] !== false) {
+                    $phpMussel['FE']['UserLine'] = substr(
+                        $phpMussel['FE']['UserList'],
+                        $phpMussel['FE']['UserLinePos'] + 1,
+                        $phpMussel['FE']['UserLineEndPos'] - $phpMussel['FE']['UserLinePos']
+                    );
+                    $phpMussel['FE']['UserPerm'] = substr($phpMussel['FE']['UserLine'], -2, 1);
+                    $phpMussel['FE']['NewUserLine'] =
+                        $phpMussel['FE']['User64'] . ',' .
+                        $phpMussel['FE']['NewPass'] . ',' .
+                        $phpMussel['FE']['UserPerm'] . "\n";
+                    $phpMussel['FE']['UserList'] = str_replace($phpMussel['FE']['UserLine'], $phpMussel['FE']['NewUserLine'], $phpMussel['FE']['UserList']);
+                    $phpMussel['FE']['Rebuild'] = true;
+                    $phpMussel['FE']['state_msg'] = $phpMussel['Config']['lang']['response_accounts_password_updated'];
+                }
+            }
+        }
+
+    }
 
     $phpMussel['FE']['FE_Title'] = $phpMussel['Config']['lang']['title_accounts'];
 
     $phpMussel['FE']['bNav'] = $phpMussel['Config']['lang']['bNav_home_logout'];
+
+    $phpMussel['FE']['AccountsRow'] = $phpMussel['ReadFile']($phpMussel['vault'] . 'fe_assets/_accounts_row.html');
+    $phpMussel['FE']['Accounts'] = '';
+    $phpMussel['FE']['NewLineOffset'] = 0;
+
+    while (($phpMussel['FE']['NewLinePos'] = strpos(
+        $phpMussel['FE']['UserList'], "\n", $phpMussel['FE']['NewLineOffset'] + 1
+    )) !== false) {
+        $phpMussel['FE']['NewLine'] = substr(
+            $phpMussel['FE']['UserList'],
+            $phpMussel['FE']['NewLineOffset'] + 1,
+            $phpMussel['FE']['NewLinePos'] - $phpMussel['FE']['NewLineOffset'] - 1
+        );
+        $phpMussel['RowInfo'] = explode(',', $phpMussel['FE']['NewLine'], 3);
+        $phpMussel['RowInfo'][3] = (strpos($phpMussel['FE']['SessionList'], "\n" . $phpMussel['RowInfo'][0] . ',') !== false);
+        $phpMussel['RowInfo'][0] = htmlentities(base64_decode($phpMussel['RowInfo'][0]));
+        if ($phpMussel['RowInfo'][1] === $phpMussel['FE']['DefaultPassword']) {
+            $phpMussel['RowInfo'][1] = '<br /><div class="txtRd">' . $phpMussel['Config']['lang']['state_default_password'] . '</div>';
+        } elseif (strlen($phpMussel['RowInfo'][1]) !== 60 || !preg_match('/^\$2.\$[0-9]{2}\$/', $phpMussel['RowInfo'][1])) {
+            $phpMussel['RowInfo'][1] = '<br /><div class="txtRd">' . $phpMussel['Config']['lang']['state_password_not_valid'] . '</div>';
+        } else {
+            $phpMussel['RowInfo'][1] = '';
+        }
+        if ($phpMussel['RowInfo'][3]) {
+            $phpMussel['RowInfo'][1] .= '<br /><div class="txtGn">' . $phpMussel['Config']['lang']['state_logged_in'] . '</div>';
+        }
+        $phpMussel['RowInfo'][2] = (int)$phpMussel['RowInfo'][2];
+        $phpMussel['RowInfo'] = array(
+            'username' => $phpMussel['RowInfo'][0],
+            'warning' => $phpMussel['RowInfo'][1],
+            'permissions' =>
+                ($phpMussel['RowInfo'][2] === 1) ?
+                $phpMussel['Config']['lang']['state_complete_access'] :
+                $phpMussel['Config']['lang']['state_logs_access_only']
+        );
+        $phpMussel['FE']['NewLineOffset'] = $phpMussel['FE']['NewLinePos'];
+        $phpMussel['FE']['Accounts'] .= $phpMussel['ParseVars'](
+            $phpMussel['Config']['lang'] + $phpMussel['RowInfo'], $phpMussel['FE']['AccountsRow']
+        );
+    }
+    unset($phpMussel['RowInfo']);
 
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['Config']['lang'] + $phpMussel['FE'],
@@ -259,7 +422,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
 }
 
 /** Configuration. */
-elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE']['UserLevel'] === 1) {
+elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE']['Permissions'] === 1) {
 
     $phpMussel['FE']['FE_Title'] = $phpMussel['Config']['lang']['title_config'];
 
@@ -275,7 +438,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
 }
 
 /** Greylist. */
-elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'greylist' && $phpMussel['FE']['UserLevel'] === 1) {
+elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'greylist' && $phpMussel['FE']['Permissions'] === 1) {
 
     $phpMussel['FE']['FE_Title'] = $phpMussel['Config']['lang']['title_greylist'];
 
@@ -291,7 +454,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'greylist' && $phpMussel['
 }
 
 /** Updates. */
-elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['FE']['UserLevel'] === 1) {
+elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['FE']['Permissions'] === 1) {
 
     $phpMussel['FE']['FE_Title'] = $phpMussel['Config']['lang']['title_updates'];
 

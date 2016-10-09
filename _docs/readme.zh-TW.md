@@ -7,12 +7,12 @@
 - 2B. [如何安裝（CLI）](#SECTION2B)
 - 3A. [如何使用（WEB服務器）](#SECTION3A)
 - 3B. [如何使用（CLI）](#SECTION3B)
-- 4A. [瀏覽器命令](#SECTION4A) @DEPRECATED@
-- 4B. [CLI（命令行界面）](#SECTION4B)
-- 5. [文件在包](#SECTION5)
-- 6. [配置選項](#SECTION6)
-- 7. [簽名格式](#SECTION7)
-- 8. [已知的兼容問題](#SECTION8)
+- 4. [FRONT-END MANAGEMENT](#SECTION4)
+- 5. [CLI（命令行界面）](#SECTION5)
+- 6. [文件在包](#SECTION6)
+- 7. [配置選項](#SECTION7)
+- 8. [簽名格式](#SECTION8)
+- 9. [已知的兼容問題](#SECTION9)
 
 ---
 
@@ -44,7 +44,7 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 1） 在閱讀到這里之前，我假設您已經下載腳本的一個副本，已解壓縮其內容並保存在您的機器的某個地方。現在，您要決定將腳本放在您服務器上的哪些文件夾中，例如`/public_html/phpmussel/`或其他任何您覺得滿意和安全的地方。*上傳完成後，繼續閱讀。。*
 
-2） 自定義（強烈推薦高級用戶，但不推薦業餘用戶或者新手使用這個方法），打開`config.ini`（位於內`vault`） - 這個文件包含所有phpMussel的可用配置選項。以上的每一個配置選項應有一個簡介來說明它是做什麼的和它的具有的功能。按照您認為合適的參數來調整這些選項，然後保存文件，關閉。
+2） 重命名`config.ini.RenameMe`到`config.ini`（位於內`vault`），和如果您想（強烈推薦高級用戶，但不推薦業餘用戶或者新手使用這個方法），打開它（這個文件包含所有phpMussel的可用配置選項；以上的每一個配置選項應有一個簡介來說明它是做什麼的和它的具有的功能）。按照您認為合適的參數來調整這些選項，然後保存文件，關閉。
 
 3） 上傳（phpMussel和它的文件）到您選定的文件夾（不需要包括`*.txt`/`*.md`文件，但大多數情況下，您應上傳所有的文件）。
 
@@ -138,7 +138,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 ---
 
 
-###4A. <a name="SECTION4A"></a>瀏覽器命令
+###4A. <a name="SECTION4"></a>瀏覽器命令
 
 @DEPRECATED@
 
@@ -157,7 +157,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 ---
 
 
-###4B. <a name="SECTION4B"></a>CLI（命令行界面）
+###4B. <a name="SECTION5"></a>CLI（命令行界面）
 
 在Windows系統上phpMussel在CLI模式可以作為一個互動文件執行掃描。參考｢如何安裝（對於CLI）｣部分的這個自述文件為更信息。
 
@@ -169,7 +169,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 ---
 
 
-###5. <a name="SECTION5"></a>文件在包
+###5. <a name="SECTION6"></a>文件在包
 （本段文件採用的自動翻譯，因為都是一些文件描述，參考意義不是很大，如有疑問，請參考英文原版）
 
 下面是一個列表的所有的文件該應該是存在在您的存檔在下載時間，任何文件該可能創建因之的您的使用這個腳本，包括一個簡短說明的他們的目的。
@@ -221,6 +221,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 /vault/cache/ | 緩存｢Cache｣文件夾（為臨時數據）。
 /vault/cache/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/cli.php | CLI處理文件。
+/vault/config.ini.RenameMe | 配置文件；包含所有配置指令為phpMussel，告訴它什麼做和怎麼正確地經營（重命名為激活）。
 /vault/config.php | 配置處理文件。
 /vault/functions.php | 功能處理文件（必不可少）。
 /vault/greylist.csv | 灰名單簽名CSV（逗號分隔變量）文件說明為phpMussel什麼簽名它應該忽略（文件自動重新創建如果刪除）。
@@ -241,7 +242,6 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 /vault/lang/lang.vi.php | 越南文語言數據。
 /vault/lang/lang.zh-TW.php | 中文（傳統）語言數據。
 /vault/lang/lang.zh.php | 中文（簡體）語言數據。
-/vault/config.ini | 配置文件；包含所有配置指令為phpMussel，告訴它什麼做和怎麼正確地經營（必不可少）！
 /vault/quarantine/ | 隔離文件夾（包含隔離文件）。
 /vault/quarantine/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
 ※ /vault/scan_kills.txt | 記錄的所有上傳文件phpMussel受阻／殺。
@@ -395,7 +395,7 @@ CVD是一個acronym為｢ClamAV Virus Definitions｣，在參照如何ClamAV參�
 ---
 
 
-###6. <a name="SECTION6"></a>配置選項
+###6. <a name="SECTION7"></a>配置選項
 下列是一個列表的變量發現在`config.ini`配置文件的phpMussel，以及一個說明的他們的目的和功能。
 
 ####“general” （類別）
@@ -758,7 +758,7 @@ URL掃描儀API配置。
 ---
 
 
-###7. <a name="SECTION7"></a>簽名格式
+###7. <a name="SECTION8"></a>簽名格式
 
 ####*文件名簽名*
 所有文件名簽名跟隨格式：
@@ -847,7 +847,7 @@ URL掃描儀API配置。
 ---
 
 
-###8. <a name="SECTION8"></a>已知的兼容問題
+###8. <a name="SECTION9"></a>已知的兼容問題
 
 ####PHP和PCRE
 - phpMussel需要PHP和PCRE以正確地執行和功能。如果沒有PHP，或如果沒有PCRE擴展的PHP，phpMussel不會正確地執行和功能。應該確保您的系統有PHP和PCRE安裝和可用之前下載和安裝phpMussel。
@@ -925,4 +925,4 @@ URL掃描儀API配置。
 ---
 
 
-最後更新：2016年10月06日。
+最後更新：2016年10月9日。
