@@ -469,6 +469,9 @@ Algemene configuratie voor phpMussel.
 "disable_cli"
 - Uitschakelen CLI-modus? CLI-modus is standaard ingeschakeld, maar kunt somtijds interfereren met bepaalde testtools (zoals PHPUnit bijvoorbeeld) en andere CLI-gebaseerde applicaties. Als u niet hoeft te uitschakelen CLI-modus, u moeten om dit richtlijn te negeren. False = Inschakelen CLI-modus [Standaard]; True = Uitschakelen CLI-modus.
 
+"disable_frontend"
+- Uitschakelen front-end toegang? Front-end toegang kan phpMussel beter beheersbaar te maken, maar kan ook een potentieel gevaar voor de veiligheid zijn. Het is aan te raden om phpMussel te beheren via het back-end wanneer mogelijk, maar front-end toegang is hier voorzien voor wanneer het niet mogelijk is. Hebben het uitgeschakeld tenzij u het nodig hebt. False = Inschakelen front-end toegang; True = Uitschakelen front-end toegang [Standaard].
+
 ####"signatures" (Categorie)
 Configuratie voor handtekeningen.
 - %%%_clamav = ClamAV handtekeningen (beide hoofdnet en dagelijks).
@@ -922,4 +925,4 @@ Dit informatie werd laatst bijgewerkt 29 Augustus 2016 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 9 Oktober 2016 (2016.10.09).
+Laatste Bijgewerkt: 11 Oktober 2016 (2016.10.11).

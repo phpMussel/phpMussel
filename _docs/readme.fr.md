@@ -469,6 +469,9 @@ Configuration générale pour phpMussel.
 "disable_cli"
 - Désactiver le mode CLI? Le mode CLI est activé par défaut, mais peut parfois interférer avec certains test outils (comme PHPUnit, par exemple) et d'autres applications basées sur CLI. Si vous n'avez pas besoin désactiver le mode CLI, vous devrait ignorer cette directive. False = Activer le mode CLI [Défaut]; True = Désactiver le mode CLI.
 
+"disable_frontend"
+- Désactiver l'accès frontal? L'accès frontal peut rendre phpMussel plus facile à gérer, mais peut aussi être un risque potentiel pour la sécurité. Il est recommandé de gérer phpMussel via le back-end chaque fois que possible, mais l'accès frontal est prévu pour quand il est impossible. Seulement activer si vous avez besoin. False = Activer l'accès frontal; True = Désactiver l'accès frontal [Défaut].
+
 ####"signatures" (Catégorie)
 Configuration pour les signatures.
 - %%%_clamav = ClamAV signatures (mains et daily).
@@ -922,4 +925,4 @@ Cette information a été réactualisé le 29 Août 2016 et est courant pour tou
 ---
 
 
-Dernière Réactualisé: 9 Octobre 2016 (2016.10.09).
+Dernière Réactualisé: 11 Octobre 2016 (2016.10.11).
