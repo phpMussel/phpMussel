@@ -6,7 +6,7 @@
 - 2B. [INSTALLATION (CLI - BEFEHLSZEILENMODUS)](#SECTION2B)
 - 3A. [BENUTZUNG (SERVER)](#SECTION3A)
 - 3B. [BENUTZUNG (CLI - BEFEHLSZEILENMODUS)](#SECTION3B)
-- 4. [FRONT-END MANAGEMENT](#SECTION4)
+- 4. [FRONT-END-MANAGEMENT](#SECTION4)
 - 5. [CLI (BEFEHLSZEILENMODUS)](#SECTION5)
 - 6. [IM PAKET ENTHALTENE DATEIEN](#SECTION6)
 - 7. [EINSTELLUNGEN](#SECTION7)
@@ -121,7 +121,7 @@ Eine vollständige Liste der Signaturen, die phpMussel nutzt und wie diese verar
 
 Sollten irgendwelche Fehlalarme auftreten, Sie etwas entdecken, was Ihrer Meinung nach blockiert werden sollte oder etwas mit den Signaturen nicht funktionieren, so informieren Sie den Autor, damit die erforderlichen Änderungen durchgeführt werden können.
 
-Um die Signaturen, die in phpMussel enthalten sind, zu deaktivieren, lesen Sie bitte die Hinweise zum Greylisting im Abschnitt BROWSER BEFEHLE.
+Um die Signaturen, die in phpMussel enthalten sind, zu deaktivieren, lesen Sie bitte die Hinweise zum Greylisting im Abschnitt FRONT-END-MANAGEMENT.
 
 ---
 
@@ -137,9 +137,9 @@ Beachten Sie außerdem, dass phpMussel eine *On-Demand-Scanner*; Keine *On-Acces
 ---
 
 
-###4A. <a name="SECTION4"></a>BROWSER BEFEHLE
+###4. <a name="SECTION4"></a>FRONT-END-MANAGEMENT
 
-@DEPRECATED@
+@TODO@
 
 Gründe, warum Sie diese Kontrollen aktivieren sollten:
 - Bietet die Möglichkeit, Signaturen schnell in eine Greylist aufzunehmen, wenn Sie Dateien auf Ihr System hochladen und Fehlalarme erzeugt werden und Sie nicht die Zeit haben, die Greylist manuell zu bearbeiten.
@@ -156,7 +156,7 @@ Die Entscheidung müssen Sie selbst treffen. Standardmäßig sind diese Kontroll
 ---
 
 
-###4B. <a name="SECTION5"></a>CLI (BEFEHLSZEILENMODUS)
+###5. <a name="SECTION5"></a>CLI (BEFEHLSZEILENMODUS)
 
 phpMussel kann als interaktiver Scanner im CLI-Modus in einer Windows-Systemumgebung genutzt werden. Bitte lesen Sie den Abschnitt INSTALLATION (CLI - BEFEHLSZEILENMODUS).
 
@@ -168,7 +168,7 @@ Zusätzlich, für Interessenten, ein Video-Tutorial, wie phpMussel im CLI-Modus 
 ---
 
 
-###5. <a name="SECTION6"></a>IM PAKET ENTHALTENE DATEIEN
+###6. <a name="SECTION6"></a>IM PAKET ENTHALTENE DATEIEN
 
 Die folgende Liste beinhaltet alle Dateien, die im heruntergeladenen Archiv des Scripts enthalten sind und Dateien, die durch die Benutzung des Scripts eventuell erstellt werden, inkl. einer kurzen Beschreibung.
 
@@ -392,7 +392,7 @@ Signaturdateien mit der Kennzeichnung "_mussel" enthalten Signaturen, welche nic
 ---
 
 
-###6. <a name="SECTION7"></a>EINSTELLUNGEN
+###7. <a name="SECTION7"></a>EINSTELLUNGEN
 Nachfolgend finden Sie eine Liste der Variablen in der Konfigurationsdatei `config.ini` mit einer kurzen Beschreibung ihrer Funktionen.
 
 ####"general" (Kategorie)
@@ -467,6 +467,9 @@ Generelle Konfiguration von phpMussel.
 
 "disable_cli"
 - CLI-Modus deaktivieren? CLI-Modus ist standardmäßig aktiviert, kann aber manchmal bestimmte Test-Tools (PHPUnit zum Beispiel) und andere CLI-basierte Anwendungen beeinträchtigen. Wenn du den CLI-Modus nicht deaktiveren musst, solltest du diese Anweisung ignorieren. False = CLI-Modus aktivieren [Standardeinstellung]; True = CLI-Modus deaktivieren.
+
+"disable_frontend"
+- Front-End-Access deaktivieren? Front-End-Access kann machen phpMussel einfacher zu handhaben, aber es kann auch ein potentielles Sicherheitsrisiko sein. Es wird empfohlen, wenn möglich, phpMussel über die Back-End-Access zu verwalten, aber Front-End-Access vorgesehen ist, für wenn es nicht möglich ist. Halten Sie es deaktiviert außer wenn Sie es brauchen. False = Front-End-Access aktivieren; True = Front-End-Access deaktivieren [Standardeinstellung].
 
 ####"signatures" (Kategorie)
 Konfiguration der Signaturen.
@@ -754,7 +757,7 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Upl
 ---
 
 
-###7. <a name="SECTION8"></a>SIGNATURENFORMAT
+###8. <a name="SECTION8"></a>SIGNATURENFORMAT
 
 ####*DATEINAMEN-SIGNATUREN*
 Alle Dateinamen-Signaturen besitzen folgendes Format:
@@ -842,7 +845,7 @@ Im Folgenden eine Aufschlüsselung der Signaturen, die von phpMussel genutzt wer
 ---
 
 
-###8. <a name="SECTION9"></a>BEKANNTE KOMPATIBILITÄTSPROBLEME
+###9. <a name="SECTION9"></a>BEKANNTE KOMPATIBILITÄTSPROBLEME
 
 ####PHP und PCRE
 - phpMussel benötigt PHP und PCRE, um ausgeführt werden zu können. Ohne PHP und ohne die PCRE-Erweiterungen von PHP, kann phpMussel nicht oder nicht ordnungsgemäß ausgeführt werden. Stellen Sie sicher, dass auf Ihrem System PHP und PCRE installiert und verfügbar ist, bevor Sie phpMussel herunterladen und installieren.
@@ -920,4 +923,4 @@ Diese Informationen wurden zuletzt am 29. August 2016 aktualisiert und gelten f�
 ---
 
 
-Zuletzt aktualisiert: 9. Oktober 2016 (2016.10.09).
+Zuletzt aktualisiert: 12. Oktober 2016 (2016.10.12).

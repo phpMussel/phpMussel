@@ -6,7 +6,7 @@
 - 2B. [BAGAIMANA CARA MENGINSTALL (UNTUK CLI)](#SECTION2B)
 - 3A. [BAGAIMANA CARA MENGGUNAKAN (UNTUK SERVER WEB)](#SECTION3A)
 - 3B. [BAGAIMANA CARA MENGGUNAKAN (UNTUK CLI)](#SECTION3B)
-- 4. [FRONT-END MANAGEMENT](#SECTION4)
+- 4. [MANAJEMEN FRONT-END](#SECTION4)
 - 5. [CLI (COMMAND LINE INTERFACE)](#SECTION5)
 - 6. [FILE YANG DIIKUTKAN DALAM PAKET INI](#SECTION6)
 - 7. [OPSI KONFIGURASI](#SECTION7)
@@ -121,7 +121,7 @@ Untuk sebuah pemecahan penuh dari jenis tanda tangan phpMussel yang digunakan se
 
 Jika Anda menjumpai bilangan positif yang salah, jika Anda menemukan hal baru yang harus di blok atau untuk apapun dalam tanda tangan mohon hubungi saya mengenainya sehingga saya dapat membuat perubahan yang perlu, dimana, jika Anda tidak menghubungi saya saya tidak tahu.
 
-Untuk menonaktifkan tanda tangan-tanda tangan yang dimasukkan dalam phpMussel (seperti jika Anda berpengalaman sebuah angka positif yang salah untuk tujuan Anda yang seharusnya secara normal di hapus dari aliran), mencocokkan ke catatan berwarna abu-abu didalam perintah browser dari file README.
+Untuk menonaktifkan tanda tangan-tanda tangan yang dimasukkan dalam phpMussel (seperti jika Anda berpengalaman sebuah angka positif yang salah untuk tujuan Anda yang seharusnya secara normal di hapus dari aliran), mencocokkan ke catatan berwarna abu-abu di dalam MANAJEMEN FRONT-END dari file README.
 
 ---
 
@@ -137,9 +137,9 @@ Mohon diingat bahwa phpMussel adalah scanner *on-demand*; adalah *BUKAN* scanner
 ---
 
 
-###4A. <a name="SECTION4"></a>PERINTAH-PERINTAH BROWSER
+###4. <a name="SECTION4"></a>MANAJEMEN FRONT-END
 
-@DEPRECATED@
+@TODO@
 
 Beberapa alasan mengapa Anda _**SEHARUSNYA**_ mengaktifkan kontrol-kontrol ini:
 - Menyediakan jalan untuk mewarnai biru tanda tangan secara langsung di dalam instansi-instansi seperti ketika Anda menemukan sebuah tanda tangan yang memproduksi sebuah angka positif yang salah selama mengupload file ke sistem Anda dan Anda tidak punya waktu untuk secara manual mengedit dan mengupload ulang file daftar abu-abu Anda.
@@ -156,7 +156,7 @@ Cara lain, tanpa bergantung dengan apa yang Anda pilih, pilihan adalah milik And
 ---
 
 
-###4B. <a name="SECTION5"></a>CLI (COMMAND LINE INTERFACE)
+###5. <a name="SECTION5"></a>CLI (COMMAND LINE INTERFACE)
 
 phpMussel dapat dijalankan sebagai sebuah file interaktif pemindai dalam mode CLI dalam Windows. Merujuk ke seksi "BAGAIMANA CARA MENGINSTALL (UNTUK CLI)" dari file README untuk lebih detail.
 
@@ -168,7 +168,7 @@ Sebagai tambahan, bagi yang berminat, sebuah video tutorial untuk bagaimana meng
 ---
 
 
-###5. <a name="SECTION6"></a>FILE YANG DIIKUTKAN DALAM PAKET INI
+###6. <a name="SECTION6"></a>FILE YANG DIIKUTKAN DALAM PAKET INI
 
 Berikut list dari semua file yang diikutkan di dalam kopi skrip yang dikompres ketika Anda mendownloadnya, setiap file-file yang secara potensial diciptakan sebagai hasil dari menggunakan skrip ini, sejalan dengan deskripsi singkat dari untuk apa file-file ini.
 
@@ -392,7 +392,7 @@ File-file tanda tangan ditandai dengan "_mussel" berisikan tanda tangan yang sec
 ---
 
 
-###6. <a name="SECTION7"></a>OPSI KONFIGURASI
+###7. <a name="SECTION7"></a>OPSI KONFIGURASI
 Berikut list variabel yang ditemukan pada file konfigurasi phpMussel `config.ini`, dengan deskripsi dari tujuan dan fungsi.
 
 ####"general" (Kategori)
@@ -470,7 +470,7 @@ Konfigurasi umum dari phpMussel.
 - Menonaktifkan modus CLI? Modus CLI diaktifkan secara default, tapi kadang-kadang dapat mengganggu alat pengujian tertentu (seperti PHPUnit, sebagai contoh) dan aplikasi CLI berbasis lainnya. Jika Anda tidak perlu menonaktifkan modus CLI, Anda harus mengabaikan direktif ini. False = Mengaktifkan modus CLI [Default]; True = Menonaktifkan modus CLI.
 
 "disable_frontend"
-- Menonaktifkan akses front-end? Akses front-end dapat membuat phpMussel lebih mudah dikelola, tapi juga dapat menjadi potensial resiko keamanan. Itu direkomendasi untuk mengelola phpMussel melalui back-end bila mungkin, tapi akses front-end yang disediakan untuk saat itu tidak mungkin. Memilikinya dinonaktifkan kecuali jika Anda membutuhkannya. False = Mengaktifkan akses front-end; True = Menonaktifkan akses front-end [Default].
+- Menonaktifkan akses bagian depan? Akses bagian depan dapat membuat phpMussel lebih mudah dikelola, tapi juga dapat menjadi potensial resiko keamanan. Itu direkomendasi untuk mengelola phpMussel melalui bagian belakang bila mungkin, tapi akses bagian depan yang disediakan untuk saat itu tidak mungkin. Memilikinya dinonaktifkan kecuali jika Anda membutuhkannya. False = Mengaktifkan akses bagian depan; True = Menonaktifkan akses bagian depan [Default].
 
 ####"signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
@@ -758,7 +758,7 @@ File template berkaitan untuk HTML diproduksi yang digunakan untuk menghasilkan 
 ---
 
 
-###7. <a name="SECTION8"></a>FORMAT TANDA TANGAN
+###8. <a name="SECTION8"></a>FORMAT TANDA TANGAN
 
 ####*TANDA TANGAN NAMA FILE*
 Semua tanda tangan nama file mengikuti format ini:
@@ -847,7 +847,7 @@ Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
 ---
 
 
-###8. <a name="SECTION9"></a>MASALAH KOMPATIBILITAS DIKETAHUI
+###9. <a name="SECTION9"></a>MASALAH KOMPATIBILITAS DIKETAHUI
 
 ####PHP dan PCRE
 - phpMussel memerlukan PHP dan PCRE untuk mengeksekusi dan berfungsi dengan baik. Tanpa PHP, atau tanpa ekstensi PCRE, phpMussel tidak akan mengeksekusi atau berfungsi dengan baik. Seharusnya memastikan sistem Anda terinstal PHP dan PCRE dan tersedia secara prioritas untuk mengunduh dan menginstal phpMussel.
@@ -925,4 +925,4 @@ Informasi ini diupdate 29 Agustus 2016 dan cocok untuk semua rilis phpMussel dar
 ---
 
 
-Terakhir Diperbarui: 11 Oktober 2016 (2016.10.11).
+Terakhir Diperbarui: 12 Oktober 2016 (2016.10.12).

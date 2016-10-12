@@ -121,7 +121,7 @@ For a full break-down of what sort of signatures phpMussel uses during its scans
 
 If you encounter any false positives, if you encounter something new that you think should be blocked, or for anything else regarding signatures, please contact me about it so that I may make the necessary changes, which, if you do not contact me, I may not necessarily be aware of.
 
-To disable signatures included with phpMussel (such as if you're experiencing a false positive specific to your purposes that shouldn't normally be removed from streamline), refer to the Greylisting notes within the Browser Commands section of this README file.
+To disable signatures included with phpMussel (such as if you're experiencing a false positive specific to your purposes that shouldn't normally be removed from mainline), refer to the Greylisting notes within the FRONT-END MANAGEMENT section of this README file.
 
 ---
 
@@ -140,7 +140,7 @@ Additionally, for those interested, a video tutorial for how to use phpMussel in
 ---
 
 
-###4A. <a name="SECTION4"></a>FRONT-END MANAGEMENT
+###4. <a name="SECTION4"></a>FRONT-END MANAGEMENT
 
 @DEPRECATED@
 
@@ -159,7 +159,7 @@ Either way, regardless of what you choose, the choice is ultimately yours. By de
 ---
 
 
-###4B. <a name="SECTION5"></a>CLI (COMMAND LINE INTERFACE)
+###5. <a name="SECTION5"></a>CLI (COMMAND LINE INTERFACE)
 
 phpMussel can be run as an interactive file scanner in CLI mode under Windows-based systems. Refer to the "HOW TO INSTALL (FOR CLI)" section of this README file for more details.
 
@@ -168,7 +168,7 @@ For a list of available CLI commands, at the CLI prompt, type 'c', and press Ent
 ---
 
 
-###5. <a name="SECTION6"></a>FILES INCLUDED IN THIS PACKAGE
+###6. <a name="SECTION6"></a>FILES INCLUDED IN THIS PACKAGE
 
 The following is a list of all of the files that should have been included in the archived copy of this script when you downloaded it, any files that may be potentially created as a result of your using this script, along with a short description of what all these files are for.
 
@@ -392,7 +392,7 @@ Signature files marked with "_mussel" contain signatures that specifically are n
 ---
 
 
-###6. <a name="SECTION7"></a>CONFIGURATION OPTIONS
+###7. <a name="SECTION7"></a>CONFIGURATION OPTIONS
 The following is a list of variables found in the `config.ini` configuration file of phpMussel, along with a description of their purpose and function.
 
 ####"general" (Category)
@@ -758,7 +758,7 @@ Template data relates to the HTML output used to generate the "Upload Denied" me
 ---
 
 
-###7. <a name="SECTION8"></a>SIGNATURE FORMAT
+###8. <a name="SECTION8"></a>SIGNATURE FORMAT
 
 ####*FILENAME SIGNATURES*
 All filename signatures follow the format:
@@ -847,7 +847,7 @@ The following is a breakdown of the types of signatures used by phpMussel:
 ---
 
 
-###8. <a name="SECTION9"></a>KNOWN COMPATIBILITY PROBLEMS
+###9. <a name="SECTION9"></a>KNOWN COMPATIBILITY PROBLEMS
 
 ####PHP and PCRE
 - phpMussel requires PHP and PCRE to execute and function correctly. Without PHP, or without the PCRE extension of PHP, phpMussel won't execute or function correctly. Should make sure your system has both PHP and PCRE installed and available prior to downloading and installing phpMussel.
@@ -925,4 +925,4 @@ This information was last updated 29th August 2016 and is current for all phpMus
 ---
 
 
-Last Updated: 11th October 2016 (2016.10.11).
+Last Updated: 12th October 2016 (2016.10.12).

@@ -6,7 +6,7 @@
 - 2B. [CÓMO INSTALAR (PARA CLI)](#SECTION2B)
 - 3A. [CÓMO USO (PARA NAVEGADORES)](#SECTION3A)
 - 3B. [CÓMO USO (PARA CLI)](#SECTION3B)
-- 4. [FRONT-END MANAGEMENT](#SECTION4)
+- 4. [GESTIÓN DE FRONT-END](#SECTION4)
 - 5. [CLI (COMANDOS LÍNEA INTERFAZ)](#SECTION5)
 - 6. [ARCHIVOS INCLUIDOS EN ESTE PAQUETE](#SECTION6)
 - 7. [OPCIONES DE CONFIGURACIÓN](#SECTION7)
@@ -117,11 +117,11 @@ Devuelve algo como esto (como una cadena):
  Wed, 16 Sep 2013 02:49:47 +0000 Terminado.
 ```
 
-Para una descripción completa del tipo de firmas phpMussel utiliza durante el escanear y la forma en que maneja estas firmas, consulte la sección formatos de firmas de este README archivo.
+Para una descripción completa del tipo de firmas phpMussel utiliza durante el escanear y la forma en que maneja estas firmas, consulte la sección formatos de firmas de este archivo README.
 
 Si se encuentra algún falsos positivos, si se encuentra con algo nuevo que crees que debería ser bloqueada, o para cualquier otra cosa en relación con las firmas, por favor contacto conmigo al respecto para que pueda hacer los cambios necesarios, para que, si no se comunica conmigo, posiblemente no necesariamente tener en cuenta.
 
-Para desactivar las firmas que se incluyen con phpMussel (por ejemplo, si usted está experimentando un falso positivo específico para sus propósitos que normalmente no debería ser suprimido), consulte las notas de la Greylist en el Navegador Comandos sección de este README archivo.
+Para desactivar las firmas que se incluyen con phpMussel (por ejemplo, si usted está experimentando un falso positivo específico para sus propósitos que normalmente no debería ser suprimido), consulte las notas de la Greylist en la GESTIÓN DE FRONT-END sección de este archivo README.
 
 ---
 
@@ -137,9 +137,9 @@ También tenga en cuenta que phpMussel es un escáner *on-demand*; *NO* es un es
 ---
 
 
-###4A. <a name="SECTION4"></a>NAVEGADOR COMANDOS
+###4. <a name="SECTION4"></a>GESTIÓN DE FRONT-END
 
-@DEPRECATED@
+@TODO@
 
 Algunas de las razones por las que _**DEBE**_ permitir estos controles:
 - Proporciona una fácil manera de greylist firmas en casos tales como cuando se descubre una firma que se produce un falso positivo mientras que subir archivos a su sistema y usted no tiene tiempo para editar manualmente y resubir su archivo de greylist firmas.
@@ -156,9 +156,9 @@ En cualquier manera, independientemente de lo que usted elija, la decisión es s
 ---
 
 
-###4B. <a name="SECTION5"></a>CLI (COMANDOS LÍNEA INTERFAZ)
+###5. <a name="SECTION5"></a>CLI (COMANDOS LÍNEA INTERFAZ)
 
-phpMussel se puede ejecutar como un interactivo archivos escáner en CLI modo dentro sistemas basados en Windows. Consulte el "CÓMO INSTALAR (PARA CLI)" sección de este README archivo para más detalles.
+phpMussel se puede ejecutar como un interactivo archivos escáner en CLI modo dentro sistemas basados en Windows. Consulte el "CÓMO INSTALAR (PARA CLI)" sección de este archivo README para más detalles.
 
 Para obtener una lista de los CLI comandos disponibles, para el CLI aviso, escriba 'c', y pulse Enter.
 
@@ -168,7 +168,7 @@ Adicionalmente, para los interesados, un video tutorial de cómo utilizar phpMus
 ---
 
 
-###5. <a name="SECTION6"></a>ARCHIVOS INCLUIDOS EN ESTE PAQUETE
+###6. <a name="SECTION6"></a>ARCHIVOS INCLUIDOS EN ESTE PAQUETE
 
 La siguiente es una lista de todos los archivos que debería haberse incluido en la copia de este script cuando descargado, todos los archivos que pueden ser potencialmente creados como resultado de su uso de este script, junto con una breve descripción de lo que todos estos archivos son para.
 
@@ -381,7 +381,7 @@ Firmas archivos marcados con "_regex" contienen firmas utilizando regulares expr
 
 Firmas archivos marcados con "_standard" contienen firmas que específicamente no utiliza ningún tipo de patrones.
 
-Firmas archivos marcados con no "_regex" ni "_standard" será como uno o el otro, pero no ambos (consulte la formatos de firmas sección de este README archivo para la documentación y específicos detalles).
+Firmas archivos marcados con no "_regex" ni "_standard" será como uno o el otro, pero no ambos (consulte la formatos de firmas sección de este archivo README para la documentación y específicos detalles).
 
 Firmas archivos marcados con "_clamav" contienen firmas que se obtenido enteramente de la base de datos de ClamAV (GNU/GPL).
 
@@ -392,7 +392,7 @@ Firmas archivos marcados con "_mussel" contienen firmas que se obtenido específ
 ---
 
 
-###6. <a name="SECTION7"></a>OPCIONES DE CONFIGURACIÓN
+###7. <a name="SECTION7"></a>OPCIONES DE CONFIGURACIÓN
 La siguiente es una lista de variables encuentran en la `config.ini` configuración archivo de phpMussel, junto con una descripción de sus propósito y función.
 
 ####"general" (Categoría)
@@ -757,7 +757,7 @@ Plantilla datos es relacionados a la HTML utilizado generar el "Subida Denegada"
 ---
 
 
-###7. <a name="SECTION8"></a>FORMATOS DE FIRMAS
+###8. <a name="SECTION8"></a>FORMATOS DE FIRMAS
 
 ####*FIRMAS BASADAS EN LAS NOMBRES DEL ARCHIVOS*
 Todas firmas basadas en las nombres del archivos seguir el formato:
@@ -846,7 +846,7 @@ El siguiente es el desglose de los tipos de firmas utilizado por phpMussel:
 ---
 
 
-###8. <a name="SECTION9"></a>CONOCIDOS PROBLEMAS DE COMPATIBILIDAD
+###9. <a name="SECTION9"></a>CONOCIDOS PROBLEMAS DE COMPATIBILIDAD
 
 ####PHP y PCRE
 - phpMussel requiere PHP y PCRE para ejecutar y funcionar correctamente. Sin PHP, o sin la PCRE extensión de PHP, phpMussel no ejecutará o funcionará correctamente. Debe asegurarse de que su sistema tiene tanto PHP y PCRE instalados y disponibles antes de descargar e instalar phpMussel.
@@ -924,4 +924,4 @@ Esta información ha sido actualizado 29 Agosto 2016 y es a hoy para todas las p
 ---
 
 
-Última Actualización: 11 Octubre 2016 (2016.10.11).
+Última Actualización: 12 Octubre 2016 (2016.10.12).

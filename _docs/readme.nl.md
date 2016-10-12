@@ -6,7 +6,7 @@
 - 2B. [HOE TE INSTALLEREN (VOOR CLI)](#SECTION2B)
 - 3A. [HOE TE GEBRUIKEN (VOOR WEBSERVERS)](#SECTION3A)
 - 3B. [HOE TE GEBRUIKEN (VOOR CLI)](#SECTION3B)
-- 4. [FRONT-END MANAGEMENT](#SECTION4)
+- 4. [FRONTEND MANAGEMENT](#SECTION4)
 - 5. [CLI (COMMANDLIJN INTERFACE)](#SECTION5)
 - 6. [BESTANDEN IN DIT PAKKET](#SECTION6)
 - 7. [CONFIGURATIEOPTIES](#SECTION7)
@@ -121,7 +121,7 @@ Voor een volledige beschrijving van de soorten van de handtekeningen gebruikt do
 
 Als u tegenkomen valse positieven, als u iets nieuws tegenkomen waarvan u denkt dat zou moeten geblokkeerd worden, of voor iets anders met betrekking tot handtekeningen, neem dan contact met mij over het zo dat ik de noodzakelijke veranderingen kunnen maken, die, als u niet contact met mij over, ik zou niet per se bewust van.
 
-Voor uitschakelen om de handtekeningen die bij phpMussel (zoals als u het ervaren van een vals positief specifiek voor uw doeleinden dat mag niet normaal van stroomlijn worden verwijderd), raadpleeg de greylisting aantekeningen binnen de Browser Richtlijnen sectie van dit README bestand.
+Voor uitschakelen om de handtekeningen die bij phpMussel (zoals als u het ervaren van een vals positief specifiek voor uw doeleinden dat mag niet normaal van stroomlijn worden verwijderd), raadpleeg de greylisting aantekeningen binnen de FRONTEND MANAGEMENT sectie van dit README bestand.
 
 ---
 
@@ -137,9 +137,9 @@ Eveneens, noteren dat phpMussel is een *on-demand* scanner; Het is *GEEN* *on-ac
 ---
 
 
-###4A. <a name="SECTION4"></a>BROWSER RICHTLIJNEN
+###4. <a name="SECTION4"></a>FRONTEND MANAGEMENT
 
-@DEPRECATED@
+@TODO@
 
 Redenen voor deze controles te wordt ingeschakeld:
 - Biedt een manier om handtekeningen te greylist in gevallen zoals wanneer u ontdekken een handtekening dat is produceren van een vals-positieve tijdens het uploaden van bestanden naar uw systeem en u heeft geen tijd te handmatig bewerken en heruploaden uw greylist bestand.
@@ -156,7 +156,7 @@ In elk geval, ongeacht wat u kiest, de keuze is uiteindelijk jou. Standaard, dez
 ---
 
 
-###4B. <a name="SECTION5"></a>CLI (COMMANDLIJN INTERFACE)
+###5. <a name="SECTION5"></a>CLI (COMMANDLIJN INTERFACE)
 
 phpMussel kan worden uitgevoerd als een interactief bestand scanner in de CLI-modus onder Windows-gebaseerde systemen. Raadpleeg de sectie "HOE TE INSTALLEREN (VOOR CLI)" van deze README bestand voor meer informatie.
 
@@ -168,7 +168,7 @@ Daarnaast, voor diegenen die geïnteresseerd, een video-tutorial voor hoe te geb
 ---
 
 
-###5. <a name="SECTION6"></a>BESTANDEN IN DIT PAKKET
+###6. <a name="SECTION6"></a>BESTANDEN IN DIT PAKKET
 
 Het volgende is een lijst van alle bestanden die moeten worden opgenomen in de gearchiveerde kopie van dit script als u gedownload het, alle bestanden die kunt mogelijk worden gemaakt als resultaat van uw gebruik van dit script, samen met een korte beschrijving van wat al deze bestanden zijn voor.
 
@@ -392,7 +392,7 @@ Handtekening bestanden gemarkeerd met "_mussel" bevatten handtekeningen dat spec
 ---
 
 
-###6. <a name="SECTION7"></a>CONFIGURATIEOPTIES
+###7. <a name="SECTION7"></a>CONFIGURATIEOPTIES
 Het volgende is een lijst van variabelen die in de `config.ini` configuratiebestand van phpMussel, samen met een beschrijving van hun doel en functie.
 
 ####"general" (Categorie)
@@ -470,7 +470,7 @@ Algemene configuratie voor phpMussel.
 - Uitschakelen CLI-modus? CLI-modus is standaard ingeschakeld, maar kunt somtijds interfereren met bepaalde testtools (zoals PHPUnit bijvoorbeeld) en andere CLI-gebaseerde applicaties. Als u niet hoeft te uitschakelen CLI-modus, u moeten om dit richtlijn te negeren. False = Inschakelen CLI-modus [Standaard]; True = Uitschakelen CLI-modus.
 
 "disable_frontend"
-- Uitschakelen front-end toegang? Front-end toegang kan phpMussel beter beheersbaar te maken, maar kan ook een potentieel gevaar voor de veiligheid zijn. Het is aan te raden om phpMussel te beheren via het back-end wanneer mogelijk, maar front-end toegang is hier voorzien voor wanneer het niet mogelijk is. Hebben het uitgeschakeld tenzij u het nodig hebt. False = Inschakelen front-end toegang; True = Uitschakelen front-end toegang [Standaard].
+- Uitschakelen frontend toegang? frontend toegang kan phpMussel beter beheersbaar te maken, maar kan ook een potentieel gevaar voor de veiligheid zijn. Het is aan te raden om phpMussel te beheren via het backend wanneer mogelijk, maar frontend toegang is hier voorzien voor wanneer het niet mogelijk is. Hebben het uitgeschakeld tenzij u het nodig hebt. False = Inschakelen frontend toegang; True = Uitschakelen frontend toegang [Standaard].
 
 ####"signatures" (Categorie)
 Configuratie voor handtekeningen.
@@ -758,7 +758,7 @@ Sjabloongegevens betreft op de HTML-uitvoer die wordt gegenereerd en gebruikt vo
 ---
 
 
-###7. <a name="SECTION8"></a>HANDTEKENINGFORMAAT
+###8. <a name="SECTION8"></a>HANDTEKENINGFORMAAT
 
 ####*BESTANDSNAAM HANDTEKENINGEN*
 Alle bestandsnaam handtekeningen volgt het formaat:
@@ -847,7 +847,7 @@ Het volgende is een overzicht van de soorten handtekeningen gebruikt door phpMus
 ---
 
 
-###8. <a name="SECTION9"></a>BEKENDE COMPATIBILITEITSPROBLEMEN
+###9. <a name="SECTION9"></a>BEKENDE COMPATIBILITEITSPROBLEMEN
 
 ####PHP en PCRE
 - PHP en PCRE is vereist voor phpMussel te kunnen functioneren juist. Zonder PHP, of zonder de PCRE extensie van PHP, phpMussel zullen niet worden uitgevoerd of functioneren juist. U moet er zeker van uw systeem heeft zowel PHP en PCRE geïnstalleerd en beschikbaar voordat downloaden en installeren phpMussel.
@@ -925,4 +925,4 @@ Dit informatie werd laatst bijgewerkt 29 Augustus 2016 en is op de hoogte voor a
 ---
 
 
-Laatste Bijgewerkt: 11 Oktober 2016 (2016.10.11).
+Laatste Bijgewerkt: 12 Oktober 2016 (2016.10.12).

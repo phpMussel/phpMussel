@@ -6,7 +6,7 @@
 - 2B. [COMO INSTALAR (PARA CLI)](#SECTION2B)
 - 3A. [COMO USAR (PARA WEB SERVIDORES)](#SECTION3A)
 - 3B. [COMO USAR (PARA CLI)](#SECTION3B)
-- 4. [FRONT-END MANAGEMENT](#SECTION4)
+- 4. [GESTÃO DE FRONT-END](#SECTION4)
 - 5. [CLI (COMANDO LINHA INTERFACE)](#SECTION5)
 - 6. [ARQUIVOS INCLUÍDOS NESTE PACOTE](#SECTION6)
 - 7. [OPÇÕES DE CONFIGURAÇÃO](#SECTION7)
@@ -121,7 +121,7 @@ Por completos detalhes sobre que tipo de assinaturas phpMussel usa durante a an�
 
 Se você encontrar quaisquer falsos positivos, se você encontrar algo novo que você acha deve ser bloqueado, ou para qualquer outra coisa com relação a assinatura, entre em contato comigo sobre isso para que eu possa fazer as mudanças necessárias, que, se você não entrar em contato comigo, eu posso não ser necessariamente conscientes de.
 
-Para desativar as assinaturas que estão incluídos com phpMussel (tal como se você está experimentando falsos positivos específico para seus fins que não deve normalmente ser removidos da agilize), consulte as notas sobre Greylisting dentro do Navegador Comandos seção deste arquivo README.
+Para desativar as assinaturas que estão incluídos com phpMussel (tal como se você está experimentando falsos positivos específico para seus fins que não deve normalmente ser removidos da agilize), consulte as notas sobre Greylisting dentro de seção GESTÃO DE FRONT-END deste arquivo README.
 
 ---
 
@@ -137,9 +137,9 @@ Também estar ciente de que phpMussel é um scanner *on-demand*; *NÃO* é um sc
 ---
 
 
-###4A. <a name="SECTION4"></a>NAVEGADOR COMANDOS
+###4. <a name="SECTION4"></a>GESTÃO DE FRONT-END
 
-@DEPRECATED@
+@TODO@
 
 Algumas razões pelas quais você _**DEVE**_ ativar esses controles:
 - Fornece uma maneira para greylist assinaturas em casos como quando você descobre uma assinatura que está produzindo um falso-positivo durante o carregar de arquivos para o seu sistema e você não tem tempo para manualmente editar e recarregar o greylist arquivo.
@@ -156,7 +156,7 @@ De qualquer maneira, independentemente do que você escolher, a escolha final é
 ---
 
 
-###4B. <a name="SECTION5"></a>CLI (COMANDO LINHA INTERFACE)
+###5. <a name="SECTION5"></a>CLI (COMANDO LINHA INTERFACE)
 
 phpMussel pode ser executado como um interativo arquivo analisador no CLI modo em sistemas baseados em Windows. Por favor, consulte ao "COMO INSTALAR (PARA CLI)" seção deste arquivo README por mais detalhes.
 
@@ -168,7 +168,7 @@ Além disso, para os interessados, um tutorial em vídeo para saber como usar ph
 ---
 
 
-###5. <a name="SECTION6"></a>ARQUIVOS INCLUÍDOS NESTE PACOTE
+###6. <a name="SECTION6"></a>ARQUIVOS INCLUÍDOS NESTE PACOTE
 
 O seguinte está uma lista de todos os arquivos que deveria sido incluídos na arquivada cópia desse script quando você baixado-lo, todos os arquivos que podem ser potencialmente criados como resultado de seu uso deste script, juntamente com uma breve descrição do que todos esses arquivos são por.
 
@@ -392,7 +392,7 @@ Assinatura arquivos marcados com "_mussel" contêm assinaturas que são especifi
 ---
 
 
-###6. <a name="SECTION7"></a>OPÇÕES DE CONFIGURAÇÃO
+###7. <a name="SECTION7"></a>OPÇÕES DE CONFIGURAÇÃO
 O seguinte é uma lista de variáveis encontradas no `config.ini` arquivo de configuração para phpMussel, juntamente com uma descrição de sua propósito e função.
 
 ####"general" (Categoria)
@@ -758,7 +758,7 @@ Template dados está associada com o HTML usado para gerar a "Carregar Negado" m
 ---
 
 
-###7. <a name="SECTION8"></a>FORMATOS DE ASSINATURAS
+###8. <a name="SECTION8"></a>FORMATOS DE ASSINATURAS
 
 ####*ARQUIVO NOME ASSINATURAS*
 Todas as arquivo nome assinaturas seguir o formato:
@@ -847,7 +847,7 @@ A seguir estão os diferentes tipos de assinaturas utilizadas por phpMussel:
 ---
 
 
-###8. <a name="SECTION9"></a>CONHECIDOS COMPATIBILIDADE PROBLEMAS
+###9. <a name="SECTION9"></a>CONHECIDOS COMPATIBILIDADE PROBLEMAS
 
 ####PHP e PCRE
 - phpMussel requer PHP e PCRE para executar e funcionar corretamente. Sem PHP, ou sem a PCRE extensão do PHP, phpMussel não vai executará ou funcionar corretamente. Deve certificar-se de que seu sistema tenha PHP e PCRE instalado e disponível antes de baixar e instalar phpMussel.
@@ -925,4 +925,4 @@ Esta informação foi atualizada dia 29 Agosto 2016 e é corrente para todas php
 ---
 
 
-Última Atualização: 11 Outubro 2016 (2016.10.11).
+Última Atualização: 12 Outubro 2016 (2016.10.12).

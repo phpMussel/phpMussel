@@ -6,7 +6,7 @@
 - 2B. [CÁCH CÀI ĐẶT (CHO CLI)](#SECTION2B)
 - 3A. [CÁCH SỬ DỤNG (CHO CÁC TRANG MẠNG)](#SECTION3A)
 - 3B. [CÁCH SỬ DỤNG (CHO CLI)](#SECTION3B)
-- 4. [FRONT-END MANAGEMENT](#SECTION4)
+- 4. [QUẢN LÝ FRONT-END](#SECTION4)
 - 5. [CLI (LỆNH CHO DÒNG GIAO DIỆN)](#SECTION5)
 - 6. [TẬP TIN BAO GỒM TRONG GÓI NÀY](#SECTION6)
 - 7. [TÙY CHỌN CHO CẤU HÌNH](#SECTION7)
@@ -121,7 +121,7 @@ Trả về một cái gì đó như thế này (như một string):
 
 Nếu bạn gặp bất kỳ sai tích cực, nếu bạn gặp một số điều mới bạn nghĩ rằng nên bị chặn, hay cho bất cứ điều gì khác có liên quan đến chữ ký, xin vui lòng liên hệ với tôi vì vậy mà tôi có thể thực hiện các thay đổi cần thiết, mà, nếu bạn không liên hệ với tôi, tôi có thể không nhất thiết phải nhận thức được.
 
-Để vô hiệu hóa chữ ký đã bao gồm trong phpMussel (chẳng hạn như nếu bạn gặp một sai tích cực và bạn không thể loại bỏ nó), tham khảo các ghi chú cho các danh sách xám trong các phần Lệnh Cho Trình Duyệt của tập tin README này.
+Để vô hiệu hóa chữ ký đã bao gồm trong phpMussel (chẳng hạn như nếu bạn gặp một sai tích cực và bạn không thể loại bỏ nó), tham khảo các ghi chú cho các danh sách xám trong các phần QUẢN LÝ FRONT-END của tập tin README này.
 
 ---
 
@@ -137,9 +137,9 @@ Ngoài ra, ý thức được rằng phpMussel là một máy quét *khi yêu c�
 ---
 
 
-###4A. <a name="SECTION4"></a>ĐIỀU KHIỂN TRÌNH DUYỆT
+###4. <a name="SECTION4"></a>QUẢN LÝ FRONT-END
 
-@DEPRECATED@
+@TODO@
 
 Một số lý do tại sao bạn _**NÊN**_ cho phép những điều khiển này:
 - Cung cấp một cách để đánh dấu chữ ký xám tự phát trong trường hợp như thế khi bạn phát hiện ra một chữ ký đó là sản xuất một sai tích cực trong khi tải lên các tập tin để hệ thống của bạn và bạn không có thời gian để tự chỉnh sửa và tải lên tập tin danh sách xám của bạn lần nữa.
@@ -156,7 +156,7 @@ Dù bằng cách nào, bất kể những gì bạn lựa chọn, các sự lự
 ---
 
 
-###4B. <a name="SECTION5"></a>CLI (LỆNH CHO DÒNG GIAO DIỆN)
+###5. <a name="SECTION5"></a>CLI (LỆNH CHO DÒNG GIAO DIỆN)
 
 phpMussel có thể được chạy như một máy quét tập tin tương tác trong chế độ CLI theo các hệ thống dựa trên Windows. Tham khảo phần "CÁCH CÀI ĐẶT (CHO CLI)" của tập tin README này để biết thêm chi tiết.
 
@@ -168,7 +168,7 @@ Ngoài ra, cho những người quan tâm, một hướng dẫn video về cách
 ---
 
 
-###5. <a name="SECTION6"></a>TẬP TIN BAO GỒM TRONG GÓI NÀY
+###6. <a name="SECTION6"></a>TẬP TIN BAO GỒM TRONG GÓI NÀY
 
 Sau đây là một danh sách tất cả các tập tin mà cần phải có được bao gồm trong bản sao lưu của kịch bản này khi bạn tải về nó, bất kỳ tập tin mà có thể có lẽ được tạo ra là kết quả của bạn sử dụng kịch bản này, cùng với một mô tả ngắn cho những gì tất cả những tập tin này là dành cho.
 
@@ -392,7 +392,7 @@ Tập tin chữ ký đánh dấu với "_mussel" chứa chữ ký mà đặc bi�
 ---
 
 
-###6. <a name="SECTION7"></a>TÙY CHỌN CHO CẤU HÌNH
+###7. <a name="SECTION7"></a>TÙY CHỌN CHO CẤU HÌNH
 Sau đây là danh sách các biến tìm thấy trong tập tin cấu hình cho phpMussel `config.ini`, cùng với một mô tả về mục đích và chức năng của chúng.
 
 ####"general" (Thể loại)
@@ -468,6 +468,9 @@ Cấu hình chung cho phpMussel.
 
 "disable_cli"
 - Vô hiệu hóa chế độ CLI? Chế độ CLI được kích hoạt theo mặc định, nhưng đôi khi có thể gây trở ngại cho công cụ kiểm tra nhất định (như PHPUnit, cho ví dụ) và khác ứng dụng mà CLI dựa trên. Nếu bạn không cần phải vô hiệu hóa chế độ CLI, bạn nên bỏ qua tùy chọn này. False = Kích hoạt chế độ CLI [Mặc định]; True = Vô hiệu hóa chế độ CLI.
+
+"disable_frontend"
+- Vô hiệu hóa truy cập front-end? Truy cập front-end có thể làm cho phpMussel dễ quản lý hơn, nhưng cũng có thể là một nguy cơ bảo mật tiềm năng. Đó là khuyến cáo để quản lý phpMussel từ các back-end bất cứ khi nào có thể, nhưng truy cập front-end là cung cấp khi nó không phải là có thể. Giữ nó vô hiệu hóa trừ khi bạn cần nó. False = Kích hoạt truy cập front-end; True = Vô hiệu hóa truy cập front-end [Mặc định].
 
 ####"signatures" (Thể loại)
 Cấu hình cho chữ ký.
@@ -755,7 +758,7 @@ Dữ liệu mẫu thiết kế liên quan đến đầu ra HTML sử dụng đ�
 ---
 
 
-###7. <a name="SECTION8"></a>ĐỊNH DẠNG CỦA CHỬ KÝ
+###8. <a name="SECTION8"></a>ĐỊNH DẠNG CỦA CHỬ KÝ
 
 ####*CHỮ KÝ CHO TÊN TẬP TIN*
 Tất cả các chữ ký cho tên tập tin tuân theo các định dạng:
@@ -844,7 +847,7 @@ Sau đây là một danh sách các loại chữ ký được sử dụng bởi 
 ---
 
 
-###8. <a name="SECTION9"></a>NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH
+###9. <a name="SECTION9"></a>NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH
 
 ####PHP và PCRE
 - phpMussel cần PHP và PCRE để thực hiện và hoạt động. Nếu không có PHP, hoạc không có PCRE thêm của PHP, phpMussel sẽ không thực hiện và hoạt động bình thường. Bạn nên chắc chắc rằng hệ thống của bạn có PHP và PCRE cài vào và có sẵn trước khi tải và cài đặt phpMussel.
@@ -922,4 +925,4 @@ Thông tin này được cập nhật lần cứơi vào ngày 29 Tháng Tám 20
 ---
 
 
-Lần cuối cập nhật: 9 Tháng Mười 2016 (2016.10.09).
+Lần cuối cập nhật: 12 Tháng Mười 2016 (2016.10.12).

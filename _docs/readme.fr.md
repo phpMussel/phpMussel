@@ -6,7 +6,7 @@
 - 2B. [COMMENT INSTALLER (POUR CLI)](#SECTION2B)
 - 3A. [COMMENT UTILISER (POUR SERVEURS WEB)](#SECTION3A)
 - 3B. [COMMENT UTILISER (POUR CLI)](#SECTION3B)
-- 4. [FRONT-END MANAGEMENT](#SECTION4)
+- 4. [GESTION FRONT-END](#SECTION4)
 - 5. [CLI (COMMANDE LIGNE INTERFACE)](#SECTION5)
 - 6. [FICHIERS INCLUS DANS CETTE PAQUET](#SECTION6)
 - 7. [OPTIONS DE CONFIGURATION](#SECTION7)
@@ -117,18 +117,18 @@ Retours quelque chose comme ça (comme une string):
  Wed, 16 Sep 2013 02:49:47 +0000 Terminé.
 ```
 
-Pour un complet itinéraire de signatures que sera utilisé par phpMussel pour l'analyse et la façon dont il gère ces signatures, référer à la Signature Format section de ce README fichier.
+Pour un complet itinéraire de signatures que sera utilisé par phpMussel pour l'analyse et la façon dont il gère ces signatures, référer à la Signature Format section de ce fichier README.
 
 Si vous rencontrez des faux positifs, si vous rencontrez quelque chose nouveau que vous pensez doit être bloqué, ou pour toute autre chose en ce qui concerne les signatures, s'il vous plaît, contactez moi à ce sujet afin que je puisse effectuer les nécessaires changements, dont, si vous ne contactez moi pas, j'ai peut n'être pas conscient.
 
-Pour désactiver les signatures qui sont incluent avec phpMussel (comme si vous rencontrez un faux positif spécifique à vos besoins dont ne devrait normalement pas être retiré à partir de rationaliser), référer aux les notes de la liste grise dans les Commandes du Navigateur section de ce README fichier.
+Pour désactiver les signatures qui sont incluent avec phpMussel (comme si vous rencontrez un faux positif spécifique à vos besoins dont ne devrait normalement pas être retiré à partir de rationaliser), référer aux les notes de la liste grise dans la GESTION FRONT-END section de ce fichier README.
 
 ---
 
 
 ###3B. <a name="SECTION3B"></a>COMMENT UTILISER (POUR CLI)
 
-S'il vous plaît, référer à la "COMMENT INSTALLER (POUR CLI)" section de ce README fichier.
+S'il vous plaît, référer à la "COMMENT INSTALLER (POUR CLI)" section de ce fichier README.
 
 Soyez conscient que, bien que avenirs versions de phpMussel devraient soutenir d'autres systèmes, à ce moment, soutien pour le mode CLI de phpMussel est optimisé uniquement pour l'utilisation sur le Windows basée systèmes (vous pouvez, bien sûr, essayer sur d'autres systèmes, mais je ne peux pas garantir que ça va fonctionner comme prévu).
 
@@ -137,9 +137,9 @@ Aussi soyez conscient que phpMussel est un scanner *à la demande* (ou *on-deman
 ---
 
 
-###4A. <a name="SECTION4"></a>COMMANDES DU NAVIGATEUR
+###4. <a name="SECTION4"></a>GESTION FRONT-END
 
-@DEPRECATED@
+@TODO@
 
 Quelques raisons pour lesquelles vous _**DEVRIEZ**_ permettre à ces contrôles:
 - Fournit une méthode à liste grise les signatures sur la volée dans des cas comme lorsque vous découvrez une signature qui produit un faux positif tandis le téléchargement de fichiers à votre système et vous n'avez pas le temps à manuellement modifier et rétélécharger votre liste grise fichier.
@@ -156,9 +156,9 @@ De toute façon, indépendamment de que vous choisissez, le choix est finalement
 ---
 
 
-###4B. <a name="SECTION5"></a>CLI (COMMANDE LIGNE INTERFACE)
+###5. <a name="SECTION5"></a>CLI (COMMANDE LIGNE INTERFACE)
 
-phpMussel peut être exécuté comme un analyseur de fichiers interactif en mode CLI dans windows. Référer à la "COMMENT INSTALLER (POUR CLI)" section de ce README fichier pour plus détails.
+phpMussel peut être exécuté comme un analyseur de fichiers interactif en mode CLI dans windows. Référer à la "COMMENT INSTALLER (POUR CLI)" section de ce fichier README pour plus détails.
 
 Pour une liste des disponibles CLI commandes, à l'invite CLI, tapez «c», et appuyez sur Entrée.
 
@@ -168,7 +168,7 @@ En outre, pour les personnes intéressées, un didacticiel vidéo pour savoir co
 ---
 
 
-###5. <a name="SECTION6"></a>FICHIERS INCLUS DANS CETTE PAQUET
+###6. <a name="SECTION6"></a>FICHIERS INCLUS DANS CETTE PAQUET
 
 Voici une liste de tous les fichiers inclus dans phpMussel dans son natif état, tous les fichiers qui peuvent être potentiellement créées à la suite de l'utilisation de ce script, avec une brève description de ce que tous ces fichiers sont pour.
 
@@ -381,7 +381,7 @@ Signature fichiers marqué avec "_regex" contenir signatures qui utilisent regul
 
 Signature fichiers marqué avec "_standard" contenir signatures qui n'utilisent toute spécifique forme de modèle vérification.
 
-Signature fichiers non marqués avec "_regex" ou "_standard" seront aussi l'un ou l'autre (mais pas deux); Référer à la Signature Format section de ce README fichier pour la documentation et les spécifiques détails.
+Signature fichiers non marqués avec "_regex" ou "_standard" seront aussi l'un ou l'autre (mais pas deux); Référer à la Signature Format section de ce fichier README pour la documentation et les spécifiques détails.
 
 Signature fichiers marqué avec "_clamav" contient signatures entièrement basée du ClamAV base de données (GNU/GPL).
 
@@ -392,7 +392,7 @@ Signature fichiers marqué avec "_mussel" contenir signatures qui ne sont pas sp
 ---
 
 
-###6. <a name="SECTION7"></a>OPTIONS DE CONFIGURATION
+###7. <a name="SECTION7"></a>OPTIONS DE CONFIGURATION
 Ce qui suit est une liste des directives disponibles pour phpMussel dans le `config.ini` fichier de configuration, avec une description de leur objectif et leur fonction.
 
 ####"general" (Catégorie)
@@ -758,7 +758,7 @@ Modèles données est liée à la sortie HTML utilisé pour générer le "Télé
 ---
 
 
-###7. <a name="SECTION8"></a>FORMATS DE SIGNATURES
+###8. <a name="SECTION8"></a>FORMATS DE SIGNATURES
 
 ####*SIGNATURES POUR LES NOMS DE FICHIERS*
 Toutes les signatures pour les noms de fichiers suivez le format:
@@ -847,7 +847,7 @@ Ce qui suit est un détail des types de signatures utilisées par phpMussel:
 ---
 
 
-###8. <a name="SECTION9"></a>PROBLÈMES DE COMPATIBILITÉ CONNUS
+###9. <a name="SECTION9"></a>PROBLÈMES DE COMPATIBILITÉ CONNUS
 
 ####PHP et PCRE
 - phpMussel requérir PHP et PCRE à signer et à fonctionner correctement. Sans PHP, ou sans le PCRE extension de PHP, phpMussel n'exécutera pas ou fonctionnent correctement. Devrait s'assurer que votre système avoir PHP et PCRE installé et disponible avant de votre téléchargement et installation de phpMussel.
@@ -925,4 +925,4 @@ Cette information a été réactualisé le 29 Août 2016 et est courant pour tou
 ---
 
 
-Dernière Réactualisé: 11 Octobre 2016 (2016.10.11).
+Dernière Réactualisé: 12 Octobre 2016 (2016.10.12).
