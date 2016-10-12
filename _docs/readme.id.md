@@ -6,7 +6,7 @@
 - 2B. [BAGAIMANA CARA MENGINSTALL (UNTUK CLI)](#SECTION2B)
 - 3A. [BAGAIMANA CARA MENGGUNAKAN (UNTUK SERVER WEB)](#SECTION3A)
 - 3B. [BAGAIMANA CARA MENGGUNAKAN (UNTUK CLI)](#SECTION3B)
-- 4. [MANAJEMEN FRONT-END](#SECTION4)
+- 4. [MANAJEMEN BAGIAN DEPAN](#SECTION4)
 - 5. [CLI (COMMAND LINE INTERFACE)](#SECTION5)
 - 6. [FILE YANG DIIKUTKAN DALAM PAKET INI](#SECTION6)
 - 7. [OPSI KONFIGURASI](#SECTION7)
@@ -121,7 +121,7 @@ Untuk sebuah pemecahan penuh dari jenis tanda tangan phpMussel yang digunakan se
 
 Jika Anda menjumpai bilangan positif yang salah, jika Anda menemukan hal baru yang harus di blok atau untuk apapun dalam tanda tangan mohon hubungi saya mengenainya sehingga saya dapat membuat perubahan yang perlu, dimana, jika Anda tidak menghubungi saya saya tidak tahu.
 
-Untuk menonaktifkan tanda tangan-tanda tangan yang dimasukkan dalam phpMussel (seperti jika Anda berpengalaman sebuah angka positif yang salah untuk tujuan Anda yang seharusnya secara normal di hapus dari aliran), mencocokkan ke catatan berwarna abu-abu di dalam MANAJEMEN FRONT-END dari file README.
+Untuk menonaktifkan tanda tangan-tanda tangan yang dimasukkan dalam phpMussel (seperti jika Anda berpengalaman sebuah angka positif yang salah untuk tujuan Anda yang seharusnya secara normal di hapus dari aliran), mencocokkan ke catatan berwarna abu-abu di dalam MANAJEMEN BAGIAN DEPAN dari file README.
 
 ---
 
@@ -137,7 +137,7 @@ Mohon diingat bahwa phpMussel adalah scanner *on-demand*; adalah *BUKAN* scanner
 ---
 
 
-###4. <a name="SECTION4"></a>MANAJEMEN FRONT-END
+###4. <a name="SECTION4"></a>MANAJEMEN BAGIAN DEPAN
 
 @TODO@
 
