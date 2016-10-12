@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.10.08).
+ * This file: Functions file (last modified: 2016.10.12).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -1567,9 +1567,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     /** If the memory cache isn't set at this point, something has gone very wrong. */
     if (!isset($phpMussel['memCache'])) {
         throw new \Exception(
-            (!isset($phpMussel['Config']['lang']['required_variables_not_defined'])) ?
+            (!isset($phpMussel['lang']['required_variables_not_defined'])) ?
             '[phpMussel] Required variables aren\'t defined: Can\'t continue.' :
-            '[phpMussel] ' . $phpMussel['Config']['lang']['required_variables_not_defined']
+            '[phpMussel] ' . $phpMussel['lang']['required_variables_not_defined']
         );
     }
 
@@ -1616,11 +1616,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
         $phpMussel['memCache']['detections_count']++;
         $out .=
-            $lnap . $phpMussel['Config']['lang']['scan_missing_filename'] .
-            $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+            $lnap . $phpMussel['lang']['scan_missing_filename'] .
+            $phpMussel['lang']['_exclamation_final'] . "\n";
         $phpMussel['whyflagged'] .=
-            $phpMussel['Config']['lang']['scan_missing_filename'] .
-            $phpMussel['Config']['lang']['_exclamation'];
+            $phpMussel['lang']['scan_missing_filename'] .
+            $phpMussel['lang']['_exclamation'];
         return array(2, $out);
     }
     /** URL-encoded version of the scan target name. */
@@ -1892,11 +1892,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
             }
             $phpMussel['whyflagged'] .=
-                $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                ' (switch.dat)' . $phpMussel['Config']['lang']['_exclamation'];
+                $phpMussel['lang']['scan_signature_file_missing'] .
+                ' (switch.dat)' . $phpMussel['lang']['_exclamation'];
             return array(-3,
-                $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                ' (switch.dat)' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
+                ' (switch.dat)' . $phpMussel['lang']['_exclamation_final'] . "\n"
             );
         }
     }
@@ -2151,11 +2151,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     $heur['detections']++;
                     $phpMussel['memCache']['detections_count']++;
                     $out .=
-                        $lnap . $phpMussel['Config']['lang']['corrupted'] .
-                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                        $lnap . $phpMussel['lang']['corrupted'] .
+                        $phpMussel['lang']['_exclamation_final'] . "\n";
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['corrupted'] .
-                        ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['corrupted'] .
+                        ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                 }
             } else {
                 $is_pe = true;
@@ -3302,13 +3302,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                     }
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['scan_signature_file_missing'] .
+                        $phpMussel['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
-                        $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['_exclamation'];
                     return array(-3,
-                        $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
+                        $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
-                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        $phpMussel['lang']['_exclamation_final'] . "\n"
                     );
                 }
             } else {
@@ -3335,13 +3335,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                     }
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['scan_signature_file_missing'] .
+                        $phpMussel['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
-                        $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['_exclamation'];
                     return array(-3,
-                        $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
+                        $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
-                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        $phpMussel['lang']['_exclamation_final'] . "\n"
                     );
                 }
             $c = 0;
@@ -3449,21 +3449,21 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 $heur['weight']++;
                                 $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
                                     array('vn' => $vn),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $phpMussel['lang']['detected']
+                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $heur['web'] .= $phpMussel['ParseVars'](
                                     array('vn' => $vn),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . ' (' . $ofnSafe.')' . $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['detected']
+                                ) . ' (' . $ofnSafe.')' . $phpMussel['lang']['_exclamation'];
                             } else {
                                 $out .= $lnap . $phpMussel['ParseVars'](
                                     array('vn' => $vn),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $phpMussel['lang']['detected']
+                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                     array('vn' => $vn),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['detected']
+                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                             }
                         }
                     }
@@ -3480,13 +3480,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                     }
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['scan_signature_file_missing'] .
+                        $phpMussel['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
-                        $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['_exclamation'];
                     return array(-3,
-                        $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
+                        $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
-                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        $phpMussel['lang']['_exclamation_final'] . "\n"
                     );
                 }
             } else {
@@ -3508,12 +3508,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $phpMussel['memCache']['detections_count']++;
                         $out .= $lnap . $phpMussel['ParseVars'](
                             array('vn' => $xsig),
-                            $phpMussel['Config']['lang']['detected']
-                        ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                            $phpMussel['lang']['detected']
+                        ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                         $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                             array('vn' => $xsig),
-                            $phpMussel['Config']['lang']['detected']
-                        ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                            $phpMussel['lang']['detected']
+                        ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                     }
                     if (isset($phpMussel['memCache']['xmlxdp'][$md5]) && is_array($phpMussel['memCache']['xmlxdp'][$md5])) {
                         $c = count($phpMussel['memCache']['xmlxdp'][$md5]);
@@ -3537,12 +3537,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 $phpMussel['memCache']['detections_count']++;
                                 $out .= $lnap . $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $phpMussel['lang']['detected']
+                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['detected']
+                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                             }
                         }
                     }
@@ -3560,11 +3560,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                     }
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                        ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['scan_signature_file_missing'] .
+                        ' (' . $SigFile . ')' . $phpMussel['lang']['_exclamation'];
                     return array(-3,
-                        $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                        ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
+                        ' (' . $SigFile . ')' . $phpMussel['lang']['_exclamation_final'] . "\n"
                     );
                 }
             } else {
@@ -3587,12 +3587,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             $phpMussel['memCache']['detections_count']++;
                             $out .= $lnap . $phpMussel['ParseVars'](
                                 array('vn' => $xsig),
-                                $phpMussel['Config']['lang']['detected']
-                            ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                $phpMussel['lang']['detected']
+                            ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                             $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                 array('vn' => $xsig),
-                                $phpMussel['Config']['lang']['detected']
-                            ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                $phpMussel['lang']['detected']
+                            ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                         }
                         $xsig = '';
                     }
@@ -3609,11 +3609,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                     }
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                        ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['scan_signature_file_missing'] .
+                        ' (' . $SigFile . ')' . $phpMussel['lang']['_exclamation'];
                     return array(-3,
-                        $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                        ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
+                        ' (' . $SigFile . ')' . $phpMussel['lang']['_exclamation_final'] . "\n"
                     );
                 }
             } else {
@@ -3638,21 +3638,21 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 $heur['weight']++;
                                 $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $phpMussel['lang']['detected']
+                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $heur['web'] .= $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['detected']
+                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                             } else {
                                 $out .= $lnap . $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $phpMussel['lang']['detected']
+                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['detected']
+                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                             }
                         }
                         $xsig = '';
@@ -3676,11 +3676,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                         }
                         $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_map_missing'] .
-                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                            $phpMussel['lang']['scan_map_missing'] .
+                            ' (' . $SigMap . ')' . $phpMussel['lang']['_exclamation'];
                         return array(-3,
-                            $lnap . $phpMussel['Config']['lang']['scan_map_missing'] .
-                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                            $lnap . $phpMussel['lang']['scan_map_missing'] .
+                            ' (' . $SigMap . ')' . $phpMussel['lang']['_exclamation_final'] . "\n"
                         );
                     }
                     break;
@@ -3695,11 +3695,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                         }
                         $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                            $phpMussel['lang']['scan_signature_file_missing'] .
+                            ' (' . $SigFile . ')' . $phpMussel['lang']['_exclamation'];
                         return array(-3,
-                            $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                            $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
+                            ' (' . $SigFile . ')' . $phpMussel['lang']['_exclamation_final'] . "\n"
                         );
                     }
                     break;
@@ -3712,11 +3712,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                         }
                         $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_map_corrupted'] .
-                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                            $phpMussel['lang']['scan_map_corrupted'] .
+                            ' (' . $SigMap . ')' . $phpMussel['lang']['_exclamation'];
                         return array(-3,
-                            $lnap . $phpMussel['Config']['lang']['scan_map_corrupted'] .
-                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                            $lnap . $phpMussel['lang']['scan_map_corrupted'] .
+                            ' (' . $SigMap . ')' . $phpMussel['lang']['_exclamation_final'] . "\n"
                         );
                     }
                     break;
@@ -3869,12 +3869,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                         $phpMussel['memCache']['detections_count']++;
                                         $out .= $lnap . $phpMussel['ParseVars'](
                                             array('vn' => $vn),
-                                            $phpMussel['Config']['lang']['detected']
-                                        ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                            $phpMussel['lang']['detected']
+                                        ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                         $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                             array('vn' => $vn),
-                                            $phpMussel['Config']['lang']['detected']
-                                        ).' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                            $phpMussel['lang']['detected']
+                                        ).' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                     }
                                 } else {
                                     if (
@@ -3932,12 +3932,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                         $phpMussel['memCache']['detections_count']++;
                                         $out .= $lnap . $phpMussel['ParseVars'](
                                             array('vn' => $vn),
-                                            $phpMussel['Config']['lang']['detected']
-                                        ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                            $phpMussel['lang']['detected']
+                                        ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                         $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                             array('vn' => $vn),
-                                            $phpMussel['Config']['lang']['detected']
-                                        ).' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                            $phpMussel['lang']['detected']
+                                        ).' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                     }
                                 }
                             }
@@ -3963,11 +3963,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                         }
                         $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_map_missing'] .
-                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                            $phpMussel['lang']['scan_map_missing'] .
+                            ' (' . $SigMap . ')' . $phpMussel['lang']['_exclamation'];
                         return array(-3,
-                            $lnap . $phpMussel['Config']['lang']['scan_map_missing'] .
-                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                            $lnap . $phpMussel['lang']['scan_map_missing'] .
+                            ' (' . $SigMap . ')' . $phpMussel['lang']['_exclamation_final'] . "\n"
                         );
                     }
                     break;
@@ -3982,11 +3982,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                         }
                         $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                            $phpMussel['lang']['scan_signature_file_missing'] .
+                            ' (' . $SigFile . ')' . $phpMussel['lang']['_exclamation'];
                         return array(-3,
-                            $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                            $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
+                            ' (' . $SigFile . ')' . $phpMussel['lang']['_exclamation_final'] . "\n"
                         );
                     }
                     break;
@@ -3999,11 +3999,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                         }
                         $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_map_corrupted'] .
-                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                            $phpMussel['lang']['scan_map_corrupted'] .
+                            ' (' . $SigMap . ')' . $phpMussel['lang']['_exclamation'];
                         return array(-3,
-                            $lnap . $phpMussel['Config']['lang']['scan_map_corrupted'] .
-                            ' (' . $SigMap . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                            $lnap . $phpMussel['lang']['scan_map_corrupted'] .
+                            ' (' . $SigMap . ')' . $phpMussel['lang']['_exclamation_final'] . "\n"
                         );
                     }
                     break;
@@ -4153,12 +4153,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                         $phpMussel['memCache']['detections_count']++;
                                         $out .= $lnap . $phpMussel['ParseVars'](
                                             array('vn' => $vn),
-                                            $phpMussel['Config']['lang']['detected']
-                                        ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                            $phpMussel['lang']['detected']
+                                        ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                         $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                             array('vn' => $vn),
-                                            $phpMussel['Config']['lang']['detected']
-                                        ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                            $phpMussel['lang']['detected']
+                                        ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                     }
                                 } else {
                                     if (
@@ -4206,12 +4206,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                         $phpMussel['memCache']['detections_count']++;
                                         $out .= $lnap . $phpMussel['ParseVars'](
                                             array('vn' => $vn),
-                                            $phpMussel['Config']['lang']['detected']
-                                        ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                            $phpMussel['lang']['detected']
+                                        ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                         $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                             array('vn' => $vn),
-                                            $phpMussel['Config']['lang']['detected']
-                                        ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                            $phpMussel['lang']['detected']
+                                        ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                     }
                                 }
                             }
@@ -4236,11 +4236,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                         }
                         $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                            $phpMussel['lang']['scan_signature_file_missing'] .
+                            ' (' . $SigFile . ')' . $phpMussel['lang']['_exclamation'];
                         return array(-3,
-                            $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                            $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
+                            ' (' . $SigFile . ')' . $phpMussel['lang']['_exclamation_final'] . "\n"
                         );
                     }
                     break;
@@ -4386,21 +4386,21 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                     $heur['weight']++;
                                     $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                        $phpMussel['lang']['detected']
+                                    ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                     $heur['web'] .= $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                        $phpMussel['lang']['detected']
+                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                 } else {
                                     $out .= $lnap . $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                        $phpMussel['lang']['detected']
+                                    ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                     $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                        $phpMussel['lang']['detected']
+                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                 }
                             }
                         } else {
@@ -4461,21 +4461,21 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                     $heur['weight']++;
                                     $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                        $phpMussel['lang']['detected']
+                                    ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                     $heur['web'] .= $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                        $phpMussel['lang']['detected']
+                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                 } else {
                                     $out .= $lnap . $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                        $phpMussel['lang']['detected']
+                                    ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                     $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                        $phpMussel['lang']['detected']
+                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                 }
                             }
                         }
@@ -4499,11 +4499,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                         }
                         $phpMussel['whyflagged'] .=
-                            $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                            $phpMussel['lang']['scan_signature_file_missing'] .
+                            ' (' . $SigFile . ')' . $phpMussel['lang']['_exclamation'];
                         return array(-3,
-                            $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                            ' (' . $SigFile . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                            $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
+                            ' (' . $SigFile . ')' . $phpMussel['lang']['_exclamation_final'] . "\n"
                         );
                     }
                     break;
@@ -4649,21 +4649,21 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                     $heur['weight']++;
                                     $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                        $phpMussel['lang']['detected']
+                                    ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                     $heur['web'] .= $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                        $phpMussel['lang']['detected']
+                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                 } else {
                                     $out .= $lnap . $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                        $phpMussel['lang']['detected']
+                                    ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                     $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                        $phpMussel['lang']['detected']
+                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                 }
                             }
                         } else {
@@ -4714,21 +4714,21 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                     $heur['weight']++;
                                     $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                        $phpMussel['lang']['detected']
+                                    ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                     $heur['web'] .= $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                        $phpMussel['lang']['detected']
+                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                 } else {
                                     $out .= $lnap . $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                        $phpMussel['lang']['detected']
+                                    ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                     $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                        $phpMussel['lang']['detected']
+                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                 }
                             }
                         }
@@ -4747,13 +4747,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                     }
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['scan_signature_file_missing'] .
+                        $phpMussel['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
-                        $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['_exclamation'];
                     return array(-3,
-                        $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
+                        $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
-                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        $phpMussel['lang']['_exclamation_final'] . "\n"
                     );
                 }
             } else {
@@ -4820,21 +4820,21 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 $heur['weight']++;
                                 $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $phpMussel['lang']['detected']
+                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $heur['web'] .= $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['detected']
+                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                             } else {
                                 $out .= $lnap . $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $phpMussel['lang']['detected']
+                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['detected']
+                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                             }
                             break;
                         }
@@ -4864,21 +4864,21 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 $heur['weight']++;
                                 $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $phpMussel['lang']['detected']
+                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $heur['web'] .= $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['detected']
+                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                             } else {
                                 $out .= $lnap . $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $phpMussel['lang']['detected']
+                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['detected']
+                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                             }
                             break;
                         }
@@ -4976,21 +4976,21 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 $heur['weight']++;
                                 $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $phpMussel['lang']['detected']
+                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $heur['web'] .= $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['detected']
+                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                             } else {
                                 $out .= $lnap . $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $phpMussel['lang']['detected']
+                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['detected']
+                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                             }
                             break;
                         }
@@ -5020,21 +5020,21 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 $heur['weight']++;
                                 $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $phpMussel['lang']['detected']
+                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $heur['web'] .= $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['detected']
+                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                             } else {
                                 $out .= $lnap . $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $phpMussel['lang']['detected']
+                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                     array('vn' => $xsig),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['detected']
+                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                             }
                             break;
                         }
@@ -5074,12 +5074,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                     $flagged = true;
                                 }
                                 $out .=
-                                    $lnap . $phpMussel['Config']['lang']['too_many_urls'] .
-                                    $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $lnap . $phpMussel['lang']['too_many_urls'] .
+                                    $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $phpMussel['whyflagged'] .=
-                                    $phpMussel['Config']['lang']['too_many_urls'] .
+                                    $phpMussel['lang']['too_many_urls'] .
                                     ' (' . $ofnSafe . ')' .
-                                    $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['_exclamation'];
                             }
                             break;
                         }
@@ -5105,12 +5105,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 }
                                 $out .= $lnap . $phpMussel['ParseVars'](
                                     array('vn' => $urlscanner['class']),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $phpMussel['lang']['detected']
+                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                     array('vn' => $urlscanner['class']),
-                                    $phpMussel['Config']['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['detected']
+                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                 break 2;
                             }
                             $phpMussel['memCache']['urlscanner_domains'] =
@@ -5154,12 +5154,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             }
                             $out .= $lnap . $phpMussel['ParseVars'](
                                 array('vn' => $urlscanner['class']),
-                                $phpMussel['Config']['lang']['detected']
-                            ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                $phpMussel['lang']['detected']
+                            ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                             $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                 array('vn' => $urlscanner['class']),
-                                $phpMussel['Config']['lang']['detected']
-                            ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                $phpMussel['lang']['detected']
+                            ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                             break;
                         }
                         $phpMussel['memCache']['urlscanner_domains'] .=
@@ -5191,12 +5191,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                     $flagged = true;
                                 }
                                 $out .=
-                                    $lnap . $phpMussel['Config']['lang']['too_many_urls'] .
-                                    $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                    $lnap . $phpMussel['lang']['too_many_urls'] .
+                                    $phpMussel['lang']['_exclamation_final'] . "\n";
                                 $phpMussel['whyflagged'] .=
-                                    $phpMussel['Config']['lang']['too_many_urls'] .
+                                    $phpMussel['lang']['too_many_urls'] .
                                     ' (' . $ofnSafe . ')' .
-                                    $phpMussel['Config']['lang']['_exclamation'];
+                                    $phpMussel['lang']['_exclamation'];
                             }
                             break;
                         }
@@ -5212,11 +5212,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             }
                             $urlscanner['langRef'] = 'SafeBrowseLookup_' . $urlscanner['SafeBrowseLookup'];
                             $out .=
-                                $lnap . $phpMussel['Config']['lang'][$urlscanner['langRef']] .
-                                $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                $lnap . $phpMussel['lang'][$urlscanner['langRef']] .
+                                $phpMussel['lang']['_exclamation_final'] . "\n";
                             $phpMussel['whyflagged'] .=
-                                $phpMussel['Config']['lang'][$urlscanner['langRef']] . ' (' . $ofnSafe . ')' .
-                                $phpMussel['Config']['lang']['_exclamation'];
+                                $phpMussel['lang'][$urlscanner['langRef']] . ' (' . $ofnSafe . ')' .
+                                $phpMussel['lang']['_exclamation'];
                         }
                     }
                 }
@@ -5234,13 +5234,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                     }
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['scan_signature_file_missing'] .
+                        $phpMussel['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
-                        $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['_exclamation'];
                     return array(-3,
-                        $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
+                        $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
                         ' (' . $SigFile . ')' .
-                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        $phpMussel['lang']['_exclamation_final'] . "\n"
                     );
                 }
             } else {
@@ -5554,21 +5554,21 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                     $heur['weight']++;
                                     $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
                                         array('vn' => $signame),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                        $phpMussel['lang']['detected']
+                                    ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                     $heur['web'] .= $phpMussel['ParseVars'](
                                         array('vn' => $signame),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                        $phpMussel['lang']['detected']
+                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                 } else {
                                     $out .= $lnap . $phpMussel['ParseVars'](
                                         array('vn' => $signame),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                        $phpMussel['lang']['detected']
+                                    ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                     $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                         array('vn' => $signame),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                        $phpMussel['lang']['detected']
+                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                 }
                             }
                             $xsig[$xi] = '';
@@ -5608,12 +5608,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             $phpMussel['memCache']['detections_count']++;
             $out .= $lnap . $phpMussel['ParseVars'](
                 array('x' => 'PHP'),
-                $phpMussel['Config']['lang']['scan_chameleon']
-            ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                $phpMussel['lang']['scan_chameleon']
+            ) . $phpMussel['lang']['_exclamation_final'] . "\n";
             $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                 array('x' => 'PHP'),
-                $phpMussel['Config']['lang']['scan_chameleon']
-            ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                $phpMussel['lang']['scan_chameleon']
+            ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
         }
     }
 
@@ -5629,12 +5629,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
                     array('x' => 'EXE'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                     array('x' => 'EXE'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         } elseif ($twocc === '4d5a') {
             if (!$flagged) {
@@ -5645,12 +5645,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             $phpMussel['memCache']['detections_count']++;
             $out .= $lnap . $phpMussel['ParseVars'](
                 array('x' => 'EXE'),
-                $phpMussel['Config']['lang']['scan_chameleon']
-            ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                $phpMussel['lang']['scan_chameleon']
+            ) . $phpMussel['lang']['_exclamation_final'] . "\n";
             $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                 array('x' => 'EXE'),
-                $phpMussel['Config']['lang']['scan_chameleon']
-            ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                $phpMussel['lang']['scan_chameleon']
+            ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
         }
         if ($xt === 'elf') {
             if ($fourcc !== '7f454c46') {
@@ -5662,12 +5662,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
                     array('x' => 'ELF'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                     array('x' => 'ELF'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         } elseif ($fourcc === '7f454c46') {
             if (!$flagged) {
@@ -5678,12 +5678,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             $phpMussel['memCache']['detections_count']++;
             $out .= $lnap . $phpMussel['ParseVars'](
                 array('x' => 'ELF'),
-                $phpMussel['Config']['lang']['scan_chameleon']
-            ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                $phpMussel['lang']['scan_chameleon']
+            ) . $phpMussel['lang']['_exclamation_final'] . "\n";
             $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                 array('x' => 'ELF'),
-                $phpMussel['Config']['lang']['scan_chameleon']
-            ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                $phpMussel['lang']['scan_chameleon']
+            ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
         }
         if ($xt === 'lnk') {
             if (substr($str_hex, 0, 16) !== '4c00000001140200') {
@@ -5695,12 +5695,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
                     array('x' => 'LNK'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                     array('x' => 'LNK'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         } elseif (substr($str_hex, 0, 16) === '4c00000001140200') {
             if (!$flagged) {
@@ -5711,12 +5711,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             $phpMussel['memCache']['detections_count']++;
             $out .= $lnap . $phpMussel['ParseVars'](
                 array('x' => 'LNK'),
-                $phpMussel['Config']['lang']['scan_chameleon']
-            ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                $phpMussel['lang']['scan_chameleon']
+            ) . $phpMussel['lang']['_exclamation_final'] . "\n";
             $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                 array('x' => 'LNK'),
-                $phpMussel['Config']['lang']['scan_chameleon']
-            ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                $phpMussel['lang']['scan_chameleon']
+            ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
         }
         if ($xt === 'msi') {
             if (substr($str_hex, 0, 16) !== 'd0cf11e0a1b11ae1') {
@@ -5728,12 +5728,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
                     array('x' => 'MSI'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                     array('x' => 'MSI'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         }
     }
@@ -5750,12 +5750,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
                     array('x' => 'ZIP'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                     array('x' => 'ZIP'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         }
         if ($xt === 'rar') {
@@ -5768,12 +5768,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
                     array('x' => 'RAR'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                     array('x' => 'RAR'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         }
         if ($xt === 'gz') {
@@ -5786,12 +5786,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
                     array('x' => 'GZIP'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                     array('x' => 'GZIP'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         }
         if ($xt === 'bz2') {
@@ -5804,12 +5804,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
                     array('x' => 'BZIP2'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                     array('x' => 'BZIP2'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         }
     }
@@ -5826,12 +5826,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
                     array('x' => 'Office'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                     array('x' => 'Office'),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         }
     }
@@ -5847,13 +5847,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $heur['detections']++;
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         }
         if ($xt === 'gif') {
@@ -5865,13 +5865,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $heur['detections']++;
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         }
         if (
@@ -5890,13 +5890,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $heur['detections']++;
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         }
         if ($xt === 'jp2') {
@@ -5908,13 +5908,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $heur['detections']++;
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         }
         if ($xt === 'pdd' || $xt === 'psd') {
@@ -5926,13 +5926,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $heur['detections']++;
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         }
         if ($xt === 'png') {
@@ -5944,13 +5944,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $heur['detections']++;
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         }
         if ($xt === 'webp') {
@@ -5962,13 +5962,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $heur['detections']++;
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         }
         if ($xt === 'xcf') {
@@ -5980,13 +5980,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $heur['detections']++;
                 $phpMussel['memCache']['detections_count']++;
                 $out .= $lnap . $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                 $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
-                    array('x' => $phpMussel['Config']['lang']['image']),
-                    $phpMussel['Config']['lang']['scan_chameleon']
-                ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    array('x' => $phpMussel['lang']['image']),
+                    $phpMussel['lang']['scan_chameleon']
+                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             }
         }
     }
@@ -6002,12 +6002,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             $phpMussel['memCache']['detections_count']++;
             $out .= $lnap . $phpMussel['ParseVars'](
                 array('x' => 'PDF'),
-                $phpMussel['Config']['lang']['scan_chameleon']
-            ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                $phpMussel['lang']['scan_chameleon']
+            ) . $phpMussel['lang']['_exclamation_final'] . "\n";
             $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                 array('x' => 'PDF'),
-                $phpMussel['Config']['lang']['scan_chameleon']
-            ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                $phpMussel['lang']['scan_chameleon']
+            ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
         }
     }
 
@@ -6028,11 +6028,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                     }
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                        ' (hex_general_commands.csv)' . $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['scan_signature_file_missing'] .
+                        ' (hex_general_commands.csv)' . $phpMussel['lang']['_exclamation'];
                     return array(-3,
-                        $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                        ' (hex_general_commands.csv)' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
+                        ' (hex_general_commands.csv)' . $phpMussel['lang']['_exclamation_final'] . "\n"
                     );
                 }
                 break;
@@ -6045,11 +6045,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
                     }
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['scan_signature_file_corrupted'] .
-                        ' (hex_general_commands.csv)' . $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['scan_signature_file_corrupted'] .
+                        ' (hex_general_commands.csv)' . $phpMussel['lang']['_exclamation'];
                     return array(-3,
-                        $lnap . $phpMussel['Config']['lang']['scan_signature_file_corrupted'] .
-                        ' (hex_general_commands.csv)' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n"
+                        $lnap . $phpMussel['lang']['scan_signature_file_corrupted'] .
+                        ' (hex_general_commands.csv)' . $phpMussel['lang']['_exclamation_final'] . "\n"
                     );
                 }
                 break;
@@ -6064,11 +6064,11 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     $heur['detections']++;
                     $phpMussel['memCache']['detections_count']++;
                     $out .=
-                        $lnap . $phpMussel['Config']['lang']['scan_command_injection'] .
-                        $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                        $lnap . $phpMussel['lang']['scan_command_injection'] .
+                        $phpMussel['lang']['_exclamation_final'] . "\n";
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['scan_command_injection'] .
-                        ', \'' . $xgc . '\' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['scan_command_injection'] .
+                        ', \'' . $xgc . '\' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                 }
             }
             break;
@@ -6080,8 +6080,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         if (preg_match('/[\x00-\x08\x0b\x0c\x0e\x1f\x7f]/i', $str)) {
             $out .=
                 $lnap .
-                $phpMussel['Config']['lang']['detected_control_characters'] .
-                $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                $phpMussel['lang']['detected_control_characters'] .
+                $phpMussel['lang']['_exclamation_final'] . "\n";
             $heur['detections']++;
             $phpMussel['memCache']['detections_count']++;
             if (!$flagged) {
@@ -6089,9 +6089,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $flagged = true;
             }
             $phpMussel['whyflagged'] .=
-                $phpMussel['Config']['lang']['detected_control_characters'] .
+                $phpMussel['lang']['detected_control_characters'] .
                 ' (' . $ofnSafe . ')' .
-                $phpMussel['Config']['lang']['_exclamation'];
+                $phpMussel['lang']['_exclamation'];
         }
     }
 
@@ -6214,21 +6214,21 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                     $vt_weight['weight']++;
                                     $vt_weight['web'] .= $lnap . $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                        $phpMussel['lang']['detected']
+                                    ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                     $vt_weight['cli'].=$phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                        $phpMussel['lang']['detected']
+                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                 } else {
                                     $out .= $lnap . $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                        $phpMussel['lang']['detected']
+                                    ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                                     $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                                         array('vn' => $vn),
-                                        $phpMussel['Config']['lang']['detected']
-                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                        $phpMussel['lang']['detected']
+                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                                 }
                             }
                         }
@@ -6359,19 +6359,19 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
     ) {
         if (!$phpMussel['Config']['files']['filesize_response']) {
             $x .=
-                $lnap . $phpMussel['Config']['lang']['ok'] . ' (' .
-                $phpMussel['Config']['lang']['filesize_limit_exceeded'] . ").\n";
+                $lnap . $phpMussel['lang']['ok'] . ' (' .
+                $phpMussel['lang']['filesize_limit_exceeded'] . ").\n";
             return array($r, $x);
         }
         $r = 2;
         $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
         $phpMussel['whyflagged'] .=
-            $phpMussel['Config']['lang']['filesize_limit_exceeded'] .
+            $phpMussel['lang']['filesize_limit_exceeded'] .
             ' (' . $ItemRefSafe . ')' .
-            $phpMussel['Config']['lang']['_exclamation'];
+            $phpMussel['lang']['_exclamation'];
         $x .=
-            $lnap . $phpMussel['Config']['lang']['filesize_limit_exceeded'] .
-            $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+            $lnap . $phpMussel['lang']['filesize_limit_exceeded'] .
+            $phpMussel['lang']['_fullstop_final'] . "\n";
         return array($r, $x);
     }
     if (
@@ -6381,12 +6381,12 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
         $r = 2;
         $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
         $phpMussel['whyflagged'] .=
-            $phpMussel['Config']['lang']['scan_filename_manipulation_detected'] .
+            $phpMussel['lang']['scan_filename_manipulation_detected'] .
             ' (' . $ItemRefSafe . ')' .
-            $phpMussel['Config']['lang']['_exclamation'];
+            $phpMussel['lang']['_exclamation'];
         $x .=
-            $lnap . $phpMussel['Config']['lang']['scan_filename_manipulation_detected'] .
-            $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+            $lnap . $phpMussel['lang']['scan_filename_manipulation_detected'] .
+            $phpMussel['lang']['_exclamation_final'] . "\n";
         return array($r, $x);
     }
     if ($phpMussel['Config']['files']['filetype_archives']) {
@@ -6402,7 +6402,7 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
             substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $xt . ',') ||
             substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $xts . ',')
         ) {
-            $x .= $lnap . $phpMussel['Config']['lang']['scan_no_problems_found'] . "\n";
+            $x .= $lnap . $phpMussel['lang']['scan_no_problems_found'] . "\n";
             return array($r, $x);
         }
         if (
@@ -6412,12 +6412,12 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
             $r = 2;
             $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
             $phpMussel['whyflagged'] .=
-                $phpMussel['Config']['lang']['filetype_blacklisted'] .
+                $phpMussel['lang']['filetype_blacklisted'] .
                 ' (' . $ItemRefSafe . ')' .
-                $phpMussel['Config']['lang']['_exclamation'];
+                $phpMussel['lang']['_exclamation'];
             $x .=
-                $lnap . $phpMussel['Config']['lang']['filetype_blacklisted'] .
-                $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+                $lnap . $phpMussel['lang']['filetype_blacklisted'] .
+                $phpMussel['lang']['_fullstop_final'] . "\n";
             return array($r, $x);
         }
         if (
@@ -6428,12 +6428,12 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
             $r = 2;
             $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
             $phpMussel['whyflagged'] .=
-                $phpMussel['Config']['lang']['filetype_blacklisted'] .
+                $phpMussel['lang']['filetype_blacklisted'] .
                 ' (' . $ItemRefSafe . ')' .
-                $phpMussel['Config']['lang']['_exclamation'];
+                $phpMussel['lang']['_exclamation'];
             $x .=
-                $lnap . $phpMussel['Config']['lang']['filetype_blacklisted'] .
-                $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+                $lnap . $phpMussel['lang']['filetype_blacklisted'] .
+                $phpMussel['lang']['_fullstop_final'] . "\n";
             return array($r, $x);
         }
     }
@@ -6466,13 +6466,13 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
             if (!$phpMussel['Config']['signatures']['fail_silently']) {
                 $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
                 $phpMussel['whyflagged'] .=
-                    $phpMussel['Config']['lang']['scan_signature_file_missing'] .
-                    ' (' . $MetaSigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                    $phpMussel['lang']['scan_signature_file_missing'] .
+                    ' (' . $MetaSigFile . ')' . $phpMussel['lang']['_exclamation'];
             }
             $x .=
-                '-' . $lnap . $phpMussel['Config']['lang']['scan_signature_file_missing'] .
+                '-' . $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
                 ' (' . $MetaSigFile . ')' .
-                $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                $phpMussel['lang']['_exclamation_final'] . "\n";
         } else {
             $SigCount = count($phpMussel['memCache'][$MetaSigFile]);
             if ($SigCount < 1) {
@@ -6483,13 +6483,13 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
                 if (!$phpMussel['Config']['signatures']['fail_silently']) {
                     $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['scan_signature_file_corrupted'] .
-                        ' (' . $MetaSigFile . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['scan_signature_file_corrupted'] .
+                        ' (' . $MetaSigFile . ')' . $phpMussel['lang']['_exclamation'];
                 }
                 $x .=
-                    '-' . $lnap . $phpMussel['Config']['lang']['scan_signature_file_corrupted'] .
+                    '-' . $lnap . $phpMussel['lang']['scan_signature_file_corrupted'] .
                     ' (' . $MetaSigFile . ')' .
-                    $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    $phpMussel['lang']['_exclamation_final'] . "\n";
             }
         }
         if ($SigCount > 0) {
@@ -6512,13 +6512,13 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
                     $r = 2;
                     $x .= '-' . $lnap . $phpMussel['ParseVars'](
                         array('vn' => $Signature[0]),
-                        $phpMussel['Config']['lang']['detected']
-                    ) . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                        $phpMussel['lang']['detected']
+                    ) . $phpMussel['lang']['_exclamation_final'] . "\n";
                     $phpMussel['killdata'] .= $MD5 . ':' . $Filesize . ':' . $ItemRef . "\n";
                     $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
                         array('vn' => $Signature[0]),
-                        $phpMussel['Config']['lang']['detected']
-                    ) . ' (' . $ItemRefSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['detected']
+                    ) . ' (' . $ItemRefSafe . ')' . $phpMussel['lang']['_exclamation'];
                 }
             }
         }
@@ -6593,9 +6593,9 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
 $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn = '') use (&$phpMussel) {
     if (!isset($phpMussel['memCache'])) {
         throw new \Exception(
-            (!isset($phpMussel['Config']['lang']['required_variables_not_defined'])) ?
+            (!isset($phpMussel['lang']['required_variables_not_defined'])) ?
             '[phpMussel] Required variables aren\'t defined: Can\'t continue.' :
-            '[phpMussel] ' . $phpMussel['Config']['lang']['required_variables_not_defined']
+            '[phpMussel] ' . $phpMussel['lang']['required_variables_not_defined']
         );
     }
     if ($phpMussel['EOF']) {
@@ -6670,8 +6670,8 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         if (!is_readable($f) || !$d = scandir($f)) {
             $phpMussel['memCache']['scan_errors']++;
             return (!$n) ? 0 :
-                $lnap . $phpMussel['Config']['lang']['failed_to_access'] . '\'' . $ofn . '\'' .
-                $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                $lnap . $phpMussel['lang']['failed_to_access'] . '\'' . $ofn . '\'' .
+                $phpMussel['lang']['_exclamation_final'] . "\n";
         }
         $c = count($d);
         for ($i = 0; $i < $c; $i++) {
@@ -6782,10 +6782,10 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     /** Kill it here if the scan target isn't a valid file. */
     if (!$d || !$f) {
         return (!$n) ? 0 :
-            $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn .
+            $lnap . $phpMussel['lang']['scan_checking'] . ' \'' . $ofn .
             '\' (FN: ' . $fnCRC . "):\n-" . $lnap .
-            $phpMussel['Config']['lang']['invalid_file'] .
-            $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+            $phpMussel['lang']['invalid_file'] .
+            $phpMussel['lang']['_exclamation_final'] . "\n";
     }
 
     $fS = filesize($f);
@@ -6793,40 +6793,40 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         if ($fS > ($phpMussel['Config']['files']['filesize_limit'] * 1024)) {
             if (!$phpMussel['Config']['files']['filesize_response']) {
                 return (!$n) ? 1 :
-                    $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' .
+                    $lnap . $phpMussel['lang']['scan_checking'] . ' \'' .
                     $ofn . '\' (FN: ' . $fnCRC . "):\n-" . $lnap .
-                    $phpMussel['Config']['lang']['ok'] . ' (' .
-                    $phpMussel['Config']['lang']['filesize_limit_exceeded'] . ").\n";
+                    $phpMussel['lang']['ok'] . ' (' .
+                    $phpMussel['lang']['filesize_limit_exceeded'] . ").\n";
             }
             $phpMussel['killdata'] .=
                 '--FILESIZE-LIMIT--------NO-HASH-:' . $fS . ':' . $ofn . "\n";
             $phpMussel['whyflagged'] .=
-                $phpMussel['Config']['lang']['filesize_limit_exceeded'] .
-                ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                $phpMussel['lang']['filesize_limit_exceeded'] .
+                ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             if ($phpMussel['Config']['general']['delete_on_sight']) {
                 unlink($f);
             }
             return (!$n) ? 2 :
-                $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn .
+                $lnap . $phpMussel['lang']['scan_checking'] . ' \'' . $ofn .
                 '\' (FN: ' . $fnCRC . "):\n-" . $lnap .
-                $phpMussel['Config']['lang']['filesize_limit_exceeded'] .
-                $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+                $phpMussel['lang']['filesize_limit_exceeded'] .
+                $phpMussel['lang']['_fullstop_final'] . "\n";
         }
     }
     if (substr($ofn, 0, 1) === '.' || substr($ofn, -1) === '.') {
         $phpMussel['killdata'] .=
             '--FILENAME-MANIPULATION-NO-HASH-:' . $fS . ':' . $ofn . "\n";
         $phpMussel['whyflagged'] .=
-            $phpMussel['Config']['lang']['scan_filename_manipulation_detected'] .
-            ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+            $phpMussel['lang']['scan_filename_manipulation_detected'] .
+            ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
         if ($phpMussel['Config']['general']['delete_on_sight']) {
             unlink($f);
         }
         return (!$n) ? 2 :
-            $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn .
+            $lnap . $phpMussel['lang']['scan_checking'] . ' \'' . $ofn .
             '\' (FN: ' . $fnCRC . "):\n-" . $lnap .
-            $phpMussel['Config']['lang']['scan_filename_manipulation_detected'] .
-            $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+            $phpMussel['lang']['scan_filename_manipulation_detected'] .
+            $phpMussel['lang']['_exclamation_final'] . "\n";
     }
     $decPos = strrpos($ofn, '.');
     $ofnLen = strlen($ofn);
@@ -6853,9 +6853,9 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $gzxts . ',')
     ) {
         return (!$n) ? 1 :
-            $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' . $ofn .
+            $lnap . $phpMussel['lang']['scan_checking'] . ' \'' . $ofn .
             '\' (FN: ' . $fnCRC . "):\n-" . $lnap .
-            $phpMussel['Config']['lang']['scan_no_problems_found'] . "\n";
+            $phpMussel['lang']['scan_no_problems_found'] . "\n";
     }
     if (
         substr_count(',' . $phpMussel['Config']['files']['filetype_blacklist'] . ',', ',' . $xt . ',') ||
@@ -6866,16 +6866,16 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         $phpMussel['killdata'] .=
             '--FILETYPE-BLACKLISTED--NO-HASH-:' . $fS . ':' . $ofn . "\n";
         $phpMussel['whyflagged'] .=
-            $phpMussel['Config']['lang']['filetype_blacklisted'] .
-            ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+            $phpMussel['lang']['filetype_blacklisted'] .
+            ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
         if ($phpMussel['Config']['general']['delete_on_sight']) {
             unlink($f);
         }
         return (!$n) ? 2 :
-            $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' .
+            $lnap . $phpMussel['lang']['scan_checking'] . ' \'' .
             $ofn . '\' (FN: ' . $fnCRC . "):\n-" . $lnap .
-            $phpMussel['Config']['lang']['filetype_blacklisted'] .
-            $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+            $phpMussel['lang']['filetype_blacklisted'] .
+            $phpMussel['lang']['_fullstop_final'] . "\n";
     }
     if (
         $phpMussel['Config']['files']['filetype_greylist'] &&
@@ -6887,16 +6887,16 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         $phpMussel['killdata'] .=
             '----FILETYPE--NOT-GREYLISTED----:' . $fS . ':' . $ofn . "\n";
         $phpMussel['whyflagged'] .=
-            $phpMussel['Config']['lang']['filetype_blacklisted'] .
-            ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+            $phpMussel['lang']['filetype_blacklisted'] .
+            ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
         if ($phpMussel['Config']['general']['delete_on_sight']) {
             unlink($f);
         }
         return (!$n) ? 2 :
-            $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' .
+            $lnap . $phpMussel['lang']['scan_checking'] . ' \'' .
             $ofn . '\' (FN: ' . $fnCRC . "):\n-" . $lnap .
-            $phpMussel['Config']['lang']['filetype_blacklisted'] .
-            $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+            $phpMussel['lang']['filetype_blacklisted'] .
+            $phpMussel['lang']['_fullstop_final'] . "\n";
     }
     $in = $phpMussel['ReadFile']($f, (
             $phpMussel['Config']['attack_specific']['scannable_threshold'] > 0 &&
@@ -6931,16 +6931,16 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         if (!$is_img) {
             $phpMussel['killdata'] .= md5($in) . ':' . $fS . ':' . $ofn . "\n";
             $phpMussel['whyflagged'] .=
-                $phpMussel['Config']['lang']['only_allow_images'] .
-                ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                $phpMussel['lang']['only_allow_images'] .
+                ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
             if ($phpMussel['Config']['general']['delete_on_sight']) {
                 unlink($f);
             }
             return (!$n) ? 2 :
-                $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' .
+                $lnap . $phpMussel['lang']['scan_checking'] . ' \'' .
                 $ofn . '\' (FN: ' . $fnCRC . '; FD: ' . $fdCRC . "):\n-" .
-                $lnap . $phpMussel['Config']['lang']['only_allow_images'] .
-                $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+                $lnap . $phpMussel['lang']['only_allow_images'] .
+                $phpMussel['lang']['_fullstop_final'] . "\n";
         }
     }
 
@@ -6969,22 +6969,22 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                     $qfu
                 );
                 $phpMussel['killdata'] .=
-                    $phpMussel['ParseVars'](array('QFU' => $qfu), $phpMussel['Config']['lang']['quarantined_as']);
+                    $phpMussel['ParseVars'](array('QFU' => $qfu), $phpMussel['lang']['quarantined_as']);
             }
         }
         if ($phpMussel['Config']['general']['delete_on_sight']) {
             unlink($f);
         }
         return (!$n) ? $z[0] :
-            $lnap . $phpMussel['Config']['lang']['scan_checking'] .
+            $lnap . $phpMussel['lang']['scan_checking'] .
             ' \'' . $ofn . '\' (FN: ' . $fnCRC . '; FD: ' . $fdCRC . "):\n" .
             $z[1];
     }
 
     $x =
-        $lnap . $phpMussel['Config']['lang']['scan_checking'] . ' \'' .
+        $lnap . $phpMussel['lang']['scan_checking'] . ' \'' .
         $ofn . '\' (FN: ' . $fnCRC . '; FD: ' . $fdCRC . "):\n-" . $lnap .
-        $phpMussel['Config']['lang']['scan_no_problems_found'] . "\n";
+        $phpMussel['lang']['scan_no_problems_found'] . "\n";
     $r = 1;
 
     /**
@@ -7070,7 +7070,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         /** Check if PHARable, and if so, generate an array of the contents. */
         if (is_dir('phar://' . $f) && is_readable('phar://' . $f)) {
             $x .=
-                '-' . $lnap . $phpMussel['Config']['lang']['scan_reading'] .
+                '-' . $lnap . $phpMussel['lang']['scan_reading'] .
                 ' \'' . $ofn . "' (PHAR):\n";
             $PharData = $phpMussel['BuildPharList']($f, $dpt);
             $PharData = explode("\n", $PharData);
@@ -7132,22 +7132,22 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                         $PharData[$PharIter]['Filesize'] . ':' .
                         $PharData[$PharIter]['ItemRef'] . "\n";
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['encrypted_archive'] .
+                        $phpMussel['lang']['encrypted_archive'] .
                         ' (' . urlencode($PharData[$PharIter]['ItemRef']) . ')' .
-                        $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['_exclamation'];
                     $x .=
-                        '-' . $lnap . $phpMussel['Config']['lang']['scan_checking'] .
+                        '-' . $lnap . $phpMussel['lang']['scan_checking'] .
                         ' \'' . $PharData[$PharIter]['ItemRef'] . '\' (FN: ' .
                         $PharData[$PharIter]['NameCRC32'] . '; FD: ' .
                         $PharData[$PharIter]['DataCRC32'] . "):\n--" . $lnap .
-                        $phpMussel['Config']['lang']['encrypted_archive'] .
-                        $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+                        $phpMussel['lang']['encrypted_archive'] .
+                        $phpMussel['lang']['_fullstop_final'] . "\n";
                     break;
                 }
             }
             if ($PharData[$PharIter]['DoScan']) {
                 $x .=
-                    '-' . $lnap . $phpMussel['Config']['lang']['scan_checking'] .
+                    '-' . $lnap . $phpMussel['lang']['scan_checking'] .
                     ' \'' . $PharData[$PharIter]['ItemRef'] .
                     '\' (FN: ' . $PharData[$PharIter]['NameCRC32'] .
                     '; FD: ' . $PharData[$PharIter]['DataCRC32'] . "):\n";
@@ -7165,7 +7165,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                     throw new \Exception($e->getMessage());
                 }
                 if ($r === 1) {
-                    $x .= '--' . $lnap . $phpMussel['Config']['lang']['scan_no_problems_found'] . "\n";
+                    $x .= '--' . $lnap . $phpMussel['lang']['scan_no_problems_found'] . "\n";
                 } else {
                     break;
                 }
@@ -7179,15 +7179,15 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                         $PharData[$PharIter]['Filesize'] . ':' .
                         $PharData[$PharIter]['ItemRef'] . "\n";
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['recursive'] .
-                        ' (' . $ofnSafe . ')' . $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['recursive'] .
+                        ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                     $x .=
-                        '-' . $lnap . $phpMussel['Config']['lang']['scan_checking'] .
+                        '-' . $lnap . $phpMussel['lang']['scan_checking'] .
                         ' \'' . $PharData[$PharIter]['ItemRef'] . '\' (FN: ' .
                         $PharData[$PharIter]['NameCRC32'] . '; FD: ' .
                         $PharData[$PharIter]['DataCRC32'] . "):\n--" .
-                        $lnap . $phpMussel['Config']['lang']['recursive'] .
-                        $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+                        $lnap . $phpMussel['lang']['recursive'] .
+                        $phpMussel['lang']['_fullstop_final'] . "\n";
                     break 2;
                 }
                 $zDo = false;
@@ -7212,28 +7212,28 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                                 $PharData[$PharIter]['Filesize'] . ':' .
                                 $PharData[$PharIter]['ItemRef'] . "\n";
                             $phpMussel['whyflagged'] .=
-                                $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
+                                $phpMussel['lang']['scan_extensions_missing'] . ' ';
                         }
                         $x .=
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $phpMussel['lang']['scan_reading'] . ' \'' .
                             $PharData[$PharIter]['ItemRef'] . "' (GZIP):\n-" .
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
+                            $phpMussel['lang']['scan_extensions_missing'] . "\n";
                         break;
                     }
                     if (!$PharData[$PharIter]['Data'] = @gzdecode($PharData[$PharIter]['Data'])) {
                         $x .=
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $phpMussel['lang']['scan_reading'] . ' \'' .
                             $PharData[$PharIter]['ItemRef'] . "' (GZIP):\n-" .
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
+                            $phpMussel['lang']['scan_not_archive'] . "\n";
                         break;
                     }
                     $x .=
                         $PharData[$PharIter]['Indent'] .
-                        $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                        $phpMussel['lang']['scan_reading'] . ' \'' .
                         $PharData[$PharIter]['ItemRef'] . "' (GZIP):\n";
                     $zDo = true;
                 } elseif ($phpMussel['substr_compare_hex']($PharData[$PharIter]['Data'], 0, 3, '425a68', true)) {
@@ -7246,28 +7246,28 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                                 $PharData[$PharIter]['Filesize'] . ':' .
                                 $PharData[$PharIter]['ItemRef'] . "\n";
                             $phpMussel['whyflagged'] .=
-                                $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
+                                $phpMussel['lang']['scan_extensions_missing'] . ' ';
                         }
                         $x .=
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $phpMussel['lang']['scan_reading'] . ' \'' .
                             $PharData[$PharIter]['ItemRef'] . "' (BZIP2):\n-" .
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
+                            $phpMussel['lang']['scan_extensions_missing'] . "\n";
                         break;
                     }
                     if (!$PharData[$PharIter]['Data'] = @bzdecompress($PharData[$PharIter]['Data'])) {
                         $x .=
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $phpMussel['lang']['scan_reading'] . ' \'' .
                             $PharData[$PharIter]['ItemRef'] . "' (BZIP2):\n-" .
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
+                            $phpMussel['lang']['scan_not_archive'] . "\n";
                         break;
                     }
                     $x .=
                         $PharData[$PharIter]['Indent'] .
-                        $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                        $phpMussel['lang']['scan_reading'] . ' \'' .
                         $PharData[$PharIter]['ItemRef'] . "' (BZIP2):\n";
                     $zDo = true;
                 } elseif (
@@ -7286,28 +7286,28 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                                 $PharData[$PharIter]['Filesize'] . ':' .
                                 $PharData[$PharIter]['ItemRef'] . "\n";
                             $phpMussel['whyflagged'] .=
-                                $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
+                                $phpMussel['lang']['scan_extensions_missing'] . ' ';
                         }
                         $x .=
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $phpMussel['lang']['scan_reading'] . ' \'' .
                             $PharData[$PharIter]['ItemRef'] . "' (GZIP):\n-" .
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
+                            $phpMussel['lang']['scan_extensions_missing'] . "\n";
                         break;
                     }
                     if (!$PharData[$PharIter]['Data'] = @gzdecode($PharData[$PharIter]['Data'])) {
                         $x .=
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $phpMussel['lang']['scan_reading'] . ' \'' .
                             $PharData[$PharIter]['ItemRef'] . "' (GZIP):\n-" .
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
+                            $phpMussel['lang']['scan_not_archive'] . "\n";
                         break;
                     }
                     $x .=
                         $PharData[$PharIter]['Indent'] .
-                        $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                        $phpMussel['lang']['scan_reading'] . ' \'' .
                         $PharData[$PharIter]['ItemRef'] . "' (GZIP):\n";
                     $zDo = true;
                 } elseif (
@@ -7326,28 +7326,28 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                                 $PharData[$PharIter]['Filesize'] . ':' .
                                 $PharData[$PharIter]['ItemRef'] . "\n";
                             $phpMussel['whyflagged'] .=
-                                $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
+                                $phpMussel['lang']['scan_extensions_missing'] . ' ';
                         }
                         $x .=
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $phpMussel['lang']['scan_reading'] . ' \'' .
                             $PharData[$PharIter]['ItemRef'] . "' (BZIP2):\n-" .
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
+                            $phpMussel['lang']['scan_extensions_missing'] . "\n";
                         break;
                     }
                     if (!$PharData[$PharIter]['Data'] = @bzdecompress($PharData[$PharIter]['Data'])) {
                         $x .=
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $phpMussel['lang']['scan_reading'] . ' \'' .
                             $PharData[$PharIter]['ItemRef'] . "' (BZIP2):\n-" .
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
+                            $phpMussel['lang']['scan_not_archive'] . "\n";
                         break;
                     }
                     $x .=
                         $PharData[$PharIter]['Indent'] .
-                        $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                        $phpMussel['lang']['scan_reading'] . ' \'' .
                         $PharData[$PharIter]['ItemRef'] . "' (BZIP2):\n";
                     $zDo = true;
                 } elseif (
@@ -7366,28 +7366,28 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                                 $PharData[$PharIter]['Filesize'] . ':' .
                                 $PharData[$PharIter]['ItemRef'] . "\n";
                             $phpMussel['whyflagged'] .=
-                                $phpMussel['Config']['lang']['scan_extensions_missing'] . ' ';
+                                $phpMussel['lang']['scan_extensions_missing'] . ' ';
                         }
                         $x .=
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $phpMussel['lang']['scan_reading'] . ' \'' .
                             $PharData[$PharIter]['ItemRef'] . "' (LZF):\n-" .
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_extensions_missing'] . "\n";
+                            $phpMussel['lang']['scan_extensions_missing'] . "\n";
                         break;
                     }
                     if (!$PharData[$PharIter]['Data'] = @lzf_decompress($PharData[$PharIter]['Data'])) {
                         $x .=
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                            $phpMussel['lang']['scan_reading'] . ' \'' .
                             $PharData[$PharIter]['ItemRef'] . "' (LZF):\n-" .
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_not_archive'] . "\n";
+                            $phpMussel['lang']['scan_not_archive'] . "\n";
                         break;
                     }
                     $x .=
                         $PharData[$PharIter]['Indent'] .
-                        $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                        $phpMussel['lang']['scan_reading'] . ' \'' .
                         $PharData[$PharIter]['ItemRef'] . "' (LZF):\n";
                     $zDo = true;
                 } elseif (
@@ -7404,7 +7404,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                     /** Allows recursion for TAR files. */
                     $x .=
                         $PharData[$PharIter]['Indent'] .
-                        $phpMussel['Config']['lang']['scan_reading'] . ' \'' .
+                        $phpMussel['lang']['scan_reading'] . ' \'' .
                         $PharData[$PharIter]['ItemRef'] . "' (TAR):\n";
                     $TarFile = array('Offset' => 0);
                     while (true) {
@@ -7424,13 +7424,13 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                                 $TarFile['File']['Filesize'] . ':' .
                                 $PharData[$PharIter]['ItemRef'] . "\n";
                             $phpMussel['whyflagged'] .=
-                                $phpMussel['Config']['lang']['scan_tampering'] . ' (' .
+                                $phpMussel['lang']['scan_tampering'] . ' (' .
                                 urlencode($PharData[$PharIter]['ItemRef']) .
-                                ')' . $phpMussel['Config']['lang']['_exclamation'];
+                                ')' . $phpMussel['lang']['_exclamation'];
                             $x .=
                                 '-' . $PharData[$PharIter]['Indent'] .
-                                $phpMussel['Config']['lang']['scan_tampering'] .
-                                $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                $phpMussel['lang']['scan_tampering'] .
+                                $phpMussel['lang']['_exclamation_final'] . "\n";
                             break;
                         }
                         $TarFile['File']['Directory'] = (
@@ -7465,12 +7465,12 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                                 $TarFile['File']['Filesize'] .
                                 ":MISSING-FILENAME\n";
                             $phpMussel['whyflagged'] .=
-                                $phpMussel['Config']['lang']['scan_missing_filename'] .
-                                $phpMussel['Config']['lang']['_exclamation'];
+                                $phpMussel['lang']['scan_missing_filename'] .
+                                $phpMussel['lang']['_exclamation'];
                             $x .=
                                 '-' . $PharData[$PharIter]['Indent'] .
-                                $phpMussel['Config']['lang']['scan_missing_filename'] .
-                                $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                                $phpMussel['lang']['scan_missing_filename'] .
+                                $phpMussel['lang']['_exclamation_final'] . "\n";
                             break;
                         }
                         $phpMussel['memCache']['objects_scanned']++;
@@ -7492,14 +7492,14 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                         $TarFile['Offset'] += $TarFile['File']['Blocks'] * 512;
                         $x .=
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_checking'] . ' \'' .
+                            $phpMussel['lang']['scan_checking'] . ' \'' .
                             $PharData[$PharIter]['ItemRef'] . '>' . $TarFile['File']['Filename'] .
                             '\' (FN: ' . $TarFile['File']['NameCRC32'] . '; FD: ' .
                             $TarFile['File']['DataCRC32'] . "):\n";
                         if ($r === 1) {
                             $x .=
                                 '-' . $PharData[$PharIter]['Indent'] .
-                                $phpMussel['Config']['lang']['scan_no_problems_found'] . "\n";
+                                $phpMussel['lang']['scan_no_problems_found'] . "\n";
                         }
                     }
                     $TarFile = '';
@@ -7521,7 +7521,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                     $PharData[$PharIter]['DataCRC32'] = hash('crc32b', $PharData[$PharIter]['Data']);
                     $x .=
                         $PharData[$PharIter]['Indent'] .
-                        $phpMussel['Config']['lang']['scan_checking'] .
+                        $phpMussel['lang']['scan_checking'] .
                         ' \'' . $PharData[$PharIter]['ItemRef'] .
                         '\' (FN: ' . $PharData[$PharIter]['NameCRC32'] .
                         '; FD: ' . $PharData[$PharIter]['DataCRC32'] . "):\n";
@@ -7541,7 +7541,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                     if ($r === 1) {
                         $x .=
                             $PharData[$PharIter]['Indent'] .
-                            $phpMussel['Config']['lang']['scan_no_problems_found'] .
+                            $phpMussel['lang']['scan_no_problems_found'] .
                             "\n";
                     } else {
                         break 2;
@@ -7569,7 +7569,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 $qfu
             );
             $phpMussel['killdata'] .=
-                $phpMussel['ParseVars'](array('QFU' => $qfu), $phpMussel['Config']['lang']['quarantined_as']);
+                $phpMussel['ParseVars'](array('QFU' => $qfu), $phpMussel['lang']['quarantined_as']);
         }
     }
     if ($r !== 1 && $phpMussel['Config']['general']['delete_on_sight']) {
@@ -7661,9 +7661,9 @@ $phpMussel['Fork'] = function ($f = '', $ofn = '') use (&$phpMussel) {
 $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn = '') use (&$phpMussel) {
     if (!isset($phpMussel['memCache'])) {
         throw new \Exception(
-            (!isset($phpMussel['Config']['lang']['required_variables_not_defined'])) ?
+            (!isset($phpMussel['lang']['required_variables_not_defined'])) ?
             '[phpMussel] Required variables aren\'t defined: Can\'t continue.' :
-            '[phpMussel] ' . $phpMussel['Config']['lang']['required_variables_not_defined']
+            '[phpMussel] ' . $phpMussel['lang']['required_variables_not_defined']
         );
     }
     if ($phpMussel['EOF']) {
@@ -7774,10 +7774,10 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
         !is_array($r)
     ) {
         $r =
-            $xst2822 . ' ' . $phpMussel['Config']['lang']['started'] .
-            $phpMussel['Config']['lang']['_fullstop_final'] . "\n" .
-            $r . $xet2822 . ' ' . $phpMussel['Config']['lang']['finished'] .
-            $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+            $xst2822 . ' ' . $phpMussel['lang']['started'] .
+            $phpMussel['lang']['_fullstop_final'] . "\n" .
+            $r . $xet2822 . ' ' . $phpMussel['lang']['finished'] .
+            $phpMussel['lang']['_fullstop_final'] . "\n";
         $handle = array(
             'File' => $phpMussel['Time2Logfile'](
                 $phpMussel['Time'],
@@ -7883,15 +7883,15 @@ $phpMussel['ReturnLogfile'] = function ($logfile) use (&$phpMussel) {
     );
     if (file_exists($phpMussel['vault'] . $handle)) {
         return
-            $phpMussel['Config']['lang']['cli_ln1'] .
-            $phpMussel['Config']['lang']['cli_ln2'] .
+            $phpMussel['lang']['cli_ln1'] .
+            $phpMussel['lang']['cli_ln2'] .
             $handle . ":\n\n" .
             $phpMussel['ReadFile']($phpMussel['vault'] . $handle);
     }
     return
         $handle . ' ' .
-        $phpMussel['Config']['lang']['x_does_not_exist'] .
-        $phpMussel['Config']['lang']['_exclamation_final'];
+        $phpMussel['lang']['x_does_not_exist'] .
+        $phpMussel['lang']['_exclamation_final'];
 };
 
 /**

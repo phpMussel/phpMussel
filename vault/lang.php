@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2016.10.02).
+ * This file: Language handler (last modified: 2016.10.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -20,16 +20,16 @@ if (!defined('phpMussel')) {
 }
 
 /** Create the language data array. */
-$phpMussel['Config']['lang'] = array();
+$phpMussel['lang'] = array();
 
 /** phpMussel CLI-mode ASCII art. */
-$phpMussel['Config']['lang']['cli_ln1'] =
+$phpMussel['lang']['cli_ln1'] =
     "      _____  _     _  _____  _______ _     _ _______ _______ _______           \n" .
     " <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >\n" .
     "     |       |     | |       |  |  | |_____| ______| ______| |______ |_____    \n";
 
 /** phpMussel CLI-mode prompt. */
-$phpMussel['Config']['lang']['cli_prompt'] = "\n\n>> ";
+$phpMussel['lang']['cli_prompt'] = "\n\n>> ";
 
 /** Ensure HTTP_ACCEPT_LANGUAGE is defined (even if it's empty). */
 if (!isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {

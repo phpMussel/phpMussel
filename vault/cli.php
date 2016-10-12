@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.06.02).
+ * This file: CLI handler (last modified: 2016.10.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -109,7 +109,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             $stl = substr($phpMussel['cli_args'][2], strlen($phpMussel['cmd']) + 1);
             if (@is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
-                    echo $phpMussel['Config']['lang']['failed_to_access'] . '"' . $stl . "\".\n";
+                    echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
                     $c = count($d);
                     $xsc = $stl[strlen($stl) - 1];
@@ -127,7 +127,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                 $hashme = $phpMussel['ReadFile']($stl, 0, true);
                 echo md5($hashme) . ':' . strlen($hashme) . ":YOUR-SIGNATURE-NAME\n";
             } else {
-                echo $stl . $phpMussel['Config']['lang']['cli_is_not_a'] . "\n";
+                echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
             }
         }
 
@@ -136,7 +136,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             $stl = substr($phpMussel['cli_args'][2], strlen($phpMussel['cmd']) + 1);
             if (@is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
-                    echo $phpMussel['Config']['lang']['failed_to_access'] . '"' . $stl . "\".\n";
+                    echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
                     $c = count($d);
                     $xsc = $stl[strlen($stl) - 1];
@@ -154,7 +154,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                 $hashme = $phpMussel['ReadFile']($stl, 0, true);
                 echo '$md5:' . md5($hashme) . ';$sha:' . sha1($hashme) . ';$str_len:' . strlen($hashme) . ";YOUR-SIGNATURE-NAME\n";
             }
-            else echo $stl . $phpMussel['Config']['lang']['cli_is_not_a'] . "\n";
+            else echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
         }
 
         /** Fetch PE metadata. **/
@@ -162,7 +162,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             $stl = substr($phpMussel['cli_args'][2], strlen($phpMussel['cmd']) + 1);
             if (@is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
-                    echo $phpMussel['Config']['lang']['failed_to_access'] . '"' . $stl . "\".\n";
+                    echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
                     $c = count($d);
                     $xsc = $stl[strlen($stl) - 1];
@@ -208,11 +208,11 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         break;
                     }
                     if (!$PEArr['DoScan']) {
-                        echo $phpMussel['Config']['lang']['cli_pe1'] . "\n";
+                        echo $phpMussel['lang']['cli_pe1'] . "\n";
                     } else {
                         $PEArr['OptHdrSize'] = @unpack('S', substr($hashme, $PEArr['Offset'] + 20, 2));
                         $PEArr['OptHdrSize'] = $PEArr['OptHdrSize'][1];
-                        echo $phpMussel['Config']['lang']['cli_pe2'] . "\n";
+                        echo $phpMussel['lang']['cli_pe2'] . "\n";
                         for ($PEArr['k'] = 0; $PEArr['k'] < $PEArr['NumOfSections']; $PEArr['k']++) {
                             $PEArr['SectionHead'] = substr($hashme, $PEArr['Offset'] + 24 + $PEArr['OptHdrSize'] + ($PEArr['k'] * 40), $PEArr['NumOfSections'] * 40);
                             $PEArr['SectionName'] = str_ireplace("\x00", '', substr($PEArr['SectionHead'], 0, 8));
@@ -263,10 +263,10 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                     }
                     $PEArr = false;
                 } else {
-                    echo $phpMussel['Config']['lang']['cli_pe1'] . "\n";
+                    echo $phpMussel['lang']['cli_pe1'] . "\n";
                 }
             } else {
-                echo $stl . $phpMussel['Config']['lang']['cli_is_not_a'] . "\n";
+                echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
             }
         }
 
@@ -275,7 +275,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
     }
 
     /** Echo the ASCII header art and CLI-mode information. */
-    echo $phpMussel['Config']['lang']['cli_ln1'] . $phpMussel['Config']['lang']['cli_ln2'] . $phpMussel['Config']['lang']['cli_ln3'];
+    echo $phpMussel['lang']['cli_ln1'] . $phpMussel['lang']['cli_ln2'] . $phpMussel['lang']['cli_ln3'];
 
     /** Open STDIN. */
     $sth = fopen('php://stdin', 'r');
@@ -288,14 +288,14 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         }
 
         /** Echo the CLI-mode prompt. */
-        echo $phpMussel['Config']['lang']['cli_prompt'];
+        echo $phpMussel['lang']['cli_prompt'];
 
         /** Wait for user input. */
         $stl = trim(fgets($sth));
 
         /** Set CLI process title with "working" notice (PHP =>5.5.0). */
         if (function_exists('cli_set_process_title')) {
-            cli_set_process_title($phpMussel['ScriptIdent'] . ' - ' . $phpMussel['Config']['lang']['cli_working'] . '...');
+            cli_set_process_title($phpMussel['ScriptIdent'] . ' - ' . $phpMussel['lang']['cli_working'] . '...');
         }
 
         /** Fetch the command. **/
@@ -312,7 +312,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
             if (@is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
-                    echo $phpMussel['Config']['lang']['failed_to_access'] . '"' . $stl . "\".\n";
+                    echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
                     $c = count($d);
                     $xsc = $stl[strlen($stl) - 1];
@@ -330,7 +330,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                 $hashme = $phpMussel['ReadFile']($stl, 0, true);
                 echo md5($hashme) . ':' . strlen($hashme) . ":YOUR-SIGNATURE-NAME\n";
             } else {
-                echo $stl . $phpMussel['Config']['lang']['cli_is_not_a'] . "\n";
+                echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
             }
         }
 
@@ -340,7 +340,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
             if (@is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
-                    echo $phpMussel['Config']['lang']['failed_to_access'] . '"' . $stl . "\".\n";
+                    echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
                     $c = count($d);
                     $xsc = $stl[strlen($stl) - 1];
@@ -358,7 +358,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                 $hashme = $phpMussel['ReadFile']($stl, 0, true);
                 echo '$md5:' . md5($hashme) . ';$sha:' . sha1($hashme) . ';$str_len:' . strlen($hashme) . ";YOUR-SIGNATURE-NAME\n";
             } else {
-                echo $stl . $phpMussel['Config']['lang']['cli_is_not_a'] . "\n";
+                echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
             }
         }
 
@@ -368,7 +368,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
             if (@is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
-                    echo $phpMussel['Config']['lang']['failed_to_access'] . '"' . $stl . "\".\n";
+                    echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
                     $c = count($d);
                     $xsc = $stl[strlen($stl) - 1];
@@ -385,7 +385,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             } elseif (@is_file($stl)) {
                 echo $phpMussel['Fork']('pe_meta ' . $stl, $stl) . "\n";
             } else {
-                echo $stl . $phpMussel['Config']['lang']['cli_is_not_a'] . "\n";
+                echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
             }
         }
 
@@ -406,7 +406,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                 !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([0-9a-z.-]{1,512})/i', $stl, $urlsig['domain']) ||
                 !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})/i', $stl, $urlsig['url'])
             ) {
-                echo $phpMussel['Config']['lang']['invalid_url'] . "\n";
+                echo $phpMussel['lang']['invalid_url'] . "\n";
             } else {
                 echo 'DOMAIN:' . md5($urlsig['domain'][3][0]) . ':' . strlen($urlsig['domain'][3][0]) . ":YOUR-SIGNATURE-NAME\n";
                 $urlsig['forthis'] = md5($urlsig['url'][3][0]) . ':' . strlen($urlsig['url'][3][0]);
@@ -483,11 +483,11 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             $out = $r = '';
             $phpMussel['memCache']['start_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
             $phpMussel['memCache']['start_time_2822'] = date('r', $phpMussel['memCache']['start_time']);
-            $s = $phpMussel['memCache']['start_time_2822'] . ' ' . $phpMussel['Config']['lang']['started'] . $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+            $s = $phpMussel['memCache']['start_time_2822'] . ' ' . $phpMussel['lang']['started'] . $phpMussel['lang']['_fullstop_final'] . "\n";
             echo $s;
             if (@is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
-                    $out = '> ' . $phpMussel['Config']['lang']['failed_to_access'] . '"' . $stl . "\".\n";
+                    $out = '> ' . $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
                     $c = count($d);
                     $xsc = $stl[strlen($stl) - 1];
@@ -499,10 +499,10 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                             continue;
                         }
                         $pcent = @round(($i / $c) * 100, 2) . '%';
-                        echo $pcent . ' ' . $phpMussel['Config']['lang']['scan_complete'] . $phpMussel['Config']['lang']['_fullstop_final'];
+                        echo $pcent . ' ' . $phpMussel['lang']['scan_complete'] . $phpMussel['lang']['_fullstop_final'];
                         $out = $phpMussel['Fork']('scan ' . $stl . $d[$i], $d[$i]);
                         if (!$out) {
-                            $out = '> ' . $phpMussel['Config']['lang']['cli_failed_to_complete'] . ' (' . $d[$i] . ')' . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                            $out = '> ' . $phpMussel['lang']['cli_failed_to_complete'] . ' (' . $d[$i] . ')' . $phpMussel['lang']['_exclamation_final'] . "\n";
                         }
                         $r .= $out;
                         echo "\r" . $phpMussel['prescan_decode']($out);
@@ -512,10 +512,10 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             } elseif (@is_file($stl)) {
                 $out = $phpMussel['Fork']('scan ' . $stl, $stl);
                 if (!$out) {
-                    $out = '> ' . $phpMussel['Config']['lang']['cli_failed_to_complete'] . $phpMussel['Config']['lang']['_exclamation_final'] . "\n";
+                    $out = '> ' . $phpMussel['lang']['cli_failed_to_complete'] . $phpMussel['lang']['_exclamation_final'] . "\n";
                 }
             } elseif (!$out) {
-                $out = '> ' . $stl . $phpMussel['Config']['lang']['cli_is_not_a'] . "\n";
+                $out = '> ' . $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
             }
             $r .= $out;
             if ($out) {
@@ -526,7 +526,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             $phpMussel['memCache']['end_time_2822'] = date('r', $phpMussel['memCache']['end_time']);
             /** @todo Get serialised logging working for CLI mode (github.com/Maikuolan/phpMussel/issues/54). */
             $r = $s . $r;
-            $s = $phpMussel['memCache']['end_time_2822'] . ' ' . $phpMussel['Config']['lang']['finished'] . $phpMussel['Config']['lang']['_fullstop_final'] . "\n";
+            $s = $phpMussel['memCache']['end_time_2822'] . ' ' . $phpMussel['lang']['finished'] . $phpMussel['lang']['_fullstop_final'] . "\n";
             echo $s;
             $r .= $s;
             if ($phpMussel['Config']['general']['scan_log']) {
@@ -559,7 +559,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                 fwrite($handle, $greylist);
                 fclose($handle);
                 unset($handle, $greylist);
-                echo $phpMussel['Config']['lang']['greylist_updated'];
+                echo $phpMussel['lang']['greylist_updated'];
             }
         }
 
@@ -571,7 +571,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             fwrite($handle, ',');
             fclose($handle);
             unset($handle, $greylist);
-            echo $phpMussel['Config']['lang']['greylist_cleared'];
+            echo $phpMussel['lang']['greylist_cleared'];
         }
 
         /** Show the greylist. **/
@@ -581,12 +581,12 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             echo
                 (file_exists($phpMussel['vault'] . 'greylist.csv')) ?
                 " greylist.csv:\n" . implode("\n ", explode(',', $phpMussel['ReadFile']($phpMussel['vault'] . 'greylist.csv'))) :
-                ' greylist.csv ' . $phpMussel['Config']['lang']['x_does_not_exist'] . $phpMussel['Config']['lang']['_exclamation_final'];
+                ' greylist.csv ' . $phpMussel['lang']['x_does_not_exist'] . $phpMussel['lang']['_exclamation_final'];
         }
 
         /** Print the command list. **/
         if ($phpMussel['cmd'] == 'c') {
-            echo $phpMussel['Config']['lang']['cli_commands'];
+            echo $phpMussel['lang']['cli_commands'];
         }
 
     }

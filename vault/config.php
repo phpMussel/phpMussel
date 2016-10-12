@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2016.10.08).
+ * This file: Configuration handler (last modified: 2016.10.12).
  */
 
 /** phpMussel version number (SemVer). */

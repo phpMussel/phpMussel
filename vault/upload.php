@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2016.08.29).
+ * This file: Upload handler (last modified: 2016.10.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -207,7 +207,7 @@ if ($phpMussel['upload']['count'] > 0) {
                         md5($phpMussel['memCache']['handle']['odata']) .
                         "\n" . $phpMussel['ParseVars'](
                             array('QFU' => $phpMussel['memCache']['handle']['qfile']),
-                            $phpMussel['Config']['lang']['quarantined_as']
+                            $phpMussel['lang']['quarantined_as']
                         );
                 }
 
@@ -223,11 +223,11 @@ if ($phpMussel['upload']['count'] > 0) {
                         $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
                         "\n";
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['upload_limit_exceeded'] .
+                        $phpMussel['lang']['upload_limit_exceeded'] .
                         ' (' .
                         $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
                         ')' .
-                        $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['_exclamation'];
                     if (
                         $phpMussel['Config']['general']['delete_on_sight'] &&
                         is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]) &&
@@ -260,7 +260,7 @@ if ($phpMussel['upload']['count'] > 0) {
                     ':' .
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
                     "\n";
-                $phpMussel['whyflagged'] .= $phpMussel['Config']['lang']['upload_error_1'];
+                $phpMussel['whyflagged'] .= $phpMussel['lang']['upload_error_1'];
                 if (
                     $phpMussel['Config']['general']['delete_on_sight'] &&
                     is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']])
@@ -274,7 +274,7 @@ if ($phpMussel['upload']['count'] > 0) {
                     ':' .
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
                     "\n";
-                $phpMussel['whyflagged'] .= $phpMussel['Config']['lang']['upload_error_2'];
+                $phpMussel['whyflagged'] .= $phpMussel['lang']['upload_error_2'];
                 if (
                     $phpMussel['Config']['general']['delete_on_sight'] &&
                     is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']])
@@ -288,7 +288,7 @@ if ($phpMussel['upload']['count'] > 0) {
                     ':' .
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
                     "\n";
-                $phpMussel['whyflagged'] .= $phpMussel['Config']['lang']['upload_error_34'];
+                $phpMussel['whyflagged'] .= $phpMussel['lang']['upload_error_34'];
             } elseif ($phpMussel['upload']['FilesData']['FileSet']['error'][$phpMussel['upload']['FilesData']['FileSet']['i']] === 4) {
                 $phpMussel['killdata'] .=
                     '---------UPLOAD-ERROR-4---------:' .
@@ -296,7 +296,7 @@ if ($phpMussel['upload']['count'] > 0) {
                     ':' .
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
                     "\n";
-                $phpMussel['whyflagged'] .= $phpMussel['Config']['lang']['upload_error_34'];
+                $phpMussel['whyflagged'] .= $phpMussel['lang']['upload_error_34'];
             } elseif ($phpMussel['upload']['FilesData']['FileSet']['error'][$phpMussel['upload']['FilesData']['FileSet']['i']] === 6) {
                 $phpMussel['killdata'] .=
                     '---------UPLOAD-ERROR-6---------:' .
@@ -304,7 +304,7 @@ if ($phpMussel['upload']['count'] > 0) {
                     ':' .
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
                     "\n";
-                $phpMussel['whyflagged'] .= $phpMussel['Config']['lang']['upload_error_6'];
+                $phpMussel['whyflagged'] .= $phpMussel['lang']['upload_error_6'];
             } elseif ($phpMussel['upload']['FilesData']['FileSet']['error'][$phpMussel['upload']['FilesData']['FileSet']['i']] === 7) {
                 $phpMussel['killdata'] .=
                     '---------UPLOAD-ERROR-7---------:' .
@@ -312,7 +312,7 @@ if ($phpMussel['upload']['count'] > 0) {
                     ':' .
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
                     "\n";
-                $phpMussel['whyflagged'] .= $phpMussel['Config']['lang']['upload_error_7'];
+                $phpMussel['whyflagged'] .= $phpMussel['lang']['upload_error_7'];
             } elseif ($phpMussel['upload']['FilesData']['FileSet']['error'][$phpMussel['upload']['FilesData']['FileSet']['i']] === 8) {
                 $phpMussel['killdata'] .=
                     '---------UPLOAD-ERROR-8---------:' .
@@ -320,7 +320,7 @@ if ($phpMussel['upload']['count'] > 0) {
                     ':' .
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
                     "\n";
-                $phpMussel['whyflagged'] .= $phpMussel['Config']['lang']['upload_error_8'];
+                $phpMussel['whyflagged'] .= $phpMussel['lang']['upload_error_8'];
             } elseif (!is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']])) {
                 $phpMussel['killdata'] .=
                     'UNAUTHORISED-FILE-UPLOAD-NO-HASH:' .
@@ -329,17 +329,17 @@ if ($phpMussel['upload']['count'] > 0) {
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
                     "\n";
                 $phpMussel['whyflagged'] .=
-                    $phpMussel['Config']['lang']['scan_unauthorised_upload'] .
+                    $phpMussel['lang']['scan_unauthorised_upload'] .
                     ' (' .
                     $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
                     ')' .
-                    $phpMussel['Config']['lang']['_exclamation'];
+                    $phpMussel['lang']['_exclamation'];
             } elseif (
                 !$phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] ||
                 !$phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]
             ) {
                 $phpMussel['killdata'] .= "-UNAUTHORISED-UPLOAD-MISCONFIG-:?:?\n";
-                $phpMussel['whyflagged'] .= $phpMussel['Config']['lang']['scan_unauthorised_upload_or_misconfig'];
+                $phpMussel['whyflagged'] .= $phpMussel['lang']['scan_unauthorised_upload_or_misconfig'];
             } else {
 
                 /** Honeypot code. */
@@ -386,7 +386,7 @@ if ($phpMussel['upload']['count'] > 0) {
                         md5($phpMussel['memCache']['handle']['odata']) .
                         "\n" . $phpMussel['ParseVars'](
                             array('QFU' => $phpMussel['memCache']['handle']['qfile']),
-                            $phpMussel['Config']['lang']['quarantined_as']
+                            $phpMussel['lang']['quarantined_as']
                         );
                 }
 
@@ -402,11 +402,11 @@ if ($phpMussel['upload']['count'] > 0) {
                         $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
                         "\n";
                     $phpMussel['whyflagged'] .=
-                        $phpMussel['Config']['lang']['upload_limit_exceeded'] .
+                        $phpMussel['lang']['upload_limit_exceeded'] .
                         ' (' .
                         $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
                         ')' .
-                        $phpMussel['Config']['lang']['_exclamation'];
+                        $phpMussel['lang']['_exclamation'];
                     if (
                         $phpMussel['Config']['general']['delete_on_sight'] &&
                         !$phpMussel['Config']['general']['honeypot_mode']
@@ -529,12 +529,12 @@ if ($phpMussel['upload']['count'] > 0) {
     if (!empty($phpMussel['whyflagged'])) {
 
         /** A fix for correctly displaying LTR/RTL text. */
-        if (empty($phpMussel['Config']['lang']['textDir']) || $phpMussel['Config']['lang']['textDir'] !== 'rtl') {
-            $phpMussel['Config']['lang']['textDir'] = 'ltr';
+        if (empty($phpMussel['lang']['textDir']) || $phpMussel['lang']['textDir'] !== 'rtl') {
+            $phpMussel['lang']['textDir'] = 'ltr';
         }
 
         /** Merging parsable variables for the template data. */
-        $phpMussel['TemplateData'] = $phpMussel['Config']['lang'] + $phpMussel['Config']['template_data'];
+        $phpMussel['TemplateData'] = $phpMussel['lang'] + $phpMussel['Config']['template_data'];
         $phpMussel['TemplateData']['detected'] = $phpMussel['whyflagged'];
         $phpMussel['TemplateData']['phpmusselversion'] = $phpMussel['ScriptIdent'];
         $phpMussel['TemplateData']['xmlLang'] = $phpMussel['Config']['general']['lang'];
@@ -576,7 +576,7 @@ if ($phpMussel['upload']['count'] > 0) {
         /** Fallback to use if the HTML template file is missing. */
         if (!file_exists($phpMussel['vault'] . $phpMussel['memCache']['template_file'])) {
             header('Content-Type: text/plain');
-            die('[phpMussel] ' . $phpMussel['Config']['lang']['denied'] . ' ' . $phpMussel['TemplateData']['detected']);
+            die('[phpMussel] ' . $phpMussel['lang']['denied'] . ' ' . $phpMussel['TemplateData']['detected']);
         }
 
         /** Send a 403 FORBIDDEN status code to the client if "forbid_on_block" is enabled. */
