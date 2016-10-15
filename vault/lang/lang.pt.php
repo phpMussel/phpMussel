@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data (last modified: 2016.10.12).
+ * This file: Portuguese language data (last modified: 2016.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -28,7 +28,6 @@ $phpMussel['lang']['cli_pe1'] = 'Não é um válido PE arquivo!';
 $phpMussel['lang']['cli_pe2'] = 'PE Seções:';
 $phpMussel['lang']['cli_working'] = 'Em processo';
 $phpMussel['lang']['controls_lockout'] = 'phpMussel controles bloqueios ativado.';
-$phpMussel['lang']['core_scriptfile_missing'] = 'Núcleo script arquivo ausente! Por favor, reinstale phpMussel.';
 $phpMussel['lang']['corrupted'] = 'Detectado corrompido PE';
 $phpMussel['lang']['denied'] = 'Carregar Negado!';
 $phpMussel['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';

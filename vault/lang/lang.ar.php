@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2016.10.12).
+ * This file: Arabic language data (last modified: 2016.10.15).
  *
  * @todo Incomplete.
  */
@@ -31,7 +31,6 @@ $phpMussel['lang']['cli_pe1'] = 'ليس ملف PE صالح!';
 $phpMussel['lang']['cli_pe2'] = 'أقسام PE:';
 $phpMussel['lang']['cli_working'] = 'في تَقَدم';
 $phpMussel['lang']['controls_lockout'] = 'phpMussel controls lockout enabled.';
-$phpMussel['lang']['core_scriptfile_missing'] = 'Core script file missing! Please reinstall phpMussel.';
 $phpMussel['lang']['corrupted'] = 'الكشف PE تلف';
 $phpMussel['lang']['denied'] = 'رفض تحميل!';
 $phpMussel['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2016.10.12).
+ * This file: Russian language data (last modified: 2016.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -28,7 +28,6 @@ $phpMussel['lang']['cli_pe1'] = 'Не ПЭ Файл!';
 $phpMussel['lang']['cli_pe2'] = 'ПЭ Разделы:';
 $phpMussel['lang']['cli_working'] = 'В действии';
 $phpMussel['lang']['controls_lockout'] = 'phpMussel контроль блокировки активен.';
-$phpMussel['lang']['core_scriptfile_missing'] = 'Файл основного сценария отсутствует! Пожалуйста инсталлируете phpMussel заново.';
 $phpMussel['lang']['corrupted'] = 'Обнаружена поврежденная ПЭ';
 $phpMussel['lang']['denied'] = 'Загрузка Отказана!';
 $phpMussel['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';

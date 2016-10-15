@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2016.10.12).
+ * This file: Upload handler (last modified: 2016.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -444,12 +444,12 @@ if ($phpMussel['upload']['count'] > 0) {
                 $phpMussel['Config']['general']['scan_kills']
             )
         );
-        if (!file_exists($phpMussel['vault'] . $phpMussel['memCache']['handle']['File'])) {
+        if (!file_exists($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'])) {
             $phpMussel['memCache']['handle']['qdata'] =
                 $phpMussel['safety'] . "\n" . $phpMussel['memCache']['handle']['qdata'];
         }
         $phpMussel['memCache']['handle']['Stream'] =
-            fopen($phpMussel['vault'] . $phpMussel['memCache']['handle']['File'], 'a');
+            fopen($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'], 'a');
         fwrite($phpMussel['memCache']['handle']['Stream'], $phpMussel['memCache']['handle']['qdata']);
         fclose($phpMussel['memCache']['handle']['Stream']);
         $phpMussel['memCache']['handle'] = '';
@@ -516,7 +516,7 @@ if ($phpMussel['upload']['count'] > 0) {
             )
         );
         $phpMussel['memCache']['handle']['Stream'] =
-            fopen($phpMussel['vault'] . $phpMussel['memCache']['handle']['File'], 'a');
+            fopen($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'], 'a');
         fwrite($phpMussel['memCache']['handle']['Stream'], $phpMussel['memCache']['handle']['Data']);
         fclose($phpMussel['memCache']['handle']['Stream']);
         $phpMussel['memCache']['handle'] = '';
@@ -550,7 +550,7 @@ if ($phpMussel['upload']['count'] > 0) {
                 )
             );
             $phpMussel['memCache']['handle']['Data'] =
-                (!file_exists($phpMussel['vault'] . $phpMussel['memCache']['handle']['File'])) ?
+                (!file_exists($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'])) ?
                 $phpMussel['safety'] . "\n" :
                 '';
             $phpMussel['memCache']['handle']['Data'] .=
@@ -567,14 +567,14 @@ if ($phpMussel['upload']['count'] > 0) {
             }
             $phpMussel['memCache']['handle']['Data'] .= "\n";
             $phpMussel['memCache']['handle']['Stream'] =
-                fopen($phpMussel['vault'] . $phpMussel['memCache']['handle']['File'], 'a');
+                fopen($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'], 'a');
             fwrite($phpMussel['memCache']['handle']['Stream'], $phpMussel['memCache']['handle']['Data']);
             fclose($phpMussel['memCache']['handle']['Stream']);
             $phpMussel['memCache']['handle'] = '';
         }
 
         /** Fallback to use if the HTML template file is missing. */
-        if (!file_exists($phpMussel['vault'] . $phpMussel['memCache']['template_file'])) {
+        if (!file_exists($phpMussel['Vault'] . $phpMussel['memCache']['template_file'])) {
             header('Content-Type: text/plain');
             die('[phpMussel] ' . $phpMussel['lang']['denied'] . ' ' . $phpMussel['TemplateData']['detected']);
         }
@@ -589,7 +589,7 @@ if ($phpMussel['upload']['count'] > 0) {
         /** Generate HTML output. */
         $html = $phpMussel['ParseVars'](
             $phpMussel['TemplateData'],
-            $phpMussel['ReadFile']($phpMussel['vault'] . $phpMussel['memCache']['template_file'], 0, true)
+            $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['memCache']['template_file'], 0, true)
         );
 
         /** Plugin hook: "before_html_out". */

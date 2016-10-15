@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data (last modified: 2016.10.12).
+ * This file: Chinese (simplified) language data (last modified: 2016.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -28,7 +28,6 @@ $phpMussel['lang']['cli_pe1'] = '不PE文件！';
 $phpMussel['lang']['cli_pe2'] = 'PE部分:';
 $phpMussel['lang']['cli_working'] = '进行中';
 $phpMussel['lang']['controls_lockout'] = 'phpMussel控制闭锁是启用。';
-$phpMussel['lang']['core_scriptfile_missing'] = '核心文件是丢失！请重新安装phpMussel。';
 $phpMussel['lang']['corrupted'] = '检测损坏PE';
 $phpMussel['lang']['denied'] = '上传是否认！';
 $phpMussel['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';

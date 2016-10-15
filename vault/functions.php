@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.10.12).
+ * This file: Functions file (last modified: 2016.10.15).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -639,7 +639,7 @@ $phpMussel['CleanCache'] = function () use (&$phpMussel) {
     }
     $phpMussel['memCache']['CacheCleaned'] = true;
     $CacheFiles = array();
-    $f = $phpMussel['vault'] . 'cache/index.dat';
+    $f = $phpMussel['Vault'] . 'cache/index.dat';
     $fdata_old = $fdata = $phpMussel['ReadFile']($f);
     if (substr_count($fdata, ';')) {
         $fdata = explode(';', $fdata);
@@ -777,7 +777,7 @@ $phpMussel['SaveCache'] = function ($entry = '', $item_ex = 0, $item_data = '') 
     $fh = fopen($f, 'w');
     fwrite($fh, $d);
     fclose($fh);
-    $IndexFile = $phpMussel['vault'] . 'cache/index.dat';
+    $IndexFile = $phpMussel['Vault'] . 'cache/index.dat';
     $IndexNewData = $IndexData = (!file_exists($IndexFile)) ? '' : $phpMussel['ReadFile']($IndexFile, 0, true);
     while (substr_count($IndexNewData, $entry . ':')) {
         $IndexNewData = str_ireplace($entry . ':' . $phpMussel['substrbf']($phpMussel['substraf']($IndexNewData, $entry . ':'), ';') . ';', '', $IndexNewData);
@@ -1482,7 +1482,7 @@ $phpMussel['SafeBrowseLookup'] = function ($urls) use (&$phpMussel) {
      */
     curl_setopt($request, CURLOPT_SSL_VERIFYPEER, false);
     /* We don't want to leave the client waiting for *too* long. */
-    curl_setopt($request, CURLOPT_TIMEOUT, 12);
+    curl_setopt($request, CURLOPT_TIMEOUT, $phpMussel['Timeout']);
     curl_setopt($request, CURLOPT_USERAGENT, $phpMussel['ScriptUA']);
     curl_setopt($request, CURLOPT_POSTFIELDS, $arr);
 
@@ -6705,15 +6705,15 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
 
     /** Fetch the greylist if it hasn't already been fetched. */
     if (!isset($phpMussel['memCache']['greylist'])) {
-        if (!file_exists($phpMussel['vault'] . 'greylist.csv')) {
+        if (!file_exists($phpMussel['Vault'] . 'greylist.csv')) {
             $phpMussel['memCache']['greylist'] = ',';
-            $glf = fopen($phpMussel['vault'] . 'greylist.csv', 'a');
+            $glf = fopen($phpMussel['Vault'] . 'greylist.csv', 'a');
             fwrite($glf, ',');
             fclose($glf);
             unset($glf);
         } else {
             $phpMussel['memCache']['greylist'] =
-                $phpMussel['ReadFile']($phpMussel['vault'] . 'greylist.csv');
+                $phpMussel['ReadFile']($phpMussel['Vault'] . 'greylist.csv');
         }
     }
 
@@ -7600,7 +7600,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
  */
 $phpMussel['Fork'] = function ($f = '', $ofn = '') use (&$phpMussel) {
     $pf = popen(
-        $phpMussel['Mussel_PHP'] . ' "' . $phpMussel['vault'] .
+        $phpMussel['Mussel_PHP'] . ' "' . $phpMussel['Vault'] .
         '../loader.php" "cli_win_scan" "' . $f . '" "' . $ofn . '"',
         'r'
     );
@@ -7784,10 +7784,10 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
                 $phpMussel['Config']['general']['scan_log']
             )
         );
-        if (!file_exists($phpMussel['vault'] . $handle['File'])) {
+        if (!file_exists($phpMussel['Vault'] . $handle['File'])) {
             $r = $phpMussel['safety'] . "\n" . $r;
         }
-        $handle['Stream'] = fopen($phpMussel['vault'] . $handle['File'], 'a');
+        $handle['Stream'] = fopen($phpMussel['Vault'] . $handle['File'], 'a');
         fwrite($handle['Stream'], $r);
         fclose($handle['Stream']);
         $handle = '';
@@ -7834,7 +7834,7 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
                     $phpMussel['Config']['general']['scan_log_serialized']
                 )
             );
-            $handle['Stream'] = fopen($phpMussel['vault'] . $handle['File'], 'a');
+            $handle['Stream'] = fopen($phpMussel['Vault'] . $handle['File'], 'a');
             fwrite($handle['Stream'], $handle['Data']);
             fclose($handle['Stream']);
         }
@@ -7870,28 +7870,122 @@ $phpMussel['Time2Logfile'] = function ($time, $dir) use (&$phpMussel) {
 };
 
 /**
- * A simple closure for fetching the contents of logfiles (used by the controls
- * handler).
+ * A simplified YAML-like parser.
  *
- * @param string $logfile Whichever logfile directive is appropriate.
- * @return string The contents of the logfile.
+ * @param string $In The data to parse.
+ * @param array $Arr Where to save the results.
+ * @param bool $VM Validator Mode (if true, results won't be saved).
+ * @return bool Returns false if errors are encountered, and true otherwise.
  */
-$phpMussel['ReturnLogfile'] = function ($logfile) use (&$phpMussel) {
-    $handle = $phpMussel['Time2Logfile'](
-        $phpMussel['Time'],
-        $phpMussel['Config']['general'][$logfile]
-    );
-    if (file_exists($phpMussel['vault'] . $handle)) {
-        return
-            $phpMussel['lang']['cli_ln1'] .
-            $phpMussel['lang']['cli_ln2'] .
-            $handle . ":\n\n" .
-            $phpMussel['ReadFile']($phpMussel['vault'] . $handle);
+$phpMussel['YAML'] = function ($In, &$Arr, $VM = false) {
+    if (!is_array($Arr)) {
+        $Arr = array();
     }
-    return
-        $handle . ' ' .
-        $phpMussel['lang']['x_does_not_exist'] .
-        $phpMussel['lang']['_exclamation_final'];
+    $In = explode("\n", $In);
+    if (!$Lines = count($In)) {
+        return false;
+    }
+    $Cat = $Dir = $DirVal = '';
+    $Depth = $PrevTab = 0;
+    for ($i = 0; $i < $Lines; $i++) {
+        if (empty($In[$i])) {
+            continue;
+        }
+        if ($Depth > 1) {
+            return false;
+        }
+        $ThisTab = 0;
+        $Chr = substr($In[$i], $ThisTab, 1);
+        while ($Chr === ' ' || $Chr === "\t") {
+            $ThisTab++;
+            $Chr = substr($In[$i], $ThisTab, 1);
+        }
+        if ($ThisTab > $PrevTab) {
+            $Depth++;
+            $PrevTab = $ThisTab;
+        } elseif ($ThisTab < $PrevTab) {
+            $Depth--;
+            $PrevTab = $ThisTab;
+        }
+        if (
+            ($Depth === 0 && ((!$DelPos = strpos($In[$i], ':')) || ((strlen($In[$i]) - 1) !== $DelPos))) ||
+            ($Depth === 1 && (!$DelPos = strpos($In[$i], ': ')))
+        ) {
+            return false;
+        }
+        if ($Depth === 0) {
+            $Cat = substr($In[$i], $ThisTab, ($DelPos - $ThisTab));
+            $CatLen = strlen($Cat);
+            if (substr($Cat, 0, 1) === '"' && substr($Cat, $CatLen - 1) === '"') {
+                $Cat = substr($Cat, 1, $CatLen - 2);
+            } elseif (substr($Cat, 0, 1) === '\'' && substr($Cat, $CatLen - 1) === '\'') {
+                $Cat = substr($Cat, 1, $CatLen - 2);
+            }
+            if (!$VM && !isset($Arr[$Cat])) {
+                $Arr[$Cat] = array();
+            }
+        } elseif ($Depth === 1) {
+            $Dir = substr($In[$i], $ThisTab, $DelPos - $ThisTab);
+            $DirLen = strlen($Dir);
+            if (substr($Dir, 0, 1) === '"' && substr($Dir, $DirLen - 1) === '"') {
+                $Dir = substr($Dir, 1, $DirLen - 2);
+            } elseif (substr($Dir, 0, 1) === '\'' && substr($Dir, $DirLen - 1) === '\'') {
+                $Dir = substr($Dir, 1, $DirLen - 2);
+            } else {
+                $DirInt = (int)$Dir;
+                if (strlen($DirInt) === $DirLen && $Dir == $DirInt) {
+                    $Dir = $DirInt;
+                }
+            }
+            $DirVal = substr($In[$i], $ThisTab + $DirLen + 2);
+            $DirValLen = strlen($DirVal);
+            if (substr($DirVal, 0, 1) === '"' && substr($DirVal, $DirValLen - 1) === '"') {
+                $DirVal = substr($DirVal, 1, $DirValLen - 2);
+            } elseif (substr($DirVal, 0, 1) === '\'' && substr($DirVal, $DirValLen - 1) === '\'') {
+                $DirVal = substr($DirVal, 1, $DirValLen - 2);
+            } else {
+                $DirValInt = (int)$DirVal;
+                if (strlen($DirValInt) === $DirValLen && $DirVal == $DirValInt) {
+                    $DirVal = $DirValInt;
+                }
+            }
+            $DirValLow = strtolower($DirVal);
+            if ($DirValLow === 'true') {
+                $DirVal = true;
+            } elseif ($DirValLow === 'false') {
+                $DirVal = false;
+            }
+            if (!$Cat) {
+                return false;
+            }
+            if (!$VM) {
+                $Arr[$Cat][$Dir] = $DirVal;
+            }
+        }
+    }
+    return true;
+};
+
+/**
+ * Fix incorrect typecasting for some for some variables that sometimes default
+ * to strings instead of booleans or integers.
+ */
+$phpMussel['AutoType'] = function (&$Var, $Type = '') {
+    if ($Type === 'Bool') {
+        if ($Var === 'false' || !$Var) {
+            $Var = false;
+        } else {
+            $Var = true;
+        }
+    } else {
+        if ($Var === 'true') {
+            $Var = true;
+        } elseif ($Var === 'false') {
+            $Var = false;
+        } elseif ($Var !== true && $Var !== false) {
+            $Var = (int)$Var;
+        }
+    }
 };
 
 /**
@@ -7922,7 +8016,7 @@ $phpMussel['Request'] = function ($URI, $Params = '') use (&$phpMussel) {
         curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, false);
     }
     curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($Request, CURLOPT_TIMEOUT, 30);
+    curl_setopt($Request, CURLOPT_TIMEOUT, $phpMussel['Timeout']);
     curl_setopt($Request, CURLOPT_USERAGENT, $phpMussel['ScriptUA']);
 
     /** Execute and get the response. */
@@ -7997,7 +8091,7 @@ $phpMussel['ClearExpired'] = function (&$List, &$Check) use (&$phpMussel) {
                 $Line = substr($List, $Begin, $End - $Begin);
                 if ($Split = strrpos($Line, ',')) {
                     $Expiry = (int)substr($Line, $Split + 1);
-                    if ($Expiry < $phpMussel['Now']) {
+                    if ($Expiry < $phpMussel['Time']) {
                         $List = str_replace($Line, '', $List);
                         $End = 0;
                         $Check = true;

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2016.10.12).
+ * This file: Japanese language data (last modified: 2016.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -28,7 +28,6 @@ $phpMussel['lang']['cli_pe1'] = '正しいPEファイルではありません！
 $phpMussel['lang']['cli_pe2'] = 'PEセクション：';
 $phpMussel['lang']['cli_working'] = '処理中';
 $phpMussel['lang']['controls_lockout'] = 'phpMusselコントロールロックアウトが有効です。';
-$phpMussel['lang']['core_scriptfile_missing'] = '重要なスクリプトファイルがありません。phpMusselを再インストールして下さい。';
 $phpMussel['lang']['corrupted'] = '破損PEを検出しました';
 $phpMussel['lang']['denied'] = 'アップロード拒否！';
 $phpMussel['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';

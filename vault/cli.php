@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.10.12).
+ * This file: CLI handler (last modified: 2016.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -536,11 +536,11 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         $phpMussel['Config']['general']['scan_log']
                     )
                 );
-                if (!file_exists($phpMussel['vault'] . $phpMussel['memCache']['handle']['File'])) {
+                if (!file_exists($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'])) {
                     $r = $phpMussel['safety'] . "\n" . $r;
                 }
                 $phpMussel['memCache']['handle'] =
-                    fopen($phpMussel['vault'] . $phpMussel['memCache']['handle']['File'], 'a');
+                    fopen($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'], 'a');
                 fwrite($phpMussel['memCache']['handle'], $r);
                 fclose($phpMussel['memCache']['handle']);
                 $phpMussel['memCache']['handle'] = '';
@@ -553,9 +553,9 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             echo "\n";
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
             if (!empty($stl)) {
-                $greylist = (!file_exists($phpMussel['vault'] . 'greylist.csv')) ? ',' : '';
+                $greylist = (!file_exists($phpMussel['Vault'] . 'greylist.csv')) ? ',' : '';
                 $greylist .= $stl . ',';
-                $handle = fopen($phpMussel['vault'] . 'greylist.csv', 'a');
+                $handle = fopen($phpMussel['Vault'] . 'greylist.csv', 'a');
                 fwrite($handle, $greylist);
                 fclose($handle);
                 unset($handle, $greylist);
@@ -566,7 +566,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         /** Clear the greylist. **/
         if ($phpMussel['cmd'] == 'greylist_clear' || $phpMussel['cmd'] == 'gc') {
             echo "\n";
-            $handle = fopen($phpMussel['vault'] . 'greylist.csv', 'a');
+            $handle = fopen($phpMussel['Vault'] . 'greylist.csv', 'a');
             ftruncate($handle, 0);
             fwrite($handle, ',');
             fclose($handle);
@@ -579,8 +579,8 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             echo "\n";
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
             echo
-                (file_exists($phpMussel['vault'] . 'greylist.csv')) ?
-                " greylist.csv:\n" . implode("\n ", explode(',', $phpMussel['ReadFile']($phpMussel['vault'] . 'greylist.csv'))) :
+                (file_exists($phpMussel['Vault'] . 'greylist.csv')) ?
+                " greylist.csv:\n" . implode("\n ", explode(',', $phpMussel['ReadFile']($phpMussel['Vault'] . 'greylist.csv'))) :
                 ' greylist.csv ' . $phpMussel['lang']['x_does_not_exist'] . $phpMussel['lang']['_exclamation_final'];
         }
 

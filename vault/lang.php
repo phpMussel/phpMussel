@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2016.10.12).
+ * This file: Language handler (last modified: 2016.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -64,8 +64,8 @@ require $phpMussel['langPath'] . 'lang.' . $phpMussel['Config']['general']['lang
 /** Load front-end language data if necessary. */
 if (
     !$phpMussel['Config']['general']['disable_frontend'] &&
-    file_exists($phpMussel['vault'] . 'frontend.php') &&
-    file_exists($phpMussel['vault'] . 'fe_assets/frontend.html') &&
+    file_exists($phpMussel['Vault'] . 'frontend.php') &&
+    file_exists($phpMussel['Vault'] . 'fe_assets/frontend.html') &&
     $phpMussel['Direct']
 ) {
     /**

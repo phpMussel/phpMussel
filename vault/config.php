@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2016.10.12).
+ * This file: Configuration handler (last modified: 2016.10.15).
  */
 
 /** phpMussel version number (SemVer). */
@@ -23,80 +23,32 @@ $phpMussel['ScriptIdent'] = 'phpMussel v' . $phpMussel['ScriptVersion'];
 /** phpMussel User Agent (for external requests). */
 $phpMussel['ScriptUA'] = $phpMussel['ScriptIdent'] . ' (http://maikuolan.github.io/phpMussel/)';
 
+/** Default timeout (for external requests). */
+$phpMussel['Timeout'] = 12;
+
 /** Determine PHP path. */
 $phpMussel['Mussel_PHP'] = defined('PHP_BINARY') ? PHP_BINARY : '';
 
 /** Determine the operating system in use. */
 $phpMussel['Mussel_OS'] = strtoupper(substr(PHP_OS, 0, 3));
 
-/** Determine if operating in CLI-mode. */
-$phpMussel['Mussel_sapi'] = (
-    empty($_SERVER['REQUEST_METHOD']) ||
-    substr(php_sapi_name(), 0, 3) === 'cli' || (
-        empty($_SERVER['REMOTE_ADDR']) &&
-        empty($_SERVER['HTTP_USER_AGENT']) &&
-        !empty($_SERVER['argc']) &&
-        is_numeric($_SERVER['argc']) &&
-        $_SERVER['argc'] > 0
-    )
-);
-
-/** Process the request query and query variables (if any exist). */
-if (!empty($_SERVER['QUERY_STRING'])) {
-    $phpMussel['Query'] = $_SERVER['QUERY_STRING'];
-    parse_str($_SERVER['QUERY_STRING'], $phpMussel['QueryVars']);
-} else {
-    $phpMussel['Query'] = '';
-    $phpMussel['QueryVars'] = array();
-}
-
 /** Checks whether the phpMussel configuration file is readable. */
-if (!is_readable($phpMussel['vault'] . 'config.ini')) {
+if (!is_readable($phpMussel['Vault'] . 'config.ini')) {
     header('Content-Type: text/plain');
-    die(
-        '[phpMussel] Configuration file is unreadable: Can\'t continue. Refer to ' .
-        'the documentation if this is a first-time run, and if problems persist, ' .
-        'seek assistance.'
-    );
+    die('[phpMussel] Can\'t read the configuration file! Please reconfigure phpMussel.');
 }
 
-/** Attempt to parse the phpMussel configuration file. */
-$phpMussel['Config'] = parse_ini_file($phpMussel['vault'] . 'config.ini', true);
+/** Attempts to parse the phpMussel configuration file. */
+$phpMussel['Config'] = parse_ini_file($phpMussel['Vault'] . 'config.ini', true);
 
-/** Kill the script if we fail to parse the configuration file. */
+/** Kills the script if parsing the configuration file fails. */
 if ($phpMussel['Config'] === false) {
     header('Content-Type: text/plain');
-    die(
-        '[phpMussel] Configuration file is corrupted: Can\'t continue. Refer to ' .
-        'the documentation if this is a first-time run, and if problems persist, ' .
-        'seek assistance.'
-    );
+    die('[phpMussel] Configuration file is corrupt! Please reconfigure phpMussel.');
 }
 
-/**
- * Fix incorrect typecasting for some for some variables that sometimes default
- * to strings instead of booleans or integers.
- */
-$phpMussel['AutoType'] = function (&$Var, $Type = '') {
-    if ($Type === 'Bool') {
-        if ($Var === 'false' || !$Var) {
-            $Var = false;
-        } else {
-            $Var = true;
-        }
-    } else {
-        if ($Var === 'true') {
-            $Var = true;
-        } elseif ($Var === 'false') {
-            $Var = false;
-        } elseif ($Var !== true && $Var !== false) {
-            $Var = (int)$Var;
-        }
-    }
-};
-
 /** Fallback for missing "general" configuration category. */
-if (!isset($phpMussel['Config']['general']) || !is_array($phpMussel['Config']['general'])) {
+if (!isset($phpMussel['Config']['general'])) {
     $phpMussel['Config']['general'] = array();
 }
 
@@ -589,4 +541,26 @@ if (!isset($phpMussel['Config']['template_data']) || !is_array($phpMussel['Confi
 /** Fallback for missing "css_url" configuration directive. */
 if (!isset($phpMussel['Config']['template_data']['css_url'])) {
     $phpMussel['Config']['template_data']['css_url'] = '';
+}
+
+/** Determine whether operating in CLI-mode. */
+$phpMussel['Mussel_sapi'] = (
+    empty($_SERVER['REQUEST_METHOD']) ||
+    substr(php_sapi_name(), 0, 3) === 'cli' ||
+    (
+        empty($_SERVER[$phpMussel['Config']['general']['ipaddr']]) &&
+        empty($_SERVER['HTTP_USER_AGENT']) &&
+        !empty($_SERVER['argc']) &&
+        is_numeric($_SERVER['argc']) &&
+        $_SERVER['argc'] > 0
+    )
+);
+
+/** Process the request query and query variables (if any exist). */
+if (!empty($_SERVER['QUERY_STRING'])) {
+    $phpMussel['Query'] = $_SERVER['QUERY_STRING'];
+    parse_str($_SERVER['QUERY_STRING'], $phpMussel['QueryVars']);
+} else {
+    $phpMussel['Query'] = '';
+    $phpMussel['QueryVars'] = array();
 }
