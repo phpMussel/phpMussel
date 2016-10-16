@@ -22,12 +22,11 @@ if (!defined('phpMussel')) {
 $phpMussel['lang']['bad_command'] = 'すみませんが、コマンドが理解できません。';
 $phpMussel['lang']['cli_failed_to_complete'] = 'スキャンを完了できませんでした';
 $phpMussel['lang']['cli_is_not_a'] = 'はファイルでもディレクトリでもありません。';
-$phpMussel['lang']['cli_ln2'] = " phpMussel（ピー・エイチ・ピー・マッスル）のご愛顧に感謝します。phpMusselは、トロイの木馬型をはじめ、\n各種ウィルス、マルウェアがアップロードファイルからシステムに侵入しようとするのを検知するよう設計されたPHPスクリプトです。\n\nClamAVやその他の署名に基づきシステム内のどこに配置されても機能します。PHPMUSSEL2013以降の著作権は全てCaleb M (Maikuolan)氏によるGNU/GPLv2 に帰属します。\n\n                                     ~ ~ ~\n\n";
-$phpMussel['lang']['cli_ln3'] = " CLIモード（コマンドラインインターフェイス）でphpMusselを実行中です。\n\n ファイルまたはディレクトリ―をスキャンするには、’スキャン’とタイプし、続けてファイル名\n またはディレクトリ名をタイプしてエンターを押して下さい。\n CLIモードコマンドのリストを得るには’c’とタイプしてエンターを押して下さい；終了には'q'とタイプしてエンターを押します。 ";
+$phpMussel['lang']['cli_ln2'] = " phpMussel（ピー・エイチ・ピー・マッスル）のご愛顧に感謝します。phpMusselは、トロイの木馬型をはじめ、\n 各種ウィルス、マルウェアがアップロードファイルからシステムに侵入しようとするのを検知するよう設計されたPHPスクリプトです。\n\n ClamAVやその他の署名に基づきシステム内のどこに配置されても機能します。\n\n PHPMUSSEL2013以降の著作権は全てCaleb M (Maikuolan)氏によるGNU/GPLv2 に帰属します。\n\n                                     ~ ~ ~\n\n";
+$phpMussel['lang']['cli_ln3'] = " CLIモード（コマンドラインインターフェイス）でphpMusselを実行中です。\n\n ファイルまたはディレクトリ―をスキャンするには、「scan」とタイプし、続けてファイル名またはディレクトリ名をタイプしてエンターを押して下さい。\n CLIモードコマンドのリストを得るには「c」とタイプしてエンターを押して下さい；終了には「q」とタイプしてエンターを押します。 ";
 $phpMussel['lang']['cli_pe1'] = '正しいPEファイルではありません！';
 $phpMussel['lang']['cli_pe2'] = 'PEセクション：';
 $phpMussel['lang']['cli_working'] = '処理中';
-$phpMussel['lang']['controls_lockout'] = 'phpMusselコントロールロックアウトが有効です。';
 $phpMussel['lang']['corrupted'] = '破損PEを検出しました';
 $phpMussel['lang']['denied'] = 'アップロード拒否！';
 $phpMussel['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
@@ -50,10 +49,6 @@ $phpMussel['lang']['invalid_file'] = '不正ファイル';
 $phpMussel['lang']['invalid_url'] = '不正URL！';
 $phpMussel['lang']['ok'] = 'OKです';
 $phpMussel['lang']['only_allow_images'] = '画像以外のファイルをアップロードするのは許可されていません';
-$phpMussel['lang']['phpmussel_disabled'] = 'phpMusselはオフです。';
-$phpMussel['lang']['phpmussel_disabled_already'] = 'phpMusselはすでにオフの状態です。';
-$phpMussel['lang']['phpmussel_enabled'] = 'phpMusselはオンです。';
-$phpMussel['lang']['phpmussel_enabled_already'] = 'phpMusselは既にオンです。';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'プラグインデイレクトリが存在しません！';
 $phpMussel['lang']['quarantined_as'] = "「/vault/quarantine/{QFU}.qfu」として隔離。\n";
 $phpMussel['lang']['recursive'] = '再帰定義呼び出しの繰り返し回数が上限を超えました';
@@ -104,7 +99,8 @@ $phpMussel['lang']['cli_commands'] = " q
  md5_file
  - ファイルからMD5署名を作成 「構文: md5_file ファイル名」。
  - エイリアス： m。
- md5\n - 文字列からMD5署名を作成 「構文: md5 string」。
+ md5
+ - 文字列からMD5署名を作成 「構文: md5 string」。
  hex_encode
  - ２進法文字列を１６進法文字列に変換 「構文: hex_encode string」。
  - エイリアス： x。

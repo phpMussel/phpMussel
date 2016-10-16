@@ -12,6 +12,7 @@
 - 7. [CONFIGURATION OPTIONS](#SECTION7)
 - 8. [SIGNATURE FORMAT](#SECTION8)
 - 9. [KNOWN COMPATIBILITY PROBLEMS](#SECTION9)
+- 10. [FREQUENTLY ASKED QUESTIONS (FAQ)](#SECTION10)
 
 ---
 
@@ -925,4 +926,24 @@ This information was last updated 29th August 2016 and is current for all phpMus
 ---
 
 
-Last Updated: 12th October 2016 (2016.10.12).
+###10. <a name="SECTION10"></a>FREQUENTLY ASKED QUESTIONS (FAQ)
+
+####What is a "false positive"?
+
+The term "false positive" (*alternatively: "false positive error"; "false alarm"*), described very simply, and in a generalised context, is used when testing for a condition, to refer to the results of that test, when the results are positive (ie, the condition is determined to be "positive", or "true"), but are expected to be (or should have been) negative (ie, the condition, in reality, is "negative", or "false"). A "false positive" could be considered analogous to "crying wolf" (wherein the condition being tested is whether there's a wolf near the herd, the condition is "false" in that there's no wolf near the herd, and the condition is reported as "positive" by the shepherd by way of calling "wolf, wolf"), or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
+
+Related outcomes when testing for a condition can be described using the terms "true positive", "true negative" and "false negative". A "true positive" refers to when the results of the test and the actual state of the condition are both true (or "positive"), and a "true negative" refers to when the results of the test and the actual state of the condition are both false (or "negative"); A "true positive" or a "true negative" is considered to be a "correct inference". The antithesis of a "false positive" is a "false negative"; A "false negative" refers to when the results of the test are negative (ie, the condition is determined to be "negative", or "false"), but are expected to be (or should have been) positive (ie, the condition, in reality, is "positive", or "true").
+
+In the context of phpMussel, these terms refer to the signatures of phpMussel and the files that they block. When phpMussel blocks a file due to bad, outdated or incorrect signatures, but shouldn't have done so, or when it does so for the wrong reasons, we refer to this event as a "false positive". When phpMussel fails to block a file that should have been blocked, due to unforeseen threats, missing signatures or shortfalls in its signatures, we refer to this event as a "missed detection" (which is analogous to a "false negative").
+
+This can be summarised by the table below:
+
+&nbsp; | phpMussel should *NOT* block a file | phpMussel *SHOULD* block a file
+---|---|---
+phpMussel does *NOT* block a file | True negative (correct inference) | Missed detection (analogous to false negative)
+phpMussel *DOES* block a file | __False positive__ | True positive (correct inference)
+
+---
+
+
+Last Updated: 16th October 2016 (2016.10.16).

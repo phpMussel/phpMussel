@@ -12,6 +12,7 @@
 - 7. [OPCIONES DE CONFIGURACIÓN](#SECTION7)
 - 8. [FORMATOS DE FIRMAS](#SECTION8)
 - 9. [CONOCIDOS PROBLEMAS DE COMPATIBILIDAD](#SECTION9)
+- 10. [PREGUNTAS MÁS FRECUENTES (FAQ)](#SECTION10)
 
 ---
 
@@ -924,4 +925,24 @@ Esta información ha sido actualizado 29 Agosto 2016 y es a hoy para todas las p
 ---
 
 
-Última Actualización: 12 Octubre 2016 (2016.10.12).
+###10. <a name="SECTION10"></a>PREGUNTAS MÁS FRECUENTES (FAQ)
+
+####¿Qué es un "falso positivo"?
+
+El término "falso positivo" (*alternativamente: "error falso positivo"; "falsa alarma"*; Inglés: *false positive*; *false positive error*; *false alarm*), descrito muy simplemente, y en un contexto generalizado, se utiliza cuando se prueba para una condición, para referirse a los resultados de esa prueba, cuando los resultados son positivos (es decir, la condición se determina como "positivo", o "verdadero"), pero se espera que sean (o debería haber sido) negativo (es decir, la condición, en realidad, es "negativo", o "falso"). Un "falso positivo" podría considerarse análoga a "llorando lobo" (donde la condición que se está probando es si hay un lobo cerca de la manada, la condición es "falso" en el que no hay lobo cerca de la manada, y la condición se reporta como "positiva" por el pastor a modo de llamando "lobo, lobo"), o análogos a situaciones en las pruebas médicas donde un paciente es diagnosticado con alguna enfermedad o dolencia, cuando en realidad, no tienen tal enfermedad o dolencia.
+
+Algunos términos relacionados para cuando se prueba para un condición son "verdadero positivo", "verdadero negativo" y "falso negativo". Un "verdadero positivo" se refiere a cuando los resultados de la prueba y el estado real de la condición son ambas verdaderas (o "positivas"), y un "verdadero negativo" se refiere a cuando los resultados de la prueba y el estado real de la condición son ambas falsas (o "negativas"); Un "verdadero positivo" o "negativo verdadero" se considera que es una "inferencia correcta". La antítesis de un "falso positivo" es un "falso negativo"; Un "falso negativo" se refiere a cuando los resultados de la prueba son negativos (es decir, la condición se determina como "negativo", o "falso"), pero se espera que sean (o debería haber sido) positivo (es decir, la condición, en realidad, es "positivo", o "verdadero").
+
+En el contexto de phpMussel, estos términos se refieren a las firmas de phpMussel y los archivos que se bloquean. Cuando phpMussel se bloquean un archivo debido al mal, obsoleta o firmas incorrectas, pero no debería haber hecho, o cuando lo hace por las razones equivocadas, nos referimos a este evento como un "falso positivo". Cuando phpMussel no puede bloquear un archivo que debería haber sido bloqueado, debido a las amenazas imprevistas, firmas perdidas o déficit en sus firmas, nos referimos a este evento como una "detección perdida" o "missed detection" (que es análogo a un "falso negativo").
+
+Esto se puede resumir en la siguiente tabla:
+
+&nbsp; | phpMussel *NO* debe bloquear un archivo | phpMussel *DEBE* bloquear un archivo
+---|---|---
+phpMussel *NO* hace bloquear un archivo | Verdadero negativo (inferencia correcta) | Detección perdida (análogo a un falso negativo)
+phpMussel *HACE* bloquear un archivo | __Falso positivo__ | Verdadero positivo (inferencia correcta)
+
+---
+
+
+Última Actualización: 16 Octubre 2016 (2016.10.16).

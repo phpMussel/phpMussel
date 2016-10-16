@@ -25,59 +25,54 @@ $phpMussel['lang']['textDir'] = 'rtl';
 $phpMussel['lang']['bad_command'] = 'أنا لا أفهم هذا الأمر، آسف.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'فشل في إكمال عملية المسح.';
 $phpMussel['lang']['cli_is_not_a'] = ' ليس ملف أو مجلد.';
-$phpMussel['lang']['cli_ln2'] = " Thank you for using phpMussel, a PHP script designed to detect trojans,\n viruses, malware and other threats within files uploaded to your system\n wherever the script is hooked, based on the signatures of ClamAV and others.\n\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
-$phpMussel['lang']['cli_ln3'] = " Currently running phpMussel in CLI mode (command line interface).\n\n To scan a file or directory, type 'scan', followed by the name of the file or\n directory that you want phpMussel to scan and press Enter; Type 'c' and press\n Enter for a list of CLI mode commands; Type 'q' and press Enter to quit:";
+$phpMussel['lang']['cli_ln2'] = " شكراً لك على إستخدام phpMussel، المبرمج بلغة PHP للكشف عن ملفات الإختراق\n والفيروسات والبرمجيات الخبيثة الموجودة حيث يعتمد السكربت على\n توقيعات ClamAV وغيرها.\n\n حقوق النشر محفوظة ل PHPMUSSEL لعام 2013 وما بعده تحت رخصة\n GNU/GPLv2 للمبرمج (Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
+$phpMussel['lang']['cli_ln3'] = " حاليا على تنفيذ phpMussel في وضع CLI (واجهة سطر الأوامر).\n\n لمسح ملف أو دليل، اكتب 'scan'، ثم اسم ملف أو دليل الذي تريد phpMussel إلى لمسح\n واضغط Enter؛ اكتب 'c' واضغط Enter للحصول على قائمة أوامر وضع CLI؛\n اكتب 'q' واضغط Enter للخروج:";
 $phpMussel['lang']['cli_pe1'] = 'ليس ملف PE صالح!';
 $phpMussel['lang']['cli_pe2'] = 'أقسام PE:';
 $phpMussel['lang']['cli_working'] = 'في تَقَدم';
-$phpMussel['lang']['controls_lockout'] = 'phpMussel controls lockout enabled.';
 $phpMussel['lang']['corrupted'] = 'الكشف PE تلف';
 $phpMussel['lang']['denied'] = 'رفض تحميل!';
 $phpMussel['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
 $phpMussel['lang']['denied_reason'] = 'تم حجب التحميل للأسباب الواردة أدناه:';
 $phpMussel['lang']['detected'] = 'الكشف {vn}';
-$phpMussel['lang']['detected_control_characters'] = 'Detected control characters';
-$phpMussel['lang']['encrypted_archive'] = 'Detected encrypted archive; Encrypted archives not permitted';
+$phpMussel['lang']['detected_control_characters'] = 'الكشف أحرف التحكم';
+$phpMussel['lang']['encrypted_archive'] = 'كشف أرشيف المشفرة؛ أرشيف المشفرة غير مسموح';
 $phpMussel['lang']['failed_to_access'] = 'فشل الوصول إلى ';
 $phpMussel['lang']['file'] = 'ملف';
-$phpMussel['lang']['filesize_limit_exceeded'] = 'Filesize limit exceeded';
-$phpMussel['lang']['filetype_blacklisted'] = 'Filetype blacklisted';
+$phpMussel['lang']['filesize_limit_exceeded'] = 'تجاوز حد حجم ملف';
+$phpMussel['lang']['filetype_blacklisted'] = 'نوع الملف في القائمة السوداء';
 $phpMussel['lang']['finished'] = 'انتهى';
 $phpMussel['lang']['generated_by'] = 'الناتج';
-$phpMussel['lang']['greylist_cleared'] = ' Greylist cleared.';
-$phpMussel['lang']['greylist_not_updated'] = ' Greylist not updated.';
-$phpMussel['lang']['greylist_updated'] = ' Greylist updated.';
+$phpMussel['lang']['greylist_cleared'] = ' قائمة رمادية أفرغت.';
+$phpMussel['lang']['greylist_not_updated'] = ' قائمة رمادية لم تحديثها.';
+$phpMussel['lang']['greylist_updated'] = ' قائمة رمادية تحديثها.';
 $phpMussel['lang']['image'] = 'صورة';
 $phpMussel['lang']['instance_already_active'] = 'Instance already active! Please double-check your hooks.';
-$phpMussel['lang']['invalid_file'] = 'Invalid file';
-$phpMussel['lang']['invalid_url'] = 'Invalid URL!';
+$phpMussel['lang']['invalid_file'] = 'ملف غير صالح';
+$phpMussel['lang']['invalid_url'] = 'URL غير صالح!';
 $phpMussel['lang']['ok'] = 'حسنا';
 $phpMussel['lang']['only_allow_images'] = 'Uploading files other than images isn\'t permitted';
-$phpMussel['lang']['phpmussel_disabled'] = 'phpMussel disabled.';
-$phpMussel['lang']['phpmussel_disabled_already'] = 'phpMussel already disabled.';
-$phpMussel['lang']['phpmussel_enabled'] = 'phpMussel enabled.';
-$phpMussel['lang']['phpmussel_enabled_already'] = 'phpMussel already enabled.';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Plugins directory doesn\'t exist!';
 $phpMussel['lang']['quarantined_as'] = "الحجر الصحي بأنه \"/vault/quarantine/{QFU}.qfu\".\n";
 $phpMussel['lang']['recursive'] = 'Recursion depth limit exceeded';
 $phpMussel['lang']['required_variables_not_defined'] = 'Required variables aren\'t defined: لا يمكن أن يستمر.';
 $phpMussel['lang']['SafeBrowseLookup_200'] = 'يحتمل أن تكون ضارة URL الكشف';
-$phpMussel['lang']['SafeBrowseLookup_400'] = 'API request error';
-$phpMussel['lang']['SafeBrowseLookup_401'] = 'API authorisation error';
-$phpMussel['lang']['SafeBrowseLookup_503'] = 'API service unavailable';
-$phpMussel['lang']['SafeBrowseLookup_999'] = 'Unknown API error';
+$phpMussel['lang']['SafeBrowseLookup_400'] = 'API خطأ طلب';
+$phpMussel['lang']['SafeBrowseLookup_401'] = 'API خطأ ترخيص';
+$phpMussel['lang']['SafeBrowseLookup_503'] = 'API الخدمة غير متوفرة';
+$phpMussel['lang']['SafeBrowseLookup_999'] = 'خطأ API غير معروف';
 $phpMussel['lang']['scan_aborted'] = 'Scanning aborted!';
 $phpMussel['lang']['scan_chameleon'] = '{x} chameleon attack detected';
-$phpMussel['lang']['scan_checking'] = 'Checking';
-$phpMussel['lang']['scan_checking_contents'] = 'Success! Proceeding to check contents.';
+$phpMussel['lang']['scan_checking'] = 'فحص';
+$phpMussel['lang']['scan_checking_contents'] = 'Success! Proceeding إلى check contents.';
 $phpMussel['lang']['scan_command_injection'] = 'Command injection attempt detected';
-$phpMussel['lang']['scan_complete'] = 'Complete';
-$phpMussel['lang']['scan_extensions_missing'] = 'Failed (missing required extensions)!';
+$phpMussel['lang']['scan_complete'] = 'تم الانتهاء من';
+$phpMussel['lang']['scan_extensions_missing'] = 'فشل (missing required extensions)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'Filename manipulation detected';
 $phpMussel['lang']['scan_map_corrupted'] = 'Signature map corrupted';
 $phpMussel['lang']['scan_map_missing'] = 'Signature map missing';
 $phpMussel['lang']['scan_missing_filename'] = 'Missing filename';
-$phpMussel['lang']['scan_not_archive'] = 'Failed (empty or not an archive)!';
+$phpMussel['lang']['scan_not_archive'] = 'فشل (فارغة أو ليس أرشيفا)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'No problems found.';
 $phpMussel['lang']['scan_reading'] = 'قراءة';
 $phpMussel['lang']['scan_signature_file_corrupted'] = 'Signature file corrupted';
@@ -102,26 +97,26 @@ $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
- - Quit CLI.
- - Aliases: quit, exit.
+ - CLI للخروج.
+ - البديل: quit, exit.
  md5_file
- - Generate MD5 signatures from files [Syntax: md5_file filename].
- - Alias: m.
+ - خلق التوقيعات MD5 من ملفات [بناء الجملة: md5_file اسم الملف].
+ - البديل: m.
  md5
- - Generate MD5 signature from string [Syntax: md5 string].
+ - خلق التوقيعات MD5 من النص [بناء الجملة: md5 نص].
  hex_encode
- - Convert binary string to hexadecimal [Syntax: hex_encode string].
- - Alias: x.
+ - تحول النص ثنائي إلى سداسي عشري [بناء الجملة: hex_encode نص].
+ - البديل: x.
  hex_decode
- - Convert hexadecimal to binary string [Syntax: hex_decode string].
+ - تحول سداسي عشري إلى النص ثنائي [بناء الجملة: hex_decode نص].
  base64_encode
- - Convert binary string to base64 string [Syntax: base64_encode string].
- - Alias: b.
+ - تحول النص ثنائي إلى نص base64 [بناء الجملة: base64_encode نص].
+ - البديل: b.
  base64_decode
- - Convert base64 string to binary string [Syntax: base64_decode string].
+ - تحول نص base64 إلى النص ثنائي [بناء الجملة: base64_decode نص].
  scan
- - Scan file or directory [Syntax: scan filename].
- - Alias: s.
+ - تفحص ملف أو دليل [بناء الجملة: scan اسم الملف].
+ - البديل: s.
  c
- - Print this command list.
+ - طباعة هذه القائمة الأوامر.
 ";
