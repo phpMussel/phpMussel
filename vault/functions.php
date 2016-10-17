@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.10.15).
+ * This file: Functions file (last modified: 2016.10.17).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -7870,97 +7870,142 @@ $phpMussel['Time2Logfile'] = function ($time, $dir) use (&$phpMussel) {
 };
 
 /**
- * A simplified YAML-like parser.
+ * Normalises values defined by the YAML closure.
+ *
+ * @param string|int|bool The value to be normalised.
+ * @param int The length of the value.
+ * @param string|int|bool The value to be normalised, lowercased.
+ */
+$phpMussel['YAML-Normalise-Value'] = function (&$Value, $ValueLen, $ValueLow) {
+    if (substr($Value, 0, 1) === '"' && substr($Value, $ValueLen - 1) === '"') {
+        $Value = substr($Value, 1, $ValueLen - 2);
+    } elseif (substr($Value, 0, 1) === '\'' && substr($Value, $ValueLen - 1) === '\'') {
+        $Value = substr($Value, 1, $ValueLen - 2);
+    } elseif ($ValueLow === 'true' || $ValueLow === 'y') {
+        $Value = true;
+    } elseif ($ValueLow === 'false' || $ValueLow === 'n') {
+        $Value = false;
+    } elseif (substr($Value, 0, 2) === '0x' && ($HexTest = substr($Value, 2)) && !preg_match('/[^a-f0-9]/i', $HexTest) && !($ValueLen % 2)) {
+        $Value = hex2bin($HexTest);
+    } else {
+        $ValueInt = (int)$Value;
+        if (strlen($ValueInt) === $ValueLen && $Value == $ValueInt) {
+            $Value = $ValueInt;
+        }
+    }
+    if (!$Value) {
+        $Value = false;
+    }
+};
+
+/**
+ * A simplified YAML-like parser. Note: This is intended to be adequately serve
+ * the needs of this package in a way that should feel familiar to users of
+ * YAML, but it isn't a true YAML implementation and it doesn't adhere to any
+ * specifications, official or otherwise.
  *
  * @param string $In The data to parse.
  * @param array $Arr Where to save the results.
  * @param bool $VM Validator Mode (if true, results won't be saved).
+ * @param int $Depth Tab depth (inherited through recursion; ignore it).
  * @return bool Returns false if errors are encountered, and true otherwise.
  */
-$phpMussel['YAML'] = function ($In, &$Arr, $VM = false) {
+$phpMussel['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$phpMussel) {
     if (!is_array($Arr)) {
+        if ($VM) {
+            return false;
+        }
         $Arr = array();
     }
-    $In = explode("\n", $In);
-    if (!$Lines = count($In)) {
+    if (!substr_count($In, "\n")) {
         return false;
     }
-    $Cat = $Dir = $DirVal = '';
-    $Depth = $PrevTab = 0;
-    for ($i = 0; $i < $Lines; $i++) {
-        if (empty($In[$i])) {
+    $In = str_replace("\r", '', $In);
+    $Key = $Value = $SendTo = '';
+    $TabLen = $SoL = 0;
+    while ($SoL !== false) {
+        if  (($EoL = strpos($In, "\n", $SoL)) === false) {
+            $ThisLine = substr($In, $SoL);
+        } else {
+            $ThisLine = substr($In, $SoL, $EoL - $SoL);
+        }
+        $SoL = ($EoL === false) ? false : $EoL + 1;
+        $ThisLine = preg_replace(array("/#.*$/", "/\x20+$/"), '', $ThisLine);
+        if (empty($ThisLine) || $ThisLine === "\n") {
             continue;
         }
-        if ($Depth > 1) {
-            return false;
-        }
         $ThisTab = 0;
-        $Chr = substr($In[$i], $ThisTab, 1);
-        while ($Chr === ' ' || $Chr === "\t") {
+        while (($Chr = substr($ThisLine, $ThisTab, 1)) && ($Chr === ' ' || $Chr === "\t")) {
             $ThisTab++;
-            $Chr = substr($In[$i], $ThisTab, 1);
         }
-        if ($ThisTab > $PrevTab) {
-            $Depth++;
-            $PrevTab = $ThisTab;
-        } elseif ($ThisTab < $PrevTab) {
-            $Depth--;
-            $PrevTab = $ThisTab;
-        }
-        if (
-            ($Depth === 0 && ((!$DelPos = strpos($In[$i], ':')) || ((strlen($In[$i]) - 1) !== $DelPos))) ||
-            ($Depth === 1 && (!$DelPos = strpos($In[$i], ': ')))
-        ) {
+        if ($ThisTab > $Depth) {
+            if ($TabLen === 0) {
+                $TabLen = $ThisTab;
+            }
+            $SendTo .= $ThisLine . "\n";
+            continue;
+        } elseif ($ThisTab < $Depth) {
             return false;
-        }
-        if ($Depth === 0) {
-            $Cat = substr($In[$i], $ThisTab, ($DelPos - $ThisTab));
-            $CatLen = strlen($Cat);
-            if (substr($Cat, 0, 1) === '"' && substr($Cat, $CatLen - 1) === '"') {
-                $Cat = substr($Cat, 1, $CatLen - 2);
-            } elseif (substr($Cat, 0, 1) === '\'' && substr($Cat, $CatLen - 1) === '\'') {
-                $Cat = substr($Cat, 1, $CatLen - 2);
-            }
-            if (!$VM && !isset($Arr[$Cat])) {
-                $Arr[$Cat] = array();
-            }
-        } elseif ($Depth === 1) {
-            $Dir = substr($In[$i], $ThisTab, $DelPos - $ThisTab);
-            $DirLen = strlen($Dir);
-            if (substr($Dir, 0, 1) === '"' && substr($Dir, $DirLen - 1) === '"') {
-                $Dir = substr($Dir, 1, $DirLen - 2);
-            } elseif (substr($Dir, 0, 1) === '\'' && substr($Dir, $DirLen - 1) === '\'') {
-                $Dir = substr($Dir, 1, $DirLen - 2);
-            } else {
-                $DirInt = (int)$Dir;
-                if (strlen($DirInt) === $DirLen && $Dir == $DirInt) {
-                    $Dir = $DirInt;
-                }
-            }
-            $DirVal = substr($In[$i], $ThisTab + $DirLen + 2);
-            $DirValLen = strlen($DirVal);
-            if (substr($DirVal, 0, 1) === '"' && substr($DirVal, $DirValLen - 1) === '"') {
-                $DirVal = substr($DirVal, 1, $DirValLen - 2);
-            } elseif (substr($DirVal, 0, 1) === '\'' && substr($DirVal, $DirValLen - 1) === '\'') {
-                $DirVal = substr($DirVal, 1, $DirValLen - 2);
-            } else {
-                $DirValInt = (int)$DirVal;
-                if (strlen($DirValInt) === $DirValLen && $DirVal == $DirValInt) {
-                    $DirVal = $DirValInt;
-                }
-            }
-            $DirValLow = strtolower($DirVal);
-            if ($DirValLow === 'true') {
-                $DirVal = true;
-            } elseif ($DirValLow === 'false') {
-                $DirVal = false;
-            }
-            if (!$Cat) {
+        } elseif (!empty($SendTo)) {
+            if (empty($Key)) {
                 return false;
             }
-            if (!$VM) {
-                $Arr[$Cat][$Dir] = $DirVal;
+            if (!isset($Arr[$Key])) {
+                if ($VM) {
+                    return false;
+                }
+                $Arr[$Key] = false;
             }
+            if (!$phpMussel['YAML']($SendTo, $Arr[$Key], $VM, $TabLen)) {
+                return false;
+            }
+            $SendTo = '';
+        }
+        if (substr($ThisLine, -1) === ':') {
+            $Key = substr($ThisLine, $ThisTab, -1);
+            $KeyLen = strlen($Key);
+            $KeyLow = strtolower($Key);
+            $phpMussel['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
+            if (!isset($Arr[$Key])) {
+                if ($VM) {
+                    return false;
+                }
+                $Arr[$Key] = false;
+            }
+        } elseif (substr($ThisLine, $ThisTab, 2) === '- ') {
+            $Value = substr($ThisLine, $ThisTab + 2);
+            $ValueLen = strlen($Value);
+            $ValueLow = strtolower($Value);
+            $phpMussel['YAML-Normalise-Value']($Value, $ValueLen, $ValueLow);
+            if (!$VM && $ValueLen > 0) {
+                $Arr[] = $Value;
+            }
+        } elseif (($DelPos = strpos($ThisLine, ': ')) !== false) {
+            $Key = substr($ThisLine, $ThisTab, $DelPos - $ThisTab);
+            $KeyLen = strlen($Key);
+            $KeyLow = strtolower($Key);
+            $phpMussel['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
+            if (!$Key) {
+                return false;
+            }
+            $Value = substr($ThisLine, $ThisTab + $KeyLen + 2);
+            $ValueLen = strlen($Value);
+            $ValueLow = strtolower($Value);
+            $phpMussel['YAML-Normalise-Value']($Value, $ValueLen, $ValueLow);
+            if (!$VM && $ValueLen > 0) {
+                $Arr[$Key] = $Value;
+            }
+        }
+    }
+    if (!empty($SendTo) && !empty($Key)) {
+        if (!isset($Arr[$Key])) {
+            if ($VM) {
+                return false;
+            }
+            $Arr[$Key] = array();
+        }
+        if (!$phpMussel['YAML']($SendTo, $Arr[$Key], $VM, $TabLen)) {
+            return false;
         }
     }
     return true;
