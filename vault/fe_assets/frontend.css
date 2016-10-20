@@ -3,10 +3,10 @@ body,input,select{font-size:10px}
 body{font-family:'Lucida Grande',Tahoma,Verdana,Arial,MingLiU;letter-spacing:1px;text-decoration:none;border-style:none;margin:0;padding:0;white-space:normal;background-color:#ccc;color:#033}
 code{font-family:monospace}
 hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#900}
-input,select{width:150px;background-color:#ffe;border:1px solid #900;color:#033;margin:2px;padding:2px;background-position:top right}
-input.half,select.half{width:75px}
-input[type=password]{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAJCAIAAABxOqH0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABGSURBVBhXY/z//z8DBoCKzmJkhPBD370TFBRkAIrOZACREABho6tNgxgIVgECyDqYwCoQaiEAKgrVCAME1L4D0+9BiIEBAEhGOXrlxz9HAAAAAElFTkSuQmCC)}
-input[type=text]{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAvSURBVBhXY/iPA4AkZjIwoKF3794BJd4BEU4JNDkUCWQz0SRACKcEEMElsIH//wHCK4qY/0v0LwAAAABJRU5ErkJggg==)}
+input,select{width:150px;background-color:#ffe;border:1px solid #900;color:#033;margin:2px;padding:2px;background-position:top {FE_Align_Reverse}}
+input.half,select.half{width:90px}
+input[type=password]{background-image:url(data:image/png;base64,{PIP_Key})}
+input[type=text]{background-image:url(data:image/png;base64,{PIP_Input})}
 .bNav,.gen,.nav,.s,.tip,.txtGn,.txtRd,a,input,select{font-weight:700}
 .bNav,.gen{text-align:right}
 .ci,.co,.gen{margin:auto}

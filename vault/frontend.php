@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.10.15).
+ * This file: Front-end handler (last modified: 2016.10.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,6 +26,9 @@ if (empty($phpMussel['QueryVars']['phpmussel-page'])) {
 
 /** Populate common front-end variables. */
 $phpMussel['FE'] = array(
+    'PIP_Left' => 'R0lGODlhCAAIAIABAJkCAP///yH5BAEKAAEALAAAAAAIAAgAAAINjH+ga6vJIEDh0UmzKQA7',
+    'PIP_Right' => 'R0lGODlhCAAIAIABAJkCAP///yH5BAEKAAEALAAAAAAIAAgAAAINjH+gmwvoUGBSSfOuKQA7',
+    'PIP_Key' => 'R0lGODlhBwAJAIABAJkAAP///yH5BAEKAAEALAAAAAAHAAkAAAINjH+gyaaAAkQrznRbKAA7',
     'Template' => $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/frontend.html'),
     'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
     'FE_Lang' => $phpMussel['Config']['general']['lang'],
@@ -47,8 +50,12 @@ $phpMussel['FE'] = array(
 if (empty($phpMussel['lang']['textDir']) || $phpMussel['lang']['textDir'] !== 'rtl') {
     $phpMussel['lang']['textDir'] = 'ltr';
     $phpMussel['FE']['FE_Align'] = 'left';
+    $phpMussel['FE']['FE_Align_Reverse'] = 'right';
+    $phpMussel['FE']['PIP_Input'] = $phpMussel['FE']['PIP_Right'];
 } else {
     $phpMussel['FE']['FE_Align'] = 'right';
+    $phpMussel['FE']['FE_Align_Reverse'] = 'left';
+    $phpMussel['FE']['PIP_Input'] = $phpMussel['FE']['PIP_Left'];
 }
 
 /** A simple passthru for the front-end CSS. */
