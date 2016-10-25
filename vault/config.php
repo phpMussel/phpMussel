@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2016.06.24).
+ * This file: Configuration handler (last modified: 2016.10.25).
  */
 
 /** phpMussel version number (SemVer). */
@@ -23,77 +23,68 @@ $phpMussel['ScriptIdent'] = 'phpMussel v' . $phpMussel['ScriptVersion'];
 /** phpMussel User Agent (for external requests). */
 $phpMussel['ScriptUA'] = $phpMussel['ScriptIdent'] . ' (http://maikuolan.github.io/phpMussel/)';
 
+/** Default timeout (for external requests). */
+$phpMussel['Timeout'] = 12;
+
 /** Determine PHP path. */
 $phpMussel['Mussel_PHP'] = defined('PHP_BINARY') ? PHP_BINARY : '';
 
 /** Determine the operating system in use. */
 $phpMussel['Mussel_OS'] = strtoupper(substr(PHP_OS, 0, 3));
 
-/** Determine if operating in CLI-mode. */
-$phpMussel['Mussel_sapi'] = (
-    empty($_SERVER['REQUEST_METHOD']) ||
-    substr(php_sapi_name(), 0, 3) === 'cli' || (
-        empty($_SERVER['REMOTE_ADDR']) &&
-        empty($_SERVER['HTTP_USER_AGENT']) &&
-        !empty($_SERVER['argc']) &&
-        is_numeric($_SERVER['argc']) &&
-        $_SERVER['argc'] > 0
-    )
-);
+/** phpMussel favicon. */
+$phpMussel['favicon'] =
+    'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAA' .
+    'ACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4AoZABIBssLx0wAAAs9JREFUOMt9kl1IU2' .
+    'EYx//vOTtnLJinydTY2BKZadlNEnTKPjCo7EOlujPow7JCkT6oiz5uK4KI9C7NbSZWZJCld' .
+    'aNZ3kj0MSFormaFO27WINbGcaszz3m7GFublc/d+z6//5/nz/MQ/KeqqzcfSibnjieTSkEi' .
+    'kZAikUh/Q8O+jqtXr8xmc+Rf4jVrxFZCSDshqTYhBIqiIBgMomJlxcrhoaH3aZaZLxZFcfm' .
+    '9e3fbS0pKAAAsy8JoNILjODgcDnzw+V5n838ZCMJiS3FxMcxmMzRNQ1PTEQwODsBkMkFRfq' .
+    'GsrNxQU7P9WE6EU6fPnGAYZjYcDnt7brvH1q5d56eUOggh4HkeRUVFkCQJgiBgx46dcLm62' .
+    'sbHx08CgM5qsRorKytv2Gw2gBDU19fD7/drL54/RywWhaIokCQJAGCxWGC3LwXDsL5MBLGq' .
+    'SsjLy4PJZII5Px+lpaWora1lVFXNiaaqKjZu3IQ7d3pRWFj47OChxpSBntdzLMumIE0DpRS' .
+    'yLEPTtBwDc0EBWIbF1NSXV4SQp26XM2Ugy7FfqqqB5/kMLMsyYrFo5k0pRc227eh70If16z' .
+    'fsmlNVLhPh8aNH4VgsCo7TgVIKAAgEAjMsk7ugZFLB9HTg5N49e452dnYks9c4FwwGZ5DSg' .
+    'ud5hEKha7xefz8N6XQ6TE764fF42gyLDC2fP31yX7585c8dyLJ8SdM0MAyD0dFRXLxw7rog' .
+    'CEvSE/F6HpIk/QSAiQnf6mg05jp//lzqDhobD0OlEERR/AFKNY/H4/B//LjbarU+/vp1pio' .
+    'en3WzLAe73SbH4/GH/f0P92dH0zmdXQAQ5XS65bc6b/oAYMuWreXLljke9Pb2dNfV7X4biX' .
+    'xvlmX5zbdweAWllCWEqFigiNfr9Q0MPDkAAGNjLzMNl8s12dzSumohMbq7e86OjIw4HY5Sw' .
+    '/ze0PDwu1AolACwKP33G4ncJFWmwHSnAAAAAElFTkSuQmCC';
 
 /** Checks whether the phpMussel configuration file is readable. */
-if (!is_readable($phpMussel['vault'] . 'phpmussel.ini')) {
+if (!is_readable($phpMussel['Vault'] . 'config.ini')) {
     header('Content-Type: text/plain');
-    die(
-        '[phpMussel] Configuration file is unreadable: Can\'t continue. Refer to ' .
-        'the documentation if this is a first-time run, and if problems persist, ' .
-        'seek assistance.'
-    );
+    die('[phpMussel] Can\'t read the configuration file! Please reconfigure phpMussel.');
 }
 
-/** Attempt to parse the phpMussel configuration file. */
-$phpMussel['Config'] = parse_ini_file($phpMussel['vault'] . 'phpmussel.ini', true);
+/** Attempts to parse the phpMussel configuration file. */
+$phpMussel['Config'] = parse_ini_file($phpMussel['Vault'] . 'config.ini', true);
 
-/** Kill the script if we fail to parse the configuration file. */
+/** Kills the script if parsing the configuration file fails. */
 if ($phpMussel['Config'] === false) {
     header('Content-Type: text/plain');
-    die(
-        '[phpMussel] Configuration file is corrupted: Can\'t continue. Refer to ' .
-        'the documentation if this is a first-time run, and if problems persist, ' .
-        'seek assistance.'
-    );
+    die('[phpMussel] Configuration file is corrupt! Please reconfigure phpMussel.');
 }
 
 /** Fallback for missing "general" configuration category. */
-if (!isset($phpMussel['Config']['general']) || !is_array($phpMussel['Config']['general'])) {
+if (!isset($phpMussel['Config']['general'])) {
     $phpMussel['Config']['general'] = array();
-}
-
-/** Fallback for missing "script_password" configuration directive. */
-if (!isset($phpMussel['Config']['general']['script_password'])) {
-    $phpMussel['Config']['general']['script_password'] = '';
-}
-
-/** Fallback for missing "logs_password" configuration directive. */
-if (!isset($phpMussel['Config']['general']['logs_password'])) {
-    $phpMussel['Config']['general']['logs_password'] = '';
 }
 
 /** Fallback for missing "cleanup" configuration directive. */
 if (!isset($phpMussel['Config']['general']['cleanup'])) {
     $phpMussel['Config']['general']['cleanup'] = true;
 }
+$phpMussel['AutoType']($phpMussel['Config']['general']['cleanup'], 'Bool');
 
 /** Fallback for missing "scan_log" configuration directive. */
 if (!isset($phpMussel['Config']['general']['scan_log'])) {
     $phpMussel['Config']['general']['scan_log'] = 'scan_log.txt';
 }
-
 /** Fallback for missing "scan_log_serialized" configuration directive. */
 if (!isset($phpMussel['Config']['general']['scan_log_serialized'])) {
     $phpMussel['Config']['general']['scan_log_serialized'] = 'scan_log_serialized.txt';
 }
-
 /** Fallback for missing "scan_kills" configuration directive. */
 if (!isset($phpMussel['Config']['general']['scan_kills'])) {
     $phpMussel['Config']['general']['scan_kills'] = 'scan_kills.txt';
@@ -103,8 +94,7 @@ if (!isset($phpMussel['Config']['general']['scan_kills'])) {
 if (!isset($phpMussel['Config']['general']['timeOffset'])) {
     $phpMussel['Config']['general']['timeOffset'] = 0;
 }
-/** Ensure "timeOffset" is an integer. */
-$phpMussel['Config']['general']['timeOffset'] = (int)$phpMussel['Config']['general']['timeOffset'];
+$phpMussel['AutoType']($phpMussel['Config']['general']['timeOffset']);
 
 /** Current time at script execution; Used for various purposes. */
 $phpMussel['Time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
@@ -128,16 +118,19 @@ if (!isset($_SERVER[$phpMussel['Config']['general']['ipaddr']])) {
 if (!isset($phpMussel['Config']['general']['enable_plugins'])) {
     $phpMussel['Config']['general']['enable_plugins'] = true;
 }
+$phpMussel['AutoType']($phpMussel['Config']['general']['enable_plugins'], 'Bool');
 
 /** Fallback for missing "forbid_on_block" configuration directive. */
 if (!isset($phpMussel['Config']['general']['forbid_on_block'])) {
     $phpMussel['Config']['general']['forbid_on_block'] = true;
 }
+$phpMussel['AutoType']($phpMussel['Config']['general']['forbid_on_block'], 'Bool');
 
 /** Fallback for missing "delete_on_sight" configuration directive. */
 if (!isset($phpMussel['Config']['general']['delete_on_sight'])) {
     $phpMussel['Config']['general']['delete_on_sight'] = false;
 }
+$phpMussel['AutoType']($phpMussel['Config']['general']['delete_on_sight'], 'Bool');
 
 /** Fallback for missing "lang" configuration directive. */
 if (empty($phpMussel['Config']['general']['lang'])) {
@@ -148,6 +141,7 @@ if (empty($phpMussel['Config']['general']['lang'])) {
 if (!isset($phpMussel['Config']['general']['lang_override'])) {
     $phpMussel['Config']['general']['lang_override'] = false;
 }
+$phpMussel['AutoType']($phpMussel['Config']['general']['lang_override'], 'Bool');
 
 /** Fallback for missing "lang_acceptable" configuration directive. */
 if (!isset($phpMussel['Config']['general']['lang_acceptable'])) {
@@ -163,26 +157,37 @@ if (!isset($phpMussel['Config']['general']['quarantine_key'])) {
 if (!isset($phpMussel['Config']['general']['quarantine_max_filesize'])) {
     $phpMussel['Config']['general']['quarantine_max_filesize'] = 2048;
 }
+$phpMussel['AutoType']($phpMussel['Config']['general']['quarantine_max_filesize']);
 
 /** Fallback for missing "quarantine_max_usage" configuration directive. */
 if (!isset($phpMussel['Config']['general']['quarantine_max_usage'])) {
     $phpMussel['Config']['general']['quarantine_max_usage'] = 65536;
 }
+$phpMussel['AutoType']($phpMussel['Config']['general']['quarantine_max_usage']);
 
 /** Fallback for missing "honeypot_mode" configuration directive. */
 if (!isset($phpMussel['Config']['general']['honeypot_mode'])) {
     $phpMussel['Config']['general']['honeypot_mode'] = false;
 }
+$phpMussel['AutoType']($phpMussel['Config']['general']['honeypot_mode'], 'Bool');
 
 /** Fallback for missing "scan_cache_expiry" configuration directive. */
 if (!isset($phpMussel['Config']['general']['scan_cache_expiry'])) {
     $phpMussel['Config']['general']['scan_cache_expiry'] = 21600;
 }
+$phpMussel['AutoType']($phpMussel['Config']['general']['scan_cache_expiry']);
 
 /** Fallback for missing "disable_cli" configuration directive. */
 if (!isset($phpMussel['Config']['general']['disable_cli'])) {
     $phpMussel['Config']['general']['disable_cli'] = false;
 }
+$phpMussel['AutoType']($phpMussel['Config']['general']['disable_cli'], 'Bool');
+
+/** Fallback for missing "disable_frontend" configuration directive. */
+if (!isset($phpMussel['Config']['general']['disable_frontend'])) {
+    $phpMussel['Config']['general']['disable_frontend'] = true;
+}
+$phpMussel['AutoType']($phpMussel['Config']['general']['disable_frontend'], 'Bool');
 
 /** Fallback for missing "signatures" configuration category. */
 if (!isset($phpMussel['Config']['signatures']) || !is_array($phpMussel['Config']['signatures'])) {
@@ -251,37 +256,45 @@ foreach (array(
     if (!isset($phpMussel['Config']['signatures'][$phpMussel['SigDir']])) {
         $phpMussel['Config']['signatures'][$phpMussel['SigDir']] = true;
     }
+    $phpMussel['AutoType']($phpMussel['Config']['signatures'][$phpMussel['SigDir']], 'Bool');
 }
 
 /** Fallback for missing "fn_siglen_min" configuration directive. */
 if (!isset($phpMussel['Config']['signatures']['fn_siglen_min'])) {
     $phpMussel['Config']['signatures']['fn_siglen_min'] = 2;
 }
+$phpMussel['AutoType']($phpMussel['Config']['signatures']['fn_siglen_min']);
 
 /** Fallback for missing "fn_siglen_max" configuration directive. */
 if (!isset($phpMussel['Config']['signatures']['fn_siglen_max'])) {
     $phpMussel['Config']['signatures']['fn_siglen_max'] = 512;
 }
+$phpMussel['AutoType']($phpMussel['Config']['signatures']['fn_siglen_max']);
 
 /** Fallback for missing "rx_siglen_min" configuration directive. */
 if (!isset($phpMussel['Config']['signatures']['rx_siglen_min'])) {
     $phpMussel['Config']['signatures']['rx_siglen_min'] = 4;
 }
+$phpMussel['AutoType']($phpMussel['Config']['signatures']['rx_siglen_min']);
 
 /** Fallback for missing "rx_siglen_max" configuration directive. */
 if (!isset($phpMussel['Config']['signatures']['rx_siglen_max'])) {
     $phpMussel['Config']['signatures']['rx_siglen_max'] = 1024;
 }
+$phpMussel['AutoType']($phpMussel['Config']['signatures']['rx_siglen_max']);
 
 /** Fallback for missing "sd_siglen_min" configuration directive. */
 if (!isset($phpMussel['Config']['signatures']['sd_siglen_min'])) {
     $phpMussel['Config']['signatures']['sd_siglen_min'] = 4;
 }
+$phpMussel['AutoType']($phpMussel['Config']['signatures']['sd_siglen_min']);
 
 /** Fallback for missing "sd_siglen_max" configuration directive. */
 if (!isset($phpMussel['Config']['signatures']['sd_siglen_max'])) {
     $phpMussel['Config']['signatures']['sd_siglen_max'] = 1024;
 }
+$phpMussel['AutoType']($phpMussel['Config']['signatures']['sd_siglen_max']);
+
 
 /** Fallbacks for missing signatures directives (2/2). */
 foreach (array(
@@ -297,6 +310,7 @@ foreach (array(
     if (!isset($phpMussel['Config']['signatures'][$phpMussel['SigDir']])) {
         $phpMussel['Config']['signatures'][$phpMussel['SigDir']] = true;
     }
+    $phpMussel['AutoType']($phpMussel['Config']['signatures'][$phpMussel['SigDir']], 'Bool');
 }
 
 /** Fallback for missing "files" configuration category. */
@@ -308,16 +322,19 @@ if (!isset($phpMussel['Config']['files']) || !is_array($phpMussel['Config']['fil
 if (!isset($phpMussel['Config']['files']['max_uploads'])) {
     $phpMussel['Config']['files']['max_uploads'] = 10;
 }
+$phpMussel['AutoType']($phpMussel['Config']['files']['max_uploads']);
 
 /** Fallback for missing "filesize_limit" configuration directive. */
 if (!isset($phpMussel['Config']['files']['filesize_limit'])) {
     $phpMussel['Config']['files']['filesize_limit'] = 65536;
 }
+$phpMussel['AutoType']($phpMussel['Config']['files']['filesize_limit']);
 
 /** Fallback for missing "filesize_response" configuration directive. */
 if (!isset($phpMussel['Config']['files']['filesize_response'])) {
     $phpMussel['Config']['files']['filesize_response'] = true;
 }
+$phpMussel['AutoType']($phpMussel['Config']['files']['filesize_response'], 'Bool');
 
 /** Fallback for missing "filetype_whitelist" configuration directive. */
 if (!isset($phpMussel['Config']['files']['filetype_whitelist'])) {
@@ -343,26 +360,31 @@ if (!isset($phpMussel['Config']['files']['filetype_greylist'])) {
 if (!isset($phpMussel['Config']['files']['check_archives'])) {
     $phpMussel['Config']['files']['check_archives'] = true;
 }
+$phpMussel['AutoType']($phpMussel['Config']['files']['check_archives'], 'Bool');
 
 /** Fallback for missing "filesize_archives" configuration directive. */
 if (!isset($phpMussel['Config']['files']['filesize_archives'])) {
     $phpMussel['Config']['files']['filesize_archives'] = true;
 }
+$phpMussel['AutoType']($phpMussel['Config']['files']['filesize_archives'], 'Bool');
 
 /** Fallback for missing "filetype_archives" configuration directive. */
 if (!isset($phpMussel['Config']['files']['filetype_archives'])) {
     $phpMussel['Config']['files']['filetype_archives'] = false;
 }
+$phpMussel['AutoType']($phpMussel['Config']['files']['filetype_archives'], 'Bool');
 
 /** Fallback for missing "max_recursion" configuration directive. */
 if (!isset($phpMussel['Config']['files']['max_recursion'])) {
     $phpMussel['Config']['files']['max_recursion'] = 10;
 }
+$phpMussel['AutoType']($phpMussel['Config']['files']['max_recursion']);
 
 /** Fallback for missing "block_encrypted_archives" configuration directive. */
 if (!isset($phpMussel['Config']['files']['block_encrypted_archives'])) {
     $phpMussel['Config']['files']['block_encrypted_archives'] = true;
 }
+$phpMussel['AutoType']($phpMussel['Config']['files']['block_encrypted_archives'], 'Bool');
 
 /** Fallback for missing "attack_specific" configuration category. */
 if (!isset($phpMussel['Config']['attack_specific']) || !is_array($phpMussel['Config']['attack_specific'])) {
@@ -381,6 +403,7 @@ foreach (array(
     if (!isset($phpMussel['Config']['attack_specific'][$phpMussel['SigDir']])) {
         $phpMussel['Config']['attack_specific'][$phpMussel['SigDir']] = true;
     }
+    $phpMussel['AutoType']($phpMussel['Config']['attack_specific'][$phpMussel['SigDir']], 'Bool');
 }
 
 /** Fallback for missing "archive_file_extensions" configuration directive. */
@@ -401,26 +424,31 @@ if (!isset($phpMussel['Config']['attack_specific']['archive_file_extensions_wc']
 if (!isset($phpMussel['Config']['attack_specific']['general_commands'])) {
     $phpMussel['Config']['attack_specific']['general_commands'] = false;
 }
+$phpMussel['AutoType']($phpMussel['Config']['attack_specific']['general_commands'], 'Bool');
 
 /** Fallback for missing "block_control_characters" configuration directive. */
 if (!isset($phpMussel['Config']['attack_specific']['block_control_characters'])) {
     $phpMussel['Config']['attack_specific']['block_control_characters'] = false;
 }
+$phpMussel['AutoType']($phpMussel['Config']['attack_specific']['block_control_characters'], 'Bool');
 
 /** Fallback for missing "corrupted_exe" configuration directive. */
 if (!isset($phpMussel['Config']['attack_specific']['corrupted_exe'])) {
     $phpMussel['Config']['attack_specific']['corrupted_exe'] = true;
 }
+$phpMussel['AutoType']($phpMussel['Config']['attack_specific']['corrupted_exe'], 'Bool');
 
 /** Fallback for missing "decode_threshold" configuration directive. */
 if (!isset($phpMussel['Config']['attack_specific']['decode_threshold'])) {
     $phpMussel['Config']['attack_specific']['decode_threshold'] = 512;
 }
+$phpMussel['AutoType']($phpMussel['Config']['attack_specific']['decode_threshold']);
 
 /** Fallback for missing "scannable_threshold" configuration directive. */
 if (!isset($phpMussel['Config']['attack_specific']['scannable_threshold'])) {
     $phpMussel['Config']['attack_specific']['scannable_threshold'] = 32768;
 }
+$phpMussel['AutoType']($phpMussel['Config']['attack_specific']['scannable_threshold']);
 
 /** Fallback for missing "compatibility" configuration category. */
 if (!isset($phpMussel['Config']['compatibility']) || !is_array($phpMussel['Config']['compatibility'])) {
@@ -431,11 +459,13 @@ if (!isset($phpMussel['Config']['compatibility']) || !is_array($phpMussel['Confi
 if (!isset($phpMussel['Config']['compatibility']['ignore_upload_errors'])) {
     $phpMussel['Config']['compatibility']['ignore_upload_errors'] = false;
 }
+$phpMussel['AutoType']($phpMussel['Config']['compatibility']['ignore_upload_errors'], 'Bool');
 
 /** Fallback for missing "only_allow_images" configuration directive. */
 if (!isset($phpMussel['Config']['compatibility']['only_allow_images'])) {
     $phpMussel['Config']['compatibility']['only_allow_images'] = false;
 }
+$phpMussel['AutoType']($phpMussel['Config']['compatibility']['only_allow_images'], 'Bool');
 
 /** Fallback for missing "heuristic" configuration category. */
 if (!isset($phpMussel['Config']['heuristic']) || !is_array($phpMussel['Config']['heuristic'])) {
@@ -446,6 +476,7 @@ if (!isset($phpMussel['Config']['heuristic']) || !is_array($phpMussel['Config'][
 if (!isset($phpMussel['Config']['heuristic']['threshold'])) {
     $phpMussel['Config']['heuristic']['threshold'] = 3;
 }
+$phpMussel['AutoType']($phpMussel['Config']['heuristic']['threshold']);
 
 /** Fallback for missing "virustotal" configuration category. */
 if (!isset($phpMussel['Config']['virustotal']) || !is_array($phpMussel['Config']['virustotal'])) {
@@ -461,21 +492,25 @@ if (!isset($phpMussel['Config']['virustotal']['vt_public_api_key'])) {
 if (!isset($phpMussel['Config']['virustotal']['vt_suspicion_level'])) {
     $phpMussel['Config']['virustotal']['vt_suspicion_level'] = 1;
 }
+$phpMussel['AutoType']($phpMussel['Config']['virustotal']['vt_suspicion_level']);
 
 /** Fallback for missing "vt_weighting" configuration directive. */
 if (!isset($phpMussel['Config']['virustotal']['vt_weighting'])) {
     $phpMussel['Config']['virustotal']['vt_weighting'] = 0;
 }
+$phpMussel['AutoType']($phpMussel['Config']['virustotal']['vt_weighting']);
 
 /** Fallback for missing "vt_quota_rate" configuration directive. */
 if (!isset($phpMussel['Config']['virustotal']['vt_quota_rate'])) {
     $phpMussel['Config']['virustotal']['vt_quota_rate'] = 4;
 }
+$phpMussel['AutoType']($phpMussel['Config']['virustotal']['vt_quota_rate']);
 
 /** Fallback for missing "vt_quota_time" configuration directive. */
 if (!isset($phpMussel['Config']['virustotal']['vt_quota_time'])) {
     $phpMussel['Config']['virustotal']['vt_quota_time'] = 1;
 }
+$phpMussel['AutoType']($phpMussel['Config']['virustotal']['vt_quota_time']);
 
 /** Fallback for missing "urlscanner" configuration category. */
 if (!isset($phpMussel['Config']['urlscanner']) || !is_array($phpMussel['Config']['urlscanner'])) {
@@ -486,11 +521,13 @@ if (!isset($phpMussel['Config']['urlscanner']) || !is_array($phpMussel['Config']
 if (!isset($phpMussel['Config']['urlscanner']['urlscanner'])) {
     $phpMussel['Config']['urlscanner']['urlscanner'] = true;
 }
+$phpMussel['AutoType']($phpMussel['Config']['urlscanner']['urlscanner'], 'Bool');
 
 /** Fallback for missing "lookup_hphosts" configuration directive. */
 if (!isset($phpMussel['Config']['urlscanner']['lookup_hphosts'])) {
     $phpMussel['Config']['urlscanner']['lookup_hphosts'] = true;
 }
+$phpMussel['AutoType']($phpMussel['Config']['urlscanner']['lookup_hphosts'], 'Bool');
 
 /** Fallback for missing "google_api_key" configuration directive. */
 if (!isset($phpMussel['Config']['urlscanner']['google_api_key'])) {
@@ -501,16 +538,19 @@ if (!isset($phpMussel['Config']['urlscanner']['google_api_key'])) {
 if (!isset($phpMussel['Config']['urlscanner']['maximum_api_lookups'])) {
     $phpMussel['Config']['urlscanner']['maximum_api_lookups'] = 10;
 }
+$phpMussel['AutoType']($phpMussel['Config']['urlscanner']['maximum_api_lookups']);
 
 /** Fallback for missing "maximum_api_lookups_response" configuration directive. */
 if (!isset($phpMussel['Config']['urlscanner']['maximum_api_lookups_response'])) {
     $phpMussel['Config']['urlscanner']['maximum_api_lookups_response'] = false;
 }
+$phpMussel['AutoType']($phpMussel['Config']['urlscanner']['maximum_api_lookups_response'], 'Bool');
 
 /** Fallback for missing "cache_time" configuration directive. */
 if (!isset($phpMussel['Config']['urlscanner']['cache_time'])) {
     $phpMussel['Config']['urlscanner']['cache_time'] = 3600;
 }
+$phpMussel['AutoType']($phpMussel['Config']['urlscanner']['cache_time']);
 
 /** Fallback for missing "template_data" configuration category. */
 if (!isset($phpMussel['Config']['template_data']) || !is_array($phpMussel['Config']['template_data'])) {
@@ -520,4 +560,26 @@ if (!isset($phpMussel['Config']['template_data']) || !is_array($phpMussel['Confi
 /** Fallback for missing "css_url" configuration directive. */
 if (!isset($phpMussel['Config']['template_data']['css_url'])) {
     $phpMussel['Config']['template_data']['css_url'] = '';
+}
+
+/** Determine whether operating in CLI-mode. */
+$phpMussel['Mussel_sapi'] = (
+    empty($_SERVER['REQUEST_METHOD']) ||
+    substr(php_sapi_name(), 0, 3) === 'cli' ||
+    (
+        empty($_SERVER[$phpMussel['Config']['general']['ipaddr']]) &&
+        empty($_SERVER['HTTP_USER_AGENT']) &&
+        !empty($_SERVER['argc']) &&
+        is_numeric($_SERVER['argc']) &&
+        $_SERVER['argc'] > 0
+    )
+);
+
+/** Process the request query and query variables (if any exist). */
+if (!empty($_SERVER['QUERY_STRING'])) {
+    $phpMussel['Query'] = $_SERVER['QUERY_STRING'];
+    parse_str($_SERVER['QUERY_STRING'], $phpMussel['QueryVars']);
+} else {
+    $phpMussel['Query'] = '';
+    $phpMussel['QueryVars'] = array();
 }

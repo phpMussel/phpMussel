@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2016.04.18).
+ * This file: Language handler (last modified: 2016.10.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -20,16 +20,16 @@ if (!defined('phpMussel')) {
 }
 
 /** Create the language data array. */
-$phpMussel['Config']['lang'] = array();
+$phpMussel['lang'] = array();
 
 /** phpMussel CLI-mode ASCII art. */
-$phpMussel['Config']['lang']['cli_ln1'] =
+$phpMussel['lang']['cli_ln1'] =
     "      _____  _     _  _____  _______ _     _ _______ _______ _______           \n" .
     " <   |_____] |_____| |_____] |  |  | |     | |______ |______ |______ |        >\n" .
     "     |       |     | |       |  |  | |_____| ______| ______| |______ |_____    \n";
 
 /** phpMussel CLI-mode prompt. */
-$phpMussel['Config']['lang']['cli_prompt'] = "\n\n>> ";
+$phpMussel['lang']['cli_prompt'] = "\n\n>> ";
 
 /** Ensure HTTP_ACCEPT_LANGUAGE is defined (even if it's empty). */
 if (!isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
@@ -38,8 +38,8 @@ if (!isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
 
 /**
  * If lang_override is enabled, and if HTTP_ACCEPT_LANGUAGE matches a
- * permissible language choice, we will override the configuration file defined
- * language directive using the language specified by HTTP_ACCEPT_LANGUAGE.
+ * permissible language choice, we'll override the language directive using the
+ * language specified by HTTP_ACCEPT_LANGUAGE.
  */
 if ($phpMussel['Config']['general']['lang_override'] && $_SERVER['HTTP_ACCEPT_LANGUAGE']) {
     if (substr_count($phpMussel['Config']['lang_acceptable'], substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5))) {
@@ -60,3 +60,23 @@ if (!file_exists($phpMussel['langPath'] . 'lang.' . $phpMussel['Config']['genera
 
 /** Load the necessary language data. */
 require $phpMussel['langPath'] . 'lang.' . $phpMussel['Config']['general']['lang'] . '.php';
+
+/** Load front-end language data if necessary. */
+if (
+    !$phpMussel['Config']['general']['disable_frontend'] &&
+    file_exists($phpMussel['Vault'] . 'frontend.php') &&
+    file_exists($phpMussel['Vault'] . 'fe_assets/frontend.html') &&
+    $phpMussel['Direct']
+) {
+    /**
+     * Kill the script if the front-end language data file corresponding to
+     * the language directive (%phpMussel%/vault/lang/lang.%%.fe.php) doesn't
+     * exist.
+     */
+    if (!file_exists($phpMussel['langPath'] . 'lang.' . $phpMussel['Config']['general']['lang'] . '.fe.php')) {
+        header('Content-Type: text/plain');
+        die('[phpMussel] Language undefined or incorrectly defined. Can\'t continue.');
+    }
+    /** Load the necessary language data. */
+    require $phpMussel['langPath'] . 'lang.' . $phpMussel['Config']['general']['lang'] . '.fe.php';
+}

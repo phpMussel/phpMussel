@@ -6,12 +6,13 @@
 - 2B. [COMO INSTALAR (PARA CLI)](#SECTION2B)
 - 3A. [COMO USAR (PARA WEB SERVIDORES)](#SECTION3A)
 - 3B. [COMO USAR (PARA CLI)](#SECTION3B)
-- 4A. [NAVEGADOR COMANDOS](#SECTION4A)
-- 4B. [CLI (COMANDO LINHA INTERFACE)](#SECTION4B)
-- 5. [ARQUIVOS INCLUÍDOS NESTE PACOTE](#SECTION5)
-- 6. [OPÇÕES DE CONFIGURAÇÃO](#SECTION6)
-- 7. [FORMATOS DE ASSINATURAS](#SECTION7)
-- 8. [CONHECIDOS COMPATIBILIDADE PROBLEMAS](#SECTION8)
+- 4. [GESTÃO DE FRONT-END](#SECTION4)
+- 5. [CLI (COMANDO LINHA INTERFACE)](#SECTION5)
+- 6. [ARQUIVOS INCLUÍDOS NESTE PACOTE](#SECTION6)
+- 7. [OPÇÕES DE CONFIGURAÇÃO](#SECTION7)
+- 8. [FORMATOS DE ASSINATURAS](#SECTION8)
+- 9. [CONHECIDOS COMPATIBILIDADE PROBLEMAS](#SECTION9)
+- 10. [PERGUNTAS MAIS FREQUENTES (FAQ)](#SECTION10)
 
 ---
 
@@ -43,15 +44,15 @@ Espero para agilizar este processo via fazendo um instalado em algum momento no 
 
 1) Por o seu lendo isso, eu estou supondo que você já tenha baixado uma cópia arquivada do script, descomprimido seu conteúdo e tê-lo sentado em algum lugar em sua máquina local. A partir daqui, você vai querer determinar onde no seu host ou CMS pretende colocar esses conteúdos. Um diretório como `/public_html/phpmussel/` ou semelhante (porém, está não importa qual você escolher, assumindo que é seguro e algo você esteja feliz com) vai bastará.
 
-2) Opcionalmente (fortemente recomendado para avançados usuários, mas não recomendado para iniciantes ou para os inexperientes), abrir `phpmussel.ini` (localizado dentro `vault`) - Este arquivo contém todas as directivas disponíveis para phpMussel. Acima de cada opção deve ser um breve comentário descrevendo o que faz e para que serve. Ajuste essas opções de como você vê o ajuste, conforme o que for apropriado para sua configuração específica. Salve o arquivo, fechar.
+2) Renomear `config.ini.RenameMe` para `config.ini` (localizado dentro `vault`), e opcionalmente (fortemente recomendado para avançados usuários, mas não recomendado para iniciantes ou para os inexperientes), abri-lo (este arquivo contém todas as directivas disponíveis para phpMussel; acima de cada opção deve ser um breve comentário descrevendo o que faz e para que serve). Ajuste essas opções de como você vê o ajuste, conforme o que for apropriado para sua configuração específica. Salve o arquivo, fechar.
 
 3) Carregar os conteúdos (phpMussel e seus arquivos) para o diretório que você tinha decidido anteriormente (você não requerer os `*.txt`/`*.md` arquivos incluídos, mas principalmente, você deve carregar tudo).
 
 4) CHMOD o `vault` diretório para "755" (se houver problemas, você pode tentar "777"; isto é menos seguro, embora). O principal diretório armazenar o conteúdo (o que você escolheu anteriormente), geralmente, pode ser deixado sozinho, mas o CHMOD status deve ser verificado se você já teve problemas de permissões no passado no seu sistema (por padrão, deve ser algo como "755").
 
-5) Seguida, você vai precisar "enganchar" phpMussel ao seu sistema ou CMS. Existem várias diferentes maneiras em que você pode "enganchar" scripts como phpMussel ao seu sistema ou CMS, mas o mais fácil é simplesmente incluir o script no início de um núcleo arquivo de seu sistema ou CMS (uma que vai geralmente sempre ser carregado quando alguém acessa qualquer página através de seu site) utilizando um `require` ou `include` comando. Normalmente, isso vai ser algo armazenado em um diretório como `/includes`, `/assets` ou `/functions`, e muitas vezes, ser nomeado algo como `init.php`, `common_functions.php`, `functions.php` ou semelhante. Você precisará determinar qual arquivo isso é para a sua situação; Se você encontrar dificuldades em determinar isso por si mesmo, para assistência, visite a página de problemas/issues phpMussel no Github ou os fóruns de suporte para phpMussel; É possível que eu ou outro usuário podem ter experiência com o CMS que você está usando (você precisa deixar-nos saber qual CMS você está usando), e assim, pode ser capaz de prestar alguma assistência neste domínio. Para fazer isso [usar `require` ou `include`], insira a seguinte linha de código para o início desse núcleo arquivo, substituindo a string contida dentro das aspas com o exato endereço do arquivo `phpmussel.php` (endereço local, não o endereço HTTP; será semelhante ao vault endereço mencionado anteriormente).
+5) Seguida, você vai precisar "enganchar" phpMussel ao seu sistema ou CMS. Existem várias diferentes maneiras em que você pode "enganchar" scripts como phpMussel ao seu sistema ou CMS, mas o mais fácil é simplesmente incluir o script no início de um núcleo arquivo de seu sistema ou CMS (uma que vai geralmente sempre ser carregado quando alguém acessa qualquer página através de seu site) utilizando um `require` ou `include` comando. Normalmente, isso vai ser algo armazenado em um diretório como `/includes`, `/assets` ou `/functions`, e muitas vezes, ser nomeado algo como `init.php`, `common_functions.php`, `functions.php` ou semelhante. Você precisará determinar qual arquivo isso é para a sua situação; Se você encontrar dificuldades em determinar isso por si mesmo, para assistência, visite a página de problemas/issues phpMussel no Github ou os fóruns de suporte para phpMussel; É possível que eu ou outro usuário podem ter experiência com o CMS que você está usando (você precisa deixar-nos saber qual CMS você está usando), e assim, pode ser capaz de prestar alguma assistência neste domínio. Para fazer isso [usar `require` ou `include`], insira a seguinte linha de código para o início desse núcleo arquivo, substituindo a string contida dentro das aspas com o exato endereço do arquivo `loader.php` (endereço local, não o endereço HTTP; será semelhante ao vault endereço mencionado anteriormente).
 
-`<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
+`<?php require '/user_name/public_html/phpmussel/loader.php'; ?>`
 
 Salve o arquivo, fechar, recarregar-lo.
 
@@ -59,11 +60,11 @@ Salve o arquivo, fechar, recarregar-lo.
 
 Se você é usando um Apache web servidor e se você tem acesso a `php.ini`, você pode usar o `auto_prepend_file` directiva para pré-carga phpMussel sempre que qualquer solicitação para PHP é feito. Algo como:
 
-`auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"`
+`auto_prepend_file = "/user_name/public_html/phpmussel/loader.php"`
 
 Ou isso no `.htaccess` arquivo:
 
-`php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"`
+`php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
 6) Neste ponto, você está feito! Porém, você provavelmente deve testá-lo para garantir que ele está funcionando corretamente. Para testar as arquivo carregamento proteção, tentar carregar dos testes arquivos incluídos no pacote em `_testfiles` para seu site através de seus habitual navegador carregamentos métodos. Se tudo estiver funcionando, a mensagem deve aparecer a partir phpMussel confirmando que o carregamento foi bloqueado com sucesso. Se nada aparecer, algo está não funcionando corretamente. Se você estiver usando quaisquer avançados recursos ou se você estiver usando outros tipos de análisar possível com a ferramenta, eu sugiro tentar isso com aqueles para certificar que ele funciona como esperado, também.
 
@@ -78,9 +79,9 @@ Espero para agilizar este processo via fazendo um instalado em algum momento no 
 
 2) phpMussel requer PHP para ser instalado na host máquina a fim de executar. Se você não ainda tno PHP instalado em sua máquina, por favor instalar o PHP em sua máquina, seguindo as instruções fornecidas pelo PHP instalador.
 
-3) Opcionalmente (fortemente recomendado para avançados usuários, mas não recomendado para iniciantes ou para os inexperientes), abrir `phpmussel.ini` (localizado dentro `vault`) - Este arquivo contém todas as directivas disponíveis para phpMussel. Acima de cada opção deve ser um breve comentário descrevendo o que faz e para que serve. Ajuste essas opções de como você vê o ajuste, conforme o que for apropriado para sua configuração específica. Salve o arquivo, fechar.
+3) Opcionalmente (fortemente recomendado para avançados usuários, mas não recomendado para iniciantes ou para os inexperientes), abrir `config.ini` (localizado dentro `vault`) - Este arquivo contém todas as directivas disponíveis para phpMussel. Acima de cada opção deve ser um breve comentário descrevendo o que faz e para que serve. Ajuste essas opções de como você vê o ajuste, conforme o que for apropriado para sua configuração específica. Salve o arquivo, fechar.
 
-4) Opcionalmente, você pode fazer usando phpMussel no modo CLI mais fácil para si mesmo através da criação de um batch arquivo para carregar automaticamente PHP e phpMussel. Para fazer isso, abra um editor de simples texto como Notepad ou Notepad++, digite o completo caminho para o `php.exe` arquivo no PHP instalação diretório, seguido por um espaço, seguido pelo completo caminho para o `phpmussel.php` arquivo no diretório da sua phpMussel instalação, salvar o arquivo com a extensão ".bat" Em algum lugar que você vai encontrá-lo facilmente, e clique duas vezes nesse arquivo para executar phpMussel no futuro.
+4) Opcionalmente, você pode fazer usando phpMussel no CLI modo mais fácil para si mesmo através da criação de um batch arquivo para carregar automaticamente PHP e phpMussel. Para fazer isso, abra um editor de simples texto como Notepad ou Notepad++, digite o completo caminho para o `php.exe` arquivo no PHP instalação diretório, seguido por um espaço, seguido pelo completo caminho para o `loader.php` arquivo no diretório da sua phpMussel instalação, salvar o arquivo com a extensão ".bat" Em algum lugar que você vai encontrá-lo facilmente, e clique duas vezes nesse arquivo para executar phpMussel no futuro.
 
 5) Neste ponto, você está feito! Porém, você provavelmente deve testá-lo para garantir que ele está funcionando corretamente. Para testar phpMussel, executar phpMussel e tentar análizar o diretório `_testfiles` fornecida com o pacote.
 
@@ -93,7 +94,7 @@ phpMussel deve ser capaz de operar correctamente com requisitos mínimos sobre a
 
 Análise dos arquivos carregamentos é automatizado e ativado por padrão, por isso nada é exigido por você por essa particular função.
 
-Porém, você também é capaz de instruir phpMussel para verificar arquivos e/ou diretórios específicos. Para fazer isso, em primeiro lugar, você vai precisar para assegurar que configuração apropriada é definida no `phpmussel.ini` arquivo (`cleanup` deve ser desativado), e quando feito, em um PHP arquivo que está enganchado ao phpMussel, usar a seguinte função no seu código:
+Porém, você também é capaz de instruir phpMussel para verificar arquivos e/ou diretórios específicos. Para fazer isso, em primeiro lugar, você vai precisar para assegurar que configuração apropriada é definida no `config.ini` arquivo (`cleanup` deve ser desativado), e quando feito, em um PHP arquivo que está enganchado ao phpMussel, usar a seguinte função no seu código:
 
 `$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
@@ -121,7 +122,7 @@ Por completos detalhes sobre que tipo de assinaturas phpMussel usa durante a an�
 
 Se você encontrar quaisquer falsos positivos, se você encontrar algo novo que você acha deve ser bloqueado, ou para qualquer outra coisa com relação a assinatura, entre em contato comigo sobre isso para que eu possa fazer as mudanças necessárias, que, se você não entrar em contato comigo, eu posso não ser necessariamente conscientes de.
 
-Para desativar as assinaturas que estão incluídos com phpMussel (tal como se você está experimentando falsos positivos específico para seus fins que não deve normalmente ser removidos da agilize), consulte as notas sobre Greylisting dentro do Navegador Comandos seção deste arquivo README.
+Para desativar as assinaturas que estão incluídos com phpMussel (tal como se você está experimentando falsos positivos específico para seus fins que não deve normalmente ser removidos da agilize), consulte as notas sobre Greylisting dentro de seção GESTÃO DE FRONT-END deste arquivo README.
 
 ---
 
@@ -137,9 +138,9 @@ Também estar ciente de que phpMussel é um scanner *on-demand*; *NÃO* é um sc
 ---
 
 
-###4A. <a name="SECTION4A"></a>NAVEGADOR COMANDOS
+###4. <a name="SECTION4"></a>GESTÃO DE FRONT-END
 
-Quando phpMussel é instalado e funcionando corretamente no seu sistema, se você tem configurá as variáveis `script_password` e `logs_password` no seu configuração arquivo, você será capaz de executar um limitado número de administrativas funções e entrada um algum número de comandos para phpMussel através de seu navegador. A razão pela qual essas senhas precisam ser definidas a fim de permitir que esses controles do navegador é tanto para garantir adequada segurança, adequada proteção desses navegador controles e para garantir que existe uma maneira por desses navegador controles para ser totalmente desativado se eles não são desejadas por você e/ou outros webmestres/administradores usando phpMussel. Portanto, em outras palavras, para ativar esses controles, definir uma senha, e para desativar esses controles, definir nenhum senha. Alternativamente, se você optar por ativar esses controles então optar por desativar esses controles em um posterior data, existe um comando para fazer isto (tal pode ser útil se você executar algumas ações que você sente poderia comprometer as senhas delegados e precisa para desativar rapidamente esses controles sem modificar o configuração arquivo).
+@TODO@
 
 Algumas razões pelas quais você _**DEVE**_ ativar esses controles:
 - Fornece uma maneira para greylist assinaturas em casos como quando você descobre uma assinatura que está produzindo um falso-positivo durante o carregar de arquivos para o seu sistema e você não tem tempo para manualmente editar e recarregar o greylist arquivo.
@@ -153,94 +154,22 @@ Algumas razões pelas quais você _**NÃO**_ deve ativar esses controles:
 
 De qualquer maneira, independentemente do que você escolher, a escolha final é sua. Por padrão, esses controles serão desativados, mas ter um pensar sobre isso, e se você decidir que você quer eles, Nesta seção explica tanto como ativá-los e como usá-los.
 
-A lista de disponíveis browser comandos:
-
-scan_log
-- Senha necessária: `logs_password`
-- Outros requisitos: `scan_log` deve ser definido.
-- Parâmetros necessários: (nenhum)
-- Parâmetros opcionais: (nenhum)
-- Exemplo: `?logspword=[logs_password]&phpmussel=scan_log`
-- Que faz: Imprime o conteúdo de seu `scan_log` arquivo para a tela.
-
-scan_log_serialized
-- Senha necessária: `logs_password`
-- Outros requisitos: `scan_log_serialized` deve ser definido.
-- Parâmetros necessários: (nenhum)
-- Parâmetros opcionais: (nenhum)
-- Exemplo: `?logspword=[logs_password]&phpmussel=scan_log_serialized`
-- Que faz: Imprime o conteúdo de seu `scan_log_serialized` arquivo para a tela.
-
-scan_kills
-- Senha necessária: `logs_password`
-- Outros requisitos: `scan_kills` deve ser definido.
-- Parâmetros necessários: (nenhum)
-- Parâmetros opcionais: (nenhum)
-- Exemplo: `?logspword=[logs_password]&phpmussel=scan_kills`
-- Que faz: Imprime o conteúdo de seu `scan_kills` arquivo para a tela.
-
-controls_lockout
-- Senha necessária: `logs_password` OU `script_password`
-- Outros requisitos: (nenhum)
-- Parâmetros necessários: (nenhum)
-- Parâmetros opcionais: (nenhum)
-- Exemplo 1: `?logspword=[logs_password]&phpmussel=controls_lockout`
-- Exemplo 2: `?pword=[script_password]&phpmussel=controls_lockout`
-- Que faz: Desativa todos os navegador controles. Isso deve ser usado se você suspeitar que qualquer das senhas foram comprometidas (isso pode acontecer se você estiver usando esses controles a através de um computador que não é seguro ou não é confiável). controls_lockout funciona através de criando um arquivo, `controls.lck`, no seu vault, de que phpMussel irá olhar por antes de executar qualquer comando de qualquer variedade. Quando isso acontece, para reativar os controlos, você precisará manualmente deletar o `controls.lck` arquivo através de FTP ou semelhante. Pode ser chamado usando qualquer senha.
-
-disable
-- Senha necessária: `script_password`
-- Outros requisitos: (nenhum)
-- Parâmetros necessários: (nenhum)
-- Parâmetros opcionais: (nenhum)
-- Exemplo: `?pword=[script_password]&phpmussel=disable`
-- Que faz: Desativar phpMussel. Isso deve ser usado se você estiver executando quaisquer atualizações ou alterações no seu sistema ou se está instalando qualquer novo software ou módulos para seu sistema que fazer ou potencialmente poderiam desencadear falsos positivos. Isso também deve ser usado se você está tendo problemas com phpMussel mas não deseja removê-lo do sistema. Quando isso acontece, para reativar phpMussel, uso "enable".
-
-enable
-- Senha necessária: `script_password`
-- Outros requisitos: (nenhum)
-- Parâmetros necessários: (nenhum)
-- Parâmetros opcionais: (nenhum)
-- Exemplo: `?pword=[script_password]&phpmussel=enable`
-- Que faz: Ativar phpMussel. Este deve ser usado se você já desativado phpMussel usando "disable" e desejar para reativá-la.
-
-greylist
-- Senha necessária: `script_password`
-- Outros requisitos: (nenhum)
-- Parâmetros necessários: [Nome de assinatura a ser greylisted]
-- Parâmetros opcionais: (nenhum)
-- Exemplo: `?pword=[script_password]&phpmussel=greylist&musselvar=[Assinatura]`
-- Que faz: Adicionar uma assinatura para o greylist.
-
-greylist_clear
-- Senha necessária: `script_password`
-- Outros requisitos: (nenhum)
-- Parâmetros necessários: (nenhum)
-- Parâmetros opcionais: (nenhum)
-- Exemplo: `?pword=[script_password]&phpmussel=greylist_clear`
-- Que faz: Limpo inteiro greylist.
-
-greylist_show
-- Senha necessária: `script_password`
-- Outros requisitos: (nenhum)
-- Parâmetros necessários: (nenhum)
-- Parâmetros opcionais: (nenhum)
-- Exemplo: `?pword=[script_password]&phpmussel=greylist_show`
-- Que faz: Imprime o conteúdo da greylist para a tela.
-
 ---
 
 
-###4B. <a name="SECTION4B"></a>CLI (COMANDO LINHA INTERFACE)
+###5. <a name="SECTION5"></a>CLI (COMANDO LINHA INTERFACE)
 
 phpMussel pode ser executado como um interativo arquivo analisador no CLI modo em sistemas baseados em Windows. Por favor, consulte ao "COMO INSTALAR (PARA CLI)" seção deste arquivo README por mais detalhes.
 
 Por uma lista de comandos disponíveis Em CLI, no CLI prompt, digite 'c', e pressione Enter.
 
+Além disso, para os interessados, um tutorial em vídeo para saber como usar phpMussel no CLI modo está disponível aqui:
+- <https://www.youtube.com/watch?v=H-Pa740-utc>
+
 ---
 
 
-###5. <a name="SECTION5"></a>ARQUIVOS INCLUÍDOS NESTE PACOTE
+###6. <a name="SECTION6"></a>ARQUIVOS INCLUÍDOS NESTE PACOTE
 
 O seguinte está uma lista de todos os arquivos que deveria sido incluídos na arquivada cópia desse script quando você baixado-lo, todos os arquivos que podem ser potencialmente criados como resultado de seu uso deste script, juntamente com uma breve descrição do que todos esses arquivos são por.
 
@@ -251,8 +180,8 @@ Arquivo | Descrição
 /composer.json | Composer/Packagist informação (não é necessário para o correto funcionamento do script).
 /CONTRIBUTING.md | Informações sobre como contribuir para o projeto.
 /LICENSE.txt | Uma cópia da GNU/GPLv2 licença (não é necessário para o correto funcionamento do script).
+/loader.php | O carregador. Isto é o que você deveria ser enganchando em (essencial)!
 /PEOPLE.md | Informações sobre as pessoas envolvidas no projeto.
-/phpmussel.php | O carregador. Isto é o que você deveria ser enganchando em (essencial)!
 /README.md | Informações do projeto em sumário.
 /web.config | Um arquivo de configuração para ASP.NET (neste caso, para protegendo o`/vault` diretório contra serem acessado por fontes não autorizadas em caso que o script está instalado em um servidor baseado em ASP.NET tecnologias).
 /_docs/ | Documentação diretório (contém vários arquivos).
@@ -291,8 +220,8 @@ Arquivo | Descrição
 /vault/cache/ | Cache diretório (para dados temporários).
 /vault/cache/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 /vault/cli.php | Módulo de CLI.
+/vault/config.ini.RenameMe | Arquivo de configuração; Contém todas as opções de configuração para phpMussel, dizendo-lhe o que fazer e como operar corretamente (renomear para ativar).
 /vault/config.php | Módulo de configuração.
-/vault/controls.php | Módulo de controles.
 /vault/functions.php | Arquivo de funções.
 /vault/greylist.csv | CSV de greylisted assinaturas indicando a phpMussel quais assinaturas deve ser ignorado (arquivo automaticamente recriado se deletado).
 /vault/lang.php | Linguagem dados.
@@ -312,7 +241,6 @@ Arquivo | Descrição
 /vault/lang/lang.vi.php | Linguagem dados Vietnamita.
 /vault/lang/lang.zh-TW.php | Linguagem dados Chinês (tradicional).
 /vault/lang/lang.zh.php | Linguagem dados Chinês (simplificado).
-/vault/phpmussel.ini | Arquivo de configuração; Contém todas as opções de configuração para phpMussel, dizendo-lhe o que fazer e como operar corretamente (essencial)!
 /vault/quarantine/ | Diretório de quarentena (contém os arquivos em quarentena).
 /vault/quarantine/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 ※ /vault/scan_kills.txt | Um registro de tudos os arquivos carregamentos bloqueado ou matado por phpMussel.
@@ -443,7 +371,7 @@ Arquivo | Descrição
 /vault/template_custom.html | Template arquivo; Template por HTML produzido através do phpMussel por o bloqueado arquivo carregamento mensagem (a mensagem visto por o carregador).
 /vault/upload.php | Módulo de carregamento.
 
-※ Arquivo nome podem variar baseado em configuração estipulação (referem-se a `phpmussel.ini`).
+※ Arquivo nome podem variar baseado em configuração estipulação (referem-se a `config.ini`).
 
 ####*EM RELAÇÃO AOS ASSINATURAS ARQUIVOS*
 CVD é um acrônimo por "ClamAV Virus Definitions", em referência tanto à forma como ClamAV refere-se às suas próprias assinaturas e para o uso dessas assinaturas por phpMussel; Arquivos que terminam com "CVD" contêm assinaturas.
@@ -465,8 +393,8 @@ Assinatura arquivos marcados com "_mussel" contêm assinaturas que são especifi
 ---
 
 
-###6. <a name="SECTION6"></a>OPÇÕES DE CONFIGURAÇÃO
-O seguinte é uma lista de variáveis encontradas no `phpmussel.ini` arquivo de configuração para phpMussel, juntamente com uma descrição de sua propósito e função.
+###7. <a name="SECTION7"></a>OPÇÕES DE CONFIGURAÇÃO
+O seguinte é uma lista de variáveis encontradas no `config.ini` arquivo de configuração para phpMussel, juntamente com uma descrição de sua propósito e função.
 
 ####"general" (Categoria)
 Configuração geral por phpMussel.
@@ -541,6 +469,9 @@ Configuração geral por phpMussel.
 
 "disable_cli"
 - Desativar o CLI modo? CLI modo é ativado por padrão, mas às vezes pode interferir com certas testes ferramentas (tal como PHPUnit, por exemplo) e outras aplicações baseadas em CLI. Se você não precisa desativar o CLI modo, você deve ignorar esta directiva. False = Ativar o CLI modo [Padrão]; True = Desativar o CLI modo.
+
+"disable_frontend"
+- Desativar o acesso front-end? Acesso front-end pode fazer phpMussel mais manejável, mas também pode ser um risco de segurança potencial, também. É recomendado para gerenciar phpMussel através do back-end, sempre que possível, mas o acesso front-end é proporcionada para quando não é possível. Mantê-lo desativado, a menos que você precisar. False = Ativar o acesso front-end; True = Desativar o acesso front-end [Padrão].
 
 ####"signatures" (Categoria)
 Configuração por assinaturas.
@@ -775,7 +706,7 @@ Configuração para Virus Total integração.
   - Você leu e concorda com os Termos de Uso da Virus Total e sua API. Os Termos de Uso da Virus Total e sua API pode ser encontrada [Aqui](https://www.virustotal.com/en/about/terms-of-service/).
   - Você leu e você compreender, no mínimo, o preâmbulo da Virus Total Pública API documentação (tudo depois "VirusTotal Public API v2.0" mas antes "Contents"). Os Virus Total Pública API documentação pode ser encontrada [Aqui](https://www.virustotal.com/en/documentation/public-api/).
 
-Notar: Se a verificação de arquivos usando o Virus Total de API está desativado, você não será necessitar de rever alguma das directivas nesta categoria (`virustotal`), porque eles não vão fazer nada se este é desativado. Para adquirir um Virus Total API chave, desde qualquer lugar em seu site, clique no "Junte-se à comunidade" link situado próximo ao superior direita da página, digitar as informações solicitadas, e clique em "Cadastrar" quando acabado. Siga todas as instruções fornecidas, e quando você tem a sua pública API chave, copiar/colar essa pública API chave ao `vt_public_api_key` directiva do `phpmussel.ini` configuração arquivo.
+Notar: Se a verificação de arquivos usando o Virus Total de API está desativado, você não será necessitar de rever alguma das directivas nesta categoria (`virustotal`), porque eles não vão fazer nada se este é desativado. Para adquirir um Virus Total API chave, desde qualquer lugar em seu site, clique no "Junte-se à comunidade" link situado próximo ao superior direita da página, digitar as informações solicitadas, e clique em "Cadastrar" quando acabado. Siga todas as instruções fornecidas, e quando você tem a sua pública API chave, copiar/colar essa pública API chave ao `vt_public_api_key` directiva do `config.ini` configuração arquivo.
 
 "vt_suspicion_level"
 - Por padrão, phpMussel restringirá os arquivos que são verificado usando o Virus Total API a esses arquivos que considera "suspeito". Opcionalmente, você pode ajustar essa restrição via alterando o valor ao `vt_suspicion_level` directiva.
@@ -828,7 +759,7 @@ Template dados está associada com o HTML usado para gerar a "Carregar Negado" m
 ---
 
 
-###7. <a name="SECTION7"></a>FORMATOS DE ASSINATURAS
+###8. <a name="SECTION8"></a>FORMATOS DE ASSINATURAS
 
 ####*ARQUIVO NOME ASSINATURAS*
 Todas as arquivo nome assinaturas seguir o formato:
@@ -912,12 +843,12 @@ A seguir estão os diferentes tipos de assinaturas utilizadas por phpMussel:
 - "Assinaturas SWF" (swf_*). Verificado contra o conteúdo de cada Shockwave arquivo não no whitelist.
 - "Assinaturas whitelist" (whitelist_*). Verificado contra o hash MD5 do conteúdo e contra o arquivo tamanho de cada arquivo alvo por analisando. Verificados arquivos será imune de sendo verificado pelo tipo de assinatura mencionada no seu whitelist entrada.
 - "Assinaturas XML/XDP" (xmlxdp_*). Verificado contra quaisquer XML/XDP pedaços encontrados dentro cada arquivo não no whitelist e alvo por analisando.
-(Notar que qualquer uma destas assinaturas podem ser desativada facilmente através de `phpmussel.ini`).
+(Notar que qualquer uma destas assinaturas podem ser desativada facilmente através de `config.ini`).
 
 ---
 
 
-###8. <a name="SECTION8"></a>CONHECIDOS COMPATIBILIDADE PROBLEMAS
+###9. <a name="SECTION9"></a>CONHECIDOS COMPATIBILIDADE PROBLEMAS
 
 ####PHP e PCRE
 - phpMussel requer PHP e PCRE para executar e funcionar corretamente. Sem PHP, ou sem a PCRE extensão do PHP, phpMussel não vai executará ou funcionar corretamente. Deve certificar-se de que seu sistema tenha PHP e PCRE instalado e disponível antes de baixar e instalar phpMussel.
@@ -995,4 +926,24 @@ Esta informação foi atualizada dia 29 Agosto 2016 e é corrente para todas php
 ---
 
 
-Última Atualização: 22 Setembro 2016 (2016.09.22).
+###10. <a name="SECTION10"></a>PERGUNTAS MAIS FREQUENTES (FAQ)
+
+####O que é um "falso positivo"?
+
+O termo "falso positivo" (*alternativamente: "erro de falso positivo"; "alarme falso"*; Inglês: *false positive*; *false positive error*; *false alarm*), descrita de maneira muito simples, e num contexto generalizado, são usadas quando testando para uma condição, para se referir aos resultados desse teste, quando os resultados são positivos (isto é, a condição é determinada para ser "positivo", ou "verdadeiro"), mas espera-se que seja (ou deveria ter sido) negativo (isto é, a condição, na realidade, é "negativo", ou "falso"). Um "falso positivo" pode ser considerado análogo ao "chorando lobo" (em que a condição que está sendo testada é se existe um lobo perto do rebanho, a condição é "falso" em que não há nenhum lobo perto do rebanho, ea condição é relatada como "positivo" pelo pastor por meio de gritando "lobo, lobo"), ou análoga a situações em exames médicos em que um paciente é diagnosticado como tendo alguma doença quando, na realidade, eles não têm essa doença.
+
+Os resultados relacionados a quando testando para uma condição pode ser descrito usando os termos "verdadeiro positivo", "verdadeiro negativo" e "falso negativo". Um "verdadeiro positivo" refere-se a quando os resultados do teste ea real situação da condição são ambos verdadeiros (ou "positivos"), e um "verdadeiro negativo" refere-se a quando os resultados do teste ea real situação da condição são ambos falsos (ou "negativos"); Um "verdadeiro positivo" ou um "verdadeiro negativo" é considerado como sendo uma "inferência correcta". A antítese de um "falso positivo" é um "falso negativo"; Um "falso negativo" refere-se a quando os resultados do teste are negativo (isto é, a condição é determinada para ser "negativo", ou "falso"), mas espera-se que seja (ou deveria ter sido) positivo (isto é, a condição, na realidade, é "positivo", ou "verdadeiro").
+
+No contexto da phpMussel, estes termos referem-se as assinaturas de phpMussel e os arquivos que eles bloqueiam. Quando phpMussel bloquear um arquivo devido ao mau, desatualizados ou incorretos assinatura, mas não deveria ter feito isso, ou quando ele faz isso pelas razões erradas, nos referimos a este evento como um "falso positivo". Quando phpMussel não consegue bloquear um arquivo que deveria ter sido bloqueado, devido a ameaças imprevistas, assinaturas em falta ou déficits em suas assinaturas, nos referimos a este evento como um "detecção em falta" ou "missing detection" (que é análogo a um "falso negativo").
+
+Isto pode ser resumido pela seguinte tabela:
+
+&nbsp; | phpMussel *NÃO* deve bloquear um arquivo | phpMussel *DEVE* bloquear um arquivo
+---|---|---
+phpMussel *NÃO* bloquear um arquivo | Verdadeiro negativo (inferência correcta) | Detecção em falta (análogo a um falso negativo)
+phpMussel *FAZ* bloquear um arquivo | __Falso positivo__ | Verdadeiro positivo (inferência correcta)
+
+---
+
+
+Última Atualização: 16 Outubro 2016 (2016.10.16).

@@ -6,12 +6,13 @@
 - 2B. [インストール方法（CLI編）](#SECTION2B)
 - 3A. [使用方法（ウェーブサーバー編）](#SECTION3A)
 - 3B. [使用方法（CLI編）](#SECTION3B)
-- 4A. [ブラウザ・コマンド](#SECTION4A)
-- 4B. [CLI （コマンドライン・インターフェイス）](#SECTION4B)
-- 5. [本パッケージに含まれるファイル](#SECTION5)
-- 6. [設定オプション](#SECTION6)
-- 7. [署名（シグニチャ）フォーマット](#SECTION7)
-- 8. [適合性問題](#SECTION8)
+- 4. [フロントエンドの管理](#SECTION4)
+- 5. [CLI （コマンドライン・インターフェイス）](#SECTION5)
+- 6. [本パッケージに含まれるファイル](#SECTION6)
+- 7. [設定オプション](#SECTION7)
+- 8. [署名（シグニチャ）フォーマット](#SECTION8)
+- 9. [適合性問題](#SECTION9)
+- 10. [よくある質問（FAQ）](#SECTION10)
 
 ---
 
@@ -43,15 +44,15 @@ PHPMUSSEL著作権2013とGNU一般公衆ライセンスv2を超える権利に�
 
 1) 本項を読んでいるということから、アーカイブ・スクリプトのローカルマシンへのダウンロードと解凍は終了していると考えます。ホストあるいはCMSに`/public_html/phpmussel/`のようなディレクトリを作り、ローカルマシンからそこにコンテンツをアップロードするのが次のステップです。アップロード先のディレクトリ名や場所については、安全でさえあれば、もちろん制約などはありませんので、自由に決めて下さい。
 
-2) オプションの修正のため（初心者には推奨できませんが、経験が豊富なユーザーには強く推奨します）。`vault`内の`phpmussel.ini`を開いて下さい。本ファイルはphpMusselが利用可能なディレクティブを含んでおり、それぞれのオプションについての機能と目的に関した簡単な説明があります。セットアップ環境にあわせて、適当な修正を行いファイルを保存して下さい。
+2) `config.ini`に`config.ini.RenameMe`の名前を変更します（`vault`の内側に位置する）。オプションの修正のため（初心者には推奨できませんが、経験が豊富なユーザーには強く推奨します）、それを開いて下さい（本ファイルはphpMusselが利用可能なディレクティブを含んでおり、それぞれのオプションについての機能と目的に関した簡単な説明があります）。セットアップ環境にあわせて、適当な修正を行いファイルを保存して下さい。
 
 3) コンテンツ（phpMussel本体とファイル）を先に定めたディレクトリにアップロードします。（`*.txt`や`*.md`ファイルはアップロードの必要はありませんが、大抵は全てをアップロードしてもらって構いません）。
 
 4) `vault`ディレクトリは「７５５」にアクセス権変更します（問題がある場合は、「７７７」を試すことができます；これは、しかし、安全ではありません）。コンテンツをアップロードしたディレクトリそのものは、通常特に何もする必要ありませんが、過去にパーミッションで問題があった場合、CHMODのステータスは確認しておくと良いでしょう。（デフォルトでは「７５５」が一般的です）。
 
-5) 次に、システム内あるいはCMSにphpMusselをフックします。方法はいくつかありますが、最も容易なのは、`require`や`include`でスクリプトをシステム内／CMCのコアファイルの最初の部分に記載する方法です。（コアファイルとは、サイト内のどのページにアクセスがあっても必ずロードされるファイルのことです）。一般的には、`/includes`や`/assets`や`/functions`のようなディレクトリ内のファイルで、`init.php`、`common_functions.php`、`functions.php`といったファイル名が付けられています。実際にどのファイルなのかは、見つけてもうらう必要があります。よく分からない場合は、phpMusselサポートフォーラムを参照するか、またはGithubのでphpMusselの問題のページ、あるいはお知らせください（CMS情報必須）。私自身を含め、ユーザーの中に類似のCMSを扱った経験があれば、何かしらのサポートを提供できます。コアファイルが見つかったなら、「`require`か`include`を使って」以下のコードをファイルの先頭に挿入して下さい。ただし、クォーテーションマークで囲まれた部分は`phpmussel.php`ファイルの正確なアドレス（HTTPアドレスでなく、ローカルなアドレス。前述のvaultのアドレスに類似）に置き換えます。
+5) 次に、システム内あるいはCMSにphpMusselをフックします。方法はいくつかありますが、最も容易なのは、`require`や`include`でスクリプトをシステム内／CMCのコアファイルの最初の部分に記載する方法です。（コアファイルとは、サイト内のどのページにアクセスがあっても必ずロードされるファイルのことです）。一般的には、`/includes`や`/assets`や`/functions`のようなディレクトリ内のファイルで、`init.php`、`common_functions.php`、`functions.php`といったファイル名が付けられています。実際にどのファイルなのかは、見つけてもうらう必要があります。よく分からない場合は、phpMusselサポートフォーラムを参照するか、またはGithubのでphpMusselの問題のページ、あるいはお知らせください（CMS情報必須）。私自身を含め、ユーザーの中に類似のCMSを扱った経験があれば、何かしらのサポートを提供できます。コアファイルが見つかったなら、「`require`か`include`を使って」以下のコードをファイルの先頭に挿入して下さい。ただし、クォーテーションマークで囲まれた部分は`loader.php`ファイルの正確なアドレス（HTTPアドレスでなく、ローカルなアドレス。前述のvaultのアドレスに類似）に置き換えます。
 
-`<?php require '/user_name/public_html/phpmussel/phpmussel.php'; ?>`
+`<?php require '/user_name/public_html/phpmussel/loader.php'; ?>`
 
 ファイルを保存して閉じ、再アップロードします。
 
@@ -59,11 +60,11 @@ PHPMUSSEL著作権2013とGNU一般公衆ライセンスv2を超える権利に�
 
 Apacheウェブサーバーを利用していて、かつ`php.ini`を編集できるようであれば、`auto_prepend_file`ディレクティブを使って、PHPリクエストがあった場合にはいつもphpMusselを先頭に追加するようにすることも可能です。以下に例を挙げます。
 
-`auto_prepend_file = "/user_name/public_html/phpmussel/phpmussel.php"`
+`auto_prepend_file = "/user_name/public_html/phpmussel/loader.php"`
 
 あるいは、`.htaccess` において：
 
-`php_value auto_prepend_file "/user_name/public_html/phpmussel/phpmussel.php"`
+`php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
 6) これでインストールは完了ですが、念のために、テストを行いましょう。不正ファイルアップロード保護機能をテストするには、パッケージ内の`_testfiles`に含まれているテストファイルをブラウザを使った通常の方法でアップロードします。問題がなければ、phpMusselからアップロードをブロックしたとのメッセージが表示され、そうでない場合は何かが正常に機能していません。また、もし何かしら特殊な機能を使っている、ないしは他のタイプのスキャニングも使っているようであれば、相互に影響があるかないかもチェックしておく方が良いでしょう。
 
@@ -78,9 +79,9 @@ Apacheウェブサーバーを利用していて、かつ`php.ini`を編集で�
 
 2) phpMusselを使うには、PHPがホストマシンにインストールされている必要があります。もし、まだであれば、各種PHPインストーラーのどれを使っても構いませんので、インストールして下さい。
 
-3) オプションの修正のため（初心者には推奨できませんが、経験が豊富なユーザーには強く推奨します）。`vault`内の`phpmussel.ini`を開いて下さい。本ファイルはphpMusselが利用可能なディレクティブを含んでおり、それぞれのオプションについての機能と目的に関した簡単な説明があります。セットアップ環境にあわせて、適当な修正を行いファイルを保存して下さい。
+3) オプションの修正のため（初心者には推奨できませんが、経験が豊富なユーザーには強く推奨します）。`vault`内の`config.ini`を開いて下さい。本ファイルはphpMusselが利用可能なディレクティブを含んでおり、それぞれのオプションについての機能と目的に関した簡単な説明があります。セットアップ環境にあわせて、適当な修正を行いファイルを保存して下さい。
 
-4) オプションですが、バッチファイルを作成することにより、phpMusselのCLIモードでの使用を容易にすることができます。バッチファイルはPHPとphpMusselを自動的にロードするものです。まず、Notepadか Notepad++のようなテキストエディタを開いて下さい。そして、インストールしたPHPの`php.exe`の絶対パス、半角スペース、`phpmussel.php`の絶対パスをタイプして、拡張子".bat"でファイルを目につくところに保存します。このファイルをダブルクリックすることでphpMusselを起動することができます。
+4) オプションですが、バッチファイルを作成することにより、phpMusselのCLIモードでの使用を容易にすることができます。バッチファイルはPHPとphpMusselを自動的にロードするものです。まず、Notepadか Notepad++のようなテキストエディタを開いて下さい。そして、インストールしたPHPの`php.exe`の絶対パス、半角スペース、`loader.php`の絶対パスをタイプして、拡張子".bat"でファイルを目につくところに保存します。このファイルをダブルクリックすることでphpMusselを起動することができます。
 
 5) テストを行いましょう。パッケージ内の`_testfiles`をphpMusselでスキャンしてみて下さい。
 
@@ -93,7 +94,7 @@ phpMusselは特別な使用環境を必要としないスクリプトです。�
 
 デフォルトでは、アップロードされたファイルのスキャンは自動的に行うように設定されています。従って基本的に何もすることはありません。
 
-ですが、特定のファイル、ディレクトリ、アーカイブをスキャンするよう設定することも可能です。`phpmussel.ini`を適切に設定し直して下さい（クリーンアップは無効でなくてはなりません）。その後phpMusselがフックされているPHPファイル内において、以下のコードを使用します。
+ですが、特定のファイル、ディレクトリ、アーカイブをスキャンするよう設定することも可能です。`config.ini`を適切に設定し直して下さい（クリーンアップは無効でなくてはなりません）。その後phpMusselがフックされているPHPファイル内において、以下のコードを使用します。
 
 `$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
@@ -121,7 +122,7 @@ phpMusselがどのような署名を使ったか等の詳細な情報につい�
 
 誤検出や新種の疑わしきものに遭遇した、あるいは署名に関することについては何でもお知らせ下さい。そうすれば、即時対応でき、必要な修正を行うことができます。
 
-phpMusselに含まれる署名を無効にするには、本READMEファイルの 4A. ブラウザ・コマンド内にあるグレーリスティング・ノートを参照して下さい（通常除かれるべきではないと考えられるものがブロックされてしまうような場合）。
+phpMusselに含まれる署名を無効にするには、本READMEファイルの「フロントエンドの管理」内にあるグレーリスティング・ノートを参照して下さいを参照して下さい（通常除かれるべきではないと考えられるものがブロックされてしまうような場合）。
 
 ---
 
@@ -137,9 +138,9 @@ phpMusselに含まれる署名を無効にするには、本READMEファイル�
 ---
 
 
-###4A. <a name="SECTION4A"></a>ブラウザ・コマンド
+###4. <a name="SECTION4"></a>フロントエンドの管理
 
-phpMusselがシステムに適切にインストールされ機能し、かつ設定ファイル内に`script_password`（スクリプト・パスワード）と`logs_password`（ログ・パスワード）が設定されていれば、いくつかの管理機能、ならびにブラウザを介したコマンドを実行することができます。ブラウザでのコントロールにパスワードが必要な理由は、セキュリティー面は当然のこと、phpMusselのユーザー（ウェブマスターや管理者を含む）が、必要とあれば、この機能を無効にできるようにするためです。言い換えれば、これらのコントロールを有効にするためにはパスワードを設定する、無効にするにはパスワードを設定しないということです。また、当初は有効であったが後日無効にする場合には、コマンドから行うこともできます（パスワード保護の面から早急に無効にする必要性が生じた時などに、設定ファイルを編集することなく、無効に変更できます）。
+@TODO@
 
 このコントロールを有効にすべき理由としては:
 - ファイルをアップロード中に誤検出の原因となる署名を発見したものの、グレーリスト・ファイルを編集し再アップロードするような時間がない場合でも、署名を迅速にグレーリスト化できる。
@@ -153,94 +154,22 @@ phpMusselがシステムに適切にインストールされ機能し、かつ�
 
 有効にするのかしないのかは、使用者の考え方次第です。デフォルトでは無効になっていますが、有効にすることのメリットが大きいと判断されたなら、その方法と使用方法は以下の通りです。
 
-利用可能なブラウザ側コマンド:
-
-scan_log
-- 必須パスワード： `logs_password`（ログ・パスワード）
-- その他： `scan_log`は必須。
-- 必須パラメータ： なし
-- オプション・パラメータ： なし
-- 例： `?logspword=[logs_password]&phpmussel=scan_log`
-- 機能： `scan_log`ファイルの内容がスクリーンに表示されます。
-
-scan_log_serialized
-- 必須パスワード： `logs_password`（ログ・パスワード）
-- その他： `scan_log_serialized`は必須。
-- 必須パラメータ： なし
-- オプション・パラメータ： なし
-- 例： `?logspword=[logs_password]&phpmussel=scan_log_serialized`
-- 機能： `scan_log_serialized`ファイルの内容がスクリーンに表示されます。
-
-scan_kills
-- 必須パスワード： `logs_password`（ログ・パスワード）
-- その他： `scan_kills`は必須。
-- 必須パラメータ： なし
-- オプション・パラメータ： なし
-- 例： `?logspword=[logs_password]&phpmussel=scan_kills`
-- 機能： `scan_kills`ファイルの内容がスクリーンに表示されます。
-
-controls_lockout
-- 必須パスワード： `logs_password`（ログ・パスワード）または`script_password`（スクリプト・パスワード）
-- その他： なし
-- 必須パラメータ： なし
-- オプション・パラメータ： なし
-- 例１： `?logspword=[logs_password]&phpmussel=controls_lockout`
-- 例２： `?pword=[script_password]&phpmussel=controls_lockout`
-- 機能： ブラウザからのコントロールを無効（ロックアウト）にします。パスワードの不正利用の疑い（セキュリティー面に問題があるコンピュータでブラウザコントロールを使用した場合に起こりえます）。がある時に使用して下さい。`controls_lockout`（コントロールズ・ロックアウト）が機能すると、`vault`（ヴォルト）内に`controls.lck`ファイルが作成され、phpMusselはコマンドを実行する前に必ずそのファイルをチェックするようになります。コントロールを再び有効にするためには`controls.lck`ファイルをFTP類を介して削除しなければなりません。いずれのパスワードを使っても呼び出すことができます。
-
-disable
-- 必須パスワード： `script_password`（スクリプト・パスワード）
-- その他： なし
-- 必須パラメータ： なし
-- オプション・パラメータ： なし
-- 例： `?pword=[script_password]&phpmussel=disable`
-- 機能： phpMusselを無効にします。システムアップデートや変更、新しいソフトウェアやモデュールのインストールなどは、誤検出を引き起こす危険性がありますので、一時的に無効にします。phpMusselが期待通りに機能しないものの、アンインストールはしたくない場合にも無効を使用するとよいでしょう。再び有効にするには、`enable`（有効）を使用します。
-
-enable
-- 必須パスワード： `script_password`（スクリプト・パスワード）
-- その他： なし
-- 必須パラメータ： なし
-- オプション・パラメータ： なし
-- 例： `?pword=[script_password]&phpmussel=enable`
-- 機能： phpMusselを有効にします。無効の状態にあるphpMusselを再び有効に戻す時に使用します。
-
-greylist （グレーリスト）
-- 必須パスワード： `script_password`（スクリプト・パスワード）
-- その他： なし
-- 必須パラメータ： 「グレーリスト化される署名の名前」
-- オプション・パラメータ： なし
-- 例： `?pword=[script_password]&phpmussel=greylist&musselvar=[署名]`
-- 機能： グレーリストに署名を追加します。
-
-greylist_clear （グレーリストクリア）
-- 必須パスワード： `script_password`（スクリプト・パスワード）
-- その他： なし
-- 必須パラメータ： なし
-- オプション・パラメータ： なし
-- 例： `?pword=[script_password]&phpmussel=greylist_clear`
-- 機能： 全グレイリストをクリアします。
-
-greylist_show （グレイリストショー）
-- 必須パスワード： `script_password`（スクリプト・パスワード）
-- その他： なし
-- 必須パラメータ： なし
-- オプション・パラメータ： なし
-- 例： `?pword=[script_password]&phpmussel=greylist_show`
-- 機能： グレーリストの内容をスクリーンに表示します。
-
 ---
 
 
-###4B. <a name="SECTION4B"></a>CLI （コマンドライン・インターフェイス）
+###5. <a name="SECTION5"></a>CLI （コマンドライン・インターフェイス）
 
 phpMusselはウィンドウズベースのシステムでは、CLIモードで対話式のファイルスキャナーとしても機能します。詳細についてはインストール方法（CLI編）を参照して下さい。
 
 CLIプロンプトにて`c`とタイプしエンターを押せば、利用可能なCLIコマンドのリストが表示されます。
 
+また、興味のある人のために、CLIモードでphpMusselを使用する方法のためのビデオチュートリアルは、ここで提供されています：
+- <https://www.youtube.com/watch?v=H-Pa740-utc>
+
 ---
 
 
-###5. <a name="SECTION5"></a>本パッケージに含まれるファイル
+###6. <a name="SECTION6"></a>本パッケージに含まれるファイル
 
 以下はアーカイブから一括ダウンロードされるファイルのリスト、ならびにスクリプト使用により作成されるファイルとこれらのファイルが何のためかという簡単な説明です。
 
@@ -251,8 +180,8 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /composer.json | Composer/Packagist情報（機能には関係のないファイルです）。
 /CONTRIBUTING.md | プロジェクトに貢献する方法について。
 /LICENSE.txt | GNU/GPLv2のライセンスのコピー（機能には関係のないファイルです）。
+/loader.php | ローダー・ファイルです。主要スクリプトのロード、アップロード等を行います。フックするのはまさにこれです（本質的ファイル）！
 /PEOPLE.md | プロジェクトに関わる人々についての情報。
-/phpmussel.php | ローダー・ファイルです。主要スクリプトのロード、アップロード等を行います。フックするのはまさにこれです（本質的ファイル）！
 /README.md | プロジェクト概要情報。
 /web.config | ASP.NET設定ファイルです（スクリプトがASP.NETテクノロジーを基礎とするサーバーにインストールされた時に`/vault`ディレクトリを権限のないソースによるアクセスから保護するためです）。
 /_docs/ | ドキュメンテーション用のディレクトリです（様々なファイルを含みます）。
@@ -291,8 +220,8 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /vault/cache/ | キャッシュ・ディレクトリ（一時データ用）。
 /vault/cache/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/cli.php | CLIハンドラ。
+/vault/config.ini.RenameMe | phpMussel設定ファイル；phpMusselの全オプション設定を記載しています。それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
 /vault/config.php | コンフィギュレーション・ハンドラ。
-/vault/controls.php | コントロール・ハンドラ。
 /vault/functions.php | 関数ファイル（本質的ファイル）。
 /vault/greylist.csv | グレーリスト化された署名のCSVで、phpMusselがどの署名を無視すべきかを指示するものです（削除しても自動的に再作成されます）。
 /vault/lang.php | 言語・ハンドラ。
@@ -312,7 +241,6 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /vault/lang/lang.vi.php | ベトナム語言語データ。
 /vault/lang/lang.zh-TW.php | 繁体字中国語言語データ。
 /vault/lang/lang.zh.php | 簡体字中国語言語データ。
-/vault/phpmussel.ini | phpMussel設定ファイル；phpMusselの全オプション設定を記載しています。それぞれのオプションの機能と動作手法の説明です（重要）！
 /vault/quarantine/ | 検疫ディレクトリ（検疫されたファイル含んでいます）。
 /vault/quarantine/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 ※ /vault/scan_kills.txt | phpMusselによりブロック／削除されたアップロードファイルの全記録。
@@ -443,7 +371,7 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /vault/template_custom.html | phpMusselテンプレートファイル；phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
 /vault/upload.php | アップロード・ハンドラ。
 
-※ ファイル名は設定の仕方（`phpmussel.ini`内）により異なることがあります。
+※ ファイル名は設定の仕方（`config.ini`内）により異なることがあります。
 
 ####*署名ファイルについて*
 CVDは"ClamAV Virus Definitions"（ClamAV ウィルス定義）の頭文字をとったもので、ClamAVがどのように署名を参照するか、phpMusselに対してどのように使用するかに関連しています。"CVD"で終了するファイルは署名を含んでいます。
@@ -465,8 +393,8 @@ CVDは"ClamAV Virus Definitions"（ClamAV ウィルス定義）の頭文字を�
 ---
 
 
-###6. <a name="SECTION6"></a>設定オプション
-以下は`phpmussel.ini`設定ファイルにある変数ならびにその目的と機能のリストです。
+###7. <a name="SECTION7"></a>設定オプション
+以下は`config.ini`設定ファイルにある変数ならびにその目的と機能のリストです。
 
 ####"general" （全般、カテゴリー）
 全般的な設定。
@@ -542,7 +470,10 @@ CVDは"ClamAV Virus Definitions"（ClamAV ウィルス定義）の頭文字を�
 - phpMusselはスキャニング結果をどれくらいの期間キャッシュすべきか？秒単位で、デフォルトは２１，６００秒（６時間）となっています。０にするとキャッシュ無効になります。
 
 "disable_cli" （ディスエイブル・シーエルアイ）
-- CLIモードを無効にするか？CLIモードはデフォルトでは有効になっていますが、テストツール(PHPUnit等)やCLIベースのアプリケーションと干渉しあう可能性が無いとは言い切れません。CLIモードを無効にする必要がなければ、このデレクティブは無視してもらって結構です。`false`（偽） = Enable CLIモード（CLIモード有効） 「Default（デフォルルト）」； `true`（真） = Disable CLIモード（CLI モード無効）。
+- CLIモードを無効にするか？CLIモード（シーエルアイ・モード）はデフォルトでは有効になっていますが、テストツール（PHPUnit等）やCLIベースのアプリケーションと干渉しあう可能性が無いとは言い切れません。CLIモードを無効にする必要がなければ、このデレクティブは無視してもらって結構です。 `false`（偽） = CLIモードを有効にします「Default（デフォルルト）」； `true`（真） = CLIモードを無効にします。
+
+"disable_frontend" （ディスエイブル・フロントエンド）
+- フロントエンドへのアクセスを無効にするか？フロントエンドへのアクセスは、phpMusselをより管理しやすくすることができます。前記、それはまた、潜在的なセキュリティリスクになる可能性があります。バックエンドを経由して管理することをお勧めします、しかし、これが不可能な場合、フロントエンドへのアクセスが提供され。あなたがそれを必要としない限り、それを無効にします。 `false`（偽） = フロントエンドへのアクセスを有効にします； `true`（真） = フロントエンドへのアクセスを無効にします「Default（デフォルルト）」。
 
 ####"signatures" （シグニチャーズ、カテゴリ）
 署名（シグニチャ）の設定。
@@ -777,7 +708,7 @@ VirusTotal.comディレクティブズ。
  - Virus TotalとAPIのサービス規定を読み同意すること。[サービス規定はこちらから](https://www.virustotal.com/en/about/terms-of-service/)。
  - 最低でもVirus Total Public APIドキュメンテーションの前文を読み理解すること（VirusTotalPublic API v2.0以降Contents（コンテンツ）前まで）Virus Total Public APIの[ドキュメンテーションはこちらから](https://www.virustotal.com/en/documentation/public-api/)。
 
-注意：Virus Total API使用したスキャニングが無効になっている場合、このカテゴリー（`virustotal`）のディレクティブを参照する必要はありません。無効であれば、どれも機能しません。Virus Total APIキーを取得するには、Virus Totalのサイトのページ右上にあるリンク「コミュニティに参加」をクリックして、必要事項を記入しサインアップします。インストラクションに従ってパブリックAPIキーを取得した後、`phpmussel.ini`設定ファイルの`vt_public_api_key`ディレクティブのそれをコピー＆ペーストして下さい。
+注意：Virus Total API使用したスキャニングが無効になっている場合、このカテゴリー（`virustotal`）のディレクティブを参照する必要はありません。無効であれば、どれも機能しません。Virus Total APIキーを取得するには、Virus Totalのサイトのページ右上にあるリンク「コミュニティに参加」をクリックして、必要事項を記入しサインアップします。インストラクションに従ってパブリックAPIキーを取得した後、`config.ini`設定ファイルの`vt_public_api_key`ディレクティブのそれをコピー＆ペーストして下さい。
 
 "vt_suspicion_level" （ヴィティ・サスピション・レベル）
 - デフォルト設定では、phpMusselがVirus Total APIを使ってスキャンするファイル（疑がわしいもの）には制限があります。`vt_suspicion_level`ディレクティブを編集することのより、この制限を変更することが可能です。
@@ -830,7 +761,7 @@ URLスキャナーAPIルックアップ設定。
 ---
 
 
-###7. <a name="SECTION7"></a>署名（シグニチャ）フォーマット
+###8. <a name="SECTION8"></a>署名（シグニチャ）フォーマット
 
 ####*ファイル名署名*
 ファイル名署名のフォーマットは例外なく次のようになります。
@@ -914,12 +845,12 @@ phpMusselが使う署名タイプの詳細です。
 - "SWF署名" (swf_*)　スキャン対象ファイルがホワイトリスト化されていないショックウェーブファイルの場合、そのコンテンツに対して使用されます。
 - "ホワイトリスト署名" (whitelist_*)　スキャン対象ファイルのコンテンツのMD5ハッシュとファイルサイズに対して使用されます。適合ファイルは、ホワイトリスト・エントリー内に記載された署名タイプへの適合性を必要としません。
 - "XML/XDP署名 " (xmlxdp_*)　スキャン対象ファイルがホワイトリスト化されていない場合、ファイル内で確認されたXML/XDPに対して使用されます。
-（注意：これらの署名は`phpmussel.ini`において容易に無効設定できます）。
+（注意：これらの署名は`config.ini`において容易に無効設定できます）。
 
 ---
 
 
-###8. <a name="SECTION8"></a>適合性問題
+###9. <a name="SECTION9"></a>適合性問題
 
 ####PHPとPCRE
 - phpMusselが正しく動作するためにはPHPとPCREが必要です。どちらか一方でも欠けると正常に機能しません。システムにPHPとPCREの両方がインストールされていることをphpMusselダウンロード前に確認して下さい。
@@ -997,4 +928,24 @@ phpMusselは大概のウィルススキャンソフトウェアに対して互�
 ---
 
 
-最終アップデート： 2016年9月22日。
+###10. <a name="SECTION10"></a>よくある質問（FAQ）
+
+####「偽陽性」とは何ですか？
+
+用語「偽陽性」（*または：偽陽性のエラー、虚報；* 英語： *false positive*; *false positive error*; *false alarm*）、非常に簡単に説明し、一般化文脈で、is used when testing for a condition, to refer to the results of that test, when the results are 陽性（即ち、 the condition is determined to be 「陽性」、または、「真」), but are expected to be (or should have been) 陰性 （即ち、 the condition, in reality, is 「陰性」、または、「偽」）。 A 「偽陽性」 could be considered analogous to "crying wolf" （wherein the condition being tested is whether there's a wolf near the herd, the condition is 「偽」 in that there's no wolf near the herd, and the condition is reported as 「陽性」 by the shepherd by way of calling 「オオカミ、オオカミ」）、 or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
+
+いくつかの関連する用語は、「真陽性」、「真陰性」、と「偽陰性」です。「真陽性」 refers to when the test results and the actual state of the condition are both 真 (or 「陽性」), and a 「真陰性」 refers to when the test results and the actual state of the condition are both 偽 (or 「陰性」); A 「真陽性」 or a 「真陰性」 is considered to be a 「正しい推論」. The antithesis of a 「偽陽性」 is a 「偽陰性」; A 「偽陰性」 refers to when the test results are 陰性 （即ち、 the condition is determined to be 「陰性」、または、「偽」), but are expected to be (or should have been) 陽性 （即ち、 the condition, in reality, is 「陽性」、または、「真」）。
+
+In the context of phpMussel, these 用語 refer to the signatures of phpMussel and the files that they block. When phpMussel blocks a file due to bad, outdated or incorrect signatures, but shouldn't have done so, or when it does so for the wrong reasons, 我々はこのイベント「偽陽性」のを呼び出します。 When phpMussel fails to block a file that should have been blocked, due to unforeseen threats, missing signatures or shortfalls in its signatures, 我々はこのイベント「不在検出」のを呼び出します（「偽陰性」のアナログです）。
+
+これは、以下の表に要約することができます。
+
+&nbsp; | phpMusselは、ファイルをブロック必要がありません | phpMusselは、ファイルをブロック必要があります
+---|---|---
+phpMusselは、ファイルをブロックしません | 真陰性（正しい推論） | 不在検出 (それは「偽陰性」と同じです)
+phpMusselは、ファイルをブロックします | __偽陽性__ | 真陽性（正しい推論）
+
+---
+
+
+最終アップデート： 2016年10月16日。
