@@ -5,8 +5,8 @@ code{font-family:monospace}
 hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#900}
 input,select{width:150px;background-color:#ffe;border:1px solid #900;color:#033;margin:2px;padding:2px;background-position:top {FE_Align_Reverse}}
 input.half,select.half{width:90px}
-input[type=password]{background-image:url(data:image/png;base64,{PIP_Key})}
-input[type=text]{background-image:url(data:image/png;base64,{PIP_Input})}
+input[type=password]{background-image:url(data:image/gif;base64,{PIP_Key})}
+input[type=text]{background-image:url(data:image/gif;base64,{PIP_Input})}
 .bNav,.gen,.nav,.s,.tip,.txtGn,.txtRd,a,input,select{font-weight:700}
 .bNav,.gen{text-align:right}
 .ci,.co,.gen{margin:auto}

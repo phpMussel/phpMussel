@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.10.20).
+ * This file: Front-end handler (last modified: 2016.10.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -65,6 +65,13 @@ if ($phpMussel['QueryVars']['phpmussel-page'] === 'css') {
         $phpMussel['lang'] + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/frontend.css')
     );
+    die;
+}
+
+/** A simple passthru for the favicon. */
+if ($phpMussel['QueryVars']['phpmussel-page'] === 'favicon') {
+    header('Content-Type: image/png');
+    echo base64_decode($phpMussel['favicon']);
     die;
 }
 

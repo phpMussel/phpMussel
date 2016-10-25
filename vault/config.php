@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2016.10.15).
+ * This file: Configuration handler (last modified: 2016.10.25).
  */
 
 /** phpMussel version number (SemVer). */
@@ -31,6 +31,25 @@ $phpMussel['Mussel_PHP'] = defined('PHP_BINARY') ? PHP_BINARY : '';
 
 /** Determine the operating system in use. */
 $phpMussel['Mussel_OS'] = strtoupper(substr(PHP_OS, 0, 3));
+
+/** phpMussel favicon. */
+$phpMussel['favicon'] =
+    'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAA' .
+    'ACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4AoZABIBssLx0wAAAs9JREFUOMt9kl1IU2' .
+    'EYx//vOTtnLJinydTY2BKZadlNEnTKPjCo7EOlujPow7JCkT6oiz5uK4KI9C7NbSZWZJCld' .
+    'aNZ3kj0MSFormaFO27WINbGcaszz3m7GFublc/d+z6//5/nz/MQ/KeqqzcfSibnjieTSkEi' .
+    'kZAikUh/Q8O+jqtXr8xmc+Rf4jVrxFZCSDshqTYhBIqiIBgMomJlxcrhoaH3aZaZLxZFcfm' .
+    '9e3fbS0pKAAAsy8JoNILjODgcDnzw+V5n838ZCMJiS3FxMcxmMzRNQ1PTEQwODsBkMkFRfq' .
+    'GsrNxQU7P9WE6EU6fPnGAYZjYcDnt7brvH1q5d56eUOggh4HkeRUVFkCQJgiBgx46dcLm62' .
+    'sbHx08CgM5qsRorKytv2Gw2gBDU19fD7/drL54/RywWhaIokCQJAGCxWGC3LwXDsL5MBLGq' .
+    'SsjLy4PJZII5Px+lpaWora1lVFXNiaaqKjZu3IQ7d3pRWFj47OChxpSBntdzLMumIE0DpRS' .
+    'yLEPTtBwDc0EBWIbF1NSXV4SQp26XM2Ugy7FfqqqB5/kMLMsyYrFo5k0pRc227eh70If16z' .
+    'fsmlNVLhPh8aNH4VgsCo7TgVIKAAgEAjMsk7ugZFLB9HTg5N49e452dnYks9c4FwwGZ5DSg' .
+    'ud5hEKha7xefz8N6XQ6TE764fF42gyLDC2fP31yX7585c8dyLJ8SdM0MAyD0dFRXLxw7rog' .
+    'CEvSE/F6HpIk/QSAiQnf6mg05jp//lzqDhobD0OlEERR/AFKNY/H4/B//LjbarU+/vp1pio' .
+    'en3WzLAe73SbH4/GH/f0P92dH0zmdXQAQ5XS65bc6b/oAYMuWreXLljke9Pb2dNfV7X4biX' .
+    'xvlmX5zbdweAWllCWEqFigiNfr9Q0MPDkAAGNjLzMNl8s12dzSumohMbq7e86OjIw4HY5Sw' .
+    '/ze0PDwu1AolACwKP33G4ncJFWmwHSnAAAAAElFTkSuQmCC';
 
 /** Checks whether the phpMussel configuration file is readable. */
 if (!is_readable($phpMussel['Vault'] . 'config.ini')) {
