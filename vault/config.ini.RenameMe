@@ -79,7 +79,7 @@ delete_on_sight=false
 ; it - Italian;                 ja - Japanese;
 ; nl - Dutch;                   pt - Portuguese;
 ; ru - Russian;                 vi - Vietnamese;
-; zh - Chinese (Simplified);    zh-TW - Chinese (Traditional).
+; zh - Chinese (Simplified);    zh-tw - Chinese (Traditional).
 lang='en'
 
 ; Should phpMussel, when possible, override the language specification with the

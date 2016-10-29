@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2016.10.12).
+ * This file: English language data for the front-end (last modified: 2016.10.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -21,15 +21,28 @@ if (!defined('phpMussel')) {
 
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Home</a> | <a href="?phpmussel-page=logout">Log Out</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Log Out</a>';
+$phpMussel['lang']['field_component'] = 'Component';
 $phpMussel['lang']['field_create_new_account'] = 'Create New Account';
 $phpMussel['lang']['field_delete_account'] = 'Delete Account';
+$phpMussel['lang']['field_install'] = 'Install';
+$phpMussel['lang']['field_latest_version'] = 'Latest Version';
 $phpMussel['lang']['field_log_in'] = 'Log In';
 $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'Options';
 $phpMussel['lang']['field_password'] = 'Password';
 $phpMussel['lang']['field_permissions'] = 'Permissions';
 $phpMussel['lang']['field_set_new_password'] = 'Set New Password';
+$phpMussel['lang']['field_size'] = 'Total Size: ';
+$phpMussel['lang']['field_size_bytes'] = 'bytes';
+$phpMussel['lang']['field_size_GB'] = 'GB';
+$phpMussel['lang']['field_size_KB'] = 'KB';
+$phpMussel['lang']['field_size_MB'] = 'MB';
+$phpMussel['lang']['field_size_TB'] = 'TB';
+$phpMussel['lang']['field_status'] = 'Status';
+$phpMussel['lang']['field_uninstall'] = 'Uninstall';
+$phpMussel['lang']['field_update'] = 'Update';
 $phpMussel['lang']['field_username'] = 'Username';
+$phpMussel['lang']['field_your_version'] = 'Your Version';
 $phpMussel['lang']['header_login'] = 'Please log in to continue.';
 $phpMussel['lang']['link_accounts'] = 'Accounts';
 $phpMussel['lang']['link_config'] = 'Configuration';
@@ -46,10 +59,20 @@ $phpMussel['lang']['response_accounts_created'] = 'Account successfully created!
 $phpMussel['lang']['response_accounts_deleted'] = 'Account successfully deleted!';
 $phpMussel['lang']['response_accounts_doesnt_exist'] = 'That account doesn\'t exist.';
 $phpMussel['lang']['response_accounts_password_updated'] = 'Password successfully updated!';
+$phpMussel['lang']['response_component_successfully_installed'] = 'Component successfully installed.';
+$phpMussel['lang']['response_component_successfully_uninstalled'] = 'Component successfully uninstalled.';
+$phpMussel['lang']['response_component_successfully_updated'] = 'Component successfully updated.';
+$phpMussel['lang']['response_component_uninstall_error'] = 'An error occurred while attempting to uninstall the component.';
+$phpMussel['lang']['response_component_update_error'] = 'An error occurred while attempting to update the component.';
 $phpMussel['lang']['response_login_invalid_password'] = 'Login failure! Invalid password!';
 $phpMussel['lang']['response_login_invalid_username'] = 'Login failure! Username doesn\'t exist!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Password field empty!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Username field empty!';
+$phpMussel['lang']['response_updates_already_up_to_date'] = 'Already up-to-date.';
+$phpMussel['lang']['response_updates_not_installed'] = 'Component not installed!';
+$phpMussel['lang']['response_updates_outdated'] = 'Outdated!';
+$phpMussel['lang']['response_updates_outdated_manually'] = 'Outdated (please update manually)!';
+$phpMussel['lang']['response_updates_unable_to_determine'] = 'Unable to determine.';
 $phpMussel['lang']['state_complete_access'] = 'Complete access';
 $phpMussel['lang']['state_default_password'] = 'Warning: Using default password!';
 $phpMussel['lang']['state_logged_in'] = 'Logged in';

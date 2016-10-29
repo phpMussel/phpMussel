@@ -11,9 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2016.10.15).
- *
- * @todo Incomplete.
+ * This file: Arabic language data (last modified: 2016.10.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -47,48 +45,48 @@ $phpMussel['lang']['greylist_cleared'] = ' قائمة رمادية أفرغت.';
 $phpMussel['lang']['greylist_not_updated'] = ' قائمة رمادية لم تحديثها.';
 $phpMussel['lang']['greylist_updated'] = ' قائمة رمادية تحديثها.';
 $phpMussel['lang']['image'] = 'صورة';
-$phpMussel['lang']['instance_already_active'] = 'Instance already active! Please double-check your hooks.';
+$phpMussel['lang']['instance_already_active'] = 'نشطة بالفعل! يرجى إعادة الفحص اليشمل.';
 $phpMussel['lang']['invalid_file'] = 'ملف غير صالح';
 $phpMussel['lang']['invalid_url'] = 'URL غير صالح!';
 $phpMussel['lang']['ok'] = 'حسنا';
-$phpMussel['lang']['only_allow_images'] = 'Uploading files other than images isn\'t permitted';
-$phpMussel['lang']['plugins_directory_nonexistent'] = 'Plugins directory doesn\'t exist!';
+$phpMussel['lang']['only_allow_images'] = 'تحميل ملفات غير صورة غير مسموح';
+$phpMussel['lang']['plugins_directory_nonexistent'] = 'مجلد الإضافات لا وجود!';
 $phpMussel['lang']['quarantined_as'] = "الحجر الصحي بأنه \"/vault/quarantine/{QFU}.qfu\".\n";
-$phpMussel['lang']['recursive'] = 'Recursion depth limit exceeded';
-$phpMussel['lang']['required_variables_not_defined'] = 'Required variables aren\'t defined: لا يمكن أن يستمر.';
+$phpMussel['lang']['recursive'] = 'تجاوزت الحد عمق العودية';
+$phpMussel['lang']['required_variables_not_defined'] = 'المتغيرات المطلوبة لم يتم تعريف: لا يمكن أن يستمر.';
 $phpMussel['lang']['SafeBrowseLookup_200'] = 'يحتمل أن تكون ضارة URL الكشف';
 $phpMussel['lang']['SafeBrowseLookup_400'] = 'API خطأ طلب';
 $phpMussel['lang']['SafeBrowseLookup_401'] = 'API خطأ ترخيص';
 $phpMussel['lang']['SafeBrowseLookup_503'] = 'API الخدمة غير متوفرة';
 $phpMussel['lang']['SafeBrowseLookup_999'] = 'خطأ API غير معروف';
-$phpMussel['lang']['scan_aborted'] = 'Scanning aborted!';
-$phpMussel['lang']['scan_chameleon'] = '{x} chameleon attack detected';
+$phpMussel['lang']['scan_aborted'] = 'مسح تم الالغاء!';
+$phpMussel['lang']['scan_chameleon'] = 'الكشف هجوم الحرباء {x}';
 $phpMussel['lang']['scan_checking'] = 'فحص';
-$phpMussel['lang']['scan_checking_contents'] = 'Success! Proceeding إلى check contents.';
-$phpMussel['lang']['scan_command_injection'] = 'Command injection attempt detected';
+$phpMussel['lang']['scan_checking_contents'] = 'نجاح! فحص محتويات الآن.';
+$phpMussel['lang']['scan_command_injection'] = 'الكشف محاولة حقن القيادة';
 $phpMussel['lang']['scan_complete'] = 'تم الانتهاء من';
-$phpMussel['lang']['scan_extensions_missing'] = 'فشل (missing required extensions)!';
-$phpMussel['lang']['scan_filename_manipulation_detected'] = 'Filename manipulation detected';
-$phpMussel['lang']['scan_map_corrupted'] = 'Signature map corrupted';
-$phpMussel['lang']['scan_map_missing'] = 'Signature map missing';
-$phpMussel['lang']['scan_missing_filename'] = 'Missing filename';
+$phpMussel['lang']['scan_extensions_missing'] = 'فشل (مفقود ملحقات المطلوبة)!';
+$phpMussel['lang']['scan_filename_manipulation_detected'] = 'الكشف تلاعب اسم الملف';
+$phpMussel['lang']['scan_map_corrupted'] = 'تلف خريطة التوقيع';
+$phpMussel['lang']['scan_map_missing'] = 'مفقود خريطة التوقيع';
+$phpMussel['lang']['scan_missing_filename'] = 'مفقود اسم الملف';
 $phpMussel['lang']['scan_not_archive'] = 'فشل (فارغة أو ليس أرشيفا)!';
-$phpMussel['lang']['scan_no_problems_found'] = 'No problems found.';
+$phpMussel['lang']['scan_no_problems_found'] = 'الكشف لا مشاكل.';
 $phpMussel['lang']['scan_reading'] = 'قراءة';
-$phpMussel['lang']['scan_signature_file_corrupted'] = 'Signature file corrupted';
-$phpMussel['lang']['scan_signature_file_missing'] = 'Signature file missing';
-$phpMussel['lang']['scan_tampering'] = 'Detected potentially dangerous file tampering';
-$phpMussel['lang']['scan_unauthorised_upload'] = 'Unauthorised file upload manipulation detected';
-$phpMussel['lang']['scan_unauthorised_upload_or_misconfig'] = 'Unauthorised file upload manipulation or misconfiguration detected! ';
+$phpMussel['lang']['scan_signature_file_corrupted'] = 'تلف ملف التوقيع';
+$phpMussel['lang']['scan_signature_file_missing'] = 'مفقود ملف التوقيع';
+$phpMussel['lang']['scan_tampering'] = 'الكشف العبث ملف يحتمل أن تكون خطرة';
+$phpMussel['lang']['scan_unauthorised_upload'] = 'الكشف تلاعب تحميل الملف غير مصرح';
+$phpMussel['lang']['scan_unauthorised_upload_or_misconfig'] = 'تلاعب تحميل الملف غير مصرح أو تكوين الخطأ الكشف! ';
 $phpMussel['lang']['started'] = 'بدأت';
 $phpMussel['lang']['too_many_urls'] = 'عدد كبير جدا من عناوين المواقع';
-$phpMussel['lang']['upload_error_1'] = 'Filesize exceeds the upload_max_filesize directive. ';
-$phpMussel['lang']['upload_error_2'] = 'Filesize exceeds form-specified filesize limit. ';
-$phpMussel['lang']['upload_error_34'] = 'Upload failure! Please contact the hostmaster for assistance! ';
-$phpMussel['lang']['upload_error_6'] = 'Upload directory missing! Please contact the hostmaster for assistance! ';
-$phpMussel['lang']['upload_error_7'] = 'Disc-write error! Please contact the hostmaster for assistance! ';
-$phpMussel['lang']['upload_error_8'] = 'PHP misconfiguration detected! Please contact the hostmaster for assistance! ';
-$phpMussel['lang']['upload_limit_exceeded'] = 'Upload limit exceeded';
+$phpMussel['lang']['upload_error_1'] = 'حجم الملف تجاوز توجيهات upload_max_filesize. ';
+$phpMussel['lang']['upload_error_2'] = 'حجم الملف تجاوز الحد حجم الملف التي يحددها شكل. ';
+$phpMussel['lang']['upload_error_34'] = 'إخفاق تحميل! يرجى الاتصال على المشرف الخادم للحصول على المساعدة! ';
+$phpMussel['lang']['upload_error_6'] = 'مفقود مجلد تحميل! يرجى الاتصال على المشرف الخادم للحصول على المساعدة! ';
+$phpMussel['lang']['upload_error_7'] = 'خطأ القرص الكتابة! يرجى الاتصال على المشرف الخادم للحصول على المساعدة! ';
+$phpMussel['lang']['upload_error_8'] = 'الكشف تكوين الخطأ PHP! يرجى الاتصال على المشرف الخادم للحصول على المساعدة! ';
+$phpMussel['lang']['upload_limit_exceeded'] = 'تجاوزت الحد تحميل';
 $phpMussel['lang']['wrong_password'] = 'كلمة مرور خاطئة؛ رفض العمل.';
 $phpMussel['lang']['x_does_not_exist'] = 'غير موجود';
 $phpMussel['lang']['_exclamation'] = '! ';
