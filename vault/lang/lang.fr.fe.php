@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2016.10.29).
+ * This file: French language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,9 @@ $phpMussel['lang']['response_updates_outdated'] = 'Dépassé!';
 $phpMussel['lang']['response_updates_outdated_manually'] = 'Dépassé (s\'il vous plaît mettre à jour manuellement)!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Incapable de déterminer.';
 $phpMussel['lang']['state_complete_access'] = 'Accès complet';
+$phpMussel['lang']['state_component_is_active'] = 'Le composant est actif.';
+$phpMussel['lang']['state_component_is_inactive'] = 'Le composant est inactif.';
+$phpMussel['lang']['state_component_is_provisional'] = 'Le composant est provisoire.';
 $phpMussel['lang']['state_default_password'] = 'Attention: Utilisant le mot de passe défaut!';
 $phpMussel['lang']['state_logged_in'] = 'Connecté';
 $phpMussel['lang']['state_logs_access_only'] = 'Accès aux fichiers journaux seulement';

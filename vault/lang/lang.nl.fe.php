@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2016.10.29).
+ * This file: Dutch language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,9 @@ $phpMussel['lang']['response_updates_outdated'] = 'Verouderd!';
 $phpMussel['lang']['response_updates_outdated_manually'] = 'Verouderd (neem handmatig bijwerken)!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Onbepaald.';
 $phpMussel['lang']['state_complete_access'] = 'Volledige toegang';
+$phpMussel['lang']['state_component_is_active'] = 'Bestanddeel is actief.';
+$phpMussel['lang']['state_component_is_inactive'] = 'Bestanddeel is inactief.';
+$phpMussel['lang']['state_component_is_provisional'] = 'Bestanddeel is voorlopig.';
 $phpMussel['lang']['state_default_password'] = 'Waarschuwing: Gebruikt de standaard wachtwoord!';
 $phpMussel['lang']['state_logged_in'] = 'Ingelogd';
 $phpMussel['lang']['state_logs_access_only'] = 'Logbestanden toegang alleen';

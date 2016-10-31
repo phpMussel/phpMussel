@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2016.10.29).
+ * This file: Russian language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,9 @@ $phpMussel['lang']['response_updates_outdated'] = 'Устаревший!';
 $phpMussel['lang']['response_updates_outdated_manually'] = 'Устаревший (пожалуйста обновить вручную)!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Невозможно определить.';
 $phpMussel['lang']['state_complete_access'] = 'Полный доступ';
+$phpMussel['lang']['state_component_is_active'] = 'Компонент активен.';
+$phpMussel['lang']['state_component_is_inactive'] = 'Компонент неактивен.';
+$phpMussel['lang']['state_component_is_provisional'] = 'Компонент иногда активен.';
 $phpMussel['lang']['state_default_password'] = 'Предупреждение: Использует стандартный пароль!';
 $phpMussel['lang']['state_logged_in'] = 'В настоящее время вошли в систему';
 $phpMussel['lang']['state_logs_access_only'] = 'Доступ только к лог-файлы';

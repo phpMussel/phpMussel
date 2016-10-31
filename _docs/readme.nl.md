@@ -175,15 +175,6 @@ Het volgende is een lijst van alle bestanden die moeten worden opgenomen in de g
 
 Bestand | Beschrijving
 ----|----
-/.gitattributes | Een GitHub project bestand (niet vereist voor een goede werking van het script).
-/Changelog-v1.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
-/composer.json | Composer/Packagist informatie (niet vereist voor een goede werking van het script).
-/CONTRIBUTING.md | Informatie over hoe bij te dragen aan het project.
-/LICENSE.txt | Een kopie van de GNU/GPLv2 licentie (niet vereist voor een goede werking van het script).
-/loader.php | De lader/loader. Dit is wat u zou moeten worden inhaken in (essentieel)!
-/PEOPLE.md | Informatie over de bij het project betrokken personen.
-/README.md | Project beknopte informatie.
-/web.config | Een ASP.NET-configuratiebestand (in dit geval, naar het bestandsmap "vault" te beschermen tegen toegang door niet-geautoriseerde bronnen indien het script is geïnstalleerd op een server op basis van ASP.NET technologieën).
 /_docs/ | Documentatie bestandsmap (bevat verschillende bestanden).
 /_docs/readme.ar.md | Arabisch documentatie.
 /_docs/readme.de.md | Duitse documentatie.
@@ -216,36 +207,55 @@ Bestand | Beschrijving
 /_testfiles/swf_standard_testfile.swf | Testbestand voor het testen phpMussel SWF handtekeningen.
 /_testfiles/xdp_standard_testfile.xdp | Testbestand voor het testen phpMussel XML/XDP handtekeningen.
 /vault/ | Vault bestandsmap (bevat verschillende bestanden).
-/vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/cache/ | Cache bestandsmap (tijdelijke data).
 /vault/cache/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/cli.php | CLI handler.
-/vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
-/vault/config.php | Configuratie handler.
-/vault/functions.php | Functies bestand (essentieel).
-/vault/greylist.csv | CSV van greylisted handtekeningen aangeeft om phpMussel waarop handtekeningen moet worden negeren (bestand automatisch aangemaakt opnieuw als verwijderd).
-/vault/lang.php | Taal-handler.
+/vault/fe_assets/ | Frontend data/gegevens.
+/vault/fe_assets/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/fe_assets/_accounts.html | Een HTML sjabloon voor de frontend accounts pagina.
+/vault/fe_assets/_accounts_row.html | Een HTML sjabloon voor de frontend accounts pagina.
+/vault/fe_assets/_config.html | Een HTML sjabloon voor de frontend configuratie pagina.
+/vault/fe_assets/_home.html | Een HTML sjabloon voor de frontend startpagina.
+/vault/fe_assets/_login.html | Een HTML sjabloon voor de frontend inlogpagina.
+/vault/fe_assets/_logs.html | Een HTML sjabloon voor de frontend logbestanden pagina.
+/vault/fe_assets/_nav_complete_access.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met volledige toegang.
+/vault/fe_assets/_nav_logs_access_only.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met logbestanden toegang alleen.
+/vault/fe_assets/_updates.html | Een HTML sjabloon voor de frontend updates pagina.
+/vault/fe_assets/_updates_row.html | Een HTML sjabloon voor de frontend updates pagina.
+/vault/fe_assets/frontend.css | CSS-stijlblad voor de frontend.
+/vault/fe_assets/frontend.dat | Database voor de frontend (bevat accounts en sessies informatie; alleen gegenereerd als de frontend geactiveerd en gebruikt).
+/vault/fe_assets/frontend.html | De belangrijkste HTML-template-bestand voor de frontend.
 /vault/lang/ | Bevat phpMussel taaldata/taalgegevens.
 /vault/lang/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/lang/lang.ar.fe.php | Arabisch taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.ar.php | Arabisch taaldata/taalgegevens.
+/vault/lang/lang.de.fe.php | Duitse taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.de.php | Duitse taaldata/taalgegevens.
+/vault/lang/lang.en.fe.php | Engels taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.en.php | Engels taaldata/taalgegevens.
+/vault/lang/lang.es.fe.php | Spaanse taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.es.php | Spaanse taaldata/taalgegevens.
+/vault/lang/lang.fr.fe.php | Franse taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.fr.php | Franse taaldata/taalgegevens.
+/vault/lang/lang.id.fe.php | Indonesisch taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.id.php | Indonesisch taaldata/taalgegevens.
+/vault/lang/lang.it.fe.php | Italiaanse taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.it.php | Italiaanse taaldata/taalgegevens.
+/vault/lang/lang.ja.fe.php | Japanse taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.ja.php | Japanse taaldata/taalgegevens.
+/vault/lang/lang.nl.fe.php | Nederlandse taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.nl.php | Nederlandse taaldata/taalgegevens.
+/vault/lang/lang.pt.fe.php | Portugees taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.pt.php | Portugees taaldata/taalgegevens.
+/vault/lang/lang.ru.fe.php | Russische taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.ru.php | Russische taaldata/taalgegevens.
+/vault/lang/lang.vi.fe.php | Vietnamees taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.vi.php | Vietnamees taaldata/taalgegevens.
-/vault/lang/lang.zh-TW.php | Chinees (traditioneel) taaldata/taalgegevens.
+/vault/lang/lang.zh-tw.fe.php | Chinees (traditioneel) taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.zh-tw.php | Chinees (traditioneel) taaldata/taalgegevens.
+/vault/lang/lang.zh.fe.php | Chinees (vereenvoudigd) taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.zh.php | Chinees (vereenvoudigd) taaldata/taalgegevens.
 /vault/quarantine/ | Quarantaine bestandsmap (bestanden in quarantaine bevat).
 /vault/quarantine/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-※ /vault/scan_kills.txt | Een record van elk bestand uploaden geblokkeerde/gedood door phpMussel.
-※ /vault/scan_log.txt | Een record van alles gescand door phpMussel.
-※ /vault/scan_log_serialized.txt | Een record van alles gescand door phpMussel.
 /vault/signatures/ | Handtekeningen bestandsmap (handtekening bestanden bevat).
 /vault/signatures/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/signatures/ascii_clamav_regex.cvd | Bestand voor genormaliseerde ASCII handtekeningen.
@@ -367,9 +377,30 @@ Bestand | Beschrijving
 /vault/signatures/xmlxdp_custom_standard.cvd | Bestand voor XML/XDP handtekeningen.
 /vault/signatures/xmlxdp_mussel_regex.cvd | Bestand voor XML/XDP handtekeningen.
 /vault/signatures/xmlxdp_mussel_standard.cvd | Bestand voor XML/XDP handtekeningen.
+/vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/cli.php | CLI handler.
+/vault/components.dat | Bevat informatie over de verschillende bestanddelen van phpMussel; Gebruikt door de updates functie verzorgd door de frontend.
+/vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
+/vault/config.php | Configuratie handler.
+/vault/frontend.php | Frontend-handler.
+/vault/functions.php | Functies bestand (essentieel).
+/vault/greylist.csv | CSV van greylisted handtekeningen aangeeft om phpMussel waarop handtekeningen moet worden negeren (bestand automatisch aangemaakt opnieuw als verwijderd).
+/vault/lang.php | Taal-handler.
+※ /vault/scan_kills.txt | Een record van elk bestand uploaden geblokkeerde/gedood door phpMussel.
+※ /vault/scan_log.txt | Een record van alles gescand door phpMussel.
+※ /vault/scan_log_serialized.txt | Een record van alles gescand door phpMussel.
 /vault/template.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
 /vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
 /vault/upload.php | Upload handler.
+/.gitattributes | Een GitHub project bestand (niet vereist voor een goede werking van het script).
+/Changelog-v1.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
+/composer.json | Composer/Packagist informatie (niet vereist voor een goede werking van het script).
+/CONTRIBUTING.md | Informatie over hoe bij te dragen aan het project.
+/LICENSE.txt | Een kopie van de GNU/GPLv2 licentie (niet vereist voor een goede werking van het script).
+/loader.php | De lader/loader. Dit is wat u zou moeten worden inhaken in (essentieel)!
+/PEOPLE.md | Informatie over de bij het project betrokken personen.
+/README.md | Project beknopte informatie.
+/web.config | Een ASP.NET-configuratiebestand (in dit geval, naar het bestandsmap "vault" te beschermen tegen toegang door niet-geautoriseerde bronnen indien het script is geïnstalleerd op een server op basis van ASP.NET technologieën).
 
 ※ Bestandsnaam kan verschillen, afhankelijk van de configuratie bedingen (van `config.ini`).
 
@@ -946,4 +977,4 @@ phpMussel *DOET* blokkeren van een bestand | __Vals positieve__ | Waar positieve
 ---
 
 
-Laatste Bijgewerkt: 16 Oktober 2016 (2016.10.16).
+Laatste Bijgewerkt: 31 Oktober 2016 (2016.10.31).

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2016.10.29).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,9 @@ $phpMussel['lang']['response_updates_outdated'] = '过时！';
 $phpMussel['lang']['response_updates_outdated_manually'] = '过时（请更新手动）！';
 $phpMussel['lang']['response_updates_unable_to_determine'] = '无法确定。';
 $phpMussel['lang']['state_complete_access'] = '完全访问';
+$phpMussel['lang']['state_component_is_active'] = '组件是活性。';
+$phpMussel['lang']['state_component_is_inactive'] = '组件是非活性。';
+$phpMussel['lang']['state_component_is_provisional'] = '组件是有时活性。';
 $phpMussel['lang']['state_default_password'] = '警告：它使用标准密码！';
 $phpMussel['lang']['state_logged_in'] = '目前在线';
 $phpMussel['lang']['state_logs_access_only'] = '仅日志访问';

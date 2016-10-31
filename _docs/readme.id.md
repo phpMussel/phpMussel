@@ -175,15 +175,6 @@ Berikut list dari semua file yang diikutkan di dalam kopi skrip yang dikompres k
 
 Data | Deskripsi
 ----|----
-/.gitattributes | Sebuah file proyek GitHub (tidak dibutuhkan untuk fungsi teratur dari skrip).
-/Changelog-v1.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
-/composer.json | Informasi untuk Composer/Packagist (tidak dibutuhkan untuk fungsi teratur dari skrip).
-/CONTRIBUTING.md | Informasi tentang cara berkontribusi pada proyek.
-/LICENSE.txt | Salinan lisensi GNU/GPLv2 (tidak dibutuhkan untuk fungsi teratur dari skrip).
-/loader.php | Pemuat/Loader. Ini yang apa Anda ingin masukkan (utama)!
-/PEOPLE.md | Informasi tentang orang-orang yang terlibat dalam proyek.
-/README.md | Ringkasan informasi proyek.
-/web.config | Sebuah file konfigurasi ASP.NET (dalam instansi ini, untuk melindungi direktori `/vault` dari pengaksesan oleh sumber-sumber tidak terauthorisasi dalam kejadian yang mana skrip ini diinstal pada server berbasis teknologi ASP.NET).
 /_docs/ | Direktori dokumentasi (berisi bermacam file).
 /_docs/readme.ar.md | Dokumentasi Bahasa Arab.
 /_docs/readme.de.md | Dokumentasi Bahasa Jerman.
@@ -216,38 +207,57 @@ Data | Deskripsi
 /_testfiles/swf_standard_testfile.swf | File test untuk mentest tanda tangan SWF phpMussel.
 /_testfiles/xdp_standard_testfile.xdp | File test untuk mentest tanda tangan blok data XML/XDP phpMussel.
 /vault/ | Direktori Vault (berisikan bermacam file).
-/vault/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/cache/ | Direktori Cache (untuk file sementara).
-/vault/cache/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/cli.php | Modul CLI handler.
-/vault/config.ini.RenameMe | File konfigurasi phpMussel; Berisi semua opsi konfigurasi dari phpMussel, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (mengubah nama untuk mengaktifkan).
-/vault/config.php | Modul konfigurasi.
-/vault/functions.php | Modul fungsi (utama).
-/vault/greylist.csv | CSV terdiri dari tanda tangan daftar abu-abu mengindikasikan phpMussel tanda tangan mana yang harus diabaikan (file automatis diciptakan kembali jika dihapus).
-/vault/lang.php | File bahasa.
+/vault/cache/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/fe_assets/ | Data untuk akses bagian depan.
+/vault/fe_assets/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/fe_assets/_accounts.html | Template HTML untuk akses bagian depan halaman akun.
+/vault/fe_assets/_accounts_row.html | Template HTML untuk akses bagian depan halaman akun.
+/vault/fe_assets/_config.html | Template HTML untuk akses bagian depan halaman konfigurasi.
+/vault/fe_assets/_home.html | Template HTML untuk akses bagian depan halaman utama.
+/vault/fe_assets/_login.html | Template HTML untuk akses bagian depan halaman masuk.
+/vault/fe_assets/_logs.html | Template HTML untuk akses bagian depan halaman log.
+/vault/fe_assets/_nav_complete_access.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses lengkap.
+/vault/fe_assets/_nav_logs_access_only.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses ke log hanya.
+/vault/fe_assets/_updates.html | Template HTML untuk akses bagian depan halaman pembaruan.
+/vault/fe_assets/_updates_row.html | Template HTML untuk akses bagian depan halaman pembaruan.
+/vault/fe_assets/frontend.css | Style-sheet CSS untuk akses bagian depan.
+/vault/fe_assets/frontend.dat | Database untuk akses bagian depan (berisi informasi untuk akun dan sesi; hanya dihasilkan jika akses bagian depan diaktifkan dan digunakan).
+/vault/fe_assets/frontend.html | Template HTML utama untuk akses bagian depan.
 /vault/lang/ | Berisikan file bahasa.
-/vault/lang/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/lang/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/lang/lang.ar.fe.php | File Bahasa Arab untuk front-end.
 /vault/lang/lang.ar.php | File Bahasa Arab.
+/vault/lang/lang.de.fe.php | File Bahasa Jerman untuk front-end.
 /vault/lang/lang.de.php | File Bahasa Jerman.
+/vault/lang/lang.en.fe.php | File Bahasa Inggris untuk front-end.
 /vault/lang/lang.en.php | File Bahasa Inggris.
+/vault/lang/lang.es.fe.php | File Bahasa Spanyol untuk front-end.
 /vault/lang/lang.es.php | File Bahasa Spanyol.
+/vault/lang/lang.fr.fe.php | File Bahasa Perancis untuk front-end.
 /vault/lang/lang.fr.php | File Bahasa Perancis.
+/vault/lang/lang.id.fe.php | File Bahasa Indonesia untuk front-end.
 /vault/lang/lang.id.php | File Bahasa Indonesia.
+/vault/lang/lang.it.fe.php | File Bahasa Italia untuk front-end.
 /vault/lang/lang.it.php | File Bahasa Italia.
+/vault/lang/lang.ja.fe.php | File Bahasa Jepang untuk front-end.
 /vault/lang/lang.ja.php | File Bahasa Jepang.
+/vault/lang/lang.nl.fe.php | File Bahasa Belanda untuk front-end.
 /vault/lang/lang.nl.php | File Bahasa Belanda.
+/vault/lang/lang.pt.fe.php | File Bahasa Portugis untuk front-end.
 /vault/lang/lang.pt.php | File Bahasa Portugis.
+/vault/lang/lang.ru.fe.php | File Bahasa Rusia untuk front-end.
 /vault/lang/lang.ru.php | File Bahasa Rusia.
+/vault/lang/lang.vi.fe.php | File Bahasa Vietnam untuk front-end.
 /vault/lang/lang.vi.php | File Bahasa Vietnam.
-/vault/lang/lang.zh-TW.php | File Bahasa Cina tradisional.
+/vault/lang/lang.zh-tw.fe.php | File Bahasa Cina tradisional untuk front-end.
+/vault/lang/lang.zh-tw.php | File Bahasa Cina tradisional.
+/vault/lang/lang.zh.fe.php | File Bahasa Cina sederhana untuk front-end.
 /vault/lang/lang.zh.php | File Bahasa Cina sederhana.
 /vault/quarantine/ | Direktori karantina (berisikan file yang dikarantina).
-/vault/quarantine/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-※ /vault/scan_kills.txt | Sebuah catatan dari setiap file upload yang diblok/dibunuh oleh phpMussel.
-※ /vault/scan_log.txt | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
-※ /vault/scan_log_serialized.txt | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
+/vault/quarantine/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/signatures/ | Direktori tanda tangan (berisikan file tanda tangan).
-/vault/signatures/.htaccess | Sebuah file akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/signatures/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/signatures/ascii_clamav_regex.cvd | File untuk tanda tangan ASCII dinormalisasi.
 /vault/signatures/ascii_clamav_regex.map | File untuk tanda tangan ASCII dinormalisasi.
 /vault/signatures/ascii_clamav_standard.cvd | File untuk tanda tangan ASCII dinormalisasi.
@@ -367,9 +377,30 @@ Data | Deskripsi
 /vault/signatures/xmlxdp_custom_standard.cvd | File untuk tanda tangan blok data XML/XDP.
 /vault/signatures/xmlxdp_mussel_regex.cvd | File untuk tanda tangan blok data XML/XDP.
 /vault/signatures/xmlxdp_mussel_standard.cvd | File untuk tanda tangan blok data XML/XDP.
+/vault/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
+/vault/cli.php | Modul CLI handler.
+/vault/components.dat | Berisi informasi yang berkaitan dengan berbagai komponen phpMussel; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
+/vault/config.ini.RenameMe | File konfigurasi phpMussel; Berisi semua opsi konfigurasi dari phpMussel, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (mengubah nama untuk mengaktifkan).
+/vault/config.php | Modul konfigurasi.
+/vault/frontend.php | Modul untuk akses bagian depan.
+/vault/functions.php | Modul fungsi (utama).
+/vault/greylist.csv | CSV terdiri dari tanda tangan daftar abu-abu mengindikasikan phpMussel tanda tangan mana yang harus diabaikan (file automatis diciptakan kembali jika dihapus).
+/vault/lang.php | File bahasa.
+※ /vault/scan_kills.txt | Sebuah catatan dari setiap file upload yang diblok/dibunuh oleh phpMussel.
+※ /vault/scan_log.txt | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
+※ /vault/scan_log_serialized.txt | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
 /vault/template.html | File template phpMussel; Template untuk output HTML yang diproduksi oleh phpMussel untuk file pesan upload yang dibloknya (pesan dilihat oleh pengupload).
 /vault/template_custom.html | File template phpMussel; Template untuk output HTML yang diproduksi oleh phpMussel untuk file pesan upload yang dibloknya (pesan dilihat oleh pengupload).
 /vault/upload.php | Modul upload.
+/.gitattributes | Sebuah file proyek GitHub (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/Changelog-v1.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/composer.json | Informasi untuk Composer/Packagist (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/CONTRIBUTING.md | Informasi tentang cara berkontribusi pada proyek.
+/LICENSE.txt | Salinan lisensi GNU/GPLv2 (tidak dibutuhkan untuk fungsi teratur dari skrip).
+/loader.php | Pemuat/Loader. Ini yang apa Anda ingin masukkan (utama)!
+/PEOPLE.md | Informasi tentang orang-orang yang terlibat dalam proyek.
+/README.md | Ringkasan informasi proyek.
+/web.config | Sebuah file konfigurasi ASP.NET (dalam instansi ini, untuk melindungi direktori `/vault` dari pengaksesan oleh sumber-sumber tidak terauthorisasi dalam kejadian yang mana skrip ini diinstal pada server berbasis teknologi ASP.NET).
 
 ※ Nama file bisa berbeda berdasarkan ketentuan konfigurasi (di dalam `config.ini`).
 
@@ -946,4 +977,4 @@ phpMussel memblokir file | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 16 Oktober 2016 (2016.10.16).
+Terakhir Diperbarui: 31 Oktober 2016 (2016.10.31).

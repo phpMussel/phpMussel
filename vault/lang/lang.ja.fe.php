@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2016.10.29).
+ * This file: Japanese language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,9 @@ $phpMussel['lang']['response_updates_outdated'] = '時代遅れです！';
 $phpMussel['lang']['response_updates_outdated_manually'] = '時代遅れです（手動でアップデートしてください）！';
 $phpMussel['lang']['response_updates_unable_to_determine'] = '決定することができません。';
 $phpMussel['lang']['state_complete_access'] = '完全なアクセス';
+$phpMussel['lang']['state_component_is_active'] = 'コンポーネントがアクティブです。';
+$phpMussel['lang']['state_component_is_inactive'] = 'コンポーネントが非アクティブです。';
+$phpMussel['lang']['state_component_is_provisional'] = 'コンポーネントが暫定的です。';
 $phpMussel['lang']['state_default_password'] = '警告：デフォルトのパスワードを使用して！';
 $phpMussel['lang']['state_logged_in'] = 'ログインしています';
 $phpMussel['lang']['state_logs_access_only'] = 'ログのみにアクセス';

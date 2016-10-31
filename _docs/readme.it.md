@@ -175,15 +175,6 @@ Il seguente è un elenco di tutti i file che dovrebbero essere incluso nella arc
 
 File | Descrizione
 ----|----
-/.gitattributes | Un file del GitHub progetto (non richiesto per il corretto funzionamento dello script).
-/Changelog-v1.txt | Un record delle modifiche apportate allo script tra diverse versioni (non richiesto per il corretto funzionamento dello script).
-/composer.json | Composer/Packagist informazioni (non richiesto per il corretto funzionamento dello script).
-/CONTRIBUTING.md | Informazioni su come contribuire al progetto.
-/LICENSE.txt | Una copia della GNU/GPLv2 licenza (non richiesto per il corretto funzionamento dello script).
-/loader.php | Il caricatore. Questo è il file si collegare alla vostra sistema (essenziale)!
-/PEOPLE.md | Informazioni sulle persone coinvolte nel progetto.
-/README.md | Informazioni di riepilogo del progetto.
-/web.config | Un ASP.NET file di configurazione (in questo caso, a proteggere la `/vault` cartella da l'acceso di non autorizzate origini nel caso che lo script è installato su un server basata su ASP.NET tecnologie).
 /_docs/ | Documentazione cartella (contiene vari file).
 /_docs/readme.ar.md | Documentazione Arabo.
 /_docs/readme.de.md | Documentazione Tedesco.
@@ -216,36 +207,55 @@ File | Descrizione
 /_testfiles/swf_standard_testfile.swf | Test file per test di phpMussel SWF firme.
 /_testfiles/xdp_standard_testfile.xdp | Test file per test di phpMussel XML/XDP firme.
 /vault/ | La vault cartella (contiene vari file).
-/vault/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/cache/ | La cartella della cache (per i dati temporanei).
 /vault/cache/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
-/vault/cli.php | Gestore di CLI.
-/vault/config.ini.RenameMe | File di configurazione; Contiene tutte l'opzioni di configurazione per phpMussel, dicendogli cosa fare e come operare correttamente (rinomina per attivare).
-/vault/config.php | Gestore di configurazione.
-/vault/functions.php | File di funzioni.
-/vault/greylist.csv | CSV di firme indicando per phpMussel cui firme dovrebbero essere ignorato (il file sarà ricreato automaticamente se è cancellato).
-/vault/lang.php | Linguistici dati.
+/vault/fe_assets/ | Dati front-end.
+/vault/fe_assets/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
+/vault/fe_assets/_accounts.html | Un modello HTML per il front-end pagina utenti.
+/vault/fe_assets/_accounts_row.html | Un modello HTML per il front-end pagina utenti.
+/vault/fe_assets/_config.html | Un modello HTML per il front-end pagina di configurazione.
+/vault/fe_assets/_home.html | Un modello HTML per il front-end pagina principale.
+/vault/fe_assets/_login.html | Un modello HTML per il front-end pagina di accedi.
+/vault/fe_assets/_logs.html | Un modello HTML per il front-end pagina per i file di log.
+/vault/fe_assets/_nav_complete_access.html | Un modello HTML per i link di navigazione del front-end, per quelli con accesso completo.
+/vault/fe_assets/_nav_logs_access_only.html | Un modello HTML per i link di navigazione del front-end, per quelli con accesso solo per i log.
+/vault/fe_assets/_updates.html | Un modello HTML per il front-end pagina degli aggiornamenti.
+/vault/fe_assets/_updates_row.html | Un modello HTML per il front-end pagina degli aggiornamenti.
+/vault/fe_assets/frontend.css | Foglio di stile CSS per il front-end.
+/vault/fe_assets/frontend.dat | Database per il front-end (contiene informazioni per i utenti e le sessioni; generato solo se il front-end è attivata e utilizzata).
+/vault/fe_assets/frontend.html | Il file modello HTML principale per il front-end.
 /vault/lang/ | Contiene linguistici dati.
 /vault/lang/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
+/vault/lang/lang.ar.fe.php | Linguistici dati Araba per il front-end.
 /vault/lang/lang.ar.php | Linguistici dati Araba.
+/vault/lang/lang.de.fe.php | Linguistici dati Tedesca per il front-end.
 /vault/lang/lang.de.php | Linguistici dati Tedesca.
+/vault/lang/lang.en.fe.php | Linguistici dati Inglese per il front-end.
 /vault/lang/lang.en.php | Linguistici dati Inglese.
+/vault/lang/lang.es.fe.php | Linguistici dati Spagnola per il front-end.
 /vault/lang/lang.es.php | Linguistici dati Spagnola.
+/vault/lang/lang.fr.fe.php | Linguistici dati Francese per il front-end.
 /vault/lang/lang.fr.php | Linguistici dati Francese.
+/vault/lang/lang.id.fe.php | Linguistici dati Indonesiana per il front-end.
 /vault/lang/lang.id.php | Linguistici dati Indonesiana.
+/vault/lang/lang.it.fe.php | Linguistici dati Italiana per il front-end.
 /vault/lang/lang.it.php | Linguistici dati Italiana.
+/vault/lang/lang.ja.fe.php | Linguistici dati Giapponese per il front-end.
 /vault/lang/lang.ja.php | Linguistici dati Giapponese.
+/vault/lang/lang.nl.fe.php | Linguistici dati Olandese per il front-end.
 /vault/lang/lang.nl.php | Linguistici dati Olandese.
+/vault/lang/lang.pt.fe.php | Linguistici dati Portoghese per il front-end.
 /vault/lang/lang.pt.php | Linguistici dati Portoghese.
+/vault/lang/lang.ru.fe.php | Linguistici dati Russa per il front-end.
 /vault/lang/lang.ru.php | Linguistici dati Russa.
+/vault/lang/lang.vi.fe.php | Linguistici dati Vietnamita per il front-end.
 /vault/lang/lang.vi.php | Linguistici dati Vietnamita.
-/vault/lang/lang.zh-TW.php | Linguistici dati Cinese (tradizionale).
+/vault/lang/lang.zh-tw.fe.php | Linguistici dati Cinese (tradizionale) per il front-end.
+/vault/lang/lang.zh-tw.php | Linguistici dati Cinese (tradizionale).
+/vault/lang/lang.zh.fe.php | Linguistici dati Cinese (semplificata) per il front-end.
 /vault/lang/lang.zh.php | Linguistici dati Cinese (semplificata).
 /vault/quarantine/ | Quarantena cartella (contiene i file in quarantena).
 /vault/quarantine/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
-※ /vault/scan_kills.txt | Un record di tutti i file bloccati/uccisi da phpMussel.
-※ /vault/scan_log.txt | Un record di tutto scansionato da phpMussel.
-※ /vault/scan_log_serialized.txt | Un record di tutto scansionato da phpMussel.
 /vault/signatures/ | Firme cartella (contiene i file di firme).
 /vault/signatures/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/signatures/ascii_clamav_regex.cvd | File per le normalizzati ASCII firme.
@@ -367,9 +377,30 @@ File | Descrizione
 /vault/signatures/xmlxdp_custom_standard.cvd | File per XML/XDP firme.
 /vault/signatures/xmlxdp_mussel_regex.cvd | File per XML/XDP firme.
 /vault/signatures/xmlxdp_mussel_standard.cvd | File per XML/XDP firme.
+/vault/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
+/vault/cli.php | Gestore di CLI.
+/vault/components.dat | Contiene informazioni relative ai vari componenti di phpMussel; Utilizzato dalla funzionalità aggiornamenti forniti dal front-end.
+/vault/config.ini.RenameMe | File di configurazione; Contiene tutte l'opzioni di configurazione per phpMussel, dicendogli cosa fare e come operare correttamente (rinomina per attivare).
+/vault/config.php | Gestore di configurazione.
+/vault/frontend.php | Gestore del front-end.
+/vault/functions.php | File di funzioni.
+/vault/greylist.csv | CSV di firme indicando per phpMussel cui firme dovrebbero essere ignorato (il file sarà ricreato automaticamente se è cancellato).
+/vault/lang.php | Linguistici dati.
+※ /vault/scan_kills.txt | Un record di tutti i file bloccati/uccisi da phpMussel.
+※ /vault/scan_log.txt | Un record di tutto scansionato da phpMussel.
+※ /vault/scan_log_serialized.txt | Un record di tutto scansionato da phpMussel.
 /vault/template.html | Template file; Template per l'HTML output prodotto da phpMussel per il suo messaggio di bloccato file caricamento (il messaggio visto dallo caricatore).
 /vault/template_custom.html | Template file; Template per l'HTML output prodotto da phpMussel per il suo messaggio di bloccato file caricamento (il messaggio visto dallo caricatore).
 /vault/upload.php | Gestore di caricamenti.
+/.gitattributes | Un file del GitHub progetto (non richiesto per il corretto funzionamento dello script).
+/Changelog-v1.txt | Un record delle modifiche apportate allo script tra diverse versioni (non richiesto per il corretto funzionamento dello script).
+/composer.json | Composer/Packagist informazioni (non richiesto per il corretto funzionamento dello script).
+/CONTRIBUTING.md | Informazioni su come contribuire al progetto.
+/LICENSE.txt | Una copia della GNU/GPLv2 licenza (non richiesto per il corretto funzionamento dello script).
+/loader.php | Il caricatore. Questo è il file si collegare alla vostra sistema (essenziale)!
+/PEOPLE.md | Informazioni sulle persone coinvolte nel progetto.
+/README.md | Informazioni di riepilogo del progetto.
+/web.config | Un ASP.NET file di configurazione (in questo caso, a proteggere la `/vault` cartella da l'acceso di non autorizzate origini nel caso che lo script è installato su un server basata su ASP.NET tecnologie).
 
 ※ Nome del file può variare dipendente di configurazione (in `config.ini`).
 
@@ -946,4 +977,4 @@ phpMussel *FA* bloccare un file | __Falso positivo__ | Vero positivo (inferenza 
 ---
 
 
-Ultimo Aggiornamento: 16 Ottobre 2016 (2016.10.16).
+Ultimo Aggiornamento: 31 Ottobre 2016 (2016.10.31).

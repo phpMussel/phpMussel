@@ -175,15 +175,6 @@ Voici une liste de tous les fichiers inclus dans phpMussel dans son natif état,
 
 Fichier | Description
 ----|----
-/.gitattributes | Un fichier du GitHub projet (pas nécessaire pour le bon fonctionnement du script).
-/Changelog-v1.txt | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
-/composer.json | Composer/Packagist information (pas nécessaire pour le bon fonctionnement du script).
-/CONTRIBUTING.md | Informations sur la façon de contribuer au projet.
-/LICENSE.txt | Une copie de la GNU/GPLv2 license (pas nécessaire pour le bon fonctionnement du script).
-/loader.php | Le chargeur. C'est ce que vous êtes censé être attacher dans à (essentiel)!
-/PEOPLE.md | Informations sur les personnes impliquées dans le projet.
-/README.md | Sommaire de l'information du projet.
-/web.config | Un ASP.NET fichier de configuration (dans ce cas, pour protéger de la `/vault` répertoire contre d'être consulté par des non autorisée sources dans le cas où le script est installé sur un serveur basé sur les ASP.NET technologies).
 /_docs/ | Documentation répertoire (contient divers fichiers).
 /_docs/readme.ar.md | Documentation en Arabe.
 /_docs/readme.de.md | Documentation en Allemand.
@@ -216,36 +207,55 @@ Fichier | Description
 /_testfiles/swf_standard_testfile.swf | Fichier pour tester phpMussel SWF signatures.
 /_testfiles/xdp_standard_testfile.xdp | Fichier pour tester phpMussel XML/XDP signatures.
 /vault/ | Voûte répertoire (contient divers fichiers).
-/vault/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/cache/ | Cache répertoire (pour les données temporaires).
 /vault/cache/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
-/vault/cli.php | Module de CLI.
-/vault/config.ini.RenameMe | Fichier de configuration; Contient toutes les options de configuration pour phpMussel, pour comment fonctionner correctement (renommer pour activer).
-/vault/config.php | Module de configuration.
-/vault/functions.php | Fichier de fonctions (essentiel).
-/vault/greylist.csv | CSV de grise listé signatures indiquant pour phpMussel qui signatures il faut ignorer (fichier recréé automatiquement si supprimé).
-/vault/lang.php | Module de linguistiques.
+/vault/fe_assets/ | Les fichiers de l'accès frontal.
+/vault/fe_assets/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
+/vault/fe_assets/_accounts.html | Un modèle HTML pour la page des comptes de l'accès frontal.
+/vault/fe_assets/_accounts_row.html | Un modèle HTML pour la page des comptes de l'accès frontal.
+/vault/fe_assets/_config.html | Un modèle HTML pour la page de configuration de l'accès frontal.
+/vault/fe_assets/_home.html | Un modèle HTML pour la page d'accueil de l'accès frontal.
+/vault/fe_assets/_login.html | Un modèle HTML pour la page pour la connexion de l'accès frontal.
+/vault/fe_assets/_logs.html | Un modèle HTML pour la page pour les fichiers journaux de l'accès frontal.
+/vault/fe_assets/_nav_complete_access.html | Un modèle HTML pour les liens de navigation de l'accès frontal, pour ceux qui ont accès complet.
+/vault/fe_assets/_nav_logs_access_only.html | Un modèle HTML pour le front-end navigation links, pour ceux qui ont accès aux fichiers journaux seulement.
+/vault/fe_assets/_updates.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
+/vault/fe_assets/_updates_row.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
+/vault/fe_assets/frontend.css | Feuille de style CSS pour l'accès frontal.
+/vault/fe_assets/frontend.dat | Base de données pour l'accès frontal (contient des informations sur les comptes et les sessions; généré seulement si l'accès frontal est activé et utilisé).
+/vault/fe_assets/frontend.html | Le fichier modèle HTML principal pour l'accès frontal.
 /vault/lang/ | Contient linguistiques données.
 /vault/lang/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
+/vault/lang/lang.ar.fe.php | Linguistiques données en Arabe pour le front-end.
 /vault/lang/lang.ar.php | Linguistiques données en Arabe.
+/vault/lang/lang.de.fe.php | Linguistiques données en Allemand pour le front-end.
 /vault/lang/lang.de.php | Linguistiques données en Allemand.
+/vault/lang/lang.en.fe.php | Linguistiques données en Anglais pour le front-end.
 /vault/lang/lang.en.php | Linguistiques données en Anglais.
+/vault/lang/lang.es.fe.php | Linguistiques données en Espagnol pour le front-end.
 /vault/lang/lang.es.php | Linguistiques données en Espagnol.
+/vault/lang/lang.fr.fe.php | Linguistiques données en Français pour le front-end.
 /vault/lang/lang.fr.php | Linguistiques données en Français.
+/vault/lang/lang.id.fe.php | Linguistiques données en Indonésien pour le front-end.
 /vault/lang/lang.id.php | Linguistiques données en Indonésien.
+/vault/lang/lang.it.fe.php | Linguistiques données en Italien pour le front-end.
 /vault/lang/lang.it.php | Linguistiques données en Italien.
+/vault/lang/lang.ja.fe.php | Linguistiques données en Japonais pour le front-end.
 /vault/lang/lang.ja.php | Linguistiques données en Japonais.
+/vault/lang/lang.nl.fe.php | Linguistiques données en Néerlandais pour le front-end.
 /vault/lang/lang.nl.php | Linguistiques données en Néerlandais.
+/vault/lang/lang.pt.fe.php | Linguistiques données en Portugais pour le front-end.
 /vault/lang/lang.pt.php | Linguistiques données en Portugais.
+/vault/lang/lang.ru.fe.php | Linguistiques données en Russe pour le front-end.
 /vault/lang/lang.ru.php | Linguistiques données en Russe.
+/vault/lang/lang.vi.fe.php | Linguistiques données en Vietnamien pour le front-end.
 /vault/lang/lang.vi.php | Linguistiques données en Vietnamien.
-/vault/lang/lang.zh-TW.php | Linguistiques données en Chinois (traditionnel).
+/vault/lang/lang.zh-tw.fe.php | Linguistiques données en Chinois (traditionnel) pour le front-end.
+/vault/lang/lang.zh-tw.php | Linguistiques données en Chinois (traditionnel).
+/vault/lang/lang.zh.fe.php | Linguistiques données en Chinois (simplifié) pour le front-end.
 /vault/lang/lang.zh.php | Linguistiques données en Chinois (simplifié).
 /vault/quarantine/ | Quarantaine répertoire (contient des fichiers de la quarantaine).
 /vault/quarantine/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
-※ /vault/scan_kills.txt | Les résultats de chaque fichier téléchargement bloqué/tués par phpMussel.
-※ /vault/scan_log.txt | Un enregistrement de tout analysé par phpMussel.
-※ /vault/scan_log_serialized.txt | Un enregistrement de tout analysé par phpMussel.
 /vault/signatures/ | Signatures répertoire (contient des fichiers de signatures).
 /vault/signatures/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/signatures/ascii_clamav_regex.cvd | Fichier pour normalisé ASCII signatures.
@@ -367,9 +377,30 @@ Fichier | Description
 /vault/signatures/xmlxdp_custom_standard.cvd | Fichier pour XML/XDP signatures.
 /vault/signatures/xmlxdp_mussel_regex.cvd | Fichier pour XML/XDP signatures.
 /vault/signatures/xmlxdp_mussel_standard.cvd | Fichier pour XML/XDP signatures.
+/vault/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
+/vault/cli.php | Module de CLI.
+/vault/components.dat | Contient des informations relatives aux divers composants de phpMussel; Utilisé par la page des mises à jour fournies par de l'accès frontal.
+/vault/config.ini.RenameMe | Fichier de configuration; Contient toutes les options de configuration pour phpMussel, pour comment fonctionner correctement (renommer pour activer).
+/vault/config.php | Module de configuration.
+/vault/frontend.php | Module de l'accès frontal.
+/vault/functions.php | Fichier de fonctions (essentiel).
+/vault/greylist.csv | CSV de grise listé signatures indiquant pour phpMussel qui signatures il faut ignorer (fichier recréé automatiquement si supprimé).
+/vault/lang.php | Module de linguistiques.
+※ /vault/scan_kills.txt | Les résultats de chaque fichier téléchargement bloqué/tués par phpMussel.
+※ /vault/scan_log.txt | Un enregistrement de tout analysé par phpMussel.
+※ /vault/scan_log_serialized.txt | Un enregistrement de tout analysé par phpMussel.
 /vault/template.html | Modèle fichier; Modèle pour l'HTML sortie produit par phpMussel pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /vault/template_custom.html | Modèle fichier; Modèle pour l'HTML sortie produit par phpMussel pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /vault/upload.php | Module de téléchargements.
+/.gitattributes | Un fichier du GitHub projet (pas nécessaire pour le bon fonctionnement du script).
+/Changelog-v1.txt | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
+/composer.json | Composer/Packagist information (pas nécessaire pour le bon fonctionnement du script).
+/CONTRIBUTING.md | Informations sur la façon de contribuer au projet.
+/LICENSE.txt | Une copie de la GNU/GPLv2 license (pas nécessaire pour le bon fonctionnement du script).
+/loader.php | Le chargeur. C'est ce que vous êtes censé être attacher dans à (essentiel)!
+/PEOPLE.md | Informations sur les personnes impliquées dans le projet.
+/README.md | Sommaire de l'information du projet.
+/web.config | Un ASP.NET fichier de configuration (dans ce cas, pour protéger de la `/vault` répertoire contre d'être consulté par des non autorisée sources dans le cas où le script est installé sur un serveur basé sur les ASP.NET technologies).
 
 ※ Noms du fichiers peut varier basé sur configuration stipulations (dans `config.ini`).
 
@@ -857,7 +888,7 @@ Ce qui suit est un détail des types de signatures utilisées par phpMussel:
 
 Pour la plupart, phpMussel devrait être assez compatible avec plupart du virus détection logiciels. Cependant, conflictualités ont été signalés par un nombre d'utilisateurs dans le passé. Cette information ci-dessous est VirusTotal.com, et il décrit un certain nombre de faux positifs signalé par divers anti-virus programmes contre phpMussel. Bien que cette information ne constitue pas une absolue garantie de si oui ou non vous rencontrerez des problèmes de compatibilité entre phpMussel et votre anti-virus logiciel, si votre logiciel anti-virus est noté comme signalant contre phpMussel, vous devriez envisager désactivation avant à travailler avec phpMussel ou devrait envisager d'autres options soit votre logiciel anti-virus ou phpMussel.
 
-Cette information a été réactualisé le 29 Août 2016 et est courant pour toutes les phpMussel parutions des deux plus récentes mineures versions (v0.10.0-v1.0.0) au moment de la rédaction de cette.
+Cette information a été mise à jour le 29 Août 2016 et est courant pour toutes les phpMussel parutions des deux plus récentes mineures versions (v0.10.0-v1.0.0) au moment de la rédaction de cette.
 
 | Scanner              |  Résultats                           |
 |----------------------|--------------------------------------|
@@ -946,4 +977,4 @@ phpMussel bloque un fichier | __Faux positif__ | Vrai positif (inférence correc
 ---
 
 
-Dernière Réactualisé: 16 Octobre 2016 (2016.10.16).
+Dernière Mise à Jour: 31 Octobre 2016 (2016.10.31).

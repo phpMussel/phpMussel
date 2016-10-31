@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2016.10.29).
+ * This file: Portuguese language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,9 @@ $phpMussel['lang']['response_updates_outdated'] = 'Desatualizado!';
 $phpMussel['lang']['response_updates_outdated_manually'] = 'Desatualizado (por favor atualize manualmente)!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Não foi possível determinar.';
 $phpMussel['lang']['state_complete_access'] = 'Acesso completo';
+$phpMussel['lang']['state_component_is_active'] = 'Componente está ativo.';
+$phpMussel['lang']['state_component_is_inactive'] = 'Componente está inativo.';
+$phpMussel['lang']['state_component_is_provisional'] = 'Componente está provisório.';
 $phpMussel['lang']['state_default_password'] = 'Atenção: Usando senha padrão!';
 $phpMussel['lang']['state_logged_in'] = 'Conectado';
 $phpMussel['lang']['state_logs_access_only'] = 'Acesso aos arquivos de registro somente';

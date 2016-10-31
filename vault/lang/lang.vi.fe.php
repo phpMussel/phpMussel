@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2016.10.29).
+ * This file: Vietnamese language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,9 @@ $phpMussel['lang']['response_updates_outdated'] = 'Hết hạn!';
 $phpMussel['lang']['response_updates_outdated_manually'] = 'Hết hạn (vui lòng cập nhật bằng tay)!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Không thể xác định.';
 $phpMussel['lang']['state_complete_access'] = 'Truy cập đầy đủ';
+$phpMussel['lang']['state_component_is_active'] = 'Gói này đang hoạt động.';
+$phpMussel['lang']['state_component_is_inactive'] = 'Gói này không đang hoạt động.';
+$phpMussel['lang']['state_component_is_provisional'] = 'Gói này đang thỉnh thoảng hoạt động.';
 $phpMussel['lang']['state_default_password'] = 'Cảnh báo: Nó là sử dụng mật khẩu mặc định!';
 $phpMussel['lang']['state_logged_in'] = 'Được đăng nhập';
 $phpMussel['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';

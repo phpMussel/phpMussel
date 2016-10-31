@@ -176,15 +176,6 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 
 文件 | 说明
 ----|----
-/.gitattributes | Github文件（不需要为正确经营脚本）。
-/Changelog-v1.txt | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。
-/composer.json | Composer/Packagist 信息（不需要为正确经营脚本）。
-/CONTRIBUTING.md | 相关信息如何有助于该项目。
-/LICENSE.txt | GNU/GPLv2 执照文件（不需要为正确经营脚本）。
-/loader.php | 加载文件。这个是文件您应该｢钩子｣（必不可少）!
-/PEOPLE.md | 人民卷入到该项目。
-/README.md | 项目概要信息。
-/web.config | 一个ASP.NET配置文件（在这种情况，以保护`/vault`文件夹从被访问由非授权来源在事件的脚本是安装在服务器根据ASP.NET技术）。
 /_docs/ | 笔记文件夹（包含若干文件）。
 /_docs/readme.ar.md | 阿拉伯文自述文件。
 /_docs/readme.de.md | 德文自述文件。
@@ -217,36 +208,55 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 /_testfiles/swf_standard_testfile.swf | 测试文件以测试phpMussel SWF签名。
 /_testfiles/xdp_standard_testfile.xdp | 测试文件以测试phpMussel XML/XDP块签名。
 /vault/ | 安全／保险库｢Vault｣文件夹（包含若干文件）。
-/vault/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/cache/ | 缓存｢Cache｣文件夹（为临时数据）。
 /vault/cache/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
-/vault/cli.php | CLI处理文件。
-/vault/config.ini.RenameMe | 配置文件；包含所有配置指令为phpMussel，告诉它什么做和怎么正确地经营（重命名为激活）。
-/vault/config.php | 配置处理文件。
-/vault/functions.php | 功能处理文件（必不可少）。
-/vault/greylist.csv | 灰名单签名CSV（逗号分隔变量）文件说明为phpMussel什么签名它应该忽略（文件自动重新创建如果删除）。
-/vault/lang.php | 语言数据。
+/vault/fe_assets/ | 前端资产。
+/vault/fe_assets/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
+/vault/fe_assets/_accounts.html | HTML模板为前端账户页面。
+/vault/fe_assets/_accounts_row.html | HTML模板为前端账户页面。
+/vault/fe_assets/_config.html | HTML模板为前端配置页面。
+/vault/fe_assets/_home.html | HTML模板为前端主页。
+/vault/fe_assets/_login.html | HTML模板为前端登录。
+/vault/fe_assets/_logs.html | HTML模板为前端日志页面。
+/vault/fe_assets/_nav_complete_access.html | HTML模板为前端导航链接，为那些与完全访问。
+/vault/fe_assets/_nav_logs_access_only.html | HTML模板为前端导航链接，为那些与仅日志访问。
+/vault/fe_assets/_updates.html | HTML模板为前端更新页面。
+/vault/fe_assets/_updates_row.html | HTML模板为前端更新页面。
+/vault/fe_assets/frontend.css | CSS样式表为前端。
+/vault/fe_assets/frontend.dat | 数据库为前端（包含账户信息和会话信息；只生成如果前端是启用和使用）。
+/vault/fe_assets/frontend.html | 主要的HTML模板文件为前端。
 /vault/lang/ | 包含phpMussel语言数据。
 /vault/lang/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
+/vault/lang/lang.ar.fe.php | 阿拉伯文语言数据为前端。
 /vault/lang/lang.ar.php | 阿拉伯文语言数据。
+/vault/lang/lang.de.fe.php | 德文语言数据为前端。
 /vault/lang/lang.de.php | 德文语言数据。
+/vault/lang/lang.en.fe.php | 英文语言数据为前端。
 /vault/lang/lang.en.php | 英文语言数据。
+/vault/lang/lang.es.fe.php | 西班牙文语言数据为前端。
 /vault/lang/lang.es.php | 西班牙文语言数据。
+/vault/lang/lang.fr.fe.php | 法文语言数据为前端。
 /vault/lang/lang.fr.php | 法文语言数据。
+/vault/lang/lang.id.fe.php | 印度尼西亚文语言数据为前端。
 /vault/lang/lang.id.php | 印度尼西亚文语言数据。
+/vault/lang/lang.it.fe.php | 意大利文语言数据为前端。
 /vault/lang/lang.it.php | 意大利文语言数据。
+/vault/lang/lang.ja.fe.php | 日文语言数据为前端。
 /vault/lang/lang.ja.php | 日文语言数据。
+/vault/lang/lang.nl.fe.php | 荷兰文语言数据为前端。
 /vault/lang/lang.nl.php | 荷兰文语言数据。
+/vault/lang/lang.pt.fe.php | 葡萄牙文语言数据为前端。
 /vault/lang/lang.pt.php | 葡萄牙文语言数据。
+/vault/lang/lang.ru.fe.php | 俄文语言数据为前端。
 /vault/lang/lang.ru.php | 俄文语言数据。
+/vault/lang/lang.vi.fe.php | 越南文语言数据为前端。
 /vault/lang/lang.vi.php | 越南文语言数据。
-/vault/lang/lang.zh-TW.php | 中文（传统）语言数据。
+/vault/lang/lang.zh-tw.fe.php | 中文（传统）语言数据为前端。
+/vault/lang/lang.zh-tw.php | 中文（传统）语言数据。
+/vault/lang/lang.zh.fe.php | 中文（简体）语言数据为前端。
 /vault/lang/lang.zh.php | 中文（简体）语言数据。
 /vault/quarantine/ | 隔离文件夹（包含隔离文件）。
 /vault/quarantine/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
-※ /vault/scan_kills.txt | 记录的所有上传文件phpMussel受阻／杀。
-※ /vault/scan_log.txt | 记录的一切phpMussel扫描。
-※ /vault/scan_log_serialized.txt | 记录的一切phpMussel扫描。
 /vault/signatures/ | 签名文件夹（包含签​​名文件）。
 /vault/signatures/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/signatures/ascii_clamav_regex.cvd | 标准化ASCII签名文件。
@@ -368,9 +378,30 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 /vault/signatures/xmlxdp_custom_standard.cvd | XML/XDP块签名文件。
 /vault/signatures/xmlxdp_mussel_regex.cvd | XML/XDP块签名文件。
 /vault/signatures/xmlxdp_mussel_standard.cvd | XML/XDP块签名文件。
+/vault/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
+/vault/cli.php | CLI处理文件。
+/vault/components.dat | 包含的相关信息关于phpMussel的各种组件；它使用通过更新功能从前端。
+/vault/config.ini.RenameMe | 配置文件；包含所有配置指令为phpMussel，告诉它什么做和怎么正确地经营（重命名为激活）。
+/vault/config.php | 配置处理文件。
+/vault/frontend.php | 前端处理文件。
+/vault/functions.php | 功能处理文件（必不可少）。
+/vault/greylist.csv | 灰名单签名CSV（逗号分隔变量）文件说明为phpMussel什么签名它应该忽略（文件自动重新创建如果删除）。
+/vault/lang.php | 语言数据。
+※ /vault/scan_kills.txt | 记录的所有上传文件phpMussel受阻／杀。
+※ /vault/scan_log.txt | 记录的一切phpMussel扫描。
+※ /vault/scan_log_serialized.txt | 记录的一切phpMussel扫描。
 /vault/template.html | 模板文件；模板为HTML产量产生通过phpMussel为它的受阻文件上传信息（信息可见向上传者）。
 /vault/template_custom.html | 模板文件；模板为HTML产量产生通过phpMussel为它的受阻文件上传信息（信息可见向上传者）。
 /vault/upload.php | 上传处理文件。
+/.gitattributes | Github文件（不需要为正确经营脚本）。
+/Changelog-v1.txt | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。
+/composer.json | Composer/Packagist 信息（不需要为正确经营脚本）。
+/CONTRIBUTING.md | 相关信息如何有助于该项目。
+/LICENSE.txt | GNU/GPLv2 执照文件（不需要为正确经营脚本）。
+/loader.php | 加载文件。这个是文件您应该｢钩子｣（必不可少）!
+/PEOPLE.md | 人民卷入到该项目。
+/README.md | 项目概要信息。
+/web.config | 一个ASP.NET配置文件（在这种情况，以保护`/vault`文件夹从被访问由非授权来源在事件的脚本是安装在服务器根据ASP.NET技术）。
 
 ※ 文件名可能不同基于配置规定（在`config.ini`）。
 
@@ -948,4 +979,4 @@ phpMussel会阻止文件 | __假阳性__ | 真阳性（正确的推理）
 ---
 
 
-最后更新：2016年10月16日。
+最后更新：2016年10月31日。

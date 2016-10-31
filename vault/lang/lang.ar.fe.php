@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2016.10.29).
+ * This file: Arabic language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,9 @@ $phpMussel['lang']['response_updates_outdated'] = 'عفا عليها الزمن!
 $phpMussel['lang']['response_updates_outdated_manually'] = 'عفا عليها الزمن (يرجى تحديث يدويا)!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'غير قادر على تحديد.';
 $phpMussel['lang']['state_complete_access'] = 'الوصول كامل';
+$phpMussel['lang']['state_component_is_active'] = 'وحدة هو نشطا.';
+$phpMussel['lang']['state_component_is_inactive'] = 'وحدة هو غير نشط.';
+$phpMussel['lang']['state_component_is_provisional'] = 'وحدة هو جزئيا نشطا.';
 $phpMussel['lang']['state_default_password'] = 'تحذير: يستخدم الافتراضي كلمه السر!';
 $phpMussel['lang']['state_logged_in'] = 'حاليا على';
 $phpMussel['lang']['state_logs_access_only'] = 'سجلات الوصول فقط';

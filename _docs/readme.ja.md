@@ -175,15 +175,6 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 
 ファイル | 説明
 ----|----
-/.gitattributes | Githubのプロジェクトファイル（機能には関係のないファイルです）。
-/Changelog-v1.txt | バージョンによる違いを記録したものです（機能には関係のないファイルです）。
-/composer.json | Composer/Packagist情報（機能には関係のないファイルです）。
-/CONTRIBUTING.md | プロジェクトに貢献する方法について。
-/LICENSE.txt | GNU/GPLv2のライセンスのコピー（機能には関係のないファイルです）。
-/loader.php | ローダー・ファイルです。主要スクリプトのロード、アップロード等を行います。フックするのはまさにこれです（本質的ファイル）！
-/PEOPLE.md | プロジェクトに関わる人々についての情報。
-/README.md | プロジェクト概要情報。
-/web.config | ASP.NET設定ファイルです（スクリプトがASP.NETテクノロジーを基礎とするサーバーにインストールされた時に`/vault`ディレクトリを権限のないソースによるアクセスから保護するためです）。
 /_docs/ | ドキュメンテーション用のディレクトリです（様々なファイルを含みます）。
 /_docs/readme.ar.md | アラビア語ドキュメンテーション。
 /_docs/readme.de.md | ドイツ語ドキュメンテーション。
@@ -216,36 +207,55 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /_testfiles/swf_standard_testfile.swf | phpMussel SWF署名用テストファイル。
 /_testfiles/xdp_standard_testfile.xdp | phpMussel XML/XDP署名用テストファイル。
 /vault/ | ヴォルト・ディレクトリ（様々なファイルを含んでいます）。
-/vault/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/cache/ | キャッシュ・ディレクトリ（一時データ用）。
 /vault/cache/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
-/vault/cli.php | CLIハンドラ。
-/vault/config.ini.RenameMe | phpMussel設定ファイル；phpMusselの全オプション設定を記載しています。それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
-/vault/config.php | コンフィギュレーション・ハンドラ。
-/vault/functions.php | 関数ファイル（本質的ファイル）。
-/vault/greylist.csv | グレーリスト化された署名のCSVで、phpMusselがどの署名を無視すべきかを指示するものです（削除しても自動的に再作成されます）。
-/vault/lang.php | 言語・ハンドラ。
+/vault/fe_assets/ | フロントエンド資産。
+/vault/fe_assets/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
+/vault/fe_assets/_accounts.html | フロントエンドのアカウントページのHTMLテンプレート。
+/vault/fe_assets/_accounts_row.html | フロントエンドのアカウントページのHTMLテンプレート。
+/vault/fe_assets/_config.html | フロントエンドのコンフィギュレーションページのHTMLテンプレート。
+/vault/fe_assets/_home.html | フロントエンドのホームページのHTMLテンプレート。
+/vault/fe_assets/_login.html | フロントエンドのログインページのHTMLテンプレート。
+/vault/fe_assets/_logs.html | フロントエンドのロゴスページのHTMLテンプレート。
+/vault/fe_assets/_nav_complete_access.html | フロントエンドのナビゲーションリンクのHTMLテンプレート、は完全なアクセスのためのものです。
+/vault/fe_assets/_nav_logs_access_only.html | フロントエンドのナビゲーションリンクのHTMLテンプレート、はログのみにアクセスのためのものです。
+/vault/fe_assets/_updates.html | フロントエンドのアップデートページのHTMLテンプレート。
+/vault/fe_assets/_updates_row.html | フロントエンドのアップデートページのHTMLテンプレート。
+/vault/fe_assets/frontend.css | フロントエンドのCSSスタイルシート。
+/vault/fe_assets/frontend.dat | フロントエンドのデータベース（アカウント情報とセッション情報が含まれています；フロントエンドが有効になっているときに作成）。
+/vault/fe_assets/frontend.html | フロントエンドのメインテンプレートファイル。
 /vault/lang/ | phpMusselの言語データを含んでいます。
 /vault/lang/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
+/vault/lang/lang.ar.fe.php | フロントエンドのアラビア語言語データ。
 /vault/lang/lang.ar.php | アラビア語言語データ。
+/vault/lang/lang.de.fe.php | フロントエンドのドイツ語言語データ。
 /vault/lang/lang.de.php | ドイツ語言語データ。
+/vault/lang/lang.en.fe.php | フロントエンドの英語言語データ。
 /vault/lang/lang.en.php | 英語言語データ。
+/vault/lang/lang.es.fe.php | フロントエンドのスペイン語言語データ。
 /vault/lang/lang.es.php | スペイン語言語データ。
+/vault/lang/lang.fr.fe.php | フロントエンドのフランス語言語データ。
 /vault/lang/lang.fr.php | フランス語言語データ。
+/vault/lang/lang.id.fe.php | フロントエンドのインドネシア語言語データ。
 /vault/lang/lang.id.php | インドネシア語言語データ。
+/vault/lang/lang.it.fe.php | フロントエンドの伊語言語データ。
 /vault/lang/lang.it.php | 伊語言語データ。
+/vault/lang/lang.ja.fe.php | フロントエンドの日本語言語データ。
 /vault/lang/lang.ja.php | 日本語言語データ。
+/vault/lang/lang.nl.fe.php | フロントエンドのオランダ語言語データ。
 /vault/lang/lang.nl.php | オランダ語言語データ。
+/vault/lang/lang.pt.fe.php | フロントエンドのポルトガル語言語データ。
 /vault/lang/lang.pt.php | ポルトガル語言語データ。
+/vault/lang/lang.ru.fe.php | フロントエンドのロシア語言語データ。
 /vault/lang/lang.ru.php | ロシア語言語データ。
+/vault/lang/lang.vi.fe.php | フロントエンドのベトナム語言語データ。
 /vault/lang/lang.vi.php | ベトナム語言語データ。
-/vault/lang/lang.zh-TW.php | 繁体字中国語言語データ。
+/vault/lang/lang.zh-tw.fe.php | フロントエンドの繁体字中国語言語データ。
+/vault/lang/lang.zh-tw.php | 繁体字中国語言語データ。
+/vault/lang/lang.zh.fe.php | フロントエンドの簡体字中国語言語データ。
 /vault/lang/lang.zh.php | 簡体字中国語言語データ。
 /vault/quarantine/ | 検疫ディレクトリ（検疫されたファイル含んでいます）。
 /vault/quarantine/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
-※ /vault/scan_kills.txt | phpMusselによりブロック／削除されたアップロードファイルの全記録。
-※ /vault/scan_log.txt | phpMusselによりスキャンされたものの全記録。
-※ /vault/scan_log_serialized.txt | phpMusselによりスキャンされたものの全記録。
 /vault/signatures/ | 署名ディレクトリ（署名ファイルが含まれています）。
 /vault/signatures/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/signatures/ascii_clamav_regex.cvd | 正規化ASCII署名用ファイル。
@@ -367,9 +377,30 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /vault/signatures/xmlxdp_custom_standard.cvd | XML/XDP署名用ファイル。
 /vault/signatures/xmlxdp_mussel_regex.cvd | XML/XDP署名用ファイル。
 /vault/signatures/xmlxdp_mussel_standard.cvd | XML/XDP署名用ファイル。
+/vault/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
+/vault/cli.php | CLIハンドラ。
+/vault/components.dat | phpMusselのコンポーネント情報が含まれています；アップデート機能で使用（フロントエンドが提供します）。
+/vault/config.ini.RenameMe | phpMussel設定ファイル；phpMusselの全オプション設定を記載しています。それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
+/vault/config.php | コンフィギュレーション・ハンドラ。
+/vault/frontend.php | フロントエンド・ハンドラ。
+/vault/functions.php | 関数ファイル（本質的ファイル）。
+/vault/greylist.csv | グレーリスト化された署名のCSVで、phpMusselがどの署名を無視すべきかを指示するものです（削除しても自動的に再作成されます）。
+/vault/lang.php | 言語・ハンドラ。
+※ /vault/scan_kills.txt | phpMusselによりブロック／削除されたアップロードファイルの全記録。
+※ /vault/scan_log.txt | phpMusselによりスキャンされたものの全記録。
+※ /vault/scan_log_serialized.txt | phpMusselによりスキャンされたものの全記録。
 /vault/template.html | phpMusselテンプレートファイル；phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
 /vault/template_custom.html | phpMusselテンプレートファイル；phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
 /vault/upload.php | アップロード・ハンドラ。
+/.gitattributes | Githubのプロジェクトファイル（機能には関係のないファイルです）。
+/Changelog-v1.txt | バージョンによる違いを記録したものです（機能には関係のないファイルです）。
+/composer.json | Composer/Packagist情報（機能には関係のないファイルです）。
+/CONTRIBUTING.md | プロジェクトに貢献する方法について。
+/LICENSE.txt | GNU/GPLv2のライセンスのコピー（機能には関係のないファイルです）。
+/loader.php | ローダー・ファイルです。主要スクリプトのロード、アップロード等を行います。フックするのはまさにこれです（本質的ファイル）！
+/PEOPLE.md | プロジェクトに関わる人々についての情報。
+/README.md | プロジェクト概要情報。
+/web.config | ASP.NET設定ファイルです（スクリプトがASP.NETテクノロジーを基礎とするサーバーにインストールされた時に`/vault`ディレクトリを権限のないソースによるアクセスから保護するためです）。
 
 ※ ファイル名は設定の仕方（`config.ini`内）により異なることがあります。
 
@@ -948,4 +979,4 @@ phpMusselは、ファイルをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2016年10月16日。
+最終アップデート： 2016年10月31日。

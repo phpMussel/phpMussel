@@ -175,15 +175,6 @@ Sau đây là một danh sách tất cả các tập tin mà cần phải có đ
 
 Tập tin | Chi tiết
 ----|----
-/.gitattributes | Tập tin dự án cho GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
-/Changelog-v1.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
-/composer.json | Thông tin về dự án cho Composer/Packagist (không cần thiết cho chức năng phù hợp của kịch bản).
-/CONTRIBUTING.md | Thông tin về làm thế nào để đóng góp cho dự án.
-/LICENSE.txt | Bản sao của giấy phép GNU/GPLv2 (không cần thiết cho chức năng phù hợp của kịch bản).
-/loader.php | Tập tin cho tải. Đây là điều bạn cần nối vào (cần thiết)!
-/PEOPLE.md | Thông tin về những người trong dự án.
-/README.md | Thông tin tóm tắt dự án.
-/web.config | Tập tin cấu hình của ASP.NET (trong trường hợp này, để bảo vệ `/vault` thư mực khỏi bị truy cập bởi những nguồn không có quền trong trường hợp bản được cài trên serever chạy trên công nghệ ASP.NET).
 /_docs/ | Thư mực cho tài liệu.
 /_docs/readme.ar.md | Tài liệu tiếng Ả Rập.
 /_docs/readme.de.md | Tài liệu tiếng Đức.
@@ -216,36 +207,55 @@ Tập tin | Chi tiết
 /_testfiles/swf_standard_testfile.swf | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký Shockwave.
 /_testfiles/xdp_standard_testfile.xdp | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký XML/XDP.
 /vault/ | Vault thư mục (chứa các tập tin khác nhau).
-/vault/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/cache/ | Cache thư mục (cho dữ liệu tạm thời).
 /vault/cache/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
-/vault/cli.php | Tập tin cho xử lý CLI.
-/vault/config.ini.RenameMe | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của phpMussel, nói cho nó biết phải làm gì và làm thế nào để hoạt động (đổi tên để kích hoạt).
-/vault/config.php | Tập tin cho xử lý cấu hình.
-/vault/functions.php | Tập tin cho chức năng.
-/vault/greylist.csv | Tập tin CSV cho danh sách xám chử ký chỉ thị cho phpMussel cái nào chử ký nó phải được bỏ qua (tập tin tự động tạo lại nếu xóa).
-/vault/lang.php | Dữ liệu tiếng.
+/vault/fe_assets/ | Các tài sản front-end.
+/vault/fe_assets/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
+/vault/fe_assets/_accounts.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
+/vault/fe_assets/_accounts_row.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
+/vault/fe_assets/_config.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
+/vault/fe_assets/_home.html | Một tập tin mẫu HTML cho các trang chủ của front-end.
+/vault/fe_assets/_login.html | Một tập tin mẫu HTML cho các đăng nhập của front-end.
+/vault/fe_assets/_logs.html | Một tập tin mẫu HTML cho các trang bản ghi của front-end.
+/vault/fe_assets/_nav_complete_access.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền truy cập đầy đủ.
+/vault/fe_assets/_nav_logs_access_only.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền bản ghi truy cập chỉ.
+/vault/fe_assets/_updates.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
+/vault/fe_assets/_updates_row.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
+/vault/fe_assets/frontend.css | CSS định kiểu cho các front-end.
+/vault/fe_assets/frontend.dat | Cơ sở dữ liệu cho các front-end (chứa thông tin tài khoản và phiên; chỉ tạo ra nếu front-end được kích hoạt và sử dụng).
+/vault/fe_assets/frontend.html | Các chính tập tin mẫu HTML cho các front-end.
 /vault/lang/ | Chứa dữ liệu tiếng cho phpMussel.
 /vault/lang/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
+/vault/lang/lang.ar.fe.php | Dữ liệu tiếng Ả Rập cho các front-end.
 /vault/lang/lang.ar.php | Dữ liệu tiếng Ả Rập.
+/vault/lang/lang.de.fe.php | Dữ liệu tiếng Đức cho các front-end.
 /vault/lang/lang.de.php | Dữ liệu tiếng Đức.
+/vault/lang/lang.en.fe.php | Dữ liệu tiếng Anh cho các front-end.
 /vault/lang/lang.en.php | Dữ liệu tiếng Anh.
+/vault/lang/lang.es.fe.php | Dữ liệu tiếng Tây Ban Nha cho các front-end.
 /vault/lang/lang.es.php | Dữ liệu tiếng Tây Ban Nha.
+/vault/lang/lang.fr.fe.php | Dữ liệu tiếng Pháp cho các front-end.
 /vault/lang/lang.fr.php | Dữ liệu tiếng Pháp.
+/vault/lang/lang.id.fe.php | Dữ liệu tiếng Indonesia cho các front-end.
 /vault/lang/lang.id.php | Dữ liệu tiếng Indonesia.
+/vault/lang/lang.it.fe.php | Dữ liệu tiếng Ý cho các front-end.
 /vault/lang/lang.it.php | Dữ liệu tiếng Ý.
+/vault/lang/lang.ja.fe.php | Dữ liệu tiếng Nhật cho các front-end.
 /vault/lang/lang.ja.php | Dữ liệu tiếng Nhật.
+/vault/lang/lang.nl.fe.php | Dữ liệu tiếng Hà Lan cho các front-end.
 /vault/lang/lang.nl.php | Dữ liệu tiếng Hà Lan.
+/vault/lang/lang.pt.fe.php | Dữ liệu tiếng Bồ Đào Nha cho các front-end.
 /vault/lang/lang.pt.php | Dữ liệu tiếng Bồ Đào Nha.
+/vault/lang/lang.ru.fe.php | Dữ liệu tiếng Nga cho các front-end.
 /vault/lang/lang.ru.php | Dữ liệu tiếng Nga.
+/vault/lang/lang.vi.fe.php | Dữ liệu tiếng Việt cho các front-end.
 /vault/lang/lang.vi.php | Dữ liệu tiếng Việt.
-/vault/lang/lang.zh-TW.php | Dữ liệu tiếng Trung Quốc (truyền thống).
+/vault/lang/lang.zh-tw.fe.php | Dữ liệu tiếng Trung Quốc (truyền thống) cho các front-end.
+/vault/lang/lang.zh-tw.php | Dữ liệu tiếng Trung Quốc (truyền thống).
+/vault/lang/lang.zh.fe.php | Dữ liệu tiếng Trung Quốc (giản thể) cho các front-end.
 /vault/lang/lang.zh.php | Dữ liệu tiếng Trung Quốc (giản thể).
 /vault/quarantine/ | Thư mục kiểm dịch (chứa các tập tin trong kiểm dịch).
 /vault/quarantine/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
-※ /vault/scan_kills.txt | Kỷ lục của mỗi tập tin tải lên từ chối/giết bởi phpMussel.
-※ /vault/scan_log.txt | Kỷ lục của mỗi tập tin quét bởi phpMussel.
-※ /vault/scan_log_serialized.txt | Kỷ lục của mỗi tập tin quét bởi phpMussel.
 /vault/signatures/ | Thư mục cho chữ ký (chứa các tập tin cho chữ ký).
 /vault/signatures/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/signatures/ascii_clamav_regex.cvd | Tập tin cho chữ ký ASCII bình thường.
@@ -367,9 +377,30 @@ Tập tin | Chi tiết
 /vault/signatures/xmlxdp_custom_standard.cvd | Tập tin cho chữ ký XML/XDP.
 /vault/signatures/xmlxdp_mussel_regex.cvd | Tập tin cho chữ ký XML/XDP.
 /vault/signatures/xmlxdp_mussel_standard.cvd | Tập tin cho chữ ký XML/XDP.
+/vault/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
+/vault/cli.php | Tập tin cho xử lý CLI.
+/vault/components.dat | Chứa thông tin liên quan đến các gói khác nhau của phpMussel; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
+/vault/config.ini.RenameMe | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của phpMussel, nói cho nó biết phải làm gì và làm thế nào để hoạt động (đổi tên để kích hoạt).
+/vault/config.php | Tập tin cho xử lý cấu hình.
+/vault/frontend.php | Tập tin cho xử lý các front-end.
+/vault/functions.php | Tập tin cho chức năng.
+/vault/greylist.csv | Tập tin CSV cho danh sách xám chử ký chỉ thị cho phpMussel cái nào chử ký nó phải được bỏ qua (tập tin tự động tạo lại nếu xóa).
+/vault/lang.php | Dữ liệu tiếng.
+※ /vault/scan_kills.txt | Kỷ lục của mỗi tập tin tải lên từ chối/giết bởi phpMussel.
+※ /vault/scan_log.txt | Kỷ lục của mỗi tập tin quét bởi phpMussel.
+※ /vault/scan_log_serialized.txt | Kỷ lục của mỗi tập tin quét bởi phpMussel.
 /vault/template.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi phpMussel cho các thông điệp tải lên tập tin bị chặn (các thông điệp nhìn thấy bằng người tải lên).
 /vault/template_custom.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi phpMussel cho các thông điệp tải lên tập tin bị chặn (các thông điệp nhìn thấy bằng người tải lên).
 /vault/upload.php | Tập tin cho xử lý tải lên.
+/.gitattributes | Tập tin dự án cho GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
+/Changelog-v1.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
+/composer.json | Thông tin về dự án cho Composer/Packagist (không cần thiết cho chức năng phù hợp của kịch bản).
+/CONTRIBUTING.md | Thông tin về làm thế nào để đóng góp cho dự án.
+/LICENSE.txt | Bản sao của giấy phép GNU/GPLv2 (không cần thiết cho chức năng phù hợp của kịch bản).
+/loader.php | Tập tin cho tải. Đây là điều bạn cần nối vào (cần thiết)!
+/PEOPLE.md | Thông tin về những người trong dự án.
+/README.md | Thông tin tóm tắt dự án.
+/web.config | Tập tin cấu hình của ASP.NET (trong trường hợp này, để bảo vệ `/vault` thư mực khỏi bị truy cập bởi những nguồn không có quền trong trường hợp bản được cài trên serever chạy trên công nghệ ASP.NET).
 
 ※ Tên tập tin có thể thay đổi tuy theo các quy định của cấu hình (xem `config.ini`).
 
@@ -946,4 +977,4 @@ phpMussel chặn một tập tin | __Sai tích cực__ | Đúng tích cực (suy
 ---
 
 
-Lần cuối cập nhật: 16 Tháng Mười 2016 (2016.10.16).
+Lần cuối cập nhật: 31 Tháng Mười 2016 (2016.10.31).

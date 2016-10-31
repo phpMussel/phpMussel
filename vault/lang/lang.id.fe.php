@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2016.10.29).
+ * This file: Indonesian language data for the front-end (last modified: 2016.10.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -74,6 +74,9 @@ $phpMussel['lang']['response_updates_outdated'] = 'Tidak yang terbaru!';
 $phpMussel['lang']['response_updates_outdated_manually'] = 'Tidak yang terbaru (silahkan perbarui secara manual)!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Tidak dapat menentukan.';
 $phpMussel['lang']['state_complete_access'] = 'Akses lengkap';
+$phpMussel['lang']['state_component_is_active'] = 'Komponen ini aktif.';
+$phpMussel['lang']['state_component_is_inactive'] = 'Komponen ini non-aktif.';
+$phpMussel['lang']['state_component_is_provisional'] = 'Komponen ini kadang-kadang aktif.';
 $phpMussel['lang']['state_default_password'] = 'Peringatan: Menggunakan kata sandi standar!';
 $phpMussel['lang']['state_logged_in'] = 'Pengguna yang online';
 $phpMussel['lang']['state_logs_access_only'] = 'Akses ke log hanya';
