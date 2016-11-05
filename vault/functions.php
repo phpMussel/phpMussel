@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.10.17).
+ * This file: Functions file (last modified: 2016.11.05).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -7889,7 +7889,7 @@ $phpMussel['YAML-Normalise-Value'] = function (&$Value, $ValueLen, $ValueLow) {
         $Value = hex2bin($HexTest);
     } else {
         $ValueInt = (int)$Value;
-        if (strlen($ValueInt) === $ValueLen && $Value == $ValueInt) {
+        if (strlen($ValueInt) === $ValueLen && $Value == $ValueInt && $ValueLen > 1) {
             $Value = $ValueInt;
         }
     }
@@ -7994,6 +7994,17 @@ $phpMussel['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$phpMu
             $phpMussel['YAML-Normalise-Value']($Value, $ValueLen, $ValueLow);
             if (!$VM && $ValueLen > 0) {
                 $Arr[$Key] = $Value;
+            }
+        } elseif (strpos($ThisLine, ':') === false && strlen($ThisLine) > 1) {
+            $Key = $ThisLine;
+            $KeyLen = strlen($Key);
+            $KeyLow = strtolower($Key);
+            $phpMussel['YAML-Normalise-Value']($Key, $KeyLen, $KeyLow);
+            if (!isset($Arr[$Key])) {
+                if ($VM) {
+                    return false;
+                }
+                $Arr[$Key] = false;
             }
         }
     }
