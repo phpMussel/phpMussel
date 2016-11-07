@@ -14,6 +14,8 @@
 - 9. [NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH](#SECTION9)
 - 10. [NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)](#SECTION10)
 
+*Lưu ý về bản dịch: Trong trường hợp có sai sót (ví dụ, sự khác biệt giữa bản dịch, lỗi chính tả, vv), phiên bản tiếng Anh của README được coi là phiên bản gốc và có thẩm quyền. Nếu bạn tìm thấy bất kỳ lỗi, giúp đỡ của bạn trong việc điều chỉnh họ sẽ được hoan nghênh.*
+
 ---
 
 
@@ -141,18 +143,6 @@ Ngoài ra, ý thức được rằng phpMussel là một máy quét *khi yêu c�
 ###4. <a name="SECTION4"></a>QUẢN LÝ FRONT-END
 
 @TODO@
-
-Một số lý do tại sao bạn _**NÊN**_ cho phép những điều khiển này:
-- Cung cấp một cách để đánh dấu chữ ký xám tự phát trong trường hợp như thế khi bạn phát hiện ra một chữ ký đó là sản xuất một sai tích cực trong khi tải lên các tập tin để hệ thống của bạn và bạn không có thời gian để tự chỉnh sửa và tải lên tập tin danh sách xám của bạn lần nữa.
-- Cung cấp một cách cho bạn để cho phép một người nào khác để kiểm soát bản sao phpMussel của bạn mà không cần phải cấp cho họ truy cập vào FTP.
-- Cung cấp một cách để cung cấp truy cập được kiểm soát vào các tập tin đăng nhập của bạn.
-- Cung cấp một cách cho bạn để giám sát phpMussel khi truy cập FTP hay các điểm truy cập thông thường khác cho giám sát phpMussel không có sẵn.
-
-Một số lý do tại sao bạn _**KHÔNG**_ nên cho phép những điều khiển này:
-- Cung cấp một véc tơ cho kẻ tấn công tiềm năng và người không ai ưa để xác định xem bạn đang sử dụng phpMussel (mặc dù, điều này có thể là một lý do cho hay chống lại, tùy thuộc vào quan điểm) bằng cách mù quáng gửi lệnh đến máy chủ như một phương tiện để thăm dò. Một mặt, điều này có thể làm nản lòng kẻ tấn công nhắm mục tiêu hệ thống của bạn nếu họ biết rằng bạn đang sử dụng phpMussel, giả định rằng họ đang thăm dò bởi vì phương pháp tấn công của họ là ra không hiệu quả như là kết quả của việc sử dụng phpMussel. Tuy nhiên, mặt khác, nếu một số không lường trước và khai thác hiện hành không biết đến phpMussel hay một phiên bản tương lai của chúng trở nên được biết đến, và nếu nó có khả năng cung cấp một vec tơ tấn công, một kết quả tích cực từ thăm dò thực sự có thể khuyến khích kẻ tấn côngs để nhắm mục tiêu hệ thống của bạn.
-- Nếu mật khẩu giao của bạn là bất cứ lúc nào bị thỏa hiệp, trừ khi thay đổi, có thể cung cấp một cách cho một kẻ tấn công để bỏ qua bất cứ chữ ký rằng thường có thể là ngăn chặn cuộc tấn công của họ từ thành công, hay thậm chí có khả năng vô hiệu hóa phpMussel hoàn toàn, do đó cung cấp một cách để làm cho phpMussel không hiệu quả.
-
-Dù bằng cách nào, bất kể những gì bạn lựa chọn, các sự lựa chọn là của bạn. Theo mặc định, các điều khiển sẽ bị vô hiệu, nhưng suy nghĩ về nó, và nếu bạn quyết định bạn muốn họ, phần này giải thích làm thế nào để kích hoạt họ và làm thế nào để sử dụng họ.
 
 ---
 
@@ -977,4 +967,4 @@ phpMussel chặn một tập tin | __Sai tích cực__ | Đúng tích cực (suy
 ---
 
 
-Lần cuối cập nhật: 31 Tháng Mười 2016 (2016.10.31).
+Lần cuối cập nhật: 7 Tháng Mười Một 2016 (2016.11.07).

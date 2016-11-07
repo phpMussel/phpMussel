@@ -14,6 +14,8 @@
 - 9. [MASALAH KOMPATIBILITAS DIKETAHUI](#SECTION9)
 - 10. [PERTANYAAN YANG SERING DIAJUKAN (FAQ)](#SECTION10)
 
+*Catatan tentang terjemahan: Dalam hal kesalahan (misalnya, perbedaan antara terjemahan, kesalahan cetak, dll), versi bahasa Inggris dari README dianggap versi asli dan berwibawa. Jika Anda menemukan kesalahan, bantuan Anda dalam mengoreksi mereka akan disambut.*
+
 ---
 
 
@@ -141,18 +143,6 @@ Mohon diingat bahwa phpMussel adalah scanner *on-demand*; adalah *BUKAN* scanner
 ###4. <a name="SECTION4"></a>MANAJEMEN BAGIAN DEPAN
 
 @TODO@
-
-Beberapa alasan mengapa Anda _**SEHARUSNYA**_ mengaktifkan kontrol-kontrol ini:
-- Menyediakan jalan untuk mewarnai biru tanda tangan secara langsung di dalam instansi-instansi seperti ketika Anda menemukan sebuah tanda tangan yang memproduksi sebuah angka positif yang salah selama mengupload file ke sistem Anda dan Anda tidak punya waktu untuk secara manual mengedit dan mengupload ulang file daftar abu-abu Anda.
-- Menyediakan sebuah jalan untuk Anda mengizinkan seseorang lain dari Anda untuk mengatur kopi dari phpMussel tanpa keperluan implisit untuk memberi hak akses ke FTP.
-- Menyediakan sebuah cara untuk menyediakan akses terkontrol ke file log Anda.
-- Menyediakan cara untuk Anda untuk memonitor phpMussel ketika FTP akses atau akses poin konvensional untuk memonitor phpMussel tidak tersedia.
-
-Beberapa alasan mengapa Anda seharusnya _**TIDAK**_ mengaktifkan kontrol-kontrol ini:
-- Menyediakan sebuah vektor untuk penyerang potensial dan tidak diharapkan untuk menentukan apakah Anda menggunakan phpMussel atau tidak (walaupun, ini dapat menjadi alasan mengapa atau alasan perdebatan, bergantung pada perspektif) dengan cara buta mengirim perintah ke server dalam penyelidikan. Dalam cara lain, ini dapat menghalangi penyerang dari menargetkan sistem Anda jika mereka belajar bahwa Anda menggunakan phpMussel, asumsi jika mereka menyelidiki karena serangan mereka dialirkan tidak efektif karena menggunakan phpMussel. Bagaimanapun, pada cara lain, jika beberapa tidak terlihat dan eksploitasi yang tidak diketahui di dalam phpMussel atau versi selanjutnya akan ada cahaya, dan jika dapat secara potensial menyediakan sebuah vektor serangan, sebuah hasil positif dari penyelidikan dapat mendorong penyerang menargetkan sistem Anda.
-- Jika sandi delegasi Anda pernah dikompromikan atau diubah dapat menyediakan sebuah cara untuk penyerang membypass tanda tangan apapun mungkin jika tidak secara normal menghindari serangan mereka dari kesuksesan, atau juga secara potensial menonaktifkan phpMussel bersamaan, juga menyediakan sebuah cara untuk mengalirkan keefektifan dari phpMussel yang dibicarakan.
-
-Cara lain, tanpa bergantung dengan apa yang Anda pilih, pilihan adalah milik Anda. Secara default, kontrol-kontrol ini akan dinonaktifkan, tapi harus berpikir tentang nya, dan jika Anda memutuskan untuk menginginkannya, seksi ini akan menjelaskan tentang cara mengaktifkan dan menggunakannya.
 
 ---
 
@@ -977,4 +967,4 @@ phpMussel memblokir file | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 31 Oktober 2016 (2016.10.31).
+Terakhir Diperbarui: 7 November 2016 (2016.11.07).

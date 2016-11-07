@@ -14,6 +14,8 @@
 - 9. [KNOWN COMPATIBILITY PROBLEMS](#SECTION9)
 - 10. [FREQUENTLY ASKED QUESTIONS (FAQ)](#SECTION10)
 
+*Note regarding translations: In the event of errors (eg, discrepancies between translations, typos, etc), the English version of the README is considered the original and authoritative version. If you find any errors, your assistance in correcting them would be welcomed.*
+
 ---
 
 
@@ -144,18 +146,6 @@ Additionally, for those interested, a video tutorial for how to use phpMussel in
 ###4. <a name="SECTION4"></a>FRONT-END MANAGEMENT
 
 @TODO@
-
-A couple of reasons why you _**SHOULD**_ enable these controls:
-- Provides a way to greylist signatures on-the-fly in instances such as when you discover a signature that is producing a false-positive while uploading files to your system and you don't have time to manually edit and reupload your greylist file.
-- Provides a way for you to allow someone other than yourself to control your copy of phpMussel without the implicit need to grant them access to FTP.
-- Provides a way to provide controlled access to your log files.
-- Provides a way for you to monitor phpMussel when FTP access or other conventional access points for monitoring phpMussel are not available.
-
-A couple of reasons why you should _**NOT**_ enable these controls:
-- Provides a vector for potential attackers and undesirables to determine whether you're using phpMussel or not (although, this could be both a reason for and a reason against, depending on perspective) by way of blindly sending commands to servers as a means to probe. On one hand, this could discourage attackers from targeting your system if they learn that you're using phpMussel, assuming that they are probing because their attack method is rendered ineffective as a result of using phpMussel. However, on the other hand, if some unforeseen and currently unknown exploit within phpMussel or a future version thereof comes to light, and if it could potentially provide an attack vector, a positive result from such probing could actually encourage attackers to target your system.
-- If your delegated passwords were ever compromised, unless changed, could provide a way for an attacker to bypass whatever signatures may be otherwise normally preventing their attacks from succeeding, or even potentially disable phpMussel altogether, thus providing a way to render the effectiveness of phpMussel moot.
-
-Either way, regardless of what you choose, the choice is ultimately yours. By default, these controls will be disabled, but have a think about it, and if you decide you want them, this section explains both how to enable them and how to use them.
 
 ---
 
@@ -977,4 +967,4 @@ phpMussel *DOES* block a file | __False positive__ | True positive (correct infe
 ---
 
 
-Last Updated: 31st October 2016 (2016.10.31).
+Last Updated: 7th November 2016 (2016.11.07).

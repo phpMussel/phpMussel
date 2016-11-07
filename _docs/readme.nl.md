@@ -14,6 +14,8 @@
 - 9. [BEKENDE COMPATIBILITEITSPROBLEMEN](#SECTION9)
 - 10. [VEELGESTELDE VRAGEN (FAQ)](#SECTION10)
 
+*Opmerking over vertalingen: In geval van fouten (bv, verschillen tussen vertalingen, typefouten, ezv), de Engels versie van de README wordt beschouwd als het origineel en gezaghebbende versie. Als u vinden elke fouten, uw hulp bij het corrigeren van hen zou worden toegejuicht.*
+
 ---
 
 
@@ -141,18 +143,6 @@ Eveneens, noteren dat phpMussel is een *on-demand* scanner; Het is *GEEN* *on-ac
 ###4. <a name="SECTION4"></a>FRONTEND MANAGEMENT
 
 @TODO@
-
-Redenen voor deze controles te wordt ingeschakeld:
-- Biedt een manier om handtekeningen te greylist in gevallen zoals wanneer u ontdekken een handtekening dat is produceren van een vals-positieve tijdens het uploaden van bestanden naar uw systeem en u heeft geen tijd te handmatig bewerken en heruploaden uw greylist bestand.
-- Biedt een manier voor u te toestaan iemand anders dan uzelf te controleer uw exemplaar van phpMussel zonder de impliciete behoefte te geven om hen toegang tot FTP.
-- Biedt een manier om gecontroleerde toegang tot uw logbestanden te bieden.
-- Biedt een manier voor u om te controleren phpMussel wanneer FTP-toegang of andere conventionele toegangspunten voor het toezicht op phpMussel zijn niet beschikbaar.
-
-Redenen voor deze controles te _**NIET**_ wordt ingeschakeld:
-- Biedt een vector voor potentiële aanvallers en ongewensten om te bepalen als u gebruik van phpMussel (hoewel, Dit kan zowel een reden zijn en een reden zijn tegen, afhankelijk van het perspectief) door middel van blindelings het verzenden van commando aan servers als middel sonderen. Aan de ene kant, dit zou kunnen ontmoedigen aanvallers van het richten van uw systeem als zij leren dat u gebruikt phpMussel, aannemende dat ze zijn sonderen omdat hun aanval methode is ineffectief gerenderd als gevolg van het gebruik van phpMussel. Echter, aan de andere kant, als sommige onvoorziene en momenteel onbekende exploiteren binnen van phpMussel of een toekomstige versie daarvan komt aan het licht, en als het mogelijk zou kunnen bieden voor een aanvalsvector, een positief resultaat van zo'n sonderen eigenlijk zou kunnen aanmoedigen aanvallers uw systeem te richten.
-- Als uw gedelegeerde wachtwoorden ooit werden gecompromitteerd, tenzij veranderd, zou bieden een manier voor een aanvaller te omzeilen wat handtekeningen kan anders normaal verhinderen het aanvallen van slagen, of potentieel uitschakelen phpMussel helemaal, dus verschaffen van een manier te renderen de doeltreffendheid van phpMussel betwistbaar.
-
-In elk geval, ongeacht wat u kiest, de keuze is uiteindelijk jou. Standaard, deze controles zullen worden uitgeschakeld, maar hebben een over nadenken, en als u besluit dat u wilt hen, dit sectie verklaart hoe te inschakelen en hoe te gebruiken hen.
 
 ---
 
@@ -977,4 +967,4 @@ phpMussel *DOET* blokkeren van een bestand | __Vals positieve__ | Waar positieve
 ---
 
 
-Laatste Bijgewerkt: 31 Oktober 2016 (2016.10.31).
+Laatste Bijgewerkt: 7 November 2016 (2016.11.07).

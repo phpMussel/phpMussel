@@ -14,6 +14,8 @@
 - 9. [CONOSCIUTI COMPATIBILITÀ PROBLEMI](#SECTION9)
 - 10. [DOMANDE FREQUENTI (FAQ)](#SECTION10)
 
+*Nota per quanto riguarda le traduzioni: In caso di errori (per esempio, discrepanze tra le traduzioni, errori di battitura, ecc), la versione Inglese del README è considerata la versione originale e autorevole. Se trovate errori, il vostro aiuto a correggerli sarebbe il benvenuto.*
+
 ---
 
 
@@ -141,18 +143,6 @@ Anche essere consapevoli che phpMussel è uno scanner *on-demand* (cioè, su ric
 ###4. <a name="SECTION4"></a>GESTIONE FRONT-END
 
 @TODO@
-
-Un paio di motivi per cui si _**DOVREBBE**_ abilita questi controlli:
-- Fornisce un modo per facilmente aggiungere firme alla greylist in casi come quando si scopre una firma che sta producendo un falso positivo durante il caricamento dei file di vostra sistema e non avete il tempo di modificare manualmente e caricare di nuovo il greylist file.
-- Fornisce un modo per permettere a qualcuno diverso da te per controllare la vostra copia di phpMussel senza l'implicita necessità di concedere loro l'accesso a FTP.
-- Fornisce un modo per fornire controllato accesso ai log file.
-- Fornisce un modo per monitorare phpMussel quando l'accesso a FTP o altri convenzionali punti di accesso per il monitoraggio di phpMussel non sono disponibili.
-
-Un paio di motivi per cui si dovrebbe _**NON**_ abilita questi controlli:
-- Fornisce un vettore per i potenziali aggressori e indesiderabili per determinare se si sta utilizzando phpMussel o non (sebbene, questo potrebbe essere sia un ragione per e una ragione contro, dipendente di come si vedono le cose) passando per l'invio ciecamente di comandi ai server come un mezzo per sondare. Da una parte, questo potrebbe scoraggiare gli aggressori dalla mirare di vostra sistema se vengono a sapere che si sta utilizzando phpMussel, supponendo il loro sono sondante perché il loro metodo di attacco è reso inefficace come risultato dell'utilizzo di phpMussel. Ma, d'altra parte, se qualche imprevisto e attualmente sconosciuto sfruttare all'interno phpMussel o una versione futura della stessa viene alla luce, e se potrebbe potenzialmente fornire un vettore di attacco, un positivo risultato da tale sondare potrebbe effettivamente incoraggiare attaccanti per mirante il sistema.
-- Se le delegato password erano stati compromessi, se non cambiato, potrebbe fornire un modo per un utente malintenzionato di circonvallazione qualunque firme possono essere altrimenti normalmente impediscono loro attacchi dal successo, o anche potenzialmente disabilita phpMussel del tutto, così fornendo un modo per rendere l'efficacia della phpMussel discutibile.
-
-In entrambi i casi, senza riguardo di ciò che si sceglie, la scelta in definitiva è la vostra. Per predefinita, questi controlli saranno disattivato, ma hanno un pensateci, e se si decidere li vuoi, questa sezione spiega sia come abilitare e come utilizzare queste cose.
 
 ---
 
@@ -977,4 +967,4 @@ phpMussel *FA* bloccare un file | __Falso positivo__ | Vero positivo (inferenza 
 ---
 
 
-Ultimo Aggiornamento: 31 Ottobre 2016 (2016.10.31).
+Ultimo Aggiornamento: 7 Novembre 2016 (2016.11.07).

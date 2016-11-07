@@ -14,6 +14,8 @@
 - 9. [BEKANNTE KOMPATIBILITÄTSPROBLEME](#SECTION9)
 - 10. [HÄUFIG GESTELLTE FRAGEN (FAQ)](#SECTION10)
 
+*Hinweis für Übersetzungen: Im Falle von Fehlern (z.B, Diskrepanzen zwischen den Übersetzungen, Tippfehler, u.s.w.), die Englische Version des README als die ursprüngliche und maßgebliche Version ist betrachtet. Wenn Sie irgendwelche Fehler finden, ihre Hilfe bei der Korrektur wäre willkommen.*
+
 ---
 
 
@@ -141,18 +143,6 @@ Beachten Sie außerdem, dass phpMussel eine *On-Demand-Scanner*; Keine *On-Acces
 ###4. <a name="SECTION4"></a>FRONT-END-MANAGEMENT
 
 @TODO@
-
-Gründe, warum Sie diese Kontrollen aktivieren sollten:
-- Bietet die Möglichkeit, Signaturen schnell in eine Greylist aufzunehmen, wenn Sie Dateien auf Ihr System hochladen und Fehlalarme erzeugt werden und Sie nicht die Zeit haben, die Greylist manuell zu bearbeiten.
-- Bietet die Möglichkeit, anderen Personen die Kontrollen über phpMussel zu geben, ohne ihnen Zugang über FTP zu gewähren.
-- Bietet die Möglichkeit, kontrollierten Zugang zu Ihren Log-Dateien zu gewähren.
-- Bietet die Möglichkeit, phpMussel zu überwachen, wenn kein FTP-Zugang oder andere Zugangsmethoden verfügbar sind.
-
-Gründe, warum Sie diese Kontrollen nicht aktivieren sollten:
-- Bietet einen Vektor für Angreifer, ob Sie phpMussel nutzen oder nicht (je nach Perspektive könnte dies ein Grund für oder gegen die Nutzung der Browserbefehle sein), indem blind Befehle an Ihren Server gesendet werden (Probing). Einerseits könnte dies den Angreifer entmutigen, sobald er feststellt, dass die Angriffsmethoden aufgrund der Ergebnisse von phpMussel nutzlos sind. Andererseits könnte ein unvorhergesehener oder bislang unbekannter Exploit für phpMussel oder für zukünftige Versionen einen Angriffsverkor bieten, ein positives Ergebnis einer blinden Anfrage könnte den Angreifer ermutigen, Ihr System zu attackieren.
-- Sollte Ihr Passwort kompromittiert worden sein, bietet es dem Angreifer die Möglichkeit, Signaturen zu umgehen, die normalerweise den Angriff verhindert hätten, oder phpMussel vollständig zu deaktivieren.
-
-Die Entscheidung müssen Sie selbst treffen. Standardmäßig sind diese Kontrollen deaktiviert, dennoch erklärt dieser Abschnitt, wie Sie die Kontrollen aktivieren und nutzen.
 
 ---
 
@@ -975,4 +965,4 @@ phpMussel *TUT* blockiert eine Datei | __Falsch-Positiv__ | True-Positiv (korrek
 ---
 
 
-Zuletzt aktualisiert: 31. Oktober 2016 (2016.10.31).
+Zuletzt aktualisiert: 7. November 2016 (2016.11.07).
