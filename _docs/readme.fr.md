@@ -369,12 +369,13 @@ Fichier | Description
 /vault/signatures/xmlxdp_mussel_standard.cvd | Fichier pour XML/XDP signatures.
 /vault/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/cli.php | Module de CLI.
-/vault/components.dat | Contient des informations relatives aux divers composants de phpMussel; Utilisé par la page des mises à jour fournies par de l'accès frontal.
 /vault/config.ini.RenameMe | Fichier de configuration; Contient toutes les options de configuration pour phpMussel, pour comment fonctionner correctement (renommer pour activer).
 /vault/config.php | Module de configuration.
+/vault/core.dat | Contient des informations relatives aux L10N composants de phpMussel; Utilisé par la page des mises à jour fournies par de l'accès frontal.
 /vault/frontend.php | Module de l'accès frontal.
 /vault/functions.php | Fichier de fonctions (essentiel).
 /vault/greylist.csv | CSV de grise listé signatures indiquant pour phpMussel qui signatures il faut ignorer (fichier recréé automatiquement si supprimé).
+/vault/l10n.dat | Contient des informations relatives aux principaux composants de phpMussel; Utilisé par la page des mises à jour fournies par de l'accès frontal.
 /vault/lang.php | Module de linguistiques.
 ※ /vault/scan_kills.txt | Les résultats de chaque fichier téléchargement bloqué/tués par phpMussel.
 ※ /vault/scan_log.txt | Un enregistrement de tout analysé par phpMussel.

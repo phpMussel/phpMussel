@@ -369,12 +369,13 @@ Bestand | Beschrijving
 /vault/signatures/xmlxdp_mussel_standard.cvd | Bestand voor XML/XDP handtekeningen.
 /vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/cli.php | CLI handler.
-/vault/components.dat | Bevat informatie over de verschillende bestanddelen van phpMussel; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
 /vault/config.php | Configuratie handler.
+/vault/core.dat | Bevat informatie over de belangrijkste bestanddelen van phpMussel; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/frontend.php | Frontend-handler.
 /vault/functions.php | Functies bestand (essentieel).
 /vault/greylist.csv | CSV van greylisted handtekeningen aangeeft om phpMussel waarop handtekeningen moet worden negeren (bestand automatisch aangemaakt opnieuw als verwijderd).
+/vault/l10n.dat | Bevat informatie over de L10N bestanddelen van phpMussel; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/lang.php | Taal-handler.
 ※ /vault/scan_kills.txt | Een record van elk bestand uploaden geblokkeerde/gedood door phpMussel.
 ※ /vault/scan_log.txt | Een record van alles gescand door phpMussel.

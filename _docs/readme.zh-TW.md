@@ -370,12 +370,13 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 /vault/signatures/xmlxdp_mussel_standard.cvd | XML/XDP塊簽名文件。
 /vault/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/cli.php | CLI處理文件。
-/vault/components.dat | 包含的相關信息關於phpMussel的各種組件；它使用通過更新功能從前端。
 /vault/config.ini.RenameMe | 配置文件；包含所有配置指令為phpMussel，告訴它什麼做和怎麼正確地經營（重命名為激活）。
 /vault/config.php | 配置處理文件。
+/vault/core.dat | 包含的相關信息關於phpMussel的主要組件；它使用通過更新功能從前端。
 /vault/frontend.php | 前端處理文件。
 /vault/functions.php | 功能處理文件（必不可少）。
 /vault/greylist.csv | 灰名單簽名CSV（逗號分隔變量）文件說明為phpMussel什麼簽名它應該忽略（文件自動重新創建如果刪除）。
+/vault/l10n.dat | 包含的相關信息關於phpMussel的L10N組件；它使用通過更新功能從前端。
 /vault/lang.php | 語音數據。
 ※ /vault/scan_kills.txt | 記錄的所有上傳文件phpMussel受阻／殺。
 ※ /vault/scan_log.txt | 記錄的一切phpMussel掃描。

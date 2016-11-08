@@ -1,0 +1,249 @@
+---
+l10n/en:
+ Name: l10n/en
+ Extended Description:
+  en: English language data
+ Version: 2016.10.30
+ Minimum Required: 1.0.0-DEV+20161108
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.en.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.en.php
+  To:
+   - lang/lang.en.fe.php
+   - lang/lang.en.php
+  Checksum:
+   - c2d2f2091d9948c2b4e07d504d97ccf6:5655
+   - eeb9522ac8311b29b8c961a6cf16c2bf:7366
+ Reannotate: components.dat
+l10n/ar:
+ Name: l10n/ar
+ Extended Description:
+  ar: ملفات اللغة العربية
+ Version: 2016.10.30
+ Minimum Required: 1.0.0-DEV+20161108
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.ar.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.ar.php
+  To:
+   - lang/lang.ar.fe.php
+   - lang/lang.ar.php
+  Checksum:
+   - c63245a83712200d9d66ad951203782f:6356
+   - 1e0a7f59d1aa8dee333a517cfab6bcdc:8731
+ Reannotate: components.dat
+l10n/de:
+ Name: l10n/de
+ Extended Description:
+  de: Deutsche Sprachdateien
+ Version: 2016.10.31
+ Minimum Required: 1.0.0-DEV+20161108
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.de.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.de.php
+  To:
+   - lang/lang.de.fe.php
+   - lang/lang.de.php
+  Checksum:
+   - 9a15c502409c80e42d77b079362c41bd:5928
+   - c6c5aeac00c8a9c17130e202ef4cac7c:7877
+ Reannotate: components.dat
+l10n/es:
+ Name: l10n/es
+ Extended Description:
+  es: Lingüísticos datos Español
+ Version: 2016.10.30
+ Minimum Required: 1.0.0-DEV+20161108
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.es.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.es.php
+  To:
+   - lang/lang.es.fe.php
+   - lang/lang.es.php
+  Checksum:
+   - 664908890ea7d6ef3d616a45c87c8d65:6045
+   - 009777f139a1f24961e4f28923f8f8ab:7744
+ Reannotate: components.dat
+l10n/fr:
+ Name: l10n/fr
+ Extended Description:
+  fr: Linguistiques données en Français
+ Version: 2016.10.30
+ Minimum Required: 1.0.0-DEV+20161108
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.fr.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.fr.php
+  To:
+   - lang/lang.fr.fe.php
+   - lang/lang.fr.php
+  Checksum:
+   - 6d94fbf9059c1afd80da3b07792a1d77:6069
+   - 8b517910eda105ffa00c040c2abb99f4:8021
+ Reannotate: components.dat
+l10n/id:
+ Name: l10n/id
+ Extended Description:
+  id: File Bahasa Indonesia
+ Version: 2016.10.30
+ Minimum Required: 1.0.0-DEV+20161108
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.id.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.id.php
+  To:
+   - lang/lang.id.fe.php
+   - lang/lang.id.php
+  Checksum:
+   - 22099030ac8ac080fbbea876ae87c0fd:5694
+   - 8446476f8e05c503b66dd9fad62560ca:7641
+ Reannotate: components.dat
+l10n/it:
+ Name: l10n/it
+ Extended Description:
+  it: Linguistici dati Italiana
+ Version: 2016.10.30
+ Minimum Required: 1.0.0-DEV+20161108
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.it.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.it.php
+  To:
+   - lang/lang.it.fe.php
+   - lang/lang.it.php
+  Checksum:
+   - d0f09a817360e94b963378d8f90daf5f:5972
+   - 6c3cbacbea9958c8f99ef725c776f154:7834
+ Reannotate: components.dat
+l10n/ja:
+ Name: l10n/ja
+ Extended Description:
+  ja: 日本語言語データ
+ Version: 2016.10.30
+ Minimum Required: 1.0.0-DEV+20161108
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.ja.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.ja.php
+  To:
+   - lang/lang.ja.fe.php
+   - lang/lang.ja.php
+  Checksum:
+   - 5bb87e90c3de07c27e7afd5655f27e30:6737
+   - 372aa5daed48b51cce87c194e2157c9b:9264
+ Reannotate: components.dat
+l10n/pt:
+ Name: l10n/pt
+ Extended Description:
+  pt: Linguagem dados Português
+ Version: 2016.10.30
+ Minimum Required: 1.0.0-DEV+20161108
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.pt.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.pt.php
+  To:
+   - lang/lang.pt.fe.php
+   - lang/lang.pt.php
+  Checksum:
+   - ce0e03fdf18e2db9e460023ea4e357e4:5904
+   - 754c14cb60509e0935ac52b99acf1938:7855
+ Reannotate: components.dat
+l10n/ru:
+ Name: l10n/ru
+ Extended Description:
+  ru: Русском языковые файлы
+ Version: 2016.10.30
+ Minimum Required: 1.0.0-DEV+20161108
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.ru.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.ru.php
+  To:
+   - lang/lang.ru.fe.php
+   - lang/lang.ru.php
+  Checksum:
+   - 7e54369f4879ad114600c376e84a7dca:7054
+   - c5062441f5a81964d3fdf9dff7e10c77:10251
+ Reannotate: components.dat
+l10n/vi:
+ Name: l10n/vi
+ Extended Description:
+  vi: Dữ liệu tiếng Việt
+ Version: 2016.10.30
+ Minimum Required: 1.0.0-DEV+20161108
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.vi.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.vi.php
+  To:
+   - lang/lang.vi.fe.php
+   - lang/lang.vi.php
+  Checksum:
+   - 8acb47c2bf4ca14e6817f470ec208b67:6265
+   - 41e448d4dbfd246234ac2a5105af987d:8791
+ Reannotate: components.dat
+l10n/zh:
+ Name: l10n/zh
+ Extended Description:
+  zh: 中文（简体）语言数据
+ Version: 2016.10.30
+ Minimum Required: 1.0.0-DEV+20161108
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.zh.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.zh.php
+  To:
+   - lang/lang.zh.fe.php
+   - lang/lang.zh.php
+  Checksum:
+   - 2c5f9201c56a0b22f9d4fb8d29334fb9:5501
+   - 6ec8718bad879acb660ef7e30ceca7a5:7257
+ Reannotate: components.dat
+l10n/zh-TW:
+ Name: l10n/zh-TW
+ Extended Description:
+  zh-TW: 中文（傳統）語言數據
+ Version: 2016.10.30
+ Minimum Required: 1.0.0-DEV+20161108
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.zh-tw.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.zh-tw.php
+  To:
+   - lang/lang.zh-tw.fe.php
+   - lang/lang.zh-tw.php
+  Checksum:
+   - 98e5d5b6a7e646bd9d5c1bed158f12ea:5502
+   - 70c64f648647cb5522aa7e6648ee4e8e:7258
+ Reannotate: components.dat
+

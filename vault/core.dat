@@ -1,0 +1,112 @@
+---
+phpMussel:
+ Name: phpMussel
+ Extended Description:
+  en: The main package (minus the signatures, documentation, and configuration).
+  ar: حزمة الابتدائية (ناقص التوقيعات، وثائق، والتكوين).
+  de: Das Hauptpaket (Abzüglich der Unterschriften, Dokumentation, und Konfiguration).
+  es: El paquete principal (menos las firmas, la documentación, y la configuración).
+  fr: Le paquet principal (moins les signatures, la documentation et la configuration).
+  id: Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi).
+  it: Il pacchetto principale (senza le firme, la documentazione, e la configurazione).
+  ja: メインパッケージ（署名、ドキュメンテーション、コンフィギュレーション、は含まれません）。
+  nl: De primaire pakket (zonder de handtekeningen, documentatie en configuratie).
+  pt: O pacote principal (menos as assinaturas, documentação e configuração).
+  ru: Основной пакет (минус подписи/сигнатуры, документация, и конфигурация).
+  vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
+  zh: 主包（没有签名文件，文档，和配置）。
+  zh-TW: 主包（沒有簽名文件，文檔，和配置）。
+ Version: 1.0.0-DEV+20161108
+ Minimum Required: 1.0.0-DEV+20161108
+ Changelog: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/Changelog-v1.txt
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/core.dat
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/.htaccess
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/cache/.htaccess
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/cli.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/config.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/.htaccess
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_accounts.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_accounts_row.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_config.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_greylist.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_home.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_login.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_logs.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_nav_complete_access.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_nav_logs_access_only.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_updates.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_updates_row.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/frontend.css
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/frontend.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/frontend.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/functions.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/.htaccess
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/plugins/.htaccess
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/quarantine/.htaccess
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/signatures/.htaccess
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/template.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/template_custom.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/upload.php
+  To:
+   - .htaccess
+   - cache/.htaccess
+   - cli.php
+   - config.php
+   - fe_assets/.htaccess
+   - fe_assets/_accounts.html
+   - fe_assets/_accounts_row.html
+   - fe_assets/_config.html
+   - fe_assets/_greylist.html
+   - fe_assets/_home.html
+   - fe_assets/_login.html
+   - fe_assets/_logs.html
+   - fe_assets/_nav_complete_access.html
+   - fe_assets/_nav_logs_access_only.html
+   - fe_assets/_updates.html
+   - fe_assets/_updates_row.html
+   - fe_assets/frontend.css
+   - fe_assets/frontend.html
+   - frontend.php
+   - functions.php
+   - lang.php
+   - lang/.htaccess
+   - plugins/.htaccess
+   - quarantine/.htaccess
+   - signatures/.htaccess
+   - template.html
+   - template_custom.html
+   - upload.php
+  Checksum:
+   - 8e03209e7fc6641b45094e584340feff:83
+   - 8e03209e7fc6641b45094e584340feff:83
+   - 60bced111c022f7c28a21e16c303e2eb:31334
+   - 0382374a06a68954b827fb1416997e04:24743
+   - 8e03209e7fc6641b45094e584340feff:83
+   - 7e0b51da5871513e58c21d85b22f45d0:1369
+   - 5381ed9947252e423321855b219d7162:778
+   - 22fcb4847e99567d38d51609430c7106:186
+   - 71412c45e0293c6a91524bb2412cbf61:181
+   - ff9af318f33d96b04772103965db3336:306
+   - 225b0b2569bb023d49ecf3faef43d7ff:475
+   - 6d84ff92ef31e583e54dc12c099cf450:207
+   - e6957434723c77e46682d509497b97ee:820
+   - f610ba3221210b4d914af648cf721485:518
+   - 7a301cd9d67e6fa4e77013e3d636442c:569
+   - 5893780b1919588f818ee4dc2cf9f4ec:635
+   - a056536fa93f77d72fe47a70e6b976f6:3569
+   - 5dc772bbc04fe7f47986103873dfc655:929
+   - 8c4bded95f55e92bb75d69ef159d397c:70632
+   - ff968ce9bb061738e3963d14218c0de0:402128
+   - 6e7c8fc61526e506584c19fa9551aef0:3264
+   - 8e03209e7fc6641b45094e584340feff:83
+   - 8e03209e7fc6641b45094e584340feff:83
+   - 8e03209e7fc6641b45094e584340feff:83
+   - 8e03209e7fc6641b45094e584340feff:83
+   - 22caa1bc18e07a5525304f73763e2285:1782
+   - f38986d75bb8435dfcab5a5bb2ff226d:1239
+   - 7badae0f41b7e28b6f9e6ee4cb9a9ef4:36836
+ Reannotate: components.dat
+

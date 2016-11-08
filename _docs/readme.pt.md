@@ -369,12 +369,13 @@ Arquivo | Descrição
 /vault/signatures/xmlxdp_mussel_standard.cvd | Arquivo por XML/XDP assinaturas.
 /vault/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 /vault/cli.php | Módulo de CLI.
-/vault/components.dat | Contém informações relativas aos vários componentes do phpMussel; Usado pelo recurso atualizações fornecidas pelo front-end.
 /vault/config.ini.RenameMe | Arquivo de configuração; Contém todas as opções de configuração para phpMussel, dizendo-lhe o que fazer e como operar corretamente (renomear para ativar).
 /vault/config.php | Módulo de configuração.
+/vault/core.dat | Contém informações relativas aos principais componentes do phpMussel; Usado pelo recurso atualizações fornecidas pelo front-end.
 /vault/frontend.php | Módulo do front-end.
 /vault/functions.php | Arquivo de funções.
 /vault/greylist.csv | CSV de greylisted assinaturas indicando a phpMussel quais assinaturas deve ser ignorado (arquivo automaticamente recriado se deletado).
+/vault/l10n.dat | Contém informações relativas aos L10N componentes do phpMussel; Usado pelo recurso atualizações fornecidas pelo front-end.
 /vault/lang.php | Linguagem dados.
 ※ /vault/scan_kills.txt | Um registro de tudos os arquivos carregamentos bloqueado ou matado por phpMussel.
 ※ /vault/scan_log.txt | Um registro de tudo analisado por phpMussel.

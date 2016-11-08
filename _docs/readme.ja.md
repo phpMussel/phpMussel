@@ -369,12 +369,13 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /vault/signatures/xmlxdp_mussel_standard.cvd | XML/XDP署名用ファイル。
 /vault/.htaccess | ハイパーテキスト・アクセスファイル（この場合、本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/cli.php | CLIハンドラ。
-/vault/components.dat | phpMusselのコンポーネント情報が含まれています；アップデート機能で使用（フロントエンドが提供します）。
 /vault/config.ini.RenameMe | phpMussel設定ファイル；phpMusselの全オプション設定を記載しています。それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
 /vault/config.php | コンフィギュレーション・ハンドラ。
+/vault/core.dat | phpMusselの主なコンポーネント情報が含まれています；アップデート機能で使用（フロントエンドが提供します）。
 /vault/frontend.php | フロントエンド・ハンドラ。
 /vault/functions.php | 関数ファイル（本質的ファイル）。
 /vault/greylist.csv | グレーリスト化された署名のCSVで、phpMusselがどの署名を無視すべきかを指示するものです（削除しても自動的に再作成されます）。
+/vault/l10n.dat | phpMusselのL10Nコンポーネント情報が含まれています；アップデート機能で使用（フロントエンドが提供します）。
 /vault/lang.php | 言語・ハンドラ。
 ※ /vault/scan_kills.txt | phpMusselによりブロック／削除されたアップロードファイルの全記録。
 ※ /vault/scan_log.txt | phpMusselによりスキャンされたものの全記録。
