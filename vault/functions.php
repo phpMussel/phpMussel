@@ -8207,6 +8207,42 @@ $phpMussel['FormatFilesize'] = function (&$Filesize) use (&$phpMussel) {
     $Filesize = number_format($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $Scale[$Iterate];
 };
 
+$phpMussel['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) {
+    $Entry64 = base64_encode($Entry);
+    while (($EntryPos = strpos($Source, "\n" . $Entry64 . ',')) !== false) {
+        $EoL = strpos($Source, "\n", $EntryPos + 1);
+        if ($EoL !== false) {
+            $Line = substr($Source, $EntryPos, $EoL - $EntryPos);
+            $Source = str_replace($Line, '', $Source);
+            $Rebuild = true;
+        }
+    }
+};
+
+$phpMussel['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expires) use (&$phpMussel) {
+    $phpMussel['FECacheRemove']($Source, $Rebuild, $Entry);
+    $Expires = (int)$Expires;
+    $NewLine = base64_encode($Entry) . ',' . base64_encode($Data) . ',' . $Expires . "\n";
+    $Source .= $NewLine;
+    $Rebuild = true;
+};
+
+$phpMussel['FECacheGet'] = function ($Source, $Entry) {
+    $Entry = base64_encode($Entry);
+    $EntryPos = strpos($Source, "\n" . $Entry . ',');
+    if ($EntryPos !== false) {
+        $EoL = strpos($Source, "\n", $EntryPos + 1);
+        if ($EoL !== false) {
+            $Line = substr($Source, $EntryPos, $EoL - $EntryPos);
+            $Entry = explode(',', $Line);
+            if (!empty($Entry[1])) {
+                return base64_decode($Entry[1]);
+            }
+        }
+    }
+    return false;
+};
+
 /**
  * Compare two different versions of phpMussel, or two different versions of a
  * component for phpMussel, to see which is newer (used by the updater).

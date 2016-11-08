@@ -37,6 +37,7 @@ $phpMussel['FE'] = array(
     'Traverse' => "\x01(?:^\.|\.\.|[\x01-\x1f\[-`/\?\*\$])\x01i",
     'UserList' => "\n",
     'SessionList' => "\n",
+    'Cache' => "\n",
     'UserState' => 0,
     'UserRaw' => '',
     'Permissions' => 0,
@@ -78,16 +79,17 @@ if ($phpMussel['QueryVars']['phpmussel-page'] === 'favicon') {
 /** Set form target if not already set. */
 $phpMussel['FE']['FormTarget'] = (empty($_POST['phpmussel-form-target'])) ? '' : $_POST['phpmussel-form-target'];
 
-/** Fetch user list and sessions list. */
+/** Fetch user list, sessions list and the front-end cache. */
 if (file_exists($phpMussel['Vault'] . 'fe_assets/frontend.dat')) {
     $phpMussel['FE']['FrontEndData'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/frontend.dat');
     $phpMussel['FE']['Rebuild'] = false;
 } else {
-    $phpMussel['FE']['FrontEndData'] = "USERS\n-----\nYWRtaW4=," . $phpMussel['FE']['DefaultPassword'] . ",1\n\nSESSIONS\n--------\n";
+    $phpMussel['FE']['FrontEndData'] = "USERS\n-----\nYWRtaW4=," . $phpMussel['FE']['DefaultPassword'] . ",1\n\nSESSIONS\n--------\n\nCACHE\n-----\n";
     $phpMussel['FE']['Rebuild'] = true;
 }
 $phpMussel['FE']['UserListPos'] = strpos($phpMussel['FE']['FrontEndData'], "USERS\n-----\n");
 $phpMussel['FE']['SessionListPos'] = strpos($phpMussel['FE']['FrontEndData'], "SESSIONS\n--------\n");
+$phpMussel['FE']['CachePos'] = strpos($phpMussel['FE']['FrontEndData'], "CACHE\n-----\n");
 if ($phpMussel['FE']['UserListPos'] !== false) {
     $phpMussel['FE']['UserList'] = substr(
         $phpMussel['FE']['FrontEndData'],
@@ -98,12 +100,22 @@ if ($phpMussel['FE']['UserListPos'] !== false) {
 if ($phpMussel['FE']['SessionListPos'] !== false) {
     $phpMussel['FE']['SessionList'] = substr(
         $phpMussel['FE']['FrontEndData'],
-        $phpMussel['FE']['SessionListPos'] + 17
+        $phpMussel['FE']['SessionListPos'] + 17,
+        $phpMussel['FE']['CachePos'] - $phpMussel['FE']['SessionListPos'] - 18
+    );
+}
+if ($phpMussel['FE']['CachePos'] !== false) {
+    $phpMussel['FE']['Cache'] = substr(
+        $phpMussel['FE']['FrontEndData'],
+        $phpMussel['FE']['CachePos'] + 11
     );
 }
 
 /** Clear expired sessions. */
 $phpMussel['ClearExpired']($phpMussel['FE']['SessionList'], $phpMussel['FE']['Rebuild']);
+
+/** Clear expired cache entries. */
+$phpMussel['ClearExpired']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild']);
 
 /** Attempt to log in the user. */
 if ($phpMussel['FE']['FormTarget'] === 'login') {
@@ -532,8 +544,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             !empty($_POST['ID']) &&
             isset($phpMussel['Components']['Meta'][$_POST['ID']]['Remote'])
         ) {
-            $phpMussel['Components']['Meta'][$_POST['ID']]['RemoteData'] = $phpMussel['FetchCache'](
-                'Remote-' . base64_encode($phpMussel['Components']['Meta'][$_POST['ID']]['Remote'])
+            $phpMussel['Components']['Meta'][$_POST['ID']]['RemoteData'] = $phpMussel['FECacheGet'](
+                $phpMussel['FE']['Cache'],
+                $phpMussel['Components']['Meta'][$_POST['ID']]['Remote']
             );
             if (!$phpMussel['Components']['Meta'][$_POST['ID']]['RemoteData']) {
                 $phpMussel['Components']['Meta'][$_POST['ID']]['RemoteData'] =
@@ -548,10 +561,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 if (empty($phpMussel['Components']['Meta'][$_POST['ID']]['RemoteData'])) {
                     $phpMussel['Components']['Meta'][$_POST['ID']]['RemoteData'] = '-';
                 }
-                $phpMussel['CacheAction'] = $phpMussel['SaveCache'](
-                    'Remote-' . base64_encode($phpMussel['Components']['Meta'][$_POST['ID']]['Remote']),
-                    $phpMussel['Time'] + 3600,
-                    $phpMussel['Components']['Meta'][$_POST['ID']]['RemoteData']
+                $phpMussel['FECacheAdd'](
+                    $phpMussel['FE']['Cache'],
+                    $phpMussel['FE']['Rebuild'],
+                    $phpMussel['Components']['Meta'][$_POST['ID']]['Remote'],
+                    $phpMussel['Components']['Meta'][$_POST['ID']]['RemoteData'],
+                    $phpMussel['Now'] + 3600
                 );
             }
             if (
@@ -808,8 +823,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['StatClass'] = 's';
             }
         } else {
-            $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['RemoteData'] = $phpMussel['FetchCache'](
-                'Remote-' . base64_encode($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Remote'])
+            $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['RemoteData'] = $phpMussel['FECacheGet'](
+                $phpMussel['FE']['Cache'],
+                $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Remote']
             );
             if (!$phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['RemoteData']) {
                 $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['RemoteData'] =
@@ -826,10 +842,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 if (empty($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['RemoteData'])) {
                     $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['RemoteData'] = '-';
                 }
-                $phpMussel['CacheAction'] = $phpMussel['SaveCache'](
-                    'Remote-' . base64_encode($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Remote']),
-                    $phpMussel['Time'] + 3600,
-                    $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['RemoteData']
+                $phpMussel['FECacheAdd'](
+                    $phpMussel['FE']['Cache'],
+                    $phpMussel['FE']['Rebuild'],
+                    $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Remote'],
+                    $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['RemoteData'],
+                    $phpMussel['Now'] + 3600
                 );
             }
             if (
@@ -1040,8 +1058,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             continue;
         }
         $phpMussel['Components']['ReannotateThis'] = $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Reannotate'];
-        $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['RemoteData'] = $phpMussel['FetchCache'](
-            'Remote-' . base64_encode($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Remote'])
+        $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['RemoteData'] = $phpMussel['FECacheGet'](
+            $phpMussel['FE']['Cache'],
+            $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Remote']
         );
         if (!$phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['RemoteData']) {
             $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['RemoteData'] =
@@ -1058,10 +1077,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             if (empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['RemoteData'])) {
                 $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['RemoteData'] = '-';
             }
-            $phpMussel['CacheAction'] = $phpMussel['SaveCache'](
-                'Remote-' . base64_encode($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Remote']),
-                $phpMussel['Time'] + 3600,
-                $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['RemoteData']
+            $phpMussel['FECacheAdd'](
+                $phpMussel['FE']['Cache'],
+                $phpMussel['FE']['Rebuild'],
+                $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Remote'],
+                $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['RemoteData'],
+                $phpMussel['Now'] + 3600
             );
         }
         if (!preg_match(
@@ -1263,10 +1284,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
 
 /** Rebuild cache. */
 if ($phpMussel['FE']['Rebuild']) {
-    $phpMussel['FE']['FrontEndData'] = "USERS\n-----" . $phpMussel['FE']['UserList'] . "\nSESSIONS\n--------" . $phpMussel['FE']['SessionList'];
-    $phpMussel['FE']['Handle'] = fopen($phpMussel['Vault'] . 'fe_assets/frontend.dat', 'w');
-    fwrite($phpMussel['FE']['Handle'], $phpMussel['FE']['FrontEndData']);
-    fclose($phpMussel['FE']['Handle']);
+    $phpMussel['FE']['FrontEndData'] =
+        "USERS\n-----" . $phpMussel['FE']['UserList'] .
+        "\nSESSIONS\n--------" . $phpMussel['FE']['SessionList'] .
+        "\nCACHE\n-----" . $phpMussel['FE']['Cache'];
+    $phpMussel['Handle'] = fopen($phpMussel['Vault'] . 'fe_assets/frontend.dat', 'w');
+    fwrite($phpMussel['Handle'], $phpMussel['FE']['FrontEndData']);
+    fclose($phpMussel['Handle']);
 }
 
 die;
