@@ -19,7 +19,7 @@ phpMussel:
  Version: 1.0.0-DEV+20161108
  Minimum Required: 1.0.0-DEV+20161108
  Changelog: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/Changelog-v1.txt
- Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/core.dat
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/core.dat
  Files:
   From:
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/.htaccess

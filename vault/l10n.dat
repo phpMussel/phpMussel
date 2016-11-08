@@ -5,7 +5,7 @@ l10n/en:
   en: English language data
  Version: 2016.10.30
  Minimum Required: 1.0.0-DEV+20161108
- Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
   From:
@@ -24,7 +24,7 @@ l10n/ar:
   ar: ملفات اللغة العربية
  Version: 2016.10.30
  Minimum Required: 1.0.0-DEV+20161108
- Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
   From:
@@ -43,7 +43,7 @@ l10n/de:
   de: Deutsche Sprachdateien
  Version: 2016.10.31
  Minimum Required: 1.0.0-DEV+20161108
- Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
   From:
@@ -62,7 +62,7 @@ l10n/es:
   es: Lingüísticos datos Español
  Version: 2016.10.30
  Minimum Required: 1.0.0-DEV+20161108
- Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
   From:
@@ -81,7 +81,7 @@ l10n/fr:
   fr: Linguistiques données en Français
  Version: 2016.10.30
  Minimum Required: 1.0.0-DEV+20161108
- Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
   From:
@@ -100,7 +100,7 @@ l10n/id:
   id: File Bahasa Indonesia
  Version: 2016.10.30
  Minimum Required: 1.0.0-DEV+20161108
- Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
   From:
@@ -119,7 +119,7 @@ l10n/it:
   it: Linguistici dati Italiana
  Version: 2016.10.30
  Minimum Required: 1.0.0-DEV+20161108
- Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
   From:
@@ -138,7 +138,7 @@ l10n/ja:
   ja: 日本語言語データ
  Version: 2016.10.30
  Minimum Required: 1.0.0-DEV+20161108
- Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
   From:
@@ -157,7 +157,7 @@ l10n/pt:
   pt: Linguagem dados Português
  Version: 2016.10.30
  Minimum Required: 1.0.0-DEV+20161108
- Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
   From:
@@ -176,7 +176,7 @@ l10n/ru:
   ru: Русском языковые файлы
  Version: 2016.10.30
  Minimum Required: 1.0.0-DEV+20161108
- Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
   From:
@@ -195,7 +195,7 @@ l10n/vi:
   vi: Dữ liệu tiếng Việt
  Version: 2016.10.30
  Minimum Required: 1.0.0-DEV+20161108
- Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
   From:
@@ -214,7 +214,7 @@ l10n/zh:
   zh: 中文（简体）语言数据
  Version: 2016.10.30
  Minimum Required: 1.0.0-DEV+20161108
- Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
   From:
@@ -233,7 +233,7 @@ l10n/zh-TW:
   zh-TW: 中文（傳統）語言數據
  Version: 2016.10.30
  Minimum Required: 1.0.0-DEV+20161108
- Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/l10n.dat
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
   From:
