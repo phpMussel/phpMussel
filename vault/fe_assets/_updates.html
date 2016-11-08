@@ -1,11 +1,19 @@
 <table width="100%">
-<tr valign="top">
+<tr>
     <td width="20%" class="nav">
 
 {nav}
     </td>
     <td width="80%" class="right">
-        Updates (coming soon).
+        <div class="s">{state_msg}</div>
+        <table width="100%">
+        <tr>
+            <td class="h2"><div class="s">{field_component}</div></td>
+            <td class="h2"><div class="s">{field_your_version}</div></td>
+            <td class="h2"><div class="s">{field_latest_version}</div></td>
+            <td class="h2"><div class="s">{field_status} | {field_options}</div></td>
+        </tr>{Components}
+        </table>
     </td>
 </tr>
 </table>

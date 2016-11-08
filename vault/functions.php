@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.11.05).
+ * This file: Functions file (last modified: 2016.11.08).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -8187,8 +8187,14 @@ $phpMussel['WrapRedText'] = function($Err) {
 };
 
 /** Format filesize information. */
-$phpMussel['FormatFilesize'] = function (&$Filesize) {
-    $Scale = array('bytes', 'KB', 'MB', 'GB', 'TB');
+$phpMussel['FormatFilesize'] = function (&$Filesize) use (&$phpMussel) {
+    $Scale = array(
+        $phpMussel['lang']['field_size_bytes'],
+        $phpMussel['lang']['field_size_KB'],
+        $phpMussel['lang']['field_size_MB'],
+        $phpMussel['lang']['field_size_GB'],
+        $phpMussel['lang']['field_size_TB']
+    );
     $Iterate = 0;
     $Filesize = (int)$Filesize;
     while ($Filesize > 1024) {
@@ -8199,4 +8205,104 @@ $phpMussel['FormatFilesize'] = function (&$Filesize) {
         }
     }
     $Filesize = number_format($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $Scale[$Iterate];
+};
+
+/**
+ * Compare two different versions of phpMussel, or two different versions of a
+ * component for phpMussel, to see which is newer (used by the updater).
+ *
+ * @param string $A The 1st version string.
+ * @param string $B The 2nd version string.
+ * return bool True if the 2nd version is newer than the 1st version, and false
+ *      otherwise (ie, if they're the same, or if the 1st version is newer).
+ */
+$phpMussel['VersionCompare'] = function ($A, $B) {
+    $Normalise = function (&$Ver) {
+        $Ver =
+            preg_match("\x01^v?([0-9]+)$\x01i", $Ver, $Matches) ?:
+            preg_match("\x01^v?([0-9]+)\.([0-9]+)$\x01i", $Ver, $Matches) ?:
+            preg_match("\x01^v?([0-9]+)\.([0-9]+)\.([0-9]+)(-[0-9a-z_+\\/]+)?$\x01i", $Ver, $Matches) ?:
+            preg_match("\x01^([0-9]{1,4})[.-]([0-9]{1,2})[.-]([0-9]{1,4})([.+-][0-9a-z_+\\/]+)?$\x01i", $Ver, $Matches) ?:
+            preg_match("\x01^([a-z]+)-([0-9a-z]+)-([0-9a-z]+)$\x01i", $Ver, $Matches);
+        $Ver = array(
+            'Major' => isset($Matches[1]) ? $Matches[1] : 0,
+            'Minor' => isset($Matches[2]) ? $Matches[2] : 0,
+            'Patch' => isset($Matches[3]) ? $Matches[3] : 0,
+            'Build' => isset($Matches[4]) ? substr($Matches[4], 1) : 0
+        );
+        $Ver = array_map(function () {
+            $Var = func_get_args()[0];
+            $VarInt = (int)$Var;
+            $VarLen = strlen($Var);
+            if ($Var == $VarInt && strlen($VarInt) === $VarLen && $VarLen > 1) {
+                return $VarInt;
+            }
+            return strtolower($Var);
+        }, $Ver);
+    };
+    $Normalise($A);
+    $Normalise($B);
+    return (
+        $B['Major'] > $A['Major'] || (
+            $B['Major'] === $A['Major'] &&
+            $B['Minor'] > $A['Minor']
+        ) || (
+            $B['Major'] === $A['Major'] &&
+            $B['Minor'] === $A['Minor'] &&
+            $B['Patch'] > $A['Patch']
+        ) || (
+            $B['Major'] === $A['Major'] &&
+            $B['Minor'] === $A['Minor'] &&
+            $B['Patch'] === $A['Patch'] &&
+            !empty($A['Build']) && (
+                empty($B['Build']) || $B['Build'] > $A['Build']
+            )
+        )
+    );
+};
+
+/**
+ * Remove sub-arrays from an array.
+ *
+ * @param array $Arr An array.
+ * return array An array.
+ */
+$phpMussel['ArrayFlatten'] = function ($Arr) {
+    return array_filter($Arr, function () {
+        return (!is_array(func_get_args()[0]));
+    });
+};
+
+/** Isolate a L10N array down to a single relevant L10N string. */
+$phpMussel['IsolateL10N'] = function (&$Arr, $Lang) {
+    if (isset($Arr[$Lang])) {
+        $Arr = $Arr[$Lang];
+    } elseif (isset($Arr['en'])) {
+        $Arr = $Arr['en'];
+    } else {
+        $Key = key($Arr);
+        $Arr = $Arr[$Key];
+    }
+};
+
+/**
+ * Append one or two values to a string, depending on whether that string is
+ * empty prior to calling the closure (allows cleaner code in some areas).
+ *
+ * @param string $String The string to work with.
+ * @param string $Delimit Appended first, if the string is not empty.
+ * @param string $Append Appended second, and always (empty or otherwise).
+ */
+$phpMussel['AppendToString'] = function (&$String, $Delimit = '', $Append = '') {
+    if (!empty($String)) {
+        $String .= $Delimit;
+    }
+    $String .= $Append;
+};
+
+/** Check whether input is an array, and if it isn't, make it so. */
+$phpMussel['Arrayify'] = function (&$Input) {
+    if (!is_array($Input)) {
+        $Input = array($Input);
+    }
 };
