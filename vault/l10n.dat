@@ -3,8 +3,8 @@ l10n/en:
  Name: l10n/en
  Extended Description:
   en: English language data
- Version: 2016.11.10
- Minimum Required: 1.0.0-DEV+20161108
+ Version: 2016.11.12
+ Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
@@ -22,8 +22,8 @@ l10n/ar:
  Name: l10n/ar
  Extended Description:
   ar: ملفات اللغة العربية
- Version: 2016.11.10
- Minimum Required: 1.0.0-DEV+20161108
+ Version: 2016.11.12
+ Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
@@ -41,8 +41,8 @@ l10n/de:
  Name: l10n/de
  Extended Description:
   de: Deutsche Sprachdateien
- Version: 2016.11.10
- Minimum Required: 1.0.0-DEV+20161108
+ Version: 2016.11.12
+ Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
@@ -60,8 +60,8 @@ l10n/es:
  Name: l10n/es
  Extended Description:
   es: Lingüísticos datos Español
- Version: 2016.11.10
- Minimum Required: 1.0.0-DEV+20161108
+ Version: 2016.11.12
+ Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
@@ -79,8 +79,8 @@ l10n/fr:
  Name: l10n/fr
  Extended Description:
   fr: Linguistiques données en Français
- Version: 2016.11.10
- Minimum Required: 1.0.0-DEV+20161108
+ Version: 2016.11.12
+ Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
@@ -98,8 +98,8 @@ l10n/id:
  Name: l10n/id
  Extended Description:
   id: File Bahasa Indonesia
- Version: 2016.11.10
- Minimum Required: 1.0.0-DEV+20161108
+ Version: 2016.11.12
+ Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
@@ -117,8 +117,8 @@ l10n/it:
  Name: l10n/it
  Extended Description:
   it: Linguistici dati Italiana
- Version: 2016.11.10
- Minimum Required: 1.0.0-DEV+20161108
+ Version: 2016.11.12
+ Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
@@ -136,8 +136,8 @@ l10n/ja:
  Name: l10n/ja
  Extended Description:
   ja: 日本語言語データ
- Version: 2016.11.10
- Minimum Required: 1.0.0-DEV+20161108
+ Version: 2016.11.12
+ Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
@@ -155,8 +155,8 @@ l10n/nl:
  Name: l10n/nl
  Extended Description:
   nl: Nederlandse taaldata/taalgegevens
- Version: 2016.11.10
- Minimum Required: 1.0.0-DEV+20161108
+ Version: 2016.11.12
+ Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
@@ -174,8 +174,8 @@ l10n/pt:
  Name: l10n/pt
  Extended Description:
   pt: Linguagem dados Português
- Version: 2016.11.10
- Minimum Required: 1.0.0-DEV+20161108
+ Version: 2016.11.12
+ Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
@@ -193,8 +193,8 @@ l10n/ru:
  Name: l10n/ru
  Extended Description:
   ru: Русском языковые файлы
- Version: 2016.11.10
- Minimum Required: 1.0.0-DEV+20161108
+ Version: 2016.11.12
+ Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
@@ -212,8 +212,8 @@ l10n/vi:
  Name: l10n/vi
  Extended Description:
   vi: Dữ liệu tiếng Việt
- Version: 2016.11.10
- Minimum Required: 1.0.0-DEV+20161108
+ Version: 2016.11.12
+ Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
@@ -231,8 +231,8 @@ l10n/zh:
  Name: l10n/zh
  Extended Description:
   zh: 中文（简体）语言数据
- Version: 2016.11.10
- Minimum Required: 1.0.0-DEV+20161108
+ Version: 2016.11.12
+ Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:
@@ -250,8 +250,8 @@ l10n/zh-TW:
  Name: l10n/zh-TW
  Extended Description:
   zh-TW: 中文（傳統）語言數據
- Version: 2016.11.10
- Minimum Required: 1.0.0-DEV+20161108
+ Version: 2016.11.12
+ Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
  Files:

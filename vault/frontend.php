@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.11.11).
+ * This file: Front-end handler (last modified: 2016.11.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -598,7 +598,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                     $phpMussel['FE']['Rebuild'],
                     $phpMussel['Components']['Meta'][$_POST['ID']]['Remote'],
                     $phpMussel['Components']['Meta'][$_POST['ID']]['RemoteData'],
-                    $phpMussel['Now'] + 3600
+                    $phpMussel['Time'] + 3600
                 );
             }
             if (
@@ -885,7 +885,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                     $phpMussel['FE']['Rebuild'],
                     $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Remote'],
                     $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['RemoteData'],
-                    $phpMussel['Now'] + 3600
+                    $phpMussel['Time'] + 3600
                 );
             }
             if (
@@ -1120,7 +1120,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 $phpMussel['FE']['Rebuild'],
                 $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Remote'],
                 $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['RemoteData'],
-                $phpMussel['Now'] + 3600
+                $phpMussel['Time'] + 3600
             );
         }
         if (!preg_match(
