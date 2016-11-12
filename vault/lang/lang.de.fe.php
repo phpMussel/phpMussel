@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2016.10.31).
+ * This file: German language data for the front-end (last modified: 2016.11.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -27,6 +27,7 @@ $phpMussel['lang']['field_delete_account'] = 'Konto löschen';
 $phpMussel['lang']['field_install'] = 'Installieren';
 $phpMussel['lang']['field_latest_version'] = 'Letzte Version';
 $phpMussel['lang']['field_log_in'] = 'Einloggen';
+$phpMussel['lang']['field_more_fields'] = 'Mehr Felder';
 $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'Optionen';
 $phpMussel['lang']['field_password'] = 'Passwort';
@@ -51,6 +52,7 @@ $phpMussel['lang']['link_greylist'] = 'Greylist';
 $phpMussel['lang']['link_home'] = 'Startseite';
 $phpMussel['lang']['link_logs'] = 'Protokolldateien';
 $phpMussel['lang']['link_updates'] = 'Aktualisierungen';
+$phpMussel['lang']['link_upload_test'] = 'Upload-Prüfung';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Ausgewählte Protokolldatei existiert nicht!';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'Keine Protokolldateien vorhanden.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Keine Protokolldatei ausgewählt.';
@@ -81,9 +83,14 @@ $phpMussel['lang']['state_default_password'] = 'Warnung: Verwendet das Standard-
 $phpMussel['lang']['state_logged_in'] = 'Eingeloggt';
 $phpMussel['lang']['state_logs_access_only'] = 'Zugriff nur auf Protokolldateien';
 $phpMussel['lang']['state_password_not_valid'] = 'Warnung: Dieses Konto verwendet kein gültiges Passwort!';
-$phpMussel['lang']['tip_hello'] = 'Hallo, {username}.';
+$phpMussel['lang']['tip_accounts'] = 'Hallo, {username}.<br />Das Kontenseite macht es möglich zu kontrollieren, wer kann Zugriff auf der phpMussel Front-End haben.';
+$phpMussel['lang']['tip_config'] = 'Hallo, {username}.<br />Das Konfigurationsseite macht es möglich zu ändern das Konfiguration für phpMussel von der Front-End.';
+$phpMussel['lang']['tip_greylist'] = 'Hallo, {username}.<br />Das Greylist-Seite macht es möglich zu ändern das phpMussel Greylist von der Front-End.';
+$phpMussel['lang']['tip_home'] = 'Hallo, {username}.<br />Dies ist die Homepage der phpMussel Front-End. Wählen Sie einen Link aus dem Navigationsmenü auf der linken um fortzufahren.';
 $phpMussel['lang']['tip_login'] = 'Standard-Benutzername: <span class="txtRd">admin</span> – Standard-Passwort: <span class="txtRd">password</span>';
-$phpMussel['lang']['tip_logs'] = 'Wählen Sie eine Protokolldatei aus der folgenden Liste um den Inhalt dieser Protokolldatei anzuzeigen.';
+$phpMussel['lang']['tip_logs'] = 'Hallo, {username}.<br />Wählen Sie eine Protokolldatei aus der folgenden Liste um den Inhalt dieser Protokolldatei anzuzeigen.';
+$phpMussel['lang']['tip_updates'] = 'Hallo, {username}.<br />Das Aktualisierungsseite macht es möglich für Sie zu installieren, zu deinstallieren und zu aktualisieren die verschiedenen Komponenten von phpMussel (das Kernpaket, Signaturen, Plugins, L10N-Dateien, u.s.w.).';
+$phpMussel['lang']['tip_upload_test'] = 'Hallo, {username}.<br />Das Upload-Testseite enthält ein Standard-Datei-Upload-Formular, das macht es möglich zu prüfen ob eine Datei normalerweise gestoppt von phpMussel werden soll, wenn Sie versuchen es hochzuladen.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Konten';
 $phpMussel['lang']['title_config'] = 'phpMussel – Konfiguration';
 $phpMussel['lang']['title_greylist'] = 'phpMussel – Greylist';
@@ -91,3 +98,4 @@ $phpMussel['lang']['title_home'] = 'phpMussel – Startseite';
 $phpMussel['lang']['title_login'] = 'phpMussel – Einloggen';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Protokolldateien';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Aktualisierungen';
+$phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload-Prüfung';

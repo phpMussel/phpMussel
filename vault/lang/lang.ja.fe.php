@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2016.10.30).
+ * This file: Japanese language data for the front-end (last modified: 2016.11.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -27,6 +27,7 @@ $phpMussel['lang']['field_delete_account'] = 'アカウントを削除する';
 $phpMussel['lang']['field_install'] = 'インストール';
 $phpMussel['lang']['field_latest_version'] = '最新バージョン';
 $phpMussel['lang']['field_log_in'] = 'ログイン';
+$phpMussel['lang']['field_more_fields'] = 'フィールドを追加します';
 $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'オプション';
 $phpMussel['lang']['field_password'] = 'パスワード';
@@ -51,6 +52,7 @@ $phpMussel['lang']['link_greylist'] = 'グレーリスト';
 $phpMussel['lang']['link_home'] = 'ホーム';
 $phpMussel['lang']['link_logs'] = 'ロゴス';
 $phpMussel['lang']['link_updates'] = 'アップデート';
+$phpMussel['lang']['link_upload_test'] = 'アップロード・テスト';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = '選択したログは存在しません！';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'いいえログが利用可能。';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'ログが選択されていません。';
@@ -81,9 +83,14 @@ $phpMussel['lang']['state_default_password'] = '警告：デフォルトのパ�
 $phpMussel['lang']['state_logged_in'] = 'ログインしています';
 $phpMussel['lang']['state_logs_access_only'] = 'ログのみにアクセス';
 $phpMussel['lang']['state_password_not_valid'] = '警告：このアカウントには有効なパスワードを使用していません！';
-$phpMussel['lang']['tip_hello'] = 'こんにちは、{username}。';
+$phpMussel['lang']['tip_accounts'] = 'こんにちは、{username}。<br />アカウント・ページは、phpMusselフロントエンドにアクセスできるユーザーを制御できます。';
+$phpMussel['lang']['tip_config'] = 'こんにちは、{username}。<br />コンフィグレーション・ページは、フロントエンドからphpMusselの設定を変更することができます。';
+$phpMussel['lang']['tip_greylist'] = 'こんにちは、{username}。<br />グレイリスト・ページは、フロントエンドからphpMussel greylistを変更することができます。';
+$phpMussel['lang']['tip_home'] = 'こんにちは、{username}。<br />これはphpMusselフロントエンドのホームページです。続行するには、左側のナビゲーションメニューからリンクを選択します。';
 $phpMussel['lang']['tip_login'] = 'デフォルト・ユーザ名： <span class="txtRd">admin</span> – デフォルト・パスワード： <span class="txtRd">password</span>';
-$phpMussel['lang']['tip_logs'] = 'そのログの内容を表示するために、次のリストからログを選択します。';
+$phpMussel['lang']['tip_logs'] = 'こんにちは、{username}。<br />そのログの内容を表示するために、次のリストからログを選択します。';
+$phpMussel['lang']['tip_updates'] = 'こんにちは、{username}。<br />アップデート・ページは、phpMusselのさまざまなコンポーネントはインストール、アンインストール、更新が可能です（コアパッケージ、署名、プラグイン、L10Nファイル、等）。';
+$phpMussel['lang']['tip_upload_test'] = 'こんにちは、{username}。<br />アップロード・テスト・ページ、標準的なファイルアップロードフォームを含んでいます、ファイルが通常ブロックされるかどうかをテストすることができます。';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – アカウント';
 $phpMussel['lang']['title_config'] = 'phpMussel – コンフィギュレーション';
 $phpMussel['lang']['title_greylist'] = 'phpMussel – グレーリスト';
@@ -91,3 +98,4 @@ $phpMussel['lang']['title_home'] = 'phpMussel – ホーム';
 $phpMussel['lang']['title_login'] = 'phpMussel – ログイン';
 $phpMussel['lang']['title_logs'] = 'phpMussel – ロゴス';
 $phpMussel['lang']['title_updates'] = 'phpMussel – アップデート';
+$phpMussel['lang']['title_upload_test'] = 'phpMussel – アップロード・テスト';

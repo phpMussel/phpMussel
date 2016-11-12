@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2016.10.30).
+ * This file: Arabic language data for the front-end (last modified: 2016.11.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -27,6 +27,7 @@ $phpMussel['lang']['field_delete_account'] = 'حذف حساب';
 $phpMussel['lang']['field_install'] = 'تثبيت';
 $phpMussel['lang']['field_latest_version'] = 'احدث اصدار';
 $phpMussel['lang']['field_log_in'] = 'تسجيل الدخول';
+$phpMussel['lang']['field_more_fields'] = 'المزيد من الحقول';
 $phpMussel['lang']['field_ok'] = 'حسنا';
 $phpMussel['lang']['field_options'] = 'خيارات';
 $phpMussel['lang']['field_password'] = 'كلمه السر';
@@ -51,6 +52,7 @@ $phpMussel['lang']['link_greylist'] = 'قائمة رمادية';
 $phpMussel['lang']['link_home'] = 'الرئيسية';
 $phpMussel['lang']['link_logs'] = 'سجلات';
 $phpMussel['lang']['link_updates'] = 'التحديثات';
+$phpMussel['lang']['link_upload_test'] = 'تحميل اختبار';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'هذا سجل غير موجود!';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'لا سجلات متاح.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'لا سجلات مختار.';
@@ -81,9 +83,14 @@ $phpMussel['lang']['state_default_password'] = 'تحذير: يستخدم الا�
 $phpMussel['lang']['state_logged_in'] = 'حاليا على';
 $phpMussel['lang']['state_logs_access_only'] = 'سجلات الوصول فقط';
 $phpMussel['lang']['state_password_not_valid'] = 'تحذير: هذا الحساب لا يستخدم صالحة كلمه السر!';
-$phpMussel['lang']['tip_hello'] = 'مرحبا، {username}.';
+$phpMussel['lang']['tip_accounts'] = 'مرحبا، {username}.<br />الصفحة حسابات يسمح لك للسيطرة على الذي يمكن الوصول ألfront-end phpMussel.';
+$phpMussel['lang']['tip_config'] = 'مرحبا، {username}.<br />الصفحة التكوين يسمح لك لتعديل التكوين phpMussel عن طريق ألfront-end.';
+$phpMussel['lang']['tip_greylist'] = 'مرحبا، {username}.<br />الصفحة قائمة رمادية يسمح لك لتعديل ألقائمة رمادية phpMussel عن طريق ألfront-end.';
+$phpMussel['lang']['tip_home'] = 'مرحبا، {username}.<br />هذا هو الصفحة رئيسية ألfront-end phpMussel. اختر ارتباط من قائمة التنقل على اليسار للمتابعة.';
 $phpMussel['lang']['tip_login'] = 'الافتراضي اسم المستخدم: <span class="txtRd">admin</span> – الافتراضي كلمه السر: <span class="txtRd">password</span>';
-$phpMussel['lang']['tip_logs'] = 'اختار سجلات من القائمة أدناه لعرضها.';
+$phpMussel['lang']['tip_logs'] = 'مرحبا، {username}.<br />اختار سجلات من القائمة أدناه لعرضها.';
+$phpMussel['lang']['tip_updates'] = 'مرحبا، {username}.<br />الصفحة تحديثات يسمح لك لتثبيت، إلغاء، ولتحديث المكونات المختلفة phpMussel (حزمة الأساسية، التوقيعات، الإضافات، الملفات L10N، إلخ).';
+$phpMussel['lang']['tip_upload_test'] = 'مرحبا، {username}.<br />الصفحة تحميل اختبار يحتوي على شكل تحميل الملفات القياسية، مما يسمح لك لاختبار ما إذا كان عادة يكون قد تم حظره ملف بواسطة phpMussel عند محاولة تحميله.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – حسابات';
 $phpMussel['lang']['title_config'] = 'phpMussel – التكوين';
 $phpMussel['lang']['title_greylist'] = 'phpMussel – قائمة رمادية';
@@ -91,3 +98,4 @@ $phpMussel['lang']['title_home'] = 'phpMussel – الرئيسية';
 $phpMussel['lang']['title_login'] = 'phpMussel – تسجيل الدخول';
 $phpMussel['lang']['title_logs'] = 'phpMussel – سجلات';
 $phpMussel['lang']['title_updates'] = 'phpMussel – التحديثات';
+$phpMussel['lang']['title_upload_test'] = 'phpMussel – تحميل اختبار';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2016.10.30).
+ * This file: Vietnamese language data for the front-end (last modified: 2016.11.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -27,6 +27,7 @@ $phpMussel['lang']['field_delete_account'] = 'Xóa tài khoản';
 $phpMussel['lang']['field_install'] = 'Cài Đặt';
 $phpMussel['lang']['field_latest_version'] = 'Phiên bản mới nhất';
 $phpMussel['lang']['field_log_in'] = 'Đăng Nhập';
+$phpMussel['lang']['field_more_fields'] = 'Thêm Lĩnh Vực';
 $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'Tùy Chọn';
 $phpMussel['lang']['field_password'] = 'Mật Khẩu';
@@ -51,6 +52,7 @@ $phpMussel['lang']['link_greylist'] = 'Danh Sách Xám';
 $phpMussel['lang']['link_home'] = 'Trang Chủ';
 $phpMussel['lang']['link_logs'] = 'Bản Ghi';
 $phpMussel['lang']['link_updates'] = 'Cập Nhật';
+$phpMussel['lang']['link_upload_test'] = 'Kiểm Tra Tải Lên';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Bản ghi đã chọn không tồn tại!';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'Không có bản ghi có sẵn.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Không có bản ghi được chọn.';
@@ -81,9 +83,14 @@ $phpMussel['lang']['state_default_password'] = 'Cảnh báo: Nó là sử dụng
 $phpMussel['lang']['state_logged_in'] = 'Được đăng nhập';
 $phpMussel['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';
 $phpMussel['lang']['state_password_not_valid'] = 'Cảnh báo: Tài khoản này không được sử dụng một mật khẩu hợp lệ!';
-$phpMussel['lang']['tip_hello'] = 'Xin chào, {username}.';
+$phpMussel['lang']['tip_accounts'] = 'Xin chào, {username}.<br />Trang tài khoản cho phép bạn kiểm soát những người có thể truy cập các front-end phpMussel.';
+$phpMussel['lang']['tip_config'] = 'Xin chào, {username}.<br />Trang cấu hình cho phép bạn chỉnh sửa các cấu hình phpMussel từ các front-end.';
+$phpMussel['lang']['tip_greylist'] = 'Xin chào, {username}.<br />Trang danh sách xám cho phép bạn chỉnh sửa các danh sách xám phpMussel từ các front-end.';
+$phpMussel['lang']['tip_home'] = 'Xin chào, {username}.<br />Đây là trang chủ cho các front-end phpMussel. Chọn một liên kết từ thực đơn bên trái để tiếp tục.';
 $phpMussel['lang']['tip_login'] = 'Tên người dùng mặc định: <span class="txtRd">admin</span> – Mật khẩu mặc định: <span class="txtRd">password</span>';
-$phpMussel['lang']['tip_logs'] = 'Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này.';
+$phpMussel['lang']['tip_logs'] = 'Xin chào, {username}.<br />Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này.';
+$phpMussel['lang']['tip_updates'] = 'Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho phpMussel (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv).';
+$phpMussel['lang']['tip_upload_test'] = 'Xin chào, {username}.<br />Trang kiểm tra tải lên chứa một hình thức tải lên tập tin chuẩn, mà cho phép bạn để kiểm tra liệu một tập tin sẽ thường bị chặn bởi phpMussel khi cố gắng để tải nó lên.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Tài Khoản';
 $phpMussel['lang']['title_config'] = 'phpMussel – Cấu Hình';
 $phpMussel['lang']['title_greylist'] = 'phpMussel – Danh Sách Xám';
@@ -91,3 +98,4 @@ $phpMussel['lang']['title_home'] = 'phpMussel – Trang Chủ';
 $phpMussel['lang']['title_login'] = 'phpMussel – Đăng Nhập';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Bản Ghi';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Cập Nhật';
+$phpMussel['lang']['title_upload_test'] = 'phpMussel – Kiểm Tra Tải Lên';

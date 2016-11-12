@@ -1,0 +1,18 @@
+<table width="100%">
+<tr valign="top">
+    <td width="20%" class="nav">
+
+{nav}
+    </td>
+    <td width="80%" class="right">
+        <form enctype="multipart/form-data" name="upload" action="" method="post">
+            <input type="hidden" name="MAX_FILE_SIZE" value="{MaxFilesize}" />
+            <table><tr>
+                <td><div id="upload_fields" style="display:inline"></div></td>
+                <td><input type="button" onclick="javascript:more()" value="{field_more_fields}" /> <input type="submit" value="{field_ok}" /></td>
+            </tr></table>
+        </form>
+        <script language="Javascript">var a='<input type="file" name="upload_test[]" value="" /><br />',more=function(){(document.getElementById)?(document.getElementById('upload_fields').innerHTML=document.getElementById('upload_fields').innerHTML+a):(document.all&&!document.getElementById)?(document.all['upload_fields'].innerHTML=document.all['upload_fields'].innerHTML+a):''};more()</script>
+    </td>
+</tr>
+</table>

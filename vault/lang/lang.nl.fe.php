@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2016.10.30).
+ * This file: Dutch language data for the front-end (last modified: 2016.11.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -27,6 +27,7 @@ $phpMussel['lang']['field_delete_account'] = 'Account Verwijderen';
 $phpMussel['lang']['field_install'] = 'Installeren';
 $phpMussel['lang']['field_latest_version'] = 'Laatste Versie';
 $phpMussel['lang']['field_log_in'] = 'Inloggen';
+$phpMussel['lang']['field_more_fields'] = 'Meer Velden';
 $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'Opties';
 $phpMussel['lang']['field_password'] = 'Wachtwoord';
@@ -51,6 +52,7 @@ $phpMussel['lang']['link_greylist'] = 'Greylist';
 $phpMussel['lang']['link_home'] = 'Startpagina';
 $phpMussel['lang']['link_logs'] = 'Logbestanden';
 $phpMussel['lang']['link_updates'] = 'Updates';
+$phpMussel['lang']['link_upload_test'] = 'Upload Test';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Geselecteerde logbestand bestaat niet!';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'Geen logbestanden beschikbaar.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Geen logbestand geselecteerd.';
@@ -81,9 +83,14 @@ $phpMussel['lang']['state_default_password'] = 'Waarschuwing: Gebruikt de standa
 $phpMussel['lang']['state_logged_in'] = 'Ingelogd';
 $phpMussel['lang']['state_logs_access_only'] = 'Logbestanden toegang alleen';
 $phpMussel['lang']['state_password_not_valid'] = 'Waarschuwing: Dit account is niet gebruikt van een geldig wachtwoord!';
-$phpMussel['lang']['tip_hello'] = 'Hallo, {username}.';
+$phpMussel['lang']['tip_accounts'] = 'Hallo, {username}.<br />De accounts pagina stelt u in staat om te bepalen wie toegang heeft tot de phpMussel frontend.';
+$phpMussel['lang']['tip_config'] = 'Hallo, {username}.<br />De configuratie pagina stelt u in staat om de configuratie voor phpMussel te modificeren vanaf de frontend.';
+$phpMussel['lang']['tip_greylist'] = 'Hallo, {username}.<br />De greylist pagina stelt u in staat om de phpMussel greylist te modificeren vanaf de frontend.';
+$phpMussel['lang']['tip_home'] = 'Hallo, {username}.<br />Dit is de startpagina van de phpMussel frontend. Selecteer een link in het navigatiemenu aan de linkerkant om door te gaan.';
 $phpMussel['lang']['tip_login'] = 'Standaard gebruikersnaam: <span class="txtRd">admin</span> – Standaard wachtwoord: <span class="txtRd">password</span>';
-$phpMussel['lang']['tip_logs'] = 'Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken.';
+$phpMussel['lang']['tip_logs'] = 'Hallo, {username}.<br />Selecteer een logbestand uit de onderstaande lijst om de inhoud van de logbestand te bekijken.';
+$phpMussel['lang']['tip_updates'] = 'Hallo, {username}.<br />De updates pagina stelt u in staat om de verschillende onderdelen van phpMussel te installeren, verwijderen, en actualiseren (de core pakket, handtekeningen, plugins, L10N bestanden, ezv).';
+$phpMussel['lang']['tip_upload_test'] = 'Hallo, {username}.<br />De upload test pagina bevat een standaard file upload formulier, voor het testen of een bestand normaliter geblokkeerd door phpMussel bij een poging om het te uploaden.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Accounts';
 $phpMussel['lang']['title_config'] = 'phpMussel – Configuratie';
 $phpMussel['lang']['title_greylist'] = 'phpMussel – Greylist';
@@ -91,3 +98,4 @@ $phpMussel['lang']['title_home'] = 'phpMussel – Startpagina';
 $phpMussel['lang']['title_login'] = 'phpMussel – Inloggen';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Logbestanden';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Updates';
+$phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload Test';

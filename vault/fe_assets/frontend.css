@@ -7,15 +7,15 @@ input,select{width:150px;background-color:#ffe;border:1px solid #900;color:#033;
 input.half,select.half{width:90px}
 input[type=password]{background-image:url(data:image/gif;base64,{PIP_Key})}
 input[type=text]{background-image:url(data:image/gif;base64,{PIP_Input})}
-.bNav,.gen,.nav,.s,.tip,.txtGn,.txtRd,a,input,select{font-weight:700}
+.bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,a,input,select{font-weight:700}
 .bNav,.gen{text-align:right}
 .ci,.co,.gen{margin:auto}
 .ci,.co,.ng1,.ng2{width:98%}
 .ci{background-color:#fff;border-style:solid;border-width:1px;border-color:#aaa;text-align:{FE_Align};padding:12px}
 .co,body{text-align:center}
 .co{padding:12}
-.dt,.s,.tip,.txtBl,.txtGn,.txtRd{display:inline}
-.dt,.tip{float:left}
+.dt,.s,.tip,.txtBl,.txtGn,.txtOe,.txtRd{display:inline}
+.dt,.tip{float:left;text-align:left}
 .gen,input,select{font-family:Verdana,Arial,Helvetica,sans-serif}
 .gen{font-size:8pt;letter-spacing:-1px;white-space:nowrap}
 .h1,.h2,.ng1,.ng2{margin:0;padding:4px;border-style:solid solid none none;border-width:1px;border-color:#999}
@@ -28,4 +28,5 @@ input[type=text]{background-image:url(data:image/gif;base64,{PIP_Input})}
 .right{padding:20px}
 .txtBl{color:#000}
 .txtGn{color:#090}
+.txtOe{color:#f60}
 .txtRd{color:red}

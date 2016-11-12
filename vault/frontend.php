@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.11.08).
+ * This file: Front-end handler (last modified: 2016.11.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -228,14 +228,6 @@ if ($phpMussel['FE']['UserState'] === 1) {
         $phpMussel['FE']['UserState'] = $phpMussel['FE']['Permissions'] = 0;
         setcookie('PHPMUSSEL-ADMIN', '', -1, '/', (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : '', false, true);
 
-    } else {
-
-        /** Generate default tooltip for the user ("Hello, {username}"). */
-        $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
-            array('username' => $phpMussel['FE']['UserRaw']),
-            $phpMussel['lang']['tip_hello']
-        );
-
     }
 
     /** If the user has complete access. */
@@ -258,18 +250,24 @@ if ($phpMussel['FE']['UserState'] === 1) {
 
 }
 
+$phpMussel['FE']['bNavBR'] = ($phpMussel['FE']['UserState'] === 1) ? '<br /><br />' : '<br />';
+
 /** The user hasn't logged in. Show them the login page. */
 if ($phpMussel['FE']['UserState'] !== 1) {
 
+    /** Set page title. */
     $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_login'];
 
+    /** Prepare page tooltip/description. */
     $phpMussel['FE']['FE_Tip'] = $phpMussel['lang']['tip_login'];
 
+    /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_login.html')
     );
 
+    /** Send output. */
     echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
 
 }
@@ -280,15 +278,24 @@ if ($phpMussel['FE']['UserState'] !== 1) {
  */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === '') {
 
+    /** Set page title. */
     $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_home'];
+
+    /** Prepare page tooltip/description. */
+    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
+        array('username' => $phpMussel['FE']['UserRaw']),
+        $phpMussel['lang']['tip_home']
+    );
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_logout'];
 
+    /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_home.html')
     );
 
+    /** Send output. */
     echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
 
 }
@@ -402,8 +409,14 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
 
     }
 
-    /** Set page title and begin processing page output. */
+    /** Set page title. */
     $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_accounts'];
+
+    /** Prepare page tooltip/description. */
+    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
+        array('username' => $phpMussel['FE']['UserRaw']),
+        $phpMussel['lang']['tip_accounts']
+    );
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
@@ -448,11 +461,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
     }
     unset($phpMussel['RowInfo']);
 
+    /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_accounts.html')
     );
 
+    /** Send output. */
     echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
 
 }
@@ -460,16 +475,24 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
 /** Configuration. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE']['Permissions'] === 1) {
 
-    /** Set page title and begin processing page output. */
+    /** Set page title. */
     $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_config'];
+
+    /** Prepare page tooltip/description. */
+    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
+        array('username' => $phpMussel['FE']['UserRaw']),
+        $phpMussel['lang']['tip_config']
+    );
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
+    /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_config.html')
     );
 
+    /** Send output. */
     echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
 
 }
@@ -477,15 +500,24 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
 /** Greylist. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'greylist' && $phpMussel['FE']['Permissions'] === 1) {
 
+    /** Set page title. */
     $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_greylist'];
+
+    /** Prepare page tooltip/description. */
+    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
+        array('username' => $phpMussel['FE']['UserRaw']),
+        $phpMussel['lang']['tip_greylist']
+    );
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
+    /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_greylist.html')
     );
 
+    /** Send output. */
     echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
 
 }
@@ -759,8 +791,14 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
 
     }
 
-    /** Set page title and begin processing page output. */
+    /** Set page title. */
     $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_updates'];
+
+    /** Prepare page tooltip/description. */
+    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
+        array('username' => $phpMussel['FE']['UserRaw']),
+        $phpMussel['lang']['tip_updates']
+    );
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
@@ -1204,6 +1242,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
     $phpMussel['FE']['Components'] = $phpMussel['Components']['Out'];
     unset($phpMussel['Components'], $phpMussel['Count'], $phpMussel['Iterate']);
 
+    /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_updates.html')
@@ -1214,15 +1253,48 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
 
 }
 
-/** Logs. */
-elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
+/** Upload Test. */
+elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'upload-test' && $phpMussel['FE']['Permissions'] === 1) {
 
-    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_logs'];
+    /** Set page title. */
+    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_upload_test'];
 
-    $phpMussel['FE']['FE_Tip'] = $phpMussel['lang']['tip_logs'];
+    $phpMussel['FE']['MaxFilesize'] = $phpMussel['Config']['files']['filesize_limit'] * 1024;
+
+    /** Prepare page tooltip/description. */
+    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
+        array('username' => $phpMussel['FE']['UserRaw']),
+        $phpMussel['lang']['tip_upload_test']
+    );
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
+    /** Parse output. */
+    $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
+        $phpMussel['lang'] + $phpMussel['FE'],
+        $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_upload_test.html')
+    );
+
+    /** Send output. */
+    echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+
+}
+
+/** Logs. */
+elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
+
+    /** Set page title. */
+    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_logs'];
+
+    /** Prepare page tooltip/description. */
+    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
+        array('username' => $phpMussel['FE']['UserRaw']),
+        $phpMussel['lang']['tip_logs']
+    );
+
+    $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
+
+    /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_logs.html')
@@ -1278,6 +1350,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
         $phpMussel['FE']['LogFiles'] = $phpMussel['lang']['logs_no_logfiles_available'];
     }
 
+    /** Send output. */
     echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
 
 }

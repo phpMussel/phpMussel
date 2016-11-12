@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2016.10.30).
+ * This file: French language data for the front-end (last modified: 2016.11.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -27,6 +27,7 @@ $phpMussel['lang']['field_delete_account'] = 'Supprimer le compte';
 $phpMussel['lang']['field_install'] = 'Installer';
 $phpMussel['lang']['field_latest_version'] = 'Dernière Version';
 $phpMussel['lang']['field_log_in'] = 'Connecter';
+$phpMussel['lang']['field_more_fields'] = 'Plus de Champs';
 $phpMussel['lang']['field_ok'] = 'D\'accord';
 $phpMussel['lang']['field_options'] = 'Options';
 $phpMussel['lang']['field_password'] = 'Mot de Passe';
@@ -51,6 +52,7 @@ $phpMussel['lang']['link_greylist'] = 'Greylist';
 $phpMussel['lang']['link_home'] = 'Page d\'Accueil';
 $phpMussel['lang']['link_logs'] = 'Fichiers Journaux';
 $phpMussel['lang']['link_updates'] = 'Mises à Jour';
+$phpMussel['lang']['link_upload_test'] = 'Test de Télécharger';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Le fichier journal sélectionné n\'existe pas!';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'Aucun fichiers journaux disponibles.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Aucun fichier journal sélectionné.';
@@ -81,9 +83,14 @@ $phpMussel['lang']['state_default_password'] = 'Attention: Utilisant le mot de p
 $phpMussel['lang']['state_logged_in'] = 'Connecté';
 $phpMussel['lang']['state_logs_access_only'] = 'Accès aux fichiers journaux seulement';
 $phpMussel['lang']['state_password_not_valid'] = 'Attention: Ce compte n\'utilise un mot de passe valide!';
-$phpMussel['lang']['tip_hello'] = 'Bonjour, {username}.';
+$phpMussel['lang']['tip_accounts'] = 'Bonjour, {username}.<br />La page des comptes vous permet de contrôler qui peut accéder l\'accès frontal de phpMussel.';
+$phpMussel['lang']['tip_config'] = 'Bonjour, {username}.<br />La page de configuration vous permet de modifier la configuration pour phpMussel à l\'accès frontal.';
+$phpMussel['lang']['tip_greylist'] = 'Bonjour, {username}.<br />La page pour le greylist vous permet de modifier le greylist de phpMussel à l\'accès frontal.';
+$phpMussel['lang']['tip_home'] = 'Bonjour, {username}.<br />C\'est la page d\'accueil de l\'accès frontal de phpMussel. Sélectionnez un lien dans le menu de navigation à gauche pour continuer.';
 $phpMussel['lang']['tip_login'] = 'Nom d\'utilisateur défaut: <span class="txtRd">admin</span> – Mot de passe défaut: <span class="txtRd">password</span>';
-$phpMussel['lang']['tip_logs'] = 'Sélectionnez un fichier journal dans la liste ci-dessous pour afficher le contenu de ce fichier journal.';
+$phpMussel['lang']['tip_logs'] = 'Bonjour, {username}.<br />Sélectionnez un fichier journal dans la liste ci-dessous pour afficher le contenu de ce fichier journal.';
+$phpMussel['lang']['tip_updates'] = 'Bonjour, {username}.<br />La page des mises à jour vous permet d\'installer, de désinstaller et de mettre à jour les différentes composantes de phpMussel (le paquet de base, signatures, plugins, fichiers de L10N, etc).';
+$phpMussel['lang']['tip_upload_test'] = 'Bonjour, {username}.<br />La page pour tester les téléchargements contient un formulaire pour le téléchargement de fichiers standard, vous permettant de tester si un fichier serait normalement être bloqué par phpMussel quand vous essayez de le télécharger.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Comptes';
 $phpMussel['lang']['title_config'] = 'phpMussel – Configuration';
 $phpMussel['lang']['title_greylist'] = 'phpMussel – Greylist';
@@ -91,3 +98,4 @@ $phpMussel['lang']['title_home'] = 'phpMussel – Page d\'Accueil';
 $phpMussel['lang']['title_login'] = 'phpMussel – Connexion';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Fichiers Journaux';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Mises à Jour';
+$phpMussel['lang']['title_upload_test'] = 'phpMussel – Test de Télécharger';

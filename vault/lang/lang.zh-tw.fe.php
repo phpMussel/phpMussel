@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2016.10.30).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2016.11.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -27,6 +27,7 @@ $phpMussel['lang']['field_delete_account'] = '刪除賬戶';
 $phpMussel['lang']['field_install'] = '安裝';
 $phpMussel['lang']['field_latest_version'] = '最新版本';
 $phpMussel['lang']['field_log_in'] = '登錄';
+$phpMussel['lang']['field_more_fields'] = '更多字段';
 $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = '選項';
 $phpMussel['lang']['field_password'] = '密碼';
@@ -51,6 +52,7 @@ $phpMussel['lang']['link_greylist'] = '灰名單';
 $phpMussel['lang']['link_home'] = '主頁';
 $phpMussel['lang']['link_logs'] = '日誌';
 $phpMussel['lang']['link_updates'] = '更新';
+$phpMussel['lang']['link_upload_test'] = '上傳測試';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = '選擇的日誌不存在！';
 $phpMussel['lang']['logs_no_logfiles_available'] = '沒有日誌可用。';
 $phpMussel['lang']['logs_no_logfile_selected'] = '沒有選擇的日誌。';
@@ -81,9 +83,14 @@ $phpMussel['lang']['state_default_password'] = '警告：它使用標準密碼�
 $phpMussel['lang']['state_logged_in'] = '目前在線';
 $phpMussel['lang']['state_logs_access_only'] = '僅日誌訪問';
 $phpMussel['lang']['state_password_not_valid'] = '警告：此帳戶不​​使用有效的密碼！';
-$phpMussel['lang']['tip_hello'] = '你好， {username}。';
+$phpMussel['lang']['tip_accounts'] = '你好，{username}。<br />賬戶頁面允許您控制誰可以訪問phpMussel前端。';
+$phpMussel['lang']['tip_config'] = '你好，{username}。<br />配置頁面允許您修改phpMussel配置從前端。';
+$phpMussel['lang']['tip_greylist'] = '你好，{username}。<br />灰名單頁面允許您修改phpMussel灰名單從前端。';
+$phpMussel['lang']['tip_home'] = '你好，{username}。<br />這是phpMussel的前端主頁。從左側的導航菜單中選擇一個鏈接以繼續。';
 $phpMussel['lang']['tip_login'] = '標準用戶名： <span class="txtRd">admin</span> – 標準密碼： <span class="txtRd">password</span>';
-$phpMussel['lang']['tip_logs'] = '選擇一個日誌從下面的列表以查看那個日誌的內容。';
+$phpMussel['lang']['tip_logs'] = '你好，{username}。<br />選擇一個日誌從下面的列表以查看那個日誌的內容。';
+$phpMussel['lang']['tip_updates'] = '你好，{username}。<br />更新頁面允許您安裝，卸載，和更新phpMussel的各種組件（核心包，簽名，插件，L10N文件，等等）。';
+$phpMussel['lang']['tip_upload_test'] = '你好，{username}。<br />上傳測試頁麵包含標准文件上傳表單，允許您測試是否文件通常會被阻止通過phpMussel當嘗試上傳他們。';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – 帳戶';
 $phpMussel['lang']['title_config'] = 'phpMussel – 配置';
 $phpMussel['lang']['title_greylist'] = 'phpMussel – 灰名單';
@@ -91,3 +98,4 @@ $phpMussel['lang']['title_home'] = 'phpMussel – 主頁';
 $phpMussel['lang']['title_login'] = 'phpMussel – 登錄';
 $phpMussel['lang']['title_logs'] = 'phpMussel – 日誌';
 $phpMussel['lang']['title_updates'] = 'phpMussel – 更新';
+$phpMussel['lang']['title_upload_test'] = 'phpMussel – 上傳測試';

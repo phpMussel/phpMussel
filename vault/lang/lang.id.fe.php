@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2016.10.30).
+ * This file: Indonesian language data for the front-end (last modified: 2016.11.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -27,6 +27,7 @@ $phpMussel['lang']['field_delete_account'] = 'Hapus Akun';
 $phpMussel['lang']['field_install'] = 'Instal';
 $phpMussel['lang']['field_latest_version'] = 'Versi Terbaru';
 $phpMussel['lang']['field_log_in'] = 'Masuk';
+$phpMussel['lang']['field_more_fields'] = 'Bidang Lebih';
 $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'Opsi';
 $phpMussel['lang']['field_password'] = 'Kata Sandi';
@@ -51,6 +52,7 @@ $phpMussel['lang']['link_greylist'] = 'Greylist';
 $phpMussel['lang']['link_home'] = 'Halaman Utama';
 $phpMussel['lang']['link_logs'] = 'Log';
 $phpMussel['lang']['link_updates'] = 'Pembaruan';
+$phpMussel['lang']['link_upload_test'] = 'Upload Test';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Log yang dipilih tidak ada!';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'Tidak ada log tersedia.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Tidak ada log dipilih.';
@@ -81,9 +83,14 @@ $phpMussel['lang']['state_default_password'] = 'Peringatan: Menggunakan kata san
 $phpMussel['lang']['state_logged_in'] = 'Pengguna yang online';
 $phpMussel['lang']['state_logs_access_only'] = 'Akses ke log hanya';
 $phpMussel['lang']['state_password_not_valid'] = 'Peringatan: Akun ini tidak menggunakan kata sandi yang valid!';
-$phpMussel['lang']['tip_hello'] = 'Salam, {username}.';
+$phpMussel['lang']['tip_accounts'] = 'Salam, {username}.<br />Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan phpMussel.';
+$phpMussel['lang']['tip_config'] = 'Salam, {username}.<br />Halaman konfigurasi memungkinkan Anda untuk memodifikasi konfigurasi untuk phpMussel dari bagian depan.';
+$phpMussel['lang']['tip_greylist'] = 'Salam, {username}.<br />Halaman greylist memungkinkan Anda untuk memodifikasi greylist phpMussel dari bagian depan.';
+$phpMussel['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk phpMussel bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $phpMussel['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin</span> – Kata sandi standar: <span class="txtRd">password</span>';
-$phpMussel['lang']['tip_logs'] = 'Pilih log dari daftar dibawah untuk melihat isi log.';
+$phpMussel['lang']['tip_logs'] = 'Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log.';
+$phpMussel['lang']['tip_updates'] = 'Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen phpMussel (paket inti, tanda tangan, plugin, file L10N, dll).';
+$phpMussel['lang']['tip_upload_test'] = 'Salam, {username}.<br />Halaman upload test berisi form upload file standar, memungkinkan Anda untuk mengetes apakah file biasanya akan diblokir oleh phpMussel ketika mencoba untuk menguploadnya.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Akun';
 $phpMussel['lang']['title_config'] = 'phpMussel – Konfigurasi';
 $phpMussel['lang']['title_greylist'] = 'phpMussel – Greylist';
@@ -91,3 +98,4 @@ $phpMussel['lang']['title_home'] = 'phpMussel – Halaman Utama';
 $phpMussel['lang']['title_login'] = 'phpMussel – Masuk';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Log';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Pembaruan';
+$phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload Test';
