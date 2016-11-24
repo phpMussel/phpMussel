@@ -1,9 +1,9 @@
 ---
 l10n/en:
- Name: l10n/en
+ Name: L10N: English
  Extended Description:
   en: English language data
- Version: 2016.11.12
+ Version: 2016.11.24
  Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
@@ -15,14 +15,14 @@ l10n/en:
    - lang/lang.en.fe.php
    - lang/lang.en.php
   Checksum:
-   - 3bcb2f86bb9b6d8fad360b4e238cb33b:6879
+   - 5e6fda86eb98fc420dc9581314a3e2bc:8557
    - eeb9522ac8311b29b8c961a6cf16c2bf:7366
  Reannotate: l10n.dat
 l10n/ar:
- Name: l10n/ar
+ Name: L10N: العربية
  Extended Description:
   ar: ملفات اللغة العربية
- Version: 2016.11.12
+ Version: 2016.11.24
  Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
@@ -34,14 +34,14 @@ l10n/ar:
    - lang/lang.ar.fe.php
    - lang/lang.ar.php
   Checksum:
-   - 382de5ac07b7c987bc63ae87c71b63ff:7969
+   - 190f829b47b14415fb91fa55d6488bd9:10067
    - 1e0a7f59d1aa8dee333a517cfab6bcdc:8731
  Reannotate: l10n.dat
 l10n/de:
- Name: l10n/de
+ Name: L10N: Deutsche
  Extended Description:
   de: Deutsche Sprachdateien
- Version: 2016.11.12
+ Version: 2016.11.24
  Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
@@ -53,14 +53,14 @@ l10n/de:
    - lang/lang.de.fe.php
    - lang/lang.de.php
   Checksum:
-   - 5656d6f69f149bf93696e76bc629e0e4:7304
+   - dcf79113b145353d526553eaf8e85145:9059
    - c6c5aeac00c8a9c17130e202ef4cac7c:7877
  Reannotate: l10n.dat
 l10n/es:
- Name: l10n/es
+ Name: L10N: Español
  Extended Description:
   es: Lingüísticos datos Español
- Version: 2016.11.12
+ Version: 2016.11.24
  Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
@@ -72,14 +72,14 @@ l10n/es:
    - lang/lang.es.fe.php
    - lang/lang.es.php
   Checksum:
-   - 76293d550818666292a04ab5c4cf8790:7349
+   - 8e8abd4aa960b274e0d9d245a77a271b:9107
    - 009777f139a1f24961e4f28923f8f8ab:7744
  Reannotate: l10n.dat
 l10n/fr:
- Name: l10n/fr
+ Name: L10N: Français
  Extended Description:
   fr: Linguistiques données en Français
- Version: 2016.11.12
+ Version: 2016.11.24
  Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
@@ -91,14 +91,14 @@ l10n/fr:
    - lang/lang.fr.fe.php
    - lang/lang.fr.php
   Checksum:
-   - 5d2362fc73b7441896913b538db8e3a8:7503
+   - 1c29202b4d3d12dbd9d5d9d9847d77ac:9313
    - 8b517910eda105ffa00c040c2abb99f4:8021
  Reannotate: l10n.dat
 l10n/id:
- Name: l10n/id
+ Name: L10N: Bahasa Indonesia
  Extended Description:
   id: File Bahasa Indonesia
- Version: 2016.11.12
+ Version: 2016.11.24
  Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
@@ -110,14 +110,14 @@ l10n/id:
    - lang/lang.id.fe.php
    - lang/lang.id.php
   Checksum:
-   - 0d13d97351c44d780b9c8734f855d354:6970
+   - 38a21cf999083cd355a6e59e4041cc3a:8688
    - 8446476f8e05c503b66dd9fad62560ca:7641
  Reannotate: l10n.dat
 l10n/it:
- Name: l10n/it
+ Name: L10N: Italiana
  Extended Description:
   it: Linguistici dati Italiana
- Version: 2016.11.12
+ Version: 2016.11.24
  Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
@@ -129,14 +129,14 @@ l10n/it:
    - lang/lang.it.fe.php
    - lang/lang.it.php
   Checksum:
-   - 0f6e271c3889ceb12162a47b3f964dd2:7294
+   - fc7f5c2171533c22d72d0e87badac6a7:9050
    - 6c3cbacbea9958c8f99ef725c776f154:7834
  Reannotate: l10n.dat
 l10n/ja:
- Name: l10n/ja
+ Name: L10N: 日本語
  Extended Description:
   ja: 日本語言語データ
- Version: 2016.11.12
+ Version: 2016.11.24
  Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
@@ -148,14 +148,14 @@ l10n/ja:
    - lang/lang.ja.fe.php
    - lang/lang.ja.php
   Checksum:
-   - aa23230af81ada0fe838b290c69afb00:8413
+   - eedf824b6d5317203737eb54eeebdd56:10421
    - 372aa5daed48b51cce87c194e2157c9b:9264
  Reannotate: l10n.dat
 l10n/nl:
- Name: l10n/nl
+ Name: L10N: Nederlandse
  Extended Description:
   nl: Nederlandse taaldata/taalgegevens
- Version: 2016.11.12
+ Version: 2016.11.24
  Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
@@ -167,14 +167,14 @@ l10n/nl:
    - lang/lang.nl.fe.php
    - lang/lang.nl.php
   Checksum:
-   - 009c9584c9526dcd47a8154a2dc7fc25:7197
+   - 0023630ccb583f445c3d57d8f2b85f26:8893
    - 13436fd053184b56b875d885a5627e72:7764
  Reannotate: l10n.dat
 l10n/pt:
- Name: l10n/pt
+ Name: L10N: Português
  Extended Description:
   pt: Linguagem dados Português
- Version: 2016.11.12
+ Version: 2016.11.24
  Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
@@ -186,14 +186,14 @@ l10n/pt:
    - lang/lang.pt.fe.php
    - lang/lang.pt.php
   Checksum:
-   - 3ad20f482f304dc6b2cb331a375223d0:7224
+   - ebf55cad9128db72bd9d8da30eac1708:9000
    - 754c14cb60509e0935ac52b99acf1938:7855
  Reannotate: l10n.dat
 l10n/ru:
- Name: l10n/ru
+ Name: L10N: Русский
  Extended Description:
   ru: Русском языковые файлы
- Version: 2016.11.12
+ Version: 2016.11.24
  Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
@@ -205,14 +205,14 @@ l10n/ru:
    - lang/lang.ru.fe.php
    - lang/lang.ru.php
   Checksum:
-   - 691aa7953fc481463b9693f522253d29:8920
+   - 8bdc0824e6d0df32862d79a83791daeb:11281
    - c5062441f5a81964d3fdf9dff7e10c77:10251
  Reannotate: l10n.dat
 l10n/vi:
- Name: l10n/vi
+ Name: L10N: Tiếng Việt
  Extended Description:
   vi: Dữ liệu tiếng Việt
- Version: 2016.11.12
+ Version: 2016.11.24
  Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
@@ -224,14 +224,14 @@ l10n/vi:
    - lang/lang.vi.fe.php
    - lang/lang.vi.php
   Checksum:
-   - 34e19e6bd2f69744fe63cf07d54c3183:7705
+   - 98561e44bf8d7f80e4bd3cb3fe1a10bc:9603
    - 41e448d4dbfd246234ac2a5105af987d:8791
  Reannotate: l10n.dat
 l10n/zh:
- Name: l10n/zh
+ Name: L10N: 中文（简体）
  Extended Description:
   zh: 中文（简体）语言数据
- Version: 2016.11.12
+ Version: 2016.11.24
  Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
@@ -243,14 +243,14 @@ l10n/zh:
    - lang/lang.zh.fe.php
    - lang/lang.zh.php
   Checksum:
-   - 5a8f0c426377c2f2c004c0371a88008b:6594
+   - 827fa130778ae8a26013a0e523bdb7ef:8355
    - 6ec8718bad879acb660ef7e30ceca7a5:7257
  Reannotate: l10n.dat
 l10n/zh-TW:
- Name: l10n/zh-TW
+ Name: L10N: 中文（傳統）
  Extended Description:
   zh-TW: 中文（傳統）語言數據
- Version: 2016.11.12
+ Version: 2016.11.24
  Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/l10n.dat
  Uninstallable: true
@@ -262,7 +262,7 @@ l10n/zh-TW:
    - lang/lang.zh-tw.fe.php
    - lang/lang.zh-tw.php
   Checksum:
-   - 1a568258edc9e75995af6ca321c8d2bb:6595
+   - a974d5539ff876723e1b3b6ebbcbdf14:8356
    - 70c64f648647cb5522aa7e6648ee4e8e:7258
  Reannotate: l10n.dat
 

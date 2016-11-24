@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2016.11.10).
+ * This file: Vietnamese language data for the front-end (last modified: 2016.11.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -85,6 +85,7 @@ $phpMussel['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';
 $phpMussel['lang']['state_password_not_valid'] = 'Cảnh báo: Tài khoản này không được sử dụng một mật khẩu hợp lệ!';
 $phpMussel['lang']['tip_accounts'] = 'Xin chào, {username}.<br />Trang tài khoản cho phép bạn kiểm soát những người có thể truy cập các front-end phpMussel.';
 $phpMussel['lang']['tip_config'] = 'Xin chào, {username}.<br />Trang cấu hình cho phép bạn chỉnh sửa các cấu hình phpMussel từ các front-end.';
+$phpMussel['lang']['tip_donate'] = 'phpMussel được cung cấp miễn phí, nhưng nếu bạn muốn đóng góp cho dự án, bạn có thể làm như vậy bằng cách nhấn vào nút tặng.';
 $phpMussel['lang']['tip_greylist'] = 'Xin chào, {username}.<br />Trang danh sách xám cho phép bạn chỉnh sửa các danh sách xám phpMussel từ các front-end.';
 $phpMussel['lang']['tip_home'] = 'Xin chào, {username}.<br />Đây là trang chủ cho các front-end phpMussel. Chọn một liên kết từ thực đơn bên trái để tiếp tục.';
 $phpMussel['lang']['tip_login'] = 'Tên người dùng mặc định: <span class="txtRd">admin</span> – Mật khẩu mặc định: <span class="txtRd">password</span>';
@@ -99,3 +100,15 @@ $phpMussel['lang']['title_login'] = 'phpMussel – Đăng Nhập';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Bản Ghi';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Cập Nhật';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Kiểm Tra Tải Lên';
+
+$phpMussel['lang']['info_some_useful_links'] = 'Một số liên kết hữu ích:<ul>
+            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Issues @ GitHub</a> – Trang các vấn đề cho phpMussel (hỗ trợ, vv).</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Diễn đàn thảo luận cho phpMussel (hỗ trợ, vv).</li>
+            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Tải về gương thay thế cho phpMussel.</li>
+            <li><a href="https://websectools.com/">WebSecTools.com</a> – Một bộ sưu tập các công cụ quản trị trang web đơn giản để bảo vệ các trang web.</li>
+            <li><a href="http://www.clamav.net/">ClamavNet</a> – Trang chủ cho ClamAV (ClamAV® là một công cụ chống vi rút mã nguồn mở để phát hiện trojan, vi rút, phần mềm độc hại và các mối đe dọa nguy hiểm khác).</li>
+            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Công ty bảo mật máy tính mã cung cấp chữ ký bổ sung cho ClamAV.</li>
+            <li><a href="http://www.phishtank.com/">PhishTank</a> – Cơ sở dữ liệu lừa đảo sử dụng bởi các máy quét URL phpMussel.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP tài nguyên học tập và thảo luận.</li>
+        </ul>';

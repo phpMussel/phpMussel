@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2016.11.10).
+ * This file: Indonesian language data for the front-end (last modified: 2016.11.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -85,6 +85,7 @@ $phpMussel['lang']['state_logs_access_only'] = 'Akses ke log hanya';
 $phpMussel['lang']['state_password_not_valid'] = 'Peringatan: Akun ini tidak menggunakan kata sandi yang valid!';
 $phpMussel['lang']['tip_accounts'] = 'Salam, {username}.<br />Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan phpMussel.';
 $phpMussel['lang']['tip_config'] = 'Salam, {username}.<br />Halaman konfigurasi memungkinkan Anda untuk memodifikasi konfigurasi untuk phpMussel dari bagian depan.';
+$phpMussel['lang']['tip_donate'] = 'phpMussel ditawarkan gratis, tapi jika Anda ingin menyumbang untuk proyek, Anda dapat melakukannya dengan mengklik menyumbangkan tombol.';
 $phpMussel['lang']['tip_greylist'] = 'Salam, {username}.<br />Halaman greylist memungkinkan Anda untuk memodifikasi greylist phpMussel dari bagian depan.';
 $phpMussel['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk phpMussel bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $phpMussel['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin</span> – Kata sandi standar: <span class="txtRd">password</span>';
@@ -99,3 +100,15 @@ $phpMussel['lang']['title_login'] = 'phpMussel – Masuk';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Log';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Pembaruan';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload Test';
+
+$phpMussel['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
+            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Issues @ GitHub</a> – Halaman masalah untuk phpMussel (dukungan, bantuan, dll).</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Forum diskusi untuk phpMussel (dukungan, bantuan, dll).</li>
+            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Cermin download alternatif untuk phpMussel.</li>
+            <li><a href="https://websectools.com/">WebSecTools.com</a> – Sebuah kumpulan alat webmaster sederhana untuk mengamankan situs web.</li>
+            <li><a href="http://www.clamav.net/">ClamavNet</a> – Halaman utama untuk ClamAV (ClamAV® adalah injin antivirus open source untuk mendeteksi trojan, virus, malware dan ancaman berbahaya lainnya).</li>
+            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Perusahaan keamanan komputer yang menawarkan tanda tangan tambahan untuk ClamAV.</li>
+            <li><a href="http://www.phishtank.com/">PhishTank</a> – Database phishing digunakan oleh scanner URL phpMussel.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – Sumber belajar dan diskusi PHP.</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – Sumber belajar dan diskusi PHP.</li>
+        </ul>';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2016.11.10).
+ * This file: Japanese language data for the front-end (last modified: 2016.11.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -85,6 +85,7 @@ $phpMussel['lang']['state_logs_access_only'] = 'ログのみにアクセス';
 $phpMussel['lang']['state_password_not_valid'] = '警告：このアカウントには有効なパスワードを使用していません！';
 $phpMussel['lang']['tip_accounts'] = 'こんにちは、{username}。<br />アカウント・ページは、phpMusselフロントエンドにアクセスできるユーザーを制御できます。';
 $phpMussel['lang']['tip_config'] = 'こんにちは、{username}。<br />コンフィグレーション・ページは、フロントエンドからphpMusselの設定を変更することができます。';
+$phpMussel['lang']['tip_donate'] = 'phpMusselは無料で提供されています、しかし、あなたがしたい場合、寄付ボタンをクリックすると、プロジェクトに寄付することができます。';
 $phpMussel['lang']['tip_greylist'] = 'こんにちは、{username}。<br />グレイリスト・ページは、フロントエンドからphpMussel greylistを変更することができます。';
 $phpMussel['lang']['tip_home'] = 'こんにちは、{username}。<br />これはphpMusselフロントエンドのホームページです。続行するには、左側のナビゲーションメニューからリンクを選択します。';
 $phpMussel['lang']['tip_login'] = 'デフォルト・ユーザ名： <span class="txtRd">admin</span> – デフォルト・パスワード： <span class="txtRd">password</span>';
@@ -99,3 +100,15 @@ $phpMussel['lang']['title_login'] = 'phpMussel – ログイン';
 $phpMussel['lang']['title_logs'] = 'phpMussel – ロゴス';
 $phpMussel['lang']['title_updates'] = 'phpMussel – アップデート';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – アップロード・テスト';
+
+$phpMussel['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
+            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Issues @ GitHub</a> – phpMusselの問題ページ（サポート、援助、など）。</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – phpMusselのディスカッションフォーラム（サポート、援助、など）。</li>
+            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – phpMusselの代替ダウンロードミラー。</li>
+            <li><a href="https://websectools.com/">WebSecTools.com</a> – ウェブサイトを保護するための簡単なウェブマスターツールのコレクション。</li>
+            <li><a href="http://www.clamav.net/">ClamavNet</a> – ClamAVホームページ（ClamAV®は、トロイの木馬、ウイルス、マルウェア、とその他の脅威を検出するための、オープンソースのウイルス対策エンジンです）。</li>
+            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – ClamAVの補足的な署名を提供する、コンピュータセキュリティ会社。</li>
+            <li><a href="http://www.phishtank.com/">PhishTank</a> – phpMussel URLスキャナーで利用される、フィッシング詐欺データベース。</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP学習リソースとディスカッション。</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP学習リソースとディスカッション。</li>
+        </ul>';

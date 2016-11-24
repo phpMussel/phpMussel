@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2016.11.10).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2016.11.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -85,6 +85,7 @@ $phpMussel['lang']['state_logs_access_only'] = '僅日誌訪問';
 $phpMussel['lang']['state_password_not_valid'] = '警告：此帳戶不​​使用有效的密碼！';
 $phpMussel['lang']['tip_accounts'] = '你好，{username}。<br />賬戶頁面允許您控制誰可以訪問phpMussel前端。';
 $phpMussel['lang']['tip_config'] = '你好，{username}。<br />配置頁面允許您修改phpMussel配置從前端。';
+$phpMussel['lang']['tip_donate'] = 'phpMussel是免費提供的，但如果您想捐贈給項目，您可以通過點擊捐贈按鈕這樣做。';
 $phpMussel['lang']['tip_greylist'] = '你好，{username}。<br />灰名單頁面允許您修改phpMussel灰名單從前端。';
 $phpMussel['lang']['tip_home'] = '你好，{username}。<br />這是phpMussel的前端主頁。從左側的導航菜單中選擇一個鏈接以繼續。';
 $phpMussel['lang']['tip_login'] = '標準用戶名： <span class="txtRd">admin</span> – 標準密碼： <span class="txtRd">password</span>';
@@ -99,3 +100,16 @@ $phpMussel['lang']['title_login'] = 'phpMussel – 登錄';
 $phpMussel['lang']['title_logs'] = 'phpMussel – 日誌';
 $phpMussel['lang']['title_updates'] = 'phpMussel – 更新';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – 上傳測試';
+
+$phpMussel['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
+            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Issues @ GitHub</a> – phpMussel問題頁面（支持，協助，等等）。</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – phpMussel討論論壇（支持，協助，等等）。</li>
+            <li><a href="https://www.oschina.net/p/phpMussel">phpMussel＠开源中国社区</a> – phpMussel頁面託管在開源中國社區。</li>
+            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – phpMussel替代下載鏡像。</li>
+            <li><a href="https://websectools.com/">WebSecTools.com</a> – 簡單網站管理員工具集合為保護網站。</li>
+            <li><a href="http://www.clamav.net/">ClamavNet</a> – ClamAV主頁（ClamAV®是一個開源的防病毒引擎用於檢測木馬，病毒，惡意軟件和其他惡意威脅）。</li>
+            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – 一家計算機安全公司；為ClamAV提供補充簽名。</li>
+            <li><a href="http://www.phishtank.com/">PhishTank</a> – 網絡釣魚數據庫；由phpMussel URL掃描器使用。</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP學習資源和討論。</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP學習資源和討論。</li>
+        </ul>';

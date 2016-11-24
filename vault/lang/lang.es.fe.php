@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2016.11.10).
+ * This file: Spanish language data for the front-end (last modified: 2016.11.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -85,6 +85,7 @@ $phpMussel['lang']['state_logs_access_only'] = 'Acceso de registros solamente';
 $phpMussel['lang']['state_password_not_valid'] = '¡Advertencia: Esta cuenta no está utilizando una contraseña válida!';
 $phpMussel['lang']['tip_accounts'] = 'Hola, {username}.<br />La página de cuentas permite controlar controlar quién puede acceder al phpMussel front-end.';
 $phpMussel['lang']['tip_config'] = 'Hola, {username}.<br />La página de configuración permite modificar la configuración para phpMussel desde el front-end.';
+$phpMussel['lang']['tip_donate'] = 'phpMussel se ofrece de forma gratuita, pero si quieres donar al proyecto, puede hacerlo haciendo clic en el botón donar.';
 $phpMussel['lang']['tip_greylist'] = 'Hola, {username}.<br />La página para el greylist permite modificar el greylist de phpMussel desde el front-end.';
 $phpMussel['lang']['tip_home'] = 'Hola, {username}.<br />Esta es la página principal para el front-end de phpMussel. Seleccione un enlace en el menú de navegación de la izquierda para continuar.';
 $phpMussel['lang']['tip_login'] = 'El usuario estándar: <span class="txtRd">admin</span> – La contraseña estándar: <span class="txtRd">password</span>';
@@ -99,3 +100,15 @@ $phpMussel['lang']['title_login'] = 'phpMussel – Login';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Archivos de Registro';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Actualizaciones';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Subir Prueba';
+
+$phpMussel['lang']['info_some_useful_links'] = 'Algunos enlaces útiles:<ul>
+            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Issues @ GitHub</a> – Página de problemas para phpMussel (apoyo, asistencia, etc).</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Foro de discusión para phpMussel (apoyo, asistencia, etc).</li>
+            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Alternative download mirror for phpMussel.</li>
+            <li><a href="https://websectools.com/">WebSecTools.com</a> – Una colección de sencillas herramientas de webmaster para proteger sitios web.</li>
+            <li><a href="http://www.clamav.net/">ClamavNet</a> – Página principal de ClamAV (ClamAV® es un motor antivirus de código abierto para detectar troyanos, virus, malware y otras amenazas maliciosas).</li>
+            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Compañía de seguridad informática que ofrece firmas complementarias para ClamAV.</li>
+            <li><a href="http://www.phishtank.com/">PhishTank</a> – Base de datos de phishing utilizada por el escáner URL de phpMussel.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP recursos de aprendizaje y discusión.</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP recursos de aprendizaje y discusión.</li>
+        </ul>';
