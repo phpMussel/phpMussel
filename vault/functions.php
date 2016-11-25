@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.11.09).
+ * This file: Functions file (last modified: 2016.11.25).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -8266,8 +8266,7 @@ $phpMussel['VersionCompare'] = function ($A, $B) {
             'Patch' => isset($Matches[3]) ? $Matches[3] : 0,
             'Build' => isset($Matches[4]) ? substr($Matches[4], 1) : 0
         );
-        $Ver = array_map(function () {
-            $Var = func_get_args()[0];
+        $Ver = array_map(function ($Var) {
             $VarInt = (int)$Var;
             $VarLen = strlen($Var);
             if ($Var == $VarInt && strlen($VarInt) === $VarLen && $VarLen > 1) {
@@ -8341,4 +8340,122 @@ $phpMussel['Arrayify'] = function (&$Input) {
     if (!is_array($Input)) {
         $Input = array($Input);
     }
+};
+
+/** @todo@ docBlock */
+$phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
+    $Arr = array();
+    $Key = -1;
+    $Offset = strlen($Base);
+    $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);
+    foreach($List as $Item => $List){
+        $Key++;
+        $ThisName = substr($Item, $Offset);
+        $Final = substr($Item, -3);
+        if (preg_match("\x01^(?:\\\.{2}|/\.{2}|.\\\.|./\.|\.{3})$\x01", $Final)) {
+            continue;
+        }
+        $Arr[$Key] = array('Filename' => $ThisName);
+        if (is_dir($Item)) {
+            $Arr[$Key]['CanEdit'] = false;
+            $Arr[$Key]['Directory'] = true;
+            $Arr[$Key]['Filesize'] = 0;
+            $Arr[$Key]['Filetype'] = $phpMussel['lang']['field_filetype_directory'];
+            $Arr[$Key]['Icon'] = 'icon=directory';
+        } elseif (is_file($Item)) {
+            $Arr[$Key]['CanEdit'] = true;
+            $Arr[$Key]['Directory'] = false;
+            $Arr[$Key]['Filesize'] = filesize($Item);
+            if (($ExtDel = strrpos($Item, '.')) !== false) {
+                $Ext = strtoupper(substr($Item, $ExtDel + 1));
+                if (!$Ext) {
+                    $Arr[$Key]['Filetype'] = $phpMussel['lang']['field_filetype_unknown'];
+                    $Arr[$Key]['Icon'] = 'icon=unknown';
+                    $phpMussel['FormatFilesize']($Arr[$Key]['Filesize']);
+                    continue;
+                }
+                $Arr[$Key]['Filetype'] = $phpMussel['ParseVars'](array('EXT' => $Ext), $phpMussel['lang']['field_filetype_info']);
+                if ($Ext === 'ICO') {
+                    $Arr[$Key]['Icon'] = 'file=' . urlencode($Prepend . $Item);
+                    $phpMussel['FormatFilesize']($Arr[$Key]['Filesize']);
+                    continue;
+                }
+                if (preg_match(
+                    '/^(?:.?[BGL]Z.?|7Z|A(CE|LZ|P[KP]|R[CJ]?)?|B([AH]|Z2?)|CAB|DMG|' .
+                    'I(CE|SO)|L(HA|Z[HOWX]?)|P(AK|AQ.?|CK|EA)|RZ|S(7Z|EA|EN|FX|IT.?|QX)|' .
+                    'X(P3|Z)|YZ1|Z(IP.?|Z)?|(J|M|PH|R|SH|T|X)AR)$/'
+                , $Ext)) {
+                    $Arr[$Key]['CanEdit'] = false;
+                    $Arr[$Key]['Icon'] = 'icon=archive';
+                } elseif (preg_match('/^[SDX]?HT[AM]L?$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=html';
+                } elseif (preg_match('/^(?:CSV|JSON|NEON|SQL|YAML)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=ods';
+                } elseif (preg_match('/^(?:PDF|XDP)$/', $Ext)) {
+                    $Arr[$Key]['CanEdit'] = false;
+                    $Arr[$Key]['Icon'] = 'icon=pdf';
+                } elseif (preg_match('/^DOC[XT]?$/', $Ext)) {
+                    $Arr[$Key]['CanEdit'] = false;
+                    $Arr[$Key]['Icon'] = 'icon=doc';
+                } elseif (preg_match('/^XLS[XT]?$/', $Ext)) {
+                    $Arr[$Key]['CanEdit'] = false;
+                    $Arr[$Key]['Icon'] = 'icon=xls';
+                } elseif (preg_match('/^(?:CSS|JS|OD[BFGPST]|P(HP|PT))$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=' . strtolower($Ext);
+                    if (!preg_match('/^(?:CSS|JS|PHP)$/', $Ext)) {
+                        $Arr[$Key]['CanEdit'] = false;
+                    }
+                } elseif (preg_match('/^(?:FLASH|SWF)$/', $Ext)) {
+                    $Arr[$Key]['CanEdit'] = false;
+                    $Arr[$Key]['Icon'] = 'icon=swf';
+                } elseif (preg_match(
+                    '/^(?:BM[2P]|GIF|J(P2|PE?G?2?|XR)|P(DD|GM|IC|PM|SD|NG)|SV[AG]|TGA|W(BMP?|EBP|MP)|XCF)$/'
+                , $Ext)) {
+                    $Arr[$Key]['CanEdit'] = false;
+                    $Arr[$Key]['Icon'] = 'icon=image';
+                } elseif (preg_match(
+                    '/^(?:H?264|3GP(P2)?|A(M[CV]|VI)|BIK|D(IVX|V5?)|F([4L][CV]|MV)|GIFV|HLV|' .
+                    'M(4V|OV|P4|PE?G[4V]?|KV|VR)|OGM|V(IDEO|OB)|W(EBM|M[FV]3?)|X(WMV|VID))$/'
+                , $Ext)) {
+                    $Arr[$Key]['CanEdit'] = false;
+                    $Arr[$Key]['Icon'] = 'icon=video';
+                } elseif (preg_match(
+                    '/^(?:3GA|A(AC|IFF?|SF|U)|CDA|FLAC?|M(P?4A|IDI|KA|P[A23])|OGG|PCM|' .
+                    'R(AM?|M[AX])|SWA|W(AVE?|MA))$/'
+                , $Ext)) {
+                    $Arr[$Key]['CanEdit'] = false;
+                    $Arr[$Key]['Icon'] = 'icon=audio';
+                } elseif (preg_match('/^(?:MD|NFO|RTF|TXT)$/', $Ext)) {
+                    $Arr[$Key]['Icon'] = 'icon=text';
+                }
+            } else {
+                $Arr[$Key]['Filetype'] = $phpMussel['lang']['field_filetype_unknown'];
+            }
+        }
+        if (empty($Arr[$Key]['Icon'])) {
+            $Arr[$Key]['Icon'] = 'icon=unknown';
+        }
+        if ($Arr[$Key]['Filesize']) {
+            $phpMussel['FormatFilesize']($Arr[$Key]['Filesize']);
+        } else {
+            $Arr[$Key]['Filesize'] = '';
+        }
+    }
+    return $Arr;
+};
+
+/** @todo@ docBlock */
+$phpMussel['FileManager-PathSecurityCheck'] = function ($Path) {
+    $Path = str_replace("\\", '/', $Path);
+    if (preg_match("\x01(?://|[^!0-9A-Za-z\._-]$)\x01", $Path)) {
+        return false;
+    }
+    $Path = preg_split('@/@', $Path, -1, PREG_SPLIT_NO_EMPTY);
+    $Valid = true;
+    array_walk($Path, function($Segment) use (&$Valid) {
+        if (empty($Segment) || preg_match('/(?:[^!0-9a-z\x20\._-]+|^\.+$)/i', $Segment)) {
+            $Valid = false;
+        }
+    });
+    return $Valid;
 };

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2016.11.24).
+ * This file: German language data for the front-end (last modified: 2016.11.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,6 +24,13 @@ $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Ausloggen<
 $phpMussel['lang']['field_component'] = 'Komponente';
 $phpMussel['lang']['field_create_new_account'] = 'Neuen Konto erstellen';
 $phpMussel['lang']['field_delete_account'] = 'Konto löschen';
+$phpMussel['lang']['field_delete_file'] = 'Löschen';
+$phpMussel['lang']['field_download_file'] = 'Herunterladen';
+$phpMussel['lang']['field_edit_file'] = 'Bearbeiten';
+$phpMussel['lang']['field_file'] = 'Datei';
+$phpMussel['lang']['field_filetype_directory'] = 'Verzeichnis';
+$phpMussel['lang']['field_filetype_info'] = '{EXT}-Datei';
+$phpMussel['lang']['field_filetype_unknown'] = 'Unbekannt';
 $phpMussel['lang']['field_install'] = 'Installieren';
 $phpMussel['lang']['field_latest_version'] = 'Letzte Version';
 $phpMussel['lang']['field_log_in'] = 'Einloggen';
@@ -32,6 +39,7 @@ $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'Optionen';
 $phpMussel['lang']['field_password'] = 'Passwort';
 $phpMussel['lang']['field_permissions'] = 'Berechtigungen';
+$phpMussel['lang']['field_reset'] = 'Zurücksetzen';
 $phpMussel['lang']['field_set_new_password'] = 'Neues Passwort eingeben';
 $phpMussel['lang']['field_size'] = 'Gesamtgröße: ';
 $phpMussel['lang']['field_size_bytes'] = 'Byte';
@@ -42,13 +50,14 @@ $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = 'Status';
 $phpMussel['lang']['field_uninstall'] = 'Deinstallieren';
 $phpMussel['lang']['field_update'] = 'Aktualisieren';
+$phpMussel['lang']['field_upload_file'] = 'Neue Datei hochladen';
 $phpMussel['lang']['field_username'] = 'Benutzername';
 $phpMussel['lang']['field_your_version'] = 'Ihre Version';
 $phpMussel['lang']['header_login'] = 'Bitte einloggen zum Fortfahren.';
 $phpMussel['lang']['link_accounts'] = 'Konten';
 $phpMussel['lang']['link_config'] = 'Konfiguration';
 $phpMussel['lang']['link_documentation'] = 'Dokumentation';
-$phpMussel['lang']['link_greylist'] = 'Greylist';
+$phpMussel['lang']['link_file_manager'] = 'Dateimanager';
 $phpMussel['lang']['link_home'] = 'Startseite';
 $phpMussel['lang']['link_logs'] = 'Protokolldateien';
 $phpMussel['lang']['link_updates'] = 'Aktualisierungen';
@@ -66,6 +75,9 @@ $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Komponente 
 $phpMussel['lang']['response_component_successfully_updated'] = 'Komponente erfolgreich aktualisiert.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'Beim Deinstallieren der Komponente ist ein Fehler aufgetreten.';
 $phpMussel['lang']['response_component_update_error'] = 'Beim Aktualisieren der Komponente ist ein Fehler aufgetreten.';
+$phpMussel['lang']['response_file_deleted'] = 'Datei erfolgreich gelöscht!';
+$phpMussel['lang']['response_file_edited'] = 'Datei erfolgreich geändert!';
+$phpMussel['lang']['response_file_uploaded'] = 'Datei erfolgreich hochgeladen!';
 $phpMussel['lang']['response_login_invalid_password'] = 'Einloggen-Fehler! Ungültiges Passwort!';
 $phpMussel['lang']['response_login_invalid_username'] = 'Einloggen-Fehler! Benutzername existiert nicht!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Passwort-Feld leer!';
@@ -83,10 +95,14 @@ $phpMussel['lang']['state_default_password'] = 'Warnung: Verwendet das Standard-
 $phpMussel['lang']['state_logged_in'] = 'Eingeloggt';
 $phpMussel['lang']['state_logs_access_only'] = 'Zugriff nur auf Protokolldateien';
 $phpMussel['lang']['state_password_not_valid'] = 'Warnung: Dieses Konto verwendet kein gültiges Passwort!';
+$phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Nicht verstecken nicht veraltet';
+$phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Verstecken nicht veraltet';
+$phpMussel['lang']['switch-hide-unused-set-false'] = 'Nicht verstecken unbenutzt';
+$phpMussel['lang']['switch-hide-unused-set-true'] = 'Verstecken unbenutzt';
 $phpMussel['lang']['tip_accounts'] = 'Hallo, {username}.<br />Das Kontenseite macht es möglich zu kontrollieren, wer kann Zugriff auf der phpMussel Front-End haben.';
 $phpMussel['lang']['tip_config'] = 'Hallo, {username}.<br />Das Konfigurationsseite macht es möglich zu ändern das Konfiguration für phpMussel von der Front-End.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel wird kostenlos angeboten, aber wenn Sie Spende für das Projekt wollen, können Sie dies tun indem Klicken Sie auf die Spenden-Schaltfläche.';
-$phpMussel['lang']['tip_greylist'] = 'Hallo, {username}.<br />Das Greylist-Seite macht es möglich zu ändern das phpMussel Greylist von der Front-End.';
+$phpMussel['lang']['tip_file_manager'] = 'Hallo, {username}.<br />Mit dem Dateimanager können Sie Dateien löschen, bearbeiten, hochladen und herunterladen. Mit Vorsicht verwenden (Können Sie Ihre Installation mit diesem brechen).';
 $phpMussel['lang']['tip_home'] = 'Hallo, {username}.<br />Dies ist die Homepage der phpMussel Front-End. Wählen Sie einen Link aus dem Navigationsmenü auf der linken um fortzufahren.';
 $phpMussel['lang']['tip_login'] = 'Standard-Benutzername: <span class="txtRd">admin</span> – Standard-Passwort: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Hallo, {username}.<br />Wählen Sie eine Protokolldatei aus der folgenden Liste um den Inhalt dieser Protokolldatei anzuzeigen.';
@@ -94,7 +110,7 @@ $phpMussel['lang']['tip_updates'] = 'Hallo, {username}.<br />Das Aktualisierungs
 $phpMussel['lang']['tip_upload_test'] = 'Hallo, {username}.<br />Das Upload-Testseite enthält ein Standard-Datei-Upload-Formular, das macht es möglich zu prüfen ob eine Datei normalerweise gestoppt von phpMussel werden soll, wenn Sie versuchen es hochzuladen.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Konten';
 $phpMussel['lang']['title_config'] = 'phpMussel – Konfiguration';
-$phpMussel['lang']['title_greylist'] = 'phpMussel – Greylist';
+$phpMussel['lang']['title_file_manager'] = 'phpMussel – Dateimanager';
 $phpMussel['lang']['title_home'] = 'phpMussel – Startseite';
 $phpMussel['lang']['title_login'] = 'phpMussel – Einloggen';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Protokolldateien';
@@ -111,4 +127,5 @@ $phpMussel['lang']['info_some_useful_links'] = 'Einige nützliche Links:<ul>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Phishing-Datenbank, die vom phpMussel-URL-Scanner verwendet wird.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP Lernressourcen und Diskussion.</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP Lernressourcen und Diskussion.</li>
+            <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal ist ein kostenloser Dienst zur Analyse verdächtiger Dateien und URLs.</li>
         </ul>';

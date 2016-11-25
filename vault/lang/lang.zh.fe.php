@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2016.11.24).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2016.11.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,6 +24,13 @@ $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">登出</a>
 $phpMussel['lang']['field_component'] = '组件';
 $phpMussel['lang']['field_create_new_account'] = '创建新账户';
 $phpMussel['lang']['field_delete_account'] = '删除账户';
+$phpMussel['lang']['field_delete_file'] = '删除';
+$phpMussel['lang']['field_download_file'] = '下载';
+$phpMussel['lang']['field_edit_file'] = '编辑';
+$phpMussel['lang']['field_file'] = '文件';
+$phpMussel['lang']['field_filetype_directory'] = '目录';
+$phpMussel['lang']['field_filetype_info'] = '{EXT}文件';
+$phpMussel['lang']['field_filetype_unknown'] = '未知';
 $phpMussel['lang']['field_install'] = '安装';
 $phpMussel['lang']['field_latest_version'] = '最新版本';
 $phpMussel['lang']['field_log_in'] = '登录';
@@ -32,6 +39,7 @@ $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = '选项';
 $phpMussel['lang']['field_password'] = '密码';
 $phpMussel['lang']['field_permissions'] = '权限';
+$phpMussel['lang']['field_reset'] = '重启';
 $phpMussel['lang']['field_set_new_password'] = '保存新密码';
 $phpMussel['lang']['field_size'] = '总大小：';
 $phpMussel['lang']['field_size_bytes'] = '字节';
@@ -42,13 +50,14 @@ $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = '状态';
 $phpMussel['lang']['field_uninstall'] = '卸载';
 $phpMussel['lang']['field_update'] = '更新';
+$phpMussel['lang']['field_upload_file'] = '上传新文件';
 $phpMussel['lang']['field_username'] = '用户名';
 $phpMussel['lang']['field_your_version'] = '您的版本';
 $phpMussel['lang']['header_login'] = '请登录以继续。';
 $phpMussel['lang']['link_accounts'] = '账户';
 $phpMussel['lang']['link_config'] = '配置';
 $phpMussel['lang']['link_documentation'] = '文档';
-$phpMussel['lang']['link_greylist'] = '灰名单';
+$phpMussel['lang']['link_file_manager'] = '文件管理器';
 $phpMussel['lang']['link_home'] = '主页';
 $phpMussel['lang']['link_logs'] = '日志';
 $phpMussel['lang']['link_updates'] = '更新';
@@ -66,6 +75,9 @@ $phpMussel['lang']['response_component_successfully_uninstalled'] = '组件成�
 $phpMussel['lang']['response_component_successfully_updated'] = '组件成功更新。';
 $phpMussel['lang']['response_component_uninstall_error'] = '一个错误发生当尝试卸载组件。';
 $phpMussel['lang']['response_component_update_error'] = '一个错误发生当尝试更新组件。';
+$phpMussel['lang']['response_file_deleted'] = '文件成功删除！';
+$phpMussel['lang']['response_file_edited'] = '文件成功改性！';
+$phpMussel['lang']['response_file_uploaded'] = '文件成功上传！';
 $phpMussel['lang']['response_login_invalid_password'] = '登录失败！密码无效！';
 $phpMussel['lang']['response_login_invalid_username'] = '登录失败！用户名不存在！';
 $phpMussel['lang']['response_login_password_field_empty'] = '密码输入是空的！';
@@ -83,10 +95,14 @@ $phpMussel['lang']['state_default_password'] = '警告：它使用标准密码�
 $phpMussel['lang']['state_logged_in'] = '目前在线';
 $phpMussel['lang']['state_logs_access_only'] = '仅日志访问';
 $phpMussel['lang']['state_password_not_valid'] = '警告：此账户不​​使用有效的密码！';
+$phpMussel['lang']['switch-hide-non-outdated-set-false'] = '不要隐藏非过时';
+$phpMussel['lang']['switch-hide-non-outdated-set-true'] = '隐藏非过时';
+$phpMussel['lang']['switch-hide-unused-set-false'] = '不要隐藏非用过';
+$phpMussel['lang']['switch-hide-unused-set-true'] = '隐藏非用过';
 $phpMussel['lang']['tip_accounts'] = '你好，{username}。<br />账户页面允许您控制谁可以访问phpMussel前端。';
 $phpMussel['lang']['tip_config'] = '你好，{username}。<br />配置页面允许您修改phpMussel配置从前端。';
 $phpMussel['lang']['tip_donate'] = 'phpMussel是免费提供的，但如果您想捐赠给项目，您可以通过点击捐赠按钮这样做。';
-$phpMussel['lang']['tip_greylist'] = '你好，{username}。<br />灰名单页面允许您修改phpMussel灰名单从前端。';
+$phpMussel['lang']['tip_file_manager'] = '你好，{username}。<br />文件管理器允许您删除，编辑，上传和下载文件。小心使用（您可以用这个破坏您的安装）。';
 $phpMussel['lang']['tip_home'] = '你好，{username}。<br />这是phpMussel的前端主页。从左侧的导航菜单中选择一个链接以继续。';
 $phpMussel['lang']['tip_login'] = '标准用户名： <span class="txtRd">admin</span> – 标准密码： <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = '你好，{username}。<br />选择一个日志从下面的列表以查看那个日志的内容。';
@@ -94,7 +110,7 @@ $phpMussel['lang']['tip_updates'] = '你好，{username}。<br />更新页面允
 $phpMussel['lang']['tip_upload_test'] = '你好，{username}。<br />上传测试页面包含标准文件上传表单，允许您测试是否文件通常会被阻止通过phpMussel当尝试上传他们。';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – 账户';
 $phpMussel['lang']['title_config'] = 'phpMussel – 配置';
-$phpMussel['lang']['title_greylist'] = 'phpMussel – 灰名单';
+$phpMussel['lang']['title_file_manager'] = 'phpMussel – 文件管理器';
 $phpMussel['lang']['title_home'] = 'phpMussel – 主页';
 $phpMussel['lang']['title_login'] = 'phpMussel – 登录';
 $phpMussel['lang']['title_logs'] = 'phpMussel – 日志';
@@ -112,4 +128,5 @@ $phpMussel['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – 网络钓鱼数据库；由phpMussel URL扫描器使用。</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP学习资源和讨论。</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP学习资源和讨论。</li>
+            <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal是一项免费服务，用于分析可疑文件和URL。</li>
         </ul>';

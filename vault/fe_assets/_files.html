@@ -1,0 +1,28 @@
+<table width="100%">
+<tr>
+    <td width="20%" class="nav">
+
+{nav}
+    </td>
+    <td width="80%" class="right">
+        <div class="s">{state_msg}</div>
+        <table width="100%">
+        <tr>
+            <td class="h4"><div class="s">{field_file}</div></td>
+            <td class="h4"><div class="s">{field_options}</div></td>
+        </tr>
+        <tr>
+            <form enctype="multipart/form-data" action="?phpmussel-page=file-manager" method="POST">
+                <input name="phpmussel-form-target" type="hidden" value="file-manager" />
+                <input name="do" type="hidden" value="upload-file" />
+                <td class="h3" colspan="2"><div class="bNav">
+                    <input type="file" name="upload-file" />
+                    <input type="submit" value="{field_upload_file}" />
+                </div></td>
+            </form>
+        </tr>
+{FilesData}
+        </table>
+    </td>
+</tr>
+</table>

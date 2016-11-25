@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.11.12).
+ * This file: Front-end handler (last modified: 2016.11.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -300,6 +300,38 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '') {
 
 }
 
+/** A simple passthru for the file manager icons. */
+elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'icon' && $phpMussel['FE']['Permissions'] === 1) {
+
+    if (
+        !empty($phpMussel['QueryVars']['file']) &&
+        $phpMussel['FileManager-PathSecurityCheck']($phpMussel['QueryVars']['file']) &&
+        file_exists($phpMussel['Vault'] . $phpMussel['QueryVars']['file']) &&
+        is_readable($phpMussel['Vault'] . $phpMussel['QueryVars']['file'])
+    ) {
+        header('Content-Type: image/x-icon');
+        echo $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['QueryVars']['file']);
+    }
+
+    elseif (!empty($phpMussel['QueryVars']['icon'])) {
+
+        /** Fetch file manager icons data. */
+        if (file_exists($phpMussel['Vault'] . 'icons.php') && is_readable($phpMussel['Vault'] . 'icons.php')) {
+            require $phpMussel['Vault'] . 'icons.php';
+        }
+
+        header('Content-Type: image/gif');
+        if (!empty($phpMussel['Icons'][$phpMussel['QueryVars']['icon']])) {
+            echo gzinflate(base64_decode($phpMussel['Icons'][$phpMussel['QueryVars']['icon']]));
+        } else {
+            echo gzinflate(base64_decode($phpMussel['Icons']['unknown']));
+        }
+    }
+
+    die;
+
+}
+
 /** Accounts. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['FE']['Permissions'] === 1) {
 
@@ -497,33 +529,43 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
 
 }
 
-/** Greylist. */
-elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'greylist' && $phpMussel['FE']['Permissions'] === 1) {
-
-    /** Set page title. */
-    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_greylist'];
-
-    /** Prepare page tooltip/description. */
-    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
-        array('username' => $phpMussel['FE']['UserRaw']),
-        $phpMussel['lang']['tip_greylist']
-    );
-
-    $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
-
-    /** Parse output. */
-    $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
-        $phpMussel['lang'] + $phpMussel['FE'],
-        $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_greylist.html')
-    );
-
-    /** Send output. */
-    echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
-
-}
-
 /** Updates. */
 elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['FE']['Permissions'] === 1) {
+
+    $phpMussel['FE']['UpdatesFormTarget'] = 'phpmussel-page=updates';
+    $phpMussel['FE']['UpdatesFormTargetControls'] = '';
+    $phpMussel['QueryTemp'] = array('Switched' => false);
+    foreach (array('hide-non-outdated', 'hide-unused') as $phpMussel['QueryTemp']['Param']) {
+        $phpMussel['QueryTemp']['Switch'] = (
+            !empty($_POST['updates-form-target-selecter']) &&
+            $_POST['updates-form-target-selecter'] === $phpMussel['QueryTemp']['Param']
+        );
+        if (empty($phpMussel['QueryVars'][$phpMussel['QueryTemp']['Param']])) {
+            $phpMussel['FE'][$phpMussel['QueryTemp']['Param']] = false;
+        } else {
+            $phpMussel['FE'][$phpMussel['QueryTemp']['Param']] = (
+                ($phpMussel['QueryVars'][$phpMussel['QueryTemp']['Param']] === 'true' && !$phpMussel['QueryTemp']['Switch']) ||
+                ($phpMussel['QueryVars'][$phpMussel['QueryTemp']['Param']] !== 'true' && $phpMussel['QueryTemp']['Switch'])
+            );
+        }
+        if ($phpMussel['QueryTemp']['Switch']) {
+            $phpMussel['QueryTemp']['Switched'] = true;
+        }
+        if ($phpMussel['FE'][$phpMussel['QueryTemp']['Param']]) {
+            $phpMussel['FE']['UpdatesFormTarget'] .= '&' . $phpMussel['QueryTemp']['Param'] . '=true';
+            $phpMussel['QueryTemp']['LangOpt'] = 'switch-' . $phpMussel['QueryTemp']['Param'] . '-set-false';
+        } else {
+            $phpMussel['FE']['UpdatesFormTarget'] .= '&' . $phpMussel['QueryTemp']['Param'] . '=false';
+            $phpMussel['QueryTemp']['LangOpt'] = 'switch-' . $phpMussel['QueryTemp']['Param'] . '-set-true';
+        }
+        $phpMussel['FE']['UpdatesFormTargetControls'] .=
+            '<option value="' . $phpMussel['QueryTemp']['Param'] . '">' . $phpMussel['lang'][$phpMussel['QueryTemp']['LangOpt']] . '</option>';
+    }
+    if ($phpMussel['QueryTemp']['Switched']) {
+        header('Location: ?' . $phpMussel['FE']['UpdatesFormTarget']);
+        die;
+    }
+    unset($phpMussel['QueryTemp']);
 
     /** Prepare components metadata working array. */
     $phpMussel['Components'] = array(
@@ -843,6 +885,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
         $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['StatClass'] = '';
         if (empty($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Version'])) {
             if (empty($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Files'])) {
+                $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['RowClass'] = 'h2';
                 $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Version'] =
                     $phpMussel['lang']['response_updates_not_installed'];
                 $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['StatClass'] = 'txtRd';
@@ -919,6 +962,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                         $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Latest']
                     )
                 ) {
+                    $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Outdated'] = true;
+                    $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['RowClass'] = 'r';
                     $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['StatClass'] = 'txtRd';
                     if (
                         !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Minimum Required']) &&
@@ -1059,16 +1104,24 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             );
             $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Options'] = '';
         }
-        if (empty($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Changelog'])) {
-            $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Changelog'] = '';
-        } else {
-            $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Changelog'] =
-                '<br /><a href="' . $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Changelog'] . '">Changelog</a>';
+        $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Changelog'] =
+            (empty($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Changelog'])) ? '' :
+            '<br /><a href="' . $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Changelog'] . '">Changelog</a>';
+        $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Filename'] =
+            (count($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Files']['To']) !== 1) ? '' :
+            '<br />' . $phpMussel['lang']['field_filename'] . $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Files']['To'][0];
+        if (
+            !($phpMussel['FE']['hide-non-outdated'] && empty($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Outdated'])) &&
+            !($phpMussel['FE']['hide-unused'] && empty($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Files']))
+        ) {
+            if (empty($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['RowClass'])) {
+                $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['RowClass'] = 'h1';
+            }
+            $phpMussel['Components']['Out'] .= $phpMussel['ParseVars'](
+                $phpMussel['lang'] + $phpMussel['ArrayFlatten']($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]),
+                $phpMussel['FE']['UpdatesRow']
+            );
         }
-        $phpMussel['Components']['Out'] .= $phpMussel['ParseVars'](
-            $phpMussel['lang'] + $phpMussel['ArrayFlatten']($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]),
-            $phpMussel['FE']['UpdatesRow']
-        );
         next($phpMussel['Components']['Meta']);
     }
 
@@ -1209,10 +1262,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             $phpMussel['lang']['field_install'] .
             '</option></select><input class="half" type="submit" value="' .
             $phpMussel['lang']['field_ok'] . '" />';
-        $phpMussel['Components']['Out'] .= $phpMussel['ParseVars'](
-            $phpMussel['lang'] + $phpMussel['ArrayFlatten']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]),
-            $phpMussel['FE']['UpdatesRow']
-        );
+        if (!$phpMussel['FE']['hide-unused']) {
+            $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['RowClass'] = 'h2';
+            $phpMussel['Components']['Out'] .= $phpMussel['ParseVars'](
+                $phpMussel['lang'] + $phpMussel['ArrayFlatten']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]),
+                $phpMussel['FE']['UpdatesRow']
+            );
+        }
     }
 
     reset($phpMussel['Components']['Remotes']);
@@ -1247,6 +1303,154 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
         $phpMussel['lang'] + $phpMussel['FE'],
         $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_updates.html')
     );
+
+    /** Send output. */
+    echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+
+}
+
+/** File Manager. */
+elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMussel['FE']['Permissions'] === 1) {
+
+    /** Set page title. */
+    $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_file_manager'];
+
+    /** Prepare page tooltip/description. */
+    $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
+        array('username' => $phpMussel['FE']['UserRaw']),
+        $phpMussel['lang']['tip_file_manager']
+    );
+
+    $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
+
+    /** Upload a new file. */
+    if (
+        isset($_POST['do']) &&
+        $_POST['do'] === 'upload-file' &&
+        isset($_FILES['upload-file']['name']) &&
+        basename($_FILES['upload-file']['name']) === $_FILES['upload-file']['name'] &&
+        $phpMussel['FileManager-PathSecurityCheck']($_FILES['upload-file']['name']) &&
+        isset($_FILES['upload-file']['tmp_name']) &&
+        isset($_FILES['upload-file']['error']) &&
+        $_FILES['upload-file']['error'] === UPLOAD_ERR_OK &&
+        is_uploaded_file($_FILES['upload-file']['tmp_name']) &&
+        !is_link($phpMussel['Vault'] . $_FILES['upload-file']['name'])
+    ) {
+
+        /** If the filename already exists, delete the old file before moving the new file. */
+        if (
+            file_exists($phpMussel['Vault'] . $_FILES['upload-file']['name']) &&
+            is_readable($phpMussel['Vault'] . $_FILES['upload-file']['name'])
+        ) {
+            if (is_dir($phpMussel['Vault'] . $_FILES['upload-file']['name'])) {
+                rmdir($phpMussel['Vault'] . $_FILES['upload-file']['name']);
+            } else {
+                unlink($phpMussel['Vault'] . $_FILES['upload-file']['name']);
+            }
+        }
+
+        /** Move the newly uploaded file to the designated location. */
+        rename($_FILES['upload-file']['tmp_name'], $phpMussel['Vault'] . $_FILES['upload-file']['name']);
+        $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_file_uploaded'];
+
+    }
+
+    /** A form was submitted. */
+    elseif (
+        isset($_POST['filename']) &&
+        isset($_POST['do']) &&
+        file_exists($phpMussel['Vault'] . $_POST['filename']) &&
+        is_readable($phpMussel['Vault'] . $_POST['filename']) &&
+        $phpMussel['FileManager-PathSecurityCheck']($_POST['filename'])
+    ) {
+
+        /** Delete a file. */
+        if ($_POST['do'] === 'delete-file') {
+
+            if (is_dir($phpMussel['Vault'] . $_POST['filename'])) {
+                rmdir($phpMussel['Vault'] . $_POST['filename']);
+            } else {
+                unlink($phpMussel['Vault'] . $_POST['filename']);
+            }
+            $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_file_deleted'];
+
+        /** Edit a file. */
+        } elseif ($_POST['do'] === 'edit-file') {
+
+            if (isset($_POST['content'])) {
+
+                $_POST['content'] = str_replace("\r", '', $_POST['content']);
+                $phpMussel['OldData'] = $phpMussel['ReadFile']($phpMussel['Vault'] . $_POST['filename']);
+                if (substr_count($phpMussel['OldData'], "\r\n") && !substr_count($phpMussel['OldData'], "\n\n")) {
+                    $_POST['content'] = str_replace("\n", "\r\n", $_POST['content']);
+                }
+
+                $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $_POST['filename'], 'w');
+                fwrite($phpMussel['Handle'], $_POST['content']);
+                fclose($phpMussel['Handle']);
+
+                $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_file_edited'];
+
+            } else {
+
+                $phpMussel['FE']['FE_Title'] .= ' – ' . $_POST['filename'];
+                $phpMussel['FE']['filename'] = $_POST['filename'];
+                $phpMussel['FE']['content'] = htmlentities($phpMussel['ReadFile']($phpMussel['Vault'] . $_POST['filename']));
+
+                /** Parse output. */
+                $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
+                    $phpMussel['lang'] + $phpMussel['FE'],
+                    $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_files_edit.html')
+                );
+
+                /** Send output. */
+                echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
+
+                die;
+
+            }
+
+        /** Download a file. */
+        } elseif ($_POST['do'] === 'download-file') {
+
+            header('Content-Type: application/octet-stream');
+            header('Content-Transfer-Encoding: Binary');
+            header('Content-disposition: attachment; filename="' . basename($_POST['filename']) . '"');
+            echo $phpMussel['ReadFile']($phpMussel['Vault'] . $_POST['filename']);
+            die;
+
+        }
+
+    }
+
+    /** Template for file rows. */
+    $phpMussel['FE']['FilesRow'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_files_row.html');
+
+    /** Parse output. */
+    $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
+        $phpMussel['lang'] + $phpMussel['FE'],
+        $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_files.html')
+    );
+
+    /** Initialise files data variable. */
+    $phpMussel['FE']['FilesData'] = '';
+
+    /** Fetch files data. */
+    $phpMussel['FilesArray'] = $phpMussel['FileManager-RecursiveList']($phpMussel['Vault']);
+
+    /** Process files data. */
+    array_walk($phpMussel['FilesArray'], function ($ThisFile) use (&$phpMussel) {
+        $ThisFile['ThisOptions'] = '<option value="delete-file">' . $phpMussel['lang']['field_delete_file'] . '</option>';
+        if ($ThisFile['CanEdit']) {
+            $ThisFile['ThisOptions'] .= '<option value="edit-file">' . $phpMussel['lang']['field_edit_file'] . '</option>';
+        }
+        if (!$ThisFile['Directory']) {
+            $ThisFile['ThisOptions'] .= '<option value="download-file">' . $phpMussel['lang']['field_download_file'] . '</option>';
+        }
+        $phpMussel['FE']['FilesData'] .= $phpMussel['ParseVars'](
+            $phpMussel['lang'] + $phpMussel['FE'] + $ThisFile, $phpMussel['FE']['FilesRow']
+        );
+    });
 
     /** Send output. */
     echo $phpMussel['ParseVars']($phpMussel['lang'] + $phpMussel['FE'], $phpMussel['FE']['Template']);
@@ -1300,6 +1504,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
         $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_logs.html')
     );
 
+    /** Initialise array for fetching logs data. */
     $phpMussel['FE']['LogFiles'] = array(
         'Files' => scandir($phpMussel['Vault']),
         'Types' => ',txt,log,',

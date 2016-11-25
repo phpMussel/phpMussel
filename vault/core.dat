@@ -16,7 +16,7 @@ phpMussel:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-TW: 主包（沒有簽名文件，文檔，和配置）。
- Version: 1.0.0-DEV+20161124
+ Version: 1.0.0-DEV+20161125
  Minimum Required: 1.0.0-DEV
  Changelog: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/Changelog-v1.txt
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/core.dat
@@ -30,7 +30,9 @@ phpMussel:
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_accounts.html
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_accounts_row.html
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_config.html
-   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_greylist.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_files.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_files_edit.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_files_row.html
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_home.html
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_login.html
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_logs.html
@@ -43,6 +45,7 @@ phpMussel:
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/frontend.html
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/frontend.php
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/functions.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/icons.php
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang.php
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/.htaccess
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/plugins/.htaccess
@@ -60,7 +63,9 @@ phpMussel:
    - fe_assets/_accounts.html
    - fe_assets/_accounts_row.html
    - fe_assets/_config.html
-   - fe_assets/_greylist.html
+   - fe_assets/_files.html
+   - fe_assets/_files_edit.html
+   - fe_assets/_files_row.html
    - fe_assets/_home.html
    - fe_assets/_login.html
    - fe_assets/_logs.html
@@ -73,6 +78,7 @@ phpMussel:
    - fe_assets/frontend.html
    - frontend.php
    - functions.php
+   - icons.php
    - lang.php
    - lang/.htaccess
    - plugins/.htaccess
@@ -89,20 +95,23 @@ phpMussel:
    - 8e03209e7fc6641b45094e584340feff:83
    - 84ce19d33836f87336a2337af8da1529:1357
    - 5381ed9947252e423321855b219d7162:778
-   - 22fcb4847e99567d38d51609430c7106:186
-   - a71b00d79076146d6b230d8128dea295:188
+   - f49948358cb9a42ee7607a70d5506a4e:173
+   - 84090803b47ad55a1ffa705f865f7698:928
+   - ca72c316ee4d4ba9838824debf8e9265:843
+   - 8e4661b87269e4991e46040ae42a918b:631
    - 7062622062c2cef8db4e0e02ee1e04e2:765
    - 88be8160714a7b60c614e2d674123f26:2217
    - 6ff9fb63b91538ee5b27969f002dedcf:194
-   - b5bb75452f898d6cb3b3b319236a5905:903
+   - a3c5ca6436caf3628407f9d42fc2b7c7:911
    - f610ba3221210b4d914af648cf721485:518
-   - 7a301cd9d67e6fa4e77013e3d636442c:569
-   - 5893780b1919588f818ee4dc2cf9f4ec:635
+   - 8fce8c13f2bfc2965a020f927e6f58e5:992
+   - 8941b6835f4698ee6578b1718c3f7b83:674
    - 14af0698a968aaebd5c9cc06e0ddaba4:988
-   - a934f0093ecb00fd7431f240bf65bbb1:3861
+   - 0683f296aa7076d303da1084b9f105c0:3902
    - c9234143e18045ca73414339f5803452:937
-   - 3b080b7c31d53c66372f7e7dda5e54b4:73747
-   - 4c2e353c9801d0fc9327dc8770423a59:403407
+   - f9dea8e4d11079afbcaf3e644fbb4f36:83654
+   - a855a1cae35e8d520f3f5040e4e3017e:408916
+   - c079d33f77a9612a906df4a21948b5b6:17618
    - 6e7c8fc61526e506584c19fa9551aef0:3264
    - 8e03209e7fc6641b45094e584340feff:83
    - 8e03209e7fc6641b45094e584340feff:83

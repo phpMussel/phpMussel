@@ -11,6 +11,7 @@ input[type=text]{background-image:url(data:image/gif;base64,{PIP_Input})}
 textarea{height:150px}
 textarea.half{height:75px}
 input[type=image]{width:inherit;border:inherit}
+img.ico{width:16px;height:16px;border:0}
 .bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,a,input,select,textarea{font-weight:700}
 .bNav,.gen{text-align:right}
 .ci,.co,.gen{margin:auto}

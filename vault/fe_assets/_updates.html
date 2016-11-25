@@ -12,7 +12,13 @@
             <td class="h2"><div class="s">{field_your_version}</div></td>
             <td class="h2"><div class="s">{field_latest_version}</div></td>
             <td class="h2"><div class="s">{field_status} | {field_options}</div></td>
-        </tr>{Components}
+        </tr>
+        <tr><td class="h1" colspan="4"><div class="bNav">
+            <form action="?{UpdatesFormTarget}" method="POST" name="ufts" id="ufts"><input name="phpmussel-form-target" type="hidden" value="updates" /><select name="updates-form-target-selecter" class="ufts">
+                {UpdatesFormTargetControls}
+            </select> <input class="half" type="submit" value="{field_ok}" /></form>
+        </div></td></tr>
+{Components}
         </table>
     </td>
 </tr>

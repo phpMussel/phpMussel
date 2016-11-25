@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2016.11.24).
+ * This file: Russian language data for the front-end (last modified: 2016.11.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -24,6 +24,13 @@ $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Выйди
 $phpMussel['lang']['field_component'] = 'Компонент';
 $phpMussel['lang']['field_create_new_account'] = 'Создать Новый Аккаунт';
 $phpMussel['lang']['field_delete_account'] = 'Удалить Аккаунт';
+$phpMussel['lang']['field_delete_file'] = 'Удалить';
+$phpMussel['lang']['field_download_file'] = 'Скачать';
+$phpMussel['lang']['field_edit_file'] = 'Редактировать';
+$phpMussel['lang']['field_file'] = 'Файл';
+$phpMussel['lang']['field_filetype_directory'] = 'Каталог';
+$phpMussel['lang']['field_filetype_info'] = 'Файл {EXT}';
+$phpMussel['lang']['field_filetype_unknown'] = 'Неизвестный';
 $phpMussel['lang']['field_install'] = 'Устанавливать';
 $phpMussel['lang']['field_latest_version'] = 'Последняя Версия';
 $phpMussel['lang']['field_log_in'] = 'Войдите';
@@ -32,6 +39,7 @@ $phpMussel['lang']['field_ok'] = 'ОК';
 $phpMussel['lang']['field_options'] = 'Опции';
 $phpMussel['lang']['field_password'] = 'Пароль';
 $phpMussel['lang']['field_permissions'] = 'Разрешения';
+$phpMussel['lang']['field_reset'] = 'Сбросить';
 $phpMussel['lang']['field_set_new_password'] = 'Установить Новый Пароль';
 $phpMussel['lang']['field_size'] = 'Общий Размер: ';
 $phpMussel['lang']['field_size_bytes'] = 'байтов';
@@ -42,13 +50,14 @@ $phpMussel['lang']['field_size_TB'] = 'ТБ';
 $phpMussel['lang']['field_status'] = 'Статус';
 $phpMussel['lang']['field_uninstall'] = 'Удалить';
 $phpMussel['lang']['field_update'] = 'Обновить';
+$phpMussel['lang']['field_upload_file'] = 'Загрузить Новый Файл';
 $phpMussel['lang']['field_username'] = 'Имя Пользователя';
 $phpMussel['lang']['field_your_version'] = 'Ваша Версия';
 $phpMussel['lang']['header_login'] = 'Пожалуйста войдите чтобы продолжить.';
 $phpMussel['lang']['link_accounts'] = 'Учетными Записями';
 $phpMussel['lang']['link_config'] = 'Конфигурация';
 $phpMussel['lang']['link_documentation'] = 'Документация';
-$phpMussel['lang']['link_greylist'] = 'Серый Список';
+$phpMussel['lang']['link_file_manager'] = 'Файловый Менеджер';
 $phpMussel['lang']['link_home'] = 'Домашняя Страница';
 $phpMussel['lang']['link_logs'] = 'Лог-Файлы';
 $phpMussel['lang']['link_updates'] = 'Обновления';
@@ -66,6 +75,9 @@ $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Компо�
 $phpMussel['lang']['response_component_successfully_updated'] = 'Компонент успешно обновлено.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'Произошла ошибка при попытке удалить компонент.';
 $phpMussel['lang']['response_component_update_error'] = 'Произошла ошибка при попытке обновить компонент.';
+$phpMussel['lang']['response_file_deleted'] = 'Файл успешно удален!';
+$phpMussel['lang']['response_file_edited'] = 'Файл успешно изменен!';
+$phpMussel['lang']['response_file_uploaded'] = 'Файл успешно загружен!';
 $phpMussel['lang']['response_login_invalid_password'] = 'Войти провал! Неверный пароль!';
 $phpMussel['lang']['response_login_invalid_username'] = 'Войти провал! Имя пользователя не существует!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Пароль пусто!';
@@ -83,10 +95,14 @@ $phpMussel['lang']['state_default_password'] = 'Предупреждение: И
 $phpMussel['lang']['state_logged_in'] = 'В настоящее время вошли в систему';
 $phpMussel['lang']['state_logs_access_only'] = 'Доступ только к лог-файлы';
 $phpMussel['lang']['state_password_not_valid'] = 'Предупреждение: Эта аккаунт не использует правильный пароль!';
+$phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Не скрывают не-устаревший';
+$phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Скрывают не-устаревший';
+$phpMussel['lang']['switch-hide-unused-set-false'] = 'Не скрывают не-установлена';
+$phpMussel['lang']['switch-hide-unused-set-true'] = 'Скрывают не-установлена';
 $phpMussel['lang']['tip_accounts'] = 'Привет, {username}.<br />Учетными записями страница позволяет контролировать, кто может получить доступ к phpMussel фронтенд.';
 $phpMussel['lang']['tip_config'] = 'Привет, {username}.<br />Конфигурация страница позволяет изменять конфигурацию для phpMussel от фронтенд.';
 $phpMussel['lang']['tip_donate'] = 'phpMussel предлагается бесплатно, но если Вы хотите пожертвовать на проект, Вы можете сделать это, нажав на кнопку пожертвовать.';
-$phpMussel['lang']['tip_greylist'] = 'Привет, {username}.<br />Серый список страница позволяет изменять phpMussel серый список от фронтенд.';
+$phpMussel['lang']['tip_file_manager'] = 'Привет, {username}.<br />Файловый менеджер позволяет удалять, редактировать, загружать и скачивать файлы. Используйте с осторожностью (Вы могли бы нарушить вашу установку с этим).';
 $phpMussel['lang']['tip_home'] = 'Привет, {username}.<br />Это домашняя страница для phpMussel фронтенд. Выберите ссылку в меню навигации слева чтобы продолжить.';
 $phpMussel['lang']['tip_login'] = 'Стандартный имя пользователя: <span class="txtRd">admin</span> – Стандартный пароль: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Привет, {username}.<br />Выберите лог-файл из приведенного ниже списка чтобы прочитать содержимое лог-файл.';
@@ -94,7 +110,7 @@ $phpMussel['lang']['tip_updates'] = 'Привет, {username}.<br />Обновл
 $phpMussel['lang']['tip_upload_test'] = 'Привет, {username}.<br />Тестовая загрузка страница содержит стандартную форму для загрузки файла, позволяя вам проверить нормально ли будет заблокирован файл от phpMussel когда попытке загрузить его.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Учетными Записями';
 $phpMussel['lang']['title_config'] = 'phpMussel – Конфигурация';
-$phpMussel['lang']['title_greylist'] = 'phpMussel – Серый Список';
+$phpMussel['lang']['title_file_manager'] = 'phpMussel – Файловый Менеджер';
 $phpMussel['lang']['title_home'] = 'phpMussel – Домашняя Страница';
 $phpMussel['lang']['title_login'] = 'phpMussel – Войти';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Лог-Файлы';
@@ -111,4 +127,5 @@ $phpMussel['lang']['info_some_useful_links'] = 'Некоторые полезн�
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Фишинг базе данных, используется в сканером URL для phpMussel.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP учебных ресурсов и обсуждение.</li>
             <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP учебных ресурсов и обсуждение.</li>
+            <li><a href="https://www.virustotal.com/">VirusTotal</a> – Бесплатный сервис для анализа подозрительных файлов и URL-адресов.</li>
         </ul>';
