@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.11.25).
+ * This file: Functions file (last modified: 2016.11.26).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -8255,11 +8255,11 @@ $phpMussel['FECacheGet'] = function ($Source, $Entry) {
 $phpMussel['VersionCompare'] = function ($A, $B) {
     $Normalise = function (&$Ver) {
         $Ver =
-            preg_match("\x01^v?([0-9]+)$\x01i", $Ver, $Matches) ?:
-            preg_match("\x01^v?([0-9]+)\.([0-9]+)$\x01i", $Ver, $Matches) ?:
-            preg_match("\x01^v?([0-9]+)\.([0-9]+)\.([0-9]+)(-[0-9a-z_+\\/]+)?$\x01i", $Ver, $Matches) ?:
-            preg_match("\x01^([0-9]{1,4})[.-]([0-9]{1,2})[.-]([0-9]{1,4})([.+-][0-9a-z_+\\/]+)?$\x01i", $Ver, $Matches) ?:
-            preg_match("\x01^([a-z]+)-([0-9a-z]+)-([0-9a-z]+)$\x01i", $Ver, $Matches);
+            preg_match("\x01" . '^v?([0-9]+)$' . "\x01i", $Ver, $Matches) ?:
+            preg_match("\x01" . '^v?([0-9]+)\.([0-9]+)$' . "\x01i", $Ver, $Matches) ?:
+            preg_match("\x01" . '^v?([0-9]+)\.([0-9]+)\.([0-9]+)(-[0-9a-z_+\\/]+)?$' . "\x01i", $Ver, $Matches) ?:
+            preg_match("\x01" . '^([0-9]{1,4})[.-]([0-9]{1,2})[.-]([0-9]{1,4})([.+-][0-9a-z_+\\/]+)?$' . "\x01i", $Ver, $Matches) ?:
+            preg_match("\x01" . '^([a-z]+)-([0-9a-z]+)-([0-9a-z]+)$' . "\x01i", $Ver, $Matches);
         $Ver = array(
             'Major' => isset($Matches[1]) ? $Matches[1] : 0,
             'Minor' => isset($Matches[2]) ? $Matches[2] : 0,
@@ -8351,8 +8351,7 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
     foreach($List as $Item => $List){
         $Key++;
         $ThisName = substr($Item, $Offset);
-        $Final = substr($Item, -3);
-        if (preg_match("\x01^(?:\\\.{2}|/\.{2}|.\\\.|./\.|\.{3})$\x01", $Final)) {
+        if (preg_match("\x01" . '^(?:/\.\.|./\.|\.{3})$' . "\x01", str_replace("\\", '/', substr($Item, -3)))) {
             continue;
         }
         $Arr[$Key] = array('Filename' => $ThisName);
@@ -8447,7 +8446,10 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
 /** @todo@ docBlock */
 $phpMussel['FileManager-PathSecurityCheck'] = function ($Path) {
     $Path = str_replace("\\", '/', $Path);
-    if (preg_match("\x01(?://|[^!0-9A-Za-z\._-]$)\x01", $Path)) {
+    if (
+        preg_match("\x01" . '(?://|[^!0-9A-Za-z\._-]$)' . "\x01", $Path) ||
+        preg_match("\x01" . '^(?:/\.\.|./\.|\.{3})$' . "\x01", str_replace("\\", '/', substr($Path, -3)))
+    ) {
         return false;
     }
     $Path = preg_split('@/@', $Path, -1, PREG_SPLIT_NO_EMPTY);
@@ -8458,4 +8460,9 @@ $phpMussel['FileManager-PathSecurityCheck'] = function ($Path) {
         }
     });
     return $Valid;
+};
+
+/** @todo@ docBlock */
+$phpMussel['FileManager-IsDirEmpty'] = function ($Directory) {
+    return !((new \FilesystemIterator($Directory))->valid());
 };

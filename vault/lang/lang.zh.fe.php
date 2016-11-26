@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2016.11.25).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2016.11.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -28,17 +28,19 @@ $phpMussel['lang']['field_delete_file'] = '删除';
 $phpMussel['lang']['field_download_file'] = '下载';
 $phpMussel['lang']['field_edit_file'] = '编辑';
 $phpMussel['lang']['field_file'] = '文件';
-$phpMussel['lang']['field_filetype_directory'] = '目录';
+$phpMussel['lang']['field_filetype_directory'] = '文件夹';
 $phpMussel['lang']['field_filetype_info'] = '{EXT}文件';
 $phpMussel['lang']['field_filetype_unknown'] = '未知';
 $phpMussel['lang']['field_install'] = '安装';
 $phpMussel['lang']['field_latest_version'] = '最新版本';
 $phpMussel['lang']['field_log_in'] = '登录';
 $phpMussel['lang']['field_more_fields'] = '更多字段';
+$phpMussel['lang']['field_new_name'] = '新名称：';
 $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = '选项';
 $phpMussel['lang']['field_password'] = '密码';
 $phpMussel['lang']['field_permissions'] = '权限';
+$phpMussel['lang']['field_rename_file'] = '改名';
 $phpMussel['lang']['field_reset'] = '重启';
 $phpMussel['lang']['field_set_new_password'] = '保存新密码';
 $phpMussel['lang']['field_size'] = '总大小：';
@@ -75,18 +77,24 @@ $phpMussel['lang']['response_component_successfully_uninstalled'] = '组件成�
 $phpMussel['lang']['response_component_successfully_updated'] = '组件成功更新。';
 $phpMussel['lang']['response_component_uninstall_error'] = '一个错误发生当尝试卸载组件。';
 $phpMussel['lang']['response_component_update_error'] = '一个错误发生当尝试更新组件。';
+$phpMussel['lang']['response_delete_error'] = '无法删除！';
+$phpMussel['lang']['response_directory_deleted'] = '文件夹成功删除！';
+$phpMussel['lang']['response_directory_renamed'] = '文件夹成功改名！';
 $phpMussel['lang']['response_file_deleted'] = '文件成功删除！';
 $phpMussel['lang']['response_file_edited'] = '文件成功改性！';
+$phpMussel['lang']['response_file_renamed'] = '文件成功改名！';
 $phpMussel['lang']['response_file_uploaded'] = '文件成功上传！';
 $phpMussel['lang']['response_login_invalid_password'] = '登录失败！密码无效！';
 $phpMussel['lang']['response_login_invalid_username'] = '登录失败！用户名不存在！';
 $phpMussel['lang']['response_login_password_field_empty'] = '密码输入是空的！';
 $phpMussel['lang']['response_login_username_field_empty'] = '用户名输入是空的！';
+$phpMussel['lang']['response_rename_error'] = '无法改名！';
 $phpMussel['lang']['response_updates_already_up_to_date'] = '已经更新。';
 $phpMussel['lang']['response_updates_not_installed'] = '组件不安装！';
 $phpMussel['lang']['response_updates_outdated'] = '过时！';
 $phpMussel['lang']['response_updates_outdated_manually'] = '过时（请更新手动）！';
 $phpMussel['lang']['response_updates_unable_to_determine'] = '无法确定。';
+$phpMussel['lang']['response_upload_error'] = '无法上传！';
 $phpMussel['lang']['state_complete_access'] = '完全访问';
 $phpMussel['lang']['state_component_is_active'] = '组件是活性。';
 $phpMussel['lang']['state_component_is_inactive'] = '组件是非活性。';

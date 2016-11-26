@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2016.11.25).
+ * This file: Vietnamese language data for the front-end (last modified: 2016.11.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -35,10 +35,12 @@ $phpMussel['lang']['field_install'] = 'Cài Đặt';
 $phpMussel['lang']['field_latest_version'] = 'Phiên bản mới nhất';
 $phpMussel['lang']['field_log_in'] = 'Đăng Nhập';
 $phpMussel['lang']['field_more_fields'] = 'Thêm Lĩnh Vực';
+$phpMussel['lang']['field_new_name'] = 'Tên mới:';
 $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'Tùy Chọn';
 $phpMussel['lang']['field_password'] = 'Mật Khẩu';
 $phpMussel['lang']['field_permissions'] = 'Quyền';
+$phpMussel['lang']['field_rename_file'] = 'Đổi tên';
 $phpMussel['lang']['field_reset'] = 'Thiết Lập Lại';
 $phpMussel['lang']['field_set_new_password'] = 'Đặt mật khẩu mới';
 $phpMussel['lang']['field_size'] = 'Kích thước tổng: ';
@@ -75,18 +77,24 @@ $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Gói gỡ b
 $phpMussel['lang']['response_component_successfully_updated'] = 'Gói cập nhật thành công.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'Có lỗi xảy ra trong khi cố gắng để gỡ bỏ cài đặt các gói.';
 $phpMussel['lang']['response_component_update_error'] = 'Có lỗi xảy ra trong khi cố gắng để cập nhật các gói.';
+$phpMussel['lang']['response_delete_error'] = 'Không thể xóa!';
+$phpMussel['lang']['response_directory_deleted'] = 'Thư mục xóa thành công!';
+$phpMussel['lang']['response_directory_renamed'] = 'Đổi tên thư mục thành công!';
 $phpMussel['lang']['response_file_deleted'] = 'Tập tin xóa thành công!';
 $phpMussel['lang']['response_file_edited'] = 'Tập tin sửa đổi thành công!';
+$phpMussel['lang']['response_file_renamed'] = 'Đổi tên tập tin thành công!';
 $phpMussel['lang']['response_file_uploaded'] = 'Tập tin tải lên thành công!';
 $phpMussel['lang']['response_login_invalid_password'] = 'Thất bại đăng nhập! Mật khẩu không hợp lệ!';
 $phpMussel['lang']['response_login_invalid_username'] = 'Thất bại đăng nhập! Tên người dùng không tồn tại!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Mật khẩu là trống!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Tên người dùng là trống!';
+$phpMussel['lang']['response_rename_error'] = 'Không thể đổi tên!';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Đã cập nhật.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Gói không được cài đặt!';
 $phpMussel['lang']['response_updates_outdated'] = 'Hết hạn!';
 $phpMussel['lang']['response_updates_outdated_manually'] = 'Hết hạn (vui lòng cập nhật bằng tay)!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Không thể xác định.';
+$phpMussel['lang']['response_upload_error'] = 'Không thể tải lên!';
 $phpMussel['lang']['state_complete_access'] = 'Truy cập đầy đủ';
 $phpMussel['lang']['state_component_is_active'] = 'Gói này đang hoạt động.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Gói này không đang hoạt động.';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2016.11.25).
+ * This file: Dutch language data for the front-end (last modified: 2016.11.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -35,10 +35,12 @@ $phpMussel['lang']['field_install'] = 'Installeren';
 $phpMussel['lang']['field_latest_version'] = 'Laatste Versie';
 $phpMussel['lang']['field_log_in'] = 'Inloggen';
 $phpMussel['lang']['field_more_fields'] = 'Meer Velden';
+$phpMussel['lang']['field_new_name'] = 'Nieuwe naam:';
 $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'Opties';
 $phpMussel['lang']['field_password'] = 'Wachtwoord';
 $phpMussel['lang']['field_permissions'] = 'Machtigingen';
+$phpMussel['lang']['field_rename_file'] = 'Naam veranderen';
 $phpMussel['lang']['field_reset'] = 'Resetten';
 $phpMussel['lang']['field_set_new_password'] = 'Stel Nieuw Wachtwoord';
 $phpMussel['lang']['field_size'] = 'Totale Grootte: ';
@@ -75,18 +77,24 @@ $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Bestanddeel
 $phpMussel['lang']['response_component_successfully_updated'] = 'Bestanddeel succesvol gewijzigd.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'Er is een fout opgetreden tijdens een poging om het bestanddeel te verwijderen.';
 $phpMussel['lang']['response_component_update_error'] = 'Er is een fout opgetreden tijdens een poging om het bestanddeel te bijwerken.';
+$phpMussel['lang']['response_delete_error'] = 'Mislukt om te verwijderen!';
+$phpMussel['lang']['response_directory_deleted'] = 'Bestandsmap succesvol verwijderd!';
+$phpMussel['lang']['response_directory_renamed'] = 'De naam van de bestandsmap met succes veranderd!';
 $phpMussel['lang']['response_file_deleted'] = 'Bestand succesvol verwijderd!';
 $phpMussel['lang']['response_file_edited'] = 'Bestand succesvol gewijzigd!';
+$phpMussel['lang']['response_file_renamed'] = 'De naam van de bestand met succes veranderd!';
 $phpMussel['lang']['response_file_uploaded'] = 'Bestand succesvol uploadet!';
 $phpMussel['lang']['response_login_invalid_password'] = 'Inloggen mislukt! Ongeldig wachtwoord!';
 $phpMussel['lang']['response_login_invalid_username'] = 'Inloggen mislukt! Gebruikersnaam bestaat niet!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Password veld leeg!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Gebruikersnaam veld leeg!';
+$phpMussel['lang']['response_rename_error'] = 'Mislukt om de naam te veranderen!';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Al bijgewerkt.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Bestanddeel niet geïnstalleerd!';
 $phpMussel['lang']['response_updates_outdated'] = 'Verouderd!';
 $phpMussel['lang']['response_updates_outdated_manually'] = 'Verouderd (neem handmatig bijwerken)!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Onbepaald.';
+$phpMussel['lang']['response_upload_error'] = 'Mislukt om te uploaden!';
 $phpMussel['lang']['state_complete_access'] = 'Volledige toegang';
 $phpMussel['lang']['state_component_is_active'] = 'Bestanddeel is actief.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Bestanddeel is inactief.';

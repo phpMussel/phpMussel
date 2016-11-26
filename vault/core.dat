@@ -16,7 +16,7 @@ phpMussel:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-TW: 主包（沒有簽名文件，文檔，和配置）。
- Version: 1.0.0-DEV+20161125
+ Version: 1.0.0-DEV+20161126
  Minimum Required: 1.0.0-DEV
  Changelog: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/Changelog-v1.txt
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/core.dat
@@ -32,6 +32,7 @@ phpMussel:
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_config.html
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_files.html
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_files_edit.html
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_files_rename.html
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_files_row.html
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_home.html
    - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/fe_assets/_login.html
@@ -65,6 +66,7 @@ phpMussel:
    - fe_assets/_config.html
    - fe_assets/_files.html
    - fe_assets/_files_edit.html
+   - fe_assets/_files_rename.html
    - fe_assets/_files_row.html
    - fe_assets/_home.html
    - fe_assets/_login.html
@@ -98,7 +100,8 @@ phpMussel:
    - f49948358cb9a42ee7607a70d5506a4e:173
    - 84090803b47ad55a1ffa705f865f7698:928
    - ca72c316ee4d4ba9838824debf8e9265:843
-   - 8e4661b87269e4991e46040ae42a918b:631
+   - 2d8f1c519e3373b426c322e3945e60ea:743
+   - 40fd5e995be6bcc674fb681131e02dbb:490
    - 7062622062c2cef8db4e0e02ee1e04e2:765
    - 88be8160714a7b60c614e2d674123f26:2217
    - 6ff9fb63b91538ee5b27969f002dedcf:194
@@ -109,8 +112,8 @@ phpMussel:
    - 14af0698a968aaebd5c9cc06e0ddaba4:988
    - 0683f296aa7076d303da1084b9f105c0:3902
    - c9234143e18045ca73414339f5803452:937
-   - f9dea8e4d11079afbcaf3e644fbb4f36:83654
-   - a855a1cae35e8d520f3f5040e4e3017e:408916
+   - 70c16da70c6731647503c862c895f3ab:90466
+   - 7191279f2d637cee828be0b4fc4de8d2:409245
    - c079d33f77a9612a906df4a21948b5b6:17618
    - 6e7c8fc61526e506584c19fa9551aef0:3264
    - 8e03209e7fc6641b45094e584340feff:83

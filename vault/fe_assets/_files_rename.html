@@ -1,0 +1,21 @@
+<table width="100%">
+<tr>
+    <td width="20%" class="nav">
+
+{nav}
+    </td>
+    <td width="80%" class="right">
+        <div class="s">{state_msg}</div>
+        <table width="100%">
+        <form action="?phpmussel-page=file-manager" method="POST">
+        <input type="hidden" name="do" value="rename-file" /><input type="hidden" name="filename" value="{filename}" />
+            <tr><td class="ng2"><div class="s">{FE_Title}</div></td></tr>
+            <tr><td class="ng1"><div class="s">
+                {field_new_name}
+                <input type="text" name="filename_new" placeholder="{filename}" />
+                <input type="submit" value="{field_ok}" />
+            </div></td></tr>
+        </form></table>
+    </td>
+</tr>
+</table>

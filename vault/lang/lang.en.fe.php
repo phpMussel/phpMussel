@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2016.11.25).
+ * This file: English language data for the front-end (last modified: 2016.11.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -35,10 +35,12 @@ $phpMussel['lang']['field_install'] = 'Install';
 $phpMussel['lang']['field_latest_version'] = 'Latest Version';
 $phpMussel['lang']['field_log_in'] = 'Log In';
 $phpMussel['lang']['field_more_fields'] = 'More Fields';
+$phpMussel['lang']['field_new_name'] = 'New name:';
 $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'Options';
 $phpMussel['lang']['field_password'] = 'Password';
 $phpMussel['lang']['field_permissions'] = 'Permissions';
+$phpMussel['lang']['field_rename_file'] = 'Rename';
 $phpMussel['lang']['field_reset'] = 'Reset';
 $phpMussel['lang']['field_set_new_password'] = 'Set New Password';
 $phpMussel['lang']['field_size'] = 'Total Size: ';
@@ -75,18 +77,24 @@ $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Component s
 $phpMussel['lang']['response_component_successfully_updated'] = 'Component successfully updated.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'An error occurred while attempting to uninstall the component.';
 $phpMussel['lang']['response_component_update_error'] = 'An error occurred while attempting to update the component.';
+$phpMussel['lang']['response_delete_error'] = 'Failed to delete!';
+$phpMussel['lang']['response_directory_deleted'] = 'Directory successfully deleted!';
+$phpMussel['lang']['response_directory_renamed'] = 'Directory successfully renamed!';
 $phpMussel['lang']['response_file_deleted'] = 'File successfully deleted!';
 $phpMussel['lang']['response_file_edited'] = 'File successfully modified!';
+$phpMussel['lang']['response_file_renamed'] = 'File successfully renamed!';
 $phpMussel['lang']['response_file_uploaded'] = 'File successfully uploaded!';
 $phpMussel['lang']['response_login_invalid_password'] = 'Login failure! Invalid password!';
 $phpMussel['lang']['response_login_invalid_username'] = 'Login failure! Username doesn\'t exist!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Password field empty!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Username field empty!';
+$phpMussel['lang']['response_rename_error'] = 'Failed to rename!';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Already up-to-date.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Component not installed!';
 $phpMussel['lang']['response_updates_outdated'] = 'Outdated!';
 $phpMussel['lang']['response_updates_outdated_manually'] = 'Outdated (please update manually)!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Unable to determine.';
+$phpMussel['lang']['response_upload_error'] = 'Failed to upload!';
 $phpMussel['lang']['state_complete_access'] = 'Complete access';
 $phpMussel['lang']['state_component_is_active'] = 'Component is active.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Component is inactive.';

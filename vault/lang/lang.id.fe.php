@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2016.11.25).
+ * This file: Indonesian language data for the front-end (last modified: 2016.11.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -35,10 +35,12 @@ $phpMussel['lang']['field_install'] = 'Instal';
 $phpMussel['lang']['field_latest_version'] = 'Versi Terbaru';
 $phpMussel['lang']['field_log_in'] = 'Masuk';
 $phpMussel['lang']['field_more_fields'] = 'Bidang Lebih';
+$phpMussel['lang']['field_new_name'] = 'Nama baru:';
 $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'Opsi';
 $phpMussel['lang']['field_password'] = 'Kata Sandi';
 $phpMussel['lang']['field_permissions'] = 'Izin';
+$phpMussel['lang']['field_rename_file'] = 'Memodifikasi nama';
 $phpMussel['lang']['field_reset'] = 'Mengatur Kembali';
 $phpMussel['lang']['field_set_new_password'] = 'Buat Baru Kata Sandi';
 $phpMussel['lang']['field_size'] = 'Ukuran Total: ';
@@ -75,18 +77,24 @@ $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Komponen be
 $phpMussel['lang']['response_component_successfully_updated'] = 'Komponen berhasil diperbarui.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'Terjadi kesalahan saat mencoba untuk menguninstal komponen ini.';
 $phpMussel['lang']['response_component_update_error'] = 'Terjadi kesalahan saat mencoba untuk memperbarui komponen ini.';
+$phpMussel['lang']['response_delete_error'] = 'Gagal menghapus!';
+$phpMussel['lang']['response_directory_deleted'] = 'Direktori berhasil dihapus!';
+$phpMussel['lang']['response_directory_renamed'] = 'Nama direktori berhasil dimodifikasi!';
 $phpMussel['lang']['response_file_deleted'] = 'File berhasil dihapus!';
 $phpMussel['lang']['response_file_edited'] = 'File berhasil diubah!';
+$phpMussel['lang']['response_file_renamed'] = 'Nama file berhasil dimodifikasi!';
 $phpMussel['lang']['response_file_uploaded'] = 'File berhasil diupload!';
 $phpMussel['lang']['response_login_invalid_password'] = 'Kegagalan masuk! Kata sandi salah!';
 $phpMussel['lang']['response_login_invalid_username'] = 'Kegagalan masuk! Nama pengguna tidak ada!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'Kata sandi yang kosong!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'Nama pengguna yang kosong!';
+$phpMussel['lang']['response_rename_error'] = 'Gagal memodifikasi nama!';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'Sudah yang terbaru.';
 $phpMussel['lang']['response_updates_not_installed'] = 'Komponen tidak diinstal!';
 $phpMussel['lang']['response_updates_outdated'] = 'Tidak yang terbaru!';
 $phpMussel['lang']['response_updates_outdated_manually'] = 'Tidak yang terbaru (silahkan perbarui secara manual)!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'Tidak dapat menentukan.';
+$phpMussel['lang']['response_upload_error'] = 'Gagal mengupload!';
 $phpMussel['lang']['state_complete_access'] = 'Akses lengkap';
 $phpMussel['lang']['state_component_is_active'] = 'Komponen ini aktif.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Komponen ini non-aktif.';

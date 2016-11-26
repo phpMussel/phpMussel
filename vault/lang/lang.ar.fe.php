@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2016.11.25).
+ * This file: Arabic language data for the front-end (last modified: 2016.11.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -35,10 +35,12 @@ $phpMussel['lang']['field_install'] = 'تثبيت';
 $phpMussel['lang']['field_latest_version'] = 'احدث اصدار';
 $phpMussel['lang']['field_log_in'] = 'تسجيل الدخول';
 $phpMussel['lang']['field_more_fields'] = 'المزيد من الحقول';
+$phpMussel['lang']['field_new_name'] = 'اسم جديد:';
 $phpMussel['lang']['field_ok'] = 'حسنا';
 $phpMussel['lang']['field_options'] = 'خيارات';
 $phpMussel['lang']['field_password'] = 'كلمه السر';
 $phpMussel['lang']['field_permissions'] = 'أذونات';
+$phpMussel['lang']['field_rename_file'] = 'إعادة تسمية';
 $phpMussel['lang']['field_reset'] = 'إعادة تعيين';
 $phpMussel['lang']['field_set_new_password'] = 'تحديد جديد كلمه السر';
 $phpMussel['lang']['field_size'] = 'الحجم الإجمالي: ';
@@ -75,18 +77,24 @@ $phpMussel['lang']['response_component_successfully_uninstalled'] = 'وحدة إ
 $phpMussel['lang']['response_component_successfully_updated'] = 'وحدة تم التحديث بنجاح.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'حدث خطأ أثناء محاولة إلغاء تثبيت الوحدة.';
 $phpMussel['lang']['response_component_update_error'] = 'حدث خطأ أثناء محاولة تحديث الوحدة.';
+$phpMussel['lang']['response_delete_error'] = 'فشلت في حذف!';
+$phpMussel['lang']['response_directory_deleted'] = 'دليل حذف بنجاح!';
+$phpMussel['lang']['response_directory_renamed'] = 'الدليل إعادة تسمية بنجاح!';
 $phpMussel['lang']['response_file_deleted'] = 'ملف حذف بنجاح!';
 $phpMussel['lang']['response_file_edited'] = 'ملف تعديل بنجاح!';
+$phpMussel['lang']['response_file_renamed'] = 'ملف إعادة تسمية بنجاح!';
 $phpMussel['lang']['response_file_uploaded'] = 'ملف تحميلها بنجاح!';
 $phpMussel['lang']['response_login_invalid_password'] = 'فشل تسجيل الدخول! غير صالحة كلمه السر!';
 $phpMussel['lang']['response_login_invalid_username'] = 'فشل تسجيل الدخول! اسم المستخدم غير موجود!';
 $phpMussel['lang']['response_login_password_field_empty'] = 'كلمه السر حقل فارغ!';
 $phpMussel['lang']['response_login_username_field_empty'] = 'اسم المستخدم حقل فارغ!';
+$phpMussel['lang']['response_rename_error'] = 'فشل في إعادة تسمية!';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'تحديث غير مطلوب.';
 $phpMussel['lang']['response_updates_not_installed'] = 'وحدة غير مثبت!';
 $phpMussel['lang']['response_updates_outdated'] = 'عفا عليها الزمن!';
 $phpMussel['lang']['response_updates_outdated_manually'] = 'عفا عليها الزمن (يرجى تحديث يدويا)!';
 $phpMussel['lang']['response_updates_unable_to_determine'] = 'غير قادر على تحديد.';
+$phpMussel['lang']['response_upload_error'] = 'فشل لتحميل!';
 $phpMussel['lang']['state_complete_access'] = 'الوصول كامل';
 $phpMussel['lang']['state_component_is_active'] = 'وحدة هو نشطا.';
 $phpMussel['lang']['state_component_is_inactive'] = 'وحدة هو غير نشط.';

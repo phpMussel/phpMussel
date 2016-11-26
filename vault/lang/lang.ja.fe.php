@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2016.11.25).
+ * This file: Japanese language data for the front-end (last modified: 2016.11.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -35,10 +35,12 @@ $phpMussel['lang']['field_install'] = 'インストール';
 $phpMussel['lang']['field_latest_version'] = '最新バージョン';
 $phpMussel['lang']['field_log_in'] = 'ログイン';
 $phpMussel['lang']['field_more_fields'] = 'フィールドを追加します';
+$phpMussel['lang']['field_new_name'] = '新しい名前：';
 $phpMussel['lang']['field_ok'] = 'OK';
 $phpMussel['lang']['field_options'] = 'オプション';
 $phpMussel['lang']['field_password'] = 'パスワード';
 $phpMussel['lang']['field_permissions'] = 'パーミッション';
+$phpMussel['lang']['field_rename_file'] = '名前を変更する';
 $phpMussel['lang']['field_reset'] = 'リセット';
 $phpMussel['lang']['field_set_new_password'] = '新しいパスワードを設定します';
 $phpMussel['lang']['field_size'] = '合計サイズ： ';
@@ -75,18 +77,24 @@ $phpMussel['lang']['response_component_successfully_uninstalled'] = 'コンポ�
 $phpMussel['lang']['response_component_successfully_updated'] = 'コンポーネントのアップデートに成功しました！';
 $phpMussel['lang']['response_component_uninstall_error'] = 'コンポーネントのアンインストール中にエラーが発生しました。';
 $phpMussel['lang']['response_component_update_error'] = 'コンポーネントのアップデート中にエラーが発生しました。';
+$phpMussel['lang']['response_delete_error'] = '削除に失敗しました！';
+$phpMussel['lang']['response_directory_deleted'] = 'ディレクトリが正常に削除されました！';
+$phpMussel['lang']['response_directory_renamed'] = 'ディレクトリの名前が変更されました！';
 $phpMussel['lang']['response_file_deleted'] = 'ファイルを削除が成功しました！';
 $phpMussel['lang']['response_file_edited'] = 'ファイルは正常に変更されました！';
+$phpMussel['lang']['response_file_renamed'] = 'ファイルの名前が変更されました！';
 $phpMussel['lang']['response_file_uploaded'] = 'ファイルは正常にアップロードされました！';
 $phpMussel['lang']['response_login_invalid_password'] = 'ログイン失敗！無効なパスワード！';
 $phpMussel['lang']['response_login_invalid_username'] = 'ログイン失敗！ユーザー名は存在しません！';
 $phpMussel['lang']['response_login_password_field_empty'] = 'パスワード入力は空です！';
 $phpMussel['lang']['response_login_username_field_empty'] = 'ユーザー名入力は空です！';
+$phpMussel['lang']['response_rename_error'] = '名前を変更できませんでした！';
 $phpMussel['lang']['response_updates_already_up_to_date'] = 'すでに最新の状態です。';
 $phpMussel['lang']['response_updates_not_installed'] = 'コンポーネントのインストールされていません！';
 $phpMussel['lang']['response_updates_outdated'] = '時代遅れです！';
 $phpMussel['lang']['response_updates_outdated_manually'] = '時代遅れです（手動でアップデートしてください）！';
 $phpMussel['lang']['response_updates_unable_to_determine'] = '決定することができません。';
+$phpMussel['lang']['response_upload_error'] = 'アップロードに失敗しました！';
 $phpMussel['lang']['state_complete_access'] = '完全なアクセス';
 $phpMussel['lang']['state_component_is_active'] = 'コンポーネントがアクティブです。';
 $phpMussel['lang']['state_component_is_inactive'] = 'コンポーネントが非アクティブです。';
