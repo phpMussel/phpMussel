@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.11.26).
+ * This file: Front-end handler (last modified: 2016.11.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -117,6 +117,21 @@ $phpMussel['ClearExpired']($phpMussel['FE']['SessionList'], $phpMussel['FE']['Re
 /** Clear expired cache entries. */
 $phpMussel['ClearExpired']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild']);
 
+/**
+ * Temporarily hardcoded values; Will remove this code block when the
+ * configuration handler and L10N data is next updated --@todo@--.
+ */
+$phpMussel['Config']['general']['max_login_attempts'] = 5;
+$phpMussel['lang']['max_login_attempts_exceeded'] = 'Maximum number of login attempts exceeded; Access denied.';
+
+/** Brute-force security check. */
+if (($phpMussel['LoginAttempts'] = (int)$phpMussel['FECacheGet'](
+    $phpMussel['FE']['Cache'], 'LoginAttempts' . $_SERVER[$phpMussel['Config']['general']['ipaddr']]
+)) && ($phpMussel['LoginAttempts'] >= $phpMussel['Config']['general']['max_login_attempts'])) {
+    header('Content-Type: text/plain');
+    die('[phpMussel] ' . $phpMussel['lang']['max_login_attempts_exceeded']);
+}
+
 /** Attempt to log in the user. */
 if ($phpMussel['FE']['FormTarget'] === 'login') {
     if (!empty($_POST['username']) && empty($_POST['password'])) {
@@ -160,6 +175,18 @@ if ($phpMussel['FE']['FormTarget'] === 'login') {
             $phpMussel['FE']['state_msg'] = $phpMussel['WrapRedText']($phpMussel['lang']['response_login_invalid_username']);
         }
 
+    }
+
+    if ($phpMussel['FE']['state_msg']) {
+        $phpMussel['LoginAttempts']++;
+        $phpMussel['TimeToAdd'] = ($phpMussel['LoginAttempts'] > 4) ? ($phpMussel['LoginAttempts'] - 4) * 86400 : 86400;
+        $phpMussel['FECacheAdd'](
+            $phpMussel['FE']['Cache'],
+            $phpMussel['FE']['Rebuild'],
+            'LoginAttempts' . $_SERVER[$phpMussel['Config']['general']['ipaddr']],
+            $phpMussel['LoginAttempts'],
+            $phpMussel['Now'] + $phpMussel['TimeToAdd']
+        );
     }
 }
 
@@ -582,32 +609,14 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
     }
 
     /** Count files; Prepare to search for components metadata. */
-    $phpMussel['Count'] = count($phpMussel['Components']['Files']);
-    for (
-        $phpMussel['Iterate'] = 0;
-        $phpMussel['Iterate'] < $phpMussel['Count'];
-        $phpMussel['Iterate']++
-    ) {
-        if (strpos(
-            $phpMussel['Components']['Types'],
-            strtolower(substr($phpMussel['Components']['Files'][$phpMussel['Iterate']], -3))
-        ) !== false) {
-            $phpMussel['Components']['This'] =
-                $phpMussel['Vault'] . $phpMussel['Components']['Files'][$phpMussel['Iterate']];
-            $phpMussel['Components']['Data'] = $phpMussel['ReadFile']($phpMussel['Components']['This']);
-            if (
-                substr($phpMussel['Components']['Data'], 0, 4) === "---\n" &&
-                ($phpMussel['Components']['EoYAML'] = strpos(
-                    $phpMussel['Components']['Data'], "\n\n"
-                )) !== false
-            ) {
-                $phpMussel['YAML'](
-                    substr($phpMussel['Components']['Data'], 4, $phpMussel['Components']['EoYAML'] - 4),
-                    $phpMussel['Components']['Meta']
-                );
+    array_walk($phpMussel['Components']['Files'], function ($ThisFile) use (&$phpMussel) {
+        if (!empty($ThisFile) && strpos($phpMussel['Components']['Types'], strtolower(substr($ThisFile, -3))) !== false) {
+            $ThisData = $phpMussel['ReadFile']($phpMussel['Vault'] . $ThisFile);
+            if (substr($ThisData, 0, 4) === "---\n" && ($EoYAML = strpos($ThisData, "\n\n")) !== false) {
+                $phpMussel['YAML'](substr($ThisData, 4, $EoYAML - 4), $phpMussel['Components']['Meta']);
             }
         }
-    }
+    });
 
     /** A form has been submitted. */
     if ($phpMussel['FE']['FormTarget'] === 'updates' && !empty($_POST['do'])) {
@@ -1107,9 +1116,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
         $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Changelog'] =
             (empty($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Changelog'])) ? '' :
             '<br /><a href="' . $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Changelog'] . '">Changelog</a>';
-        $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Filename'] =
-            (count($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Files']['To']) !== 1) ? '' :
-            '<br />' . $phpMussel['lang']['field_filename'] . $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Files']['To'][0];
+        $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Filename'] = (
+            empty($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Files']['To']) ||
+            count($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Files']['To']) !== 1
+        ) ? '' : '<br />' . $phpMussel['lang']['field_filename'] . $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Files']['To'][0];
         if (
             !($phpMussel['FE']['hide-non-outdated'] && empty($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Outdated'])) &&
             !($phpMussel['FE']['hide-unused'] && empty($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Files']))
