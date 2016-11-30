@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.11.29).
+ * This file: Front-end handler (last modified: 2016.11.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -34,7 +34,6 @@ $phpMussel['FE'] = array(
     'FE_Lang' => $phpMussel['Config']['general']['lang'],
     'DateTime' => date('r', $phpMussel['Time']),
     'ScriptIdent' => $phpMussel['ScriptIdent'],
-    'Traverse' => "\x01(?:^\.|\.\.|[\x01-\x1f\[-`/\?\*\$])\x01i",
     'UserList' => "\n",
     'SessionList' => "\n",
     'Cache' => "\n",
@@ -46,6 +45,11 @@ $phpMussel['FE'] = array(
     'bNav' => '&nbsp;',
     'FE_Title' => ''
 );
+
+/** Traversal detection. */
+$phpMussel['Traverse'] = function($Path) {
+    return !preg_match("\x01" . '(?:[\./]{2}|[\x01-\x1f\[-`?*$])' . "\x01i", str_replace("\\", '/', $Path));
+};
 
 /** A fix for correctly displaying LTR/RTL text. */
 if (empty($phpMussel['lang']['textDir']) || $phpMussel['lang']['textDir'] !== 'rtl') {
@@ -185,7 +189,7 @@ if ($phpMussel['FE']['FormTarget'] === 'login') {
             $phpMussel['FE']['Rebuild'],
             'LoginAttempts' . $_SERVER[$phpMussel['Config']['general']['ipaddr']],
             $phpMussel['LoginAttempts'],
-            $phpMussel['Now'] + $phpMussel['TimeToAdd']
+            $phpMussel['Time'] + $phpMussel['TimeToAdd']
         );
     }
 }
@@ -669,7 +673,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 !empty($phpMussel['Components']['RemoteMeta'][$_POST['ID']]['Files']['From']) &&
                 !empty($phpMussel['Components']['RemoteMeta'][$_POST['ID']]['Files']['To']) &&
                 !empty($phpMussel['Components']['RemoteMeta'][$_POST['ID']]['Reannotate']) &&
-                !preg_match($phpMussel['FE']['Traverse'], $phpMussel['Components']['RemoteMeta'][$_POST['ID']]['Reannotate']) &&
+                $phpMussel['Traverse']($phpMussel['Components']['RemoteMeta'][$_POST['ID']]['Reannotate']) &&
                 file_exists($phpMussel['Vault'] . $phpMussel['Components']['RemoteMeta'][$_POST['ID']]['Reannotate']) &&
                 ($phpMussel['Components']['OldMeta'] = $phpMussel['ReadFile'](
                     $phpMussel['Vault'] . $phpMussel['Components']['RemoteMeta'][$_POST['ID']]['Reannotate']
@@ -705,6 +709,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                     $phpMussel['Iterate'] < $phpMussel['Count'];
                     $phpMussel['Iterate']++
                 ) {
+                    if (empty($phpMussel['Components']['RemoteMeta'][$_POST['ID']]['Files']['To'][$phpMussel['Iterate']])) {
+                        continue;
+                    }
                     $phpMussel['ThisFileName'] = $phpMussel['Components']['RemoteMeta'][$_POST['ID']]['Files']['To'][$phpMussel['Iterate']];
                     $phpMussel['RemoteFiles'][$phpMussel['ThisFileName']] = true;
                     if (
@@ -716,7 +723,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                             )
                         ) ||
                         empty($phpMussel['Components']['RemoteMeta'][$_POST['ID']]['Files']['From'][$phpMussel['Iterate']]) ||
-                        empty($phpMussel['Components']['RemoteMeta'][$_POST['ID']]['Files']['To'][$phpMussel['Iterate']]) ||
                         !($phpMussel['ThisFile'] = $phpMussel['Request'](
                             $phpMussel['Components']['RemoteMeta'][$_POST['ID']]['Files']['From'][$phpMussel['Iterate']]
                         ))
@@ -727,9 +733,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                         strtolower(substr(
                             $phpMussel['Components']['RemoteMeta'][$_POST['ID']]['Files']['From'][$phpMussel['Iterate']], -2
                         )) === 'gz' &&
-                        strtolower(substr(
-                            $phpMussel['Components']['RemoteMeta'][$_POST['ID']]['Files']['To'][$phpMussel['Iterate']], -2
-                        )) !== 'gz' &&
+                        strtolower(substr($phpMussel['ThisFileName'], -2)) !== 'gz' &&
                         substr($phpMussel['ThisFile'], 0, 2) === "\x1f\x8b"
                     ) {
                         $phpMussel['ThisFile'] = gzdecode($phpMussel['ThisFile']);
@@ -741,26 +745,48 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                     ) {
                         continue;
                     }
+                    $phpMussel['ThisName'] = $phpMussel['ThisFileName'];
+                    $phpMussel['ThisPath'] = $phpMussel['Vault'];
+                    while (strpos($phpMussel['ThisName'], '/') !== false || strpos($phpMussel['ThisName'], "\\") !== false) {
+                        $phpMussel['Separator'] = (strpos($phpMussel['ThisName'], '/') !== false) ? '/' : "\\";
+                        $phpMussel['ThisDir'] = substr($phpMussel['ThisName'], 0, strpos($phpMussel['ThisName'], $phpMussel['Separator']));
+                        $phpMussel['ThisPath'] .= $phpMussel['ThisDir'] . '/';
+                        $phpMussel['ThisName'] = substr($phpMussel['ThisName'], strlen($phpMussel['ThisDir']) + 1);
+                        if (!file_exists($phpMussel['ThisPath']) || !is_dir($phpMussel['ThisPath'])) {
+                            mkdir($phpMussel['ThisPath']);
+                        }
+                    }
                     $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['ThisFileName'], 'w');
                     fwrite($phpMussel['Handle'], $phpMussel['ThisFile']);
                     fclose($phpMussel['Handle']);
                     $phpMussel['ThisFile'] = '';
                 }
-                $phpMussel['Count'] = count($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To']);
-                for (
-                    $phpMussel['Iterate'] = 0;
-                    $phpMussel['Iterate'] < $phpMussel['Count'];
-                    $phpMussel['Iterate']++
+                if (
+                    !empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To']) &&
+                    is_array($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To'])
                 ) {
-                    $phpMussel['ThisFileName'] =
-                        $phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To'][$phpMussel['Iterate']];
-                    if (
-                        !isset($phpMussel['RemoteFiles'][$phpMussel['ThisFileName']]) &&
-                        file_exists($phpMussel['Vault'] . $phpMussel['ThisFileName']) &&
-                        !preg_match($phpMussel['FE']['Traverse'], $phpMussel['ThisFileName'])
-                    ) {
-                        unlink($phpMussel['Vault'] . $phpMussel['ThisFileName']);
-                    }
+                    array_walk($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To'], function ($ThisFile) use (&$phpMussel) {
+                        if (
+                            !empty($ThisFile) &&
+                            !isset($phpMussel['RemoteFiles'][$ThisFile]) &&
+                            file_exists($phpMussel['Vault'] . $ThisFile) &&
+                            $phpMussel['Traverse']($ThisFile)
+                        ) {
+                            unlink($phpMussel['Vault'] . $ThisFile);
+                            while (strrpos($ThisFile, '/') !== false || strrpos($ThisFile, "\\") !== false) {
+                                $Separator = (strrpos($ThisFile, '/') !== false) ? '/' : "\\";
+                                $ThisFile = substr($ThisFile, 0, strrpos($ThisFile, $Separator));
+                                if (
+                                    is_dir($phpMussel['Vault'] . $ThisFile) &&
+                                    $phpMussel['FileManager-IsDirEmpty']($phpMussel['Vault'] . $ThisFile)
+                                ) {
+                                    rmdir($phpMussel['Vault'] . $ThisFile);
+                                } else {
+                                    break;
+                                }
+                            }
+                        }
+                    });
                 }
                 $phpMussel['Handle'] =
                     fopen($phpMussel['Vault'] . $phpMussel['Components']['RemoteMeta'][$_POST['ID']]['Reannotate'], 'w');
@@ -812,22 +838,27 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                     ),
                     $phpMussel['Components']['OldMeta']
                 );
-                $phpMussel['Count'] = count($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To']);
-                for (
-                    $phpMussel['Iterate'] = 0;
-                    $phpMussel['Iterate'] < $phpMussel['Count'];
-                    $phpMussel['Iterate']++
-                ) {
-                    $phpMussel['ThisFileName'] =
-                        $phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To'][$phpMussel['Iterate']];
+                array_walk($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To'], function ($ThisFile) use (&$phpMussel) {
                     if (
-                        !empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To'][$phpMussel['Iterate']]) &&
-                        !preg_match($phpMussel['FE']['Traverse'], $phpMussel['ThisFileName']) &&
-                        file_exists($phpMussel['Vault'] . $phpMussel['ThisFileName'])
+                        !empty($ThisFile) &&
+                        file_exists($phpMussel['Vault'] . $ThisFile) &&
+                        $phpMussel['Traverse']($ThisFile)
                     ) {
-                        unlink($phpMussel['Vault'] . $phpMussel['ThisFileName']);
+                        unlink($phpMussel['Vault'] . $ThisFile);
+                        while (strrpos($ThisFile, '/') !== false || strrpos($ThisFile, "\\") !== false) {
+                            $Separator = (strrpos($ThisFile, '/') !== false) ? '/' : "\\";
+                            $ThisFile = substr($ThisFile, 0, strrpos($ThisFile, $Separator));
+                            if (
+                                is_dir($phpMussel['Vault'] . $ThisFile) &&
+                                $phpMussel['FileManager-IsDirEmpty']($phpMussel['Vault'] . $ThisFile)
+                            ) {
+                                rmdir($phpMussel['Vault'] . $ThisFile);
+                            } else {
+                                break;
+                            }
+                        }
                     }
-                }
+                });
                 $phpMussel['Handle'] =
                     fopen($phpMussel['Vault'] . $phpMussel['Components']['Meta'][$_POST['ID']]['Reannotate'], 'w');
                 fwrite($phpMussel['Handle'], $phpMussel['Components']['NewMeta']);
@@ -1153,7 +1184,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files']['From']) ||
             empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files']['To']) ||
             empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Reannotate']) ||
-            preg_match($phpMussel['FE']['Traverse'], $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Reannotate']) ||
+            !$phpMussel['Traverse']($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Reannotate']) ||
             !file_exists($phpMussel['Vault'] . $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Reannotate'])
         ) {
             continue;
@@ -1281,28 +1312,15 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
         }
     }
 
-    reset($phpMussel['Components']['Remotes']);
-    $phpMussel['Count'] = count($phpMussel['Components']['Remotes']);
-
     /** Write annotations for newly found component metadata. */
-    for (
-        $phpMussel['Iterate'] = 0;
-        $phpMussel['Iterate'] < $phpMussel['Count'];
-        $phpMussel['Iterate']++
-    ) {
-        $phpMussel['Components']['Key'] = key($phpMussel['Components']['Remotes']);
-        next($phpMussel['Components']['Remotes']);
-        if (substr(
-            $phpMussel['Components']['Remotes'][$phpMussel['Components']['Key']], -2
-        ) !== "\n\n" || substr(
-            $phpMussel['Components']['Remotes'][$phpMussel['Components']['Key']], 0, 4
-        ) !== "---\n") {
-            continue;
+    array_walk($phpMussel['Components']['Remotes'], function ($Remote, $Key) use (&$phpMussel) {
+        if (substr($Remote, -2) !== "\n\n" || substr($Remote, 0, 4) !== "---\n") {
+            return;
         }
-        $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['Components']['Key'], 'w');
-        fwrite($phpMussel['Handle'], $phpMussel['Components']['Remotes'][$phpMussel['Components']['Key']]);
-        fclose($phpMussel['Handle']);
-    }
+        $Handle = fopen($phpMussel['Vault'] . $Key, 'w');
+        fwrite($Handle, $Remote);
+        fclose($Handle);
+    });
 
     /** Finalise output and unset working data. */
     $phpMussel['FE']['Components'] = $phpMussel['Components']['Out'];
@@ -1651,7 +1669,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
         $phpMussel['FE']['logfileData'] = $phpMussel['lang']['logs_no_logfile_selected'];
     } elseif (
         file_exists($phpMussel['Vault'] . $phpMussel['QueryVars']['logfile']) &&
-        !preg_match($phpMussel['FE']['Traverse'], $phpMussel['QueryVars']['logfile']) &&
+        $phpMussel['Traverse']($phpMussel['QueryVars']['logfile']) &&
         (strpos(
             $phpMussel['FE']['LogFiles']['Types'],
             strtolower(substr($phpMussel['QueryVars']['logfile'], -3))
