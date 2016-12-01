@@ -25,7 +25,7 @@ if (!defined('phpMussel')) {
 
     if (!version_compare(PHP_VERSION, '5.4.0', '>=')) {
         header('Content-Type: text/plain');
-        die('[CIDRAM] Not compatible with PHP versions below 5.4.0; Please update PHP in order to use CIDRAM.');
+        die('[phpMussel] Not compatible with PHP versions below 5.4.0; Please update PHP in order to use phpMussel.');
     }
 
     /** Create an array for our working data. */
