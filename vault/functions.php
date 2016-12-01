@@ -29,7 +29,7 @@
  * polyfills for functions introduced with newer versions of PHP.
  */
 if (substr(PHP_VERSION, 0, 4) === '5.4.') {
-    require $CIDRAM['Vault'] . 'php5.4.x.php';
+    require $phpMussel['Vault'] . 'php5.4.x.php';
 }
 
 /**
