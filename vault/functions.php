@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.11.26).
+ * This file: Functions file (last modified: 2016.12.02).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -23,6 +23,14 @@
  * @todo Improve data decoding procedures.
  * @todo phpMussel v1.0.0 Transitional Preparations Checklist (github.com/Maikuolan/phpMussel/issues/82)
  */
+
+/**
+ * Extends compatibility with phpMussel to PHP 5.4.x by introducing some simple
+ * polyfills for functions introduced with newer versions of PHP.
+ */
+if (substr(PHP_VERSION, 0, 4) === '5.4.') {
+    require $CIDRAM['Vault'] . 'php5.4.x.php';
+}
 
 /**
  * Registers plugin functions to their intended hooks.

@@ -193,6 +193,12 @@ entries will be deleted when those goals have been achieved.
 - [2016.08.07; Sub-minor code change; Maikuolan]: Slightly improved RTL text
   support. Slightly improved/optimised the template file.
 
+- [2016.12.02; Sub-minor code change; Maikuolan]: Added some polyfills to
+  extend compatibility with phpMussel to PHP 5.4.x (the newly introduced
+  front-end feature for phpMussel makes use of the password_hash and
+  password_verify functions, of which are only available natively to PHP
+  versions 5.5.0 and above).
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

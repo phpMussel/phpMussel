@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.10.15).
+ * This file: The loader (last modified: 2016.12.02).
  */
 
 /**
@@ -22,6 +22,11 @@
  */
 if (!defined('phpMussel')) {
     define('phpMussel', true);
+
+    if (!version_compare(PHP_VERSION, '5.4.0', '>=')) {
+        header('Content-Type: text/plain');
+        die('[CIDRAM] Not compatible with PHP versions below 5.4.0; Please update PHP in order to use CIDRAM.');
+    }
 
     /** Create an array for our working data. */
     $phpMussel = array();
@@ -97,21 +102,9 @@ if (!defined('phpMussel')) {
 
     /** PHP binary version-specific switch variables. */
     $phpMussel['binary_versions'] = array(
-        '7.0.0' => version_compare(PHP_VERSION, '7.0.0', '>=')
+        '7.0.0' => version_compare(PHP_VERSION, '7.0.0', '>='),
+        '5.6.0' => version_compare(PHP_VERSION, '5.6.0', '>=')
     );
-    if ($phpMussel['binary_versions']['7.0.0']) {
-        $phpMussel['binary_versions']['5.4.0'] =
-        $phpMussel['binary_versions']['5.6.0'] = true;
-    } else {
-        $phpMussel['binary_versions']['5.6.0'] =
-            version_compare(PHP_VERSION, '5.6.0', '>=');
-        if ($phpMussel['binary_versions']['5.6.0']) {
-            $phpMussel['binary_versions']['5.4.0'] = true;
-        } else {
-            $phpMussel['binary_versions']['5.4.0'] =
-                version_compare(PHP_VERSION, '5.4.0', '>=');
-        }
-    }
 
     /** Preserve INI defaults for when we exit cleanly. */
     $phpMussel['inidefaults'] = array(
