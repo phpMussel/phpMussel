@@ -23,7 +23,7 @@ if (!defined('PASSWORD_DEFAULT')) {
 }
 
 if (!function_exists('password_hash')) {
-    function password_hash(string $Password, int $Algo, array $Options = array()) {
+    function password_hash($Password, $Algo, array $Options = array()) {
 
         $Cost = (empty($Options['cost'])) ? 10 : (int)$Options['cost'];
 
@@ -60,7 +60,7 @@ if (!function_exists('password_hash')) {
 }
 
 if (!function_exists('password_verify')) {
-    function password_verify(string $Password, string $Hash) {
+    function password_verify($Password, $Hash) {
         return (!empty($Password) && !empty($Hash) && $Hash === crypt($Password, $Hash));
     }
 }
