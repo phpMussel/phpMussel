@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.12.02).
+ * This file: The loader (last modified: 2016.12.03).
  */
 
 /**
@@ -59,11 +59,12 @@ if (!defined('phpMussel')) {
     /** Define the location of the "signatures" directory. */
     $phpMussel['sigPath'] = $phpMussel['Vault'] . 'signatures/';
 
-    /**
-     * Before processing any includes, let's count them, to know whether we're
-     * running phpMussel directly or via as a wrapper (ie, from a hook).
-     */
-    $phpMussel['Direct'] = (count(get_included_files()) === 1);
+    /** Checks whether we're calling phpMussel directly or through a hook. */
+    $phpMussel['Direct'] = function () {
+        $Base = str_replace("\\", '/', strtolower($_SERVER['SCRIPT_FILENAME']));
+        $This = str_replace("\\", '/', strtolower(__FILE__));
+        return ($Base === $This);
+    };
 
     /**
      * Check whether the functions file exists; If it doesn't, kill the script.
@@ -206,7 +207,7 @@ if (!defined('phpMussel')) {
             if (
                 !$phpMussel['Config']['general']['disable_frontend'] &&
                 file_exists($phpMussel['Vault'] . 'frontend.php') &&
-                $phpMussel['Direct']
+                $phpMussel['Direct']()
             ) {
                 require $phpMussel['Vault'] . 'frontend.php';
             }

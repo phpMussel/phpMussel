@@ -199,6 +199,9 @@ entries will be deleted when those goals have been achieved.
   password_verify functions, of which are only available natively to PHP
   versions 5.5.0 and above).
 
+- [2016.12.03; Sub-minor code change; Maikuolan]: Improved mechanism for making
+  determinations between requests via direct access and requests via hooks.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"
