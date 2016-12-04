@@ -206,6 +206,7 @@ File | Descrizione
 /vault/fe_assets/_config.html | Un modello HTML per il front-end pagina di configurazione.
 /vault/fe_assets/_files.html | Un modello HTML per il file manager.
 /vault/fe_assets/_files_edit.html | Un modello HTML per il file manager.
+/vault/fe_assets/_files_rename.html | Un modello HTML per il file manager.
 /vault/fe_assets/_files_row.html | Un modello HTML per il file manager.
 /vault/fe_assets/_home.html | Un modello HTML per il front-end pagina principale.
 /vault/fe_assets/_login.html | Un modello HTML per il front-end pagina di accedi.
@@ -214,6 +215,7 @@ File | Descrizione
 /vault/fe_assets/_nav_logs_access_only.html | Un modello HTML per i link di navigazione del front-end, per quelli con accesso solo per i log.
 /vault/fe_assets/_updates.html | Un modello HTML per il front-end pagina degli aggiornamenti.
 /vault/fe_assets/_updates_row.html | Un modello HTML per il front-end pagina degli aggiornamenti.
+/vault/fe_assets/_upload_test.html | Un modello HTML per il carica testare.
 /vault/fe_assets/frontend.css | Foglio di stile CSS per il front-end.
 /vault/fe_assets/frontend.dat | Database per il front-end (contiene informazioni per i utenti e le sessioni; generato solo se il front-end è attivata e utilizzata).
 /vault/fe_assets/frontend.html | Il file modello HTML principale per il front-end.

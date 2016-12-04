@@ -206,6 +206,7 @@ Tập tin | Chi tiết
 /vault/fe_assets/_config.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
 /vault/fe_assets/_files.html | Một tập tin mẫu HTML cho các quản lý tập tin.
 /vault/fe_assets/_files_edit.html | Một tập tin mẫu HTML cho các quản lý tập tin.
+/vault/fe_assets/_files_rename.html | Một tập tin mẫu HTML cho các quản lý tập tin.
 /vault/fe_assets/_files_row.html | Một tập tin mẫu HTML cho các quản lý tập tin.
 /vault/fe_assets/_home.html | Một tập tin mẫu HTML cho các trang chủ của front-end.
 /vault/fe_assets/_login.html | Một tập tin mẫu HTML cho các đăng nhập của front-end.
@@ -214,6 +215,7 @@ Tập tin | Chi tiết
 /vault/fe_assets/_nav_logs_access_only.html | Một tập tin mẫu HTML cho các liên kết điều hướng của front-end, cho những người có quyền bản ghi truy cập chỉ.
 /vault/fe_assets/_updates.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
 /vault/fe_assets/_updates_row.html | Một tập tin mẫu HTML cho các trang cập nhật của front-end.
+/vault/fe_assets/_upload_test.html | Một tập tin mẫu HTML cho các trang kiểm tra tải lên.
 /vault/fe_assets/frontend.css | CSS định kiểu cho các front-end.
 /vault/fe_assets/frontend.dat | Cơ sở dữ liệu cho các front-end (chứa thông tin tài khoản và phiên; chỉ tạo ra nếu front-end được kích hoạt và sử dụng).
 /vault/fe_assets/frontend.html | Các chính tập tin mẫu HTML cho các front-end.

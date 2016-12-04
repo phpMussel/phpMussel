@@ -206,6 +206,7 @@ phpMussel функционирует полностью в автономном 
 /vault/fe_assets/_config.html | Шаблон HTML для конфигурация страница в фронтенд.
 /vault/fe_assets/_files.html | Шаблон HTML для файл менеджер.
 /vault/fe_assets/_files_edit.html | Шаблон HTML для файл менеджер.
+/vault/fe_assets/_files_rename.html | Шаблон HTML для файл менеджер.
 /vault/fe_assets/_files_row.html | Шаблон HTML для файл менеджер.
 /vault/fe_assets/_home.html | Шаблон HTML для домашняя страница в фронтенд.
 /vault/fe_assets/_login.html | Шаблон HTML для войти страница в фронтенд.
@@ -214,6 +215,7 @@ phpMussel функционирует полностью в автономном 
 /vault/fe_assets/_nav_logs_access_only.html | Шаблон HTML для навигационные ссылки в фронтенд, для тех кто с доступом только к лог-файлы.
 /vault/fe_assets/_updates.html | Шаблон HTML для обновления страница в фронтенд.
 /vault/fe_assets/_updates_row.html | Шаблон HTML для обновления страница в фронтенд.
+/vault/fe_assets/_upload_test.html | Шаблон HTML для тестовая загрузка страница.
 /vault/fe_assets/frontend.css | CSS стиль листов для фронтенд.
 /vault/fe_assets/frontend.dat | База данных для фронтенд (содержит информации об учетными записями и сессий; генерируется только если фронтенд будет активирована и используется).
 /vault/fe_assets/frontend.html | Основной файл шаблона HTML для фронтенд.

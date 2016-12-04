@@ -206,6 +206,7 @@ Fichier | Description
 /vault/fe_assets/_config.html | Un modèle HTML pour la page de configuration de l'accès frontal.
 /vault/fe_assets/_files.html | Un modèle HTML pour le gestionnaire de fichiers.
 /vault/fe_assets/_files_edit.html | Un modèle HTML pour le gestionnaire de fichiers.
+/vault/fe_assets/_files_rename.html | Un modèle HTML pour le gestionnaire de fichiers.
 /vault/fe_assets/_files_row.html | Un modèle HTML pour le gestionnaire de fichiers.
 /vault/fe_assets/_home.html | Un modèle HTML pour la page d'accueil de l'accès frontal.
 /vault/fe_assets/_login.html | Un modèle HTML pour la page pour la connexion de l'accès frontal.
@@ -214,6 +215,7 @@ Fichier | Description
 /vault/fe_assets/_nav_logs_access_only.html | Un modèle HTML pour le front-end navigation links, pour ceux qui ont accès aux fichiers journaux seulement.
 /vault/fe_assets/_updates.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
 /vault/fe_assets/_updates_row.html | Un modèle HTML pour la page des mises à jour de l'accès frontal.
+/vault/fe_assets/_upload_test.html | Un modèle HTML pour les tests de téléchargement.
 /vault/fe_assets/frontend.css | Feuille de style CSS pour l'accès frontal.
 /vault/fe_assets/frontend.dat | Base de données pour l'accès frontal (contient des informations sur les comptes et les sessions; généré seulement si l'accès frontal est activé et utilisé).
 /vault/fe_assets/frontend.html | Le fichier modèle HTML principal pour l'accès frontal.

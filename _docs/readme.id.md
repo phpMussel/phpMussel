@@ -206,6 +206,7 @@ Data | Deskripsi
 /vault/fe_assets/_config.html | Template HTML untuk akses bagian depan halaman konfigurasi.
 /vault/fe_assets/_files.html | Template HTML untuk file manager.
 /vault/fe_assets/_files_edit.html | Template HTML untuk file manager.
+/vault/fe_assets/_files_rename.html | Template HTML untuk file manager.
 /vault/fe_assets/_files_row.html | Template HTML untuk file manager.
 /vault/fe_assets/_home.html | Template HTML untuk akses bagian depan halaman utama.
 /vault/fe_assets/_login.html | Template HTML untuk akses bagian depan halaman masuk.
@@ -214,6 +215,7 @@ Data | Deskripsi
 /vault/fe_assets/_nav_logs_access_only.html | Template HTML untuk akses bagian depan link navigasi, untuk mereka yang memiliki akses ke log hanya.
 /vault/fe_assets/_updates.html | Template HTML untuk akses bagian depan halaman pembaruan.
 /vault/fe_assets/_updates_row.html | Template HTML untuk akses bagian depan halaman pembaruan.
+/vault/fe_assets/_upload_test.html | Template HTML untuk halaman upload test.
 /vault/fe_assets/frontend.css | Style-sheet CSS untuk akses bagian depan.
 /vault/fe_assets/frontend.dat | Database untuk akses bagian depan (berisi informasi untuk akun dan sesi; hanya dihasilkan jika akses bagian depan diaktifkan dan digunakan).
 /vault/fe_assets/frontend.html | Template HTML utama untuk akses bagian depan.

@@ -206,6 +206,7 @@ Archivo | Descripción
 /vault/fe_assets/_config.html | Un archivo HTML para el front-end página de configuración.
 /vault/fe_assets/_files.html | Un archivo HTML para el administración de archivos.
 /vault/fe_assets/_files_edit.html | Un archivo HTML para el administración de archivos.
+/vault/fe_assets/_files_rename.html | Un archivo HTML para el administración de archivos.
 /vault/fe_assets/_files_row.html | Un archivo HTML para el administración de archivos.
 /vault/fe_assets/_home.html | Un archivo HTML para el front-end página principal.
 /vault/fe_assets/_login.html | Un archivo HTML para el front-end página de login.
@@ -214,6 +215,7 @@ Archivo | Descripción
 /vault/fe_assets/_nav_logs_access_only.html | Un archivo HTML para el menú de navegación de front-end, para aquellos con acceso de registros solamente.
 /vault/fe_assets/_updates.html | Un archivo HTML para el front-end página de actualizaciones.
 /vault/fe_assets/_updates_row.html | Un archivo HTML para el front-end página de actualizaciones.
+/vault/fe_assets/_upload_test.html | Un archivo HTML para la subir prueba.
 /vault/fe_assets/frontend.css | Hoja de estilo CSS para el front-end.
 /vault/fe_assets/frontend.dat | Base de datos para el front-end (contiene información de las cuentas y las sesiones; sólo se genera si el front-end está activado y utilizado).
 /vault/fe_assets/frontend.html | El archivo HTML principal para el front-end.

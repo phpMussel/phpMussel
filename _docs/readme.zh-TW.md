@@ -207,6 +207,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 /vault/fe_assets/_config.html | 前端配置頁面的HTML模板。
 /vault/fe_assets/_files.html | 文件管理器的HTML模板。
 /vault/fe_assets/_files_edit.html | 文件管理器的HTML模板。
+/vault/fe_assets/_files_rename.html | 文件管理器的HTML模板。
 /vault/fe_assets/_files_row.html | 文件管理器的HTML模板。
 /vault/fe_assets/_home.html | 端主頁的HTML模板。
 /vault/fe_assets/_login.html | 前端登錄的HTML模板。
@@ -215,6 +216,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 /vault/fe_assets/_nav_logs_access_only.html | 前端導航鏈接的HTML模板，由那些與僅日誌訪問使用。
 /vault/fe_assets/_updates.html | 前端更新頁面的HTML模板。
 /vault/fe_assets/_updates_row.html | 前端更新頁面的HTML模板。
+/vault/fe_assets/_upload_test.html | 上傳測試頁面的HTML模板。
 /vault/fe_assets/frontend.css | 前端CSS樣式表。
 /vault/fe_assets/frontend.dat | 前端數據庫（包含賬戶信息，會話信息，和緩存；只生成如果前端是啟用和使用）。
 /vault/fe_assets/frontend.html | 前端的主HTML模板文件。

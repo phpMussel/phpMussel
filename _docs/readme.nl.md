@@ -206,6 +206,7 @@ Bestand | Beschrijving
 /vault/fe_assets/_config.html | Een HTML sjabloon voor de frontend configuratie pagina.
 /vault/fe_assets/_files.html | Een HTML sjabloon voor de bestandsbeheer.
 /vault/fe_assets/_files_edit.html | Een HTML sjabloon voor de bestandsbeheer.
+/vault/fe_assets/_files_rename.html | Een HTML sjabloon voor de bestandsbeheer.
 /vault/fe_assets/_files_row.html | Een HTML sjabloon voor de bestandsbeheer.
 /vault/fe_assets/_home.html | Een HTML sjabloon voor de frontend startpagina.
 /vault/fe_assets/_login.html | Een HTML sjabloon voor de frontend inlogpagina.
@@ -214,6 +215,7 @@ Bestand | Beschrijving
 /vault/fe_assets/_nav_logs_access_only.html | Een HTML sjabloon voor de frontend navigatie-links, voor degenen met logbestanden toegang alleen.
 /vault/fe_assets/_updates.html | Een HTML sjabloon voor de frontend updates pagina.
 /vault/fe_assets/_updates_row.html | Een HTML sjabloon voor de frontend updates pagina.
+/vault/fe_assets/_upload_test.html | Een HTML sjabloon voor de upload test pagina.
 /vault/fe_assets/frontend.css | CSS-stijlblad voor de frontend.
 /vault/fe_assets/frontend.dat | Database voor de frontend (bevat accounts en sessies informatie; alleen gegenereerd als de frontend geactiveerd en gebruikt).
 /vault/fe_assets/frontend.html | De belangrijkste HTML-template-bestand voor de frontend.

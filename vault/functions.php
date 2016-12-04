@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2016.12.02).
+ * This file: Functions file (last modified: 2016.12.04).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -229,12 +229,9 @@ $phpMussel['Function'] = function ($n, $str = false) {
     return @$fList[$n]($str);
 };
 
-/**
- * Does some quick prepwork to regex patterns prior to execution.
- */
+/** Does some quick prepwork to regex patterns prior to execution. */
 $phpMussel['rxPrep'] = function ($RX) {
-    $RX = str_ireplace('(?', '(?:', $RX);
-    return $RX;
+    return str_ireplace('(?', '(?:', $RX);
 };
 
 /**
@@ -540,7 +537,7 @@ $phpMussel['prescan_xmlxdp'] = function ($str, $md5 = '', $pdf = false) use (&$p
  * @return string The substring.
  */
 $phpMussel['substrbf'] = function ($h, $n) {
-    return @substr($h, 0, strpos($h, $n));
+    return (!$n) ? '' : substr($h, 0, strpos($h, $n));
 };
 
 /**
@@ -551,7 +548,7 @@ $phpMussel['substrbf'] = function ($h, $n) {
  * @return string The substring.
  */
 $phpMussel['substraf'] = function ($h, $n) {
-    return @substr($h, strpos($h, $n) + strlen($n));
+    return (!$n) ? '' : substr($h, strpos($h, $n) + strlen($n));
 };
 
 /**
@@ -562,7 +559,7 @@ $phpMussel['substraf'] = function ($h, $n) {
  * @return string The substring.
  */
 $phpMussel['substrbl'] = function ($h, $n) {
-    return @substr($h, 0, strrpos($h, $n));
+    return (!$n) ? '' : substr($h, 0, strrpos($h, $n));
 };
 
 /**
@@ -573,7 +570,7 @@ $phpMussel['substrbl'] = function ($h, $n) {
  * @return string The substring.
  */
 $phpMussel['substral'] = function ($h, $n) {
-    return @substr($h, strrpos($h, $n) + strlen($n));
+    return (!$n) ? '' : substr($h, strrpos($h, $n) + strlen($n));
 };
 
 /**

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.11.30).
+ * This file: Front-end handler (last modified: 2016.12.04).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -47,7 +47,7 @@ $phpMussel['FE'] = array(
 );
 
 /** Traversal detection. */
-$phpMussel['Traverse'] = function($Path) {
+$phpMussel['Traverse'] = function ($Path) {
     return !preg_match("\x01" . '(?:[\./]{2}|[\x01-\x1f\[-`?*$])' . "\x01i", str_replace("\\", '/', $Path));
 };
 
@@ -944,6 +944,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['StatClass'] = 's';
             }
         } else {
+            $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Files']['To']);
+            $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Files']['From']);
+            if (isset($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Files']['Checksum'])) {
+                $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Files']['Checksum']);
+            }
             $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['RemoteData'] = $phpMussel['FECacheGet'](
                 $phpMussel['FE']['Cache'],
                 $phpMussel['Components']['Meta'][$phpMussel['Components']['Key']]['Remote']
