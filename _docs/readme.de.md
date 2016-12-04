@@ -204,6 +204,9 @@ Datei | Beschreibung
 /vault/fe_assets/_accounts.html | Eine HTML-Template für das Front-End Konten-Seite.
 /vault/fe_assets/_accounts_row.html | Eine HTML-Template für das Front-End Konten-Seite.
 /vault/fe_assets/_config.html | Eine HTML-Template für das Front-End Konfiguration-Seite.
+/vault/fe_assets/_files.html | Eine HTML-Template für den Dateimanager.
+/vault/fe_assets/_files_edit.html | Eine HTML-Template für den Dateimanager.
+/vault/fe_assets/_files_row.html | Eine HTML-Template für den Dateimanager.
 /vault/fe_assets/_home.html | Eine HTML-Template für das Front-End Startseite.
 /vault/fe_assets/_login.html | Eine HTML-Template für das Front-End Einloggen-Seite.
 /vault/fe_assets/_logs.html | Eine HTML-Template für das Front-End Protokolldateien-Seite.
@@ -377,6 +380,7 @@ Datei | Beschreibung
 /vault/greylist.csv | CSV der Signaturen in der Greylist, die phpMussel ignorieren soll (Datei wird nach dem Löschen automatisch neu erstellt).
 /vault/l10n.dat | Enthält Informationen zu den L10N Komponenten für phpMussel; Wird von der Aktualisierungsfunktion bereitgestellt durch das Front-End verwendet.
 /vault/lang.php | Sprachdateien.
+/vault/php5.4.x.php | Polyfills für PHP 5.4.X (erforderlich für Abwärtskompatibilität mit PHP 5.4.X; sicher zu löschen für neuere PHP-Versionen).
 ※ /vault/scan_kills.txt | Eine Aufzeichnung aller von phpMussel blockierten Dateiuploads.
 ※ /vault/scan_log.txt | Eine Aufzeichnung aller von phpMussel gescannten Objekte.
 ※ /vault/scan_log_serialized.txt | Eine Aufzeichnung aller von phpMussel gescannten Objekte.
@@ -966,4 +970,4 @@ phpMussel *TUT* blockiert eine Datei | __Falsch-Positiv__ | True-Positiv (korrek
 ---
 
 
-Zuletzt aktualisiert: 7. November 2016 (2016.11.07).
+Zuletzt aktualisiert: 4. Dezember 2016 (2016.12.04).

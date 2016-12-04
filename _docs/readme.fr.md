@@ -204,6 +204,9 @@ Fichier | Description
 /vault/fe_assets/_accounts.html | Un modèle HTML pour la page des comptes de l'accès frontal.
 /vault/fe_assets/_accounts_row.html | Un modèle HTML pour la page des comptes de l'accès frontal.
 /vault/fe_assets/_config.html | Un modèle HTML pour la page de configuration de l'accès frontal.
+/vault/fe_assets/_files.html | Un modèle HTML pour le gestionnaire de fichiers.
+/vault/fe_assets/_files_edit.html | Un modèle HTML pour le gestionnaire de fichiers.
+/vault/fe_assets/_files_row.html | Un modèle HTML pour le gestionnaire de fichiers.
 /vault/fe_assets/_home.html | Un modèle HTML pour la page d'accueil de l'accès frontal.
 /vault/fe_assets/_login.html | Un modèle HTML pour la page pour la connexion de l'accès frontal.
 /vault/fe_assets/_logs.html | Un modèle HTML pour la page pour les fichiers journaux de l'accès frontal.
@@ -377,6 +380,7 @@ Fichier | Description
 /vault/greylist.csv | CSV de grise listé signatures indiquant pour phpMussel qui signatures il faut ignorer (fichier recréé automatiquement si supprimé).
 /vault/l10n.dat | Contient des informations relatives aux principaux composants de phpMussel; Utilisé par la page des mises à jour fournies par de l'accès frontal.
 /vault/lang.php | Module de linguistiques.
+/vault/php5.4.x.php | Polyfills pour PHP 5.4.X (Requis pour la compatibilité descendante de PHP 5.4.X; safe à supprimer pour les versions plus récentes de PHP).
 ※ /vault/scan_kills.txt | Les résultats de chaque fichier téléchargement bloqué/tués par phpMussel.
 ※ /vault/scan_log.txt | Un enregistrement de tout analysé par phpMussel.
 ※ /vault/scan_log_serialized.txt | Un enregistrement de tout analysé par phpMussel.
@@ -968,4 +972,4 @@ phpMussel bloque un fichier | __Faux positif__ | Vrai positif (inférence correc
 ---
 
 
-Dernière Mise à Jour: 7 Novembre 2016 (2016.11.07).
+Dernière Mise à Jour: 4 Décembre 2016 (2016.12.04).

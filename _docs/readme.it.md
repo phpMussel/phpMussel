@@ -204,6 +204,9 @@ File | Descrizione
 /vault/fe_assets/_accounts.html | Un modello HTML per il front-end pagina utenti.
 /vault/fe_assets/_accounts_row.html | Un modello HTML per il front-end pagina utenti.
 /vault/fe_assets/_config.html | Un modello HTML per il front-end pagina di configurazione.
+/vault/fe_assets/_files.html | Un modello HTML per il file manager.
+/vault/fe_assets/_files_edit.html | Un modello HTML per il file manager.
+/vault/fe_assets/_files_row.html | Un modello HTML per il file manager.
 /vault/fe_assets/_home.html | Un modello HTML per il front-end pagina principale.
 /vault/fe_assets/_login.html | Un modello HTML per il front-end pagina di accedi.
 /vault/fe_assets/_logs.html | Un modello HTML per il front-end pagina per i file di log.
@@ -377,6 +380,7 @@ File | Descrizione
 /vault/greylist.csv | CSV di firme indicando per phpMussel cui firme dovrebbero essere ignorato (il file sarà ricreato automaticamente se è cancellato).
 /vault/l10n.dat | Contiene informazioni relative ai componenti principali di phpMussel; Utilizzato dalla funzionalità aggiornamenti forniti dal front-end.
 /vault/lang.php | Linguistici dati.
+/vault/php5.4.x.php | Polyfills per PHP 5.4.X (necessaria per la retrocompatibilità di PHP 5.4.X; è sicuro di cancellare per le versioni più recenti di PHP).
 ※ /vault/scan_kills.txt | Un record di tutti i file bloccati/uccisi da phpMussel.
 ※ /vault/scan_log.txt | Un record di tutto scansionato da phpMussel.
 ※ /vault/scan_log_serialized.txt | Un record di tutto scansionato da phpMussel.
@@ -968,4 +972,4 @@ phpMussel *FA* bloccare un file | __Falso positivo__ | Vero positivo (inferenza 
 ---
 
 
-Ultimo Aggiornamento: 7 Novembre 2016 (2016.11.07).
+Ultimo Aggiornamento: 4 Dicembre 2016 (2016.12.04).

@@ -204,6 +204,9 @@ Data | Deskripsi
 /vault/fe_assets/_accounts.html | Template HTML untuk akses bagian depan halaman akun.
 /vault/fe_assets/_accounts_row.html | Template HTML untuk akses bagian depan halaman akun.
 /vault/fe_assets/_config.html | Template HTML untuk akses bagian depan halaman konfigurasi.
+/vault/fe_assets/_files.html | Template HTML untuk file manager.
+/vault/fe_assets/_files_edit.html | Template HTML untuk file manager.
+/vault/fe_assets/_files_row.html | Template HTML untuk file manager.
 /vault/fe_assets/_home.html | Template HTML untuk akses bagian depan halaman utama.
 /vault/fe_assets/_login.html | Template HTML untuk akses bagian depan halaman masuk.
 /vault/fe_assets/_logs.html | Template HTML untuk akses bagian depan halaman log.
@@ -377,6 +380,7 @@ Data | Deskripsi
 /vault/greylist.csv | CSV terdiri dari tanda tangan daftar abu-abu mengindikasikan phpMussel tanda tangan mana yang harus diabaikan (file automatis diciptakan kembali jika dihapus).
 /vault/l10n.dat | Berisi informasi yang berkaitan dengan komponen utama untuk phpMussel; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
 /vault/lang.php | File bahasa.
+/vault/php5.4.x.php | Polyfill untuk PHP 5.4.X (diperlukan untuk kompatibilitas mundur PHP 5.4.X; aman untuk menghapus selama versi PHP yang lebih baru).
 ※ /vault/scan_kills.txt | Sebuah catatan dari setiap file upload yang diblok/dibunuh oleh phpMussel.
 ※ /vault/scan_log.txt | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
 ※ /vault/scan_log_serialized.txt | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
@@ -968,4 +972,4 @@ phpMussel memblokir file | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 7 November 2016 (2016.11.07).
+Terakhir Diperbarui: 4 Desember 2016 (2016.12.04).

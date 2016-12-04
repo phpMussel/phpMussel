@@ -204,6 +204,9 @@ Bestand | Beschrijving
 /vault/fe_assets/_accounts.html | Een HTML sjabloon voor de frontend accounts pagina.
 /vault/fe_assets/_accounts_row.html | Een HTML sjabloon voor de frontend accounts pagina.
 /vault/fe_assets/_config.html | Een HTML sjabloon voor de frontend configuratie pagina.
+/vault/fe_assets/_files.html | Een HTML sjabloon voor de bestandsbeheer.
+/vault/fe_assets/_files_edit.html | Een HTML sjabloon voor de bestandsbeheer.
+/vault/fe_assets/_files_row.html | Een HTML sjabloon voor de bestandsbeheer.
 /vault/fe_assets/_home.html | Een HTML sjabloon voor de frontend startpagina.
 /vault/fe_assets/_login.html | Een HTML sjabloon voor de frontend inlogpagina.
 /vault/fe_assets/_logs.html | Een HTML sjabloon voor de frontend logbestanden pagina.
@@ -377,6 +380,7 @@ Bestand | Beschrijving
 /vault/greylist.csv | CSV van greylisted handtekeningen aangeeft om phpMussel waarop handtekeningen moet worden negeren (bestand automatisch aangemaakt opnieuw als verwijderd).
 /vault/l10n.dat | Bevat informatie over de L10N bestanddelen van phpMussel; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/lang.php | Taal-handler.
+/vault/php5.4.x.php | Polyfills voor PHP 5.4.X (nodig voor PHP 5.4.X achterwaartse compatibiliteit; veilig te verwijderen voor nieuwere PHP-versies).
 ※ /vault/scan_kills.txt | Een record van elk bestand uploaden geblokkeerde/gedood door phpMussel.
 ※ /vault/scan_log.txt | Een record van alles gescand door phpMussel.
 ※ /vault/scan_log_serialized.txt | Een record van alles gescand door phpMussel.
@@ -968,4 +972,4 @@ phpMussel *DOET* blokkeren van een bestand | __Vals positieve__ | Waar positieve
 ---
 
 
-Laatste Bijgewerkt: 7 November 2016 (2016.11.07).
+Laatste Bijgewerkt: 4 December 2016 (2016.12.04).

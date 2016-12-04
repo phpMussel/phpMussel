@@ -204,6 +204,9 @@ File | Description
 /vault/fe_assets/_accounts.html | An HTML template for the front-end accounts page.
 /vault/fe_assets/_accounts_row.html | An HTML template for the front-end accounts page.
 /vault/fe_assets/_config.html | An HTML template for the front-end configuration page.
+/vault/fe_assets/_files.html | An HTML template for the file manager.
+/vault/fe_assets/_files_edit.html | An HTML template for the file manager.
+/vault/fe_assets/_files_row.html | An HTML template for the file manager.
 /vault/fe_assets/_home.html | An HTML template for the front-end homepage.
 /vault/fe_assets/_login.html | An HTML template for the front-end login.
 /vault/fe_assets/_logs.html | An HTML template for the front-end logs page.
@@ -377,6 +380,7 @@ File | Description
 /vault/greylist.csv | CSV of greylisted signatures indicating to phpMussel which signatures it should be ignoring (file automatically recreated if deleted).
 /vault/l10n.dat | Contains information relating to the L10N components of phpMussel; Used by the updates feature provided by the front-end.
 /vault/lang.php | Language handler.
+/vault/php5.4.x.php | Polyfills for PHP 5.4.X (required for PHP 5.4.X backwards compatibility; safe to delete for newer PHP versions).
 ※ /vault/scan_kills.txt | A record of every file upload blocked/killed by phpMussel.
 ※ /vault/scan_log.txt | A record of everything scanned by phpMussel.
 ※ /vault/scan_log_serialized.txt | A record of everything scanned by phpMussel.
@@ -968,4 +972,4 @@ phpMussel *DOES* block a file | __False positive__ | True positive (correct infe
 ---
 
 
-Last Updated: 7th November 2016 (2016.11.07).
+Last Updated: 4th December 2016 (2016.12.04).

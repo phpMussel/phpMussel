@@ -204,6 +204,9 @@ Tập tin | Chi tiết
 /vault/fe_assets/_accounts.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
 /vault/fe_assets/_accounts_row.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
 /vault/fe_assets/_config.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
+/vault/fe_assets/_files.html | Một tập tin mẫu HTML cho các quản lý tập tin.
+/vault/fe_assets/_files_edit.html | Một tập tin mẫu HTML cho các quản lý tập tin.
+/vault/fe_assets/_files_row.html | Một tập tin mẫu HTML cho các quản lý tập tin.
 /vault/fe_assets/_home.html | Một tập tin mẫu HTML cho các trang chủ của front-end.
 /vault/fe_assets/_login.html | Một tập tin mẫu HTML cho các đăng nhập của front-end.
 /vault/fe_assets/_logs.html | Một tập tin mẫu HTML cho các trang bản ghi của front-end.
@@ -377,6 +380,7 @@ Tập tin | Chi tiết
 /vault/greylist.csv | Tập tin CSV cho danh sách xám chử ký chỉ thị cho phpMussel cái nào chử ký nó phải được bỏ qua (tập tin tự động tạo lại nếu xóa).
 /vault/l10n.dat | Chứa thông tin liên quan đến các gói L10N của phpMussel; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
 /vault/lang.php | Dữ liệu tiếng.
+/vault/php5.4.x.php | Polyfills cho PHP 5.4.X (cần cho khả năng tương thích ngược PHP 5.4.X; an toàn để xóa cho các phiên bản PHP mới hơn).
 ※ /vault/scan_kills.txt | Kỷ lục của mỗi tập tin tải lên từ chối/giết bởi phpMussel.
 ※ /vault/scan_log.txt | Kỷ lục của mỗi tập tin quét bởi phpMussel.
 ※ /vault/scan_log_serialized.txt | Kỷ lục của mỗi tập tin quét bởi phpMussel.
@@ -968,4 +972,4 @@ phpMussel chặn một tập tin | __Sai tích cực__ | Đúng tích cực (suy
 ---
 
 
-Lần cuối cập nhật: 7 Tháng Mười Một 2016 (2016.11.07).
+Lần cuối cập nhật: 4 Tháng Mười Hai 2016 (2016.12.04).

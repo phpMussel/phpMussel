@@ -202,48 +202,51 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 /vault/cache/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
 /vault/fe_assets/ | 前端資產。
 /vault/fe_assets/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
-/vault/fe_assets/_accounts.html | HTML模板為前端賬戶頁面。
-/vault/fe_assets/_accounts_row.html | HTML模板為前端賬戶頁面。
-/vault/fe_assets/_config.html | HTML模板為前端配置頁面。
-/vault/fe_assets/_home.html | HTML模板為前端主頁。
-/vault/fe_assets/_login.html | HTML模板為前端登錄。
-/vault/fe_assets/_logs.html | HTML模板為前端日誌頁面。
-/vault/fe_assets/_nav_complete_access.html | HTML模板為前端導航鏈接，為那些與完全訪問。
-/vault/fe_assets/_nav_logs_access_only.html | HTML模板為前端導航鏈接，為那些與僅日誌訪問。
-/vault/fe_assets/_updates.html | HTML模板為前端更新頁面。
-/vault/fe_assets/_updates_row.html | HTML模板為前端更新頁面。
-/vault/fe_assets/frontend.css | CSS樣式表為前端。
-/vault/fe_assets/frontend.dat | 數據庫為前端（包含賬戶信息和會話信息；只生成如果前端是啟用和使用）。
-/vault/fe_assets/frontend.html | 主要的HTML模板文件為前端。
+/vault/fe_assets/_accounts.html | 前端賬戶頁面的HTML模板。
+/vault/fe_assets/_accounts_row.html | 前端賬戶頁面的HTML模板。
+/vault/fe_assets/_config.html | 前端配置頁面的HTML模板。
+/vault/fe_assets/_files.html | 文件管理器的HTML模板。
+/vault/fe_assets/_files_edit.html | 文件管理器的HTML模板。
+/vault/fe_assets/_files_row.html | 文件管理器的HTML模板。
+/vault/fe_assets/_home.html | 端主頁的HTML模板。
+/vault/fe_assets/_login.html | 前端登錄的HTML模板。
+/vault/fe_assets/_logs.html | 前端日誌頁面的HTML模板。
+/vault/fe_assets/_nav_complete_access.html | 前端導航鏈接的HTML模板，由那些與完全訪問使用。
+/vault/fe_assets/_nav_logs_access_only.html | 前端導航鏈接的HTML模板，由那些與僅日誌訪問使用。
+/vault/fe_assets/_updates.html | 前端更新頁面的HTML模板。
+/vault/fe_assets/_updates_row.html | 前端更新頁面的HTML模板。
+/vault/fe_assets/frontend.css | 前端CSS樣式表。
+/vault/fe_assets/frontend.dat | 前端數據庫（包含賬戶信息，會話信息，和緩存；只生成如果前端是啟用和使用）。
+/vault/fe_assets/frontend.html | 前端的主HTML模板文件。
 /vault/lang/ | 包含phpMussel語言數據。
 /vault/lang/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
-/vault/lang/lang.ar.fe.php | 阿拉伯文語言數據為前端。
+/vault/lang/lang.ar.fe.php | 阿拉伯文前端語言數據。
 /vault/lang/lang.ar.php | 阿拉伯文語言數據。
-/vault/lang/lang.de.fe.php | 德文語言數據為前端。
+/vault/lang/lang.de.fe.php | 德文前端語言數據。
 /vault/lang/lang.de.php | 德文語言數據。
-/vault/lang/lang.en.fe.php | 英文語言數據為前端。
+/vault/lang/lang.en.fe.php | 英文前端語言數據。
 /vault/lang/lang.en.php | 英文語言數據。
-/vault/lang/lang.es.fe.php | 西班牙文語言數據為前端。
+/vault/lang/lang.es.fe.php | 西班牙文前端語言數據。
 /vault/lang/lang.es.php | 西班牙文語言數據。
-/vault/lang/lang.fr.fe.php | 法文語言數據為前端。
+/vault/lang/lang.fr.fe.php | 法文前端語言數據。
 /vault/lang/lang.fr.php | 法文語言數據。
-/vault/lang/lang.id.fe.php | 印度尼西亞文語言數據為前端。
+/vault/lang/lang.id.fe.php | 印度尼西亞文前端語言數據。
 /vault/lang/lang.id.php | 印度尼西亞文語言數據。
-/vault/lang/lang.it.fe.php | 意大利文語言數據為前端。
+/vault/lang/lang.it.fe.php | 意大利文前端語言數據。
 /vault/lang/lang.it.php | 意大利文語言數據。
-/vault/lang/lang.ja.fe.php | 日文語言數據為前端。
+/vault/lang/lang.ja.fe.php | 日文前端語言數據。
 /vault/lang/lang.ja.php | 日文語言數據。
-/vault/lang/lang.nl.fe.php | 荷蘭文語言數據為前端。
+/vault/lang/lang.nl.fe.php | 荷蘭文前端語言數據。
 /vault/lang/lang.nl.php | 荷蘭文語言數據。
-/vault/lang/lang.pt.fe.php | 葡萄牙文語言數據為前端。
+/vault/lang/lang.pt.fe.php | 葡萄牙文前端語言數據。
 /vault/lang/lang.pt.php | 葡萄牙文語言數據。
-/vault/lang/lang.ru.fe.php | 俄文語言數據為前端。
+/vault/lang/lang.ru.fe.php | 俄文前端語言數據。
 /vault/lang/lang.ru.php | 俄文語言數據。
-/vault/lang/lang.vi.fe.php | 越南文語言數據為前端。
+/vault/lang/lang.vi.fe.php | 越南文前端語言數據。
 /vault/lang/lang.vi.php | 越南文語言數據。
-/vault/lang/lang.zh-tw.fe.php | 中文（傳統）語言數據為前端。
+/vault/lang/lang.zh-tw.fe.php | 中文（傳統）前端語言數據。
 /vault/lang/lang.zh-tw.php | 中文（傳統）語言數據。
-/vault/lang/lang.zh.fe.php | 中文（簡體）語言數據為前端。
+/vault/lang/lang.zh.fe.php | 中文（簡體）前端語言數據。
 /vault/lang/lang.zh.php | 中文（簡體）語言數據。
 /vault/quarantine/ | 隔離文件夾（包含隔離文件）。
 /vault/quarantine/.htaccess | 超文本訪問文件（在這種情況，以保護敏感文件屬於腳本從被訪問由非授權來源）。
@@ -378,6 +381,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 /vault/greylist.csv | 灰名單簽名CSV（逗號分隔變量）文件說明為phpMussel什麼簽名它應該忽略（文件自動重新創建如果刪除）。
 /vault/l10n.dat | 包含的相關信息關於phpMussel的L10N組件；它使用通過更新功能從前端。
 /vault/lang.php | 語音數據。
+/vault/php5.4.x.php | Polyfill對於PHP 5.4.X （PHP 5.4.X 向下兼容需要它； 較新的版本可以刪除它）。
 ※ /vault/scan_kills.txt | 記錄的所有上傳文件phpMussel受阻／殺。
 ※ /vault/scan_log.txt | 記錄的一切phpMussel掃描。
 ※ /vault/scan_log_serialized.txt | 記錄的一切phpMussel掃描。
@@ -970,4 +974,4 @@ phpMussel會阻止文件 | __假陽性__ | 真陽性（正確的推理）
 ---
 
 
-最後更新：2016年11月7日。
+最後更新：2016年12月4日。

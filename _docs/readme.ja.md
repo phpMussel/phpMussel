@@ -204,6 +204,9 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /vault/fe_assets/_accounts.html | フロントエンドのアカウントページのHTMLテンプレート。
 /vault/fe_assets/_accounts_row.html | フロントエンドのアカウントページのHTMLテンプレート。
 /vault/fe_assets/_config.html | フロントエンドのコンフィギュレーションページのHTMLテンプレート。
+/vault/fe_assets/_files.html | ファイル・マネージャのHTMLテンプレート。
+/vault/fe_assets/_files_edit.html | ファイル・マネージャのHTMLテンプレート。
+/vault/fe_assets/_files_row.html | ファイル・マネージャのHTMLテンプレート。
 /vault/fe_assets/_home.html | フロントエンドのホームページのHTMLテンプレート。
 /vault/fe_assets/_login.html | フロントエンドのログインページのHTMLテンプレート。
 /vault/fe_assets/_logs.html | フロントエンドのロゴスページのHTMLテンプレート。
@@ -377,6 +380,7 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /vault/greylist.csv | グレーリスト化された署名のCSVで、phpMusselがどの署名を無視すべきかを指示するものです（削除しても自動的に再作成されます）。
 /vault/l10n.dat | phpMusselのL10Nコンポーネント情報が含まれています；アップデート機能で使用（フロントエンドが提供します）。
 /vault/lang.php | 言語・ハンドラ。
+/vault/php5.4.x.php | PHP 5.4.X ポリフィル （PHP 5.4.X の下位互換性のために必要です； より新しいPHPバージョンのために、削除しても安全です）。
 ※ /vault/scan_kills.txt | phpMusselによりブロック／削除されたアップロードファイルの全記録。
 ※ /vault/scan_log.txt | phpMusselによりスキャンされたものの全記録。
 ※ /vault/scan_log_serialized.txt | phpMusselによりスキャンされたものの全記録。
@@ -970,4 +974,4 @@ phpMusselは、ファイルをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2016年11月7日。
+最終アップデート： 2016年12月4日。
