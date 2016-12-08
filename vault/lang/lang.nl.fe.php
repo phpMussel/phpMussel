@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2016.11.26).
+ * This file: Dutch language data for the front-end (last modified: 2016.12.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['link_upload_test'] = 'Upload Test';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Geselecteerde logbestand bestaat niet!';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'Geen logbestanden beschikbaar.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Geen logbestand geselecteerd.';
+$phpMussel['lang']['max_login_attempts_exceeded'] = 'Maximum aantal inlogpogingen overschreden; Toegang geweigerd.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Een account bij die gebruikersnaam bestaat al!';
 $phpMussel['lang']['response_accounts_created'] = 'Account succesvol aangemaakt!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Account succesvol verwijderd!';
@@ -100,7 +101,7 @@ $phpMussel['lang']['state_component_is_active'] = 'Bestanddeel is actief.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Bestanddeel is inactief.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Bestanddeel is voorlopig.';
 $phpMussel['lang']['state_default_password'] = 'Waarschuwing: Gebruikt de standaard wachtwoord!';
-$phpMussel['lang']['state_logged_in'] = 'Ingelogd';
+$phpMussel['lang']['state_logged_in'] = 'Ingelogd.';
 $phpMussel['lang']['state_logs_access_only'] = 'Logbestanden toegang alleen';
 $phpMussel['lang']['state_password_not_valid'] = 'Waarschuwing: Dit account is niet gebruikt van een geldig wachtwoord!';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'De al bijgewerkt niet verbergen';

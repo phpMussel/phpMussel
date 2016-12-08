@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2016.11.26).
+ * This file: Spanish language data for the front-end (last modified: 2016.12.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['link_upload_test'] = 'Subir Prueba';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = '¡Archivo de registro seleccionado no existe!';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'Ningún archivos de registro disponibles.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Ningún archivo de registro seleccionado.';
+$phpMussel['lang']['max_login_attempts_exceeded'] = 'Número máximo de intentos de login excedido; Acceso denegado.';
 $phpMussel['lang']['response_accounts_already_exists'] = '¡Una cuenta con ese nombre ya existe!';
 $phpMussel['lang']['response_accounts_created'] = '¡Cuenta creada con éxito!';
 $phpMussel['lang']['response_accounts_deleted'] = '¡Cuenta eliminada con éxito!';
@@ -100,7 +101,7 @@ $phpMussel['lang']['state_component_is_active'] = 'Componente está activo.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Componente está inactivo.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Componente está provisional.';
 $phpMussel['lang']['state_default_password'] = '¡Advertencia: Usando la contraseña estándar!';
-$phpMussel['lang']['state_logged_in'] = 'Conectado';
+$phpMussel['lang']['state_logged_in'] = 'Conectado.';
 $phpMussel['lang']['state_logs_access_only'] = 'Acceso de registros solamente';
 $phpMussel['lang']['state_password_not_valid'] = '¡Advertencia: Esta cuenta no está utilizando una contraseña válida!';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'No ocultar no anticuado';

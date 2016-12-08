@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2016.11.26).
+ * This file: Japanese language data for the front-end (last modified: 2016.12.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['link_upload_test'] = 'アップロード・テスト';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = '選択したログは存在しません！';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'いいえログが利用可能。';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'ログが選択されていません。';
+$phpMussel['lang']['max_login_attempts_exceeded'] = 'ログイン試行の最大回数を超えました；アクセス拒否。';
 $phpMussel['lang']['response_accounts_already_exists'] = 'そのアカウントはすでに存在します！';
 $phpMussel['lang']['response_accounts_created'] = 'アカウントの作成に成功しました！';
 $phpMussel['lang']['response_accounts_deleted'] = 'アカウントの削除が成功しました！';
@@ -100,7 +101,7 @@ $phpMussel['lang']['state_component_is_active'] = 'コンポーネントがア�
 $phpMussel['lang']['state_component_is_inactive'] = 'コンポーネントが非アクティブです。';
 $phpMussel['lang']['state_component_is_provisional'] = 'コンポーネントが暫定的です。';
 $phpMussel['lang']['state_default_password'] = '警告：デフォルトのパスワードを使用して！';
-$phpMussel['lang']['state_logged_in'] = 'ログインしています';
+$phpMussel['lang']['state_logged_in'] = 'ログインしています。';
 $phpMussel['lang']['state_logs_access_only'] = 'ログのみにアクセス';
 $phpMussel['lang']['state_password_not_valid'] = '警告：このアカウントには有効なパスワードを使用していません！';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = '非時代遅れを隠さないで';

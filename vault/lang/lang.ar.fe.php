@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2016.11.26).
+ * This file: Arabic language data for the front-end (last modified: 2016.12.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['link_upload_test'] = 'تحميل اختبار';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'هذا سجل غير موجود!';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'لا سجلات متاح.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'لا سجلات مختار.';
+$phpMussel['lang']['max_login_attempts_exceeded'] = 'تجاوز الحد الأقصى لعدد محاولات تسجيل الدخول؛ تم رفض الوصول.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'حساب اسم المستخدم موجود بالفعل!';
 $phpMussel['lang']['response_accounts_created'] = 'حساب إنشاء بنجاح!';
 $phpMussel['lang']['response_accounts_deleted'] = 'حساب حذف بنجاح!';
@@ -100,7 +101,7 @@ $phpMussel['lang']['state_component_is_active'] = 'وحدة هو نشطا.';
 $phpMussel['lang']['state_component_is_inactive'] = 'وحدة هو غير نشط.';
 $phpMussel['lang']['state_component_is_provisional'] = 'وحدة هو جزئيا نشطا.';
 $phpMussel['lang']['state_default_password'] = 'تحذير: يستخدم الافتراضي كلمه السر!';
-$phpMussel['lang']['state_logged_in'] = 'حاليا على';
+$phpMussel['lang']['state_logged_in'] = 'حاليا على.';
 $phpMussel['lang']['state_logs_access_only'] = 'سجلات الوصول فقط';
 $phpMussel['lang']['state_password_not_valid'] = 'تحذير: هذا الحساب لا يستخدم صالحة كلمه السر!';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'لا يخفون غير عفا عليها الزمن';

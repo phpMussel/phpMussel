@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2016.11.26).
+ * This file: Vietnamese language data for the front-end (last modified: 2016.12.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['link_upload_test'] = 'Kiểm Tra Tải Lên';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Bản ghi đã chọn không tồn tại!';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'Không có bản ghi có sẵn.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Không có bản ghi được chọn.';
+$phpMussel['lang']['max_login_attempts_exceeded'] = 'Số lượng tối đa cố gắng đăng nhập đã bị vượt quá; Truy cập bị từ chối.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Một tài khoản với tên người dùng này đã tồn tại!';
 $phpMussel['lang']['response_accounts_created'] = 'Tài khoản tạo ra thành công!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Tài khoản xóa thành công!';
@@ -100,7 +101,7 @@ $phpMussel['lang']['state_component_is_active'] = 'Gói này đang hoạt độn
 $phpMussel['lang']['state_component_is_inactive'] = 'Gói này không đang hoạt động.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Gói này đang thỉnh thoảng hoạt động.';
 $phpMussel['lang']['state_default_password'] = 'Cảnh báo: Nó là sử dụng mật khẩu mặc định!';
-$phpMussel['lang']['state_logged_in'] = 'Được đăng nhập';
+$phpMussel['lang']['state_logged_in'] = 'Được đăng nhập.';
 $phpMussel['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';
 $phpMussel['lang']['state_password_not_valid'] = 'Cảnh báo: Tài khoản này không được sử dụng một mật khẩu hợp lệ!';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Đừng ẩn các không hết hạn';

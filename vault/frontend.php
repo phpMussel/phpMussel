@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2016.12.06).
+ * This file: Front-end handler (last modified: 2016.12.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1693,51 +1693,30 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
 
     /** Initialise array for fetching logs data. */
     $phpMussel['FE']['LogFiles'] = array(
-        'Files' => scandir($phpMussel['Vault']),
-        'Types' => ',txt,log,',
+        'Files' => $phpMussel['Logs-RecursiveList']($phpMussel['Vault']),
         'Out' => ''
     );
 
     if (empty($phpMussel['QueryVars']['logfile'])) {
         $phpMussel['FE']['logfileData'] = $phpMussel['lang']['logs_no_logfile_selected'];
-    } elseif (
-        file_exists($phpMussel['Vault'] . $phpMussel['QueryVars']['logfile']) &&
-        $phpMussel['Traverse']($phpMussel['QueryVars']['logfile']) &&
-        (strpos(
-            $phpMussel['FE']['LogFiles']['Types'],
-            strtolower(substr($phpMussel['QueryVars']['logfile'], -3))
-        ) !== false)
-    ) {
-        $phpMussel['FE']['logfileData'] = $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['QueryVars']['logfile']);
+    } elseif (empty($phpMussel['FE']['LogFiles']['Files'][$phpMussel['QueryVars']['logfile']])) {
+        $phpMussel['FE']['logfileData'] = $phpMussel['lang']['logs_logfile_doesnt_exist'];
+    } else {
         $phpMussel['FE']['logfileData'] = str_replace(
             array('<', '>', "\r", "\n"),
             array('&lt;', '&gt;', '', "<br />\n"),
-            $phpMussel['FE']['logfileData']
+            $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['QueryVars']['logfile'])
         );
-    } else {
-        $phpMussel['FE']['logfileData'] = $phpMussel['lang']['logs_logfile_doesnt_exist'];
     }
 
-    $phpMussel['FE']['LogFiles']['Count'] = count($phpMussel['FE']['LogFiles']['Files']);
-    for (
-        $phpMussel['FE']['LogFiles']['Iterate'] = 0;
-        $phpMussel['FE']['LogFiles']['Iterate'] < $phpMussel['FE']['LogFiles']['Count'];
-        $phpMussel['FE']['LogFiles']['Iterate']++
-    ) {
-        if (strpos(
-            $phpMussel['FE']['LogFiles']['Types'],
-            strtolower(substr($phpMussel['FE']['LogFiles']['Files'][$phpMussel['FE']['LogFiles']['Iterate']], -3))
-        ) !== false) {
-            $phpMussel['FE']['LogFiles']['This'] = $phpMussel['FE']['LogFiles']['Files'][$phpMussel['FE']['LogFiles']['Iterate']];
-            $phpMussel['FE']['LogFiles']['Filesize'] = filesize($phpMussel['Vault'] . $phpMussel['FE']['LogFiles']['This']);
-            $phpMussel['FormatFilesize']($phpMussel['FE']['LogFiles']['Filesize']);
-            $phpMussel['FE']['LogFiles']['Out'] .= sprintf(
-                '            <a href="?phpmussel-page=logs&logfile=%1$s">%1$s</a> – %2$s<br />',
-                $phpMussel['FE']['LogFiles']['This'],
-                $phpMussel['FE']['LogFiles']['Filesize']
-            ) . "\n";
-        }
-    }
+    array_walk($phpMussel['FE']['LogFiles']['Files'], function ($Arr) use (&$phpMussel) {
+        $phpMussel['FE']['LogFiles']['Out'] .= sprintf(
+            '            <a href="?phpmussel-page=logs&logfile=%1$s">%1$s</a> – %2$s<br />',
+            $Arr['Filename'],
+            $Arr['Filesize']
+        ) . "\n";
+    });
+
     if (!$phpMussel['FE']['LogFiles'] = $phpMussel['FE']['LogFiles']['Out']) {
         $phpMussel['FE']['LogFiles'] = $phpMussel['lang']['logs_no_logfiles_available'];
     }

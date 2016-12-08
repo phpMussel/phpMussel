@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2016.11.26).
+ * This file: German language data for the front-end (last modified: 2016.12.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['link_upload_test'] = 'Upload-Prüfung';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Ausgewählte Protokolldatei existiert nicht!';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'Keine Protokolldateien vorhanden.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Keine Protokolldatei ausgewählt.';
+$phpMussel['lang']['max_login_attempts_exceeded'] = 'Maximale Anzahl der Versucht zu einloggen überschritten; Zugriff verweigert.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Ein Konto mit diesem Benutzernamen ist bereits vorhanden!';
 $phpMussel['lang']['response_accounts_created'] = 'Konto erfolgreich erstellt!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Konto erfolgreich gelöscht!';
@@ -100,7 +101,7 @@ $phpMussel['lang']['state_component_is_active'] = 'Komponente ist aktiv.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Komponente ist inaktiv.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Komponente ist vorläufig.';
 $phpMussel['lang']['state_default_password'] = 'Warnung: Verwendet das Standard-Passwort!';
-$phpMussel['lang']['state_logged_in'] = 'Eingeloggt';
+$phpMussel['lang']['state_logged_in'] = 'Eingeloggt.';
 $phpMussel['lang']['state_logs_access_only'] = 'Zugriff nur auf Protokolldateien';
 $phpMussel['lang']['state_password_not_valid'] = 'Warnung: Dieses Konto verwendet kein gültiges Passwort!';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Nicht verstecken nicht veraltet';

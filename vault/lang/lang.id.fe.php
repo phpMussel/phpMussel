@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2016.11.26).
+ * This file: Indonesian language data for the front-end (last modified: 2016.12.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['link_upload_test'] = 'Upload Test';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Log yang dipilih tidak ada!';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'Tidak ada log tersedia.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Tidak ada log dipilih.';
+$phpMussel['lang']['max_login_attempts_exceeded'] = 'Jumlah maksimum upaya untuk memasukkan tercapai; Akses ditolak.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Akun dengan nama pengguna ini sudah ada!';
 $phpMussel['lang']['response_accounts_created'] = 'Akun berhasil dibuat!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Akun berhasil dihapus!';
@@ -100,7 +101,7 @@ $phpMussel['lang']['state_component_is_active'] = 'Komponen ini aktif.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Komponen ini non-aktif.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Komponen ini kadang-kadang aktif.';
 $phpMussel['lang']['state_default_password'] = 'Peringatan: Menggunakan kata sandi standar!';
-$phpMussel['lang']['state_logged_in'] = 'Pengguna yang online';
+$phpMussel['lang']['state_logged_in'] = 'Pengguna yang online.';
 $phpMussel['lang']['state_logs_access_only'] = 'Akses ke log hanya';
 $phpMussel['lang']['state_password_not_valid'] = 'Peringatan: Akun ini tidak menggunakan kata sandi yang valid!';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Tidak menyembunyikan terbaru';

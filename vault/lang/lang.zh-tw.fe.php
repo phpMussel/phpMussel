@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2016.11.26).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2016.12.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['link_upload_test'] = '上傳測試';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = '選擇的日誌不存在！';
 $phpMussel['lang']['logs_no_logfiles_available'] = '沒有日誌可用。';
 $phpMussel['lang']['logs_no_logfile_selected'] = '沒有選擇的日誌。';
+$phpMussel['lang']['max_login_attempts_exceeded'] = '最大登錄嘗試次數已經超過；拒絕訪問。';
 $phpMussel['lang']['response_accounts_already_exists'] = '一個賬戶與那個用戶名已經存在！';
 $phpMussel['lang']['response_accounts_created'] = '帳戶成功創建！';
 $phpMussel['lang']['response_accounts_deleted'] = '帳戶成功刪除！';
@@ -100,7 +101,7 @@ $phpMussel['lang']['state_component_is_active'] = '組件是活性。';
 $phpMussel['lang']['state_component_is_inactive'] = '組件是非活性。';
 $phpMussel['lang']['state_component_is_provisional'] = '組件是有時活性。';
 $phpMussel['lang']['state_default_password'] = '警告：它使用標準密碼！';
-$phpMussel['lang']['state_logged_in'] = '目前在線';
+$phpMussel['lang']['state_logged_in'] = '目前在線。';
 $phpMussel['lang']['state_logs_access_only'] = '僅日誌訪問';
 $phpMussel['lang']['state_password_not_valid'] = '警告：此帳戶不​​使用有效的密碼！';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = '不要隱藏非過時';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2016.11.26).
+ * This file: Russian language data for the front-end (last modified: 2016.12.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['link_upload_test'] = 'Тестовая Загрузка';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Выбранный лог-файл не существует!';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'Не лог-файлы доступны.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Не лог-файлы Выбранный.';
+$phpMussel['lang']['max_login_attempts_exceeded'] = 'Максимальное количество попыток входа в систему был превышен; Доступ закрыт.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Аккаунт с таким именем уже существует!';
 $phpMussel['lang']['response_accounts_created'] = 'Аккаунт успешно создан!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Аккаунт успешно удален!';
@@ -100,7 +101,7 @@ $phpMussel['lang']['state_component_is_active'] = 'Компонент актив
 $phpMussel['lang']['state_component_is_inactive'] = 'Компонент неактивен.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Компонент иногда активен.';
 $phpMussel['lang']['state_default_password'] = 'Предупреждение: Использует стандартный пароль!';
-$phpMussel['lang']['state_logged_in'] = 'В настоящее время вошли в систему';
+$phpMussel['lang']['state_logged_in'] = 'В настоящее время вошли в систему.';
 $phpMussel['lang']['state_logs_access_only'] = 'Доступ только к лог-файлы';
 $phpMussel['lang']['state_password_not_valid'] = 'Предупреждение: Эта аккаунт не использует правильный пароль!';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Не скрывают не-устаревший';

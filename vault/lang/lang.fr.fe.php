@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2016.11.26).
+ * This file: French language data for the front-end (last modified: 2016.12.08).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -67,6 +67,7 @@ $phpMussel['lang']['link_upload_test'] = 'Test de Télécharger';
 $phpMussel['lang']['logs_logfile_doesnt_exist'] = 'Le fichier journal sélectionné n\'existe pas!';
 $phpMussel['lang']['logs_no_logfiles_available'] = 'Aucun fichiers journaux disponibles.';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'Aucun fichier journal sélectionné.';
+$phpMussel['lang']['max_login_attempts_exceeded'] = 'Nombre maximal de tentatives de connexion excédée; Accès refusé.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Un compte avec ce nom d\'utilisateur existe déjà!';
 $phpMussel['lang']['response_accounts_created'] = 'Compte créé avec succès!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Compte supprimé avec succès!';
@@ -100,7 +101,7 @@ $phpMussel['lang']['state_component_is_active'] = 'Le composant est actif.';
 $phpMussel['lang']['state_component_is_inactive'] = 'Le composant est inactif.';
 $phpMussel['lang']['state_component_is_provisional'] = 'Le composant est provisoire.';
 $phpMussel['lang']['state_default_password'] = 'Attention: Utilisant le mot de passe défaut!';
-$phpMussel['lang']['state_logged_in'] = 'Connecté';
+$phpMussel['lang']['state_logged_in'] = 'Connecté.';
 $phpMussel['lang']['state_logs_access_only'] = 'Accès aux fichiers journaux seulement';
 $phpMussel['lang']['state_password_not_valid'] = 'Attention: Ce compte n\'utilise un mot de passe valide!';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Ne masquer pas non dépassé';
