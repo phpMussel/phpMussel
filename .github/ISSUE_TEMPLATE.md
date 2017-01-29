@@ -1,31 +1,40 @@
-## information about the server
+Please use this template when reporting bugs, problems, issues, etc.
 
-### phpMussel version (exact version number and commit hash if known)
+## Server information.
+
+### phpMussel version used (if known, please also include the exact commit hash).
 eg 1.0.0-DEV@c8778924df2cb94d40796a0876005c46b711e76e
-### signatures version (you get this information from the scan_log)
 
-### used PHP SAPI (`echo php_sapi_name();`)
+### Signatures version (if known).
+
+### PHP SAPI used (`<?php echo php_sapi_name(); ?>`).
 eg cgi-fcgi
-### installed PHP version (`echo phpversion();`)
+
+### PHP version installed (`<?php echo phpversion(); ?>`).
 eg 7.1.0
-### operating system (`echo php_uname();`)
+
+### Operating system used (`<?php echo php_uname(); ?>`).
 eg Linux localhost 2.4.21-0.13mdk #1 Fri Mar 14 15:08:06 EST 2003 i686
-<br><br>
-## the actual issue
-describe the issue
+
+---
+## Issue
+Please describe the problem here.
+
 ### Expected behavior
-what should normally happen?
+What should normally happen?
+
 ### Actual behavior
-what happens
+What is actually happening?
+
 ### Steps to reproduce the behavior
 * step 1
 * step 2
 * step 3
-* ...
-<br><br>
+* (etc)
 
-## debug information
+---
+## Debug information
 
-### scan_log entry
+### Relevant scan_log entry (if applicable).
 
-### error_log entry
+### Relevant error_log entry (if applicable).
