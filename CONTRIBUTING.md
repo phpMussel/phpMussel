@@ -1,29 +1,29 @@
 ## **Want to help?**
 
-Whether you want to report a bug, make a suggestion for a possible new feature or change or implement changes yourself, your first point-of-call should by the [Issues](https://github.com/Maikuolan/phpMussel/issues) section of the repository. There, anything that I or any other current developers think should be implemented but need or want help with should be listed as well as any currently known reported bugs, issues, feature requests, ideas and other such things. If there's something you want to tell us that hasn't already been mentioned, feel free to start a new issue, or if there's an issue already mentioned that you want to comment on or contribute to, feel free to reply to that issue to say your part.
+If you want to report bugs, make suggestions for new features, changes and etc, your first point-of-call should by the [Issues](https://github.com/Maikuolan/phpMussel/issues) page for the repository. Contained therein, any already reported bugs, requested features, progress checklists, ideas, project discussions and such things should be listed and available for review, and anyone is welcome to participate and contribute. If you have something to add, either to a preexisting issue, or as an entirely new issue, feel free to do so.
 
-Remember that this is open source and that I've opted to license it under GNU/GPLv2, and so, if you want to fork your own copy of the project to make modifications to it of your own accord or otherwise, you don't need my permission to do so! In fact, I'd encourage others to fork their own copies and make their own modifications as they see fit. If you make a modification that you feel should be merged to the main master copy, send a pull request with a description of the changes you made and why you feel they should be merged, and I'll take a look at it and let you know how I feel about your changes.
+The project is open-source licensed using the GNU/GPLv2 license, and so, if you want fork/copy the project and make modifications, you don't need my permission to do so! In fact, I encourage this! If you make any modifications that you feel could be beneficial to the wider community and beneficial to the project as a whole, send a PR (pull request) with a description of the modifications you've made to have them reviewed, and if we agree that your modifications could be beneficial, we'll consider merging them as part of the project.
 
-I invite anyone interested in contributing to do so; You don't require special skillsets to contribute, as there are multiple areas in which contributions can be made:
+Anyone interested in contributing to the project is encouraged to do so.
 
 **Can you test?**
-- Testing phpMussel on your system and reporting your findings, along with any bugs you may find.
+- People willing to test phpMussel on their systems and others are always welcome. If you're able to do so, please report your findings, along with any problems encountered, bugs discovered, etc.
 
-**Can you express?**
-- If you have ideas for other features you'd like implemented, even if you're unable to code them yourself, either myself or someone else may potentially be able to.
+**Have any ideas?**
+- If you have any ideas for features you'd like implemented, please share them with us.
 
 **Can you code?**
-- As much work as I may have managed to get done by myself, having a little help couldn't ever hurt!
-- You could look over the existing code and try to find ways to make it better, cleaner and/or more efficient.
-- There are things that I can do, and then there are things that I can't do. There are certain things that I want to do but which I'm not sure how to do; I've made mention of these things in the issues section of the repository.
+- It's takes time to write code, especially when writing code for free, open-source projects, due to time constraints, focus, interest, energy, and other worldly commitments elsewhere (paid employment, family, social commitments, etc). If you're able to help out in any way, to help things move along a little faster, this is always welcomed and appreciated.
+- Reviewing and commenting on code; Pointing out ways to make it better; Refactoring, rewriting, and improving. These things are welcomed and appreciated.
 
 **Can you translate?**
-- We need translators! If you're able and willing to translate the documentation to your native language or if you're able to provide audits for translations already done but which may not always be accurate (I try to do translations myself for some languages, but English is my only fluent language, so, for my own translations, although I try my best, they'll undoubtedly have at least a few errors in them), you'll be immensely appreciated.
+- Can you speak/understand more than one language? Check to see whether phpMussel is available in any languages you know/understand. If it's not, we'd really love to have you assist with translating it into your languages! If it already is, reviewing existing translations is also always welcomed and strongly encouraged, due to the chances of previous incorrect translations, room for improvement, etc.
+- L10N (localisation) data (ie, the lingual components for the project) consist of two parts: The README documentation, and the internal language data. The README documentation can be found in the “`_docs`” directory of the project, and the internal language data can be found in the “`vault/lang`” directory of the project. Localisations for the README documentation are identified as “`readme.%%.md`”, and localisations for the internal language data are identified as “`lang.%%(.##).php`”, where “%%” represents the “[ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)” language code corresponding to the language addressed by each localisation, and “(.##)” represents the class/type of internal language data contained within a file.
+- The README documentation uses markdown format, and the internal language data consists of PHP string variables.
+- To assist with translations for phpMussel, fork/copy the project, make modifications as per necessary, and send a PR (pull request).
 
 **Can you spread the word?**
-- phpMussel won't serve any benefit to people unless they actually use it, and they won't ever use it unless they actually know about it. Getting word out would help (but please don't do anything spammy or unsolicited); Reviews at places where it's listed at, blog posts and word-of-mouth are helpful ways by which this could be done.
+- phpMussel won't serve any benefit to people unless they actually use it, and they won't ever use it unless they actually know about it. Getting word out would help (but please don't do anything spammy or unsolicited).
+- Submit reviews about phpMussel to various software review sites where it's listed (for example, [SourceForge](https://sourceforge.net/projects/phpmussel/reviews?source=navbar), [HotScripts](http://www.hotscripts.com/listing/phpmussel/)), write blog posts, use word of mouth, mention it on Facebook, Twitter, etc.
 
-**Can you Git?**
-- I'm pretty new to this whole Git thing myself, so even just sending a few pointers my way on how to do it better wouldn't go unappreciated! If I'm doing it wrong, and you tell me, I promise that I won't take offence.
-
-*This file, "CONTRIBUTING.md", last edited: 11th June 2015 (2015.06.11).*
+*Last modified: 31 January 2017 (2017.01.31).*
