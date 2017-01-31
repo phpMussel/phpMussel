@@ -16,7 +16,8 @@
 
     Matthias Kaschubowski.
         Primary role: Developer.
-        GitHub: https://github.com/Golpha
+        GitHub: https://github.com/nhlm
+        Website: https://nhlm.eu/
 
 
 
@@ -25,15 +26,15 @@
 
 *This document is a work-in-progress and therefore is subject to change.*
 
-## **The Team:**
+## **The team:**
 
 - **Caleb Mazalevskis** ([**Maikuolan**](https://github.com/Maikuolan))
 <br />*Project creator and developer.*
 - **Daniel Ruf** ([**DanielRuf**](https://github.com/DanielRuf))
 <br />*Developer.*
-- **Matthias Kaschubowski** ([**Golpha**](https://github.com/Golpha))
+- **Matthias Kaschubowski** ([**Golpha**](https://github.com/nhlm))
 <br />*Developer.*
 
 ---
 
-*This file, "PEOPLE.md", last edited: 27th February 2016 (2016.02.27).*
+*Last modified: 31 January 2017 (2017.01.31).*
