@@ -1,4 +1,4 @@
-[![Gitter chat](https://badges.gitter.im/phpMussel2.png)](https://gitter.im/phpMussel2)
+[![Gitter chat](https://badges.gitter.im/phpMussel2.png)](https://gitter.im/phpMussel2/Lobby)
 
 ## **What is phpMussel?**
 
