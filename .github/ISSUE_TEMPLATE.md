@@ -30,8 +30,9 @@ What is actually happening?
 * step 1
 * step 2
 * step 3
-* (etc)
+* …
 
+### Which last version was ok?
 ---
 ## Debug information
 
