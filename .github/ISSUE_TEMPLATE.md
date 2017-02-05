@@ -32,7 +32,7 @@ What is actually happening?
 * step 3
 * …
 
-### Last known working version withou this issue.
+### Last known working version without this issue.
 ---
 ## Debug information
 
