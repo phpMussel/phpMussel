@@ -77,32 +77,32 @@ Ou isso no `.htaccess` arquivo:
 
 Espero para agilizar este processo via fazendo um instalador em algum momento no não muito distante no futuro, mas até então, siga estas instruções para obter phpMussel pronto para trabalhar com CLI (estar ciente, neste momento, CLI apoio só se aplica a sistemas baseados em Windows; Linux e outros sistemas será em breve para uma versão posterior do phpMussel):
 
-1) Por o seu lendo isso, eu estou supondo que você já tenha baixado uma cópia arquivada do script, descomprimido seu conteúdo e tê-lo sentado em algum lugar em sua máquina local. Quando você tiver determinado que você está feliz com o localização escolhido para phpMussel, continuar.
+1) Por estar lendo isso, estou supondo que você já tenha baixado uma cópia arquivada do script, descomprimido seu conteúdo e tê-lo em algum lugar em sua máquina local. Quando você tiver determinado que você está feliz com a localização escolhida para o phpMussel, continue.
 
-2) phpMussel requer PHP para ser instalado na host máquina a fim de executar. Se você não ainda tno PHP instalado em sua máquina, por favor instalar o PHP em sua máquina, seguindo as instruções fornecidas pelo PHP instalador.
+2) phpMussel requer PHP instalado na máquina host para poder executar. Se você não ainda tem PHP instalado em sua máquina, por favor instalar o PHP em sua máquina, seguindo as instruções fornecidas pelo instalador do PHP.
 
-3) Opcionalmente (fortemente recomendado para avançados usuários, mas não recomendado para iniciantes ou para os inexperientes), abrir `config.ini` (localizado dentro `vault`) - Este arquivo contém todas as directivas disponíveis para phpMussel. Acima de cada opção deve ser um breve comentário descrevendo o que faz e para que serve. Ajuste essas opções de como você vê o ajuste, conforme o que for apropriado para sua configuração específica. Salve o arquivo, fechar.
+3) Opcionalmente (fortemente recomendado para avançados usuários, mas não recomendado para iniciantes ou para os inexperientes), abrir `config.ini` (localizado dentro `vault`) - Este arquivo contém todas as diretivas disponíveis para phpMussel. Acima de cada opção deve ter um breve comentário descrevendo o que faz e para que serve. Ajuste essas opções de como você vê o ajuste, conforme o que for apropriado para sua configuração específica. Salve o arquivo, feche.
 
-4) Opcionalmente, você pode fazer usando phpMussel no CLI modo mais fácil para si mesmo através da criação de um batch arquivo para carregar automaticamente PHP e phpMussel. Para fazer isso, abra um editor de simples texto como Notepad ou Notepad++, digite o completo caminho para o `php.exe` arquivo no PHP instalação diretório, seguido por um espaço, seguido pelo completo caminho para o `loader.php` arquivo no diretório da sua phpMussel instalação, salvar o arquivo com a extensão ".bat" Em algum lugar que você vai encontrá-lo facilmente, e clique duas vezes nesse arquivo para executar phpMussel no futuro.
+4) Opcionalmente, você pode fazer usando phpMussel no modo CLI mais fácil para si mesmo através da criação de um batch arquivo para carregar automaticamente PHP e phpMussel. Para fazer isso, abra um editor de simples texto como Notepad ou Notepad++, digite o caminho completo para o arquivo `php.exe` no diretório de instalação do PHP, seguido por um espaço, seguido pelo caminho completo para o arquivo `loader.php` no diretório da sua instalação do phpMussel, salvar o arquivo com a extensão ".bat" Em algum lugar que você vai encontrá-lo facilmente, e clique duas vezes nesse arquivo para executar phpMussel no futuro.
 
-5) Neste ponto, você está feito! Porém, você provavelmente deve testá-lo para garantir que ele está funcionando corretamente. Para testar phpMussel, executar phpMussel e tentar análizar o diretório `_testfiles` fornecida com o pacote.
+5) Neste ponto, você está feito! Porém, você provavelmente deve testá-lo para garantir que ele está funcionando corretamente. Para testar phpMussel, executar phpMussel e tentar analisar o diretório `_testfiles` fornecida com o pacote.
 
 ---
 
 
 ###3A. <a name="SECTION3A"></a>COMO USAR (PARA WEB SERVIDORES)
 
-phpMussel deve ser capaz de operar correctamente com requisitos mínimos sobre a sua parte: Após instalá-lo, ele deve funcionar imediatamente e ser imediatamente utilizável.
+phpMussel deve ser capaz de operar corretamente com requisitos mínimos sobre a sua parte: Após instalá-lo, ele deve funcionar imediatamente e ser imediatamente utilizável.
 
-Análise dos arquivos carregamentos é automatizado e ativado por padrão, por isso nada é exigido por você por essa particular função.
+Análise dos arquivos carregados via upload é automatizado e ativado por padrão, por isso nada é exigido de você por essa função particular.
 
-Porém, você também é capaz de instruir phpMussel para verificar arquivos e/ou diretórios específicos. Para fazer isso, em primeiro lugar, você vai precisar para assegurar que configuração apropriada é definida no `config.ini` arquivo (`cleanup` deve ser desativado), e quando feito, em um PHP arquivo que está enganchado ao phpMussel, usar a seguinte função no seu código:
+Porém, você também é capaz de instruir phpMussel para verificar arquivos e/ou diretórios específicos. Para fazer isso, em primeiro lugar, você vai precisar assegurar que a configuração apropriada é definida no arquivo `config.ini` (`cleanup` deve ser desativado), e quando feito, em um arquivo PHP que está enganchado ao phpMussel, usar a seguinte função no seu código:
 
 `$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
 - `$what_to_scan` pode ser uma string, um matriz, ou um matriz de matrizes, e indica qual arquivo, arquivos, diretório e/ou diretórios para analisar.
-- `$output_type` é um booleano, indicando o formato para os resultados da verificação a serem retornados como. False/Falso instrui a função para retornar resultados como um número inteiro (um resultado retornado de -3 indica problemas foram encontrados com o phpMussel assinaturas arquivos ou mapas assinaturas arquivos e que eles podem possível estar ausente ou corrompido, -2 indica que corrompido dados foi detectado durante a análise, e portanto, a análise não foi concluída, -1 indica que extensões ou complementos necessários pelo PHP para executar a análise estavam faltando, e portanto, a análise não foi concluída, 0 indica que o alvo de análise não existe, e portanto, havia nada para verificar, 1 indica que o alvo foi analisado e não problemas foram detectados, e 2 indica que o alvo foi analisado e problemas foram detectados). True/Verdadeiro instrui a função para retornar os resultados como texto legível. Adicionalmente, em ambos os casos, os resultados podem ser acessados através de variáveis globais após o análise já concluída. Esta variável é opcional, definida como false/falso por padrão.
-- `$output_flatness` é um booleano, indicando para o função seja para retornar os resultados de análise (quando há vários alvos para analisando) como uma matriz ou uma string. False/Falso irá retornar os resultados como uma matriz. True/Verdadeiro irá retornar os resultados como uma string. Esta variável é opcional, definida como false/falso por padrão.
+- `$output_type` é um booleano, indicando o formato para os resultados da verificação a serem retornados. False/Falso instrui a função para retornar resultados como um número inteiro (um resultado retornado de -3 indica problemas foram encontrados com o phpMussel arquivos de assinaturas ou arquivos de mapas de assinaturas e que eles podem possívelmente estar ausente ou corrompido, -2 indica que dados corrompidos foram detectados durante a análise, e portanto, a análise não foi concluída, -1 indica que extensões ou complementos necessários pelo PHP para executar a análise estavam faltando, e portanto, a análise não foi concluída, 0 indica que o alvo de análise não existe, e portanto, havia nada para verificar, 1 indica que o alvo foi analisado e não foram detectados problemas, e 2 indica que o alvo foi analisado e problemas foram detectados). True/Verdadeiro instrui a função para retornar os resultados como texto legível. Adicionalmente, em ambos os casos, os resultados podem ser acessados através de variáveis globais após o análise já concluída. Esta variável é opcional, definida como false/falso por padrão.
+- `$output_flatness` é um booleano, indicando para a função ou retornar os resultados de análise (quando há vários alvos para analisando) como uma matriz ou uma string. False/Falso irá retornar os resultados como uma matriz. True/Verdadeiro irá retornar os resultados como uma string. Esta variável é opcional, definida como false/falso por padrão.
 
 Exemplos:
 
@@ -131,11 +131,11 @@ Para desativar as assinaturas que estão incluídos com phpMussel (tal como se v
 
 ###3B. <a name="SECTION3B"></a>COMO USAR (PARA CLI)
 
-Por favor, consulte ao "COMO INSTALAR (PARA CLI)" seção deste arquivo README.
+Por favor, consulte a seção "COMO INSTALAR (PARA CLI)" deste arquivo README.
 
-Esteja ciente de que, embora versões futuras do phpMussel deve apoiar sistemas outros, neste momento, phpMussel CLI modo suporte só é otimizado para uso em sistemas baseados no Windows (você pode, é claro, experimentá-lo em outros sistemas, mas eu não posso garantir que vai funcionar como pretendido).
+Esteja ciente de que, embora versões futuras do phpMussel devem suportar outros sistemas, neste momento, phpMussel modo CLI o suporte só é otimizado para uso em sistemas baseados no Windows (você pode, é claro, experimentá-lo em outros sistemas, mas eu não posso garantir que vai funcionar como pretendido).
 
-Também estar ciente de que phpMussel é um scanner *on-demand*; *NÃO* é um scanner *on-access* (excepto para o carregamento de arquivos, no momento de carregamento), e ao contrário de antivírus suítes convencionais, não monitora memória ativa! Ele só vai detectar vírus contidos pelo carregamento de arquivos, e por esses arquivos específicos que você explicitamente diga a ele analisar.
+Também estar ciente de que phpMussel é um scanner *on-demand*; *NÃO* é um scanner *on-access* (exceto para o carregamento de arquivos, no momento de carregamento), e ao contrário de antivírus suítes convencionais, não monitora memória ativa! Ele só vai detectar vírus contidos pelo carregamento de arquivos, e por esses arquivos específicos que você explicitamente diga a ele analisar.
 
 ---
 
@@ -149,11 +149,11 @@ Também estar ciente de que phpMussel é um scanner *on-demand*; *NÃO* é um sc
 
 ###5. <a name="SECTION5"></a>CLI (COMANDO LINHA INTERFACE)
 
-phpMussel pode ser executado como um interativo arquivo analisador no CLI modo em sistemas baseados em Windows. Por favor, consulte ao "COMO INSTALAR (PARA CLI)" seção deste arquivo README por mais detalhes.
+phpMussel pode ser executado como um interativo analisador de arquivo no modo CLI em sistemas baseados em Windows. Por favor, consulte a seção "COMO INSTALAR (PARA CLI)" deste arquivo README para mais detalhes.
 
-Por uma lista de comandos disponíveis Em CLI, no CLI prompt, digite 'c', e pressione Enter.
+Para uma lista de comandos disponíveis Em CLI, no CLI prompt, digite 'c', e pressione Enter.
 
-Além disso, para os interessados, um tutorial em vídeo para saber como usar phpMussel no CLI modo está disponível aqui:
+Além disso, para os interessados, um tutorial em vídeo para saber como usar phpMussel no modo CLI está disponível aqui:
 - <https://www.youtube.com/watch?v=H-Pa740-utc>
 
 ---
@@ -161,7 +161,7 @@ Além disso, para os interessados, um tutorial em vídeo para saber como usar ph
 
 ###6. <a name="SECTION6"></a>ARQUIVOS INCLUÍDOS NESTE PACOTE
 
-O seguinte está uma lista de todos os arquivos que deveria sido incluídos na arquivada cópia desse script quando você baixado-lo, todos os arquivos que podem ser potencialmente criados como resultado de seu uso deste script, juntamente com uma breve descrição do que todos esses arquivos são por.
+A seguir está uma lista de todos os arquivos que deveriam ter sido incluídos na cópia arquivada desse script quando você baixá-lo, todos os arquivos que podem ser potencialmente criados como resultado de seu uso deste script, juntamente com uma breve descrição do que todos esses arquivos são.
 
 Arquivo | Descrição
 ----|----
@@ -180,22 +180,22 @@ Arquivo | Descrição
 /_docs/readme.vi.md | Documentação Vietnamita.
 /_docs/readme.zh-TW.md | Documentação Chinês (tradicional).
 /_docs/readme.zh.md | Documentação Chinês (simplificado).
-/_testfiles/ | Teste arquivo diretório (contém vários arquivos). Todos os arquivos contidos são teste arquivos para testar se phpMussel foi instalado corretamente no seu sistema, e você não precisa carregar desse diretório ou qualquer de seus arquivos, exceto ao fazer tais testando.
-/_testfiles/ascii_standard_testfile.txt | Teste arquivo para testar phpMussel normalizada ASCII assinaturas.
-/_testfiles/coex_testfile.rtf | Teste arquivo para testar phpMussel complexos estendidas assinaturas.
-/_testfiles/exe_standard_testfile.exe | Teste arquivo para testar phpMussel PE assinaturas.
-/_testfiles/general_standard_testfile.txt | Teste arquivo para testar phpMussel gerais assinaturas.
-/_testfiles/graphics_standard_testfile.gif | Teste arquivo para testar phpMussel gráficas assinaturas.
-/_testfiles/html_standard_testfile.html | Teste arquivo para testar phpMussel normalizada HTML assinaturas.
-/_testfiles/md5_testfile.txt | Teste arquivo para testar phpMussel MD5 assinaturas.
-/_testfiles/metadata_testfile.tar | Teste arquivo por testando phpMussel metadados assinaturas e por testando TAR arquivo suport no seu sistema.
-/_testfiles/metadata_testfile.txt.gz | Teste arquivo por testando phpMussel metadados assinaturas e por testando GZ arquivo suport no seu sistema.
-/_testfiles/metadata_testfile.zip | Teste arquivo por testando phpMussel metadados assinaturas e por testando ZIP arquivo suport no seu sistema.
+/_testfiles/ | Diretório de arquivos de teste (contém vários arquivos). Todos os arquivos contidos são arquivos teste para testar se phpMussel foi instalado corretamente no seu sistema, e você não precisa carregar desse diretório ou quaisquer de seus arquivos, exceto ao fazer tais testes.
+/_testfiles/ascii_standard_testfile.txt | Arquivo teste para testar phpMussel assinaturas normalizadas ASCII.
+/_testfiles/coex_testfile.rtf | Arquivo teste para testar phpMussel  assinaturas complexas estendidas.
+/_testfiles/exe_standard_testfile.exe | Arquivo teste para testar phpMussel PE assinaturas.
+/_testfiles/general_standard_testfile.txt | Arquivo teste para testar phpMussel gerais assinaturas.
+/_testfiles/graphics_standard_testfile.gif | Arquivo teste para testar phpMussel gráficas assinaturas.
+/_testfiles/html_standard_testfile.html | Arquivo teste para testar phpMussel normalizada HTML assinaturas.
+/_testfiles/md5_testfile.txt | Arquivo teste para testar phpMussel MD5 assinaturas.
+/_testfiles/metadata_testfile.tar | Arquivo teste por testando phpMussel metadados assinaturas e por testando TAR arquivo suport no seu sistema.
+/_testfiles/metadata_testfile.txt.gz | Arquivo teste por testando phpMussel metadados assinaturas e por testando GZ arquivo suport no seu sistema.
+/_testfiles/metadata_testfile.zip | Arquivo teste por testando phpMussel metadados assinaturas e por testando ZIP arquivo suport no seu sistema.
 /_testfiles/ole_testfile.ole | Teste arquivo para testar phpMussel OLE assinaturas.
-/_testfiles/pdf_standard_testfile.pdf | Teste arquivo para testar phpMussel PDF assinaturas.
-/_testfiles/pe_sectional_testfile.exe | Teste arquivo para testar phpMussel PE Seccional assinaturas.
-/_testfiles/swf_standard_testfile.swf | Teste arquivo para testar phpMussel SWF assinaturas.
-/_testfiles/xdp_standard_testfile.xdp | Teste arquivo para testar phpMussel XML/XDP assinaturas.
+/_testfiles/pdf_standard_testfile.pdf | Arquivo teste para testar phpMussel PDF assinaturas.
+/_testfiles/pe_sectional_testfile.exe | Arquivo teste para testar phpMussel PE Seccional assinaturas.
+/_testfiles/swf_standard_testfile.swf | Arquivo teste para testar phpMussel SWF assinaturas.
+/_testfiles/xdp_standard_testfile.xdp | Arquivo teste para testar phpMussel XML/XDP assinaturas.
 /vault/ | Vault diretório (contém vários arquivos).
 /vault/cache/ | Cache diretório (para dados temporários).
 /vault/cache/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
@@ -399,7 +399,7 @@ Arquivo | Descrição
 /README.md | Informações do projeto em sumário.
 /web.config | Um arquivo de configuração para ASP.NET (neste caso, para protegendo o`/vault` diretório contra serem acessado por fontes não autorizadas em caso que o script está instalado em um servidor baseado em ASP.NET tecnologias).
 
-※ Arquivo nome podem variar baseado em configuração estipulação (referem-se a `config.ini`).
+※ Nome de arquivos podem variar baseado em estipulações de configuração (referem-se a `config.ini`).
 
 ####*EM RELAÇÃO AOS ASSINATURAS ARQUIVOS*
 CVD é um acrônimo por "ClamAV Virus Definitions", em referência tanto à forma como ClamAV refere-se às suas próprias assinaturas e para o uso dessas assinaturas por phpMussel; Arquivos que terminam com "CVD" contêm assinaturas.
