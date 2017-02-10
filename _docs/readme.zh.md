@@ -189,14 +189,10 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 /_testfiles/graphics_standard_testfile.gif | 测试文件以测试phpMussel图像签名。
 /_testfiles/html_standard_testfile.html | 测试文件以测试phpMussel标准化HTML签名。
 /_testfiles/md5_testfile.txt | 测试文件以测试phpMussel MD5签名。
-/_testfiles/metadata_testfile.tar | 测试文件以测试phpMussel元数据签名和以测试TAR文件支持在您的系统。
-/_testfiles/metadata_testfile.txt.gz | 测试文件以测试phpMussel元数据签名和以测试GZ文件支持在您的系统。
-/_testfiles/metadata_testfile.zip | 测试文件以测试phpMussel元数据签名和以测试ZIP文件支持在您的系统。
 /_testfiles/ole_testfile.ole | 测试文件以测试phpMussel OLE签名。
 /_testfiles/pdf_standard_testfile.pdf | 测试文件以测试phpMussel PDF签名。
 /_testfiles/pe_sectional_testfile.exe | 测试文件以测试phpMussel移植可执行｢PE｣部分签名。
 /_testfiles/swf_standard_testfile.swf | 测试文件以测试phpMussel SWF签名。
-/_testfiles/xdp_standard_testfile.xdp | 测试文件以测试phpMussel XML/XDP块签名。
 /vault/ | 安全／保险库｢Vault｣文件夹（包含若干文件）。
 /vault/cache/ | 缓存｢Cache｣文件夹（为临时数据）。
 /vault/cache/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
@@ -254,134 +250,16 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 /vault/quarantine/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/signatures/ | 签名文件夹（包含签​​名文件）。
 /vault/signatures/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
-/vault/signatures/ascii_clamav_regex.cvd | 标准化ASCII签名文件。
-/vault/signatures/ascii_clamav_regex.map | 标准化ASCII签名文件。
-/vault/signatures/ascii_clamav_standard.cvd | 标准化ASCII签名文件。
-/vault/signatures/ascii_clamav_standard.map | 标准化ASCII签名文件。
-/vault/signatures/ascii_custom_regex.cvd | 标准化ASCII签名文件。
-/vault/signatures/ascii_custom_standard.cvd | 标准化ASCII签名文件。
-/vault/signatures/ascii_mussel_regex.cvd | 标准化ASCII签名文件。
-/vault/signatures/ascii_mussel_standard.cvd | 标准化ASCII签名文件。
-/vault/signatures/coex_clamav.cvd | 复杂扩展签名文件。
-/vault/signatures/coex_custom.cvd | 复杂扩展签名文件。
-/vault/signatures/coex_mussel.cvd | 复杂扩展签名文件。
-/vault/signatures/elf_clamav_regex.cvd | ELF签名文件。
-/vault/signatures/elf_clamav_regex.map | ELF签名文件。
-/vault/signatures/elf_clamav_standard.cvd | ELF签名文件。
-/vault/signatures/elf_clamav_standard.map | ELF签名文件。
-/vault/signatures/elf_custom_regex.cvd | ELF签名文件。
-/vault/signatures/elf_custom_standard.cvd | ELF签名文件。
-/vault/signatures/elf_mussel_regex.cvd | ELF签名文件。
-/vault/signatures/elf_mussel_standard.cvd | ELF签名文件。
-/vault/signatures/exe_clamav_regex.cvd | 移植可执行｢PE｣签名文件。
-/vault/signatures/exe_clamav_regex.map | 移植可执行｢PE｣签名文件。
-/vault/signatures/exe_clamav_standard.cvd | 移植可执行｢PE｣签名文件。
-/vault/signatures/exe_clamav_standard.map | 移植可执行｢PE｣签名文件。
-/vault/signatures/exe_custom_regex.cvd | 移植可执行｢PE｣签名文件。
-/vault/signatures/exe_custom_standard.cvd | 移植可执行｢PE｣签名文件。
-/vault/signatures/exe_mussel_regex.cvd | 移植可执行｢PE｣签名文件。
-/vault/signatures/exe_mussel_standard.cvd | 移植可执行｢PE｣签名文件。
-/vault/signatures/filenames_clamav.cvd | 文件名签名文件。
-/vault/signatures/filenames_custom.cvd | 文件名签名文件。
-/vault/signatures/filenames_mussel.cvd | 文件名签名文件。
-/vault/signatures/general_clamav_regex.cvd | 通用签名文件。
-/vault/signatures/general_clamav_regex.map | 通用签名文件。
-/vault/signatures/general_clamav_standard.cvd | 通用签名文件。
-/vault/signatures/general_clamav_standard.map | 通用签名文件。
-/vault/signatures/general_custom_regex.cvd | 通用签名文件。
-/vault/signatures/general_custom_standard.cvd | 通用签名文件。
-/vault/signatures/general_mussel_regex.cvd | 通用签名文件。
-/vault/signatures/general_mussel_standard.cvd | 通用签名文件。
-/vault/signatures/graphics_clamav_regex.cvd | 图像签名文件。
-/vault/signatures/graphics_clamav_regex.map | 图像签名文件。
-/vault/signatures/graphics_clamav_standard.cvd | 图像签名文件。
-/vault/signatures/graphics_clamav_standard.map | 图像签名文件。
-/vault/signatures/graphics_custom_regex.cvd | 图像签名文件。
-/vault/signatures/graphics_custom_standard.cvd | 图像签名文件。
-/vault/signatures/graphics_mussel_regex.cvd | 图像签名文件。
-/vault/signatures/graphics_mussel_standard.cvd | 图像签名文件。
 /vault/signatures/hex_general_commands.csv | 十六进制编码的CSV（逗号分隔变量）为通用命令检测，使用可选通过phpMussel。
-/vault/signatures/html_clamav_regex.cvd | 标准化HTML签名文件。
-/vault/signatures/html_clamav_regex.map | 标准化HTML签名文件。
-/vault/signatures/html_clamav_standard.cvd | 标准化HTML签名文件。
-/vault/signatures/html_clamav_standard.map | 标准化HTML签名文件。
-/vault/signatures/html_custom_regex.cvd | 标准化HTML签名文件。
-/vault/signatures/html_custom_standard.cvd | 标准化HTML签名文件。
-/vault/signatures/html_mussel_regex.cvd | 标准化HTML签名文件。
-/vault/signatures/html_mussel_standard.cvd | 标准化HTML签名文件。
-/vault/signatures/macho_clamav_regex.cvd | Mach-O签名文件。
-/vault/signatures/macho_clamav_regex.map | Mach-O签名文件。
-/vault/signatures/macho_clamav_standard.cvd | Mach-O签名文件。
-/vault/signatures/macho_clamav_standard.map | Mach-O签名文件。
-/vault/signatures/macho_custom_regex.cvd | Mach-O签名文件。
-/vault/signatures/macho_custom_standard.cvd | Mach-O签名文件。
-/vault/signatures/macho_mussel_regex.cvd | Mach-O签名文件。
-/vault/signatures/macho_mussel_standard.cvd | Mach-O签名文件。
-/vault/signatures/mail_clamav_regex.cvd | 电子邮件签名文件。
-/vault/signatures/mail_clamav_regex.map | 电子邮件签名文件。
-/vault/signatures/mail_clamav_standard.cvd | 电子邮件签名文件。
-/vault/signatures/mail_clamav_standard.map | 电子邮件签名文件。
-/vault/signatures/mail_custom_regex.cvd | 电子邮件签名文件。
-/vault/signatures/mail_custom_standard.cvd | 电子邮件签名文件。
-/vault/signatures/mail_mussel_regex.cvd | 电子邮件签名文件。
-/vault/signatures/mail_mussel_standard.cvd | 电子邮件签名文件。
-/vault/signatures/md5_clamav.cvd | 基于MD5签名文件。
-/vault/signatures/md5_custom.cvd | 基于MD5签名文件。
-/vault/signatures/md5_mussel.cvd | 基于MD5签名文件。
-/vault/signatures/metadata_clamav.cvd | 存档元数据签名文件。
-/vault/signatures/metadata_custom.cvd | 存档元数据签名文件。
-/vault/signatures/metadata_mussel.cvd | 存档元数据签名文件。
-/vault/signatures/ole_clamav_regex.cvd | OLE签名文件。
-/vault/signatures/ole_clamav_regex.map | OLE签名文件。
-/vault/signatures/ole_clamav_standard.cvd | OLE签名文件。
-/vault/signatures/ole_clamav_standard.map | OLE签名文件。
-/vault/signatures/ole_custom_regex.cvd | OLE签名文件。
-/vault/signatures/ole_custom_standard.cvd | OLE签名文件。
-/vault/signatures/ole_mussel_regex.cvd | OLE签名文件。
-/vault/signatures/ole_mussel_standard.cvd | OLE签名文件。
-/vault/signatures/pdf_clamav_regex.cvd | PDF签名文件。
-/vault/signatures/pdf_clamav_regex.map | PDF签名文件。
-/vault/signatures/pdf_clamav_standard.cvd | PDF签名文件。
-/vault/signatures/pdf_clamav_standard.map | PDF签名文件。
-/vault/signatures/pdf_custom_regex.cvd | PDF签名文件。
-/vault/signatures/pdf_custom_standard.cvd | PDF签名文件。
-/vault/signatures/pdf_mussel_regex.cvd | PDF签名文件。
-/vault/signatures/pdf_mussel_standard.cvd | PDF签名文件。
-/vault/signatures/pex_custom.cvd | 移植可执行｢PE｣扩展签名文件。
-/vault/signatures/pex_mussel.cvd | 移植可执行｢PE｣扩展签名文件。
-/vault/signatures/pe_clamav.cvd | 移植可执行｢PE｣部分签名文件。
-/vault/signatures/pe_custom.cvd | 移植可执行｢PE｣部分签名文件。
-/vault/signatures/pe_mussel.cvd | 移植可执行｢PE｣部分签名文件。
-/vault/signatures/swf_clamav_regex.cvd | SWF签名文件。
-/vault/signatures/swf_clamav_regex.map | SWF签名文件。
-/vault/signatures/swf_clamav_standard.cvd | SWF签名文件。
-/vault/signatures/swf_clamav_standard.map | SWF签名文件。
-/vault/signatures/swf_custom_regex.cvd | SWF签名文件。
-/vault/signatures/swf_custom_standard.cvd | SWF签名文件。
-/vault/signatures/swf_mussel_regex.cvd | SWF签名文件。
-/vault/signatures/swf_mussel_standard.cvd | SWF签名文件。
 /vault/signatures/switch.dat | 控制和确定某些变量。
-/vault/signatures/urlscanner.cvd | URL扫描仪签名文件。
-/vault/signatures/whitelist_clamav.cvd | 文件具体白名单。
-/vault/signatures/whitelist_custom.cvd | 文件具体白名单。
-/vault/signatures/whitelist_mussel.cvd | 文件具体白名单。
-/vault/signatures/xmlxdp_clamav_regex.cvd | XML/XDP块签名文件。
-/vault/signatures/xmlxdp_clamav_regex.map | XML/XDP块签名文件。
-/vault/signatures/xmlxdp_clamav_standard.cvd | XML/XDP块签名文件。
-/vault/signatures/xmlxdp_clamav_standard.map | XML/XDP块签名文件。
-/vault/signatures/xmlxdp_custom_regex.cvd | XML/XDP块签名文件。
-/vault/signatures/xmlxdp_custom_standard.cvd | XML/XDP块签名文件。
-/vault/signatures/xmlxdp_mussel_regex.cvd | XML/XDP块签名文件。
-/vault/signatures/xmlxdp_mussel_standard.cvd | XML/XDP块签名文件。
 /vault/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/cli.php | CLI处理文件。
+/vault/components.dat | 包含的相关信息关于phpMussel的各种组件；它使用通过更新功能从前端。
 /vault/config.ini.RenameMe | 配置文件；包含所有配置指令为phpMussel，告诉它什么做和怎么正确地经营（重命名为激活）。
 /vault/config.php | 配置处理文件。
-/vault/core.dat | 包含的相关信息关于phpMussel的主要组件；它使用通过更新功能从前端。
 /vault/frontend.php | 前端处理文件。
 /vault/functions.php | 功能处理文件（必不可少）。
 /vault/greylist.csv | 灰名单签名CSV（逗号分隔变量）文件说明为phpMussel什么签名它应该忽略（文件自动重新创建如果删除）。
-/vault/l10n.dat | 包含的相关信息关于phpMussel的L10N组件；它使用通过更新功能从前端。
 /vault/lang.php | 语言数据。
 /vault/php5.4.x.php | Polyfill对于PHP 5.4.X （PHP 5.4.X 向下兼容需要它； 较新的版本可以删除它）。
 ※ /vault/scan_kills.txt | 记录的所有上传文件phpMussel受阻／杀。
@@ -402,24 +280,6 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 
 ※ 文件名可能不同基于配置规定（在`config.ini`）。
 
-####*关于签名文件*
-（这里是关于phpMussel引用的签名文件来源以及格式说明，请参考英文部分以及签名文件提供商的说明）
-CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参考它自己的签名和在参的用法的那些签名在phpMussel；文件名结尾有｢CVD｣包含签名。
-
-文件名结尾有｢MAP｣绘制该签名phpMussel应该和不应该使用为独特扫描；不所有签名是一定需要为所有独特扫描，所以，phpMussel使用签名地图文件以加快扫描过程（一个过程该否则将会极其缓慢和乏味）。
-
-签名文件标有“_regex”包含签名使用正则表达式｢REGEX｣扫描。
-
-签名文件标有“_standard”包含签名特别是不使用任何类型的特殊式或正则表达式扫描。
-
-签名文件标有不“_regex”也不“_standard”将会作为一个或其他，但不二者（参考｢签名格式｣部分的这个自述文件为详细信息）。
-
-签名文件标有“_clamav”包含签名完全从ClamAV的数据库（GNU/GPL）。
-
-签名文件标有“_custom”按说不包含任何签名；这些文件存在以给您某处为放置您自己的个性化签名，如果您创建任何您自己的。
-
-签名文件标有“_mussel”包含签名特别是不从ClamAV，签名该大体，我亲自创建和／或基于信息云集从杂项来源。
-
 ---
 
 
@@ -428,14 +288,6 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 
 ####“general” （类别）
 基本phpMussel配置。
-
-“script_password”
-- 为方便，phpMussel将允许某些功能成为手动引发通过POST，GET和QUERY。然而，作为一种安全措施，要做到这一点，phpMussel将期待一个密码是包括随着命令，以确保它是您，和不其他人，尝试手动引发这些功能。设置`script_password`到什么密码您将想用。如果没有密码是设置，手动引发将会关闭作为标准。使用某物您将记得但某物难为其他人猜测。
-- 无影响在CLI模式。
-
-“logs_password”
-- 相同作为`script_password`，但为查看`scan_log`内容和`scan_kills`。分离的密码可以有用如果您想给其他人访问在一套的功能但不其他套。
-- 无影响在CLI模式。
 
 “cleanup”
 - ｢反设置／删除／清洁｣脚本变量和缓存｢Cache｣之后执行吗？如果您不使用脚本外初始上传扫描，应该设置True｢真／正｣，为了最小化内存使用。如果您使用脚本为目的外初始上传扫描，应该设置False｢假／负｣，为了避免不必要重新加载复制数据在内存。在一般的做法，它应该设置True｢真／正｣，但，如果您做这样，您将不能够使用脚本为任何目的以外文件上传扫描。
@@ -458,11 +310,11 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 “timeOffset”
-- 如果您的服务器时间不符合您的本地时间，您可以在这里指定的偏移调整日期/时间信息该产生通过phpMussel根据您的需要。它一般建议，而不是，调整时区指令的文件`php.ini`，但是有时（例如，当利用有限的共享主机提供商）这并不总是可能做到，所以，此选项在这里是提供。偏移量是在分钟。
+- 如果您的服务器时间不符合您的本地时间，您可以在这里指定的偏移调整日期/时间信息该产生通过phpMussel根据您的需要。 它一般建议，而不是，调整时区指令的文件`php.ini`，但是有时（例如，当利用有限的共享主机提供商）这并不总是可能做到，所以，此选项在这里是提供。 偏移量是在分钟。
 - 例子（添加1小时）： `timeOffset=60`
 
 “ipaddr”
-- 在哪里可以找到连接请求IP地址？（可以使用为服务例如Cloudflare和类似）标准是`REMOTE_ADDR`。警告！不要修改此除非您知道什么您做着！
+- 在哪里可以找到连接请求IP地址？ （可以使用为服务例如Cloudflare和类似）标准是`REMOTE_ADDR`。 警告！不要修改此除非您知道什么您做着！
 
 “enable_plugins”
 - 启用phpMussel插件支持吗？ False = 不要启用； True = 要启用【标准】。
@@ -471,48 +323,49 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - phpMussel应该发送`403`头随着文件上传受阻信息，或坚持标准`200 OK`？ False = 发送`200`； True = 发送`403`【标准】。
 
 “delete_on_sight”
-- 激活的这个指令将指示脚本马上删除任何扫描文件上传匹配任何检测标准，是否通过签名或任何事其他。文件已确定是清洁将会忽略。如果是存档，全存档将会删除，不管如果违规文件是只有一个的几个文件包含在存档。为文件上传扫描，按说，它不必要为您激活这个指令，因为按说，PHP将自动清洗内容的它的缓存当执行是完，意思它将按说删除任何文件上传从它向服务器如果不已移动，复制或删除。这个指令是添加这里为额外安全为任何人谁的PHP副本可能不始终表现在预期方式。False｢假／负｣：之后扫描，忽略文件【标准】，True｢真／正｣：之后扫描，如果不清洁，马上删除。
+- 激活的这个指令将指示脚本马上删除任何扫描文件上传匹配任何检测标准，是否通过签名或任何事其他。文件已确定是清洁将会忽略。如果是存档，全存档将会删除，不管如果违规文件是只有一个的几个文件包含在存档。为文件上传扫描，按说，它不必要为您激活这个指令，因为按说，PHP将自动清洗内容的它的缓存当执行是完，意思它将按说删除任何文件上传从它向服务器如果不已移动，复制或删除。这个指令是添加这里为额外安全为任何人谁的PHP副本可能不始终表现在预期方式。 False｢假／负｣：之后扫描，忽略文件【标准】， True｢真／正｣：之后扫描，如果不清洁，马上删除。
 
 “lang”
 - 指定标准phpMussel语言。
 
-“lang_override”
-- 指定如果phpMussel应该，当可能，更换语言规范通过语言偏爱声明从入站请求（HTTP_ACCEPT_LANGUAGE）。 False：不更换【标准】； True：更换。
-
-“lang_acceptable”
-- `lang_acceptable`指令指示phpMussel什么语言可以接受在脚本从`lang`或从`HTTP_ACCEPT_LANGUAGE`。这个指令应该只会修改如果您添加您自己的个性化语言文件或强制去掉语言文件。指令是一个逗号分隔字符串的代码使用通过那些语言接受在脚本。
-
 “quarantine_key”
-- phpMussel可以检疫坏文件上传在隔离在phpMussel的安全／保险库｢Vault｣，如果这个是某物您想。普通用户的phpMussel简单地想保护他们的网站或宿主环境无任何兴趣在深深分析任何尝试文件上传应该离开这个功能关闭，但任何用户有兴趣在更深分析的尝试文件上传为目的恶意软件研究或为类似这样事情应该激活这个功能。检疫的尝试文件上传可以有时还助攻在调试假阳性，如果这个是某物经常发生为您。以关闭检疫功能，简单地离开`quarantine_key`指令空白，或抹去内容的这个指令如果它不已空白。以激活隔离功能，输入一些值在这个指令。`quarantine_key`是一个重要安全功能的隔离功能需要以预防检疫功能从成为利用通过潜在攻击者和以预防任何潜在执行的数据存储在检疫。`quarantine_key`应该被处理在同样方法作为您的密码：更长是更好，和紧紧保护它。为获得最佳效果，在结合使用`delete_on_sight`。
+- phpMussel可以检疫坏文件上传在隔离在phpMussel的安全／保险库｢Vault｣，如果这个是某物您想。 普通用户的phpMussel简单地想保护他们的网站或宿主环境无任何兴趣在深深分析任何尝试文件上传应该离开这个功能关闭，但任何用户有兴趣在更深分析的尝试文件上传为目的恶意软件研究或为类似这样事情应该激活这个功能。检疫的尝试文件上传可以有时还助攻在调试假阳性，如果这个是某物经常发生为您。 以关闭检疫功能，简单地离开`quarantine_key`指令空白，或抹去内容的这个指令如果它不已空白。以激活隔离功能，输入一些值在这个指令。 `quarantine_key`是一个重要安全功能的隔离功能需要以预防检疫功能从成为利用通过潜在攻击者和以预防任何潜在执行的数据存储在检疫。 `quarantine_key`应该被处理在同样方法作为您的密码：更长是更好，和紧紧保护它。为获得最佳效果，在结合使用`delete_on_sight`。
 
 “quarantine_max_filesize”
-- 最大允许文件大小为文件在检疫。文件大于这个指定数值将不成为检疫。这个指令是重要为使它更难为任何潜在攻击者洪水您的检疫用非通缉数据潜在的造成过度数据用法在您的虚拟主机服务。数值是在KB。 标准 =2048 =2048KB =2MB。
+- 最大允许文件大小为文件在检疫。 文件大于这个指定数值将不成为检疫。 这个指令是重要为使它更难为任何潜在攻击者洪水您的检疫用非通缉数据潜在的造成过度数据用法在您的虚拟主机服务。 数值是在KB。 标准 =2048 =2048KB =2MB。
 
 “quarantine_max_usage”
-- 最大内存使用允许为检疫。如果总内存已用通过隔离到达这个数值，最老检疫文件将会删除直到总内存已用不再到达这个数值。这个指令是重要为使它更难为任何潜在攻击者洪水您的检疫用非通缉数据潜在的造成过度数据用法在您的虚拟主机服务。数值是在KB。 标准 =65536 =65536KB =64MB。
+- 最大内存使用允许为检疫。 如果总内存已用通过隔离到达这个数值，最老检疫文件将会删除直到总内存已用不再到达这个数值。 这个指令是重要为使它更难为任何潜在攻击者洪水您的检疫用非通缉数据潜在的造成过度数据用法在您的虚拟主机服务。 数值是在KB。 标准 =65536 =65536KB =64MB。
 
 “honeypot_mode”
-- 当这个指令（蜜罐模式）是激活，phpMussel将尝试检疫所有文件上传它遇到，无论的如果文件上传是匹配任何包括签名，和没有扫描或分析的那些文件上传将发生。这个功能应有用为那些想使用的phpMussel为目的病毒或恶意软件研究，但它是不推荐激活这个功能如果预期的用的phpMussel通过用户是为标准文件上传扫描，也不推荐使用蜜罐功能为目的以外蜜罐。作为标准，这个指令是关闭。 False = 是关闭【标准】； True = 是激活。
+- 当这个指令（蜜罐模式）是激活，phpMussel将尝试检疫所有文件上传它遇到，无论的如果文件上传是匹配任何包括签名，和没有扫描或分析的那些文件上传将发生。 这个功能应有用为那些想使用的phpMussel为目的病毒或恶意软件研究，但它是不推荐激活这个功能如果预期的用的phpMussel通过用户是为标准文件上传扫描，也不推荐使用蜜罐功能为目的以外蜜罐。 作为标准，这个指令是关闭。 False = 是关闭【标准】； True = 是激活。
 
 “scan_cache_expiry”
-- 多长时间应该phpMussel维持扫描结果？数值是秒数为维持扫描结果。标准是21600秒（6小时）；一个`0`数值将停止维持扫描结果。
+- 多长时间应该phpMussel维持扫描结果？ 数值是秒数为维持扫描结果。 标准是21600秒（6小时）； 一个`0`数值将停止维持扫描结果。
 
 “disable_cli”
-- 关闭CLI模式吗？CLI模式是按说激活作为标准，但可以有时干扰某些测试工具（例如PHPUnit，为例子）和其他基于CLI应用。如果您没有需要关闭CLI模式，您应该忽略这个指令。 False = 激活CLI模式【标准】； True = 关闭CLI模式。
+- 关闭CLI模式吗？CLI模式是按说激活作为标准，但可以有时干扰某些测试工具（例如PHPUnit，为例子）和其他基于CLI应用。 如果您没有需要关闭CLI模式，您应该忽略这个指令。 False = 激活CLI模式【标准】； True = 关闭CLI模式。
 
 “disable_frontend”
 - 关闭前端访问吗？前端访问可以使phpMussel更易于管理，但也可能是潜在的安全风险。建议管理phpMussel通过后端只要有可能，但前端访问提供当不可能。保持关闭除非您需要它。 False = 激活前端访问； True = 关闭前端访问【标准】。
 
+“max_login_attempts”
+- 最大登录尝试次数（前端）。 标准 = 5。
+
+“FrontEndLog”
+- 前端登录尝试的录音文件。指定一个文件名，或留空以禁用。
+
 ####“signatures” （类别）
 签名配置。
-- %%%_clamav = ClamAV签名（二者mains和daily）。
-- %%%_custom = 您的个性化签名（如果您写任何）。
-- %%%_mussel = phpMussel签名已包括在您的当前签名文件不从ClamAV。
 
-检查针对MD5签名当扫描吗？ False = 不检查， True = 检查【标准】。
-- “md5_clamav”
-- “md5_custom”
-- “md5_mussel”
+“MD5”
+- 检查针对MD5签名当扫描吗？ 如果是这样，请指定要使用的签名文件名称，以逗号分隔。
+
+“PE_Sectional”
+- 检查移植可执行｢PE｣文件（EXE文件，DLL文件，等等）针对移植可执行｢PE｣部分签名当扫描吗？ 如果是这样，请指定要使用的签名文件名称，以逗号分隔。
+
+“PE_Extended”
+- 检查移植可执行｢PE｣文件（EXE文件，DLL文件，等等）针对移植可执行｢PE｣扩展签名当扫描吗？ 如果是这样，请指定要使用的签名文件名称，以逗号分隔。
 
 检查针对通用签名当扫描吗？ False = 不检查， True = 检查【标准】。
 - “general_clamav”
@@ -528,15 +381,6 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - “html_clamav”
 - “html_custom”
 - “html_mussel”
-
-检查移植可执行｢PE｣文件（EXE文件，DLL文件，等等）针对移植可执行｢PE｣部分签名当扫描吗？ False = 不检查， True = 检查【标准】。
-- “pe_clamav”
-- “pe_custom”
-- “pe_mussel”
-
-检查移植可执行｢PE｣文件（EXE文件，DLL文件，等等）针对移植可执行｢PE｣扩展签名当扫描吗？ False = 不检查， True = 检查【标准】。
-- “pex_custom”
-- “pex_mussel”
 
 检查移植可执行｢PE｣文件（EXE文件，DLL文件，等等）针对移植可执行｢PE｣签名当扫描吗？ False = 不检查， True = 检查【标准】。
 - “exe_clamav”
@@ -558,11 +402,6 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - “graphics_custom”
 - “graphics_mussel”
 
-检查存档内容针对存档元数据签名当扫描吗？ False = 不检查， True = 检查【默认】。
-- “metadata_clamav”
-- “metadata_custom”
-- “metadata_mussel”
-
 检查OLE对象针对OLE签名当扫描吗？ False = 不检查， True = 检查【默认】。
 - “ole_clamav”
 - “ole_custom”
@@ -583,11 +422,6 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - “whitelist_custom”
 - “whitelist_mussel”
 
-检查XML/XDP块针对XML/XDP块签名当扫描吗？ False = 不检查， True = 检查【默认】。
-- “xmlxdp_clamav”
-- “xmlxdp_custom”
-- “xmlxdp_mussel”
-
 检查针对复杂扩展签名当扫描吗？ False = 不检查， True = 检查【默认】。
 - “coex_clamav”
 - “coex_custom”
@@ -603,19 +437,11 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - “swf_custom”
 - “swf_mussel”
 
-签名匹配长度限制选项。只修改这些如果您知道什么您做。 SD = 标准签名。 RX = PCRE（Perl兼容的正则表达式，或“Regex”）签名。 FN = 文件名签名。 如果您通知PHP失败当phpMussel尝试扫描，尝试降低这些"max"数值。如果可能和方便，让我知道当这个发生和结果的什么您尝试。
-- “fn_siglen_min”
-- “fn_siglen_max”
-- “rx_siglen_min”
-- “rx_siglen_max”
-- “sd_siglen_min”
-- “sd_siglen_max”
-
 “fail_silently”
-- phpMussel应该报告当签名文件是失踪或损坏吗？如果`fail_silently`是关闭，失踪和损坏文件将会报告当扫描，和如果`fail_silently`是激活，失踪和损坏文件将会忽略，有扫描报告为那些文件哪里没有问题。这个应该按说被留下除非您遇到失败或有其他类似问题。 False = 是关闭； True = 是激活【默认】。
+- phpMussel应该报告当签名文件是失踪或损坏吗？ 如果`fail_silently`是关闭，失踪和损坏文件将会报告当扫描，和如果`fail_silently`是激活，失踪和损坏文件将会忽略，有扫描报告为那些文件哪里没有问题。 这个应该按说被留下除非您遇到失败或有其他类似问题。 False = 是关闭； True = 是激活【默认】。
 
 “fail_extensions_silently”
-- phpMussel应该报告当扩展是失踪吗？如果`fail_extensions_silently`是关闭，失踪扩展将会报告当扫描，和如果`fail_extensions_silently`是激活，失踪扩展将会忽略，有扫描报告为那些文件哪里没有任何问题。关闭的这个指令可能的可以增加您的安全，但可能还导致一个增加的假阳性。 False = 是关闭； True = 是激活【默认】。
+- phpMussel应该报告当扩展是失踪吗？ 如果`fail_extensions_silently`是关闭，失踪扩展将会报告当扫描，和如果`fail_extensions_silently`是激活，失踪扩展将会忽略，有扫描报告为那些文件哪里没有任何问题。 关闭的这个指令可能的可以增加您的安全，但可能还导致一个增加的假阳性。 False = 是关闭； True = 是激活【默认】。
 
 “detect_adware”
 - phpMussel应该使用签名为广告软件检测吗？ False = 不检查， True = 检查【默认】。
@@ -642,7 +468,7 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 - 最大允许数值的文件为扫描当文件上传扫描之前中止扫描和告诉用户他们是上传太多在同一时间！提供保护针对一个理论攻击哪里一个攻击者尝试DDoS您的系统或CMS通过超载phpMussel以减速PHP进程到一个停止。推荐：10。您可能想增加或减少这个数值，根据速度的您的硬件。注意这个数值不交待为或包括存档内容。
 
 “filesize_limit”
-- 文件大小限在KB。 65536 = 64MB 【默认】，0 = 没有限（始终灰名单），任何正数值接受。这个可以有用当您的PHP配置限内存量一个进程可以占据或如果您的PHP配置限文件大小的上传。
+- 文件大小限在KB。 65536 = 64MB 【默认】， 0 = 没有限（始终灰名单）， 任何正数值接受。 这个可以有用当您的PHP配置限内存量一个进程可以占据或如果您的PHP配置限文件大小的上传。
 
 “filesize_response”
 - 如何处理文件超过文件大小限（如果存在）。 False = 白名单； True = 黑名单【默认】。
@@ -695,7 +521,7 @@ CVD是一个acronym为｢ClamAV Virus Definitions｣，在参照如何ClamAV参�
 “chameleon_to_pdf”
 - 寻找PDF文件谁的头是不正确。
 
-“archive_file_extensions”和“archive_file_extensions_wc”
+“archive_file_extensions”
 - 认可存档文件扩展（格式是CSV；应该只添加或去掉当问题发生；不必要的去掉可能的可以导致假阳性出现为存档文件，而不必要的增加将实质上白名单任何事您增加从专用攻击检测；修改有慎重；还请注这个无影响在什么存档可以和不能被分析在内容级）。这个名单，作为是作为标准，名单那些格式使用最常见的横过多数的系统和CMS，但有意是不全面。
 
 “general_commands”
@@ -726,20 +552,20 @@ phpMussel兼容性指令。
 启发式指令。
 
 “threshold”
-- 有某些签名的phpMussel意味为确定可疑和可能恶意文件零件被上传有不在他们自己确定那些文件被上传特别是作为恶意。这个“threshold”数值告诉phpMussel什么是最大总重量的可疑和潜在恶意文件零件被上传允许之前那些文件是被识别作为恶意。定义的重量在这个上下文是总数值的可疑和可能恶意文件零件确定。作为默认，这个数值将会设置作为3。一个较低的值通常将结果在一个更高的发生的假阳性但一个更高的发生的恶意文件被确定，而一个更高的数值将通常结果在一个较低的发生的假阳性但一个较低的数值的恶意文件被确定。它是通常最好忽略这个数值除非您遇到关联问题。
+- 有某些签名的phpMussel意味为确定可疑和可能恶意文件零件被上传有不在他们自己确定那些文件被上传特别是作为恶意。 这个“threshold”数值告诉phpMussel什么是最大总重量的可疑和潜在恶意文件零件被上传允许之前那些文件是被识别作为恶意。 定义的重量在这个上下文是总数值的可疑和可能恶意文件零件确定。 作为默认，这个数值将会设置作为3。一个较低的值通常将结果在一个更高的发生的假阳性但一个更高的发生的恶意文件被确定，而一个更高的数值将通常结果在一个较低的发生的假阳性但一个较低的数值的恶意文件被确定。 它是通常最好忽略这个数值除非您遇到关联问题。
 
 ####“virustotal” （类别）
 VirusTotal.com指令。
 
 “vt_public_api_key”
-- 可选的，phpMussel可以扫描文件使用｢Virus Total API｣作为一个方法提供一个显着的改善保护级别针对病毒，木马，恶意软件和其他威胁。作为默认，扫描文件使用｢Virus Total API｣是关闭。以激活它，一个API密钥从VirusTotal是需要。因为的显着好处这个可以提供为您，它是某物我很推荐激活。请注意，然而，以使用的｢Virus Total API｣，您必须同意他们的服务条款和您必须坚持所有方针按照说明通过VirusTotal阅读材料！您是不允许使用这个积分功能除非：
-  - 您已阅读和您同意服务条款的VirusTotal和它的API。服务条款的VirusTotal和它的API可以发现[这里](https://www.virustotal.com/en/about/terms-of-service/)。
-  - 您已阅读和您了解至少序言的VirusTotal公共API阅读材料(一切之后“VirusTotal Public API v2.0”但之前“Contents”）。VirusTotal公共API阅读材料可以发现[这里](https://www.virustotal.com/en/documentation/public-api/)。
+- 可选的，phpMussel可以扫描文件使用｢Virus Total API｣作为一个方法提供一个显着的改善保护级别针对病毒，木马，恶意软件和其他威胁。 作为默认，扫描文件使用｢Virus Total API｣是关闭。 以激活它，一个API密钥从VirusTotal是需要。 因为的显着好处这个可以提供为您，它是某物我很推荐激活。请注意，然而，以使用的｢Virus Total API｣，您必须同意他们的服务条款和您必须坚持所有方针按照说明通过VirusTotal阅读材料！ 您是不允许使用这个积分功能除非：
+  - 您已阅读和您同意服务条款的VirusTotal和它的API。 服务条款的VirusTotal和它的API可以发现[这里](https://www.virustotal.com/en/about/terms-of-service/)。
+  - 您已阅读和您了解至少序言的VirusTotal公共API阅读材料(一切之后“VirusTotal Public API v2.0”但之前“Contents”）。 VirusTotal公共API阅读材料可以发现[这里](https://www.virustotal.com/en/documentation/public-api/)。
 
 请注意：如果扫描文件使用｢Virus Total API｣是关闭，您不需要修改任何指令在这个类别（`virustotal`），因为没有人将做任何事如果这个是关闭。以获得一个VirusTotalAPI密钥，从随地在他们的网站，点击“加入我们的社区”链接位于朝向右上方的页面，输入在信息请求，和点击“注册”在做完。跟随所有指令提供，和当您有您的公共API密钥，复制／粘贴您的公共API密钥到`vt_public_api_key`指令的`config.ini`配置文件。
 
 “vt_suspicion_level”
-- 作为标准，phpMussel将限制什么文件它扫描通过使用｢Virus Total API｣为那些文件它考虑作为“可疑”。您可以可选调整这个局限性通过修改的`vt_suspicion_level`指令数值。
+- 作为标准，phpMussel将限制什么文件它扫描通过使用｢Virus Total API｣为那些文件它考虑作为“可疑”。 您可以可选调整这个局限性通过修改的`vt_suspicion_level`指令数值。
 - `0`:文件是只考虑可疑如果，当被扫描通过phpMussel使用它自己的签名，他们是认为有一个启发式重量。这个将有效意味使用的｢Virus Total API｣将会为一个第二个意见为当phpMussel怀疑一个文件可能的是恶意，但不能完全排除它可能还可能的被良性（非恶意）和因此将否则按说不受阻它或标志它作为被恶意。
 - `1`:文件是考虑可疑如果，当被扫描通过phpMussel使用它自己的签名，他们是认为有一个启发式重量，如果他们是已知被可执行（PE文件，Mach-O文件，ELF/Linux文件，等等），或如果他们是已知被的一个格式潜在的包含可执行数据（例如可执行宏，DOC/DOCX文件，存档文件例如RAR格式，ZIP格式和等等）。这个是标准和推荐可疑级别到使用，有效意味使用的｢Virus Total API｣将会为一个第二个意见为当phpMussel不原来发现任何事恶意或错在一个文件它考虑被可疑和因此将否则按说不受阻它或标志它作为被恶意。
 - `2`:所有文件是考虑可疑和应会扫描使用｢Virus Total API｣。我通常不推荐应用这个可疑级别，因为风险的到达您的API配额更快，但存在某些情况（例如当网站管理员或主机管理员有很少信仰或信任在任何的内容上传从他们的用户）哪里这个可疑级别可以被适当。有使用的这个可疑级别，所有文件不按说受阻或标志是作为被恶意将会扫描使用｢Virus Total API｣。请注意，然而，phpMussel将停止使用｢Virus Total API｣当您的API配额是到达（无论的可疑级别），和您的配额将会容易更快当使用这个可疑级别。
@@ -747,36 +573,36 @@ VirusTotal.com指令。
 请注意：无论的可疑级别，任何文件任一已黑名单或已白名单通过phpMussel不会扫描使用｢Virus Total API｣，因为那些文件将会已标志作为恶意或良性通过phpMussel到的时候他们将会否则扫描通过｢Virus Total API｣，和因此，另外扫描不会需要。能力的phpMussel扫描文件使用｢Virus Total API｣是意味为建更置信为如果一个文件是恶意或良性在那些情况哪里phpMussel是不完全确定如果一个文件是恶意或良性。
 
 “vt_weighting”
-- phpMussel应使用扫描结果使用｢Virus Total API｣作为检测或作为检测重量吗？这个指令存在，因为，虽说扫描一个文件使用多AV引擎（例如怎么样VirusTotal做）应结果有一个增加检测率（和因此在一个更恶意文件被抓），它可以还结果有更假阳性，和因此，为某些情况，扫描结果可能被更好使用作为一个置信得分而不是作为一个明确结论。如果一个数值的`0`是使用，扫描结果使用｢Virus Total API｣将会适用作为检测，和因此，如果任何AV引擎使用通过VirusTotal标志文件被扫描作为恶意，phpMussel将考虑文件作为恶意。如果任何其他数值是使用，扫描结果使用｢Virus Total API｣将会适用作为检测重量，和因此，数的AV引擎使用通过VirusTotal标志文件被扫描作为恶意将服务作为一个置信得分（或检测重量）为如果文件被扫描应会考虑恶意通过phpMussel（数值使用将代表最低限度的置信得分或重量需要以被考虑恶意）。一个数值的`0`是使用作为标准。
+- phpMussel应使用扫描结果使用｢Virus Total API｣作为检测或作为检测重量吗？ 这个指令存在，因为，虽说扫描一个文件使用多AV引擎（例如怎么样VirusTotal做） 应结果有一个增加检测率（和因此在一个更恶意文件被抓）， 它可以还结果有更假阳性，和因此，为某些情况，扫描结果可能被更好使用作为一个置信得分而不是作为一个明确结论。 如果一个数值的`0`是使用，扫描结果使用｢Virus Total API｣将会适用作为检测，和因此，如果任何AV引擎使用通过VirusTotal标志文件被扫描作为恶意， phpMussel将考虑文件作为恶意。 如果任何其他数值是使用，扫描结果使用｢Virus Total API｣将会适用作为检测重量，和因此，数的AV引擎使用通过VirusTotal标志文件被扫描作为恶意将服务作为一个置信得分（或检测重量） 为如果文件被扫描应会考虑恶意通过phpMussel（数值使用将代表最低限度的置信得分或重量需要以被考虑恶意）。 一个数值的`0`是使用作为标准。
 
 “vt_quota_rate”和“vt_quota_time”
-- 根据｢Virus Total API｣阅读材料，它是限于最大的`4`请求的任何类型在任何`1`分钟大体时间。如果您经营一个“honeyclient”，蜜罐或任何其他自动化将会提供资源为VirusTotal和不只取回报告您是有权一个更高请求率配额。作为标准，phpMussel将严格的坚持这些限制，但因为可能性的这些率配额被增加，这些二指令是提供为您指示phpMussel为什么限它应坚持。除非您是指示这样做，它是不推荐为您增加这些数值，但，如果您遇到问题相关的到达您的率配额，减少这些数值可能有时帮助您解析这些问题。您的率限是决定作为`vt_quota_rate`请求的任何类型在任何`vt_quota_time`分钟大体时间。
+- 根据｢Virus Total API｣阅读材料，它是限于最大的`4`请求的任何类型在任何`1`分钟大体时间。如果您经营一个“honeyclient”， 蜜罐或任何其他自动化将会提供资源为VirusTotal和不只取回报告您是有权一个更高请求率配额。 作为标准，phpMussel将严格的坚持这些限制，但因为可能性的这些率配额被增加，这些二指令是提供为您指示phpMussel为什么限它应坚持。 除非您是指示这样做，它是不推荐为您增加这些数值，但，如果您遇到问题相关的到达您的率配额，减少这些数值可能有时帮助您解析这些问题。 您的率限是决定作为`vt_quota_rate`请求的任何类型在任何`vt_quota_time`分钟大体时间。
 
 ####“urlscanner” （类别）
 URL扫描仪配置。
 
 “urlscanner”
-- 内phpMussel是一个URL扫描仪，能够检测恶意URL在任何数据或文件它扫描。以激活URL扫描仪，设置`urlscanner`指令`true`；以关闭它，设置这个指令`false`。
+- 内phpMussel是一个URL扫描仪，能够检测恶意URL在任何数据或文件它扫描。 以激活URL扫描仪，设置`urlscanner`指令`true`；以关闭它，设置这个指令`false`。
 
 请注意：如果URL扫描仪已关闭，您将不需要复习任何指令在这个类别（`urlscanner`），因为没有指令会做任何事如果这个已关闭。
 
 URL扫描仪API配置。
 
 “lookup_hphosts”
-- 激活[hpHosts](http://hosts-file.net/) API当设置`true`。hpHosts不需要API密钥为了执行API请求。
+- 激活[hpHosts](http://hosts-file.net/) API当设置`true`。 hpHosts不需要API密钥为了执行API请求。
 
 “google_api_key”
-- 激活Google Safe Browsing API当API密钥是设置。Google Safe Browsing API需要API密钥，可以得到从[这里](https://console.developers.google.com/)。
+- 激活Google Safe Browsing API当API密钥是设置。 Google Safe Browsing API需要API密钥，可以得到从[这里](https://console.developers.google.com/)。
 - 请注意：cURL扩展是必须的为了使用此功能。
 
 “maximum_api_lookups”
-- 最大数值API请求来执行每个扫描迭代。额外API请求将增加的总要求完成时间每扫描迭代，所以，您可能想来规定一个限以加快全扫描过程。当设置`0`，没有最大数值将会应用的。设置`10`作为默认。
+- 最大数值API请求来执行每个扫描迭代。 额外API请求将增加的总要求完成时间每扫描迭代，所以，您可能想来规定一个限以加快全扫描过程。 当设置`0`，没有最大数值将会应用的。 设置`10`作为默认。
 
 “maximum_api_lookups_response”
 - 该什么办如果最大数值API请求已超过？ False = 没做任何事（继续处理） 【默认】； True = 标志/受阻文件。
 
 “cache_time”
-- 多长时间（以秒为单位）应API结果被缓存？默认是3600秒（1小时）。
+- 多长时间（以秒为单位）应API结果被缓存？ 默认是3600秒（1小时）。
 
 ####“template_data” （类别）
 指令和变量为模板和主题。
@@ -784,7 +610,7 @@ URL扫描仪API配置。
 模板数据涉及到HTML产量使用以生成“上传是否认”信息显示为用户当一个文件上传是受阻。如果您使用个性化主题为phpMussel，HTML产量资源是从`template_custom.html`文件，和否则，HTML产量资源是从`template.html`文件。变量书面在这个配置文件部分是喂在HTML产量通过更换任何变量名包围在大括号发现在HTML产量使用相应变量数据。为例子，哪里`foo="bar"`，任何发生的`<p>{foo}</p>`发现在HTML产量将成为`<p>bar</p>`。
 
 “css_url”
-- 模板文件为个性化主题使用外部CSS属性，而模板文件为t标准主题使用内部CSS属性。以指示phpMussel使用模板文件为个性化主题，指定公共HTTP地址的您的个性化主题的CSS文件使用`css_url`变量。如果您离开这个变量空白，phpMussel将使用模板文件为默认主题。
+- 模板文件为个性化主题使用外部CSS属性，而模板文件为t标准主题使用内部CSS属性。 以指示phpMussel使用模板文件为个性化主题，指定公共HTTP地址的您的个性化主题的CSS文件使用`css_url`变量。 如果您离开这个变量空白，phpMussel将使用模板文件为默认主题。
 
 ---
 
@@ -804,13 +630,6 @@ URL扫描仪API配置。
 `HASH:FILESIZE:NAME`
 
 `HASH`是一个MD5哈希的一个全文件，`FILESIZE`是总文件大小和`NAME`是名援引为签名。
-
-####*存档元数据签名*
-所有存档元数据签名跟随格式：
-
-`NAME:FILESIZE:CRC32`
-
-`NAME`是名援引为签名，`FILESIZE`是总大小（非压缩）的一个文件包含在存档和`CRC32`是一个CRC32哈希的这个文件。
 
 ####*移植可执行｢PE｣部分签名*
 所有移植可执行｢PE｣部分签名跟随格式：
@@ -865,14 +684,13 @@ URL扫描仪API配置。
 - “Mach-O签名” （macho_*）。匹配针对内容的所有非白名单文件目标为扫描识别的Mach-O文件。
 - “电子邮件签名” （mail_*）。匹配针对内容的所有非白名单EML文件目标为扫描。
 - “MD5签名” （md5_*）。匹配针对MD5哈希的内容和文件大小的所有非白名单文件目标为扫描。
-- “存档元数据签名” （metadata_*）。匹配针对CRC32哈希和文件大小的第一文件包含在任何非白名单存档目标为扫描。
+
 - “OLE签名” （ole_*）。匹配针对内容的所有非白名单OLE对象目标为扫描。
 - “PDF签名” （pdf_*）。匹配针对内容的所有非白名单PDF文件目标为扫描。
 - “移植可执行｢PE｣部分签名” （pe_*）。匹配针对MD5哈希和大小的每移植可执行｢PE｣部分的所有非白名单文件目标为扫描识别的移植可执行｢PE｣文件。
 - “移植可执行｢PE｣扩展签名” （pex_*）。匹配针对MD5哈希和大小的变量在所有非白名单文件目标为扫描识别的移植可执行｢PE｣文件。
 - “SWF签名” （swf_*）。匹配针对内容的所有非白名单SWF文件目标为扫描。
 - “白名单签名” （whitelist_*）。匹配针对MD5哈希的内容和文件大小的所有文件目标为扫描。识别文件将会免疫的成为匹配通过签名类型提到从他们的白名单项。
-- “XML/XDP块签名” （xmlxdp_*）。匹配针对任何XML/XDP块发现从任何非白名单文件目标为扫描。
 （请注意任何的这些签名可以很容易地关闭通过`config.ini`）。
 
 ---
@@ -976,4 +794,4 @@ phpMussel会阻止文件 | __假阳性__ | 真阳性（正确的推理）
 ---
 
 
-最后更新：2016年12月4日。
+最后更新：2017年2月10日。

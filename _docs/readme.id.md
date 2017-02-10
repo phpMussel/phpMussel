@@ -188,14 +188,10 @@ Data | Deskripsi
 /_testfiles/graphics_standard_testfile.gif | File test untuk mentest tanda tangan grafis phpMussel.
 /_testfiles/html_standard_testfile.html | File test untuk mentest tanda tangan HTML dinormalisasi phpMussel.
 /_testfiles/md5_testfile.txt | File test untuk mentest tanda tangan MD5 phpMussel.
-/_testfiles/metadata_testfile.tar | File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest file support TAR pada sistem Anda.
-/_testfiles/metadata_testfile.txt.gz | File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest file support GZ pada sistem Anda.
-/_testfiles/metadata_testfile.zip | File test untuk mentest tanda tangan metadata phpMussel dan untuk mentest file support ZIP pada sistem Anda.
 /_testfiles/ole_testfile.ole | File test untuk mentest tanda tangan OLE phpMussel.
 /_testfiles/pdf_standard_testfile.pdf | File test untuk mentest tanda tangan PDF phpMussel.
 /_testfiles/pe_sectional_testfile.exe | File test untuk mentest tanda tangan PE Sectional phpMussel.
 /_testfiles/swf_standard_testfile.swf | File test untuk mentest tanda tangan SWF phpMussel.
-/_testfiles/xdp_standard_testfile.xdp | File test untuk mentest tanda tangan blok data XML/XDP phpMussel.
 /vault/ | Direktori Vault (berisikan bermacam file).
 /vault/cache/ | Direktori Cache (untuk file sementara).
 /vault/cache/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
@@ -253,134 +249,16 @@ Data | Deskripsi
 /vault/quarantine/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/signatures/ | Direktori tanda tangan (berisikan file tanda tangan).
 /vault/signatures/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/signatures/ascii_clamav_regex.cvd | File untuk tanda tangan ASCII dinormalisasi.
-/vault/signatures/ascii_clamav_regex.map | File untuk tanda tangan ASCII dinormalisasi.
-/vault/signatures/ascii_clamav_standard.cvd | File untuk tanda tangan ASCII dinormalisasi.
-/vault/signatures/ascii_clamav_standard.map | File untuk tanda tangan ASCII dinormalisasi.
-/vault/signatures/ascii_custom_regex.cvd | File untuk tanda tangan ASCII dinormalisasi.
-/vault/signatures/ascii_custom_standard.cvd | File untuk tanda tangan ASCII dinormalisasi.
-/vault/signatures/ascii_mussel_regex.cvd | File untuk tanda tangan ASCII dinormalisasi.
-/vault/signatures/ascii_mussel_standard.cvd | File untuk tanda tangan ASCII dinormalisasi.
-/vault/signatures/coex_clamav.cvd | File untuk tanda tangan diperpanjang kompleks.
-/vault/signatures/coex_custom.cvd | File untuk tanda tangan diperpanjang kompleks.
-/vault/signatures/coex_mussel.cvd | File untuk tanda tangan diperpanjang kompleks.
-/vault/signatures/elf_clamav_regex.cvd | File untuk tanda tangan ELF.
-/vault/signatures/elf_clamav_regex.map | File untuk tanda tangan ELF.
-/vault/signatures/elf_clamav_standard.cvd | File untuk tanda tangan ELF.
-/vault/signatures/elf_clamav_standard.map | File untuk tanda tangan ELF.
-/vault/signatures/elf_custom_regex.cvd | File untuk tanda tangan ELF.
-/vault/signatures/elf_custom_standard.cvd | File untuk tanda tangan ELF.
-/vault/signatures/elf_mussel_regex.cvd | File untuk tanda tangan ELF.
-/vault/signatures/elf_mussel_standard.cvd | File untuk tanda tangan ELF.
-/vault/signatures/exe_clamav_regex.cvd | File untuk tanda tangan file eksekusi portable.
-/vault/signatures/exe_clamav_regex.map | File untuk tanda tangan file eksekusi portable.
-/vault/signatures/exe_clamav_standard.cvd | File untuk tanda tangan file eksekusi portable.
-/vault/signatures/exe_clamav_standard.map | File untuk tanda tangan file eksekusi portable.
-/vault/signatures/exe_custom_regex.cvd | File untuk tanda tangan file eksekusi portable.
-/vault/signatures/exe_custom_standard.cvd | File untuk tanda tangan file eksekusi portable.
-/vault/signatures/exe_mussel_regex.cvd | File untuk tanda tangan file eksekusi portable.
-/vault/signatures/exe_mussel_standard.cvd | File untuk tanda tangan file eksekusi portable.
-/vault/signatures/filenames_clamav.cvd | File untuk tanda tangan nama file.
-/vault/signatures/filenames_custom.cvd | File untuk tanda tangan nama file.
-/vault/signatures/filenames_mussel.cvd | File untuk tanda tangan nama file.
-/vault/signatures/general_clamav_regex.cvd | File untuk tanda tangan umum.
-/vault/signatures/general_clamav_regex.map | File untuk tanda tangan umum.
-/vault/signatures/general_clamav_standard.cvd | File untuk tanda tangan umum.
-/vault/signatures/general_clamav_standard.map | File untuk tanda tangan umum.
-/vault/signatures/general_custom_regex.cvd | File untuk tanda tangan umum.
-/vault/signatures/general_custom_standard.cvd | File untuk tanda tangan umum.
-/vault/signatures/general_mussel_regex.cvd | File untuk tanda tangan umum.
-/vault/signatures/general_mussel_standard.cvd | File untuk tanda tangan umum.
-/vault/signatures/graphics_clamav_regex.cvd | File untuk tanda tangan grafis.
-/vault/signatures/graphics_clamav_regex.map | File untuk tanda tangan grafis.
-/vault/signatures/graphics_clamav_standard.cvd | File untuk tanda tangan grafis.
-/vault/signatures/graphics_clamav_standard.map | File untuk tanda tangan grafis.
-/vault/signatures/graphics_custom_regex.cvd | File untuk tanda tangan grafis.
-/vault/signatures/graphics_custom_standard.cvd | File untuk tanda tangan grafis.
-/vault/signatures/graphics_mussel_regex.cvd | File untuk tanda tangan grafis.
-/vault/signatures/graphics_mussel_standard.cvd | File untuk tanda tangan grafis.
 /vault/signatures/hex_general_commands.csv | CSV terencode Hex dari deteksi perintah umum secara opsional digunakan phpMussel.
-/vault/signatures/html_clamav_regex.cvd | File untuk tanda tangan HTML dinormalisasi.
-/vault/signatures/html_clamav_regex.map | File untuk tanda tangan HTML dinormalisasi.
-/vault/signatures/html_clamav_standard.cvd | File untuk tanda tangan HTML dinormalisasi.
-/vault/signatures/html_clamav_standard.map | File untuk tanda tangan HTML dinormalisasi.
-/vault/signatures/html_custom_regex.cvd | File untuk tanda tangan HTML dinormalisasi.
-/vault/signatures/html_custom_standard.cvd | File untuk tanda tangan HTML dinormalisasi.
-/vault/signatures/html_mussel_regex.cvd | File untuk tanda tangan HTML dinormalisasi.
-/vault/signatures/html_mussel_standard.cvd | File untuk tanda tangan HTML dinormalisasi.
-/vault/signatures/macho_clamav_regex.cvd | File untuk tanda tangan Mach-O.
-/vault/signatures/macho_clamav_regex.map | File untuk tanda tangan Mach-O.
-/vault/signatures/macho_clamav_standard.cvd | File untuk tanda tangan Mach-O.
-/vault/signatures/macho_clamav_standard.map | File untuk tanda tangan Mach-O.
-/vault/signatures/macho_custom_regex.cvd | File untuk tanda tangan Mach-O.
-/vault/signatures/macho_custom_standard.cvd | File untuk tanda tangan Mach-O.
-/vault/signatures/macho_mussel_regex.cvd | File untuk tanda tangan Mach-O.
-/vault/signatures/macho_mussel_standard.cvd | File untuk tanda tangan Mach-O.
-/vault/signatures/mail_clamav_regex.cvd | File untuk tanda tangan mail.
-/vault/signatures/mail_clamav_regex.map | File untuk tanda tangan mail.
-/vault/signatures/mail_clamav_standard.cvd | File untuk tanda tangan mail.
-/vault/signatures/mail_clamav_standard.map | File untuk tanda tangan mail.
-/vault/signatures/mail_custom_regex.cvd | File untuk tanda tangan mail.
-/vault/signatures/mail_custom_standard.cvd | File untuk tanda tangan mail.
-/vault/signatures/mail_mussel_regex.cvd | File untuk tanda tangan mail.
-/vault/signatures/mail_mussel_standard.cvd | File untuk tanda tangan mail.
-/vault/signatures/md5_clamav.cvd | File untuk tanda tangan berbasis MD5.
-/vault/signatures/md5_custom.cvd | File untuk tanda tangan berbasis MD5.
-/vault/signatures/md5_mussel.cvd | File untuk tanda tangan berbasis MD5.
-/vault/signatures/metadata_clamav.cvd | File untuk tanda tangan metadata yang terkompres.
-/vault/signatures/metadata_custom.cvd | File untuk tanda tangan metadata yang terkompres.
-/vault/signatures/metadata_mussel.cvd | File untuk tanda tangan metadata yang terkompres.
-/vault/signatures/ole_clamav_regex.cvd | File untuk tanda tangan OLE.
-/vault/signatures/ole_clamav_regex.map | File untuk tanda tangan OLE.
-/vault/signatures/ole_clamav_standard.cvd | File untuk tanda tangan OLE.
-/vault/signatures/ole_clamav_standard.map | File untuk tanda tangan OLE.
-/vault/signatures/ole_custom_regex.cvd | File untuk tanda tangan OLE.
-/vault/signatures/ole_custom_standard.cvd | File untuk tanda tangan OLE.
-/vault/signatures/ole_mussel_regex.cvd | File untuk tanda tangan OLE.
-/vault/signatures/ole_mussel_standard.cvd | File untuk tanda tangan OLE.
-/vault/signatures/pdf_clamav_regex.cvd | File untuk tanda tangan PDF.
-/vault/signatures/pdf_clamav_regex.map | File untuk tanda tangan PDF.
-/vault/signatures/pdf_clamav_standard.cvd | File untuk tanda tangan PDF.
-/vault/signatures/pdf_clamav_standard.map | File untuk tanda tangan PDF.
-/vault/signatures/pdf_custom_regex.cvd | File untuk tanda tangan PDF.
-/vault/signatures/pdf_custom_standard.cvd | File untuk tanda tangan PDF.
-/vault/signatures/pdf_mussel_regex.cvd | File untuk tanda tangan PDF.
-/vault/signatures/pdf_mussel_standard.cvd | File untuk tanda tangan PDF.
-/vault/signatures/pex_custom.cvd | File untuk tanda tangan PE diperpanjang.
-/vault/signatures/pex_mussel.cvd | File untuk tanda tangan PE diperpanjang.
-/vault/signatures/pe_clamav.cvd | File untuk tanda tangan PE Sectional.
-/vault/signatures/pe_custom.cvd | File untuk tanda tangan PE Sectional.
-/vault/signatures/pe_mussel.cvd | File untuk tanda tangan PE Sectional.
-/vault/signatures/swf_clamav_regex.cvd | File untuk tanda tangan Shockwave.
-/vault/signatures/swf_clamav_regex.map | File untuk tanda tangan Shockwave.
-/vault/signatures/swf_clamav_standard.cvd | File untuk tanda tangan Shockwave.
-/vault/signatures/swf_clamav_standard.map | File untuk tanda tangan Shockwave.
-/vault/signatures/swf_custom_regex.cvd | File untuk tanda tangan Shockwave.
-/vault/signatures/swf_custom_standard.cvd | File untuk tanda tangan Shockwave.
-/vault/signatures/swf_mussel_regex.cvd | File untuk tanda tangan Shockwave.
-/vault/signatures/swf_mussel_standard.cvd | File untuk tanda tangan Shockwave.
 /vault/signatures/switch.dat | Kontrol dan set variabel tertentu.
-/vault/signatures/urlscanner.cvd | File untuk tanda tangan scanner URL.
-/vault/signatures/whitelist_clamav.cvd | File spesifik daftar putih.
-/vault/signatures/whitelist_custom.cvd | File spesifik daftar putih.
-/vault/signatures/whitelist_mussel.cvd | File spesifik daftar putih.
-/vault/signatures/xmlxdp_clamav_regex.cvd | File untuk tanda tangan blok data XML/XDP.
-/vault/signatures/xmlxdp_clamav_regex.map | File untuk tanda tangan blok data XML/XDP.
-/vault/signatures/xmlxdp_clamav_standard.cvd | File untuk tanda tangan blok data XML/XDP.
-/vault/signatures/xmlxdp_clamav_standard.map | File untuk tanda tangan blok data XML/XDP.
-/vault/signatures/xmlxdp_custom_regex.cvd | File untuk tanda tangan blok data XML/XDP.
-/vault/signatures/xmlxdp_custom_standard.cvd | File untuk tanda tangan blok data XML/XDP.
-/vault/signatures/xmlxdp_mussel_regex.cvd | File untuk tanda tangan blok data XML/XDP.
-/vault/signatures/xmlxdp_mussel_standard.cvd | File untuk tanda tangan blok data XML/XDP.
 /vault/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/cli.php | Modul CLI handler.
+/vault/components.dat | Berisi informasi yang berkaitan dengan berbagai komponen untuk phpMussel; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
 /vault/config.ini.RenameMe | File konfigurasi phpMussel; Berisi semua opsi konfigurasi dari phpMussel, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (mengubah nama untuk mengaktifkan).
 /vault/config.php | Modul konfigurasi.
-/vault/core.dat | Berisi informasi yang berkaitan dengan komponen L10N untuk phpMussel; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
 /vault/frontend.php | Modul untuk akses bagian depan.
 /vault/functions.php | Modul fungsi (utama).
 /vault/greylist.csv | CSV terdiri dari tanda tangan daftar abu-abu mengindikasikan phpMussel tanda tangan mana yang harus diabaikan (file automatis diciptakan kembali jika dihapus).
-/vault/l10n.dat | Berisi informasi yang berkaitan dengan komponen utama untuk phpMussel; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
 /vault/lang.php | File bahasa.
 /vault/php5.4.x.php | Polyfill untuk PHP 5.4.X (diperlukan untuk kompatibilitas mundur PHP 5.4.X; aman untuk menghapus selama versi PHP yang lebih baru).
 ※ /vault/scan_kills.txt | Sebuah catatan dari setiap file upload yang diblok/dibunuh oleh phpMussel.
@@ -401,23 +279,6 @@ Data | Deskripsi
 
 ※ Nama file bisa berbeda berdasarkan ketentuan konfigurasi (di dalam `config.ini`).
 
-####*BERDASARKAN FILE-FILE TANDA TANGAN*
-CVD adalah akronim dari "ClamAV Virus Definitions", dalam referensi dari bagaimana ClamAV merujuk ke tanda tangan nya sendiri dan penggunaan dari tanda tangan-tanda tangan itu untuk phpMussel; Data berakhir dengan "CVD" berisikan tanda tangan.
-
-Data berakhir dengan "MAP", secara harfiah, memetakan tanda tangan mana phpMussel seharusnya dan seharusnya tidak gunakan untuk pemindaian individual. Tidak semua tanda tangan secocoknya diharuskan untuk pemindaian tunggal, jadi, phpMussel menggunakan peta-peta dari file-file tanda tangan untuk mempercepat proses pemindaian (sebuah proses yang akan menjadi lambat dan monoton).
-
-File-file tanda tangan ditandai dengan "_regex" berisikan tanda tangan yang mengarahkan bentuk pengecekan regular expression (regex).
-
-File-file tanda tangan ditandai dengan "_standard" berisikan tanda tangan yang secara spesifik tidak mengarahkan bentuk pengecekan apapun.
-
-File-file tanda tangan tidak ditandai dengan "_regex" atau "_standard" akan menjadi satu atau yang lain, tapi tidak keduanya (merujuk pada seksi format tanda tangan dari file README untuk dokumentasi dan detail spesifik).
-
-File-file tanda tangan ditandai dengan "_clamav" berisikan tanda tangan yang berasal dari basis file ClamAV (GNU/GPL).
-
-File-file tanda tangan ditandai dengan "_custom", secara default, tidak berisikan tanda tangan apapun; File-file ini ada untuk memberikan Anda kemana saja untuk meletakkan tanda tangan Anda jika Anda datang dengan milik diri Anda sendiri.
-
-File-file tanda tangan ditandai dengan "_mussel" berisikan tanda tangan yang secara spesifik tidak berasal dari ClamAV, tanda tangan yang secara umum, Yang saya buat sendiri atau informasi dari berbagai sumber.
-
 ---
 
 
@@ -426,14 +287,6 @@ Berikut list variabel yang ditemukan pada file konfigurasi phpMussel `config.ini
 
 ####"general" (Kategori)
 Konfigurasi umum dari phpMussel.
-
-"script_password"
-- Sebagai sebuah kenyamanan, phpMussel akan mengizinkan fungsi-fungsi tertentu untuk secara manual dibangkitkan via POST, GET dan QUERY. Bagaimanapun, untuk alasan keamanan, untuk melakukan ini phpMussel akan mengharapkan sebuah sandi untuk diikutkan pada perintah, untuk memastikan bahwa itu Anda dan bukan orang lain, yang berusaha secara manual membangkitkan fungsi-fungsi ini. Set `script_password` untuk sandi apapun yang Anda mau gunakan. Jika tidak ada password diset, pembangkitan manual akan di non aktifkan secara default. Gunakan hal yang mudah Anda ingat tapi susah untuk orang lain hapal.
-- Tidak memiliki pengaruh di dalam mode CLI.
-
-"logs_password"
-- Sama seperti `script_password` tapi untuk melihat semua isi dari `scan_log` dan `scan_kills`. Memiliki sandi yang lain dapat bergunan jika Anda ingin memberikan akses pada orang lain untuk mengakses dan menset fungsi tapi tidak yang lain.
-- Tidak memiliki pengaruh di dalam mode CLI.
 
 "cleanup"
 - Membersihkan variabel skrip dan cache setelah eksekusi? False = Tidak; True = Ya [Default]. Jika Anda tidak menggukan skrip di bawah pemindaian upload inisial, harus diset ke `true` (ya) untuk meminimalisasi penggunaan memori. Jika Anda menggunakan skrip untuk tujuan di bawah pemindaian upload inisial, harus diset ke `false` (tidak), untuk menghindari reload duplikat file ke memori. Dalam praktek umum, haru diset ke `true`, tapi jika kamu melakukannya, kamu tidak bisa menggunakan skrip untuk hal lain kecuali pemindaian upload file.
@@ -474,12 +327,6 @@ Konfigurasi umum dari phpMussel.
 "lang"
 - Tentukan bahasa default untuk phpMussel.
 
-"lang_override"
-- Tentukan jika phpMussel harus, bila memungkinkan, mengganti spesifikasi bahasa dengan preferensi bahasa dideklarasikan oleh permintaan memasukan (HTTP_ACCEPT_LANGUAGE). False = Tidak [Default]; True = Ya.
-
-"lang_acceptable"
-- Direktif `lang_acceptable` menginstruksikan phpMussel apa bahasa-bahasa dapat diterima oleh skrip dari `lang` atau dari `HTTP_ACCEPT_LANGUAGE`. Direktif ini **HANYA** harus diubah jika Anda menambahkan file bahasa Anda sendiri disesuaikan atau paksa menghapus file bahasa. Direktif adalah string dipisahkan koma dari kode-kode digunakan oleh bahasa-bahasa diterima oleh skrip.
-
 "quarantine_key"
 - phpMussel dapat mengkarantina upload file ditandai dalam isolasi dalam vault phpMussel, jika ini adalah sesuatu yang Anda ingin lakukan. Pengguna biasa dari phpMussel yang hanya ingin memproteksi website mereka dan/atau lingkungan hosting mereka tanpa memiliki minat dalam-dalam menganalisis setiap ditandai upload file harus meninggalkan fungsi ini dinonaktifkan, tapi setiap pengguna yang tertarik pada analisis lebih lanjut dari ditandai upload file bagi penelitian malware atau untuk hal-hal seperti serupa harus mengaktifkan fungsi ini. Mengkarantina ditandai upload file dapat kadang-kadang juga membantu dalam men-debug false-positif, jika ini adalah sesuatu yang sering terjadi untuk Anda. Untuk menonaktifkan fungsi karantina, meninggalkan `quarantine_key` direktif kosong, atau menghapus isi dari direktif ini jika tidak sudah kosong. Untuk mengaktifkan fungsi karantina, masukkan beberapa nilai dalam direktif ini. `quarantine_key` adalah fitur keamanan penting dari fungsi karantina diharuskan sebagai sarana untuk mencegah fungsi karantina dari dieksploitasi oleh penyerang potensial dan sebagai sarana mencegah eksekusi potensi file yang disimpan dalam karantina. `quarantine_key` harus diperlakukan dengan cara yang sama seperti password Anda: Semakin lama semakin baik, dan menjaganya diproteksi erat. Bagi efek terbaik, gunakan dalam hubungannya dengan `delete_on_sight`.
 
@@ -501,113 +348,79 @@ Konfigurasi umum dari phpMussel.
 "disable_frontend"
 - Menonaktifkan akses bagian depan? Akses bagian depan dapat membuat phpMussel lebih mudah dikelola, tapi juga dapat menjadi potensial resiko keamanan. Itu direkomendasi untuk mengelola phpMussel melalui bagian belakang bila mungkin, tapi akses bagian depan yang disediakan untuk saat itu tidak mungkin. Memilikinya dinonaktifkan kecuali jika Anda membutuhkannya. False = Mengaktifkan akses bagian depan; True = Menonaktifkan akses bagian depan [Default].
 
+"max_login_attempts"
+- Jumlah maksimum upaya untuk memasukkan (bagian depan). Default = 5.
+
+"FrontEndLog"
+- File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
+
 ####"signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
-- %%%_clamav = Tanda tangan ClamAV (kedua-duanya utama dan harian).
-- %%%_custom = Tanda tangan terubah (Jika Anda merubahnya).
-- %%%_mussel = Tanda tangan phpMussel dimasukkan dalam tanda tangan tersebut dari yang bukan dari ClamAV.
 
-Cek tanda tangan MD5 ketika pemindaian? False = Tidak; True = Ya [Default].
-- "md5_clamav"
-- "md5_custom"
-- "md5_mussel"
+"MD5"
+- Cek tanda tangan MD5 ketika pemindaian? Jika demikian, menentukan nama-nama file tanda tangan untuk menggunakan, dipisahkan dengan koma.
+
+"PE_Sectional"
+- Cek file PE (Portable Executable; EXE, DLL, dll) pada tanda tangan PE Sectional ketika pemindaian? Jika demikian, menentukan nama-nama file tanda tangan untuk menggunakan, dipisahkan dengan koma.
+
+"PE_Extended"
+- Cek file PE (Portable Executable; EXE, DLL, dll) pada tanda tangan PE diperpanjang ketika pemindaian? Jika demikian, menentukan nama-nama file tanda tangan untuk menggunakan, dipisahkan dengan koma.
 
 Cek tanda tangan umum ketika pemindaian? False = Tidak; True = Ya [Default].
 - "general_clamav"
-- "general_custom"
 - "general_mussel"
 
 Cek tanda tangan ASCII dinormalisasi ketika pemindaian? False = Tidak; True = Ya [Default].
 - "ascii_clamav"
-- "ascii_custom"
 - "ascii_mussel"
 
 Cek tanda tangan HTML dinormalisasi ketika pemindaian? False = Tidak; True = Ya [Default].
 - "html_clamav"
-- "html_custom"
 - "html_mussel"
 
-Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE Sectional ketika pemindaian? False = Tidak; True = Ya [Default].
-- "pe_clamav"
-- "pe_custom"
-- "pe_mussel"
-
-Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE diperpanjang ketika pemindaian? False = Tidak; True = Ya [Default].
-- "pex_custom"
-- "pex_mussel"
-
-Cek file PE (Portable Executable; EXE, DLL, etc) pada tanda tangan PE ketika pemindaian? False = Tidak; True = Ya [Default].
+Cek file PE (Portable Executable; EXE, DLL, dll) pada tanda tangan PE ketika pemindaian? False = Tidak; True = Ya [Default].
 - "exe_clamav"
-- "exe_custom"
 - "exe_mussel"
 
 Cek file-file ELF pada tanda tangan ELF ketika pemindaian? False = Tidak; True = Ya [Default].
 - "elf_clamav"
-- "elf_custom"
 - "elf_mussel"
 
-Cek file-file Mach-O (OSX, etc) pada tanda tangan Mach-O ketika pemindaian? False = Tidak; True = Ya [Default].
+Cek file-file Mach-O (OSX, dll) pada tanda tangan Mach-O ketika pemindaian? False = Tidak; True = Ya [Default].
 - "macho_clamav"
-- "macho_custom"
 - "macho_mussel"
 
 Cek file-file grafis pada tanda tangan grafis ketika pemindaian? False = Tidak; True = Ya [Default].
 - "graphics_clamav"
-- "graphics_custom"
 - "graphics_mussel"
-
-Cek isi file terkompress pada tanda tangan metadata terkompres ketika pemindaian? False = Tidak; True = Ya [Default].
-- "metadata_clamav"
-- "metadata_custom"
-- "metadata_mussel"
 
 Cek objek-objek OLE pada tanda tangan OLE ketika pemindaian? False = Tidak; True = Ya [Default].
 - "ole_clamav"
-- "ole_custom"
 - "ole_mussel"
 
 Cek nama file pada tanda tangan berbasis nama file ketika pemindaian? False = Tidak; True = Ya [Default].
 - "filenames_clamav"
-- "filenames_custom"
 - "filenames_mussel"
 
 Cek tanda tangan email ketika pemindaian? False = Tidak; True = Ya [Default].
 - "mail_clamav"
-- "mail_custom"
 - "mail_mussel"
 
 Aktifkan daftar putih tertentu file? False = Tidak; True = Ya [Default].
 - "whitelist_clamav"
-- "whitelist_custom"
 - "whitelist_mussel"
-
-Cek blok data XML/XDP pada tanda tangan blok data XML/XDP ketika pemindaian? False = Tidak; True = Ya [Default].
-- "xmlxdp_clamav"
-- "xmlxdp_custom"
-- "xmlxdp_mussel"
 
 Cek tanda tangan diperpanjang kompleks ketika pemindaian? False = Tidak; True = Ya [Default].
 - "coex_clamav"
-- "coex_custom"
 - "coex_mussel"
 
 Cek tanda tangan PDF ketika pemindaian? False = Tidak; True = Ya [Default].
 - "pdf_clamav"
-- "pdf_custom"
 - "pdf_mussel"
 
 Cek tanda tangan Shockwave ketika pemindaian? False = Tidak; True = Ya [Default].
 - "swf_clamav"
-- "swf_custom"
 - "swf_mussel"
-
-Opsi Tanda tangan cocok batas panjangnya. Hanya ubah ini jika Anda tahu apa yang Anda lakukan. SD = Standard tanda tangan. RX = Tanda tangan PCRE (Perl Compatible Regular Expressions, "Regex"). FN = Tanda tangan Nama Data. Jika Anda melihat PHP crashing ketika phpMussel meoncoba memindai, coba merendahkan nilai "max". Jika mungkin dan cocok, biarkan saya tahu kapan ini terjadi dan hasil dari apapun yang Anda coba.
-- "fn_siglen_min"
-- "fn_siglen_max"
-- "rx_siglen_min"
-- "rx_siglen_max"
-- "sd_siglen_min"
-- "sd_siglen_max"
 
 "fail_silently"
 - Seharusnya laporan phpMussel ketika file tanda tangan hilang atau dikorup? Jika `fail_silently` dinonaktifkan, file dikorup dan hilang akan dilaporkan ketika pemindaian, dan jika `fail_silently` diaktifkan, file dikorup dan hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crash atau masalah lain. False = Dinonaktifkan; True = Diaktifkan [Default].
@@ -665,13 +478,13 @@ Konfigurasi umum untuk mengambil alih file-file.
 - Memperlalaikan jenis file daftar hitam/putih dari isi file terkompress? False = Tidak (Bertanda abu-abu semua) [Default]; True = Ya.
 
 "max_recursion"
-- Dalam rekursi dari file terkompres. Default = 10.
+- Batas kedalaman rekursi maksimum untuk arsip. Default = 10.
 
 "block_encrypted_archives"
 - Mendeteksi dan memblokir dienkripsi arsip? Karena phpMussel tidak mampu memindai isi arsip dienkripsi, itu mungkin bahwa enkripsi arsip dapat digunakan oleh penyerang sebagai sarana mencoba untuk memotong phpMussel, anti-virus pemindai dan perlindungan mirip lainnya. Menginstruksikan phpMussel untuk memblokir setiap arsip dienkripsi ditemukan akan berpotensi membantu mengurangi risiko terkait dengan kemungkinan tersebut. False = Tidak; True = Ya [Default].
 
 ####"attack_specific" (Kategori)
-Konfigurasi dari deteksi serangan spesifik (tidak berdasarkan CVDs).
+Direktif serangan spesifik.
 
 Chameleon serangan deteksi: False = Dinonaktifkan; True = Diaktifkan.
 
@@ -693,7 +506,7 @@ Chameleon serangan deteksi: False = Dinonaktifkan; True = Diaktifkan.
 "chameleon_to_pdf"
 - Cari file PDF yang headernya tidak benar.
 
-"archive_file_extensions" dan "archive_file_extensions_wc".
+"archive_file_extensions"
 - Ekstensi file terkompres yang dikenali (format nya CSV; seharusnya hanya menambah atau menghapus ketika masalah terjadi; Tidak cocok langsung menghapus karena dapat menyebabkan angka positif yang salah terjadi pada file terkompres, dimana juga menambahkan deteksi; memodifikasi dengan peringatan; Juga dicatat bahwa ini tidak memberi efek pada file terkompress apa yang dapat dan tidak dapat di analisa pada level isi). Daftar sebagaimana defaultnya, memberi daftar format-format yang digunakan yang paling umum melalui melalui mayoritas sistem dan CMS, tapi bermaksud tidak komprehensif.
 
 "general_commands"
@@ -730,7 +543,7 @@ Direktif-direktif heuristik pada phpMussel.
 Konfigurasi untuk Virus Total integrasi.
 
 "vt_public_api_key"
-- Secara fakultatif, phpMussel mampu memindai file menggunakan Virus Total API sebagai cara untuk memberikan tingkat sangat ditingkatkan perlindungan terhadap virus, trojan, malware dan ancaman lainnya. Secara default, file pemindaian menggunakan Virus Total API dinonaktifkan. Untuk mengaktifkannya, kunci API dari Virus Total diperlukan. Karena manfaat yang signifikan bahwa ini bisa memberikan kepada Anda, itu adalah sesuatu yang sangat direkomendasi mengaktifkan. Perlu diketahui, bagaimanapun, menggunakan Virus Total API, Anda -HARUS- setuju untuk Terms of Service dan Anda -HARUS- mematuhi semua pedoman terkait dijelaskan oleh Virus Total dokumentasi! Anda TIDAK diizinkan untuk menggunakan fungsi ini KECUALI KALAU:
+- Secara fakultatif, phpMussel mampu memindai file menggunakan Virus Total API sebagai cara untuk memberikan tingkat sangat ditingkatkan perlindungan terhadap virus, trojan, malware dan ancaman lainnya. Secara default, file pemindaian menggunakan Virus Total API dinonaktifkan. Untuk mengaktifkannya, kunci API dari Virus Total diperlukan. Karena manfaat yang signifikan bahwa ini bisa memberikan kepada Anda, itu adalah sesuatu yang sangat direkomendasi mengaktifkan. Perlu diketahui, bagaimanapun, menggunakan Virus Total API, Anda _**HARUS**_ setuju untuk Terms of Service dan Anda _**HARUS**_ mematuhi semua pedoman terkait dijelaskan oleh Virus Total dokumentasi! Anda TIDAK diizinkan untuk menggunakan fungsi ini KECUALI KALAU:
   - Anda membaca dan setuju untuk Terms of Service dari Virus Total dan API mereka. Terms of Service dari Virus Total dan API mereka dapat ditemukan di [Sini](https://www.virustotal.com/en/about/terms-of-service/).
   - Anda membaca dan memahami, setidaknya, mukadimah dari Virus Total dokumentasi API (semuanya setelah "VirusTotal Public API v2.0" tapi sebelum "Contents"). Virus Total dokumentasi API umum dapat ditemukan di [Sini](https://www.virustotal.com/en/documentation/public-api/).
 
@@ -803,13 +616,6 @@ Semua tanda tangan MD5 mengikuti format ini:
 
 Dimana HASH adalah MD5 dari keseluruhan file, UKURAN adalah total ukuran file dan NAMA adalah nama untuk mengutip tanda tangan tersebut.
 
-####*TANDA TANGAN METADATA ARSIP*
-Semua tanda tangan metadata arsip mengikuti format ini:
-
-`NAMA:UKURAN:CRC32`
-
-Dimana NAMA adalah nama mengutip tanda tangan itu, UKURAN adalah total ukuran file (tidak terkompres) dari sebuah file berisikan arsip dan CRC32 adalah checksum CRC32 dari file yang berisikan.
-
 ####*TANDA TANGAN SEKSIONAL PE*
 Semua tanda tangan seksional PE mengikuti format ini:
 
@@ -847,30 +653,28 @@ Dimana NAMA adalah nama yang mengutip tanda tangan ini dan HEX adalah sebuah seg
 Setiap bentuk dari regex mengerti dan dengan benar diproses oleh PHP seharusnya bisa dengan benar dimengerti dan diproses oleh phpMussel dan tanda tangannya. Bagaimanapun, saya menyarankan peringatan ekstrim ketika menuliskan tanda tangan berbasis regex baru karena, jika Anda tidak yakin apa yang Anda lakukan dapat menghasilkan hal yang tidak diinginkan. Coba lihat source-code phpMussel dan jika Anda tidak yakin tentang konteks dari statemen regex diparsing. Juga ingat bahwa semua pola (dengan pengecualian ke nama data, metadata terkompres dan pola MD5) harus diencode heksadesimal (sintaksis pola sebelumnya, tentu saja)!
 
 ####*DIMANA MELETAKKAN TANDA TANGAN YANG TERUBAH?*
-Hanya menempatkan tanda tangan kustom dalam file yang dimaksudkan untuk tanda tangan kustom. File harus berisi "_custom" dalam nama file mereka. Anda juga harus menghindari mengedit file tanda tangan default, kecuali jika Anda tahu persis apa yang Anda lakukan, karena, selain menjadi praktik baik umumnya dan selain membantu Anda membedakan antara tanda tangan Anda sendiri dan tanda tangan default diikutkan dengan phpMussel, itu baik untuk menjaga mengedit hanya file ditujukan bagi mengedit, karena yang dirusak dengan file tanda tangan default dapat menyebabkan mereka untuk berhenti bekerja dengan benar, karena "map" file-file: File-file map menginstruksikan phpMussel dimana dalam file tanda tangan untuk mencari bagi tanda tangan dibutuhkan oleh phpMussel sesuai diharuskan, dan map-map ini dapat menjadi tidak disinkronkan dengan file tanda tangan mereka terkait jika file tanda tangan yang dirusak dengan. Anda dapat menempatkan apapun yang Anda inginkan dalam file-file tanda tangan kustom Anda, asalkan Anda mengikuti sintaks yang benar. Namun, berhati-hatilah untuk menguji tanda tangan baru bagi false-positif sebelumnya jika Anda berniat untuk berbagi mereka atau menggunakannya dalam lingkungan hidup.
 
 ####*TANDA TANGAN PEMECAH-MECAHAN*
 Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
-- "Tanda tangan ASCII dinormalisasi" (ascii_*). Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan diperpanjang kompleks" (coex_*). Campuran pencocokan jenis tanda tangan.
-- "Tanda tangan ELF" (elf_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format ELF.
-- "Tanda tangan portable executable" (exe_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
-- "Tanda tangan nama file" (filenames_*). Dicek pada nama file dari file yang ditargetkan pada pemindaian.
-- "Tanda tangan umum" (general_*). Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan grafis" (graphics_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke apapun diketahui format grafis.
+- "Tanda tangan ASCII dinormalisasi". Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
+- "Tanda tangan diperpanjang kompleks". Campuran pencocokan jenis tanda tangan.
+- "Tanda tangan ELF". Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format ELF.
+- "Tanda tangan portable executable". Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
+- "Tanda tangan nama file". Dicek pada nama file dari file yang ditargetkan pada pemindaian.
+- "Tanda tangan umum". Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
+- "Tanda tangan grafis". Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke apapun diketahui format grafis.
 - "Perintah umum" (hex_general_commands.csv). Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan HTML dinormalisasi" (html_*). Dicek pada isi dari apapun file HTML tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan Mach-O" (macho_*). Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format Mach-O.
-- "Tanda tangan Email" (mail_*). Dicek pada isi dari apapun file EML tidak bertanda putih.
-- "Tanda tangan MD5" (md5_*). Dicek pada hash MD5 dari isi dan ukuran file dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan metadata arsip" (metadata_*). Dicek pada hash CRC32 dan ukuran file dari pertama file berisikan dalam apapun arsip terkompress tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan OLE" (ole_*). Dicek pada isi dari apapun objek tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan PDF" (pdf_*). Dicek pada isi dari apapun file PDF tidak bertanda putih.
-- "Tanda tangan portable executable sectional" (pe_*). Dicek pada hash MD5 dan ukuran dari seksi PE dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
-- "Tanda tangan diperpanjang portable executable" (pex_*). Dicek pada hash MD5 dan ukuran dari variabel dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
-- "Tanda tangan SWF" (swf_*). Dicek pada isi dari apapun file Shockwave tidak bertanda putih.
-- "Tanda tangan putih" (whitelist_*). Dicek pada hash MD5 dari isi dan ukuran file dari apapun file ditargetkan untuk dipindai. File dicocokkan akan kebal terhadap dari dicocokkan dengan jenis tanda tangan yang disebutkan dalam entri daftar putih mereka.
-- "Tanda tangan blok data XML/XDP" (xmlxdp_*). Dicek pada apapun blok data XML/XDP ditemukan dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
+- "Tanda tangan HTML dinormalisasi". Dicek pada isi dari apapun file HTML tidak bertanda putih dan ditargetkan untuk dipindai.
+- "Tanda tangan Mach-O". Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format Mach-O.
+- "Tanda tangan Email". Dicek pada isi dari apapun file EML tidak bertanda putih.
+- "Tanda tangan MD5". Dicek pada hash MD5 dari isi dan ukuran file dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
+
+- "Tanda tangan OLE". Dicek pada isi dari apapun objek tidak bertanda putih dan ditargetkan untuk dipindai.
+- "Tanda tangan PDF". Dicek pada isi dari apapun file PDF tidak bertanda putih.
+- "Tanda tangan portable executable sectional". Dicek pada hash MD5 dan ukuran dari seksi PE dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
+- "Tanda tangan diperpanjang portable executable". Dicek pada hash MD5 dan ukuran dari variabel dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
+- "Tanda tangan SWF". Dicek pada isi dari apapun file Shockwave tidak bertanda putih.
+- "Tanda tangan putih". Dicek pada hash MD5 dari isi dan ukuran file dari apapun file ditargetkan untuk dipindai. File dicocokkan akan kebal terhadap dari dicocokkan dengan jenis tanda tangan yang disebutkan dalam entri daftar putih mereka.
 (Catat itu bahwa semua ini tanda tangan dapat dinonaktifkan melalui `config.ini`).
 
 ---
@@ -974,4 +778,4 @@ phpMussel memblokir file | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 4 Desember 2016 (2016.12.04).
+Terakhir Diperbarui: 10 Februari 2016 (2017.02.10).

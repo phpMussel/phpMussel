@@ -188,14 +188,10 @@ Tập tin | Chi tiết
 /_testfiles/graphics_standard_testfile.gif | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký đồ họa.
 /_testfiles/html_standard_testfile.html | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký HTML bình thường.
 /_testfiles/md5_testfile.txt | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký dựa MD5.
-/_testfiles/metadata_testfile.tar | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký siêu dữ liệu kho lưu trữ và cho xét nghiệm hỗ trợ tập tin TAR trên hệ thống của bạn.
-/_testfiles/metadata_testfile.txt.gz | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký siêu dữ liệu kho lưu trữ và cho xét nghiệm hỗ trợ tập tin GZ trên hệ thống của bạn.
-/_testfiles/metadata_testfile.zip | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký siêu dữ liệu kho lưu trữ và cho xét nghiệm hỗ trợ tập tin ZIP trên hệ thống của bạn.
 /_testfiles/ole_testfile.ole | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký OLE.
 /_testfiles/pdf_standard_testfile.pdf | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký PDF.
 /_testfiles/pe_sectional_testfile.exe | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký phần PE.
 /_testfiles/swf_standard_testfile.swf | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký Shockwave.
-/_testfiles/xdp_standard_testfile.xdp | Kiểm tra tập tin cho xét nghiệm phpMussel chử ký XML/XDP.
 /vault/ | Vault thư mục (chứa các tập tin khác nhau).
 /vault/cache/ | Cache thư mục (cho dữ liệu tạm thời).
 /vault/cache/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
@@ -253,134 +249,16 @@ Tập tin | Chi tiết
 /vault/quarantine/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/signatures/ | Thư mục cho chữ ký (chứa các tập tin cho chữ ký).
 /vault/signatures/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
-/vault/signatures/ascii_clamav_regex.cvd | Tập tin cho chữ ký ASCII bình thường.
-/vault/signatures/ascii_clamav_regex.map | Tập tin cho chữ ký ASCII bình thường.
-/vault/signatures/ascii_clamav_standard.cvd | Tập tin cho chữ ký ASCII bình thường.
-/vault/signatures/ascii_clamav_standard.map | Tập tin cho chữ ký ASCII bình thường.
-/vault/signatures/ascii_custom_regex.cvd | Tập tin cho chữ ký ASCII bình thường.
-/vault/signatures/ascii_custom_standard.cvd | Tập tin cho chữ ký ASCII bình thường.
-/vault/signatures/ascii_mussel_regex.cvd | Tập tin cho chữ ký ASCII bình thường.
-/vault/signatures/ascii_mussel_standard.cvd | Tập tin cho chữ ký ASCII bình thường.
-/vault/signatures/coex_clamav.cvd | Tập tin cho chữ ký kéo dài phức tạp.
-/vault/signatures/coex_custom.cvd | Tập tin cho chữ ký kéo dài phức tạp.
-/vault/signatures/coex_mussel.cvd | Tập tin cho chữ ký kéo dài phức tạp.
-/vault/signatures/elf_clamav_regex.cvd | Tập tin cho chữ ký ELF.
-/vault/signatures/elf_clamav_regex.map | Tập tin cho chữ ký ELF.
-/vault/signatures/elf_clamav_standard.cvd | Tập tin cho chữ ký ELF.
-/vault/signatures/elf_clamav_standard.map | Tập tin cho chữ ký ELF.
-/vault/signatures/elf_custom_regex.cvd | Tập tin cho chữ ký ELF.
-/vault/signatures/elf_custom_standard.cvd | Tập tin cho chữ ký ELF.
-/vault/signatures/elf_mussel_regex.cvd | Tập tin cho chữ ký ELF.
-/vault/signatures/elf_mussel_standard.cvd | Tập tin cho chữ ký ELF.
-/vault/signatures/exe_clamav_regex.cvd | Tập tin cho chữ ký PE (portable executable / thực thi di động).
-/vault/signatures/exe_clamav_regex.map | Tập tin cho chữ ký PE (portable executable / thực thi di động).
-/vault/signatures/exe_clamav_standard.cvd | Tập tin cho chữ ký PE (portable executable / thực thi di động).
-/vault/signatures/exe_clamav_standard.map | Tập tin cho chữ ký PE (portable executable / thực thi di động).
-/vault/signatures/exe_custom_regex.cvd | Tập tin cho chữ ký PE (portable executable / thực thi di động).
-/vault/signatures/exe_custom_standard.cvd | Tập tin cho chữ ký PE (portable executable / thực thi di động).
-/vault/signatures/exe_mussel_regex.cvd | Tập tin cho chữ ký PE (portable executable / thực thi di động).
-/vault/signatures/exe_mussel_standard.cvd | Tập tin cho chữ ký PE (portable executable / thực thi di động).
-/vault/signatures/filenames_clamav.cvd | Tập tin cho chữ ký tên tập tin.
-/vault/signatures/filenames_custom.cvd | Tập tin cho chữ ký tên tập tin.
-/vault/signatures/filenames_mussel.cvd | Tập tin cho chữ ký tên tập tin.
-/vault/signatures/general_clamav_regex.cvd | Tập tin cho chữ ký chung.
-/vault/signatures/general_clamav_regex.map | Tập tin cho chữ ký chung.
-/vault/signatures/general_clamav_standard.cvd | Tập tin cho chữ ký chung.
-/vault/signatures/general_clamav_standard.map | Tập tin cho chữ ký chung.
-/vault/signatures/general_custom_regex.cvd | Tập tin cho chữ ký chung.
-/vault/signatures/general_custom_standard.cvd | Tập tin cho chữ ký chung.
-/vault/signatures/general_mussel_regex.cvd | Tập tin cho chữ ký chung.
-/vault/signatures/general_mussel_standard.cvd | Tập tin cho chữ ký chung.
-/vault/signatures/graphics_clamav_regex.cvd | Tập tin cho chữ ký đồ họa.
-/vault/signatures/graphics_clamav_regex.map | Tập tin cho chữ ký đồ họa.
-/vault/signatures/graphics_clamav_standard.cvd | Tập tin cho chữ ký đồ họa.
-/vault/signatures/graphics_clamav_standard.map | Tập tin cho chữ ký đồ họa.
-/vault/signatures/graphics_custom_regex.cvd | Tập tin cho chữ ký đồ họa.
-/vault/signatures/graphics_custom_standard.cvd | Tập tin cho chữ ký đồ họa.
-/vault/signatures/graphics_mussel_regex.cvd | Tập tin cho chữ ký đồ họa.
-/vault/signatures/graphics_mussel_standard.cvd | Tập tin cho chữ ký đồ họa.
 /vault/signatures/hex_general_commands.csv | CSV (dấu phẩy tách giá trị) thập lục phân được mã hóa của phát hiện lệnh chung chung tùy chọn sử dụng bởi phpMussel.
-/vault/signatures/html_clamav_regex.cvd | Tập tin cho chữ ký HTML bình thường.
-/vault/signatures/html_clamav_regex.map | Tập tin cho chữ ký HTML bình thường.
-/vault/signatures/html_clamav_standard.cvd | Tập tin cho chữ ký HTML bình thường.
-/vault/signatures/html_clamav_standard.map | Tập tin cho chữ ký HTML bình thường.
-/vault/signatures/html_custom_regex.cvd | Tập tin cho chữ ký HTML bình thường.
-/vault/signatures/html_custom_standard.cvd | Tập tin cho chữ ký HTML bình thường.
-/vault/signatures/html_mussel_regex.cvd | Tập tin cho chữ ký HTML bình thường.
-/vault/signatures/html_mussel_standard.cvd | Tập tin cho chữ ký HTML bình thường.
-/vault/signatures/macho_clamav_regex.cvd | Tập tin cho chữ ký Mach-O.
-/vault/signatures/macho_clamav_regex.map | Tập tin cho chữ ký Mach-O.
-/vault/signatures/macho_clamav_standard.cvd | Tập tin cho chữ ký Mach-O.
-/vault/signatures/macho_clamav_standard.map | Tập tin cho chữ ký Mach-O.
-/vault/signatures/macho_custom_regex.cvd | Tập tin cho chữ ký Mach-O.
-/vault/signatures/macho_custom_standard.cvd | Tập tin cho chữ ký Mach-O.
-/vault/signatures/macho_mussel_regex.cvd | Tập tin cho chữ ký Mach-O.
-/vault/signatures/macho_mussel_standard.cvd | Tập tin cho chữ ký Mach-O.
-/vault/signatures/mail_clamav_regex.cvd | Tập tin cho chữ ký mail.
-/vault/signatures/mail_clamav_regex.map | Tập tin cho chữ ký mail.
-/vault/signatures/mail_clamav_standard.cvd | Tập tin cho chữ ký mail.
-/vault/signatures/mail_clamav_standard.map | Tập tin cho chữ ký mail.
-/vault/signatures/mail_custom_regex.cvd | Tập tin cho chữ ký mail.
-/vault/signatures/mail_custom_standard.cvd | Tập tin cho chữ ký mail.
-/vault/signatures/mail_mussel_regex.cvd | Tập tin cho chữ ký mail.
-/vault/signatures/mail_mussel_standard.cvd | Tập tin cho chữ ký mail.
-/vault/signatures/md5_clamav.cvd | Tập tin cho chữ ký dựa MD5.
-/vault/signatures/md5_custom.cvd | Tập tin cho chữ ký dựa MD5.
-/vault/signatures/md5_mussel.cvd | Tập tin cho chữ ký dựa MD5.
-/vault/signatures/metadata_clamav.cvd | Tập tin cho chữ ký siêu dữ liệu kho lưu trữ.
-/vault/signatures/metadata_custom.cvd | Tập tin cho chữ ký siêu dữ liệu kho lưu trữ.
-/vault/signatures/metadata_mussel.cvd | Tập tin cho chữ ký siêu dữ liệu kho lưu trữ.
-/vault/signatures/ole_clamav_regex.cvd | Tập tin cho chữ ký OLE.
-/vault/signatures/ole_clamav_regex.map | Tập tin cho chữ ký OLE.
-/vault/signatures/ole_clamav_standard.cvd | Tập tin cho chữ ký OLE.
-/vault/signatures/ole_clamav_standard.map | Tập tin cho chữ ký OLE.
-/vault/signatures/ole_custom_regex.cvd | Tập tin cho chữ ký OLE.
-/vault/signatures/ole_custom_standard.cvd | Tập tin cho chữ ký OLE.
-/vault/signatures/ole_mussel_regex.cvd | Tập tin cho chữ ký OLE.
-/vault/signatures/ole_mussel_standard.cvd | Tập tin cho chữ ký OLE.
-/vault/signatures/pdf_clamav_regex.cvd | Tập tin cho chữ ký PDF.
-/vault/signatures/pdf_clamav_regex.map | Tập tin cho chữ ký PDF.
-/vault/signatures/pdf_clamav_standard.cvd | Tập tin cho chữ ký PDF.
-/vault/signatures/pdf_clamav_standard.map | Tập tin cho chữ ký PDF.
-/vault/signatures/pdf_custom_regex.cvd | Tập tin cho chữ ký PDF.
-/vault/signatures/pdf_custom_standard.cvd | Tập tin cho chữ ký PDF.
-/vault/signatures/pdf_mussel_regex.cvd | Tập tin cho chữ ký PDF.
-/vault/signatures/pdf_mussel_standard.cvd | Tập tin cho chữ ký PDF.
-/vault/signatures/pex_custom.cvd | Tập tin cho chữ ký kéo dài PE.
-/vault/signatures/pex_mussel.cvd | Tập tin cho chữ ký kéo dài PE.
-/vault/signatures/pe_clamav.cvd | Tập tin cho chữ ký phần PE.
-/vault/signatures/pe_custom.cvd | Tập tin cho chữ ký phần PE.
-/vault/signatures/pe_mussel.cvd | Tập tin cho chữ ký phần PE.
-/vault/signatures/swf_clamav_regex.cvd | Tập tin cho chữ ký Shockwave.
-/vault/signatures/swf_clamav_regex.map | Tập tin cho chữ ký Shockwave.
-/vault/signatures/swf_clamav_standard.cvd | Tập tin cho chữ ký Shockwave.
-/vault/signatures/swf_clamav_standard.map | Tập tin cho chữ ký Shockwave.
-/vault/signatures/swf_custom_regex.cvd | Tập tin cho chữ ký Shockwave.
-/vault/signatures/swf_custom_standard.cvd | Tập tin cho chữ ký Shockwave.
-/vault/signatures/swf_mussel_regex.cvd | Tập tin cho chữ ký Shockwave.
-/vault/signatures/swf_mussel_standard.cvd | Tập tin cho chữ ký Shockwave.
 /vault/signatures/switch.dat | Điều khiển và định nghĩa biến.
-/vault/signatures/urlscanner.cvd | Tập tin cho chữ ký máy quét URL.
-/vault/signatures/whitelist_clamav.cvd | Tập tin riêng cho danh sách trắng.
-/vault/signatures/whitelist_custom.cvd | Tập tin riêng cho danh sách trắng.
-/vault/signatures/whitelist_mussel.cvd | Tập tin riêng cho danh sách trắng.
-/vault/signatures/xmlxdp_clamav_regex.cvd | Tập tin cho chữ ký XML/XDP.
-/vault/signatures/xmlxdp_clamav_regex.map | Tập tin cho chữ ký XML/XDP.
-/vault/signatures/xmlxdp_clamav_standard.cvd | Tập tin cho chữ ký XML/XDP.
-/vault/signatures/xmlxdp_clamav_standard.map | Tập tin cho chữ ký XML/XDP.
-/vault/signatures/xmlxdp_custom_regex.cvd | Tập tin cho chữ ký XML/XDP.
-/vault/signatures/xmlxdp_custom_standard.cvd | Tập tin cho chữ ký XML/XDP.
-/vault/signatures/xmlxdp_mussel_regex.cvd | Tập tin cho chữ ký XML/XDP.
-/vault/signatures/xmlxdp_mussel_standard.cvd | Tập tin cho chữ ký XML/XDP.
 /vault/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/cli.php | Tập tin cho xử lý CLI.
+/vault/components.dat | Chứa thông tin liên quan đến các gói khác nhau của phpMussel; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
 /vault/config.ini.RenameMe | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của phpMussel, nói cho nó biết phải làm gì và làm thế nào để hoạt động (đổi tên để kích hoạt).
 /vault/config.php | Tập tin cho xử lý cấu hình.
-/vault/core.dat | Chứa thông tin liên quan đến các gói chính của phpMussel; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
 /vault/frontend.php | Tập tin cho xử lý các front-end.
 /vault/functions.php | Tập tin cho chức năng.
 /vault/greylist.csv | Tập tin CSV cho danh sách xám chử ký chỉ thị cho phpMussel cái nào chử ký nó phải được bỏ qua (tập tin tự động tạo lại nếu xóa).
-/vault/l10n.dat | Chứa thông tin liên quan đến các gói L10N của phpMussel; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
 /vault/lang.php | Dữ liệu tiếng.
 /vault/php5.4.x.php | Polyfills cho PHP 5.4.X (cần cho khả năng tương thích ngược PHP 5.4.X; an toàn để xóa cho các phiên bản PHP mới hơn).
 ※ /vault/scan_kills.txt | Kỷ lục của mỗi tập tin tải lên từ chối/giết bởi phpMussel.
@@ -401,23 +279,6 @@ Tập tin | Chi tiết
 
 ※ Tên tập tin có thể thay đổi tuy theo các quy định của cấu hình (xem `config.ini`).
 
-####*LIÊN QUAN ĐẾN CÁC TẬP TIN CHỮ KÝ*
-CVD là một từ viết tắt cho "ClamAV Virus Definitions" (định nghĩa vi rút ClamAV), như một tham khảo để cách mà ClamAV đề cập đến chữ ký riêng của mình và đến việc sử dụng những chữ ký cho phpMussel; Tập tin kết thúc với "CVD" chứa chữ ký.
-
-Tập tin kết thúc với "MAP" đồ mà chữ ký phpMussel nên và không nên sử dụng cho quét cá nhân; Không phải tất cả các chữ ký được cần thiết cho mỗi lần quét, vì thế, phpMussel sử dụng bản đồ của các tập tin chữ ký để đẩy nhanh các quá trình quét (một quá trình mà nếu không sẽ là rất chậm và buồn chán).
-
-Tập tin chữ ký đánh dấu với "_regex" chứa chữ ký mà sử dụng kiểm tra cho mẫu biểu thức chính quy (regex).
-
-Tập tin chữ ký đánh dấu với "_standard" chứa chữ ký mà đặc biệt không sử dụng bất kỳ cách thức của kiểm tra cho mẫu biểu thức chính quy.
-
-Tập tin chữ ký đánh dấu không với "_regex" cũng không với "_standard" sẽ là một hay khác, nhưng không cả hai (tham khảo các phần Định Dạng Của Chử Ký của tập tin README này cho tài liệu và chi tiết cụ thể).
-
-Tập tin chữ ký đánh dấu với "_clamav" chứa chữ ký mà có nguồn gốc hoàn toàn từ các cơ sở dữ liệu của ClamAV (GNU/GPL).
-
-Tập tin chữ ký đánh dấu với "_custom", theo mặc định, không chứa bất kỳ chữ ký ở tất cả; Những tập tin này tồn tại để cung cấp cho bạn một nơi nào đó để đặt chữ ký riêng của bạn, nếu bạn viết bất kỳ của riêng bạn.
-
-Tập tin chữ ký đánh dấu với "_mussel" chứa chữ ký mà đặc biệt không có nguồn gốc từ ClamAV, chữ ký mà, nói chung, tôi đã viết bản thân mình hay dựa trên thông tin thu thập từ nhiều nguồn khác nhau.
-
 ---
 
 
@@ -426,14 +287,6 @@ Sau đây là danh sách các biến tìm thấy trong tập tin cấu hình cho
 
 ####"general" (Thể loại)
 Cấu hình chung cho phpMussel.
-
-"script_password"
-- Để tiện lợi, phpMussel sẽ cho phép các chức năng nhất định để được kích hoạt bằng tay thông qua POST, GET và QUERY. Tuy nhiên, như một biện pháp phòng ngừa an ninh, để làm điều này, phpMussel sẽ mong đợi một mật khẩu để được bao gồm với các lệnh, để đảm bảo rằng đó là bạn, và không một người nào khác, cố gắng để tự kích hoạt các chức năng này. Đặt `script_password` vào bất cứ mật khẩu mà bạn muốn sử dụng. Nếu không có mật khẩu được đặt, kích hoạt bằng tay sẽ bị vô hiệu hóa theo mặc định. Sử dụng một cái gì đó bạn sẽ nhớ nhưng đó là khó khăn cho người khác để đoán.
-- Không có ảnh hưởng trong CLI.
-
-"logs_password"
-- Giống như `script_password`, nhưng để xem các nội dung của of `scan_log` và `scan_kills`. Có mật khẩu riêng biệt có thể có ích nếu bạn muốn cho một người nào khác truy cập để một tập các chức năng nhưng không để khác.
-- Không có ảnh hưởng trong CLI.
 
 "cleanup"
 - Hủy hoại biến và bộ nhớ được sử dụng bởi các kịch bản sau khi quét tải lên ban đầu? False = Không; True = Vâng [Mặc định]. Nếu bạn -không- sử dụng các kịch bản vượt ra ngoài quét tải lên ban đầu, bạn nên đặt này để `true` (vâng), để giảm thiểu sử dụng bộ nhớ. Nếu bạn -là- sử dụng các kịch bản vượt ra ngoài quét tải lên ban đầu, bạn nên đặt này để `false` (không), để tránh cần thiết tải lại dữ liệu trùng lặp vào bộ nhớ. Trong thực tế nói chung, nó thường nên được đặt để `true`, nhưng, nếu bạn làm điều này, bạn sẽ không thể sử dụng các kịch bản cho bất cứ điều gì khác hơn quét tải lên ban đầu.
@@ -474,12 +327,6 @@ Cấu hình chung cho phpMussel.
 "lang"
 - Xác định tiếng mặc định cho phpMussel.
 
-"lang_override"
-- Xác định nếu phpMussel nên, khi có thể, ghi đè lên các xác định tiếng với các sự ưa thích tiếng tuyên bố bởi yêu cầu sắp tới (HTTP_ACCEPT_LANGUAGE). False = Không [Mặc định]; True = Vâng.
-
-"lang_acceptable"
-- Tùy chọn `lang_acceptable` nói phpMussel cái nào tiếng có thể được chấp nhận bởi các kịch bản từ `lang` hoặc từ `HTTP_ACCEPT_LANGUAGE`. Tùy chọn này chỉ **NÊN** được sửa đổi nếu bạn đang thêm tập tin tiếng tùy chỉnh của riêng bạn hay ép buộc gỡ bỏ tập tin tiếng. Các tùy chọn là một chuỗi dấu phẩy phân cách của mã sử dụng bởi các tiếng chấp nhận bởi các kịch bản.
-
 "quarantine_key"
 - phpMussel có thể kiểm dịch tải lên tập tin mà đã được đánh dấu trong sự cô lập trong vòng các vault của phpMussel, nếu đây là cái gì bạn muốn nó làm. Các người dùng bình thường của phpMussel mà chỉ đơn giản là muốn bảo vệ các môi trường kho lưu trữ hay trang mạng của họ, mà không có bất cứ quan tâm trong việc phân tích sâu sắc của bất kỳ tải lên tập tin mà đã được đánh dấu, nên để chức năng này bị vô hiệu hóa còn lại, nhưng bất kỳ người dùng quan tâm trong phân tích sâu hơn của tải lên tập tin mà đã được đánh dấu cho nghiên cứu phần mềm độc hại hay cho những thứ tương tự như vậy nên kích hoạt chức năng này. Các kiểm dịch của tải lên tập tin mà đã được đánh dấu đôi khi cũng có thể hỗ trợ trong việc gỡ lỗi sai tích cực, nếu đây là cái gì đó thường xuyên xảy ra đối với bạn. Để vô hiệu hóa chức năng kiểm dịch, chỉ đơn giản để lại tùy chọn `quarantine_key` trống rỗng, hay xóa nội dung của nó nếu nó không phải là đã trống rỗng. Để kích hoạt chức năng kiểm dịch, nhập một số giá trị vào các tùy chọn. `quarantine_key` là một tính năng bảo mật quan trọng của chức năng kiểm dịch yêu cầu như là một phương tiện cho ngăn chặn chức năng kiểm dịch được khai thác bởi kẻ tấn công tiềm năng và như một phương tiện ngăn chặn bất kỳ thực hiện tiềm năng của kho lưu trữ trong kiểm dịch. `quarantine_key` nên được đối xử theo cách tương tự như mật khẩu của bạn: Càng dài thì càng tốt, và cất giữ nó thật chặt. Đối với hiệu quả tốt nhất, sử dụng kết hợp với `delete_on_sight`.
 
@@ -501,113 +348,79 @@ Cấu hình chung cho phpMussel.
 "disable_frontend"
 - Vô hiệu hóa truy cập front-end? Truy cập front-end có thể làm cho phpMussel dễ quản lý hơn, nhưng cũng có thể là một nguy cơ bảo mật tiềm năng. Đó là khuyến cáo để quản lý phpMussel từ các back-end bất cứ khi nào có thể, nhưng truy cập front-end là cung cấp khi nó không phải là có thể. Giữ nó vô hiệu hóa trừ khi bạn cần nó. False = Kích hoạt truy cập front-end; True = Vô hiệu hóa truy cập front-end [Mặc định].
 
+"max_login_attempts"
+- Số lượng tối đa cố gắng đăng nhập (front-end). Mặc định = 5.
+
+"FrontEndLog"
+- Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
+
 ####"signatures" (Thể loại)
 Cấu hình cho chữ ký.
-- %%%_clamav = Chữ ký ClamAV ("mains" và "daily" cả hai).
-- %%%_custom = Chữ ký tùy chỉnh của bạn (nếu bạn đã viết bất kỳ).
-- %%%_mussel = Chữ ký phpMussel bao gồm trong bộ chữ ký hiện tại của bạn mà không phải là từ ClamAV.
 
-Kiểm tra chống lại chữ ký MD5 khi quét? False = Không; True = Vâng [Mặc định].
-- "md5_clamav"
-- "md5_custom"
-- "md5_mussel"
+"MD5"
+- Kiểm tra chống lại chữ ký MD5 khi quét? Nếu vậy, chỉ định tên của các tập tin chữ ký để sử dụng, định giới bằng dấu phẩy.
+
+"PE_Sectional"
+- Kiểm tra tập tin PE (portable executable / thực thi di động; EXE, DLL, vv) chống lại chữ ký phần PE khi quét? Nếu vậy, chỉ định tên của các tập tin chữ ký để sử dụng, định giới bằng dấu phẩy.
+
+"PE_Extended"
+- Kiểm tra tập tin PE (portable executable / thực thi di động; EXE, DLL, vv) chống lại chữ ký kéo dài PE khi quét? Nếu vậy, chỉ định tên của các tập tin chữ ký để sử dụng, định giới bằng dấu phẩy.
 
 Kiểm tra chống lại chữ ký chung khi quét? False = Không; True = Vâng [Mặc định].
 - "general_clamav"
-- "general_custom"
 - "general_mussel"
 
 Kiểm tra chống lại chữ ký ASCII bình thường khi quét? False = Không; True = Vâng [Mặc định].
 - "ascii_clamav"
-- "ascii_custom"
 - "ascii_mussel"
 
 Kiểm tra chống lại chữ ký HTML bình thường khi quét? False = Không; True = Vâng [Mặc định].
 - "html_clamav"
-- "html_custom"
 - "html_mussel"
-
-Kiểm tra tập tin PE (portable executable / thực thi di động; EXE, DLL, vv) chống lại chữ ký phần PE khi quét? False = Không; True = Vâng [Mặc định].
-- "pe_clamav"
-- "pe_custom"
-- "pe_mussel"
-
-Kiểm tra tập tin PE (portable executable / thực thi di động; EXE, DLL, vv) chống lại chữ ký kéo dài PE khi quét? False = Không; True = Vâng [Mặc định].
-- "pex_custom"
-- "pex_mussel"
 
 Kiểm tra tập tin PE (portable executable / thực thi di động; EXE, DLL, vv) chống lại chữ ký PE khi quét? False = Không; True = Vâng [Mặc định].
 - "exe_clamav"
-- "exe_custom"
 - "exe_mussel"
 
 Kiểm tra tập tin ELF chống lại chữ ký ELF khi quét? False = Không; True = Vâng [Mặc định].
 - "elf_clamav"
-- "elf_custom"
 - "elf_mussel"
 
 Kiểm tra tập tin Mach-O (OSX, vv) chống lại chữ ký Mach-O khi quét? False = Không; True = Vâng [Mặc định].
 - "macho_clamav"
-- "macho_custom"
 - "macho_mussel"
 
 Kiểm tra tập tin đồ họa chống lại chữ ký đồ họa khi quét? False = Không; True = Vâng [Mặc định].
 - "graphics_clamav"
-- "graphics_custom"
 - "graphics_mussel"
-
-Kiểm tra nội dung của kho lưu trữ chống lại siêu dữ liệu kho lưu trữ chữ ký khi quét? False = Không; True = Vâng [Mặc định].
-- "metadata_clamav"
-- "metadata_custom"
-- "metadata_mussel"
 
 Kiểm tra đối tượng OLE chống lại chữ ký OLE khi quét? False = Không; True = Vâng [Mặc định].
 - "ole_clamav"
-- "ole_custom"
 - "ole_mussel"
 
 Kiểm tra tên tập tin chống lại chữ ký tên tập tin khi quét? False = Không; True = Vâng [Mặc định].
 - "filenames_clamav"
-- "filenames_custom"
 - "filenames_mussel"
 
 Kiểm tra chống lại chữ ký email khi quét? False = Không; True = Vâng [Mặc định].
 - "mail_clamav"
-- "mail_custom"
 - "mail_mussel"
 
 Cho phép danh sách trắng cho tập tin cụ thể? False = Không; True = Vâng [Mặc định].
 - "whitelist_clamav"
-- "whitelist_custom"
 - "whitelist_mussel"
-
-Kiểm tra khối XML/XDP chống lại chữ ký XML/XDP khi quét? False = Không; True = Vâng [Mặc định].
-- "xmlxdp_clamav"
-- "xmlxdp_custom"
-- "xmlxdp_mussel"
 
 Kiểm tra chống lại chữ ký kéo dài phức tạp khi quét? False = Không; True = Vâng [Mặc định].
 - "coex_clamav"
-- "coex_custom"
 - "coex_mussel"
 
 Kiểm tra chống lại chữ ký PDF khi quét? False = Không; True = Vâng [Mặc định].
 - "pdf_clamav"
-- "pdf_custom"
 - "pdf_mussel"
 
 Kiểm tra chống lại chữ ký Shockwave khi quét? False = Không; True = Vâng [Mặc định].
 - "swf_clamav"
-- "swf_custom"
 - "swf_mussel"
-
-Tùy chọn cho chiều dài hạn chế chữ ký. Chỉ thay đổi này nếu bạn biết những gì bạn đang làm. SD = Chữ ký tiêu chuẩn. RX = Chữ ký cho PCRE (Perl Compatible Regular Expressions, hay "Regex"). FN = Chữ ký cho tên tập tin. Nếu bạn nhận thấy PHP vụ tai nạn khi phpMussel cố gắng để quét, cố gắng hạ thấp các giá trị "max". Nếu có thể và thuận tiện, cho tôi biết khi điều này xảy ra và các kết quả của bất cứ điều gì bạn cố gắng.
-- "fn_siglen_min"
-- "fn_siglen_max"
-- "rx_siglen_min"
-- "rx_siglen_max"
-- "sd_siglen_min"
-- "sd_siglen_max"
 
 "fail_silently"
 - phpMussel nên báo cáo khi tập tin chữ ký bị mất hay bị hỏng? Nếu `fail_silently` được vô hiệu hóa, tập tin bị mất hay bị hỏng sẽ được báo cáo khi quét, và nếu `fail_silently` được kích hoạt, tập tin bị mất hay bị hỏng sẽ bị bỏ qua, với báo cáo quét cho những tập tin mà không có bất kỳ vấn đề. Điều này thường cần được ở một mình trừ khi bạn gặp sự cố hay vấn đề tương tự. False = Không cho phép; True = Cho phép [Mặc định].
@@ -693,7 +506,7 @@ Phát hiện của tấn công tắc kè hoa: False = Tắt; True = Trên.
 "chameleon_to_pdf"
 - Tìm kiếm cho tập tin PDF mà có định danh sai.
 
-"archive_file_extensions" và "archive_file_extensions_wc"
+"archive_file_extensions"
 - Được công nhận mở rộng cho tập tin kho lưu trữ (định dạng là CSV; chỉ nên thêm hay loại bỏ khi có vấn đề xảy ra; loại bỏ không cần thiết có thể gây ra sai tích cực để xuất hiện cho tập tin kho lưu trữ, trong khi thêm không cần thiết sẽ trong bản chất danh sách trắng những gì bạn đang thêm từ phát hiện cụ tấn công; sửa đổi với cách thận trọng; cũng lưu ý rằng điều này không có tác dụng liên quan đến những gì kho lưu trữ có thể và không thể được phân tích ở nội dung cấp). Danh sách này, như là mặc định, liệt kê các định dạng sử dụng phổ biến nhất trên phần lớn các hệ thống và CMS, nhưng là cố tình không nhất thiết phải toàn diện.
 
 "general_commands"
@@ -803,13 +616,6 @@ Tất cả các chữ ký dựa MD5 tuân theo các định dạng:
 
 HASH là băm MD5 của toàn bộ tập tin, FILESIZE là tổng dung lượng tập tin và NAME là tên cho các chữ ký.
 
-####*CHỮ KÝ SIÊU DỮ LIỆU KHO LƯU TRỮ*
-Tất cả các chữ ký siêu dữ liệu kho lưu trữ tuân theo các định dạng:
-
-`NAME:FILESIZE:CRC32`
-
-NAME là tên cho các chữ ký, FILESIZE là tổng dung lượng (không nén) của một tập tin chứa trong kho lưu trữ và CRC32 là băm CRC32 của tập tin đó.
-
 ####*CHỮ KÝ PHẦN PE*
 Tất cả các chữ ký phần PE tuân theo các định dạng:
 
@@ -847,30 +653,28 @@ NAME là tên cho các chữ ký và HEX là một phân khúc thập lục phâ
 Bất kỳ cách thức biểu thức chính quy hiểu và xử lý một cách chính xác qua PHP cũng nên được hiểu hiểu và xử lý một cách chính xác bởi phpMussel và chữ ký của nó. Tuy nhiên, tôi muốn đề nghị lấy hết sức thận trọng khi viết chữ ký biểu thức chính quy mới, bởi vì, nếu bạn không hoàn toàn chắc chắn bạn đang làm gì vậy, có thể có kết quả rất bất thường hay bất ngờ. Nhìn vào các mã nguồn nếu bạn không hoàn toàn về bối cảnh rằng họ đang phân tích cú pháp. Ngoài ra, nhớ lại rằng tất cả mọi thứ (ngoại trừ tên tập tin, cú pháp, siêu dữ liệu kho lưu trữ và mẫu MD5) phải được mã hóa hệ thập lục phân!
 
 ####*NƠI ĐỂ ĐẶT CHỮ KÝ TÙY CHỈNH?*
-Chỉ đặt chữ ký tùy chỉnh trong tập tin có nghĩa là cho ký tùy chỉnh trong. Chúng chứa "_custom" trong tên tập tin của họ. Bạn nên tránh chỉnh sửa các tập tin chữ ký mặc định, trừ khi bạn biết chính xác những gì bạn đang làm, bởi vì, ngoài việc thực hành tốt nói chung và ngoài việc giúp bạn phân biệt giữa chữ ký của riêng bạn và các tập tin chữ ký mặc định, rất tốt để chỉ chỉnh sửa các tập tin có nghĩa đó là cho chỉnh sửa, bởi vì giả mạo với các tập tin chữ ký mặc định có thể gây ra cho họ ngừng làm việc một cách chính xác, bởi vì các tập tin "map": Họ nói với phpMussel nơi để tìm trong các tập tin chữ ký cho chữ ký, và họ có thể trở thành không đồng bộ nếu giả mạo. Bạn có thể đặt hầu như bất cứ điều gì bạn muốn vào chữ ký tùy chỉnh của bạn,miễn là bạn làm theo cú pháp chính xác. Tuy nhiên, hãy cẩn thận để kiểm tra chữ ký mới cho giả tích cực trước nếu bạn có ý định chia sẻ hoặc sử dụng chúng trong một môi trường sống.
 
 ####*GIẢI THÍCH CHỮ KÝ*
 Sau đây là một danh sách các loại chữ ký được sử dụng bởi phpMussel:
-- "Chữ ký ASCII bình thường" (ascii_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
-- "Chữ ký kéo dài phức tạp" (coex_*). Chữ ký của hỗn hợp kiểu.
-- "Chữ ký ELF" (elf_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin ELF.
-- "Chữ ký PE" (exe_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác định như các định dạng PE.
-- "Chữ ký cho tên tập tin" (filenames_*). Kiểm tra đối với các tên tập tin của mỗi tập tin dự định để quét.
-- "Chữ ký chung" (general_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
-- "Chữ ký đồ họa" (graphics_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin công nhận đồ họa.
+- "Chữ ký ASCII bình thường". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
+- "Chữ ký kéo dài phức tạp". Chữ ký của hỗn hợp kiểu.
+- "Chữ ký ELF". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin ELF.
+- "Chữ ký PE". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác định như các định dạng PE.
+- "Chữ ký cho tên tập tin". Kiểm tra đối với các tên tập tin của mỗi tập tin dự định để quét.
+- "Chữ ký chung". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
+- "Chữ ký đồ họa". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin công nhận đồ họa.
 - "Lệnh chung" (hex_general_commands.csv). Kiểm tra đối với các nội dung của mỗi tập tin không trong danh sách trắng và nhắm mục tiêu cho quét.
-- "Chữ ký HTML bình thường" (html_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin HTML.
-- "Chữ ký Mach-O" (macho_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin Mach-O.
-- "Chữ ký email" (mail_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin EML.
-- "Chữ ký dựa MD5" (md5_*). Kiểm tra đối với các băm MD5 của nội dung và các kích thước tập tin của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
-- "Chữ ký siêu dữ liệu kho lưu trữ" (metadata_*). Kiểm tra đối với các băm CRC32 và kích thước của tập tin đầu tiên chứa bên trong mỗi kho lưu trữ không trong danh sách trắng và nhắm mục tiêu cho quét.
-- "Chữ ký OLE" (ole_*). Kiểm tra đối với các nội dung của mỗi OLE không thuộc danh sách trắng và dự định để quét.
-- "Chữ ký PDF" (pdf_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin PDF.
-- "Chữ ký phần PE" (pe_*). Kiểm tra đối với các băm MD5 và các kích thước của mỗi phần của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác định như các định dạng PE.
-- "Chữ ký kéo dài PE" (pex_*). Kiểm tra đối với băm MD5 và kích thước của các biến trong mỗi tập tin không trong danh sách trắng, nhắm mục tiêu cho quét và xác định như các định dạng PE.
-- "Chữ ký Shockwave" (swf_*). Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin Shockwave.
-- "Chữ ký danh sách trắng" (whitelist_*). Kiểm tra đối với các băm MD5 các nội dung và kích thước tập tin của mỗi tập tin nhắm mục tiêu cho quét. Tập tin xác định sẽ được miễn dịch để được xác định bởi các loại chữ ký đề cập trong nhập danh sách trắng của họ.
-- "Chữ ký XML/XDP" (xmlxdp_*). Kiểm tra đối với bất kỳ XML/XDP tìm thấy trong bất kỳ tập tin không trong danh sách trắng và nhắm mục tiêu cho quét.
+- "Chữ ký HTML bình thường". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin HTML.
+- "Chữ ký Mach-O". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin Mach-O.
+- "Chữ ký email". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin EML.
+- "Chữ ký dựa MD5". Kiểm tra đối với các băm MD5 của nội dung và các kích thước tập tin của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
+
+- "Chữ ký OLE". Kiểm tra đối với các nội dung của mỗi OLE không thuộc danh sách trắng và dự định để quét.
+- "Chữ ký PDF". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin PDF.
+- "Chữ ký phần PE". Kiểm tra đối với các băm MD5 và các kích thước của mỗi phần của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác định như các định dạng PE.
+- "Chữ ký kéo dài PE". Kiểm tra đối với băm MD5 và kích thước của các biến trong mỗi tập tin không trong danh sách trắng, nhắm mục tiêu cho quét và xác định như các định dạng PE.
+- "Chữ ký Shockwave". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin Shockwave.
+- "Chữ ký danh sách trắng". Kiểm tra đối với các băm MD5 các nội dung và kích thước tập tin của mỗi tập tin nhắm mục tiêu cho quét. Tập tin xác định sẽ được miễn dịch để được xác định bởi các loại chữ ký đề cập trong nhập danh sách trắng của họ.
 (Hãy lưu ý bất kỳ của các chữ ký có thể bị vô hiệu hóa thông qua `config.ini`).
 
 ---
@@ -974,4 +778,4 @@ phpMussel chặn một tập tin | __Sai tích cực__ | Đúng tích cực (suy
 ---
 
 
-Lần cuối cập nhật: 4 Tháng Mười Hai 2016 (2016.12.04).
+Lần cuối cập nhật: 10 Tháng Hai 2017 (2017.02.10).

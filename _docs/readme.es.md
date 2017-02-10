@@ -188,14 +188,10 @@ Archivo | Descripción
 /_testfiles/graphics_standard_testfile.gif | Prueba archivo para probando phpMussel gráficas firmas.
 /_testfiles/html_standard_testfile.html | Prueba archivo para probando phpMussel normalizados HTML firmas.
 /_testfiles/md5_testfile.txt | Prueba archivo para probando phpMussel MD5 firmas.
-/_testfiles/metadata_testfile.tar | Prueba archivo para probando phpMussel metadatos firmas y para probando TAR archivo apoyo en su sistema.
-/_testfiles/metadata_testfile.txt.gz | Prueba archivo para probando phpMussel metadatos firmas y para probando GZ archivo apoyo en su sistema.
-/_testfiles/metadata_testfile.zip | Prueba archivo para probando phpMussel metadatos firmas y para probando ZIP archivo apoyo en su sistema.
 /_testfiles/ole_testfile.ole | Prueba archivo para probando phpMussel OLE firmas.
 /_testfiles/pdf_standard_testfile.pdf | Prueba archivo para probando phpMussel PDF firmas.
 /_testfiles/pe_sectional_testfile.exe | Prueba archivo para probando phpMussel PE Secciónal firmas.
 /_testfiles/swf_standard_testfile.swf | Prueba archivo para probando phpMussel SWF firmas.
-/_testfiles/xdp_standard_testfile.xdp | Prueba archivo para probando phpMussel XML/XDP firmas.
 /vault/ | Vault directorio (contiene varios archivos).
 /vault/cache/ | Cache directorio (para los datos temporal).
 /vault/cache/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
@@ -253,134 +249,16 @@ Archivo | Descripción
 /vault/quarantine/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/signatures/ | Directorio de firmas (contiene los archivos de firmas).
 /vault/signatures/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
-/vault/signatures/ascii_clamav_regex.cvd | Archivo para normalizados ASCII firmas.
-/vault/signatures/ascii_clamav_regex.map | Archivo para normalizados ASCII firmas.
-/vault/signatures/ascii_clamav_standard.cvd | Archivo para normalizados ASCII firmas.
-/vault/signatures/ascii_clamav_standard.map | Archivo para normalizados ASCII firmas.
-/vault/signatures/ascii_custom_regex.cvd | Archivo para normalizados ASCII firmas.
-/vault/signatures/ascii_custom_standard.cvd | Archivo para normalizados ASCII firmas.
-/vault/signatures/ascii_mussel_regex.cvd | Archivo para normalizados ASCII firmas.
-/vault/signatures/ascii_mussel_standard.cvd | Archivo para normalizados ASCII firmas.
-/vault/signatures/coex_clamav.cvd | Archivo para complejos extendidas firmas.
-/vault/signatures/coex_custom.cvd | Archivo para complejos extendidas firmas.
-/vault/signatures/coex_mussel.cvd | Archivo para complejos extendidas firmas.
-/vault/signatures/elf_clamav_regex.cvd | Archivo para ELF firmas.
-/vault/signatures/elf_clamav_regex.map | Archivo para ELF firmas.
-/vault/signatures/elf_clamav_standard.cvd | Archivo para ELF firmas.
-/vault/signatures/elf_clamav_standard.map | Archivo para ELF firmas.
-/vault/signatures/elf_custom_regex.cvd | Archivo para ELF firmas.
-/vault/signatures/elf_custom_standard.cvd | Archivo para ELF firmas.
-/vault/signatures/elf_mussel_regex.cvd | Archivo para ELF firmas.
-/vault/signatures/elf_mussel_standard.cvd | Archivo para ELF firmas.
-/vault/signatures/exe_clamav_regex.cvd | Archivo para Portátil Ejecutable firmas.
-/vault/signatures/exe_clamav_regex.map | Archivo para Portátil Ejecutable firmas.
-/vault/signatures/exe_clamav_standard.cvd | Archivo para Portátil Ejecutable firmas.
-/vault/signatures/exe_clamav_standard.map | Archivo para Portátil Ejecutable firmas.
-/vault/signatures/exe_custom_regex.cvd | Archivo para Portátil Ejecutable firmas.
-/vault/signatures/exe_custom_standard.cvd | Archivo para Portátil Ejecutable firmas.
-/vault/signatures/exe_mussel_regex.cvd | Archivo para Portátil Ejecutable firmas.
-/vault/signatures/exe_mussel_standard.cvd | Archivo para Portátil Ejecutable firmas.
-/vault/signatures/filenames_clamav.cvd | Archivo para archivo nombre firmas.
-/vault/signatures/filenames_custom.cvd | Archivo para archivo nombre firmas.
-/vault/signatures/filenames_mussel.cvd | Archivo para archivo nombre firmas.
-/vault/signatures/general_clamav_regex.cvd | Archivo para generales firmas.
-/vault/signatures/general_clamav_regex.map | Archivo para generales firmas.
-/vault/signatures/general_clamav_standard.cvd | Archivo para generales firmas.
-/vault/signatures/general_clamav_standard.map | Archivo para generales firmas.
-/vault/signatures/general_custom_regex.cvd | Archivo para generales firmas.
-/vault/signatures/general_custom_standard.cvd | Archivo para generales firmas.
-/vault/signatures/general_mussel_regex.cvd | Archivo para generales firmas.
-/vault/signatures/general_mussel_standard.cvd | Archivo para generales firmas.
-/vault/signatures/graphics_clamav_regex.cvd | Archivo para gráficas firmas.
-/vault/signatures/graphics_clamav_regex.map | Archivo para gráficas firmas.
-/vault/signatures/graphics_clamav_standard.cvd | Archivo para gráficas firmas.
-/vault/signatures/graphics_clamav_standard.map | Archivo para gráficas firmas.
-/vault/signatures/graphics_custom_regex.cvd | Archivo para gráficas firmas.
-/vault/signatures/graphics_custom_standard.cvd | Archivo para gráficas firmas.
-/vault/signatures/graphics_mussel_regex.cvd | Archivo para gráficas firmas.
-/vault/signatures/graphics_mussel_standard.cvd | Archivo para gráficas firmas.
 /vault/signatures/hex_general_commands.csv | Hex-codificado CSV de generales comandos detecciones opcionalmente utilizado por phpMussel.
-/vault/signatures/html_clamav_regex.cvd | Archivo para normalizados HTML firmas.
-/vault/signatures/html_clamav_regex.map | Archivo para normalizados HTML firmas.
-/vault/signatures/html_clamav_standard.cvd | Archivo para normalizados HTML firmas.
-/vault/signatures/html_clamav_standard.map | Archivo para normalizados HTML firmas.
-/vault/signatures/html_custom_regex.cvd | Archivo para normalizados HTML firmas.
-/vault/signatures/html_custom_standard.cvd | Archivo para normalizados HTML firmas.
-/vault/signatures/html_mussel_regex.cvd | Archivo para normalizados HTML firmas.
-/vault/signatures/html_mussel_standard.cvd | Archivo para normalizados HTML firmas.
-/vault/signatures/macho_clamav_regex.cvd | Archivo para Mach-O firmas.
-/vault/signatures/macho_clamav_regex.map | Archivo para Mach-O firmas.
-/vault/signatures/macho_clamav_standard.cvd | Archivo para Mach-O firmas.
-/vault/signatures/macho_clamav_standard.map | Archivo para Mach-O firmas.
-/vault/signatures/macho_custom_regex.cvd | Archivo para Mach-O firmas.
-/vault/signatures/macho_custom_standard.cvd | Archivo para Mach-O firmas.
-/vault/signatures/macho_mussel_regex.cvd | Archivo para Mach-O firmas.
-/vault/signatures/macho_mussel_standard.cvd | Archivo para Mach-O firmas.
-/vault/signatures/mail_clamav_regex.cvd | Archivo para mail firmas.
-/vault/signatures/mail_clamav_regex.map | Archivo para mail firmas.
-/vault/signatures/mail_clamav_standard.cvd | Archivo para mail firmas.
-/vault/signatures/mail_clamav_standard.map | Archivo para mail firmas.
-/vault/signatures/mail_custom_regex.cvd | Archivo para mail firmas.
-/vault/signatures/mail_custom_standard.cvd | Archivo para mail firmas.
-/vault/signatures/mail_mussel_regex.cvd | Archivo para mail firmas.
-/vault/signatures/mail_mussel_standard.cvd | Archivo para mail firmas.
-/vault/signatures/md5_clamav.cvd | Archivo para MD5 basadas firmas.
-/vault/signatures/md5_custom.cvd | Archivo para MD5 basadas firmas.
-/vault/signatures/md5_mussel.cvd | Archivo para MD5 basadas firmas.
-/vault/signatures/metadata_clamav.cvd | Archivo para archivo metadatos firmas.
-/vault/signatures/metadata_custom.cvd | Archivo para archivo metadatos firmas.
-/vault/signatures/metadata_mussel.cvd | Archivo para archivo metadatos firmas.
-/vault/signatures/ole_clamav_regex.cvd | Archivo para OLE firmas.
-/vault/signatures/ole_clamav_regex.map | Archivo para OLE firmas.
-/vault/signatures/ole_clamav_standard.cvd | Archivo para OLE firmas.
-/vault/signatures/ole_clamav_standard.map | Archivo para OLE firmas.
-/vault/signatures/ole_custom_regex.cvd | Archivo para OLE firmas.
-/vault/signatures/ole_custom_standard.cvd | Archivo para OLE firmas.
-/vault/signatures/ole_mussel_regex.cvd | Archivo para OLE firmas.
-/vault/signatures/ole_mussel_standard.cvd | Archivo para OLE firmas.
-/vault/signatures/pdf_clamav_regex.cvd | Archivo para PDF firmas.
-/vault/signatures/pdf_clamav_regex.map | Archivo para PDF firmas.
-/vault/signatures/pdf_clamav_standard.cvd | Archivo para PDF firmas.
-/vault/signatures/pdf_clamav_standard.map | Archivo para PDF firmas.
-/vault/signatures/pdf_custom_regex.cvd | Archivo para PDF firmas.
-/vault/signatures/pdf_custom_standard.cvd | Archivo para PDF firmas.
-/vault/signatures/pdf_mussel_regex.cvd | Archivo para PDF firmas.
-/vault/signatures/pdf_mussel_standard.cvd | Archivo para PDF firmas.
-/vault/signatures/pex_custom.cvd | Archivo para PE extendidas firmas.
-/vault/signatures/pex_mussel.cvd | Archivo para PE extendidas firmas.
-/vault/signatures/pe_clamav.cvd | Archivo para PE Secciónal firmas.
-/vault/signatures/pe_custom.cvd | Archivo para PE Secciónal firmas.
-/vault/signatures/pe_mussel.cvd | Archivo para PE Secciónal firmas.
-/vault/signatures/swf_clamav_regex.cvd | Archivo para Shockwave firmas.
-/vault/signatures/swf_clamav_regex.map | Archivo para Shockwave firmas.
-/vault/signatures/swf_clamav_standard.cvd | Archivo para Shockwave firmas.
-/vault/signatures/swf_clamav_standard.map | Archivo para Shockwave firmas.
-/vault/signatures/swf_custom_regex.cvd | Archivo para Shockwave firmas.
-/vault/signatures/swf_custom_standard.cvd | Archivo para Shockwave firmas.
-/vault/signatures/swf_mussel_regex.cvd | Archivo para Shockwave firmas.
-/vault/signatures/swf_mussel_standard.cvd | Archivo para Shockwave firmas.
 /vault/signatures/switch.dat | Esto controla y establece ciertas variables.
-/vault/signatures/urlscanner.cvd | Archivo para URL escáner firmas.
-/vault/signatures/whitelist_clamav.cvd | Archivo específico whitelist.
-/vault/signatures/whitelist_custom.cvd | Archivo específico whitelist.
-/vault/signatures/whitelist_mussel.cvd | Archivo específico whitelist.
-/vault/signatures/xmlxdp_clamav_regex.cvd | Archivo para XML/XDP firmas.
-/vault/signatures/xmlxdp_clamav_regex.map | Archivo para XML/XDP firmas.
-/vault/signatures/xmlxdp_clamav_standard.cvd | Archivo para XML/XDP firmas.
-/vault/signatures/xmlxdp_clamav_standard.map | Archivo para XML/XDP firmas.
-/vault/signatures/xmlxdp_custom_regex.cvd | Archivo para XML/XDP firmas.
-/vault/signatures/xmlxdp_custom_standard.cvd | Archivo para XML/XDP firmas.
-/vault/signatures/xmlxdp_mussel_regex.cvd | Archivo para XML/XDP firmas.
-/vault/signatures/xmlxdp_mussel_standard.cvd | Archivo para XML/XDP firmas.
 /vault/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/cli.php | Módulo de la CLI.
+/vault/components.dat | Contiene información relativa a los diversos componentes de phpMussel; Utilizado por la página de actualizaciones proporcionada por el front-end.
 /vault/config.ini.RenameMe | Archivo de configuración; Contiene todas las opciones de configuración para phpMussel, instruyendo para qué hacer y cómo operar correctamente (cambiar el nombre para activar).
 /vault/config.php | Módulo de configuración.
-/vault/core.dat | Contiene información relativa a los componentes L10N de phpMussel; Utilizado por la página de actualizaciones proporcionada por el front-end.
 /vault/frontend.php | Módulo del front-end.
 /vault/functions.php | Archivo de funciones (esencial).
 /vault/greylist.csv | CSV de las firmas en la Greylist indicando para phpMussel las firmas que deben ser ignorados (archivo será recreado automáticamente si eliminado).
-/vault/l10n.dat | Contiene información relativa a los componentes principales de phpMussel; Utilizado por la página de actualizaciones proporcionada por el front-end.
 /vault/lang.php | Lingüísticos datos.
 /vault/php5.4.x.php | Polyfills para PHP 5.4.X (necesario para la retrocompatibilidad de PHP 5.4.X; seguro para eliminar por versiones más recientes de PHP).
 ※ /vault/scan_kills.txt | Un registro de todos archivos subidos bloqueado/asesinado por phpMussel.
@@ -401,23 +279,6 @@ Archivo | Descripción
 
 ※ Nombre del archivo puede variar basado de las estipulaciones de configuración (en `config.ini`).
 
-####*RESPECTO A FIRMAS ARCHIVOS*
-CVD es un acrónimo de "ClamAV Virus Definiciones", en referencia tanto a cómo ClamAV se refiere a sus propias firmas y al uso de esas firmas para phpMussel; Los archivos que terminan en "CVD" contienen firmas.
-
-Los archivos que terminan en "MAP" instruyen phpMussel con respecto a las firmas que debe y no debe utilizarse para individuales escaneos; No todas las firmas se necesariamente requieren para cada individual escaneo, así, phpMussel utiliza mapas de los firmas archivos para acelerar el escaneo proceso (un proceso que, alternativamente, sería extremadamente lento y tedioso).
-
-Firmas archivos marcados con "_regex" contienen firmas utilizando regulares expresiones patrones (regex).
-
-Firmas archivos marcados con "_standard" contienen firmas que específicamente no utiliza ningún tipo de patrones.
-
-Firmas archivos marcados con no "_regex" ni "_standard" será como uno o el otro, pero no ambos (consulte la formatos de firmas sección de este archivo README para la documentación y específicos detalles).
-
-Firmas archivos marcados con "_clamav" contienen firmas que se obtenido enteramente de la base de datos de ClamAV (GNU/GPL).
-
-Firmas archivos marcados con "_custom", por predefinido, no contienen cualquiera firmas; Existen estos dichos archivos para darle un lugar para colocar sus propios personalizadas firmas, si viene con cualquiera de su propia.
-
-Firmas archivos marcados con "_mussel" contienen firmas que se obtenido específicamente no desde ClamAV, firmas que, en general, uno u otro, yo mismo he escrito y/o basado en la información obtenida de diversas fuentes.
-
 ---
 
 
@@ -426,13 +287,6 @@ La siguiente es una lista de variables encuentran en la `config.ini` configuraci
 
 ####"general" (Categoría)
 General configuración para phpMussel.
-
-"script_password"
-- Por la conveniencia, phpMussel permitirá ciertas funciones para ser desencadenado manualmente a través de POST, GET y QUERY. Pero dicho esto, como medida de seguridad, para hacer esto, phpMussel esperará una contraseña serán incluido con el comando, como para asegurarse de que usted es, y no otra persona, intentando desencadenar manualmente estas funciones. Definir `script_password` a cualquier contraseña que desea utilizar. Si no contraseña se define, desencadenando manualmente desactivará por predefinido. Utilice algo que recordará pero que se difícil de adivinar para otros.
-- No tiene influencia en CLI modo.
-
-"logs_password"
-- El mismo como `script_password`, pero para ver el contenido de `scan_log` y `scan_kills`. Tener contraseñas separado puede ser útil si usted desea dar alguna otra persona acceso a un conjunto de funciones, pero no el otro. - No tiene influencia en CLI modo.
 
 "cleanup"
 - Despejar la variables y la caché de la script después la script ejecución? False = No; True = Sí [Predefinido]. Si usted no está utilizando la script más allá de inicial escaneando de archivos subidos, debe definir como `true` (sí), para minimizar el uso de memoria. Si usted está utilizando la script para propósitos más allá de inicial escaneando de archivos subidos, debe definir como `false` (no), para evitar recargar innecesariamente duplicados datos en la memoria. En general práctica, probablemente debería definirse como `true`, pero, si usted hace esto, usted no será capaz de utilizar la script para cualquier cosa otro que de escaneando archivos subidos.
@@ -473,12 +327,6 @@ General configuración para phpMussel.
 "lang"
 - Especifique la predefinido del lenguaje para phpMussel.
 
-"lang_override"
-- Especifique si phpMussel debería, cuando sea posible, reemplazar la especificación del lenguaje con el preferencia del lenguaje declarada por peticiones entrantes (HTTP_ACCEPT_LANGUAGE). False = No [Predefinido]; True = Sí.
-
-"lang_acceptable"
-- La `lang_acceptable` directiva instruye a phpMussel qué idiomas puede ser aceptada por la script de parte de `lang` o de parte de `HTTP_ACCEPT_LANGUAGE`. Esta directiva **SÓLO** debe ser modificada si va a añadir sus propios personalizados idiomas archivos o retirando por la fuerza los idiomas archivos. La directiva es una cadena separada por comas de los códigos utilizados por los idiomas aceptados por la script.
-
 "quarantine_key"
 - phpMussel es capaz de poner en cuarentena intentados archivos subidos en aisladamente dentro de la phpMussel vault, si esto es algo que usted quiere que haga. Usuarios casual de phpMussel de los cuales simplemente desean proteger sus website o hosting ambiente sin tener ningún interés con analizando profundamente cualquier marcados intentados archivos subidos debería dejar esta funcionalidad desactivado, pero cualquier usuarios interesados en más análisis de marcados intentados archivos subidos para la investigación de malware o para cosas similares debe activar esta funcionalidad. Cuarentenando de marcados intentados archivos subidos a veces puede también ayudar en la depuración de falsos positivos, si esto es algo que ocurre con frecuencia para usted. Para desactivar la cuarentena funcionalidad, simplemente dejar la directiva `quarantine_key` vacío, o borrar el contenidos de que directiva si no está ya vacío. Para activar la cuarentena funcionalidad, entrar algún valor en la directiva. La `quarantine_key` es un importante característica de seguridad de la cuarentena funcionalidad requiere como un medio para la prevención de la explotación de la cuarentena funcionalidad por potenciales atacantes y como un medio de evitar cualquier potencial ejecución de los datos almacenados dentro la cuarentena. La `quarantine_key` debería ser tratado de la misma manera que sus contraseñas: El más grande es el mejor, y guárdela bien. Para un mejor efecto, utilice conjuntamente con `delete_on_sight`.
 
@@ -500,113 +348,79 @@ General configuración para phpMussel.
 "disable_frontend"
 - Desactivar el acceso front-end? El acceso front-end puede hacer phpMussel más manejable, pero también puede ser un riesgo de seguridad. Se recomienda administrar phpMussel a través del back-end cuando sea posible, pero el acceso front-end se proporciona para cuando no es posible. Mantenerlo desactivado a menos que lo necesite. False = Activar el acceso front-end; True = Desactivar el acceso front-end [Predefinido].
 
+"max_login_attempts"
+- Número máximo de intentos de login (front-end). Predefinido = 5.
+
+"FrontEndLog"
+- Archivo para registrar intentos de login al front-end. Especificar el nombre del archivo, o dejar en blanco para desactivar.
+
 ####"signatures" (Categoría)
 Configuración de firmas.
-- %%%_clamav = ClamAV firmas (ambos mains y daily).
-- %%%_custom = Sus personalizadas firmas (si usted ha escritos algunas).
-- %%%_mussel = phpMussel firmas incluidos en su corriente firmas conjunto que no son de ClamAV.
 
-Cotejar contra MD5 firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "md5_clamav"
-- "md5_custom"
-- "md5_mussel"
+"MD5"
+- Cotejar contra MD5 firmas cuando escaneando? Si es así, especifique los nombres de los archivos de firmas a utilizar, delimitado por comas.
+
+"PE_Sectional"
+- Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE Secciónal firmas cuando escaneando? Si es así, especifique los nombres de los archivos de firmas a utilizar, delimitado por comas.
+
+"PE_Extended"
+- Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE extendidas firmas cuando escaneando? Si es así, especifique los nombres de los archivos de firmas a utilizar, delimitado por comas.
 
 Cotejar contra genéricas firmas cuando escaneando? False = No; True = Sí [Predefinido].
 - "general_clamav"
-- "general_custom"
 - "general_mussel"
 
 Cotejar contra normalizados ASCII firmas cuando escaneando? False = No; True = Sí [Predefinido].
 - "ascii_clamav"
-- "ascii_custom"
 - "ascii_mussel"
 
 Cotejar contra normalizados HTML firmas cuando escaneando? False = No; True = Sí [Predefinido].
 - "html_clamav"
-- "html_custom"
 - "html_mussel"
-
-Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE Secciónal firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "pe_clamav"
-- "pe_custom"
-- "pe_mussel"
-
-Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE extendidas firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "pex_custom"
-- "pex_mussel"
 
 Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE firmas cuando escaneando? False = No; True = Sí [Predefinido].
 - "exe_clamav"
-- "exe_custom"
 - "exe_mussel"
 
 Cotejar ELF archivos con ELF firmas cuando escaneando? False = No; True = Sí [Predefinido].
 - "elf_clamav"
-- "elf_custom"
 - "elf_mussel"
 
 Cotejar Mach-O archivos (OSX, etc) con Mach-O firmas cuando escaneando? False = No; True = Sí [Predefinido].
 - "macho_clamav"
-- "macho_custom"
 - "macho_mussel"
 
 Cotejar gráficos archivos con firmas basado en gráficos cuando escaneando? False = No; True = Sí [Predefinido].
 - "graphics_clamav"
-- "graphics_custom"
 - "graphics_mussel"
-
-Cotejar contenidos de compactados archivos con compactados archivos metadatos firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "metadata_clamav"
-- "metadata_custom"
-- "metadata_mussel"
 
 Cotejar OLE objetos con OLE firmas cuando escaneando? False = No; True = Sí [Predefinido].
 - "ole_clamav"
-- "ole_custom"
 - "ole_mussel"
 
 Cotejar nombres de archivos con firmas basado en nombres cuando escaneando? False = No; True = Sí [Predefinido].
 - "filenames_clamav"
-- "filenames_custom"
 - "filenames_mussel"
 
 Cotejar contra email firmas cuando escaneando? False = No; True = Sí [Predefinido].
 - "mail_clamav"
-- "mail_custom"
 - "mail_mussel"
 
 Activar archivo específica whitelist? False = No; True = Sí [Predefinido].
 - "whitelist_clamav"
-- "whitelist_custom"
 - "whitelist_mussel"
-
-Cotejar XML/XDP trozos con XML/XDP firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "xmlxdp_clamav"
-- "xmlxdp_custom"
-- "xmlxdp_mussel"
 
 Cotejar contra complejos extendidas firmas cuando escaneando? False = No; True = Sí [Predefinido].
 - "coex_clamav"
-- "coex_custom"
 - "coex_mussel"
 
 Cotejar contra PDF firmas cuando escaneando? False = No; True = Sí [Predefinido].
 - "pdf_clamav"
-- "pdf_custom"
 - "pdf_mussel"
 
 Cotejar contra Shockwave firmas cuando escaneando? False = No; True = Sí [Predefinido].
 - "swf_clamav"
-- "swf_custom"
 - "swf_mussel"
-
-Firma cotejando longitud limitando opciones. Sólo cambiarlos si sabes lo que estás haciendo. SD = Estándar firmas. RX = PCRE (Perl Compatibles Regulares Expresiones, o "Regex") firmas. FN = Firmas basados en nombre de archivos. Si usted notar PHP estrellarse cuando phpMussel intentar escanear, intente reducir estos "max" valores. Si es posible y conveniente, avísame cuando esto ocurre y los resultados de lo que intentan.
-- "fn_siglen_min"
-- "fn_siglen_max"
-- "rx_siglen_min"
-- "rx_siglen_max"
-- "sd_siglen_min"
-- "sd_siglen_max"
 
 "fail_silently"
 - Debe phpMussel informan cuando los firmas archivos están desaparecidos o dañados? Si `fail_silently` está desactivado, desaparecidos y dañados archivos será reportado cuando escaneando, y si `fail_silently` está activado, desaparecidos y dañados archivos será ignorado, con escaneando reportando para aquellos archivos que no hay cualquier problemas. Esto generalmente debe ser dejar sola a menos que usted está experimentando estrellarse o problemas similares. False = Desactivado; True = Activado [Predefinido].
@@ -670,7 +484,7 @@ General configuración para el manejo de archivos.
 - Detectar y bloquear compactados archivos encriptados? Debido phpMussel no es capaz de escanear el contenido de los compactados archivos encriptados, es posible que este puede ser empleado por un atacante como un medio de evitando phpMussel, antivirus escáneres y otras protecciones. Instruir phpMussel para bloquear cualquier compactado archivo que se descubre es encriptado potencialmente podría ayudar a reducir el riesgo asociado a estos tales posibilidades. False = No; True = Sí [Predefinido].
 
 ####"attack_specific" (Categoría)
-Configuración para ataque específicas detecciones (no basado en CVDs).
+Configuración para ataque específicas detecciones.
 
 Camaleón ataque detección: False = Desactivado; True = Activado.
 
@@ -692,7 +506,7 @@ Camaleón ataque detección: False = Desactivado; True = Activado.
 "chameleon_to_pdf"
 - Buscar para PDF archivos cuyo mágicos números son incorrectas.
 
-"archive_file_extensions" y "archive_file_extensions_wc"
+"archive_file_extensions"
 - Reconocido compactado archivo extensiones (formato es CSV; sólo debe agregar o eliminar cuando problemas ocurrir; eliminando innecesariamente puede causar falsos positivos a aparecer para compactados archivos, mientras añadiendo innecesariamente hará esencialmente whitelist que cuales eres añadiendo desde ataque específica detección; modificar con precaución; También notar que esto no tiene efecto en aquellos compactados archivos que pueden y no pueden ser analizado a contenido nivel). La lista, como es a predefinición, describe los formatos más comúnmente utilizados a través de la mayoría de sistemas y CMS, pero intencionalmente no es necesariamente exhaustiva.
 
 "general_commands"
@@ -802,13 +616,6 @@ Todos MD5 firmas seguir el formato:
 
 Donde HASH es el hash MD5 de un entero archivo, TAMAÑO es el total tamaño de eso archivo y NOMBRE es el nombre a citar para esa firma.
 
-####*COMPACTADOS ARCHIVOS METADATOS FIRMAS*
-Donde compactados archivos metadatos firmas seguir el formato:
-
-`NOMBRE:TAMAÑO:CRC32`
-
-Donde NOMBRE es el nombre a citar para esa firma, TAMAÑO es el total tamaño (sin comprimir) de un archivo contenido dentro el compactado archivo y CRC32 es el CRC32 suma de comprobación de eso contenido archivo.
-
 ####*PE SECCIÓNAL FIRMAS*
 Todos PE Secciónal firmas seguir el formato:
 
@@ -846,30 +653,28 @@ Donde NOMBRE es el nombre a citar para esa firma y HEX es un hexadecimal codific
 Cualquier forma de regex entendido y correctamente procesado por PHP también debe entenderse y procesado correctamente por phpMussel y sus firmas. Pero, yo sugeriría tomar mucho cuidado cuando escribiendo nuevas firmas basado en regex, porque, si no estás del todo seguro de lo que estás haciendo, puede haber altamente irregulares e/o inesperados resultados. Mirar el código fuente para phpMussel si no estás del todo seguro sobre el contexto de que las regex declaraciones son procesado. También, recordar que todos los patrones (con excepción para nombre de archivo, compactado archivo metadato y MD5 patrones) debe ser hexadecimal codificado (con excepción de la patrón sintaxis)!
 
 ####*DONDE PONER PERSONALIZADAS FIRMAS?*
-Sólo poner personalizadas firmas en esos archivos destinados para personalizadas firmas. Estos archivos deben contener "_custom" en sus nombres. También debe evitar editando de los predefinidos firmas archivos que no son nombrado como tal, a menos que sepa exactamente lo que está haciendo, porque, además de ser una buena práctica en general y además de desde ayudando distinguir entre sus propias firmas y la predefinido firmas incluido con phpMussel, que es bueno para mantener para editando sólo los archivos destinados para editando, porque la manipulación de los predefinidos firmas archivos puede causarlos cesar funcionando correctamente, por razón del "maps" archivos: Los "maps" archivos instruir phpMussel donde en los firmas archivos para mirar por firmas requeridas por phpMussel como por cuando requerido, y estos mapas pueden convertirse fuera de sincronización con sus asociados firmas archivos si esos firmas archivos están manipulados. Usted puede poner más o menos lo que quieras en sus personalizadas firmas, siempre y cuando usted sigue la sintaxis correcta. Pero, tener cuidado para probar nuevas firmas para falsos positivos de antemano si tiene intención de compartirlas o utilizarlos en un real entorno.
 
 ####*FIRMA DESGLOSE*
 El siguiente es el desglose de los tipos de firmas utilizado por phpMussel:
-- "Firmas ASCII normalizados" (ascii_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas complejos extendidas" (coex_*). Mixtas tipos de firmas para cotejar/comprobar.
-- "Firmas ELF" (elf_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato ELF.
-- "Firmas portátil ejecutable" (exe_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato PE.
-- "Firmas basadas en las nombres del archivos" (filenames_*). Cotejado contra los nombres de archivos destinado para escaneando.
-- "Firmas generales" (general_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas gráficas" (graphics_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como de un formato gráfico conocido.
+- "Firmas ASCII normalizados". Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas complejos extendidas". Mixtas tipos de firmas para cotejar/comprobar.
+- "Firmas ELF". Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato ELF.
+- "Firmas portátil ejecutable". Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato PE.
+- "Firmas basadas en las nombres del archivos". Cotejado contra los nombres de archivos destinado para escaneando.
+- "Firmas generales". Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas gráficas". Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como de un formato gráfico conocido.
 - "Generales comandos" (hex_general_commands.csv). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas HTML normalizados" (html_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato HTML.
-- "Firmas Mach-O" (macho_*). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato Mach-O.
-- "Firmas email" (mail_*). Cotejado contra los contenidos de cada EML archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas MD5" (md5_*). Cotejado contra el hash MD5 de los contenidos y el tamaño de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas compactados archivos metadatos" (metadata_*). Cotejado contra el hash CRC32 y tamaño del inicial archivo contenido en el interior de cualquier que no está en la whitelist que es destinado para escaneando.
-- "Firmas OLE" (ole_*). Cotejado contra los contenidos de cada OLE objeto que no está en la whitelist que es destinado para escaneando.
-- "Firmas PDF" (pdf_*). Cotejado contra los contenidos de cada PDF archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas portátil ejecutable secciónal" (pe_*). Cotejado contra el hash MD5 y el tamaño de cada PE sección de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas portátil ejecutable extendidas" (pex_*). Cotejado contra el hash MD5 y el tamaño de las variables de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas SWF" (swf_*). Cotejado contra los contenidos de cada Shockwave archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas whitelist" (whitelist_*). Cotejado contra el hash MD5 de los contenidos y el tamaño de cada archivo que es destinado para escaneando. Cotejados archivos será inmune de ser cotejado por el tipo de firma mencionado en su entrada de la whitelist.
-- "Firmas XML/XDP" (xmlxdp_*). Cotejado contra cualquier XML/XDP trozos encontrado dentro de cualquier archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas HTML normalizados". Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato HTML.
+- "Firmas Mach-O". Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato Mach-O.
+- "Firmas email". Cotejado contra los contenidos de cada EML archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas MD5". Cotejado contra el hash MD5 de los contenidos y el tamaño de cada archivo que no está en la whitelist que es destinado para escaneando.
+
+- "Firmas OLE". Cotejado contra los contenidos de cada OLE objeto que no está en la whitelist que es destinado para escaneando.
+- "Firmas PDF". Cotejado contra los contenidos de cada PDF archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas portátil ejecutable secciónal". Cotejado contra el hash MD5 y el tamaño de cada PE sección de cada archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas portátil ejecutable extendidas". Cotejado contra el hash MD5 y el tamaño de las variables de cada archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas SWF". Cotejado contra los contenidos de cada Shockwave archivo que no está en la whitelist que es destinado para escaneando.
+- "Firmas whitelist". Cotejado contra el hash MD5 de los contenidos y el tamaño de cada archivo que es destinado para escaneando. Cotejados archivos será inmune de ser cotejado por el tipo de firma mencionado en su entrada de la whitelist.
 (Notar que cualquier de estas firmas pueden estar desactivado fácilmente a través de `config.ini`).
 
 ---
@@ -973,4 +778,4 @@ phpMussel *HACE* bloquear un archivo | __Falso positivo__ | Verdadero positivo (
 ---
 
 
-Última Actualización: 4 Diciembre 2016 (2016.12.04).
+Última Actualización: 10 Febrero 2016 (2017.02.10).
