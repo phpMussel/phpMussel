@@ -778,4 +778,4 @@ phpMussel *FAZ* bloquear um arquivo | __Falso positivo__ | Verdadeiro positivo (
 ---
 
 
-Última Atualização: 10 Fevereiro 2016 (2017.02.10).
+Última Atualização: 10 Fevereiro 2017 (2017.02.10).

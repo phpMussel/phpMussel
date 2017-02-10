@@ -778,4 +778,4 @@ phpMussel memblokir file | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 10 Februari 2016 (2017.02.10).
+Terakhir Diperbarui: 10 Februari 2017 (2017.02.10).
