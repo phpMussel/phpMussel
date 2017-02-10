@@ -231,8 +231,8 @@ Config Defaults:
    default: 1
  urlscanner:
   urlscanner:
-   type: bool
-   default: true
+   type: string
+   default: ""
   lookup_hphosts:
    type: bool
    default: true

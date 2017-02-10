@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.02.07).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.02.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -83,7 +83,7 @@ $phpMussel['lang']['config_urlscanner_google_api_key'] = '激活Google Safe Brow
 $phpMussel['lang']['config_urlscanner_lookup_hphosts'] = '激活hpHosts API当设置`true`。';
 $phpMussel['lang']['config_urlscanner_maximum_api_lookups'] = '最大数值API请求来执行每个扫描迭代。 额外API请求将增加的总要求完成时间每扫描迭代，所以，您可能想来规定一个限以加快全扫描过程。 当设置`0`，没有最大数值将会应用的。 设置`10`作为默认。';
 $phpMussel['lang']['config_urlscanner_maximum_api_lookups_response'] = '该什么办如果最大数值API请求已超过？ False = 没做任何事（继续处理） 【默认】； True = 标志/受阻文件。';
-$phpMussel['lang']['config_urlscanner_urlscanner'] = '内phpMussel是一个URL扫描仪，能够检测恶意URL在任何数据或文件它扫描。 以激活URL扫描仪，设置`urlscanner`指令`true`；以关闭它，设置这个指令`false`。';
+$phpMussel['lang']['config_urlscanner_urlscanner'] = '内phpMussel是一个URL扫描仪，能够检测恶意URL在任何数据或文件它扫描。 以激活URL扫描仪，请指定要使用的签名文件名称，以逗号分隔。';
 $phpMussel['lang']['config_virustotal_vt_public_api_key'] = '可选的，phpMussel可以扫描文件使用｢Virus Total API｣作为一个方法提供一个显着的改善保护级别针对病毒，木马，恶意软件和其他威胁。 作为默认，扫描文件使用｢Virus Total API｣是关闭。 以激活它，一个API密钥从VirusTotal是需要。 因为的显着好处这个可以提供为您，它是某物我很推荐激活。请注意，然而，以使用的｢Virus Total API｣，您必须同意他们的服务条款和您必须坚持所有方针按照说明通过VirusTotal阅读材料！ 您是不允许使用这个积分功能除非： 您已阅读和您同意服务条款的VirusTotal和它的API。 您已阅读和您了解至少序言的VirusTotal公共API阅读材料(一切之后“VirusTotal Public API v2.0”但之前“Contents”）。';
 $phpMussel['lang']['config_virustotal_vt_quota_rate'] = '根据｢Virus Total API｣阅读材料，它是限于最大的`4`请求的任何类型在任何`1`分钟大体时间。如果您经营一个“honeyclient”， 蜜罐或任何其他自动化将会提供资源为VirusTotal和不只取回报告您是有权一个更高请求率配额。 作为标准，phpMussel将严格的坚持这些限制，但因为可能性的这些率配额被增加，这些二指令是提供为您指示phpMussel为什么限它应坚持。 除非您是指示这样做，它是不推荐为您增加这些数值，但，如果您遇到问题相关的到达您的率配额，减少这些数值可能有时帮助您解析这些问题。 您的率限是决定作为`vt_quota_rate`请求的任何类型在任何`vt_quota_time`分钟大体时间。 vt_quota_rate:';
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = 'vt_quota_time:';

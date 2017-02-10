@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.02.07).
+ * This file: Japanese language data for the front-end (last modified: 2017.02.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -77,13 +77,13 @@ $phpMussel['lang']['config_signatures_fail_silently'] = 'シグネチャファ�
 $phpMussel['lang']['config_signatures_MD5'] = 'スキャニング時にＭＤ５シグネチャに対してチェックしますか？ その場合は、使用するシグネチャファイルの名前をコンマで区切って指定します。';
 $phpMussel['lang']['config_signatures_PE_Extended'] = 'スキャニング時にＰＥ（ポータブル・エグゼキュータブル）ファイル（ＥＸＥ、ＤＬＬ、等）をＰＥ拡張シグネチャに対してチェックしますか？ その場合は、使用するシグネチャファイルの名前をコンマで区切って指定します。';
 $phpMussel['lang']['config_signatures_PE_Sectional'] = 'スキャニング時にＰＥ（ポータブル・エグゼキュータブル）ファイル（ＥＸＥ、ＤＬＬ、等）をＰＥセクショナルシグネチャに対してチェックしますか？ その場合は、使用するシグネチャファイルの名前をコンマで区切って指定します。';
-$phpMussel['lang']['config_template_data_css_url'] = 'カスタムテーマ用のテンプレートファイルは、外部CSSプロパティーを使っています。 一方、デフォルトテーマは内部CSSです。 カスタムテーマを適用するためには、CSSファイルのパブリック HTTPアドレスを"css_url"変数を使って指定して下さい。 この変数が空白であれば、デフォルトテーマが適用されます。';
+$phpMussel['lang']['config_template_data_css_url'] = 'カスタムテーマ用のテンプレートファイルは、外部ＣＳＳプロパティーを使っています。 一方、デフォルトテーマは内部ＣＳＳです。 カスタムテーマを適用するためには、ＣＳＳファイルのパブリック ＨＴＴＰアドレスを"css_url"変数を使って指定して下さい。 この変数が空白であれば、デフォルトテーマが適用されます。';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'APIルックアップの結果をどれくらいキャッシュするか（秒単位です）？ デフォルトは３６００秒（一時間）。';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = '必要なAPI鍵が定義されれば、APIのGoogle Safe Browsing APIルックアップが有効になります。';
 $phpMussel['lang']['config_urlscanner_lookup_hphosts'] = 'Trueにすると、APIのhpHostsルックアップが有効になります。';
 $phpMussel['lang']['config_urlscanner_maximum_api_lookups'] = 'スキャン反復におけるAPIルックアップの最大回数。APIルックアップの度にスキャン反復の時間が積み重なってしまうので、スキャン処理の速度向上のため、制限を設けたいと考えるかもしれません。 ０は制限なしを意味します。 デフォルトは１０です。';
 $phpMussel['lang']['config_urlscanner_maximum_api_lookups_response'] = 'APIルックアップの回数制限を超えた時の対応です。 `false`（偽） = 何もしない/処理を継続する （Default/デフォルト）； `true`（真） = ファイルにフラグを付ける/ブロックする。';
-$phpMussel['lang']['config_urlscanner_urlscanner'] = 'phpMusselにはURLスキャナーがビルトインされていて、スキャンされたファイルやデータ内の悪質なURLを検出することができます。 URLスキャナーを有効にするには`urlscanner`（ユーアールエルスキャナー）ディレクティブを`true`（真）、無効にするには`false`（偽）にして下さい。';
+$phpMussel['lang']['config_urlscanner_urlscanner'] = 'phpMusselにはURLスキャナーがビルトインされていて、スキャンされたファイルやデータ内の悪質なURLを検出することができます。 URLスキャナーを有効にするには、使用するシグネチャファイルの名前をコンマで区切って指定します。';
 $phpMussel['lang']['config_virustotal_vt_public_api_key'] = 'オプションですが、phpMusselはVirus Total APIを使ってファイルをスキャンすることができます。 ウィルス、トロイの木馬、マルウェア、その他の攻撃に対して非常に効果的に機能します。 デフォルトではVirus Total APIを使ったスキャニングは無効になっています。 有効にするには、Virus TotalのAPIキーが必要です。 メリットが極めて大きいため、有効にすることを強く推奨します。 Virus Total APIの使用にあたっては、Virus Totalのドキュメンテーションにある通り、利用規定ならびにガイドラインを遵守しなくてはなりません。 この統合機能を使用するためには： Virus TotalとAPIのサービス規定を読み同意すること。 最低でもVirus Total Public APIドキュメンテーションの前文を読み理解すること（VirusTotalPublic API v2.0以降Contents「コンテンツ」前まで）。';
 $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'Virus Total APIのドキュメンテーションによると「１分間のタイムフレームの間にリクエストは最大４回」の上限があります。 ハニークライアントやハニーポット等のオートメーションを使用し、リポートを受け取るだけでなく、VirusTotal にリソースを提供していれば、上限は引き上げられます。 phpMussel のデフォルトでは最大４回を遵守していますが、前述の事情から、この２つのディレクトリを準備し、状況に合わせて変更できるようになっています。 制限に達してしまうといった不都合や問題がない限りデフォルト値を変更することは勧められませんが、値を小さくすることが適当なケースもあります。 上限はタイムフレーム`vt_quota_time`（ヴィティ・クォータ・タイム）「 分内に」`vt_quota_rate`（ヴィティ・クォータ・レート）で設定します。 `vt_quota_rate`（ヴィティ・クォータ・レート）：';
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '`vt_quota_time`（ヴィティ・クォータ・タイム）「分内に」';

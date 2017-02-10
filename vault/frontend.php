@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.01.29).
+ * This file: Front-end handler (last modified: 2017.02.10).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -121,14 +121,6 @@ $phpMussel['ClearExpired']($phpMussel['FE']['SessionList'], $phpMussel['FE']['Re
 /** Clear expired cache entries. */
 $phpMussel['ClearExpired']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild']);
 
-/**
- * Temporarily hardcoded values; Will remove this code block when the
- * configuration handler and L10N data is next updated --@todo@--.
- */
-$phpMussel['Config']['general']['max_login_attempts'] = 5;
-$phpMussel['lang']['max_login_attempts_exceeded'] = 'Maximum number of login attempts exceeded; Access denied.';
-$phpMussel['Config']['general']['FrontEndLog'] = '';
-
 /** Brute-force security check. */
 if (($phpMussel['LoginAttempts'] = (int)$phpMussel['FECacheGet'](
     $phpMussel['FE']['Cache'], 'LoginAttempts' . $_SERVER[$phpMussel['Config']['general']['ipaddr']]
@@ -167,7 +159,7 @@ if ($phpMussel['FE']['FormTarget'] === 'login') {
                 );
                 $phpMussel['FE']['SessionKey'] = md5($phpMussel['GenerateSalt']());
                 $phpMussel['FE']['Cookie'] = $_POST['username'] . $phpMussel['FE']['SessionKey'];
-                setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Time'] + 604800, '/', (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : '', false, true);
+                setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Time'] + 604800, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
                 $phpMussel['FE']['UserState'] = 1;
                 $phpMussel['FE']['ThisSession'] =
                     $phpMussel['FE']['User'] . ',' .
@@ -209,6 +201,12 @@ if ($phpMussel['FE']['FormTarget'] === 'login') {
         $phpMussel['FrontEndLog'] .= ' - ' . $phpMussel['lang']['state_logged_in'] . "\n";
     }
     if ($phpMussel['Config']['general']['FrontEndLog']) {
+        if (strpos($phpMussel['Config']['general']['FrontEndLog'], '{') !== false) {
+            $phpMussel['Config']['general']['FrontEndLog'] = $phpMussel['Time2Logfile'](
+                $phpMussel['Time'],
+                $phpMussel['Config']['general']['FrontEndLog']
+            );
+        }
         $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['Config']['general']['FrontEndLog'], 'w');
         fwrite($phpMussel['Handle'], $phpMussel['FrontEndLog']);
         fclose($phpMussel['Handle']);
@@ -279,7 +277,7 @@ if ($phpMussel['FE']['UserState'] === 1) {
         $phpMussel['FE']['ThisSession'] = '';
         $phpMussel['FE']['Rebuild'] = true;
         $phpMussel['FE']['UserState'] = $phpMussel['FE']['Permissions'] = 0;
-        setcookie('PHPMUSSEL-ADMIN', '', -1, '/', (!empty($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST'] : '', false, true);
+        setcookie('PHPMUSSEL-ADMIN', '', -1, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
 
     }
 
@@ -299,6 +297,11 @@ if ($phpMussel['FE']['UserState'] === 1) {
             $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_nav_logs_access_only.html')
         );
 
+    }
+
+    /** Execute hotfixes. */
+    if (file_exists($phpMussel['Vault'] . 'hotfixes.php')) {
+        require $phpMussel['Vault'] . 'hotfixes.php';
     }
 
 }

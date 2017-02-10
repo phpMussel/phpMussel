@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.01.16).
+ * This file: Functions file (last modified: 2017.02.10).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -181,8 +181,7 @@ $phpMussel['substr_compare_hex'] = function ($str = '', $st = 0, $l = 0, $x = 0,
 };
 
 /**
- * A function for doing some very simplistic decoding work on strings prior to
- * their use in various contexts.
+ * Does some simple decoding work on strings.
  *
  * @param string $str The string to be decoded.
  * @return string The decoded string.
@@ -2843,421 +2842,366 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         }
     }
 
-// ADD COEX AND THEN URLSCANNER STUFF HERE AAA
-
-    while (false) {
-        if ($SigData[$SigSet]['SigMode'] === 'urlscanner') {
-            if (!isset($phpMussel['memCache'][$SigFile])) {
-                $phpMussel['memCache'][$SigFile] = $phpMussel['ReadFile']($phpMussel['sigPath'] . $SigFile);
+    /** Process URL scanner signatures. */
+    $SigFiles = explode(',', $phpMussel['Config']['urlscanner']['urlscanner']);
+    while (($SigFile = each($SigFiles)) !== false) {
+        if (!$SigFile = $SigFile[1]) {
+            continue;
+        }
+        if (!isset($phpMussel['memCache'][$SigFile])) {
+            $phpMussel['memCache'][$SigFile] = $phpMussel['ReadFile']($phpMussel['sigPath'] . $SigFile);
+        }
+        if (!$phpMussel['memCache'][$SigFile]) {
+            $phpMussel['memCache']['scan_errors']++;
+            if (!$phpMussel['Config']['signatures']['fail_silently']) {
+                if (!$flagged) {
+                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
+                }
+                $phpMussel['whyflagged'] .=
+                    $phpMussel['lang']['scan_signature_file_missing'] .
+                    ' (' . $SigFile . ')' . $phpMussel['lang']['_exclamation'];
+                return array(-3,
+                    $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
+                    ' (' . $SigFile . ')' . $phpMussel['lang']['_exclamation_final'] . "\n"
+                );
             }
-            if (!$phpMussel['memCache'][$SigFile]) {
-                $phpMussel['memCache']['scan_errors']++;
-                if (!$phpMussel['Config']['signatures']['fail_silently']) {
-                    if (!$flagged) {
-                        $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
+        } else {
+            $phpMussel['LookupCount'] = 0;
+            $urlscanner = array(
+                'domains_c' => 0,
+                'urls_c' => 0,
+                'domains' => array(),
+                'domains_p' => array(),
+                'tlds' => array(),
+                'z' => 0,
+                'm' => array()
+            );
+            /** @todo Need to improve this regex. Terminating characters sometimes aren't found and URLs fail to be caught. */
+            $urlscanner['c'] = preg_match_all(
+                '/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,' .
+                '3}\.)?([0-9a-z.-]{1,512})[^0-9a-z.-]/i',
+                $str_norm,
+                $urlscanner['m']
+            );
+            for ($urlscanner['i'] = 0; $urlscanner['c'] > $urlscanner['i']; $urlscanner['i']++) {
+                $urlscanner['this'] =
+                    md5($urlscanner['m'][3][$urlscanner['i']]) . ':' .
+                    strlen($urlscanner['m'][3][$urlscanner['i']]) . ':';
+                $urlscanner['domains_nolookup'] =
+                    'DOMAIN-NOLOOKUP:' . $urlscanner['this'];
+                if (!substr_count($phpMussel['memCache'][$SigFile], $urlscanner['domains_nolookup'])) {
+                    $urlscanner['domains_p'][$urlscanner['z']] = $urlscanner['m'][3][$urlscanner['i']];
+                    if (substr_count($urlscanner['domains_p'][$urlscanner['z']], '.')) {
+                        $urlscanner['tlds'][$urlscanner['z']] =
+                            $phpMussel['substral']($urlscanner['domains_p'][$urlscanner['z']], '.');
                     }
-                    $phpMussel['whyflagged'] .=
-                        $phpMussel['lang']['scan_signature_file_missing'] .
-                        ' (' . $SigFile . ')' .
-                        $phpMussel['lang']['_exclamation'];
-                    return array(-3,
-                        $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
-                        ' (' . $SigFile . ')' .
-                        $phpMussel['lang']['_exclamation_final'] . "\n"
-                    );
+                    $urlscanner['domains'][$urlscanner['z']] =
+                        'DOMAIN:' . $urlscanner['this'];
+                    $urlscanner['z']++;
                 }
-            } else {
-                $urlscanner = array();
-                $phpMussel['LookupCount'] =
-                $urlscanner['domains_c'] =
-                $urlscanner['urls_c'] = 0;
-                $urlscanner['domains_p'] =
-                $urlscanner['domains'] =
-                $urlscanner['tlds'] = array();
-                $urlscanner['z'] = 0;
-                /** @todo Need to improve this regex. Terminating characters sometimes aren't found and URLs fail to be caught. */
-                $urlscanner['c'] = preg_match_all(
-                    '/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,' .
-                    '3}\.)?([0-9a-z.-]{1,512})[^0-9a-z.-]/i',
-                    $str_norm,
-                    $urlscanner['m']
-                );
-                for ($urlscanner['i'] = 0; $urlscanner['c'] > $urlscanner['i']; $urlscanner['i']++) {
+            }
+            $urlscanner['m'] = '';
+            $urlscanner['domains'] = array_unique($urlscanner['domains']);
+            $urlscanner['domains_p'] = array_unique($urlscanner['domains_p']);
+            $urlscanner['tlds'] = array_unique($urlscanner['tlds']);
+            sort($urlscanner['domains']);
+            sort($urlscanner['domains_p']);
+            sort($urlscanner['tlds']);
+            $urlscanner['tldc'] = count($urlscanner['tlds']);
+            for ($urlscanner['i'] = 0; $urlscanner['i'] < $urlscanner['tldc']; $urlscanner['i']++) {
+                if (substr_count($phpMussel['memCache'][$SigFile], 'TLD:' . $urlscanner['tlds'][$urlscanner['i']] . ':')) {
+                    $xsig =
+                        $phpMussel['substraf']($phpMussel['memCache'][$SigFile], 'TLD:' . $urlscanner['tlds'][$urlscanner['i']] . ':');
+                    if (substr_count($xsig, "\n")) {
+                        $xsig = $phpMussel['substrbf']($xsig, "\n");
+                    }
+                    if (
+                        ($xsig = $phpMussel['vn_shorthand']($xsig)) &&
+                        !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
+                        !$phpMussel['memCache']['ignoreme']
+                    ) {
+                        if (!$flagged) {
+                            $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
+                            $flagged = true;
+                        }
+                        $heur['detections']++;
+                        $phpMussel['memCache']['detections_count']++;
+                        if ($phpMussel['memCache']['weighted']) {
+                            $heur['weight']++;
+                            $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . $phpMussel['lang']['_exclamation_final'] . "\n";
+                            $heur['web'] .= $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
+                        } else {
+                            $out .= $lnap . $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . $phpMussel['lang']['_exclamation_final'] . "\n";
+                            $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
+                        }
+                    }
+                }
+            }
+            $urlscanner['domains_c'] = count($urlscanner['domains']);
+            for ($urlscanner['i'] = 0; $urlscanner['i'] < $urlscanner['domains_c']; $urlscanner['i']++) {
+                if (substr_count($phpMussel['memCache'][$SigFile], $urlscanner['domains'][$urlscanner['i']])) {
+                    $xsig =
+                        $phpMussel['substraf']($phpMussel['memCache'][$SigFile], $urlscanner['domains'][$urlscanner['i']]);
+                    if (substr_count($xsig, "\n")) {
+                        $xsig = $phpMussel['substrbf']($xsig, "\n");
+                    }
+                    if (
+                        ($xsig = $phpMussel['vn_shorthand']($xsig)) &&
+                        !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
+                        !$phpMussel['memCache']['ignoreme']
+                    ) {
+                        if (!$flagged) {
+                            $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
+                            $flagged = true;
+                        }
+                        $heur['detections']++;
+                        $phpMussel['memCache']['detections_count']++;
+                        if ($phpMussel['memCache']['weighted']) {
+                            $heur['weight']++;
+                            $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . $phpMussel['lang']['_exclamation_final'] . "\n";
+                            $heur['web'] .= $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
+                        } else {
+                            $out .= $lnap . $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . $phpMussel['lang']['_exclamation_final'] . "\n";
+                            $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
+                        }
+                    }
+                }
+            }
+            $xsig = '';
+            $urlscanner['urls'] =
+            $urlscanner['urls_p'] =
+            $urlscanner['queries'] = array();
+            $urlscanner['z'] = 0;
+            /** @todo Need to improve this regex. Terminating characters sometimes aren't found and URLs fail to be caught. */
+            $urlscanner['c'] = preg_match_all(
+                '/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,' .
+                '3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4096})(\&quot;|[;' .
+                '"\'\(\)\[\]\{\}])/i',
+                $str_norm,
+                $urlscanner['m']
+            );
+            for ($urlscanner['i'] = 0; $urlscanner['c'] > $urlscanner['i']; $urlscanner['i']++) {
+                $urlscanner['this'] =
+                    md5($urlscanner['m'][3][$urlscanner['i']]) . ':' .
+                    strlen($urlscanner['m'][3][$urlscanner['i']]) . ':';
+                $urlscanner['urls_nolookup'] =
+                    'URL-NOLOOKUP:' . $urlscanner['this'];
+                if (!substr_count($phpMussel['memCache'][$SigFile], $urlscanner['urls_nolookup'])) {
+                    $urlscanner['urls_p'][$urlscanner['z']] = $urlscanner['m'][3][$urlscanner['i']];
+                    $urlscanner['urls'][$urlscanner['z']] =
+                        'URL:' . $urlscanner['this'];
+                    $urlscanner['z']++;
+                }
+                if (preg_match('/[^0-9a-z.-]$/i', $urlscanner['m'][3][$urlscanner['i']])) {
+                    $urlscanner['x'] =
+                        preg_replace('/[^0-9a-z.-]+$/i', '', $urlscanner['m'][3][$urlscanner['i']]);
                     $urlscanner['this'] =
-                        md5($urlscanner['m'][3][$urlscanner['i']]) . ':' .
-                        strlen($urlscanner['m'][3][$urlscanner['i']]) . ':';
-                    $urlscanner['domains_nolookup'] =
-                        'DOMAIN-NOLOOKUP:' . $urlscanner['this'];
-                    if (!substr_count($phpMussel['memCache'][$SigFile], $urlscanner['domains_nolookup'])) {
-                        $urlscanner['domains_p'][$urlscanner['z']] = $urlscanner['m'][3][$urlscanner['i']];
-                        if (substr_count($urlscanner['domains_p'][$urlscanner['z']], '.')) {
-                            $urlscanner['tlds'][$urlscanner['z']] =
-                                $phpMussel['substral']($urlscanner['domains_p'][$urlscanner['z']], '.');
-                        }
-                        $urlscanner['domains'][$urlscanner['z']] =
-                            'DOMAIN:' . $urlscanner['this'];
-                        $urlscanner['z']++;
-                    }
-                }
-                $urlscanner['m'] = '';
-                $urlscanner['domains_p'] = array_unique($urlscanner['domains_p']);
-                $urlscanner['domains'] = array_unique($urlscanner['domains']);
-                $urlscanner['tlds'] = array_unique($urlscanner['tlds']);
-                sort($urlscanner['domains_p']);
-                sort($urlscanner['domains']);
-                sort($urlscanner['tlds']);
-                $urlscanner['tldc'] = count($urlscanner['tlds']);
-                for ($urlscanner['i'] = 0; $urlscanner['i'] < $urlscanner['tldc']; $urlscanner['i']++) {
-                    if (substr_count($phpMussel['memCache'][$SigFile], 'TLD:' . $urlscanner['tlds'][$urlscanner['i']] . ':')) {
-                        $xsig =
-                            $phpMussel['substraf']($phpMussel['memCache'][$SigFile], 'TLD:' . $urlscanner['tlds'][$urlscanner['i']] . ':');
-                        if (substr_count($xsig, "\n")) {
-                            $xsig = $phpMussel['substrbf']($xsig, "\n");
-                        }
-                        $xsig = $phpMussel['vn_shorthand']($xsig);
-                        if (
-                            $xsig &&
-                            !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
-                            !$phpMussel['memCache']['ignoreme']
-                        ) {
-                            if (!$flagged) {
-                                $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                                $flagged = true;
-                            }
-                            $heur['detections']++;
-                            $phpMussel['memCache']['detections_count']++;
-                            if ($phpMussel['memCache']['weighted']) {
-                                $heur['weight']++;
-                                $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
-                                $heur['web'] .= $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-                            } else {
-                                $out .= $lnap . $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
-                                $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-                            }
-                            break;
-                        }
-                    }
-                }
-                $urlscanner['domains_c'] = count($urlscanner['domains']);
-                for ($urlscanner['i'] = 0; $urlscanner['i'] < $urlscanner['domains_c']; $urlscanner['i']++) {
-                    if (substr_count($phpMussel['memCache'][$SigFile], $urlscanner['domains'][$urlscanner['i']])) {
-                        $xsig =
-                            $phpMussel['substraf']($phpMussel['memCache'][$SigFile], $urlscanner['domains'][$urlscanner['i']]);
-                        if (substr_count($xsig, "\n")) {
-                            $xsig = $phpMussel['substrbf']($xsig, "\n");
-                        }
-                        $xsig = $phpMussel['vn_shorthand']($xsig);
-                        if (
-                            $xsig &&
-                            !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
-                            !$phpMussel['memCache']['ignoreme']
-                        ) {
-                            if (!$flagged) {
-                                $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                                $flagged = true;
-                            }
-                            $heur['detections']++;
-                            $phpMussel['memCache']['detections_count']++;
-                            if ($phpMussel['memCache']['weighted']) {
-                                $heur['weight']++;
-                                $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
-                                $heur['web'] .= $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-                            } else {
-                                $out .= $lnap . $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
-                                $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-                            }
-                            break;
-                        }
-                    }
-                }
-                $xsig = '';
-                $urlscanner['urls_p'] =
-                $urlscanner['urls'] =
-                $urlscanner['queries'] = array();
-                $urlscanner['z'] = 0;
-                /** @todo Need to improve this regex. Terminating characters sometimes aren't found and URLs fail to be caught. */
-                $urlscanner['c'] = preg_match_all(
-                    '/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,' .
-                    '3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4096})(\&quot;|[;' .
-                    '"\'\(\)\[\]\{\}])/i',
-                    $str_norm,
-                    $urlscanner['m']
-                );
-                for ($urlscanner['i'] = 0; $urlscanner['c'] > $urlscanner['i']; $urlscanner['i']++) {
-                    $urlscanner['this'] =
-                        md5($urlscanner['m'][3][$urlscanner['i']]) . ':' .
-                        strlen($urlscanner['m'][3][$urlscanner['i']]) . ':';
+                        md5($urlscanner['x']) . ':' .
+                        strlen($urlscanner['x']) . ':';
                     $urlscanner['urls_nolookup'] =
                         'URL-NOLOOKUP:' . $urlscanner['this'];
                     if (!substr_count($phpMussel['memCache'][$SigFile], $urlscanner['urls_nolookup'])) {
-                        $urlscanner['urls_p'][$urlscanner['z']] = $urlscanner['m'][3][$urlscanner['i']];
+                        $urlscanner['urls_p'][$urlscanner['z']] = $urlscanner['x'];
                         $urlscanner['urls'][$urlscanner['z']] =
                             'URL:' . $urlscanner['this'];
                         $urlscanner['z']++;
                     }
-                    if (preg_match('/[^0-9a-z.-]$/i', $urlscanner['m'][3][$urlscanner['i']])) {
-                        $urlscanner['x'] =
-                            preg_replace('/[^0-9a-z.-]+$/i', '', $urlscanner['m'][3][$urlscanner['i']]);
-                        $urlscanner['this'] =
-                            md5($urlscanner['x']) . ':' .
-                            strlen($urlscanner['x']) . ':';
-                        $urlscanner['urls_nolookup'] =
-                            'URL-NOLOOKUP:' . $urlscanner['this'];
-                        if (!substr_count($phpMussel['memCache'][$SigFile], $urlscanner['urls_nolookup'])) {
-                            $urlscanner['urls_p'][$urlscanner['z']] = $urlscanner['x'];
-                            $urlscanner['urls'][$urlscanner['z']] =
-                                'URL:' . $urlscanner['this'];
-                            $urlscanner['z']++;
-                        }
+                }
+                if (substr_count($urlscanner['m'][3][$urlscanner['i']], '?')) {
+                    $urlscanner['x'] =
+                        $phpMussel['substrbf']($urlscanner['m'][3][$urlscanner['i']], '?');
+                    $urlscanner['this'] =
+                        md5($urlscanner['x']) . ':' .
+                        strlen($urlscanner['x']) . ':';
+                    $urlscanner['urls_nolookup'] =
+                        'URL-NOLOOKUP:' . $urlscanner['this'];
+                    if (!substr_count($phpMussel['memCache'][$SigFile], $urlscanner['urls_nolookup'])) {
+                        $urlscanner['urls_p'][$urlscanner['z']] = $urlscanner['x'];
+                        $urlscanner['urls'][$urlscanner['z']] =
+                            'URL:' . $urlscanner['this'];
                     }
-                    if (substr_count($urlscanner['m'][3][$urlscanner['i']], '?')) {
-                        $urlscanner['x'] =
-                            $phpMussel['substrbf']($urlscanner['m'][3][$urlscanner['i']], '?');
-                        $urlscanner['this'] =
-                            md5($urlscanner['x']) . ':' .
-                            strlen($urlscanner['x']) . ':';
-                        $urlscanner['urls_nolookup'] =
-                            'URL-NOLOOKUP:' . $urlscanner['this'];
-                        if (!substr_count($phpMussel['memCache'][$SigFile], $urlscanner['urls_nolookup'])) {
-                            $urlscanner['urls_p'][$urlscanner['z']] = $urlscanner['x'];
-                            $urlscanner['urls'][$urlscanner['z']] =
-                                'URL:' . $urlscanner['this'];
+                    $urlscanner['x'] =
+                        $phpMussel['substraf']($urlscanner['m'][3][$urlscanner['i']], '?');
+                    $urlscanner['queries'][$urlscanner['z']] =
+                        'QUERY:' . md5($urlscanner['x']) . ':' .
+                        strlen($urlscanner['x']) . ':';
+                    $urlscanner['z']++;
+                }
+            }
+            $urlscanner['m'] = '';
+            $urlscanner['urls'] = array_unique($urlscanner['urls']);
+            $urlscanner['urls_p'] = array_unique($urlscanner['urls_p']);
+            $urlscanner['queries'] = array_unique($urlscanner['queries']);
+            sort($urlscanner['urls_p']);
+            sort($urlscanner['urls']);
+            sort($urlscanner['queries']);
+            $urlscanner['urls_c'] = count($urlscanner['urls']);
+            for ($urlscanner['i'] = 0; $urlscanner['i'] < $urlscanner['urls_c']; $urlscanner['i']++) {
+                if (substr_count($phpMussel['memCache'][$SigFile], $urlscanner['urls'][$urlscanner['i']])) {
+                    $xsig =
+                        $phpMussel['substraf']($phpMussel['memCache'][$SigFile], $urlscanner['urls'][$urlscanner['i']]);
+                    if (substr_count($xsig, "\n")) {
+                        $xsig = $phpMussel['substrbf']($xsig, "\n");
+                    }
+                    if (
+                        ($xsig = $phpMussel['vn_shorthand']($xsig)) &&
+                        !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
+                        !$phpMussel['memCache']['ignoreme']
+                    ) {
+                        if (!$flagged) {
+                            $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
+                            $flagged = true;
                         }
-                        $urlscanner['x'] =
-                            $phpMussel['substraf']($urlscanner['m'][3][$urlscanner['i']], '?');
-                        $urlscanner['queries'][$urlscanner['z']] =
-                            'QUERY:' . md5($urlscanner['x']) . ':' .
-                            strlen($urlscanner['x']) . ':';
-                        $urlscanner['z']++;
+                        $heur['detections']++;
+                        $phpMussel['memCache']['detections_count']++;
+                        if ($phpMussel['memCache']['weighted']) {
+                            $heur['weight']++;
+                            $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . $phpMussel['lang']['_exclamation_final'] . "\n";
+                            $heur['web'] .= $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
+                        } else {
+                            $out .= $lnap . $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . $phpMussel['lang']['_exclamation_final'] . "\n";
+                            $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
+                        }
                     }
                 }
-                $urlscanner['m'] = '';
-                $urlscanner['urls_p'] = array_unique($urlscanner['urls_p']);
-                $urlscanner['urls'] = array_unique($urlscanner['urls']);
-                $urlscanner['queries'] = array_unique($urlscanner['queries']);
-                sort($urlscanner['urls_p']);
-                sort($urlscanner['urls']);
-                sort($urlscanner['queries']);
-                $urlscanner['urls_c'] = count($urlscanner['urls']);
-                for ($urlscanner['i'] = 0; $urlscanner['i'] < $urlscanner['urls_c']; $urlscanner['i']++) {
-                    if (substr_count($phpMussel['memCache'][$SigFile], $urlscanner['urls'][$urlscanner['i']])) {
-                        $xsig =
-                            $phpMussel['substraf']($phpMussel['memCache'][$SigFile], $urlscanner['urls'][$urlscanner['i']]);
-                        if (substr_count($xsig, "\n")) {
-                            $xsig = $phpMussel['substrbf']($xsig, "\n");
+            }
+            $urlscanner['queries_c'] = count($urlscanner['queries']);
+            for ($urlscanner['i'] = 0; $urlscanner['i'] < $urlscanner['queries_c']; $urlscanner['i']++) {
+                if (substr_count($phpMussel['memCache'][$SigFile], $urlscanner['queries'][$urlscanner['i']])) {
+                    $xsig =
+                        $phpMussel['substraf']($phpMussel['memCache'][$SigFile], $urlscanner['queries'][$urlscanner['i']]);
+                    if (substr_count($xsig, "\n")) {
+                        $xsig = $phpMussel['substrbf']($xsig, "\n");
+                    }
+                    if (
+                        ($xsig = $phpMussel['vn_shorthand']($xsig)) &&
+                        !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
+                        !$phpMussel['memCache']['ignoreme']
+                    ) {
+                        if (!$flagged) {
+                            $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
+                            $flagged = true;
                         }
-                        $xsig = $phpMussel['vn_shorthand']($xsig);
-                        if (
-                            $xsig &&
-                            !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
-                            !$phpMussel['memCache']['ignoreme']
-                        ) {
+                        $heur['detections']++;
+                        $phpMussel['memCache']['detections_count']++;
+                        if ($phpMussel['memCache']['weighted']) {
+                            $heur['weight']++;
+                            $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . $phpMussel['lang']['_exclamation_final'] . "\n";
+                            $heur['web'] .= $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
+                        } else {
+                            $out .= $lnap . $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . $phpMussel['lang']['_exclamation_final'] . "\n";
+                            $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
+                                array('vn' => $xsig),
+                                $phpMussel['lang']['detected']
+                            ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
+                        }
+                    }
+                }
+            }
+            $urlscanner['domains_c'] = count($urlscanner['domains_p']);
+            if (
+                !$out &&
+                $phpMussel['Config']['urlscanner']['lookup_hphosts'] &&
+                $urlscanner['domains_c'] &&
+                !empty($SigData[$SigSet]['UseAPI'])
+            ) {
+                /** Fetch the cache entry for hpHosts, if it doesn't already exist. */
+                if (!isset($phpMussel['memCache']['urlscanner_domains'])) {
+                    $phpMussel['memCache']['urlscanner_domains'] =
+                        $phpMussel['FetchCache']('urlscanner_domains');
+                }
+                $urlscanner['y'] =
+                    $phpMussel['Time'] + $phpMussel['Config']['urlscanner']['cache_time'];
+                $urlscanner['req_v'] = urlencode($phpMussel['ScriptIdent']);
+                $urlscanner['classes'] = array(
+                    'EMD' => "\x1a\x82\x10\x1bXXX",
+                    'EXP' => "\x1a\x82\x10\x16XXX",
+                    'GRM' => "\x1a\x82\x10\x32XXX",
+                    'HFS' => "\x1a\x82\x10\x32XXX",
+                    'PHA' => "\x1a\x82\x10\x32XXX",
+                    'PSH' => "\x1a\x82\x10\x31XXX"
+                );
+                for ($i = 0; $i < $urlscanner['domains_c']; $i++) {
+                    if (
+                        $phpMussel['Config']['urlscanner']['maximum_api_lookups'] > 0 &&
+                        $phpMussel['LookupCount'] > $phpMussel['Config']['urlscanner']['maximum_api_lookups']
+                    ) {
+                        if ($phpMussel['Config']['urlscanner']['maximum_api_lookups_response']) {
                             if (!$flagged) {
                                 $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
                                 $flagged = true;
                             }
-                            $heur['detections']++;
-                            $phpMussel['memCache']['detections_count']++;
-                            if ($phpMussel['memCache']['weighted']) {
-                                $heur['weight']++;
-                                $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
-                                $heur['web'] .= $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-                            } else {
-                                $out .= $lnap . $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
-                                $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-                            }
+                            $out .=
+                                $lnap . $phpMussel['lang']['too_many_urls'] .
+                                $phpMussel['lang']['_exclamation_final'] . "\n";
+                            $phpMussel['whyflagged'] .=
+                                $phpMussel['lang']['too_many_urls'] .
+                                ' (' . $ofnSafe . ')' .
+                                $phpMussel['lang']['_exclamation'];
+                        }
+                        break;
+                    }
+                    $urlscanner['this'] =
+                        md5($urlscanner['domains_p'][$i]) . ':' .
+                        strlen($urlscanner['domains_p'][$i]) . ':';
+                    while (substr_count($phpMussel['memCache']['urlscanner_domains'], $urlscanner['this'])) {
+                        $urlscanner['class'] =
+                            $phpMussel['substrbf']($phpMussel['substral']($phpMussel['memCache']['urlscanner_domains'], $urlscanner['this']), ';');
+                        if (!substr_count($phpMussel['memCache']['urlscanner_domains'], $urlscanner['this'] . ':' . $urlscanner['class'] . ';')) {
                             break;
                         }
-                    }
-                }
-                $urlscanner['queries_c'] = count($urlscanner['queries']);
-                for ($urlscanner['i'] = 0; $urlscanner['i'] < $urlscanner['queries_c']; $urlscanner['i']++) {
-                    if (substr_count($phpMussel['memCache'][$SigFile], $urlscanner['queries'][$urlscanner['i']])) {
-                        $xsig =
-                            $phpMussel['substraf']($phpMussel['memCache'][$SigFile], $urlscanner['queries'][$urlscanner['i']]);
-                        if (substr_count($xsig, "\n")) {
-                            $xsig = $phpMussel['substrbf']($xsig, "\n");
-                        }
-                        $xsig = $phpMussel['vn_shorthand']($xsig);
-                        if (
-                            $xsig &&
-                            !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
-                            !$phpMussel['memCache']['ignoreme']
-                        ) {
-                            if (!$flagged) {
-                                $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                                $flagged = true;
+                        $urlscanner['expiry'] = $phpMussel['substrbf']($urlscanner['class'], ':');
+                        if ($urlscanner['expiry'] > $phpMussel['Time']) {
+                            $urlscanner['class'] = $phpMussel['substraf']($urlscanner['class'], ':');
+                            if (!$urlscanner['class']) {
+                                continue 2;
                             }
-                            $heur['detections']++;
-                            $phpMussel['memCache']['detections_count']++;
-                            if ($phpMussel['memCache']['weighted']) {
-                                $heur['weight']++;
-                                $heur['cli'] .= $lnap . $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
-                                $heur['web'] .= $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-                            } else {
-                                $out .= $lnap . $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
-                                $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
-                                    array('vn' => $xsig),
-                                    $phpMussel['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-                            }
-                            break;
-                        }
-                    }
-                }
-                $urlscanner['domains_c'] = count($urlscanner['domains_p']);
-                if (
-                    !$out &&
-                    $phpMussel['Config']['urlscanner']['lookup_hphosts'] &&
-                    $urlscanner['domains_c'] &&
-                    !empty($SigData[$SigSet]['UseAPI'])
-                ) {
-                    /** Fetch the cache entry for hpHosts, if it doesn't already exist. */
-                    if (!isset($phpMussel['memCache']['urlscanner_domains'])) {
-                        $phpMussel['memCache']['urlscanner_domains'] =
-                            $phpMussel['FetchCache']('urlscanner_domains');
-                    }
-                    $urlscanner['y'] =
-                        $phpMussel['Time'] + $phpMussel['Config']['urlscanner']['cache_time'];
-                    $urlscanner['req_v'] = urlencode($phpMussel['ScriptIdent']);
-                    $urlscanner['classes'] = array(
-                        'EMD' => "\x1a\x82\x10\x1bXXX",
-                        'EXP' => "\x1a\x82\x10\x16XXX",
-                        'GRM' => "\x1a\x82\x10\x32XXX",
-                        'HFS' => "\x1a\x82\x10\x32XXX",
-                        'PHA' => "\x1a\x82\x10\x32XXX",
-                        'PSH' => "\x1a\x82\x10\x31XXX"
-                    );
-                    for ($i = 0; $i < $urlscanner['domains_c']; $i++) {
-                        if (
-                            $phpMussel['Config']['urlscanner']['maximum_api_lookups'] > 0 &&
-                            $phpMussel['LookupCount'] > $phpMussel['Config']['urlscanner']['maximum_api_lookups']
-                        ) {
-                            if ($phpMussel['Config']['urlscanner']['maximum_api_lookups_response']) {
-                                if (!$flagged) {
-                                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                                    $flagged = true;
-                                }
-                                $out .=
-                                    $lnap . $phpMussel['lang']['too_many_urls'] .
-                                    $phpMussel['lang']['_exclamation_final'] . "\n";
-                                $phpMussel['whyflagged'] .=
-                                    $phpMussel['lang']['too_many_urls'] .
-                                    ' (' . $ofnSafe . ')' .
-                                    $phpMussel['lang']['_exclamation'];
-                            }
-                            break;
-                        }
-                        $urlscanner['this'] =
-                            md5($urlscanner['domains_p'][$i]) . ':' .
-                            strlen($urlscanner['domains_p'][$i]) . ':';
-                        while (substr_count($phpMussel['memCache']['urlscanner_domains'], $urlscanner['this'])) {
-                            $urlscanner['class'] =
-                                $phpMussel['substrbf']($phpMussel['substral']($phpMussel['memCache']['urlscanner_domains'], $urlscanner['this']), ';');
-                            if (!substr_count($phpMussel['memCache']['urlscanner_domains'], $urlscanner['this'] . ':' . $urlscanner['class'] . ';')) {
-                                break;
-                            }
-                            $urlscanner['expiry'] = $phpMussel['substrbf']($urlscanner['class'], ':');
-                            if ($urlscanner['expiry'] > $phpMussel['Time']) {
-                                $urlscanner['class'] = $phpMussel['substraf']($urlscanner['class'], ':');
-                                if (!$urlscanner['class']) {
-                                    continue 2;
-                                }
-                                $urlscanner['class'] = $phpMussel['vn_shorthand']($urlscanner['class']);
-                                if (!$flagged) {
-                                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                                    $flagged = true;
-                                }
-                                $out .= $lnap . $phpMussel['ParseVars'](
-                                    array('vn' => $urlscanner['class']),
-                                    $phpMussel['lang']['detected']
-                                ) . $phpMussel['lang']['_exclamation_final'] . "\n";
-                                $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
-                                    array('vn' => $urlscanner['class']),
-                                    $phpMussel['lang']['detected']
-                                ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-                                break 2;
-                            }
-                            $phpMussel['memCache']['urlscanner_domains'] =
-                                str_ireplace($urlscanner['this'] . $urlscanner['class'] . ';', '', $phpMussel['memCache']['urlscanner_domains']);
-                        }
-                        $urlscanner['req'] =
-                            'v=' . $urlscanner['req_v'] .
-                            '&s=' . $urlscanner['domains_p'][$i] .
-                            '&class=true';
-                        $urlscanner['req_context'] = array(
-                            'http' => array(
-                                'method' => 'POST',
-                                'header' => 'Content-type: application/x-www-form-urlencoded; charset=iso-8859-1',
-                                'user_agent' => $phpMussel['ScriptUA'],
-                                'content' => $urlscanner['req'],
-                                'timeout' => 12
-                            )
-                        );
-                        $urlscanner['req_stream'] = stream_context_create($urlscanner['req_context']);
-                        $urlscanner['req_result'] = @file_get_contents(
-                            'http://verify.hosts-file.net/?' . $urlscanner['req'],
-                            false,
-                            $urlscanner['req_stream']
-                        );
-                        $phpMussel['LookupCount']++;
-                        if (substr($urlscanner['req_result'], 0, 6) == "Listed") {
-                            $urlscanner['class'] = substr($urlscanner['req_result'], 7, 3);
-                            $urlscanner['class'] =
-                                (isset($urlscanner['classes'][$urlscanner['class']])) ?
-                                $urlscanner['classes'][$urlscanner['class']] :
-                                "\x1a\x82\x10\x3fXXX";
-                            $phpMussel['memCache']['urlscanner_domains'] .=
-                                $urlscanner['this'] .
-                                $urlscanner['y'] . ':' .
-                                $urlscanner['class'] . ';';
-                            $urlscanner['class'] =
-                                $phpMussel['vn_shorthand']($urlscanner['class']);
+                            $urlscanner['class'] = $phpMussel['vn_shorthand']($urlscanner['class']);
                             if (!$flagged) {
                                 $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
                                 $flagged = true;
@@ -3270,69 +3214,121 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 array('vn' => $urlscanner['class']),
                                 $phpMussel['lang']['detected']
                             ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-                            break;
                         }
-                        $phpMussel['memCache']['urlscanner_domains'] .=
-                            $urlscanner['domains'][$i] . $urlscanner['y'] . ':;';
+                        $phpMussel['memCache']['urlscanner_domains'] =
+                            str_ireplace($urlscanner['this'] . $urlscanner['class'] . ';', '', $phpMussel['memCache']['urlscanner_domains']);
                     }
-                    $urlscanner['y'] =
-                        $phpMussel['SaveCache']('urlscanner_domains', $urlscanner['y'], $phpMussel['memCache']['urlscanner_domains']);
+                    $urlscanner['req'] =
+                        'v=' . $urlscanner['req_v'] .
+                        '&s=' . $urlscanner['domains_p'][$i] .
+                        '&class=true';
+                    $urlscanner['req_context'] = array(
+                        'http' => array(
+                            'method' => 'POST',
+                            'header' => 'Content-type: application/x-www-form-urlencoded; charset=iso-8859-1',
+                            'user_agent' => $phpMussel['ScriptUA'],
+                            'content' => $urlscanner['req'],
+                            'timeout' => 12
+                        )
+                    );
+                    $urlscanner['req_stream'] = stream_context_create($urlscanner['req_context']);
+                    $urlscanner['req_result'] = @file_get_contents(
+                        'http://verify.hosts-file.net/?' . $urlscanner['req'],
+                        false,
+                        $urlscanner['req_stream']
+                    );
+                    $phpMussel['LookupCount']++;
+                    if (substr($urlscanner['req_result'], 0, 6) == "Listed") {
+                        $urlscanner['class'] = substr($urlscanner['req_result'], 7, 3);
+                        $urlscanner['class'] =
+                            (isset($urlscanner['classes'][$urlscanner['class']])) ?
+                            $urlscanner['classes'][$urlscanner['class']] :
+                            "\x1a\x82\x10\x3fXXX";
+                        $phpMussel['memCache']['urlscanner_domains'] .=
+                            $urlscanner['this'] .
+                            $urlscanner['y'] . ':' .
+                            $urlscanner['class'] . ';';
+                        $urlscanner['class'] =
+                            $phpMussel['vn_shorthand']($urlscanner['class']);
+                        if (!$flagged) {
+                            $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
+                            $flagged = true;
+                        }
+                        $out .= $lnap . $phpMussel['ParseVars'](
+                            array('vn' => $urlscanner['class']),
+                            $phpMussel['lang']['detected']
+                        ) . $phpMussel['lang']['_exclamation_final'] . "\n";
+                        $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
+                            array('vn' => $urlscanner['class']),
+                            $phpMussel['lang']['detected']
+                        ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
+                    }
+                    $phpMussel['memCache']['urlscanner_domains'] .=
+                        $urlscanner['domains'][$i] . $urlscanner['y'] . ':;';
                 }
-                $urlscanner['urls_c'] = count($urlscanner['urls_p']);
-                if (
-                    !$out &&
-                    $phpMussel['Config']['urlscanner']['google_api_key'] &&
-                    $urlscanner['urls_c'] &&
-                    !empty($SigData[$SigSet]['UseAPI'])
-                ) {
-                    $urlscanner['urls_chunked'] =
-                        ($urlscanner['urls_c'] > 500) ?
-                        array_chunk($urlscanner['urls_p'], 500) :
-                        array($urlscanner['urls_p']);
-                    $urlscanner['url_chunks'] = count($urlscanner['urls_chunked']);
-                    for ($i = 0; $i < $urlscanner['url_chunks']; $i++) {
-                        if (
-                            $phpMussel['Config']['urlscanner']['maximum_api_lookups'] > 0 &&
-                            $phpMussel['LookupCount'] > $phpMussel['Config']['urlscanner']['maximum_api_lookups']
-                        ) {
-                            if ($phpMussel['Config']['urlscanner']['maximum_api_lookups_response']) {
-                                if (!$flagged) {
-                                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                                    $flagged = true;
-                                }
-                                $out .=
-                                    $lnap . $phpMussel['lang']['too_many_urls'] .
-                                    $phpMussel['lang']['_exclamation_final'] . "\n";
-                                $phpMussel['whyflagged'] .=
-                                    $phpMussel['lang']['too_many_urls'] .
-                                    ' (' . $ofnSafe . ')' .
-                                    $phpMussel['lang']['_exclamation'];
-                            }
-                            break;
-                        }
-                        try {
-                            $urlscanner['SafeBrowseLookup'] = $phpMussel['SafeBrowseLookup']($urlscanner['urls_chunked'][$i]);
-                        } catch (\Exception $e) {
-                            throw new \Exception($e->getMessage());
-                        }
-                        if ($urlscanner['SafeBrowseLookup'] !== 204) {
+                $urlscanner['y'] =
+                    $phpMussel['SaveCache']('urlscanner_domains', $urlscanner['y'], $phpMussel['memCache']['urlscanner_domains']);
+            }
+            $urlscanner['urls_c'] = count($urlscanner['urls_p']);
+            if (
+                !$out &&
+                $phpMussel['Config']['urlscanner']['google_api_key'] &&
+                $urlscanner['urls_c'] &&
+                !empty($SigData[$SigSet]['UseAPI'])
+            ) {
+                $urlscanner['urls_chunked'] =
+                    ($urlscanner['urls_c'] > 500) ?
+                    array_chunk($urlscanner['urls_p'], 500) :
+                    array($urlscanner['urls_p']);
+                $urlscanner['url_chunks'] = count($urlscanner['urls_chunked']);
+                for ($i = 0; $i < $urlscanner['url_chunks']; $i++) {
+                    if (
+                        $phpMussel['Config']['urlscanner']['maximum_api_lookups'] > 0 &&
+                        $phpMussel['LookupCount'] > $phpMussel['Config']['urlscanner']['maximum_api_lookups']
+                    ) {
+                        if ($phpMussel['Config']['urlscanner']['maximum_api_lookups_response']) {
                             if (!$flagged) {
                                 $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
                                 $flagged = true;
                             }
-                            $urlscanner['langRef'] = 'SafeBrowseLookup_' . $urlscanner['SafeBrowseLookup'];
                             $out .=
-                                $lnap . $phpMussel['lang'][$urlscanner['langRef']] .
+                                $lnap . $phpMussel['lang']['too_many_urls'] .
                                 $phpMussel['lang']['_exclamation_final'] . "\n";
                             $phpMussel['whyflagged'] .=
-                                $phpMussel['lang'][$urlscanner['langRef']] . ' (' . $ofnSafe . ')' .
+                                $phpMussel['lang']['too_many_urls'] .
+                                ' (' . $ofnSafe . ')' .
                                 $phpMussel['lang']['_exclamation'];
                         }
+                        break;
+                    }
+                    try {
+                        $urlscanner['SafeBrowseLookup'] = $phpMussel['SafeBrowseLookup']($urlscanner['urls_chunked'][$i]);
+                    } catch (\Exception $e) {
+                        throw new \Exception($e->getMessage());
+                    }
+                    if ($urlscanner['SafeBrowseLookup'] !== 204) {
+                        if (!$flagged) {
+                            $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
+                            $flagged = true;
+                        }
+                        $urlscanner['langRef'] = 'SafeBrowseLookup_' . $urlscanner['SafeBrowseLookup'];
+                        $out .=
+                            $lnap . $phpMussel['lang'][$urlscanner['langRef']] .
+                            $phpMussel['lang']['_exclamation_final'] . "\n";
+                        $phpMussel['whyflagged'] .=
+                            $phpMussel['lang'][$urlscanner['langRef']] . ' (' . $ofnSafe . ')' .
+                            $phpMussel['lang']['_exclamation'];
                     }
                 }
-                $urlscanner = '';
             }
-        } elseif ($SigData[$SigSet]['SigMode'] === 'coex') {
+            $urlscanner = '';
+        }
+    }
+    unset($urlscanner);
+
+// ADD COEX AND THEN URLSCANNER STUFF HERE AAA
+
+        if ($SigData[$SigSet]['SigMode'] === 'coex') {
             if (!isset($phpMussel['memCache'][$SigFile])) {
                 $phpMussel['memCache'][$SigFile] =
                     $phpMussel['ReadFile']($phpMussel['sigPath'] . $SigFile);
@@ -3688,9 +3684,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             }
             $sxi = $sxc = $signame = $xi = $xc = $xsig = $coexi = '';
         }
-    }
 
-    unset($PEArr);
+    unset($sxi, $sxc, $signame, $xi, $xc, $xsig, $coexi, $PEArr);
 
     /** PHP chameleon attack detection. */
     if ($phpMussel['Config']['attack_specific']['chameleon_from_php']) {
