@@ -567,7 +567,7 @@ Note: Regardless of suspicion level, any files that are either blacklisted or wh
 URL scanner configuration.
 
 "urlscanner"
-- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, set the `urlscanner` directive to true; To disable it, set this directive to false.
+- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, specify the names of the signature files to use, delimited by commas.
 
 Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
 

@@ -567,7 +567,7 @@ Notar: Independentemente do nível de suspeita, todos os arquivos que estão na 
 URL analisador configuração.
 
 "urlscanner"
-- Construído em phpMussel é um URL analisador, capaz de detectar URLs maliciosos dentro de todos os dados ou arquivos analisados. Para habilitar o URL analisador, definir a diretiva `urlscanner` para true; Para desativá-lo, definir esta diretiva para false.
+- Construído em phpMussel é um URL analisador, capaz de detectar URLs maliciosos dentro de todos os dados ou arquivos analisados. Para habilitar o URL analisador, especifique os nomes dos arquivos de assinaturas a serem utilizados, delimitados por vírgulas.
 
 Notar: Se o URL analisador é desativado, você não terá que rever alguma das directivas nesta categoria (`urlscanner`), porque nenhum deles fará de tudo se este é desativado.
 

@@ -582,7 +582,7 @@ VirusTotal.com指令。
 URL扫描仪配置。
 
 “urlscanner”
-- 内phpMussel是一个URL扫描仪，能够检测恶意URL在任何数据或文件它扫描。 以激活URL扫描仪，设置`urlscanner`指令`true`；以关闭它，设置这个指令`false`。
+- 内phpMussel是一个URL扫描仪，能够检测恶意URL在任何数据或文件它扫描。 以激活URL扫描仪，请指定要使用的签名文件名称，以逗号分隔。
 
 请注意：如果URL扫描仪已关闭，您将不需要复习任何指令在这个类别（`urlscanner`），因为没有指令会做任何事如果这个已关闭。
 

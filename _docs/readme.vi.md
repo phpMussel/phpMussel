@@ -567,7 +567,7 @@ Lưu ý: Bất kể mức độ nghi ngờ, bất kỳ tập tin được vào d
 Cấu hình cho máy quét URL.
 
 "urlscanner"
-- Được xây dựng vào phpMussel là một máy quét URL, khả năng phát hiện các URL độc hại từ bên trong bất kỳ dữ liệu hay tập tin được quét. Để cho phép máy quét URL, đặt tùy chọn `urlscanner` để true; Để vô hiệu hóa nó, đặt tùy chọn này để false.
+- Được xây dựng vào phpMussel là một máy quét URL, khả năng phát hiện các URL độc hại từ bên trong bất kỳ dữ liệu hay tập tin được quét. Để cho phép máy quét URL, chỉ định tên của các tập tin chữ ký để sử dụng, định giới bằng dấu phẩy.
 
 Lưu ý: Nếu máy quét URL bị vô hiệu hóa, bạn sẽ không cần phải xem xét bất kỳ tùy chọn trong phần này (`urlscanner`), bởi vì không một ai trong số họ sẽ làm bất cứ điều gì nếu bị vô hiệu hóa này.
 

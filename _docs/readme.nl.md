@@ -567,7 +567,7 @@ Noteren: Ongeacht van achterdocht niveau, elke bestanden die ofwel worden de zwa
 URL scanner configuratie.
 
 "urlscanner"
-- Ingebouwd in phpMussel is een URL scanner, het opsporen van kwaadaardige URL's vanuit alle gegevens of bestanden gescand. Om de URL scanner te inschakelen, zetten de richtlijn `urlscanner` op true; Om het te uitschakelen, zetten dit richtlijn op false.
+- Ingebouwd in phpMussel is een URL scanner, het opsporen van kwaadaardige URL's vanuit alle gegevens of bestanden gescand. Om de URL scanner te inschakelen, geef de namen van de signature bestanden te gebruiken, gescheiden door komma's.
 
 Noteren: Als de URL scanner wordt uitgeschakeld, zult u geen behoefte aan een van de richtlijnen in dit categorie te herzien (`urlscanner`), omdat geen van hen zal alles doen als dit is uitgeschakeld.
 

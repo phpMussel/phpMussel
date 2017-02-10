@@ -567,7 +567,7 @@ Mencatat: Terlepas dari tingkat kecurigaan, setiap file yang masuk daftar hitam 
 Konfigurasi scanner URL.
 
 "urlscanner"
-- Dibangun dalam phpMussel adalah scanner URL, mampu mendeteksi URL berbahaya dari dalam data atau file dipindai. Untuk mengaktifkan scanner URL, menset direktif `urlscanner` untuk true; Untuk menonaktifkan, menset direktif ini untuk false.
+- Dibangun dalam phpMussel adalah scanner URL, mampu mendeteksi URL berbahaya dari dalam data atau file dipindai. Untuk mengaktifkan scanner URL, menentukan nama-nama file tanda tangan untuk menggunakan, dipisahkan dengan koma.
 
 Mencatat: Jika scanner URL dinonaktifkan, Anda tidak perlu meninjaunya direktif-direktif dalam kategori ini (`urlscanner`), karena tidak satupun dari mereka akan melakukan apa-apa jika ini dinonaktifkan.
 

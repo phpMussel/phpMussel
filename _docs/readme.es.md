@@ -567,7 +567,7 @@ Notar: Independientemente de sospecha nivel, cualquieres archivos que están en 
 URL escáner configuración.
 
 "urlscanner"
-- Construido dentro phpMussel es un URL escáner, capaz de detectar las maliciosas URL desde el interior de los datos o archivos escaneados. Para activar la URL escáner, definir `urlscanner` como true; Para desactivarlo, definir esta directiva como false.
+- Construido dentro phpMussel es un URL escáner, capaz de detectar las maliciosas URL desde el interior de los datos o archivos escaneados. Para activar la URL escáner, especifique los nombres de los archivos de firmas a utilizar, delimitado por comas.
 
 Notar: Si la URL escáner está desactivado, usted no tendrá que revisar cualquiera de las directivas en esta categoría (`urlscanner`), porque ninguno de ellos hará cualquier cosa si desactiva.
 

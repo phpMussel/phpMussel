@@ -567,7 +567,7 @@ Noter: Indépendamment du niveau de suspicion, tous les fichiers qui sont sur la
 Configuration du scanner d'URLs.
 
 "urlscanner"
-- Construit dans phpMussel est un scanner d'URLs, capable de détecter les URL malveillantes à partir de toutes les données ou fichiers analysés. Pour activer le scanner d'URLs, définir la directive `urlscanner` à true; Pour désactiver le scanner d'URLs, définir cette directive à false.
+- Construit dans phpMussel est un scanner d'URLs, capable de détecter les URLs malveillantes à partir de toutes les données ou fichiers analysés. Pour activer le scanner d'URLs, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
 
 Noter: Si le scanner d'URLs est désactivé, vous ne serez pas besoin de revoir quelconque du directives dans cette catégorie (`urlscanner`), parce qu'aucun d'eux avoir une fonction si cette directive est désactivée.
 
