@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data (last modified: 2016.10.15).
+ * This file: Portuguese language data (last modified: 2017.02.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,8 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'PE Seções:';
 $phpMussel['lang']['cli_working'] = 'Em processo';
 $phpMussel['lang']['corrupted'] = 'Detectado corrompido PE';
 $phpMussel['lang']['denied'] = 'Carregar Negado!';
-$phpMussel['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
-$phpMussel['lang']['denied_reason'] = 'Carregamento tentativa foi bloqueado pelos motivos a seguir indicados / Your upload was blocked for the reasons listed below:';
+$phpMussel['lang']['denied_reason'] = 'Carregamento tentativa foi bloqueado pelos motivos a seguir indicados:';
 $phpMussel['lang']['detected'] = 'Detectado {vn}';
 $phpMussel['lang']['detected_control_characters'] = 'Caracteres de controle detectado';
 $phpMussel['lang']['encrypted_archive'] = 'Detectado compactado arquivo criptografado; Compactado arquivos criptografados não permitido';
@@ -66,8 +65,6 @@ $phpMussel['lang']['scan_command_injection'] = 'Comando injeção tentativa dete
 $phpMussel['lang']['scan_complete'] = 'Completo';
 $phpMussel['lang']['scan_extensions_missing'] = 'Fracassado (faltando extensões necessárias)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'Arquivo nome manipulação detectado';
-$phpMussel['lang']['scan_map_corrupted'] = 'Assinatura mapa corrompido';
-$phpMussel['lang']['scan_map_missing'] = 'Assinatura mapa faltando';
 $phpMussel['lang']['scan_missing_filename'] = 'Nome do arquivo está ausente';
 $phpMussel['lang']['scan_not_archive'] = 'Fracassado (vazio ou não um arquivo)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'Não problemas encontrados.';

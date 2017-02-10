@@ -5,7 +5,18 @@
 {nav}
     </td>
     <td width="80%" class="right">
-        {link_config} (coming soon).
+        <div class="s">{state_msg}</div>
+        <table width="100%"><form action="?phpmussel-page=config" method="POST">
+        <tr>
+            <td class="ng2"><div class="s">{link_config}</div></td>
+        </tr>
+        <tr><td class="ng1">
+            <div class="s">{tip_see_the_documentation}<hr /></div>
+            <div class="bNav"><input type="submit" value="{field_update}" /></div>
+        </td></tr>
+{ConfigFields}
+        <tr><td class="ng1"><div class="bNav"><input type="submit" value="{field_update}" /></div></td></tr>
+        </form></table>
     </td>
 </tr>
 </table>

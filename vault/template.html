@@ -1,43 +1,46 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="{xmlLang}" xml:lang="{xmlLang}" dir="{textDir}">
+<!doctype html>
+<html lang="{xmlLang}" xml:lang="{xmlLang}" dir="{textDir}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="robots" content="noindex,nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/png" href="data:image/png;base64,{favicon}" />
     <title>phpMussel</title>
+    <style>
+    #wrapper{font-weight:700;background-color:#fff;border-style:solid;border-color:#999;width:98%;margin:auto;padding:2px}
+    body,#wrapper{text-align:center}
+    hr,#wrapper{border-width:1px}
+    #wrapper_inner{width:96%;margin:auto;padding:2px}
+    #results,#phpmusselversion{color:red}
+    #denied{font-size:20px}
+    #footer_inner{font-family:Verdana,Arial,Helvetica,sans-serif}
+    #footer_inner{font-size:8pt;letter-spacing:-1px;white-space:nowrap;text-align:right}
+    #generated_by{color:#000}
+    #generated_by,#phpmusselversion{display:inline}
+    body{font-family:'Lucida Grande',Tahoma,Verdana,Arial,MingLiU;font-size:10px;letter-spacing:1px;text-decoration:none;border-style:none;white-space:normal;background-color:#ccc;color:#033}
+    hr{border-style:solid none none;margin:5px 2px 0;padding:2px;color:#900}
+    #results{margin:10px;padding:2px}
+    </style>
 </head>
 
-<style>
-body{font-family:'Lucida Grande',Tahoma,Verdana,Arial,MingLiU;font-size:10px;letter-spacing:1px;text-align:center;text-decoration:none;border-style:none;margin:0;padding:0;white-space:normal;background-color:#ccc;color:#033}
-hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#900}
-</style>
-
 <body>
-
-<center>
-<table style="border-style:solid;border-width:1px;border-color:#c7ced3;background-color:#fff;width:98%;text-align:center">
-<tr>
-<td align="center">
-<table style="width:96%;text-align:left">
-<tr><td><center><hr /></center></td></tr>
-<tr>
-<td>
-<center>
-<p><span style="font-size:20px;font-weight:700;color:#f00">{denied}</span><span style="font-weight:700;color:#f00"><br />{denied_other}<br /><br />{denied_reason}<br /></span></p>
-</center>
-<p><strong>{detected}</strong></p>
-</td>
-</tr>
-
-<tr><td><center><hr /></center></td></tr>
-<tr><td align="right" style="width:100%"><span style="font-family:Verdana,Arial,Helvetica,sans-serif;letter-spacing:-1px;font-size:8pt;font-weight:700;white-space:nowrap"><span style="color:#000">{generated_by}</span> <span style="color:#f00">{phpmusselversion}</span></span></td></tr>
-</table>
-</td>
-</tr>
-</table>
-
-</center>
-
+    <div id="wrapper">
+        <div id="wrapper_inner">
+            <hr />
+            <div id="results">
+                <div id="denied">{denied}</div>
+                <div id="denied_reason">{denied_reason}</div>
+            </div>
+            <div id="detected">{detected}</div>
+            <hr />
+            <div id="footer">
+                <div id="footer_inner">
+                    <div id="generated_by">{generated_by} </div>
+                    <div id="phpmusselversion">{phpmusselversion}</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

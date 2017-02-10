@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2016.10.29).
+ * This file: Arabic language data (last modified: 2017.02.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -30,7 +30,6 @@ $phpMussel['lang']['cli_pe2'] = 'أقسام PE:';
 $phpMussel['lang']['cli_working'] = 'في تَقَدم';
 $phpMussel['lang']['corrupted'] = 'الكشف PE تلف';
 $phpMussel['lang']['denied'] = 'رفض تحميل!';
-$phpMussel['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
 $phpMussel['lang']['denied_reason'] = 'تم حجب التحميل للأسباب الواردة أدناه:';
 $phpMussel['lang']['detected'] = 'الكشف {vn}';
 $phpMussel['lang']['detected_control_characters'] = 'الكشف أحرف التحكم';
@@ -67,8 +66,6 @@ $phpMussel['lang']['scan_command_injection'] = 'الكشف محاولة حقن �
 $phpMussel['lang']['scan_complete'] = 'تم الانتهاء من';
 $phpMussel['lang']['scan_extensions_missing'] = 'فشل (مفقود ملحقات المطلوبة)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'الكشف تلاعب اسم الملف';
-$phpMussel['lang']['scan_map_corrupted'] = 'تلف خريطة التوقيع';
-$phpMussel['lang']['scan_map_missing'] = 'مفقود خريطة التوقيع';
 $phpMussel['lang']['scan_missing_filename'] = 'مفقود اسم الملف';
 $phpMussel['lang']['scan_not_archive'] = 'فشل (فارغة أو ليس أرشيفا)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'الكشف لا مشاكل.';

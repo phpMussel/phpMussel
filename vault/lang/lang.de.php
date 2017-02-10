@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2016.10.15).
+ * This file: German language data (last modified: 2017.02.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,8 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'PE-Sektionen:';
 $phpMussel['lang']['cli_working'] = 'Im Gange';
 $phpMussel['lang']['corrupted'] = 'Beschädigte PE entdeckt';
 $phpMussel['lang']['denied'] = 'Upload verweigert!';
-$phpMussel['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
-$phpMussel['lang']['denied_reason'] = 'Der Upload wurde aus den unten aufgeführten Gründen blockiert / Your upload was blocked for the reasons listed below:';
+$phpMussel['lang']['denied_reason'] = 'Der Upload wurde aus den unten aufgeführten Gründen blockiert:';
 $phpMussel['lang']['detected'] = 'Entdeckt {vn}';
 $phpMussel['lang']['detected_control_characters'] = 'Steuerzeichen erkannt';
 $phpMussel['lang']['encrypted_archive'] = 'Verschlüsseltes Archiv entdeckt; Verschlüsselte Archive sind nicht erlaubt';
@@ -66,8 +65,6 @@ $phpMussel['lang']['scan_command_injection'] = 'CMD-Injektion erkannt';
 $phpMussel['lang']['scan_complete'] = 'Komplett';
 $phpMussel['lang']['scan_extensions_missing'] = 'Gescheitert (fehlende benötigte Erweiterungen)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'Manipulation des Dateinamens erkannt';
-$phpMussel['lang']['scan_map_corrupted'] = 'Signaturkarte beschädigt';
-$phpMussel['lang']['scan_map_missing'] = 'Signaturkarte fehlt';
 $phpMussel['lang']['scan_missing_filename'] = 'Fehlender Dateiname';
 $phpMussel['lang']['scan_not_archive'] = 'Gescheitert (leer oder kein Archiv)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'Keine Probleme gefunden.';

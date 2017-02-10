@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2016.10.25).
+ * This file: Upload handler (last modified: 2016.12.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -61,7 +61,7 @@ if ($phpMussel['upload']['count'] > 0) {
     $phpMussel['HashCache']['Data'] =
         ($phpMussel['upload']['count'] > 0 && $phpMussel['Config']['general']['scan_cache_expiry'] > 0) ?
         $phpMussel['FetchCache']('HashCache') :
-        array();
+        '';
 
     /** Process the hash cache. */
     if (!empty($phpMussel['HashCache']['Data'])) {
@@ -456,23 +456,12 @@ if ($phpMussel['upload']['count'] > 0) {
     }
 
     /** Update the hash cache. */
-    if ($phpMussel['Config']['general']['scan_cache_expiry'] > 0) {
+    if ($phpMussel['Config']['general']['scan_cache_expiry'] > 0 && !empty($phpMussel['HashCache']['Data']) && is_array($phpMussel['HashCache']['Data'])) {
 
         /** Reset the hash cache caret. */
-        reset($phpMussel['HashCache']['Data']);
-        $phpMussel['HashCache']['Count'] = count($phpMussel['HashCache']['Data']);
-        for (
-            $phpMussel['HashCache']['Index'] = 0;
-            $phpMussel['HashCache']['Index'] < $phpMussel['HashCache']['Count'];
-            $phpMussel['HashCache']['Index']++
-        ) {
-            $phpMussel['HashCache']['Key'] = key($phpMussel['HashCache']['Data']);
-            if (is_array($phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Key']])) {
-                $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Key']]
-                    = implode(':', $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Key']]).';';
-            }
-            next($phpMussel['HashCache']['Data']);
-        }
+        $phpMussel['HashCache']['Data'] = array_map(function ($Item) {
+            return (is_array($Item)) ? implode(':', $Item) . ';' : $Item;
+        }, $phpMussel['HashCache']['Data']);
         $phpMussel['HashCache']['Data'] = implode('', $phpMussel['HashCache']['Data']);
         $phpMussel['HashCache']['Data'] = $phpMussel['SaveCache'](
             'HashCache',
@@ -594,17 +583,10 @@ if ($phpMussel['upload']['count'] > 0) {
         );
 
         /** Plugin hook: "before_html_out". */
-        if (
-            isset($phpMussel['MusselPlugins']['hookcounts']['before_html_out']) &&
-            $phpMussel['MusselPlugins']['hookcounts']['before_html_out'] > 0
-        ) {
+        if (!empty($phpMussel['MusselPlugins']['hookcounts']['before_html_out'])) {
             reset($phpMussel['MusselPlugins']['hooks']['before_html_out']);
-            for (
-                $phpMussel['MusselPlugins']['tempdata']['i'] = 0;
-                $phpMussel['MusselPlugins']['tempdata']['i'] < $phpMussel['MusselPlugins']['hookcounts']['before_html_out'];
-                $phpMussel['MusselPlugins']['tempdata']['i']++
-            ) {
-                $HookID = key($phpMussel['MusselPlugins']['hooks']['before_html_out']);
+            while (($HookID = each($phpMussel['MusselPlugins']['hooks']['before_html_out'])) !== false) {
+                $HookID = $HookID[0];
                 if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                     $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
                 } elseif (function_exists($HookID)) {
@@ -612,20 +594,12 @@ if ($phpMussel['upload']['count'] > 0) {
                 } else {
                     continue;
                 }
-                if (!is_array($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID])) {
-                    $phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID] =
-                        array($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID]);
-                }
-                $phpMussel['MusselPlugins']['tempdata']['kc'] =
-                    count($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID]);
+                $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID]);
+                reset($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID]);
                 $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
-                for (
-                    $phpMussel['MusselPlugins']['tempdata']['ki'] = 0;
-                    $phpMussel['MusselPlugins']['tempdata']['ki'] < $phpMussel['MusselPlugins']['tempdata']['kc'];
-                    $phpMussel['MusselPlugins']['tempdata']['ki']++
-                ) {
-                    $x = $phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID][$phpMussel['MusselPlugins']['tempdata']['ki']];
-                    if ($x) {
+                while (($x = each($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID])) !== false) {
+                    if (!empty($x[0])) {
+                        $x = $x[0];
                         $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = (isset($$x)) ? $$x : $x;
                     }
                 }
@@ -636,20 +610,15 @@ if ($phpMussel['upload']['count'] > 0) {
                 }
                 if (is_array($x)) {
                     $phpMussel['MusselPlugins']['tempdata']['out'] = $x;
-                    $phpMussel['MusselPlugins']['tempdata']['outs'] = count($x);
-                    for (
-                        $phpMussel['MusselPlugins']['tempdata']['ki'] = 0;
-                        $phpMussel['MusselPlugins']['tempdata']['ki'] < $phpMussel['MusselPlugins']['tempdata']['outs'];
-                        $phpMussel['MusselPlugins']['tempdata']['ki']++
-                    ) {
-                        $x = key($phpMussel['MusselPlugins']['tempdata']['out']);
-                        $$x = $phpMussel['MusselPlugins']['tempdata']['out'][$x];
-                        next($phpMussel['MusselPlugins']['tempdata']['out']);
+                    while (($x = each($phpMussel['MusselPlugins']['tempdata']['out'])) !== false) {
+                        if (!empty($x[0])) {
+                            $x = $x[0];
+                            $$x = $x;
+                        }
                     }
                 }
-                next($phpMussel['MusselPlugins']['hooks']['before_html_out']);
             }
-            $phpMussel['MusselPlugins']['tempdata'] = array();
+            $phpMussel['MusselPlugins']['tempdata'] = '';
         }
 
         /** Send HTML output and the kill the script. */

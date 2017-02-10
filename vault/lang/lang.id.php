@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2016.10.15).
+ * This file: Indonesian language data (last modified: 2017.02.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,8 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'Seksi PE:';
 $phpMussel['lang']['cli_working'] = 'Dalam proses';
 $phpMussel['lang']['corrupted'] = 'Terdeteksi rusak PE';
 $phpMussel['lang']['denied'] = 'Upload Ditolak!';
-$phpMussel['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
-$phpMussel['lang']['denied_reason'] = 'Upload diblokir karena alasan yang tercantum di bawah / Your upload was blocked for the reasons listed below:';
+$phpMussel['lang']['denied_reason'] = 'Upload diblokir karena alasan yang tercantum di bawah:';
 $phpMussel['lang']['detected'] = 'Terdeteksi {vn}';
 $phpMussel['lang']['detected_control_characters'] = 'Terdeteksi kontrol karakter';
 $phpMussel['lang']['encrypted_archive'] = 'Terdeteksi arsip dienkripsi; Arsip dienkripsi tidak diizinkan';
@@ -66,8 +65,6 @@ $phpMussel['lang']['scan_command_injection'] = 'Perintah injeksi terdeteksi';
 $phpMussel['lang']['scan_complete'] = 'Selesai';
 $phpMussel['lang']['scan_extensions_missing'] = 'Gagal (hilang ekstensi yang dibutuhkan)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'File nama manipulasi terdeteksi';
-$phpMussel['lang']['scan_map_corrupted'] = 'Tanda tangan peta rusak';
-$phpMussel['lang']['scan_map_missing'] = 'Tanda tangan peta hilang';
 $phpMussel['lang']['scan_missing_filename'] = 'Hilang nama file';
 $phpMussel['lang']['scan_not_archive'] = 'Gagal (kosong atau tidak sebuah arsip)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'Tidak ada masalah yang diketahui.';

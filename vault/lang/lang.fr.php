@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2016.10.15).
+ * This file: French language data (last modified: 2017.02.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,8 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'PE Sections:';
 $phpMussel['lang']['cli_working'] = 'En cours';
 $phpMussel['lang']['corrupted'] = 'Détecté corrompu PE';
 $phpMussel['lang']['denied'] = 'Téléchargement Refusé!';
-$phpMussel['lang']['denied_other'] = 'Upload Denied! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
-$phpMussel['lang']['denied_reason'] = 'Votre tentative à télécharger a été bloqué pour les raisons énumérées ci-dessous / Your upload was blocked for the reasons listed below:';
+$phpMussel['lang']['denied_reason'] = 'Votre tentative à télécharger a été bloqué pour les raisons énumérées ci-dessous:';
 $phpMussel['lang']['detected'] = 'Détecté {vn}';
 $phpMussel['lang']['detected_control_characters'] = 'Caractères de contrôle ont été détectés';
 $phpMussel['lang']['encrypted_archive'] = 'Detected archive cryptée; Archives cryptées pas autorisés';
@@ -66,8 +65,6 @@ $phpMussel['lang']['scan_command_injection'] = 'Commande injection tentative dé
 $phpMussel['lang']['scan_complete'] = 'Complète';
 $phpMussel['lang']['scan_extensions_missing'] = 'Manqué (manquant extensions requises)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'Fichier nom manipulation détecté';
-$phpMussel['lang']['scan_map_corrupted'] = 'Signature carte corrompu';
-$phpMussel['lang']['scan_map_missing'] = 'Signature carte manquante';
 $phpMussel['lang']['scan_missing_filename'] = 'Nom de fichier manquant';
 $phpMussel['lang']['scan_not_archive'] = 'Manqué (vide ou pas une archive)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'Pas problème trouvé.';

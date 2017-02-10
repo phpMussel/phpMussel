@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2016.10.15).
+ * This file: Russian language data (last modified: 2017.02.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,8 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'ПЭ Разделы:';
 $phpMussel['lang']['cli_working'] = 'В действии';
 $phpMussel['lang']['corrupted'] = 'Обнаружена поврежденная ПЭ';
 $phpMussel['lang']['denied'] = 'Загрузка Отказана!';
-$phpMussel['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
-$phpMussel['lang']['denied_reason'] = 'Ваша загрузка была заблокирована по причинам перечисленным ниже / Your upload was blocked for the reasons listed below:';
+$phpMussel['lang']['denied_reason'] = 'Ваша загрузка была заблокирована по причинам перечисленным ниже:';
 $phpMussel['lang']['detected'] = 'Обнаружено {vn}';
 $phpMussel['lang']['detected_control_characters'] = 'Обнаружены символы управления';
 $phpMussel['lang']['encrypted_archive'] = 'Обнаружен зашифрованный архив; Зашифрованные архивы не допускаются';
@@ -66,8 +65,6 @@ $phpMussel['lang']['scan_command_injection'] = 'Обнаружена попыт�
 $phpMussel['lang']['scan_complete'] = 'Завершено';
 $phpMussel['lang']['scan_extensions_missing'] = 'Не удалось (отсутствуют необходимые расширения)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'Обнаружена манипуляция имени файла';
-$phpMussel['lang']['scan_map_corrupted'] = 'Повреждена подпись карты';
-$phpMussel['lang']['scan_map_missing'] = 'Отсутствует подпись карты';
 $phpMussel['lang']['scan_missing_filename'] = 'Отсутствует имя файла';
 $phpMussel['lang']['scan_not_archive'] = 'Не удалось (пуст или не архив)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'Проблемы не найдены.';

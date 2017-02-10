@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2016.10.15).
+ * This file: Japanese language data (last modified: 2017.02.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -22,15 +22,14 @@ if (!defined('phpMussel')) {
 $phpMussel['lang']['bad_command'] = 'すみませんが、コマンドが理解できません。';
 $phpMussel['lang']['cli_failed_to_complete'] = 'スキャンを完了できませんでした';
 $phpMussel['lang']['cli_is_not_a'] = 'はファイルでもディレクトリでもありません。';
-$phpMussel['lang']['cli_ln2'] = " phpMussel（ピー・エイチ・ピー・マッスル）のご愛顧に感謝します。phpMusselは、トロイの木馬型をはじめ、\n 各種ウィルス、マルウェアがアップロードファイルからシステムに侵入しようとするのを検知するよう設計されたPHPスクリプトです。\n\n ClamAVやその他の署名に基づきシステム内のどこに配置されても機能します。\n\n PHPMUSSEL2013以降の著作権は全てCaleb M (Maikuolan)氏によるGNU/GPLv2 に帰属します。\n\n                                     ~ ~ ~\n\n";
+$phpMussel['lang']['cli_ln2'] = " phpMussel（ピー・エイチ・ピー・マッスル）のご愛顧に感謝します。 phpMusselは、トロイの木馬型をはじめ、\n 各種ウィルス、マルウェアがアップロードファイルからシステムに侵入しようとするのを検知するよう設計されたPHPスクリプトです。\n\n ClamAVやその他のシグネチャに基づきシステム内のどこに配置されても機能します。\n\n PHPMUSSEL2013以降の著作権は全てCaleb M (Maikuolan)氏によるGNU/GPLv2 に帰属します。\n\n                                     ~ ~ ~\n\n";
 $phpMussel['lang']['cli_ln3'] = " CLIモード（コマンドラインインターフェイス）でphpMusselを実行中です。\n\n ファイルまたはディレクトリ―をスキャンするには、「scan」とタイプし、続けてファイル名またはディレクトリ名をタイプしてエンターを押して下さい。\n CLIモードコマンドのリストを得るには「c」とタイプしてエンターを押して下さい；終了には「q」とタイプしてエンターを押します。 ";
 $phpMussel['lang']['cli_pe1'] = '正しいPEファイルではありません！';
 $phpMussel['lang']['cli_pe2'] = 'PEセクション：';
 $phpMussel['lang']['cli_working'] = '処理中';
 $phpMussel['lang']['corrupted'] = '破損PEを検出しました';
 $phpMussel['lang']['denied'] = 'アップロード拒否！';
-$phpMussel['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부! Sự tải lên đã bị từ chối!';
-$phpMussel['lang']['denied_reason'] = '以下の理由でアップロードは拒否されました / Your upload was blocked for the reasons listed below:';
+$phpMussel['lang']['denied_reason'] = '以下の理由でアップロードは拒否されました：';
 $phpMussel['lang']['detected'] = '{vn}を検出しました';
 $phpMussel['lang']['detected_control_characters'] = '制御文字を検出しました';
 $phpMussel['lang']['encrypted_archive'] = '暗号化されたアーカイブ検出：暗号化されたアーカイブは許可されていません';
@@ -66,14 +65,12 @@ $phpMussel['lang']['scan_command_injection'] = 'コマンドインジェクシ�
 $phpMussel['lang']['scan_complete'] = '完了';
 $phpMussel['lang']['scan_extensions_missing'] = '失敗（要求のあった拡張子がありません）！';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'ファイルネイム不正操作が検出されました';
-$phpMussel['lang']['scan_map_corrupted'] = '署名マップが汚染されています';
-$phpMussel['lang']['scan_map_missing'] = '署名マップがありません';
 $phpMussel['lang']['scan_missing_filename'] = 'ファイル名が存在しません';
 $phpMussel['lang']['scan_not_archive'] = '失敗（中身が存在しないかアーカイブではありません）！';
 $phpMussel['lang']['scan_no_problems_found'] = '問題は検出されませんでした。';
 $phpMussel['lang']['scan_reading'] = '読み込んでいます';
-$phpMussel['lang']['scan_signature_file_corrupted'] = '署名ファイルが汚染されています';
-$phpMussel['lang']['scan_signature_file_missing'] = '署名ファイルがありません';
+$phpMussel['lang']['scan_signature_file_corrupted'] = 'シグネチャファイルが汚染されています';
+$phpMussel['lang']['scan_signature_file_missing'] = 'シグネチャファイルがありません';
 $phpMussel['lang']['scan_tampering'] = '検出された潜在的に危険なファイル改ざん';
 $phpMussel['lang']['scan_unauthorised_upload'] = '不正ファイルアップロード改ざんが検出されました';
 $phpMussel['lang']['scan_unauthorised_upload_or_misconfig'] = '不正ファイルアップロード改ざんまたはミスコンフィギュレーションが検出されました！';
@@ -94,23 +91,23 @@ $phpMussel['lang']['_fullstop'] = '。';
 $phpMussel['lang']['_fullstop_final'] = '。';
 
 $phpMussel['lang']['cli_commands'] = " q
- - CLI終了。
+ - ＣＬＩ終了。
  - エイリアス：quit，exit。
  md5_file
- - ファイルからMD5署名を作成 「構文: md5_file ファイル名」。
+ - ファイルからＭＤ５シグネチャを作成 「構文: md5_file ファイル名」。
  - エイリアス： m。
  md5
- - 文字列からMD5署名を作成 「構文: md5 string」。
+ - 文字列からＭＤ５シグネチャを作成 「構文: md5 string」。
  hex_encode
  - ２進法文字列を１６進法文字列に変換 「構文: hex_encode string」。
  - エイリアス： x。
  hex_decode
  - １６進法文字列を２進法文字列に変換 「構文: hex_decode string」。
  base64_encode
- - ２進法文字列をBASE６４文字列に変換 「構文: base64_encode string」。
+ - ２進法文字列をＢＡＳＥ６４文字列に変換 「構文: base64_encode string」。
  - エイリアス： b。
  base64_decode
- - BASE６４文字列を２進法文字列に変換 「構文: base64_decode string」。
+ - ＢＡＳＥ６４文字列を２進法文字列に変換 「構文: base64_decode string」。
  scan
  - ファイルまたはディレクトリをスキャン 「構文: scan ファイル名」。
  - エイリアス：s。
