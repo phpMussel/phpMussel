@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2016.10.15).
+ * This file: CLI handler (last modified: 2017.02.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -20,12 +20,7 @@ if (!defined('phpMussel')) {
 }
 
 /** Prevents execution from outside of CLI-mode. */
-if (!(
-    $phpMussel['Mussel_sapi'] &&
-    $phpMussel['Mussel_PHP'] &&
-    $phpMussel['Mussel_OS'] == 'WIN'
-
-)) {
+if (!$phpMussel['Mussel_sapi'] || !$phpMussel['Mussel_PHP'] && $phpMussel['Mussel_OS'] != 'WIN') {
     die('[phpMussel] This should not be accessed directly.');
 }
 
@@ -483,8 +478,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             $out = $r = '';
             $phpMussel['memCache']['start_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
             $phpMussel['memCache']['start_time_2822'] = date('r', $phpMussel['memCache']['start_time']);
-            $s = $phpMussel['memCache']['start_time_2822'] . ' ' . $phpMussel['lang']['started'] . $phpMussel['lang']['_fullstop_final'] . "\n";
-            echo $s;
+            echo $s = $phpMussel['memCache']['start_time_2822'] . ' ' . $phpMussel['lang']['started'] . $phpMussel['lang']['_fullstop_final'] . "\n";
             if (@is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
                     $out = '> ' . $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
@@ -498,7 +492,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         if ($d[$i] == '.' || $d[$i] == '..') {
                             continue;
                         }
-                        $pcent = @round(($i / $c) * 100, 2) . '%';
+                        $pcent = round(($i / $c) * 100, 2) . '%';
                         echo $pcent . ' ' . $phpMussel['lang']['scan_complete'] . $phpMussel['lang']['_fullstop_final'];
                         $out = $phpMussel['Fork']('scan ' . $stl . $d[$i], $d[$i]);
                         if (!$out) {

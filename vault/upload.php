@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2016.12.25).
+ * This file: Upload handler (last modified: 2017.02.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -585,8 +585,7 @@ if ($phpMussel['upload']['count'] > 0) {
         /** Plugin hook: "before_html_out". */
         if (!empty($phpMussel['MusselPlugins']['hookcounts']['before_html_out'])) {
             reset($phpMussel['MusselPlugins']['hooks']['before_html_out']);
-            while (($HookID = each($phpMussel['MusselPlugins']['hooks']['before_html_out'])) !== false) {
-                $HookID = $HookID[0];
+            foreach ($phpMussel['MusselPlugins']['hooks']['before_html_out'] as $HookID => $HookVal) {
                 if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                     $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
                 } elseif (function_exists($HookID)) {
@@ -597,10 +596,9 @@ if ($phpMussel['upload']['count'] > 0) {
                 $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID]);
                 reset($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID]);
                 $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
-                while (($x = each($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID])) !== false) {
-                    if (!empty($x[0])) {
-                        $x = $x[0];
-                        $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = (isset($$x)) ? $$x : $x;
+                foreach ($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID] as $x => $xv) {
+                    if ($x) {
+                        $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = isset($$x) ? $$x : $x;
                     }
                 }
                 if ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'closure') {
@@ -610,10 +608,9 @@ if ($phpMussel['upload']['count'] > 0) {
                 }
                 if (is_array($x)) {
                     $phpMussel['MusselPlugins']['tempdata']['out'] = $x;
-                    while (($x = each($phpMussel['MusselPlugins']['tempdata']['out'])) !== false) {
-                        if (!empty($x[0])) {
-                            $x = $x[0];
-                            $$x = $x;
+                    foreach ($phpMussel['MusselPlugins']['tempdata']['out'] as $x => $xv) {
+                        if ($x && $xv) {
+                            $$x = $xv;
                         }
                     }
                 }

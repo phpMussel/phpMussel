@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.02.10).
+ * This file: Front-end handler (last modified: 2017.02.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -734,21 +734,23 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
     unset($phpMussel['QueryTemp']);
 
     /** Prepare components metadata working array. */
-    $phpMussel['Components'] = array(
-        'Files' => scandir($phpMussel['Vault']),
-        'Meta' => array(),
-        'RemoteMeta' => array(),
-    );
+    $phpMussel['Components'] = array('Meta' => array(), 'RemoteMeta' => array());
+
+    /** Fetch components lists. */
+    $phpMussel['Components']['Files'] = new DirectoryIterator($phpMussel['Vault']);
 
     /** Count files; Prepare to search for components metadata. */
-    array_walk($phpMussel['Components']['Files'], function ($ThisFile) use (&$phpMussel) {
-        if (!empty($ThisFile) && preg_match('/\.(?:dat|inc|yaml)$/i', $ThisFile)) {
-            $ThisData = $phpMussel['ReadFile']($phpMussel['Vault'] . $ThisFile);
-            if (substr($ThisData, 0, 4) === "---\n" && ($EoYAML = strpos($ThisData, "\n\n")) !== false) {
-                $phpMussel['YAML'](substr($ThisData, 4, $EoYAML - 4), $phpMussel['Components']['Meta']);
+    foreach ($phpMussel['Components']['Files'] as $phpMussel['ThisFile']) {
+        if (!empty($phpMussel['ThisFile']) && preg_match('/\.(?:dat|inc|yaml)$/i', $phpMussel['ThisFile'])) {
+            $phpMussel['ThisData'] = $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['ThisFile']);
+            if (substr($phpMussel['ThisData'], 0, 4) === "---\n" && ($phpMussel['EoYAML']= strpos($phpMussel['ThisData'], "\n\n")) !== false) {
+                $phpMussel['YAML'](substr($phpMussel['ThisData'], 4, $phpMussel['EoYAML'] - 4), $phpMussel['Components']['Meta']);
             }
         }
-    });
+    }
+
+    /** Search cleanup. */
+    unset($phpMussel['EoYAML'], $phpMussel['ThisData'], $phpMussel['ThisFile'], $phpMussel['Components']['Files']);
 
     /** A form has been submitted. */
     if ($phpMussel['FE']['FormTarget'] === 'updates' && !empty($_POST['do'])) {
