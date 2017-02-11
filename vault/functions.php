@@ -818,7 +818,7 @@ $phpMussel['MemoryUse'] = function ($p, $d = 0) use (&$phpMussel) {
                     $t['d'] -= $r['d'];
                 } elseif (is_file($np)) {
                     $ns = filesize($np);
-                    if ($t['d'] > 0 && substr_count($np . "\x01", ".qfu\x01") > 0) {
+                    if ($t['d'] > 0 && substr_count($np . "\x01", ".qfu\x01") > 0 && is_readable($np)) {
                         unlink($np);
                         $t['d'] -= $ns;
                     } else {
@@ -1527,8 +1527,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     /** $twocc: First two bytes of the scan target in hexadecimal notation. */
     $twocc = substr($fourcc, 0, 4);
     /**
-     * $CoExMeta: Some juicy meta-data for the scan target generated for the convenience of the "complex extended" signatures.
-     * This can be leveraged in some interesting ways by the complex extended signatures for when standard signatures just don't cut it.
+     * $CoExMeta: Contains metadata pertaining to the scan target, intended to
+     * be used by the "complex extended" signatures.
      */
     $CoExMeta =
         '$ofn:' . $ofn . ';md5($ofn):' . md5($ofn) . ';$dpt:' . $dpt .
@@ -2032,7 +2032,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'] =
                         $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'][1];
                     $PEArr['SectionArr'][$PEArr['k']]['SectionData'] =
-                        @substr($str, $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'], $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData']);
+                        substr($str, $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'], $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData']);
                     $PEArr['SectionArr'][$PEArr['k']]['MD5'] =
                         md5($PEArr['SectionArr'][$PEArr['k']]['SectionData']);
                     $phpMussel['PEData'] .=
@@ -4793,7 +4793,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['whyflagged'] .=
                 $phpMussel['lang']['filesize_limit_exceeded'] .
                 ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-            if ($phpMussel['Config']['general']['delete_on_sight']) {
+            if ($phpMussel['Config']['general']['delete_on_sight'] && is_readable($f)) {
                 unlink($f);
             }
             return (!$n) ? 2 :
@@ -4809,7 +4809,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         $phpMussel['whyflagged'] .=
             $phpMussel['lang']['scan_filename_manipulation_detected'] .
             ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-        if ($phpMussel['Config']['general']['delete_on_sight']) {
+        if ($phpMussel['Config']['general']['delete_on_sight'] && is_readable($f)) {
             unlink($f);
         }
         return (!$n) ? 2 :
@@ -4858,7 +4858,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         $phpMussel['whyflagged'] .=
             $phpMussel['lang']['filetype_blacklisted'] .
             ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-        if ($phpMussel['Config']['general']['delete_on_sight']) {
+        if ($phpMussel['Config']['general']['delete_on_sight'] && is_readable($f)) {
             unlink($f);
         }
         return (!$n) ? 2 :
@@ -4879,7 +4879,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         $phpMussel['whyflagged'] .=
             $phpMussel['lang']['filetype_blacklisted'] .
             ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-        if ($phpMussel['Config']['general']['delete_on_sight']) {
+        if ($phpMussel['Config']['general']['delete_on_sight'] && is_readable($f)) {
             unlink($f);
         }
         return (!$n) ? 2 :
@@ -4903,7 +4903,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         $phpMussel['whyflagged'] .=
             $phpMussel['lang']['only_allow_images'] .
             ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-        if ($phpMussel['Config']['general']['delete_on_sight']) {
+        if ($phpMussel['Config']['general']['delete_on_sight'] && is_readable($f)) {
             unlink($f);
         }
         return (!$n) ? 2 :
@@ -4941,7 +4941,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                     $phpMussel['ParseVars'](array('QFU' => $qfu), $phpMussel['lang']['quarantined_as']);
             }
         }
-        if ($phpMussel['Config']['general']['delete_on_sight']) {
+        if ($phpMussel['Config']['general']['delete_on_sight'] && is_readable($f)) {
             unlink($f);
         }
         return (!$n) ? $z[0] :
@@ -5522,7 +5522,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 $phpMussel['ParseVars'](array('QFU' => $qfu), $phpMussel['lang']['quarantined_as']);
         }
     }
-    if ($r !== 1 && $phpMussel['Config']['general']['delete_on_sight']) {
+    if ($r !== 1 && $phpMussel['Config']['general']['delete_on_sight'] && is_readable($f)) {
         unlink($f);
     }
     return (!$n) ? $r : $x;

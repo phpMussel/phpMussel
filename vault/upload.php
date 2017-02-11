@@ -193,8 +193,11 @@ if ($phpMussel['upload']['count'] > 0) {
                             $phpMussel['memCache']['handle']['qfile']
                         );
                     }
-                    if ($phpMussel['Config']['general']['delete_on_sight']) {
-                        @unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
+                    if (
+                        $phpMussel['Config']['general']['delete_on_sight'] &&
+                        is_readable($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']])
+                    ) {
+                        unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
                     }
                     $phpMussel['memCache']['handle']['qdata'] .=
                         'TEMP FILENAME: ' .
@@ -231,9 +234,10 @@ if ($phpMussel['upload']['count'] > 0) {
                     if (
                         $phpMussel['Config']['general']['delete_on_sight'] &&
                         is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]) &&
+                        is_readable($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]) &&
                         !$phpMussel['Config']['general']['honeypot_mode']
                     ) {
-                        @unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
+                        unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
                     }
                     next($_FILES);
                     continue;
@@ -263,9 +267,10 @@ if ($phpMussel['upload']['count'] > 0) {
                 $phpMussel['whyflagged'] .= $phpMussel['lang']['upload_error_1'];
                 if (
                     $phpMussel['Config']['general']['delete_on_sight'] &&
-                    is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']])
+                    is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]) &&
+                    is_readable($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']])
                 ) {
-                    @unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
+                    unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
                 }
             } elseif ($phpMussel['upload']['FilesData']['FileSet']['error'][$phpMussel['upload']['FilesData']['FileSet']['i']] === 2) {
                 $phpMussel['killdata'] .=
@@ -277,9 +282,10 @@ if ($phpMussel['upload']['count'] > 0) {
                 $phpMussel['whyflagged'] .= $phpMussel['lang']['upload_error_2'];
                 if (
                     $phpMussel['Config']['general']['delete_on_sight'] &&
-                    is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']])
+                    is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]) &&
+                    is_readable($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']])
                 ) {
-                    @unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
+                    unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
                 }
             } elseif ($phpMussel['upload']['FilesData']['FileSet']['error'][$phpMussel['upload']['FilesData']['FileSet']['i']] === 3) {
                 $phpMussel['killdata'] .=
@@ -372,8 +378,12 @@ if ($phpMussel['upload']['count'] > 0) {
                             $phpMussel['memCache']['handle']['qfile']
                         );
                     }
-                    if ($phpMussel['Config']['general']['delete_on_sight']) {
-                        @unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
+                    if (
+                        $phpMussel['Config']['general']['delete_on_sight'] &&
+                        $phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']] &&
+                        is_readable($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']])
+                    ) {
+                        unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
                     }
                     $phpMussel['memCache']['handle']['qdata'] .=
                         'TEMP FILENAME: ' .
@@ -409,9 +419,10 @@ if ($phpMussel['upload']['count'] > 0) {
                         $phpMussel['lang']['_exclamation'];
                     if (
                         $phpMussel['Config']['general']['delete_on_sight'] &&
-                        !$phpMussel['Config']['general']['honeypot_mode']
+                        !$phpMussel['Config']['general']['honeypot_mode'] &&
+                        is_readable($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']])
                     ) {
-                        @unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
+                        unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
                     }
                     next($_FILES);
                     continue;

@@ -20,7 +20,7 @@ if (!defined('phpMussel')) {
 }
 
 /** Prevents execution from outside of CLI-mode. */
-if (!$phpMussel['Mussel_sapi'] || !$phpMussel['Mussel_PHP'] && $phpMussel['Mussel_OS'] != 'WIN') {
+if (!$phpMussel['Mussel_sapi'] || !$phpMussel['Mussel_PHP'] || $phpMussel['Mussel_OS'] != 'WIN') {
     die('[phpMussel] This should not be accessed directly.');
 }
 
