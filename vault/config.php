@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2016.12.14).
+ * This file: Configuration handler (last modified: 2017.02.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -87,30 +87,27 @@ if (empty($phpMussel['Config']['Config Defaults'])) {
 }
 
 /** Perform fallbacks and autotyping for missing configuration directives. */
-$phpMussel['Config']['Temp'] = array('CountCat' => count($phpMussel['Config']['Config Defaults']));
-for ($phpMussel['Config']['Temp']['IterateCat'] = 0; $phpMussel['Config']['Temp']['IterateCat'] < $phpMussel['Config']['Temp']['CountCat']; $phpMussel['Config']['Temp']['IterateCat']++) {
-    $phpMussel['Config']['Temp']['KeyCat'] = key($phpMussel['Config']['Config Defaults']);
-    next($phpMussel['Config']['Config Defaults']);
+$phpMussel['Config']['Temp'] = array();
+foreach ($phpMussel['Config']['Config Defaults'] as $phpMussel['Config']['Temp']['KeyCat'] => $phpMussel['Config']['Temp']['DCat']) {
     if (!isset($phpMussel['Config'][$phpMussel['Config']['Temp']['KeyCat']])) {
         $phpMussel['Config'][$phpMussel['Config']['Temp']['KeyCat']] = array();
     }
-    unset($phpMussel['Config']['Temp']['DCat'], $phpMussel['Config']['Temp']['Cat']);
+    if (isset($phpMussel['Config']['Temp']['Cat'])) {
+        unset($phpMussel['Config']['Temp']['Cat']);
+    }
     $phpMussel['Config']['Temp']['Cat'] = &$phpMussel['Config'][$phpMussel['Config']['Temp']['KeyCat']];
-    $phpMussel['Config']['Temp']['DCat'] = &$phpMussel['Config']['Config Defaults'][$phpMussel['Config']['Temp']['KeyCat']];
     if (!is_array($phpMussel['Config']['Temp']['DCat'])) {
         continue;
     }
-    $phpMussel['Config']['Temp']['CountDir'] = count($phpMussel['Config']['Temp']['DCat']);
-    for ($phpMussel['Config']['Temp']['IterateDir'] = 0; $phpMussel['Config']['Temp']['IterateDir'] < $phpMussel['Config']['Temp']['CountDir']; $phpMussel['Config']['Temp']['IterateDir']++) {
-        $phpMussel['Config']['Temp']['KeyDir'] = key($phpMussel['Config']['Temp']['DCat']);
-        next($phpMussel['Config']['Temp']['DCat']);
-        unset($phpMussel['Config']['Temp']['DDir'], $phpMussel['Config']['Temp']['Dir']);
-        $phpMussel['Config']['Temp']['DDir'] = &$phpMussel['Config']['Temp']['DCat'][$phpMussel['Config']['Temp']['KeyDir']];
+    foreach ($phpMussel['Config']['Temp']['DCat'] as $phpMussel['Config']['Temp']['KeyDir'] => $phpMussel['Config']['Temp']['DDir']) {
         if (
             !isset($phpMussel['Config']['Temp']['Cat'][$phpMussel['Config']['Temp']['KeyDir']]) &&
             isset($phpMussel['Config']['Temp']['DDir']['default'])
         ) {
             $phpMussel['Config']['Temp']['Cat'][$phpMussel['Config']['Temp']['KeyDir']] = $phpMussel['Config']['Temp']['DDir']['default'];
+        }
+        if (isset($phpMussel['Config']['Temp']['Dir'])) {
+            unset($phpMussel['Config']['Temp']['Dir']);
         }
         $phpMussel['Config']['Temp']['Dir'] = &$phpMussel['Config']['Temp']['Cat'][$phpMussel['Config']['Temp']['KeyDir']];
         if (isset($phpMussel['Config']['Temp']['DDir']['type'])) {
@@ -120,12 +117,9 @@ for ($phpMussel['Config']['Temp']['IterateCat'] = 0; $phpMussel['Config']['Temp'
                 $phpMussel['Config']['Temp']['DDir']['type'] === 'bool'
             ) {
                 $phpMussel['AutoType']($phpMussel['Config']['Temp']['Dir'], $phpMussel['Config']['Temp']['DDir']['type']);
-            } elseif ($phpMussel['Config']['Temp']['DDir']['type'] === 'bool|int') {
-                $phpMussel['AutoType']($phpMussel['Config']['Temp']['Dir']);
             }
         }
     }
-    reset($phpMussel['Config']['Temp']['DCat']);
 }
 reset($phpMussel['Config']['Config Defaults']);
 unset($phpMussel['Config']['Temp']);

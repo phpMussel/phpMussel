@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.02.11).
+ * This file: Functions file (last modified: 2017.02.12).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -4237,25 +4237,21 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             $DoScan = true;
         }
         if ($DoScan) {
-            $vt_weight = array(
-                'weight' => 0,
-                'cli' => '',
-                'web' => ''
-            );
+            $VTWeight = array('weight' => 0, 'cli' => '', 'web' => '');
             if (!isset($phpMussel['memCache']['vt_quota'])) {
                 $phpMussel['memCache']['vt_quota'] = $phpMussel['FetchCache']('vt_quota');
             }
             $x = 0;
             if (!empty($phpMussel['memCache']['vt_quota'])) {
                 $phpMussel['memCache']['vt_quota'] = explode(';', $phpMussel['memCache']['vt_quota']);
-                $c = count($phpMussel['memCache']['vt_quota']);
-                for ($i = 0; $i < $c; $i++) {
-                    if ($phpMussel['memCache']['vt_quota'][$i] > $phpMussel['Time']) {
+                foreach ($phpMussel['memCache']['vt_quota'] as &$phpMussel['ThisQuota']) {
+                    if ($phpMussel['ThisQuota'] > $phpMussel['Time']) {
                         $x++;
                     } else {
-                        $phpMussel['memCache']['vt_quota'][$i] = '';
+                        $phpMussel['ThisQuota'] = '';
                     }
                 }
+                unset($phpMussel['ThisQuota']);
                 $phpMussel['memCache']['vt_quota'] =
                     implode(';', $phpMussel['memCache']['vt_quota']);
             }
@@ -4296,11 +4292,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     $vt['response_code'] === 1 &&
                     is_array($vt['scans'])
                 ) {
-                    $c = count($vt['scans']);
-                    for ($i = 0; $i < $c; $i++) {
-                        $k = key($vt['scans']);
-                        if ($vt['scans'][$k]['detected'] && $vt['scans'][$k]['result']) {
-                            $VN = $k . '(VirusTotal)-' . $vt['scans'][$k]['result'];
+                    foreach ($vt['scans'] as $VTKey => $VTValue) {
+                        if ($VTValue['detected'] && $VTValue['result']) {
+                            $VN = $VTKey . '(VirusTotal)-' . $VTValue['result'];
                             if (
                                 !substr_count($phpMussel['memCache']['greylist'], ',' . $VN . ',') &&
                                 !$phpMussel['memCache']['ignoreme']
@@ -4312,12 +4306,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 $heur['detections']++;
                                 $phpMussel['memCache']['detections_count']++;
                                 if ($phpMussel['Config']['virustotal']['vt_weighting'] > 0) {
-                                    $vt_weight['weight']++;
-                                    $vt_weight['web'] .= $lnap . $phpMussel['ParseVars'](
+                                    $VTWeight['weight']++;
+                                    $VTWeight['web'] .= $lnap . $phpMussel['ParseVars'](
                                         array('vn' => $VN),
                                         $phpMussel['lang']['detected']
                                     ) . $phpMussel['lang']['_exclamation_final'] . "\n";
-                                    $vt_weight['cli'].=$phpMussel['ParseVars'](
+                                    $VTWeight['cli'] .= $phpMussel['ParseVars'](
                                         array('vn' => $VN),
                                         $phpMussel['lang']['detected']
                                     ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
@@ -4333,15 +4327,14 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 }
                             }
                         }
-                        next($vt['scans']);
                     }
                 }
                 if (
-                    $vt_weight['weight'] > 0 &&
-                    $vt_weight['weight'] >= $phpMussel['Config']['virustotal']['vt_weighting']
+                    $VTWeight['weight'] > 0 &&
+                    $VTWeight['weight'] >= $phpMussel['Config']['virustotal']['vt_weighting']
                 ) {
-                    $out .= $vt_weight['web'];
-                    $phpMussel['whyflagged'] .= $vt_weight['cli'];
+                    $out .= $VTWeight['web'];
+                    $phpMussel['whyflagged'] .= $VTWeight['cli'];
                 }
             }
         }
@@ -6391,7 +6384,7 @@ $phpMussel['FileManager-PathSecurityCheck'] = function ($Path) {
     $Path = preg_split('@/@', $Path, -1, PREG_SPLIT_NO_EMPTY);
     $Valid = true;
     array_walk($Path, function($Segment) use (&$Valid) {
-        if (empty($Segment) || preg_match('/(?:[^!0-9a-z\x20\._-]+|^\.+$)/i', $Segment)) {
+        if (empty($Segment) || preg_match('/(?:[^!0-9a-z\x20\._-{}()]+|^\.+$)/i', $Segment)) {
             $Valid = false;
         }
     });
