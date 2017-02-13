@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.02.12).
+ * This file: Functions file (last modified: 2017.02.13).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -6437,4 +6437,31 @@ $phpMussel['Logs-RecursiveList'] = function ($Base) use (&$phpMussel) {
  */
 $phpMussel['IsInUse'] = function ($Files) use (&$phpMussel) {
     // @todo
+};
+
+/** Fetch remote data (only to be called from the front-end updates page). */
+$phpMussel['FetchRemote'] = function () use (&$phpMussel) {
+    $phpMussel['Components']['ThisComponent']['RemoteData'] = $phpMussel['FECacheGet'](
+        $phpMussel['FE']['Cache'],
+        $phpMussel['Components']['ThisComponent']['Remote']
+    );
+    if (!$phpMussel['Components']['ThisComponent']['RemoteData']) {
+        $phpMussel['Components']['ThisComponent']['RemoteData'] = $phpMussel['Request']($phpMussel['Components']['ThisComponent']['Remote']);
+        if (
+            strtolower(substr($phpMussel['Components']['ThisComponent']['Remote'], -2)) === 'gz' &&
+            substr($phpMussel['Components']['ThisComponent']['RemoteData'], 0, 2) === "\x1f\x8b"
+        ) {
+            $phpMussel['Components']['ThisComponent']['RemoteData'] = gzdecode($phpMussel['Components']['ThisComponent']['RemoteData']);
+        }
+        if (empty($phpMussel['Components']['ThisComponent']['RemoteData'])) {
+            $phpMussel['Components']['ThisComponent']['RemoteData'] = '-';
+        }
+        $phpMussel['FECacheAdd'](
+            $phpMussel['FE']['Cache'],
+            $phpMussel['FE']['Rebuild'],
+            $phpMussel['Components']['ThisComponent']['Remote'],
+            $phpMussel['Components']['ThisComponent']['RemoteData'],
+            $phpMussel['Time'] + 3600
+        );
+    }
 };

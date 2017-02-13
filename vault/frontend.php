@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.02.12).
+ * This file: Front-end handler (last modified: 2017.02.13).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1066,33 +1066,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             if (isset($phpMussel['Components']['ThisComponent']['Files']['Checksum'])) {
                 $phpMussel['Arrayify']($phpMussel['Components']['ThisComponent']['Files']['Checksum']);
             }
-            $phpMussel['Components']['ThisComponent']['RemoteData'] = $phpMussel['FECacheGet'](
-                $phpMussel['FE']['Cache'],
-                $phpMussel['Components']['ThisComponent']['Remote']
-            );
-            if (!$phpMussel['Components']['ThisComponent']['RemoteData']) {
-                $phpMussel['Components']['ThisComponent']['RemoteData'] =
-                    $phpMussel['Request']($phpMussel['Components']['ThisComponent']['Remote']);
-                if (
-                    strtolower(substr(
-                        $phpMussel['Components']['ThisComponent']['Remote'], -2
-                    )) === 'gz' &&
-                    substr($phpMussel['Components']['ThisComponent']['RemoteData'], 0, 2) === "\x1f\x8b"
-                ) {
-                    $phpMussel['Components']['ThisComponent']['RemoteData'] =
-                        gzdecode($phpMussel['Components']['ThisComponent']['RemoteData']);
-                }
-                if (empty($phpMussel['Components']['ThisComponent']['RemoteData'])) {
-                    $phpMussel['Components']['ThisComponent']['RemoteData'] = '-';
-                }
-                $phpMussel['FECacheAdd'](
-                    $phpMussel['FE']['Cache'],
-                    $phpMussel['FE']['Rebuild'],
-                    $phpMussel['Components']['ThisComponent']['Remote'],
-                    $phpMussel['Components']['ThisComponent']['RemoteData'],
-                    $phpMussel['Time'] + 3600
-                );
-            }
+            $phpMussel['FetchRemote']();
             if (
                 substr($phpMussel['Components']['ThisComponent']['RemoteData'], 0, 4) === "---\n" &&
                 ($phpMussel['Components']['EoYAML'] = strpos(
@@ -1287,33 +1261,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             continue;
         }
         $phpMussel['Components']['ReannotateThis'] = $phpMussel['Components']['ThisComponent']['Reannotate'];
-        $phpMussel['Components']['ThisComponent']['RemoteData'] = $phpMussel['FECacheGet'](
-            $phpMussel['FE']['Cache'],
-            $phpMussel['Components']['ThisComponent']['Remote']
-        );
-        if (!$phpMussel['Components']['ThisComponent']['RemoteData']) {
-            $phpMussel['Components']['ThisComponent']['RemoteData'] =
-                $phpMussel['Request']($phpMussel['Components']['ThisComponent']['Remote']);
-            if (
-                strtolower(substr(
-                    $phpMussel['Components']['ThisComponent']['Remote'], -2
-                )) === 'gz' &&
-                substr($phpMussel['Components']['ThisComponent']['RemoteData'], 0, 2) === "\x1f\x8b"
-            ) {
-                $phpMussel['Components']['ThisComponent']['RemoteData'] =
-                    gzdecode($phpMussel['Components']['ThisComponent']['RemoteData']);
-            }
-            if (empty($phpMussel['Components']['ThisComponent']['RemoteData'])) {
-                $phpMussel['Components']['ThisComponent']['RemoteData'] = '-';
-            }
-            $phpMussel['FECacheAdd'](
-                $phpMussel['FE']['Cache'],
-                $phpMussel['FE']['Rebuild'],
-                $phpMussel['Components']['ThisComponent']['Remote'],
-                $phpMussel['Components']['ThisComponent']['RemoteData'],
-                $phpMussel['Time'] + 3600
-            );
-        }
+        $phpMussel['FetchRemote']();
         if (!preg_match(
             "\x01(\n" . preg_quote($phpMussel['Components']['Key']) . ":?)(\n [^\n]*)*\n\x01i",
             $phpMussel['Components']['ThisComponent']['RemoteData'],
