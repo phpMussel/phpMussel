@@ -357,6 +357,9 @@ General phpMussel configuration.
 ####"signatures" (Category)
 Signatures configuration.
 
+"Filename"
+- Check filenames against filename based signatures when scanning? If so, specify the names of the signature files to use, delimited by commas.
+
 "MD5"
 - Check against MD5 signatures when scanning? If so, specify the names of the signature files to use, delimited by commas.
 
@@ -366,61 +369,12 @@ Signatures configuration.
 "PE_Extended"
 - Check PE (Portable Executable) files (EXE, DLL, etc) against PE extended signatures when scanning? If so, specify the names of the signature files to use, delimited by commas.
 
-Check against general signatures when scanning? False = No; True = Yes [Default].
-- "general_clamav"
-- "general_mussel"
-
-Check against normalised ASCII signatures when scanning? False = No; True = Yes [Default].
-- "ascii_clamav"
-- "ascii_mussel"
-
-Check against normalised HTML signatures when scanning? False = No; True = Yes [Default].
-- "html_clamav"
-- "html_mussel"
-
-Check PE (Portable Executable) files (EXE, DLL, etc) against PE signatures when scanning? False = No; True = Yes [Default].
-- "exe_clamav"
-- "exe_mussel"
-
-Check ELF files against ELF signatures when scanning? False = No; True = Yes [Default].
-- "elf_clamav"
-- "elf_mussel"
-
-Check Mach-O files (OSX, etc) against Mach-O signatures when scanning? False = No; True = Yes [Default].
-- "macho_clamav"
-- "macho_mussel"
-
-Check graphics files against graphics based signatures when scanning? False = No; True = Yes [Default].
-- "graphics_clamav"
-- "graphics_mussel"
-
-Check OLE objects against OLE signatures when scanning? False = No; True = Yes [Default].
-- "ole_clamav"
-- "ole_mussel"
-
-Check filenames against filename based signatures when scanning? False = No; True = Yes [Default].
-- "filenames_clamav"
-- "filenames_mussel"
-
-Check against email signatures when scanning? False = No; True = Yes [Default].
-- "mail_clamav"
-- "mail_mussel"
+"Complex_Extended"
+Check against complex extended signatures when scanning? If so, specify the names of the signature files to use, delimited by commas.
 
 Enable file specific whitelist? False = No; True = Yes [Default].
 - "whitelist_clamav"
 - "whitelist_mussel"
-
-Check against complex extended signatures when scanning? False = No; True = Yes [Default].
-- "coex_clamav"
-- "coex_mussel"
-
-Check against PDF signatures when scanning? False = No; True = Yes [Default].
-- "pdf_clamav"
-- "pdf_mussel"
-
-Check against Shockwave signatures when scanning? False = No; True = Yes [Default].
-- "swf_clamav"
-- "swf_mussel"
 
 "fail_silently"
 - Should phpMussel report when signatures files are missing or corrupted? If `fail_silently` is disabled, missing and corrupted files will be reported on scanning, and if `fail_silently` is enabled, missing and corrupted files will be ignored, with scanning reporting for those files that there aren't any problems. This should generally be left alone unless you're experiencing crashes or similar problems. False = Disabled; True = Enabled [Default].
@@ -663,12 +617,11 @@ The following is a breakdown of the types of signatures used by phpMussel:
 - "Filename signatures". Checked against the filenames of files targeted for scanning.
 - "General signatures". Checked against the contents of every non-whitelisted file targeted for scanning.
 - "Graphics signatures". Checked against the contents of every non-whitelisted file targeted for scanning and matched to a known graphical file format.
-- "General commands" (hex_general_commands.csv). Checked against the contents of every non-whitelisted file targeted for scanning.
+- "General commands". Checked against the contents of every non-whitelisted file targeted for scanning.
 - "Normalised HTML signatures". Checked against the contents of every non-whitelisted HTML file targeted for scanning.
 - "Mach-O signatures". Checked against the contents of every non-whitelisted file targeted for scanning and matched to the Mach-O format.
 - "Email signatures". Checked against the contents of every non-whitelisted EML file targeted for scanning.
 - "MD5 signatures". Checked against the MD5 hash of the contents and the filesize of every non-whitelisted file targeted for scanning.
-
 - "OLE signatures". Checked against the contents of every non-whitelisted OLE object targeted for scanning.
 - "PDF signatures". Checked against the contents of every non-whitelisted PDF file targeted for scanning.
 - "Portable executable sectional signatures". Checked against the MD5 hash and the size of each PE section of every non-whitelisted file targeted for scanning and matched to the PE format.
@@ -778,4 +731,4 @@ phpMussel *DOES* block a file | __False positive__ | True positive (correct infe
 ---
 
 
-Last Updated: 10 February 2017 (2017.02.10).
+Last Updated: 14 February 2017 (2017.02.14).

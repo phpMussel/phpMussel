@@ -359,6 +359,9 @@ Generelle Konfiguration von phpMussel.
 ####"signatures" (Kategorie)
 Konfiguration der Signaturen.
 
+"Filename"
+- Scan von Dateinamen mit den Dateinamen-Signaturen? Wenn ja, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
+
 "MD5"
 - Scan mit den MD5-Signaturen? Wenn ja, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
 
@@ -368,46 +371,6 @@ Konfiguration der Signaturen.
 "PE_Extended"
 - Scan von PE-Dateien (Portable Executable, EXE, DLL, u.s.w.) mit den PE-Erweitert-Signaturen? Wenn ja, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
 
-Scan mit den generellen Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "general_clamav"
-- "general_mussel"
-
-Scan mit den normierten ASCII Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "ascii_clamav"
-- "ascii_mussel"
-
-Scan mit den normierten HTML Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "html_clamav"
-- "html_mussel"
-
-Scan von PE-Dateien (Portable Executable, EXE, DLL, u.s.w.) mit den PE-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "exe_clamav"
-- "exe_mussel"
-
-Scan von ELF-Dateien mit den ELF-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "elf_clamav"
-- "elf_mussel"
-
-Scan von Mach-O-Dateien (OSX, u.s.w.) mit den Mach-O-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "macho_clamav"
-- "macho_mussel"
-
-Scan von Bilddateien mit den Grafik-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "graphics_clamav"
-- "graphics_mussel"
-
-Scan von OLE-Objekten mit den OLE-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "ole_clamav"
-- "ole_mussel"
-
-Scan von Dateinamen mit den Dateinamen-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "filenames_clamav"
-- "filenames_mussel"
-
-Scan mit den Email-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "mail_clamav"
-- "mail_mussel"
-
 Aktivieren Datei-spezifischer Whitelist? False = Nein; True = Ja [Standardeinstellung].
 - "whitelist_clamav"
 - "whitelist_mussel"
@@ -415,14 +378,6 @@ Aktivieren Datei-spezifischer Whitelist? False = Nein; True = Ja [Standardeinste
 Scan mit den Komplex-Erweitert-Signaturen? False = Nein; True = Ja [Standardeinstellung].
 - "coex_clamav"
 - "coex_mussel"
-
-Scan mit den PDF-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "pdf_clamav"
-- "pdf_mussel"
-
-Scan mit den Shockwave-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "swf_clamav"
-- "swf_mussel"
 
 "fail_silently"
 - Reaktion von phpMussel auf fehlende oder defekte Signaturen. Ist `fail_silently` deaktiviert, werden fehlende oder defekte Signaturen während des Scanvorgangs gemeldet, ist `fail_silently` aktiviert, werden fehlende oder defekte Signaturen ignoriert, ohne dass entsprechende Probleme gemeldet werden. Diese Option sollte so belassen werden, es sei denn, Sie erwarten Abstürze oder ähnliches. False = Deaktiviert; True = Aktiviert [Standardeinstellung].
@@ -664,12 +619,11 @@ Im Folgenden eine Aufschlüsselung der Signaturen, die von phpMussel genutzt wer
 - "Dateinamen-Signaturen". Überprüft die Dateinamen jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
 - "Allgemeine Signaturen". Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
 - "Grafiksignaturen". Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und einem bekannten Bildformat entspricht.
-- "Allgemeine Befehle" (hex_general_commands.csv). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
+- "Allgemeine Befehle". Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
 - "Normierte HTML-Signaturen". Überprüft den Inhalt jeder HTML-Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
 - "Mach-O-Signaturen". Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem Mach-O-Format entspricht.
 - "Email-Signaturen". Überprüft den Inhalt jeder EML-Dateien, die nicht in der Whitelist aufgeführt ist.
 - "MD5-Signaturen". Überprüft mittels MD5-Hash des Inhalts und der Dateigröße jede Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
-
 - "OLE-Signaturen". Überprüft den Inhalt jeder Objekten, die nicht in der Whitelist aufgeführt ist.
 - "PDF-Signaturen". Überprüft den Inhalt jeder PDF-Dateien, die nicht in der Whitelist aufgeführt ist.
 - "Portable-Executable-Sectional-Signaturen". Überprüft mittels der Größe und MD5-Hash der PE-Sektionen jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format entspricht.
@@ -779,4 +733,4 @@ phpMussel *TUT* blockiert eine Datei | __Falsch-Positiv__ | True-Positiv (korrek
 ---
 
 
-Zuletzt aktualisiert: 10 Februar 2017 (2017.02.10).
+Zuletzt aktualisiert: 14 Februar 2017 (2017.02.14).

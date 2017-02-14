@@ -357,6 +357,9 @@ Algemene configuratie voor phpMussel.
 ####"signatures" (Categorie)
 Configuratie voor signatures.
 
+"Filename"
+Controleer bestandsnamen tegen bestandsnaam gebaseerd signatures wanneer scannen? Als dat zo is, geef de namen van de signature bestanden te gebruiken, gescheiden door komma's.
+
 "MD5"
 - Gebruik MD5 signatures bij het scannen? Als dat zo is, geef de namen van de signature bestanden te gebruiken, gescheiden door komma's.
 
@@ -366,46 +369,6 @@ Configuratie voor signatures.
 "PE_Extended"
 - Gebruik PE uitgebreide signatures voor de PE-bestanden (EXE, DLL, e.z.v.) bij het scannen? Als dat zo is, geef de namen van de signature bestanden te gebruiken, gescheiden door komma's.
 
-Controleer tegen algemeen signatures wanneer scannen? False = Nee; True = Ja [Standaard].
-- "general_clamav"
-- "general_mussel"
-
-Controleer tegen genormaliseerde ASCII signatures wanneer scannen? False = Nee; True = Ja [Standaard].
-- "ascii_clamav"
-- "ascii_mussel"
-
-Controleer tegen genormaliseerde HTML signatures wanneer scannen? False = Nee; True = Ja [Standaard].
-- "html_clamav"
-- "html_mussel"
-
-Controleer PE (Portable Executable) bestanden (EXE, DLL, ezv) tegen PE signatures wanneer scannen? False = Nee; True = Ja [Standaard].
-- "exe_clamav"
-- "exe_mussel"
-
-Controleer ELF bestanden tegen ELF signatures wanneer scannen? False = Nee; True = Ja [Standaard].
-- "elf_clamav"
-- "elf_mussel"
-
-Controleer Mach-O bestanden (OSX, ezv) tegen Mach-O signatures wanneer scannen? False = Nee; True = Ja [Standaard].
-- "macho_clamav"
-- "macho_mussel"
-
-Controleer grafische bestanden tegen grafische-gebaseerde signatures wanneer scannen? False = Nee; True = Ja [Standaard].
-- "graphics_clamav"
-- "graphics_mussel"
-
-Controleer OLE-objecten tegen OLE signatures wanneer scannen? False = Nee; True = Ja [Standaard].
-- "ole_clamav"
-- "ole_mussel"
-
-Controleer bestandsnamen tegen bestandsnaam gebaseerd signatures wanneer scannen? False = Nee; True = Ja [Standaard].
-- "filenames_clamav"
-- "filenames_mussel"
-
-Controleer tegen email signatures wanneer scannen? False = Nee; True = Ja [Standaard].
-- "mail_clamav"
-- "mail_mussel"
-
 Inschakelen bestand-specifieke whitelist? False = Nee; True = Ja [Standaard].
 - "whitelist_clamav"
 - "whitelist_mussel"
@@ -413,14 +376,6 @@ Inschakelen bestand-specifieke whitelist? False = Nee; True = Ja [Standaard].
 Controleer tegen complexe uitgebreide signatures wanneer scannen? False = Nee; True = Ja [Standaard].
 - "coex_clamav"
 - "coex_mussel"
-
-Controleer tegen PDF signatures wanneer scannen? False = Nee; True = Ja [Standaard].
-- "pdf_clamav"
-- "pdf_mussel"
-
-Controleer tegen Shockwave signatures wanneer scannen? False = Nee; True = Ja [Standaard].
-- "swf_clamav"
-- "swf_mussel"
 
 "fail_silently"
 - Moet phpMussel rapporteren wanneer signatures bestanden zijn ontbrekend of beschadigd? Als `fail_silently` is uitgeschakeld, ontbrekende en beschadigde bestanden zal worden gerapporteerd op het scannen, en als `fail_silently` is ingeschakeld, ontbrekende en beschadigde bestanden zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Dit moet in het algemeen met rust gelaten worden tenzij u ervaart mislukt of soortgelijke problemen. False = Uitgeschakeld; True = Ingeschakeld [Standaard].
@@ -663,12 +618,11 @@ Het volgende is een overzicht van de soorten signatures gebruikt door phpMussel:
 - "Bestandsnaam signatures". Gecontroleerd tegen het bestandsnamen van het bestanden gerichte voor het scannen.
 - "Algemene signatures". Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen.
 - "Grafische signatures". Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd naar een bekende grafisch formaat.
-- "Algemene commando's" (hex_general_commands.csv). Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen.
+- "Algemene commando's". Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen.
 - "Genormaliseerde HTML signatures". Gecontroleerd tegen de inhoud van elke niet-whitelist HTML-bestand gericht voor het scannen.
 - "Mach-O signatures". Gecontroleerd tegen de inhoud van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de Mach-O-formaat.
 - "Email signatures". Gecontroleerd tegen de inhoud van elke niet-whitelist EML-bestand gericht voor het scannen.
 - "MD5 signatures". Gecontroleerd tegen de MD5 hash van de inhoud en het bestandsgrootte van elke niet-whitelist bestand gericht voor het scannen.
-
 - "OLE signatures". Gecontroleerd tegen de inhoud van elke niet-whitelist OLE-object gericht voor het scannen.
 - "PDF signatures". Gecontroleerd tegen de inhoud van elke niet-whitelist PDF-bestand gericht voor het scannen.
 - "Portable executable sectionele signatures". Gecontroleerd tegen de MD5 hash en de grootte van elke PE-sectie van elke niet-whitelist bestand gericht voor het scannen en geïdentificeerd aan de PE-formaat.
@@ -778,4 +732,4 @@ phpMussel *DOET* blokkeren van een bestand | __Vals positieve__ | Waar positieve
 ---
 
 
-Laatste Bijgewerkt: 10 Februari 2017 (2017.02.10).
+Laatste Bijgewerkt: 14 Februari 2017 (2017.02.14).

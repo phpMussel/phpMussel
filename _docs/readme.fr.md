@@ -357,6 +357,9 @@ Configuration générale pour phpMussel.
 ####"signatures" (Catégorie)
 Configuration pour les signatures.
 
+"Filename"
+- Vérifier les noms de fichiers contre les signatures basées sur les noms de fichiers au cours de analyse? Si oui, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
+
 "MD5"
 - Vérifier contre les signatures MD5 au cours de analyse? Si oui, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
 
@@ -366,46 +369,6 @@ Configuration pour les signatures.
 "PE_Extended"
 - Vérifier les fichiers PE (Portable Exécutable; EXE, DLL, etc) contre les signatures PE étendues au cours de analyse? Si oui, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
 
-Vérifier contre les signatures générales au cours de analyse? False = Non; True = Oui [Défaut].
-- "general_clamav"
-- "general_mussel"
-
-Vérifier contre les signatures ASCII normalisés au cours de analyse? False = Non; True = Oui [Défaut].
-- "ascii_clamav"
-- "ascii_mussel"
-
-Vérifier contre les signatures HTML normalisés au cours de analyse? False = Non; True = Oui [Défaut].
-- "html_clamav"
-- "html_mussel"
-
-Vérifier les fichiers PE (Portable Exécutable; EXE, DLL, etc) contre les signatures PE au cours de analyse? False = Non; True = Oui [Défaut].
-- "exe_clamav"
-- "exe_mussel"
-
-Vérifier les fichiers ELF contre les signatures ELF au cours de analyse? False = Non; True = Oui [Défaut].
-- "elf_clamav"
-- "elf_mussel"
-
-Vérifier les fichiers Mach-O (OSX, etc) contre les signatures Mach-O au cours de analyse? False = Non; True = Oui [Défaut].
-- "macho_clamav"
-- "macho_mussel"
-
-Vérifier les fichiers graphiques contre les signatures graphiques basées au cours de analyse? False = Non; True = Oui [Défaut].
-- "graphics_clamav"
-- "graphics_mussel"
-
-Vérifier les objets OLE contre les signatures OLE au cours de analyse? False = Non; True = Oui [Défaut].
-- "ole_clamav"
-- "ole_mussel"
-
-Vérifier les noms de fichiers contre les signatures basées sur les noms de fichiers au cours de analyse? False = Non; True = Oui [Défaut].
-- "filenames_clamav"
-- "filenames_mussel"
-
-Vérifier contre les signatures email au cours de analyse? False = Non; True = Oui [Défaut].
-- "mail_clamav"
-- "mail_mussel"
-
 Activer fichier spécifique blanche liste? False = Non; True = Oui [Défaut].
 - "whitelist_clamav"
 - "whitelist_mussel"
@@ -413,14 +376,6 @@ Activer fichier spécifique blanche liste? False = Non; True = Oui [Défaut].
 Vérifier contre les signatures complexes étendues au cours de analyse? False = Non; True = Oui [Défaut].
 - "coex_clamav"
 - "coex_mussel"
-
-Vérifier contre les signatures PDF au cours de analyse? False = Non; True = Oui [Défaut].
-- "pdf_clamav"
-- "pdf_mussel"
-
-Vérifier contre les signatures shockwave au cours de analyse? False = Non; True = Oui [Défaut].
-- "swf_clamav"
-- "swf_mussel"
 
 "fail_silently"
 - Devrait phpMussel signaler quand les fichiers du signatures sont manquants ou endommagés? Si `fail_silently` est désactivé, fichiers manquants et corrompus seront signalé sur analyse, et si `fail_silently` est activé, fichiers manquants et corrompus seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. Cela devrait généralement être laissé seul sauf si vous rencontrez accidents ou similaires problèmes. False = Désactivé; True = Activé [Défaut].
@@ -663,12 +618,11 @@ Ce qui suit est un détail des types de signatures utilisées par phpMussel:
 - "Signatures pour les noms de fichiers". Vérifié contre les noms de fichiers ciblé pour d'analyse.
 - "Signatures générales". Vérifié contre les contenus de chaque fichier qui est pas sur la liste blanche et est ciblée pour d'analyse.
 - "Signatures graphiques". Vérifié contre les contenus de chaque fichier non listé blanche, ciblée pour l'analyse et identifié à un format de fichier graphique connu.
-- "Commandes générales" (hex_general_commands.csv). Vérifié contre les contenus de chaque fichier qui est pas sur la liste blanche et est ciblée pour d'analyse.
+- "Commandes générales". Vérifié contre les contenus de chaque fichier qui est pas sur la liste blanche et est ciblée pour d'analyse.
 - "Signatures HTML normalisés". Vérifié contre les contenus de chaque fichier HTML qui est pas sur la liste blanche et est ciblée pour d'analyse.
 - "Signatures Mach-O". Vérifié contre les contenus de chaque fichier non listé blanche, ciblée pour l'analyse et identifié au Mach-O format.
 - "Signatures email". Vérifié contre les contenus de chaque fichier EML qui est pas sur la liste blanche.
 - "Signatures MD5". Vérifié contre le hachage MD5 des contenus et taille de chaque fichier qui est pas sur la liste blanche et est ciblée pour d'analyse.
-
 - "Signatures OLE". Vérifié contre les contenus de chaque objet qui est pas sur la liste blanche et est ciblée pour d'analyse.
 - "Signatures PDF". Vérifié contre les contenus de chaque fichier PDF qui est pas sur la liste blanche.
 - "Signatures portable executable sectional". Vérifié contre le taille et le hachage MD5 des sections de chaque fichier non listé blanche, ciblée pour l'analyse et identifié au format PE.
@@ -778,4 +732,4 @@ phpMussel bloque un fichier | __Faux positif__ | Vrai positif (inférence correc
 ---
 
 
-Dernière Mise à Jour: 10 Février 2017 (2017.02.10).
+Dernière Mise à Jour: 14 Février 2017 (2017.02.14).

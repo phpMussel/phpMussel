@@ -357,6 +357,9 @@ Cấu hình chung cho phpMussel.
 ####"signatures" (Thể loại)
 Cấu hình cho chữ ký.
 
+"Filename"
+- Kiểm tra tên tập tin chống lại chữ ký tên tập tin khi quét? Nếu vậy, chỉ định tên của các tập tin chữ ký để sử dụng, định giới bằng dấu phẩy.
+
 "MD5"
 - Kiểm tra chống lại chữ ký MD5 khi quét? Nếu vậy, chỉ định tên của các tập tin chữ ký để sử dụng, định giới bằng dấu phẩy.
 
@@ -366,46 +369,6 @@ Cấu hình cho chữ ký.
 "PE_Extended"
 - Kiểm tra tập tin PE (portable executable / thực thi di động; EXE, DLL, vv) chống lại chữ ký kéo dài PE khi quét? Nếu vậy, chỉ định tên của các tập tin chữ ký để sử dụng, định giới bằng dấu phẩy.
 
-Kiểm tra chống lại chữ ký chung khi quét? False = Không; True = Vâng [Mặc định].
-- "general_clamav"
-- "general_mussel"
-
-Kiểm tra chống lại chữ ký ASCII bình thường khi quét? False = Không; True = Vâng [Mặc định].
-- "ascii_clamav"
-- "ascii_mussel"
-
-Kiểm tra chống lại chữ ký HTML bình thường khi quét? False = Không; True = Vâng [Mặc định].
-- "html_clamav"
-- "html_mussel"
-
-Kiểm tra tập tin PE (portable executable / thực thi di động; EXE, DLL, vv) chống lại chữ ký PE khi quét? False = Không; True = Vâng [Mặc định].
-- "exe_clamav"
-- "exe_mussel"
-
-Kiểm tra tập tin ELF chống lại chữ ký ELF khi quét? False = Không; True = Vâng [Mặc định].
-- "elf_clamav"
-- "elf_mussel"
-
-Kiểm tra tập tin Mach-O (OSX, vv) chống lại chữ ký Mach-O khi quét? False = Không; True = Vâng [Mặc định].
-- "macho_clamav"
-- "macho_mussel"
-
-Kiểm tra tập tin đồ họa chống lại chữ ký đồ họa khi quét? False = Không; True = Vâng [Mặc định].
-- "graphics_clamav"
-- "graphics_mussel"
-
-Kiểm tra đối tượng OLE chống lại chữ ký OLE khi quét? False = Không; True = Vâng [Mặc định].
-- "ole_clamav"
-- "ole_mussel"
-
-Kiểm tra tên tập tin chống lại chữ ký tên tập tin khi quét? False = Không; True = Vâng [Mặc định].
-- "filenames_clamav"
-- "filenames_mussel"
-
-Kiểm tra chống lại chữ ký email khi quét? False = Không; True = Vâng [Mặc định].
-- "mail_clamav"
-- "mail_mussel"
-
 Cho phép danh sách trắng cho tập tin cụ thể? False = Không; True = Vâng [Mặc định].
 - "whitelist_clamav"
 - "whitelist_mussel"
@@ -413,14 +376,6 @@ Cho phép danh sách trắng cho tập tin cụ thể? False = Không; True = V�
 Kiểm tra chống lại chữ ký kéo dài phức tạp khi quét? False = Không; True = Vâng [Mặc định].
 - "coex_clamav"
 - "coex_mussel"
-
-Kiểm tra chống lại chữ ký PDF khi quét? False = Không; True = Vâng [Mặc định].
-- "pdf_clamav"
-- "pdf_mussel"
-
-Kiểm tra chống lại chữ ký Shockwave khi quét? False = Không; True = Vâng [Mặc định].
-- "swf_clamav"
-- "swf_mussel"
 
 "fail_silently"
 - phpMussel nên báo cáo khi tập tin chữ ký bị mất hay bị hỏng? Nếu `fail_silently` được vô hiệu hóa, tập tin bị mất hay bị hỏng sẽ được báo cáo khi quét, và nếu `fail_silently` được kích hoạt, tập tin bị mất hay bị hỏng sẽ bị bỏ qua, với báo cáo quét cho những tập tin mà không có bất kỳ vấn đề. Điều này thường cần được ở một mình trừ khi bạn gặp sự cố hay vấn đề tương tự. False = Không cho phép; True = Cho phép [Mặc định].
@@ -663,12 +618,11 @@ Sau đây là một danh sách các loại chữ ký được sử dụng bởi 
 - "Chữ ký cho tên tập tin". Kiểm tra đối với các tên tập tin của mỗi tập tin dự định để quét.
 - "Chữ ký chung". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
 - "Chữ ký đồ họa". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin công nhận đồ họa.
-- "Lệnh chung" (hex_general_commands.csv). Kiểm tra đối với các nội dung của mỗi tập tin không trong danh sách trắng và nhắm mục tiêu cho quét.
+- "Lệnh chung". Kiểm tra đối với các nội dung của mỗi tập tin không trong danh sách trắng và nhắm mục tiêu cho quét.
 - "Chữ ký HTML bình thường". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin HTML.
 - "Chữ ký Mach-O". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin Mach-O.
 - "Chữ ký email". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin EML.
 - "Chữ ký dựa MD5". Kiểm tra đối với các băm MD5 của nội dung và các kích thước tập tin của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
-
 - "Chữ ký OLE". Kiểm tra đối với các nội dung của mỗi OLE không thuộc danh sách trắng và dự định để quét.
 - "Chữ ký PDF". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin PDF.
 - "Chữ ký phần PE". Kiểm tra đối với các băm MD5 và các kích thước của mỗi phần của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác định như các định dạng PE.
@@ -778,4 +732,4 @@ phpMussel chặn một tập tin | __Sai tích cực__ | Đúng tích cực (suy
 ---
 
 
-Lần cuối cập nhật: 10 Tháng Hai 2017 (2017.02.10).
+Lần cuối cập nhật: 14 Tháng Hai 2017 (2017.02.14).

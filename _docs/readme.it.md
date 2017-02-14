@@ -357,6 +357,9 @@ Generale configurazione per phpMussel.
 ####"signatures" (Categoria)
 Configurazione per firme.
 
+"Filename"
+- Verificare nomi del file contro file nome basate firme durante la scansione? In tal caso, specificare i nomi dei file di firme da utilizzare, delimitati da virgole.
+
 "MD5"
 - Verificare contro MD5 firme durante la scansione? In tal caso, specificare i nomi dei file di firme da utilizzare, delimitati da virgole.
 
@@ -366,46 +369,6 @@ Configurazione per firme.
 "PE_Extended"
 - Verificare PE (Portatile Eseguibile) file (EXE, DLL, ecc) contro PE esteso firme durante la scansione? In tal caso, specificare i nomi dei file di firme da utilizzare, delimitati da virgole.
 
-Verificare contro generali firme durante la scansione? False = No; True = Sì [Predefinito].
-- "general_clamav"
-- "general_mussel"
-
-Verificare contro normalizzati ASCII firme durante la scansione? False = No; True = Sì [Predefinito].
-- "ascii_clamav"
-- "ascii_mussel"
-
-Verificare contro normalizzati HTML firme durante la scansione? False = No; True = Sì [Predefinito].
-- "html_clamav"
-- "html_mussel"
-
-Verificare PE (Portatile Eseguibile) file (EXE, DLL, ecc) contro PE firme durante la scansione? False = No; True = Sì [Predefinito].
-- "exe_clamav"
-- "exe_mussel"
-
-Verificare ELF file contro ELF firme durante la scansione? False = No; True = Sì [Predefinito].
-- "elf_clamav"
-- "elf_mussel"
-
-Verificare Mach-O file (OSX, ecc) contro Mach-O firme durante la scansione? False = No; True = Sì [Predefinito].
-- "macho_clamav"
-- "macho_mussel"
-
-Verificare grafica file contro grafica basato firme durante la scansione? False = No; True = Sì [Predefinito].
-- "graphics_clamav"
-- "graphics_mussel"
-
-Verificare OLE oggetti contro OLE firme durante la scansione? False = No; True = Sì [Predefinito].
-- "ole_clamav"
-- "ole_mussel"
-
-Verificare nomi del file contro file nome basate firme durante la scansione? False = No; True = Sì [Predefinito].
-- "filenames_clamav"
-- "filenames_mussel"
-
-Verificare contro email firme durante la scansione? False = No; True = Sì [Predefinito].
-- "mail_clamav"
-- "mail_mussel"
-
 Abilita file-specifico whitelist? False = No; True = Sì [Predefinito].
 - "whitelist_clamav"
 - "whitelist_mussel"
@@ -413,14 +376,6 @@ Abilita file-specifico whitelist? False = No; True = Sì [Predefinito].
 Verificare contro complesso esteso firme durante la scansione? False = No; True = Sì [Predefinito].
 - "coex_clamav"
 - "coex_mussel"
-
-Verificare contro PDF firme durante la scansione? False = No; True = Sì [Predefinito].
-- "pdf_clamav"
-- "pdf_mussel"
-
-Verificare contro Shockwave firme durante la scansione? False = No; True = Sì [Predefinito].
-- "swf_clamav"
-- "swf_mussel"
 
 "fail_silently"
 - Dovrebbe phpMussel rapporto quando le file di firme sono mancanti o danneggiati? Se `fail_silently` è disattivato, mancanti e danneggiati file saranno riportato sulla scansione, e se `fail_silently` è abilitato, mancanti e danneggiati file saranno ignorato, con scansione riportando per quei file che non ha sono problemi. Questo dovrebbe essere generalmente lasciata sola a meno che sperimentando inaspettate terminazioni o simili problemi. False = Disattivato; True = Attivato [Predefinito].
@@ -663,12 +618,11 @@ I seguenti sono i tipi di firme utilizzate da phpMussel:
 - "Firme basati su nomi di file". Verificato contro i file nomi dei file mirati per la scansionare.
 - "Firme generali". Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist.
 - "Firme grafiche". Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist e verificato come un conosciuto grafico file formato.
-- "Comandi generali" (hex_general_commands.csv). Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist.
+- "Comandi generali". Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist.
 - "Firme HTML normalizzati". Verificato contro i contenuti del ogni HTML file mirati per scansionare quello che non è sulla whitelist.
 - "Firme Mach-O". Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist e verificato al formato Mach-O.
 - "Firme Email". Verificato contro i contenuti del ogni EML file mirati per scansionare quello che non è sulla whitelist.
 - "Firme MD5". Verificato contro l'MD5 hash dei contenuti e la dimensione del ogni file mirati per scansionare quello che non è sulla whitelist.
-
 - "Firme OLE". Verificato contro i contenuti del ogni oggetti mirati per scansionare quello che non è sulla whitelist.
 - "Firme PDF". Verificato contro i contenuti del ogni PDF file mirati per scansionare quello che non è sulla whitelist.
 - "Firme portatili eseguibili sezionale". Verificato contro l'MD5 hash e la dimensione di ogni PE sezione del ogni file non sulla whitelist mirati per la scansione e verificato al formato PE.
@@ -778,4 +732,4 @@ phpMussel *FA* bloccare un file | __Falso positivo__ | Vero positivo (inferenza 
 ---
 
 
-Ultimo Aggiornamento: 10 Febbraio 2017 (2017.02.10).
+Ultimo Aggiornamento: 14 Febbraio 2017 (2017.02.14).

@@ -357,6 +357,9 @@ Konfigurasi umum dari phpMussel.
 ####"signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 
+"Filename"
+- Cek nama file pada tanda tangan berbasis nama file ketika pemindaian? Jika demikian, menentukan nama-nama file tanda tangan untuk menggunakan, dipisahkan dengan koma.
+
 "MD5"
 - Cek tanda tangan MD5 ketika pemindaian? Jika demikian, menentukan nama-nama file tanda tangan untuk menggunakan, dipisahkan dengan koma.
 
@@ -366,46 +369,6 @@ Konfigurasi untuk tanda tangan.
 "PE_Extended"
 - Cek file PE (Portable Executable; EXE, DLL, dll) pada tanda tangan PE diperpanjang ketika pemindaian? Jika demikian, menentukan nama-nama file tanda tangan untuk menggunakan, dipisahkan dengan koma.
 
-Cek tanda tangan umum ketika pemindaian? False = Tidak; True = Ya [Default].
-- "general_clamav"
-- "general_mussel"
-
-Cek tanda tangan ASCII dinormalisasi ketika pemindaian? False = Tidak; True = Ya [Default].
-- "ascii_clamav"
-- "ascii_mussel"
-
-Cek tanda tangan HTML dinormalisasi ketika pemindaian? False = Tidak; True = Ya [Default].
-- "html_clamav"
-- "html_mussel"
-
-Cek file PE (Portable Executable; EXE, DLL, dll) pada tanda tangan PE ketika pemindaian? False = Tidak; True = Ya [Default].
-- "exe_clamav"
-- "exe_mussel"
-
-Cek file-file ELF pada tanda tangan ELF ketika pemindaian? False = Tidak; True = Ya [Default].
-- "elf_clamav"
-- "elf_mussel"
-
-Cek file-file Mach-O (OSX, dll) pada tanda tangan Mach-O ketika pemindaian? False = Tidak; True = Ya [Default].
-- "macho_clamav"
-- "macho_mussel"
-
-Cek file-file grafis pada tanda tangan grafis ketika pemindaian? False = Tidak; True = Ya [Default].
-- "graphics_clamav"
-- "graphics_mussel"
-
-Cek objek-objek OLE pada tanda tangan OLE ketika pemindaian? False = Tidak; True = Ya [Default].
-- "ole_clamav"
-- "ole_mussel"
-
-Cek nama file pada tanda tangan berbasis nama file ketika pemindaian? False = Tidak; True = Ya [Default].
-- "filenames_clamav"
-- "filenames_mussel"
-
-Cek tanda tangan email ketika pemindaian? False = Tidak; True = Ya [Default].
-- "mail_clamav"
-- "mail_mussel"
-
 Aktifkan daftar putih tertentu file? False = Tidak; True = Ya [Default].
 - "whitelist_clamav"
 - "whitelist_mussel"
@@ -413,14 +376,6 @@ Aktifkan daftar putih tertentu file? False = Tidak; True = Ya [Default].
 Cek tanda tangan diperpanjang kompleks ketika pemindaian? False = Tidak; True = Ya [Default].
 - "coex_clamav"
 - "coex_mussel"
-
-Cek tanda tangan PDF ketika pemindaian? False = Tidak; True = Ya [Default].
-- "pdf_clamav"
-- "pdf_mussel"
-
-Cek tanda tangan Shockwave ketika pemindaian? False = Tidak; True = Ya [Default].
-- "swf_clamav"
-- "swf_mussel"
 
 "fail_silently"
 - Seharusnya laporan phpMussel ketika file tanda tangan hilang atau dikorup? Jika `fail_silently` dinonaktifkan, file dikorup dan hilang akan dilaporkan ketika pemindaian, dan jika `fail_silently` diaktifkan, file dikorup dan hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crash atau masalah lain. False = Dinonaktifkan; True = Diaktifkan [Default].
@@ -663,12 +618,11 @@ Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
 - "Tanda tangan nama file". Dicek pada nama file dari file yang ditargetkan pada pemindaian.
 - "Tanda tangan umum". Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
 - "Tanda tangan grafis". Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke apapun diketahui format grafis.
-- "Perintah umum" (hex_general_commands.csv). Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
+- "Perintah umum". Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
 - "Tanda tangan HTML dinormalisasi". Dicek pada isi dari apapun file HTML tidak bertanda putih dan ditargetkan untuk dipindai.
 - "Tanda tangan Mach-O". Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format Mach-O.
 - "Tanda tangan Email". Dicek pada isi dari apapun file EML tidak bertanda putih.
 - "Tanda tangan MD5". Dicek pada hash MD5 dari isi dan ukuran file dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
-
 - "Tanda tangan OLE". Dicek pada isi dari apapun objek tidak bertanda putih dan ditargetkan untuk dipindai.
 - "Tanda tangan PDF". Dicek pada isi dari apapun file PDF tidak bertanda putih.
 - "Tanda tangan portable executable sectional". Dicek pada hash MD5 dan ukuran dari seksi PE dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
@@ -778,4 +732,4 @@ phpMussel memblokir file | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 10 Februari 2017 (2017.02.10).
+Terakhir Diperbarui: 14 Februari 2017 (2017.02.14).
