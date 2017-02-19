@@ -145,7 +145,26 @@ Additionally, for those interested, a video tutorial for how to use phpMussel in
 
 ###4. <a name="SECTION4"></a>FRONT-END MANAGEMENT
 
-@TODO@
+####4.0 WHAT IS THE FRONT-END.
+
+The front-end provides a convenient and easy way to maintain, manage, and update your phpMussel installation. You can view, share, and download logfiles via the logs page, you can modify configuration via the configuration page, you can install and uninstall components via the updates page, and you can upload, download, and modify files in your vault via the file manager.
+
+The front-end is disabled by default in order to prevent unauthorised access (unauthorised access could have significant consequences for your website and its security). Instructions for enabling it are included below this paragraph.
+
+####4.1 HOW TO ENABLE THE FRONT-END.
+
+1) Locate the `disable_frontend` directive inside `config.ini`, and set it to true (it will be false by default).
+
+2) Access `loader.php` from your browser (e.g., `http://localhost/phpmussel/loader.php`).
+
+3) Log in with the default username and password (admin/password).
+
+Note: After you've logged in for the first time, in order to prevent unauthorised access to the front-end, you should immediately change your username and password! This is very important, because it's possible to upload arbitrary PHP code to your website via the front-end.
+
+####4.2 HOW TO USE THE FRONT-END.
+
+Instructions are provided on each page of the front-end, to explain the correct way to use it and its intended purpose. If you need further explanation or any special assistance, please contact support. Alternatively, there are some videos available on YouTube which could help by way of demonstration.
+
 
 ---
 
@@ -606,30 +625,6 @@ Where NAME is the name to cite for that signature and HEX is a hexadecimal-encod
 ####*REGEX*
 Any form of regex understood and correctly processed by PHP should also be correctly understood and processed by phpMussel and its signatures. However, I'd suggest taking extreme caution when writing new regex based signatures, because, if you're not entirely sure what you're doing, there can be highly irregular and/or unexpected results. Take a look at the phpMussel source-code if you're not entirely sure about the context in which regex statements are parsed. Also, remember that all patterns (with exception to filename, archive metadata and MD5 patterns) must be hexadecimally encoded (foregoing pattern syntax, of course)!
 
-####*WHERE TO PUT CUSTOM SIGNATURES?*
-
-####*SIGNATURE BREAKDOWN*
-The following is a breakdown of the types of signatures used by phpMussel:
-- "Normalised ASCII signatures". Checked against the contents of every non-whitelisted file targeted for scanning.
-- "Complex Extended signatures". Mixed signature type matching.
-- "ELF signatures". Checked against the contents of every non-whitelisted file targeted for scanning and matched to the ELF format.
-- "Portable executable signatures". Checked against the contents of every non-whitelisted targeted for scanning and matched to the PE format.
-- "Filename signatures". Checked against the filenames of files targeted for scanning.
-- "General signatures". Checked against the contents of every non-whitelisted file targeted for scanning.
-- "Graphics signatures". Checked against the contents of every non-whitelisted file targeted for scanning and matched to a known graphical file format.
-- "General commands". Checked against the contents of every non-whitelisted file targeted for scanning.
-- "Normalised HTML signatures". Checked against the contents of every non-whitelisted HTML file targeted for scanning.
-- "Mach-O signatures". Checked against the contents of every non-whitelisted file targeted for scanning and matched to the Mach-O format.
-- "Email signatures". Checked against the contents of every non-whitelisted EML file targeted for scanning.
-- "MD5 signatures". Checked against the MD5 hash of the contents and the filesize of every non-whitelisted file targeted for scanning.
-- "OLE signatures". Checked against the contents of every non-whitelisted OLE object targeted for scanning.
-- "PDF signatures". Checked against the contents of every non-whitelisted PDF file targeted for scanning.
-- "Portable executable sectional signatures". Checked against the MD5 hash and the size of each PE section of every non-whitelisted file targeted for scanning and matched to the PE format.
-- "Portable executable extended signatures". Checked against the MD5 hash and the size of variables within every non-whitelisted file targeted for scanning and matched to the PE format.
-- "SWF signatures". Checked against the contents of every non-whitelisted Shockwave file targeted for scanning.
-- "Whitelist signatures". Checked against the MD5 hash of the contents and the filesize of every file targeted for scanning. Matched files will be immune to being matched by the type of signature mentioned in their whitelist entry.
-(Note that any of these signatures may be easily disabled via `config.ini`).
-
 ---
 
 
@@ -731,4 +726,4 @@ phpMussel *DOES* block a file | __False positive__ | True positive (correct infe
 ---
 
 
-Last Updated: 14 February 2017 (2017.02.14).
+Last Updated: 19 February 2017 (2017.02.19).

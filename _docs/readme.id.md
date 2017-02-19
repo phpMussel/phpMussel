@@ -142,7 +142,26 @@ Mohon diingat bahwa phpMussel adalah scanner *on-demand*; adalah *BUKAN* scanner
 
 ###4. <a name="SECTION4"></a>MANAJEMEN BAGIAN DEPAN
 
-@TODO@
+####4.0 APA YANG MANAJEMEN BAGIAN DEPAN.
+
+Manajemen bagian depan menyediakan cara yang nyaman dan mudah untuk mempertahankan, mengelola, dan memperbarui instalasi phpMussel Anda. Anda dapat melihat, berbagi, dan download file log melalui halaman log, Anda dapat mengubah konfigurasi melalui halaman konfigurasi, Anda dapat instal dan uninstal/hapus komponen melalui halaman pembaruan, dan Anda dapat upload, download, dan memodifikasi file dalam vault Anda melalui file manager.
+
+Bagian depan adalah dinonaktifkan secara default untuk mencegah akses yang tidak sah (akses yang tidak sah bisa memiliki konsekuensi yang signifikan untuk website Anda dan keamanannya). Instruksi untuk mengaktifkannya termasuk di bawah paragraf ini.
+
+####4.1 BAGAIMANA CARA MENGAKTIFKAN MANAJEMEN BAGIAN DEPAN.
+
+1) Menemukan direktif `disable_frontend` dalam `config.ini`, dan mengaturnya untuk true (akan menjadi false secara default).
+
+2) Mengakses `loader.php` dari browser Anda (misalnya, `http://localhost/phpmussel/loader.php`).
+
+3) Masuk dengan nama pengguna dan kata sandi default (admin/password).
+
+Catat: Setelah Anda dimasukkan untuk pertama kalinya, untuk mencegah akses tidak sah ke manajemen bagian depan, Anda harus segera mengubah nama pengguna dan kata sandi Anda! Ini sangat penting, karena itu mungkin untuk meng-upload kode PHP sewenang-wenang untuk situs web Anda melalui bagian depan.
+
+####4.2 BAGAIMANA CARA MENGGUNAKAN MANAJEMEN BAGIAN DEPAN.
+
+Instruksi disediakan pada setiap halaman dari manajemen bagian depan, untuk menjelaskan cara yang benar untuk menggunakannya dan tujuan yang telah ditetapkan. Jika Anda membutuhkan penjelasan lebih lanjut atau bantuan khusus, silahkan hubungi dukungan, atau sebagai pilihan lain, ada beberapa video yang tersedia di YouTube yang dapat membantu dengan cara demonstrasi.
+
 
 ---
 
@@ -217,33 +236,33 @@ Data | Deskripsi
 /vault/fe_assets/frontend.html | Template HTML utama untuk akses bagian depan.
 /vault/lang/ | Berisikan file bahasa.
 /vault/lang/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/lang/lang.ar.fe.php | File Bahasa Arab untuk front-end.
+/vault/lang/lang.ar.fe.php | File Bahasa Arab untuk bagian depan.
 /vault/lang/lang.ar.php | File Bahasa Arab.
-/vault/lang/lang.de.fe.php | File Bahasa Jerman untuk front-end.
+/vault/lang/lang.de.fe.php | File Bahasa Jerman untuk bagian depan.
 /vault/lang/lang.de.php | File Bahasa Jerman.
-/vault/lang/lang.en.fe.php | File Bahasa Inggris untuk front-end.
+/vault/lang/lang.en.fe.php | File Bahasa Inggris untuk bagian depan.
 /vault/lang/lang.en.php | File Bahasa Inggris.
-/vault/lang/lang.es.fe.php | File Bahasa Spanyol untuk front-end.
+/vault/lang/lang.es.fe.php | File Bahasa Spanyol untuk bagian depan.
 /vault/lang/lang.es.php | File Bahasa Spanyol.
-/vault/lang/lang.fr.fe.php | File Bahasa Perancis untuk front-end.
+/vault/lang/lang.fr.fe.php | File Bahasa Perancis untuk bagian depan.
 /vault/lang/lang.fr.php | File Bahasa Perancis.
-/vault/lang/lang.id.fe.php | File Bahasa Indonesia untuk front-end.
+/vault/lang/lang.id.fe.php | File Bahasa Indonesia untuk bagian depan.
 /vault/lang/lang.id.php | File Bahasa Indonesia.
-/vault/lang/lang.it.fe.php | File Bahasa Italia untuk front-end.
+/vault/lang/lang.it.fe.php | File Bahasa Italia untuk bagian depan.
 /vault/lang/lang.it.php | File Bahasa Italia.
-/vault/lang/lang.ja.fe.php | File Bahasa Jepang untuk front-end.
+/vault/lang/lang.ja.fe.php | File Bahasa Jepang untuk bagian depan.
 /vault/lang/lang.ja.php | File Bahasa Jepang.
-/vault/lang/lang.nl.fe.php | File Bahasa Belanda untuk front-end.
+/vault/lang/lang.nl.fe.php | File Bahasa Belanda untuk bagian depan.
 /vault/lang/lang.nl.php | File Bahasa Belanda.
-/vault/lang/lang.pt.fe.php | File Bahasa Portugis untuk front-end.
+/vault/lang/lang.pt.fe.php | File Bahasa Portugis untuk bagian depan.
 /vault/lang/lang.pt.php | File Bahasa Portugis.
-/vault/lang/lang.ru.fe.php | File Bahasa Rusia untuk front-end.
+/vault/lang/lang.ru.fe.php | File Bahasa Rusia untuk bagian depan.
 /vault/lang/lang.ru.php | File Bahasa Rusia.
-/vault/lang/lang.vi.fe.php | File Bahasa Vietnam untuk front-end.
+/vault/lang/lang.vi.fe.php | File Bahasa Vietnam untuk bagian depan.
 /vault/lang/lang.vi.php | File Bahasa Vietnam.
-/vault/lang/lang.zh-tw.fe.php | File Bahasa Cina tradisional untuk front-end.
+/vault/lang/lang.zh-tw.fe.php | File Bahasa Cina tradisional untuk bagian depan.
 /vault/lang/lang.zh-tw.php | File Bahasa Cina tradisional.
-/vault/lang/lang.zh.fe.php | File Bahasa Cina sederhana untuk front-end.
+/vault/lang/lang.zh.fe.php | File Bahasa Cina sederhana untuk bagian depan.
 /vault/lang/lang.zh.php | File Bahasa Cina sederhana.
 /vault/quarantine/ | Direktori karantina (berisikan file yang dikarantina).
 /vault/quarantine/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
@@ -607,30 +626,6 @@ Dimana NAMA adalah nama yang mengutip tanda tangan ini dan HEX adalah sebuah seg
 ####*REGEX*
 Setiap bentuk dari regex mengerti dan dengan benar diproses oleh PHP seharusnya bisa dengan benar dimengerti dan diproses oleh phpMussel dan tanda tangannya. Bagaimanapun, saya menyarankan peringatan ekstrim ketika menuliskan tanda tangan berbasis regex baru karena, jika Anda tidak yakin apa yang Anda lakukan dapat menghasilkan hal yang tidak diinginkan. Coba lihat source-code phpMussel dan jika Anda tidak yakin tentang konteks dari statemen regex diparsing. Juga ingat bahwa semua pola (dengan pengecualian ke nama data, metadata terkompres dan pola MD5) harus diencode heksadesimal (sintaksis pola sebelumnya, tentu saja)!
 
-####*DIMANA MELETAKKAN TANDA TANGAN YANG TERUBAH?*
-
-####*TANDA TANGAN PEMECAH-MECAHAN*
-Berikut adalah pemecah-mecahan dari tipe tanda tangan yang digunakan phpMussel:
-- "Tanda tangan ASCII dinormalisasi". Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan diperpanjang kompleks". Campuran pencocokan jenis tanda tangan.
-- "Tanda tangan ELF". Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format ELF.
-- "Tanda tangan portable executable". Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
-- "Tanda tangan nama file". Dicek pada nama file dari file yang ditargetkan pada pemindaian.
-- "Tanda tangan umum". Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan grafis". Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke apapun diketahui format grafis.
-- "Perintah umum". Dicek pada isi dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan HTML dinormalisasi". Dicek pada isi dari apapun file HTML tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan Mach-O". Dicek pada isi dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format Mach-O.
-- "Tanda tangan Email". Dicek pada isi dari apapun file EML tidak bertanda putih.
-- "Tanda tangan MD5". Dicek pada hash MD5 dari isi dan ukuran file dari apapun file tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan OLE". Dicek pada isi dari apapun objek tidak bertanda putih dan ditargetkan untuk dipindai.
-- "Tanda tangan PDF". Dicek pada isi dari apapun file PDF tidak bertanda putih.
-- "Tanda tangan portable executable sectional". Dicek pada hash MD5 dan ukuran dari seksi PE dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
-- "Tanda tangan diperpanjang portable executable". Dicek pada hash MD5 dan ukuran dari variabel dari apapun file tidak bertanda putih, ditargetkan untuk dipindai dan dicocokkan ke format PE.
-- "Tanda tangan SWF". Dicek pada isi dari apapun file Shockwave tidak bertanda putih.
-- "Tanda tangan putih". Dicek pada hash MD5 dari isi dan ukuran file dari apapun file ditargetkan untuk dipindai. File dicocokkan akan kebal terhadap dari dicocokkan dengan jenis tanda tangan yang disebutkan dalam entri daftar putih mereka.
-(Catat itu bahwa semua ini tanda tangan dapat dinonaktifkan melalui `config.ini`).
-
 ---
 
 
@@ -732,4 +727,4 @@ phpMussel memblokir file | __Positif palsu__ | Positif benar (inferensi benar)
 ---
 
 
-Terakhir Diperbarui: 14 Februari 2017 (2017.02.14).
+Terakhir Diperbarui: 19 Februari 2017 (2017.02.19).

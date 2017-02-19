@@ -142,7 +142,26 @@ Anche essere consapevoli che phpMussel è uno scanner *on-demand* (cioè, su ric
 
 ###4. <a name="SECTION4"></a>GESTIONE FRONT-END
 
-@TODO@
+####4.0 QUAL È IL FRONT-END.
+
+Il front-end fornisce un modo conveniente e facile da mantenere, gestire e aggiornare l'installazione phpMussel. È possibile visualizzare, condividere e scaricare file di log attraverso la pagina di log, è possibile modificare la configurazione attraverso la pagina di configurazione, è possibile installare e disinstallare i componenti attraverso la pagina degli aggiornamenti, e si può caricare, scaricare e modificare i file nel vault tramite il file manager.
+
+Il front-end è disabilitato per impostazione predefinita al fine di prevenire l'accesso non autorizzato (l'accesso non autorizzato potrebbe avere conseguenze significative per il vostro sito e la sua sicurezza). Istruzioni per l'abilitazione si sono compresi sotto di questo paragrafo.
+
+####4.1 COME ATTIVARE IL FRONT-END.
+
+1) Trova la direttiva `disable_frontend` dentro `config.ini`, e impostarlo su true (sarà false per impostazione predefinita).
+
+2) Accedi `loader.php` dal browser (per esempio, `http://localhost/phpmussel/loader.php`).
+
+3) Accedi con il nome utente e la password predefinita (admin/password).
+
+Nota: Dopo aver effettuato l'accesso per la prima volta, al fine di impedire l'accesso non autorizzato al front-end, si dovrebbe cambiare immediatamente il nome utente e la password! Questo è molto importante, perché è possibile caricare codice PHP arbitrario al suo sito web attraverso il front-end.
+
+####4.2 COME UTILIZZARE IL FRONT-END.
+
+Le istruzioni sono fornite su ciascuna pagina del front-end, per spiegare il modo corretto di usarlo e la sua destinazione. Se avete bisogno di ulteriori spiegazioni o qualsiasi assistenza speciale, si prega di contattare il supporto. In alternativa, ci sono alcuni video disponibili su YouTube, che potrebbero aiutare per mezzo di dimostrazione.
+
 
 ---
 
@@ -607,30 +626,6 @@ Dove NOME è il nome per citare per quella firma e HEX è un esadecimale codific
 ####*REGEX*
 Ogni forma di regex correttamente capito da PHP anche dovrebbe essere correttamente capito da phpMussel el sue firme. Ma, io suggerirei di prendere estrema cautela quando scrittura nuove regex basato firme, perché, se non sei certo quello stai facendo, ci possono essere molto irregolari e/o inaspettati risultati. Occhiata al sorgente codice di phpMussel se non sei certo sul contesto in cui le regolari espressioni dichiarazioni vengono parsato. Anche, ricordare che tutti i espressioni (ad eccezione per i file nomi, archivio metadati e l'MD5 espressioni) deve essere esadecimale codificato (tranne sintassi, naturalmente)!
 
-####*DOVE METTERE PERSONALIZZATE FIRME?*
-
-####*TIPI DI FIRME*
-I seguenti sono i tipi di firme utilizzate da phpMussel:
-- "Firme ASCII normalizzati". Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist.
-- "Firme estesi complessi". Misto tipi dei firme verifica.
-- "Firme ELF". Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist e verificato al formato ELF.
-- "Firme portatili eseguibili". Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist e verificato al formato PE.
-- "Firme basati su nomi di file". Verificato contro i file nomi dei file mirati per la scansionare.
-- "Firme generali". Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist.
-- "Firme grafiche". Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist e verificato come un conosciuto grafico file formato.
-- "Comandi generali". Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist.
-- "Firme HTML normalizzati". Verificato contro i contenuti del ogni HTML file mirati per scansionare quello che non è sulla whitelist.
-- "Firme Mach-O". Verificato contro i contenuti del ogni file mirati per scansionare quello che non è sulla whitelist e verificato al formato Mach-O.
-- "Firme Email". Verificato contro i contenuti del ogni EML file mirati per scansionare quello che non è sulla whitelist.
-- "Firme MD5". Verificato contro l'MD5 hash dei contenuti e la dimensione del ogni file mirati per scansionare quello che non è sulla whitelist.
-- "Firme OLE". Verificato contro i contenuti del ogni oggetti mirati per scansionare quello che non è sulla whitelist.
-- "Firme PDF". Verificato contro i contenuti del ogni PDF file mirati per scansionare quello che non è sulla whitelist.
-- "Firme portatili eseguibili sezionale". Verificato contro l'MD5 hash e la dimensione di ogni PE sezione del ogni file non sulla whitelist mirati per la scansione e verificato al formato PE.
-- "Firme portatili eseguibili estesi". Verificato contro l'MD5 hash e la dimensione di ogni variabili del ogni file non sulla whitelist mirati per la scansione e verificato al formato PE.
-- "Firme SWF". Verificato contro i contenuti del ogni Shockwave file mirati per scansionare quello che non è sulla whitelist.
-- "Firme whitelist". Verificato contro l'MD5 hash dei contenuti e la dimensione del ogni file mirati per scansionare. Corrispondenti file saranno immuni contro l'essere bloccato dal tipo di firme di cui al loro whitelist listato.
-(Si noti che qualsiasi di queste firme possono essere disattivato facilmente tramite `config.ini`).
-
 ---
 
 
@@ -732,4 +727,4 @@ phpMussel *FA* bloccare un file | __Falso positivo__ | Vero positivo (inferenza 
 ---
 
 
-Ultimo Aggiornamento: 14 Febbraio 2017 (2017.02.14).
+Ultimo Aggiornamento: 19 Febbraio 2017 (2017.02.19).

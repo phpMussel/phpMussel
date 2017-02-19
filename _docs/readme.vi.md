@@ -142,7 +142,26 @@ Ngoài ra, ý thức được rằng phpMussel là một máy quét *khi yêu c�
 
 ###4. <a name="SECTION4"></a>QUẢN LÝ FRONT-END
 
-@TODO@
+####4.0 FRONT-END LÀ GÌ.
+
+Các front-end cung cấp một cách thuận tiện và dễ dàng để duy trì, quản lý và cập nhật cài đặt phpMussel của bạn. Bạn có thể xem, chia sẻ và tải về các tập tin bản ghi thông qua các trang bản ghi, bạn có thể sửa đổi cấu hình thông qua các trang cấu hình, bạn có thể cài đặt và gỡ bỏ cài đặt các thành phần thông qua các trang cập nhật, và bạn có thể tải lên, tải về, và sửa đổi các tập tin trong vault của bạn thông qua các quản lý tập tin.
+
+Các front-end được tắt theo mặc định để ngăn chặn truy cập trái phép (truy cập trái phép có thể có hậu quả đáng kể cho trang web của bạn và an ninh của mình). Hướng dẫn cho phép nó được bao gồm bên dưới đoạn này.
+
+####4.1 LÀM THẾ NÀO ĐỂ KÍCH HOẠT FRONT-END.
+
+1) Xác định vị trí các chỉ thị `disable_frontend` bên trong `config.ini`, và đặt nó vào true (nó sẽ là false bởi mặc định).
+
+2) Truy cập `loader.php` từ trình duyệt của bạn (ví dụ, `http://localhost/phpmussel/loader.php`).
+
+3) Đăng nhập với tên người dùng và mật khẩu mặc định (admin/password).
+
+Chú thích: Sau khi bạn đã đăng nhập lần đầu tiên, để ngăn chặn truy cập trái phép vào các front-end, bạn phải ngay lập tức thay đổi tên người dùng và mật khẩu của bạn! Điều này là rất quan trọng, bởi vì nó có thể tải lên các mã PHP tùy ý để trang web của bạn thông qua các front-end.
+
+####4.2 LÀM THẾ NÀO ĐỂ SỬ DỤNG FRONT-END.
+
+Các hướng dẫn được cung cấp trên mỗi trang của front-end, để giải thích một cách chính xác để sử dụng nó và mục đích của nó. Nếu bạn cần giải thích thêm hay bất kỳ sự hỗ trợ đặc biệt, vui lòng liên hệ hỗ trợ. Cũng thế, có một số video trên YouTube có thể giúp bằng cách viện trợ trực quan.
+
 
 ---
 
@@ -607,30 +626,6 @@ NAME là tên cho các chữ ký và HEX là một phân khúc thập lục phâ
 ####*BIỂU THỨC CHÍNH QUY*
 Bất kỳ cách thức biểu thức chính quy hiểu và xử lý một cách chính xác qua PHP cũng nên được hiểu hiểu và xử lý một cách chính xác bởi phpMussel và chữ ký của nó. Tuy nhiên, tôi muốn đề nghị lấy hết sức thận trọng khi viết chữ ký biểu thức chính quy mới, bởi vì, nếu bạn không hoàn toàn chắc chắn bạn đang làm gì vậy, có thể có kết quả rất bất thường hay bất ngờ. Nhìn vào các mã nguồn nếu bạn không hoàn toàn về bối cảnh rằng họ đang phân tích cú pháp. Ngoài ra, nhớ lại rằng tất cả mọi thứ (ngoại trừ tên tập tin, cú pháp, siêu dữ liệu kho lưu trữ và mẫu MD5) phải được mã hóa hệ thập lục phân!
 
-####*NƠI ĐỂ ĐẶT CHỮ KÝ TÙY CHỈNH?*
-
-####*GIẢI THÍCH CHỮ KÝ*
-Sau đây là một danh sách các loại chữ ký được sử dụng bởi phpMussel:
-- "Chữ ký ASCII bình thường". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
-- "Chữ ký kéo dài phức tạp". Chữ ký của hỗn hợp kiểu.
-- "Chữ ký ELF". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin ELF.
-- "Chữ ký PE". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác định như các định dạng PE.
-- "Chữ ký cho tên tập tin". Kiểm tra đối với các tên tập tin của mỗi tập tin dự định để quét.
-- "Chữ ký chung". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
-- "Chữ ký đồ họa". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin công nhận đồ họa.
-- "Lệnh chung". Kiểm tra đối với các nội dung của mỗi tập tin không trong danh sách trắng và nhắm mục tiêu cho quét.
-- "Chữ ký HTML bình thường". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin HTML.
-- "Chữ ký Mach-O". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin Mach-O.
-- "Chữ ký email". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin EML.
-- "Chữ ký dựa MD5". Kiểm tra đối với các băm MD5 của nội dung và các kích thước tập tin của mỗi tập tin không thuộc danh sách trắng và dự định để quét.
-- "Chữ ký OLE". Kiểm tra đối với các nội dung của mỗi OLE không thuộc danh sách trắng và dự định để quét.
-- "Chữ ký PDF". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin PDF.
-- "Chữ ký phần PE". Kiểm tra đối với các băm MD5 và các kích thước của mỗi phần của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác định như các định dạng PE.
-- "Chữ ký kéo dài PE". Kiểm tra đối với băm MD5 và kích thước của các biến trong mỗi tập tin không trong danh sách trắng, nhắm mục tiêu cho quét và xác định như các định dạng PE.
-- "Chữ ký Shockwave". Kiểm tra đối với các nội dung của mỗi tập tin không thuộc danh sách trắng và dự định để quét và xác nhận là tập tin Shockwave.
-- "Chữ ký danh sách trắng". Kiểm tra đối với các băm MD5 các nội dung và kích thước tập tin của mỗi tập tin nhắm mục tiêu cho quét. Tập tin xác định sẽ được miễn dịch để được xác định bởi các loại chữ ký đề cập trong nhập danh sách trắng của họ.
-(Hãy lưu ý bất kỳ của các chữ ký có thể bị vô hiệu hóa thông qua `config.ini`).
-
 ---
 
 
@@ -732,4 +727,4 @@ phpMussel chặn một tập tin | __Sai tích cực__ | Đúng tích cực (suy
 ---
 
 
-Lần cuối cập nhật: 14 Tháng Hai 2017 (2017.02.14).
+Lần cuối cập nhật: 19 Tháng Hai 2017 (2017.02.19).
