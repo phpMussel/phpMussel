@@ -388,13 +388,12 @@ Configuración de firmas.
 "PE_Extended"
 - Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE extendidas firmas cuando escaneando? Si es así, especifique los nombres de los archivos de firmas a utilizar, delimitado por comas.
 
+- "Complex_Extended"
+Cotejar contra complejos extendidas firmas cuando escaneando? Si es así, especifique los nombres de los archivos de firmas a utilizar, delimitado por comas.
+
 Activar archivo específica whitelist? False = No; True = Sí [Predefinido].
 - "whitelist_clamav"
 - "whitelist_mussel"
-
-Cotejar contra complejos extendidas firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "coex_clamav"
-- "coex_mussel"
 
 "fail_silently"
 - Debe phpMussel informan cuando los firmas archivos están desaparecidos o dañados? Si `fail_silently` está desactivado, desaparecidos y dañados archivos será reportado cuando escaneando, y si `fail_silently` está activado, desaparecidos y dañados archivos será ignorado, con escaneando reportando para aquellos archivos que no hay cualquier problemas. Esto generalmente debe ser dejar sola a menos que usted está experimentando estrellarse o problemas similares. False = Desactivado; True = Activado [Predefinido].

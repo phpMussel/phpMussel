@@ -388,13 +388,12 @@ Configuration pour les signatures.
 "PE_Extended"
 - Vérifier les fichiers PE (Portable Exécutable; EXE, DLL, etc) contre les signatures PE étendues au cours de analyse? Si oui, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
 
+- "Complex_Extended"
+Vérifier contre les signatures complexes étendues au cours de analyse? Si oui, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
+
 Activer fichier spécifique blanche liste? False = Non; True = Oui [Défaut].
 - "whitelist_clamav"
 - "whitelist_mussel"
-
-Vérifier contre les signatures complexes étendues au cours de analyse? False = Non; True = Oui [Défaut].
-- "coex_clamav"
-- "coex_mussel"
 
 "fail_silently"
 - Devrait phpMussel signaler quand les fichiers du signatures sont manquants ou endommagés? Si `fail_silently` est désactivé, fichiers manquants et corrompus seront signalé sur analyse, et si `fail_silently` est activé, fichiers manquants et corrompus seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. Cela devrait généralement être laissé seul sauf si vous rencontrez accidents ou similaires problèmes. False = Désactivé; True = Activé [Défaut].

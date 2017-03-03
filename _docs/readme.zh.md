@@ -388,13 +388,12 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 “PE_Extended”
 - 检查移植可执行｢PE｣文件（EXE文件，DLL文件，等等）针对移植可执行｢PE｣扩展签名当扫描吗？ 如果是这样，请指定要使用的签名文件名称，以逗号分隔。
 
+- “Complex_Extended”
+检查针对复杂扩展签名当扫描吗？ 如果是这样，请指定要使用的签名文件名称，以逗号分隔。
+
 激活具体文件白名单吗？ False = 不检查， True = 检查【默认】。
 - “whitelist_clamav”
 - “whitelist_mussel”
-
-检查针对复杂扩展签名当扫描吗？ False = 不检查， True = 检查【默认】。
-- “coex_clamav”
-- “coex_mussel”
 
 “fail_silently”
 - phpMussel应该报告当签名文件是失踪或损坏吗？ 如果`fail_silently`是关闭，失踪和损坏文件将会报告当扫描，和如果`fail_silently`是激活，失踪和损坏文件将会忽略，有扫描报告为那些文件哪里没有问题。 这个应该按说被留下除非您遇到失败或有其他类似问题。 False = 是关闭； True = 是激活【默认】。

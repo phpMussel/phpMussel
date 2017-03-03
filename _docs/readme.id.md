@@ -388,13 +388,12 @@ Konfigurasi untuk tanda tangan.
 "PE_Extended"
 - Cek file PE (Portable Executable; EXE, DLL, dll) pada tanda tangan PE diperpanjang ketika pemindaian? Jika demikian, menentukan nama-nama file tanda tangan untuk menggunakan, dipisahkan dengan koma.
 
+- "Complex_Extended"
+Cek tanda tangan diperpanjang kompleks ketika pemindaian? Jika demikian, menentukan nama-nama file tanda tangan untuk menggunakan, dipisahkan dengan koma.
+
 Aktifkan daftar putih tertentu file? False = Tidak; True = Ya [Default].
 - "whitelist_clamav"
 - "whitelist_mussel"
-
-Cek tanda tangan diperpanjang kompleks ketika pemindaian? False = Tidak; True = Ya [Default].
-- "coex_clamav"
-- "coex_mussel"
 
 "fail_silently"
 - Seharusnya laporan phpMussel ketika file tanda tangan hilang atau dikorup? Jika `fail_silently` dinonaktifkan, file dikorup dan hilang akan dilaporkan ketika pemindaian, dan jika `fail_silently` diaktifkan, file dikorup dan hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crash atau masalah lain. False = Dinonaktifkan; True = Diaktifkan [Default].

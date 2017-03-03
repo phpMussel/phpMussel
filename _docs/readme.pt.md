@@ -388,13 +388,12 @@ Configuração por assinaturas.
 "PE_Extended"
 - Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE estendidas assinaturas quando analisando? Nesse caso, especifique os nomes dos arquivos de assinaturas a serem utilizados, delimitados por vírgulas.
 
+- "Complex_Extended"
+Verificar contra complexos estendidas assinaturas quando analisando? Nesse caso, especifique os nomes dos arquivos de assinaturas a serem utilizados, delimitados por vírgulas.
+
 Ativar arquivo-específico whitelist? False = Não; True = Sim [Padrão].
 - "whitelist_clamav"
 - "whitelist_mussel"
-
-Verificar contra complexos estendidas assinaturas quando analisando? False = Não; True = Sim [Padrão].
-- "coex_clamav"
-- "coex_mussel"
 
 "fail_silently"
 - Deve phpMussel reportar quando os assinaturas arquivos estão perdido ou corrompido? Se `fail_silently` está desativado, perdidos e corrompidos arquivos serão reportado durante análise, e se `fail_silently` está ativado, perdidos e corrompidos arquivos serão ignoradas, com a análise reportando por estes arquivos em que não há problemas. Isso geralmente deve ser deixado sozinho a menos que você está experimentando PHP falhas ou semelhantes problemas. False = Desativado; True = Ativado [Padrão].

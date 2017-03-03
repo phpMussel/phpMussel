@@ -388,13 +388,12 @@ Cấu hình cho chữ ký.
 "PE_Extended"
 - Kiểm tra tập tin PE (portable executable / thực thi di động; EXE, DLL, vv) chống lại chữ ký kéo dài PE khi quét? Nếu vậy, chỉ định tên của các tập tin chữ ký để sử dụng, định giới bằng dấu phẩy.
 
+- "Complex_Extended"
+Kiểm tra chống lại chữ ký kéo dài phức tạp khi quét? Nếu vậy, chỉ định tên của các tập tin chữ ký để sử dụng, định giới bằng dấu phẩy.
+
 Cho phép danh sách trắng cho tập tin cụ thể? False = Không; True = Vâng [Mặc định].
 - "whitelist_clamav"
 - "whitelist_mussel"
-
-Kiểm tra chống lại chữ ký kéo dài phức tạp khi quét? False = Không; True = Vâng [Mặc định].
-- "coex_clamav"
-- "coex_mussel"
 
 "fail_silently"
 - phpMussel nên báo cáo khi tập tin chữ ký bị mất hay bị hỏng? Nếu `fail_silently` được vô hiệu hóa, tập tin bị mất hay bị hỏng sẽ được báo cáo khi quét, và nếu `fail_silently` được kích hoạt, tập tin bị mất hay bị hỏng sẽ bị bỏ qua, với báo cáo quét cho những tập tin mà không có bất kỳ vấn đề. Điều này thường cần được ở một mình trừ khi bạn gặp sự cố hay vấn đề tương tự. False = Không cho phép; True = Cho phép [Mặc định].

@@ -441,16 +441,15 @@
  <li>تحقق PE الملفات (محمول الملف التنفيذي) (EXE، DLL، الخ) على التوقيعات طويلة PE أثناء الفحص؟ ذلك، تحديد أسماء الملفات توقيع لاستخدام، مفصولة بفواصل.</li>
 </ul></div>
 
+<div dir="rtl">"Complex_Extended"<br /></div>
+<div dir="rtl"><ul>
+ <li>افحص ضد التوقيعات طويلة معقدة أثناء الفحص؟ ذلك، تحديد أسماء الملفات توقيع لاستخدام، مفصولة بفواصل.</li>
+</ul></div>
+
 <div dir="rtl">تمكين ملف القائمة البيضاء المحددة؟ كاذبة = لا؛ صحيح = نعم [افتراضي].<br /></div>
 <div dir="rtl"><ul>
  <li>"whitelist_clamav"</li>
  <li>"whitelist_mussel"</li>
-</ul></div>
-
-<div dir="rtl">افحص ضد التوقيعات طويلة معقدة أثناء الفحص؟ كاذبة = لا؛ صحيح = نعم [افتراضي].<br /></div>
-<div dir="rtl"><ul>
- <li>"coex_clamav"</li>
- <li>"coex_mussel"</li>
 </ul></div>
 
 <div dir="rtl">"fail_silently"<br /></div>

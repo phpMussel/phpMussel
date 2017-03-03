@@ -388,13 +388,12 @@ Controleer bestandsnamen tegen bestandsnaam gebaseerd signatures wanneer scannen
 "PE_Extended"
 - Gebruik PE uitgebreide signatures voor de PE-bestanden (EXE, DLL, e.z.v.) bij het scannen? Als dat zo is, geef de namen van de signature bestanden te gebruiken, gescheiden door komma's.
 
+- "Complex_Extended"
+Controleer tegen complexe uitgebreide signatures wanneer scannen? Als dat zo is, geef de namen van de signature bestanden te gebruiken, gescheiden door komma's.
+
 Inschakelen bestand-specifieke whitelist? False = Nee; True = Ja [Standaard].
 - "whitelist_clamav"
 - "whitelist_mussel"
-
-Controleer tegen complexe uitgebreide signatures wanneer scannen? False = Nee; True = Ja [Standaard].
-- "coex_clamav"
-- "coex_mussel"
 
 "fail_silently"
 - Moet phpMussel rapporteren wanneer signatures bestanden zijn ontbrekend of beschadigd? Als `fail_silently` is uitgeschakeld, ontbrekende en beschadigde bestanden zal worden gerapporteerd op het scannen, en als `fail_silently` is ingeschakeld, ontbrekende en beschadigde bestanden zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Dit moet in het algemeen met rust gelaten worden tenzij u ervaart mislukt of soortgelijke problemen. False = Uitgeschakeld; True = Ingeschakeld [Standaard].

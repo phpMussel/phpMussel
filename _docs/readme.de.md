@@ -390,13 +390,12 @@ Konfiguration der Signaturen.
 "PE_Extended"
 - Scan von PE-Dateien (Portable Executable, EXE, DLL, u.s.w.) mit den PE-Erweitert-Signaturen? Wenn ja, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
 
+- "Complex_Extended"
+Scan mit den Komplex-Erweitert-Signaturen? Wenn ja, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
+
 Aktivieren Datei-spezifischer Whitelist? False = Nein; True = Ja [Standardeinstellung].
 - "whitelist_clamav"
 - "whitelist_mussel"
-
-Scan mit den Komplex-Erweitert-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "coex_clamav"
-- "coex_mussel"
 
 "fail_silently"
 - Reaktion von phpMussel auf fehlende oder defekte Signaturen. Ist `fail_silently` deaktiviert, werden fehlende oder defekte Signaturen während des Scanvorgangs gemeldet, ist `fail_silently` aktiviert, werden fehlende oder defekte Signaturen ignoriert, ohne dass entsprechende Probleme gemeldet werden. Diese Option sollte so belassen werden, es sei denn, Sie erwarten Abstürze oder ähnliches. False = Deaktiviert; True = Aktiviert [Standardeinstellung].

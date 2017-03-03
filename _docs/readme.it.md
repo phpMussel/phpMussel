@@ -388,13 +388,12 @@ Configurazione per firme.
 "PE_Extended"
 - Verificare PE (Portatile Eseguibile) file (EXE, DLL, ecc) contro PE esteso firme durante la scansione? In tal caso, specificare i nomi dei file di firme da utilizzare, delimitati da virgole.
 
+- "Complex_Extended"
+Verificare contro complesso esteso firme durante la scansione? In tal caso, specificare i nomi dei file di firme da utilizzare, delimitati da virgole.
+
 Abilita file-specifico whitelist? False = No; True = Sì [Predefinito].
 - "whitelist_clamav"
 - "whitelist_mussel"
-
-Verificare contro complesso esteso firme durante la scansione? False = No; True = Sì [Predefinito].
-- "coex_clamav"
-- "coex_mussel"
 
 "fail_silently"
 - Dovrebbe phpMussel rapporto quando le file di firme sono mancanti o danneggiati? Se `fail_silently` è disattivato, mancanti e danneggiati file saranno riportato sulla scansione, e se `fail_silently` è abilitato, mancanti e danneggiati file saranno ignorato, con scansione riportando per quei file che non ha sono problemi. Questo dovrebbe essere generalmente lasciata sola a meno che sperimentando inaspettate terminazioni o simili problemi. False = Disattivato; True = Attivato [Predefinito].
