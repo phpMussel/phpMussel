@@ -16,8 +16,9 @@ phpMussel:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-TW: 主包（沒有簽名文件，文檔，和配置）。
- Version: 1.0.0-DEV+20170213
+ Version: 1.0.0-DEV+2017061322
  Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/Changelog-v1.txt
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
  Files:
@@ -102,7 +103,7 @@ phpMussel:
    - 8e03209e7fc6641b45094e584340feff:83
    - b79b63a51e1629b9d8a98fc46c92adf1:31301
    - 794644d3cff85f4585ab8b98dbafe2cd:7075
-   - 9d64ca08706d5bd80c2d4b8b9bba7fe4:5490
+   - 3e4024c44f78d2a59d1be98097b9408c:5508
    - 8e03209e7fc6641b45094e584340feff:83
    - 5a47afbf902974f1de35d0c6ec4beefb:1359
    - afe174ddfc9d51f6377709307c49254c:779
@@ -122,10 +123,10 @@ phpMussel:
    - 14af0698a968aaebd5c9cc06e0ddaba4:988
    - e509a53eb373457a6dd549024e1b50ea:4135
    - ed6105518853c1874e5fb619f916c686:794
-   - 1fb01c128c82b86ecfcb3db7b827b1de:94458
-   - 5bd5a516d1116d567d13ccc207b48993:310793
+   - 5837d0bd42d577bea9252ee552f82b5f:94381
+   - b65de3aee360c97261f356eb214bbdce:310786
    - c079d33f77a9612a906df4a21948b5b6:17618
-   - 6e7c8fc61526e506584c19fa9551aef0:3264
+   - 359a65f973168540e69ffc66ba914b11:2368
    - 8e03209e7fc6641b45094e584340feff:83
    - ba59b00bf93f7a670033158109d9f2e0:1760
    - 8e03209e7fc6641b45094e584340feff:83
@@ -140,8 +141,9 @@ l10n/en:
  Name: L10N: English
  Extended Description:
   en: English language data
- Version: 2017.02.13
+ Version: 2017.02.10
  Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
  Uninstallable: true
  Files:
@@ -159,8 +161,9 @@ l10n/ar:
  Name: L10N: العربية
  Extended Description:
   ar: ملفات اللغة العربية
- Version: 2017.02.13
+ Version: 2017.02.10
  Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
  Uninstallable: true
  Files:
@@ -178,8 +181,9 @@ l10n/de:
  Name: L10N: Deutsche
  Extended Description:
   de: Deutsche Sprachdateien
- Version: 2017.02.13
+ Version: 2017.02.10
  Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
  Uninstallable: true
  Files:
@@ -197,8 +201,9 @@ l10n/es:
  Name: L10N: Español
  Extended Description:
   es: Lingüísticos datos Español
- Version: 2017.02.13
+ Version: 2017.02.10
  Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
  Uninstallable: true
  Files:
@@ -216,8 +221,9 @@ l10n/fr:
  Name: L10N: Français
  Extended Description:
   fr: Linguistiques données en Français
- Version: 2017.02.13
+ Version: 2017.02.10
  Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
  Uninstallable: true
  Files:
@@ -235,8 +241,9 @@ l10n/id:
  Name: L10N: Bahasa Indonesia
  Extended Description:
   id: File Bahasa Indonesia
- Version: 2017.02.13
+ Version: 2017.02.10
  Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
  Uninstallable: true
  Files:
@@ -254,8 +261,9 @@ l10n/it:
  Name: L10N: Italiana
  Extended Description:
   it: Linguistici dati Italiana
- Version: 2017.02.13
+ Version: 2017.02.10
  Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
  Uninstallable: true
  Files:
@@ -273,8 +281,9 @@ l10n/ja:
  Name: L10N: 日本語
  Extended Description:
   ja: 日本語言語データ
- Version: 2017.02.13
+ Version: 2017.02.10
  Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
  Uninstallable: true
  Files:
@@ -285,15 +294,16 @@ l10n/ja:
    - lang/lang.ja.fe.php
    - lang/lang.ja.php
   Checksum:
-   - 6df6baa5ea69466a53121d925d53c61a:46742
+   - 07dccf4ce92d89f91e408cd9b07b87e7:46807
    - 1e94191088a6f7e61ec805a51d17d825:8802
  Reannotate: components.dat
 l10n/nl:
  Name: L10N: Nederlandse
  Extended Description:
   nl: Nederlandse taaldata/taalgegevens
- Version: 2017.02.13
+ Version: 2017.02.10
  Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
  Uninstallable: true
  Files:
@@ -311,8 +321,9 @@ l10n/pt:
  Name: L10N: Português
  Extended Description:
   pt: Linguagem dados Português
- Version: 2017.02.13
+ Version: 2017.02.10
  Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
  Uninstallable: true
  Files:
@@ -330,8 +341,9 @@ l10n/ru:
  Name: L10N: Русский
  Extended Description:
   ru: Русском языковые файлы
- Version: 2017.02.13
+ Version: 2017.02.10
  Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
  Uninstallable: true
  Files:
@@ -349,8 +361,9 @@ l10n/vi:
  Name: L10N: Tiếng Việt
  Extended Description:
   vi: Dữ liệu tiếng Việt
- Version: 2017.02.13
+ Version: 2017.02.10
  Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
  Uninstallable: true
  Files:
@@ -361,15 +374,16 @@ l10n/vi:
    - lang/lang.vi.fe.php
    - lang/lang.vi.php
   Checksum:
-   - cf1154509d4dde17a899eccd50201fae:49100
+   - ca9a33bb7d17844d41f24360ebd5a5c1:49104
    - 7b8f35c1123b1afb705a11d67d6d8b64:8272
  Reannotate: components.dat
 l10n/zh:
  Name: L10N: 中文（简体）
  Extended Description:
   zh: 中文（简体）语言数据
- Version: 2017.02.13
+ Version: 2017.02.10
  Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
  Uninstallable: true
  Files:
@@ -387,8 +401,9 @@ l10n/zh-TW:
  Name: L10N: 中文（傳統）
  Extended Description:
   zh-TW: 中文（傳統）語言數據
- Version: 2017.02.13
+ Version: 2017.02.10
  Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
  Uninstallable: true
  Files:

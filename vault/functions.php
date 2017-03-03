@@ -6384,7 +6384,7 @@ $phpMussel['FileManager-PathSecurityCheck'] = function ($Path) {
     $Path = preg_split('@/@', $Path, -1, PREG_SPLIT_NO_EMPTY);
     $Valid = true;
     array_walk($Path, function($Segment) use (&$Valid) {
-        if (empty($Segment) || preg_match('/(?:[^!0-9a-z\x20\._-{}()]+|^\.+$)/i', $Segment)) {
+        if (empty($Segment) || preg_match('/(?:[\x00-\x1f\x7f]+|^\.+$)/i', $Segment)) {
             $Valid = false;
         }
     });

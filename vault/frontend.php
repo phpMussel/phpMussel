@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.02.13).
+ * This file: Front-end handler (last modified: 2017.03.03).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -178,9 +178,13 @@ if ($phpMussel['FE']['FormTarget'] === 'login') {
     }
 
     if ($phpMussel['Config']['general']['FrontEndLog']) {
-        $phpMussel['FrontEndLog'] = $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['Config']['general']['FrontEndLog']);
-        $phpMussel['FrontEndLog'] .=
-            $_SERVER[$phpMussel['Config']['general']['ipaddr']] . ' - ' . $phpMussel['FE']['DateTime'] . ' - ';
+        if (strpos($phpMussel['Config']['general']['FrontEndLog'], '{') !== false) {
+            $phpMussel['Config']['general']['FrontEndLog'] = $phpMussel['Time2Logfile'](
+                $phpMussel['Time'],
+                $phpMussel['Config']['general']['FrontEndLog']
+            );
+        }
+        $phpMussel['FrontEndLog'] = $_SERVER[$phpMussel['Config']['general']['ipaddr']] . ' - ' . $phpMussel['FE']['DateTime'] . ' - ';
         $phpMussel['FrontEndLog'] .= empty($_POST['username']) ? '""' : '"' . $_POST['username'] . '"';
     }
     if ($phpMussel['FE']['state_msg']) {
@@ -201,13 +205,7 @@ if ($phpMussel['FE']['FormTarget'] === 'login') {
         $phpMussel['FrontEndLog'] .= ' - ' . $phpMussel['lang']['state_logged_in'] . "\n";
     }
     if ($phpMussel['Config']['general']['FrontEndLog']) {
-        if (strpos($phpMussel['Config']['general']['FrontEndLog'], '{') !== false) {
-            $phpMussel['Config']['general']['FrontEndLog'] = $phpMussel['Time2Logfile'](
-                $phpMussel['Time'],
-                $phpMussel['Config']['general']['FrontEndLog']
-            );
-        }
-        $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['Config']['general']['FrontEndLog'], 'w');
+        $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['Config']['general']['FrontEndLog'], 'a');
         fwrite($phpMussel['Handle'], $phpMussel['FrontEndLog']);
         fclose($phpMussel['Handle']);
         unset($phpMussel['FrontEndLog']);
@@ -1378,12 +1376,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
 
     /** Finalise output and unset working data. */
     uksort($phpMussel['Components']['Out'], function ($A, $B) {
-        $CheckA = preg_match('/^(?:phpMussel$|l10n)/i', $A);
-        $CheckB = preg_match('/^(?:phpMussel$|l10n)/i', $B);
-        if ($CheckA && !$CheckB) {
+        $CheckA = preg_match('/^l10n/i', $A);
+        $CheckB = preg_match('/^l10n/i', $B);
+        if (($CheckA && !$CheckB) || ($A === 'phpMussel' && $B !== 'phpMussel')) {
             return -1;
         }
-        if ($CheckB && !$CheckA) {
+        if (($CheckB && !$CheckA) || ($B === 'phpMussel' && $A !== 'phpMussel')) {
             return 1;
         }
         if ($A < $B) {

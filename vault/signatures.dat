@@ -1,0 +1,9 @@
+---
+hex_general_commands.csv:
+ Name: General command detections.
+ Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
+ Remote: https://raw.githubusercontent.com/phpMussel/Signatures/master/signatures.dat
+ Uninstallable: true
+ Reannotate: signatures.dat
+
