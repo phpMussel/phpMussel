@@ -142,7 +142,26 @@ Beachten Sie außerdem, dass phpMussel eine *On-Demand-Scanner*; Keine *On-Acces
 
 ###4. <a name="SECTION4"></a>FRONT-END-MANAGEMENT
 
-@TODO@
+####4.0 WAS IST DAS FRONT-END.
+
+Das Front-End bietet eine bequeme und einfache Möglichkeit, für Ihre phpMussel-Installation zu pflegen, zu verwalten und zu aktualisieren. Sie können Protokolldateien über die Protokollseite anzeigen, teilen und herunterladen, Sie können die Konfiguration über die Konfigurationsseite ändern, Sie können Komponenten über die Updates-Seite installieren und deinstallieren, und Sie können Dateien in Ihrem vault über den Dateimanager hochladen, herunterladen und ändern.
+
+Das Front-End ist standardmäßig deaktiviert, um unautorisiert Zugriff zu verhindern (unautorisiert Zugriff könnte erhebliche Konsequenzen für Ihre Website und ihre Sicherheit haben). Aktivieren Sie es, indem Sie die unten aufgeführten Anweisungen befolgen.
+
+####4.1 WIE AKTIVIEREN SIE DAS FRONT-END.
+
+1) Finden Sie die `disable_frontend`-Direktive in der Datei `config.ini`, und setzen Sie es auf true (wird es standardmäßig false sein).
+
+2) Greifen Sie `loader.php` aus Ihrem Browser (z.B., `http://localhost/phpmussel/loader.php`).
+
+3) Einloggen Sie sich mit dem standardmäßig Benutzernamen und Passwort an (admin/password).
+
+Note: Nachdem Sie sich eingeloggt haben, um einen unautorisiert Zugriff auf das Front-End zu verhindern, sollten Sie sofort Ihren Benutzernamen und Ihr Passwort ändern! Dies ist sehr wichtig, weil es möglich ist, beliebigen PHP-Code auf Ihre Website über das Front-End zu hochladen.
+
+####4.2 WIE MAN DAS FRONT-END BENUTZT.
+
+Anweisungen sind auf jeder Seite des Front-Ends vorhanden, um die richtige Verwendung und den vorgesehenen Zweck zu erläutern. Wenn Sie weitere Erklärungen oder spezielle Hilfe benötigen, wenden Sie sich bitte an den Support. Alternativ gibt es einige Videos auf YouTube, die durch Demonstration helfen könnte.
+
 
 ---
 
@@ -359,6 +378,9 @@ Generelle Konfiguration von phpMussel.
 ####"signatures" (Kategorie)
 Konfiguration der Signaturen.
 
+"Filename"
+- Scan von Dateinamen mit den Dateinamen-Signaturen? Wenn ja, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
+
 "MD5"
 - Scan mit den MD5-Signaturen? Wenn ja, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
 
@@ -368,61 +390,12 @@ Konfiguration der Signaturen.
 "PE_Extended"
 - Scan von PE-Dateien (Portable Executable, EXE, DLL, u.s.w.) mit den PE-Erweitert-Signaturen? Wenn ja, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
 
-Scan mit den generellen Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "general_clamav"
-- "general_mussel"
-
-Scan mit den normierten ASCII Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "ascii_clamav"
-- "ascii_mussel"
-
-Scan mit den normierten HTML Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "html_clamav"
-- "html_mussel"
-
-Scan von PE-Dateien (Portable Executable, EXE, DLL, u.s.w.) mit den PE-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "exe_clamav"
-- "exe_mussel"
-
-Scan von ELF-Dateien mit den ELF-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "elf_clamav"
-- "elf_mussel"
-
-Scan von Mach-O-Dateien (OSX, u.s.w.) mit den Mach-O-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "macho_clamav"
-- "macho_mussel"
-
-Scan von Bilddateien mit den Grafik-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "graphics_clamav"
-- "graphics_mussel"
-
-Scan von OLE-Objekten mit den OLE-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "ole_clamav"
-- "ole_mussel"
-
-Scan von Dateinamen mit den Dateinamen-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "filenames_clamav"
-- "filenames_mussel"
-
-Scan mit den Email-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "mail_clamav"
-- "mail_mussel"
+- "Complex_Extended"
+Scan mit den Komplex-Erweitert-Signaturen? Wenn ja, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
 
 Aktivieren Datei-spezifischer Whitelist? False = Nein; True = Ja [Standardeinstellung].
 - "whitelist_clamav"
 - "whitelist_mussel"
-
-Scan mit den Komplex-Erweitert-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "coex_clamav"
-- "coex_mussel"
-
-Scan mit den PDF-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "pdf_clamav"
-- "pdf_mussel"
-
-Scan mit den Shockwave-Signaturen? False = Nein; True = Ja [Standardeinstellung].
-- "swf_clamav"
-- "swf_mussel"
 
 "fail_silently"
 - Reaktion von phpMussel auf fehlende oder defekte Signaturen. Ist `fail_silently` deaktiviert, werden fehlende oder defekte Signaturen während des Scanvorgangs gemeldet, ist `fail_silently` aktiviert, werden fehlende oder defekte Signaturen ignoriert, ohne dass entsprechende Probleme gemeldet werden. Diese Option sollte so belassen werden, es sei denn, Sie erwarten Abstürze oder ähnliches. False = Deaktiviert; True = Aktiviert [Standardeinstellung].
@@ -569,7 +542,7 @@ Hinweis: Unabhängig von der Verdachts-Stufe wird jede Datei auf der Whitelist o
 URL-Scanner Konfiguration.
 
 "urlscanner"
-- In phpMussel ist ein URL-Scanner eingebaut, der bösartige URLs in Daten und gescannten Dateien erkennt. Um den URL-Scanner zu aktivieren, setzen Sie die `urlscanner` Anweisung auf `true`; Um ihn zu deaktivieren, setzen Sie diese Anweisung auf `false`.
+- In phpMussel ist ein URL-Scanner eingebaut, der bösartige URLs in Daten und gescannten Dateien erkennt. Um den URL-Scanner zu aktivieren, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
 
 Hinweis: Wenn der URL-Scanner deaktiviert ist, müssen Sie keine der Anweisungen in dieser Kategorie (`urlscanner`) überprüfen, da dann keine davon funktioniert.
 
@@ -652,31 +625,6 @@ NAME ist der Name, um die Signatur zu benennen und HEX ist ein hexidezimal-kodie
 
 ####*REGEX*
 Jede Form von regulären Ausdrücken, die von PHP verstanden und korrekt ausgeführt werden, sollten auch von phpMussel und den Signaturen verstanden und korrekt ausgeführt werden können. Lassen Sie extreme Vorsicht walten, wenn Sie neue Signaturen schreiben, die auf regulären Ausdrücken basieren. Wenn Sie nicht absolut sicher sind, was Sie dort machen, kann dies zu nicht korrekten und/oder unerwarteten Ergebnissen führen. Schauen Sie im Quelltext von phpMussel nach, wenn Sie sich nicht absolut sicher sind, wie die regulären Ausdrücke verarbeitet werden. Beachten Sie bitte, dass alle Suchmuster (außer Dateinamen, Archive-Metadata and MD5-Prüfmuster) hexadezimal kodiert sein müssen (mit Ausnahme von Syntax, natürlich)!
-
-####*WO WERDEN EIGENE SIGNATUREN ABGELEGT?*
-
-####*AUFSCHLÜSSELUNG DER SIGNATUREN*
-Im Folgenden eine Aufschlüsselung der Signaturen, die von phpMussel genutzt werden:
-- "Normierte ASCII-Signaturen". Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
-- "Komplex-Erweitert-Signaturen". Mischsignaturtyp Datei-Überprüfungen.
-- "ELF-Signaturen". Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem ELF-Format entspricht.
-- "Portable-Executable-Signaturen". Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format entspricht.
-- "Dateinamen-Signaturen". Überprüft die Dateinamen jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
-- "Allgemeine Signaturen". Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
-- "Grafiksignaturen". Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und einem bekannten Bildformat entspricht.
-- "Allgemeine Befehle" (hex_general_commands.csv). Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
-- "Normierte HTML-Signaturen". Überprüft den Inhalt jeder HTML-Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
-- "Mach-O-Signaturen". Überprüft den Inhalt jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem Mach-O-Format entspricht.
-- "Email-Signaturen". Überprüft den Inhalt jeder EML-Dateien, die nicht in der Whitelist aufgeführt ist.
-- "MD5-Signaturen". Überprüft mittels MD5-Hash des Inhalts und der Dateigröße jede Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll.
-
-- "OLE-Signaturen". Überprüft den Inhalt jeder Objekten, die nicht in der Whitelist aufgeführt ist.
-- "PDF-Signaturen". Überprüft den Inhalt jeder PDF-Dateien, die nicht in der Whitelist aufgeführt ist.
-- "Portable-Executable-Sectional-Signaturen". Überprüft mittels der Größe und MD5-Hash der PE-Sektionen jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format entspricht.
-- "Portable-Executable-Erweitert-Signaturen". Überprüft mittels der Größe und MD5-Hash der Variablen jeder Datei, die nicht in der Whitelist aufgeführt ist und überprüft werden soll und dem PE-Format entspricht.
-- "Shockwave-Signaturen". Überprüft den Inhalt jeder Shockwave-Datei, die nicht in der Whitelist aufgeführt ist.
-- "Whitelist-Signaturen". Überprüft mittels MD5-Hash des Inhalts und der Dateigröße jede Datei. Übereinstimmende Dateien werden immun gegen die Art der Signaturen in dem Whitelist-Eintrag.
-(Beachten Sie, dass jede dieser Signaturen auf einfache Weise in der `config.ini` deaktiviert werden kann).
 
 ---
 
@@ -779,4 +727,4 @@ phpMussel *TUT* blockiert eine Datei | __Falsch-Positiv__ | True-Positiv (korrek
 ---
 
 
-Zuletzt aktualisiert: 10 Februar 2017 (2017.02.10).
+Zuletzt aktualisiert: 19 Februar 2017 (2017.02.19).

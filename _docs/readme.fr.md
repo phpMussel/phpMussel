@@ -142,7 +142,26 @@ Aussi soyez conscient que phpMussel est un scanner *à la demande* (ou *on-deman
 
 ###4. <a name="SECTION4"></a>GESTION L'ACCÈS FRONTAL
 
-@TODO@
+####4.0 CE QUI EST L'ACCÈS FRONTAL.
+
+L'accès frontal fournit un moyen pratique et facile de gérer, de maintenir et de mettre à jour votre installation de phpMussel. Vous pouvez afficher, partager et télécharger des fichiers journaux via la page des journaux, vous pouvez modifier la configuration via la page de configuration, vous pouvez installer et désinstaller des composants via la page des mises à jour, et vous pouvez télécharger et modifier des fichiers dans votre vault via le gestionnaire de fichiers.
+
+L'accès frontal est désactivée par défaut afin d'empêcher tout accès non autorisé (l'accès non autorisé pourrait avoir des conséquences importantes pour votre site web et sa sécurité). Les instructions pour l'activer sont incluses ci-dessous.
+
+####4.1 COMMENT ACTIVER L'ACCÈS FRONTAL.
+
+1) Localiser la directive `disable_frontend` à l'intérieur de `config.ini`, et réglez-le sur true (il sera false par défaut).
+
+2) Accéder `loader.php` à partir de votre navigateur (par exemple, `http://localhost/phpmussel/loader.php`).
+
+3) Connectez-vous avec le nom d'utilisateur et le mot de passe défaut (admin/password).
+
+Remarque: Après vous être connecté pour la première fois, afin d'empêcher l'accès frontal non autorisé, vous devez immédiatement changer votre nom d'utilisateur et votre mot de passe! C'est très important, car il est possible de télécharger du code PHP arbitraire à votre site Web via l'accès frontal.
+
+####4.2 COMMENT UTILISER L'ACCÈS FRONTAL.
+
+Des instructions sont fournies sur chaque page de l'accès frontal, pour expliquer la manière correcte de l'utiliser et son but. Si vous avez besoin d'autres explications ou d'une assistance spéciale, veuillez contacter le support technique. Alternativement, il ya quelques vidéos disponibles sur YouTube qui pourraient aider par voie de démonstration.
+
 
 ---
 
@@ -357,6 +376,9 @@ Configuration générale pour phpMussel.
 ####"signatures" (Catégorie)
 Configuration pour les signatures.
 
+"Filename"
+- Vérifier les noms de fichiers contre les signatures basées sur les noms de fichiers au cours de analyse? Si oui, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
+
 "MD5"
 - Vérifier contre les signatures MD5 au cours de analyse? Si oui, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
 
@@ -366,61 +388,12 @@ Configuration pour les signatures.
 "PE_Extended"
 - Vérifier les fichiers PE (Portable Exécutable; EXE, DLL, etc) contre les signatures PE étendues au cours de analyse? Si oui, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
 
-Vérifier contre les signatures générales au cours de analyse? False = Non; True = Oui [Défaut].
-- "general_clamav"
-- "general_mussel"
-
-Vérifier contre les signatures ASCII normalisés au cours de analyse? False = Non; True = Oui [Défaut].
-- "ascii_clamav"
-- "ascii_mussel"
-
-Vérifier contre les signatures HTML normalisés au cours de analyse? False = Non; True = Oui [Défaut].
-- "html_clamav"
-- "html_mussel"
-
-Vérifier les fichiers PE (Portable Exécutable; EXE, DLL, etc) contre les signatures PE au cours de analyse? False = Non; True = Oui [Défaut].
-- "exe_clamav"
-- "exe_mussel"
-
-Vérifier les fichiers ELF contre les signatures ELF au cours de analyse? False = Non; True = Oui [Défaut].
-- "elf_clamav"
-- "elf_mussel"
-
-Vérifier les fichiers Mach-O (OSX, etc) contre les signatures Mach-O au cours de analyse? False = Non; True = Oui [Défaut].
-- "macho_clamav"
-- "macho_mussel"
-
-Vérifier les fichiers graphiques contre les signatures graphiques basées au cours de analyse? False = Non; True = Oui [Défaut].
-- "graphics_clamav"
-- "graphics_mussel"
-
-Vérifier les objets OLE contre les signatures OLE au cours de analyse? False = Non; True = Oui [Défaut].
-- "ole_clamav"
-- "ole_mussel"
-
-Vérifier les noms de fichiers contre les signatures basées sur les noms de fichiers au cours de analyse? False = Non; True = Oui [Défaut].
-- "filenames_clamav"
-- "filenames_mussel"
-
-Vérifier contre les signatures email au cours de analyse? False = Non; True = Oui [Défaut].
-- "mail_clamav"
-- "mail_mussel"
+- "Complex_Extended"
+Vérifier contre les signatures complexes étendues au cours de analyse? Si oui, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
 
 Activer fichier spécifique blanche liste? False = Non; True = Oui [Défaut].
 - "whitelist_clamav"
 - "whitelist_mussel"
-
-Vérifier contre les signatures complexes étendues au cours de analyse? False = Non; True = Oui [Défaut].
-- "coex_clamav"
-- "coex_mussel"
-
-Vérifier contre les signatures PDF au cours de analyse? False = Non; True = Oui [Défaut].
-- "pdf_clamav"
-- "pdf_mussel"
-
-Vérifier contre les signatures shockwave au cours de analyse? False = Non; True = Oui [Défaut].
-- "swf_clamav"
-- "swf_mussel"
 
 "fail_silently"
 - Devrait phpMussel signaler quand les fichiers du signatures sont manquants ou endommagés? Si `fail_silently` est désactivé, fichiers manquants et corrompus seront signalé sur analyse, et si `fail_silently` est activé, fichiers manquants et corrompus seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. Cela devrait généralement être laissé seul sauf si vous rencontrez accidents ou similaires problèmes. False = Désactivé; True = Activé [Défaut].
@@ -567,7 +540,7 @@ Noter: Indépendamment du niveau de suspicion, tous les fichiers qui sont sur la
 Configuration du scanner d'URLs.
 
 "urlscanner"
-- Construit dans phpMussel est un scanner d'URLs, capable de détecter les URL malveillantes à partir de toutes les données ou fichiers analysés. Pour activer le scanner d'URLs, définir la directive `urlscanner` à true; Pour désactiver le scanner d'URLs, définir cette directive à false.
+- Construit dans phpMussel est un scanner d'URLs, capable de détecter les URLs malveillantes à partir de toutes les données ou fichiers analysés. Pour activer le scanner d'URLs, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
 
 Noter: Si le scanner d'URLs est désactivé, vous ne serez pas besoin de revoir quelconque du directives dans cette catégorie (`urlscanner`), parce qu'aucun d'eux avoir une fonction si cette directive est désactivée.
 
@@ -651,31 +624,6 @@ Où NOM est le nom à citer pour la signature et HEX est un hexadécimal codé s
 
 ####*REGEX*
 Toute forme de regex comprise et préparé correctement par PHP devrait aussi être correctement compris et préparé par phpMussel et ses signatures. Mais, je vous suggère de prendre une extrême prudence lors de l'écriture de nouvelles regex basé signatures, parce, si vous n'êtes pas entièrement sûr de ce que vous faites, il peut y avoir très irréguliers et/ou inattendus résultats. Jetez un oeil à la phpMussel source code si vous n'êtes pas entièrement sûr sur le contexte dans lequel regex déclarations sont analysés. Aussi, rappeler toutes les déclarations (à l'exception de nom de fichier, métadonnées d'archives et MD5 déclarations) doit être de codé de hexadécimale (à l'exception de déclaration syntaxe, bien sûr)!
-
-####*OÙ METTRE DES PERSONNALISÉES SIGNATURES?*
-
-####*SIGNATURE DÉTAIL*
-Ce qui suit est un détail des types de signatures utilisées par phpMussel:
-- "Signatures ASCII normalisés". Vérifié contre les contenus de chaque fichier qui est pas sur la liste blanche et est ciblée pour d'analyse.
-- "Signatures complexes étendues". Mixte types des signatures correspondant.
-- "Signatures ELF". Vérifié contre les contenus de chaque fichier non listé blanche, ciblée pour l'analyse et identifié au ELF format.
-- "Signatures portable executable". Vérifié contre les contenus de chaque fichier non listé blanche, ciblée pour l'analyse et identifié au format PE.
-- "Signatures pour les noms de fichiers". Vérifié contre les noms de fichiers ciblé pour d'analyse.
-- "Signatures générales". Vérifié contre les contenus de chaque fichier qui est pas sur la liste blanche et est ciblée pour d'analyse.
-- "Signatures graphiques". Vérifié contre les contenus de chaque fichier non listé blanche, ciblée pour l'analyse et identifié à un format de fichier graphique connu.
-- "Commandes générales" (hex_general_commands.csv). Vérifié contre les contenus de chaque fichier qui est pas sur la liste blanche et est ciblée pour d'analyse.
-- "Signatures HTML normalisés". Vérifié contre les contenus de chaque fichier HTML qui est pas sur la liste blanche et est ciblée pour d'analyse.
-- "Signatures Mach-O". Vérifié contre les contenus de chaque fichier non listé blanche, ciblée pour l'analyse et identifié au Mach-O format.
-- "Signatures email". Vérifié contre les contenus de chaque fichier EML qui est pas sur la liste blanche.
-- "Signatures MD5". Vérifié contre le hachage MD5 des contenus et taille de chaque fichier qui est pas sur la liste blanche et est ciblée pour d'analyse.
-
-- "Signatures OLE". Vérifié contre les contenus de chaque objet qui est pas sur la liste blanche et est ciblée pour d'analyse.
-- "Signatures PDF". Vérifié contre les contenus de chaque fichier PDF qui est pas sur la liste blanche.
-- "Signatures portable executable sectional". Vérifié contre le taille et le hachage MD5 des sections de chaque fichier non listé blanche, ciblée pour l'analyse et identifié au format PE.
-- "Signatures portable executable étendues". Vérifié contre le taille et le hachage MD5 des variables de chaque fichier non listé blanche, ciblée pour l'analyse et identifié au PE format.
-- "Signatures SWF". Vérifié contre les contenus de chaque fichier Shockwave qui est pas sur la liste blanche.
-- "Signatures blanche liste". Vérifié contre le hachage MD5 des contenus et la taille de chaque fichier ciblée pour d'analyse. Les identifiés fichiers sera immunitaire d'être identifié par le type de signature mentionné dans leur entrée de blanche liste.
-(Noter que ces signatures peut être désactivé facilement via `config.ini`).
 
 ---
 
@@ -778,4 +726,4 @@ phpMussel bloque un fichier | __Faux positif__ | Vrai positif (inférence correc
 ---
 
 
-Dernière Mise à Jour: 10 Février 2017 (2017.02.10).
+Dernière Mise à Jour: 19 Février 2017 (2017.02.19).

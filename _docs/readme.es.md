@@ -142,7 +142,26 @@ También tenga en cuenta que phpMussel es un escáner *on-demand*; *NO* es un es
 
 ###4. <a name="SECTION4"></a>GESTIÓN DE FRONT-END
 
-@TODO@
+####4.0 CUÁL ES EL FRONT-END.
+
+El front-end proporciona una manera cómoda y fácil de mantener, administrar y actualizar la instalación de phpMussel. Puede ver, compartir y descargar archivos de registro a través de la página de registros, puede modificar la configuración a través de la página de configuración, puede instalar y desinstalar componentes a través de la página de actualizaciones, y puede cargar, descargar y modificar archivos en su vault a través del administración de archivos.
+
+El front-end está desactivado de forma predeterminada para evitar el acceso no autorizado (el acceso no autorizado podría tener consecuencias significativas para su sitio web y su seguridad). Las instrucciones para habilitarlo se incluyen debajo de este párrafo.
+
+####4.1 CÓMO HABILITAR EL FRONT-END.
+
+1) Localizar la directiva `disable_frontend` dentro `config.ini`, y establézcalo en true (será predefinido como false).
+
+2) Accesar `loader.php` desde tu navegador (p.ej., `http://localhost/phpmussel/loader.php`).
+
+3) Inicie sesión con el nombre del usuario y la contraseña predeterminados (admin/password).
+
+Nota: Después de iniciar la sesión por primera vez, con el fin de impedir el acceso no autorizado al front-end, usted debe cambiar inmediatamente su nombre de usuario y su contraseña! Esto es muy importante, ya que es posible subir código arbitrario de PHP a su sitio web a través del front-end.
+
+####4.2 CÓMO UTILIZAR EL FRONT-END.
+
+Las instrucciones se proporcionan en cada página del front-end, para explicar la manera correcta de usarlo y su propósito. Si necesita más explicaciones o cualquier ayuda especial, póngase en contacto con el soporte. Alternativamente, hay algunos videos disponibles en YouTube que podrían ayudar a modo de demostración.
+
 
 ---
 
@@ -357,6 +376,9 @@ General configuración para phpMussel.
 ####"signatures" (Categoría)
 Configuración de firmas.
 
+"Filename"
+- Cotejar nombres de archivos con firmas basado en nombres cuando escaneando? If so, specify the names of the signature files to use, delimited by commas.
+
 "MD5"
 - Cotejar contra MD5 firmas cuando escaneando? Si es así, especifique los nombres de los archivos de firmas a utilizar, delimitado por comas.
 
@@ -366,61 +388,12 @@ Configuración de firmas.
 "PE_Extended"
 - Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE extendidas firmas cuando escaneando? Si es así, especifique los nombres de los archivos de firmas a utilizar, delimitado por comas.
 
-Cotejar contra genéricas firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "general_clamav"
-- "general_mussel"
-
-Cotejar contra normalizados ASCII firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "ascii_clamav"
-- "ascii_mussel"
-
-Cotejar contra normalizados HTML firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "html_clamav"
-- "html_mussel"
-
-Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "exe_clamav"
-- "exe_mussel"
-
-Cotejar ELF archivos con ELF firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "elf_clamav"
-- "elf_mussel"
-
-Cotejar Mach-O archivos (OSX, etc) con Mach-O firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "macho_clamav"
-- "macho_mussel"
-
-Cotejar gráficos archivos con firmas basado en gráficos cuando escaneando? False = No; True = Sí [Predefinido].
-- "graphics_clamav"
-- "graphics_mussel"
-
-Cotejar OLE objetos con OLE firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "ole_clamav"
-- "ole_mussel"
-
-Cotejar nombres de archivos con firmas basado en nombres cuando escaneando? False = No; True = Sí [Predefinido].
-- "filenames_clamav"
-- "filenames_mussel"
-
-Cotejar contra email firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "mail_clamav"
-- "mail_mussel"
+- "Complex_Extended"
+Cotejar contra complejos extendidas firmas cuando escaneando? Si es así, especifique los nombres de los archivos de firmas a utilizar, delimitado por comas.
 
 Activar archivo específica whitelist? False = No; True = Sí [Predefinido].
 - "whitelist_clamav"
 - "whitelist_mussel"
-
-Cotejar contra complejos extendidas firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "coex_clamav"
-- "coex_mussel"
-
-Cotejar contra PDF firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "pdf_clamav"
-- "pdf_mussel"
-
-Cotejar contra Shockwave firmas cuando escaneando? False = No; True = Sí [Predefinido].
-- "swf_clamav"
-- "swf_mussel"
 
 "fail_silently"
 - Debe phpMussel informan cuando los firmas archivos están desaparecidos o dañados? Si `fail_silently` está desactivado, desaparecidos y dañados archivos será reportado cuando escaneando, y si `fail_silently` está activado, desaparecidos y dañados archivos será ignorado, con escaneando reportando para aquellos archivos que no hay cualquier problemas. Esto generalmente debe ser dejar sola a menos que usted está experimentando estrellarse o problemas similares. False = Desactivado; True = Activado [Predefinido].
@@ -567,7 +540,7 @@ Notar: Independientemente de sospecha nivel, cualquieres archivos que están en 
 URL escáner configuración.
 
 "urlscanner"
-- Construido dentro phpMussel es un URL escáner, capaz de detectar las maliciosas URL desde el interior de los datos o archivos escaneados. Para activar la URL escáner, definir `urlscanner` como true; Para desactivarlo, definir esta directiva como false.
+- Construido dentro phpMussel es un URL escáner, capaz de detectar las maliciosas URL desde el interior de los datos o archivos escaneados. Para activar la URL escáner, especifique los nombres de los archivos de firmas a utilizar, delimitado por comas.
 
 Notar: Si la URL escáner está desactivado, usted no tendrá que revisar cualquiera de las directivas en esta categoría (`urlscanner`), porque ninguno de ellos hará cualquier cosa si desactiva.
 
@@ -651,31 +624,6 @@ Donde NOMBRE es el nombre a citar para esa firma y HEX es un hexadecimal codific
 
 ####*REGEX*
 Cualquier forma de regex entendido y correctamente procesado por PHP también debe entenderse y procesado correctamente por phpMussel y sus firmas. Pero, yo sugeriría tomar mucho cuidado cuando escribiendo nuevas firmas basado en regex, porque, si no estás del todo seguro de lo que estás haciendo, puede haber altamente irregulares e/o inesperados resultados. Mirar el código fuente para phpMussel si no estás del todo seguro sobre el contexto de que las regex declaraciones son procesado. También, recordar que todos los patrones (con excepción para nombre de archivo, compactado archivo metadato y MD5 patrones) debe ser hexadecimal codificado (con excepción de la patrón sintaxis)!
-
-####*DONDE PONER PERSONALIZADAS FIRMAS?*
-
-####*FIRMA DESGLOSE*
-El siguiente es el desglose de los tipos de firmas utilizado por phpMussel:
-- "Firmas ASCII normalizados". Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas complejos extendidas". Mixtas tipos de firmas para cotejar/comprobar.
-- "Firmas ELF". Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato ELF.
-- "Firmas portátil ejecutable". Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato PE.
-- "Firmas basadas en las nombres del archivos". Cotejado contra los nombres de archivos destinado para escaneando.
-- "Firmas generales". Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas gráficas". Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como de un formato gráfico conocido.
-- "Generales comandos" (hex_general_commands.csv). Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas HTML normalizados". Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato HTML.
-- "Firmas Mach-O". Cotejado contra los contenidos de cada archivo que no está en la whitelist que es destinado para escaneando y verificado como del formato Mach-O.
-- "Firmas email". Cotejado contra los contenidos de cada EML archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas MD5". Cotejado contra el hash MD5 de los contenidos y el tamaño de cada archivo que no está en la whitelist que es destinado para escaneando.
-
-- "Firmas OLE". Cotejado contra los contenidos de cada OLE objeto que no está en la whitelist que es destinado para escaneando.
-- "Firmas PDF". Cotejado contra los contenidos de cada PDF archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas portátil ejecutable secciónal". Cotejado contra el hash MD5 y el tamaño de cada PE sección de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas portátil ejecutable extendidas". Cotejado contra el hash MD5 y el tamaño de las variables de cada archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas SWF". Cotejado contra los contenidos de cada Shockwave archivo que no está en la whitelist que es destinado para escaneando.
-- "Firmas whitelist". Cotejado contra el hash MD5 de los contenidos y el tamaño de cada archivo que es destinado para escaneando. Cotejados archivos será inmune de ser cotejado por el tipo de firma mencionado en su entrada de la whitelist.
-(Notar que cualquier de estas firmas pueden estar desactivado fácilmente a través de `config.ini`).
 
 ---
 
@@ -778,4 +726,4 @@ phpMussel *HACE* bloquear un archivo | __Falso positivo__ | Verdadero positivo (
 ---
 
 
-Última Actualización: 10 Febrero 2017 (2017.02.10).
+Última Actualización: 19 Febrero 2017 (2017.02.19).

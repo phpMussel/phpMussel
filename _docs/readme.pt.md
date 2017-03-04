@@ -142,7 +142,26 @@ Também estar ciente de que phpMussel é um scanner *on-demand*; *NÃO* é um sc
 
 ###4. <a name="SECTION4"></a>GESTÃO DE FRONT-END
 
-@TODO@
+####4.0 O QUE É O FRONT-END.
+
+O front-end fornece uma maneira conveniente e fácil de manter, gerenciar e atualizar sua instalação phpMussel. Você pode visualizar, compartilhar e baixar arquivos de log através da página de logs, você pode modificar a configuração através da página de configuração, você pode instalar e desinstalar componentes através da página de atualizações, e você pode carregar, baixar e modificar arquivos no seu vault através do gerenciador de arquivos.
+
+O front-end é desativado por padrão para evitar acesso não autorizado (acesso não autorizado pode ter consequências significativas para o seu site e para a sua segurança). Instruções para habilitá-lo estão incluídas abaixo deste parágrafo.
+
+####4.1 COMO HABILITAR O FRONT-END.
+
+1) Localize a directiva `disable_frontend` dentro `config.ini`, e defini-lo como true (ele será false por padrão).
+
+2) Acesse o `loader.php` do seu navegador (p.e., `http://localhost/phpmussel/loader.php`).
+
+3) Faça login com o nome de usuário e a senha padrão (admin/password).
+
+Nota: Depois de efetuar login pela primeira vez, a fim de impedir o acesso não autorizado ao front-end, você deve imediatamente alterar seu nome de usuário e senha! Isto é muito importante, porque é possível fazer upload de código PHP arbitrário para o seu site através do front-end.
+
+####4.2 COMO USAR O FRONT-END.
+
+As instruções são fornecidas em cada página do front-end, para explicar a maneira correta de usá-lo e sua finalidade pretendida. Se precisar de mais explicações ou qualquer assistência especial, entre em contato com o suporte. Alternativamente, existem alguns vídeos disponíveis no YouTube que podem ajudar por meio de demonstração.
+
 
 ---
 
@@ -357,6 +376,9 @@ Configuração geral por phpMussel.
 ####"signatures" (Categoria)
 Configuração por assinaturas.
 
+"Filename"
+- Verificar arquivos nomes contra assinaturas arquivos nomes baseadas assinaturas quando analisando? Nesse caso, especifique os nomes dos arquivos de assinaturas a serem utilizados, delimitados por vírgulas.
+
 "MD5"
 - Verificar contra MD5 assinaturas quando analisando? Nesse caso, especifique os nomes dos arquivos de assinaturas a serem utilizados, delimitados por vírgulas.
 
@@ -366,61 +388,12 @@ Configuração por assinaturas.
 "PE_Extended"
 - Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE estendidas assinaturas quando analisando? Nesse caso, especifique os nomes dos arquivos de assinaturas a serem utilizados, delimitados por vírgulas.
 
-Verificar contra geral assinaturas quando analisando? False = Não; True = Sim [Padrão].
-- "general_clamav"
-- "general_mussel"
-
-Verificar contra normalizada ASCII assinaturas quando analisando? False = Não; True = Sim [Padrão].
-- "ascii_clamav"
-- "ascii_mussel"
-
-Verificar contra normalizada HTML assinaturas quando analisando? False = Não; True = Sim [Padrão].
-- "html_clamav"
-- "html_mussel"
-
-Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE assinaturas quando analisando? False = Não; True = Sim [Padrão].
-- "exe_clamav"
-- "exe_mussel"
-
-Verificar ELF arquivos contra ELF assinaturas quando analisando? False = Não; True = Sim [Padrão].
-- "elf_clamav"
-- "elf_mussel"
-
-Verificar Mach-O arquivos (OSX, etc) contra Mach-O assinaturas quando analisando? False = Não; True = Sim [Padrão].
-- "macho_clamav"
-- "macho_mussel"
-
-Verificar gráficos arquivos contra gráficas assinaturas quando analisando? False = Não; True = Sim [Padrão].
-- "graphics_clamav"
-- "graphics_mussel"
-
-Verificar OLE objetos contra OLE assinaturas quando analisando? False = Não; True = Sim [Padrão].
-- "ole_clamav"
-- "ole_mussel"
-
-Verificar arquivos nomes contra assinaturas arquivos nomes baseadas assinaturas quando analisando? False = Não; True = Sim [Padrão].
-- "filenames_clamav"
-- "filenames_mussel"
-
-Verificar contra email assinaturas quando analisando? False = Não; True = Sim [Padrão].
-- "mail_clamav"
-- "mail_mussel"
+- "Complex_Extended"
+Verificar contra complexos estendidas assinaturas quando analisando? Nesse caso, especifique os nomes dos arquivos de assinaturas a serem utilizados, delimitados por vírgulas.
 
 Ativar arquivo-específico whitelist? False = Não; True = Sim [Padrão].
 - "whitelist_clamav"
 - "whitelist_mussel"
-
-Verificar contra complexos estendidas assinaturas quando analisando? False = Não; True = Sim [Padrão].
-- "coex_clamav"
-- "coex_mussel"
-
-Verificar contra PDF assinaturas quando analisando? False = Não; True = Sim [Padrão].
-- "pdf_clamav"
-- "pdf_mussel"
-
-Verificar contra Shockwave assinaturas quando analisando? False = Não; True = Sim [Padrão].
-- "swf_clamav"
-- "swf_mussel"
 
 "fail_silently"
 - Deve phpMussel reportar quando os assinaturas arquivos estão perdido ou corrompido? Se `fail_silently` está desativado, perdidos e corrompidos arquivos serão reportado durante análise, e se `fail_silently` está ativado, perdidos e corrompidos arquivos serão ignoradas, com a análise reportando por estes arquivos em que não há problemas. Isso geralmente deve ser deixado sozinho a menos que você está experimentando PHP falhas ou semelhantes problemas. False = Desativado; True = Ativado [Padrão].
@@ -567,7 +540,7 @@ Notar: Independentemente do nível de suspeita, todos os arquivos que estão na 
 URL analisador configuração.
 
 "urlscanner"
-- Construído em phpMussel é um URL analisador, capaz de detectar URLs maliciosos dentro de todos os dados ou arquivos analisados. Para habilitar o URL analisador, definir a diretiva `urlscanner` para true; Para desativá-lo, definir esta diretiva para false.
+- Construído em phpMussel é um URL analisador, capaz de detectar URLs maliciosos dentro de todos os dados ou arquivos analisados. Para habilitar o URL analisador, especifique os nomes dos arquivos de assinaturas a serem utilizados, delimitados por vírgulas.
 
 Notar: Se o URL analisador é desativado, você não terá que rever alguma das directivas nesta categoria (`urlscanner`), porque nenhum deles fará de tudo se este é desativado.
 
@@ -651,31 +624,6 @@ Onde NOME é o nome para citar por essa assinatura e HEX é um hexadecimal codif
 
 ####*REGEX*
 Qualquer forma de regex compreendido e processado corretamente pelo PHP também deve ser correctamente compreendido e processado por phpMussel e suas assinaturas. Mas, eu sugiro tomar extremo cuidado quando escrevendo novas assinaturas baseadas regex, porque, se você não está inteiramente certo do que está fazendo, isto pode tem altamente irregulares e inesperadas resultados. Olha para o código-fonte de phpMussel Se você não está totalmente certo sobre o contexto em que as regex declarações são processada. Além, lembre-se que todos isso (com exceção para arquivo nome, compactado arquivo metadados, MD5 a sintaxe) deve ser codificado hexadecimalmente!
-
-####*ONDE COLOCAR PERSONALIZADAS ASSINATURAS?*
-
-####*ASSINATURA COMPOSIÇÃO*
-A seguir estão os diferentes tipos de assinaturas utilizadas por phpMussel:
-- "Assinaturas ASCII normalizadas". Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando.
-- "Assinaturas estendidos complexos". Misto tipo de assinatura verificando.
-- "Assinaturas ELF". Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmados tal do formato ELF.
-- "Assinaturas portátil executável". Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmados tal do formato PE.
-- "Assinaturas baseadas em nomes de arquivos". Verificado contra os nomes de cada arquivo não no whitelist e alvo por analisando.
-- "Assinaturas gerais". Verificado contra o conteúdo de arquivo não no whitelist e alvo por analisando.
-- "Assinaturas gráficas". Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmado tal de um conhecidos gráficos arquivos formato.
-- "Gerais comandos" (hex_general_commands.csv). Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando.
-- "Assinaturas HTML normalizadas". Verificado contra o conteúdo de cada arquivo HTML não no whitelist e alvo por analisando.
-- "Assinaturas Mach-O". Verificado contra o conteúdo de cada arquivo não no whitelist e alvo por analisando e confirmados tal do formato Mach-O.
-- "Assinaturas E-mail". Verificado contra o conteúdo de cada arquivo EML não no whitelist.
-- "Assinaturas MD5". Verificado contra o hash MD5 do conteúdo e contra o arquivo tamanho de cada arquivo não no whitelist e alvo por analisando.
-
-- "Assinaturas OLE". Verificado contra o conteúdo de cada objeto não no whitelist e alvo por analisando.
-- "Assinaturas PDF". Verificado contra o conteúdo de cada arquivo PDF não no whitelist.
-- "Assinaturas portátil executável seccional". Verificado contra o tamanho eo hash MD5 de cada PE seção de cada arquivo não em o whitelist e alvo por analisando e confirmados tal do formato PE.
-- "Assinaturas portátil executável estendidas". Verificado contra o tamanho eo hash MD5 de todas as variáveis de cada arquivo não em o whitelist e alvo por analisando e confirmados tal do formato PE.
-- "Assinaturas SWF". Verificado contra o conteúdo de cada Shockwave arquivo não no whitelist.
-- "Assinaturas whitelist". Verificado contra o hash MD5 do conteúdo e contra o arquivo tamanho de cada arquivo alvo por analisando. Verificados arquivos será imune de sendo verificado pelo tipo de assinatura mencionada no seu whitelist entrada.
-(Notar que qualquer uma destas assinaturas podem ser desativada facilmente através de `config.ini`).
 
 ---
 
@@ -778,4 +726,4 @@ phpMussel *FAZ* bloquear um arquivo | __Falso positivo__ | Verdadeiro positivo (
 ---
 
 
-Última Atualização: 10 Fevereiro 2017 (2017.02.10).
+Última Atualização: 19 Fevereiro 2017 (2017.02.19).
