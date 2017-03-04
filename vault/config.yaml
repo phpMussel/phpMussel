@@ -78,39 +78,9 @@ Config Defaults:
    type: string
    default: ""
  signatures:
-  Filename:
+  Active:
    type: string
-   default: "clamav.fdb,phpmussel.fdb"
-  MD5:
-   type: string
-   default: "clamav.hdb,phpmussel.hdb"
-  PE_Sectional:
-   type: string
-   default: "clamav.mdb,phpmussel.mdb"
-  PE_Extended:
-   type: string
-   default: "phpmussel.medb"
-  Standard:
-   type: string
-   default: "clamav.db,phpmussel.db,clamav_elf.db,phpmussel_elf.db,clamav_pdf.db,phpmussel_pdf.db,clamav_graphics.db,phpmussel_graphics.db,clamav_swf.db,phpmussel_swf.db,clamav_email.db,phpmussel_email.db"
-  Standard_RegEx:
-   type: string
-   default: "phpmussel_regex.db,clamav_elf_regex.db,phpmussel_elf_regex.db,clamav_pdf_regex.db,phpmussel_pdf_regex.db,clamav_graphics_regex.db,phpmussel_graphics_regex.db,clamav_swf_regex.db,phpmussel_swf_regex.db,clamav_email_regex.db,phpmussel_email_regex.db"
-  Normalised:
-   type: string
-   default: "clamav.ndb,phpmussel.ndb"
-  Normalised_RegEx:
-   type: string
-   default: "clamav_regex.ndb,phpmussel_regex.ndb"
-  HTML:
-   type: string
-   default: "clamav.htdb,phpmussel.htdb"
-  HTML_RegEx:
-   type: string
-   default: "clamav_regex.htdb,phpmussel_regex.htdb"
-  Complex_Extended:
-   type: string
-   default: "clamav.cedb,phpmussel.cedb"
+   default: ""
   fail_silently:
    type: bool
    default: true

@@ -1302,6 +1302,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 $phpMussel['Config']['general']['lang']
             );
         }
+        if (empty($phpMussel['Components']['ThisComponent']['Extended Description'])) {
+            $phpMussel['Components']['ThisComponent']['Extended Description'] = '';
+        }
         if (is_array($phpMussel['Components']['ThisComponent']['Extended Description'])) {
             $phpMussel['IsolateL10N'](
                 $phpMussel['Components']['ThisComponent']['Extended Description'],

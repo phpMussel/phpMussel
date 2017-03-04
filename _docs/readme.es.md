@@ -376,24 +376,8 @@ General configuración para phpMussel.
 ####"signatures" (Categoría)
 Configuración de firmas.
 
-"Filename"
-- Cotejar nombres de archivos con firmas basado en nombres cuando escaneando? If so, specify the names of the signature files to use, delimited by commas.
-
-"MD5"
-- Cotejar contra MD5 firmas cuando escaneando? Si es así, especifique los nombres de los archivos de firmas a utilizar, delimitado por comas.
-
-"PE_Sectional"
-- Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE Secciónal firmas cuando escaneando? Si es así, especifique los nombres de los archivos de firmas a utilizar, delimitado por comas.
-
-"PE_Extended"
-- Cotejar PE (Portátil Ejecutable) archivos (EXE, DLL, etc) con PE extendidas firmas cuando escaneando? Si es así, especifique los nombres de los archivos de firmas a utilizar, delimitado por comas.
-
-- "Complex_Extended"
-Cotejar contra complejos extendidas firmas cuando escaneando? Si es así, especifique los nombres de los archivos de firmas a utilizar, delimitado por comas.
-
-Activar archivo específica whitelist? False = No; True = Sí [Predefinido].
-- "whitelist_clamav"
-- "whitelist_mussel"
+"Active"
+- Una lista de los archivos de firmas activa, delimitados por comas.
 
 "fail_silently"
 - Debe phpMussel informan cuando los firmas archivos están desaparecidos o dañados? Si `fail_silently` está desactivado, desaparecidos y dañados archivos será reportado cuando escaneando, y si `fail_silently` está activado, desaparecidos y dañados archivos será ignorado, con escaneando reportando para aquellos archivos que no hay cualquier problemas. Esto generalmente debe ser dejar sola a menos que usted está experimentando estrellarse o problemas similares. False = Desactivado; True = Activado [Predefinido].
@@ -726,4 +710,4 @@ phpMussel *HACE* bloquear un archivo | __Falso positivo__ | Verdadero positivo (
 ---
 
 
-Última Actualización: 19 Febrero 2017 (2017.02.19).
+Última Actualización: 3 Marzo 2017 (2017.03.03).

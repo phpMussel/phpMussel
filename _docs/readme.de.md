@@ -378,24 +378,8 @@ Generelle Konfiguration von phpMussel.
 ####"signatures" (Kategorie)
 Konfiguration der Signaturen.
 
-"Filename"
-- Scan von Dateinamen mit den Dateinamen-Signaturen? Wenn ja, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
-
-"MD5"
-- Scan mit den MD5-Signaturen? Wenn ja, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
-
-"PE_Sectional"
-- Scan von PE-Dateien (Portable Executable, EXE, DLL, u.s.w.) mit den PE-Sectional-Signaturen? Wenn ja, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
-
-"PE_Extended"
-- Scan von PE-Dateien (Portable Executable, EXE, DLL, u.s.w.) mit den PE-Erweitert-Signaturen? Wenn ja, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
-
-- "Complex_Extended"
-Scan mit den Komplex-Erweitert-Signaturen? Wenn ja, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
-
-Aktivieren Datei-spezifischer Whitelist? False = Nein; True = Ja [Standardeinstellung].
-- "whitelist_clamav"
-- "whitelist_mussel"
+"Active"
+- Eine Liste der aktiven Signaturdateien, die durch Kommas getrennt sind.
 
 "fail_silently"
 - Reaktion von phpMussel auf fehlende oder defekte Signaturen. Ist `fail_silently` deaktiviert, werden fehlende oder defekte Signaturen während des Scanvorgangs gemeldet, ist `fail_silently` aktiviert, werden fehlende oder defekte Signaturen ignoriert, ohne dass entsprechende Probleme gemeldet werden. Diese Option sollte so belassen werden, es sei denn, Sie erwarten Abstürze oder ähnliches. False = Deaktiviert; True = Aktiviert [Standardeinstellung].
@@ -727,4 +711,4 @@ phpMussel *TUT* blockiert eine Datei | __Falsch-Positiv__ | True-Positiv (korrek
 ---
 
 
-Zuletzt aktualisiert: 19 Februar 2017 (2017.02.19).
+Zuletzt aktualisiert: 3 März 2017 (2017.03.03).

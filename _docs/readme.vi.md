@@ -376,24 +376,8 @@ Cấu hình chung cho phpMussel.
 ####"signatures" (Thể loại)
 Cấu hình cho chữ ký.
 
-"Filename"
-- Kiểm tra tên tập tin chống lại chữ ký tên tập tin khi quét? Nếu vậy, chỉ định tên của các tập tin chữ ký để sử dụng, định giới bằng dấu phẩy.
-
-"MD5"
-- Kiểm tra chống lại chữ ký MD5 khi quét? Nếu vậy, chỉ định tên của các tập tin chữ ký để sử dụng, định giới bằng dấu phẩy.
-
-"PE_Sectional"
-- Kiểm tra tập tin PE (portable executable / thực thi di động; EXE, DLL, vv) chống lại chữ ký phần PE khi quét? Nếu vậy, chỉ định tên của các tập tin chữ ký để sử dụng, định giới bằng dấu phẩy.
-
-"PE_Extended"
-- Kiểm tra tập tin PE (portable executable / thực thi di động; EXE, DLL, vv) chống lại chữ ký kéo dài PE khi quét? Nếu vậy, chỉ định tên của các tập tin chữ ký để sử dụng, định giới bằng dấu phẩy.
-
-- "Complex_Extended"
-Kiểm tra chống lại chữ ký kéo dài phức tạp khi quét? Nếu vậy, chỉ định tên của các tập tin chữ ký để sử dụng, định giới bằng dấu phẩy.
-
-Cho phép danh sách trắng cho tập tin cụ thể? False = Không; True = Vâng [Mặc định].
-- "whitelist_clamav"
-- "whitelist_mussel"
+"Active"
+- Một danh sách các kích hoạt tập tin chữ ký, giới hạn bởi dấu phẩy.
 
 "fail_silently"
 - phpMussel nên báo cáo khi tập tin chữ ký bị mất hay bị hỏng? Nếu `fail_silently` được vô hiệu hóa, tập tin bị mất hay bị hỏng sẽ được báo cáo khi quét, và nếu `fail_silently` được kích hoạt, tập tin bị mất hay bị hỏng sẽ bị bỏ qua, với báo cáo quét cho những tập tin mà không có bất kỳ vấn đề. Điều này thường cần được ở một mình trừ khi bạn gặp sự cố hay vấn đề tương tự. False = Không cho phép; True = Cho phép [Mặc định].
@@ -726,4 +710,4 @@ phpMussel chặn một tập tin | __Sai tích cực__ | Đúng tích cực (suy
 ---
 
 
-Lần cuối cập nhật: 19 Tháng Hai 2017 (2017.02.19).
+Lần cuối cập nhật: 3 Tháng Ba 2017 (2017.03.03).

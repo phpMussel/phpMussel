@@ -376,24 +376,8 @@ General phpMussel configuration.
 ####"signatures" (Category)
 Signatures configuration.
 
-"Filename"
-- Check filenames against filename based signatures when scanning? If so, specify the names of the signature files to use, delimited by commas.
-
-"MD5"
-- Check against MD5 signatures when scanning? If so, specify the names of the signature files to use, delimited by commas.
-
-"PE_Sectional"
-- Check PE (Portable Executable) files (EXE, DLL, etc) against PE Sectional signatures when scanning? If so, specify the names of the signature files to use, delimited by commas.
-
-"PE_Extended"
-- Check PE (Portable Executable) files (EXE, DLL, etc) against PE extended signatures when scanning? If so, specify the names of the signature files to use, delimited by commas.
-
-"Complex_Extended"
-Check against complex extended signatures when scanning? If so, specify the names of the signature files to use, delimited by commas.
-
-Enable file specific whitelist? False = No; True = Yes [Default].
-- "whitelist_clamav"
-- "whitelist_mussel"
+"Active"
+- A list of the active signature files, delimited by commas.
 
 "fail_silently"
 - Should phpMussel report when signatures files are missing or corrupted? If `fail_silently` is disabled, missing and corrupted files will be reported on scanning, and if `fail_silently` is enabled, missing and corrupted files will be ignored, with scanning reporting for those files that there aren't any problems. This should generally be left alone unless you're experiencing crashes or similar problems. False = Disabled; True = Enabled [Default].
@@ -726,4 +710,4 @@ phpMussel *DOES* block a file | __False positive__ | True positive (correct infe
 ---
 
 
-Last Updated: 19 February 2017 (2017.02.19).
+Last Updated: 3 March 2017 (2017.03.03).

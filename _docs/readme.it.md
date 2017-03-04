@@ -376,24 +376,8 @@ Generale configurazione per phpMussel.
 ####"signatures" (Categoria)
 Configurazione per firme.
 
-"Filename"
-- Verificare nomi del file contro file nome basate firme durante la scansione? In tal caso, specificare i nomi dei file di firme da utilizzare, delimitati da virgole.
-
-"MD5"
-- Verificare contro MD5 firme durante la scansione? In tal caso, specificare i nomi dei file di firme da utilizzare, delimitati da virgole.
-
-"PE_Sectional"
-- Verificare PE (Portatile Eseguibile) file (EXE, DLL, ecc) contro PE Sezionale firme durante la scansione? In tal caso, specificare i nomi dei file di firme da utilizzare, delimitati da virgole.
-
-"PE_Extended"
-- Verificare PE (Portatile Eseguibile) file (EXE, DLL, ecc) contro PE esteso firme durante la scansione? In tal caso, specificare i nomi dei file di firme da utilizzare, delimitati da virgole.
-
-- "Complex_Extended"
-Verificare contro complesso esteso firme durante la scansione? In tal caso, specificare i nomi dei file di firme da utilizzare, delimitati da virgole.
-
-Abilita file-specifico whitelist? False = No; True = Sì [Predefinito].
-- "whitelist_clamav"
-- "whitelist_mussel"
+"Active"
+- Un elenco dei file di firme attivi, delimitati da virgole.
 
 "fail_silently"
 - Dovrebbe phpMussel rapporto quando le file di firme sono mancanti o danneggiati? Se `fail_silently` è disattivato, mancanti e danneggiati file saranno riportato sulla scansione, e se `fail_silently` è abilitato, mancanti e danneggiati file saranno ignorato, con scansione riportando per quei file che non ha sono problemi. Questo dovrebbe essere generalmente lasciata sola a meno che sperimentando inaspettate terminazioni o simili problemi. False = Disattivato; True = Attivato [Predefinito].
@@ -726,4 +710,4 @@ phpMussel *FA* bloccare un file | __Falso positivo__ | Vero positivo (inferenza 
 ---
 
 
-Ultimo Aggiornamento: 19 Febbraio 2017 (2017.02.19).
+Ultimo Aggiornamento: 3 Marzo 2017 (2017.03.03).

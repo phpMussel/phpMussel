@@ -376,24 +376,8 @@ Configuration générale pour phpMussel.
 ####"signatures" (Catégorie)
 Configuration pour les signatures.
 
-"Filename"
-- Vérifier les noms de fichiers contre les signatures basées sur les noms de fichiers au cours de analyse? Si oui, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
-
-"MD5"
-- Vérifier contre les signatures MD5 au cours de analyse? Si oui, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
-
-"PE_Sectional"
-- Vérifier les fichiers PE (Portable Exécutable; EXE, DLL, etc) contre les signatures PE Sectional au cours de analyse? Si oui, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
-
-"PE_Extended"
-- Vérifier les fichiers PE (Portable Exécutable; EXE, DLL, etc) contre les signatures PE étendues au cours de analyse? Si oui, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
-
-- "Complex_Extended"
-Vérifier contre les signatures complexes étendues au cours de analyse? Si oui, spécifiez les noms des fichiers de signatures à utiliser, délimité par des virgules.
-
-Activer fichier spécifique blanche liste? False = Non; True = Oui [Défaut].
-- "whitelist_clamav"
-- "whitelist_mussel"
+"Active"
+- Une liste des fichiers de signatures active, délimitée par des virgules.
 
 "fail_silently"
 - Devrait phpMussel signaler quand les fichiers du signatures sont manquants ou endommagés? Si `fail_silently` est désactivé, fichiers manquants et corrompus seront signalé sur analyse, et si `fail_silently` est activé, fichiers manquants et corrompus seront ignorés, avec l'analyse signalés pour ceux fichiers qu'il n'y a pas de problèmes. Cela devrait généralement être laissé seul sauf si vous rencontrez accidents ou similaires problèmes. False = Désactivé; True = Activé [Défaut].
@@ -726,4 +710,4 @@ phpMussel bloque un fichier | __Faux positif__ | Vrai positif (inférence correc
 ---
 
 
-Dernière Mise à Jour: 19 Février 2017 (2017.02.19).
+Dernière Mise à Jour: 3 Mars 2017 (2017.03.03).

@@ -376,24 +376,8 @@ Configuração geral por phpMussel.
 ####"signatures" (Categoria)
 Configuração por assinaturas.
 
-"Filename"
-- Verificar arquivos nomes contra assinaturas arquivos nomes baseadas assinaturas quando analisando? Nesse caso, especifique os nomes dos arquivos de assinaturas a serem utilizados, delimitados por vírgulas.
-
-"MD5"
-- Verificar contra MD5 assinaturas quando analisando? Nesse caso, especifique os nomes dos arquivos de assinaturas a serem utilizados, delimitados por vírgulas.
-
-"PE_Sectional"
-- Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE Seccional assinaturas quando analisando? Nesse caso, especifique os nomes dos arquivos de assinaturas a serem utilizados, delimitados por vírgulas.
-
-"PE_Extended"
-- Verificar PE (Portátil Executável) arquivos (EXE, DLL, etc) contra PE estendidas assinaturas quando analisando? Nesse caso, especifique os nomes dos arquivos de assinaturas a serem utilizados, delimitados por vírgulas.
-
-- "Complex_Extended"
-Verificar contra complexos estendidas assinaturas quando analisando? Nesse caso, especifique os nomes dos arquivos de assinaturas a serem utilizados, delimitados por vírgulas.
-
-Ativar arquivo-específico whitelist? False = Não; True = Sim [Padrão].
-- "whitelist_clamav"
-- "whitelist_mussel"
+"Active"
+- Uma lista dos arquivos de assinaturas ativos, delimitados por vírgulas.
 
 "fail_silently"
 - Deve phpMussel reportar quando os assinaturas arquivos estão perdido ou corrompido? Se `fail_silently` está desativado, perdidos e corrompidos arquivos serão reportado durante análise, e se `fail_silently` está ativado, perdidos e corrompidos arquivos serão ignoradas, com a análise reportando por estes arquivos em que não há problemas. Isso geralmente deve ser deixado sozinho a menos que você está experimentando PHP falhas ou semelhantes problemas. False = Desativado; True = Ativado [Padrão].
@@ -726,4 +710,4 @@ phpMussel *FAZ* bloquear um arquivo | __Falso positivo__ | Verdadeiro positivo (
 ---
 
 
-Última Atualização: 19 Fevereiro 2017 (2017.02.19).
+Última Atualização: 3 Março 2017 (2017.03.03).
