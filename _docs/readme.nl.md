@@ -521,10 +521,7 @@ Noteren: Ongeacht van achterdocht niveau, elke bestanden die ofwel worden de zwa
 - Volgens de Virus Total API-documentatie, het is beperkt tot maximaal 4 verzoeken van welke aard in elk 1 minuut tijdsbestek. Als u een honeyclient, honeypot of andere automatisering te voorzien, dat gaat om middelen te verschaffen om VirusTotal en niet alleen rapporten opvragen heeft u recht op een hogere API-quotum. Normaal, phpMussel zal strikt houden aan deze beperkingen, maar vanwege de mogelijkheid van deze API-quotum verhoogd te worden, deze twee richtlijnen worden verstrekt als middel voor u om instrueren phpMussel wat limiet moeten houden worden. Tenzij u heeft geïnstrueerd om dit te doen, het is niet aan te raden voor u om deze waarden te verhogen, maar, als u heeft ondervonden problemen met betrekking tot uw tarief quota bereiken, afnemende deze waarden kunnen u soms helpen in het omgaan met deze problemen. Uw maximaal tarief bepaald als `vt_quota_rate` verzoeken van welke aard in elk `vt_quota_time` minuut tijdsbestek.
 
 ####"urlscanner" (Categorie)
-URL scanner configuratie.
-
-"urlscanner"
-- Ingebouwd in phpMussel is een URL scanner, het opsporen van kwaadaardige URL's vanuit alle gegevens of bestanden gescand. Om de URL scanner te inschakelen, geef de namen van de signature bestanden te gebruiken, gescheiden door komma's.
+Een URL scanner wordt meegeleverd met phpMussel, het opsporen van kwaadaardige URL's vanuit alle gegevens of bestanden gescand.
 
 Noteren: Als de URL scanner wordt uitgeschakeld, zult u geen behoefte aan een van de richtlijnen in dit categorie te herzien (`urlscanner`), omdat geen van hen zal alles doen als dit is uitgeschakeld.
 
@@ -710,4 +707,4 @@ phpMussel *DOET* blokkeren van een bestand | __Vals positieve__ | Waar positieve
 ---
 
 
-Laatste Bijgewerkt: 3 Maart 2017 (2017.03.03).
+Laatste Bijgewerkt: 5 Maart 2017 (2017.03.05).

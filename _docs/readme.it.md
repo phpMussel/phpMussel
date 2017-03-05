@@ -521,10 +521,7 @@ Notare: Indipendentemente dal livello di sospetto, qualsiasi file che sono nella
 - Secondo a la Virus Total API documentazione, è limitato a un massimo di 4 richieste di qualsiasi natura in un dato 1 minuto tempo periodo. Se tu esegue una honeyclient, honeypot o qualsiasi altro automazione che sta fornire risorse a VirusTotal e non solo recuperare rapporti si ha diritto a un più alto tasso di richiesta quota. Per predefinita, phpMussel rigorosamente rispetti questi limiti, ma a causa della possibilità di tali tassi quote essere aumentati, questi due direttivi sono forniti come un mezzo per voi per istruire phpMussel da quale limite si deve rispettare. A meno che sei stato richiesto di farlo, non è raccomandato per voi per aumentare questi valori, ma, se hai incontrati problemi relativi a raggiungere il vostro tasso quota, diminuendo questi valori _**POTREBBE**_ a volte aiutare nel lavoro attraverso questi problemi. Il vostro tasso limite è determinato come `vt_quota_rate` richieste di qualsiasi natura in un dato `vt_quota_time` minuto tempo periodo.
 
 ####"urlscanner" (Categoria)
-Configurazione per l'URL scanner.
-
-"urlscanner"
-- Costruito in phpMussel è un URL scanner, in grado di rilevare URL malevoli all'interno di dati ei file scansionati. Per abilitare l'URL scanner, specificare i nomi dei file di firme da utilizzare, delimitati da virgole.
+Uno scanner URL è incluso in phpMussel, in grado di rilevare URL malevoli all'interno di dati ei file scansionati.
 
 Notare: Se l'URL scanner è disabilitato, non sarà necessario rivedere nessuna delle direttive in questa categoria (`urlscanner`), perché nessuno di loro farà nulla se questo è disabilitato.
 
@@ -710,4 +707,4 @@ phpMussel *FA* bloccare un file | __Falso positivo__ | Vero positivo (inferenza 
 ---
 
 
-Ultimo Aggiornamento: 3 Marzo 2017 (2017.03.03).
+Ultimo Aggiornamento: 5 Marzo 2017 (2017.03.05).

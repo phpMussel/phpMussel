@@ -521,10 +521,7 @@ Lưu ý: Bất kể mức độ nghi ngờ, bất kỳ tập tin được vào d
 - Theo tài liệu VirusTotal API, nó được giới hạn tối đa là 4 yêu cầu của bất kỳ chất trong bất kỳ khung thời gian 1 phút nào. Nếu bạn chạy một honeyclient, honeypot hay bất kỳ tự động hóa khác sẽ là cung cấp các nguồn lực để VirusTotal và không chỉ sẽ là lấy báo cáo bạn có quyền được một hạn ngạch có yêu cầu cao hơn. Theo mặc định, phpMussel nghiêm sẽ tuân thủ những hạn chế, nhưng do khả năng của các hạn ngạch yêu cầu đang được tăng lên, hai tùy chọn này được cung cấp như một phương tiện để bạn có thể hướng dẫn phpMussel như những gì giới hạn nó phải tuân thủ. Trừ khi bạn đã được hướng dẫn làm như vậy, nó không được khuyến khích cho bạn để tăng các giá trị, nhưng, nếu bạn đã gặp phải vấn đề liên quan đến hạn ngạch của bạn, giảm các giá trị _**CÓ THỂ**_ đôi khi giúp bạn trong việc đối phó với những vấn đề này. Hạn ngạch yêu cầu của bạn được xác định như `vt_quota_rate` yêu cầu của bất kỳ chất trong bất kỳ khung thời gian `vt_quota_time` phút nào.
 
 ####"urlscanner" (Thể loại)
-Cấu hình cho máy quét URL.
-
-"urlscanner"
-- Được xây dựng vào phpMussel là một máy quét URL, khả năng phát hiện các URL độc hại từ bên trong bất kỳ dữ liệu hay tập tin được quét. Để cho phép máy quét URL, chỉ định tên của các tập tin chữ ký để sử dụng, định giới bằng dấu phẩy.
+Một máy quét URL được bao gồm với phpMussel, khả năng phát hiện các URL độc hại từ bên trong bất kỳ dữ liệu hay tập tin được quét.
 
 Lưu ý: Nếu máy quét URL bị vô hiệu hóa, bạn sẽ không cần phải xem xét bất kỳ tùy chọn trong phần này (`urlscanner`), bởi vì không một ai trong số họ sẽ làm bất cứ điều gì nếu bị vô hiệu hóa này.
 
@@ -710,4 +707,4 @@ phpMussel chặn một tập tin | __Sai tích cực__ | Đúng tích cực (suy
 ---
 
 
-Lần cuối cập nhật: 3 Tháng Ba 2017 (2017.03.03).
+Lần cuối cập nhật: 5 Tháng Ba 2017 (2017.03.05).

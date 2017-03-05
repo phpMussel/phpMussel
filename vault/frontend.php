@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.03.03).
+ * This file: Front-end handler (last modified: 2017.03.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -592,13 +592,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             $phpMussel['ThisDir']['DirName'] = $phpMussel['CatKey'] . '->' . $phpMussel['DirKey'];
             $phpMussel['ThisDir']['DirLang'] =
                 !empty($phpMussel['lang'][$phpMussel['ThisDir']['DirLangKey']]) ? $phpMussel['lang'][$phpMussel['ThisDir']['DirLangKey']] : $phpMussel['lang']['response_error'];
-            $phpMussel['RegenerateConfig'] .= '; ' . wordwrap($phpMussel['ThisDir']['DirLang'], 77, "\r\n; ") . "\r\n";
+            $phpMussel['RegenerateConfig'] .= '; ' . wordwrap(strip_tags($phpMussel['ThisDir']['DirLang']), 77, "\r\n; ") . "\r\n";
             if (isset($_POST[$phpMussel['ThisDir']['DirLangKey']])) {
                 if ($phpMussel['DirValue']['type'] === 'string' || $phpMussel['DirValue']['type'] === 'int' || $phpMussel['DirValue']['type'] === 'bool') {
                     $phpMussel['AutoType']($_POST[$phpMussel['ThisDir']['DirLangKey']], $phpMussel['DirValue']['type']);
                 }
                 if (
-                    !preg_match("/[\"'\x01-\x1f]/i", $_POST[$phpMussel['ThisDir']['DirLangKey']]) && (
+                    !preg_match('/[^\x20-\xff"\']/', $_POST[$phpMussel['ThisDir']['DirLangKey']]) && (
                         !isset($phpMussel['DirValue']['choices']) || isset($phpMussel['DirValue']['choices'][$_POST[$phpMussel['ThisDir']['DirLangKey']]])
                     )
                 ) {

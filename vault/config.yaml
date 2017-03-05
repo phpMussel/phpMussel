@@ -204,9 +204,6 @@ Config Defaults:
    type: int
    default: 1
  urlscanner:
-  urlscanner:
-   type: string
-   default: "phpmussel.udb"
   lookup_hphosts:
    type: bool
    default: true

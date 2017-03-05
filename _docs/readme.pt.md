@@ -521,10 +521,7 @@ Notar: Independentemente do nível de suspeita, todos os arquivos que estão na 
 - De acordo com o Virus Total API documentação, é limitada a, no máximo, 4 solicitações de qualquer natureza dentro qualquer 1 minuto período de tempo. Se você executar um honeyclient, honeypot ou qualquer outro automação que vai fornecer recursos para Virus Total e não só recuperar relatórios você tem direito a uma melhor solicitações cota. Por padrão, phpMussel vai aderir estritamente a estas limitações, mas, devido à possibilidade de essas cotas a ser aumentada, estas duas directivas são fornecidos como um meio para que você possa instruir phpMussel sobre o limite que deve aderir para. Excepto se tenha sido instruído a fazê-lo, não é recomendado para você aumentar esses valores, mas, se você encontrou problemas relacionados com a atingir sua cota, diminuir esses valores podem _**POR VEZES**_ ajudá-lo em lidar com estes problemas. Seu taxa limite é determinada como `vt_quota_rate` solicitações de qualquer natureza dentro qualquer `vt_quota_time` minuto período de tempo.
 
 ####"urlscanner" (Categoria)
-URL analisador configuração.
-
-"urlscanner"
-- Construído em phpMussel é um URL analisador, capaz de detectar URLs maliciosos dentro de todos os dados ou arquivos analisados. Para habilitar o URL analisador, especifique os nomes dos arquivos de assinaturas a serem utilizados, delimitados por vírgulas.
+Um URL analisador está incluído com phpMussel, capaz de detectar URLs maliciosos dentro de todos os dados ou arquivos analisados.
 
 Notar: Se o URL analisador é desativado, você não terá que rever alguma das directivas nesta categoria (`urlscanner`), porque nenhum deles fará de tudo se este é desativado.
 
@@ -710,4 +707,4 @@ phpMussel *FAZ* bloquear um arquivo | __Falso positivo__ | Verdadeiro positivo (
 ---
 
 
-Última Atualização: 3 Março 2017 (2017.03.03).
+Última Atualização: 5 Março 2017 (2017.03.05).

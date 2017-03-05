@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.02.13).
+ * This file: Functions file (last modified: 2017.03.04).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -22,6 +22,7 @@
  * @todo Fix non-ANSI/non-ASCII filenames in CLI mode bug (github.com/Maikuolan/phpMussel/issues/61).
  * @todo Improve data decoding procedures.
  * @todo phpMussel v1.0.0 Transitional Preparations Checklist (github.com/Maikuolan/phpMussel/issues/82)
+ * @todo Need to overhaul the entire signatures paradigm. The old system is inefficient. :-(
  */
 
 /**
@@ -1955,8 +1956,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     $PEOriginalFilename =
     $PECompanyName = '';
     if (
-        $phpMussel['Config']['signatures']['PE_Sectional'] ||
-        $phpMussel['Config']['signatures']['PE_Extended'] ||
+        !empty($phpMussel['memCache']['PE_Sectional']) ||
+        !empty($phpMussel['memCache']['PE_Extended']) ||
         $phpMussel['Config']['attack_specific']['corrupted_exe']
     ) {
         $PEArr = array();
@@ -2134,7 +2135,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     }
 
     /** Process filename signatures. */
-    $SigFiles = explode(',', $phpMussel['Config']['signatures']['Filename']);
+    $SigFiles = isset($phpMussel['memCache']['Filename']) ? explode(',', $phpMussel['memCache']['Filename']) : array();
     foreach ($SigFiles as $SigFile) {
         if (!$SigFile) {
             continue;
@@ -2280,8 +2281,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         }
     }
 
-    /** Process MD5 signatures. */
-    $SigFiles = explode(',', $phpMussel['Config']['signatures']['MD5']);
+    /** Process hash signatures. */
+    $SigFiles = isset($phpMussel['memCache']['Hash']) ? explode(',', $phpMussel['memCache']['Hash']) : array();
     foreach ($SigFiles as $SigFile) {
         if (!$SigFile) {
             continue;
@@ -2337,7 +2338,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     }
 
     /** Process PE Sectional signatures. */
-    $SigFiles = explode(',', $phpMussel['Config']['signatures']['PE_Sectional']);
+    $SigFiles = isset($phpMussel['memCache']['PE_Sectional']) ? explode(',', $phpMussel['memCache']['PE_Sectional']) : array();
     foreach ($SigFiles as $SigFile) {
         if (!$SigFile) {
             continue;
@@ -2393,7 +2394,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     }
 
     /** Process PE extended signatures. */
-    $SigFiles = explode(',', $phpMussel['Config']['signatures']['PE_Extended']);
+    $SigFiles = isset($phpMussel['memCache']['PE_Extended']) ? explode(',', $phpMussel['memCache']['PE_Extended']) : array();
     foreach ($SigFiles as $SigFile) {
         if (!$SigFile) {
             continue;
@@ -2468,7 +2469,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     ) as $ThisConf) {
         $DataSource = $ThisConf[1];
         $DataSourceLen = $ThisConf[2];
-        $SigFiles = explode(',', $phpMussel['Config']['signatures'][$ThisConf[0]]);
+        $SigFiles = isset($phpMussel['memCache'][$ThisConf[0]]) ? explode(',', $phpMussel['memCache'][$ThisConf[0]]) : array();
         foreach ($SigFiles as $SigFile) {
             if (!$SigFile) {
                 continue;
@@ -2660,7 +2661,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     ) as $ThisConf) {
         $DataSource = $ThisConf[1];
         $DataSourceLen = $ThisConf[2];
-        $SigFiles = explode(',', $phpMussel['Config']['signatures'][$ThisConf[0]]);
+        $SigFiles = isset($phpMussel['memCache'][$ThisConf[0]]) ? explode(',', $phpMussel['memCache'][$ThisConf[0]]) : array();
         foreach ($SigFiles as $SigFile) {
             if (!$SigFile) {
                 continue;
@@ -3330,7 +3331,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     unset($urlscanner);
 
     /** Process complex extended signatures. */
-    $SigFiles = explode(',', $phpMussel['Config']['signatures']['Complex_Extended']);
+    $SigFiles = isset($phpMussel['memCache']['Complex_Extended']) ? explode(',', $phpMussel['memCache']['Complex_Extended']) : array();
     foreach ($SigFiles as $SigFile) {
         if (!$SigFile) {
             continue;
@@ -4604,6 +4605,10 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             '[phpMussel] ' . $phpMussel['lang']['required_variables_not_defined']
         );
     }
+    if (empty($phpMussel['memCache']['OrganisedSigFiles'])) {
+        $phpMussel['OrganiseSigFiles']();
+        $phpMussel['memCache']['OrganisedSigFiles'] = true;
+    }
     if ($phpMussel['EOF']) {
         $phpMussel['whyflagged'] =
         $phpMussel['killdata'] =
@@ -4649,20 +4654,14 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
      * the recursor with each array element.
      */
     if (is_array($f)) {
-        $k = key($f);
-        $c = count($f);
-        for ($i = 0; $i < $c; $i++) {
+        foreach ($f as &$Current) {
             try {
-                $f[$k] = $phpMussel['Recursor']($f[$k], $n, false, $dpt, $f[$k]);
+                $Current = $phpMussel['Recursor']($Current, $n, false, $dpt, $Current);
             } catch (\Exception $e) {
                 throw new \Exception($e->getMessage());
             }
-            next($f);
         }
-        if ($n && $zz) {
-            return $phpMussel['implode_md']($f);
-        }
-        return $f;
+        return ($n && $zz) ? $phpMussel['implode_md']($f) : $f;
     }
 
     $ofn = @$phpMussel['prescan_decode']($ofn);
@@ -4673,28 +4672,20 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
      * contents and recurse the recursor with these contents.
      */
     if (is_dir($f)) {
-        if (!is_readable($f) || !$d = scandir($f)) {
+        if (!is_readable($f) || !$Dir = scandir($f)) {
             $phpMussel['memCache']['scan_errors']++;
             return (!$n) ? 0 :
                 $lnap . $phpMussel['lang']['failed_to_access'] . '\'' . $ofn . '\'' .
                 $phpMussel['lang']['_exclamation_final'] . "\n";
         }
-        $c = count($d);
-        for ($i = 0; $i < $c; $i++) {
-            if ($d[$i] == '.' || $d[$i] == '..') {
-                unset($d[$i]);
-                continue;
-            }
+        foreach ($Dir as &$Sub) {
             try {
-                $d[$i] = $phpMussel['Recursor']($f . '/' . $d[$i], $n, false, $dpt, $d[$i]);
+                $Sub = $phpMussel['Recursor']($f . '/' . $Sub, $n, false, $dpt, $Sub);
             } catch (\Exception $e) {
                 throw new \Exception($e->getMessage());
             }
         }
-        if ($n && $zz) {
-            return $phpMussel['implode_md']($d);
-        }
-        return $d;
+        return ($n && $zz) ? $phpMussel['implode_md']($Dir) : $Dir;
     }
 
     /** Increment our scanned files/objects tally. */
@@ -4713,10 +4704,9 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     if (!isset($phpMussel['memCache']['greylist'])) {
         if (!file_exists($phpMussel['Vault'] . 'greylist.csv')) {
             $phpMussel['memCache']['greylist'] = ',';
-            $glf = fopen($phpMussel['Vault'] . 'greylist.csv', 'a');
-            fwrite($glf, ',');
-            fclose($glf);
-            unset($glf);
+            $Handle = fopen($phpMussel['Vault'] . 'greylist.csv', 'a');
+            fwrite($Handle, ',');
+            fclose($Handle);
         } else {
             $phpMussel['memCache']['greylist'] =
                 $phpMussel['ReadFile']($phpMussel['Vault'] . 'greylist.csv');
@@ -5609,6 +5599,10 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
             '[phpMussel] ' . $phpMussel['lang']['required_variables_not_defined']
         );
     }
+    if (empty($phpMussel['memCache']['OrganisedSigFiles'])) {
+        $phpMussel['OrganiseSigFiles']();
+        $phpMussel['memCache']['OrganisedSigFiles'] = true;
+    }
     if ($phpMussel['EOF']) {
         $phpMussel['HashCache']['Data'] =
             ($phpMussel['Config']['general']['scan_cache_expiry'] > 0) ?
@@ -6436,7 +6430,11 @@ $phpMussel['Logs-RecursiveList'] = function ($Base) use (&$phpMussel) {
  * @return bool Returns true (in use) or false (not in use).
  */
 $phpMussel['IsInUse'] = function ($Files) use (&$phpMussel) {
-    // @todo
+    return (
+        isset($Files[0]) &&
+        substr($Files[0], 0, 11) === 'signatures/' &&
+        strpos(',' . $phpMussel['Config']['signatures']['Active'] . ',', ',' . substr($Files[0], 11) . ',') !== false
+    );
 };
 
 /** Fetch remote data (only to be called from the front-end updates page). */
@@ -6463,5 +6461,44 @@ $phpMussel['FetchRemote'] = function () use (&$phpMussel) {
             $phpMussel['Components']['ThisComponent']['RemoteData'],
             $phpMussel['Time'] + 3600
         );
+    }
+};
+
+/** Fetch information about signature files and prepare for use with the scan process. */
+$phpMussel['OrganiseSigFiles'] = function () use (&$phpMussel) {
+    if (empty($phpMussel['Config']['signatures']['Active'])) {
+        return false;
+    }
+    $Classes = array(
+        'General_Command_Detections',
+        'Filename',
+        'Hash',
+        'Standard',
+        'Standard_RegEx',
+        'Normalised',
+        'Normalised_RegEx',
+        'HTML',
+        'HTML_RegEx',
+        'PE_Extended',
+        'PE_Sectional',
+        'Complex_Extended',
+        'URL_Scanner'
+    );
+    $List = explode(',', $phpMussel['Config']['signatures']['Active']);
+    foreach ($List as $File) {
+        $Handle = fopen($phpMussel['sigPath'] . $File, 'rb');
+        if (fread($Handle, 9) !== 'phpMussel') {
+            fclose($Handle);
+            continue;
+        }
+        $Class = fread($Handle, 1);
+        fclose($Handle);
+        $Nibbles = $phpMussel['split_nibble']($Class);
+        if (!empty($Classes[$Nibbles[0]])) {
+            if (!isset($phpMussel['memCache'][$Classes[$Nibbles[0]]])) {
+                $phpMussel['memCache'][$Classes[$Nibbles[0]]] = ',';
+            }
+            $phpMussel['memCache'][$Classes[$Nibbles[0]]] .= $File . ',';
+        }
     }
 };

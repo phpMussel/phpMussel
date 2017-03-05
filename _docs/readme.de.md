@@ -523,10 +523,7 @@ Hinweis: Unabhängig von der Verdachts-Stufe wird jede Datei auf der Whitelist o
 - Laut der Virus Total API Dokumentation, "ist diese auf 4 Anfragen irgendeiner Art in einer 1 Minuten Zeitspanne limitiert. Falls du einen Honeyclient, Honeypot oder einen andere Automatisierung verwendest, was etwas zu VirusTotal beiträgt und nicht nur Berichte abruft, bist du für ein höheres Limit berechtigt". Standardmäßig wird sich phpMussel strikt daran halten, da aber diese Limits erhöht werden können, stehen dir diese zwei Direktiven zur Verfügung um phpMussel anzuweisen, an welches Limit es sich halten soll. Außer du bist dazu aufgefordert, ist es nicht empfohlen diese Werte zu erhöhen. Solltest du aber Probleme bezogen auf das Erreichen des Limits haben, _**SOLLTE**_ das Verringern dieser Werte manchmal helfen. Dein Limit wird festgelegt als `vt_quota_rate` Anfragen jeder Art in jeder `vt_quota_time` Minuten Zeitspanne.
 
 ####"urlscanner" (Kategorie)
-URL-Scanner Konfiguration.
-
-"urlscanner"
-- In phpMussel ist ein URL-Scanner eingebaut, der bösartige URLs in Daten und gescannten Dateien erkennt. Um den URL-Scanner zu aktivieren, geben Sie den Namen der Signaturdateien zu verwendenden, durch Kommas begrenzt.
+Ein URL-Scanner ist mit phpMussel enthalten, der bösartige URLs in Daten und gescannten Dateien erkennt.
 
 Hinweis: Wenn der URL-Scanner deaktiviert ist, müssen Sie keine der Anweisungen in dieser Kategorie (`urlscanner`) überprüfen, da dann keine davon funktioniert.
 
@@ -711,4 +708,4 @@ phpMussel *TUT* blockiert eine Datei | __Falsch-Positiv__ | True-Positiv (korrek
 ---
 
 
-Zuletzt aktualisiert: 3 März 2017 (2017.03.03).
+Zuletzt aktualisiert: 5 März 2017 (2017.03.05).

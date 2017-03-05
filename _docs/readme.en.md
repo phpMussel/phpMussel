@@ -521,10 +521,7 @@ Note: Regardless of suspicion level, any files that are either blacklisted or wh
 - According to the Virus Total API documentation, "it is limited to at most 4 requests of any nature in any given 1 minute time frame. If you run a honeyclient, honeypot or any other automation that is going to provide resources to VirusTotal and not only retrieve reports you are entitled to a higher request rate quota". By default, phpMussel will strictly adhere to these limitations, but due to the possibility of these rate quotas being increased, these two directives are provided as a means for you to instruct phpMussel as to what limit it should adhere to. Unless you've been instructed to do so, it's not recommended for you to increase these values, but, if you've encountered problems relating to reaching your rate quota, decreasing these values _**MAY**_ sometimes help you in dealing with these problems. Your rate limit is determined as `vt_quota_rate` requests of any nature in any given `vt_quota_time` minute time frame.
 
 ####"urlscanner" (Category)
-URL scanner configuration.
-
-"urlscanner"
-- Built into phpMussel is a URL scanner, capable of detecting malicious URLs from within any data or files scanned. To enable the URL scanner, specify the names of the signature files to use, delimited by commas.
+A URL scanner in included with phpMussel, capable of detecting malicious URLs from within any data or files scanned.
 
 Note: If the URL scanner is disabled, you won't need to review any of the directives in this category (`urlscanner`), because none of them will do anything if this is disabled.
 
@@ -710,4 +707,4 @@ phpMussel *DOES* block a file | __False positive__ | True positive (correct infe
 ---
 
 
-Last Updated: 3 March 2017 (2017.03.03).
+Last Updated: 5 March 2017 (2017.03.05).
