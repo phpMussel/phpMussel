@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.03.04).
+ * This file: Functions file (last modified: 2017.03.05).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -22,7 +22,6 @@
  * @todo Fix non-ANSI/non-ASCII filenames in CLI mode bug (github.com/Maikuolan/phpMussel/issues/61).
  * @todo Improve data decoding procedures.
  * @todo phpMussel v1.0.0 Transitional Preparations Checklist (github.com/Maikuolan/phpMussel/issues/82)
- * @todo Need to overhaul the entire signatures paradigm. The old system is inefficient. :-(
  */
 
 /**
@@ -1466,7 +1465,12 @@ $phpMussel['BuildPharList'] = function ($PharFile, $PharDepth = 0) use (&$phpMus
     return $Out;
 };
 
-/** docBlock @todo@ */
+/**
+ * Checks whether signature length is confined within an acceptable limit.
+ *
+ * @param int $Length
+ * @return bool
+ */
 $phpMussel['ConfineLength'] = function ($Length) {
     return ($Length < 4 || $Length > 1024);
 };
@@ -1717,10 +1721,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     );
 
     /** Look for potential PDF indicators. */
-    $is_pdf = (
-        $pdf_magic ||
-        $xt === 'pdf'
-    );
+    $is_pdf = ($pdf_magic || $xt === 'pdf');
 
     /** Look for potential Shockwave/SWF indicators. */
     $is_swf = (
@@ -6423,47 +6424,6 @@ $phpMussel['Logs-RecursiveList'] = function ($Base) use (&$phpMussel) {
     return $Arr;
 };
 
-/**
- * Checks whether a component is in use (front-end closure).
- *
- * @param array $Files The list of files to be checked.
- * @return bool Returns true (in use) or false (not in use).
- */
-$phpMussel['IsInUse'] = function ($Files) use (&$phpMussel) {
-    return (
-        isset($Files[0]) &&
-        substr($Files[0], 0, 11) === 'signatures/' &&
-        strpos(',' . $phpMussel['Config']['signatures']['Active'] . ',', ',' . substr($Files[0], 11) . ',') !== false
-    );
-};
-
-/** Fetch remote data (only to be called from the front-end updates page). */
-$phpMussel['FetchRemote'] = function () use (&$phpMussel) {
-    $phpMussel['Components']['ThisComponent']['RemoteData'] = $phpMussel['FECacheGet'](
-        $phpMussel['FE']['Cache'],
-        $phpMussel['Components']['ThisComponent']['Remote']
-    );
-    if (!$phpMussel['Components']['ThisComponent']['RemoteData']) {
-        $phpMussel['Components']['ThisComponent']['RemoteData'] = $phpMussel['Request']($phpMussel['Components']['ThisComponent']['Remote']);
-        if (
-            strtolower(substr($phpMussel['Components']['ThisComponent']['Remote'], -2)) === 'gz' &&
-            substr($phpMussel['Components']['ThisComponent']['RemoteData'], 0, 2) === "\x1f\x8b"
-        ) {
-            $phpMussel['Components']['ThisComponent']['RemoteData'] = gzdecode($phpMussel['Components']['ThisComponent']['RemoteData']);
-        }
-        if (empty($phpMussel['Components']['ThisComponent']['RemoteData'])) {
-            $phpMussel['Components']['ThisComponent']['RemoteData'] = '-';
-        }
-        $phpMussel['FECacheAdd'](
-            $phpMussel['FE']['Cache'],
-            $phpMussel['FE']['Rebuild'],
-            $phpMussel['Components']['ThisComponent']['Remote'],
-            $phpMussel['Components']['ThisComponent']['RemoteData'],
-            $phpMussel['Time'] + 3600
-        );
-    }
-};
-
 /** Fetch information about signature files and prepare for use with the scan process. */
 $phpMussel['OrganiseSigFiles'] = function () use (&$phpMussel) {
     if (empty($phpMussel['Config']['signatures']['Active'])) {
@@ -6500,5 +6460,60 @@ $phpMussel['OrganiseSigFiles'] = function () use (&$phpMussel) {
             }
             $phpMussel['memCache'][$Classes[$Nibbles[0]]] .= $File . ',';
         }
+    }
+};
+
+/**
+ * Checks whether a component is in use (front-end closure).
+ *
+ * @param array $Files The list of files to be checked.
+ * @return bool Returns true (in use) or false (not in use).
+ */
+$phpMussel['IsInUse'] = function ($Files) use (&$phpMussel) {
+    foreach ($Files as $File) {
+        if (
+            substr($File, 0, 11) === 'signatures/' &&
+            strpos(',' . $phpMussel['Config']['signatures']['Active'] . ',', ',' . substr($File, 11) . ',') !== false
+        ) {
+            return true;
+        }
+    }
+    return false;
+};
+
+/** Fetch remote data (front-end updates page). */
+$phpMussel['FetchRemote'] = function () use (&$phpMussel) {
+    $phpMussel['Components']['ThisComponent']['RemoteData'] = $phpMussel['FECacheGet'](
+        $phpMussel['FE']['Cache'],
+        $phpMussel['Components']['ThisComponent']['Remote']
+    );
+    if (!$phpMussel['Components']['ThisComponent']['RemoteData']) {
+        $phpMussel['Components']['ThisComponent']['RemoteData'] = $phpMussel['Request']($phpMussel['Components']['ThisComponent']['Remote']);
+        if (
+            strtolower(substr($phpMussel['Components']['ThisComponent']['Remote'], -2)) === 'gz' &&
+            substr($phpMussel['Components']['ThisComponent']['RemoteData'], 0, 2) === "\x1f\x8b"
+        ) {
+            $phpMussel['Components']['ThisComponent']['RemoteData'] = gzdecode($phpMussel['Components']['ThisComponent']['RemoteData']);
+        }
+        if (empty($phpMussel['Components']['ThisComponent']['RemoteData'])) {
+            $phpMussel['Components']['ThisComponent']['RemoteData'] = '-';
+        }
+        $phpMussel['FECacheAdd'](
+            $phpMussel['FE']['Cache'],
+            $phpMussel['FE']['Rebuild'],
+            $phpMussel['Components']['ThisComponent']['Remote'],
+            $phpMussel['Components']['ThisComponent']['RemoteData'],
+            $phpMussel['Time'] + 3600
+        );
+    }
+};
+
+/** Duplication avoidance (front-end updates page). */
+$phpMussel['ComponentFunctionUpdatePrep'] = function () use (&$phpMussel) {
+    if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files'])) {
+        $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$_POST['ID']]['Files']);
+        $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To']);
+        $phpMussel['Components']['Meta'][$_POST['ID']]['Files']['InUse'] =
+            $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To']);
     }
 };

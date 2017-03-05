@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.03.04).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.03.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -86,8 +86,10 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = '根据｢Virus Total AP
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = 'vt_quota_time:';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = '作为标准，phpMussel将限制什么文件它扫描通过使用｢Virus Total API｣为那些文件它考虑作为“可疑”。 您可以可选调整这个局限性通过修改的<code>vt_suspicion_level</code>指令数值。';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMussel应使用扫描结果使用｢Virus Total API｣作为检测或作为检测重量吗？ 这个指令存在，因为，虽说扫描一个文件使用多AV引擎（例如怎么样VirusTotal做） 应结果有一个增加检测率（和因此在一个更恶意文件被抓）， 它可以还结果有更假阳性，和因此，为某些情况，扫描结果可能被更好使用作为一个置信得分而不是作为一个明确结论。 如果一个数值的<code>0</code>是使用，扫描结果使用｢Virus Total API｣将会适用作为检测，和因此，如果任何AV引擎使用通过VirusTotal标志文件被扫描作为恶意， phpMussel将考虑文件作为恶意。 如果任何其他数值是使用，扫描结果使用｢Virus Total API｣将会适用作为检测重量，和因此，数的AV引擎使用通过VirusTotal标志文件被扫描作为恶意将服务作为一个置信得分（或检测重量） 为如果文件被扫描应会考虑恶意通过phpMussel（数值使用将代表最低限度的置信得分或重量需要以被考虑恶意）。 一个数值的<code>0</code>是使用作为标准。';
+$phpMussel['lang']['field_activate'] = '启用';
 $phpMussel['lang']['field_component'] = '组件';
 $phpMussel['lang']['field_create_new_account'] = '创建新账户';
+$phpMussel['lang']['field_deactivate'] = '停用';
 $phpMussel['lang']['field_delete_account'] = '删除账户';
 $phpMussel['lang']['field_delete_file'] = '删除';
 $phpMussel['lang']['field_download_file'] = '下载';
@@ -139,12 +141,16 @@ $phpMussel['lang']['response_accounts_created'] = '账户成功创建！';
 $phpMussel['lang']['response_accounts_deleted'] = '账户成功删除！';
 $phpMussel['lang']['response_accounts_doesnt_exist'] = '那个账户不存在。';
 $phpMussel['lang']['response_accounts_password_updated'] = '密码成功更新！';
+$phpMussel['lang']['response_activated'] = '已成功启用。';
+$phpMussel['lang']['response_activation_failed'] = '无法启用！';
 $phpMussel['lang']['response_component_successfully_installed'] = '组件成功安装。';
 $phpMussel['lang']['response_component_successfully_uninstalled'] = '组件成功卸载。';
 $phpMussel['lang']['response_component_successfully_updated'] = '组件成功更新。';
 $phpMussel['lang']['response_component_uninstall_error'] = '一个错误发生当尝试卸载组件。';
 $phpMussel['lang']['response_component_update_error'] = '一个错误发生当尝试更新组件。';
 $phpMussel['lang']['response_configuration_updated'] = '配置成功更新。';
+$phpMussel['lang']['response_deactivated'] = '已成功停用。';
+$phpMussel['lang']['response_deactivation_failed'] = '无法停用！';
 $phpMussel['lang']['response_delete_error'] = '无法删除！';
 $phpMussel['lang']['response_directory_deleted'] = '文件夹成功删除！';
 $phpMussel['lang']['response_directory_renamed'] = '文件夹成功改名！';

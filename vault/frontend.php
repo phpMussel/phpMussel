@@ -921,15 +921,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
 
         /** Uninstall a component. */
         if ($_POST['do'] === 'uninstall-component' && !empty($_POST['ID'])) {
-            if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files'])) {
-                $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$_POST['ID']]['Files']);
-                $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To']);
-                $phpMussel['Components']['Meta'][$_POST['ID']]['Files']['InUse'] =
-                    $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To']);
-            }
+            $phpMussel['ComponentFunctionUpdatePrep']();
             if (
                 !empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To']) &&
-                !$phpMussel['Components']['Meta'][$_POST['ID']]['Files']['InUse'] &&
+                !empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['InUse']) &&
                 ($_POST['ID'] !== 'l10n/' . $phpMussel['Config']['general']['lang']) &&
                 ($_POST['ID'] !== 'phpMussel') &&
                 !empty($phpMussel['Components']['Meta'][$_POST['ID']]['Reannotate']) &&
@@ -987,6 +982,109 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             } else {
                 $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_component_uninstall_error'];
             }
+        }
+
+        /** Activate a component. */
+        if ($_POST['do'] === 'activate-component' && !empty($_POST['ID'])) {
+            $phpMussel['Activation'] = array(
+                'Config' => $phpMussel['ReadFile']($phpMussel['Vault'] . 'config.ini'),
+                'Active' => $phpMussel['Config']['signatures']['Active'],
+                'Modified' => false
+            );
+            $phpMussel['ComponentFunctionUpdatePrep']();
+            if (
+                empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['InUse']) &&
+                !empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To'])
+            ) {
+                $phpMussel['Activation']['Active'] = array_unique(array_filter(
+                    explode(',', $phpMussel['Activation']['Active']),
+                    function ($Component) use (&$phpMussel) {
+                        return ($Component && file_exists($phpMussel['sigPath'] . $Component));
+                    }
+                ));
+                foreach ($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To'] as $phpMussel['Activation']['ThisFile']) {
+                    if (
+                        !empty($phpMussel['Activation']['ThisFile']) &&
+                        file_exists($phpMussel['Vault'] . $phpMussel['Activation']['ThisFile']) &&
+                        substr($phpMussel['Activation']['ThisFile'], 0, 11) === 'signatures/' &&
+                        $phpMussel['Traverse']($phpMussel['Activation']['ThisFile'])
+                    ) {
+                        $phpMussel['Activation']['Active'][] = substr($phpMussel['Activation']['ThisFile'], 11);
+                    }
+                }
+                if (count($phpMussel['Activation']['Active'])) {
+                    sort($phpMussel['Activation']['Active']);
+                }
+                $phpMussel['Activation']['Active'] = implode(',', $phpMussel['Activation']['Active']);
+                if ($phpMussel['Activation']['Active'] !== $phpMussel['Config']['signatures']['Active']) {
+                    $phpMussel['Activation']['Modified'] = true;
+                }
+            }
+            if (!$phpMussel['Activation']['Modified'] || !$phpMussel['Activation']['Config']) {
+                $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_activation_failed'];
+            } else {
+                $phpMussel['Activation']['Config'] = str_replace(
+                    "\r\nActive='" . $phpMussel['Config']['signatures']['Active'] . "'\r\n",
+                    "\r\nActive='" . $phpMussel['Activation']['Active'] . "'\r\n",
+                    $phpMussel['Activation']['Config']
+                );
+                $phpMussel['Config']['signatures']['Active'] = $phpMussel['Activation']['Active'];
+                $phpMussel['Handle'] = fopen($phpMussel['Vault'] . 'config.ini', 'w');
+                fwrite($phpMussel['Handle'], $phpMussel['Activation']['Config']);
+                fclose($phpMussel['Handle']);
+                $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_activated'];
+            }
+            unset($phpMussel['Activation']);
+        }
+
+        /** Deactivate a component. */
+        if ($_POST['do'] === 'deactivate-component' && !empty($_POST['ID'])) {
+            $phpMussel['Deactivation'] = array(
+                'Config' => $phpMussel['ReadFile']($phpMussel['Vault'] . 'config.ini'),
+                'Active' => $phpMussel['Config']['signatures']['Active'],
+                'Modified' => false
+            );
+            $phpMussel['ComponentFunctionUpdatePrep']();
+            if (
+                !empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['InUse']) &&
+                !empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To'])
+            ) {
+                $phpMussel['Deactivation']['Active'] = array_unique(array_filter(
+                    explode(',', $phpMussel['Deactivation']['Active']),
+                    function ($Component) use (&$phpMussel) {
+                        return ($Component && file_exists($phpMussel['sigPath'] . $Component));
+                    }
+                ));
+                if (count($phpMussel['Deactivation']['Active'])) {
+                    sort($phpMussel['Deactivation']['Active']);
+                }
+                $phpMussel['Deactivation']['Active'] = ',' . implode(',', $phpMussel['Deactivation']['Active']) . ',';
+                foreach ($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To'] as $phpMussel['Deactivation']['ThisFile']) {
+                    if (substr($phpMussel['Deactivation']['ThisFile'], 0, 11) === 'signatures/') {
+                        $phpMussel['Deactivation']['Active'] =
+                            str_replace(',' . substr($phpMussel['Deactivation']['ThisFile'], 11) . ',', ',', $phpMussel['Deactivation']['Active']);
+                    }
+                }
+                $phpMussel['Deactivation']['Active'] = substr($phpMussel['Deactivation']['Active'], 1, -1);
+                if ($phpMussel['Deactivation']['Active'] !== $phpMussel['Config']['signatures']['Active']) {
+                    $phpMussel['Deactivation']['Modified'] = true;
+                }
+            }
+            if (!$phpMussel['Deactivation']['Modified'] || !$phpMussel['Deactivation']['Config']) {
+                $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_deactivation_failed'];
+            } else {
+                $phpMussel['Deactivation']['Config'] = str_replace(
+                    "\r\nActive='" . $phpMussel['Config']['signatures']['Active'] . "'\r\n",
+                    "\r\nActive='" . $phpMussel['Deactivation']['Active'] . "'\r\n",
+                    $phpMussel['Deactivation']['Config']
+                );
+                $phpMussel['Config']['signatures']['Active'] = $phpMussel['Deactivation']['Active'];
+                $phpMussel['Handle'] = fopen($phpMussel['Vault'] . 'config.ini', 'w');
+                fwrite($phpMussel['Handle'], $phpMussel['Deactivation']['Config']);
+                fclose($phpMussel['Handle']);
+                $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_deactivated'];
+            }
+            unset($phpMussel['Deactivation']);
         }
 
     }
@@ -1129,6 +1227,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 }
             }
             if (!empty($phpMussel['Components']['ThisComponent']['Files']['To'])) {
+                $phpMussel['Activable'] = (
+                    !empty($phpMussel['Components']['ThisComponent']['Files']['To'][0]) &&
+                    substr($phpMussel['Components']['ThisComponent']['Files']['To'][0], 0, 11) === 'signatures/'
+                );
                 if (
                     ($phpMussel['Components']['Key'] === 'l10n/' . $phpMussel['Config']['general']['lang']) ||
                     ($phpMussel['Components']['Key'] === 'phpMussel') ||
@@ -1137,7 +1239,15 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                     $phpMussel['AppendToString']($phpMussel['Components']['ThisComponent']['StatusOptions'], '<hr />',
                         '<div class="txtGn">' . $phpMussel['lang']['state_component_is_active'] . '</div>'
                     );
+                    if ($phpMussel['Activable']) {
+                        $phpMussel['Components']['ThisComponent']['Options'] .=
+                            '<option value="deactivate-component">' . $phpMussel['lang']['field_deactivate'] . '</option>';
+                    }
                 } else {
+                    if ($phpMussel['Activable']) {
+                        $phpMussel['Components']['ThisComponent']['Options'] .=
+                            '<option value="activate-component">' . $phpMussel['lang']['field_activate'] . '</option>';
+                    }
                     if (!empty($phpMussel['Components']['ThisComponent']['Uninstallable'])) {
                         $phpMussel['Components']['ThisComponent']['Options'] .=
                             '<option value="uninstall-component">' . $phpMussel['lang']['field_uninstall'] . '</option>';

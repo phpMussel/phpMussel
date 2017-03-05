@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2017.03.04).
+ * This file: Spanish language data for the front-end (last modified: 2017.03.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -86,8 +86,10 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'En acuerdo con la docum
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = 'vt_quota_time:';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Por predefinido, phpMussel restringirá qué archivos se escaneado usando el Virus Total API a esos archivos que se considera "sospechosa". Opcionalmente, usted puede ajustar esta restricción por manera de cambiando el valor de la <code>vt_suspicion_level</code> directiva.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Debería phpMussel aplicar los resultados del escaneo utilizando el Virus Total API como detecciones o como detección peso? Esta directiva existe, por razón de que, aunque escanear un archivo usando múltiples motores (como Virus Total hacer) debería resultar en un aumento detección cuenta (y por lo tanto en un mayor número de maliciosos archivos ser atrapado), esta también puede resultar en un mayor número de falsos positivos, y por lo tanto, en algunas circunstancias, los resultados del escanear pueden ser mejor utilizados como una puntuación de confianza y no como una definitiva conclusión. Si un valor de 0 es utiliza, los resultados del escaneo utilizando el Virus Total API se aplicará como detecciones, y por lo tanto, si cualquier motor utilizado por Virus Total marca el archivo está escaneando como malicioso, phpMussel considerará el archivo a ser malicioso. Si cualquier otro valor es utiliza, los resultados del escaneo utilizando el Virus Total API se aplicará como detección peso, y por lo tanto, el número de motores utilizados por Virus Total que marca el archivo está escaneando como malicioso servirá como una puntuación de confianza (o detección peso) para si el archivo que ser escanear debe ser considerado malicioso por phpMussel (el valor utilizado representará el mínima puntuación de confianza o peso requerido con el fin de ser considerado malicioso). Un valor de 0 es utilizado por predefinido.';
+$phpMussel['lang']['field_activate'] = 'Activar';
 $phpMussel['lang']['field_component'] = 'Componente';
 $phpMussel['lang']['field_create_new_account'] = 'Crear Nueva Cuenta';
+$phpMussel['lang']['field_deactivate'] = 'Desactivar';
 $phpMussel['lang']['field_delete_account'] = 'Eliminar Cuenta';
 $phpMussel['lang']['field_delete_file'] = 'Borrar';
 $phpMussel['lang']['field_download_file'] = 'Descargar';
@@ -139,12 +141,16 @@ $phpMussel['lang']['response_accounts_created'] = '¡Cuenta creada con éxito!';
 $phpMussel['lang']['response_accounts_deleted'] = '¡Cuenta eliminada con éxito!';
 $phpMussel['lang']['response_accounts_doesnt_exist'] = 'Esa cuenta no existe.';
 $phpMussel['lang']['response_accounts_password_updated'] = 'Contraseña actualizado con éxito!';
+$phpMussel['lang']['response_activated'] = 'Se ha activado correctamente.';
+$phpMussel['lang']['response_activation_failed'] = '¡No se pudo activar!';
 $phpMussel['lang']['response_component_successfully_installed'] = 'Componente instalado con éxito.';
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Componente desinstalado con éxito.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Componente actualizado con éxito.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'Se ha producido un error al intentar desinstalar el componente.';
 $phpMussel['lang']['response_component_update_error'] = 'Se ha producido un error al intentar actualizar el componente.';
 $phpMussel['lang']['response_configuration_updated'] = 'Configuración actualizado con éxito.';
+$phpMussel['lang']['response_deactivated'] = 'Se ha desactivado correctamente.';
+$phpMussel['lang']['response_deactivation_failed'] = '¡No se pudo desactivar!';
 $phpMussel['lang']['response_delete_error'] = '¡No se pudo eliminar!';
 $phpMussel['lang']['response_directory_deleted'] = '¡Directorio eliminado con éxito!';
 $phpMussel['lang']['response_directory_renamed'] = '¡El nombre del directorio cambiado con éxito!';

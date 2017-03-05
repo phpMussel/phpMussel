@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.03.04).
+ * This file: Russian language data for the front-end (last modified: 2017.03.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -86,8 +86,10 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'Согласно Virus 
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = 'vt_quota_time:';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'Допуская файлы к сканированию Virus Total API, phpMussel будет ограничиваться только теми файлами, которые рассматриваются «опасными». Опционально Вы можете регулировать эти ограничения, изменив значение <code>vt_suspicion_level</code> директивы.';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'Должна phpMussel использовать результаты сканирования с Virus Total API в качестве опознания или как определение степени доверия? Существование этой директиВы объясняется тем, что сканирование файла со многими ядрами должно быть более тщательным (как это делает Virus Total) и, следовательно, будет найдено большее количество вредоносных файлов, что может привести к большему количеству ложных тревог. Есть ситуации, когда результаты сканирования бывают выше степени доверия, и тогда применяется однозначный результат. Применение значения 0 означает, что результаты сканирования будут применяться как опознание. В этом случае phpMussel будет рассматривать файл как вредоносный, если какие-то используемые в сканировании ядра файлов Virus Total обозначил опасными. При установке другого значения, результаты сканирования с Virus Total API будут использоваться как определение степени доверия. Количество используемых Virus Total ядер, обозначающих файл как вредоносный, будет служить степенью доверия (или определением степени доверия). Используемое значение будет определять, какую степень доверия (минимальную или требуемую) примет phpMussel во внимание, чтобы признать сканируемый файл вредоносным или безвредным. Стандартное значение = 0.';
+$phpMussel['lang']['field_activate'] = 'Активировать';
 $phpMussel['lang']['field_component'] = 'Компонент';
 $phpMussel['lang']['field_create_new_account'] = 'Создать Новый Аккаунт';
+$phpMussel['lang']['field_deactivate'] = 'Дезактивировать';
 $phpMussel['lang']['field_delete_account'] = 'Удалить Аккаунт';
 $phpMussel['lang']['field_delete_file'] = 'Удалить';
 $phpMussel['lang']['field_download_file'] = 'Скачать';
@@ -139,12 +141,16 @@ $phpMussel['lang']['response_accounts_created'] = 'Аккаунт успешно
 $phpMussel['lang']['response_accounts_deleted'] = 'Аккаунт успешно удален!';
 $phpMussel['lang']['response_accounts_doesnt_exist'] = 'Эта аккаунт не существует.';
 $phpMussel['lang']['response_accounts_password_updated'] = 'Пароль успешно обновлено!';
+$phpMussel['lang']['response_activated'] = 'Успешно активирован.';
+$phpMussel['lang']['response_activation_failed'] = 'Не удалось активировать!';
 $phpMussel['lang']['response_component_successfully_installed'] = 'Компонент успешно установлен.';
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Компонент успешно удален.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Компонент успешно обновлено.';
 $phpMussel['lang']['response_component_uninstall_error'] = 'Произошла ошибка при попытке удалить компонент.';
 $phpMussel['lang']['response_component_update_error'] = 'Произошла ошибка при попытке обновить компонент.';
 $phpMussel['lang']['response_configuration_updated'] = 'Конфигурация успешно обновлено.';
+$phpMussel['lang']['response_deactivated'] = 'Успешно деактивирован.';
+$phpMussel['lang']['response_deactivation_failed'] = 'Не удалось дезактивировать!';
 $phpMussel['lang']['response_delete_error'] = 'Не удалось удалить!';
 $phpMussel['lang']['response_directory_deleted'] = 'Каталог успешно удален!';
 $phpMussel['lang']['response_directory_renamed'] = 'Каталог успешно переименован!';

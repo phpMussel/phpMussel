@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.03.04).
+ * This file: Japanese language data for the front-end (last modified: 2017.03.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -86,8 +86,10 @@ $phpMussel['lang']['config_virustotal_vt_quota_rate'] = 'Virus Total APIのド�
 $phpMussel['lang']['config_virustotal_vt_quota_time'] = '<code>vt_quota_time</code>（ヴィティ・クォータ・タイム）「分内に」';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = 'デフォルト設定では、phpMusselがVirus Total APIを使ってスキャンするファイル（疑がわしいもの）には制限があります。 <code>vt_suspicion_level</code>ディレクティブを編集することのより、この制限を変更することが可能です。';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMusselがVirus Total APIを使ったスキャニング結果を検出として扱うか、検出の重み付けとして扱うべきか？ 複数のエンジン（Virus Totalのように）を使用したスキャニングは、検出率の向上（より多くのマルウェアが検出）をもたらす一方で誤検出の増加も招くため、このディレクティブが存在します。 したがって、スキャニング結果は、決定的判断ではなく信頼スコアとして利用した方が適当なケースもあります。 値が０の場合、Virus Total APIを使ったスキャンは検出として扱われ、Virus Totalのエンジンがマルウェアとフラグを付けたファイルは、phpMusselもマルウェアと判断します。 その他の値の場合は結果は検出の重み付けとなり、スキャンされたファイルがマルウェアかどうかphpMusselが判断するための信頼スコア（あるいは検出の重み付け）となります（値はマルウェアと判断するための最小信頼スコア、あるいは重み）。 デフォルト値は０です。';
+$phpMussel['lang']['field_activate'] = 'アクティブにする';
 $phpMussel['lang']['field_component'] = 'コンポーネント';
 $phpMussel['lang']['field_create_new_account'] = '新しいアカウントを作成する';
+$phpMussel['lang']['field_deactivate'] = '非アクティブにする';
 $phpMussel['lang']['field_delete_account'] = 'アカウントを削除する';
 $phpMussel['lang']['field_delete_file'] = '削除';
 $phpMussel['lang']['field_download_file'] = 'ダウンロード';
@@ -139,12 +141,16 @@ $phpMussel['lang']['response_accounts_created'] = 'アカウントの作成に�
 $phpMussel['lang']['response_accounts_deleted'] = 'アカウントの削除が成功しました！';
 $phpMussel['lang']['response_accounts_doesnt_exist'] = 'そのアカウントは存在しません。';
 $phpMussel['lang']['response_accounts_password_updated'] = 'パスワードの更新が成功しました！';
+$phpMussel['lang']['response_activated'] = 'アクティブにしました。';
+$phpMussel['lang']['response_activation_failed'] = 'アクティブ化に失敗しました！';
 $phpMussel['lang']['response_component_successfully_installed'] = 'コンポーネントのインストールに成功しました。';
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'コンポーネントのアンインストールは成功しました。';
 $phpMussel['lang']['response_component_successfully_updated'] = 'コンポーネントのアップデートに成功しました！';
 $phpMussel['lang']['response_component_uninstall_error'] = 'コンポーネントのアンインストール中にエラーが発生しました。';
 $phpMussel['lang']['response_component_update_error'] = 'コンポーネントのアップデート中にエラーが発生しました。';
 $phpMussel['lang']['response_configuration_updated'] = 'コンフィギュレーションの更新が成功しました。';
+$phpMussel['lang']['response_deactivated'] = '非アクティブにしました。';
+$phpMussel['lang']['response_deactivation_failed'] = '非アクティブ化に失敗しました！';
 $phpMussel['lang']['response_delete_error'] = '削除に失敗しました！';
 $phpMussel['lang']['response_directory_deleted'] = 'ディレクトリが正常に削除されました！';
 $phpMussel['lang']['response_directory_renamed'] = 'ディレクトリの名前が変更されました！';
