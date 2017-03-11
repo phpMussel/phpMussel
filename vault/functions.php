@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.03.05).
+ * This file: Functions file (last modified: 2017.03.11).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -2848,7 +2848,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     }
 
     /** Process URL scanner signatures. */
-    $SigFiles = explode(',', $phpMussel['Config']['urlscanner']['urlscanner']);
+    $SigFiles = isset($phpMussel['memCache']['URL_Scanner']) ? explode(',', $phpMussel['memCache']['URL_Scanner']) : array();
     foreach ($SigFiles as $SigFile) {
         if (!$SigFile) {
             continue;
