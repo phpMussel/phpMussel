@@ -19,7 +19,7 @@
 ---
 
 
-###1. <a name="SECTION1"></a>PREAMBULE
+### 1. <a name="SECTION1"></a>PREAMBULE
 
 Dank u voor het gebruiken van phpMussel, een PHP-script ontwikkeld om trojans, virussen, malware en andere bedreigingen te ontworpen, binnen bestanden geüpload naar uw systeem waar het script is haakte, gebaseerd op de signatures van ClamAV en anderen.
 
@@ -40,7 +40,7 @@ Dit document en de bijbehorende pakket kunt gedownload gratis zijn van:
 ---
 
 
-###2A. <a name="SECTION2A"></a>HOE TE INSTALLEREN (VOOR WEBSERVERS)
+### 2A. <a name="SECTION2A"></a>HOE TE INSTALLEREN (VOOR WEBSERVERS)
 
 Ik hoop te stroomlijnen dit proces door maken een installateur op een bepaald punt in de niet al te verre toekomst, maar tot die tijd, volg deze instructies te werken phpMussel om meeste systemen en CMS:
 
@@ -52,7 +52,7 @@ Ik hoop te stroomlijnen dit proces door maken een installateur op een bepaald pu
 
 4) CHMOD het bestandsmap `vault` naar "755" (als er problemen, u kan proberen "777"; dit is minder veilig, hoewel). De belangrijkste bestandsmap opslaan van de inhoud (degene die u eerder koos), gewoonlijk, kunt worden genegeerd, maar CHMOD-status moet worden gecontroleerd als u machtigingen problemen heeft in het verleden met uw systeem (standaard, moet iets zijn als "755").
 
-5) Volgende, u nodig om "haak" phpMussel om uw systeem of CMS. Er zijn verschillende manieren waarop u kunt "haak" scripts zoals phpMussel om uw systeem of CMS, maar het makkelijkste is om gewoon omvatten voor het script aan het begin van een kern bestand van uw systeem of CMS (een die het algemeen altijd zal worden geladen wanneer iemand heeft toegang tot een pagina in uw website) met behulp van een `require` of `include` opdracht. Meestal is dit wel iets worden opgeslagen in een bestandsmap zoals `/includes`, `/assets` of `/functions`, en zal vaak zijn vernoemd iets als `init.php`, `common_functions.php`, `functions.php` of soortgelijk. U nodig om te bepalen welk bestand dit is voor uw situatie; Als u problemen ondervindt bij het bepalen van dit voor uzelf, ga naar de phpMussel kwesties/issues pagina op Github of de phpMussel support forums voor assistentie; Het is mogelijk dat ofwel mijzelf of een andere gebruiker kunt ervaring met de CMS die u gebruikt heeft (u nodig om ons te laten weten welk CMS u gebruikt), en dus, in staat zijn om wat hulp te bieden in dit gebied. Om dit te doen [te gebruiken `require` of `include`], plaatst u de volgende regel code aan het begin op die kern bestand, vervangen van de string die binnen de aanhalingstekens met het exacte adres van het `loader.php` bestand (lokaal adres, niet het HTTP-adres; zal vergelijkbaar zijn met de eerder genoemde vault adres).
+5) Volgende, u nodig om "haak" phpMussel om uw systeem of CMS. Er zijn verschillende manieren waarop u kunt "haak" scripts zoals phpMussel om uw systeem of CMS, maar het makkelijkste is om gewoon omvatten voor het script aan het begin van een kern bestand van uw systeem of CMS (een die het algemeen altijd zal worden geladen wanneer iemand heeft toegang tot een pagina in uw website) met behulp van een `require` of `include` opdracht. Meestal is dit wel iets worden opgeslagen in een bestandsmap zoals `/includes`, `/assets` of `/functions`, en zal vaak zijn vernoemd iets als `init.php`, `common_functions.php`, `functions.php` of soortgelijk. U nodig om te bepalen welk bestand dit is voor uw situatie; Als u problemen ondervindt bij het bepalen van dit voor uzelf, ga naar de phpMussel kwesties pagina op Github of de phpMussel support forums voor assistentie; Het is mogelijk dat ofwel mijzelf of een andere gebruiker kunt ervaring met de CMS die u gebruikt heeft (u nodig om ons te laten weten welk CMS u gebruikt), en dus, in staat zijn om wat hulp te bieden in dit gebied. Om dit te doen [te gebruiken `require` of `include`], plaatst u de volgende regel code aan het begin op die kern bestand, vervangen van de string die binnen de aanhalingstekens met het exacte adres van het `loader.php` bestand (lokaal adres, niet het HTTP-adres; zal vergelijkbaar zijn met de eerder genoemde vault adres).
 
 `<?php require '/user_name/public_html/phpmussel/loader.php'; ?>`
 
@@ -73,7 +73,7 @@ Of dit in het `.htaccess` bestand:
 ---
 
 
-###2B. <a name="SECTION2B"></a>HOE TE INSTALLEREN (VOOR CLI)
+### 2B. <a name="SECTION2B"></a>HOE TE INSTALLEREN (VOOR CLI)
 
 Ik hoop te stroomlijnen dit proces door maken een installateur op een bepaald punt in de niet al te verre toekomst, maar tot die tijd, volg deze instructies te werken phpMussel met CLI (beseffen dat op dit moment, CLI is alleen bekend om te werken met Windows-gebaseerde systemen; Linux en andere systemen zal binnenkort komen tot een latere versie van phpMussel):
 
@@ -90,7 +90,7 @@ Ik hoop te stroomlijnen dit proces door maken een installateur op een bepaald pu
 ---
 
 
-###3A. <a name="SECTION3A"></a>HOE TE GEBRUIKEN (VOOR WEBSERVERS)
+### 3A. <a name="SECTION3A"></a>HOE TE GEBRUIKEN (VOOR WEBSERVERS)
 
 phpMussel moet in staat zijn om correct te werken met minimale eisen van uw kant: Na de installatie, het moeten onmiddellijk aan het werk en zijn onmiddellijk bruikbare.
 
@@ -129,7 +129,7 @@ Voor uitschakelen om de signatures die bij phpMussel (zoals als u het ervaren va
 ---
 
 
-###3B. <a name="SECTION3B"></a>HOE TE GEBRUIKEN (VOOR CLI)
+### 3B. <a name="SECTION3B"></a>HOE TE GEBRUIKEN (VOOR CLI)
 
 Raadpleeg de "HOE TE INSTALLEREN (VOOR CLI)" sectie van dit README bestand.
 
@@ -140,15 +140,15 @@ Eveneens, noteren dat phpMussel is een *on-demand* scanner; Het is *GEEN* *on-ac
 ---
 
 
-###4. <a name="SECTION4"></a>FRONTEND MANAGEMENT
+### 4. <a name="SECTION4"></a>FRONTEND MANAGEMENT
 
-####4.0 WAT IS DE FRONT-END.
+#### 4.0 WAT IS DE FRONT-END.
 
 De front-end biedt een gemakkelijke en eenvoudige manier te onderhouden, beheren en updaten van uw phpMussel installatie. U kunt bekijken, delen en downloaden log bestanden via de pagina logs, u kunt de configuratie wijzigen via de configuratiepagina, u kunt installeren en verwijderen/desinstalleren van componenten via de pagina updates, en u kunt uploaden, downloaden en wijzigen bestanden in uw vault via de bestandsbeheer.
 
 De front-end is standaard uitgeschakeld om ongeautoriseerde toegang te voorkomen (ongeautoriseerde toegang kan belangrijke gevolgen hebben voor uw website en de beveiliging hebben). Instructies voor het inschakelen van deze zijn hieronder deze paragraaf opgenomen.
 
-####4.1 HOE DE FRONTEND TE INSCHAKELEN.
+#### 4.1 HOE DE FRONTEND TE INSCHAKELEN.
 
 1) Vind de `disable_frontend` richtlijn in `config.ini`, en stel dat het true (deze is false door standaard).
 
@@ -158,7 +158,7 @@ De front-end is standaard uitgeschakeld om ongeautoriseerde toegang te voorkomen
 
 Notitie: Nadat u hebt ingelogd voor de eerste keer, om ongeautoriseerde toegang tot de frontend te voorkomen, moet u onmiddellijk veranderen uw gebruikersnaam en wachtwoord! Dit is zeer belangrijk, want het is mogelijk om willekeurige PHP-code te uploaden naar uw website via de front-end.
 
-####4.2 HOE DE FRONTEND GEBRUIKEN.
+#### 4.2 HOE DE FRONTEND GEBRUIKEN.
 
 Instructies worden op elke pagina van de frontend, om uit te leggen hoe het te gebruiken en het beoogde doel. Als u meer uitleg of een speciale hulp nodig hebben, neem dan contact op met ondersteuning. Als alternatief, zijn er een aantal video's op YouTube die zouden kunnen helpen door middel van een demonstratie.
 
@@ -166,7 +166,7 @@ Instructies worden op elke pagina van de frontend, om uit te leggen hoe het te g
 ---
 
 
-###5. <a name="SECTION5"></a>CLI (COMMANDLIJN INTERFACE)
+### 5. <a name="SECTION5"></a>CLI (COMMANDLIJN INTERFACE)
 
 phpMussel kan worden uitgevoerd als een interactief bestand scanner in de CLI-modus onder Windows-gebaseerde systemen. Raadpleeg de sectie "HOE TE INSTALLEREN (VOOR CLI)" van deze README bestand voor meer informatie.
 
@@ -178,7 +178,7 @@ Daarnaast, voor diegenen die geïnteresseerd, een video-tutorial voor hoe te geb
 ---
 
 
-###6. <a name="SECTION6"></a>BESTANDEN IN DIT PAKKET
+### 6. <a name="SECTION6"></a>BESTANDEN IN DIT PAKKET
 
 Het volgende is een lijst van alle bestanden die moeten worden opgenomen in de gearchiveerde kopie van dit script als u gedownload het, alle bestanden die kunt mogelijk worden gemaakt als resultaat van uw gebruik van dit script, samen met een korte beschrijving van wat al deze bestanden zijn voor.
 
@@ -301,10 +301,10 @@ Bestand | Beschrijving
 ---
 
 
-###7. <a name="SECTION7"></a>CONFIGURATIEOPTIES
+### 7. <a name="SECTION7"></a>CONFIGURATIEOPTIES
 Het volgende is een lijst van variabelen die in de `config.ini` configuratiebestand van phpMussel, samen met een beschrijving van hun doel en functie.
 
-####"general" (Categorie)
+#### "general" (Categorie)
 Algemene configuratie voor phpMussel.
 
 "cleanup"
@@ -373,7 +373,7 @@ Algemene configuratie voor phpMussel.
 "FrontEndLog"
 - Bestand om de front-end login pogingen te loggen. Geef een bestandsnaam, of laat leeg om uit te schakelen.
 
-####"signatures" (Categorie)
+#### "signatures" (Categorie)
 Configuratie voor signatures.
 
 "Active"
@@ -403,7 +403,7 @@ Configuratie voor signatures.
 "detect_deface"
 - Moet phpMussel verwerken signatures voor het detecteren van schendingen/defacements en schenders/defacers? False = Nee; True = Ja [Standaard].
 
-####"files" (Categorie)
+#### "files" (Categorie)
 Bestand hanteren configuratie.
 
 "max_uploads"
@@ -440,7 +440,7 @@ Bestand hanteren configuratie.
 "block_encrypted_archives"
 - Detecteren en blokkeren gecodeerde archieven? Omdat phpMussel is niet in staat te scannen de inhoud van gecodeerde archieven, het is mogelijk dat archief encryptie kan worden toegepast door een aanvaller als middel van probeert te omzeilen phpMussel, anti-virus scanners en andere dergelijke beveiligingen. Instrueren phpMussel te blokkeren elke archieven dat het ontdekt worden gecodeerde zou kunnen helpen het risico in verband met deze dergelijke mogelijkheden te verminderen. False = Nee; True = Ja [Standaard].
 
-####"attack_specific" (Categorie)
+#### "attack_specific" (Categorie)
 Aanval-specifieke richtlijnen.
 
 Chameleon aanval detectie: False = Uitgeschakeld; True = Ingeschakeld.
@@ -481,7 +481,7 @@ Chameleon aanval detectie: False = Uitgeschakeld; True = Ingeschakeld.
 "scannable_threshold"
 - Optionele limiet of drempelwaarde de lengte van onverwerkte gegevens dat phpMussel is toegestaan te lezen en scan (in het geval er enige merkbare prestatieproblemen terwijl scannen). Waarde is een integer vertegenwoordigen bestandsgrootte in KB. Standaard = 32768 (32MB). Zero of nulwaarde zal uitschakelen het drempelwaarde. Algemeen, dit waarde moeten niet zijn lagere dan de gemiddelde bestandsgrootte van het bestandsuploads dat u wilt en verwacht te ontvangen aan uw server of website, moeten niet zijn meer dan de filesize_limit richtlijn, en moeten niet zijn meet dan ongeveer een vijfde van de totale toegestane geheugentoewijzing toegekend aan PHP via de `php.ini` configuratiebestand. Dit richtlijn bestaat te proberen om phpMussel te verhinderen van het gebruik van teveel geheugen (dat zou verhinderen het van de mogelijkheid te scannen bestanden met succes boven een bepaalde bestandsgrootte).
 
-####"compatibility" (Categorie)
+#### "compatibility" (Categorie)
 Compatibiliteit richtlijnen voor phpMussel.
 
 "ignore_upload_errors"
@@ -490,13 +490,13 @@ Compatibiliteit richtlijnen voor phpMussel.
 "only_allow_images"
 - Als u alleen verwachten of alleen bedoelen toestaan beelden worden geüpload om uw systeem of CMS, en als u absoluut nodig geen bestanden behalve afbeeldingen te wordt geüpload om uw systeem of CMS, dit richtlijn moet worden ingeschakeld, maar moet anderszins worden uitgeschakeld. Als dit richtlijn is ingeschakeld, het zal instrueren phpMussel zonder onderscheid te blokkeren elke upload geïdentificeerd als niet-beeldbestanden, zonder te scannen. Dit kan verminderen verwerkingstijd en geheugengebruik voor het geprobeerd uploaden van niet-beeldbestanden. False = UITGESCHAKELD; True = INGESCHAKELD.
 
-####"heuristic" (Categorie)
+#### "heuristic" (Categorie)
 Heuristische richtlijnen.
 
 "threshold"
 - Er zijn bepaalde signatures van phpMussel dat zijn bedoeld om verdachte en potentieel kwaadaardige kwaliteiten te identificeren van bestanden wordt geüpload zonder zichzelf om bestanden wordt geüpload te identificeren specifiek als kwaadaardige. Dit "threshold" waarde vertelt phpMussel het maximaal totaalgewicht van verdachte en potentieel kwaadaardige kwaliteiten van bestanden wordt geüpload dat is toelaatbaar voordat deze bestanden worden gemarkeerd als kwaadaardig. De definitie van gewicht in dit verband is het aantal van verdachte en potentieel kwaadaardige kwaliteiten dat zijn geïdentificeerd. Standaard, dit waarde wordt ingesteld op 3. Algemeen, een lagere waarde zal resulteren in meer valse positieven maar meer kwaadaardige bestanden wordt gemarkeerd, terwijl een hogere waarde zal resulteren in minder valse positieven maar minder kwaadaardige bestanden wordt gemarkeerd. Algemeen, het is beste om dit waarde te laten op zijn standaard, tenzij u problemen ondervindt met betrekking tot het.
 
-####"virustotal" (Categorie)
+#### "virustotal" (Categorie)
 VirusTotal.com richtlijnen.
 
 "vt_public_api_key"
@@ -520,7 +520,7 @@ Noteren: Ongeacht van achterdocht niveau, elke bestanden die ofwel worden de zwa
 "vt_quota_rate" en "vt_quota_time"
 - Volgens de Virus Total API-documentatie, het is beperkt tot maximaal 4 verzoeken van welke aard in elk 1 minuut tijdsbestek. Als u een honeyclient, honeypot of andere automatisering te voorzien, dat gaat om middelen te verschaffen om VirusTotal en niet alleen rapporten opvragen heeft u recht op een hogere API-quotum. Normaal, phpMussel zal strikt houden aan deze beperkingen, maar vanwege de mogelijkheid van deze API-quotum verhoogd te worden, deze twee richtlijnen worden verstrekt als middel voor u om instrueren phpMussel wat limiet moeten houden worden. Tenzij u heeft geïnstrueerd om dit te doen, het is niet aan te raden voor u om deze waarden te verhogen, maar, als u heeft ondervonden problemen met betrekking tot uw tarief quota bereiken, afnemende deze waarden kunnen u soms helpen in het omgaan met deze problemen. Uw maximaal tarief bepaald als `vt_quota_rate` verzoeken van welke aard in elk `vt_quota_time` minuut tijdsbestek.
 
-####"urlscanner" (Categorie)
+#### "urlscanner" (Categorie)
 Een URL scanner wordt meegeleverd met phpMussel, het opsporen van kwaadaardige URL's vanuit alle gegevens of bestanden gescand.
 
 Noteren: Als de URL scanner wordt uitgeschakeld, zult u geen behoefte aan een van de richtlijnen in dit categorie te herzien (`urlscanner`), omdat geen van hen zal alles doen als dit is uitgeschakeld.
@@ -543,7 +543,7 @@ URL scanner API configuratie.
 "cache_time"
 - Hoe lang (in seconden) moeten de resultaten van de API verzoeken worden gecached voor? Standaard is 3600 seconden (1 uur).
 
-####"template_data" (Categorie)
+#### "template_data" (Categorie)
 Richtlijnen/Variabelen voor sjablonen en thema's.
 
 Sjabloongegevens betreft op de HTML-uitvoer die wordt gegenereerd en gebruikt voor de "Upload Geweigerd" bericht getoond om de gebruikers wanneer een bestand upload is geblokkeerd. Als u gebruik aangepaste thema's voor phpMussel, HTML-uitvoer is afkomstig van de `template_custom.html` bestand, en alternatief, HTML-uitvoer is afkomstig van de `template.html` bestand. Variabelen geschreven om dit sectie van het configuratiebestand worden geïnterpreteerd aan de HTML-uitvoer door middel van het vervangen van variabelennamen omringd door accolades gevonden binnen de HTML-uitvoer met de bijbehorende variabele gegevens. Bijvoorbeeld, waar `foo="bar"`, elk geval van `<p>{foo}</p>` gevonden binnen de HTML-uitvoer `<p>bar</p>` zal worden.
@@ -554,67 +554,67 @@ Sjabloongegevens betreft op de HTML-uitvoer die wordt gegenereerd en gebruikt vo
 ---
 
 
-###8. <a name="SECTION8"></a>SIGNATURE FORMAAT
+### 8. <a name="SECTION8"></a>SIGNATURE FORMAAT
 
-####*BESTANDSNAAM SIGNATURES*
+#### *BESTANDSNAAM SIGNATURES*
 Alle bestandsnaam signatures volgt het formaat:
 
 `NAME:FNRX`
 
 Waar NAME is de naam te noemen voor dat signature en FNRX is de reguliere expressie patroon om bestandsnamen (ongecodeerde) te controleer tegen.
 
-####*MD5 SIGNATURES*
+#### *MD5 SIGNATURES*
 Alle MD5 signatures volgt het formaat:
 
 `HASH:FILESIZE:NAME`
 
 Waar HASH is de MD5 hash van een hele bestand, FILESIZE is de totale grootte van het bestand en NAME is de naam te noemen voor dat signature.
 
-####*PE SECTIONELE SIGNATURES*
+#### *PE SECTIONELE SIGNATURES*
 Alle PE sectionele signatures volgt het formaat:
 
 `SIZE:HASH:NAME`
 
 Waar HASH is de MD5 hash van een sectie van een PE bestand, SIZE is de totale grootte van die sectie en NAME is de naam te noemen voor dat signature.
 
-####*PE UITGEBREIDE SIGNATURES*
+#### *PE UITGEBREIDE SIGNATURES*
 Alle PE uitgebreide signatures volgt het formaat:
 
 `$VAR:HASH:SIZE:NAME`
 
 Waar $VAR is de naam van de PE-variabele te controleer tegen, HASH is de MD5 hash van die variabele, SIZE is de totale grootte van die variabele en NAME is de naam te noemen voor dat signature.
 
-####*WHITELIST SIGNATURES*
+#### *WHITELIST SIGNATURES*
 Alle whitelist signatures volgt het formaat:
 
 `HASH:FILESIZE:TYPE`
 
 Waar HASH is de MD5 hash van een hele bestand, FILESIZE is de totale grootte van het bestand en TYPE is de signatures type het bestand van de whitelist is immuun tegen te zijn.
 
-####*COMPLEXE UITGEBREIDE SIGNATURES*
+#### *COMPLEXE UITGEBREIDE SIGNATURES*
 Complexe uitgebreid signatures zijn nogal verschillend van de andere signature typen mogelijk met phpMussel, doordat wat ze gecontroleerd tegen wordt bepaald door de signatures zelf en ze kunnen controleer tegen meervoudig criteria. De controle criteria zijn begrensd door ";" en de controle type en de controle gegevens van elke controle criteria wordt begrensd door ":" zoals zo dat formaat voor deze signatures heeft de neiging om een beetje uitzien als:
 
 `$variable1:GEGEVENS;$variable2:GEGEVENS;Signaturenaam`
 
-####*AL HET ANDERE*
+#### *AL HET ANDERE*
 Alle andere signatures volgt het formaat:
 
 `NAME:HEX:FROM:TO`
 
 Waar NAME is de naam te noemen voor dat signature en HEX is een hexadecimale gecodeerd segment van het bestand bestemd om te worden gecontroleerd door de gegeven signature. FROM en TO optioneel parameters zijn, aangeeft van waaruit en waaraan in de brongegevens om te controleren tegen.
 
-####*REGEX*
+#### *REGEX*
 Elke vorm van reguliere expressie begrepen en correct verwerkt door moet ook correct worden begrepen en verwerkt door phpMussel en signatures. Echter, Ik stel voor het nemen van extreem voorzichtigheid bij het schrijven van nieuwe signatures op basis van reguliere expressie, omdat, als u niet helemaal zeker wat u doet, kan er zeer onregelmatig en/of onverwachte resultaten worden. Neem een kijkje op de phpMussel broncode als u niet helemaal zeker over de context waarin regex verklaringen geïnterpreteerd worden. Ook, vergeet niet dat alle patronen (met uitzondering van bestandsnaam, archief metadata en MD5 patronen) moet hexadecimaal gecodeerd worden (voorgaande patroon syntaxis, natuurlijk)!
 
 ---
 
 
-###9. <a name="SECTION9"></a>BEKENDE COMPATIBILITEITSPROBLEMEN
+### 9. <a name="SECTION9"></a>BEKENDE COMPATIBILITEITSPROBLEMEN
 
-####PHP en PCRE
+#### PHP en PCRE
 - PHP en PCRE is vereist voor phpMussel te kunnen functioneren juist. Zonder PHP, of zonder de PCRE extensie van PHP, phpMussel zullen niet worden uitgevoerd of functioneren juist. U moet er zeker van uw systeem heeft zowel PHP en PCRE geïnstalleerd en beschikbaar voordat downloaden en installeren phpMussel.
 
-####ANTI-VIRUS SOFTWARECOMPATIBILITEIT
+#### ANTI-VIRUS SOFTWARECOMPATIBILITEIT
 
 Voor het grootste deel, phpMussel is algemeen compatibel met de meeste andere anti-virus software. Echter, conflictions geweest beschreven door een aantal gebruikers in het verleden. Deze informatie hieronder is afkomstig van VirusTotal.com, het beschrijven van een aantal fout-positieven gemeld door anti-virus programma's tegen phpMussel. Hoewel deze informatie is geen absolute garantie van wel of niet u zult compatibiliteitsproblemen ondervindt tussen phpMussel en uw anti-virus software, als uw anti-virus software wordt gemarkeerd tegen phpMussel, moet u ofwel overwegen uit te schakelen voorafgaand aan het werken met phpMussel of moeten overwegen alternatieve opties om ofwel uw anti-virus software of phpMussel.
 
@@ -687,9 +687,9 @@ Dit informatie werd laatst bijgewerkt 29 Augustus 2016 en is op de hoogte voor a
 ---
 
 
-###10. <a name="SECTION10"></a>VEELGESTELDE VRAGEN (FAQ)
+### 10. <a name="SECTION10"></a>VEELGESTELDE VRAGEN (FAQ)
 
-####Wat is een "vals positieve"?
+#### Wat is een "vals positieve"?
 
 De term "vals positieve" (*alternatief: "vals positieve fout"; "vals alarm"*; Engels: *false positive*; *false positive error*; *false alarm*), zeer eenvoudig beschreven, en een algemene context, wordt gebruikt bij het testen voor een toestand, om verwijst naar om de resultaten van die test, wanneer de resultaten positief zijn (d.w.z, de toestand wordt vastgesteld als "positief"), maar wordt verwacht "negatief" te zijn (d.w.z, de toestand in werkelijkheid is "negatief"). Een "vals positieve" analoog aan "huilende wolf" kan worden beschouwd (waarin de toestand wordt getest, is of er een wolf in de buurt van de kudde, de toestand is "vals" in dat er geen wolf in de buurt van de kudde, en de toestand wordt gerapporteerd als "positief" door de herder door middel van schreeuwen "wolf, wolf"), of analoog aan situaties in medische testen waarin een patiënt gediagnosticeerd als met een ziekte of aandoening, terwijl het in werkelijkheid, hebben ze geen ziekte of aandoening.
 
@@ -707,4 +707,4 @@ phpMussel *DOET* blokkeren van een bestand | __Vals positieve__ | Waar positieve
 ---
 
 
-Laatste Bijgewerkt: 5 Maart 2017 (2017.03.05).
+Laatste Bijgewerkt: 14 Maart 2017 (2017.03.14).

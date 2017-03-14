@@ -19,7 +19,7 @@
 ---
 
 
-###1. <a name="SECTION1"></a>LỜI GIỚI THIỆU
+### 1. <a name="SECTION1"></a>LỜI GIỚI THIỆU
 
 Cảm ơn bạn đã chọn phpMussel, một loại bản PHP được thiết kế để phát hiện trojan, vi rút, phần mềm đọc hại và những gì có thể gây nguy hiểm trong những các tập tin tài lên trên máy của bạn. Bất cứ nơi nào mà bản đã được nối, dưa trên chử ký của ClamAV và những người khác.
 
@@ -40,7 +40,7 @@ Tài liệu này và các gói liên quan của nó có thể được tải v�
 ---
 
 
-###2A. <a name="SECTION2A"></a>CÁCH CÀI ĐẶT (CHO CÁC TRANG MẠNG)
+### 2A. <a name="SECTION2A"></a>CÁCH CÀI ĐẶT (CHO CÁC TRANG MẠNG)
 
 Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện một cài đặt tại một thời điểm nào trong tương lai không quá xa, nhưng cho đến lúc đó, bạn hảy làm theo hướng dẫn để có thể cho phpMussel làm việc trên hầu hết các hệ thống và CMS:
 
@@ -73,7 +73,7 @@ Hoạc cái này trong tập tin `.htaccess`:
 ---
 
 
-###2B. <a name="SECTION2B"></a>CÁCH CÀI ĐẶT (CHO CLI)
+### 2B. <a name="SECTION2B"></a>CÁCH CÀI ĐẶT (CHO CLI)
 
 Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện một cài đặt tại một thời điểm nào trong tương lai không quá xa, nhưng cho đến lúc đó, bạn hảy làm theo hướng dẫn để có thể cho phpMussel hoạt động với CLI (hảy cẩn thận, vào lúc này hỗ trợ cho CLI chỉ áp dụng với hệ thống dựa trên Windows; Linux và các hệ thống khác sẽ sau trong phiên bản sau này của phpMussel):
 
@@ -90,7 +90,7 @@ Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện mộ
 ---
 
 
-###3A. <a name="SECTION3A"></a>CÁCH SỬ DỤNG (CHO CÁC TRANG MẠNG)
+### 3A. <a name="SECTION3A"></a>CÁCH SỬ DỤNG (CHO CÁC TRANG MẠNG)
 
 phpMussel sẽ có thể hoạt động một cách chính xác với yêu cầu tối thiểu từ bạn: Sau khi cài đặt nó, nó có thể được sử dụng ngay lập tức.
 
@@ -129,7 +129,7 @@ Nếu bạn gặp bất kỳ sai tích cực, nếu bạn gặp một số đi�
 ---
 
 
-###3B. <a name="SECTION3B"></a>CÁCH SỬ DỤNG (CHO CLI)
+### 3B. <a name="SECTION3B"></a>CÁCH SỬ DỤNG (CHO CLI)
 
 Tham khảo phần "CÁCH CÀI ĐẶT (CHO CLI)" của tập tin README này.
 
@@ -140,15 +140,15 @@ Ngoài ra, ý thức được rằng phpMussel là một máy quét *khi yêu c�
 ---
 
 
-###4. <a name="SECTION4"></a>QUẢN LÝ FRONT-END
+### 4. <a name="SECTION4"></a>QUẢN LÝ FRONT-END
 
-####4.0 FRONT-END LÀ GÌ.
+#### 4.0 FRONT-END LÀ GÌ.
 
 Các front-end cung cấp một cách thuận tiện và dễ dàng để duy trì, quản lý và cập nhật cài đặt phpMussel của bạn. Bạn có thể xem, chia sẻ và tải về các tập tin bản ghi thông qua các trang bản ghi, bạn có thể sửa đổi cấu hình thông qua các trang cấu hình, bạn có thể cài đặt và gỡ bỏ cài đặt các thành phần thông qua các trang cập nhật, và bạn có thể tải lên, tải về, và sửa đổi các tập tin trong vault của bạn thông qua các quản lý tập tin.
 
 Các front-end được tắt theo mặc định để ngăn chặn truy cập trái phép (truy cập trái phép có thể có hậu quả đáng kể cho trang web của bạn và an ninh của mình). Hướng dẫn cho phép nó được bao gồm bên dưới đoạn này.
 
-####4.1 LÀM THẾ NÀO ĐỂ KÍCH HOẠT FRONT-END.
+#### 4.1 LÀM THẾ NÀO ĐỂ KÍCH HOẠT FRONT-END.
 
 1) Xác định vị trí các chỉ thị `disable_frontend` bên trong `config.ini`, và đặt nó vào true (nó sẽ là false bởi mặc định).
 
@@ -158,7 +158,7 @@ Các front-end được tắt theo mặc định để ngăn chặn truy cập t
 
 Chú thích: Sau khi bạn đã đăng nhập lần đầu tiên, để ngăn chặn truy cập trái phép vào các front-end, bạn phải ngay lập tức thay đổi tên người dùng và mật khẩu của bạn! Điều này là rất quan trọng, bởi vì nó có thể tải lên các mã PHP tùy ý để trang web của bạn thông qua các front-end.
 
-####4.2 LÀM THẾ NÀO ĐỂ SỬ DỤNG FRONT-END.
+#### 4.2 LÀM THẾ NÀO ĐỂ SỬ DỤNG FRONT-END.
 
 Các hướng dẫn được cung cấp trên mỗi trang của front-end, để giải thích một cách chính xác để sử dụng nó và mục đích của nó. Nếu bạn cần giải thích thêm hay bất kỳ sự hỗ trợ đặc biệt, vui lòng liên hệ hỗ trợ. Cũng thế, có một số video trên YouTube có thể giúp bằng cách viện trợ trực quan.
 
@@ -166,7 +166,7 @@ Các hướng dẫn được cung cấp trên mỗi trang của front-end, để
 ---
 
 
-###5. <a name="SECTION5"></a>CLI (LỆNH CHO DÒNG GIAO DIỆN)
+### 5. <a name="SECTION5"></a>CLI (LỆNH CHO DÒNG GIAO DIỆN)
 
 phpMussel có thể được chạy như một máy quét tập tin tương tác trong chế độ CLI theo các hệ thống dựa trên Windows. Tham khảo phần "CÁCH CÀI ĐẶT (CHO CLI)" của tập tin README này để biết thêm chi tiết.
 
@@ -178,7 +178,7 @@ Ngoài ra, cho những người quan tâm, một hướng dẫn video về cách
 ---
 
 
-###6. <a name="SECTION6"></a>TẬP TIN BAO GỒM TRONG GÓI NÀY
+### 6. <a name="SECTION6"></a>TẬP TIN BAO GỒM TRONG GÓI NÀY
 
 Sau đây là một danh sách tất cả các tập tin mà cần phải có được bao gồm trong bản sao lưu của kịch bản này khi bạn tải về nó, bất kỳ tập tin mà có thể có lẽ được tạo ra là kết quả của bạn sử dụng kịch bản này, cùng với một mô tả ngắn cho những gì tất cả những tập tin này là dành cho.
 
@@ -301,10 +301,10 @@ Tập tin | Chi tiết
 ---
 
 
-###7. <a name="SECTION7"></a>TÙY CHỌN CHO CẤU HÌNH
+### 7. <a name="SECTION7"></a>TÙY CHỌN CHO CẤU HÌNH
 Sau đây là danh sách các biến tìm thấy trong tập tin cấu hình cho phpMussel `config.ini`, cùng với một mô tả về mục đích và chức năng của chúng.
 
-####"general" (Thể loại)
+#### "general" (Thể loại)
 Cấu hình chung cho phpMussel.
 
 "cleanup"
@@ -373,7 +373,7 @@ Cấu hình chung cho phpMussel.
 "FrontEndLog"
 - Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
-####"signatures" (Thể loại)
+#### "signatures" (Thể loại)
 Cấu hình cho chữ ký.
 
 "Active"
@@ -403,7 +403,7 @@ Cấu hình cho chữ ký.
 "detect_deface"
 - phpMussel nên sử dụng chữ ký cho phát hiện deface và công cụ làm xấu? False = Không; True = Vâng [Mặc định].
 
-####"files" (Thể loại)
+#### "files" (Thể loại)
 Cấu hình cho xử lý tập tin.
 
 "max_uploads"
@@ -440,7 +440,7 @@ Cấu hình cho xử lý tập tin.
 "block_encrypted_archives"
 - Phát hiện và chặn kho lưu trữ được mã hóa? Bởi vì phpMussel không thể quét các nội dung của kho lưu trữ được mã hóa, nó có thể mã hóa kho lưu trữ có thể được sử dụng bởi một kẻ tấn công như một phương tiện cố gắng để vượt qua phpMussel, máy quét chống vi rút và bảo vệ khác như. Hướng dẫn phpMussel để ngăn chặn bất kỳ kho lưu trữ mà nó phát hiện được mã hóa có thể giúp giảm nguy cơ nào liên kết với những khả năng này. False = Không; True = Vâng [Mặc định].
 
-####"attack_specific" (Thể loại)
+#### "attack_specific" (Thể loại)
 Cấu hình chống lại tấn công cụ thể.
 
 Phát hiện của tấn công tắc kè hoa: False = Tắt; True = Trên.
@@ -481,7 +481,7 @@ Phát hiện của tấn công tắc kè hoa: False = Tắt; True = Trên.
 "scannable_threshold"
 - Giới hạn tùy chọn hay ngưỡng cho chiều dài của dữ liệu mà phpMussel được phép đọc và quét (trong trường hợp có bất kỳ vấn đề hiệu suất đáng chú ý trong khi quét). Giá trị là một số nguyên đại diện cho kích thước tập tin trong KB. Mặc định = 32768 (32MB). Số không hay số null vô hiệu hóa các ngưỡng. Nói chung, giá trị này không nên được ít hơn kích thước trung bình của tải lên tập tin bạn muốn và mong đợi để nhận được đến máy chủ hay trang mạng của bạn, không nên được ít hơn tùy chọn filesize_limit, và không nên được ít hơn khoảng một phần năm tổng số cấp phát bộ nhớ cấp cho PHP thông qua tập tin cấu hình `php.ini`. Tùy chọn này tồn tại để cố gắng ngăn chặn phpMussel từ việc sử dụng quá nhiều bộ nhớ (mà sẽ ngăn chặn nó từ việc có thể quét các tập tin thành công trên một kích thước tập tin nhất định).
 
-####"compatibility" (Thể loại)
+#### "compatibility" (Thể loại)
 Cấu hình khả năng tương thích cho phpMussel.
 
 "ignore_upload_errors"
@@ -490,13 +490,13 @@ Cấu hình khả năng tương thích cho phpMussel.
 "only_allow_images"
 - Nếu bạn chỉ mong đợi hay chỉ có ý định để cho phép hình ảnh để được tải lên hệ thống hay CMS của bạn, và nếu bạn hoàn toàn không yêu cầu bất kỳ tập tin khác so với hình ảnh để được tải lên hệ thống hay CMS của bạn, tùy chọn này nên được kích hoạt, nhưng nếu không nên bị vô hiệu hóa. Nếu tùy chọn này được kích hoạt, nó sẽ hướng dẫn phpMussel để ngăn chặn bất kỳ tải lên bừa bãi xác định là các tập tin không phải hình ảnh, mà không cần quét chúng. Điều này có thể làm giảm thời gian xử lý và sử dụng bộ nhớ cho tải lên cố gắng của các tập tin không phải hình ảnh. False = TẮT; True = TRÊN.
 
-####"heuristic" (Thể loại)
+#### "heuristic" (Thể loại)
 Cấu hình cho "heuristic" (tìm kiếm / khám phá / tự học).
 
 "threshold"
 - Có một số chữ ký của phpMussel mà được dự định để xác định đáng ngờ và phẩm chất của các tập tin khả năng độc hại từ đang được tải lên mà không có trong tự xác định các tập tin đang được tải lên cụ thể như là độc hại. Giá trị "threshold" này nói với phpMussel tổng trọng lượng tối đa của đáng ngờ và phẩm chất của các tập tin khả năng độc hại đang được tải lên đó là phép trước những tập tin đang được gắn cờ là độc hại. Định nghĩa về trọng lượng trong bối cảnh này là tổng số đáng ngờ và phẩm chất tiềm ẩn độc hại được xác định. Theo mặc định, giá trị này sẽ được thiết lập để 3. Một giá trị thấp hơn nói chung sẽ cho kết quả trong một sự xuất hiện cao hơn của sai tích cực nhưng một số cao hơn các tập tin độc hại được gắn cờ, trong khi một giá trị cao hơn nói chung sẽ cho kết quả trong một sự xuất hiện thấp hơn của sai tích cực nhưng một số thấp hơn các tập tin độc hại được gắn cờ. Nói chung, nó là tốt nhất để có giá trị này tại mặc định của nó trừ khi bạn đang gặp phải các vấn đề liên quan đến nó.
 
-####"virustotal" (Thể loại)
+#### "virustotal" (Thể loại)
 Cấu hình cho VirusTotal.com.
 
 "vt_public_api_key"
@@ -520,7 +520,7 @@ Lưu ý: Bất kể mức độ nghi ngờ, bất kỳ tập tin được vào d
 "vt_quota_rate" và "vt_quota_time"
 - Theo tài liệu VirusTotal API, nó được giới hạn tối đa là 4 yêu cầu của bất kỳ chất trong bất kỳ khung thời gian 1 phút nào. Nếu bạn chạy một honeyclient, honeypot hay bất kỳ tự động hóa khác sẽ là cung cấp các nguồn lực để VirusTotal và không chỉ sẽ là lấy báo cáo bạn có quyền được một hạn ngạch có yêu cầu cao hơn. Theo mặc định, phpMussel nghiêm sẽ tuân thủ những hạn chế, nhưng do khả năng của các hạn ngạch yêu cầu đang được tăng lên, hai tùy chọn này được cung cấp như một phương tiện để bạn có thể hướng dẫn phpMussel như những gì giới hạn nó phải tuân thủ. Trừ khi bạn đã được hướng dẫn làm như vậy, nó không được khuyến khích cho bạn để tăng các giá trị, nhưng, nếu bạn đã gặp phải vấn đề liên quan đến hạn ngạch của bạn, giảm các giá trị _**CÓ THỂ**_ đôi khi giúp bạn trong việc đối phó với những vấn đề này. Hạn ngạch yêu cầu của bạn được xác định như `vt_quota_rate` yêu cầu của bất kỳ chất trong bất kỳ khung thời gian `vt_quota_time` phút nào.
 
-####"urlscanner" (Thể loại)
+#### "urlscanner" (Thể loại)
 Một máy quét URL được bao gồm với phpMussel, khả năng phát hiện các URL độc hại từ bên trong bất kỳ dữ liệu hay tập tin được quét.
 
 Lưu ý: Nếu máy quét URL bị vô hiệu hóa, bạn sẽ không cần phải xem xét bất kỳ tùy chọn trong phần này (`urlscanner`), bởi vì không một ai trong số họ sẽ làm bất cứ điều gì nếu bị vô hiệu hóa này.
@@ -543,7 +543,7 @@ Cấu hình cho tra cứu API của máy quét URL.
 "cache_time"
 - Kết quả tra cứu API nên được lưu trữ trong (trong giây) bao lâu? Mặc định là 3600 giây (1 giờ).
 
-####"template_data" (Thể loại)
+#### "template_data" (Thể loại)
 Cấu hình cho mẫu thiết kế và chủ đề.
 
 Dữ liệu mẫu thiết kế liên quan đến đầu ra HTML sử dụng để tạo ra các thông báo "Sự tải lên đã bị từ chối" hiển thị cho người dùng khi một tải lên tập tin bị chặn. Nếu bạn đang sử dụng chủ đề tùy chỉnh cho phpMussel, đầu ra HTML có nguồn gốc từ tập tin `template_custom.html`, và nếu không thì, đầu ra HTML có nguồn gốc từ tập tin `template.html`. Biến bằng văn bản cho phần này của tập tin cấu hình được xử lý để đầu ra HTML bằng cách thay thế bất kỳ tên biến được bao quanh bởi các dấu ngoặc nhọn tìm thấy trong đầu ra HTML với các dữ liệu biến tương ứng. Ví dụ, ở đâu `foo="bar"`, bất kỳ trường hợp `<p>{foo}</p>` tìm thấy trong đầu ra HTML sẽ trở thành `<p>bar</p>`.
@@ -554,67 +554,67 @@ Dữ liệu mẫu thiết kế liên quan đến đầu ra HTML sử dụng đ�
 ---
 
 
-###8. <a name="SECTION8"></a>ĐỊNH DẠNG CỦA CHỬ KÝ
+### 8. <a name="SECTION8"></a>ĐỊNH DẠNG CỦA CHỬ KÝ
 
-####*CHỮ KÝ CHO TÊN TẬP TIN*
+#### *CHỮ KÝ CHO TÊN TẬP TIN*
 Tất cả các chữ ký cho tên tập tin tuân theo các định dạng:
 
 `NAME:FNRX`
 
 NAME là tên cho các chữ ký và FNRX là mô hình biểu thức chính quy để kiểm tra tên tập tin (không mã hóa).
 
-####*CHỮ KÝ DỰA MD5*
+#### *CHỮ KÝ DỰA MD5*
 Tất cả các chữ ký dựa MD5 tuân theo các định dạng:
 
 `HASH:FILESIZE:NAME`
 
 HASH là băm MD5 của toàn bộ tập tin, FILESIZE là tổng dung lượng tập tin và NAME là tên cho các chữ ký.
 
-####*CHỮ KÝ PHẦN PE*
+#### *CHỮ KÝ PHẦN PE*
 Tất cả các chữ ký phần PE tuân theo các định dạng:
 
 `SIZE:HASH:NAME`
 
 HASH là băm MD5 của một phần của một tập tin PE, SIZE là tổng kích thước của phần đó và NAME là tên cho các chữ ký.
 
-####*CHỮ KÝ KÉO DÀI PE*
+#### *CHỮ KÝ KÉO DÀI PE*
 Tất cả các chữ ký kéo dài PE tuân theo các định dạng:
 
 `$VAR:HASH:SIZE:NAME`
 
 $VAR là tên của các biến PE để kiểm tra, HASH là băm MD5 của biến đó, SIZE là tổng kích thước biến và NAME là tên cho các chữ ký.
 
-####*CHỮ KÝ DANH SÁCH TRẮNG*
+#### *CHỮ KÝ DANH SÁCH TRẮNG*
 Tất cả các chữ ký danh sách trắng tuân theo các định dạng:
 
 `HASH:FILESIZE:TYPE`
 
 HASH là băm MD5 của toàn bộ tập tin, FILESIZE là tổng dung lượng tập tin và TYPE là các loại chữ ký các danh sách trắng tập tin là để được miễn dịch chống lại.
 
-####*CHỮ KÝ KÉO DÀI PHỨC TẠP*
+#### *CHỮ KÝ KÉO DÀI PHỨC TẠP*
 Chữ ký kéo dài phức tạp là khá khác nhau với các loại khác của chữ ký có thể với phpMussel, trong ý nghĩa rằng những gì họ đang kiểm tra cho được quy định bởi những chữ ký tự và họ có thể kiểm tra cho nhiều tiêu chí. Các tiêu chí được giới hạn bởi ";" và các loại kiểm tra và dữ liệu kiểm tra cho từng tiêu chí được giới hạn bởi ":" như vậy mà định dạng cho những chữ ký trông hơi giống như:
 
 `$Biến_Số1:Một_Số_Dữ_Liệu;$Biến_Số2:Một_Số_Dữ_Liệu;Tên_Chữ_Ký`
 
-####*MỌI THỨ KHÁC*
+#### *MỌI THỨ KHÁC*
 Tất cả các chữ ký khác làm theo các định dạng:
 
 `NAME:HEX:FROM:TO`
 
 NAME là tên cho các chữ ký và HEX là một phân khúc thập lục phân mã hóa của các tập tin dự định để được xuất hiện bởi các chữ ký. FROM và TO là thông số tùy chọn, cho thấy nơi trong nguồn dữ liệu, bắt đầu và kết thúc, để kiểm tra lại.
 
-####*BIỂU THỨC CHÍNH QUY*
+#### *BIỂU THỨC CHÍNH QUY*
 Bất kỳ cách thức biểu thức chính quy hiểu và xử lý một cách chính xác qua PHP cũng nên được hiểu hiểu và xử lý một cách chính xác bởi phpMussel và chữ ký của nó. Tuy nhiên, tôi muốn đề nghị lấy hết sức thận trọng khi viết chữ ký biểu thức chính quy mới, bởi vì, nếu bạn không hoàn toàn chắc chắn bạn đang làm gì vậy, có thể có kết quả rất bất thường hay bất ngờ. Nhìn vào các mã nguồn nếu bạn không hoàn toàn về bối cảnh rằng họ đang phân tích cú pháp. Ngoài ra, nhớ lại rằng tất cả mọi thứ (ngoại trừ tên tập tin, cú pháp, siêu dữ liệu kho lưu trữ và mẫu MD5) phải được mã hóa hệ thập lục phân!
 
 ---
 
 
-###9. <a name="SECTION9"></a>NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH
+### 9. <a name="SECTION9"></a>NHỮNG VẤN ĐỀ HỢP TƯƠNG TÍCH
 
-####PHP và PCRE
+#### PHP và PCRE
 - phpMussel cần PHP và PCRE để thực hiện và hoạt động. Nếu không có PHP, hoạc không có PCRE thêm của PHP, phpMussel sẽ không thực hiện và hoạt động bình thường. Bạn nên chắc chắc rằng hệ thống của bạn có PHP và PCRE cài vào và có sẵn trước khi tải và cài đặt phpMussel.
 
-####KHẢ NĂNG TƯƠNG THÍCH PHẦN MỀM CHỐNG VI RÚT
+#### KHẢ NĂNG TƯƠNG THÍCH PHẦN MỀM CHỐNG VI RÚT
 
 Cho hầu hết các phần, phpMussel sẽ tương hợp với hầu hết các phần mềm quét vi rút khác. Nhưng mà, có một số người dùng trong quá khứ đã báo cáo một số vấn đề. Thông tin dưới đây là từ VirusTotal.com, và nó miêu tả một số giả tích cực báo cáo bởi các chương trình chống vi rút khác nhau chống phpMussel. Mặc dù thông tin này không đảm bảo nếu bạn gặp phải vấn đề tương hợp giữa phpMussel và phần mềm chống vi rút của bạn, nếu phần mềm chống vi rút của bạn được ghi nhận là cách gắn cờ chống lại phpMussel, bạn nên tắt nó trước khi sử dụng phpMussel hoặc nên xét các lựa chọn khác cho một trong hai phần mềm chống vi rút của bạn hoặc phpMussel.
 
@@ -687,9 +687,9 @@ Thông tin này được cập nhật lần cứơi vào ngày 29 Tháng Tám 20
 ---
 
 
-###10. <a name="SECTION10"></a>NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)
+### 10. <a name="SECTION10"></a>NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)
 
-####"Sai tích cực" là gì?
+#### "Sai tích cực" là gì?
 
 Nghĩa của "sai tích cực" (*hay: "lỗi sai tích cực"; "báo động giả"*; Tiếng Anh: *false positive*; *false positive error*; *false alarm*), mô tả rất đơn giản, và trong một bối cảnh tổng quát, được sử dụng khi kiểm tra cho một điều kiện, để tham khảo các kết quả của bài kiểm tra, khi kết quả là tích cực (hay, điều kiện được xác định là "tích cực", hay "đúng"), nhưng dự kiến sẽ được (hay cần phải có được) tiêu cực (hay, điều kiện, thực tế, là "tiêu cực", hay "sai"). "Sai tích cực" có thể được coi là điều tương tự như "khóc sói" (theo đó các điều kiện đang được kiểm tra là liệu có con sói gần đàn, điều kiện là "sai" bởi vì không có con sói gần đàn, và điều kiện được báo cáo là "tích cực" bởi các người chăn bằng cách gọi "sói, sói"), hay tương tự như tình huống trong thử nghiệm y tế theo đó một bệnh nhân được chẩn đoán là có một số bệnh, trong khi thực tế, họ không có bất kỳ số bệnh.
 
@@ -707,4 +707,4 @@ phpMussel chặn một tập tin | __Sai tích cực__ | Đúng tích cực (suy
 ---
 
 
-Lần cuối cập nhật: 5 Tháng Ba 2017 (2017.03.05).
+Lần cuối cập nhật: 14 Tháng Ba 2017 (2017.03.14).

@@ -19,7 +19,7 @@
 ---
 
 
-###1. <a name="SECTION1"></a>VORWORT
+### 1. <a name="SECTION1"></a>VORWORT
 
 Vielen Dank für die Benutzung von phpMussel, einem PHP-Script, um Trojaner, Viren, Malware und andere Bedrohungen in Dateien zu entdecken, die auf Ihr System hochgeladen werden könnten, welches die Signaturen von ClamAV und weitere nutzt.
 
@@ -40,7 +40,7 @@ Dieses Dokument und das zugehörige Paket kann von folgenden Links kostenlos her
 ---
 
 
-###2A. <a name="SECTION2A"></a>INSTALLATION (SERVER)
+### 2A. <a name="SECTION2A"></a>INSTALLATION (SERVER)
 
 Zufünftig wird dieser Prozess mit einem Installationsmanager vereinfacht, bis dahin folgen Sie den Anweisungen, um phpMussel auf den *meisten Systemen und CMS zu installieren:
 
@@ -73,7 +73,7 @@ Oder das in der `.htaccess` Datei:
 ---
 
 
-###2B. <a name="SECTION2B"></a>INSTALLATION (CLI - BEFEHLSZEILENMODUS)
+### 2B. <a name="SECTION2B"></a>INSTALLATION (CLI - BEFEHLSZEILENMODUS)
 
 Zufünftig wird dieser Prozess mit einem Installationsmanager vereinfacht, bis dahin folgen Sie den Anweisungen, um phpMussel im CLI-Modus zu installieren (beachten Sie an dieser Stelle, CLI-Support ist nur auf Windows-Systemen möglich, Linux und andere Systeme werden in zukünftigen Versionen unterstützt):
 
@@ -90,7 +90,7 @@ Zufünftig wird dieser Prozess mit einem Installationsmanager vereinfacht, bis d
 ---
 
 
-###3A. <a name="SECTION3A"></a>BENUTZUNG (SERVER)
+### 3A. <a name="SECTION3A"></a>BENUTZUNG (SERVER)
 
 phpMussel ist dafür vorgesehen, fast vollständig autonom zu funktionieren, ohne dass Sie etwas tun müssen: Sobald es installiert ist, führt es die Tätigkeiten allein aus.
 
@@ -129,7 +129,7 @@ Um die Signaturen, die in phpMussel enthalten sind, zu deaktivieren, lesen Sie b
 ---
 
 
-###3B. <a name="SECTION3B"></a>BENUTZUNG (CLI - BEFEHLSZEILENMODUS)
+### 3B. <a name="SECTION3B"></a>BENUTZUNG (CLI - BEFEHLSZEILENMODUS)
 
 Bitte lesen Sie den Abschnitt INSTALLATION (CLI - BEFEHLSZEILENMODUS).
 
@@ -140,15 +140,15 @@ Beachten Sie außerdem, dass phpMussel eine *On-Demand-Scanner*; Keine *On-Acces
 ---
 
 
-###4. <a name="SECTION4"></a>FRONT-END-MANAGEMENT
+### 4. <a name="SECTION4"></a>FRONT-END-MANAGEMENT
 
-####4.0 WAS IST DAS FRONT-END.
+#### 4.0 WAS IST DAS FRONT-END.
 
 Das Front-End bietet eine bequeme und einfache Möglichkeit, für Ihre phpMussel-Installation zu pflegen, zu verwalten und zu aktualisieren. Sie können Protokolldateien über die Protokollseite anzeigen, teilen und herunterladen, Sie können die Konfiguration über die Konfigurationsseite ändern, Sie können Komponenten über die Updates-Seite installieren und deinstallieren, und Sie können Dateien in Ihrem vault über den Dateimanager hochladen, herunterladen und ändern.
 
 Das Front-End ist standardmäßig deaktiviert, um unautorisiert Zugriff zu verhindern (unautorisiert Zugriff könnte erhebliche Konsequenzen für Ihre Website und ihre Sicherheit haben). Aktivieren Sie es, indem Sie die unten aufgeführten Anweisungen befolgen.
 
-####4.1 WIE AKTIVIEREN SIE DAS FRONT-END.
+#### 4.1 WIE AKTIVIEREN SIE DAS FRONT-END.
 
 1) Finden Sie die `disable_frontend`-Direktive in der Datei `config.ini`, und setzen Sie es auf true (wird es standardmäßig false sein).
 
@@ -158,7 +158,7 @@ Das Front-End ist standardmäßig deaktiviert, um unautorisiert Zugriff zu verhi
 
 Note: Nachdem Sie sich eingeloggt haben, um einen unautorisiert Zugriff auf das Front-End zu verhindern, sollten Sie sofort Ihren Benutzernamen und Ihr Passwort ändern! Dies ist sehr wichtig, weil es möglich ist, beliebigen PHP-Code auf Ihre Website über das Front-End zu hochladen.
 
-####4.2 WIE MAN DAS FRONT-END BENUTZT.
+#### 4.2 WIE MAN DAS FRONT-END BENUTZT.
 
 Anweisungen sind auf jeder Seite des Front-Ends vorhanden, um die richtige Verwendung und den vorgesehenen Zweck zu erläutern. Wenn Sie weitere Erklärungen oder spezielle Hilfe benötigen, wenden Sie sich bitte an den Support. Alternativ gibt es einige Videos auf YouTube, die durch Demonstration helfen könnte.
 
@@ -166,7 +166,7 @@ Anweisungen sind auf jeder Seite des Front-Ends vorhanden, um die richtige Verwe
 ---
 
 
-###5. <a name="SECTION5"></a>CLI (BEFEHLSZEILENMODUS)
+### 5. <a name="SECTION5"></a>CLI (BEFEHLSZEILENMODUS)
 
 phpMussel kann als interaktiver Scanner im CLI-Modus in einer Windows-Systemumgebung genutzt werden. Bitte lesen Sie den Abschnitt INSTALLATION (CLI - BEFEHLSZEILENMODUS).
 
@@ -178,7 +178,7 @@ Zusätzlich, für Interessenten, ein Video-Tutorial, wie phpMussel im CLI-Modus 
 ---
 
 
-###6. <a name="SECTION6"></a>IM PAKET ENTHALTENE DATEIEN
+### 6. <a name="SECTION6"></a>IM PAKET ENTHALTENE DATEIEN
 
 Die folgende Liste beinhaltet alle Dateien, die im heruntergeladenen Archiv des Scripts enthalten sind und Dateien, die durch die Benutzung des Scripts eventuell erstellt werden, inkl. einer kurzen Beschreibung.
 
@@ -303,10 +303,10 @@ Datei | Beschreibung
 ---
 
 
-###7. <a name="SECTION7"></a>EINSTELLUNGEN
+### 7. <a name="SECTION7"></a>EINSTELLUNGEN
 Nachfolgend finden Sie eine Liste der Variablen in der Konfigurationsdatei `config.ini` mit einer kurzen Beschreibung ihrer Funktionen.
 
-####"general" (Kategorie)
+#### "general" (Kategorie)
 Generelle Konfiguration von phpMussel.
 
 "cleanup"
@@ -375,7 +375,7 @@ Generelle Konfiguration von phpMussel.
 "FrontEndLog"
 - Datei für die Protokollierung von Front-End Einloggen-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
-####"signatures" (Kategorie)
+#### "signatures" (Kategorie)
 Konfiguration der Signaturen.
 
 "Active"
@@ -405,7 +405,7 @@ Konfiguration der Signaturen.
 "detect_deface"
 - Soll phpMussel Signaturen für die Erkennung von Defacements und Defacer parsen? False = Nein; True = Ja [Standardeinstellung].
 
-####"files" (Kategorie)
+#### "files" (Kategorie)
 Generelle Konfigurationen für die Handhabung von Dateien.
 
 "max_uploads"
@@ -442,7 +442,7 @@ Generelle Konfigurationen für die Handhabung von Dateien.
 "block_encrypted_archives"
 - Verschlüsselte Archive erkennen und blockieren? Denn phpMussel ist nicht in der Lage, die Inhalte von verschlüsselten Archiven zu scannen. Es ist möglich, dass Archiv-Verschlüsselung von Angreifern zum Umgehen von phpMussel, Antiviren-Scanner und weiterer solcher Schutzlösungen verwendet wird. Die Anweisung, dass phpMussel verschlüsselte Archive blockiert kann möglicherweise helfen, die Risiken, die mit dieser Möglichkeit verbunden sind, zu verringern. False = Nein; True = Ja [Standardeinstellung].
 
-####"attack_specific" (Kategorie)
+#### "attack_specific" (Kategorie)
 Konfiguration für spezifische Angriffserkennung.
 
 Chameleon-Angriffserkennung: False = Deaktiviert; True = Aktiviert.
@@ -483,7 +483,7 @@ Chameleon-Angriffserkennung: False = Deaktiviert; True = Aktiviert.
 "scannable_threshold"
 - Optionale Beschränkung oder Schwelle der Menge der Rohdaten, die phpMussel lesen und scannen darf (sofern während des Scanvorgangs spürbare Performance-Probleme auftreten). Der Wert ist ein Integer (Ganzzahl) und repräsentiert die Dateigröße in KB. Standardeinstellung ist 32768 (32 MB). Null oder ein Null-Wert deaktiviert die Beschränkung. Generell sollte dieser Wert nicht kleiner sein als die durchschnittliche Dateigröße von Datei-Uploads, die Sie auf Ihrem Server oder Ihrer Website erwarten, sollte nicht größer sein als die Richtlinie filesize_limit und sollte nicht mehr als ein Fünftel der Gesamtspeicherzuweisung für PHP in der Konfigurationsdatei `php.ini` sein. Diese Richtlinie verhindert, dass phpMussel zu viel Speicher benutzt (was phpMussel daran hindern würde, einen Scan ab einer bestimmten Dateigröße erfolgreich durchzuführen).
 
-####"compatibility" (Kategorie)
+#### "compatibility" (Kategorie)
 Kompatibilitätsdirektiven für phpMussel.
 
 "ignore_upload_errors"
@@ -492,13 +492,13 @@ Kompatibilitätsdirektiven für phpMussel.
 "only_allow_images"
 - Wenn Sie nur Bilder erwarten, die auf Ihr System oder CMS hochgeladen werden oder nur Bilder und keine anderen Dateien als Upload erlauben oder benötigen, so sollte diese Direktive aktiviert werden (ON), ansonsten deaktiviert bleiben (OFF). Ist diese Direktive aktiviert, wird phpMussel alle Uploads, die keine Bilddateien sind, blockieren, ohne sie zu scannen. Dies kann die Verarbeitungszeit und Speichernutzung reduzieren, sobald andere Nicht-Bilddateien hochgeladen werden. False = AUS/OFF; True = AN/ON.
 
-####"heuristic" (Kategorie)
+#### "heuristic" (Kategorie)
 Heuristic-Direktive für phpMussel.
 
 "threshold"
 - Es gibt bestimmte Signaturen in phpMussel, die dazu dienen, verdächtige und potenziell bösartige Eigenschaften von hochgeladenen Dateien zu identifizieren, ohne diese Dateien an sich zu überprüfen und als bösartig zu identifizieren. Diese Direktive teilt phpMussel mit, welche Gewichtung von verdächtigen und potenziell bösartigen Eigenschaften zulässig ist, bevor diese Dateien als bösartig gekennzeichnet werden. Die Definition des Gewichts ist in diesem Zusammenhang die Gesamtzahl der verdächtigen und potenziell bösartigen Eigenschaften. Standardwert ist 3. Ein niedriger Wert in der Regel führt zu einem vermehrten Auftreten von Fehlalarmen und eine größere Anzahl von schädlichen Dateien werden erkannt, während ein höherer Wert weniger Fehlalarme auslöst und eine geringere Anzahl von schädlichen Dateien markiert werden. Dieser Wert sollte so belassen werden, es sei denn, Sie erkennen Probleme, die durch diese Einstellung hervorgerufen werden.
 
-####"virustotal" (Kategorie)
+#### "virustotal" (Kategorie)
 Konfiguration für Virus Total Integration.
 
 "vt_public_api_key"
@@ -522,7 +522,7 @@ Hinweis: Unabhängig von der Verdachts-Stufe wird jede Datei auf der Whitelist o
 "vt_quota_rate" und "vt_quota_time"
 - Laut der Virus Total API Dokumentation, "ist diese auf 4 Anfragen irgendeiner Art in einer 1 Minuten Zeitspanne limitiert. Falls du einen Honeyclient, Honeypot oder einen andere Automatisierung verwendest, was etwas zu VirusTotal beiträgt und nicht nur Berichte abruft, bist du für ein höheres Limit berechtigt". Standardmäßig wird sich phpMussel strikt daran halten, da aber diese Limits erhöht werden können, stehen dir diese zwei Direktiven zur Verfügung um phpMussel anzuweisen, an welches Limit es sich halten soll. Außer du bist dazu aufgefordert, ist es nicht empfohlen diese Werte zu erhöhen. Solltest du aber Probleme bezogen auf das Erreichen des Limits haben, _**SOLLTE**_ das Verringern dieser Werte manchmal helfen. Dein Limit wird festgelegt als `vt_quota_rate` Anfragen jeder Art in jeder `vt_quota_time` Minuten Zeitspanne.
 
-####"urlscanner" (Kategorie)
+#### "urlscanner" (Kategorie)
 Ein URL-Scanner ist mit phpMussel enthalten, der bösartige URLs in Daten und gescannten Dateien erkennt.
 
 Hinweis: Wenn der URL-Scanner deaktiviert ist, müssen Sie keine der Anweisungen in dieser Kategorie (`urlscanner`) überprüfen, da dann keine davon funktioniert.
@@ -545,7 +545,7 @@ URL-Scanner API-Abfrage Konfiguration.
 "cache_time"
 - Wie lange (in Sekunden) sollen die Ergebnisse von API-Abfragen zwischengespeichert werden? Standardeinstellung ist 3600 Sekunden (1 Stunde).
 
-####"template_data" (Kategorie)
+#### "template_data" (Kategorie)
 Anweisungen/Variablen für Templates und Themes.
 
 Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Upload blockiert"-Nachricht Benutzern anzuzeigen, wenn eine hochgeladene Datei blockiert wird. Falls Sie benutzerdefinierte Themes für phpMussel verwenden, wird die HTML-Ausgabe von der `template_custom.html`-Datei verwendet, ansonsten wird die HTML-Ausgabe von der `template.html`-Datei verwendet. Variablen, die in diesem Bereich der Konfigurations-Datei festgelegt werden, werden als HTML-Ausgabe geparst, indem jede Variable mit geschweiften Klammern innerhalb der HTML-Ausgabe mit den entsprechenden Variablen-Daten ersetzt wird. Zum Beispiel, wenn `foo="bar"`, dann wird jedes Exemplar mit `<p>{foo}</p>` innerhalb der HTML-Ausgabe zu `<p>bar</p>`.
@@ -556,66 +556,66 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Upl
 ---
 
 
-###8. <a name="SECTION8"></a>SIGNATURENFORMAT
+### 8. <a name="SECTION8"></a>SIGNATURENFORMAT
 
-####*DATEINAMEN-SIGNATUREN*
+#### *DATEINAMEN-SIGNATUREN*
 Alle Dateinamen-Signaturen besitzen folgendes Format:
 
 `NAME:FNRX`
 
 NAME ist der Name, um die Signatur zu benennen und FNRX ist das Regex-Erkennungsmuster zum Vergleich von (nicht kodierten) Dateinamen.
 
-####*MD5-SIGNATUREN*
+#### *MD5-SIGNATUREN*
 Alle MD5-Signaturen besitzen folgendes Format:
 
 `HASH:FILESIZE:NAME`
 
 HASH ist der MD5-Hash der ganzen Datei, FILESIZE ist die gesamte Größe der Datei und NAME ist der Name, um die Signatur zu benennen.
 
-####*PE-SECTIONAL-SIGNATUREN*
+#### *PE-SECTIONAL-SIGNATUREN*
 Alle PE-Sectional-Signaturen besitzen folgendes Format:
 
 `SIZE:HASH:NAME`
 
 HASH ist der MD5-Hash einer PE-Sektion der Datei, FILESIZE ist die gesamte Größe der PE-Sektion und NAME ist der Name, um die Signatur zu benennen.
 
-####*PE-ERWEITERT-SIGNATUREN*
+#### *PE-ERWEITERT-SIGNATUREN*
 Alle PE-Erweitert-Signaturen besitzen folgendes Format:
 
 `$VAR:HASH:SIZE:NAME`
 
 Wo $VAR der Name der zu prüfenden PE-Variable ist, HASH ist der MD5-Hash von dieser Variable, SIZE ist die gesamte Größe von dieser Variable und NAME ist der Name für diese Signatur.
 
-####*WHITELIST-SIGNATUREN*
+#### *WHITELIST-SIGNATUREN*
 Alle Whitelist-Signaturen besitzen folgendes Format:
 `HASH:FILESIZE:NAME`
 
 HASH ist der MD5-Hash der ganzen Datei, FILESIZE ist die gesamte Größe der Datei und TYPE ist der Signaturtyp der whitegelisteten Datei, gegen die sie immun ist.
 
-####*KOMPLEX-ERWEITERT-SIGNATUREN*
+#### *KOMPLEX-ERWEITERT-SIGNATUREN*
 Komplex-Erweitert-Signaturen sind ziemlich unterschiedlich zu anderen Arten von möglichen Signaturen für phpMussel. Insofern, dass sie gegen das übereinstimmen was die Signaturen spezifizieren und das können mehrere Kriterien sein. Die Übereinstimmungs-Kriterien werden durch ";" getrennt und der Übereinstimmungs-Typ und die Übereinstimmungs-Daten jedes Übereinstimmungskriteriums ist durch ":" getrennt sodass das Format für diese Signaturen in etwa so aussieht:
 
 `$variable1:SOMEDATA;$variable2:SOMEDATA;SignatureName`
 
-####*ALLE SONSTIGEN SIGNATUREN*
+#### *ALLE SONSTIGEN SIGNATUREN*
 Alle sonstigen Signaturen besitzen folgendes Format:
 
 `NAME:HEX:FROM:TO`
 
 NAME ist der Name, um die Signatur zu benennen und HEX ist ein hexidezimal-kodiertes Segment der Datei, welches mit der gegebenen Signatur geprüft werden soll. FROM und TO sind optionale Parameter, sie geben Start- und Endpunkt in den Quelldaten zur Überprüfung an.
 
-####*REGEX*
+#### *REGEX*
 Jede Form von regulären Ausdrücken, die von PHP verstanden und korrekt ausgeführt werden, sollten auch von phpMussel und den Signaturen verstanden und korrekt ausgeführt werden können. Lassen Sie extreme Vorsicht walten, wenn Sie neue Signaturen schreiben, die auf regulären Ausdrücken basieren. Wenn Sie nicht absolut sicher sind, was Sie dort machen, kann dies zu nicht korrekten und/oder unerwarteten Ergebnissen führen. Schauen Sie im Quelltext von phpMussel nach, wenn Sie sich nicht absolut sicher sind, wie die regulären Ausdrücke verarbeitet werden. Beachten Sie bitte, dass alle Suchmuster (außer Dateinamen, Archive-Metadata and MD5-Prüfmuster) hexadezimal kodiert sein müssen (mit Ausnahme von Syntax, natürlich)!
 
 ---
 
 
-###9. <a name="SECTION9"></a>BEKANNTE KOMPATIBILITÄTSPROBLEME
+### 9. <a name="SECTION9"></a>BEKANNTE KOMPATIBILITÄTSPROBLEME
 
-####PHP und PCRE
+#### PHP und PCRE
 - phpMussel benötigt PHP und PCRE, um ausgeführt werden zu können. Ohne PHP und ohne die PCRE-Erweiterungen von PHP, kann phpMussel nicht oder nicht ordnungsgemäß ausgeführt werden. Stellen Sie sicher, dass auf Ihrem System PHP und PCRE installiert und verfügbar ist, bevor Sie phpMussel herunterladen und installieren.
 
-####KOMPATIBILITÄT ZU ANTIVIREN-SOFTWARE
+#### KOMPATIBILITÄT ZU ANTIVIREN-SOFTWARE
 
 In den meisten Fällen sollte phpMussel mit den meisten anderen Antiviren-Softwareprodukten kompatibel sein. Jedoch wurden in der Vergangenheit Konflikte von anderen Nutzern festgestellt. Die folgenden Informationen stammen von VirusTotal.com, welche einige Fehlalarme von verschiedenen Antiviren-Programmen gegen phpMussel beschreiben. Diese Informationen garantieren nicht, ob Kompatibilitätsprobleme zwischen phpMussel und Ihrem eingesetzten Antiviren-Produkt bestehen. Sollte Ihre Antiviren-Software als problematisch aufgelistet sein, sollten Sie diese entweder vor der Benutzung von phpMussel deaktivieren oder sich andere Alternativen überlegen.
 
@@ -688,9 +688,9 @@ Diese Informationen wurden zuletzt am 29. August 2016 aktualisiert und gelten f�
 ---
 
 
-###10. <a name="SECTION10"></a>HÄUFIG GESTELLTE FRAGEN (FAQ)
+### 10. <a name="SECTION10"></a>HÄUFIG GESTELLTE FRAGEN (FAQ)
 
-####Was ist ein "Falsch-Positiv"?
+#### Was ist ein "Falsch-Positiv"?
 
 Der Begriff "Falsch-Positiv" (*Alternative: "falsch-positiv Fehler"; "falscher Alarm"*; Englisch: *false positive*; *false positive error*; *false alarm*), sehr einfach beschrieben, und in einem verallgemeinerten Kontext, verwendet wird, wenn eine Bedingung zu testen und wenn die Ergebnisse positiv sind, um die Ergebnisse dieser Tests zu entnehmen (dh, die Bedingung bestimmt wird positiv oder wahr), aber sind zu erwarten sein (oder sollte gewesen) negativ (dh, der Zustand, in Wirklichkeit, ist negativ oder falsch). Eine "Falsch-Positiv" könnte analog zu "weinen Wolf" betrachtet (wobei die Bedingung geprüft wird, ob es ein Wolf in der Nähe der Herde ist, die Bedingung "falsch" ist in dass es keinen Wolf in der Nähe der Herde, und die Bedingung wird als "positiv" berichtet durch die Schäfer durch Aufruf "Wolf, Wolf"), oder analog zu Situationen in medizinischen Tests, wobei ein Patient als mit eine Krankheit diagnostiziert, wenn sie in Wirklichkeit haben sie keine solche Krankheit.
 
@@ -708,4 +708,4 @@ phpMussel *TUT* blockiert eine Datei | __Falsch-Positiv__ | True-Positiv (korrek
 ---
 
 
-Zuletzt aktualisiert: 5 März 2017 (2017.03.05).
+Zuletzt aktualisiert: 14 März 2017 (2017.03.14).

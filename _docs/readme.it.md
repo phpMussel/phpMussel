@@ -19,7 +19,7 @@
 ---
 
 
-###1. <a name="SECTION1"></a>PREAMBOLO
+### 1. <a name="SECTION1"></a>PREAMBOLO
 
 Grazie per aver scelto phpMussel, un programma in PHP progettato per rilevare trojan, virus, malware ed altre minacce nei file caricati sul tuo sistema dovunque il programma stesso è collegato, basato sulle firme di ClamAV ed altri.
 
@@ -40,7 +40,7 @@ Questo documento ed il pacchetto associato ad esso possono essere scaricati libe
 ---
 
 
-###2A. <a name="SECTION2A"></a>COME INSTALLARE (PER WEB SERVER)
+### 2A. <a name="SECTION2A"></a>COME INSTALLARE (PER WEB SERVER)
 
 Spero di semplificare questo processo tramite un installatore ad un certo punto in un futuro non troppo lontano, ma fino ad allora, seguire queste istruzioni per avere phpMussel funzionale sulla maggior parte dei sistemi e CMS:
 
@@ -73,7 +73,7 @@ O questo nel `.htaccess` file:
 ---
 
 
-###2B. <a name="SECTION2B"></a>COME INSTALLARE (PER CLI)
+### 2B. <a name="SECTION2B"></a>COME INSTALLARE (PER CLI)
 
 Spero di semplificare questo processo tramite un installatore ad un certo punto in un futuro non troppo lontano, ma fino ad allora, seguire queste istruzioni per avere phpMussel pronto a lavorare con CLI (essere consapevoli che in questo momento, CLI supporto applica solo ai Windows basato sistemi; Linux e altri sistemi arriveranno presto a una successiva versione di phpMussel):
 
@@ -90,7 +90,7 @@ Spero di semplificare questo processo tramite un installatore ad un certo punto 
 ---
 
 
-###3A. <a name="SECTION3A"></a>COME USARE (PER WEB SERVER)
+### 3A. <a name="SECTION3A"></a>COME USARE (PER WEB SERVER)
 
 phpMussel dovrebbe essere in grado di funzionare correttamente con requisiti minimi da parte vostra: Dopo l'installazione, dovrebbe funzionare immediatamente ed essere immediatamente utilizzabile.
 
@@ -129,7 +129,7 @@ Per disabilita firme incluso con phpMussel (come se stai sperimentando falsi pos
 ---
 
 
-###3B. <a name="SECTION3B"></a>COME USARE (PER CLI)
+### 3B. <a name="SECTION3B"></a>COME USARE (PER CLI)
 
 Si prega di fare riferimento alla "COME INSTALLARE (PER CLI)" sezione di questo file README.
 
@@ -140,15 +140,15 @@ Anche essere consapevoli che phpMussel è uno scanner *on-demand* (cioè, su ric
 ---
 
 
-###4. <a name="SECTION4"></a>GESTIONE FRONT-END
+### 4. <a name="SECTION4"></a>GESTIONE FRONT-END
 
-####4.0 QUAL È IL FRONT-END.
+#### 4.0 QUAL È IL FRONT-END.
 
 Il front-end fornisce un modo conveniente e facile da mantenere, gestire e aggiornare l'installazione phpMussel. È possibile visualizzare, condividere e scaricare file di log attraverso la pagina di log, è possibile modificare la configurazione attraverso la pagina di configurazione, è possibile installare e disinstallare i componenti attraverso la pagina degli aggiornamenti, e si può caricare, scaricare e modificare i file nel vault tramite il file manager.
 
 Il front-end è disabilitato per impostazione predefinita al fine di prevenire l'accesso non autorizzato (l'accesso non autorizzato potrebbe avere conseguenze significative per il vostro sito e la sua sicurezza). Istruzioni per l'abilitazione si sono compresi sotto di questo paragrafo.
 
-####4.1 COME ATTIVARE IL FRONT-END.
+#### 4.1 COME ATTIVARE IL FRONT-END.
 
 1) Trova la direttiva `disable_frontend` dentro `config.ini`, e impostarlo su true (sarà false per impostazione predefinita).
 
@@ -158,7 +158,7 @@ Il front-end è disabilitato per impostazione predefinita al fine di prevenire l
 
 Nota: Dopo aver effettuato l'accesso per la prima volta, al fine di impedire l'accesso non autorizzato al front-end, si dovrebbe cambiare immediatamente il nome utente e la password! Questo è molto importante, perché è possibile caricare codice PHP arbitrario al suo sito web attraverso il front-end.
 
-####4.2 COME UTILIZZARE IL FRONT-END.
+#### 4.2 COME UTILIZZARE IL FRONT-END.
 
 Le istruzioni sono fornite su ciascuna pagina del front-end, per spiegare il modo corretto di usarlo e la sua destinazione. Se avete bisogno di ulteriori spiegazioni o qualsiasi assistenza speciale, si prega di contattare il supporto. In alternativa, ci sono alcuni video disponibili su YouTube, che potrebbero aiutare per mezzo di dimostrazione.
 
@@ -166,7 +166,7 @@ Le istruzioni sono fornite su ciascuna pagina del front-end, per spiegare il mod
 ---
 
 
-###5. <a name="SECTION5"></a>CLI (INTERFACCIA A RIGA DI COMANDO)
+### 5. <a name="SECTION5"></a>CLI (INTERFACCIA A RIGA DI COMANDO)
 
 phpMussel può essere eseguito come uno interattivo file scanner in modalità CLI da Windows. Fare riferimento alla "COME INSTALLARE (PER CLI)" sezione di questo file README per maggiori dettagli.
 
@@ -178,7 +178,7 @@ Inoltre, per chi fosse interessato, un video tutorial su come utilizzare phpMuss
 ---
 
 
-###6. <a name="SECTION6"></a>FILE INCLUSI IN QUESTO PACCHETTO
+### 6. <a name="SECTION6"></a>FILE INCLUSI IN QUESTO PACCHETTO
 
 Il seguente è un elenco di tutti i file che dovrebbero essere incluso nella archiviato copia di questo script quando si scaricalo, qualsiasi di file che potrebbero potenzialmente essere creato come risultato della vostra utilizzando questo script, insieme con una breve descrizione di ciò che tutti questi file sono per.
 
@@ -301,10 +301,10 @@ File | Descrizione
 ---
 
 
-###7. <a name="SECTION7"></a>OPZIONI DI CONFIGURAZIONE
+### 7. <a name="SECTION7"></a>OPZIONI DI CONFIGURAZIONE
 Il seguente è un elenco di variabili trovate nelle `config.ini` file di configurazione di phpMussel, insieme con una descrizione del loro scopo e funzione.
 
-####"general" (Categoria)
+#### "general" (Categoria)
 Generale configurazione per phpMussel.
 
 "cleanup"
@@ -373,7 +373,7 @@ Generale configurazione per phpMussel.
 "FrontEndLog"
 - File per la registrazione di l'accesso front-end tentativi di accesso. Specificare un nome di file, o lasciare vuoto per disabilitare.
 
-####"signatures" (Categoria)
+#### "signatures" (Categoria)
 Configurazione per firme.
 
 "Active"
@@ -403,7 +403,7 @@ Configurazione per firme.
 "detect_deface"
 - Dovrebbe phpMussel utilizzare le firme per il rilevamento di sfiguramenti e sfiguratori? False = No; True = Sì [Predefinito].
 
-####"files" (Categoria)
+#### "files" (Categoria)
 Generale configurazione per la gestione dei file.
 
 "max_uploads"
@@ -440,7 +440,7 @@ Generale configurazione per la gestione dei file.
 "block_encrypted_archives"
 - Rilevi e blocchi archivi criptati? Perché phpMussel non è in grado di verifica del contenuto degli archivi criptati, è possibile che la archivi criptati può essere usato da un attaccante verifieracome mezzo di tenta di bypassare phpMussel, verificatore anti-virus e altri tali protezioni. Istruire phpMussel di bloccare qualsiasi archivi criptati che si trovato potrebbe potenzialmente contribuire a ridurre il rischio associato a questi tali possibilità. False = No; True = Sì [Predefinito].
 
-####"attack_specific" (Categoria)
+#### "attack_specific" (Categoria)
 Configurazione per specifiche attacco rilevazioni.
 
 Chameleon attacco rilevamento: False = Disattivato; True = Attivato.
@@ -481,7 +481,7 @@ Chameleon attacco rilevamento: False = Disattivato; True = Attivato.
 "scannable_threshold"
 - Opzionale limitazione o soglia per la lunghezza dei grezzi dati dove phpMussel è permesso di leggere e scansione (nel caso in cui vi siano notevoli problemi di prestazioni durante la scansione). Il valore è un integer che rappresenta la dimensione dei file in KB. Predefinito = 32768 (32MB). Un zero o un nullo valore disabilita la soglia. In generale, questo valore non dovrebbe essere meno quella media dimensione dei file che si desidera e si aspettano di ricevere al vostro server o al vostro web sito, non dovrebbe essere più di la filesize_limit direttiva, e non dovrebbe essere più di circa un quinto del totale ammissibile allocazione della memoria concesso al PHP tramite il file di configurazione `php.ini`. Questa direttiva esiste per tenta di evitare avendo phpMussel utilizzare troppa memoria (di cui sarebbe impedirebbe di essere capace di completare la file scansione correttamente per i file piú d'una certa dimensione).
 
-####"compatibility" (Categoria)
+#### "compatibility" (Categoria)
 Compatibilità direttive per phpMussel.
 
 "ignore_upload_errors"
@@ -490,13 +490,13 @@ Compatibilità direttive per phpMussel.
 "only_allow_images"
 - Se vi aspettare o intendere solo di permettere le immagini da caricare al vostro sistema o CMS, e se assolutamente non richiedono qualsiasi file diversi da immagini essere caricare per il vostro sistema o CMS, questa direttiva dovrebbe essere SU, ma dovrebbe altrimenti essere SPENTO. Se questa direttiva è SU, che istruirà phpMussel di indiscriminatamente bloccare tutti i caricati file identificati come file non-immagine, senza scansionali. Questo può ridurre il tempo di processo e l'utilizzo della memoria per tentati caricamenti di non-immagine file. False = SPENTO/OFF; True = SU/ON.
 
-####"heuristic" (Categoria)
+#### "heuristic" (Categoria)
 Euristici direttive per phpMussel.
 
 "threshold"
 - Ci sono particolare firme di phpMussel che sono destinato a identificare sospetti e potenzialmente maligno qualità dei file che vengono essere caricati senza in sé identificando i file che vengono essere caricati in particolare ad essere maligno. Questo "threshold" (soglia) valore dice phpMussel cosa che il totale massimo peso di sospetti e potenzialmente maligno qualità dei file che vengono essere caricati che è ammissibile è prima che quei file devono essere contrassegnati come maligno. La definizione di peso in questo contesto è il totale numero di sospetti e potenzialmente maligno qualità identificato. Per predefinito, questo valore viene impostato su 3. Un inferiore valore generalmente sarà risultare di una maggiore presenza di falsi positivi ma una maggior numero di file essere contrassegnato come maligno, mentre una maggiore valore generalmente sarà risultare di un inferiore presenza di falsi positivi ma un inferiore numero di file essere contrassegnato come maligno. È generalmente meglio di lasciare questo valore a suo predefinito a meno che si incontrare problemi ad esso correlati.
 
-####"virustotal" (Categoria)
+#### "virustotal" (Categoria)
 Configurazione per Virus Total integrazione.
 
 "vt_public_api_key"
@@ -520,7 +520,7 @@ Notare: Indipendentemente dal livello di sospetto, qualsiasi file che sono nella
 "vt_quota_rate" e "vt_quota_time"
 - Secondo a la Virus Total API documentazione, è limitato a un massimo di 4 richieste di qualsiasi natura in un dato 1 minuto tempo periodo. Se tu esegue una honeyclient, honeypot o qualsiasi altro automazione che sta fornire risorse a VirusTotal e non solo recuperare rapporti si ha diritto a un più alto tasso di richiesta quota. Per predefinita, phpMussel rigorosamente rispetti questi limiti, ma a causa della possibilità di tali tassi quote essere aumentati, questi due direttivi sono forniti come un mezzo per voi per istruire phpMussel da quale limite si deve rispettare. A meno che sei stato richiesto di farlo, non è raccomandato per voi per aumentare questi valori, ma, se hai incontrati problemi relativi a raggiungere il vostro tasso quota, diminuendo questi valori _**POTREBBE**_ a volte aiutare nel lavoro attraverso questi problemi. Il vostro tasso limite è determinato come `vt_quota_rate` richieste di qualsiasi natura in un dato `vt_quota_time` minuto tempo periodo.
 
-####"urlscanner" (Categoria)
+#### "urlscanner" (Categoria)
 Uno scanner URL è incluso in phpMussel, in grado di rilevare URL malevoli all'interno di dati ei file scansionati.
 
 Notare: Se l'URL scanner è disabilitato, non sarà necessario rivedere nessuna delle direttive in questa categoria (`urlscanner`), perché nessuno di loro farà nulla se questo è disabilitato.
@@ -543,7 +543,7 @@ API configurazione per l'URL scanner.
 "cache_time"
 - Per quanto tempo (in secondi) dovrebbe i risultati delle API richieste essere memorizzati nella cache per? Predefinito è 3600 secondi (1 ora).
 
-####"template_data" (Categoria)
+#### "template_data" (Categoria)
 Direttive/Variabili per modelli e temi.
 
 Modelli dati riferisce alla prodotti HTML utilizzato per generare il "Caricamento Negato" messaggio visualizzati agli utenti quando file caricamenti sono bloccati. Se stai usando temi personalizzati per phpMussel, prodotti HTML è provenienti da file `template_custom.html`, e altrimenti, prodotti HTML è provenienti da file `template.html`. Variabili scritte a questa sezione del file di configurazione sono parsato per il prodotti HTML per mezzo di sostituendo tutti i nomi di variabili circondati da parentesi graffe trovato all'interno il prodotti HTML con la corrispondente dati di quelli variabili. Per esempio, dove `foo="bar"`, qualsiasi istanza di `<p>{foo}</p>` trovato all'interno il prodotti HTML diventerà `<p>bar</p>`.
@@ -554,67 +554,67 @@ Modelli dati riferisce alla prodotti HTML utilizzato per generare il "Caricament
 ---
 
 
-###8. <a name="SECTION8"></a>FIRMA FORMATO
+### 8. <a name="SECTION8"></a>FIRMA FORMATO
 
-####*FILE NOMI FIRME*
+#### *FILE NOMI FIRME*
 Tutte le file nomi firme seguono il formato:
 
 `NOME:FNRX`
 
 Dove NOME è il nome per citare per quella firma e FNRX è la regolare espressione a verifica file nomi firme (non codificata) contra.
 
-####*MD5 FIRME*
+#### *MD5 FIRME*
 Tutte l'MD5 firme seguono il formato:
 
 `HASH:DIMENSIONE:NOME`
 
 Dove HASH è l'MD5 hash dell'intero file, DIMENSIONE è la totale dimensione del file e NOME è il nome per citare per quella firma.
 
-####*PE SEZIONALI FIRME*
+#### *PE SEZIONALI FIRME*
 Tutte il PE sezionali firme seguono il formato:
 
 `DIMENSIONE:HASH:NOME`
 
 Dove HASH è l'MD5 hash di una sezione del PE file, DIMENSIONE è la totale dimensioni della sezione e NOME è il nome per citare per quella firma.
 
-####*PE ESTESO FIRME*
+#### *PE ESTESO FIRME*
 Tutte il PE esteso firme seguono il formato:
 
 `$VAR:HASH:DIMENSIONE:NOME`
 
 Dove $VAR è il nome della PE variabile per corrispondere contro, HASH è l'MD5 hash di quella variabile, DIMENSIONE è la dimensione totale di quella variabile e NOME è il nome per citare per quella firma.
 
-####*WHITELIST FIRME*
+#### *WHITELIST FIRME*
 Tutte la whitelist firme seguono il formato:
 
 `HASH:DIMENSIONE:TYPE`
 
 Dove HASH è l'MD5 hash dell'intero file, DIMENSIONE è la totale dimensione del file e TYPE è il tipo di firme il file sulla whitelist è di essere immune contro.
 
-####*COMPLESSO ESTESO FIRME*
+#### *COMPLESSO ESTESO FIRME*
 Complesso esteso firme sono piuttosto diverso da altri tipi di firme possibili con phpMussel, in quanto ciò che essi sono corrispondenti contro è specificato dalle firme stesse e possono corrispondere contro più criteri. Criteri sono delimitati da ";" e il tipo e dati di ogni criterio è delimitato da ":" come tale che il formato per queste firme sembra come:
 
 `$variabile1:DATI;$variabile2:DATI;FirmeNome`
 
-####*TUTTO IL RESTO*
+#### *TUTTO IL RESTO*
 Tutte le altre firme seguono il formato:
 
 `NOME:HEX:FROM:TO`
 
 Dove NOME è il nome per citare per quella firma e HEX è un esadecimale codificato segmento del file destinato essere verificato dal pertinente firma. FROM e TO sono opzionali parametri, indicando da cui ea cui posizioni nei sorgenti dati per verificare contra.
 
-####*REGEX*
+#### *REGEX*
 Ogni forma di regex correttamente capito da PHP anche dovrebbe essere correttamente capito da phpMussel el sue firme. Ma, io suggerirei di prendere estrema cautela quando scrittura nuove regex basato firme, perché, se non sei certo quello stai facendo, ci possono essere molto irregolari e/o inaspettati risultati. Occhiata al sorgente codice di phpMussel se non sei certo sul contesto in cui le regolari espressioni dichiarazioni vengono parsato. Anche, ricordare che tutti i espressioni (ad eccezione per i file nomi, archivio metadati e l'MD5 espressioni) deve essere esadecimale codificato (tranne sintassi, naturalmente)!
 
 ---
 
 
-###9. <a name="SECTION9"></a>CONOSCIUTI COMPATIBILITÀ PROBLEMI
+### 9. <a name="SECTION9"></a>CONOSCIUTI COMPATIBILITÀ PROBLEMI
 
-####PHP e PCRE
+#### PHP e PCRE
 - phpMussel richiede PHP e PCRE a eseguire ea funzionare correttamente. Senza PHP, o senza il PCRE estensione di PHP, phpMussel non sarà eseguirà o funzionare correttamente. Dovrebbe assicurarsi che il vostra sistema ha sia PHP e PCRE installati e disponibili prima di scaricare e installare phpMussel.
 
-####ANTI-VIRUS SOFTWARE COMPATIBILITÀ
+#### ANTI-VIRUS SOFTWARE COMPATIBILITÀ
 
 Per la maggior parte, phpMussel dovrebbe essere compatibile abbastanza con la maggior parte dei antivirus software. Ma, conflitti sono stati riportati da un numero di utenti in passato. Queste informazioni qui di seguito è da VirusTotal.com, e descrive un certo numero di falsi positivi riportato dai vari anti-virus programmi contro phpMussel. Sebbene questa informazione non è un'assoluta garanzia di se o non si sarà verificheranno problemi di compatibilità tra phpMussel e il vostro anti-virus software, se il vostro software anti-virus è stati ha notato o ha bandierato contro phpMussel, si dovrebbe considerare sia disattivarlo prima di lavorare con phpMussel o dovrebbe considerare l'alternative opzioni per sia il vostro anti-virus software o phpMussel.
 
@@ -687,9 +687,9 @@ Questa informazione è stato lo scorso aggiornato 29 Agosto 2016 ed è in corso 
 ---
 
 
-###10. <a name="SECTION10"></a>DOMANDE FREQUENTI (FAQ)
+### 10. <a name="SECTION10"></a>DOMANDE FREQUENTI (FAQ)
 
-####Che cosa è un "falso positivo"?
+#### Che cosa è un "falso positivo"?
 
 Il termine "falso positivo" (*in alternativa: "errore di falso positivo"; "falso allarme"*; Inglese: *false positive*; *false positive error*; *false alarm*), descritto molto semplicemente, e in un contesto generalizzato, viene utilizzato quando si analizza una condizione, per riferirsi ai risultati di tale analisi, quando i risultati sono positivi (cioè, la condizione è determinata a essere "positivo", o "vero"), ma dovrebbero essere (o avrebbe dovuto essere) negativo (cioè, la condizione, in realtà, è "negativo", o "falso"). Un "falso positivo" potrebbe essere considerato analogo a "piangendo lupo" (dove la condizione di essere analizzato è se c'è un lupo nei pressi della mandria, la condizione è "falso" in che non c'è nessun lupo nei pressi della mandria, e la condizione viene segnalato come "positivo" dal pastore per mezzo di chiamando "lupo, lupo"), o analogo a situazioni di test medici dove un paziente viene diagnosticato una malattia, quando in realtà, non hanno qualsiasi malattia.
 
@@ -707,4 +707,4 @@ phpMussel *FA* bloccare un file | __Falso positivo__ | Vero positivo (inferenza 
 ---
 
 
-Ultimo Aggiornamento: 5 Marzo 2017 (2017.03.05).
+Ultimo Aggiornamento: 14 Marzo 2017 (2017.03.14).

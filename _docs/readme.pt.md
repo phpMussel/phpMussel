@@ -19,7 +19,7 @@
 ---
 
 
-###1. <a name="SECTION1"></a>PREÂMBULO
+### 1. <a name="SECTION1"></a>PREÂMBULO
 
 Obrigado por usar phpMussel, um PHP script projetado para detectar trojans, vírus, malware e outras ameaças dentro dos arquivos enviados para o seu sistema onde quer que o script é enganchado, baseado nas assinaturas do ClamAV e outros.
 
@@ -40,7 +40,7 @@ Este documento e seu pacote associado pode ser baixado gratuitamente de:
 ---
 
 
-###2A. <a name="SECTION2A"></a>COMO INSTALAR (PARA WEB SERVIDORES)
+### 2A. <a name="SECTION2A"></a>COMO INSTALAR (PARA WEB SERVIDORES)
 
 Espero para agilizar este processo fazendo um instalador em algum momento não muito distante no futuro, mas até então, siga estas instruções para trabalhar phpMussel na maioria dos sistemas e CMS:
 
@@ -73,7 +73,7 @@ Ou isso no `.htaccess` arquivo:
 ---
 
 
-###2B. <a name="SECTION2B"></a>COMO INSTALAR (PARA CLI)
+### 2B. <a name="SECTION2B"></a>COMO INSTALAR (PARA CLI)
 
 Espero para agilizar este processo via fazendo um instalador em algum momento no não muito distante no futuro, mas até então, siga estas instruções para obter phpMussel pronto para trabalhar com CLI (estar ciente, neste momento, CLI apoio só se aplica a sistemas baseados em Windows; Linux e outros sistemas será em breve para uma versão posterior do phpMussel):
 
@@ -90,7 +90,7 @@ Espero para agilizar este processo via fazendo um instalador em algum momento no
 ---
 
 
-###3A. <a name="SECTION3A"></a>COMO USAR (PARA WEB SERVIDORES)
+### 3A. <a name="SECTION3A"></a>COMO USAR (PARA WEB SERVIDORES)
 
 phpMussel deve ser capaz de operar corretamente com requisitos mínimos sobre a sua parte: Após instalá-lo, ele deve funcionar imediatamente e ser imediatamente utilizável.
 
@@ -129,7 +129,7 @@ Para desativar as assinaturas que estão incluídos com phpMussel (tal como se v
 ---
 
 
-###3B. <a name="SECTION3B"></a>COMO USAR (PARA CLI)
+### 3B. <a name="SECTION3B"></a>COMO USAR (PARA CLI)
 
 Por favor, consulte a seção "COMO INSTALAR (PARA CLI)" deste arquivo README.
 
@@ -140,15 +140,15 @@ Também estar ciente de que phpMussel é um scanner *on-demand*; *NÃO* é um sc
 ---
 
 
-###4. <a name="SECTION4"></a>GESTÃO DE FRONT-END
+### 4. <a name="SECTION4"></a>GESTÃO DE FRONT-END
 
-####4.0 O QUE É O FRONT-END.
+#### 4.0 O QUE É O FRONT-END.
 
 O front-end fornece uma maneira conveniente e fácil de manter, gerenciar e atualizar sua instalação phpMussel. Você pode visualizar, compartilhar e baixar arquivos de log através da página de logs, você pode modificar a configuração através da página de configuração, você pode instalar e desinstalar componentes através da página de atualizações, e você pode carregar, baixar e modificar arquivos no seu vault através do gerenciador de arquivos.
 
 O front-end é desativado por padrão para evitar acesso não autorizado (acesso não autorizado pode ter consequências significativas para o seu site e para a sua segurança). Instruções para habilitá-lo estão incluídas abaixo deste parágrafo.
 
-####4.1 COMO HABILITAR O FRONT-END.
+#### 4.1 COMO HABILITAR O FRONT-END.
 
 1) Localize a directiva `disable_frontend` dentro `config.ini`, e defini-lo como true (ele será false por padrão).
 
@@ -158,7 +158,7 @@ O front-end é desativado por padrão para evitar acesso não autorizado (acesso
 
 Nota: Depois de efetuar login pela primeira vez, a fim de impedir o acesso não autorizado ao front-end, você deve imediatamente alterar seu nome de usuário e senha! Isto é muito importante, porque é possível fazer upload de código PHP arbitrário para o seu site através do front-end.
 
-####4.2 COMO USAR O FRONT-END.
+#### 4.2 COMO USAR O FRONT-END.
 
 As instruções são fornecidas em cada página do front-end, para explicar a maneira correta de usá-lo e sua finalidade pretendida. Se precisar de mais explicações ou qualquer assistência especial, entre em contato com o suporte. Alternativamente, existem alguns vídeos disponíveis no YouTube que podem ajudar por meio de demonstração.
 
@@ -166,7 +166,7 @@ As instruções são fornecidas em cada página do front-end, para explicar a ma
 ---
 
 
-###5. <a name="SECTION5"></a>CLI (COMANDO LINHA INTERFACE)
+### 5. <a name="SECTION5"></a>CLI (COMANDO LINHA INTERFACE)
 
 phpMussel pode ser executado como um interativo analisador de arquivo no modo CLI em sistemas baseados em Windows. Por favor, consulte a seção "COMO INSTALAR (PARA CLI)" deste arquivo README para mais detalhes.
 
@@ -178,7 +178,7 @@ Além disso, para os interessados, um tutorial em vídeo para saber como usar ph
 ---
 
 
-###6. <a name="SECTION6"></a>ARQUIVOS INCLUÍDOS NESTE PACOTE
+### 6. <a name="SECTION6"></a>ARQUIVOS INCLUÍDOS NESTE PACOTE
 
 A seguir está uma lista de todos os arquivos que deveriam ter sido incluídos na cópia arquivada desse script quando você baixá-lo, todos os arquivos que podem ser potencialmente criados como resultado de seu uso deste script, juntamente com uma breve descrição do que todos esses arquivos são.
 
@@ -266,7 +266,7 @@ Arquivo | Descrição
 /vault/lang/lang.zh.php | Linguagem dados Chinês (simplificado).
 /vault/quarantine/ | Diretório de quarentena (contém os arquivos em quarentena).
 /vault/quarantine/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
-/vault/signatures/ | Diretório de assinaturas (contém ficheiros de assinaturas).
+/vault/signatures/ | Diretório de assinaturas (contém arquivos de assinaturas).
 /vault/signatures/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 /vault/signatures/hex_general_commands.csv | Hex-codificado CSV de geral comando detecções opcionalmente usado por phpMussel.
 /vault/signatures/switch.dat | Isto controla e define algumas variáveis.
@@ -301,10 +301,10 @@ Arquivo | Descrição
 ---
 
 
-###7. <a name="SECTION7"></a>OPÇÕES DE CONFIGURAÇÃO
+### 7. <a name="SECTION7"></a>OPÇÕES DE CONFIGURAÇÃO
 O seguinte é uma lista de variáveis encontradas no `config.ini` arquivo de configuração para phpMussel, juntamente com uma descrição de sua propósito e função.
 
-####"general" (Categoria)
+#### "general" (Categoria)
 Configuração geral por phpMussel.
 
 "cleanup"
@@ -373,7 +373,7 @@ Configuração geral por phpMussel.
 "FrontEndLog"
 - Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.
 
-####"signatures" (Categoria)
+#### "signatures" (Categoria)
 Configuração por assinaturas.
 
 "Active"
@@ -403,7 +403,7 @@ Configuração por assinaturas.
 "detect_deface"
 - Deve phpMussel usam assinaturas para detectar vandalismo e vândalos? False = Não; True = Sim [Padrão].
 
-####"files" (Categoria)
+#### "files" (Categoria)
 Configuração geral por a manipulação de arquivos.
 
 "max_uploads"
@@ -440,7 +440,7 @@ Configuração geral por a manipulação de arquivos.
 "block_encrypted_archives"
 - Detectar e bloquear compactados arquivos criptografados? Porque phpMussel não é capaz de analisar o conteúdo de arquivos criptografados, é possível que a criptografia de arquivo pode ser empregado por um atacante como meio de tentar contornar phpMussel, analisadores anti-vírus e outras dessas protecções. Instruindo phpMussel para bloquear quaisquer arquivos que ele descobrir a ser criptografada poderia ajudar a reduzir o risco associado a essas tais possibilidades. False = Não; True = Sim [Padrão].
 
-####"attack_specific" (Categoria)
+#### "attack_specific" (Categoria)
 Configuração por específicas ataque detecções.
 
 Chameleon ataque detecções: False = Inativo; True = Ativo.
@@ -481,7 +481,7 @@ Chameleon ataque detecções: False = Inativo; True = Ativo.
 "scannable_threshold"
 - Opcional limitação para o comprimento dos brutos dados para que phpMussel é permitido a ler e analisar (em caso de existirem quaisquer notável problemas de desempenho enquanto analisando). Valor é um inteiro que representa tamanho do arquivo Em KB. Padrão = 32768 (32MB). Zero ou nulo valor desativa o limitação. Em geral, esse valor não deve ser menor que o médio arquivo tamanho de carregamentos que você quer e espera para receber no seu servidor ou website, não deve ser mais que o filesize_limit directivo, e não deve ser menor que aproximadamente um quinto do total permissível memória alocação concedido para PHP através do `php.ini` configuração arquivo. Esta directiva existe para tentar impedir phpMussel de usando demais memória (que seria impedir-lo de ser capaz de analisando arquivos acima de um certo tamanho com sucesso).
 
-####"compatibility" (Categoria)
+#### "compatibility" (Categoria)
 Compatibilidade directivas por phpMussel.
 
 "ignore_upload_errors"
@@ -490,13 +490,13 @@ Compatibilidade directivas por phpMussel.
 "only_allow_images"
 - Se você apenas esperar ou apenas tencionar de permitir imagens a ser enviado para seu sistema ou CMS, e se você absolutamente não necessita quaisquer arquivos exceto imagens a ser enviado para seu sistema ou CMS, esta directiva devia ser ATIVADO, mas em outros casos devia ser DESATIVADO. Se esta directiva é ATIVADO, ele irá instruir phpMussel indiscriminadamente bloquear qualquer arquivo carregamento identificado como não imagem, sem os analisar. Isto pode reduzir o tempo de processamento e uso de memória por tentados carregamentos de não imagem arquivos. False = DESATIVADO; True = ATIVADO.
 
-####"heuristic" (Categoria)
+#### "heuristic" (Categoria)
 Heurísticos directivas para phpMussel.
 
 "threshold"
 - Existem assinaturas específicas de phpMussel para identificando suspeitas e qualidades potencialmente maliciosos dos arquivos que estão sendo carregados sem por si só identificando aqueles arquivos que estão sendo carregados especificamente como sendo maliciosos. Este "threshold" (limiar) valor instrui phpMussel o que o total máximo peso de suspeitas e qualidades potencialmente maliciosos dos arquivos que estão sendo carregados que é permitida é antes que esses arquivos devem ser sinalizada como maliciosos. A definição de peso neste contexto é o número total de suspeitas e qualidades potencialmente maliciosos identificado. Por padrão, este valor será definido como 3. Um menor valor geralmente resultará em uma maior ocorrência de falsos positivos mas um maior número de arquivos maliciosos sendo sinalizado, enquanto um maior valor geralmente resultará em uma menor ocorrência de falsos positivos mas um menor número de arquivos maliciosos sendo sinalizado. É geralmente melhor a deixar esse valor em seu padrão a menos que você está enfrentando problemas relacionados a ela.
 
-####"virustotal" (Categoria)
+#### "virustotal" (Categoria)
 Configuração para Virus Total integração.
 
 "vt_public_api_key"
@@ -520,7 +520,7 @@ Notar: Independentemente do nível de suspeita, todos os arquivos que estão na 
 "vt_quota_rate" e "vt_quota_time"
 - De acordo com o Virus Total API documentação, é limitada a, no máximo, 4 solicitações de qualquer natureza dentro qualquer 1 minuto período de tempo. Se você executar um honeyclient, honeypot ou qualquer outro automação que vai fornecer recursos para Virus Total e não só recuperar relatórios você tem direito a uma melhor solicitações cota. Por padrão, phpMussel vai aderir estritamente a estas limitações, mas, devido à possibilidade de essas cotas a ser aumentada, estas duas directivas são fornecidos como um meio para que você possa instruir phpMussel sobre o limite que deve aderir para. Excepto se tenha sido instruído a fazê-lo, não é recomendado para você aumentar esses valores, mas, se você encontrou problemas relacionados com a atingir sua cota, diminuir esses valores podem _**POR VEZES**_ ajudá-lo em lidar com estes problemas. Seu taxa limite é determinada como `vt_quota_rate` solicitações de qualquer natureza dentro qualquer `vt_quota_time` minuto período de tempo.
 
-####"urlscanner" (Categoria)
+#### "urlscanner" (Categoria)
 Um URL analisador está incluído com phpMussel, capaz de detectar URLs maliciosos dentro de todos os dados ou arquivos analisados.
 
 Notar: Se o URL analisador é desativado, você não terá que rever alguma das directivas nesta categoria (`urlscanner`), porque nenhum deles fará de tudo se este é desativado.
@@ -543,7 +543,7 @@ URL analisador API uso configuração.
 "cache_time"
 - Quanto tempo (em segundos) devem os resultados da API ser armazenados em cache? Padrão é 3600 segundos (1 hora).
 
-####"template_data" (Categoria)
+#### "template_data" (Categoria)
 Directivas/Variáveis para modelos e temas.
 
 Template dados está associada com o HTML usado para gerar a "Carregar Negado" mensagem exibido aos usuários quandos arquivo carregamentos são bloqueados. Se você estiver usando temas personalizados para phpMussel, HTML é originado a partir do `template_custom.html` arquivo, e caso contrário, HTML é originado a partir do `template.html` arquivo. Variáveis escritas para esta seção do configuração arquivo são processado ao HTML via substituição de quaisquer nomes de variáveis cercado por colchetes encontrado dentro do HTML com os variáveis dados correspondentes. Por exemplo, onde `foo="bar"`, qualquer instância de `<p>{foo}</p>` encontrado dentro do HTML tornará `<p>bar</p>`.
@@ -554,67 +554,67 @@ Template dados está associada com o HTML usado para gerar a "Carregar Negado" m
 ---
 
 
-###8. <a name="SECTION8"></a>FORMATOS DE ASSINATURAS
+### 8. <a name="SECTION8"></a>FORMATOS DE ASSINATURAS
 
-####*ARQUIVO NOME ASSINATURAS*
+#### *ARQUIVO NOME ASSINATURAS*
 Todas as arquivo nome assinaturas seguir o formato:
 
 `NOME:FNRX`
 
 Onde NOME é o nome para citar por essa assinatura e FNRX é o regex para verificar arquivos nomes (não codificados) contra.
 
-####*MD5 ASSINATURAS*
+#### *MD5 ASSINATURAS*
 Todas as MD5 assinaturas seguir o formato:
 
 `HASH:TAMANHO:NOME`
 
 Onde HASH é o hash MD5 de um inteiro arquivo, TAMANHO é o total tamanho do arquivo e NOME é o nome para citar por essa assinatura.
 
-####*PE SECCIONAL ASSINATURAS*
+#### *PE SECCIONAL ASSINATURAS*
 Todas as PE Seccional assinaturas seguir o formato:
 
 `TAMANHO:HASH:NOME`
 
 Onde HASH é o hash MD5 de uma secção do PE arquivo, TAMANHO é o total tamanho da secção e NOME é o nome para citar por essa assinatura.
 
-####*PE ESTENDIDAS ASSINATURAS*
+#### *PE ESTENDIDAS ASSINATURAS*
 Todas as PE estendidas assinaturas seguir o formato:
 
 `$VAR:HASH:TAMANHO:NOME`
 
 Onde $VAR é o nome da PE variável para verificar contra, HASH é o MD5 dessa variável, TAMANHO é o tamanho total dessa variável e NOME é o nome para citar por essa assinatura.
 
-####*WHITELIST ASSINATURAS*
+#### *WHITELIST ASSINATURAS*
 Todas as Whitelist assinaturas seguir o formato:
 
 `HASH:TAMANHO:TYPE`
 
 Onde HASH é o hash MD5 de um inteiro arquivo, TAMANHO é o total tamanho do arquivo e TYPE é o tipo de assinaturas o arquivo é ser imune contra.
 
-####*COMPLEXOS ESTENDIDAS ASSINATURAS*
+#### *COMPLEXOS ESTENDIDAS ASSINATURAS*
 Complexos estendidas assinaturas são bastante diferente para os outros tipos de assinaturas possíveis com phpMussel em que o que eles estão verificando contra é especificado pelas assinaturas e eles podem verificar contra vários critérios. Os critérios de verificação são delimitados por ";" e o verificação tipo e os verificação dados de cada verificação critérios é delimitados por ":" como assim que o formato por estas assinaturas tende a olhar um pouco assim:
 
 `$variável1:ALGUNSDADOS;$variável2:ALGUNSDADOS;AssinaturaNome`
 
-####*TODAS OUTRAS*
+#### *TODAS OUTRAS*
 Todas as outras assinaturas seguir o formato:
 
 `NOME:HEX:FROM:TO`
 
 Onde NOME é o nome para citar por essa assinatura e HEX é um hexadecimal codificado segmento do arquivo intentado a ser correspondido pela dado assinatura. TO e FROM são opcionais parâmetros, indicando de onde e para quais posições nos origem dados para verificar contra.
 
-####*REGEX*
+#### *REGEX*
 Qualquer forma de regex compreendido e processado corretamente pelo PHP também deve ser correctamente compreendido e processado por phpMussel e suas assinaturas. Mas, eu sugiro tomar extremo cuidado quando escrevendo novas assinaturas baseadas regex, porque, se você não está inteiramente certo do que está fazendo, isto pode tem altamente irregulares e inesperadas resultados. Olha para o código-fonte de phpMussel Se você não está totalmente certo sobre o contexto em que as regex declarações são processada. Além, lembre-se que todos isso (com exceção para arquivo nome, compactado arquivo metadados, MD5 a sintaxe) deve ser codificado hexadecimalmente!
 
 ---
 
 
-###9. <a name="SECTION9"></a>CONHECIDOS COMPATIBILIDADE PROBLEMAS
+### 9. <a name="SECTION9"></a>CONHECIDOS COMPATIBILIDADE PROBLEMAS
 
-####PHP e PCRE
+#### PHP e PCRE
 - phpMussel requer PHP e PCRE para executar e funcionar corretamente. Sem PHP, ou sem a PCRE extensão do PHP, phpMussel não vai executará ou funcionar corretamente. Deve certificar-se de que seu sistema tenha PHP e PCRE instalado e disponível antes de baixar e instalar phpMussel.
 
-####ANTI-VÍRUS SOFTWARE COMPATIBILIDADE
+#### ANTI-VÍRUS SOFTWARE COMPATIBILIDADE
 
 Em geral, phpMussel deve ser bastante compatível com a maioria dos outros vírus detecção softwares. Embora, conflitos foram relatadas por um número de utilizadores no passado. Esta informação abaixo é de VirusTotal.com, e descreve um número de falso-positivos relatados por vários anti-vírus programas contra phpMussel. Embora esta informação não é um absoluta garantia de haver ou não você vai encontrar problemas de compatibilidade entre phpMussel e seu anti-vírus software, se o seu anti-vírus software é conhecido como sinalização contra phpMussel, você deve considerar desativá-lo antes de trabalhar com phpMussel ou deve considerar alternativas opções para o seu anti-vírus software ou phpMussel.
 
@@ -687,9 +687,9 @@ Esta informação foi atualizada dia 29 Agosto 2016 e é corrente para todas php
 ---
 
 
-###10. <a name="SECTION10"></a>PERGUNTAS MAIS FREQUENTES (FAQ)
+### 10. <a name="SECTION10"></a>PERGUNTAS MAIS FREQUENTES (FAQ)
 
-####O que é um "falso positivo"?
+#### O que é um "falso positivo"?
 
 O termo "falso positivo" (*alternativamente: "erro de falso positivo"; "alarme falso"*; Inglês: *false positive*; *false positive error*; *false alarm*), descrita de maneira muito simples, e num contexto generalizado, são usadas quando testando para uma condição, para se referir aos resultados desse teste, quando os resultados são positivos (isto é, a condição é determinada para ser "positivo", ou "verdadeiro"), mas espera-se que seja (ou deveria ter sido) negativo (isto é, a condição, na realidade, é "negativo", ou "falso"). Um "falso positivo" pode ser considerado análogo ao "chorando lobo" (em que a condição que está sendo testada é se existe um lobo perto do rebanho, a condição é "falso" em que não há nenhum lobo perto do rebanho, ea condição é relatada como "positivo" pelo pastor por meio de gritando "lobo, lobo"), ou análoga a situações em exames médicos em que um paciente é diagnosticado como tendo alguma doença quando, na realidade, eles não têm essa doença.
 
@@ -707,4 +707,4 @@ phpMussel *FAZ* bloquear um arquivo | __Falso positivo__ | Verdadeiro positivo (
 ---
 
 
-Última Atualização: 5 Março 2017 (2017.03.05).
+Última Atualização: 14 Março 2017 (2017.03.14).
