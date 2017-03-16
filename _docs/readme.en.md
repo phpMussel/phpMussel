@@ -704,7 +704,23 @@ This can be summarised by the table below:
 phpMussel does *NOT* block a file | True negative (correct inference) | Missed detection (analogous to false negative)
 phpMussel *DOES* block a file | __False positive__ | True positive (correct inference)
 
+#### How frequently are signatures updated?
+
+Update frequency varies depending on the signature files in question. All maintainers for phpMussel signature files generally try to keep their signatures as up-to-date as is possible, but as all of us have various other commitments, our lives outside the project, and as none of us are financially compensated (i.e., paid) for our efforts on the project, a precise update schedule can't be guaranteed. Generally, signatures are updated whenever there's enough time to update them, and generally, maintainers try to prioritise based on necessity and on how frequently changes occur among ranges. Assistance is always appreciated if you're willing to offer any.
+
+#### I've encountered a problem while using phpMussel and I don't know what to do about it! Please help!
+
+- Are you using the latest version of the software? Are you using the latest versions of your signature files? If the answer to either of these two questions is no, try to update everything first, and check whether the problem persists. If it persists, continue reading.
+- Have you checked through all the documentation? If not, please do so. If the problem can't be solved using the documentation, continue reading.
+- Have you checked the **[issues page](https://github.com/Maikuolan/phpMussel/issues)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
+- Have you checked the **[phpMussel support forum provided by Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)**, to see whether the problem has been mentioned before? If it's been mentioned before, check whether any suggestions, ideas, and/or solutions were provided, and follow as per necessary to try to resolve the problem.
+- If the problem still persists, please let us know about it by creating a new issue on the issues page or by starting a new discussion on the support forum.
+
+#### I want to use phpMussel with a PHP version older than 5.4.0; Can you help?
+
+No. PHP 5.4.0 reached official EoL ("End of Life") in 2014, and extended security support was terminated in 2015. As of writing this, it is 2017, and PHP 7.1.0 is already available. At this time, support is provided for using phpMussel with PHP 5.4.0 and all available newer PHP versions, but if you try to use phpMussel with any older PHP versions, support won't be provided.
+
 ---
 
 
-Last Updated: 14 March 2017 (2017.03.14).
+Last Updated: 16 March 2017 (2017.03.16).
