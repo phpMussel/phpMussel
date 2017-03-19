@@ -21,7 +21,7 @@
 
 ### 1. <a name="SECTION1"></a>PRÉAMBULE
 
-Merci pour l'utiliser de phpMussel, un PHP script pour la détection de virus, logiciels malveillants et autres menaces dans les fichiers téléchargés sur votre système partout où le script est attaché, basé sur les signatures de ClamAV et autres.
+Merci d'utiliser phpMusel, un script PHP pour la détection de virus, logiciels malveillants et autres menaces dans les fichiers téléchargés sur votre système partout où le script est accroché, basé sur les signatures de ClamAV et autres.
 
 PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPLv2 par Caleb M (Maikuolan).
 
@@ -723,4 +723,4 @@ Non. PHP 5.4.0 a atteint officiellement l'EoL ("End of Life", ou fin de vie) en 
 ---
 
 
-Dernière Mise à Jour: 16 Mars 2017 (2017.03.16).
+Dernière Mise à Jour: 19 Mars 2017 (2017.03.19).
