@@ -268,7 +268,6 @@ Data | Deskripsi
 /vault/quarantine/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/signatures/ | Direktori tanda tangan (berisikan file tanda tangan).
 /vault/signatures/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/signatures/hex_general_commands.csv | CSV terencode Hex dari deteksi perintah umum secara opsional digunakan phpMussel.
 /vault/signatures/switch.dat | Kontrol dan set variabel tertentu.
 /vault/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/cli.php | Modul CLI handler.
@@ -465,9 +464,6 @@ Chameleon serangan deteksi: False = Dinonaktifkan; True = Diaktifkan.
 
 "archive_file_extensions"
 - Ekstensi file terkompres yang dikenali (format nya CSV; seharusnya hanya menambah atau menghapus ketika masalah terjadi; Tidak cocok langsung menghapus karena dapat menyebabkan angka positif yang salah terjadi pada file terkompres, dimana juga menambahkan deteksi; memodifikasi dengan peringatan; Juga dicatat bahwa ini tidak memberi efek pada file terkompress apa yang dapat dan tidak dapat di analisa pada level isi). Daftar sebagaimana defaultnya, memberi daftar format-format yang digunakan yang paling umum melalui melalui mayoritas sistem dan CMS, tapi bermaksud tidak komprehensif.
-
-"general_commands"
-- Mencari isi file-file untuk pernyataan atau perintah umum seperti `eval()` dan `exec()`? False = Tidak (tidak mencek) [Default]; True = Ya (mencek). Matikan direktif ini jika Anda bermaksud untuk mengupload yang manapun dari ini ke sistem ata CMS Anda via browser Anda: PHP, JavaScript, HTML, python, perl dll. Hidupkan direktif ini jika Anda tidak punya tambahan perlindungan pada sistem Anda dan tidak bermaksud mengupload file-file apapun. Jika Anda menggunakan keamanan tambahan dalam kata penghubung dengan phpMussel (seperti ZB Block), tidak perlu menghidupkan direktif ini, karena kebanyakan apa yang akan phpMussel cari (dalam konteks direktif ini) adalah duplikasi dari perlindungan yang telah disediakan.
 
 "block_control_characters"
 - Memblokade file apapun yang berisi karakter pengendali (lain dari baris baru)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Jika Anda hanya sedang mengupload file teks biasa, maka Anda dapat menghidupkan opsi ini untuk menyediakan perlindungan tambahan ke sistem Anda. Bagaimanapun jika Anda mengupload apapun lebih dari file teks biasa, menghidupkan opsi ini mungkin mengakibatkan angka positif salah. False = Jangan memblokade [Default]; True = Memblokade.
@@ -723,4 +719,4 @@ Tidak. PHP 5.4.0 mencapai EoL ("End of Life", atau Akhir Hidup) resmi pada tahun
 ---
 
 
-Terakhir Diperbarui: 16 Maret 2017 (2017.03.16).
+Terakhir Diperbarui: 24 Maret 2017 (2017.03.24).

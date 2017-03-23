@@ -268,7 +268,6 @@ Bestand | Beschrijving
 /vault/quarantine/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/signatures/ | Signatures bestandsmap (signature bestanden bevat).
 /vault/signatures/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
-/vault/signatures/hex_general_commands.csv | Hex-gecodeerde CSV van algemene commando detecties optioneel gebruikt door phpMussel.
 /vault/signatures/switch.dat | Controles en sets bepaalde variabelen.
 /vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/cli.php | CLI handler.
@@ -465,9 +464,6 @@ Chameleon aanval detectie: False = Uitgeschakeld; True = Ingeschakeld.
 
 "archive_file_extensions"
 - Herkende archief bestandsextensies (formaat is CSV; moet alleen toevoegen of verwijderen wanneer problemen voorkomen; onnodig verwijderen kan leiden tot vals-positieven te verschijnen voor archiefbestanden, terwijl onnodig toevoeging zal effectief whitelist wat u toevoegt van aanval-specifieke detectie; wijzigen met voorzichtigheid; ook noteren dat Dit heeft geen effect op welke archieven kan en niet kan wordt geanalyseerd op inhoudsniveau). De lijst, als is bij standaard, geeft die formaten gebruikt meest vaak door de meeste systemen en CMS, maar opzettelijk is niet noodzakelijk alomvattend.
-
-"general_commands"
-- Zoeken de inhoud van bestanden voor algemene commando's zoals `eval()`, `exec()` en `include`? False = Nee (niet doen controleer) [Standaard]; True = Ja (doen controleer). Uitschakelen dit optie als u plannen te uploaden om één van de volgende om uw systeem of CMS via uw browser: PHP, JavaScript, HTML, python, perl bestanden en zo voort. Inschakelen dit optie als u heeft geen extra bescherming op uw systeem en niet plannen te uploaden dergelijke bestanden. Als u gebruik extra beveiliging in combinatie met phpMussel zoals ZB Block, er is geen noodzaak om dit optie te inschakelen, omdat de meeste van wat phpMussel zal zoek naar (in het kader van dit optie) zijn duplicaties van beveiligingen die zijn voorzien alreeds.
 
 "block_control_characters"
 - Blokkeren alle bestanden bevatten controle karakters (andere dan nieuwe regels)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Als u _**ALLEEN**_  uploaden platte tekst, dan u kan inschakelen dit optie te bieden extra bescherming aan uw systeem. Hoewel, als u uploaden iets anders dan platte tekst, inschakelen dit kan leiden tot valse positieven. False = Niet blokkeren [Standaard]; True = Doen blokkeren.
@@ -723,4 +719,4 @@ Nee. PHP 5.4.0 bereikte officiële EoL ("End of Life", of eind van het leven) in
 ---
 
 
-Laatste Bijgewerkt: 16 Maart 2017 (2017.03.16).
+Laatste Bijgewerkt: 24 Maart 2017 (2017.03.24).

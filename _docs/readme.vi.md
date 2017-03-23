@@ -268,7 +268,6 @@ Tập tin | Chi tiết
 /vault/quarantine/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/signatures/ | Thư mục cho chữ ký (chứa các tập tin cho chữ ký).
 /vault/signatures/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
-/vault/signatures/hex_general_commands.csv | CSV (dấu phẩy tách giá trị) thập lục phân được mã hóa của phát hiện lệnh chung chung tùy chọn sử dụng bởi phpMussel.
 /vault/signatures/switch.dat | Điều khiển và định nghĩa biến.
 /vault/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/cli.php | Tập tin cho xử lý CLI.
@@ -465,9 +464,6 @@ Phát hiện của tấn công tắc kè hoa: False = Tắt; True = Trên.
 
 "archive_file_extensions"
 - Được công nhận mở rộng cho tập tin kho lưu trữ (định dạng là CSV; chỉ nên thêm hay loại bỏ khi có vấn đề xảy ra; loại bỏ không cần thiết có thể gây ra sai tích cực để xuất hiện cho tập tin kho lưu trữ, trong khi thêm không cần thiết sẽ trong bản chất danh sách trắng những gì bạn đang thêm từ phát hiện cụ tấn công; sửa đổi với cách thận trọng; cũng lưu ý rằng điều này không có tác dụng liên quan đến những gì kho lưu trữ có thể và không thể được phân tích ở nội dung cấp). Danh sách này, như là mặc định, liệt kê các định dạng sử dụng phổ biến nhất trên phần lớn các hệ thống và CMS, nhưng là cố tình không nhất thiết phải toàn diện.
-
-"general_commands"
-- Tìm kiếm nội dung của tập tin cho statement (báo cáo) và lệnh chung như thế `eval()` và `exec()`? False = Không kiểm tra [Mặc định]; True = Kiểm tra. Vô hiệu hóa tùy chọn này nếu bạn dự định tải lên những việc sau đây để một hệ thống hay CMS của bạn thông qua trình duyệt của bạn: PHP, JavaScript, HTML, python, perl, vân vân. Kích hoạt tùy chọn này nếu bạn không có bất kỳ sự bảo vệ thêm trên hệ thống của bạn và không có ý định để tải lên các tập tin đó. Nếu bạn sử dụng an ninh bổ sung kết hợp với phpMussel (như thế ZB Block), không cần phải kích hoạt tùy chọn này, bởi vì hầu hết những gì phpMussel sẽ tìm (trong bối cảnh các tùy chọn này) là sự trùng lặp của bảo vệ rằng sẽ rất có thể đã được cung cấp.
 
 "block_control_characters"
 - Chặn bất kỳ tập tin có chứa bất kỳ ký tự điều khiển (khác hơn so với dòng mới)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Nếu bạn _**CHỈ**_ tải lên văn bản thô, thế thì bạn có thể kích hoạt tùy chọn này để cung cấp một số bảo vệ bổ sung để hệ thống của bạn. Tuy nhiên, nếu bạn tải lên bất cứ điều gì khác hơn văn bản thô, cho phép điều này có thể dẫn đến sai tích cực. False = Không chặn [Mặc định]; True = Chặn.
@@ -723,4 +719,4 @@ Không. PHP 5.4.0 đạt EoL ("End of Life", hoặc sự kết thúc của cuộ
 ---
 
 
-Lần cuối cập nhật: 16 Tháng Ba 2017 (2017.03.16).
+Lần cuối cập nhật: 24 Tháng Ba 2017 (2017.03.24).

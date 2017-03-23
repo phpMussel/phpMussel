@@ -268,7 +268,6 @@ Fichier | Description
 /vault/quarantine/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/signatures/ | Signatures répertoire (contient des fichiers de signatures).
 /vault/signatures/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
-/vault/signatures/hex_general_commands.csv | Hex-codé CSV de généraux commande détections optionnellement utilisés par phpMussel.
 /vault/signatures/switch.dat | Contrôle et définit certaines variables.
 /vault/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/cli.php | Module de CLI.
@@ -465,9 +464,6 @@ Détection des attaques de caméléon: False = Désactivé; True = Activé.
 
 "archive_file_extensions"
 - Les extensions de fichiers d'archives reconnus (format est CSV; devraient ajouter ou supprimer seulement quand problèmes surviennent; supprimer inutilement peut entraîner des faux positifs à paraître pour archive fichiers, tandis que ajoutant inutilement sera essentiellement liste blanche ce que vous ajoutez à partir de l'attaque spécifique détection; modifier avec prudence; aussi noter que cela n'a aucun effet sur ce archives peut et ne peut pas être analysé au niveau du contenu). La liste, comme en cas de défaut, énumère les formats plus couramment utilisé dans la majorité des systèmes et CMS, mais volontairement pas nécessairement complète.
-
-"general_commands"
-- Vérifier les fichiers pour les déclarations et commandes générales comme `eval()` et `exec()`? False = Non (pas vérifier) [Défaut]; True = Oui (vérifier). Définir à `false` si vous avez l'intention à téléchargez de la suivant à votre système ou CMS via votre navigateur: PHP, JavaScript, HTML, python, perl fichiers, etc. Définir à `true` si vous n'avez pas supplémentaire protections pour votre système et n'ont pas l'intention de téléchargement de ces fichiers. Si vous utilisez supplémentaire sécurité en conjonction avec phpMussel (comme ZB Block), il n'est pas nécessaire d'activer cette directive, parce la plupart de que phpMussel va chercher pour (dans le contexte de cette directive) sont duplications de protections qui sont déjà fournis.
 
 "block_control_characters"
 - Bloquer tous les fichiers contenant les caractères de contrôle (autre que les sauts de ligne)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Si vous êtes _**SEULEMENT**_ télécharger de brut texte fichiers, puis vous pouvez activer cette option à fournir une supplémentaire protection à votre système. Mais, si vous télécharger quelque chose plus que brut texte, l'activation de cette peut créer faux positifs. False = Ne pas bloquer [Défaut]; True = Bloquer.
@@ -723,4 +719,4 @@ Non. PHP 5.4.0 a atteint officiellement l'EoL ("End of Life", ou fin de vie) en 
 ---
 
 
-Dernière Mise à Jour: 19 Mars 2017 (2017.03.19).
+Dernière Mise à Jour: 24 Mars 2017 (2017.03.24).

@@ -11,12 +11,10 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.03.11).
+ * This file: Functions file (last modified: 2017.03.24).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
- * @todo Wish list: Icon parsing (github.com/Maikuolan/phpMussel/issues/5).
- * @todo Wish list: Certificate parsing (github.com/Maikuolan/phpMussel/issues/4).
  * @todo Fix client language bug (github.com/Maikuolan/phpMussel/issues/28).
  * @todo Get serialised logging working for CLI mode (github.com/Maikuolan/phpMussel/issues/54).
  * @todo Fix non-ANSI/non-ASCII filenames in CLI mode bug (github.com/Maikuolan/phpMussel/issues/61).
@@ -2282,6 +2280,57 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         }
     }
 
+    /** Process CSVs (identified as "general command detections"). */
+    $SigFiles = isset($phpMussel['memCache']['General_Command_Detections']) ? explode(',', $phpMussel['memCache']['General_Command_Detections']) : array();
+    foreach ($SigFiles as $SigFile) {
+        if (!$SigFile) {
+            continue;
+        }
+        if (!isset($phpMussel['memCache'][$SigFile])) {
+            $phpMussel['memCache'][$SigFile] = $phpMussel['ReadFile']($phpMussel['sigPath'] . $SigFile);
+        }
+        if (!$phpMussel['memCache'][$SigFile]) {
+            $phpMussel['memCache']['scan_errors']++;
+            if (!$phpMussel['Config']['signatures']['fail_silently']) {
+                if (!$flagged) {
+                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
+                }
+                $phpMussel['whyflagged'] .=
+                    $phpMussel['lang']['scan_signature_file_missing'] .
+                    ' (' . $SigFile . ')' .
+                    $phpMussel['lang']['_exclamation'];
+                return array(-3,
+                    $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
+                    ' (' . $SigFile . ')' .
+                    $phpMussel['lang']['_exclamation_final'] . "\n"
+                );
+            }
+        } else {
+            if (substr($phpMussel['memCache'][$SigFile], 0, 9) === 'phpMussel') {
+                $phpMussel['memCache'][$SigFile] = substr($phpMussel['memCache'][$SigFile], 11, -1);
+            }
+            $ArrayCSV = explode(',', $phpMussel['memCache'][$SigFile]);
+            foreach ($ArrayCSV as $ItemCSV) {
+                if (substr_count($str_hex_norm, $ItemCSV)) {
+                    if (!$flagged) {
+                        $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
+                        $flagged = true;
+                    }
+                    $heur['detections']++;
+                    $phpMussel['memCache']['detections_count']++;
+                    $out .=
+                        $lnap . $phpMussel['lang']['scan_command_injection'] .
+                        $phpMussel['lang']['_exclamation_final'] . "\n";
+                    $phpMussel['whyflagged'] .=
+                        $phpMussel['lang']['scan_command_injection'] . ', \'' .
+                        $phpMussel['Function']('HEX', $ItemCSV) .
+                        '\' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
+                }
+            }
+            unset($ItemCSV, $ArrayCSV);
+        }
+    }
+
     /** Process hash signatures. */
     $SigFiles = isset($phpMussel['memCache']['Hash']) ? explode(',', $phpMussel['memCache']['Hash']) : array();
     foreach ($SigFiles as $SigFile) {
@@ -3149,12 +3198,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 }
             }
             $urlscanner['domains_c'] = count($urlscanner['domains_p']);
-            if (
-                !$out &&
-                $phpMussel['Config']['urlscanner']['lookup_hphosts'] &&
-                $urlscanner['domains_c'] &&
-                !empty($SigData[$SigSet]['UseAPI'])
-            ) {
+            if (!$out && $phpMussel['Config']['urlscanner']['lookup_hphosts'] && $urlscanner['domains_c']) {
                 /** Fetch the cache entry for hpHosts, if it doesn't already exist. */
                 if (!isset($phpMussel['memCache']['urlscanner_domains'])) {
                     $phpMussel['memCache']['urlscanner_domains'] =
@@ -3275,12 +3319,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     $phpMussel['SaveCache']('urlscanner_domains', $urlscanner['y'], $phpMussel['memCache']['urlscanner_domains']);
             }
             $urlscanner['urls_c'] = count($urlscanner['urls_p']);
-            if (
-                !$out &&
-                $phpMussel['Config']['urlscanner']['google_api_key'] &&
-                $urlscanner['urls_c'] &&
-                !empty($SigData[$SigSet]['UseAPI'])
-            ) {
+            if (!$out && $phpMussel['Config']['urlscanner']['google_api_key'] && $urlscanner['urls_c']) {
                 $urlscanner['urls_chunked'] =
                     ($urlscanner['urls_c'] > 500) ?
                     array_chunk($urlscanner['urls_p'], 500) :
@@ -4114,67 +4153,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 array('x' => 'PDF'),
                 $phpMussel['lang']['scan_chameleon']
             ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-        }
-    }
-
-    /** General command detection. */
-    if ($phpMussel['Config']['attack_specific']['general_commands']) {
-        while (true) {
-            if (!isset($phpMussel['memCache']['hex_general_commands.csv'])) {
-                $phpMussel['memCache']['hex_general_commands.csv'] =
-                    explode(',', $phpMussel['ReadFile']($phpMussel['sigPath'] . 'hex_general_commands.csv'));
-            }
-            if (!$phpMussel['memCache']['hex_general_commands.csv']) {
-                $phpMussel['memCache']['scan_errors']++;
-                if (!$phpMussel['Config']['signatures']['fail_silently']) {
-                    if (!$flagged) {
-                        $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
-                    }
-                    $phpMussel['whyflagged'] .=
-                        $phpMussel['lang']['scan_signature_file_missing'] .
-                        ' (hex_general_commands.csv)' . $phpMussel['lang']['_exclamation'];
-                    return array(-3,
-                        $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
-                        ' (hex_general_commands.csv)' . $phpMussel['lang']['_exclamation_final'] . "\n"
-                    );
-                }
-                break;
-            }
-            $c = count($phpMussel['memCache']['hex_general_commands.csv']);
-            if ($c < 1) {
-                $phpMussel['memCache']['scan_errors']++;
-                if (!$phpMussel['Config']['signatures']['fail_silently']) {
-                    if (!$flagged) {
-                        $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
-                    }
-                    $phpMussel['whyflagged'] .=
-                        $phpMussel['lang']['scan_signature_file_corrupted'] .
-                        ' (hex_general_commands.csv)' . $phpMussel['lang']['_exclamation'];
-                    return array(-3,
-                        $lnap . $phpMussel['lang']['scan_signature_file_corrupted'] .
-                        ' (hex_general_commands.csv)' . $phpMussel['lang']['_exclamation_final'] . "\n"
-                    );
-                }
-                break;
-            }
-            for ($i = 0; $i < $c; $i++) {
-                if (substr_count($str_hex_norm, $phpMussel['memCache']['hex_general_commands.csv'][$i])) {
-                    $xgc = $phpMussel['Function']('HEX', $phpMussel['memCache']['hex_general_commands.csv'][$i]);
-                    if (!$flagged) {
-                        $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                        $flagged = true;
-                    }
-                    $heur['detections']++;
-                    $phpMussel['memCache']['detections_count']++;
-                    $out .=
-                        $lnap . $phpMussel['lang']['scan_command_injection'] .
-                        $phpMussel['lang']['_exclamation_final'] . "\n";
-                    $phpMussel['whyflagged'] .=
-                        $phpMussel['lang']['scan_command_injection'] .
-                        ', \'' . $xgc . '\' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-                }
-            }
-            break;
         }
     }
 

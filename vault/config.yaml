@@ -161,9 +161,6 @@ Config Defaults:
   archive_file_extensions:
    type: string
    default: "7z,a,ace,alz,apk,app,ar,arc,arj,ba,bh,bz,bz2,dmg,gz,ice,iso,lha,lz,lzh,lzo,lzw,lzx,mar,pak,pck,pea,phar,rar,rz,s7z,sea,sen,sfx,shar,sqx,tar,tgz,tlz,xar,xp3,xz,yz1,z,zz,paq*,sit*,tbz*,zip*"
-  general_commands:
-   type: bool
-   default: false
   block_control_characters:
    type: bool
    default: false

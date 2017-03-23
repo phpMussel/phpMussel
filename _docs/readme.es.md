@@ -268,7 +268,6 @@ Archivo | Descripción
 /vault/quarantine/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/signatures/ | Directorio de firmas (contiene los archivos de firmas).
 /vault/signatures/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
-/vault/signatures/hex_general_commands.csv | Hex-codificado CSV de generales comandos detecciones opcionalmente utilizado por phpMussel.
 /vault/signatures/switch.dat | Esto controla y establece ciertas variables.
 /vault/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/cli.php | Módulo de la CLI.
@@ -465,9 +464,6 @@ Camaleón ataque detección: False = Desactivado; True = Activado.
 
 "archive_file_extensions"
 - Reconocido compactado archivo extensiones (formato es CSV; sólo debe agregar o eliminar cuando problemas ocurrir; eliminando innecesariamente puede causar falsos positivos a aparecer para compactados archivos, mientras añadiendo innecesariamente hará esencialmente whitelist que cuales eres añadiendo desde ataque específica detección; modificar con precaución; También notar que esto no tiene efecto en aquellos compactados archivos que pueden y no pueden ser analizado a contenido nivel). La lista, como es a predefinición, describe los formatos más comúnmente utilizados a través de la mayoría de sistemas y CMS, pero intencionalmente no es necesariamente exhaustiva.
-
-"general_commands"
-- Buscar contenidos de archivos para declaraciones y comandos generales como tal `eval()` y `exec()`? False = No (no buscar) [Predefinido]; True = Sí (buscar). Desactivar esta directiva si tiene intención de subir cualquiera de los siguientes para su sistema o CMS a través de su navegador: PHP, JavaScript, HTML, python, perl archivos y etcétera. Activar esta directiva si usted no tiene cualquier adicional protección en su sistema y no tiene intención de subir estos tipos de archivos. Si utiliza adicional seguridad junto con phpMussel (como tal ZB Block), no hay necesidad de activar esta directiva, porque la mayor parte de lo que phpMussel buscará (en el contexto de esta directiva) son duplicaciones de protecciones que probablemente ya está previsto.
 
 "block_control_characters"
 - Bloquear cualquier archivos que contenga cualquier caracteres de control (aparte de saltos de línea)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Si usted sólo subir texto sin cualquier formato, usted puede activar esta opción para proporcionar alguna adicional protección para su sistema. Pero, si usted subir cualquier cosa otro de texto sin cualquier formato, activando esto puede dar lugar a falsos positivos. False = No bloquear [Predefinido]; True = Bloquear.
@@ -723,4 +719,4 @@ No. PHP 5.4.0 llegó a EoL oficial ("End of Life", o fin de la vida) en 2014, y 
 ---
 
 
-Última Actualización: 16 Marzo 2017 (2017.03.16).
+Última Actualización: 24 Marzo 2017 (2017.03.24).
