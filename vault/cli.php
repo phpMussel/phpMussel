@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2017.02.11).
+ * This file: CLI handler (last modified: 2017.03.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -102,7 +102,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         /** Generate an MD5 signature using a file. **/
         if ($phpMussel['cmd'] == 'md5_file') {
             $stl = substr($phpMussel['cli_args'][2], strlen($phpMussel['cmd']) + 1);
-            if (@is_dir($stl)) {
+            if (is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
                     echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
@@ -118,7 +118,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         echo $phpMussel['Fork']('md5_file ' . $stl . $d[$i], $d[$i]) . "\n";
                     }
                 }
-            } elseif (@is_file($stl)) {
+            } elseif (is_file($stl)) {
                 $hashme = $phpMussel['ReadFile']($stl, 0, true);
                 echo md5($hashme) . ':' . strlen($hashme) . ":YOUR-SIGNATURE-NAME\n";
             } else {
@@ -129,7 +129,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         /** Generate a CoEx signature using a file. **/
         if ($phpMussel['cmd'] == 'coex_file') {
             $stl = substr($phpMussel['cli_args'][2], strlen($phpMussel['cmd']) + 1);
-            if (@is_dir($stl)) {
+            if (is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
                     echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
@@ -145,7 +145,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         echo $phpMussel['Fork']('coex_file ' . $stl . $d[$i], $d[$i]) . "\n";
                     }
                 }
-            } elseif (@is_file($stl)) {
+            } elseif (is_file($stl)) {
                 $hashme = $phpMussel['ReadFile']($stl, 0, true);
                 echo '$md5:' . md5($hashme) . ';$sha:' . sha1($hashme) . ';$str_len:' . strlen($hashme) . ";YOUR-SIGNATURE-NAME\n";
             }
@@ -155,7 +155,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         /** Fetch PE metadata. **/
         if ($phpMussel['cmd'] == 'pe_meta') {
             $stl = substr($phpMussel['cli_args'][2], strlen($phpMussel['cmd']) + 1);
-            if (@is_dir($stl)) {
+            if (is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
                     echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
@@ -171,7 +171,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         echo $phpMussel['Fork']('pe_meta ' . $stl . $d[$i], $d[$i]) . "\n";
                     }
                 }
-            } elseif (@is_file($stl)) {
+            } elseif (is_file($stl)) {
                 $hashme = $phpMussel['ReadFile']($stl, 0, true);
                 if (substr($hashme, 0, 2) === 'MZ') {
                     $PEArr = array();
@@ -305,7 +305,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         if ($phpMussel['cmd'] == 'md5_file' || $phpMussel['cmd'] == 'm') {
             echo "\n";
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            if (@is_dir($stl)) {
+            if (is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
                     echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
@@ -321,7 +321,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         echo $phpMussel['Fork']('md5_file ' . $stl . $d[$i], $d[$i]) . "\n";
                     }
                 }
-            } elseif (@is_file($stl)) {
+            } elseif (is_file($stl)) {
                 $hashme = $phpMussel['ReadFile']($stl, 0, true);
                 echo md5($hashme) . ':' . strlen($hashme) . ":YOUR-SIGNATURE-NAME\n";
             } else {
@@ -333,7 +333,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         if ($phpMussel['cmd'] == 'coex_file') {
             echo "\n";
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            if (@is_dir($stl)) {
+            if (is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
                     echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
@@ -349,7 +349,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         echo $phpMussel['Fork']('coex_file ' . $stl . $d[$i], $d[$i]) . "\n";
                     }
                 }
-            } elseif (@is_file($stl)) {
+            } elseif (is_file($stl)) {
                 $hashme = $phpMussel['ReadFile']($stl, 0, true);
                 echo '$md5:' . md5($hashme) . ';$sha:' . sha1($hashme) . ';$str_len:' . strlen($hashme) . ";YOUR-SIGNATURE-NAME\n";
             } else {
@@ -361,7 +361,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         if ($phpMussel['cmd'] == 'pe_meta') {
             echo "\n";
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            if (@is_dir($stl)) {
+            if (is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
                     echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
@@ -377,7 +377,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         echo $phpMussel['Fork']('pe_meta ' . $stl . $d[$i], $d[$i]) . "\n";
                     }
                 }
-            } elseif (@is_file($stl)) {
+            } elseif (is_file($stl)) {
                 echo $phpMussel['Fork']('pe_meta ' . $stl, $stl) . "\n";
             } else {
                 echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
@@ -479,7 +479,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             $phpMussel['memCache']['start_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
             $phpMussel['memCache']['start_time_2822'] = date('r', $phpMussel['memCache']['start_time']);
             echo $s = $phpMussel['memCache']['start_time_2822'] . ' ' . $phpMussel['lang']['started'] . $phpMussel['lang']['_fullstop_final'] . "\n";
-            if (@is_dir($stl)) {
+            if (is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
                     $out = '> ' . $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
@@ -503,7 +503,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         $out = '';
                     }
                 }
-            } elseif (@is_file($stl)) {
+            } elseif (is_file($stl)) {
                 $out = $phpMussel['Fork']('scan ' . $stl, $stl);
                 if (!$out) {
                     $out = '> ' . $phpMussel['lang']['cli_failed_to_complete'] . $phpMussel['lang']['_exclamation_final'] . "\n";

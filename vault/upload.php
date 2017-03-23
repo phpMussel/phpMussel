@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2017.02.11).
+ * This file: Upload handler (last modified: 2017.03.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -253,7 +253,6 @@ if ($phpMussel['upload']['count'] > 0) {
                         $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']]
                     );
                 } catch (\Exception $e) {
-                    // trigger_error($e->getMessage(), E_USER_ERROR);
                     die($e->getMessage());
                 }
 
@@ -438,7 +437,6 @@ if ($phpMussel['upload']['count'] > 0) {
                         $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']]
                     );
                 } catch (\Exception $e) {
-                    // trigger_error($e->getMessage(), E_USER_ERROR);
                     die($e->getMessage());
                 }
 
