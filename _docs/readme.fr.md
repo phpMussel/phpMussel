@@ -106,7 +106,7 @@ Cependant, vous êtes également capable d'instruire phpMussel à analyser spéc
 
 Exemples:
 
-```
+```PHP
  $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```

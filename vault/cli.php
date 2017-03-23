@@ -71,7 +71,6 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             try {
                 echo $phpMussel['Recursor'](substr($phpMussel['cli_args'][2], 5), true, true, 0, $phpMussel['cli_args'][3]);
             } catch (\Exception $e) {
-                // trigger_error($e->getMessage(), E_USER_ERROR);
                 die($e->getMessage());
             }
             if ($phpMussel['Config']['general']['scan_cache_expiry']) {
@@ -184,7 +183,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                             $PEArr['DoScan'] = false;
                             break;
                         }
-                        $PEArr['Magic'] = @substr($hashme, $PEArr['Offset'], 2);
+                        $PEArr['Magic'] = substr($hashme, $PEArr['Offset'], 2);
                         if ($PEArr['Magic'] !== 'PE') {
                             $PEArr['DoScan'] = false;
                             break;
@@ -219,7 +218,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                             $PEArr['SizeOfRawData'] = $PEArr['SizeOfRawData'][1];
                             $PEArr['PointerToRawData'] = @unpack('S', substr($PEArr['SectionHead'], 20, 4));
                             $PEArr['PointerToRawData'] = $PEArr['PointerToRawData'][1];
-                            $PEArr['SectionData'] = @substr($hashme, $PEArr['PointerToRawData'], $PEArr['SizeOfRawData']);
+                            $PEArr['SectionData'] = substr($hashme, $PEArr['PointerToRawData'], $PEArr['SizeOfRawData']);
                             $PEArr['MD5'] = md5($PEArr['SectionData']);
                             echo $PEArr['SizeOfRawData'] . ':' . $PEArr['MD5'] . ':' . $PEArr['SectionName'] . "\n";
                         }

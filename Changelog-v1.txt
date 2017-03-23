@@ -157,7 +157,7 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   disabled by default for security reasons, but you can enable it via the
   relevant newly created configuration directives pertaining to it. Completely
   rewrote the configuration handler: Fallbacks aren't hardcoded with PHP at the
-  time of loading the configuration file anyhow; Fallbacks are now determined
+  time of loading the configuration file anymore; Fallbacks are now determined
   via a separate configuration defaults file written using YAML. Completely
   dropped support for users overriding the default language specification until
   further notice, and dropped the "lang_override" configuration directive (too

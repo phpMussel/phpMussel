@@ -106,7 +106,7 @@ Sie sind jedoch auch in der Lage, phpMussel anzuweisen, spezifische Dateien, Ord
 
 Beispiel:
 
-```
+```PHP
  $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```
@@ -268,8 +268,6 @@ Datei | Beschreibung
 /vault/quarantine/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/signatures/ | Signaturverzeichnis (enthält Signaturdateien).
 /vault/signatures/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-
-
 /vault/signatures/switch.dat | Diese Datei definiert bestimmte Variablen.
 /vault/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/cli.php | CLI-Handler.

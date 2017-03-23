@@ -106,7 +106,7 @@ Bagaimanapun, Anda juga bisa menginstruksikan phpMussel untuk memindai file, dir
 
 Contoh:
 
-```
+```PHP
  $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```

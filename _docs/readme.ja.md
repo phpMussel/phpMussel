@@ -106,7 +106,7 @@ phpMusselは特別な使用環境を必要としないスクリプトです。 �
 
 例：
 
-```
+```PHP
  $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```

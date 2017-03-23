@@ -106,7 +106,7 @@ phpMussel функционирует полностью в автономном 
 
 Например:
 
-```
+```PHP
  $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```

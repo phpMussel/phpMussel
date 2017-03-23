@@ -106,7 +106,7 @@ Echter, u bent ook in staat om te instrueren phpMussel om te scannen specifiek b
 
 Voorbeeld:
 
-```
+```PHP
  $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```

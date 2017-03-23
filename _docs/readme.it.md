@@ -106,7 +106,7 @@ Ma, si è anche in grado di istruire phpMussel per la scansione per i specifici 
 
 Esempi:
 
-```
+```PHP
  $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```

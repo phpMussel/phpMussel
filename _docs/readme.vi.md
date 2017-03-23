@@ -106,7 +106,7 @@ Tuy nhiên, bạn cũng có thể nói với phpMussel để quét tập tin c�
 
 Các ví dụ:
 
-```
+```PHP
  $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```

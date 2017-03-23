@@ -106,7 +106,7 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 
 例子：
 
-```
+```PHP
  $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```

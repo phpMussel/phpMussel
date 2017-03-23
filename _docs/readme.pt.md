@@ -106,7 +106,7 @@ Porém, você também é capaz de instruir phpMussel para verificar arquivos e/o
 
 Exemplos:
 
-```
+```PHP
  $results = $phpMussel['Scan']('/user_name/public_html/my_file.html', true, true);
  echo $results;
 ```
