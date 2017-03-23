@@ -1,0 +1,223 @@
+Config Defaults:
+ general:
+  cleanup:
+   type: bool
+   default: true
+  scan_log:
+   type: string
+   default: "scan_log.txt"
+  scan_log_serialized:
+   type: string
+   default: "scan_log_serialized.txt"
+  scan_kills:
+   type: string
+   default: "scan_kills.txt"
+  timeOffset:
+   type: int
+   default: 0
+  ipaddr:
+   type: string
+   default: "REMOTE_ADDR"
+  enable_plugins:
+   type: bool
+   default: true
+  forbid_on_block:
+   type: int
+   default: 403
+   choices:
+    200: 200 OK
+    403: 403 Forbidden
+    503: 503 Service Unavailable
+  delete_on_sight:
+   type: bool
+   default: false
+  lang:
+   type: string
+   default: "en"
+   choices:
+    en: English
+    ar: العربية
+    de: Deutsch
+    es: Español
+    fr: Français
+    id: Bahasa Indonesia
+    it: Italiano
+    ja: 日本語
+    ko: 한국어
+    nl: Nederlandse
+    pt: Português
+    ru: Русский
+    vi: Tiếng Việt
+    zh: 中文（简体）
+    zh-tw: 中文（傳統）
+  quarantine_key:
+   type: string
+   default: ""
+  quarantine_max_filesize:
+   type: int
+   default: 2048
+  quarantine_max_usage:
+   type: int
+   default: 65536
+  honeypot_mode:
+   type: bool
+   default: false
+  scan_cache_expiry:
+   type: int
+   default: 21600
+  disable_cli:
+   type: bool
+   default: false
+  disable_frontend:
+   type: bool
+   default: true
+  max_login_attempts:
+   type: int
+   default: 5
+  FrontEndLog:
+   type: string
+   default: ""
+ signatures:
+  Active:
+   type: string
+   default: ""
+  fail_silently:
+   type: bool
+   default: true
+  fail_extensions_silently:
+   type: bool
+   default: true
+  detect_adware:
+   type: bool
+   default: true
+  detect_joke_hoax:
+   type: bool
+   default: true
+  detect_pua_pup:
+   type: bool
+   default: true
+  detect_packer_packed:
+   type: bool
+   default: true
+  detect_shell:
+   type: bool
+   default: true
+  detect_deface:
+   type: bool
+   default: true
+ files:
+  max_uploads:
+   type: int
+   default: 10
+  filesize_limit:
+   type: int
+   default: 65536
+  filesize_response:
+   type: bool
+   default: true
+  filetype_whitelist:
+   type: string
+   default: ""
+  filetype_blacklist:
+   type: string
+   default: "386,acc*,acm,act*,apk,app,ash*,asm*,asx*,ax,bat,bin,ccc,cgi,cmd,com*,cpl,cpp,csh,dll,drv,elf,exe,fxp,gad*,hta*,htp*,ico,inf,ins,inx,ipa,isu,job,js,jse,ksh,lnk,msc,msi,msp,mst,net,ocx,ops,org,osx,out,paf,php*,pif,pl,prg,ps1,reg,rgs,rs,run,scr*,sct,shb,shs,sql*,sys,u3p,url,vb,vbe,vbs*,wor*,ws,wsf,xsl"
+  filetype_greylist:
+   type: string
+   default: ""
+  check_archives:
+   type: bool
+   default: true
+  filesize_archives:
+   type: bool
+   default: true
+  filetype_archives:
+   type: bool
+   default: false
+  max_recursion:
+   type: int
+   default: 10
+  block_encrypted_archives:
+   type: bool
+   default: true
+ attack_specific:
+  chameleon_from_php:
+   type: bool
+   default: true
+  chameleon_from_exe:
+   type: bool
+   default: true
+  chameleon_to_archive:
+   type: bool
+   default: true
+  chameleon_to_doc:
+   type: bool
+   default: true
+  chameleon_to_img:
+   type: bool
+   default: true
+  chameleon_to_pdf:
+   type: bool
+   default: true
+  archive_file_extensions:
+   type: string
+   default: "7z,a,ace,alz,apk,app,ar,arc,arj,ba,bh,bz,bz2,dmg,gz,ice,iso,lha,lz,lzh,lzo,lzw,lzx,mar,pak,pck,pea,phar,rar,rz,s7z,sea,sen,sfx,shar,sqx,tar,tgz,tlz,xar,xp3,xz,yz1,z,zz,paq*,sit*,tbz*,zip*"
+  block_control_characters:
+   type: bool
+   default: false
+  corrupted_exe:
+   type: bool
+   default: true
+  decode_threshold:
+   type: int
+   default: 512
+  scannable_threshold:
+   type: int
+   default: 32768
+ compatibility:
+  ignore_upload_errors:
+   type: bool
+   default: false
+  only_allow_images:
+   type: bool
+   default: false
+ heuristic:
+  threshold:
+   type: int
+   default: 3
+ virustotal:
+  vt_public_api_key:
+   type: string
+   default: ""
+  vt_suspicion_level:
+   type: int
+   default: 1
+  vt_weighting:
+   type: int
+   default: 0
+  vt_quota_rate:
+   type: int
+   default: 4
+  vt_quota_time:
+   type: int
+   default: 1
+ urlscanner:
+  lookup_hphosts:
+   type: bool
+   default: true
+  google_api_key:
+   type: string
+   default: ""
+  maximum_api_lookups:
+   type: int
+   default: 10
+  maximum_api_lookups_response:
+   type: bool
+   default: false
+  cache_time:
+   type: int
+   default: 3600
+ template_data:
+  css_url:
+   type: string
+   default: ""
+

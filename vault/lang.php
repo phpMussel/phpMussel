@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2016.10.15).
+ * This file: Language handler (last modified: 2016.12.14).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -30,24 +30,6 @@ $phpMussel['lang']['cli_ln1'] =
 
 /** phpMussel CLI-mode prompt. */
 $phpMussel['lang']['cli_prompt'] = "\n\n>> ";
-
-/** Ensure HTTP_ACCEPT_LANGUAGE is defined (even if it's empty). */
-if (!isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-    $_SERVER['HTTP_ACCEPT_LANGUAGE'] = '';
-}
-
-/**
- * If lang_override is enabled, and if HTTP_ACCEPT_LANGUAGE matches a
- * permissible language choice, we'll override the language directive using the
- * language specified by HTTP_ACCEPT_LANGUAGE.
- */
-if ($phpMussel['Config']['general']['lang_override'] && $_SERVER['HTTP_ACCEPT_LANGUAGE']) {
-    if (substr_count($phpMussel['Config']['lang_acceptable'], substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5))) {
-        $phpMussel['Config']['general']['lang'] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
-    } elseif (substr_count($phpMussel['Config']['lang_acceptable'], substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2))) {
-        $phpMussel['Config']['general']['lang'] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-    }
-}
 
 /**
  * Kills the script if the language data file corresponding to the language

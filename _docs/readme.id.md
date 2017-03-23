@@ -19,7 +19,7 @@
 ---
 
 
-###1. <a name="SECTION1"></a>SEPATAH KATA
+### 1. <a name="SECTION1"></a>SEPATAH KATA
 
 Terima kasih untuk menggunakan phpMussel, sebuah skrip PHP di-design untuk mendeteksi trojan-trojan, virus-virus dan serangan-serangan lainnya dalam file-file diupload ke sistem Anda dimana saja skrip di kaitkan, berdasarkan tanda tangan dari ClamAV dan lain-lain.
 
@@ -40,7 +40,7 @@ Dokumen ini dan paket terhubung di dalamnya dapat di unduh secara gratis dari:
 ---
 
 
-###2A. <a name="SECTION2A"></a>BAGAIMANA CARA MENGINSTALL (UNTUK SERVER WEB)
+### 2A. <a name="SECTION2A"></a>BAGAIMANA CARA MENGINSTALL (UNTUK SERVER WEB)
 
 Saya berharap untuk mempersingkat proses ini dengan membuat sebuah installer pada beberapa point di dalam masa depan yang tidak terlalu jauh, tapi kemudian, ikuti instruksi-instruksi ini untuk mendapatkan phpMussel bekerja pada *banyak sistem dan CMS:
 
@@ -73,7 +73,7 @@ Atau ini di file `.htaccess`:
 ---
 
 
-###2B. <a name="SECTION2B"></a>BAGAIMANA CARA MENGINSTALL (UNTUK CLI)
+### 2B. <a name="SECTION2B"></a>BAGAIMANA CARA MENGINSTALL (UNTUK CLI)
 
 Saya berharap untuk mempersingkat proses ini dengan membuat sebuah installer dari beberapa poin di dalam masa depan yang tidak terlalu jauh, tapi sampai kemudian, turuti instruksi ini untuk membuat phpMussel siap bekerja dengan CLI (mohon diingat untuk poin ini, CLI mendukung hanya pada sistem berbasis Windows; Linux dan sistem-sistem yang lain akan di persiapkan pada versi selanjutnya dari phpMussel):
 
@@ -90,7 +90,7 @@ Saya berharap untuk mempersingkat proses ini dengan membuat sebuah installer dar
 ---
 
 
-###3A. <a name="SECTION3A"></a>BAGAIMANA CARA MENGGUNAKAN (UNTUK SERVER WEB)
+### 3A. <a name="SECTION3A"></a>BAGAIMANA CARA MENGGUNAKAN (UNTUK SERVER WEB)
 
 phpMussel harus mampu beroperasi benar dengan persyaratan minimal darimu: Setelah instalasi, harus bekerja segera dan harus berguna segera.
 
@@ -129,7 +129,7 @@ Untuk menonaktifkan tanda tangan-tanda tangan yang dimasukkan dalam phpMussel (s
 ---
 
 
-###3B. <a name="SECTION3B"></a>BAGAIMANA CARA MENGGUNAKAN (UNTUK CLI)
+### 3B. <a name="SECTION3B"></a>BAGAIMANA CARA MENGGUNAKAN (UNTUK CLI)
 
 Mohon merujuk pada seksi "BAGAIMANA CARA MENGINSTALL (UNTUK CLI)" dari file README.
 
@@ -140,15 +140,15 @@ Mohon diingat bahwa phpMussel adalah scanner *on-demand*; adalah *BUKAN* scanner
 ---
 
 
-###4. <a name="SECTION4"></a>MANAJEMEN BAGIAN DEPAN
+### 4. <a name="SECTION4"></a>MANAJEMEN BAGIAN DEPAN
 
-####4.0 APA YANG MANAJEMEN BAGIAN DEPAN.
+#### 4.0 APA YANG MANAJEMEN BAGIAN DEPAN.
 
 Manajemen bagian depan menyediakan cara yang nyaman dan mudah untuk mempertahankan, mengelola, dan memperbarui instalasi phpMussel Anda. Anda dapat melihat, berbagi, dan download file log melalui halaman log, Anda dapat mengubah konfigurasi melalui halaman konfigurasi, Anda dapat instal dan uninstal/hapus komponen melalui halaman pembaruan, dan Anda dapat upload, download, dan memodifikasi file dalam vault Anda melalui file manager.
 
 Bagian depan adalah dinonaktifkan secara default untuk mencegah akses yang tidak sah (akses yang tidak sah bisa memiliki konsekuensi yang signifikan untuk website Anda dan keamanannya). Instruksi untuk mengaktifkannya termasuk di bawah paragraf ini.
 
-####4.1 BAGAIMANA CARA MENGAKTIFKAN MANAJEMEN BAGIAN DEPAN.
+#### 4.1 BAGAIMANA CARA MENGAKTIFKAN MANAJEMEN BAGIAN DEPAN.
 
 1) Menemukan direktif `disable_frontend` dalam `config.ini`, dan mengaturnya untuk true (akan menjadi false secara default).
 
@@ -158,7 +158,7 @@ Bagian depan adalah dinonaktifkan secara default untuk mencegah akses yang tidak
 
 Catat: Setelah Anda dimasukkan untuk pertama kalinya, untuk mencegah akses tidak sah ke manajemen bagian depan, Anda harus segera mengubah nama pengguna dan kata sandi Anda! Ini sangat penting, karena itu mungkin untuk meng-upload kode PHP sewenang-wenang untuk situs web Anda melalui bagian depan.
 
-####4.2 BAGAIMANA CARA MENGGUNAKAN MANAJEMEN BAGIAN DEPAN.
+#### 4.2 BAGAIMANA CARA MENGGUNAKAN MANAJEMEN BAGIAN DEPAN.
 
 Instruksi disediakan pada setiap halaman dari manajemen bagian depan, untuk menjelaskan cara yang benar untuk menggunakannya dan tujuan yang telah ditetapkan. Jika Anda membutuhkan penjelasan lebih lanjut atau bantuan khusus, silahkan hubungi dukungan, atau sebagai pilihan lain, ada beberapa video yang tersedia di YouTube yang dapat membantu dengan cara demonstrasi.
 
@@ -166,7 +166,7 @@ Instruksi disediakan pada setiap halaman dari manajemen bagian depan, untuk menj
 ---
 
 
-###5. <a name="SECTION5"></a>CLI (COMMAND LINE INTERFACE)
+### 5. <a name="SECTION5"></a>CLI (COMMAND LINE INTERFACE)
 
 phpMussel dapat dijalankan sebagai sebuah file interaktif pemindai dalam mode CLI dalam Windows. Merujuk ke seksi "BAGAIMANA CARA MENGINSTALL (UNTUK CLI)" dari file README untuk lebih detail.
 
@@ -178,7 +178,7 @@ Sebagai tambahan, bagi yang berminat, sebuah video tutorial untuk bagaimana meng
 ---
 
 
-###6. <a name="SECTION6"></a>FILE YANG DIIKUTKAN DALAM PAKET INI
+### 6. <a name="SECTION6"></a>FILE YANG DIIKUTKAN DALAM PAKET INI
 
 Berikut list dari semua file yang diikutkan di dalam kopi skrip yang dikompres ketika Anda mendownloadnya, setiap file-file yang secara potensial diciptakan sebagai hasil dari menggunakan skrip ini, sejalan dengan deskripsi singkat dari untuk apa file-file ini.
 
@@ -268,7 +268,6 @@ Data | Deskripsi
 /vault/quarantine/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/signatures/ | Direktori tanda tangan (berisikan file tanda tangan).
 /vault/signatures/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
-/vault/signatures/hex_general_commands.csv | CSV terencode Hex dari deteksi perintah umum secara opsional digunakan phpMussel.
 /vault/signatures/switch.dat | Kontrol dan set variabel tertentu.
 /vault/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/cli.php | Modul CLI handler.
@@ -301,10 +300,10 @@ Data | Deskripsi
 ---
 
 
-###7. <a name="SECTION7"></a>OPSI KONFIGURASI
+### 7. <a name="SECTION7"></a>OPSI KONFIGURASI
 Berikut list variabel yang ditemukan pada file konfigurasi phpMussel `config.ini`, dengan deskripsi dari tujuan dan fungsi.
 
-####"general" (Kategori)
+#### "general" (Kategori)
 Konfigurasi umum dari phpMussel.
 
 "cleanup"
@@ -373,27 +372,11 @@ Konfigurasi umum dari phpMussel.
 "FrontEndLog"
 - File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
 
-####"signatures" (Kategori)
+#### "signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 
-"Filename"
-- Cek nama file pada tanda tangan berbasis nama file ketika pemindaian? Jika demikian, menentukan nama-nama file tanda tangan untuk menggunakan, dipisahkan dengan koma.
-
-"MD5"
-- Cek tanda tangan MD5 ketika pemindaian? Jika demikian, menentukan nama-nama file tanda tangan untuk menggunakan, dipisahkan dengan koma.
-
-"PE_Sectional"
-- Cek file PE (Portable Executable; EXE, DLL, dll) pada tanda tangan PE Sectional ketika pemindaian? Jika demikian, menentukan nama-nama file tanda tangan untuk menggunakan, dipisahkan dengan koma.
-
-"PE_Extended"
-- Cek file PE (Portable Executable; EXE, DLL, dll) pada tanda tangan PE diperpanjang ketika pemindaian? Jika demikian, menentukan nama-nama file tanda tangan untuk menggunakan, dipisahkan dengan koma.
-
-- "Complex_Extended"
-Cek tanda tangan diperpanjang kompleks ketika pemindaian? Jika demikian, menentukan nama-nama file tanda tangan untuk menggunakan, dipisahkan dengan koma.
-
-Aktifkan daftar putih tertentu file? False = Tidak; True = Ya [Default].
-- "whitelist_clamav"
-- "whitelist_mussel"
+"Active"
+- Daftar file tanda tangan yang aktif, dipisahkan oleh koma.
 
 "fail_silently"
 - Seharusnya laporan phpMussel ketika file tanda tangan hilang atau dikorup? Jika `fail_silently` dinonaktifkan, file dikorup dan hilang akan dilaporkan ketika pemindaian, dan jika `fail_silently` diaktifkan, file dikorup dan hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crash atau masalah lain. False = Dinonaktifkan; True = Diaktifkan [Default].
@@ -419,7 +402,7 @@ Aktifkan daftar putih tertentu file? False = Tidak; True = Ya [Default].
 "detect_deface"
 - Harus phpMussel menggunakan tanda tangan untuk mendeteksi perusakan dan perusak? False = Tidak; True = Ya [Default].
 
-####"files" (Kategori)
+#### "files" (Kategori)
 Konfigurasi umum untuk mengambil alih file-file.
 
 "max_uploads"
@@ -456,7 +439,7 @@ Konfigurasi umum untuk mengambil alih file-file.
 "block_encrypted_archives"
 - Mendeteksi dan memblokir dienkripsi arsip? Karena phpMussel tidak mampu memindai isi arsip dienkripsi, itu mungkin bahwa enkripsi arsip dapat digunakan oleh penyerang sebagai sarana mencoba untuk memotong phpMussel, anti-virus pemindai dan perlindungan mirip lainnya. Menginstruksikan phpMussel untuk memblokir setiap arsip dienkripsi ditemukan akan berpotensi membantu mengurangi risiko terkait dengan kemungkinan tersebut. False = Tidak; True = Ya [Default].
 
-####"attack_specific" (Kategori)
+#### "attack_specific" (Kategori)
 Direktif serangan spesifik.
 
 Chameleon serangan deteksi: False = Dinonaktifkan; True = Diaktifkan.
@@ -482,9 +465,6 @@ Chameleon serangan deteksi: False = Dinonaktifkan; True = Diaktifkan.
 "archive_file_extensions"
 - Ekstensi file terkompres yang dikenali (format nya CSV; seharusnya hanya menambah atau menghapus ketika masalah terjadi; Tidak cocok langsung menghapus karena dapat menyebabkan angka positif yang salah terjadi pada file terkompres, dimana juga menambahkan deteksi; memodifikasi dengan peringatan; Juga dicatat bahwa ini tidak memberi efek pada file terkompress apa yang dapat dan tidak dapat di analisa pada level isi). Daftar sebagaimana defaultnya, memberi daftar format-format yang digunakan yang paling umum melalui melalui mayoritas sistem dan CMS, tapi bermaksud tidak komprehensif.
 
-"general_commands"
-- Mencari isi file-file untuk pernyataan atau perintah umum seperti `eval()` dan `exec()`? False = Tidak (tidak mencek) [Default]; True = Ya (mencek). Matikan direktif ini jika Anda bermaksud untuk mengupload yang manapun dari ini ke sistem ata CMS Anda via browser Anda: PHP, JavaScript, HTML, python, perl dll. Hidupkan direktif ini jika Anda tidak punya tambahan perlindungan pada sistem Anda dan tidak bermaksud mengupload file-file apapun. Jika Anda menggunakan keamanan tambahan dalam kata penghubung dengan phpMussel (seperti ZB Block), tidak perlu menghidupkan direktif ini, karena kebanyakan apa yang akan phpMussel cari (dalam konteks direktif ini) adalah duplikasi dari perlindungan yang telah disediakan.
-
 "block_control_characters"
 - Memblokade file apapun yang berisi karakter pengendali (lain dari baris baru)? (`[\x00-\x08\x0b\x0c\x0e\x1f\x7f]`) Jika Anda hanya sedang mengupload file teks biasa, maka Anda dapat menghidupkan opsi ini untuk menyediakan perlindungan tambahan ke sistem Anda. Bagaimanapun jika Anda mengupload apapun lebih dari file teks biasa, menghidupkan opsi ini mungkin mengakibatkan angka positif salah. False = Jangan memblokade [Default]; True = Memblokade.
 
@@ -497,7 +477,7 @@ Chameleon serangan deteksi: False = Dinonaktifkan; True = Diaktifkan.
 "scannable_threshold"
 - Opsional pembatasan atau ambang batas dengan panjang file mentah yang phpMussel diperbolehkan untuk membaca dan memindai (dalam kasus ada masalah kinerja sementara pemindaian). Nilai adalah bilangan yang mewakili ukuran file dalam KB. Default = 32768 (32MB). Nol atau nilai null menonaktifkan ambang batas. Umumnya, nilai ini tidak seharusnya kurang dari ukuran file rata-rata upload file yang Anda inginkan dan Anda harapkan untuk menerima ke server atau website, tidak seharusnya lebih dari direktif filesize_limit, dan tidak seharusnya lebih dari sekitar seperlima dari total alokasi memori yang diijinkan ke PHP melalui file konfigurasi `php.ini`. Direktif ini ada untuk mencegah phpMussel menggunakan terlalu banyak memori (yang bisa mencegah dari yang berhasil memindai file di atas tertentu ukuran file).
 
-####"compatibility" (Kategori)
+#### "compatibility" (Kategori)
 Direktif-direktif kompatibilitas pada phpMussel.
 
 "ignore_upload_errors"
@@ -506,13 +486,13 @@ Direktif-direktif kompatibilitas pada phpMussel.
 "only_allow_images"
 - Jika Anda hanya mengharapkan atau hanya berniat untuk memungkinkan mengupload gambar ke sistem atau CMS, dan jika Anda benar-benar tidak memerlukan mengupload file selain gambar ke sistem atau CMS, direktif ini harus DIAKTIFKAN, tapi sebaliknya harus DINONAKTIFKAN. Jika direktif ini DIAKTIFKAN, ini akan menginstruksikan phpMussel untuk memblokir tanpa pandang bulu setiap upload diidentifikasi sebagai file tidak gambar, tanpa pemindaian mereka. Ini mungkin mengurangi waktu memproses dan penggunaan memori untuk mencoba upload file tidak gambar. False = DINONAKTIFKAN; True = DIAKTIFKAN.
 
-####"heuristic" (Kategori)
+#### "heuristic" (Kategori)
 Direktif-direktif heuristik pada phpMussel.
 
 "threshold"
 - Ada tanda tangan tertentu dari phpMussel yang dimaksudkan untuk mengidentifikasi kualitas yang mencurigakan dan berpotensi berbahaya pada file-file yang di-upload tanpa di diri mereka mengidentifikasi file-file yang di-upload spesifik sebagai berbahaya. Ini "threshold" nilai memberitahu phpMussel apa total berat maksimum untuk kualitas yang mencurigakan dan berpotensi berbahaya pada file-file yang di-upload yang diijinkan adalah sebelum file-file yang akan diidentifikasi sebagai berbahaya. Definisi berat dalam konteks ini adalah jumlah total kualitas mencurigakan dan berpotensi berbahaya diidentifikasi. Secara default, nilai ini akan ditetapkan sebagai 3. Sebuah nilai lebih rendah umumnya akan menghasilkan sebagai lebih tinggi positif palsu kejadian tapi sebuah jumlah lebih tinggi file berbahaya diidentifikasi, sedangkan sebuah nilai lebih tinggi umumnya akan menghasilkan sebagai lebih rendah positif palsu kejadian tapi sebuah jumlah lebih rendah pada file berbahaya yang diidentifikasi. Ini umumnya terbaik untuk meninggalkan nilai ini di default kecuali jika Anda mengalami masalah berhubungan dengan itu.
 
-####"virustotal" (Kategori)
+#### "virustotal" (Kategori)
 Konfigurasi untuk Virus Total integrasi.
 
 "vt_public_api_key"
@@ -536,11 +516,8 @@ Mencatat: Terlepas dari tingkat kecurigaan, setiap file yang masuk daftar hitam 
 "vt_quota_rate" dan "vt_quota_time"
 - Menurut Virus Total dokumentasi API, itu terbatas untuk paling 4 permintaan dalam bentuk apapun dalam jangka waktu 1 menit diberikan. Jika Anda menjalankan sebuah honeyclient, honeypot atau otomatisasi lainnya yang akan menyediakan file untuk VirusTotal dan tidak hanya mengambil laporan Anda berhak untuk kuota permintaan lebih tinggi. Secara default, phpMussel ketat akan mematuhi keterbatasan ini, tapi karena kemungkinan kuota ini sedang meningkat, dua direktif ini yang disediakan sebagai sarana bagi Anda untuk menginstruksikan phpMussel tentang apa batas harus dipatuhi. Kecuali Anda telah diperintahkan untuk melakukannya, itu tidak direkomendasikan bagi Anda untuk meningkat nilai-nilai ini, tapi, jika Anda mengalami masalah berkaitan dengan mencapai kuota Anda, penurunan nilai-nilai ini kadang _**DAPAT**_ membantu Anda bagi berurusan dengan masalah-masalah ini. Batas Anda ditentukan sebagai `vt_quota_rate` permintaan dalam bentuk apapun dalam jangka waktu `vt_quota_time` menit.
 
-####"urlscanner" (Kategori)
-Konfigurasi scanner URL.
-
-"urlscanner"
-- Dibangun dalam phpMussel adalah scanner URL, mampu mendeteksi URL berbahaya dari dalam data atau file dipindai. Untuk mengaktifkan scanner URL, menentukan nama-nama file tanda tangan untuk menggunakan, dipisahkan dengan koma.
+#### "urlscanner" (Kategori)
+Scanner URL adalah disertakan dengan phpMussel, mampu mendeteksi URL berbahaya dari dalam data atau file dipindai.
 
 Mencatat: Jika scanner URL dinonaktifkan, Anda tidak perlu meninjaunya direktif-direktif dalam kategori ini (`urlscanner`), karena tidak satupun dari mereka akan melakukan apa-apa jika ini dinonaktifkan.
 
@@ -562,7 +539,7 @@ Konfigurasi scanner URL memeriksa API.
 "cache_time"
 - Berapa lama (dalam detik) harus hasil API untuk disimpan dalam cache? Default adalah 3600 detik (1 jam).
 
-####"template_data" (Kategori)
+#### "template_data" (Kategori)
 Direktif-direktif dan variabel-variabel untuk template-template dan tema-tema.
 
 File template berkaitan untuk HTML diproduksi yang digunakan untuk menghasilkan pesan "Upload Ditolak" yang ditampilkan kepada pengguna-pengguna ketika file upload yang diblokir. Jika Anda menggunakan tema kustom untuk phpMussel, HTML diproduksi yang bersumber dari file `template_custom.html`, dan sebaliknya, HTML diproduksi yang bersumber dari file `template.html`. Variabel ditulis untuk file konfigurasi bagian ini yang diurai untuk HTML diproduksi dengan cara mengganti nama-nama variabel dikelilingi dengan kurung keriting ditemukan dalam HTML diproduksi dengan file variabel sesuai. Sebagai contoh, dimana `foo="bar"`, setiap terjadinya `<p>{foo}</p>` ditemukan dalam HTML diproduksi akan menjadi `<p>bar</p>`.
@@ -573,67 +550,67 @@ File template berkaitan untuk HTML diproduksi yang digunakan untuk menghasilkan 
 ---
 
 
-###8. <a name="SECTION8"></a>FORMAT TANDA TANGAN
+### 8. <a name="SECTION8"></a>FORMAT TANDA TANGAN
 
-####*TANDA TANGAN NAMA FILE*
+#### *TANDA TANGAN NAMA FILE*
 Semua tanda tangan nama file mengikuti format ini:
 
 `NAMA:FNRX`
 
 Dimana NAMA adalah nama mengutip tanda tangan dan FNRX adalah pola regex untuk mencocokkan nama file (tidak ter-encode).
 
-####*TANDA TANGAN MD5*
+#### *TANDA TANGAN MD5*
 Semua tanda tangan MD5 mengikuti format ini:
 
 `HASH:UKURAN:NAMA`
 
 Dimana HASH adalah MD5 dari keseluruhan file, UKURAN adalah total ukuran file dan NAMA adalah nama untuk mengutip tanda tangan tersebut.
 
-####*TANDA TANGAN SEKSIONAL PE*
+#### *TANDA TANGAN SEKSIONAL PE*
 Semua tanda tangan seksional PE mengikuti format ini:
 
 `UKURAN:HASH:NAMA`
 
 Dimana HASH adalah MD5 dari seksi PE, UKURAN adalah total ukuran dari seksi PE dan NAMA adalah nama untuk mengutip tanda tangan tersebut.
 
-####*TANDA TANGAN DIPERPANJANG PE*
+#### *TANDA TANGAN DIPERPANJANG PE*
 Semua tanda tangan diperpanjang PE mengikuti format ini:
 
 `$VAR:HASH:UKURAN:NAMA`
 
 Dimana $VAR adalah nama dari PE variabel untuk mencocokkan terhadap, HASH adalah MD5 dari variabel, UKURAN adalah ukuran total dari variabel dan NAMA adalah nama untuk mengutip tanda tangan tersebut.
 
-####*TANDA TANGAN PUTIH*
+#### *TANDA TANGAN PUTIH*
 Semua tanda tangan putih mengikuti format ini:
 
 `HASH:UKURAN:TYPE`
 
 Dimana HASH adalah MD5 dari keseluruhan file, UKURAN adalah total ukuran file dan TYPE adalah jenis tanda tangan yang file daftar putih tersebut adalah kebal terhadap.
 
-####*TANDA TANGAN DIPERPANJANG KOMPLEKS*
+#### *TANDA TANGAN DIPERPANJANG KOMPLEKS*
 Tanda tangan diperpanjang kompleks adalah berbeda dengan jenis lain dari tanda tangan phpMussel, melalui bahwa apa yang mencocokkan mereka ditentukan oleh tanda tangan sendiri dan mereka dapat mencocokkan terhadap beberapa kriteria. Kriteria mencocokkan yang dipisahkan oleh ";" dan pencocokan jenis dan pencocokan data masing-masing kriteria yang dipisahkan oleh ":" sebagai sehingga format untuk tanda tangan ini cenderung terlihat sedikit seperti:
 
 `$variabel1:DATA;$variabel:DATA;NamaTandaTangan`
 
-####*YANG LAIN*
+#### *YANG LAIN*
 Semua tanda tangan yang lain mengikuti format ini:
 
 `NAMA:HEX:FROM:TO`
 
 Dimana NAMA adalah nama yang mengutip tanda tangan ini dan HEX adalah sebuah segmen heksadesimal-dikodekan dari data yang dimaksudkan untuk dicocokkan oleh tanda tangan yang diberikan. FROM dan TO adalah parameter opsional, mengindikasikan dari mana dan kemana posisi dari sumber file untuk cek.
 
-####*REGEX*
+#### *REGEX*
 Setiap bentuk dari regex mengerti dan dengan benar diproses oleh PHP seharusnya bisa dengan benar dimengerti dan diproses oleh phpMussel dan tanda tangannya. Bagaimanapun, saya menyarankan peringatan ekstrim ketika menuliskan tanda tangan berbasis regex baru karena, jika Anda tidak yakin apa yang Anda lakukan dapat menghasilkan hal yang tidak diinginkan. Coba lihat source-code phpMussel dan jika Anda tidak yakin tentang konteks dari statemen regex diparsing. Juga ingat bahwa semua pola (dengan pengecualian ke nama data, metadata terkompres dan pola MD5) harus diencode heksadesimal (sintaksis pola sebelumnya, tentu saja)!
 
 ---
 
 
-###9. <a name="SECTION9"></a>MASALAH KOMPATIBILITAS DIKETAHUI
+### 9. <a name="SECTION9"></a>MASALAH KOMPATIBILITAS DIKETAHUI
 
-####PHP dan PCRE
+#### PHP dan PCRE
 - phpMussel memerlukan PHP dan PCRE untuk mengeksekusi dan berfungsi dengan baik. Tanpa PHP, atau tanpa ekstensi PCRE, phpMussel tidak akan mengeksekusi atau berfungsi dengan baik. Seharusnya memastikan sistem Anda terinstal PHP dan PCRE dan tersedia secara prioritas untuk mengunduh dan menginstal phpMussel.
 
-####KOMPATIBILITAS SOFTWARE ANTI-VIRUS
+#### KOMPATIBILITAS SOFTWARE ANTI-VIRUS
 
 Untuk banyak bagian, phpMussel seharusnya kompatibel dengan software pemindaian virus. Bagaimanapun konflik telah dilaporkan oleh penggunak di masa lalu. Informasi di bawah adalah dari virustotal.com, dan menguraikan sejumlah angka positif yang salah yang dilaporkan oleh bermacam-macam program anti-virus pada phpMussel. Walaupun informasi ini bukan jaminan absolut dari apakah Anda mengalami masalah kompatibilitas antara phpMussel dan perangkat anti-virus Anda, jika perangkat lunak anti-virus Anda tercatat berlawanan dengan phpMussel, Anda seharusnya mempertimbangkan menonaktifkannya bekerja dengan phpMussel atau seharusnya mempertimbangkan opsi alternatif ke software anti virus atau phpMussel.
 
@@ -706,9 +683,9 @@ Informasi ini diupdate 29 Agustus 2016 dan cocok untuk semua rilis phpMussel dar
 ---
 
 
-###10. <a name="SECTION10"></a>PERTANYAAN YANG SERING DIAJUKAN (FAQ)
+### 10. <a name="SECTION10"></a>PERTANYAAN YANG SERING DIAJUKAN (FAQ)
 
-####Apa yang dimaksud dengan "positif palsu"?
+#### Apa yang dimaksud dengan "positif palsu"?
 
 Istilah "positif palsu" (*alternatif: "kesalahan positif palsu"; "alarm palsu"*; Bahasa Inggris: *false positive*; *false positive error*; *false alarm*), dijelaskan dengan sangat sederhana, dan dalam konteks umum, digunakan saat pengujian untuk kondisi, untuk merujuk pada hasil tes, ketika hasilnya positif (yaitu, kondisi adalah dianggap untuk menjadi "positif", atau "benar"), namun diharapkan (atau seharusnya) menjadi negatif (yaitu, kondisi ini, pada kenyataannya, adalah "negatif", atau "palsu"). Sebuah "positif palsu" bisa dianggap analog dengan "menangis serigala" (dimana kondisi dites adalah apakah ada serigala di dekat kawanan, kondisi adalah "palsu" di bahwa tidak ada serigala di dekat kawanan, dan kondisi ini dilaporkan sebagai "positif" oleh gembala dengan cara memanggil "serigala, serigala"), atau analog dengan situasi dalam pengujian medis dimana seorang pasien didiagnosis sebagai memiliki beberapa penyakit, ketika pada kenyataannya, mereka tidak memiliki penyakit tersebut.
 
@@ -723,7 +700,23 @@ Ini dapat diringkas dengan tabel di bawah:
 phpMussel *TIDAK* memblokir file | Negatif benar (inferensi benar) | Deteksi terjawab (analog dengan negatif palsu)
 phpMussel memblokir file | __Positif palsu__ | Positif benar (inferensi benar)
 
+#### Seberapa sering tanda tangan diperbarui?
+
+Frekuensi pembaruan bervariasi tergantung pada file tanda tangan. Semua penulis bagi file tanda tangan phpMussel umumnya mencoba untuk menjaga tanda tangan mereka sebagai diperbarui sebanyak mungkin, tapi karena semua dari kita memiliki komitmen lainnya, kehidupan kita di luar proyek, dan karena kita tidak dikompensasi finansial (yaitu, dibayar) untuk upaya kami pada proyek, jadwal pembaruan yang tepat tidak dapat dijamin. Umumnya, tanda tangan diperbarui ketika ada cukup waktu untuk memperbaruinya, dan umumnya, penulis mencoba untuk memprioritaskan berdasarkan kebutuhan dan frekuensi berbagai perubahan dalam rentang. Bantuan selalu dihargai jika Anda bersedia untuk menawarkan.
+
+#### Saya mengalami masalah ketika menggunakan phpMussel dan saya tidak tahu apa saya harus lakukan! Tolong bantu!
+
+- Apakah Anda menggunakan versi terbaru bagi perangkat lunak? Apakah Anda menggunakan versi terbaru bagi file tanda tangan Anda? Jika jawaban untuk salah satu dari dua pertanyaan ini adalah tidak, mencoba untuk memperbarui segala sesuatu pertama, dan memeriksa apakah masalah terus berlanjut. Jika terus berlanjut, lanjutkan membaca.
+- Apakah Anda memeriksa semua dokumentasi? Jika tidak, silahkan melakukannya. Jika masalah tidak dapat diselesaikan dengan menggunakan dokumentasi, lanjutkan membaca.
+- Apakah Anda memeriksa **[halaman isu-isu](https://github.com/Maikuolan/phpMussel/issues)**, untuk melihat apakah masalah telah disebutkan sebelumnya? Jika sudah disebutkan sebelumnya, memeriksa apakah ada saran, ide, dan/atau solusi yang tersedia, dan ikuti sesuai yang diperlukan untuk mencoba untuk menyelesaikan masalah.
+- Apakah Anda memeriksa **[forum dukungan bagi phpMussel yang disediakan oleh Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)**, untuk melihat apakah masalah telah disebutkan sebelumnya? Jika sudah disebutkan sebelumnya, memeriksa apakah ada saran, ide, dan/atau solusi yang tersedia, dan ikuti sesuai yang diperlukan untuk mencoba untuk menyelesaikan masalah.
+- Jika masalah masih berlanjut, silahkan beritahu kami dengan membuat isu baru di halaman isu-isu atau dengan memulai diskusi baru di forum dukungan.
+
+#### Saya ingin menggunakan phpMussel dengan versi PHP yang lebih tua dari 5.4.0; Anda dapat membantu?
+
+Tidak. PHP 5.4.0 mencapai EoL ("End of Life", atau Akhir Hidup) resmi pada tahun 2014, dan dukungan keamanan diperpanjang dihentikan pada tahun 2015. Sebagai menulis ini, itu adalah 2017, dan PHP 7.1.0 sudah tersedia. Pada saat ini, dukungan disediakan untuk menggunakan phpMussel dengan PHP 5.4.0 dan semua tersedia versi PHP yang lebih baru, tapi jika Anda mencoba untuk menggunakan phpMussel dengan versi PHP yang lebih tua, dukungan tidak akan diberikan.
+
 ---
 
 
-Terakhir Diperbarui: 19 Februari 2017 (2017.02.19).
+Terakhir Diperbarui: 24 Maret 2017 (2017.03.24).

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2016.10.15).
+ * This file: Vietnamese language data (last modified: 2017.02.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,8 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'Các loại PE:';
 $phpMussel['lang']['cli_working'] = 'Đang trong quá trình';
 $phpMussel['lang']['corrupted'] = 'Lối của PE đã được phát hiện ra';
 $phpMussel['lang']['denied'] = 'Sự tải lên đã bị từ chối!';
-$phpMussel['lang']['denied_other'] = 'Upload Denied! Téléchargement Refusé! Subida Denegada! Caricamento Negato! Upload verweigert! Upload Geweigerd! アップロード拒否! 上传是否认! 上傳是否認! Uppladda Nekas! Загрузка Отказана! Augšupielādēt Liegta! 업로드 거부!';
-$phpMussel['lang']['denied_reason'] = 'Sự tải lên của bạn đã bị từ chối bởi lý do dưới đây / 您的上传被拒绝由于这些原因:';
+$phpMussel['lang']['denied_reason'] = 'Sự tải lên của bạn đã bị từ chối bởi lý do dưới đây:';
 $phpMussel['lang']['detected'] = 'Đã được phát hiện {vn}';
 $phpMussel['lang']['detected_control_characters'] = 'Ký tự điều khiển đã được phát hiện';
 $phpMussel['lang']['encrypted_archive'] = 'Kho đã mã hóa đã được phát hiện; Kho đã mã hóa chưa có sự cho phép';
@@ -66,8 +65,6 @@ $phpMussel['lang']['scan_command_injection'] = 'Nỗ lực lệnh chích đượ
 $phpMussel['lang']['scan_complete'] = 'Đã hoàn toàn';
 $phpMussel['lang']['scan_extensions_missing'] = 'Thất bại (phần nối cần thiết bị thiểu)!';
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'Sự thay đổi của tên tập tin được phát hiện';
-$phpMussel['lang']['scan_map_corrupted'] = 'Bản đồ biểu tượng bị lỗi';
-$phpMussel['lang']['scan_map_missing'] = 'Bản đồ biểu tượng bị mất';
 $phpMussel['lang']['scan_missing_filename'] = 'Tên tập tin bị thiểu';
 $phpMussel['lang']['scan_not_archive'] = 'Thất bại (tróng hoạc không phải trong kho lưu trữ)!';
 $phpMussel['lang']['scan_no_problems_found'] = 'Không tiềm được vấn đề.';

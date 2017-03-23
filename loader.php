@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2016.12.03).
+ * This file: The loader (last modified: 2017.01.05).
  */
 
 /**
@@ -61,9 +61,7 @@ if (!defined('phpMussel')) {
 
     /** Checks whether we're calling phpMussel directly or through a hook. */
     $phpMussel['Direct'] = function () {
-        $Base = str_replace("\\", '/', strtolower($_SERVER['SCRIPT_FILENAME']));
-        $This = str_replace("\\", '/', strtolower(__FILE__));
-        return ($Base === $This);
+        return (str_replace("\\", '/', strtolower($_SERVER['SCRIPT_FILENAME'])) === str_replace("\\", '/', strtolower(__FILE__)));
     };
 
     /**

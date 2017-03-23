@@ -11,14 +11,14 @@
             <td class="h2"><div class="s">{field_username}</div></td>
             <td class="h2"><div class="s">{field_permissions}</div></td>
             <td class="h2"><div class="s">{field_set_new_password}</div></td>
-            <td class="h2"><div class="s">{field_options}</div></td>
+            <td class="h2f"><div class="s">{field_options}</div></td>
         </tr>
         <tr>
             <form action="?phpmussel-page=accounts" method="POST"><input name="phpmussel-form-target" type="hidden" value="accounts" />
                 <td class="h1"><div class="s"><input name="username" type="text" placeholder="{field_username}" /></div></td>
                 <td class="h1"><div class="s"><select name="permissions"><option value="1">{state_complete_access}</option><option value="2">{state_logs_access_only}</option></select></div></td>
                 <td class="h1"><div class="s"><input name="password" type="password" placeholder="{field_password}" /></div></td>
-                <td class="h1"><div class="s"><input type="submit" value="{field_create_new_account}" /><input name="do" type="hidden" value="create-account" /></div></td>
+                <td class="h1f"><div class="s"><input type="submit" value="{field_create_new_account}" /><input name="do" type="hidden" value="create-account" /></div></td>
             </form>
         </tr>
 {Accounts}

@@ -5,60 +5,6 @@ phpMussel adheres to the SemVer guidelines for versioning.
 
 Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
-=== FUTURE GOALS ===
-New entries will be added to this list when new goals are created, and old
-entries will be deleted when those goals have been achieved.
-
-- Currently supported archive formats are BZ/BZ2, GZ, LZF, TAR and ZIP. At
-  minimum, this should also extend to RAR, SHAR, PHAR and 7z.
-  Refer github.com/Maikuolan/phpMussel/issues/2
-  Refer github.com/phpMussel/universe/issues/5
-
-- Currently, all formats for archive metadata signatures that are supported,
-  with exception to ZIP format, can be scanned recursively. Ideally, ability to
-  scan ZIP files recursively should also be supported at some point (along with
-  all future formats that are planned to be supported).
-
-- Wish list: Icon parsing.
-  Refer github.com/Maikuolan/phpMussel/issues/5
-
-- Wish list: Certificate parsing.
-  Refer github.com/Maikuolan/phpMussel/issues/4
-
-- Develop some general plugins for the phpMussel plugin system.
-  Refer github.com/Maikuolan/phpMussel/issues/23
-
-- Fix client language bug.
-  Refer github.com/Maikuolan/phpMussel/issues/28
-
-- Get serialised logging working for CLI mode.
-  Refer github.com/Maikuolan/phpMussel/issues/54
-
-- Fix non-ANSI/non-ASCII filenames in CLI mode bug.
-  Refer github.com/Maikuolan/phpMussel/issues/61
-
-- Improve data decoding procedures.
-
-- Build plugin and extension variants of phpMussel for improved integration
-  with various CMS, forums, other website systems and etc.
-  Refer github.com/Maikuolan/phpMussel/issues/57
-
-- [phpMussel => v1.0.0] Further investigate the possibility of a class-based
-  implementation for phpMussel.
-
-- [phpMussel => v1.0.0] Further investigate the possibility of a Swoole
-  implementation for phpMussel.
-
-- [phpMussel => v1.0.0] Utilise SQLite as a signature database (alternative
-  deployment option to the current standard flatfile database system)
-  Refer github.com/phpMussel/universe/issues/1
-
-- [phpMussel => v1.0.0] Investigate possible future project directions.
-  Refer github.com/phpMussel/universe/issues/13
-
-- [phpMussel => v1.0.0] Adopt ".htsecurity" for the configuration file naming
-  convention rather than use the current "phpmussel.ini" naming convention.
-
 === Changes made since last versioned release ===
 
 - [2016.03.18; Documentation]: Deleted the version zero changelog and created
@@ -80,7 +26,6 @@ entries will be deleted when those goals have been achieved.
 
 - [2016.03.21; Sub-minor code change; Maikuolan]: Improved the way in which we
   can detect whether we're in CLI-mode.
-  Refer github.com/Maikuolan/CIDRAM/issues/4
 
 - [2016.03.22; Minor code change; Maikuolan]: Added an obfuscation closure in
   order to avoid needing to directly call some certain potentially blocked
@@ -184,8 +129,6 @@ entries will be deleted when those goals have been achieved.
   Thanks to mtrefzer for spotting this. :-)
   Refer github.com/Maikuolan/phpMussel/issues/99
 
-- [2016.07.04-06; Signatures update; Maikuolan]: ClamAV main 57, daily 21811.
-
 - [2016.08.02; Documentation; Mie Shinohara]: Completed translation of the
   documentation to Japanese. With this translation completed, the phpMussel
   documentation is now available in 14 fully completed translations.
@@ -201,6 +144,63 @@ entries will be deleted when those goals have been achieved.
 
 - [2016.12.03; Sub-minor code change; Maikuolan]: Improved mechanism for making
   determinations between requests via direct access and requests via hooks.
+
+- [2017.02.11; Major code change; Maikuolan]: Successfully completed building
+  the front-end for phpMussel! Using the phpMussel front-end, you can update
+  phpMussel directly from your browser, install/uninstall/update components,
+  signature files, and language packs, and more; You can modify core phpMussel
+  files, upload new files to your vault, view and download logfiles, and via
+  the accounts page, selectively grant access to others either to administrate
+  phpMussel on your behalf, or to a more limited degree, to access the
+  phpMussel logfiles directly from their browser; And you can update the
+  phpMussel configuration directly from your browser, too. Front-end access is
+  disabled by default for security reasons, but you can enable it via the
+  relevant newly created configuration directives pertaining to it. Completely
+  rewrote the configuration handler: Fallbacks aren't hardcoded with PHP at the
+  time of loading the configuration file anyhow; Fallbacks are now determined
+  via a separate configuration defaults file written using YAML. Completely
+  dropped support for users overriding the default language specification until
+  further notice, and dropped the "lang_override" configuration directive (too
+  buggy at the moment; may reintroduce this feature back again later). Slightly
+  improved the template files. Completely removed support for archive metadata
+  signatures; This was long overdue, seeing as they'd already long since been
+  deprecated and removed from the ClamAV signatures set. Any relevant
+  signatures, where still applicable, have been converted to CoEx signatures.
+  Completely removed support for XML/XDP chunk signatures; They were unlikely
+  to be developed any further and were essentially irrelevant at this point
+  anyhow (associated vulnerabilities since patched, nothing new emerging, etc).
+  Testfiles for removed signature formats removed from the main repository (not
+  relevant anymore). Components files added/modified in order to better support
+  the newly completed front-end and to better accommodate changes to the
+  updates feature. Completely rewrote the scan process and completely rewrote
+  how all signatures are interpreted/read/used/etc. Major refactoring. Improved
+  future compatibility with PHP => 8 ("each" function has been identified as
+  targetted for deprecation as of PHP 7.2.0). Temporarily dropped support for
+  whitelist signatures (this will be reintroduced again later). This update is
+  NOT backwards compatible with previous versions/commits for phpMussel.
+
+- [2017.02.11; Signatures; Maikuolan]: IMPORTANT! Henceforth, phpMussel
+  signature files won't be included in the main repository nor in the package
+  downloads. In the future, phpMussel signature files can be installed either
+  via the front-end updates page, or via downloading from a separate, newly
+  created repository, located at "github.com/phpMussel/Signatures", manually
+  installing/uploading to the vault, and assigning the name of the signature
+  files to the relevant configuration directive.
+
+- [2017.03.04; Documentation; Maikuolan]: Added front-end documentation.
+
+- [2017.03.06-11; Sub-minor code change; Maikuolan]: Refactoring again.
+
+- [2017.03.14; Documentation; Maikuolan]: Removing "future goals" from
+  the changelog.
+
+- [2017.03.17; Documentation; Maikuolan]: New additions to the FAQ.
+
+- [2017.03.24; Signatures; Maikuolan]: "General command detections" now
+  regarded in the same way as simply another type of signature file ("CSV").
+  Associated configuration directive removed. Functionality can be returned by
+  installing/enabling the relevant signature file for general command
+  detections.
 
 ======
 
