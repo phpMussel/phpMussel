@@ -193,6 +193,7 @@ File | Description
 /_docs/readme.id.md | Indonesian documentation.
 /_docs/readme.it.md | Italian documentation.
 /_docs/readme.ja.md | Japanese documentation.
+/_docs/readme.ko.md | Korean documentation.
 /_docs/readme.nl.md | Dutch documentation.
 /_docs/readme.pt.md | Portuguese documentation.
 /_docs/readme.ru.md | Russian documentation.
@@ -219,6 +220,7 @@ File | Description
 /vault/fe_assets/_accounts.html | An HTML template for the front-end accounts page.
 /vault/fe_assets/_accounts_row.html | An HTML template for the front-end accounts page.
 /vault/fe_assets/_config.html | An HTML template for the front-end configuration page.
+/vault/fe_assets/_config_row.html | An HTML template for the front-end configuration page.
 /vault/fe_assets/_files.html | An HTML template for the file manager.
 /vault/fe_assets/_files_edit.html | An HTML template for the file manager.
 /vault/fe_assets/_files_rename.html | An HTML template for the file manager.
@@ -252,6 +254,8 @@ File | Description
 /vault/lang/lang.it.php | Italian language data.
 /vault/lang/lang.ja.fe.php | Japanese language data for the front-end.
 /vault/lang/lang.ja.php | Japanese language data.
+/vault/lang/lang.ko.fe.php | Korean language data for the front-end.
+/vault/lang/lang.ko.php | Korean language data.
 /vault/lang/lang.nl.fe.php | Dutch language data for the front-end.
 /vault/lang/lang.nl.php | Dutch language data.
 /vault/lang/lang.pt.fe.php | Portuguese language data for the front-end.
@@ -274,6 +278,7 @@ File | Description
 /vault/components.dat | Contains information relating to the various components of phpMussel; Used by the updates feature provided by the front-end.
 /vault/config.ini.RenameMe | Configuration file; Contains all the configuration options of phpMussel, telling it what to do and how to operate correctly (rename to activate).
 /vault/config.php | Configuration handler.
+/vault/config.yaml | Configuration defaults file; Contains default configuration values for phpMussel.
 /vault/frontend.php | Front-end handler.
 /vault/functions.php | Functions file (essential).
 /vault/greylist.csv | CSV of greylisted signatures indicating to phpMussel which signatures it should be ignoring (file automatically recreated if deleted).
@@ -719,4 +724,4 @@ No. PHP 5.4.0 reached official EoL ("End of Life") in 2014, and extended securit
 ---
 
 
-Last Updated: 24 March 2017 (2017.03.24).
+Last Updated: 25 March 2017 (2017.03.25).

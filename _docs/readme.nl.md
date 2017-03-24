@@ -193,6 +193,7 @@ Bestand | Beschrijving
 /_docs/readme.id.md | Indonesisch documentatie.
 /_docs/readme.it.md | Italiaanse documentatie.
 /_docs/readme.ja.md | Japanse documentatie.
+/_docs/readme.ko.md | Koreaanse documentatie.
 /_docs/readme.nl.md | Nederlandse documentatie.
 /_docs/readme.pt.md | Portugees documentatie.
 /_docs/readme.ru.md | Russische documentatie.
@@ -219,6 +220,7 @@ Bestand | Beschrijving
 /vault/fe_assets/_accounts.html | Een HTML sjabloon voor de frontend accounts pagina.
 /vault/fe_assets/_accounts_row.html | Een HTML sjabloon voor de frontend accounts pagina.
 /vault/fe_assets/_config.html | Een HTML sjabloon voor de frontend configuratie pagina.
+/vault/fe_assets/_config_row.html | Een HTML sjabloon voor de frontend configuratie pagina.
 /vault/fe_assets/_files.html | Een HTML sjabloon voor de bestandsbeheer.
 /vault/fe_assets/_files_edit.html | Een HTML sjabloon voor de bestandsbeheer.
 /vault/fe_assets/_files_rename.html | Een HTML sjabloon voor de bestandsbeheer.
@@ -252,6 +254,8 @@ Bestand | Beschrijving
 /vault/lang/lang.it.php | Italiaanse taaldata/taalgegevens.
 /vault/lang/lang.ja.fe.php | Japanse taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.ja.php | Japanse taaldata/taalgegevens.
+/vault/lang/lang.ko.fe.php | Koreaanse taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.ko.php | Koreaanse taaldata/taalgegevens.
 /vault/lang/lang.nl.fe.php | Nederlandse taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.nl.php | Nederlandse taaldata/taalgegevens.
 /vault/lang/lang.pt.fe.php | Portugees taaldata/taalgegevens voor het frontend.
@@ -274,6 +278,7 @@ Bestand | Beschrijving
 /vault/components.dat | Bevat informatie met betrekking tot de verschillende phpMussel componenten; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
 /vault/config.php | Configuratie handler.
+/vault/config.yaml | Configuratie standaardwaarden bestand; Bevat standaardwaarden voor de phpMussel configuratie.
 /vault/frontend.php | Frontend-handler.
 /vault/functions.php | Functies bestand (essentieel).
 /vault/greylist.csv | CSV van greylisted signatures aangeeft om phpMussel waarop signatures moet worden negeren (bestand automatisch aangemaakt opnieuw als verwijderd).
@@ -719,4 +724,4 @@ Nee. PHP 5.4.0 bereikte officiële EoL ("End of Life", of eind van het leven) in
 ---
 
 
-Laatste Bijgewerkt: 24 Maart 2017 (2017.03.24).
+Laatste Bijgewerkt: 25 Maart 2017 (2017.03.25).

@@ -193,6 +193,7 @@ Fichier | Description
 /_docs/readme.id.md | Documentation en Indonésienne.
 /_docs/readme.it.md | Documentation en Italienne.
 /_docs/readme.ja.md | Documentation en Japonaise.
+/_docs/readme.ko.md | Documentation en Coréenne.
 /_docs/readme.nl.md | Documentation en Néerlandaise.
 /_docs/readme.pt.md | Documentation en Portugaise.
 /_docs/readme.ru.md | Documentation en Russe.
@@ -219,6 +220,7 @@ Fichier | Description
 /vault/fe_assets/_accounts.html | Un modèle HTML pour la page des comptes de l'accès frontal.
 /vault/fe_assets/_accounts_row.html | Un modèle HTML pour la page des comptes de l'accès frontal.
 /vault/fe_assets/_config.html | Un modèle HTML pour la page de configuration de l'accès frontal.
+/vault/fe_assets/_config_row.html | Un modèle HTML pour la page de configuration de l'accès frontal.
 /vault/fe_assets/_files.html | Un modèle HTML pour le gestionnaire de fichiers.
 /vault/fe_assets/_files_edit.html | Un modèle HTML pour le gestionnaire de fichiers.
 /vault/fe_assets/_files_rename.html | Un modèle HTML pour le gestionnaire de fichiers.
@@ -252,6 +254,8 @@ Fichier | Description
 /vault/lang/lang.it.php | Linguistiques données en Italienne.
 /vault/lang/lang.ja.fe.php | Linguistiques données en Japonaise pour l'accès frontal.
 /vault/lang/lang.ja.php | Linguistiques données en Japonaise.
+/vault/lang/lang.ko.fe.php | Linguistiques données en Coréenne pour l'accès frontal.
+/vault/lang/lang.ko.php | Linguistiques données en Coréenne.
 /vault/lang/lang.nl.fe.php | Linguistiques données en Néerlandaise pour l'accès frontal.
 /vault/lang/lang.nl.php | Linguistiques données en Néerlandaise.
 /vault/lang/lang.pt.fe.php | Linguistiques données en Portugaise pour l'accès frontal.
@@ -274,6 +278,7 @@ Fichier | Description
 /vault/components.dat | Contient des informations relatives aux divers composants de phpMussel; Utilisé par la page des mises à jour fournies par de l'accès frontal.
 /vault/config.ini.RenameMe | Fichier de configuration; Contient toutes les options de configuration pour phpMussel, pour comment fonctionner correctement (renommer pour activer).
 /vault/config.php | Module de configuration.
+/vault/config.yaml | Fichier pour les valeurs par défaut de la configuration; Contient les valeurs par défaut de la configuration pour phpMussel.
 /vault/frontend.php | Module de l'accès frontal.
 /vault/functions.php | Fichier de fonctions (essentiel).
 /vault/greylist.csv | CSV de grise listé signatures indiquant pour phpMussel qui signatures il faut ignorer (fichier recréé automatiquement si supprimé).
@@ -719,4 +724,4 @@ Non. PHP 5.4.0 a atteint officiellement l'EoL ("End of Life", ou fin de vie) en 
 ---
 
 
-Dernière Mise à Jour: 24 Mars 2017 (2017.03.24).
+Dernière Mise à Jour: 25 Mars 2017 (2017.03.25).

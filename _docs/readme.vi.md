@@ -193,6 +193,7 @@ Tập tin | Chi tiết
 /_docs/readme.id.md | Tài liệu tiếng Indonesia.
 /_docs/readme.it.md | Tài liệu tiếng Ý.
 /_docs/readme.ja.md | Tài liệu tiếng Nhật.
+/_docs/readme.ko.md | Tài liệu tiếng Hàn.
 /_docs/readme.nl.md | Tài liệu tiếng Hà Lan.
 /_docs/readme.pt.md | Tài liệu tiếng Bồ Đào Nha.
 /_docs/readme.ru.md | Tài liệu tiếng Nga.
@@ -219,6 +220,7 @@ Tập tin | Chi tiết
 /vault/fe_assets/_accounts.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
 /vault/fe_assets/_accounts_row.html | Một tập tin mẫu HTML cho các trang tài khoản của front-end.
 /vault/fe_assets/_config.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
+/vault/fe_assets/_config_row.html | Một tập tin mẫu HTML cho các trang cấu hình của front-end.
 /vault/fe_assets/_files.html | Một tập tin mẫu HTML cho các quản lý tập tin.
 /vault/fe_assets/_files_edit.html | Một tập tin mẫu HTML cho các quản lý tập tin.
 /vault/fe_assets/_files_rename.html | Một tập tin mẫu HTML cho các quản lý tập tin.
@@ -252,6 +254,8 @@ Tập tin | Chi tiết
 /vault/lang/lang.it.php | Dữ liệu tiếng Ý.
 /vault/lang/lang.ja.fe.php | Dữ liệu tiếng Nhật cho các front-end.
 /vault/lang/lang.ja.php | Dữ liệu tiếng Nhật.
+/vault/lang/lang.ko.fe.php | Dữ liệu tiếng Hàn cho các front-end.
+/vault/lang/lang.ko.php | Dữ liệu tiếng Hàn.
 /vault/lang/lang.nl.fe.php | Dữ liệu tiếng Hà Lan cho các front-end.
 /vault/lang/lang.nl.php | Dữ liệu tiếng Hà Lan.
 /vault/lang/lang.pt.fe.php | Dữ liệu tiếng Bồ Đào Nha cho các front-end.
@@ -274,6 +278,7 @@ Tập tin | Chi tiết
 /vault/components.dat | Chứa thông tin liên quan đến các gói khác nhau của phpMussel; Được sử dụng bởi tính năng cập nhật được cung cấp bởi các front-end.
 /vault/config.ini.RenameMe | Tập tin cho cấu hình; Chứa tất cả các tùy chọn cho cấu hình của phpMussel, nói cho nó biết phải làm gì và làm thế nào để hoạt động (đổi tên để kích hoạt).
 /vault/config.php | Tập tin cho xử lý cấu hình.
+/vault/config.yaml | Tập tin cho cấu hình mặc định; Chứa giá trị cấu hình mặc định cho phpMussel.
 /vault/frontend.php | Tập tin cho xử lý các front-end.
 /vault/functions.php | Tập tin cho chức năng.
 /vault/greylist.csv | Tập tin CSV cho danh sách xám chử ký chỉ thị cho phpMussel cái nào chử ký nó phải được bỏ qua (tập tin tự động tạo lại nếu xóa).
@@ -719,4 +724,4 @@ Không. PHP 5.4.0 đạt EoL ("End of Life", hoặc sự kết thúc của cuộ
 ---
 
 
-Lần cuối cập nhật: 24 Tháng Ba 2017 (2017.03.24).
+Lần cuối cập nhật: 25 Tháng Ba 2017 (2017.03.25).

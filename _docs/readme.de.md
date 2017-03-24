@@ -193,6 +193,7 @@ Datei | Beschreibung
 /_docs/readme.id.md | Indonesische Dokumentation.
 /_docs/readme.it.md | Italienische Dokumentation.
 /_docs/readme.ja.md | Japanische Dokumentation.
+/_docs/readme.ko.md | Koreanische Dokumentation.
 /_docs/readme.nl.md | Niederländische Dokumentation.
 /_docs/readme.pt.md | Portugiesische Dokumentation.
 /_docs/readme.ru.md | Russische Dokumentation.
@@ -216,21 +217,22 @@ Datei | Beschreibung
 /vault/cache/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/fe_assets/ | Front-End-Daten.
 /vault/fe_assets/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
-/vault/fe_assets/_accounts.html | Eine HTML-Template für das Front-End Konten-Seite.
-/vault/fe_assets/_accounts_row.html | Eine HTML-Template für das Front-End Konten-Seite.
-/vault/fe_assets/_config.html | Eine HTML-Template für das Front-End Konfiguration-Seite.
-/vault/fe_assets/_files.html | Eine HTML-Template für den Dateimanager.
-/vault/fe_assets/_files_edit.html | Eine HTML-Template für den Dateimanager.
-/vault/fe_assets/_files_rename.html | Eine HTML-Template für den Dateimanager.
-/vault/fe_assets/_files_row.html | Eine HTML-Template für den Dateimanager.
-/vault/fe_assets/_home.html | Eine HTML-Template für das Front-End Startseite.
-/vault/fe_assets/_login.html | Eine HTML-Template für das Front-End Einloggen-Seite.
-/vault/fe_assets/_logs.html | Eine HTML-Template für das Front-End Protokolldateien-Seite.
-/vault/fe_assets/_nav_complete_access.html | Eine HTML-Template für das Front-End Navigation-Links, für alle mit vollständiger Zugriff.
-/vault/fe_assets/_nav_logs_access_only.html | Eine HTML-Template für das Front-End Navigation-Links, für alle mit Zugriff nur auf Protokolldateien.
-/vault/fe_assets/_updates.html | Eine HTML-Template für das Front-End Aktualisierungen-Seite.
-/vault/fe_assets/_updates_row.html | Eine HTML-Template für das Front-End Aktualisierungen-Seite.
-/vault/fe_assets/_upload_test.html | Eine HTML-Template für die Upload-Testseite.
+/vault/fe_assets/_accounts.html | Ein HTML-Template für das Front-End Konten-Seite.
+/vault/fe_assets/_accounts_row.html | Ein HTML-Template für das Front-End Konten-Seite.
+/vault/fe_assets/_config.html | Ein HTML-Template für die Front-End Konfiguration-Seite.
+/vault/fe_assets/_config_row.html | Ein HTML-Template für die Front-End Konfiguration-Seite.
+/vault/fe_assets/_files.html | Ein HTML-Template für den Dateimanager.
+/vault/fe_assets/_files_edit.html | Ein HTML-Template für den Dateimanager.
+/vault/fe_assets/_files_rename.html | Ein HTML-Template für den Dateimanager.
+/vault/fe_assets/_files_row.html | Ein HTML-Template für den Dateimanager.
+/vault/fe_assets/_home.html | Ein HTML-Template für das Front-End Startseite.
+/vault/fe_assets/_login.html | Ein HTML-Template für das Front-End Einloggen-Seite.
+/vault/fe_assets/_logs.html | Ein HTML-Template für das Front-End Protokolldateien-Seite.
+/vault/fe_assets/_nav_complete_access.html | Ein HTML-Template für das Front-End Navigation-Links, für alle mit vollständiger Zugriff.
+/vault/fe_assets/_nav_logs_access_only.html | Ein HTML-Template für das Front-End Navigation-Links, für alle mit Zugriff nur auf Protokolldateien.
+/vault/fe_assets/_updates.html | Ein HTML-Template für das Front-End Aktualisierungen-Seite.
+/vault/fe_assets/_updates_row.html | Ein HTML-Template für das Front-End Aktualisierungen-Seite.
+/vault/fe_assets/_upload_test.html | Ein HTML-Template für die Upload-Testseite.
 /vault/fe_assets/frontend.css | CSS-Stylesheet für das Front-End.
 /vault/fe_assets/frontend.dat | Datenbank für das Front-End (Enthält Kontoinformationen und Sitzungsinformationen; nur erzeugt wenn das Frontend aktiviert und verwendet wird).
 /vault/fe_assets/frontend.html | Die Haupt-HTML-Template-Datei für das Front-End.
@@ -252,6 +254,8 @@ Datei | Beschreibung
 /vault/lang/lang.it.php | Italienische Sprachdateien.
 /vault/lang/lang.ja.fe.php | Japanische Sprachdateien für das Front-End.
 /vault/lang/lang.ja.php | Japanische Sprachdateien.
+/vault/lang/lang.ko.fe.php | Koreanische Sprachdateien für das Front-End.
+/vault/lang/lang.ko.php | Koreanische Sprachdateien.
 /vault/lang/lang.nl.fe.php | Niederländische Sprachdateien für das Front-End.
 /vault/lang/lang.nl.php | Niederländische Sprachdateien.
 /vault/lang/lang.pt.fe.php | Portugiesische Sprachdateien für das Front-End.
@@ -273,6 +277,7 @@ Datei | Beschreibung
 /vault/cli.php | CLI-Handler.
 /vault/config.ini.RenameMe | Konfigurationsdatei; Beinhaltet alle Konfigurationsmöglichkeiten von phpMussel (umbenennen zu aktivieren).
 /vault/config.php | Konfiguration-Handler.
+/vault/config.yaml | Standardkonfigurationsdatei; Beinhaltet Standardkonfigurationswerte für phpMussel.
 /vault/components.dat | Enthält Informationen zu den verschiedenen Komponenten für phpMussel; Wird von der Aktualisierungsfunktion bereitgestellt durch das Front-End verwendet.
 /vault/frontend.php | Front-End-Handler.
 /vault/functions.php | Funktionen-Datei.
@@ -718,4 +723,4 @@ Nein. PHP 5.4.0 erreichte offiziellen EoL ("End of Life" oder Ende des Lebens) i
 ---
 
 
-Zuletzt aktualisiert: 24 März 2017 (2017.03.24).
+Zuletzt aktualisiert: 25 März 2017 (2017.03.25).

@@ -193,6 +193,7 @@ Data | Deskripsi
 /_docs/readme.id.md | Dokumentasi Bahasa Indonesia.
 /_docs/readme.it.md | Dokumentasi Bahasa Italia.
 /_docs/readme.ja.md | Dokumentasi Bahasa Jepang.
+/_docs/readme.ko.md | Dokumentasi Bahasa Korea.
 /_docs/readme.nl.md | Dokumentasi Bahasa Belanda.
 /_docs/readme.pt.md | Dokumentasi Bahasa Portugis.
 /_docs/readme.ru.md | Dokumentasi Bahasa Rusia.
@@ -219,6 +220,7 @@ Data | Deskripsi
 /vault/fe_assets/_accounts.html | Template HTML untuk akses bagian depan halaman akun.
 /vault/fe_assets/_accounts_row.html | Template HTML untuk akses bagian depan halaman akun.
 /vault/fe_assets/_config.html | Template HTML untuk akses bagian depan halaman konfigurasi.
+/vault/fe_assets/_config_row.html | Template HTML untuk akses bagian depan halaman konfigurasi.
 /vault/fe_assets/_files.html | Template HTML untuk file manager.
 /vault/fe_assets/_files_edit.html | Template HTML untuk file manager.
 /vault/fe_assets/_files_rename.html | Template HTML untuk file manager.
@@ -252,6 +254,8 @@ Data | Deskripsi
 /vault/lang/lang.it.php | File Bahasa Italia.
 /vault/lang/lang.ja.fe.php | File Bahasa Jepang untuk bagian depan.
 /vault/lang/lang.ja.php | File Bahasa Jepang.
+/vault/lang/lang.ko.fe.php | File Bahasa Korea untuk bagian depan.
+/vault/lang/lang.ko.php | File Bahasa Korea.
 /vault/lang/lang.nl.fe.php | File Bahasa Belanda untuk bagian depan.
 /vault/lang/lang.nl.php | File Bahasa Belanda.
 /vault/lang/lang.pt.fe.php | File Bahasa Portugis untuk bagian depan.
@@ -274,6 +278,7 @@ Data | Deskripsi
 /vault/components.dat | Berisi informasi yang berkaitan dengan berbagai komponen untuk phpMussel; Digunakan oleh fitur pembaruan disediakan oleh akses bagian depan.
 /vault/config.ini.RenameMe | File konfigurasi phpMussel; Berisi semua opsi konfigurasi dari phpMussel, memberitahukannya apa yang harus dilakukan dan bagaimana mengoperasikannya dengan benar (mengubah nama untuk mengaktifkan).
 /vault/config.php | Modul konfigurasi.
+/vault/config.yaml | File default konfigurasi; Berisi nilai konfigurasi default untuk phpMussel.
 /vault/frontend.php | Modul untuk akses bagian depan.
 /vault/functions.php | Modul fungsi (utama).
 /vault/greylist.csv | CSV terdiri dari tanda tangan daftar abu-abu mengindikasikan phpMussel tanda tangan mana yang harus diabaikan (file automatis diciptakan kembali jika dihapus).
@@ -719,4 +724,4 @@ Tidak. PHP 5.4.0 mencapai EoL ("End of Life", atau Akhir Hidup) resmi pada tahun
 ---
 
 
-Terakhir Diperbarui: 24 Maret 2017 (2017.03.24).
+Terakhir Diperbarui: 25 Maret 2017 (2017.03.25).

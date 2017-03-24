@@ -193,6 +193,7 @@ Archivo | Descripción
 /_docs/readme.id.md | Documentación Indonesio.
 /_docs/readme.it.md | Documentación Italiano.
 /_docs/readme.ja.md | Documentación Japonés.
+/_docs/readme.ko.md | Documentación Koreano.
 /_docs/readme.nl.md | Documentación Holandés.
 /_docs/readme.pt.md | Documentación Portugués.
 /_docs/readme.ru.md | Documentación Ruso.
@@ -219,6 +220,7 @@ Archivo | Descripción
 /vault/fe_assets/_accounts.html | Un archivo HTML para el front-end página de cuentas.
 /vault/fe_assets/_accounts_row.html | Un archivo HTML para el front-end página de cuentas.
 /vault/fe_assets/_config.html | Un archivo HTML para el front-end página de configuración.
+/vault/fe_assets/_config_row.html | Un archivo HTML para el front-end página de configuración.
 /vault/fe_assets/_files.html | Un archivo HTML para el administración de archivos.
 /vault/fe_assets/_files_edit.html | Un archivo HTML para el administración de archivos.
 /vault/fe_assets/_files_rename.html | Un archivo HTML para el administración de archivos.
@@ -252,6 +254,8 @@ Archivo | Descripción
 /vault/lang/lang.it.php | Lingüísticos datos Italiano.
 /vault/lang/lang.ja.fe.php | Lingüísticos datos Japonés para el front-end.
 /vault/lang/lang.ja.php | Lingüísticos datos Japonés.
+/vault/lang/lang.ko.fe.php | Lingüísticos datos Koreano para el front-end.
+/vault/lang/lang.ko.php | Lingüísticos datos Koreano.
 /vault/lang/lang.nl.fe.php | Lingüísticos datos Holandés para el front-end.
 /vault/lang/lang.nl.php | Lingüísticos datos Holandés.
 /vault/lang/lang.pt.fe.php | Lingüísticos datos Portugués para el front-end.
@@ -274,6 +278,7 @@ Archivo | Descripción
 /vault/components.dat | Contiene información relativa a los diversos componentes de phpMussel; Utilizado por la página de actualizaciones proporcionada por el front-end.
 /vault/config.ini.RenameMe | Archivo de configuración; Contiene todas las opciones de configuración para phpMussel, instruyendo para qué hacer y cómo operar correctamente (cambiar el nombre para activar).
 /vault/config.php | Módulo de configuración.
+/vault/config.yaml | Archivo de valores predefinidos para la configuración; Contiene valores predefinidos para la configuración de phpMussel.
 /vault/frontend.php | Módulo del front-end.
 /vault/functions.php | Archivo de funciones (esencial).
 /vault/greylist.csv | CSV de las firmas en la Greylist indicando para phpMussel las firmas que deben ser ignorados (archivo será recreado automáticamente si eliminado).
@@ -719,4 +724,4 @@ No. PHP 5.4.0 llegó a EoL oficial ("End of Life", o fin de la vida) en 2014, y 
 ---
 
 
-Última Actualización: 24 Marzo 2017 (2017.03.24).
+Última Actualización: 25 Marzo 2017 (2017.03.25).
