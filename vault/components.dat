@@ -16,7 +16,7 @@ phpMussel:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-TW: 主包（沒有簽名文件，文檔，和配置）。
- Version: 1.0.0-DEV+2017082997
+ Version: 1.0.0-DEV+2017083000
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/Changelog-v1.txt
@@ -101,7 +101,7 @@ phpMussel:
   Checksum:
    - 8e03209e7fc6641b45094e584340feff:83
    - 8e03209e7fc6641b45094e584340feff:83
-   - 6f8cd18d605590b023381f8faa42ca8e:31219
+   - 1c274b7ef3f9bb2356489f1f2dce4f4c:29565
    - 794644d3cff85f4585ab8b98dbafe2cd:7075
    - 4e379b78bd4177e36a38a73dce0142f5:4268
    - 8e03209e7fc6641b45094e584340feff:83
@@ -124,7 +124,7 @@ phpMussel:
    - e509a53eb373457a6dd549024e1b50ea:4135
    - ed6105518853c1874e5fb619f916c686:794
    - 59f00e47eec7bd893dfddd7cdb5428bd:101194
-   - 7112c6bf44f07593261739272d98d870:312254
+   - d7a1fcc11ab36c5af9b2139725fab739:311569
    - c079d33f77a9612a906df4a21948b5b6:17618
    - 359a65f973168540e69ffc66ba914b11:2368
    - 8e03209e7fc6641b45094e584340feff:83
@@ -221,7 +221,7 @@ l10n/fr:
  Name: L10N: Français
  Extended Description:
   fr: Linguistiques données en Français
- Version: 2017.64.000
+ Version: 2017.82.479
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
@@ -235,7 +235,7 @@ l10n/fr:
    - lang/lang.fr.php
   Checksum:
    - ad36734e117c79b5602bb30f9f280b4b:44232
-   - 63efca79dc48cb7d28df2697ff44991a:7503
+   - cae7d43854c27ec4010a93500798cf15:7658
  Reannotate: components.dat
 l10n/id:
  Name: L10N: Bahasa Indonesia

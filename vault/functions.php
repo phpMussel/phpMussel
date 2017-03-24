@@ -714,6 +714,25 @@ $phpMussel['SaveCache'] = function ($entry = '', $item_ex = 0, $item_data = '') 
     return true;
 };
 
+/** Reads and prepares cached hash data. */
+$phpMussel['PrepareHashCache'] = function () use (&$phpMussel) {
+    $phpMussel['HashCache']['Data'] =
+        $phpMussel['Config']['general']['scan_cache_expiry'] > 0 ? $phpMussel['FetchCache']('HashCache') : '';
+    if (!empty($phpMussel['HashCache']['Data'])) {
+        $phpMussel['HashCache']['Data'] = explode(';', $phpMussel['HashCache']['Data']);
+        $Build = array();
+        foreach ($phpMussel['HashCache']['Data'] as $CacheItem) {
+            if (substr_count($CacheItem, ':')) {
+                $CacheItem = explode(':', $CacheItem, 4);
+                if (!($phpMussel['Time'] > $CacheItem[1])) {
+                    $Build[$CacheItem[0]] = $CacheItem;
+                }
+            }
+        }
+        $phpMussel['HashCache']['Data'] = $Build;
+    }
+};
+
 /**
  * This function quarantines file uploads.
  *
@@ -5583,31 +5602,7 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
         $phpMussel['memCache']['OrganisedSigFiles'] = true;
     }
     if ($phpMussel['EOF']) {
-        $phpMussel['HashCache']['Data'] =
-            ($phpMussel['Config']['general']['scan_cache_expiry'] > 0) ?
-            $phpMussel['FetchCache']('HashCache') :
-            '';
-        if (!empty($phpMussel['HashCache']['Data'])) {
-            $phpMussel['HashCache']['Data'] = explode(';', $phpMussel['HashCache']['Data']);
-            $phpMussel['HashCache']['Build'] = array();
-            $phpMussel['HashCache']['Count'] = count($phpMussel['HashCache']['Data']);
-            for (
-                $phpMussel['HashCache']['Index'] = 0;
-                $phpMussel['HashCache']['Index'] < $phpMussel['HashCache']['Count'];
-                $phpMussel['HashCache']['Index']++
-            ) {
-                if (substr_count($phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']], ':')) {
-                    $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']] =
-                        explode(':', $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']], 4);
-                    if (!($phpMussel['Time'] > $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']][1])) {
-                        $phpMussel['HashCache']['Build'][$phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']][0]] =
-                            $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']];
-                    }
-                }
-            }
-            $phpMussel['HashCache']['Data'] = $phpMussel['HashCache']['Build'];
-            unset($phpMussel['HashCache']['Build']);
-        }
+        $phpMussel['PrepareHashCache']();
     }
     if (!isset($phpMussel['HashCache']['Data'])) {
         return false;

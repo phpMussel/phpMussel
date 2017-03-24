@@ -43,30 +43,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         /** Scan a file or directory. **/
         if ($phpMussel['cmd'] == 'scan') {
             if ($phpMussel['Config']['general']['scan_cache_expiry']) {
-                $phpMussel['HashCache']['Data'] = $phpMussel['FetchCache']('HashCache');
-                if (empty($phpMussel['HashCache']['Data'])) {
-                    $phpMussel['HashCache']['Data'] = array();
-                } else {
-                    $phpMussel['HashCache']['Data'] = explode(';', $phpMussel['HashCache']['Data']);
-                    $phpMussel['HashCache']['Build'] = array();
-                    $phpMussel['HashCache']['Count'] = count($phpMussel['HashCache']['Data']);
-                    for (
-                        $phpMussel['HashCache']['Index'] = 0;
-                        $phpMussel['HashCache']['Index'] < $phpMussel['HashCache']['Count'];
-                        $phpMussel['HashCache']['Index']++
-                    ) {
-                        if (substr_count($phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']], ':')) {
-                            $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']] =
-                                explode(':', $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']], 4);
-                            if (!($phpMussel['Time'] > $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']][1])) {
-                                $phpMussel['HashCache']['Build'][$phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']][0]] =
-                                    $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Index']];
-                            }
-                        }
-                    }
-                    $phpMussel['HashCache']['Data'] = $phpMussel['HashCache']['Build'];
-                    unset($phpMussel['HashCache']['Build']);
-                }
+                $phpMussel['PrepareHashCache']();
             }
             try {
                 echo $phpMussel['Recursor'](substr($phpMussel['cli_args'][2], 5), true, true, 0, $phpMussel['cli_args'][3]);
