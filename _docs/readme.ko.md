@@ -26,16 +26,16 @@ phpMussel (피 에이치 삐 근육)을 이용해 주셔서 감사합니다. php
 phpMussel 저작권 2013 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
 본 스크립트는 프리웨어입니다. 자유 소프트웨어 재단에서 발행 한 GNU 일반 공중 라이선스 버전 2 (또는 이후 버전)에 따라 재배포 및 가공이 가능합니다. 배포의 목적은 도움이되기를 바랍니다 것이지만 "보증 아니며 상품성 또는 특정 목적에 적합한 것을 시사하는 것이기도 없습니다." "LICENSE.txt"에있는 "GNU General Public License"(일반 라이선스)을 참조하십시오. 다음 URL에서도 볼 수 있습니다:
-- <http://www.gnu.org/licenses/>。
-- <http://opensource.org/licenses/>。
+- <http://www.gnu.org/licenses/>.
+- <http://opensource.org/licenses/>.
 
 창조의 영감이 스크립트를 이용하는 시그니처 [ClamAV](http://www.clamav.net/)에 감사의 뜻을 표하고자합니다. 이 2 개가 있어야이 스크립트는 존재할 수 없거나 극히 제한된 이용 가치만을 가지고이라고 말해도 좋을 것입니다.
 
 본 프로젝트 파일의 호스트 처인 Sourceforge와 Github, phpMussel 토론 포럼의 호스트 처인 [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55), phpMussel이 이용하는 서명 제공처이다: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) 다른 본 프로젝트를 지원 해주신 모든 분들에게 감사의 뜻을 표하고자합니다.
 
 본 문서 및 관련 패키지는 다음 URL에서 다운로드 할 수 있습니다.
-- [Sourceforge](http://phpmussel.sourceforge.net/)。
-- [Github](https://github.com/Maikuolan/phpMussel/)。
+- [Sourceforge](http://phpmussel.sourceforge.net/).
+- [Github](https://github.com/Maikuolan/phpMussel/).
 
 ---
 
@@ -386,28 +386,28 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 - 쉼표로 구분 된 활성 시그니처 파일의 목록입니다.
 
 "fail_silently"
-- 서명 파일이 없거나 손상된 경우 phpMussel 그것을 리포트 해야하는지 여부? `fail_silently`이 유효하지 않으면 문제가 리포트되어 유효하면 문제는 무시 된 스캔 보고서가 작성됩니다. 충돌하는 같은 피해가 없으면 기본 설정을 그대로 유지한다. `false` = Disabled/장애인; `true` = Enabled/유효 (Default / 기본 설정)。
+- 서명 파일이 없거나 손상된 경우 phpMussel 그것을 리포트 해야하는지 여부? `fail_silently`이 유효하지 않으면 문제가 리포트되어 유효하면 문제는 무시 된 스캔 보고서가 작성됩니다. 충돌하는 같은 피해가 없으면 기본 설정을 그대로 유지한다. `false` = Disabled/장애인; `true` = Enabled/유효 (Default / 기본 설정).
 
 "fail_extensions_silently"
-- 확장자가없는 경우 phpMussel이 그것을보고해야하는지 여부? `fail_extensions_silently`이 잘못된 경우 확장자없이는 스캐닝시에보고되고 활성화되면 무시됩니다 문제는보고되지 않습니다. 이 지시어를 무효로하는 것은 보안을 향상시킬 수 있지만, 오진도 증가 할 수 있습니다. `false` = Disabled/장애인; `true` = Enabled/유효 (Default / 기본 설정)。
+- 확장자가없는 경우 phpMussel이 그것을보고해야하는지 여부? `fail_extensions_silently`이 잘못된 경우 확장자없이는 스캐닝시에보고되고 활성화되면 무시됩니다 문제는보고되지 않습니다. 이 지시어를 무효로하는 것은 보안을 향상시킬 수 있지만, 오진도 증가 할 수 있습니다. `false` = Disabled/장애인; `true` = Enabled/유효 (Default / 기본 설정).
 
 "detect_adware"
-- phpMussel 애드웨어 탐지를 위해 서명을 분석해야하는지 여부? `false` = 아니오; `true` = 예 (Default / 기본 설정)。
+- phpMussel 애드웨어 탐지를 위해 서명을 분석해야하는지 여부? `false` = 아니오; `true` = 예 (Default / 기본 설정).
 
 "detect_joke_hoax"
-- phpMussel 장난 / 위조 및 악성 코드 / 바이러스 탐지를 위해 서명을 분석해야하는지 여부? `false` = 아니오; `true` = 예 (Default / 기본 설정)。
+- phpMussel 장난 / 위조 및 악성 코드 / 바이러스 탐지를 위해 서명을 분석해야하는지 여부? `false` = 아니오; `true` = 예 (Default / 기본 설정).
 
 "detect_pua_pup"
-- phpMussel는 PUAs/PUPs 탐지를 위해 서명을 분석해야하는지 여부? `false` = 아니오; `true` = 예 (Default / 기본 설정)。
+- phpMussel는 PUAs/PUPs 탐지를 위해 서명을 분석해야하는지 여부? `false` = 아니오; `true` = 예 (Default / 기본 설정).
 
 "detect_packer_packed"
-- phpMussel는 패커와 팩 데이터 검출을 위해 서명을 분석해야하는지 여부? `false` = 아니오; `true` = 예 (Default / 기본 설정)。
+- phpMussel는 패커와 팩 데이터 검출을 위해 서명을 분석해야하는지 여부? `false` = 아니오; `true` = 예 (Default / 기본 설정).
 
 "detect_shell"
-- phpMussel는 shell 스크립트 탐지를 위해 서명을 분석해야하는지 여부? `false` = 아니오; `true` = 예 (Default / 기본 설정)。
+- phpMussel는 shell 스크립트 탐지를 위해 서명을 분석해야하는지 여부? `false` = 아니오; `true` = 예 (Default / 기본 설정).
 
 "detect_deface"
-- phpMussel를 위조 및 디훼사 탐지를 위해 서명을 분석해야하는지 여부? `false` = 아니오; `true` = 예 (Default / 기본 설정)。
+- phpMussel를 위조 및 디훼사 탐지를 위해 서명을 분석해야하는지 여부? `false` = 아니오; `true` = 예 (Default / 기본 설정).
 
 #### "files" (카테고리)
 파일 취급 설정.
@@ -457,7 +457,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 "chameleon_from_exe"
 - 실행 파일없이 실행 파일의 아카이브도 인식 할 수없는 파일의 실행 헤더 및 악성 헤더의 실행 파일을 찾습니다.
 
-"chameleon_to_archive" （キャメロン・トゥ・アーカイブ）
+"chameleon_to_archive"
 - 헤더가 잘못 보관을 찾습니다 (BZ, GZ, RAR, ZIP, RAR, GZ 지원).
 
 "chameleon_to_doc"
@@ -473,7 +473,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 - 인식 가능한 아카이브 파일 확장입니다 (CSV 형식; 문제가있을 경우에만 추가 또는 제거해야합니다. 실수로 제거하면 오진의 원인이 될 수 있습니다. 반대로 실수로 추가하면 어택 자 스페시 픽 검출에서 추가 된 화이트리스트 화되어 버립니다. 충분히주의 위 변경하십시오. 또한 컨텐트 수준에서 아카이브를 분석 할 수 있는지 여부에는 영향을주지 않습니다). 기본적으로 가장 일반적 형식을 나열하고 있지만 의도적으로 포괄적으로하지 않습니다.
 
 "block_control_characters"
-- 제어 문자를 포함한 파일을 차단 여부 (줄 바꿈을 제외한)? 에 관한 것입니다 ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]). 만약 텍스트를 업로드하는 경우,이 옵션을 사용하여 추가 보호를 강화할 수 있습니다. 텍스트 이외도 업로드 할 경우, 사용하면 오진의 원인이 될 수 있습니다. `false` = 차단하지 (Default / 기본 설정)； `true` = 차단합니다.
+- 제어 문자를 포함한 파일을 차단 여부 (줄 바꿈을 제외한)? 에 관한 것입니다 ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]). 만약 텍스트를 업로드하는 경우,이 옵션을 사용하여 추가 보호를 강화할 수 있습니다. 텍스트 이외도 업로드 할 경우, 사용하면 오진의 원인이 될 수 있습니다. `false` = 차단하지 (Default / 기본 설정); `true` = 차단합니다.
 
 "corrupted_exe"
 - 손상된 파일과 오류 분석. `false` = 무시; `true` = 차단 (Default / 기본 설정). 손상의 가능성이있는 PE 파일을 차단 검출 여부? 관한 것입니다. PE 파일의 일부가 손상되어 제대로 분석 할 수없는 것은 드물지 않고, 바이러스 감염을 보는 바로미터가됩니다. PE 파일의 바이러스를 감지하는 안티 바이러스 프로그램은 PE 파일 분석을 실시 합니다만, 바이러스를 만드는 사람이 바이러스가 검출되지 않도록 그것을 피하려고 할 것이기 때문입니다.
@@ -488,10 +488,10 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 phpMussel 호환성 지시문.
 
 "ignore_upload_errors"
-- 시스템에서 phpMussel의 기능에 수정이 필요한 경우가 아니면이 지시문은 일반적으로 사용할 수 없습니다. 비활성화하면 `$_FILES` array()요소를 감지했을 때, 그 요소가 나타내는 파일의 스캔이 시작됩니다, 요소가 비어 있거나없는 경우 phpMussel는 오류 메시지를 반환합니다. 이것은 본래 phpMussel가 있어야 할 모습입니다. 그러나 CMS에서는 $_FILES 하늘 요소는 일반적으로 발생하는 것이며, 정상적인 phpMussel의 행동이 정상적인 CMS의 거동을 저해 할 우려가 있습니다. 이러한 경우에는 본 옵션을 사용하여 phpMussel 빈 요소를 검사하고 오류 메시지를 반환을 피하고 요청한 페이지로 원활하게 진행할 수 있도록합니다. `false` = OFF (해제); `true` = ON (온)입니다.
+- 시스템에서 phpMussel의 기능에 수정이 필요한 경우가 아니면이 지시문은 일반적으로 사용할 수 없습니다. 비활성화하면 `$_FILES` array()요소를 감지했을 때, 그 요소가 나타내는 파일의 스캔이 시작됩니다, 요소가 비어 있거나없는 경우 phpMussel는 오류 메시지를 반환합니다. 이것은 본래 phpMussel가 있어야 할 모습입니다. 그러나 CMS에서는 $_FILES 하늘 요소는 일반적으로 발생하는 것이며, 정상적인 phpMussel의 행동이 정상적인 CMS의 거동을 저해 할 우려가 있습니다. 이러한 경우에는 본 옵션을 사용하여 phpMussel 빈 요소를 검사하고 오류 메시지를 반환을 피하고 요청한 페이지로 원활하게 진행할 수 있도록합니다. `false` = OFF (해제입니다); `true` = ON (온입니다).
 
 "only_allow_images"
-- 시스템 또는 CMS에 이미지 파일의 업로드 만 허용한다면이 지시어가 동작해야하며, 그렇지 않으면 무효로합니다. 사용하면 이미지와 알 수없는 파일은 검사하지 않고 차단하기 때문에 프로세스 시간 단축 및 메모리 절약을 기대할 수 있습니다. `false` = OFF (해제); `true` = ON (온)입니다.
+- 시스템 또는 CMS에 이미지 파일의 업로드 만 허용한다면이 지시어가 동작해야하며, 그렇지 않으면 무효로합니다. 사용하면 이미지와 알 수없는 파일은 검사하지 않고 차단하기 때문에 프로세스 시간 단축 및 메모리 절약을 기대할 수 있습니다. `false` = OFF (해제입니다); `true` = ON (온입니다).
 
 #### "heuristic"
 경험적 지시문 그림.
@@ -520,7 +520,7 @@ VirusTotal.com 지시문 그림.
 "vt_weighting"
 - phpMussel이 Virus Total API를 사용한 스캐닝 결과를 감지으로 대우하거나, 검색 가중치로 취급 할 것인가? 여러 엔진 (Virus Total처럼)을 사용한 스캐닝은 검색 속도 향상 (더 많은 악성 코드가 감지)을 가져다 한편 오진의 증가도 발생하므로이 지시어가 존재합니다. 따라서 스캐닝 결과는 결정적인 판단이 아니라 신뢰 점수로 사용하는 것이 적절한 경우도 있습니다. 값이 0이면 Virus Total API를 사용한 검색은 검색으로 처리되어 Virus Total 엔진이 악성 코드 및 플래그가 지정된 파일은 phpMussel도 악성 코드로 판단합니다. 다른 값의 경우 결과는 검출 가중되고, 스캔 된 파일이 악성 코드 여부 phpMussel가 결정하는 신뢰 점수 (또는 감지 가중치)입니다 (값은 악성이라고 판단하기위한 최소 신뢰 점수 또는 가중치). 기본값은 0입니다.
 
-"vt_quota_rate" 과 "vt_quota_time"
+"vt_quota_rate"와 "vt_quota_time"
 - Virus Total API 문서에 따르면 "1 분간의 타임 프레임 사이에 요청 최대 4 회" 의 제한이 있습니다. 허니 클라이언트와 허니팟 등의 자동화를 사용하여 리포트를받을뿐만 아니라 VirusTotal 자원을 제공하는 경우, 상한은 올라갑니다. phpMussel 기본적으로 최대 4 번을 준수하고 있습니다 만, 위의 상황에서이 두 디렉토리를 준비하고 상황에 맞게 변경할 수 있도록되어 있습니다. 한계에 도달 버리는 등의 불편이나 문제가 없으면 기본값을 변경하는 것은 권장되지 않지만 값을 작게하는 것이 적절한 경우도 있습니다. 상한은 시간 프레임`vt_quota_time` (분 내에) `vt_quota_rate`로 설정합니다.
 
 #### "urlscanner" (카테고리)
@@ -595,7 +595,7 @@ $VAR는 일치하는 PE 변수의 이름, HASH은 그 변수의 MD5 해시 크�
 HASH는 모든 파일의 MD5 해시, FILESIZE는 그 파일의 전체 크기, TYPE은 화이트리스트 된 파일이 공격을받을 우려가없는 시그니처 타입입니다.
 
 #### *복합 확장 서명*
-복합 확장 서명은 다른 시그니처와는 조금 달리 무엇에 적합한 지 그것이 자신의 서명에 의해 결정 기준은 하나가 아닙니다. 적합 기준은 ";"은 적합 타입 적합 데이터는 ":"에 따릅니다. 따라서 형식은 $변수1: 어떤 데이터; $변수2: SOMEDATA; 어떤 데이터 수 있습니다.
+복합 확장 서명은 다른 시그니처와는 조금 달리 무엇에 적합한 지 그것이 자신의 서명에 의해 결정 기준은 하나가 아닙니다. 적합 기준은 ";"은 적합 타입 적합 데이터는 ":"에 따릅니다. 따라서 형식은 $variable1: 어떤 데이터; $variable2: SOMEDATA; 어떤 데이터 수 있습니다.
 
 `$variable1:SOMEDATA;$variable2:SOMEDATA;SignatureName`
 
@@ -614,7 +614,7 @@ PHP는 정규 표현식 판단 처리하는 형식이면 phpMussel과 서명에 
 
 ### 9. <a name="SECTION9"></a>적합성 문제
 
-#### PHPとPCRE
+#### PHP와 PCRE
 - phpMussel가 제대로 작동하기 위해서는 PHP와 PCRE가 필요합니다. 어느 한쪽이라도 부족하면 제대로 작동하지 않습니다. 시스템에 PHP와 PCRE 모두 설치되어 있는지 phpMussel 다운로드 전에 확인하십시오.
 
 #### 안티 바이러스 소프트웨어와의 호환성
