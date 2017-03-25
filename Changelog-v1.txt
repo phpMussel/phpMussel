@@ -191,8 +191,8 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 - [2017.03.06-11; Sub-minor code change; Maikuolan]: Refactoring again.
 
-- [2017.03.14; Documentation; Maikuolan]: Removing "future goals" from
-  the changelog.
+- [2017.03.14; Documentation; Maikuolan]: Removed "future goals" from the
+  changelog.
 
 - [2017.03.17; Documentation; Maikuolan]: New additions to the FAQ.
 
@@ -201,6 +201,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   Associated configuration directive removed. Functionality can be returned by
   installing/enabling the relevant signature file for general command
   detections.
+
+- [2017.03.25; Documentation; Maikuolan]: Completed translation of the
+  documentation to Korean (very fuzzy though). With this translation completed,
+  the phpMussel documentation is now available in 15 different translations.
 
 ======
 
