@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.03.05).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.03.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -31,9 +31,8 @@ $phpMussel['lang']['config_attack_specific_chameleon_to_img'] = '寻找图像谁
 $phpMussel['lang']['config_attack_specific_chameleon_to_pdf'] = '寻找PDF文件谁的头是不正确。 False = 是关闭； True = 是激活。';
 $phpMussel['lang']['config_attack_specific_corrupted_exe'] = '损坏文件和处理错误。 False = 忽略； True = 受阻【默认】。 检测和受阻潜在的损坏移植可执行｢PE｣文件吗？时常（但不始终），当某些零件的一个移植可执行｢PE｣文件是损坏或不能被正确处理，它可以建议建议的一个病毒感染。过程使用通过最杀毒程序以检测病毒在PE文件需要处理那些文件在某些方式，哪里，如果程序员的一个病毒是意识的，将特别尝试防止，以允许他们的病毒留不检测。';
 $phpMussel['lang']['config_attack_specific_decode_threshold'] = '可选限或门槛的长度的原始数据在其中解码命令应该被检测（如果有任何引人注目性能问题当扫描）。值是一个整数代表文件大小在KB。 默认 = 512 （512KB）。 零或空值将关闭门槛（去除任何这样的限基于文件大小）。';
-$phpMussel['lang']['config_attack_specific_general_commands'] = '搜索文件内容为通用命令例如<code>eval()`和`exec()</code>？ False = 不搜索【默认】； True = 搜索。 关闭这个指令如果您打算上传任何的下列在您的系统或CMS通过您的浏览器：PHP，JavaScript，HTML，python，perl文件和等等。激活这个指令如果您不有任何另外保护在您的系统和不打算上传这些文件。如果您使用另外安全在连词的phpMussel例如ZB Block，没有任何需要激活这个指令，因为最的什么phpMussel将寻找（在上下文这个指令）是重复的保护已提供。';
-$phpMussel['lang']['config_attack_specific_scannable_threshold'] = '可选限或门槛为原始数据长度phpMussel是允许为阅读和扫描（如果有任何引人注目性能问题当扫描）。值是一个整数代表文件大小在KB。 默认 = 32768 （32MB）。 零或空值将关闭门槛。按说，这个数值应不会少于平均文件大小的文件上传您想和期待收到您的服务器或网站，应不会多于<code>filesize_limit`指令，和应不会多于大致五分之一的总允许内存分配获授PHP通过`php.ini</code>配置文件。这个指令存在为尝试防止phpMussel从用的太多内存（这个将防止它从能够顺利扫描文件以上的一个特别文件大小）。';
-$phpMussel['lang']['config_compatibility_ignore_upload_errors'] = '这个指令按说应会关闭除非它是需要为对功能的phpMussel在您的具体系统。按说，当是关闭，当phpMussel检测存在元素在<code>$_FILES`数组，它将尝试引发一个扫描的文件代表通过那些元素，和，如果他们是空或空白，phpMussel将回报一个错误信息。这个是正确行为为phpMussel。然而，为某些CMS，空元素在`$_FILES</code>可以发生因之的自然的行为的那些CMS，或错误可能会报告当没有任何，在这种情况，正常行为为phpMussel将会使干扰为正常行为的那些CMS。如果这样的一个情况发生为您，激活这个指令将指示phpMussel不尝试引发扫描为这样的空元素，忽略他们当发现和不回报任何关联错误信息，从而允许延续的页面请求。 False = 不忽略； True = 忽略。';
+$phpMussel['lang']['config_attack_specific_scannable_threshold'] = '可选限或门槛为原始数据长度phpMussel是允许为阅读和扫描（如果有任何引人注目性能问题当扫描）。值是一个整数代表文件大小在KB。 默认 = 32768 （32MB）。 零或空值将关闭门槛。按说，这个数值应不会少于平均文件大小的文件上传您想和期待收到您的服务器或网站，应不会多于<code>filesize_limit</code>指令，和应不会多于大致五分之一的总允许内存分配获授PHP通过<code>php.ini</code>配置文件。这个指令存在为尝试防止phpMussel从用的太多内存（这个将防止它从能够顺利扫描文件以上的一个特别文件大小）。';
+$phpMussel['lang']['config_compatibility_ignore_upload_errors'] = '这个指令按说应会关闭除非它是需要为对功能的phpMussel在您的具体系统。按说，当是关闭，当phpMussel检测存在元素在<code>$_FILES</code>数组，它将尝试引发一个扫描的文件代表通过那些元素，和，如果他们是空或空白，phpMussel将回报一个错误信息。这个是正确行为为phpMussel。然而，为某些CMS，空元素在<code>$_FILES</code>可以发生因之的自然的行为的那些CMS，或错误可能会报告当没有任何，在这种情况，正常行为为phpMussel将会使干扰为正常行为的那些CMS。如果这样的一个情况发生为您，激活这个指令将指示phpMussel不尝试引发扫描为这样的空元素，忽略他们当发现和不回报任何关联错误信息，从而允许延续的页面请求。 False = 不忽略； True = 忽略。';
 $phpMussel['lang']['config_compatibility_only_allow_images'] = '如果您只期待或只意味到允许图像被上传在您的系统或CMS，和如果您绝对不需要任何文件以外图像被上传在您的系统或CMS，这个指令应会激活，但其他应会关闭。如果这个指令是激活，它将指示phpMussel受阻而不例外任何上传确定为非图像文件，而不扫描他们。这个可能减少处理时间和内存使用为非图像文件上传尝试。 False = 还允许其他文件； True = 只允许图像文件。';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = '检测和受阻加密的存档吗？因为phpMussel是不能够扫描加密的存档内容，它是可能存档加密可能的可以使用通过一个攻击者作为一种手段尝试绕过phpMussel，杀毒扫描仪和其他这样的保护。指示phpMussel受阻任何存档它发现被加密可能的可以帮助减少任何风险有关联这些可能性。 False = 不受阻； True = 受阻【默认】。';
 $phpMussel['lang']['config_files_check_archives'] = '尝试匹配存档内容吗？ False = 不匹配； True = 匹配【默认】。 目前，只BZ/BZIP2，GZ/GZIP，LZF，PHAR，TAR和ZIP文件格式是支持（匹配的RAR，CAB，7z和等等不还支持）。 这个是不完美！虽说我很推荐保持这个激活，我不能保证它将始终发现一切。 还，请注意存档匹配目前是不递归为PHAR或ZIP格式。';
@@ -51,13 +50,13 @@ $phpMussel['lang']['config_general_delete_on_sight'] = '激活的这个指令将
 $phpMussel['lang']['config_general_disable_cli'] = '关闭CLI模式吗？CLI模式是按说激活作为标准，但可以有时干扰某些测试工具（例如PHPUnit，为例子）和其他基于CLI应用。 如果您没有需要关闭CLI模式，您应该忽略这个指令。 False = 激活CLI模式【标准】； True = 关闭CLI模式。';
 $phpMussel['lang']['config_general_disable_frontend'] = '关闭前端访问吗？前端访问可以使phpMussel更易于管理，但也可能是潜在的安全风险。建议管理phpMussel通过后端只要有可能，但前端访问提供当不可能。保持关闭除非您需要它。 False = 激活前端访问； True = 关闭前端访问【标准】。';
 $phpMussel['lang']['config_general_enable_plugins'] = '启用phpMussel插件支持吗？ False = 不要启用； True = 要启用【标准】。';
-$phpMussel['lang']['config_general_forbid_on_block'] = 'phpMussel应该发送<code>403`头随着文件上传受阻信息，或坚持标准</code>200 OK`？ False = 发送<code>200</code>； True = 发送<code>403</code>【标准】。';
+$phpMussel['lang']['config_general_forbid_on_block'] = 'phpMussel应该发送<code>403</code>头随着文件上传受阻信息，或坚持标准<code>200 OK</code>？ False = 发送<code>200</code>； True = 发送<code>403</code>【标准】。';
 $phpMussel['lang']['config_general_FrontEndLog'] = '前端登录尝试的录音文件。指定一个文件名，或留空以禁用。';
 $phpMussel['lang']['config_general_honeypot_mode'] = '当这个指令（蜜罐模式）是激活，phpMussel将尝试检疫所有文件上传它遇到，无论的如果文件上传是匹配任何包括签名，和没有扫描或分析的那些文件上传将发生。 这个功能应有用为那些想使用的phpMussel为目的病毒或恶意软件研究，但它是不推荐激活这个功能如果预期的用的phpMussel通过用户是为标准文件上传扫描，也不推荐使用蜜罐功能为目的以外蜜罐。 作为标准，这个指令是关闭。 False = 是关闭【标准】； True = 是激活。';
 $phpMussel['lang']['config_general_ipaddr'] = '在哪里可以找到连接请求IP地址？ （可以使用为服务例如Cloudflare和类似）标准是<code>REMOTE_ADDR</code>。 警告！不要修改此除非您知道什么您做着！';
 $phpMussel['lang']['config_general_lang'] = '指定标准phpMussel语言。';
 $phpMussel['lang']['config_general_max_login_attempts'] = '最大登录尝试次数（前端）。 标准 = 5。';
-$phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel可以检疫坏文件上传在隔离在phpMussel的安全／保险库｢Vault｣，如果这个是某物您想。 普通用户的phpMussel简单地想保护他们的网站或宿主环境无任何兴趣在深深分析任何尝试文件上传应该离开这个功能关闭，但任何用户有兴趣在更深分析的尝试文件上传为目的恶意软件研究或为类似这样事情应该激活这个功能。检疫的尝试文件上传可以有时还助攻在调试假阳性，如果这个是某物经常发生为您。 以关闭检疫功能，简单地离开<code>quarantine_key</code>指令空白，或抹去内容的这个指令如果它不已空白。以激活隔离功能，输入一些值在这个指令。 <code>quarantine_key</code>是一个重要安全功能的隔离功能需要以预防检疫功能从成为利用通过潜在攻击者和以预防任何潜在执行的数据存储在检疫。 <code>quarantine_key`应该被处理在同样方法作为您的密码：更长是更好，和紧紧保护它。为获得最佳效果，在结合使用`delete_on_sight</code>。';
+$phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel可以检疫坏文件上传在隔离在phpMussel的安全／保险库｢Vault｣，如果这个是某物您想。 普通用户的phpMussel简单地想保护他们的网站或宿主环境无任何兴趣在深深分析任何尝试文件上传应该离开这个功能关闭，但任何用户有兴趣在更深分析的尝试文件上传为目的恶意软件研究或为类似这样事情应该激活这个功能。检疫的尝试文件上传可以有时还助攻在调试假阳性，如果这个是某物经常发生为您。 以关闭检疫功能，简单地离开<code>quarantine_key</code>指令空白，或抹去内容的这个指令如果它不已空白。以激活隔离功能，输入一些值在这个指令。 <code>quarantine_key</code>是一个重要安全功能的隔离功能需要以预防检疫功能从成为利用通过潜在攻击者和以预防任何潜在执行的数据存储在检疫。 <code>quarantine_key</code>应该被处理在同样方法作为您的密码：更长是更好，和紧紧保护它。为获得最佳效果，在结合使用<code>delete_on_sight</code>。';
 $phpMussel['lang']['config_general_quarantine_max_filesize'] = '最大允许文件大小为文件在检疫。 文件大于这个指定数值将不成为检疫。 这个指令是重要为使它更难为任何潜在攻击者洪水您的检疫用非通缉数据潜在的造成过度数据用法在您的虚拟主机服务。 数值是在KB。 标准 =2048 =2048KB =2MB。';
 $phpMussel['lang']['config_general_quarantine_max_usage'] = '最大内存使用允许为检疫。 如果总内存已用通过隔离到达这个数值，最老检疫文件将会删除直到总内存已用不再到达这个数值。 这个指令是重要为使它更难为任何潜在攻击者洪水您的检疫用非通缉数据潜在的造成过度数据用法在您的虚拟主机服务。 数值是在KB。 标准 =65536 =65536KB =64MB。';
 $phpMussel['lang']['config_general_scan_cache_expiry'] = '多长时间应该phpMussel维持扫描结果？ 数值是秒数为维持扫描结果。 标准是21600秒（6小时）； 一个<code>0</code>数值将停止维持扫描结果。';
@@ -73,8 +72,8 @@ $phpMussel['lang']['config_signatures_detect_joke_hoax'] = 'phpMussel应该使�
 $phpMussel['lang']['config_signatures_detect_packer_packed'] = 'phpMussel应该使用签名为打包机和打包数据检测吗？ False = 不检查， True = 检查【默认】。';
 $phpMussel['lang']['config_signatures_detect_pua_pup'] = 'phpMussel应该使用签名为PUP/PUA（可能无用／非通缉程序／软件）检测吗？ False = 不检查， True = 检查【默认】。';
 $phpMussel['lang']['config_signatures_detect_shell'] = 'phpMussel应该使用签名为webshell脚本检测吗？ False = 不检查， True = 检查【默认】。';
-$phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'phpMussel应该报告当扩展是失踪吗？ 如果<code>fail_extensions_silently`是关闭，失踪扩展将会报告当扫描，和如果`fail_extensions_silently</code>是激活，失踪扩展将会忽略，有扫描报告为那些文件哪里没有任何问题。 关闭的这个指令可能的可以增加您的安全，但可能还导致一个增加的假阳性。 False = 是关闭； True = 是激活【默认】。';
-$phpMussel['lang']['config_signatures_fail_silently'] = 'phpMussel应该报告当签名文件是失踪或损坏吗？ 如果<code>fail_silently`是关闭，失踪和损坏文件将会报告当扫描，和如果`fail_silently</code>是激活，失踪和损坏文件将会忽略，有扫描报告为那些文件哪里没有问题。 这个应该按说被留下除非您遇到失败或有其他类似问题。 False = 是关闭； True = 是激活【默认】。';
+$phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'phpMussel应该报告当扩展是失踪吗？ 如果<code>fail_extensions_silently</code>是关闭，失踪扩展将会报告当扫描，和如果<code>fail_extensions_silently</code>是激活，失踪扩展将会忽略，有扫描报告为那些文件哪里没有任何问题。 关闭的这个指令可能的可以增加您的安全，但可能还导致一个增加的假阳性。 False = 是关闭； True = 是激活【默认】。';
+$phpMussel['lang']['config_signatures_fail_silently'] = 'phpMussel应该报告当签名文件是失踪或损坏吗？ 如果<code>fail_silently</code>是关闭，失踪和损坏文件将会报告当扫描，和如果<code>fail_silently</code>是激活，失踪和损坏文件将会忽略，有扫描报告为那些文件哪里没有问题。 这个应该按说被留下除非您遇到失败或有其他类似问题。 False = 是关闭； True = 是激活【默认】。';
 $phpMussel['lang']['config_template_data_css_url'] = '模板文件为个性化主题使用外部CSS属性，而模板文件为t标准主题使用内部CSS属性。 以指示phpMussel使用模板文件为个性化主题，指定公共HTTP地址的您的个性化主题的CSS文件使用<code>css_url</code>变量。 如果您离开这个变量空白，phpMussel将使用模板文件为默认主题。';
 $phpMussel['lang']['config_urlscanner_cache_time'] = '多长时间（以秒为单位）应API结果被缓存？ 默认是3600秒（1小时）。';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = '激活Google Safe Browsing API当API密钥是设置。';
@@ -82,8 +81,8 @@ $phpMussel['lang']['config_urlscanner_lookup_hphosts'] = '激活hpHosts API当�
 $phpMussel['lang']['config_urlscanner_maximum_api_lookups'] = '最大数值API请求来执行每个扫描迭代。 额外API请求将增加的总要求完成时间每扫描迭代，所以，您可能想来规定一个限以加快全扫描过程。 当设置<code>0</code>，没有最大数值将会应用的。 设置<code>10</code>作为默认。';
 $phpMussel['lang']['config_urlscanner_maximum_api_lookups_response'] = '该什么办如果最大数值API请求已超过？ False = 没做任何事（继续处理） 【默认】； True = 标志/受阻文件。';
 $phpMussel['lang']['config_virustotal_vt_public_api_key'] = '可选的，phpMussel可以扫描文件使用｢Virus Total API｣作为一个方法提供一个显着的改善保护级别针对病毒，木马，恶意软件和其他威胁。 作为默认，扫描文件使用｢Virus Total API｣是关闭。 以激活它，一个API密钥从VirusTotal是需要。 因为的显着好处这个可以提供为您，它是某物我很推荐激活。请注意，然而，以使用的｢Virus Total API｣，您必须同意他们的服务条款和您必须坚持所有方针按照说明通过VirusTotal阅读材料！ 您是不允许使用这个积分功能除非： 您已阅读和您同意服务条款的VirusTotal和它的API。 您已阅读和您了解至少序言的VirusTotal公共API阅读材料(一切之后“VirusTotal Public API v2.0”但之前“Contents”）。';
-$phpMussel['lang']['config_virustotal_vt_quota_rate'] = '根据｢Virus Total API｣阅读材料，它是限于最大的<code>4`请求的任何类型在任何`1</code>分钟大体时间。如果您经营一个“honeyclient”， 蜜罐或任何其他自动化将会提供资源为VirusTotal和不只取回报告您是有权一个更高请求率配额。 作为标准，phpMussel将严格的坚持这些限制，但因为可能性的这些率配额被增加，这些二指令是提供为您指示phpMussel为什么限它应坚持。 除非您是指示这样做，它是不推荐为您增加这些数值，但，如果您遇到问题相关的到达您的率配额，减少这些数值可能有时帮助您解析这些问题。 您的率限是决定作为<code>vt_quota_rate`请求的任何类型在任何`vt_quota_time</code>分钟大体时间。 vt_quota_rate:';
-$phpMussel['lang']['config_virustotal_vt_quota_time'] = 'vt_quota_time:';
+$phpMussel['lang']['config_virustotal_vt_quota_rate'] = '根据｢Virus Total API｣阅读材料，它是限于最大的<code>4</code>请求的任何类型在任何<code>1</code>分钟大体时间。如果您经营一个“honeyclient”， 蜜罐或任何其他自动化将会提供资源为VirusTotal和不只取回报告您是有权一个更高请求率配额。 作为标准，phpMussel将严格的坚持这些限制，但因为可能性的这些率配额被增加，这些二指令是提供为您指示phpMussel为什么限它应坚持。 除非您是指示这样做，它是不推荐为您增加这些数值，但，如果您遇到问题相关的到达您的率配额，减少这些数值可能有时帮助您解析这些问题。 您的率限是决定作为<code>vt_quota_rate</code>请求的任何类型在任何<code>vt_quota_time</code>分钟大体时间。';
+$phpMussel['lang']['config_virustotal_vt_quota_time'] = '（见上面的说明）。';
 $phpMussel['lang']['config_virustotal_vt_suspicion_level'] = '作为标准，phpMussel将限制什么文件它扫描通过使用｢Virus Total API｣为那些文件它考虑作为“可疑”。 您可以可选调整这个局限性通过修改的<code>vt_suspicion_level</code>指令数值。';
 $phpMussel['lang']['config_virustotal_vt_weighting'] = 'phpMussel应使用扫描结果使用｢Virus Total API｣作为检测或作为检测重量吗？ 这个指令存在，因为，虽说扫描一个文件使用多AV引擎（例如怎么样VirusTotal做） 应结果有一个增加检测率（和因此在一个更恶意文件被抓）， 它可以还结果有更假阳性，和因此，为某些情况，扫描结果可能被更好使用作为一个置信得分而不是作为一个明确结论。 如果一个数值的<code>0</code>是使用，扫描结果使用｢Virus Total API｣将会适用作为检测，和因此，如果任何AV引擎使用通过VirusTotal标志文件被扫描作为恶意， phpMussel将考虑文件作为恶意。 如果任何其他数值是使用，扫描结果使用｢Virus Total API｣将会适用作为检测重量，和因此，数的AV引擎使用通过VirusTotal标志文件被扫描作为恶意将服务作为一个置信得分（或检测重量） 为如果文件被扫描应会考虑恶意通过phpMussel（数值使用将代表最低限度的置信得分或重量需要以被考虑恶意）。 一个数值的<code>0</code>是使用作为标准。';
 $phpMussel['lang']['field_activate'] = '启用';

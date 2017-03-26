@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.03.05).
+ * This file: Front-end handler (last modified: 2017.03.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -639,7 +639,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             } elseif ($phpMussel['DirValue']['type'] === 'int') {
                 $phpMussel['ThisDir']['FieldOut'] = '<input type="number" name="'. $phpMussel['ThisDir']['DirLangKey'] . '" value="' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . '" />';
             } elseif ($phpMussel['DirValue']['type'] === 'string') {
-                $phpMussel['ThisDir']['FieldOut'] = '<textarea class="half" name="'. $phpMussel['ThisDir']['DirLangKey'] . '">' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . '</textarea>';
+                $phpMussel['ThisDir']['FieldOut'] = '<textarea name="'. $phpMussel['ThisDir']['DirLangKey'] . '" class="half">' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . '</textarea>';
             } else {
                 $phpMussel['ThisDir']['FieldOut'] = '<input type="text" name="'. $phpMussel['ThisDir']['DirLangKey'] . '" value="' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . '" />';
             }
@@ -1326,9 +1326,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
         }
         if (!empty($phpMussel['Components']['ThisComponent']['Options'])) {
             $phpMussel['AppendToString']($phpMussel['Components']['ThisComponent']['StatusOptions'], '<hr />',
-                '<select name="do" class="half">' .
-                $phpMussel['Components']['ThisComponent']['Options'] .
-                '</select><input class="half" type="submit" value="' . $phpMussel['lang']['field_ok'] . '" />'
+                '<select name="do" class="auto">' . $phpMussel['Components']['ThisComponent']['Options'] .
+                '</select><input type="submit" value="' . $phpMussel['lang']['field_ok'] . '" class="auto" />'
             );
             $phpMussel['Components']['ThisComponent']['Options'] = '';
         }
@@ -1460,10 +1459,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             $phpMussel['lang']['response_updates_not_installed_php']
         ) :
             $phpMussel['lang']['response_updates_not_installed'] .
-            '<br /><select name="do" class="half"><option value="update-component">' .
-            $phpMussel['lang']['field_install'] .
-            '</option></select><input class="half" type="submit" value="' .
-            $phpMussel['lang']['field_ok'] . '" />';
+            '<br /><select name="do" class="auto"><option value="update-component">' .
+            $phpMussel['lang']['field_install'] . '</option></select><input type="submit" value="' .
+            $phpMussel['lang']['field_ok'] . '" class="auto" />';
         $phpMussel['Components']['ThisComponent']['Changelog'] =
             empty($phpMussel['Components']['ThisComponent']['Changelog']) ? '' :
             '<br /><a href="' . $phpMussel['Components']['ThisComponent']['Changelog'] . '">Changelog</a>';
@@ -1781,7 +1779,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
         if ($ThisFile['ThisOptions']) {
             $ThisFile['ThisOptions'] =
                 '<select name="do">' . $ThisFile['ThisOptions'] . '</select>' .
-                '<input class="half" type="submit" value="' . $phpMussel['lang']['field_ok'] . '" />';
+                '<input type="submit" value="' . $phpMussel['lang']['field_ok'] . '" class="auto" />';
         }
         $phpMussel['FE']['FilesData'] .= $phpMussel['ParseVars'](
             $phpMussel['lang'] + $phpMussel['FE'] + $ThisFile, $phpMussel['FE']['FilesRow']

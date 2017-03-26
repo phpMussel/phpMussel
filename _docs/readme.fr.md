@@ -21,7 +21,7 @@
 
 ### 1. <a name="SECTION1"></a>PRÉAMBULE
 
-Merci d'utiliser phpMusel, un script PHP pour la détection de virus, logiciels malveillants et autres menaces dans les fichiers téléchargés sur votre système partout où le script est accroché, basé sur les signatures de ClamAV et autres.
+Merci d'utiliser phpMussel, un script PHP pour la détection de virus, logiciels malveillants et autres menaces dans les fichiers téléchargés sur votre système partout où le script est accroché, basé sur les signatures de ClamAV et autres.
 
 PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPLv2 par Caleb M (Maikuolan).
 
