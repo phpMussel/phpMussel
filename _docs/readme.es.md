@@ -339,7 +339,7 @@ General configuración para phpMussel.
 - Dónde encontrar el IP dirección de la conectando request? (Útil para servicios como Cloudflare y tales) Predefinido = REMOTE_ADDR. AVISO: No cambie esto a menos que sepas lo que estás haciendo!
 
 "enable_plugins"
-- Habilitar el soporte para los plugins de phpMussel? False = No; True = Sí [Predefinido].
+- ¿Habilitar el soporte para los plugins de phpMussel? False = No; True = Sí [Predefinido].
 
 "forbid_on_block"
 - Debería phpMussel enviar 403 header con la bloqueados archivos subidos mensaje, o quedarse con los usual 200 OK? False = No (200); True = Sí (403) [Predefinido].
@@ -366,16 +366,19 @@ General configuración para phpMussel.
 - Por cuánto tiempo debe phpMussel caché de los resultados del escaneo? El valor es el número de segundos para almacenar en caché los resultados del escaneo. La predeterminado valor es 21600 segundos (6 horas); Un valor de 0 desactiva el almacenamiento en caché de los resultados del escaneo.
 
 "disable_cli"
-- Desactivar CLI modo? CLI modo está activado por predefinido, pero a veces puede interferir con ciertas herramientas de prueba (tal como PHPUnit, por ejemplo) y otras aplicaciones basadas en CLI. Si no es necesario desactivar CLI modo, usted debe ignorar esta directiva. False = Activar CLI modo [Predefinido]; True = Desactivar CLI modo.
+- ¿Desactivar CLI modo? CLI modo está activado por predefinido, pero a veces puede interferir con ciertas herramientas de prueba (tal como PHPUnit, por ejemplo) y otras aplicaciones basadas en CLI. Si no es necesario desactivar CLI modo, usted debe ignorar esta directiva. False = Activar CLI modo [Predefinido]; True = Desactivar CLI modo.
 
 "disable_frontend"
-- Desactivar el acceso front-end? El acceso front-end puede hacer phpMussel más manejable, pero también puede ser un riesgo de seguridad. Se recomienda administrar phpMussel a través del back-end cuando sea posible, pero el acceso front-end se proporciona para cuando no es posible. Mantenerlo desactivado a menos que lo necesite. False = Activar el acceso front-end; True = Desactivar el acceso front-end [Predefinido].
+- ¿Desactivar el acceso front-end? El acceso front-end puede hacer phpMussel más manejable, pero también puede ser un riesgo de seguridad. Se recomienda administrar phpMussel a través del back-end cuando sea posible, pero el acceso front-end se proporciona para cuando no es posible. Mantenerlo desactivado a menos que lo necesite. False = Activar el acceso front-end; True = Desactivar el acceso front-end [Predefinido].
 
 "max_login_attempts"
 - Número máximo de intentos de login (front-end). Predefinido = 5.
 
 "FrontEndLog"
 - Archivo para registrar intentos de login al front-end. Especificar el nombre del archivo, o dejar en blanco para desactivar.
+
+"disable_webfonts"
+- ¿Desactivar webfonts? True = Sí; False = No [Predefinido].
 
 #### "signatures" (Categoría)
 Configuración de firmas.
@@ -724,4 +727,4 @@ No. PHP 5.4.0 llegó a EoL oficial ("End of Life", o fin de la vida) en 2014, y 
 ---
 
 
-Última Actualización: 25 Marzo 2017 (2017.03.25).
+Última Actualización: 27 Marzo 2017 (2017.03.27).

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.02.12).
+ * This file: Configuration handler (last modified: 2017.03.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -149,6 +149,10 @@ $phpMussel['Mussel_sapi'] = (
         $_SERVER['argc'] > 0
     )
 );
+
+/** If the feature is enabled, define the webfonts CSS link. */
+$phpMussel['WebFontsLink'] = empty($phpMussel['Config']['general']['disable_webfonts']) ?
+    "\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"https://fonts.googleapis.com/css?family=Open+Sans|Space+Mono\" />" : '';
 
 /** Process the request query and query variables (if any exist). */
 if (!empty($_SERVER['QUERY_STRING'])) {

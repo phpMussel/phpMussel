@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.03.25).
+ * This file: Italian language data for the front-end (last modified: 2017.03.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -49,6 +49,7 @@ $phpMussel['lang']['config_general_cleanup'] = 'Disimpostare le script variabili
 $phpMussel['lang']['config_general_delete_on_sight'] = 'Abilitando questa opzione sarà istruirà lo script per tentare immediatamente eliminare qualsiasi file trovato durante scansioni che corrisponde a qualsiasi i criteri di rilevazione, attraverso le firme o altrimenti. I file determinati ad essere "pulito" non verranno toccati. Nel caso degli archivi, l\'intero archivio verrà eliminato (indipendentemente se il file all\'origine è soltanto uno dei vari file contenuti all\'interno dell\'archivio o non). Nel caso di file caricamente scansione, solitamente, non è necessario attivare questa opzione, perché solitamente, PHP sarà automaticamente eliminerà il contenuto della cache quando l\'esecuzione è terminata, il che significa che lo farà solitamente eliminare tutti i file caricati tramite al server tranne ciò che già è spostato, copiato o cancellato. L\'opzione viene aggiunto qui come ulteriore misura di sicurezza per coloro le cui copie di PHP non sempre comportarsi nel previsto modo. False = Dopo la scansione, lasciare il file solo [Predefinito]; True = Dopo la scansione, se non pulite, immediatamente eliminarlo.';
 $phpMussel['lang']['config_general_disable_cli'] = 'Disabilita CLI? Modalità CLI è abilitato per predefinito, ma a volte può interferire con alcuni strumenti di test (come PHPUnit, per esempio) e altre applicazioni basate su CLI. Se non è necessario disattivare la modalità CLI, si dovrebbe ignorare questa direttiva. False = Abilita CLI [Predefinito]; True = Disabilita CLI.';
 $phpMussel['lang']['config_general_disable_frontend'] = 'Disabilita l\'accesso front-end? L\'accesso front-end può rendere phpMussel più gestibile, ma può anche essere un potenziale rischio per la sicurezza. Si consiglia di gestire phpMussel attraverso il back-end, quando possibile, ma l\'accesso front-end è previsto per quando non è possibile. Mantenerlo disabilitato tranne se hai bisogno. False = Abilita l\'accesso front-end; True = Disabilita l\'accesso front-end [Predefinito].';
+$phpMussel['lang']['config_general_disable_webfonts'] = 'Disabilita webfonts? True = Sì; False = No [Predefinito].';
 $phpMussel['lang']['config_general_enable_plugins'] = 'Attiva il supporto per i plugin di phpMussel? False = No; True = Sì [Predefinito].';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'phpMussel dovrebbe rispondere con 403 header con il file caricamente bloccato messaggio, o rimanere con il solito 200 OK? False = No (200); True = Sì (403) [Predefinito].';
 $phpMussel['lang']['config_general_FrontEndLog'] = 'File per la registrazione di l\'accesso front-end tentativi di accesso. Specificare un nome di file, o lasciare vuoto per disabilitare.';

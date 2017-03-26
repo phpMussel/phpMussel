@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.03.25).
+ * This file: English language data for the front-end (last modified: 2017.03.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -49,6 +49,7 @@ $phpMussel['lang']['config_general_cleanup'] = 'Unset variables and cache used b
 $phpMussel['lang']['config_general_delete_on_sight'] = 'Enabling this directive will instruct the script to attempt to immediately delete any scanned attempted file upload matching any detection criteria, whether via signatures or otherwise. Files determined to be "clean" won\'t be touched. In the case of archives, the entire archive will be deleted, regardless of whether or not the offending file is only one of several files contained within the archive. For the case of file upload scanning, usually, it isn\'t necessary to enable this directive, because usually, PHP will automatically purge the contents of its cache when execution has finished, meaning it\'ll usually delete any files uploaded through it to the server unless they\'ve been moved, copied or deleted already. This directive is added here as an extra measure of security for those whose copies of PHP mightn\'t always behave in the manner expected. False = After scanning, leave the file alone [Default]; True = After scanning, if not clean, delete immediately.';
 $phpMussel['lang']['config_general_disable_cli'] = 'Disable CLI mode? CLI mode is enabled by default, but can sometimes interfere with certain testing tools (such as PHPUnit, for example) and other CLI-based applications. If you don\'t need to disable CLI mode, you should ignore this directive. False = Enable CLI mode [Default]; True = Disable CLI mode.';
 $phpMussel['lang']['config_general_disable_frontend'] = 'Disable front-end access? Front-end access can make phpMussel more manageable, but can also be a potential security risk, too. It\'s recommended to manage phpMussel via the back-end whenever possible, but front-end access is provided for when it isn\'t possible. Keep it disabled unless you need it. False = Enable front-end access; True = Disable front-end access [Default].';
+$phpMussel['lang']['config_general_disable_webfonts'] = 'Disable webfonts? True = Yes; False = No [Default].';
 $phpMussel['lang']['config_general_enable_plugins'] = 'Enable support for phpMussel plugins? False = No; True = Yes [Default].';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'Should phpMussel send 403 headers with the file upload blocked message, or stick with the usual 200 OK? False = No (200); True = Yes (403) [Default].';
 $phpMussel['lang']['config_general_FrontEndLog'] = 'File for logging front-end login attempts. Specify a filename, or leave blank to disable.';

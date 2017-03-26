@@ -377,6 +377,9 @@ Generelle Konfiguration von phpMussel.
 "FrontEndLog"
 - Datei für die Protokollierung von Front-End Einloggen-Versuchen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.
 
+"disable_webfonts"
+- Web-Fonts deaktivieren? True = Ja; False = Nein [Standardeinstellung].
+
 #### "signatures" (Kategorie)
 Konfiguration der Signaturen.
 
@@ -723,4 +726,4 @@ Nein. PHP 5.4.0 erreichte offiziellen EoL ("End of Life" oder Ende des Lebens) i
 ---
 
 
-Zuletzt aktualisiert: 25 März 2017 (2017.03.25).
+Zuletzt aktualisiert: 27 März 2017 (2017.03.27).

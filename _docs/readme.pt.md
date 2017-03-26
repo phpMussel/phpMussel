@@ -377,6 +377,9 @@ Configuração geral por phpMussel.
 "FrontEndLog"
 - Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar.
 
+"disable_webfonts"
+- Desativar webfonts? True = Sim; False = Não [Padrão].
+
 #### "signatures" (Categoria)
 Configuração por assinaturas.
 
@@ -724,4 +727,4 @@ Não. PHP 5.4.0 chegou ao EoL ("End of Life", ou Fim da Vida) oficial em 2014, e
 ---
 
 
-Última Atualização: 25 Março 2017 (2017.03.25).
+Última Atualização: 27 Março 2017 (2017.03.27).

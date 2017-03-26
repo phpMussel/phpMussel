@@ -377,6 +377,9 @@ Konfigurasi umum dari phpMussel.
 "FrontEndLog"
 - File untuk mencatat upaya login untuk bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan.
 
+"disable_webfonts"
+- Menonaktifkan webfonts? True = Ya; False = Tidak [Default].
+
 #### "signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 
@@ -724,4 +727,4 @@ Tidak. PHP 5.4.0 mencapai EoL ("End of Life", atau Akhir Hidup) resmi pada tahun
 ---
 
 
-Terakhir Diperbarui: 25 Maret 2017 (2017.03.25).
+Terakhir Diperbarui: 27 Maret 2017 (2017.03.27).

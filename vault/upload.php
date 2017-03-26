@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2017.03.24).
+ * This file: Upload handler (last modified: 2017.03.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -537,6 +537,7 @@ if ($phpMussel['upload']['count'] > 0) {
         $phpMussel['TemplateData']['phpmusselversion'] = $phpMussel['ScriptIdent'];
         $phpMussel['TemplateData']['favicon'] = $phpMussel['favicon'];
         $phpMussel['TemplateData']['xmlLang'] = $phpMussel['Config']['general']['lang'];
+        $phpMussel['TemplateData']['WebFontsLink'] = $phpMussel['WebFontsLink'];
         $phpMussel['memCache']['template_file'] =
             (!$phpMussel['Config']['template_data']['css_url']) ? 'template.html' : 'template_custom.html';
 

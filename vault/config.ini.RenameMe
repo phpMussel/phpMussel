@@ -136,6 +136,9 @@ max_login_attempts=5
 ; to disable.
 FrontEndLog=''
 
+; Disable webfonts? True = Yes; False = No [Default].
+disable_webfonts=false
+
 
 [signatures]
 
@@ -295,18 +298,6 @@ chameleon_to_pdf=true
 ; isn't necessarily comprehensive.
 archive_file_extensions='7z,a,ace,alz,apk,app,ar,arc,arj,ba,bh,bz,bz2,dmg,gz,ice,iso,lha,lz,lzh,lzo,lzw,lzx,mar,pak,pck,pea,phar,rar,rz,s7z,sea,sen,sfx,shar,sqx,tar,tgz,tlz,xar,xp3,xz,yz1,z,zz,paq*,sit*,tbz*,zip*'
 
-; Search the content of files for statements and general commands such as
-; eval() and exec()? False = Don't check [Default]; True = Check. Disable this
-; directive if you intend to upload any of the following to your system or CMS
-; via your browser: PHP, JavaScript, HTML, python, perl files and etcetera.
-; Enable this directive if you don't have any additional protections on your
-; system and do not intend to upload such files. If you use additional security
-; in conjunction with phpMussel (such as ZB Block), there's no need to enable
-; this directive, because most of what phpMussel will look for (in the context
-; of this directive) are duplications of protections that will most likely
-; already be provided.
-general_commands=false
-
 ; Block any files containing any control characters (other than newlines)?
 ; ([\x00-\x08\x0b\x0c\x0e\x1f\x7f]) If you're ONLY uploading plain-text, then
 ; you can turn this option on to provide some additional protection to your
@@ -448,10 +439,10 @@ vt_weighting=0
 ; you've encountered problems relating to reaching your rate quota, decreasing
 ; these values MAY sometimes help you in dealing with these problems. Your rate
 ; limit is determined as vt_quota_rate requests of any nature in any given
-; vt_quota_time minute time frame. vt_quota_rate:
+; vt_quota_time minute time frame.
 vt_quota_rate=4
 
-; vt_quota_time:
+; (See description above).
 vt_quota_time=1
 
 

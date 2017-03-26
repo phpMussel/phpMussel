@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.03.26).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.03.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -49,6 +49,7 @@ $phpMussel['lang']['config_general_cleanup'] = '｢反设置／删除／清洁�
 $phpMussel['lang']['config_general_delete_on_sight'] = '激活的这个指令将指示脚本马上删除任何扫描文件上传匹配任何检测标准，是否通过签名或任何事其他。文件已确定是清洁将会忽略。如果是存档，全存档将会删除，不管如果违规文件是只有一个的几个文件包含在存档。为文件上传扫描，按说，它不必要为您激活这个指令，因为按说，PHP将自动清洗内容的它的缓存当执行是完，意思它将按说删除任何文件上传从它向服务器如果不已移动，复制或删除。这个指令是添加这里为额外安全为任何人谁的PHP副本可能不始终表现在预期方式。 False｢假／负｣：之后扫描，忽略文件【标准】， True｢真／正｣：之后扫描，如果不清洁，马上删除。';
 $phpMussel['lang']['config_general_disable_cli'] = '关闭CLI模式吗？CLI模式是按说激活作为标准，但可以有时干扰某些测试工具（例如PHPUnit，为例子）和其他基于CLI应用。 如果您没有需要关闭CLI模式，您应该忽略这个指令。 False = 激活CLI模式【标准】； True = 关闭CLI模式。';
 $phpMussel['lang']['config_general_disable_frontend'] = '关闭前端访问吗？前端访问可以使phpMussel更易于管理，但也可能是潜在的安全风险。建议管理phpMussel通过后端只要有可能，但前端访问提供当不可能。保持关闭除非您需要它。 False = 激活前端访问； True = 关闭前端访问【标准】。';
+$phpMussel['lang']['config_general_disable_webfonts'] = '关闭网络字体吗？ True = 关闭； False = 不关闭【标准】。';
 $phpMussel['lang']['config_general_enable_plugins'] = '启用phpMussel插件支持吗？ False = 不要启用； True = 要启用【标准】。';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'phpMussel应该发送<code>403</code>头随着文件上传受阻信息，或坚持标准<code>200 OK</code>？ False = 发送<code>200</code>； True = 发送<code>403</code>【标准】。';
 $phpMussel['lang']['config_general_FrontEndLog'] = '前端登录尝试的录音文件。指定一个文件名，或留空以禁用。';

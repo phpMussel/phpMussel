@@ -377,6 +377,9 @@ Cấu hình chung cho phpMussel.
 "FrontEndLog"
 - Tập tin cho ghi cố gắng đăng nhập front-end. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.
 
+"disable_webfonts"
+- Vô hiệu hóa webfonts? True = Vâng; False = Không [Mặc định].
+
 #### "signatures" (Thể loại)
 Cấu hình cho chữ ký.
 
@@ -724,4 +727,4 @@ Không. PHP 5.4.0 đạt EoL ("End of Life", hoặc sự kết thúc của cuộ
 ---
 
 
-Lần cuối cập nhật: 25 Tháng Ba 2017 (2017.03.25).
+Lần cuối cập nhật: 27 Tháng Ba 2017 (2017.03.27).

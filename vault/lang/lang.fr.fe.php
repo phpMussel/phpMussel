@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.03.25).
+ * This file: French language data for the front-end (last modified: 2017.03.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -49,6 +49,7 @@ $phpMussel['lang']['config_general_cleanup'] = 'Déensemble variables du script 
 $phpMussel['lang']['config_general_delete_on_sight'] = 'Mise en cette option sera instruire le script à tenter immédiatement supprimer tout fichiers elle constate au cours de son analyse correspondant à des critères de détection, que ce soit via des signatures ou autrement. Fichiers jugées "propre" ne seront pas touchés. Dans le cas des archives, l\'ensemble d\'archive sera supprimé (indépendamment de si le incriminé fichier est que l\'un de plusieurs fichiers contenus dans l\'archive). Pour le cas d\'analyse de fichiers téléchargement, généralement, il n\'est pas nécessaire d\'activer cette option sur, parce généralement, PHP faire purger automatiquement les contenus de son cache lorsque l\'exécution est terminée, ce qui signifie que il va généralement supprimer tous les fichiers téléchargés à travers elle au serveur sauf qu\'ils ont déménagé, copié ou supprimé déjà. L\'option est ajoutée ici comme une supplémentaire mesure de sécurité pour ceux dont copies de PHP peut pas toujours se comporter de la manière attendu. False = Après l\'analyse, laissez le fichier tel quel [Défaut]; True = Après l\'analyse, si pas propre, supprimer immédiatement.';
 $phpMussel['lang']['config_general_disable_cli'] = 'Désactiver le mode CLI? Le mode CLI est activé par défaut, mais peut parfois interférer avec certains test outils (comme PHPUnit, par exemple) et d\'autres applications basées sur CLI. Si vous n\'avez pas besoin désactiver le mode CLI, vous devrait ignorer cette directive. False = Activer le mode CLI [Défaut]; True = Désactiver le mode CLI.';
 $phpMussel['lang']['config_general_disable_frontend'] = 'Désactiver l\'accès frontal? L\'accès frontal peut rendre phpMussel plus facile à gérer, mais peut aussi être un risque potentiel pour la sécurité. Il est recommandé de gérer phpMussel via le back-end chaque fois que possible, mais l\'accès frontal est prévu pour quand il est impossible. Seulement activer si vous avez besoin. False = Activer l\'accès frontal; True = Désactiver l\'accès frontal [Défaut].';
+$phpMussel['lang']['config_general_disable_webfonts'] = 'Désactiver les webfonts? True = Oui; False = Non [Défaut].';
 $phpMussel['lang']['config_general_enable_plugins'] = 'Permettre le support pour les plugins du phpMussel? False = Non [Défaut]; True = Oui.';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'Devrait phpMussel envoyer 403 headers avec le fichier téléchargement bloqué message, ou rester avec l\'habitude 200 bien (200 OK)? False = Non (200); True = Oui (403) [Défaut].';
 $phpMussel['lang']['config_general_FrontEndLog'] = 'Fichier pour l\'enregistrement des tentatives de connexion à l\'accès frontal. Spécifier un fichier, ou laisser vide à désactiver.';

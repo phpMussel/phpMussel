@@ -206,7 +206,7 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   documentation to Korean (very fuzzy though). With this translation completed,
   the phpMussel documentation is now available in 15 different translations.
 
-- [2017.03.25; Sub-minor code change; Maikuolan]: Added internal language
+- [2017.03.26; Sub-minor code change; Maikuolan]: Added internal language
   support for Korean (15 language options now supported in total). Implemented
   some of Google's webfonts and slightly increased the text size for both the
   front-end and the blocked upload template; This should significantly improve
@@ -214,6 +214,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   difficult to properly read on-screen text produced by phpMussel). Also
   implemented some other very small design tweaks in order to improve text
   readability.
+
+- [2017.03.27; Minor code change; Maikuolan]: Added a directive to optionally
+  enable/disable webfonts.
 
 ======
 

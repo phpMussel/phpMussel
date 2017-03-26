@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.03.26).
+ * This file: Korean language data for the front-end (last modified: 2017.03.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -49,6 +49,7 @@ $phpMussel['lang']['config_general_cleanup'] = '처음 업로드 후 변수 및 
 $phpMussel['lang']['config_general_delete_on_sight'] = '이 지시문을 사용하면 감지 기준 (서명이든 뭐든)에 있던 업로드 파일은 즉시 삭제됩니다. 클린 판단 된 파일은 그대로입니다. 아카이브의 경우, 문제의 파일이 일부라도 아카이브 모든이 삭제 대상이됩니다. 업로드 파일 검사에서는 본 지시어를 활성화 할 필요는 없습니다. 왜냐하면 PHP는 스크립트 실행 후 자동으로 캐시의 내용을 파기하기 때문입니다. 즉, 파일이 이동되거나 복사되거나 삭제되지 않는 한, PHP는 서버에 업로드 한 파일을 남겨 두는 것은 보통 없습니다. 이 지시어는 보안에 공을들이는 목적으로 설치되어 있습니다. PHP는 드물게 예상치 못한 행동을 할 수 있기 때문입니다. <code>false</code> = 스캔 후 파일은 그대로 (기본 설정). <code>true</code> = 스캔 후 깨끗해야 즉시 삭제합니다.';
 $phpMussel['lang']['config_general_disable_cli'] = 'CLI 모드를 해제 하는가? CLI 모드 (시에루아이 모드)는 기본적으로 활성화되어 있지만, 테스트 도구 (PHPUnit 등) 및 CLI 기반의 응용 프로그램과 간섭하는 가능성이 없다고는 단언 할 수 없습니다. CLI 모드를 해제 할 필요가 없으면이 데레쿠티부 무시 받고 괜찮습니다. <code>false</code> = CLI 모드를 활성화합니다 (Default / 기본 설정); <code>true</code> = CLI 모드를 해제합니다.';
 $phpMussel['lang']['config_general_disable_frontend'] = '프론트 엔드에 대한 액세스를 비활성화하거나? 프론트 엔드에 대한 액세스는 phpMussel을 더 쉽게 관리 할 수 있습니다. 상기 그것은 또한 잠재적 인 보안 위험이 될 수 있습니다. 백엔드를 통해 관리하는 것이 좋습니다,하지만 이것이 불가능한 경우 프론트 엔드에 대한 액세스를 제공. 당신이 그것을 필요로하지 않는 한 그것을 해제합니다. <code>false</code> = 프론트 엔드에 대한 액세스를 활성화합니다; <code>true</code> = 프론트 엔드에 대한 액세스를 비활성화합니다 (Default / 기본 설정).';
+$phpMussel['lang']['config_general_disable_webfonts'] = '웹 글꼴을 사용하지 않도록 설정 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정).';
 $phpMussel['lang']['config_general_enable_plugins'] = '플러그인 지원을 활성화 하시겠습니까? <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정).';
 $phpMussel['lang']['config_general_forbid_on_block'] = '업로드 파일이 차단 된 메시지와 함께 phpMussel에서 403 헤더를 보내야하거나 일반 200 좋은지에 대해. <code>false</code> = 아니오 (200) Default / 기본 설정; <code>true</code> = 예 (403).';
 $phpMussel['lang']['config_general_FrontEndLog'] = '프론트 엔드 로그인 시도를 기록하는 파일. 파일 이름 지정하거나, 해제하려면 비워하십시오.';

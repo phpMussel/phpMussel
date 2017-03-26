@@ -420,6 +420,11 @@
  <li>ملف لتسجيل محاولات الدخول الأمامية. تحديد اسم الملف، أو اتركه فارغا لتعطيل.</li>
 </ul></div>
 
+<div dir="rtl">"disable_webfonts"<br /></div>
+<div dir="rtl"><ul>
+ <li>هل تريد تعطيل ويبفونتس؟ True = نعم؛ False = لا [افتراضي].</li>
+</ul></div>
+
 #### <div dir="rtl">"signatures" (التصنيف)<br /></div>
 <div dir="rtl">تكوين التوقيعات.<br /><br /></div>
 <div dir="rtl"><ul>
@@ -859,4 +864,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 25 مارس 2017 (2017.03.25).</div>
+<div dir="rtl">آخر تحديث: 27 مارس 2017 (2017.03.27).</div>

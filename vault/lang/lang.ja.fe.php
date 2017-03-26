@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.03.26).
+ * This file: Japanese language data for the front-end (last modified: 2017.03.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -49,6 +49,7 @@ $phpMussel['lang']['config_general_cleanup'] = '初回アップロード後に�
 $phpMussel['lang']['config_general_delete_on_sight'] = 'このディレクティブを有効にすると、検知基準（シグネチャでも何でも）にあったアップロードファイルは直ちに削除されます。 クリーンと判断されたファイルはそのままです。 アーカイブの場合、問題のファイルが一部であってもアーカイブ全てが削除の対象となります。 アップロードファイルのスキャンにおいては、本ディレクティブを有効にすることは必須ではありません。 なぜならＰＨＰはスクリプト実行後に自動的にキャッシュの内容を破棄するからです。 言い換えれば、ファイルが移動されたか、コピーされたか、削除されない限り、ＰＨＰはサーバーにアップロードしたファイルを残しておくことは通常ありません。 このディレクティブはセキュリティーに念を入れる目的で設置されています。 ＰＨＰは稀に予測外の振る舞いをすることがあるからです。 <code>false</code>（偽） = スキャニング後、ファイルはそのまま（デフォルト設定）。 <code>true</code>（真） = スキャニング後、クリーンでなければ直ちに削除。';
 $phpMussel['lang']['config_general_disable_cli'] = 'ＣＬＩモードを無効にするか？ ＣＬＩモード（シーエルアイ・モード）はデフォルトでは有効になっていますが、テストツール（PHPUnit等）やＣＬＩベースのアプリケーションと干渉しあう可能性が無いとは言い切れません。 ＣＬＩモードを無効にする必要がなければ、このデレクティブは無視してもらって結構です。 <code>false</code>（偽） = ＣＬＩモードを有効にします（Default/デフォルルト）； <code>true</code>（真） = ＣＬＩモードを無効にします。';
 $phpMussel['lang']['config_general_disable_frontend'] = 'フロントエンドへのアクセスを無効にするか？ フロントエンドへのアクセスは、phpMusselをより管理しやすくすることができます。 前記、それはまた、潜在的なセキュリティリスクになる可能性があります。 バックエンドを経由して管理することをお勧めします、しかし、これが不可能な場合、フロントエンドへのアクセスが提供され。 あなたがそれを必要としない限り、それを無効にします。 <code>false</code>（偽） = フロントエンドへのアクセスを有効にします； <code>true</code>（真） = フロントエンドへのアクセスを無効にします（Default/デフォルルト）。';
+$phpMussel['lang']['config_general_disable_webfonts'] = 'ウェブフォンツを無効にしますか？ True = はい； False = いいえ （Default/デフォルルト）。';
 $phpMussel['lang']['config_general_enable_plugins'] = 'プラグインのサポートを有効にしますか？ <code>false</code> = いいえ； <code>true</code> = はい 「Default/デフォルト設定」。';
 $phpMussel['lang']['config_general_forbid_on_block'] = 'アップロードファイルがブロックされたメッセージと共に、phpMusselから４０３ヘッダーを送るべきか、通常の２００でよいかどうかについて。 <code>false</code>（偽） = いいえ（２００） 「Default/デフォルト設定」； <code>true</code>（真） = はい（４０３）。';
 $phpMussel['lang']['config_general_FrontEndLog'] = 'フロントエンド・ログインの試みを記録するためのファイル。 ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
