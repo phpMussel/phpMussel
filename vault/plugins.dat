@@ -1,7 +1,7 @@
 ---
 plugin-legacy:
  Name: Legacy plugin for phpMussel.
- Extended Description: This is a very simple plugin intended to serve as a bridge between the function-style implementation of phpMussel v0 and the closure-style implementation of phpMussel v1. It provides backwards-compatibility for any phpMussel users that make calls to phpMussel v0 functions from within their CMS, forums, websites, etc, that wish to upgrade to phpMussel v1 (which uses closures instead of functions) but which don't wish to update all their function calls to closure calls. It does this by redeclaring functions using the names of former v0 functions that call their new v1 closure counterparts.<br /><br />Any phpMussel users that don't make calls to phpMussel v0 functions from within their CMS, forums, websites, etc, won't and shouldn't use this plugin, because it won't be of any benefit to them. Please note, too, that this plugin will only provide for the former <code>phpMusselR()</code> and <code>phpMussel()</code> functions; Because the former `phpMussel_mail()` function has been deprecated and removed from v1, there is nothing to be bridged to from here. A separate plugin will be developed to serve as a replacement for this function.
+ Extended Description: Provides backwards-compatibility for v0 users using <code>phpMusselR()</code> and <code>phpMussel()</code>, by redeclaring these deprecated functions as wrappers for their newer, closure counterparts. Non-v0 users don't need this plugin and shouldn't use it.
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/extras/master/plugins/plugins.dat

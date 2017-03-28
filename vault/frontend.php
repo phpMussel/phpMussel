@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.03.27).
+ * This file: Front-end handler (last modified: 2017.03.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -924,8 +924,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
         if ($_POST['do'] === 'uninstall-component' && !empty($_POST['ID'])) {
             $phpMussel['ComponentFunctionUpdatePrep']();
             if (
+                empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['InUse']) &&
                 !empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To']) &&
-                !empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['InUse']) &&
                 ($_POST['ID'] !== 'l10n/' . $phpMussel['Config']['general']['lang']) &&
                 ($_POST['ID'] !== 'phpMussel') &&
                 !empty($phpMussel['Components']['Meta'][$_POST['ID']]['Reannotate']) &&
