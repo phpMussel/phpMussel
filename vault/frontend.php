@@ -1253,7 +1253,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                         $phpMussel['Components']['ThisComponent']['Options'] .=
                             '<option value="uninstall-component">' . $phpMussel['lang']['field_uninstall'] . '</option>';
                     }
-                    if ($phpMussel['Components']['Key'] === 'Bypasses') {
+                    if (!empty($phpMussel['Components']['ThisComponent']['Provisional'])) {
                         $phpMussel['AppendToString']($phpMussel['Components']['ThisComponent']['StatusOptions'], '<hr />',
                             '<div class="txtOe">' . $phpMussel['lang']['state_component_is_provisional'] . '</div>'
                         );
