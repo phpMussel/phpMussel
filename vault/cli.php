@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2017.03.24).
+ * This file: CLI handler (last modified: 2017.03.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -152,7 +152,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                 if (substr($hashme, 0, 2) === 'MZ') {
                     $PEArr = array();
                     $PEArr['Len'] = strlen($hashme);
-                    $PEArr['Offset'] = @unpack('S', substr($hashme, 60, 4));
+                    $PEArr['Offset'] = $phpMussel['UnpackSafe']('S', substr($hashme, 60, 4));
                     $PEArr['Offset'] = $PEArr['Offset'][1];
                     while (true) {
                         $PEArr['DoScan'] = true;
@@ -165,13 +165,13 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                             $PEArr['DoScan'] = false;
                             break;
                         }
-                        $PEArr['Proc'] = @unpack('S', substr($hashme, $PEArr['Offset'] + 4, 2));
+                        $PEArr['Proc'] = $phpMussel['UnpackSafe']('S', substr($hashme, $PEArr['Offset'] + 4, 2));
                         $PEArr['Proc'] = $PEArr['Proc'][1];
                         if ($PEArr['Proc'] != 0x14c && $PEArr['Proc'] != 0x8664) {
                             $PEArr['DoScan'] = false;
                             break;
                         }
-                        $PEArr['NumOfSections'] = @unpack('S', substr($hashme, $PEArr['Offset'] + 6, 2));
+                        $PEArr['NumOfSections'] = $phpMussel['UnpackSafe']('S', substr($hashme, $PEArr['Offset'] + 6, 2));
                         $PEArr['NumOfSections'] = $PEArr['NumOfSections'][1];
                         if ($PEArr['NumOfSections'] < 1 || $PEArr['NumOfSections'] > 40) {
                             $PEArr['DoScan'] = false;
@@ -181,19 +181,19 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                     if (!$PEArr['DoScan']) {
                         echo $phpMussel['lang']['cli_pe1'] . "\n";
                     } else {
-                        $PEArr['OptHdrSize'] = @unpack('S', substr($hashme, $PEArr['Offset'] + 20, 2));
+                        $PEArr['OptHdrSize'] = $phpMussel['UnpackSafe']('S', substr($hashme, $PEArr['Offset'] + 20, 2));
                         $PEArr['OptHdrSize'] = $PEArr['OptHdrSize'][1];
                         echo $phpMussel['lang']['cli_pe2'] . "\n";
                         for ($PEArr['k'] = 0; $PEArr['k'] < $PEArr['NumOfSections']; $PEArr['k']++) {
                             $PEArr['SectionHead'] = substr($hashme, $PEArr['Offset'] + 24 + $PEArr['OptHdrSize'] + ($PEArr['k'] * 40), $PEArr['NumOfSections'] * 40);
                             $PEArr['SectionName'] = str_ireplace("\x00", '', substr($PEArr['SectionHead'], 0, 8));
-                            $PEArr['VirtualSize'] = @unpack('S', substr($PEArr['SectionHead'], 8, 4));
+                            $PEArr['VirtualSize'] = $phpMussel['UnpackSafe']('S', substr($PEArr['SectionHead'], 8, 4));
                             $PEArr['VirtualSize'] = $PEArr['VirtualSize'][1];
-                            $PEArr['VirtualAddress'] = @unpack('S', substr($PEArr['SectionHead'], 12, 4));
+                            $PEArr['VirtualAddress'] = $phpMussel['UnpackSafe']('S', substr($PEArr['SectionHead'], 12, 4));
                             $PEArr['VirtualAddress'] = $PEArr['VirtualAddress'][1];
-                            $PEArr['SizeOfRawData'] = @unpack('S', substr($PEArr['SectionHead'], 16, 4));
+                            $PEArr['SizeOfRawData'] = $phpMussel['UnpackSafe']('S', substr($PEArr['SectionHead'], 16, 4));
                             $PEArr['SizeOfRawData'] = $PEArr['SizeOfRawData'][1];
-                            $PEArr['PointerToRawData'] = @unpack('S', substr($PEArr['SectionHead'], 20, 4));
+                            $PEArr['PointerToRawData'] = $phpMussel['UnpackSafe']('S', substr($PEArr['SectionHead'], 20, 4));
                             $PEArr['PointerToRawData'] = $PEArr['PointerToRawData'][1];
                             $PEArr['SectionData'] = substr($hashme, $PEArr['PointerToRawData'], $PEArr['SizeOfRawData']);
                             $PEArr['MD5'] = md5($PEArr['SectionData']);
@@ -285,16 +285,15 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                 if (!$d = @scandir($stl)) {
                     echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
-                    $c = count($d);
                     $xsc = $stl[strlen($stl) - 1];
                     if ($xsc !== "\\" && $xsc !== "/") {
                         $stl .= "/";
                     }
-                    for ($i = 0; $i < $c; $i++) {
-                        if ($d[$i] == '.' || $d[$i] == '..') {
+                    foreach ($d as $i) {
+                        if ($i === '.' || $i === '..') {
                             continue;
                         }
-                        echo $phpMussel['Fork']('md5_file ' . $stl . $d[$i], $d[$i]) . "\n";
+                        echo $phpMussel['Fork']('md5_file ' . $stl . $i, $i) . "\n";
                     }
                 }
             } elseif (is_file($stl)) {
@@ -313,16 +312,15 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                 if (!$d = @scandir($stl)) {
                     echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
-                    $c = count($d);
                     $xsc = $stl[strlen($stl) - 1];
                     if ($xsc !== "\\" && $xsc !== "/") {
                         $stl .= "/";
                     }
-                    for ($i = 0; $i < $c; $i++) {
-                        if ($d[$i] == '.' || $d[$i] == '..') {
+                    foreach ($d as $i) {
+                        if ($i === '.' || $i === '..') {
                             continue;
                         }
-                        echo $phpMussel['Fork']('coex_file ' . $stl . $d[$i], $d[$i]) . "\n";
+                        echo $phpMussel['Fork']('coex_file ' . $stl . $i, $i) . "\n";
                     }
                 }
             } elseif (is_file($stl)) {
@@ -341,16 +339,15 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                 if (!$d = @scandir($stl)) {
                     echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
                 } else {
-                    $c = count($d);
                     $xsc = $stl[strlen($stl) - 1];
                     if ($xsc !== "\\" && $xsc !== "/") {
                         $stl .= "/";
                     }
-                    for ($i = 0; $i < $c; $i++) {
-                        if ($d[$i] == '.' || $d[$i] == '..') {
+                    foreach ($d as $i) {
+                        if ($i === '.' || $i === '..') {
                             continue;
                         }
-                        echo $phpMussel['Fork']('pe_meta ' . $stl . $d[$i], $d[$i]) . "\n";
+                        echo $phpMussel['Fork']('pe_meta ' . $stl . $i, $i) . "\n";
                     }
                 }
             } elseif (is_file($stl)) {
@@ -423,28 +420,28 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         if ($phpMussel['cmd'] == 'hex_encode' || $phpMussel['cmd'] == 'x') {
             echo "\n";
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            echo @bin2hex($stl) . "\n";
+            echo bin2hex($stl) . "\n";
         }
 
         /** Convert a hexadecimal to a binary string. **/
         if ($phpMussel['cmd'] == 'hex_decode') {
             echo "\n";
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            echo @hex2bin($stl) . "\n";
+            echo $phpMussel['HexSafe']($stl) . "\n";
         }
 
         /** Convert a binary string to a base64 string. **/
         if ($phpMussel['cmd'] == 'base64_encode' || $phpMussel['cmd'] == 'b') {
             echo "\n";
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            echo @base64_encode($stl) . "\n";
+            echo base64_encode($stl) . "\n";
         }
 
         /** Convert a base64 string to a binary string. **/
         if ($phpMussel['cmd'] == 'base64_decode') {
             echo "\n";
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            echo @base64_decode($stl) . "\n";
+            echo base64_decode($stl) . "\n";
         }
 
         /** Scan a file or directory. **/

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.03.24).
+ * This file: Functions file (last modified: 2017.03.30).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -203,7 +203,7 @@ $phpMussel['prescan_decode'] = function ($str) use (&$phpMussel) {
  * @return string The parsed data and/or decoded string (if $str is empty, the
  *      the resolved alias will be returned instead).
  */
-$phpMussel['Function'] = function ($n, $str = false) {
+$phpMussel['Function'] = function ($n, $str = '') {
     static $x = 'abcdefghilnorstxz12346_';
     $fList = array(
         'GZ' =>
@@ -215,10 +215,18 @@ $phpMussel['Function'] = function ($n, $str = false) {
         'HEX' =>
             $x[7] . $x[4] . $x[15] . $x[18] . $x[1] . $x[8] . $x[10]
     );
-    if (!$str) {
-        return (isset($fList[$n])) ? $fList[$n] : '';
+    if (!isset($fList[$n])) {
+        return '';
     }
-    return @$fList[$n]($str);
+    if (!$str || !function_exists($fList[$n])) {
+        return $fList[$n];
+    }
+    try {
+        $Return = $fList[$n]($str);
+    } catch (\Exception $e) {
+        $Return = '';
+    }
+    return $Return;
 };
 
 /**
@@ -428,7 +436,7 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
                 for ($i = 0; $c > $i; $i++) {
                     $str = str_ireplace(
                         $matches[0][$i],
-                        '"' . $phpMussel['Function']('HEX', $phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[3][$i])) . '"',
+                        '"' . $phpMussel['HexSafe']($phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[3][$i])) . '"',
                         $str
                     );
                 }
@@ -441,7 +449,7 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
                 $matches
             )) {
                 for ($i = 0; $c > $i; $i++) {
-                    $str = str_replace($matches[0][$i], '"' . $phpMussel['Function']('HEX', $phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[3][$i])) . '"', $str);
+                    $str = str_replace($matches[0][$i], '"' . $phpMussel['HexSafe']($phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[3][$i])) . '"', $str);
                 }
                 continue;
             }
@@ -671,7 +679,7 @@ $phpMussel['FetchCache'] = function ($entry = '') use (&$phpMussel) {
     if (!$item_data = $phpMussel['substrbf']($phpMussel['substraf']($item, $entry . ':' . $item_ex . ':'), ';')) {
         return '';
     }
-    return $phpMussel['Function']('GZ', $phpMussel['Function']('HEX', $item_data)) ?: '';
+    return $phpMussel['Function']('GZ', $phpMussel['HexSafe']($item_data)) ?: '';
 };
 
 /**
@@ -762,11 +770,11 @@ $phpMussel['Quarantine'] = function ($s, $key, $ip, $id) use (&$phpMussel) {
     }
     if (
         strlen($key) < 128 &&
-        !$key = $phpMussel['Function']('HEX', hash('sha512', $key) . hash('whirlpool', $key))
+        !$key = $phpMussel['HexSafe'](hash('sha512', $key) . hash('whirlpool', $key))
     ) {
         return false;
     }
-    $h = "\xa1phpMussel\x21" . $phpMussel['Function']('HEX', md5($s)) . pack('l*', strlen($s)) . "\x01";
+    $h = "\xa1phpMussel\x21" . $phpMussel['HexSafe'](md5($s)) . pack('l*', strlen($s)) . "\x01";
     $s = gzdeflate($s, 9);
     $o = '';
     $i = 0;
@@ -774,7 +782,7 @@ $phpMussel['Quarantine'] = function ($s, $key, $ip, $id) use (&$phpMussel) {
     $k = strlen($key);
     while ($i < $c) {
         for ($j = 0; $j < $k; $j++, $i++) {
-            $o .= @$s{$i} ^ $key{$j};
+            $o .= $s{$i} ^ $key{$j};
         }
     }
     $o =
@@ -1585,10 +1593,10 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         }
         if (!empty($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][2])) {
             $phpMussel['memCache']['detections_count']++;
-            $out .= $phpMussel['Function']('HEX', $phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][2]);
+            $out .= $phpMussel['HexSafe']($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][2]);
         }
         if (!empty($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][3])) {
-            $phpMussel['whyflagged'] .= $phpMussel['Function']('HEX', $phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][3]);
+            $phpMussel['whyflagged'] .= $phpMussel['HexSafe']($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][3]);
         }
         if (!$out) {
             return array(1, '');
@@ -1981,7 +1989,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         $PEArr = array();
         $PEArr['SectionArr'] = array();
         if ($twocc === '4d5a') {
-            $PEArr['Offset'] = @unpack('S', substr($str, 60, 4));
+            $PEArr['Offset'] = $phpMussel['UnpackSafe']('S', substr($str, 60, 4));
             $PEArr['Offset'] = $PEArr['Offset'][1];
             while (true) {
                 $PEArr['DoScan'] = true;
@@ -1994,13 +2002,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     $PEArr['DoScan'] = false;
                     break;
                 }
-                $PEArr['Proc'] = @unpack('S', substr($str, $PEArr['Offset'] + 4, 2));
+                $PEArr['Proc'] = $phpMussel['UnpackSafe']('S', substr($str, $PEArr['Offset'] + 4, 2));
                 $PEArr['Proc'] = $PEArr['Proc'][1];
                 if ($PEArr['Proc'] != 0x14c && $PEArr['Proc'] != 0x8664) {
                     $PEArr['DoScan'] = false;
                     break;
                 }
-                $PEArr['NumOfSections'] = @unpack('S', substr($str, $PEArr['Offset'] + 6, 2));
+                $PEArr['NumOfSections'] = $phpMussel['UnpackSafe']('S', substr($str, $PEArr['Offset'] + 6, 2));
                 $NumOfSections = $PEArr['NumOfSections'] = $PEArr['NumOfSections'][1];
                 $CoExMeta .= 'PE_Offset:' . $PEArr['Offset'] . ';PE_Proc:' . $PEArr['Proc'] . ';NumOfSections:' . $NumOfSections . ';';
                 if ($NumOfSections < 1 || $NumOfSections > 40) {
@@ -2026,7 +2034,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             } else {
                 $is_pe = true;
                 $asciiable = false;
-                $PEArr['OptHdrSize'] = @unpack('S', substr($str, $PEArr['Offset'] + 20, 2));
+                $PEArr['OptHdrSize'] = $phpMussel['UnpackSafe']('S', substr($str, $PEArr['Offset'] + 20, 2));
                 $PEArr['OptHdrSize'] = $PEArr['OptHdrSize'][1];
                 for ($PEArr['k'] = 0; $PEArr['k'] < $NumOfSections; $PEArr['k']++) {
                     $PEArr['SectionArr'][$PEArr['k']] = array();
@@ -2035,19 +2043,19 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     $PEArr['SectionArr'][$PEArr['k']]['SectionName'] =
                         str_ireplace("\x00", '', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 0, 8));
                     $PEArr['SectionArr'][$PEArr['k']]['VirtualSize'] =
-                        @unpack('S', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 8, 4));
+                        $phpMussel['UnpackSafe']('S', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 8, 4));
                     $PEArr['SectionArr'][$PEArr['k']]['VirtualSize'] =
                         $PEArr['SectionArr'][$PEArr['k']]['VirtualSize'][1];
                     $PEArr['SectionArr'][$PEArr['k']]['VirtualAddress'] =
-                        @unpack('S', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 12, 4));
+                        $phpMussel['UnpackSafe']('S', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 12, 4));
                     $PEArr['SectionArr'][$PEArr['k']]['VirtualAddress'] =
                         $PEArr['SectionArr'][$PEArr['k']]['VirtualAddress'][1];
                     $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData'] =
-                        @unpack('S', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 16, 4));
+                        $phpMussel['UnpackSafe']('S', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 16, 4));
                     $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData'] =
                         $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData'][1];
                     $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'] =
-                        @unpack('S', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 20, 4));
+                        $phpMussel['UnpackSafe']('S', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 20, 4));
                     $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'] =
                         $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'][1];
                     $PEArr['SectionArr'][$PEArr['k']]['SectionData'] =
@@ -2342,7 +2350,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $phpMussel['lang']['_exclamation_final'] . "\n";
                     $phpMussel['whyflagged'] .=
                         $phpMussel['lang']['scan_command_injection'] . ', \'' .
-                        $phpMussel['Function']('HEX', $ItemCSV) .
+                        $phpMussel['HexSafe']($ItemCSV) .
                         '\' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
                 }
             }
@@ -4662,7 +4670,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         return ($n && $zz) ? $phpMussel['implode_md']($f) : $f;
     }
 
-    $ofn = @$phpMussel['prescan_decode']($ofn);
+    $ofn = $phpMussel['prescan_decode']($ofn);
     $ofnSafe = urlencode($ofn);
 
     /**
@@ -6489,4 +6497,14 @@ $phpMussel['ComponentFunctionUpdatePrep'] = function () use (&$phpMussel) {
         $phpMussel['Components']['Meta'][$_POST['ID']]['Files']['InUse'] =
             $phpMussel['IsInUse']($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To']);
     }
+};
+
+/** A simple safety wrapper for unpack. */
+$phpMussel['UnpackSafe'] = function ($Format, $Data) {
+    return (strlen($Data) > 1) ? unpack($Format, $Data) : '';
+};
+
+/** A simple safety wrapper for hex2bin. */
+$phpMussel['HexSafe'] = function ($Data) use (&$phpMussel) {
+    return ($Data && !preg_match('/[^a-f0-9]/i', $Data) && !(strlen($Data) % 2)) ? $phpMussel['Function']('HEX', $Data) : '';
 };
