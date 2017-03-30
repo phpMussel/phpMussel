@@ -16,7 +16,7 @@ phpMussel:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-TW: 主包（沒有簽名文件，文檔，和配置）。
- Version: 1.0.0-DEV+2017088643
+ Version: 1.0.0-DEV+2017088648
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/Changelog-v1.txt
@@ -106,24 +106,24 @@ phpMussel:
    - 1c274b7ef3f9bb2356489f1f2dce4f4c:29565
    - fb92206e746111244815cacb2333c931:7364
    - 07411d69ab0775f91a1c46b251af7d52:4320
-   - 8e03209e7fc6641b45094e584340feff:83    
-   - 5a47afbf902974f1de35d0c6ec4beefb:1359    
-   - 95d0430f61a7099f0e363707686bd1da:779    
-   - 13ab6f2539006cc2abe9d7318c6cb6de:814    
-   - 074c67c091a96c1608c4cad9497dfe00:277    
-   - f6d040f76fb97b78d264d97ed0612e0a:929    
-   - ca72c316ee4d4ba9838824debf8e9265:843    
-   - 2d8f1c519e3373b426c322e3945e60ea:743    
-   - 0dc5d909ca0f36a3de9a7d4f352b029d:491    
-   - 7062622062c2cef8db4e0e02ee1e04e2:765    
-   - c4de0e836af97a72105bbfea051f7158:2202    
-   - 6ff9fb63b91538ee5b27969f002dedcf:194    
-   - a3c5ca6436caf3628407f9d42fc2b7c7:911    
-   - f610ba3221210b4d914af648cf721485:518    
-   - 3c3772101622fbf49bda21d2155f871e:1108    
-   - dd77597c0b0573265c282ad910af7de7:694    
-   - 14af0698a968aaebd5c9cc06e0ddaba4:988    
-   - 2388bc45b19d06ac09c1d0d775bd41b9:4280    
+   - 8e03209e7fc6641b45094e584340feff:83
+   - 5a47afbf902974f1de35d0c6ec4beefb:1359
+   - 95d0430f61a7099f0e363707686bd1da:779
+   - 13ab6f2539006cc2abe9d7318c6cb6de:814
+   - 074c67c091a96c1608c4cad9497dfe00:277
+   - f6d040f76fb97b78d264d97ed0612e0a:929
+   - ca72c316ee4d4ba9838824debf8e9265:843
+   - 2d8f1c519e3373b426c322e3945e60ea:743
+   - 0dc5d909ca0f36a3de9a7d4f352b029d:491
+   - 7062622062c2cef8db4e0e02ee1e04e2:765
+   - c4de0e836af97a72105bbfea051f7158:2202
+   - 78cd84689ff7ef5526d52359528f4bd0:287
+   - a3c5ca6436caf3628407f9d42fc2b7c7:911
+   - f610ba3221210b4d914af648cf721485:518
+   - 3c3772101622fbf49bda21d2155f871e:1108
+   - dd77597c0b0573265c282ad910af7de7:694
+   - 14af0698a968aaebd5c9cc06e0ddaba4:988
+   - 2388bc45b19d06ac09c1d0d775bd41b9:4280
    - 1a3a9f64169c8b81df60705a341bbb3b:808
    - 5fed0a90b67d5abd04556793fc72cd43:102316
    - d7a1fcc11ab36c5af9b2139725fab739:311569
