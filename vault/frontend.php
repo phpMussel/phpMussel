@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.03.28).
+ * This file: Front-end handler (last modified: 2017.03.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -575,6 +575,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
 
     $phpMussel['FE']['ConfigRow'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_config_row.html');
 
+    /** Indexes. */
+    $phpMussel['FE']['Indexes'] = '            ';
+
     /** Generate entries for display and regenerate configuration if any changes were submitted. */
     reset($phpMussel['Config']['Config Defaults']);
     $phpMussel['FE']['ConfigFields'] = $phpMussel['RegenerateConfig'] = '';
@@ -591,6 +594,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             }
             $phpMussel['ThisDir']['DirLangKey'] = 'config_' . $phpMussel['CatKey'] . '_' . $phpMussel['DirKey'];
             $phpMussel['ThisDir']['DirName'] = $phpMussel['CatKey'] . '->' . $phpMussel['DirKey'];
+            $phpMussel['FE']['Indexes'] .= '<a href="#' . $phpMussel['ThisDir']['DirLangKey'] . '">' . $phpMussel['ThisDir']['DirName'] . "</a><br /><br />\n            ";
             $phpMussel['ThisDir']['DirLang'] =
                 !empty($phpMussel['lang'][$phpMussel['ThisDir']['DirLangKey']]) ? $phpMussel['lang'][$phpMussel['ThisDir']['DirLangKey']] : $phpMussel['lang']['response_error'];
             $phpMussel['RegenerateConfig'] .= '; ' . wordwrap(strip_tags($phpMussel['ThisDir']['DirLang']), 77, "\r\n; ") . "\r\n";
@@ -730,6 +734,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
 
     /** Search cleanup. */
     unset($phpMussel['EoYAML'], $phpMussel['ThisData'], $phpMussel['ThisFile'], $phpMussel['Components']['Files']);
+
+    /** Indexes. */
+    $phpMussel['FE']['Indexes'] = array();
 
     /** A form has been submitted. */
     if ($phpMussel['FE']['FormTarget'] === 'updates' && !empty($_POST['do'])) {
@@ -1346,6 +1353,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             if (empty($phpMussel['Components']['ThisComponent']['RowClass'])) {
                 $phpMussel['Components']['ThisComponent']['RowClass'] = 'h1';
             }
+            $phpMussel['FE']['Indexes'][$phpMussel['Components']['ThisComponent']['ID']] =
+                '<a href="#' . $phpMussel['Components']['ThisComponent']['ID'] . '">' . $phpMussel['Components']['ThisComponent']['Name'] . "</a><br /><br />\n            ";
             $phpMussel['Components']['Out'][$phpMussel['Components']['Key']] = $phpMussel['ParseVars'](
                 $phpMussel['lang'] + $phpMussel['ArrayFlatten']($phpMussel['Components']['ThisComponent']) + $phpMussel['ArrayFlatten']($phpMussel['FE']),
                 $phpMussel['FE']['UpdatesRow']
@@ -1468,6 +1477,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             '<br /><a href="' . $phpMussel['Components']['ThisComponent']['Changelog'] . '">Changelog</a>';
         $phpMussel['Components']['ThisComponent']['Filename'] = '';
         if (!$phpMussel['FE']['hide-unused']) {
+            $phpMussel['FE']['Indexes'][$phpMussel['Components']['ThisComponent']['ID']] =
+                '<a href="#' . $phpMussel['Components']['ThisComponent']['ID'] . '">' . $phpMussel['Components']['ThisComponent']['Name'] . "</a><br /><br />\n            ";
             $phpMussel['Components']['Out'][$phpMussel['Components']['Key']] = $phpMussel['ParseVars'](
                 $phpMussel['lang'] + $phpMussel['ArrayFlatten']($phpMussel['Components']['ThisComponent']) + $phpMussel['ArrayFlatten']($phpMussel['FE']),
                 $phpMussel['FE']['UpdatesRow']
@@ -1487,7 +1498,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
     });
 
     /** Finalise output and unset working data. */
-    uksort($phpMussel['Components']['Out'], function ($A, $B) {
+    $phpMussel['UpdatesSortFunc'] = function ($A, $B) {
         $CheckA = preg_match('/^l10n/i', $A);
         $CheckB = preg_match('/^l10n/i', $B);
         if (($CheckA && !$CheckB) || ($A === 'phpMussel' && $B !== 'phpMussel')) {
@@ -1503,9 +1514,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             return 1;
         }
         return 0;
-    });
+    };
+    uksort($phpMussel['FE']['Indexes'], $phpMussel['UpdatesSortFunc']);
+    $phpMussel['FE']['Indexes'] = implode('', $phpMussel['FE']['Indexes']);
+    uksort($phpMussel['Components']['Out'], $phpMussel['UpdatesSortFunc']);
     $phpMussel['FE']['Components'] = implode('', $phpMussel['Components']['Out']);
-    unset($phpMussel['Components'], $phpMussel['Count'], $phpMussel['Iterate']);
+    unset($phpMussel['UpdatesSortFunc'], $phpMussel['Components'], $phpMussel['Count'], $phpMussel['Iterate']);
 
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](

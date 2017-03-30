@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2017.03.27).
+ * This file: Upload handler (last modified: 2017.03.30).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -538,8 +538,12 @@ if ($phpMussel['upload']['count'] > 0) {
         $phpMussel['TemplateData']['favicon'] = $phpMussel['favicon'];
         $phpMussel['TemplateData']['xmlLang'] = $phpMussel['Config']['general']['lang'];
         $phpMussel['TemplateData']['WebFontsLink'] = $phpMussel['WebFontsLink'];
-        $phpMussel['memCache']['template_file'] =
-            (!$phpMussel['Config']['template_data']['css_url']) ? 'template.html' : 'template_custom.html';
+
+        /** Determine which template file to use, if this hasn't already been determined. */
+        if (!isset($phpMussel['memCache']['template_file'])) {
+            $phpMussel['memCache']['template_file'] =
+                !$phpMussel['Config']['template_data']['css_url'] ? 'template.html' : 'template_custom.html';
+        }
 
         /** Log "scan_kills" data. */
         if ($phpMussel['Config']['general']['scan_kills'] && !empty($phpMussel['killdata'])) {

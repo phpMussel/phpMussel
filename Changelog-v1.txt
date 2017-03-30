@@ -218,6 +218,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.03.27; Minor code change; Maikuolan]: Added a directive to optionally
   enable/disable webfonts.
 
+- [2017.03.28; Minor code change; Maikuolan]: Added the ability to install and
+  uninstall plugins via the front-end updater.
+
+- [2017.03.30; Sub-minor code change; Maikuolan]: Some small, aesethetic
+  improvements done to the front-end.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

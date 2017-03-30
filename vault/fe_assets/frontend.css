@@ -1,5 +1,5 @@
 *{vertical-align:text-top}
-body,input,select,textarea{font-size:12px}
+body,input,select,textarea,.idx{font-size:12px}
 body{font-family:'Open Sans',sans-serif,'Lucida Grande',Tahoma,Verdana,Arial,MingLiU;letter-spacing:1px;text-decoration:none;border-style:none;margin:0;padding:0;white-space:normal;background-color:#ccc;color:#033}
 code{font-family:'Space Mono',monospace}
 hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#900}
@@ -22,7 +22,7 @@ img.ico{width:16px;height:16px;border:0}
 .dt,.s,.tip,.txtBl,.txtGn,.txtOe,.txtRd{display:inline}
 .dt,.tip{float:left;text-align:left}
 .gen,input,select,textarea{font-family:'Open Sans',sans-serif,Verdana,Arial,Helvetica,sans-serif}
-.gen{font-size:12px;letter-spacing:0px;white-space:nowrap}
+.gen{letter-spacing:0px;white-space:nowrap}
 .h1,.h1f,.h2,.h2f,.h3,.h3f,.h4,.h4f,.ng1,.ng2,.r,.rf{margin:0;padding:4px;border-style:solid solid none none;border-width:1px;border-color:#999}
 .h1,.h1f,.h2,.h2f,.r,.rf{width:25%}
 .h1,.h3,.ng1{background-color:#eee}
@@ -41,3 +41,4 @@ img.ico{width:16px;height:16px;border:0}
 .txtOe{color:#f60}
 .txtRd{color:red}
 .ufts{width:220px}
+@keyframes idxAn{0%{background:#fa6}100%{background:#ddd}}
