@@ -2,10 +2,8 @@
 
 ### Nội dung
 - 1. [LỜI GIỚI THIỆU](#SECTION1)
-- 2A. [CÁCH CÀI ĐẶT (CHO CÁC TRANG MẠNG)](#SECTION2A)
-- 2B. [CÁCH CÀI ĐẶT (CHO CLI)](#SECTION2B)
-- 3A. [CÁCH SỬ DỤNG (CHO CÁC TRANG MẠNG)](#SECTION3A)
-- 3B. [CÁCH SỬ DỤNG (CHO CLI)](#SECTION3B)
+- 2. [CÁCH CÀI ĐẶT](#SECTION2)
+- 3. [CÁCH SỬ DỤNG](#SECTION3)
 - 4. [QUẢN LÝ FRONT-END](#SECTION4)
 - 5. [CLI (LỆNH CHO DÒNG GIAO DIỆN)](#SECTION5)
 - 6. [TẬP TIN BAO GỒM TRONG GÓI NÀY](#SECTION6)
@@ -40,9 +38,9 @@ Tài liệu này và các gói liên quan của nó có thể được tải v�
 ---
 
 
-### 2A. <a name="SECTION2A"></a>CÁCH CÀI ĐẶT (CHO CÁC TRANG MẠNG)
+### 2. <a name="SECTION2"></a>CÁCH CÀI ĐẶT
 
-Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện một cài đặt tại một thời điểm nào trong tương lai không quá xa, nhưng cho đến lúc đó, bạn hảy làm theo hướng dẫn để có thể cho phpMussel làm việc trên hầu hết các hệ thống và CMS:
+#### 2.0 CÀI ĐẶT THỦ CÔNG (CHO CÁC TRANG MẠNG)
 
 1) Nếu bạn đang đọc cái này thì tôi hy vọng là bạn đã tải về một bản sao kho lưu trữ của bản, giải nén nội dung của nó và nó đang nằm ở một nơi nào đó trên máy tính của bạn. Từ đây, bạn sẽ muốn đặt nội dung ở một nơi trên máy chủ hoặc CMS của bạn. Một thư mục chẳng hạn như `/public_html/phpmussel/` hay tương tự (mặc dù sự lựa chọn của bạn không quan trọng, miễn là nó an toàn và bạn hài lòng với sự lựa chọn) sẽ đủ.. *Trước khi bạn bắt đầu tải lên, hảy tiếp tục đọc..*
 
@@ -70,12 +68,7 @@ Hoạc cái này trong tập tin `.htaccess`:
 
 6) Tại điểm này, bạn đã xong! Nhưng mà, bạn nên kiểm tra nó ra để đảm bảo nó hoạt động đúng. Để kiểm tra các tập tin tải lên bảo vệ, thử tải lên các tập tin thử nghiệm bao gồm trong gói dưới `_testfiles` vào trang mạng của bạn thông qua các phương pháp tải lên dựa trên trình duyệt thông thường của bạn. Nếu tất cả mọi thứ đang hoạt động, một tin nhắn sẽ xuất hiện từ phpMussel xác nhận là việc tải lên đã bị chặn thành công. Nếu không có gì xuất hiện, đây là điều biểu hiện cho một vấn đề với sự hoạt động. Nếu bạn đang sử dụng chức năng cao cấp, hay sử dụng các loại chức năng quét khác có thể với công cụ này, bạn nên thử nó ra với những điều đó để đảm bảo nó hoạt động như yêu cầu.
 
----
-
-
-### 2B. <a name="SECTION2B"></a>CÁCH CÀI ĐẶT (CHO CLI)
-
-Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện một cài đặt tại một thời điểm nào trong tương lai không quá xa, nhưng cho đến lúc đó, bạn hảy làm theo hướng dẫn để có thể cho phpMussel hoạt động với CLI (hảy cẩn thận, vào lúc này hỗ trợ cho CLI chỉ áp dụng với hệ thống dựa trên Windows; Linux và các hệ thống khác sẽ sau trong phiên bản sau này của phpMussel):
+#### 2.1 CÀI ĐẶT THỦ CÔNG (CHO CLI)
 
 1) Nếu bạn đang đọc cái này thì tôi hy vọng là bạn đã tải về một bản sao kho lưu trữ của bản, giải nén nội dung của nó và nó đang nằm ở một nơi nào đó trên máy tính của bạn. Một khi bạn đã hài lòng với vị trí của phpMussel, hày tiếp tục.
 
@@ -83,14 +76,22 @@ Tôi hy vọng sẽ giản hóa quá trình này bằng cách thực hiện mộ
 
 3) Theo tùy chọn (khuyến khích những người dùng cao cấp, nhưng những người mới bắt đầu hay chưa có kinh nghiệm không nên chọn), hảy mở `config.ini` (nằm ớ trong `vault`) - Tập tin này có chứa tất cả các chỉ thị sẵn cho phpMussel. Trên mỗi tùy chọn sẽ có chi tiết ngắn mô tả những gì nó làm. Hảy điều chỉnh các tùy chọn như bạn thấy phù hợp, theo bất cứ điều gì là thích hợp cho nhữn cài đặt của bạn. Lưu tập tin, đóng lại.
 
-4) Tùy ý, bạn có thể sử dụng phpMussel trong chế độ CLI dể hơn với cách tạo ra tập tin lô để tự động tải PHP và phpMussel. Để làm điều này, mở một chương trình văn bản đơn giản như Notepad hoạc Notepad++, đánh vào đường dẫn đầy đủ cho tập tin `php.exe` trong thư mục cài đặt PHP của bạn, tiếp theo là một khoảng trống, theo sau là đường dẫn đầy đủ đến tập tin `loader.php` trong thư mục cài đặt phpMussel của bạn, lưu tập tin với tư bổ sung ".bat" một nơi nào bạn sẽ tìm thấy dễ dàng, và nhấn đúp vào vào tập tin đó để chạy phpMussel trong tương lai.
+4) Tùy ý, bạn có thể sử dụng phpMussel trong chế độ CLI dể hơn với cách tạo ra tập tin lô để tự động tải PHP và phpMussel. Để làm điều này, mở một chương trình văn bản đơn giản như Notepad hoạc Notepad++, đánh vào đường dẫn đầy đủ cho tập tin `php.exe` trong thư mục cài đặt PHP của bạn, tiếp theo là một khoảng trống, theo sau là đường dẫn đầy đủ đến tập tin `loader.php` trong thư mục cài đặt phpMussel của bạn, lưu tập tin với tư bổ sung `.bat` một nơi nào bạn sẽ tìm thấy dễ dàng, và nhấn đúp vào vào tập tin đó để chạy phpMussel trong tương lai.
 
 5) Tại thời điểm này, bạ đã xong! Nhưng mà, bạn nên kiểm tra nó để đảm bảo sự hoạt động. Để kiểm tra phpMussel, chạy phpMussel và thử quét `_testfiles` thư mục cung cấp trong gói.
+
+#### 2.2 CÀI ĐẶT VỚI COMPOSER
+
+[phpMussel được đăng ký với Packagist](https://packagist.org/packages/maikuolan/phpmussel), và như vậy, nếu bạn đã quen với Composer, bạn có thể sử dụng Composer để cài đặt phpMussel (bạn vẫn cần phải chuẩn bị cấu hình và kết nối; xem "cài đặt thủ công (cho các trang mạng)" bước 2 và 5).
+
+`composer require maikuolan/phpmussel`
 
 ---
 
 
-### 3A. <a name="SECTION3A"></a>CÁCH SỬ DỤNG (CHO CÁC TRANG MẠNG)
+### 3. <a name="SECTION3"></a>CÁCH SỬ DỤNG
+
+#### 3.0 CÁCH SỬ DỤNG (CHO CÁC TRANG MẠNG)
 
 phpMussel sẽ có thể hoạt động một cách chính xác với yêu cầu tối thiểu từ bạn: Sau khi cài đặt nó, nó có thể được sử dụng ngay lập tức.
 
@@ -126,12 +127,9 @@ Nếu bạn gặp bất kỳ sai tích cực, nếu bạn gặp một số đi�
 
 Để vô hiệu hóa chữ ký đã bao gồm trong phpMussel (chẳng hạn như nếu bạn gặp một sai tích cực và bạn không thể loại bỏ nó), tham khảo các ghi chú cho các danh sách xám trong các phần QUẢN LÝ FRONT-END của tập tin README này.
 
----
+#### 3.1 CÁCH SỬ DỤNG (CHO CLI)
 
-
-### 3B. <a name="SECTION3B"></a>CÁCH SỬ DỤNG (CHO CLI)
-
-Tham khảo phần "CÁCH CÀI ĐẶT (CHO CLI)" của tập tin README này.
+Tham khảo phần "CÀI ĐẶT THỦ CÔNG (CHO CLI)" của tập tin README này.
 
 Hãy nhận biết rằng, mặc dù các phiên bản tương lai của phpMussel nên hỗ trợ các hệ thống khác, tại thơi điểm nay, hỗ trợ cho chế độ CLI của phpMussel đã được tối ưu chỉ dành cho sử dụng trên các hệ thống Windows (bạn có thể, tất nhiên, thử nó trên các hệ thống khác, nhưng tôi không thể đảm bảo nó sẽ làm việc như dự định).
 
@@ -727,4 +725,4 @@ Không. PHP 5.4.0 đạt EoL ("End of Life", hoặc sự kết thúc của cuộ
 ---
 
 
-Lần cuối cập nhật: 27 Tháng Ba 2017 (2017.03.27).
+Lần cuối cập nhật: 31 Tháng Ba 2017 (2017.03.31).

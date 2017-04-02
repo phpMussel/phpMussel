@@ -2,10 +2,8 @@
 
 ### Isi
 - 1. [SEPATAH KATA](#SECTION1)
-- 2A. [BAGAIMANA CARA MENGINSTALL (UNTUK SERVER WEB)](#SECTION2A)
-- 2B. [BAGAIMANA CARA MENGINSTALL (UNTUK CLI)](#SECTION2B)
-- 3A. [BAGAIMANA CARA MENGGUNAKAN (UNTUK SERVER WEB)](#SECTION3A)
-- 3B. [BAGAIMANA CARA MENGGUNAKAN (UNTUK CLI)](#SECTION3B)
+- 2. [BAGAIMANA CARA MENGINSTAL](#SECTION2)
+- 3. [BAGAIMANA CARA MENGGUNAKAN](#SECTION3)
 - 4. [MANAJEMEN BAGIAN DEPAN](#SECTION4)
 - 5. [CLI (COMMAND LINE INTERFACE)](#SECTION5)
 - 6. [FILE YANG DIIKUTKAN DALAM PAKET INI](#SECTION6)
@@ -40,9 +38,9 @@ Dokumen ini dan paket terhubung di dalamnya dapat di unduh secara gratis dari:
 ---
 
 
-### 2A. <a name="SECTION2A"></a>BAGAIMANA CARA MENGINSTALL (UNTUK SERVER WEB)
+### 2. <a name="SECTION2"></a>BAGAIMANA CARA MENGINSTAL
 
-Saya berharap untuk mempersingkat proses ini dengan membuat sebuah installer pada beberapa point di dalam masa depan yang tidak terlalu jauh, tapi kemudian, ikuti instruksi-instruksi ini untuk mendapatkan phpMussel bekerja pada *banyak sistem dan CMS:
+#### 2.0 MENGINSTAL SECARA MANUAL (UNTUK SERVER WEB)
 
 1) Dengan membaca ini, Saya asumsikan Anda telah mengunduh dan menyimpan copy dari skrip, membuka data terkompres dan isinya dan Anda meletakkannya pada mesin komputer lokal Anda. Dari sini, Anda akan latihan dimana di host Anda atau CMS Anda untuk meletakkan isi data terkompres nya. Sebuah direktori seperti `/public_html/phpmussel/` atau yang lain (walaupun tidak masalah Anda memilih direktori apa, selama dia aman dan dimana pun yang Anda senangi) akan mencukupi. *Sebelum Anda mulai upload, mohon baca dulu..*
 
@@ -70,12 +68,7 @@ Atau ini di file `.htaccess`:
 
 6) Pada titik ini, kamu telah selesai! Bagaimanapun, kamu mungkin seharusnya mencobanya untuk melihat dia bekerja dengan dengan baik. Untuk mencoba file keamanan upload, coba mengupload file-file testing yang dimasukkan dalam paket di `_testfiles` ke website Anda melalui metode upload di browser Anda. Jika semua bekerja dengan baik, sebuah pesan akan muncul dari phpMussel mengkonfirmasikan bahwa upload sudah sukses di blok. Jika tidak ada yang terjadi, ada sesuatu yang tidak bekerja dengan baik. Jika Anda menggunakan fitur-fitur lanjut atau jika Anda menggunakan tipe-tipe yang lain untuk memeriksa mungkin dengan alat-alat itu, saya sarankan mencoba dengan nya untuk memastikan dia bekerja seperti yang diharapkan juga.
 
----
-
-
-### 2B. <a name="SECTION2B"></a>BAGAIMANA CARA MENGINSTALL (UNTUK CLI)
-
-Saya berharap untuk mempersingkat proses ini dengan membuat sebuah installer dari beberapa poin di dalam masa depan yang tidak terlalu jauh, tapi sampai kemudian, turuti instruksi ini untuk membuat phpMussel siap bekerja dengan CLI (mohon diingat untuk poin ini, CLI mendukung hanya pada sistem berbasis Windows; Linux dan sistem-sistem yang lain akan di persiapkan pada versi selanjutnya dari phpMussel):
+#### 2.1 MENGINSTAL SECARA MANUAL (UNTUK CLI)
 
 1) Dengan membaca ini, Saya asumsikan Anda telah mengunduh data terkompres nya dan menguraikan isi nya pada mesin komputer lokal Anda. Setelah Anda telah memilih lokasi dari phpMussel, lanjutkan.
 
@@ -83,14 +76,22 @@ Saya berharap untuk mempersingkat proses ini dengan membuat sebuah installer dar
 
 3) Secara fakultatif (sangat direkomendasikan untuk user dengan pengalaman lebih lanjut, tapi tidak untuk pemula atau yang tidak berpengalaman), buka `config.ini` (berada di dalam `vault`) - File ini berisikan semua opsi operasional yang tersedia untuk phpMussel. Di atas tiap opsi seharusnya ada komentar tegas menguraikan tentang apa yang dilakukan dan untuk apa. Atur opsi-opsi ini seperti Anda lihat cocok, seperti apapun yang cocok untuk setup tertentu. Simpan file, menutupnya.
 
-4) Secara fakultatif, Anda dapat menggunakan phpMussel di dalam mode CLI untuk diri Anda sendiri dengan menciptakan file batch untuk secara automatis memuat PHP dan phpMussel. Untuk melakukannya, buka sebuah text editor kosong seperti Notepad atau Notepad++, ketikkan jalur dari file `php.exe` di dalam direktori dari instalasi PHP Anda, diikuti spasi, diikuti dengan jalur lengkap dari file `loader.php` di dalam direktori dari instalasi phpMussel, simpan file dengan ekstensi ".bat" di simpan di tempat yang Anda mudah temukan dan klik dua kali pada file itu untuk menjalankan phpMussel di masa yang akan datang.
+4) Secara fakultatif, Anda dapat menggunakan phpMussel di dalam mode CLI untuk diri Anda sendiri dengan menciptakan file batch untuk secara automatis memuat PHP dan phpMussel. Untuk melakukannya, buka sebuah text editor kosong seperti Notepad atau Notepad++, ketikkan jalur dari file `php.exe` di dalam direktori dari instalasi PHP Anda, diikuti spasi, diikuti dengan jalur lengkap dari file `loader.php` di dalam direktori dari instalasi phpMussel, simpan file dengan ekstensi `.bat` di simpan di tempat yang Anda mudah temukan dan klik dua kali pada file itu untuk menjalankan phpMussel di masa yang akan datang.
 
 5) Pada titik ini, Anda selesai! Bagaimanapun Anda seharusnya mencobanya untuk memastikan berjalan dengan lancar. Untuk mencek phpMussel, jalankan phpMussel dan coba memindai `_testfiles` direktori yang disediakan dengan ini paket.
+
+#### 2.2 MENGINSTAL DENGAN COMPOSER
+
+[phpMussel terdaftar dengan Packagist](https://packagist.org/packages/maikuolan/phpmussel). Jika Anda akrab dengan Composer, Anda dapat menggunakan Composer untuk menginstal phpMussel (Anda masih perlu mempersiapkan konfigurasi dan kait meskipun; melihat "menginstal secara manual (untuk server web)" langkah 2 dan 5).
+
+`composer require maikuolan/phpmussel`
 
 ---
 
 
-### 3A. <a name="SECTION3A"></a>BAGAIMANA CARA MENGGUNAKAN (UNTUK SERVER WEB)
+### 3. <a name="SECTION3"></a>BAGAIMANA CARA MENGGUNAKAN
+
+#### 3.0 BAGAIMANA CARA MENGGUNAKAN (UNTUK SERVER WEB)
 
 phpMussel harus mampu beroperasi benar dengan persyaratan minimal darimu: Setelah instalasi, harus bekerja segera dan harus berguna segera.
 
@@ -126,12 +127,9 @@ Jika Anda menjumpai bilangan positif yang salah, jika Anda menemukan hal baru ya
 
 Untuk menonaktifkan tanda tangan-tanda tangan yang dimasukkan dalam phpMussel (seperti jika Anda berpengalaman sebuah angka positif yang salah untuk tujuan Anda yang seharusnya secara normal di hapus dari aliran), mencocokkan ke catatan berwarna abu-abu di dalam MANAJEMEN BAGIAN DEPAN dari file README.
 
----
+#### 3.1 BAGAIMANA CARA MENGGUNAKAN (UNTUK CLI)
 
-
-### 3B. <a name="SECTION3B"></a>BAGAIMANA CARA MENGGUNAKAN (UNTUK CLI)
-
-Mohon merujuk pada seksi "BAGAIMANA CARA MENGINSTALL (UNTUK CLI)" dari file README.
+Mohon merujuk pada seksi "MENGINSTAL SECARA MANUAL (UNTUK CLI)" dari file README.
 
 Mohon diingat, walaupun versi selanjutnya dari phpMussel seharusnya mendukung sistem yang lain, pada waktu ini, mode pendukung phpMussel CLI hanya di optimisasi untuk sistem berbasis Windows (anda dapat, tentu saja, mencoba pada sistem yang lain, tapi saya tidak dapat menjamin dapat bekerja seperti bagaimana seharusnya).
 
@@ -168,7 +166,7 @@ Instruksi disediakan pada setiap halaman dari manajemen bagian depan, untuk menj
 
 ### 5. <a name="SECTION5"></a>CLI (COMMAND LINE INTERFACE)
 
-phpMussel dapat dijalankan sebagai sebuah file interaktif pemindai dalam mode CLI dalam Windows. Merujuk ke seksi "BAGAIMANA CARA MENGINSTALL (UNTUK CLI)" dari file README untuk lebih detail.
+phpMussel dapat dijalankan sebagai sebuah file interaktif pemindai dalam mode CLI dalam Windows. Merujuk ke seksi "BAGAIMANA CARA MENGINSTAL (UNTUK CLI)" dari file README untuk lebih detail.
 
 Untuk daftar yang tersedia CLI perintah, pada prompt CLI, ketik 'c', dan tekan Enter.
 
@@ -727,4 +725,4 @@ Tidak. PHP 5.4.0 mencapai EoL ("End of Life", atau Akhir Hidup) resmi pada tahun
 ---
 
 
-Terakhir Diperbarui: 27 Maret 2017 (2017.03.27).
+Terakhir Diperbarui: 31 Maret 2017 (2017.03.31).

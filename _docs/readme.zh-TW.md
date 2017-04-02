@@ -2,10 +2,8 @@
 
 ### 內容
 - 1. [前言](#SECTION1)
-- 2A. [如何安裝（WEB服務器）](#SECTION2A)
-- 2B. [如何安裝（CLI）](#SECTION2B)
-- 3A. [如何使用（WEB服務器）](#SECTION3A)
-- 3B. [如何使用（CLI）](#SECTION3B)
+- 2. [如何安裝](#SECTION2)
+- 3. [如何使用](#SECTION3)
 - 4. [前端管理](#SECTION4)
 - 5. [CLI（命令行界面）](#SECTION5)
 - 6. [文件在包](#SECTION6)
@@ -40,9 +38,9 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 ---
 
 
-### 2A. <a name="SECTION2A"></a>如何安裝（WEB服務器）
+### 2. <a name="SECTION2"></a>如何安裝
 
-我可能在將來會創建一個安裝程序來簡化安裝過程，但在之前，按照下面的這些安裝說明能在大多數的系統和CMS上成功安裝：
+#### 2.0 安裝手工（WEB服務器）
 
 1） 在閱讀到這里之前，我假設您已經下載腳本的一個副本，已解壓縮其內容並保存在您的機器的某個地方。現在，您要決定將腳本放在您服務器上的哪些文件夾中，例如`/public_html/phpmussel/`或其他任何您覺得滿意和安全的地方。*上傳完成後，繼續閱讀。。*
 
@@ -70,12 +68,7 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 6） 到這裡，您已經完成安裝，現在您應測試phpMussel以確保它的正常運行！為了保護系統中的文件（或者應該翻譯為保護上傳的文件），可以嘗試通過常用的瀏覽器上傳的方式上傳包含在`_testfiles`文件夾內的內容到您的網站。如果一切正常，phpMussel應該出現阻止上傳信息，如果出現什麼不正常情況例如您使用了其他高級的功能或使用的其它類型的掃描，我建議嘗試它跟他們一起使用以確保都能工作正常。
 
----
-
-
-### 2B. <a name="SECTION2B"></a>如何安裝（CLI）
-
-我可能在將來會創建一個安裝程序來簡化安裝過程，但在之前，按照這些說明將使phpMussel能使用CLI模式（請注意，在這個時候，CLI支持僅適用於Windows系統；Linux和其他系統支持請關注更高版本的phpMussel）：
+#### 2.1 安裝手工（CLI）
 
 1） 在閱讀到這里之前，我假設您已經下載腳本並且已經解壓縮並且保存在您指定的位置。
 
@@ -83,14 +76,22 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 3） 自定義（強烈推薦高級用戶使用，但不推薦新手或沒有經驗的用戶使用）：打開`config.ini`（位於內`vault`） - 這個文件包含phpMussel所有的配置選項。每選項應有一個簡評以說明它做什麼和它的功能。按照您認為合適的參數調整這些選項，然後保存文件，關閉。
 
-4） 您如果您創建一個批處理文件來自動加載的PHP和phpMussel，那麼使用phpMussel的CLI模式將更加方便。要做到這一點，打開一個純文本編輯器例如Notepad或Notepad++，輸入php.exe的完整路徑（注意是絕對路徑不是相對路徑），其次是一個空格，然後是`loader.php`的路徑（同php.exe），最後，保存此文件使用一個".bat"擴展名放在常用的位置；在您指定的位置，能通過雙擊您保存的`.bat`文件來調用phpMussel。
+4） 您如果您創建一個批處理文件來自動加載的PHP和phpMussel，那麼使用phpMussel的CLI模式將更加方便。要做到這一點，打開一個純文本編輯器例如Notepad或Notepad++，輸入php.exe的完整路徑（注意是絕對路徑不是相對路徑），其次是一個空格，然後是`loader.php`的路徑（同php.exe），最後，保存此文件使用一個`.bat`擴展名放在常用的位置；在您指定的位置，能通過雙擊您保存的`.bat`文件來調用phpMussel。
 
 5） 到這裡，您完成了CLI模式的安裝！當然您應測試以確保正常運行。如果要測試phpMussel，請通過phpMussel嘗試掃描`_testfiles`文件夾內提供的文件。
+
+#### 2.2 與COMPOSER安裝
+
+[phpMussel是在Packagist上](https://packagist.org/packages/maikuolan/phpmussel)，所以，如果您熟悉Composer，您可以使用Composer安裝phpMussel（您仍然需要準備配置和鉤子；參考“安裝手工（WEB服務器）”步驟2和5）。
+
+`composer require maikuolan/phpmussel`
 
 ---
 
 
-### 3A. <a name="SECTION3A"></a>如何使用（對於WEB服務器）
+### 3. <a name="SECTION3"></a>如何使用
+
+#### 3.0 <a name="SECTION3"></a>如何使用（對於WEB服務器）
 
 phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該立即開展工作和應該立即有用。
 
@@ -126,12 +127,9 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 
 如果您遇到誤報嚴重或者不需要檢測該簽名下的文件或者其他不需要使用簽名驗證的場景，請關閉簽名驗證，具體請參考｢前端管理｣部分的這個自述文件中的灰名單部分。
 
----
+#### 3.1 如何使用（CLI）
 
-
-### 3B. <a name="SECTION3B"></a>如何使用（CLI）
-
-請參考｢如何安裝（對於CLI）｣部分的這個自述文件。
+請參考“安裝手工（CLI）”部分的這個自述文件。
 
 請注意，雖說未來版本的phpMussel應該支持其他系統，在這個時候，phpMussel CLI模式僅支持基於Windows系統（您可以，當然，嘗試它在其他系統，但我不能保證它正常工作）。
 
@@ -730,4 +728,4 @@ phpMussel會阻止文件 | __假陽性__ | 真陽性（正確的推理）
 ---
 
 
-最後更新：2017年3月27日。
+最後更新：2017年3月31日。

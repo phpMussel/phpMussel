@@ -2,10 +2,8 @@
 
 ### Contents
 - 1. [PREAMBLE](#SECTION1)
-- 2A. [HOW TO INSTALL (FOR WEB SERVERS)](#SECTION2A)
-- 2B. [HOW TO INSTALL (FOR CLI)](#SECTION2B)
-- 3A. [HOW TO USE (FOR WEB SERVERS)](#SECTION3A)
-- 3B. [HOW TO USE (FOR CLI)](#SECTION3B)
+- 2. [HOW TO INSTALL](#SECTION2)
+- 3. [HOW TO USE](#SECTION3)
 - 4. [FRONT-END MANAGEMENT](#SECTION4)
 - 5. [CLI (COMMAND LINE INTERFACE)](#SECTION5)
 - 6. [FILES INCLUDED IN THIS PACKAGE](#SECTION6)
@@ -40,9 +38,9 @@ This document and its associated package can be downloaded for free from:
 ---
 
 
-### 2A. <a name="SECTION2A"></a>HOW TO INSTALL (FOR WEB SERVERS)
+### 2. <a name="SECTION2"></a>HOW TO INSTALL
 
-I hope to streamline this process by making an installer at some point in the not too distant future, but until then, follow these instructions to get phpMussel working on *most systems and CMS:
+#### 2.0 INSTALLING MANUALLY (FOR WEB SERVERS)
 
 1) By your reading this, I'm assuming you've already downloaded an archived copy of the script, decompressed its contents and have it sitting somewhere on your local machine. From here, you'll want to work out where on your host or CMS you want to place those contents. A directory such as `/public_html/phpmussel/` or similar (though, it doesn't matter which you choose, so long as it's something secure and something you're happy with) will suffice. *Before you begin uploading, read on..*
 
@@ -70,12 +68,7 @@ Or this in the `.htaccess` file:
 
 6) At this point, you're done! However, you should probably test it out to make sure it's working properly. To test out file upload protections, attempt to upload the testing files included in the package under `_testfiles` to your website via your usual browser-based upload methods. If everything is working, a message should appear from phpMussel confirming that the upload was successfully blocked. If nothing appears, something isn't working correctly. If you're using any advanced features or if you're using the other types of scanning possible with the tool, I'd suggest trying it out with those to make sure it works as expected, too.
 
----
-
-
-### 2B. <a name="SECTION2B"></a>HOW TO INSTALL (FOR CLI)
-
-I hope to streamline this process by making an installer at some point in the not too distant future, but until then, follow these instructions to get phpMussel ready to work with CLI (be aware that at this point, CLI support only applies to Windows based systems; Linux and other systems will be coming soon to a later version of phpMussel):
+#### 2.1 INSTALLING MANUALLY (FOR CLI)
 
 1) By your reading this, I'm assuming you've already downloaded an archived copy of the script, decompressed its contents and have it sitting somewhere on your local machine. When you've determined that you're happy with the location chosen for phpMussel, continue.
 
@@ -83,14 +76,22 @@ I hope to streamline this process by making an installer at some point in the no
 
 3) Optionally (strongly recommended for advanced users, but not recommended for beginners or for the inexperienced), open `config.ini` (located inside `vault`) - This file contains all the directives available for phpMussel. Above each option should be a brief comment describing what it does and what it's for. Adjust these options as you see fit, as per whatever is appropriate for your particular setup. Save file, close.
 
-4) Optionally, you can make using phpMussel in CLI mode easier for yourself by creating a batch file to automatically load PHP and phpMussel. To do this, open a plain text editor such as Notepad or Notepad++, type the complete path to the `php.exe` file in the directory of your PHP installation, followed by a space, followed by the complete path to the `loader.php` file in the directory of your phpMussel installation, save the file with a ".bat" extension somewhere that you'll find it easily, and double-click on that file to run phpMussel in the future.
+4) Optionally, you can make using phpMussel in CLI mode easier for yourself by creating a batch file to automatically load PHP and phpMussel. To do this, open a plain text editor such as Notepad or Notepad++, type the complete path to the `php.exe` file in the directory of your PHP installation, followed by a space, followed by the complete path to the `loader.php` file in the directory of your phpMussel installation, save the file with a `.bat` extension somewhere that you'll find it easily, and double-click on that file to run phpMussel in the future.
 
 5) At this point, you're done! However, you should probably test it out to make sure it's working properly. To test phpMussel, run phpMussel and try scanning the `_testfiles` directory provided with the package.
+
+#### 2.2 INSTALLING WITH COMPOSER
+
+[phpMussel is registered with Packagist](https://packagist.org/packages/maikuolan/phpmussel), and so, if you're familiar with Composer, you can use Composer to install phpMussel (you'll still need to prepare the configuration and hooks though; see "installing manually (for web servers)" steps 2 and 5).
+
+`composer require maikuolan/phpmussel`
 
 ---
 
 
-### 3A. <a name="SECTION3A"></a>HOW TO USE (FOR WEB SERVERS)
+### 3. <a name="SECTION3"></a>HOW TO USE
+
+#### 3.0 HOW TO USE (FOR WEB SERVERS)
 
 phpMussel should be able to operate correctly with minimal requirements on your part: After installing it, it should work immediately and be immediately usable.
 
@@ -126,12 +127,9 @@ If you encounter any false positives, if you encounter something new that you th
 
 To disable signatures included with phpMussel (such as if you're experiencing a false positive specific to your purposes that shouldn't normally be removed from mainline), refer to the Greylisting notes within the FRONT-END MANAGEMENT section of this README file.
 
----
+#### 3.1 HOW TO USE (FOR CLI)
 
-
-### 3B. <a name="SECTION3B"></a>HOW TO USE (FOR CLI)
-
-Please refer to the "HOW TO INSTALL (FOR CLI)" section of this README file.
+Please refer to the "INSTALLING MANUALLY (FOR CLI)" section of this README file.
 
 Be aware that, although future versions of phpMussel should support other systems, at this time, phpMussel CLI mode support is only optimised for use on Windows-based systems (you can, of course, try it on other systems, but I can't guarantee it'll work as intended).
 
@@ -727,4 +725,4 @@ No. PHP 5.4.0 reached official EoL ("End of Life") in 2014, and extended securit
 ---
 
 
-Last Updated: 27 March 2017 (2017.03.27).
+Last Updated: 31 March 2017 (2017.03.31).

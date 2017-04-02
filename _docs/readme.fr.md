@@ -2,10 +2,8 @@
 
 ### Contenu
 - 1. [PRÉAMBULE](#SECTION1)
-- 2A. [COMMENT INSTALLER (POUR SERVEURS WEB)](#SECTION2A)
-- 2B. [COMMENT INSTALLER (POUR CLI)](#SECTION2B)
-- 3A. [COMMENT UTILISER (POUR SERVEURS WEB)](#SECTION3A)
-- 3B. [COMMENT UTILISER (POUR CLI)](#SECTION3B)
+- 2. [COMMENT INSTALLER](#SECTION2)
+- 3. [COMMENT UTILISER](#SECTION3)
 - 4. [GESTION L'ACCÈS FRONTAL](#SECTION4)
 - 5. [CLI (COMMANDE LIGNE INTERFACE)](#SECTION5)
 - 6. [FICHIERS INCLUS DANS CETTE PAQUET](#SECTION6)
@@ -40,9 +38,9 @@ Ce document et son associé paquet peuvent être téléchargé gratuitement à s
 ---
 
 
-### 2A. <a name="SECTION2A"></a>COMMENT INSTALLER (POUR SERVEURS WEB)
+### 2. <a name="SECTION2"></a>COMMENT INSTALLER
 
-J'ai l'intention de simplifier ce processus par la création d'un programme d'installation à l'avenir, mais en attendant, suivez ces instructions pour la correcte fonction de phpMussel sur la majorité de systèmes et CMS:
+#### 2.0 INSTALLATION MANUELLE (POUR SERVEURS WEB)
 
 1) Parce que vous lisez ceci, je suppose que vous avez déjà téléchargé une archivée copie du script, décompressé son contenu et l'ont assis sur votre locale machine. Maintenant, vous devez déterminer la approprié emplacement sur votre hôte ou CMS à mettre ces contenus. Un répertoire comme `/public_html/phpmussel/` ou similaire (cependant, il n'est pas question que vous choisissez, à condition que c'est quelque part de sûr et quelque part que vous êtes heureux avec) sera suffira. *Vous avant commencer téléchargement au serveur, continuer lecture..*
 
@@ -70,12 +68,7 @@ Ou cette dans le `.htaccess` fichier:
 
 6) À ce stade, vous avez fini! Cependant, vous devriez probablement tester ce pour s'assurer qu'il fonctionne correctement. Pour tester les protections, essayez de télécharger les tester fichiers inclus dans le paquet sous `_testfiles` à votre website par votre habituelles navigateur basé méthodes de téléchargement. Si tout fonctionne correctement, un message devrait apparaître à partir de phpMussel confirmant que le téléchargement a été bloqué avec succès. Si rien ne s'affiche, quelque chose ne fonctionne pas correctement. Si vous utilisez d'avancées fonctions ou si vous utilisez l'autres types d'analyse possibles avec l'outil, je vous suggère de l'essayer avec ceux pour s'assurer qu'il fonctionne comme prévu, aussi.
 
----
-
-
-### 2B. <a name="SECTION2B"></a>COMMENT INSTALLER (POUR CLI)
-
-J'ai l'intention de simplifier ce processus par la création d'un programme d'installation à l'avenir, mais en attendant, suivez ces instructions pour rendant phpMussel disposé de travailler avec CLI (être conscient que, à ce stade, support pour le mode CLI est uniquement pour les Windows systèmes; Linux et d'autres systèmes seront bientôt arriver à une ultérieure version de phpMussel):
+#### 2.1 INSTALLATION MANUELLE (POUR CLI)
 
 1) Parce que vous lisez ceci, je suppose que vous avez déjà téléchargé une archivée copie du script, décompressé son contenu et l'ont assis sur votre locale machine. Lorsque vous avez déterminé que vous êtes satisfait sur l'emplacement choisi pour phpMussel, continuer.
 
@@ -83,14 +76,22 @@ J'ai l'intention de simplifier ce processus par la création d'un programme d'in
 
 3) Facultativement (fortement recommandé pour les utilisateurs avancés, mais pas recommandé pour les débutants ou pour les novices), ouvrir `config.ini` (situé à l'intérieur de `vault`) - Ce fichier contient toutes les directives disponible pour phpMussel. Au-dessus de chaque option devrait être un bref commentaire décrivant ce qu'il fait et ce qu'il est pour. Réglez ces options comme bon vous semble, selon ce qui est approprié pour votre particulière configuration. Enregistrer le fichier, fermer.
 
-4) Facultativement, vous pouvez faire utilisant phpMussel en le mode CLI plus facile pour vous-même par la création d'un fichier de commandes pour automatique charger PHP et phpMussel. Pour ce faire, ouvrir un éditeur de texte comme Notepad ou Notepad++, taper le complet chemin vers le `php.exe` fichier dans le répertoire de votre installation de PHP, suivi d'un espace, suivi par le complet chemin vers le `loader.php` fichier dans le répertoire de votre installation de phpMussel, enregistrer le fichier avec un ".bat" suffixe quelque part que vous trouverez facile, et double-cliquer sur ce fichier pour exécuter phpMussel à l'avenir.
+4) Facultativement, vous pouvez faire utilisant phpMussel en le mode CLI plus facile pour vous-même par la création d'un fichier de commandes pour automatique charger PHP et phpMussel. Pour ce faire, ouvrir un éditeur de texte comme Notepad ou Notepad++, taper le complet chemin vers le `php.exe` fichier dans le répertoire de votre installation de PHP, suivi d'un espace, suivi par le complet chemin vers le `loader.php` fichier dans le répertoire de votre installation de phpMussel, enregistrer le fichier avec un `.bat` suffixe quelque part que vous trouverez facile, et double-cliquer sur ce fichier pour exécuter phpMussel à l'avenir.
 
 5) À ce stade, vous avez fini! Mais, vous devriez probablement tester ce pour s'assurer qu'il fonctionne correctement. Pour tester phpMussel, exécuter phpMussel et essayer d'analyser le `_testfiles` répertoire fourni avec le paquet.
+
+#### 2.2 INSTALLATION AVEC COMPOSER
+
+[phpMussel est enregistré avec Packagist](https://packagist.org/packages/maikuolan/phpmussel), et donc, si vous êtes familier avec Composer, vous pouvez utiliser Composer pour installer phpMussel (vous devrez néanmoins préparer la configuration et les attaches; voir "installation manuelle (pour serveurs web)" les étapes 2 et 5).
+
+`composer require maikuolan/phpmussel`
 
 ---
 
 
-### 3A. <a name="SECTION3A"></a>COMMENT UTILISER (POUR SERVEURS WEB)
+### 3. <a name="SECTION3"></a>COMMENT UTILISER
+
+#### 3.0 COMMENT UTILISER (POUR SERVEURS WEB)
 
 phpMussel devrait être capable de fonctionner correctement avec des exigences minimales de votre part: Après l'avoir installé, il devrait fonctionner immédiatement et être immédiatement utilisable.
 
@@ -126,12 +127,9 @@ Si vous rencontrez des faux positifs, si vous rencontrez quelque chose nouveau q
 
 Pour désactiver les signatures qui sont incluent avec phpMussel (comme si vous rencontrez un faux positif spécifique à vos besoins dont ne devrait normalement pas être retiré à partir de rationaliser), référer aux les notes de la liste grise dans la GESTION L'ACCÈS FRONTAL section de ce fichier README.
 
----
+#### 3.1 COMMENT UTILISER (POUR CLI)
 
-
-### 3B. <a name="SECTION3B"></a>COMMENT UTILISER (POUR CLI)
-
-S'il vous plaît, référer à la "COMMENT INSTALLER (POUR CLI)" section de ce fichier README.
+S'il vous plaît, référer à la "INSTALLATION MANUELLE (POUR CLI)" section de ce fichier README.
 
 Soyez conscient que, bien que avenirs versions de phpMussel devraient soutenir d'autres systèmes, à ce moment, support pour le mode CLI de phpMussel est optimisé uniquement pour l'utilisation sur le Windows basée systèmes (vous pouvez, bien sûr, essayer sur d'autres systèmes, mais je ne peux pas garantir que ça va fonctionner comme prévu).
 
@@ -727,4 +725,4 @@ Non. PHP 5.4.0 a atteint officiellement l'EoL ("End of Life", ou fin de vie) en 
 ---
 
 
-Dernière Mise à Jour: 27 Mars 2017 (2017.03.27).
+Dernière Mise à Jour: 31 Mars 2017 (2017.03.31).

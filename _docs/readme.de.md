@@ -2,10 +2,8 @@
 
 ### Inhalt
 - 1. [VORWORT](#SECTION1)
-- 2A. [INSTALLATION (SERVER)](#SECTION2A)
-- 2B. [INSTALLATION (CLI - BEFEHLSZEILENMODUS)](#SECTION2B)
-- 3A. [BENUTZUNG (SERVER)](#SECTION3A)
-- 3B. [BENUTZUNG (CLI - BEFEHLSZEILENMODUS)](#SECTION3B)
+- 2. [INSTALLATION](#SECTION2)
+- 3. [BENUTZUNG](#SECTION3)
 - 4. [FRONT-END-MANAGEMENT](#SECTION4)
 - 5. [CLI (BEFEHLSZEILENMODUS)](#SECTION5)
 - 6. [IM PAKET ENTHALTENE DATEIEN](#SECTION6)
@@ -40,9 +38,9 @@ Dieses Dokument und das zugehörige Paket kann von folgenden Links kostenlos her
 ---
 
 
-### 2A. <a name="SECTION2A"></a>INSTALLATION (SERVER)
+### 2. <a name="SECTION2"></a>INSTALLATION
 
-Zufünftig wird dieser Prozess mit einem Installationsmanager vereinfacht, bis dahin folgen Sie den Anweisungen, um phpMussel auf den *meisten Systemen und CMS zu installieren:
+#### 2.0 MANUELL INSTALLIEREN (SERVER)
 
 1) Entpacken Sie das heruntergeladene Archiv auf Ihren lokalen PC. Erstellen Sie ein Verzeichnis, wohin Sie den Inhalt dieses Paketes auf Ihrem Host oder CMS installieren möchten. Ein Verzeichnis wie `/public_html/phpmussel/` o.ä. genügt, solange es Ihren Sicherheitsbedürfnissen oder persönlichen Präferenzen entspricht.
 
@@ -70,12 +68,7 @@ Oder das in der `.htaccess` Datei:
 
 6) Der Installationsvorgang wurde nun fertiggestellt. Sie sollten nun das Programm auf ordnungsgemäße Funktion testen. Sie sollten nun die im Paket enthaltenen Testdateien `_testfiles` auf Ihre Webseite über die gewöhnlichen browserbasierten Methoden hochladen. Funktioniert das Programm ordnungsgemäß, erscheint eine Meldung von phpMussel, dass der Upload erfolgreich blockiert wurde. Erscheint keine Meldung, funktioniert das Programm nicht korrekt. Nutzen Sie andere erweiterte Funktionen oder weitere mögliche Arten von Scannern dieses Programms, so sollten Sie diese ebenfalls testen, um die ordnungsgemäße Funktion sicherzustellen.
 
----
-
-
-### 2B. <a name="SECTION2B"></a>INSTALLATION (CLI - BEFEHLSZEILENMODUS)
-
-Zufünftig wird dieser Prozess mit einem Installationsmanager vereinfacht, bis dahin folgen Sie den Anweisungen, um phpMussel im CLI-Modus zu installieren (beachten Sie an dieser Stelle, CLI-Support ist nur auf Windows-Systemen möglich, Linux und andere Systeme werden in zukünftigen Versionen unterstützt):
+#### 2.1 MANUELL INSTALLIEREN (CLI - BEFEHLSZEILENMODUS)
 
 1) Entpacken Sie das heruntergeladene Archiv auf Ihren lokalen PC in ein Verzeichnis, das Ihren Sicherheitsbedürfnissen oder persönlichen Präferenzen entspricht.
 
@@ -83,14 +76,22 @@ Zufünftig wird dieser Prozess mit einem Installationsmanager vereinfacht, bis d
 
 3) Optional (empfohlen für erfahrene Anwender, nicht empfohlen für Anwender ohne entsprechende Kenntnisse), öffnen Sie die Datei `config.ini` im `vault`-Verzeichnis) - Diese Datei beinhaltet alle funktionalen Optionen für phpMussel. Über jeder Option beschreibt ein kurzer Kommentar die Aufgabe dieser Option. Verändern Sie die Werte nach Ihren Bedürfnissen. Speichern und schließen Sie die Datei.
 
-4) Optional, Sie können den Start von phpMussel vereinfachen, indem Sie mittels einer Stapelverarbeitungsdatei PHP und phpMussel automatisch laden. Öffnen Sie einen einfachen Texteditor wie Editor oder Notepad++, tragen Sie den vollständigen Pfad zu Ihrer `php.exe` im Verzeichnis Ihrer PHP-Installation ein, gefolgt von einem Leerzeichen und dem vollständigen Pfad zur `loader.php` im Verzeichnis Ihrer phpMussel-Installation, speichern diese Datei mit einer ".bat"-Dateierweiterung an einem Ort, wo Sie sie leicht finden können und führen Sie sie zukünfig nur noch mit einem Doppelklick aus.
+4) Optional, Sie können den Start von phpMussel vereinfachen, indem Sie mittels einer Stapelverarbeitungsdatei PHP und phpMussel automatisch laden. Öffnen Sie einen einfachen Texteditor wie Editor oder Notepad++, tragen Sie den vollständigen Pfad zu Ihrer `php.exe` im Verzeichnis Ihrer PHP-Installation ein, gefolgt von einem Leerzeichen und dem vollständigen Pfad zur `loader.php` im Verzeichnis Ihrer phpMussel-Installation, speichern diese Datei mit einer `.bat`-Dateierweiterung an einem Ort, wo Sie sie leicht finden können und führen Sie sie zukünfig nur noch mit einem Doppelklick aus.
 
 5) Der Installationsvorgang wurde nun fertiggestellt. Sie sollten nun das Programm auf ordnungsgemäße Funktion testen. Um den Test durchzuführen, führen Sie bitte phpMussel aus und versuchen Sie, das Verzeichnis `_testfiles` in diesem Installationspaket zu scannen.
+
+#### 2.2 INSTALLATION MIT COMPOSER
+
+[phpMussel ist bei Packagist registriert](https://packagist.org/packages/maikuolan/phpmussel), und so, wenn Sie mit Composer vertraut sind, können Sie Composer verwenden, um phpMussel zu installieren (musst Sie dennoch die Konfiguration und Hooks aber vorbereiten; Siehe "manuell installieren (server)" der Schritte 2 und 5).
+
+`composer require maikuolan/phpmussel`
 
 ---
 
 
-### 3A. <a name="SECTION3A"></a>BENUTZUNG (SERVER)
+### 3. <a name="SECTION3"></a>BENUTZUNG
+
+#### 3.0 BENUTZUNG (SERVER)
 
 phpMussel ist dafür vorgesehen, fast vollständig autonom zu funktionieren, ohne dass Sie etwas tun müssen: Sobald es installiert ist, führt es die Tätigkeiten allein aus.
 
@@ -126,12 +127,9 @@ Sollten irgendwelche Fehlalarme auftreten, Sie etwas entdecken, was Ihrer Meinun
 
 Um die Signaturen, die in phpMussel enthalten sind, zu deaktivieren, lesen Sie bitte die Hinweise zum Greylisting im Abschnitt FRONT-END-MANAGEMENT.
 
----
+#### 3.1 BENUTZUNG (CLI - BEFEHLSZEILENMODUS)
 
-
-### 3B. <a name="SECTION3B"></a>BENUTZUNG (CLI - BEFEHLSZEILENMODUS)
-
-Bitte lesen Sie den Abschnitt INSTALLATION (CLI - BEFEHLSZEILENMODUS).
+Bitte lesen Sie den Abschnitt "MANUELL INSTALLIEREN (CLI - BEFEHLSZEILENMODUS)".
 
 Bedenken Sie, dass zukünftige Versionen von phpMussel andere Systeme unterstützen werden, zur Zeit jedoch phpMussel im CLI-Modus nur für Windows-Systeme optimiert wurde (Sie können natürlich versuchen, phpMussel auf anderen Systemen zu installieren, jedoch wird nicht garantiert, dass es wie vorgesehen funktioniert).
 
@@ -726,4 +724,4 @@ Nein. PHP 5.4.0 erreichte offiziellen EoL ("End of Life" oder Ende des Lebens) i
 ---
 
 
-Zuletzt aktualisiert: 27 März 2017 (2017.03.27).
+Zuletzt aktualisiert: 31 März 2017 (2017.03.31).
