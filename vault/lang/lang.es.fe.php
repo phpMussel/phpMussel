@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2017.03.27).
+ * This file: Spanish language data for the front-end (last modified: 2017.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -159,8 +159,8 @@ $phpMussel['lang']['response_file_deleted'] = '¡Archivo eliminado con éxito!';
 $phpMussel['lang']['response_file_edited'] = '¡Archivo modificado con éxito!';
 $phpMussel['lang']['response_file_renamed'] = '¡El nombre del archivo cambiado con éxito!';
 $phpMussel['lang']['response_file_uploaded'] = '¡Archivo subido con éxito!';
-$phpMussel['lang']['response_login_invalid_password'] = '¡Error al iniciar sesión - Contraseña invalida!';
-$phpMussel['lang']['response_login_invalid_username'] = '¡Error al iniciar sesión - El usuario no existe!';
+$phpMussel['lang']['response_login_invalid_password'] = '¡Error al iniciar sesión – Contraseña invalida!';
+$phpMussel['lang']['response_login_invalid_username'] = '¡Error al iniciar sesión – El usuario no existe!';
 $phpMussel['lang']['response_login_password_field_empty'] = '¡La entrada de contraseña estaba vacío!';
 $phpMussel['lang']['response_login_username_field_empty'] = '¡La entrada de usuario estaba vacío!';
 $phpMussel['lang']['response_rename_error'] = '¡No se pudo cambiar el nombre!';

@@ -224,6 +224,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.03.30; Sub-minor code change; Maikuolan]: Some small, aesethetic
   improvements done to the front-end.
 
+- [2017.04.05; Sub-minor code change; Furqan Akbar]: Added internal language
+  support for Urdu (16 language localisations now completed and available).
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

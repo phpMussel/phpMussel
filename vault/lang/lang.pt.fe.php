@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2017.03.27).
+ * This file: Portuguese language data for the front-end (last modified: 2017.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -22,7 +22,7 @@ if (!defined('phpMussel')) {
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Página Principal</a> | <a href="?phpmussel-page=logout">Sair</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Sair</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Reconhecidos arquivos extensões (formato é CSV; só deve adicionar ou remover quando problemas ocorrem; desnecessariamente removendo pode causar falso-positivos para aparecer por compactados arquivos, enquanto desnecessariamente adicionando será essencialmente whitelist o que você está adicionando contra ataque específica detecção; modificar com cautela; Também notar que este não tem efeito em qual compactados arquivos podem e não podem ser analisados no escopo de conteúdo). A lista, como é padrão, é do formatos utilizados mais comumente através da maioria dos sistemas e CMS, mas intencionalmente não é necessariamente abrangente.';
-$phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Bloquear todos os arquivos que contenham quaisquer caracteres de controle (exceto linha quebras) - <code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>? Se você está <em><strong>APENAS</strong></em> carregando simple texto, então você pode ativar essa opção para fornecer alguma adicional proteção para o seu sistema. Mas, se você carregar qualquer coisa que não seja de texto simples, ativando isso pode resultas em falso positivos. False = Não bloquear [Padrão]; True = Bloquear.';
+$phpMussel['lang']['config_attack_specific_block_control_characters'] = 'Bloquear todos os arquivos que contenham quaisquer caracteres de controle (exceto linha quebras) – <code>[\x00-\x08\x0b\x0c\x0e\x1f\x7f]</code>? Se você está <em><strong>APENAS</strong></em> carregando simple texto, então você pode ativar essa opção para fornecer alguma adicional proteção para o seu sistema. Mas, se você carregar qualquer coisa que não seja de texto simples, ativando isso pode resultas em falso positivos. False = Não bloquear [Padrão]; True = Bloquear.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_exe'] = 'Olha por executável headers em arquivos que são não executáveis nem reconhecidos compactados arquivos e por executáveis cujos headers estão incorretas. False = Inativo; True = Ativo.';
 $phpMussel['lang']['config_attack_specific_chameleon_from_php'] = 'Olha por PHP header em arquivos que são não PHP arquivos nem reconhecidos compactados arquivos. False = Inativo; True = Ativo.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_archive'] = 'Olha por compactados arquivos cujos headers estão incorretas (Suportados: BZ, GZ, RAR, ZIP, RAR, GZ). False = Inativo; True = Ativo.';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2017.03.25).
+ * This file: Korean language data (last modified: 2017.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -23,7 +23,7 @@ $phpMussel['lang']['bad_command'] = '미안 해요, 명령을 이해할 수 없�
 $phpMussel['lang']['cli_failed_to_complete'] = '검색을 완료 할 수 없습니다';
 $phpMussel['lang']['cli_is_not_a'] = '파일에서 디렉토리도 없습니다.';
 $phpMussel['lang']['cli_ln2'] = " phpMussel을 이용해 주셔서 감사합니다. \n phpMussel는 ClamAV를 비롯한 서명을 이용하여 시스템에 업로드 된\n 파일을 대상하여 트로이 바이러스 나 악성 코드 등을 감지하도록 설계된\n PHP 스크립트입니다.\n\n phpMussel 저작권 2013 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.\n\n                                     ~ ~ ~\n\n";
-$phpMussel['lang']['cli_ln3'] = " CLI 모드 (명령 줄 인터페이스)에서 phpMussel를 실행 중입니다.\n\n 파일 또는 디렉토리 - 스캔하려면 \"scan\"를 입력하고 계속 파일\n 또는 디렉터리 이름을 입력하고 엔터를 눌러주세요.\n CLI 모드 명령의 목록을 얻으려면 'c'를 입력하고 엔터를 눌러주세요;\n 종료는 \"q\"를 입력하고 엔터를 누릅니다. ";
+$phpMussel['lang']['cli_ln3'] = " CLI 모드 (명령 줄 인터페이스)에서 phpMussel를 실행 중입니다.\n\n 파일 또는 디렉토리 – 스캔하려면 \"scan\"를 입력하고 계속 파일\n 또는 디렉터리 이름을 입력하고 엔터를 눌러주세요.\n CLI 모드 명령의 목록을 얻으려면 'c'를 입력하고 엔터를 눌러주세요;\n 종료는 \"q\"를 입력하고 엔터를 누릅니다. ";
 $phpMussel['lang']['cli_pe1'] = '올바른 PE 파일이 없습니다!';
 $phpMussel['lang']['cli_pe2'] = 'PE 섹션:';
 $phpMussel['lang']['cli_working'] = '처리 중';

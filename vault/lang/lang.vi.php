@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2017.02.07).
+ * This file: Vietnamese language data (last modified: 2017.04.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -91,26 +91,26 @@ $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
- – Thoát ra CLI.
+ - Thoát ra CLI.
  - Bí danh: quit, exit.
  md5_file
  - Phát ra MD5 chử ký từ tập tin [Cú pháp: md5_file \"tên tập tin\"].
- – Bí danh: m.
+ - Bí danh: m.
  md5
- – Phát ra MD5 chử ký từ dây [Cú pháp: md5 string].
+ - Phát ra MD5 chử ký từ dây [Cú pháp: md5 string].
  hex_encode
  - Chuyển đổi dây nhị phân thành hệ thập lục phân [Cú pháp: hex_encode string].
- – Bí danh: x.
+ - Bí danh: x.
  hex_decode
  - Chuyển đổi hệ thập lục phân thành dây nhị phân [Cú pháp: hex_decode string].
  base64_encode
- – Chuyển đổi dây nhị phân thành dây base64 [Cú pháp: base64_encode string].
- – Bí danh: b.
+ - Chuyển đổi dây nhị phân thành dây base64 [Cú pháp: base64_encode string].
+ - Bí danh: b.
  base64_decode
- – Chuyển đổi dây base64 thành dây nhị phân [Cú pháp: base64_decode string].
+ - Chuyển đổi dây base64 thành dây nhị phân [Cú pháp: base64_decode string].
  scan
- – Xem tập tin hoạc hồ sơ [Cú pháp: scan \"tên tập tin\"].
- – Bí danh: s.
+ - Xem tập tin hoạc hồ sơ [Cú pháp: scan \"tên tập tin\"].
+ - Bí danh: s.
  c
- – In danh sách lệnh này.
+ - In danh sách lệnh này.
 ";

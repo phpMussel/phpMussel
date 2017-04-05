@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.03.30).
+ * This file: Front-end handler (last modified: 2017.04.04).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -58,10 +58,14 @@ if (empty($phpMussel['lang']['textDir']) || $phpMussel['lang']['textDir'] !== 'r
     $phpMussel['FE']['FE_Align'] = 'left';
     $phpMussel['FE']['FE_Align_Reverse'] = 'right';
     $phpMussel['FE']['PIP_Input'] = $phpMussel['FE']['PIP_Right'];
+    $phpMussel['FE']['Gradient_Degree'] = 90;
+    $phpMussel['FE']['Half_Border'] = 'solid solid none none';
 } else {
     $phpMussel['FE']['FE_Align'] = 'right';
     $phpMussel['FE']['FE_Align_Reverse'] = 'left';
     $phpMussel['FE']['PIP_Input'] = $phpMussel['FE']['PIP_Left'];
+    $phpMussel['FE']['Gradient_Degree'] = 270;
+    $phpMussel['FE']['Half_Border'] = 'solid none none solid';
 }
 
 /** A simple passthru for the front-end CSS. */
