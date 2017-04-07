@@ -10,13 +10,14 @@ phpMussel:
   id: Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi).
   it: Il pacchetto principale (senza le firme, la documentazione, e la configurazione).
   ja: メインパッケージ（署名、ドキュメンテーション、コンフィギュレーション、は含まれません）。
+  ko: 메인 패키지 (서명, 문서, 구성, 은 포함되지 않습니다).
   nl: De primaire pakket (zonder de handtekeningen, documentatie en configuratie).
   pt: O pacote principal (menos as assinaturas, documentação e configuração).
-  ru: Основной пакет (минус подписи/сигнатуры, документация, и конфигурация).
+  ru: Основной пакет (минус сигнатуры, документация, и конфигурация).
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
-  zh-TW: 主包（沒有簽名文件，文檔，和配置）。
- Version: 1.0.0-DEV+2017095791
+  zh-tw: 主包（沒有簽名文件，文檔，和配置）。
+ Version: 1.0.0-DEV+2017096795
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/Changelog-v1.txt
@@ -126,7 +127,7 @@ phpMussel:
    - 785809aae3e47619ebe4cd9584b2a4f8:4317
    - 1a3a9f64169c8b81df60705a341bbb3b:808
    - d6ca329c54617da8fc04c10bd51e81f5:102535
-   - b3a6a82d36f80bf382ee6e8c5f8324b9:312189
+   - fd71033aff48cd64db925e3f27aa856a:304498
    - 2d0b1e6b83436f0ab25e1bd40123a28c:2625
    - c079d33f77a9612a906df4a21948b5b6:17618
    - 359a65f973168540e69ffc66ba914b11:2368
@@ -423,7 +424,7 @@ l10n/vi:
 l10n/zh-TW:
  Name: L10N: 中文（傳統）
  Extended Description:
-  zh-TW: 中文（傳統）語言數據
+  zh-tw: 中文（傳統）語言數據
  Version: 2017.84.851
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0

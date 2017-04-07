@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.03.30).
+ * This file: Functions file (last modified: 2017.04.08).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -253,108 +253,8 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
         while (true) {
             if (function_exists($phpMussel['Function']('GZ'))) {
                 if ($c = preg_match_all(
-                    '/(' . $phpMussel['Function']('GZ') . '\s{0,2048}\(\s{0,2048}' . $phpMussel['Function']('R13') .
-                    '\s{0,2048}\(\s{0,2048}' . $phpMussel['Function']('B64') . '\s{0,2048}\(\s{0,2048}["\'])' .
-                    '([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}==)' .
-                    '(["\']\s{0,2048}\)\s{0,2048}\))/i',
-                    $str,
-                    $matches
-                )) {
-                    for ($i = 0; $c > $i; $i++) {
-                        $str = str_ireplace(
-                            $matches[0][$i],
-                            '"' . $phpMussel['Function']('GZ', $phpMussel['Function']('R13', $phpMussel['Function']('B64', $phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[4][$i])))) . '"',
-                            $str
-                        );
-                    }
-                    continue;
-                }
-                if ($c = preg_match_all(
-                    '/(' . $phpMussel['Function']('GZ') . '\s{0,2048}\(\s{0,2048}' . $phpMussel['Function']('B64') .
-                    '\s{0,2048}\(\s{0,2048}' . $phpMussel['Function']('R13') . '\s{0,2048}\(\s{0,2048}["\'])([^\'"\(' .
-                    '\)]{1,4096})(["\']\s{0,2048}\)\s{0,2048}\))/i',
-                    $str,
-                    $matches
-                )) {
-                    for ($i = 0; $c > $i; $i++) {
-                        $str = str_ireplace(
-                            $matches[0][$i],
-                            '"' . $phpMussel['Function']('GZ', $phpMussel['Function']('B64', $phpMussel['Function']('R13', $phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[3][$i])))) . '"',
-                            $str
-                        );
-                    }
-                    continue;
-                }
-                if ($c = preg_match_all(
-                    '/(' . $phpMussel['Function']('R13') . '\s{0,2048}\(\s{0,2048}' . $phpMussel['Function']('GZ') .
-                    '\s{0,2048}\(\s{0,2048}' . $phpMussel['Function']('B64') . '\s{0,2048}\(\s{0,2048}["\'])([A-Za-z' .
-                    '0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}==)(["\']\s{0,2048}\)\s{0,20' .
-                    '48}\))/i',
-                    $str,
-                    $matches
-                )) {
-                    for ($i = 0; $c > $i; $i++) {
-                        $str = str_ireplace(
-                            $matches[0][$i],
-                            '"' . $phpMussel['Function']('R13', $phpMussel['Function']('GZ', $phpMussel['Function']('B64', $phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[4][$i])))) . '"',
-                            $str
-                        );
-                    }
-                    continue;
-                }
-                if ($c = preg_match_all(
-                    '/(' . $phpMussel['Function']('B64') . '\s{0,2048}\(\s{0,2048}' . $phpMussel['Function']('GZ') .
-                    '\s{0,2048}\(\s{0,2048}' . $phpMussel['Function']('R13') . '\s{0,2048}\(\s{0,2048}["\'])([^\'"\(' .
-                    '\)]{1,4096})(["\']\s{0,2048}\)\s{0,2048}\))/i',
-                    $str,
-                    $matches
-                )) {
-                    for ($i = 0; $c > $i; $i++) {
-                        $str = str_ireplace(
-                            $matches[0][$i],
-                            '"' . $phpMussel['Function']('B64', $phpMussel['Function']('GZ', $phpMussel['Function']('R13', $phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[3][$i])))) . '"',
-                            $str
-                        );
-                    }
-                    continue;
-                }
-                if ($c = preg_match_all(
-                    '/(' . $phpMussel['Function']('GZ') . '\s{0,2048}\(\s{0,2048}' . $phpMussel['Function']('B64') .
-                    '\s{0,2048}\(\s{0,2048}["\'])([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-' .
-                    '9+\/]{2}==)(["\']\s{0,2048}\)\s{0,2048}\))/i',
-                    $str,
-                    $matches
-                )) {
-                    for ($i = 0; $c > $i; $i++) {
-                        $str = str_ireplace(
-                            $matches[0][$i],
-                            '"' . $phpMussel['Function']('GZ', $phpMussel['Function']('B64', $phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[4][$i]))) . '"',
-                            $str
-                        );
-                    }
-                continue;
-                }
-                if ($c = preg_match_all(
-                    '/(' . $phpMussel['Function']('GZ') . '\s{0,2048}\(\s{0,2048}' . $phpMussel['Function']('R13') .
-                    '\s{0,2048}\(\s{0,2048}["\'])([^\'"\(\)]{1,4096})(["\']\s{0,2048}\)\s{0,2048}\))/i',
-                    $str,
-                    $matches
-                )) {
-                    for ($i = 0; $c > $i; $i++) {
-                        $str = str_ireplace(
-                            $matches[0][$i],
-                            '"' . $phpMussel['Function']('GZ', $phpMussel['Function']('R13', $phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[3][$i]))) . '"',
-                            $str
-                        );
-                    }
-                    continue;
-                }
-                if ($c = preg_match_all(
-                    '/(' . $phpMussel['Function']('GZ') . '\s{0,2048}\(\s{0,2048}["\'])(.{1,4096})(,[0-9])?(["\']\s{' .
-                    '0,2048}\))/i',
-                    $str,
-                    $matches
-                )) {
+                    '/(' . $phpMussel['Function']('GZ') . '\s*\(\s*["\'])(.{1,4096})(,[0-9])?(["\']\s*\))/i',
+                $str, $matches)) {
                     for ($i = 0; $c > $i; $i++) {
                         $str = str_ireplace(
                             $matches[0][$i],
@@ -362,47 +262,14 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
                             $str
                         );
                     }
-                continue;
+                    continue;
                 }
             }
             if ($c = preg_match_all(
-                '/(' . $phpMussel['Function']('R13') . '\s{0,2048}\(\s{0,2048}' . $phpMussel['Function']('B64') .
-                '\s{0,2048}\(\s{0,2048}["\'])([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/' .
-                ']{2}==)(["\']\s{0,2048}\)\s{0,2048}\))/i',
-                $str,
-                $matches
-            )) {
-                for ($i = 0; $c > $i; $i++) {
-                    $str = str_ireplace(
-                        $matches[0][$i],
-                        '"' . $phpMussel['Function']('R13', $phpMussel['Function']('B64', $phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[4][$i]))) . '"',
-                        $str
-                    );
-                }
-                continue;
-            }
-            if ($c = preg_match_all(
-                '/(' . $phpMussel['Function']('B64') . '\s{0,2048}\(\s{0,2048}' . $phpMussel['Function']('R13') .
-                '\s{0,2048}\(\s{0,2048}["\'])([^\'"\(\)]{1,4096})(["\']\s{0,2048}\)\s{0,2048}\))/i',
-                $str,
-                $matches
-            )) {
-                for ($i = 0; $c > $i; $i++) {
-                    $str = str_ireplace(
-                        $matches[0][$i],
-                        '"' . $phpMussel['Function']('B64', $phpMussel['Function']('R13', $phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[3][$i]))) . '"',
-                        $str
-                    );
-                }
-                continue;
-            }
-            if ($c = preg_match_all(
-                '/(' . $phpMussel['Function']('B64') . '|decode_base64|base64\.b64decode|atob|Base64\.decode64)(\s{0' .
-                ',2048}\(\s{0,2048}["\'\`])([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{' .
-                '2}==)(["\'\`]\s{0,2048}\))/i',
-                $str,
-                $matches
-            )) {
+                '/(' . $phpMussel['Function']('B64') . '|decode_base64|base64\.b64decode|atob|Base64\.decode64)(\s*' .
+                '\(\s*["\'\`])([A-Za-z0-9+\/]{4})*([A-Za-z0-9+\/]{4}|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{2}==)(["\'\`]' .
+                '\s*\))/i',
+            $str, $matches)) {
                 for ($i = 0; $c > $i; $i++) {
                     $str = str_ireplace(
                         $matches[0][$i],
@@ -413,11 +280,8 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
                 continue;
             }
             if ($c = preg_match_all(
-                '/(' . $phpMussel['Function']('R13') . '\s{0,2048}\(\s{0,2048}["\'])([^\'"\(\)]{1,4096})(["\']\s{0,2' .
-                '048}\))/i',
-                $str,
-                $matches
-            )) {
+                '/(' . $phpMussel['Function']('R13') . '\s*\(\s*["\'])([^\'"\(\)]{1,4096})(["\']\s*\))/i',
+            $str, $matches)) {
                 for ($i = 0; $c > $i; $i++) {
                     $str = str_ireplace(
                         $matches[0][$i],
@@ -428,11 +292,8 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
                 continue;
             }
             if ($c = preg_match_all(
-                '/(' . $phpMussel['Function']('HEX') . '\s{0,2048}\(\s{0,2048}["\'])([a-fA-F0-9]{1,4096})(["\']\s{0,' .
-                '2048}\))/i',
-                $str,
-                $matches
-            )) {
+                '/(' . $phpMussel['Function']('HEX') . '\s*\(\s*["\'])([a-fA-F0-9]{1,4096})(["\']\s*\))/i',
+            $str, $matches )) {
                 for ($i = 0; $c > $i; $i++) {
                     $str = str_ireplace(
                         $matches[0][$i],
@@ -443,11 +304,8 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
                 continue;
             }
             if ($c = preg_match_all(
-                '/([Uu][Nn][Pp][Aa][Cc][Kk]\s{0,2048}\(\s{0,2048}["\']\s{0,2048}H\*\s{0,2048}["\']\s{0,2048},\s{0,20' .
-                '48}["\'])([a-fA-F0-9]{1,4096})(["\']\s{0,2048}\))/',
-                $str,
-                $matches
-            )) {
+                '/([Uu][Nn][Pp][Aa][Cc][Kk]\s*\(\s*["\']\s*H\*\s*["\']\s*,\s*["\'])([a-fA-F0-9]{1,4096})(["\']\s*\))/',
+            $str, $matches)) {
                 for ($i = 0; $c > $i; $i++) {
                     $str = str_replace($matches[0][$i], '"' . $phpMussel['HexSafe']($phpMussel['substrbl']($phpMussel['substraf']($matches[0][$i], $matches[1][$i]), $matches[3][$i])) . '"', $str);
                 }
@@ -477,7 +335,7 @@ $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false
  * @return string The substring.
  */
 $phpMussel['substrbf'] = function ($h, $n) {
-    return (!$n) ? '' : substr($h, 0, strpos($h, $n));
+    return !$n ? '' : substr($h, 0, strpos($h, $n));
 };
 
 /**
@@ -488,7 +346,7 @@ $phpMussel['substrbf'] = function ($h, $n) {
  * @return string The substring.
  */
 $phpMussel['substraf'] = function ($h, $n) {
-    return (!$n) ? '' : substr($h, strpos($h, $n) + strlen($n));
+    return !$n ? '' : substr($h, strpos($h, $n) + strlen($n));
 };
 
 /**
@@ -499,7 +357,7 @@ $phpMussel['substraf'] = function ($h, $n) {
  * @return string The substring.
  */
 $phpMussel['substrbl'] = function ($h, $n) {
-    return (!$n) ? '' : substr($h, 0, strrpos($h, $n));
+    return !$n ? '' : substr($h, 0, strrpos($h, $n));
 };
 
 /**
@@ -510,7 +368,7 @@ $phpMussel['substrbl'] = function ($h, $n) {
  * @return string The substring.
  */
 $phpMussel['substral'] = function ($h, $n) {
-    return (!$n) ? '' : substr($h, strrpos($h, $n) + strlen($n));
+    return !$n ? '' : substr($h, strrpos($h, $n) + strlen($n));
 };
 
 /**
@@ -523,7 +381,7 @@ $phpMussel['substral'] = function ($h, $n) {
  * @param bool $PreChecked When false, checks that the file exists and is
  *      writable. Defaults to false.
  * @param int $Blocks The total size of a single block in kilobytes (optional;
- *      defaults to 128, ie, 128KB or 131072 bytes). This can be modified by
+ *      defaults to 128, i.e., 128KB or 131072 bytes). This can be modified by
  *      developers as per their individual needs. Generally, a smaller value
  *      will increase stability but decrease performance, whereas a larger
  *      value will increase performance but decrease stability.
@@ -1046,9 +904,9 @@ $phpMussel['implode_bits'] = function ($n) {
  * additional generic indicators (heuristic, CVE, etc), except when 1H == 8 (in
  * which case, 1L represents the signature vendor name, 1H == 8 being used to
  * access that additional set of allocations), 2H+2L represents the virus
- * target (ie, the file format or system that the virus that the signature is
+ * target (i.e., the file format or system that the virus that the signature is
  * intended to detect is intended to be targeting), and 3H+3L represents the
- * nature of what the signature is intended to detect (ie, whether we should
+ * nature of what the signature is intended to detect (i.e., whether we should
  * call it a virus, a trojan, adware, ransomware, etc).
  *
  * Warning: When modifying these allocations (such as to include a new vendor
@@ -1323,7 +1181,7 @@ $phpMussel['vn_shorthand'] = function ($VN) use (&$phpMussel) {
  *      URLs are listed on any of Google Safe Browsing lists; 204 if NONE of
  *      the queried URLs are listed on any of Google Safe Browsing lists; 400
  *      if the request is malformed; 401 if the API key is missing or isn't
- *      authorised; 503 if the service is unavailable (eg, if it's been
+ *      authorised; 503 if the service is unavailable (e.g., if it's been
  *      throttled); 999 if something unexpected occurs (such as, for example,
  *      if a programmatic error is encountered).
  */
@@ -1658,24 +1516,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     /** Corresponds to the "detect_deface" configuration directive. */
     $detect_deface = ($phpMussel['Config']['signatures']['detect_deface']) ? 1 : 0;
 
-    $decPos = strrpos($ofn, '.');
-    $ofnLen = strlen($ofn);
-    if ($decPos === false || $decPos === ($ofnLen - 1)) {
-        $gzxts = $gzxt = $xts = $xt = '-';
-    } else {
-        $xt = strtolower(substr($ofn, ($decPos + 1)));
-        $xts = substr($xt, 0, 3) . '*';
-        if (strtolower(substr($ofn, -3)) === '.gz') {
-            $ofnNoGZ = substr($ofn, 0, ($ofnLen - 3));
-            $decPosNoGZ = strrpos($ofnNoGZ, '.');
-            if ($decPosNoGZ !== false && $decPosNoGZ !== (strlen($ofnNoGZ) - 1)) {
-                $gzxt = strtolower(substr($ofnNoGZ, ($decPosNoGZ + 1)));
-                $gzxts = substr($gzxt, 0, 3) . '*';
-            }
-        } else {
-            $gzxts = $gzxt = '-';
-        }
-    }
+    list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($ofn);
     $CoExMeta .= '$xt:' . $xt . ';$xts:' . $xts . ';';
 
     /** Input ($str) as hexadecimal data. */
@@ -4526,7 +4367,14 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
     return array($r, $x);
 };
 
-/** @todo@ */
+/**
+ * Looks for indicators of image files (i.e., attempts to determine whether a
+ * file is an image file).
+ *
+ * @param string $Ext The file extension.
+ * @param string $Head The file header.
+ * @return bool True: Indicators found. False: Indicators not found.
+ */
 $phpMussel['Indicator-Image'] = function ($Ext, $Head) {
     return (
         preg_match(
@@ -4537,6 +4385,33 @@ $phpMussel['Indicator-Image'] = function ($Ext, $Head) {
             '/^(?:0000000c6a502020|25504446|38425053|424d|474946383[79]61|57454250|67696d7020786366|89504e47|ffd8ff)/'
         , $Head)
     );
+};
+
+/**
+ * Fetches extensions data from filenames.
+ *
+ * @param string $ofn The original filename.
+ * @return array The extensions data.
+ */
+$phpMussel['FetchExt'] = function ($ofn) {
+    $decPos = strrpos($ofn, '.');
+    $ofnLen = strlen($ofn);
+    if ($decPos === false || $decPos === ($ofnLen - 1)) {
+        return array('-', '-', '-', '-');
+    }
+    $xt = strtolower(substr($ofn, ($decPos + 1)));
+    $xts = substr($xt, 0, 3) . '*';
+    if (strtolower(substr($ofn, -3)) === '.gz') {
+        $ofnNoGZ = substr($ofn, 0, ($ofnLen - 3));
+        $decPosNoGZ = strrpos($ofnNoGZ, '.');
+        if ($decPosNoGZ !== false && $decPosNoGZ !== (strlen($ofnNoGZ) - 1)) {
+            $gzxt = strtolower(substr($ofnNoGZ, ($decPosNoGZ + 1)));
+            $gzxts = substr($gzxt, 0, 3) . '*';
+        }
+    } else {
+        $gzxts = $gzxt = '-';
+    }
+    return array($xt, $xts, $gzxt, $gzxts);
 };
 
 /**
@@ -4700,7 +4575,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     $phpMussel['memCache']['phase'] = 'file';
     /**
      * Indicates whether the file/object being scanned is a part of a
-     * container (eg, an OLE object, ZIP file, TAR, PHAR, etc).
+     * container (e.g., an OLE object, ZIP file, TAR, PHAR, etc).
      */
     $phpMussel['memCache']['container'] = 'none';
     /** Indicates whether the file/object being scanned is an OLE object. */
@@ -4807,24 +4682,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['lang']['scan_filename_manipulation_detected'] .
             $phpMussel['lang']['_exclamation_final'] . "\n";
     }
-    $decPos = strrpos($ofn, '.');
-    $ofnLen = strlen($ofn);
-    if ($decPos === false || $decPos === ($ofnLen - 1)) {
-        $gzxts = $gzxt = $xts = $xt = '-';
-    } else {
-        $xt = strtolower(substr($ofn, ($decPos + 1)));
-        $xts = substr($xt, 0, 3) . '*';
-        if (strtolower(substr($ofn, -3)) === '.gz') {
-            $ofnNoGZ = substr($ofn, 0, ($ofnLen - 3));
-            $decPosNoGZ = strrpos($ofnNoGZ, '.');
-            if ($decPosNoGZ !== false && $decPosNoGZ !== (strlen($ofnNoGZ) - 1)) {
-                $gzxt = strtolower(substr($ofnNoGZ, ($decPosNoGZ + 1)));
-                $gzxts = substr($gzxt, 0, 3) . '*';
-            }
-        } else {
-            $gzxts = $gzxt = '-';
-        }
-    }
+    list($xt, $xts, $gzxt, $gzxts) = $phpMussel['FetchExt']($ofn);
     if (
         substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $xt . ',') ||
         substr_count(',' . $phpMussel['Config']['files']['filetype_whitelist'] . ',', ',' . $xts . ',') ||
@@ -6149,7 +6007,7 @@ $phpMussel['FECacheGet'] = function ($Source, $Entry) {
  * @param string $A The 1st version string.
  * @param string $B The 2nd version string.
  * return bool True if the 2nd version is newer than the 1st version, and false
- *      otherwise (ie, if they're the same, or if the 1st version is newer).
+ *      otherwise (i.e., if they're the same, or if the 1st version is newer).
  */
 $phpMussel['VersionCompare'] = function ($A, $B) {
     $Normalise = function (&$Ver) {
