@@ -100,7 +100,7 @@ if ($phpMussel['upload']['count'] > 0) {
         $phpMussel['memCache']['handle'] = array();
         $phpMussel['memCache']['handle']['qdata'] =
             "== HONEYPOT EVENT ==\n DATE: " .
-            date('r', $phpMussel['memCache']['start_time']) .
+            $phpMussel['TimeFormat']($phpMussel['memCache']['start_time'], $phpMussel['Config']['general']['timeFormat']) .
             "\nIP ADDRESS: " .
             $_SERVER[$phpMussel['Config']['general']['ipaddr']] .
             "\n";
@@ -448,10 +448,7 @@ if ($phpMussel['upload']['count'] > 0) {
 
     if ($phpMussel['Config']['general']['honeypot_mode'] && $phpMussel['Config']['general']['scan_kills']) {
         $phpMussel['memCache']['handle'] = array(
-            'File' => $phpMussel['Time2Logfile'](
-                $phpMussel['Time'],
-                $phpMussel['Config']['general']['scan_kills']
-            )
+            'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_kills'])
         );
         if (!file_exists($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'])) {
             $phpMussel['memCache']['handle']['qdata'] =
@@ -508,10 +505,7 @@ if ($phpMussel['upload']['count'] > 0) {
                 'scan_errors' => $phpMussel['memCache']['scan_errors'],
                 'detections' => trim($phpMussel['whyflagged'])
             )) . "\n",
-            'File' => $phpMussel['Time2Logfile'](
-                $phpMussel['Time'],
-                $phpMussel['Config']['general']['scan_log_serialized']
-            )
+            'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log_serialized'])
         );
         $phpMussel['memCache']['handle']['Stream'] =
             fopen($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'], 'a');
@@ -548,17 +542,14 @@ if ($phpMussel['upload']['count'] > 0) {
         /** Log "scan_kills" data. */
         if ($phpMussel['Config']['general']['scan_kills'] && !empty($phpMussel['killdata'])) {
             $phpMussel['memCache']['handle'] = array(
-                'File' => $phpMussel['Time2Logfile'](
-                    $phpMussel['Time'],
-                    $phpMussel['Config']['general']['scan_kills']
-                )
+                'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_kills'])
             );
             $phpMussel['memCache']['handle']['Data'] =
                 (!file_exists($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'])) ?
                 $phpMussel['safety'] . "\n" :
                 '';
             $phpMussel['memCache']['handle']['Data'] .=
-                'DATE: ' . date('r', $phpMussel['Time']) .
+                'DATE: ' . $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']) .
                 "\nIP ADDRESS: " . $_SERVER[$phpMussel['Config']['general']['ipaddr']] .
                 "\n== SCAN RESULTS / WHY FLAGGED ==\n" .
                 $phpMussel['whyflagged'] .

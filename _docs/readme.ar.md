@@ -333,20 +333,28 @@
  <li>اسم الملف من ملف لتسجيل كل سجلات الملفات التي منعت او اوقفت من .تحديد اسم الملف، أو اتركه فارغا لتعطيل.</li>
 </ul></div>
 
-<div dir="rtl"><em>نصيحة مفيدة: إن أردت، يمكنك إلحاق تاريخ/المعلومات في الوقت إلى أسماء ملفات السجل من خلال تضمين هذه في اسم: `{yyyy}` لمدة عام كامل، `{yy}` لمدة عام يختصر، `{mm}` لمدة شهر، `{dd}` ليوم واحد، `{hh}` لمدة ساعة.</em><br /><br /></div>
+<div dir="rtl"><em>نصيحة مفيدة: إن أردت، يمكنك إلحاق تاريخ/المعلومات في الوقت إلى أسماء ملفات السجل من خلال تضمين هذه في اسم: "{yyyy}" لمدة عام كامل، "{yy}" لمدة عام يختصر، "{mm}" لمدة شهر، "{dd}" ليوم واحد، "{hh}" لمدة ساعة (راجع الأمثلة أدناه).</em><br /><br /></div>
 
-<div dir="rtl"><em>أمثلة:</em><br /></div>
-<div dir="rtl"><ul><em>
- <li>logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'</li>
- <li>logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'</li>
- <li>logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'</li>
-</em></ul></div>
+```
+ scan_log='scan_log.{yyyy}-{mm}-{dd}-{hh}.txt'
+ scan_log_serialized='scan_log_serialized.{yyyy}-{mm}-{dd}-{hh}.txt'
+ scan_kills='scan_kills.{yyyy}-{mm}-{dd}-{hh}.txt'
+```
 
 <div dir="rtl">"timeOffset"<br /></div>
 <div dir="rtl"><ul>
- <li>إذا بالتوقيت المحلي الخاص بك ليست هي نفسها كما الخادم الخاص بك، يمكنك تحديد إزاحة هنا (لضبط التاريخ / المعلومات في الوقت صنعت بواسطة phpMussel). الإزاحة المستندة دقيقة.</li>
- <li>مثال (لإضافة ساعة واحدة): `timeOffset=60`</li>
+ <li>إذا بالتوقيت المحلي الخاص بك ليست هي نفسها كما الخادم الخاص بك، يمكنك تحديد إزاحة هنا (لضبط التاريخ / المعلومات في الوقت صنعت بواسطة phpMussel). الإزاحة المستندة دقيقة.<br /></li>
+ <li>مثال (لإضافة ساعة واحدة):</li>
 </ul></div>
+
+`timeOffset=60`
+
+<div dir="rtl">"timeFormat"<br /></div>
+<div dir="rtl"><ul>
+ <li>شكل التواريخ المستخدم من قبل phpMussel. الافتراضي:</li>
+</ul></div>
+
+`{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`
 
 <div dir="rtl">"ipaddr"<br /></div>
 <div dir="rtl"><ul>
@@ -862,4 +870,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 31 مارس 2017 (2017.03.31).</div>
+<div dir="rtl">آخر تحديث: 11 أبريل 2017 (2017.04.11).</div>

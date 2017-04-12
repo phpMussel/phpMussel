@@ -2,7 +2,7 @@
             <form action="?phpmussel-page=accounts" method="POST"><input name="phpmussel-form-target" type="hidden" value="accounts" /><input name="username" type="hidden" value="{username}" />
                 <td class="h1"><div class="s">{username}</div>{warning}</td>
                 <td class="h1"><div class="s">{permissions}</div></td>
-                <td class="h1"><div class="s"><input name="password" type="password" placeholder="Password" /></div></td>
+                <td class="h1"><div class="s"><input name="password" type="password" placeholder="{field_password}" /></div></td>
                 <td class="h1f"><div class="s"><select name="do"><option value="update-password">{field_set_new_password}</option><option value="delete-account">{field_delete_account}</option></select><input type="submit" value="{field_ok}" class="auto" /></div></td>
             </form>
         </tr>

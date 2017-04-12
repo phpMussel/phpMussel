@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.04.08).
+ * This file: Functions file (last modified: 2017.04.11).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -5477,14 +5477,14 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
         $ofn = $f;
     }
     $xst = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
-    $xst2822 = date('r', $xst);
+    $xst2822 = $phpMussel['TimeFormat']($xst, $phpMussel['Config']['general']['timeFormat']);
     try {
         $r = $phpMussel['Recursor']($f, $n, $zz, $dpt, $ofn);
     } catch (\Exception $e) {
         throw new \Exception($e->getMessage());
     }
     $xet = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
-    $xet2822 = date('r', $xet);
+    $xet2822 = $phpMussel['TimeFormat']($xet, $phpMussel['Config']['general']['timeFormat']);
 
     /** Plugin hook: "after_scan". */
     if (!empty($phpMussel['MusselPlugins']['hookcounts']['after_scan'])) {
@@ -5533,10 +5533,7 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
             $r . $xet2822 . ' ' . $phpMussel['lang']['finished'] .
             $phpMussel['lang']['_fullstop_final'] . "\n";
         $handle = array(
-            'File' => $phpMussel['Time2Logfile'](
-                $phpMussel['Time'],
-                $phpMussel['Config']['general']['scan_log']
-            )
+            'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log'])
         );
         if (!file_exists($phpMussel['Vault'] . $handle['File'])) {
             $r = $phpMussel['safety'] . "\n" . $r;
@@ -5583,10 +5580,7 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
                     'scan_errors' => $phpMussel['memCache']['scan_errors'],
                     'detections' => trim($phpMussel['whyflagged'])
                 )) . "\n",
-                'File' => $phpMussel['Time2Logfile'](
-                    $phpMussel['Time'],
-                    $phpMussel['Config']['general']['scan_log_serialized']
-                )
+                'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log_serialized'])
             );
             $handle['Stream'] = fopen($phpMussel['Vault'] . $handle['File'], 'a');
             fwrite($handle['Stream'], $handle['Data']);
@@ -5597,28 +5591,36 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
 };
 
 /**
- * A simple closure for replacing date/time placeholders in the logfile
- * directives with corresponding date/time information.
+ * A simple closure for replacing date/time placeholders with corresponding
+ * date/time information. Used by the logfiles and some timestamps.
  *
- * @param int $time A unix timestamp.
- * @param string|array $dir A directive entry or an array of directive entries.
- * @return string|array The adjusted directive entry or entries.
+ * @param int $Time A unix timestamp.
+ * @param string|array $In An input or an array of inputs to manipulate.
+ * @return string|array The adjusted input(/s).
  */
-$phpMussel['Time2Logfile'] = function ($time, $dir) use (&$phpMussel) {
-    $time = date('dmYH', $time);
+$phpMussel['TimeFormat'] = function ($Time, $In) use (&$phpMussel) {
+    $Time = date('dmYHisDMP', $Time);
     $values = array(
-        'dd' => substr($time, 0, 2),
-        'mm' => substr($time, 2, 2),
-        'yyyy' => substr($time, 4, 4),
-        'yy' => substr($time, 6, 2),
-        'hh' => substr($time, 8, 2)
+        'dd' => substr($Time, 0, 2),
+        'mm' => substr($Time, 2, 2),
+        'yyyy' => substr($Time, 4, 4),
+        'yy' => substr($Time, 6, 2),
+        'hh' => substr($Time, 8, 2),
+        'ii' => substr($Time, 10, 2),
+        'ss' => substr($Time, 12, 2),
+        'Day' => substr($Time, 14, 3),
+        'Mon' => substr($Time, 17, 3),
+        'tz' => substr($Time, 20, 3) . substr($Time, 24, 2),
+        't:z' => substr($Time, 20, 6)
     );
-    if (is_array($dir)) {
+    $values['d'] = (int)$values['dd'];
+    $values['m'] = (int)$values['mm'];
+    if (is_array($In)) {
         return array_map(function ($Item) use (&$values, &$phpMussel) {
             return $phpMussel['ParseVars']($values, $Item);
-        }, $dir);
+        }, $In);
     }
-    return $phpMussel['ParseVars']($values, $dir);
+    return $phpMussel['ParseVars']($values, $In);
 };
 
 /**

@@ -3,24 +3,28 @@ body,input,select,textarea,.idx{font-size:12px}
 body{font-family:'Open Sans',sans-serif,'Lucida Grande',Tahoma,Verdana,Arial,MingLiU;letter-spacing:1px;text-decoration:none;border-style:none;margin:0;padding:0;white-space:normal;background-color:#ccc;color:#033}
 code{font-family:'Space Mono',monospace}
 hr{border-style:solid none none;border-width:1px;margin:5px 2px 0;padding:2px;color:#900}
+img.ico{width:16px;height:16px;border:0}
 input,select,textarea{background-color:#ffe;border:1px solid #900;color:#033;margin:2px;padding:2px}
 input,select{width:150px;background-position:top {FE_Align_Reverse}}
 input.auto,select.auto{width:auto;padding-left:10px;padding-right:10px}
+input[type=image]{width:inherit;border:inherit}
 input[type=password]{background-image:url(data:image/gif;base64,{PIP_Key})}
 input[type=text]{background-image:url(data:image/gif;base64,{PIP_Input})}
-textarea{height:150px}
 textarea.half{height:75px}
-input[type=image]{width:inherit;border:inherit}
-img.ico{width:16px;height:16px;border:0}
+textarea{height:150px}
+a:link,a:visited{color:#238}
+a:hover{color:#46f}
+a:active{color:red}
 .bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,a,input,select,textarea{font-weight:700}
 .bNav,.gen{text-align:right}
+.bNav{height:48px}
 .ci,.co,.gen,.center{margin:auto}
 .ci,.co,.ng1,.ng2,textarea{width:98%}
 .ci{background-color:#fff;border-style:solid;border-width:1px;border-color:#aaa;text-align:{FE_Align};padding:12px}
 .co,body,.center{text-align:center}
 .co{padding:12}
 .dt,.s,.tip,.txtBl,.txtGn,.txtOe,.txtRd{display:inline}
-.dt,.tip{float:left;text-align:left}
+.dt,.tip{float:{FE_Align};text-align:{FE_Align};width:80%}
 .gen,input,select,textarea{font-family:'Open Sans',sans-serif,Verdana,Arial,Helvetica,sans-serif}
 .gen{letter-spacing:0px;white-space:nowrap}
 .h1,.h1f,.h2,.h2f,.h3,.h3f,.h4,.h4f,.ng1,.ng2,.r,.rf{margin:0;padding:4px;border-style:{Half_Border};border-width:1px;border-color:#999}
@@ -41,4 +45,5 @@ img.ico{width:16px;height:16px;border:0}
 .txtOe{color:#f60}
 .txtRd{color:red}
 .ufts{width:220px}
+.vr{float:{FE_Align};width:1px;height:inherit;background-color:#900}
 @keyframes idxAn{0%{background:#fa6}100%{background:#ddd}}

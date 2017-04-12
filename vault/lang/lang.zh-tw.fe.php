@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.03.27).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.04.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -64,6 +64,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = '多長時間應該phpM
 $phpMussel['lang']['config_general_scan_kills'] = '文件為記錄在所有受阻或已殺上傳。指定一個文件名，或留空以關閉。';
 $phpMussel['lang']['config_general_scan_log'] = '文件為記錄在所有掃描結果。指定一個文件名，或留空以關閉。';
 $phpMussel['lang']['config_general_scan_log_serialized'] = '文件為記錄在所有掃描結果（它採用序列化格式）。指定一個文件名，或留空以關閉。';
+$phpMussel['lang']['config_general_timeFormat'] = 'phpMussel使用的日期符號格式。從下面的列表中選擇一個選項。可根據要求增加附加選項。';
 $phpMussel['lang']['config_general_timeOffset'] = '如果您的服務器時間不符合您的本地時間，您可以在這裡指定的偏移調整日期/時間信息該產生通過phpMussel根據您的需要。 它一般建議，而不是，調整時區指令的文件<code>php.ini</code>，但是有時（例如，當利用有限的共享主機提供商）這並不總是可能做到，所以，此選項在這裡是提供。 偏移量是在分鐘。';
 $phpMussel['lang']['config_heuristic_threshold'] = '有某些簽名的phpMussel意味為確定可疑和可能惡意文件零件被上傳有不在他們自己確定那些文件被上傳特別是作為惡意。 這個“threshold”數值告訴phpMussel什麼是最大總重量的可疑和潛在惡意文件零件被上傳允許之前那些文件是被識別作為惡意。 定義的重量在這個上下文是總數值的可疑和可能惡意文件零件確定。 作為默認，這個數值將會設置作為3。一個較低的值通常將結果在一個更高的發生的假陽性但一個更高的發生的惡意文件被確定，而一個更高的數值將通常結果在一個較低的發生的假陽性但一個較低的數值的惡意文件被確定。 它是通常最好忽略這個數值除非您遇到關聯問題。';
 $phpMussel['lang']['config_signatures_Active'] = '活性簽名文件的列表，以逗號分隔。';
@@ -120,6 +121,7 @@ $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = '狀態';
 $phpMussel['lang']['field_uninstall'] = '卸載';
 $phpMussel['lang']['field_update'] = '更新';
+$phpMussel['lang']['field_update_all'] = '更新一切';
 $phpMussel['lang']['field_upload_file'] = '上傳新文件';
 $phpMussel['lang']['field_username'] = '用戶名';
 $phpMussel['lang']['field_your_version'] = '您的版本';

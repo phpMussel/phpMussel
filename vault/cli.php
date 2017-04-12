@@ -450,7 +450,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
             $out = $r = '';
             $phpMussel['memCache']['start_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
-            $phpMussel['memCache']['start_time_2822'] = date('r', $phpMussel['memCache']['start_time']);
+            $phpMussel['memCache']['start_time_2822'] = $phpMussel['TimeFormat']($phpMussel['memCache']['start_time'], $phpMussel['Config']['general']['timeFormat']);
             echo $s = $phpMussel['memCache']['start_time_2822'] . ' ' . $phpMussel['lang']['started'] . $phpMussel['lang']['_fullstop_final'] . "\n";
             if (is_dir($stl)) {
                 if (!$d = @scandir($stl)) {
@@ -490,7 +490,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                 $out = '';
             }
             $phpMussel['memCache']['end_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
-            $phpMussel['memCache']['end_time_2822'] = date('r', $phpMussel['memCache']['end_time']);
+            $phpMussel['memCache']['end_time_2822'] = $phpMussel['TimeFormat']($phpMussel['memCache']['end_time'], $phpMussel['Config']['general']['timeFormat']);
             /** @todo Get serialised logging working for CLI mode (github.com/Maikuolan/phpMussel/issues/54). */
             $r = $s . $r;
             $s = $phpMussel['memCache']['end_time_2822'] . ' ' . $phpMussel['lang']['finished'] . $phpMussel['lang']['_fullstop_final'] . "\n";
@@ -498,10 +498,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             $r .= $s;
             if ($phpMussel['Config']['general']['scan_log']) {
                 $phpMussel['memCache']['handle'] = array(
-                    'File' => $phpMussel['Time2Logfile'](
-                        $phpMussel['Time'],
-                        $phpMussel['Config']['general']['scan_log']
-                    )
+                    'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log'])
                 );
                 if (!file_exists($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'])) {
                     $r = $phpMussel['safety'] . "\n" . $r;

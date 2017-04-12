@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.03.27).
+ * This file: Japanese language data for the front-end (last modified: 2017.04.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -64,6 +64,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = 'phpMusselはスキャ�
 $phpMussel['lang']['config_general_scan_kills'] = 'ブロックしたか削除したアップロードの全てを記録するファイのファイル名。 ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
 $phpMussel['lang']['config_general_scan_log'] = '全スキャニング結果を記録するファイルのファイル名。 ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
 $phpMussel['lang']['config_general_scan_log_serialized'] = '全スキャニング結果を記録するファイルのファイル名（シリアル化形式を利用）。 ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
+$phpMussel['lang']['config_general_timeFormat'] = 'phpMusselで使用される日付表記形式。 下のリストからオプションを選択してください。 追加のオプションがリクエストに応じて追加される場合があります。';
 $phpMussel['lang']['config_general_timeOffset'] = 'お使いのサーバの時刻は、ローカル時刻と一致しない場合、あなたのニーズに応じて、時間を調整するために、あなたはここにオフセットを指定することができます。 しかし、その代わりに、一般的にタイムゾーンディレクティブ（あなたの<code>php.ini</code>ファイルで）を調整ーることをお勧めします、でも時々（といった、限ら共有ホスティングプロバイダでの作業時）これは何をすることは必ずしも可能ではありません、したがって、このオプションは、ここで提供されています。 オフセット分であります。';
 $phpMussel['lang']['config_heuristic_threshold'] = 'phpMusselには、このファイルは疑わしく危険性が高いと判断するシグネチャがあります。 しきい値は、アップロードされているファイルの危険性の最大値であり、これを超えるとマルウェアと判断されます。ここにおける危険性の定義とは、疑わしいと特定されたものの総数です。 デフォルトでは３に設定されています。 これより低いと誤検出の可能性が増え、大きすぎると、誤検出は減るものの危険性のあるファイルが検出されない可能性が増加してしまいます。 特に問題がなければ、デフォルト値のままにしておくことお勧めします。';
 $phpMussel['lang']['config_signatures_Active'] = 'カンマで区切られたアクティブなシグネチャファイルのリスト。';
@@ -120,6 +121,7 @@ $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = '状態';
 $phpMussel['lang']['field_uninstall'] = 'アンインストール';
 $phpMussel['lang']['field_update'] = 'アップデート';
+$phpMussel['lang']['field_update_all'] = 'すべてアップデートする';
 $phpMussel['lang']['field_upload_file'] = '新しいファイルをアップロードする';
 $phpMussel['lang']['field_username'] = 'ユーザー名';
 $phpMussel['lang']['field_your_version'] = 'お使いのバージョン';

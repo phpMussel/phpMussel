@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.03.27).
+ * This file: German language data for the front-end (last modified: 2017.04.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -64,6 +64,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = 'Für wie lange soll ph
 $phpMussel['lang']['config_general_scan_kills'] = 'Name einer Datei zum Aufzeichnen aller blockierten Uploads. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.';
 $phpMussel['lang']['config_general_scan_log'] = 'Name einer Datei zum Aufzeichnen aller Resultate von Überprüfungen. Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.';
 $phpMussel['lang']['config_general_scan_log_serialized'] = 'Name einer Datei zum Aufzeichnen aller Resultate von Überprüfungen (Format ist serialisiert). Geben Sie einen Dateinamen an oder lassen Sie die Option zum Deaktivieren leer.';
+$phpMussel['lang']['config_general_timeFormat'] = 'Das Datumsformat verwendet von phpMussel. Wählen Sie eine Option aus der folgenden Liste. Zusätzliche Optionen können auf Anfrage hinzugefügt werden.';
 $phpMussel['lang']['config_general_timeOffset'] = 'Wenn Ihr Serverzeit nicht mit Ihrer Ortszeit, Sie können einen Offset hier angeben. Der Zeitversatz ist Minute-basiert.';
 $phpMussel['lang']['config_heuristic_threshold'] = 'Es gibt bestimmte Signaturen in phpMussel, die dazu dienen, verdächtige und potenziell bösartige Eigenschaften von hochgeladenen Dateien zu identifizieren, ohne diese Dateien an sich zu überprüfen und als bösartig zu identifizieren. Diese Direktive teilt phpMussel mit, welche Gewichtung von verdächtigen und potenziell bösartigen Eigenschaften zulässig ist, bevor diese Dateien als bösartig gekennzeichnet werden. Die Definition des Gewichts ist in diesem Zusammenhang die Gesamtzahl der verdächtigen und potenziell bösartigen Eigenschaften. Standardwert ist 3. Ein niedriger Wert in der Regel führt zu einem vermehrten Auftreten von Fehlalarmen und eine größere Anzahl von schädlichen Dateien werden erkannt, während ein höherer Wert weniger Fehlalarme auslöst und eine geringere Anzahl von schädlichen Dateien markiert werden. Dieser Wert sollte so belassen werden, es sei denn, Sie erkennen Probleme, die durch diese Einstellung hervorgerufen werden.';
 $phpMussel['lang']['config_signatures_Active'] = 'Eine Liste der aktiven Signaturdateien, die durch Kommas getrennt sind.';
@@ -120,6 +121,7 @@ $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = 'Status';
 $phpMussel['lang']['field_uninstall'] = 'Deinstallieren';
 $phpMussel['lang']['field_update'] = 'Aktualisieren';
+$phpMussel['lang']['field_update_all'] = 'Alle aktualisieren';
 $phpMussel['lang']['field_upload_file'] = 'Neue Datei hochladen';
 $phpMussel['lang']['field_username'] = 'Benutzername';
 $phpMussel['lang']['field_your_version'] = 'Ihre Version';

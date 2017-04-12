@@ -227,6 +227,13 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.04.05; Sub-minor code change; Furqan Akbar]: Added internal language
   support for Urdu (16 language localisations now completed and available).
 
+- [2017.04.11; Minor code change; Maikuolan]: Added a new directive,
+  "timeFormat", to specify the date/time notation format used by phpMussel.
+
+- [2017.04.12; Sub-minor code change; Maikuolan]: Temporarily removed donate
+  buttons from all project files (possibly may reinstate at a later date).
+  Made some subtle aesthetic improvements to the front-end.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

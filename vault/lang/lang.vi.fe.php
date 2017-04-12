@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.03.27).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.04.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -64,6 +64,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = 'Trong bao lâu phpMuss
 $phpMussel['lang']['config_general_scan_kills'] = 'Tên của tập tin để ghi lại tất cả hồ sơ của bị chặn hay bị giết tải lên. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
 $phpMussel['lang']['config_general_scan_log'] = 'Tên của tập tin để ghi lại tất cả các kết quả quét. Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
 $phpMussel['lang']['config_general_scan_log_serialized'] = 'Tên của tập tin để ghi lại tất cả các kết quả quét (sử dụng một định dạng tuần tự). Chỉ định một tên tập tin, hoặc để trống để vô hiệu hóa.';
+$phpMussel['lang']['config_general_timeFormat'] = 'Định dạng ngày tháng sử dụng bởi phpMussel. Chọn một tùy chọn từ danh sách bên dưới. Các tùy chọn bổ sung có thể được bổ sung theo yêu cầu.';
 $phpMussel['lang']['config_general_timeOffset'] = 'Nếu thời gian máy chủ của bạn không phù hợp với thời gian địa phương của bạn, bạn có thể chỉ định một bù đắp đây để điều chỉnh thông tin ngày/giờ được tạo ra bởi phpMussel theo như yêu cầu của bạn. Nó nói chung được đề nghị điều chỉnh tùy chọn múi giờ trong <code>php.ini</code> tập tin của bạn, nhưng đôi khi (chẳng hạn như khi làm việc với dịch vụ lưu trữ mạng chia sẻ mà được giới hạn) đây không phải là luôn luôn có thể làm, và như vậy, tùy chọn này được cung cấp ở đây. Bù đắp là trong từ phút.';
 $phpMussel['lang']['config_heuristic_threshold'] = 'Có một số chữ ký của phpMussel mà được dự định để xác định đáng ngờ và phẩm chất của các tập tin khả năng độc hại từ đang được tải lên mà không có trong tự xác định các tập tin đang được tải lên cụ thể như là độc hại. Giá trị "threshold" này nói với phpMussel tổng trọng lượng tối đa của đáng ngờ và phẩm chất của các tập tin khả năng độc hại đang được tải lên đó là phép trước những tập tin đang được gắn cờ là độc hại. Định nghĩa về trọng lượng trong bối cảnh này là tổng số đáng ngờ và phẩm chất tiềm ẩn độc hại được xác định. Theo mặc định, giá trị này sẽ được thiết lập để 3. Một giá trị thấp hơn nói chung sẽ cho kết quả trong một sự xuất hiện cao hơn của sai tích cực nhưng một số cao hơn các tập tin độc hại được gắn cờ, trong khi một giá trị cao hơn nói chung sẽ cho kết quả trong một sự xuất hiện thấp hơn của sai tích cực nhưng một số thấp hơn các tập tin độc hại được gắn cờ. Nói chung, nó là tốt nhất để có giá trị này tại mặc định của nó trừ khi bạn đang gặp phải các vấn đề liên quan đến nó.';
 $phpMussel['lang']['config_signatures_Active'] = 'Một danh sách các kích hoạt tập tin chữ ký, giới hạn bởi dấu phẩy.';
@@ -120,6 +121,7 @@ $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = 'Tình Trạng';
 $phpMussel['lang']['field_uninstall'] = 'Gỡ Bỏ Cài Đặt';
 $phpMussel['lang']['field_update'] = 'Cập Nhật';
+$phpMussel['lang']['field_update_all'] = 'Cập Nhật Tất Cả';
 $phpMussel['lang']['field_upload_file'] = 'Tải lên tập tin mới';
 $phpMussel['lang']['field_username'] = 'Tên Người Dùng';
 $phpMussel['lang']['field_your_version'] = 'Phiên bản của bạn';

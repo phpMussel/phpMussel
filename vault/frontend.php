@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.04.04).
+ * This file: Front-end handler (last modified: 2017.04.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -32,7 +32,7 @@ $phpMussel['FE'] = array(
     'Template' => $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/frontend.html'),
     'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
     'FE_Lang' => $phpMussel['Config']['general']['lang'],
-    'DateTime' => date('r', $phpMussel['Time']),
+    'DateTime' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']),
     'WebFontsLink' => $phpMussel['WebFontsLink'],
     'ScriptIdent' => $phpMussel['ScriptIdent'],
     'UserList' => "\n",
@@ -184,7 +184,7 @@ if ($phpMussel['FE']['FormTarget'] === 'login') {
 
     if ($phpMussel['Config']['general']['FrontEndLog']) {
         if (strpos($phpMussel['Config']['general']['FrontEndLog'], '{') !== false) {
-            $phpMussel['Config']['general']['FrontEndLog'] = $phpMussel['Time2Logfile'](
+            $phpMussel['Config']['general']['FrontEndLog'] = $phpMussel['TimeFormat'](
                 $phpMussel['Time'],
                 $phpMussel['Config']['general']['FrontEndLog']
             );
@@ -627,6 +627,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             if (isset($phpMussel['DirValue']['choices'])) {
                 $phpMussel['ThisDir']['FieldOut'] = '<select name="'. $phpMussel['ThisDir']['DirLangKey'] . '">';
                 foreach ($phpMussel['DirValue']['choices'] as $phpMussel['ChoiceKey'] => $phpMussel['ChoiceValue']) {
+                    if (strpos($phpMussel['ChoiceValue'], '{') !== false) {
+                        $phpMussel['ChoiceValue'] = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['ChoiceValue']);
+                    }
                     $phpMussel['ThisDir']['FieldOut'] .= ($phpMussel['ChoiceKey'] === $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]) ?
                         '<option value="' . $phpMussel['ChoiceKey'] . '" selected>' . $phpMussel['ChoiceValue'] . '</option>'
                     :

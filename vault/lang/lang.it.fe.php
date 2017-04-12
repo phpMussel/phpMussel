@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.03.27).
+ * This file: Italian language data for the front-end (last modified: 2017.04.11).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -64,6 +64,7 @@ $phpMussel['lang']['config_general_scan_cache_expiry'] = 'Per quanto tempo deve 
 $phpMussel['lang']['config_general_scan_kills'] = 'Il nome del file per registrare tutti i record di bloccato o ucciso caricamenti. Specificare un nome del file, o lasciare vuoto per disattivarlo.';
 $phpMussel['lang']['config_general_scan_log'] = 'Il nome del file per registrare tutti i risultati di la scansione. Specificare un nome del file, o lasciare vuoto per disattivarlo.';
 $phpMussel['lang']['config_general_scan_log_serialized'] = 'Il nome del file per registrare tutti i risultati di la scansione (utilizzando un formato serializzato). Specificare un nome del file, o lasciare vuoto per disattivarlo.';
+$phpMussel['lang']['config_general_timeFormat'] = 'Il formato della data/ora di notazione usata da phpMussel. Selezionare un\'opzione dalla lista qui sotto. Ulteriori opzioni possono essere aggiunti su richiesta.';
 $phpMussel['lang']['config_general_timeOffset'] = 'Se il tempo del server non corrisponde l\'ora locale, è possibile specificare un offset qui per regolare le informazioni di data/tempo generato da phpMussel in base alle proprie esigenze. È generalmente raccomandato invece, regolare à la direttiva fuso orario nel file <code>php.ini</code>, ma a volte (come ad esempio quando si lavora con i fornitori di hosting condiviso limitati) questo non è sempre possibile fare, e così, questa opzione è fornito qui. Offset è in minuti.';
 $phpMussel['lang']['config_heuristic_threshold'] = 'Ci sono particolare firme di phpMussel che sono destinato a identificare sospetti e potenzialmente maligno qualità dei file che vengono essere caricati senza in sé identificando i file che vengono essere caricati in particolare ad essere maligno. Questo "threshold" (soglia) valore dice phpMussel cosa che il totale massimo peso di sospetti e potenzialmente maligno qualità dei file che vengono essere caricati che è ammissibile è prima che quei file devono essere contrassegnati come maligno. La definizione di peso in questo contesto è il totale numero di sospetti e potenzialmente maligno qualità identificato. Per predefinito, questo valore viene impostato su 3. Un inferiore valore generalmente sarà risultare di una maggiore presenza di falsi positivi ma una maggior numero di file essere contrassegnato come maligno, mentre una maggiore valore generalmente sarà risultare di un inferiore presenza di falsi positivi ma un inferiore numero di file essere contrassegnato come maligno. È generalmente meglio di lasciare questo valore a suo predefinito a meno che si incontrare problemi ad esso correlati.';
 $phpMussel['lang']['config_signatures_Active'] = 'Un elenco dei file di firme attivi, delimitati da virgole.';
@@ -120,6 +121,7 @@ $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = 'Status';
 $phpMussel['lang']['field_uninstall'] = 'Disinstallarlo';
 $phpMussel['lang']['field_update'] = 'Aggiornarlo';
+$phpMussel['lang']['field_update_all'] = 'Aggiorna Tutto';
 $phpMussel['lang']['field_upload_file'] = 'Carica Nuovo File';
 $phpMussel['lang']['field_username'] = 'Nome Utente';
 $phpMussel['lang']['field_your_version'] = 'La Vostra Versione';
