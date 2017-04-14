@@ -195,6 +195,7 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /_docs/readme.nl.md | オランダ語ドキュメンテーション。
 /_docs/readme.pt.md | ポルトガル語ドキュメンテーション。
 /_docs/readme.ru.md | ロシア語ドキュメンテーション。
+/_docs/readme.ur.md | ウルドゥー語ドキュメンテーション。
 /_docs/readme.vi.md | ベトナム語ドキュメンテーション。
 /_docs/readme.zh-TW.md | 繁体字中国語ドキュメンテーション。
 /_docs/readme.zh.md | 簡体字中国語ドキュメンテーション。
@@ -260,6 +261,10 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /vault/lang/lang.pt.php | ポルトガル語言語データ。
 /vault/lang/lang.ru.fe.php | フロントエンドのロシア語言語データ。
 /vault/lang/lang.ru.php | ロシア語言語データ。
+/vault/lang/lang.th.fe.php | フロントエンドのタイ語言語データ。
+/vault/lang/lang.th.php | タイ語言語データ。
+/vault/lang/lang.ur.fe.php | フロントエンドのウルドゥー語言語データ。
+/vault/lang/lang.ur.php | ウルドゥー語言語データ。
 /vault/lang/lang.vi.fe.php | フロントエンドのベトナム語言語データ。
 /vault/lang/lang.vi.php | ベトナム語言語データ。
 /vault/lang/lang.zh-tw.fe.php | フロントエンドの繁体字中国語言語データ。
@@ -728,4 +733,4 @@ phpMusselは、ファイルをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2017年4月11日。
+最終アップデート： 2017年4月14日。

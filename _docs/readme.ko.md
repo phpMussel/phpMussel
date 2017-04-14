@@ -195,6 +195,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /_docs/readme.nl.md | 네덜란드어 문서.
 /_docs/readme.pt.md | 포르투갈어 문서.
 /_docs/readme.ru.md | 러시아어 문서.
+/_docs/readme.ur.md | 우르두어 문서.
 /_docs/readme.vi.md | 베트남어 문서.
 /_docs/readme.zh-TW.md | 중국어 번체 문서.
 /_docs/readme.zh.md | 중국어 간체 문서.
@@ -260,6 +261,10 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/lang/lang.pt.php | 포르투갈어 언어 데이터.
 /vault/lang/lang.ru.fe.php | 프론트 엔드 러시아어 언어 데이터.
 /vault/lang/lang.ru.php | 러시아어 언어 데이터.
+/vault/lang/lang.th.fe.php | 프론트 엔드 태국어 언어 데이터.
+/vault/lang/lang.th.php | 태국어 언어 데이터.
+/vault/lang/lang.ur.fe.php | 프론트 엔드 우르두어 언어 데이터.
+/vault/lang/lang.ur.php | 우르두어 언어 데이터.
 /vault/lang/lang.vi.fe.php | 프론트 엔드 베트남어 언어 데이터.
 /vault/lang/lang.vi.php | 베트남어 언어 데이터.
 /vault/lang/lang.zh-tw.fe.php | 프론트 엔드 중국어 번체 언어 데이터.
@@ -728,4 +733,4 @@ phpMussel은 파일을 차단합니다 | __위양성__ | 진정한 양성 (올�
 ---
 
 
-최종 업데이트: 2017년 4월 11일.
+최종 업데이트: 2017년 4월 14일.

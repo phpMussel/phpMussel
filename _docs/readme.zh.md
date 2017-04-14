@@ -195,6 +195,7 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 /_docs/readme.nl.md | 荷兰文自述文件。
 /_docs/readme.pt.md | 葡萄牙文自述文件。
 /_docs/readme.ru.md | 俄文自述文件。
+/_docs/readme.ur.md | 乌尔都文自述文件。
 /_docs/readme.vi.md | 越南文自述文件。
 /_docs/readme.zh-TW.md | 中文（传统）自述文件。
 /_docs/readme.zh.md | 中文（简体）自述文件。
@@ -210,7 +211,7 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 /_testfiles/pdf_standard_testfile.pdf | 测试文件以测试phpMussel PDF签名。
 /_testfiles/pe_sectional_testfile.exe | 测试文件以测试phpMussel移植可执行｢PE｣部分签名。
 /_testfiles/swf_standard_testfile.swf | 测试文件以测试phpMussel SWF签名。
-/vault/ | 安全／保险库｢Vault｣文件夹（包含若干文件）。
+/vault/ | 安全/保险库｢Vault｣文件夹（包含若干文件）。
 /vault/cache/ | 缓存｢Cache｣文件夹（为临时数据）。
 /vault/cache/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/fe_assets/ | 前端资产。
@@ -260,6 +261,10 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 /vault/lang/lang.pt.php | 葡萄牙文语言数据。
 /vault/lang/lang.ru.fe.php | 俄文前端语言数据。
 /vault/lang/lang.ru.php | 俄文语言数据。
+/vault/lang/lang.th.fe.php | 泰文前端语言数据。
+/vault/lang/lang.th.php | 泰文语言数据。
+/vault/lang/lang.ur.fe.php | 乌尔都文前端语言数据。
+/vault/lang/lang.ur.php | 乌尔都文语言数据。
 /vault/lang/lang.vi.fe.php | 越南文前端语言数据。
 /vault/lang/lang.vi.php | 越南文语言数据。
 /vault/lang/lang.zh-tw.fe.php | 中文（传统）前端语言数据。
@@ -731,4 +736,4 @@ phpMussel会阻止文件 | __假阳性__ | 真阳性（正确的推理）
 ---
 
 
-最后更新：2017年4月11日。
+最后更新：2017年4月14日。

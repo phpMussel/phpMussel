@@ -33,6 +33,7 @@ An ideal solution for shared hosting environments, where it's often not possible
 - **[Nederlandse](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.nl.md)**
 - **[Português](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.pt.md)**
 - **[Русский](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.ru.md)**
+- **[اردو](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.ur.md)**
 - **[Tiếng Việt](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.vi.md)**
 - **[中文（简体）](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.zh.md)**
 - **[中文（傳統）](https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.zh-TW.md)**
@@ -43,4 +44,4 @@ An ideal solution for shared hosting environments, where it's often not possible
 
 ---
 
-*Last modified: 12 April 2017 (2017.04.12).*
+*Last modified: 14 April 2017 (2017.04.14).*

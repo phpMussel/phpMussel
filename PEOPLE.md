@@ -32,9 +32,9 @@
 <br />*Project creator and developer.*
 - **Daniel Ruf** ([**DanielRuf**](https://github.com/DanielRuf))
 <br />*Developer.*
-- **Matthias Kaschubowski** ([**Golpha**](https://github.com/nhlm))
+- **Matthias Kaschubowski** ([**nhlm**](https://github.com/nhlm))
 <br />*Developer.*
 
 ---
 
-*Last modified: 31 January 2017 (2017.01.31).*
+*Last modified: 14 April 2017 (2017.04.14).*
