@@ -29,11 +29,11 @@ PHPMUSSEL著作権2013とGNU一般公衆ライセンスv2を超える権利に�
 
 作成のインスピレーションと本スクリプトが利用するシグネチャについて[ClamAV](http://www.clamav.net/)に感謝の意を表したいと思います。 この２つがなければ、本スクリプトは存在しえないか、あるいは極めて限られた利用価値しかもたないと言ってよいでしょう。
 
-本プロジェクトファイルのホスト先であるSourceforgeとGithub、 phpMusselのディスカッションフォーラムのホスト先である[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)、 phpMusselが利用するシグネチャの提供先である： [SecuriteInfo.com](http://www.securiteinfo.com/)、 [PhishTank](http://www.phishtank.com/)、 [NLNetLabs](http://nlnetlabs.nl/) 他、 本プロジェクトを支援して下さった全ての方々に感謝の意を表したいと思います。
+本プロジェクトファイルのホスト先であるSourceforgeとGitHub、 phpMusselのディスカッションフォーラムのホスト先である[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)、 phpMusselが利用するシグネチャの提供先である： [SecuriteInfo.com](http://www.securiteinfo.com/)、 [PhishTank](http://www.phishtank.com/)、 [NLNetLabs](http://nlnetlabs.nl/) 他、 本プロジェクトを支援して下さった全ての方々に感謝の意を表したいと思います。
 
 本ドキュメントならびに関連パッケージは以下のURLからダウンロードできます。
 - [Sourceforge](http://phpmussel.sourceforge.net/)。
-- [Github](https://github.com/Maikuolan/phpMussel/)。
+- [GitHub](https://github.com/Maikuolan/phpMussel/)。
 
 ---
 
@@ -50,7 +50,7 @@ PHPMUSSEL著作権2013とGNU一般公衆ライセンスv2を超える権利に�
 
 4) `vault`ディレクトリは「７５５」にアクセス権変更します（問題がある場合は、「７７７」を試すことができます；これは、しかし、安全ではありません）。 コンテンツをアップロードしたディレクトリそのものは、通常特に何もする必要ありませんが、過去にパーミッションで問題があった場合、CHMODのステータスは確認しておくと良いでしょう。 （デフォルトでは「７５５」が一般的です）。
 
-5) 次に、システム内あるいはCMSにphpMusselをフックします。方法はいくつかありますが、最も容易なのは、`require`や`include`でスクリプトをシステム内またはCMSのコアファイルの最初の部分に記載する方法です。（コアファイルとは、サイト内のどのページにアクセスがあっても必ずロードされるファイルのことです）。 一般的には、`/includes`や`/assets`や`/functions`のようなディレクトリ内のファイルで、`init.php`、`common_functions.php`、`functions.php`といったファイル名が付けられています。実際にどのファイルなのかは、見つけてもうらう必要があります。 よく分からない場合は、phpMusselサポートフォーラムを参照するか、またはGithubのでphpMusselの問題のページ、あるいはお知らせください（CMS情報必須）。 私自身を含め、ユーザーの中に類似のCMSを扱った経験があれば、何かしらのサポートを提供できます。コアファイルが見つかったなら、「`require`か`include`を使って」以下のコードをファイルの先頭に挿入して下さい。 ただし、クォーテーションマークで囲まれた部分は`loader.php`ファイルの正確なアドレス（HTTPアドレスでなく、ローカルなアドレス。前述のvaultのアドレスに類似）に置き換えます。
+5) 次に、システム内あるいはCMSにphpMusselをフックします。方法はいくつかありますが、最も容易なのは、`require`や`include`でスクリプトをシステム内またはCMSのコアファイルの最初の部分に記載する方法です。（コアファイルとは、サイト内のどのページにアクセスがあっても必ずロードされるファイルのことです）。 一般的には、`/includes`や`/assets`や`/functions`のようなディレクトリ内のファイルで、`init.php`、`common_functions.php`、`functions.php`といったファイル名が付けられています。実際にどのファイルなのかは、見つけてもうらう必要があります。 よく分からない場合は、phpMusselサポートフォーラムを参照するか、またはGitHubのでphpMusselの問題のページ、あるいはお知らせください（CMS情報必須）。 私自身を含め、ユーザーの中に類似のCMSを扱った経験があれば、何かしらのサポートを提供できます。コアファイルが見つかったなら、「`require`か`include`を使って」以下のコードをファイルの先頭に挿入して下さい。 ただし、クォーテーションマークで囲まれた部分は`loader.php`ファイルの正確なアドレス（HTTPアドレスでなく、ローカルなアドレス。前述のvaultのアドレスに類似）に置き換えます。
 
 `<?php require '/user_name/public_html/phpmussel/loader.php'; ?>`
 
@@ -293,7 +293,7 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /vault/template.html | phpMusselテンプレートファイル；phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
 /vault/template_custom.html | phpMusselテンプレートファイル；phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
 /vault/upload.php | アップロード・ハンドラ。
-/.gitattributes | Githubのプロジェクトファイル（機能には関係のないファイルです）。
+/.gitattributes | GitHubのプロジェクトファイル（機能には関係のないファイルです）。
 /Changelog-v1.txt | バージョンによる違いを記録したものです（機能には関係のないファイルです）。
 /composer.json | Composer/Packagist情報（機能には関係のないファイルです）。
 /CONTRIBUTING.md | プロジェクトに貢献する方法について。

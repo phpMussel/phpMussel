@@ -29,11 +29,11 @@ phpMussel 저작권 2013 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
 창조의 영감이 스크립트를 이용하는 시그니처 [ClamAV](http://www.clamav.net/)에 감사의 뜻을 표하고자합니다. 이 2 개가 있어야이 스크립트는 존재할 수 없거나 극히 제한된 이용 가치만을 가지고이라고 말해도 좋을 것입니다.
 
-본 프로젝트 파일의 호스트 처인 Sourceforge와 Github, phpMussel 토론 포럼의 호스트 처인 [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55), phpMussel이 이용하는 서명 제공처이다: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) 다른 본 프로젝트를 지원 해주신 모든 분들에게 감사의 뜻을 표하고자합니다.
+본 프로젝트 파일의 호스트 처인 Sourceforge와 GitHub, phpMussel 토론 포럼의 호스트 처인 [Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55), phpMussel이 이용하는 서명 제공처이다: [SecuriteInfo.com](http://www.securiteinfo.com/), [PhishTank](http://www.phishtank.com/), [NLNetLabs](http://nlnetlabs.nl/) 다른 본 프로젝트를 지원 해주신 모든 분들에게 감사의 뜻을 표하고자합니다.
 
 본 문서 및 관련 패키지는 다음 URL에서 다운로드 할 수 있습니다.
 - [Sourceforge](http://phpmussel.sourceforge.net/).
-- [Github](https://github.com/Maikuolan/phpMussel/).
+- [GitHub](https://github.com/Maikuolan/phpMussel/).
 
 ---
 
@@ -50,7 +50,7 @@ phpMussel 저작권 2013 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
 4) `vault`디렉토리 "755"로 권한 변경 (문제가있는 경우 "777"을 시도 할 수 있습니다; 하지만 이것은 안전하지 않습니다). 콘텐츠를 업로드 한 디렉토리 자체는 보통 특히 아무것도 필요하지 않지만, 과거에 권한 문제가있을 경우 CHMOD의 상태는 확인하는 것이 좋습니다. (기본적으로 "755"가 일반적입니다).
 
-5) 그 다음에 시스템 또는 CMS에 phpMussel를 연결합니다. 방법에는 여러 가지가 있지만 가장 쉬운 것은`require`과`include`에서 스크립트를 시스템 또는 CMS 코어 파일의 첫 부분에 기재하는 방법입니다. (코어 파일은 사이트의 어떤 페이지에 접근이 있어도 반드시로드되는 파일입니다). 일반적으로는 `/includes`또는 `/assets`또는 `/functions`같은 디렉토리에있는 파일에서 `init.php`, `common_functions.php`, `functions.php`라는 파일 이름을 붙일 수 있습니다. 실제로 어떤 파일인지는 찾아도 바닥입니다해야합니다. 잘 모르는 경우 phpMussel 지원 포럼을 참조하거나 Github 때문에 phpMussel 문제의 페이지 또는 알려주십시오 (CMS 정보 필수). 나 자신을 포함하여 사용자에 유사한 CMS를 다룬 경험이 있으면, 무엇인가의 지원을 제공 할 수 있습니다. 코어 파일이 발견 된 경우, (`require` 또는`include`을 사용하여) 다음 코드를 파일의 맨 위에 삽입하십시오. 그러나 따옴표로 둘러싸인 부분은`loader.php` 파일의 정확한 주소 (HTTP 주소가 아닌 로컬 주소 전술의 vault 주소와 유사)로 바꿉니다.
+5) 그 다음에 시스템 또는 CMS에 phpMussel를 연결합니다. 방법에는 여러 가지가 있지만 가장 쉬운 것은`require`과`include`에서 스크립트를 시스템 또는 CMS 코어 파일의 첫 부분에 기재하는 방법입니다. (코어 파일은 사이트의 어떤 페이지에 접근이 있어도 반드시로드되는 파일입니다). 일반적으로는 `/includes`또는 `/assets`또는 `/functions`같은 디렉토리에있는 파일에서 `init.php`, `common_functions.php`, `functions.php`라는 파일 이름을 붙일 수 있습니다. 실제로 어떤 파일인지는 찾아도 바닥입니다해야합니다. 잘 모르는 경우 phpMussel 지원 포럼을 참조하거나 GitHub 때문에 phpMussel 문제의 페이지 또는 알려주십시오 (CMS 정보 필수). 나 자신을 포함하여 사용자에 유사한 CMS를 다룬 경험이 있으면, 무엇인가의 지원을 제공 할 수 있습니다. 코어 파일이 발견 된 경우, (`require` 또는`include`을 사용하여) 다음 코드를 파일의 맨 위에 삽입하십시오. 그러나 따옴표로 둘러싸인 부분은`loader.php` 파일의 정확한 주소 (HTTP 주소가 아닌 로컬 주소 전술의 vault 주소와 유사)로 바꿉니다.
 
 `<?php require '/user_name/public_html/phpmussel/loader.php'; ?>`
 
@@ -293,7 +293,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/template.html | phpMussel 템플릿 파일; phpMussel가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
 /vault/template_custom.html | phpMussel 템플릿 파일; phpMussel가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
 /vault/upload.php | 업로드 핸들러.
-/.gitattributes | Github 프로젝트 파일 (기능에 관계없는 파일입니다).
+/.gitattributes | GitHub 프로젝트 파일 (기능에 관계없는 파일입니다).
 /Changelog-v1.txt | 버전에 따른 차이를 기록한 것입니다 (기능에 관계없는 파일입니다).
 /composer.json | Composer/Packagist 정보 (기능에 관계없는 파일입니다).
 /CONTRIBUTING.md | 프로젝트에 기여하는 방법.

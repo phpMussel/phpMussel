@@ -29,11 +29,11 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 谢谢[ClamAV](http://www.clamav.net/)为本脚本提供文件签名库访问许可。没有它，这个脚本很可能不会存在，或者其价值有限。
 
-谢谢Sourceforge和Github开通了，[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)的phpMussel的讨论论坛，谢谢为phpMussel提供签名文件的：[SecuriteInfo.com](http://www.securiteinfo.com/)，[PhishTank](http://www.phishtank.com/)，[NLNetLabs](http://nlnetlabs.nl/)，还有更多的我忘了提及的人（抱歉，语文水平有限，这句话实在不知道怎么翻译才通顺）。
+谢谢Sourceforge和GitHub开通了，[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)的phpMussel的讨论论坛，谢谢为phpMussel提供签名文件的：[SecuriteInfo.com](http://www.securiteinfo.com/)，[PhishTank](http://www.phishtank.com/)，[NLNetLabs](http://nlnetlabs.nl/)，还有更多的我忘了提及的人（抱歉，语文水平有限，这句话实在不知道怎么翻译才通顺）。
 
 现在phpMussel的代码文件和关联包可以从以下地址免费下载：
 - [Sourceforge](http://phpmussel.sourceforge.net/)。
-- [Github](https://github.com/Maikuolan/phpMussel/)。
+- [GitHub](https://github.com/Maikuolan/phpMussel/)。
 
 ---
 
@@ -50,7 +50,7 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 4） 修改的`vault`文件夹权限为“755”（如果有问题，您可以试试“777”，但是这是不太安全）。注意，主文件夹也应该是该权限，如果遇上其他权限问题，请修改对应文件夹和文件的权限。
 
-5） 接下来，您需要为您的系统或CMS设定启动phpMussel的钩子。有几种不同的方式为您的系统或CMS设定钩子，最简单的是在您的系统或CMS的核心文件的开头中使用`require`或`include`命令直接包含脚本（这个方法通常会导致在有人访问时每次都加载）。平时，这些都是存储的在文件夹中，例如`/includes`，`/assets`或`/functions`等文件夹，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。这是根据您自己的情况决定的，并不需要完全遵守；如果您遇到困难，参观Github上的phpMussel问题页面和/或访问phpMussel支持论坛和发送问题；可能其他用户或者我自己也有这个问题并且解决了（您需要让我们您在使用哪些CMS）。为了使用`require`或`include`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`loader.php`文件（本地地址，不是HTTP地址；它会类似于前面提到的vault地址）。
+5） 接下来，您需要为您的系统或CMS设定启动phpMussel的钩子。有几种不同的方式为您的系统或CMS设定钩子，最简单的是在您的系统或CMS的核心文件的开头中使用`require`或`include`命令直接包含脚本（这个方法通常会导致在有人访问时每次都加载）。平时，这些都是存储的在文件夹中，例如`/includes`，`/assets`或`/functions`等文件夹，和将经常被命名的某物例如`init.php`，`common_functions.php`，`functions.php`。这是根据您自己的情况决定的，并不需要完全遵守；如果您遇到困难，参观GitHub上的phpMussel问题页面和/或访问phpMussel支持论坛和发送问题；可能其他用户或者我自己也有这个问题并且解决了（您需要让我们您在使用哪些CMS）。为了使用`require`或`include`，插入下面的代码行到最开始的该核心文件，更换里面的数据引号以确切的地址的`loader.php`文件（本地地址，不是HTTP地址；它会类似于前面提到的vault地址）。
 
 `<?php require '/user_name/public_html/phpmussel/loader.php'; ?>`
 
@@ -293,7 +293,7 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 /vault/template.html | 模板文件；模板为HTML产量产生通过phpMussel为它的受阻文件上传信息（信息可见向上传者）。
 /vault/template_custom.html | 模板文件；模板为HTML产量产生通过phpMussel为它的受阻文件上传信息（信息可见向上传者）。
 /vault/upload.php | 上传处理文件。
-/.gitattributes | Github文件（不需要为正确经营脚本）。
+/.gitattributes | GitHub文件（不需要为正确经营脚本）。
 /Changelog-v1.txt | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。
 /composer.json | Composer/Packagist 信息（不需要为正确经营脚本）。
 /CONTRIBUTING.md | 相关信息如何有助于该项目。
