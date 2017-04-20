@@ -699,6 +699,10 @@ This information was last updated 29th August 2016 and is current for all phpMus
 
 ### 10. <a name="SECTION10"></a>FREQUENTLY ASKED QUESTIONS (FAQ)
 
+#### What is a "signature"?
+
+In the context of phpMussel, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually in the form of some very small, distinct, innocuous segment of something larger and otherwise harmful, like a virus or trojan, or in the form of a file checksum, hash, or other similarly identifying indicator, and usually includes a label, and some other data to help provide additional context that can be used by phpMussel to determine the best way to proceed when it encounters what we're looking for.
+
 #### What is a "false positive"?
 
 The term "false positive" (*alternatively: "false positive error"; "false alarm"*), described very simply, and in a generalised context, is used when testing for a condition, to refer to the results of that test, when the results are positive (i.e., the condition is determined to be "positive", or "true"), but are expected to be (or should have been) negative (i.e., the condition, in reality, is "negative", or "false"). A "false positive" could be considered analogous to "crying wolf" (wherein the condition being tested is whether there's a wolf near the herd, the condition is "false" in that there's no wolf near the herd, and the condition is reported as "positive" by the shepherd by way of calling "wolf, wolf"), or analogous to situations in medical testing wherein a patient is diagnosed as having some illness or disease, when in reality, they have no such illness or disease.
@@ -733,4 +737,4 @@ No. PHP 5.4.0 reached official EoL ("End of Life") in 2014, and extended securit
 ---
 
 
-Last Updated: 14 April 2017 (2017.04.14).
+Last Updated: 20 April 2017 (2017.04.20).
