@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.04.11).
+ * This file: Russian language data for the front-end (last modified: 2017.04.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -126,6 +126,11 @@ $phpMussel['lang']['field_upload_file'] = 'Загрузить Новый Фай�
 $phpMussel['lang']['field_username'] = 'Имя Пользователя';
 $phpMussel['lang']['field_your_version'] = 'Ваша Версия';
 $phpMussel['lang']['header_login'] = 'Пожалуйста войдите чтобы продолжить.';
+$phpMussel['lang']['label_os'] = 'Используемая операционная система:';
+$phpMussel['lang']['label_php'] = 'Используемая версия PHP:';
+$phpMussel['lang']['label_phpmussel'] = 'Используемая версия phpMussel:';
+$phpMussel['lang']['label_sapi'] = 'Используемая SAPI:';
+$phpMussel['lang']['label_sysinfo'] = 'Системная информация:';
 $phpMussel['lang']['link_accounts'] = 'Учетными Записями';
 $phpMussel['lang']['link_config'] = 'Конфигурация';
 $phpMussel['lang']['link_documentation'] = 'Документация';

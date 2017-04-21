@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.04.11).
+ * This file: Dutch language data for the front-end (last modified: 2017.04.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -126,6 +126,11 @@ $phpMussel['lang']['field_upload_file'] = 'Nieuw Bestand Uploaden';
 $phpMussel['lang']['field_username'] = 'Gebruikersnaam';
 $phpMussel['lang']['field_your_version'] = 'Uw Versie';
 $phpMussel['lang']['header_login'] = 'Inloggen om verder te gaan.';
+$phpMussel['lang']['label_os'] = 'Besturingssysteem gebruikt:';
+$phpMussel['lang']['label_php'] = 'PHP versie gebruikt:';
+$phpMussel['lang']['label_phpmussel'] = 'phpMussel versie gebruikt:';
+$phpMussel['lang']['label_sapi'] = 'SAPI gebruikt:';
+$phpMussel['lang']['label_sysinfo'] = 'Systeem informatie:';
 $phpMussel['lang']['link_accounts'] = 'Accounts';
 $phpMussel['lang']['link_config'] = 'Configuratie';
 $phpMussel['lang']['link_documentation'] = 'Documentatie';

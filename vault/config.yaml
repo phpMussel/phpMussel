@@ -122,6 +122,7 @@ Config Defaults:
     nl: Nederlandse
     pt: Português
     ru: Русский
+    th: ภาษาไทย
     ur: ‏اردو‏
     vi: Tiếng Việt
     zh: 中文（简体）
@@ -130,10 +131,12 @@ Config Defaults:
    type: string
    default: ""
   quarantine_max_filesize:
-   type: int
+   type: real
+   step: any
    default: 2048
   quarantine_max_usage:
-   type: int
+   type: real
+   step: any
    default: 65536
   honeypot_mode:
    type: bool
@@ -189,7 +192,8 @@ Config Defaults:
    type: int
    default: 10
   filesize_limit:
-   type: int
+   type: real
+   step: any
    default: 65536
   filesize_response:
    type: bool
@@ -247,10 +251,12 @@ Config Defaults:
    type: bool
    default: true
   decode_threshold:
-   type: int
+   type: real
+   step: any
    default: 512
   scannable_threshold:
-   type: int
+   type: real
+   step: any
    default: 32768
  compatibility:
   ignore_upload_errors:

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.04.11).
+ * This file: Korean language data for the front-end (last modified: 2017.04.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -126,6 +126,11 @@ $phpMussel['lang']['field_upload_file'] = '새로운 파일을 업로드하기';
 $phpMussel['lang']['field_username'] = '사용자 이름';
 $phpMussel['lang']['field_your_version'] = '사용 버전';
 $phpMussel['lang']['header_login'] = '계속하려면 로그인하십시오.';
+$phpMussel['lang']['label_os'] = '사용 된 운영 체제:';
+$phpMussel['lang']['label_php'] = '사용 된 PHP 버전:';
+$phpMussel['lang']['label_phpmussel'] = '사용 된 phpMussel 버전:';
+$phpMussel['lang']['label_sapi'] = '사용 된 SAPI:';
+$phpMussel['lang']['label_sysinfo'] = '시스템 정보:';
 $phpMussel['lang']['link_accounts'] = '계정';
 $phpMussel['lang']['link_config'] = '구성';
 $phpMussel['lang']['link_documentation'] = '문서';

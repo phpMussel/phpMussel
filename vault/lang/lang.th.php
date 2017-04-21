@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data (last modified: 2017.04.17).
+ * This file: Thai language data (last modified: 2017.04.20).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,70 +19,70 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['bad_command'] = 'I don\'t understand that command, sorry.';
-$phpMussel['lang']['cli_failed_to_complete'] = 'Failed to complete scanning process';
-$phpMussel['lang']['cli_is_not_a'] = ' is not a file or directory.';
-$phpMussel['lang']['cli_ln2'] = " Thank you for using phpMussel, a PHP script designed to detect trojans,\n viruses, malware and other threats within files uploaded to your system\n wherever the script is hooked, based on the signatures of ClamAV and others.\n\n PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
-$phpMussel['lang']['cli_ln3'] = " Currently running phpMussel in CLI mode (command line interface).\n\n To scan a file or directory, type 'scan', followed by the name of the file or\n directory that you want phpMussel to scan and press Enter; Type 'c' and press\n Enter for a list of CLI mode commands; Type 'q' and press Enter to quit:";
-$phpMussel['lang']['cli_pe1'] = 'Not a valid PE file!';
-$phpMussel['lang']['cli_pe2'] = 'PE Sections:';
-$phpMussel['lang']['cli_working'] = 'In progress';
-$phpMussel['lang']['corrupted'] = 'Detected corrupted PE';
+$phpMussel['lang']['bad_command'] = 'ฉันไม่เข้าใจคำสั่งนั้นขอโทษ.';
+$phpMussel['lang']['cli_failed_to_complete'] = 'ไม่สามารถเสร็จสิ้นขั้นตอนการสแกน.';
+$phpMussel['lang']['cli_is_not_a'] = ' ไม่ใช่ไฟล์หรือไดเรกทอรี.';
+$phpMussel['lang']['cli_ln2'] = " ขอบคุณที่ใช้ phpMussel, สคริปต์ PHP ออกแบบมาเพื่อตรวจจับโทรจัน, ไวรัส,\n มัลแวร์, และภัยคุกคามอื่นภายในไฟล์ที่อัปโหลดไปยังระบบของคุณ,\n ที่ใดก็ตามที่สคริปต์ถูกตะขอ, ขึ้นอยู่กับลายเซ็นของ ClamAV และคนอื่น.\n\n PHPMUSSEL ลิขสิทธิ์ 2013 และอื่น GNU/GPLv2 โดย Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
+$phpMussel['lang']['cli_ln3'] = " กำลังรัน phpMussel ในโหมด CLI (ส่วนติดต่อบรรทัดคำสั่ง).\n\n เพื่อสแกนไฟล์หรือไดเรกทอรี, ป้อน scan, ตามด้วยชื่อของไฟล์หรือไดเรกทอรีที่\n คุณต้องการให้ phpMussel สแกนและกด Enter; ป้อน c และกด Enter สำหรับรายการคำสั่ง\n ในโหมด CLI; ป้อน q และกด Enter ที่จะเลิก:";
+$phpMussel['lang']['cli_pe1'] = 'ไม่ใช่ไฟล์ PE ที่ถูกต้อง!';
+$phpMussel['lang']['cli_pe2'] = 'ส่วน PE:';
+$phpMussel['lang']['cli_working'] = 'กำลังดำเนินการ';
+$phpMussel['lang']['corrupted'] = 'PE เสียหายถูกตรวจพบ';
 $phpMussel['lang']['denied'] = 'อัปโหลดถูกปฏิเสธ!';
-$phpMussel['lang']['denied_reason'] = 'Your upload was blocked for the reasons listed below:';
+$phpMussel['lang']['denied_reason'] = 'การอัปโหลดของคุณถูกบล็อกด้วยเหตุผลด้านล่าง:';
 $phpMussel['lang']['detected'] = 'ตรวจพบแล้ว {vn}';
-$phpMussel['lang']['detected_control_characters'] = 'Detected control characters';
-$phpMussel['lang']['encrypted_archive'] = 'Detected encrypted archive; Encrypted archives not permitted';
-$phpMussel['lang']['failed_to_access'] = 'Failed to access ';
-$phpMussel['lang']['file'] = 'File';
-$phpMussel['lang']['filesize_limit_exceeded'] = 'Filesize limit exceeded';
-$phpMussel['lang']['filetype_blacklisted'] = 'Filetype blacklisted';
-$phpMussel['lang']['finished'] = 'Finished';
+$phpMussel['lang']['detected_control_characters'] = 'อักขระควบคุมถูกตรวจพบ';
+$phpMussel['lang']['encrypted_archive'] = 'เก็บถาวรที่เข้ารหัสถูกตรวจพบ; เก็บถาวรที่เข้ารหัสไม่ได้รับอนุญาต';
+$phpMussel['lang']['failed_to_access'] = 'ไม่สามารถเข้าถึง ';
+$phpMussel['lang']['file'] = 'ไฟล์';
+$phpMussel['lang']['filesize_limit_exceeded'] = 'จำกัดขนาดไฟล์เกินแล้ว';
+$phpMussel['lang']['filetype_blacklisted'] = 'ประเภทไฟล์คือในรายการดำ';
+$phpMussel['lang']['finished'] = 'เสร็จแล้ว';
 $phpMussel['lang']['generated_by'] = 'สร้างขึ้นโดย';
-$phpMussel['lang']['greylist_cleared'] = ' Greylist cleared.';
-$phpMussel['lang']['greylist_not_updated'] = ' Greylist not updated.';
-$phpMussel['lang']['greylist_updated'] = ' Greylist updated.';
-$phpMussel['lang']['image'] = 'Image';
-$phpMussel['lang']['instance_already_active'] = 'Instance already active! Please double-check your hooks.';
-$phpMussel['lang']['invalid_file'] = 'Invalid file';
-$phpMussel['lang']['invalid_url'] = 'Invalid URL!';
+$phpMussel['lang']['greylist_cleared'] = ' รายการเทาล้างแล้ว.';
+$phpMussel['lang']['greylist_not_updated'] = ' รายการเทาไม่อัปเดตแล้ว.';
+$phpMussel['lang']['greylist_updated'] = ' รายการเทาอัปเดตแล้ว.';
+$phpMussel['lang']['image'] = 'ภาพ';
+$phpMussel['lang']['instance_already_active'] = 'ตัวอย่างที่ใช้งานอยู่แล้ว! โปรดตรวจสอบตะขอของคุณอีกครั้ง.';
+$phpMussel['lang']['invalid_file'] = 'ไฟล์ไม่ถูกต้อง';
+$phpMussel['lang']['invalid_url'] = 'URL ไม่ถูกต้อง!';
 $phpMussel['lang']['ok'] = 'ตกลง';
-$phpMussel['lang']['only_allow_images'] = 'Uploading files other than images isn\'t permitted';
-$phpMussel['lang']['plugins_directory_nonexistent'] = 'Plugins directory doesn\'t exist!';
-$phpMussel['lang']['quarantined_as'] = "Quarantined as \"/vault/quarantine/{QFU}.qfu\".\n";
-$phpMussel['lang']['recursive'] = 'Recursion depth limit exceeded';
-$phpMussel['lang']['required_variables_not_defined'] = 'Required variables aren\'t defined: Can\'t continue.';
-$phpMussel['lang']['SafeBrowseLookup_200'] = 'Potentially harmful URL detected';
-$phpMussel['lang']['SafeBrowseLookup_400'] = 'API request error';
-$phpMussel['lang']['SafeBrowseLookup_401'] = 'API authorisation error';
-$phpMussel['lang']['SafeBrowseLookup_503'] = 'API service unavailable';
-$phpMussel['lang']['SafeBrowseLookup_999'] = 'Unknown API error';
-$phpMussel['lang']['scan_aborted'] = 'Scanning aborted!';
-$phpMussel['lang']['scan_chameleon'] = '{x} chameleon attack detected';
-$phpMussel['lang']['scan_checking'] = 'Checking';
-$phpMussel['lang']['scan_checking_contents'] = 'Success! Proceeding to check contents.';
-$phpMussel['lang']['scan_command_injection'] = 'Command injection attempt detected';
-$phpMussel['lang']['scan_complete'] = 'Complete';
-$phpMussel['lang']['scan_extensions_missing'] = 'Failed (missing required extensions)!';
-$phpMussel['lang']['scan_filename_manipulation_detected'] = 'Filename manipulation detected';
-$phpMussel['lang']['scan_missing_filename'] = 'Missing filename';
-$phpMussel['lang']['scan_not_archive'] = 'Failed (empty or not an archive)!';
-$phpMussel['lang']['scan_no_problems_found'] = 'No problems found.';
-$phpMussel['lang']['scan_reading'] = 'Reading';
-$phpMussel['lang']['scan_signature_file_corrupted'] = 'Signature file corrupted';
-$phpMussel['lang']['scan_signature_file_missing'] = 'Signature file missing';
-$phpMussel['lang']['scan_tampering'] = 'Detected potentially dangerous file tampering';
-$phpMussel['lang']['scan_unauthorised_upload'] = 'Unauthorised file upload manipulation detected';
-$phpMussel['lang']['scan_unauthorised_upload_or_misconfig'] = 'Unauthorised file upload manipulation or misconfiguration detected! ';
-$phpMussel['lang']['started'] = 'Started';
-$phpMussel['lang']['too_many_urls'] = 'Too many URLs';
-$phpMussel['lang']['upload_error_1'] = 'Filesize exceeds the upload_max_filesize directive. ';
-$phpMussel['lang']['upload_error_2'] = 'Filesize exceeds form-specified filesize limit. ';
-$phpMussel['lang']['upload_error_34'] = 'Upload failure! Please contact the hostmaster for assistance! ';
-$phpMussel['lang']['upload_error_6'] = 'Upload directory missing! Please contact the hostmaster for assistance! ';
-$phpMussel['lang']['upload_error_7'] = 'Disc-write error! Please contact the hostmaster for assistance! ';
-$phpMussel['lang']['upload_error_8'] = 'PHP misconfiguration detected! Please contact the hostmaster for assistance! ';
-$phpMussel['lang']['upload_limit_exceeded'] = 'Upload limit exceeded';
+$phpMussel['lang']['only_allow_images'] = 'ไฟล์ที่ไม่ใช่ภาพไม่สามารถอัปโหลดได้';
+$phpMussel['lang']['plugins_directory_nonexistent'] = 'ไดเรกทอรีปลั๊กอินไม่มีอยู่!';
+$phpMussel['lang']['quarantined_as'] = "เป็นกักกันที่ \"/vault/quarantine/{QFU}.qfu\".\n";
+$phpMussel['lang']['recursive'] = 'จำกัดความลึกสำหรับการทับซ้ำเกินแล้ว';
+$phpMussel['lang']['required_variables_not_defined'] = 'ตัวแปรที่จำเป็นไม่ได้กำหนดไว้: ไม่สามารถดำเนินการต่อได้.';
+$phpMussel['lang']['SafeBrowseLookup_200'] = 'URL อาจเป็นอันตรายถูกตรวจพบ';
+$phpMussel['lang']['SafeBrowseLookup_400'] = 'ข้อผิดพลาดคำขอ API';
+$phpMussel['lang']['SafeBrowseLookup_401'] = 'ข้อผิดพลาดอนุมัติ API';
+$phpMussel['lang']['SafeBrowseLookup_503'] = 'ไม่สามารถให้บริการได้ API';
+$phpMussel['lang']['SafeBrowseLookup_999'] = 'ข้อผิดพลาดที่ไม่รู้จัก API';
+$phpMussel['lang']['scan_aborted'] = 'สแกนยกเลิกการแล้ว!';
+$phpMussel['lang']['scan_chameleon'] = 'กิ้งก่าโจมตี {x} ถูกตรวจพบ';
+$phpMussel['lang']['scan_checking'] = 'การตรวจสอบ';
+$phpMussel['lang']['scan_checking_contents'] = 'ความสำเร็จ! กำลังดำเนินการตรวจสอบเนื้อหา.';
+$phpMussel['lang']['scan_command_injection'] = 'ความพยายามที่จะฉีดคำสั่งถูกตรวจพบ';
+$phpMussel['lang']['scan_complete'] = 'เสร็จแล้ว';
+$phpMussel['lang']['scan_extensions_missing'] = 'ล้มเหลว (ส่วนขยายที่จำเป็นหายไป)!';
+$phpMussel['lang']['scan_filename_manipulation_detected'] = 'การปลอมแปลงชื่อไฟล์ถูกตรวจพบ';
+$phpMussel['lang']['scan_missing_filename'] = 'ไม่มีชื่อไฟล์';
+$phpMussel['lang']['scan_not_archive'] = 'ล้มเหลว (ว่างเปล่าหรือไม่ใช่ที่เก็บถาวร)!';
+$phpMussel['lang']['scan_no_problems_found'] = 'ไม่พบปัญหาใด.';
+$phpMussel['lang']['scan_reading'] = 'การอ่าน';
+$phpMussel['lang']['scan_signature_file_corrupted'] = 'ไฟล์ลายเซ็นเสียหาย';
+$phpMussel['lang']['scan_signature_file_missing'] = 'ไฟล์ลายเซ็นหายไป';
+$phpMussel['lang']['scan_tampering'] = 'การปลอมแปลงไฟล์ที่อาจเป็นอันตรายตรวจพบแล้ว';
+$phpMussel['lang']['scan_unauthorised_upload'] = 'อัปโหลดไฟล์ที่ไม่ได้รับอนุญาตถูกตรวจพบ';
+$phpMussel['lang']['scan_unauthorised_upload_or_misconfig'] = 'อัปโหลดไฟล์ที่ไม่ได้รับอนุญาตหรือการกำหนดค่าที่ไม่ถูกต้องถูกตรวจพบ! ';
+$phpMussel['lang']['started'] = 'เริ่มต้นแล้ว';
+$phpMussel['lang']['too_many_urls'] = 'มี URL มากเกินไป';
+$phpMussel['lang']['upload_error_1'] = 'ขนาดไฟล์เกินคำสั่ง upload_max_filesize. ';
+$phpMussel['lang']['upload_error_2'] = 'ขนาดไฟล์เกินจำกัดขนาดไฟล์ที่ระบุโดยแบบฟอร์ม. ';
+$phpMussel['lang']['upload_error_34'] = 'อัปโหลดล้มเหลว! โปรดติดต่อผู้ดูแลโฮสต์เพื่อขอความช่วยเหลือ! ';
+$phpMussel['lang']['upload_error_6'] = 'อัปโหลดไดเรกทอรีหายแล้ว! โปรดติดต่อผู้ดูแลโฮสต์เพื่อขอความช่วยเหลือ! ';
+$phpMussel['lang']['upload_error_7'] = 'ข้อผิดพลาดในการเขียนดิสก์! โปรดติดต่อผู้ดูแลโฮสต์เพื่อขอความช่วยเหลือ! ';
+$phpMussel['lang']['upload_error_8'] = 'การกำหนดค่า PHP ที่ไม่ถูกต้องถูกตรวจพบ! โปรดติดต่อผู้ดูแลโฮสต์เพื่อขอความช่วยเหลือ! ';
+$phpMussel['lang']['upload_limit_exceeded'] = 'จำกัดการอัปโหลดเกินแล้วแล้ว';
 $phpMussel['lang']['wrong_password'] = 'รหัสผ่านผิด; การกระทำถูกปฏิเสธ.';
 $phpMussel['lang']['x_does_not_exist'] = 'ไม่ได้อยู่';
 $phpMussel['lang']['_exclamation'] = '! ';
@@ -91,26 +91,26 @@ $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
- - Quit CLI.
- - Aliases: quit, exit.
+ - ออกจาก CLI.
+ - นามแฝง: quit, exit.
  md5_file
- - Generate MD5 signatures from files [Syntax: md5_file filename].
- - Alias: m.
+ - สร้างลายเซ็น MD5 จากไฟล์ [ไวยากรณ์: md5_file ชื่อไฟล์].
+ - นามแฝง: m.
  md5
- - Generate MD5 signature from string [Syntax: md5 string].
+ - สร้างลายเซ็น MD5 จากสตริง [ไวยากรณ์: md5 สตริง].
  hex_encode
- - Convert binary string to hexadecimal [Syntax: hex_encode string].
- - Alias: x.
+ - แปลงสตริงไบนารีเป็นเลขฐานสิบหก [ไวยากรณ์: hex_encode สตริง].
+ - นามแฝง: x.
  hex_decode
- - Convert hexadecimal to binary string [Syntax: hex_decode string].
+ - แปลงเลขฐานสิบหกเป็นสตริงไบนารี [ไวยากรณ์: hex_decode สตริง].
  base64_encode
- - Convert binary string to base64 string [Syntax: base64_encode string].
- - Alias: b.
+ - แปลงสตริงไบนารีเป็นสตริง base64 [ไวยากรณ์: base64_encode สตริง].
+ - นามแฝง: b.
  base64_decode
- - Convert base64 string to binary string [Syntax: base64_decode string].
+ - แปลงสตริง base64 เป็นสตริงไบนารี [ไวยากรณ์: base64_decode สตริง].
  scan
- - Scan file or directory [Syntax: scan filename].
- - Alias: s.
+ - สแกนไฟล์หรือไดเรกทอรี [ไวยากรณ์: scan ชื่อไฟล์].
+ - นามแฝง: s.
  c
- - Print this command list.
+ - พิมพ์รายการคำสั่งนี้.
 ";

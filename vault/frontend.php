@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.04.11).
+ * This file: Front-end handler (last modified: 2017.04.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -340,6 +340,18 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '') {
     /** Set page title. */
     $phpMussel['FE']['FE_Title'] = $phpMussel['lang']['title_home'];
 
+    /** phpMussel version used. */
+    $phpMussel['FE']['ScriptVersion'] = $phpMussel['ScriptVersion'];
+
+    /** PHP version used. */
+    $phpMussel['FE']['info_php'] = PHP_VERSION;
+
+    /** SAPI used. */
+    $phpMussel['FE']['info_sapi'] = php_sapi_name();
+
+    /** Operating system used. */
+    $phpMussel['FE']['info_os'] = php_uname();
+
     /** Prepare page tooltip/description. */
     $phpMussel['FE']['FE_Tip'] = $phpMussel['ParseVars'](
         array('username' => $phpMussel['FE']['UserRaw']),
@@ -603,7 +615,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 !empty($phpMussel['lang'][$phpMussel['ThisDir']['DirLangKey']]) ? $phpMussel['lang'][$phpMussel['ThisDir']['DirLangKey']] : $phpMussel['lang']['response_error'];
             $phpMussel['RegenerateConfig'] .= '; ' . wordwrap(strip_tags($phpMussel['ThisDir']['DirLang']), 77, "\r\n; ") . "\r\n";
             if (isset($_POST[$phpMussel['ThisDir']['DirLangKey']])) {
-                if ($phpMussel['DirValue']['type'] === 'string' || $phpMussel['DirValue']['type'] === 'int' || $phpMussel['DirValue']['type'] === 'bool') {
+                if ($phpMussel['DirValue']['type'] === 'string' || $phpMussel['DirValue']['type'] === 'int' || $phpMussel['DirValue']['type'] === 'real' || $phpMussel['DirValue']['type'] === 'bool') {
                     $phpMussel['AutoType']($_POST[$phpMussel['ThisDir']['DirLangKey']], $phpMussel['DirValue']['type']);
                 }
                 if (
@@ -619,7 +631,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 $phpMussel['RegenerateConfig'] .= $phpMussel['DirKey'] . "=true\r\n\r\n";
             } elseif ($phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] === false) {
                 $phpMussel['RegenerateConfig'] .= $phpMussel['DirKey'] . "=false\r\n\r\n";
-            } elseif ($phpMussel['DirValue']['type'] === 'int') {
+            } elseif ($phpMussel['DirValue']['type'] === 'int' || $phpMussel['DirValue']['type'] === 'real') {
                 $phpMussel['RegenerateConfig'] .= $phpMussel['DirKey'] . '=' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . "\r\n\r\n";
             } else {
                 $phpMussel['RegenerateConfig'] .= $phpMussel['DirKey'] . '=\'' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . "'\r\n\r\n";
@@ -648,8 +660,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                         '<option value="true">True</option><option value="false" selected>False</option>' .
                         '</select>';
                 }
-            } elseif ($phpMussel['DirValue']['type'] === 'int') {
-                $phpMussel['ThisDir']['FieldOut'] = '<input type="number" name="'. $phpMussel['ThisDir']['DirLangKey'] . '" value="' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . '" />';
+            } elseif ($phpMussel['DirValue']['type'] === 'int' || $phpMussel['DirValue']['type'] === 'real') {
+                $phpMussel['ThisDir']['Step'] = isset($phpMussel['DirValue']['step']) ? ' step="' . $phpMussel['DirValue']['step'] . '"' : '';
+                $phpMussel['ThisDir']['FieldOut'] = '<input type="number" name="'. $phpMussel['ThisDir']['DirLangKey'] . '" value="' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . '"' . $phpMussel['ThisDir']['Step'] . ' />';
             } elseif ($phpMussel['DirValue']['type'] === 'string') {
                 $phpMussel['ThisDir']['FieldOut'] = '<textarea name="'. $phpMussel['ThisDir']['DirLangKey'] . '" class="half">' . $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']] . '</textarea>';
             } else {

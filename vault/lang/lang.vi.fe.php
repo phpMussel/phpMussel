@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.04.11).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.04.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -126,6 +126,11 @@ $phpMussel['lang']['field_upload_file'] = 'Tải lên tập tin mới';
 $phpMussel['lang']['field_username'] = 'Tên Người Dùng';
 $phpMussel['lang']['field_your_version'] = 'Phiên bản của bạn';
 $phpMussel['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
+$phpMussel['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
+$phpMussel['lang']['label_php'] = 'Phiên bản PHP đang được dùng:';
+$phpMussel['lang']['label_phpmussel'] = 'Phiên bản phpMussel đang được dùng:';
+$phpMussel['lang']['label_sapi'] = 'SAPI đang được dùng:';
+$phpMussel['lang']['label_sysinfo'] = 'Thông tin hệ thống:';
 $phpMussel['lang']['link_accounts'] = 'Tài Khoản';
 $phpMussel['lang']['link_config'] = 'Cấu Hình';
 $phpMussel['lang']['link_documentation'] = 'Tài Liệu';

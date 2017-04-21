@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.03.27).
+ * This file: Configuration handler (last modified: 2017.04.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -111,13 +111,7 @@ foreach ($phpMussel['Config']['Config Defaults'] as $phpMussel['Config']['Temp']
         }
         $phpMussel['Config']['Temp']['Dir'] = &$phpMussel['Config']['Temp']['Cat'][$phpMussel['Config']['Temp']['KeyDir']];
         if (isset($phpMussel['Config']['Temp']['DDir']['type'])) {
-            if (
-                $phpMussel['Config']['Temp']['DDir']['type'] === 'string' ||
-                $phpMussel['Config']['Temp']['DDir']['type'] === 'int' ||
-                $phpMussel['Config']['Temp']['DDir']['type'] === 'bool'
-            ) {
-                $phpMussel['AutoType']($phpMussel['Config']['Temp']['Dir'], $phpMussel['Config']['Temp']['DDir']['type']);
-            }
+            $phpMussel['AutoType']($phpMussel['Config']['Temp']['Dir'], $phpMussel['Config']['Temp']['DDir']['type']);
         }
     }
 }

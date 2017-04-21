@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.04.11).
+ * This file: Japanese language data for the front-end (last modified: 2017.04.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -126,6 +126,11 @@ $phpMussel['lang']['field_upload_file'] = '新しいファイルをアップロ�
 $phpMussel['lang']['field_username'] = 'ユーザー名';
 $phpMussel['lang']['field_your_version'] = 'お使いのバージョン';
 $phpMussel['lang']['header_login'] = '継続するには、ログインしてください。';
+$phpMussel['lang']['label_os'] = '使用されたオペレーティングシステム：';
+$phpMussel['lang']['label_php'] = '使用されたPHPバージョン：';
+$phpMussel['lang']['label_phpmussel'] = '使用されたphpMusselバージョン：';
+$phpMussel['lang']['label_sapi'] = '使用されたSAPI：';
+$phpMussel['lang']['label_sysinfo'] = 'システムインフォメーション：';
 $phpMussel['lang']['link_accounts'] = 'アカウント';
 $phpMussel['lang']['link_config'] = 'コンフィギュレーション';
 $phpMussel['lang']['link_documentation'] = 'ドキュメンテーション';

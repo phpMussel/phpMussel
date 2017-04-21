@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.04.11).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.04.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -126,6 +126,11 @@ $phpMussel['lang']['field_upload_file'] = '上传新文件';
 $phpMussel['lang']['field_username'] = '用户名';
 $phpMussel['lang']['field_your_version'] = '您的版本';
 $phpMussel['lang']['header_login'] = '请登录以继续。';
+$phpMussel['lang']['label_os'] = '目前使用操作系统：';
+$phpMussel['lang']['label_php'] = '目前使用PHP版本：';
+$phpMussel['lang']['label_phpmussel'] = '目前使用phpMussel版本：';
+$phpMussel['lang']['label_sapi'] = '目前使用SAPI：';
+$phpMussel['lang']['label_sysinfo'] = '系统信息：';
 $phpMussel['lang']['link_accounts'] = '账户';
 $phpMussel['lang']['link_config'] = '配置';
 $phpMussel['lang']['link_documentation'] = '文档';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.04.11).
+ * This file: Functions file (last modified: 2017.04.21).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -5783,9 +5783,11 @@ $phpMussel['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$phpMu
 $phpMussel['AutoType'] = function (&$Var, $Type = '') {
     if ($Type === 'string') {
         $Var = (string)$Var;
-    } elseif ($Type === 'int') {
+    } elseif ($Type === 'int' || $Type === 'integer') {
         $Var = (int)$Var;
-    } elseif ($Type === 'bool') {
+    } elseif ($Type === 'real' || $Type === 'double' || $Type === 'float') {
+        $Var = (real)$Var;
+    } elseif ($Type === 'bool' || $Type === 'boolean') {
         $Var = (strtolower($Var) !== 'false' && $Var);
     } else {
         $LVar = strtolower($Var);
