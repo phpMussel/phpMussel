@@ -13,10 +13,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2016.03.18; Minor code change; Maikuolan]: Renamed all "INC" files to "PHP"
   files and changed all references to them accordingly.
 
-- [2016.03.18; Major code change; Maikuolan]: Removed all deprecated < v1.0.0
+- [2016.03.18; MAJOR CODE CHANGE; Maikuolan]: Removed all deprecated < v1.0.0
   functions.
 
-- [2016.03.19; Major code change; Maikuolan]: Converted all functions to
+- [2016.03.19; MAJOR CODE CHANGE; Maikuolan]: Converted all functions to
   closures to help towards a fat-free implementation of phpMussel. Removed the
   old "phpMussel_mail()" function from phpMussel entirely (this function would
   make more sense as a plugin or an extension, rather than as part of the core
@@ -73,7 +73,7 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   times faster than they did before.
   Refer github.com/Maikuolan/phpMussel/issues/91
 
-- [2016.05.18-22; Major code change; Maikuolan]: Removed "compressor" as a
+- [2016.05.18-22; MAJOR CODE CHANGE; Maikuolan]: Removed "compressor" as a
   possible value for "$container". Completely rewrote the way that archives
   are handled and processed by phpMussel (phpMussel will now attempt to parse
   archives using in-built PHAR support prior to doing any further processing of
@@ -145,7 +145,7 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2016.12.03; Sub-minor code change; Maikuolan]: Improved mechanism for making
   determinations between requests via direct access and requests via hooks.
 
-- [2017.02.11; Major code change; Maikuolan]: Successfully completed building
+- [2017.02.11; MAJOR CODE CHANGE; Maikuolan]: Successfully completed building
   the front-end for phpMussel! Using the phpMussel front-end, you can update
   phpMussel directly from your browser, install/uninstall/update components,
   signature files, and language packs, and more; You can modify core phpMussel
@@ -241,6 +241,14 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.04.21; Sub-minor code change; Maikuolan]: Improved support for
   fractions/floats/reals/decimals/etc for configuration directives. Added some
   basic system information to the front-end homepage, to help with debugging.
+
+- [2017.04.22; NEW FEATURE; Maikuolan]: Added the ability to truncate logfiles
+  after they reached a certain size, specified by the newly added "truncate"
+  directive.
+
+- [2017.04.22; Bug-fix; Maikuolan]: Fixed a bug whereby version information for
+  certain PHP release candidates would be compared incorrectly when using the
+  front-end updates page (only affects a small number of users).
 
 ======
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2017.03.30).
+ * This file: Upload handler (last modified: 2017.04.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -507,8 +507,14 @@ if ($phpMussel['upload']['count'] > 0) {
             )) . "\n",
             'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log_serialized'])
         );
+        $phpMussel['memCache']['handle']['WriteMode'] = (
+            !file_exists($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File']) || (
+                $phpMussel['Config']['general']['truncate'] &&
+                filesize($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File']) >= ($phpMussel['Config']['general']['truncate'] * 1024)
+            )
+        ) ? 'w' : 'a';
         $phpMussel['memCache']['handle']['Stream'] =
-            fopen($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'], 'a');
+            fopen($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'], $phpMussel['memCache']['handle']['WriteMode']);
         fwrite($phpMussel['memCache']['handle']['Stream'], $phpMussel['memCache']['handle']['Data']);
         fclose($phpMussel['memCache']['handle']['Stream']);
         $phpMussel['memCache']['handle'] = '';
@@ -544,10 +550,14 @@ if ($phpMussel['upload']['count'] > 0) {
             $phpMussel['memCache']['handle'] = array(
                 'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_kills'])
             );
+            $phpMussel['memCache']['handle']['WriteMode'] = (
+                !file_exists($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File']) || (
+                    $phpMussel['Config']['general']['truncate'] &&
+                    filesize($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File']) >= ($phpMussel['Config']['general']['truncate'] * 1024)
+                )
+            ) ? 'w' : 'a';
             $phpMussel['memCache']['handle']['Data'] =
-                (!file_exists($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'])) ?
-                $phpMussel['safety'] . "\n" :
-                '';
+                !file_exists($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File']) ? $phpMussel['safety'] . "\n" : '';
             $phpMussel['memCache']['handle']['Data'] .=
                 'DATE: ' . $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']) .
                 "\nIP ADDRESS: " . $_SERVER[$phpMussel['Config']['general']['ipaddr']] .
@@ -562,7 +572,7 @@ if ($phpMussel['upload']['count'] > 0) {
             }
             $phpMussel['memCache']['handle']['Data'] .= "\n";
             $phpMussel['memCache']['handle']['Stream'] =
-                fopen($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'], 'a');
+                fopen($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'], $phpMussel['memCache']['handle']['WriteMode']);
             fwrite($phpMussel['memCache']['handle']['Stream'], $phpMussel['memCache']['handle']['Data']);
             fclose($phpMussel['memCache']['handle']['Stream']);
             $phpMussel['memCache']['handle'] = '';

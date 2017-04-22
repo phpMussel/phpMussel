@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.04.21).
+ * This file: Dutch language data for the front-end (last modified: 2017.04.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -66,6 +66,7 @@ $phpMussel['lang']['config_general_scan_log'] = 'Bestandsnaam van het bestand te
 $phpMussel['lang']['config_general_scan_log_serialized'] = 'Bestandsnaam van het bestand te opnemen alle scanresultaten (formaat is geserialiseerd). Geef een bestandsnaam of laat leeg om te uitschakelen.';
 $phpMussel['lang']['config_general_timeFormat'] = 'De datum notatie gebruikt door phpMussel. Selecteer een optie uit de onderstaande lijst. Extra opties kunnen worden toegevoegd op aanvraag.';
 $phpMussel['lang']['config_general_timeOffset'] = 'Als uw server tijd niet overeenkomt met uw lokale tijd, u kunt opgeven hier een offset om de datum/tijd informatie gegenereerd door phpMussel aan te passen volgens uw behoeften. Het is in het algemeen in plaats aanbevolen de tijdzone richtlijn in uw bestand <code>php.ini</code> aan te passen, maar somtijds (zoals bij het werken met beperkte shared hosting providers) dit is niet altijd mogelijk om te voldoen, en dus, Dit optie is hier voorzien. Offset is in een minuten.';
+$phpMussel['lang']['config_general_truncate'] = 'Trunceren logbestanden wanneer ze een bepaalde grootte bereiken? Waarde is de maximale grootte in KB dat een logbestand kan groeien tot voordat het wordt getrunceerd. De standaardwaarde van 0 schakelt truncatie uit (logbestanden kunnen onbepaald groeien). Notitie: Van toepassing op individuele logbestanden! De grootte van de logbestanden wordt niet collectief beschouwd.';
 $phpMussel['lang']['config_heuristic_threshold'] = 'Er zijn bepaalde signatures van phpMussel dat zijn bedoeld om verdachte en potentieel kwaadaardige kwaliteiten te identificeren van bestanden wordt geüpload zonder zichzelf om bestanden wordt geüpload te identificeren specifiek als kwaadaardige. Dit "threshold" waarde vertelt phpMussel het maximaal totaalgewicht van verdachte en potentieel kwaadaardige kwaliteiten van bestanden wordt geüpload dat is toelaatbaar voordat deze bestanden worden gemarkeerd als kwaadaardig. De definitie van gewicht in dit verband is het aantal van verdachte en potentieel kwaadaardige kwaliteiten dat zijn geïdentificeerd. Standaard, dit waarde wordt ingesteld op 3. Algemeen, een lagere waarde zal resulteren in meer valse positieven maar meer kwaadaardige bestanden wordt gemarkeerd, terwijl een hogere waarde zal resulteren in minder valse positieven maar minder kwaadaardige bestanden wordt gemarkeerd. Algemeen, het is beste om dit waarde te laten op zijn standaard, tenzij u problemen ondervindt met betrekking tot het.';
 $phpMussel['lang']['config_signatures_Active'] = 'Een lijst van de actief signature-bestanden, gescheiden door komma\'s.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'Moet phpMussel verwerken signatures voor het detecteren van adware? False = Nee; True = Ja [Standaard].';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.04.21).
+ * This file: Japanese language data for the front-end (last modified: 2017.04.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -66,6 +66,7 @@ $phpMussel['lang']['config_general_scan_log'] = '全スキャニング結果を�
 $phpMussel['lang']['config_general_scan_log_serialized'] = '全スキャニング結果を記録するファイルのファイル名（シリアル化形式を利用）。 ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
 $phpMussel['lang']['config_general_timeFormat'] = 'phpMusselで使用される日付表記形式。 下のリストからオプションを選択してください。 追加のオプションがリクエストに応じて追加される場合があります。';
 $phpMussel['lang']['config_general_timeOffset'] = 'お使いのサーバの時刻は、ローカル時刻と一致しない場合、あなたのニーズに応じて、時間を調整するために、あなたはここにオフセットを指定することができます。 しかし、その代わりに、一般的にタイムゾーンディレクティブ（あなたの<code>php.ini</code>ファイルで）を調整ーることをお勧めします、でも時々（といった、限ら共有ホスティングプロバイダでの作業時）これは何をすることは必ずしも可能ではありません、したがって、このオプションは、ここで提供されています。 オフセット分であります。';
+$phpMussel['lang']['config_general_truncate'] = 'ログファイルが一定のサイズに達したら切り詰めますか？ 値は、ログファイルが切り捨てられる前に大きくなる可能性があるＫＢ単位の最大サイズです。 デフォルト値の「0」は切り捨てを無効にします （ログファイルは無期限に拡張できます）。 注：個々のログファイルに適用されます。 ログファイルのサイズは一括して考慮されません。';
 $phpMussel['lang']['config_heuristic_threshold'] = 'phpMusselには、このファイルは疑わしく危険性が高いと判断するシグネチャがあります。 しきい値は、アップロードされているファイルの危険性の最大値であり、これを超えるとマルウェアと判断されます。ここにおける危険性の定義とは、疑わしいと特定されたものの総数です。 デフォルトでは３に設定されています。 これより低いと誤検出の可能性が増え、大きすぎると、誤検出は減るものの危険性のあるファイルが検出されない可能性が増加してしまいます。 特に問題がなければ、デフォルト値のままにしておくことお勧めします。';
 $phpMussel['lang']['config_signatures_Active'] = 'カンマで区切られたアクティブなシグネチャファイルのリスト。';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMusselはアドウェア検出のためにシグネチャを分析すべきか否か？ <code>false</code>（偽） = いいえ； <code>true</code>（真） = はい （Default/デフォルト）。';

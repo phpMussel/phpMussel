@@ -12,6 +12,9 @@ Config Defaults:
   scan_kills:
    type: string
    default: "scan_kills.txt"
+  truncate:
+   type: int
+   default: 0
   timeOffset:
    type: int
    default: 0

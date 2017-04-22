@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.04.21).
+ * This file: French language data for the front-end (last modified: 2017.04.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -66,6 +66,7 @@ $phpMussel['lang']['config_general_scan_log'] = 'Nom du fichier à enregistrer t
 $phpMussel['lang']['config_general_scan_log_serialized'] = 'Nom du fichier à enregistrer tous les résultats de l\'analyse (le format est sérialisé). Spécifiez un nom de fichier, ou laisser vide à désactiver.';
 $phpMussel['lang']['config_general_timeFormat'] = 'Le format de notation de la date/heure utilisé par phpMussel. Sélectionnez une option dans la liste ci-dessous. Des options supplémentaires peuvent être ajoutées sur demande.';
 $phpMussel['lang']['config_general_timeOffset'] = 'Si votre temps serveur ne correspond pas à votre temps locale, vous pouvez spécifier un offset ici pour régler l\'information en date/temps généré par phpMussel selon vos besoins. Il est généralement recommandé à la place pour ajuster la directive de fuseau horaire dans votre fichier <code>php.ini</code>, mais parfois (tels que lorsque l\'on travaille avec des fournisseurs d\'hébergement partagé limitées) ce n\'est pas toujours possible de faire, et donc, cette option est disponible ici. Offset est en minutes.';
+$phpMussel['lang']['config_general_truncate'] = 'Tronquer les fichiers journaux lorsqu\'ils atteignent une certaine taille? La valeur est la taille maximale en KB qu\'un fichier journal peut croître avant d\'être tronqué. La valeur par défaut de 0 désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque: S\'applique aux fichiers journaux individuels! La taille des fichiers journaux n\'est pas considérée collectivement.';
 $phpMussel['lang']['config_heuristic_threshold'] = 'Il ya certaines signatures des phpMussel qui sont destinés à identifier des suspectes et potentiellement malveillants qualités des fichiers en cours de téléchargement sans en eux-mêmes identifier les fichiers en cours de téléchargement spécifiquement comme étant malveillants. Cette "threshold" (seuil) valeur raconte à phpMussel ce que le total maximum poids des suspectes et potentiellement malveillants qualités des fichiers en cours de téléchargement pour ce qui est admissible avant que ces fichiers doivent être signalées comme malveillant. La définition du poids dans ce contexte est le nombre total de suspectes et potentiellement malveillants qualités identifié. Par défaut, cette valeur sera fixée à 3. Une valeur inférieur va résulter généralement avec une fréquence supérieur de faux positifs mais une nombre supérieur de fichiers signalé comme malveillant, tandis que une valeur inférieur va résulter généralement avec une fréquence inférieur de faux positifs mais un nombre inférieur de fichiers signalé comme malveillant. Il est généralement préférable de laisser cette valeur à sa valeur défaut, sauf si vous rencontrez des problèmes qui sont liés à elle.';
 $phpMussel['lang']['config_signatures_Active'] = 'Une liste des fichiers de signatures active, délimitée par des virgules.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'Devrait phpMussel utiliser signatures pour détecter les adwares? False = Non; True = Oui [Défaut].';

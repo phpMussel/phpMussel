@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.04.21).
+ * This file: Front-end handler (last modified: 2017.04.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -210,10 +210,16 @@ if ($phpMussel['FE']['FormTarget'] === 'login') {
         $phpMussel['FrontEndLog'] .= ' - ' . $phpMussel['lang']['state_logged_in'] . "\n";
     }
     if ($phpMussel['Config']['general']['FrontEndLog']) {
-        $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['Config']['general']['FrontEndLog'], 'a');
+        $phpMussel['WriteMode'] = (
+            !file_exists($phpMussel['Vault'] . $phpMussel['Config']['general']['FrontEndLog']) || (
+                $phpMussel['Config']['general']['truncate'] &&
+                filesize($phpMussel['Vault'] . $phpMussel['Config']['general']['FrontEndLog']) >= ($phpMussel['Config']['general']['truncate'] * 1024)
+            )
+        ) ? 'w' : 'a';
+        $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['Config']['general']['FrontEndLog'], $phpMussel['WriteMode']);
         fwrite($phpMussel['Handle'], $phpMussel['FrontEndLog']);
         fclose($phpMussel['Handle']);
-        unset($phpMussel['FrontEndLog']);
+        unset($phpMussel['WriteMode'], $phpMussel['FrontEndLog']);
     }
 }
 

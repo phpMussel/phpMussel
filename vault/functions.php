@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.04.21).
+ * This file: Functions file (last modified: 2017.04.22).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -5532,16 +5532,22 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
             $phpMussel['lang']['_fullstop_final'] . "\n" .
             $r . $xet2822 . ' ' . $phpMussel['lang']['finished'] .
             $phpMussel['lang']['_fullstop_final'] . "\n";
-        $handle = array(
+        $Handle = array(
             'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log'])
         );
-        if (!file_exists($phpMussel['Vault'] . $handle['File'])) {
+        if (!file_exists($phpMussel['Vault'] . $Handle['File'])) {
             $r = $phpMussel['safety'] . "\n" . $r;
         }
-        $handle['Stream'] = fopen($phpMussel['Vault'] . $handle['File'], 'a');
-        fwrite($handle['Stream'], $r);
-        fclose($handle['Stream']);
-        $handle = '';
+        $WriteMode = (
+            !file_exists($phpMussel['Vault'] . $Handle['File']) || (
+                $phpMussel['Config']['general']['truncate'] &&
+                filesize($phpMussel['Vault'] . $Handle['File']) >= ($phpMussel['Config']['general']['truncate'] * 1024)
+            )
+        ) ? 'w' : 'a';
+        $Handle['Stream'] = fopen($phpMussel['Vault'] . $Handle['File'], $WriteMode);
+        fwrite($Handle['Stream'], $r);
+        fclose($Handle['Stream']);
+        $Handle = '';
     }
     if ($phpMussel['EOF']) {
         if ($phpMussel['Config']['general']['scan_cache_expiry'] > 0) {
@@ -5570,7 +5576,7 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
             !empty($phpMussel['whyflagged']) &&
             $phpMussel['Config']['general']['scan_log_serialized']
         ) {
-            $handle = array(
+            $Handle = array(
                 'Data' => serialize(array(
                     'start_time' => $xst,
                     'end_time' => $xet,
@@ -5582,9 +5588,15 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
                 )) . "\n",
                 'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log_serialized'])
             );
-            $handle['Stream'] = fopen($phpMussel['Vault'] . $handle['File'], 'a');
-            fwrite($handle['Stream'], $handle['Data']);
-            fclose($handle['Stream']);
+            $WriteMode = (
+                !file_exists($phpMussel['Vault'] . $Handle['File']) || (
+                    $phpMussel['Config']['general']['truncate'] &&
+                    filesize($phpMussel['Vault'] . $Handle['File']) >= ($phpMussel['Config']['general']['truncate'] * 1024)
+                )
+            ) ? 'w' : 'a';
+            $Handle['Stream'] = fopen($phpMussel['Vault'] . $Handle['File'], $WriteMode);
+            fwrite($Handle['Stream'], $Handle['Data']);
+            fclose($Handle['Stream']);
         }
     }
     return $r;
@@ -6018,8 +6030,8 @@ $phpMussel['VersionCompare'] = function ($A, $B) {
         $Ver =
             preg_match("\x01" . '^v?([0-9]+)$' . "\x01i", $Ver, $Matches) ?:
             preg_match("\x01" . '^v?([0-9]+)\.([0-9]+)$' . "\x01i", $Ver, $Matches) ?:
-            preg_match("\x01" . '^v?([0-9]+)\.([0-9]+)\.([0-9]+)(-[0-9a-z_+\\/]+)?$' . "\x01i", $Ver, $Matches) ?:
-            preg_match("\x01" . '^([0-9]{1,4})[.-]([0-9]{1,2})[.-]([0-9]{1,4})([.+-][0-9a-z_+\\/]+)?$' . "\x01i", $Ver, $Matches) ?:
+            preg_match("\x01" . '^v?([0-9]+)\.([0-9]+)\.([0-9]+)(RC[0-9]{1,2}|-[0-9a-z_+\\/]+)?$' . "\x01i", $Ver, $Matches) ?:
+            preg_match("\x01" . '^([0-9]{1,4})[.-]([0-9]{1,2})[.-]([0-9]{1,4})(RC[0-9]{1,2}|[.+-][0-9a-z_+\\/]+)?$' . "\x01i", $Ver, $Matches) ?:
             preg_match("\x01" . '^([a-z]+)-([0-9a-z]+)-([0-9a-z]+)$' . "\x01i", $Ver, $Matches);
         $Ver = array(
             'Major' => isset($Matches[1]) ? $Matches[1] : 0,

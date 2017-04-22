@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.04.21).
+ * This file: Arabic language data for the front-end (last modified: 2017.04.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -66,6 +66,7 @@ $phpMussel['lang']['config_general_scan_log'] = 'اسم الملف لملف تس
 $phpMussel['lang']['config_general_scan_log_serialized'] = 'اسم الملف من ملف لتسجيل جميع نتائج المسح إلى (باستخدام تنسيق متسلسل). تحديد اسم الملف، أو اتركه فارغا للتعطيل.';
 $phpMussel['lang']['config_general_timeFormat'] = 'شكل التواريخ المستخدم من قبل phpMussel. حدد أحد الخيارات من القائمة أدناه. ويمكن إضافة خيارات إضافية عند الطلب.';
 $phpMussel['lang']['config_general_timeOffset'] = 'إذا بالتوقيت المحلي الخاص بك ليست هي نفسها كما الخادم الخاص بك، يمكنك تحديد إزاحة هنا (لضبط التاريخ / المعلومات في الوقت صنعت بواسطة phpMussel). الإزاحة المستندة دقيقة.';
+$phpMussel['lang']['config_general_truncate'] = 'اقتطاع ملفات السجل عندما تصل إلى حجم معين؟ القيمة هي الحجم الأقصى في كيلوبايت الذي قد ينمو ملفات السجل إلى قبل اقتطاعه. القيمة الافتراضية 0 تعطيل اقتطاع (ملفات السجل يمكن أن تنمو إلى أجل غير مسمى). ملاحظة: ينطبق على ملفات السجل الفردية! ولا يعتبر حجمها جماعيا.';
 $phpMussel['lang']['config_heuristic_threshold'] = 'هناك توقيعات معينة من phpMussel التي تهدف إلى تحديد الصفات المشبوهة والمحتمل أن تكون ضارة من الملفات التي يتم تحميلها دون في أنفسهم تحديد تلك الملفات التي تم تحميلها على وجه التحديد بأنها خبيثة. هذه القيمة "الحد الأقصى " تقول phpMussel ما الحد الأقصى للوزن الكلي من الصفات المشبوهة والمحتمل أن تكون ضارة من الملفات التي يتم تحميلها هذا المسموح به هو قبل تلك الملفات ليتم وضع علامة بأنها خبيثة. تعريف الوزن في هذا السياق هو العدد الإجمالي من الصفات المشبوهة والمحتمل أن تكون ضارة تحديدها. افتراضيا، سيتم تعيين هذه القيمة إلى 3. القيمة المنخفضة عموما سوف يؤدي إلى حدوث أعلى من ايجابيات كاذبة ولكن عددا أكبر من الملفات الخبيثة التي لوحت، في حين أن أعلى قيمة عموما سوف يؤدي إلى حدوث انخفاض من ايجابيات كاذبة ولكن انخفاض عدد الملفات الخبيثة التي توضع. انها عموما من الأفضل ترك هذه القيمة في الافتراضي إلا إذا كنت تعاني من مشاكل المتعلقة بها.';
 $phpMussel['lang']['config_signatures_Active'] = 'قائمة من الملفات توقيع النشطة، محدد بفواصل.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'هل يجب على توقيعات phpMussel الكشف عن تجسس؟ كاذبة = لا؛ صحيح = نعم [افتراضي].';
@@ -126,9 +127,9 @@ $phpMussel['lang']['field_upload_file'] = 'تحميل ملف جديد';
 $phpMussel['lang']['field_username'] = 'اسم المستخدم';
 $phpMussel['lang']['field_your_version'] = 'الإصدار الخاص بك';
 $phpMussel['lang']['header_login'] = 'الرجاء تسجيل الدخول للمتابعة.';
-$phpMussel['lang']['label_phpmussel'] = 'النسخة phpMussel المستخدمة:';
 $phpMussel['lang']['label_os'] = 'نظام التشغيل المستخدمة:';
 $phpMussel['lang']['label_php'] = 'النسخة PHP المستخدمة:';
+$phpMussel['lang']['label_phpmussel'] = 'النسخة phpMussel المستخدمة:';
 $phpMussel['lang']['label_sapi'] = 'SAPI المستخدمة:';
 $phpMussel['lang']['label_sysinfo'] = 'معلومات النظام:';
 $phpMussel['lang']['link_accounts'] = 'حسابات';
