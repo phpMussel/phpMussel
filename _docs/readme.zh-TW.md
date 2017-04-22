@@ -334,6 +334,9 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
+“truncate”
+- 截斷日誌文件當他們達到一定的大小嗎？ 值是在KB，是日誌文件允許的最大大小直到它被截斷。 默認值為“0”將禁用截斷（日誌文件可以無限成長）。 注意：適用於單個日誌文件！日誌文件大小不被算集體的。
+
 “timeOffset”
 - 如果您的服務器時間不符合您的本地時間，您可以在這裡指定的偏移調整日期/時間信息該產生通過phpMussel根據您的需要。 它一般建議，而不是，調整時區指令的文件`php.ini`，但是有時（例如，當利用有限的共享主機提供商）這並不總是可能做到，所以，此選項在這裡是提供。 偏移量是在分鐘。
 - 例子（添加1小時）： `timeOffset=60`
@@ -702,6 +705,10 @@ URL掃描儀API配置。
 
 ### 10. <a name="SECTION10"></a>常見問題（FAQ）
 
+#### What is a "signature"?
+
+In the context of phpMussel, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually in the form of some very small, distinct, innocuous segment of something larger and otherwise harmful, like a virus or trojan, or in the form of a file checksum, hash, or other similarly identifying indicator, and usually includes a label, and some other data to help provide additional context that can be used by phpMussel to determine the best way to proceed when it encounters what we're looking for.
+
 #### 什麼是“假陽性”？
 
 術語“假陽性”（*或者：“假陽性錯誤”；“虛驚”*；英語：*false positive*; *false positive error*; *false alarm*），很簡單地描述，和在一個廣義上下文，被用來當測試一個因子，作為參考的測試結果，當結果是陽性（即：因子被確定為“陽性”，或“真”），但預計將為（或者應該是）陰性（即：因子，在現實中，是“陰性”，或“假”）。一個“假陽性”可被認為是同樣的“哭狼” (其中，因子被測試是是否有狼靠近牛群，因子是“假”由於該有沒有狼靠近牛群，和因子是報告為“陽性”由牧羊人通過叫喊“狼，狼”），或類似在醫學檢測情況，當患者被診斷有一些疾病，當在現實中，他們沒有疾病。
@@ -736,4 +743,4 @@ phpMussel會阻止文件 | __假陽性__ | 真陽性（正確的推理）
 ---
 
 
-最後更新：2017年4月14日。
+最後更新：2017年4月22日。

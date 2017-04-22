@@ -235,42 +235,42 @@ Fichier | Description
 /vault/fe_assets/frontend.css | Feuille de style CSS pour l'accès frontal.
 /vault/fe_assets/frontend.dat | Base de données pour l'accès frontal (contient des informations sur les comptes et les sessions; généré seulement si l'accès frontal est activé et utilisé).
 /vault/fe_assets/frontend.html | Le fichier modèle HTML principal pour l'accès frontal.
-/vault/lang/ | Contient linguistiques données.
+/vault/lang/ | Contient données linguistiques.
 /vault/lang/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
-/vault/lang/lang.ar.fe.php | Linguistiques données en Arabe pour l'accès frontal.
-/vault/lang/lang.ar.php | Linguistiques données en Arabe.
-/vault/lang/lang.de.fe.php | Linguistiques données en Allemande pour l'accès frontal.
-/vault/lang/lang.de.php | Linguistiques données en Allemande.
-/vault/lang/lang.en.fe.php | Linguistiques données en Anglais pour l'accès frontal.
-/vault/lang/lang.en.php | Linguistiques données en Anglais.
-/vault/lang/lang.es.fe.php | Linguistiques données en Espagnol pour l'accès frontal.
-/vault/lang/lang.es.php | Linguistiques données en Espagnol.
-/vault/lang/lang.fr.fe.php | Linguistiques données en Français pour l'accès frontal.
-/vault/lang/lang.fr.php | Linguistiques données en Français.
-/vault/lang/lang.id.fe.php | Linguistiques données en Indonésienne pour l'accès frontal.
-/vault/lang/lang.id.php | Linguistiques données en Indonésienne.
-/vault/lang/lang.it.fe.php | Linguistiques données en Italienne pour l'accès frontal.
-/vault/lang/lang.it.php | Linguistiques données en Italienne.
-/vault/lang/lang.ja.fe.php | Linguistiques données en Japonaise pour l'accès frontal.
-/vault/lang/lang.ja.php | Linguistiques données en Japonaise.
-/vault/lang/lang.ko.fe.php | Linguistiques données en Coréenne pour l'accès frontal.
-/vault/lang/lang.ko.php | Linguistiques données en Coréenne.
-/vault/lang/lang.nl.fe.php | Linguistiques données en Néerlandaise pour l'accès frontal.
-/vault/lang/lang.nl.php | Linguistiques données en Néerlandaise.
-/vault/lang/lang.pt.fe.php | Linguistiques données en Portugaise pour l'accès frontal.
-/vault/lang/lang.pt.php | Linguistiques données en Portugaise.
-/vault/lang/lang.ru.fe.php | Linguistiques données en Russe pour l'accès frontal.
-/vault/lang/lang.ru.php | Linguistiques données en Russe.
-/vault/lang/lang.th.fe.php | Linguistiques données en Thai pour l'accès frontal.
-/vault/lang/lang.th.php | Linguistiques données en Thai.
-/vault/lang/lang.ur.fe.php | Linguistiques données en Urdu pour l'accès frontal.
-/vault/lang/lang.ur.php | Linguistiques données en Urdu.
-/vault/lang/lang.vi.fe.php | Linguistiques données en Vietnamienne pour l'accès frontal.
-/vault/lang/lang.vi.php | Linguistiques données en Vietnamienne.
-/vault/lang/lang.zh-tw.fe.php | Linguistiques données en Chinois (traditionnel) pour l'accès frontal.
-/vault/lang/lang.zh-tw.php | Linguistiques données en Chinois (traditionnel).
-/vault/lang/lang.zh.fe.php | Linguistiques données en Chinois (simplifié) pour l'accès frontal.
-/vault/lang/lang.zh.php | Linguistiques données en Chinois (simplifié).
+/vault/lang/lang.ar.fe.php | Données linguistiques en Arabe pour l'accès frontal.
+/vault/lang/lang.ar.php | Données linguistiques en Arabe.
+/vault/lang/lang.de.fe.php | Données linguistiques en Allemande pour l'accès frontal.
+/vault/lang/lang.de.php | Données linguistiques en Allemande.
+/vault/lang/lang.en.fe.php | Données linguistiques en Anglais pour l'accès frontal.
+/vault/lang/lang.en.php | Données linguistiques en Anglais.
+/vault/lang/lang.es.fe.php | Données linguistiques en Espagnol pour l'accès frontal.
+/vault/lang/lang.es.php | Données linguistiques en Espagnol.
+/vault/lang/lang.fr.fe.php | Données linguistiques en Français pour l'accès frontal.
+/vault/lang/lang.fr.php | Données linguistiques en Français.
+/vault/lang/lang.id.fe.php | Données linguistiques en Indonésienne pour l'accès frontal.
+/vault/lang/lang.id.php | Données linguistiques en Indonésienne.
+/vault/lang/lang.it.fe.php | Données linguistiques en Italienne pour l'accès frontal.
+/vault/lang/lang.it.php | Données linguistiques en Italienne.
+/vault/lang/lang.ja.fe.php | Données linguistiques en Japonaise pour l'accès frontal.
+/vault/lang/lang.ja.php | Données linguistiques en Japonaise.
+/vault/lang/lang.ko.fe.php | Données linguistiques en Coréenne pour l'accès frontal.
+/vault/lang/lang.ko.php | Données linguistiques en Coréenne.
+/vault/lang/lang.nl.fe.php | Données linguistiques en Néerlandaise pour l'accès frontal.
+/vault/lang/lang.nl.php | Données linguistiques en Néerlandaise.
+/vault/lang/lang.pt.fe.php | Données linguistiques en Portugaise pour l'accès frontal.
+/vault/lang/lang.pt.php | Données linguistiques en Portugaise.
+/vault/lang/lang.ru.fe.php | Données linguistiques en Russe pour l'accès frontal.
+/vault/lang/lang.ru.php | Données linguistiques en Russe.
+/vault/lang/lang.th.fe.php | Données linguistiques en Thai pour l'accès frontal.
+/vault/lang/lang.th.php | Données linguistiques en Thai.
+/vault/lang/lang.ur.fe.php | Données linguistiques en Urdu pour l'accès frontal.
+/vault/lang/lang.ur.php | Données linguistiques en Urdu.
+/vault/lang/lang.vi.fe.php | Données linguistiques en Vietnamienne pour l'accès frontal.
+/vault/lang/lang.vi.php | Données linguistiques en Vietnamienne.
+/vault/lang/lang.zh-tw.fe.php | Données linguistiques en Chinois (traditionnel) pour l'accès frontal.
+/vault/lang/lang.zh-tw.php | Données linguistiques en Chinois (traditionnel).
+/vault/lang/lang.zh.fe.php | Données linguistiques en Chinois (simplifié) pour l'accès frontal.
+/vault/lang/lang.zh.php | Données linguistiques en Chinois (simplifié).
 /vault/quarantine/ | Quarantaine répertoire (contient des fichiers de la quarantaine).
 /vault/quarantine/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/signatures/ | Signatures répertoire (contient des fichiers de signatures).
@@ -333,6 +333,9 @@ Configuration générale pour phpMussel.
 - *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 - *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+
+"truncate"
+- Tronquer les fichiers journaux lorsqu\'ils atteignent une certaine taille? La valeur est la taille maximale en KB qu\'un fichier journal peut croître avant d\'être tronqué. La valeur par défaut de 0 désactive la troncature (les fichiers journaux peuvent croître indéfiniment). Remarque: S\'applique aux fichiers journaux individuels! La taille des fichiers journaux n\'est pas considérée collectivement.
 
 "timeOffset"
 - Si votre temps serveur ne correspond pas à votre temps locale, vous pouvez spécifier un offset ici pour régler l'information en date/temps généré par phpMussel selon vos besoins. Il est généralement recommandé à la place pour ajuster la directive de fuseau horaire dans votre fichier `php.ini`, mais parfois (tels que lorsque l'on travaille avec des fournisseurs d'hébergement partagé limitées) ce n'est pas toujours possible de faire, et donc, cette option est disponible ici. Offset est en minutes.
@@ -699,6 +702,10 @@ Cette information a été mise à jour le 29 Août 2016 et est courant pour tout
 
 ### 10. <a name="SECTION10"></a>QUESTIONS FRÉQUEMMENT POSÉES (FAQ)
 
+#### What is a "signature"?
+
+In the context of phpMussel, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually in the form of some very small, distinct, innocuous segment of something larger and otherwise harmful, like a virus or trojan, or in the form of a file checksum, hash, or other similarly identifying indicator, and usually includes a label, and some other data to help provide additional context that can be used by phpMussel to determine the best way to proceed when it encounters what we're looking for.
+
 #### Qu'est-ce qu'un «faux positif»?
 
 Le terme «faux positif» (*alternativement: «erreur faux positif»; «fausse alarme»*; Anglais: *false positive*; *false positive error*; *false alarm*), décrit très simplement, et dans un contexte généralisé, est utilisé lors de tester pour une condition, de se référer aux résultats de ce test, lorsque les résultats sont positifs (c'est à dire, lorsque la condition est déterminée comme étant «positif», ou «vrai»), mais ils devraient être (ou aurait dû être) négatif (c'est à dire, lorsque la condition, en réalité, est «négatif», ou «faux»). Un «faux positif» pourrait être considérée comme analogue à «crier au loup» (où la condition testée est de savoir s'il y a un loup près du troupeau, la condition est «faux» en ce que il n'y a pas de loup près du troupeau, et la condition est signalé comme «positif» par le berger par voie de crier "loup, loup"), ou analogues à des situations dans des tests médicaux dans lequel un patient est diagnostiqué comme ayant une maladie, alors qu'en réalité, ils ont pas une telle maladie.
@@ -733,4 +740,4 @@ Non. PHP 5.4.0 a atteint officiellement l'EoL ("End of Life", ou fin de vie) en 
 ---
 
 
-Dernière Mise à Jour: 14 Avril 2017 (2017.04.14).
+Dernière Mise à Jour: 22 Avril 2017 (2017.04.22).

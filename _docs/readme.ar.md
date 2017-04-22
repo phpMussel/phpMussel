@@ -347,6 +347,11 @@
  scan_kills='scan_kills.{yyyy}-{mm}-{dd}-{hh}.txt'
 ```
 
+<div dir="rtl">"truncate"<br /></div>
+<div dir="rtl"><ul>
+ <li>اقتطاع ملفات السجل عندما تصل إلى حجم معين؟ القيمة هي الحجم الأقصى في كيلوبايت الذي قد ينمو ملفات السجل إلى قبل اقتطاعه. القيمة الافتراضية 0 تعطيل اقتطاع (ملفات السجل يمكن أن تنمو إلى أجل غير مسمى). ملاحظة: ينطبق على ملفات السجل الفردية! ولا يعتبر حجمها جماعيا.</li>
+</ul></div>
+
 <div dir="rtl">"timeOffset"<br /></div>
 <div dir="rtl"><ul>
  <li>إذا بالتوقيت المحلي الخاص بك ليست هي نفسها كما الخادم الخاص بك، يمكنك تحديد إزاحة هنا (لضبط التاريخ / المعلومات في الوقت صنعت بواسطة phpMussel). الإزاحة المستندة دقيقة.<br /></li>
@@ -841,6 +846,10 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 
 ### <div dir="rtl">١٠. <a name="SECTION10"></a>أسئلة وأجوبة (FAQ)</div>
 
+#### What is a "signature"?
+
+In the context of phpMussel, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually in the form of some very small, distinct, innocuous segment of something larger and otherwise harmful, like a virus or trojan, or in the form of a file checksum, hash, or other similarly identifying indicator, and usually includes a label, and some other data to help provide additional context that can be used by phpMussel to determine the best way to proceed when it encounters what we're looking for.
+
 #### <div dir="rtl">ما هو "إيجابية خاطئة"؟<br /><br /></div>
 
 <div dir="rtl" style="display:inline;">المصطلح "إيجابية خاطئة" (<em>بدلا من ذلك: "خطأ إيجابية خاطئة"؛ "انذار خاطئة"</em>؛ الإنجليزية: <em>false positive</em>; <em>false positive error</em>; <em>false alarm</em>)، وصف ببساطة، بشكل عام، يستخدم عند اختبار حالة، للإشارة إلى نتائج هذا الاختبار، عندما تكون النتائج إيجابية (أي، تحديد حالة أن يكون "إيجابية"، أو "صحيح")، ولكن من المتوقع أن تكون (أو كان ينبغي أن يكون) سلبي (أي، الحالة، في الواقع، هو "سلبي"، أو "خاطئة"). "إيجابية خاطئة" ويمكن اعتبار التناظرية من "الذئب الباكي" (حيث لحالة يجري اختبارها هو ما إذا كان هناك ذئب بالقرب من القطيع، الحالة هو "خاطئة" في أنه لا يوجد الذئب بالقرب من القطيع، و الحالة يقال بأنها "إيجابية" بواسطة الراعي عن طريق الدعوة "الذئب، الذئب")، أو التناظرية من الفحص الطبي حيث المريض يتم تشخيص المرض، عندما تكون في واقع، ليس لديهم المرض.<br /><br /></div>
@@ -876,4 +885,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 14 أبريل 2017 (2017.04.14).</div>
+<div dir="rtl">آخر تحديث: 22 أبريل 2017 (2017.04.22).</div>
