@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.04.22).
+ * This file: Functions file (last modified: 2017.04.24).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -651,10 +651,10 @@ $phpMussel['Quarantine'] = function ($s, $key, $ip, $id) use (&$phpMussel) {
         "\x20\x7c\n\x5c" . str_repeat("\x3d", 39) . "\x2f\n\n\n" . $h . $o;
     $u = $phpMussel['MemoryUse']($phpMussel['qfuPath']);
     $u = $u['s'] + strlen($o);
-    if ($u > ($phpMussel['Config']['general']['quarantine_max_usage'] * 1024)) {
+    if ($u > $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_usage'])) {
         $u = $phpMussel['MemoryUse'](
             $phpMussel['qfuPath'],
-            $u - ($phpMussel['Config']['general']['quarantine_max_usage']*1024)
+            $u - $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_usage'])
         );
     }
     $xf = fopen($phpMussel['qfuPath'] . $id . '.qfu', 'a');
@@ -1471,9 +1471,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 
     if (
         $phpMussel['Config']['attack_specific']['scannable_threshold'] > 0 &&
-        $str_len > ($phpMussel['Config']['attack_specific']['scannable_threshold'] * 1024)
+        $str_len > $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold'])
     ) {
-        $str_len = $phpMussel['Config']['attack_specific']['scannable_threshold'] * 1024;
+        $str_len = $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold']);
         $str = substr($str, 0, $str_len);
         $str_cut = 1;
     } else {
@@ -1484,7 +1484,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     $decode_or_not = (
         (
             $phpMussel['Config']['attack_specific']['decode_threshold'] > 0 &&
-            $str_len > ($phpMussel['Config']['attack_specific']['decode_threshold'] * 1024)
+            $str_len > $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['decode_threshold'])
         ) ||
         $str_len < 16
     ) ? 0 : 1;
@@ -4273,7 +4273,7 @@ $phpMussel['MetaDataScan'] = function ($ItemRef, $Filename, $Data, $Depth, $lnap
     if (
         $phpMussel['Config']['files']['filesize_archives'] &&
         $phpMussel['Config']['files']['filesize_limit'] > 0 &&
-        $Filesize > ($phpMussel['Config']['files']['filesize_limit'] * 1024)
+        $Filesize > $phpMussel['ReadBytes']($phpMussel['Config']['files']['filesize_limit'])
     ) {
         if (!$phpMussel['Config']['files']['filesize_response']) {
             $x .=
@@ -4644,7 +4644,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
 
     $fS = filesize($f);
     if ($phpMussel['Config']['files']['filesize_limit'] > 0) {
-        if ($fS > ($phpMussel['Config']['files']['filesize_limit'] * 1024)) {
+        if ($fS > $phpMussel['ReadBytes']($phpMussel['Config']['files']['filesize_limit'])) {
             if (!$phpMussel['Config']['files']['filesize_response']) {
                 return (!$n) ? 1 :
                     $lnap . $phpMussel['lang']['scan_checking'] . ' \'' .
@@ -4736,12 +4736,9 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             $phpMussel['lang']['_fullstop_final'] . "\n";
     }
     $in = $phpMussel['ReadFile']($f, (
-            $phpMussel['Config']['attack_specific']['scannable_threshold'] > 0 &&
-            $fS > ($phpMussel['Config']['attack_specific']['scannable_threshold'] * 1024)
-        ) ?
-            $phpMussel['Config']['attack_specific']['scannable_threshold'] * 1024 :
-            $fS,
-        true);
+        $phpMussel['Config']['attack_specific']['scannable_threshold'] > 0 &&
+        $fS > $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold'])
+    ) ? $phpMussel['ReadBytes']($phpMussel['Config']['attack_specific']['scannable_threshold']) : $fS, true);
     $fdCRC = hash('crc32b', $in);
 
     /** Check for non-image items. */
@@ -4772,7 +4769,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             if (
                 $phpMussel['Config']['general']['quarantine_key'] &&
                 !$phpMussel['Config']['general']['honeypot_mode'] &&
-                (strlen($in) < ($phpMussel['Config']['general']['quarantine_max_filesize'] * 1024))
+                strlen($in) < $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_filesize'])
             ) {
                 $qfu =
                     $phpMussel['Time'] .
@@ -5353,7 +5350,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
         if (
             $phpMussel['Config']['general']['quarantine_key'] &&
             !$phpMussel['Config']['general']['honeypot_mode'] &&
-            (strlen($in) < ($phpMussel['Config']['general']['quarantine_max_filesize'] * 1024))
+            strlen($in) < $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_filesize'])
         ) {
             $qfu =
                 $phpMussel['Time'] .
@@ -5540,8 +5537,8 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
         }
         $WriteMode = (
             !file_exists($phpMussel['Vault'] . $Handle['File']) || (
-                $phpMussel['Config']['general']['truncate'] &&
-                filesize($phpMussel['Vault'] . $Handle['File']) >= ($phpMussel['Config']['general']['truncate'] * 1024)
+                $phpMussel['Config']['general']['truncate'] > 0 &&
+                filesize($phpMussel['Vault'] . $Handle['File']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
             )
         ) ? 'w' : 'a';
         $Handle['Stream'] = fopen($phpMussel['Vault'] . $Handle['File'], $WriteMode);
@@ -5590,8 +5587,8 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
             );
             $WriteMode = (
                 !file_exists($phpMussel['Vault'] . $Handle['File']) || (
-                    $phpMussel['Config']['general']['truncate'] &&
-                    filesize($phpMussel['Vault'] . $Handle['File']) >= ($phpMussel['Config']['general']['truncate'] * 1024)
+                    $phpMussel['Config']['general']['truncate'] > 0 &&
+                    filesize($phpMussel['Vault'] . $Handle['File']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
                 )
             ) ? 'w' : 'a';
             $Handle['Stream'] = fopen($phpMussel['Vault'] . $Handle['File'], $WriteMode);
@@ -5792,8 +5789,8 @@ $phpMussel['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$phpMu
  * Fix incorrect typecasting for some for some variables that sometimes default
  * to strings instead of booleans or integers.
  */
-$phpMussel['AutoType'] = function (&$Var, $Type = '') {
-    if ($Type === 'string') {
+$phpMussel['AutoType'] = function (&$Var, $Type = '') use (&$phpMussel) {
+    if ($Type === 'string' || $Type === 'timezone') {
         $Var = (string)$Var;
     } elseif ($Type === 'int' || $Type === 'integer') {
         $Var = (int)$Var;
@@ -5801,6 +5798,8 @@ $phpMussel['AutoType'] = function (&$Var, $Type = '') {
         $Var = (real)$Var;
     } elseif ($Type === 'bool' || $Type === 'boolean') {
         $Var = (strtolower($Var) !== 'false' && $Var);
+    } elseif ($Type === 'kb') {
+        $Var = $phpMussel['ReadBytes']($Var, 1);
     } else {
         $LVar = strtolower($Var);
         if ($LVar === 'true') {
@@ -6381,4 +6380,27 @@ $phpMussel['UnpackSafe'] = function ($Format, $Data) {
 /** A simple safety wrapper for hex2bin. */
 $phpMussel['HexSafe'] = function ($Data) use (&$phpMussel) {
     return ($Data && !preg_match('/[^a-f0-9]/i', $Data) && !(strlen($Data) % 2)) ? $phpMussel['Function']('HEX', $Data) : '';
+};
+
+/**
+ * Read byte value configuration directives as byte values.
+ *
+ * @param string $In Input.
+ * @param int $Mode Operating mode. 0 for true byte values, 1 for validating.
+ *      Default is 0.
+ * @return string|int Output (depends on operating mode).
+ */
+$phpMussel['ReadBytes'] = function ($In, $Mode = 0) {
+    if (preg_match('/[KMGT][oB]$/i', $In)) {
+        $Unit = substr($In, -2, 1);
+    } elseif (preg_match('/[KMGToB]$/i', $In)) {
+        $Unit = substr($In, -1);
+    }
+    $Unit = isset($Unit) ? strtoupper($Unit) : 'K';
+    $In = (real)$In;
+    if ($Mode === 1) {
+        return $Unit === 'B' || $Unit === 'o' ? $In . 'B' : $In . $Unit . 'B';
+    }
+    $Multiply = array('K' => 1024, 'M' => 1048576, 'G' => 1073741824, 'T' => 1099511627776);
+    return (int)floor($In * (isset($Multiply[$Unit]) ? $Multiply[$Unit] : 1));
 };

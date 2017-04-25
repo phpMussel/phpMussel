@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.04.22).
+ * This file: Korean language data for the front-end (last modified: 2017.04.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -30,8 +30,8 @@ $phpMussel['lang']['config_attack_specific_chameleon_to_doc'] = '헤더가 잘�
 $phpMussel['lang']['config_attack_specific_chameleon_to_img'] = '헤더가 잘못된 이미지 파일을 찾습니다 (BMP, DIB, PNG, GIF, JPEG, JPG, XCF의 PSD, PDD, WEBP 지원). <code>false</code> = 해제; <code>true</code> = 온.';
 $phpMussel['lang']['config_attack_specific_chameleon_to_pdf'] = '헤더가 잘못 PDF 파일을 찾습니다. <code>false</code> = 해제; <code>true</code> = 온.';
 $phpMussel['lang']['config_attack_specific_corrupted_exe'] = '손상된 파일과 오류 분석. <code>false</code> = 무시; <code>true</code> = 차단 (Default / 기본 설정). 손상의 가능성이있는 PE 파일을 차단 검출 여부? 관한 것입니다. PE 파일의 일부가 손상되어 제대로 분석 할 수없는 것은 드물지 않고, 바이러스 감염을 보는 바로미터가됩니다. PE 파일의 바이러스를 감지하는 안티 바이러스 프로그램은 PE 파일 분석을 실시 합니다만, 바이러스를 만드는 사람이 바이러스가 검출되지 않도록 그것을 피하려고 할 것이기 때문입니다.';
-$phpMussel['lang']['config_attack_specific_decode_threshold'] = '디코드 명령이 감지 될 원시 데이터의 길이 제한 또는 임계 값 (스캐닝 중에 눈에 띄는 문제가있는 경우에는 필요에 따라 설정). 값은 파일 크기를 나타내는 정수 값으로 단위는 KB. 기본값 = 512 (512KB) 제로 또는 값 없음 (null)은 임계 값을 비활성화합니다 (파일 크기의 제한을 제거합니다).';
-$phpMussel['lang']['config_attack_specific_scannable_threshold'] = 'phpMussel 읽기 스캔 할 수있다 원시 데이터의 길이 제한 또는 임계 값 (스캐닝 중에 눈에 띄는 문제가있는 경우에는 필요에 따라 설정). 값은 파일 크기를 나타내는 정수 값으로 단위는 KB. 기본값 = 32768 (32MB). 제로 또는 값 없음 (null)은 임계 값을 비활성화합니다. 값은 서버 나 웹 사이트에 업로드되는 파일의 평균 파일 크기보다 크고 filesize_limit 지시어보다 작게 설정해야합니다. 또한 <code>php.ini</code> 설정에 따라 PHP에 할당 된 메모리의 대략 5 분의 1을 초과해서는 없습니다. 이 지시문은 phpMussel가 메모리를 너무 많이 사용하지 않도록하기위한 것입니다. (일정 크기 이상의 파일은 스캔하지 못할 수도 있습니다).';
+$phpMussel['lang']['config_attack_specific_decode_threshold'] = '디코드 명령이 감지 될 원시 데이터의 길이 제한 (스캐닝 중에 눈에 띄는 문제가있는 경우에는 필요에 따라 설정). 기본값 = 512KB. 제로 또는 값 없음 (null)은 임계 값을 비활성화합니다 (파일 크기의 제한을 제거합니다).';
+$phpMussel['lang']['config_attack_specific_scannable_threshold'] = 'phpMussel이 읽고 스캔 할 수있는 원시 데이터의 길이에 대한 임계 값 (스캐닝 중에 눈에 띄는 문제가있는 경우에는 필요에 따라 설정). 기본값 = 32MB. 제로 또는 값 없음 (null)은 임계 값을 비활성화합니다. 값은 서버 나 웹 사이트에 업로드되는 파일의 평균 파일 크기보다 크고 filesize_limit 지시어보다 작게 설정해야합니다. 또한 "php.ini" 설정에 따라 PHP에 할당 된 메모리의 대략 5 분의 1을 초과해서는 없습니다. 이 지시문은 phpMussel가 메모리를 너무 많이 사용하지 않도록하기위한 것입니다. (일정 크기 이상의 파일은 스캔하지 못할 수도 있습니다).';
 $phpMussel['lang']['config_compatibility_ignore_upload_errors'] = '시스템에서 phpMussel의 기능에 수정이 필요한 경우가 아니면이 지시문은 일반적으로 사용할 수 없습니다. 비활성화하면 <code>$_FILES</code> array()요소를 감지했을 때, 그 요소가 나타내는 파일의 스캔이 시작됩니다, 요소가 비어 있거나없는 경우 phpMussel는 오류 메시지를 반환합니다. 이것은 본래 phpMussel가 있어야 할 모습입니다. 그러나 CMS에서는 $_FILES 하늘 요소는 일반적으로 발생하는 것이며, 정상적인 phpMussel의 행동이 정상적인 CMS의 거동을 저해 할 우려가 있습니다. 이러한 경우에는 본 옵션을 사용하여 phpMussel 빈 요소를 검사하고 오류 메시지를 반환을 피하고 요청한 페이지로 원활하게 진행할 수 있도록합니다. <code>false</code> = OFF (해제입니다); <code>true</code> = ON (온입니다).';
 $phpMussel['lang']['config_compatibility_only_allow_images'] = '시스템 또는 CMS에 이미지 파일의 업로드 만 허용한다면이 지시어가 동작해야하며, 그렇지 않으면 무효로합니다. 사용하면 이미지와 알 수없는 파일은 검사하지 않고 차단하기 때문에 프로세스 시간 단축 및 메모리 절약을 기대할 수 있습니다. <code>false</code> = OFF (해제입니다); <code>true</code> = ON (온입니다).';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = '암호화 된 아카이브를 감지하고 차단 여부? phpMussel은 암호화 된 아카이브를 검색 할 수 없기 때문에 아카이브의 암호화를 통해 phpMussel 안티 바이러스 스캐너 등을 かいくぐろ하려는 공격자가 있을지도 모릅니다. 암호화 된 아카이브를 차단함으로써 이러한 위험을 방지 할 수 있습니다. <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정).';
@@ -58,15 +58,16 @@ $phpMussel['lang']['config_general_ipaddr'] = '연결 요청의 IP 주소를 어
 $phpMussel['lang']['config_general_lang'] = 'phpMussel의 기본 언어를 설정합니다.';
 $phpMussel['lang']['config_general_max_login_attempts'] = '로그인 시도 횟수 (프론트 엔드). Default / 기본 설정 = 5.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel은 필요하다면, phpMussel의 보루 토에서 독립적으로 플래그 첨부 파일의 업로드를 검역 할 수 있습니다. 일반적인 phpMussel 사용자는 웹 사이트 및 호스팅 환경 보호가 있으면 충분하다고 생각하고 플래그가있는 같은 것이 추가 분석을 가하려까지 요청이없는 것이므로 무효로 될 수 있습니다. 그렇지만 상세하게 분석하여 악성 코드에 대비하려는 사용자는 사용하면 좋습니다. 플래그 첨부 파일 업로드 격리 가양 디버깅에 도움이 될 수 있습니다. 격리 기능을 해제하려면<code>quarantine_key</code> 지시문을 비워 두거나 비어 있지 않은 경우 지시문의 내용을 삭제하십시오. 활성화하려면 데이레쿠티부에 어떤 값을 넣어주세요. <code>quarantine_key</code> 격리 기능의 중요한 보안 요소이며, 검역 기능에 저장된 데이터의 집행을 각종 공격으로부터 지키고 있습니다. <code>quarantine_key</code>는 암호처럼 생각하세요. 긴 것이 더 안전 할 수 있습니다. 가장 효과적인 사용법은<code>delete_on_sight</code>과 함께합니다.';
-$phpMussel['lang']['config_general_quarantine_max_filesize'] = '격리 된 파일 크기 제한. 이 값보다 큰 파일은 격리되지 않습니다. 쿠오란팅의 용량을 초과 비정상적으로 큰 파일 크기 공격에서 메모리가 낭비되는 것을 방지하는 의미에서 중요합니다. 단위는 KB 기본 설정은 2MB (Default / 기본 설정 =2048 =2048KB =2MB)입니다.';
-$phpMussel['lang']['config_general_quarantine_max_usage'] = '검역을 위해 사용할 최대 메모리 량. 전체 메모리 양이 사용되면이 범위에 맞게 오래된 파일이 삭제 대상이됩니다. 쿠오란팅의 용량을 초과 비정상적으로 큰 파일 크기 공격에서 메모리가 낭비되는 것을 방지하는 의미에서 중요합니다. 단위는 KB 기본 설정은 64MB (Default / 기본 설정 = 65536 = 65536KB = 64MB)입니다.';
+$phpMussel['lang']['config_general_quarantine_max_filesize'] = '격리 된 파일 크기 제한. 이 값보다 큰 파일은 격리되지 않습니다. 쿠오란팅의 용량을 초과 비정상적으로 큰 파일 크기 공격에서 메모리가 낭비되는 것을 방지하는 의미에서 중요합니다. 기본값은 2MB입니다.';
+$phpMussel['lang']['config_general_quarantine_max_usage'] = '검역을 위해 사용할 최대 메모리 량. 전체 메모리 양이 사용되면이 범위에 맞게 오래된 파일이 삭제 대상이됩니다. 쿠오란팅의 용량을 초과 비정상적으로 큰 파일 크기 공격에서 메모리가 낭비되는 것을 방지하는 의미에서 중요합니다. 기본 설정은 64MB입니다.';
 $phpMussel['lang']['config_general_scan_cache_expiry'] = 'phpMussel는 스캐닝 결과를 얼마 동안 캐시해야합니까? 초이며, 기본값은 21,600 초 (6 시간)로되어 있습니다. 0으로 설정하면 캐시 비활성화됩니다.';
 $phpMussel['lang']['config_general_scan_kills'] = '차단되거나 삭제 된 업로드의 모든 것을 기록하는 파일의 파일 이름. 파일 이름 지정하거나, 해제하려면 비워하십시오.';
 $phpMussel['lang']['config_general_scan_log'] = '전체 스캔 결과를 기록하는 파일의 파일 이름. 파일 이름 지정하거나, 해제하려면 비워하십시오.';
 $phpMussel['lang']['config_general_scan_log_serialized'] = '전체 스캔 결과를 기록하는 파일의 파일 이름 (serialization 형식을 이용). 파일 이름 지정하거나, 해제하려면 비워하십시오.';
-$phpMussel['lang']['config_general_timeFormat'] = 'phpMussel에서 사용되는 날짜 형식. 아래 목록에서 옵션을 선택하십시오. 추가 옵션이 요청에 따라 추가 될 수 있습니다.';
-$phpMussel['lang']['config_general_timeOffset'] = '귀하의 서버 시간은 로컬 시간과 일치하지 않는 경우, 당신의 요구에 따라 시간을 조정하기 위해, 당신은 여기에 오프셋을 지정할 수 있습니다. 하지만 그 대신에 일반적으로 시간대 지시문 (당신의<code>php.ini</code> 파일)을 조정 る 것이 좋습니다,하지만 때때로 (같은 제한 공유 호스팅 제공 업체에서 작업 할 때) 이것은 무엇을하는 것이 항상 가능하지는 않습니다 따라서이 옵션은 여기에서 볼 수 있습니다. 오프셋 분이며 있습니다.';
-$phpMussel['lang']['config_general_truncate'] = '로그 파일이 특정 크기에 도달하면 잘 있습니까? 값은 로그 파일이 잘 리기 전에 커질 가능성이있는 KB 단위의 최대 크기입니다. 기본값 "0"은 절단을 해제합니다 (로그 파일은 무한정 확장 할 수 있습니다). 참고: 개별 로그 파일에 적용됩니다! 로그 파일의 크기는 일괄 적으로 고려되지 않습니다.';
+$phpMussel['lang']['config_general_timeFormat'] = 'phpMussel에서 사용되는 날짜 형식. 추가 옵션이 요청에 따라 추가 될 수 있습니다.';
+$phpMussel['lang']['config_general_timeOffset'] = '시간대 오프셋 (분).';
+$phpMussel['lang']['config_general_timezone'] = '귀하의 시간대.';
+$phpMussel['lang']['config_general_truncate'] = '로그 파일이 특정 크기에 도달하면 잘 있습니까? 값은 로그 파일이 잘 리기 전에 커질 가능성이있는 B/KB/MB/GB/TB 단위의 최대 크기입니다. 기본값 "0KB"은 절단을 해제합니다 (로그 파일은 무한정 확장 할 수 있습니다). 참고: 개별 로그 파일에 적용됩니다! 로그 파일의 크기는 일괄 적으로 고려되지 않습니다.';
 $phpMussel['lang']['config_heuristic_threshold'] = 'phpMussel이 파일은 의심 위험성이 높다고 판단하는 서명이 있습니다. 임계 값은 업로드 된 파일의 위험의 최대 값이며이를 초과하면 악성 코드로 판단됩니다. 여기에서 위험의 정의는 의심과 특정되었지만 수입니다. 기본적으로 3으로 설정되어 있습니다. 이보다 낮은 오진의 가능성이 증가하고, 너무 크면 오류 검출은 감소하지만 위험성이있는 파일이 검색되지 않을 수 증가하게됩니다. 특히 문제가 없으면 기본 설정을 유지하는 것이 좋습니다.';
 $phpMussel['lang']['config_signatures_Active'] = '쉼표로 구분 된 활성 시그니처 파일의 목록입니다.';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMussel 애드웨어 탐지를 위해 서명을 분석해야하는지 여부? <code>false</code> = 아니오; <code>true</code> = 예 (Default / 기본 설정).';
@@ -120,6 +121,7 @@ $phpMussel['lang']['field_size_KB'] = 'KB';
 $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = '상태';
+$phpMussel['lang']['field_system_timezone'] = '시스템 기본 시간대를 사용하십시오.';
 $phpMussel['lang']['field_uninstall'] = '제거';
 $phpMussel['lang']['field_update'] = '업데이트';
 $phpMussel['lang']['field_update_all'] = '모두 업데이트';
@@ -144,6 +146,13 @@ $phpMussel['lang']['logs_logfile_doesnt_exist'] = '선택한 로그는 존재하
 $phpMussel['lang']['logs_no_logfiles_available'] = '아니 로그를 사용할 수 있습니다.';
 $phpMussel['lang']['logs_no_logfile_selected'] = '로그가 선택되어 있지 않습니다.';
 $phpMussel['lang']['max_login_attempts_exceeded'] = '로그인 시도 횟수를 초과했습니다; 액세스 거부.';
+$phpMussel['lang']['previewer_days'] = '일';
+$phpMussel['lang']['previewer_hours'] = '시간';
+$phpMussel['lang']['previewer_minutes'] = '의사록';
+$phpMussel['lang']['previewer_months'] = '개월';
+$phpMussel['lang']['previewer_seconds'] = '초';
+$phpMussel['lang']['previewer_weeks'] = '주';
+$phpMussel['lang']['previewer_years'] = '연령';
 $phpMussel['lang']['response_accounts_already_exists'] = '계정이 이미 존재합니다!';
 $phpMussel['lang']['response_accounts_created'] = '계정 만들기에 성공했습니다!';
 $phpMussel['lang']['response_accounts_deleted'] = '계정 삭제가 성공했습니다!';

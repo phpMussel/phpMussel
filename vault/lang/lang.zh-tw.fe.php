@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.04.22).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.04.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -30,8 +30,8 @@ $phpMussel['lang']['config_attack_specific_chameleon_to_doc'] = '尋找辦公文
 $phpMussel['lang']['config_attack_specific_chameleon_to_img'] = '尋找圖像誰的頭是不正確（已支持：BMP，DIB，PNG，GIF，JPEG，JPG，XCF，PSD，PDD，WEBP）。 False = 是關閉； True = 是激活。';
 $phpMussel['lang']['config_attack_specific_chameleon_to_pdf'] = '尋找PDF文件誰的頭是不正確。 False = 是關閉； True = 是激活。';
 $phpMussel['lang']['config_attack_specific_corrupted_exe'] = '損壞文件和處理錯誤。 False = 忽略； True = 受阻【默認】。 檢測和受阻潛在的損壞移植可執行｢PE｣文件嗎？時常（但不始終），當某些零件的一個移植可執行｢PE｣文件是損壞或不能被正確處理，它可以建議建議的一個病毒感染。過程使用通過最殺毒程序以檢測病毒在PE文件需要處理那些文件在某些方式，哪裡，如果程序員的一個病毒是意識的，將特別嘗試防止，以允許他們的病毒留不檢測。';
-$phpMussel['lang']['config_attack_specific_decode_threshold'] = '可選限或門檻的長度的原始數據在其中解碼命令應該被檢測（如果有任何引人注目性能問題當掃描）。值是一個整數代表文件大小在KB。 默認 = 512 （512KB）。 零或空值將關閉門檻（去除任何這樣的限基於文件大小）。';
-$phpMussel['lang']['config_attack_specific_scannable_threshold'] = '可選限或門檻為原始數據長度phpMussel是允許為閱讀和掃描（如果有任何引人注目性能問題當掃描）。值是一個整數代表文件大小在KB。 默認 = 32768 （32MB）。 零或空值將關閉門檻。按說，這個數值應不會少於平均文件大小的文件上傳您想和期待收到您的服務器或網站，應不會多於<code>filesize_limit</code>指令，和應不會多於大致五分之一的總允許內存分配獲授PHP通過<code>php.ini</code>配置文件。這個指令存在為嘗試防止phpMussel從用的太多內存（這個將防止它從能夠順利掃描文件以上的一個特別文件大小）。';
+$phpMussel['lang']['config_attack_specific_decode_threshold'] = '在原始數據中解碼命令的長度限制（如果有任何引人注目性能問題當掃描）。 默認 = 512KB。 零或空值將關閉門檻（去除任何這樣的限基於文件大小）。';
+$phpMussel['lang']['config_attack_specific_scannable_threshold'] = '原始數據讀取和掃描的最大長度（如果有任何引人注目性能問題當掃描）。 默認 = 32MB。 零或空值將關閉門檻。按說，這個數值應不會少於平均文件大小的文件上傳您想和期待收到您的服務器或網站，應不會多於<code>filesize_limit</code>指令，和應不會多於大致五分之一的總允許內存分配獲授PHP通過"php.ini"配置文件。 這個指令存在為嘗試防止phpMussel從用的太多內存（這個將防止它從能夠順利掃描文件以上的一個特別文件大小）。';
 $phpMussel['lang']['config_compatibility_ignore_upload_errors'] = '這個指令按說應會關閉除非它是需要為對功能的phpMussel在您的具體系統。按說，當是關閉，當phpMussel檢測存在元素在<code>$_FILES</code>數組，它將嘗試引發一個掃描的文件代表通過那些元素，和，如果他們是空或空白，phpMussel將回報一個錯誤信息。這個是正確行為為phpMussel。然而，為某些CMS，空元素在<code>$_FILES</code>可以發生因之的自然的行為的那些CMS，或錯誤可能會報告當沒有任何，在這種情況，正常行為為phpMussel將會使乾擾為正常行為的那些CMS。如果這樣的一個情況發生為您，激活這個指令將指示phpMussel不嘗試引發掃描為這樣的空元素，忽略他們當發現和不回報任何關聯錯誤信息，從而允許延續的頁面請求。 False = 不忽略； True = 忽略。';
 $phpMussel['lang']['config_compatibility_only_allow_images'] = '如果您只期待或只意味到允許圖像被上傳在您的系統或CMS，和如果您絕對不需要任何文件以外圖像被上傳在您的系統或CMS，這個指令應會激活，但其他應會關閉。如果這個指令是激活，它將指示phpMussel受阻而不例外任何上傳確定為非圖像文件，而不掃描他們。這個可能減少處理時間和內存使用為非圖像文件上傳嘗試。 False = 還允許其他文件； True = 只允許圖像文件。';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = '檢測和受阻加密的存檔嗎？因為phpMussel是不能夠掃描加密的存檔內容，它是可能存檔加密可能的可以使用通過一個攻擊者作為一種手段嘗試繞過phpMussel，殺毒掃描儀和其他這樣的保護。指示phpMussel受阻任何存檔它發現被加密可能的可以幫助減少任何風險有關聯這些可能性。 False = 不受阻； True = 受阻【默認】。';
@@ -58,15 +58,16 @@ $phpMussel['lang']['config_general_ipaddr'] = '在哪裡可以找到連接請求
 $phpMussel['lang']['config_general_lang'] = '指定標準phpMussel語言。';
 $phpMussel['lang']['config_general_max_login_attempts'] = '最大登錄嘗試次數（前端）。 標準 = 5。';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel可以檢疫壞文件上傳在隔離在phpMussel的安全/保險庫｢Vault｣，如果這個是某物您想。 普通用戶的phpMussel簡單地想保護他們的網站或宿主環境無任何興趣在深深分析任何嘗試文件上傳應該離開這個功能關閉，但任何用戶有興趣在更深分析的嘗試文件上傳為目的惡意軟件研究或為類似這樣事情應該激活這個功能。 檢疫的嘗試文件上傳可以有時還助攻在調試假陽性，如果這個是某物經常發生為您。 以關閉檢疫功能，簡單地離開<code>quarantine_key</code>指令空白，或抹去內容的這個指令如果它不已空白。以激活隔離功能，輸入一些值在這個指令。 <code>quarantine_key</code>是一個重要安全功能的隔離功能需要以預防檢疫功能從成為利用通過潛在攻擊者和以預防任何潛在執行的數據存儲在檢疫。 <code>quarantine_key</code>應該被處理在同樣方法作為您的密碼：更長是更好，和緊緊保護它。為獲得最佳效果，在結合使用<code>delete_on_sight</code>。';
-$phpMussel['lang']['config_general_quarantine_max_filesize'] = '最大允許文件大小為文件在檢疫。 文件大於這個指定數值將不成為檢疫。 這個指令是重要為使它更難為任何潛在攻擊者洪水您的檢疫用非通緝數據潛在的造成過度數據用法在您的虛擬主機服務。 數值是在KB。 標準 =2048 =2048KB =2MB。';
-$phpMussel['lang']['config_general_quarantine_max_usage'] = '最大內存使用允許為檢疫。 如果總內存已用通過隔離到達這個數值，最老檢疫文件將會刪除直到總內存已用不再到達這個數值。 這個指令是重要為使它更難為任何潛在攻擊者洪水您的檢疫用非通緝數據潛在的造成過度數據用法在您的虛擬主機服務。 數值是在KB。 標準 =65536 =65536KB =64MB。';
+$phpMussel['lang']['config_general_quarantine_max_filesize'] = '最大允許文件大小為文件在檢疫。 文件大於這個指定數值將不成為檢疫。 這個指令是重要為使它更難為任何潛在攻擊者洪水您的檢疫用非通緝數據潛在的造成過度數據用法在您的虛擬主機服務。 標準 = 2MB。';
+$phpMussel['lang']['config_general_quarantine_max_usage'] = '最大內存使用允許為檢疫。 如果總內存已用通過隔離到達這個數值，最老檢疫文件將會刪除直到總內存已用不再到達這個數值。 這個指令是重要為使它更難為任何潛在攻擊者洪水您的檢疫用非通緝數據潛在的造成過度數據用法在您的虛擬主機服務。 數值是在KB。 標準 = 64MB。';
 $phpMussel['lang']['config_general_scan_cache_expiry'] = '多長時間應該phpMussel維持掃描結果？ 數值是秒數為維持掃描結果。 標準是21600秒（6小時）； 一個<code>0</code>數值將停止維持掃描結果。';
 $phpMussel['lang']['config_general_scan_kills'] = '文件為記錄在所有受阻或已殺上傳。指定一個文件名，或留空以關閉。';
 $phpMussel['lang']['config_general_scan_log'] = '文件為記錄在所有掃描結果。指定一個文件名，或留空以關閉。';
 $phpMussel['lang']['config_general_scan_log_serialized'] = '文件為記錄在所有掃描結果（它採用序列化格式）。指定一個文件名，或留空以關閉。';
-$phpMussel['lang']['config_general_timeFormat'] = 'phpMussel使用的日期符號格式。從下面的列表中選擇一個選項。可根據要求增加附加選項。';
-$phpMussel['lang']['config_general_timeOffset'] = '如果您的服務器時間不符合您的本地時間，您可以在這裡指定的偏移調整日期/時間信息該產生通過phpMussel根據您的需要。 它一般建議，而不是，調整時區指令的文件<code>php.ini</code>，但是有時（例如，當利用有限的共享主機提供商）這並不總是可能做到，所以，此選項在這裡是提供。 偏移量是在分鐘。';
-$phpMussel['lang']['config_general_truncate'] = '截斷日誌文件當他們達到一定的大小嗎？ 值是在KB，是日誌文件允許的最大大小直到它被截斷。 默認值為“0”將禁用截斷（日誌文件可以無限成長）。 注意：適用於單個日誌文件！日誌文件大小不被算集體的。';
+$phpMussel['lang']['config_general_timeFormat'] = 'phpMussel使用的日期符號格式。可根據要求增加附加選項。';
+$phpMussel['lang']['config_general_timeOffset'] = '時區偏移量（分鐘）。';
+$phpMussel['lang']['config_general_timezone'] = '您的時區。';
+$phpMussel['lang']['config_general_truncate'] = '截斷日誌文件當他們達到一定的大小嗎？ 值是在B/KB/MB/GB/TB，是日誌文件允許的最大大小直到它被截斷。 默認值為“0KB”將禁用截斷（日誌文件可以無限成長）。 注意：適用於單個日誌文件！日誌文件大小不被算集體的。';
 $phpMussel['lang']['config_heuristic_threshold'] = '有某些簽名的phpMussel意味為確定可疑和可能惡意文件零件被上傳有不在他們自己確定那些文件被上傳特別是作為惡意。 這個“threshold”數值告訴phpMussel什麼是最大總重量的可疑和潛在惡意文件零件被上傳允許之前那些文件是被識別作為惡意。 定義的重量在這個上下文是總數值的可疑和可能惡意文件零件確定。 作為默認，這個數值將會設置作為3。一個較低的值通常將結果在一個更高的發生的假陽性但一個更高的發生的惡意文件被確定，而一個更高的數值將通常結果在一個較低的發生的假陽性但一個較低的數值的惡意文件被確定。 它是通常最好忽略這個數值除非您遇到關聯問題。';
 $phpMussel['lang']['config_signatures_Active'] = '活性簽名文件的列表，以逗號分隔。';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMussel應該使用簽名為廣告軟件檢測嗎？ False = 不檢查， True = 檢查【默認】。';
@@ -120,6 +121,7 @@ $phpMussel['lang']['field_size_KB'] = 'KB';
 $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = '狀態';
+$phpMussel['lang']['field_system_timezone'] = '使用系統默認時區。';
 $phpMussel['lang']['field_uninstall'] = '卸載';
 $phpMussel['lang']['field_update'] = '更新';
 $phpMussel['lang']['field_update_all'] = '更新一切';
@@ -144,6 +146,13 @@ $phpMussel['lang']['logs_logfile_doesnt_exist'] = '選擇的日誌不存在！';
 $phpMussel['lang']['logs_no_logfiles_available'] = '沒有日誌可用。';
 $phpMussel['lang']['logs_no_logfile_selected'] = '沒有選擇的日誌。';
 $phpMussel['lang']['max_login_attempts_exceeded'] = '最大登錄嘗試次數已經超過；拒絕訪問。';
+$phpMussel['lang']['previewer_days'] = '天';
+$phpMussel['lang']['previewer_hours'] = '小時';
+$phpMussel['lang']['previewer_minutes'] = '分';
+$phpMussel['lang']['previewer_months'] = '月';
+$phpMussel['lang']['previewer_seconds'] = '秒';
+$phpMussel['lang']['previewer_weeks'] = '週';
+$phpMussel['lang']['previewer_years'] = '年';
 $phpMussel['lang']['response_accounts_already_exists'] = '一個賬戶與那個用戶名已經存在！';
 $phpMussel['lang']['response_accounts_created'] = '帳戶成功創建！';
 $phpMussel['lang']['response_accounts_deleted'] = '帳戶成功刪除！';

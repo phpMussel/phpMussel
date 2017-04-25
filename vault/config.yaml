@@ -13,11 +13,16 @@ Config Defaults:
    type: string
    default: "scan_kills.txt"
   truncate:
-   type: int
-   default: 0
+   type: kb
+   default: "0KB"
+   preview: kb
+  timezone:
+   type: timezone
+   default: "SYSTEM"
   timeOffset:
    type: int
    default: 0
+   preview: minutes
   timeFormat:
    type: string
    default: "{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}"
@@ -134,19 +139,22 @@ Config Defaults:
    type: string
    default: ""
   quarantine_max_filesize:
-   type: real
+   type: kb
    step: any
-   default: 2048
+   default: "2MB"
+   preview: kb
   quarantine_max_usage:
-   type: real
+   type: kb
    step: any
-   default: 65536
+   default: "64MB"
+   preview: kb
   honeypot_mode:
    type: bool
    default: false
   scan_cache_expiry:
    type: int
    default: 21600
+   preview: seconds
   disable_cli:
    type: bool
    default: false
@@ -195,9 +203,10 @@ Config Defaults:
    type: int
    default: 10
   filesize_limit:
-   type: real
+   type: kb
    step: any
-   default: 65536
+   default: "64MB"
+   preview: kb
   filesize_response:
    type: bool
    default: true
@@ -254,13 +263,15 @@ Config Defaults:
    type: bool
    default: true
   decode_threshold:
-   type: real
+   type: kb
    step: any
-   default: 512
+   default: "512KB"
+   preview: kb
   scannable_threshold:
-   type: real
+   type: kb
    step: any
-   default: 32768
+   default: "32MB"
+   preview: kb
  compatibility:
   ignore_upload_errors:
    type: bool
@@ -288,6 +299,7 @@ Config Defaults:
   vt_quota_time:
    type: int
    default: 1
+   preview: minutes
  urlscanner:
   lookup_hphosts:
    type: bool
@@ -304,6 +316,7 @@ Config Defaults:
   cache_time:
    type: int
    default: 3600
+   preview: seconds
  template_data:
   css_url:
    type: string

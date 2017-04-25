@@ -131,6 +131,11 @@ if (!isset($_SERVER[$phpMussel['Config']['general']['ipaddr']])) {
 /** Adjusted present time. */
 $phpMussel['Time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
 
+/** Set timezone. */
+if (!empty($phpMussel['Config']['general']['timezone']) && $phpMussel['Config']['general']['timezone'] !== 'SYSTEM') {
+    date_default_timezone_set($phpMussel['Config']['general']['timezone']);
+}
+
 /** Determine whether operating in CLI-mode. */
 $phpMussel['Mussel_sapi'] = (
     empty($_SERVER['REQUEST_METHOD']) ||

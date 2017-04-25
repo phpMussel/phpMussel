@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.04.22).
+ * This file: Japanese language data for the front-end (last modified: 2017.04.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -30,8 +30,8 @@ $phpMussel['lang']['config_attack_specific_chameleon_to_doc'] = 'ヘッダーが
 $phpMussel['lang']['config_attack_specific_chameleon_to_img'] = 'ヘッダーが正しくない画像ファイルを探します（BMP、DIB、PNG、GIF、JPEG、JPG、XCF、PSD、PDD、WEBPをサポート）。 <code>false</code>（偽） = オフ; <code>true</code>（真） = オン。';
 $phpMussel['lang']['config_attack_specific_chameleon_to_pdf'] = 'ヘッダーが正しくないPDFファイルを探します。 <code>false</code>（偽） = オフ; <code>true</code>（真） = オン。';
 $phpMussel['lang']['config_attack_specific_corrupted_exe'] = '破損ファイルとエラー解析。<code>false</code>（偽） = 無視する； <code>true</code>（真） = ブロックする（Default/デフォルト）。破損の可能性があるPEファイルをブロックし検出するか否か？についてです。PEファイルの一部が破損し、正しく分析できないことは珍しくなく、ウィルス感染をみるバロメーターになります。PEファイル内のウィルスを検出するアンチウィルスプログラムは、PEファイルの解析を行いますが、ウィルスを作る側では、ウィルスが検出されないようそれを避けようとするものだからです。';
-$phpMussel['lang']['config_attack_specific_decode_threshold'] = 'デコード・コマンドが検出されるべき生データの長さの制限あるいはしきい値（スキャニング中に顕著な問題がある場合に必要に応じて設定）。値はファイルサイズを示す整数値で単位はKB。デフォルト＝５１２（５１２KB）。ゼロあるいは値なし（null）はしきい値を無効化します（ファイルサイズによる制限を取り除きます）。';
-$phpMussel['lang']['config_attack_specific_scannable_threshold'] = 'phpMusselが読みスキャンしてよい生データの長さの制限あるいはしきい値（スキャニング中に顕著な問題がある場合に必要に応じて設定）。値はファイルサイズを示す整数値で単位はKb。デフォルト＝32768（32MB）。ゼロあるいは値なし（null）はしきい値を無効化します。値は、サーバーやウェブサイトでアップロードされるファイルの平均ファイルサイズより大きく、filesize_limitディレクティブより小さく設定すべきです。またphp.ini設定によってPHPに割り当てられたメモリーのおおよそ5分の１を超えるべきではありません。このディレクティブはphpMusselがメモリーを使い過ぎないようにするためのものです。（一定のサイズ以上のファイルはスキャンできなくなることもあります）。';
+$phpMussel['lang']['config_attack_specific_decode_threshold'] = 'デコード・コマンドが検出されるべき生データの長さの制限（スキャニング中に顕著な問題がある場合に必要に応じて設定）。 デフォルト ＝ ５１２ＫＢ。 ゼロあるいは値なし（null）はしきい値を無効化します（ファイルサイズによる制限を取り除きます）。';
+$phpMussel['lang']['config_attack_specific_scannable_threshold'] = 'phpMusselが読みスキャンしてよい生データの長さの制限（スキャニング中に顕著な問題がある場合に必要に応じて設定）。 デフォルト ＝ ３２ＭＢ。 ゼロあるいは値なし（null）はしきい値を無効化します。 値は、サーバーやウェブサイトでアップロードされるファイルの平均ファイルサイズより大きく、filesize_limitディレクティブより小さく設定すべきです。 また"php.ini"設定によってPHPに割り当てられたメモリーのおおよそ5分の１を超えるべきではありません。 このディレクティブはphpMusselがメモリーを使い過ぎないようにするためのものです。 （一定のサイズ以上のファイルはスキャンできなくなることもあります）。';
 $phpMussel['lang']['config_compatibility_ignore_upload_errors'] = 'システム上でphpMusselの機能に修正が必要でない限りはこのディレクティブは通常無効です。無効に設定すると、<code>$_FILES</code> array()に要素の存在を検知したとき、その要素が表すファイルのスキャンが開始され、要素が空白か無であればphpMusselはエラーメッセージを返します。これは本来phpMusselがあるべき姿です。しかしCMSにおいては、$_FILESの空要素は普通に発生するものであり、正常なphpMusselの挙動が正常なCMSの挙動を阻害する恐れがあります。このような場合は、本オプションを有効にして、phpMusselが空要素をスキャンしてエラーメッセージを返すのを避け、要求のあったページへスムーズに進むことができるようにします。 <code>false</code>（偽） = OFF （オフ）； <code>true</code>（真） = ON （オン）です。';
 $phpMussel['lang']['config_compatibility_only_allow_images'] = 'システムあるいはCMSに画像ファイルのアップロードのみを許可するのであれば、このディレクティブは有効にすべきであり、そうでなければ無効とします。 有効にすると、画像と特定できないファイルはスキャンすることなしにブロックしますので、プロセス時間の短縮とメモリーの節約が期待できます。 <code>false</code>（偽） = OFF （オフ）； <code>true</code>（真） = ON （オン） です。';
 $phpMussel['lang']['config_files_block_encrypted_archives'] = '暗号化されたアーカイブを検出しブロックするか否か？ phpMusselは暗号化されたアーカイブをスキャンすることはできないので、アーカイブの暗号化によってphpMussel、アンチウィルススキャナー等をかいくぐろうとする攻撃者がいるかもしれません。 暗号化されたアーカイブをブロックすることにより、このようなリスクを回避することができます。 <code>false</code>（偽） = いいえ； <code>true</code>（真） = はい （Default/デフォルト）。';
@@ -58,15 +58,16 @@ $phpMussel['lang']['config_general_ipaddr'] = '接続要求のＩＰアドレス
 $phpMussel['lang']['config_general_lang'] = 'phpMusselのデフォルト言語を設定します。';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'ログイン試行の最大回数（フロントエンド）。 Default（デフォルト設定） = ５。';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMusselは、必要とあれば、phpMusselのヴォルト内で独立してフラグ付ファイルのアップロードを検疫することができます。 一般的なphpMusselのユーザーは、ウェブサイトやホスティング環境の保護ができれば充分と考えており、フラグ付のようなものにさらなる分析を加えようまでの要求はないようですので、無効で構いません。 ですが詳細に分析してマルウェアに備えたいユーザーは有効にすると良いでしょう。 フラグ付ファイルのアップロードの検疫は誤検出のデバッグに役立つことがあります。 検疫機能を無効にするには、<code>quarantine_key</code>ディレクティブを空にしておくか、空でない場合はディレクティブ内のコンテンツを消去して下さい。 有効にするには、デイレクティブに何らかの値を入れて下さい。 <code>quarantine_key</code>は検疫機能における重要なセキュリティー要素であり、検疫機能内に保存されたデータの執行を各種の攻撃から守っています。 <code>quarantine_key</code>はパスワードと同様に考えて下さい。 長い方がより安全と言えます。 最も効果的な使用法は<code>delete_on_sight</code>との併用です。';
-$phpMussel['lang']['config_general_quarantine_max_filesize'] = '検疫されるファイルサイズの上限。 この値より大きなファイルは検疫されません。 クオランティンの容量を超える異常に大きなファイルサイズによる攻撃で、メモリーが無駄に消費されるのを防ぐ意味で重要です。 単位はＫＢ、デフォルト設定は２ＭＢ（Default/デフォルト＝２０４８＝２０４８ＫＢ＝２ＭＢ）です。';
-$phpMussel['lang']['config_general_quarantine_max_usage'] = '検疫のために利用する最大メモリー量。 全メモリー量が使用されると、この範囲内に収まるよう古いファイルが削除の対象となります。 クオランティンの容量を超える異常に大きなファイルサイズによる攻撃で、メモリーが無駄に消費されるのを防ぐ意味で重要です。 単位はＫＢ、デフォルト設定は６４ＭＢ（Default/デフォルト＝６５５３６＝６５５３６ＫＢ＝６４ＭＢ）です。';
+$phpMussel['lang']['config_general_quarantine_max_filesize'] = '検疫されるファイルサイズの上限。 この値より大きなファイルは検疫されません。 クオランティンの容量を超える異常に大きなファイルサイズによる攻撃で、メモリーが無駄に消費されるのを防ぐ意味で重要です。 デフォルト設定は２ＭＢです。';
+$phpMussel['lang']['config_general_quarantine_max_usage'] = '検疫のために利用する最大メモリー量。 全メモリー量が使用されると、この範囲内に収まるよう古いファイルが削除の対象となります。 クオランティンの容量を超える異常に大きなファイルサイズによる攻撃で、メモリーが無駄に消費されるのを防ぐ意味で重要です。 デフォルト設定は６４ＭＢです。';
 $phpMussel['lang']['config_general_scan_cache_expiry'] = 'phpMusselはスキャニング結果をどれくらいの期間キャッシュすべきか？ 秒単位で、デフォルトは２１，６００秒（６時間）となっています。 ０にするとキャッシュ無効になります。';
 $phpMussel['lang']['config_general_scan_kills'] = 'ブロックしたか削除したアップロードの全てを記録するファイのファイル名。 ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
 $phpMussel['lang']['config_general_scan_log'] = '全スキャニング結果を記録するファイルのファイル名。 ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
 $phpMussel['lang']['config_general_scan_log_serialized'] = '全スキャニング結果を記録するファイルのファイル名（シリアル化形式を利用）。 ファイル名指定するか、無効にしたい場合は空白のままにして下さい。';
-$phpMussel['lang']['config_general_timeFormat'] = 'phpMusselで使用される日付表記形式。 下のリストからオプションを選択してください。 追加のオプションがリクエストに応じて追加される場合があります。';
-$phpMussel['lang']['config_general_timeOffset'] = 'お使いのサーバの時刻は、ローカル時刻と一致しない場合、あなたのニーズに応じて、時間を調整するために、あなたはここにオフセットを指定することができます。 しかし、その代わりに、一般的にタイムゾーンディレクティブ（あなたの<code>php.ini</code>ファイルで）を調整ーることをお勧めします、でも時々（といった、限ら共有ホスティングプロバイダでの作業時）これは何をすることは必ずしも可能ではありません、したがって、このオプションは、ここで提供されています。 オフセット分であります。';
-$phpMussel['lang']['config_general_truncate'] = 'ログファイルが一定のサイズに達したら切り詰めますか？ 値は、ログファイルが切り捨てられる前に大きくなる可能性があるＫＢ単位の最大サイズです。 デフォルト値の「0」は切り捨てを無効にします （ログファイルは無期限に拡張できます）。 注：個々のログファイルに適用されます。 ログファイルのサイズは一括して考慮されません。';
+$phpMussel['lang']['config_general_timeFormat'] = 'phpMusselで使用される日付表記形式。 追加のオプションがリクエストに応じて追加される場合があります。';
+$phpMussel['lang']['config_general_timeOffset'] = 'タイムゾーンオフセット（分）。';
+$phpMussel['lang']['config_general_timezone'] = 'あなたのタイムゾーン。';
+$phpMussel['lang']['config_general_truncate'] = 'ログファイルが一定のサイズに達したら切り詰めますか？ 値は、ログファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。 デフォルト値の０ＫＢは切り捨てを無効にします （ログファイルは無期限に拡張できます）。 注：個々のログファイルに適用されます。 ログファイルのサイズは一括して考慮されません。';
 $phpMussel['lang']['config_heuristic_threshold'] = 'phpMusselには、このファイルは疑わしく危険性が高いと判断するシグネチャがあります。 しきい値は、アップロードされているファイルの危険性の最大値であり、これを超えるとマルウェアと判断されます。ここにおける危険性の定義とは、疑わしいと特定されたものの総数です。 デフォルトでは３に設定されています。 これより低いと誤検出の可能性が増え、大きすぎると、誤検出は減るものの危険性のあるファイルが検出されない可能性が増加してしまいます。 特に問題がなければ、デフォルト値のままにしておくことお勧めします。';
 $phpMussel['lang']['config_signatures_Active'] = 'カンマで区切られたアクティブなシグネチャファイルのリスト。';
 $phpMussel['lang']['config_signatures_detect_adware'] = 'phpMusselはアドウェア検出のためにシグネチャを分析すべきか否か？ <code>false</code>（偽） = いいえ； <code>true</code>（真） = はい （Default/デフォルト）。';
@@ -120,6 +121,7 @@ $phpMussel['lang']['field_size_KB'] = 'KB';
 $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = '状態';
+$phpMussel['lang']['field_system_timezone'] = 'システムのデフォルトタイムゾーンを使用します。';
 $phpMussel['lang']['field_uninstall'] = 'アンインストール';
 $phpMussel['lang']['field_update'] = 'アップデート';
 $phpMussel['lang']['field_update_all'] = 'すべてアップデートする';
@@ -144,6 +146,13 @@ $phpMussel['lang']['logs_logfile_doesnt_exist'] = '選択したログは存在�
 $phpMussel['lang']['logs_no_logfiles_available'] = 'いいえログが利用可能。';
 $phpMussel['lang']['logs_no_logfile_selected'] = 'ログが選択されていません。';
 $phpMussel['lang']['max_login_attempts_exceeded'] = 'ログイン試行の最大回数を超えました；アクセス拒否。';
+$phpMussel['lang']['previewer_days'] = '日';
+$phpMussel['lang']['previewer_hours'] = '時';
+$phpMussel['lang']['previewer_minutes'] = '分';
+$phpMussel['lang']['previewer_months'] = '月';
+$phpMussel['lang']['previewer_seconds'] = '秒';
+$phpMussel['lang']['previewer_weeks'] = '週';
+$phpMussel['lang']['previewer_years'] = '年';
 $phpMussel['lang']['response_accounts_already_exists'] = 'そのアカウントはすでに存在します！';
 $phpMussel['lang']['response_accounts_created'] = 'アカウントの作成に成功しました！';
 $phpMussel['lang']['response_accounts_deleted'] = 'アカウントの削除が成功しました！';

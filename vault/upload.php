@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2017.04.22).
+ * This file: Upload handler (last modified: 2017.04.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -184,7 +184,7 @@ if ($phpMussel['upload']['count'] > 0) {
                         );
                     if (
                         $phpMussel['memCache']['handle']['len'] > 0 &&
-                        $phpMussel['memCache']['handle']['len'] < ($phpMussel['Config']['general']['quarantine_max_filesize'] * 1024)
+                        $phpMussel['memCache']['handle']['len'] < $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_filesize'])
                     ) {
                         $phpMussel['Quarantine'](
                             $phpMussel['memCache']['handle']['odata'],
@@ -368,7 +368,7 @@ if ($phpMussel['upload']['count'] > 0) {
                         );
                     if (
                         $phpMussel['memCache']['handle']['len'] > 0 &&
-                        $phpMussel['memCache']['handle']['len'] < ($phpMussel['Config']['general']['quarantine_max_filesize'] * 1024)
+                        $phpMussel['memCache']['handle']['len'] < $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_filesize'])
                     ) {
                         $phpMussel['Quarantine'](
                             $phpMussel['memCache']['handle']['odata'],
@@ -509,8 +509,8 @@ if ($phpMussel['upload']['count'] > 0) {
         );
         $phpMussel['memCache']['handle']['WriteMode'] = (
             !file_exists($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File']) || (
-                $phpMussel['Config']['general']['truncate'] &&
-                filesize($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File']) >= ($phpMussel['Config']['general']['truncate'] * 1024)
+                $phpMussel['Config']['general']['truncate'] > 0 &&
+                filesize($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
             )
         ) ? 'w' : 'a';
         $phpMussel['memCache']['handle']['Stream'] =
@@ -552,8 +552,8 @@ if ($phpMussel['upload']['count'] > 0) {
             );
             $phpMussel['memCache']['handle']['WriteMode'] = (
                 !file_exists($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File']) || (
-                    $phpMussel['Config']['general']['truncate'] &&
-                    filesize($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File']) >= ($phpMussel['Config']['general']['truncate'] * 1024)
+                    $phpMussel['Config']['general']['truncate'] > 0 &&
+                    filesize($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
                 )
             ) ? 'w' : 'a';
             $phpMussel['memCache']['handle']['Data'] =

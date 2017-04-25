@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data (last modified: 2017.04.20).
+ * This file: Thai language data (last modified: 2017.04.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -22,7 +22,7 @@ if (!defined('phpMussel')) {
 $phpMussel['lang']['bad_command'] = 'ฉันไม่เข้าใจคำสั่งนั้นขอโทษ.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'ไม่สามารถเสร็จสิ้นขั้นตอนการสแกน.';
 $phpMussel['lang']['cli_is_not_a'] = ' ไม่ใช่ไฟล์หรือไดเรกทอรี.';
-$phpMussel['lang']['cli_ln2'] = " ขอบคุณที่ใช้ phpMussel, สคริปต์ PHP ออกแบบมาเพื่อตรวจจับโทรจัน, ไวรัส,\n มัลแวร์, และภัยคุกคามอื่นภายในไฟล์ที่อัปโหลดไปยังระบบของคุณ,\n ที่ใดก็ตามที่สคริปต์ถูกตะขอ, ขึ้นอยู่กับลายเซ็นของ ClamAV และคนอื่น.\n\n PHPMUSSEL ลิขสิทธิ์ 2013 และอื่น GNU/GPLv2 โดย Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
+$phpMussel['lang']['cli_ln2'] = " ขอบคุณที่ใช้ phpMussel, สคริปต์ PHP ออกแบบมาเพื่อตรวจจับโทรจัน, ไวรัส,\n มัลแวร์, และภัยคุกคามอื่นภายในไฟล์ที่อัปโหลดไปยังระบบของคุณ,\n ที่ใดก็ตามที่สคริปต์ถูกตะขอ, ขึ้นอยู่กับลายเซ็นของ ClamAV และคนอื่น ๆ.\n\n PHPMUSSEL ลิขสิทธิ์ 2013 และอื่น GNU/GPLv2 โดย Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
 $phpMussel['lang']['cli_ln3'] = " กำลังรัน phpMussel ในโหมด CLI (ส่วนติดต่อบรรทัดคำสั่ง).\n\n เพื่อสแกนไฟล์หรือไดเรกทอรี, ป้อน scan, ตามด้วยชื่อของไฟล์หรือไดเรกทอรีที่\n คุณต้องการให้ phpMussel สแกนและกด Enter; ป้อน c และกด Enter สำหรับรายการคำสั่ง\n ในโหมด CLI; ป้อน q และกด Enter ที่จะเลิก:";
 $phpMussel['lang']['cli_pe1'] = 'ไม่ใช่ไฟล์ PE ที่ถูกต้อง!';
 $phpMussel['lang']['cli_pe2'] = 'ส่วน PE:';
