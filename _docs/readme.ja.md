@@ -342,7 +342,7 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 - 例（１時間を追加します）：`timeOffset=60`
 
 "timeFormat"
-- CIDRAMで使用される日付表記形式。 Default（デフォルト設定） = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
+- phpMusselで使用される日付表記形式。 Default（デフォルト設定） = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
 
 "ipaddr" （アイピーアドレス）
 - 接続要求のＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。 Default（デフォルト設定） = REMOTE_ADDR。 注意： あなたが何をしているのか、分からない限り、これを変更しないでください。

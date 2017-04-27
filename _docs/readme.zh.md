@@ -342,7 +342,7 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 - 例子（添加1小时）： `timeOffset=60`
 
 “timeFormat”
-- CIDRAM使用的日期符号格式。 标准 = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`。
+- phpMussel使用的日期符号格式。 标准 = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`。
 
 “ipaddr”
 - 在哪里可以找到连接请求IP地址？ （可以使用为服务例如Cloudflare和类似）标准是`REMOTE_ADDR`。 警告！不要修改此除非您知道什么您做着！

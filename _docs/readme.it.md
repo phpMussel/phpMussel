@@ -235,42 +235,42 @@ File | Descrizione
 /vault/fe_assets/frontend.css | Foglio di stile CSS per il front-end.
 /vault/fe_assets/frontend.dat | Database per il front-end (contiene informazioni per i utenti e le sessioni; generato solo se il front-end è attivata e utilizzata).
 /vault/fe_assets/frontend.html | Il file modello HTML principale per il front-end.
-/vault/lang/ | Contiene linguistici dati.
+/vault/lang/ | Contiene dati linguistici.
 /vault/lang/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
-/vault/lang/lang.ar.fe.php | Linguistici dati Araba per il front-end.
-/vault/lang/lang.ar.php | Linguistici dati Araba.
-/vault/lang/lang.de.fe.php | Linguistici dati Tedesca per il front-end.
-/vault/lang/lang.de.php | Linguistici dati Tedesca.
-/vault/lang/lang.en.fe.php | Linguistici dati Inglese per il front-end.
-/vault/lang/lang.en.php | Linguistici dati Inglese.
-/vault/lang/lang.es.fe.php | Linguistici dati Spagnola per il front-end.
-/vault/lang/lang.es.php | Linguistici dati Spagnola.
-/vault/lang/lang.fr.fe.php | Linguistici dati Francese per il front-end.
-/vault/lang/lang.fr.php | Linguistici dati Francese.
-/vault/lang/lang.id.fe.php | Linguistici dati Indonesiana per il front-end.
-/vault/lang/lang.id.php | Linguistici dati Indonesiana.
-/vault/lang/lang.it.fe.php | Linguistici dati Italiana per il front-end.
-/vault/lang/lang.it.php | Linguistici dati Italiana.
-/vault/lang/lang.ja.fe.php | Linguistici dati Giapponese per il front-end.
-/vault/lang/lang.ja.php | Linguistici dati Giapponese.
-/vault/lang/lang.ko.fe.php | Linguistici dati Coreana per il front-end.
-/vault/lang/lang.ko.php | Linguistici dati Coreana.
-/vault/lang/lang.nl.fe.php | Linguistici dati Olandese per il front-end.
-/vault/lang/lang.nl.php | Linguistici dati Olandese.
-/vault/lang/lang.pt.fe.php | Linguistici dati Portoghese per il front-end.
-/vault/lang/lang.pt.php | Linguistici dati Portoghese.
-/vault/lang/lang.ru.fe.php | Linguistici dati Russa per il front-end.
-/vault/lang/lang.ru.php | Linguistici dati Russa.
-/vault/lang/lang.th.fe.php | Linguistici dati Tailandese per il front-end.
-/vault/lang/lang.th.php | Linguistici dati Tailandese.
-/vault/lang/lang.ur.fe.php | Linguistici dati Urdu per il front-end.
-/vault/lang/lang.ur.php | Linguistici dati Urdu.
-/vault/lang/lang.vi.fe.php | Linguistici dati Vietnamita per il front-end.
-/vault/lang/lang.vi.php | Linguistici dati Vietnamita.
-/vault/lang/lang.zh-tw.fe.php | Linguistici dati Cinese (tradizionale) per il front-end.
-/vault/lang/lang.zh-tw.php | Linguistici dati Cinese (tradizionale).
-/vault/lang/lang.zh.fe.php | Linguistici dati Cinese (semplificata) per il front-end.
-/vault/lang/lang.zh.php | Linguistici dati Cinese (semplificata).
+/vault/lang/lang.ar.fe.php | Dati linguistici Araba per il front-end.
+/vault/lang/lang.ar.php | Dati linguistici Araba.
+/vault/lang/lang.de.fe.php | Dati linguistici Tedesca per il front-end.
+/vault/lang/lang.de.php | Dati linguistici Tedesca.
+/vault/lang/lang.en.fe.php | Dati linguistici Inglese per il front-end.
+/vault/lang/lang.en.php | Dati linguistici Inglese.
+/vault/lang/lang.es.fe.php | Dati linguistici Spagnola per il front-end.
+/vault/lang/lang.es.php | Dati linguistici Spagnola.
+/vault/lang/lang.fr.fe.php | Dati linguistici Francese per il front-end.
+/vault/lang/lang.fr.php | Dati linguistici Francese.
+/vault/lang/lang.id.fe.php | Dati linguistici Indonesiana per il front-end.
+/vault/lang/lang.id.php | Dati linguistici Indonesiana.
+/vault/lang/lang.it.fe.php | Dati linguistici Italiana per il front-end.
+/vault/lang/lang.it.php | Dati linguistici Italiana.
+/vault/lang/lang.ja.fe.php | Dati linguistici Giapponese per il front-end.
+/vault/lang/lang.ja.php | Dati linguistici Giapponese.
+/vault/lang/lang.ko.fe.php | Dati linguistici Coreana per il front-end.
+/vault/lang/lang.ko.php | Dati linguistici Coreana.
+/vault/lang/lang.nl.fe.php | Dati linguistici Olandese per il front-end.
+/vault/lang/lang.nl.php | Dati linguistici Olandese.
+/vault/lang/lang.pt.fe.php | Dati linguistici Portoghese per il front-end.
+/vault/lang/lang.pt.php | Dati linguistici Portoghese.
+/vault/lang/lang.ru.fe.php | Dati linguistici Russa per il front-end.
+/vault/lang/lang.ru.php | Dati linguistici Russa.
+/vault/lang/lang.th.fe.php | Dati linguistici Tailandese per il front-end.
+/vault/lang/lang.th.php | Dati linguistici Tailandese.
+/vault/lang/lang.ur.fe.php | Dati linguistici Urdu per il front-end.
+/vault/lang/lang.ur.php | Dati linguistici Urdu.
+/vault/lang/lang.vi.fe.php | Dati linguistici Vietnamita per il front-end.
+/vault/lang/lang.vi.php | Dati linguistici Vietnamita.
+/vault/lang/lang.zh-tw.fe.php | Dati linguistici Cinese (tradizionale) per il front-end.
+/vault/lang/lang.zh-tw.php | Dati linguistici Cinese (tradizionale).
+/vault/lang/lang.zh.fe.php | Dati linguistici Cinese (semplificata) per il front-end.
+/vault/lang/lang.zh.php | Dati linguistici Cinese (semplificata).
 /vault/quarantine/ | Quarantena cartella (contiene i file in quarantena).
 /vault/quarantine/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/signatures/ | Firme cartella (contiene i file di firme).
@@ -285,7 +285,7 @@ File | Descrizione
 /vault/frontend.php | Gestore del front-end.
 /vault/functions.php | File di funzioni.
 /vault/greylist.csv | CSV di firme indicando per phpMussel cui firme dovrebbero essere ignorato (il file sarà ricreato automaticamente se è cancellato).
-/vault/lang.php | Linguistici dati.
+/vault/lang.php | Dati linguistici.
 /vault/php5.4.x.php | Polyfills per PHP 5.4.X (necessaria per la retrocompatibilità di PHP 5.4.X; è sicuro di cancellare per le versioni più recenti di PHP).
 ※ /vault/scan_kills.txt | Un record di tutti i file bloccati/uccisi da phpMussel.
 ※ /vault/scan_log.txt | Un record di tutto scansionato da phpMussel.
@@ -342,7 +342,7 @@ Generale configurazione per phpMussel.
 - Esempio (per aggiungere un'ora): `timeOffset=60`
 
 "timeFormat"
-- Il formato della data/ora di notazione usata da CIDRAM. Predefinito = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
+- Il formato della data/ora di notazione usata da phpMussel. Predefinito = `{Day}, {dd} {Mon} {yyyy} {hh}:{ii}:{ss} {tz}`.
 
 "ipaddr"
 - Dove trovare l'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili) Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!
