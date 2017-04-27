@@ -261,6 +261,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   byte measurements are no longer locked to predefined units); These byte
   measurements will default to kilobytes when no unit has been specified.
 
+- [2017.04.27; NEW FEATURE; Maikuolan]: Added the ability to optionally
+  override configuration directive values on the basis of HTTP_HOST. This
+  should be useful for users running multi-domains installations as a way of
+  enforcing different values for different configuration directives for
+  different domains and sub-domains when necessary.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.04.21).
+ * This file: Configuration handler (last modified: 2017.04.27).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -75,6 +75,25 @@ $phpMussel['Config'] = parse_ini_file($phpMussel['Vault'] . 'config.ini', true);
 if ($phpMussel['Config'] === false) {
     header('Content-Type: text/plain');
     die('[phpMussel] Configuration file is corrupt! Please reconfigure phpMussel.');
+}
+
+/** Checks for the existence of HTTP_HOST configuration overrides file. */
+if (!preg_match('/[^.0-9a-z-]/', $_SERVER['HTTP_HOST']) && is_readable($phpMussel['Vault'] . $_SERVER['HTTP_HOST'] . '.config.ini')) {
+    /** Attempts to parse the configuration overrides file. */
+    if ($phpMussel['Overrides'] = parse_ini_file($phpMussel['Vault'] . $_SERVER['HTTP_HOST'] . '.config.ini', true)) {
+        array_walk($phpMussel['Overrides'], function ($Keys, $Category) use (&$phpMussel) {
+            foreach ($Keys as $Directive => $Value) {
+                $phpMussel['Config'][$Category][$Directive] = $Value;
+            }
+        });
+        $phpMussel['Overrides'] = true;
+    }
+}
+
+/** Kills the script if parsing the configuration overrides file fails. */
+if (isset($phpMussel['Overrides']) && $phpMussel['Overrides'] === false) {
+    header('Content-Type: text/plain');
+    die('[phpMussel] Configuration overrides file is corrupt! Can\'t continue until this is resolved.');
 }
 
 /** Attempts to parse the phpMussel configuration defaults file. */
