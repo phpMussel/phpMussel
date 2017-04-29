@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.04.24).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -129,6 +129,7 @@ $phpMussel['lang']['field_upload_file'] = 'Tải lên tập tin mới';
 $phpMussel['lang']['field_username'] = 'Tên Người Dùng';
 $phpMussel['lang']['field_your_version'] = 'Phiên bản của bạn';
 $phpMussel['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
+$phpMussel['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạt: ';
 $phpMussel['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
 $phpMussel['lang']['label_php'] = 'Phiên bản PHP đang được dùng:';
 $phpMussel['lang']['label_phpmussel'] = 'Phiên bản phpMussel đang được dùng:';
@@ -221,7 +222,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – Cập Nhật';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Kiểm Tra Tải Lên';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Một số liên kết hữu ích:<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Issues @ GitHub</a> – Trang các vấn đề cho phpMussel (hỗ trợ, vv).</li>
+            <li><a href="https://github.com/Maikuolan/phpMussel/issues">Vấn đề cho phpMussel @ GitHub</a> – Trang các vấn đề cho phpMussel (hỗ trợ, vv).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Diễn đàn thảo luận cho phpMussel (hỗ trợ, vv).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Tải về gương thay thế cho phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Một bộ sưu tập các công cụ quản trị trang web đơn giản để bảo vệ các trang web.</li>

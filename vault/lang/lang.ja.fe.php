@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.04.24).
+ * This file: Japanese language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -129,6 +129,7 @@ $phpMussel['lang']['field_upload_file'] = '新しいファイルをアップロ�
 $phpMussel['lang']['field_username'] = 'ユーザー名';
 $phpMussel['lang']['field_your_version'] = 'お使いのバージョン';
 $phpMussel['lang']['header_login'] = '継続するには、ログインしてください。';
+$phpMussel['lang']['label_active_config_file'] = 'アクティブ・コンフィグレーション・ファイル： ';
 $phpMussel['lang']['label_os'] = '使用されたオペレーティングシステム：';
 $phpMussel['lang']['label_php'] = '使用されたPHPバージョン：';
 $phpMussel['lang']['label_phpmussel'] = '使用されたphpMusselバージョン：';
@@ -221,15 +222,15 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – アップデート';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – アップロード・テスト';
 
 $phpMussel['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Issues @ GitHub</a> – phpMusselの問題ページ（サポート、援助、など）。</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – phpMusselのディスカッションフォーラム（サポート、援助、など）。</li>
-            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – phpMusselの代替ダウンロードミラー。</li>
+            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMusselの問題 ＠ GitHub</a> – phpMusselの問題ページ（サポート、援助、など）。</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel ＠ Spambot Security</a> – phpMusselのディスカッションフォーラム（サポート、援助、など）。</li>
+            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel ＠ SourceForge</a> – phpMusselの代替ダウンロードミラー。</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – ウェブサイトを保護するための簡単なウェブマスターツールのコレクション。</li>
             <li><a href="http://www.clamav.net/">ClamavNet</a> – ClamAVホームページ（ClamAV®は、トロイの木馬、ウイルス、マルウェア、とその他の脅威を検出するための、オープンソースのウイルス対策エンジンです）。</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – ClamAVの補足的なシグネチャを提供する、コンピュータセキュリティ会社。</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – phpMussel URLスキャナーで利用される、フィッシング詐欺データベース。</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP学習リソースとディスカッション。</li>
-            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP学習リソースとディスカッション。</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group ＠ Facebook</a> – PHP学習リソースとディスカッション。</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group ＠ GitHub</a> – PHP学習リソースとディスカッション。</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotalは、疑わしいファイルやURLを分析するための無料サービスです。</li>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysisは、<a href="http://www.payload-security.com/">Payload Security</a>が提供する無料のマルウェア分析サービスで。</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – コンピュータのマルウェア対策専門家。</li>

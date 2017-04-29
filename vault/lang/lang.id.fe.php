@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.04.24).
+ * This file: Indonesian language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -129,6 +129,7 @@ $phpMussel['lang']['field_upload_file'] = 'Mengupload file baru';
 $phpMussel['lang']['field_username'] = 'Nama Pengguna';
 $phpMussel['lang']['field_your_version'] = 'Versi Anda';
 $phpMussel['lang']['header_login'] = 'Silahkan masuk untuk melanjutkan.';
+$phpMussel['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
 $phpMussel['lang']['label_os'] = 'Sistem operasi digunakan:';
 $phpMussel['lang']['label_php'] = 'Versi PHP digunakan:';
 $phpMussel['lang']['label_phpmussel'] = 'Versi phpMussel digunakan:';
@@ -221,7 +222,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – Pembaruan';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload Test';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Issues @ GitHub</a> – Halaman masalah untuk phpMussel (dukungan, bantuan, dll).</li>
+            <li><a href="https://github.com/Maikuolan/phpMussel/issues">Masalah phpMussel @ GitHub</a> – Halaman masalah untuk phpMussel (dukungan, bantuan, dll).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Forum diskusi untuk phpMussel (dukungan, bantuan, dll).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Cermin download alternatif untuk phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Sebuah kumpulan alat webmaster sederhana untuk mengamankan situs web.</li>

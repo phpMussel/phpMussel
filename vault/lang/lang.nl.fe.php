@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.04.24).
+ * This file: Dutch language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -129,6 +129,7 @@ $phpMussel['lang']['field_upload_file'] = 'Nieuw Bestand Uploaden';
 $phpMussel['lang']['field_username'] = 'Gebruikersnaam';
 $phpMussel['lang']['field_your_version'] = 'Uw Versie';
 $phpMussel['lang']['header_login'] = 'Inloggen om verder te gaan.';
+$phpMussel['lang']['label_active_config_file'] = 'Actief configuratiebestand: ';
 $phpMussel['lang']['label_os'] = 'Besturingssysteem gebruikt:';
 $phpMussel['lang']['label_php'] = 'PHP versie gebruikt:';
 $phpMussel['lang']['label_phpmussel'] = 'phpMussel versie gebruikt:';
@@ -221,7 +222,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – Updates';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload Test';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Issues @ GitHub</a> – Kwesties pagina voor phpMussel (steun, hulp, ezv).</li>
+            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Kwesties @ GitHub</a> – Kwesties pagina voor phpMussel (steun, hulp, ezv).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Discussieforum voor phpMussel (steun, hulp, ezv).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Een alternatieve download-spiegel voor phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Een verzameling van eenvoudige webmaster tools waarmee websites te beveiligen.</li>

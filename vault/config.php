@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.04.27).
+ * This file: Configuration handler (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -78,9 +78,14 @@ if ($phpMussel['Config'] === false) {
 }
 
 /** Checks for the existence of HTTP_HOST configuration overrides file. */
-if (!preg_match('/[^.0-9a-z-]/', $_SERVER['HTTP_HOST']) && is_readable($phpMussel['Vault'] . $_SERVER['HTTP_HOST'] . '.config.ini')) {
+if (
+    !empty($_SERVER['HTTP_HOST']) &&
+    ($phpMussel['Domain'] = preg_replace('/^www\./', '', strtolower($_SERVER['HTTP_HOST']))) &&
+    !preg_match('/[^.0-9a-z-]/', $phpMussel['Domain']) &&
+    is_readable($phpMussel['Vault'] . $phpMussel['Domain'] . '.config.ini')
+) {
     /** Attempts to parse the configuration overrides file. */
-    if ($phpMussel['Overrides'] = parse_ini_file($phpMussel['Vault'] . $_SERVER['HTTP_HOST'] . '.config.ini', true)) {
+    if ($phpMussel['Overrides'] = parse_ini_file($phpMussel['Vault'] . $phpMussel['Domain'] . '.config.ini', true)) {
         array_walk($phpMussel['Overrides'], function ($Keys, $Category) use (&$phpMussel) {
             foreach ($Keys as $Directive => $Value) {
                 $phpMussel['Config'][$Category][$Directive] = $Value;

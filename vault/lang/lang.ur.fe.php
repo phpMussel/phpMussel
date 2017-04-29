@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.04.24).
+ * This file: Urdu language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -129,6 +129,7 @@ $phpMussel['lang']['field_upload_file'] = 'نئی فائل اپ لوڈ کریں'
 $phpMussel['lang']['field_username'] = 'صارف کا نام';
 $phpMussel['lang']['field_your_version'] = 'آپ کے ورژن';
 $phpMussel['lang']['header_login'] = 'جاری رکھنے کے لیے لاگ ان کریں.';
+$phpMussel['lang']['label_active_config_file'] = 'فعال کنفیگریشن فائل: ';
 $phpMussel['lang']['label_os'] = 'آپریٹنگ سسٹم استعمال کیا:';
 $phpMussel['lang']['label_php'] = 'PHP ورژن استعمال کیا:';
 $phpMussel['lang']['label_phpmussel'] = 'phpMussel ورژن استعمال کیا:';

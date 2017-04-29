@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.04.25).
+ * This file: Thai language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -129,6 +129,7 @@ $phpMussel['lang']['field_upload_file'] = 'อัปโหลดไฟล์ใ�
 $phpMussel['lang']['field_username'] = 'ชื่อผู้ใช้';
 $phpMussel['lang']['field_your_version'] = 'เวอร์ชั่นของคุณ';
 $phpMussel['lang']['header_login'] = 'เข้าสู่ระบบเพื่อดำเนินการต่อ.';
+$phpMussel['lang']['label_active_config_file'] = 'ไฟล์การกำหนดค่าที่ใช้งานอยู่: ';
 $phpMussel['lang']['label_os'] = 'ระบบปฏิบัติการในการใช้งาน:';
 $phpMussel['lang']['label_php'] = 'รุ่น PHP ในการใช้งาน:';
 $phpMussel['lang']['label_phpmussel'] = 'รุ่น phpMussel ในการใช้งาน:';
@@ -221,7 +222,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – อัปเดต';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – ทดสอบการอัปโหลด';
 
 $phpMussel['lang']['info_some_useful_links'] = 'ลิงก์ที่เป็นประโยชน์:<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Issues @ GitHub</a> – หน้าปัญหาสำหรับ phpMussel (สนับสนุน, ความช่วยเหลือ, ฯลฯ).</li>
+            <li><a href="https://github.com/Maikuolan/phpMussel/issues">ปัญหา phpMussel @ GitHub</a> – หน้าปัญหาสำหรับ phpMussel (สนับสนุน, ความช่วยเหลือ, ฯลฯ).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – ฟอรั่มการอภิปรายสำหรับ phpMussel (สนับสนุน, ความช่วยเหลือ, ฯลฯ).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – สถานที่ดาวน์โหลดอื่นสำหรับ phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – คอลเลกชันเครื่องมือเว็บมาสเตอร์ง่ายสำหรับการรักษาความปลอดภัยเว็บไซต์.</li>

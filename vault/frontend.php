@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.04.24).
+ * This file: Front-end handler (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -600,6 +600,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
     /** Indexes. */
     $phpMussel['FE']['Indexes'] = '            ';
 
+    /** Define active configuration file. */
+    $CIDRAM['FE']['ActiveConfigFile'] = $CIDRAM['Overrides'] ? $CIDRAM['Domain'] . '.config.ini' : 'config.ini';
+
     /** Generate entries for display and regenerate configuration if any changes were submitted. */
     reset($phpMussel['Config']['Config Defaults']);
     $phpMussel['FE']['ConfigFields'] = $phpMussel['RegenerateConfig'] = '';
@@ -748,6 +751,11 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
             if (isset($phpMussel['DirValue']['choices'])) {
                 $phpMussel['ThisDir']['FieldOut'] = '<select class="auto" name="'. $phpMussel['ThisDir']['DirLangKey'] . '" id="'. $phpMussel['ThisDir']['DirLangKey'] . '_field"' . $phpMussel['ThisDir']['Trigger'] . '>';
                 foreach ($phpMussel['DirValue']['choices'] as $phpMussel['ChoiceKey'] => $phpMussel['ChoiceValue']) {
+                    if (isset($phpMussel['DirValue']['choice_filter']) && isset($phpMussel[$phpMussel['DirValue']['choice_filter']])) {
+                        if (!$phpMussel[$phpMussel['DirValue']['choice_filter']]($phpMussel['ChoiceKey'], $phpMussel['ChoiceValue'])) {
+                            continue;
+                        }
+                    }
                     if (strpos($phpMussel['ChoiceValue'], '{') !== false) {
                         $phpMussel['ChoiceValue'] = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['ChoiceValue']);
                     }

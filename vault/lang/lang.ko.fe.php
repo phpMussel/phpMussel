@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.04.24).
+ * This file: Korean language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -129,6 +129,7 @@ $phpMussel['lang']['field_upload_file'] = '새로운 파일을 업로드하기';
 $phpMussel['lang']['field_username'] = '사용자 이름';
 $phpMussel['lang']['field_your_version'] = '사용 버전';
 $phpMussel['lang']['header_login'] = '계속하려면 로그인하십시오.';
+$phpMussel['lang']['label_active_config_file'] = '활성 구성 파일: ';
 $phpMussel['lang']['label_os'] = '사용 된 운영 체제:';
 $phpMussel['lang']['label_php'] = '사용 된 PHP 버전:';
 $phpMussel['lang']['label_phpmussel'] = '사용 된 phpMussel 버전:';
@@ -221,7 +222,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – 업데이트';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – 업로드 테스트';
 
 $phpMussel['lang']['info_some_useful_links'] = '유용한 링크:<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Issues @ GitHub</a> – phpMussel 문제 페이지 (지원, 원조 등).</li>
+            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel 문제 @ GitHub</a> – phpMussel 문제 페이지 (지원, 원조 등).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – phpMussel 토론 포럼 (지원, 원조 등).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – phpMussel 대체 다운로드 거울.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – 웹 사이트를 보호하기 위해 간단한 웹 마스터 도구 모음.</li>

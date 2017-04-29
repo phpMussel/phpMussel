@@ -135,6 +135,7 @@ Config Defaults:
     vi: Tiếng Việt
     zh: 中文（简体）
     zh-tw: 中文（傳統）
+   choice_filter: "FilterLang"
   quarantine_key:
    type: string
    default: ""

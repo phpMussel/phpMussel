@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.04.24).
+ * This file: Arabic language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -129,6 +129,7 @@ $phpMussel['lang']['field_upload_file'] = 'تحميل ملف جديد';
 $phpMussel['lang']['field_username'] = 'اسم المستخدم';
 $phpMussel['lang']['field_your_version'] = 'الإصدار الخاص بك';
 $phpMussel['lang']['header_login'] = 'الرجاء تسجيل الدخول للمتابعة.';
+$phpMussel['lang']['label_active_config_file'] = 'ملف التكوين النشط: ';
 $phpMussel['lang']['label_os'] = 'نظام التشغيل المستخدمة:';
 $phpMussel['lang']['label_php'] = 'النسخة PHP المستخدمة:';
 $phpMussel['lang']['label_phpmussel'] = 'النسخة phpMussel المستخدمة:';

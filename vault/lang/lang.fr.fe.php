@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.04.24).
+ * This file: French language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -129,6 +129,7 @@ $phpMussel['lang']['field_upload_file'] = 'Télécharger un nouveau fichier';
 $phpMussel['lang']['field_username'] = 'Nom d\'Utilisateur';
 $phpMussel['lang']['field_your_version'] = 'Votre Version';
 $phpMussel['lang']['header_login'] = 'Merci de vous connecter pour continuer.';
+$phpMussel['lang']['label_active_config_file'] = 'Fichier de configuration active: ';
 $phpMussel['lang']['label_os'] = 'Système opérateur utilisée:';
 $phpMussel['lang']['label_php'] = 'Version PHP utilisée:';
 $phpMussel['lang']['label_phpmussel'] = 'Version phpMussel utilisée:';
@@ -221,7 +222,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – Mises à Jour';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Test de Télécharger';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Quelques liens utiles:<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Issues @ GitHub</a> – Page de problèmes pour phpMussel (soutien, assistance, etc).</li>
+            <li><a href="https://github.com/Maikuolan/phpMussel/issues">Les problèmes de phpMussel @ GitHub</a> – Page de problèmes pour phpMussel (soutien, assistance, etc).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Forum de discussion pour phpMussel (soutien, assistance, etc).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Alternative download mirror for phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Une collection de simples outils webmaster pour sécuriser les sites Web.</li>

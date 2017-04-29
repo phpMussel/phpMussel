@@ -267,6 +267,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   enforcing different values for different configuration directives for
   different domains and sub-domains when necessary.
 
+- [2017.04.29; Minor code change; Maikuolan]: Added filtering to the
+  configuration defaults, in order to allow the front-end configuration page to
+  omit any problematic value choices (for example; attempting to switch to a
+  new default language after having deleted its associated language files).
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

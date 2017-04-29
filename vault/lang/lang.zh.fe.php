@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.04.24).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.04.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -129,6 +129,7 @@ $phpMussel['lang']['field_upload_file'] = '上传新文件';
 $phpMussel['lang']['field_username'] = '用户名';
 $phpMussel['lang']['field_your_version'] = '您的版本';
 $phpMussel['lang']['header_login'] = '请登录以继续。';
+$phpMussel['lang']['label_active_config_file'] = '活动配置文件：';
 $phpMussel['lang']['label_os'] = '目前使用操作系统：';
 $phpMussel['lang']['label_php'] = '目前使用PHP版本：';
 $phpMussel['lang']['label_phpmussel'] = '目前使用phpMussel版本：';
@@ -221,16 +222,16 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – 更新';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – 上传测试';
 
 $phpMussel['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Issues @ GitHub</a> – phpMussel问题页面（支持，协助，等等）。</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – phpMussel讨论论坛（支持，协助，等等）。</li>
+            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel问题 ＠ GitHub</a> – phpMussel问题页面（支持，协助，等等）。</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel ＠ Spambot Security</a> – phpMussel讨论论坛（支持，协助，等等）。</li>
             <li><a href="https://www.oschina.net/p/phpMussel">phpMussel＠开源中国社区</a> – phpMussel页面托管在开源中国社区。</li>
-            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – phpMussel替代下载镜像。</li>
+            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel ＠ SourceForge</a> – phpMussel替代下载镜像。</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – 简单网站管理员工具集合为保护网站。</li>
             <li><a href="http://www.clamav.net/">ClamavNet</a> – ClamAV主页（ClamAV®是一个开源的防病毒引擎用于检测木马，病毒，恶意软件和其他恶意威胁）。</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – 一家计算机安全公司；为ClamAV提供补充签名。</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – 网络钓鱼数据库；由phpMussel URL扫描器使用。</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP学习资源和讨论。</li>
-            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP学习资源和讨论。</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group ＠ Facebook</a> – PHP学习资源和讨论。</li>
+            <li><a href="https://wwphp-fb.github.io/">International PHP Group ＠ GitHub</a> – PHP学习资源和讨论。</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal是一项免费服务，用于分析可疑文件和URL。</li>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis是由<a href="http://www.payload-security.com/">Payload Security</a>提供的免费恶意软件分析服务。</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – 电脑反恶意软件专家。</li>
