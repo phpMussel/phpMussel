@@ -330,9 +330,9 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 *有用な先端： あなたがしたい場合は、ログファイルの名前に日付/時刻情報を付加することができます、名前にこれらを含めることで:完全な年のため`{yyyy}`、省略された年のため`{yy}`、月`{mm}`、日`{dd}`、時間`{hh}`。*
 
 *例：*
-- *`logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'`*
-- *`logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'`*
-- *`logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+- *`scan_log='scan_log.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+- *`scan_log_serialized='scan_log_serialized.{yyyy}-{mm}-{dd}-{hh}.txt'`*
+- *`scan_kills='scan_kills.{yyyy}-{mm}-{dd}-{hh}.txt'`*
 
 "truncate" （トランケート）
 - ログファイルが一定のサイズに達したら切り詰めますか？ 値は、ログファイルが切り捨てられる前に大きくなる可能性があるＢ/ＫＢ/ＭＢ/ＧＢ/ＴＢ単位の最大サイズです。 デフォルト値の０ＫＢは切り捨てを無効にします （ログファイルは無期限に拡張できます）。 注：個々のログファイルに適用されます。 ログファイルのサイズは一括して考慮されません。

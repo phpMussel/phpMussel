@@ -322,9 +322,9 @@ phpMussel ونڈوز کی بنیاد پر نظام کے تحت CLI موڈ میں
 <div dir="rtl"><em>مفید ٹپ: "{yyyy}" مکمل سال کے لئے، "{yy}" مختصر سال کے لئے، "{mm}": اگر آپ چاہتے ہیں تو آپ کے نام میں ان کو شامل کرکے آپ لاگ مسلیں کے ناموں کو تاریخ / وقت کی معلومات شامل کر سکتے ہیں مہینے کے لئے، دن کے لئے، "{hh}" گھنٹے کیلئے "{dd}" (ذیل کی مثالیں دیکھ).</em><br /><br /></div>
 
 ```
- logfile='logfile.{yyyy}-{mm}-{dd}-{hh}.txt'
- logfileApache='access.{yyyy}-{mm}-{dd}-{hh}.txt'
- logfileSerialized='serial.{yyyy}-{mm}-{dd}-{hh}.txt'
+ scan_log='scan_log.{yyyy}-{mm}-{dd}-{hh}.txt'
+ scan_log_serialized='scan_log_serialized.{yyyy}-{mm}-{dd}-{hh}.txt'
+ scan_kills='scan_kills.{yyyy}-{mm}-{dd}-{hh}.txt'
 ```
 
 <div dir="rtl">"truncate"<br /></div>
