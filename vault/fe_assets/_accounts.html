@@ -1,24 +1,30 @@
-<table width="100%">
+<table>
 <tr>
-    <td width="20%" class="nav">
-
-{nav}
-    </td>
-    <td width="80%" class="right">
+    <td class="nav big">
+{nav}    </td>
+    <td class="right extend">
         <div class="s">{state_msg}</div>
-        <table width="100%">
+        <table>
         <tr>
-            <td class="h2"><div class="s">{field_username}</div></td>
-            <td class="h2"><div class="s">{field_permissions}</div></td>
-            <td class="h2"><div class="s">{field_set_new_password}</div></td>
-            <td class="h2f"><div class="s">{field_options}</div></td>
+            <td class="h2 big"><div class="s">{field_username}</div></td>
+            <td class="h2 big"><div class="s">{field_permissions}</div></td>
+            <td class="h2 big"><div class="s">{field_set_new_password}</div></td>
+            <td class="h2f extend"><div class="s"><span class="big">{field_options}</span><span class="mob">{link_accounts}</span></div></td>
         </tr>
         <tr>
-            <form action="?phpmussel-page=accounts" method="POST"><input name="phpmussel-form-target" type="hidden" value="accounts" />
-                <td class="h1"><div class="s"><input name="username" type="text" placeholder="{field_username}" /></div></td>
-                <td class="h1"><div class="s"><select name="permissions"><option value="1">{state_complete_access}</option><option value="2">{state_logs_access_only}</option></select></div></td>
-                <td class="h1"><div class="s"><input name="password" type="password" placeholder="{field_password}" /></div></td>
-                <td class="h1f"><div class="s"><input type="submit" value="{field_create_new_account}" /><input name="do" type="hidden" value="create-account" /></div></td>
+            <form action="?phpmussel-page=accounts" method="POST"><input name="phpmussel-form-target" type="hidden" value="accounts" /><input name="do" type="hidden" value="create-account" />
+                <td class="h1 big"><div class="s"><input name="username" type="text" placeholder="{field_username}" /></td>
+                <td class="h1 big"><div class="s"><select name="permissions"><option value="1">{state_complete_access}</option><option value="2">{state_logs_access_only}</option></select></div></td>
+                <td class="h1 big"><div class="s"><input name="password" type="password" placeholder="{field_password}" /></div></td>
+                <td class="h1f extend">
+                    <div class="s big"><div class="s"><input type="submit" value="{field_create_new_account}" /></div></div>
+                    <div class="s mob"><div class="s">
+                        <input name="username_mob" type="text" placeholder="{field_username}" /><br />
+                        <select name="permissions_mob"><option value="1">{state_complete_access}</option><option value="2">{state_logs_access_only}</option></select><br />
+                        <input name="password_mob" type="password" placeholder="{field_password}" /><br />
+                        <input type="submit" value="{field_create_new_account}" />
+                    </div>
+                </td>
             </form>
         </tr>
 {Accounts}

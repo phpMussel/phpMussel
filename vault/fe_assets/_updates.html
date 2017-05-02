@@ -1,26 +1,24 @@
-<table width="100%">
+<table>
 <tr>
-    <td width="20%" class="nav">
-
-{nav}
-        <hr />
-        <table width="100%"><tr><td class="ng1"><div class="idx">
-{Indexes}</div></td></tr></table>
+    <td class="nav big">
+{nav}        <hr />
+        <table><tr><td class="ng1"><div class="idx">
+            {Indexes}</div></td></tr></table>
     </td>
-    <td width="80%" class="right">
+    <td class="right extend">
         <div class="s">{state_msg}</div>
-        <table width="100%">
-        <tr>
-            <td class="h2"><div class="s">{field_component}</div></td>
-            <td class="h2"><div class="s">{field_your_version}</div></td>
-            <td class="h2"><div class="s">{field_latest_version}</div></td>
-            <td class="h2f"><div class="s">{field_status} | {field_options}</div></td>
-        </tr>
-        <tr><td class="h1" colspan="4"><div class="bNav">
-            <form action="?{UpdatesFormTarget}" method="POST" name="ufts" id="ufts"><input name="phpmussel-form-target" type="hidden" value="updates" /><select name="updates-form-target-selecter" class="ufts">
+        <table><tr><td class="spanner">
+            <form action="?{UpdatesFormTarget}" method="POST" name="ufts"><input name="phpmussel-form-target" type="hidden" value="updates" /><select name="updates-form-target-selecter" class="ufts">
                 {UpdatesFormTargetControls}
             </select> <input type="submit" value="{field_ok}" class="auto" /></form>
-        </div></td></tr>
+        </td></tr></table>
+        <table>
+        <tr>
+            <td class="h2"><div class="s">{field_component}</div></td>
+            <td class="h2 big"><div class="s">{field_your_version}</div></td>
+            <td class="h2 big"><div class="s">{field_latest_version}</div></td>
+            <td class="h2f"><div class="s">{field_status} | {field_options}</div></td>
+        </tr>
 {Components}
         </table>
     </td>

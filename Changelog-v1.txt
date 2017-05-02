@@ -272,6 +272,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   omit any problematic value choices (for example; attempting to switch to a
   new default language after having deleted its associated language files).
 
+- [2017.05.01; Sub-minor code change; Maikuolan]: Subtle improvements for
+  mobile display ("responsiveness").
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"
