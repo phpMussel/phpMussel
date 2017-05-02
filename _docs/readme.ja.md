@@ -148,7 +148,7 @@ phpMusselに含まれるシグネチャを無効にするには、本READMEフ�
 
 #### 4.1 フロントエンドを有効にする方法。
 
-1) `config.ini`の中にある`disable_frontend`ディレクティブを探します、それを「true」に設定します （デフォルトでは「false」です）。
+1) `config.ini`の中にある`disable_frontend`ディレクティブを探します、それを「`false`」に設定します （デフォルトでは「`true`」です）。
 
 2) ブラウザから`loader.php`にアクセスしてください （例えば、`http://localhost/phpmussel/loader.php`）。
 
@@ -740,4 +740,4 @@ phpMusselは、ファイルをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2017年4月24日。
+最終アップデート： 2017年5月2日。

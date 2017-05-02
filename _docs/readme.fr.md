@@ -148,7 +148,7 @@ L'accès frontal est désactivée par défaut afin d'empêcher tout accès non a
 
 #### 4.1 COMMENT ACTIVER L'ACCÈS FRONTAL.
 
-1) Localiser la directive `disable_frontend` à l'intérieur de `config.ini`, et réglez-le sur true (il sera false par défaut).
+1) Localiser la directive `disable_frontend` à l'intérieur de `config.ini`, et réglez-le sur `false` (il sera `true` par défaut).
 
 2) Accéder `loader.php` à partir de votre navigateur (par exemple, `http://localhost/phpmussel/loader.php`).
 
@@ -737,7 +737,11 @@ La fréquence de mise à jour varie selon les fichiers de signature en question.
 
 Non. PHP 5.4.0 a atteint officiellement l'EoL ("End of Life", ou fin de vie) en 2014, et le support étendu en matière de sécurité a pris fin en 2015. À la date d'écriture, il est 2017, et PHP 7.1.0 est déjà disponible. À l'heure actuelle, le support est fourni pour l'utilisation de phpMussel avec PHP 5.4.0 et toutes les nouvelles versions PHP disponibles, mais si vous essayez d'utiliser phpMussel avec les anciennes versions PHP, le support ne sera pas fourni.
 
+#### Puis-je utiliser une seule installation de CIDRAM pour protéger plusieurs domaines?
+
+Oui. Les installations CIDRAM ne sont pas naturellement verrouillées dans des domaines spécifiques, et peut donc être utilisé pour protéger plusieurs domaines. Généralement, nous référons aux installations CIDRAM protégeant un seul domaine comme "installations à un seul domaine" ("single-domain installations"), et nous référons aux installations CIDRAM protégeant plusieurs domaines et/ou sous-domaines comme "installations multi-domaines" ("multi-domain installations"). Si vous utilisez une installation multi-domaine et besoin d'utiliser différents ensembles de fichiers de signature pour différents domaines, ou besoin de CIDRAM pour être configuré différemment pour différents domaines, il est possible de le faire. Après avoir chargé le fichier de configuration (`config.ini`), CIDRAM vérifiera l'existence d'un "fichier de substitution de configuration" spécifique au domaine (ou sous-domaine) demandé (`le-domaine-demandé.tld.config.ini`), et si trouvé, les valeurs de configuration définies par le fichier de substitution de configuration sera utilisé pour l'instance d'exécution au lieu des valeurs de configuration définies par le fichier de configuration. Les fichiers de substitution de configuration sont identiques au fichier de configuration, et à votre discrétion, peut contenir l'intégralité de toutes les directives de configuration disponibles pour CIDRAM, ou quelle que soit la petite sous-section requise qui diffère des valeurs normalement définies par le fichier de configuration. Les fichiers de substitution de configuration sont nommée selon le domaine auquel elle est destinée (donc, par exemple, si vous avez besoin d'une fichier de substitution de configuration pour le domaine, `http://www.some-domain.tld/`, sa fichier de substitution de configuration doit être nommé comme `some-domain.tld.config.ini`, et devrait être placé dans la vault à côté du fichier de configuration, `config.ini`). Le nom de domaine pour l'instance d'exécution dérive de l'en-tête `HTTP_HOST` de la demande; "www" est ignoré.
+
 ---
 
 
-Dernière Mise à Jour: 24 Avril 2017 (2017.04.24).
+Dernière Mise à Jour: 2 Mai 2017 (2017.05.02).

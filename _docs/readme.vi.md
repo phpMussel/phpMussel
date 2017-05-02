@@ -148,7 +148,7 @@ Các front-end được tắt theo mặc định để ngăn chặn truy cập t
 
 #### 4.1 LÀM THẾ NÀO ĐỂ KÍCH HOẠT FRONT-END.
 
-1) Xác định vị trí các chỉ thị `disable_frontend` bên trong `config.ini`, và đặt nó vào true (nó sẽ là false bởi mặc định).
+1) Xác định vị trí các chỉ thị `disable_frontend` bên trong `config.ini`, và đặt nó vào `false` (nó sẽ là `true` bởi mặc định).
 
 2) Truy cập `loader.php` từ trình duyệt của bạn (ví dụ, `http://localhost/phpmussel/loader.php`).
 
@@ -740,4 +740,4 @@ Không. PHP 5.4.0 đạt EoL ("End of Life", hoặc sự kết thúc của cuộ
 ---
 
 
-Lần cuối cập nhật: 24 Tháng Tư 2017 (2017.04.24).
+Lần cuối cập nhật: 2 Tháng Năm 2017 (2017.05.02).

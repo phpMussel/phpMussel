@@ -148,7 +148,7 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 
 #### 4.1 如何启用前端。
 
-1) 里面的`config.ini`文件，找到指令`disable_frontend`，并将其设置为`true` （默认值为`false`）。
+1) 里面的`config.ini`文件，找到指令`disable_frontend`，并将其设置为`false` （默认值为`true`）。
 
 2) 从浏览器访问`loader.php` （例如，`http://localhost/phpmussel/loader.php`）。
 
@@ -743,4 +743,4 @@ phpMussel会阻止文件 | __假阳性__ | 真阳性（正确的推理）
 ---
 
 
-最后更新：2017年4月24日。
+最后更新：2017年5月2日。

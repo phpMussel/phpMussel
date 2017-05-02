@@ -148,7 +148,7 @@ phpMussel에 포함 된 서명을 해제하려면 본 README 파일의 "프론�
 
 #### 4.1 프론트 엔드를 사용하는 방법.
 
-1) `config.ini` 안에있는`disable_frontend` 지시문을 찾습니다 그것을 "true"로 설정합니다 (기본값은 "false"입니다).
+1) `config.ini` 안에있는 `disable_frontend` 지시문을 찾습니다 그것을 "`false`"로 설정합니다 (기본값은 "`true`"입니다).
 
 2) 브라우저에서`loader.php`에 액세스하십시오 (예를 들어, `http://localhost/phpmussel/loader.php`).
 
@@ -740,4 +740,4 @@ phpMussel은 파일을 차단합니다 | __위양성__ | 진정한 양성 (올�
 ---
 
 
-최종 업데이트: 2017년 4월 24일.
+최종 업데이트: 2017년 5월 2일.
