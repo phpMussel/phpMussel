@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data (last modified: 2017.04.25).
+ * This file: Thai language data (last modified: 2017.05.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,6 +26,7 @@ $phpMussel['lang']['cli_ln2'] = " ขอบคุณที่ใช้ phpMussel
 $phpMussel['lang']['cli_ln3'] = " กำลังรัน phpMussel ในโหมด CLI (ส่วนติดต่อบรรทัดคำสั่ง).\n\n เพื่อสแกนไฟล์หรือไดเรกทอรี, ป้อน scan, ตามด้วยชื่อของไฟล์หรือไดเรกทอรีที่\n คุณต้องการให้ phpMussel สแกนและกด Enter; ป้อน c และกด Enter สำหรับรายการคำสั่ง\n ในโหมด CLI; ป้อน q และกด Enter ที่จะเลิก:";
 $phpMussel['lang']['cli_pe1'] = 'ไม่ใช่ไฟล์ PE ที่ถูกต้อง!';
 $phpMussel['lang']['cli_pe2'] = 'ส่วน PE:';
+$phpMussel['lang']['cli_signature_placeholder'] = 'ชื่อลายเซ็น';
 $phpMussel['lang']['cli_working'] = 'กำลังดำเนินการ';
 $phpMussel['lang']['corrupted'] = 'PE เสียหายถูกตรวจพบ';
 $phpMussel['lang']['denied'] = 'อัปโหลดถูกปฏิเสธ!';
@@ -96,8 +97,12 @@ $phpMussel['lang']['cli_commands'] = " q
  md5_file
  - สร้างลายเซ็น MD5 จากไฟล์ [ไวยากรณ์: md5_file ชื่อไฟล์].
  - นามแฝง: m.
+ sha1_file
+ - สร้างลายเซ็น SHA1 จากไฟล์ [ไวยากรณ์: sha1_file ชื่อไฟล์].
  md5
  - สร้างลายเซ็น MD5 จากสตริง [ไวยากรณ์: md5 สตริง].
+ sha1
+ - สร้างลายเซ็น SHA1 จากสตริง [ไวยากรณ์: sha1 สตริง].
  hex_encode
  - แปลงสตริงไบนารีเป็นเลขฐานสิบหก [ไวยากรณ์: hex_encode สตริง].
  - นามแฝง: x.

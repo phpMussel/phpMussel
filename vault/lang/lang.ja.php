@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2017.03.26).
+ * This file: Japanese language data (last modified: 2017.05.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,6 +26,7 @@ $phpMussel['lang']['cli_ln2'] = " phpMussel（ピー・エイチ・ピー・マ�
 $phpMussel['lang']['cli_ln3'] = " ＣＬＩモード（コマンドラインインターフェイス）でphpMusselを実行中です。\n\n ファイルまたはディレクトリ―をスキャンするには、「scan」とタイプし、続けてファイル名またはディレクトリ名をタイプしてエンターを押して下さい。\n CLIモードコマンドのリストを得るには「c」とタイプしてエンターを押して下さい；終了には「q」とタイプしてエンターを押します。 ";
 $phpMussel['lang']['cli_pe1'] = '正しいＰＥファイルではありません！';
 $phpMussel['lang']['cli_pe2'] = 'ＰＥセクション：';
+$phpMussel['lang']['cli_signature_placeholder'] = 'シグネチャ名';
 $phpMussel['lang']['cli_working'] = '処理中';
 $phpMussel['lang']['corrupted'] = '破損ＰＥを検出しました';
 $phpMussel['lang']['denied'] = 'アップロード拒否！';
@@ -96,8 +97,12 @@ $phpMussel['lang']['cli_commands'] = " q
  md5_file
  - ファイルからＭＤ５シグネチャを作成 「構文: md5_file ファイル名」。
  - エイリアス： m。
+ sha1_file
+ - ファイルからＳＨＡ１シグネチャを作成 「構文: sha1_file ファイル名」。
  md5
  - 文字列からＭＤ５シグネチャを作成 「構文: md5 string」。
+ sha1
+ - 文字列からＳＨＡ１シグネチャを作成 「構文: sha1 string」。
  hex_encode
  - ２進法文字列を１６進法文字列に変換 「構文: hex_encode string」。
  - エイリアス： x。

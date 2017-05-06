@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data (last modified: 2017.02.07).
+ * This file: Spanish language data (last modified: 2017.05.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,6 +26,7 @@ $phpMussel['lang']['cli_ln2'] = " Gracias por usar phpMussel, un script PHP dise
 $phpMussel['lang']['cli_ln3'] = " Ud. está ejecutando phpMussel en modo CLI (interfaz de línea de comandos).\n\n Para analizar un archivo o directorio, escribir 'scan', seguido por el nombre\n del archivo o directorio que usted desea que phpMussel escanee y pulse Enter;\n Escriba 'c' y pulse Enter para obtener una lista de comandos;\n Escriba 'q' y pulse Enter para salir:";
 $phpMussel['lang']['cli_pe1'] = 'No es un archivo PE válido!';
 $phpMussel['lang']['cli_pe2'] = 'Secciones PE:';
+$phpMussel['lang']['cli_signature_placeholder'] = 'NOMBRE-DE-FIRMA';
 $phpMussel['lang']['cli_working'] = 'En operación';
 $phpMussel['lang']['corrupted'] = 'PE corrompido detectado';
 $phpMussel['lang']['denied'] = 'Subida Denegada!';
@@ -96,8 +97,12 @@ $phpMussel['lang']['cli_commands'] = " q
  md5_file
  - Generar firmas MD5 de archivos [Sintaxis: md5_file \"nombre de archivo\"].
  - Alias: m.
+ sha1_file
+ - Generar firmas SHA1 de archivos [Sintaxis: sha1_file \"nombre de archivo\"].
  md5
- - Generar firma de string [Sintaxis: md5 string].
+ - Generar firma MD5 de string [Sintaxis: md5 string].
+ sha1
+ - Generar firma SHA1 de string [Sintaxis: sha1 string].
  hex_encode
  - Convertir string binaria a hexadecimal [Sintaxis: hex_encode string].
  - Alias: x.

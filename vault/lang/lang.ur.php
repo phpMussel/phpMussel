@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2017.04.05).
+ * This file: Urdu language data (last modified: 2017.05.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,7 +19,6 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['textDir'] = 'rtl';
 $phpMussel['lang']['bad_command'] = 'میں نے اس حکم کو نہیں سمجھتے افسوس.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'سکیننگ کے عمل کو مکمل کرنے میں ناکام';
 $phpMussel['lang']['cli_is_not_a'] = ' یک فائل یا ڈائریکٹری نہیں ہے.';
@@ -27,6 +26,7 @@ $phpMussel['lang']['cli_ln2'] = " phpMussel، ایک پی ایچ پی کی سک�
 $phpMussel['lang']['cli_ln3'] = " فی الحال CLI موڈ (کمانڈ لائن انٹرفیس) میں phpMussel چلانے.\n\n فائل کا نام یا کے بعد ایک فائل یا ڈائریکٹری، قسم 'سکین'، اسکین کرنے\n آپ phpMussel اسکین کرنے اور انٹر دبائیں چاہتے ہیں کہ ڈائریکٹری؛ 'سی' اور پریس ٹائپ کریں\n CLI موڈ حکم دیتا ہے کی ایک فہرست کے لئے درج کریں؛ 'س' اور پریس چھوڑنے کا درج ٹائپ کریں:";
 $phpMussel['lang']['cli_pe1'] = 'ایک درست PE فائل!';
 $phpMussel['lang']['cli_pe2'] = 'PE حصے:';
+$phpMussel['lang']['cli_signature_placeholder'] = 'نام';
 $phpMussel['lang']['cli_working'] = 'کام جاری ہے';
 $phpMussel['lang']['corrupted'] = 'کے پتہ خراب PE';
 $phpMussel['lang']['denied'] = 'اپ لوڈ کریں تردید!';
@@ -76,6 +76,7 @@ $phpMussel['lang']['scan_tampering'] = 'پتہ چلنے پر ممکنہ طور �
 $phpMussel['lang']['scan_unauthorised_upload'] = 'غیر مجاز فائل اپ ہیرا پھیری کے پتہ';
 $phpMussel['lang']['scan_unauthorised_upload_or_misconfig'] = 'غیر مجاز فائل اپ ہیرا پھیری یا غلط کنفیگریشن کے پتہ! ';
 $phpMussel['lang']['started'] = 'شروع';
+$phpMussel['lang']['textDir'] = 'rtl';
 $phpMussel['lang']['too_many_urls'] = 'بہت سارے یو آر ایل';
 $phpMussel['lang']['upload_error_1'] = 'فائل upload_max_filesize ہدایت سے تجاوز. ';
 $phpMussel['lang']['upload_error_2'] = 'فائل فارم مخصوص فائل کی حد سے متجاوز. ';
@@ -92,26 +93,30 @@ $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
- - Quit CLI.
- - Aliases: quit, exit.
+ - CLI چھوڑو.
+ - عرفیتیں: quit, exit.
  md5_file
- - Generate MD5 signatures from files [Syntax: md5_file filename].
- - Alias: m.
+ - فائلوں سے MD5 دستخط بنائیں [نحو: md5_file فائل کا نام].
+ - عرف: m.
+ sha1_file
+ - فائلوں سے SHA1 دستخط بنائیں [نحو: sha1_file فائل کا نام].
  md5
- - Generate MD5 signature from string [Syntax: md5 string].
+ - سٹرنگ سے MD5 کے دستخط بنائیں [نحو: md5 سٹرنگ].
+ sha1
+ - سٹرنگ سے SHA1 کے دستخط بنائیں [نحو: sha1 سٹرنگ].
  hex_encode
- - Convert binary string to hexadecimal [Syntax: hex_encode string].
- - Alias: x.
+ - شش اعشاری کو بائنری سٹرنگ میں تبدیل [نحو: hex_encode سٹرنگ].
+ - عرف: x.
  hex_decode
- - Convert hexadecimal to binary string [Syntax: hex_decode string].
+ - بائنری سٹرنگ کو شش اعشاری میں تبدیل [نحو: hex_decode سٹرنگ].
  base64_encode
- - Convert binary string to base64 string [Syntax: base64_encode string].
- - Alias: b.
+ - Base64 میں سٹرنگ کو بائنری سٹرنگ میں تبدیل [نحو: base64_encode سٹرنگ].
+ - عرف: b.
  base64_decode
- - Convert base64 string to binary string [Syntax: base64_decode string].
+ - بائنری سٹرنگ کو Base64 میں سٹرنگ میں تبدیل [نحو: base64_decode سٹرنگ].
  scan
- - Scan file or directory [Syntax: scan filename].
- - Alias: s.
+ - سکین فائل یا ڈائریکٹری [نحو: scan فائل کا نام].
+ - عرف: s.
  c
- - Print this command list.
+ - اس حکم کی فہرست پرنٹ کریں.
 ";

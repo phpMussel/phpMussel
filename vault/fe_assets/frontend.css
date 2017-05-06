@@ -18,7 +18,7 @@ a:hover{color:#46f}
 a:active,a:focus{color:red}
 .bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a,input,select,textarea{font-weight:700}
 .bNav,.gen,.spanner{text-align:{FE_Align_Reverse}}
-.bNav{height:48px}
+.bNav{height:64px}
 .ci,.co,.gen,.center{margin:auto}
 .ci,.co,.ng1,.ng2,textarea{width:98%}
 .ci{background-color:#fff;border-style:solid;border-width:1px;border-color:#aaa;text-align:{FE_Align};padding:12px}

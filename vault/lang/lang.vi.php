@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2017.04.05).
+ * This file: Vietnamese language data (last modified: 2017.05.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,6 +26,7 @@ $phpMussel['lang']['cli_ln2'] = " Cảm ơn bạn đã chọn phpMussel, một l
 $phpMussel['lang']['cli_ln3'] = " phpMussel đang chạy trong chế độ CLI (command line interface).\n\n Đễ quét tập tin hoạc thư mục, hảy đánh vào 'scan', sau đó tên của tập tin\n hoạc thư mực mà bạn muốn phpMussel quét ròi bấm Enter; Đánh vào 'c' và bấm\n Enter đễ xem những loại chế độ CLI; Đánh 'q' và bấm Enter đế thoát ra:";
 $phpMussel['lang']['cli_pe1'] = 'Tập tin PE không hợp lệ!';
 $phpMussel['lang']['cli_pe2'] = 'Các loại PE:';
+$phpMussel['lang']['cli_signature_placeholder'] = 'TÊN-CHỮ-KÝ';
 $phpMussel['lang']['cli_working'] = 'Đang trong quá trình';
 $phpMussel['lang']['corrupted'] = 'Lối của PE đã được phát hiện ra';
 $phpMussel['lang']['denied'] = 'Sự tải lên đã bị từ chối!';
@@ -96,8 +97,12 @@ $phpMussel['lang']['cli_commands'] = " q
  md5_file
  - Phát ra MD5 chử ký từ tập tin [Cú pháp: md5_file \"tên tập tin\"].
  - Bí danh: m.
+ sha1_file
+ - Phát ra SHA1 chử ký từ tập tin [Cú pháp: sha1_file \"tên tập tin\"].
  md5
  - Phát ra MD5 chử ký từ dây [Cú pháp: md5 string].
+ sha1
+ - Phát ra SHA1 chử ký từ dây [Cú pháp: sha1 string].
  hex_encode
  - Chuyển đổi dây nhị phân thành hệ thập lục phân [Cú pháp: hex_encode string].
  - Bí danh: x.

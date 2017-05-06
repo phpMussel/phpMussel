@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data (last modified: 2017.02.07).
+ * This file: Chinese (simplified) language data (last modified: 2017.05.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,6 +26,7 @@ $phpMussel['lang']['cli_ln2'] = " 谢谢对于使用phpMussel，一个PHP脚本�
 $phpMussel['lang']['cli_ln3'] = " 目前经营phpMussel在CLI模式（命令行界面）。\n\n 扫描一个文件或文件夹，键入“scan”，其次是名的文件或文件夹您想phpMussel扫描然后按Enter键；\n 键入“c”然后按Enter键对于CLI模式命令名单；键入“q”然后按Enter键对于戒烟：";
 $phpMussel['lang']['cli_pe1'] = '不PE文件！';
 $phpMussel['lang']['cli_pe2'] = 'PE部分:';
+$phpMussel['lang']['cli_signature_placeholder'] = '签名名称';
 $phpMussel['lang']['cli_working'] = '进行中';
 $phpMussel['lang']['corrupted'] = '检测损坏PE';
 $phpMussel['lang']['denied'] = '上传是否认！';
@@ -96,8 +97,12 @@ $phpMussel['lang']['cli_commands'] = " q
  md5_file
  - 生成MD5签名从文件[语法：md5_file 文件名]。
  - 别名：m。
+ sha1_file
+ - 生成SHA1签名从文件[语法：sha1_file 文件名]。
  md5
  - 生成MD5签名从数据[语法：md5 数据]。
+ sha1
+ - 生成SHA1签名从数据[语法：sha1 数据]。
  hex_encode
  - 兑换从二进制数据至十六进制[语法：hex_encode 数据]。
  - 别名：x。

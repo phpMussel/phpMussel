@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2017.03.19).
+ * This file: French language data (last modified: 2017.05.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,6 +26,7 @@ $phpMussel['lang']['cli_ln2'] = " Merci d\'utiliser phpMusel, un script PHP pour
 $phpMussel['lang']['cli_ln3'] = " Exécute actuellement phpMussel en mode CLI (Interface Ligne de Commande).\n\n Pour analyser un fichier ou répertoire, taper 'scan', suivi par le nom du\n fichier ou répertoire que vous voulez que phpMussel analyse et appuyez sur\n Entrée; Tapez 'c' et appuyez sur Entrée pour une liste de CLI mode commandes;\n Taper 'q' et appuyez sur Entrée pour quitter:";
 $phpMussel['lang']['cli_pe1'] = 'Pas un valide PE fichier!';
 $phpMussel['lang']['cli_pe2'] = 'PE Sections:';
+$phpMussel['lang']['cli_signature_placeholder'] = 'NOM-DE-SIGNATURE';
 $phpMussel['lang']['cli_working'] = 'En cours';
 $phpMussel['lang']['corrupted'] = 'PE corrompu détecté';
 $phpMussel['lang']['denied'] = 'Téléchargement Refusé!';
@@ -97,8 +98,13 @@ $phpMussel['lang']['cli_commands'] = " q
  - Générer les signatures MD5 des fichiers
  - [Syntaxe: md5_file \"nom du fichier\"].
  - Alias: m.
+ sha1_file
+ - Générer les signatures SHA1 des fichiers
+ - [Syntaxe: sha1_file \"nom du fichier\"].
  md5
  - Générer la signature MD5 à partir d'une chaîne [Syntaxe: md5 string].
+ sha1
+ - Générer la signature SHA1 à partir d'une chaîne [Syntaxe: sha1 string].
  hex_encode
  - Convertir une chaîne binaire en hexadécimal [Syntaxe: hex_encode string].
  - Alias: x.

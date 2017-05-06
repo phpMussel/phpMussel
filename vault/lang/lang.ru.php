@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2017.02.07).
+ * This file: Russian language data (last modified: 2017.05.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,6 +26,7 @@ $phpMussel['lang']['cli_ln2'] = " Спасибо за использование
 $phpMussel['lang']['cli_ln3'] = " В настоящее время phpMussel работает в CLI режиме (командной строки интерфейс).\n\n Для сканирования файла или каталога, введите 'scan', а затем имя файла или\n каталога который вы хотите просканировать, и нажмите Enter; Введите 'c' и\n нажмите Enter для списка CLI режима команды; Введите 'q' и нажмите Enter для\n окончания:";
 $phpMussel['lang']['cli_pe1'] = 'Не ПЭ Файл!';
 $phpMussel['lang']['cli_pe2'] = 'ПЭ Разделы:';
+$phpMussel['lang']['cli_signature_placeholder'] = 'ВАШЕ-ИМЯ-СИГНАТУР';
 $phpMussel['lang']['cli_working'] = 'В действии';
 $phpMussel['lang']['corrupted'] = 'Обнаружена поврежденная ПЭ';
 $phpMussel['lang']['denied'] = 'Загрузка Отказана!';
@@ -96,8 +97,12 @@ $phpMussel['lang']['cli_commands'] = " q
  md5_file
  - Создание MD5 подписи от файлы [Синтаксис: md5_file имя-файла].
  - Псевдоним: m.
+ sha1_file
+ - Создание SHA1 подписи от файлы [Синтаксис: sha1_file имя-файла].
  md5
  - Создание MD5 подпись от данные [Синтаксис: md5 данные].
+ sha1
+ - Создание SHA1 подпись от данные [Синтаксис: sha1 данные].
  hex_encode
  - Преобразует двоичные данные из шестнадцатеричной
    [Синтаксис: hex_encode данные].

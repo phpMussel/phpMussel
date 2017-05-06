@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2017.02.07).
+ * This file: Arabic language data (last modified: 2017.05.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,7 +19,6 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['textDir'] = 'rtl';
 $phpMussel['lang']['bad_command'] = 'أنا لا أفهم هذا الأمر، آسف.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'فشل في إكمال عملية المسح.';
 $phpMussel['lang']['cli_is_not_a'] = ' ليس ملف أو مجلد.';
@@ -27,6 +26,7 @@ $phpMussel['lang']['cli_ln2'] = " شكراً لك على إستخدام phpMusse
 $phpMussel['lang']['cli_ln3'] = " حاليا على تنفيذ phpMussel في وضع CLI (واجهة سطر الأوامر).\n\n لمسح ملف أو دليل، اكتب 'scan'، ثم اسم ملف أو دليل الذي تريد phpMussel إلى لمسح\n واضغط Enter؛ اكتب 'c' واضغط Enter للحصول على قائمة أوامر وضع CLI؛\n اكتب 'q' واضغط Enter للخروج:";
 $phpMussel['lang']['cli_pe1'] = 'ليس ملف PE صالح!';
 $phpMussel['lang']['cli_pe2'] = 'أقسام PE:';
+$phpMussel['lang']['cli_signature_placeholder'] = 'اسم';
 $phpMussel['lang']['cli_working'] = 'في تَقَدم';
 $phpMussel['lang']['corrupted'] = 'الكشف PE تلف';
 $phpMussel['lang']['denied'] = 'رفض تحميل!';
@@ -76,6 +76,7 @@ $phpMussel['lang']['scan_tampering'] = 'الكشف العبث ملف يحتمل 
 $phpMussel['lang']['scan_unauthorised_upload'] = 'الكشف تلاعب تحميل الملف غير مصرح';
 $phpMussel['lang']['scan_unauthorised_upload_or_misconfig'] = 'تلاعب تحميل الملف غير مصرح أو تكوين الخطأ الكشف! ';
 $phpMussel['lang']['started'] = 'بدأت';
+$phpMussel['lang']['textDir'] = 'rtl';
 $phpMussel['lang']['too_many_urls'] = 'عدد كبير جدا من عناوين المواقع';
 $phpMussel['lang']['upload_error_1'] = 'حجم الملف تجاوز توجيهات upload_max_filesize. ';
 $phpMussel['lang']['upload_error_2'] = 'حجم الملف تجاوز الحد حجم الملف التي يحددها شكل. ';
@@ -97,8 +98,12 @@ $phpMussel['lang']['cli_commands'] = " q
  md5_file
  - خلق التوقيعات MD5 من ملفات [بناء الجملة: md5_file اسم الملف].
  - البديل: m.
+ sha1_file
+ - خلق التوقيعات SHA1 من ملفات [بناء الجملة: sha1_file اسم الملف].
  md5
  - خلق التوقيعات MD5 من النص [بناء الجملة: md5 نص].
+ sha1
+ - خلق التوقيعات SHA1 من النص [بناء الجملة: sha1 نص].
  hex_encode
  - تحول النص ثنائي إلى سداسي عشري [بناء الجملة: hex_encode نص].
  - البديل: x.

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data (last modified: 2017.02.07).
+ * This file: Portuguese language data (last modified: 2017.05.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,6 +26,7 @@ $phpMussel['lang']['cli_ln2'] = " Obrigado por usando phpMussel, um PHP script p
 $phpMussel['lang']['cli_ln3'] = " Correntemente execução phpMussel em CLI modo (comando linha interface).\n\n Para analisar um arquivo ou diretório, digitá 'scan', seguido pelo nome do\n arquivo ou diretório que você deseja phpMussel para analisar e pressione\n Enter; Digitá 'c' e pressione Enter por uma lista de CLI modo comandos; Digitá\n 'q' e pressione Enter para sair:";
 $phpMussel['lang']['cli_pe1'] = 'Não é um válido PE arquivo!';
 $phpMussel['lang']['cli_pe2'] = 'PE Seções:';
+$phpMussel['lang']['cli_signature_placeholder'] = 'O-NOME-DA-SUA-ASSINATURA';
 $phpMussel['lang']['cli_working'] = 'Em processo';
 $phpMussel['lang']['corrupted'] = 'Detectado corrompido PE';
 $phpMussel['lang']['denied'] = 'Carregar Negado!';
@@ -96,8 +97,12 @@ $phpMussel['lang']['cli_commands'] = " q
  md5_file
  - Gerar MD5 assinaturas de arquivos [Sintaxe: md5_file \"nome do arquivo\"].
  - Alias: m.
+ sha1_file
+ - Gerar SHA1 assinaturas de arquivos [Sintaxe: sha1_file \"nome do arquivo\"].
  md5
  - Gerar MD5 assinatura de string [Sintaxe: md5 string].
+ sha1
+ - Gerar SHA1 assinatura de string [Sintaxe: sha1 string].
  hex_encode
  - Converter binária string para hexadecimal [Sintaxe: hex_encode string].
  - Alias: x.

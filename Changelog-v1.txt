@@ -238,6 +238,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   CIDRAM README documentation into Urdu. This totals 16 different language
   versions of the README documentation now available.
 
+- [2017.04.17; Sub-minor code change; Maikuolan]: Added internal language
+  support for Thai (17 language localisations now completed and available).
+
 - [2017.04.21; Sub-minor code change; Maikuolan]: Improved support for
   fractions/floats/reals/decimals/etc for configuration directives. Added some
   basic system information to the front-end homepage, to help with debugging.

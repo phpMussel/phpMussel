@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2017.02.07).
+ * This file: Dutch language data (last modified: 2017.05.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,6 +26,7 @@ $phpMussel['lang']['cli_ln2'] = " Dank u voor het gebruiken van phpMussel, een P
 $phpMussel['lang']['cli_ln3'] = " Momenteel phpMussel is in CLI-modus (commandlijn interface).\n\n Om scannen een bestand of map, typ 'scan', gevolgd door de naam van het\n bestand of de map die u wilt phpMussel te scannen en druk op Enter; Typ 'c' en\n druk op Enter voor een lijst op CLI-modus commando's; Typ 'q' en druk op Enter\n om te stoppen:";
 $phpMussel['lang']['cli_pe1'] = 'Geen geldig PE-bestand!';
 $phpMussel['lang']['cli_pe2'] = 'PE Secties:';
+$phpMussel['lang']['cli_signature_placeholder'] = 'UW-SIGNATURE-NAAM';
 $phpMussel['lang']['cli_working'] = 'Aan de gang';
 $phpMussel['lang']['corrupted'] = 'Gedetecteerd beschadigd PE';
 $phpMussel['lang']['denied'] = 'Upload Geweigerd!';
@@ -96,8 +97,12 @@ $phpMussel['lang']['cli_commands'] = " q
  md5_file
  - Genereer MD5 signatures van bestanden [Syntaxis: md5_file bestandsnaam].
  - Alias: m.
+ sha1_file
+ - Genereer SHA1 signatures van bestanden [Syntaxis: sha1_file bestandsnaam].
  md5
  - Genereer MD5 signature van string [Syntaxis: md5 string].
+ sha1
+ - Genereer SHA1 signature van string [Syntaxis: sha1 string].
  hex_encode
  - Converteren van binaire string naar hexadecimaal
    [Syntaxis: hex_encode string].

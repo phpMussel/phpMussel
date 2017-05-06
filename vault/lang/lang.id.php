@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2017.02.07).
+ * This file: Indonesian language data (last modified: 2017.05.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,6 +26,7 @@ $phpMussel['lang']['cli_ln2'] = " Terima kasih untuk menggunakan phpMussel, sebu
 $phpMussel['lang']['cli_ln3'] = " Sekarang phpMussel operasi di CLI mode (command line interface).\n\n Untuk memindai file atau direktori, menulis 'scan', diikuti dengan nama file\n atau direktori yang ingin Anda phpMussel untuk memindai dan tekan Enter;\n Menulis 'c' dan tekan Enter untuk daftar CLI mode perintah; Menulis 'q' dan\n tekan Enter untuk keluar:";
 $phpMussel['lang']['cli_pe1'] = 'Tidak valid file PE!';
 $phpMussel['lang']['cli_pe2'] = 'Seksi PE:';
+$phpMussel['lang']['cli_signature_placeholder'] = 'NAMA-TANDA-TANGAN';
 $phpMussel['lang']['cli_working'] = 'Dalam proses';
 $phpMussel['lang']['corrupted'] = 'Terdeteksi rusak PE';
 $phpMussel['lang']['denied'] = 'Upload Ditolak!';
@@ -94,20 +95,28 @@ $phpMussel['lang']['cli_commands'] = " q
  - Berhenti CLI.
  - Alias: quit, exit.
  md5_file
- - Menghasilkan tanda tangan MD5 dari file [Sintaksis: md5_file \"nama file\"].
+ - Menghasilkan tanda tangan MD5 dari file
+ - [Sintaksis: md5_file \"nama file\"].
  - Alias: m.
+ sha1_file
+ - Menghasilkan tanda tangan SHA1 dari file
+ - [Sintaksis: sha1_file \"nama file\"].
  md5
  - Menghasilkan tanda tangan MD5 dari string [Sintaksis: md5 string].
+ sha1
+ - Menghasilkan tanda tangan SHA1 dari string [Sintaksis: sha1 string].
  hex_encode
  - Mengkonversi string biner ke heksadesimal [Sintaksis: hex_encode string].
  - Alias: x.
  hex_decode
  - Mengkonversi heksadesimal ke string biner [Sintaksis: hex_decode string].
  base64_encode
- - Mengkonversi string biner ke string base64 [Sintaksis: base64_encode string].
+ - Mengkonversi string biner ke string base64
+ - [Sintaksis: base64_encode string].
  - Alias: b.
  base64_decode
- - Mengkonversi string base64 ke string biner [Sintaksis: base64_decode string].
+ - Mengkonversi string base64 ke string biner
+ - [Sintaksis: base64_decode string].
  scan
  - Pindai file atau direktori [Sintaksis: scan \"nama file\"].
  - Alias: s.

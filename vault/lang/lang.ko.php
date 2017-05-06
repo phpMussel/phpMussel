@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2017.04.05).
+ * This file: Korean language data (last modified: 2017.05.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,6 +26,7 @@ $phpMussel['lang']['cli_ln2'] = " phpMussel을 이용해 주셔서 감사합니�
 $phpMussel['lang']['cli_ln3'] = " CLI 모드 (명령 줄 인터페이스)에서 phpMussel를 실행 중입니다.\n\n 파일 또는 디렉토리 – 스캔하려면 \"scan\"를 입력하고 계속 파일\n 또는 디렉터리 이름을 입력하고 엔터를 눌러주세요.\n CLI 모드 명령의 목록을 얻으려면 'c'를 입력하고 엔터를 눌러주세요;\n 종료는 \"q\"를 입력하고 엔터를 누릅니다. ";
 $phpMussel['lang']['cli_pe1'] = '올바른 PE 파일이 없습니다!';
 $phpMussel['lang']['cli_pe2'] = 'PE 섹션:';
+$phpMussel['lang']['cli_signature_placeholder'] = '서명-이름';
 $phpMussel['lang']['cli_working'] = '처리 중';
 $phpMussel['lang']['corrupted'] = '손상 PE를 발견했습니다';
 $phpMussel['lang']['denied'] = '업로드 거부!';
@@ -96,8 +97,12 @@ $phpMussel['lang']['cli_commands'] = " q
  md5_file
  - 파일 MD5 서명을 작성 [구문: md5_file 파일 이름].
  - 별칭:  m.
+ sha1_file
+ - 파일 SHA1 서명을 작성 [구문: sha1_file 파일 이름].
  md5
  - 문자열에서 MD5 서명을 작성 [구문: md5 string].
+ sha1
+ - 문자열에서 SHA1 서명을 작성 [구문: sha1 string].
  hex_encode
  - 2 진수 문자열을 16 진수 문자열로 변환 [구문: hex_encode string].
  - 별칭:  x.

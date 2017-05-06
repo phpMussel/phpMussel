@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2017.02.07).
+ * This file: German language data (last modified: 2017.05.02).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,6 +26,7 @@ $phpMussel['lang']['cli_ln2'] = " Vielen Dank für die Benutzung von phpMussel, 
 $phpMussel['lang']['cli_ln3'] = " phpMussel befindet sich im CLI-Modus (Command Line Interface).\n\n Um eine Datei oder ein Verzeichnis mit phpMussel zu überprüfen, geben Sie\n 'scan', gefolgt vom Namen der Datei oder des Verzeichnisses ein und\n bestätigen mit Enter;\n\n Geben Sie 'c' und Enter für eine Liste der verfügbaren Befehle im CLI-Modus\n ein; Geben Sie 'q' und Enter zum Beenden ein: ";
 $phpMussel['lang']['cli_pe1'] = 'Keine gültige PE-Datei!';
 $phpMussel['lang']['cli_pe2'] = 'PE-Sektionen:';
+$phpMussel['lang']['cli_signature_placeholder'] = 'IHR-SIGNATURNAME';
 $phpMussel['lang']['cli_working'] = 'Im Gange';
 $phpMussel['lang']['corrupted'] = 'Beschädigte PE entdeckt';
 $phpMussel['lang']['denied'] = 'Upload verweigert!';
@@ -96,8 +97,12 @@ $phpMussel['lang']['cli_commands'] = " q
  md5_file
  - Generiert MD5-Signaturen einer Datei [Syntax: md5_file filename].
  - Alias: m.
+ sha1_file
+ - Generiert SHA1-Signaturen einer Datei [Syntax: sha1_file filename].
  md5
  - Generiert MD5-Signaturen eines String-Wertes [Syntax: md5 string].
+ sha1
+ - Generiert SHA1-Signaturen eines String-Wertes [Syntax: sha1 string].
  hex_encode
  - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert
    [Syntax: hex_encode string].

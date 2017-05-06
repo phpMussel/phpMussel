@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.04.29).
+ * This file: Functions file (last modified: 2017.05.06).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -166,16 +166,10 @@ $phpMussel['substr_compare_hex'] = function ($str = '', $st = 0, $l = 0, $x = 0,
         return false;
     }
     for ($str = substr($str, $st, $l), $y = '', $i = 0; $i < $l; $i++) {
-        $z = dechex(ord($str[$i]));
-        if (strlen($z) === 1) {
-            $z = '0' . $z;
-        }
-        $y .= $z;
+        $z = dechex(ord(substr($str, $i, 1)));
+        $y .= (strlen($z) === 1) ? $z = '0' . $z : $z;
     }
-    if (!$p) {
-        return (substr_count($y, strtolower($x)) > 0);
-    }
-    return ($y === strtolower($x));
+    return !$p ? (substr_count($y, strtolower($x)) > 0) : ($y === strtolower($x));
 };
 
 /**
@@ -4553,11 +4547,14 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
      * contents and recurse the recursor with these contents.
      */
     if (is_dir($f)) {
-        if (!is_readable($f) || !$Dir = scandir($f)) {
+        if (!is_readable($f)) {
             $phpMussel['memCache']['scan_errors']++;
             return (!$n) ? 0 :
                 $lnap . $phpMussel['lang']['failed_to_access'] . '\'' . $ofn . '\'' .
                 $phpMussel['lang']['_exclamation_final'] . "\n";
+            $Dir = array();
+        } else {
+            $Dir = $phpMussel['DirectoryRecursiveList']($f);
         }
         foreach ($Dir as &$Sub) {
             try {
@@ -6415,4 +6412,25 @@ $phpMussel['ReadBytes'] = function ($In, $Mode = 0) {
 $phpMussel['FilterLang'] = function ($ChoiceKey) use (&$phpMussel) {
     $Path = $phpMussel['Vault'] . 'lang/lang.' . $ChoiceKey;
     return (file_exists($Path . '.php') && file_exists($Path . '.fe.php'));
+};
+
+/**
+ * Improved recursive directory iterator for phpMussel.
+ *
+ * @param string $Base Directory root.
+ * @return array Directory tree.
+ */
+$phpMussel['DirectoryRecursiveList'] = function ($Base) use (&$phpMussel) {
+    $Arr = array();
+    $Key = -1;
+    $Offset = strlen($Base);
+    $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);
+    foreach ($List as $Item => $List){
+        if (preg_match("\x01" . '^(?:/\.\.|./\.|\.{3})$' . "\x01", str_replace("\\", '/', substr($Item, -3))) || !is_readable($Item) || is_dir($Item)) {
+            continue;
+        }
+        $Key++;
+        $Arr[$Key] = substr($Item, $Offset);
+    }
+    return $Arr;
 };
