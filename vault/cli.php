@@ -68,7 +68,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         }
 
         /** Generate an MD5 signature or a SHA1 signature using a file or directory. **/
-        if ($phpMussel['cmd'] === 'md5_file' || $phpMussel['cmd'] === 'sha1_file') {
+        if ($phpMussel['cmd'] === 'md5_file' || $phpMussel['cmd'] === 'm' || $phpMussel['cmd'] === 'sha1_file') {
             $stl = substr($phpMussel['cli_args'][2], strlen($phpMussel['cmd']) + 1);
             if (is_dir($stl)) {
                 if (!is_readable($stl)) {
