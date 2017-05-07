@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2017.05.06).
+ * This file: CLI handler (last modified: 2017.05.07).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -50,12 +50,13 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             } catch (\Exception $e) {
                 die($e->getMessage());
             }
-            if ($phpMussel['Config']['general']['scan_cache_expiry'] > 0 && is_array($phpMussel['HashCache'])) {
+            if ($phpMussel['Config']['general']['scan_cache_expiry'] > 0 && is_array($phpMussel['HashCache']['Data'])) {
                 foreach ($phpMussel['HashCache']['Data'] as &$phpMussel['HashCache']['ThisData']) {
                     if (is_array($phpMussel['HashCache']['ThisData'])) {
                         $phpMussel['HashCache']['ThisData'] = implode(':', $phpMussel['HashCache']['ThisData']) . ';';
                     }
                 }
+                unset($phpMussel['HashCache']['ThisData']);
                 $phpMussel['HashCache']['Data'] = implode('', $phpMussel['HashCache']['Data']);
                 $phpMussel['HashCache']['Data'] = $phpMussel['SaveCache'](
                     'HashCache',
@@ -66,8 +67,8 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             die;
         }
 
-        /** Generate an MD5 signature using a file. **/
-        if ($phpMussel['cmd'] === 'md5_file') {
+        /** Generate an MD5 signature or a SHA1 signature using a file or directory. **/
+        if ($phpMussel['cmd'] === 'md5_file' || $phpMussel['cmd'] === 'sha1_file') {
             $stl = substr($phpMussel['cli_args'][2], strlen($phpMussel['cmd']) + 1);
             if (is_dir($stl)) {
                 if (!is_readable($stl)) {
@@ -79,36 +80,12 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                     }
                     $List = $phpMussel['DirectoryRecursiveList']($stl);
                     foreach ($List as $Item) {
-                        echo $phpMussel['Fork']('md5_file ' . $stl . $Item, $Item) . "\n";
+                        echo $phpMussel['Fork']($phpMussel['cmd'] . ' ' . $stl . $Item, $Item) . "\n";
                     }
                 }
             } elseif (is_file($stl)) {
                 $HashMe = $phpMussel['ReadFile']($stl, 0, true);
-                echo md5($HashMe) . ':' . strlen($HashMe) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
-            } else {
-                echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
-            }
-        }
-
-        /** Generate a SHA1 signature using a file. **/
-        if ($phpMussel['cmd'] === 'sha1_file') {
-            $stl = substr($phpMussel['cli_args'][2], strlen($phpMussel['cmd']) + 1);
-            if (is_dir($stl)) {
-                if (!is_readable($stl)) {
-                    echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
-                } else {
-                    $Terminal = $stl[strlen($stl) - 1];
-                    if ($Terminal !== "\\" && $Terminal !== '/') {
-                        $stl .= '/';
-                    }
-                    $List = $phpMussel['DirectoryRecursiveList']($stl);
-                    foreach ($List as $Item) {
-                        echo $phpMussel['Fork']('sha1_file ' . $stl . $Item, $Item) . "\n";
-                    }
-                }
-            } elseif (is_file($stl)) {
-                $HashMe = $phpMussel['ReadFile']($stl, 0, true);
-                echo sha1($HashMe) . ':' . strlen($HashMe) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
+                echo $phpMussel['HashAlias']($phpMussel['cmd'], $HashMe) . ':' . strlen($HashMe) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
             } else {
                 echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
             }
@@ -263,7 +240,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
 
     while (true) {
 
-        /** Set CLI process title (PHP =>5.5.0). */
+        /** Set CLI process title (PHP => 5.5.0). */
         if (function_exists('cli_set_process_title')) {
             cli_set_process_title($phpMussel['ScriptIdent']);
         }
@@ -287,8 +264,8 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             die;
         }
 
-        /** Generate an MD5 signature using a file. **/
-        if ($phpMussel['cmd'] === 'md5_file' || $phpMussel['cmd'] === 'm') {
+        /** Generate an MD5 signature or a SHA1 signature using a file or directory. **/
+        if ($phpMussel['cmd'] === 'md5_file' || $phpMussel['cmd'] === 'm' || $phpMussel['cmd'] === 'sha1_file') {
             echo "\n";
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
             if (is_dir($stl)) {
@@ -301,37 +278,12 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                     }
                     $List = $phpMussel['DirectoryRecursiveList']($stl);
                     foreach ($List as $Item) {
-                        echo $phpMussel['Fork']('md5_file ' . $stl . $Item, $Item) . "\n";
+                        echo $phpMussel['Fork']($phpMussel['cmd'] . ' ' . $stl . $Item, $Item) . "\n";
                     }
                 }
             } elseif (is_file($stl)) {
                 $HashMe = $phpMussel['ReadFile']($stl, 0, true);
-                echo md5($HashMe) . ':' . strlen($HashMe) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
-            } else {
-                echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
-            }
-        }
-
-        /** Generate a SHA1 signature using a file. **/
-        if ($phpMussel['cmd'] === 'sha1_file') {
-            echo "\n";
-            $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            if (is_dir($stl)) {
-                if (!is_readable($stl)) {
-                    echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
-                } else {
-                    $Terminal = $stl[strlen($stl) - 1];
-                    if ($Terminal !== "\\" && $Terminal !== '/') {
-                        $stl .= '/';
-                    }
-                    $List = $phpMussel['DirectoryRecursiveList']($stl);
-                    foreach ($List as $Item) {
-                        echo $phpMussel['Fork']('sha1_file ' . $stl . $Item, $Item) . "\n";
-                    }
-                }
-            } elseif (is_file($stl)) {
-                $HashMe = $phpMussel['ReadFile']($stl, 0, true);
-                echo sha1($HashMe) . ':' . strlen($HashMe) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
+                echo $phpMussel['HashAlias']($phpMussel['cmd'], $HashMe) . ':' . strlen($HashMe) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
             } else {
                 echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
             }
@@ -390,18 +342,11 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             }
         }
 
-        /** Generate an MD5 signature using a string. **/
-        if ($phpMussel['cmd'] === 'md5') {
+        /** Generate an MD5 signature or a SHA1 signature using a string. **/
+        if ($phpMussel['cmd'] === 'md5' || $phpMussel['cmd'] === 'sha1') {
             echo "\n";
             $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            echo md5($stl) . ':' . strlen($stl) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
-        }
-
-        /** Generate a SHA1 signature using a string. **/
-        if ($phpMussel['cmd'] === 'sha1') {
-            echo "\n";
-            $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            echo sha1($stl) . ':' . strlen($stl) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
+            echo $phpMussel['cmd']($stl) . ':' . strlen($stl) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
         }
 
         /** Generate a URL scanner signature from a URL. **/

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.05.06).
+ * This file: Functions file (last modified: 2017.05.07).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -6420,7 +6420,7 @@ $phpMussel['FilterLang'] = function ($ChoiceKey) use (&$phpMussel) {
  * @param string $Base Directory root.
  * @return array Directory tree.
  */
-$phpMussel['DirectoryRecursiveList'] = function ($Base) use (&$phpMussel) {
+$phpMussel['DirectoryRecursiveList'] = function ($Base) {
     $Arr = array();
     $Key = -1;
     $Offset = strlen($Base);
@@ -6433,4 +6433,21 @@ $phpMussel['DirectoryRecursiveList'] = function ($Base) use (&$phpMussel) {
         $Arr[$Key] = substr($Item, $Offset);
     }
     return $Arr;
+};
+
+/**
+ * Internal aliases for common hash functions.
+ *
+ * @param string $Alias The alias used.
+ * @param string $Data The data to be hashed.
+ * @return string The output hash.
+ */
+$phpMussel['HashAlias'] = function ($Alias, $Data) {
+    if ($Alias === 'm' || $Alias === 'md5' || $Alias === 'md5_file') {
+        return md5($Data);
+    }
+    if ($Alias === 'sha1' || $Alias === 'sha1_file') {
+        return sha1($Data);
+    }
+    return '';
 };
