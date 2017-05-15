@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2017.05.02).
+ * This file: Urdu language data (last modified: 2017.05.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['textDir'] = 'rtl';
 $phpMussel['lang']['bad_command'] = 'میں نے اس حکم کو نہیں سمجھتے افسوس.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'سکیننگ کے عمل کو مکمل کرنے میں ناکام';
 $phpMussel['lang']['cli_is_not_a'] = ' یک فائل یا ڈائریکٹری نہیں ہے.';
@@ -76,7 +77,6 @@ $phpMussel['lang']['scan_tampering'] = 'پتہ چلنے پر ممکنہ طور �
 $phpMussel['lang']['scan_unauthorised_upload'] = 'غیر مجاز فائل اپ ہیرا پھیری کے پتہ';
 $phpMussel['lang']['scan_unauthorised_upload_or_misconfig'] = 'غیر مجاز فائل اپ ہیرا پھیری یا غلط کنفیگریشن کے پتہ! ';
 $phpMussel['lang']['started'] = 'شروع';
-$phpMussel['lang']['textDir'] = 'rtl';
 $phpMussel['lang']['too_many_urls'] = 'بہت سارے یو آر ایل';
 $phpMussel['lang']['upload_error_1'] = 'فائل upload_max_filesize ہدایت سے تجاوز. ';
 $phpMussel['lang']['upload_error_2'] = 'فائل فارم مخصوص فائل کی حد سے متجاوز. ';

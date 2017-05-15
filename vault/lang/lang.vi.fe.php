@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.04.29).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.05.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -229,8 +229,8 @@ $phpMussel['lang']['info_some_useful_links'] = 'Một số liên kết hữu íc
             <li><a href="http://www.clamav.net/">ClamavNet</a> – Trang chủ cho ClamAV (ClamAV® là một công cụ chống vi rút mã nguồn mở để phát hiện trojan, vi rút, phần mềm độc hại và các mối đe dọa nguy hiểm khác).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Công ty bảo mật máy tính mã cung cấp chữ ký bổ sung cho ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Cơ sở dữ liệu lừa đảo sử dụng bởi các máy quét URL phpMussel.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>
-            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP tài nguyên học tập và thảo luận.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>
+            <li><a href="https://php.earth/">PHP.earth</a> – PHP tài nguyên học tập và thảo luận.</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal là một dịch vụ miễn phí để phân tích các tập tin và URL đó là đáng ngờ.</li>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis là một dịch vụ miễn phí để phân tích phần mềm độc hại được cung cấp bởi <a href="http://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Máy tính chống phần mềm độc hại chuyên gia.</li>

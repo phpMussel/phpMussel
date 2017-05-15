@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.04.29).
+ * This file: Russian language data for the front-end (last modified: 2017.05.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -229,8 +229,8 @@ $phpMussel['lang']['info_some_useful_links'] = 'Некоторые полезн�
             <li><a href="http://www.clamav.net/">ClamavNet</a> – ClamAV домашняя страница (ClamAV® является антивирусный движок с открытым исходным кодом для обнаружения троянских программ, вирусов, вредоносных программ и других угроз).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Компьютерной безопасности компании, которая предлагает дополнительные сигнатуры для ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Фишинг базе данных, используется в сканером URL для phpMussel.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP учебных ресурсов и обсуждение.</li>
-            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP учебных ресурсов и обсуждение.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP учебных ресурсов и обсуждение.</li>
+            <li><a href="https://php.earth/">PHP.earth</a> – PHP учебных ресурсов и обсуждение.</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – Бесплатный сервис для анализа подозрительных файлов и URL-адресов.</li>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis представляет бесплатный сервис для анализа вредоносного программного, предоставленной <a href="http://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Специалисты в области защиты от вредоносных программ.</li>

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.04.29).
+ * This file: Indonesian language data for the front-end (last modified: 2017.05.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -229,8 +229,8 @@ $phpMussel['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
             <li><a href="http://www.clamav.net/">ClamavNet</a> – Halaman utama untuk ClamAV (ClamAV® adalah injin antivirus open source untuk mendeteksi trojan, virus, malware dan ancaman berbahaya lainnya).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Perusahaan keamanan komputer yang menawarkan tanda tangan tambahan untuk ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Database phishing digunakan oleh scanner URL phpMussel.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – Sumber belajar dan diskusi PHP.</li>
-            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – Sumber belajar dan diskusi PHP.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Sumber belajar dan diskusi PHP.</li>
+            <li><a href="https://php.earth/">PHP.earth</a> – Sumber belajar dan diskusi PHP.</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal adalah layanan gratis untuk menganalisis file dan URL yang mencurigakan.</li>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis adalah layanan analisis malware gratis yang disediakan oleh <a href="http://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Komputer spesialis anti-malware.</li>

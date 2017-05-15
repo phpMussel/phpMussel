@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.04.29).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.05.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -230,8 +230,8 @@ $phpMussel['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="http://www.clamav.net/">ClamavNet</a> – ClamAV主页（ClamAV®是一个开源的防病毒引擎用于检测木马，病毒，恶意软件和其他恶意威胁）。</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – 一家计算机安全公司；为ClamAV提供补充签名。</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – 网络钓鱼数据库；由phpMussel URL扫描器使用。</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group ＠ Facebook</a> – PHP学习资源和讨论。</li>
-            <li><a href="https://wwphp-fb.github.io/">International PHP Group ＠ GitHub</a> – PHP学习资源和讨论。</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group ＠ Facebook</a> – PHP学习资源和讨论。</li>
+            <li><a href="https://php.earth/">PHP.earth</a> – PHP学习资源和讨论。</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal是一项免费服务，用于分析可疑文件和URL。</li>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis是由<a href="http://www.payload-security.com/">Payload Security</a>提供的免费恶意软件分析服务。</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – 电脑反恶意软件专家。</li>

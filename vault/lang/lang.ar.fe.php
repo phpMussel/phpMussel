@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.04.29).
+ * This file: Arabic language data for the front-end (last modified: 2017.05.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -229,8 +229,8 @@ $phpMussel['lang']['info_some_useful_links'] = 'بعض الروابط المفي
             <li><a href="http://www.clamav.net/">ClamavNet</a> – الرئيسية ClamAV (ClamAV® هو محرك مكافحة الفيروسات مفتوحة المصدر للكشف عن أحصنة طروادة والفيروسات، والبرمجيات الخبيثة وغيرها من التهديدات الخبيثة).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – شركة أمن الكمبيوتر التي توفر التوقيعات التكميلية لكلاماف.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – التصيد قاعدة البيانات التي تستخدمها URL الماسح الضوئي phpMussel.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">International PHP Group @ Facebook</a> – PHP مصادر التعلم والمناقشة.</li>
-            <li><a href="https://wwphp-fb.github.io/" dir="ltr">International PHP Group @ GitHub</a> – PHP مصادر التعلم والمناقشة.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP مصادر التعلم والمناقشة.</li>
+            <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP مصادر التعلم والمناقشة.</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – خدمة مجانية لتحليل الملفات وعناوين المواقع التي هي مشبوهة.</li>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis هو خدمة تحليل البرمجيات الخبيثة المجانية التي تقدمها <a href="http://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – الكمبيوتر المتخصصين لمكافحة البرمجيات الخبيثة.</li>

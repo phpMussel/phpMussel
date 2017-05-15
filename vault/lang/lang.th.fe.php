@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.05.06).
+ * This file: Thai language data for the front-end (last modified: 2017.05.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -229,8 +229,8 @@ $phpMussel['lang']['info_some_useful_links'] = 'ลิงก์ที่เป�
             <li><a href="http://www.clamav.net/">ClamavNet</a> – โฮมเพจ ClamAV (ClamAV® เป็นเครื่องมือป้องกันไวรัสแบบโอเพนซอร์สสำหรับการตรวจจับโทรจันไวรัสมัลแวร์และภัยคุกคามที่เป็นอันตรายอื่น).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – บริษัทรักษาความปลอดภัยคอมพิวเตอร์ที่เสนอลายเซ็นเสริมสำหรับ ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – ฐานข้อมูลฟิชชิ่งใช้โดยเครื่องสแกน URL phpMussel.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
-            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
+            <li><a href="https://php.earth/">PHP.earth</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal เป็นบริการฟรีสำหรับการวิเคราะห์ไฟล์และ URL ที่น่าสงสัย.</li>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis เป็นบริการฟรีสำหรับการวิเคราะห์มัลแวร์ให้บริการโดย <a href="http://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – ผู้เชี่ยวชาญด้านคอมพิวเตอร์ป้องกันมัลแวร์.</li>

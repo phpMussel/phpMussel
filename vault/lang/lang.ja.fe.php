@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.04.29).
+ * This file: Japanese language data for the front-end (last modified: 2017.05.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -229,8 +229,8 @@ $phpMussel['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
             <li><a href="http://www.clamav.net/">ClamavNet</a> – ClamAVホームページ（ClamAV®は、トロイの木馬、ウイルス、マルウェア、とその他の脅威を検出するための、オープンソースのウイルス対策エンジンです）。</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – ClamAVの補足的なシグネチャを提供する、コンピュータセキュリティ会社。</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – phpMussel URLスキャナーで利用される、フィッシング詐欺データベース。</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group ＠ Facebook</a> – PHP学習リソースとディスカッション。</li>
-            <li><a href="https://wwphp-fb.github.io/">International PHP Group ＠ GitHub</a> – PHP学習リソースとディスカッション。</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group ＠ Facebook</a> – PHP学習リソースとディスカッション。</li>
+            <li><a href="https://php.earth/">PHP.earth</a> – PHP学習リソースとディスカッション。</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotalは、疑わしいファイルやURLを分析するための無料サービスです。</li>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysisは、<a href="http://www.payload-security.com/">Payload Security</a>が提供する無料のマルウェア分析サービスで。</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – コンピュータのマルウェア対策専門家。</li>

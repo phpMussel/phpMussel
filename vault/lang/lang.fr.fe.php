@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.04.29).
+ * This file: French language data for the front-end (last modified: 2017.05.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -229,8 +229,8 @@ $phpMussel['lang']['info_some_useful_links'] = 'Quelques liens utiles:<ul>
             <li><a href="http://www.clamav.net/">ClamavNet</a> – Page d\'accueil de ClamAV (ClamAV® est un moteur antivirus open source pour détecter les trojans, les virus, les logiciels malveillants et autres menaces malveillantes).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Compagnie de sécurité informatique qui offre des signatures supplémentaires pour ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Base de données d\'hameçonnage utilisée par le scanner URL de phpMussel.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – Ressources d\'apprentissage PHP et discussion.</li>
-            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – Ressources d\'apprentissage PHP et discussion.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Ressources d\'apprentissage PHP et discussion.</li>
+            <li><a href="https://php.earth/">PHP.earth</a> – Ressources d\'apprentissage PHP et discussion.</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal est un service gratuit pour analyser les fichiers et les URL qui sont suspects.</li>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis est un service gratuit pour l\'analyse des logiciels malveillants fourni par <a href="http://www.payload-security.com/">Payload Security</a>.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – Spécialistes en logiciels malveillants.</li>

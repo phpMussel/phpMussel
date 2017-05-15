@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2017.05.02).
+ * This file: Arabic language data (last modified: 2017.05.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['textDir'] = 'rtl';
 $phpMussel['lang']['bad_command'] = 'أنا لا أفهم هذا الأمر، آسف.';
 $phpMussel['lang']['cli_failed_to_complete'] = 'فشل في إكمال عملية المسح.';
 $phpMussel['lang']['cli_is_not_a'] = ' ليس ملف أو مجلد.';
@@ -76,7 +77,6 @@ $phpMussel['lang']['scan_tampering'] = 'الكشف العبث ملف يحتمل 
 $phpMussel['lang']['scan_unauthorised_upload'] = 'الكشف تلاعب تحميل الملف غير مصرح';
 $phpMussel['lang']['scan_unauthorised_upload_or_misconfig'] = 'تلاعب تحميل الملف غير مصرح أو تكوين الخطأ الكشف! ';
 $phpMussel['lang']['started'] = 'بدأت';
-$phpMussel['lang']['textDir'] = 'rtl';
 $phpMussel['lang']['too_many_urls'] = 'عدد كبير جدا من عناوين المواقع';
 $phpMussel['lang']['upload_error_1'] = 'حجم الملف تجاوز توجيهات upload_max_filesize. ';
 $phpMussel['lang']['upload_error_2'] = 'حجم الملف تجاوز الحد حجم الملف التي يحددها شكل. ';

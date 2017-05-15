@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.04.29).
+ * This file: Korean language data for the front-end (last modified: 2017.05.15).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -229,8 +229,8 @@ $phpMussel['lang']['info_some_useful_links'] = '유용한 링크:<ul>
             <li><a href="http://www.clamav.net/">ClamavNet</a> – ClamAV 홈페이지 (ClamAV®는 트로이 목마, 바이러스, 악성 코드, 그리고 기타 위협을 탐지하기위한 오픈 소스 안티 바이러스 엔진입니다).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – ClamAV의 추가적인 서명을 제공하는 컴퓨터 보안 회사.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – phpMussel URL 스캐너에 이용되는 피싱 데이터베이스.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">International PHP Group @ Facebook</a> – PHP 학습 자원과 토론.</li>
-            <li><a href="https://wwphp-fb.github.io/">International PHP Group @ GitHub</a> – PHP 학습 자원과 토론.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP 학습 자원과 토론.</li>
+            <li><a href="https://php.earth/">PHP.earth</a> – PHP 학습 자원과 토론.</li>
             <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal은 의심스러운 파일이나 URL을 분석하는 무료 서비스입니다.</li>
             <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis는 <a href="http://www.payload-security.com/">Payload Security</a>가 제공하는 무료 악성 코드 분석 서비스.</li>
             <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – 컴퓨터의 맬웨어 방지 전문가.</li>
