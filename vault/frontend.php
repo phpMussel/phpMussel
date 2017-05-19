@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.05.01).
+ * This file: Front-end handler (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,15 +26,10 @@ if (empty($phpMussel['QueryVars']['phpmussel-page'])) {
 
 /** Populate common front-end variables. */
 $phpMussel['FE'] = array(
-    'PIP_Left' => 'R0lGODlhCAAIAIABAJkCAP///yH5BAEKAAEALAAAAAAIAAgAAAINjH+ga6vJIEDh0UmzKQA7',
-    'PIP_Right' => 'R0lGODlhCAAIAIABAJkCAP///yH5BAEKAAEALAAAAAAIAAgAAAINjH+gmwvoUGBSSfOuKQA7',
-    'PIP_Key' => 'R0lGODlhBwAJAIABAJkAAP///yH5BAEKAAEALAAAAAAHAAkAAAINjH+gyaaAAkQrznRbKAA7',
-    'PIP_Key2' => 'R0lGODlhCAAFAIABAJkAAP///yH5BAEKAAEALAAAAAAIAAUAAAILDIJ5l2YAo1uItQIAOw==',
-    'Template' => $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/frontend.html'),
+    'Template' => $phpMussel['ReadFile']($phpMussel['GetAssetPath']('frontend.html')),
     'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
     'FE_Lang' => $phpMussel['Config']['general']['lang'],
     'DateTime' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']),
-    'WebFontsLink' => $phpMussel['WebFontsLink'],
     'ScriptIdent' => $phpMussel['ScriptIdent'],
     'UserList' => "\n",
     'SessionList' => "\n",
@@ -47,6 +42,25 @@ $phpMussel['FE'] = array(
     'bNav' => '&nbsp;',
     'FE_Title' => ''
 );
+
+/** Fetch pips data. */
+$phpMussel['Pips_Path'] = $phpMussel['GetAssetPath']('pips.php');
+if (is_readable($phpMussel['Pips_Path'])) {
+    require $phpMussel['Pips_Path'];
+}
+
+/** Handle webfonts. */
+if (empty($phpMussel['Config']['general']['disable_webfonts'])) {
+    $phpMussel['FE']['Template'] = str_replace(array('<!-- WebFont Begin -->', '<!-- WebFont End -->'), '', $phpMussel['FE']['Template']);
+} else {
+    $phpMussel['WebFontPos'] = array(
+        'Begin' => strpos($phpMussel['FE']['Template'], '<!-- WebFont Begin -->'),
+        'End' => strpos($phpMussel['FE']['Template'], '<!-- WebFont End -->')
+    );
+    $phpMussel['FE']['Template'] =
+        substr($phpMussel['FE']['Template'], 0, $phpMussel['WebFontPos']['Begin']) . substr($phpMussel['FE']['Template'], $phpMussel['WebFontPos']['End'] + 20);
+    unset($phpMussel['WebFontPos']);
+}
 
 /** Traversal detection. */
 $phpMussel['Traverse'] = function ($Path) {
@@ -74,7 +88,7 @@ if ($phpMussel['QueryVars']['phpmussel-page'] === 'css') {
     header('Content-Type: text/css');
     echo $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
-        $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/frontend.css')
+        $phpMussel['ReadFile']($phpMussel['GetAssetPath']('frontend.css'))
     );
     die;
 }
@@ -296,7 +310,7 @@ if ($phpMussel['FE']['UserState'] === 1) {
 
         $phpMussel['FE']['nav'] = $phpMussel['ParseVars'](
             $phpMussel['lang'] + $phpMussel['FE'],
-            $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_nav_complete_access.html')
+            $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_nav_complete_access.html'))
         );
 
     /** If the user has logs access only. */
@@ -304,7 +318,7 @@ if ($phpMussel['FE']['UserState'] === 1) {
 
         $phpMussel['FE']['nav'] = $phpMussel['ParseVars'](
             $phpMussel['lang'] + $phpMussel['FE'],
-            $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_nav_logs_access_only.html')
+            $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_nav_logs_access_only.html'))
         );
 
     }
@@ -330,7 +344,7 @@ if ($phpMussel['FE']['UserState'] !== 1) {
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
-        $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_login.html')
+        $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_login.html'))
     );
 
     /** Send output. */
@@ -370,7 +384,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '') {
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
-        $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_home.html')
+        $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_home.html'))
     );
 
     /** Send output. */
@@ -394,14 +408,15 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'icon' && $phpMussel['FE']
     elseif (!empty($phpMussel['QueryVars']['icon'])) {
 
         /** Fetch file manager icons data. */
-        if (file_exists($phpMussel['Vault'] . 'icons.php') && is_readable($phpMussel['Vault'] . 'icons.php')) {
-            require $phpMussel['Vault'] . 'icons.php';
+        $phpMussel['Icons_Handler_Path'] = $phpMussel['GetAssetPath']('icons.php');
+        if (is_readable($phpMussel['Icons_Handler_Path'])) {
+            require $phpMussel['Icons_Handler_Path'];
         }
 
         header('Content-Type: image/gif');
         if (!empty($phpMussel['Icons'][$phpMussel['QueryVars']['icon']])) {
             echo gzinflate(base64_decode($phpMussel['Icons'][$phpMussel['QueryVars']['icon']]));
-        } else {
+        } elseif (!empty($phpMussel['Icons']['unknown'])) {
             echo gzinflate(base64_decode($phpMussel['Icons']['unknown']));
         }
     }
@@ -544,7 +559,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
-    $phpMussel['FE']['AccountsRow'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_accounts_row.html');
+    $phpMussel['FE']['AccountsRow'] = $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_accounts_row.html'));
     $phpMussel['FE']['Accounts'] = '';
     $phpMussel['FE']['NewLineOffset'] = 0;
 
@@ -588,7 +603,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'accounts' && $phpMussel['
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
-        $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_accounts.html')
+        $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_accounts.html'))
     );
 
     /** Send output. */
@@ -610,7 +625,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
-    $phpMussel['FE']['ConfigRow'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_config_row.html');
+    $phpMussel['FE']['ConfigRow'] = $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_config_row.html'));
 
     /** Indexes. */
     $phpMussel['FE']['Indexes'] = '            ';
@@ -823,7 +838,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
-        $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_config.html')
+        $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_config.html'))
     );
 
     /** Send output. */
@@ -1261,7 +1276,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_home_logout'];
 
-    $phpMussel['FE']['UpdatesRow'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_updates_row.html');
+    $phpMussel['FE']['UpdatesRow'] = $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_updates_row.html'));
 
     $phpMussel['Components'] = array(
         'Meta' => $phpMussel['Components']['Meta'],
@@ -1346,6 +1361,26 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 }
             } elseif (!$phpMussel['Components']['ThisComponent']['StatClass']) {
                 $phpMussel['Components']['ThisComponent']['StatClass'] = 's';
+            }
+            if (!empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Name'])) {
+                $phpMussel['Components']['ThisComponent']['Name'] =
+                    $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Name'];
+                if (is_array($phpMussel['Components']['ThisComponent']['Name'])) {
+                    $phpMussel['IsolateL10N'](
+                        $phpMussel['Components']['ThisComponent']['Name'],
+                        $phpMussel['Config']['general']['lang']
+                    );
+                }
+            }
+            if (!empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Extended Description'])) {
+                $phpMussel['Components']['ThisComponent']['Extended Description'] =
+                    $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Extended Description'];
+                if (is_array($phpMussel['Components']['ThisComponent']['Extended Description'])) {
+                    $phpMussel['IsolateL10N'](
+                        $phpMussel['Components']['ThisComponent']['Extended Description'],
+                        $phpMussel['Config']['general']['lang']
+                    );
+                }
             }
             if (!$phpMussel['Components']['ThisComponent']['StatClass']) {
                 if (
@@ -1677,7 +1712,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
-        $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_updates.html')
+        $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_updates.html'))
     );
 
     /** Send output. */
@@ -1857,7 +1892,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                 /** Parse output. */
                 $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
                     $phpMussel['lang'] + $phpMussel['FE'],
-                    $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_files_rename.html')
+                    $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_files_rename.html'))
                 );
 
                 /** Send output. */
@@ -1893,7 +1928,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
                 /** Parse output. */
                 $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
                     $phpMussel['lang'] + $phpMussel['FE'],
-                    $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_files_edit.html')
+                    $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_files_edit.html'))
                 );
 
                 /** Send output. */
@@ -1917,12 +1952,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'file-manager' && $phpMuss
     }
 
     /** Template for file rows. */
-    $phpMussel['FE']['FilesRow'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_files_row.html');
+    $phpMussel['FE']['FilesRow'] = $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_files_row.html'));
 
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
-        $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_files.html')
+        $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_files.html'))
     );
 
     /** Initialise files data variable. */
@@ -1978,7 +2013,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'upload-test' && $phpMusse
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
-        $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_upload_test.html')
+        $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_upload_test.html'))
     );
 
     /** Send output. */
@@ -2003,7 +2038,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](
         $phpMussel['lang'] + $phpMussel['FE'],
-        $phpMussel['ReadFile']($phpMussel['Vault'] . 'fe_assets/_logs.html')
+        $phpMussel['ReadFile']($phpMussel['GetAssetPath']('_logs.html'))
     );
 
     /** Initialise array for fetching logs data. */
@@ -2012,6 +2047,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
         'Out' => ''
     );
 
+    /** Define log data. */
     if (empty($phpMussel['QueryVars']['logfile'])) {
         $phpMussel['FE']['logfileData'] = $phpMussel['lang']['logs_no_logfile_selected'];
     } elseif (empty($phpMussel['FE']['LogFiles']['Files'][$phpMussel['QueryVars']['logfile']])) {
@@ -2030,6 +2066,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'logs') {
         $phpMussel['FE']['mod_class_right'] = ' big';
     }
 
+    /** Define logfile list. */
     array_walk($phpMussel['FE']['LogFiles']['Files'], function ($Arr) use (&$phpMussel) {
         $phpMussel['FE']['LogFiles']['Out'] .= sprintf(
             '            <a href="?phpmussel-page=logs&logfile=%1$s">%1$s</a> – %2$s<br />',

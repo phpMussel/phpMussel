@@ -235,6 +235,8 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 /vault/fe_assets/frontend.css | 前端CSS样式表。
 /vault/fe_assets/frontend.dat | 前端数据库（包含账户信息，会话信息，和缓存；只生成如果前端是启用和使用）。
 /vault/fe_assets/frontend.html | 前端的主HTML模板文件。
+/vault/fe_assets/icons.php | 图标处理文件（由前端文件管理器使用）。
+/vault/fe_assets/pips.php | 点数处理文件（由前端文件管理器使用）。
 /vault/lang/ | 包含phpMussel语言数据。
 /vault/lang/.htaccess | 超文本访问文件（在这种情况，以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/lang/lang.ar.fe.php | 阿拉伯文前端语言数据。
@@ -290,8 +292,8 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 ※ /vault/scan_kills.txt | 记录的所有上传文件phpMussel受阻/杀。
 ※ /vault/scan_log.txt | 记录的一切phpMussel扫描。
 ※ /vault/scan_log_serialized.txt | 记录的一切phpMussel扫描。
-/vault/template.html | 模板文件；模板为HTML产量产生通过phpMussel为它的受阻文件上传信息（信息可见向上传者）。
 /vault/template_custom.html | 模板文件；模板为HTML产量产生通过phpMussel为它的受阻文件上传信息（信息可见向上传者）。
+/vault/template_default.html | 模板文件；模板为HTML产量产生通过phpMussel为它的受阻文件上传信息（信息可见向上传者）。
 /vault/upload.php | 上传处理文件。
 /.gitattributes | GitHub文件（不需要为正确经营脚本）。
 /Changelog-v1.txt | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。
@@ -561,6 +563,9 @@ URL扫描仪API配置。
 
 模板数据涉及到HTML产量使用以生成“上传是否认”信息显示为用户当一个文件上传是受阻。如果您使用个性化主题为phpMussel，HTML产量资源是从`template_custom.html`文件，和否则，HTML产量资源是从`template.html`文件。变量书面在这个配置文件部分是喂在HTML产量通过更换任何变量名包围在大括号发现在HTML产量使用相应变量数据。为例子，哪里`foo="bar"`，任何发生的`<p>{foo}</p>`发现在HTML产量将成为`<p>bar</p>`。
 
+“theme”
+- 用于phpMussel的默认主题。
+
 “css_url”
 - 模板文件为个性化主题使用外部CSS属性，而模板文件为t标准主题使用内部CSS属性。 以指示phpMussel使用模板文件为个性化主题，指定公共HTTP地址的您的个性化主题的CSS文件使用`css_url`变量。 如果您离开这个变量空白，phpMussel将使用模板文件为默认主题。
 
@@ -747,4 +752,4 @@ phpMussel会阻止文件 | __假阳性__ | 真阳性（正确的推理）
 ---
 
 
-最后更新：2017年5月2日。
+最后更新：2017年5月19日。

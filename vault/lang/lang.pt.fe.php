@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2017.05.15).
+ * This file: Portuguese language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -79,6 +79,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'Deve phpMussel usam assi
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Deve phpMussel reportar quando extensões não estão disponíveis? Se <code>fail_extensions_silently</code> está desativado, extensões indisponíveis serão reportado durante análise, e se <code>fail_extensions_silently</code> está ativado, extensões indisponíveis serão ignoradas, com a análise reportando por estes arquivos em que não há problemas. Desativando dessa directiva pode potencialmente aumentar a sua segurança, mas também pode levar a um aumento de falsos positivos. False = Desativado; True = Ativado [Padrão].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'Deve phpMussel reportar quando os assinaturas arquivos estão perdido ou corrompido? Se <code>fail_silently</code> está desativado, perdidos e corrompidos arquivos serão reportado durante análise, e se <code>fail_silently</code> está ativado, perdidos e corrompidos arquivos serão ignoradas, com a análise reportando por estes arquivos em que não há problemas. Isso geralmente deve ser deixado sozinho a menos que você está experimentando PHP falhas ou semelhantes problemas. False = Desativado; True = Ativado [Padrão].';
 $phpMussel['lang']['config_template_data_css_url'] = 'O template arquivo para temas personalizados utiliza CSS propriedades externos, enquanto que o template arquivo para o padrão tema utiliza CSS propriedades internos. Para instruir phpMussel para usar o template arquivo para temas personalizados, especificar o endereço HTTP pública do seu temas personalizados CSS arquivos usando a <code>css_url</code> variável. Se você deixar essa variável em branco, phpMussel usará o template arquivo para o padrão tema.';
+$phpMussel['lang']['config_template_data_theme'] = 'Tema padrão a ser usado para phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'Quanto tempo (em segundos) devem os resultados da API ser armazenados em cache? Padrão é 3600 segundos (1 hora).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Permite o uso do Google Safe Browsing API quando a API chave necessária está definida.';
 $phpMussel['lang']['config_urlscanner_lookup_hphosts'] = 'Permite o uso do hpHosts API quando definido para true.';

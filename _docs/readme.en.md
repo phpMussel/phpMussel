@@ -235,6 +235,8 @@ File | Description
 /vault/fe_assets/frontend.css | CSS style-sheet for the front-end.
 /vault/fe_assets/frontend.dat | Database for the front-end (contains account and session information; only generated if the front-end is enabled and used).
 /vault/fe_assets/frontend.html | The main HTML template file for the front-end.
+/vault/fe_assets/icons.php | Icons handler (used by the front-end file manager).
+/vault/fe_assets/pips.php | Pips handler (used by the front-end file manager).
 /vault/lang/ | Contains phpMussel language data.
 /vault/lang/.htaccess | A hypertext access file (in this instance, to protect sensitive files belonging to the script from being accessed by non-authorised sources).
 /vault/lang/lang.ar.fe.php | Arabic language data for the front-end.
@@ -290,8 +292,8 @@ File | Description
 ※ /vault/scan_kills.txt | A record of every file upload blocked/killed by phpMussel.
 ※ /vault/scan_log.txt | A record of everything scanned by phpMussel.
 ※ /vault/scan_log_serialized.txt | A record of everything scanned by phpMussel.
-/vault/template.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
 /vault/template_custom.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
+/vault/template_default.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
 /vault/upload.php | Upload handler.
 /.gitattributes | A GitHub project file (not required for proper function of script).
 /Changelog-v1.txt | A record of changes made to the script between different versions (not required for proper function of script).
@@ -561,6 +563,9 @@ Directives/Variables for templates and themes.
 
 Template data relates to the HTML output used to generate the "Upload Denied" message displayed to users upon a file upload being blocked. If you're using custom themes for phpMussel, HTML output is sourced from the `template_custom.html` file, and otherwise, HTML output is sourced from the `template.html` file. Variables written to this section of the configuration file are parsed to the HTML output by way of replacing any variable names circumfixed by curly brackets found within the HTML output with the corresponding variable data. For example, where `foo="bar"`, any instance of `<p>{foo}</p>` found within the HTML output will become `<p>bar</p>`.
 
+"theme"
+- Default theme to use for phpMussel.
+
 "css_url"
 - The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct phpMussel to use the template file for custom themes, specify the public HTTP address of your custom theme's CSS files using the `css_url` variable. If you leave this variable blank, phpMussel will use the template file for the default theme.
 
@@ -744,4 +749,4 @@ Yes. phpMussel installations are not naturally locked to specific domains, and c
 ---
 
 
-Last Updated: 2 May 2017 (2017.05.02).
+Last Updated: 19 May 2017 (2017.05.19).

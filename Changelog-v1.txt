@@ -278,6 +278,13 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.05.01; Sub-minor code change; Maikuolan]: Subtle improvements for
   mobile display ("responsiveness").
 
+- [2017.05.19; NEW FEATURE; Maikuolan]: Added full support for custom themes!
+  This expands upon the theme support already previously provided which allowed
+  users to specify custom CSS files to use for the "Upload Denied" page, by way
+  of adding full support for custom themes which will now also apply to the
+  front-end, allowing a richer level of customisation, and can be installed via
+  the front-end updates page.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

@@ -50,7 +50,7 @@ enable_plugins=true
 
 ; Should phpMussel send 403 headers with the file upload blocked message, or
 ; stick with the usual 200 OK? False = No (200); True = Yes (403) [Default].
-forbid_on_block=403
+forbid_on_block=true
 
 ; Enabling this directive will instruct the script to attempt to immediately
 ; delete any scanned attempted file upload matching any detection criteria,
@@ -477,6 +477,9 @@ cache_time=3600
 
 
 [template_data]
+
+; Default theme to use for phpMussel.
+theme='default'
 
 ; The template file for custom themes utilises external CSS properties, whereas
 ; the template file for the default theme utilises internal CSS properties. To

@@ -179,23 +179,23 @@ phpMussel ونڈوز کی بنیاد پر نظام کے تحت CLI موڈ میں
 
 &nbsp; <div dir="rtl" style="display:inline;">تفصیل</div> | <div dir="rtl" style="display:inline;">فائل</div>
 ----|----
-/_docs/ | دستاویزی ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).
-/_docs/readme.ar.md | عربی دستاویزات.
-/_docs/readme.de.md | جرمن دستاویزات.
-/_docs/readme.en.md | انگریزی دستاویزات.
-/_docs/readme.es.md | ہسپانوی دستاویزات.
-/_docs/readme.fr.md | فرانسیسی دستاویزات.
-/_docs/readme.id.md | انڈونیشیا دستاویزات.
-/_docs/readme.it.md | اطالوی دستاویزات.
-/_docs/readme.ja.md | جاپانی دستاویزات.
-/_docs/readme.ko.md | کوریا دستاویزات.
-/_docs/readme.nl.md | ڈچ دستاویزات.
-/_docs/readme.pt.md | پرتگالی دستاویزات.
-/_docs/readme.ru.md | روسی دستاویزات.
-/_docs/readme.ur.md | اردو دستاویزات.
-/_docs/readme.vi.md | ویتنامی دستاویزات.
-/_docs/readme.zh-TW.md | چینی (روایتی) دستاویزات.
-/_docs/readme.zh.md | چینی (آسان کردہ) دستاویزات.
+&nbsp; <div dir="rtl" style="display:inline;">دستاویزی ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /_docs/
+&nbsp; <div dir="rtl" style="display:inline;">عربی دستاویزات.</div> | /_docs/readme.ar.md
+&nbsp; <div dir="rtl" style="display:inline;">جرمن دستاویزات.</div> | /_docs/readme.de.md
+&nbsp; <div dir="rtl" style="display:inline;">انگریزی دستاویزات.</div> | /_docs/readme.en.md
+&nbsp; <div dir="rtl" style="display:inline;">ہسپانوی دستاویزات.</div> | /_docs/readme.es.md
+&nbsp; <div dir="rtl" style="display:inline;">فرانسیسی دستاویزات.</div> | /_docs/readme.fr.md
+&nbsp; <div dir="rtl" style="display:inline;">انڈونیشیا دستاویزات.</div> | /_docs/readme.id.md
+&nbsp; <div dir="rtl" style="display:inline;">اطالوی دستاویزات.</div> | /_docs/readme.it.md
+&nbsp; <div dir="rtl" style="display:inline;">جاپانی دستاویزات.</div> | /_docs/readme.ja.md
+&nbsp; <div dir="rtl" style="display:inline;">کوریا دستاویزات.</div> | /_docs/readme.ko.md
+&nbsp; <div dir="rtl" style="display:inline;">ڈچ دستاویزات.</div> | /_docs/readme.nl.md
+&nbsp; <div dir="rtl" style="display:inline;">پرتگالی دستاویزات.</div> | /_docs/readme.pt.md
+&nbsp; <div dir="rtl" style="display:inline;">روسی دستاویزات.</div> | /_docs/readme.ru.md
+&nbsp; <div dir="rtl" style="display:inline;">اردو دستاویزات.</div> | /_docs/readme.ur.md
+&nbsp; <div dir="rtl" style="display:inline;">ویتنامی دستاویزات.</div> | /_docs/readme.vi.md
+&nbsp; <div dir="rtl" style="display:inline;">چینی (روایتی) دستاویزات.</div> | /_docs/readme.zh-TW.md
+&nbsp; <div dir="rtl" style="display:inline;">چینی (آسان کردہ) دستاویزات.</div> | /_docs/readme.zh.md
 /_testfiles/ | ٹیسٹ فائلوں ڈائریکٹری (مختلف فائلوں پر مشتمل ہے). phpMussel درست طریقے سے آپ کے سسٹم پر نصب کیا گیا تھا کہ اگر تمام موجود فائلوں کی جانچ کے لئے ٹیسٹ فائلوں ہیں، اور آپ کو اس ڈائریکٹری یا اس کے فائلوں کے کسی بھی طرح کی ٹیسٹنگ کر رہے ہیں جب سوائے اپ لوڈ کرنے کی ضرورت نہیں.
 /_testfiles/ascii_standard_testfile.txt | ٹیسٹنگ phpMussel معمول ASCII دستخط کے لئے ٹیسٹ فائل.
 /_testfiles/coex_testfile.rtf | ٹیسٹنگ phpMussel کمپلیکس توسیعی دستخط کے لئے ٹیسٹ فائل.
@@ -208,72 +208,74 @@ phpMussel ونڈوز کی بنیاد پر نظام کے تحت CLI موڈ میں
 /_testfiles/pdf_standard_testfile.pdf | ٹیسٹنگ phpMussel PDF دستخط کے لئے ٹیسٹ فائل.
 /_testfiles/pe_sectional_testfile.exe | phpMussel PE تخباگیی دستخط کے ٹیسٹ کے لئے ٹیسٹ فائل.
 /_testfiles/swf_standard_testfile.swf | ٹیسٹنگ phpMussel SWF دستخط کے لئے ٹیسٹ فائل.
-/vault/ | والٹ ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).
+&nbsp; <div dir="rtl" style="display:inline;">والٹ ڈائریکٹری (مختلف فائلوں پر مشتمل ہے).</div> | /vault/
 /vault/cache/ | کیشے ڈائریکٹری (عارضی اعداد و شمار کے لئے).
-/vault/cache/.htaccess | ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).
+&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/cache/.htaccess
 /vault/fe_assets/ | سامنے کے آخر میں اثاثوں.
-/vault/fe_assets/.htaccess | ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).
-/vault/fe_assets/_accounts.html | سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.
-/vault/fe_assets/_accounts_row.html | سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.
-/vault/fe_assets/_config.html | سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.
-/vault/fe_assets/_config_row.html | سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.
-/vault/fe_assets/_files.html | فائل مینیجر کے لئے ایک HTML سانچے.
-/vault/fe_assets/_files_edit.html | فائل مینیجر کے لئے ایک HTML سانچے.
-/vault/fe_assets/_files_rename.html | فائل مینیجر کے لئے ایک HTML سانچے.
-/vault/fe_assets/_files_row.html | فائل مینیجر کے لئے ایک HTML سانچے.
-/vault/fe_assets/_home.html | سامنے کے آخر میں کے ہوم پیج کے لئے ایک HTML سانچے.
-/vault/fe_assets/_login.html | سامنے کے آخر میں لاگ ان کے لئے ایک HTML سانچے.
-/vault/fe_assets/_logs.html | سامنے کے آخر لاگز صفحے کے لئے ایک HTML سانچے.
-/vault/fe_assets/_nav_complete_access.html | مکمل رسائی کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن لنکس، کے لئے ایک HTML سانچے.
-/vault/fe_assets/_nav_logs_access_only.html | لاگز کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے، صرف تک رسائی حاصل.
-/vault/fe_assets/_updates.html | سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.
-/vault/fe_assets/_updates_row.html | سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.
+&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/fe_assets/.htaccess
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ایک HTML سانچے اکاؤنٹس صفحہ.</div> | /vault/fe_assets/_accounts_row.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_config.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں ترتیب کے صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_config_row.html
+&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files.html
+&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_edit.html
+&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_rename.html
+&nbsp; <div dir="rtl" style="display:inline;">فائل مینیجر کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_files_row.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے ہوم پیج کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_home.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں لاگ ان کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_login.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر لاگز صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_logs.html
+&nbsp; <div dir="rtl" style="display:inline;">مکمل رسائی کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_nav_complete_access.html
+&nbsp; <div dir="rtl" style="display:inline;">لاگز کے ساتھ ان لوگوں کے لئے سامنے کے آخر نیویگیشن روابط کے لئے ایک HTML سانچے، صرف تک رسائی.</div> | /vault/fe_assets/_nav_logs_access_only.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates.html
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں اپ ڈیٹس صفحے کے لئے ایک HTML سانچے.</div> | /vault/fe_assets/_updates_row.html
 /vault/fe_assets/_upload_test.html | اپ لوڈ کریں ٹیسٹ کے صفحے کے لئے ایک HTML سانچے.
-/vault/fe_assets/frontend.css | سامنے کے آخر میں کے لئے سی ایس ایس سٹائل شیٹ.
-/vault/fe_assets/frontend.dat | سامنے کے آخر میں کے لئے ڈیٹا بیس (اکاؤنٹ اور سیشن میں معلومات پر مشتمل؛ سامنے کے آخر میں فعال اور استعمال کیا جاتا ہے تو صرف پیدا کیا).
-/vault/fe_assets/frontend.html | سامنے کے آخر میں کے لئے اہم HTML سانچے کی فائل.
-/vault/lang/ | phpMussel زبان کے اعداد و شمار پر مشتمل ہے.
-/vault/lang/.htaccess | ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).
-/vault/lang/lang.ar.fe.php | سامنے کے آخر میں کے لئے عربی زبان کے اعداد و شمار.
-/vault/lang/lang.ar.php | عربی زبان کے اعداد و شمار.
-/vault/lang/lang.de.fe.php | سامنے کے آخر میں کے لئے جرمن زبان کے اعداد و شمار.
-/vault/lang/lang.de.php | جرمن زبان کے اعداد و شمار.
-/vault/lang/lang.en.fe.php | سامنے کے آخر میں کے لئے انگریزی زبان کے اعداد و شمار.
-/vault/lang/lang.en.php | انگریزی زبان کے اعداد و شمار.
-/vault/lang/lang.es.fe.php | سامنے کے آخر میں کے لئے ہسپانوی زبان کے اعداد و شمار.
-/vault/lang/lang.es.php | ہسپانوی زبان کے اعداد و شمار.
-/vault/lang/lang.fr.fe.php | سامنے کے آخر میں کے لئے فرانسیسی زبان کے اعداد و شمار.
-/vault/lang/lang.fr.php | فرانسیسی زبان کے اعداد و شمار.
-/vault/lang/lang.id.fe.php | سامنے کے آخر میں کے لئے انڈونیشی زبان کے اعداد و شمار.
-/vault/lang/lang.id.php | انڈونیشی زبان کے اعداد و شمار.
-/vault/lang/lang.it.fe.php | سامنے کے آخر میں کے لئے اطالوی زبان کے اعداد و شمار.
-/vault/lang/lang.it.php | اطالوی زبان کے اعداد و شمار.
-/vault/lang/lang.ja.fe.php | سامنے کے آخر میں کے لئے جاپانی زبان کے اعداد و شمار.
-/vault/lang/lang.ja.php | جاپانی زبان کے اعداد و شمار.
-/vault/lang/lang.ko.fe.php | سامنے کے آخر میں کے لئے کوریائی زبان کے اعداد و شمار.
-/vault/lang/lang.ko.php | کورین زبان کے اعداد و شمار.
-/vault/lang/lang.nl.fe.php | سامنے کے آخر میں کے لئے ڈچ زبان کے اعداد و شمار.
-/vault/lang/lang.nl.php | ڈچ زبان کے اعداد و شمار.
-/vault/lang/lang.pt.fe.php | سامنے کے آخر میں کے لئے پرتگالی زبان کے اعداد و شمار.
-/vault/lang/lang.pt.php | پرتگالی زبان کے اعداد و شمار.
-/vault/lang/lang.ru.fe.php | سامنے کے آخر میں کے لئے روسی زبان کے اعداد و شمار.
-/vault/lang/lang.ru.php | روسی زبان کے اعداد و شمار.
-/vault/lang/lang.th.fe.php | سامنے کے آخر میں کے لئے تھائی زبان کے اعداد و شمار.
-/vault/lang/lang.th.php | تھائی زبان کے اعداد و شمار.
-/vault/lang/lang.ur.fe.php | سامنے کے آخر میں کے لئے اردو زبان کے اعداد و شمار.
-/vault/lang/lang.ur.php | اردو زبان کے اعداد و شمار.
-/vault/lang/lang.vi.fe.php | سامنے کے آخر میں کے لئے ویتنامی زبان کے اعداد و شمار.
-/vault/lang/lang.vi.php | ویتنامی زبان کے اعداد و شمار.
-/vault/lang/lang.zh-tw.fe.php | سامنے کے آخر میں کے لئے چینی (روایتی) زبان کے اعداد و شمار.
-/vault/lang/lang.zh-tw.php | چینی (روایتی) زبان کے اعداد و شمار.
-/vault/lang/lang.zh.fe.php | چینی کے سامنے کے آخر کے لئے (Simplified) زبان کے اعداد و شمار.
-/vault/lang/lang.zh.php | چینی (آسان کردہ) زبان کے اعداد و شمار.
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے سی ایس ایس سٹائل شیٹ.</div> | /vault/fe_assets/frontend.css
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ڈیٹا بیس (اکاؤنٹ کی معلومات، سیشن کی معلومات، اور کیشے پر مشتمل ہے؛ سامنے کے آخر میں فعال اور استعمال کیا جاتا ہے تو صرف پیدا).</div> | /vault/fe_assets/frontend.dat
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اہم HTML سانچے کی فائل.</div> | /vault/fe_assets/frontend.html
+&nbsp; <div dir="rtl" style="display:inline;">شبیہیں کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/icons.php
+&nbsp; <div dir="rtl" style="display:inline;">پپس کے ہینڈلر (سامنے کے آخر میں فائل مینیجر کی طرف سے استعمال کیا جاتا).</div> | /vault/fe_assets/pips.php
+&nbsp; <div dir="rtl" style="display:inline;">phpMussel زبان کے اعداد و شمار پر مشتمل ہے.</div> | /vault/lang/
+&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/lang/.htaccess
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">عربی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ar.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">جرمن زبان کے اعداد و شمار.</div> | /vault/lang/lang.de.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے انگریزی زبان کے اعداد و شمار.</div> | /vault/lang/lang.en.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">انگریزی زبان کے اعداد و شمار.</div> | /vault/lang/lang.en.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ہسپانوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.es.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">ہسپانوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.es.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">فرانسیسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.fr.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">انڈونیشی زبان کے اعداد و شمار.</div> | /vault/lang/lang.id.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اطالوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.it.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">اطالوی زبان کے اعداد و شمار.</div> | /vault/lang/lang.it.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے جاپانی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ja.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">جاپانی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ja.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے کوریائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ko.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">کورین زبان کے اعداد و شمار.</div> | /vault/lang/lang.ko.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">ڈچ زبان کے اعداد و شمار.</div> | /vault/lang/lang.nl.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">پرتگالی زبان کے اعداد و شمار.</div> | /vault/lang/lang.pt.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">روسی زبان کے اعداد و شمار.</div> | /vault/lang/lang.ru.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">تھائی زبان کے اعداد و شمار.</div> | /vault/lang/lang.th.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">اردو زبان کے اعداد و شمار.</div> | /vault/lang/lang.ur.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے ویتنامی زبان کے اعداد و شمار.</div> | /vault/lang/lang.vi.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">ویتنامی زبان کے اعداد و شمار.</div> | /vault/lang/lang.vi.php
+&nbsp; <div dir="rtl" style="display:inline;">سامنے کے آخر میں کے لئے چینی (روایتی) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh-tw.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">چینی (روایتی) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh-tw.php
+&nbsp; <div dir="rtl" style="display:inline;">چینی کے سامنے کے آخر کے لئے (آسان کردہ) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh.fe.php
+&nbsp; <div dir="rtl" style="display:inline;">چینی (آسان کردہ) زبان کے اعداد و شمار.</div> | /vault/lang/lang.zh.php
 /vault/quarantine/ | سنگرودھ ڈائریکٹری (قرنطینہ فائلوں پر مشتمل ہے).
-/vault/quarantine/.htaccess | ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).
+&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/quarantine/.htaccess
 /vault/signatures/ | دستخط ڈائریکٹری (دستخط فائلوں پر مشتمل ہے).
-/vault/signatures/.htaccess | ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).
+&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/signatures/.htaccess
 /vault/signatures/switch.dat | کنٹرولز اور سیٹ خاص متغیر.
-/vault/.htaccess | ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).
+&nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/.htaccess
 /vault/cli.php | CLI ہینڈلر
 /vault/components.dat | phpMussel کے مختلف اجزاء سے متعلق معلومات پر مشتمل ہے؛ سامنے کے آخر کی طرف سے فراہم اپ ڈیٹ کی خصوصیت کی طرف سے استعمال کیا جاتا ہے.
 /vault/config.ini.RenameMe | کنفگریشن فائل؛ phpMussel کے تمام ترتیب کے اختیارات، کیا کرنا ہے یہ کہہ رہا ہے اور کس طرح درست طریقے سے کام کرنے کے لئے پر مشتمل ہے (چالو کرنے کا نام تبدیل).
@@ -287,8 +289,8 @@ phpMussel ونڈوز کی بنیاد پر نظام کے تحت CLI موڈ میں
 ※ /vault/scan_kills.txt | ہر فائل اپ لوڈ کی ایک ریکارڈ بلاک / phpMussel کر ہلاک کر دیا.
 ※ /vault/scan_log.txt | phpMussel طرف سے سکین ہر چیز کا ایک ریکارڈ ہے.
 ※ /vault/scan_log_serialized.txt | phpMussel طرف سے سکین ہر چیز کا ایک ریکارڈ ہے.
-/vault/template.html | سانچہ فائل؛ اس سے بلاک فائل اپ لوڈ پیغام (پیغام اپ لوڈ کنندہ نے دیکھا) کے لئے phpMussel طرف سے تیار HTML پیداوار کے لئے سانچہ.
 /vault/template_custom.html | سانچہ فائل؛ اس سے بلاک فائل اپ لوڈ پیغام (پیغام اپ لوڈ کنندہ نے دیکھا) کے لئے phpMussel طرف سے تیار HTML پیداوار کے لئے سانچہ.
+/vault/template_default.html | سانچہ فائل؛ اس سے بلاک فائل اپ لوڈ پیغام (پیغام اپ لوڈ کنندہ نے دیکھا) کے لئے phpMussel طرف سے تیار HTML پیداوار کے لئے سانچہ.
 /vault/upload.php | اپ لوڈ کریں ہینڈلر.
 /.gitattributes | ایک GitHub کے منصوبے فائل (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).
 /Changelog-v1.txt | مختلف ورژن کے درمیان سکرپٹ کی گئی تبدیلیوں کا ایک ریکارڈ (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).
@@ -300,7 +302,7 @@ phpMussel ونڈوز کی بنیاد پر نظام کے تحت CLI موڈ میں
 /README.md | پروجیکٹ کا خلاصہ معلومات.
 /web.config | ایک ASP.NET کنفیگریشن فائل (اس مثال میں، ایونٹ میں غیر مجاز ذرائع سکرپٹ ASP.NET ٹیکنالوجیز کی بنیاد پر ایک سرور پر نصب کیا جاتا ہے کہ کی طرف سے حاصل کیا جا رہا ہے سے `/ vault` ڈائریکٹری کی حفاظت کے لئے).
 
-※ فائل کا نام ترتیب کے شرائط ( `config.ini` میں) کی بنیاد پر مختلف ہو سکتے ہیں.
+<div dir="rtl">※ فائل کا نام ترتیب کے شرائط ( `config.ini` میں) کی بنیاد پر مختلف ہو سکتے ہیں.<br /><br /></div>
 
 ---
 
@@ -657,6 +659,11 @@ phpMussel ونڈوز کی بنیاد پر نظام کے تحت CLI موڈ میں
 
 <div dir="rtl">"رسائی نہیں ہوئی" کے صفحے پیدا کرنے کے لئے استعمال HTML پیداوار سے متعلق ہے. آپ phpMussel لئے اپنی مرضی کے موضوعات کا استعمال کرتے ہوئے کر رہے ہیں، ایچ ٹی ایم ایل کی پیداوار "template_custom.html" فائل سے کیے جاتا ہے، اور دوسری صورت میں، HTML پیداوار "template.html" فائل سے کیے جاتا ہے. ترتیب فائل کے اس شعبہ کو لکھا تغیر اسی متغیر ڈیٹا کے ساتھ ایچ ٹی ایم ایل کی پیداوار کے اندر اندر پایا گھوبگھرالی بریکٹ طرف circumfixed کوئی بھی متغیرہ کے ناموں کی جگہ کی راہ کی طرف HTML پیداوار میں پارس کر رہے ہیں. مثال کے طور پر، جہاں foo="bar" بار کے کسی بھی مثال &lt;p&gt;{foo}&lt;/p&gt; HTML پیداوار کے اندر اندر پایا بن جائے گا &lt;p&gt;bar&lt;/p&gt;.<br /><br /></div>
 
+<div dir="rtl">"theme"<br /></div>
+<div dir="rtl"><ul>
+ <li>phpMussel لئے استعمال کرنے کے لئے مرکزی خیال، موضوع پہلے سے طے شدہ.</li>
+</ul></div>
+
 <div dir="rtl">"css_url"<br /></div>
 <div dir="rtl"><ul>
  <li>ڈیفالٹ تھیم کے لئے سانچے کی فائل اندرونی سی ایس ایس خصوصیات کا استعمال، جبکہ اپنی مرضی کے موضوعات کے لئے سانچے کی فائل، خارجی سی ایس ایس خصوصیات کا استعمال. اپنی مرضی کے موضوعات کے لئے سانچے کی فائل کو استعمال کرنے phpMussel ہدایت کرنے کے لئے، "css_url" متغیر کا استعمال کرتے ہوئے آپ کی اپنی مرضی کے موضوع کی سی ایس ایس فائلوں کے عوامی HTTP ایڈریس کی وضاحت. آپ کو اس متغیر خالی چھوڑ تو، phpMussel ڈیفالٹ تھیم کے لئے سانچے کی فائل کو استعمال کریں گے.</li>
@@ -844,4 +851,4 @@ Zoner | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</d
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 2 مئی 2017 (2017.05.02).</div>
+<div dir="rtl">آخری تازہ کاری: 19 مئی 2017 (2017.05.19).</div>

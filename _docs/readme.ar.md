@@ -239,6 +239,8 @@
 &nbsp; <div dir="rtl" style="display:inline;">ملف CSS (صفحات الطرز المتراصة) لfront-end.</div> | /vault/fe_assets/frontend.css
 &nbsp; <div dir="rtl" style="display:inline;">قاعدة البيانات لfront-end (يحتوي على معلومات الحسابات و الجلسات؛ خلق فقط اذا front-end يتم تمكين واستخدامها).</div> | /vault/fe_assets/frontend.dat
 &nbsp; <div dir="rtl" style="display:inline;">ملف قالب HTML الرئيسي لfront-end.</div> | /vault/fe_assets/frontend.html
+&nbsp; <div dir="rtl" style="display:inline;">الرموز معالج (التي يستخدمها مدير الملفات الأمامية).</div> | /vault/fe_assets/icons.php
+&nbsp; <div dir="rtl" style="display:inline;">بالنقاط معالج (التي يستخدمها مدير الملفات الأمامية).</div> | /vault/fe_assets/pips.php
 &nbsp; <div dir="rtl" style="display:inline;">يحتوي على بيانات اللغة لـ phpMussel.</div> | /vault/lang/
 &nbsp; <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/lang/.htaccess
 &nbsp; <div dir="rtl" style="display:inline;">ملفات اللغة العربية لfront-end.</div> | /vault/lang/lang.ar.fe.php
@@ -294,8 +296,8 @@
 &nbsp; <div dir="rtl" style="display:inline;">سجل لكل ما تم فحصه بواسطة phpMussel.</div> | ※ /vault/scan_log.txt
 &nbsp; <div dir="rtl" style="display:inline;">سجل لكل ما تم فحصه بواسطة phpMussel.</div> | ※ /vault/scan_log_serialized.txt
 &nbsp; <div dir="rtl" style="display:inline;">سجل لكل ما تم القضاء عليه بواسطة phpMussel.</div> | ※ /vault/scan_kills.txt
-&nbsp; <div dir="rtl" style="display:inline;">ملف القالب. قالب لمخرجات HTML التي تنتجها phpMussel لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template.html
 &nbsp; <div dir="rtl" style="display:inline;">ملف القالب. قالب لمخرجات HTML التي تنتجها phpMussel لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template_custom.html
+&nbsp; <div dir="rtl" style="display:inline;">ملف القالب. قالب لمخرجات HTML التي تنتجها phpMussel لرسالة حظر تحميل الملفات (الرسالة التي يراها القائم بالتحميل).</div> | /vault/template_default.html
 &nbsp; <div dir="rtl" style="display:inline;">معالج تحميل.</div> | /vault/upload.php
 &nbsp; <div dir="rtl" style="display:inline;">أ ملف المشروع GitHub (غير مطلوب لتشغيل سليم للبرنامج).</div> | /.gitattributes
 &nbsp; <div dir="rtl" style="display:inline;">سجل للتغييرات التي أجريت على البرنامج بين التحديثات المختلفة (غير مطلوب لتشغيل سليم للبرنامج).</div> | /Changelog-v1.txt
@@ -700,6 +702,11 @@
 
 <div dir="rtl">تتعلق البيانات بقالب انتاج HTML تستخدم لتوليد "رفض تحميل" الرسالة المعروضة للمستخدمين على تحميل ملف حجبها. إذا كنت تستخدم موضوعات مخصصة لـ phpMussel، هو مصدر إخراج HTML من ملف "template_custom.html" وغيرها، ويتم الحصول على إخراج HTML من ملف "template.html". يتم تحليل المتغيرات الخطية لهذا القسم من ملف التكوين إلى إخراج HTML عن طريق استبدال أي أسماء المتغيرات محاط بواسطة الأقواس الموجودة داخل إخراج HTML مع البيانات المتغيرة المناظرة. فمثلا، أين "foo="bar""، أي مثيل "&lt;p&gt;{foo}&lt;/p&gt;" وجدت داخل إخراج HTML ستصبح "&lt;p&gt;bar&lt;/p&gt;".<br /><br /></div>
 
+<div dir="rtl">"theme"<br /></div>
+<div dir="rtl"><ul>
+ <li>الموضوع الافتراضي لاستخدام phpMussel.</li>
+</ul></div>
+
 <div dir="rtl">"css_url"<br /></div>
 <div dir="rtl"><ul>
  <li>ملف الصيغة النموذجية للمواضيع مخصصة يستخدم خصائص CSS الخارجية، في حين أن ملف قالب لموضوع الافتراضي يستخدم خصائص CSS الداخلية. لإرشاد phpMussel لاستخدام ملف النموذجية للمواضيع مخصصة، تحديد عنوان HTTP العام من ملفات CSS موضوع المخصصة لديك باستخدام "css_url" متغير. إذا تركت هذا الحقل فارغا متغير، سوف يقوم phpMussel باستخدام ملف القالب لموضوع التقصير.</li>
@@ -887,4 +894,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 2 مايو 2017 (2017.05.02).</div>
+<div dir="rtl">آخر تحديث: 19 مايو 2017 (2017.05.19).</div>

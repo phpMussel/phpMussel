@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Icons handler (last modified: 2016.11.25).
+ * This file: Default theme icons handler (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */

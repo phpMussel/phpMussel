@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.05.15).
+ * This file: Urdu language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -79,6 +79,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'phpMussel شیل اسک�
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'رپورٹ phpMussel چاہئے جب توسیعات لاپتہ ہیں؟ تو <code>fail_extensions_silently</code> کے معذور، لاپتہ توسیعات سکیننگ پر اطلاع دی جائے گی، اور اگر <code>fail_extensions_silently</code> کے چالو حالت میں ہے، ملانے لاپتہ وہاں نہیں کسی بھی ہیں کہ سکیننگ ان فائلوں کے لئے رپورٹنگ کے ساتھ، نظر انداز کر دیا جائے گا مسائل. اس حکم کو غیر فعال ممکنہ طور پر آپ کی سیکورٹی میں اضافہ ہو سکتا ہے، بلکہ جھوٹے مثبت کا اضافہ کا باعث بن سکتا. جھوٹی = معذور؛ سچا = چالو کیا [طے شدہ].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'جب دستخط فائلوں غائب یا خراب phpMussel رپورٹ چاہئے؟ تو <code>fail_silently</code> کے، معذور لاپتہ اور خراب فائلوں سکیننگ پر اطلاع دی جائے گی، اور اگر <code>fail_silently</code> کے لاپتہ، فعال ہے اور خراب فائلوں ان فائلوں کے لئے رپورٹنگ سکیننگ کے ساتھ، نظر انداز کر دیا جائے گا کہ کوئی مسئلہ نہیں ہیں. آپ گر کر تباہ یا اسی طرح کے مسائل کا سامنا کر رہے ہیں جب تک کہ یہ عام تنہا چھوڑ دیا جانا چاہئے. جھوٹی = معذور؛ سچا = چالو کیا [طے شدہ].';
 $phpMussel['lang']['config_template_data_css_url'] = 'ڈیفالٹ تھیم کے لئے سانچے کی فائل اندرونی سی ایس ایس خصوصیات کا استعمال، جبکہ اپنی مرضی کے موضوعات کے لئے سانچے کی فائل، خارجی سی ایس ایس خصوصیات کا استعمال. ، اپنی مرضی کے موضوعات کے لئے سانچے کی فائل کو استعمال کرنے کی <code>css_url</code> کے متغیر کا استعمال کرتے ہوئے آپ کی اپنی مرضی کے موضوعات سی ایس ایس فائلوں کے عوامی HTTP ایڈریس کی وضاحت phpMussel ہدایت کرنے کے لئے. آپ کو اس متغیر خالی چھوڑ تو، phpMussel ڈیفالٹ تھیم کے لئے سانچے کی فائل کو استعمال کریں گے.';
+$phpMussel['lang']['config_template_data_theme'] = 'phpMussel لئے استعمال کرنے کے لئے مرکزی خیال، موضوع پہلے سے طے شدہ.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'کب تک (سیکنڈوں میں) API لک اپ کے نتائج کے لئے محفوظ ہو جائے چاہئے؟ پہلے سے طے شدہ 3600 سیکنڈ ہے (1 گھنٹہ).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'ضروری API کلید وضاحت کی گئی ہے جب گوگل محفوظ براؤزنگ API کو API لک اپ کو فعال کرتا ہے.';
 $phpMussel['lang']['config_urlscanner_lookup_hphosts'] = 'درست پر سیٹ ہونے hpHosts API کو API لک اپ کو فعال کرتا ہے.';
@@ -204,12 +205,12 @@ $phpMussel['lang']['switch-hide-unused-set-false'] = 'غیر استعمال شد
 $phpMussel['lang']['switch-hide-unused-set-true'] = 'غیر استعمال شدہ چھپائیں';
 $phpMussel['lang']['tip_accounts'] = 'ہیلو، {username}.<br />اکاؤنٹس صفحہ آپ phpMussel سامنے کے آخر تک رسائی حاصل کر سکتے ہیں جو کنٹرول کرنے کی اجازت دیتا ہے.';
 $phpMussel['lang']['tip_config'] = 'ہیلو، {username}.<br />ترتیب کے صفحے آپ کو سامنے کے آخر میں سے phpMussel لئے ترتیب میں ترمیم کی اجازت دیتا ہے.';
-$phpMussel['lang']['tip_donate'] = 'phpMussel is offered free of charge, but if you want to donate to the project, you can do so by clicking the donate button.';
+$phpMussel['lang']['tip_donate'] = 'phpMussel بلا معاوضہ پیش کی جاتی ہے، لیکن آپ کو اس منصوبے کے لئے عطیہ کرنا چاہتے ہیں تو، آپ کو عطیہ کے بٹن پر کلک کر کے ایسا کر سکتے ہیں.';
 $phpMussel['lang']['tip_file_manager'] = 'ہیلو، {username}.<br />فائل مینیجر آپ کو، کو حذف ترمیم کریں، اپ لوڈ، اور فائلوں کو ڈاؤن لوڈ کرنے کی اجازت دیتا ہے. احتیاط کے ساتھ استعمال کریں (آپ کو اس کے ساتھ آپ کی تنصیب توڑ سکتا ہے).';
 $phpMussel['lang']['tip_home'] = 'ہیلو، {username}.<br />یہ phpMussel سامنے کے آخر میں کے ہوم پیج ہے. جاری رکھنے کے لئے بائیں طرف نیویگیشن مینو میں سے ایک لنک کو منتخب کریں.';
 $phpMussel['lang']['tip_login'] = 'پہلے سے طے شدہ صارف نام: <span class="txtRd">admin</span> – ڈیفالٹ پاس ورڈ: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'ہیلو، {username}.<br />کہ لاگ فائل کے مواد کو دیکھنے کے لئے ذیل کی فہرست سے ایک لاگ فائل منتخب کریں.';
-$phpMussel['lang']['tip_see_the_documentation'] = 'ملاحظہ کریں <a href="https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.en.md#SECTION7">documentation</a> مختلف ترتیب ہدایات اور ان کے مقاصد کے بارے میں معلومات کے لئے.';
+$phpMussel['lang']['tip_see_the_documentation'] = 'ملاحظہ کریں <a href="https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.ur.md#SECTION7">دستاویزی</a> مختلف ترتیب ہدایات اور ان کے مقاصد کے بارے میں معلومات کے لئے.';
 $phpMussel['lang']['tip_updates'] = 'ہیلو، {username}.<br />اپ ڈیٹس صفحہ آپ کو انسٹال کرنے کے لئے، انسٹال کی اجازت دیتا ہے، اور phpMussel (بنیادی پیکج، دستخط، پلگ ان، L10N فائلوں، وغیرہ) کے مختلف اجزاء کو اپ ڈیٹ.';
 $phpMussel['lang']['tip_upload_test'] = 'ہیلو، {username}.<br />اسے اپ لوڈ کرنے کی کوشش کریں جب آپ کو ٹیسٹ کرنے کے لئے چاہے ایک فائل عام طور phpMussel کی طرف سے بلاک کیا جائے گا کی اجازت دی اپ لوڈ ٹیسٹ کے صفحے پر ایک معیاری فائل اپ فارم پر مشتمل ہے.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – اکاؤنٹس';
@@ -222,17 +223,17 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – تازہ ترین معلو�
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – اپ لوڈ کریں ٹیسٹ';
 
 $phpMussel['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Issues @ GitHub</a> – phpMussel لئے مسائل کا صفحہ (کی حمایت، مدد، وغیرہ).</li>
-            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot سلامتی کے لئے – phpMussel لئے فورم (کی حمایت، مدد، وغیرہ).</li>
-            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – متبادل ڈاؤن آئینے phpMussel لئے.</li>
-            <li><a href="https://websectools.com/">WebSecTools.com</a> – ویب سائٹس کو محفوظ بنانے کے لئے سادہ ویب ماسٹر ٹولز کا ایک مجموعہ.</li>
-            <li><a href="http://www.clamav.net/">ClamavNet</a> – ClamAV مرکزی صفحہ (ClamAV® ٹروجن، وائرس، مالویئر اور کا پتہ لگانے کے لئے ایک اوپن سورس ینٹیوائرس انجن ہے دیگر درنساوناپورن خطرات).</li>
-            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – کمپیوٹر سیکورٹی کمپنی ClamAV کے ضمنی دستخط فراہم کرتا ہے.</li>
-            <li><a href="http://www.phishtank.com/">PhishTank</a> – جعل سازی ڈیٹا بیس phpMussel URL سکینر کی طرف سے استعمال کیا.</li>
-            <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP سیکھنے کے وسائل اور بحث.</li>
-            <li><a href="https://php.earth/">PHP.earth</a> – PHP سیکھنے کے وسائل اور بحث.</li>
-            <li><a href="https://www.virustotal.com/">VirusTotal</a> – VirusTotal کی مشکوک فائلوں اور یو آر ایل کا تجزیہ کرنے کے لئے ایک مفت سروس ہے.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – ہائبرڈ تجزیہ کی طرف سے فراہم کردہ ایک مفت میلویئر تجزیہ خدمت ہے <a href="http://www.payload-security.com/">پیلوڈ سیکورٹی</a>.</li>
-            <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – کمپیوٹر مخالف میلویئر ماہرین.</li>
-            <li><a href="https://malwaretips.com/">MalwareTips</a> – مفید میلویئر مرکوز مباحثے فورمس.</li>
+            <li><a href="https://github.com/Maikuolan/phpMussel/issues" dir="ltr">phpMussel Issues @ GitHub</a> – phpMussel لئے مسائل کا صفحہ (کی حمایت، مدد، وغیرہ).</li>
+            <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55" dir="ltr">phpMussel @ Spambot Security</a> – phpMussel لئے فورم (کی حمایت، مدد، وغیرہ).</li>
+            <li><a href="https://sourceforge.net/projects/phpmussel/" dir="ltr">phpMussel @ SourceForge</a> – متبادل ڈاؤن آئینے phpMussel لئے.</li>
+            <li><a href="https://websectools.com/" dir="ltr">WebSecTools.com</a> – ویب سائٹس کو محفوظ بنانے کے لئے سادہ ویب ماسٹر ٹولز کا ایک مجموعہ.</li>
+            <li><a href="http://www.clamav.net/" dir="ltr">ClamavNet</a> – ClamAV مرکزی صفحہ (ClamAV® ٹروجن، وائرس، مالویئر اور کا پتہ لگانے کے لئے ایک اوپن سورس ینٹیوائرس انجن ہے دیگر درنساوناپورن خطرات).</li>
+            <li><a href="https://www.securiteinfo.com/" dir="ltr">SecuriteInfo.com</a> – کمپیوٹر سیکورٹی کمپنی ClamAV کے ضمنی دستخط فراہم کرتا ہے.</li>
+            <li><a href="http://www.phishtank.com/" dir="ltr">PhishTank</a> – جعل سازی ڈیٹا بیس phpMussel URL سکینر کی طرف سے استعمال کیا.</li>
+            <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP سیکھنے کے وسائل اور بحث.</li>
+            <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP سیکھنے کے وسائل اور بحث.</li>
+            <li><a href="https://www.virustotal.com/" dir="ltr">VirusTotal</a> – VirusTotal کی مشکوک فائلوں اور یو آر ایل کا تجزیہ کرنے کے لئے ایک مفت سروس ہے.</li>
+            <li><a href="https://www.hybrid-analysis.com/" dir="ltr">Hybrid Analysis</a> – ہائبرڈ تجزیہ کی طرف سے فراہم کردہ ایک مفت میلویئر تجزیہ خدمت ہے <a href="http://www.payload-security.com/">پیلوڈ سیکورٹی</a>.</li>
+            <li><a href="https://www.malwarebytes.com/" dir="ltr">Malwarebytes</a> – کمپیوٹر مخالف میلویئر ماہرین.</li>
+            <li><a href="https://malwaretips.com/" dir="ltr">MalwareTips</a> – مفید میلویئر مرکوز مباحثے فورمس.</li>
         </ul>';

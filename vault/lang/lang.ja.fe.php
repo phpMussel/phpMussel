@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.05.15).
+ * This file: Japanese language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -79,6 +79,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'phpMusselはshellスク�
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = '拡張子がない場合にphpMusselがそれをレポートすべきか否か？ <code>fail_extensions_silently</code>が無効の場合、拡張子なしはスキャニング時にレポートされ、有効の場合は無視され問題は報告されません。 このディレクティブを無効にすることは、セキュリティーを向上させるかもしれませんが、誤検出も増加する恐れがあります。 <code>false</code>（偽） = Disabled/無効; <code>true</code>（真） = Enabled/有効 （Default/デフォルト）。';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'シグネチャファイルがない、あるいは破損している場合に、phpMusselがそれをリポートすべきか否か？ <code>fail_silently</code>が無効ならば、問題はリポートされ、有効であれば、問題は無視されたスキャニングレポートが作成されます。 クラッシュするというような害がなければ、デフォルト設定のままにしておくべきです。 <code>false</code>（偽） = Disabled/無効; <code>true</code>（真） = Enabled/有効 （Default/デフォルト）。';
 $phpMussel['lang']['config_template_data_css_url'] = 'カスタムテーマ用のテンプレートファイルは、外部ＣＳＳプロパティーを使っています。 一方、デフォルトテーマは内部ＣＳＳです。 カスタムテーマを適用するためには、ＣＳＳファイルのパブリック ＨＴＴＰアドレスを"css_url"変数を使って指定して下さい。 この変数が空白であれば、デフォルトテーマが適用されます。';
+$phpMussel['lang']['config_template_data_theme'] = 'phpMusselに使用するデフォルトテーマ。';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'ＡＰＩルックアップの結果をどれくらいキャッシュするか（秒単位です）？ デフォルトは３６００秒（一時間）。';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = '必要なＡＰＩ鍵が定義されれば、ＡＰＩのGoogle Safe Browsing APIルックアップが有効になります。';
 $phpMussel['lang']['config_urlscanner_lookup_hphosts'] = 'Trueにすると、APIのhpHostsルックアップが有効になります。';

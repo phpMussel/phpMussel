@@ -235,6 +235,8 @@ File | Descrizione
 /vault/fe_assets/frontend.css | Foglio di stile CSS per il front-end.
 /vault/fe_assets/frontend.dat | Database per il front-end (contiene informazioni per i utenti e le sessioni; generato solo se il front-end è attivata e utilizzata).
 /vault/fe_assets/frontend.html | Il file modello HTML principale per il front-end.
+/vault/fe_assets/icons.php | Gestore dell'icone (utilizzata dal file manager del front-end).
+/vault/fe_assets/pips.php | Gestore delle pips (utilizzata dal file manager del front-end).
 /vault/lang/ | Contiene dati linguistici.
 /vault/lang/.htaccess | Un ipertesto accesso file (in questo caso, a proteggere di riservati file appartenente allo script da l'acceso di non autorizzate origini).
 /vault/lang/lang.ar.fe.php | Dati linguistici Araba per il front-end.
@@ -290,8 +292,8 @@ File | Descrizione
 ※ /vault/scan_kills.txt | Un record di tutti i file bloccati/uccisi da phpMussel.
 ※ /vault/scan_log.txt | Un record di tutto scansionato da phpMussel.
 ※ /vault/scan_log_serialized.txt | Un record di tutto scansionato da phpMussel.
-/vault/template.html | Template file; Template per l'HTML output prodotto da phpMussel per il suo messaggio di bloccato file caricamento (il messaggio visto dallo caricatore).
 /vault/template_custom.html | Template file; Template per l'HTML output prodotto da phpMussel per il suo messaggio di bloccato file caricamento (il messaggio visto dallo caricatore).
+/vault/template_default.html | Template file; Template per l'HTML output prodotto da phpMussel per il suo messaggio di bloccato file caricamento (il messaggio visto dallo caricatore).
 /vault/upload.php | Gestore di caricamenti.
 /.gitattributes | Un file del GitHub progetto (non richiesto per il corretto funzionamento dello script).
 /Changelog-v1.txt | Un record delle modifiche apportate allo script tra diverse versioni (non richiesto per il corretto funzionamento dello script).
@@ -561,6 +563,9 @@ Direttive/Variabili per modelli e temi.
 
 Modelli dati riferisce alla prodotti HTML utilizzato per generare il "Caricamento Negato" messaggio visualizzati agli utenti quando file caricamenti sono bloccati. Se stai usando temi personalizzati per phpMussel, prodotti HTML è provenienti da file `template_custom.html`, e altrimenti, prodotti HTML è provenienti da file `template.html`. Variabili scritte a questa sezione del file di configurazione sono parsato per il prodotti HTML per mezzo di sostituendo tutti i nomi di variabili circondati da parentesi graffe trovato all'interno il prodotti HTML con la corrispondente dati di quelli variabili. Per esempio, dove `foo="bar"`, qualsiasi istanza di `<p>{foo}</p>` trovato all'interno il prodotti HTML diventerà `<p>bar</p>`.
 
+"theme"
+- Tema predefinito da utilizzare per phpMussel.
+
 "css_url"
 - Il modello file per i temi personalizzati utilizzi esterni CSS proprietà, mentre il modello file per i temi personalizzati utilizzi interni CSS proprietà. Per istruire phpMussel di utilizzare il modello file per i temi personalizzati, specificare l'indirizzo pubblico HTTP dei CSS file dei suoi tema personalizzato utilizzando la variabile `css_url`. Se si lascia questo variabile come vuoto, phpMussel utilizzerà il modello file per il predefinito tema.
 
@@ -744,4 +749,4 @@ Sì. Le installazioni di phpMussel non sono naturalmente legato a domini specifi
 ---
 
 
-Ultimo Aggiornamento: 2 Maggio 2017 (2017.05.02).
+Ultimo Aggiornamento: 19 Maggio 2017 (2017.05.19).

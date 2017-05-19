@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.05.15).
+ * This file: Italian language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -79,6 +79,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'Dovrebbe phpMussel utili
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Dovrebbe phpMussel rapporto quando le estensioni sono mancanti? Se <code>fail_extensions_silently</code> è disattivato, mancanti estensioni saranno riportato sulla scansione, e se <code>fail_extensions_silently</code> è abilitato, mancanti estensioni saranno ignorato, con scansione riportando per quei file che non ha sono problemi. La disattivazione di questa direttiva potrebbe potenzialmente aumentare la sicurezza, ma può anche portare ad un aumento di falsi positivi. False = Disattivato; True = Attivato [Predefinito].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'Dovrebbe phpMussel rapporto quando le file di firme sono mancanti o danneggiati? Se <code>fail_silently</code> è disattivato, mancanti e danneggiati file saranno riportato sulla scansione, e se <code>fail_silently</code> è abilitato, mancanti e danneggiati file saranno ignorato, con scansione riportando per quei file che non ha sono problemi. Questo dovrebbe essere generalmente lasciata sola a meno che sperimentando inaspettate terminazioni o simili problemi. False = Disattivato; True = Attivato [Predefinito].';
 $phpMussel['lang']['config_template_data_css_url'] = 'Il modello file per i temi personalizzati utilizzi esterni CSS proprietà, mentre il modello file per i temi personalizzati utilizzi interni CSS proprietà. Per istruire phpMussel di utilizzare il modello file per i temi personalizzati, specificare l\'indirizzo pubblico HTTP dei CSS file dei suoi tema personalizzato utilizzando la variabile <code>css_url</code>. Se si lascia questo variabile come vuoto, phpMussel utilizzerà il modello file per il predefinito tema.';
+$phpMussel['lang']['config_template_data_theme'] = 'Tema predefinito da utilizzare per phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'Per quanto tempo (in secondi) dovrebbe i risultati delle API richieste essere memorizzati nella cache per? Predefinito è 3600 secondi (1 ora).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Abilita API richieste per l\'API di Google Safe Browsing quando le API chiave necessarie è definito.';
 $phpMussel['lang']['config_urlscanner_lookup_hphosts'] = 'Abilita API richieste per l\'API di hpHosts quando impostato su true.';

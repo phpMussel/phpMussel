@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.05.07).
+ * This file: Functions file (last modified: 2017.05.19).
  *
  * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
  * @todo Add recursion support for ZIP scanning.
@@ -6415,6 +6415,21 @@ $phpMussel['FilterLang'] = function ($ChoiceKey) use (&$phpMussel) {
 };
 
 /**
+ * Filter the available theme options provided by the configuration page on
+ * the basis of their availability.
+ *
+ * @param string $ChoiceKey Theme ID.
+ * @return bool Valid/Invalid.
+ */
+$phpMussel['FilterTheme'] = function ($ChoiceKey) use (&$phpMussel) {
+    if ($ChoiceKey === 'default') {
+        return true;
+    }
+    $Path = $phpMussel['Vault'] . 'fe_assets/' . $ChoiceKey . '/';
+    return (file_exists($Path . 'frontend.css') || file_exists($phpMussel['Vault'] . 'template_' . $ChoiceKey . '.html'));
+};
+
+/**
  * Improved recursive directory iterator for phpMussel.
  *
  * @param string $Base Directory root.
@@ -6450,4 +6465,23 @@ $phpMussel['HashAlias'] = function ($Alias, $Data) {
         return sha1($Data);
     }
     return '';
+};
+
+/**
+ * Get the appropriate path for a specified asset as per the defined theme.
+ *
+ * @param string $Asset The asset filename.
+ * @return string The asset path.
+ */
+$phpMussel['GetAssetPath'] = function ($Asset) use (&$phpMussel) {
+    if (
+        $phpMussel['Config']['template_data']['theme'] !== 'default' &&
+        file_exists($phpMussel['Vault'] . 'fe_assets/' . $phpMussel['Config']['template_data']['theme'] . '/' . $Asset)
+    ) {
+        return $phpMussel['Vault'] . 'fe_assets/' . $phpMussel['Config']['template_data']['theme'] . '/' . $Asset;
+    }
+    if (file_exists($phpMussel['Vault'] . 'fe_assets/' . $Asset)) {
+        return $phpMussel['Vault'] . 'fe_assets/' . $Asset;
+    }
+    throw new \Exception('Asset not found');
 };

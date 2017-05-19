@@ -235,6 +235,8 @@ Arquivo | Descrição
 /vault/fe_assets/frontend.css | Folha de estilo CSS para o front-end.
 /vault/fe_assets/frontend.dat | Banco de dados para o front-end (contém informações de contas e sessões; gerado só se o front-end está habilitado e usado).
 /vault/fe_assets/frontend.html | O arquivo modelo HTML principal para o front-end.
+/vault/fe_assets/icons.php | Módulo de ícones (usado pelo gerenciador de arquivos do front-end).
+/vault/fe_assets/pips.php | Módulo de pips (usado pelo gerenciador de arquivos do front-end).
 /vault/lang/ | Contém dados lingüísticos.
 /vault/lang/.htaccess | Um hipertexto acesso arquivo (neste caso, para proteger confidenciais arquivos pertencentes ao script contra serem acessados por fontes não autorizadas).
 /vault/lang/lang.ar.fe.php | Dados lingüísticos Árabe para o front-end.
@@ -290,8 +292,8 @@ Arquivo | Descrição
 ※ /vault/scan_kills.txt | Um registro de tudos os arquivos carregamentos bloqueado ou matado por phpMussel.
 ※ /vault/scan_log.txt | Um registro de tudo analisado por phpMussel.
 ※ /vault/scan_log_serialized.txt | Um registro de tudo analisado por phpMussel.
-/vault/template.html | Template arquivo; Template por HTML produzido através do phpMussel por o bloqueado arquivo carregamento mensagem (a mensagem visto por o carregador).
 /vault/template_custom.html | Template arquivo; Template por HTML produzido através do phpMussel por o bloqueado arquivo carregamento mensagem (a mensagem visto por o carregador).
+/vault/template_default.html | Template arquivo; Template por HTML produzido através do phpMussel por o bloqueado arquivo carregamento mensagem (a mensagem visto por o carregador).
 /vault/upload.php | Módulo de carregamento.
 /.gitattributes | Um arquivo do GitHub projeto (não é necessário para o correto funcionamento do script).
 /Changelog-v1.txt | Um registro das mudanças feitas para o script entre o diferentes versões (não é necessário para o correto funcionamento do script).
@@ -561,6 +563,9 @@ Directivas/Variáveis para modelos e temas.
 
 Template dados está associada com o HTML usado para gerar a "Carregar Negado" mensagem exibido aos usuários quandos arquivo carregamentos são bloqueados. Se você estiver usando temas personalizados para phpMussel, HTML é originado a partir do `template_custom.html` arquivo, e caso contrário, HTML é originado a partir do `template.html` arquivo. Variáveis escritas para esta seção do configuração arquivo são processado ao HTML via substituição de quaisquer nomes de variáveis cercado por colchetes encontrado dentro do HTML com os variáveis dados correspondentes. Por exemplo, onde `foo="bar"`, qualquer instância de `<p>{foo}</p>` encontrado dentro do HTML tornará `<p>bar</p>`.
 
+"theme"
+- Tema padrão a ser usado para phpMussel.
+
 "css_url"
 - O template arquivo para temas personalizados utiliza CSS propriedades externos, enquanto que o template arquivo para o padrão tema utiliza CSS propriedades internos. Para instruir phpMussel para usar o template arquivo para temas personalizados, especificar o endereço HTTP pública do seu temas personalizados CSS arquivos usando a `css_url` variável. Se você deixar essa variável em branco, phpMussel usará o template arquivo para o padrão tema.
 
@@ -744,4 +749,4 @@ Sim. As instalações do phpMussel não estão naturalmente atado com domínios 
 ---
 
 
-Última Atualização: 2 Maio 2017 (2017.05.02).
+Última Atualização: 19 Maio 2017 (2017.05.19).

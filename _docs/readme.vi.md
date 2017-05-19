@@ -235,6 +235,8 @@ Tập tin | Chi tiết
 /vault/fe_assets/frontend.css | CSS định kiểu cho các front-end.
 /vault/fe_assets/frontend.dat | Cơ sở dữ liệu cho các front-end (chứa thông tin tài khoản và phiên; chỉ tạo ra nếu front-end được kích hoạt và sử dụng).
 /vault/fe_assets/frontend.html | Các chính tập tin mẫu HTML cho các front-end.
+/vault/fe_assets/icons.php | Tập tin cho các biểu tượng (được sử dụng bởi các quản lý tập tin front-end).
+/vault/fe_assets/pips.php | Tập tin cho các pip (được sử dụng bởi các quản lý tập tin front-end).
 /vault/lang/ | Chứa dữ liệu tiếng cho phpMussel.
 /vault/lang/.htaccess | Tập tin "hypertext access" / tập tin truy cập siêu văn bản (bảo vệ tập tin bí mật khỏi bị truy cập bởi nguồn không được ủy quyền).
 /vault/lang/lang.ar.fe.php | Dữ liệu tiếng Ả Rập cho các front-end.
@@ -290,8 +292,8 @@ Tập tin | Chi tiết
 ※ /vault/scan_kills.txt | Kỷ lục của mỗi tập tin tải lên từ chối/giết bởi phpMussel.
 ※ /vault/scan_log.txt | Kỷ lục của mỗi tập tin quét bởi phpMussel.
 ※ /vault/scan_log_serialized.txt | Kỷ lục của mỗi tập tin quét bởi phpMussel.
-/vault/template.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi phpMussel cho các thông điệp tải lên tập tin bị chặn (các thông điệp nhìn thấy bằng người tải lên).
 /vault/template_custom.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi phpMussel cho các thông điệp tải lên tập tin bị chặn (các thông điệp nhìn thấy bằng người tải lên).
+/vault/template_default.html | Tập tin mẫu; Mẫu cho HTML sản xuất bởi phpMussel cho các thông điệp tải lên tập tin bị chặn (các thông điệp nhìn thấy bằng người tải lên).
 /vault/upload.php | Tập tin cho xử lý tải lên.
 /.gitattributes | Tập tin dự án cho GitHub (không cần thiết cho chức năng phù hợp của kịch bản).
 /Changelog-v1.txt | Kỷ lục của những sự thay đổi được thực hiện cho các kịch bản khác nhau giữa các phiên bản (không cần thiết cho chức năng phù hợp của kịch bản).
@@ -561,6 +563,9 @@ Cấu hình cho mẫu thiết kế và chủ đề.
 
 Dữ liệu mẫu thiết kế liên quan đến đầu ra HTML sử dụng để tạo ra các thông báo "Sự tải lên đã bị từ chối" hiển thị cho người dùng khi một tải lên tập tin bị chặn. Nếu bạn đang sử dụng chủ đề tùy chỉnh cho phpMussel, đầu ra HTML có nguồn gốc từ tập tin `template_custom.html`, và nếu không thì, đầu ra HTML có nguồn gốc từ tập tin `template.html`. Biến bằng văn bản cho phần này của tập tin cấu hình được xử lý để đầu ra HTML bằng cách thay thế bất kỳ tên biến được bao quanh bởi các dấu ngoặc nhọn tìm thấy trong đầu ra HTML với các dữ liệu biến tương ứng. Ví dụ, ở đâu `foo="bar"`, bất kỳ trường hợp `<p>{foo}</p>` tìm thấy trong đầu ra HTML sẽ trở thành `<p>bar</p>`.
 
+"theme"
+- Chủ đề mặc định để sử dụng cho phpMussel.
+
 "css_url"
 - Tập tin mẫu thiết kế cho chủ đề tùy chỉnh sử dụng thuộc tính CSS bên ngoài, trong khi các tập tin mẫu thiết kế cho các chủ đề mặc định sử dụng thuộc tính CSS nội bộ. Để hướng dẫn phpMussel để sử dụng các tập tin mẫu thiết kế cho chủ đề tùy chỉnh, xác định các địa chỉ HTTP cho các tập tin CSS chủ đề tùy chỉnh của bạn sử dụng các biến số `css_url`. Nếu bạn để cho biến số này chỗ trống, phpMussel sẽ sử dụng các tập tin mẫu thiết kế cho các chủ đề mặc định.
 
@@ -744,4 +749,4 @@ Vâng. Cài đặt phpMussel không bị khóa vào các tên miền cụ thể,
 ---
 
 
-Lần cuối cập nhật: 2 Tháng Năm 2017 (2017.05.02).
+Lần cuối cập nhật: 19 Tháng Năm 2017 (2017.05.19).

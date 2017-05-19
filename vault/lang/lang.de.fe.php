@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.05.15).
+ * This file: German language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -79,6 +79,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'Soll phpMussel Signature
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Soll phpMussel melden, wenn Dateierweiterungen fehlen? Wenn <code>fail_extensions_silently</code> deaktiviert ist, werden fehlende Dateierweiterungen beim Scannen gemeldet und wenn <code>fail_extensions_silently</code> aktiviert ist, werden fehlende Dateierweiterungen ignoriert und beim Scan gemeldet, dass es mit diesen Dateien keine Probleme gibt. Das Deaktivieren dieser Anweisung kann möglicherweise deine Sicherheit erhöhen, kann aber auch zu mehr Falschmeldungen führen. False = Deaktiviert; True = Aktiviert [Standardeinstellung].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'Reaktion von phpMussel auf fehlende oder defekte Signaturen. Ist <code>fail_silently</code> deaktiviert, werden fehlende oder defekte Signaturen während des Scanvorgangs gemeldet, ist <code>fail_silently</code> aktiviert, werden fehlende oder defekte Signaturen ignoriert, ohne dass entsprechende Probleme gemeldet werden. Diese Option sollte so belassen werden, es sei denn, Sie erwarten Abstürze oder ähnliches. False = Deaktiviert; True = Aktiviert [Standardeinstellung].';
 $phpMussel['lang']['config_template_data_css_url'] = 'Die Template-Datei für benutzerdefinierte Themes verwendet externe CSS-Regeln, wobei die Template-Datei für das normale Theme interne CSS-Regeln verwendet. Um phpMussel anzuweisen, die Template-Datei für benutzerdefinierte Themes zu verwenden, geben Sie die öffentliche HTTP-Adresse von den CSS-Dateien des benutzerdefinierten Themes mit der <code>css_url</code>-Variable an. Wenn Sie diese Variable leer lassen, wird phpMussel die Template-Datei für das normale Theme verwenden.';
+$phpMussel['lang']['config_template_data_theme'] = 'Standard-Thema für phpMussel verwenden.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'Wie lange (in Sekunden) sollen die Ergebnisse von API-Abfragen zwischengespeichert werden? Standardeinstellung ist 3600 Sekunden (1 Stunde).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Aktiviert API-Abfragen zur Google Safe Browsing API wenn der benötigte API-Schlüssel festgelegt ist.';
 $phpMussel['lang']['config_urlscanner_lookup_hphosts'] = 'Aktiviert API-Abfragen zur hpHosts API wenn der Wert auf <code>true</code> gesetzt ist.';

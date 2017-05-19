@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.05.15).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -79,6 +79,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'phpMussel nên sử dụ
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'phpMussel nên báo cáo khi mở rộng bị mất? Nếu <code>fail_extensions_silently</code> được vô hiệu hóa, mở rộng bị mất sẽ được báo cáo khi quét, và nếu <code>fail_extensions_silently</code> được kích hoạt, mở rộng bị mất hay bị hỏng sẽ bị bỏ qua, với báo cáo quét cho những tập tin mà không có bất kỳ vấn đề. Vô hiệu hóa tùy chọn này có khả năng có thể làm tăng bảo mật của bạn, nhưng cũng có thể dẫn đến sự gia tăng giả tích cực. False = Không cho phép; True = Cho phép [Mặc định].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'phpMussel nên báo cáo khi tập tin chữ ký bị mất hay bị hỏng? Nếu <code>fail_silently</code> được vô hiệu hóa, tập tin bị mất hay bị hỏng sẽ được báo cáo khi quét, và nếu <code>fail_silently</code> được kích hoạt, tập tin bị mất hay bị hỏng sẽ bị bỏ qua, với báo cáo quét cho những tập tin mà không có bất kỳ vấn đề. Điều này thường cần được ở một mình trừ khi bạn gặp sự cố hay vấn đề tương tự. False = Không cho phép; True = Cho phép [Mặc định].';
 $phpMussel['lang']['config_template_data_css_url'] = 'Tập tin mẫu thiết kế cho chủ đề tùy chỉnh sử dụng thuộc tính CSS bên ngoài, trong khi các tập tin mẫu thiết kế cho các chủ đề mặc định sử dụng thuộc tính CSS nội bộ. Để hướng dẫn phpMussel để sử dụng các tập tin mẫu thiết kế cho chủ đề tùy chỉnh, xác định các địa chỉ HTTP cho các tập tin CSS chủ đề tùy chỉnh của bạn sử dụng các biến số <code>css_url</code>. Nếu bạn để cho biến số này chỗ trống, phpMussel sẽ sử dụng các tập tin mẫu thiết kế cho các chủ đề mặc định.';
+$phpMussel['lang']['config_template_data_theme'] = 'Chủ đề mặc định để sử dụng cho phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'Kết quả tra cứu API nên được lưu trữ trong (trong giây) bao lâu? Mặc định là 3600 giây (1 giờ).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Cho phép tra cứu API đến API của Google Safe Browsing khi khóa API cần thiết được xác định.';
 $phpMussel['lang']['config_urlscanner_lookup_hphosts'] = 'Cho phép tra cứu API đến API của hpHosts khi xác định như true.';

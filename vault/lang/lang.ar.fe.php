@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.05.15).
+ * This file: Arabic language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -79,6 +79,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'هل يجب على تو�
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'هل يجب على phpMussel الابلاغ عندما تفقد الملحقات؟ إذا تم تعطيل <code>fail_extensions_silently</code>، وسيتم إبلاغ ملحقات مفقودة على المسح، وإذا تم تمكين <code>fail_extensions_silently</code>، سيتم تجاهل ملحقات المفقودة، مع مسح الإبلاغ عن تلك الملفات أنه لا توجد أي مشاكل. تعطيل هذا التوجيه قد يحتمل زيادة الأمان، ولكن قد يؤدي أيضا إلى زيادة من ايجابيات كاذبة. خطأ = معطل. صحيح = ممكن [افتراضي].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'هل يجب على phpMussel الابلاغ عندما يتم توقيع ملفات مفقودة أو تالفة؟ إذا كان <code>fail_silently</code> المعوقين، في عداد المفقودين وسيتم الإبلاغ عن ملفات فساد في المسح، وإذا <code>fail_silently</code> تمكين، في عداد المفقودين وسيتم تجاهل ملفات فساد، مع مسح الإبلاغ عن تلك الملفات أنه لا توجد أي مشاكل. وهذا ين بغي عموما أن تترك وحدها إلا إذا كنت تعاني من أعطال أو مشاكل مشابهة. خطأ = معطل. صحيح = ممكن [افتراضي].';
 $phpMussel['lang']['config_template_data_css_url'] = 'ملف الصيغة النموذجية للمواضيع مخصصة يستخدم خصائص CSS الخارجية، في حين أن ملف قالب لموضوع الافتراضي يستخدم خصائص CSS الداخلية. لإرشاد phpMussel لاستخدام ملف النموذجية للمواضيع مخصصة، تحديد عنوان HTTP العام من ملفات CSS موضوع المخصصة لديك باستخدام "css_url" متغير. إذا تركت هذا الحقل فارغا متغير، سوف يقوم phpMussel باستخدام ملف القالب لموضوع التقصير.';
+$phpMussel['lang']['config_template_data_theme'] = 'الموضوع الافتراضي لاستخدام phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'متى (بالثواني) يجب التوصل إلى نتائج عمليات بحث API؟ الافتراضي هو 3600 ثانية (1 ساعة).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'العدد الأقصى المسموح به من عمليات بحث واجهة برمجة التطبيقات لأداء في تكرار المسح الفردية.';
 $phpMussel['lang']['config_urlscanner_lookup_hphosts'] = 'تمكين عمليات بحث API إلى API hpHosts.';
@@ -224,15 +225,15 @@ $phpMussel['lang']['title_upload_test'] = 'phpMussel – تحميل اختبار
 $phpMussel['lang']['info_some_useful_links'] = 'بعض الروابط المفيدة:<ul>
             <li><a href="https://github.com/Maikuolan/phpMussel/issues" dir="ltr">phpMussel Issues @ GitHub</a> – صفحة المشكلات لphpMussel (الدعم والمساعدة، الخ).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55" dir="ltr">phpMussel @ Spambot Security</a> – منتدى للنقاش ل phpMussel (الدعم والمساعدة، الخ).</li>
-            <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – بديلة حمل مرآة للphpMussel.</li>
+            <li><a href="https://sourceforge.net/projects/phpmussel/" dir="ltr">phpMussel @ SourceForge</a> – بديلة حمل مرآة للphpMussel.</li>
             <li><a href="https://websectools.com/" dir="ltr">WebSecTools.com</a> – بعض الأدوات البسيطة ل جعل المواقع آمنة.</li>
-            <li><a href="http://www.clamav.net/">ClamavNet</a> – الرئيسية ClamAV (ClamAV® هو محرك مكافحة الفيروسات مفتوحة المصدر للكشف عن أحصنة طروادة والفيروسات، والبرمجيات الخبيثة وغيرها من التهديدات الخبيثة).</li>
-            <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – شركة أمن الكمبيوتر التي توفر التوقيعات التكميلية لكلاماف.</li>
-            <li><a href="http://www.phishtank.com/">PhishTank</a> – التصيد قاعدة البيانات التي تستخدمها URL الماسح الضوئي phpMussel.</li>
+            <li><a href="http://www.clamav.net/" dir="ltr">ClamavNet</a> – الرئيسية ClamAV (ClamAV® هو محرك مكافحة الفيروسات مفتوحة المصدر للكشف عن أحصنة طروادة والفيروسات، والبرمجيات الخبيثة وغيرها من التهديدات الخبيثة).</li>
+            <li><a href="https://www.securiteinfo.com/" dir="ltr">SecuriteInfo.com</a> – شركة أمن الكمبيوتر التي توفر التوقيعات التكميلية لكلاماف.</li>
+            <li><a href="http://www.phishtank.com/" dir="ltr">PhishTank</a> – التصيد قاعدة البيانات التي تستخدمها URL الماسح الضوئي phpMussel.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP مصادر التعلم والمناقشة.</li>
             <li><a href="https://php.earth/" dir="ltr">PHP.earth</a> – PHP مصادر التعلم والمناقشة.</li>
-            <li><a href="https://www.virustotal.com/">VirusTotal</a> – خدمة مجانية لتحليل الملفات وعناوين المواقع التي هي مشبوهة.</li>
-            <li><a href="https://www.hybrid-analysis.com/">Hybrid Analysis</a> – Hybrid Analysis هو خدمة تحليل البرمجيات الخبيثة المجانية التي تقدمها <a href="http://www.payload-security.com/">Payload Security</a>.</li>
-            <li><a href="https://www.malwarebytes.com/">Malwarebytes</a> – الكمبيوتر المتخصصين لمكافحة البرمجيات الخبيثة.</li>
-            <li><a href="https://malwaretips.com/">MalwareTips</a> – مفيدة البرمجيات الخبيثة المنتديات مناقشة مركزة.</li>
+            <li><a href="https://www.virustotal.com/" dir="ltr">VirusTotal</a> – خدمة مجانية لتحليل الملفات وعناوين المواقع التي هي مشبوهة.</li>
+            <li><a href="https://www.hybrid-analysis.com/" dir="ltr">Hybrid Analysis</a> – Hybrid Analysis هو خدمة تحليل البرمجيات الخبيثة المجانية التي تقدمها <a href="http://www.payload-security.com/">Payload Security</a>.</li>
+            <li><a href="https://www.malwarebytes.com/" dir="ltr">Malwarebytes</a> – الكمبيوتر المتخصصين لمكافحة البرمجيات الخبيثة.</li>
+            <li><a href="https://malwaretips.com/" dir="ltr">MalwareTips</a> – مفيدة البرمجيات الخبيثة المنتديات مناقشة مركزة.</li>
         </ul>';

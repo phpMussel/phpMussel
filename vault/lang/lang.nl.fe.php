@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.05.15).
+ * This file: Dutch language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -79,6 +79,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'Moet phpMussel verwerken
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Moet phpMussel rapporteren wanneer extensies zijn ontbreken? Als <code>fail_extensions_silently</code> is uitgeschakeld, ontbrekende extensies zal worden gerapporteerd op het scannen, en als <code>fail_extensions_silently</code> is ingeschakeld, ontbrekende extensies zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Het uitschakelen van dit richtlijn kunt mogelijk verhogen van uw veiligheid, maar kunt ook leiden tot een toename van valse positieven. False = Uitgeschakeld; True = Ingeschakeld [Standaard].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'Moet phpMussel rapporteren wanneer signatures bestanden zijn ontbrekend of beschadigd? Als <code>fail_silently</code> is uitgeschakeld, ontbrekende en beschadigde bestanden zal worden gerapporteerd op het scannen, en als <code>fail_silently</code> is ingeschakeld, ontbrekende en beschadigde bestanden zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Dit moet in het algemeen met rust gelaten worden tenzij u ervaart mislukt of soortgelijke problemen. False = Uitgeschakeld; True = Ingeschakeld [Standaard].';
 $phpMussel['lang']['config_template_data_css_url'] = 'De sjabloonbestand voor aangepaste thema\'s maakt gebruik van externe CSS-eigenschappen, terwijl de sjabloonbestand voor het standaardthema maakt gebruik van interne CSS-eigenschappen. Om phpMussel instrueren om de sjabloonbestand voor aangepaste thema\'s te gebruiken, geef het openbare HTTP-adres van uw aangepaste thema\'s CSS-bestanden via de <code>css_url</code> variabele. Als u dit variabele leeg laat, phpMussel zal de sjabloonbestand voor de standaardthema te gebruiken.';
+$phpMussel['lang']['config_template_data_theme'] = 'Standaard thema om te gebruiken voor phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'Hoe lang (in seconden) moeten de resultaten van de API verzoeken worden gecached voor? Standaard is 3600 seconden (1 uur).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Inschakelt gebruik van de Google Safe Browsing API wanneer de noodzakelijke API sleutel wordt gedefinieerd.';
 $phpMussel['lang']['config_urlscanner_lookup_hphosts'] = 'Inschakelt gebruik van de hpHosts API wanneer zet op true.';

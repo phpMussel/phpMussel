@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.05.15).
+ * This file: Indonesian language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -79,6 +79,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'Harus phpMussel mengguna
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Seharusnya laporan phpMussel ketika ekstensi hilang? Jika <code>fail_extensions_silently</code> dinonaktifkan, ekstensi hilang akan dilaporkan ketika pemindaian, dan jika <code>fail_extensions_silently</code> diaktifkan, ekstensi hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Menonaktifkan direktif ini berpotensi dapat meningkatkan keamanan Anda, tapi juga dapat menyebabkan peningkatan positif palsu. False = Dinonaktifkan; True = Diaktifkan [Default].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'Seharusnya laporan phpMussel ketika file tanda tangan hilang atau dikorup? Jika <code>fail_silently</code> dinonaktifkan, file dikorup dan hilang akan dilaporkan ketika pemindaian, dan jika <code>fail_silently</code> diaktifkan, file dikorup dan hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crash atau masalah lain. False = Dinonaktifkan; True = Diaktifkan [Default].';
 $phpMussel['lang']['config_template_data_css_url'] = 'File template untuk tema kustom menggunakan properti CSS eksternal, sedangkan file template untuk tema default menggunakan properti CSS internal. Untuk menginstruksikan phpMussel menggunakan file template untuk tema kustom, menentukan alamat HTTP publik file CSS tema kustom Anda menggunakan variable <code>css_url</code>. Jika Anda biarkan kosong variabel ini, phpMussel akan menggunakan file template untuk tema default.';
+$phpMussel['lang']['config_template_data_theme'] = 'Tema default untuk phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'Berapa lama (dalam detik) harus hasil API untuk disimpan dalam cache? Default adalah 3600 detik (1 jam).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Memungkinkan pemeriksaan API ke Google Safe Browsing API ketika kunci API diperlukan didefinisikan.';
 $phpMussel['lang']['config_urlscanner_lookup_hphosts'] = 'Memungkinkan pemeriksaan API ke hpHosts API ketika diset untuk true.';

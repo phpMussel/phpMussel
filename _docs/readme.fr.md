@@ -235,6 +235,8 @@ Fichier | Description
 /vault/fe_assets/frontend.css | Feuille de style CSS pour l'accès frontal.
 /vault/fe_assets/frontend.dat | Base de données pour l'accès frontal (contient des informations sur les comptes et les sessions; généré seulement si l'accès frontal est activé et utilisé).
 /vault/fe_assets/frontend.html | Le fichier modèle HTML principal pour l'accès frontal.
+/vault/fe_assets/icons.php | Gestionnaire d'icônes (utilisé par le gestionnaire de fichiers de l'accès frontal).
+/vault/fe_assets/pips.php | Gestionnaire de pips (utilisé par le gestionnaire de fichiers de l'accès frontal).
 /vault/lang/ | Contient données linguistiques.
 /vault/lang/.htaccess | Un hypertexte accès fichier (dans ce cas, pour protéger les sensibles fichiers appartenant au script contre être consulté par non autorisées sources).
 /vault/lang/lang.ar.fe.php | Données linguistiques en Arabe pour l'accès frontal.
@@ -290,8 +292,8 @@ Fichier | Description
 ※ /vault/scan_kills.txt | Les résultats de chaque fichier téléchargement bloqué/tués par phpMussel.
 ※ /vault/scan_log.txt | Un enregistrement de tout analysé par phpMussel.
 ※ /vault/scan_log_serialized.txt | Un enregistrement de tout analysé par phpMussel.
-/vault/template.html | Modèle fichier; Modèle pour l'HTML sortie produit par phpMussel pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /vault/template_custom.html | Modèle fichier; Modèle pour l'HTML sortie produit par phpMussel pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
+/vault/template_default.html | Modèle fichier; Modèle pour l'HTML sortie produit par phpMussel pour son bloqués fichiers téléchargement message (le message vu par l'envoyeur).
 /vault/upload.php | Module de téléchargements.
 /.gitattributes | Un fichier du GitHub projet (pas nécessaire pour le bon fonctionnement du script).
 /Changelog-v1.txt | Un enregistrement des modifications apportées au script entre les différentes versions (pas nécessaire pour le bon fonctionnement du script).
@@ -561,6 +563,9 @@ Directives/Variables pour les modèles et thèmes.
 
 Modèles données est liée à la sortie HTML utilisé pour générer le "Téléchargement Refusé" message affiché aux utilisateurs sur un fichier téléchargement est bloqué. Si vous utilisez des thèmes personnalisés pour phpMussel, sortie HTML provient du `template_custom.html` fichier, et sinon, sortie HTML provient du `template.html` fichier. Variables écrites à cette section du fichier de configuration sont préparé pour la sortie HTML par voie de remplacer tous les noms de variables circonfixé par accolades trouvés dans la sortie HTML avec les variables données correspondant. Par exemple, où `foo="bar"`, toute instance de `<p>{foo}</p>` trouvés dans la sortie HTML deviendra `<p>bar</p>`.
 
+"theme"
+- Le thème à utiliser par défaut pour phpMussel.
+
 "css_url"
 - Le modèle fichier pour des thèmes personnalisés utilise les propriétés CSS externes, tandis que le modèle fichier pour le défaut thème utilise les propriétés CSS internes. Pour instruire phpMussel d'utiliser le modèle fichier pour des thèmes personnalisés, spécifier l'adresse HTTP public de votre thèmes personnalisés CSS fichiers utilisant le `css_url` variable. Si vous laissez cette variable vide, phpMussel va utiliser le modèle fichier pour le défaut thème.
 
@@ -744,4 +749,4 @@ Oui. Les installations phpMussel ne sont pas naturellement verrouillées dans de
 ---
 
 
-Dernière Mise à Jour: 2 Mai 2017 (2017.05.02).
+Dernière Mise à Jour: 19 Mai 2017 (2017.05.19).

@@ -105,12 +105,8 @@ Config Defaults:
    type: bool
    default: true
   forbid_on_block:
-   type: int
-   default: 403
-   choices:
-    200: 200 OK
-    403: 403 Forbidden
-    503: 503 Service Unavailable
+   type: bool
+   default: true
   delete_on_sight:
    type: bool
    default: false
@@ -319,6 +315,13 @@ Config Defaults:
    default: 3600
    preview: seconds
  template_data:
+  theme:
+   type: string
+   default: "default"
+   choices:
+    default: "Default (Maikuolan)"
+    rbi: "Red-Blue Inverted (Maikuolan)"
+   choice_filter: "FilterTheme"
   css_url:
    type: string
    default: ""

@@ -235,6 +235,8 @@ Datei | Beschreibung
 /vault/fe_assets/frontend.css | CSS-Stylesheet für das Front-End.
 /vault/fe_assets/frontend.dat | Datenbank für das Front-End (Enthält Kontoinformationen und Sitzungsinformationen; nur erzeugt wenn das Frontend aktiviert und verwendet wird).
 /vault/fe_assets/frontend.html | Die Haupt-HTML-Template-Datei für das Front-End.
+/vault/fe_assets/icons.php | Ikonen-Handler (die vom Front-End-Dateimanager verwendet wird).
+/vault/fe_assets/pips.php | Pips-Handler (die vom Front-End-Dateimanager verwendet wird).
 /vault/lang/ | Enthält Sprachdaten für phpMussel.
 /vault/lang/.htaccess | Ein Hypertext-Access-Datei (in diesem Fall zum Schutz von sensiblen Dateien des Scripts vor einem nicht authorisierten Zugriff).
 /vault/lang/lang.ar.fe.php | Arabische Sprachdateien für das Front-End.
@@ -290,8 +292,8 @@ Datei | Beschreibung
 ※ /vault/scan_kills.txt | Eine Aufzeichnung aller von phpMussel blockierten Dateiuploads.
 ※ /vault/scan_log.txt | Eine Aufzeichnung aller von phpMussel gescannten Objekte.
 ※ /vault/scan_log_serialized.txt | Eine Aufzeichnung aller von phpMussel gescannten Objekte.
-/vault/template.html | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
 /vault/template_custom.html | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
+/vault/template_default.html | Template Datei; Template für die HTML-Ausgabe mit der Nachricht, dass der Dateiupload von phpMussel blockiert wurde (Nachricht, die dem Nutzer angezeigt wird).
 /vault/upload.php | Upload-Handler.
 /.gitattributes | Ein GitHub Projektdatei (für die korrekte Funktion des Scripts nicht notwendig).
 /Changelog-v1.txt | Eine Auflistung der Änderungen des Scripts der verschiedenen Versionen (für die korrekte Funktion des Scripts nicht notwendig).
@@ -561,6 +563,9 @@ Anweisungen/Variablen für Templates und Themes.
 
 Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Upload blockiert"-Nachricht Benutzern anzuzeigen, wenn eine hochgeladene Datei blockiert wird. Falls Sie benutzerdefinierte Themes für phpMussel verwenden, wird die HTML-Ausgabe von der `template_custom.html`-Datei verwendet, ansonsten wird die HTML-Ausgabe von der `template.html`-Datei verwendet. Variablen, die in diesem Bereich der Konfigurations-Datei festgelegt werden, werden als HTML-Ausgabe geparst, indem jede Variable mit geschweiften Klammern innerhalb der HTML-Ausgabe mit den entsprechenden Variablen-Daten ersetzt wird. Zum Beispiel, wenn `foo="bar"`, dann wird jedes Exemplar mit `<p>{foo}</p>` innerhalb der HTML-Ausgabe zu `<p>bar</p>`.
 
+"theme"
+- Standard-Thema für phpMussel verwenden.
+
 "css_url"
 - Die Template-Datei für benutzerdefinierte Themes verwendet externe CSS-Regeln, wobei die Template-Datei für das normale Theme interne CSS-Regeln verwendet. Um phpMussel anzuweisen, die Template-Datei für benutzerdefinierte Themes zu verwenden, geben Sie die öffentliche HTTP-Adresse von den CSS-Dateien des benutzerdefinierten Themes mit der `css_url`-Variable an. Wenn Sie diese Variable leer lassen, wird phpMussel die Template-Datei für das normale Theme verwenden.
 
@@ -743,4 +748,4 @@ Ja. phpMussel-Installationen sind natürlich nicht auf bestimmte Domains gesperr
 ---
 
 
-Zuletzt aktualisiert: 2 Mai 2017 (2017.05.02).
+Zuletzt aktualisiert: 19 Mai 2017 (2017.05.19).

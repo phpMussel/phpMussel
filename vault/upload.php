@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2017.04.24).
+ * This file: Upload handler (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -537,12 +537,20 @@ if ($phpMussel['upload']['count'] > 0) {
         $phpMussel['TemplateData']['phpmusselversion'] = $phpMussel['ScriptIdent'];
         $phpMussel['TemplateData']['favicon'] = $phpMussel['favicon'];
         $phpMussel['TemplateData']['xmlLang'] = $phpMussel['Config']['general']['lang'];
-        $phpMussel['TemplateData']['WebFontsLink'] = $phpMussel['WebFontsLink'];
 
         /** Determine which template file to use, if this hasn't already been determined. */
         if (!isset($phpMussel['memCache']['template_file'])) {
-            $phpMussel['memCache']['template_file'] =
-                !$phpMussel['Config']['template_data']['css_url'] ? 'template.html' : 'template_custom.html';
+            $phpMussel['memCache']['template_file'] = !$phpMussel['Config']['template_data']['css_url'] ?
+                'template_' . $phpMussel['Config']['template_data']['theme'] . '.html' : 'template_custom.html';
+        }
+
+        /** Fallback for themes without default template files. */
+        if (
+            $phpMussel['Config']['template_data']['theme'] !== 'default' &&
+            !$phpMussel['Config']['template_data']['css_url'] &&
+            !file_exists($phpMussel['Vault'] . $phpMussel['memCache']['template_file'])
+        ) {
+            $phpMussel['memCache']['template_file'] = 'template_default.html';
         }
 
         /** Log "scan_kills" data. */
@@ -592,7 +600,7 @@ if ($phpMussel['upload']['count'] > 0) {
         }
 
         /** Generate HTML output. */
-        $html = $phpMussel['ParseVars'](
+        $phpMussel['HTML'] = $phpMussel['ParseVars'](
             $phpMussel['TemplateData'],
             $phpMussel['ReadFile']($phpMussel['Vault'] . $phpMussel['memCache']['template_file'], 0, true)
         );
@@ -633,8 +641,21 @@ if ($phpMussel['upload']['count'] > 0) {
             $phpMussel['MusselPlugins']['tempdata'] = '';
         }
 
+        /** Handle webfonts. */
+        if (empty($phpMussel['Config']['general']['disable_webfonts'])) {
+            $phpMussel['HTML'] = str_replace(array('<!-- WebFont Begin -->', '<!-- WebFont End -->'), '', $phpMussel['HTML']);
+        } else {
+            $phpMussel['WebFontPos'] = array(
+                'Begin' => strpos($phpMussel['HTML'], '<!-- WebFont Begin -->'),
+                'End' => strpos($phpMussel['HTML'], '<!-- WebFont End -->')
+            );
+            $phpMussel['HTML'] =
+                substr($phpMussel['HTML'], 0, $phpMussel['WebFontPos']['Begin']) . substr($phpMussel['HTML'], $phpMussel['WebFontPos']['End'] + 20);
+            unset($phpMussel['WebFontPos']);
+        }
+
         /** Send HTML output and the kill the script. */
-        die($html);
+        die($phpMussel['HTML']);
 
     }
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.05.15).
+ * This file: Korean language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -79,6 +79,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'phpMussel는 shell 스�
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = '확장자가없는 경우 phpMussel이 그것을보고해야하는지 여부? <code>fail_extensions_silently</code>이 잘못된 경우 확장자없이는 스캐닝시에보고되고 활성화되면 무시됩니다 문제는보고되지 않습니다. 이 지시어를 무효로하는 것은 보안을 향상시킬 수 있지만, 오진도 증가 할 수 있습니다. <code>false</code> = Disabled/장애인; <code>true</code> = Enabled/유효 (Default / 기본 설정).';
 $phpMussel['lang']['config_signatures_fail_silently'] = '서명 파일이 없거나 손상된 경우 phpMussel 그것을 리포트 해야하는지 여부? <code>fail_silently</code>이 유효하지 않으면 문제가 리포트되어 유효하면 문제는 무시 된 스캔 보고서가 작성됩니다. 충돌하는 같은 피해가 없으면 기본 설정을 그대로 유지한다. <code>false</code> = Disabled/장애인; <code>true</code> = Enabled/유효 (Default / 기본 설정).';
 $phpMussel['lang']['config_template_data_css_url'] = '사용자 지정 테마 템플릿 파일은 외부 CSS 속성을 사용하고 있습니다. 한편, 기본 테마는 내부 CSS입니다. 사용자 정의 테마를 적용하는 CSS 파일의 공개적 HTTP 주소를 "css_url"변수를 사용하여 지정하십시오. 이 변수가 공백이면 기본 테마가 적용됩니다.';
+$phpMussel['lang']['config_template_data_theme'] = 'phpMussel에 사용할 기본 테마.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'API 조회의 결과를 얼마나 캐시할지 (초 단위)? 기본값은 3600 초 (한 시간).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = '필요한 API 키가 정의되면, API는 Google Safe Browsing API 조회가 활성화됩니다.';
 $phpMussel['lang']['config_urlscanner_lookup_hphosts'] = 'True로하면 API를 hpHosts 조회가 활성화됩니다.';

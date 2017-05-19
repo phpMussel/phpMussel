@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.05.15).
+ * This file: English language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -79,6 +79,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'Should phpMussel parse s
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Should phpMussel report when extensions are missing? If <code>fail_extensions_silently</code> is disabled, missing extensions will be reported on scanning, and if <code>fail_extensions_silently</code> is enabled, missing extensions will be ignored, with scanning reporting for those files that there aren\'t any problems. Disabling this directive may potentially increase your security, but may also lead to an increase of false positives. False = Disabled; True = Enabled [Default].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'Should phpMussel report when signatures files are missing or corrupted? If <code>fail_silently</code> is disabled, missing and corrupted files will be reported on scanning, and if <code>fail_silently</code> is enabled, missing and corrupted files will be ignored, with scanning reporting for those files that there aren\'t any problems. This should generally be left alone unless you\'re experiencing crashes or similar problems. False = Disabled; True = Enabled [Default].';
 $phpMussel['lang']['config_template_data_css_url'] = 'The template file for custom themes utilises external CSS properties, whereas the template file for the default theme utilises internal CSS properties. To instruct phpMussel to use the template file for custom themes, specify the public HTTP address of your custom theme\'s CSS files using the <code>css_url</code> variable. If you leave this variable blank, phpMussel will use the template file for the default theme.';
+$phpMussel['lang']['config_template_data_theme'] = 'Default theme to use for phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'How long (in seconds) should the results of API lookups be cached for? Default is 3600 seconds (1 hour).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Enables API lookups to the Google Safe Browsing API when the necessary API key is defined.';
 $phpMussel['lang']['config_urlscanner_lookup_hphosts'] = 'Enables API lookups to the hpHosts API when set to true.';

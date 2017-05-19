@@ -235,6 +235,8 @@ Data | Deskripsi
 /vault/fe_assets/frontend.css | Style-sheet CSS untuk akses bagian depan.
 /vault/fe_assets/frontend.dat | Database untuk akses bagian depan (berisi informasi untuk akun dan sesi; hanya dihasilkan jika akses bagian depan diaktifkan dan digunakan).
 /vault/fe_assets/frontend.html | Template HTML utama untuk akses bagian depan.
+/vault/fe_assets/icons.php | File ikon (digunakan oleh file manager bagian depan).
+/vault/fe_assets/pips.php | File pip (digunakan oleh file manager bagian depan).
 /vault/lang/ | Berisikan file bahasa.
 /vault/lang/.htaccess | File akses hiperteks (pada instansi ini, untuk melindungi file-file sensitif dari skrip untuk diakses dari sumber yang tidak terautorisasi).
 /vault/lang/lang.ar.fe.php | File Bahasa Arab untuk bagian depan.
@@ -290,8 +292,8 @@ Data | Deskripsi
 ※ /vault/scan_kills.txt | Sebuah catatan dari setiap file upload yang diblok/dibunuh oleh phpMussel.
 ※ /vault/scan_log.txt | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
 ※ /vault/scan_log_serialized.txt | Sebuah catatan dari apapun yang di pemindaian oleh phpMussel.
-/vault/template.html | File template phpMussel; Template untuk output HTML yang diproduksi oleh phpMussel untuk file pesan upload yang dibloknya (pesan dilihat oleh pengupload).
 /vault/template_custom.html | File template phpMussel; Template untuk output HTML yang diproduksi oleh phpMussel untuk file pesan upload yang dibloknya (pesan dilihat oleh pengupload).
+/vault/template_default.html | File template phpMussel; Template untuk output HTML yang diproduksi oleh phpMussel untuk file pesan upload yang dibloknya (pesan dilihat oleh pengupload).
 /vault/upload.php | Modul upload.
 /.gitattributes | Sebuah file proyek GitHub (tidak dibutuhkan untuk fungsi teratur dari skrip).
 /Changelog-v1.txt | Sebuah rekaman dari perubahan yang dibuat pada skrip ini di antara perbedaan versi (tidak dibutuhkan untuk fungsi teratur dari skrip).
@@ -561,6 +563,9 @@ Direktif-direktif dan variabel-variabel untuk template-template dan tema-tema.
 
 File template berkaitan untuk HTML diproduksi yang digunakan untuk menghasilkan pesan "Upload Ditolak" yang ditampilkan kepada pengguna-pengguna ketika file upload yang diblokir. Jika Anda menggunakan tema kustom untuk phpMussel, HTML diproduksi yang bersumber dari file `template_custom.html`, dan sebaliknya, HTML diproduksi yang bersumber dari file `template.html`. Variabel ditulis untuk file konfigurasi bagian ini yang diurai untuk HTML diproduksi dengan cara mengganti nama-nama variabel dikelilingi dengan kurung keriting ditemukan dalam HTML diproduksi dengan file variabel sesuai. Sebagai contoh, dimana `foo="bar"`, setiap terjadinya `<p>{foo}</p>` ditemukan dalam HTML diproduksi akan menjadi `<p>bar</p>`.
 
+"theme"
+- Tema default untuk phpMussel.
+
 "css_url"
 - File template untuk tema kustom menggunakan properti CSS eksternal, sedangkan file template untuk tema default menggunakan properti CSS internal. Untuk menginstruksikan phpMussel menggunakan file template untuk tema kustom, menentukan alamat HTTP publik file CSS tema kustom Anda menggunakan variable `css_url`. Jika Anda biarkan kosong variabel ini, phpMussel akan menggunakan file template untuk tema default.
 
@@ -744,4 +749,4 @@ Ya. Instalasi phpMussel tidak secara alami terkunci pada domain tertentu, dan de
 ---
 
 
-Terakhir Diperbarui: 2 Mei 2017 (2017.05.02).
+Terakhir Diperbarui: 19 Mei 2017 (2017.05.19).

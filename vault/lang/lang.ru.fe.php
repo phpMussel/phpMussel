@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.05.15).
+ * This file: Russian language data for the front-end (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -79,6 +79,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'Интерпретиро
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Должна phpMussel сообщать, что отсутствует расширение файла? Если <code>fail_extensions_silently</code> деактивирована, то при сканировании придёт сообщение об отсутствии расширения файла, если же <code>fail_extensions_silently</code> активирована, то файлы с отсутствующим расширением будут игнорироваться, и при сканировании придёт сообщение, что с этими файлами всё в порядке. Деактивация или активация могут повысить Вашу безопасность, однако способствовать увеличению ложных сообщений. False = Деактивировано; True = Активировано [Стандарт].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'Реакция phpMussel на отсутсвие подписей или дефект в них. Когда <code>fail_silently</code> деактивирована, то в течение сканирования будет сообщаться об отсутствии подписи или изъянах в ней. В случае если <code>fail_silently</code> активирована, то отсутствующие или дефектные подписи будут игнорироваться, не сообщая о проблемах. Эта опция должна оставаться такой, если только Вы не ожидаете отказа системы или чего-то подобного. False = Деактивировано; True = Активировано [Стандарт].';
 $phpMussel['lang']['config_template_data_css_url'] = 'Шаблонный файл для персонализированные темы использует внешние CSS свойства и шаблонный файл для стандарт тема использует внутренние CSS свойства. Поручить phpMussel использовать персонализированные темы шаблонный файл, указать адрес публичного HTTP в CSS файлов вашей темы используя <code>css_url</code> переменная. Если оставить это переменная пустым, phpMussel будет использовать шаблонный файл для стандарт тема.';
+$phpMussel['lang']['config_template_data_theme'] = 'Стандартная тема для phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'Как долго (в секундах) результаты API вызовов, которые должны быть в кэше? Стандарт 3600 секунд (1 час).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Активировать Google Safe Browsing API интеграция если необходимое API ключ вводится.';
 $phpMussel['lang']['config_urlscanner_lookup_hphosts'] = 'Активировать hpHosts API интеграция если <code>true</code>.';

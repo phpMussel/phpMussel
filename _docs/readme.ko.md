@@ -235,6 +235,8 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/fe_assets/frontend.css | 프론트 엔드 CSS 스타일 시트.
 /vault/fe_assets/frontend.dat | 프론트 엔드 데이터베이스 (계정 정보와 세션 정보 및 캐시가 포함되어 있습니다; 프론트 엔드가 활성화되어있을 때 생성).
 /vault/fe_assets/frontend.html | 프론트 엔드 메인 템플릿 파일.
+/vault/fe_assets/icons.php | 아이콘 핸들러 (프론트 엔드 파일 관리자에 의해 사용된다).
+/vault/fe_assets/pips.php | 핍 핸들러 (프론트 엔드 파일 관리자에 의해 사용된다).
 /vault/lang/ | phpMussel 언어 데이터가 포함되어 있습니다.
 /vault/lang/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
 /vault/lang/lang.ar.fe.php | 프론트 엔드 아랍어 언어 데이터.
@@ -290,8 +292,8 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 ※ /vault/scan_kills.txt | phpMussel 의해 차단/삭제 된 이미지 파일의 전체 기록.
 ※ /vault/scan_log.txt | phpMussel 의해 스캔 된 것의 전 기록.
 ※ /vault/scan_log_serialized.txt | phpMussel 의해 스캔 된 것의 전 기록.
-/vault/template.html | phpMussel 템플릿 파일; phpMussel가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
 /vault/template_custom.html | phpMussel 템플릿 파일; phpMussel가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
+/vault/template_default.html | phpMussel 템플릿 파일; phpMussel가 파일 업로드를 차단했을 때 생성되는 메시지의 HTML 출력 템플릿 (업 로더를 표시하는 메시지).
 /vault/upload.php | 업로드 핸들러.
 /.gitattributes | GitHub 프로젝트 파일 (기능에 관계없는 파일입니다).
 /Changelog-v1.txt | 버전에 따른 차이를 기록한 것입니다 (기능에 관계없는 파일입니다).
@@ -561,6 +563,9 @@ URL 스캐너 API 조회 설정.
 
 템플릿의 데이터는 사용자를 향해 업로드 거부 메시지를 HTML 형식으로 출력 할 때 사용됩니다. 사용자 지정 테마를 사용하는 경우는`template_custom.html`를 사용하고, 그렇지 않은 경우는`template.html`를 사용하여 HTML 출력이 생성됩니다. 설정 파일에서이 섹션의 변수는 HTML 출력에 대한 해석되어로 둘러싸인 변수 이름은 해당 변수 데이터로 대체합니다. 예를 들어`foo="bar"`하면 HTML 출력의`<p>{foo}</p>`는`<p>bar</p>`입니다.
 
+"theme"
+- phpMussel에 사용할 기본 테마.
+
 "css_url"
 - 사용자 지정 테마 템플릿 파일은 외부 CSS 속성을 사용하고 있습니다. 한편, 기본 테마는 내부 CSS입니다. 사용자 정의 테마를 적용하는 CSS 파일의 공개적 HTTP 주소를 "css_url"변수를 사용하여 지정하십시오. 이 변수가 공백이면 기본 테마가 적용됩니다.
 
@@ -744,4 +749,4 @@ phpMussel은 파일을 차단합니다 | __위양성__ | 진정한 양성 (올�
 ---
 
 
-최종 업데이트: 2017년 5월 2일.
+최종 업데이트: 2017년 5월 19일.

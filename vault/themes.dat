@@ -1,0 +1,9 @@
+---
+theme/rbi:
+ Name: Theme: Red-Blue Inverted (Maikuolan)
+ Extended Description: Same as the default theme, but with some of the colours swapped around.
+ Minimum Required: 1.0.0-DEV
+ Remote: https://raw.githubusercontent.com/phpMussel/themes/master/FE/themes.dat
+ Uninstallable: true
+ Reannotate: themes.dat
+

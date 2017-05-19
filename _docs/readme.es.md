@@ -235,6 +235,8 @@ Archivo | Descripción
 /vault/fe_assets/frontend.css | Hoja de estilo CSS para el front-end.
 /vault/fe_assets/frontend.dat | Base de datos para el front-end (contiene información de las cuentas y las sesiones; sólo se genera si el front-end está activado y utilizado).
 /vault/fe_assets/frontend.html | El archivo HTML principal para el front-end.
+/vault/fe_assets/icons.php | Archivo de iconos (utilizado por el administración de archivos del front-end).
+/vault/fe_assets/pips.php | Archivo de pips (utilizado por el administración de archivos del front-end).
 /vault/lang/ | Contiene lingüísticos datos.
 /vault/lang/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/lang/lang.ar.fe.php | Lingüísticos datos Árabe para el front-end.
@@ -290,8 +292,8 @@ Archivo | Descripción
 ※ /vault/scan_kills.txt | Un registro de todos archivos subidos bloqueado/asesinado por phpMussel.
 ※ /vault/scan_log.txt | Un registro de todo escaneado por phpMussel.
 ※ /vault/scan_log_serialized.txt | Un registro de todo escaneado por phpMussel.
-/vault/template.html | Template archivo; Plantilla para HTML salida producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
 /vault/template_custom.html | Template archivo; Plantilla para HTML salida producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
+/vault/template_default.html | Template archivo; Plantilla para HTML salida producida por phpMussel para sus bloqueados archivos subidos mensaje (el mensaje visto por el subidor).
 /vault/upload.php | Módulo de subida.
 /.gitattributes | Un archivo de la GitHub proyecto (no se requiere para usar la script).
 /Changelog-v1.txt | Un registro de los cambios realizados en la principal script entre las diferentes versiones (no se requiere para usar la script).
@@ -561,6 +563,9 @@ Directivas/Variables para las plantillas y temas.
 
 Plantilla datos es relacionados a la HTML utilizado generar el "Subida Denegada" mensaje que muestra a los usuarios cuando una archivo subido está bloqueado. Si utiliza temas personalizados para phpMussel, HTML se obtiene a partir del `template_custom.html` archivo, y para de otra manera, HTML se obtiene a partir del `template.html` archivo. Variables escritas a esta sección de la configuración archivo se procesado para el HTML a través de la sustitución de los nombres de variables circunfijo por llaves que se encuentran dentro del HTML con el variable datos correspondiente. Por ejemplo, dónde `foo="bar"`, cualquier instancias de `<p>{foo}</p>` que se encuentran dentro del HTML se convertirá `<p>bar</p>`.
 
+"theme"
+- Tema predefinido a utilizar para phpMussel.
+
 "css_url"
 - El plantilla archivo para los temas personalizados utiliza externas CSS propiedades, mientras que el plantilla archivo para el predefinida tema utiliza internas CSS propiedades. Para instruir phpMussel de utilizar el plantilla archivo para temas personalizados, especificar el público HTTP dirección de sus temas personalizados CSS archivos utilizando la `css_url` variable. Si lo deja en blanco la variable, phpMussel utilizará el plantilla archivo para el predefinida tema.
 
@@ -744,4 +749,4 @@ Sí. Las instalaciones de phpMussel no están ligados naturalmente en dominios e
 ---
 
 
-Última Actualización: 2 Mayo 2017 (2017.05.02).
+Última Actualización: 19 Mayo 2017 (2017.05.19).

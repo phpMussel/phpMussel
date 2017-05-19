@@ -235,6 +235,8 @@ Bestand | Beschrijving
 /vault/fe_assets/frontend.css | CSS-stijlblad voor de frontend.
 /vault/fe_assets/frontend.dat | Database voor de frontend (bevat accounts en sessies informatie; alleen gegenereerd als de frontend geactiveerd en gebruikt).
 /vault/fe_assets/frontend.html | De belangrijkste HTML-template-bestand voor de frontend.
+/vault/fe_assets/icons.php | Icons-handler (door de frontend bestandsbeheer gebruikt).
+/vault/fe_assets/pips.php | Pitten-handler (door de frontend bestandsbeheer gebruikt).
 /vault/lang/ | Bevat phpMussel taaldata/taalgegevens.
 /vault/lang/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/lang/lang.ar.fe.php | Arabisch taaldata/taalgegevens voor het frontend.
@@ -290,8 +292,8 @@ Bestand | Beschrijving
 ※ /vault/scan_kills.txt | Een record van elk bestand uploaden geblokkeerde/gedood door phpMussel.
 ※ /vault/scan_log.txt | Een record van alles gescand door phpMussel.
 ※ /vault/scan_log_serialized.txt | Een record van alles gescand door phpMussel.
-/vault/template.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
 /vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
+/vault/template_default.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
 /vault/upload.php | Upload handler.
 /.gitattributes | Een GitHub project bestand (niet vereist voor een goede werking van het script).
 /Changelog-v1.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).
@@ -561,6 +563,9 @@ Richtlijnen/Variabelen voor sjablonen en thema's.
 
 Sjabloongegevens betreft op de HTML-uitvoer die wordt gegenereerd en gebruikt voor de "Upload Geweigerd" bericht getoond om de gebruikers wanneer een bestand upload is geblokkeerd. Als u gebruik aangepaste thema's voor phpMussel, HTML-uitvoer is afkomstig van de `template_custom.html` bestand, en alternatief, HTML-uitvoer is afkomstig van de `template.html` bestand. Variabelen geschreven om dit sectie van het configuratiebestand worden geïnterpreteerd aan de HTML-uitvoer door middel van het vervangen van variabelennamen omringd door accolades gevonden binnen de HTML-uitvoer met de bijbehorende variabele gegevens. Bijvoorbeeld, waar `foo="bar"`, elk geval van `<p>{foo}</p>` gevonden binnen de HTML-uitvoer `<p>bar</p>` zal worden.
 
+"theme"
+- Standaard thema om te gebruiken voor phpMussel.
+
 "css_url"
 - De sjabloonbestand voor aangepaste thema's maakt gebruik van externe CSS-eigenschappen, terwijl de sjabloonbestand voor het standaardthema maakt gebruik van interne CSS-eigenschappen. Om phpMussel instrueren om de sjabloonbestand voor aangepaste thema's te gebruiken, geef het openbare HTTP-adres van uw aangepaste thema's CSS-bestanden via de `css_url` variabele. Als u dit variabele leeg laat, phpMussel zal de sjabloonbestand voor de standaardthema te gebruiken.
 
@@ -744,4 +749,4 @@ Ja. phpMussel-installaties zijn niet van nature gebonden naar specifieke domeine
 ---
 
 
-Laatste Bijgewerkt: 2 Mei 2017 (2017.05.02).
+Laatste Bijgewerkt: 19 Mei 2017 (2017.05.19).

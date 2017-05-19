@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Temporary hotfixes file (last modified: 2017.03.28).
+ * This file: Temporary hotfixes file (last modified: 2017.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,7 +26,7 @@ $phpMussel['ThisFile'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'hotfixes.
 $phpMussel['Hotfixed'] = false;
 
 /** Hotfix for missing DAT files. */
-if (true) { // switch 170328
+if (true) { // switch 170519
     $phpMussel['HotfixData'] = '';
 
     if (!file_exists($phpMussel['Vault'] . 'components.dat')) {
@@ -56,10 +56,19 @@ if (true) { // switch 170328
             fclose($phpMussel['Handle']);
         }
     }
+    if (!file_exists($phpMussel['Vault'] . 'themes.dat')) {
+        if ($phpMussel['HotfixData'] = $phpMussel['Request'](
+            'https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/themes.dat'
+        )) {
+            $phpMussel['Handle'] = fopen($phpMussel['Vault'] . 'themes.dat', 'w');
+            fwrite($phpMussel['Handle'], $phpMussel['HotfixData']);
+            fclose($phpMussel['Handle']);
+        }
+    }
 
     /** Update switch. */
     $phpMussel['ThisFile'] = str_replace(
-        "\nif (true) { // switch 170328\n",
+        "\nif (true) { // switch 170519\n",
         "\nif (false) {\n",
         $phpMussel['ThisFile']
     );
