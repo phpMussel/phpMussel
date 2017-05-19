@@ -470,7 +470,7 @@ Chameleon serangan deteksi: False = Dinonaktifkan; True = Diaktifkan.
 - Cari header yang dapat dieksekusi di dalam file-file yang dapat dieksekusi atau file terkompress yang dikenali dan untuk file dapat dieksekusi yang headernya tidak benar.
 
 "chameleon_to_archive"
-- Cari file terkompress yang header nya tidak benar (Mendukung: BZ, GZ, RAR, ZIP, RAR, GZ).
+- Cari file terkompress yang header nya tidak benar (Mendukung: BZ, GZ, RAR, ZIP, GZ).
 
 "chameleon_to_doc"
 - Cari dokumen office yang header nya tidak benar (Mendukung: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).

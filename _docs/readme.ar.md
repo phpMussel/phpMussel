@@ -566,7 +566,7 @@
 
 <div dir="rtl">"chameleon_to_archive"<br /></div>
 <div dir="rtl"><ul>
- <li>البحث عن المحفوظات التي عناوينها غير صحيحة (المدعومة: BZ، GZ، RAR، ZIP، RAR، GZ).</li>
+ <li>البحث عن المحفوظات التي عناوينها غير صحيحة (المدعومة: BZ، GZ، RAR، ZIP، GZ).</li>
 </ul></div>
 
 <div dir="rtl">"chameleon_to_doc"<br /></div>

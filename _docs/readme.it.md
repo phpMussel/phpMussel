@@ -470,7 +470,7 @@ Chameleon attacco rilevamento: False = Disattivato; True = Attivato.
 - Cercare per eseguibili magici numeri che non sono riconosciuti eseguibili né archivi e per eseguibili cui non sono corrette.
 
 "chameleon_to_archive"
-- Cercare per archivi di cui non sono corrette (Supportato: BZ, GZ, RAR, ZIP, RAR, GZ).
+- Cercare per archivi di cui non sono corrette (Supportato: BZ, GZ, RAR, ZIP, GZ).
 
 "chameleon_to_doc"
 - Cercare per office documenti di cui non sono corrette (Supportato: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).

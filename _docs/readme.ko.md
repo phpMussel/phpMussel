@@ -470,7 +470,7 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 - 실행 파일없이 실행 파일의 아카이브도 인식 할 수없는 파일의 실행 헤더 및 악성 헤더의 실행 파일을 찾습니다.
 
 "chameleon_to_archive"
-- 헤더가 잘못 보관을 찾습니다 (BZ, GZ, RAR, ZIP, RAR, GZ 지원).
+- 헤더가 잘못 보관을 찾습니다 (BZ, GZ, RAR, ZIP, GZ 지원).
 
 "chameleon_to_doc"
 - 헤더가 잘못 오피스 문서를 찾습니다 (DOC, DOT, PPS, PPT, XLA XLS, WIZ 지원).

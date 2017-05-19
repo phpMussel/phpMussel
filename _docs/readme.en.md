@@ -470,7 +470,7 @@ Chameleon attack detection: False = Off; True = On.
 - Search for executable headers in files that are neither executables nor recognised archives and for executables whose headers are incorrect.
 
 "chameleon_to_archive"
-- Search for archives whose headers are incorrect (Supported: BZ, GZ, RAR, ZIP, RAR, GZ).
+- Search for archives whose headers are incorrect (Supported: BZ, GZ, RAR, ZIP, GZ).
 
 "chameleon_to_doc"
 - Search for office documents whose headers are incorrect (Supported: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).

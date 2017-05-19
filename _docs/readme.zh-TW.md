@@ -470,7 +470,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 - 尋找可執行頭在文件是不可執行文件也不認可存檔文件和尋找可執行文件誰的頭是不正確。
 
 “chameleon_to_archive”
-- 尋找存檔文件誰的頭是不正確（已支持：BZ，GZ，RAR，ZIP，RAR，GZ）。
+- 尋找存檔文件誰的頭是不正確（已支持：BZ，GZ，RAR，ZIP，GZ）。
 
 “chameleon_to_doc”
 - 尋找辦公文檔誰的頭是不正確（已支持：DOC，DOT，PPS，PPT，XLA，XLS，WIZ）。

@@ -470,7 +470,7 @@ Détection des attaques de caméléon: False = Désactivé; True = Activé.
 - Vérifier pour les headers d'exécutables dans les fichiers qui ne sont pas fichiers exécutable ni reconnue comme archives et pour exécutables dont headers sont incorrects.
 
 "chameleon_to_archive"
-- Vérifier pour les archives dont headers sont incorrects (Supporté: BZ, GZ, RAR, ZIP, RAR, GZ).
+- Vérifier pour les archives dont headers sont incorrects (Supporté: BZ, GZ, RAR, ZIP, GZ).
 
 "chameleon_to_doc"
 - Vérifier pour les documents office dont headers sont incorrects (Supporté: DOC, DOT, PPS, PPT, XLA, XLS, WIZ).
