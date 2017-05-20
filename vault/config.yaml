@@ -319,8 +319,9 @@ Config Defaults:
    type: string
    default: "default"
    choices:
-    default: "Default (Maikuolan)"
-    rbi: "Red-Blue Inverted (Maikuolan)"
+    default: "Default"
+    rbi: "Red-Blue Inverted"
+    slate: "Slate"
    choice_filter: "FilterTheme"
   css_url:
    type: string

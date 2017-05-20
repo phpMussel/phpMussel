@@ -17,7 +17,7 @@ phpMussel:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 1.0.0-DEV+2017139056
+ Version: 1.0.0-DEV+2017139066
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/Changelog-v1.txt
@@ -108,7 +108,7 @@ phpMussel:
    - 8e03209e7fc6641b45094e584340feff:83
    - 10bd0eba0213b73c6050d1c11e54729c:29982
    - 4887d56c2967f6d1b1eb0f282a79c955:8141
-   - 0f0d4aa19dac25c1f1e55cb63006fd87:9748
+   - b41e05a78a126766b4d4b42125b64a54:9743
    - 8e03209e7fc6641b45094e584340feff:83
    - f9b29eb4e33f72eaa9ad0842888461d9:2025
    - 6ae234a1eb4e2b0688772e86c79f0419:1390
