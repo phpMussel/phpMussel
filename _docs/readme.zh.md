@@ -294,6 +294,7 @@ phpMussel应该能够正确操作与最低要求从您：安装后，它应该�
 ※ /vault/scan_log_serialized.txt | 记录的一切phpMussel扫描。
 /vault/template_custom.html | 模板文件；模板为HTML产量产生通过phpMussel为它的受阻文件上传信息（信息可见向上传者）。
 /vault/template_default.html | 模板文件；模板为HTML产量产生通过phpMussel为它的受阻文件上传信息（信息可见向上传者）。
+/vault/themes.dat | 主题文件；它使用通过更新功能从前端。
 /vault/upload.php | 上传处理文件。
 /.gitattributes | GitHub文件（不需要为正确经营脚本）。
 /Changelog-v1.txt | 记录的变化做出至脚本间不同版本（不需要为正确经营脚本）。

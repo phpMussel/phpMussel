@@ -294,6 +294,7 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 ※ /vault/scan_log_serialized.txt | phpMusselによりスキャンされたものの全記録。
 /vault/template_custom.html | phpMusselテンプレートファイル；phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
 /vault/template_default.html | phpMusselテンプレートファイル；phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
+/vault/themes.dat | テーマ・ファイル。 アップデート機能で使用（フロントエンドが提供します）。
 /vault/upload.php | アップロード・ハンドラ。
 /.gitattributes | GitHubのプロジェクトファイル（機能には関係のないファイルです）。
 /Changelog-v1.txt | バージョンによる違いを記録したものです（機能には関係のないファイルです）。

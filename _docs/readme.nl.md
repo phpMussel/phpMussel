@@ -294,6 +294,7 @@ Bestand | Beschrijving
 ※ /vault/scan_log_serialized.txt | Een record van alles gescand door phpMussel.
 /vault/template_custom.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
 /vault/template_default.html | Sjabloonbestand; Sjabloon voor HTML-uitvoer geproduceerd door phpMussel voor zijn geblokkeerd bestand te uploaden bericht (het bericht gezien te de uploader).
+/vault/themes.dat | Thema bestand; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/upload.php | Upload handler.
 /.gitattributes | Een GitHub project bestand (niet vereist voor een goede werking van het script).
 /Changelog-v1.txt | Een overzicht van wijzigingen in het script tussen verschillende versies (niet vereist voor een goede werking van het script).

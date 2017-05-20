@@ -294,6 +294,7 @@ File | Description
 ※ /vault/scan_log_serialized.txt | A record of everything scanned by phpMussel.
 /vault/template_custom.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
 /vault/template_default.html | Template file; Template for HTML output produced by phpMussel for its blocked file upload message (the message seen by the uploader).
+/vault/themes.dat | Themes file; Used by the updates feature provided by the front-end.
 /vault/upload.php | Upload handler.
 /.gitattributes | A GitHub project file (not required for proper function of script).
 /Changelog-v1.txt | A record of changes made to the script between different versions (not required for proper function of script).
