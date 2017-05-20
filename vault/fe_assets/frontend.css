@@ -26,7 +26,7 @@ a:active,a:focus{color:red}
 .co{padding:12}
 .dt,.s,.tip,.txtBl,.txtGn,.txtOe,.txtRd{display:inline}
 .dt,.tip{float:{FE_Align};text-align:{FE_Align};width:80%}
-.gen,input,select,textarea{font-family:'Open Sans',sans-serif,Verdana,Arial,Helvetica,sans-serif}
+.gen,input,select,textarea{font-family:'Open Sans',sans-serif,Verdana,Arial,Helvetica}
 .gen{letter-spacing:0px;white-space:nowrap}
 .h1,.h1f,.h2,.h2f,.h3,.h3f,.h4,.h4f,.ng1,.ng2,.r,.rf,.spanner{margin:0;padding:4px;border-style:{Half_Border};border-width:1px;border-color:#999}
 .h1,.h1f,.h2,.h2f,.r,.rf{width:25%}

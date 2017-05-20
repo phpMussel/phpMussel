@@ -1102,6 +1102,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['InUse']) &&
                 !empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To']) &&
                 ($_POST['ID'] !== 'l10n/' . $phpMussel['Config']['general']['lang']) &&
+                ($_POST['ID'] !== 'theme/' . $phpMussel['Config']['template_data']['theme']) &&
                 ($_POST['ID'] !== 'phpMussel') &&
                 !empty($phpMussel['Components']['Meta'][$_POST['ID']]['Reannotate']) &&
                 !empty($phpMussel['Components']['Meta'][$_POST['ID']]['Uninstallable']) &&
@@ -1429,6 +1430,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 );
                 if (
                     ($phpMussel['Components']['Key'] === 'l10n/' . $phpMussel['Config']['general']['lang']) ||
+                    ($phpMussel['Components']['Key'] === 'theme/' . $phpMussel['Config']['template_data']['theme']) ||
                     ($phpMussel['Components']['Key'] === 'phpMussel') ||
                     $phpMussel['IsInUse']($phpMussel['Components']['ThisComponent']['Files']['To'])
                 ) {
