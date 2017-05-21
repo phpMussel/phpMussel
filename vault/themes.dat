@@ -8,7 +8,7 @@ theme/rbi:
  Reannotate: themes.dat
 theme/slate:
  Name: Theme: Slate
- Extended Description: Simple layout; Gentle, darker colours (Work-In-Progress).<br /><em>Author: Caleb M / Maikuolan</em>
+ Extended Description: Simple layout; Gentle, darker colours.<br /><em>Author: Caleb M / Maikuolan</em>
  Minimum Required: 1.0.0-DEV
  Remote: https://raw.githubusercontent.com/phpMussel/themes/master/FE/themes.dat
  Uninstallable: true
