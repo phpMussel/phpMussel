@@ -747,6 +747,26 @@ No. PHP 5.4.0 reached official EoL ("End of Life") in 2014, and extended securit
 
 Yes. phpMussel installations are not naturally locked to specific domains, and can therefore be used to protect multiple domains. Generally, we refer to phpMussel installations protecting only one domain as "single-domain installations", and we refer to phpMussel installations protecting multiple domains and/or sub-domains as "multi-domain installations". If you operate a multi-domain installation and need to use different sets of signature files for different domains, or need phpMussel to be configured differently for different domains, it's possible to do this. After loading the configuration file (`config.ini`), phpMussel will check for the existence of a "configuration overrides file" specific to the domain (or sub-domain) being requested (`the-domain-being-requested.tld.config.ini`), and if found, any configuration values defined by the configuration overrides file will be used for the execution instance instead of the configuration values defined by the configuration file. Configuration overrides files are identical to the configuration file, and at your discretion, may contain either the entirety of all configuration directives available to phpMussel, or whichever small subsection required which differs from the values normally defined by the configuration file. Configuration overrides files are named according to the domain that they are intended for (so, for example, if you need a configuration overrides file for the domain, `http://www.some-domain.tld/`, its configuration overrides file should be named as `some-domain.tld.config.ini`, and should be placed within the vault alongside the configuration file, `config.ini`). The domain name for the execution instance is derived from the `HTTP_HOST` header of the request; "www" is ignored.
 
+#### I don't want to mess around with installing this and getting it to work with my website; Can I just pay you to do it all for me?
+
+Maybe. This is considered on a case-by-case basis. Let us know what you need, what you're offering, and we'll let you know whether we can help.
+
+#### Can I hire you or any of the developers of this project for private work?
+
+*See above.*
+
+#### I need specialist modifications, customisations, etc; Can you help?
+
+*See above.*
+
+#### I'm a developer, website designer, or programmer. Can I accept or offer work relating to this project?
+
+Yes. Our license does not prohibit this.
+
+#### I want to contribute to the project; Can I do this?
+
+Yes. Contributions to the project are very welcome. Please see "CONTRIBUTING.md" for more information.
+
 ---
 
 
