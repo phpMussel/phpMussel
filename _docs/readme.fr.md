@@ -747,6 +747,37 @@ Non. PHP 5.4.0 a atteint officiellement l'EoL ("End of Life", ou fin de vie) en 
 
 Oui. Les installations phpMussel ne sont pas naturellement verrouillées dans des domaines spécifiques, et peut donc être utilisé pour protéger plusieurs domaines. Généralement, nous référons aux installations phpMussel protégeant un seul domaine comme "installations à un seul domaine" ("single-domain installations"), et nous référons aux installations phpMussel protégeant plusieurs domaines et/ou sous-domaines comme "installations multi-domaines" ("multi-domain installations"). Si vous utilisez une installation multi-domaine et besoin d'utiliser différents ensembles de fichiers de signature pour différents domaines, ou besoin de phpMussel pour être configuré différemment pour différents domaines, il est possible de le faire. Après avoir chargé le fichier de configuration (`config.ini`), phpMussel vérifiera l'existence d'un "fichier de substitution de configuration" spécifique au domaine (ou sous-domaine) demandé (`le-domaine-demandé.tld.config.ini`), et si trouvé, les valeurs de configuration définies par le fichier de substitution de configuration sera utilisé pour l'instance d'exécution au lieu des valeurs de configuration définies par le fichier de configuration. Les fichiers de substitution de configuration sont identiques au fichier de configuration, et à votre discrétion, peut contenir l'intégralité de toutes les directives de configuration disponibles pour phpMussel, ou quelle que soit la petite sous-section requise qui diffère des valeurs normalement définies par le fichier de configuration. Les fichiers de substitution de configuration sont nommée selon le domaine auquel elle est destinée (donc, par exemple, si vous avez besoin d'une fichier de substitution de configuration pour le domaine, `http://www.some-domain.tld/`, sa fichier de substitution de configuration doit être nommé comme `some-domain.tld.config.ini`, et devrait être placé dans la vault à côté du fichier de configuration, `config.ini`). Le nom de domaine pour l'instance d'exécution dérive de l'en-tête `HTTP_HOST` de la demande; "www" est ignoré.
 
+#### Je ne veux pas déranger avec l'installation de cela et le faire fonctionner avec mon site; Puis-je vous payer pour tout faire pour moi?
+
+Peut-être. Ceci est considéré au cas par cas. Faites-nous savoir ce dont vous avez besoin, ce que vous offrez, et nous vous informerons si nous pouvons vous aider.
+
+#### Puis-je vous embaucher ou à l'un des développeurs de ce projet pour un travail privé?
+
+*Voir au dessus.*
+
+#### J'ai besoin de modifications spécialisées, de personnalisations, etc; Êtes-vous en mesure d'aider?
+
+*Voir au dessus.*
+
+#### Je suis un développeur, un concepteur de site Web ou un programmeur. Puis-je accepter ou offrir des travaux relatifs à ce projet?
+
+Oui. Notre licence ne l'interdit pas.
+
+#### Je veux contribuer au projet; Puis-je faire cela?
+
+Oui. Les contributions au projet sont les bienvenues. Voir "CONTRIBUTING.md" pour plus d'informations.
+
+#### Valeurs recommandées pour "ipaddr".
+
+Valeur | En utilisant
+---|---
+`HTTP_INCAP_CLIENT_IP` | Proxy inversé Incapsula
+`HTTP_CF_CONNECTING_IP` | Proxy inversé Cloudflare
+`CF-Connecting-IP` | Proxy inversé Cloudflare (alternative; si ce qui précède ne fonctionne pas)
+`X-Forwarded-For` | [Proxy inversé Squid](http://www.squid-cache.org/Doc/config/forwarded_for/)
+*Défini par la configuration du serveur.* | [Proxy inversé Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
+`REMOTE_ADDR` | Pas de proxy inversé (valeur par défaut).
+
 ---
 
 

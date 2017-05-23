@@ -750,6 +750,37 @@ phpMussel会阻止文件 | __假阳性__ | 真阳性（正确的推理）
 
 可以。phpMussel安装未绑定到特定域，因此可以用来保护多个域。通常，当phpMussel安装保护只一个域，我们称之为“单域安装”，和当phpMussel安装保护多个域和/或子域，我们称之为“多域安装”。如果您进行多域安装并需要使用不同的签名文件为不同的域，或需要不同配置phpMussel为不同的域，这可以做到。加载配置文件后（`config.ini`），phpMussel将寻找“配置覆盖文件”特定于所请求的域（`xn--cjs74vvlieukn40a.tld.config.ini`），并如果发现，由配置覆盖文件定义的任何配置值将用于执行实例而不是由配置文件定义的配置值。配置覆盖文件与配置文件相同，并通过您的决定，可能包含phpMussel可用的所有配置指令，或任何必需的部分当需要。配置覆盖文件根据它们旨在的域来命名（所以，例如，如果您需要一个配置覆盖文件为域，`http://www.some-domain.tld/`，它的配置覆盖文件应该被命名`some-domain.tld.config.ini`，和它应该放置在`vault`与配置文件，`config.ini`）。域名是从标题`HTTP_HOST`派生的；“www”被忽略。
 
+#### 我不想浪费时间安装这个和确保它在我的网站上功能正常；我可以雇用您这样做吗？
+
+也许。这是根据具体情况考虑的。告诉我们您需要什么，您提供什么，和我们会告诉您是否可以帮忙。
+
+#### 我可以聘请您或这个项目的任何开发者私人工作吗？
+
+*参考上面。*
+
+#### 我需要专家修改，的定制，等等；您能帮我吗？
+
+*参考上面。*
+
+#### 我是开发人员，网站设计师，或程序员。我可以接受还是提供与这个项目有关的工作？
+
+您可以。我们的许可证并不禁止这一点。
+
+#### 我想为这个项目做出贡献；我可以这样做吗？
+
+您可以。对项目的贡献是欢迎。有关详细信息，请参阅“CONTRIBUTING.md”。
+
+#### “ipaddr”的推荐值。
+
+值 | 运用
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula反向代理
+`HTTP_CF_CONNECTING_IP` | Cloudflare反向代理
+`CF-Connecting-IP` | Cloudflare反向代理（替代；如果另一个不工作）
+`X-Forwarded-For` | [Squid反向代理](http://www.squid-cache.org/Doc/config/forwarded_for/)
+*由服务器配置定义。* | [Nginx反向代理](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
+`REMOTE_ADDR` | 没有反向代理（默认值）。
+
 ---
 
 

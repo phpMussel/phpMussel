@@ -767,6 +767,17 @@ Yes. Our license does not prohibit this.
 
 Yes. Contributions to the project are very welcome. Please see "CONTRIBUTING.md" for more information.
 
+#### Recommended values for "ipaddr".
+
+Value | Using
+---|---
+`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy
+`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy
+`CF-Connecting-IP` | Cloudflare reverse proxy (alternative; if the above doesn't work)
+`X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/)
+*Defined by server configuration.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
+`REMOTE_ADDR` | No reverse proxy (default value).
+
 ---
 
 
