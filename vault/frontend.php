@@ -31,6 +31,7 @@ $phpMussel['FE'] = array(
     'FE_Lang' => $phpMussel['Config']['general']['lang'],
     'DateTime' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']),
     'ScriptIdent' => $phpMussel['ScriptIdent'],
+    'theme' => $phpMussel['Config']['template_data']['theme'],
     'UserList' => "\n",
     'SessionList' => "\n",
     'Cache' => "\n",
@@ -103,12 +104,17 @@ if (!empty($phpMussel['QueryVars']['phpmussel-asset'])) {
             ($phpMussel['ThisAssetDel'] = strrpos($phpMussel['ThisAsset'], '.')) !== false
         ) {
             $phpMussel['ThisAssetType'] = strtolower(substr($phpMussel['ThisAsset'], $phpMussel['ThisAssetDel'] + 1));
-            if ($phpMussel['ThisAssetType'] === 'jpg' || $phpMussel['ThisAssetType'] === 'jpeg') {
-                header('Content-Type: image/jpeg');
-                echo $phpMussel['ReadFile']($phpMussel['ThisAsset']);
-                $phpMussel['Success'] = true;
-            } elseif ($phpMussel['ThisAssetType'] === 'gif' || $phpMussel['ThisAssetType'] === 'png' || $phpMussel['ThisAssetType'] === 'webp') {
+            if ($phpMussel['ThisAssetType'] === 'jpeg') {
+                $phpMussel['ThisAssetType'] = 'jpg';
+            }
+            if (preg_match('/^(gif|jpg|png|webp)$/', $phpMussel['ThisAssetType'])) {
+                /* Set asset mime-type. */
                 header('Content-Type: image/' . $phpMussel['ThisAssetType']);
+                if (!empty($phpMussel['QueryVars']['theme'])) {
+                    /* Prevents needlessly reloading static assets. */
+                    header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($phpMussel['ThisAsset'])));
+                }
+                /* Send asset data. */
                 echo $phpMussel['ReadFile']($phpMussel['ThisAsset']);
                 $phpMussel['Success'] = true;
             }
@@ -447,18 +453,29 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'icon' && $phpMussel['FE']
 
     elseif (!empty($phpMussel['QueryVars']['icon'])) {
 
-        /** Fetch file manager icons data. */
         $phpMussel['Icons_Handler_Path'] = $phpMussel['GetAssetPath']('icons.php');
         if (is_readable($phpMussel['Icons_Handler_Path'])) {
+
+            /** Fetch file manager icons data. */
             require $phpMussel['Icons_Handler_Path'];
+
+            /* Set mime-type. */
+            header('Content-Type: image/gif');
+
+            /* Prevents needlessly reloading static assets. */
+            if (!empty($phpMussel['QueryVars']['theme'])) {
+                header('Last-Modified: ' . gmdate(DATE_RFC1123, filemtime($phpMussel['Icons_Handler_Path'])));
+            }
+
+            /* Send icon data. */
+            if (!empty($phpMussel['Icons'][$phpMussel['QueryVars']['icon']])) {
+                echo gzinflate(base64_decode($phpMussel['Icons'][$phpMussel['QueryVars']['icon']]));
+            } elseif (!empty($phpMussel['Icons']['unknown'])) {
+                echo gzinflate(base64_decode($phpMussel['Icons']['unknown']));
+            }
+
         }
 
-        header('Content-Type: image/gif');
-        if (!empty($phpMussel['Icons'][$phpMussel['QueryVars']['icon']])) {
-            echo gzinflate(base64_decode($phpMussel['Icons'][$phpMussel['QueryVars']['icon']]));
-        } elseif (!empty($phpMussel['Icons']['unknown'])) {
-            echo gzinflate(base64_decode($phpMussel['Icons']['unknown']));
-        }
     }
 
     die;

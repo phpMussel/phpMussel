@@ -285,6 +285,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   front-end, allowing a richer level of customisation, and can be installed via
   the front-end updates page.
 
+- [2017.05.24; Sub-minor code change; Maikuolan]: Slightly improved caching for
+  front-end assets (CSS files, images, etc).
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"
