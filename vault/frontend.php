@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.05.19).
+ * This file: Front-end handler (last modified: 2017.05.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -64,7 +64,7 @@ if (empty($phpMussel['Config']['general']['disable_webfonts'])) {
 
 /** Traversal detection. */
 $phpMussel['Traverse'] = function ($Path) {
-    return !preg_match("\x01" . '(?:[\./]{2}|[\x01-\x1f\[-^`?*$])' . "\x01i", str_replace("\\", '/', $Path));
+    return !preg_match('~(?:[\./]{2}|[\x01-\x1f\[-^`?*$])~i', str_replace("\\", '/', $Path));
 };
 
 /** A fix for correctly displaying LTR/RTL text. */
@@ -81,6 +81,46 @@ if (empty($phpMussel['lang']['textDir']) || $phpMussel['lang']['textDir'] !== 'r
     $phpMussel['FE']['PIP_Input'] = $phpMussel['FE']['PIP_Left'];
     $phpMussel['FE']['Gradient_Degree'] = 270;
     $phpMussel['FE']['Half_Border'] = 'solid none none solid';
+}
+
+/** A simple passthru for non-private theme images and related data. */
+if (!empty($phpMussel['QueryVars']['phpmussel-asset'])) {
+
+    $phpMussel['Success'] = false;
+
+    if (
+        $phpMussel['FileManager-PathSecurityCheck']($phpMussel['QueryVars']['phpmussel-asset']) &&
+        !preg_match('~[^0-9a-z._]~i', $phpMussel['QueryVars']['phpmussel-asset'])
+    ) {
+        try {
+            $phpMussel['ThisAsset'] = $phpMussel['GetAssetPath']($phpMussel['QueryVars']['phpmussel-asset']);
+        } catch (\Exception $e) {
+            $phpMussel['ThisAsset'] = false;
+        }
+        if (
+            $phpMussel['ThisAsset'] &&
+            is_readable($phpMussel['ThisAsset']) &&
+            ($phpMussel['ThisAssetDel'] = strrpos($phpMussel['ThisAsset'], '.')) !== false
+        ) {
+            $phpMussel['ThisAssetType'] = strtolower(substr($phpMussel['ThisAsset'], $phpMussel['ThisAssetDel'] + 1));
+            if ($phpMussel['ThisAssetType'] === 'jpg' || $phpMussel['ThisAssetType'] === 'jpeg') {
+                header('Content-Type: image/jpeg');
+                echo $phpMussel['ReadFile']($phpMussel['ThisAsset']);
+                $phpMussel['Success'] = true;
+            } elseif ($phpMussel['ThisAssetType'] === 'gif' || $phpMussel['ThisAssetType'] === 'png' || $phpMussel['ThisAssetType'] === 'webp') {
+                header('Content-Type: image/' . $phpMussel['ThisAssetType']);
+                echo $phpMussel['ReadFile']($phpMussel['ThisAsset']);
+                $phpMussel['Success'] = true;
+            }
+        }
+    }
+
+    if ($phpMussel['Success']) {
+        die;
+    } else {
+        unset($phpMussel['ThisAssetType'], $phpMussel['ThisAssetDel'], $phpMussel['ThisAsset'], $phpMussel['Success']);
+    }
+
 }
 
 /** A simple passthru for the front-end CSS. */

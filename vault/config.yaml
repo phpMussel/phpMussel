@@ -322,6 +322,9 @@ Config Defaults:
     default: "Default"
     rbi: "Red-Blue Inverted"
     slate: "Slate"
+    bluemetal: "Blue Metal"
+    moss: "Moss"
+    unicorn: "Unicorn"
    choice_filter: "FilterTheme"
   css_url:
    type: string
