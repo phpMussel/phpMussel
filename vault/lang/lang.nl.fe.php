@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.05.19).
+ * This file: Dutch language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -162,6 +162,7 @@ $phpMussel['lang']['response_accounts_doesnt_exist'] = 'Die account bestaat niet
 $phpMussel['lang']['response_accounts_password_updated'] = 'Wachtwoord succesvol gewijzigd!';
 $phpMussel['lang']['response_activated'] = 'Succesvol geactiveerd.';
 $phpMussel['lang']['response_activation_failed'] = 'Mislukt om te activeren!';
+$phpMussel['lang']['response_checksum_error'] = 'Checksum error! Bestand afgewezen!';
 $phpMussel['lang']['response_component_successfully_installed'] = 'Component succesvol geïnstalleerd.';
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Component succesvol verwijderd.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Component succesvol gewijzigd.';

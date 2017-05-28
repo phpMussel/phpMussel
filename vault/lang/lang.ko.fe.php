@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.05.19).
+ * This file: Korean language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -162,6 +162,7 @@ $phpMussel['lang']['response_accounts_doesnt_exist'] = '계정이 존재하지 �
 $phpMussel['lang']['response_accounts_password_updated'] = '암호 업데이트가 성공했습니다!';
 $phpMussel['lang']['response_activated'] = '활성화했습니다.';
 $phpMussel['lang']['response_activation_failed'] = '활성화에 실패했습니다!';
+$phpMussel['lang']['response_checksum_error'] = '체크섬 오류! 파일이 거부되었습니다!';
 $phpMussel['lang']['response_component_successfully_installed'] = '구성 요소의 설치에 성공했습니다.';
 $phpMussel['lang']['response_component_successfully_uninstalled'] = '구성 요소의 제거는 성공했습니다.';
 $phpMussel['lang']['response_component_successfully_updated'] = '구성 요소의 업데이트에 성공했습니다!';

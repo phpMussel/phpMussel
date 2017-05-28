@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.05.19).
+ * This file: Russian language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -162,6 +162,7 @@ $phpMussel['lang']['response_accounts_doesnt_exist'] = 'Эта аккаунт н
 $phpMussel['lang']['response_accounts_password_updated'] = 'Пароль успешно обновлено!';
 $phpMussel['lang']['response_activated'] = 'Успешно активирован.';
 $phpMussel['lang']['response_activation_failed'] = 'Не удалось активировать!';
+$phpMussel['lang']['response_checksum_error'] = 'Ошибка контрольной суммы! Файл отклонен!';
 $phpMussel['lang']['response_component_successfully_installed'] = 'Компонент успешно установлен.';
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Компонент успешно удален.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Компонент успешно обновлено.';

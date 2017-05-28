@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data for the front-end (last modified: 2017.05.19).
+ * This file: Chinese (traditional) language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -162,6 +162,7 @@ $phpMussel['lang']['response_accounts_doesnt_exist'] = '那個帳戶不存在。
 $phpMussel['lang']['response_accounts_password_updated'] = '密碼成功更新！';
 $phpMussel['lang']['response_activated'] = '已成功啟用。';
 $phpMussel['lang']['response_activation_failed'] = '無法啟用！';
+$phpMussel['lang']['response_checksum_error'] = '校驗和錯誤！文件拒絕！';
 $phpMussel['lang']['response_component_successfully_installed'] = '組件成功安裝。';
 $phpMussel['lang']['response_component_successfully_uninstalled'] = '組件成功卸載。';
 $phpMussel['lang']['response_component_successfully_updated'] = '組件成功更新。';

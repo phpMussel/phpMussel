@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.05.19).
+ * This file: English language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -162,6 +162,7 @@ $phpMussel['lang']['response_accounts_doesnt_exist'] = 'That account doesn\'t ex
 $phpMussel['lang']['response_accounts_password_updated'] = 'Password successfully updated!';
 $phpMussel['lang']['response_activated'] = 'Successfully activated.';
 $phpMussel['lang']['response_activation_failed'] = 'Failed to activate!';
+$phpMussel['lang']['response_checksum_error'] = 'Checksum error! File rejected!';
 $phpMussel['lang']['response_component_successfully_installed'] = 'Component successfully installed.';
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Component successfully uninstalled.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Component successfully updated.';

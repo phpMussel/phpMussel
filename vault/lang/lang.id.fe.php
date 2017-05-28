@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.05.19).
+ * This file: Indonesian language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -162,6 +162,7 @@ $phpMussel['lang']['response_accounts_doesnt_exist'] = 'Akun ini tidak ada.';
 $phpMussel['lang']['response_accounts_password_updated'] = 'Kata sandi berhasil diperbarui!';
 $phpMussel['lang']['response_activated'] = 'Berhasil diaktifkan.';
 $phpMussel['lang']['response_activation_failed'] = 'Kegagalan pengaktifan!';
+$phpMussel['lang']['response_checksum_error'] = 'Kesalahan checksum! File ditolak!';
 $phpMussel['lang']['response_component_successfully_installed'] = 'Komponen berhasil diinstal.';
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'Komponen berhasil diuninstal.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'Komponen berhasil diperbarui.';

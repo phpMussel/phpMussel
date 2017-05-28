@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.05.19).
+ * This file: Thai language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -162,6 +162,7 @@ $phpMussel['lang']['response_accounts_doesnt_exist'] = 'บัญชีไม่
 $phpMussel['lang']['response_accounts_password_updated'] = 'รหัสผ่านสำเร็จแล้วอัปเดต!';
 $phpMussel['lang']['response_activated'] = 'สำเร็จแล้วเปิดใช้งาน.';
 $phpMussel['lang']['response_activation_failed'] = 'ล้มเหลวเปิดใช้งาน!';
+$phpMussel['lang']['response_checksum_error'] = 'ข้อผิดพลาด checksum! ไฟล์ถูกปฏิเสธ!';
 $phpMussel['lang']['response_component_successfully_installed'] = 'คอมโพเนนต์สำเร็จแล้วในการติดตั้ง.';
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'คอมโพเนนต์สำเร็จแล้วถอนการติดตั้ง.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'คอมโพเนนต์สำเร็จแล้วอัปเดต.';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.05.19).
+ * This file: Arabic language data for the front-end (last modified: 2017.05.28).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -162,6 +162,7 @@ $phpMussel['lang']['response_accounts_doesnt_exist'] = 'حساب غير موجو
 $phpMussel['lang']['response_accounts_password_updated'] = 'كلمه السر التحديث بنجاح!';
 $phpMussel['lang']['response_activated'] = 'نجحت في جعل نشطة';
 $phpMussel['lang']['response_activation_failed'] = 'فشلت في جعله نشطة!';
+$phpMussel['lang']['response_checksum_error'] = 'خطأ أختباري! تم رفض الملف!';
 $phpMussel['lang']['response_component_successfully_installed'] = 'وحدة تم التثبيت بنجاح.';
 $phpMussel['lang']['response_component_successfully_uninstalled'] = 'وحدة إلغاء تثبيت بنجاح.';
 $phpMussel['lang']['response_component_successfully_updated'] = 'وحدة تم التحديث بنجاح.';
