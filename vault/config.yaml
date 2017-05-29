@@ -119,6 +119,7 @@ Config Defaults:
     de: Deutsch
     es: Español
     fr: Français
+    hi: हिंदी
     id: Bahasa Indonesia
     it: Italiano
     ja: 日本語
@@ -127,6 +128,7 @@ Config Defaults:
     pt: Português
     ru: Русский
     th: ภาษาไทย
+    tr: Türkçe
     ur: ‏اردو‏
     vi: Tiếng Việt
     zh: 中文（简体）
@@ -324,6 +326,7 @@ Config Defaults:
     slate: "Slate"
     bluemetal: "Blue Metal"
     moss: "Moss"
+    fullmoon: "Full Moon"
     unicorn: "Unicorn"
    choice_filter: "FilterTheme"
   css_url:

@@ -244,6 +244,26 @@ l10n/fr:
    - 24c59a1f1ce13aa6f71a4f66364737c3:44507
    - 06b86254522e3e6bddd69256ce54071a:7914
  Reannotate: components.dat
+l10n/hi:
+ Name: L10N: हिंदी
+ Extended Description:
+  hi: हिंदी भाषा डाटा
+ Version: 2017.148.816
+ Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
+ Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.hi.fe.php
+   - https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/lang/lang.hi.php
+  To:
+   - lang/lang.hi.fe.php
+   - lang/lang.hi.php
+  Checksum:
+   - 77d58b87e1a7f3ae9241485acbeb1bd3:71789
+   - c25c866d514f4809473ef0c0debf752b:12116
+ Reannotate: components.dat
 l10n/id:
  Name: L10N: Bahasa Indonesia
  Extended Description:

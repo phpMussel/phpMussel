@@ -291,6 +291,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.05.27; Minor code change; Maikuolan]: Added the ability to the
   front-end updates page to update all components at once, with a single click.
 
+- [2017.05.29; Sub-minor code change; Maikuolan]: Added internal language
+  support for Hindi (18 language localisations now completed and available).
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"
