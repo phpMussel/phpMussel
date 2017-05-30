@@ -7,6 +7,7 @@ phpMussel:
   de: Das Hauptpaket (Abzüglich der Unterschriften, Dokumentation, und Konfiguration).
   es: El paquete principal (menos las firmas, la documentación, y la configuración).
   fr: Le paquet principal (moins les signatures, la documentation et la configuration).
+  hi: मुख्य पैकेज (हस्ताक्षर, डॉक्यूमेंटेशन, और कॉन्फ़िगरेशन के बिना)।
   id: Paket utama (tanpa tanda tangan, dokumentasi, konfigurasi).
   it: Il pacchetto principale (senza le firme, la documentazione, e la configurazione).
   ja: メインパッケージ（署名、ドキュメンテーション、コンフィギュレーション、は含まれません）。
@@ -14,10 +15,13 @@ phpMussel:
   nl: De primaire pakket (zonder de handtekeningen, documentatie en configuratie).
   pt: O pacote principal (menos as assinaturas, documentação e configuração).
   ru: Основной пакет (минус сигнатуры, документация, и конфигурация).
+  th: แพคเกจหลัก (ไม่รวมลายเซ็น, เอกสาร, และการกำหนดค่า).
+  tr: Ana paket (hariç imzalar, belgeler, ve yapılandırma).
+  ur: مرکزی پیکیج (بغیر دستخط، دستاویزات، اور ترتیب).
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 1.0.0-DEV+2017147041
+ Version: 1.0.0-DEV+2017149802
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/Changelog-v1.txt
@@ -108,7 +112,7 @@ phpMussel:
    - 8e03209e7fc6641b45094e584340feff:83
    - 10bd0eba0213b73c6050d1c11e54729c:29982
    - 4887d56c2967f6d1b1eb0f282a79c955:8141
-   - 792240bf65f94c1d10b465891aaadde1:9811
+   - 2efafa982688aae1faa05a3bf4e43fdd:9878
    - 8e03209e7fc6641b45094e584340feff:83
    - f9b29eb4e33f72eaa9ad0842888461d9:2025
    - 6ae234a1eb4e2b0688772e86c79f0419:1390
@@ -228,7 +232,7 @@ l10n/fr:
  Name: L10N: Français
  Extended Description:
   fr: Linguistiques données en Français
- Version: 2017.147.041
+ Version: 2017.149.802
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
@@ -241,7 +245,7 @@ l10n/fr:
    - lang/lang.fr.fe.php
    - lang/lang.fr.php
   Checksum:
-   - 24c59a1f1ce13aa6f71a4f66364737c3:44507
+   - f64a980ed818c971cd6884ce7764fbde:44508
    - 06b86254522e3e6bddd69256ce54071a:7914
  Reannotate: components.dat
 l10n/hi:
@@ -368,7 +372,7 @@ l10n/pt:
  Name: L10N: Português
  Extended Description:
   pt: Linguagem dados Português
- Version: 2017.147.041
+ Version: 2017.149.802
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat
@@ -381,7 +385,7 @@ l10n/pt:
    - lang/lang.pt.fe.php
    - lang/lang.pt.php
   Checksum:
-   - 2e450d214f6f3b433dae49a1d88fca64:42600
+   - 70093354e3cedf698471f20670d92f18:42599
    - 61dd63d8020e621da95bc3cddf9402dc:7544
  Reannotate: components.dat
 l10n/ru:
