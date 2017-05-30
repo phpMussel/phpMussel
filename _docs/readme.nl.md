@@ -249,6 +249,8 @@ Bestand | Beschrijving
 /vault/lang/lang.es.php | Spaanse taaldata/taalgegevens.
 /vault/lang/lang.fr.fe.php | Franse taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.fr.php | Franse taaldata/taalgegevens.
+/vault/lang/lang.hi.fe.php | Hindi taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.hi.php | Hindi taaldata/taalgegevens.
 /vault/lang/lang.id.fe.php | Indonesisch taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.id.php | Indonesisch taaldata/taalgegevens.
 /vault/lang/lang.it.fe.php | Italiaanse taaldata/taalgegevens voor het frontend.

@@ -3,7 +3,7 @@
 ### Contenidos
 - 1. [PREÁMBULO](#SECTION1)
 - 2. [CÓMO INSTALAR](#SECTION2)
-- 3. [CÓMO USO](#SECTION3)
+- 3. [CÓMO USAR](#SECTION3)
 - 4. [GESTIÓN DE FRONT-END](#SECTION4)
 - 5. [CLI (COMANDOS LÍNEA INTERFAZ)](#SECTION5)
 - 6. [ARCHIVOS INCLUIDOS EN ESTE PAQUETE](#SECTION6)
@@ -12,7 +12,7 @@
 - 9. [CONOCIDOS PROBLEMAS DE COMPATIBILIDAD](#SECTION9)
 - 10. [PREGUNTAS MÁS FRECUENTES (FAQ)](#SECTION10)
 
-*Nota relativa a las traducciones: En caso de errores (por ejemplo, discrepancias entre traducciones, errores tipográficos, etc), la versión en Inglés del README se considera la versión original y autorizada. Si encuentra algún error, su ayuda para corregirlos sería bienvenida.*
+*Nota relativa a las traducciones: En caso de errores (por ejemplo, discrepancias entre traducciones, errores tipográficos, etc), la versión en Inglés del README se considera la versión original y autorizada. Si encuentra algún error, su ayuda para corregirlo sera bienvenida.*
 
 ---
 
@@ -23,7 +23,7 @@ Gracias por usar phpMussel, un PHP script diseñado para detectar troyanos, viru
 
 PHPMUSSEL COPYRIGHT 2013 y más allá GNU/GPLv2 por Caleb M (Maikuolan).
 
-Este script es gratis software; puede redistribuirlo y/o modificarlo según los términos de la GNU General Pública Licencia como publicada por la Free Software Foundation; versión 2 de la licencia, o cualquier posterior versión. Este script se distribuye con la esperanza de que será útil, pero SIN NINGUNA GARANTÍA; también, sin ninguna implícita garantía de COMERCIALIZACIÓN o IDONEIDAD PARA UN PARTICULAR PROPÓSITO. Vea la GNU General Pública Licencia para más detalles, ubicado en el `LICENSE.txt` archivo y disponible también de:
+Este script es un software gratuito; puede redistribuirlo y/o modificarlo según los términos de la GNU General Public License, publicada por la Free Software Foundation; tanto la versión 2 de la licencia como cualquier versión posterior. Este script es distribuido con la esperanza de que será útil, pero SIN NINGUNA GARANTÍA; también, sin ninguna garantía implícita de COMERCIALIZACIÓN o IDONEIDAD PARA UN PARTICULAR PROPÓSITO. Vea la GNU General Public License para más detalles, ubicada en el `LICENSE.txt` archivo también disponible en:
 - <http://www.gnu.org/licenses/>.
 - <http://opensource.org/licenses/>.
 
@@ -40,17 +40,17 @@ Este documento y su paquete asociado puede ser descargado de forma gratuita desd
 
 ### 2. <a name="SECTION2"></a>CÓMO INSTALAR
 
-#### 2.0 INSTALACIÓN MANUALMENTE (PARA NAVEGADORES)
+#### 2.0 INSTALACIÓN MANUAL (PARA NAVEGADORES)
 
-1) Con tu leyendo esto, estoy asumiendo que usted ha descargado una copia de la script, descomprimido y tenerlo en algún lugar en su computer. Desde aquí, usted querrá averiguar dónde en el host o CMS que desea para colocar el contenido. Un directorio como `/public_html/phpmussel/` o similar (aunque, no importa que usted elija, a condición de que se algo que estés satisfecho con) será suficiente. *Antes usted enviar archivos a su host, seguir leyendo..*
+1) Dado el hecho que estas leiendo esto, asumo que ya ha descargado y guardado una copia del script, descomprimido sus contenidos, teniendolo en algún lugar en su ordenador. Ahora, usted querrá averiguar en que parte del host o CMS desea colocar estos contenidos. Un directorio como `/public_html/phpmussel/` o similar (aunque, no importa el que usted elija, siempre y cuando sea algo seguro y con lo que estas satisfecho) será suficiente. *Antes de empezar a subir archivos, continue leyendo...*
 
-2) Cambiar el nombre del archivo desde `config.ini.RenameMe` a `config.ini` (situado en el interior del `vault`), y opcionalmente (muy recomendable para avanzados usuarios, pero no se recomienda para los principiantes o para los inexpertos), abrirlo (este archivo contiene todas las disponibles operativas opciones para phpMussel; por encima de cada opción debe ser un breve comentario que describe lo que hace y para lo qué sirve). Ajuste estas opciones según sus necesidades, según lo que sea apropiado para su particular configuración. Guardar archivo, cerrar.
+2) Cambiar el nombre del archivo `config.ini.RenameMe` a `config.ini` (situado en el interior del `vault`), y opcionalmente (muy recomendable para usuarios avanzados, pero no recomendado para los usuarios principiantes o inexpertos), abre el archivo (este archivo contiene todas las directrizes disponibles para phpMussel; encima de cada opción debe haber un breve comentario que describe lo que hace y para lo qué sirve). Ajuste estas opciones según sus necesidades, según lo que sea apropiado para su particular configuración. Guardar archivo, cerrar.
 
-3) Subir el contenidos (phpMussel y sus archivos) al directorio que habías decidido sobre más temprano (los `*.txt`/`*.md` archivos no son necesarios, pero, en su mayoría, usted debe subir todos).
+3) Subir los contenidos (phpMussel y sus archivos) al directorio que habías decidido previamente (no necessitas incluir los archivos `*.txt`/`*.md` , pero deberias subir el resto).
 
-4) CHMOD al `vault` directorio a "755" (si hay algún problema, puede intentar "777"; esto es menos segura, aunque). La principal directorio de almacenamiento de los contenidos (el uno decidió desde antes), en general, puede dejar solos, pero CHMOD estado debe ser comprobado si ha tenido problemas de permisos en el pasado en su sistema (predefinido, debería ser algo como "755").
+4) CHMOD al `vault` directorio "755" (si tienes problemas, puede intentar "777"; aunque es menos seguro). El principal directorio de almacenamiento de los contenidos (el que escogio antes), en general, puede dejarlo solo, pero el estado del CHMOD deberia estar revisado si ha tenido problemas de permisos en su sistema en el pasado (predefinido, debería ser algo como "755").
 
-5) Luego, tendrás que phpMussel "gancho" para el sistema o CMS. Hay varias maneras en que usted puede "gancho" scripts como phpMussel a su sistema o CMS, pero lo más fácil es simplemente incluir la script al principio de un núcleo archivo de su sistema o CMS (uno que va en general siempre sera cargado cuando alguien accede cualquier página a través de su website) utilizando un `require` o `include` declaración. Por lo general, esto sera algo almacenado en un directorio como `/includes`, `/assets` o `/functions`, y será menudo llamado algo así como `init.php`, `common_functions.php`, `functions.php` o similar. Vas a tener que averiguar qué archivo se por su situación; Si se encuentra con dificultades en la determinación de esto por ti mismo, para asistencia, visitar la página de problemas/issues phpMussel en GitHub o los foros de soporte para phpMussel; Es posible que sea yo u otro usuario puede tener experiencia con el CMS que está utilizando (que necesita para hacernos saber que CMS está utilizando), y por lo tanto, puede ser capaz de proporcionar alguna ayuda en esta área. Para ello [utilizar `require` o `include`], inserte la siguiente línea de código al principio de ese núcleo archivo, con sustitución de la string contenida dentro las comillas con la exacta dirección del archivo `loader.php` (local dirección, no la HTTP dirección; que será similar a la `vault` dirección mencionó anteriormente).
+5) Luego, tendrás que "enganchar" phpMussel a tu sistema o CMS. Hay varias maneras en que usted puede "enganchar" scripts como phpMussel a su sistema o CMS, pero el más fácil es simplemente incluir el script al principio de un archivo central de su sistema o CMS (uno que en general siempre sea cargado cuando alguien accede a cualquier página a través de su web) utilizando un `require` o `include` declaración. Por lo general, esto sera algo almacenado en un directorio como `/includes`, `/assets` o `/functions`, y será menudo llamado algo así como `init.php`, `common_functions.php`, `functions.php` o similar. Vas a tener que averiguar qué archivo es por su situación; Si encuentra dificultades para resolver esto, visite la página de problemas/issues phpMussel en GitHub o los foros de soporte para phpMussel; Es posible que sea yo u otro usuario puede tener experiencia con el CMS que está utilizando (que necesita para hacernos saber que CMS está utilizando), y por lo tanto, puede ser capaz de proporcionar alguna ayuda en esta área. Para ello [utilizar `require` o `include`], inserte la siguiente línea de código al principio de ese núcleo archivo, reemplazando la cuerda contenida dentro de las comillas con la exacta dirección del `loader.php` archivo (dirección local, no la dirección HTTP; será similar a la dirreción `vault` mencionada anteriormente).
 
 `<?php require '/user_name/public_html/phpmussel/loader.php'; ?>`
 
@@ -58,17 +58,17 @@ Guardar archivo, cerrarla, resubir.
 
 -- O ALTERNATIVAMENTE --
 
-Si está utilizando un Apache web servidor y si usted tiene acceso a `php.ini`, puede utilizar la `auto_prepend_file` directiva para anteponer phpMussel cuando cualquier PHP solicitud se recibe. Algo como:
+Si está utilizando un servidor Apache y si usted tiene acceso a `php.ini`, puede utilizar la `auto_prepend_file` dirección para anteponer phpMussel cuando cualquier solicitud PHP sea realizada. Algo como:
 
 `auto_prepend_file = "/user_name/public_html/phpmussel/loader.php"`
 
-O esto en el `.htaccess` archivo:
+O esto en el archivo `.htaccess`:
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
 6) Con eso, ya está! Pero, probablemente deberías preubalo para asegurarse de que está funcionando correctamente. Para probar archivos subidos protecciones, probar subir los prueba archivos incluidos en el paquete dentro `_testfiles` a su website a través de sus habituales navegador basado subir métodos. Si todo funciona correctamente, un mensaje debe aparecer de phpMussel confirmando que la subido ha sido bloqueada con éxito. Si nada aparece, algo no está funcionando correctamente. Si está utilizando cualquiera de las avanzadas funciones o si está utilizandolos otros tipos de escaneo posible, Sugiero probarlo con aquellos a asegurarse de que funciona como se espera, también.
 
-#### 2.1 INSTALACIÓN MANUALMENTE (PARA CLI)
+#### 2.1 INSTALACIÓN MANUAL (PARA CLI)
 
 1) Con tu leyendo esto, estoy asumiendo que usted ha descargado una copia de la script, descomprimido y tenerlo en algún lugar en su computer. Cuando se ha determinado que usted es feliz con el lugar elegido para phpMussel, continuar.
 
@@ -82,16 +82,16 @@ O esto en el `.htaccess` archivo:
 
 #### 2.2 INSTALACIÓN CON COMPOSER
 
-[phpMussel está registrado con Packagist](https://packagist.org/packages/maikuolan/phpmussel), y entonces, si está familiarizado con Composer, puede utilizar Composer para instalar phpMussel (usted todavía necesitará preparar la configuración y los ganchos sin embargo; consulte "instalación manualmente (para navegadores)" pasos 2 y 5).
+[phpMussel está registrado con Packagist](https://packagist.org/packages/maikuolan/phpmussel), y por lo tanto, si está familiarizado con Composer, puede utilizar Composer para instalar phpMussel (sin embargo, usted todavía necesitará preparar la configuración y los ganchos; consulte "INSTALACIÓN MANUAL (PARA NAVEGADORES)" pasos 2 y 5).
 
 `composer require maikuolan/phpmussel`
 
 ---
 
 
-### 3. <a name="SECTION3"></a>CÓMO USO
+### 3. <a name="SECTION3"></a>CÓMO USAR
 
-#### 3.0 CÓMO USO (PARA NAVEGADORES)
+#### 3.0 CÓMO USAR (PARA NAVEGADORES)
 
 phpMussel debe ser capaz de funcionar correctamente con requisitos mínimos de su parte: Después de instalarlo, que debería funcionar inmediatamente y ser inmediatamente utilizable.
 
@@ -127,9 +127,9 @@ Si se encuentra algún falsos positivos, si se encuentra con algo nuevo que cree
 
 Para desactivar las firmas que se incluyen con phpMussel (por ejemplo, si usted está experimentando un falso positivo específico para sus propósitos que normalmente no debería ser suprimido), consulte las notas de la Greylist en la GESTIÓN DE FRONT-END sección de este archivo README.
 
-#### 3.1 CÓMO USO (PARA CLI)
+#### 3.1 CÓMO USAR (PARA CLI)
 
-Por favor, consulte la sección "INSTALACIÓN MANUALMENTE (PARA CLI)" de este README.
+Por favor, consulte la sección "INSTALACIÓN MANUAL (PARA CLI)" de este README.
 
 Tenga en cuenta que, aunque las futuras versiones de phpMussel deben apoyar otros sistemas, en este momento, phpMussel CLI modo compatibilidad sólo está optimizado para su uso en sistemas basados en Windows (por supuesto, usted puede probarlo en otros sistemas, pero no puedo garantizar que va funcionar como es debido).
 
@@ -249,6 +249,8 @@ Archivo | Descripción
 /vault/lang/lang.es.php | Lingüísticos datos Español.
 /vault/lang/lang.fr.fe.php | Lingüísticos datos Francés para el front-end.
 /vault/lang/lang.fr.php | Lingüísticos datos Francés.
+/vault/lang/lang.hi.fe.php | Lingüísticos datos Hindi para el front-end.
+/vault/lang/lang.hi.php | Lingüísticos datos Hindi.
 /vault/lang/lang.id.fe.php | Lingüísticos datos Indonesio para el front-end.
 /vault/lang/lang.id.php | Lingüísticos datos Indonesio.
 /vault/lang/lang.it.fe.php | Lingüísticos datos Italiano para el front-end.

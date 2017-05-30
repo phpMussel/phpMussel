@@ -249,6 +249,8 @@ File | Description
 /vault/lang/lang.es.php | Spanish language data.
 /vault/lang/lang.fr.fe.php | French language data for the front-end.
 /vault/lang/lang.fr.php | French language data.
+/vault/lang/lang.hi.fe.php | Hindi language data for the front-end.
+/vault/lang/lang.hi.php | Hindi language data.
 /vault/lang/lang.id.fe.php | Indonesian language data for the front-end.
 /vault/lang/lang.id.php | Indonesian language data.
 /vault/lang/lang.it.fe.php | Italian language data for the front-end.

@@ -249,6 +249,8 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/lang/lang.es.php | 스페인어 언어 데이터.
 /vault/lang/lang.fr.fe.php | 프론트 엔드 프랑스어 언어 데이터.
 /vault/lang/lang.fr.php | 프랑스어 언어 데이터.
+/vault/lang/lang.hi.fe.php | 프론트 엔드 힌디어 언어 데이터.
+/vault/lang/lang.hi.php | 힌디어 언어 데이터.
 /vault/lang/lang.id.fe.php | 프론트 엔드 인도네시아어 언어 데이터.
 /vault/lang/lang.id.php | 인도네시아어 언어 데이터.
 /vault/lang/lang.it.fe.php | 프론트 엔드 이탈리아 언어 데이터.

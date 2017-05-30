@@ -249,6 +249,8 @@ Data | Deskripsi
 /vault/lang/lang.es.php | File Bahasa Spanyol.
 /vault/lang/lang.fr.fe.php | File Bahasa Perancis untuk bagian depan.
 /vault/lang/lang.fr.php | File Bahasa Perancis.
+/vault/lang/lang.hi.fe.php | File Bahasa Hindi untuk bagian depan.
+/vault/lang/lang.hi.php | File Bahasa Hindi.
 /vault/lang/lang.id.fe.php | File Bahasa Indonesia untuk bagian depan.
 /vault/lang/lang.id.php | File Bahasa Indonesia.
 /vault/lang/lang.it.fe.php | File Bahasa Italia untuk bagian depan.

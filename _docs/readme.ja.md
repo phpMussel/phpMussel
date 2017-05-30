@@ -249,6 +249,8 @@ CLIプロンプトにて`c`とタイプしエンターを押せば、利用可�
 /vault/lang/lang.es.php | スペイン語言語データ。
 /vault/lang/lang.fr.fe.php | フロントエンドのフランス語言語データ。
 /vault/lang/lang.fr.php | フランス語言語データ。
+/vault/lang/lang.hi.fe.php | フロントエンドのヒンディー語言語データ。
+/vault/lang/lang.hi.php | ヒンディー語言語データ。
 /vault/lang/lang.id.fe.php | フロントエンドのインドネシア語言語データ。
 /vault/lang/lang.id.php | インドネシア語言語データ。
 /vault/lang/lang.it.fe.php | フロントエンドの伊語言語データ。

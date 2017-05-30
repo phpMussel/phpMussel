@@ -249,6 +249,8 @@ Tập tin | Chi tiết
 /vault/lang/lang.es.php | Dữ liệu tiếng Tây Ban Nha.
 /vault/lang/lang.fr.fe.php | Dữ liệu tiếng Pháp cho các front-end.
 /vault/lang/lang.fr.php | Dữ liệu tiếng Pháp.
+/vault/lang/lang.hi.fe.php | Dữ liệu tiếng Hindi cho các front-end.
+/vault/lang/lang.hi.php | Dữ liệu tiếng Hindi.
 /vault/lang/lang.id.fe.php | Dữ liệu tiếng Indonesia cho các front-end.
 /vault/lang/lang.id.php | Dữ liệu tiếng Indonesia.
 /vault/lang/lang.it.fe.php | Dữ liệu tiếng Ý cho các front-end.

@@ -249,6 +249,8 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，它應該�
 /vault/lang/lang.es.php | 西班牙文語言數據。
 /vault/lang/lang.fr.fe.php | 法文前端語言數據。
 /vault/lang/lang.fr.php | 法文語言數據。
+/vault/lang/lang.hi.fe.php | 印地文前端語言數據。
+/vault/lang/lang.hi.php | 印地文語言數據。
 /vault/lang/lang.id.fe.php | 印度尼西亞文前端語言數據。
 /vault/lang/lang.id.php | 印度尼西亞文語言數據。
 /vault/lang/lang.it.fe.php | 意大利文前端語言數據。
