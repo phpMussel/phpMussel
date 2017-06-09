@@ -11,15 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.05.24).
- *
- * @todo Add support for 7z, RAR (github.com/phpMussel/universe/issues/5).
- * @todo Add recursion support for ZIP scanning.
- * @todo Fix client language bug (github.com/Maikuolan/phpMussel/issues/28).
- * @todo Get serialised logging working for CLI mode (github.com/Maikuolan/phpMussel/issues/54).
- * @todo Fix non-ANSI/non-ASCII filenames in CLI mode bug (github.com/Maikuolan/phpMussel/issues/61).
- * @todo Improve data decoding procedures.
- * @todo phpMussel v1.0.0 Transitional Preparations Checklist (github.com/Maikuolan/phpMussel/issues/82)
+ * This file: Functions file (last modified: 2017.06.09).
  */
 
 /**
@@ -230,15 +222,9 @@ $phpMussel['Function'] = function ($n, $str = '') {
  * @param bool $html If true, "style" and "script" tags will be stripped from
  *      the input string (optional; defaults to false).
  * @param bool $decode If false, the input string will be normalised, but not
- *      decoded; If true, the input string will be normalised -and- decoded
- *      (optional; defaults to false).
+ *      decoded; If true, the input string will be normalised *and* decoded.
+ *      Optional; Defaults to false.
  * @return string The decoded/normalised string.
- *
- * @todo There are many common forms of obfuscation and packing that aren't yet
- *      being detected, decoded or normalised by the function; The capabilities
- *      of the function needs to eventually be expanded upon, in order to
- *      resolve this and thus improve upon the defensive capabilities of
- *      phpMussel as a whole.
  */
 $phpMussel['prescan_normalise'] = function ($str, $html = false, $decode = false) use (&$phpMussel) {
     $ostr = '';
@@ -594,66 +580,63 @@ $phpMussel['PrepareHashCache'] = function () use (&$phpMussel) {
 };
 
 /**
- * This function quarantines file uploads.
+ * Quarantines file uploads by using a key generated from your quarantine key
+ * to bitshift the input string (the file uploads), appending a header with an
+ * explanation of what the bitshifted data is, along with an MD5 hash checksum
+ * of its non-quarantined counterpart, and then saves it all to a QFU file,
+ * storing these QFU files in your quarantine directory.
  *
- * The function uses a key generated from your quarantine key to bitshift the
- * input string, appending a header with an explanation of what the bitshifted
- * data is along with an MD5 hash checksum of the original unquarantined input
- * string to it, and then saves it all to a QFU file, storing these QFU files
- * in your quarantine directory. This isn't hardcore encryption, but it should
- * be sufficient to prevent accidental execution of quarantined files and to
- * allow safe handling of those files, which is the whole point of quarantining
- * them in the first place, and so, should be sufficient. Improvements may be
- * made in the future.
+ * This isn't hardcore encryption, but it should be sufficient to prevent
+ * accidental execution of quarantined files and to allow safe handling of
+ * those files, which is the whole point of quarantining them in the first
+ * place. Improvements might be made in the future.
  *
- * @param string $s The input string to be quarantined (usually derived from
- *      malicious files).
+ * @param string $In The input string (the file upload / source data).
  * @param string $key Your quarantine key.
- * @param string $ip Original source of the input string (usually, the IP
- *      address of the uploader of the malicious file).
- * @param string $id Name of the QFU file to save the quarantined input string
- *      into (in the context that this function is used, this is a unique
- *      identifier calculated prior to calling the function).
+ * @param string $ip Data origin (usually, the IP address of the uploader).
+ * @param string $id The QFU filename to use (calculated beforehand).
  * @return bool This should always return true, unless something goes wrong.
  */
-$phpMussel['Quarantine'] = function ($s, $key, $ip, $id) use (&$phpMussel) {
-    if (!$s || !$key || !$ip || !$id || !function_exists('gzdeflate')) {
-        return false;
-    }
-    if (
+$phpMussel['Quarantine'] = function ($In, $key, $ip, $id) use (&$phpMussel) {
+    if (!$In || !$key || !$ip || !$id || !function_exists('gzdeflate') || (
         strlen($key) < 128 &&
         !$key = $phpMussel['HexSafe'](hash('sha512', $key) . hash('whirlpool', $key))
-    ) {
+    )) {
         return false;
     }
-    $h = "\xa1phpMussel\x21" . $phpMussel['HexSafe'](md5($s)) . pack('l*', strlen($s)) . "\x01";
-    $s = gzdeflate($s, 9);
-    $o = '';
-    $i = 0;
-    $c = strlen($s);
     $k = strlen($key);
-    while ($i < $c) {
+    $FileSize = strlen($In);
+    $h = "\xa1phpMussel\x21" . $phpMussel['HexSafe'](md5($In)) . pack('l*', $FileSize) . "\x01";
+    $In = gzdeflate($In, 9);
+    $Out = '';
+    $i = 0;
+    while ($i < $FileSize) {
         for ($j = 0; $j < $k; $j++, $i++) {
-            $o .= $s{$i} ^ $key{$j};
+            if (strlen($Out) >= $FileSize) {
+                break 2;
+            }
+            $L = substr($In, $i, 1);
+            $R = substr($key, $j, 1);
+            $Out .= ($L === false ? "\x00" : $L) ^ ($R === false ? "\x00" : $R);
         }
     }
-    $o =
+    $Out =
         "\x2f\x3d\x3d\x20phpMussel\x20Quarantined\x20File\x20Upload\x20\x3d" .
         "\x3d\x5c\n\x7c\x20Time\x2fDate\x20Uploaded\x3a\x20" .
         str_pad($phpMussel['Time'], 18, "\x20") .
         "\x7c\n\x7c\x20Uploaded\x20From\x3a\x20" . str_pad($ip, 22, "\x20") .
-        "\x20\x7c\n\x5c" . str_repeat("\x3d", 39) . "\x2f\n\n\n" . $h . $o;
+        "\x20\x7c\n\x5c" . str_repeat("\x3d", 39) . "\x2f\n\n\n" . $h . $Out;
     $u = $phpMussel['MemoryUse']($phpMussel['qfuPath']);
-    $u = $u['s'] + strlen($o);
+    $u = $u['s'] + strlen($Out);
     if ($u > $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_usage'])) {
         $u = $phpMussel['MemoryUse'](
             $phpMussel['qfuPath'],
             $u - $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_usage'])
         );
     }
-    $xf = fopen($phpMussel['qfuPath'] . $id . '.qfu', 'a');
-    fwrite($xf, $o);
-    fclose($xf);
+    $Handle = fopen($phpMussel['qfuPath'] . $id . '.qfu', 'a');
+    fwrite($Handle, $Out);
+    fclose($Handle);
     return true;
 };
 
@@ -2792,7 +2775,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 'z' => 0,
                 'm' => array()
             );
-            /** @todo Need to improve this regex. Terminating characters sometimes aren't found and URLs fail to be caught. */
             $urlscanner['c'] = preg_match_all(
                 '/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,' .
                 '3}\.)?([0-9a-z.-]{1,512})[^0-9a-z.-]/i',
@@ -2912,7 +2894,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             $urlscanner['urls_p'] =
             $urlscanner['queries'] = array();
             $urlscanner['z'] = 0;
-            /** @todo Need to improve this regex. Terminating characters sometimes aren't found and URLs fail to be caught. */
             $urlscanner['c'] = preg_match_all(
                 '/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,' .
                 '3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4096})(\&quot;|[;' .
@@ -5840,6 +5821,8 @@ $phpMussel['Request'] = function ($URI, $Params = '', $Timeout = '') use (&$phpM
         curl_setopt($Request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
         curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, false);
     }
+    curl_setopt($Request, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($Request, CURLOPT_MAXREDIRS, 1);
     curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($Request, CURLOPT_TIMEOUT, $Timeout);
     curl_setopt($Request, CURLOPT_USERAGENT, $phpMussel['ScriptUA']);

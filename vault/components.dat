@@ -21,7 +21,7 @@ phpMussel:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 1.0.0-DEV+2017149802
+ Version: 1.0.0-DEV+2017159809
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/Maikuolan/phpMussel/master/Changelog-v1.txt
@@ -110,7 +110,7 @@ phpMussel:
   Checksum:
    - 8e03209e7fc6641b45094e584340feff:83
    - 8e03209e7fc6641b45094e584340feff:83
-   - 10bd0eba0213b73c6050d1c11e54729c:29982
+   - ca602aba21f4ced0a1abc00baeb5927c:29869
    - 4887d56c2967f6d1b1eb0f282a79c955:8141
    - 2efafa982688aae1faa05a3bf4e43fdd:9878
    - 8e03209e7fc6641b45094e584340feff:83
@@ -135,7 +135,7 @@ phpMussel:
    - 9ca3835d2459eb4398129cd79ec650af:17632
    - 68ad6585d219e9c8fd5d4c1138161258:982
    - 5bd27ab0ece6f2f963a95809d49c814c:125176
-   - 608b085992dd3f1db5793744903e6d71:309512
+   - 4170e117420b12113c794874daa8feb8:308402
    - ee976d2a635581444b4d0338a916d8f8:3061
    - 359a65f973168540e69ffc66ba914b11:2368
    - 8e03209e7fc6641b45094e584340feff:83
@@ -146,7 +146,7 @@ phpMussel:
    - 2c5e1906295c889436749adc4441ffa4:3233
    - caed7b1d78502266f746797a028146b1:1140
    - 1f21f2ca3a76e5c0964d20e6435c414b:1967
-   - f7ec426d050a911a0497f08b732ecba2:38084
+   - d69807e4dbebf2ae9025550967399b73:34101
  Reannotate: components.dat
 l10n/en:
  Name: L10N: English

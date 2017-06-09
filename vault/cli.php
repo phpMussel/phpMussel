@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2017.05.07).
+ * This file: CLI handler (last modified: 2017.06.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -475,7 +475,6 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             }
             $phpMussel['memCache']['end_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
             $phpMussel['memCache']['end_time_2822'] = $phpMussel['TimeFormat']($phpMussel['memCache']['end_time'], $phpMussel['Config']['general']['timeFormat']);
-            /** @todo Get serialised logging working for CLI mode (github.com/Maikuolan/phpMussel/issues/54). */
             $r = $s . $r;
             $s = $phpMussel['memCache']['end_time_2822'] . ' ' . $phpMussel['lang']['finished'] . $phpMussel['lang']['_fullstop_final'] . "\n";
             echo $s;
