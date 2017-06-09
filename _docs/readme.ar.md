@@ -36,7 +36,7 @@
 <div dir="rtl">هذا المستند و الحزم المرتبطة به يمكن تحميلها مجاناً من:</div>
 
 - [Sourceforge](http://phpmussel.sourceforge.net/).
-- [GitHub](https://github.com/Maikuolan/phpMussel/).
+- [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
 
@@ -85,9 +85,9 @@
 
 #### <div dir="rtl">٢.٢ تثبيت مع COMPOSER</div>
 
-<div dir="rtl"><a href="https://packagist.org/packages/maikuolan/phpmussel">يتم تسجيل phpMussel مع Packagist</a>، و بالتالي، إذا كنت على دراية به، يمكنك استخدامه لتثبيت phpMussel (ستظل بحاجة إلى إعداده على الرغم من ذلك؛ نرى "تثبيت يدويا (لخدمات الويب)" الخطوتين ٢ و ٥).<br /><br /></div>
+<div dir="rtl"><a href="https://packagist.org/packages/phpmussel/phpmussel">يتم تسجيل phpMussel مع Packagist</a>، و بالتالي، إذا كنت على دراية به، يمكنك استخدامه لتثبيت phpMussel (ستظل بحاجة إلى إعداده على الرغم من ذلك؛ نرى "تثبيت يدويا (لخدمات الويب)" الخطوتين ٢ و ٥).<br /><br /></div>
 
-`composer require maikuolan/phpmussel`
+`composer require phpmussel/phpmussel`
 
 ---
 
@@ -881,7 +881,7 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 <div dir="rtl"><ul>
  <li>تحقق مما إذا كنت تستخدم أحدث إصدار من البرنامج والتوقيع الملفات.</li>
  <li>قراءة الوثائق. قد تكون هناك إجابات هناك.</li>
- <li>قراءة <strong><a href="https://github.com/Maikuolan/phpMussel/issues">صفحة المشكلات</a></strong>. قد تكون هناك إجابات هناك.</li>
+ <li>قراءة <strong><a href="https://github.com/phpMussel/phpMussel/issues">صفحة المشكلات</a></strong>. قد تكون هناك إجابات هناك.</li>
  <li>قراءة <a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">منتدى الدعم</a></strong>. قد تكون هناك إجابات هناك.</li>
  <li>لا يوجد حتى الآن إجابات؟ اخبرنا عنها. إنشاء مناقشة جديدة مع واحدة من أعلاه.</li>
 </ul></div>
@@ -928,4 +928,4 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 ---
 
 
-<div dir="rtl">آخر تحديث: 19 مايو 2017 (2017.05.19).</div>
+<div dir="rtl">آخر تحديث: 9 يونيو 2017 (2017.06.09).</div>

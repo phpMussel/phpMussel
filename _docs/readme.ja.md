@@ -33,7 +33,7 @@ PHPMUSSEL著作権2013とGNU一般公衆ライセンスv2を超える権利に�
 
 本ドキュメントならびに関連パッケージは以下のURLからダウンロードできます。
 - [Sourceforge](http://phpmussel.sourceforge.net/)。
-- [GitHub](https://github.com/Maikuolan/phpMussel/)。
+- [GitHub](https://github.com/phpMussel/phpMussel/)。
 
 ---
 
@@ -82,9 +82,9 @@ Apacheウェブサーバーを利用していて、かつ`php.ini`を編集で�
 
 #### 2.2 COMPOSERを使用してインストールする
 
-[phpMusselはPackagistに登録されています](https://packagist.org/packages/maikuolan/phpmussel)。 Composerを使い慣れている場合は、Composerを使用してphpMusselをインストールできます （あなたはまだ設定とフックを準備する必要があります； 「手動インストール（ウェブサーバー編）」の手順2と5を参照してください）。
+[phpMusselはPackagistに登録されています](https://packagist.org/packages/phpmussel/phpmussel)。 Composerを使い慣れている場合は、Composerを使用してphpMusselをインストールできます （あなたはまだ設定とフックを準備する必要があります； 「手動インストール（ウェブサーバー編）」の手順2と5を参照してください）。
 
-`composer require maikuolan/phpmussel`
+`composer require phpmussel/phpmussel`
 
 ---
 
@@ -737,7 +737,7 @@ phpMusselは、ファイルをブロックします | __偽陽性__ | 真陽性�
 
 - あなたは最新のソフトウェアバージョンを使用していますか？ あなたは最新のシグネチャファイルバージョンを使用していますか？ そうでない場合は、まずすべてをアップデイトしてください。 問題が解決しないかどうかをチェックしてください。 それが続く場合は、読んでください。
 - あなたはドキュメンテーションをチェックしましたか？ もしそうでなければ、そうしてください。 ドキュメンテーションを使用して問題を解決できない場合は、引き続き読んでください。
-- **[イシュー・ページ](https://github.com/Maikuolan/phpMussel/issues)** をチェックしましたか？ 問題が以前に言及されているかどうかをチェックしてください。 提案、アイデア、ソリューションが提供されたかどうかをチェックしてください。
+- **[イシュー・ページ](https://github.com/phpMussel/phpMussel/issues)** をチェックしましたか？ 問題が以前に言及されているかどうかをチェックしてください。 提案、アイデア、ソリューションが提供されたかどうかをチェックしてください。
 - **[Spambot Securityが提供するphpMusselサポート・フォーラム](http://www.spambotsecurity.com/forum/viewforum.php?f=55)** をチェックしましたか？ 問題が以前に言及されているかどうかをチェックしてください。 提案、アイデア、ソリューションが提供されたかどうかをチェックしてください。
 - 問題が解決しない場合は、教えてください。 イシュー・ページまたはサポート・フォーラムに関する新しいディスカッションを作成する。
 
@@ -783,4 +783,4 @@ phpMusselは、ファイルをブロックします | __偽陽性__ | 真陽性�
 ---
 
 
-最終アップデート： 2017年5月19日。
+最終アップデート： 2017年6月9日。

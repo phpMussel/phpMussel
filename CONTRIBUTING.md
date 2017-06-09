@@ -1,6 +1,6 @@
 ## **Want to help?**
 
-If you want to report bugs, make suggestions for new features, changes and etc, your first point-of-call should by the [Issues](https://github.com/Maikuolan/phpMussel/issues) page for the repository. Contained therein, any already reported bugs, requested features, progress checklists, ideas, project discussions and such things should be listed and available for review, and anyone is welcome to participate and contribute. If you have something to add, either to a preexisting issue, or as an entirely new issue, feel free to do so.
+If you want to report bugs, make suggestions for new features, changes and etc, your first point-of-call should by the [Issues](https://github.com/phpMussel/phpMussel/issues) page for the repository. Contained therein, any already reported bugs, requested features, progress checklists, ideas, project discussions and such things should be listed and available for review, and anyone is welcome to participate and contribute. If you have something to add, either to a preexisting issue, or as an entirely new issue, feel free to do so.
 
 The project is open-source licensed using the GNU/GPLv2 license, and so, if you want fork/copy the project and make modifications, you don't need my permission to do so! In fact, I encourage this! If you make any modifications that you feel could be beneficial to the wider community and beneficial to the project as a whole, send a PR (pull request) with a description of the modifications you've made to have them reviewed, and if we agree that your modifications could be beneficial, we'll consider merging them as part of the project.
 
@@ -26,4 +26,6 @@ Anyone interested in contributing to the project is encouraged to do so.
 - phpMussel won't serve any benefit to people unless they actually use it, and they won't ever use it unless they actually know about it. Getting word out would help (but please don't do anything spammy or unsolicited).
 - Submit reviews about phpMussel to various software review sites where it's listed (for example, [SourceForge](https://sourceforge.net/projects/phpmussel/reviews?source=navbar), [HotScripts](http://www.hotscripts.com/listing/phpmussel/)), write blog posts, use word of mouth, mention it on Facebook, Twitter, etc.
 
-*Last modified: 31 January 2017 (2017.01.31).*
+---
+
+*Last modified: 9 June 2017 (2017.06.09).*

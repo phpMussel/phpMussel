@@ -33,7 +33,7 @@ Chân thành cám ơn Sourceforge và GitHub cho cung cấp một nơi cho các 
 
 Tài liệu này và các gói liên quan của nó có thể được tải về miễn phí từ:
 - [Sourceforge](http://phpmussel.sourceforge.net/).
-- [GitHub](https://github.com/Maikuolan/phpMussel/).
+- [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
 
@@ -82,9 +82,9 @@ Hoạc cái này trong tập tin `.htaccess`:
 
 #### 2.2 CÀI ĐẶT VỚI COMPOSER
 
-[phpMussel được đăng ký với Packagist](https://packagist.org/packages/maikuolan/phpmussel), và như vậy, nếu bạn đã quen với Composer, bạn có thể sử dụng Composer để cài đặt phpMussel (bạn vẫn cần phải chuẩn bị cấu hình và kết nối; xem "cài đặt thủ công (cho các trang mạng)" bước 2 và 5).
+[phpMussel được đăng ký với Packagist](https://packagist.org/packages/phpmussel/phpmussel), và như vậy, nếu bạn đã quen với Composer, bạn có thể sử dụng Composer để cài đặt phpMussel (bạn vẫn cần phải chuẩn bị cấu hình và kết nối; xem "cài đặt thủ công (cho các trang mạng)" bước 2 và 5).
 
-`composer require maikuolan/phpmussel`
+`composer require phpmussel/phpmussel`
 
 ---
 
@@ -737,7 +737,7 @@ Tần suất cập nhật thay đổi tùy thuộc vào các tập tin chữ ký
 
 - Bạn đang sử dụng phiên bản mới nhất của phần mềm? Bạn đang sử dụng phiên bản mới nhất của tập tin chữ ký của bạn? Nếu câu trả lời cho một trong hai những câu hỏi này là không, cố gắng cập nhật mọi thứ đầu tiên, và kiểm tra nếu vấn đề vẫn còn. Nếu nó vẫn còn, tiếp tục đọc.
 - Bạn đã kiểm tra tất cả các tài liệu chưa? Nếu không, xin hãy làm như vậy. Nếu vấn đề không thể giải quyết bằng cách sử dụng tài liệu, hãy tiếp tục đọc.
-- Bạn đã kiểm tra các **[trang vấn đề](https://github.com/Maikuolan/phpMussel/issues)** chưa, để xem nếu vấn đề đã được đề cập trước đó? Nếu nó đã được đề cập trước đó, kiểm tra nếu có bất kỳ đề xuất, ý tưởng, hay giải pháp đã được cung cấp, và làm theo như là cần thiết để cố gắng giải quyết vấn đề.
+- Bạn đã kiểm tra các **[trang vấn đề](https://github.com/phpMussel/phpMussel/issues)** chưa, để xem nếu vấn đề đã được đề cập trước đó? Nếu nó đã được đề cập trước đó, kiểm tra nếu có bất kỳ đề xuất, ý tưởng, hay giải pháp đã được cung cấp, và làm theo như là cần thiết để cố gắng giải quyết vấn đề.
 - Bạn đã kiểm tra các **[diễn đàn hỗ trợ cho phpMussel cung cấp bởi Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)** chưa, để xem nếu vấn đề đã được đề cập trước đó? Nếu nó đã được đề cập trước đó, kiểm tra nếu có bất kỳ đề xuất, ý tưởng, hay giải pháp đã được cung cấp, và làm theo như là cần thiết để cố gắng giải quyết vấn đề.
 - Nếu vấn đề vẫn còn, vui lòng nói cho chúng tôi bằng cách bắt đầu một cuộc thảo luận mới trên các trang vấn đề hoặc các diễn đàn hỗ trợ.
 
@@ -783,4 +783,4 @@ Giá trị | Sử dụng
 ---
 
 
-Lần cuối cập nhật: 19 Tháng Năm 2017 (2017.05.19).
+Lần cuối cập nhật: 9 Tháng Sáu 2017 (2017.06.09).

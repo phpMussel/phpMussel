@@ -1,7 +1,7 @@
 <?php
 /**
- * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
+ * This file is a part of the phpMussel package.
+ * Homepage: https://phpmussel.github.io/
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Temporary hotfixes file (last modified: 2017.05.19).
+ * This file: Temporary hotfixes file (last modified: 2017.06.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -26,21 +26,21 @@ $phpMussel['ThisFile'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'hotfixes.
 $phpMussel['Hotfixed'] = false;
 
 /** Hotfix for missing DAT files. */
-if (true) { // switch 170519
+if (true) { // switch 170609
     $phpMussel['HotfixData'] = '';
 
-    if (!file_exists($phpMussel['Vault'] . 'components.dat')) {
-        if ($phpMussel['HotfixData'] = $phpMussel['Request'](
-            'https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/components.dat'
-        )) {
-            $phpMussel['Handle'] = fopen($phpMussel['Vault'] . 'components.dat', 'w');
-            fwrite($phpMussel['Handle'], $phpMussel['HotfixData']);
-            fclose($phpMussel['Handle']);
-        }
+    if (file_exists($phpMussel['Vault'] . 'components.dat')) {
+        $phpMussel['OriginalData'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'components.dat');
+        $phpMussel['HotfixData'] = str_ireplace('Maikuolan/phpMussel', 'phpMussel/phpMussel', $phpMussel['OriginalData']);
+    } else {
+        $phpMussel['OriginalData'] = '';
+        $phpMussel['HotfixData'] = $phpMussel['Request'](
+            'https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat'
+        );
     }
     if (!file_exists($phpMussel['Vault'] . 'plugins.dat')) {
         if ($phpMussel['HotfixData'] = $phpMussel['Request'](
-            'https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/plugins.dat'
+            'https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/plugins.dat'
         )) {
             $phpMussel['Handle'] = fopen($phpMussel['Vault'] . 'plugins.dat', 'w');
             fwrite($phpMussel['Handle'], $phpMussel['HotfixData']);
@@ -49,7 +49,7 @@ if (true) { // switch 170519
     }
     if (!file_exists($phpMussel['Vault'] . 'signatures.dat')) {
         if ($phpMussel['HotfixData'] = $phpMussel['Request'](
-            'https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/signatures.dat'
+            'https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/signatures.dat'
         )) {
             $phpMussel['Handle'] = fopen($phpMussel['Vault'] . 'signatures.dat', 'w');
             fwrite($phpMussel['Handle'], $phpMussel['HotfixData']);
@@ -58,7 +58,7 @@ if (true) { // switch 170519
     }
     if (!file_exists($phpMussel['Vault'] . 'themes.dat')) {
         if ($phpMussel['HotfixData'] = $phpMussel['Request'](
-            'https://raw.githubusercontent.com/Maikuolan/phpMussel/master/vault/themes.dat'
+            'https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/themes.dat'
         )) {
             $phpMussel['Handle'] = fopen($phpMussel['Vault'] . 'themes.dat', 'w');
             fwrite($phpMussel['Handle'], $phpMussel['HotfixData']);
@@ -68,7 +68,7 @@ if (true) { // switch 170519
 
     /** Update switch. */
     $phpMussel['ThisFile'] = str_replace(
-        "\nif (true) { // switch 170519\n",
+        "\nif (true) { // switch 170609\n",
         "\nif (false) {\n",
         $phpMussel['ThisFile']
     );
