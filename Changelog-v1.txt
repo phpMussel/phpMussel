@@ -34,12 +34,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   Modified our normalisation closure to make use of our new obfuscation closure
   in favour of using problematic falsing in-built functions as was previously
   the case.
-  Refer github.com/Maikuolan/phpMussel/issues/87
+  Refer github.com/phpMussel/phpMussel/issues/87
 
 - [2016.03.24; Sub-minor code change; Maikuolan]: Removed references to the
   "package" tag from all phpDoc page blocks in the package (we don't need
   these, because we already have README documentation and don't use api-docs).
-  Refer github.com/Maikuolan/phpMussel/issues/85
+  Refer github.com/phpMussel/phpMussel/issues/85
 
 - [2016.03.24; Minor code change; Maikuolan]: Updated the plugin system as so
   that hooks can now be registered for closures as well as functions (whereas
@@ -59,19 +59,19 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   Lookups to the Google Safe Browsing API can be enabled by including an API
   key in the phpMussel configuration file (cURL is required in order for it to
   work correctly).
-  Refer github.com/Maikuolan/phpMussel/issues/65
+  Refer github.com/phpMussel/phpMussel/issues/65
 
 - [2016.05.12; Sub-minor code change; DanielRuf/Maikuolan]: Improved the
   "ReadFile" closure; It's now possible for developers/users to specify custom
   block sizes for file reading.
-  Refer github.com/Maikuolan/phpMussel/issues/89
+  Refer github.com/phpMussel/phpMussel/issues/89
 
 - [2016.05.15; Sub-minor code change; DanielRuf/Maikuolan]: Improved the
   "implode_bits" and "explode_bits" closures; Both these closures now return
   strings rather than arrays (although these strings are still manipulated in
   the same ways as before) and both these closures now execute about ~2.5-~2.7
   times faster than they did before.
-  Refer github.com/Maikuolan/phpMussel/issues/91
+  Refer github.com/phpMussel/phpMussel/issues/91
 
 - [2016.05.18-22; MAJOR CODE CHANGE; Maikuolan]: Removed "compressor" as a
   possible value for "$container". Completely rewrote the way that archives
@@ -118,7 +118,7 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 - [2016.06.22; Bug-fix; Maikuolan]: Incorrect language data entry used for some
   upload errors; Fixed. Thanks to mtrefzer for spotting this. :-)
-  Refer github.com/Maikuolan/phpMussel/issues/98
+  Refer github.com/phpMussel/phpMussel/issues/98
 
 - [2016.06.24; Sub-minor code change; Maikuolan]: Changed the default value for
   "forbid_on_block" from false to true (this should improve compatibility with
@@ -127,7 +127,7 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2016.06.27; Bug-fix; Maikuolan]: Key value was being fetched from an
   incorrect array for $HookID by the plugin hooks (affected all hooks); Fixed.
   Thanks to mtrefzer for spotting this. :-)
-  Refer github.com/Maikuolan/phpMussel/issues/99
+  Refer github.com/phpMussel/phpMussel/issues/99
 
 - [2016.08.02; Documentation; Mie Shinohara]: Completed translation of the
   documentation to Japanese. With this translation completed, the phpMussel
@@ -293,6 +293,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 - [2017.05.29; Sub-minor code change; Maikuolan]: Added internal language
   support for Hindi (18 language localisations now completed and available).
+
+- [2017.06.09]: Repository migrated from "Maikuolan/phpMussel" to
+  "phpMussel/phpMussel". All files, documentation, etc, updated accordingly. No
+  disruptions are anticipated as a result of this migration, but if you
+  encounter any, please let us know.
 
 ======
 

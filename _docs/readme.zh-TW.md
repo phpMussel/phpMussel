@@ -33,7 +33,7 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 現在phpMussel的代碼文件和關聯包可以從以下地址免費下載：
 - [Sourceforge](http://phpmussel.sourceforge.net/)。
-- [GitHub](https://github.com/Maikuolan/phpMussel/)。
+- [GitHub](https://github.com/phpMussel/phpMussel/)。
 
 ---
 
@@ -82,9 +82,9 @@ PHPMUSSEL COPYRIGHT 2013 and beyond GNU/GPLv2 by Caleb M (Maikuolan)。
 
 #### 2.2 與COMPOSER安裝
 
-[phpMussel是在Packagist上](https://packagist.org/packages/maikuolan/phpmussel)，所以，如果您熟悉Composer，您可以使用Composer安裝phpMussel（您仍然需要準備配置和鉤子；參考“安裝手工（WEB服務器）”步驟2和5）。
+[phpMussel是在Packagist上](https://packagist.org/packages/phpmussel/phpmussel)，所以，如果您熟悉Composer，您可以使用Composer安裝phpMussel（您仍然需要準備配置和鉤子；參考“安裝手工（WEB服務器）”步驟2和5）。
 
-`composer require maikuolan/phpmussel`
+`composer require phpmussel/phpmussel`
 
 ---
 
@@ -740,7 +740,7 @@ phpMussel會阻止文件 | __假陽性__ | 真陽性（正確的推理）
 
 - 您使用軟件的最新版本嗎？您使用簽名文件的最新版本嗎？如果這兩個問題的答案是不，嘗試首先更新一切，然後檢查問題是否仍然存在。如果它仍然存在，繼續閱讀。
 - 您檢查過所有的文檔嗎？如果沒有做，請這樣做。如果文檔不能解決問題，繼續閱讀。
-- 您檢查過 **[問題頁面](https://github.com/Maikuolan/phpMussel/issues)** 嗎？ 檢查是否已經提到了問題。如果已經提到了，請檢查是否提供了任何建議，想法或解決方案。按照需要嘗試解決問題。
+- 您檢查過 **[問題頁面](https://github.com/phpMussel/phpMussel/issues)** 嗎？ 檢查是否已經提到了問題。如果已經提到了，請檢查是否提供了任何建議，想法或解決方案。按照需要嘗試解決問題。
 - 您檢查過 **[由Spambot Security提供的phpMussel支持論壇](http://www.spambotsecurity.com/forum/viewforum.php?f=55)** 嗎？ 檢查是否已經提到了問題。如果已經提到了，請檢查是否提供了任何建議，想法或解決方案。按照需要嘗試解決問題。
 - 如果問題仍然存在，請讓我們知道；在問題頁面或支持論壇上開始新的討論。
 
@@ -786,4 +786,4 @@ phpMussel會阻止文件 | __假陽性__ | 真陽性（正確的推理）
 ---
 
 
-最後更新：2017年5月19日。
+最後更新：2017年6月9日。

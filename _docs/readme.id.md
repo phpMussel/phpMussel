@@ -33,7 +33,7 @@ Khusus terima kasih kepada Sourceforge dan GitHub untuk menghost file proyek, ke
 
 Dokumen ini dan paket terhubung di dalamnya dapat di unduh secara gratis dari:
 - [Sourceforge](http://phpmussel.sourceforge.net/).
-- [GitHub](https://github.com/Maikuolan/phpMussel/).
+- [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
 
@@ -82,9 +82,9 @@ Atau ini di file `.htaccess`:
 
 #### 2.2 MENGINSTAL DENGAN COMPOSER
 
-[phpMussel terdaftar dengan Packagist](https://packagist.org/packages/maikuolan/phpmussel). Jika Anda akrab dengan Composer, Anda dapat menggunakan Composer untuk menginstal phpMussel (Anda masih perlu mempersiapkan konfigurasi dan kait meskipun; melihat "menginstal secara manual (untuk server web)" langkah 2 dan 5).
+[phpMussel terdaftar dengan Packagist](https://packagist.org/packages/phpmussel/phpmussel). Jika Anda akrab dengan Composer, Anda dapat menggunakan Composer untuk menginstal phpMussel (Anda masih perlu mempersiapkan konfigurasi dan kait meskipun; melihat "menginstal secara manual (untuk server web)" langkah 2 dan 5).
 
-`composer require maikuolan/phpmussel`
+`composer require phpmussel/phpmussel`
 
 ---
 
@@ -737,7 +737,7 @@ Frekuensi pembaruan bervariasi tergantung pada file tanda tangan. Semua penulis 
 
 - Apakah Anda menggunakan versi terbaru bagi perangkat lunak? Apakah Anda menggunakan versi terbaru bagi file tanda tangan Anda? Jika jawaban untuk salah satu dari dua pertanyaan ini adalah tidak, mencoba untuk memperbarui segala sesuatu pertama, dan memeriksa apakah masalah terus berlanjut. Jika terus berlanjut, lanjutkan membaca.
 - Apakah Anda memeriksa semua dokumentasi? Jika tidak, silahkan melakukannya. Jika masalah tidak dapat diselesaikan dengan menggunakan dokumentasi, lanjutkan membaca.
-- Apakah Anda memeriksa **[halaman isu-isu](https://github.com/Maikuolan/phpMussel/issues)**, untuk melihat apakah masalah telah disebutkan sebelumnya? Jika sudah disebutkan sebelumnya, memeriksa apakah ada saran, ide, dan/atau solusi yang tersedia, dan ikuti sesuai yang diperlukan untuk mencoba untuk menyelesaikan masalah.
+- Apakah Anda memeriksa **[halaman isu-isu](https://github.com/phpMussel/phpMussel/issues)**, untuk melihat apakah masalah telah disebutkan sebelumnya? Jika sudah disebutkan sebelumnya, memeriksa apakah ada saran, ide, dan/atau solusi yang tersedia, dan ikuti sesuai yang diperlukan untuk mencoba untuk menyelesaikan masalah.
 - Apakah Anda memeriksa **[forum dukungan bagi phpMussel yang disediakan oleh Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)**, untuk melihat apakah masalah telah disebutkan sebelumnya? Jika sudah disebutkan sebelumnya, memeriksa apakah ada saran, ide, dan/atau solusi yang tersedia, dan ikuti sesuai yang diperlukan untuk mencoba untuk menyelesaikan masalah.
 - Jika masalah masih berlanjut, silahkan beritahu kami dengan membuat isu baru di halaman isu-isu atau dengan memulai diskusi baru di forum dukungan.
 
@@ -783,4 +783,4 @@ Nilai | Menggunakan
 ---
 
 
-Terakhir Diperbarui: 19 Mei 2017 (2017.05.19).
+Terakhir Diperbarui: 9 Juni 2017 (2017.06.09).

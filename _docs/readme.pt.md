@@ -33,7 +33,7 @@ Um especial obrigado para Sourceforge e GitHub por hospedar os arquivos do proje
 
 Este documento e seu pacote associado pode ser baixado gratuitamente de:
 - [Sourceforge](http://phpmussel.sourceforge.net/).
-- [GitHub](https://github.com/Maikuolan/phpMussel/).
+- [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
 
@@ -82,9 +82,9 @@ Ou isso no `.htaccess` arquivo:
 
 #### 2.2 INSTALANDO COM COMPOSER
 
-[phpMussel está registrado no Packagist](https://packagist.org/packages/maikuolan/phpmussel), e entao, se você estiver familiarizado com o Composer, poderá usar o Composer para instalar o phpMussel (você ainda precisará preparar a configuração e ganchos embora; consulte "instalando manualmente (para web servidores)" as etapas 2 e 5).
+[phpMussel está registrado no Packagist](https://packagist.org/packages/phpmussel/phpmussel), e entao, se você estiver familiarizado com o Composer, poderá usar o Composer para instalar o phpMussel (você ainda precisará preparar a configuração e ganchos embora; consulte "instalando manualmente (para web servidores)" as etapas 2 e 5).
 
-`composer require maikuolan/phpmussel`
+`composer require phpmussel/phpmussel`
 
 ---
 
@@ -737,7 +737,7 @@ A frequência das atualizações varia de acordo com os arquivos de assinatura e
 
 - Você está usando a versão mais recente do software? Você está usando as versões mais recentes de seus arquivos de assinatura? Se a resposta a qualquer destas duas perguntas é não, tente atualizar tudo primeiro, e verifique se o problema persiste. Se persistir, continue lendo.
 - Você já examinou toda a documentação? Se não, por favor, faça isso. Se o problema não puder ser resolvido usando a documentação, continue lendo.
-- Você já examinou a **[página de problemas](https://github.com/Maikuolan/phpMussel/issues)**, para ver se o problema foi mencionado antes? Se já foi mencionado antes, verificar se foram fornecidas sugestões, ideias e/ou soluções, e siga conforme necessário para tentar resolver o problema.
+- Você já examinou a **[página de problemas](https://github.com/phpMussel/phpMussel/issues)**, para ver se o problema foi mencionado antes? Se já foi mencionado antes, verificar se foram fornecidas sugestões, ideias e/ou soluções, e siga conforme necessário para tentar resolver o problema.
 - Você já examinou a **[fórum de suporte do phpMussel fornecido pela Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)**, para ver se o problema foi mencionado antes? Se já foi mencionado antes, verificar se foram fornecidas sugestões, ideias e/ou soluções, e siga conforme necessário para tentar resolver o problema.
 - Se o problema ainda persistir, informe-nos através da iniciando uma nova discussão na página de problemas ou no fórum de suporte.
 
@@ -783,4 +783,4 @@ Valor | Usando
 ---
 
 
-Última Atualização: 19 Maio 2017 (2017.05.19).
+Última Atualização: 9 Junho 2017 (2017.06.09).

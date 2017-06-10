@@ -1,22 +1,22 @@
 {
-    "name": "maikuolan/phpmussel",
+    "name": "phpmussel/phpmussel",
     "description": "PHP-based anti-virus anti-trojan anti-malware solution.",
     "keywords": ["anti-virus","anti-trojan","anti-malware","anti-exploit","anti-spam","antivirus","uploads","security","protection"],
-    "homepage": "http://maikuolan.github.io/phpMussel/",
+    "homepage": "https://phpmussel.github.io/",
     "license": "GPL-2.0+",
     "support": {
-        "issues": "https://github.com/Maikuolan/phpMussel/issues",
+        "issues": "https://github.com/phpMussel/phpMussel/issues",
         "forum": "http://www.spambotsecurity.com/forum/viewforum.php?f=55",
-        "wiki": "https://github.com/Maikuolan/phpMussel/wiki",
-        "source": "https://github.com/Maikuolan/phpMussel",
-        "docs": "https://github.com/Maikuolan/phpMussel/tree/master/_docs"
+        "wiki": "https://github.com/phpMussel/phpMussel/wiki",
+        "source": "https://github.com/phpMussel/phpMussel",
+        "docs": "https://github.com/phpMussel/phpMussel/tree/master/_docs"
     },
     "require": {
         "php": ">=5.4.0"
     },
     "suggest": {
         "php": ">=7.0.0 (this package performs significantly better with PHP >= 7.0.0 than it does with previous versions).",
-        "maikuolan/phpmussel-plugin-notifications": "A phpMussel plugin to receive email notifications from phpMussel whenever a file upload is blocked.",
-        "maikuolan/cidram": "Classless Inter-Domain Routing Access Manager (works great in conjunction with phpMussel)."
+        "phpMussel/phpMussel-plugin-notifications": "A phpMussel plugin to receive email notifications from phpMussel whenever a file upload is blocked.",
+        "cidram/cidram": "Classless Inter-Domain Routing Access Manager (works great in conjunction with phpMussel)."
     }
 }

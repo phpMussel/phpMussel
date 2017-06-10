@@ -33,7 +33,7 @@ phpMussel 저작권 2013 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
 본 문서 및 관련 패키지는 다음 URL에서 다운로드 할 수 있습니다.
 - [Sourceforge](http://phpmussel.sourceforge.net/).
-- [GitHub](https://github.com/Maikuolan/phpMussel/).
+- [GitHub](https://github.com/phpMussel/phpMussel/).
 
 ---
 
@@ -82,9 +82,9 @@ Apache 웹서버를 이용하고있어, 한편`php.ini`를 편집 할 수 있도
 
 #### 2.2 COMPOSER를 사용하여 설치한다
 
-[phpMussel는 Packagist에 등록되어 있습니다](https://packagist.org/packages/maikuolan/phpmussel). Composer를 익숙한 경우 Composer를 사용하여 phpMussel를 설치할 수 있습니다 (당신은 아직 설정과 후크를 준비해야합니다; "수동 설치 (웹서버 편)"의 2 단계와 5 단계를 참조하십시오).
+[phpMussel는 Packagist에 등록되어 있습니다](https://packagist.org/packages/phpmussel/phpmussel). Composer를 익숙한 경우 Composer를 사용하여 phpMussel를 설치할 수 있습니다 (당신은 아직 설정과 후크를 준비해야합니다; "수동 설치 (웹서버 편)"의 2 단계와 5 단계를 참조하십시오).
 
-`composer require maikuolan/phpmussel`
+`composer require phpmussel/phpmussel`
 
 ---
 
@@ -737,7 +737,7 @@ phpMussel은 파일을 차단합니다 | __위양성__ | 진정한 양성 (올�
 
 - 당신은 최신 소프트웨어 버전을 사용하고 있습니까? 당신은 최신 서명 파일 버전을 사용하고 있습니까? 그렇지 않은 경우, 먼저 업 데이트하십시오. 문제가 해결되지 여부를 확인하십시오. 그것이 계속되면 읽어보십시오.
 - 당신은 문서를 확인 했습니까? 만약 그렇지 않으면, 그렇지하십시오. 문서를 사용하여 문제를 해결할 수없는 경우, 계속 읽어보십시오.
-- **[이슈 페이지를](https://github.com/Maikuolan/phpMussel/issues)** 확인 했습니까? 문제가 이전에 언급되어 있는지 확인하십시오. 제안, 아이디어, 솔루션이 제공되었는지 여부를 확인하십시오.
+- **[이슈 페이지를](https://github.com/phpMussel/phpMussel/issues)** 확인 했습니까? 문제가 이전에 언급되어 있는지 확인하십시오. 제안, 아이디어, 솔루션이 제공되었는지 여부를 확인하십시오.
 - **[Spambot Security가 제공하는 phpMussel 지원 포럼을](http://www.spambotsecurity.com/forum/viewforum.php?f=55)** 확인 했습니까? 문제가 이전에 언급되어 있는지 확인하십시오. 제안, 아이디어, 솔루션이 제공되었는지 여부를 확인하십시오.
 - 문제가 해결되지 않으면 알려 주시기 바랍니다. 이슈 페이지 또는 지원 포럼과 새로운 토론을 창조한다.
 
@@ -783,4 +783,4 @@ phpMussel은 파일을 차단합니다 | __위양성__ | 진정한 양성 (올�
 ---
 
 
-최종 업데이트: 2017년 5월 19일.
+최종 업데이트: 2017년 6월 9일.
