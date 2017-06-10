@@ -21,7 +21,7 @@ phpMussel:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 1.0.0-DEV+2017159881
+ Version: 1.0.0-DEV+2017160763
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/master/Changelog-v1.txt
@@ -137,7 +137,7 @@ phpMussel:
    - 9363dbf142481e9807348a7fcce3920b:125123
    - bd1958ef03f3c0bfe7a6ead2417bdff6:308349
    - ac607d0db4c0e159005c087365a6b77c:3072
-   - 33eff847ae126dd47e29879961e95852:2315
+   - 0f4fa0075f9790e27bc668ef80a58418:2315
    - 8e03209e7fc6641b45094e584340feff:83
    - 4988ef8b2908e4b62fa465447986f024:1710
    - 8e03209e7fc6641b45094e584340feff:83
@@ -427,6 +427,26 @@ l10n/th:
   Checksum:
    - f1b280b332f9fc51f23b9243bf1f5379:71788
    - 4dcb61eed005d1e1d8bd99231ed7cbde:11615
+ Reannotate: components.dat
+l10n/tr:
+ Name: L10N: Türkçe
+ Extended Description:
+  tr: Türkçe dili verileri
+ Version: 2017.160.763
+ Minimum Required: 1.0.0-DEV
+ Minimum Required PHP: 5.4.0
+ Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
+ Uninstallable: true
+ Files:
+  From:
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.tr.fe.php
+   - https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/lang/lang.tr.php
+  To:
+   - lang/lang.tr.fe.php
+   - lang/lang.tr.php
+  Checksum:
+   - 7a8e56a79256cd2720295500026c2825:39263
+   - c8a2ad5c776132fe6174206b992fc9e6:7039
  Reannotate: components.dat
 l10n/ur:
  Name: L10N: ‏اردو‏

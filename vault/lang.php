@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Language handler (last modified: 2016.12.14).
+ * This file: Language handler (last modified: 2017.06.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
