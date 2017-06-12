@@ -1,7 +1,7 @@
 <?php
 /**
  * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
+ * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -211,7 +211,7 @@ $phpMussel['lang']['tip_file_manager'] = 'Salam, {username}.<br />File manager m
 $phpMussel['lang']['tip_home'] = 'Salam, {username}.<br />Ini adalah halaman utama untuk phpMussel bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan.';
 $phpMussel['lang']['tip_login'] = 'Nama pengguna standar: <span class="txtRd">admin</span> – Kata sandi standar: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Salam, {username}.<br />Pilih log dari daftar dibawah untuk melihat isi log.';
-$phpMussel['lang']['tip_see_the_documentation'] = 'Lihat <a href="https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.id.md#SECTION7">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka.';
+$phpMussel['lang']['tip_see_the_documentation'] = 'Lihat <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.id.md#SECTION7">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka.';
 $phpMussel['lang']['tip_updates'] = 'Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen phpMussel (paket inti, tanda tangan, plugin, file L10N, dll).';
 $phpMussel['lang']['tip_upload_test'] = 'Salam, {username}.<br />Halaman upload test berisi form upload file standar, memungkinkan Anda untuk mengetes apakah file biasanya akan diblokir oleh phpMussel ketika mencoba untuk menguploadnya.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Akun';
@@ -224,7 +224,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – Pembaruan';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload Test';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">Masalah phpMussel @ GitHub</a> – Halaman masalah untuk phpMussel (dukungan, bantuan, dll).</li>
+            <li><a href="https://github.com/phpMussel/phpMussel/issues">Masalah phpMussel @ GitHub</a> – Halaman masalah untuk phpMussel (dukungan, bantuan, dll).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Forum diskusi untuk phpMussel (dukungan, bantuan, dll).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Cermin download alternatif untuk phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Sebuah kumpulan alat webmaster sederhana untuk mengamankan situs web.</li>

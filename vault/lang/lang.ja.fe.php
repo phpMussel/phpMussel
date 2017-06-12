@@ -1,7 +1,7 @@
 <?php
 /**
  * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
+ * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -211,7 +211,7 @@ $phpMussel['lang']['tip_file_manager'] = 'こんにちは、{username}。<br />�
 $phpMussel['lang']['tip_home'] = 'こんにちは、{username}。<br />これはphpMusselフロントエンドのホームページです。続行するには、左側のナビゲーションメニューからリンクを選択します。';
 $phpMussel['lang']['tip_login'] = 'デフォルト・ユーザ名： <span class="txtRd">admin</span> – デフォルト・パスワード： <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'こんにちは、{username}。<br />そのログの内容を表示するために、次のリストからログを選択します。';
-$phpMussel['lang']['tip_see_the_documentation'] = '設定ディレクティブの詳細については、<a href="https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.ja.md#SECTION7">ドキュメント</a>を参照してください。';
+$phpMussel['lang']['tip_see_the_documentation'] = '設定ディレクティブの詳細については、<a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ja.md#SECTION7">ドキュメント</a>を参照してください。';
 $phpMussel['lang']['tip_updates'] = 'こんにちは、{username}。<br />アップデート・ページは、phpMusselのさまざまなコンポーネントはインストール、アンインストール、更新が可能です（コアパッケージ、シグネチャ、プラグイン、L10Nファイル、等）。';
 $phpMussel['lang']['tip_upload_test'] = 'こんにちは、{username}。<br />アップロード・テスト・ページ、標準的なファイルアップロードフォームを含んでいます、ファイルが通常ブロックされるかどうかをテストすることができます。';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – アカウント';
@@ -224,7 +224,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – アップデート';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – アップロード・テスト';
 
 $phpMussel['lang']['info_some_useful_links'] = '役に立つリンク：<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMusselの問題 ＠ GitHub</a> – phpMusselの問題ページ（サポート、援助、など）。</li>
+            <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMusselの問題 ＠ GitHub</a> – phpMusselの問題ページ（サポート、援助、など）。</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel ＠ Spambot Security</a> – phpMusselのディスカッションフォーラム（サポート、援助、など）。</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel ＠ SourceForge</a> – phpMusselの代替ダウンロードミラー。</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – ウェブサイトを保護するための簡単なウェブマスターツールのコレクション。</li>

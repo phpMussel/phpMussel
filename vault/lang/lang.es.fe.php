@@ -1,7 +1,7 @@
 <?php
 /**
  * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
+ * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -211,7 +211,7 @@ $phpMussel['lang']['tip_file_manager'] = 'Hola, {username}.<br />El administraci
 $phpMussel['lang']['tip_home'] = 'Hola, {username}.<br />Esta es la página principal para el front-end de phpMussel. Seleccione un enlace en el menú de navegación de la izquierda para continuar.';
 $phpMussel['lang']['tip_login'] = 'El usuario estándar: <span class="txtRd">admin</span> – La contraseña estándar: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Hola, {username}.<br />Seleccionar un archivo de registro de la lista siguiente para ver el contenido de ese archivo de registro.';
-$phpMussel['lang']['tip_see_the_documentation'] = 'Ver la <a href="https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.es.md#SECTION7">documentación</a> para obtener información sobre las distintas directivas de la configuración y sus propósitos.';
+$phpMussel['lang']['tip_see_the_documentation'] = 'Ver la <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.es.md#SECTION7">documentación</a> para obtener información sobre las distintas directivas de la configuración y sus propósitos.';
 $phpMussel['lang']['tip_updates'] = 'Hola, {username}.<br />La página de actualizaciones permite instalar, desinstalar y actualizar los diversos componentes de phpMussel (el paquete básico, firmas, plugins, archivos de L10N, etc).';
 $phpMussel['lang']['tip_upload_test'] = 'Hola, {username}.<br />La página para subir pruebas contiene un formulario de subir de archivos estándar, permite probar si un archivo normalmente se bloquea por phpMussel cuando intentar subirlo.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Cuentas';
@@ -224,7 +224,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – Actualizaciones';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Subir Prueba';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Algunos enlaces útiles:<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">Los problemas de phpMussel @ GitHub</a> – Página de problemas para phpMussel (apoyo, asistencia, etc).</li>
+            <li><a href="https://github.com/phpMussel/phpMussel/issues">Los problemas de phpMussel @ GitHub</a> – Página de problemas para phpMussel (apoyo, asistencia, etc).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Foro de discusión para phpMussel (apoyo, asistencia, etc).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Alternative download mirror for phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Una colección de sencillas herramientas de webmaster para proteger sitios web.</li>

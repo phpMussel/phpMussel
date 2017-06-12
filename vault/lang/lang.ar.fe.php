@@ -1,7 +1,7 @@
 <?php
 /**
  * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
+ * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -211,7 +211,7 @@ $phpMussel['lang']['tip_file_manager'] = 'مرحبا، {username}.<br />مدير
 $phpMussel['lang']['tip_home'] = 'مرحبا، {username}.<br />هذا هو الصفحة رئيسية ألfront-end phpMussel. اختر ارتباط من قائمة التنقل على اليسار للمتابعة.';
 $phpMussel['lang']['tip_login'] = 'الافتراضي اسم المستخدم: <span class="txtRd">admin</span> – الافتراضي كلمه السر: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'مرحبا، {username}.<br />اختار سجلات من القائمة أدناه لعرضها.';
-$phpMussel['lang']['tip_see_the_documentation'] = 'راجع <a href="https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.ar.md#SECTION7">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم.';
+$phpMussel['lang']['tip_see_the_documentation'] = 'راجع <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ar.md#SECTION7">وثائق</a> للحصول على معلومات حول مختلف توجيهات التكوين ونيتهم.';
 $phpMussel['lang']['tip_updates'] = 'مرحبا، {username}.<br />الصفحة تحديثات يسمح لك لتثبيت، إلغاء، ولتحديث المكونات المختلفة phpMussel (حزمة الأساسية، التوقيعات، الإضافات، الملفات L10N، إلخ).';
 $phpMussel['lang']['tip_upload_test'] = 'مرحبا، {username}.<br />الصفحة تحميل اختبار يحتوي على شكل تحميل الملفات القياسية، مما يسمح لك لاختبار ما إذا كان عادة يكون قد تم حظره ملف بواسطة phpMussel عند محاولة تحميله.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – حسابات';
@@ -224,7 +224,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – التحديثات';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – تحميل اختبار';
 
 $phpMussel['lang']['info_some_useful_links'] = 'بعض الروابط المفيدة:<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues" dir="ltr">phpMussel Issues @ GitHub</a> – صفحة المشكلات لphpMussel (الدعم والمساعدة، الخ).</li>
+            <li><a href="https://github.com/phpMussel/phpMussel/issues" dir="ltr">phpMussel Issues @ GitHub</a> – صفحة المشكلات لphpMussel (الدعم والمساعدة، الخ).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55" dir="ltr">phpMussel @ Spambot Security</a> – منتدى للنقاش ل phpMussel (الدعم والمساعدة، الخ).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/" dir="ltr">phpMussel @ SourceForge</a> – بديلة حمل مرآة للphpMussel.</li>
             <li><a href="https://websectools.com/" dir="ltr">WebSecTools.com</a> – بعض الأدوات البسيطة ل جعل المواقع آمنة.</li>

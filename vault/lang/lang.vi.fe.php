@@ -1,7 +1,7 @@
 <?php
 /**
  * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
+ * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -211,7 +211,7 @@ $phpMussel['lang']['tip_file_manager'] = 'Xin chào, {username}.<br />Quản lý
 $phpMussel['lang']['tip_home'] = 'Xin chào, {username}.<br />Đây là trang chủ cho các front-end phpMussel. Chọn một liên kết từ thực đơn bên trái để tiếp tục.';
 $phpMussel['lang']['tip_login'] = 'Tên người dùng mặc định: <span class="txtRd">admin</span> – Mật khẩu mặc định: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Xin chào, {username}.<br />Chọn một bản ghi từ danh sách dưới đây để xem nội dung của bản ghi này.';
-$phpMussel['lang']['tip_see_the_documentation'] = 'Xem <a href="https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.vi.md#SECTION7">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ.';
+$phpMussel['lang']['tip_see_the_documentation'] = 'Xem <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.vi.md#SECTION7">tài liệu</a> để biết thông tin về các chỉ thị cấu hình khác nhau và mục đích của họ.';
 $phpMussel['lang']['tip_updates'] = 'Xin chào, {username}.<br />Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho phpMussel (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv).';
 $phpMussel['lang']['tip_upload_test'] = 'Xin chào, {username}.<br />Trang kiểm tra tải lên chứa một hình thức tải lên tập tin chuẩn, mà cho phép bạn để kiểm tra liệu một tập tin sẽ thường bị chặn bởi phpMussel khi cố gắng để tải nó lên.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Tài Khoản';
@@ -224,7 +224,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – Cập Nhật';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Kiểm Tra Tải Lên';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Một số liên kết hữu ích:<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">Vấn đề cho phpMussel @ GitHub</a> – Trang các vấn đề cho phpMussel (hỗ trợ, vv).</li>
+            <li><a href="https://github.com/phpMussel/phpMussel/issues">Vấn đề cho phpMussel @ GitHub</a> – Trang các vấn đề cho phpMussel (hỗ trợ, vv).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Diễn đàn thảo luận cho phpMussel (hỗ trợ, vv).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Tải về gương thay thế cho phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Một bộ sưu tập các công cụ quản trị trang web đơn giản để bảo vệ các trang web.</li>

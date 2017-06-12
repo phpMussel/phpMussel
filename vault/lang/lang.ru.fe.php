@@ -1,7 +1,7 @@
 <?php
 /**
  * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
+ * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -211,7 +211,7 @@ $phpMussel['lang']['tip_file_manager'] = 'Привет, {username}.<br />Фай�
 $phpMussel['lang']['tip_home'] = 'Привет, {username}.<br />Это домашняя страница для phpMussel фронтенд. Выберите ссылку в меню навигации слева чтобы продолжить.';
 $phpMussel['lang']['tip_login'] = 'Стандартный имя пользователя: <span class="txtRd">admin</span> – Стандартный пароль: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Привет, {username}.<br />Выберите лог-файл из приведенного ниже списка чтобы прочитать содержимое лог-файл.';
-$phpMussel['lang']['tip_see_the_documentation'] = 'Просмотреть <a href="https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.ru.md#SECTION7">документации</a> для получения информации о различных директив конфигурации и их целей.';
+$phpMussel['lang']['tip_see_the_documentation'] = 'Просмотреть <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ru.md#SECTION7">документации</a> для получения информации о различных директив конфигурации и их целей.';
 $phpMussel['lang']['tip_updates'] = 'Привет, {username}.<br />Обновления страница позволяет устанавливать, удалить и обновления для различных компонентов phpMussel (пакет ядра, сигнатуры, плагины, L10N файлы, итд).';
 $phpMussel['lang']['tip_upload_test'] = 'Привет, {username}.<br />Тестовая загрузка страница содержит стандартную форму для загрузки файла, позволяя вам проверить нормально ли будет заблокирован файл от phpMussel когда попытке загрузить его.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Учетными Записями';
@@ -224,7 +224,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – Обновления';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Тестовая Загрузка';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Некоторые полезные ссылки:<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">Вопросы для phpMussel @ GitHub</a> – Страница вопросы для phpMussel (поддержка, помощь, и т.д.).</li>
+            <li><a href="https://github.com/phpMussel/phpMussel/issues">Вопросы для phpMussel @ GitHub</a> – Страница вопросы для phpMussel (поддержка, помощь, и т.д.).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Дискуссионный форум для phpMussel (поддержка, помощь, и т.д.).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Альтернативное скачать зеркало для phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Коллекция простых инструментов для веб-мастеров для защиты веб-сайтов.</li>

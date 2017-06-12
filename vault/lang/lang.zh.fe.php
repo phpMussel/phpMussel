@@ -1,7 +1,7 @@
 <?php
 /**
  * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
+ * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -211,7 +211,7 @@ $phpMussel['lang']['tip_file_manager'] = '你好，{username}。<br />文件管�
 $phpMussel['lang']['tip_home'] = '你好，{username}。<br />这是phpMussel的前端主页。从左侧的导航菜单中选择一个链接以继续。';
 $phpMussel['lang']['tip_login'] = '标准用户名： <span class="txtRd">admin</span> – 标准密码： <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = '你好，{username}。<br />选择一个日志从下面的列表以查看那个日志的内容。';
-$phpMussel['lang']['tip_see_the_documentation'] = '请参阅<a href="https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.zh.md#SECTION7">文档</a>以获取有关各种配置指令的信息和他们的目的。';
+$phpMussel['lang']['tip_see_the_documentation'] = '请参阅<a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.zh.md#SECTION7">文档</a>以获取有关各种配置指令的信息和他们的目的。';
 $phpMussel['lang']['tip_updates'] = '你好，{username}。<br />更新页面允许您安装，卸载，和更新phpMussel的各种组件（核心包，签名，插件，L10N文件，等等）。';
 $phpMussel['lang']['tip_upload_test'] = '你好，{username}。<br />上传测试页面包含标准文件上传表单，允许您测试是否文件通常会被阻止通过phpMussel当尝试上传他们。';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – 账户';
@@ -224,7 +224,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – 更新';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – 上传测试';
 
 $phpMussel['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel问题 ＠ GitHub</a> – phpMussel问题页面（支持，协助，等等）。</li>
+            <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel问题 ＠ GitHub</a> – phpMussel问题页面（支持，协助，等等）。</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel ＠ Spambot Security</a> – phpMussel讨论论坛（支持，协助，等等）。</li>
             <li><a href="https://www.oschina.net/p/phpMussel">phpMussel＠开源中国社区</a> – phpMussel页面托管在开源中国社区。</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel ＠ SourceForge</a> – phpMussel替代下载镜像。</li>

@@ -1,7 +1,7 @@
 <?php
 /**
  * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
+ * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -211,7 +211,7 @@ $phpMussel['lang']['tip_file_manager'] = '你好，{username}。<br />文件管�
 $phpMussel['lang']['tip_home'] = '你好，{username}。<br />這是phpMussel的前端主頁。從左側的導航菜單中選擇一個鏈接以繼續。';
 $phpMussel['lang']['tip_login'] = '標準用戶名： <span class="txtRd">admin</span> – 標準密碼： <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = '你好，{username}。<br />選擇一個日誌從下面的列表以查看那個日誌的內容。';
-$phpMussel['lang']['tip_see_the_documentation'] = '請參閱<a href="https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.zh-TW.md#SECTION7">文檔</a>以獲取有關各種配置指令的信息和他們的目的。';
+$phpMussel['lang']['tip_see_the_documentation'] = '請參閱<a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.zh-TW.md#SECTION7">文檔</a>以獲取有關各種配置指令的信息和他們的目的。';
 $phpMussel['lang']['tip_updates'] = '你好，{username}。<br />更新頁面允許您安裝，卸載，和更新phpMussel的各種組件（核心包，簽名，插件，L10N文件，等等）。';
 $phpMussel['lang']['tip_upload_test'] = '你好，{username}。<br />上傳測試頁麵包含標准文件上傳表單，允許您測試是否文件通常會被阻止通過phpMussel當嘗試上傳他們。';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – 帳戶';
@@ -224,7 +224,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – 更新';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – 上傳測試';
 
 $phpMussel['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel問題 ＠ GitHub</a> – phpMussel問題頁面（支持，協助，等等）。</li>
+            <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel問題 ＠ GitHub</a> – phpMussel問題頁面（支持，協助，等等）。</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel ＠ Spambot Security</a> – phpMussel討論論壇（支持，協助，等等）。</li>
             <li><a href="https://www.oschina.net/p/phpMussel">phpMussel＠开源中国社区</a> – phpMussel頁面託管在開源中國社區。</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel ＠ SourceForge</a> – phpMussel替代下載鏡像。</li>

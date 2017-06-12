@@ -1,7 +1,7 @@
 <?php
 /**
  * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
+ * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -211,7 +211,7 @@ $phpMussel['lang']['tip_file_manager'] = 'Hello, {username}.<br />The file manag
 $phpMussel['lang']['tip_home'] = 'Hello, {username}.<br />This is the homepage for the phpMussel front-end. Select a link from the navigation menu on the left to continue.';
 $phpMussel['lang']['tip_login'] = 'Default username: <span class="txtRd">admin</span> – Default password: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Hello, {username}.<br />Select a logfile from the list below to view the contents of that logfile.';
-$phpMussel['lang']['tip_see_the_documentation'] = 'See the <a href="https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.en.md#SECTION7">documentation</a> for information about the various configuration directives and their purposes.';
+$phpMussel['lang']['tip_see_the_documentation'] = 'See the <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.en.md#SECTION7">documentation</a> for information about the various configuration directives and their purposes.';
 $phpMussel['lang']['tip_updates'] = 'Hello, {username}.<br />The updates page allows you to install, uninstall, and update the various components of phpMussel (the core package, signatures, plugins, L10N files, etc).';
 $phpMussel['lang']['tip_upload_test'] = 'Hello, {username}.<br />The upload test page contains a standard file upload form, allowing you to test whether a file would normally be blocked by phpMussel when attempting to upload it.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Accounts';
@@ -224,7 +224,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – Updates';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload Test';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Some useful links:<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel Issues @ GitHub</a> – Issues page for phpMussel (support, assistance, etc).</li>
+            <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Issues @ GitHub</a> – Issues page for phpMussel (support, assistance, etc).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Discussion forum for phpMussel (support, assistance, etc).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Alternative download mirror for phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – A collection of simple webmaster tools to secure websites.</li>

@@ -1,7 +1,7 @@
 <?php
 /**
  * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
+ * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -211,7 +211,7 @@ $phpMussel['lang']['tip_file_manager'] = 'Bonjour, {username}.<br />Le gestionna
 $phpMussel['lang']['tip_home'] = 'Bonjour, {username}.<br />C\'est la page d\'accueil de l\'accès frontal de phpMussel. Sélectionnez un lien dans le menu de navigation à gauche pour continuer.';
 $phpMussel['lang']['tip_login'] = 'Nom d\'utilisateur défaut: <span class="txtRd">admin</span> – Mot de passe défaut: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = 'Bonjour, {username}.<br />Sélectionnez un fichier journal dans la liste ci-dessous pour afficher le contenu de ce fichier journal.';
-$phpMussel['lang']['tip_see_the_documentation'] = 'Voir la <a href="https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.fr.md#SECTION7">documentation</a> pour information sur les différentes directives de la configuration et leurs objectifs.';
+$phpMussel['lang']['tip_see_the_documentation'] = 'Voir la <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.fr.md#SECTION7">documentation</a> pour information sur les différentes directives de la configuration et leurs objectifs.';
 $phpMussel['lang']['tip_updates'] = 'Bonjour, {username}.<br />La page des mises à jour vous permet d\'installer, de désinstaller et de mettre à jour les différentes composantes de phpMussel (le paquet de base, signatures, plugins, fichiers de L10N, etc).';
 $phpMussel['lang']['tip_upload_test'] = 'Bonjour, {username}.<br />La page pour tester les téléchargements contient un formulaire pour le téléchargement de fichiers standard, vous permettant de tester si un fichier serait normalement être bloqué par phpMussel quand vous essayez de le télécharger.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – Comptes';
@@ -224,7 +224,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – Mises à Jour';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Test de Télécharger';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Quelques liens utiles:<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">Les problèmes de phpMussel @ GitHub</a> – Page de problèmes pour phpMussel (soutien, assistance, etc).</li>
+            <li><a href="https://github.com/phpMussel/phpMussel/issues">Les problèmes de phpMussel @ GitHub</a> – Page de problèmes pour phpMussel (soutien, assistance, etc).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Forum de discussion pour phpMussel (soutien, assistance, etc).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Alternative download mirror for phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Une collection de simples outils webmaster pour sécuriser les sites Web.</li>

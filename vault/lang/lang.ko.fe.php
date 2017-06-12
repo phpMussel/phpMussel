@@ -1,7 +1,7 @@
 <?php
 /**
  * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/Maikuolan/phpMussel/ GitHub}.
+ * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -211,7 +211,7 @@ $phpMussel['lang']['tip_file_manager'] = '안녕하세요, {username}.<br />파�
 $phpMussel['lang']['tip_home'] = '안녕하세요, {username}.<br />이것은 phpMussel 프론트 엔드의 홈페이지입니다. 계속하려면 왼쪽 탐색 메뉴에서 링크를 선택합니다.';
 $phpMussel['lang']['tip_login'] = '기본 사용자 이름: <span class="txtRd">admin</span> – 기본 암호: <span class="txtRd">password</span>';
 $phpMussel['lang']['tip_logs'] = '안녕하세요, {username}.<br />로그의 내용을 보려면 다음 목록에서 로그를 선택합니다.';
-$phpMussel['lang']['tip_see_the_documentation'] = '설정 지시어에 대한 자세한 내용은 <a href="https://github.com/Maikuolan/phpMussel/blob/master/_docs/readme.ko.md#SECTION7">문서를</a> 참조하십시오.';
+$phpMussel['lang']['tip_see_the_documentation'] = '설정 지시어에 대한 자세한 내용은 <a href="https://github.com/phpMussel/phpMussel/blob/master/_docs/readme.ko.md#SECTION7">문서를</a> 참조하십시오.';
 $phpMussel['lang']['tip_updates'] = '안녕하세요, {username}.<br />업데이트 페이지는 phpMussel의 다양한 구성 요소를 설치, 제거, 업데이트 할 수 있습니다 (코어 패키지, 서명, L10N 파일 등).';
 $phpMussel['lang']['tip_upload_test'] = '안녕하세요, {username}.<br />업로드 테스트 페이지 표준 파일 업로드 양식을 포함합니다 파일이 일반적 차단 여부를 테스트 할 수 있습니다.';
 $phpMussel['lang']['title_accounts'] = 'phpMussel – 계정';
@@ -224,7 +224,7 @@ $phpMussel['lang']['title_updates'] = 'phpMussel – 업데이트';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – 업로드 테스트';
 
 $phpMussel['lang']['info_some_useful_links'] = '유용한 링크:<ul>
-            <li><a href="https://github.com/Maikuolan/phpMussel/issues">phpMussel 문제 @ GitHub</a> – phpMussel 문제 페이지 (지원, 원조 등).</li>
+            <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel 문제 @ GitHub</a> – phpMussel 문제 페이지 (지원, 원조 등).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – phpMussel 토론 포럼 (지원, 원조 등).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – phpMussel 대체 다운로드 거울.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – 웹 사이트를 보호하기 위해 간단한 웹 마스터 도구 모음.</li>
