@@ -1,7 +1,7 @@
 <?php
 /**
- * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
+ * This file is a part of the phpMussel package.
+ * Homepage: https://phpmussel.github.io/
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.05.28).
+ * This file: Indonesian language data for the front-end (last modified: 2017.06.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -228,7 +228,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Forum diskusi untuk phpMussel (dukungan, bantuan, dll).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Cermin download alternatif untuk phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Sebuah kumpulan alat webmaster sederhana untuk mengamankan situs web.</li>
-            <li><a href="http://www.clamav.net/">ClamavNet</a> – Halaman utama untuk ClamAV (ClamAV® adalah injin antivirus open source untuk mendeteksi trojan, virus, malware dan ancaman berbahaya lainnya).</li>
+            <li><a href="https://www.clamav.net/">ClamavNet</a> – Halaman utama untuk ClamAV (ClamAV® adalah injin antivirus open source untuk mendeteksi trojan, virus, malware dan ancaman berbahaya lainnya).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Perusahaan keamanan komputer yang menawarkan tanda tangan tambahan untuk ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Database phishing digunakan oleh scanner URL phpMussel.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Sumber belajar dan diskusi PHP.</li>

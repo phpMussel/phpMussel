@@ -1,7 +1,7 @@
 <?php
 /**
- * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
+ * This file is a part of the phpMussel package.
+ * Homepage: https://phpmussel.github.io/
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.05.28).
+ * This file: Arabic language data for the front-end (last modified: 2017.06.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -228,7 +228,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'بعض الروابط المفي
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55" dir="ltr">phpMussel @ Spambot Security</a> – منتدى للنقاش ل phpMussel (الدعم والمساعدة، الخ).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/" dir="ltr">phpMussel @ SourceForge</a> – بديلة حمل مرآة للphpMussel.</li>
             <li><a href="https://websectools.com/" dir="ltr">WebSecTools.com</a> – بعض الأدوات البسيطة ل جعل المواقع آمنة.</li>
-            <li><a href="http://www.clamav.net/" dir="ltr">ClamavNet</a> – الرئيسية ClamAV (ClamAV® هو محرك مكافحة الفيروسات مفتوحة المصدر للكشف عن أحصنة طروادة والفيروسات، والبرمجيات الخبيثة وغيرها من التهديدات الخبيثة).</li>
+            <li><a href="https://www.clamav.net/" dir="ltr">ClamavNet</a> – الرئيسية ClamAV (ClamAV® هو محرك مكافحة الفيروسات مفتوحة المصدر للكشف عن أحصنة طروادة والفيروسات، والبرمجيات الخبيثة وغيرها من التهديدات الخبيثة).</li>
             <li><a href="https://www.securiteinfo.com/" dir="ltr">SecuriteInfo.com</a> – شركة أمن الكمبيوتر التي توفر التوقيعات التكميلية لكلاماف.</li>
             <li><a href="http://www.phishtank.com/" dir="ltr">PhishTank</a> – التصيد قاعدة البيانات التي تستخدمها URL الماسح الضوئي phpMussel.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/" dir="ltr">Global PHP Group @ Facebook</a> – PHP مصادر التعلم والمناقشة.</li>

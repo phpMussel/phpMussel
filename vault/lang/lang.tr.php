@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2017.06.09).
+ * This file: Turkish language data (last modified: 2017.06.12).
  * (NOT COMPLETE)
  */
 
@@ -69,7 +69,7 @@ $phpMussel['lang']['scan_extensions_missing'] = 'Failed (missing required extens
 $phpMussel['lang']['scan_filename_manipulation_detected'] = 'Filename manipulation detected';
 $phpMussel['lang']['scan_missing_filename'] = 'Missing filename';
 $phpMussel['lang']['scan_not_archive'] = 'Failed (empty or not an archive)!';
-$phpMussel['lang']['scan_no_problems_found'] = 'No problems found.';
+$phpMussel['lang']['scan_no_problems_found'] = 'Hiçbir sorun bulunamadı.';
 $phpMussel['lang']['scan_reading'] = 'Reading';
 $phpMussel['lang']['scan_signature_file_corrupted'] = 'Signature file corrupted';
 $phpMussel['lang']['scan_signature_file_missing'] = 'Signature file missing';
@@ -80,43 +80,43 @@ $phpMussel['lang']['started'] = 'Started';
 $phpMussel['lang']['too_many_urls'] = 'Too many URLs';
 $phpMussel['lang']['upload_error_1'] = 'Filesize exceeds the upload_max_filesize directive. ';
 $phpMussel['lang']['upload_error_2'] = 'Filesize exceeds form-specified filesize limit. ';
-$phpMussel['lang']['upload_error_34'] = 'Upload failure! Please contact the hostmaster for assistance! ';
-$phpMussel['lang']['upload_error_6'] = 'Upload directory missing! Please contact the hostmaster for assistance! ';
-$phpMussel['lang']['upload_error_7'] = 'Disc-write error! Please contact the hostmaster for assistance! ';
-$phpMussel['lang']['upload_error_8'] = 'PHP misconfiguration detected! Please contact the hostmaster for assistance! ';
-$phpMussel['lang']['upload_limit_exceeded'] = 'Upload limit exceeded';
-$phpMussel['lang']['wrong_password'] = 'Wrong password; Action denied.';
-$phpMussel['lang']['x_does_not_exist'] = 'does not exist';
+$phpMussel['lang']['upload_error_34'] = 'Yükleme hatası! Lütfen yardım için hostmaster ile iletişime geçin! ';
+$phpMussel['lang']['upload_error_6'] = 'Yükleme dizini eksik! Lütfen yardım için hostmaster ile iletişime geçin! ';
+$phpMussel['lang']['upload_error_7'] = 'Disk yazma hatası! Lütfen yardım için hostmaster ile iletişime geçin! ';
+$phpMussel['lang']['upload_error_8'] = 'PHP yanlış yapılandırması tespit edildi! Lütfen yardım için hostmaster ile iletişime geçin! ';
+$phpMussel['lang']['upload_limit_exceeded'] = 'Yükleme sınırı aşıldı';
+$phpMussel['lang']['wrong_password'] = 'Yanlış şifre; Eylem reddedildi.';
+$phpMussel['lang']['x_does_not_exist'] = 'varolmayan';
 $phpMussel['lang']['_exclamation'] = '! ';
 $phpMussel['lang']['_exclamation_final'] = '!';
 $phpMussel['lang']['_fullstop'] = '. ';
 $phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
- - Quit CLI.
- - Aliases: quit, exit.
+ - CLI\'den çıkın.
+ - Takma adları: quit, exit.
  md5_file
- - Generate MD5 signatures from files [Syntax: md5_file filename].
- - Alias: m.
+ - Dosyalardan MD5 imzaları oluştur [Sözdizimi: md5_file dosya-adı].
+ - Takma ad: m.
  sha1_file
- - Generate SHA1 signatures from files [Syntax: sha1_file filename].
+ - Dosyalardan SHA1 imzaları oluştur [Sözdizimi: sha1_file dosya-adı].
  md5
- - Generate MD5 signature from string [Syntax: md5 string].
+ - Dizeden MD5 imzası üret [Sözdizimi: md5 dizgesi].
  sha1
- - Generate SHA1 signature from string [Syntax: sha1 string].
+ - Dizeden SHA1 imzası üret [Sözdizimi: sha1 dizgesi].
  hex_encode
- - Convert binary string to hexadecimal [Syntax: hex_encode string].
- - Alias: x.
+ - İkili dizgeyi onaltılık olarak dönüştür [Sözdizimi: hex_encode dizgesi].
+ - Takma ad: x.
  hex_decode
- - Convert hexadecimal to binary string [Syntax: hex_decode string].
+ - Onaltılıyı ikili dizeye olarak dönüştür [Sözdizimi: hex_decode dizgesi].
  base64_encode
- - Convert binary string to base64 string [Syntax: base64_encode string].
- - Alias: b.
+ - İkili'e base64 hale dönüştür [Sözdizimi: base64_encode dizgesi].
+ - Takma ad: b.
  base64_decode
- - Convert base64 string to binary string [Syntax: base64_decode string].
+ - Base64'ü ikili hale dönüştür [Sözdizimi: base64_decode dizgesi].
  scan
- - Scan file or directory [Syntax: scan filename].
- - Alias: s.
+ - Dosya veya dizini tara [Sözdizimi: scan dosya-adı].
+ - Takma ad: s.
  c
- - Print this command list.
+ - Bu komut listesini yazdırın.
 ";

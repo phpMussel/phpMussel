@@ -1,7 +1,7 @@
 <?php
 /**
- * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
+ * This file is a part of the phpMussel package.
+ * Homepage: https://phpmussel.github.io/
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.05.28).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.06.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -228,7 +228,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'Một số liên kết hữu íc
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Diễn đàn thảo luận cho phpMussel (hỗ trợ, vv).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Tải về gương thay thế cho phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Một bộ sưu tập các công cụ quản trị trang web đơn giản để bảo vệ các trang web.</li>
-            <li><a href="http://www.clamav.net/">ClamavNet</a> – Trang chủ cho ClamAV (ClamAV® là một công cụ chống vi rút mã nguồn mở để phát hiện trojan, vi rút, phần mềm độc hại và các mối đe dọa nguy hiểm khác).</li>
+            <li><a href="https://www.clamav.net/">ClamavNet</a> – Trang chủ cho ClamAV (ClamAV® là một công cụ chống vi rút mã nguồn mở để phát hiện trojan, vi rút, phần mềm độc hại và các mối đe dọa nguy hiểm khác).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Công ty bảo mật máy tính mã cung cấp chữ ký bổ sung cho ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Cơ sở dữ liệu lừa đảo sử dụng bởi các máy quét URL phpMussel.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP tài nguyên học tập và thảo luận.</li>

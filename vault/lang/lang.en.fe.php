@@ -1,7 +1,7 @@
 <?php
 /**
- * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
+ * This file is a part of the phpMussel package.
+ * Homepage: https://phpmussel.github.io/
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.05.28).
+ * This file: English language data for the front-end (last modified: 2017.06.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -228,7 +228,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'Some useful links:<ul>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Discussion forum for phpMussel (support, assistance, etc).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Alternative download mirror for phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – A collection of simple webmaster tools to secure websites.</li>
-            <li><a href="http://www.clamav.net/">ClamavNet</a> – ClamAV homepage (ClamAV® is an open source antivirus engine for detecting trojans, viruses, malware &amp; other malicious threats).</li>
+            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV homepage (ClamAV® is an open source antivirus engine for detecting trojans, viruses, malware &amp; other malicious threats).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Computer security company that offers supplementary signatures for ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Phishing database utilised by the phpMussel URL scanner.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP learning resources and discussion.</li>

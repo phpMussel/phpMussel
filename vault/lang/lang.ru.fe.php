@@ -1,7 +1,7 @@
 <?php
 /**
- * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
+ * This file is a part of the phpMussel package.
+ * Homepage: https://phpmussel.github.io/
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.05.28).
+ * This file: Russian language data for the front-end (last modified: 2017.06.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -228,7 +228,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'Некоторые полезн�
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Дискуссионный форум для phpMussel (поддержка, помощь, и т.д.).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Альтернативное скачать зеркало для phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Коллекция простых инструментов для веб-мастеров для защиты веб-сайтов.</li>
-            <li><a href="http://www.clamav.net/">ClamavNet</a> – ClamAV домашняя страница (ClamAV® является антивирусный движок с открытым исходным кодом для обнаружения троянских программ, вирусов, вредоносных программ и других угроз).</li>
+            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV домашняя страница (ClamAV® является антивирусный движок с открытым исходным кодом для обнаружения троянских программ, вирусов, вредоносных программ и других угроз).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Компьютерной безопасности компании, которая предлагает дополнительные сигнатуры для ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Фишинг базе данных, используется в сканером URL для phpMussel.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP учебных ресурсов и обсуждение.</li>

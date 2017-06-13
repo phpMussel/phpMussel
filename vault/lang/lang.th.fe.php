@@ -1,7 +1,7 @@
 <?php
 /**
- * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
+ * This file is a part of the phpMussel package.
+ * Homepage: https://phpmussel.github.io/
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.05.28).
+ * This file: Thai language data for the front-end (last modified: 2017.06.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -228,7 +228,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'ลิงก์ที่เป�
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – ฟอรั่มการอภิปรายสำหรับ phpMussel (สนับสนุน, ความช่วยเหลือ, ฯลฯ).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – สถานที่ดาวน์โหลดอื่นสำหรับ phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – คอลเลกชันเครื่องมือเว็บมาสเตอร์ง่ายสำหรับการรักษาความปลอดภัยเว็บไซต์.</li>
-            <li><a href="http://www.clamav.net/">ClamavNet</a> – โฮมเพจ ClamAV (ClamAV® เป็นเครื่องมือป้องกันไวรัสแบบโอเพนซอร์สสำหรับการตรวจจับโทรจันไวรัสมัลแวร์และภัยคุกคามที่เป็นอันตรายอื่น).</li>
+            <li><a href="https://www.clamav.net/">ClamavNet</a> – โฮมเพจ ClamAV (ClamAV® เป็นเครื่องมือป้องกันไวรัสแบบโอเพนซอร์สสำหรับการตรวจจับโทรจันไวรัสมัลแวร์และภัยคุกคามที่เป็นอันตรายอื่น).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – บริษัทรักษาความปลอดภัยคอมพิวเตอร์ที่เสนอลายเซ็นเสริมสำหรับ ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – ฐานข้อมูลฟิชชิ่งใช้โดยเครื่องสแกน URL phpMussel.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – แหล่งเรียนรู้ PHP และการสนทนา.</li>

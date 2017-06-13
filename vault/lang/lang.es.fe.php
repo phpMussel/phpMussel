@@ -1,7 +1,7 @@
 <?php
 /**
- * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
+ * This file is a part of the phpMussel package.
+ * Homepage: https://phpmussel.github.io/
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data for the front-end (last modified: 2017.05.28).
+ * This file: Spanish language data for the front-end (last modified: 2017.06.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -228,7 +228,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'Algunos enlaces útiles:<ul>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Foro de discusión para phpMussel (apoyo, asistencia, etc).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Alternative download mirror for phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Una colección de sencillas herramientas de webmaster para proteger sitios web.</li>
-            <li><a href="http://www.clamav.net/">ClamavNet</a> – Página principal de ClamAV (ClamAV® es un motor antivirus de código abierto para detectar troyanos, virus, malware y otras amenazas maliciosas).</li>
+            <li><a href="https://www.clamav.net/">ClamavNet</a> – Página principal de ClamAV (ClamAV® es un motor antivirus de código abierto para detectar troyanos, virus, malware y otras amenazas maliciosas).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Compañía de seguridad informática que ofrece firmas complementarias para ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Base de datos de phishing utilizada por el escáner URL de phpMussel.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP recursos de aprendizaje y discusión.</li>

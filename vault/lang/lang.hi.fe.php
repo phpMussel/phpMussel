@@ -1,7 +1,7 @@
 <?php
 /**
- * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
+ * This file is a part of the phpMussel package.
+ * Homepage: https://phpmussel.github.io/
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.05.29).
+ * This file: Hindi language data for the front-end (last modified: 2017.06.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -228,7 +228,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'कुछ उपयोगी ल
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – phpMussel के लिए चर्चा मंच (सहायता के लिए, आदि)।</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – phpMussel के लिए वैकल्पिक डाउनलोड आईना।</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – वेबसाइटों को सुरक्षित करने के लिए सरल वेबमास्टर उपकरण का एक संग्रह।</li>
-            <li><a href="http://www.clamav.net/">ClamavNet</a> – ClamAV (क्लैमएव) होमपेज (ClamAV® ट्रोजन, वायरस, मैलवेयर और अन्य दुर्भावनापूर्ण खतरों का पता लगाने के लिए एक खुला स्रोत एंटीवायरस इंजन है)।</li>
+            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV (क्लैमएव) होमपेज (ClamAV® ट्रोजन, वायरस, मैलवेयर और अन्य दुर्भावनापूर्ण खतरों का पता लगाने के लिए एक खुला स्रोत एंटीवायरस इंजन है)।</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – कम्प्यूटर सुरक्षा कंपनी जो ClamAV (क्लैमएव) के लिए अनुपूरक हस्ताक्षर प्रदान करती है।</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – phpMussel यूआरएल स्कैनर द्वारा उपयोग किए गए फ़िशिंग डेटाबेस।</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">वैश्विक PHP समूह @ Facebook</a> – PHP सीखने संसाधन और चर्चा।</li>

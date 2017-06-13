@@ -1,7 +1,7 @@
 <?php
 /**
- * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
+ * This file is a part of the phpMussel package.
+ * Homepage: https://phpmussel.github.io/
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2017.05.30).
+ * This file: Portuguese language data for the front-end (last modified: 2017.06.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -228,7 +228,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'Alguns links úteis:<ul>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Fórum de discussão para phpMussel (apoio, assistência, etc).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Espelho de download alternativo para phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Uma coleção de ferramentas de webmaster simples para proteger sites.</li>
-            <li><a href="http://www.clamav.net/">ClamavNet</a> – Página principal para ClamAV (ClamAV® ClamAV é um mecanismo de antivírus de código aberto para detectar trojans, vírus, malware e outras ameaças maliciosas).</li>
+            <li><a href="https://www.clamav.net/">ClamavNet</a> – Página principal para ClamAV (ClamAV® ClamAV é um mecanismo de antivírus de código aberto para detectar trojans, vírus, malware e outras ameaças maliciosas).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Empresa de segurança informática que oferece assinaturas complementares para o ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Base de dados de phishing utilizada pelo phpMussel URL scanner.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP recursos de aprendizagem e discussão.</li>

@@ -1,7 +1,7 @@
 <?php
 /**
- * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
+ * This file is a part of the phpMussel package.
+ * Homepage: https://phpmussel.github.io/
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.05.30).
+ * This file: French language data for the front-end (last modified: 2017.06.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -228,7 +228,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'Quelques liens utiles:<ul>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Forum de discussion pour phpMussel (soutien, assistance, etc).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Alternative download mirror for phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Une collection de simples outils webmaster pour sécuriser les sites Web.</li>
-            <li><a href="http://www.clamav.net/">ClamavNet</a> – Page d\'accueil de ClamAV (ClamAV® est un moteur antivirus open source pour détecter les trojans, les virus, les logiciels malveillants et autres menaces malveillantes).</li>
+            <li><a href="https://www.clamav.net/">ClamavNet</a> – Page d\'accueil de ClamAV (ClamAV® est un moteur antivirus open source pour détecter les trojans, les virus, les logiciels malveillants et autres menaces malveillantes).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Compagnie de sécurité informatique qui offre des signatures supplémentaires pour ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Base de données d\'hameçonnage utilisée par le scanner URL de phpMussel.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – Ressources d\'apprentissage PHP et discussion.</li>

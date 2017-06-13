@@ -1,7 +1,7 @@
 <?php
 /**
- * This file is a part of the phpMussel package, and can be downloaded for free
- * from {@link https://github.com/phpMussel/phpMussel/ GitHub}.
+ * This file is a part of the phpMussel package.
+ * Homepage: https://phpmussel.github.io/
  *
  * PHPMUSSEL COPYRIGHT 2013 AND BEYOND BY THE PHPMUSSEL TEAM.
  *
@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.05.28).
+ * This file: Dutch language data for the front-end (last modified: 2017.06.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -228,7 +228,7 @@ $phpMussel['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Discussieforum voor phpMussel (steun, hulp, ezv).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Een alternatieve download-spiegel voor phpMussel.</li>
             <li><a href="https://websectools.com/">WebSecTools.com</a> – Een verzameling van eenvoudige webmaster tools waarmee websites te beveiligen.</li>
-            <li><a href="http://www.clamav.net/">ClamavNet</a> – ClamAV startpagina (ClamAV® is een open source antivirus engine voor het opsporen van trojans, virussen, malware en andere bedreigingen).</li>
+            <li><a href="https://www.clamav.net/">ClamavNet</a> – ClamAV startpagina (ClamAV® is een open source antivirus engine voor het opsporen van trojans, virussen, malware en andere bedreigingen).</li>
             <li><a href="https://www.securiteinfo.com/">SecuriteInfo.com</a> – Computerbeveiliging bedrijf dat aanvullende signatures biedt voor ClamAV.</li>
             <li><a href="http://www.phishtank.com/">PhishTank</a> – Phishing-database gebruikt door de phpMussel URL scanner.</li>
             <li><a href="https://www.facebook.com/groups/2204685680/">Global PHP Group @ Facebook</a> – PHP leermiddelen en discussie.</li>
