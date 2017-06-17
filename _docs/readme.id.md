@@ -776,6 +776,7 @@ Nilai | Menggunakan
 `HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy
 `HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy
 `CF-Connecting-IP` | Cloudflare reverse proxy (alternatif; jika di atas tidak bekerja)
+`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy
 `X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/)
 *Ditetapkan oleh konfigurasi server.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | Tidak ada reverse proxy (nilai default).
@@ -783,4 +784,4 @@ Nilai | Menggunakan
 ---
 
 
-Terakhir Diperbarui: 9 Juni 2017 (2017.06.09).
+Terakhir Diperbarui: 18 Juni 2017 (2017.06.18).

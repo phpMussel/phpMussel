@@ -776,11 +776,70 @@ Value | Using
 `HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy
 `HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy
 `CF-Connecting-IP` | Cloudflare reverse proxy (alternative; if the above doesn't work)
+`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy
 `X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/)
 *Defined by server configuration.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | No reverse proxy (default value).
 
+#### How to access specific details about files when they are scanned?
+
+You can access specific details about files when they are scanned by assigning an array to use for this purpose prior to instructing phpMussel to scan them.
+
+In the example below, `$Foo` is assigned for this purpose. After scanning `/file/path/...`, detailed information about the files contained by `/file/path/...` will be contained by `$Foo`.
+
+```PHP
+<?php
+require 'phpmussel/loader.php';
+
+$phpMussel['Set-Scan-Debug-Array']($Foo);
+
+$Results = $phpMussel['Scan']('/file/path/...');
+
+var_dump($Foo);
+```
+
+The array is a multidimensional array consisting of elements representing each file being scanned and sub-elements representing the details about these files. These sub-elements are as follows:
+
+- Filename
+- FromCache
+- Depth
+- Size
+- MD5
+- SHA1
+- CRC32B
+- 2CC
+- 4CC
+- ScanPhase
+- Container
+- FileSwitch
+- Is_ELF
+- Is_Graphics
+- Is_HTML
+- Is_Email
+- Is_MachO
+- Is_PDF
+- Is_SWF
+- Is_PE
+- Is_Not_HTML
+- Is_Not_PHP
+- NumOfSections
+- PEFileDescription
+- PEFileVersion
+- PEProductName
+- PEProductVersion
+- PECopyright
+- PEOriginalFilename
+- PECompanyName
+- Results
+- Output
+
+Optionally, this array can be destroyed by using the following:
+
+```PHP
+$phpMussel['Destroy-Scan-Debug-Array']($Foo);
+```
+
 ---
 
 
-Last Updated: 9 June 2017 (2017.06.09).
+Last Updated: 18 June 2017 (2017.06.18).

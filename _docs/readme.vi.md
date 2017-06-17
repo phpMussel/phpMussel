@@ -776,6 +776,7 @@ Giá trị | Sử dụng
 `HTTP_INCAP_CLIENT_IP` | Proxy reverse Incapsula
 `HTTP_CF_CONNECTING_IP` | Proxy reverse Cloudflare
 `CF-Connecting-IP` | Proxy reverse Cloudflare (một sự thay thế; nếu ở trên không hoạt động)
+`HTTP_X_FORWARDED_FOR` | Proxy reverse Cloudbric
 `X-Forwarded-For` | [Proxy reverse Squid](http://www.squid-cache.org/Doc/config/forwarded_for/)
 *Xác định bởi cấu hình máy chủ.* | [Proxy reverse Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | Không có proxy reverse (giá trị mặc định).
@@ -783,4 +784,4 @@ Giá trị | Sử dụng
 ---
 
 
-Lần cuối cập nhật: 9 Tháng Sáu 2017 (2017.06.09).
+Lần cuối cập nhật: 18 Tháng Sáu 2017 (2017.06.18).

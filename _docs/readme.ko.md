@@ -773,14 +773,15 @@ phpMussel은 파일을 차단합니다 | __위양성__ | 진정한 양성 (올�
 
 값 | 사용
 ---|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula 리버스 프록시.
-`HTTP_CF_CONNECTING_IP` | Cloudflare 리버스 프록시.
-`CF-Connecting-IP` | Cloudflare 리버스 프록시 (대체; 위가 잘되지 않는 경우).
-`X-Forwarded-For` | [Squid 리버스 프록시](http://www.squid-cache.org/Doc/config/forwarded_for/)。
-*서버 구성에 의해 정의됩니다.* | [Nginx 리버스 프록시](https://www.nginx.com/resources/admin-guide/reverse-proxy/)。
+`HTTP_INCAP_CLIENT_IP` | Incapsula 리버스 프록시
+`HTTP_CF_CONNECTING_IP` | Cloudflare 리버스 프록시
+`CF-Connecting-IP` | Cloudflare 리버스 프록시 (대체; 위가 잘되지 않는 경우)
+`HTTP_X_FORWARDED_FOR` | Cloudbric 리버스 프록시
+`X-Forwarded-For` | [Squid 리버스 프록시](http://www.squid-cache.org/Doc/config/forwarded_for/)
+*서버 구성에 의해 정의됩니다.* | [Nginx 리버스 프록시](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | 리버스 프록시는 없습니다 (기본값).
 
 ---
 
 
-최종 업데이트: 2017년 6월 9일.
+최종 업데이트: 2017년 6월 18일.

@@ -773,14 +773,15 @@ phpMusselは、ファイルをブロックします | __偽陽性__ | 真陽性�
 
 値 | 使用
 ---|---
-`HTTP_INCAP_CLIENT_IP` | Incapsulaリバース・プロキシ。
-`HTTP_CF_CONNECTING_IP` | Cloudflareリバース・プロキシ。
-`CF-Connecting-IP` | Cloudflareリバース・プロキシ（代替；上記がうまくいかない場合）。
-`X-Forwarded-For` | [Squidリバース・プロキシ](http://www.squid-cache.org/Doc/config/forwarded_for/)。
-*サーバー・コンフィグレーションによって定義されます。* | [Nginxリバース・プロキシ](https://www.nginx.com/resources/admin-guide/reverse-proxy/)。
+`HTTP_INCAP_CLIENT_IP` | Incapsulaリバース・プロキシ
+`HTTP_CF_CONNECTING_IP` | Cloudflareリバース・プロキシ
+`CF-Connecting-IP` | Cloudflareリバース・プロキシ（代替；上記がうまくいかない場合）
+`HTTP_X_FORWARDED_FOR` | Cloudbricリバース・プロキシ
+`X-Forwarded-For` | [Squidリバース・プロキシ](http://www.squid-cache.org/Doc/config/forwarded_for/)
+*サーバー・コンフィグレーションによって定義されます。* | [Nginxリバース・プロキシ](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | リバース・プロキシはありません（デフォルト値）。
 
 ---
 
 
-最終アップデート： 2017年6月9日。
+最終アップデート： 2017年6月18日。
