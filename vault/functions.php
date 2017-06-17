@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.06.09).
+ * This file: Functions file (last modified: 2017.06.18).
  */
 
 /**
@@ -1421,7 +1421,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     /** URL-encoded version of the scan target name. */
     $ofnSafe = urlencode($ofn);
 
+    /** Generate cache ID. */
     $phpMussel['HashCacheData'] = $md5 . md5($ofn);
+
+    /**
+     * Check for the existence of a cache entry corresponding to the file
+     * being scanned, and if it exists, use it instead of scanning the file.
+     */
     if (isset($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']])) {
         if (!$phpMussel['EOF']) {
             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
@@ -1433,6 +1439,27 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         if (!empty($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][3])) {
             $phpMussel['whyflagged'] .= $phpMussel['HexSafe']($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][3]);
         }
+
+        /** Set debug values, if this has been enabled. */
+        if (isset($phpMussel['DebugArr'])) {
+            $phpMussel['DebugArrKey'] = count($phpMussel['DebugArr']);
+            $phpMussel['DebugArr'][$phpMussel['DebugArrKey']] = array(
+                'Filename' => $ofn,
+                'FromCache' => true,
+                'Depth' => $dpt,
+                'Size' => $str_len,
+                'MD5' => $md5,
+                'SHA1' => $sha,
+                'CRC32B' => $crc,
+                '2CC' => $twocc,
+                '4CC' => $fourcc,
+                'ScanPhase' => $phpMussel['memCache']['phase'],
+                'Container' => $phpMussel['memCache']['container'],
+                'Results' => !$out ? 1 : 2,
+                'Output' => $out
+            );
+        }
+
         if (!$out) {
             return array(1, '');
         }
@@ -1941,6 +1968,47 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         !substr_count(',php*,', ',' . $gzxts . ',') &&
         !substr_count($str_hex_norm, '3c3f706870')
     ) || $is_pe);
+
+    /** Set debug values, if this has been enabled. */
+    if (isset($phpMussel['DebugArr'])) {
+        $phpMussel['DebugArrKey'] = count($phpMussel['DebugArr']);
+        $phpMussel['DebugArr'][$phpMussel['DebugArrKey']] = array(
+            'Filename' => $ofn,
+            'FromCache' => false,
+            'Depth' => $dpt,
+            'Size' => $str_len,
+            'MD5' => $md5,
+            'SHA1' => $sha,
+            'CRC32B' => $crc,
+            '2CC' => $twocc,
+            '4CC' => $fourcc,
+            'ScanPhase' => $phase,
+            'Container' => $container,
+            'FileSwitch' => $fileswitch,
+            'Is_ELF' => $is_elf,
+            'Is_Graphics' => $is_graphics,
+            'Is_HTML' => $is_html,
+            'Is_Email' => $is_email,
+            'Is_MachO' => $is_macho,
+            'Is_PDF' => $is_pdf,
+            'Is_SWF' => $is_swf,
+            'Is_PE' => $is_pe,
+            'Is_Not_HTML' => $is_not_html,
+            'Is_Not_PHP' => $is_not_php
+        );
+        if ($is_pe) {
+            $phpMussel['DebugArr'][$phpMussel['DebugArrKey']] += array(
+                'NumOfSections' => $NumOfSections,
+                'PEFileDescription' => $PEFileDescription,
+                'PEFileVersion' => $PEFileVersion,
+                'PEProductName' => $PEProductName,
+                'PEProductVersion' => $PEProductVersion,
+                'PECopyright' => $PECopyright,
+                'PEOriginalFilename' => $PEOriginalFilename,
+                'PECompanyName' => $PECompanyName
+            );
+        }
+    }
 
     /** Plugin hook: "during_scan". */
     if (!empty($phpMussel['MusselPlugins']['hookcounts']['during_scan'])) {
@@ -4215,6 +4283,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         );
     }
 
+    /** Set final debug values, if this has been enabled. */
+    if (isset($phpMussel['DebugArr']) && isset($phpMussel['DebugArrKey'])) {
+        $phpMussel['DebugArr'][$phpMussel['DebugArrKey']]['Results'] = !$out ? 1 : 2;
+        $phpMussel['DebugArr'][$phpMussel['DebugArrKey']]['Output'] = $out;
+    }
+
     if (!$out) {
         return array(1, '');
     }
@@ -4461,10 +4535,13 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             '[phpMussel] ' . $phpMussel['lang']['required_variables_not_defined']
         );
     }
+
+    /** Prepare signature files for the scan process. */
     if (empty($phpMussel['memCache']['OrganisedSigFiles'])) {
         $phpMussel['OrganiseSigFiles']();
         $phpMussel['memCache']['OrganisedSigFiles'] = true;
     }
+
     if ($phpMussel['EOF']) {
         $phpMussel['whyflagged'] =
         $phpMussel['killdata'] =
@@ -5384,6 +5461,23 @@ $phpMussel['Fork'] = function ($f = '', $ofn = '') use (&$phpMussel) {
     return $s;
 };
 
+/** Assigns an array to use for dumping scan debug information (optional). */
+$phpMussel['Set-Scan-Debug-Array'] = function (&$Var) use (&$phpMussel) {
+    if (isset($phpMussel['DebugArr'])) {
+        unset($phpMussel['DebugArr']);
+    }
+    if (!is_array($Var)) {
+        $Var = array();
+    }
+    $phpMussel['DebugArr'] = &$Var;
+};
+
+/** Destroys the scan debug array (optional). */
+$phpMussel['Destroy-Scan-Debug-Array'] = function (&$Var) use (&$phpMussel) {
+    unset($phpMussel['DebugArrKey'], $phpMussel['DebugArr']);
+    $Var = null;
+};
+
 /**
  * The main scan closure, responsible for initialising scans in most
  * circumstances. Should generally be called whenever phpMussel is
@@ -5433,7 +5527,7 @@ $phpMussel['Fork'] = function ($f = '', $ofn = '') use (&$phpMussel) {
 $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn = '') use (&$phpMussel) {
     if (!isset($phpMussel['memCache'])) {
         throw new \Exception(
-            (!isset($phpMussel['lang']['required_variables_not_defined'])) ?
+            !isset($phpMussel['lang']['required_variables_not_defined']) ?
             '[phpMussel] Required variables aren\'t defined: Can\'t continue.' :
             '[phpMussel] ' . $phpMussel['lang']['required_variables_not_defined']
         );

@@ -299,6 +299,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   disruptions are anticipated as a result of this migration, but if you
   encounter any, please let us know.
 
+- [2017.06.18; Sub-minor code change; Maikuolan]: Improved debugging
+  functionality; Added a new method of debugging scan problems to phpMussel.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"
