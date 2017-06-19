@@ -773,12 +773,12 @@ Yes. Contributions to the project are very welcome. Please see "CONTRIBUTING.md"
 
 Value | Using
 ---|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy
-`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy
-`CF-Connecting-IP` | Cloudflare reverse proxy (alternative; if the above doesn't work)
-`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy
-`X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/)
-*Defined by server configuration.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
+`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy.
+`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy.
+`CF-Connecting-IP` | Cloudflare reverse proxy (alternative; if the above doesn't work).
+`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy.
+`X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Defined by server configuration.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
 `REMOTE_ADDR` | No reverse proxy (default value).
 
 #### How to access specific details about files when they are scanned?

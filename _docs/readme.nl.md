@@ -773,13 +773,13 @@ Ja. Bijdragen aan het project zijn zeer welkom. Zie voor meer informatie "CONTRI
 
 Waarde | Gebruik makend van
 ---|---
-`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy
-`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy
-`CF-Connecting-IP` | Cloudflare reverse proxy (alternatief; als bovenstaande niet werkt)
-`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy
-`X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/)
-*Definieerd door de server configuratie.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
-`REMOTE_ADDR` | Geen reverse proxy (standaardwaarde)
+`HTTP_INCAP_CLIENT_IP` | Incapsula reverse proxy.
+`HTTP_CF_CONNECTING_IP` | Cloudflare reverse proxy.
+`CF-Connecting-IP` | Cloudflare reverse proxy (alternatief; als bovenstaande niet werkt).
+`HTTP_X_FORWARDED_FOR` | Cloudbric reverse proxy.
+`X-Forwarded-For` | [Squid reverse proxy](http://www.squid-cache.org/Doc/config/forwarded_for/).
+*Definieerd door de server configuratie.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/).
+`REMOTE_ADDR` | Geen reverse proxy (standaardwaarde).
 
 #### Hoe krijgt u toegang tot specifieke gegevens over bestanden als ze worden gescand?
 
