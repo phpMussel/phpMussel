@@ -747,7 +747,7 @@ Không. PHP 5.4.0 đạt EoL ("End of Life", hoặc sự kết thúc của cuộ
 
 #### Tôi có thể sử dụng một cài đặt phpMussel để bảo vệ nhiều tên miền?
 
-Vâng. Cài đặt phpMussel không bị khóa vào các tên miền cụ thể, và do đó có thể được sử dụng để bảo vệ nhiều tên miền. Nói chung là, chúng tôi đề cập đến cài đặt phpMussel chỉ bảo vệ một miền như "cài đặt miền đơn" ("single-domain installations"), và chúng tôi đề cập đến cài đặt phpMussel bảo vệ nhiều miền hay miền phụ như "cài đặt nhiều miền" ("multi-domain installations"). Nếu bạn sử dụng một cài đặt nhiều miền và cần phải sử dụng các bộ tập tin chữ ký khác nhau cho các miền khác nhau, hoặc cần phpMussel được cấu hình khác nhau cho các miền khác nhau, điều này có thể làm được. Sau khi tải tập tin cấu hình (`config.ini`), phpMussel sẽ kiểm tra sự tồn tại của một "tập tin ghi đè cấu hình" cụ thể cho miền được yêu cầu (`miền-được-yêu-cầu.tld.config.ini`), và nếu được tìm thấy, bất kỳ giá trị cấu hình nào được xác định bởi tập tin ghi đè cấu hình sẽ được sử dụng cho trường hợp thực hiện thay vì các giá trị cấu hình được định nghĩa bởi tệp tin cấu hình. Các tập tin ghi đè cấu hình giống với tập tin cấu hình, và tùy theo quyết định của bạn, có thể chứa toàn bộ các chỉ thị cấu hình sẵn có cho phpMussel, hoặc bất kỳ phần bắt buộc nào mà khác với các giá trị được xác định bởi tệp tin cấu hình. Các tập tin ghi đè cấu hình được đặt tên theo miền mà chúng được dự định (vì vậy, ví dụ, nếu bạn cần một tập tin ghi đè cấu hình cho miền, `http://www.some-domain.tld/`, các tập tin ghi đè cấu hình của nó nên được đặt tên là `some-domain.tld.config.ini`, và nên được đặt trong vault với tệp tin cấu hình, `config.ini`). Tên miền cho trường hợp thực hiện được bắt nguồn từ header (tiêu đề) `HTTP_HOST` của các yêu cầu; "www" bị bỏ qua.
+Vâng. Cài đặt phpMussel không bị khóa vào các tên miền cụ thể, và do đó có thể được sử dụng để bảo vệ nhiều tên miền. Nói chung là, chúng tôi đề cập đến cài đặt phpMussel chỉ bảo vệ một miền như "cài đặt miền đơn" ("single-domain installations"), và chúng tôi đề cập đến cài đặt phpMussel bảo vệ nhiều miền hay miền phụ như "cài đặt nhiều miền" ("multi-domain installations"). Nếu bạn sử dụng một cài đặt nhiều miền và cần phải sử dụng các bộ tập tin chữ ký khác nhau cho các miền khác nhau, hoặc cần phpMussel được cấu hình khác nhau cho các miền khác nhau, điều này có thể làm được. Sau khi tải tập tin cấu hình (`config.ini`), phpMussel sẽ kiểm tra sự tồn tại của một "tập tin ghi đè cấu hình" cụ thể cho miền được yêu cầu (`miền-được-yêu-cầu.tld.config.ini`), và nếu được tìm thấy, bất kỳ giá trị cấu hình nào được xác định bởi tập tin ghi đè cấu hình sẽ được sử dụng cho trường hợp thực hiện thay vì các giá trị cấu hình được định nghĩa bởi tập tin cấu hình. Các tập tin ghi đè cấu hình giống với tập tin cấu hình, và tùy theo quyết định của bạn, có thể chứa toàn bộ các chỉ thị cấu hình sẵn có cho phpMussel, hoặc bất kỳ phần bắt buộc nào mà khác với các giá trị được xác định bởi tập tin cấu hình. Các tập tin ghi đè cấu hình được đặt tên theo miền mà chúng được dự định (vì vậy, ví dụ, nếu bạn cần một tập tin ghi đè cấu hình cho miền, `http://www.some-domain.tld/`, các tập tin ghi đè cấu hình của nó nên được đặt tên là `some-domain.tld.config.ini`, và nên được đặt trong vault với tập tin cấu hình, `config.ini`). Tên miền cho trường hợp thực hiện được bắt nguồn từ header (tiêu đề) `HTTP_HOST` của các yêu cầu; "www" bị bỏ qua.
 
 #### Tôi không muốn lãng phí thời gian bằng cách cài đặt này và đảm bảo rằng nó hoạt động với trang web của tôi; Tôi có thể trả tiền cho bạn để làm điều đó cho tôi?
 
@@ -780,6 +780,68 @@ Giá trị | Sử dụng
 `X-Forwarded-For` | [Proxy reverse Squid](http://www.squid-cache.org/Doc/config/forwarded_for/)
 *Xác định bởi cấu hình máy chủ.* | [Proxy reverse Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | Không có proxy reverse (giá trị mặc định).
+
+#### Làm thế nào để truy cập chi tiết cụ thể về các tập tin khi chúng được quét?
+
+Bạn có thể truy cập chi tiết cụ thể về các tập tin khi chúng được quét bằng cách gán một mảng để sử dụng cho mục đích này trước khi hướng dẫn phpMussel để quét chúng.
+
+Trong ví dụ dưới đây, `$Foo` được gán cho mục đích này. Sau khi quét `/đường/dẫn/tập/tin/...`, thông tin chi tiết về các tập tin chứa bởi `/đường/dẫn/tập/tin/...` sẽ được chứa bởi `$Foo`.
+
+```PHP
+<?php
+require 'phpmussel/loader.php';
+
+$phpMussel['Set-Scan-Debug-Array']($Foo);
+
+$Results = $phpMussel['Scan']('/đường/dẫn/tập/tin/...');
+
+var_dump($Foo);
+```
+
+Mảng này là đa chiều. Các phần tử đại diện cho các tập tin được quét và các phần tử con đại diện cho các chi tiết về các tập tin này. Các phần tử con này như sau:
+
+- Filename (`string`)
+- FromCache (`bool`)
+- Depth (`int`)
+- Size (`int`)
+- MD5 (`string`)
+- SHA1 (`string`)
+- CRC32B (`string`)
+- 2CC (`string`)
+- 4CC (`string`)
+- ScanPhase (`string`)
+- Container (`string`)
+- † FileSwitch (`string`)
+- † Is_ELF (`bool`)
+- † Is_Graphics (`bool`)
+- † Is_HTML (`bool`)
+- † Is_Email (`bool`)
+- † Is_MachO (`bool`)
+- † Is_PDF (`bool`)
+- † Is_SWF (`bool`)
+- † Is_PE (`bool`)
+- † Is_Not_HTML (`bool`)
+- † Is_Not_PHP (`bool`)
+- ‡ NumOfSections (`int`)
+- ‡ PEFileDescription (`string`)
+- ‡ PEFileVersion (`string`)
+- ‡ PEProductName (`string`)
+- ‡ PEProductVersion (`string`)
+- ‡ PECopyright (`string`)
+- ‡ PEOriginalFilename (`string`)
+- ‡ PECompanyName (`string`)
+- Results (`int`)
+- Output (`string`)
+
+*† - Không được cung cấp với kết quả lưu trữ (chỉ cung cấp cho các kết quả quét mới).*
+
+*‡ - Chỉ cung cấp khi quét tập tin PE.*
+
+Nếu bạn muốn, mảng này có thể bị phá hủy bằng cách sử dụng sau:
+
+```PHP
+$phpMussel['Destroy-Scan-Debug-Array']($Foo);
+```
 
 ---
 

@@ -800,38 +800,42 @@ var_dump($Foo);
 
 The array is a multidimensional array consisting of elements representing each file being scanned and sub-elements representing the details about these files. These sub-elements are as follows:
 
-- Filename
-- FromCache
-- Depth
-- Size
-- MD5
-- SHA1
-- CRC32B
-- 2CC
-- 4CC
-- ScanPhase
-- Container
-- FileSwitch
-- Is_ELF
-- Is_Graphics
-- Is_HTML
-- Is_Email
-- Is_MachO
-- Is_PDF
-- Is_SWF
-- Is_PE
-- Is_Not_HTML
-- Is_Not_PHP
-- NumOfSections
-- PEFileDescription
-- PEFileVersion
-- PEProductName
-- PEProductVersion
-- PECopyright
-- PEOriginalFilename
-- PECompanyName
-- Results
-- Output
+- Filename (`string`)
+- FromCache (`bool`)
+- Depth (`int`)
+- Size (`int`)
+- MD5 (`string`)
+- SHA1 (`string`)
+- CRC32B (`string`)
+- 2CC (`string`)
+- 4CC (`string`)
+- ScanPhase (`string`)
+- Container (`string`)
+- † FileSwitch (`string`)
+- † Is_ELF (`bool`)
+- † Is_Graphics (`bool`)
+- † Is_HTML (`bool`)
+- † Is_Email (`bool`)
+- † Is_MachO (`bool`)
+- † Is_PDF (`bool`)
+- † Is_SWF (`bool`)
+- † Is_PE (`bool`)
+- † Is_Not_HTML (`bool`)
+- † Is_Not_PHP (`bool`)
+- ‡ NumOfSections (`int`)
+- ‡ PEFileDescription (`string`)
+- ‡ PEFileVersion (`string`)
+- ‡ PEProductName (`string`)
+- ‡ PEProductVersion (`string`)
+- ‡ PECopyright (`string`)
+- ‡ PEOriginalFilename (`string`)
+- ‡ PECompanyName (`string`)
+- Results (`int`)
+- Output (`string`)
+
+*† - Not provided with cached results (only provided for new scan results).*
+
+*‡ - Only provided when scanning PE files.*
 
 Optionally, this array can be destroyed by using the following:
 

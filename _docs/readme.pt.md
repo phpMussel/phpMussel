@@ -781,6 +781,68 @@ Valor | Usando
 *Definido pela configuração do servidor.* | [Proxy reverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | Nenhum proxy reverso (valor padrão).
 
+#### Como acessar detalhes específicos sobre os arquivos quando eles são analisados?
+
+Você pode acessar detalhes específicos sobre arquivos quando eles são analisados, atribuindo uma matriz para usar para esse propósito antes de instruir o phpMussel para analisá-los.
+
+No exemplo abaixo, `$Foo` é atribuído para este propósito. Depois de escanear `/caminho/de/arquivo/...`, informações detalhadas sobre os arquivos contidos em `/caminho/de/arquivo/...` serão contidas por `$Foo`.
+
+```PHP
+<?php
+require 'phpmussel/loader.php';
+
+$phpMussel['Set-Scan-Debug-Array']($Foo);
+
+$Results = $phpMussel['Scan']('/caminho/de/arquivo/...');
+
+var_dump($Foo);
+```
+
+A matriz é uma matriz multidimensional consistindo em elementos que representam cada arquivo sendo analisado e subelementos que representam os detalhes sobre esses arquivos. Esses subelementos são os seguintes:
+
+- Filename (`string`)
+- FromCache (`bool`)
+- Depth (`int`)
+- Size (`int`)
+- MD5 (`string`)
+- SHA1 (`string`)
+- CRC32B (`string`)
+- 2CC (`string`)
+- 4CC (`string`)
+- ScanPhase (`string`)
+- Container (`string`)
+- † FileSwitch (`string`)
+- † Is_ELF (`bool`)
+- † Is_Graphics (`bool`)
+- † Is_HTML (`bool`)
+- † Is_Email (`bool`)
+- † Is_MachO (`bool`)
+- † Is_PDF (`bool`)
+- † Is_SWF (`bool`)
+- † Is_PE (`bool`)
+- † Is_Not_HTML (`bool`)
+- † Is_Not_PHP (`bool`)
+- ‡ NumOfSections (`int`)
+- ‡ PEFileDescription (`string`)
+- ‡ PEFileVersion (`string`)
+- ‡ PEProductName (`string`)
+- ‡ PEProductVersion (`string`)
+- ‡ PECopyright (`string`)
+- ‡ PEOriginalFilename (`string`)
+- ‡ PECompanyName (`string`)
+- Results (`int`)
+- Output (`string`)
+
+*† - Não fornecido com os resultados em cache (fornecido para novos resultados de análise apenas).*
+
+*‡ - Fornecido ao analisar arquivos PE apenas.*
+
+Opcionalmente, esta matriz pode ser destruída usando o seguinte:
+
+```PHP
+$phpMussel['Destroy-Scan-Debug-Array']($Foo);
+```
+
 ---
 
 

@@ -780,6 +780,68 @@ Wert | Verwenden
 *Definiert durch Server-Konfiguration.* | [Nginx Reverse Proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | Kein Reverse Proxy (Standardwert).
 
+#### Wie man spezifische Details über Dateien zugreifen, wenn sie gescannt werden?
+
+Sie können auf spezifische Details über Dateien zugreifen, wenn sie gescannt werden, indem Sie ein Array zuweisen, das zu diesem Zweck verwendet werden soll, bevor Sie phpMussel anweisen, sie zu scannen.
+
+Im folgenden Beispiel, `$Foo` ist zu diesem Zweck zugeordnet. Nach dem Scannen `/Dateipfad/...`, detaillierte Informationen über die von `/Dateipfad/...` enthaltenen Dateien werden von `$Foo` enthalten sein.
+
+```PHP
+<?php
+require 'phpmussel/loader.php';
+
+$phpMussel['Set-Scan-Debug-Array']($Foo);
+
+$Results = $phpMussel['Scan']('/Dateipfad/...');
+
+var_dump($Foo);
+```
+
+Das Array ist ein multidimensionales Array, das aus Elementen besteht, die jede gescannte Datei repräsentieren, und Subelemente, die die Details zu diesen Dateien darstellen. Diese Subelemente sind wie folgt:
+
+- Filename (`string`)
+- FromCache (`bool`)
+- Depth (`int`)
+- Size (`int`)
+- MD5 (`string`)
+- SHA1 (`string`)
+- CRC32B (`string`)
+- 2CC (`string`)
+- 4CC (`string`)
+- ScanPhase (`string`)
+- Container (`string`)
+- † FileSwitch (`string`)
+- † Is_ELF (`bool`)
+- † Is_Graphics (`bool`)
+- † Is_HTML (`bool`)
+- † Is_Email (`bool`)
+- † Is_MachO (`bool`)
+- † Is_PDF (`bool`)
+- † Is_SWF (`bool`)
+- † Is_PE (`bool`)
+- † Is_Not_HTML (`bool`)
+- † Is_Not_PHP (`bool`)
+- ‡ NumOfSections (`int`)
+- ‡ PEFileDescription (`string`)
+- ‡ PEFileVersion (`string`)
+- ‡ PEProductName (`string`)
+- ‡ PEProductVersion (`string`)
+- ‡ PECopyright (`string`)
+- ‡ PEOriginalFilename (`string`)
+- ‡ PECompanyName (`string`)
+- Results (`int`)
+- Output (`string`)
+
+*† - Nicht mit Ergebnissen aus dem Cache versehen (nur für neue Ergebnissen versehen).*
+
+*‡ - Wird nur beim Scannen von PE-Dateien bereitgestellt.*
+
+Optional, kann dieses Array zerstört werden, indem man folgendes verwendet:
+
+```PHP
+$phpMussel['Destroy-Scan-Debug-Array']($Foo);
+```
+
 ---
 
 

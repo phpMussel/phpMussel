@@ -926,6 +926,68 @@ Zoner | <div dir="rtl" style="display:inline;">کوئی معلوم مسائل</d
 &nbsp; <div dir="rtl" style="display:inline;"><em>سرور کی ترتیب کی طرف سے وضاحت کی گئی.</em></div> | [Nginx reverse proxy (ریورس پراکسی)](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">نہیں کسی بھی ریورس پراکسی (پہلے سے طے شدہ قیمت).</div>
 
+<div dir="rtl">کس طرح وہ سکین کر رہے ہیں جب فائلوں کے بارے میں مزید تفصیلات تک رسائی حاصل کرنے کے لئے؟<br /><br /></div>
+
+<div dir="rtl">آپ کو اس مقصد ان کو اسکین کرنے phpMussel ہدایت کرنے سے پہلے کے لئے استعمال کرنے کے لئے ایک صف بتائے کی طرف سے ایسا کر سکتے ہیں.<br /><br /></div>
+
+<div dir="rtl">ذیل کی مثال میں، `$Foo` اس مقصد کے لئے مقرر کیا جاتا ہے. سکیننگ کے بعد `/file/path/...`، `/file/path/...` کی طرف سے موجود فائلوں کے بارے میں تفصیلی معلومات `$Foo` کی طرف سے پر مشتمل ہو گا.<br /><br /></div>
+
+```PHP
+<?php
+require 'phpmussel/loader.php';
+
+$phpMussel['Set-Scan-Debug-Array']($Foo);
+
+$Results = $phpMussel['Scan']('/file/path/...');
+
+var_dump($Foo);
+```
+
+<div dir="rtl">صف کثیرالابعاد ہے. عناصر ہر فائل کو سکین کیا جا رہا ہے کی نمائندگی کرتے ہیں. ذیلی عناصر ان فائلوں کے بارے میں تفصیلات نمائندگی کرتے ہیں. ذیلی عناصر مندرجہ ذیل ہیں:<br /><br /></div>
+
+- Filename (`string`)
+- FromCache (`bool`)
+- Depth (`int`)
+- Size (`int`)
+- MD5 (`string`)
+- SHA1 (`string`)
+- CRC32B (`string`)
+- 2CC (`string`)
+- 4CC (`string`)
+- ScanPhase (`string`)
+- Container (`string`)
+- † FileSwitch (`string`)
+- † Is_ELF (`bool`)
+- † Is_Graphics (`bool`)
+- † Is_HTML (`bool`)
+- † Is_Email (`bool`)
+- † Is_MachO (`bool`)
+- † Is_PDF (`bool`)
+- † Is_SWF (`bool`)
+- † Is_PE (`bool`)
+- † Is_Not_HTML (`bool`)
+- † Is_Not_PHP (`bool`)
+- ‡ NumOfSections (`int`)
+- ‡ PEFileDescription (`string`)
+- ‡ PEFileVersion (`string`)
+- ‡ PEProductName (`string`)
+- ‡ PEProductVersion (`string`)
+- ‡ PECopyright (`string`)
+- ‡ PEOriginalFilename (`string`)
+- ‡ PECompanyName (`string`)
+- Results (`int`)
+- Output (`string`)
+
+<div dir="rtl"><em>† - عارضی نتائج کے ساتھ فراہم نہیں (صرف نئے اسکین کے نتائج کے لئے فراہم).</em><br /><br /></div>
+
+<div dir="rtl"><em>‡ - PE فائلوں کو سکین جب صرف فراہم کی.</em><br /><br /></div>
+
+<div dir="rtl">اختیاری، اس صف میں مندرجہ ذیل کا استعمال کرتے ہوئے کی طرف سے تباہ کیا جا سکتا ہے:<br /><br /></div>
+
+```PHP
+$phpMussel['Destroy-Scan-Debug-Array']($Foo);
+```
+
 ---
 
 

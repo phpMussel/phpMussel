@@ -784,6 +784,68 @@ phpMussel会阻止文件 | __假阳性__ | 真阳性（正确的推理）
 *由服务器配置定义。* | [Nginx反向代理](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | 没有反向代理（默认值）。
 
+#### 扫描时如何访问文件的具体细节？
+
+在启动扫描之前，请分配一个数组以用于此目的。
+
+在下面的例子中， `$Foo` 是分配以用于此目的。 扫描 `/文件/路径/...` 后， 关于 `/文件/路径/...` 所包含的文件的信息将包含在 `$Foo` 中。
+
+```PHP
+<?php
+require 'phpmussel/loader.php';
+
+$phpMussel['Set-Scan-Debug-Array']($Foo);
+
+$Results = $phpMussel['Scan']('/文件/路径/...');
+
+var_dump($Foo);
+```
+
+数组是多维的。 元素表示扫描的每个文件。 子元素表示这些文件的详细信息。 子要素如下：
+
+- Filename (`string`)
+- FromCache (`bool`)
+- Depth (`int`)
+- Size (`int`)
+- MD5 (`string`)
+- SHA1 (`string`)
+- CRC32B (`string`)
+- 2CC (`string`)
+- 4CC (`string`)
+- ScanPhase (`string`)
+- Container (`string`)
+- † FileSwitch (`string`)
+- † Is_ELF (`bool`)
+- † Is_Graphics (`bool`)
+- † Is_HTML (`bool`)
+- † Is_Email (`bool`)
+- † Is_MachO (`bool`)
+- † Is_PDF (`bool`)
+- † Is_SWF (`bool`)
+- † Is_PE (`bool`)
+- † Is_Not_HTML (`bool`)
+- † Is_Not_PHP (`bool`)
+- ‡ NumOfSections (`int`)
+- ‡ PEFileDescription (`string`)
+- ‡ PEFileVersion (`string`)
+- ‡ PEProductName (`string`)
+- ‡ PEProductVersion (`string`)
+- ‡ PECopyright (`string`)
+- ‡ PEOriginalFilename (`string`)
+- ‡ PECompanyName (`string`)
+- Results (`int`)
+- Output (`string`)
+
+*† - 在缓存结果中没有提供 （仅在新的扫描结果中提供）。*
+
+*‡ - 仅在扫描PE文件时提供。*
+
+如果您想，可以通过使用以下命令来破坏此数组：
+
+```PHP
+$phpMussel['Destroy-Scan-Debug-Array']($Foo);
+```
+
 ---
 
 

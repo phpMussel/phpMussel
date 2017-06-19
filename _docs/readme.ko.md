@@ -781,6 +781,68 @@ phpMussel은 파일을 차단합니다 | __위양성__ | 진정한 양성 (올�
 *서버 구성에 의해 정의됩니다.* | [Nginx 리버스 프록시](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | 리버스 프록시는 없습니다 (기본값).
 
+#### 파일 검색시 특정 정보에 액세스하려면 어떻게해야합니까?
+
+이것은 phpMussel 그들을 검사하도록 지시하기 전 에이 목적을 위해 사용하는 배열을 할당하여 수행할 수 있습니다.
+
+다음 예제에서는이 목적을 위해 `$Foo` 가 할당되어 있습니다. `/file/path/...` 를 스캔 한 후 `/file/path/...` 파일에 대한 정보는 `$Foo` 에 있습니다.
+
+```PHP
+<?php
+require 'phpmussel/loader.php';
+
+$phpMussel['Set-Scan-Debug-Array']($Foo);
+
+$Results = $phpMussel['Scan']('/file/path/...');
+
+var_dump($Foo);
+```
+
+배열은 다차원입니다. 요소는 검사되는 각 파일을 나타냅니다. 하위 요소는 이러한 파일의 내용을 나타냅니다. 하위 요소는 다음과 같습니다.
+
+- Filename (`string`)
+- FromCache (`bool`)
+- Depth (`int`)
+- Size (`int`)
+- MD5 (`string`)
+- SHA1 (`string`)
+- CRC32B (`string`)
+- 2CC (`string`)
+- 4CC (`string`)
+- ScanPhase (`string`)
+- Container (`string`)
+- † FileSwitch (`string`)
+- † Is_ELF (`bool`)
+- † Is_Graphics (`bool`)
+- † Is_HTML (`bool`)
+- † Is_Email (`bool`)
+- † Is_MachO (`bool`)
+- † Is_PDF (`bool`)
+- † Is_SWF (`bool`)
+- † Is_PE (`bool`)
+- † Is_Not_HTML (`bool`)
+- † Is_Not_PHP (`bool`)
+- ‡ NumOfSections (`int`)
+- ‡ PEFileDescription (`string`)
+- ‡ PEFileVersion (`string`)
+- ‡ PEProductName (`string`)
+- ‡ PEProductVersion (`string`)
+- ‡ PECopyright (`string`)
+- ‡ PEOriginalFilename (`string`)
+- ‡ PECompanyName (`string`)
+- Results (`int`)
+- Output (`string`)
+
+*† - 캐시 된 결과는 제공되지 않습니다 (새로운 검색 결과 만 제공됩니다).*
+
+*‡ - PE 파일을 스캔하는 경우에만 제공됩니다.*
+
+필요한 경우, 이 배열은 다음을 사용하여 삭제합니다.
+
+```PHP
+$phpMussel['Destroy-Scan-Debug-Array']($Foo);
+```
+
 ---
 
 

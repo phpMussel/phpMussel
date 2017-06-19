@@ -781,6 +781,68 @@ Valeur | En utilisant
 *Défini par la configuration du serveur.* | [Proxy inversé Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | Pas de proxy inversé (valeur par défaut).
 
+#### Comment accéder à des détails spécifiques sur les fichiers lorsqu'ils sont analysés?
+
+Vous pouvez accéder à des détails spécifiques sur les fichiers lorsqu'ils sont analysés en attribuant un tableau à utiliser à cet effet avant de demander à phpMussel de les analyser.
+
+Dans l'exemple ci-dessous, `$Foo` est utilisé à cette fin. Après avoir analysé `/chemin/du/fichier/...`, des informations détaillées sur les fichiers contenus dans `/chemin/du/fichier/...` seront contenues par `$Foo`.
+
+```PHP
+<?php
+require 'phpmussel/loader.php';
+
+$phpMussel['Set-Scan-Debug-Array']($Foo);
+
+$Results = $phpMussel['Scan']('/chemin/du/fichier/...');
+
+var_dump($Foo);
+```
+
+Le tableau est un tableau multidimensionnel composé d'éléments représentant chaque fichier analysé et des sous-éléments représentant les détails de ces fichiers. Ces sous-éléments sont les suivants:
+
+- Filename (`string`)
+- FromCache (`bool`)
+- Depth (`int`)
+- Size (`int`)
+- MD5 (`string`)
+- SHA1 (`string`)
+- CRC32B (`string`)
+- 2CC (`string`)
+- 4CC (`string`)
+- ScanPhase (`string`)
+- Container (`string`)
+- † FileSwitch (`string`)
+- † Is_ELF (`bool`)
+- † Is_Graphics (`bool`)
+- † Is_HTML (`bool`)
+- † Is_Email (`bool`)
+- † Is_MachO (`bool`)
+- † Is_PDF (`bool`)
+- † Is_SWF (`bool`)
+- † Is_PE (`bool`)
+- † Is_Not_HTML (`bool`)
+- † Is_Not_PHP (`bool`)
+- ‡ NumOfSections (`int`)
+- ‡ PEFileDescription (`string`)
+- ‡ PEFileVersion (`string`)
+- ‡ PEProductName (`string`)
+- ‡ PEProductVersion (`string`)
+- ‡ PECopyright (`string`)
+- ‡ PEOriginalFilename (`string`)
+- ‡ PECompanyName (`string`)
+- Results (`int`)
+- Output (`string`)
+
+*† - Non fourni avec les résultats mis en cache (fourni pour les résultats d'analyse nouveaux seulement).*
+
+*‡ - Fourni lors de l'analyse des fichiers PE seulement.*
+
+En option, ce tableau peut être détruit en utilisant ce qui suit:
+
+```PHP
+$phpMussel['Destroy-Scan-Debug-Array']($Foo);
+```
+
 ---
 
 

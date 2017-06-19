@@ -926,6 +926,68 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 &nbsp; <div dir="rtl" style="display:inline;"><em>يحددها تكوين الخادم.</em></div> | [Nginx reverse proxy (إنجن إكس عكس الوكيل)](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | &nbsp; <div dir="rtl" style="display:inline;">لا يوجد عكس الوكيل (الافتراضي).</div>
 
+<div dir="rtl">كيفية الوصول إلى تفاصيل محددة حول الملفات عند مسحها ضوئيا؟<br /><br /></div>
+
+<div dir="rtl">يمكنك الوصول إلى تفاصيل محددة حول الملفات عند مسحها عن طريق تعيين مصفوفة لاستخدامها لهذا الغرض قبل توجيه phpMussel لمسحها.<br /><br /></div>
+
+<div dir="rtl">في المثال أدناه، يتم تعيين <code>$Foo</code> لهذا الغرض. بعد مسح <code>/file/path/...</code>، سيتم تضمين معلومات مفصلة حول الملفات التي تحتوي عليها <code>/file/path/...</code> من قبل <code>$Foo</code>.<br /><br /></div>
+
+```PHP
+<?php
+require 'phpmussel/loader.php';
+
+$phpMussel['Set-Scan-Debug-Array']($Foo);
+
+$Results = $phpMussel['Scan']('/file/path/...');
+
+var_dump($Foo);
+```
+
+<div dir="rtl">المصفوفة عبارة عن مصفوفة متعددة الأبعاد تتكون من عناصر تمثل كل ملف يتم مسحه ضوئيا وعناصر فرعية تمثل تفاصيل هذه الملفات. وهذه العناصر الفرعية هي كما يلي:<br /><br /></div>
+
+- Filename (`string`)
+- FromCache (`bool`)
+- Depth (`int`)
+- Size (`int`)
+- MD5 (`string`)
+- SHA1 (`string`)
+- CRC32B (`string`)
+- 2CC (`string`)
+- 4CC (`string`)
+- ScanPhase (`string`)
+- Container (`string`)
+- † FileSwitch (`string`)
+- † Is_ELF (`bool`)
+- † Is_Graphics (`bool`)
+- † Is_HTML (`bool`)
+- † Is_Email (`bool`)
+- † Is_MachO (`bool`)
+- † Is_PDF (`bool`)
+- † Is_SWF (`bool`)
+- † Is_PE (`bool`)
+- † Is_Not_HTML (`bool`)
+- † Is_Not_PHP (`bool`)
+- ‡ NumOfSections (`int`)
+- ‡ PEFileDescription (`string`)
+- ‡ PEFileVersion (`string`)
+- ‡ PEProductName (`string`)
+- ‡ PEProductVersion (`string`)
+- ‡ PECopyright (`string`)
+- ‡ PEOriginalFilename (`string`)
+- ‡ PECompanyName (`string`)
+- Results (`int`)
+- Output (`string`)
+
+<div dir="rtl"><em>† - لم يتم توفير نتائج مخبأة (تقدم فقط لنتائج مسح جديدة).</em><br /><br /></div>
+
+<div dir="rtl"><em>‡ - يتم توفيرها فقط عند مسح ملفات PE.</em><br /><br /></div>
+
+<div dir="rtl">اختياريا، يمكن تدمير هذه المصفوفة باستخدام ما يلي:<br /><br /></div>
+
+```PHP
+$phpMussel['Destroy-Scan-Debug-Array']($Foo);
+```
+
 ---
 
 

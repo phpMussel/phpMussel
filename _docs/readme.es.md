@@ -781,6 +781,68 @@ Valor | Utilizando
 *Definido por la configuración del servidor.* | [Proxy inverso Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | Sin proxy inverso (valor predefinido).
 
+#### ¿Cómo acceder a detalles específicos sobre los archivos cuando se escanean?
+
+Puede acceder a detalles específicos sobre los archivos cuando se analizan por medio de asignando una matriz para utilizarla con este fin antes de instruir a phpMussel para que los escanee.
+
+En el ejemplo siguiente, `$Foo` está asignado para este propósito. Después de escanear `/ruta/de/archivo/...`, `$Foo` contendrá información detallada sobre los archivos contenidos en `/ruta/de/archivo/...`.
+
+```PHP
+<?php
+require 'phpmussel/loader.php';
+
+$phpMussel['Set-Scan-Debug-Array']($Foo);
+
+$Results = $phpMussel['Scan']('/ruta/de/archivo/...');
+
+var_dump($Foo);
+```
+
+La matriz es una matriz multidimensional que consta de elementos que representan cada archivo que se está escaneando y subelementos que representan los detalles sobre estos archivos. Estos subelementos son los siguientes:
+
+- Filename (`string`)
+- FromCache (`bool`)
+- Depth (`int`)
+- Size (`int`)
+- MD5 (`string`)
+- SHA1 (`string`)
+- CRC32B (`string`)
+- 2CC (`string`)
+- 4CC (`string`)
+- ScanPhase (`string`)
+- Container (`string`)
+- † FileSwitch (`string`)
+- † Is_ELF (`bool`)
+- † Is_Graphics (`bool`)
+- † Is_HTML (`bool`)
+- † Is_Email (`bool`)
+- † Is_MachO (`bool`)
+- † Is_PDF (`bool`)
+- † Is_SWF (`bool`)
+- † Is_PE (`bool`)
+- † Is_Not_HTML (`bool`)
+- † Is_Not_PHP (`bool`)
+- ‡ NumOfSections (`int`)
+- ‡ PEFileDescription (`string`)
+- ‡ PEFileVersion (`string`)
+- ‡ PEProductName (`string`)
+- ‡ PEProductVersion (`string`)
+- ‡ PECopyright (`string`)
+- ‡ PEOriginalFilename (`string`)
+- ‡ PECompanyName (`string`)
+- Results (`int`)
+- Output (`string`)
+
+*† - No se proporciona con resultados almacenados en caché (sólo se proporcionan para los nuevos resultados de escaneo).*
+
+*‡ - Sólo se proporciona al escanear archivos PE.*
+
+Opcionalmente, esta matriz se puede destruir utilizando lo siguiente:
+
+```PHP
+$phpMussel['Destroy-Scan-Debug-Array']($Foo);
+```
+
 ---
 
 

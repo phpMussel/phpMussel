@@ -781,6 +781,68 @@ Waarde | Gebruik makend van
 *Definieerd door de server configuratie.* | [Nginx reverse proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 `REMOTE_ADDR` | Geen reverse proxy (standaardwaarde)
 
+#### Hoe krijgt u toegang tot specifieke gegevens over bestanden als ze worden gescand?
+
+U kunt toegang krijgen tot specifieke gegevens over bestanden als ze worden gescand door een array toe te wijzen om hiervoor te gebruiken voordat u phpMussel instructeert om ze te scannen.
+
+In het onderstaande voorbeeld, `$Foo` is hiervoor toegewezen. Na het scannen `/bestandspad/...`, gedetailleerde informatie over de bestanden die `/bestandspad/...` bevat zullen door `$Foo` worden opgenomen.
+
+```PHP
+<?php
+require 'phpmussel/loader.php';
+
+$phpMussel['Set-Scan-Debug-Array']($Foo);
+
+$Results = $phpMussel['Scan']('/bestandspad/...');
+
+var_dump($Foo);
+```
+
+De array is multidimensionaal. Elementen vertegenwoordigen de bestanden die moeten worden gescand, en subelementen vertegenwoordigen de details over deze bestanden. Deze subelementen zijn als volgt:
+
+- Filename (`string`)
+- FromCache (`bool`)
+- Depth (`int`)
+- Size (`int`)
+- MD5 (`string`)
+- SHA1 (`string`)
+- CRC32B (`string`)
+- 2CC (`string`)
+- 4CC (`string`)
+- ScanPhase (`string`)
+- Container (`string`)
+- † FileSwitch (`string`)
+- † Is_ELF (`bool`)
+- † Is_Graphics (`bool`)
+- † Is_HTML (`bool`)
+- † Is_Email (`bool`)
+- † Is_MachO (`bool`)
+- † Is_PDF (`bool`)
+- † Is_SWF (`bool`)
+- † Is_PE (`bool`)
+- † Is_Not_HTML (`bool`)
+- † Is_Not_PHP (`bool`)
+- ‡ NumOfSections (`int`)
+- ‡ PEFileDescription (`string`)
+- ‡ PEFileVersion (`string`)
+- ‡ PEProductName (`string`)
+- ‡ PEProductVersion (`string`)
+- ‡ PECopyright (`string`)
+- ‡ PEOriginalFilename (`string`)
+- ‡ PECompanyName (`string`)
+- Results (`int`)
+- Output (`string`)
+
+*† - Niet voorzien van cache-resultaten (alleen voor nieuwe scanresultaten voorzien).*
+
+*‡ - Alleen bij het scannen van PE-bestanden voorzien.*
+
+Optioneel, deze array kan worden vernietigd door het volgende te gebruiken:
+
+```PHP
+$phpMussel['Destroy-Scan-Debug-Array']($Foo);
+```
+
 ---
 
 
