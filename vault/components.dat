@@ -232,7 +232,7 @@ l10n/fr:
  Name: L10N: Français
  Extended Description:
   fr: Linguistiques données en Français
- Version: 2017.172.336
+ Version: 2017.172.743
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -245,8 +245,8 @@ l10n/fr:
    - lang/lang.fr.fe.php
    - lang/lang.fr.php
   Checksum:
-   - 25095df71ef5f83984d8ed8a0caf00d2:44674
-   - 642683744d453c36c86bb5ca9f12e607:7920
+   - 3b94216891c1425da5daed1c95b00b17:44680
+   - 700f82a9dcb84715ec697742d9d35696:7930
  Reannotate: components.dat
 l10n/hi:
  Name: L10N: हिंदी
@@ -432,7 +432,7 @@ l10n/tr:
  Name: L10N: Türkçe
  Extended Description:
   tr: Türkçe dili verileri
- Version: 2017.172.336
+ Version: 2017.172.743
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -445,8 +445,8 @@ l10n/tr:
    - lang/lang.tr.fe.php
    - lang/lang.tr.php
   Checksum:
-   - 160fb44168a40b519bb1d498b5998905:39268
-   - ec467666a20344e3b228892734221d4a:7183
+   - fd68a4e58ad14ccdafcbf5c99b3fdd6c:39516
+   - e06110feed4721ac86e1bffebf2a16c8:7509
  Reannotate: components.dat
 l10n/ur:
  Name: L10N: ‏اردو‏

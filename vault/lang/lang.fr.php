@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2017.06.21).
+ * This file: French language data (last modified: 2017.06.22).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -23,7 +23,7 @@ $phpMussel['lang']['bad_command'] = 'Je ne comprends pas cette commande, désol�
 $phpMussel['lang']['cli_failed_to_complete'] = 'Échec du terminer le processus d\'analyse';
 $phpMussel['lang']['cli_is_not_a'] = ' n\'est pas un fichier ou un répertoire.';
 $phpMussel['lang']['cli_ln2'] = " Merci d\'utiliser phpMussel, un script PHP pour la détection de virus, logiciels\n malveillants et autres menaces dans les fichiers téléchargés sur votre système\n partout où le script est accroché, basé sur les signatures de ClamAV et autres.\n\n PHPMUSSEL COPYRIGHT 2013 et au-delà GNU/GPL V.2 par Caleb M (Maikuolan).\n\n                                     ~ ~ ~\n\n";
-$phpMussel['lang']['cli_ln3'] = " Exécute actuellement phpMussel en mode CLI (Interface Ligne de Commande).\n\n Pour analyser un fichier ou répertoire, taper 'scan', suivi par le nom du\n fichier ou répertoire que vous voulez que phpMussel analyse et appuyez sur\n Entrée ; Tapez « c » et appuyez sur Entrée pour une liste de commandes du mode\n CLI ; Tapez 'q' et appuyez sur Entrée pour quitter :";
+$phpMussel['lang']['cli_ln3'] = " Exécute actuellement phpMussel en mode CLI (Interface Ligne de Commande).\n\n Pour analyser un fichier ou répertoire, taper 'scan', suivi par le nom du\n fichier ou répertoire que vous voulez que phpMussel analyse et appuyez sur\n Entrée ; Tapez « c » et appuyez sur Entrée pour une liste de commandes du mode\n CLI ; Tapez 'q' et appuyez sur Entrée pour quitter :";
 $phpMussel['lang']['cli_pe1'] = 'Pas un valide PE fichier !';
 $phpMussel['lang']['cli_pe2'] = 'Sections du PE :';
 $phpMussel['lang']['cli_signature_placeholder'] = 'NOM-DE-SIGNATURE';
@@ -50,7 +50,7 @@ $phpMussel['lang']['invalid_url'] = 'URL non valide !';
 $phpMussel['lang']['ok'] = 'Bien';
 $phpMussel['lang']['only_allow_images'] = 'Le téléchargement de fichiers qui ne sont pas des images n\'est pas autorisé';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Le répertoire de plugins n\'existe pas !';
-$phpMussel['lang']['quarantined_as'] = "Mis en quarantaine comme « /vault/quarantine/{QFU}.qfu ».\n";
+$phpMussel['lang']['quarantined_as'] = "Mis en quarantaine comme « /vault/quarantine/{QFU}.qfu ».\n";
 $phpMussel['lang']['recursive'] = 'Profondeur limite de récursion dépassée';
 $phpMussel['lang']['required_variables_not_defined'] = 'Les variables requises ne sont pas définies : Vous ne pouvez pas continuer.';
 $phpMussel['lang']['SafeBrowseLookup_200'] = 'URL potentiellement nuisible détecté';
@@ -96,11 +96,11 @@ $phpMussel['lang']['cli_commands'] = " q
  - Alias : quit, exit.
  md5_file
  - Générer les signatures MD5 des fichiers
- - [Syntaxe : md5_file « nom du fichier »].
+ - [Syntaxe : md5_file « nom du fichier »].
  - Alias : m.
  sha1_file
  - Générer les signatures SHA1 des fichiers
- - [Syntaxe : sha1_file « nom du fichier »].
+ - [Syntaxe : sha1_file « nom du fichier »].
  md5
  - Générer la signature MD5 à partir d'une chaîne [Syntaxe : md5 string].
  sha1
@@ -116,7 +116,7 @@ $phpMussel['lang']['cli_commands'] = " q
  base64_decode
  - Convertir chaîne base64 en chaîne binaire [Syntaxe : base64_decode string].
  scan
- - Analyser fichier ou répertoire [Syntaxe : scan « nom du fichier »].
+ - Analyser fichier ou répertoire [Syntaxe : scan « nom du fichier »].
  - Alias : s.
  c
  - Imprimer cette liste des commandes.
