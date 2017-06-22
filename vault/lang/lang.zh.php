@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data (last modified: 2017.06.12).
+ * This file: Chinese (simplified) language data (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,11 +19,11 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['bad_command'] = '我不明白的命令，对不起。';
+$phpMussel['lang']['bad_command'] = '我不明白的命令，​对不起。';
 $phpMussel['lang']['cli_failed_to_complete'] = '完成扫描过程失败';
 $phpMussel['lang']['cli_is_not_a'] = '不是文件或文件夹。';
-$phpMussel['lang']['cli_ln2'] = " 谢谢对于使用phpMussel，一个PHP脚本旨在检测木马，病毒，恶意软件，和其他威胁在文件上传到您的系统随地这个脚本是叫，\n 根据ClamAV的签名和其他签名。\n\n PHPMUSSEL版权2013和此后GNU/GPLv.2通过Caleb M （Maikuolan）。\n\n                                     ~ ~ ~\n\n";
-$phpMussel['lang']['cli_ln3'] = " 目前经营phpMussel在CLI模式（命令行界面）。\n\n 扫描一个文件或文件夹，键入“scan”，其次是名的文件或文件夹您想phpMussel扫描然后按Enter键；\n 键入“c”然后按Enter键对于CLI模式命令名单；键入“q”然后按Enter键对于戒烟：";
+$phpMussel['lang']['cli_ln2'] = " 谢谢对于使用phpMussel，​一个PHP脚本旨在检测木马，​病毒，​恶意软件，​和其他威胁在文件上传到您的系统随地这个脚本是叫，​\n 根据ClamAV的签名和其他签名。\n\n PHPMUSSEL版权2013和此后GNU/GPLv.2通过Caleb M （Maikuolan）。\n\n                                     ~ ~ ~\n\n";
+$phpMussel['lang']['cli_ln3'] = " 目前经营phpMussel在CLI模式（命令行界面）。\n\n 扫描一个文件或文件夹，​键入“scan”，​其次是名的文件或文件夹您想phpMussel扫描然后按Enter键；\n 键入“c”然后按Enter键对于CLI模式命令名单；键入“q”然后按Enter键对于戒烟：";
 $phpMussel['lang']['cli_pe1'] = '不PE文件！';
 $phpMussel['lang']['cli_pe2'] = 'PE部分:';
 $phpMussel['lang']['cli_signature_placeholder'] = '签名名称';
@@ -44,7 +44,7 @@ $phpMussel['lang']['greylist_cleared'] = ' 灰名单清空。';
 $phpMussel['lang']['greylist_not_updated'] = ' 灰名单不更新。';
 $phpMussel['lang']['greylist_updated'] = ' 灰名单更新。';
 $phpMussel['lang']['image'] = '图像';
-$phpMussel['lang']['instance_already_active'] = '脚本已激活！请仔细检查您的钩子。';
+$phpMussel['lang']['instance_already_active'] = '脚本已激活！​请仔细检查您的钩子。';
 $phpMussel['lang']['invalid_file'] = '无效的文件';
 $phpMussel['lang']['invalid_url'] = '无效的网址！';
 $phpMussel['lang']['ok'] = '好';
@@ -61,7 +61,7 @@ $phpMussel['lang']['SafeBrowseLookup_999'] = '未知API错误';
 $phpMussel['lang']['scan_aborted'] = '扫描中止！';
 $phpMussel['lang']['scan_chameleon'] = '{x}变色龙攻击检测';
 $phpMussel['lang']['scan_checking'] = '检查';
-$phpMussel['lang']['scan_checking_contents'] = '成功了！在进行检查的内容。';
+$phpMussel['lang']['scan_checking_contents'] = '成功了！​在进行检查的内容。';
 $phpMussel['lang']['scan_command_injection'] = '命令注入尝试检测';
 $phpMussel['lang']['scan_complete'] = '完成';
 $phpMussel['lang']['scan_extensions_missing'] = '失败（失踪必需的扩展）！';
@@ -79,10 +79,10 @@ $phpMussel['lang']['started'] = '开始';
 $phpMussel['lang']['too_many_urls'] = '太多的URL';
 $phpMussel['lang']['upload_error_1'] = '文件大小超过upload_max_filesize指令。';
 $phpMussel['lang']['upload_error_2'] = '文件大小超过文件大小限制指定由文件上传信息。';
-$phpMussel['lang']['upload_error_34'] = '上传失败！请联系网站管理员或网站托管服务！';
-$phpMussel['lang']['upload_error_6'] = '上传文件夹是失踪！请联系网站管理员或网站托管服务！';
-$phpMussel['lang']['upload_error_7'] = '硬盘写入错误！请联系网站管理员或网站托管服务！';
-$phpMussel['lang']['upload_error_8'] = 'PHP配置错误是检测！请联系网站管理员或网站托管服务！';
+$phpMussel['lang']['upload_error_34'] = '上传失败！​请联系网站管理员或网站托管服务！';
+$phpMussel['lang']['upload_error_6'] = '上传文件夹是失踪！​请联系网站管理员或网站托管服务！';
+$phpMussel['lang']['upload_error_7'] = '硬盘写入错误！​请联系网站管理员或网站托管服务！';
+$phpMussel['lang']['upload_error_8'] = 'PHP配置错误是检测！​请联系网站管理员或网站托管服务！';
 $phpMussel['lang']['upload_limit_exceeded'] = '超过上传限制';
 $phpMussel['lang']['wrong_password'] = '密码错误；行动拒绝。';
 $phpMussel['lang']['x_does_not_exist'] = '不存在';
@@ -93,7 +93,7 @@ $phpMussel['lang']['_fullstop_final'] = '。';
 
 $phpMussel['lang']['cli_commands'] = " q
  - 戒烟CLI模式。
- - 别名：quit，exit。
+ - 别名：quit，​exit。
  md5_file
  - 生成MD5签名从文件[语法：md5_file 文件名]。
  - 别名：m。

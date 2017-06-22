@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.06.12).
+ * This file: Indonesian language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -155,6 +155,8 @@ $phpMussel['lang']['previewer_months'] = 'Bulan';
 $phpMussel['lang']['previewer_seconds'] = 'Detik';
 $phpMussel['lang']['previewer_weeks'] = 'Minggu';
 $phpMussel['lang']['previewer_years'] = 'Tahun';
+$phpMussel['lang']['punct_decimals'] = ',';
+$phpMussel['lang']['punct_thousand'] = '.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Akun dengan nama pengguna ini sudah ada!';
 $phpMussel['lang']['response_accounts_created'] = 'Akun berhasil dibuat!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Akun berhasil dihapus!';

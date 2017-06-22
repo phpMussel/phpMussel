@@ -302,6 +302,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.06.18; Sub-minor code change; Maikuolan]: Improved debugging
   functionality; Added a new method of debugging scan problems to phpMussel.
 
+- [2017.06.22; Sub-minor code change; Maikuolan]: Slightly improved L10N
+  support (rendering numbers correctly, some punctuation fixes, etc).
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

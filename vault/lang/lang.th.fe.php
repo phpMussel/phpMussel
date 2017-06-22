@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.06.12).
+ * This file: Thai language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -155,6 +155,8 @@ $phpMussel['lang']['previewer_months'] = 'เดือน';
 $phpMussel['lang']['previewer_seconds'] = 'วินาที';
 $phpMussel['lang']['previewer_weeks'] = 'สัปดาห์';
 $phpMussel['lang']['previewer_years'] = 'ปี';
+$phpMussel['lang']['punct_decimals'] = '.';
+$phpMussel['lang']['punct_thousand'] = ',';
 $phpMussel['lang']['response_accounts_already_exists'] = 'บัญชีด้วยนั่นเองชื่อผู้ใช้มีอยู่แล้ว!';
 $phpMussel['lang']['response_accounts_created'] = 'บัญชีสำเร็จแล้วสร้าง!';
 $phpMussel['lang']['response_accounts_deleted'] = 'บัญชีสำเร็จแล้วลบ!';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.06.12).
+ * This file: Hindi language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -155,6 +155,8 @@ $phpMussel['lang']['previewer_months'] = 'महीने';
 $phpMussel['lang']['previewer_seconds'] = 'सेकंड';
 $phpMussel['lang']['previewer_weeks'] = 'सप्ताह';
 $phpMussel['lang']['previewer_years'] = 'वर्षों';
+$phpMussel['lang']['punct_decimals'] = '.';
+$phpMussel['lang']['punct_thousand'] = ',';
 $phpMussel['lang']['response_accounts_already_exists'] = 'उस उपयोगकर्ता नाम के साथ एक खाता पहले से मौजूद है!';
 $phpMussel['lang']['response_accounts_created'] = 'खाता सफलतापूर्वक बनाया गया!';
 $phpMussel['lang']['response_accounts_deleted'] = 'खाता सफलतापूर्वक हटाया गया!';

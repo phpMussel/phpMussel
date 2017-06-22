@@ -21,7 +21,7 @@ phpMussel:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 1.0.0-DEV+2017167849
+ Version: 1.0.0-DEV+2017172336
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/master/Changelog-v1.txt
@@ -116,7 +116,7 @@ phpMussel:
    - 8e03209e7fc6641b45094e584340feff:83
    - f9b29eb4e33f72eaa9ad0842888461d9:2025
    - 6ae234a1eb4e2b0688772e86c79f0419:1390
-   - ad25411eb427ac22a93987422cc17cec:1121
+   - 23d166c3cb75faada7e85212fa97e2d1:1151
    - 074c67c091a96c1608c4cad9497dfe00:277
    - 80e3a997a9d751884db7b36b7e380102:888
    - a421eb3fd77f917e1ad7b5723099330e:802
@@ -135,7 +135,7 @@ phpMussel:
    - 4d4b8356beee307735f73ceddf6d21b0:17579
    - 1f7377ba8beb1a4d28714fa320973741:929
    - 9363dbf142481e9807348a7fcce3920b:125123
-   - 524d21c80a2d4930e1427222915a89ac:311789
+   - b7e2d23d0c58caf1523f23329304046c:312025
    - ac607d0db4c0e159005c087365a6b77c:3072
    - 0f4fa0075f9790e27bc668ef80a58418:2315
    - 8e03209e7fc6641b45094e584340feff:83
@@ -165,7 +165,7 @@ l10n/en:
    - lang/lang.en.fe.php
    - lang/lang.en.php
   Checksum:
-   - 8518e293382bf28971f3370f1d8076f4:39299
+   - 5a993e196046e5b383848f83d9e40746:39387
    - 943a3adf80a9857984980a8673a4be81:7023
  Reannotate: components.dat
 l10n/ar:
@@ -185,7 +185,7 @@ l10n/ar:
    - lang/lang.ar.fe.php
    - lang/lang.ar.php
   Checksum:
-   - 387ee43caa03a5083c74096692235252:52934
+   - a7215a638bc47f929f444879884209af:53024
    - 6605c39d5584280a7233fbc946bbc6e4:8435
  Reannotate: components.dat
 l10n/de:
@@ -205,7 +205,7 @@ l10n/de:
    - lang/lang.de.fe.php
    - lang/lang.de.php
   Checksum:
-   - dd2730e85c091d853daca66c27e8eec4:41585
+   - 080fe22ee74e19d5cb0803ced003e4f5:41673
    - 5482ef2b854ad9b1c03bdf3f399769a2:7534
  Reannotate: components.dat
 l10n/es:
@@ -225,7 +225,7 @@ l10n/es:
    - lang/lang.es.fe.php
    - lang/lang.es.php
   Checksum:
-   - 542f736fd9d914f1d3798349b22e04ba:43311
+   - 1214ed079b942a1679ec742167b3fd94:43399
    - ce28b76b834fdea138e3de2caaa9a6e0:7396
  Reannotate: components.dat
 l10n/fr:
@@ -245,8 +245,8 @@ l10n/fr:
    - lang/lang.fr.fe.php
    - lang/lang.fr.php
   Checksum:
-   - 4706ae30581225c8229afa9793829a88:44456
-   - 177f97c1a5677e9aed14c77d1f25b05d:7862
+   - 25095df71ef5f83984d8ed8a0caf00d2:44674
+   - 642683744d453c36c86bb5ca9f12e607:7920
  Reannotate: components.dat
 l10n/hi:
  Name: L10N: हिंदी
@@ -265,7 +265,7 @@ l10n/hi:
    - lang/lang.hi.fe.php
    - lang/lang.hi.php
   Checksum:
-   - b35c760e90a0482a44e208df82851ae1:71737
+   - 8ab3f4a6ffae898a0dd94f169c12e82d:71825
    - f140269bc3aba55f07dd2a2afa7b36dc:12063
  Reannotate: components.dat
 l10n/id:
@@ -285,7 +285,7 @@ l10n/id:
    - lang/lang.id.fe.php
    - lang/lang.id.php
   Checksum:
-   - 852f5ead0e1b12a597cfbf7605de902b:40932
+   - 30535fb955b7eb6d6b6781b8bdd74a06:41020
    - 5e68f4bcfb9214343ba53065207c7108:7300
  Reannotate: components.dat
 l10n/it:
@@ -305,7 +305,7 @@ l10n/it:
    - lang/lang.it.fe.php
    - lang/lang.it.php
   Checksum:
-   - 835d579d726bbdae5f092048b86fb8e7:42728
+   - 74d35378cecd61dcec48b8e1813368ba:42816
    - 782d09620ef0dbb508f7177d9644f465:7466
  Reannotate: components.dat
 l10n/ja:
@@ -325,8 +325,8 @@ l10n/ja:
    - lang/lang.ja.fe.php
    - lang/lang.ja.php
   Checksum:
-   - 0fc716db6461a9d9dca0dce3c904aac7:47813
-   - 980aa03a4e9b70679683d1a18d2be389:9095
+   - a154e8a1e4b9c97c3a58c7b159f04819:49043
+   - 6936e9213bd3d98eb5686fe34b3041b0:9149
  Reannotate: components.dat
 l10n/ko:
  Name: L10N: 한국어
@@ -345,8 +345,8 @@ l10n/ko:
    - lang/lang.ko.fe.php
    - lang/lang.ko.php
   Checksum:
-   - 603e7ef625d013cf08b7d4683f786112:40963
-   - d4b8125897b9b4a7a511856dc47a9e48:7989
+   - 1a7d37536ce333000b6e83d66ca26074:41062
+   - eb8ae9d4647ffca755a134e72248c808:8004
  Reannotate: components.dat
 l10n/nl:
  Name: L10N: Nederlandse
@@ -365,7 +365,7 @@ l10n/nl:
    - lang/lang.nl.fe.php
    - lang/lang.nl.php
   Checksum:
-   - 110cdea868889cf6b4ead8009a30aa39:42346
+   - d873ea96c982d7164bdfb196c6b0e55d:42434
    - 21be0c0222d61155660a7da91b9c2f91:7369
  Reannotate: components.dat
 l10n/pt:
@@ -385,7 +385,7 @@ l10n/pt:
    - lang/lang.pt.fe.php
    - lang/lang.pt.php
   Checksum:
-   - 541c8a055b2e01f1a17fb3810702aed5:42547
+   - fae2dcdb111b8e9366df7271256551cf:42635
    - 4433aa2ea3df68b85cf37858a12583e8:7491
  Reannotate: components.dat
 l10n/ru:
@@ -405,7 +405,7 @@ l10n/ru:
    - lang/lang.ru.fe.php
    - lang/lang.ru.php
   Checksum:
-   - 857a1011dde23b62200600e4b6cd2714:58923
+   - ddeda2f79cafb6508813196ee61e505a:59011
    - 72631e2e3a78ddbf141ab388a9e80039:9953
  Reannotate: components.dat
 l10n/th:
@@ -425,7 +425,7 @@ l10n/th:
    - lang/lang.th.fe.php
    - lang/lang.th.php
   Checksum:
-   - 177f17d52ba15dfbad4b009d8eb1fbc2:71788
+   - 1b89739eef1b394483daf546b4ecc565:71876
    - 52ff2e8e82edbc57103f44a99fc98c23:11615
  Reannotate: components.dat
 l10n/tr:
@@ -445,7 +445,7 @@ l10n/tr:
    - lang/lang.tr.fe.php
    - lang/lang.tr.php
   Checksum:
-   - 89519dd344d5494a3c47d54b0e68a969:39180
+   - 160fb44168a40b519bb1d498b5998905:39268
    - ec467666a20344e3b228892734221d4a:7183
  Reannotate: components.dat
 l10n/ur:
@@ -465,7 +465,7 @@ l10n/ur:
    - lang/lang.ur.fe.php
    - lang/lang.ur.php
   Checksum:
-   - fd91d7e446303cb8f9162f87633cf07f:59433
+   - 65c39bfa2f305d1628ee03edd74362f2:59522
    - bf8fc7ec702f9e5a8b30e95285948d0d:9148
  Reannotate: components.dat
 l10n/vi:
@@ -485,7 +485,7 @@ l10n/vi:
    - lang/lang.vi.fe.php
    - lang/lang.vi.php
   Checksum:
-   - 060cba1110e26a30686b7dd1495d1d4c:49450
+   - 034053dd9480eb3d030b2a3536c479a0:49538
    - 2833bcbb78b83d87766ac8d51a83fa66:8432
  Reannotate: components.dat
 l10n/zh-TW:
@@ -505,8 +505,8 @@ l10n/zh-TW:
    - lang/lang.zh-tw.fe.php
    - lang/lang.zh-tw.php
   Checksum:
-   - 8f29921a5aaf2dfa5765ebc99a464327:36492
-   - 9ebb9fd228b37d38fa4b45eabdab0847:6884
+   - 80168f29ebf59f82bfc7c351d0e3ba32:37476
+   - 92314c0767574baf7afa983bd2ea2918:6929
  Reannotate: components.dat
 l10n/zh:
  Name: L10N: 中文（简体）
@@ -525,7 +525,7 @@ l10n/zh:
    - lang/lang.zh.fe.php
    - lang/lang.zh.php
   Checksum:
-   - b0cfa2042c3a6469ccc7e606fdf4b33d:36469
-   - c2edd4fefb131bf3b337b450080025c3:6883
+   - 382a23a786a0ccb7269a3a2268ca640c:37452
+   - 13520b6b93dc2cf0432505310f084d8d:6928
  Reannotate: components.dat
 

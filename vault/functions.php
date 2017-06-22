@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.06.18).
+ * This file: Functions file (last modified: 2017.06.21).
  */
 
 /**
@@ -6050,7 +6050,9 @@ $phpMussel['FormatFilesize'] = function (&$Filesize) use (&$phpMussel) {
             break;
         }
     }
-    $Filesize = number_format($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $Scale[$Iterate];
+    $Decimals = !empty($phpMussel['lang']['punct_decimals']) ? $phpMussel['lang']['punct_decimals'] : '.';
+    $Thousand = !empty($phpMussel['lang']['punct_thousand']) ? $phpMussel['lang']['punct_thousand'] : ',';
+    $Filesize = number_format($Filesize, ($Iterate === 0) ? 0 : 2, $Decimals, $Thousand) . ' ' . $Scale[$Iterate];
 };
 
 $phpMussel['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) {

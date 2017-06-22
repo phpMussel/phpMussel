@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.06.12).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -155,6 +155,8 @@ $phpMussel['lang']['previewer_months'] = 'Tháng';
 $phpMussel['lang']['previewer_seconds'] = 'Giây';
 $phpMussel['lang']['previewer_weeks'] = 'Tuần';
 $phpMussel['lang']['previewer_years'] = 'Năm';
+$phpMussel['lang']['punct_decimals'] = ',';
+$phpMussel['lang']['punct_thousand'] = '.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Một tài khoản với tên người dùng này đã tồn tại!';
 $phpMussel['lang']['response_accounts_created'] = 'Tài khoản tạo ra thành công!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Tài khoản xóa thành công!';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.06.12).
+ * This file: Russian language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -155,6 +155,8 @@ $phpMussel['lang']['previewer_months'] = 'Месяцы';
 $phpMussel['lang']['previewer_seconds'] = 'Секунды';
 $phpMussel['lang']['previewer_weeks'] = 'Недели';
 $phpMussel['lang']['previewer_years'] = 'Лет';
+$phpMussel['lang']['punct_decimals'] = ',';
+$phpMussel['lang']['punct_thousand'] = ' ';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Аккаунт с таким именем уже существует!';
 $phpMussel['lang']['response_accounts_created'] = 'Аккаунт успешно создан!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Аккаунт успешно удален!';

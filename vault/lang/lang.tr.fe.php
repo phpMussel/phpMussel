@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.06.12).
+ * This file: Turkish language data for the front-end (last modified: 2017.06.21).
  * (NOT COMPLETE)
  */
 
@@ -156,6 +156,8 @@ $phpMussel['lang']['previewer_months'] = 'Aylar';
 $phpMussel['lang']['previewer_seconds'] = 'Saniyeler';
 $phpMussel['lang']['previewer_weeks'] = 'Haftalar';
 $phpMussel['lang']['previewer_years'] = 'Yıllar';
+$phpMussel['lang']['punct_decimals'] = ',';
+$phpMussel['lang']['punct_thousand'] = '.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Bu kullanıcı adıyla bir hesap zaten var!';
 $phpMussel['lang']['response_accounts_created'] = 'Hesap başarıyla oluşturuldu!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Hesap başarıyla silindi!';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.06.12).
+ * This file: Dutch language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -155,6 +155,8 @@ $phpMussel['lang']['previewer_months'] = 'Maanden';
 $phpMussel['lang']['previewer_seconds'] = 'Seconden';
 $phpMussel['lang']['previewer_weeks'] = 'Weken';
 $phpMussel['lang']['previewer_years'] = 'Jaren';
+$phpMussel['lang']['punct_decimals'] = ',';
+$phpMussel['lang']['punct_thousand'] = '.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Een account bij die gebruikersnaam bestaat al!';
 $phpMussel['lang']['response_accounts_created'] = 'Account succesvol aangemaakt!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Account succesvol verwijderd!';

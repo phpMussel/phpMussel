@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.06.12).
+ * This file: Arabic language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -155,6 +155,8 @@ $phpMussel['lang']['previewer_months'] = 'الشهور';
 $phpMussel['lang']['previewer_seconds'] = 'ثواني';
 $phpMussel['lang']['previewer_weeks'] = 'أسابيع';
 $phpMussel['lang']['previewer_years'] = 'سنوات';
+$phpMussel['lang']['punct_decimals'] = '٫';
+$phpMussel['lang']['punct_thousand'] = '٬';
 $phpMussel['lang']['response_accounts_already_exists'] = 'حساب اسم المستخدم موجود بالفعل!';
 $phpMussel['lang']['response_accounts_created'] = 'حساب إنشاء بنجاح!';
 $phpMussel['lang']['response_accounts_deleted'] = 'حساب حذف بنجاح!';

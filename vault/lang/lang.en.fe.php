@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.06.12).
+ * This file: English language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -155,6 +155,8 @@ $phpMussel['lang']['previewer_months'] = 'Months';
 $phpMussel['lang']['previewer_seconds'] = 'Seconds';
 $phpMussel['lang']['previewer_weeks'] = 'Weeks';
 $phpMussel['lang']['previewer_years'] = 'Years';
+$phpMussel['lang']['punct_decimals'] = '.';
+$phpMussel['lang']['punct_thousand'] = ',';
 $phpMussel['lang']['response_accounts_already_exists'] = 'An account with that username already exists!';
 $phpMussel['lang']['response_accounts_created'] = 'Account successfully created!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Account successfully deleted!';

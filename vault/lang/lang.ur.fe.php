@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.06.12).
+ * This file: Urdu language data for the front-end (last modified: 2017.06.21).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -155,6 +155,8 @@ $phpMussel['lang']['previewer_months'] = 'مہینے';
 $phpMussel['lang']['previewer_seconds'] = 'سیکنڈ';
 $phpMussel['lang']['previewer_weeks'] = 'ہفتے';
 $phpMussel['lang']['previewer_years'] = 'سال';
+$phpMussel['lang']['punct_decimals'] = '.';
+$phpMussel['lang']['punct_thousand'] = '،';
 $phpMussel['lang']['response_accounts_already_exists'] = 'وہ صارف نام کے ساتھ ایک اکاؤنٹ پہلے سے موجود ہے!';
 $phpMussel['lang']['response_accounts_created'] = 'اکاؤنٹ کامیابی سے تشکیل!';
 $phpMussel['lang']['response_accounts_deleted'] = 'اکاؤنٹ کامیابی سے خارج!';
