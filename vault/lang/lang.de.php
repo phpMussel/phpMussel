@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2017.06.12).
+ * This file: German language data (last modified: 2017.06.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -45,6 +45,7 @@ $phpMussel['lang']['greylist_not_updated'] = ' Greylist nicht aktualisiert.';
 $phpMussel['lang']['greylist_updated'] = ' Greylist aktualisiert.';
 $phpMussel['lang']['image'] = 'Bild';
 $phpMussel['lang']['instance_already_active'] = 'Instanz bereits aktiv! Bitte prüfe deine Hooks.';
+$phpMussel['lang']['invalid_data'] = 'Ungültige Daten!';
 $phpMussel['lang']['invalid_file'] = 'Ungültige Datei';
 $phpMussel['lang']['invalid_url'] = 'Ungültige URL!';
 $phpMussel['lang']['ok'] = 'OK';

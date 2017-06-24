@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.06.21).
+ * This file: Functions file (last modified: 2017.06.24).
  */
 
 /**
@@ -6563,4 +6563,38 @@ $phpMussel['GetAssetPath'] = function ($Asset) use (&$phpMussel) {
         return $phpMussel['Vault'] . 'fe_assets/' . $Asset;
     }
     throw new \Exception('Asset not found');
+};
+
+/**
+ * Duplication avoidance (forking the process via recursive CLI mode commands).
+ *
+ * @param callable $Callable Executed normally when not forking the process.
+ * @return string Returnable data to be echoed to the CLI output.
+ */
+$phpMussel['CLI-RecursiveCommand'] = function ($Callable) use (&$phpMussel) {
+    $Params = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
+    if (is_dir($Params)) {
+        if (!is_readable($Params)) {
+            return $phpMussel['lang']['failed_to_access'] . '"' . $Params . "\".\n";
+        }
+        $Decal = array(':-) - (-:', ':-) \\ (-:', ':-) | (-:', ':-) / (-:');
+        $Frame = 0;
+        $Terminal = $Params[strlen($Params) - 1];
+        if ($Terminal !== "\\" && $Terminal !== '/') {
+            $Params .= '/';
+        }
+        $List = $phpMussel['DirectoryRecursiveList']($Params);
+        $Returnable = '';
+        foreach ($List as $Item) {
+            echo "\r" . $Decal[$Frame];
+            $Returnable .= $phpMussel['Fork']($phpMussel['cmd'] . ' ' . $Params . $Item, $Item) . "\n";
+            $Frame = $Frame < 3 ? $Frame + 1 : 0;
+        }
+        echo "\r         ";
+        return $Returnable;
+    }
+    if (is_file($Params)) {
+        return $Callable($Params);
+    }
+    return $Params . $phpMussel['lang']['cli_is_not_a'] . "\n";
 };

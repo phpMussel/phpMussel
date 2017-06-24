@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2017.06.22).
+ * This file: Turkish language data (last modified: 2017.06.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -45,6 +45,7 @@ $phpMussel['lang']['greylist_not_updated'] = ' Gri liste güncellenmedi.';
 $phpMussel['lang']['greylist_updated'] = ' Gri liste güncellendi.';
 $phpMussel['lang']['image'] = 'Imaj';
 $phpMussel['lang']['instance_already_active'] = 'Örnek zaten etkin! Lütfen kancalarınızı tekrar kontrol edin.';
+$phpMussel['lang']['invalid_data'] = 'Geçersiz veri!';
 $phpMussel['lang']['invalid_file'] = 'Geçersiz dosya';
 $phpMussel['lang']['invalid_url'] = 'Geçersiz URL!';
 $phpMussel['lang']['ok'] = 'Tamam';

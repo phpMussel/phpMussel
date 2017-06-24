@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2017.06.12).
+ * This file: Russian language data (last modified: 2017.06.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -45,6 +45,7 @@ $phpMussel['lang']['greylist_not_updated'] = ' Серый список не об
 $phpMussel['lang']['greylist_updated'] = ' Серый список обновлён.';
 $phpMussel['lang']['image'] = 'Изображение';
 $phpMussel['lang']['instance_already_active'] = 'Пример уже активен! Пожалуйста перепроверьте свои крючки.';
+$phpMussel['lang']['invalid_data'] = 'Неверные данные!';
 $phpMussel['lang']['invalid_file'] = 'Неверный файл';
 $phpMussel['lang']['invalid_url'] = 'Неверный URL!';
 $phpMussel['lang']['ok'] = 'Хорошо';

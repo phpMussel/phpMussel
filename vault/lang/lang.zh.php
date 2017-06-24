@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data (last modified: 2017.06.21).
+ * This file: Chinese (simplified) language data (last modified: 2017.06.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -45,6 +45,7 @@ $phpMussel['lang']['greylist_not_updated'] = ' 灰名单不更新。';
 $phpMussel['lang']['greylist_updated'] = ' 灰名单更新。';
 $phpMussel['lang']['image'] = '图像';
 $phpMussel['lang']['instance_already_active'] = '脚本已激活！​请仔细检查您的钩子。';
+$phpMussel['lang']['invalid_data'] = '无效数据！';
 $phpMussel['lang']['invalid_file'] = '无效的文件';
 $phpMussel['lang']['invalid_url'] = '无效的网址！';
 $phpMussel['lang']['ok'] = '好';

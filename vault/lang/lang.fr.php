@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2017.06.22).
+ * This file: French language data (last modified: 2017.06.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -45,6 +45,7 @@ $phpMussel['lang']['greylist_not_updated'] = ' Liste grise n\'a pas été mise �
 $phpMussel['lang']['greylist_updated'] = ' Liste grise mise à jour.';
 $phpMussel['lang']['image'] = 'Image';
 $phpMussel['lang']['instance_already_active'] = 'Instance déjà active ! Veuillez vérifier vos crochets.';
+$phpMussel['lang']['invalid_data'] = 'Données non valides !';
 $phpMussel['lang']['invalid_file'] = 'Fichier non valide';
 $phpMussel['lang']['invalid_url'] = 'URL non valide !';
 $phpMussel['lang']['ok'] = 'Bien';

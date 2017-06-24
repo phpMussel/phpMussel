@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data (last modified: 2017.06.12).
+ * This file: Spanish language data (last modified: 2017.06.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -45,8 +45,9 @@ $phpMussel['lang']['greylist_not_updated'] = ' Greylist no actualizado.';
 $phpMussel['lang']['greylist_updated'] = ' Greylist actualizado.';
 $phpMussel['lang']['image'] = 'Imagen';
 $phpMussel['lang']['instance_already_active'] = 'Instancia ya está activo! Por favor, compruebe sus ganchos.';
+$phpMussel['lang']['invalid_data'] = '¡Datos no válidos!';
 $phpMussel['lang']['invalid_file'] = 'Archivo no válido';
-$phpMussel['lang']['invalid_url'] = 'URL no válido!';
+$phpMussel['lang']['invalid_url'] = '¡URL no válido!';
 $phpMussel['lang']['ok'] = 'OK';
 $phpMussel['lang']['only_allow_images'] = 'Subir de archivos que no son imágenes no está permitido';
 $phpMussel['lang']['plugins_directory_nonexistent'] = 'Directorio de plugins no existe!';

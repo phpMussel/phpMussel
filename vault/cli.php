@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2017.06.09).
+ * This file: CLI handler (last modified: 2017.06.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -38,7 +38,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
     /** Triggered by the forked child process in CLI-mode via Windows. */
     if ($phpMussel['cli_args'][1] == 'cli_win_scan') {
         /** Fetch the command. **/
-        $phpMussel['cmd'] = strtolower((substr_count($phpMussel['cli_args'][2], ' ')) ? $phpMussel['substrbf']($phpMussel['cli_args'][2], ' ') : $phpMussel['cli_args'][2]);
+        $phpMussel['cmd'] = strtolower($phpMussel['substrbf']($phpMussel['cli_args'][2], ' ') ?: $phpMussel['cli_args'][2]);
 
         /** Scan a file or directory. **/
         if ($phpMussel['cmd'] === 'scan') {
@@ -69,73 +69,73 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
 
         /** Generate an MD5 signature or a SHA1 signature using a file or directory. **/
         if ($phpMussel['cmd'] === 'md5_file' || $phpMussel['cmd'] === 'm' || $phpMussel['cmd'] === 'sha1_file') {
-            $stl = substr($phpMussel['cli_args'][2], strlen($phpMussel['cmd']) + 1);
-            if (is_dir($stl)) {
-                if (!is_readable($stl)) {
-                    echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
+            $phpMussel['stdin_clean'] = substr($phpMussel['cli_args'][2], strlen($phpMussel['cmd']) + 1);
+            if (is_dir($phpMussel['stdin_clean'])) {
+                if (!is_readable($phpMussel['stdin_clean'])) {
+                    echo $phpMussel['lang']['failed_to_access'] . '"' . $phpMussel['stdin_clean'] . "\".\n";
                 } else {
-                    $Terminal = $stl[strlen($stl) - 1];
+                    $Terminal = $phpMussel['stdin_clean'][strlen($phpMussel['stdin_clean']) - 1];
                     if ($Terminal !== "\\" && $Terminal !== '/') {
-                        $stl .= '/';
+                        $phpMussel['stdin_clean'] .= '/';
                     }
-                    $List = $phpMussel['DirectoryRecursiveList']($stl);
+                    $List = $phpMussel['DirectoryRecursiveList']($phpMussel['stdin_clean']);
                     foreach ($List as $Item) {
-                        echo $phpMussel['Fork']($phpMussel['cmd'] . ' ' . $stl . $Item, $Item) . "\n";
+                        echo $phpMussel['Fork']($phpMussel['cmd'] . ' ' . $phpMussel['stdin_clean'] . $Item, $Item) . "\n";
                     }
                 }
-            } elseif (is_file($stl)) {
-                $HashMe = $phpMussel['ReadFile']($stl, 0, true);
+            } elseif (is_file($phpMussel['stdin_clean'])) {
+                $HashMe = $phpMussel['ReadFile']($phpMussel['stdin_clean'], 0, true);
                 echo $phpMussel['HashAlias']($phpMussel['cmd'], $HashMe) . ':' . strlen($HashMe) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
             } else {
-                echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
+                echo $phpMussel['stdin_clean'] . $phpMussel['lang']['cli_is_not_a'] . "\n";
             }
         }
 
         /** Generate a CoEx signature using a file. **/
         if ($phpMussel['cmd'] === 'coex_file') {
-            $stl = substr($phpMussel['cli_args'][2], strlen($phpMussel['cmd']) + 1);
-            if (is_dir($stl)) {
-                if (!is_readable($stl)) {
-                    echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
+            $phpMussel['stdin_clean'] = substr($phpMussel['cli_args'][2], strlen($phpMussel['cmd']) + 1);
+            if (is_dir($phpMussel['stdin_clean'])) {
+                if (!is_readable($phpMussel['stdin_clean'])) {
+                    echo $phpMussel['lang']['failed_to_access'] . '"' . $phpMussel['stdin_clean'] . "\".\n";
                 } else {
-                    $Terminal = $stl[strlen($stl) - 1];
+                    $Terminal = $phpMussel['stdin_clean'][strlen($phpMussel['stdin_clean']) - 1];
                     if ($Terminal !== "\\" && $Terminal !== '/') {
-                        $stl .= '/';
+                        $phpMussel['stdin_clean'] .= '/';
                     }
-                    $List = $phpMussel['DirectoryRecursiveList']($stl);
+                    $List = $phpMussel['DirectoryRecursiveList']($phpMussel['stdin_clean']);
                     foreach ($List as $Item) {
-                        echo $phpMussel['Fork']('coex_file ' . $stl . $Item, $Item) . "\n";
+                        echo $phpMussel['Fork']('coex_file ' . $phpMussel['stdin_clean'] . $Item, $Item) . "\n";
                     }
                 }
-            } elseif (is_file($stl)) {
-                $HashMe = $phpMussel['ReadFile']($stl, 0, true);
+            } elseif (is_file($phpMussel['stdin_clean'])) {
+                $HashMe = $phpMussel['ReadFile']($phpMussel['stdin_clean'], 0, true);
                 echo
                     '$md5:' . md5($HashMe) . ';' .
                     '$sha:' . sha1($HashMe) . ';' .
                     '$str_len:' . strlen($HashMe) . ';' .
                     $phpMussel['lang']['cli_signature_placeholder'] . "\n";
             }
-            else echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
+            else echo $phpMussel['stdin_clean'] . $phpMussel['lang']['cli_is_not_a'] . "\n";
         }
 
         /** Fetch PE metadata. **/
         if ($phpMussel['cmd'] === 'pe_meta') {
-            $stl = substr($phpMussel['cli_args'][2], strlen($phpMussel['cmd']) + 1);
-            if (is_dir($stl)) {
-                if (!is_readable($stl)) {
-                    echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
+            $phpMussel['stdin_clean'] = substr($phpMussel['cli_args'][2], strlen($phpMussel['cmd']) + 1);
+            if (is_dir($phpMussel['stdin_clean'])) {
+                if (!is_readable($phpMussel['stdin_clean'])) {
+                    echo $phpMussel['lang']['failed_to_access'] . '"' . $phpMussel['stdin_clean'] . "\".\n";
                 } else {
-                    $Terminal = $stl[strlen($stl) - 1];
+                    $Terminal = $phpMussel['stdin_clean'][strlen($phpMussel['stdin_clean']) - 1];
                     if ($Terminal !== "\\" && $Terminal !== '/') {
-                        $stl .= '/';
+                        $phpMussel['stdin_clean'] .= '/';
                     }
-                    $List = $phpMussel['DirectoryRecursiveList']($stl);
+                    $List = $phpMussel['DirectoryRecursiveList']($phpMussel['stdin_clean']);
                     foreach ($List as $Item) {
-                        echo $phpMussel['Fork']('pe_meta ' . $stl . $Item, $Item) . "\n";
+                        echo $phpMussel['Fork']('pe_meta ' . $phpMussel['stdin_clean'] . $Item, $Item) . "\n";
                     }
                 }
-            } elseif (is_file($stl)) {
-                $HashMe = $phpMussel['ReadFile']($stl, 0, true);
+            } elseif (is_file($phpMussel['stdin_clean'])) {
+                $HashMe = $phpMussel['ReadFile']($phpMussel['stdin_clean'], 0, true);
                 if (substr($HashMe, 0, 2) === 'MZ') {
                     $PEArr = array();
                     $PEArr['Len'] = strlen($HashMe);
@@ -224,7 +224,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                     echo $phpMussel['lang']['cli_pe1'] . "\n";
                 }
             } else {
-                echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
+                echo $phpMussel['stdin_clean'] . $phpMussel['lang']['cli_is_not_a'] . "\n";
             }
         }
 
@@ -236,7 +236,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
     echo $phpMussel['lang']['cli_ln1'] . $phpMussel['lang']['cli_ln2'] . $phpMussel['lang']['cli_ln3'];
 
     /** Open STDIN. */
-    $sth = fopen('php://stdin', 'r');
+    $phpMussel['stdin_handle'] = fopen('php://stdin', 'r');
 
     while (true) {
 
@@ -249,7 +249,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         echo $phpMussel['lang']['cli_prompt'];
 
         /** Wait for user input. */
-        $stl = trim(fgets($sth));
+        $phpMussel['stdin_clean'] = trim(fgets($phpMussel['stdin_handle']));
 
         /** Set CLI process title with "working" notice (PHP =>5.5.0). */
         if (function_exists('cli_set_process_title')) {
@@ -257,7 +257,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         }
 
         /** Fetch the command. **/
-        $phpMussel['cmd'] = strtolower((substr_count($stl, ' ')) ? $phpMussel['substrbf']($stl, ' ') : $stl);
+        $phpMussel['cmd'] = strtolower($phpMussel['substrbf']($phpMussel['stdin_clean'], ' ') ?: $phpMussel['stdin_clean']);
 
         /** Exit CLI-mode. **/
         if ($phpMussel['cmd'] === 'quit' || $phpMussel['cmd'] === 'q' || $phpMussel['cmd'] === 'exit') {
@@ -266,98 +266,45 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
 
         /** Generate an MD5 signature or a SHA1 signature using a file or directory. **/
         if ($phpMussel['cmd'] === 'md5_file' || $phpMussel['cmd'] === 'm' || $phpMussel['cmd'] === 'sha1_file') {
-            echo "\n";
-            $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            if (is_dir($stl)) {
-                if (!is_readable($stl)) {
-                    echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
-                } else {
-                    $Terminal = $stl[strlen($stl) - 1];
-                    if ($Terminal !== "\\" && $Terminal !== '/') {
-                        $stl .= '/';
-                    }
-                    $List = $phpMussel['DirectoryRecursiveList']($stl);
-                    foreach ($List as $Item) {
-                        echo $phpMussel['Fork']($phpMussel['cmd'] . ' ' . $stl . $Item, $Item) . "\n";
-                    }
-                }
-            } elseif (is_file($stl)) {
-                $HashMe = $phpMussel['ReadFile']($stl, 0, true);
-                echo $phpMussel['HashAlias']($phpMussel['cmd'], $HashMe) . ':' . strlen($HashMe) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
-            } else {
-                echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
-            }
+            echo "\n" . $phpMussel['CLI-RecursiveCommand'](function ($Params) use (&$phpMussel) {
+                $HashMe = $phpMussel['ReadFile']($Params, 0, true);
+                return $phpMussel['HashAlias']($phpMussel['cmd'], $HashMe) . ':' . strlen($HashMe) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
+            });
         }
 
         /** Generate a CoEx signature using a file. **/
         if ($phpMussel['cmd'] === 'coex_file') {
-            echo "\n";
-            $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            if (is_dir($stl)) {
-                if (!is_readable($stl)) {
-                    echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
-                } else {
-                    $Terminal = $stl[strlen($stl) - 1];
-                    if ($Terminal !== "\\" && $Terminal !== '/') {
-                        $stl .= '/';
-                    }
-                    $List = $phpMussel['DirectoryRecursiveList']($stl);
-                    foreach ($List as $Item) {
-                        echo $phpMussel['Fork']('coex_file ' . $stl . $Item, $Item) . "\n";
-                    }
-                }
-            } elseif (is_file($stl)) {
-                $HashMe = $phpMussel['ReadFile']($stl, 0, true);
-                echo
+            echo "\n" . $phpMussel['CLI-RecursiveCommand'](function ($Params) use (&$phpMussel) {
+                $HashMe = $phpMussel['ReadFile']($Params, 0, true);
+                return
                     '$md5:' . md5($HashMe) . ';' .
                     '$sha:' . sha1($HashMe) . ';' .
                     '$str_len:' . strlen($HashMe) . ';' .
                     $phpMussel['lang']['cli_signature_placeholder'] . "\n";
-            } else {
-                echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
-            }
+            });
         }
 
         /** Fetch PE metadata. **/
         if ($phpMussel['cmd'] === 'pe_meta') {
-            echo "\n";
-            $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            if (is_dir($stl)) {
-                if (!is_readable($stl)) {
-                    echo $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
-                } else {
-                    $Terminal = $stl[strlen($stl) - 1];
-                    if ($Terminal !== "\\" && $Terminal !== '/') {
-                        $stl .= '/';
-                    }
-                    $List = $phpMussel['DirectoryRecursiveList']($stl);
-                    foreach ($List as $Item) {
-                        echo $phpMussel['Fork']('pe_meta ' . $stl . $Item, $Item) . "\n";
-                    }
-                }
-            } elseif (is_file($stl)) {
-                echo $phpMussel['Fork']('pe_meta ' . $stl, $stl) . "\n";
-            } else {
-                echo $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
-            }
+            echo "\n" . $phpMussel['CLI-RecursiveCommand'](function ($Params) use (&$phpMussel) {
+                return $phpMussel['Fork']($phpMussel['cmd'] . ' ' . $Params, $Params) . "\n";
+            });
         }
 
         /** Generate an MD5 signature or a SHA1 signature using a string. **/
         if ($phpMussel['cmd'] === 'md5' || $phpMussel['cmd'] === 'sha1') {
-            echo "\n";
-            $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            echo $phpMussel['cmd']($stl) . ':' . strlen($stl) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
+            $phpMussel['TargetData'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
+            echo "\n" . $phpMussel['cmd']($phpMussel['TargetData']) . ':' . strlen($phpMussel['TargetData']) . ':' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
         }
 
         /** Generate a URL scanner signature from a URL. **/
         if ($phpMussel['cmd'] === 'url_sig') {
             echo "\n";
-            $stl = $phpMussel['prescan_normalise'](substr($stl, strlen($phpMussel['cmd']) + 1));
-            $urlsig = array();
-            $urlsig['avoidme'] = $urlsig['forthis'] = '';
+            $phpMussel['stdin_clean'] = $phpMussel['prescan_normalise'](substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1));
+            $urlsig = array('avoidme' => '', 'forthis' => '');
             if (
-                !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([0-9a-z.-]{1,512})/i', $stl, $urlsig['domain']) ||
-                !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})/i', $stl, $urlsig['url'])
+                !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([0-9a-z.-]{1,512})/i', $phpMussel['stdin_clean'], $urlsig['domain']) ||
+                !preg_match_all('/(data|file|https?|ftps?|sftp|ss[hl])\:\/\/(www[0-9]{0,3}\.)?([\!\#\$\&-;\=\?\@-\[\]_a-z~]{1,4000})/i', $phpMussel['stdin_clean'], $urlsig['url'])
             ) {
                 echo $phpMussel['lang']['invalid_url'] . "\n";
             } else {
@@ -396,62 +343,57 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
 
         /** Generate a CoEx signature using a string. **/
         if ($phpMussel['cmd'] === 'coex') {
-            echo "\n";
-            $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            echo '$md5:' . md5($stl) . ';$sha:' . sha1($stl) . ';$str_len:' . strlen($stl) . ';' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
+            $phpMussel['TargetData'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
+            echo "\n\$md5:" . md5($phpMussel['TargetData']) . ';$sha:' . sha1($phpMussel['TargetData']) . ';$str_len:' . strlen($phpMussel['TargetData']) . ';' . $phpMussel['lang']['cli_signature_placeholder'] . "\n";
         }
 
         /** Convert a binary string to a hexadecimal. **/
         if ($phpMussel['cmd'] === 'hex_encode' || $phpMussel['cmd'] === 'x') {
-            echo "\n";
-            $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            echo bin2hex($stl) . "\n";
+            $phpMussel['TargetData'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
+            echo "\n" . bin2hex($phpMussel['TargetData']) . "\n";
         }
 
         /** Convert a hexadecimal to a binary string. **/
         if ($phpMussel['cmd'] === 'hex_decode') {
-            echo "\n";
-            $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            echo $phpMussel['HexSafe']($stl) . "\n";
+            $phpMussel['TargetData'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
+            echo "\n" . ($phpMussel['HexSafe']($phpMussel['TargetData']) ?: $phpMussel['lang']['invalid_data']) . "\n";
         }
 
         /** Convert a binary string to a base64 string. **/
         if ($phpMussel['cmd'] === 'base64_encode' || $phpMussel['cmd'] === 'b') {
-            echo "\n";
-            $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            echo base64_encode($stl) . "\n";
+            $phpMussel['TargetData'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
+            echo "\n" . base64_encode($phpMussel['TargetData']) . "\n";
         }
 
         /** Convert a base64 string to a binary string. **/
         if ($phpMussel['cmd'] === 'base64_decode') {
-            echo "\n";
-            $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            echo base64_decode($stl) . "\n";
+            $phpMussel['TargetData'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
+            echo "\n" . (base64_decode($phpMussel['TargetData']) ?: $phpMussel['lang']['invalid_data']) . "\n";
         }
 
         /** Scan a file or directory. **/
         if ($phpMussel['cmd'] === 'scan' || $phpMussel['cmd'] === 's') {
             echo "\n";
-            $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
+            $phpMussel['stdin_clean'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
             $out = $r = '';
             $phpMussel['memCache']['start_time'] = time() + ($phpMussel['Config']['general']['timeOffset'] * 60);
             $phpMussel['memCache']['start_time_2822'] = $phpMussel['TimeFormat']($phpMussel['memCache']['start_time'], $phpMussel['Config']['general']['timeFormat']);
             echo $s = $phpMussel['memCache']['start_time_2822'] . ' ' . $phpMussel['lang']['started'] . $phpMussel['lang']['_fullstop_final'] . "\n";
-            if (is_dir($stl)) {
-                if (!is_readable($stl)) {
-                    $out = '> ' . $phpMussel['lang']['failed_to_access'] . '"' . $stl . "\".\n";
+            if (is_dir($phpMussel['stdin_clean'])) {
+                if (!is_readable($phpMussel['stdin_clean'])) {
+                    $out = '> ' . $phpMussel['lang']['failed_to_access'] . '"' . $phpMussel['stdin_clean'] . "\".\n";
                 } else {
-                    $Terminal = $stl[strlen($stl) - 1];
+                    $Terminal = $phpMussel['stdin_clean'][strlen($phpMussel['stdin_clean']) - 1];
                     if ($Terminal !== "\\" && $Terminal !== '/') {
-                        $stl .= '/';
+                        $phpMussel['stdin_clean'] .= '/';
                     }
-                    $List = $phpMussel['DirectoryRecursiveList']($stl);
+                    $List = $phpMussel['DirectoryRecursiveList']($phpMussel['stdin_clean']);
                     $Total = count($List);
                     $Current = 0;
                     foreach ($List as $Item) {
                         $Percent = round(($Current / $Total) * 100, 2) . '%';
                         echo $Percent . ' ' . $phpMussel['lang']['scan_complete'] . $phpMussel['lang']['_fullstop_final'];
-                        $out = $phpMussel['Fork']('scan ' . $stl . $Item, $Item);
+                        $out = $phpMussel['Fork']('scan ' . $phpMussel['stdin_clean'] . $Item, $Item);
                         if (!$out) {
                             $out = '> ' . $phpMussel['lang']['cli_failed_to_complete'] . ' (' . $Item . ')' . $phpMussel['lang']['_exclamation_final'] . "\n";
                         }
@@ -460,13 +402,13 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
                         $out = '';
                     }
                 }
-            } elseif (is_file($stl)) {
-                $out = $phpMussel['Fork']('scan ' . $stl, $stl);
+            } elseif (is_file($phpMussel['stdin_clean'])) {
+                $out = $phpMussel['Fork']('scan ' . $phpMussel['stdin_clean'], $phpMussel['stdin_clean']);
                 if (!$out) {
                     $out = '> ' . $phpMussel['lang']['cli_failed_to_complete'] . $phpMussel['lang']['_exclamation_final'] . "\n";
                 }
             } elseif (!$out) {
-                $out = '> ' . $stl . $phpMussel['lang']['cli_is_not_a'] . "\n";
+                $out = '> ' . $phpMussel['stdin_clean'] . $phpMussel['lang']['cli_is_not_a'] . "\n";
             }
             $r .= $out;
             if ($out) {
@@ -497,9 +439,9 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         /** Add an entry to the greylist. **/
         if ($phpMussel['cmd'] === 'greylist' || $phpMussel['cmd'] === 'g') {
             echo "\n";
-            $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
-            if (!empty($stl)) {
-                $Greylist = file_exists($phpMussel['Vault'] . 'greylist.csv') ? $stl . ',' : ',' . $stl . ',';
+            $phpMussel['stdin_clean'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
+            if (!empty($phpMussel['stdin_clean'])) {
+                $Greylist = file_exists($phpMussel['Vault'] . 'greylist.csv') ? $phpMussel['stdin_clean'] . ',' : ',' . $phpMussel['stdin_clean'] . ',';
                 $Handle = fopen($phpMussel['Vault'] . 'greylist.csv', 'a');
                 fwrite($Handle, $Greylist);
                 fclose($Handle);
@@ -522,7 +464,7 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         /** Show the greylist. **/
         if ($phpMussel['cmd'] === 'greylist_show' || $phpMussel['cmd'] === 'gs') {
             echo "\n";
-            $stl = substr($stl, strlen($phpMussel['cmd']) + 1);
+            $phpMussel['stdin_clean'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
             echo
                 file_exists($phpMussel['Vault'] . 'greylist.csv') ?
                 " greylist.csv:\n" . implode("\n ", explode(',', $phpMussel['ReadFile']($phpMussel['Vault'] . 'greylist.csv'))) :

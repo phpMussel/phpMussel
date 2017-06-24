@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2017.06.21).
+ * This file: Japanese language data (last modified: 2017.06.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -45,6 +45,7 @@ $phpMussel['lang']['greylist_not_updated'] = ' グレーリストがアップデ
 $phpMussel['lang']['greylist_updated'] = ' グレーリストがアップデートされました。';
 $phpMussel['lang']['image'] = '画像';
 $phpMussel['lang']['instance_already_active'] = 'インスタンスが既にアクティブです！​フックを再確認して下さい。';
+$phpMussel['lang']['invalid_data'] = '不正データ！';
 $phpMussel['lang']['invalid_file'] = '不正ファイル';
 $phpMussel['lang']['invalid_url'] = '不正ＵＲＬ！';
 $phpMussel['lang']['ok'] = 'ＯＫです';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data (last modified: 2017.06.12).
+ * This file: Hindi language data (last modified: 2017.06.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -45,6 +45,7 @@ $phpMussel['lang']['greylist_not_updated'] = ' धूसर सूची अप�
 $phpMussel['lang']['greylist_updated'] = ' धूसर सूची अपडेट किया गया।';
 $phpMussel['lang']['image'] = 'छवि';
 $phpMussel['lang']['instance_already_active'] = 'उदाहरण पहले से ही सक्रिय है! कृपया अपने हुक दो बार जांचें।';
+$phpMussel['lang']['invalid_data'] = 'अमान्य डेटा!';
 $phpMussel['lang']['invalid_file'] = 'अवैध फाइल';
 $phpMussel['lang']['invalid_url'] = 'अवैध URL!';
 $phpMussel['lang']['ok'] = 'OK';

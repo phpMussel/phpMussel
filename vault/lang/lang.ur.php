@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2017.06.12).
+ * This file: Urdu language data (last modified: 2017.06.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -46,6 +46,7 @@ $phpMussel['lang']['greylist_not_updated'] = ' گرے فہرست کو اپ ڈی�
 $phpMussel['lang']['greylist_updated'] = ' گرے فہرست کو اپ ڈیٹ.';
 $phpMussel['lang']['image'] = 'تصویر';
 $phpMussel['lang']['instance_already_active'] = 'واقعے کی پہلے سے ہی چالو! براہ مہربانی اپنے ہکس دوبارہ چیک.';
+$phpMussel['lang']['invalid_data'] = 'غلط ڈیٹا!';
 $phpMussel['lang']['invalid_file'] = 'غلط فائل';
 $phpMussel['lang']['invalid_url'] = 'غلط URL!';
 $phpMussel['lang']['ok'] = 'ٹھیک ہے';

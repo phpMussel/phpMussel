@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2017.06.12).
+ * This file: Arabic language data (last modified: 2017.06.24).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -46,6 +46,7 @@ $phpMussel['lang']['greylist_not_updated'] = ' قائمة رمادية لم تح
 $phpMussel['lang']['greylist_updated'] = ' قائمة رمادية تحديثها.';
 $phpMussel['lang']['image'] = 'صورة';
 $phpMussel['lang']['instance_already_active'] = 'نشطة بالفعل! يرجى إعادة الفحص اليشمل.';
+$phpMussel['lang']['invalid_data'] = 'بيانات غير صالحة!';
 $phpMussel['lang']['invalid_file'] = 'ملف غير صالح';
 $phpMussel['lang']['invalid_url'] = 'URL غير صالح!';
 $phpMussel['lang']['ok'] = 'حسنا';
