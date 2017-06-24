@@ -29,7 +29,7 @@ PHPMUSSEL著作権2013とGNU一般公衆ライセンスv2を超える権利に�
 
 作成のインスピレーションと本スクリプトが利用するシグネチャについて[ClamAV](http://www.clamav.net/)に感謝の意を表したいと思います。​この２つがなければ、​本スクリプトは存在しえないか、​あるいは極めて限られた利用価値しかもたないと言ってよいでしょう。
 
-本プロジェクトファイルのホスト先であるSourceforgeとGitHub、​phpMusselのディスカッションフォーラムのホスト先である[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=5５）、​phpMusselが利用するシグネチャの提供先である：​[SecuriteInfo.com](http://www.securiteinfo.com/)、​[PhishTank](http://www.phishtank.com/)、​[NLNetLabs](http://nlnetlabs.nl/) 他、​本プロジェクトを支援して下さった全ての方々に感謝の意を表したいと思います。
+本プロジェクトファイルのホスト先であるSourceforgeとGitHub、​phpMusselのディスカッションフォーラムのホスト先である[Spambot Security](http://www.spambotsecurity.com/forum/viewforum.php?f=55)、​phpMusselが利用するシグネチャの提供先である：​[SecuriteInfo.com](http://www.securiteinfo.com/)、​[PhishTank](http://www.phishtank.com/)、​[NLNetLabs](http://nlnetlabs.nl/) 他、​本プロジェクトを支援して下さった全ての方々に感謝の意を表したいと思います。
 
 本ドキュメントならびに関連パッケージは以下のURLからダウンロードできます。
 - [Sourceforge](http://phpmussel.sourceforge.net/)。
@@ -738,7 +738,7 @@ phpMusselは、​ファイルをブロックします | __偽陽性__ | 真陽�
 - あなたは最新のソフトウェアバージョンを使用していますか？​あなたは最新のシグネチャファイルバージョンを使用していますか？​そうでない場合は、​まずすべてをアップデイトしてください。​問題が解決しないかどうかをチェックしてください。​それが続く場合は、​読んでください。
 - あなたはドキュメンテーションをチェックしましたか？​もしそうでなければ、​そうしてください。​ドキュメンテーションを使用して問題を解決できない場合は、​引き続き読んでください。
 - **[イシュー・ページ](https://github.com/phpMussel/phpMussel/issues)** をチェックしましたか？​問題が以前に言及されているかどうかをチェックしてください。​提案、​アイデア、​ソリューションが提供されたかどうかをチェックしてください。
-- **[Spambot Securityが提供するphpMusselサポート・フォーラム](http://www.spambotsecurity.com/forum/viewforum.php?f=5５）** をチェックしましたか？​問題が以前に言及されているかどうかをチェックしてください。​提案、​アイデア、​ソリューションが提供されたかどうかをチェックしてください。
+- **[Spambot Securityが提供するphpMusselサポート・フォーラム](http://www.spambotsecurity.com/forum/viewforum.php?f=55)** をチェックしましたか？​問題が以前に言及されているかどうかをチェックしてください。​提案、​アイデア、​ソリューションが提供されたかどうかをチェックしてください。
 - 問題が解決しない場合は、​教えてください。​イシュー・ページまたはサポート・フォーラムに関する新しいディスカッションを作成する。
 
 #### 5.4.0より古いＰＨＰバージョンでphpMusselを使用したいと思います；​手伝ってくれますか？

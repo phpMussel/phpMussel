@@ -432,7 +432,7 @@ l10n/tr:
  Name: L10N: Türkçe
  Extended Description:
   tr: Türkçe dili verileri
- Version: 2017.172.743
+ Version: 2017.174.299
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -445,7 +445,7 @@ l10n/tr:
    - lang/lang.tr.fe.php
    - lang/lang.tr.php
   Checksum:
-   - fd68a4e58ad14ccdafcbf5c99b3fdd6c:39516
+   - 6e517c7035d8af574a7784b0b4cfe395:40427
    - e06110feed4721ac86e1bffebf2a16c8:7509
  Reannotate: components.dat
 l10n/ur:
