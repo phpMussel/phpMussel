@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data (last modified: 2017.06.24).
+ * This file: French language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -96,28 +96,30 @@ $phpMussel['lang']['cli_commands'] = " q
  - Quitter CLI.
  - Alias : quit, exit.
  md5_file
- - Générer les signatures MD5 des fichiers
- - [Syntaxe : md5_file « nom du fichier »].
+ - Générer les signatures MD5 des fichiers [Syntaxe : md5_file fichier].
  - Alias : m.
  sha1_file
- - Générer les signatures SHA1 des fichiers
- - [Syntaxe : sha1_file « nom du fichier »].
+ - Générer les signatures SHA1 des fichiers [Syntaxe : sha1_file fichier].
  md5
- - Générer la signature MD5 à partir d'une chaîne [Syntaxe : md5 string].
+ - Générer la signature MD5 à partir d'une chaîne [Syntaxe : md5 chaîne].
  sha1
- - Générer la signature SHA1 à partir d'une chaîne [Syntaxe : sha1 string].
+ - Générer la signature SHA1 à partir d'une chaîne [Syntaxe : sha1 chaîne].
  hex_encode
- - Convertir une chaîne binaire en hexadécimal [Syntaxe : hex_encode string].
+ - Convertir une chaîne binaire en hexadécimal [Syntaxe : hex_encode chaîne].
  - Alias : x.
  hex_decode
- - Convertir hexadécimal en chaîne binaire [Syntaxe : hex_decode string].
+ - Convertir hexadécimal en chaîne binaire [Syntaxe : hex_decode chaîne].
  base64_encode
- - Convertir chaîne binaire en chaîne base64 [Syntaxe : base64_encode string].
+ - Convertir chaîne binaire en chaîne base64 [Syntaxe : base64_encode chaîne].
  - Alias : b.
  base64_decode
- - Convertir chaîne base64 en chaîne binaire [Syntaxe : base64_decode string].
+ - Convertir chaîne base64 en chaîne binaire [Syntaxe : base64_decode chaîne].
+ pe_meta
+ - Extraire les métadonnées d'un fichier PE [Syntaxe : pe_meta fichier].
+ url_sig
+ - Générer des signatures de scanner d'URL [Syntaxe : url_sig chaîne].
  scan
- - Analyser fichier ou répertoire [Syntaxe : scan « nom du fichier »].
+ - Analyser fichier ou répertoire [Syntaxe : scan fichier].
  - Alias : s.
  c
  - Imprimer cette liste des commandes.

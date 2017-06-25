@@ -267,6 +267,8 @@ Arquivo | Descrição
 /vault/lang/lang.ru.php | Dados lingüísticos Russo.
 /vault/lang/lang.th.fe.php | Dados lingüísticos Tailandês para o front-end.
 /vault/lang/lang.th.php | Dados lingüísticos Tailandês.
+/vault/lang/lang.tr.fe.php | Dados lingüísticos Turco para o front-end.
+/vault/lang/lang.tr.php | Dados lingüísticos Turco.
 /vault/lang/lang.ur.fe.php | Dados lingüísticos Urdu para o front-end.
 /vault/lang/lang.ur.php | Dados lingüísticos Urdu.
 /vault/lang/lang.vi.fe.php | Dados lingüísticos Vietnamita para o front-end.
@@ -846,4 +848,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Última Atualização: 18 Junho 2017 (2017.06.18).
+Última Atualização: 25 Junho 2017 (2017.06.25).

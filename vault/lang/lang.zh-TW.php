@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data (last modified: 2017.06.24).
+ * This file: Chinese (traditional) language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -96,26 +96,30 @@ $phpMussel['lang']['cli_commands'] = " q
  - 戒菸CLI模式。
  - 別名：quit，​exit。
  md5_file
- - 生成MD5簽名從文件[語法：md5_file 文件名]。
+ - 生成MD5簽名從文件​[語法：md5_file 文件名]。
  - 別名：m。
  sha1_file
- - 生成SHA1簽名從文件[語法：sha1_file 文件名]。
+ - 生成SHA1簽名從文件​[語法：sha1_file 文件名]。
  md5
- - 生成MD5簽名從數據[語法：md5 數據]。
+ - 生成MD5簽名從數據​[語法：md5 數據]。
  sha1
- - 生成SHA1簽名從數據[語法：sha1 數據]。
+ - 生成SHA1簽名從數據​[語法：sha1 數據]。
  hex_encode
- - 兌換從二進制數據至十六進制[語法：hex_encode 數據]。
+ - 兌換從二進制數據至十六進制​[語法：hex_encode 數據]。
  - 別名：x。
  hex_decode
- - 兌換從十六進制二進制數據至[語法：hex_decode 數據]。
+ - 兌換從十六進制二進制數據至​[語法：hex_decode 數據]。
  base64_encode
- - 兌換從二進制數據至基地64數據[語法：base64_encode 數據]。
+ - 兌換從二進制數據至基地64數據​[語法：base64_encode 數據]。
  - 別名：b。
  base64_decode
- - 兌換從基地64數據至二進制數據[語法：base64_decode 數據]。
+ - 兌換從基地64數據至二進制數據​[語法：base64_decode 數據]。
+ pe_meta
+ - 從PE文件中提取元數據​[語法：pe_meta 文件名]。
+ url_sig
+ - 生成URL掃描器簽名​[語法：url_sig 數據]。
  scan
- - 掃描文件或文件夾[語法：scan 文件名]。
+ - 掃描文件或文件夾​[語法：scan 文件名]。
  - 別名：s。
  c
  - 打印此命令列表。

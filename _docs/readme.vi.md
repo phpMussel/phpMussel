@@ -267,6 +267,8 @@ Tập tin | Chi tiết
 /vault/lang/lang.ru.php | Dữ liệu tiếng Nga.
 /vault/lang/lang.th.fe.php | Dữ liệu tiếng Thái Lan cho các front-end.
 /vault/lang/lang.th.php | Dữ liệu tiếng Thái Lan.
+/vault/lang/lang.tr.fe.php | Dữ liệu tiếng Thổ Nhĩ Kỳ cho các front-end.
+/vault/lang/lang.tr.php | Dữ liệu tiếng Thổ Nhĩ Kỳ.
 /vault/lang/lang.ur.fe.php | Dữ liệu tiếng Urdu cho các front-end.
 /vault/lang/lang.ur.php | Dữ liệu tiếng Urdu.
 /vault/lang/lang.vi.fe.php | Dữ liệu tiếng Việt cho các front-end.
@@ -846,4 +848,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Lần cuối cập nhật: 18 Tháng Sáu 2017 (2017.06.18).
+Lần cuối cập nhật: 25 Tháng Sáu 2017 (2017.06.25).

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2017.06.24).
+ * This file: Urdu language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -115,6 +115,10 @@ $phpMussel['lang']['cli_commands'] = " q
  - عرف: b.
  base64_decode
  - بائنری سٹرنگ کو Base64 میں سٹرنگ میں تبدیل [نحو: base64_decode سٹرنگ].
+ pe_meta
+ - PE فائل سے میٹا ڈیٹا کو لے لو [نحو: pe_meta فائل کا نام].
+ url_sig
+ - URL سکینر دستخط تخلیق کریں [نحو: url_sig سٹرنگ].
  scan
  - سکین فائل یا ڈائریکٹری [نحو: scan فائل کا نام].
  - عرف: s.

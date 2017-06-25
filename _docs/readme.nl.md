@@ -267,6 +267,8 @@ Bestand | Beschrijving
 /vault/lang/lang.ru.php | Russische taaldata/taalgegevens.
 /vault/lang/lang.th.fe.php | Thaise taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.th.php | Thaise taaldata/taalgegevens.
+/vault/lang/lang.tr.fe.php | Turks taaldata/taalgegevens voor het frontend.
+/vault/lang/lang.tr.php | Turks taaldata/taalgegevens.
 /vault/lang/lang.ur.fe.php | Urdu taaldata/taalgegevens voor het frontend.
 /vault/lang/lang.ur.php | Urdu taaldata/taalgegevens.
 /vault/lang/lang.vi.fe.php | Vietnamees taaldata/taalgegevens voor het frontend.
@@ -846,4 +848,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Laatste Bijgewerkt: 18 Juni 2017 (2017.06.18).
+Laatste Bijgewerkt: 25 Juni 2017 (2017.06.25).

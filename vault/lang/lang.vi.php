@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2017.06.24).
+ * This file: Vietnamese language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -101,19 +101,23 @@ $phpMussel['lang']['cli_commands'] = " q
  sha1_file
  - Phát ra SHA1 chử ký từ tập tin [Cú pháp: sha1_file \"tên tập tin\"].
  md5
- - Phát ra MD5 chử ký từ dây [Cú pháp: md5 string].
+ - Phát ra MD5 chử ký từ dây [Cú pháp: md5 dây].
  sha1
- - Phát ra SHA1 chử ký từ dây [Cú pháp: sha1 string].
+ - Phát ra SHA1 chử ký từ dây [Cú pháp: sha1 dây].
  hex_encode
- - Chuyển đổi dây nhị phân thành hệ thập lục phân [Cú pháp: hex_encode string].
+ - Chuyển đổi dây nhị phân thành hệ thập lục phân [Cú pháp: hex_encode dây].
  - Bí danh: x.
  hex_decode
- - Chuyển đổi hệ thập lục phân thành dây nhị phân [Cú pháp: hex_decode string].
+ - Chuyển đổi hệ thập lục phân thành dây nhị phân [Cú pháp: hex_decode dây].
  base64_encode
- - Chuyển đổi dây nhị phân thành dây base64 [Cú pháp: base64_encode string].
+ - Chuyển đổi dây nhị phân thành dây base64 [Cú pháp: base64_encode dây].
  - Bí danh: b.
  base64_decode
- - Chuyển đổi dây base64 thành dây nhị phân [Cú pháp: base64_decode string].
+ - Chuyển đổi dây base64 thành dây nhị phân [Cú pháp: base64_decode dây].
+ pe_meta
+ - Trích xuất siêu dữ liệu từ tập tin PE [Cú pháp: pe_meta \"tên tập tin\"].
+ url_sig
+ - Tạo chữ ký của trình quét URL [Cú pháp: url_sig dây].
  scan
  - Xem tập tin hoạc hồ sơ [Cú pháp: scan \"tên tập tin\"].
  - Bí danh: s.

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.06.24).
+ * This file: Functions file (last modified: 2017.06.25).
  */
 
 /**
@@ -6568,11 +6568,12 @@ $phpMussel['GetAssetPath'] = function ($Asset) use (&$phpMussel) {
 /**
  * Duplication avoidance (forking the process via recursive CLI mode commands).
  *
+ * @param string $Command Command with parameters for the action to be taken.
  * @param callable $Callable Executed normally when not forking the process.
  * @return string Returnable data to be echoed to the CLI output.
  */
-$phpMussel['CLI-RecursiveCommand'] = function ($Callable) use (&$phpMussel) {
-    $Params = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
+$phpMussel['CLI-RecursiveCommand'] = function ($Command, $Callable) use (&$phpMussel) {
+    $Params = substr($Command, strlen($phpMussel['cmd']) + 1);
     if (is_dir($Params)) {
         if (!is_readable($Params)) {
             return $phpMussel['lang']['failed_to_access'] . '"' . $Params . "\".\n";

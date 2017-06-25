@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2017.06.24).
+ * This file: Japanese language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -101,19 +101,23 @@ $phpMussel['lang']['cli_commands'] = " q
  sha1_file
  - ファイルからＳＨＡ１シグネチャを作成 「構文: sha1_file ファイル名」。
  md5
- - 文字列からＭＤ５シグネチャを作成 「構文: md5 string」。
+ - 文字列からＭＤ５シグネチャを作成 「構文: md5 文字列」。
  sha1
- - 文字列からＳＨＡ１シグネチャを作成 「構文: sha1 string」。
+ - 文字列からＳＨＡ１シグネチャを作成 「構文: sha1 文字列」。
  hex_encode
- - ２進法文字列を１６進法文字列に変換 「構文: hex_encode string」。
+ - ２進法文字列を１６進法文字列に変換 「構文: hex_encode 文字列」。
  - エイリアス：​x。
  hex_decode
- - １６進法文字列を２進法文字列に変換 「構文: hex_decode string」。
+ - １６進法文字列を２進法文字列に変換 「構文: hex_decode 文字列」。
  base64_encode
- - ２進法文字列をＢＡＳＥ６４文字列に変換 「構文: base64_encode string」。
+ - ２進法文字列をＢＡＳＥ６４文字列に変換 「構文: base64_encode 文字列」。
  - エイリアス：​b。
  base64_decode
- - ＢＡＳＥ６４文字列を２進法文字列に変換 「構文: base64_decode string」。
+ - ＢＡＳＥ６４文字列を２進法文字列に変換 「構文: base64_decode 文字列」。
+ pe_meta
+ - ＰＥファイルからメタデータを抽出する 「構文: pe_meta ファイル名」。
+ url_sig
+ - ＵＲＬスキャナ・シグネチャを生成する 「構文: url_sig 文字列」。
  scan
  - ファイルまたはディレクトリをスキャン 「構文: scan ファイル名」。
  - エイリアス：s。

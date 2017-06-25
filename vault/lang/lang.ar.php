@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2017.06.24).
+ * This file: Arabic language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -115,6 +115,10 @@ $phpMussel['lang']['cli_commands'] = " q
  - البديل: b.
  base64_decode
  - تحول نص base64 إلى النص ثنائي [بناء الجملة: base64_decode نص].
+ pe_meta
+ - استخراج البيانات الوصفية من ملف PE [بناء الجملة: pe_meta اسم الملف].
+ url_sig
+ - توليد URL التوقيعات الماسح الضوئي [بناء الجملة: url_sig نص].
  scan
  - تفحص ملف أو دليل [بناء الجملة: scan اسم الملف].
  - البديل: s.

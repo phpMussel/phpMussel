@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2017.06.24).
+ * This file: Turkish language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -114,6 +114,10 @@ $phpMussel['lang']['cli_commands'] = " q
  - Takma ad: b.
  base64_decode
  - Base64'ü ikili hale dönüştür [Sözdizimi: base64_decode dizgesi].
+ pe_meta
+ - Meta verileri bir PE dosyasından ayıklayın [Sözdizimi: pe_meta dosya-adı].
+ url_sig
+ - URL tarayıcı imzalarını oluştur [Sözdizimi: url_sig dizgesi].
  scan
  - Dosya veya dizini tara [Sözdizimi: scan dosya-adı].
  - Takma ad: s.

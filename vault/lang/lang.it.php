@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data (last modified: 2017.06.24).
+ * This file: Italian language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -114,6 +114,10 @@ $phpMussel['lang']['cli_commands'] = " q
  - Alias: b.
  base64_decode
  - Converti la stringa da base64 a binaria [Sintassi: base64_decode stringa].
+ pe_meta
+ - Estrarre i metadati da un file PE [Sintassi: pe_meta nomefile].
+ url_sig
+ - Genera firme di scanner URL [Sintassi: url_sig string].
  scan
  - Controlla un file o una cartella [Sintassi: scan nomefile].
  - Alias: s.

@@ -267,6 +267,8 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/lang/lang.ru.php | ロシア語言語データ。
 /vault/lang/lang.th.fe.php | フロントエンドのタイ語言語データ。
 /vault/lang/lang.th.php | タイ語言語データ。
+/vault/lang/lang.tr.fe.php | フロントエンドのトルコ語言語データ。
+/vault/lang/lang.tr.php | トルコ語言語データ。
 /vault/lang/lang.ur.fe.php | フロントエンドのウルドゥー語言語データ。
 /vault/lang/lang.ur.php | ウルドゥー語言語データ。
 /vault/lang/lang.vi.fe.php | フロントエンドのベトナム語言語データ。
@@ -846,4 +848,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最終アップデート：2017年6月18日。
+最終アップデート：2017年6月25日。

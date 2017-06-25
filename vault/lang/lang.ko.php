@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2017.06.24).
+ * This file: Korean language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -94,28 +94,32 @@ $phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
  - CLI 종료.
- - 별칭 : quit，exit.
+ - 별칭 : quit, exit.
  md5_file
- - 파일 MD5 서명을 작성 [구문 : md5_file 파일 이름].
- - 별칭 :  m.
+ - 파일 MD5 서명을 작성 [구문 : md5_file 파일].
+ - 별칭 : m.
  sha1_file
- - 파일 SHA1 서명을 작성 [구문 : sha1_file 파일 이름].
+ - 파일 SHA1 서명을 작성 [구문 : sha1_file 파일].
  md5
- - 문자열에서 MD5 서명을 작성 [구문 : md5 string].
+ - 문자열에서 MD5 서명을 작성 [구문 : md5 문자열].
  sha1
- - 문자열에서 SHA1 서명을 작성 [구문 : sha1 string].
+ - 문자열에서 SHA1 서명을 작성 [구문 : sha1 문자열].
  hex_encode
- - 2 진수 문자열을 16 진수 문자열로 변환 [구문 : hex_encode string].
- - 별칭 :  x.
+ - 2 진수 문자열을 16 진수 문자열로 변환 [구문 : hex_encode 문자열].
+ - 별칭 : x.
  hex_decode
- - 16 진수 문자열을 2 진수 문자열로 변환 [구문 : hex_decode string].
+ - 16 진수 문자열을 2 진수 문자열로 변환 [구문 : hex_decode 문자열].
  base64_encode
- - 2 진수 문자열을 BASE64 문자열로 변환 [구문 : base64_encode string].
- - 별칭 :  b.
+ - 2 진수 문자열을 BASE64 문자열로 변환 [구문 : base64_encode 문자열].
+ - 별칭 : b.
  base64_decode
- - BASE64 문자열을 2 진수 문자열로 변환 [구문 : base64_decode string].
+ - BASE64 문자열을 2 진수 문자열로 변환 [구문 : base64_decode 문자열].
+ pe_meta
+ - PE 파일에서 메타 데이터 추출 [구문 : pe_meta 파일].
+ url_sig
+ - URL 스캐너 서명 생성 [구문 : url_sig 문자열].
  scan
- - 파일 또는 디렉터리를 검색 [구문 : scan 파일이름].
+ - 파일 또는 디렉터리를 검색 [구문 : scan 파일].
  - 별칭 : s.
  c
  - 명령 목록 프린트.

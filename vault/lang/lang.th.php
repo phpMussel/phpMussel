@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data (last modified: 2017.06.24).
+ * This file: Thai language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -114,6 +114,10 @@ $phpMussel['lang']['cli_commands'] = " q
  - นามแฝง: b.
  base64_decode
  - แปลงสตริง base64 เป็นสตริงไบนารี [ไวยากรณ์: base64_decode สตริง].
+ pe_meta
+ - ดึงข้อมูลเมตาดาต้าจากไฟล์ PE [ไวยากรณ์: pe_meta ชื่อไฟล์].
+ url_sig
+ - สร้างลายเซ็น URL สแกนเนอร์ [ไวยากรณ์: url_sig สตริง].
  scan
  - สแกนไฟล์หรือไดเรกทอรี [ไวยากรณ์: scan ชื่อไฟล์].
  - นามแฝง: s.

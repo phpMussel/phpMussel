@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2017.06.24).
+ * This file: Indonesian language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -96,12 +96,10 @@ $phpMussel['lang']['cli_commands'] = " q
  - Berhenti CLI.
  - Alias: quit, exit.
  md5_file
- - Menghasilkan tanda tangan MD5 dari file
- - [Sintaksis: md5_file \"nama file\"].
+ - Menghasilkan tanda tangan MD5 dari file [Sintaksis: md5_file file].
  - Alias: m.
  sha1_file
- - Menghasilkan tanda tangan SHA1 dari file
- - [Sintaksis: sha1_file \"nama file\"].
+ - Menghasilkan tanda tangan SHA1 dari file [Sintaksis: sha1_file file].
  md5
  - Menghasilkan tanda tangan MD5 dari string [Sintaksis: md5 string].
  sha1
@@ -118,8 +116,12 @@ $phpMussel['lang']['cli_commands'] = " q
  base64_decode
  - Mengkonversi string base64 ke string biner
  - [Sintaksis: base64_decode string].
+ pe_meta
+ - Ekstrak metadata dari file PE [Sintaksis: pe_meta file].
+ url_sig
+ - Membuat tanda tangan pemindai URL [Sintaksis: url_sig string].
  scan
- - Pindai file atau direktori [Sintaksis: scan \"nama file\"].
+ - Pindai file atau direktori [Sintaksis: scan file].
  - Alias: s.
  c
  - Cetak ini daftar perintah.

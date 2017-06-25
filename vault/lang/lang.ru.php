@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2017.06.24).
+ * This file: Russian language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -118,6 +118,10 @@ $phpMussel['lang']['cli_commands'] = " q
  base64_decode
  - Преобразует base64 данные из двоичных данных
    [Синтаксис: base64_decode данные].
+ pe_meta
+ - Извлечение метаданных из PE-файла [Синтаксис: pe_meta имя-файла].
+ url_sig
+ - Создание сигнатуры сканера URL [Синтаксис: url_sig данные].
  scan
  - Сканирует файл или каталог [Синтаксис: scan имя].
  - Псевдоним: s.

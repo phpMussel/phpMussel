@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2017.06.24).
+ * This file: Dutch language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -118,6 +118,10 @@ $phpMussel['lang']['cli_commands'] = " q
  base64_decode
  - Converteren van base64 string naar binaire string
    [Syntaxis: base64_decode string].
+ pe_meta
+ - Haal metagegevens uit een PE-bestand [Syntaxis: pe_meta bestandsnaam].
+ url_sig
+ - Genereren URL-scanner signatures [Syntaxis: url_sig string].
  scan
  - Scannen bestand of map [Syntaxis: scan bestandsnaam].
  - Alias: s.

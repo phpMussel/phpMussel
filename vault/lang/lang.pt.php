@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data (last modified: 2017.06.24).
+ * This file: Portuguese language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -96,10 +96,10 @@ $phpMussel['lang']['cli_commands'] = " q
  - Deixar CLI.
  - Alias: quit, exit.
  md5_file
- - Gerar MD5 assinaturas de arquivos [Sintaxe: md5_file \"nome do arquivo\"].
+ - Gerar MD5 assinaturas de arquivos [Sintaxe: md5_file arquivo].
  - Alias: m.
  sha1_file
- - Gerar SHA1 assinaturas de arquivos [Sintaxe: sha1_file \"nome do arquivo\"].
+ - Gerar SHA1 assinaturas de arquivos [Sintaxe: sha1_file arquivo].
  md5
  - Gerar MD5 assinatura de string [Sintaxe: md5 string].
  sha1
@@ -114,6 +114,10 @@ $phpMussel['lang']['cli_commands'] = " q
  - Alias: b.
  base64_decode
  - Converter base64 string para binária string [Sintaxe: base64_decode string].
+ pe_meta
+ - Extrair metadados de um arquivo PE [Sintaxe: pe_meta arquivo].
+ url_sig
+ - Gerar assinaturas do scanner de URL [Sintaxe: url_sig string].
  scan
  - Verificar arquivo ou diretório [Sintaxe: scan nome_do_arquivo].
  - Alias: s.

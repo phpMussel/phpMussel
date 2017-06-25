@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data (last modified: 2017.06.24).
+ * This file: English language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -114,6 +114,10 @@ $phpMussel['lang']['cli_commands'] = " q
  - Alias: b.
  base64_decode
  - Convert base64 string to binary string [Syntax: base64_decode string].
+ pe_meta
+ - Extract metadata from a PE file [Syntax: pe_meta filename].
+ url_sig
+ - Generate URL scanner signatures [Syntax: url_sig string].
  scan
  - Scan file or directory [Syntax: scan filename].
  - Alias: s.

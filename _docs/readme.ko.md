@@ -267,6 +267,8 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/lang/lang.ru.php | 러시아어 언어 데이터.
 /vault/lang/lang.th.fe.php | 프론트 엔드 태국어 언어 데이터.
 /vault/lang/lang.th.php | 태국어 언어 데이터.
+/vault/lang/lang.tr.fe.php | 프론트 엔드 터키어 언어 데이터.
+/vault/lang/lang.tr.php | 터키어 언어 데이터.
 /vault/lang/lang.ur.fe.php | 프론트 엔드 우르두어 언어 데이터.
 /vault/lang/lang.ur.php | 우르두어 언어 데이터.
 /vault/lang/lang.vi.fe.php | 프론트 엔드 베트남어 언어 데이터.
@@ -846,4 +848,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-최종 업데이트 : 2017년 6월 18일.
+최종 업데이트 : 2017년 6월 25일.

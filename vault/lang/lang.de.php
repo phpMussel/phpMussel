@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2017.06.24).
+ * This file: German language data (last modified: 2017.06.25).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -96,30 +96,34 @@ $phpMussel['lang']['cli_commands'] = " q
  - Beendet den CLI-Modus.
  - Alias: quit, exit.
  md5_file
- - Generiert MD5-Signaturen einer Datei [Syntax: md5_file filename].
+ - Generiert MD5-Signaturen einer Datei [Syntax: md5_file Dateiname].
  - Alias: m.
  sha1_file
- - Generiert SHA1-Signaturen einer Datei [Syntax: sha1_file filename].
+ - Generiert SHA1-Signaturen einer Datei [Syntax: sha1_file Dateiname].
  md5
- - Generiert MD5-Signaturen eines String-Wertes [Syntax: md5 string].
+ - Generiert MD5-Signaturen eines String-Wertes [Syntax: md5 String].
  sha1
- - Generiert SHA1-Signaturen eines String-Wertes [Syntax: sha1 string].
+ - Generiert SHA1-Signaturen eines String-Wertes [Syntax: sha1 String].
  hex_encode
  - Konvertiert einen Binär-Wert in einen Hexidezimal-Wert
-   [Syntax: hex_encode string].
+   [Syntax: hex_encode String].
  - Alias: x.
  hex_decode
  - Konvertiert einen Hexidezimal-Wert in einen Binär-Wert
-   [Syntax: hex_decode string].
+   [Syntax: hex_decode String].
  base64_encode
  - Konvertiert einen Binär-Wert in einen Base64-Wert
-   [Syntax: base64_encode string].
+   [Syntax: base64_encode String].
  - Alias: b.
  base64_decode
  - Konvertiert einen Base64-Wert in einen Binär-Wert
-   [Syntax: base64_decode string].
+   [Syntax: base64_decode String].
+ pe_meta
+ - Extrahieren Sie Metadaten aus einer PE-Datei [Syntax: pe_meta Dateiname].
+ url_sig
+ - Generiere URL-Scanner-Signaturen [Syntax: url_sig String].
  scan
- - Überprüft eine Datei oder ein Verzeichnis [Syntax: scan filename].
+ - Überprüft eine Datei oder ein Verzeichnis [Syntax: scan Dateiname].
  - Alias: s.
  c
  - Gibt diese Befehlsliste aus.

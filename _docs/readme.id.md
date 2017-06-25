@@ -267,6 +267,8 @@ Data | Deskripsi
 /vault/lang/lang.ru.php | File Bahasa Rusia.
 /vault/lang/lang.th.fe.php | File Bahasa Thailand untuk bagian depan.
 /vault/lang/lang.th.php | File Bahasa Thailand.
+/vault/lang/lang.tr.fe.php | File Bahasa Turki untuk bagian depan.
+/vault/lang/lang.tr.php | File Bahasa Turki.
 /vault/lang/lang.ur.fe.php | File Bahasa Urdu untuk bagian depan.
 /vault/lang/lang.ur.php | File Bahasa Urdu.
 /vault/lang/lang.vi.fe.php | File Bahasa Vietnam untuk bagian depan.
@@ -846,4 +848,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Terakhir Diperbarui: 18 Juni 2017 (2017.06.18).
+Terakhir Diperbarui: 25 Juni 2017 (2017.06.25).

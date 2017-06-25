@@ -267,6 +267,8 @@ phpMussel функционирует полностью в автономном 
 /vault/lang/lang.ru.php | Русском языковые файлы.
 /vault/lang/lang.th.fe.php | Тайском языковые файлы для фронтенд.
 /vault/lang/lang.th.php | Тайском языковые файлы.
+/vault/lang/lang.tr.fe.php | Турецком языковые файлы для фронтенд.
+/vault/lang/lang.tr.php | Турецком языковые файлы.
 /vault/lang/lang.ur.fe.php | Урду языковые файлы для фронтенд.
 /vault/lang/lang.ur.php | Урду языковые файлы.
 /vault/lang/lang.vi.fe.php | Вьетнамском языковые файлы для фронтенд.
@@ -846,4 +848,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Последнее обновление: 18 Июнь 2017 (2017.06.18).
+Последнее обновление: 25 Июнь 2017 (2017.06.25).
