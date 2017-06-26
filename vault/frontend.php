@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.06.09).
+ * This file: Front-end handler (last modified: 2017.06.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -691,7 +691,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
     $phpMussel['FE']['ActiveConfigFile'] = !empty($phpMussel['Overrides']) ? $phpMussel['Domain'] . '.config.ini' : 'config.ini';
 
     /** Generate entries for display and regenerate configuration if any changes were submitted. */
-    reset($phpMussel['Config']['Config Defaults']);
     $phpMussel['FE']['ConfigFields'] = $phpMussel['RegenerateConfig'] = '';
     $phpMussel['ConfigModified'] = (!empty($phpMussel['QueryVars']['updated']) && $phpMussel['QueryVars']['updated'] === 'true');
     foreach ($phpMussel['Config']['Config Defaults'] as $phpMussel['CatKey'] => $phpMussel['CatValue']) {
@@ -1374,7 +1373,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
         'Out' => array()
     );
 
-    reset($phpMussel['Components']['Meta']);
     /** Prepare installed component metadata and options for display. */
     foreach ($phpMussel['Components']['Meta'] as $phpMussel['Components']['Key'] => &$phpMussel['Components']['ThisComponent']) {
         if (empty($phpMussel['Components']['ThisComponent']['Name'])) {
@@ -1647,7 +1645,6 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
         }
     }
 
-    reset($phpMussel['Components']['RemoteMeta']);
     /** Prepare newly found component metadata and options for display. */
     foreach ($phpMussel['Components']['RemoteMeta'] as $phpMussel['Components']['Key'] => &$phpMussel['Components']['ThisComponent']) {
         if (

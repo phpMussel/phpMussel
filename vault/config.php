@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.06.09).
+ * This file: Configuration handler (last modified: 2017.06.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -139,7 +139,6 @@ foreach ($phpMussel['Config']['Config Defaults'] as $phpMussel['Config']['Temp']
         }
     }
 }
-reset($phpMussel['Config']['Config Defaults']);
 unset($phpMussel['Config']['Temp']);
 
 /** Failsafe for weird ipaddr configuration. */

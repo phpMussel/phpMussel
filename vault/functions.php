@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.06.25).
+ * This file: Functions file (last modified: 2017.06.26).
  */
 
 /**
@@ -458,7 +458,6 @@ $phpMussel['CleanCache'] = function () use (&$phpMussel) {
             fclose($Handle);
         }
     }
-    reset($CacheFiles);
     foreach ($CacheFiles as $CacheEntryKey => $CacheEntryValue) {
         if (strlen($CacheEntryValue) < 2) {
             if (file_exists($phpMussel['cachePath'] . $CacheEntryKey . '.tmp')) {
@@ -1636,7 +1635,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             );
         }
     }
-    reset($phpMussel['memCache']['switch.dat']);
     foreach ($phpMussel['memCache']['switch.dat'] as $xsig) {
         if (strlen($xsig) < 8 || strpos($xsig, "\n") === false || strpos($xsig, ';') === false || strpos($xsig, ':') === false) {
             continue;
@@ -2012,7 +2010,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 
     /** Plugin hook: "during_scan". */
     if (!empty($phpMussel['MusselPlugins']['hookcounts']['during_scan'])) {
-        reset($phpMussel['MusselPlugins']['hooks']['during_scan']);
         foreach ($phpMussel['MusselPlugins']['hooks']['during_scan'] as $HookID => $HookVal) {
             if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                 $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
@@ -2022,7 +2019,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 continue;
             }
             $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['during_scan'][$HookID]);
-            reset($phpMussel['MusselPlugins']['hooks']['during_scan'][$HookID]);
             $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
             foreach ($phpMussel['MusselPlugins']['hooks']['during_scan'][$HookID] as $x => $xv) {
                 if ($x) {
@@ -4233,7 +4229,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 
     /** Plugin hook: "after_vt". */
     if (!empty($phpMussel['MusselPlugins']['hookcounts']['after_vt'])) {
-        reset($phpMussel['MusselPlugins']['hooks']['after_vt']);
         foreach ($phpMussel['MusselPlugins']['hooks']['after_vt'] as $HookID => $HookVal) {
             if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                 $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
@@ -4243,7 +4238,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 continue;
             }
             $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['after_vt'][$HookID]);
-            reset($phpMussel['MusselPlugins']['hooks']['after_vt'][$HookID]);
             $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
             foreach ($phpMussel['MusselPlugins']['hooks']['after_vt'][$HookID] as $x => $xv) {
                 if ($x) {
@@ -4651,7 +4645,6 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
 
     /** Plugin hook: "before_scan". */
     if (!empty($phpMussel['MusselPlugins']['hookcounts']['before_scan'])) {
-        reset($phpMussel['MusselPlugins']['hooks']['before_scan']);
         foreach ($phpMussel['MusselPlugins']['hooks']['before_scan'] as $HookID => $HookVal) {
             if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                 $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
@@ -4661,7 +4654,6 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                 continue;
             }
             $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['before_scan'][$HookID]);
-            reset($phpMussel['MusselPlugins']['hooks']['before_scan'][$HookID]);
             $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
             foreach ($phpMussel['MusselPlugins']['hooks']['before_scan'][$HookID] as $x => $xv) {
                 if ($x) {
@@ -5557,7 +5549,6 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
 
     /** Plugin hook: "after_scan". */
     if (!empty($phpMussel['MusselPlugins']['hookcounts']['after_scan'])) {
-        reset($phpMussel['MusselPlugins']['hooks']['after_scan']);
         foreach ($phpMussel['MusselPlugins']['hooks']['after_scan'] as $HookID => $HookVal) {
             if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                 $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
@@ -5567,7 +5558,6 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
                 continue;
             }
             $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['after_scan'][$HookID]);
-            reset($phpMussel['MusselPlugins']['hooks']['after_scan'][$HookID]);
             $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
             foreach ($phpMussel['MusselPlugins']['hooks']['after_scan'][$HookID] as $x => $xv) {
                 if ($x) {
@@ -5620,26 +5610,17 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
     }
     if ($phpMussel['EOF']) {
         if ($phpMussel['Config']['general']['scan_cache_expiry'] > 0) {
-            reset($phpMussel['HashCache']['Data']);
-            $phpMussel['HashCache']['Count'] = count($phpMussel['HashCache']['Data']);
-            for (
-                $phpMussel['HashCache']['Index'] = 0;
-                $phpMussel['HashCache']['Index'] < $phpMussel['HashCache']['Count'];
-                $phpMussel['HashCache']['Index']++
-            ) {
-                $phpMussel['HashCache']['Key'] = key($phpMussel['HashCache']['Data']);
-                if (is_array($phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Key']])) {
-                    $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Key']] =
-                        implode(':', $phpMussel['HashCache']['Data'][$phpMussel['HashCache']['Key']]) . ';';
+            foreach ($phpMussel['HashCache']['Data'] as &$phpMussel['ThisItem']) {
+                if (is_array($phpMussel['ThisItem'])) {
+                    $phpMussel['ThisItem'] = implode(':', $phpMussel['ThisItem']) . ';';
                 }
-                next($phpMussel['HashCache']['Data']);
             }
-            $phpMussel['HashCache']['Data'] = $phpMussel['SaveCache'](
+            $phpMussel['SaveCache'](
                 'HashCache',
                 $phpMussel['Time'] + $phpMussel['Config']['general']['scan_cache_expiry'],
                 implode('', $phpMussel['HashCache']['Data'])
             );
-            unset($phpMussel['HashCache']['Data']);
+            unset($phpMussel['ThisItem'], $phpMussel['HashCache']['Data']);
         }
         if (
             !empty($phpMussel['whyflagged']) &&
