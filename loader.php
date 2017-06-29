@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2017.06.09).
+ * This file: The loader (last modified: 2017.06.29).
  */
 
 /**
@@ -109,8 +109,7 @@ if (!defined('phpMussel')) {
     $phpMussel['inidefaults'] = array(
         'backtrack_limit' => ini_get('pcre.backtrack_limit'),
         'recursion_limit' => ini_get('pcre.recursion_limit'),
-        'default_charset' => ini_get('default_charset'),
-        'user_agent' => ini_get('user_agent')
+        'default_charset' => ini_get('default_charset')
     );
 
     /** Preserve INI defaults for when we exit cleanly. */
@@ -137,9 +136,6 @@ if (!defined('phpMussel')) {
     if (!$phpMussel['binary_versions']['5.6.0']) {
         ini_set('mbstring.internal_encoding', 'UTF-8');
     }
-
-    /** Set the phpMussel User Agent. */
-    ini_set('user_agent', $phpMussel['ScriptUA']);
 
     /**
      * Create an array to use as a temporary memory cache for scanning
@@ -222,9 +218,6 @@ if (!defined('phpMussel')) {
 
     }
 
-    /** Restore default User Agent. */
-    ini_set('user_agent', $phpMussel['inidefaults']['user_agent']);
-
     if ($phpMussel['Config']['general']['cleanup']) {
 
         /** Restore default internal encoding. */
@@ -240,13 +233,7 @@ if (!defined('phpMussel')) {
 
         /** Destroy unrequired plugin closures. */
         if (isset($phpMussel['MusselPlugins']['closures'])) {
-            $phpMussel['MusselPlugins']['c'] = count($phpMussel['MusselPlugins']['closures']);
-            for (
-                $phpMussel['MusselPlugins']['i'] = 0;
-                $phpMussel['MusselPlugins']['i'] < $phpMussel['MusselPlugins']['c'];
-                $phpMussel['MusselPlugins']['i']++
-            ) {
-                $x = $phpMussel['MusselPlugins']['closures'][$phpMussel['MusselPlugins']['i']];
+            foreach ($phpMussel['MusselPlugins']['closures'] as $x) {
                 if (isset($$x) && is_object($$x)) {
                     unset($$x);
                 }

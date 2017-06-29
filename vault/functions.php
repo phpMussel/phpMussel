@@ -2154,7 +2154,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 if (
                     $xsig &&
                     !substr_count($phpMussel['memCache']['greylist'], ',' . $VN . ',') &&
-                    !$phpMussel['memCache']['ignoreme']
+                    empty($phpMussel['memCache']['ignoreme'])
                 ) {
                     if (preg_match('/(?:' . $xsig . ')/i', $ofn)) {
                         if (!$flagged) {
@@ -2274,7 +2274,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $xsig = $phpMussel['vn_shorthand']($xsig);
                 if (
                     !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
-                    !$phpMussel['memCache']['ignoreme']
+                    empty($phpMussel['memCache']['ignoreme'])
                 ) {
                     if (!$flagged) {
                         $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
@@ -2329,7 +2329,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     $xsig = $phpMussel['vn_shorthand']($xsig);
                     if (
                         !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
-                        !$phpMussel['memCache']['ignoreme']
+                        empty($phpMussel['memCache']['ignoreme'])
                     ) {
                         if (!$flagged) {
                             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
@@ -2385,7 +2385,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     $xsig = $phpMussel['vn_shorthand']($xsig);
                     if (
                         !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
-                        !$phpMussel['memCache']['ignoreme']
+                        empty($phpMussel['memCache']['ignoreme'])
                     ) {
                         if (!$flagged) {
                             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
@@ -2557,7 +2557,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         }
                         if (
                             !substr_count($phpMussel['memCache']['greylist'], ',' . $VN . ',') &&
-                            !$phpMussel['memCache']['ignoreme']
+                            empty($phpMussel['memCache']['ignoreme'])
                         ) {
                             $ThisSig = (substr_count($ThisSig, '>')) ? explode('>', $ThisSig) : array($ThisSig);
                             $ThisSigc = count($ThisSig);
@@ -2745,7 +2745,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         }
                         if (
                             !substr_count($phpMussel['memCache']['greylist'], ',' . $VN . ',') &&
-                            !$phpMussel['memCache']['ignoreme']
+                            empty($phpMussel['memCache']['ignoreme'])
                         ) {
                             if ($xstrf === '*') {
                                 if ($xstrt === '*') {
@@ -2880,7 +2880,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     if (
                         ($xsig = $phpMussel['vn_shorthand']($xsig)) &&
                         !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
-                        !$phpMussel['memCache']['ignoreme']
+                        empty($phpMussel['memCache']['ignoreme'])
                     ) {
                         if (!$flagged) {
                             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
@@ -2922,7 +2922,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     if (
                         ($xsig = $phpMussel['vn_shorthand']($xsig)) &&
                         !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
-                        !$phpMussel['memCache']['ignoreme']
+                        empty($phpMussel['memCache']['ignoreme'])
                     ) {
                         if (!$flagged) {
                             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
@@ -3031,7 +3031,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     if (
                         ($xsig = $phpMussel['vn_shorthand']($xsig)) &&
                         !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
-                        !$phpMussel['memCache']['ignoreme']
+                        empty($phpMussel['memCache']['ignoreme'])
                     ) {
                         if (!$flagged) {
                             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
@@ -3073,7 +3073,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     if (
                         ($xsig = $phpMussel['vn_shorthand']($xsig)) &&
                         !substr_count($phpMussel['memCache']['greylist'], ',' . $xsig . ',') &&
-                        !$phpMussel['memCache']['ignoreme']
+                        empty($phpMussel['memCache']['ignoreme'])
                     ) {
                         if (!$flagged) {
                             $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
@@ -3178,20 +3178,10 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         'v=' . $urlscanner['req_v'] .
                         '&s=' . $urlscanner['domains_p'][$i] .
                         '&class=true';
-                    $urlscanner['req_context'] = array(
-                        'http' => array(
-                            'method' => 'POST',
-                            'header' => 'Content-type: application/x-www-form-urlencoded; charset=iso-8859-1',
-                            'user_agent' => $phpMussel['ScriptUA'],
-                            'content' => $urlscanner['req'],
-                            'timeout' => 12
-                        )
-                    );
-                    $urlscanner['req_stream'] = stream_context_create($urlscanner['req_context']);
-                    $urlscanner['req_result'] = @file_get_contents(
+                    $urlscanner['req_result'] = $phpMussel['Request'](
                         'http://verify.hosts-file.net/?' . $urlscanner['req'],
-                        false,
-                        $urlscanner['req_stream']
+                        array('v' => $urlscanner['req_v'], 's' => $urlscanner['domains_p'][$i], 'class' => true),
+                        12
                     );
                     $phpMussel['LookupCount']++;
                     if (substr($urlscanner['req_result'], 0, 6) == "Listed") {
@@ -3599,7 +3589,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         if (
                             $SigName &&
                             !substr_count($phpMussel['memCache']['greylist'], ',' . $SigName . ',') &&
-                            !$phpMussel['memCache']['ignoreme']
+                            empty($phpMussel['memCache']['ignoreme'])
                         ) {
                             if (!$flagged) {
                                 $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
@@ -4106,20 +4096,16 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         $phpMussel['Config']['virustotal']['vt_suspicion_level'] =
             (int)$phpMussel['Config']['virustotal']['vt_suspicion_level'];
         if ($phpMussel['Config']['virustotal']['vt_suspicion_level'] === 0) {
-            if ($heur['weight'] > 0) {
-                $DoScan = true;
-            }
+            $DoScan = ($heur['weight'] > 0);
         } elseif ($phpMussel['Config']['virustotal']['vt_suspicion_level'] === 1) {
-            if (
+            $DoScan = (
                 $heur['weight'] > 0 ||
                 $is_pe ||
                 $fileswitch === 'chrome' ||
                 $fileswitch === 'java' ||
                 $fileswitch === 'docfile' ||
                 $fileswitch === 'vt_interest'
-            ) {
-                $DoScan = true;
-            }
+            );
         } elseif ($phpMussel['Config']['virustotal']['vt_suspicion_level'] === 2) {
             $DoScan = true;
         }
@@ -4143,74 +4129,62 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     implode(';', $phpMussel['memCache']['vt_quota']);
             }
             if ($x < $phpMussel['Config']['virustotal']['vt_quota_rate']) {
-                $vts =
-                    'apikey=' . urlencode($phpMussel['Config']['virustotal']['vt_public_api_key']) .
-                    '&resource=' . $md5;
-                $vta = array(
-                    'http' => array(
-                        'method' => 'POST',
-                        'header' => 'Content-type: application/x-www-form-urlencoded; charset=iso-8859-1',
-                        'user_agent' => $phpMussel['ScriptUA'],
-                        'content' => $vts,
-                        'timeout' => 12
-                    )
+                $VTParams = array(
+                    'apikey' => $phpMussel['Config']['virustotal']['vt_public_api_key'],
+                    'resource' => $md5
                 );
-                $vtx = stream_context_create($vta);
-                $vt = @json_decode(
-                    file_get_contents(
-                        'http://www.virustotal.com/vtapi/v2/file/report?apikey=' .
-                        urlencode($phpMussel['Config']['virustotal']['vt_public_api_key']) .
-                        '&resource=' . $md5,
-                        false,
-                        $vtx
-                    ), true
-                );
+                $VTRequest = $phpMussel['Request'](
+                    'http://www.virustotal.com/vtapi/v2/file/report?apikey=' .
+                    urlencode($phpMussel['Config']['virustotal']['vt_public_api_key']) .
+                    '&resource=' . $md5,
+                $VTParams, 12);
+                $VTJSON = json_decode($VTRequest, true);
                 $y = $phpMussel['Time'] + ($phpMussel['Config']['virustotal']['vt_quota_time'] * 60);
                 $phpMussel['memCache']['vt_quota'] .= $y . ';';
                 while (substr_count($phpMussel['memCache']['vt_quota'], ';;')) {
-                    $phpMussel['memCache']['vt_quota'] =
-                        str_ireplace(';;', ';', $phpMussel['memCache']['vt_quota']);
+                    $phpMussel['memCache']['vt_quota'] = str_ireplace(';;', ';', $phpMussel['memCache']['vt_quota']);
                 }
-                $y = $phpMussel['SaveCache']('vt_quota', $y + 60, $phpMussel['memCache']['vt_quota']);
-                $vt['response_code'] = (int)$vt['response_code'];
-                if (
-                    isset($vt['response_code']) &&
-                    isset($vt['scans']) &&
-                    $vt['response_code'] === 1 &&
-                    is_array($vt['scans'])
-                ) {
-                    foreach ($vt['scans'] as $VTKey => $VTValue) {
-                        if ($VTValue['detected'] && $VTValue['result']) {
-                            $VN = $VTKey . '(VirusTotal)-' . $VTValue['result'];
-                            if (
-                                !substr_count($phpMussel['memCache']['greylist'], ',' . $VN . ',') &&
-                                !$phpMussel['memCache']['ignoreme']
-                            ) {
-                                if (!$flagged) {
-                                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
-                                    $flagged = true;
-                                }
-                                $heur['detections']++;
-                                $phpMussel['memCache']['detections_count']++;
-                                if ($phpMussel['Config']['virustotal']['vt_weighting'] > 0) {
-                                    $VTWeight['weight']++;
-                                    $VTWeight['web'] .= $lnap . $phpMussel['ParseVars'](
-                                        array('vn' => $VN),
-                                        $phpMussel['lang']['detected']
-                                    ) . $phpMussel['lang']['_exclamation_final'] . "\n";
-                                    $VTWeight['cli'] .= $phpMussel['ParseVars'](
-                                        array('vn' => $VN),
-                                        $phpMussel['lang']['detected']
-                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
-                                } else {
-                                    $out .= $lnap . $phpMussel['ParseVars'](
-                                        array('vn' => $VN),
-                                        $phpMussel['lang']['detected']
-                                    ) . $phpMussel['lang']['_exclamation_final'] . "\n";
-                                    $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
-                                        array('vn' => $VN),
-                                        $phpMussel['lang']['detected']
-                                    ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
+                $phpMussel['SaveCache']('vt_quota', $y + 60, $phpMussel['memCache']['vt_quota']);
+                if (isset($VTJSON['response_code'])) {
+                    $VTJSON['response_code'] = (int)$VTJSON['response_code'];
+                    if (
+                        isset($VTJSON['scans']) &&
+                        $VTJSON['response_code'] === 1 &&
+                        is_array($VTJSON['scans'])
+                    ) {
+                        foreach ($VTJSON['scans'] as $VTKey => $VTValue) {
+                            if ($VTValue['detected'] && $VTValue['result']) {
+                                $VN = $VTKey . '(VirusTotal)-' . $VTValue['result'];
+                                if (
+                                    !substr_count($phpMussel['memCache']['greylist'], ',' . $VN . ',') &&
+                                    empty($phpMussel['memCache']['ignoreme'])
+                                ) {
+                                    if (!$flagged) {
+                                        $phpMussel['killdata'] .= $md5 . ':' . $str_len . ':' . $ofn . "\n";
+                                        $flagged = true;
+                                    }
+                                    $heur['detections']++;
+                                    $phpMussel['memCache']['detections_count']++;
+                                    if ($phpMussel['Config']['virustotal']['vt_weighting'] > 0) {
+                                        $VTWeight['weight']++;
+                                        $VTWeight['web'] .= $lnap . $phpMussel['ParseVars'](
+                                            array('vn' => $VN),
+                                            $phpMussel['lang']['detected']
+                                        ) . $phpMussel['lang']['_exclamation_final'] . "\n";
+                                        $VTWeight['cli'] .= $phpMussel['ParseVars'](
+                                            array('vn' => $VN),
+                                            $phpMussel['lang']['detected']
+                                        ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
+                                    } else {
+                                        $out .= $lnap . $phpMussel['ParseVars'](
+                                            array('vn' => $VN),
+                                            $phpMussel['lang']['detected']
+                                        ) . $phpMussel['lang']['_exclamation_final'] . "\n";
+                                        $phpMussel['whyflagged'] .= $phpMussel['ParseVars'](
+                                            array('vn' => $VN),
+                                            $phpMussel['lang']['detected']
+                                        ) . ' (' . $ofnSafe . ')' . $phpMussel['lang']['_exclamation'];
+                                    }
                                 }
                             }
                         }
