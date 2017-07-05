@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2017.06.26).
+ * This file: Upload handler (last modified: 2017.07.05).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -46,6 +46,9 @@ $phpMussel['ReadFile-For-Honeypot'] = function (&$Array, $File) use (&$phpMussel
             'QFU' => $Array['qfile']
         ), $phpMussel['lang']['quarantined_as']);
 };
+
+/** Sets default error handler for the upload handler. */
+set_error_handler($phpMussel['ErrorHandler_1']);
 
 /** Create an array for our working data. */
 $phpMussel['upload'] = array();
@@ -610,3 +613,6 @@ if ($phpMussel['upload']['count'] > 0) {
 
 /** Exit the upload handler cleanly. */
 unset($phpMussel['upload']);
+
+/** Restores default error handler. */
+restore_error_handler();

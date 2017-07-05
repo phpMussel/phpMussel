@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2017.06.29).
+ * This file: The loader (last modified: 2017.07.02).
  */
 
 /**
@@ -105,38 +105,6 @@ if (!defined('phpMussel')) {
         '5.6.0' => version_compare(PHP_VERSION, '5.6.0', '>=')
     );
 
-    /** Preserve INI defaults for when we exit cleanly. */
-    $phpMussel['inidefaults'] = array(
-        'backtrack_limit' => ini_get('pcre.backtrack_limit'),
-        'recursion_limit' => ini_get('pcre.recursion_limit'),
-        'default_charset' => ini_get('default_charset')
-    );
-
-    /** Preserve INI defaults for when we exit cleanly. */
-    if (!$phpMussel['binary_versions']['5.6.0']) {
-        $phpMussel['inidefaults']['internal_encoding'] = ini_get('mbstring.internal_encoding');
-    }
-
-    /**
-     * Helps to prevent PCRE from backticking itself and the entire PHP process
-     * into oblivion during certain scanning operations.
-     */
-    ini_set('pcre.backtrack_limit', '4K');
-
-    /**
-     * Helps to prevent PCRE from overloading the PHP process via excessive
-     * capturing during certain scanning operations.
-     */
-    ini_set('pcre.recursion_limit', '4K');
-
-    /** We should always use UTF-8. */
-    ini_set('default_charset', 'utf-8');
-
-    /** We should always use UTF-8. */
-    if (!$phpMussel['binary_versions']['5.6.0']) {
-        ini_set('mbstring.internal_encoding', 'UTF-8');
-    }
-
     /**
      * Create an array to use as a temporary memory cache for scanning
      * operations (note: this has nothing to do with the memCache extension of
@@ -219,17 +187,6 @@ if (!defined('phpMussel')) {
     }
 
     if ($phpMussel['Config']['general']['cleanup']) {
-
-        /** Restore default internal encoding. */
-        if (!$phpMussel['binary_versions']['5.6.0']) {
-            ini_set('mbstring.internal_encoding', $phpMussel['inidefaults']['internal_encoding']);
-        }
-        /** Restore default charset. */
-        ini_set('default_charset', $phpMussel['inidefaults']['default_charset']);
-        /** Restore default PCRE recursion limit. */
-        ini_set('pcre.recursion_limit', $phpMussel['inidefaults']['recursion_limit']);
-        /** Restore default PCRE backtrack limit. */
-        ini_set('pcre.backtrack_limit', $phpMussel['inidefaults']['backtrack_limit']);
 
         /** Destroy unrequired plugin closures. */
         if (isset($phpMussel['MusselPlugins']['closures'])) {

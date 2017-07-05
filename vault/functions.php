@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.07.01).
+ * This file: Functions file (last modified: 2017.07.05).
  */
 
 /**
@@ -665,7 +665,7 @@ $phpMussel['Quarantine'] = function ($In, $key, $ip, $id) use (&$phpMussel) {
  */
 $phpMussel['MemoryUse'] = function ($p, $d = 0) use (&$phpMussel) {
     $t = array('s' => 0, 'c' => 0, 'dc' => 0, 'd' => $d);
-    if (is_dir($p) && $h = @opendir($p)) {
+    if (is_dir($p) && is_readable($p) && $h = opendir($p)) {
         while (false !== ($f = readdir($h))) {
             if ($f !== '.' && $f !== '..' && !is_link($np = $p . '/' . $f)) {
                 if (is_dir($np)) {
@@ -1155,7 +1155,6 @@ $phpMussel['vn_shorthand'] = function ($VN) use (&$phpMussel) {
  * @param array $urls An array of the URLs to lookup.
  * @param array $URLsNoLookup An optional array of URLs to NOT lookup.
  * @param array $DomainsNoLookup An optional array of domains to NOT lookup.
- * @param array $nolookup An optional array of URLs to NOT lookup.
  * @return int The results of the lookup. 200 if AT LEAST ONE of the queried
  *      URLs are listed on any of Google Safe Browsing lists; 204 if NONE of
  *      the queried URLs are listed on any of Google Safe Browsing lists; 400
@@ -4659,8 +4658,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                                 $PharData[$PharIter]['MD5'] . ':' .
                                 $PharData[$PharIter]['Filesize'] . ':' .
                                 $PharData[$PharIter]['ItemRef'] . "\n";
-                            $phpMussel['whyflagged'] .=
-                                $phpMussel['lang']['scan_extensions_missing'] . ' ';
+                            $phpMussel['whyflagged'] .= $phpMussel['lang']['scan_extensions_missing'] . ' ';
                         }
                         $x .=
                             $PharData[$PharIter]['Indent'] .
@@ -4670,7 +4668,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                             $phpMussel['lang']['scan_extensions_missing'] . "\n";
                         break;
                     }
-                    if (!$PharData[$PharIter]['Data'] = @gzdecode($PharData[$PharIter]['Data'])) {
+                    if (!$PharData[$PharIter]['Data'] = gzdecode($PharData[$PharIter]['Data'])) {
                         $x .=
                             $PharData[$PharIter]['Indent'] .
                             $phpMussel['lang']['scan_reading'] . ' \'' .
@@ -4693,8 +4691,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                                 $PharData[$PharIter]['MD5'] . ':' .
                                 $PharData[$PharIter]['Filesize'] . ':' .
                                 $PharData[$PharIter]['ItemRef'] . "\n";
-                            $phpMussel['whyflagged'] .=
-                                $phpMussel['lang']['scan_extensions_missing'] . ' ';
+                            $phpMussel['whyflagged'] .= $phpMussel['lang']['scan_extensions_missing'] . ' ';
                         }
                         $x .=
                             $PharData[$PharIter]['Indent'] .
@@ -4704,7 +4701,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                             $phpMussel['lang']['scan_extensions_missing'] . "\n";
                         break;
                     }
-                    if (!$PharData[$PharIter]['Data'] = @bzdecompress($PharData[$PharIter]['Data'])) {
+                    if (!$PharData[$PharIter]['Data'] = bzdecompress($PharData[$PharIter]['Data'])) {
                         $x .=
                             $PharData[$PharIter]['Indent'] .
                             $phpMussel['lang']['scan_reading'] . ' \'' .
@@ -4733,8 +4730,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                                 $PharData[$PharIter]['MD5'] . ':' .
                                 $PharData[$PharIter]['Filesize'] . ':' .
                                 $PharData[$PharIter]['ItemRef'] . "\n";
-                            $phpMussel['whyflagged'] .=
-                                $phpMussel['lang']['scan_extensions_missing'] . ' ';
+                            $phpMussel['whyflagged'] .= $phpMussel['lang']['scan_extensions_missing'] . ' ';
                         }
                         $x .=
                             $PharData[$PharIter]['Indent'] .
@@ -4744,7 +4740,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                             $phpMussel['lang']['scan_extensions_missing'] . "\n";
                         break;
                     }
-                    if (!$PharData[$PharIter]['Data'] = @gzdecode($PharData[$PharIter]['Data'])) {
+                    if (!$PharData[$PharIter]['Data'] = gzdecode($PharData[$PharIter]['Data'])) {
                         $x .=
                             $PharData[$PharIter]['Indent'] .
                             $phpMussel['lang']['scan_reading'] . ' \'' .
@@ -4773,8 +4769,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                                 $PharData[$PharIter]['MD5'] . ':' .
                                 $PharData[$PharIter]['Filesize'] . ':' .
                                 $PharData[$PharIter]['ItemRef'] . "\n";
-                            $phpMussel['whyflagged'] .=
-                                $phpMussel['lang']['scan_extensions_missing'] . ' ';
+                            $phpMussel['whyflagged'] .= $phpMussel['lang']['scan_extensions_missing'] . ' ';
                         }
                         $x .=
                             $PharData[$PharIter]['Indent'] .
@@ -4784,7 +4779,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                             $phpMussel['lang']['scan_extensions_missing'] . "\n";
                         break;
                     }
-                    if (!$PharData[$PharIter]['Data'] = @bzdecompress($PharData[$PharIter]['Data'])) {
+                    if (!$PharData[$PharIter]['Data'] = bzdecompress($PharData[$PharIter]['Data'])) {
                         $x .=
                             $PharData[$PharIter]['Indent'] .
                             $phpMussel['lang']['scan_reading'] . ' \'' .
@@ -4813,8 +4808,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                                 $PharData[$PharIter]['MD5'] . ':' .
                                 $PharData[$PharIter]['Filesize'] . ':' .
                                 $PharData[$PharIter]['ItemRef'] . "\n";
-                            $phpMussel['whyflagged'] .=
-                                $phpMussel['lang']['scan_extensions_missing'] . ' ';
+                            $phpMussel['whyflagged'] .= $phpMussel['lang']['scan_extensions_missing'] . ' ';
                         }
                         $x .=
                             $PharData[$PharIter]['Indent'] .
@@ -4824,7 +4818,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                             $phpMussel['lang']['scan_extensions_missing'] . "\n";
                         break;
                     }
-                    if (!$PharData[$PharIter]['Data'] = @lzf_decompress($PharData[$PharIter]['Data'])) {
+                    if (!$PharData[$PharIter]['Data'] = lzf_decompress($PharData[$PharIter]['Data'])) {
                         $x .=
                             $PharData[$PharIter]['Indent'] .
                             $phpMussel['lang']['scan_reading'] . ' \'' .
@@ -6186,4 +6180,9 @@ $phpMussel['CLI-RecursiveCommand'] = function ($Command, $Callable) use (&$phpMu
         return $Callable($Params);
     }
     return $Params . $phpMussel['lang']['cli_is_not_a'] . "\n";
+};
+
+/** Handles errors (will expand this later). */
+$phpMussel['ErrorHandler_1'] = function ($errno) use (&$phpMussel) {
+    return;
 };
