@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2017.07.05).
+ * This file: Upload handler (last modified: 2017.07.06).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -560,13 +560,6 @@ if ($phpMussel['upload']['count'] > 0) {
         /** Plugin hook: "before_html_out". */
         if (!empty($phpMussel['MusselPlugins']['hookcounts']['before_html_out'])) {
             foreach ($phpMussel['MusselPlugins']['hooks']['before_html_out'] as $HookID => $HookVal) {
-                if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
-                    $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
-                } elseif (function_exists($HookID)) {
-                    $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'function';
-                } else {
-                    continue;
-                }
                 $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID]);
                 $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
                 foreach ($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID] as $x => $xv) {
@@ -574,10 +567,12 @@ if ($phpMussel['upload']['count'] > 0) {
                         $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = isset($$x) ? $$x : $x;
                     }
                 }
-                if ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'closure') {
+                if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                     $x = $GLOBALS[$HookID]($phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-                } elseif ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'function') {
+                } elseif (function_exists($HookID)) {
                     $x = call_user_func($HookID, $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
+                } else {
+                    $x = false;
                 }
                 if (is_array($x)) {
                     $phpMussel['MusselPlugins']['tempdata']['out'] = $x;

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.07.05).
+ * This file: Functions file (last modified: 2017.07.06).
  */
 
 /**
@@ -2049,13 +2049,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     /** Plugin hook: "during_scan". */
     if (!empty($phpMussel['MusselPlugins']['hookcounts']['during_scan'])) {
         foreach ($phpMussel['MusselPlugins']['hooks']['during_scan'] as $HookID => $HookVal) {
-            if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
-                $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
-            } elseif (function_exists($HookID)) {
-                $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'function';
-            } else {
-                continue;
-            }
             $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['during_scan'][$HookID]);
             $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
             foreach ($phpMussel['MusselPlugins']['hooks']['during_scan'][$HookID] as $x => $xv) {
@@ -2063,10 +2056,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = isset($$x) ? $$x : $x;
                 }
             }
-            if ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'closure') {
+            if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                 $x = $GLOBALS[$HookID]($phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-            } elseif ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'function') {
+            } elseif (function_exists($HookID)) {
                 $x = call_user_func($HookID, $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
+            } else {
+                $x = false;
             }
             if (is_array($x)) {
                 $phpMussel['MusselPlugins']['tempdata']['out'] = $x;
@@ -2078,128 +2073,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             }
         }
         $phpMussel['MusselPlugins']['tempdata'] = '';
-    }
-
-    /** Process filename signatures. */
-    $SigFiles = isset($phpMussel['memCache']['Filename']) ? explode(',', $phpMussel['memCache']['Filename']) : array();
-    foreach ($SigFiles as $SigFile) {
-        if (!$SigFile) {
-            continue;
-        }
-        if (!isset($phpMussel['memCache'][$SigFile])) {
-            $phpMussel['memCache'][$SigFile] = $phpMussel['ReadFileAsArray']($phpMussel['sigPath'] . $SigFile, FILE_IGNORE_NEW_LINES);
-        }
-        if (!$phpMussel['memCache'][$SigFile]) {
-            $phpMussel['memCache']['scan_errors']++;
-            if (!$phpMussel['Config']['signatures']['fail_silently']) {
-                if (!$flagged) {
-                    $phpMussel['killdata'] .= $md5 . ':' . $str_len . ":\n";
-                }
-                $phpMussel['whyflagged'] .=
-                    $phpMussel['lang']['scan_signature_file_missing'] .
-                    ' (' . $SigFile . ')' .
-                    $phpMussel['lang']['_exclamation'];
-                return array(-3,
-                    $lnap . $phpMussel['lang']['scan_signature_file_missing'] .
-                    ' (' . $SigFile . ')' .
-                    $phpMussel['lang']['_exclamation_final'] . "\n"
-                );
-            }
-            $c = 0;
-        } else {
-            $c = count($phpMussel['memCache'][$SigFile]);
-        }
-        for ($i = 0; $i < $c; $i++) {
-            if (!$xsig = $phpMussel['memCache'][$SigFile][$i]) {
-                continue;
-            }
-            if (substr($xsig, 0, 1) == '>') {
-                $xsig = explode('>', $xsig, 4);
-                $xsig[3] = (int)$xsig[3];
-                if ($xsig[1] == 'FN') {
-                    if (!preg_match('/(?:' . $xsig[2] . ')/i', $ofn)) {
-                        if ($xsig[3] <= $i) {
-                            break;
-                        }
-                        $i = $xsig[3] - 1;
-                    }
-                } elseif ($xsig[1] == 'FS-MIN') {
-                    if ($str_len < $xsig[2]) {
-                        if ($xsig[3] <= $i) {
-                            break;
-                        }
-                        $i = $xsig[3] - 1;
-                    }
-                } elseif ($xsig[1] == 'FS-MAX') {
-                    if ($str_len > $xsig[2]) {
-                        if ($xsig[3] <= $i) {
-                            break;
-                        }
-                        $i = $xsig[3] - 1;
-                    }
-                } elseif ($xsig[1] == 'FD') {
-                    if (!substr_count($str_hex, $xsig[2])) {
-                        if ($xsig[3] <= $i) {
-                            break;
-                        }
-                        $i = $xsig[3] - 1;
-                    }
-                } elseif ($xsig[1] == 'FD-RX') {
-                    if (!preg_match('/(?:' . $xsig[2] . ')/i', $str_hex)) {
-                        if ($xsig[3] <= $i) {
-                            break;
-                        }
-                        $i = $xsig[3] - 1;
-                    }
-                } elseif (substr($xsig[1], 0, 1) == '$') {
-                    $vf = substr($xsig[1], 1);
-                    if (isset($$vf) && !is_array($$vf)) {
-                        if ($$vf != $xsig[2]) {
-                            if ($xsig[3] <= $i) {
-                                break;
-                            }
-                            $i = $xsig[3] - 1;
-                        }
-                        continue;
-                    }
-                    if ($xsig[3] <= $i) {
-                        break;
-                    }
-                    $i = $xsig[3] - 1;
-                } elseif (substr($xsig[1], 0, 2) == '!$') {
-                    $vf = substr($xsig[1], 2);
-                    if (isset($$vf) && !is_array($$vf)) {
-                        if ($$vf == $xsig[2]) {
-                            if ($xsig[3] <= $i) {
-                                break;
-                            }
-                            $i = $xsig[3] - 1;
-                        }
-                        continue;
-                    }
-                    if ($xsig[3] <= $i) {
-                        break;
-                    }
-                    $i = $xsig[3] - 1;
-                }
-                continue;
-            }
-            if (strpos($xsig, ':') !== false) {
-                $VN = explode(':', $xsig);
-                $xsig = preg_split('/[\x00-\x1f]+/', $VN[1], -1, PREG_SPLIT_NO_EMPTY);
-                $xsig = ($xsig === false) ? '' : implode('', $xsig);
-                $VN = $phpMussel['vn_shorthand']($VN[0]);
-                if (
-                    $xsig &&
-                    !substr_count($phpMussel['memCache']['greylist'], ',' . $VN . ',') &&
-                    empty($phpMussel['memCache']['ignoreme'])
-                ) {
-                    if (preg_match('/(?:' . $xsig . ')/i', $ofn)) {
-                        $phpMussel['Detected']($heur, $lnap, $VN, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
-                    }
-                }
-            }
-        }
     }
 
     /** Process CSVs (identified as "general command detections"). */
@@ -2291,7 +2164,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 ) {
                     $phpMussel['Detected']($heur, $lnap, $xsig, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
                 }
-                $xsig = '';
             }
         }
     }
@@ -2333,7 +2205,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     ) {
                         $phpMussel['Detected']($heur, $lnap, $xsig, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
                     }
-                    $xsig = '';
                 }
             }
         }
@@ -2376,7 +2247,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     ) {
                         $phpMussel['Detected']($heur, $lnap, $xsig, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
                     }
-                    $xsig = '';
                 }
             }
         }
@@ -2384,12 +2254,13 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
 
     /** Process signatures. */
     foreach (array(
-        array('Standard', 'str_hex', 'str_hex_len', false),
-        array('Normalised', 'str_hex_norm', 'str_hex_norm_len', false),
-        array('HTML', 'str_hex_html', 'str_hex_html_len', false),
-        array('Standard_RegEx', 'str_hex', 'str_hex_len', true),
-        array('Normalised_RegEx', 'str_hex_norm', 'str_hex_norm_len', true),
-        array('HTML_RegEx', 'str_hex_html', 'str_hex_html_len', true)
+        array('Filename', 'str_hex', 'str_hex_len', 2),
+        array('Standard', 'str_hex', 'str_hex_len', 0),
+        array('Normalised', 'str_hex_norm', 'str_hex_norm_len', 0),
+        array('HTML', 'str_hex_html', 'str_hex_html_len', 0),
+        array('Standard_RegEx', 'str_hex', 'str_hex_len', 1),
+        array('Normalised_RegEx', 'str_hex_norm', 'str_hex_norm_len', 1),
+        array('HTML_RegEx', 'str_hex_html', 'str_hex_html_len', 1)
     ) as $ThisConf) {
         $DataSource = $ThisConf[1];
         $DataSourceLen = $ThisConf[2];
@@ -2499,7 +2370,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     }
                     if (strpos($ThisSig, ':') !== false) {
                         $VN = explode(':', $ThisSig);
-                        if (!$ThisConf[3]) {
+                        if ($ThisConf[3] === 0) {
                             $ThisSig = preg_split('/[^a-fA-F0-9>]+/i', $VN[1], -1, PREG_SPLIT_NO_EMPTY);
                             $ThisSig = ($ThisSig === false ? '' : implode('', $ThisSig));
                             $ThisSigLen = strlen($ThisSig);
@@ -2549,7 +2420,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 }
                                 $phpMussel['Detected']($heur, $lnap, $VN, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
                             }
-                        } else {
+                        } elseif ($ThisConf[3] === 1) {
                             $ThisSig = preg_split('/[\x00-\x1f]+/', $VN[1], -1, PREG_SPLIT_NO_EMPTY);
                             $ThisSig = ($ThisSig === false) ? '' : implode('', $ThisSig);
                             $ThisSigLen = strlen($ThisSig);
@@ -2602,6 +2473,19 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                     }
                                 }
                                 $phpMussel['Detected']($heur, $lnap, $VN, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
+                            }
+                        } elseif ($ThisConf[3] === 2) {
+                            $ThisSig = preg_split('/[\x00-\x1f]+/', $VN[1], -1, PREG_SPLIT_NO_EMPTY);
+                            $ThisSig = ($ThisSig === false) ? '' : implode('', $ThisSig);
+                            $VN = $phpMussel['vn_shorthand']($VN[0]);
+                            if (
+                                $ThisSig &&
+                                !substr_count($phpMussel['memCache']['greylist'], ',' . $VN . ',') &&
+                                empty($phpMussel['memCache']['ignoreme'])
+                            ) {
+                                if (preg_match('/(?:' . $ThisSig . ')/i', $ofn)) {
+                                    $phpMussel['Detected']($heur, $lnap, $VN, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
+                                }
                             }
                         }
                     }
@@ -3836,13 +3720,6 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     /** Plugin hook: "after_vt". */
     if (!empty($phpMussel['MusselPlugins']['hookcounts']['after_vt'])) {
         foreach ($phpMussel['MusselPlugins']['hooks']['after_vt'] as $HookID => $HookVal) {
-            if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
-                $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
-            } elseif (function_exists($HookID)) {
-                $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'function';
-            } else {
-                continue;
-            }
             $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['after_vt'][$HookID]);
             $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
             foreach ($phpMussel['MusselPlugins']['hooks']['after_vt'][$HookID] as $x => $xv) {
@@ -3850,10 +3727,12 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                     $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = isset($$x) ? $$x : $x;
                 }
             }
-            if ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'closure') {
+            if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                 $x = $GLOBALS[$HookID]($phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-            } elseif ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'function') {
+            } elseif (function_exists($HookID)) {
                 $x = call_user_func($HookID, $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
+            } else {
+                $x = false;
             }
             if (is_array($x)) {
                 $phpMussel['MusselPlugins']['tempdata']['out'] = $x;
@@ -4252,13 +4131,6 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     /** Plugin hook: "before_scan". */
     if (!empty($phpMussel['MusselPlugins']['hookcounts']['before_scan'])) {
         foreach ($phpMussel['MusselPlugins']['hooks']['before_scan'] as $HookID => $HookVal) {
-            if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
-                $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
-            } elseif (function_exists($HookID)) {
-                $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'function';
-            } else {
-                continue;
-            }
             $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['before_scan'][$HookID]);
             $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
             foreach ($phpMussel['MusselPlugins']['hooks']['before_scan'][$HookID] as $x => $xv) {
@@ -4266,10 +4138,12 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
                     $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = isset($$x) ? $$x : $x;
                 }
             }
-            if ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'closure') {
+            if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                 $x = $GLOBALS[$HookID]($phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-            } elseif ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'function') {
+            } elseif (function_exists($HookID)) {
                 $x = call_user_func($HookID, $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
+            } else {
+                $x = false;
             }
             if (is_array($x)) {
                 $phpMussel['MusselPlugins']['tempdata']['out'] = $x;
@@ -5151,13 +5025,6 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
     /** Plugin hook: "after_scan". */
     if (!empty($phpMussel['MusselPlugins']['hookcounts']['after_scan'])) {
         foreach ($phpMussel['MusselPlugins']['hooks']['after_scan'] as $HookID => $HookVal) {
-            if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
-                $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'closure';
-            } elseif (function_exists($HookID)) {
-                $phpMussel['MusselPlugins']['tempdata']['hookType'] = 'function';
-            } else {
-                continue;
-            }
             $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['after_scan'][$HookID]);
             $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
             foreach ($phpMussel['MusselPlugins']['hooks']['after_scan'][$HookID] as $x => $xv) {
@@ -5165,10 +5032,12 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
                     $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = isset($$x) ? $$x : $x;
                 }
             }
-            if ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'closure') {
+            if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
                 $x = $GLOBALS[$HookID]($phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-            } elseif ($phpMussel['MusselPlugins']['tempdata']['hookType'] === 'function') {
+            } elseif (function_exists($HookID)) {
                 $x = call_user_func($HookID, $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
+            } else {
+                $x = false;
             }
             if (is_array($x)) {
                 $phpMussel['MusselPlugins']['tempdata']['out'] = $x;
