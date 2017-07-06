@@ -426,7 +426,7 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
 『detect_deface』
 - phpMussel應該使用簽名為污損的污損軟件檢測嗎？​False（假）=不檢查，​True（真）=檢查【默認】。
 
-#### "files" （類別）
+#### 『files』 （類別）
 文件處理配置。
 
 『max_uploads』
@@ -717,11 +717,11 @@ URL掃描儀API配置。
 
 #### 什麼是『簽名』？
 
-In the context of phpMussel, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually in the form of some very small, distinct, innocuous segment of something larger and otherwise harmful, like a virus or trojan, or in the form of a file checksum, hash, or other similarly identifying indicator, and usually includes a label, and some other data to help provide additional context that can be used by phpMussel to determine the best way to proceed when it encounters what we're looking for.
+在phpMussel的上下文中，『簽名』是用於識別我們正在尋找的特定內容的數據，它通常採取一些非常小，不同，無害的一些更大和有害的東西的形式（例如，它可以識別病毒，木馬，等等）。​也可以是文件校驗和，散列或其他類似的標識符。​通常包括一個標籤和一些其他數據，以幫助提供額外的上下文，可以由phpMussel使用它來確定遇到我們正在尋找的最佳方法。
 
 #### 什麼是『假陽性』？
 
-術語『假陽性』（*或者：『假陽性錯誤』；『虛驚』*；英語：*false positive*; *false positive error*; *false alarm*），​很簡單地描述，​和在一個廣義上下文，​被用來當測試一個因子，​作為參考的測試結果，​當結果是陽性（即：因子被確定為『陽性』，​或『真』），​但預計將為（或者應該是）陰性（即：因子，​在現實中，​是『陰性』，​或『假』）。​一個『假陽性』可被認為是同樣的『哭狼』 (其中，​因子被測試是是否有狼靠近牛群，​因子是『假』由於該有沒有狼靠近牛群，​和因子是報告為『陽性』由牧羊人通過叫喊『狼，​狼』），​或類似在醫學檢測情況，​當患者被診斷有一些疾病，​當在現實中，​他們沒有疾病。
+術語『假陽性』（*或者：『假陽性錯誤』；『虛驚』*；英語：*false positive*； *false positive error*； *false alarm*），​很簡單地描述，​和在一個廣義上下文，​被用來當測試一個因子，​作為參考的測試結果，​當結果是陽性（即：因子被確定為『陽性』，​或『真』），​但預計將為（或者應該是）陰性（即：因子，​在現實中，​是『陰性』，​或『假』）。​一個『假陽性』可被認為是同樣的『哭狼』 (其中，​因子被測試是是否有狼靠近牛群，​因子是『假』由於該有沒有狼靠近牛群，​和因子是報告為『陽性』由牧羊人通過叫喊『狼，​狼』），​或類似在醫學檢測情況，​當患者被診斷有一些疾病，​當在現實中，​他們沒有疾病。
 
 一些相關術語是『真陽性』，​『真陰性』和『假陰性』。​一個『真陽性』指的是當測試結果和真實因子狀態都是『真』（或『陽性』），​和一個『真陰性』指的是當測試結果和真實因子狀態都是『假』（或『陰性』）；一個『真陽性』或『真陰性』被認為是一個『正確的推理』。​對立面『假陽性』是一個『假陰性』；一個『假陰性』指的是當測試結果是『陰性』（即：因子被確定為『陰性』，​或『假』），​但預計將為（或者應該是）陽性（即：因子，​在現實中，​是『陽性』，​或『真』）。
 
@@ -749,6 +749,8 @@ phpMussel會阻止文件 | __假陽性__ | 真陽性（正確的推理）
 #### 我想使用phpMussel與早於5.4.0的PHP版本；​您能幫我嗎？
 
 不能。​PHP 5.4.0於2014年達到官方EoL（『生命終止』）。​延長的安全支持在2015年終止。​這時候目前，​它是2017年，​和PHP 7.1.0已經可用。​目前，​有支持使用phpMussel與PHP 5.4.0和所有可用的較新的PHP版本，​但不有支持使用phpMussel與任何以前的PHP版本。
+
+*也可以看看：​[兼容性圖表](https://maikuolan.github.io/Compatibility-Charts/)。*
 
 #### 我可以使用單個phpMussel安裝來保護多個域嗎？
 
@@ -851,4 +853,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最後更新：2017年6月25日。
+最後更新：2017年7月6日。

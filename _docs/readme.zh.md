@@ -717,11 +717,11 @@ URL扫描仪API配置。
 
 #### 什么是“签名”？
 
-In the context of phpMussel, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually in the form of some very small, distinct, innocuous segment of something larger and otherwise harmful, like a virus or trojan, or in the form of a file checksum, hash, or other similarly identifying indicator, and usually includes a label, and some other data to help provide additional context that can be used by phpMussel to determine the best way to proceed when it encounters what we're looking for.
+在phpMussel的上下文中，“签名”是用于识别我们正在寻找的特定内容的数据，它通常采取一些非常小，不同，无害的一些更大和有害的东西的形式（例如，它可以识别病毒，木马，等等）。​也可以是文件校验和，散列或其他类似的标识符。​通常包括一个标签和一些其他数据，以帮助提供额外的上下文，可以由phpMussel使用它来确定遇到我们正在寻找的最佳方法。
 
 #### 什么是“假阳性”？
 
-术语“假阳性”（*或者：“假阳性错误”；“虚惊”*；英语：*false positive*; *false positive error*; *false alarm*），​很简单地描述，​和在一个广义上下文，​被用来当测试一个因子，​作为参考的测试结果，​当结果是阳性（即：因子被确定为“阳性”，​或“真”），​但预计将为（或者应该是）阴性（即：因子，​在现实中，​是“阴性”，​或“假”）。​一个“假阳性”可被认为是同样的“哭狼” (其中，​因子被测试是是否有狼靠近牛群，​因子是“假”由于该有没有狼靠近牛群，​和因子是报告为“阳性”由牧羊人通过叫喊“狼，​狼”），​或类似在医学检测情况，​当患者被诊断有一些疾病，​当在现实中，​他们没有疾病。
+术语“假阳性”（*或者：“假阳性错误”；“虚惊”*；英语：*false positive*； *false positive error*； *false alarm*），​很简单地描述，​和在一个广义上下文，​被用来当测试一个因子，​作为参考的测试结果，​当结果是阳性（即：因子被确定为“阳性”，​或“真”），​但预计将为（或者应该是）阴性（即：因子，​在现实中，​是“阴性”，​或“假”）。​一个“假阳性”可被认为是同样的“哭狼” (其中，​因子被测试是是否有狼靠近牛群，​因子是“假”由于该有没有狼靠近牛群，​和因子是报告为“阳性”由牧羊人通过叫喊“狼，​狼”），​或类似在医学检测情况，​当患者被诊断有一些疾病，​当在现实中，​他们没有疾病。
 
 一些相关术语是“真阳性”，​“真阴性”和“假阴性”。​一个“真阳性”指的是当测试结果和真实因子状态都是“真”（或“阳性”），​和一个“真阴性”指的是当测试结果和真实因子状态都是“假”（或“阴性”）；一个“真阳性”或“真阴性”被认为是一个“正确的推理”。​对立面“假阳性”是一个“假阴性”；一个“假阴性”指的是当测试结果是“阴性”（即：因子被确定为“阴性”，​或“假”），​但预计将为（或者应该是）阳性（即：因子，​在现实中，​是“阳性”，​或“真”）。
 
@@ -749,6 +749,8 @@ phpMussel会阻止文件 | __假阳性__ | 真阳性（正确的推理）
 #### 我想使用phpMussel与早于5.4.0的PHP版本；​您能帮我吗？
 
 不能。​PHP 5.4.0于2014年达到官方EoL（“生命终止”）。​延长的安全支持在2015年终止。​这时候目前，​它是2017年，​和PHP 7.1.0已经可用。​目前，​有支持使用phpMussel与PHP 5.4.0和所有可用的较新的PHP版本，​但不有支持使用phpMussel与任何以前的PHP版本。
+
+*也可以看看：​[兼容性图表](https://maikuolan.github.io/Compatibility-Charts/)。*
 
 #### 我可以使用单个phpMussel安装来保护多个域吗？
 
@@ -851,4 +853,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最后更新：2017年6月25日。
+最后更新：2017年7月6日。

@@ -892,6 +892,8 @@ Zoner | <div dir="rtl" style="display:inline;">لا مشاكل معروفة</div
 
 <div dir="rtl">لا. PHP 5.4.0 دعم إنهاء عام 2014. الدعم الأمني الموسع إنهاء في عام 2015. حاليا، فمن عام 2017، وPHP 7.1.0 متاحة بالفعل. يتم توفير دعم لاستخدام phpMussel مع PHP 5.4.0 و كل ما هو متاح أحدث إصدارات PHP. لن تكون معتمدة الإصدارات القديمة PHP.<br /><br /></div>
 
+<div dir="rtl"><em>انظر أيضا: <a href="https://maikuolan.github.io/Compatibility-Charts/">مخططات التوافق</a>.</em><br /><br /></div>
+
 <div dir="rtl">هل يمكنني استخدام تثبيت phpMussel واحد لحماية نطاقات متعددة؟<br /><br /></div>
 
 <div dir="rtl">نعم. يمكن استخدام phpMussel لحماية نطاقات متعددة. إذا كان التكوين المطلوب مختلفا، للقيام بذلك، إنشاء ملفات تكوين جديدة، واسمه وفقا للنطاقات التي تتطلب الحماية. كمثال، ل "http://www.some-domain.tld/"، أطلق عليه اسما "some-domain.tld.config.ini". اسم النطاق يأتي من "HTTP_HOST". يتم تجاهل "www".<br /><br /></div>
@@ -993,4 +995,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخر تحديث: 25 يونيو 2017 (2017.06.25).</div>
+<div dir="rtl">آخر تحديث: 6 يوليو 2017 (2017.07.06).</div>
