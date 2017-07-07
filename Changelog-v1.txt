@@ -309,7 +309,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   perform any API lookups when there weren't any active/installed/enabled URL
   scanner signature files; Fixed.
 
-- [2017.07.01; Sub-minor code change; Maikuolan]: More refactoring.
+- [2017.07.05; Sub-minor code change; Maikuolan]: Removed ini_get()/ini_set()
+  calls from the package (the loader). SensioLabs rating raised to "silver".
+  Alternative solutions for preventing uncontrolled PCRE backticking will be
+  sought and implemented prior to the v1.0.0 release.
+
+- [2017.07.01-07; Sub-minor code change; Maikuolan]: More refactoring.
 
 ======
 
