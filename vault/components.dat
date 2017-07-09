@@ -21,7 +21,7 @@ phpMussel:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 1.0.0-DEV+2017187354
+ Version: 1.0.0-DEV+2017189000
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/master/Changelog-v1.txt
@@ -146,7 +146,7 @@ phpMussel:
    - 2c5e1906295c889436749adc4441ffa4:3233
    - caed7b1d78502266f746797a028146b1:1140
    - 1f21f2ca3a76e5c0964d20e6435c414b:1967
-   - 38b664048d8c611024db1473ab1f11ca:33641
+   - 6ef348388957160410799a8c0cb3cb84:32223
  Reannotate: components.dat
 l10n/en:
  Name: L10N: English
@@ -432,7 +432,7 @@ l10n/tr:
  Name: L10N: Türkçe
  Extended Description:
   tr: Türkçe dili verileri
- Version: 2017.181.424
+ Version: 2017.188.919
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -445,7 +445,7 @@ l10n/tr:
    - lang/lang.tr.fe.php
    - lang/lang.tr.php
   Checksum:
-   - 92121f673abd014a53567597fd50ffd8:39854
+   - 1d884d21c07063f9b961acdb640f6189:39801
    - a249633d325a54feda941ed07ae9e322:7737
  Reannotate: components.dat
 l10n/ur:

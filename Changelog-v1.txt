@@ -316,6 +316,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 - [2017.07.01-07; Sub-minor code change; Maikuolan]: More refactoring.
 
+- [2017.07.09; Sub-minor code change; Maikuolan]: Added internal language
+  support for Turkish (19 language localisations now completed and available).
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

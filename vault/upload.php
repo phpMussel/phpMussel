@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2017.07.06).
+ * This file: Upload handler (last modified: 2017.07.09).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -45,6 +45,26 @@ $phpMussel['ReadFile-For-Honeypot'] = function (&$Array, $File) use (&$phpMussel
         "\n" . $phpMussel['ParseVars'](array(
             'QFU' => $Array['qfile']
         ), $phpMussel['lang']['quarantined_as']);
+};
+
+/** Duplication avoidance (assigning kill details and unlinking files). */
+$phpMussel['KillAndUnlink'] = function () use (&$phpMussel) {
+    $phpMussel['killdata'] .=
+        '-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:' .
+        $phpMussel['upload']['FilesData']['FileSet']['size'][$phpMussel['upload']['FilesData']['FileSet']['i']] . ':' .
+        $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] . "\n";
+    $phpMussel['whyflagged'] .=
+        $phpMussel['lang']['upload_limit_exceeded'] .
+        ' (' . $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] . ')' .
+        $phpMussel['lang']['_exclamation'];
+    if (
+        $phpMussel['Config']['general']['delete_on_sight'] &&
+        is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]) &&
+        is_readable($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]) &&
+        !$phpMussel['Config']['general']['honeypot_mode']
+    ) {
+        unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
+    }
 };
 
 /** Sets default error handler for the upload handler. */
@@ -210,26 +230,7 @@ if ($phpMussel['upload']['count'] > 0) {
                     $phpMussel['upload']['count'] > $phpMussel['Config']['files']['max_uploads'] &&
                     $phpMussel['Config']['files']['max_uploads'] >= 1
                 ) {
-                    $phpMussel['killdata'] .=
-                        '-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:' .
-                        $phpMussel['upload']['FilesData']['FileSet']['size'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
-                        ':' .
-                        $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
-                        "\n";
-                    $phpMussel['whyflagged'] .=
-                        $phpMussel['lang']['upload_limit_exceeded'] .
-                        ' (' .
-                        $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
-                        ')' .
-                        $phpMussel['lang']['_exclamation'];
-                    if (
-                        $phpMussel['Config']['general']['delete_on_sight'] &&
-                        is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]) &&
-                        is_readable($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]) &&
-                        !$phpMussel['Config']['general']['honeypot_mode']
-                    ) {
-                        unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
-                    }
+                    $phpMussel['KillAndUnlink']();
                     next($_FILES);
                     continue;
                 }
@@ -354,25 +355,7 @@ if ($phpMussel['upload']['count'] > 0) {
                     $phpMussel['upload']['count'] > $phpMussel['Config']['files']['max_uploads'] &&
                     $phpMussel['Config']['files']['max_uploads'] >= 1
                 ) {
-                    $phpMussel['killdata'] .=
-                        '-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:' .
-                        $phpMussel['upload']['FilesData']['FileSet']['size'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
-                        ':' .
-                        $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
-                        "\n";
-                    $phpMussel['whyflagged'] .=
-                        $phpMussel['lang']['upload_limit_exceeded'] .
-                        ' (' .
-                        $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] .
-                        ')' .
-                        $phpMussel['lang']['_exclamation'];
-                    if (
-                        $phpMussel['Config']['general']['delete_on_sight'] &&
-                        !$phpMussel['Config']['general']['honeypot_mode'] &&
-                        is_readable($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']])
-                    ) {
-                        unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
-                    }
+                    $phpMussel['KillAndUnlink']();
                     next($_FILES);
                     continue;
                 }
