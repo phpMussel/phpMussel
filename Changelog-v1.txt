@@ -1,4 +1,4 @@
-Changelog for phpMussel (=> v1.0.0, < v2.0.0), "Changelog-v1.txt".
+Changelog for phpMussel (>= v1.0.0, < v2.0.0), "Changelog-v1.txt".
 
 === VERSIONING GUIDELINES ===
 phpMussel adheres to the SemVer guidelines for versioning.
@@ -174,7 +174,7 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   the newly completed front-end and to better accommodate changes to the
   updates feature. Completely rewrote the scan process and completely rewrote
   how all signatures are interpreted/read/used/etc. Major refactoring. Improved
-  future compatibility with PHP => 8 ("each" function has been identified as
+  future compatibility with PHP >= 8 ("each" function has been identified as
   targetted for deprecation as of PHP 7.2.0). Temporarily dropped support for
   whitelist signatures (this will be reintroduced again later). This update is
   NOT backwards compatible with previous versions/commits for phpMussel.
