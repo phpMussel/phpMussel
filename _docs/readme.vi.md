@@ -102,8 +102,18 @@ Tuy nhiên, bạn cũng có thể nói với phpMussel để quét tập tin c�
 `$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
 - `$what_to_scan` có thể là một string, hoặc một hay nhiều của array, và chỉ ra đó tập tin hay thư mục để quét.
-- `$output_type` là một boolean, và chỉ ra đó định dạng cho kết quả quét được trả về như. False hướng dẫn các chức năng để trả về kết quả là một số nguyên (trở lại kết quả của -3 chỉ ra rằng vấn đề gặp phải với các tập tin chữ ký hay tập tin chữ ký bản đồ và rằng họ có thể bị mất hay bị hỏng, -2 chỉ ra rằng dữ liệu bị hỏng đã được phát hiện trong quá trình quét và như vậy quét không hoàn thành, -1 chỉ ra rằng mở rộng hay bổ sung theo yêu cầu của PHP để thực hiện quá trình quét bị mất tích và như vậy quét không hoàn thành, 0 chỉ ra rằng mục tiêu quét không tồn tại và như vậy không có gì để quét, 1 chỉ ra rằng các mục tiêu đã được quét thành công và không có vấn đề đã được phát hiện, và 2 chỉ ra rằng các mục tiêu đã được quét thành công và vấn đề đã được phát hiện). True hướng dẫn các chức năng trả lại kết quả dưới dạng văn bản có thể đọc được con người. Ngoài ra, trong cả hai trường hợp, kết quả có thể được truy cập thông qua biến toàn cầu sau khi quét đã hoàn thành. Biến này là tùy chọn, mặc định là false.
-- `$output_flatness` là một boolean, chỉ ra cho các chức năng liệu có nên trả lại kết quả quét (khi có nhiều mục tiêu quét) như là một array hoặc một string. False sẽ trả lại kết quả như là một array. True sẽ trả lại kết quả như là một string. Biến này là tùy chọn, mặc định là false.
+- `$output_type` là một boolean, và chỉ ra đó định dạng cho kết quả quét được trả về như. `false` hướng dẫn các chức năng để trả về kết quả là một số nguyên. `true` hướng dẫn các chức năng trả lại kết quả dưới dạng văn bản có thể đọc được con người. Ngoài ra, trong cả hai trường hợp, kết quả có thể được truy cập thông qua biến toàn cầu sau khi quét đã hoàn thành. Biến này là tùy chọn, mặc định là `false`. Sau đây mô tả các kết quả số nguyên:
+
+| Các kết quả | Sự miêu tả |
+|---|---|
+| -3 | Chỉ ra rằng vấn đề gặp phải với các tập tin chữ ký hay tập tin chữ ký bản đồ và rằng họ có thể bị mất hay bị hỏng. |
+| -2 | Chỉ ra rằng dữ liệu bị hỏng đã được phát hiện trong quá trình quét và như vậy quét không hoàn thành. |
+| -1 | Chỉ ra rằng mở rộng hay bổ sung theo yêu cầu của PHP để thực hiện quá trình quét bị mất tích và như vậy quét không hoàn thành. |
+| 0 | Chỉ ra rằng mục tiêu quét không tồn tại và như vậy không có gì để quét. |
+| 1 | Chỉ ra rằng các mục tiêu đã được quét thành công và không có vấn đề đã được phát hiện. |
+| 2 | Chỉ ra rằng các mục tiêu đã được quét thành công và vấn đề đã được phát hiện. |
+
+- `$output_flatness` là một boolean, chỉ ra cho các chức năng liệu có nên trả lại kết quả quét (khi có nhiều mục tiêu quét) như là một array hoặc một string. `false` sẽ trả lại kết quả như là một array. `true` sẽ trả lại kết quả như là một string. Biến này là tùy chọn, mặc định là `false`.
 
 Các ví dụ:
 
@@ -850,4 +860,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Lần cuối cập nhật: 6 Tháng Bảy 2017 (2017.07.06).
+Lần cuối cập nhật: 11 Tháng Bảy 2017 (2017.07.11).

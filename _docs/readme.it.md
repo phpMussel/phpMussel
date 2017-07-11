@@ -102,8 +102,18 @@ Ma, si è anche in grado di istruire phpMussel per la scansione per i specifici 
 `$phpMussel['Scan']($cosa_a_scansione, $tipi_di_output, $output_pianura);`
 
 - `$cosa_a_scansione` può essere una stringa, un array o un array di array multipli, e indica quale d'il file, cartella e/o cartelle a scansiona.
-- `$tipi_di_output` è un valore booleano, indicanti il formato per i risultati della scansione a essere restituire come. False/Falso istruisce la funzione a restituire i risultati come un intero (un risultato restituito di -3 indica problemi sono stati incontrati con il phpMussel firme file o file di firme mappe e che possono essere possibile mancanti o corrotto, -2 indica che i corrotto dato è stato rilevato durante la scansione e quindi la scansione non abbia completato, -1 indica che estensioni o addon richiesti per PHP a eseguire la scansione erano assente e quindi la scansione non abbia completato, 0 indica che l'obiettivo di scansione non esiste e quindi non c'era nulla a scansione, 1 indica che l'obiettivo è stato scansionata correttamente e non problemi stati rilevati, e 2 indica che l'obiettivo è stato scansionata correttamente e problemi stati rilevati). True/Vero istruisce la funzione a restituire i risultati come testo leggibile. In aggiunta, in ogni caso, i risultati sono accessibili tramite variabili globali dopo la scansione è stata completata. Questa variabile è facoltativa, inadempiente su false/falso.
-- `$output_pianura` è un valore booleano, indicanti alla funzione se restituire i risultati della scansione (quando ci sono multipli obiettivi di scansione) come un array o una stringa. False/Falso restituirà i risultati come un array. True/Vero restituirà i risultati come una stringa. Questa variabile è facoltativa, inadempiente su false/falso.
+- `$tipi_di_output` è un valore booleano, indicanti il formato per i risultati della scansione a essere restituire come. `false` istruisce la funzione a restituire i risultati come un intero. `true` istruisce la funzione a restituire i risultati come testo leggibile. In aggiunta, in ogni caso, i risultati sono accessibili tramite variabili globali dopo la scansione è stata completata. Questa variabile è facoltativa, inadempiente su `false`. Di seguito vengono descritti i risultati interi:
+
+| Risultati | Descrizioni |
+|---|---|
+| -3 | Indica problemi sono stati incontrati con il phpMussel firme file o file di firme mappe e che possono essere possibile mancanti o corrotto. |
+| -2 | Indica che i corrotto dato è stato rilevato durante la scansione e quindi la scansione non abbia completato. |
+| -1 | Indica che estensioni o addon richiesti per PHP a eseguire la scansione erano assente e quindi la scansione non abbia completato. |
+| 0 | Indica che l'obiettivo di scansione non esiste e quindi non c'era nulla a scansione. |
+| 1 | Indica che l'obiettivo è stato scansionata correttamente e non problemi stati rilevati. |
+| 2 | Indica che l'obiettivo è stato scansionata correttamente e problemi stati rilevati. |
+
+- `$output_pianura` è un valore booleano, indicanti alla funzione se restituire i risultati della scansione (quando ci sono multipli obiettivi di scansione) come un array o una stringa. `false` restituirà i risultati come un array. `true` restituirà i risultati come una stringa. Questa variabile è facoltativa, inadempiente su `false`.
 
 Esempi:
 
@@ -850,4 +860,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Ultimo Aggiornamento: 6 Luglio 2017 (2017.07.06).
+Ultimo Aggiornamento: 11 Luglio 2017 (2017.07.11).

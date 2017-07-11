@@ -102,8 +102,18 @@ Porém, você também é capaz de instruir phpMussel para verificar arquivos e/o
 `$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
 - `$what_to_scan` pode ser uma string, um matriz, ou um matriz de matrizes, e indica qual arquivo, arquivos, diretório e/ou diretórios para analisar.
-- `$output_type` é um booleano, indicando o formato para os resultados da verificação a serem retornados. False/Falso instrui a função para retornar resultados como um número inteiro (um resultado retornado de -3 indica problemas foram encontrados com o phpMussel arquivos de assinaturas ou arquivos de mapas de assinaturas e que eles podem possívelmente estar ausente ou corrompido, -2 indica que dados corrompidos foram detectados durante a análise, e portanto, a análise não foi concluída, -1 indica que extensões ou complementos necessários pelo PHP para executar a análise estavam faltando, e portanto, a análise não foi concluída, 0 indica que o alvo de análise não existe, e portanto, havia nada para verificar, 1 indica que o alvo foi analisado e não foram detectados problemas, e 2 indica que o alvo foi analisado e problemas foram detectados). True/Verdadeiro instrui a função para retornar os resultados como texto legível. Adicionalmente, em ambos os casos, os resultados podem ser acessados através de variáveis globais após o análise já concluída. Esta variável é opcional, definida como false/falso por padrão.
-- `$output_flatness` é um booleano, indicando para a função ou retornar os resultados de análise (quando há vários alvos para analisando) como uma matriz ou uma string. False/Falso irá retornar os resultados como uma matriz. True/Verdadeiro irá retornar os resultados como uma string. Esta variável é opcional, definida como false/falso por padrão.
+- `$output_type` é um booleano, indicando o formato para os resultados da verificação a serem retornados. `false` instrui a função para retornar resultados como um número inteiro. `true` instrui a função para retornar os resultados como texto legível. Adicionalmente, em ambos os casos, os resultados podem ser acessados através de variáveis globais após o análise já concluída. Esta variável é opcional, definida como `false` por padrão. O seguinte descreve os resultados inteiros:
+
+| Resultados | Descrição |
+|---|---|
+| -3 | Indica problemas foram encontrados com o phpMussel arquivos de assinaturas ou arquivos de mapas de assinaturas e que eles podem possívelmente estar ausente ou corrompido. |
+| -2 | Indica que dados corrompidos foram detectados durante a análise, e portanto, a análise não foi concluída. |
+| -1 | Indica que extensões ou complementos necessários pelo PHP para executar a análise estavam faltando, e portanto, a análise não foi concluída. |
+| 0 | Indica que o alvo de análise não existe, e portanto, havia nada para verificar. |
+| 1 | Indica que o alvo foi analisado e não foram detectados problemas. |
+| 2 | Indica que o alvo foi analisado e problemas foram detectados. |
+
+- `$output_flatness` é um booleano, indicando para a função ou retornar os resultados de análise (quando há vários alvos para analisando) como uma matriz ou uma string. `false` irá retornar os resultados como uma matriz. `true` irá retornar os resultados como uma string. Esta variável é opcional, definida como `false` por padrão.
 
 Exemplos:
 
@@ -850,4 +860,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Última Atualização: 6 Julho 2017 (2017.07.06).
+Última Atualização: 11 Julho 2017 (2017.07.11).

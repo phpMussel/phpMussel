@@ -105,7 +105,7 @@ However, you're also able to instruct phpMussel to scan specific files, director
 - `$output_type` is a boolean, indicating the format for the scan results to be returned as. `false` instructs the function to return results as an integer. `true` instructs the function to return results as human readable text. Additionally, in either case, the results can be accessed via global variables after scanning has completed. This variable is optional, defaulting to `false`. The following describes the integer results:
 
 | Results | Description |
-| ----|---- |
+|---|---|
 | -3 | Indicates problems were encountered with the phpMussel signatures files or signature map files and that they may possible be missing or corrupted. |
 | -2 | Indicates that corrupt data was detected during the scan and thus the scan failed to complete. |
 | -1 | Indicates that extensions or addons required by PHP to execute the scan were missing and thus the scan failed to complete. |

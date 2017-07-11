@@ -105,7 +105,7 @@ Cependant, vous êtes également capable d'instruire phpMussel à analyser spéc
 - `$output_type` est un booléen, indiquant le format dont les résultats d'analyse doivent être retournées sous. `false` instruit la fonction à retourner des résultats comme un entier. `true` instruit la fonction à retourner des résultats sous forme de texte lisible par humain. De plus, dans tout le cas, les résultats peuvent être accessibles via les variables globales après l'analyse est terminée. Cette variable est optionnel, imposé par défaut comme `false`. Ce qui suit décrit les résultats entiers:
 
 | Résultats | Description |
-| ----|---- |
+|---|---|
 | -3 | Indique des problèmes ont été rencontrés avec le phpMussel signatures fichiers ou des signatures cartes fichiers et qu'ils peuvent être possible manquants ou corrompus. |
 | -2 | Indique que données corrompues était détecté lors de l'analyse et donc l'analyse n'ont pas réussi à compléter. |
 | -1 | Indique que les extensions ou addons requis par PHP pour exécuter l'analyse sont manquaient et donc l'analyse n'ont pas réussi à compléter. |

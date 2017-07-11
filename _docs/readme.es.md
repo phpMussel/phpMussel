@@ -105,7 +105,7 @@ Pero, también es capaz instruirá phpMussel para escanear específicos archivos
 - `$output_type` es un booleano, indicando el formato de los resultados del análisis para ser devueltos como. `false` instruye la función para devolver resultados como un entero. `true` instruye la función para devolver resultados como texto legible por humanos. Además, en cualquier caso, los resultados pueden ser acceder a través de globales variables después escaneo ha completado. Esta variable es opcional, predefinido como `false`. As siguientes se describen los números enteros:
 
 | Resultados | Descripción |
-| ----|---- |
+|---|---|
 | -3 | Indica se encontraron problemas con el phpMussel firmas archivos o firmas mapas archivos y que sea posible pueden faltar o dañado. |
 | -2 | Indica que se ha corruptos datos detectados durante el escanear y por lo tanto el escanear no pudo completar. |
 | -1 | Indica que las extensiones o complementos requeridos por PHP para ejecutar el escaneo faltaban y por lo tanto el escanear no pudo completar, 0 indica que la escanear objetivo no existe y por lo tanto no había nada para escanear. |

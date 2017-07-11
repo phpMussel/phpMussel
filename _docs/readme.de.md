@@ -105,7 +105,7 @@ Sie sind jedoch auch in der Lage, phpMussel anzuweisen, spezifische Dateien, Ord
 - `$output_type` ist ein boolescher Wert und gibt an, in welchem Format die Scan-Ergebnisse zurückgegeben werden sollen. `false` weist die Funktion an, Ergebnisse als Integer (Ganzzahl) zurückzugeben. `true` weist die Funktion an, Ergebnisse als lesbaren Text zurückzugeben. Zusätzlich können in beiden Fällen auf die Ergebnisse über globale Variablen nach dem Scannen zugegriffen werden. Diese Variable ist optional und standardmäßig auf `false`. Im Folgenden werden die Integer-Ergebnisse beschrieben:
 
 | Ergebnisse | Beschreibung |
-| ----|---- |
+|---|---|
 | -3 | Zeigt an, dass es Probleme mit den phpMussel Signatur-Dateien oder Signatur-Map-Dateien gibt und dass sie wahrscheinlich fehlen oder beschädigt sind. |
 | -2 | Zeigt an, dass beschädigte Dateien gefunden wurden und der Scan nicht abgeschlossen wurde. |
 | -1 | Zeigt an, dass fehlende Erweiterungen oder Addons von PHP benötigt werden, um den Scan durchzuführen und der Scan deshalb nicht abgeschlossen wurde. |

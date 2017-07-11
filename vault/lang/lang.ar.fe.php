@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.06.21).
+ * This file: Arabic language data for the front-end (last modified: 2017.07.11).
  */
 
 /** Prevents execution from outside of phpMussel. */

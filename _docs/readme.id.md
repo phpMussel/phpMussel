@@ -105,7 +105,7 @@ Bagaimanapun, Anda juga bisa menginstruksikan phpMussel untuk memindai file, dir
 - `$output_type` adalah boolean, mengindikasikan format untuk hasil pemindaian untuk dikembalikan sebagai. `false` menginstruksikan fungsi untuk mengembalikan hasil sebagai integer. `true` menginstruksikan fungsi untuk mengembalikan hasil sebagai teks yang dapat dibaca manusia. Tambahan, dalam kedua kasus, hasilnya dapat diakses melalui variabel global setelah memindai selesai. Variabel ini adalah opsional, default untuk `false`. Berikut ini adalah deskripsi untuk hasil integer:
 
 | Hasil | Deskripsi |
-| ----|---- |
+|---|---|
 | -3 | Mengindikasikan masalah adalah ditemui dengan file tanda tangan phpMussel atau file memetakan tanda tangan dan mereka mungkin hilang atau rusak. |
 | -2 | Mengindikasikan bahwa file dikorup terdeteksi selama proses memindai dan proses memindai gagal selesai. |
 | -1 | Mengindikasikan bawa ekstensi atau addon yang dibutuhkan oleh PHP untuk mengeksekusi pemindaian hilang dan demikian gagal selesai. |

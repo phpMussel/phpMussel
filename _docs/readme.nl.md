@@ -102,8 +102,18 @@ Echter, u bent ook in staat om te instrueren phpMussel om te scannen specifiek b
 `$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
 - `$what_to_scan` kunt worden een tekenreeks, een array, of een array van arrays, en vermelding welk bestand, bestanden, bestandsmap en/of bestandsmappen om scannen.
-- `$output_type` is een boolean, met vermelding van het formaat voor de scanresultaten te worden geretourneerd als. False instrueert de functie om de resultaten als een integer retourneer (een geretourneerd resultaat van -3 betekent problemen werden aangetroffen met de phpMussel signatures bestanden of signature kaart bestanden en dat zij mogelijk worden beschadigd of ontbreekt, -2 betekent dat beschadigd gegevens tijdens de scan werd ontdekt en dus de scan niet voltooid, -1 betekent dat uitbreidingen of addons vereist door PHP om de scan te voeren werd ontbraken zijn en dus de scan niet voltooid, 0 betekent dat het scandoel bestaat niet en dus was er niets te scannen, 1 betekent dat het doel met succes werden gescand en geen problemen gedetecteerd, en 2 betekent dat het doel met succes werd gescand en problemen werden gedetecteerd). True instrueert de functie om de resultaten als leesbare tekst retourneer. Bovendien, in elk geval, de resultaten kunnen worden geraadpleegd via globale variabelen na het scannen is voltooid. Deze variabele is optioneel, voorgedefinieerd als false.
-- `$output_flatness` is een boolean, vermelding van de functie of de resultaten van de scan retourneren (wanneer er meerdere scandoelen) als een array of een tekenreeks. False zullen de resultaten als een array retourneer. True zullen de resultaten als een tekenreeks retourneer. Deze variabele is optioneel, voorgedefinieerd als false.
+- `$output_type` is een boolean, met vermelding van het formaat voor de scanresultaten te worden geretourneerd als. `false` instrueert de functie om de resultaten als een integer retourneer. `true` instrueert de functie om de resultaten als leesbare tekst retourneer. Bovendien, in elk geval, de resultaten kunnen worden geraadpleegd via globale variabelen na het scannen is voltooid. Deze variabele is optioneel, voorgedefinieerd als `false`. Deze integer resultaten worden hieronder beschreven:
+
+| Resultaten | Beschrijving |
+|---|---|
+| -3 | Betekent problemen werden aangetroffen met de phpMussel signatures bestanden of signature kaart bestanden en dat zij mogelijk worden beschadigd of ontbreekt. |
+| -2 | Betekent dat beschadigd gegevens tijdens de scan werd ontdekt en dus de scan niet voltooid. |
+| -1 | Betekent dat uitbreidingen of addons vereist door PHP om de scan te voeren werd ontbraken zijn en dus de scan niet voltooid. |
+| 0 | Betekent dat het scandoel bestaat niet en dus was er niets te scannen. |
+| 1 | Betekent dat het doel met succes werden gescand en geen problemen gedetecteerd. |
+| 2 | Betekent dat het doel met succes werd gescand en problemen werden gedetecteerd. |
+
+- `$output_flatness` is een boolean, vermelding van de functie of de resultaten van de scan retourneren (wanneer er meerdere scandoelen) als een array of een tekenreeks. `false` zullen de resultaten als een array retourneer. `true` zullen de resultaten als een tekenreeks retourneer. Deze variabele is optioneel, voorgedefinieerd als `false`.
 
 Voorbeeld:
 
@@ -850,4 +860,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Laatste Bijgewerkt: 6 Juli 2017 (2017.07.06).
+Laatste Bijgewerkt: 11 Juli 2017 (2017.07.11).
