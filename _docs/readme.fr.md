@@ -97,13 +97,23 @@ phpMussel devrait être capable de fonctionner correctement avec des exigences m
 
 L'analyses des téléchargements des fichiers est automatisée et activée par défaut, donc rien est nécessaire à partir de vous pour cette fonction particulière.
 
-Cependant, vous êtes également capable d'instruire phpMussel à analyser spécifiques fichiers, répertoires et/ou archives. Pour ce faire, premièrement, vous devez assurer que l'appropriée configuration est imposé dans le `config.ini` fichier (`cleanup` doit être désactivé), et lorsque vous avez terminé, dans un fichier PHP qui est attaché à phpMussel, utilisez la fonction suivante dans votre code:
+Cependant, vous êtes également capable d'instruire phpMussel à analyser spécifiques fichiers, répertoires et/ou archives. Pour ce faire, premièrement, vous devez assurer que la configuration appropriée est imposé dans le `config.ini` fichier (`cleanup` doit être désactivé), et lorsque vous avez terminé, dans un fichier PHP qui est attaché à phpMussel, utilisez la fonction suivante dans votre code:
 
 `$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
 - `$what_to_scan` peut être une chaîne, un tableau, ou un tableau de tableaux, et indique quel fichier, fichiers, répertoire et/ou répertoires à analyser.
-- `$output_type` est un booléen, indiquant le format dont les résultats d'analyse doivent être retournées sous. False/Faux instruit la fonction à retourner des résultats comme un entier (un retourné résultat de -3 indique des problèmes ont été rencontrés avec le phpMussel signatures fichiers ou des signatures cartes fichiers et qu'ils peuvent être possible manquants ou corrompus, -2 indique que données corrompues était détecté lors de l'analyse et donc l'analyse n'ont pas réussi à compléter, -1 indique que les extensions ou addons requis par PHP pour exécuter l'analyse sont manquaient et donc l'analyse n'ont pas réussi à compléter, 0 indique qu'il n'existe pas cible à analyser et donc il n'y avait rien à analyser, 1 indique que la cible était analysé avec succès et aucun problème n'été détectée, et 2 indique que la cible était analysé avec succès et problèmes ont été détectés). True/Vrai instruit la fonction à retourner des résultats sous forme de texte lisible par humain. De plus, dans tout le cas, les résultats peuvent être accessibles via les variables globales après l'analyse est terminée. Cette variable est optionnel, imposé par défaut comme false/faux.
-- `$output_flatness` est un booléen, indiquant à la fonction soit à retourner les résultats de l'analyse (quand il ya plusieurs cibles d'analyse) comme un tableau ou une chaîne. False/Faux sera retour les résultats comme un tableau. True/Vrai sera retour les résultats comme une chaîne. Cette variable est optionnel, imposé par défaut comme false/faux.
+- `$output_type` est un booléen, indiquant le format dont les résultats d'analyse doivent être retournées sous. `false` instruit la fonction à retourner des résultats comme un entier. `true` instruit la fonction à retourner des résultats sous forme de texte lisible par humain. De plus, dans tout le cas, les résultats peuvent être accessibles via les variables globales après l'analyse est terminée. Cette variable est optionnel, imposé par défaut comme `false`. Ce qui suit décrit les résultats entiers:
+
+| Résultats | Description |
+| ----|---- |
+| -3 | Indique des problèmes ont été rencontrés avec le phpMussel signatures fichiers ou des signatures cartes fichiers et qu'ils peuvent être possible manquants ou corrompus. |
+| -2 | Indique que données corrompues était détecté lors de l'analyse et donc l'analyse n'ont pas réussi à compléter. |
+| -1 | Indique que les extensions ou addons requis par PHP pour exécuter l'analyse sont manquaient et donc l'analyse n'ont pas réussi à compléter. |
+| 0 | Indique qu'il n'existe pas cible à analyser et donc il n'y avait rien à analyser. |
+| 1 | Indique que la cible était analysé avec succès et aucun problème n'été détectée. |
+| 2 | Indique que la cible était analysé avec succès et problèmes ont été détectés. |
+
+- `$output_flatness` est un booléen, indiquant à la fonction soit à retourner les résultats de l'analyse (quand il ya plusieurs cibles d'analyse) comme un tableau ou une chaîne. `false` sera retour les résultats comme un tableau. `true` sera retour les résultats comme une chaîne. Cette variable est optionnel, imposé par défaut comme `false`.
 
 Exemples:
 
@@ -850,4 +860,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Dernière mise à jour : 6 Juillet 2017 (2017.07.06).
+Dernière mise à jour : 11 Juillet 2017 (2017.07.11).

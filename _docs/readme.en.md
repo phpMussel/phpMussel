@@ -102,9 +102,9 @@ However, you're also able to instruct phpMussel to scan specific files, director
 `$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
 - `$what_to_scan` can be a string, an array, or an array of arrays, and indicates which file, files, directory and/or directories to scan.
-- `$output_type` is a boolean, indicating the format for the scan results to be returned as. False instructs the function to return results as an integer. Following is the description:
+- `$output_type` is a boolean, indicating the format for the scan results to be returned as. `false` instructs the function to return results as an integer. `true` instructs the function to return results as human readable text. Additionally, in either case, the results can be accessed via global variables after scanning has completed. This variable is optional, defaulting to `false`. The following describes the integer results:
 
-| Result | Description |
+| Results | Description |
 | ----|---- |
 | -3 | Indicates problems were encountered with the phpMussel signatures files or signature map files and that they may possible be missing or corrupted. |
 | -2 | Indicates that corrupt data was detected during the scan and thus the scan failed to complete. |
@@ -113,8 +113,7 @@ However, you're also able to instruct phpMussel to scan specific files, director
 | 1 | Indicates that the target was successfully scanned and no problems were detected. |
 | 2 | Indicates that the target was successfully scanned and problems were detected. |
 
-```true``` instructs the function to return results as human readable text. Additionally, in either case, the results can be accessed via global variables after scanning has completed. This variable is optional, defaulting to false.
-- `$output_flatness` is a boolean, indicating to the function whether to return the results of scanning (when there are multiple scan targets) as an array or a string. False will return the results as an array. True will return the results as a string. This variable is optional, defaulting to false.
+- `$output_flatness` is a boolean, indicating to the function whether to return the results of scanning (when there are multiple scan targets) as an array or a string. `false` will return the results as an array. `true` will return the results as a string. This variable is optional, defaulting to `false`.
 
 Examples:
 
@@ -861,4 +860,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Last Updated: 6 July 2017 (2017.07.06).
+Last Updated: 11 July 2017 (2017.07.11).
