@@ -172,7 +172,7 @@ l10n/ar:
  Name: L10N: العربية
  Extended Description:
   ar: ملفات اللغة العربية
- Version: 2017.191.405
+ Version: 2017.192.350
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -185,7 +185,7 @@ l10n/ar:
    - lang/lang.ar.fe.php
    - lang/lang.ar.php
   Checksum:
-   - b5d0e179d402cb13f16267aa973f9ee0:53048
+   - 538107b536add72aff1c804038ec283d:53047
    - 88b28c912870584dac5020ea430758d5:8744
  Reannotate: components.dat
 l10n/de:
