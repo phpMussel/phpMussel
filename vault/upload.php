@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2017.07.09).
+ * This file: Upload handler (last modified: 2017.07.13).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -541,33 +541,7 @@ if ($phpMussel['upload']['count'] > 0) {
         );
 
         /** Plugin hook: "before_html_out". */
-        if (!empty($phpMussel['MusselPlugins']['hookcounts']['before_html_out'])) {
-            foreach ($phpMussel['MusselPlugins']['hooks']['before_html_out'] as $HookID => $HookVal) {
-                $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID]);
-                $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
-                foreach ($phpMussel['MusselPlugins']['hooks']['before_html_out'][$HookID] as $x => $xv) {
-                    if ($x) {
-                        $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = isset($$x) ? $$x : $x;
-                    }
-                }
-                if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
-                    $x = $GLOBALS[$HookID]($phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-                } elseif (function_exists($HookID)) {
-                    $x = call_user_func($HookID, $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-                } else {
-                    $x = false;
-                }
-                if (is_array($x)) {
-                    $phpMussel['MusselPlugins']['tempdata']['out'] = $x;
-                    foreach ($phpMussel['MusselPlugins']['tempdata']['out'] as $x => $xv) {
-                        if ($x && $xv) {
-                            $$x = $xv;
-                        }
-                    }
-                }
-            }
-            $phpMussel['MusselPlugins']['tempdata'] = '';
-        }
+        $phpMussel['Execute_Hook']('before_html_out');
 
         /** Handle webfonts. */
         if (empty($phpMussel['Config']['general']['disable_webfonts'])) {

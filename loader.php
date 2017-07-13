@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The loader (last modified: 2017.07.02).
+ * This file: The loader (last modified: 2017.07.13).
  */
 
 /**
@@ -96,9 +96,6 @@ if (!defined('phpMussel')) {
     /** Load the language handler. */
     require $phpMussel['Vault'] . 'lang.php';
 
-    /** Scrap variables used for processing plugins. */
-    $x = $HookID = '';
-
     /** PHP binary version-specific switch variables. */
     $phpMussel['binary_versions'] = array(
         '7.0.0' => version_compare(PHP_VERSION, '7.0.0', '>='),
@@ -128,7 +125,7 @@ if (!defined('phpMussel')) {
     if (!$phpMussel['disable_lock'] = file_exists($phpMussel['Vault'] . 'disable.lck')) {
 
         /** Plugins are detected and processed by phpMussel here. */
-        $phpMussel['MusselPlugins'] = array('hooks' => array(), 'hookcounts' => array(), 'closures' => array());
+        $phpMussel['MusselPlugins'] = array('hooks' => array(), 'closures' => array());
         if ($phpMussel['Config']['general']['enable_plugins']) {
             if (!is_dir($phpMussel['Vault'] . 'plugins')) {
                 header('Content-Type: text/plain');
@@ -149,7 +146,7 @@ if (!defined('phpMussel')) {
                 }
             }
             closedir($phpMussel['MusselPlugins']['tempdata']['d']);
-            $phpMussel['MusselPlugins']['tempdata'] = array();
+            unset($phpMussel['MusselPlugins']['tempdata']);
         }
 
         /* This code block only executed if we're NOT in CLI mode. */
@@ -198,7 +195,7 @@ if (!defined('phpMussel')) {
         }
 
         /** Unset our working data so that we can exit cleanly. */
-        unset($HookID, $x, $phpMussel);
+        unset($x, $phpMussel);
 
     } else {
 

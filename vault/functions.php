@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.07.07).
+ * This file: Functions file (last modified: 2017.07.13).
  */
 
 /**
@@ -23,36 +23,47 @@ if (substr(PHP_VERSION, 0, 4) === '5.4.') {
 }
 
 /**
- * Registers plugin functions/closures to their intended hooks.
+ * Registers plugin closures/functions to their intended hooks.
  *
- * @param string $what The name of the chosen function to execute at the
- *      desired point in the script.
- * @param string $where Instructs the function which "hook" your chosen
- *      function should be registered to.
- * @param string|array $with Represents the variables to be parsed to your
- *      function from the scope in which it'll be executed from (optional).
- * @return bool
+ * @param string $what The name of the closure/function to execute.
+ * @param string $where Where to execute it (the designated "plugin hook").
+ * @return bool Execution failed(false)/succeeded(true).
  */
-$phpMussel['Register_Hook'] = function ($what, $where, $with = '') use (&$phpMussel) {
+$phpMussel['Register_Hook'] = function ($what, $where) use (&$phpMussel) {
     if (
         !isset($phpMussel['MusselPlugins']['hooks']) ||
-        !isset($phpMussel['MusselPlugins']['hookcounts']) ||
+        !isset($phpMussel['MusselPlugins']['closures']) ||
         !$what ||
-        !$where ||
-        !isset($phpMussel['MusselPlugins']['closures'])
+        !$where
     ) {
         return false;
     }
     if (!isset($phpMussel['MusselPlugins']['hooks'][$where])) {
         $phpMussel['MusselPlugins']['hooks'][$where] = array();
     }
-    if (!isset($phpMussel['MusselPlugins']['hookcounts'][$where])) {
-        $phpMussel['MusselPlugins']['hookcounts'][$where] = 0;
-    }
-    $phpMussel['MusselPlugins']['hooks'][$where][$what] = $with;
-    $phpMussel['MusselPlugins']['hookcounts'][$where]++;
+    $phpMussel['MusselPlugins']['hooks'][$where][] = $what;
     if (!function_exists($what) && isset($GLOBALS[$what]) && is_object($GLOBALS[$what])) {
         $phpMussel['MusselPlugins']['closures'][] = $what;
+    }
+    return true;
+};
+
+/**
+ * Executes plugin closures/functions.
+ *
+ * @param string $HookID Where to execute it (the designated "plugin hook").
+ * @return bool Execution failed(false)/succeeded(true).
+ */
+$phpMussel['Execute_Hook'] = function ($HookID) use (&$phpMussel) {
+    if (!isset($phpMussel['MusselPlugins']['hooks'][$HookID])) {
+        return false;
+    }
+    foreach ($phpMussel['MusselPlugins']['hooks'][$HookID] as $Registered) {
+        if (isset($GLOBALS[$Registered]) && is_object($GLOBALS[$Registered])) {
+            $GLOBALS[$Registered]();
+        } elseif (function_exists($Registered)) {
+            call_user_func($Registered);
+        }
     }
     return true;
 };
@@ -2047,33 +2058,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     }
 
     /** Plugin hook: "during_scan". */
-    if (!empty($phpMussel['MusselPlugins']['hookcounts']['during_scan'])) {
-        foreach ($phpMussel['MusselPlugins']['hooks']['during_scan'] as $HookID => $HookVal) {
-            $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['during_scan'][$HookID]);
-            $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
-            foreach ($phpMussel['MusselPlugins']['hooks']['during_scan'][$HookID] as $x => $xv) {
-                if ($x) {
-                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = isset($$x) ? $$x : $x;
-                }
-            }
-            if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
-                $x = $GLOBALS[$HookID]($phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-            } elseif (function_exists($HookID)) {
-                $x = call_user_func($HookID, $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-            } else {
-                $x = false;
-            }
-            if (is_array($x)) {
-                $phpMussel['MusselPlugins']['tempdata']['out'] = $x;
-                foreach ($phpMussel['MusselPlugins']['tempdata']['out'] as $x => $xv) {
-                    if ($x && $xv) {
-                        $$x = $xv;
-                    }
-                }
-            }
-        }
-        $phpMussel['MusselPlugins']['tempdata'] = '';
-    }
+    $phpMussel['Execute_Hook']('during_scan');
 
     /** Begin URL scanner. */
     if (
@@ -3596,33 +3581,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     }
 
     /** Plugin hook: "after_vt". */
-    if (!empty($phpMussel['MusselPlugins']['hookcounts']['after_vt'])) {
-        foreach ($phpMussel['MusselPlugins']['hooks']['after_vt'] as $HookID => $HookVal) {
-            $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['after_vt'][$HookID]);
-            $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
-            foreach ($phpMussel['MusselPlugins']['hooks']['after_vt'][$HookID] as $x => $xv) {
-                if ($x) {
-                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = isset($$x) ? $$x : $x;
-                }
-            }
-            if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
-                $x = $GLOBALS[$HookID]($phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-            } elseif (function_exists($HookID)) {
-                $x = call_user_func($HookID, $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-            } else {
-                $x = false;
-            }
-            if (is_array($x)) {
-                $phpMussel['MusselPlugins']['tempdata']['out'] = $x;
-                foreach ($phpMussel['MusselPlugins']['tempdata']['out'] as $x => $xv) {
-                    if ($x && $xv) {
-                        $$x = $xv;
-                    }
-                }
-            }
-        }
-        $phpMussel['MusselPlugins']['tempdata'] = '';
-    }
+    $phpMussel['Execute_Hook']('after_vt');
 
     if (
         isset($phpMussel['HashCacheData']) &&
@@ -3998,39 +3957,12 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
             fwrite($Handle, ',');
             fclose($Handle);
         } else {
-            $phpMussel['memCache']['greylist'] =
-                $phpMussel['ReadFile']($phpMussel['Vault'] . 'greylist.csv');
+            $phpMussel['memCache']['greylist'] = $phpMussel['ReadFile']($phpMussel['Vault'] . 'greylist.csv');
         }
     }
 
     /** Plugin hook: "before_scan". */
-    if (!empty($phpMussel['MusselPlugins']['hookcounts']['before_scan'])) {
-        foreach ($phpMussel['MusselPlugins']['hooks']['before_scan'] as $HookID => $HookVal) {
-            $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['before_scan'][$HookID]);
-            $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
-            foreach ($phpMussel['MusselPlugins']['hooks']['before_scan'][$HookID] as $x => $xv) {
-                if ($x) {
-                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = isset($$x) ? $$x : $x;
-                }
-            }
-            if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
-                $x = $GLOBALS[$HookID]($phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-            } elseif (function_exists($HookID)) {
-                $x = call_user_func($HookID, $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-            } else {
-                $x = false;
-            }
-            if (is_array($x)) {
-                $phpMussel['MusselPlugins']['tempdata']['out'] = $x;
-                foreach ($phpMussel['MusselPlugins']['tempdata']['out'] as $x => $xv) {
-                    if ($x && $xv) {
-                        $$x = $xv;
-                    }
-                }
-            }
-        }
-        $phpMussel['MusselPlugins']['tempdata'] = '';
-    }
+    $phpMussel['Execute_Hook']('before_scan');
 
     $d = is_file($f);
     $fnCRC = hash('crc32b', $ofn);
@@ -4828,33 +4760,7 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
     $xet2822 = $phpMussel['TimeFormat']($xet, $phpMussel['Config']['general']['timeFormat']);
 
     /** Plugin hook: "after_scan". */
-    if (!empty($phpMussel['MusselPlugins']['hookcounts']['after_scan'])) {
-        foreach ($phpMussel['MusselPlugins']['hooks']['after_scan'] as $HookID => $HookVal) {
-            $phpMussel['Arrayify']($phpMussel['MusselPlugins']['hooks']['after_scan'][$HookID]);
-            $phpMussel['MusselPlugins']['tempdata']['varsfeed'] = array();
-            foreach ($phpMussel['MusselPlugins']['hooks']['after_scan'][$HookID] as $x => $xv) {
-                if ($x) {
-                    $phpMussel['MusselPlugins']['tempdata']['varsfeed'][] = isset($$x) ? $$x : $x;
-                }
-            }
-            if (isset($GLOBALS[$HookID]) && is_object($GLOBALS[$HookID])) {
-                $x = $GLOBALS[$HookID]($phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-            } elseif (function_exists($HookID)) {
-                $x = call_user_func($HookID, $phpMussel['MusselPlugins']['tempdata']['varsfeed']);
-            } else {
-                $x = false;
-            }
-            if (is_array($x)) {
-                $phpMussel['MusselPlugins']['tempdata']['out'] = $x;
-                foreach ($phpMussel['MusselPlugins']['tempdata']['out'] as $x => $xv) {
-                    if ($x && $xv) {
-                        $$x = $xv;
-                    }
-                }
-            }
-        }
-        $phpMussel['MusselPlugins']['tempdata'] = '';
-    }
+    $phpMussel['Execute_Hook']('after_scan');
 
     if (
         $phpMussel['Config']['general']['scan_log'] &&
