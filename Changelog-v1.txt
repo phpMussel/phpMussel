@@ -319,6 +319,17 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.07.09; Sub-minor code change; Maikuolan]: Added internal language
   support for Turkish (19 language localisations now completed and available).
 
+- [2017.07.13; MAJOR CODE CHANGE; Maikuolan]: Rewrote the way that plugin hooks
+  are handled by the package. The optional third parameter previously provided
+  with the hook register closure is now deprecated and no longer available (can
+  reference globally available variables via the "use" keyword when writing
+  closures to call variables between scopes when necessary, as an alternative).
+  A dedicated executor closure is now provided for executing hooks at
+  designated points in the codebase.
+
+- [2017.07.14; Bug-fix; Maikuolan]: Bug found whereby some files would be
+  incorrectly processed by the switch file; Fixed.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

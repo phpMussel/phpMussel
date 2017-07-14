@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.07.13).
+ * This file: Functions file (last modified: 2017.07.14).
  */
 
 /**
@@ -1686,168 +1686,152 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
             );
         }
     }
-    foreach ($phpMussel['memCache']['switch.dat'] as $xsig) {
-        if (strlen($xsig) < 8 || strpos($xsig, "\n") === false || strpos($xsig, ';') === false || strpos($xsig, ':') === false) {
+    foreach ($phpMussel['memCache']['switch.dat'] as $ThisRule) {
+        $Switch = (strpos($ThisRule, ';') === false) ? $ThisRule : $phpMussel['substral']($ThisRule, ';');
+        if (strpos($Switch, '=') === false) {
             continue;
         }
-        $Switch = explode('=', preg_replace('/[^\x20-\xff]/', '', $phpMussel['substral']($xsig, ';')));
-        if (!strlen($Switch[0])) {
+        $Switch = explode('=', preg_replace('/[^\x20-\xff]/', '', $Switch));
+        if (empty($Switch[0])) {
             continue;
+        }
+        if (empty($Switch[1])) {
+            $Switch[1] = false;
         }
         $theSwitch = $Switch[0];
-        $xsig = explode(';', $phpMussel['substrbl']($xsig, ';'));
-        if ($sxc = count($xsig)) {
-            for ($sxi = 0; $sxi < $sxc; $sxi++) {
-                $xsig[$sxi] = explode(':', $xsig[$sxi], 7);
-                if (!strlen($xsig[$sxi][0])) {
+        $ThisRule = (strpos($ThisRule, ';') === false) ? array($ThisRule) : explode(';', $phpMussel['substrbl']($ThisRule, ';'));
+        foreach ($ThisRule as $Fragment) {
+            $Fragment = (strpos($Fragment, ':') === false) ? false : explode(':', $Fragment, 7);
+            if (empty($Fragment[0])) {
+                continue 2;
+            }
+            if ($Fragment[0] === 'LV') {
+                if (!isset($Fragment[1]) || substr($Fragment[1], 0, 1) !== '$') {
                     continue 2;
                 }
-                if ($xsig[$sxi][0] == 'LV') {
-                    if (
-                        !isset($xsig[$sxi][1]) ||
-                        substr($xsig[$sxi][1], 0, 1) !== '$'
+                $lv_haystack = substr($Fragment[1],1);
+                if (!isset($$lv_haystack) || is_array($$lv_haystack)) {
+                    continue 2;
+                }
+                $lv_haystack = $$lv_haystack;
+                if ($climode) {
+                    $lv_haystack = $phpMussel['substral']($phpMussel['substral']($lv_haystack, '/'), "\\");
+                }
+                $lv_needle = isset($Fragment[2]) ? $Fragment[2] : '';
+                $pos_A = isset($Fragment[3]) ? $Fragment[3] : 0;
+                $pos_Z = isset($Fragment[4]) ? $Fragment[4] : 0;
+                $lv_min = isset($Fragment[5]) ? $Fragment[5] : 0;
+                $lv_max = isset($Fragment[6]) ? $Fragment[6] : -1;
+                if (!$phpMussel['lv_match']($lv_needle, $lv_haystack, $pos_A, $pos_Z, $lv_min, $lv_max)) {
+                    continue 2;
+                }
+            } elseif (isset($Fragment[2])) {
+                if (isset($Fragment[3])) {
+                    if ($Fragment[2] === 'A') {
+                        if (
+                            !substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',') || (
+                                $Fragment[0] === 'FD' &&
+                                !substr_count("\x01" . substr($str_hex, 0, $Fragment[3] * 2), "\x01" . $Fragment[1])
+                            ) || (
+                                $Fragment[0] === 'FD-RX' &&
+                                !preg_match('/\A(?:' . $Fragment[1] . ')/i', substr($str_hex, 0, $Fragment[3] * 2))
+                            ) || (
+                                $Fragment[0] === 'FD-NORM' &&
+                                !substr_count("\x01" . substr($str_hex_norm, 0, $Fragment[3] * 2), "\x01" . $Fragment[1])
+                            ) || (
+                                $Fragment[0] === 'FD-NORM-RX' &&
+                                !preg_match('/\A(?:' . $Fragment[1] . ')/i', substr($str_hex_norm, 0, $Fragment[3] * 2))
+                            )
+                        ) {
+                            continue 2;
+                        }
+                    } elseif (
+                        !substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',') || (
+                            $Fragment[0] === 'FD' &&
+                            !substr_count(substr($str_hex, $Fragment[2] * 2, $Fragment[3] * 2), $Fragment[1])
+                        ) || (
+                            $Fragment[0] === 'FD-RX' &&
+                            !preg_match('/(?:' . $Fragment[1] . ')/i', substr($str_hex, $Fragment[2] * 2, $Fragment[3]*2))
+                        ) || (
+                            $Fragment[0] === 'FD-NORM' &&
+                            !substr_count(substr($str_hex_norm, $Fragment[2] * 2, $Fragment[3] * 2), $Fragment[1])
+                        ) || (
+                            $Fragment[0] === 'FD-NORM-RX' &&
+                            !preg_match('/(?:' . $Fragment[1] . ')/i', substr($str_hex_norm, $Fragment[2] * 2, $Fragment[3]*2))
+                        )
                     ) {
                         continue 2;
                     }
-                    $lv_haystack = substr($xsig[$sxi][1],1);
-                    if (!isset($$lv_haystack) || is_array($$lv_haystack)) {
-                        continue 2;
-                    }
-                    $lv_haystack = $$lv_haystack;
-                    if ($climode) {
-                        $lv_haystack = $phpMussel['substral']($phpMussel['substral']($lv_haystack, '/'), "\\");
-                    }
-                    $lv_needle = (isset($xsig[$sxi][2])) ? $xsig[$sxi][2] : '';
-                    $pos_A = (isset($xsig[$sxi][3])) ? $xsig[$sxi][3] : 0;
-                    $pos_Z = (isset($xsig[$sxi][4])) ? $xsig[$sxi][4] : 0;
-                    $lv_min = (isset($xsig[$sxi][5])) ? $xsig[$sxi][5] : 0;
-                    $lv_max = (isset($xsig[$sxi][6])) ? $xsig[$sxi][6] : -1;
-                    if (!$phpMussel['lv_match']($lv_needle, $lv_haystack, $pos_A, $pos_Z, $lv_min, $lv_max)) {
-                        continue 2;
-                    }
-                } elseif (isset($xsig[$sxi][2])) {
-                    if (isset($xsig[$sxi][3])) {
-                        if ($xsig[$sxi][2] == 'A') {
-                            if (
-                                !substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $xsig[$sxi][0] . ',') || (
-                                    $xsig[$sxi][0] == 'FD' &&
-                                    !substr_count("\x01" . substr($str_hex, 0, $xsig[$sxi][3] * 2), "\x01" . $xsig[$sxi][1])
-                                ) || (
-                                    $xsig[$sxi][0] == 'FD-RX' &&
-                                    !preg_match('/\A(?:' . $xsig[$sxi][1] . ')/i', substr($str_hex, 0, $xsig[$sxi][3] * 2))
-                                ) || (
-                                    $xsig[$sxi][0] == 'FD-NORM' &&
-                                    !substr_count("\x01" . substr($str_hex_norm, 0, $xsig[$sxi][3] * 2), "\x01" . $xsig[$sxi][1])
-                                ) || (
-                                    $xsig[$sxi][0] == 'FD-NORM-RX' &&
-                                    !preg_match('/\A(?:' . $xsig[$sxi][1] . ')/i', substr($str_hex_norm, 0, $xsig[$sxi][3] * 2))
-                                )
-                            ) {
-                                continue 2;
-                            }
-                        } elseif (
-                            !substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $xsig[$sxi][0] . ',') || (
-                                $xsig[$sxi][0] == 'FD' &&
-                                !substr_count(substr($str_hex, $xsig[$sxi][2] * 2, $xsig[$sxi][3] * 2), $xsig[$sxi][1])
+                } else {
+                    if ($Fragment[2] === 'A') {
+                        if (
+                            !substr_count(',FN,FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',') || (
+                                $Fragment[0] === 'FN' &&
+                                !preg_match('/\A(?:' . $Fragment[1] . ')/i', $ofn)
                             ) || (
-                                $xsig[$sxi][0] == 'FD-RX' &&
-                                !preg_match('/(?:' . $xsig[$sxi][1] . ')/i', substr($str_hex, $xsig[$sxi][2] * 2, $xsig[$sxi][3]*2))
+                                $Fragment[0] === 'FD' &&
+                                !substr_count("\x01" . $str_hex, "\x01" . $Fragment[1])
                             ) || (
-                                $xsig[$sxi][0] == 'FD-NORM' &&
-                                !substr_count(substr($str_hex_norm, $xsig[$sxi][2] * 2, $xsig[$sxi][3] * 2), $xsig[$sxi][1])
+                                $Fragment[0] === 'FD-RX' &&
+                                !preg_match('/\A(?:' . $Fragment[1] . ')/i', $str_hex)
                             ) || (
-                                $xsig[$sxi][0] == 'FD-NORM-RX' &&
-                                !preg_match('/(?:' . $xsig[$sxi][1] . ')/i', substr($str_hex_norm, $xsig[$sxi][2] * 2, $xsig[$sxi][3]*2))
+                                $Fragment[0] === 'FD-NORM' &&
+                                !substr_count("\x01" . $str_hex_norm, "\x01" . $Fragment[1])
+                            ) || (
+                                $Fragment[0] === 'FD-NORM-RX' &&
+                                !preg_match('/\A(?:' . $Fragment[1] . ')/i', $str_hex_norm)
                             )
                         ) {
                             continue 2;
                         }
-                    } else {
-                        if ($xsig[$sxi][2] == 'A') {
-                            if (
-                                !substr_count(',FN,FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $xsig[$sxi][0] . ',') || (
-                                    $xsig[$sxi][0] == 'FN' &&
-                                    !preg_match('/\A(?:' . $xsig[$sxi][1] . ')/i', $ofn)
-                                ) || (
-                                    $xsig[$sxi][0] == 'FD' &&
-                                    !substr_count("\x01" . $str_hex, "\x01" . $xsig[$sxi][1])
-                                ) || (
-                                    $xsig[$sxi][0] == 'FD-RX' &&
-                                    !preg_match('/\A(?:' . $xsig[$sxi][1] . ')/i', $str_hex)
-                                ) || (
-                                    $xsig[$sxi][0] == 'FD-NORM' &&
-                                    !substr_count("\x01" . $str_hex_norm, "\x01" . $xsig[$sxi][1])
-                                ) || (
-                                    $xsig[$sxi][0] == 'FD-NORM-RX' &&
-                                    !preg_match('/\A(?:' . $xsig[$sxi][1] . ')/i', $str_hex_norm)
-                                )
-                            ) {
-                                continue 2;
-                            }
-                        } elseif (
-                            !substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $xsig[$sxi][0] . ',') || (
-                                $xsig[$sxi][0] == 'FD' &&
-                                !substr_count(substr($str_hex, $xsig[$sxi][2] * 2), $xsig[$sxi][1])
-                            ) || (
-                                $xsig[$sxi][0] == 'FD-RX' &&
-                                !preg_match('/(?:' . $xsig[$sxi][1] . ')/i', substr($str_hex, $xsig[$sxi][2] * 2))
-                            ) || (
-                                $xsig[$sxi][0] == 'FD-NORM' &&
-                                !substr_count(substr($str_hex_norm, $xsig[$sxi][2] * 2), $xsig[$sxi][1])
-                            ) || (
-                                $xsig[$sxi][0] == 'FD-NORM-RX' &&
-                                !preg_match('/(?:' . $xsig[$sxi][1] . ')/i', substr($str_hex_norm, $xsig[$sxi][2] * 2))
-                            )
-                        ) {
-                            continue 2;
-                        }
-                    }
-                } elseif (
-                    (
-                        $xsig[$sxi][0] == 'FN' &&
-                        !preg_match('/(?:' . $xsig[$sxi][1] . ')/i', $ofn)
-                    ) || (
-                        $xsig[$sxi][0] == 'FS-MIN' &&
-                        $str_len < $xsig[$sxi][1]
-                    ) || (
-                        $xsig[$sxi][0] == 'FS-MAX' &&
-                        $str_len > $xsig[$sxi][1]
-                    ) || (
-                        $xsig[$sxi][0] == 'FD' &&
-                        !substr_count($str_hex, $xsig[$sxi][1])
-                    ) || (
-                        $xsig[$sxi][0] == 'FD-RX' &&
-                        !preg_match('/(?:' . $xsig[$sxi][1] . ')/i', $str_hex)
-                    ) || (
-                        $xsig[$sxi][0] == 'FD-NORM' &&
-                        !substr_count($str_hex_norm, $xsig[$sxi][1])
-                    ) || (
-                        $xsig[$sxi][0] == 'FD-NORM-RX' &&
-                        !preg_match('/(?:' . $xsig[$sxi][1] . ')/i', $str_hex_norm)
-                    )
-                ) {
-                    continue 2;
-                } elseif (substr($xsig[$sxi][0], 0, 1) == '$') {
-                    $vf = substr($xsig[$sxi][0], 1);
-                    if (!isset($$vf) || is_array($$vf) || $$vf != $xsig[$sxi][1]) {
+                    } elseif (
+                        !substr_count(',FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',') || (
+                            $Fragment[0] === 'FD' &&
+                            !substr_count(substr($str_hex, $Fragment[2] * 2), $Fragment[1])
+                        ) || (
+                            $Fragment[0] === 'FD-RX' &&
+                            !preg_match('/(?:' . $Fragment[1] . ')/i', substr($str_hex, $Fragment[2] * 2))
+                        ) || (
+                            $Fragment[0] === 'FD-NORM' &&
+                            !substr_count(substr($str_hex_norm, $Fragment[2] * 2), $Fragment[1])
+                        ) || (
+                            $Fragment[0] === 'FD-NORM-RX' &&
+                            !preg_match('/(?:' . $Fragment[1] . ')/i', substr($str_hex_norm, $Fragment[2] * 2))
+                        )
+                    ) {
                         continue 2;
                     }
-                } elseif (substr($xsig[$sxi][0], 0, 2) == '!$') {
-                    $vf = substr($xsig[$sxi][0], 2);
-                    if (!isset($$vf) || is_array($$vf) || $$vf == $xsig[$sxi][1]) {
-                        continue 2;
-                    }
-                } elseif (!substr_count(',FN,FS-MIN,FS-MAX,FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $xsig[$sxi][0] . ',')) {
+                }
+            } elseif (
+                ($Fragment[0] === 'FN' && !preg_match('/(?:' . $Fragment[1] . ')/i', $ofn)) ||
+                ($Fragment[0] === 'FS-MIN' && $str_len < $Fragment[1]) ||
+                ($Fragment[0] === 'FS-MAX' && $str_len > $Fragment[1]) ||
+                ($Fragment[0] === 'FD' && !substr_count($str_hex, $Fragment[1])) ||
+                ($Fragment[0] === 'FD-RX' && !preg_match('/(?:' . $Fragment[1] . ')/i', $str_hex)) ||
+                ($Fragment[0] === 'FD-NORM' && !substr_count($str_hex_norm, $Fragment[1])) ||
+                ($Fragment[0] === 'FD-NORM-RX' && !preg_match('/(?:' . $Fragment[1] . ')/i', $str_hex_norm))
+            ) {
+                continue 2;
+            } elseif (substr($Fragment[0], 0, 1) === '$') {
+                $vf = substr($Fragment[0], 1);
+                if (!isset($$vf) || is_array($$vf) || $$vf != $Fragment[1]) {
                     continue 2;
                 }
+            } elseif (substr($Fragment[0], 0, 2) === '!$') {
+                $vf = substr($Fragment[0], 2);
+                if (!isset($$vf) || is_array($$vf) || $$vf == $Fragment[1]) {
+                    continue 2;
+                }
+            } elseif (!substr_count(',FN,FS-MIN,FS-MAX,FD,FD-RX,FD-NORM,FD-NORM-RX,', ',' . $Fragment[0] . ',')) {
+                continue 2;
             }
         }
-        if ($sxc = count($Switch)) {
-            if ($Switch[1] == 'true') {
+        if (count($Switch) > 1) {
+            if ($Switch[1] === 'true') {
                 $$theSwitch = true;
                 continue;
             }
-            if ($Switch[1] == 'false') {
+            if ($Switch[1] === 'false') {
                 $$theSwitch = false;
                 continue;
             }
@@ -1857,10 +1841,10 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                 $$theSwitch = true;
                 continue;
             }
-            $$theSwitch = (!$$theSwitch) ? true : false;
+            $$theSwitch = (!$$theSwitch);
         }
-        $sxi = $sxc = $theSwitch = $Switch = $xsig = '';
     }
+    unset($theSwitch, $Switch, $ThisRule);
 
     /** Confirmation of whether or not the file is a valid PE file. */
     $is_pe = false;
