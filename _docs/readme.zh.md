@@ -293,6 +293,8 @@ phpMussel应该能够正确操作与最低要求从您：安装后，​它应�
 /vault/signatures/.htaccess | 超文本访问文件（在这种情况，​以保护敏感文件属于脚本从被访问由非授权来源）。
 /vault/signatures/switch.dat | 控制和确定某些变量。
 /vault/.htaccess | 超文本访问文件（在这种情况，​以保护敏感文件属于脚本从被访问由非授权来源）。
+/vault/.travis.php | 由Travis CI用于测试（不需要为正确经营脚本）。
+/vault/.travis.yml | 由Travis CI用于测试（不需要为正确经营脚本）。
 /vault/cli.php | CLI处理文件。
 /vault/components.dat | 包含的相关信息关于phpMussel的各种组件；它使用通过更新功能从前端。
 /vault/config.ini.RenameMe | 配置文件；包含所有配置指令为phpMussel，​告诉它什么做和怎么正确地经营（重命名为激活）。
@@ -863,4 +865,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最后更新：2017年7月6日。
+最后更新：2017年7月22日。

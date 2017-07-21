@@ -293,6 +293,8 @@ Bestand | Beschrijving
 /vault/signatures/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
 /vault/signatures/switch.dat | Controles en sets bepaalde variabelen.
 /vault/.htaccess | Een hypertext toegang bestand (in dit geval, om gevoelige bestanden die behoren tot het script te beschermen tegen toegang door niet-geautoriseerde bronnen).
+/vault/.travis.php | Gebruikt door Travis CI voor het testen (niet vereist voor een goede werking van het script).
+/vault/.travis.yml | Gebruikt door Travis CI voor het testen (niet vereist voor een goede werking van het script).
 /vault/cli.php | CLI handler.
 /vault/components.dat | Bevat informatie met betrekking tot de verschillende phpMussel componenten; Gebruikt door de updates functie verzorgd door de frontend.
 /vault/config.ini.RenameMe | Configuratiebestand; Bevat alle configuratieopties van phpMussel, het vertellen wat te doen en hoe om te werken correct (hernoemen om te activeren).
@@ -860,4 +862,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Laatste Bijgewerkt: 11 Juli 2017 (2017.07.11).
+Laatste Bijgewerkt: 22 Juli 2017 (2017.07.22).

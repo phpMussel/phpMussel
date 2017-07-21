@@ -293,6 +293,8 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 /vault/signatures/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
 /vault/signatures/switch.dat | 変数をコントロール、​セットします。
 /vault/.htaccess | ハイパーテキスト・アクセスファイル（この場合、​本スクリプトの重要なファイルを権限のないソースのアクセスから保護するためです）。
+/vault/.travis.php | テストのためにTravis CIによって使用される​（機能には関係のないファイルです）。
+/vault/.travis.yml | テストのためにTravis CIによって使用される​（機能には関係のないファイルです）。
 /vault/cli.php | ＣＬＩハンドラ。
 /vault/components.dat | phpMusselのコンポーネント情報が含まれています；​アップデート機能で使用（フロントエンドが提供します）。
 /vault/config.ini.RenameMe | phpMussel設定ファイル；​phpMusselの全オプション設定を記載しています。​それぞれのオプションの機能と動作手法の説明です（アクティブにするために名前を変更します）。
@@ -306,8 +308,8 @@ phpMusselはウィンドウズベースのシステムでは、​ＣＬＩモ�
 ※ /vault/scan_kills.txt | phpMusselによりブロック/削除されたアップロードファイルの全記録。
 ※ /vault/scan_log.txt | phpMusselによりスキャンされたものの全記録。
 ※ /vault/scan_log_serialized.txt | phpMusselによりスキャンされたものの全記録。
-/vault/template_custom.html | phpMusselテンプレートファイル；phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
-/vault/template_default.html | phpMusselテンプレートファイル；phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
+/vault/template_custom.html | phpMusselテンプレートファイル；​phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
+/vault/template_default.html | phpMusselテンプレートファイル；​phpMusselがファイルアップロードをブロックした際に作成されるメッセージのHTML出力用テンプレート（アップローダーが表示するメッセージ）。
 /vault/themes.dat | テーマ・ファイル。​アップデート機能で使用（フロントエンドが提供します）。
 /vault/upload.php | アップロード・ハンドラ。
 /.gitattributes | GitHubのプロジェクトファイル（機能には関係のないファイルです）。
@@ -860,4 +862,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最終アップデート：2017年7月6日。
+最終アップデート：2017年7月22日。

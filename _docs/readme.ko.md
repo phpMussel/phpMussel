@@ -293,6 +293,8 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 /vault/signatures/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
 /vault/signatures/switch.dat | 변수를 컨트롤 세트합니다.
 /vault/.htaccess | 하이퍼 텍스트 액세스 파일 (이 경우, 본 스크립트의 중요한 파일을 권한이없는 소스의 액세스로부터 보호하기위한 것입니다).
+/vault/.travis.php | 테스트를 위해 Travis CI에서 사용됩니다. (기능에 관계없는 파일입니다).
+/vault/.travis.yml | 테스트를 위해 Travis CI에서 사용됩니다. (기능에 관계없는 파일입니다).
 /vault/cli.php | CLI 핸들러.
 /vault/components.dat | phpMussel 구성 요소 정보가 포함되어 있습니다; 업데이트 기능 사용 (프론트 엔드를 제공합니다).
 /vault/config.ini.RenameMe | phpMussel 설정 파일; phpMussel 모든 옵션 설정을 포함하고 있습니다. 각 옵션의 기능과 작동 방법에 대한 설명입니다 (활성화하기 위해 이름을 변경합니다).
@@ -860,4 +862,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-최종 업데이트 : 2017년 7월 6일.
+최종 업데이트 : 2017년 7월 22일.

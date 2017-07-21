@@ -7,8 +7,8 @@
  <li>٣. <a href="#SECTION3">كيفية الإستخدام</a></li>
  <li>٤. <a href="#SECTION4">إدارة FRONT-END</a></li>
  <li>٥. <a href="#SECTION5">CLI (واجهة سطر الأوامر)</a></li>
- <li>٦. <a href="#SECTION6">الملفاتالموجودةفيهذهالحزمة</a></li>
- <li>٧. <a href="#SECTION7">خياراتالتكوين/التهيئة</a></li>
+ <li>٦. <a href="#SECTION6">الملفات الموجودة في هذه الحزمة</a></li>
+ <li>٧. <a href="#SECTION7">خيارات التكوين/التهيئة</a></li>
  <li>٨. <a href="#SECTION8">شكل/تنسيق التوقيع</a></li>
  <li>٩. <a href="#SECTION9">مشاكل التوافق المعروفة</a></li>
  <li>١٠. <a href="#SECTION10">أسئلة وأجوبة (FAQ)</a></li>
@@ -180,7 +180,7 @@
 ---
 
 
-### <div dir="rtl">٦. <a name="SECTION6"></a>الملفاتالموجودةفيهذهالحزمة</div>
+### <div dir="rtl">٦. <a name="SECTION6"></a>الملفات الموجودة في هذه الحزمة</div>
 
 <div dir="rtl">فيما يلي قائمة بجميع الملفات التي ينبغي أن تدرج في النسخة المحفوظة من هذا البرنامج النصي عند تحميله، أي الملفات التي يمكن أن يحتمل أن تكون نشأت نتيجة استعمالك لهذا البرنامج النصي، بالإضافة إلى وصفا موجزا لدور و وظيفة كل ملف.<br /><br /></div>
 
@@ -287,6 +287,8 @@
 &nbsp; <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/signatures/.htaccess
 &nbsp; <div dir="rtl" style="display:inline;">يتحكم و يضع متغيرات محددة.</div> | /vault/signatures/switch.dat
 &nbsp; <div dir="rtl" style="display:inline;">ملف وصول النص التشعبي (في هذه الحالة، لحماية الملفات الحساسة التي تنتمي إلى البرنامج من أن يتم الوصول إليها عن طريق مصادر غير مصرح لها).</div> | /vault/.htaccess
+&nbsp; <div dir="rtl" style="display:inline;">المستخدمة من قبل Travis CI للاختبار (غير مطلوب لتشغيل سليم للبرنامج).</div> | /vault/.travis.php
+&nbsp; <div dir="rtl" style="display:inline;">المستخدمة من قبل Travis CI للاختبار (غير مطلوب لتشغيل سليم للبرنامج).</div> | /vault/.travis.yml
 &nbsp; <div dir="rtl" style="display:inline;">معالج CLI.</div> | /vault/cli.php
 &nbsp; <div dir="rtl" style="display:inline;">يحتوي على معلومات تتعلق حدات phpMussel؛ المستخدمة من ميزة التحديثات التي تقدمها لphpMussel.</div> | /vault/components.dat
 &nbsp; <div dir="rtl" style="display:inline;">ملف التكوين. يحتوي على جميع خيارات تهيئة phpMussel، يخبرك ماذا يفعل وكيف يعمل بشكل صحيح (إعادة تسمية لتفعيل)!</div> | /vault/config.ini.RenameMe
@@ -319,7 +321,7 @@
 ---
 
 
-### <div dir="rtl">٧. <a name="SECTION7"></a>خياراتالتكوين/التهيئة</div>
+### <div dir="rtl">٧. <a name="SECTION7"></a>خيارات التكوين/التهيئة</div>
 <div dir="rtl">وفيما يلي قائمة من المتغيرات الموجودة في ملف تكوين "config.ini"، بالإضافة إلى وصف الغرض منه و وظيفته.<br /><br /></div>
 
 #### <div dir="rtl">"general" (التصنيف)<br /></div>

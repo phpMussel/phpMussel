@@ -293,6 +293,8 @@ Archivo | Descripción
 /vault/signatures/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
 /vault/signatures/switch.dat | Esto controla y establece ciertas variables.
 /vault/.htaccess | Un hipertexto acceso archivo (en este caso, para proteger confidenciales archivos perteneciente a la script contra el acceso de fuentes no autorizadas).
+/vault/.travis.php | Utilizado por Travis CI para pruebas (no se requiere para usar la script).
+/vault/.travis.yml | Utilizado por Travis CI para pruebas (no se requiere para usar la script).
 /vault/cli.php | Módulo de la CLI.
 /vault/components.dat | Contiene información relativa a los diversos componentes de phpMussel; Utilizado por la página de actualizaciones proporcionada por el front-end.
 /vault/config.ini.RenameMe | Archivo de configuración; Contiene todas las opciones de configuración para phpMussel, instruyendo para qué hacer y cómo operar correctamente (cambiar el nombre para activar).
@@ -860,4 +862,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Última Actualización: 11 Julio 2017 (2017.07.11).
+Última Actualización: 22 Julio 2017 (2017.07.22).

@@ -1,0 +1,13 @@
+language: php
+php:
+  - '5.4'
+  - '5.5'
+  - '5.6'
+  - '7.0'
+  - '7.1'
+before_script:
+  - cp $TRAVIS_BUILD_DIR/vault/config.ini.RenameMe $TRAVIS_BUILD_DIR/vault/config.ini
+  - phpenv config-rm xdebug.ini
+script: phpunit .travis.php
+notifications:
+  email: false

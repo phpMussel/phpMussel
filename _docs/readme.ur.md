@@ -287,6 +287,8 @@
 &nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/signatures/.htaccess
 &nbsp; <div dir="rtl" style="display:inline;">کنٹرولز اور سیٹ خاص متغیر.</div> | /vault/signatures/switch.dat
 &nbsp; <div dir="rtl" style="display:inline;">ایک ہایپر ٹیکسٹ رسائی فائل (اس مثال میں، غیر مجاز ذرائع کی طرف سے حاصل کیا جا رہا ہے سے سکرپٹ سے تعلق رکھنے والے حساس فائلوں کی حفاظت کے لئے).</div> | /vault/.htaccess
+&nbsp; <div dir="rtl" style="display:inline;">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.php
+&nbsp; <div dir="rtl" style="display:inline;">جانچ کے لئے Travis CI کی طرف سے استعمال کیا جاتا ہے (رسم الخط کی مناسب تقریب کے لئے ضروری نہیں).</div> | /vault/.travis.yml
 &nbsp; <div dir="rtl" style="display:inline;">CLI ہینڈلر</div> | /vault/cli.php
 &nbsp; <div dir="rtl" style="display:inline;">phpMussel کے مختلف اجزاء سے متعلق معلومات پر مشتمل ہے؛ سامنے کے آخر کی طرف سے فراہم اپ ڈیٹ کی خصوصیت کی طرف سے استعمال کیا جاتا ہے.</div> | /vault/components.dat
 &nbsp; <div dir="rtl" style="display:inline;">کنفگریشن فائل؛ phpMussel کے تمام ترتیب کے اختیارات، کیا کرنا ہے یہ کہہ رہا ہے اور کس طرح درست طریقے سے کام کرنے کے لئے پر مشتمل ہے (چالو کرنے کا نام تبدیل).</div> | /vault/config.ini.RenameMe
@@ -995,4 +997,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخری تازہ کاری: 6 جولائی 2017 (2017.07.06).</div>
+<div dir="rtl">آخری تازہ کاری: 22 جولائی 2017 (2017.07.22).</div>
