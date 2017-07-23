@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.06.21).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -224,6 +224,10 @@ $phpMussel['lang']['title_login'] = 'phpMussel – Đăng Nhập';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Bản Ghi';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Cập Nhật';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Kiểm Tra Tải Lên';
+$phpMussel['lang']['warning'] = 'Cảnh báo:';
+$phpMussel['lang']['warning_php_1'] = 'Phiên bản PHP của bạn không được hỗ trợ tích cực nữa! Đang cập nhật được khuyến khích!';
+$phpMussel['lang']['warning_php_2'] = 'Phiên bản PHP của bạn rất dễ bị tổn thương! Đang cập nhật được khuyến khích mạnh mẽ!';
+$phpMussel['lang']['warning_signatures_1'] = 'Không có tập tin chữ ký nào đang hoạt động!';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Một số liên kết hữu ích:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">Vấn đề cho phpMussel @ GitHub</a> – Trang các vấn đề cho phpMussel (hỗ trợ, vv).</li>

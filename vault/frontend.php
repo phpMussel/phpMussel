@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.06.26).
+ * This file: Front-end handler (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -426,6 +426,24 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '') {
     );
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_logout'];
+
+    /** Process warnings. */
+    $phpMussel['FE']['Warnings'] = '';
+    if (($phpMussel['FE']['VersionWarning'] = $phpMussel['VersionWarning']()) > 0) {
+        if ($phpMussel['FE']['VersionWarning'] >= 2) {
+            $phpMussel['FE']['VersionWarning'] = $phpMussel['FE']['VersionWarning'] % 2;
+            $phpMussel['FE']['Warnings'] .= '<li><a href="https://www.cvedetails.com/version-list/74/128/1/PHP-PHP.html">' . $phpMussel['lang']['warning_php_2'] . '</a></li>';
+        }
+        if ($phpMussel['FE']['VersionWarning'] >= 1) {
+            $phpMussel['FE']['Warnings'] .= '<li><a href="https://secure.php.net/supported-versions.php">' . $phpMussel['lang']['warning_php_1'] . '</a></li>';
+        }
+    }
+    if (empty($phpMussel['Config']['signatures']['Active'])) {
+        $phpMussel['FE']['Warnings'] .= '<li>' . $phpMussel['lang']['warning_signatures_1'] . '</li>';
+    }
+    if ($phpMussel['FE']['Warnings']) {
+        $phpMussel['FE']['Warnings'] = '<hr />' . $phpMussel['lang']['warning'] . '<br /><div class="txtRd"><ul>' . $phpMussel['FE']['Warnings'] . '</ul></div>';
+    }
 
     /** Parse output. */
     $phpMussel['FE']['FE_Content'] = $phpMussel['ParseVars'](

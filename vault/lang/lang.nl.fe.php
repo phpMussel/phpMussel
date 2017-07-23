@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.06.21).
+ * This file: Dutch language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -224,6 +224,10 @@ $phpMussel['lang']['title_login'] = 'phpMussel – Inloggen';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Logbestanden';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Updates';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload Test';
+$phpMussel['lang']['warning'] = 'Waarschuwingen:';
+$phpMussel['lang']['warning_php_1'] = 'Uw PHP versie wordt niet meer actief ondersteund! Het bijwerken is aanbevolen!';
+$phpMussel['lang']['warning_php_2'] = 'Uw PHP versie is ernstig kwetsbaar! Het bijwerken is sterk aanbevolen!';
+$phpMussel['lang']['warning_signatures_1'] = 'Geen signature bestanden zijn actief!';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Enkele nuttige links:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Kwesties @ GitHub</a> – Kwesties pagina voor phpMussel (steun, hulp, ezv).</li>

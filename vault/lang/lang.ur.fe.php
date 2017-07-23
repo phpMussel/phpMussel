@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data for the front-end (last modified: 2017.06.21).
+ * This file: Urdu language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -224,6 +224,10 @@ $phpMussel['lang']['title_login'] = 'phpMussel – لاگ ان';
 $phpMussel['lang']['title_logs'] = 'phpMussel – لاگز';
 $phpMussel['lang']['title_updates'] = 'phpMussel – تازہ ترین معلومات کے';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – اپ لوڈ کریں ٹیسٹ';
+$phpMussel['lang']['warning'] = 'انتباہ:';
+$phpMussel['lang']['warning_php_1'] = 'آپ کے PHP ورژن اب فعال طور پر معاون نہیں ہے! اپ ڈیٹ کرنے کی سفارش کی گئی ہے!';
+$phpMussel['lang']['warning_php_2'] = 'آپ کے PHP ورژن شدید خطرناک ہے! اپ ڈیٹ کرنا سختی کی سفارش کی جاتی ہے!';
+$phpMussel['lang']['warning_signatures_1'] = 'کوئی دستخط فائلیں فعال نہیں ہیں!';
 
 $phpMussel['lang']['info_some_useful_links'] = 'کچھ مفید لنکس:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues" dir="ltr">phpMussel Issues @ GitHub</a> – phpMussel لئے مسائل کا صفحہ (کی حمایت، مدد، وغیرہ).</li>

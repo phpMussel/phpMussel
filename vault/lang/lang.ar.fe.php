@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.07.12).
+ * This file: Arabic language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -224,6 +224,10 @@ $phpMussel['lang']['title_login'] = 'phpMussel – تسجيل الدخول';
 $phpMussel['lang']['title_logs'] = 'phpMussel – سجلات';
 $phpMussel['lang']['title_updates'] = 'phpMussel – التحديثات';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – تحميل اختبار';
+$phpMussel['lang']['warning'] = 'تحذيرات:';
+$phpMussel['lang']['warning_php_1'] = 'لم يتم دعم إصدار PHP الخاص بك بشكل نشط بعد الآن! يوصى بالتحديث!';
+$phpMussel['lang']['warning_php_2'] = 'إصدار PHP الخاص بك معرض للخطر بشدة! ينصح بشدة تحديث!';
+$phpMussel['lang']['warning_signatures_1'] = 'لا ملفات التوقيع نشطة!';
 
 $phpMussel['lang']['info_some_useful_links'] = 'بعض الروابط المفيدة:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues" dir="ltr">phpMussel Issues @ GitHub</a> – صفحة المشكلات لphpMussel (الدعم والمساعدة، الخ).</li>

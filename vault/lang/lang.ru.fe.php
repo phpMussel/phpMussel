@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.06.21).
+ * This file: Russian language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -224,6 +224,10 @@ $phpMussel['lang']['title_login'] = 'phpMussel – Войти';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Лог-Файлы';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Обновления';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Тестовая Загрузка';
+$phpMussel['lang']['warning'] = 'Предупреждения:';
+$phpMussel['lang']['warning_php_1'] = 'Ваша версия PHP больше не поддерживается! Рекомендуется обновление!';
+$phpMussel['lang']['warning_php_2'] = 'Ваша версия PHP сильно уязвима! Настоятельно рекомендуется обновление!';
+$phpMussel['lang']['warning_signatures_1'] = 'Активные файлы сигнатуры не активны!';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Некоторые полезные ссылки:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">Вопросы для phpMussel @ GitHub</a> – Страница вопросы для phpMussel (поддержка, помощь, и т.д.).</li>

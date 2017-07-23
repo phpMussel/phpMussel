@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.06.22).
+ * This file: French language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -224,6 +224,10 @@ $phpMussel['lang']['title_login'] = 'phpMussel – Connexion';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Fichiers Journaux';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Mises à Jour';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Test de Télécharger';
+$phpMussel['lang']['warning'] = 'Avertissements :';
+$phpMussel['lang']['warning_php_1'] = 'Votre version PHP n\'est plus activement prise en charge ! La mise à jour est recommandée !';
+$phpMussel['lang']['warning_php_2'] = 'Votre version PHP est sévèrement vulnérable ! La mise à jour est fortement recommandée !';
+$phpMussel['lang']['warning_signatures_1'] = 'Il n\'y a pas fichiers du signatures actifs.';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Quelques liens utiles :<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">Les problèmes de phpMussel @ GitHub</a> – Page de problèmes pour phpMussel (soutien, assistance, etc).</li>

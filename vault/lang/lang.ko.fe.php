@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.06.21).
+ * This file: Korean language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -224,6 +224,10 @@ $phpMussel['lang']['title_login'] = 'phpMussel – 로그인';
 $phpMussel['lang']['title_logs'] = 'phpMussel – 로고스';
 $phpMussel['lang']['title_updates'] = 'phpMussel – 업데이트';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – 업로드 테스트';
+$phpMussel['lang']['warning'] = '경고 :';
+$phpMussel['lang']['warning_php_1'] = '귀하의 PHP 버전은 더 이상 적극적으로 지원되지 않습니다! 업데이트하는 것이 좋습니다!';
+$phpMussel['lang']['warning_php_2'] = '귀하의 PHP 버전이 심각하게 취약합니다! 업데이트하는 것이 좋습니다!';
+$phpMussel['lang']['warning_signatures_1'] = '서명 파일이 활성화되어 있지 않습니다!';
 
 $phpMussel['lang']['info_some_useful_links'] = '유용한 링크:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel 문제 @ GitHub</a> – phpMussel 문제 페이지 (지원, 원조 등).</li>

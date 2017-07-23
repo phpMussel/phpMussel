@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.06.21).
+ * This file: Thai language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -224,6 +224,10 @@ $phpMussel['lang']['title_login'] = 'phpMussel – เข้าสู่ระ�
 $phpMussel['lang']['title_logs'] = 'phpMussel – บันทึก';
 $phpMussel['lang']['title_updates'] = 'phpMussel – อัปเดต';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – ทดสอบการอัปโหลด';
+$phpMussel['lang']['warning'] = 'คำเตือน:';
+$phpMussel['lang']['warning_php_1'] = 'เวอร์ชัน PHP ของคุณไม่ได้รับการสนับสนุนอีกต่อไป! ปรับปรุงขอแนะนำ!';
+$phpMussel['lang']['warning_php_2'] = 'เวอร์ชัน PHP ของคุณมีความเสี่ยงสูง! ปรับปรุงขอแนะนำ!';
+$phpMussel['lang']['warning_signatures_1'] = 'ไม่มีไฟล์ลายเซ็นที่ใช้งานอยู่!';
 
 $phpMussel['lang']['info_some_useful_links'] = 'ลิงก์ที่เป็นประโยชน์:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">ปัญหา phpMussel @ GitHub</a> – หน้าปัญหาสำหรับ phpMussel (สนับสนุน, ความช่วยเหลือ, ฯลฯ).</li>

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data for the front-end (last modified: 2017.06.21).
+ * This file: Hindi language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -224,6 +224,10 @@ $phpMussel['lang']['title_login'] = 'phpMussel – लॉग इन करें
 $phpMussel['lang']['title_logs'] = 'phpMussel – लॉग फाइलें';
 $phpMussel['lang']['title_updates'] = 'phpMussel – अपडेट';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – अपलोड टेस्ट';
+$phpMussel['lang']['warning'] = 'चेतावनी:';
+$phpMussel['lang']['warning_php_1'] = 'आपका PHP संस्करण सक्रिय रूप से अब समर्थित नहीं है! अद्यतन की सिफारिश की है!';
+$phpMussel['lang']['warning_php_2'] = 'आपका PHP संस्करण गंभीर रूप से कमजोर है! अद्यतन की जोरदार सिफारिश की है!';
+$phpMussel['lang']['warning_signatures_1'] = 'कोई हस्ताक्षर फ़ाइलें सक्रिय नहीं हैं!';
 
 $phpMussel['lang']['info_some_useful_links'] = 'कुछ उपयोगी लिंक:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel के समस्याएं @ GitHub</a> – phpMussel के लिए समस्याएं पृष्ठ (सहायता के लिए, आदि)।</li>

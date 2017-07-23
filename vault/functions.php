@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.07.14).
+ * This file: Functions file (last modified: 2017.07.23).
  */
 
 /**
@@ -5239,7 +5239,7 @@ $phpMussel['FECacheGet'] = function ($Source, $Entry) {
 
 /**
  * Compare two different versions of phpMussel, or two different versions of a
- * component for phpMussel, to see which is newer (used by the updater).
+ * component for phpMussel, to see which is newer (mostly used by the updater).
  *
  * @param string $A The 1st version string.
  * @param string $B The 2nd version string.
@@ -5749,4 +5749,39 @@ $phpMussel['CLI-RecursiveCommand'] = function ($Command, $Callable) use (&$phpMu
 /** Handles errors (will expand this later). */
 $phpMussel['ErrorHandler_1'] = function ($errno) use (&$phpMussel) {
     return;
+};
+
+/**
+ * Determines whether to display warnings about the PHP version used (based
+ * upon what we know at the time that the package was last updated; information
+ * herein is likely to become stale very quickly when not updated frequently).
+ *
+ * References:
+ * - secure.php.net/releases/
+ * - secure.php.net/supported-versions.php
+ * - cvedetails.com/vendor/74/PHP.html
+ * - maikuolan.github.io/Compatibility-Charts/
+ *
+ * @param string $Version The PHP version used (defaults to PHP_VERSION).
+ * return int Warning level.
+ */
+$phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMussel) {
+    $Date = date('Y.n.j', $phpMussel['Time']);
+    $Level = 0;
+    if (
+        $phpMussel['VersionCompare']($Version, '5.4.43') ||
+        (!$phpMussel['VersionCompare']($Version, '5.5.0') && $phpMussel['VersionCompare']($Version, '5.5.32')) ||
+        (!$phpMussel['VersionCompare']($Version, '5.6.0') && $phpMussel['VersionCompare']($Version, '5.6.18')) ||
+        (!$phpMussel['VersionCompare']($Version, '7.0.0') && $phpMussel['VersionCompare']($Version, '7.0.3'))
+    ) {
+        $Level += 2;
+    }
+    if (
+        $phpMussel['VersionCompare']($Version, '7.0.0') ||
+        (!$phpMussel['VersionCompare']($Date, '2017.12.3') && $phpMussel['VersionCompare']($Version, '7.1.0')) ||
+        (!$phpMussel['VersionCompare']($Date, '2018.12.1') && $phpMussel['VersionCompare']($Version, '7.2.0'))
+    ) {
+        $Level += 1;
+    }
+    return $Level;
 };

@@ -330,6 +330,16 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.07.14; Bug-fix; Maikuolan]: Bug found whereby some files would be
   incorrectly processed by the switch file; Fixed.
 
+- [2017.07.23; Sub-minor code change; Maikuolan]: The front-end homepage now
+  warns users if they're using a PHP version with known severe vulnerabilities
+  and exploits ("severe", in this context, defined as vulnerabilities and
+  exploits with a CVSS >= 9.0) and/or a PHP version that isn't actively
+  supported anymore (as determined by the php.net Supported Versions page). The
+  associated code for this is hardcoded manually, and therefore only updates
+  when the package updates (meaning that lack of warning should not necessarily
+  be perceived as a lack of vulnerabilities/exploits nor as an indication of
+  continued active support).
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

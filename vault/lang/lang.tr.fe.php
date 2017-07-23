@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.07.09).
+ * This file: Turkish language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -224,6 +224,10 @@ $phpMussel['lang']['title_login'] = 'phpMussel – Giriş';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Kayıtlar';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Güncellemeler';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Yükleme Testi';
+$phpMussel['lang']['warning'] = 'Uyarılar:';
+$phpMussel['lang']['warning_php_1'] = 'PHP sürümünüz aktif olarak desteklenmiyor! Güncelleme önerilir!';
+$phpMussel['lang']['warning_php_2'] = 'PHP sürümünüz ağır savunmasız! Güncelleme önerilir!';
+$phpMussel['lang']['warning_signatures_1'] = 'Hiçbir imza dosyası aktif değil!';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Bazı kullanışlı bağlantılar:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel Sorunları @ GitHub</a> – phpMussel için sorunlar sayfası (destek, yardım, vb.).</li>

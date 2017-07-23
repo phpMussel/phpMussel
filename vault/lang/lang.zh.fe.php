@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.06.21).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -224,6 +224,10 @@ $phpMussel['lang']['title_login'] = 'phpMussel – 登录';
 $phpMussel['lang']['title_logs'] = 'phpMussel – 日志';
 $phpMussel['lang']['title_updates'] = 'phpMussel – 更新';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – 上传测试';
+$phpMussel['lang']['warning'] = '警告：';
+$phpMussel['lang']['warning_php_1'] = '您的PHP版本不再被积极支持！​推荐更新！';
+$phpMussel['lang']['warning_php_2'] = '您的PHP版本非常脆弱！​强烈推荐更新！';
+$phpMussel['lang']['warning_signatures_1'] = '没有签名文件是活动的！';
 
 $phpMussel['lang']['info_some_useful_links'] = '一些有用的链接：<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel问题 ＠ GitHub</a> – phpMussel问题页面（支持，​协助，​等等）。​</li>

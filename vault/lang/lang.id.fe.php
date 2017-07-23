@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.06.21).
+ * This file: Indonesian language data for the front-end (last modified: 2017.07.23).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -224,6 +224,10 @@ $phpMussel['lang']['title_login'] = 'phpMussel – Masuk';
 $phpMussel['lang']['title_logs'] = 'phpMussel – Log';
 $phpMussel['lang']['title_updates'] = 'phpMussel – Pembaruan';
 $phpMussel['lang']['title_upload_test'] = 'phpMussel – Upload Test';
+$phpMussel['lang']['warning'] = 'Peringatan:';
+$phpMussel['lang']['warning_php_1'] = 'Versi PHP Anda tidak aktif didukung lagi! Memperbarui dianjurkan!';
+$phpMussel['lang']['warning_php_2'] = 'Versi PHP Anda sangat rentan! Memperbarui sangat dianjurkan!';
+$phpMussel['lang']['warning_signatures_1'] = 'Tidak ada file tanda tangan yang aktif!';
 
 $phpMussel['lang']['info_some_useful_links'] = 'Beberapa link yang berguna:<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">Masalah phpMussel @ GitHub</a> – Halaman masalah untuk phpMussel (dukungan, bantuan, dll).</li>
