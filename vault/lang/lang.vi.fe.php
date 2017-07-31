@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.07.23).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -57,6 +57,7 @@ $phpMussel['lang']['config_general_honeypot_mode'] = 'Khi chế độ honeypot �
 $phpMussel['lang']['config_general_ipaddr'] = 'Nơi để tìm thấy các địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như thế Cloudflare và vv) Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này trừ khi bạn biết những gì bạn đang làm!';
 $phpMussel['lang']['config_general_lang'] = 'Xác định tiếng mặc định cho phpMussel.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Số lượng tối đa cố gắng đăng nhập (front-end). Mặc định = 5.';
+$phpMussel['lang']['config_general_numbers'] = 'Làm thế nào để bạn thích số được hiển thị? Chọn ví dụ có vẻ chính xác nhất cho bạn.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel có thể kiểm dịch tải lên tập tin mà đã được đánh dấu trong sự cô lập trong vòng các vault của phpMussel, nếu đây là cái gì bạn muốn nó làm. Các người dùng bình thường của phpMussel mà chỉ đơn giản là muốn bảo vệ các môi trường kho lưu trữ hay trang mạng của họ, mà không có bất cứ quan tâm trong việc phân tích sâu sắc của bất kỳ tải lên tập tin mà đã được đánh dấu, nên để chức năng này bị vô hiệu hóa còn lại, nhưng bất kỳ người dùng quan tâm trong phân tích sâu hơn của tải lên tập tin mà đã được đánh dấu cho nghiên cứu phần mềm độc hại hay cho những thứ tương tự như vậy nên kích hoạt chức năng này. Các kiểm dịch của tải lên tập tin mà đã được đánh dấu đôi khi cũng có thể hỗ trợ trong việc gỡ lỗi sai tích cực, nếu đây là cái gì đó thường xuyên xảy ra đối với bạn. Để vô hiệu hóa chức năng kiểm dịch, chỉ đơn giản để lại tùy chọn <code>quarantine_key</code> trống rỗng, hay xóa nội dung của nó nếu nó không phải là đã trống rỗng. Để kích hoạt chức năng kiểm dịch, nhập một số giá trị vào các tùy chọn. <code>quarantine_key</code> là một tính năng bảo mật quan trọng của chức năng kiểm dịch yêu cầu như là một phương tiện cho ngăn chặn chức năng kiểm dịch được khai thác bởi kẻ tấn công tiềm năng và như một phương tiện ngăn chặn bất kỳ thực hiện tiềm năng của kho lưu trữ trong kiểm dịch. <code>quarantine_key</code> nên được đối xử theo cách tương tự như mật khẩu của bạn: Càng dài thì càng tốt, và cất giữ nó thật chặt. Đối với hiệu quả tốt nhất, sử dụng kết hợp với <code>delete_on_sight</code>.';
 $phpMussel['lang']['config_general_quarantine_max_filesize'] = 'Cho phép tối đa kích thước của tập tin để được kiểm dịch. Tập tin mà lớn hơn giá trị quy định sẽ KHÔNG được kiểm dịch. Tùy chọn này là rất quan trọng như là một phương tiện làm cho nó khó khăn hơn cho bất kỳ kẻ tấn công tiềm năng lũ kiểm dịch của bạn với các dữ liệu không mong muốn, có khả năng gây ra việc sử dụng quá mức dữ liệu trên dịch vụ kho lưu trữ của bạn. Mặc định = 2MB.';
 $phpMussel['lang']['config_general_quarantine_max_usage'] = 'Cho phép tối đa sử dụng bộ nhớ cho kiểm dịch. Nếu tổng số sử dụng bộ nhớ bởi các kiểm dịch đạt giá trị này, các tập tin trong kiểm dịch cho dài nhất sẽ bị xóa cho đến khi các tổng bộ nhớ sử dụng không còn đạt giá trị này. Tùy chọn này là rất quan trọng như là một phương tiện làm cho nó khó khăn hơn cho bất kỳ kẻ tấn công tiềm năng lũ kiểm dịch của bạn với các dữ liệu không mong muốn, có khả năng gây ra việc sử dụng quá mức dữ liệu trên dịch vụ kho lưu trữ của bạn. Mặc định = 64MB.';
@@ -79,6 +80,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'phpMussel nên sử dụ
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'phpMussel nên báo cáo khi mở rộng bị mất? Nếu <code>fail_extensions_silently</code> được vô hiệu hóa, mở rộng bị mất sẽ được báo cáo khi quét, và nếu <code>fail_extensions_silently</code> được kích hoạt, mở rộng bị mất hay bị hỏng sẽ bị bỏ qua, với báo cáo quét cho những tập tin mà không có bất kỳ vấn đề. Vô hiệu hóa tùy chọn này có khả năng có thể làm tăng bảo mật của bạn, nhưng cũng có thể dẫn đến sự gia tăng giả tích cực. False = Không cho phép; True = Cho phép [Mặc định].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'phpMussel nên báo cáo khi tập tin chữ ký bị mất hay bị hỏng? Nếu <code>fail_silently</code> được vô hiệu hóa, tập tin bị mất hay bị hỏng sẽ được báo cáo khi quét, và nếu <code>fail_silently</code> được kích hoạt, tập tin bị mất hay bị hỏng sẽ bị bỏ qua, với báo cáo quét cho những tập tin mà không có bất kỳ vấn đề. Điều này thường cần được ở một mình trừ khi bạn gặp sự cố hay vấn đề tương tự. False = Không cho phép; True = Cho phép [Mặc định].';
 $phpMussel['lang']['config_template_data_css_url'] = 'Tập tin mẫu thiết kế cho chủ đề tùy chỉnh sử dụng thuộc tính CSS bên ngoài, trong khi các tập tin mẫu thiết kế cho các chủ đề mặc định sử dụng thuộc tính CSS nội bộ. Để hướng dẫn phpMussel để sử dụng các tập tin mẫu thiết kế cho chủ đề tùy chỉnh, xác định các địa chỉ HTTP cho các tập tin CSS chủ đề tùy chỉnh của bạn sử dụng các biến số <code>css_url</code>. Nếu bạn để cho biến số này chỗ trống, phpMussel sẽ sử dụng các tập tin mẫu thiết kế cho các chủ đề mặc định.';
+$phpMussel['lang']['config_template_data_Magnification'] = 'Phóng to chữ. Mặc định = 1.';
 $phpMussel['lang']['config_template_data_theme'] = 'Chủ đề mặc định để sử dụng cho phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'Kết quả tra cứu API nên được lưu trữ trong (trong giây) bao lâu? Mặc định là 3600 giây (1 giờ).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Cho phép tra cứu API đến API của Google Safe Browsing khi khóa API cần thiết được xác định.';
@@ -131,11 +133,14 @@ $phpMussel['lang']['field_username'] = 'Tên Người Dùng';
 $phpMussel['lang']['field_your_version'] = 'Phiên bản của bạn';
 $phpMussel['lang']['header_login'] = 'Vui lòng đăng nhập để tiếp tục.';
 $phpMussel['lang']['label_active_config_file'] = 'Tập tin cấu hình kích hoạt: ';
+$phpMussel['lang']['label_branch'] = 'Chi nhánh ổn định mới nhất:';
 $phpMussel['lang']['label_os'] = 'Hệ điều hành đang được dùng:';
 $phpMussel['lang']['label_php'] = 'Phiên bản PHP đang được dùng:';
 $phpMussel['lang']['label_phpmussel'] = 'Phiên bản phpMussel đang được dùng:';
 $phpMussel['lang']['label_sapi'] = 'SAPI đang được dùng:';
+$phpMussel['lang']['label_stable'] = 'Ổn định mới nhất:';
 $phpMussel['lang']['label_sysinfo'] = 'Thông tin hệ thống:';
+$phpMussel['lang']['label_unstable'] = 'Không ổn định mới nhất:';
 $phpMussel['lang']['link_accounts'] = 'Tài Khoản';
 $phpMussel['lang']['link_config'] = 'Cấu Hình';
 $phpMussel['lang']['link_documentation'] = 'Tài Liệu';
@@ -155,8 +160,6 @@ $phpMussel['lang']['previewer_months'] = 'Tháng';
 $phpMussel['lang']['previewer_seconds'] = 'Giây';
 $phpMussel['lang']['previewer_weeks'] = 'Tuần';
 $phpMussel['lang']['previewer_years'] = 'Năm';
-$phpMussel['lang']['punct_decimals'] = ',';
-$phpMussel['lang']['punct_thousand'] = '.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Một tài khoản với tên người dùng này đã tồn tại!';
 $phpMussel['lang']['response_accounts_created'] = 'Tài khoản tạo ra thành công!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Tài khoản xóa thành công!';

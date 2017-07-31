@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.07.23).
+ * This file: Turkish language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -57,6 +57,7 @@ $phpMussel['lang']['config_general_honeypot_mode'] = 'Honeypot modu etkinleştir
 $phpMussel['lang']['config_general_ipaddr'] = 'Bağlama isteklerinin IP adresi nerede bulunur? (Cloudflare ve benzeri hizmetler için yararlıdır). Varsayılan = REMOTE_ADDR. UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!';
 $phpMussel['lang']['config_general_lang'] = 'phpMussel için varsayılan dili belirleyin.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Maksimum giriş denemesi sayısı.';
+$phpMussel['lang']['config_general_numbers'] = 'Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel dosyaları karantinaya koyabilir, bunu yapmak istiyorsan. Web sitelerini korumak isteyen, dosyaları derinlemesine analiz etmek istemeyen kullanıcılar bu işlevselliği devre dışı bırakmalıdır. Dosyaları daha derinlemesine analiz etmek isteyen tüm kullanıcılar (ör., kötü amaçlı yazılım araştırmaları) bu işlevselliği etkinleştirmelidir. Dosyaları karantinaya koymak bazen yanlış pozitiflerin hata ayıklanmasına yardımcı olabilir. Bunu devre dışı bırakmak için <code>quarantine_key</code> yönergesini boş bırakın (veya henüz boş değilse içeriğini sil). Etkinleştirmek için bir miktar girin. <code>quarantine_key</code> karantina işlevinin önemli bir güvenlik özelliğidir. Bu yönerge, potansiyel saldırganların karantina içeriğini istismar etmesini önler. <code>quarantine_key</code>, şifrelerinizle aynı şekilde ele alınmalıdır: Dikkatli koruyun, ve uzun olanlar daha iyidir. En iyi efekti elde etmek için <code>delete_on_sight</code> ile birlikte kullanın.';
 $phpMussel['lang']['config_general_quarantine_max_filesize'] = 'Dosyaların karantinaya alınmasına izin verilen maksimum dosya boyutu. Belirtilen değerden büyük dosyalar karantinaya Alınmayacaktır. Bu yönerge olası herhangi bir saldırganın karantinaya istenmeyen verilerle sel baskını yapmasını zorlaştıran bir araç olarak önemlidir. Varsayılan = 2MB.';
 $phpMussel['lang']['config_general_quarantine_max_usage'] = 'Karantina için izin verilen maksimum bellek kullanımı. Karantina tarafından kullanılan toplam bellek bu değere ulaşırsa, kullanılan en büyük bellek artık bu değere ulaşıncaya kadar en eski karantinaya alınan dosyalar silinir. Bu yönerge olası herhangi bir saldırganın karantinaya istenmeyen verilerle sel baskını yapmasını zorlaştıran bir araç olarak önemlidir. Varsayılan = 64MB.';
@@ -79,6 +80,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'phpMussel kabuk komut do
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Uzantılar eksik olduğunda phpMussel raporlamalı mı? <code>fail_extensions_silently</code> devre dışı bırakılırsa, eksik uzantılar tarama sırasında raporlanacak, ve <code>fail_extensions_silently</code> etkinleştirilmişse, eksik uzantılar yok sayılır, ve bu dosyalarda herhangi bir sorun olmadığını bildirir. Bu yönergenin devre dışı bırakılması, potansiyel olarak güvenliğinizi artırabilir, ancak yanlış pozitifliklerin artmasına neden olabilir. Yanlış/False = Devre dışı; Doğru/True = Etkinleştirildi [Varsayılan].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'İmzalar dosyaları eksik veya bozuk olduğunda phpMussel raporlamalı mı? <code>fail_silently</code> devre dışı bırakılırsa, eksik veya bozuk dosyalar tarama sırasında rapor edilecektir, ve <code>fail_silently</code> etkinleştirilmişse, eksik ve bozuk dosyalar yok sayılır, ve bu dosyalarda herhangi bir sorun olmadığını bildirir. Sorun yaşamadığınız sürece bu yalnız bırakılmalıdır. Yanlış/False = Devre dışı; Doğru/True = Etkinleştirildi [Varsayılan].';
 $phpMussel['lang']['config_template_data_css_url'] = 'Özel temalar için CSS dosyası URL\'si.';
+$phpMussel['lang']['config_template_data_Magnification'] = 'Yazı tipi büyütme. Varsayılan = 1.';
 $phpMussel['lang']['config_template_data_theme'] = 'phpMussel için kullanılacak varsayılan tema.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'API aramalarının sonuçları ne kadar süreyle (saniye olarak) önbelleğe alınır? Varsayılan değer 3600 saniyedir (1 saat).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Gerekli API anahtarı tanımlandığında Google Güvenli Tarama API\'sı için API aramalarını etkinleştirir.';
@@ -131,11 +133,14 @@ $phpMussel['lang']['field_username'] = 'Kullanıcı adı';
 $phpMussel['lang']['field_your_version'] = 'Sürümünüz';
 $phpMussel['lang']['header_login'] = 'Devam etmek için lütfen giriş yapınız.';
 $phpMussel['lang']['label_active_config_file'] = 'Etkin yapılandırma dosyası: ';
+$phpMussel['lang']['label_branch'] = 'Branşı en yeni kararlı:';
 $phpMussel['lang']['label_os'] = 'Kullanılan işletim sistemi:';
 $phpMussel['lang']['label_php'] = 'Kullanılan PHP sürümü:';
 $phpMussel['lang']['label_phpmussel'] = 'Kullanılan phpMussel sürümü:';
 $phpMussel['lang']['label_sapi'] = 'Kullanılan SAPI:';
+$phpMussel['lang']['label_stable'] = 'En yeni kararlı:';
 $phpMussel['lang']['label_sysinfo'] = 'Sistem bilgisi:';
+$phpMussel['lang']['label_unstable'] = 'En yeni kararsız:';
 $phpMussel['lang']['link_accounts'] = 'Hesaplar';
 $phpMussel['lang']['link_config'] = 'Yapılandırma';
 $phpMussel['lang']['link_documentation'] = 'Belgeler';
@@ -155,8 +160,6 @@ $phpMussel['lang']['previewer_months'] = 'Aylar';
 $phpMussel['lang']['previewer_seconds'] = 'Saniyeler';
 $phpMussel['lang']['previewer_weeks'] = 'Haftalar';
 $phpMussel['lang']['previewer_years'] = 'Yıllar';
-$phpMussel['lang']['punct_decimals'] = ',';
-$phpMussel['lang']['punct_thousand'] = '.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Bu kullanıcı adıyla bir hesap zaten var!';
 $phpMussel['lang']['response_accounts_created'] = 'Hesap başarıyla oluşturuldu!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Hesap başarıyla silindi!';

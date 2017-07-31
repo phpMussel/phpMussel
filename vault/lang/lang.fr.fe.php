@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.07.23).
+ * This file: French language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -57,6 +57,7 @@ $phpMussel['lang']['config_general_honeypot_mode'] = 'Quand le honeypot mode est
 $phpMussel['lang']['config_general_ipaddr'] = 'Où trouver l\'adresse IP de demandes de connexion ? (Utile pour services tels que Cloudflare et similaires) Par Défaut = REMOTE_ADDR. AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !';
 $phpMussel['lang']['config_general_lang'] = 'Spécifiez la langue défaut pour phpMussel.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Nombre maximal de tentatives de connexion (l\'accès frontal). Défaut = 5.';
+$phpMussel['lang']['config_general_numbers'] = 'Comment préférez-vous que les nombres soient affichés ? Sélectionnez l\'exemple qui vous paraît le plus approprié.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel est capable de mettre en quarantaine le marqué fichier téléchargement tentatives en isolement au sein de la voûte de phpMussel, si cela est quelque chose que vous voulez qu\'il fasse. L\'utilisateurs de phpMussel qui souhaitent simplement de protéger leurs sites ou environnement d\'hébergement sans avoir un profondément intérêt dans d\'analyse de quelconque marqué fichier téléchargement tentatives devrait laisser cette fonctionnalité désactivée, mais tous les utilisateurs intéressés dans d\'analyse plus approfondie de tenté fichier téléchargements pour la recherche des logiciels malveillants ou pour des choses semblables devraient permettre cette fonctionnalité. La quarantaine de marqué fichier téléchargement tentatives peut parfois aider également dans le débogage des faux positifs, si cela est quelque chose qui se produit fréquemment pour vous. Pour désactiver la fonctionnalité de quarantaine, il suffit de laisser la directive <code>quarantine_key</code> vide, ou effacer le contenu de cette directive si elle est pas déjà vide. Pour activer la fonctionnalité de quarantaine, entrer une valeur dans la directive. Le <code>quarantine_key</code> est une élément important de la sécurité de la fonctionnalité de quarantaine requis en tant que moyen de prévention de la fonctionnalité de quarantaine d\'être exploités par des attaquants potentiels en tant que moyen de prévention toute potentielle exécution de données stockées dans la quarantaine. Le <code>quarantine_key</code> devrait être traité de la même manière que vos mots de passe : Le plus sera le mieux, et conservez-le bien. Pour un meilleur effet, utiliser en conjonction avec <code>delete_on_sight</code>.';
 $phpMussel['lang']['config_general_quarantine_max_filesize'] = 'La maximum taille autorisée de fichiers mis en quarantaine. Fichiers au-dessus de cette valeur ne sera pas placé en quarantaine. Cette directive est un important moyen de rendre plus difficile pour des agresseurs potentiels d\'inonder votre quarantaine avec des données non désirées ce qui pourrait causer l\'emballement d\'utilisation des données sur votre service d\'hébergement. Défaut = 2Mo.';
 $phpMussel['lang']['config_general_quarantine_max_usage'] = 'La maximale utilisation autorisée de la mémoire pour la quarantaine. Si la totale d\'utilisée mémoire par la quarantaine atteint cette valeur, les anciens fichiers en quarantaine seront supprimés jusqu\'à ce que la totale mémoire utilisée n\'atteint pas cette valeur. Cette directive est un important moyen de rendre plus difficile pour des agresseurs potentiels d\'inonder votre quarantaine avec des données non désirées ce qui pourrait causer l\'emballement d\'utilisation des données sur votre service d\'hébergement. Défaut = 64Mo.';
@@ -79,6 +80,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'Devrait phpMussel utilis
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Devrait phpMussel signaler quand les extensions sont manquantes ? Si <code>fail_extensions_silently</code> est désactivé, extensions manquantes seront signalé sur analyse, et si <code>fail_extensions_silently</code> est activé, extensions manquantes seront ignorés, avec l\'analyse signalés pour ceux fichiers qu\'il n\'y a pas de problèmes. La désactivation de cette directive peut potentiellement augmenter votre sécurité, mais peut aussi conduire à une augmentation de faux positifs. False = Désactivé ; True = Activé [Défaut].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'Devrait phpMussel signaler quand les extensions sont manquantes ? Si <code>fail_extensions_silently</code> est désactivé, extensions manquantes seront signalé sur analyse, et si <code>fail_extensions_silently</code> est activé, extensions manquantes seront ignorés, avec l\'analyse signalés pour ceux fichiers qu\'il n\'y a pas de problèmes. La désactivation de cette directive peut potentiellement augmenter votre sécurité, mais peut aussi conduire à une augmentation de faux positifs. False = Désactivé ; True = Activé [Défaut].';
 $phpMussel['lang']['config_template_data_css_url'] = 'Le modèle fichier pour des thèmes personnalisés utilise les propriétés CSS externes, tandis que le modèle fichier pour le défaut thème utilise les propriétés CSS internes. Pour instruire phpMussel d\'utiliser le modèle fichier pour des thèmes personnalisés, spécifier l\'adresse HTTP public de votre thèmes personnalisés CSS fichiers utilisant le <code>css_url</code> variable. Si vous laissez cette variable vide, phpMussel va utiliser le modèle fichier pour le défaut thème.';
+$phpMussel['lang']['config_template_data_Magnification'] = 'Grossissement des fontes. Défaut = 1.';
 $phpMussel['lang']['config_template_data_theme'] = 'Le thème à utiliser par défaut pour phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'Combien de temps (en secondes) devrait les résultats du cherches de l\'API être conservé dans le cache ? Défaut est 3600 secondes (1 heure).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Permet cherches de l\'API Google Safe Browsing quand l\'API clé nécessaire est définie.';
@@ -131,11 +133,14 @@ $phpMussel['lang']['field_username'] = 'Nom d\'Utilisateur';
 $phpMussel['lang']['field_your_version'] = 'Votre Version';
 $phpMussel['lang']['header_login'] = 'Merci de vous connecter pour continuer.';
 $phpMussel['lang']['label_active_config_file'] = 'Fichier de configuration active : ';
+$phpMussel['lang']['label_branch'] = 'Dernier stable de branche :';
 $phpMussel['lang']['label_os'] = 'Système opérateur utilisée :';
 $phpMussel['lang']['label_php'] = 'Version PHP utilisée :';
 $phpMussel['lang']['label_phpmussel'] = 'Version phpMussel utilisée :';
 $phpMussel['lang']['label_sapi'] = 'SAPI utilisée :';
+$phpMussel['lang']['label_stable'] = 'Dernier stable :';
 $phpMussel['lang']['label_sysinfo'] = 'Informations sur le système :';
+$phpMussel['lang']['label_unstable'] = 'Dernier instable :';
 $phpMussel['lang']['link_accounts'] = 'Comptes';
 $phpMussel['lang']['link_config'] = 'Configuration';
 $phpMussel['lang']['link_documentation'] = 'Documentation';
@@ -155,8 +160,6 @@ $phpMussel['lang']['previewer_months'] = 'Mois';
 $phpMussel['lang']['previewer_seconds'] = 'Secondes';
 $phpMussel['lang']['previewer_weeks'] = 'Semaines';
 $phpMussel['lang']['previewer_years'] = 'Années';
-$phpMussel['lang']['punct_decimals'] = ',';
-$phpMussel['lang']['punct_thousand'] = ' ';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Un compte avec ce nom d\'utilisateur existe déjà !';
 $phpMussel['lang']['response_accounts_created'] = 'Compte créé avec succès !';
 $phpMussel['lang']['response_accounts_deleted'] = 'Compte supprimé avec succès !';

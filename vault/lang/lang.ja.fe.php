@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.07.23).
+ * This file: Japanese language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -57,6 +57,7 @@ $phpMussel['lang']['config_general_honeypot_mode'] = 'ハニーポットモー�
 $phpMussel['lang']['config_general_ipaddr'] = '接続要求のＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。';
 $phpMussel['lang']['config_general_lang'] = 'phpMusselのデフォルト言語を設定します。';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'ログイン試行の最大回数（フロントエンド）。​Default（デフォルト設定） = ５。';
+$phpMussel['lang']['config_general_numbers'] = 'どのように数字を表示するのが好きですか？​あなたに一番正しい例を選択してください。';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMusselは、​必要とあれば、​phpMusselのヴォルト内で独立してフラグ付ファイルのアップロードを検疫することができます。​一般的なphpMusselのユーザーは、​ウェブサイトやホスティング環境の保護ができれば充分と考えており、​フラグ付のようなものにさらなる分析を加えようまでの要求はないようですので、​無効で構いません。​ですが詳細に分析してマルウェアに備えたいユーザーは有効にすると良いでしょう。​フラグ付ファイルのアップロードの検疫は誤検出のデバッグに役立つことがあります。​検疫機能を無効にするには、​<code>quarantine_key</code>ディレクティブを空にしておくか、​空でない場合はディレクティブ内のコンテンツを消去して下さい。​有効にするには、​デイレクティブに何らかの値を入れて下さい。​<code>quarantine_key</code>は検疫機能における重要なセキュリティー要素であり、​検疫機能内に保存されたデータの執行を各種の攻撃から守っています。​<code>quarantine_key</code>はパスワードと同様に考えて下さい。​長い方がより安全と言えます。​最も効果的な使用法は<code>delete_on_sight</code>との併用です。';
 $phpMussel['lang']['config_general_quarantine_max_filesize'] = '検疫されるファイルサイズの上限。​この値より大きなファイルは検疫されません。​クオランティンの容量を超える異常に大きなファイルサイズによる攻撃で、​メモリーが無駄に消費されるのを防ぐ意味で重要です。​デフォルト設定は２ＭＢです。';
 $phpMussel['lang']['config_general_quarantine_max_usage'] = '検疫のために利用する最大メモリー量。​全メモリー量が使用されると、​この範囲内に収まるよう古いファイルが削除の対象となります。​クオランティンの容量を超える異常に大きなファイルサイズによる攻撃で、​メモリーが無駄に消費されるのを防ぐ意味で重要です。​デフォルト設定は６４ＭＢです。';
@@ -79,6 +80,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'phpMusselはshellスク�
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = '拡張子がない場合にphpMusselがそれをレポートすべきか否か？​<code>fail_extensions_silently</code>が無効の場合、​拡張子なしはスキャニング時にレポートされ、​有効の場合は無視され問題は報告されません。​このディレクティブを無効にすることは、​セキュリティーを向上させるかもしれませんが、​誤検出も増加する恐れがあります。​<code>false</code>（偽） = Disabled/無効; <code>true</code>（真） = Enabled/有効 （Default/デフォルト）。';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'シグネチャファイルがない、​あるいは破損している場合に、​phpMusselがそれをリポートすべきか否か？​<code>fail_silently</code>が無効ならば、​問題はリポートされ、​有効であれば、​問題は無視されたスキャニングレポートが作成されます。​クラッシュするというような害がなければ、​デフォルト設定のままにしておくべきです。​<code>false</code>（偽） = Disabled/無効; <code>true</code>（真） = Enabled/有効 （Default/デフォルト）。';
 $phpMussel['lang']['config_template_data_css_url'] = 'カスタムテーマ用のテンプレートファイルは、​外部ＣＳＳプロパティーを使っています。​一方、​デフォルトテーマは内部ＣＳＳです。​カスタムテーマを適用するためには、​ＣＳＳファイルのパブリック ＨＴＴＰアドレスを"css_url"変数を使って指定して下さい。​この変数が空白であれば、​デフォルトテーマが適用されます。';
+$phpMussel['lang']['config_template_data_Magnification'] = 'フォントの倍率。​Default/デフォルルト = １。';
 $phpMussel['lang']['config_template_data_theme'] = 'phpMusselに使用するデフォルトテーマ。';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'ＡＰＩルックアップの結果をどれくらいキャッシュするか（秒単位です）？​デフォルトは３６００秒（一時間）。';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = '必要なＡＰＩ鍵が定義されれば、​ＡＰＩのGoogle Safe Browsing APIルックアップが有効になります。';
@@ -131,11 +133,14 @@ $phpMussel['lang']['field_username'] = 'ユーザー名';
 $phpMussel['lang']['field_your_version'] = 'お使いのバージョン';
 $phpMussel['lang']['header_login'] = '継続するには、​ログインしてください。';
 $phpMussel['lang']['label_active_config_file'] = 'アクティブ・コンフィグレーション・ファイル：';
+$phpMussel['lang']['label_branch'] = 'ブランチ最新安定：';
 $phpMussel['lang']['label_os'] = '使用されたオペレーティングシステム：';
 $phpMussel['lang']['label_php'] = '使用されたPHPバージョン：';
 $phpMussel['lang']['label_phpmussel'] = '使用されたphpMusselバージョン：';
 $phpMussel['lang']['label_sapi'] = '使用されたSAPI：';
+$phpMussel['lang']['label_stable'] = '最新安定：';
 $phpMussel['lang']['label_sysinfo'] = 'システムインフォメーション：';
+$phpMussel['lang']['label_unstable'] = '最新不安定：';
 $phpMussel['lang']['link_accounts'] = 'アカウント';
 $phpMussel['lang']['link_config'] = 'コンフィギュレーション';
 $phpMussel['lang']['link_documentation'] = 'ドキュメンテーション';
@@ -155,8 +160,6 @@ $phpMussel['lang']['previewer_months'] = '月';
 $phpMussel['lang']['previewer_seconds'] = '秒';
 $phpMussel['lang']['previewer_weeks'] = '週';
 $phpMussel['lang']['previewer_years'] = '年';
-$phpMussel['lang']['punct_decimals'] = '.';
-$phpMussel['lang']['punct_thousand'] = ',';
 $phpMussel['lang']['response_accounts_already_exists'] = 'そのアカウントはすでに存在します！';
 $phpMussel['lang']['response_accounts_created'] = 'アカウントの作成に成功しました！';
 $phpMussel['lang']['response_accounts_deleted'] = 'アカウントの削除が成功しました！';

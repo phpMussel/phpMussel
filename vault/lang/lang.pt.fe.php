@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Portuguese language data for the front-end (last modified: 2017.07.23).
+ * This file: Portuguese language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -57,6 +57,7 @@ $phpMussel['lang']['config_general_honeypot_mode'] = 'Quando o honeypot modo é 
 $phpMussel['lang']['config_general_ipaddr'] = 'Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare e tal) Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!';
 $phpMussel['lang']['config_general_lang'] = 'Especificar o padrão da linguagem por phpMussel.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Número máximo de tentativas de login (front-end). Padrão = 5.';
+$phpMussel['lang']['config_general_numbers'] = 'Como você prefere que os números sejam exibidos? Selecione o exemplo que parece mais correto para você.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel é capaz de colocar em quarentena marcados tentados arquivos carregamentos em isolamento dentro da phpMussel vault, se isso é algo que você quer que ele faça. Casuais usuários de phpMussel de que simplesmente desejam proteger seus sites ou hospedagem sem ter qualquer interesse em profundamente analisando qualquer marcados tentados arquivos carregamentos deve deixar esta funcionalidade desativada, mas qualquer usuário interessado em mais profundamente analisando marcados tentados arquivos carregamentos para pesquisa de malware ou de similares tais coisas deve ativada essa funcionalidade. Quarentena de marcados tentados arquivos carregamentos às vezes pode também ajudar em depuração de falso-positivos, se isso é algo que ocorre com frequência para você. Por desativar a funcionalidade de quarentena, simplesmente deixar a directiva <code>quarantine_key</code> vazio, ou apagar o conteúdo do directivo, se ele não está já vazio. Por ativar a funcionalidade de quarentena, introduzir algum valor no directiva. O <code>quarantine_key</code> é um importante segurança característica do quarentena funcionalidade necessária como um meio de prevenir a funcionalidade de quarentena de ser explorada por potenciais atacantes e como meio de evitar qualquer potencial execução de dados armazenados dentro da quarentena. O <code>quarantine_key</code> devem ser tratados da mesma maneira como suas senhas: O mais longo o mais melhor, e guardá-lo com força. Por melhor efeito, usar em conjunto com <code>delete_on_sight</code>.';
 $phpMussel['lang']['config_general_quarantine_max_filesize'] = 'O máximo permitido tamanho do arquivos serem colocados em quarentena. Arquivos maiores que este valor NÃO serão colocados em quarentena. Esta directiva é importante como um meio de torná-lo mais difícil por qualquer potenciais atacante para inundar sua quarentena com indesejados dados potencialmente causando excesso uso de dados no seu hospedagem serviço. Padrão = 2MB.';
 $phpMussel['lang']['config_general_quarantine_max_usage'] = 'O uso máximo de memória permitido através do quarentena. Se o total de memória utilizada pelo quarentena atingir este valor, os mais antigos arquivos em quarentena serão apagados até que a total memória utilizada já não atinge este valor. Esta directiva é importante como um meio de torná-lo mais difícil por qualquer potenciais atacante para inundar sua quarentena com indesejados dados potencialmente causando excesso uso de dados no seu hospedagem serviço. Padrão = 64MB.';
@@ -79,6 +80,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'Deve phpMussel usam assi
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Deve phpMussel reportar quando extensões não estão disponíveis? Se <code>fail_extensions_silently</code> está desativado, extensões indisponíveis serão reportado durante análise, e se <code>fail_extensions_silently</code> está ativado, extensões indisponíveis serão ignoradas, com a análise reportando por estes arquivos em que não há problemas. Desativando dessa directiva pode potencialmente aumentar a sua segurança, mas também pode levar a um aumento de falsos positivos. False = Desativado; True = Ativado [Padrão].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'Deve phpMussel reportar quando os assinaturas arquivos estão perdido ou corrompido? Se <code>fail_silently</code> está desativado, perdidos e corrompidos arquivos serão reportado durante análise, e se <code>fail_silently</code> está ativado, perdidos e corrompidos arquivos serão ignoradas, com a análise reportando por estes arquivos em que não há problemas. Isso geralmente deve ser deixado sozinho a menos que você está experimentando PHP falhas ou semelhantes problemas. False = Desativado; True = Ativado [Padrão].';
 $phpMussel['lang']['config_template_data_css_url'] = 'O template arquivo para temas personalizados utiliza CSS propriedades externos, enquanto que o template arquivo para o padrão tema utiliza CSS propriedades internos. Para instruir phpMussel para usar o template arquivo para temas personalizados, especificar o endereço HTTP pública do seu temas personalizados CSS arquivos usando a <code>css_url</code> variável. Se você deixar essa variável em branco, phpMussel usará o template arquivo para o padrão tema.';
+$phpMussel['lang']['config_template_data_Magnification'] = 'Ampliação de fonte. Padrão = 1.';
 $phpMussel['lang']['config_template_data_theme'] = 'Tema padrão a ser usado para phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'Quanto tempo (em segundos) devem os resultados da API ser armazenados em cache? Padrão é 3600 segundos (1 hora).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Permite o uso do Google Safe Browsing API quando a API chave necessária está definida.';
@@ -131,11 +133,14 @@ $phpMussel['lang']['field_username'] = 'Nome de Usuário';
 $phpMussel['lang']['field_your_version'] = 'Sua Versão';
 $phpMussel['lang']['header_login'] = 'Por favor faça o login para continuar.';
 $phpMussel['lang']['label_active_config_file'] = 'Arquivo de configuração ativo: ';
+$phpMussel['lang']['label_branch'] = 'Mais novo de estável de branch:';
 $phpMussel['lang']['label_os'] = 'Sistema operacional usada:';
 $phpMussel['lang']['label_php'] = 'Versão do PHP usada:';
 $phpMussel['lang']['label_phpmussel'] = 'Versão do phpMussel usada:';
 $phpMussel['lang']['label_sapi'] = 'SAPI usada:';
+$phpMussel['lang']['label_stable'] = 'Mais novo de estável:';
 $phpMussel['lang']['label_sysinfo'] = 'Informação do sistema:';
+$phpMussel['lang']['label_unstable'] = 'Mais novo de instável:';
 $phpMussel['lang']['link_accounts'] = 'Contas';
 $phpMussel['lang']['link_config'] = 'Configuração';
 $phpMussel['lang']['link_documentation'] = 'Documentação';
@@ -155,8 +160,6 @@ $phpMussel['lang']['previewer_months'] = 'Meses';
 $phpMussel['lang']['previewer_seconds'] = 'Segundos';
 $phpMussel['lang']['previewer_weeks'] = 'Semanas';
 $phpMussel['lang']['previewer_years'] = 'Anos';
-$phpMussel['lang']['punct_decimals'] = ',';
-$phpMussel['lang']['punct_thousand'] = '.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Uma conta com esse nome já existe!';
 $phpMussel['lang']['response_accounts_created'] = 'Conta criada com sucesso!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Conta deletada com sucesso!';

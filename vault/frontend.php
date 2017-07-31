@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.07.23).
+ * This file: Front-end handler (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,6 +29,8 @@ $phpMussel['FE'] = array(
     'Template' => $phpMussel['ReadFile']($phpMussel['GetAssetPath']('frontend.html')),
     'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
     'FE_Lang' => $phpMussel['Config']['general']['lang'],
+    'Magnification' => $phpMussel['Config']['template_data']['Magnification'],
+    'Number_L10N_JS' => $phpMussel['Number_L10N_JS'](),
     'DateTime' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']),
     'ScriptIdent' => $phpMussel['ScriptIdent'],
     'theme' => $phpMussel['Config']['template_data']['theme'],
@@ -426,6 +428,96 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '') {
     );
 
     $phpMussel['FE']['bNav'] = $phpMussel['lang']['bNav_logout'];
+
+    /** Where to find remote version information? */
+    $phpMussel['RemoteVerPath'] = 'https://raw.githubusercontent.com/Maikuolan/Compatibility-Charts/gh-pages/';
+
+    /** Fetch remote phpMussel version information and cache it if necessary. */
+    if (($phpMussel['Remote-YAML-phpMussel'] = $phpMussel['FECacheGet']($phpMussel['FE']['Cache'], 'phpmussel-ver.yaml')) === false) {
+        $phpMussel['Remote-YAML-phpMussel'] = $phpMussel['Request']($phpMussel['RemoteVerPath'] . 'phpmussel-ver.yaml', false, 8);
+        $phpMussel['FECacheAdd']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'phpmussel-ver.yaml', $phpMussel['Remote-YAML-phpMussel'] ?: '-', $phpMussel['Time'] + 604800);
+    }
+
+    /** Process remote phpMussel version information. */
+    if (empty($phpMussel['Remote-YAML-phpMussel'])) {
+
+        /** phpMussel latest stable. */
+        $phpMussel['FE']['info_phpmussel_stable'] = $phpMussel['lang']['response_error'];
+        /** phpMussel latest unstable. */
+        $phpMussel['FE']['info_phpmussel_unstable'] = $phpMussel['lang']['response_error'];
+        /** phpMussel branch latest stable. */
+        $phpMussel['FE']['info_phpmussel_branch'] = $phpMussel['lang']['response_error'];
+
+    } else {
+
+        $phpMussel['Remote-YAML-phpMussel-Array'] = array();
+        $phpMussel['YAML']($phpMussel['Remote-YAML-phpMussel'], $phpMussel['Remote-YAML-phpMussel-Array']);
+
+        /** phpMussel latest stable. */
+        $phpMussel['FE']['info_phpmussel_stable'] = empty($phpMussel['Remote-YAML-phpMussel-Array']['Stable']) ?
+            $phpMussel['lang']['response_error'] : $phpMussel['Remote-YAML-phpMussel-Array']['Stable'];
+        /** phpMussel latest unstable. */
+        $phpMussel['FE']['info_phpmussel_unstable'] = empty($phpMussel['Remote-YAML-phpMussel-Array']['Unstable']) ?
+            $phpMussel['lang']['response_error'] : $phpMussel['Remote-YAML-phpMussel-Array']['Unstable'];
+        /** phpMussel branch latest stable. */
+        if ($phpMussel['ThisBranch'] = substr($phpMussel['FE']['ScriptVersion'], 0, strpos($phpMussel['FE']['ScriptVersion'], '.') ?: 0)) {
+            $phpMussel['ThisBranch'] = 'v' . ($phpMussel['ThisBranch'] ?: 1);
+            $phpMussel['FE']['info_phpmussel_branch'] = empty($phpMussel['Remote-YAML-phpMussel-Array']['Branch'][$phpMussel['ThisBranch']]['Latest']) ?
+                $phpMussel['lang']['response_error'] : $phpMussel['Remote-YAML-phpMussel-Array']['Branch'][$phpMussel['ThisBranch']]['Latest'];
+        } else {
+            $phpMussel['FE']['info_php_branch'] = $phpMussel['lang']['response_error'];
+        }
+
+    }
+
+    /** Cleanup. */
+    unset($phpMussel['Remote-YAML-phpMussel-Array'], $phpMussel['Remote-YAML-phpMussel']);
+
+    /** Fetch remote PHP version information and cache it if necessary. */
+    if (($phpMussel['Remote-YAML-PHP'] = $phpMussel['FECacheGet']($phpMussel['FE']['Cache'], 'php-ver.yaml')) === false) {
+        $phpMussel['Remote-YAML-PHP'] = $phpMussel['Request']($phpMussel['RemoteVerPath'] . 'php-ver.yaml', false, 8);
+        $phpMussel['FECacheAdd']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'php-ver.yaml', $phpMussel['Remote-YAML-PHP'] ?: '-', $phpMussel['Time'] + 604800);
+    }
+
+    /** Process remote PHP version information. */
+    if (empty($phpMussel['Remote-YAML-PHP'])) {
+
+        /** PHP latest stable. */
+        $phpMussel['FE']['info_php_stable'] = $phpMussel['lang']['response_error'];
+        /** PHP latest unstable. */
+        $phpMussel['FE']['info_php_unstable'] = $phpMussel['lang']['response_error'];
+        /** PHP branch latest stable. */
+        $phpMussel['FE']['info_php_branch'] = $phpMussel['lang']['response_error'];
+
+    } else {
+
+        $phpMussel['Remote-YAML-PHP-Array'] = array();
+        $phpMussel['YAML']($phpMussel['Remote-YAML-PHP'], $phpMussel['Remote-YAML-PHP-Array']);
+
+        /** PHP latest stable. */
+        $phpMussel['FE']['info_php_stable'] = empty($phpMussel['Remote-YAML-PHP-Array']['Stable']) ?
+            $phpMussel['lang']['response_error'] : $phpMussel['Remote-YAML-PHP-Array']['Stable'];
+        /** PHP latest unstable. */
+        $phpMussel['FE']['info_php_unstable'] = empty($phpMussel['Remote-YAML-PHP-Array']['Unstable']) ?
+            $phpMussel['lang']['response_error'] : $phpMussel['Remote-YAML-PHP-Array']['Unstable'];
+        /** PHP branch latest stable. */
+        if ($phpMussel['ThisBranch'] = substr(PHP_VERSION, 0, strpos(PHP_VERSION, '.') ?: 0)) {
+            $phpMussel['ThisBranch'] .= substr(PHP_VERSION, strlen($phpMussel['ThisBranch']) + 1, strpos(PHP_VERSION, '.', strlen($phpMussel['ThisBranch'])) ?: 0);
+            $phpMussel['ThisBranch'] = 'php' . $phpMussel['ThisBranch'];
+            $phpMussel['FE']['info_php_branch'] = empty($phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['Latest']) ?
+                $phpMussel['lang']['response_error'] : $phpMussel['Remote-YAML-PHP-Array']['Branch'][$phpMussel['ThisBranch']]['Latest'];
+            $phpMussel['ForceVersionWarning'] = (!empty($phpMussel['Remote-YAML-PHP-Array'][$phpMussel['ThisBranch']]['WarnMin']) && (
+                $phpMussel['Remote-YAML-PHP-Array'][$phpMussel['ThisBranch']]['WarnMin'] === '*' ||
+                $phpMussel['VersionCompare'](PHP_VERSION, $phpMussel['Remote-YAML-PHP-Array'][$phpMussel['ThisBranch']]['WarnMin'])
+            ));
+        } else {
+            $phpMussel['FE']['info_php_branch'] = $phpMussel['lang']['response_error'];
+        }
+
+    }
+
+    /** Cleanup. */
+    unset($phpMussel['Remote-YAML-PHP-Array'], $phpMussel['Remote-YAML-PHP'], $phpMussel['ThisBranch'], $phpMussel['RemoteVerPath']);
 
     /** Process warnings. */
     $phpMussel['FE']['Warnings'] = '';
@@ -1015,7 +1107,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                         $phpMussel['FE']['Rebuild'],
                         $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote'],
                         $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'],
-                        $phpMussel['Now'] + 3600
+                        $phpMussel['Time'] + 3600
                     );
                 }
                 if (
@@ -1117,6 +1209,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                                 '<code>' . $phpMussel['ThisFileName'] . '</code> – ' .
                                 $phpMussel['lang']['response_checksum_error'] . '<br />';
                             continue;
+                            if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['On Checksum Error'])) {
+                                $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['On Checksum Error']);
+                            }
                         }
                         $phpMussel['ThisName'] = $phpMussel['ThisFileName'];
                         $phpMussel['ThisPath'] = $phpMussel['Vault'];
@@ -1164,18 +1259,38 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                     }
                     $phpMussel['FileData'][$phpMussel['ThisReannotate']] = $phpMussel['Components']['NewMeta'];
                     $phpMussel['FE']['state_msg'] .= '<code>' . $phpMussel['Components']['ThisTarget'] . '</code> – ';
-                    $phpMussel['FE']['state_msg'] .= (
+                    if (
                         empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Version']) &&
                         empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files'])
-                    ) ?
-                        $phpMussel['lang']['response_component_successfully_installed'] :
-                        $phpMussel['lang']['response_component_successfully_updated'];
+                    ) {
+                        $phpMussel['FE']['state_msg'] .= $phpMussel['lang']['response_component_successfully_installed'];
+                        if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['When Install Succeeds'])) {
+                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['When Install Succeeds']);
+                        }
+                    } else {
+                        $phpMussel['FE']['state_msg'] .= $phpMussel['lang']['response_component_successfully_updated'];
+                        if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['When Update Succeeds'])) {
+                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['When Update Succeeds']);
+                        }
+                    }
                     $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']] =
                         $phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['ThisTarget']];
                 } else {
                     $phpMussel['FE']['state_msg'] .=
                         '<code>' . $phpMussel['Components']['ThisTarget'] . '</code> – ' .
                         $phpMussel['lang']['response_component_update_error'];
+                    if (
+                        empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Version']) &&
+                        empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files'])
+                    ) {
+                        if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['When Install Fails'])) {
+                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['When Install Fails']);
+                        }
+                    } else {
+                        if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['When Update Fails'])) {
+                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['When Update Fails']);
+                        }
+                    }
                 }
                 $phpMussel['FE']['state_msg'] .= '<br />';
             }
@@ -1259,8 +1374,14 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 $phpMussel['Components']['Meta'][$_POST['ID']]['Version'] = false;
                 $phpMussel['Components']['Meta'][$_POST['ID']]['Files'] = false;
                 $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_component_successfully_uninstalled'];
+                if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['When Uninstall Succeeds'])) {
+                    $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['When Uninstall Succeeds']);
+                }
             } else {
                 $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_component_uninstall_error'];
+                if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['When Uninstall Fails'])) {
+                    $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['When Uninstall Fails']);
+                }
             }
         }
 
@@ -1302,6 +1423,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             }
             if (!$phpMussel['Activation']['Modified'] || !$phpMussel['Activation']['Config']) {
                 $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_activation_failed'];
+                if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['When Activation Fails'])) {
+                    $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['When Activation Fails']);
+                }
             } else {
                 $phpMussel['Activation']['Config'] = str_replace(
                     "\r\nActive='" . $phpMussel['Config']['signatures']['Active'] . "'\r\n",
@@ -1313,6 +1437,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 fwrite($phpMussel['Handle'], $phpMussel['Activation']['Config']);
                 fclose($phpMussel['Handle']);
                 $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_activated'];
+                if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['When Activation Succeeds'])) {
+                    $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['When Activation Succeeds']);
+                }
             }
             unset($phpMussel['Activation']);
         }
@@ -1352,6 +1479,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             }
             if (!$phpMussel['Deactivation']['Modified'] || !$phpMussel['Deactivation']['Config']) {
                 $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_deactivation_failed'];
+                if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['When Deactivation Fails'])) {
+                    $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['When Deactivation Fails']);
+                }
             } else {
                 $phpMussel['Deactivation']['Config'] = str_replace(
                     "\r\nActive='" . $phpMussel['Config']['signatures']['Active'] . "'\r\n",
@@ -1363,6 +1493,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 fwrite($phpMussel['Handle'], $phpMussel['Deactivation']['Config']);
                 fclose($phpMussel['Handle']);
                 $phpMussel['FE']['state_msg'] = $phpMussel['lang']['response_deactivated'];
+                if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['When Deactivation Succeeds'])) {
+                    $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['When Deactivation Succeeds']);
+                }
             }
             unset($phpMussel['Deactivation']);
         }

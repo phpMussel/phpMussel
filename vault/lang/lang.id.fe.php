@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.07.23).
+ * This file: Indonesian language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -57,6 +57,7 @@ $phpMussel['lang']['config_general_honeypot_mode'] = 'Bila modus honeypot diakti
 $phpMussel['lang']['config_general_ipaddr'] = 'Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!';
 $phpMussel['lang']['config_general_lang'] = 'Tentukan bahasa default untuk phpMussel.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Jumlah maksimum upaya untuk memasukkan (bagian depan). Default = 5.';
+$phpMussel['lang']['config_general_numbers'] = 'Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel dapat mengkarantina upload file ditandai dalam isolasi dalam vault phpMussel, jika ini adalah sesuatu yang Anda ingin lakukan. Pengguna biasa dari phpMussel yang hanya ingin memproteksi website mereka dan/atau lingkungan hosting mereka tanpa memiliki minat dalam-dalam menganalisis setiap ditandai upload file harus meninggalkan fungsi ini dinonaktifkan, tapi setiap pengguna yang tertarik pada analisis lebih lanjut dari ditandai upload file bagi penelitian malware atau untuk hal-hal seperti serupa harus mengaktifkan fungsi ini. Mengkarantina ditandai upload file dapat kadang-kadang juga membantu dalam men-debug false-positif, jika ini adalah sesuatu yang sering terjadi untuk Anda. Untuk menonaktifkan fungsi karantina, meninggalkan <code>quarantine_key</code> direktif kosong, atau menghapus isi dari direktif ini jika tidak sudah kosong. Untuk mengaktifkan fungsi karantina, masukkan beberapa nilai dalam direktif ini. <code>quarantine_key</code> adalah fitur keamanan penting dari fungsi karantina diharuskan sebagai sarana untuk mencegah fungsi karantina dari dieksploitasi oleh penyerang potensial dan sebagai sarana mencegah eksekusi potensi file yang disimpan dalam karantina. <code>quarantine_key</code> harus diperlakukan dengan cara yang sama seperti password Anda: Semakin lama semakin baik, dan menjaganya diproteksi erat. Bagi efek terbaik, gunakan dalam hubungannya dengan <code>delete_on_sight</code>.';
 $phpMussel['lang']['config_general_quarantine_max_filesize'] = 'Ukuran file maksimum yang diijinkan dari file yang akan dikarantina. File yang lebih besar dari nilai yang ditentukan di bawah ini TIDAK akan dikarantina. Direktif ini penting sebagai sarana untuk membuat lebih sulit bagi setiap penyerang potensial untuk banjir karantina Anda dengan file yang tidak diinginkan berpotensi menyebabkan penggunaan file kelebihan pada layanan hosting Anda. Default = 2MB.';
 $phpMussel['lang']['config_general_quarantine_max_usage'] = 'Penggunaan memori maksimal yang diijinkan untuk karantina. Jika total penggunaan memori oleh karantina mencapai nilai ini, file yang dikarantina tertua akan dihapus sampai total penggunaan memori tidak lagi mencapai nilai ini. Direktif ini penting sebagai sarana untuk membuat lebih sulit bagi setiap penyerang potensial untuk banjir karantina Anda dengan file yang tidak diinginkan berpotensi menyebabkan penggunaan file kelebihan pada layanan hosting Anda. Default = 64MB.';
@@ -79,6 +80,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'Harus phpMussel mengguna
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'Seharusnya laporan phpMussel ketika ekstensi hilang? Jika <code>fail_extensions_silently</code> dinonaktifkan, ekstensi hilang akan dilaporkan ketika pemindaian, dan jika <code>fail_extensions_silently</code> diaktifkan, ekstensi hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Menonaktifkan direktif ini berpotensi dapat meningkatkan keamanan Anda, tapi juga dapat menyebabkan peningkatan positif palsu. False = Dinonaktifkan; True = Diaktifkan [Default].';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'Seharusnya laporan phpMussel ketika file tanda tangan hilang atau dikorup? Jika <code>fail_silently</code> dinonaktifkan, file dikorup dan hilang akan dilaporkan ketika pemindaian, dan jika <code>fail_silently</code> diaktifkan, file dikorup dan hilang akan diabaikan, dengan pemindaian melaporkan untuk file-file ini bahwa tidak ada masalah. Harus ini dibiarkan sendirian jika Anda pernah mengalami crash atau masalah lain. False = Dinonaktifkan; True = Diaktifkan [Default].';
 $phpMussel['lang']['config_template_data_css_url'] = 'File template untuk tema kustom menggunakan properti CSS eksternal, sedangkan file template untuk tema default menggunakan properti CSS internal. Untuk menginstruksikan phpMussel menggunakan file template untuk tema kustom, menentukan alamat HTTP publik file CSS tema kustom Anda menggunakan variable <code>css_url</code>. Jika Anda biarkan kosong variabel ini, phpMussel akan menggunakan file template untuk tema default.';
+$phpMussel['lang']['config_template_data_Magnification'] = 'Perbesaran font. Default = 1.';
 $phpMussel['lang']['config_template_data_theme'] = 'Tema default untuk phpMussel.';
 $phpMussel['lang']['config_urlscanner_cache_time'] = 'Berapa lama (dalam detik) harus hasil API untuk disimpan dalam cache? Default adalah 3600 detik (1 jam).';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = 'Memungkinkan pemeriksaan API ke Google Safe Browsing API ketika kunci API diperlukan didefinisikan.';
@@ -131,11 +133,14 @@ $phpMussel['lang']['field_username'] = 'Nama Pengguna';
 $phpMussel['lang']['field_your_version'] = 'Versi Anda';
 $phpMussel['lang']['header_login'] = 'Silahkan masuk untuk melanjutkan.';
 $phpMussel['lang']['label_active_config_file'] = 'File konfigurasi aktif: ';
+$phpMussel['lang']['label_branch'] = 'Cabang terbaru stabil:';
 $phpMussel['lang']['label_os'] = 'Sistem operasi digunakan:';
 $phpMussel['lang']['label_php'] = 'Versi PHP digunakan:';
 $phpMussel['lang']['label_phpmussel'] = 'Versi phpMussel digunakan:';
 $phpMussel['lang']['label_sapi'] = 'SAPI digunakan:';
+$phpMussel['lang']['label_stable'] = 'Terbaru stabil:';
 $phpMussel['lang']['label_sysinfo'] = 'Informasi sistem:';
+$phpMussel['lang']['label_unstable'] = 'Terbaru tidak stabil:';
 $phpMussel['lang']['link_accounts'] = 'Akun';
 $phpMussel['lang']['link_config'] = 'Konfigurasi';
 $phpMussel['lang']['link_documentation'] = 'Dokumentasi';
@@ -155,8 +160,6 @@ $phpMussel['lang']['previewer_months'] = 'Bulan';
 $phpMussel['lang']['previewer_seconds'] = 'Detik';
 $phpMussel['lang']['previewer_weeks'] = 'Minggu';
 $phpMussel['lang']['previewer_years'] = 'Tahun';
-$phpMussel['lang']['punct_decimals'] = ',';
-$phpMussel['lang']['punct_thousand'] = '.';
 $phpMussel['lang']['response_accounts_already_exists'] = 'Akun dengan nama pengguna ini sudah ada!';
 $phpMussel['lang']['response_accounts_created'] = 'Akun berhasil dibuat!';
 $phpMussel['lang']['response_accounts_deleted'] = 'Akun berhasil dihapus!';

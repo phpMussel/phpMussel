@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.07.23).
+ * This file: Functions file (last modified: 2017.07.29).
  */
 
 /**
@@ -5196,9 +5196,7 @@ $phpMussel['FormatFilesize'] = function (&$Filesize) use (&$phpMussel) {
             break;
         }
     }
-    $Decimals = !empty($phpMussel['lang']['punct_decimals']) ? $phpMussel['lang']['punct_decimals'] : '.';
-    $Thousand = !empty($phpMussel['lang']['punct_thousand']) ? $phpMussel['lang']['punct_thousand'] : ',';
-    $Filesize = number_format($Filesize, ($Iterate === 0) ? 0 : 2, $Decimals, $Thousand) . ' ' . $Scale[$Iterate];
+    $Filesize = $phpMussel['Number_L10N']($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $Scale[$Iterate];
 };
 
 $phpMussel['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) {
@@ -5769,6 +5767,7 @@ $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMusse
     $Date = date('Y.n.j', $phpMussel['Time']);
     $Level = 0;
     if (
+        !empty($phpMussel['ForceVersionWarning']) ||
         $phpMussel['VersionCompare']($Version, '5.4.43') ||
         (!$phpMussel['VersionCompare']($Version, '5.5.0') && $phpMussel['VersionCompare']($Version, '5.5.32')) ||
         (!$phpMussel['VersionCompare']($Version, '5.6.0') && $phpMussel['VersionCompare']($Version, '5.6.18')) ||
@@ -5783,5 +5782,109 @@ $phpMussel['VersionWarning'] = function ($Version = PHP_VERSION) use (&$phpMusse
     ) {
         $Level += 1;
     }
+    $phpMussel['ForceVersionWarning'] = false;
     return $Level;
+};
+
+/**
+ * Executes a list of closures or commands when specific conditions are met.
+ *
+ * @param array|string $Closures The list of closures or commands to execute.
+ */
+$phpMussel['FE_Executor'] = function ($Closures) use (&$phpMussel) {
+    $phpMussel['Arrayify']($Closures);
+    foreach ($Closures as $Closure) {
+        if (isset($phpMussel[$Closure]) && is_object($phpMussel[$Closure])) {
+            $phpMussel[$Closure]();
+        }
+    }
+};
+
+/**
+ * Localises a number according to configuration specification.
+ *
+ * @param int $Number The number to localise.
+ * @param int $Decimals Decimal places (optional).
+ */
+$phpMussel['Number_L10N'] = function ($Number, $Decimals = 0) use (&$phpMussel) {
+    $Number = (real)$Number;
+    $Sets = array(
+        'NoSep-1' => ['.', '', 3, false, 0],
+        'NoSep-2' => [',', '', 3, false, 0],
+        'Latin-1' => ['.', ',', 3, false, 0],
+        'Latin-2' => ['.', ' ', 3, false, 0],
+        'Latin-3' => [',', '.', 3, false, 0],
+        'Latin-4' => [',', ' ', 3, false, 0],
+        'Latin-5' => ['·', ',', 3, false, 0],
+        'China-1' => ['.', ',', 4, false, 0],
+        'Arabic-1' => ['٫', '', 3, ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'], 0],
+        'Arabic-2' => ['٫', '٬', 3, ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'], 0],
+        'Thai-1' => ['.', ',', 3, ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'], 0],
+        'India-1' => ['.', ',', 2, false, -1],
+        'India-2' => ['.', ',', 2, ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'], -1]
+    );
+    $Set = empty($Sets[$phpMussel['Config']['general']['numbers']]) ? 'Latin-1' : $Sets[$phpMussel['Config']['general']['numbers']];
+    if (false && $Set[2] === 3 && $Set[4] === 1) {
+        $Formatted = number_format($Number, $Decimals, $Set[0], $Set[1]);
+    } else {
+        $Formatted = number_format($Number, $Decimals, $Set[0], '');
+        $DecSize = strlen($Set[0]);
+        $DecPos = strpos($Formatted, $Set[0]) ?: strlen($Formatted) + 1 - $DecSize;
+        if ($Decimals && ($DecSize = strlen($Set[0]))) {
+            $Fraction = substr($Formatted, $DecPos + $DecSize);
+        }
+        for ($Whole = '', $ThouPos = $Set[4], $Pos = 1; $Pos <= $DecPos; $Pos++) {
+            if ($ThouPos >= $Set[2]) {
+                $ThouPos = 1;
+                $Whole = $Set[1] . $Whole;
+            } else {
+                $ThouPos++;
+            }
+            $NegPos = $DecPos - $Pos;
+            $ThisChar = substr($Formatted, $NegPos, 1);
+            $Whole = empty($Set[3][$ThisChar]) ? $ThisChar . $Whole : $Set[3][$ThisChar] . $Whole;
+        }
+        $Formatted = $Whole;
+        if ($Decimals && $DecSize) {
+            $Formatted .= $Set[0];
+            for ($FracLen = strlen($Fraction), $Pos = 0; $Pos < $FracLen; $Pos++) {
+                $Formatted .= empty($Set[3][$Fraction[$Pos]]) ? $Fraction[$Pos] : $Set[3][$Fraction[$Pos]];
+            }
+        }
+    }
+    return $Formatted;
+};
+
+/**
+ * Generates JavaScript code for localising numbers according to configuration
+ * specification.
+ */
+$phpMussel['Number_L10N_JS'] = function () use (&$phpMussel) {
+    $Base =
+        'function l10nn(l10nd){%4$s};function nft(r){var x=r.indexOf(\'.\')!=-1?' .
+        '\'%1$s\'+r.replace(/^.*\./gi,\'\'):\'\',n=r.replace(/\..*$/gi,\'\').rep' .
+        'lace(/[^0-9]/gi,\'\'),t=n.length;for(e=\'\',b=%5$d,i=1;i<=t;i++){b>%3$d' .
+        '&&(b=1,e=\'%2$s\'+e);var e=l10nn(n.substring(t-i,t-(i-1)))+e;b++}var t=' .
+        'x.length;for(y=\'\',b=1,i=1;i<=t;i++){var y=l10nn(x.substring(t-i,t-(i-' .
+        '1)))+y}return e+y}';
+    $Sets = array(
+        'NoSep-1' => ['.', '', 3, 'return l10nd', 1],
+        'NoSep-2' => [',', '', 3, 'return l10nd', 1],
+        'Latin-1' => ['.', ',', 3, 'return l10nd', 1],
+        'Latin-2' => ['.', ' ', 3, 'return l10nd', 1],
+        'Latin-3' => [',', '.', 3, 'return l10nd', 1],
+        'Latin-4' => [',', ' ', 3, 'return l10nd', 1],
+        'Latin-5' => ['·', ',', 3, 'return l10nd', 1],
+        'China-1' => ['.', ',', 4, 'return l10nd', 1],
+        'Arabic-1' => ['٫', '', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
+        'Arabic-2' => ['٫', '٬', 3, 'var nls=[\'٠\',\'١\',\'٢\',\'٣\',\'٤\',\'٥\',\'٦\',\'٧\',\'٨\',\'٩\'];return nls[l10nd]||l10nd', 1],
+        'Thai-1' => ['.', ',', 3, 'var nls=[\'๐\',\'๑\',\'๒\',\'๓\',\'๔\',\'๕\',\'๖\',\'๗\',\'๘\',\'๙\'];return nls[l10nd]||l10nd', 1],
+        'India-1' => ['.', ',', 2, 'return l10nd', 0],
+        'India-2' => ['.', ',', 2, 'var nls=[\'०\',\'१\',\'२\',\'३\',\'४\',\'५\',\'६\',\'७\',\'८\',\'९\'];return nls[l10nd]||l10nd', 0]
+    );
+    if (!empty($phpMussel['Config']['general']['numbers']) && isset($Sets[$phpMussel['Config']['general']['numbers']])) {
+        $Set = $Sets[$phpMussel['Config']['general']['numbers']];
+        return sprintf($Base, $Set[0], $Set[1], $Set[2], $Set[3], $Set[4]);
+    }
+    return sprintf($Base, $Sets['Latin-1'][0], $Sets['Latin-1'][1], $Sets['Latin-1'][2], $Sets['Latin-1'][3], $Sets['Latin-1'][4]);
 };

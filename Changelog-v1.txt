@@ -340,6 +340,18 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   be perceived as a lack of vulnerabilities/exploits nor as an indication of
   continued active support).
 
+- [2017.07.29; NEW FEATURES; Maikuolan]: Added the ability to execute closures
+  and specific commands when specific conditions are met when using the
+  front-end updates page (installing, uninstalling components, etc). Added a
+  configuration directive to modify the font magnification for the front-end
+  and the Access Denied page. Added information to the front-end homepage about
+  latest stable, unstable, and branch versions for CIDRAM and PHP.
+
+- [2017.07.30; Minor code change; Maikuolan]: Added a configuration directive
+  for specifying the preferred way to localise numbers when displaying numeric
+  information via the front-end and any other relevant means. Number L10N is
+  now independent of language choice, and has also been improved upon somewhat.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

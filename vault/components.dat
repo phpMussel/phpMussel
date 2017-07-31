@@ -21,7 +21,7 @@ phpMussel:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 1.0.0-DEV+2017203461
+ Version: 1.0.0-DEV+2017211314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/master/Changelog-v1.txt
@@ -112,17 +112,17 @@ phpMussel:
    - 8e03209e7fc6641b45094e584340feff:83
    - ac558fdb0df3abc66d7739a2e1a1276d:27030
    - b5ebde5a898944c0a24cae916ef7c565:8031
-   - 2efafa982688aae1faa05a3bf4e43fdd:9878
+   - 45b902bc7983c70c54a4475beb37f761:10422
    - 8e03209e7fc6641b45094e584340feff:83
    - f9b29eb4e33f72eaa9ad0842888461d9:2025
    - 6ae234a1eb4e2b0688772e86c79f0419:1390
-   - 23d166c3cb75faada7e85212fa97e2d1:1151
+   - bc02f572ddea026f90f2ef5bf40cb539:911
    - 074c67c091a96c1608c4cad9497dfe00:277
    - 80e3a997a9d751884db7b36b7e380102:888
    - a421eb3fd77f917e1ad7b5723099330e:802
    - 0fa4d711c7a62b45c383d8e006c60885:702
    - c3416d9af392d59f71affbb17df513c6:505
-   - 9357968fe56fe90676a99cf13f34be60:483
+   - bb0dcb9a48d6809e629a74aa88d4c159:971
    - e04cea9fa56fc9a3b337e816dffb33fb:2216
    - d4ca89b16da22a6820a009d07f749ec2:290
    - 3390e5d3cc499c72dee5e2386c6b7078:883
@@ -130,12 +130,12 @@ phpMussel:
    - ba55faf5c2614fed76a5653be87a0f05:1059
    - b452519ff43e2e113e629ad8476f109e:702
    - 7f714e853c61332e31cfd55864f99e5a:960
-   - 00150b1257485a470366e95d1fe364b6:5162
+   - a671a54e362b647cdd8b0df261784053:5292
    - fc3088d9d88d33b8be8ec187b1ce5494:1008
    - 4d4b8356beee307735f73ceddf6d21b0:17579
    - 1f7377ba8beb1a4d28714fa320973741:929
-   - 6fdd797272636436996e9b8ba7dcf998:126070
-   - 91b7515c365431323935c159356b6955:271612
+   - 7ef69c4594c1cf05a893b0f240ca6343:135043
+   - 6315fa2c4957e06188ab8caec42a360e:276660
    - ac607d0db4c0e159005c087365a6b77c:3072
    - 0f4fa0075f9790e27bc668ef80a58418:2315
    - 8e03209e7fc6641b45094e584340feff:83
@@ -145,14 +145,14 @@ phpMussel:
    - 8e03209e7fc6641b45094e584340feff:83
    - 2c5e1906295c889436749adc4441ffa4:3233
    - caed7b1d78502266f746797a028146b1:1140
-   - 1f21f2ca3a76e5c0964d20e6435c414b:1967
+   - df2e543957a5c95438a31c67e163fdcc:2039
    - d0e45f7495d51b7d36354aaecc87e4c3:30789
  Reannotate: components.dat
 l10n/en:
  Name: L10N: English
  Extended Description:
   en: English language data
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -165,14 +165,14 @@ l10n/en:
    - lang/lang.en.fe.php
    - lang/lang.en.php
   Checksum:
-   - 3dbf29c24059c11d530d62343147a135:39745
+   - 0d7399718518bef4a43d62c150785f8d:40076
    - 944fd2ddd84cf0d9453d1ce1f395223d:7219
  Reannotate: components.dat
 l10n/ar:
  Name: L10N: العربية
  Extended Description:
   ar: ملفات اللغة العربية
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -185,14 +185,14 @@ l10n/ar:
    - lang/lang.ar.fe.php
    - lang/lang.ar.php
   Checksum:
-   - 77e2e1431251b15127fe717a005bf865:53470
+   - 7ba8ab22b4660baf0328daec734e2afb:53853
    - 88b28c912870584dac5020ea430758d5:8744
  Reannotate: components.dat
 l10n/de:
  Name: L10N: Deutsche
  Extended Description:
   de: Deutsche Sprachdateien
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -205,14 +205,14 @@ l10n/de:
    - lang/lang.de.fe.php
    - lang/lang.de.php
   Checksum:
-   - 330832ffbb0dc088ae125916dbcb1db9:42047
+   - fb4f0fac05f95bb14350184c02f71b1e:42392
    - 0f08de89dd85c89077cecb8eb0a635c1:7752
  Reannotate: components.dat
 l10n/es:
  Name: L10N: Español
  Extended Description:
   es: Lingüísticos datos Español
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -225,14 +225,14 @@ l10n/es:
    - lang/lang.es.fe.php
    - lang/lang.es.php
   Checksum:
-   - 54de6f2bfce8aeb738867b370ed3c870:43775
+   - 3db55370369f1ede548a7233d35236ab:44130
    - b3fc85b591057994ecfa572b870ac5fe:7567
  Reannotate: components.dat
 l10n/fr:
  Name: L10N: Français
  Extended Description:
   fr: Linguistiques données en Français
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -245,14 +245,14 @@ l10n/fr:
    - lang/lang.fr.fe.php
    - lang/lang.fr.php
   Checksum:
-   - 4e98a662f1ecd6e389bd2d1bc71b9859:45095
+   - 3d40588af66651ce214f03710cd266f9:45465
    - 5f6d433e734a7acc81e536c7bc6788a5:8115
  Reannotate: components.dat
 l10n/hi:
  Name: L10N: हिंदी
  Extended Description:
   hi: हिंदी भाषा डाटा
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -265,14 +265,14 @@ l10n/hi:
    - lang/lang.hi.fe.php
    - lang/lang.hi.php
   Checksum:
-   - a6f89152b08d4ce494aacc4fc6120644:72482
+   - a4dff7f436555cc6f73b7508ffd1799a:73096
    - 07ed8c0b6f74cdd814fd6b520d6a5e51:12541
  Reannotate: components.dat
 l10n/id:
  Name: L10N: Bahasa Indonesia
  Extended Description:
   id: File Bahasa Indonesia
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -285,14 +285,14 @@ l10n/id:
    - lang/lang.id.fe.php
    - lang/lang.id.php
   Checksum:
-   - d09911379ba496a422fbc114fb5500a4:41364
+   - 330ed76a32d694c6282f120987b37f89:41696
    - ae6083d6741e501f6a58dc869f8da39d:7469
  Reannotate: components.dat
 l10n/it:
  Name: L10N: Italiana
  Extended Description:
   it: Linguistici dati Italiana
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -305,14 +305,14 @@ l10n/it:
    - lang/lang.it.fe.php
    - lang/lang.it.php
   Checksum:
-   - 2a1d1d52226a4b932e61e30ec38dae52:43211
+   - 4ad2a52b578e165f21301db5084a6c55:43577
    - 683d0a6f55f23b1781993b79a693b89f:7667
  Reannotate: components.dat
 l10n/ja:
  Name: L10N: 日本語
  Extended Description:
   ja: 日本語言語データ
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -325,14 +325,14 @@ l10n/ja:
    - lang/lang.ja.fe.php
    - lang/lang.ja.php
   Checksum:
-   - 0159e04c1cf58b31911a8459774cd6c5:49572
+   - fe3613011a949a0ae7bf5d4bfea8bfcb:49968
    - 083a3d26f94b0f6aa3d3a7bdba78046f:9436
  Reannotate: components.dat
 l10n/ko:
  Name: L10N: 한국어
  Extended Description:
   ko: 한국어 언어 데이터
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -345,14 +345,14 @@ l10n/ko:
    - lang/lang.ko.fe.php
    - lang/lang.ko.php
   Checksum:
-   - 56001480331deef2ea1c8b5e266042cd:41502
+   - fdab183e97bb8ba4373762889ad7fe8a:41874
    - 09a9bbb960630e9e12ad1c945769dcee:8238
  Reannotate: components.dat
 l10n/nl:
  Name: L10N: Nederlandse
  Extended Description:
   nl: Nederlandse taaldata/taalgegevens
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -365,14 +365,14 @@ l10n/nl:
    - lang/lang.nl.fe.php
    - lang/lang.nl.php
   Checksum:
-   - eaecba70093a8f016c6b4a4e113f8a80:42803
+   - 0cb625b806fe2d3e0b7bb6cb03a46ec9:43160
    - ce982589029b38f57e81f2789755d4fe:7581
  Reannotate: components.dat
 l10n/pt:
  Name: L10N: Português
  Extended Description:
   pt: Linguagem dados Português
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -385,14 +385,14 @@ l10n/pt:
    - lang/lang.pt.fe.php
    - lang/lang.pt.php
   Checksum:
-   - f9515888679478c9665b911d71e77b4c:43021
+   - 9604789da861555e02d2d411cda6cbe2:43389
    - 88c2c537d05770ada993f76b61e734a6:7675
  Reannotate: components.dat
 l10n/ru:
  Name: L10N: Русский
  Extended Description:
   ru: Русском языковые файлы
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -405,14 +405,14 @@ l10n/ru:
    - lang/lang.ru.fe.php
    - lang/lang.ru.php
   Checksum:
-   - 0171f4daeb82747858905bee25132a4e:59526
+   - 8394b6fa8bc78293fbc298f90157d40c:60066
    - 297990831105a5140cd488c764c9bd10:10257
  Reannotate: components.dat
 l10n/th:
  Name: L10N: ภาษาไทย
  Extended Description:
   th: ข้อมูลภาษาไทย
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -425,14 +425,14 @@ l10n/th:
    - lang/lang.th.fe.php
    - lang/lang.th.php
   Checksum:
-   - fb5db4a6cada741ca18e9e2a3ce2d73b:72474
+   - 6a46906777b107d5322fd4c968857517:73052
    - a03435913635232226e835bb8fef95bf:11992
  Reannotate: components.dat
 l10n/tr:
  Name: L10N: Türkçe
  Extended Description:
   tr: Türkçe dili verileri
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -445,14 +445,14 @@ l10n/tr:
    - lang/lang.tr.fe.php
    - lang/lang.tr.php
   Checksum:
-   - 315bed9e8bdbef9c11ac1c588a1e2077:40144
+   - c62a24646b03099cd8b5cdc6503d17bd:40492
    - a249633d325a54feda941ed07ae9e322:7737
  Reannotate: components.dat
 l10n/ur:
  Name: L10N: ‏اردو‏
  Extended Description:
   ur: ‏اردو‏ زبان فائلوں
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -465,14 +465,14 @@ l10n/ur:
    - lang/lang.ur.fe.php
    - lang/lang.ur.php
   Checksum:
-   - 295b8dc9f60d49c1ea809b57b9806edd:60007
+   - 0436322818c6f639771f1e7bf522f705:60526
    - 58735673f266718bbf3df1c0f99677d6:9395
  Reannotate: components.dat
 l10n/vi:
  Name: L10N: Tiếng Việt
  Extended Description:
   vi: Dữ liệu tiếng Việt
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -485,14 +485,14 @@ l10n/vi:
    - lang/lang.vi.fe.php
    - lang/lang.vi.php
   Checksum:
-   - 84babb93f12992b94ebae5f1821f2c59:50012
+   - c4f1a969fce13c76f86b4fe914366796:50411
    - 3875cf916e3059755d4e3df1c102bee3:8672
  Reannotate: components.dat
 l10n/zh-TW:
  Name: L10N: 中文（傳統）
  Extended Description:
   zh-tw: 中文（傳統）語言數據
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -505,14 +505,14 @@ l10n/zh-TW:
    - lang/lang.zh-tw.fe.php
    - lang/lang.zh-tw.php
   Checksum:
-   - a3ceb53364b12b7856eb5fa10b5f7dd5:37798
+   - c7b6037963bd78e551ece795d993bb95:38091
    - 333e6903050ba0f0e9029dcf3698906c:7156
  Reannotate: components.dat
 l10n/zh:
  Name: L10N: 中文（简体）
  Extended Description:
   zh: 中文（简体）语言数据
- Version: 2017.203.461
+ Version: 2017.211.314
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Remote: https://raw.githubusercontent.com/phpMussel/phpMussel/master/vault/components.dat
@@ -525,7 +525,7 @@ l10n/zh:
    - lang/lang.zh.fe.php
    - lang/lang.zh.php
   Checksum:
-   - 797d604502896b3e6a3bdf20007556b3:37774
+   - 161a813e6959b95dfe1e0ceddd7ee701:38067
    - b2764900eb922391f8ea292ded128ae9:7155
  Reannotate: components.dat
 

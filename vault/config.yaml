@@ -134,6 +134,23 @@ Config Defaults:
     zh: 中文（简体）
     zh-tw: 中文（傳統）
    choice_filter: "FilterLang"
+  numbers:
+   type: string
+   default: "Latin-1"
+   choices:
+    NoSep-1: "1234567.89"
+    NoSep-2: "1234567,89"
+    Latin-1: "1,234,567.89"
+    Latin-2: "1 234 567.89"
+    Latin-3: "1.234.567,89"
+    Latin-4: "1 234 567,89"
+    Latin-5: "1,234,567·89"
+    China-1: "123,4567.89"
+    India-1: "12,34,567.89"
+    India-2: "१२,३४,५६७.८९"
+    Arabic-1: "١٢٣٤٥٦٧٫٨٩"
+    Arabic-2: "١٬٢٣٤٬٥٦٧٫٨٩"
+    Thai-1: "๑,๒๓๔,๕๖๗.๘๙"
   quarantine_key:
    type: string
    default: ""
@@ -329,6 +346,10 @@ Config Defaults:
     fullmoon: "Full Moon"
     unicorn: "Unicorn"
    choice_filter: "FilterTheme"
+  Magnification:
+   type: real
+   step: any
+   default: 1
   css_url:
    type: string
    default: ""

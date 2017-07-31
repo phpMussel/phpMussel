@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.07.23).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.07.29).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -57,6 +57,7 @@ $phpMussel['lang']['config_general_honeypot_mode'] = '当这个指令（蜜罐�
 $phpMussel['lang']['config_general_ipaddr'] = '在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）标准是<code>REMOTE_ADDR</code>。​警告！​不要修改此除非您知道什么您做着！';
 $phpMussel['lang']['config_general_lang'] = '指定标准phpMussel语言。';
 $phpMussel['lang']['config_general_max_login_attempts'] = '最大登录尝试次数（前端）。​标准=5。';
+$phpMussel['lang']['config_general_numbers'] = '您如何喜欢显示数字？​选择最适合示例。';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel可以检疫坏文件上传在隔离在phpMussel的安全/保险库【Vault】，​如果这个是某物您想。​普通用户的phpMussel简单地想保护他们的网站或宿主环境无任何兴趣在深深分析任何尝试文件上传应该离开这个功能关闭，​但任何用户有兴趣在更深分析的尝试文件上传为目的恶意软件研究或为类似这样事情应该激活这个功能。​检疫的尝试文件上传可以有时还助攻在调试假阳性，​如果这个是某物经常发生为您。​以关闭检疫功能，​简单地离开<code>quarantine_key</code>指令空白，​或抹去内容的这个指令如果它不已空白。​以激活隔离功能，​输入一些值在这个指令。​<code>quarantine_key</code>是一个重要安全功能的隔离功能需要以预防检疫功能从成为利用通过潜在攻击者和以预防任何潜在执行的数据存储在检疫。​<code>quarantine_key</code>应该被处理在同样方法作为您的密码：更长是更好，​和紧紧保护它。​为获得最佳效果，​在结合使用<code>delete_on_sight</code>。';
 $phpMussel['lang']['config_general_quarantine_max_filesize'] = '最大允许文件大小为文件在检疫。​文件大于这个指定数值将不成为检疫。​这个指令是重要为使它更难为任何潜在攻击者洪水您的检疫用非通缉数据潜在的造成过度数据用法在您的虚拟主机服务。​标准 = 2MB。';
 $phpMussel['lang']['config_general_quarantine_max_usage'] = '最大内存使用允许为检疫。​如果总内存已用通过隔离到达这个数值，​最老检疫文件将会删除直到总内存已用不再到达这个数值。​这个指令是重要为使它更难为任何潜在攻击者洪水您的检疫用非通缉数据潜在的造成过度数据用法在您的虚拟主机服务。​标准 = 64MB。';
@@ -79,6 +80,7 @@ $phpMussel['lang']['config_signatures_detect_shell'] = 'phpMussel应该使用签
 $phpMussel['lang']['config_signatures_fail_extensions_silently'] = 'phpMussel应该报告当扩展是失踪吗？​如果<code>fail_extensions_silently</code>是关闭，​失踪扩展将会报告当扫描，​和如果<code>fail_extensions_silently</code>是激活，​失踪扩展将会忽略，​有扫描报告为那些文件哪里没有任何问题。​关闭的这个指令可能的可以增加您的安全，​但可能还导致一个增加的假阳性。​False（假）=是关闭； True（真）=是激活【默认】。';
 $phpMussel['lang']['config_signatures_fail_silently'] = 'phpMussel应该报告当签名文件是失踪或损坏吗？​如果<code>fail_silently</code>是关闭，​失踪和损坏文件将会报告当扫描，​和如果<code>fail_silently</code>是激活，​失踪和损坏文件将会忽略，​有扫描报告为那些文件哪里没有问题。​这个应该按说被留下除非您遇到失败或有其他类似问题。​False（假）=是关闭； True（真）=是激活【默认】。';
 $phpMussel['lang']['config_template_data_css_url'] = '模板文件为个性化主题使用外部CSS属性，​而模板文件为t标准主题使用内部CSS属性。​以指示phpMussel使用模板文件为个性化主题，​指定公共HTTP地址的您的个性化主题的CSS文件使用<code>css_url</code>变量。​如果您离开这个变量空白，​phpMussel将使用模板文件为默认主题。';
+$phpMussel['lang']['config_template_data_Magnification'] = '字体放大。​标准 = 1。';
 $phpMussel['lang']['config_template_data_theme'] = '用于phpMussel的默认主题。';
 $phpMussel['lang']['config_urlscanner_cache_time'] = '多长时间（以秒为单位）应API结果被缓存？​默认是3600秒（1小时）。';
 $phpMussel['lang']['config_urlscanner_google_api_key'] = '激活Google Safe Browsing API当API密钥是设置。';
@@ -131,11 +133,14 @@ $phpMussel['lang']['field_username'] = '用户名';
 $phpMussel['lang']['field_your_version'] = '您的版本';
 $phpMussel['lang']['header_login'] = '请登录以继续。';
 $phpMussel['lang']['label_active_config_file'] = '活动配置文件：';
+$phpMussel['lang']['label_branch'] = '分支最新稳定：';
 $phpMussel['lang']['label_os'] = '目前使用操作系统：';
 $phpMussel['lang']['label_php'] = '目前使用PHP版本：';
 $phpMussel['lang']['label_phpmussel'] = '目前使用phpMussel版本：';
 $phpMussel['lang']['label_sapi'] = '目前使用SAPI：';
+$phpMussel['lang']['label_stable'] = '最新稳定：';
 $phpMussel['lang']['label_sysinfo'] = '系统信息：';
+$phpMussel['lang']['label_unstable'] = '最新不稳定：';
 $phpMussel['lang']['link_accounts'] = '账户';
 $phpMussel['lang']['link_config'] = '配置';
 $phpMussel['lang']['link_documentation'] = '文档';
@@ -155,8 +160,6 @@ $phpMussel['lang']['previewer_months'] = '月';
 $phpMussel['lang']['previewer_seconds'] = '秒';
 $phpMussel['lang']['previewer_weeks'] = '周';
 $phpMussel['lang']['previewer_years'] = '年';
-$phpMussel['lang']['punct_decimals'] = '.';
-$phpMussel['lang']['punct_thousand'] = ',';
 $phpMussel['lang']['response_accounts_already_exists'] = '一个账户与那个用户名已经存在！';
 $phpMussel['lang']['response_accounts_created'] = '账户成功创建！';
 $phpMussel['lang']['response_accounts_deleted'] = '账户成功删除！';
