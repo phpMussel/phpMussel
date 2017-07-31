@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.07.29).
+ * This file: Front-end handler (last modified: 2017.07.31).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1208,10 +1208,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                                 '<code>' . $phpMussel['Components']['ThisTarget'] . '</code> – ' .
                                 '<code>' . $phpMussel['ThisFileName'] . '</code> – ' .
                                 $phpMussel['lang']['response_checksum_error'] . '<br />';
-                            continue;
                             if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['On Checksum Error'])) {
                                 $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['On Checksum Error']);
                             }
+                            continue;
                         }
                         $phpMussel['ThisName'] = $phpMussel['ThisFileName'];
                         $phpMussel['ThisPath'] = $phpMussel['Vault'];

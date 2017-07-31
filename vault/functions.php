@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.07.29).
+ * This file: Functions file (last modified: 2017.07.31).
  */
 
 /**
@@ -4905,7 +4905,7 @@ $phpMussel['YAML'] = function ($In, &$Arr, $VM = false, $Depth = 0) use (&$phpMu
     $Key = $Value = $SendTo = '';
     $TabLen = $SoL = 0;
     while ($SoL !== false) {
-        if  (($EoL = strpos($In, "\n", $SoL)) === false) {
+        if (($EoL = strpos($In, "\n", $SoL)) === false) {
             $ThisLine = substr($In, $SoL);
         } else {
             $ThisLine = substr($In, $SoL, $EoL - $SoL);
@@ -5199,6 +5199,13 @@ $phpMussel['FormatFilesize'] = function (&$Filesize) use (&$phpMussel) {
     $Filesize = $phpMussel['Number_L10N']($Filesize, ($Iterate === 0) ? 0 : 2) . ' ' . $Scale[$Iterate];
 };
 
+/**
+ * Remove an entry from the front-end cache data.
+ *
+ * @param string $Source Variable containing cache file data.
+ * @param bool $Rebuild Flag indicating to rebuild cache file.
+ * @param string $Entry Name of the cache entry to be deleted.
+ */
 $phpMussel['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) {
     $Entry64 = base64_encode($Entry);
     while (($EntryPos = strpos($Source, "\n" . $Entry64 . ',')) !== false) {
@@ -5211,6 +5218,15 @@ $phpMussel['FECacheRemove'] = function (&$Source, &$Rebuild, $Entry) {
     }
 };
 
+/**
+ * Add an entry to the front-end cache data.
+ *
+ * @param string $Source Variable containing cache file data.
+ * @param bool $Rebuild Flag indicating to rebuild cache file.
+ * @param string $Entry Name of the cache entry to be added.
+ * @param string $Data Cache entry data (what should be cached).
+ * @param int $Expires When should the cache entry expire (be deleted).
+ */
 $phpMussel['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expires) use (&$phpMussel) {
     $phpMussel['FECacheRemove']($Source, $Rebuild, $Entry);
     $Expires = (int)$Expires;
@@ -5219,6 +5235,14 @@ $phpMussel['FECacheAdd'] = function (&$Source, &$Rebuild, $Entry, $Data, $Expire
     $Rebuild = true;
 };
 
+/**
+ * Get an entry from the front-end cache data.
+ *
+ * @param string $Source Variable containing cache file data.
+ * @param bool $Rebuild Flag indicating to rebuild cache file.
+ * @param string $Entry Name of the cache entry to get.
+ * return string|bool Returned cache entry data (or false on failure).
+ */
 $phpMussel['FECacheGet'] = function ($Source, $Entry) {
     $Entry = base64_encode($Entry);
     $EntryPos = strpos($Source, "\n" . $Entry . ',');
@@ -5824,32 +5848,26 @@ $phpMussel['Number_L10N'] = function ($Number, $Decimals = 0) use (&$phpMussel) 
         'India-2' => ['.', ',', 2, ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'], -1]
     );
     $Set = empty($Sets[$phpMussel['Config']['general']['numbers']]) ? 'Latin-1' : $Sets[$phpMussel['Config']['general']['numbers']];
-    if (false && $Set[2] === 3 && $Set[4] === 1) {
-        $Formatted = number_format($Number, $Decimals, $Set[0], $Set[1]);
-    } else {
-        $Formatted = number_format($Number, $Decimals, $Set[0], '');
-        $DecSize = strlen($Set[0]);
-        $DecPos = strpos($Formatted, $Set[0]) ?: strlen($Formatted) + 1 - $DecSize;
-        if ($Decimals && ($DecSize = strlen($Set[0]))) {
-            $Fraction = substr($Formatted, $DecPos + $DecSize);
+    $DecPos = strpos($Number, '.') ?: strlen($Number);
+    if ($Decimals && $Set[0]) {
+        $Fraction = substr($Number, $DecPos + 1, $Decimals);
+        $Fraction .= str_repeat('0', $Decimals - strlen($Fraction));
+    }
+    for ($Formatted = '', $ThouPos = $Set[4], $Pos = 1; $Pos <= $DecPos; $Pos++) {
+        if ($ThouPos >= $Set[2]) {
+            $ThouPos = 1;
+            $Formatted = $Set[1] . $Formatted;
+        } else {
+            $ThouPos++;
         }
-        for ($Whole = '', $ThouPos = $Set[4], $Pos = 1; $Pos <= $DecPos; $Pos++) {
-            if ($ThouPos >= $Set[2]) {
-                $ThouPos = 1;
-                $Whole = $Set[1] . $Whole;
-            } else {
-                $ThouPos++;
-            }
-            $NegPos = $DecPos - $Pos;
-            $ThisChar = substr($Formatted, $NegPos, 1);
-            $Whole = empty($Set[3][$ThisChar]) ? $ThisChar . $Whole : $Set[3][$ThisChar] . $Whole;
-        }
-        $Formatted = $Whole;
-        if ($Decimals && $DecSize) {
-            $Formatted .= $Set[0];
-            for ($FracLen = strlen($Fraction), $Pos = 0; $Pos < $FracLen; $Pos++) {
-                $Formatted .= empty($Set[3][$Fraction[$Pos]]) ? $Fraction[$Pos] : $Set[3][$Fraction[$Pos]];
-            }
+        $NegPos = $DecPos - $Pos;
+        $ThisChar = substr($Number, $NegPos, 1);
+        $Formatted = empty($Set[3][$ThisChar]) ? $ThisChar . $Formatted : $Set[3][$ThisChar] . $Formatted;
+    }
+    if ($Decimals && $Set[0]) {
+        $Formatted .= $Set[0];
+        for ($FracLen = strlen($Fraction), $Pos = 0; $Pos < $FracLen; $Pos++) {
+            $Formatted .= empty($Set[3][$Fraction[$Pos]]) ? $Fraction[$Pos] : $Set[3][$Fraction[$Pos]];
         }
     }
     return $Formatted;
