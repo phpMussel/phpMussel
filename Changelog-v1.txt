@@ -235,7 +235,7 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   Made some subtle aesthetic improvements to the front-end.
 
 - [2017.04.12; Documentation; Furqan Akbar]: Completed translation for the
-  CIDRAM README documentation into Urdu. This totals 16 different language
+  phpMussel README documentation into Urdu. This totals 16 different language
   versions of the README documentation now available.
 
 - [2017.04.17; Sub-minor code change; Maikuolan]: Added internal language
@@ -344,8 +344,8 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   and specific commands when specific conditions are met when using the
   front-end updates page (installing, uninstalling components, etc). Added a
   configuration directive to modify the font magnification for the front-end
-  and the Access Denied page. Added information to the front-end homepage about
-  latest stable, unstable, and branch versions for CIDRAM and PHP.
+  and the Upload Denied page. Added information to the front-end homepage about
+  latest stable, unstable, and branch versions for phpMussel and PHP.
 
 - [2017.07.30; Minor code change; Maikuolan]: Added a configuration directive
   for specifying the preferred way to localise numbers when displaying numeric
