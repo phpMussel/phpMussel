@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.07.31).
+ * This file: Front-end handler (last modified: 2017.08.01).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -1208,8 +1208,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                                 '<code>' . $phpMussel['Components']['ThisTarget'] . '</code> – ' .
                                 '<code>' . $phpMussel['ThisFileName'] . '</code> – ' .
                                 $phpMussel['lang']['response_checksum_error'] . '<br />';
-                            if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['On Checksum Error'])) {
-                                $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['On Checksum Error']);
+                            if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Checksum Error'])) {
+                                $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['On Checksum Error']);
                             }
                             continue;
                         }
@@ -1264,13 +1264,13 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                         empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files'])
                     ) {
                         $phpMussel['FE']['state_msg'] .= $phpMussel['lang']['response_component_successfully_installed'];
-                        if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['When Install Succeeds'])) {
-                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['When Install Succeeds']);
+                        if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Succeeds'])) {
+                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Succeeds']);
                         }
                     } else {
                         $phpMussel['FE']['state_msg'] .= $phpMussel['lang']['response_component_successfully_updated'];
-                        if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['When Update Succeeds'])) {
-                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['When Update Succeeds']);
+                        if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Succeeds'])) {
+                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Succeeds']);
                         }
                     }
                     $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']] =
@@ -1283,12 +1283,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                         empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Version']) &&
                         empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Files'])
                     ) {
-                        if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['When Install Fails'])) {
-                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['When Install Fails']);
+                        if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Fails'])) {
+                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Install Fails']);
                         }
                     } else {
-                        if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['When Update Fails'])) {
-                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['When Update Fails']);
+                        if (!empty($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Fails'])) {
+                            $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['When Update Fails']);
                         }
                     }
                 }
