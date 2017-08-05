@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.07.31).
+ * This file: Functions file (last modified: 2017.08.05).
  */
 
 /**
@@ -4853,9 +4853,9 @@ $phpMussel['TimeFormat'] = function ($Time, $In) use (&$phpMussel) {
 /**
  * Normalises values defined by the YAML closure.
  *
- * @param string|int|bool The value to be normalised.
- * @param int The length of the value.
- * @param string|int|bool The value to be normalised, lowercased.
+ * @param string|int|bool $Value The value to be normalised.
+ * @param int $ValueLen The length of the value to be normalised.
+ * @param string|int|bool $ValueLow The value to be normalised, lowercased.
  */
 $phpMussel['YAML-Normalise-Value'] = function (&$Value, $ValueLen, $ValueLow) {
     if (substr($Value, 0, 1) === '"' && substr($Value, $ValueLen - 1) === '"') {
@@ -4880,7 +4880,7 @@ $phpMussel['YAML-Normalise-Value'] = function (&$Value, $ValueLen, $ValueLow) {
 };
 
 /**
- * A simplified YAML-like parser. Note: This is intended to be adequately serve
+ * A simplified YAML-like parser. Note: This is intended to adequately serve
  * the needs of this package in a way that should feel familiar to users of
  * YAML, but it isn't a true YAML implementation and it doesn't adhere to any
  * specifications, official or otherwise.
@@ -5363,7 +5363,7 @@ $phpMussel['FileManager-RecursiveList'] = function ($Base) use (&$phpMussel) {
     $Key = -1;
     $Offset = strlen($Base);
     $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);
-    foreach ($List as $Item => $List){
+    foreach ($List as $Item => $List) {
         $Key++;
         $ThisName = substr($Item, $Offset);
         if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Item, -3)))) {
@@ -5504,7 +5504,7 @@ $phpMussel['FileManager-IsDirEmpty'] = function ($Directory) {
 $phpMussel['Logs-RecursiveList'] = function ($Base) use (&$phpMussel) {
     $Arr = array();
     $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);
-    foreach ($List as $Item => $List){
+    foreach ($List as $Item => $List) {
         if (
             preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Item, -3))) ||
             !preg_match('~(?:logfile|\.(txt|log)$)~i', $Item) ||
@@ -5687,7 +5687,7 @@ $phpMussel['DirectoryRecursiveList'] = function ($Base) {
     $Key = -1;
     $Offset = strlen($Base);
     $List = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($Base), RecursiveIteratorIterator::SELF_FIRST);
-    foreach ($List as $Item => $List){
+    foreach ($List as $Item => $List) {
         if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace("\\", '/', substr($Item, -3))) || !is_readable($Item) || is_dir($Item)) {
             continue;
         }
