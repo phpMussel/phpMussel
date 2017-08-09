@@ -133,7 +133,7 @@ Devuelve algo como esto (como una cadena):
 
 Para una descripción completa del tipo de firmas phpMussel utiliza durante el escanear y la forma en que maneja estas firmas, consulte la sección formatos de firmas de este archivo README.
 
-Si se encuentra algún falsos positivos, si se encuentra con algo nuevo que crees que debería ser bloqueada, o para cualquier otra cosa en relación con las firmas, por favor contacto conmigo al respecto para que pueda hacer los cambios necesarios, para que, si no se comunica conmigo, posiblemente no necesariamente tener en cuenta.
+Si se encuentra algún falsos positivos, si se encuentra con algo nuevo que crees que debería ser bloqueada, o para cualquier otra cosa en relación con las firmas, por favor contacto conmigo al respecto para que pueda hacer los cambios necesarios, para que, si no se comunica conmigo, posiblemente no necesariamente tener en cuenta. *(Ver: [¿Qué es un "falso positivo"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 Para desactivar las firmas que se incluyen con phpMussel (por ejemplo, si usted está experimentando un falso positivo específico para sus propósitos que normalmente no debería ser suprimido), consulte las notas de la Greylist en la GESTIÓN DE FRONT-END sección de este archivo README.
 
@@ -597,6 +597,31 @@ Plantilla datos es relacionados a la HTML utilizado generar el "Subida Denegada"
 
 ### 8. <a name="SECTION8"></a>FORMATOS DE FIRMAS
 
+*Ver también:*
+- *[¿Qué es una "firma"?](#WHAT_IS_A_SIGNATURE)*
+
+Los primeros 9 bytes `[x0-x8]` de un archivo de firmas para phpMussel son `phpMussel`, y actuar como un "número mágico" (magic number), para identificarlos como archivos de firmas (esto ayuda a evitar que phpMussel accidentalmente intente utilizar archivos que no son archivos de firmas). El siguiente byte `[x9]` identifica el tipo de archivo de firma, que phpMussel debe conocer para poder interpretar correctamente el archivo de firmas. Se reconocen los siguientes tipos de archivos de firmas:
+
+Tipo | Byte | Descripción
+---|---|---
+`General_Command_Detections` | `0?` | Para archivos de firmas que usan CSV (valores separados por coma). Los valores (firmas) son cadenas codificadas hexadecimal para buscar dentro de los archivos. Las firmas aquí no tienen nombres ni otros detalles (sólo la cadena que se va a detectar).
+`Filename` | `1?` | Para firmas de nombre de archivo.
+`Hash` | `2?` | Para firmas hash.
+`Standard` | `3?` | Para archivos de firmas que trabajan directamente con el contenido del archivos.
+`Standard_RegEx` | `4?` | Para archivos de firmas que trabajan directamente con el contenido del archivos. Las firmas pueden contener expresiones regulares.
+`Normalised` | `5?` | Para archivos de firmas que funcionan con el contenido de archivos normalizados ANSI.
+`Normalised_RegEx` | `6?` | Para archivos de firmas que funcionan con el contenido de archivos normalizados ANSI. Las firmas pueden contener expresiones regulares.
+`HTML` | `7?` | Para archivos de firmas que funcionan con el contenido de archivos normalizados HTML.
+`HTML_RegEx` | `8?` | Para archivos de firmas que funcionan con el contenido de archivos normalizados HTML. Las firmas pueden contener expresiones regulares.
+`PE_Extended` | `9?` | Para archivos de firmas que trabajan con metadatos PE (distintos de los metadatos PE seccionales).
+`PE_Sectional` | `A?` | Para archivos de firmas que trabajan con metadatos PE seccionales.
+`Complex_Extended` | `B?` | Para archivos de firmas que trabajan con varias reglas basadas en metadatos extendidos generados por phpMussel.
+`URL_Scanner` | `C?` | Para archivos de firmas que trabajan con URLs.
+
+El siguiente byte `[x10]` es una nueva línea `[0A]`, y concluye el encabezado del archivo de firmas de phpMussel.
+
+Cada línea después de que no está vacía es una firma o regla. Cada firma o regla ocupa una línea. Los formatos de firmas soportados se describen a continuación.
+
 #### *FIRMAS BASADAS EN LAS NOMBRES DEL ARCHIVOS*
 Todas firmas basadas en las nombres del archivos seguir el formato:
 
@@ -604,12 +629,12 @@ Todas firmas basadas en las nombres del archivos seguir el formato:
 
 Donde NOMBRE es el nombre a citar para esa firma y FNRX es la regular expresión para cotejar nombres de archivos (sin codificar) con.
 
-#### *MD5 FIRMAS*
-Todos MD5 firmas seguir el formato:
+#### *HASH FIRMAS*
+Todos HASH firmas seguir el formato:
 
 `HASH:TAMAÑO:NOMBRE`
 
-Donde HASH es el hash MD5 de un entero archivo, TAMAÑO es el total tamaño de eso archivo y NOMBRE es el nombre a citar para esa firma.
+Donde HASH es el hash (usualmente MD5) de un entero archivo, TAMAÑO es el total tamaño de eso archivo y NOMBRE es el nombre a citar para esa firma.
 
 #### *PE SECCIÓNAL FIRMAS*
 Todos PE Secciónal firmas seguir el formato:
@@ -625,13 +650,6 @@ Todos PE extendidas firmas seguir el formato:
 
 Donde $VAR es el nombre de la PE variable para comprobar contra, HASH es el hash MD5 de esa variable, TAMAÑO es el total tamaño de esa variable y NOMBRE es el nombre de citar para esa firma.
 
-#### *WHITELIST FIRMAS*
-Todos Whitelist firmas seguir el formato:
-
-`HASH:TAMAÑO:TIPO`
-
-Donde HASH es el hash MD5 de un entero archivo, TAMAÑO es el total tamaño de eso archivo y TIPO es el tipo de firmas el archivo en la whitelist es estar inmune contra.
-
 #### *COMPLEJOS EXTENDIDAS FIRMAS*
 Complejos extendidas firmas son bastante diferentes a los otros tipos de firmas posibles con phpMussel, en que qué ellos son cotejando contra se especificado por las firmas ellos mismos y que ellos pueden cotejar contra múltiples criterios. La cotejar criterios están delimitados por ";" y la cotejar tipo y cotejar datos de cada cotejar criterio es delimitado por ":" como tal que formato para estas firmas tiene tendencia a aparecer como:
 
@@ -644,7 +662,7 @@ Todas las demás firmas seguir el formato:
 
 Donde NOMBRE es el nombre a citar para esa firma y HEX es un hexadecimal codificado segmento del archivo propuesto para ser comprobado por la firma dado. DESDE y PARA son opcionales parámetros, indicando desde cual y para cual posiciones en los datos de origen a cotejar contra.
 
-#### *REGEX*
+#### *REGEX (REGULAR EXPRESSIONS)*
 Cualquier forma de regex entendido y correctamente procesado por PHP también debe entenderse y procesado correctamente por phpMussel y sus firmas. Pero, yo sugeriría tomar mucho cuidado cuando escribiendo nuevas firmas basado en regex, porque, si no estás del todo seguro de lo que estás haciendo, puede haber altamente irregulares e/o inesperados resultados. Mirar el código fuente para phpMussel si no estás del todo seguro sobre el contexto de que las regex declaraciones son procesado. También, recordar que todos los patrones (con excepción para nombre de archivo, compactado archivo metadato y MD5 patrones) debe ser hexadecimal codificado (con excepción de la patrón sintaxis)!
 
 ---
@@ -730,11 +748,11 @@ Esta información ha sido actualizado 29 Agosto 2016 y es a hoy para todas las p
 
 ### 10. <a name="SECTION10"></a>PREGUNTAS MÁS FRECUENTES (FAQ)
 
-#### ¿Qué es una "firma"?
+#### <a name="WHAT_IS_A_SIGNATURE"></a>¿Qué es una "firma"?
 
 En el contexto de phpMussel, una "firma" se refiere a datos que actúan como un indicador/identificador para algo específico que estamos buscando, generalmente en la forma de algún segmento muy pequeño, distinto e inocuo de algo más grande y de otra manera nocivo, como un virus o un troyano, o en la forma de una suma de comprobación de archivo, hash u otro indicador de identificación similar, and usually includes a label, y generalmente incluye una etiqueta, y algunos otros datos para ayudar a proporcionar algún contexto adicional que puede ser utilizado por phpMussel para determinar la mejor manera de proceder cuando se encuentra con lo que estamos buscando.
 
-#### ¿Qué es un "falso positivo"?
+#### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>¿Qué es un "falso positivo"?
 
 El término "falso positivo" (*alternativamente: "error falso positivo"; "falsa alarma"*; Inglés: *false positive*; *false positive error*; *false alarm*), descrito muy simplemente, y en un contexto generalizado, se utiliza cuando se prueba para una condición, para referirse a los resultados de esa prueba, cuando los resultados son positivos (es decir, la condición se determina como "positivo", o "verdadero"), pero se espera que sean (o debería haber sido) negativo (es decir, la condición, en realidad, es "negativo", o "falso"). Un "falso positivo" podría considerarse análoga a "llorando lobo" (donde la condición que se está probando es si hay un lobo cerca de la manada, la condición es "falso" en el que no hay lobo cerca de la manada, y la condición se reporta como "positiva" por el pastor a modo de llamando "lobo, lobo"), o análogos a situaciones en las pruebas médicas donde un paciente es diagnosticado con alguna enfermedad o dolencia, cuando en realidad, no tienen tal enfermedad o dolencia.
 
@@ -868,4 +886,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Última Actualización: 29 Julio 2017 (2017.07.29).
+Última Actualización: 9 Agosto 2017 (2017.08.09).

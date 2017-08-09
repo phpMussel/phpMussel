@@ -133,7 +133,7 @@ Gibt so etwas wie dies (als ein String):
 
 Eine vollständige Liste der Signaturen, die phpMussel nutzt und wie diese verarbeitet werden, finden Sie im Abschnitt SIGNATURENFORMAT.
 
-Sollten irgendwelche Fehlalarme auftreten, Sie etwas entdecken, was Ihrer Meinung nach blockiert werden sollte oder etwas mit den Signaturen nicht funktionieren, so informieren Sie den Autor, damit die erforderlichen Änderungen durchgeführt werden können.
+Sollten irgendwelche Fehlalarme (oder "Falsch-Positivs") auftreten, Sie etwas entdecken, was Ihrer Meinung nach blockiert werden sollte oder etwas mit den Signaturen nicht funktionieren, so informieren Sie den Autor, damit die erforderlichen Änderungen durchgeführt werden können. *(Beziehen auf: [Was ist ein "Falsch-Positiv"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 Um die Signaturen, die in phpMussel enthalten sind, zu deaktivieren, lesen Sie bitte die Hinweise zum Greylisting im Abschnitt FRONT-END-MANAGEMENT.
 
@@ -597,6 +597,31 @@ Template-Daten bezieht sich auf die HTML-Ausgabe die verwendet wird, um die "Upl
 
 ### 8. <a name="SECTION8"></a>SIGNATURENFORMAT
 
+*Siehe auch:*
+- *[Was ist eine "Signatur"?](#WHAT_IS_A_SIGNATURE)*
+
+Die ersten 9 Bytes `[x0-x8]` einer phpMussel Signaturdatei sind `phpMussel`, und handeln als eine "Magische Zahl" (Magic Number), um sie als Signaturdateien zu identifizieren (dies hilft zu verhindern, dass phpMussel versehentlich versucht, Dateien zu verwenden, die keine Signaturdateien sind). Das nächste Byte `[x9]` identifiziert die Art der Signaturdatei, welche phpMussel wissen muss, um die Signaturdatei korrekt interpretieren zu können. Folgende Arten von Signaturdateien werden erkannt:
+
+Art | Byte | Beschreibung
+---|---|---
+`General_Command_Detections` | `0?` | Für CSV (comma separated values, Komma-getrennte Werte) Signaturdateien. Werte (Signaturen) sind hexadezimal-codierte Zeichenfolgen, um in Dateien zu suchen. Signaturen hier haben keine Namen oder andere Details (nur die Zeichenfolge zu erkennen).
+`Filename` | `1?` | Für Dateinamen-Signaturen.
+`Hash` | `2?` | Für Hash-Signaturen.
+`Standard` | `3?` | Für Signaturdateien, die direkt mit Dateiinhalten arbeiten.
+`Standard_RegEx` | `4?` | Für Signaturdateien, die direkt mit Dateiinhalten arbeiten. Signaturen können Reguläre Ausdrücke enthalten.
+`Normalised` | `5?` | Für Signaturdateien, die mit ANSI-normalisiertem Dateiinhalt arbeiten.
+`Normalised_RegEx` | `6?` | Für Signaturdateien, die mit ANSI-normalisiertem Dateiinhalt arbeiten. Signaturen können Reguläre Ausdrücke enthalten.
+`HTML` | `7?` | Für Signaturdateien, die mit HTML-normalisierte Dateiinhalte arbeiten.
+`HTML_RegEx` | `8?` | Für Signaturdateien, die mit HTML-normalisierte Dateiinhalte arbeiten. Signaturen können Reguläre Ausdrücke enthalten.
+`PE_Extended` | `9?` | Für Signaturdateien, die mit PE-Metadaten arbeiten (andere als PE-Sektional-Metadaten).
+`PE_Sectional` | `A?` | Für Signaturdateien, die mit PE-Sektional-Metadaten arbeiten.
+`Complex_Extended` | `B?` | Für Signaturdateien, die mit verschiedenen Regeln arbeiten, die auf erweiterten Metadaten basieren, die von phpMussel generiert wurden.
+`URL_Scanner` | `C?` | Für Signaturdateien, die mit URLs arbeiten.
+
+Das nächste Byte `[x10]` ist ein Zeilenumbruch `[0A]`, und schließt den phpMussel-Signaturdatei-Header ab.
+
+Jede nicht leere Zeile ist danach eine Signatur oder Regel. Jede Signatur oder Regel belegt eine Zeile. Die unterstützten Signaturformate werden nachfolgend beschrieben.
+
 #### *DATEINAMEN-SIGNATUREN*
 Alle Dateinamen-Signaturen besitzen folgendes Format:
 
@@ -604,12 +629,12 @@ Alle Dateinamen-Signaturen besitzen folgendes Format:
 
 NAME ist der Name, um die Signatur zu benennen und FNRX ist das Regex-Erkennungsmuster zum Vergleich von (nicht kodierten) Dateinamen.
 
-#### *MD5-SIGNATUREN*
-Alle MD5-Signaturen besitzen folgendes Format:
+#### *HASH-SIGNATUREN*
+Alle Hash-Signaturen besitzen folgendes Format:
 
 `HASH:FILESIZE:NAME`
 
-HASH ist der MD5-Hash der ganzen Datei, FILESIZE ist die gesamte Größe der Datei und NAME ist der Name, um die Signatur zu benennen.
+HASH ist der Hash (in der Regel MD5) der ganzen Datei, FILESIZE ist die gesamte Größe der Datei und NAME ist der Name, um die Signatur zu benennen.
 
 #### *PE-SECTIONAL-SIGNATUREN*
 Alle PE-Sectional-Signaturen besitzen folgendes Format:
@@ -625,12 +650,6 @@ Alle PE-Erweitert-Signaturen besitzen folgendes Format:
 
 Wo $VAR der Name der zu prüfenden PE-Variable ist, HASH ist der MD5-Hash von dieser Variable, SIZE ist die gesamte Größe von dieser Variable und NAME ist der Name für diese Signatur.
 
-#### *WHITELIST-SIGNATUREN*
-Alle Whitelist-Signaturen besitzen folgendes Format:
-`HASH:FILESIZE:NAME`
-
-HASH ist der MD5-Hash der ganzen Datei, FILESIZE ist die gesamte Größe der Datei und TYPE ist der Signaturtyp der whitegelisteten Datei, gegen die sie immun ist.
-
 #### *KOMPLEX-ERWEITERT-SIGNATUREN*
 Komplex-Erweitert-Signaturen sind ziemlich unterschiedlich zu anderen Arten von möglichen Signaturen für phpMussel. Insofern, dass sie gegen das übereinstimmen was die Signaturen spezifizieren und das können mehrere Kriterien sein. Die Übereinstimmungs-Kriterien werden durch ";" getrennt und der Übereinstimmungs-Typ und die Übereinstimmungs-Daten jedes Übereinstimmungskriteriums ist durch ":" getrennt sodass das Format für diese Signaturen in etwa so aussieht:
 
@@ -643,7 +662,7 @@ Alle sonstigen Signaturen besitzen folgendes Format:
 
 NAME ist der Name, um die Signatur zu benennen und HEX ist ein hexidezimal-kodiertes Segment der Datei, welches mit der gegebenen Signatur geprüft werden soll. FROM und TO sind optionale Parameter, sie geben Start- und Endpunkt in den Quelldaten zur Überprüfung an.
 
-#### *REGEX*
+#### *REGEX (REGULAR EXPRESSIONS)*
 Jede Form von regulären Ausdrücken, die von PHP verstanden und korrekt ausgeführt werden, sollten auch von phpMussel und den Signaturen verstanden und korrekt ausgeführt werden können. Lassen Sie extreme Vorsicht walten, wenn Sie neue Signaturen schreiben, die auf regulären Ausdrücken basieren. Wenn Sie nicht absolut sicher sind, was Sie dort machen, kann dies zu nicht korrekten und/oder unerwarteten Ergebnissen führen. Schauen Sie im Quelltext von phpMussel nach, wenn Sie sich nicht absolut sicher sind, wie die regulären Ausdrücke verarbeitet werden. Beachten Sie bitte, dass alle Suchmuster (außer Dateinamen, Archive-Metadata and MD5-Prüfmuster) hexadezimal kodiert sein müssen (mit Ausnahme von Syntax, natürlich)!
 
 ---
@@ -729,11 +748,11 @@ Diese Informationen wurden zuletzt am 29. August 2016 aktualisiert und gelten f�
 
 ### 10. <a name="SECTION10"></a>HÄUFIG GESTELLTE FRAGEN (FAQ)
 
-#### Was ist eine "Signatur"?
+#### <a name="WHAT_IS_A_SIGNATURE"></a>Was ist eine "Signatur"?
 
 Im Kontext von phpMussel, eine "Signatur" bezieht sich auf Daten, die als Indikator/Identifikator fungieren, für etwas Bestimmtes das wir suchen, in der Regel in Form eines sehr kleinen, deutlichen, unschädlichen Segments von etwas Größerem und sonst schädlich, so wie ein Virus oder Trojaner, oder in Form einer Datei-Prüfsumme, Hash oder einer anderen identifizierenden Indikator, und enthält in der Regel ein Label, und einige andere Daten zu helfen, zusätzliche Kontext, die von phpMussel verwendet werden können, um den besten Weg zu bestimmen, wenn es aufsieht was wir suchen.
 
-#### Was ist ein "Falsch-Positiv"?
+#### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>Was ist ein "Falsch-Positiv"?
 
 Der Begriff "Falsch-Positiv" (*Alternative: "falsch-positiv Fehler"; "falscher Alarm"*; Englisch: *false positive*; *false positive error*; *false alarm*), sehr einfach beschrieben, und in einem verallgemeinerten Kontext, verwendet wird, wenn eine Bedingung zu testen und wenn die Ergebnisse positiv sind, um die Ergebnisse dieser Tests zu entnehmen (dh, die Bedingung bestimmt wird positiv oder wahr), aber sind zu erwarten sein (oder sollte gewesen) negativ (dh, der Zustand, in Wirklichkeit, ist negativ oder falsch). Eine "Falsch-Positiv" könnte analog zu "weinen Wolf" betrachtet (wobei die Bedingung geprüft wird, ob es ein Wolf in der Nähe der Herde ist, die Bedingung "falsch" ist in dass es keinen Wolf in der Nähe der Herde, und die Bedingung wird als "positiv" berichtet durch die Schäfer durch Aufruf "Wolf, Wolf"), oder analog zu Situationen in medizinischen Tests, wobei ein Patient als mit eine Krankheit diagnostiziert, wenn sie in Wirklichkeit haben sie keine solche Krankheit.
 
@@ -867,4 +886,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Zuletzt aktualisiert: 29 Juli 2017 (2017.07.29).
+Zuletzt aktualisiert: 9 August 2017 (2017.08.09).

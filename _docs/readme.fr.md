@@ -133,7 +133,7 @@ Retours quelque chose comme ça (comme une string):
 
 Pour un complet itinéraire de signatures que sera utilisé par phpMussel pour l'analyse et la façon dont il gère ces signatures, référer à la Signature Format section de ce fichier README.
 
-Si vous rencontrez des faux positifs, si vous rencontrez quelque chose nouveau que vous pensez doit être bloqué, ou pour toute autre chose en ce qui concerne les signatures, s'il vous plaît, contactez moi à ce sujet afin que je puisse effectuer les nécessaires changements, dont, si vous ne contactez moi pas, j'ai peut n'être pas conscient.
+Si vous rencontrez des faux positifs, si vous rencontrez quelque chose nouveau que vous pensez doit être bloqué, ou pour toute autre chose en ce qui concerne les signatures, s'il vous plaît, contactez moi à ce sujet afin que je puisse effectuer les nécessaires changements, dont, si vous ne contactez moi pas, j'ai peut n'être pas conscient. *(Voir : [Qu'est-ce qu'un « faux positif »?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 Pour désactiver les signatures qui sont incluent avec phpMussel (comme si vous rencontrez un faux positif spécifique à vos besoins dont ne devrait normalement pas être retiré à partir de rationaliser), référer aux les notes de la liste grise dans la GESTION L'ACCÈS FRONTAL section de ce fichier README.
 
@@ -597,6 +597,31 @@ Modèles données est liée à la sortie HTML utilisé pour générer le message
 
 ### 8. <a name="SECTION8"></a>FORMATS DE SIGNATURES
 
+*Voir également :*
+- *[Qu'est-ce qu'une « signature »?](#WHAT_IS_A_SIGNATURE)*
+
+Les 9 premiers octets `[x0-x8]` d'un fichier des signatures de phpMussel sont `phpMussel`, et agir comme un "numéro magique" (magic number), afin de les identifier en tant que fichiers de signature (cela aide à empêcher phpMussel de tenter accidentellement d'utiliser des fichiers qui ne sont pas des fichiers de signature). L'octet suivant `[x9]` identifie le type de fichier des signatures, que phpMussel doit savoir pour pouvoir interpréter correctement le fichier de signatures. Les types de fichiers de signatures suivants sont reconnus:
+
+Type | Octet | Description
+---|---|---
+`General_Command_Detections` | `0?` | Pour les fichiers de signatures utilisant CSV (valeurs séparées par des virgules). Les valeurs (signatures) sont des chaînes codées en hexadécimal pour rechercher dans les fichiers. Les signatures ici n'ont aucun nom ou d'autres détails (seulement la chaîne à détecter).
+`Filename` | `1?` | Pour les signatures des noms de fichiers.
+`Hash` | `2?` | Pour les signatures de hachage.
+`Standard` | `3?` | Pour les fichiers de signatures qui fonctionnent directement avec le contenu du fichiers.
+`Standard_RegEx` | `4?` | Pour les fichiers de signatures qui fonctionnent directement avec le contenu du fichiers. Les signatures peuvent contenir des expressions régulières.
+`Normalised` | `5?` | Pour les fichiers de signatures qui fonctionnent avec le contenu de fichiers normalisés par ANSI.
+`Normalised_RegEx` | `6?` | Pour les fichiers de signatures qui fonctionnent avec le contenu de fichiers normalisés par ANSI. Les signatures peuvent contenir des expressions régulières.
+`HTML` | `7?` | Pour les fichiers de signatures qui fonctionnent avec le contenu de fichiers normalisés par HTML.
+`HTML_RegEx` | `8?` | Pour les fichiers de signatures qui fonctionnent avec le contenu de fichiers normalisés par HTML. Les signatures peuvent contenir des expressions régulières.
+`PE_Extended` | `9?` | Pour les fichiers de signatures qui fonctionnent avec des métadonnées PE (autres que les métadonnées PE sectional).
+`PE_Sectional` | `A?` | Pour les fichiers de signatures qui fonctionnent avec des métadonnées PE sectional.
+`Complex_Extended` | `B?` | Pour les fichiers de signatures qui fonctionnent avec diverses règles basées sur les métadonnées étendues générées par phpMussel.
+`URL_Scanner` | `C?` | Pour les fichiers de signatures qui fonctionnent avec les URLs.
+
+L'octet suivant `[x10]` est une nouvelle ligne `[0A]`, et conclut l'en-tête du fichier des signatures de phpMussel.
+
+Chaque ligne non vide par la suite est une signature ou une règle. Chaque signature ou règle occupe une seule ligne. Les formats de signatures supportées sont décrits ci-dessous.
+
 #### *SIGNATURES POUR LES NOMS DE FICHIERS*
 Toutes les signatures pour les noms de fichiers suivez le format:
 
@@ -604,12 +629,12 @@ Toutes les signatures pour les noms de fichiers suivez le format:
 
 Où NOM est le nom à citer pour la signature et FNRX est l'expression rationnelle pour faire correspondre les (non codé) noms de fichiers.
 
-#### *MD5 SIGNATURES*
-Toutes les signatures MD5 suivez le format:
+#### *SIGNATURES HASH*
+Toutes les signatures HASH suivez le format:
 
 `HASH:TAILLE:NOM`
 
-Où HASH est le hachage MD5 d'un ensemble du fichier, TAILLE est la totale taille du fichier et NOM est le nom à citer pour la signature.
+Où HASH est le hachage (généralement MD5) d'un ensemble du fichier, TAILLE est la totale taille du fichier et NOM est le nom à citer pour la signature.
 
 #### *SIGNATURES PE SECTIONAL*
 Toutes les signatures PE Sectional suivez le format:
@@ -625,13 +650,6 @@ Toutes les signatures PE étendues suivez le format:
 
 Où $VAR est le nom de la PE variable à comparer contre, HASH est le MD5 hachage de cette variable, TAILLE est la taille totale de cette variable et NOM est le nom de à pour cette signature.
 
-#### *BLANCHE LISTE SIGNATURES*
-Toutes les signatures blanche liste suivez le format:
-
-`HASH:TAILLE:TYPE`
-
-Où HASH est le hachage MD5 d'un ensemble du fichier, TAILLE est la totale taille du fichier et TYPE est le type de signatures le listé blanche fichier est d'être immunitaire contre.
-
 #### *SIGNATURES COMPLEXES ÉTENDUES*
 Signatures complexes étendues sont assez différentes pour les autres types de signatures possible avec phpMussel, dans que ce qu'ils vérifient contre est spécifié par les signatures elles-mêmes et ils peuvent vérifier contre plusieurs critères. Les critères sont délimitées par « ; » et le type et les données de chacun critères est délimitée par « : » comme ainsi le format de ces signatures tendances à semble un peu comme:
 
@@ -644,7 +662,7 @@ Toutes les autres signatures suivez le format:
 
 Où NOM est le nom à citer pour la signature et HEX est un hexadécimal codé segment du fichier destiné à être identifié par la signature donnée. FROM et TO sont optionnel paramètres, indication de laquelle et à laquelle les positions dans les source données pour vérifier contre.
 
-#### *REGEX*
+#### *REGEX (REGULAR EXPRESSIONS)*
 Toute forme de regex comprise et préparé correctement par PHP devrait aussi être correctement compris et préparé par phpMussel et ses signatures. Mais, je vous suggère de prendre une extrême prudence lors de l'écriture de nouvelles regex basé signatures, parce, si vous n'êtes pas entièrement sûr de ce que vous faites, il peut y avoir très irréguliers et/ou inattendus résultats. Jetez un oeil à la phpMussel source code si vous n'êtes pas entièrement sûr sur le contexte dans lequel regex déclarations sont analysés. Aussi, rappeler toutes les déclarations (à l'exception de nom de fichier, métadonnées d'archives et MD5 déclarations) doit être de codé de hexadécimale (à l'exception de déclaration syntaxe, bien sûr) !
 
 ---
@@ -730,11 +748,11 @@ Cette information a été mise à jour le 29 Août 2016 et est courant pour tout
 
 ### 10. <a name="SECTION10"></a>QUESTIONS FRÉQUEMMENT POSÉES (FAQ)
 
-#### Qu'est-ce qu'une « signature »?
+#### <a name="WHAT_IS_A_SIGNATURE"></a>Qu'est-ce qu'une « signature »?
 
 Dans le contexte de phpMussel, une « signature » réfère à les données qui servent comme d'indicateur ou d'identifiant pour quelque chose spécifique que nous recherchons, généralement sous la forme d'un segment très petit, distinct et inoffensif de quelque chose plus grand et autrement nuisible, comme un virus ou un trojan, ou sous la forme d'une somme de contrôle, d'un hash ou d'un autre indicateur d'identification similaire, et généralement comprend une étiquette, et d'autres données pour aider à fournir certains contexte supplémentaire qui peut être utilisé par phpMussel pour déterminer la meilleure façon de procéder quand il rencontre ce que nous recherchons.
 
-#### Qu'est-ce qu'un « faux positif »?
+#### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>Qu'est-ce qu'un « faux positif »?
 
 Le terme « faux positif » (*alternativement : « erreur faux positif » ; « fausse alarme »* ; Anglais : *false positive* ; *false positive error* ; *false alarm*), décrit très simplement, et dans un contexte généralisé, est utilisé lors de tester pour une condition, de se référer aux résultats de ce test, lorsque les résultats sont positifs (c'est à dire, lorsque la condition est déterminée comme étant « positif », ou « vrai »), mais ils devraient être (ou aurait dû être) négatif (c'est à dire, lorsque la condition, en réalité, est « négatif », ou « faux »). Un « faux positif » pourrait être considérée comme analogue à « crier au loup » (où la condition testée est de savoir s'il y a un loup près du troupeau, la condition est « faux » en ce que il n'y a pas de loup près du troupeau, et la condition est signalé comme « positif » par le berger par voie de crier « loup ! loup ! »), ou analogues à des situations dans des tests médicaux dans lequel un patient est diagnostiqué comme ayant une maladie, alors qu'en réalité, ils ont pas une telle maladie.
 
@@ -868,4 +886,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Dernière mise à jour : 29 Juillet 2017 (2017.07.29).
+Dernière mise à jour : 9 Août 2017 (2017.08.09).
