@@ -133,7 +133,7 @@ Retorna algo tal como esta (como uma string):
 
 Por completos detalhes sobre que tipo de assinaturas phpMussel usa durante a análise e como ele usa essas assinaturas, consulte a formatos de assinaturas seção deste arquivo README.
 
-Se você encontrar quaisquer falsos positivos, se você encontrar algo novo que você acha deve ser bloqueado, ou para qualquer outra coisa com relação a assinatura, entre em contato comigo sobre isso para que eu possa fazer as mudanças necessárias, que, se você não entrar em contato comigo, eu posso não ser necessariamente conscientes de.
+Se você encontrar quaisquer falsos positivos, se você encontrar algo novo que você acha deve ser bloqueado, ou para qualquer outra coisa com relação a assinatura, entre em contato comigo sobre isso para que eu possa fazer as mudanças necessárias, que, se você não entrar em contato comigo, eu posso não ser necessariamente conscientes de. *(Vejo: [O que é um "falso positivo"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 Para desativar as assinaturas que estão incluídos com phpMussel (tal como se você está experimentando falsos positivos específico para seus fins que não deve normalmente ser removidos da agilize), consulte as notas sobre Greylisting dentro de seção GESTÃO DE FRONT-END deste arquivo README.
 
@@ -597,40 +597,58 @@ Template dados está associada com o HTML usado para gerar a "Carregar Negado" m
 
 ### 8. <a name="SECTION8"></a>FORMATOS DE ASSINATURAS
 
-#### *ARQUIVO NOME ASSINATURAS*
-Todas as arquivo nome assinaturas seguir o formato:
+*Veja também:*
+- *[O que é uma "assinatura"?](#WHAT_IS_A_SIGNATURE)*
+
+Os primeiros 9 bytes `[x0-x8]` de um arquivo de assinaturas para phpMussel são `phpMussel`, e atua como um "número mágico" (magic number), para identificá-los como arquivos de assinaturas (isso ajuda a evitar que o phpMussel tente acidentalmente usar arquivos que não sejam arquivos de assinaturas). O próximo byte `[x9]` identifica o tipo de arquivo de assinaturas, que phpMussel deve saber para poder interpretar corretamente o arquivo de assinaturas. Os seguintes tipos de arquivos de assinaturas são reconhecidos:
+
+Tipo | Byte | Descrição
+---|---|---
+`General_Command_Detections` | `0?` | Para arquivos de assinaturas usando CSV (valores separados por vírgula). Valores (assinaturas) são cadeias codificadas em hexadecimal para procurar dentro de arquivos. As assinaturas aqui não têm nenhum nome ou outros detalhes (apenas a cadeia a ser detectada).
+`Filename` | `1?` | Para assinaturas do nomes de arquivos.
+`Hash` | `2?` | Para assinaturas de hash.
+`Standard` | `3?` | Para arquivos de assinaturas que funcionam diretamente com o conteúdos de arquivos.
+`Standard_RegEx` | `4?` | Para arquivos de assinaturas que funcionam diretamente com o conteúdos de arquivos. As assinaturas podem conter expressões regulares.
+`Normalised` | `5?` | Para arquivos de assinatura que funcionam com o conteúdos de arquivos normalizado para ANSI.
+`Normalised_RegEx` | `6?` | Para arquivos de assinatura que funcionam com o conteúdos de arquivos normalizado para ANSI. As assinaturas podem conter expressões regulares.
+`HTML` | `7?` | Para arquivos de assinatura que funcionam com o conteúdos de arquivos normalizado para HTML.
+`HTML_RegEx` | `8?` | Para arquivos de assinatura que funcionam com o conteúdos de arquivos normalizado para HTML. As assinaturas podem conter expressões regulares.
+`PE_Extended` | `9?` | Para arquivos de assinaturas que funcionam com os metadados de archivos PE (mas não com metadados seccionais PE).
+`PE_Sectional` | `A?` | Para arquivos de assinaturas que funcionam com metadados seccionais PE.
+`Complex_Extended` | `B?` | Para arquivos de assinaturas que funcionam com várias regras com base em metadados expandidos gerados pelo phpMussel.
+`URL_Scanner` | `C?` | Para arquivos de assinaturas que funcionam com URLs.
+
+O próximo byte `[x10]` é uma nova linha `[0A]`, e conclui o cabeçalho do arquivo de assinaturas para phpMussel.
+
+Cada linha não vazia depois disso é uma assinatura ou regra. Cada assinatura ou regra ocupa uma linha. Os formatos de assinatura suportados são descritos abaixo.
+
+#### *ASSINATURAS DE ARQUIVO NOME*
+Todas as assinaturas de arquivo nome seguir o formato:
 
 `NOME:FNRX`
 
 Onde NOME é o nome para citar por essa assinatura e FNRX é o regex para verificar arquivos nomes (não codificados) contra.
 
-#### *MD5 ASSINATURAS*
-Todas as MD5 assinaturas seguir o formato:
+#### *ASSINATURAS HASH*
+Todas as assinaturas hash seguir o formato:
 
 `HASH:TAMANHO:NOME`
 
-Onde HASH é o hash MD5 de um inteiro arquivo, TAMANHO é o total tamanho do arquivo e NOME é o nome para citar por essa assinatura.
+Onde HASH é o hash (geralmente MD5) de um inteiro arquivo, TAMANHO é o total tamanho do arquivo e NOME é o nome para citar por essa assinatura.
 
-#### *PE SECCIONAL ASSINATURAS*
-Todas as PE Seccional assinaturas seguir o formato:
+#### *ASSINATURAS PE SECCIONAL*
+Todas as assinaturas PE Seccional seguir o formato:
 
 `TAMANHO:HASH:NOME`
 
 Onde HASH é o hash MD5 de uma secção do PE arquivo, TAMANHO é o total tamanho da secção e NOME é o nome para citar por essa assinatura.
 
-#### *PE ESTENDIDAS ASSINATURAS*
-Todas as PE estendidas assinaturas seguir o formato:
+#### *ASSINATURAS PE ESTENDIDAS*
+Todas as assinaturas PE estendidas seguir o formato:
 
 `$VAR:HASH:TAMANHO:NOME`
 
 Onde $VAR é o nome da PE variável para verificar contra, HASH é o MD5 dessa variável, TAMANHO é o tamanho total dessa variável e NOME é o nome para citar por essa assinatura.
-
-#### *WHITELIST ASSINATURAS*
-Todas as Whitelist assinaturas seguir o formato:
-
-`HASH:TAMANHO:TYPE`
-
-Onde HASH é o hash MD5 de um inteiro arquivo, TAMANHO é o total tamanho do arquivo e TYPE é o tipo de assinaturas o arquivo é ser imune contra.
 
 #### *COMPLEXOS ESTENDIDAS ASSINATURAS*
 Complexos estendidas assinaturas são bastante diferente para os outros tipos de assinaturas possíveis com phpMussel em que o que eles estão verificando contra é especificado pelas assinaturas e eles podem verificar contra vários critérios. Os critérios de verificação são delimitados por ";" e o verificação tipo e os verificação dados de cada verificação critérios é delimitados por ":" como assim que o formato por estas assinaturas tende a olhar um pouco assim:
@@ -644,7 +662,7 @@ Todas as outras assinaturas seguir o formato:
 
 Onde NOME é o nome para citar por essa assinatura e HEX é um hexadecimal codificado segmento do arquivo intentado a ser correspondido pela dado assinatura. TO e FROM são opcionais parâmetros, indicando de onde e para quais posições nos origem dados para verificar contra.
 
-#### *REGEX*
+#### *REGEX (REGULAR EXPRESSIONS)*
 Qualquer forma de regex compreendido e processado corretamente pelo PHP também deve ser correctamente compreendido e processado por phpMussel e suas assinaturas. Mas, eu sugiro tomar extremo cuidado quando escrevendo novas assinaturas baseadas regex, porque, se você não está inteiramente certo do que está fazendo, isto pode tem altamente irregulares e inesperadas resultados. Olha para o código-fonte de phpMussel Se você não está totalmente certo sobre o contexto em que as regex declarações são processada. Além, lembre-se que todos isso (com exceção para arquivo nome, compactado arquivo metadados, MD5 a sintaxe) deve ser codificado hexadecimalmente!
 
 ---
@@ -730,11 +748,11 @@ Esta informação foi atualizada dia 29 Agosto 2016 e é corrente para todas php
 
 ### 10. <a name="SECTION10"></a>PERGUNTAS MAIS FREQUENTES (FAQ)
 
-#### O que é uma "assinatura"?
+#### <a name="WHAT_IS_A_SIGNATURE"></a>O que é uma "assinatura"?
 
 No contexto do phpMussel, uma "assinatura" refere-se a dados que actuam como um indicador/identificador para algo específico que estamos procurando, geralmente sob a forma de um segmento muito pequeno, distinto e inócuo de algo maior e em caso contrário prejudiciais, como um vírus ou um trojan, ou na forma de um checksum de arquivo, hash, ou outro indicador de identificação semelhante, e geralmente inclui uma etiqueta, e alguns outros dados para ajudar a fornecer contexto adicional que pode ser usado por phpMussel para determinar a melhor maneira de proceder quando ele encontra o que estamos procurando.
 
-#### O que é um "falso positivo"?
+#### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>O que é um "falso positivo"?
 
 O termo "falso positivo" (*alternativamente: "erro de falso positivo"; "alarme falso"*; Inglês: *false positive*; *false positive error*; *false alarm*), descrita de maneira muito simples, e num contexto generalizado, são usadas quando testando para uma condição, para se referir aos resultados desse teste, quando os resultados são positivos (isto é, a condição é determinada para ser "positivo", ou "verdadeiro"), mas espera-se que seja (ou deveria ter sido) negativo (isto é, a condição, na realidade, é "negativo", ou "falso"). Um "falso positivo" pode ser considerado análogo ao "chorando lobo" (em que a condição que está sendo testada é se existe um lobo perto do rebanho, a condição é "falso" em que não há nenhum lobo perto do rebanho, ea condição é relatada como "positivo" pelo pastor por meio de gritando "lobo, lobo"), ou análoga a situações em exames médicos em que um paciente é diagnosticado como tendo alguma doença quando, na realidade, eles não têm essa doença.
 
@@ -868,4 +886,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Última Atualização: 29 Julho 2017 (2017.07.29).
+Última Atualização: 9 Agosto 2017 (2017.08.09).

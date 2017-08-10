@@ -101,7 +101,7 @@ Echter, u bent ook in staat om te instrueren phpMussel om te scannen specifiek b
 
 `$phpMussel['Scan']($what_to_scan, $output_type, $output_flatness);`
 
-- `$what_to_scan` kunt worden een tekenreeks, een array, of een array van arrays, en vermelding welk bestand, bestanden, bestandsmap en/of bestandsmappen om scannen.
+- `$what_to_scan` kunt worden een string, een array, of een array van arrays, en vermelding welk bestand, bestanden, bestandsmap en/of bestandsmappen om scannen.
 - `$output_type` is een boolean, met vermelding van het formaat voor de scanresultaten te worden geretourneerd als. `false` instrueert de functie om de resultaten als een integer retourneer. `true` instrueert de functie om de resultaten als leesbare tekst retourneer. Bovendien, in elk geval, de resultaten kunnen worden geraadpleegd via globale variabelen na het scannen is voltooid. Deze variabele is optioneel, voorgedefinieerd als `false`. Deze integer resultaten worden hieronder beschreven:
 
 | Resultaten | Beschrijving |
@@ -113,7 +113,7 @@ Echter, u bent ook in staat om te instrueren phpMussel om te scannen specifiek b
 | 1 | Betekent dat het doel met succes werden gescand en geen problemen gedetecteerd. |
 | 2 | Betekent dat het doel met succes werd gescand en problemen werden gedetecteerd. |
 
-- `$output_flatness` is een boolean, vermelding van de functie of de resultaten van de scan retourneren (wanneer er meerdere scandoelen) als een array of een tekenreeks. `false` zullen de resultaten als een array retourneer. `true` zullen de resultaten als een tekenreeks retourneer. Deze variabele is optioneel, voorgedefinieerd als `false`.
+- `$output_flatness` is een boolean, vermelding van de functie of de resultaten van de scan retourneren (wanneer er meerdere scandoelen) als een array of een string. `false` zullen de resultaten als een array retourneer. `true` zullen de resultaten als een string retourneer. Deze variabele is optioneel, voorgedefinieerd als `false`.
 
 Voorbeeld:
 
@@ -122,7 +122,7 @@ Voorbeeld:
  echo $results;
 ```
 
-Retourneren iets als dit (als een tekenreeks):
+Retourneren iets als dit (als een string):
 
 ```
  Wed, 16 Sep 2013 02:49:46 +0000 Gestart.
@@ -133,7 +133,7 @@ Retourneren iets als dit (als een tekenreeks):
 
 Voor een volledige beschrijving van de soorten van de signatures gebruikt door phpMussel tijdens de scans en hoe het omgaat met deze signatures, raadpleeg de Signature Formaat sectie van dit README bestand.
 
-Als u tegenkomen valse positieven, als u iets nieuws tegenkomen waarvan u denkt dat zou moeten geblokkeerd worden, of voor iets anders met betrekking tot signatures, neem dan contact met mij over het zo dat ik de noodzakelijke veranderingen kunnen maken, die, als u niet contact met mij over, ik zou niet per se bewust van.
+Als u tegenkomen valse positieven, als u iets nieuws tegenkomen waarvan u denkt dat zou moeten geblokkeerd worden, of voor iets anders met betrekking tot signatures, neem dan contact met mij over het zo dat ik de noodzakelijke veranderingen kunnen maken, die, als u niet contact met mij over, ik zou niet per se bewust van. *(Zien: [Wat is een "vals positieve"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 Voor uitschakelen om de signatures die bij phpMussel (zoals als u het ervaren van een vals positief specifiek voor uw doeleinden dat mag niet normaal van stroomlijn worden verwijderd), raadpleeg de greylisting aantekeningen binnen de FRONTEND MANAGEMENT sectie van dit README bestand.
 
@@ -415,7 +415,7 @@ Algemene configuratie voor phpMussel.
 Configuratie voor signatures.
 
 "Active"
-- Een lijst van de actief signature-bestanden, gescheiden door komma's.
+- Een lijst van de actief signature bestanden, gescheiden door komma's.
 
 "fail_silently"
 - Moet phpMussel rapporteren wanneer signatures bestanden zijn ontbrekend of beschadigd? Als `fail_silently` is uitgeschakeld, ontbrekende en beschadigde bestanden zal worden gerapporteerd op het scannen, en als `fail_silently` is ingeschakeld, ontbrekende en beschadigde bestanden zal zijn genegeerd, met het scannen rapporten voor het bestanden die er geen problemen. Dit moet in het algemeen met rust gelaten worden tenzij u ervaart mislukt of soortgelijke problemen. False = Uitgeschakeld; True = Ingeschakeld [Standaard].
@@ -597,6 +597,31 @@ Sjabloongegevens betreft op de HTML-uitvoer die wordt gegenereerd en gebruikt vo
 
 ### 8. <a name="SECTION8"></a>SIGNATURE FORMAAT
 
+*Zie ook:*
+- *[Wat is een "signature"?](#WHAT_IS_A_SIGNATURE)*
+
+De eerste 9 bytes `[x0-x8]` van een phpMussel signature bestand zijn `phpMussel`, en fungeren als een "magisch nummer" (magic number), om ze te identificeren als signature bestanden (dit helpt om te voorkomen dat phpMussel per ongeluk probeert bestanden te gebruiken die geen signature bestanden zijn). De volgende byte `[x9]` identificeert het type signature bestand, dat phpMussel moet weten om het signature bestand correct te kunnen interpreteren. De volgende typen signature bestanden worden herkend:
+
+Type | Byte | Beschrijving
+---|---|---
+`General_Command_Detections` | `0?` | Voor CSV (komma gescheiden waarden) signature bestanden. Waarden (signatures) zijn hexadecimale gecodeerde strings om te zoeken naar bestanden. Signatures hier hebben geen namen of andere details (alleen de string die wordt gedetecteerd).
+`Filename` | `1?` | Voor bestandsnaam signatures.
+`Hash` | `2?` | Voor hash signatures.
+`Standard` | `3?` | Voor signature bestanden die direct met de inhoud van het bestand werken.
+`Standard_RegEx` | `4?` | Voor signature bestanden die direct met de inhoud van het bestand werken. Signatures kunnen reguliere expressies bevatten.
+`Normalised` | `5?` | Voor signature bestanden die werken met ANSI-genormaliseerde bestandsinhoud.
+`Normalised_RegEx` | `6?` | Voor signature bestanden die werken met ANSI-genormaliseerde bestandsinhoud. Signatures kunnen reguliere expressies bevatten.
+`HTML` | `7?` | Voor signature bestanden die werken met HTML-genormaliseerde bestandsinhoud.
+`HTML_RegEx` | `8?` | Voor signature bestanden die werken met HTML-genormaliseerde bestandsinhoud. Signatures kunnen reguliere expressies bevatten.
+`PE_Extended` | `9?` | Voor signature bestanden die werken met PE metadata (andere dan PE sectionele metadata).
+`PE_Sectional` | `A?` | Voor signature bestanden die werken met PE sectionele metadata.
+`Complex_Extended` | `B?` | Voor signature bestanden die werken met verschillende regels op basis van uitgebreide metadata die gegenereerd worden door phpMussel.
+`URL_Scanner` | `C?` | Voor signature bestanden die werken met URL's.
+
+De volgende byte `[x10]` is een nieuwe lijn `[0A]`, en concludeert de phpMussel signature bestand header.
+
+Elke lijn daarna die niet lege is een signature of regel. Elke signature of regel bevat één lijn. De ondersteunde signature formaten worden hieronder beschreven.
+
 #### *BESTANDSNAAM SIGNATURES*
 Alle bestandsnaam signatures volgt het formaat:
 
@@ -604,12 +629,12 @@ Alle bestandsnaam signatures volgt het formaat:
 
 Waar NAME is de naam te noemen voor dat signature en FNRX is de reguliere expressie patroon om bestandsnamen (ongecodeerde) te controleer tegen.
 
-#### *MD5 SIGNATURES*
-Alle MD5 signatures volgt het formaat:
+#### *HASH SIGNATURES*
+Alle HASH signatures volgt het formaat:
 
 `HASH:FILESIZE:NAME`
 
-Waar HASH is de MD5 hash van een hele bestand, FILESIZE is de totale grootte van het bestand en NAME is de naam te noemen voor dat signature.
+Waar HASH is de hash (doorgaans MD5) van een hele bestand, FILESIZE is de totale grootte van het bestand en NAME is de naam te noemen voor dat signature.
 
 #### *PE SECTIONELE SIGNATURES*
 Alle PE sectionele signatures volgt het formaat:
@@ -625,13 +650,6 @@ Alle PE uitgebreide signatures volgt het formaat:
 
 Waar $VAR is de naam van de PE-variabele te controleer tegen, HASH is de MD5 hash van die variabele, SIZE is de totale grootte van die variabele en NAME is de naam te noemen voor dat signature.
 
-#### *WHITELIST SIGNATURES*
-Alle whitelist signatures volgt het formaat:
-
-`HASH:FILESIZE:TYPE`
-
-Waar HASH is de MD5 hash van een hele bestand, FILESIZE is de totale grootte van het bestand en TYPE is de signatures type het bestand van de whitelist is immuun tegen te zijn.
-
 #### *COMPLEXE UITGEBREIDE SIGNATURES*
 Complexe uitgebreid signatures zijn nogal verschillend van de andere signature typen mogelijk met phpMussel, doordat wat ze gecontroleerd tegen wordt bepaald door de signatures zelf en ze kunnen controleer tegen meervoudig criteria. De controle criteria zijn begrensd door ";" en de controle type en de controle gegevens van elke controle criteria wordt begrensd door ":" zoals zo dat formaat voor deze signatures heeft de neiging om een beetje uitzien als:
 
@@ -644,7 +662,7 @@ Alle andere signatures volgt het formaat:
 
 Waar NAME is de naam te noemen voor dat signature en HEX is een hexadecimale gecodeerd segment van het bestand bestemd om te worden gecontroleerd door de gegeven signature. FROM en TO optioneel parameters zijn, aangeeft van waaruit en waaraan in de brongegevens om te controleren tegen.
 
-#### *REGEX*
+#### *REGEX (REGULAR EXPRESSIONS)*
 Elke vorm van reguliere expressie begrepen en correct verwerkt door moet ook correct worden begrepen en verwerkt door phpMussel en signatures. Echter, Ik stel voor het nemen van extreem voorzichtigheid bij het schrijven van nieuwe signatures op basis van reguliere expressie, omdat, als u niet helemaal zeker wat u doet, kan er zeer onregelmatig en/of onverwachte resultaten worden. Neem een kijkje op de phpMussel broncode als u niet helemaal zeker over de context waarin regex verklaringen geïnterpreteerd worden. Ook, vergeet niet dat alle patronen (met uitzondering van bestandsnaam, archief metadata en MD5 patronen) moet hexadecimaal gecodeerd worden (voorgaande patroon syntaxis, natuurlijk)!
 
 ---
@@ -730,11 +748,11 @@ Dit informatie werd laatst bijgewerkt 29 Augustus 2016 en is op de hoogte voor a
 
 ### 10. <a name="SECTION10"></a>VEELGESTELDE VRAGEN (FAQ)
 
-#### Wat is een "signature"?
+#### <a name="WHAT_IS_A_SIGNATURE"></a>Wat is een "signature"?
 
 In the context of phpMussel, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually in the form of some very small, distinct, innocuous segment of something larger and otherwise harmful, like a virus or trojan, or in the form of a file checksum, hash, or other similarly identifying indicator, and usually includes a label, and some other data to help provide additional context that can be used by phpMussel to determine the best way to proceed when it encounters what we're looking for.
 
-#### Wat is een "vals positieve"?
+#### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>Wat is een "vals positieve"?
 
 De term "vals positieve" (*alternatief: "vals positieve fout"; "vals alarm"*; Engels: *false positive*; *false positive error*; *false alarm*), zeer eenvoudig beschreven, en een algemene context, wordt gebruikt bij het testen voor een toestand, om verwijst naar om de resultaten van die test, wanneer de resultaten positief zijn (d.w.z, de toestand wordt vastgesteld als "positief"), maar wordt verwacht "negatief" te zijn (d.w.z, de toestand in werkelijkheid is "negatief"). Een "vals positieve" analoog aan "huilende wolf" kan worden beschouwd (waarin de toestand wordt getest, is of er een wolf in de buurt van de kudde, de toestand is "vals" in dat er geen wolf in de buurt van de kudde, en de toestand wordt gerapporteerd als "positief" door de herder door middel van schreeuwen "wolf, wolf"), of analoog aan situaties in medische testen waarin een patiënt gediagnosticeerd als met een ziekte of aandoening, terwijl het in werkelijkheid, hebben ze geen ziekte of aandoening.
 
@@ -868,4 +886,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Laatste Bijgewerkt: 29 Juli 2017 (2017.07.29).
+Laatste Bijgewerkt: 9 Augustus 2017 (2017.08.09).

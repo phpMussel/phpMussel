@@ -50,7 +50,7 @@ Questo documento ed il pacchetto associato ad esso possono essere scaricati libe
 
 4) CHMOD la cartella `vault` a "755" (se ci sono problemi, si può provare "777", ma questo è meno sicura). La principale cartella che memorizzare il contenuti (quello scelto in precedenza), solitamente, può essere lasciato solo, ma lo CHMOD stato dovrebbe essere controllato se hai avuto problemi di autorizzazioni in passato sul vostro sistema (per predefinita, dovrebbe essere qualcosa simile a "755").
 
-5) Successivamente, sarà necessario collegare phpMussel al vostro sistema o CMS. Ci sono diversi modi in cui è possibile collegare script come phpMussel al vostre sistema o CMS, ma il più semplice è di inserire lo script all'inizio di un file del vostre sistema o CMS (quello che sarà generalmente sempre essere caricato quando qualcuno accede a una pagina attraverso il vostro sito) utilizzando un `require` o `include` comando. Solitamente, questo sarà qualcosa memorizzate in una cartella, ad esempio `/includes`, `/assets` o `/functions`, e spesso essere chiamato qualcosa come `init.php`, `common_functions.php`, `functions.php` o simili. Avrete bisogno determinare quale file è per la vostra situazione; In caso di difficoltà nel determinare questo per te, per assistenza, visitare la pagina di problemi/issues per phpMussel a GitHub o il forum di supporto per phpMussel; È possibile che io o un altro utente possono avere esperienza con il CMS che si sta utilizzando (avrete bisogno di fateci sapere quale CMS si sta utilizzando), e quindi, può essere in grado di fornire assistenza in questo settore. Per fare questo [utilizzare `require` o `include`], inserire la seguente riga di codice all'inizio di quel core file, sostituendo la stringa contenuta all'interno delle virgolette con l'indirizzo esatto del file `loader.php` (l'indirizzo locale, non l'indirizzo HTTP; sarà simile all'indirizzo citato in precedenza).
+5) Successivamente, sarà necessario collegare phpMussel al vostro sistema o CMS. Ci sono diversi modi in cui è possibile collegare script come phpMussel al vostre sistema o CMS, ma il più semplice è di inserire lo script all'inizio di un file del vostre sistema o CMS (quello che sarà generalmente sempre essere caricato quando qualcuno accede a una pagina attraverso il vostro sito) utilizzando un `require` o `include` comando. Solitamente, questo sarà qualcosa memorizzate in una cartella, ad esempio `/includes`, `/assets` o `/functions`, e spesso essere chiamato qualcosa come `init.php`, `common_functions.php`, `functions.php` o simili. Avrete bisogno determinare quale file è per la vostra situazione; In caso di difficoltà nel determinare questo per te, per assistenza, visitare la pagina di problemi/issues per phpMussel a GitHub o il forum di supporto per phpMussel; È possibile che io o un altro utente possono avere esperienza con il CMS che si sta utilizzando (avrete bisogno di fateci sapere quale CMS si sta utilizzando), e quindi, può essere in grado di fornire assistenza in questo settore. Per fare questo [utilizzare `require` o `include`], inserire la seguente linea di codice all'inizio di quel core file, sostituendo la stringa contenuta all'interno delle virgolette con l'indirizzo esatto del file `loader.php` (l'indirizzo locale, non l'indirizzo HTTP; sarà simile all'indirizzo citato in precedenza).
 
 `<?php require '/user_name/public_html/phpmussel/loader.php'; ?>`
 
@@ -133,7 +133,7 @@ Restituisce qualcosa come (in forma di una stringa):
 
 Per una dettagliata spiegazione del tipo di firme di cui phpMussel usa durante le sue scansioni e come le sue gestisce queste firme, fare riferimento alla Firma Formato sezione di questo file README.
 
-Se si incontrano qualsiasi falsi positivi, se si incontrano qualcosa nuova che si pensa dovrebbe essere bloccato, o per qualsiasi altri scopi o materia a riguardo delle firme, si prega di contattare me a riguardo esso così che io possa apportare le necessarie modifiche, di cui, se si non contatto me, io non necessariamente essere consapevole ne.
+Se si incontrano qualsiasi falsi positivi, se si incontrano qualcosa nuova che si pensa dovrebbe essere bloccato, o per qualsiasi altri scopi o materia a riguardo delle firme, si prega di contattare me a riguardo esso così che io possa apportare le necessarie modifiche, di cui, se si non contatto me, io non necessariamente essere consapevole ne. *(Vedere: [Che cosa è un "falso positivo"?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 Per disabilita firme incluso con phpMussel (come se stai sperimentando falsi positivi specifico alle vostri scopi di cui non dovrebbero normalmente essere rimosso dalla mainline), fare riferimento alle note per greylisting all'interno della GESTIONE FRONT-END sezione di questo file README.
 
@@ -597,40 +597,58 @@ Modelli dati riferisce alla prodotti HTML utilizzato per generare il "Caricament
 
 ### 8. <a name="SECTION8"></a>FIRMA FORMATO
 
-#### *FILE NOMI FIRME*
-Tutte le file nomi firme seguono il formato:
+*Guarda anche:*
+- *[Che cosa è una "firma"?](#WHAT_IS_A_SIGNATURE)*
+
+I primi 9 byte `[x0-x8]` di un file di firma per phpMussel sono `phpMussel`, e agire come un "numero magico" (magic number), per identificarli come file di firma (questo aiuta a impedire phpMussel di tentare accidentalmente di utilizzare file che non sono file di firma). Il byte successivo `[x9]` identifica il tipo di file di firma, che phpMussel deve conoscere per poter interpretare correttamente il file di firma. Sono riconosciuti i seguenti tipi di file di firma:
+
+Tipo | Byte | Descrizione
+---|---|---
+`General_Command_Detections` | `0?` | Per i file di firma CSV (valori separati da virgole). I valori (firme) sono stringhe esadecimali codificate per cercare all'interno di file. Le firme qui non hanno nomi o altri dettagli (solo la stringa da rilevare).
+`Filename` | `1?` | Per le firme dei nomi di file.
+`Hash` | `2?` | Per firme di hash.
+`Standard` | `3?` | Per i file di firma che lavorano direttamente con il contenuto del file.
+`Standard_RegEx` | `4?` | Per i file di firma che lavorano direttamente con il contenuto del file. Le firme possono contenere espressioni regolari.
+`Normalised` | `5?` | Per i file di firma che funzionano con il contenuto di file normalizzato a ANSI.
+`Normalised_RegEx` | `6?` | Per i file di firma che funzionano con il contenuto di file normalizzato a ANSI. Le firme possono contenere espressioni regolari.
+`HTML` | `7?` | Per i file di firma che funzionano con il contenuto di file normalizzato a HTML.
+`HTML_RegEx` | `8?` | Per i file di firma che funzionano con il contenuto di file normalizzato a HTML. Le firme possono contenere espressioni regolari.
+`PE_Extended` | `9?` | Per i file di firma che funzionano con metadati PE (tranne i metadati sezione PE).
+`PE_Sectional` | `A?` | Per i file di firma che funzionano con i metadati di sezione PE.
+`Complex_Extended` | `B?` | Per i file di firma che funzionano con diverse regole basate su metadati estesi generati da phpMussel.
+`URL_Scanner` | `C?` | Per i file di firma che funzionano con gli URL.
+
+Il byte successivo `[x10]` è una nuova linea `[0A]`, e conclude l'intestazione del file di firma per phpMussel.
+
+Ogni linea non vuota in seguito è una firma o una regola. Ogni firma o regola occupa una linea. I formati di firma supportati sono descritti di seguito.
+
+#### *FIRME DEI NOMI DI FILE*
+Tutte le firme dei nomi di file seguono il formato:
 
 `NOME:FNRX`
 
 Dove NOME è il nome per citare per quella firma e FNRX è la regolare espressione a verifica file nomi firme (non codificata) contra.
 
-#### *MD5 FIRME*
-Tutte l'MD5 firme seguono il formato:
+#### *FIRME HASH*
+Tutte le firme hash seguono il formato:
 
 `HASH:DIMENSIONE:NOME`
 
-Dove HASH è l'MD5 hash dell'intero file, DIMENSIONE è la totale dimensione del file e NOME è il nome per citare per quella firma.
+Dove HASH è l'hash (di solito MD5) dell'intero file, DIMENSIONE è la totale dimensione del file e NOME è il nome per citare per quella firma.
 
-#### *PE SEZIONALI FIRME*
-Tutte il PE sezionali firme seguono il formato:
+#### *FIRME PE SEZIONALI*
+Tutte le firme PE sezionali seguono il formato:
 
 `DIMENSIONE:HASH:NOME`
 
 Dove HASH è l'MD5 hash di una sezione del PE file, DIMENSIONE è la totale dimensioni della sezione e NOME è il nome per citare per quella firma.
 
-#### *PE ESTESO FIRME*
-Tutte il PE esteso firme seguono il formato:
+#### *FIRME PE ESTESO*
+Tutte le firme PE esteso seguono il formato:
 
 `$VAR:HASH:DIMENSIONE:NOME`
 
 Dove $VAR è il nome della PE variabile per corrispondere contro, HASH è l'MD5 hash di quella variabile, DIMENSIONE è la dimensione totale di quella variabile e NOME è il nome per citare per quella firma.
-
-#### *WHITELIST FIRME*
-Tutte la whitelist firme seguono il formato:
-
-`HASH:DIMENSIONE:TYPE`
-
-Dove HASH è l'MD5 hash dell'intero file, DIMENSIONE è la totale dimensione del file e TYPE è il tipo di firme il file sulla whitelist è di essere immune contro.
 
 #### *COMPLESSO ESTESO FIRME*
 Complesso esteso firme sono piuttosto diverso da altri tipi di firme possibili con phpMussel, in quanto ciò che essi sono corrispondenti contro è specificato dalle firme stesse e possono corrispondere contro più criteri. Criteri sono delimitati da ";" e il tipo e dati di ogni criterio è delimitato da ":" come tale che il formato per queste firme sembra come:
@@ -644,7 +662,7 @@ Tutte le altre firme seguono il formato:
 
 Dove NOME è il nome per citare per quella firma e HEX è un esadecimale codificato segmento del file destinato essere verificato dal pertinente firma. FROM e TO sono opzionali parametri, indicando da cui ea cui posizioni nei sorgenti dati per verificare contra.
 
-#### *REGEX*
+#### *REGEX (REGULAR EXPRESSIONS)*
 Ogni forma di regex correttamente capito da PHP anche dovrebbe essere correttamente capito da phpMussel el sue firme. Ma, io suggerirei di prendere estrema cautela quando scrittura nuove regex basato firme, perché, se non sei certo quello stai facendo, ci possono essere molto irregolari e/o inaspettati risultati. Occhiata al sorgente codice di phpMussel se non sei certo sul contesto in cui le regolari espressioni dichiarazioni vengono parsato. Anche, ricordare che tutti i espressioni (ad eccezione per i file nomi, archivio metadati e l'MD5 espressioni) deve essere esadecimale codificato (tranne sintassi, naturalmente)!
 
 ---
@@ -730,11 +748,11 @@ Questa informazione è stato lo scorso aggiornato 29 Agosto 2016 ed è in corso 
 
 ### 10. <a name="SECTION10"></a>DOMANDE FREQUENTI (FAQ)
 
-#### Che cosa è una "firma"?
+#### <a name="WHAT_IS_A_SIGNATURE"></a>Che cosa è una "firma"?
 
 Nel contesto di phpMussel, una "firma" si riferisce a dati che fungono da indicatore/identificatore per qualcosa di specifico che stiamo cercando, di solito sotto forma di un segmento molto piccolo, distinto, e innocuo di qualcosa di più grande e altrimenti dannose, come un virus o un trojan, o sotto forma di un checksum di file, un hash, o altro identificando indicatore, e di solito include un'etichetta, e alcuni altri dati per fornire un contesto aggiuntivo che può essere utilizzato da phpMussel per determinare il modo migliore per procedere quando incontra quello che stiamo cercando.
 
-#### Che cosa è un "falso positivo"?
+#### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>Che cosa è un "falso positivo"?
 
 Il termine "falso positivo" (*in alternativa: "errore di falso positivo"; "falso allarme"*; Inglese: *false positive*; *false positive error*; *false alarm*), descritto molto semplicemente, e in un contesto generalizzato, viene utilizzato quando si analizza una condizione, per riferirsi ai risultati di tale analisi, quando i risultati sono positivi (cioè, la condizione è determinata a essere "positivo", o "vero"), ma dovrebbero essere (o avrebbe dovuto essere) negativo (cioè, la condizione, in realtà, è "negativo", o "falso"). Un "falso positivo" potrebbe essere considerato analogo a "piangendo lupo" (dove la condizione di essere analizzato è se c'è un lupo nei pressi della mandria, la condizione è "falso" in che non c'è nessun lupo nei pressi della mandria, e la condizione viene segnalato come "positivo" dal pastore per mezzo di chiamando "lupo, lupo"), o analogo a situazioni di test medici dove un paziente viene diagnosticato una malattia, quando in realtà, non hanno qualsiasi malattia.
 
@@ -868,4 +886,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Ultimo Aggiornamento: 29 Luglio 2017 (2017.07.29).
+Ultimo Aggiornamento: 9 Agosto 2017 (2017.08.09).
