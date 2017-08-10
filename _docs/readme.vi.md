@@ -133,7 +133,7 @@ Trả về một cái gì đó như thế này (như một string):
 
 Đối với một phân tích đầy đủ những gì sắp xếp của chữ ký phpMussel sử dụng trong quá trình quét của nó và cách nó xử lý chữ ký của nó, tham khảo các phần Định Dạng Của Chử Ký của tập tin README này.
 
-Nếu bạn gặp bất kỳ sai tích cực, nếu bạn gặp một số điều mới bạn nghĩ rằng nên bị chặn, hay cho bất cứ điều gì khác có liên quan đến chữ ký, xin vui lòng liên hệ với tôi vì vậy mà tôi có thể thực hiện các thay đổi cần thiết, mà, nếu bạn không liên hệ với tôi, tôi có thể không nhất thiết phải nhận thức được.
+Nếu bạn gặp bất kỳ sai tích cực, nếu bạn gặp một số điều mới bạn nghĩ rằng nên bị chặn, hay cho bất cứ điều gì khác có liên quan đến chữ ký, xin vui lòng liên hệ với tôi vì vậy mà tôi có thể thực hiện các thay đổi cần thiết, mà, nếu bạn không liên hệ với tôi, tôi có thể không nhất thiết phải nhận thức được. *(Xem: ["Sai tích cực" là gì?](#WHAT_IS_A_FALSE_POSITIVE)).*
 
 Để vô hiệu hóa chữ ký đã bao gồm trong phpMussel (chẳng hạn như nếu bạn gặp một sai tích cực và bạn không thể loại bỏ nó), tham khảo các ghi chú cho các danh sách xám trong các phần QUẢN LÝ FRONT-END của tập tin README này.
 
@@ -454,11 +454,11 @@ Cấu hình cho xử lý tập tin.
 - Làm gì với tập tin mà vượt quá các giới hạn kích thước của tải lên (nếu tồn tại). False = Danh sách trắng; True = Danh sách đen [Mặc định].
 
 "filetype_whitelist", "filetype_blacklist", "filetype_greylist"
-- Nếu hệ thống của bạn chỉ cho phép các loại tệp cụ thể được tải lên, hay nếu hệ thống của bạn từ chối một cách rõ ràng các loại tập tin cụ thể, xác định các loại tập tin trong danh sách trắng, danh sách đen và danh sách xám có thể tăng tốc độ quét được tiến hành bằng cách cho phép các kịch bản bỏ qua các loại tập tin nhất định. Định dạng là CSV (dấu phẩy ngăn cách giá trị). Nếu bạn muốn quét tất cả mọi thứ, thay vì sử dụng danh sách trắng, danh sách đen hay danh sách xám, để lại những biến trống; Làm như vậy sẽ vô hiệu hóa danh sách trắng/đen/xám.
+- Nếu hệ thống của bạn chỉ cho phép các loại tập tin cụ thể được tải lên, hay nếu hệ thống của bạn từ chối một cách rõ ràng các loại tập tin cụ thể, xác định các loại tập tin trong danh sách trắng, danh sách đen và danh sách xám có thể tăng tốc độ quét được tiến hành bằng cách cho phép các kịch bản bỏ qua các loại tập tin nhất định. Định dạng là CSV (dấu phẩy ngăn cách giá trị). Nếu bạn muốn quét tất cả mọi thứ, thay vì sử dụng danh sách trắng, danh sách đen hay danh sách xám, để lại những biến trống; Làm như vậy sẽ vô hiệu hóa danh sách trắng/đen/xám.
 - Thứ tự hợp lý của chế biến là:
-  - Nếu loại tệp là trên danh sách trắng, không quét và không chặn các tập tin, và không kiểm tra các tập tin chống lại danh sách đen hay danh sách xám.
-  - Nếu loại tệp là trên danh sách đen, không quét các tập tin nhưng chặn nó dù sao, và không kiểm tra các tập tin chống lại danh sách xám.
-  - Nếu danh sách xám là trống hay nếu danh sách xám không phải là trống và các loại tệp là danh sách xám, quét các tập tin như bình thường và xác định xem có chặn nó dựa trên kết quả của quá trình quét, nhưng nếu danh sách xám không phải là trống và các loại tệp không phải trên danh sách xám, điều trị các tập tin như thể nó là trên danh sách đen, vì thế không quét nó nhưng chặn nó dù sao.
+  - Nếu loại tập tin là trên danh sách trắng, không quét và không chặn các tập tin, và không kiểm tra các tập tin chống lại danh sách đen hay danh sách xám.
+  - Nếu loại tập tin là trên danh sách đen, không quét các tập tin nhưng chặn nó dù sao, và không kiểm tra các tập tin chống lại danh sách xám.
+  - Nếu danh sách xám là trống hay nếu danh sách xám không phải là trống và các loại tập tin là danh sách xám, quét các tập tin như bình thường và xác định xem có chặn nó dựa trên kết quả của quá trình quét, nhưng nếu danh sách xám không phải là trống và các loại tập tin không phải trên danh sách xám, điều trị các tập tin như thể nó là trên danh sách đen, vì thế không quét nó nhưng chặn nó dù sao.
 
 "check_archives"
 - Cố gắng để kiểm tra nội dung của kho lưu trữ? False = Không kiểm tra; True = Kiểm tra [Mặc định].
@@ -470,7 +470,7 @@ Cấu hình cho xử lý tập tin.
 - Thừa kế danh sách đen/trắng cho kích thước của tập tin trong kho lưu trữ? False = Không (chỉ danh sách xám mọi điều); True = Vâng [Mặc định].
 
 "filetype_archives"
-- Thừa kế danh sách đen/trắng cho loại tệp của tập tin trong kho lưu trữ? False = Không (chỉ danh sách xám mọi điều) [Mặc định]; True = Vâng.
+- Thừa kế danh sách đen/trắng cho loại tập tin của tập tin trong kho lưu trữ? False = Không (chỉ danh sách xám mọi điều) [Mặc định]; True = Vâng.
 
 "max_recursion"
 - Tối đa đệ quy chiều sâu giới hạn cho kho lưu trữ. Mặc định = 10.
@@ -597,6 +597,31 @@ Dữ liệu mẫu thiết kế liên quan đến đầu ra HTML sử dụng đ�
 
 ### 8. <a name="SECTION8"></a>ĐỊNH DẠNG CỦA CHỬ KÝ
 
+*Xem thêm:*
+- *["Chữ ký" là gì?](#WHAT_IS_A_SIGNATURE)*
+
+9 byte đầu tiên `[x0-x8]` của một tập tin chữ ký cho phpMussel là `phpMussel`, và hoạt động như một "số ma thuật" (magic number), để xác định chúng như tập tin chữ ký (điều này giúp ngăn ngừa phpMussel vô tình cố gắng sử dụng các tập tin mà không phải là tập tin chữ ký). Byte tiếp theo `[x9]` xác định loại tập tin chữ ký, mà phpMussel phải biết để có thể giải thích chính xác các tập tin chữ ký. Các loại tập tin chữ ký sau đây được nhận dạng:
+
+Loại | Byte | Sự miêu tả
+---|---|---
+`General_Command_Detections` | `0?` | Cho các tập tin chữ ký CSV (giá trị được phân cách bằng dấu phẩy). Giá trị (chữ ký) là các chuỗi được mã hoá bằng hệ thập lục phân để tìm kiếm trong các tệp. Chữ ký ở đây không có bất kỳ tên hoặc các chi tiết khác (chỉ có các chuỗi để phát hiện).
+`Filename` | `1?` | Cho các chữ ký tên tập tin.
+`Hash` | `2?` | Cho các chữ ký băm.
+`Standard` | `3?` | Cho các tập tin chữ ký mà làm việc trực tiếp với nội dung tập tin.
+`Standard_RegEx` | `4?` | Cho các tập tin chữ ký mà làm việc trực tiếp với nội dung tập tin. Chữ ký có thể chứa các biểu thức chính quy.
+`Normalised` | `5?` | Cho các tập tin chữ ký mà làm việc với nội dung tập tin bình thường hóa ANSI.
+`Normalised_RegEx` | `6?` | Cho các tập tin chữ ký mà làm việc với nội dung tập tin bình thường hóa ANSI. Chữ ký có thể chứa các biểu thức chính quy.
+`HTML` | `7?` | Cho các tập tin chữ ký mà làm việc với nội dung tập tin bình thường hóa HTML.
+`HTML_RegEx` | `8?` | Cho các tập tin chữ ký mà làm việc với nội dung tập tin bình thường hóa HTML. Chữ ký có thể chứa các biểu thức chính quy.
+`PE_Extended` | `9?` | Cho các tập tin chữ ký mà làm việc với siêu dữ liệu PE (nhưng không phải siêu dữ liệu PE phần).
+`PE_Sectional` | `A?` | Cho các tập tin chữ ký mà làm việc với siêu dữ liệu PE phần.
+`Complex_Extended` | `B?` | Cho các tập tin chữ ký mà làm việc với các quy tắc khác nhau dựa trên siêu dữ liệu mở rộng tạo bởi phpMussel.
+`URL_Scanner` | `C?` | Cho các tập tin chữ ký mà làm việc với các URL.
+
+Byte kế tiếp `[x10]` là một dòng mới `[0A]`, và kết luận tiêu đề của tập tin chữ ký cho phpMussel.
+
+Mỗi dòng không rỗng sau đó là một chữ ký hoặc quy tắc. Mỗi chữ ký hoặc quy tắc chiếm một dòng. Các định dạng chữ ký được hỗ trợ được mô tả dưới đây.
+
 #### *CHỮ KÝ CHO TÊN TẬP TIN*
 Tất cả các chữ ký cho tên tập tin tuân theo các định dạng:
 
@@ -604,12 +629,12 @@ Tất cả các chữ ký cho tên tập tin tuân theo các định dạng:
 
 NAME là tên cho các chữ ký và FNRX là mô hình biểu thức chính quy để kiểm tra tên tập tin (không mã hóa).
 
-#### *CHỮ KÝ DỰA MD5*
-Tất cả các chữ ký dựa MD5 tuân theo các định dạng:
+#### *CHỮ KÝ BĂM*
+Tất cả các chữ ký băm tuân theo các định dạng:
 
 `HASH:FILESIZE:NAME`
 
-HASH là băm MD5 của toàn bộ tập tin, FILESIZE là tổng dung lượng tập tin và NAME là tên cho các chữ ký.
+HASH là băm (thường là MD5) của toàn bộ tập tin, FILESIZE là tổng dung lượng tập tin và NAME là tên cho các chữ ký.
 
 #### *CHỮ KÝ PHẦN PE*
 Tất cả các chữ ký phần PE tuân theo các định dạng:
@@ -624,13 +649,6 @@ Tất cả các chữ ký kéo dài PE tuân theo các định dạng:
 `$VAR:HASH:SIZE:NAME`
 
 $VAR là tên của các biến PE để kiểm tra, HASH là băm MD5 của biến đó, SIZE là tổng kích thước biến và NAME là tên cho các chữ ký.
-
-#### *CHỮ KÝ DANH SÁCH TRẮNG*
-Tất cả các chữ ký danh sách trắng tuân theo các định dạng:
-
-`HASH:FILESIZE:TYPE`
-
-HASH là băm MD5 của toàn bộ tập tin, FILESIZE là tổng dung lượng tập tin và TYPE là các loại chữ ký các danh sách trắng tập tin là để được miễn dịch chống lại.
 
 #### *CHỮ KÝ KÉO DÀI PHỨC TẠP*
 Chữ ký kéo dài phức tạp là khá khác nhau với các loại khác của chữ ký có thể với phpMussel, trong ý nghĩa rằng những gì họ đang kiểm tra cho được quy định bởi những chữ ký tự và họ có thể kiểm tra cho nhiều tiêu chí. Các tiêu chí được giới hạn bởi ";" và các loại kiểm tra và dữ liệu kiểm tra cho từng tiêu chí được giới hạn bởi ":" như vậy mà định dạng cho những chữ ký trông hơi giống như:
@@ -730,11 +748,11 @@ Thông tin này được cập nhật lần cứơi vào ngày 29 Tháng Tám 20
 
 ### 10. <a name="SECTION10"></a>NHỮNG CÂU HỎI THƯỜNG GẶP (FAQ)
 
-#### "Chữ ký" là gì?
+#### <a name="WHAT_IS_A_SIGNATURE"></a>"Chữ ký" là gì?
 
-In the context of phpMussel, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually in the form of some very small, distinct, innocuous segment of something larger and otherwise harmful, like a virus or trojan, or in the form of a file checksum, hash, or other similarly identifying indicator, and usually includes a label, and some other data to help provide additional context that can be used by phpMussel to determine the best way to proceed when it encounters what we're looking for.
+Trong bối cảnh của phpMussel, "chữ ký" đề cập đến dữ liệu hoạt động như một chỉ thị hay cơ chế định danh cho một cái gì đó cụ thể mà chúng tôi đang tìm kiếm, thường là một đoạn nhỏ và không nguy hiểm của một cái gì đó lớn hơn và có hại, chẳng hạn như vi rút hoặc trojan, hoặc, một tập tin băm, hoặc các chỉ số nhận dạng tương tự khác, và nó thường bao gồm một nhãn, và một số dữ liệu khác để giúp cung cấp bối cảnh bổ sung mà có thể được sử dụng bởi phpMussel để xác định cách tốt nhất để tiến hành khi nó gặp những gì chúng ta đang tìm kiếm.
 
-#### "Sai tích cực" là gì?
+#### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>"Sai tích cực" là gì?
 
 Nghĩa của "sai tích cực" (*hay: "lỗi sai tích cực"; "báo động giả"*; Tiếng Anh: *false positive*; *false positive error*; *false alarm*), mô tả rất đơn giản, và trong một bối cảnh tổng quát, được sử dụng khi kiểm tra cho một điều kiện, để tham khảo các kết quả của bài kiểm tra, khi kết quả là tích cực (hay, điều kiện được xác định là "tích cực", hay "đúng"), nhưng dự kiến sẽ được (hay cần phải có được) tiêu cực (hay, điều kiện, thực tế, là "tiêu cực", hay "sai"). "Sai tích cực" có thể được coi là điều tương tự như "khóc sói" (theo đó các điều kiện đang được kiểm tra là liệu có con sói gần đàn, điều kiện là "sai" bởi vì không có con sói gần đàn, và điều kiện được báo cáo là "tích cực" bởi các người chăn bằng cách gọi "sói, sói"), hay tương tự như tình huống trong thử nghiệm y tế theo đó một bệnh nhân được chẩn đoán là có một số bệnh, trong khi thực tế, họ không có bất kỳ số bệnh.
 
@@ -868,4 +886,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Lần cuối cập nhật: 29 Tháng Bảy 2017 (2017.07.29).
+Lần cuối cập nhật: 9 Tháng Tám 2017 (2017.08.09).

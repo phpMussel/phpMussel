@@ -750,7 +750,7 @@ Dit informatie werd laatst bijgewerkt 29 Augustus 2016 en is op de hoogte voor a
 
 #### <a name="WHAT_IS_A_SIGNATURE"></a>Wat is een "signature"?
 
-In the context of phpMussel, a "signature" refers to data that acts as an indicator/identifier for something specific that we're looking for, usually in the form of some very small, distinct, innocuous segment of something larger and otherwise harmful, like a virus or trojan, or in the form of a file checksum, hash, or other similarly identifying indicator, and usually includes a label, and some other data to help provide additional context that can be used by phpMussel to determine the best way to proceed when it encounters what we're looking for.
+In de context van phpMussel, een "signature" verwijst naar gegevens die als indicator/identifier werken voor iets specifiek waarnaar we op zoek zijn, meestal in de vorm van een zeer klein, duidelijk, onschadelijk segment van iets groter en anderszins schadelijk, zoals een virus of een trojan, of in de vorm van een controleschema, een hash of een andere identificerende indicator, en bevat gewoonlijk een label, en enkele andere gegevens om extra context te bieden die door phpMussel kan worden gebruikt om te bepalen de beste manier te gaan wanneer het ontmoet waar we naar op zoek zijn.
 
 #### <a name="WHAT_IS_A_FALSE_POSITIVE"></a>Wat is een "vals positieve"?
 
