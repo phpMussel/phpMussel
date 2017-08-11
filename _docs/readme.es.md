@@ -88,7 +88,7 @@ O esto en el archivo `.htaccess`:
 
 `composer require phpmussel/phpmussel`
 
-#### <a name="INSTALLING_SIGNATURES"></a>2.3 INSTALACIÓN DE FIRMAS @todo@
+#### <a name="INSTALLING_SIGNATURES"></a>2.3 INSTALACIÓN DE FIRMAS
 
 Desde v1.0.0, las firmas no están incluidas en el paquete phpMussel. Las firmas son requeridas por phpMussel para detectar amenazas específicas. Existen 3 métodos principales para instalar firmas:
 

@@ -50,7 +50,9 @@ phpMussel 저작권 2013 년 이후 Caleb M (Maikuolan)의 GNU/GPLv2.
 
 4) `vault`디렉토리 "755"로 권한 변경 (문제가있는 경우 "777"을 시도 할 수 있습니다; 하지만 이것은 안전하지 않습니다). 콘텐츠를 업로드 한 디렉토리 자체는 보통 특히 아무것도 필요하지 않지만, 과거에 권한 문제가있을 경우 CHMOD의 상태는 확인하는 것이 좋습니다. (기본적으로 "755"가 일반적입니다).
 
-5) 그 다음에 시스템 또는 CMS에 phpMussel를 연결합니다. 방법에는 여러 가지가 있지만 가장 쉬운 것은`require`과`include`에서 스크립트를 시스템 또는 CMS 코어 파일의 첫 부분에 기재하는 방법입니다. (코어 파일은 사이트의 어떤 페이지에 접근이 있어도 반드시로드되는 파일입니다). 일반적으로는 `/includes`또는 `/assets`또는 `/functions`같은 디렉토리에있는 파일에서 `init.php`, `common_functions.php`, `functions.php`라는 파일 이름을 붙일 수 있습니다. 실제로 어떤 파일인지는 찾아도 바닥입니다해야합니다. 잘 모르는 경우 phpMussel 지원 포럼을 참조하거나 GitHub 때문에 phpMussel 문제의 페이지 또는 알려주십시오 (CMS 정보 필수). 나 자신을 포함하여 사용자에 유사한 CMS를 다룬 경험이 있으면, 무엇인가의 지원을 제공 할 수 있습니다. 코어 파일이 발견 된 경우, (`require` 또는`include`을 사용하여) 다음 코드를 파일의 맨 위에 삽입하십시오. 그러나 따옴표로 둘러싸인 부분은`loader.php` 파일의 정확한 주소 (HTTP 주소가 아닌 로컬 주소 전술의 vault 주소와 유사)로 바꿉니다.
+5) 당신이 필요로하는 서명을 설치하십시오. *참조 : [서명 설치](#INSTALLING_SIGNATURES).*
+
+6) 그 다음에 시스템 또는 CMS에 phpMussel를 연결합니다. 방법에는 여러 가지가 있지만 가장 쉬운 것은`require`과`include`에서 스크립트를 시스템 또는 CMS 코어 파일의 첫 부분에 기재하는 방법입니다. (코어 파일은 사이트의 어떤 페이지에 접근이 있어도 반드시로드되는 파일입니다). 일반적으로는 `/includes`또는 `/assets`또는 `/functions`같은 디렉토리에있는 파일에서 `init.php`, `common_functions.php`, `functions.php`라는 파일 이름을 붙일 수 있습니다. 실제로 어떤 파일인지는 찾아도 바닥입니다해야합니다. 잘 모르는 경우 phpMussel 지원 포럼을 참조하거나 GitHub 때문에 phpMussel 문제의 페이지 또는 알려주십시오 (CMS 정보 필수). 나 자신을 포함하여 사용자에 유사한 CMS를 다룬 경험이 있으면, 무엇인가의 지원을 제공 할 수 있습니다. 코어 파일이 발견 된 경우, (`require` 또는`include`을 사용하여) 다음 코드를 파일의 맨 위에 삽입하십시오. 그러나 따옴표로 둘러싸인 부분은`loader.php` 파일의 정확한 주소 (HTTP 주소가 아닌 로컬 주소 전술의 vault 주소와 유사)로 바꿉니다.
 
 `<?php require '/user_name/public_html/phpmussel/loader.php'; ?>`
 
@@ -66,7 +68,7 @@ Apache 웹서버를 이용하고있어, 한편`php.ini`를 편집 할 수 있도
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
-6) 이제 설치가 완료되었습니다 만, 만약을 위해 테스트를 실시합시다. 불법 파일 업로드 보호 기능을 테스트하려면 패키지에 `_testfiles`에 포함 된 테스트 파일을 브라우저를 사용하는 일반적인 방법으로 업로드합니다. 문제가 없으면 phpMussel에서 업로드를 차단했다는 메시지가 표시되고 그렇지 않은 경우는 무언가가 제대로 작동하지 않습니다. 또한 만약 뭔가 특별한 기능을 사용하고, 혹은 다른 유형의 스캐닝도 사용하고있는 것 같으면 서로 영향을 걷지 않을지도 체크해 두는 것이 좋습니다.
+7) 이제 설치가 완료되었습니다 만, 만약을 위해 테스트를 실시합시다. 불법 파일 업로드 보호 기능을 테스트하려면 패키지에 `_testfiles`에 포함 된 테스트 파일을 브라우저를 사용하는 일반적인 방법으로 업로드합니다. 문제가 없으면 phpMussel에서 업로드를 차단했다는 메시지가 표시되고 그렇지 않은 경우는 무언가가 제대로 작동하지 않습니다. 또한 만약 뭔가 특별한 기능을 사용하고, 혹은 다른 유형의 스캐닝도 사용하고있는 것 같으면 서로 영향을 걷지 않을지도 체크해 두는 것이 좋습니다.
 
 #### 2.1 수동 설치 (CLI 편)
 
@@ -82,9 +84,31 @@ Apache 웹서버를 이용하고있어, 한편`php.ini`를 편집 할 수 있도
 
 #### 2.2 COMPOSER를 사용하여 설치한다
 
-[phpMussel는 Packagist에 등록되어 있습니다](https://packagist.org/packages/phpmussel/phpmussel). Composer를 익숙한 경우 Composer를 사용하여 phpMussel를 설치할 수 있습니다 (당신은 아직 설정과 후크를 준비해야합니다; "수동 설치 (웹서버 편)"의 2 단계와 5 단계를 참조하십시오).
+[phpMussel는 Packagist에 등록되어 있습니다](https://packagist.org/packages/phpmussel/phpmussel). Composer를 익숙한 경우 Composer를 사용하여 phpMussel를 설치할 수 있습니다 (당신은 아직 설정과 후크를 준비해야합니다; "수동 설치 (웹서버 편)"의 2 단계와 6 단계를 참조하십시오).
 
 `composer require phpmussel/phpmussel`
+
+#### <a name="INSTALLING_SIGNATURES"></a>2.3 서명 설치
+
+v1.0.0 이후 시그니처 phpMussel 패키지에는 포함되어 있지 않습니다. 특정 위협을 감지하기 위해서는, phpMussel 의해 서명이 필요합니다. 서명을 설치하는 주요 방법은 3 가지가 있습니다.
+
+1. 프런트 엔드 업데이트 페이지를 사용하여 자동으로 설치합니다.
+2. "SigTool"를 사용하여 서명을 생성하여 수동으로 설치합니다.
+3. "phpMussel/Signatures"에서 서명을 다운로드하여 수동으로 설치합니다.
+
+##### 2.3.1 프런트 엔드 업데이트 페이지를 사용하여 자동으로 설치합니다.
+
+우선 프런트 엔드가 활성화되어 있는지 확인해야합니다. *참조 : [프론트 엔드 관리](#SECTION4).*
+
+다음, 프런트 엔드 업데이트 페이지로 이동, 필요한 서명 파일을 찾을, 이후 페이지에서 제공되는 옵션을 사용하여, 설치하고 활성화합니다.
+
+##### 2.3.2 "SigTool"를 사용하여 서명을 생성하여 수동으로 설치합니다.
+
+*참조 : [SigTool 설명서](https://github.com/phpMussel/SigTool#documentation).*
+
+##### 2.3.3 "phpMussel/Signatures"에서 서명을 다운로드하여 수동으로 설치합니다.
+
+첫째, [phpMussel/Signatures](https://github.com/phpMussel/Signatures)간다. 저장소는 다양한 GZ 압축 서명 파일이 포함되어 있습니다. 그들을 설치하려면, 필요한 파일을 다운로드하여 압축을 풉니, 압축이 풀린 파일을 `/vault/signatures` 디렉토리에 복사합니다. 그들을 활성화하려면, 복사 한 파일의 이름을 phpMussel 설정 `Active` 지시문에 열거합니다.
 
 ---
 

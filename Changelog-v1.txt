@@ -352,6 +352,13 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   information via the front-end and any other relevant means. Number L10N is
   now independent of language choice, and has also been improved upon somewhat.
 
+- [2017.08.09; Documentation; Maikuolan]: Instructions for installing phpMussel
+  have been slightly modified, and new information has been added to the
+  documentation regarding signature formats, signature file magic numbers,
+  information about SigTool, etc. Users performing fresh installs or updating
+  to v1.0.0 from older versions should re-read the installation instructions as
+  to be familiar with the changes.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

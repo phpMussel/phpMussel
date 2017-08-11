@@ -174,7 +174,7 @@ Eveneens, noteren dat phpMussel is een *on-demand* scanner; Het is *GEEN* *on-ac
 
 ### 4. <a name="SECTION4"></a>FRONTEND MANAGEMENT
 
-#### 4.0 WAT IS DE frontend.
+#### 4.0 WAT IS DE FRONTEND.
 
 De frontend biedt een gemakkelijke en eenvoudige manier te onderhouden, beheren en updaten van uw phpMussel installatie. U kunt bekijken, delen en downloaden log bestanden via de pagina logs, u kunt de configuratie wijzigen via de configuratiepagina, u kunt installeren en verwijderen/desinstalleren van componenten via de pagina updates, en u kunt uploaden, downloaden en wijzigen bestanden in uw vault via de bestandsbeheer.
 
