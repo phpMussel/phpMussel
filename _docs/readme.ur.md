@@ -741,7 +741,7 @@
 
 <div dir="rtl">پہلا 9 بائٹس <code>[x0-x8]</code> phpMussel دستخط فائل کی <code>phpMussel</code> ہے، اور "جادو نمبر"(magic number) کے طور پر کام کرتے ہیں، انہیں دستخط شدہ فائلوں کے طور پر شناخت کرنے کے لئے (اس فائلوں کا استعمال کرتے ہوئے حادثے سے بچنے میں مدد ملتی ہے جو دستخط شدہ فائلوں میں نہیں ہیں). اگلے بائٹ <code>[x9]</code> دستخط فائل کی قسم کی شناخت کرتا ہے، دستخط فائل کو سمجھنے کے قابل ہونے کے لئے ضروری ہے. مندرجہ ذیل قسم کے دستخط فائلوں کو تسلیم کیا جاتا ہے:<br /><br /></div>
 
-<div dir="rtl" style="display:inline;">قسم</div> | <div dir="rtl" style="display:inline;">بائٹ</div> | <div dir="rtl" style="display:inline;">تفصیل</div>
+&nbsp; <div dir="rtl" style="display:inline;">قسم</div> | <div dir="rtl" style="display:inline;">بائٹ</div> | <div dir="rtl" style="display:inline;">تفصیل</div>
 ---|---|---
 `General_Command_Detections` | `0?` | <div dir="rtl" style="display:inline;">"کوما علیحدہ اقدار" دستخط فائلوں کے لئے. دستخط فائلوں کے اندر اندر تلاش کرنے کے لئے ہییکسڈیکیلٹ - انکوڈ کرنگ ہیں. یہاں دستخط کسی نام یا دیگر تفصیلات نہیں ہیں (پتہ لگانے کے لئے صرف تار).</div>
 `Filename` | `1?` | <div dir="rtl" style="display:inline;">فائل نام کے دستخط کے لئے.</div>

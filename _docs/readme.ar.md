@@ -741,7 +741,7 @@
 
 <div dir="rtl">أول 9 بايت <code>[x0-x8]</code> من ملف التوقيع phpMussel هو <code>phpMussel</code>، والعمل بمثابة "عدد سحري" (magic number)، لتحديدها كملفات توقيع (وهذا يساعد على منع عن طريق الخطأ باستخدام الملفات التي ليست ملفات التوقيع). البايت المقبل <code>[x9]</code> يحدد نوع ملف التوقيع، والتي يجب أن تعرف من أجل أن تكون قادرة على تفسير ملف التوقيع بشكل صحيح. يتم التعرف على الأنواع التالية من ملفات التوقيع:<br /><br /></div>
 
-<div dir="rtl" style="display:inline;">نوع</div> | <div dir="rtl" style="display:inline;">بايت</div> | <div dir="rtl" style="display:inline;">وصف</div>
+&nbsp; <div dir="rtl" style="display:inline;">نوع</div> | <div dir="rtl" style="display:inline;">بايت</div> | <div dir="rtl" style="display:inline;">وصف</div>
 ---|---|---
 `General_Command_Detections` | `0?` | <div dir="rtl" style="display:inline;">بالنسبة إلى ملفات التوقيع "القيم المفصولة بفواصل". التوقيعات هي سلاسل مشفرة عشرية للبحث عن الملفات. التوقيعات هنا ليس لديها أي أسماء أو تفاصيل أخرى (فقط السلسلة للكشف).</div>
 `Filename` | `1?` | <div dir="rtl" style="display:inline;">لتوقيعات اسم الملف.</div>
