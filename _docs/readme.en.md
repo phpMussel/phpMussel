@@ -50,7 +50,9 @@ This document and its associated package can be downloaded for free from:
 
 4) CHMOD the `vault` directory to "755" (if there are problems, you can try "777"; this is less secure, though). The main directory storing the contents (the one you chose earlier), usually, can be left alone, but CHMOD status should be checked if you've had permissions issues in the past on your system (by default, should be something like "755").
 
-5) Next, you'll need to "hook" phpMussel to your system or CMS. There are several different ways you can "hook" scripts such as phpMussel to your system or CMS, but the easiest is to simply include the script at the beginning of a core file of your system or CMS (one that'll generally always be loaded when someone accesses any page across your website) using a `require` or `include` statement. Usually, this'll be something stored in a directory such as `/includes`, `/assets` or `/functions`, and will often be named something like `init.php`, `common_functions.php`, `functions.php` or similar. You'll have to work out which file this is for your situation; If you encounter difficulties in determining this for yourself, visit the phpMussel issues page at GitHub or the phpMussel support forums for assistance; It's possible that either myself or another user may have experience with the CMS that you're using (you'll need to let us know which CMS you're using), and thus, may be able to provide some assistance in this area. To do this [to use `require` or `include`], insert the following line of code to the very beginning of that core file, replacing the string contained inside the quotation marks with the exact address of the `loader.php` file (local address, not the HTTP address; it'll look similar to the vault address mentioned earlier).
+5) Install any signatures that you'll need. *See: [INSTALLING SIGNATURES](#INSTALLING_SIGNATURES).*
+
+6) Next, you'll need to "hook" phpMussel to your system or CMS. There are several different ways you can "hook" scripts such as phpMussel to your system or CMS, but the easiest is to simply include the script at the beginning of a core file of your system or CMS (one that'll generally always be loaded when someone accesses any page across your website) using a `require` or `include` statement. Usually, this'll be something stored in a directory such as `/includes`, `/assets` or `/functions`, and will often be named something like `init.php`, `common_functions.php`, `functions.php` or similar. You'll have to work out which file this is for your situation; If you encounter difficulties in determining this for yourself, visit the phpMussel issues page at GitHub or the phpMussel support forums for assistance; It's possible that either myself or another user may have experience with the CMS that you're using (you'll need to let us know which CMS you're using), and thus, may be able to provide some assistance in this area. To do this [to use `require` or `include`], insert the following line of code to the very beginning of that core file, replacing the string contained inside the quotation marks with the exact address of the `loader.php` file (local address, not the HTTP address; it'll look similar to the vault address mentioned earlier).
 
 `<?php require '/user_name/public_html/phpmussel/loader.php'; ?>`
 
@@ -66,7 +68,7 @@ Or this in the `.htaccess` file:
 
 `php_value auto_prepend_file "/user_name/public_html/phpmussel/loader.php"`
 
-6) At this point, you're done! However, you should probably test it out to make sure it's working properly. To test out file upload protections, attempt to upload the testing files included in the package under `_testfiles` to your website via your usual browser-based upload methods. If everything is working, a message should appear from phpMussel confirming that the upload was successfully blocked. If nothing appears, something isn't working correctly. If you're using any advanced features or if you're using the other types of scanning possible with the tool, I'd suggest trying it out with those to make sure it works as expected, too.
+7) At this point, you're done! However, you should probably test it out to make sure it's working properly. To test out file upload protections, attempt to upload the testing files included in the package under `_testfiles` to your website via your usual browser-based upload methods. If everything is working, a message should appear from phpMussel confirming that the upload was successfully blocked. If nothing appears, something isn't working correctly. If you're using any advanced features or if you're using the other types of scanning possible with the tool, I'd suggest trying it out with those to make sure it works as expected, too.
 
 #### 2.1 INSTALLING MANUALLY (FOR CLI)
 
@@ -82,9 +84,31 @@ Or this in the `.htaccess` file:
 
 #### 2.2 INSTALLING WITH COMPOSER
 
-[phpMussel is registered with Packagist](https://packagist.org/packages/phpmussel/phpmussel), and so, if you're familiar with Composer, you can use Composer to install phpMussel (you'll still need to prepare the configuration and hooks though; see "installing manually (for web servers)" steps 2 and 5).
+[phpMussel is registered with Packagist](https://packagist.org/packages/phpmussel/phpmussel), and so, if you're familiar with Composer, you can use Composer to install phpMussel (you'll still need to prepare the configuration and hooks though; see "installing manually (for web servers)" steps 2 and 6).
 
 `composer require phpmussel/phpmussel`
+
+#### 2.3 <a name="INSTALLING_SIGNATURES"></a>INSTALLING SIGNATURES
+
+Since v1.0.0, signatures aren't included in the phpMussel package. Signatures are required by phpMussel for detecting specific threats. There are 3 main methods to install signatures:
+
+1. Install automatically using the front-end updates page.
+2. Generate signatures using "SigTool" and install manually.
+3. Download signatures from "phpMussel/Signatures" and install manually.
+
+##### 2.3.1 Install automatically using the front-end updates page.
+
+Firstly, you'll need to make sure that the front-end is enabled. *See: [FRONT-END MANAGEMENT](#SECTION4).*
+
+Then, all you'll need to do is go to the front-end updates page, find the necessary signature files, and using the options provided on the page, install them, and activate them.
+
+##### 2.3.2 Generate signatures using "SigTool" and install manually.
+
+*See: [SigTool documentation](https://github.com/phpMussel/SigTool#documentation).*
+
+##### 2.3.3 Download signatures from "phpMussel/Signatures" and install manually.
+
+Firstly, go to [phpMussel/Signatures](https://github.com/phpMussel/Signatures). The repository contains various GZ-compressed signature files. Download the files that you need, decompress them, and copy the decompressed files to the `/vault/signatures` directory to install them. List the names of the copied files to the `Active` directive in your phpMussel configuration to activate them.
 
 ---
 
