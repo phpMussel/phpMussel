@@ -113,7 +113,7 @@
 
 ##### <div dir="rtl">٢.٣.٣ تحميل التوقيعات من "phpMussel/Signatures" وتثبيت يدويا.</div>
 
-<div dir="rtl">أولا، اذهب إلى <a href="https://github.com/phpMussel/Signatures">phpMussel/Signatures</a>. يحتوي المستودع على ملفات توقيع GZ مضغوط مختلفة. تحميل الملفات التي تحتاج إليها، فك ضغطها، ونسخ الملفات المضغوطة إلى الدليل `/vault/signatures` لتثبيتها. قم بإدراج أسماء الملفات المنسوخة إلى التوجيه `Active` في تهيئة phpMussel لتنشيطها.<br /><br /></div>
+<div dir="rtl">أولا، اذهب إلى <a href="https://github.com/phpMussel/Signatures">phpMussel/Signatures</a>. يحتوي المستودع على ملفات توقيع GZ مضغوط مختلفة. تحميل الملفات التي تحتاج إليها، فك ضغطها، ونسخ الملفات المضغوطة إلى الدليل <code>/vault/signatures</code> لتثبيتها. قم بإدراج أسماء الملفات المنسوخة إلى التوجيه <code>Active</code> في تهيئة phpMussel لتنشيطها.<br /><br /></div>
 
 ---
 
