@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data (last modified: 2017.06.25).
+ * This file: Japanese language data (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,6 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'ＰＥセクション：';
 $phpMussel['lang']['cli_signature_placeholder'] = 'シグネチャ名';
 $phpMussel['lang']['cli_working'] = '処理中';
 $phpMussel['lang']['corrupted'] = '破損ＰＥを検出しました';
+$phpMussel['lang']['data_not_available'] = 'データは入手できません。';
 $phpMussel['lang']['denied'] = 'アップロード拒否！';
 $phpMussel['lang']['denied_reason'] = '以下の理由でアップロードは拒否されました：';
 $phpMussel['lang']['detected'] = '{vn}を検出しました';

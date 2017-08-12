@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data (last modified: 2017.06.25).
+ * This file: Italian language data (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,6 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'PE Sezioni:';
 $phpMussel['lang']['cli_signature_placeholder'] = 'NOME-DELLA-FIRMA';
 $phpMussel['lang']['cli_working'] = 'In corso';
 $phpMussel['lang']['corrupted'] = 'Rilevato PE corrotto';
+$phpMussel['lang']['data_not_available'] = 'Dati non disponibili.';
 $phpMussel['lang']['denied'] = 'Caricamento Negato!';
 $phpMussel['lang']['denied_reason'] = 'Il tentativo di caricamento è stato bloccato per i motivi elencati di seguito:';
 $phpMussel['lang']['detected'] = 'Rilevato {vn}';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data (last modified: 2017.06.25).
+ * This file: Vietnamese language data (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,6 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'Các loại PE:';
 $phpMussel['lang']['cli_signature_placeholder'] = 'TÊN-CHỮ-KÝ';
 $phpMussel['lang']['cli_working'] = 'Đang trong quá trình';
 $phpMussel['lang']['corrupted'] = 'Lối của PE đã được phát hiện ra';
+$phpMussel['lang']['data_not_available'] = 'Dữ liệu không có sẵn.';
 $phpMussel['lang']['denied'] = 'Sự tải lên đã bị từ chối!';
 $phpMussel['lang']['denied_reason'] = 'Sự tải lên của bạn đã bị từ chối bởi lý do dưới đây:';
 $phpMussel['lang']['detected'] = 'Đã được phát hiện {vn}';

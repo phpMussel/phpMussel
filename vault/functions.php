@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.08.05).
+ * This file: Functions file (last modified: 2017.08.12).
  */
 
 /**
@@ -3840,9 +3840,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     }
 
     if ($phpMussel['EOF']) {
-        $phpMussel['whyflagged'] =
-        $phpMussel['killdata'] =
-        $phpMussel['PEData'] = '';
+        $phpMussel['whyflagged'] = $phpMussel['killdata'] = $phpMussel['PEData'] = '';
         if (
             $dpt === 0 ||
             !isset($phpMussel['memCache']['objects_scanned']) ||
@@ -4081,6 +4079,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
     } catch (\Exception $e) {
         throw new \Exception($e->getMessage());
     }
+
     /** Executed if there were any problems or anything detected: */
     if ($z[0] !== 1) {
         if ($z[0] === 2) {
@@ -4746,32 +4745,16 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
     /** Plugin hook: "after_scan". */
     $phpMussel['Execute_Hook']('after_scan');
 
-    if (
-        $phpMussel['Config']['general']['scan_log'] &&
-        $n &&
-        !is_array($r)
-    ) {
+    if ($n && !is_array($r)) {
         $r =
             $xst2822 . ' ' . $phpMussel['lang']['started'] .
             $phpMussel['lang']['_fullstop_final'] . "\n" .
             $r . $xet2822 . ' ' . $phpMussel['lang']['finished'] .
             $phpMussel['lang']['_fullstop_final'] . "\n";
-        $Handle = array(
-            'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log'])
-        );
-        if (!file_exists($phpMussel['Vault'] . $Handle['File'])) {
-            $r = $phpMussel['safety'] . "\n" . $r;
-        }
-        $WriteMode = (
-            !file_exists($phpMussel['Vault'] . $Handle['File']) || (
-                $phpMussel['Config']['general']['truncate'] > 0 &&
-                filesize($phpMussel['Vault'] . $Handle['File']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-            )
-        ) ? 'w' : 'a';
-        $Handle['Stream'] = fopen($phpMussel['Vault'] . $Handle['File'], $WriteMode);
-        fwrite($Handle['Stream'], $r);
-        fclose($Handle['Stream']);
-        $Handle = '';
+        $phpMussel['WriteScanLog']($r);
+    }
+    if (!isset($phpMussel['SkipSerial'])) {
+        $phpMussel['WriteSerial']($xst, $xet);
     }
     if ($phpMussel['EOF']) {
         if ($phpMussel['Config']['general']['scan_cache_expiry'] > 0) {
@@ -4787,34 +4770,76 @@ $phpMussel['Scan'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $ofn 
             );
             unset($phpMussel['ThisItem'], $phpMussel['HashCache']['Data']);
         }
-        if (
-            !empty($phpMussel['whyflagged']) &&
-            $phpMussel['Config']['general']['scan_log_serialized']
-        ) {
-            $Handle = array(
-                'Data' => serialize(array(
-                    'start_time' => $xst,
-                    'end_time' => $xet,
-                    'origin' => $_SERVER[$phpMussel['Config']['general']['ipaddr']],
-                    'objects_scanned' => $phpMussel['memCache']['objects_scanned'],
-                    'detections_count' => $phpMussel['memCache']['detections_count'],
-                    'scan_errors' => $phpMussel['memCache']['scan_errors'],
-                    'detections' => trim($phpMussel['whyflagged'])
-                )) . "\n",
-                'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log_serialized'])
-            );
-            $WriteMode = (
-                !file_exists($phpMussel['Vault'] . $Handle['File']) || (
-                    $phpMussel['Config']['general']['truncate'] > 0 &&
-                    filesize($phpMussel['Vault'] . $Handle['File']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-                )
-            ) ? 'w' : 'a';
-            $Handle['Stream'] = fopen($phpMussel['Vault'] . $Handle['File'], $WriteMode);
-            fwrite($Handle['Stream'], $Handle['Data']);
-            fclose($Handle['Stream']);
-        }
     }
     return $r;
+};
+
+/**
+ * Writes to the serialized logfile upon scan completion.
+ *
+ * @param string $StartTime When the scan started.
+ * @param string $FinishTime When the scan finished.
+ * @return bool True on success; False on failure.
+ */
+$phpMussel['WriteSerial'] = function ($StartTime = '', $FinishTime = '') use (&$phpMussel) {
+    $Origin = $phpMussel['Mussel_sapi'] ? 'CLI' : $_SERVER[$phpMussel['Config']['general']['ipaddr']];
+    $ScanData = empty($phpMussel['whyflagged']) ? $phpMussel['lang']['data_not_available'] : trim($phpMussel['whyflagged']);
+    if ($phpMussel['Config']['general']['scan_log_serialized']) {
+        if (!isset($phpMussel['memCache']['objects_scanned'])) {
+            $phpMussel['memCache']['objects_scanned'] = 0;
+        }
+        if (!isset($phpMussel['memCache']['detections_count'])) {
+            $phpMussel['memCache']['detections_count'] = 0;
+        }
+        if (!isset($phpMussel['memCache']['scan_errors'])) {
+            $phpMussel['memCache']['scan_errors'] = 1;
+        }
+        $Handle = array(
+            'Data' => serialize(array(
+                'start_time' => $StartTime ?: (isset($phpMussel['memCache']['start_time']) ? $phpMussel['memCache']['start_time'] : '-'),
+                'end_time' => $FinishTime ?: (isset($phpMussel['memCache']['end_time']) ? $phpMussel['memCache']['end_time'] : '-'),
+                'origin' => $Origin,
+                'objects_scanned' => $phpMussel['memCache']['objects_scanned'],
+                'detections_count' => $phpMussel['memCache']['detections_count'],
+                'scan_errors' => $phpMussel['memCache']['scan_errors'],
+                'detections' => $ScanData
+            )) . "\n",
+            'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log_serialized'])
+        );
+        $WriteMode = (!file_exists($phpMussel['Vault'] . $Handle['File']) || (
+            $phpMussel['Config']['general']['truncate'] > 0 &&
+            filesize($phpMussel['Vault'] . $Handle['File']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
+        )) ? 'w' : 'a';
+        $Stream = fopen($phpMussel['Vault'] . $Handle['File'], $WriteMode);
+        fwrite($Stream, $Handle['Data']);
+        fclose($Stream);
+        return true;
+    }
+    return false;
+};
+
+/**
+ * Writes to the standard scan log upon scan completion.
+ *
+ * @param string $Data What to write.
+ * @return bool True on success; False on failure.
+ */
+$phpMussel['WriteScanLog'] = function ($Data) use (&$phpMussel) {
+    if ($phpMussel['Config']['general']['scan_log']) {
+        $File = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log']);
+        if (!file_exists($phpMussel['Vault'] . $File)) {
+            $Data = $phpMussel['safety'] . "\n" . $Data;
+        }
+        $WriteMode = (!file_exists($phpMussel['Vault'] . $File) || (
+            $phpMussel['Config']['general']['truncate'] > 0 &&
+            filesize($phpMussel['Vault'] . $File) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
+        )) ? 'w' : 'a';
+        $Handle = fopen($phpMussel['Vault'] . $File, 'a');
+        fwrite($Handle, $Data);
+        fclose($Handle);
+        return true;
+    }
+    return false;
 };
 
 /**

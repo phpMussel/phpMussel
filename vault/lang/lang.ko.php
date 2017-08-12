@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data (last modified: 2017.06.25).
+ * This file: Korean language data (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,11 +29,12 @@ $phpMussel['lang']['cli_pe2'] = 'PE 섹션:';
 $phpMussel['lang']['cli_signature_placeholder'] = '서명-이름';
 $phpMussel['lang']['cli_working'] = '처리 중';
 $phpMussel['lang']['corrupted'] = '손상 PE를 발견했습니다';
+$phpMussel['lang']['data_not_available'] = '데이터를 사용할 수 없습니다.';
 $phpMussel['lang']['denied'] = '업로드 거부!';
 $phpMussel['lang']['denied_reason'] = '다음과 같은 이유로 업로드가 거부되었습니다:';
 $phpMussel['lang']['detected'] = '{vn}을 발견했습니다';
 $phpMussel['lang']['detected_control_characters'] = '제어 문자를 발견했습니다';
-$phpMussel['lang']['encrypted_archive'] = '암호화 된 아카이브 검색 : 암호화 된 아카이브는 허용되지 않습니다';
+$phpMussel['lang']['encrypted_archive'] = '암호화 된 아카이브 검색 : 암호화 된 아카이브는 허용되지 않습니다';
 $phpMussel['lang']['failed_to_access'] = '액세스에 실패했습니다';
 $phpMussel['lang']['file'] = '파일';
 $phpMussel['lang']['filesize_limit_exceeded'] = '용 범위를 벗어난 파일 크기입니다';
@@ -94,33 +95,33 @@ $phpMussel['lang']['_fullstop_final'] = '.';
 
 $phpMussel['lang']['cli_commands'] = " q
  - CLI 종료.
- - 별칭 : quit, exit.
+ - 별칭 : quit, exit.
  md5_file
- - 파일 MD5 서명을 작성 [구문 : md5_file 파일].
- - 별칭 : m.
+ - 파일 MD5 서명을 작성 [구문 : md5_file 파일].
+ - 별칭 : m.
  sha1_file
- - 파일 SHA1 서명을 작성 [구문 : sha1_file 파일].
+ - 파일 SHA1 서명을 작성 [구문 : sha1_file 파일].
  md5
- - 문자열에서 MD5 서명을 작성 [구문 : md5 문자열].
+ - 문자열에서 MD5 서명을 작성 [구문 : md5 문자열].
  sha1
- - 문자열에서 SHA1 서명을 작성 [구문 : sha1 문자열].
+ - 문자열에서 SHA1 서명을 작성 [구문 : sha1 문자열].
  hex_encode
- - 2 진수 문자열을 16 진수 문자열로 변환 [구문 : hex_encode 문자열].
- - 별칭 : x.
+ - 2 진수 문자열을 16 진수 문자열로 변환 [구문 : hex_encode 문자열].
+ - 별칭 : x.
  hex_decode
- - 16 진수 문자열을 2 진수 문자열로 변환 [구문 : hex_decode 문자열].
+ - 16 진수 문자열을 2 진수 문자열로 변환 [구문 : hex_decode 문자열].
  base64_encode
- - 2 진수 문자열을 BASE64 문자열로 변환 [구문 : base64_encode 문자열].
- - 별칭 : b.
+ - 2 진수 문자열을 BASE64 문자열로 변환 [구문 : base64_encode 문자열].
+ - 별칭 : b.
  base64_decode
- - BASE64 문자열을 2 진수 문자열로 변환 [구문 : base64_decode 문자열].
+ - BASE64 문자열을 2 진수 문자열로 변환 [구문 : base64_decode 문자열].
  pe_meta
- - PE 파일에서 메타 데이터 추출 [구문 : pe_meta 파일].
+ - PE 파일에서 메타 데이터 추출 [구문 : pe_meta 파일].
  url_sig
- - URL 스캐너 서명 생성 [구문 : url_sig 문자열].
+ - URL 스캐너 서명 생성 [구문 : url_sig 문자열].
  scan
- - 파일 또는 디렉터리를 검색 [구문 : scan 파일].
- - 별칭 : s.
+ - 파일 또는 디렉터리를 검색 [구문 : scan 파일].
+ - 별칭 : s.
  c
  - 명령 목록 프린트.
 ";

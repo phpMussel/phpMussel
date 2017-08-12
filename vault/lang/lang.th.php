@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data (last modified: 2017.06.25).
+ * This file: Thai language data (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,6 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'ส่วน PE:';
 $phpMussel['lang']['cli_signature_placeholder'] = 'ชื่อลายเซ็น';
 $phpMussel['lang']['cli_working'] = 'กำลังดำเนินการ';
 $phpMussel['lang']['corrupted'] = 'PE เสียหายถูกตรวจพบ';
+$phpMussel['lang']['data_not_available'] = 'ไม่มีข้อมูล.';
 $phpMussel['lang']['denied'] = 'อัปโหลดถูกปฏิเสธ!';
 $phpMussel['lang']['denied_reason'] = 'การอัปโหลดของคุณถูกบล็อกด้วยเหตุผลด้านล่าง:';
 $phpMussel['lang']['detected'] = 'ตรวจพบแล้ว {vn}';

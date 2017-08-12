@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (traditional) language data (last modified: 2017.06.25).
+ * This file: Chinese (traditional) language data (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,6 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'PE部分:';
 $phpMussel['lang']['cli_signature_placeholder'] = '簽名名稱';
 $phpMussel['lang']['cli_working'] = '進行中';
 $phpMussel['lang']['corrupted'] = '檢測損壞PE';
+$phpMussel['lang']['data_not_available'] = '數據不可用。';
 $phpMussel['lang']['denied'] = '上傳是否認！';
 $phpMussel['lang']['denied_reason'] = '您的上傳被拒绝由于这些原因:';
 $phpMussel['lang']['detected'] = '檢測{vn}';

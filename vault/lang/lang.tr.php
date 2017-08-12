@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data (last modified: 2017.06.25).
+ * This file: Turkish language data (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,6 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'PE Bölümleri:';
 $phpMussel['lang']['cli_signature_placeholder'] = 'IMZA-ADINIZ';
 $phpMussel['lang']['cli_working'] = 'Devam etmekte';
 $phpMussel['lang']['corrupted'] = 'Bozuk PE saptandı';
+$phpMussel['lang']['data_not_available'] = 'Veri mevcut değil.';
 $phpMussel['lang']['denied'] = 'Yükleme Reddedildi!';
 $phpMussel['lang']['denied_reason'] = 'Yükleme aşağıda belirtilen nedenlerle engellendi:';
 $phpMussel['lang']['detected'] = '{vn} algılandı';

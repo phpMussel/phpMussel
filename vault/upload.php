@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2017.07.13).
+ * This file: Upload handler (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -187,7 +187,7 @@ if ($phpMussel['upload']['count'] > 0) {
             count($phpMussel['upload']['FilesData']['FileSet']['error']);
 
         for (
-            $phpMussel['upload']['FilesData']['FileSet']['i'] = 0;
+            $phpMussel['upload']['FilesData']['FileSet']['i'] = 0, $phpMussel['SkipSerial'] = true;
             $phpMussel['upload']['FilesData']['FileSet']['i'] < $phpMussel['upload']['FilesData']['FileSet']['c'];
             $phpMussel['upload']['FilesData']['FileSet']['i']++
         ) {
@@ -233,6 +233,11 @@ if ($phpMussel['upload']['count'] > 0) {
                     $phpMussel['KillAndUnlink']();
                     next($_FILES);
                     continue;
+                }
+
+                /** Used for serialised logging. */
+                if ($phpMussel['upload']['FilesData']['FileSet']['i'] === ($phpMussel['upload']['FilesData']['FileSet']['c'] - 1)) {
+                    unset($phpMussel['SkipSerial']);
                 }
 
                 /** Execute the scan! */
@@ -360,6 +365,11 @@ if ($phpMussel['upload']['count'] > 0) {
                     continue;
                 }
 
+                /** Used for serialised logging. */
+                if ($phpMussel['upload']['FilesData']['FileSet']['i'] === ($phpMussel['upload']['FilesData']['FileSet']['c'] - 1)) {
+                    unset($phpMussel['SkipSerial']);
+                }
+
                 /** Execute the scan! */
                 try {
                     $r = $phpMussel['Scan'](
@@ -419,47 +429,11 @@ if ($phpMussel['upload']['count'] > 0) {
     /** Trim trailing whitespace. */
     $phpMussel['whyflagged'] = trim($phpMussel['whyflagged']);
 
-    /** Log "scan_log_serialized" data. */
-    if ($phpMussel['Config']['general']['scan_log_serialized']) {
-        if (!isset($phpMussel['memCache']['objects_scanned'])) {
-            $phpMussel['memCache']['objects_scanned'] = 0;
-        }
-        if (!isset($phpMussel['memCache']['detections_count'])) {
-            $phpMussel['memCache']['detections_count'] = 0;
-        }
-        if (!isset($phpMussel['memCache']['scan_errors'])) {
-            $phpMussel['memCache']['scan_errors'] = 1;
-        }
-        $phpMussel['memCache']['handle'] = array(
-            'Data' => serialize(array(
-                'start_time' => $phpMussel['memCache']['start_time'],
-                'end_time' => $phpMussel['memCache']['end_time'],
-                'origin' => $_SERVER[$phpMussel['Config']['general']['ipaddr']],
-                'objects_scanned' => $phpMussel['memCache']['objects_scanned'],
-                'detections_count' => $phpMussel['memCache']['detections_count'],
-                'scan_errors' => $phpMussel['memCache']['scan_errors'],
-                'detections' => trim($phpMussel['whyflagged'])
-            )) . "\n",
-            'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log_serialized'])
-        );
-        $phpMussel['memCache']['handle']['WriteMode'] = (
-            !file_exists($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File']) || (
-                $phpMussel['Config']['general']['truncate'] > 0 &&
-                filesize($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File']) >= $phpMussel['ReadBytes']($phpMussel['Config']['general']['truncate'])
-            )
-        ) ? 'w' : 'a';
-        $phpMussel['memCache']['handle']['Stream'] =
-            fopen($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'], $phpMussel['memCache']['handle']['WriteMode']);
-        fwrite($phpMussel['memCache']['handle']['Stream'], $phpMussel['memCache']['handle']['Data']);
-        fclose($phpMussel['memCache']['handle']['Stream']);
-        $phpMussel['memCache']['handle'] = '';
-    }
-
     /** Reset the $_FILES caret. */
     reset($_FILES);
 
     /** Begin processing file upload detections. */
-    if (!empty($phpMussel['whyflagged'])) {
+    if ($phpMussel['whyflagged']) {
 
         /** A fix for correctly displaying LTR/RTL text. */
         if (empty($phpMussel['lang']['textDir']) || $phpMussel['lang']['textDir'] !== 'rtl') {

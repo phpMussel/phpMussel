@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data (last modified: 2017.06.25).
+ * This file: German language data (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,6 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'PE-Sektionen:';
 $phpMussel['lang']['cli_signature_placeholder'] = 'IHR-SIGNATURNAME';
 $phpMussel['lang']['cli_working'] = 'Im Gange';
 $phpMussel['lang']['corrupted'] = 'Beschädigte PE entdeckt';
+$phpMussel['lang']['data_not_available'] = 'Keine Daten verfügbar.';
 $phpMussel['lang']['denied'] = 'Upload verweigert!';
 $phpMussel['lang']['denied_reason'] = 'Der Upload wurde aus den unten aufgeführten Gründen blockiert:';
 $phpMussel['lang']['detected'] = 'Entdeckt {vn}';

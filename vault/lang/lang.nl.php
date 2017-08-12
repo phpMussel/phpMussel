@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data (last modified: 2017.06.25).
+ * This file: Dutch language data (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,6 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'PE Secties:';
 $phpMussel['lang']['cli_signature_placeholder'] = 'UW-SIGNATURE-NAAM';
 $phpMussel['lang']['cli_working'] = 'Aan de gang';
 $phpMussel['lang']['corrupted'] = 'Gedetecteerd beschadigd PE';
+$phpMussel['lang']['data_not_available'] = 'Gegevens niet beschikbaar.';
 $phpMussel['lang']['denied'] = 'Upload Geweigerd!';
 $phpMussel['lang']['denied_reason'] = 'De upload poging werd geblokkeerd voor de hieronder vermelde redenen:';
 $phpMussel['lang']['detected'] = 'Gedetecteerd {vn}';

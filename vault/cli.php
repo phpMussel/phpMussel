@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2017.07.05).
+ * This file: CLI handler (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -376,18 +376,8 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
             $s = $phpMussel['memCache']['end_time_2822'] . ' ' . $phpMussel['lang']['finished'] . $phpMussel['lang']['_fullstop_final'] . "\n";
             echo $s;
             $r .= $s;
-            if ($phpMussel['Config']['general']['scan_log']) {
-                $phpMussel['memCache']['handle'] = array(
-                    'File' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['scan_log'])
-                );
-                if (!file_exists($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'])) {
-                    $r = $phpMussel['safety'] . "\n" . $r;
-                }
-                $phpMussel['memCache']['handle'] = fopen($phpMussel['Vault'] . $phpMussel['memCache']['handle']['File'], 'a');
-                fwrite($phpMussel['memCache']['handle'], $r);
-                fclose($phpMussel['memCache']['handle']);
-                $phpMussel['memCache']['handle'] = '';
-            }
+            $phpMussel['WriteScanLog']($r);
+            $phpMussel['WriteSerial']($phpMussel['memCache']['start_time'], $phpMussel['memCache']['end_time']);
             unset($r, $s);
         }
 
@@ -418,12 +408,11 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
 
         /** Show the greylist. **/
         if ($phpMussel['cmd'] === 'greylist_show' || $phpMussel['cmd'] === 'gs') {
-            echo "\n";
             $phpMussel['stdin_clean'] = substr($phpMussel['stdin_clean'], strlen($phpMussel['cmd']) + 1);
             echo
                 file_exists($phpMussel['Vault'] . 'greylist.csv') ?
-                " greylist.csv:\n" . implode("\n ", explode(',', $phpMussel['ReadFile']($phpMussel['Vault'] . 'greylist.csv'))) :
-                ' greylist.csv ' . $phpMussel['lang']['x_does_not_exist'] . $phpMussel['lang']['_exclamation_final'];
+                "\n greylist.csv:\n" . implode("\n ", explode(',', $phpMussel['ReadFile']($phpMussel['Vault'] . 'greylist.csv'))) :
+                "\n greylist.csv " . $phpMussel['lang']['x_does_not_exist'] . $phpMussel['lang']['_exclamation_final'];
         }
 
         /** Print the command list. **/

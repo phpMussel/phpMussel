@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data (last modified: 2017.06.25).
+ * This file: Arabic language data (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -30,6 +30,7 @@ $phpMussel['lang']['cli_pe2'] = 'أقسام PE:';
 $phpMussel['lang']['cli_signature_placeholder'] = 'اسم';
 $phpMussel['lang']['cli_working'] = 'في تَقَدم';
 $phpMussel['lang']['corrupted'] = 'الكشف PE تلف';
+$phpMussel['lang']['data_not_available'] = 'البيانات غير متوفرة.';
 $phpMussel['lang']['denied'] = 'رفض تحميل!';
 $phpMussel['lang']['denied_reason'] = 'تم حجب التحميل للأسباب الواردة أدناه:';
 $phpMussel['lang']['detected'] = 'الكشف {vn}';

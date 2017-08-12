@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Hindi language data (last modified: 2017.06.25).
+ * This file: Hindi language data (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,6 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'PE अनुभाग:';
 $phpMussel['lang']['cli_signature_placeholder'] = 'आपका-हस्ताक्षर-नाम';
 $phpMussel['lang']['cli_working'] = 'चालू';
 $phpMussel['lang']['corrupted'] = 'भ्रष्ट PE का पता चला';
+$phpMussel['lang']['data_not_available'] = 'डेटा उपलब्ध नहीं।';
 $phpMussel['lang']['denied'] = 'अपलोड अस्वीकृत!';
 $phpMussel['lang']['denied_reason'] = 'आपके अपलोड को नीचे सूचीबद्ध कारणों के कारण अवरुद्ध किया गया था:';
 $phpMussel['lang']['detected'] = '{vn} का पता चला';

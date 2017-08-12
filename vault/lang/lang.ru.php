@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2017.06.25).
+ * This file: Russian language data (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,6 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'ПЭ Разделы:';
 $phpMussel['lang']['cli_signature_placeholder'] = 'ВАШЕ-ИМЯ-СИГНАТУР';
 $phpMussel['lang']['cli_working'] = 'В действии';
 $phpMussel['lang']['corrupted'] = 'Обнаружена поврежденная ПЭ';
+$phpMussel['lang']['data_not_available'] = 'Данные недоступны.';
 $phpMussel['lang']['denied'] = 'Загрузка Отказана!';
 $phpMussel['lang']['denied_reason'] = 'Ваша загрузка была заблокирована по причинам перечисленным ниже:';
 $phpMussel['lang']['detected'] = 'Обнаружено {vn}';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data (last modified: 2017.06.25).
+ * This file: Indonesian language data (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,6 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'Seksi PE:';
 $phpMussel['lang']['cli_signature_placeholder'] = 'NAMA-TANDA-TANGAN';
 $phpMussel['lang']['cli_working'] = 'Dalam proses';
 $phpMussel['lang']['corrupted'] = 'Terdeteksi rusak PE';
+$phpMussel['lang']['data_not_available'] = 'Data tidak tersedia.';
 $phpMussel['lang']['denied'] = 'Upload Ditolak!';
 $phpMussel['lang']['denied_reason'] = 'Upload diblokir karena alasan yang tercantum di bawah:';
 $phpMussel['lang']['detected'] = 'Terdeteksi {vn}';

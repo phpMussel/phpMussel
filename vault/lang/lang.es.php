@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Spanish language data (last modified: 2017.06.25).
+ * This file: Spanish language data (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -29,6 +29,7 @@ $phpMussel['lang']['cli_pe2'] = 'Secciones PE:';
 $phpMussel['lang']['cli_signature_placeholder'] = 'NOMBRE-DE-FIRMA';
 $phpMussel['lang']['cli_working'] = 'En operación';
 $phpMussel['lang']['corrupted'] = 'PE corrompido detectado';
+$phpMussel['lang']['data_not_available'] = 'Informacion no disponible.';
 $phpMussel['lang']['denied'] = 'Subida Denegada!';
 $phpMussel['lang']['denied_reason'] = 'La subida de archivo fue bloqueada por las razones que se indican a continuación:';
 $phpMussel['lang']['detected'] = 'Detectado {vn}';

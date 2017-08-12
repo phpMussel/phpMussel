@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Urdu language data (last modified: 2017.06.25).
+ * This file: Urdu language data (last modified: 2017.08.12).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -30,6 +30,7 @@ $phpMussel['lang']['cli_pe2'] = 'PE حصے:';
 $phpMussel['lang']['cli_signature_placeholder'] = 'نام';
 $phpMussel['lang']['cli_working'] = 'کام جاری ہے';
 $phpMussel['lang']['corrupted'] = 'کے پتہ خراب PE';
+$phpMussel['lang']['data_not_available'] = 'ڈیٹا دستیاب نہیں ہے.';
 $phpMussel['lang']['denied'] = 'اپ لوڈ کریں تردید!';
 $phpMussel['lang']['denied_reason'] = 'آپ کا اپ لوڈ ذیل میں درج وجوہات کی بنا پر بلاک کر دیا گیا:';
 $phpMussel['lang']['detected'] = 'کے پتہ {VN}';
