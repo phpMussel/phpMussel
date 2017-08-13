@@ -364,6 +364,12 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   timestamps can be cross-referenced against standard logfiles to obtain this
   information if required; plan to improve this in the future when possible).
 
+- [2017.08.13; Bug-fix; Maikuolan]: Bug found whereby benign files would be
+  falsely identified as malicious if scanned within a period of time whereby
+  related cache entries exist due to the falsely identified file being
+  previously scanned alongside other files correctly identified as malicious
+  and thus collectively blocked; Fixed.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

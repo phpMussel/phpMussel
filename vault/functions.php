@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.08.12).
+ * This file: Functions file (last modified: 2017.08.13).
  */
 
 /**
@@ -1485,9 +1485,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
         if (!empty($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][2])) {
             $phpMussel['memCache']['detections_count']++;
             $out .= $phpMussel['HexSafe']($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][2]);
-        }
-        if (!empty($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][3])) {
-            $phpMussel['whyflagged'] .= $phpMussel['HexSafe']($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][3]);
+            if (!empty($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][3])) {
+                $phpMussel['whyflagged'] .= $phpMussel['HexSafe']($phpMussel['HashCache']['Data'][$phpMussel['HashCacheData']][3]);
+            }
         }
 
         /** Set debug values, if this has been enabled. */
