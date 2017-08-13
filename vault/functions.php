@@ -5931,3 +5931,51 @@ $phpMussel['Number_L10N_JS'] = function () use (&$phpMussel) {
     }
     return sprintf($Base, $Sets['Latin-1'][0], $Sets['Latin-1'][1], $Sets['Latin-1'][2], $Sets['Latin-1'][3], $Sets['Latin-1'][4]);
 };
+
+/** Duplication avoidance (some file handling for honeypot functionality). */
+$phpMussel['ReadFile-For-Honeypot'] = function (&$Array, $File) use (&$phpMussel) {
+    if (!isset($Array['qdata'])) {
+        $Array['qdata'] = '';
+    }
+    $Array['odata'] = $phpMussel['ReadFile']($File);
+    $Array['len'] = strlen($Array['odata']);
+    $Array['crc'] = hash('crc32b', $Array['odata']);
+    $Array['qfile'] = $phpMussel['Time'] . '-' . md5($phpMussel['Config']['general']['quarantine_key'] . $Array['crc'] . $phpMussel['Time']);
+    if ($Array['len'] > 0 && $Array['len'] < $phpMussel['ReadBytes']($phpMussel['Config']['general']['quarantine_max_filesize'])) {
+        $phpMussel['Quarantine'](
+            $Array['odata'],
+            $phpMussel['Config']['general']['quarantine_key'],
+            $_SERVER[$phpMussel['Config']['general']['ipaddr']],
+            $Array['qfile']
+        );
+    }
+    if ($phpMussel['Config']['general']['delete_on_sight'] && is_readable($File)) {
+        unlink($File);
+    }
+    $Array['qdata'] .=
+        'TEMP FILENAME: ' . $File . "\nFILENAME: " . urlencode($File) .
+        "\nFILESIZE: " . $Array['len'] . "\nMD5: " . md5($Array['odata']) .
+        "\n" . $phpMussel['ParseVars'](array(
+            'QFU' => $Array['qfile']
+        ), $phpMussel['lang']['quarantined_as']);
+};
+
+/** Duplication avoidance (assigning kill details and unlinking files). */
+$phpMussel['KillAndUnlink'] = function () use (&$phpMussel) {
+    $phpMussel['killdata'] .=
+        '-UPLOAD-LIMIT-EXCEEDED--NO-HASH-:' .
+        $phpMussel['upload']['FilesData']['FileSet']['size'][$phpMussel['upload']['FilesData']['FileSet']['i']] . ':' .
+        $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] . "\n";
+    $phpMussel['whyflagged'] .=
+        $phpMussel['lang']['upload_limit_exceeded'] .
+        ' (' . $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']] . ')' .
+        $phpMussel['lang']['_exclamation'];
+    if (
+        $phpMussel['Config']['general']['delete_on_sight'] &&
+        is_uploaded_file($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]) &&
+        is_readable($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]) &&
+        !$phpMussel['Config']['general']['honeypot_mode']
+    ) {
+        unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
+    }
+};

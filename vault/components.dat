@@ -21,7 +21,7 @@ phpMussel:
   vi: Các gói thầu chính (mà không có các tập tin chữ ký, tài liệu, và cấu hình).
   zh: 主包（没有签名文件，文档，和配置）。
   zh-tw: 主包（沒有簽名文件，文檔，和配置）。
- Version: 1.0.0-DEV+2017223801
+ Version: 1.0.0-DEV+2017223951
  Minimum Required: 1.0.0-DEV
  Minimum Required PHP: 5.4.0
  Changelog: https://raw.githubusercontent.com/phpMussel/phpMussel/master/Changelog-v1.txt
@@ -135,7 +135,7 @@ phpMussel:
    - 4d4b8356beee307735f73ceddf6d21b0:17579
    - 1f7377ba8beb1a4d28714fa320973741:929
    - 98304c15fb511dc3084c08992d78ae05:135303
-   - 731e3ee988b85c2f30ab78de6fc162c5:278420
+   - 81a7bc640f0cd4394448c1abc49d816f:280986
    - ac607d0db4c0e159005c087365a6b77c:3072
    - 0f4fa0075f9790e27bc668ef80a58418:2315
    - 8e03209e7fc6641b45094e584340feff:83
@@ -146,7 +146,7 @@ phpMussel:
    - 2c5e1906295c889436749adc4441ffa4:3233
    - caed7b1d78502266f746797a028146b1:1140
    - df2e543957a5c95438a31c67e163fdcc:2039
-   - 781009f27f1988654d2275659cc547d8:29247
+   - ede56cdf7ae4f7e25ea9cb274086a320:20593
  Reannotate: components.dat
 l10n/en:
  Name: L10N: English

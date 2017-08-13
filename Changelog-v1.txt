@@ -359,6 +359,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   to v1.0.0 from older versions should re-read the installation instructions as
   to be familiar with the changes.
 
+- [2017.08.12; Sub-minor code change; Maikuolan]: Serialised logging now works
+  in CLI-mode (details about specific detections aren't listed yet, but
+  timestamps can be cross-referenced against standard logfiles to obtain this
+  information if required; plan to improve this in the future when possible).
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"
