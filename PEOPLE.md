@@ -1,8 +1,6 @@
 <!--
     PEOPLE.md: A document describing the people behind phpMussel.
 
-    This document is a work-in-progress and is therefore subject to change.
-
     THE TEAM:
 
     Caleb Mazalevskis.
@@ -24,17 +22,15 @@
 
     BELOW THIS LINE IS THE MARKDOWN VERSION OF THIS DOCUMENT. -->
 
-*This document is a work-in-progress and therefore is subject to change.*
+## __The team:__
 
-## **The team:**
+- __Caleb Mazalevskis__ ([__Maikuolan__](https://github.com/Maikuolan)) - *Project creator and developer.*
+- __Daniel Ruf__ ([__DanielRuf__](https://github.com/DanielRuf)) - *Developer.*
+- __Matthias Kaschubowski__ ([__nhlm__](https://github.com/nhlm)) - *Developer.*
 
-- **Caleb Mazalevskis** ([**Maikuolan**](https://github.com/Maikuolan))
-<br />*Project creator and developer.*
-- **Daniel Ruf** ([**DanielRuf**](https://github.com/DanielRuf))
-<br />*Developer.*
-- **Matthias Kaschubowski** ([**nhlm**](https://github.com/nhlm))
-<br />*Developer.*
+### __See also:__
+- [github.com/orgs/phpMussel/people](https://github.com/orgs/phpMussel/people).
 
 ---
 
-*Last modified: 14 April 2017 (2017.04.14).*
+*Last modified: 15 August 2017 (2017.08.15).*
