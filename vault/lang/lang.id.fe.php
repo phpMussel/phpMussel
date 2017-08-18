@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.07.29).
+ * This file: Indonesian language data for the front-end (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['config_general_maintenance_mode'] = 'Aktifkan mode perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Halaman Utama</a> | <a href="?phpmussel-page=logout">Keluar</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Keluar</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Ekstensi file terkompres yang dikenali (format nya CSV; seharusnya hanya menambah atau menghapus ketika masalah terjadi; Tidak cocok langsung menghapus karena dapat menyebabkan angka positif yang salah terjadi pada file terkompres, dimana juga menambahkan deteksi; memodifikasi dengan peringatan; Juga dicatat bahwa ini tidak memberi efek pada file terkompress apa yang dapat dan tidak dapat di analisa pada level isi). Daftar sebagaimana defaultnya, memberi daftar format-format yang digunakan yang paling umum melalui melalui mayoritas sistem dan CMS, tapi bermaksud tidak komprehensif.';
@@ -100,6 +101,7 @@ $phpMussel['lang']['field_delete_account'] = 'Hapus Akun';
 $phpMussel['lang']['field_delete_file'] = 'Menghapus';
 $phpMussel['lang']['field_download_file'] = 'Mendownload';
 $phpMussel['lang']['field_edit_file'] = 'Mengedit';
+$phpMussel['lang']['field_false'] = 'False (Palsu)';
 $phpMussel['lang']['field_file'] = 'File';
 $phpMussel['lang']['field_filename'] = 'Nama file: ';
 $phpMussel['lang']['field_filetype_directory'] = 'Direktori';
@@ -125,6 +127,7 @@ $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = 'Status';
 $phpMussel['lang']['field_system_timezone'] = 'Gunakan zona waktu default sistem.';
+$phpMussel['lang']['field_true'] = 'True (Benar)';
 $phpMussel['lang']['field_uninstall'] = 'Uninstal';
 $phpMussel['lang']['field_update'] = 'Perbarui';
 $phpMussel['lang']['field_update_all'] = 'Memperbarui Semua';

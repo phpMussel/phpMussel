@@ -370,6 +370,11 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   previously scanned alongside other files correctly identified as malicious
   and thus collectively blocked; Fixed.
 
+- [2017.08.17; Minor code change; Maikuolan]: Added a configuration directive
+  for temporarily disabling everything except the front-end
+  ("maintenance_mode"). Might be useful in some situations when updating CMS,
+  frameworks, forum systems, etc.
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"

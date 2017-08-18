@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.08.10).
+ * This file: Korean language data for the front-end (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['config_general_maintenance_mode'] = '유지 관리 모드를 사용 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 프런트 엔드 이외의 모든 것을 비활성화합니다. CMS, 프레임 워크 등을 업데이트 할 때 유용합니다.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">홈</a> | <a href="?phpmussel-page=logout">로그 아웃</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">로그 아웃</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '인식 가능한 아카이브 파일 확장입니다 (CSV 형식; 문제가있을 경우에만 추가 또는 제거해야합니다. 실수로 제거하면 오진의 원인이 될 수 있습니다. 반대로 실수로 추가하면 어택 자 스페시 픽 검출에서 추가 된 화이트리스트 화되어 버립니다. 충분히주의 위 변경하십시오. 또한 컨텐트 수준에서 아카이브를 분석 할 수 있는지 여부에는 영향을주지 않습니다). 기본적으로 가장 일반적 형식을 나열하고 있지만 의도적으로 포괄적으로하지 않습니다.';
@@ -100,6 +101,7 @@ $phpMussel['lang']['field_delete_account'] = '계정 삭제';
 $phpMussel['lang']['field_delete_file'] = '삭제';
 $phpMussel['lang']['field_download_file'] = '다운로드';
 $phpMussel['lang']['field_edit_file'] = '편집';
+$phpMussel['lang']['field_false'] = 'False (거짓)';
 $phpMussel['lang']['field_file'] = '파일';
 $phpMussel['lang']['field_filename'] = '파일 이름 : ';
 $phpMussel['lang']['field_filetype_directory'] = '디렉토리';
@@ -125,6 +127,7 @@ $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = '상태';
 $phpMussel['lang']['field_system_timezone'] = '시스템 기본 시간대를 사용하십시오.';
+$phpMussel['lang']['field_true'] = 'True (참된)';
 $phpMussel['lang']['field_uninstall'] = '제거';
 $phpMussel['lang']['field_update'] = '업데이트';
 $phpMussel['lang']['field_update_all'] = '모두 업데이트';

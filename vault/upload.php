@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2017.08.12).
+ * This file: Upload handler (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -33,7 +33,7 @@ $phpMussel['upload'] = array();
 $phpMussel['upload']['count'] = empty($_FILES) ? 0 : count($_FILES);
 
 /** Only continue if there are uploads to deal with. */
-if ($phpMussel['upload']['count'] > 0) {
+if ($phpMussel['upload']['count'] > 0 && !$phpMussel['Config']['general']['maintenance_mode']) {
 
     /**
      * Whenever something is detected in a file being scanned, a human-readable

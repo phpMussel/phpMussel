@@ -150,6 +150,11 @@ FrontEndLog=''
 ; Disable webfonts? True = Yes; False = No [Default].
 disable_webfonts=false
 
+; Enable maintenance mode? True = Yes; False = No [Default]. Disables
+; everything other than the front-end. Sometimes useful for when updating your
+; CMS, frameworks, etc.
+maintenance_mode=false
+
 
 [signatures]
 

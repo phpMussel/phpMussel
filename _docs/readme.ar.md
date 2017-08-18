@@ -482,6 +482,11 @@
  <li>هل تريد تعطيل ويبفونتس؟ True = نعم؛ False = لا [افتراضي].</li>
 </ul></div>
 
+<div dir="rtl">"maintenance_mode"<br /></div>
+<div dir="rtl"><ul>
+ <li>هل تريد تمكين وضع الصيانة؟ True = نعم؛ False = لا [افتراضي]. تعطيل كل شيء بخلاف front-end. قد تكون مفيدة أحيانا عند تحديث نظام إدارة المحتوى والأطر وما إلى ذلك.</li>
+</ul></div>
+
 #### <div dir="rtl">"signatures" (التصنيف)<br /></div>
 <div dir="rtl">تكوين التوقيعات.<br /><br /></div>
 
@@ -1053,4 +1058,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-<div dir="rtl">آخر تحديث: 9 أغسطس 2017 (2017.08.09).</div>
+<div dir="rtl">آخر تحديث: 17 أغسطس 2017 (2017.08.17).</div>

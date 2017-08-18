@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Dutch language data for the front-end (last modified: 2017.08.11).
+ * This file: Dutch language data for the front-end (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['config_general_maintenance_mode'] = 'Inschakelen de onderhoudsmodus? True = Ja; False = Nee [Standaard]. Schakelt alles anders dan het frontend uit. Soms nuttig bij het bijwerken van uw CMS, frameworks, enz.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Startpagina</a> | <a href="?phpmussel-page=logout">Uitloggen</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Uitloggen</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Herkende archief bestandsextensies (formaat is CSV; moet alleen toevoegen of verwijderen wanneer problemen voorkomen; onnodig verwijderen kan leiden tot vals-positieven te verschijnen voor archiefbestanden, terwijl onnodig toevoeging zal effectief whitelist wat u toevoegt van aanval-specifieke detectie; wijzigen met voorzichtigheid; ook noteren dat Dit heeft geen effect op welke archieven kan en niet kan wordt geanalyseerd op inhoudsniveau). De lijst, als is bij standaard, geeft die formaten gebruikt meest vaak door de meeste systemen en CMS, maar opzettelijk is niet noodzakelijk alomvattend.';
@@ -100,6 +101,7 @@ $phpMussel['lang']['field_delete_account'] = 'Account Verwijderen';
 $phpMussel['lang']['field_delete_file'] = 'Verwijder';
 $phpMussel['lang']['field_download_file'] = 'Download';
 $phpMussel['lang']['field_edit_file'] = 'Bewerk';
+$phpMussel['lang']['field_false'] = 'False (Vals)';
 $phpMussel['lang']['field_file'] = 'Bestand';
 $phpMussel['lang']['field_filename'] = 'Bestandsnaam: ';
 $phpMussel['lang']['field_filetype_directory'] = 'Bestandsmap';
@@ -125,6 +127,7 @@ $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = 'Toestand';
 $phpMussel['lang']['field_system_timezone'] = 'Gebruik de systeem standaard tijdzone.';
+$phpMussel['lang']['field_true'] = 'True (Waar)';
 $phpMussel['lang']['field_uninstall'] = 'Verwijderen';
 $phpMussel['lang']['field_update'] = 'Bijwerken';
 $phpMussel['lang']['field_update_all'] = 'Bijwerken Alles';

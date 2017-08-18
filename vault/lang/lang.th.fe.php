@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Thai language data for the front-end (last modified: 2017.07.29).
+ * This file: Thai language data for the front-end (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['config_general_maintenance_mode'] = 'เปิดใช้โหมดการบำรุงรักษาหรือไม่? True = เปิดใช้งานได้; False = ไม่เปิดใช้งาน [ค่าเริ่มต้น]. ปิดใช้งานทุกอย่างอื่นที่ไม่ใช่ front-end. บางครั้งมีประโยชน์สำหรับการอัปเดต CMS, framework, ฯลฯ.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">โฮมเพจ</a> | <a href="?phpmussel-page=logout">ออกจากระบบ</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">ออกจากระบบ</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'รู้จักส่วนขยายไฟล์ที่เก็บถาวร (รูปแบบเป็น CSV; ควรเพิ่มหรือลบเมื่อเกิดปัญหาขึ้นเท่านั้น; การลบโดยปราศจากเหตุผลอาจทำให้ false positive ปรากฏขึ้น. เพิ่มได้โดยไม่มีเหตุผลอาจป้องกันไม่ให้การป้องกันบางอย่างทำงานได้อย่างถูกต้อง; แก้ไขด้วยความระมัดระวัง; การสแกนระดับเนื้อหาไม่ได้รับผลกระทบ). รายการ, เป็นค่าเริ่มต้น, แสดงรูปแบบที่ใช้บ่อยที่สุดในระบบและ CMS ส่วนใหญ่, แต่ไม่รวมทุกอย่าง.';
@@ -100,6 +101,7 @@ $phpMussel['lang']['field_delete_account'] = 'ลบบัญชี';
 $phpMussel['lang']['field_delete_file'] = 'ลบ';
 $phpMussel['lang']['field_download_file'] = 'ดาวน์โหลด';
 $phpMussel['lang']['field_edit_file'] = 'เปลี่ยนแปลง';
+$phpMussel['lang']['field_false'] = 'False (เท็จ)';
 $phpMussel['lang']['field_file'] = 'ไฟล์';
 $phpMussel['lang']['field_filename'] = 'ชื่อไฟล์: ';
 $phpMussel['lang']['field_filetype_directory'] = 'ไดเรกทอรี';
@@ -125,6 +127,7 @@ $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = 'สถานะ';
 $phpMussel['lang']['field_system_timezone'] = 'ใช้เขตเวลาเริ่มต้นของระบบ.';
+$phpMussel['lang']['field_true'] = 'True (จริง)';
 $phpMussel['lang']['field_uninstall'] = 'ถอนการติดตั้ง';
 $phpMussel['lang']['field_update'] = 'อัปเดต';
 $phpMussel['lang']['field_update_all'] = 'อัพเดททั้งสิ้น';

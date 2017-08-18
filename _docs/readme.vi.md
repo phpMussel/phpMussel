@@ -435,6 +435,9 @@ Cấu hình chung cho phpMussel.
 "disable_webfonts"
 - Vô hiệu hóa webfonts? True = Vâng; False = Không [Mặc định].
 
+"maintenance_mode"
+- Bật chế độ bảo trì? True = Vâng; False = Không [Mặc định]. Vô hiệu hoá mọi thứ khác ngoài các front-end. Đôi khi hữu ích khi cập nhật CMS, framework của bạn, vv.
+
 #### "signatures" (Thể loại)
 Cấu hình cho chữ ký.
 
@@ -910,4 +913,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Lần cuối cập nhật: 9 Tháng Tám 2017 (2017.08.09).
+Lần cuối cập nhật: 17 Tháng Tám 2017 (2017.08.17).

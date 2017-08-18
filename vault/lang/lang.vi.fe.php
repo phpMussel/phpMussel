@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.07.29).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['config_general_maintenance_mode'] = 'Bật chế độ bảo trì? True = Vâng; False = Không [Mặc định]. Vô hiệu hoá mọi thứ khác ngoài các front-end. Đôi khi hữu ích khi cập nhật CMS, framework của bạn, vv.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Trang Chủ</a> | <a href="?phpmussel-page=logout">Đăng Xuất</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Đăng Xuất</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Được công nhận mở rộng cho tập tin kho lưu trữ (định dạng là CSV; chỉ nên thêm hay loại bỏ khi có vấn đề xảy ra; loại bỏ không cần thiết có thể gây ra sai tích cực để xuất hiện cho tập tin kho lưu trữ, trong khi thêm không cần thiết sẽ trong bản chất danh sách trắng những gì bạn đang thêm từ phát hiện cụ tấn công; sửa đổi với cách thận trọng; cũng lưu ý rằng điều này không có tác dụng liên quan đến những gì kho lưu trữ có thể và không thể được phân tích ở nội dung cấp). Danh sách này, như là mặc định, liệt kê các định dạng sử dụng phổ biến nhất trên phần lớn các hệ thống và CMS, nhưng là cố tình không nhất thiết phải toàn diện.';
@@ -100,6 +101,7 @@ $phpMussel['lang']['field_delete_account'] = 'Xóa tài khoản';
 $phpMussel['lang']['field_delete_file'] = 'Xóa Bỏ';
 $phpMussel['lang']['field_download_file'] = 'Tải Về';
 $phpMussel['lang']['field_edit_file'] = 'Chỉnh Sửa';
+$phpMussel['lang']['field_false'] = 'False (Sai)';
 $phpMussel['lang']['field_file'] = 'Tập Tin';
 $phpMussel['lang']['field_filename'] = 'Tên tập tin: ';
 $phpMussel['lang']['field_filetype_directory'] = 'Thư Mục';
@@ -125,6 +127,7 @@ $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = 'Tình Trạng';
 $phpMussel['lang']['field_system_timezone'] = 'Sử dụng múi giờ mặc định của hệ thống.';
+$phpMussel['lang']['field_true'] = 'True (Đúng)';
 $phpMussel['lang']['field_uninstall'] = 'Gỡ Bỏ Cài Đặt';
 $phpMussel['lang']['field_update'] = 'Cập Nhật';
 $phpMussel['lang']['field_update_all'] = 'Cập Nhật Tất Cả';

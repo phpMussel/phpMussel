@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.07.29).
+ * This file: Japanese language data for the front-end (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['config_general_maintenance_mode'] = 'メンテナンス・モードを有効にしますか？​True = はい；​False = いいえ（Default/デフォルルト）。​フロントエンド以外のすべてを無効にします。​ＣＭＳ、フレームワークなどを更新するときに便利です。';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?phpmussel-page=logout">ログアウト</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">ログアウト</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '認識可能なアーカイブファイルエクステンションです（フォーマットはCSV；問題があった場合にのみ追加あるいは取り除くべきです。​不用意に取り除くと誤検出の原因となる可能性があります。​反対に不用意に追加すると、​アタックースペシフィック検出から追加したものをホワイトリスト化してしまいます。​充分に注意に上、​変更して下さい。​なお、​コンテントレベルにおいてアーカイブを分析することが出来るか否かには影響しません）。​デフォルトでは最も一般なフォーマットをリストしていますが、​意図的に包括的にはしていません。';
@@ -100,6 +101,7 @@ $phpMussel['lang']['field_delete_account'] = 'アカウントを削除する';
 $phpMussel['lang']['field_delete_file'] = '削除';
 $phpMussel['lang']['field_download_file'] = 'ダウンロード';
 $phpMussel['lang']['field_edit_file'] = '編集';
+$phpMussel['lang']['field_false'] = 'False （偽）';
 $phpMussel['lang']['field_file'] = 'ファイル';
 $phpMussel['lang']['field_filename'] = 'ファイル名：';
 $phpMussel['lang']['field_filetype_directory'] = 'ディレクトリ';
@@ -125,6 +127,7 @@ $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = '状態';
 $phpMussel['lang']['field_system_timezone'] = 'システムのデフォルトタイムゾーンを使用します。';
+$phpMussel['lang']['field_true'] = 'True （真）';
 $phpMussel['lang']['field_uninstall'] = 'アンインストール';
 $phpMussel['lang']['field_update'] = 'アップデート';
 $phpMussel['lang']['field_update_all'] = 'すべてアップデートする';

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.07.29).
+ * This file: Turkish language data for the front-end (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['config_general_maintenance_mode'] = 'Bakım modunu etkinleştirilsin mi? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Ön uç haricindeki her şeyi devre dışı bırakır. Bazen CMS\'nizi, çerçeveleri vb. güncellenirken yararlıdır.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Ana Sayfa</a> | <a href="?phpmussel-page=logout">Çıkış</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Çıkış</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Tanınan arşiv dosya uzantıları (biçimi CSV\'dir; sorunlar olduğunda yalnızca eklemeli veya çıkarılmalıdır; gereksiz yere kaldırılması yanlış pozitiflerin ortaya çıkmasına neden olabilir; gereksiz yere ekleme, eklediğinizin beyaz listeye eklenmesine eşdeğerdir; dikkatle değiştirmek; bunun içerik düzeyinde bir etkisi olmadığını da unutmayın). Varsayılan olarak olduğu gibi liste, çoğunlukla sistemlerin ve CMS\'nin çoğunluğunda kullanılan biçimleri listeler, ancak kapsamlı değildir.';
@@ -100,6 +101,7 @@ $phpMussel['lang']['field_delete_account'] = 'Hesabı sil';
 $phpMussel['lang']['field_delete_file'] = 'Sil';
 $phpMussel['lang']['field_download_file'] = 'İndir';
 $phpMussel['lang']['field_edit_file'] = 'Düzenle';
+$phpMussel['lang']['field_false'] = 'False (Yanlış)';
 $phpMussel['lang']['field_file'] = 'Dosya';
 $phpMussel['lang']['field_filename'] = 'Dosya adı: ';
 $phpMussel['lang']['field_filetype_directory'] = 'Rehber';
@@ -125,6 +127,7 @@ $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = 'Durum';
 $phpMussel['lang']['field_system_timezone'] = 'Sistem varsayılan saat dilimini kullanın.';
+$phpMussel['lang']['field_true'] = 'True (Doğru)';
 $phpMussel['lang']['field_uninstall'] = 'Kaldır';
 $phpMussel['lang']['field_update'] = 'Güncelle';
 $phpMussel['lang']['field_update_all'] = 'Tümünü Güncelle';

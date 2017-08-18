@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Arabic language data for the front-end (last modified: 2017.07.29).
+ * This file: Arabic language data for the front-end (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['config_general_maintenance_mode'] = 'هل تريد تمكين وضع الصيانة؟ True = نعم؛ False = لا [افتراضي]. تعطيل كل شيء بخلاف front-end. قد تكون مفيدة أحيانا عند تحديث نظام إدارة المحتوى والأطر وما إلى ذلك.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">الرئيسية</a> | <a href="?phpmussel-page=logout">خروج</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">خروج</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'ملحقات ملفات الأرشيف المعترف بها (الشكل هو CSV، وينبغي فقط إضافة أو إزالة عندما تحدث المشاكل؛ إزالة دون داع قد يسبب ايجابيات كاذبة لتظهر لملفات الأرشيف، في حين اضاف داع سوف القائمة البيضاء أساسا ما كنت تقوم بإضافة من كشف المحدد الهجوم؛ تعديل مع الحذر، لاحظ أيضا أن هذا ليس له تأثير على ما المحفوظات يمكن ولا يمكن تحليلها على مستوى المحتوى). القائمة، كما هو في التقصير، يسرد تلك الأشكال الأكثر شيوعا في غالبية النظم واتفاقية الأنواع المهاجرة، ولكن عمدا ليست شاملة بالضرورة.';
@@ -100,6 +101,7 @@ $phpMussel['lang']['field_delete_account'] = 'حذف حساب';
 $phpMussel['lang']['field_delete_file'] = 'حذف';
 $phpMussel['lang']['field_download_file'] = 'تحميل';
 $phpMussel['lang']['field_edit_file'] = 'تحرير';
+$phpMussel['lang']['field_false'] = 'False (خاطئة)';
 $phpMussel['lang']['field_file'] = 'ملف';
 $phpMussel['lang']['field_filename'] = 'اسم الملف: ';
 $phpMussel['lang']['field_filetype_directory'] = 'مجلد';
@@ -125,6 +127,7 @@ $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = 'الحالة';
 $phpMussel['lang']['field_system_timezone'] = 'استخدام المنطقة الزمنية الافتراضية للنظام.';
+$phpMussel['lang']['field_true'] = 'True (صحيح)';
 $phpMussel['lang']['field_uninstall'] = 'الغاء التثبيت';
 $phpMussel['lang']['field_update'] = 'تحديث';
 $phpMussel['lang']['field_update_all'] = 'تحديث الجميع';

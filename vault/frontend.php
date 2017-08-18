@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.08.01).
+ * This file: Front-end handler (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -954,6 +954,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                     }
                     if (strpos($phpMussel['ChoiceValue'], '{') !== false) {
                         $phpMussel['ChoiceValue'] = $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['ChoiceValue']);
+                        if (strpos($phpMussel['ChoiceValue'], '{') !== false) {
+                            $phpMussel['ChoiceValue'] = $phpMussel['ParseVars']($phpMussel['lang'], $phpMussel['ChoiceValue']);
+                        }
                     }
                     $phpMussel['ThisDir']['FieldOut'] .= ($phpMussel['ChoiceKey'] === $phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]) ?
                         '<option value="' . $phpMussel['ChoiceKey'] . '" selected>' . $phpMussel['ChoiceValue'] . '</option>'
@@ -965,12 +968,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'config' && $phpMussel['FE
                 if ($phpMussel['Config'][$phpMussel['CatKey']][$phpMussel['DirKey']]) {
                     $phpMussel['ThisDir']['FieldOut'] =
                         '<select class="auto" name="'. $phpMussel['ThisDir']['DirLangKey'] . '" id="'. $phpMussel['ThisDir']['DirLangKey'] . '_field"' . $phpMussel['ThisDir']['Trigger'] . '>' .
-                        '<option value="true" selected>True</option><option value="false">False</option>' .
+                        '<option value="true" selected>' . $phpMussel['lang']['field_true'] . '</option><option value="false">' . $phpMussel['lang']['field_false'] . '</option>' .
                         '</select>';
                 } else {
                     $phpMussel['ThisDir']['FieldOut'] =
                         '<select class="auto" name="'. $phpMussel['ThisDir']['DirLangKey'] . '" id="'. $phpMussel['ThisDir']['DirLangKey'] . '_field"' . $phpMussel['ThisDir']['Trigger'] . '>' .
-                        '<option value="true">True</option><option value="false" selected>False</option>' .
+                        '<option value="true">' . $phpMussel['lang']['field_true'] . '</option><option value="false" selected>' . $phpMussel['lang']['field_false'] . '</option>' .
                         '</select>';
                 }
             } elseif ($phpMussel['DirValue']['type'] === 'int' || $phpMussel['DirValue']['type'] === 'real') {
@@ -1536,15 +1539,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 $phpMussel['Config']['general']['lang']
             );
         }
-        if (empty($phpMussel['Components']['ThisComponent']['Extended Description'])) {
-            $phpMussel['Components']['ThisComponent']['Extended Description'] = '';
-        }
-        if (is_array($phpMussel['Components']['ThisComponent']['Extended Description'])) {
-            $phpMussel['IsolateL10N'](
-                $phpMussel['Components']['ThisComponent']['Extended Description'],
-                $phpMussel['Config']['general']['lang']
-            );
-        }
+        $phpMussel['PrepareExtendedDescription']($phpMussel['Components']['ThisComponent']);
         $phpMussel['Components']['ThisComponent']['ID'] = $phpMussel['Components']['Key'];
         $phpMussel['Components']['ThisComponent']['Options'] = '';
         $phpMussel['Components']['ThisComponent']['StatusOptions'] = '';
@@ -1552,20 +1547,16 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
         if (empty($phpMussel['Components']['ThisComponent']['Version'])) {
             if (empty($phpMussel['Components']['ThisComponent']['Files']['To'])) {
                 $phpMussel['Components']['ThisComponent']['RowClass'] = 'h2';
-                $phpMussel['Components']['ThisComponent']['Version'] =
-                    $phpMussel['lang']['response_updates_not_installed'];
+                $phpMussel['Components']['ThisComponent']['Version'] = $phpMussel['lang']['response_updates_not_installed'];
                 $phpMussel['Components']['ThisComponent']['StatClass'] = 'txtRd';
-                $phpMussel['Components']['ThisComponent']['StatusOptions'] =
-                    $phpMussel['lang']['response_updates_not_installed'];
+                $phpMussel['Components']['ThisComponent']['StatusOptions'] = $phpMussel['lang']['response_updates_not_installed'];
             } else {
-                $phpMussel['Components']['ThisComponent']['Version'] =
-                    $phpMussel['lang']['response_updates_unable_to_determine'];
+                $phpMussel['Components']['ThisComponent']['Version'] = $phpMussel['lang']['response_updates_unable_to_determine'];
                 $phpMussel['Components']['ThisComponent']['StatClass'] = 's';
             }
         }
         if (empty($phpMussel['Components']['ThisComponent']['Remote'])) {
-            $phpMussel['Components']['ThisComponent']['RemoteData'] =
-                $phpMussel['lang']['response_updates_unable_to_determine'];
+            $phpMussel['Components']['ThisComponent']['RemoteData'] = $phpMussel['lang']['response_updates_unable_to_determine'];
             if (!$phpMussel['Components']['ThisComponent']['StatClass']) {
                 $phpMussel['Components']['ThisComponent']['StatClass'] = 's';
             }
@@ -1707,8 +1698,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
             }
         }
         if (empty($phpMussel['Components']['ThisComponent']['Latest'])) {
-            $phpMussel['Components']['ThisComponent']['Latest'] =
-                $phpMussel['lang']['response_updates_unable_to_determine'];
+            $phpMussel['Components']['ThisComponent']['Latest'] = $phpMussel['lang']['response_updates_unable_to_determine'];
         } elseif (
             empty($phpMussel['Components']['ThisComponent']['Files']['To']) &&
             !empty($phpMussel['Components']['RemoteMeta'][$phpMussel['Components']['Key']]['Files']['To'])
@@ -1854,20 +1844,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 $phpMussel['Config']['general']['lang']
             );
         }
-        if (empty($phpMussel['Components']['ThisComponent']['Extended Description'])) {
-            $phpMussel['Components']['ThisComponent']['Extended Description'] = '';
-        }
-        if (is_array($phpMussel['Components']['ThisComponent']['Extended Description'])) {
-            $phpMussel['IsolateL10N'](
-                $phpMussel['Components']['ThisComponent']['Extended Description'],
-                $phpMussel['Config']['general']['lang']
-            );
-        }
+        $phpMussel['PrepareExtendedDescription']($phpMussel['Components']['ThisComponent']);
         $phpMussel['Components']['ThisComponent']['ID'] = $phpMussel['Components']['Key'];
-        $phpMussel['Components']['ThisComponent']['Latest'] =
-            $phpMussel['Components']['ThisComponent']['Version'];
-        $phpMussel['Components']['ThisComponent']['Version'] =
-            $phpMussel['lang']['response_updates_not_installed'];
+        $phpMussel['Components']['ThisComponent']['Latest'] = $phpMussel['Components']['ThisComponent']['Version'];
+        $phpMussel['Components']['ThisComponent']['Version'] = $phpMussel['lang']['response_updates_not_installed'];
         $phpMussel['Components']['ThisComponent']['StatClass'] = 'txtRd';
         $phpMussel['Components']['ThisComponent']['RowClass'] = 'h2';
         $phpMussel['Components']['ThisComponent']['VersionSize'] = '';

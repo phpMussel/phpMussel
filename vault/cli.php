@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CLI handler (last modified: 2017.08.12).
+ * This file: CLI handler (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -20,7 +20,7 @@ if (!defined('phpMussel')) {
 }
 
 /** Prevents execution from outside of CLI-mode. */
-if (!$phpMussel['Mussel_sapi'] || !$phpMussel['Mussel_PHP'] || $phpMussel['Mussel_OS'] != 'WIN') {
+if (!$phpMussel['Mussel_sapi'] || !$phpMussel['Mussel_PHP']) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
@@ -28,7 +28,7 @@ if (!$phpMussel['Mussel_sapi'] || !$phpMussel['Mussel_PHP'] || $phpMussel['Musse
 set_error_handler($phpMussel['ErrorHandler_1']);
 
 /** If CLI-mode is disabled, nothing here should be executed. */
-if (!$phpMussel['Config']['general']['disable_cli']) {
+if (!$phpMussel['Config']['general']['disable_cli'] && !$phpMussel['Config']['general']['maintenance_mode']) {
 
     /** Check if any arguments have been parsed via CLI. */
     $phpMussel['cli_args'] = array(
@@ -38,8 +38,8 @@ if (!$phpMussel['Config']['general']['disable_cli']) {
         isset($argv[3]) ? $argv[3] : ''
     );
 
-    /** Triggered by the forked child process in CLI-mode via Windows. */
-    if ($phpMussel['cli_args'][1] == 'cli_win_scan') {
+    /** Triggered by the forked child process in CLI-mode. */
+    if ($phpMussel['cli_args'][1] == 'cli_scan') {
         /** Fetch the command. **/
         $phpMussel['cmd'] = strtolower($phpMussel['substrbf']($phpMussel['cli_args'][2], ' ') ?: $phpMussel['cli_args'][2]);
 

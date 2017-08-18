@@ -186,6 +186,9 @@ Config Defaults:
   disable_webfonts:
    type: bool
    default: false
+  maintenance_mode:
+   type: bool
+   default: false
  signatures:
   Active:
    type: string

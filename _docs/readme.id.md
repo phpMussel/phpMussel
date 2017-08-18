@@ -435,6 +435,9 @@ Konfigurasi umum dari phpMussel.
 "disable_webfonts"
 - Menonaktifkan webfonts? True = Ya; False = Tidak [Default].
 
+"maintenance_mode"
+- Aktifkan mode perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll.
+
 #### "signatures" (Kategori)
 Konfigurasi untuk tanda tangan.
 
@@ -821,7 +824,7 @@ Mungkin. Ini dipertimbangkan berdasarkan kasus per kasus. Beritahu kami apa yang
 
 *Lihat di atas.*
 
-#### I need specialist modifications, customisations, etc; Can you help?
+#### Saya perlu modifikasi khusus, customisasi, dll; Apakah kamu bisa membantu?
 
 *Lihat di atas.*
 
@@ -910,4 +913,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Terakhir Diperbarui: 9 Agustus 2017 (2017.08.09).
+Terakhir Diperbarui: 17 Agustus 2017 (2017.08.17).

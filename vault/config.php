@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.06.26).
+ * This file: Configuration handler (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -33,9 +33,6 @@ $phpMussel['Timeout'] = 12;
 
 /** Determine PHP path. */
 $phpMussel['Mussel_PHP'] = defined('PHP_BINARY') ? PHP_BINARY : '';
-
-/** Determine the operating system in use. */
-$phpMussel['Mussel_OS'] = strtoupper(substr(PHP_OS, 0, 3));
 
 /** phpMussel favicon. */
 $phpMussel['favicon'] =

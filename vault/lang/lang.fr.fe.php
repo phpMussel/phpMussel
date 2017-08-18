@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.08.10).
+ * This file: French language data for the front-end (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['config_general_maintenance_mode'] = 'Activer le mode de maintenance ? True = Oui ; False = Non [Défaut]. Désactive tout autre que l\'accès frontal. Parfois utile pour la mise à jour de votre CMS, des frameworks, etc.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Page d\'Accueil</a> | <a href="?phpmussel-page=logout">Déconnecter</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Déconnecter</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Les extensions de fichiers d\'archives reconnus (format est CSV ; devraient ajouter ou supprimer seulement quand problèmes surviennent ; supprimer inutilement peut entraîner des faux positifs à paraître pour archive fichiers, tandis que ajoutant inutilement sera essentiellement liste blanche ce que vous ajoutez à partir de l\'attaque spécifique détection ; modifier avec prudence ; aussi noter que cela n\'a aucun effet sur ce archives peut et ne peut pas être analysé au niveau du contenu). La liste, comme en cas de défaut, énumère les formats plus couramment utilisé dans la majorité des systèmes et CMS, mais volontairement pas nécessairement complète.';
@@ -100,6 +101,7 @@ $phpMussel['lang']['field_delete_account'] = 'Supprimer le compte';
 $phpMussel['lang']['field_delete_file'] = 'Supprimer';
 $phpMussel['lang']['field_download_file'] = 'Télécharger';
 $phpMussel['lang']['field_edit_file'] = 'Modifier';
+$phpMussel['lang']['field_false'] = 'False (Faux)';
 $phpMussel['lang']['field_file'] = 'Fichier';
 $phpMussel['lang']['field_filename'] = 'Nom de fichier : ';
 $phpMussel['lang']['field_filetype_directory'] = 'Répertoire';
@@ -125,6 +127,7 @@ $phpMussel['lang']['field_size_MB'] = 'Mo';
 $phpMussel['lang']['field_size_TB'] = 'To';
 $phpMussel['lang']['field_status'] = 'Statut';
 $phpMussel['lang']['field_system_timezone'] = 'Utilisez le fuseau horaire par défaut du système.';
+$phpMussel['lang']['field_true'] = 'True (Vrai)';
 $phpMussel['lang']['field_uninstall'] = 'Désinstaller';
 $phpMussel['lang']['field_update'] = 'Mettre à Jour';
 $phpMussel['lang']['field_update_all'] = 'Tout mettre à jour';

@@ -435,6 +435,9 @@ CLI 프롬프트에서`c`를 입력하고 엔터를 누르면 사용 가능한 C
 "disable_webfonts"
 - 웹 글꼴을 사용하지 않도록 설정 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정).
 
+"maintenance_mode"
+- 유지 관리 모드를 사용 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 프런트 엔드 이외의 모든 것을 비활성화합니다. CMS, 프레임 워크 등을 업데이트 할 때 유용합니다.
+
 #### "signatures" (카테고리)
 시그니처.
 
@@ -910,4 +913,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-최종 업데이트 : 2017년 8월 9일.
+최종 업데이트 : 2017년 8월 17일.

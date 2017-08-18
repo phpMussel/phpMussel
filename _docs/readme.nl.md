@@ -435,6 +435,9 @@ Algemene configuratie voor phpMussel.
 "disable_webfonts"
 - Uitschakelen webfonts? True = Ja; False = Nee [Standaard].
 
+"maintenance_mode"
+- Inschakelen de onderhoudsmodus? True = Ja; False = Nee [Standaard]. Schakelt alles anders dan het frontend uit. Soms nuttig bij het bijwerken van uw CMS, frameworks, enz.
+
 #### "signatures" (Categorie)
 Configuratie voor signatures.
 
@@ -910,4 +913,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Laatste Bijgewerkt: 9 Augustus 2017 (2017.08.09).
+Laatste Bijgewerkt: 17 Augustus 2017 (2017.08.17).

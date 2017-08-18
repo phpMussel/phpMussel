@@ -435,6 +435,9 @@ Generelle Konfiguration von phpMussel.
 "disable_webfonts"
 - Web-Fonts deaktivieren? True = Ja; False = Nein [Standardeinstellung].
 
+"maintenance_mode"
+- Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung]. Deaktiviert alles andere als das Front-End. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, usw.
+
 #### "signatures" (Kategorie)
 Konfiguration der Signaturen.
 
@@ -910,4 +913,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-Zuletzt aktualisiert: 9 August 2017 (2017.08.09).
+Zuletzt aktualisiert: 17 August 2017 (2017.08.17).

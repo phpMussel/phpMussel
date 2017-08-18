@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.08.13).
+ * This file: Functions file (last modified: 2017.08.17).
  */
 
 /**
@@ -1517,11 +1517,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     }
 
     /** Indicates whether we're in CLI-mode. */
-    $climode = (
-        $phpMussel['Mussel_sapi'] &&
-        $phpMussel['Mussel_PHP'] &&
-        $phpMussel['Mussel_OS'] == 'WIN'
-    ) ? 1 : 0;
+    $climode = ($phpMussel['Mussel_sapi'] && $phpMussel['Mussel_PHP']) ? 1 : 0;
 
     if (
         $phpMussel['Config']['attack_specific']['scannable_threshold'] > 0 &&
@@ -4637,7 +4633,7 @@ $phpMussel['Recursor'] = function ($f = '', $n = false, $zz = false, $dpt = 0, $
 $phpMussel['Fork'] = function ($f = '', $ofn = '') use (&$phpMussel) {
     $pf = popen(
         $phpMussel['Mussel_PHP'] . ' "' . $phpMussel['Vault'] .
-        '../loader.php" "cli_win_scan" "' . $f . '" "' . $ofn . '"',
+        '../loader.php" "cli_scan" "' . $f . '" "' . $ofn . '"',
         'r'
     );
     $s = '';
@@ -5632,6 +5628,16 @@ $phpMussel['FetchRemote'] = function () use (&$phpMussel) {
 };
 
 /** Duplication avoidance (front-end updates page). */
+$phpMussel['PrepareExtendedDescription'] = function (&$Arr) use (&$phpMussel) {
+    if (empty($Arr['Extended Description'])) {
+        $Arr['Extended Description'] = '';
+    }
+    if (is_array($Arr['Extended Description'])) {
+        $phpMussel['IsolateL10N']($Arr['Extended Description'], $phpMussel['Config']['general']['lang']);
+    }
+};
+
+/** Duplication avoidance (front-end updates page). */
 $phpMussel['ComponentFunctionUpdatePrep'] = function () use (&$phpMussel) {
     if (!empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files'])) {
         $phpMussel['Arrayify']($phpMussel['Components']['Meta'][$_POST['ID']]['Files']);
@@ -5978,4 +5984,16 @@ $phpMussel['KillAndUnlink'] = function () use (&$phpMussel) {
     ) {
         unlink($phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']]);
     }
+};
+
+/**
+ * Swaps for the values of two variables entered as parameters.
+ * Note: For PHP >= 7, we can use "[$First, $Second] = [$Second, $First];" and
+ * do away with this closure entirely, but we'll need it for now, at least,
+ * until we up the minimum package requirements.
+ */
+$phpMussel['Swap'] = function(&$First, &$Second) {
+    $Working = $First;
+    $First = $Second;
+    $Second = $Working;
 };

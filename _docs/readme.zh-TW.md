@@ -435,6 +435,9 @@ phpMussel應該能夠正確操作與最低要求從您：安裝後，​它應�
 『disable_webfonts』
 - 關閉網絡字體嗎？​True（真）=關閉；​False（假）=不關閉【標準】。
 
+『maintenance_mode』
+- 啟用維護模式？​True（真）=關閉；​False（假）=不關閉【標準】。​它停用一切以外前端。​有時候在更新CMS，框架，等時有用。
+
 #### 『signatures』 （類別）
 簽名配置。
 
@@ -910,4 +913,4 @@ $phpMussel['Destroy-Scan-Debug-Array']($Foo);
 ---
 
 
-最後更新：2017年8月9日。
+最後更新：2017年8月17日。

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.07.29).
+ * This file: English language data for the front-end (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['config_general_maintenance_mode'] = 'Enable maintenance mode? True = Yes; False = No [Default]. Disables everything other than the front-end. Sometimes useful for when updating your CMS, frameworks, etc.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Home</a> | <a href="?phpmussel-page=logout">Log Out</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Log Out</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Recognised archive file extensions (format is CSV; should only add or remove when problems occur; unnecessarily removing may cause false positives to appear for archive files, whereas unnecessarily adding will essentially whitelist what you\'re adding from attack specific detection; modify with caution; also note that this has no effect on what archives can and can\'t be analysed at content-level). The list, as is at default, lists those formats used most commonly across the majority of systems and CMS, but intentionally isn\'t necessarily comprehensive.';
@@ -100,6 +101,7 @@ $phpMussel['lang']['field_delete_account'] = 'Delete Account';
 $phpMussel['lang']['field_delete_file'] = 'Delete';
 $phpMussel['lang']['field_download_file'] = 'Download';
 $phpMussel['lang']['field_edit_file'] = 'Edit';
+$phpMussel['lang']['field_false'] = 'False';
 $phpMussel['lang']['field_file'] = 'File';
 $phpMussel['lang']['field_filename'] = 'Filename: ';
 $phpMussel['lang']['field_filetype_directory'] = 'Directory';
@@ -125,6 +127,7 @@ $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = 'Status';
 $phpMussel['lang']['field_system_timezone'] = 'Use system default timezone.';
+$phpMussel['lang']['field_true'] = 'True';
 $phpMussel['lang']['field_uninstall'] = 'Uninstall';
 $phpMussel['lang']['field_update'] = 'Update';
 $phpMussel['lang']['field_update_all'] = 'Update All';

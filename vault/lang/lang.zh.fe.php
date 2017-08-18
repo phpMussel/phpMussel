@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.07.29).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['config_general_maintenance_mode'] = '启用维护模式？​True（真）=关闭；​False（假）=不关闭【标准】。​它停用一切以外前端。​有时候在更新CMS，框架，等时有用。';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">主页</a> | <a href="?phpmussel-page=logout">登出</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">登出</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '认可存档文件扩展（格式是CSV；应该只添加或去掉当问题发生；不必要的去掉可能的可以导致假阳性出现为存档文件，​而不必要的增加将实质上白名单任何事您增加从专用攻击检测；修改有慎重；还请注这个无影响在什么存档可以和不能被分析在内容级）。​这个名单，​作为是作为标准，​名单那些格式使用最常见的横过多数的系统和CMS，​但有意是不全面。';
@@ -100,6 +101,7 @@ $phpMussel['lang']['field_delete_account'] = '删除账户';
 $phpMussel['lang']['field_delete_file'] = '删除';
 $phpMussel['lang']['field_download_file'] = '下载';
 $phpMussel['lang']['field_edit_file'] = '编辑';
+$phpMussel['lang']['field_false'] = 'False（假）';
 $phpMussel['lang']['field_file'] = '文件';
 $phpMussel['lang']['field_filename'] = '文件名：';
 $phpMussel['lang']['field_filetype_directory'] = '文件夹';
@@ -125,6 +127,7 @@ $phpMussel['lang']['field_size_MB'] = 'MB';
 $phpMussel['lang']['field_size_TB'] = 'TB';
 $phpMussel['lang']['field_status'] = '状态';
 $phpMussel['lang']['field_system_timezone'] = '使用系统默认时区。';
+$phpMussel['lang']['field_true'] = 'True（真）';
 $phpMussel['lang']['field_uninstall'] = '卸载';
 $phpMussel['lang']['field_update'] = '更新';
 $phpMussel['lang']['field_update_all'] = '更新一切';

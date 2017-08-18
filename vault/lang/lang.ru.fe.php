@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data for the front-end (last modified: 2017.08.10).
+ * This file: Russian language data for the front-end (last modified: 2017.08.17).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,6 +19,7 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
+$phpMussel['lang']['config_general_maintenance_mode'] = 'Включить режим обслуживания? True = Да; False = Нет [Стандарт]. Отключает все, кроме фронтенд. Иногда полезно при обновлении CMS, фреймворков и т.д.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Домашняя Страница</a> | <a href="?phpmussel-page=logout">Выйдите</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Выйдите</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Опознаёт расширение архива или файла (CSV-формат; включать или удалять только при проблемах; удаление без нужны может вызвать для архива сигнал тревоги; включение без нужды может внести в белый список то, что раньше определялось как возможная атака; изменяйте список очень осторожно; помните, что программа не влияет на функцию архива и не может анализировать содержание). Этот список содержит форматы архивов, наиболее часто используемых большинством систем и CMS, однако он не завершён, но сделано это намеренно.';
@@ -100,6 +101,7 @@ $phpMussel['lang']['field_delete_account'] = 'Удалить Аккаунт';
 $phpMussel['lang']['field_delete_file'] = 'Удалить';
 $phpMussel['lang']['field_download_file'] = 'Скачать';
 $phpMussel['lang']['field_edit_file'] = 'Редактировать';
+$phpMussel['lang']['field_false'] = 'False (Ложный)';
 $phpMussel['lang']['field_file'] = 'Файл';
 $phpMussel['lang']['field_filename'] = 'Имя файла: ';
 $phpMussel['lang']['field_filetype_directory'] = 'Каталог';
@@ -125,6 +127,7 @@ $phpMussel['lang']['field_size_MB'] = 'МБ';
 $phpMussel['lang']['field_size_TB'] = 'ТБ';
 $phpMussel['lang']['field_status'] = 'Статус';
 $phpMussel['lang']['field_system_timezone'] = 'Использовать часовой пояс по умолчанию.';
+$phpMussel['lang']['field_true'] = 'True (Правда)';
 $phpMussel['lang']['field_uninstall'] = 'Удалить';
 $phpMussel['lang']['field_update'] = 'Обновить';
 $phpMussel['lang']['field_update_all'] = 'Обновить Все';
