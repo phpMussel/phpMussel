@@ -165,8 +165,6 @@ Untuk menonaktifkan tanda tangan-tanda tangan yang dimasukkan dalam phpMussel (s
 
 Mohon merujuk pada seksi "MENGINSTAL SECARA MANUAL (UNTUK CLI)" dari file README.
 
-Mohon diingat, walaupun versi selanjutnya dari phpMussel seharusnya mendukung sistem yang lain, pada waktu ini, mode pendukung phpMussel CLI hanya di optimisasi untuk sistem berbasis Windows (anda dapat, tentu saja, mencoba pada sistem yang lain, tapi saya tidak dapat menjamin dapat bekerja seperti bagaimana seharusnya).
-
 Mohon diingat bahwa phpMussel adalah scanner *on-demand*; adalah *BUKAN* scanner *on-demand* (dengan pengecualian upload file, pada saat upload), dan tidak seperti anti virus, tidak memonitor memori aktif! phpMussel hanya mendeteksi virus dalam upload file dan dalam file yang Anda perintahkan untuk dipindai.
 
 ---
@@ -205,7 +203,7 @@ phpMussel dapat dijalankan sebagai sebuah file interaktif pemindai dalam mode CL
 Untuk daftar yang tersedia CLI perintah, pada prompt CLI, ketik 'c', dan tekan Enter.
 
 Sebagai tambahan, bagi yang berminat, sebuah video tutorial untuk bagaimana menggunakan phpMussel di modus CLI tersedia disini:
-- <https://www.youtube.com/watch?v=H-Pa740-utc>
+- <https://youtu.be/H-Pa740-utc>
 
 ---
 
@@ -436,7 +434,7 @@ Konfigurasi umum dari phpMussel.
 - Menonaktifkan webfonts? True = Ya; False = Tidak [Default].
 
 "maintenance_mode"
-- Aktifkan mode perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll.
+- Aktifkan modus perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll.
 
 #### "signatures" (Kategori)
 Konfigurasi untuk tanda tangan.

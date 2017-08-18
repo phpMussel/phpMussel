@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Indonesian language data for the front-end (last modified: 2017.08.17).
+ * This file: Indonesian language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,7 +19,6 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['config_general_maintenance_mode'] = 'Aktifkan mode perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Halaman Utama</a> | <a href="?phpmussel-page=logout">Keluar</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Keluar</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Ekstensi file terkompres yang dikenali (format nya CSV; seharusnya hanya menambah atau menghapus ketika masalah terjadi; Tidak cocok langsung menghapus karena dapat menyebabkan angka positif yang salah terjadi pada file terkompres, dimana juga menambahkan deteksi; memodifikasi dengan peringatan; Juga dicatat bahwa ini tidak memberi efek pada file terkompress apa yang dapat dan tidak dapat di analisa pada level isi). Daftar sebagaimana defaultnya, memberi daftar format-format yang digunakan yang paling umum melalui melalui mayoritas sistem dan CMS, tapi bermaksud tidak komprehensif.';
@@ -57,6 +56,7 @@ $phpMussel['lang']['config_general_FrontEndLog'] = 'File untuk mencatat upaya lo
 $phpMussel['lang']['config_general_honeypot_mode'] = 'Bila modus honeypot diaktifkan, phpMussel akan mencoba untuk karantina setiap file upload yang dia menemui, terlepas dari apakah atau tidak file yang di-upload cocok dengan tanda tangan yang disertakan, dan tidak ada pemindaian aktual atau analisis dari upload file akan terjadi. Fungsi ini akan berguna bagi mereka yang ingin menggunakan phpMussel untuk tujuan virus/malware penelitian, tapi tidak direkomendasikan untuk mengaktifkan fungsi ini jika tujuan penggunaan dari phpMussel oleh pengguna adalah bagi aktual upload file pemindaian dan juga tidak direkomendasikan untuk menggunakan fungsi honeypot untuk tujuan selain bagi honeypot. Biasanya, opsi ini dinonaktifkan. False = Dinonaktifkan [Default]; True = Diaktifkan.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Dimana menemukan alamat IP dari permintaan alamat? (Bergunak untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!';
 $phpMussel['lang']['config_general_lang'] = 'Tentukan bahasa default untuk phpMussel.';
+$phpMussel['lang']['config_general_maintenance_mode'] = 'Aktifkan modus perawatan? True = Ya; False = Tidak [Default]. Nonaktifkan semuanya selain bagian depan. Terkadang berguna saat memperbarui CMS, kerangka kerja, dll.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Jumlah maksimum upaya untuk memasukkan (bagian depan). Default = 5.';
 $phpMussel['lang']['config_general_numbers'] = 'Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel dapat mengkarantina upload file ditandai dalam isolasi dalam vault phpMussel, jika ini adalah sesuatu yang Anda ingin lakukan. Pengguna biasa dari phpMussel yang hanya ingin memproteksi website mereka dan/atau lingkungan hosting mereka tanpa memiliki minat dalam-dalam menganalisis setiap ditandai upload file harus meninggalkan fungsi ini dinonaktifkan, tapi setiap pengguna yang tertarik pada analisis lebih lanjut dari ditandai upload file bagi penelitian malware atau untuk hal-hal seperti serupa harus mengaktifkan fungsi ini. Mengkarantina ditandai upload file dapat kadang-kadang juga membantu dalam men-debug false-positif, jika ini adalah sesuatu yang sering terjadi untuk Anda. Untuk menonaktifkan fungsi karantina, meninggalkan <code>quarantine_key</code> direktif kosong, atau menghapus isi dari direktif ini jika tidak sudah kosong. Untuk mengaktifkan fungsi karantina, masukkan beberapa nilai dalam direktif ini. <code>quarantine_key</code> adalah fitur keamanan penting dari fungsi karantina diharuskan sebagai sarana untuk mencegah fungsi karantina dari dieksploitasi oleh penyerang potensial dan sebagai sarana mencegah eksekusi potensi file yang disimpan dalam karantina. <code>quarantine_key</code> harus diperlakukan dengan cara yang sama seperti password Anda: Semakin lama semakin baik, dan menjaganya diproteksi erat. Bagi efek terbaik, gunakan dalam hubungannya dengan <code>delete_on_sight</code>.';
@@ -207,6 +207,7 @@ $phpMussel['lang']['state_component_is_provisional'] = 'Komponen ini kadang-kada
 $phpMussel['lang']['state_default_password'] = 'Peringatan: Menggunakan kata sandi standar!';
 $phpMussel['lang']['state_logged_in'] = 'Pengguna yang online.';
 $phpMussel['lang']['state_logs_access_only'] = 'Akses ke log hanya';
+$phpMussel['lang']['state_maintenance_mode'] = 'Peringatan: Modus perawatan diaktifkan!';
 $phpMussel['lang']['state_password_not_valid'] = 'Peringatan: Akun ini tidak menggunakan kata sandi yang valid!';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Tidak menyembunyikan terbaru';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Menyembunyikan terbaru';

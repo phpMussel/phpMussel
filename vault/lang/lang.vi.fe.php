@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Vietnamese language data for the front-end (last modified: 2017.08.17).
+ * This file: Vietnamese language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,7 +19,6 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['config_general_maintenance_mode'] = 'Bật chế độ bảo trì? True = Vâng; False = Không [Mặc định]. Vô hiệu hoá mọi thứ khác ngoài các front-end. Đôi khi hữu ích khi cập nhật CMS, framework của bạn, vv.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Trang Chủ</a> | <a href="?phpmussel-page=logout">Đăng Xuất</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Đăng Xuất</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Được công nhận mở rộng cho tập tin kho lưu trữ (định dạng là CSV; chỉ nên thêm hay loại bỏ khi có vấn đề xảy ra; loại bỏ không cần thiết có thể gây ra sai tích cực để xuất hiện cho tập tin kho lưu trữ, trong khi thêm không cần thiết sẽ trong bản chất danh sách trắng những gì bạn đang thêm từ phát hiện cụ tấn công; sửa đổi với cách thận trọng; cũng lưu ý rằng điều này không có tác dụng liên quan đến những gì kho lưu trữ có thể và không thể được phân tích ở nội dung cấp). Danh sách này, như là mặc định, liệt kê các định dạng sử dụng phổ biến nhất trên phần lớn các hệ thống và CMS, nhưng là cố tình không nhất thiết phải toàn diện.';
@@ -57,6 +56,7 @@ $phpMussel['lang']['config_general_FrontEndLog'] = 'Tập tin cho ghi cố gắn
 $phpMussel['lang']['config_general_honeypot_mode'] = 'Khi chế độ honeypot được kích hoạt, phpMussel sẽ cố gắng kiểm dịch mỗi tập tin tải lên mà nó gặp, bất kể liệu tập tin được tải lên kích hoạt với bất kỳ chữ ký bao gồm, và không có quét hoặc phân tích của những tập tin tải lên thực sự sẽ xảy ra. Chức năng này sẽ hữu ích cho những ai muốn sử dụng phpMussel cho các mục đích của nghiên cứu cho vi rút hay phần mềm độc hại, nhưng nó không được khuyến khích để kích hoạt chức năng này nếu các mục đích sử dụng của phpMussel bởi người dùng là cho tải lên tập tin quét thực sự, cũng không được khuyến khích để sử dụng chức năng honeypot cho các mục đích khác hơn các honeypot. Theo mặc định, tùy chọn này bị vô hiệu hóa. False = Không cho phép [Mặc định]; True = Cho phép.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Nơi để tìm thấy các địa chỉ IP của các yêu cầu kết nối? (Hữu ích cho các dịch vụ như thế Cloudflare và vv) Mặc định = REMOTE_ADDR. CẢNH BÁO: Không thay đổi này trừ khi bạn biết những gì bạn đang làm!';
 $phpMussel['lang']['config_general_lang'] = 'Xác định tiếng mặc định cho phpMussel.';
+$phpMussel['lang']['config_general_maintenance_mode'] = 'Bật chế độ bảo trì? True = Vâng; False = Không [Mặc định]. Vô hiệu hoá mọi thứ khác ngoài các front-end. Đôi khi hữu ích khi cập nhật CMS, framework của bạn, vv.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Số lượng tối đa cố gắng đăng nhập (front-end). Mặc định = 5.';
 $phpMussel['lang']['config_general_numbers'] = 'Làm thế nào để bạn thích số được hiển thị? Chọn ví dụ có vẻ chính xác nhất cho bạn.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel có thể kiểm dịch tải lên tập tin mà đã được đánh dấu trong sự cô lập trong vòng các vault của phpMussel, nếu đây là cái gì bạn muốn nó làm. Các người dùng bình thường của phpMussel mà chỉ đơn giản là muốn bảo vệ các môi trường kho lưu trữ hay trang mạng của họ, mà không có bất cứ quan tâm trong việc phân tích sâu sắc của bất kỳ tải lên tập tin mà đã được đánh dấu, nên để chức năng này bị vô hiệu hóa còn lại, nhưng bất kỳ người dùng quan tâm trong phân tích sâu hơn của tải lên tập tin mà đã được đánh dấu cho nghiên cứu phần mềm độc hại hay cho những thứ tương tự như vậy nên kích hoạt chức năng này. Các kiểm dịch của tải lên tập tin mà đã được đánh dấu đôi khi cũng có thể hỗ trợ trong việc gỡ lỗi sai tích cực, nếu đây là cái gì đó thường xuyên xảy ra đối với bạn. Để vô hiệu hóa chức năng kiểm dịch, chỉ đơn giản để lại tùy chọn <code>quarantine_key</code> trống rỗng, hay xóa nội dung của nó nếu nó không phải là đã trống rỗng. Để kích hoạt chức năng kiểm dịch, nhập một số giá trị vào các tùy chọn. <code>quarantine_key</code> là một tính năng bảo mật quan trọng của chức năng kiểm dịch yêu cầu như là một phương tiện cho ngăn chặn chức năng kiểm dịch được khai thác bởi kẻ tấn công tiềm năng và như một phương tiện ngăn chặn bất kỳ thực hiện tiềm năng của kho lưu trữ trong kiểm dịch. <code>quarantine_key</code> nên được đối xử theo cách tương tự như mật khẩu của bạn: Càng dài thì càng tốt, và cất giữ nó thật chặt. Đối với hiệu quả tốt nhất, sử dụng kết hợp với <code>delete_on_sight</code>.';
@@ -207,6 +207,7 @@ $phpMussel['lang']['state_component_is_provisional'] = 'Gói này đang thỉnh 
 $phpMussel['lang']['state_default_password'] = 'Cảnh báo: Nó là sử dụng mật khẩu mặc định!';
 $phpMussel['lang']['state_logged_in'] = 'Được đăng nhập.';
 $phpMussel['lang']['state_logs_access_only'] = 'Bản ghi truy cập chỉ';
+$phpMussel['lang']['state_maintenance_mode'] = 'Cảnh báo: Đã bật chế độ bảo trì!';
 $phpMussel['lang']['state_password_not_valid'] = 'Cảnh báo: Tài khoản này không được sử dụng một mật khẩu hợp lệ!';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Đừng ẩn các không hết hạn';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Ẩn các không hết hạn';

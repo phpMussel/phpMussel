@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Travis CI test file (last modified: 2017.07.22).
+ * This file: Travis CI test file (last modified: 2017.08.18).
  *
  * At this time, our CI tests are very rudimentary; Basically, the package
  * should be executed by each of the relevant applicable PHP versions that we
@@ -23,6 +23,8 @@
  * intended). Tests may be expanded upon in the future in order to increase
  * coverage or to provide a better guarantee of overall package efficacy.
  */
+
+define('Via-Travis', true);
 
 require __DIR__ . '/loader.php';
 

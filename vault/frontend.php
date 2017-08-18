@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.08.17).
+ * This file: Front-end handler (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -30,6 +30,8 @@ $phpMussel['FE'] = array(
     'DefaultPassword' => '$2y$10$FPF5Im9MELEvF5AYuuRMSO.QKoYVpsiu1YU9aDClgrU57XtLof/dK',
     'FE_Lang' => $phpMussel['Config']['general']['lang'],
     'Magnification' => $phpMussel['Config']['template_data']['Magnification'],
+    'MaintenanceWarning' => $phpMussel['Config']['general']['maintenance_mode'] ?
+        "\n<div class=\"center\"><span class=\"txtRd\">" . $phpMussel['lang']['state_maintenance_mode'] . '</span></div><hr />' : '',
     'Number_L10N_JS' => $phpMussel['Number_L10N_JS'](),
     'DateTime' => $phpMussel['TimeFormat']($phpMussel['Time'], $phpMussel['Config']['general']['timeFormat']),
     'ScriptIdent' => $phpMussel['ScriptIdent'],

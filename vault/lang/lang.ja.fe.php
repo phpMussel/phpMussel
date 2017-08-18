@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Japanese language data for the front-end (last modified: 2017.08.17).
+ * This file: Japanese language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,7 +19,6 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['config_general_maintenance_mode'] = 'メンテナンス・モードを有効にしますか？​True = はい；​False = いいえ（Default/デフォルルト）。​フロントエンド以外のすべてを無効にします。​ＣＭＳ、フレームワークなどを更新するときに便利です。';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">ホーム</a> | <a href="?phpmussel-page=logout">ログアウト</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">ログアウト</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '認識可能なアーカイブファイルエクステンションです（フォーマットはCSV；問題があった場合にのみ追加あるいは取り除くべきです。​不用意に取り除くと誤検出の原因となる可能性があります。​反対に不用意に追加すると、​アタックースペシフィック検出から追加したものをホワイトリスト化してしまいます。​充分に注意に上、​変更して下さい。​なお、​コンテントレベルにおいてアーカイブを分析することが出来るか否かには影響しません）。​デフォルトでは最も一般なフォーマットをリストしていますが、​意図的に包括的にはしていません。';
@@ -57,6 +56,7 @@ $phpMussel['lang']['config_general_FrontEndLog'] = 'フロントエンド・ロ�
 $phpMussel['lang']['config_general_honeypot_mode'] = 'ハニーポットモードが有効になっていると、​phpMusselはアップロードされてきた全てのファイルを例外なく検疫します。​シグネチャにマッチするかどうかは問題としません。​スキャニングや分析もなされません。​phpMusselをウィルス/マルウェアのリサーチに利用と考えているユーザーにとって有益と言えるでしょう。​ただし、​アップロードファイルのスキャニングという点からは、​あまり推奨できませんし、​ハニーポット・モードを本来の目的以外に使用することもお勧めできません。​デフォルト設定では無効です。​<code>false</code>（偽） = Disabled/無効 （Default/デフォルト）；​<code>true</code>（真） = Enabled/有効。';
 $phpMussel['lang']['config_general_ipaddr'] = '接続要求のＩＰアドレスをどこで見つけるべきかについて（Cloudflareのようなサービスに対して有効）。​Default（デフォルト設定） = REMOTE_ADDR。​注意：あなたが何をしているのか、​分からない限り、​これを変更しないでください。';
 $phpMussel['lang']['config_general_lang'] = 'phpMusselのデフォルト言語を設定します。';
+$phpMussel['lang']['config_general_maintenance_mode'] = 'メンテナンス・モードを有効にしますか？​True = はい；​False = いいえ（Default/デフォルルト）。​フロントエンド以外のすべてを無効にします。​ＣＭＳ、フレームワークなどを更新するときに便利です。';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'ログイン試行の最大回数（フロントエンド）。​Default（デフォルト設定） = ５。';
 $phpMussel['lang']['config_general_numbers'] = 'どのように数字を表示するのが好きですか？​あなたに一番正しい例を選択してください。';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMusselは、​必要とあれば、​phpMusselのヴォルト内で独立してフラグ付ファイルのアップロードを検疫することができます。​一般的なphpMusselのユーザーは、​ウェブサイトやホスティング環境の保護ができれば充分と考えており、​フラグ付のようなものにさらなる分析を加えようまでの要求はないようですので、​無効で構いません。​ですが詳細に分析してマルウェアに備えたいユーザーは有効にすると良いでしょう。​フラグ付ファイルのアップロードの検疫は誤検出のデバッグに役立つことがあります。​検疫機能を無効にするには、​<code>quarantine_key</code>ディレクティブを空にしておくか、​空でない場合はディレクティブ内のコンテンツを消去して下さい。​有効にするには、​デイレクティブに何らかの値を入れて下さい。​<code>quarantine_key</code>は検疫機能における重要なセキュリティー要素であり、​検疫機能内に保存されたデータの執行を各種の攻撃から守っています。​<code>quarantine_key</code>はパスワードと同様に考えて下さい。​長い方がより安全と言えます。​最も効果的な使用法は<code>delete_on_sight</code>との併用です。';
@@ -207,6 +207,7 @@ $phpMussel['lang']['state_component_is_provisional'] = 'コンポーネントが
 $phpMussel['lang']['state_default_password'] = '警告：デフォルトのパスワードを使用して！';
 $phpMussel['lang']['state_logged_in'] = 'ログインしています。';
 $phpMussel['lang']['state_logs_access_only'] = 'ログのみにアクセス';
+$phpMussel['lang']['state_maintenance_mode'] = '警告：メンテナンス・モードが有効になっています！';
 $phpMussel['lang']['state_password_not_valid'] = '警告：このアカウントには有効なパスワードを使用していません！';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = '非時代遅れを隠さないで';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = '非時代遅れを隠す';

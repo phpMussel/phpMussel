@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Turkish language data for the front-end (last modified: 2017.08.17).
+ * This file: Turkish language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,7 +19,6 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['config_general_maintenance_mode'] = 'Bakım modunu etkinleştirilsin mi? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Ön uç haricindeki her şeyi devre dışı bırakır. Bazen CMS\'nizi, çerçeveleri vb. güncellenirken yararlıdır.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Ana Sayfa</a> | <a href="?phpmussel-page=logout">Çıkış</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Çıkış</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Tanınan arşiv dosya uzantıları (biçimi CSV\'dir; sorunlar olduğunda yalnızca eklemeli veya çıkarılmalıdır; gereksiz yere kaldırılması yanlış pozitiflerin ortaya çıkmasına neden olabilir; gereksiz yere ekleme, eklediğinizin beyaz listeye eklenmesine eşdeğerdir; dikkatle değiştirmek; bunun içerik düzeyinde bir etkisi olmadığını da unutmayın). Varsayılan olarak olduğu gibi liste, çoğunlukla sistemlerin ve CMS\'nin çoğunluğunda kullanılan biçimleri listeler, ancak kapsamlı değildir.';
@@ -57,6 +56,7 @@ $phpMussel['lang']['config_general_FrontEndLog'] = 'Ön uç giriş denemelerini 
 $phpMussel['lang']['config_general_honeypot_mode'] = 'Honeypot modu etkinleştirildiğinde, phpMussel karşılaştığı her dosya yüklemesini karantinaya almaya çalışacaktır, dahil olan imzalardan herhangi biriyle eşleşip eşleşmediğine bakılmaksızın, ve aslında hiçbir tarama ya da analiz yapılmayacaktır. Bu işlevsellik, kötücül yazılım araştırması için yararlı olmalıdır, ancak normal şartlar altında bu işlevselliği etkinleştirmeniz önerilmez. Varsayılan olarak, bu seçenek devre dışıdır. Yanlış/False = Devre dışı [Varsayılan]; Doğru/True = Etkinleştirildi.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Bağlama isteklerinin IP adresi nerede bulunur? (Cloudflare ve benzeri hizmetler için yararlıdır). Varsayılan = REMOTE_ADDR. UYARI: Ne yaptığınızı bilmiyorsanız bunu değiştirmeyin!';
 $phpMussel['lang']['config_general_lang'] = 'phpMussel için varsayılan dili belirleyin.';
+$phpMussel['lang']['config_general_maintenance_mode'] = 'Bakım modunu etkinleştirilsin mi? Doğru/True = Evet; Yanlış/False = Hayır [Varsayılan]. Ön uç haricindeki her şeyi devre dışı bırakır. Bazen CMS\'nizi, çerçeveleri vb. güncellenirken yararlıdır.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Maksimum giriş denemesi sayısı.';
 $phpMussel['lang']['config_general_numbers'] = 'Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel dosyaları karantinaya koyabilir, bunu yapmak istiyorsan. Web sitelerini korumak isteyen, dosyaları derinlemesine analiz etmek istemeyen kullanıcılar bu işlevselliği devre dışı bırakmalıdır. Dosyaları daha derinlemesine analiz etmek isteyen tüm kullanıcılar (ör., kötü amaçlı yazılım araştırmaları) bu işlevselliği etkinleştirmelidir. Dosyaları karantinaya koymak bazen yanlış pozitiflerin hata ayıklanmasına yardımcı olabilir. Bunu devre dışı bırakmak için <code>quarantine_key</code> yönergesini boş bırakın (veya henüz boş değilse içeriğini sil). Etkinleştirmek için bir miktar girin. <code>quarantine_key</code> karantina işlevinin önemli bir güvenlik özelliğidir. Bu yönerge, potansiyel saldırganların karantina içeriğini istismar etmesini önler. <code>quarantine_key</code>, şifrelerinizle aynı şekilde ele alınmalıdır: Dikkatli koruyun, ve uzun olanlar daha iyidir. En iyi efekti elde etmek için <code>delete_on_sight</code> ile birlikte kullanın.';
@@ -207,6 +207,7 @@ $phpMussel['lang']['state_component_is_provisional'] = 'Bileşen geçicidir.';
 $phpMussel['lang']['state_default_password'] = 'Uyarı: Varsayılan şifreyi kullanıyor!';
 $phpMussel['lang']['state_logged_in'] = 'Giriş yapıldı.';
 $phpMussel['lang']['state_logs_access_only'] = 'Sadece girişleri kaydeder';
+$phpMussel['lang']['state_maintenance_mode'] = 'Uyarı: Bakım modu etkin!';
 $phpMussel['lang']['state_password_not_valid'] = 'Uyarı: Bu hesap geçerli bir şifre kullanmıyor!';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Eskimiş olmayanları gizleme';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Eskimiş olmayanları gizle';

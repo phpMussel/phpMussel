@@ -165,8 +165,6 @@ Para desactivar las firmas que se incluyen con phpMussel (por ejemplo, si usted 
 
 Por favor, consulte la sección "INSTALACIÓN MANUAL (PARA CLI)" de este README.
 
-Tenga en cuenta que, aunque las futuras versiones de phpMussel deben apoyar otros sistemas, en este momento, phpMussel CLI modo compatibilidad sólo está optimizado para su uso en sistemas basados en Windows (por supuesto, usted puede probarlo en otros sistemas, pero no puedo garantizar que va funcionar como es debido).
-
 También tenga en cuenta que phpMussel es un escáner *on-demand*; *NO* es un escáner en tiempo real / *on-access* (excepto para la carga de archivos, en el momento de carga), y no como antivirus suites convencionales, no supervisa la memoria activa! Es sólo detecta virus contenidas por las carga de archivos, y contenidos en los archivos específicos explícitamente para escaneo.
 
 ---
@@ -205,7 +203,7 @@ phpMussel se puede ejecutar como un interactivo archivos escáner en CLI modo de
 Para obtener una lista de los CLI comandos disponibles, para el CLI aviso, escriba 'c', y pulse Enter.
 
 Adicionalmente, para los interesados, un video tutorial de cómo utilizar phpMussel en el modo CLI está disponible aquí:
-- <https://www.youtube.com/watch?v=H-Pa740-utc>
+- <https://youtu.be/H-Pa740-utc>
 
 ---
 
@@ -436,7 +434,7 @@ General configuración para phpMussel.
 - ¿Desactivar webfonts? True = Sí; False = No [Predefinido].
 
 "maintenance_mode"
-- ¿Habilitar modo de mantenimiento? True = Sí; False = No [Predefinido]. Desactiva todo lo que no sea el front-end. A veces útil para la actualización de su CMS, frameworks, etc.
+- ¿Activar modo de mantenimiento? True = Sí; False = No [Predefinido]. Desactiva todo lo que no sea el front-end. A veces útil para la actualización de su CMS, frameworks, etc.
 
 #### "signatures" (Categoría)
 Configuración de firmas.

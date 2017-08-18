@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: German language data for the front-end (last modified: 2017.08.17).
+ * This file: German language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,7 +19,6 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['config_general_maintenance_mode'] = 'Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung]. Deaktiviert alles andere als das Front-End. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, usw.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Startseite</a> | <a href="?phpmussel-page=logout">Ausloggen</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Ausloggen</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Erkannte Archiv-Dateierweiterungen (Format ist CSV; nur bei Problemen hinzufügen oder entfernen; unnötiges Entfernen könnte Fehlalarme für Archive auslösen, unnötiges Hinzufügen fügt das zur Whitelist hinzu, was vorher als möglicher Angriff definiert wurde; Ändern Sie diese Liste äußerst vorsichtig; Beachten Sie, dass dies keinen Einfluss darauf hat, wozu Archive fähig sind und nicht auf Inhaltsebene analysiert werden können). Diese Liste enthält die Archivformate, die am häufigsten von der Mehrzahl der Systeme und CMS verwendet werden, ist aber absichtlich nicht vollständig.';
@@ -57,6 +56,7 @@ $phpMussel['lang']['config_general_FrontEndLog'] = 'Datei für die Protokollieru
 $phpMussel['lang']['config_general_honeypot_mode'] = 'Ist der Honeypot-Modus aktiviert, wird phpMussel jede Datei aus dem Dateiupload isolieren, ohne Rücksicht darauf zu nehmen, ob diese Dateien Signaturen enthalten, es findet auch keine weitere Überprüfung statt. Diese Funktionalität dient ausschließlich dem Zweck der Viren- und Malwareforschung, es wird ausdrücklich nicht empfohlen, phpMussel mit dieser Funktion zum Zwecke der Dateiüberprüfung von Uploads oder anderen Zwecken außer "Honeypotting" zu verwenden. Standardmäßig ist diese Funktion deaktiviert. False = Deativiert [Standardwert]; True = Aktiviert.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Ort der IP-Adresse der aktuellen Verbindung im gesamten Datenstrom (nützlich für Cloud-Services) Standardeinstellung = REMOTE_ADDR. Achtung: Ändern Sie diesen Wert nur wenn Sie wissen was Sie tun!';
 $phpMussel['lang']['config_general_lang'] = 'Gibt die Standardsprache für phpMussel an.';
+$phpMussel['lang']['config_general_maintenance_mode'] = 'Wartungsmodus aktivieren? True = Ja; False = Nein [Standardeinstellung]. Deaktiviert alles andere als das Front-End. Manchmal nützlich für die Aktualisierung Ihrer CMS, Frameworks, usw.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Maximale Anzahl der Versucht zu einloggen (Front-End). Standardeinstellung = 5.';
 $phpMussel['lang']['config_general_numbers'] = 'Wie willst du Nummern anzeigen? Wählen Sie das Beispiel aus, das Ihnen am besten entspricht.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel ist in der Lage, Versuche von Datei-Uploads in einem Quarantäne-Verzeichnis zu isolieren, sofern Sie dies tun wollen. Nutzer, die nur daran interessiert sind, ihre Webauftritte oder ihre Hosting-Umgebung zu schützen ohne das Interesse, die markierten Dateien weitergehend zu untersuchen, sollten diese Funktionalität deaktivieren, Nutzer, die diese Dateien zur Ananlyse auf Malware o.ä. benötigen, sollten diese Funktion aktivieren. Die Isolation von markierten Dateien kann manchmal auch bei der Fehlersuche von Fehlalarmen helfen, wenn dies häufiger bei Ihnen auftritt. Um die Quarantänefunktion zu deaktivieren, lassen Sie die Richtlinie <code>quarantine_key</code> leer oder löschen Sie den Inhalt dieser Richtlinie, wenn sie nicht bereits leer ist. Um die Quarantänefunktion zu aktivieren, geben Sie einen Wert ein. Der <code>quarantine_key</code> ist ein wichtiges Sicherheitsmerkmal der Quarantänfunktionen, um zu verhindern, dass die Quarantänefunktionen einem Exploit ausgesetzt wird und gespeicherte Daten in der Quarantäneumgebung ausgeführt werden können. Der Wert des <code>quarantine_key</code> sollte so behandelt werden, wie Ihre Passwörter: Je länger, desto besser, und halten Sie sie geheim. Optimal in Verbindung mit <code>delete_on_sight</code>.';
@@ -207,6 +207,7 @@ $phpMussel['lang']['state_component_is_provisional'] = 'Komponente ist vorläufi
 $phpMussel['lang']['state_default_password'] = 'Warnung: Verwendet das Standard-Passwort!';
 $phpMussel['lang']['state_logged_in'] = 'Eingeloggt.';
 $phpMussel['lang']['state_logs_access_only'] = 'Zugriff nur auf Protokolldateien';
+$phpMussel['lang']['state_maintenance_mode'] = 'Warnung: Wartungsmodus ist aktiviert!';
 $phpMussel['lang']['state_password_not_valid'] = 'Warnung: Dieses Konto verwendet kein gültiges Passwort!';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Nicht verstecken nicht veraltet';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Verstecken nicht veraltet';

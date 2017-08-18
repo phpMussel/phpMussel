@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Korean language data for the front-end (last modified: 2017.08.17).
+ * This file: Korean language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,7 +19,6 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['config_general_maintenance_mode'] = '유지 관리 모드를 사용 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 프런트 엔드 이외의 모든 것을 비활성화합니다. CMS, 프레임 워크 등을 업데이트 할 때 유용합니다.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">홈</a> | <a href="?phpmussel-page=logout">로그 아웃</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">로그 아웃</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '인식 가능한 아카이브 파일 확장입니다 (CSV 형식; 문제가있을 경우에만 추가 또는 제거해야합니다. 실수로 제거하면 오진의 원인이 될 수 있습니다. 반대로 실수로 추가하면 어택 자 스페시 픽 검출에서 추가 된 화이트리스트 화되어 버립니다. 충분히주의 위 변경하십시오. 또한 컨텐트 수준에서 아카이브를 분석 할 수 있는지 여부에는 영향을주지 않습니다). 기본적으로 가장 일반적 형식을 나열하고 있지만 의도적으로 포괄적으로하지 않습니다.';
@@ -57,6 +56,7 @@ $phpMussel['lang']['config_general_FrontEndLog'] = '프론트 엔드 로그인 �
 $phpMussel['lang']['config_general_honeypot_mode'] = '허니팟 모드가 활성화되어 있으면 phpMussel 업로드되어 온 모든 파일을 예외없이 검역합니다. 서명에 부합하는지 여부는 문제가되지 않습니다. 스캐닝 및 분석도 이루어지지 않습니다. phpMussel를 바이러스/악성 코드 리서치에 사용할 생각하는 사용자에게 유익 할 것입니다. 그러나 업로드 파일 스캐닝이라는 점에서는 그다지 권장되지 않으며, 허니 모드를 본래의 목적 이외에 사용하는 것이 좋습니다 수 없습니다. 그러나 업로드 파일 스캐닝이라는 점에서는 그다지 권장되지 않으며, 허니 모드를 본래의 목적 이외에 사용하는 것이 좋습니다 수 없습니다. 기본 설정은 무효입니다. <code>false</code> = Disabled/장애인 (Default / 기본 설정); <code>true</code> = Enabled/유효.';
 $phpMussel['lang']['config_general_ipaddr'] = '연결 요청의 IP 주소를 어디에서 찾을 것인가에 대해 (Cloudflare 같은 서비스에 대해 유효). Default (기본 설정) = REMOTE_ADDR. 주의 : 당신이 무엇을하고 있는지 모르는 한이를 변경하지 마십시오.';
 $phpMussel['lang']['config_general_lang'] = 'phpMussel의 기본 언어를 설정합니다.';
+$phpMussel['lang']['config_general_maintenance_mode'] = '유지 관리 모드를 사용 하시겠습니까? True = 예; False = 아니오 (Default / 기본 설정). 프런트 엔드 이외의 모든 것을 비활성화합니다. CMS, 프레임 워크 등을 업데이트 할 때 유용합니다.';
 $phpMussel['lang']['config_general_max_login_attempts'] = '로그인 시도 횟수 (프론트 엔드). Default / 기본 설정 = 5.';
 $phpMussel['lang']['config_general_numbers'] = '어떻게 숫자를 표시하는 것을 선호합니까? 가장 정확한 것으로 보이는 예제를 선택하십시오.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel은 필요하다면, phpMussel의 보루 토에서 독립적으로 플래그 첨부 파일의 업로드를 검역 할 수 있습니다. 일반적인 phpMussel 사용자는 웹 사이트 및 호스팅 환경 보호가 있으면 충분하다고 생각하고 플래그가있는 같은 것이 추가 분석을 가하려까지 요청이없는 것이므로 무효로 될 수 있습니다. 그렇지만 상세하게 분석하여 악성 코드에 대비하려는 사용자는 사용하면 좋습니다. 플래그 첨부 파일 업로드 격리 가양 디버깅에 도움이 될 수 있습니다. 격리 기능을 해제하려면<code>quarantine_key</code> 지시문을 비워 두거나 비어 있지 않은 경우 지시문의 내용을 삭제하십시오. 활성화하려면 데이레쿠티부에 어떤 값을 넣어주세요. <code>quarantine_key</code> 격리 기능의 중요한 보안 요소이며, 검역 기능에 저장된 데이터의 집행을 각종 공격으로부터 지키고 있습니다. <code>quarantine_key</code>는 암호처럼 생각하세요. 긴 것이 더 안전 할 수 있습니다. 가장 효과적인 사용법은<code>delete_on_sight</code>과 함께합니다.';
@@ -207,6 +207,7 @@ $phpMussel['lang']['state_component_is_provisional'] = '구성 요소가 잠정�
 $phpMussel['lang']['state_default_password'] = '경고 : 기본 암호를 사용하여!';
 $phpMussel['lang']['state_logged_in'] = '로그인 있습니다.';
 $phpMussel['lang']['state_logs_access_only'] = '로그에만 액세스';
+$phpMussel['lang']['state_maintenance_mode'] = '경고 : 유지 관리 모드가 활성화되었습니다!';
 $phpMussel['lang']['state_password_not_valid'] = '경고 : 이 계정은 올바른 암호를 사용하지 않습니다!';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = '비 구형을 숨기지 않고';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = '비 구식 숨기기';
@@ -235,7 +236,7 @@ $phpMussel['lang']['warning_php_1'] = '귀하의 PHP 버전은 더 이상 적극
 $phpMussel['lang']['warning_php_2'] = '귀하의 PHP 버전이 심각하게 취약합니다! 업데이트하는 것이 좋습니다!';
 $phpMussel['lang']['warning_signatures_1'] = '서명 파일이 활성화되어 있지 않습니다!';
 
-$phpMussel['lang']['info_some_useful_links'] = '유용한 링크:<ul>
+$phpMussel['lang']['info_some_useful_links'] = '유용한 링크 :<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">phpMussel 문제 @ GitHub</a> – phpMussel 문제 페이지 (지원, 원조 등).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – phpMussel 토론 포럼 (지원, 원조 등).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – phpMussel 대체 다운로드 거울.</li>

@@ -165,8 +165,6 @@ Um die Signaturen, die in phpMussel enthalten sind, zu deaktivieren, lesen Sie b
 
 Bitte lesen Sie den Abschnitt "MANUELL INSTALLIEREN (CLI - BEFEHLSZEILENMODUS)".
 
-Bedenken Sie, dass zukünftige Versionen von phpMussel andere Systeme unterstützen werden, zur Zeit jedoch phpMussel im CLI-Modus nur für Windows-Systeme optimiert wurde (Sie können natürlich versuchen, phpMussel auf anderen Systemen zu installieren, jedoch wird nicht garantiert, dass es wie vorgesehen funktioniert).
-
 Beachten Sie außerdem, dass phpMussel eine *On-Demand-Scanner*; Keine *On-Access-Scanner* (andere als für das Hochladen von Dateien, zum Zeitpunkt der Upload), und nicht den aktiven Speicher überwacht! Es erkennt nur Viren in den Dateien, die hochgeladen werden, und die Sie explizit zum Scannen angegeben haben.
 
 ---
@@ -205,7 +203,7 @@ phpMussel kann als interaktiver Scanner im CLI-Modus in einer Windows-Systemumge
 Um eine Liste der verfügbaren CLI-Befehle zu erhalten, geben Sie in der Befehlszeile 'c' ein und bestätigen Sie mit Enter.
 
 Zusätzlich, für Interessenten, ein Video-Tutorial, wie phpMussel im CLI-Modus zu verwenden, können finden Sie hier:
-- <https://www.youtube.com/watch?v=H-Pa740-utc>
+- <https://youtu.be/H-Pa740-utc>
 
 ---
 

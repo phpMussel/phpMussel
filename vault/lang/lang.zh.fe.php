@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Chinese (simplified) language data for the front-end (last modified: 2017.08.17).
+ * This file: Chinese (simplified) language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,7 +19,6 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['config_general_maintenance_mode'] = '启用维护模式？​True（真）=关闭；​False（假）=不关闭【标准】。​它停用一切以外前端。​有时候在更新CMS，框架，等时有用。';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">主页</a> | <a href="?phpmussel-page=logout">登出</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">登出</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = '认可存档文件扩展（格式是CSV；应该只添加或去掉当问题发生；不必要的去掉可能的可以导致假阳性出现为存档文件，​而不必要的增加将实质上白名单任何事您增加从专用攻击检测；修改有慎重；还请注这个无影响在什么存档可以和不能被分析在内容级）。​这个名单，​作为是作为标准，​名单那些格式使用最常见的横过多数的系统和CMS，​但有意是不全面。';
@@ -57,6 +56,7 @@ $phpMussel['lang']['config_general_FrontEndLog'] = '前端登录尝试的录音�
 $phpMussel['lang']['config_general_honeypot_mode'] = '当这个指令（蜜罐模式）是激活，​phpMussel将尝试检疫所有文件上传它遇到，​无论的如果文件上传是匹配任何包括签名，​和没有扫描或分析的那些文件上传将发生。​这个功能应有用为那些想使用的phpMussel为目的病毒或恶意软件研究，​但它是不推荐激活这个功能如果预期的用的phpMussel通过用户是为标准文件上传扫描，​也不推荐使用蜜罐功能为目的以外蜜罐。​作为标准，​这个指令是关闭。​False（假）=是关闭【标准】； True（真）=是激活。';
 $phpMussel['lang']['config_general_ipaddr'] = '在哪里可以找到连接请求IP地址？​（可以使用为服务例如Cloudflare和类似）标准是<code>REMOTE_ADDR</code>。​警告！​不要修改此除非您知道什么您做着！';
 $phpMussel['lang']['config_general_lang'] = '指定标准phpMussel语言。';
+$phpMussel['lang']['config_general_maintenance_mode'] = '启用维护模式？​True（真）=关闭；​False（假）=不关闭【标准】。​它停用一切以外前端。​有时候在更新CMS，框架，等时有用。';
 $phpMussel['lang']['config_general_max_login_attempts'] = '最大登录尝试次数（前端）。​标准=5。';
 $phpMussel['lang']['config_general_numbers'] = '您如何喜欢显示数字？​选择最适合示例。';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel可以检疫坏文件上传在隔离在phpMussel的安全/保险库【Vault】，​如果这个是某物您想。​普通用户的phpMussel简单地想保护他们的网站或宿主环境无任何兴趣在深深分析任何尝试文件上传应该离开这个功能关闭，​但任何用户有兴趣在更深分析的尝试文件上传为目的恶意软件研究或为类似这样事情应该激活这个功能。​检疫的尝试文件上传可以有时还助攻在调试假阳性，​如果这个是某物经常发生为您。​以关闭检疫功能，​简单地离开<code>quarantine_key</code>指令空白，​或抹去内容的这个指令如果它不已空白。​以激活隔离功能，​输入一些值在这个指令。​<code>quarantine_key</code>是一个重要安全功能的隔离功能需要以预防检疫功能从成为利用通过潜在攻击者和以预防任何潜在执行的数据存储在检疫。​<code>quarantine_key</code>应该被处理在同样方法作为您的密码：更长是更好，​和紧紧保护它。​为获得最佳效果，​在结合使用<code>delete_on_sight</code>。';
@@ -207,6 +207,7 @@ $phpMussel['lang']['state_component_is_provisional'] = '组件是有时活性。
 $phpMussel['lang']['state_default_password'] = '警告：它使用标准密码！';
 $phpMussel['lang']['state_logged_in'] = '目前在线。';
 $phpMussel['lang']['state_logs_access_only'] = '仅日志访问';
+$phpMussel['lang']['state_maintenance_mode'] = '警告：维护模式是启用！';
 $phpMussel['lang']['state_password_not_valid'] = '警告：此账户不​使用有效的密码！';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = '不要隐藏非过时';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = '隐藏非过时';

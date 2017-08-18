@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: English language data for the front-end (last modified: 2017.08.17).
+ * This file: English language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,7 +19,6 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['config_general_maintenance_mode'] = 'Enable maintenance mode? True = Yes; False = No [Default]. Disables everything other than the front-end. Sometimes useful for when updating your CMS, frameworks, etc.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Home</a> | <a href="?phpmussel-page=logout">Log Out</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Log Out</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Recognised archive file extensions (format is CSV; should only add or remove when problems occur; unnecessarily removing may cause false positives to appear for archive files, whereas unnecessarily adding will essentially whitelist what you\'re adding from attack specific detection; modify with caution; also note that this has no effect on what archives can and can\'t be analysed at content-level). The list, as is at default, lists those formats used most commonly across the majority of systems and CMS, but intentionally isn\'t necessarily comprehensive.';
@@ -57,6 +56,7 @@ $phpMussel['lang']['config_general_FrontEndLog'] = 'File for logging front-end l
 $phpMussel['lang']['config_general_honeypot_mode'] = 'When honeypot mode is enabled, phpMussel will attempt to quarantine every single file upload that it encounters, regardless of whether or not the file being uploaded matches any included signatures, and no actual scanning or analysis of those attempted file uploads will actually occur. This functionality should be useful for those that wish to use phpMussel for the purposes of virus/malware research, but it\'s neither recommended to enable this functionality if the intended use of phpMussel by the user is for actual file upload scanning, nor recommended to use the honeypot functionality for purposes other than honeypotting. By default, this option is disabled. False = Disabled [Default]; True = Enabled.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Where to find the IP address of connecting requests? (Useful for services such as Cloudflare and the likes) Default = REMOTE_ADDR. WARNING: Don\'t change this unless you know what you\'re doing!';
 $phpMussel['lang']['config_general_lang'] = 'Specify the default language for phpMussel.';
+$phpMussel['lang']['config_general_maintenance_mode'] = 'Enable maintenance mode? True = Yes; False = No [Default]. Disables everything other than the front-end. Sometimes useful for when updating your CMS, frameworks, etc.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Maximum number of login attempts (front-end). Default = 5.';
 $phpMussel['lang']['config_general_numbers'] = 'How do you prefer numbers to be displayed? Select the example that looks the most correct to you.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel is able to quarantine flagged attempted file uploads in isolation within the phpMussel vault, if this is something you want it to do. Casual users of phpMussel that simply wish to protect their websites or hosting environment without having any interest in deeply analysing any flagged attempted file uploads should leave this functionality disabled, but any users interested in further analysis of flagged attempted file uploads for malware research or for similar such things should enable this functionality. Quarantining of flagged attempted file uploads can sometimes also assist in debugging false positives, if this is something that frequently occurs for you. To disable quarantine functionality, simply leave the <code>quarantine_key</code> directive empty, or erase the contents of that directive if it isn\'t already empty. To enable quarantine functionality, enter some value into the directive. The <code>quarantine_key</code> is an important security feature of the quarantine functionality required as a means of preventing the quarantine functionality from being exploited by potential attackers and as a means of preventing any potential execution of data stored within the quarantine. The <code>quarantine_key</code> should be treated in the same manner as your passwords: The longer the better, and guard it tightly. For best effect, use in conjunction with <code>delete_on_sight</code>.';
@@ -207,6 +207,7 @@ $phpMussel['lang']['state_component_is_provisional'] = 'Component is provisional
 $phpMussel['lang']['state_default_password'] = 'Warning: Using default password!';
 $phpMussel['lang']['state_logged_in'] = 'Logged in.';
 $phpMussel['lang']['state_logs_access_only'] = 'Logs access only';
+$phpMussel['lang']['state_maintenance_mode'] = 'Warning: Maintenance mode is enabled!';
 $phpMussel['lang']['state_password_not_valid'] = 'Warning: This account is not using a valid password!';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Don\'t hide non-outdated';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Hide non-outdated';

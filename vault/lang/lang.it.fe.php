@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Italian language data for the front-end (last modified: 2017.08.17).
+ * This file: Italian language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,7 +19,6 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['config_general_maintenance_mode'] = 'Abilita la modalità di manutenzione? True = Sì; False = No [Predefinito]. Disattiva tutto tranne il front-end. A volte utile per l\'aggiornamento del CMS, dei framework, ecc.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Pagina Principale</a> | <a href="?phpmussel-page=logout">Disconnettersi</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Disconnettersi</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Riconosciute archivio file estensioni (formato è CSV; deve solo aggiungere o rimuovere quando problemi apparire; rimozione inutilmente può causare falsi positivi per archivio file, mentre aggiungendo inutilmente saranno essenzialmente whitelist quello che si sta aggiungendo dall\'attacco specifico rilevamento; modificare con cautela; anche notare che questo non ha qualsiasi effetto su cui gli archivi possono e non possono essere analizzati dal contenuti livello). La lista, come da predefinito, è i formati utilizzati più comunemente attraverso la maggior parte dei sistemi e CMS, ma apposta non è necessariamente completo.';
@@ -57,6 +56,7 @@ $phpMussel['lang']['config_general_FrontEndLog'] = 'File per la registrazione di
 $phpMussel['lang']['config_general_honeypot_mode'] = 'Quando la honeypot modalità è abilitata, phpMussel tenterà di mettere in quarantena ogni file caricamenti che esso incontra, indipendentemente di se il file che essere caricato corrisponde d\'alcuna incluso firma, e zero reale scansionare o analisi di quei tentati file caricati sarà avvenire. Questa funzionalità dovrebbe essere utile per coloro che desiderano utilizzare phpMussel a fini di virus/malware ricerca, ma non si raccomandato di abilitare questa funzionalità se l\'uso previsto de phpMussel da parte dell\'utente è per l\'effettivo scansione dei file caricamenti né raccomandato di utilizzare la funzionalità di honeypot per fini diversi da l\'uso de honeypot. Da predefinita, questo opzione è disattivato. False = Disattivato [Predefinito]; True = Attivato.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Dove trovare l\'indirizzo IP di collegamento richiesta? (Utile per servizi come Cloudflare e simili) Predefinito = REMOTE_ADDR. AVVISO: Non modificare questa se non sai quello che stai facendo!';
 $phpMussel['lang']['config_general_lang'] = 'Specifica la lingua predefinita per phpMussel.';
+$phpMussel['lang']['config_general_maintenance_mode'] = 'Abilita la modalità di manutenzione? True = Sì; False = No [Predefinito]. Disattiva tutto tranne il front-end. A volte utile per l\'aggiornamento del CMS, dei framework, ecc.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Numero massimo di tentativi di accesso (front-end). Predefinito = 5.';
 $phpMussel['lang']['config_general_numbers'] = 'Come preferisci che i numeri siano visualizzati? Seleziona l\'esempio che ti sembra più corretto.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel è capace di mettere in quarantena contrassegnati tentati file caricamenti in isolamento all\'interno della phpMussel vault, se questo è qualcosa che si vuole fare. L\'ordinario utenti di phpMussel che semplicemente desiderano proteggere i loro website o hosting environment senza avendo profondo interesse ad analizzare qualsiasi contrassegnati tentati file caricamenti dovrebbe lasciare questa funzionalità disattivata, ma tutti gli utenti interessati ad ulteriori analisi di contrassegnati tentati file caricamenti per la ricerca di malware o per simili cose dovrebbe attivare questa funzionalità. Quarantena di contrassegnati tentati file caricamenti a volte può aiutare anche in debug falsi positivi, se questo è qualcosa che si accade di frequente per voi. Per disattivare la funzionalità di quarantena, lasciare vuota la direttiva <code>quarantine_key</code>, o cancellare i contenuti di tale direttiva, se non già è vuoto. Per abilita la funzionalità di quarantena, immettere alcun valore nella direttiva. Il <code>quarantine_key</code> è un importante aspetto di sicurezza della funzionalità di quarantena richiesto come un mezzo per prevenire la funzionalità di quarantena di essere sfruttati da potenziali aggressori e come mezzo per prevenire potenziale esecuzione di dati memorizzati all\'interno della quarantena. Il <code>quarantine_key</code> dovrebbe essere trattato nello stesso modo come le password: Più lunga è la migliore, e proteggila ermeticamente. Per la migliore effetto, utilizzare in combinazione con <code>delete_on_sight</code>.';
@@ -207,6 +207,7 @@ $phpMussel['lang']['state_component_is_provisional'] = 'Componente è provvisori
 $phpMussel['lang']['state_default_password'] = 'Avvertimento: Utilizzando la password predefinita!';
 $phpMussel['lang']['state_logged_in'] = 'Connesso.';
 $phpMussel['lang']['state_logs_access_only'] = 'Accesso solo per i log';
+$phpMussel['lang']['state_maintenance_mode'] = 'Attenzione: La modalità di manutenzione è abilitata!';
 $phpMussel['lang']['state_password_not_valid'] = 'Avvertimento: Questo account non utilizzando una password valida!';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Non nascondere l\'aggiornato';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Nascondere l\'aggiornato';

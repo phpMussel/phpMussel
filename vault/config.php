@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Configuration handler (last modified: 2017.08.17).
+ * This file: Configuration handler (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -157,10 +157,9 @@ if (!empty($phpMussel['Config']['general']['timezone']) && $phpMussel['Config'][
 }
 
 /** Determine whether operating in CLI-mode. */
-$phpMussel['Mussel_sapi'] = (
+$phpMussel['Mussel_sapi'] = !defined('Via-Travis') && (
     empty($_SERVER['REQUEST_METHOD']) ||
-    substr(php_sapi_name(), 0, 3) === 'cli' ||
-    (
+    substr(php_sapi_name(), 0, 3) === 'cli' || (
         empty($_SERVER[$phpMussel['Config']['general']['ipaddr']]) &&
         empty($_SERVER['HTTP_USER_AGENT']) &&
         !empty($_SERVER['argc']) &&

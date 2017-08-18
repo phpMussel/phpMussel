@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: French language data for the front-end (last modified: 2017.08.17).
+ * This file: French language data for the front-end (last modified: 2017.08.18).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -19,7 +19,6 @@ if (!defined('phpMussel')) {
     die('[phpMussel] This should not be accessed directly.');
 }
 
-$phpMussel['lang']['config_general_maintenance_mode'] = 'Activer le mode de maintenance ? True = Oui ; False = Non [Défaut]. Désactive tout autre que l\'accès frontal. Parfois utile pour la mise à jour de votre CMS, des frameworks, etc.';
 $phpMussel['lang']['bNav_home_logout'] = '<a href="?">Page d\'Accueil</a> | <a href="?phpmussel-page=logout">Déconnecter</a>';
 $phpMussel['lang']['bNav_logout'] = '<a href="?phpmussel-page=logout">Déconnecter</a>';
 $phpMussel['lang']['config_attack_specific_archive_file_extensions'] = 'Les extensions de fichiers d\'archives reconnus (format est CSV ; devraient ajouter ou supprimer seulement quand problèmes surviennent ; supprimer inutilement peut entraîner des faux positifs à paraître pour archive fichiers, tandis que ajoutant inutilement sera essentiellement liste blanche ce que vous ajoutez à partir de l\'attaque spécifique détection ; modifier avec prudence ; aussi noter que cela n\'a aucun effet sur ce archives peut et ne peut pas être analysé au niveau du contenu). La liste, comme en cas de défaut, énumère les formats plus couramment utilisé dans la majorité des systèmes et CMS, mais volontairement pas nécessairement complète.';
@@ -57,6 +56,7 @@ $phpMussel['lang']['config_general_FrontEndLog'] = 'Fichier pour l\'enregistreme
 $phpMussel['lang']['config_general_honeypot_mode'] = 'Quand le honeypot mode est activé, phpMussel va tenter de mettre en quarantaine tous les fichier téléchargements ce qu\'il rencontre, indépendamment de si oui ou non le fichier en cours de téléchargement correspond à signature inclus, et aucune réelle analyse de ces fichier téléchargements tentatives va arriver. Cette fonctionnalité devrait être utile pour ceux qui souhaitent utiliser phpMussel pour des fins de logiciels malveillants ou virus recherche, mais il pas n\'est recommandé d\'activer cette fonctionnalité si l\'utilisation prévue de phpMussel par l\'utilisateur est l\'analyse de fichier téléchargements comme la norme, ni est-il recommandé d\'utiliser la honeypot fonctionnalité pour fins autres que celles du honeypot. Par défaut, cette option est désactivée. False = Désactivé [Défaut] ; True = Activé.';
 $phpMussel['lang']['config_general_ipaddr'] = 'Où trouver l\'adresse IP de demandes de connexion ? (Utile pour services tels que Cloudflare et similaires) Par Défaut = REMOTE_ADDR. AVERTISSEMENT : Ne pas changer si vous ne sais pas ce que vous faites !';
 $phpMussel['lang']['config_general_lang'] = 'Spécifiez la langue défaut pour phpMussel.';
+$phpMussel['lang']['config_general_maintenance_mode'] = 'Activer le mode de maintenance ? True = Oui ; False = Non [Défaut]. Désactive tout autre que l\'accès frontal. Parfois utile pour la mise à jour de votre CMS, des frameworks, etc.';
 $phpMussel['lang']['config_general_max_login_attempts'] = 'Nombre maximal de tentatives de connexion (l\'accès frontal). Défaut = 5.';
 $phpMussel['lang']['config_general_numbers'] = 'Comment préférez-vous que les nombres soient affichés ? Sélectionnez l\'exemple qui vous paraît le plus approprié.';
 $phpMussel['lang']['config_general_quarantine_key'] = 'phpMussel est capable de mettre en quarantaine le marqué fichier téléchargement tentatives en isolement au sein de la voûte de phpMussel, si cela est quelque chose que vous voulez qu\'il fasse. L\'utilisateurs de phpMussel qui souhaitent simplement de protéger leurs sites ou environnement d\'hébergement sans avoir un profondément intérêt dans d\'analyse de quelconque marqué fichier téléchargement tentatives devrait laisser cette fonctionnalité désactivée, mais tous les utilisateurs intéressés dans d\'analyse plus approfondie de tenté fichier téléchargements pour la recherche des logiciels malveillants ou pour des choses semblables devraient permettre cette fonctionnalité. La quarantaine de marqué fichier téléchargement tentatives peut parfois aider également dans le débogage des faux positifs, si cela est quelque chose qui se produit fréquemment pour vous. Pour désactiver la fonctionnalité de quarantaine, il suffit de laisser la directive <code>quarantine_key</code> vide, ou effacer le contenu de cette directive si elle est pas déjà vide. Pour activer la fonctionnalité de quarantaine, entrer une valeur dans la directive. Le <code>quarantine_key</code> est une élément important de la sécurité de la fonctionnalité de quarantaine requis en tant que moyen de prévention de la fonctionnalité de quarantaine d\'être exploités par des attaquants potentiels en tant que moyen de prévention toute potentielle exécution de données stockées dans la quarantaine. Le <code>quarantine_key</code> devrait être traité de la même manière que vos mots de passe : Le plus sera le mieux, et conservez-le bien. Pour un meilleur effet, utiliser en conjonction avec <code>delete_on_sight</code>.';
@@ -207,6 +207,7 @@ $phpMussel['lang']['state_component_is_provisional'] = 'Le composant est proviso
 $phpMussel['lang']['state_default_password'] = 'Attention : Utilisant le mot de passe défaut !';
 $phpMussel['lang']['state_logged_in'] = 'Connecté.';
 $phpMussel['lang']['state_logs_access_only'] = 'Accès aux fichiers journaux seulement';
+$phpMussel['lang']['state_maintenance_mode'] = 'Avertissement : Le mode de maintenance est activé !';
 $phpMussel['lang']['state_password_not_valid'] = 'Attention : Ce compte n\'utilise un mot de passe valide !';
 $phpMussel['lang']['switch-hide-non-outdated-set-false'] = 'Ne masquer pas non dépassé';
 $phpMussel['lang']['switch-hide-non-outdated-set-true'] = 'Masquer non dépassé';
@@ -235,7 +236,7 @@ $phpMussel['lang']['warning_php_1'] = 'Votre version PHP n\'est plus activement 
 $phpMussel['lang']['warning_php_2'] = 'Votre version PHP est sévèrement vulnérable ! La mise à jour est fortement recommandée !';
 $phpMussel['lang']['warning_signatures_1'] = 'Il n\'y a pas fichiers du signatures actifs.';
 
-$phpMussel['lang']['info_some_useful_links'] = 'Quelques liens utiles :<ul>
+$phpMussel['lang']['info_some_useful_links'] = 'Quelques liens utiles :<ul>
             <li><a href="https://github.com/phpMussel/phpMussel/issues">Les problèmes de phpMussel @ GitHub</a> – Page de problèmes pour phpMussel (soutien, assistance, etc).</li>
             <li><a href="http://www.spambotsecurity.com/forum/viewforum.php?f=55">phpMussel @ Spambot Security</a> – Forum de discussion pour phpMussel (soutien, assistance, etc).</li>
             <li><a href="https://sourceforge.net/projects/phpmussel/">phpMussel @ SourceForge</a> – Alternative download mirror for phpMussel.</li>

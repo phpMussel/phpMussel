@@ -165,8 +165,6 @@ Voor uitschakelen om de signatures die bij phpMussel (zoals als u het ervaren va
 
 Raadpleeg de "HANDMATIG INSTALLEREN (VOOR CLI)" sectie van dit README bestand.
 
-Gelieve bewust te zijn, hoewel toekomstige versies van phpMussel andere systemen moet ondersteunen, momenteel, phpMussel CLI-modus ondersteuning is alleen geoptimaliseerd voor gebruik op Windows gebaseerde systemen (u kunt, natuurlijk, probeer het op andere systemen, maar ik kan niet garanderen dat het zal werken zoals bedoeld).
-
 Eveneens, noteren dat phpMussel is een *on-demand* scanner; Het is *GEEN* *on-access* scanner (anders dan voor het uploaden van bestanden, bij de tijd van de upload), en in tegenstelling tot conventionele anti-virus suites, het maakt niet actief geheugen controleren! Het zal alleen virussen te detecteren, in de bestand uploaden en in specifieke bestanden dat u expliciet zeggen dat het te scannen.
 
 ---
@@ -205,7 +203,7 @@ phpMussel kan worden uitgevoerd als een interactief bestand scanner in de CLI-mo
 Voor een lijst van beschikbare CLI commando's, bij de CLI-prompt, typ 'c', en druk op Enter.
 
 Daarnaast, voor diegenen die geïnteresseerd, een video-tutorial voor hoe te gebruiken phpMussel in de CLI-modus is hier beschikbaar:
-- <https://www.youtube.com/watch?v=H-Pa740-utc>
+- <https://youtu.be/H-Pa740-utc>
 
 ---
 

@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.08.17).
+ * This file: Functions file (last modified: 2017.08.18).
  */
 
 /**
@@ -5851,6 +5851,12 @@ $phpMussel['FE_Executor'] = function ($Closures) use (&$phpMussel) {
     foreach ($Closures as $Closure) {
         if (isset($phpMussel[$Closure]) && is_object($phpMussel[$Closure])) {
             $phpMussel[$Closure]();
+        } elseif (($Pos = strpos($Closure, ' ')) !== false) {
+            $Params = substr($Closure, $Pos + 1);
+            $Closure = substr($Closure, 0, $Pos);
+            if (isset($phpMussel[$Closure]) && is_object($phpMussel[$Closure])) {
+                $phpMussel[$Closure]($Params);
+            }
         }
     }
 };

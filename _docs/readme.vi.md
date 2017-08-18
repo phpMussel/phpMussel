@@ -165,8 +165,6 @@ Nếu bạn gặp bất kỳ sai tích cực, nếu bạn gặp một số đi�
 
 Tham khảo phần "CÀI ĐẶT THỦ CÔNG (CHO CLI)" của tập tin README này.
 
-Hãy nhận biết rằng, mặc dù các phiên bản tương lai của phpMussel nên hỗ trợ các hệ thống khác, tại thơi điểm nay, hỗ trợ cho chế độ CLI của phpMussel đã được tối ưu chỉ dành cho sử dụng trên các hệ thống Windows (bạn có thể, tất nhiên, thử nó trên các hệ thống khác, nhưng tôi không thể đảm bảo nó sẽ làm việc như dự định).
-
 Ngoài ra, ý thức được rằng phpMussel là một máy quét *khi yêu cầu* (hay *on-demand*); Nó *KHÔNG PHẢI* là một máy quét *khi truy cập* (hay *on-access*; khác hơn cho tập tin tải lên, tại thời điểm tải lên), và không giống như chống vi rút thông thường, nó không theo dõi bộ nhớ hoạt động! Nó sẽ chỉ phát hiện vi rút chứa của tập tin tải lên, và bởi những tập tin cụ thể rằng bạn rõ ràng nói với nó để quét.
 
 ---
@@ -205,7 +203,7 @@ phpMussel có thể được chạy như một máy quét tập tin tương tác
 Để xem một danh sách các lệnh CLI có sẵn, tại dấu nhắc CLI, đánh 'c', và bấm Enter.
 
 Ngoài ra, cho những người quan tâm, một hướng dẫn video về cách sử dụng phpMussel trong chế độ CLI là có sẵn ở đây:
-- <https://www.youtube.com/watch?v=H-Pa740-utc>
+- <https://youtu.be/H-Pa740-utc>
 
 ---
 

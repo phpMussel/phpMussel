@@ -165,8 +165,6 @@ Per disabilita firme incluso con phpMussel (come se stai sperimentando falsi pos
 
 Si prega di fare riferimento alla "INSTALLAZIONE MANUALMENTE (PER CLI)" sezione di questo file README.
 
-Essere consapevoli che, sebbene futuri versioni di phpMussel dovrebbe sostenere altri sistemi, in questo momento, phpMussel modalità CLI supporto è ottimizzata solo per l'utilizzo su Windows basati sistemi (si può, ovviamente, provare su altri sistemi, ma non posso garantire che funzionerà come previsto).
-
 Anche essere consapevoli che phpMussel è uno scanner *on-demand* (cioè, su richiesta); *NON* è uno scanner *on-access* (cioè, in accesso; ad eccezione di caricamenti di file, al momento del caricamento), e diverso dai convenzionali anti-virus suite, non protegge la memoria attiva! Essa solo rileva virus contenuti dai caricamenti di file, e contenuti da quei file specifici che si esplicitamente dica per scansione.
 
 ---
@@ -205,7 +203,7 @@ phpMussel può essere eseguito come uno interattivo file scanner in modalità CL
 Per un elenco di comandi disponibili all'interno CLI, al CLI prompt, tipo 'c', e premere Enter.
 
 Inoltre, per chi fosse interessato, un video tutorial su come utilizzare phpMussel in modalità CLI è disponibile qui:
-- <https://www.youtube.com/watch?v=H-Pa740-utc>
+- <https://youtu.be/H-Pa740-utc>
 
 ---
 
