@@ -7,6 +7,15 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
+(none)
+
+=== Version/Release 1.0.0 ===
+MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
+
+IMPORTANT NOTICE FOR THOSE UPDATING FROM A PREVIOUS VERSION: THIS RELEASE IS
+NOT BACKWARDS COMPATIBLE WITH THE PREVIOUS RELEASE! PLEASE CAREFULLY REVIEW
+THE DOCUMENTATION TO KNOW WHAT HAS CHANGED, IMPORTANT DIFFERENCES, ETC.
+
 - [2016.03.18; Documentation]: Deleted the version zero changelog and created
   a new changelog for our new major version one, "Changelog-v1.txt".
 
@@ -374,6 +383,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   for temporarily disabling everything except the front-end
   ("maintenance_mode"). Might be useful in some situations when updating CMS,
   frameworks, forum systems, etc.
+
+Caleb M (Maikuolan),
+20th August 2017.
 
 ======
 
