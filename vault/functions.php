@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2017.08.18).
+ * This file: Functions file (last modified: 2017.08.22).
  */
 
 /**
@@ -1386,6 +1386,67 @@ $phpMussel['Detected'] = function (&$heur, &$lnap, &$VN, &$ofn, &$ofnSafe, &$out
 };
 
 /**
+ * Confines a string boundary as per rules specified by parameters.
+ *
+ * @param string $Data The string.
+ * @param string|int $Initial The start of the boundary or string initial offset value.
+ * @param string|int $Terminal The end of the boundary or string terminal offset value.
+ * @param array $SectionOffsets Section offset values.
+ */
+$phpMussel['DataConfineByOffsets'] = function (&$Data, &$Initial, &$Terminal, &$SectionOffsets) {
+    if ($Initial === '*' && $Terminal === '*') {
+        return;
+    }
+    if (substr($Initial, 0, 2) === 'SE') {
+        $SectionNum = (int)substr($Initial, 2);
+        $Initial = '*';
+        $Terminal = '*';
+        if (isset($SectionOffsets[$SectionNum][0])) {
+            $ThisString = substr($ThisString, $SectionOffsets[$SectionNum][0] * 2);
+        }
+        if (isset($SectionOffsets[$SectionNum][1])) {
+            $ThisString = substr($ThisString, 0, $SectionOffsets[$SectionNum][1] * 2);
+        }
+    } elseif (substr($Initial, 0, 2) === 'SL') {
+        $Remainder = strlen($Initial) > 3 && substr($Initial, 2, 1) === '+' ? (substr($Initial, 3) ?: 0) : 0;
+        $Initial = '*';
+        $Final = count($SectionOffsets);
+        if ($Final > 0 && isset($SectionOffsets[$Final - 1][0])) {
+            $ThisString = substr($ThisString, ($SectionOffsets[$Final - 1][0] + $Remainder) * 2);
+        }
+        if ($Terminal !== '*' && $Terminal !== 'Z') {
+            $ThisString = substr($ThisString, 0, $Terminal * 2);
+            $Terminal = '*';
+        }
+    } elseif (substr($Initial, 0, 1) === 'S') {
+        if (($PlusPos = strpos($Initial, '+')) !== false) {
+            $SectionNum = substr($Initial, 1, $PlusPos - 1) ?: 0;
+            $Remainder = substr($Initial, $PlusPos + 1) ?: 0;
+        } else {
+            $SectionNum = substr($Initial, 1) ?: 0;
+            $Remainder = 0;
+        }
+        $Initial = '*';
+        if (isset($SectionOffsets[$SectionNum][0])) {
+            $ThisString = substr($ThisString, ($SectionOffsets[$SectionNum][0] + $Remainder) * 2);
+        }
+        if ($Terminal !== '*' && $Terminal !== 'Z') {
+            $ThisString = substr($ThisString, 0, $Terminal * 2);
+            $Terminal = '*';
+        }
+    } else {
+        if ($Initial !== '*' && $Initial !== 'A') {
+            $ThisString = substr($ThisString, $Initial * 2);
+            $Initial = '*';
+        }
+        if ($Terminal !== '*' && $Terminal !== 'Z') {
+            $ThisString = substr($ThisString, 0, $Terminal * 2);
+            $Terminal = '*';
+        }
+    }
+};
+
+/**
  * Responsible for handling any data fed to it from the recursor. It shouldn't
  * be called manually nor from any other contexts. It takes the data given to
  * it from the recursor and checks that data against the various signatures of
@@ -1842,6 +1903,9 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
     }
     unset($theSwitch, $Switch, $ThisRule);
 
+    /** Section offsets. */
+    $SectionOffsets = array();
+
     /** Confirmation of whether or not the file is a valid PE file. */
     $is_pe = false;
 
@@ -1932,8 +1996,15 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                         $phpMussel['UnpackSafe']('S', substr($PEArr['SectionArr'][$PEArr['k']]['SectionHead'], 20, 4));
                     $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'] =
                         $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'][1];
-                    $PEArr['SectionArr'][$PEArr['k']]['SectionData'] =
-                        substr($str, $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'], $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData']);
+                    $PEArr['SectionArr'][$PEArr['k']]['SectionData'] = substr(
+                        $str,
+                        $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'],
+                        $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData']
+                    );
+                    $SectionOffsets[$PEArr['k']] = array(
+                        $PEArr['SectionArr'][$PEArr['k']]['PointerToRawData'],
+                        $PEArr['SectionArr'][$PEArr['k']]['SizeOfRawData']
+                    );
                     $PEArr['SectionArr'][$PEArr['k']]['MD5'] =
                         md5($PEArr['SectionArr'][$PEArr['k']]['SectionData']);
                     $phpMussel['PEData'] .=
@@ -2717,8 +2788,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             if ($phpMussel['ConfineLength']($ThisSigLen)) {
                                 continue;
                             }
-                            $xstrf = (isset($VN[2])) ? $VN[2] : '*';
-                            $xstrt = (isset($VN[3])) ? $VN[3] : '*';
+                            $xstrf = isset($VN[2]) ? $VN[2] : '*';
+                            $xstrt = isset($VN[3]) ? $VN[3] : '*';
                             $VN = $phpMussel['vn_shorthand']($VN[0]);
                             $VNLC = strtolower($VN);
                             if (
@@ -2730,7 +2801,7 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                     substr_count($VNLC, '-htm') ||
                                     substr_count($VNLC, '.htm')
                                 )) ||
-                                ($$DataSourceLen < $ThisSigLen)
+                                $$DataSourceLen < $ThisSigLen
                             ) {
                                 continue;
                             }
@@ -2738,24 +2809,24 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 !substr_count($phpMussel['memCache']['greylist'], ',' . $VN . ',') &&
                                 empty($phpMussel['memCache']['ignoreme'])
                             ) {
-                                $ThisSig = (substr_count($ThisSig, '>')) ? explode('>', $ThisSig) : array($ThisSig);
-                                $ThisSigc = count($ThisSig);
+                                $ThisSig = strpos($ThisSig, '>') !== false ? explode('>', $ThisSig) : array($ThisSig);
+                                $ThisSigCount = count($ThisSig);
                                 $ThisString = $$DataSource;
+                                $phpMussel['DataConfineByOffsets']($ThisString, $xstrf, $xstrt, $SectionOffsets);
                                 if ($xstrf === 'A') {
                                     $ThisString = "\x01" . $ThisString;
                                     $ThisSig[0] = "\x01" . $ThisSig[0];
-                                } elseif ($xstrf !== '*') {
-                                    $ThisString = substr($ThisString, $xstrf * 2);
                                 }
-                                if ($xstrt !== '*') {
-                                    $ThisString = substr($ThisString, 0, $xstrt * 2);
+                                if ($xstrt === 'Z') {
+                                    $ThisString .= "\x01";
+                                    $ThisSig[$ThisSigCount - 1] .= "\x01";
                                 }
-                                for ($ThisSigi = 0; $ThisSigi < $ThisSigc; $ThisSigi++) {
-                                    if (!substr_count($ThisString, $ThisSig[$ThisSigi])) {
+                                for ($ThisSigi = 0; $ThisSigi < $ThisSigCount; $ThisSigi++) {
+                                    if (strpos($ThisString, $ThisSig[$ThisSigi]) === false) {
                                         continue 2;
                                     }
-                                    if ($ThisSigc > 1 && substr_count($ThisString, $ThisSig[$ThisSigi])) {
-                                        $ThisString = $phpMussel['substraf']($ThisString, $ThisSig[$ThisSigi] . '>');
+                                    if ($ThisSigCount > 1 && strpos($ThisString, $ThisSig[$ThisSigi]) !== false) {
+                                        $ThisString = $phpMussel['substraf']($ThisString, $ThisSig[$ThisSigi]);
                                     }
                                 }
                                 $phpMussel['Detected']($heur, $lnap, $VN, $ofn, $ofnSafe, $out, $flagged, $md5, $str_len);
@@ -2767,8 +2838,8 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                             if ($phpMussel['ConfineLength']($ThisSigLen)) {
                                 continue;
                             }
-                            $xstrf = (isset($VN[2])) ? $VN[2] : '*';
-                            $xstrt = (isset($VN[3])) ? $VN[3] : '*';
+                            $xstrf = isset($VN[2]) ? $VN[2] : '*';
+                            $xstrt = isset($VN[3]) ? $VN[3] : '*';
                             $VN = $phpMussel['vn_shorthand']($VN[0]);
                             $VNLC = strtolower($VN);
                             if (
@@ -2787,28 +2858,22 @@ $phpMussel['DataHandler'] = function ($str = '', $dpt = 0, $ofn = '') use (&$php
                                 !substr_count($phpMussel['memCache']['greylist'], ',' . $VN . ',') &&
                                 empty($phpMussel['memCache']['ignoreme'])
                             ) {
-                                if ($xstrf === '*') {
-                                    if ($xstrt === '*') {
-                                        if (!preg_match('/(?:' . $ThisSig . ')/i', $$DataSource)) {
+                                $ThisString = $$DataSource;
+                                $phpMussel['DataConfineByOffsets']($ThisString, $xstrf, $xstrt, $SectionOffsets);
+                                if ($xstrf === 'A') {
+                                    if ($xstrt === 'Z') {
+                                        if (!preg_match('/\A(?:' . $ThisSig . ')$/i', $ThisString)) {
                                             continue;
                                         }
-                                    } elseif (!preg_match('/(?:' . $ThisSig . ')/i', substr($$DataSource, 0, $xstrt * 2))) {
-                                        continue;
-                                    }
-                                } elseif ($xstrf === 'A') {
-                                    if ($xstrt === '*') {
-                                        if (!preg_match('/\A(?:' . $ThisSig . ')/i', $$DataSource)) {
-                                            continue;
-                                        }
-                                    } elseif (!preg_match('/\A(?:' . $ThisSig . ')/i', substr($$DataSource, 0, $xstrt * 2))) {
+                                    } elseif (!preg_match('/\A(?:' . $ThisSig . ')/i', $ThisString)) {
                                         continue;
                                     }
                                 } else {
-                                    if ($xstrt === '*') {
-                                        if (!preg_match('/(?:' . $ThisSig . ')/i', substr($$DataSource, $xstrf * 2))) {
+                                    if ($xstrt === 'Z') {
+                                        if (!preg_match('/(?:' . $ThisSig . ')$/i', $ThisString)) {
                                             continue;
                                         }
-                                    } elseif (!preg_match('/(?:' . $ThisSig . ')/i', substr($$DataSource, $xstrf * 2, $xstrt * 2))) {
+                                    } elseif (!preg_match('/(?:' . $ThisSig . ')/i', $ThisString)) {
                                         continue;
                                     }
                                 }

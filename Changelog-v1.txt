@@ -7,7 +7,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 
 === Changes made since last versioned release ===
 
-(none)
+- [2017.08.22; Minor code change; Maikuolan]: Improved ability to scan within
+  specific PE sections (can identify PE sections intended for being scanned and
+  confine source data to the associated offsets). Added new options for offsets
+  in signatures.
 
 === Version/Release 1.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
