@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2017.08.18).
+ * This file: Front-end handler (last modified: 2017.08.26).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -231,10 +231,9 @@ if ($phpMussel['FE']['FormTarget'] === 'login') {
                 $phpMussel['FE']['Cookie'] = $_POST['username'] . $phpMussel['FE']['SessionKey'];
                 setcookie('PHPMUSSEL-ADMIN', $phpMussel['FE']['Cookie'], $phpMussel['Time'] + 604800, '/', (!empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ''), false, true);
                 $phpMussel['FE']['UserState'] = 1;
-                $phpMussel['FE']['ThisSession'] =
-                    $phpMussel['FE']['User'] . ',' .
-                    password_hash($phpMussel['FE']['SessionKey'], PASSWORD_DEFAULT) . ',' .
-                    ($phpMussel['Time'] + 604800) . "\n";
+                $phpMussel['FE']['ThisSession'] = $phpMussel['FE']['User'] . ',' . password_hash(
+                    $phpMussel['FE']['SessionKey'], PASSWORD_DEFAULT
+                ) . ',' . ($phpMussel['Time'] + 604800) . "\n";
                 $phpMussel['FE']['SessionList'] .= $phpMussel['FE']['ThisSession'];
                 $phpMussel['FE']['Rebuild'] = true;
             } else {
@@ -437,7 +436,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '') {
     /** Fetch remote phpMussel version information and cache it if necessary. */
     if (($phpMussel['Remote-YAML-phpMussel'] = $phpMussel['FECacheGet']($phpMussel['FE']['Cache'], 'phpmussel-ver.yaml')) === false) {
         $phpMussel['Remote-YAML-phpMussel'] = $phpMussel['Request']($phpMussel['RemoteVerPath'] . 'phpmussel-ver.yaml', false, 8);
-        $phpMussel['FECacheAdd']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'phpmussel-ver.yaml', $phpMussel['Remote-YAML-phpMussel'] ?: '-', $phpMussel['Time'] + 604800);
+        $phpMussel['FECacheAdd']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'phpmussel-ver.yaml', $phpMussel['Remote-YAML-phpMussel'] ?: '-', $phpMussel['Time'] + 86400);
     }
 
     /** Process remote phpMussel version information. */
@@ -478,7 +477,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === '') {
     /** Fetch remote PHP version information and cache it if necessary. */
     if (($phpMussel['Remote-YAML-PHP'] = $phpMussel['FECacheGet']($phpMussel['FE']['Cache'], 'php-ver.yaml')) === false) {
         $phpMussel['Remote-YAML-PHP'] = $phpMussel['Request']($phpMussel['RemoteVerPath'] . 'php-ver.yaml', false, 8);
-        $phpMussel['FECacheAdd']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'php-ver.yaml', $phpMussel['Remote-YAML-PHP'] ?: '-', $phpMussel['Time'] + 604800);
+        $phpMussel['FECacheAdd']($phpMussel['FE']['Cache'], $phpMussel['FE']['Rebuild'], 'php-ver.yaml', $phpMussel['Remote-YAML-PHP'] ?: '-', $phpMussel['Time'] + 86400);
     }
 
     /** Process remote PHP version information. */
@@ -1089,6 +1088,9 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                 if (!isset($phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['Remote'])) {
                     continue;
                 }
+                $phpMussel['Components']['BytesAdded'] = 0;
+                $phpMussel['Components']['BytesRemoved'] = 0;
+                $phpMussel['Components']['TimeRequired'] = microtime(true);
                 $phpMussel['Components']['RemoteMeta'] = array();
                 $phpMussel['Components']['Meta'][$phpMussel['Components']['ThisTarget']]['RemoteData'] = $phpMussel['FECacheGet'](
                     $phpMussel['FE']['Cache'],
@@ -1229,6 +1231,10 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                                 mkdir($phpMussel['ThisPath']);
                             }
                         }
+                        if (is_readable($phpMussel['Vault'] . $phpMussel['ThisFileName'])) {
+                            $phpMussel['Components']['BytesRemoved'] += filesize($phpMussel['Vault'] . $phpMussel['ThisFileName']);
+                        }
+                        $phpMussel['Components']['BytesAdded'] += strlen($phpMussel['ThisFile']);
                         $phpMussel['Handle'] = fopen($phpMussel['Vault'] . $phpMussel['ThisFileName'], 'w');
                         fwrite($phpMussel['Handle'], $phpMussel['ThisFile']);
                         fclose($phpMussel['Handle']);
@@ -1246,6 +1252,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                                 file_exists($phpMussel['Vault'] . $ThisFile) &&
                                 $phpMussel['Traverse']($ThisFile)
                             ) {
+                                $phpMussel['Components']['BytesRemoved'] += filesize($phpMussel['Vault'] . $ThisFile);
                                 unlink($phpMussel['Vault'] . $ThisFile);
                                 while (strrpos($ThisFile, '/') !== false || strrpos($ThisFile, "\\") !== false) {
                                     $Separator = (strrpos($ThisFile, '/') !== false) ? '/' : "\\";
@@ -1297,7 +1304,14 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                         }
                     }
                 }
-                $phpMussel['FE']['state_msg'] .= '<br />';
+                $phpMussel['FormatFilesize']($phpMussel['Components']['BytesAdded']);
+                $phpMussel['FormatFilesize']($phpMussel['Components']['BytesRemoved']);
+                $phpMussel['FE']['state_msg'] .= sprintf(
+                    ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
+                    $phpMussel['Components']['BytesAdded'],
+                    $phpMussel['Components']['BytesRemoved'],
+                    $phpMussel['Number_L10N'](microtime(true) - $phpMussel['Components']['TimeRequired'], 3)
+                );
             }
             /** Update annotations. */
             foreach ($phpMussel['FileData'] as $phpMussel['ThisKey'] => $phpMussel['ThisFile']) {
@@ -1321,6 +1335,8 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
         /** Uninstall a component. */
         if ($_POST['do'] === 'uninstall-component' && !empty($_POST['ID'])) {
             $phpMussel['ComponentFunctionUpdatePrep']();
+            $phpMussel['Components']['BytesRemoved'] = 0;
+            $phpMussel['Components']['TimeRequired'] = microtime(true);
             if (
                 empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['InUse']) &&
                 !empty($phpMussel['Components']['Meta'][$_POST['ID']]['Files']['To']) &&
@@ -1357,6 +1373,7 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                         file_exists($phpMussel['Vault'] . $ThisFile) &&
                         $phpMussel['Traverse']($ThisFile)
                     ) {
+                        $phpMussel['Components']['BytesRemoved'] += filesize($phpMussel['Vault'] . $ThisFile);
                         unlink($phpMussel['Vault'] . $ThisFile);
                         while (strrpos($ThisFile, '/') !== false || strrpos($ThisFile, "\\") !== false) {
                             $Separator = (strrpos($ThisFile, '/') !== false) ? '/' : "\\";
@@ -1388,6 +1405,12 @@ elseif ($phpMussel['QueryVars']['phpmussel-page'] === 'updates' && $phpMussel['F
                     $phpMussel['FE_Executor']($phpMussel['Components']['Meta'][$_POST['ID']]['When Uninstall Fails']);
                 }
             }
+            $phpMussel['FormatFilesize']($phpMussel['Components']['BytesRemoved']);
+            $phpMussel['FE']['state_msg'] .= sprintf(
+                ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code>',
+                $phpMussel['Components']['BytesRemoved'],
+                $phpMussel['Number_L10N'](microtime(true) - $phpMussel['Components']['TimeRequired'], 3)
+            );
         }
 
         /** Activate a component. */

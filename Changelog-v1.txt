@@ -12,6 +12,10 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
   confine source data to the associated offsets). Added new options for offsets
   in signatures.
 
+- [2017.08.26; Sub-minor code change; Maikuolan]: The front-end updates page
+  now reports the number of added/removed bytes and the total time required for
+  when updating/installing/uninstalling components.
+
 === Version/Release 1.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 
