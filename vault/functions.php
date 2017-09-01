@@ -1407,20 +1407,20 @@ $phpMussel['DataConfineByOffsets'] = function (&$Data, &$Initial, &$Terminal, &$
         $Initial = '*';
         $Terminal = '*';
         if (isset($SectionOffsets[$SectionNum][0])) {
-            $ThisString = substr($ThisString, $SectionOffsets[$SectionNum][0] * 2);
+            $Data = substr($Data, $SectionOffsets[$SectionNum][0] * 2);
         }
         if (isset($SectionOffsets[$SectionNum][1])) {
-            $ThisString = substr($ThisString, 0, $SectionOffsets[$SectionNum][1] * 2);
+            $Data = substr($Data, 0, $SectionOffsets[$SectionNum][1] * 2);
         }
     } elseif (substr($Initial, 0, 2) === 'SL') {
         $Remainder = strlen($Initial) > 3 && substr($Initial, 2, 1) === '+' ? (substr($Initial, 3) ?: 0) : 0;
         $Initial = '*';
         $Final = count($SectionOffsets);
         if ($Final > 0 && isset($SectionOffsets[$Final - 1][0])) {
-            $ThisString = substr($ThisString, ($SectionOffsets[$Final - 1][0] + $Remainder) * 2);
+            $Data = substr($Data, ($SectionOffsets[$Final - 1][0] + $Remainder) * 2);
         }
         if ($Terminal !== '*' && $Terminal !== 'Z') {
-            $ThisString = substr($ThisString, 0, $Terminal * 2);
+            $Data = substr($Data, 0, $Terminal * 2);
             $Terminal = '*';
         }
     } elseif (substr($Initial, 0, 1) === 'S') {
@@ -1433,19 +1433,19 @@ $phpMussel['DataConfineByOffsets'] = function (&$Data, &$Initial, &$Terminal, &$
         }
         $Initial = '*';
         if (isset($SectionOffsets[$SectionNum][0])) {
-            $ThisString = substr($ThisString, ($SectionOffsets[$SectionNum][0] + $Remainder) * 2);
+            $Data = substr($Data, ($SectionOffsets[$SectionNum][0] + $Remainder) * 2);
         }
         if ($Terminal !== '*' && $Terminal !== 'Z') {
-            $ThisString = substr($ThisString, 0, $Terminal * 2);
+            $Data = substr($Data, 0, $Terminal * 2);
             $Terminal = '*';
         }
     } else {
         if ($Initial !== '*' && $Initial !== 'A') {
-            $ThisString = substr($ThisString, $Initial * 2);
+            $Data = substr($Data, $Initial * 2);
             $Initial = '*';
         }
         if ($Terminal !== '*' && $Terminal !== 'Z') {
-            $ThisString = substr($ThisString, 0, $Terminal * 2);
+            $Data = substr($Data, 0, $Terminal * 2);
             $Terminal = '*';
         }
     }

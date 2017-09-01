@@ -19,6 +19,9 @@ Versioning guidelines for SemVer can be found at: http://www.semver.org/
 - [2017.09.01; Minor code change; Maikuolan]: Added an optional directive to
   determine whether to detect and block encrypted files ("detect_encryption").
 
+- [2017.09.01; Bug-fix; Maikuolan]: Found and fixed a bug introduced on
+  2017.08.22 relating to signature offsets.
+
 === Version/Release 1.0.0 ===
 MAJOR RELEASE (BACKWARDS INCOMPATIBLE).
 
